@@ -1,7 +1,8 @@
 ---
 import Logo from './Logo.astro';
 import type { Dict } from '../i18n/en';
-import { contactHref } from '../site';
+import ExternalMark from './ExternalMark.astro';
+import { contactHref, contactExternal } from '../site';
 
 interface Props {
   t: Dict;
@@ -31,7 +32,7 @@ const anchor = (id: string) => `${home}#${id}`;
         <span class="mono">{t.lang === 'de' ? 'EN' : 'DE'}</span>
         <span class="visually-hidden">{t.nav.switchLabel}</span>
       </a>
-      <a class="btn btn-small" href={contactHref(t.hero.mailSubject)}>{t.nav.cta}</a>
+      <a class="btn btn-small" href={contactHref(t.hero.mailSubject)} {...(contactExternal ? { target: '_blank', rel: 'noopener' } : {})}>{t.nav.cta}{contactExternal && <ExternalMark label={t.nav.newTab} />}</a>
     </div>
   </div>
 </header>

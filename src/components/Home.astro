@@ -4,9 +4,10 @@ import Header from './Header.astro';
 import Footer from './Footer.astro';
 import Blueprint from './Blueprint.astro';
 import Logo from './Logo.astro';
+import ExternalMark from './ExternalMark.astro';
 import { en } from '../i18n/en';
 import { de } from '../i18n/de';
-import { site, contactHref } from '../site';
+import { site, contactHref, contactExternal } from '../site';
 
 interface Props {
   lang: 'en' | 'de';
@@ -19,7 +20,7 @@ const deHome = `${base}de/`;
 const home = lang === 'de' ? deHome : enHome;
 const switchHref = lang === 'de' ? enHome : deHome;
 const cta = contactHref(t.hero.mailSubject);
-const ctaExternal = Boolean(site.bookingUrl);
+const ctaAttrs = contactExternal ? { target: '_blank', rel: 'noopener' } : {};
 const [qOpen, qClose] = lang === 'de' ? ['„', '“'] : ['“', '”'];
 ---
 <Base lang={lang} title={t.meta.title} description={t.meta.description} alternates={{ en: enHome, de: deHome }}>
@@ -37,7 +38,7 @@ const [qOpen, qClose] = lang === 'de' ? ['„', '“'] : ['“', '”'];
         </p>
         <p class="hero-lead">{t.hero.lead}</p>
         <div class="hero-ctas">
-          <a class="btn" href={cta} {...(ctaExternal ? { target: '_blank', rel: 'noopener' } : {})}>{t.hero.ctaPrimary}</a>
+          <a class="btn" href={cta} {...ctaAttrs}>{t.hero.ctaPrimary}{contactExternal && <ExternalMark label={t.nav.newTab} />}</a>
           <a class="btn btn-ghost" href="#references">{t.hero.ctaSecondary}</a>
         </div>
       </div>
@@ -161,7 +162,8 @@ const [qOpen, qClose] = lang === 'de' ? ['„', '“'] : ['“', '”'];
         <p class="label mono">{t.contact.label}</p>
         <h2>{t.contact.title}</h2>
         <p class="contact-text">{t.contact.text}</p>
-        <a class="btn" href={cta} {...(ctaExternal ? { target: '_blank', rel: 'noopener' } : {})}>{t.contact.cta}</a>
+        <a class="btn" href={cta} {...ctaAttrs}>{t.contact.cta}{contactExternal && <ExternalMark label={t.nav.newTab} />}</a>
+        {contactExternal && <p class="booking-note">{t.contact.bookingNote}</p>}
         <dl class="contact-list">
           <div>
             <dt class="mono">{t.contact.emailLabel}</dt>

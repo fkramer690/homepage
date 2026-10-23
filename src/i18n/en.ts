@@ -11,6 +11,7 @@ export const en = {
     about: 'About',
     contact: 'Contact',
     cta: 'Book a call',
+    newTab: '(opens Microsoft Bookings in a new tab)',
     switchLabel: 'Deutsch',
   },
   hero: {
@@ -145,6 +146,7 @@ export const en = {
     title: 'Planning or rescuing a Salesforce program?',
     text: 'Tell me where you stand. A first call takes 30 minutes – worst case, you walk away with a second opinion.',
     cta: 'Book a 30-minute call',
+    bookingNote: 'Pick a slot in my calendar via Microsoft Bookings. Prefer email? That works too.',
     emailLabel: 'Email',
     linkedinLabel: 'LinkedIn',
   },

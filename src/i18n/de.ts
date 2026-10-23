@@ -13,6 +13,7 @@ export const de: Dict = {
     about: 'Über mich',
     contact: 'Kontakt',
     cta: 'Termin vereinbaren',
+    newTab: '(öffnet Microsoft Bookings in einem neuen Tab)',
     switchLabel: 'English',
   },
   hero: {
@@ -147,6 +148,7 @@ export const de: Dict = {
     title: 'Sie planen ein Salesforce-Programm oder müssen eins retten?',
     text: 'Erzählen Sie mir, wo Sie stehen. Ein erstes Gespräch dauert 30 Minuten – schlimmstenfalls haben Sie danach eine zweite Meinung.',
     cta: '30-Minuten-Gespräch vereinbaren',
+    bookingNote: 'Wählen Sie einen Termin in meinem Kalender über Microsoft Bookings. Lieber per E-Mail? Geht auch.',
     emailLabel: 'E-Mail',
     linkedinLabel: 'LinkedIn',
   },
