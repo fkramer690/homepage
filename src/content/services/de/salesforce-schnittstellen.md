@@ -15,7 +15,7 @@ deliverables:
   - "Integrationsarchitektur: Systeme, Datenflüsse, führendes System pro Objekt und Integrationsmuster"
   - "Entscheidung für Middleware oder direkte Anbindung, abhängig von Größe und Zahl der Systeme"
   - "Schnittstellenspezifikationen, nach denen Umsetzungspartner bauen können"
-  - "Konzept für die Telefonie-Anbindung an die Service Cloud, zum Beispiel Genesys oder Microsoft Teams"
+  - "Konzept für die Telefonie-Anbindung an die Service Cloud, zum Beispiel Genesys, Mirage oder Microsoft Teams"
   - "Sicherheitsprüfung von Integrationsbenutzern, Berechtigungen und Authentifizierung"
   - "Auswahl und Steuerung spezialisierter Integrationspartner"
 results:
@@ -38,7 +38,7 @@ faq:
   - q: "Brauchen wir eine Middleware für die Salesforce-Integration?"
     a: "Das hängt von der Größe des Unternehmens und der Zahl der Systeme ab. Bei wenigen stabilen Schnittstellen kann eine direkte Anbindung reichen. Bei vielen Systemen, mehreren Teams und häufigen Änderungen macht eine Middleware Schnittstellen leichter änderbar, überwachbar und wiederverwendbar."
   - q: "Wie wird Telefonie an die Service Cloud angebunden?"
-    a: "Über eine CTI-Integration, die Anrufe in die Service Cloud bringt, sodass Agenten beim Klingeln den Kunden und die offenen Fälle sehen. Ich habe mit Genesys gearbeitet, und Microsoft Teams wird als Telefonieplattform wichtiger. Telefon und E-Mail bleiben in den meisten Serviceorganisationen die Kernkanäle."
+    a: "Über eine CTI-Integration, die Anrufe in die Service Cloud bringt, sodass Agenten beim Klingeln den Kunden und die offenen Fälle sehen. Ich habe mit den CTI-Anbietern Genesys und Mirage gearbeitet, und Microsoft Teams wird als Telefonieplattform wichtiger. Telefon und E-Mail bleiben in den meisten Serviceorganisationen die Kernkanäle."
 blogTags: [integration, oauth, security, sicherheit, service cloud]
 ---
 
@@ -59,11 +59,11 @@ Die Details unterscheiden sich in jedem Unternehmen. Deshalb gehört diese Landk
 
 Der Ansatz hängt von der Größe des Unternehmens und der Zahl der Systeme ab. Bei wenigen stabilen Schnittstellen kann eine direkte Anbindung die einfachste Lösung sein. Bei vielen Systemen, mehreren Teams und häufigen Änderungen lohnt sich eine Middleware wie MuleSoft oder eine andere Integrationsplattform, weil Schnittstellen wiederverwendbar werden und Fehler an einer Stelle sichtbar sind.
 
-Für die Umsetzung arbeite ich mit ausgewählten Partnern, die Integrationserfahrung aus großen internationalen Programmen haben. So bekommt der Kunde einen Partner, der zur Größe der Aufgabe passt, während Architektur und Spezifikationen auf Kundenseite bleiben.
+Für die Umsetzung arbeite ich mit ausgewählten Partnern, die Integrationserfahrung aus großen internationalen Programmen haben, zum Beispiel Blue Apes als Jitterbit-Partner. So bekommt der Kunde einen Partner, der zur Größe der Aufgabe passt, während Architektur und Spezifikationen auf Kundenseite bleiben.
 
 ## Wie passt Telefonie in die Service Cloud?
 
-In den meisten Serviceorganisationen sind Telefon und E-Mail noch die wichtigsten Kanäle. Eine CTI-Integration bringt Anrufe in die Service Cloud, sodass Agenten beim Klingeln den Kunden, die installierten Produkte und die offenen Fälle sehen. Ich habe mit Genesys gearbeitet, und Microsoft Teams wird als Telefonieplattform wichtiger, weil viele Unternehmen es intern schon nutzen.
+In den meisten Serviceorganisationen sind Telefon und E-Mail noch die wichtigsten Kanäle. Eine CTI-Integration bringt Anrufe in die Service Cloud, sodass Agenten beim Klingeln den Kunden, die installierten Produkte und die offenen Fälle sehen. Ich habe mit den CTI-Anbietern Genesys und Mirage gearbeitet, und Microsoft Teams wird als Telefonieplattform wichtiger, weil viele Unternehmen es intern schon nutzen.
 
 ## Und die Sicherheit?
 
