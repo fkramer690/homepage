@@ -51,6 +51,20 @@ Changes to parts 1–2 and 4–7 are made once in the components and apply to al
 - Never identifiable: customers, partners, people. Never name the energy or utility sector (the script blocks typical terms). Do not highlight certifications.
 - Only claim experience Fabian actually has. If a claim or example is unclear, ask him.
 
+## No AI slop
+
+Articles must read like Fabian talking to a client, not like generated content. `check-blog.mjs` blocks the typical phrases, dashes and patterns; the rest is a review step before every pull request.
+
+- **Every paragraph earns its place.** It contains a concrete fact, number, example, trade-off or opinion. A sentence that would fit into any article on any topic gets deleted.
+- **No filler phrases.** Words like delve, landscape, seamless, leverage, game changer, unlock, holistic, cutting-edge, furthermore, moreover, in conclusion, "in today's fast-paced world", and in German nahtlos, ganzheitlich, maßgeschneidert, darüber hinaus, zusammenfassend, "in der heutigen Zeit" (checked).
+- **No announcement sentences.** No "Here is what you will learn", "In this article", "Hier lesen Sie", "In diesem Artikel". The intro gives the answer and stops (checked).
+- **No "it is not X, it is Y".** State what something is (checked).
+- **No en or em dashes.** Use a comma, a full stop or "to" (checked).
+- **No reflexive lists of three.** Use as many items as there really are.
+- **No hype, no superlatives without a reason.** "Best course I have taken" is fine when the article says why; "revolutionary" is not.
+- **Fabian's voice.** First person, direct, a little dry, with his own phrasing where he gave it (e.g. from LinkedIn posts). Keep real quirks instead of smoothing them out.
+- **Read-aloud test.** Read the article once out loud. Anything Fabian would not say to a client in a meeting gets rewritten.
+
 ## Images
 
 - **Preview image (automatic):** every article gets its own 1200×630 image for LinkedIn and other link previews, generated at build time from the title in the site's style (`src/lib/og.ts`, served at `/og/<lang>/<slug>.png`). Nothing to do per article.
@@ -95,6 +109,7 @@ Before opening the pull request:
 - [ ] At least 2 relative internal links, closing invitation links to `#contact`
 - [ ] Nothing identifiable, no energy/utility reference, no certification focus
 - [ ] At least 1,000 words in the body, EN and DE
+- [ ] No AI slop: every paragraph has a concrete point, read-aloud test done
 - [ ] `npm run build` passes (runs `check-blog.mjs`)
 - [ ] Optional graphic has alt text and lives in `src/assets/blog/`
 - [ ] Draft of 2–3 LinkedIn teasers (thesis, example, checklist) for Fabian

@@ -23,7 +23,7 @@ faq:
     a: "Ja. Flows, Page Layouts, Permission Sets und Felder sind Metadaten im Repository und erscheinen im Pull Request wie Code. Reviewer prüfen sie auf Benennung, Logik, Performance und Sicherheit."
 ---
 
-Ein Pull-Request-Review ist in Großprojekten Pflicht, weil es der letzte Punkt ist, an dem eine Änderung günstig gestoppt werden kann. Bevor eine Änderung übernommen wird, prüft eine zweite Person, ob sie zur Architektur passt, den vereinbarten Standards folgt und nicht die Arbeit eines anderen Teams kaputt macht. In einem Salesforce-Programm mit mehreren Partnern und internen Teams auf einer Org verhindert dieser eine Schritt mehr Produktionsfehler als jede spätere Testphase. Und er hält die Teams auf Linie, ganz ohne zusätzliches Meeting. Hier lesen Sie, was ein gutes Review prüft, was es in einem echten Programm gebracht hat und wie Sie es einführen.
+Ein Pull-Request-Review ist in Großprojekten Pflicht, weil es der letzte Punkt ist, an dem eine Änderung günstig gestoppt werden kann. Bevor eine Änderung übernommen wird, prüft eine zweite Person, ob sie zur Architektur passt, den vereinbarten Standards folgt und nicht die Arbeit eines anderen Teams kaputt macht. In einem Salesforce-Programm mit mehreren Partnern und internen Teams auf einer Org verhindert dieser eine Schritt mehr Produktionsfehler als jede spätere Testphase. Und er hält die Teams auf Linie, ganz ohne zusätzliches Meeting.
 
 ## Was ist ein Pull-Request-Review?
 
@@ -64,7 +64,7 @@ Der erste und wirksamste Schritt war eine einfache Regel: Jede Änderung geht ü
 
 Nach einigen Wochen ging die Zahl der Review-Kommentare deutlich zurück, weil die Teams die Standards kannten. Releases wurden planbar, und die Validierungsläufe der Pipeline fanden fehlende Abhängigkeiten, bevor ein Anwender sie sah. Als der Prozess stabil lief, habe ich ihn an einen internen Kollegen übergeben und ihn eingearbeitet. Seitdem verantwortet der Kunde den Review-Prozess selbst.
 
-> Bei Reviews geht es nicht um Misstrauen. Sie sind der Weg, auf dem sich ein Programm mit vielen Teams auf eine gemeinsame Bauweise einigt.
+> Reviews sind der Weg, auf dem sich ein Programm mit vielen Teams auf eine gemeinsame Bauweise einigt.
 
 ## Wie führen Sie Reviews ein, ohne langsamer zu werden?
 

@@ -25,7 +25,7 @@ faq:
     a: "Gearset and Copado are commercial platforms with a managed interface and support, billed per user. sfdx-hardis has no licence costs and runs on the client's own Git platform, but needs more internal know-how."
 ---
 
-sfdx-hardis is a free, open-source toolkit for Salesforce DevOps. It combines a Salesforce CLI plugin with a VS Code extension and gives teams a ready-made CI/CD pipeline, delta deployments, quality checks, org monitoring, metadata backups and generated documentation. It runs on the Git platform a company already uses. I use sfdx-hardis in client projects and rate it very highly, mainly because it delivers what most enterprise programmes need without ongoing licence costs. Here is what it does, how it compares to commercial tools and when it is the right choice.
+sfdx-hardis is a free, open-source toolkit for Salesforce DevOps. It combines a Salesforce CLI plugin with a VS Code extension and gives teams a ready-made CI/CD pipeline, delta deployments, quality checks, org monitoring, metadata backups and generated documentation. It runs on the Git platform a company already uses. I use sfdx-hardis in client projects and rate it very highly, mainly because it delivers what most enterprise programmes need without ongoing licence costs.
 
 ## What is sfdx-hardis?
 
