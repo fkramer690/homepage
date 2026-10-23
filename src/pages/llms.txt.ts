@@ -23,7 +23,7 @@ ${site.person} is an independent Salesforce Enterprise Architect in Cologne, Ger
 - [Home](${abs(base)})
 - [Services](${abs(`${base}services/`)})
 - [Blog](${abs(`${base}blog/`)})
-- [Speaker & events](${abs(`${base}speaking/`)}): talks at Salesforce community conferences (Flow performance, Lightning Flow Scanner)
+- [Speaker & events](${abs(`${base}speaking/`)}): talks at Salesforce community conferences (Flow performance, Flow vs OmniScript, Lightning Flow Scanner)
 - [LinkedIn](${site.linkedin})
 
 ## Services
