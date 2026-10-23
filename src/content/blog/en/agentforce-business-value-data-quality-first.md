@@ -5,6 +5,7 @@ pubDate: 2026-10-23
 lang: en
 slug: agentforce-business-value-data-quality-first
 translationKey: agentforce-business-value-data-quality
+topic: ai
 tags: [agentforce, ai agents, data quality, business case, architecture]
 takeaways:
   - "According to an Oppenheimer survey, 85 percent of Salesforce customers have tested or deployed Agentforce, but nearly half are still in pilot or testing."

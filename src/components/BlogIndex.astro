@@ -2,7 +2,9 @@
 import Page from '../layouts/Page.astro';
 import { en } from '../i18n/en';
 import { de } from '../i18n/de';
+import TopicVisual from './TopicVisual.astro';
 import { getPosts, postHref, readingMinutes, formatDate } from '../lib/blog';
+import { topics } from '../lib/topics';
 
 interface Props {
   lang: 'en' | 'de';
@@ -14,20 +16,29 @@ const posts = await getPosts(lang);
 ---
 <Page lang={lang} title={t.blog.metaTitle} description={t.blog.intro} alternates={{ en: `${base}blog/`, de: `${base}de/blog/` }}>
   <section class="section blog">
-    <div class="container blog-inner">
-      <p class="eyebrow mono">FK Solution Design</p>
-      <h1>{t.blog.title}</h1>
-      <p class="blog-intro">{t.blog.intro}</p>
-      <ul class="post-list">
-        {posts.map((post) => (
-          <li>
-            <a class="post-card" href={postHref(post)}>
-              <span class="post-meta mono">
-                <time datetime={post.data.pubDate.toISOString()}>{formatDate(post.data.pubDate, lang)}</time>
-                {' · '}{readingMinutes(post)} {t.blog.readingTime}
+    <div class="container">
+      <div class="blog-inner">
+        <p class="eyebrow mono">FK Solution Design</p>
+        <h1>{t.blog.title}</h1>
+        <p class="blog-intro">{t.blog.intro}</p>
+      </div>
+      <ul class="post-grid">
+        {posts.map((post, i) => (
+          <li class:list={['post-tile', { featured: i === 0 }]}>
+            <a href={postHref(post)}>
+              <span class="post-tile-media">
+                <TopicVisual topic={post.data.topic} />
+                <span class="post-tile-topic mono">{topics[post.data.topic][lang]}</span>
               </span>
-              <span class="post-title">{post.data.title}</span>
-              <span class="post-desc">{post.data.description}</span>
+              <span class="post-tile-body">
+                <span class="post-meta mono">
+                  <time datetime={post.data.pubDate.toISOString()}>{formatDate(post.data.pubDate, lang)}</time>
+                  {' · '}{readingMinutes(post)} {t.blog.readingTime}
+                </span>
+                <span class="post-title">{post.data.title}</span>
+                <span class="post-desc">{post.data.description}</span>
+                <span class="card-more mono">{t.blog.readMore} →</span>
+              </span>
             </a>
           </li>
         ))}

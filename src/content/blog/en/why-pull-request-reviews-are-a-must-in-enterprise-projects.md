@@ -5,6 +5,7 @@ pubDate: 2026-10-23
 lang: en
 slug: why-pull-request-reviews-are-a-must-in-enterprise-projects
 translationKey: pull-request-reviews-enterprise
+topic: code-review
 tags: [pull request review, devops, partner governance, code quality]
 takeaways:
   - "A pull request review is the last point where a change can be stopped cheaply, before it reaches shared environments, users and other teams."

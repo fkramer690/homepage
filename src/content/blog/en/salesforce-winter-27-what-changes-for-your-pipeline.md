@@ -5,6 +5,7 @@ pubDate: 2026-10-23
 lang: en
 slug: salesforce-winter-27-what-changes-for-your-pipeline
 translationKey: salesforce-winter-27-pipeline
+topic: release
 tags: [release management, devops, salesforce cli, winter 27, apex]
 takeaways:
   - "From 28 October 2026 the Salesforce CLI command org display no longer prints access tokens, so pipeline scripts that read the token from its output will break."

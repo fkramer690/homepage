@@ -208,6 +208,7 @@ export const de: Dict = {
     authorMore: 'Mehr über mich',
     relatedService: 'Passende Leistung',
     authorLinkedIn: 'LinkedIn-Profil',
+    readMore: 'Artikel lesen',
   },
   servicePage: {
     indexTitle: 'Leistungen',

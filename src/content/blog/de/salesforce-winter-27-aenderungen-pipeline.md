@@ -5,6 +5,7 @@ pubDate: 2026-10-23
 lang: de
 slug: salesforce-winter-27-aenderungen-pipeline
 translationKey: salesforce-winter-27-pipeline
+topic: release
 tags: [Release-Management, DevOps, Salesforce CLI, Winter 27, Apex]
 takeaways:
   - "Ab 28. Oktober 2026 gibt der CLI-Befehl org display keine Access Tokens mehr aus; Pipeline-Skripte, die das Token aus der Ausgabe lesen, brechen dann."

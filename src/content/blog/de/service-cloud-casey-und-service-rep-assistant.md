@@ -5,6 +5,7 @@ pubDate: 2026-10-23
 lang: de
 slug: service-cloud-casey-und-service-rep-assistant
 translationKey: service-cloud-casey-assistant
+topic: service
 tags: [Service Cloud, Agentforce, Contact Center, Kundenservice, Fertigung]
 takeaways:
   - "Casey ist der fertige Agentforce-Agent von Salesforce für den Kundenservice, früher Help Agent genannt; er wird aus Wissensartikeln, PDFs und URLs eingerichtet und kann an Kanäle wie Telefon angebunden werden."
