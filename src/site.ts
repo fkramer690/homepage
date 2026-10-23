@@ -10,7 +10,7 @@ export const site = {
   // it only allows sending messages to the address it was created for.
   form: {
     endpoint: 'https://api.web3forms.com/submit',
-    accessKey: '',
+    accessKey: '43165f1c-cf6b-4048-875f-c18176ce9039',
   },
   linkedin: 'https://www.linkedin.com/in/fabian-kramer-400500127',
   legal: {
