@@ -21,7 +21,7 @@ Start every new article from [`docs/blog-template.md`](blog-template.md).
 | Body | At least 3 H2 sections, H3 if needed, no H1 and no H4+ | script |
 | Questions | At least one H2 phrased as a question people would search for | script |
 | Experience | At least one anonymised example from a real project | review |
-| FAQ | 2–6 questions with direct answers of 1–3 sentences | schema |
+| FAQ | 2–6 questions with direct answers of 1–3 sentences, shown as collapsible questions | schema |
 | Closing | One-sentence conclusion plus an invitation to get in touch (`#contact`) | review |
 
 Below every article the template adds the author box, related articles and the contact section with "Book a call" and the contact form ("Send a message"). Do not add another CTA block to the Markdown.
