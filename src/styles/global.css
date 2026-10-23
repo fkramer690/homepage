@@ -932,6 +932,7 @@ a:hover { color: var(--anthracite); }
 .blog-inner > h2 { margin-top: 1.6em; }
 .blog-inner > h3 { margin-top: 1.4em; font-size: 1rem; }
 .cert-count { font-size: 0.8rem; color: var(--cyan); vertical-align: middle; margin-left: 0.4em; }
+.cert-graphic img { display: block; width: 100%; height: auto; margin: 1.6em 0; border-radius: var(--radius); border: 1px solid var(--line); }
 .cert-hint { color: var(--text-2); font-size: 0.9rem; }
 .cert-list { margin: 0.6em 0 0; border-top: 1px solid var(--line); }
 .cert-item { border-bottom: 1px solid var(--line); }

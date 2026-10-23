@@ -5,6 +5,14 @@ import { de } from '../i18n/de';
 import { site } from '../site';
 import ExternalMark from './ExternalMark.astro';
 import CertItem from './CertItem.astro';
+import coverageWideEn from '../assets/certifications/coverage-wide-en.png';
+import coverageWideDe from '../assets/certifications/coverage-wide-de.png';
+import coverageNarrowEn from '../assets/certifications/coverage-narrow-en.png';
+import coverageNarrowDe from '../assets/certifications/coverage-narrow-de.png';
+import basicsWideEn from '../assets/certifications/basics-wide-en.png';
+import basicsWideDe from '../assets/certifications/basics-wide-de.png';
+import basicsNarrowEn from '../assets/certifications/basics-narrow-en.png';
+import basicsNarrowDe from '../assets/certifications/basics-narrow-de.png';
 import { architectCerts, salesforceCerts, otherCerts, type Cert } from '../data/certifications';
 
 interface Props {
@@ -15,6 +23,9 @@ const t = lang === 'de' ? de : en;
 const c = t.subpages.certifications;
 const base = import.meta.env.BASE_URL;
 const home = lang === 'de' ? `${base}de/` : base;
+// Overview graphics: a wide version and a portrait one for phones.
+const coverage = lang === 'de' ? { wide: coverageWideDe, narrow: coverageNarrowDe } : { wide: coverageWideEn, narrow: coverageNarrowEn };
+const basics = lang === 'de' ? { wide: basicsWideDe, narrow: basicsNarrowDe } : { wide: basicsWideEn, narrow: basicsNarrowEn };
 const groups = Object.entries(otherCerts) as [keyof typeof otherCerts, Cert[]][];
 ---
 <Page lang={lang} title={c.metaTitle} description={c.intro} alternates={{ en: `${base}certifications/`, de: `${base}de/certifications/` }}>
@@ -23,9 +34,17 @@ const groups = Object.entries(otherCerts) as [keyof typeof otherCerts, Cert[]][]
       <p class="eyebrow mono">{t.about.title}</p>
       <h1>{c.title}</h1>
       <p class="blog-intro">{c.intro}</p>
+      <picture class="cert-graphic">
+        <source media="(max-width: 640px)" srcset={coverage.narrow.src} />
+        <img src={coverage.wide.src} width={coverage.wide.width / 2} height={coverage.wide.height / 2} alt={c.coverageAlt} decoding="async" />
+      </picture>
 
       <h2>{c.whyTitle}</h2>
       {c.why.map((p) => <p>{p}</p>)}
+      <picture class="cert-graphic">
+        <source media="(max-width: 640px)" srcset={basics.narrow.src} />
+        <img src={basics.wide.src} width={basics.wide.width / 2} height={basics.wide.height / 2} alt={c.basicsAlt} loading="lazy" decoding="async" />
+      </picture>
 
       <p class="cert-hint">{c.hint}</p>
 

@@ -169,6 +169,8 @@ export const en = {
         crm: 'Other CRM platforms',
       },
       hint: 'Open a certification to see why it matters in projects.',
+      coverageAlt: 'Coverage of my certifications: 25 Salesforce certifications cover Sales Cloud (2), Service Cloud (1), Field Service (1), Experience Cloud (1), Marketing (1), AI and Agentforce (2), Admin and App Builder (4), development (2), analysis and design (2) and Nonprofit Cloud (1), plus 8 Architect credentials for data, sharing, integration, identity and release. 15 more sit at the edges: architecture and cloud (iSAQB CPSA-F, AWS Cloud Practitioner, MuleSoft Associate), delivery (PSM I, PRINCE2, Six Sigma Yellow and Green Belt), DevOps (Copado I and II, Flosum Professional and Expert, Gearset Master) and other CRM platforms (HubSpot Sales, Marketing and Service).',
+      basicsAlt: 'What a certification shows: the exam tests knowledge, one exam per topic. Maintenance keeps it current with three Salesforce releases per year (Spring, Summer, Winter). The project applies it to data, sharing and interfaces. A certificate does not design an architecture. It shows breadth.',
       whyTitle: 'Why this matters in enterprise projects',
       why: [
         'A certificate does not design an architecture. What it shows is breadth. The architect exams cover large data volumes, sharing models, integration patterns, identity and release management. These are the areas where large Salesforce orgs run into trouble.',

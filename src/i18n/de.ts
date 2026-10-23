@@ -171,6 +171,8 @@ export const de: Dict = {
         crm: 'Andere CRM-Plattformen',
       },
       hint: 'Ein Klick auf eine Zertifizierung zeigt, warum sie in Projekten zählt.',
+      coverageAlt: 'Abdeckung meiner Zertifizierungen: 25 Salesforce-Zertifizierungen decken Sales Cloud (2), Service Cloud (1), Field Service (1), Experience Cloud (1), Marketing (1), KI und Agentforce (2), Admin und App Builder (4), Entwicklung (2), Analyse und Design (2) und Nonprofit Cloud (1) ab, dazu 8 Architect-Credentials für Daten, Sharing, Integration, Identity und Release. 15 weitere liegen an den Rändern: Architektur und Cloud (iSAQB CPSA-F, AWS Cloud Practitioner, MuleSoft Associate), Projektabwicklung (PSM I, PRINCE2, Six Sigma Yellow und Green Belt), DevOps (Copado I und II, Flosum Professional und Expert, Gearset Master) und andere CRM-Plattformen (HubSpot Sales, Marketing und Service).',
+      basicsAlt: 'Was eine Zertifizierung zeigt: Die Prüfung testet Wissen, eine Prüfung je Thema. Die Wartung hält es aktuell, bei drei Salesforce-Releases pro Jahr (Spring, Summer, Winter). Im Projekt wird es angewendet, bei Daten, Sharing und Schnittstellen. Ein Zertifikat entwirft keine Architektur. Es zeigt aber Breite.',
       whyTitle: 'Warum das in Enterprise-Projekten zählt',
       why: [
         'Ein Zertifikat entwirft keine Architektur. Es zeigt aber Breite. Die Architect-Prüfungen decken große Datenmengen, Sharing-Modelle, Integrationsmuster, Identity und Release-Management ab. Genau dort bekommen große Salesforce-Orgs Probleme.',
