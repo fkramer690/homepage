@@ -932,7 +932,15 @@ a:hover { color: var(--anthracite); }
 .blog-inner > h2 { margin-top: 1.6em; }
 .blog-inner > h3 { margin-top: 1.4em; font-size: 1rem; }
 .cert-count { font-size: 0.8rem; color: var(--cyan); vertical-align: middle; margin-left: 0.4em; }
-.cert-list { list-style: none; padding: 0; margin: 0.6em 0 0; border-top: 1px solid var(--line); }
-.cert-list li { display: flex; justify-content: space-between; gap: 16px; padding: 0.55em 0; border-bottom: 1px solid var(--line); }
-.cert-list li .mono { color: var(--text-2); font-size: 0.85rem; white-space: nowrap; }
+.cert-hint { color: var(--text-2); font-size: 0.9rem; }
+.cert-list { margin: 0.6em 0 0; border-top: 1px solid var(--line); }
+.cert-item { border-bottom: 1px solid var(--line); }
+.cert-item summary { display: flex; gap: 12px; align-items: baseline; padding: 0.55em 0; cursor: pointer; list-style: none; }
+.cert-item summary::-webkit-details-marker { display: none; }
+.cert-item summary::before { content: '+'; font-family: var(--mono, monospace); color: var(--cyan); width: 1ch; flex: none; }
+.cert-item[open] summary::before { content: '\2212'; }
+.cert-item summary > span:first-child { flex: 1; }
+.cert-item summary .mono { color: var(--text-2); font-size: 0.85rem; white-space: nowrap; }
+.cert-item summary:hover > span:first-child { color: var(--cyan); }
+.cert-item p { margin: 0 0 0.9em calc(1ch + 12px); color: var(--text-2); font-size: 0.95rem; }
 .cert-links { margin-top: 2em; }

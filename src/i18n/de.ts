@@ -170,6 +170,7 @@ export const de: Dict = {
         delivery: 'Projektabwicklung',
         crm: 'Andere CRM-Plattformen',
       },
+      hint: 'Ein Klick auf eine Zertifizierung zeigt, warum sie in Projekten zählt.',
       whyTitle: 'Warum das in Enterprise-Projekten zählt',
       why: [
         'Ein Zertifikat entwirft keine Architektur. Es zeigt aber Breite. Die Architect-Prüfungen decken große Datenmengen, Sharing-Modelle, Integrationsmuster, Identity und Release-Management ab. Genau dort bekommen große Salesforce-Orgs Probleme.',

@@ -168,6 +168,7 @@ export const en = {
         delivery: 'Project delivery',
         crm: 'Other CRM platforms',
       },
+      hint: 'Open a certification to see why it matters in projects.',
       whyTitle: 'Why this matters in enterprise projects',
       why: [
         'A certificate does not design an architecture. What it shows is breadth. The architect exams cover large data volumes, sharing models, integration patterns, identity and release management. These are the areas where large Salesforce orgs run into trouble.',
