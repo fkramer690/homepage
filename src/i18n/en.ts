@@ -179,6 +179,9 @@ export const en = {
     back: 'All articles',
     ctaTitle: 'Facing a similar decision?',
     ctaText: 'Let’s talk for 30 minutes about your project. No sales pitch, just an architect’s view.',
+    takeaways: 'Key takeaways',
+    faq: 'Frequently asked questions',
+    related: 'Related articles',
     authorBio: 'Independent Salesforce Enterprise Architect on the client side, working with manufacturers on sales, service and after-sales.',
   },
   notFound: {

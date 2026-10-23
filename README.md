@@ -22,23 +22,11 @@ Setting `bookingUrl` in `src/site.ts` (e.g. a Microsoft Bookings page) turns all
 
 ### Blog articles
 
-Each article is a Markdown file in `src/content/blog/<lang>/`. The frontmatter is checked at build time (see `src/content.config.ts`):
+Each article is a Markdown file in `src/content/blog/<lang>/`. The frontmatter is checked at build time (see `src/content.config.ts`); [docs/blog-template.md](docs/blog-template.md) shows all fields (title, description, takeaways, FAQ, tags, …).
 
-```yaml
----
-title: "Under 60 characters if possible"
-description: "140 to 160 characters for search results"
-pubDate: 2026-10-23
-updatedDate: 2026-11-30   # optional
-lang: en                  # en or de
-slug: url-of-the-article
-translationKey: same-key-for-en-and-de
-tags: [devops]
-draft: false              # true = only visible in npm run dev
----
-```
+The EN and DE versions of an article share the same `translationKey`, which links them via hreflang. Articles appear under `/blog/` and `/de/blog/`, in the sitemap, the RSS feed (`/blog/rss.xml`) and `llms.txt` automatically.
 
-The EN and DE versions of an article share the same `translationKey`, which links them via hreflang. Articles appear under `/blog/` and `/de/blog/` and in the sitemap automatically.
+Rules for structure, SEO and AI search are in [docs/blog-guidelines.md](docs/blog-guidelines.md); start new articles from [docs/blog-template.md](docs/blog-template.md). `npm run build` runs `scripts/check-blog.mjs` first and fails if an article breaks a rule (`npm run check:blog` runs only the check).
 
 ## Local development
 

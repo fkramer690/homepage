@@ -4,8 +4,10 @@ import { site } from '../site';
 
 interface Props {
   t: Dict;
+  // Overrides the email subject, e.g. to name the blog article.
+  subject?: string;
 }
-const { t } = Astro.props;
+const { t, subject } = Astro.props;
 const f = t.contact.form;
 const base = import.meta.env.BASE_URL;
 ---
@@ -20,7 +22,7 @@ const base = import.meta.env.BASE_URL;
   <div class="form-body">
   <h3>{f.title}</h3>
   <input type="hidden" name="access_key" value={site.form.accessKey} />
-  <input type="hidden" name="subject" value={f.subject} />
+  <input type="hidden" name="subject" value={subject ?? f.subject} />
   <input type="hidden" name="from_name" value="FK Solution Design Website" />
   <!-- Honeypot against spam bots; must stay empty. -->
   <input type="checkbox" name="botcheck" class="visually-hidden" tabindex="-1" autocomplete="off" aria-hidden="true" />

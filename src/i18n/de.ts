@@ -181,6 +181,9 @@ export const de: Dict = {
     back: 'Alle Artikel',
     ctaTitle: 'Stehen Sie vor einer ähnlichen Entscheidung?',
     ctaText: 'Lassen Sie uns 30 Minuten über Ihr Projekt sprechen. Kein Verkaufsgespräch, sondern der Blick eines Architekten.',
+    takeaways: 'Das Wichtigste in Kürze',
+    faq: 'Häufige Fragen',
+    related: 'Weitere Artikel',
     authorBio: 'Unabhängiger Salesforce Enterprise Architect auf Kundenseite, für Fertigungsunternehmen in Vertrieb, Service und After-Sales.',
   },
   notFound: {
