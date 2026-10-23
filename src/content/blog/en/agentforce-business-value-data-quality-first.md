@@ -31,6 +31,8 @@ The numbers from October 2026 show a split picture. An Oppenheimer survey of Sal
 
 At the same time, demand for Agentforce skills is growing fast. According to the 10K talent report, also [covered by Salesforce Ben](https://www.salesforceben.com/agentforce-jobs-are-booming-while-projects-stall-in-pilot/), mentions of Agentforce in Salesforce job listings rose by 63 percent year on year, while overall Salesforce talent demand fell by 13 percent.
 
+![Agentforce in October 2026: 85% of surveyed Salesforce customers have tested or deployed Agentforce, nearly half say they are still in the pilot or testing stage, Salesforce reports more than 29,000 paid deals, and Agentforce mentions in Salesforce job listings rose 63% year on year while overall Salesforce talent demand fell 13%. Plenty of interest, plenty of demos, production use lags behind.](../../../assets/blog/agentforce-adoption-en.png)
+
 So companies are experimenting and hiring, but production use lags behind. That matches what I see on the client side: plenty of interest, plenty of demos, and a gap between a convincing demo and an agent that works reliably every day.
 
 ## What did I learn from my first pilot?

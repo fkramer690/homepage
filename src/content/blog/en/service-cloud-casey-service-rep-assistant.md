@@ -76,6 +76,8 @@ Service in manufacturing differs from consumer service. Customers are companies,
 - Warranty and goodwill decisions, which should go through approvals with clear thresholds.
 - Escalations from key accounts, where the relationship matters more than speed.
 
+![Who answers what in B2B service: Casey answers the customer on order and delivery status, documentation, manuals, certificates and spare part information, standard questions on returns, service hours and contract terms, and collects serial number, error code and photos. For a discount or goodwill above a threshold, Casey sends an approval request to a service rep. The rep, supported by the Service Rep Assistant, handles technical diagnosis of complex faults, warranty and goodwill decisions and escalations from key accounts, and approves or rejects in the console. Before going live: reliable knowledge, clear approval rules, clean data, measurable goals.](../../../assets/blog/casey-or-service-rep-en.png)
+
 The contact center launch is relevant for German manufacturers who run their hotline on a separate telephony system today. A native contact center brings calls, cases and customer data together. Whether it fits depends on the existing telephony, the requirements for data storage and the integration with ticketing in other systems.
 
 ## What has to be in place before going live?

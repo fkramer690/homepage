@@ -76,6 +76,8 @@ Service in der Fertigung unterscheidet sich vom Endkundenservice. Kunden sind Un
 - Gewährleistungs- und Kulanzentscheidungen, die über Freigaben mit klaren Schwellenwerten laufen sollten.
 - Eskalationen von Schlüsselkunden, bei denen die Beziehung wichtiger ist als die Geschwindigkeit.
 
+![Wer im B2B-Service was beantwortet: Casey antwortet dem Kunden zu Auftrags- und Lieferstatus, Dokumentation, Handbüchern, Zertifikaten und Ersatzteilinformationen, Standardfragen zu Rückgaben, Servicezeiten und Verträgen und sammelt Seriennummer, Fehlercode und Fotos ein. Bei Rabatt oder Kulanz über dem Schwellenwert schickt Casey eine Freigabeanfrage an Servicemitarbeitende. Diese übernehmen, unterstützt vom Service Rep Assistant, die technische Diagnose komplexer Störungen, Gewährleistungs- und Kulanzentscheidungen und Eskalationen von Schlüsselkunden und geben in der Konsole frei oder lehnen ab. Vor dem Go-live: verlässliches Wissen, klare Freigaberegeln, saubere Daten, messbare Ziele.](../../../assets/blog/casey-or-service-rep-de.png)
+
 Der Start des Contact Centers ist für deutsche Hersteller relevant, die ihre Hotline heute auf einer separaten Telefonanlage betreiben. Ein natives Contact Center bringt Anrufe, Fälle und Kundendaten zusammen. Ob es passt, hängt von der bestehenden Telefonie, den Anforderungen an die Datenspeicherung und der Anbindung an Ticketsysteme in anderen Bereichen ab.
 
 ## Was muss vor dem Go-live stehen?
