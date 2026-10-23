@@ -901,20 +901,9 @@ a:hover { color: var(--anthracite); }
   transition: border-color 0.15s, transform 0.15s;
 }
 .post-tile a:hover { border-color: var(--cyan); color: var(--text); transform: translateY(-2px); }
-.post-tile-media { position: relative; overflow: hidden; display: block; aspect-ratio: 2 / 1; background: var(--anthracite); }
-/* A section of the article's own graphic: left part, enlarged so the text stays readable. */
-.post-tile-graphic { position: absolute; left: 0; top: 0; width: 150%; max-width: none; height: auto; }
-.post-tile.featured .post-tile-graphic { width: 100%; top: 50%; transform: translateY(-50%); }
-.topic-visual { position: absolute; inset: 0; display: block; width: 100%; height: 100%; }
-.post-tile-topic {
-  position: absolute;
-  left: 16px;
-  bottom: 12px;
-  font-size: 0.72rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--cyan-light);
-}
+.post-tile-media { position: relative; overflow: hidden; display: block; aspect-ratio: 2 / 1; background: var(--bg); border-bottom: 1px solid var(--line); }
+.card-drawing { position: absolute; inset: 0; display: block; width: 100%; height: 100%; }
+.card-drawing text { font-family: var(--mono); }
 .post-tile-body { display: flex; flex-direction: column; gap: 8px; padding: 20px 22px 22px; flex: 1; }
 .post-tile .post-title { font-size: 1.12rem; font-weight: 600; line-height: 1.3; text-wrap: balance; }
 .post-tile .post-desc {
@@ -929,7 +918,7 @@ a:hover { color: var(--anthracite); }
 @media (min-width: 821px) {
   .post-tile.featured { grid-column: 1 / -1; }
   .post-tile.featured a { flex-direction: row; }
-  .post-tile.featured .post-tile-media { flex: 0 0 50%; aspect-ratio: auto; min-height: 280px; }
+  .post-tile.featured .post-tile-media { flex: 0 0 50%; aspect-ratio: auto; min-height: 280px; border-bottom: 0; border-right: 1px solid var(--line); }
   .post-tile.featured .post-tile-body { padding: 32px 36px; justify-content: center; }
   .post-tile.featured .post-title { font-size: 1.6rem; }
   .post-tile.featured .post-desc { -webkit-line-clamp: 4; font-size: 1rem; }
@@ -937,6 +926,5 @@ a:hover { color: var(--anthracite); }
 @media (max-width: 980px) { .post-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 640px) {
   .post-grid { grid-template-columns: 1fr; gap: 16px; }
-  .post-tile-media { aspect-ratio: 3 / 1; }
   .post-tile-body { padding: 16px 18px 18px; }
 }
