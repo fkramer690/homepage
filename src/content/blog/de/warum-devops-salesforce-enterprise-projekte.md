@@ -59,6 +59,8 @@ Ein solides Setup muss nicht kompliziert sein. In meinen Projekten sind diese Ba
 5. **Delta-Deployments.** Es wird nur deployt, was sich geändert hat. Das hält Deployments schnell und verringert Nebenwirkungen.
 6. **Monitoring und Backup.** Regelmäßige Metadaten-Backups und Prüfungen zeigen Änderungen direkt in Produktion, veraltete API-Versionen oder ungenutzte Komponenten.
 
+![Salesforce-Release-Pipeline in fünf Stufen: Entwickler-Sandbox, Pull Request mit Review, Validierung mit Deploy-Check, Apex-Tests und Code-Analyse, Integration und UAT sowie Produktion. Eine Qualitätsschranke erlaubt Merges nur bei grüner Pipeline, Hotfixes laufen über dieselbe Pipeline, und das Git-Repository ist die einzige Quelle der Wahrheit.](../../../assets/blog/devops-pipeline-de.png)
+
 > Die Pipeline gehört dem Kunden, nicht dem Partner. Wer den Release-Prozess besitzt, besitzt die Plattform.
 
 Dieser letzte Punkt ist mir als [Architekt auf Kundenseite](../../#about) besonders wichtig. Ein Repository und eine Pipeline unter Kontrolle des Kunden machen Partner vergleichbar und austauschbar. Das ist die Grundlage für [Partnersteuerung und Governance](../../#services). Außerdem wird das Onboarding eines neuen Partners deutlich leichter, weil die Standards aufgeschrieben sind und automatisch durchgesetzt werden.

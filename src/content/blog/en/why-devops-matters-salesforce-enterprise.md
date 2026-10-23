@@ -59,6 +59,8 @@ A solid setup does not need to be complicated. In my projects these building blo
 5. **Delta deployments.** Only what changed is deployed. That keeps deployments fast and reduces side effects.
 6. **Monitoring and backup.** Regular metadata backups and checks show changes made directly in production, outdated API versions or unused components.
 
+![Salesforce release pipeline in five stages: developer sandbox, pull request with review, validation with deploy check, Apex tests and code analysis, integration and UAT, and production. A quality gate allows merges only when the pipeline is green, hotfixes use the same pipeline, and the Git repository is the single source of truth.](../../../assets/blog/devops-pipeline-en.png)
+
 > The pipeline belongs to the client, not to the partner. Whoever owns the release process owns the platform.
 
 That last point matters a lot to me as an [architect on the client side](../../#about). A repository and pipeline under the client's control make partners comparable and replaceable, which is the basis for [partner steering and governance](../../#services). They also make onboarding a new partner much easier, because the standards are written down and enforced automatically.
