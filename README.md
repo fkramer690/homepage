@@ -13,6 +13,7 @@ Static website for FK Solution Design GmbH, built with [Astro](https://astro.bui
 | Colors, typography, layout | `src/styles/global.css` |
 | Logo | `src/components/Logo.astro`, `public/favicon.svg` |
 | Blog articles | `src/content/blog/en/`, `src/content/blog/de/` |
+| Service pages | `src/content/services/en/`, `src/content/services/de/` |
 
 The contact form uses [Web3Forms](https://web3forms.com). Its access key is stored as the repository secret `WEB3FORMS_ACCESS_KEY` (Settings → Secrets and variables → Actions) and injected at build time. For local testing, run `PUBLIC_WEB3FORMS_KEY=<key> npm run dev`.
 
@@ -27,6 +28,10 @@ Each article is a Markdown file in `src/content/blog/<lang>/`. The frontmatter i
 The EN and DE versions of an article share the same `translationKey`, which links them via hreflang. Articles appear under `/blog/` and `/de/blog/`, in the sitemap, the RSS feed (`/blog/rss.xml`) and `llms.txt` automatically.
 
 Rules for structure, SEO and AI search are in [docs/blog-guidelines.md](docs/blog-guidelines.md); start new articles from [docs/blog-template.md](docs/blog-template.md). `npm run build` runs `scripts/check-blog.mjs` first and fails if an article breaks a rule (`npm run check:blog` runs only the check).
+
+### Service pages
+
+Each service on the home page links to its own page under `/services/` and `/de/leistungen/`, built from Markdown files in `src/content/services/<lang>/` by `src/components/ServicePage.astro`. Rules are in [docs/service-pages.md](docs/service-pages.md); the same build check applies.
 
 ## Local development
 
