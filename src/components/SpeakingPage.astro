@@ -1,0 +1,135 @@
+---
+// Speaker & events page in either language; content lives in src/data/speaking.ts.
+import Page from '../layouts/Page.astro';
+import ExternalMark from './ExternalMark.astro';
+import ContactForm from './ContactForm.astro';
+import Blueprint from './Blueprint.astro';
+import { Image } from 'astro:assets';
+import speaking from '../assets/speaking.jpg';
+import { en } from '../i18n/en';
+import { de } from '../i18n/de';
+import { site, contactHref, contactExternal } from '../site';
+import { talks, moreAppearances, copy, type Appearance } from '../data/speaking';
+
+interface Props {
+  lang: 'en' | 'de';
+}
+const { lang } = Astro.props;
+const t = lang === 'de' ? de : en;
+const c = copy[lang];
+const base = import.meta.env.BASE_URL;
+const home = lang === 'de' ? `${base}de/` : base;
+const alternates = { en: `${base}speaking/`, de: `${base}de/speaking/` };
+const url = new URL(lang === 'de' ? alternates.de : alternates.en, Astro.site).href;
+const ctaAttrs = contactExternal ? { target: '_blank', rel: 'noopener' } : {};
+const ext = { target: '_blank', rel: 'noopener' };
+
+const formatDate = (date: string) =>
+  date.length === 4
+    ? date
+    : new Date(date).toLocaleDateString(lang === 'de' ? 'de-DE' : 'en-GB', { month: 'long', year: 'numeric' });
+
+const person = { '@type': 'Person', '@id': `${new URL(base, Astro.site).href}#person`, name: site.person };
+const event = (talk: (typeof talks)[number], a: Appearance) => ({
+  '@type': 'Event',
+  name: a.event,
+  startDate: a.date,
+  eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+  location: { '@type': 'Place', name: a.city.en, address: { '@type': 'PostalAddress', addressLocality: a.city.en, addressCountry: a.country } },
+  subEvent: { '@type': 'Event', name: talk.title, startDate: a.date, performer: person, inLanguage: 'en' },
+  ...(a.url ? { url: a.url } : {}),
+});
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfilePage',
+  '@id': url,
+  url,
+  name: c.metaTitle,
+  inLanguage: lang,
+  mainEntity: {
+    ...person,
+    jobTitle: 'Salesforce Enterprise Architect',
+    performerIn: talks.flatMap((talk) => talk.appearances.map((a) => event(talk, a))),
+  },
+};
+---
+<Page lang={lang} title={c.metaTitle} description={c.description} alternates={alternates} hasContact>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </Fragment>
+  <section class="section blog speaking">
+    <div class="container post-inner">
+      <a class="post-back mono" href={`${home}#about`}>← {c.back}</a>
+      <p class="eyebrow mono">{t.about.label}</p>
+      <h1>{c.title}</h1>
+      <div class="speaking-intro">
+        <p class="service-lead">{c.lead}</p>
+        <figure class="stage-photo">
+          <Image src={speaking} alt={c.photoAlt} widths={[320, 614]} sizes="(max-width: 760px) 100vw, 320px" />
+          <figcaption class="mono">{c.photoCaption}</figcaption>
+        </figure>
+      </div>
+
+      <section class="service-block" aria-labelledby="talks">
+        <h2 id="talks">{c.talksTitle}</h2>
+        <ol class="talk-list">
+          {talks.map((talk) => (
+            <li class="talk">
+              <h3>{talk.title}</h3>
+              {talk.coSpeaker && <p class="talk-with mono">{c.with} {talk.coSpeaker}</p>}
+              <p>{talk.abstract[lang]}</p>
+              <ul class="service-list check">{talk.points[lang].map((p) => <li>{p}</li>)}</ul>
+              <p class="label mono">{c.stagesLabel}</p>
+              <ul class="talk-stages">
+                {talk.appearances.map((a) => (
+                  <li>
+                    {a.url ? <a href={a.url} {...ext}>{a.event}<ExternalMark label={t.nav.externalTab} /></a> : <strong>{a.event}</strong>}
+                    <span class="mono"> · {a.city[lang]} · {formatDate(a.date)}</span>
+                  </li>
+                ))}
+              </ul>
+              {talk.recording && (
+                <a class="text-link" href={talk.recording.url} {...ext}>{talk.recording.label[lang]}<ExternalMark label={t.nav.externalTab} /></a>
+              )}
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section class="service-block" aria-labelledby="more">
+        <h2 id="more">{c.moreTitle}</h2>
+        <ul class="talk-more">
+          {moreAppearances.map((m) => (
+            <li class="card">
+              <h3>{m.title[lang]}</h3>
+              <p>{m.text[lang]}</p>
+              {m.url && m.linkLabel && (
+                <a class="text-link" href={m.url} {...ext}>{m.linkLabel[lang]}<ExternalMark label={t.nav.externalTab} /></a>
+              )}
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section class="service-block results" aria-labelledby="topics">
+        <h2 id="topics">{c.topicsTitle}</h2>
+        <p>{c.topicsText}</p>
+        <ul class="service-list check">{c.topics.map((topic) => <li>{topic}</li>)}</ul>
+        <p>{c.formatsText}</p>
+      </section>
+    </div>
+  </section>
+  <section class="contact dark grid-bg" id="contact">
+    <Blueprint />
+    <div class="container contact-inner">
+      <div class="contact-intro">
+        <p class="label mono">{t.contact.label}</p>
+        <h2>{c.ctaTitle}</h2>
+        <p class="contact-text">{c.ctaText}</p>
+        <a class="btn" href={contactHref(c.formSubject)} {...ctaAttrs}>{t.nav.cta}{contactExternal && <ExternalMark label={t.nav.newTab} />}</a>
+        {contactExternal && <p class="booking-note">{t.contact.bookingNote}</p>}
+      </div>
+      <ContactForm t={t} subject={c.formSubject} />
+    </div>
+  </section>
+</Page>
