@@ -23,7 +23,7 @@ faq:
     a: "Yes. Flows, page layouts, permission sets and custom fields are metadata in the repository and show up in the pull request like code. Reviewers check them for naming, logic, performance and security."
 ---
 
-A pull request review is a must in enterprise projects because it is the last point where a change can be stopped cheaply. Before a change is merged, a second person checks whether it fits the architecture, follows the agreed standards and does not break someone else's work. In a Salesforce programme with several partners and internal teams on one org, that single step prevents more production incidents than any later test phase. It also keeps teams aligned without a meeting. Here is what a good review covers, what it brought in a real programme and how to introduce it.
+A pull request review is a must in enterprise projects because it is the last point where a change can be stopped cheaply. Before a change is merged, a second person checks whether it fits the architecture, follows the agreed standards and does not break someone else's work. In a Salesforce programme with several partners and internal teams on one org, that single step prevents more production incidents than any later test phase. It also keeps teams aligned without a meeting.
 
 ## What is a pull request review?
 
@@ -64,7 +64,7 @@ The first and most effective step was a simple rule: every change goes through a
 
 After a few weeks the number of review comments dropped noticeably, because the teams knew the standards. Releases became predictable, and the pipeline's validation runs caught missing dependencies before users ever saw them. Once the process was stable, I handed it over to an internal colleague and trained them, so the client now owns the review process themselves.
 
-> Reviews are not about distrust. They are how a programme with many teams agrees on one way of building things.
+> Reviews are how a programme with many teams agrees on one way of building things.
 
 ## How do you introduce reviews without slowing down?
 

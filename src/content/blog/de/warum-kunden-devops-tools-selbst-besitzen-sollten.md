@@ -23,11 +23,11 @@ faq:
     a: "Über persönliche, benannte Benutzer in den Tools des Kunden, mit Rollen passend zur Aufgabe und einem Zugriff, der mit der Zusammenarbeit endet. Geteilte oder anonyme Accounts sollten tabu sein."
 ---
 
-Kunden sollten ihre Salesforce-DevOps-Tools selbst besitzen, denn wer Accounts, Lizenzen und Zugriffsrechte kontrolliert, kontrolliert das Projekt. Das gilt für Git-Repository und CI/CD-Pipeline genauso wie für Jira, Confluence und Miro. Selbst besitzen heißt nicht, eigene Server zu betreiben. Cloud-Dienste sind in Ordnung, solange Arbeitsbereiche und Admin-Rechte dem Kunden gehören und auch über jede Partnerschaft hinaus beim Kunden bleiben. Partner bekommen persönliche Benutzer mit den Rechten, die sie für ihre Aufgabe brauchen. In diesem Artikel erkläre ich, warum das wichtig ist, was typischerweise schiefgeht und wie Sie es aufsetzen.
+Kunden sollten ihre Salesforce-DevOps-Tools selbst besitzen, denn wer Accounts, Lizenzen und Zugriffsrechte kontrolliert, kontrolliert das Projekt. Das gilt für Git-Repository und CI/CD-Pipeline genauso wie für Jira, Confluence und Miro. Selbst besitzen heißt nicht, eigene Server zu betreiben. Cloud-Dienste sind in Ordnung, solange Arbeitsbereiche und Admin-Rechte dem Kunden gehören und auch über jede Partnerschaft hinaus beim Kunden bleiben. Partner bekommen persönliche Benutzer mit den Rechten, die sie für ihre Aufgabe brauchen.
 
 ## Was heißt es, die eigenen DevOps-Tools zu besitzen?
 
-Es geht nicht darum, wo die Software läuft. Es geht darum, wer die Schlüssel hat. In der Praxis bedeutet das:
+Tools zu besitzen heißt, die Schlüssel in der Hand zu halten, egal wo die Software läuft. In der Praxis bedeutet das:
 
 - **Vertrag und Lizenzen** jedes Tools laufen auf den Kunden,
 - die **Admin-Rechte** liegen bei Mitarbeitenden des Kunden, nicht nur bei Partnern,

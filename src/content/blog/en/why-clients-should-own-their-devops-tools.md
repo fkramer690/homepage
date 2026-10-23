@@ -23,11 +23,11 @@ faq:
     a: "Through named personal user accounts in the client's tools, with roles limited to their task and access that ends with the engagement. Shared or anonymous accounts should not be used."
 ---
 
-Clients should own their Salesforce DevOps tools because whoever controls the accounts, licences and access rights controls the project. That applies to the Git repository and CI/CD pipeline as much as to Jira, Confluence and Miro. Owning them does not mean running your own servers. Cloud services are fine, as long as the workspaces and admin rights belong to the client and stay with the client beyond any partnership. Partners get named accounts with the rights they need for their task. In this article I explain why this matters, what typically goes wrong and how to set it up.
+Clients should own their Salesforce DevOps tools because whoever controls the accounts, licences and access rights controls the project. That applies to the Git repository and CI/CD pipeline as much as to Jira, Confluence and Miro. Owning them does not mean running your own servers. Cloud services are fine, as long as the workspaces and admin rights belong to the client and stay with the client beyond any partnership. Partners get named accounts with the rights they need for their task.
 
 ## What does it mean to own your DevOps tools?
 
-Owning the tools is not about where the software runs. It is about who holds the keys. In practice that means:
+Owning the tools means holding the keys, wherever the software runs. In practice that means:
 
 - the **contract and licences** for each tool are in the client's name,
 - the **admin rights** sit with client employees, not only with partner staff,
