@@ -1,0 +1,10 @@
+---
+// Arrow marking a link that opens in a new tab, with a screen-reader hint.
+interface Props {
+  label: string;
+}
+const { label } = Astro.props;
+---
+<svg class="ext-mark" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true">
+  <path d="M4 2h6v6M10 2 2.5 9.5" fill="none" stroke="currentColor" stroke-width="1.6" />
+</svg><span class="visually-hidden"> {label}</span>
