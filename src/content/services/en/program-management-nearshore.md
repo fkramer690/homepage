@@ -60,6 +60,8 @@ Before the first sprint, the client and the partner agree on rules for staffing 
 
 From day one, a nearshore team works with the same standards, pull request reviews and pipeline as everyone else. Reviews are where quality gets checked and where new team members learn the conventions of the org, as described in [why pull request reviews are a must in enterprise projects](../../blog/why-pull-request-reviews-are-a-must-in-enterprise-projects/).
 
+![Several small teams on one shared base: each team has up to around eight developers and clear responsibilities. From day one, every team works with the same standards, pull request reviews and pipeline as everyone else. Rules for staffing and rotation are agreed before the first sprint, and one programme plan with streams and dependencies plus one release process keep the teams aligned.](../../../assets/blog/nearshore-team-setup-en.png)
+
 ## What does steering look like across several teams?
 
 With several teams and partners, the plan only holds if dependencies and releases are coordinated. I keep a programme plan with streams and dependencies, align releases through one shared process and report status, risks and decisions to management. The rules that make several partners work together are described under [partner governance](../partner-governance/), and the shared release process under [DevOps and release management](../devops-release-management/).

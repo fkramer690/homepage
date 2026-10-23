@@ -52,6 +52,8 @@ Sales Cloud and Service Cloud are a given in almost every enterprise project. Th
 - **Experience Cloud** fits customer-facing processes. Self-service portals save internal capacity, because customers find answers and submit requests themselves.
 - **Manufacturing Cloud** only makes sense when its features match how the company actually sells. The fit has to be calculated in the ROI case, which I describe on the [make-or-buy and licences](../make-or-buy-licences/) page.
 
+![Which clouds the company really needs: Sales Cloud and Service Cloud are a given in almost every enterprise project. The interesting questions start with the add-ons. Field Service fits with many short jobs, where route and appointment optimisation clearly improves the numbers, and brings a much smaller benefit with a few long projects. Experience Cloud fits customer-facing processes, and self-service portals save internal capacity. Manufacturing Cloud only fits when its features match how the company actually sells, which is calculated in the ROI case.](../../../assets/blog/which-clouds-en.png)
+
 ## Why does the data model decide so much?
 
 Every report, every automation and every AI use case depends on the data model. If accounts, products and contracts are modelled differently in each project, the problems show up years later in reports nobody trusts and in agents that give wrong answers. That is why I treat the data model as part of the architecture, including its relationships to ERP. My view on AI is the same: business value and data quality come first, as described in [Agentforce: business value and data quality first](../../blog/agentforce-business-value-data-quality-first/).

@@ -60,6 +60,8 @@ Der Preis im ersten Jahr ist die uninteressanteste Zahl. Ich betrachte mehrere J
 - **Wartung und Upgrades**, inklusive des Aufwands, den eigener Code bei jedem Salesforce-Release verursacht.
 - **Folgekosten**, etwa Add-ons, die später nötig werden, oder der Aufwand für den Wechsel zu einer anderen Option.
 
+![Make-or-buy mit vier Optionen pro Anforderung: Standardprodukt, Industry Cloud, Eigenentwicklung auf der Kernplattform oder separates Tool. Der ROI-Case betrachtet mehrere Jahre und nicht den Preis im ersten Jahr und umfasst Lizenzen für jede Nutzergruppe mit dem erwarteten Wachstum, die Umsetzung durch interne Teams und Partner, Wartung und Upgrades inklusive des Aufwands, den eigener Code bei jedem Release verursacht, und Folgekosten wie später nötige Add-ons oder den Aufwand für den Wechsel zu einer anderen Option. Der zweite Hebel ist der Lizenztyp, denn volle Lizenzen werden oft standardmäßig angeboten, auch für Nutzer, die nur lesen oder freigeben.](../../../assets/blog/make-or-buy-roi-de.png)
+
 ## Was sollten Sie über Salesforce-Lizenzen wissen?
 
 Der Listenpreis ist selten das endgültige Angebot. Der Zeitpunkt zählt: Zum Ende des Geschäftsjahres des Herstellers oder bei Aktionen gibt es oft Spielraum, Produkte, die das Unternehmen in den nächsten zwei bis drei Jahren braucht, für wenig Aufpreis aufzunehmen. Dafür braucht es eine Roadmap, die klar genug ist, um zu wissen, wonach man fragen sollte.

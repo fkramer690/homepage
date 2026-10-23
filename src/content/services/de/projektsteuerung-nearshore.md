@@ -60,6 +60,8 @@ Vor dem ersten Sprint vereinbaren Kunde und Partner Regeln zu Besetzung und Rota
 
 Vom ersten Tag an arbeitet ein Nearshore-Team mit denselben Standards, Pull-Request-Reviews und derselben Pipeline wie alle anderen. In Reviews wird die Qualität geprüft, und neue Teammitglieder lernen dort die Konventionen der Org, wie in [warum Pull-Request-Reviews in Großprojekten Pflicht sind](../../blog/warum-pull-request-reviews-pflicht-sind/) beschrieben.
 
+![Mehrere kleine Teams auf einer gemeinsamen Basis: Jedes Team hat bis zu etwa acht Entwickler und klare Verantwortlichkeiten. Vom ersten Tag an arbeitet jedes Team mit denselben Standards, Pull-Request-Reviews und derselben Pipeline wie alle anderen. Regeln zu Besetzung und Rotation werden vor dem ersten Sprint vereinbart, und ein Programmplan mit Streams und Abhängigkeiten sowie ein Release-Prozess halten die Teams zusammen.](../../../assets/blog/nearshore-team-setup-de.png)
+
 ## Wie sieht Steuerung über mehrere Teams aus?
 
 Mit mehreren Teams und Partnern hält der Plan nur, wenn Abhängigkeiten und Releases abgestimmt sind. Ich führe einen Programmplan mit Streams und Abhängigkeiten, stimme Releases über einen gemeinsamen Prozess ab und berichte Status, Risiken und Entscheidungen an das Management. Die Regeln, mit denen mehrere Partner zusammenarbeiten, beschreibe ich unter [Partnersteuerung](../partnersteuerung/), den gemeinsamen Release-Prozess unter [DevOps und Release-Management](../devops-und-release-management/).
