@@ -590,5 +590,14 @@ a:hover { color: var(--anthracite); }
 .contact-form .btn:disabled { opacity: 0.6; cursor: progress; }
 .form-status { margin: 1em 0 0; font-size: 0.9rem; }
 .form-status:empty { display: none; }
-.form-status.is-success { color: var(--cyan-light); }
+.form-status.is-success {
+  margin: 0;
+  padding-left: 1em;
+  border-left: 3px solid var(--cyan);
+  font-size: 1.15rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--white);
+  outline: none;
+}
 .form-status.is-error { color: #ff9d8a; }
