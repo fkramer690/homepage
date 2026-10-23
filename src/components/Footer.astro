@@ -21,7 +21,7 @@ const year = new Date().getFullYear();
       <a href={`${base}impressum/`}>{t.footer.imprint}</a>
       <a href={`${base}datenschutz/`}>{t.footer.privacy}</a>
       <a href={site.linkedin} rel="noopener">LinkedIn</a>
-      <a href={switchHref}>{t.nav.switchLabel}</a>
+      {(t.lang === 'de' || site.showGermanLink) && <a href={switchHref}>{t.nav.switchLabel}</a>}
     </nav>
     <p class="footer-copy">© {year} {site.company}</p>
   </div>

@@ -2,7 +2,7 @@
 import Logo from './Logo.astro';
 import type { Dict } from '../i18n/en';
 import ExternalMark from './ExternalMark.astro';
-import { contactHref, contactExternal } from '../site';
+import { site, contactHref, contactExternal } from '../site';
 
 interface Props {
   t: Dict;
@@ -10,6 +10,8 @@ interface Props {
   switchHref: string;
 }
 const { t, home, switchHref } = Astro.props;
+// Links to the German version are hidden unless enabled in site.ts.
+const showSwitch = t.lang === 'de' || site.showGermanLink;
 const anchor = (id: string) => `${home}#${id}`;
 ---
 <header class="site-header">
@@ -28,10 +30,12 @@ const anchor = (id: string) => `${home}#${id}`;
       <a href={anchor('contact')}>{t.nav.contact}</a>
     </nav>
     <div class="header-actions">
+      {showSwitch && (
       <a class="lang-switch" href={switchHref} hreflang={t.lang === 'de' ? 'en' : 'de'} lang={t.lang === 'de' ? 'en' : 'de'}>
         <span class="mono">{t.lang === 'de' ? 'EN' : 'DE'}</span>
         <span class="visually-hidden">{t.nav.switchLabel}</span>
       </a>
+      )}
       <a class="btn btn-small" href={contactHref(t.hero.mailSubject)} {...(contactExternal ? { target: '_blank', rel: 'noopener' } : {})}>{t.nav.cta}{contactExternal && <ExternalMark label={t.nav.newTab} />}</a>
     </div>
   </div>
