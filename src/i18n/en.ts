@@ -182,7 +182,11 @@ export const en = {
     takeaways: 'Key takeaways',
     faq: 'Frequently asked questions',
     related: 'Related articles',
-    authorBio: 'Independent Salesforce Enterprise Architect on the client side, working with manufacturers on sales, service and after-sales.',
+    authorBio: 'I help manufacturers turn Salesforce into a reliable backbone for sales, service and after-sales, as the architect on the client side and independent of vendors and partners.',
+    authorLabel: 'About the author',
+    authorRole: 'Salesforce Enterprise Architect · Cologne',
+    authorMore: 'More about me',
+    authorLinkedIn: 'LinkedIn profile',
   },
   floating: {
     label: 'Contact',
