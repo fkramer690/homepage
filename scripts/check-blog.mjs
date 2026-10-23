@@ -21,6 +21,7 @@ const slop = [
 ];
 
 const errors = [];
+const drawings = readFileSync(new URL('../src/lib/card-drawings.ts', import.meta.url), 'utf8');
 
 // Blog articles and service pages share the content rules; only length and structure differ.
 const collections = {
@@ -91,6 +92,10 @@ function check(collection, rules) {
 
   for (const [key, langs] of pairs) {
     if (langs.size < 2) errors.push(`${collection}: translationKey "${key}": only ${[...langs].join(', ')}, EN and DE are both required`);
+    // Every article needs its own technical drawing for the card on the blog overview.
+    if (collection === 'blog' && !drawings.includes(`'${key}':`)) {
+      errors.push(`blog: translationKey "${key}": no card drawing in src/lib/card-drawings.ts, add one (see "Card image" in the guidelines)`);
+    }
   }
   return pairs.size;
 }
