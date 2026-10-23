@@ -6,11 +6,12 @@ export const site = {
   // Optional booking page (e.g. Microsoft Bookings). Empty = CTA opens an email.
   bookingUrl:
     'https://bookings.cloud.microsoft/bookwithme/user/82cee52526244dfca3410f4808bd4a17@fk-sd.de?anonymous&ismsaljsauthenabled&ep=plink',
-  // Contact form backend (Web3Forms). The access key is public by design;
-  // it only allows sending messages to the address it was created for.
+  // Contact form backend (Web3Forms). The access key comes from the
+  // WEB3FORMS_ACCESS_KEY repository secret at build time (see deploy.yml).
+  // It still ends up in the page source; this only keeps it out of the repo.
   form: {
     endpoint: 'https://api.web3forms.com/submit',
-    accessKey: '43165f1c-cf6b-4048-875f-c18176ce9039',
+    accessKey: import.meta.env.PUBLIC_WEB3FORMS_KEY ?? '',
   },
   linkedin: 'https://www.linkedin.com/in/fabian-kramer-400500127',
   legal: {

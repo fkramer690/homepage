@@ -13,6 +13,8 @@ Static website for FK Solution Design GmbH, built with [Astro](https://astro.bui
 | Colors, typography, layout | `src/styles/global.css` |
 | Logo | `src/components/Logo.astro`, `public/favicon.svg` |
 
+The contact form uses [Web3Forms](https://web3forms.com). Its access key is stored as the repository secret `WEB3FORMS_ACCESS_KEY` (Settings → Secrets and variables → Actions) and injected at build time. For local testing, run `PUBLIC_WEB3FORMS_KEY=<key> npm run dev`.
+
 Setting `bookingUrl` in `src/site.ts` (e.g. a Microsoft Bookings page) turns all "Book a call" buttons into links to that page; otherwise they open an email.
 
 ## Local development
