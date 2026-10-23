@@ -1,0 +1,180 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from './Header.astro';
+import Footer from './Footer.astro';
+import Blueprint from './Blueprint.astro';
+import Logo from './Logo.astro';
+import { en } from '../i18n/en';
+import { de } from '../i18n/de';
+import { site, contactHref } from '../site';
+
+interface Props {
+  lang: 'en' | 'de';
+}
+const { lang } = Astro.props;
+const t = lang === 'de' ? de : en;
+const base = import.meta.env.BASE_URL;
+const enHome = base;
+const deHome = `${base}de/`;
+const home = lang === 'de' ? deHome : enHome;
+const switchHref = lang === 'de' ? enHome : deHome;
+const cta = contactHref(t.hero.mailSubject);
+const ctaExternal = Boolean(site.bookingUrl);
+const [qOpen, qClose] = lang === 'de' ? ['„', '“'] : ['“', '”'];
+---
+<Base lang={lang} title={t.meta.title} description={t.meta.description} alternates={{ en: enHome, de: deHome }}>
+  <a class="skip-link" href="#main">{lang === 'de' ? 'Zum Inhalt springen' : 'Skip to content'}</a>
+  <Header t={t} home={home} switchHref={switchHref} />
+
+  <main id="main">
+    <section class="hero dark grid-bg">
+      <Blueprint />
+      <div class="container hero-inner">
+        <p class="eyebrow mono">{t.hero.eyebrow}</p>
+        <h1>{t.hero.title}</h1>
+        <p class="hero-focus">
+          {t.hero.focus.map((f, i) => (<>{i > 0 && <span class="sep" aria-hidden="true">·</span>}<span>{f}</span></>))}
+        </p>
+        <p class="hero-lead">{t.hero.lead}</p>
+        <div class="hero-ctas">
+          <a class="btn" href={cta} {...(ctaExternal ? { target: '_blank', rel: 'noopener' } : {})}>{t.hero.ctaPrimary}</a>
+          <a class="btn btn-ghost" href="#references">{t.hero.ctaSecondary}</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="proof" aria-label={lang === 'de' ? 'Kennzahlen' : 'Key figures'}>
+      <div class="container">
+        <ul class="proof-list">
+          {t.proof.map((p) => (
+            <li>
+              <span class="proof-value">{p.value}</span>
+              <span class="proof-label mono">{p.label}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="role">
+      <div class="container">
+        <p class="label mono">{t.role.label}</p>
+        <h2>{t.role.title}</h2>
+        <div class="two-col">
+          <div>
+            <h3>{t.role.situationTitle}</h3>
+            <p>{t.role.situation}</p>
+          </div>
+          <div>
+            <h3>{t.role.approachTitle}</h3>
+            <p>{t.role.approach}</p>
+          </div>
+        </div>
+        <blockquote class="quote"><p>{qOpen}{t.role.quote}{qClose}</p></blockquote>
+      </div>
+    </section>
+
+    <section class="section alt" id="services">
+      <div class="container">
+        <p class="label mono">{t.services.label}</p>
+        <h2>{t.services.title}</h2>
+        <ul class="cards">
+          {t.services.items.map((s, i) => (
+            <li class="card">
+              <span class="card-index mono">{String(i + 1).padStart(2, '0')}</span>
+              <h3>{s.title}</h3>
+              <p>{s.text}</p>
+            </li>
+          ))}
+        </ul>
+        <div class="focus">
+          <p class="label mono">{t.services.focusLabel}</p>
+          <ul class="tags">
+            {t.services.focus.map((f) => <li>{f}</li>)}
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="references">
+      <div class="container">
+        <p class="label mono">{t.references.label}</p>
+        <h2>{t.references.title}</h2>
+        <ul class="refs">
+          {t.references.items.map((r) => (
+            <li class="ref">
+              <p class="ref-sector mono">{r.sector}</p>
+              <h3>{r.title}</h3>
+              <p>{r.text}</p>
+              <ul class="tags tags-small">
+                {r.tags.map((tag) => <li>{tag}</li>)}
+              </ul>
+            </li>
+          ))}
+        </ul>
+        <p class="note">{t.references.note}</p>
+      </div>
+    </section>
+
+    <section class="section alt" id="approach">
+      <div class="container">
+        <p class="label mono">{t.approach.label}</p>
+        <h2>{t.approach.title}</h2>
+        <ol class="steps">
+          {t.approach.steps.map((s, i) => (
+            <li>
+              <span class="step-no mono">{String(i + 1).padStart(2, '0')}</span>
+              <h3>{s.title}</h3>
+              <p>{s.text}</p>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container about">
+        <div class="about-main">
+          <p class="label mono">{t.about.label}</p>
+          <h2>{t.about.title}</h2>
+          <p class="about-sub">{t.about.subtitle}</p>
+          {t.about.paragraphs.map((p) => <p>{p}</p>)}
+          <p><a class="text-link" href={site.linkedin} rel="noopener">{t.about.linkedin} →</a></p>
+        </div>
+        <aside class="about-facts">
+          <Logo size={72} class="about-logo" />
+          <dl>
+            {t.about.facts.map((f) => (
+              <div>
+                <dt class="mono">{f.label}</dt>
+                <dd>{f.text}</dd>
+              </div>
+            ))}
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <section class="contact dark grid-bg" id="contact">
+      <Blueprint />
+      <div class="container contact-inner">
+        <p class="label mono">{t.contact.label}</p>
+        <h2>{t.contact.title}</h2>
+        <p class="contact-text">{t.contact.text}</p>
+        <a class="btn" href={cta} {...(ctaExternal ? { target: '_blank', rel: 'noopener' } : {})}>{t.contact.cta}</a>
+        <dl class="contact-list">
+          <div>
+            <dt class="mono">{t.contact.emailLabel}</dt>
+            <dd><a href={`mailto:${site.email}`}>{site.email}</a></dd>
+          </div>
+          <div>
+            <dt class="mono">{t.contact.linkedinLabel}</dt>
+            <dd><a href={site.linkedin} rel="noopener">Fabian Kramer</a></dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+  </main>
+
+  <Footer t={t} switchHref={switchHref} />
+</Base>

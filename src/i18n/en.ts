@@ -1,0 +1,157 @@
+export const en = {
+  lang: 'en',
+  meta: {
+    title: 'FK Solution Design – Salesforce architecture for manufacturers',
+    description:
+      'Independent Salesforce Enterprise Architect for manufacturing companies. After-sales, service, Field Service and B2B sales – on the client side, not tied to a vendor or implementation partner.',
+  },
+  nav: {
+    services: 'Services',
+    references: 'References',
+    about: 'About',
+    contact: 'Contact',
+    cta: 'Book a call',
+    switchLabel: 'Deutsch',
+  },
+  hero: {
+    eyebrow: 'FK Solution Design GmbH · Cologne',
+    title: 'Salesforce architecture for manufacturers – on the client side.',
+    focus: ['After-Sales', 'Service', 'Field Service', 'B2B Sales'],
+    lead: 'The central architectural authority between your business, your IT and your implementation partners.',
+    ctaPrimary: 'Book a 30-minute call',
+    ctaSecondary: 'See references',
+    mailSubject: 'Salesforce architecture – first call',
+  },
+  proof: [
+    { value: '8', label: 'years Salesforce' },
+    { value: '20+', label: 'enterprise projects' },
+    { value: '8 · 32', label: 'teams · developers in one program' },
+    { value: 'Global', label: 'multi-country rollouts' },
+    { value: '0', label: 'ties to vendors or partners' },
+  ],
+  role: {
+    label: 'The role',
+    title: 'Somebody has to own the big picture.',
+    situationTitle: 'The situation',
+    situation:
+      'Many manufacturers run Salesforce with several implementation partners, a growing number of clouds and close links to ERP, telephony and service systems. Every partner delivers their piece. Nobody owns the whole.',
+    approachTitle: 'What I do about it',
+    approach:
+      'I work as the central architectural authority on your side. I own solution design and the overall architecture, set governance and DevOps standards, review what partners deliver – and challenge it before it gets expensive.',
+    quote: 'Not everything that can be built in Salesforce should be built in Salesforce.',
+  },
+  services: {
+    label: 'Services',
+    title: 'What I take care of',
+    items: [
+      {
+        title: 'Architecture & solution design',
+        text: 'Target architecture and solution design for complex Salesforce landscapes with several clouds, portals and integrations.',
+      },
+      {
+        title: 'Partner steering & governance',
+        text: 'One common governance and release framework across several implementation partners – and someone who actually reviews the deliveries.',
+      },
+      {
+        title: 'DevOps & release management',
+        text: 'Release processes, branching, code quality standards and automated checks, e.g. with sfdx-hardis.',
+      },
+      {
+        title: 'Integration',
+        text: 'Salesforce connected to ERP, middleware and telephony: SAP, MuleSoft, Genesys, Microsoft Teams.',
+      },
+      {
+        title: 'Project management & nearshore',
+        text: 'Planning and steering of programs, including coordination of nearshore development teams.',
+      },
+      {
+        title: 'Make-or-buy & license forecasts',
+        text: 'Should this be built in Salesforce at all? Best-of-breed alternatives and license costs, assessed before the decision is made.',
+      },
+    ],
+    focusLabel: 'Focus areas',
+    focus: [
+      'After-sales & service',
+      'Field Service',
+      'Customer & partner portals',
+      'B2B sales: Manufacturing Cloud, CPQ, B2B Commerce',
+    ],
+  },
+  references: {
+    label: 'References',
+    title: 'Selected work',
+    note: 'Client names withheld for confidentiality. Details on request.',
+    items: [
+      {
+        sector: 'Global food ingredients manufacturer',
+        title: 'First worldwide Salesforce Manufacturing Cloud rollout',
+        text: 'Global rollout including CPQ, a product configurator and a customer portal.',
+        tags: ['Manufacturing Cloud', 'CPQ', 'Experience Cloud'],
+      },
+      {
+        sector: 'Major German shipbuilder',
+        title: 'After-sales optimisation and subcontractor portal',
+        text: 'Portal for subcontractors in after-sales, including a make-or-buy evaluation of the solution.',
+        tags: ['Experience Cloud', 'Service Cloud', 'Make-or-buy'],
+      },
+      {
+        sector: 'HVAC and sanitary systems manufacturer',
+        title: 'Global CTI rollout',
+        text: 'Architecture support for a worldwide telephony integration in customer service.',
+        tags: ['Service Cloud Voice', 'Genesys', 'MuleSoft', 'Microsoft Teams'],
+      },
+      {
+        sector: 'Global manufacturing group',
+        title: 'Embedded chat proof of concept',
+        text: 'Proof of concept for an embedded chat solution, plus a rollout plan for 12 locales.',
+        tags: ['Service Cloud', 'Messaging', 'Rollout planning'],
+      },
+      {
+        sector: 'Enterprise program',
+        title: 'Governance across several implementation partners',
+        text: 'Steering of up to 8 project teams and 32 developers, with one common governance and release framework for all partners.',
+        tags: ['Governance', 'DevOps', 'Release management'],
+      },
+    ],
+  },
+  approach: {
+    label: 'How I work',
+    title: 'From assessment to global rollout',
+    steps: [
+      { title: 'Assess', text: 'Current architecture, partner landscape, licenses: what is there and what hurts.' },
+      { title: 'Design', text: 'Target architecture, make-or-buy decisions and a roadmap that the business can follow.' },
+      { title: 'Govern', text: 'Standards for governance, DevOps and releases, and reviews of what partners deliver.' },
+      { title: 'Deliver', text: 'Hands-on support through implementation, up to the global rollout.' },
+    ],
+  },
+  about: {
+    label: 'About',
+    title: 'Fabian Kramer',
+    subtitle: 'Salesforce Enterprise Architect · Cologne/Bonn',
+    paragraphs: [
+      'I help manufacturing companies turn Salesforce into a reliable backbone for sales, service and after-sales – as the architect on the client side.',
+      'Most of my recent work is with German manufacturers operating globally: from the first worldwide Salesforce Manufacturing Cloud rollout to a global CTI rollout with Service Cloud Voice and Genesys, a subcontractor portal for after-sales in shipbuilding, and an embedded chat solution with a rollout plan for 12 locales.',
+      'I’m not tied to a vendor or an implementation partner. That’s why I regularly ask whether something should be built in Salesforce at all. Make-or-buy evaluations, license forecasts and best-of-breed alternatives are part of the job, not an afterthought.',
+    ],
+    facts: [
+      { label: 'Since 2020', text: 'Founder of FK Solution Design GmbH, Cologne' },
+      { label: '2022–2025', text: 'Co-founder of Blue Apes Consulting GmbH (up to 11 people, sold)' },
+      { label: 'Education', text: 'M.Sc. Information Systems, University of Koblenz-Landau' },
+    ],
+    linkedin: 'LinkedIn profile',
+  },
+  contact: {
+    label: 'Contact',
+    title: 'Planning or rescuing a Salesforce program?',
+    text: 'Tell me where you stand. A first call takes 30 minutes – worst case, you walk away with a second opinion.',
+    cta: 'Book a 30-minute call',
+    emailLabel: 'Email',
+    linkedinLabel: 'LinkedIn',
+  },
+  footer: {
+    imprint: 'Legal notice',
+    privacy: 'Privacy',
+  },
+};
+
+export type Dict = typeof en;

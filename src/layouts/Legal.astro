@@ -1,0 +1,23 @@
+---
+import Base from './Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { de } from '../i18n/de';
+
+interface Props {
+  title: string;
+}
+const { title } = Astro.props;
+const base = import.meta.env.BASE_URL;
+---
+<Base lang="de" title={`${title} – FK Solution Design`} description={title} noindex>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+  <Header t={de} home={`${base}de/`} switchHref={base} />
+  <main id="main" class="section legal">
+    <div class="container legal-inner">
+      <h1>{title}</h1>
+      <slot />
+    </div>
+  </main>
+  <Footer t={de} switchHref={base} />
+</Base>

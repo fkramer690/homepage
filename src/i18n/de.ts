@@ -1,0 +1,157 @@
+import type { Dict } from './en';
+
+export const de: Dict = {
+  lang: 'de',
+  meta: {
+    title: 'FK Solution Design – Salesforce-Architektur für Hersteller',
+    description:
+      'Unabhängiger Salesforce Enterprise Architect für Fertigungsunternehmen. After-Sales, Service, Field Service und B2B-Vertrieb – auf Kundenseite, ohne Bindung an Hersteller oder Implementierungspartner.',
+  },
+  nav: {
+    services: 'Leistungen',
+    references: 'Referenzen',
+    about: 'Über mich',
+    contact: 'Kontakt',
+    cta: 'Termin vereinbaren',
+    switchLabel: 'English',
+  },
+  hero: {
+    eyebrow: 'FK Solution Design GmbH · Köln',
+    title: 'Salesforce-Architektur für Hersteller – auf Kundenseite.',
+    focus: ['After-Sales', 'Service', 'Field Service', 'B2B-Vertrieb'],
+    lead: 'Die zentrale Architektur-Instanz zwischen Fachbereich, interner IT und Ihren Implementierungspartnern.',
+    ctaPrimary: '30-Minuten-Gespräch vereinbaren',
+    ctaSecondary: 'Referenzen ansehen',
+    mailSubject: 'Salesforce-Architektur – Erstgespräch',
+  },
+  proof: [
+    { value: '8', label: 'Jahre Salesforce' },
+    { value: '20+', label: 'Enterprise-Projekte' },
+    { value: '8 · 32', label: 'Teams · Entwickler in einem Programm' },
+    { value: 'Global', label: 'Rollouts über viele Länder' },
+    { value: '0', label: 'Bindungen an Hersteller oder Partner' },
+  ],
+  role: {
+    label: 'Die Rolle',
+    title: 'Einer muss das Gesamtbild verantworten.',
+    situationTitle: 'Die Lage',
+    situation:
+      'Viele Hersteller betreiben Salesforce mit mehreren Implementierungspartnern, immer mehr Clouds und enger Anbindung an ERP, Telefonie und Service-Systeme. Jeder Partner liefert sein Stück. Für das Ganze ist niemand zuständig.',
+    approachTitle: 'Was ich dagegen tue',
+    approach:
+      'Ich arbeite als zentrale Architektur-Instanz auf Ihrer Seite. Ich verantworte Lösungsdesign und Gesamtarchitektur, setze Standards für Governance und DevOps, prüfe, was Partner liefern – und hinterfrage es, bevor es teuer wird.',
+    quote: 'Nicht alles, was man in Salesforce bauen kann, sollte man in Salesforce bauen.',
+  },
+  services: {
+    label: 'Leistungen',
+    title: 'Worum ich mich kümmere',
+    items: [
+      {
+        title: 'Architektur & Lösungsdesign',
+        text: 'Zielarchitektur und Lösungsdesign für komplexe Salesforce-Landschaften mit mehreren Clouds, Portalen und Schnittstellen.',
+      },
+      {
+        title: 'Partnersteuerung & Governance',
+        text: 'Ein gemeinsames Governance- und Release-Framework über mehrere Implementierungspartner – und jemand, der die Lieferungen tatsächlich prüft.',
+      },
+      {
+        title: 'DevOps & Release-Management',
+        text: 'Release-Prozesse, Branching, Standards für Codequalität und automatische Prüfungen, z. B. mit sfdx-hardis.',
+      },
+      {
+        title: 'Integration',
+        text: 'Salesforce verbunden mit ERP, Middleware und Telefonie: SAP, MuleSoft, Genesys, Microsoft Teams.',
+      },
+      {
+        title: 'Projektmanagement & Nearshore',
+        text: 'Planung und Steuerung von Programmen, inklusive Koordination von Nearshore-Entwicklungsteams.',
+      },
+      {
+        title: 'Make-or-Buy & Lizenzprognosen',
+        text: 'Gehört das überhaupt in Salesforce? Best-of-Breed-Alternativen und Lizenzkosten, bewertet bevor die Entscheidung fällt.',
+      },
+    ],
+    focusLabel: 'Schwerpunkte',
+    focus: [
+      'After-Sales & Service',
+      'Field Service',
+      'Kunden- & Partnerportale',
+      'B2B-Vertrieb: Manufacturing Cloud, CPQ, B2B Commerce',
+    ],
+  },
+  references: {
+    label: 'Referenzen',
+    title: 'Ausgewählte Projekte',
+    note: 'Kundennamen aus Vertraulichkeitsgründen nicht genannt. Details auf Anfrage.',
+    items: [
+      {
+        sector: 'Globaler Hersteller von Lebensmittelzutaten',
+        title: 'Erster weltweiter Rollout der Salesforce Manufacturing Cloud',
+        text: 'Globaler Rollout inklusive CPQ, Produktkonfigurator und Kundenportal.',
+        tags: ['Manufacturing Cloud', 'CPQ', 'Experience Cloud'],
+      },
+      {
+        sector: 'Großes deutsches Werftunternehmen',
+        title: 'After-Sales-Optimierung und Subunternehmer-Portal',
+        text: 'Portal für Subunternehmer im After-Sales, inklusive Make-or-Buy-Bewertung der Lösung.',
+        tags: ['Experience Cloud', 'Service Cloud', 'Make-or-Buy'],
+      },
+      {
+        sector: 'Hersteller von Heizungs-, Klima- und Sanitärsystemen',
+        title: 'Globaler CTI-Rollout',
+        text: 'Architektur-Unterstützung bei einer weltweiten Telefonie-Integration im Kundenservice.',
+        tags: ['Service Cloud Voice', 'Genesys', 'MuleSoft', 'Microsoft Teams'],
+      },
+      {
+        sector: 'Globaler Fertigungskonzern',
+        title: 'Proof of Concept für Embedded Chat',
+        text: 'Proof of Concept für eine eingebettete Chat-Lösung, dazu ein Rollout-Plan für 12 Locales.',
+        tags: ['Service Cloud', 'Messaging', 'Rollout-Planung'],
+      },
+      {
+        sector: 'Enterprise-Programm',
+        title: 'Governance über mehrere Implementierungspartner',
+        text: 'Steuerung von bis zu 8 Projektteams und 32 Entwicklern, mit einem gemeinsamen Governance- und Release-Framework für alle Partner.',
+        tags: ['Governance', 'DevOps', 'Release-Management'],
+      },
+    ],
+  },
+  approach: {
+    label: 'Arbeitsweise',
+    title: 'Von der Bestandsaufnahme bis zum globalen Rollout',
+    steps: [
+      { title: 'Analysieren', text: 'Bestehende Architektur, Partnerlandschaft, Lizenzen: was da ist und wo es hakt.' },
+      { title: 'Entwerfen', text: 'Zielarchitektur, Make-or-Buy-Entscheidungen und eine Roadmap, der der Fachbereich folgen kann.' },
+      { title: 'Steuern', text: 'Standards für Governance, DevOps und Releases, und Reviews der Partnerlieferungen.' },
+      { title: 'Umsetzen', text: 'Begleitung der Umsetzung bis zum globalen Rollout.' },
+    ],
+  },
+  about: {
+    label: 'Über mich',
+    title: 'Fabian Kramer',
+    subtitle: 'Salesforce Enterprise Architect · Köln/Bonn',
+    paragraphs: [
+      'Ich helfe Fertigungsunternehmen, Salesforce zu einem verlässlichen Rückgrat für Vertrieb, Service und After-Sales zu machen – als Architekt auf Kundenseite.',
+      'Zuletzt habe ich vor allem für deutsche Hersteller mit globalem Geschäft gearbeitet: vom ersten weltweiten Rollout der Salesforce Manufacturing Cloud über einen globalen CTI-Rollout mit Service Cloud Voice und Genesys bis zu einem Subunternehmer-Portal für den After-Sales im Schiffbau und einer Embedded-Chat-Lösung mit Rollout-Plan für 12 Locales.',
+      'Ich bin an keinen Hersteller und keinen Implementierungspartner gebunden. Deshalb frage ich regelmäßig, ob etwas überhaupt in Salesforce gebaut werden sollte. Make-or-Buy-Bewertungen, Lizenzprognosen und Best-of-Breed-Alternativen gehören zum Job und sind kein Nachgedanke.',
+    ],
+    facts: [
+      { label: 'Seit 2020', text: 'Gründer der FK Solution Design GmbH, Köln' },
+      { label: '2022–2025', text: 'Mitgründer der Blue Apes Consulting GmbH (bis zu 11 Mitarbeitende, verkauft)' },
+      { label: 'Studium', text: 'M.Sc. Wirtschaftsinformatik, Universität Koblenz-Landau' },
+    ],
+    linkedin: 'LinkedIn-Profil',
+  },
+  contact: {
+    label: 'Kontakt',
+    title: 'Sie planen ein Salesforce-Programm oder müssen eins retten?',
+    text: 'Erzählen Sie mir, wo Sie stehen. Ein erstes Gespräch dauert 30 Minuten – schlimmstenfalls haben Sie danach eine zweite Meinung.',
+    cta: '30-Minuten-Gespräch vereinbaren',
+    emailLabel: 'E-Mail',
+    linkedinLabel: 'LinkedIn',
+  },
+  footer: {
+    imprint: 'Impressum',
+    privacy: 'Datenschutz',
+  },
+};

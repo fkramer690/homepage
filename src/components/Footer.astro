@@ -1,0 +1,28 @@
+---
+import Logo from './Logo.astro';
+import type { Dict } from '../i18n/en';
+import { site } from '../site';
+
+interface Props {
+  t: Dict;
+  switchHref: string;
+}
+const { t, switchHref } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const year = new Date().getFullYear();
+---
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <Logo size={28} />
+      <span>{site.company} · {t.lang === 'de' ? 'Köln' : 'Cologne'}</span>
+    </div>
+    <nav class="footer-nav" aria-label="Footer">
+      <a href={`${base}impressum/`}>{t.footer.imprint}</a>
+      <a href={`${base}datenschutz/`}>{t.footer.privacy}</a>
+      <a href={site.linkedin} rel="noopener">LinkedIn</a>
+      <a href={switchHref}>{t.nav.switchLabel}</a>
+    </nav>
+    <p class="footer-copy">© {year} {site.company}</p>
+  </div>
+</footer>

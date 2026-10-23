@@ -1,0 +1,37 @@
+---
+import Logo from './Logo.astro';
+import type { Dict } from '../i18n/en';
+import { contactHref } from '../site';
+
+interface Props {
+  t: Dict;
+  home: string;
+  switchHref: string;
+}
+const { t, home, switchHref } = Astro.props;
+const anchor = (id: string) => `${home}#${id}`;
+---
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href={home} aria-label="FK Solution Design – Home">
+      <Logo size={36} />
+      <span class="brand-text">
+        <span class="brand-name">FK Solution Design</span>
+        <span class="brand-sub">Salesforce Architecture</span>
+      </span>
+    </a>
+    <nav class="main-nav" aria-label={t.lang === 'de' ? 'Hauptnavigation' : 'Main navigation'}>
+      <a href={anchor('services')}>{t.nav.services}</a>
+      <a href={anchor('references')}>{t.nav.references}</a>
+      <a href={anchor('about')}>{t.nav.about}</a>
+      <a href={anchor('contact')}>{t.nav.contact}</a>
+    </nav>
+    <div class="header-actions">
+      <a class="lang-switch" href={switchHref} hreflang={t.lang === 'de' ? 'en' : 'de'} lang={t.lang === 'de' ? 'en' : 'de'}>
+        <span class="mono">{t.lang === 'de' ? 'EN' : 'DE'}</span>
+        <span class="visually-hidden">{t.nav.switchLabel}</span>
+      </a>
+      <a class="btn btn-small" href={contactHref(t.hero.mailSubject)}>{t.nav.cta}</a>
+    </div>
+  </div>
+</header>
