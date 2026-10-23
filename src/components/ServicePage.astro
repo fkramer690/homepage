@@ -1,0 +1,145 @@
+---
+import Page from '../layouts/Page.astro';
+import ExternalMark from './ExternalMark.astro';
+import ContactForm from './ContactForm.astro';
+import AuthorBox from './AuthorBox.astro';
+import Blueprint from './Blueprint.astro';
+import { render } from 'astro:content';
+import { en } from '../i18n/en';
+import { de } from '../i18n/de';
+import { site, contactHref, contactExternal } from '../site';
+import { postHref } from '../lib/blog';
+import { type Service, servicesIndex, serviceHref, getServiceTranslation, getServicePosts } from '../lib/services';
+
+interface Props {
+  service: Service;
+}
+const { service } = Astro.props;
+const { lang, title, description, lead, situations, deliverables, results, phases, faq, order } = service.data;
+const t = lang === 'de' ? de : en;
+const { Content } = await render(service);
+const translation = await getServiceTranslation(service);
+const posts = await getServicePosts(service);
+const alternates = translation
+  ? lang === 'de'
+    ? { en: serviceHref(translation), de: serviceHref(service) }
+    : { en: serviceHref(service), de: serviceHref(translation) }
+  : undefined;
+const url = new URL(serviceHref(service), Astro.site).href;
+const base = import.meta.env.BASE_URL;
+const abs = (path: string) => new URL(path, Astro.site).href;
+const ctaAttrs = contactExternal ? { target: '_blank', rel: 'noopener' } : {};
+const suffix = ' | FK Solution Design';
+const pageTitle = title.length + suffix.length <= 60 ? title + suffix : title;
+const ogImage = `${base}og/${lang}/services/${service.data.slug}.png`;
+// The card title on the home page is the short name of the service.
+const name = t.services.items[order - 1]?.title ?? title;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Service',
+      '@id': `${url}#service`,
+      name,
+      serviceType: name,
+      description,
+      url,
+      inLanguage: lang,
+      image: abs(ogImage),
+      provider: { '@type': 'Organization', '@id': `${abs(base)}#organization`, name: site.company },
+    },
+    {
+      '@type': 'FAQPage',
+      '@id': `${url}#faq`,
+      inLanguage: lang,
+      mainEntity: faq.map(({ q, a }) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })),
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'FK Solution Design', item: abs(lang === 'de' ? `${base}de/` : base) },
+        { '@type': 'ListItem', position: 2, name: t.servicePage.indexTitle, item: abs(servicesIndex(lang)) },
+        { '@type': 'ListItem', position: 3, name, item: url },
+      ],
+    },
+  ],
+};
+---
+<Page lang={lang} title={pageTitle} description={description} alternates={alternates} image={ogImage} hasContact>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </Fragment>
+  <article class="section post service">
+    <div class="container post-inner">
+      <a class="post-back mono" href={servicesIndex(lang)}>← {t.servicePage.back}</a>
+      <p class="eyebrow mono">{String(order).padStart(2, '0')} · {name}</p>
+      <h1>{title}</h1>
+      <p class="service-lead">{lead}</p>
+      <a class="btn" href={contactHref(name)} {...ctaAttrs}>{t.nav.cta}{contactExternal && <ExternalMark label={t.nav.newTab} />}</a>
+
+      <section class="service-block" aria-labelledby="situations">
+        <h2 id="situations">{t.servicePage.situations}</h2>
+        <ul class="service-list">{situations.map((item) => <li>{item}</li>)}</ul>
+      </section>
+      <div class="service-columns">
+        <section class="service-block" aria-labelledby="deliverables">
+          <h2 id="deliverables">{t.servicePage.deliverables}</h2>
+          <ul class="service-list check">{deliverables.map((item) => <li>{item}</li>)}</ul>
+        </section>
+        <section class="service-block results" aria-labelledby="results">
+          <h2 id="results">{t.servicePage.results}</h2>
+          <ul class="service-list check">{results.map((item) => <li>{item}</li>)}</ul>
+        </section>
+      </div>
+      <section class="service-block" aria-labelledby="phases">
+        <h2 id="phases">{t.servicePage.phases}</h2>
+        <ol class="phase-list">
+          {phases.map((phase, i) => (
+            <li class="card">
+              <span class="card-index mono">{String(i + 1).padStart(2, '0')}</span>
+              <h3>{phase.title}</h3>
+              <p>{phase.text}</p>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <div class="prose">
+        <Content />
+      </div>
+
+      <section class="post-faq" aria-labelledby="faq">
+        <h2 id="faq">{t.servicePage.faq}</h2>
+        {faq.map(({ q, a }) => (
+          <details class="faq-item">
+            <summary><h3>{q}</h3></summary>
+            <p>{a}</p>
+          </details>
+        ))}
+      </section>
+      <AuthorBox lang={lang} />
+      {posts.length > 0 && (
+        <nav class="post-related" aria-label={t.servicePage.posts}>
+          <p class="label mono">{t.servicePage.posts}</p>
+          <ul>
+            {posts.map((p) => <li><a href={postHref(p)}>{p.data.title}</a></li>)}
+          </ul>
+        </nav>
+      )}
+    </div>
+  </article>
+  <section class="contact dark grid-bg" id="contact">
+    <Blueprint />
+    <div class="container contact-inner">
+      <div class="contact-intro">
+        <p class="label mono">{t.contact.label}</p>
+        <h2>{t.servicePage.ctaTitle}</h2>
+        <p class="contact-text">{t.servicePage.ctaText}</p>
+        <a class="btn" href={contactHref(name)} {...ctaAttrs}>{t.nav.cta}{contactExternal && <ExternalMark label={t.nav.newTab} />}</a>
+        {contactExternal && <p class="booking-note">{t.contact.bookingNote}</p>}
+      </div>
+      <ContactForm t={t} subject={`${t.contact.form.subject}: ${name}`} />
+    </div>
+  </section>
+</Page>

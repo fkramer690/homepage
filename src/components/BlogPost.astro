@@ -8,6 +8,7 @@ import { render } from 'astro:content';
 import { en } from '../i18n/en';
 import { de } from '../i18n/de';
 import { site, contactHref, contactExternal } from '../site';
+import { getPostService, serviceHref } from '../lib/services';
 import { type Post, blogIndex, postHref, getTranslation, getRelated, readingMinutes, formatDate } from '../lib/blog';
 
 interface Props {
@@ -19,6 +20,7 @@ const t = lang === 'de' ? de : en;
 const { Content } = await render(post);
 const translation = await getTranslation(post);
 const related = await getRelated(post);
+const service = await getPostService(post);
 const alternates = translation
   ? lang === 'de'
     ? { en: postHref(translation), de: postHref(post) }
@@ -106,6 +108,12 @@ const schema = {
         ))}
       </section>
       <AuthorBox lang={lang} />
+      {service && (
+        <a class="post-service" href={serviceHref(service)}>
+          <span class="label mono">{t.blog.relatedService}</span>
+          <span class="post-service-title">{t.services.items[service.data.order - 1]?.title ?? service.data.title} →</span>
+        </a>
+      )}
       {related.length > 0 && (
         <nav class="post-related" aria-label={t.blog.related}>
           <p class="label mono">{t.blog.related}</p>

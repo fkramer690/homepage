@@ -1,0 +1,35 @@
+---
+import Page from '../layouts/Page.astro';
+import { en } from '../i18n/en';
+import { de } from '../i18n/de';
+import { getServices, serviceHref } from '../lib/services';
+
+interface Props {
+  lang: 'en' | 'de';
+}
+const { lang } = Astro.props;
+const t = lang === 'de' ? de : en;
+const base = import.meta.env.BASE_URL;
+const services = await getServices(lang);
+---
+<Page lang={lang} title={t.servicePage.metaTitle} description={t.servicePage.indexIntro} alternates={{ en: `${base}services/`, de: `${base}de/leistungen/` }}>
+  <section class="section blog">
+    <div class="container">
+      <p class="eyebrow mono">FK Solution Design</p>
+      <h1>{t.servicePage.indexTitle}</h1>
+      <p class="blog-intro">{t.servicePage.indexIntro}</p>
+      <ul class="cards">
+        {services.map((s) => (
+          <li class="card card-link">
+            <a href={serviceHref(s)}>
+              <span class="card-index mono">{String(s.data.order).padStart(2, '0')}</span>
+              <h2 class="card-title">{t.services.items[s.data.order - 1]?.title ?? s.data.title}</h2>
+              <p>{s.data.description}</p>
+              <span class="card-more mono">{t.services.more} →</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+</Page>

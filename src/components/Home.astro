@@ -13,6 +13,7 @@ import speaking from '../assets/speaking.jpg';
 import { en } from '../i18n/en';
 import { de } from '../i18n/de';
 import { site, contactHref, contactExternal } from '../site';
+import { getServices, serviceHref } from '../lib/services';
 
 interface Props {
   lang: 'en' | 'de';
@@ -26,6 +27,8 @@ const home = lang === 'de' ? deHome : enHome;
 const switchHref = lang === 'de' ? enHome : deHome;
 const cta = contactHref(t.hero.mailSubject);
 const ctaAttrs = contactExternal ? { target: '_blank', rel: 'noopener' } : {};
+const services = await getServices(lang);
+const serviceLinks = new Map(services.map((s) => [s.data.order, serviceHref(s)]));
 const [qOpen, qClose] = lang === 'de' ? ['„', '“'] : ['“', '”'];
 ---
 <Base lang={lang} title={t.meta.title} description={t.meta.description} alternates={{ en: enHome, de: deHome }}>
@@ -92,13 +95,18 @@ const [qOpen, qClose] = lang === 'de' ? ['„', '“'] : ['“', '”'];
         <p class="label mono">{t.services.label}</p>
         <h2>{t.services.title}</h2>
         <ul class="cards">
-          {t.services.items.map((s, i) => (
-            <li class="card">
-              <span class="card-index mono">{String(i + 1).padStart(2, '0')}</span>
-              <h3>{s.title}</h3>
-              <p>{s.text}</p>
-            </li>
-          ))}
+          {t.services.items.map((s, i) => {
+            const href = serviceLinks.get(i + 1);
+            const inner = (
+              <>
+                <span class="card-index mono">{String(i + 1).padStart(2, '0')}</span>
+                <h3>{s.title}</h3>
+                <p>{s.text}</p>
+                {href && <span class="card-more mono">{t.services.more} →</span>}
+              </>
+            );
+            return href ? <li class="card card-link"><a href={href}>{inner}</a></li> : <li class="card">{inner}</li>;
+          })}
         </ul>
         <div class="focus">
           <p class="label mono">{t.services.focusLabel}</p>
