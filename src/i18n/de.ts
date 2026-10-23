@@ -11,6 +11,7 @@ export const de: Dict = {
     services: 'Leistungen',
     references: 'Referenzen',
     about: 'Über mich',
+    blog: 'Blog',
     contact: 'Kontakt',
     cta: 'Termin vereinbaren',
     newTab: '(öffnet Microsoft Bookings in einem neuen Tab)',
@@ -170,6 +171,18 @@ export const de: Dict = {
       subject: 'Neue Anfrage über die Website',
     },
   },
+  blog: {
+    title: 'Blog',
+    metaTitle: 'Blog – Notizen zur Salesforce-Architektur | FK Solution Design',
+    intro: 'Notizen aus der Salesforce-Arbeit auf Kundenseite bei Fertigungsunternehmen: Architekturentscheidungen, Partnersteuerung, DevOps und die Fragen, die in jedem Enterprise-Projekt aufkommen.',
+    readingTime: 'Min. Lesezeit',
+    published: 'Veröffentlicht',
+    updated: 'Aktualisiert',
+    back: 'Alle Artikel',
+    ctaTitle: 'Stehen Sie vor einer ähnlichen Entscheidung?',
+    ctaText: 'Lassen Sie uns 30 Minuten über Ihr Projekt sprechen. Kein Verkaufsgespräch, sondern der Blick eines Architekten.',
+    authorBio: 'Unabhängiger Salesforce Enterprise Architect auf Kundenseite, für Fertigungsunternehmen in Vertrieb, Service und After-Sales.',
+  },
   notFound: {
     title: 'Diese Seite gibt es nicht.',
     text: 'Der Link ist vielleicht veraltet oder falsch geschrieben. Alles über meine Arbeit als Salesforce-Architekt finden Sie auf der Startseite.',
@@ -179,5 +192,6 @@ export const de: Dict = {
   footer: {
     imprint: 'Impressum',
     privacy: 'Datenschutz',
+    blog: 'Blog',
   },
 };

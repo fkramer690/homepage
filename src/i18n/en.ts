@@ -9,6 +9,7 @@ export const en = {
     services: 'Services',
     references: 'References',
     about: 'About',
+    blog: 'Blog',
     contact: 'Contact',
     cta: 'Book a call',
     newTab: '(opens Microsoft Bookings in a new tab)',
@@ -168,6 +169,18 @@ export const en = {
       subject: 'New inquiry via fk-solution-design website',
     },
   },
+  blog: {
+    title: 'Blog',
+    metaTitle: 'Blog – Salesforce architecture notes | FK Solution Design',
+    intro: 'Notes from client-side Salesforce work at manufacturers: architecture decisions, partner governance, DevOps and the questions that come up in every enterprise project.',
+    readingTime: 'min read',
+    published: 'Published',
+    updated: 'Updated',
+    back: 'All articles',
+    ctaTitle: 'Facing a similar decision?',
+    ctaText: 'Let’s talk for 30 minutes about your project. No sales pitch, just an architect’s view.',
+    authorBio: 'Independent Salesforce Enterprise Architect on the client side, working with manufacturers on sales, service and after-sales.',
+  },
   notFound: {
     title: 'This page doesn’t exist.',
     text: 'The link may be outdated or mistyped. Everything about my work as a Salesforce architect is on the start page.',
@@ -177,6 +190,7 @@ export const en = {
   footer: {
     imprint: 'Legal notice',
     privacy: 'Privacy',
+    blog: 'Blog',
   },
 };
 
