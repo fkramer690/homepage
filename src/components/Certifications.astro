@@ -4,6 +4,7 @@ import { en } from '../i18n/en';
 import { de } from '../i18n/de';
 import { site } from '../site';
 import ExternalMark from './ExternalMark.astro';
+import CertItem from './CertItem.astro';
 import { architectCerts, salesforceCerts, otherCerts, type Cert } from '../data/certifications';
 
 interface Props {
@@ -26,23 +27,25 @@ const groups = Object.entries(otherCerts) as [keyof typeof otherCerts, Cert[]][]
       <h2>{c.whyTitle}</h2>
       {c.why.map((p) => <p>{p}</p>)}
 
+      <p class="cert-hint">{c.hint}</p>
+
       <h2>{c.architectTitle} <span class="cert-count mono">{architectCerts.length}</span></h2>
-      <ul class="cert-list">
-        {architectCerts.map((cert) => <li><span>{cert.name}</span><span class="mono">{cert.year}</span></li>)}
-      </ul>
+      <div class="cert-list">
+        {architectCerts.map((cert) => <CertItem cert={cert} lang={lang} />)}
+      </div>
 
       <h2>{c.salesforceTitle} <span class="cert-count mono">{salesforceCerts.length}</span></h2>
-      <ul class="cert-list">
-        {salesforceCerts.map((cert) => <li><span>{cert.name}</span><span class="mono">{cert.year}</span></li>)}
-      </ul>
+      <div class="cert-list">
+        {salesforceCerts.map((cert) => <CertItem cert={cert} lang={lang} />)}
+      </div>
 
       <h2>{c.otherTitle}</h2>
       {groups.map(([key, certs]) => (
         <>
           <h3>{c.groups[key]}</h3>
-          <ul class="cert-list">
-            {certs.map((cert) => <li><span>{cert.name}</span><span class="mono">{cert.year}</span></li>)}
-          </ul>
+          <div class="cert-list">
+            {certs.map((cert) => <CertItem cert={cert} lang={lang} />)}
+          </div>
         </>
       ))}
 

@@ -1,0 +1,13 @@
+---
+import type { Cert } from '../data/certifications';
+
+interface Props {
+  cert: Cert;
+  lang: 'en' | 'de';
+}
+const { cert, lang } = Astro.props;
+---
+<details class="cert-item">
+  <summary><span>{cert.name}</span><span class="mono">{cert.year}</span></summary>
+  <p>{lang === 'de' ? cert.de : cert.en}</p>
+</details>
