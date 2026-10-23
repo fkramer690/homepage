@@ -5,6 +5,7 @@ import Footer from './Footer.astro';
 import Blueprint from './Blueprint.astro';
 import ExternalMark from './ExternalMark.astro';
 import ContactForm from './ContactForm.astro';
+import FloatingContact from './FloatingContact.astro';
 import StructuredData from './StructuredData.astro';
 import { Image } from 'astro:assets';
 import portrait from '../assets/portrait.png';
@@ -190,6 +191,7 @@ const [qOpen, qClose] = lang === 'de' ? ['„', '“'] : ['“', '”'];
       </div>
     </section>
   </main>
+  <FloatingContact t={t} />
 
   <Footer t={t} switchHref={switchHref} />
 </Base>

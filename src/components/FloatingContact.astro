@@ -1,0 +1,41 @@
+---
+// Contact shortcuts that stay on the right edge while scrolling.
+// They hide while the contact section itself is on screen.
+import type { Dict } from '../i18n/en';
+import { contactHref, contactExternal } from '../site';
+
+interface Props {
+  t: Dict;
+  // Where "Send a message" points; the form section on the current page by default.
+  messageHref?: string;
+}
+const { t, messageHref = '#contact' } = Astro.props;
+const ext = contactExternal ? { target: '_blank', rel: 'noopener' } : {};
+---
+<nav class="float-contact" aria-label={t.floating.label}>
+  <a class="float-btn" href={contactHref(t.hero.mailSubject)} {...ext}>
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <rect x="3.5" y="5" width="17" height="15" rx="2.5" />
+      <path d="M3.5 10h17M8 3v4M16 3v4" />
+      <circle cx="12" cy="15" r="2.2" />
+    </svg>
+    <span class="float-label">{t.floating.call}</span>
+  </a>
+  <a class="float-btn" href={messageHref}>
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M4 5.5h16a1.5 1.5 0 0 1 1.5 1.5v9a1.5 1.5 0 0 1-1.5 1.5H10l-4.5 3.5V17.5H4A1.5 1.5 0 0 1 2.5 16V7A1.5 1.5 0 0 1 4 5.5Z" />
+      <path d="M7 10h10M7 13.5h6" />
+    </svg>
+    <span class="float-label">{t.floating.message}</span>
+  </a>
+</nav>
+
+<script>
+  const nav = document.querySelector<HTMLElement>('.float-contact');
+  const contact = document.getElementById('contact');
+  if (nav && contact && 'IntersectionObserver' in window) {
+    new IntersectionObserver(([entry]) => nav.classList.toggle('is-hidden', entry.isIntersecting), {
+      threshold: 0.15,
+    }).observe(contact);
+  }
+</script>

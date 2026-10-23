@@ -186,6 +186,11 @@ export const de: Dict = {
     related: 'Weitere Artikel',
     authorBio: 'Unabhängiger Salesforce Enterprise Architect auf Kundenseite, für Fertigungsunternehmen in Vertrieb, Service und After-Sales.',
   },
+  floating: {
+    label: 'Kontakt',
+    call: '30-Minuten-Termin buchen',
+    message: 'Nachricht senden',
+  },
   notFound: {
     title: 'Diese Seite gibt es nicht.',
     text: 'Der Link ist vielleicht veraltet oder falsch geschrieben. Alles über meine Arbeit als Salesforce-Architekt finden Sie auf der Startseite.',

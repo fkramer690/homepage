@@ -3,6 +3,7 @@
 import Base from './Base.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import FloatingContact from '../components/FloatingContact.astro';
 import { en } from '../i18n/en';
 import { de } from '../i18n/de';
 
@@ -13,8 +14,10 @@ interface Props {
   alternates?: { en: string; de: string };
   ogType?: 'website' | 'article';
   image?: string;
+  // True when the page has its own #contact section (blog articles).
+  hasContact?: boolean;
 }
-const { lang, title, description, alternates, ogType, image } = Astro.props;
+const { lang, title, description, alternates, ogType, image, hasContact = false } = Astro.props;
 const t = lang === 'de' ? de : en;
 const base = import.meta.env.BASE_URL;
 const home = lang === 'de' ? `${base}de/` : base;
@@ -27,5 +30,6 @@ const switchHref = alternates ? (lang === 'de' ? alternates.en : alternates.de) 
   <main id="main">
     <slot />
   </main>
+  <FloatingContact t={t} messageHref={hasContact ? '#contact' : `${home}#contact`} />
   <Footer t={t} switchHref={switchHref} />
 </Base>
