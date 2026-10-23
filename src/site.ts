@@ -12,9 +12,9 @@ export const site = {
     city: 'TODO PLZ Köln',
     phone: '', // optional
     managingDirector: 'Fabian Kramer',
-    register: 'TODO HRB-Nummer',
+    register: 'HRB 103579',
     registerCourt: 'Amtsgericht Köln',
-    vatId: 'TODO USt-IdNr. (DE…)',
+    vatId: 'DE337192507',
   },
 };
 
