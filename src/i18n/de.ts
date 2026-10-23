@@ -170,6 +170,12 @@ export const de: Dict = {
       subject: 'Neue Anfrage über die Website',
     },
   },
+  notFound: {
+    title: 'Diese Seite gibt es nicht.',
+    text: 'Der Link ist vielleicht veraltet oder falsch geschrieben. Alles über meine Arbeit als Salesforce-Architekt finden Sie auf der Startseite.',
+    home: 'Zur Startseite',
+    contact: 'Kontakt aufnehmen',
+  },
   footer: {
     imprint: 'Impressum',
     privacy: 'Datenschutz',
