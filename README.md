@@ -33,6 +33,10 @@ Rules for structure, SEO and AI search are in [docs/blog-guidelines.md](docs/blo
 
 Each service on the home page links to its own page under `/services/` and `/de/leistungen/`, built from Markdown files in `src/content/services/<lang>/` by `src/components/ServicePage.astro`. Rules are in [docs/service-pages.md](docs/service-pages.md); the same build check applies.
 
+### External links
+
+Rule: every external link opens in a new tab. Links in Markdown get `target="_blank"`, the arrow and a screen-reader hint from `src/lib/external-links.mjs` (a Sätteri plugin in `astro.config.mjs`). Links in components need `target="_blank" rel="noopener"` and `<ExternalMark label={t.nav.externalTab} />`. After the build, `scripts/check-links.mjs` checks every page in `dist/` and fails the build on an external link without a new tab (`npm run check:links` runs only the check).
+
 ## Local development
 
 ```sh

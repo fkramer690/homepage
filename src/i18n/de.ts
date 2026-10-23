@@ -15,6 +15,7 @@ export const de: Dict = {
     contact: 'Kontakt',
     cta: 'Termin vereinbaren',
     newTab: '(öffnet Microsoft Bookings in einem neuen Tab)',
+    externalTab: '(öffnet in einem neuen Tab)',
     switchLabel: 'English',
   },
   hero: {

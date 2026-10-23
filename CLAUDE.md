@@ -11,3 +11,7 @@ Every article page has the same fixed structure: takeaways, article body, collap
 ## Service pages
 
 Each service has its own page (`src/content/services/<lang>/`, built by `src/components/ServicePage.astro`). Follow `docs/service-pages.md`; the same content rules and build check as for blog articles apply.
+
+## External links
+
+Every external link opens in a new tab, on every page. Markdown links get this automatically from `src/lib/external-links.mjs`; in components use `target="_blank" rel="noopener"` plus `<ExternalMark>`. `scripts/check-links.mjs` runs after `astro build` and fails on violations; never weaken it.
