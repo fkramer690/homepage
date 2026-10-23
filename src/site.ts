@@ -13,6 +13,9 @@ export const site = {
     endpoint: 'https://api.web3forms.com/submit',
     accessKey: import.meta.env.PUBLIC_WEB3FORMS_KEY ?? '',
   },
+  // Cloudflare Web Analytics (cookieless). The site token comes from the
+  // CF_ANALYTICS_TOKEN repository secret at build time; empty = no tracking.
+  analyticsToken: import.meta.env.PUBLIC_CF_ANALYTICS_TOKEN ?? '',
   linkedin: 'https://www.linkedin.com/in/fabian-kramer-400500127',
   legal: {
     street: 'Hans-Keul-Weg 27',
