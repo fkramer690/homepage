@@ -4,6 +4,7 @@ import '@fontsource/sora/600.css';
 import '@fontsource/ibm-plex-mono/400.css';
 import '../styles/global.css';
 import { site } from '../site';
+import { homeHref } from '../lib/paths';
 
 interface Props {
   lang: 'en' | 'de';
@@ -32,7 +33,7 @@ const abs = (path: string) => new URL(path, Astro.site).href;
       <>
         <link rel="alternate" hreflang="en" href={abs(alternates.en)} />
         <link rel="alternate" hreflang="de" href={abs(alternates.de)} />
-        <link rel="alternate" hreflang="x-default" href={abs(alternates.en)} />
+        <link rel="alternate" hreflang="x-default" href={abs(alternates.de)} />
       </>
     )}
     {noindex && <meta name="robots" content="noindex" />}
@@ -50,7 +51,7 @@ const abs = (path: string) => new URL(path, Astro.site).href;
     <meta property="og:locale" content={lang === 'de' ? 'de_DE' : 'en_US'} />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="sitemap" href={`${base}sitemap-index.xml`} />
-    <link rel="alternate" type="application/rss+xml" title="FK Solution Design – Blog" href={`${base}blog/rss.xml`} />
+    <link rel="alternate" type="application/rss+xml" title="FK Solution Design – Blog" href={`${homeHref(lang)}blog/rss.xml`} />
     <slot name="head" />
   </head>
   <body>

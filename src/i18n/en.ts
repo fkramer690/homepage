@@ -20,6 +20,7 @@ export const en = {
     eyebrow: 'FK Solution Design GmbH · Cologne',
     title: 'Salesforce architecture for manufacturers – on the client side.',
     focus: ['After-Sales', 'Service', 'Field Service', 'B2B Sales'],
+    problem: 'Several implementation partners, one Salesforce org, and nobody owns the whole.',
     lead: 'The central architectural authority between your business, your IT and your implementation partners.',
     ctaPrimary: 'Book a 30-minute call',
     ctaSecondary: 'See references',
@@ -29,7 +30,7 @@ export const en = {
     { value: '8', label: 'years Salesforce' },
     { value: '20+', label: 'enterprise projects' },
     { value: '8 · 32', label: 'teams · developers in one program' },
-    { value: 'Global', label: 'multi-country rollouts' },
+    { value: '25', label: 'Salesforce certifications, 8 architect' },
     { value: '0', label: 'ties to vendors or partners' },
   ],
   role: {
@@ -129,6 +130,21 @@ export const en = {
       { title: 'Govern', text: 'Standards for governance, DevOps and releases, and reviews of what partners deliver.' },
       { title: 'Deliver', text: 'Hands-on support through implementation, up to the global rollout.' },
     ],
+  },
+  firstCall: {
+    label: 'First call',
+    title: 'Why start with 30 minutes?',
+    paragraphs: [
+      'Most Salesforce programmes don’t have one problem, they have ten. Fighting on every front at once fixes none of them for good.',
+      'In the first call we find out which problem costs the most and where the first step pays off. And we work out what it takes for the result to last. A health check with a clean-up achieves little if the same problems are back two weeks later.',
+    ],
+    listTitle: 'What we clarify in the call',
+    items: [
+      'Is the project just starting, or are you already live?',
+      'What can your team handle itself, and where is expertise missing?',
+      'Do you need a sparring partner who brings ideas, or a fixed role in the project?',
+    ],
+    cta: 'Book a 30-minute call',
   },
   about: {
     label: 'About',

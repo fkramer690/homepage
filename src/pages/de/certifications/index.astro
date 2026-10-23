@@ -1,4 +1,5 @@
 ---
-import Certifications from '../../../components/Certifications.astro';
+import Redirect from '../../../components/Redirect.astro';
+import { localHref } from '../../../lib/paths';
 ---
-<Certifications lang="de" />
+<Redirect to={localHref('de', 'certifications/')} />

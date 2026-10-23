@@ -14,6 +14,7 @@ import basicsWideDe from '../assets/certifications/basics-wide-de.png';
 import basicsNarrowEn from '../assets/certifications/basics-narrow-en.png';
 import basicsNarrowDe from '../assets/certifications/basics-narrow-de.png';
 import { architectCerts, salesforceCerts, otherCerts, type Cert } from '../data/certifications';
+import { homeHref, localHref } from '../lib/paths';
 
 interface Props {
   lang: 'en' | 'de';
@@ -21,14 +22,13 @@ interface Props {
 const { lang } = Astro.props;
 const t = lang === 'de' ? de : en;
 const c = t.subpages.certifications;
-const base = import.meta.env.BASE_URL;
-const home = lang === 'de' ? `${base}de/` : base;
+const home = homeHref(lang);
 // Overview graphics: a wide version and a portrait one for phones.
 const coverage = lang === 'de' ? { wide: coverageWideDe, narrow: coverageNarrowDe } : { wide: coverageWideEn, narrow: coverageNarrowEn };
 const basics = lang === 'de' ? { wide: basicsWideDe, narrow: basicsNarrowDe } : { wide: basicsWideEn, narrow: basicsNarrowEn };
 const groups = Object.entries(otherCerts) as [keyof typeof otherCerts, Cert[]][];
 ---
-<Page lang={lang} title={c.metaTitle} description={c.intro} alternates={{ en: `${base}certifications/`, de: `${base}de/certifications/` }}>
+<Page lang={lang} title={c.metaTitle} description={c.intro} alternates={{ en: localHref('en', 'certifications/'), de: localHref('de', 'certifications/') }}>
   <section class="section blog">
     <div class="container blog-inner">
       <p class="eyebrow mono">{t.about.title}</p>

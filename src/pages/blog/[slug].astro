@@ -1,11 +1,15 @@
 ---
 import BlogPost from '../../components/BlogPost.astro';
-import { getPosts } from '../../lib/blog';
+import Redirect from '../../components/Redirect.astro';
+import { getPosts, postHref } from '../../lib/blog';
 
+// German articles live here. English articles used to live here too, so their
+// old URLs forward to /en/blog/.
 export async function getStaticPaths() {
-  const posts = await getPosts('en');
-  return posts.map((post) => ({ params: { slug: post.data.slug }, props: { post } }));
+  const de = (await getPosts('de')).map((post) => ({ params: { slug: post.data.slug }, props: { post } }));
+  const en = (await getPosts('en')).map((post) => ({ params: { slug: post.data.slug }, props: { to: postHref(post) } }));
+  return [...de, ...en];
 }
-const { post } = Astro.props;
+const { post, to } = Astro.props;
 ---
-<BlogPost post={post} />
+{post ? <BlogPost post={post} /> : <Redirect to={to} />}

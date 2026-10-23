@@ -1,11 +1,11 @@
 ---
-import BlogPost from '../../../components/BlogPost.astro';
-import { getPosts } from '../../../lib/blog';
+import Redirect from '../../../components/Redirect.astro';
+import { getPosts, postHref } from '../../../lib/blog';
 
 export async function getStaticPaths() {
   const posts = await getPosts('de');
-  return posts.map((post) => ({ params: { slug: post.data.slug }, props: { post } }));
+  return posts.map((post) => ({ params: { slug: post.data.slug }, props: { to: postHref(post) } }));
 }
-const { post } = Astro.props;
+const { to } = Astro.props;
 ---
-<BlogPost post={post} />
+<Redirect to={to} />

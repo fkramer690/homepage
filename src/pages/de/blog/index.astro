@@ -1,4 +1,5 @@
 ---
-import BlogIndex from '../../../components/BlogIndex.astro';
+import Redirect from '../../../components/Redirect.astro';
+import { localHref } from '../../../lib/paths';
 ---
-<BlogIndex lang="de" />
+<Redirect to={localHref('de', 'blog/')} />

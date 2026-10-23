@@ -1,19 +1,18 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
 import { getPosts, type Post } from './blog';
+import { localHref } from './paths';
 
 // Tags are compared case-insensitively, the German articles mix spellings.
 const norm = (tags: string[]) => new Set(tags.map((t) => t.toLowerCase()));
 
 export type Service = CollectionEntry<'services'>;
 
-const base = import.meta.env.BASE_URL;
-
 export async function getServices(lang: 'en' | 'de'): Promise<Service[]> {
   const services = await getCollection('services', ({ data }) => data.lang === lang);
   return services.sort((a, b) => a.data.order - b.data.order);
 }
 
-export const servicesIndex = (lang: 'en' | 'de') => (lang === 'de' ? `${base}de/leistungen/` : `${base}services/`);
+export const servicesIndex = (lang: 'en' | 'de') => localHref(lang, lang === 'de' ? 'leistungen/' : 'services/');
 
 export const serviceHref = (service: Service) => `${servicesIndex(service.data.lang)}${service.data.slug}/`;
 

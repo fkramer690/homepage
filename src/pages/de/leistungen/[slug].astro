@@ -1,11 +1,11 @@
 ---
-import ServicePage from '../../../components/ServicePage.astro';
-import { getServices } from '../../../lib/services';
+import Redirect from '../../../components/Redirect.astro';
+import { getServices, serviceHref } from '../../../lib/services';
 
 export async function getStaticPaths() {
   const services = await getServices('de');
-  return services.map((service) => ({ params: { slug: service.data.slug }, props: { service } }));
+  return services.map((service) => ({ params: { slug: service.data.slug }, props: { to: serviceHref(service) } }));
 }
-const { service } = Astro.props;
+const { to } = Astro.props;
 ---
-<ServicePage service={service} />
+<Redirect to={to} />

@@ -1,4 +1,4 @@
-// Talks and community work for the speaker page (/speaking, /de/speaking).
+// Talks and community work for the speaker page (/speaking, /en/speaking).
 // Add new appearances to the matching talk; a new talk gets its own entry.
 
 type Text = { en: string; de: string };

@@ -1,12 +1,12 @@
 import type { APIRoute } from 'astro';
 import { en } from '../i18n/en';
 import { site } from '../site';
-import { getPosts, postHref } from '../lib/blog';
-import { getServices, serviceHref } from '../lib/services';
+import { getPosts, postHref, blogIndex } from '../lib/blog';
+import { getServices, serviceHref, servicesIndex } from '../lib/services';
+import { homeHref, localHref } from '../lib/paths';
 
 // Plain-text overview for AI assistants and crawlers (llmstxt.org).
 export const GET: APIRoute = async ({ site: origin }) => {
-  const base = import.meta.env.BASE_URL;
   const abs = (path: string) => new URL(path, origin).href;
   const list = async (lang: 'en' | 'de') =>
     (await getPosts(lang)).map((p) => `- [${p.data.title}](${abs(postHref(p))}): ${p.data.description}`).join('\n');
@@ -20,10 +20,13 @@ export const GET: APIRoute = async ({ site: origin }) => {
 
 ${site.person} is an independent Salesforce Enterprise Architect in Cologne, Germany, working on the client side for manufacturing companies (sales, service, field service, after-sales), independent of vendors and implementation partners.
 
-- [Home](${abs(base)})
-- [Services](${abs(`${base}services/`)})
-- [Blog](${abs(`${base}blog/`)})
-- [Speaker & events](${abs(`${base}speaking/`)}): talks at Salesforce community conferences (Flow performance, Flow vs OmniScript, Lightning Flow Scanner)
+The German version is the main site at the root; the English version lives under /en/.
+
+- [Home (German)](${abs(homeHref('de'))})
+- [Home (English)](${abs(homeHref('en'))})
+- [Services](${abs(servicesIndex('en'))}), German: [Leistungen](${abs(servicesIndex('de'))})
+- [Blog](${abs(blogIndex('en'))}), German: [Blog](${abs(blogIndex('de'))})
+- [Speaker & events](${abs(localHref('en', 'speaking/'))}): talks at Salesforce community conferences (Flow performance, Flow vs OmniScript, Lightning Flow Scanner)
 - [LinkedIn](${site.linkedin})
 
 ## Services

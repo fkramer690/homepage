@@ -1,4 +1,7 @@
 ---
-import Home from '../../components/Home.astro';
+import Redirect from '../../components/Redirect.astro';
+import { homeHref } from '../../lib/paths';
+
+// The German version moved from /de/ to the root.
 ---
-<Home lang="de" />
+<Redirect to={homeHref('de')} />
