@@ -14,7 +14,7 @@ const slop = [
   /\bpivotal\b/i, /\bparamount\b/i, /in today's/i, /fast-paced/i, /ever-(evolving|changing)/i, /\bholistic/i,
   /cutting-edge/i, /best-in-class/i, /world-class/i, /it('s| is) (important|worth) (to note|noting)/i, /in conclusion/i,
   /let's dive/i, /dive (deep )?into/i, /\bfurthermore\b/i, /\bmoreover\b/i, /in summary/i, /at the end of the day/i,
-  /\bsynerg/i, /\bstreamlin/i, /\bharness/i, /\belevate/i, /\btapestry/i, /\brealm\b/i, /\btestament to\b/i,
+  /\bsynerg/i, /\bstreamlin/i, /\bharness/i, /\belevat(e|es|ing)\b/i, /\btapestry/i, /\brealm\b/i, /\btestament to\b/i,
   /here is what/i, /in this article/i, /without further ado/i,
   /\bnahtlos/i, /ganzheitlich/i, /in der heutigen/i, /zusammenfassend/i, /darüber hinaus/i, /\beintauchen/i,
   /bahnbrechend/i, /maßgeschneidert/i, /von zentraler bedeutung/i, /hier lesen sie/i, /in diesem artikel/i,
@@ -77,7 +77,7 @@ for (const lang of readdirSync(root)) {
     for (const re of banned) if (re.test(raw)) fail(`contains a banned term (${re})`);
     for (const re of slop) if (re.test(raw)) fail(`sounds generated, rewrite in plain words (${re})`);
     if (/[\u2013\u2014]/.test(text)) fail('no en or em dashes (– —), use a comma, a full stop or "to"');
-    const contrasts = (text.match(/\b(is|are|isn't|aren't) not (just |only )?(about|a|an)\b[^.]*\.\s+(it|they) (is|are)\b|geht es nicht (nur )?(um|darum)/gi) ?? []).length;
+    const contrasts = (text.match(/\b(is|are|isn't|aren't) not (just |only )?(about|a|an)\b[^.]*\.\s+(it|they) (is|are)\b|geht es nicht (nur )?(um|darum)|\b(ist|sind) (kein|keine|nicht)\b[^.]*\.\s+(es|sie) (ist|sind)\b/gi) ?? []).length;
     if (contrasts > 0) fail('avoid the "it is not X, it is Y" pattern, state what it is');
   }
 }
