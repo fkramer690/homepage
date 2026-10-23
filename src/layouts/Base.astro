@@ -11,8 +11,9 @@ interface Props {
   description: string;
   alternates?: { en: string; de: string };
   noindex?: boolean;
+  ogType?: 'website' | 'article';
 }
-const { lang, title, description, alternates, noindex = false } = Astro.props;
+const { lang, title, description, alternates, noindex = false, ogType = 'website' } = Astro.props;
 const base = import.meta.env.BASE_URL;
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const abs = (path: string) => new URL(path, Astro.site).href;
@@ -37,7 +38,7 @@ const abs = (path: string) => new URL(path, Astro.site).href;
     <link rel="icon" href={`${base}favicon.svg`} type="image/svg+xml" />
     <link rel="icon" href={`${base}favicon-32.png`} sizes="32x32" type="image/png" />
     <link rel="apple-touch-icon" href={`${base}apple-touch-icon.png`} />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical.href} />
@@ -45,6 +46,7 @@ const abs = (path: string) => new URL(path, Astro.site).href;
     <meta property="og:locale" content={lang === 'de' ? 'de_DE' : 'en_US'} />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="sitemap" href={`${base}sitemap-index.xml`} />
+    <link rel="alternate" type="application/rss+xml" title="FK Solution Design – Blog" href={`${base}blog/rss.xml`} />
     <slot name="head" />
   </head>
   <body>

@@ -30,3 +30,15 @@ export function readingMinutes(post: Post): number {
 
 export const formatDate = (date: Date, lang: 'en' | 'de') =>
   date.toLocaleDateString(lang === 'de' ? 'de-DE' : 'en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+
+// Up to three other articles in the same language, most shared tags first.
+export async function getRelated(post: Post, limit = 3): Promise<Post[]> {
+  const posts = await getPosts(post.data.lang);
+  const tags = new Set(post.data.tags);
+  return posts
+    .filter((p) => p.id !== post.id)
+    .map((p) => ({ p, score: p.data.tags.filter((tag) => tags.has(tag)).length }))
+    .sort((a, b) => b.score - a.score)
+    .slice(0, limit)
+    .map(({ p }) => p);
+}

@@ -6,11 +6,26 @@ lang: en
 slug: why-devops-matters-salesforce-enterprise
 translationKey: devops-salesforce-enterprise
 tags: [devops, release management, partner governance, sfdx-hardis]
+takeaways:
+  - "As soon as several teams or partners work on one Salesforce org, DevOps decides whether releases stay safe and traceable."
+  - "Change sets lack version history, rollback, reviews and automated quality gates, so they don't scale to enterprise programmes."
+  - "Good Salesforce DevOps rests on Git as the source of truth, a clear branch strategy, pull request reviews, automated tests, delta deployments and monitoring."
+  - "The repository and pipeline should belong to the client, not to an implementation partner."
+  - "Open-source tools like sfdx-hardis cover most building blocks without a commercial licence."
+faq:
+  - q: "What is Salesforce DevOps?"
+    a: "Salesforce DevOps means managing all metadata changes in version control and moving them through sandboxes to production with an automated, repeatable pipeline that includes reviews, tests and quality checks."
+  - q: "Are change sets enough for enterprise Salesforce projects?"
+    a: "No. Change sets work for small, isolated changes by one admin. With several teams, partners and environments they lack version history, rollback, code review and automated tests."
+  - q: "Who should own the Salesforce release pipeline?"
+    a: "The client. A repository and pipeline under the client's control keep implementation partners comparable and replaceable and make it easier to onboard new partners."
+  - q: "Is sfdx-hardis free to use?"
+    a: "Yes. sfdx-hardis is an open-source toolkit maintained by Cloudity and its community. It runs on common CI/CD platforms such as GitHub, GitLab, Azure DevOps, Bitbucket and Jenkins."
 ---
 
 Salesforce is easy to start with. A few clicks in Setup, a change set, done. That ease is exactly why many enterprise programmes run into trouble a year later. As soon as several teams, partners and countries work on the same org, the question is no longer how to build something. It is how to get it into production safely, repeatedly and traceably. That is what DevOps is about, and in enterprise projects it decides whether a programme stays in control.
 
-## What changes when a project gets big
+## What goes wrong when a Salesforce programme grows?
 
 In a small org, one admin knows every change. In an enterprise programme that picture is gone. I have steered programmes with up to eight project teams and more than 30 developers working on one platform. In that setting, a few things happen very reliably without a proper DevOps setup:
 
@@ -21,7 +36,7 @@ In a small org, one admin knows every change. In an enterprise programme that pi
 
 None of this is a tooling problem first. It is a governance problem that tooling can solve.
 
-## Why change sets don't scale
+## Why don't change sets scale?
 
 Change sets are fine for small, isolated changes. For enterprise work they lack almost everything you need:
 
@@ -33,7 +48,7 @@ Change sets are fine for small, isolated changes. For enterprise work they lack 
 
 Add Salesforce's three major releases per year, sandboxes on different release versions during preview windows, and global rollouts with country-specific requirements. Manual deployments simply can't keep up with that.
 
-## What good Salesforce DevOps looks like
+## What does good Salesforce DevOps look like?
 
 A solid setup does not need to be complicated. In my projects these building blocks matter most:
 
@@ -46,9 +61,9 @@ A solid setup does not need to be complicated. In my projects these building blo
 
 > The pipeline belongs to the client, not to the partner. Whoever owns the release process owns the platform.
 
-That last point matters a lot to me as an architect on the client side. A repository and pipeline under the client's control make partners comparable and replaceable. They also make onboarding a new partner much easier, because the standards are written down and enforced automatically.
+That last point matters a lot to me as an [architect on the client side](../../#about). A repository and pipeline under the client's control make partners comparable and replaceable, which is the basis for [partner steering and governance](../../#services). They also make onboarding a new partner much easier, because the standards are written down and enforced automatically.
 
-## sfdx-hardis as an example
+## sfdx-hardis as an open-source example
 
 You don't have to buy a commercial platform to get there. A good example is [sfdx-hardis](https://sfdx-hardis.cloudity.com/), an open-source toolkit maintained by Cloudity together with an active community. It bundles many of the building blocks above:
 
@@ -60,7 +75,7 @@ You don't have to buy a commercial platform to get there. A good example is [sfd
 
 Commercial tools like Gearset or Copado have their place too, especially when a team wants a fully managed interface. The choice depends on the team, the existing toolchain and the budget. What matters is that a decision is made early and enforced for everyone, including every partner.
 
-## Where to start
+## Where should you start?
 
 If your Salesforce programme still works with change sets or manual deployments, you don't need a big-bang migration. A pragmatic order:
 
@@ -70,4 +85,4 @@ If your Salesforce programme still works with change sets or manual deployments,
 4. Switch production deployments to the pipeline.
 5. Add monitoring, backups and generated documentation.
 
-DevOps is not an extra layer for later. In enterprise projects it is part of the architecture, and it should be in place before the second partner starts working on the org.
+DevOps is not an extra layer for later. In enterprise projects it is part of the architecture, and it should be in place before the second partner starts working on the org. If you want a second opinion on your release process, [send me a message](#contact).

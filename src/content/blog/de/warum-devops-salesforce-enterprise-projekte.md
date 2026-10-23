@@ -6,11 +6,26 @@ lang: de
 slug: warum-devops-salesforce-enterprise-projekte
 translationKey: devops-salesforce-enterprise
 tags: [devops, release management, partnersteuerung, sfdx-hardis]
+takeaways:
+  - "Sobald mehrere Teams oder Partner an einer Salesforce-Org arbeiten, entscheidet DevOps, ob Releases sicher und nachvollziehbar bleiben."
+  - "Change Sets fehlen Versionshistorie, Rollback, Reviews und automatische Qualitätsschranken. Für Enterprise-Programme skalieren sie nicht."
+  - "Gutes Salesforce-DevOps beruht auf Git als Quelle der Wahrheit, klarer Branch-Strategie, Pull-Request-Reviews, automatischen Tests, Delta-Deployments und Monitoring."
+  - "Repository und Pipeline sollten dem Kunden gehören, nicht dem Implementierungspartner."
+  - "Open-Source-Tools wie sfdx-hardis decken die meisten Bausteine ohne kommerzielle Lizenz ab."
+faq:
+  - q: "Was ist Salesforce-DevOps?"
+    a: "Salesforce-DevOps bedeutet, alle Metadaten-Änderungen in einer Versionsverwaltung zu führen und sie über eine automatisierte, wiederholbare Pipeline mit Reviews, Tests und Qualitätsprüfungen von den Sandboxes bis in Produktion zu bringen."
+  - q: "Reichen Change Sets für Salesforce-Großprojekte?"
+    a: "Nein. Change Sets funktionieren für kleine, isolierte Änderungen eines Admins. Mit mehreren Teams, Partnern und Umgebungen fehlen Versionshistorie, Rollback, Code-Review und automatisierte Tests."
+  - q: "Wem sollte die Salesforce-Release-Pipeline gehören?"
+    a: "Dem Kunden. Ein Repository und eine Pipeline unter Kontrolle des Kunden halten Implementierungspartner vergleichbar und austauschbar und erleichtern das Onboarding neuer Partner."
+  - q: "Ist sfdx-hardis kostenlos?"
+    a: "Ja. sfdx-hardis ist ein Open-Source-Toolkit, das Cloudity mit seiner Community pflegt. Es läuft auf gängigen CI/CD-Plattformen wie GitHub, GitLab, Azure DevOps, Bitbucket und Jenkins."
 ---
 
 Der Einstieg in Salesforce ist leicht. Ein paar Klicks im Setup, ein Change Set, fertig. Genau diese Leichtigkeit ist der Grund, warum viele Enterprise-Programme ein Jahr später in Schwierigkeiten geraten. Sobald mehrere Teams, Partner und Länder an derselben Org arbeiten, lautet die Frage nicht mehr, wie man etwas baut. Sie lautet, wie man es sicher, wiederholbar und nachvollziehbar in Produktion bringt. Darum geht es bei DevOps, und in Großprojekten entscheidet es darüber, ob ein Programm beherrschbar bleibt.
 
-## Was sich ändert, wenn ein Projekt groß wird
+## Was geht schief, wenn ein Salesforce-Programm wächst?
 
 In einer kleinen Org kennt ein Admin jede Änderung. In einem Enterprise-Programm ist dieses Bild verschwunden. Ich habe Programme mit bis zu acht Projektteams und mehr als 30 Entwicklern auf einer Plattform gesteuert. In so einem Umfeld passieren ohne sauberes DevOps-Setup einige Dinge sehr zuverlässig:
 
@@ -21,7 +36,7 @@ In einer kleinen Org kennt ein Admin jede Änderung. In einem Enterprise-Program
 
 Nichts davon ist zuerst ein Tool-Problem. Es ist ein Governance-Problem, das sich mit Tools lösen lässt.
 
-## Warum Change Sets nicht skalieren
+## Warum skalieren Change Sets nicht?
 
 Change Sets sind für kleine, isolierte Änderungen in Ordnung. Für Enterprise-Arbeit fehlt ihnen fast alles, was man braucht:
 
@@ -33,7 +48,7 @@ Change Sets sind für kleine, isolierte Änderungen in Ordnung. Für Enterprise-
 
 Dazu kommen drei große Salesforce-Releases pro Jahr, Sandboxes auf unterschiedlichen Release-Ständen während der Preview-Phasen und globale Rollouts mit länderspezifischen Anforderungen. Mit manuellen Deployments ist das nicht mehr zu schaffen.
 
-## Wie gutes Salesforce-DevOps aussieht
+## Wie sieht gutes Salesforce-DevOps aus?
 
 Ein solides Setup muss nicht kompliziert sein. In meinen Projekten sind diese Bausteine am wichtigsten:
 
@@ -46,9 +61,9 @@ Ein solides Setup muss nicht kompliziert sein. In meinen Projekten sind diese Ba
 
 > Die Pipeline gehört dem Kunden, nicht dem Partner. Wer den Release-Prozess besitzt, besitzt die Plattform.
 
-Dieser letzte Punkt ist mir als Architekt auf Kundenseite besonders wichtig. Ein Repository und eine Pipeline unter Kontrolle des Kunden machen Partner vergleichbar und austauschbar. Außerdem wird das Onboarding eines neuen Partners deutlich leichter, weil die Standards aufgeschrieben sind und automatisch durchgesetzt werden.
+Dieser letzte Punkt ist mir als [Architekt auf Kundenseite](../../#about) besonders wichtig. Ein Repository und eine Pipeline unter Kontrolle des Kunden machen Partner vergleichbar und austauschbar. Das ist die Grundlage für [Partnersteuerung und Governance](../../#services). Außerdem wird das Onboarding eines neuen Partners deutlich leichter, weil die Standards aufgeschrieben sind und automatisch durchgesetzt werden.
 
-## sfdx-hardis als Beispiel
+## sfdx-hardis als Open-Source-Beispiel
 
 Um dorthin zu kommen, muss man keine kommerzielle Plattform kaufen. Ein gutes Beispiel ist [sfdx-hardis](https://sfdx-hardis.cloudity.com/), ein Open-Source-Toolkit, das Cloudity gemeinsam mit einer aktiven Community pflegt. Es bündelt viele der Bausteine von oben:
 
@@ -60,7 +75,7 @@ Um dorthin zu kommen, muss man keine kommerzielle Plattform kaufen. Ein gutes Be
 
 Kommerzielle Tools wie Gearset oder Copado haben ebenfalls ihre Berechtigung, vor allem wenn ein Team eine komplett verwaltete Oberfläche möchte. Die Wahl hängt vom Team, der vorhandenen Toolchain und dem Budget ab. Entscheidend ist, dass früh entschieden und für alle verbindlich durchgesetzt wird, auch für jeden Partner.
 
-## Wo man anfängt
+## Wo fängt man an?
 
 Wenn Ihr Salesforce-Programm noch mit Change Sets oder manuellen Deployments arbeitet, brauchen Sie keine Big-Bang-Umstellung. Eine pragmatische Reihenfolge:
 
@@ -70,4 +85,4 @@ Wenn Ihr Salesforce-Programm noch mit Change Sets oder manuellen Deployments arb
 4. Produktions-Deployments auf die Pipeline umstellen.
 5. Monitoring, Backups und generierte Dokumentation ergänzen.
 
-DevOps ist keine zusätzliche Schicht für später. In Enterprise-Projekten ist es Teil der Architektur, und es sollte stehen, bevor der zweite Partner an der Org arbeitet.
+DevOps ist keine zusätzliche Schicht für später. In Enterprise-Projekten ist es Teil der Architektur, und es sollte stehen, bevor der zweite Partner an der Org arbeitet. Wenn Sie eine zweite Meinung zu Ihrem Release-Prozess möchten, [schreiben Sie mir](#contact).
