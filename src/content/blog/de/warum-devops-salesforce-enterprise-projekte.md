@@ -63,6 +63,18 @@ Ein solides Setup muss nicht kompliziert sein. In meinen Projekten sind diese Ba
 
 Dieser letzte Punkt ist mir als [Architekt auf Kundenseite](../../#about) besonders wichtig. Ein Repository und eine Pipeline unter Kontrolle des Kunden machen Partner vergleichbar und austauschbar. Das ist die Grundlage für [Partnersteuerung und Governance](../../#services). Außerdem wird das Onboarding eines neuen Partners deutlich leichter, weil die Standards aufgeschrieben sind und automatisch durchgesetzt werden.
 
+## Wie sah das in einem echten Programm aus?
+
+In einem Programm, in das ich eingestiegen bin, betrieb ein großes Unternehmen Salesforce mit mehreren Implementierungspartnern und internen Teams. Niemand hatte klar festgelegt, wer für welche Prozesse, Objekte und Metadaten die Führung hat. Das Ergebnis war absehbar:
+
+- Änderungen überschrieben sich, weil niemand abstimmte, wer was wann deployt.
+- Die technischen Ansätze der Teams lagen weit auseinander, ähnliche Probleme wurden sehr unterschiedlich gelöst.
+- Jedes Release war ein Risiko, und Fehler fielen oft erst auf, wenn Anwender darauf stießen.
+
+Wir haben das in wenigen Schritten geändert. Erstens lief jede Änderung über einen Pull Request mit Review, und eine Zeit lang ging jeder einzelne über meinen Schreibtisch. Zweitens haben wir Entwicklungs- und Architekturstandards aufgeschrieben und in diesen Reviews durchgesetzt. Drittens wurde die Pipeline der einzige Weg, Änderungen von einer Org in die nächste zu bringen. Als der Prozess stabil lief, habe ich ihn an einen internen Kollegen übergeben, der ihn heute verantwortet.
+
+Die Wirkung war deutlich. Ergebnisse wurden planbar, und Validierungsläufe in der Pipeline haben fehlende Abhängigkeiten und Fehler erkannt, bevor ein Anwender sie gesehen hat. Dazu kamen die klassischen DevOps-Vorteile: Wir konnten zurückrollen, jede Änderung nachvollziehen, und es ging keine Arbeit mehr verloren.
+
 ## sfdx-hardis als Open-Source-Beispiel
 
 Um dorthin zu kommen, muss man keine kommerzielle Plattform kaufen. Ein gutes Beispiel ist [sfdx-hardis](https://sfdx-hardis.cloudity.com/), ein Open-Source-Toolkit, das Cloudity gemeinsam mit einer aktiven Community pflegt. Es bündelt viele der Bausteine von oben:
