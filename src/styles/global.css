@@ -645,3 +645,5 @@ a:hover { color: var(--anthracite); }
   object-fit: cover;
   border: 2px solid var(--cyan);
 }
+/* 404: fill the viewport so the footer sits at the bottom */
+.not-found { min-height: calc(100vh - 190px); }

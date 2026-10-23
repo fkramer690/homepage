@@ -168,6 +168,12 @@ export const en = {
       subject: 'New inquiry via fk-solution-design website',
     },
   },
+  notFound: {
+    title: 'This page doesn’t exist.',
+    text: 'The link may be outdated or mistyped. Everything about my work as a Salesforce architect is on the start page.',
+    home: 'Go to the start page',
+    contact: 'Get in touch',
+  },
   footer: {
     imprint: 'Legal notice',
     privacy: 'Privacy',

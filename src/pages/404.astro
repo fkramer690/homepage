@@ -1,0 +1,40 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Blueprint from '../components/Blueprint.astro';
+import { en } from '../i18n/en';
+import { de } from '../i18n/de';
+
+// GitHub Pages serves this page for every unknown path, including /de/…,
+// so the German copy is swapped in client side for German URLs.
+const base = import.meta.env.BASE_URL;
+---
+<Base lang="en" title={`${en.notFound.title} – FK Solution Design`} description={en.notFound.title} noindex>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <Header t={en} home={base} switchHref={`${base}de/`} />
+  <main id="main">
+    <section class="hero dark grid-bg not-found">
+      <Blueprint />
+      <div class="container hero-inner">
+        <p class="eyebrow mono">404</p>
+        <h1 data-de={de.notFound.title}>{en.notFound.title}</h1>
+        <p class="hero-lead" data-de={de.notFound.text}>{en.notFound.text}</p>
+        <div class="hero-ctas">
+          <a class="btn" href={base} data-de={de.notFound.home} data-de-href={`${base}de/`}>{en.notFound.home}</a>
+          <a class="btn btn-ghost" href={`${base}#contact`} data-de={de.notFound.contact} data-de-href={`${base}de/#contact`}>{en.notFound.contact}</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer t={en} switchHref={`${base}de/`} />
+  <script is:inline define:vars={{ dePrefix: `${base}de/` }}>
+    if (location.pathname.startsWith(dePrefix)) {
+      document.documentElement.lang = 'de';
+      document.querySelectorAll('[data-de]').forEach((el) => {
+        el.textContent = el.dataset.de;
+        if (el.dataset.deHref) el.setAttribute('href', el.dataset.deHref);
+      });
+    }
+  </script>
+</Base>

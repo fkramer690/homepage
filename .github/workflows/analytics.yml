@@ -26,7 +26,9 @@ jobs:
         env:
           CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
           CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
-        run: node scripts/fetch-analytics.mjs > /tmp/latest.json
+        run: |
+          node scripts/fetch-analytics.mjs > /tmp/latest.json
+          node scripts/dashboard-rows.mjs /tmp/latest.json /tmp/dashboard
       - name: Commit snapshot to stats branch
         run: |
           git config user.name "github-actions[bot]"
@@ -40,6 +42,7 @@ jobs:
           mkdir -p stats
           cp /tmp/latest.json stats/latest.json
           cp /tmp/latest.json "stats/$(date -u +%F).json"
+          rm -rf stats/dashboard && cp -r /tmp/dashboard stats/dashboard
           git add stats
           git commit -m "Analytics snapshot $(date -u +%F)" || exit 0
           git push origin stats
