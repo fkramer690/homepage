@@ -928,3 +928,6 @@ a:hover { color: var(--anthracite); }
   .post-grid { grid-template-columns: 1fr; gap: 16px; }
   .post-tile-body { padding: 16px 18px 18px; }
 }
+/* Certifications subpage */
+.blog-inner > h2 { margin-top: 1.6em; }
+.cert-list { margin-bottom: 0.5em; }

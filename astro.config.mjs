@@ -20,8 +20,8 @@ export default defineConfig({
   },
   integrations: [
     sitemap({
-      // Legal pages and unfinished subpages are noindex, so keep them out of the sitemap.
-      filter: (page) => !/\/(impressum|datenschutz|certifications)\/$/.test(page),
+      // Legal pages are noindex, so keep them out of the sitemap.
+      filter: (page) => !/\/(impressum|datenschutz)\/$/.test(page),
       i18n: {
         defaultLocale: 'en',
         locales: { en: 'en', de: 'de' },
