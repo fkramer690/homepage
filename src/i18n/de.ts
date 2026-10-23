@@ -41,6 +41,8 @@ export const de: Dict = {
     approachTitle: 'Was ich dagegen tue',
     approach:
       'Ich arbeite als zentrale Architektur-Instanz auf Ihrer Seite. Ich verantworte Lösungsdesign und Gesamtarchitektur, setze Standards für Governance und DevOps, prüfe, was Partner liefern – und hinterfrage es, bevor es teuer wird.',
+    photoAlt: 'Fabian Kramer bei einer Live-Demo auf der Bühne',
+    photoCaption: 'Auf der Bühne: Live-Demo statt Foliensatz.',
     quote: 'Nicht alles, was man in Salesforce bauen kann, sollte man in Salesforce bauen.',
   },
   services: {
@@ -130,6 +132,7 @@ export const de: Dict = {
   about: {
     label: 'Über mich',
     title: 'Fabian Kramer',
+    portraitAlt: 'Porträt von Fabian Kramer',
     subtitle: 'Salesforce Enterprise Architect · Köln/Bonn',
     paragraphs: [
       'Ich helfe Fertigungsunternehmen, Salesforce zu einem verlässlichen Rückgrat für Vertrieb, Service und After-Sales zu machen – als Architekt auf Kundenseite.',

@@ -473,7 +473,15 @@ a:hover { color: var(--anthracite); }
   padding: 28px;
   background: var(--bg);
 }
-.about-logo { display: block; margin-bottom: 20px; }
+.about-portrait {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 24px;
+}
 .about-facts dl { margin: 0; }
 .about-facts div + div { margin-top: 18px; padding-top: 18px; border-top: 1px dashed var(--line); }
 .about-facts dt { font-size: 0.75rem; color: var(--cyan-dark); text-transform: uppercase; letter-spacing: 0.08em; }
@@ -601,3 +609,39 @@ a:hover { color: var(--anthracite); }
   outline: none;
 }
 .form-status.is-error { color: #ff9d8a; }
+
+/* Stage photo next to the quote */
+.quote-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 360px);
+  gap: clamp(24px, 5vw, 64px);
+  align-items: center;
+  margin-top: 2.5em;
+}
+.quote-row .quote { margin: 0; }
+.stage-photo { margin: 0; }
+.stage-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+}
+.stage-photo figcaption {
+  margin-top: 10px;
+  font-size: 0.75rem;
+  color: var(--text-2);
+}
+@media (max-width: 760px) {
+  .quote-row { grid-template-columns: 1fr; }
+}
+
+/* Small portrait in the contact section */
+.contact-head { display: flex; align-items: center; gap: 14px; margin-bottom: 1em; }
+.contact-head .label { margin-bottom: 0; }
+.contact-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--cyan);
+}

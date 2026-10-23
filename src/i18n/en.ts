@@ -39,6 +39,8 @@ export const en = {
     approachTitle: 'What I do about it',
     approach:
       'I work as the central architectural authority on your side. I own solution design and the overall architecture, set governance and DevOps standards, review what partners deliver – and challenge it before it gets expensive.',
+    photoAlt: 'Fabian Kramer giving a live demo on stage',
+    photoCaption: 'On stage: live demos instead of slideware.',
     quote: 'Not everything that can be built in Salesforce should be built in Salesforce.',
   },
   services: {
@@ -128,6 +130,7 @@ export const en = {
   about: {
     label: 'About',
     title: 'Fabian Kramer',
+    portraitAlt: 'Portrait of Fabian Kramer',
     subtitle: 'Salesforce Enterprise Architect · Cologne/Bonn',
     paragraphs: [
       'I help manufacturing companies turn Salesforce into a reliable backbone for sales, service and after-sales – as the architect on the client side.',
