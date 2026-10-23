@@ -24,7 +24,19 @@ Start every new article from [`docs/blog-template.md`](blog-template.md).
 | FAQ | 2–6 questions with direct answers of 1–3 sentences, shown as collapsible questions | schema |
 | Closing | One-sentence conclusion plus an invitation to get in touch (`#contact`) | review |
 
-Below every article the template adds the author box, related articles and the contact section with "Book a call" and the contact form ("Send a message"). Do not add another CTA block to the Markdown.
+## Fixed page structure
+
+Every article page is built by `src/components/BlogPost.astro` and looks the same. Only the content between the takeaways and the FAQ comes from the Markdown file:
+
+1. Title, date, reading time
+2. Key takeaways (from frontmatter)
+3. **Article body (the only part that comes from Markdown)**
+4. FAQ, collapsible (from frontmatter)
+5. Author box (`src/components/AuthorBox.astro`)
+6. Related articles
+7. Contact section with "Book a call" and the contact form
+
+Changes to parts 1–2 and 4–7 are made once in the components and apply to all articles. Markdown files contain no raw HTML, no author section and no CTA block; the check script rejects HTML.
 
 ## Length
 

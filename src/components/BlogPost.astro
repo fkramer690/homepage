@@ -2,9 +2,8 @@
 import Page from '../layouts/Page.astro';
 import ExternalMark from './ExternalMark.astro';
 import ContactForm from './ContactForm.astro';
+import AuthorBox from './AuthorBox.astro';
 import Blueprint from './Blueprint.astro';
-import { Image } from 'astro:assets';
-import portrait from '../assets/portrait.png';
 import { render } from 'astro:content';
 import { en } from '../i18n/en';
 import { de } from '../i18n/de';
@@ -106,19 +105,7 @@ const schema = {
           </details>
         ))}
       </section>
-      <aside class="post-author" aria-label={t.blog.authorLabel}>
-        <Image src={portrait} alt="" width={112} height={112} densities={[1, 2]} class="post-author-img" />
-        <div class="post-author-body">
-          <p class="label mono">{t.blog.authorLabel}</p>
-          <p class="post-author-name">{site.person}</p>
-          <p class="post-author-role mono">{t.blog.authorRole}</p>
-          <p class="post-author-bio">{t.blog.authorBio}</p>
-          <div class="post-author-links">
-            <a class="btn btn-small" href={site.linkedin} rel="noopener">{t.blog.authorLinkedIn}</a>
-            <a class="post-author-more" href={`${lang === 'de' ? `${base}de/` : base}#about`}>{t.blog.authorMore} →</a>
-          </div>
-        </div>
-      </aside>
+      <AuthorBox lang={lang} />
       {related.length > 0 && (
         <nav class="post-related" aria-label={t.blog.related}>
           <p class="label mono">{t.blog.related}</p>

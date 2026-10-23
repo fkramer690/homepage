@@ -53,6 +53,9 @@ for (const lang of readdirSync(root)) {
     if (/!\[\s*\]\(/.test(text)) fail('every image needs alt text: ![What the image shows](...)');
     if (/!\[[^\]]*\]\(https?:/.test(text)) fail('store images in src/assets/blog/, do not hotlink external images');
 
+    // Layout (takeaways, FAQ, author box, contact section) comes from the template only.
+    if (/<\/?[a-z][a-z0-9-]*(\s[^>]*)?>/i.test(text)) fail('no raw HTML in articles, the page layout comes from src/components/BlogPost.astro');
+
     for (const re of banned) if (re.test(raw)) fail(`contains a banned term (${re})`);
   }
 }
