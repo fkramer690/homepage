@@ -15,7 +15,7 @@ deliverables:
   - "Integration architecture: systems, data flows, leading system per object and integration patterns"
   - "Decision on middleware or direct integration, depending on size and number of systems"
   - "Interface specifications that implementation partners can build from"
-  - "Concept for telephony integration with Service Cloud, for example Genesys or Microsoft Teams"
+  - "Concept for telephony integration with Service Cloud, for example Genesys, Mirage or Microsoft Teams"
   - "Security review of integration users, permissions and authentication"
   - "Selection and steering of specialised integration partners"
 results:
@@ -38,7 +38,7 @@ faq:
   - q: "Do we need a middleware for Salesforce integration?"
     a: "It depends on the size of the company and the number of systems. With a few stable interfaces, direct integration can be enough. With many systems, several teams and frequent changes, a middleware makes interfaces easier to change, monitor and reuse."
   - q: "How is telephony connected to Service Cloud?"
-    a: "Through a CTI integration that brings calls into Service Cloud, so agents see the customer and the open cases when the phone rings. I have worked with Genesys, and Microsoft Teams is becoming more relevant as a telephony platform. Phone and email remain the core channels in most service organisations."
+    a: "Through a CTI integration that brings calls into Service Cloud, so agents see the customer and the open cases when the phone rings. I have worked with the CTI providers Genesys and Mirage, and Microsoft Teams is becoming more relevant as a telephony platform. Phone and email remain the core channels in most service organisations."
 blogTags: [integration, oauth, security, sicherheit, service cloud]
 ---
 
@@ -59,11 +59,11 @@ The details differ in every company, which is why this map is part of the [Sales
 
 The approach depends on the size of the company and the number of systems. With a few stable interfaces, a direct integration can be the simplest solution. With many systems, several teams and frequent changes, a middleware such as MuleSoft or another integration platform pays off, because interfaces become reusable and errors are visible in one place.
 
-For the build I work with selected partners who have integration experience from large international programmes. That gives the client a partner that fits the size of the task, while the architecture and the specifications stay on the client side.
+For the build I work with selected partners who have integration experience from large international programmes, for example Blue Apes, a Jitterbit partner. That gives the client a partner that fits the size of the task, while the architecture and the specifications stay on the client side.
 
 ## How does telephony fit into Service Cloud?
 
-In most service organisations, phone and email are still the main channels. A CTI integration brings calls into Service Cloud, so agents see the customer, the installed products and the open cases when the phone rings. I have worked with Genesys, and Microsoft Teams is becoming more relevant as a telephony platform, because many companies already use it internally.
+In most service organisations, phone and email are still the main channels. A CTI integration brings calls into Service Cloud, so agents see the customer, the installed products and the open cases when the phone rings. I have worked with the CTI providers Genesys and Mirage, and Microsoft Teams is becoming more relevant as a telephony platform, because many companies already use it internally.
 
 ## What about security?
 
