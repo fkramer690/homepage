@@ -1,0 +1,45 @@
+name: Fetch analytics
+
+# Daily snapshot of Cloudflare Web Analytics, stored on the "stats" branch
+# so it can be turned into a report without access to Cloudflare itself.
+on:
+  schedule:
+    - cron: '15 5 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: analytics
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Query Cloudflare
+        env:
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+        run: node scripts/fetch-analytics.mjs > /tmp/latest.json
+      - name: Commit snapshot to stats branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git ls-remote --exit-code origin stats >/dev/null; then
+            git fetch origin stats
+            git switch stats
+          else
+            git switch --orphan stats
+          fi
+          mkdir -p stats
+          cp /tmp/latest.json stats/latest.json
+          cp /tmp/latest.json "stats/$(date -u +%F).json"
+          git add stats
+          git commit -m "Analytics snapshot $(date -u +%F)" || exit 0
+          git push origin stats
