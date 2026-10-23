@@ -1,5 +1,4 @@
-// Central contact and company data. Fields marked TODO must be
-// filled in before the site goes live (they appear in the Impressum).
+// Central contact and company data, also used in Impressum and Datenschutz.
 export const site = {
   company: 'FK Solution Design GmbH',
   person: 'Fabian Kramer',
@@ -8,8 +7,8 @@ export const site = {
   bookingUrl: '',
   linkedin: 'https://www.linkedin.com/in/fabian-kramer-400500127',
   legal: {
-    street: 'TODO Straße und Hausnummer',
-    city: 'TODO PLZ Köln',
+    street: 'Hans-Keul-Weg 27',
+    city: '51105 Köln',
     phone: '', // optional
     managingDirector: 'Fabian Kramer',
     register: 'HRB 103579',
