@@ -20,7 +20,6 @@ export const en = {
     eyebrow: 'FK Solution Design GmbH · Cologne',
     title: 'Salesforce architecture for manufacturers – on the client side.',
     focus: ['After-Sales', 'Service', 'Field Service', 'B2B Sales'],
-    problem: 'Several implementation partners, one Salesforce org, and nobody owns the whole.',
     lead: 'The central architectural authority between your business, your IT and your implementation partners.',
     ctaPrimary: 'Book a 30-minute call',
     ctaSecondary: 'See references',
@@ -36,9 +35,10 @@ export const en = {
   role: {
     label: 'The role',
     title: 'Somebody has to own the big picture.',
+    problem: 'Several implementation partners, one Salesforce org, and nobody owns the whole.',
     situationTitle: 'The situation',
     situation:
-      'Many manufacturers run Salesforce with several implementation partners, a growing number of clouds and close links to ERP, telephony and service systems. Every partner delivers their piece. Nobody owns the whole.',
+      'Many manufacturers run Salesforce with several implementation partners, a growing number of clouds and close links to ERP, telephony and service systems. Every partner delivers their piece.',
     approachTitle: 'What I do about it',
     approach:
       'I work as the central architectural authority on your side. I own solution design and the overall architecture, set governance and DevOps standards, review what partners deliver – and challenge it before it gets expensive.',

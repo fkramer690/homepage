@@ -45,7 +45,6 @@ const [qOpen, qClose] = lang === 'de' ? ['„', '“'] : ['“', '”'];
         <p class="hero-focus">
           {t.hero.focus.map((f, i) => (<>{i > 0 && <span class="sep" aria-hidden="true">·</span>}<span>{f}</span></>))}
         </p>
-        <p class="hero-problem">{t.hero.problem}</p>
         <p class="hero-lead">{t.hero.lead}</p>
         <div class="hero-ctas">
           <a class="btn" href={cta} {...ctaAttrs}>{t.hero.ctaPrimary}{contactExternal && <ExternalMark label={t.nav.newTab} />}</a>
@@ -71,6 +70,7 @@ const [qOpen, qClose] = lang === 'de' ? ['„', '“'] : ['“', '”'];
       <div class="container">
         <p class="label mono">{t.role.label}</p>
         <h2>{t.role.title}</h2>
+        <p class="role-problem">{t.role.problem}</p>
         <div class="two-col">
           <div>
             <h3>{t.role.situationTitle}</h3>
