@@ -16,6 +16,9 @@ export const site = {
   // Cloudflare Web Analytics (cookieless). The site token comes from the
   // CF_ANALYTICS_TOKEN repository secret at build time; empty = no tracking.
   analyticsToken: import.meta.env.PUBLIC_CF_ANALYTICS_TOKEN ?? '',
+  // The German version is maintained but not advertised: links pointing to
+  // it are hidden. Set to true to show the language switch again.
+  showGermanLink: false,
   linkedin: 'https://www.linkedin.com/in/fabian-kramer-400500127',
   legal: {
     street: 'Hans-Keul-Weg 27',
