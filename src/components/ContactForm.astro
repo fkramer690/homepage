@@ -1,0 +1,92 @@
+---
+import type { Dict } from '../i18n/en';
+import { site } from '../site';
+
+interface Props {
+  t: Dict;
+}
+const { t } = Astro.props;
+const f = t.contact.form;
+const base = import.meta.env.BASE_URL;
+---
+<form
+  class="contact-form"
+  action={site.form.endpoint}
+  method="post"
+  data-success={f.success}
+  data-error={f.error}
+  data-sending={f.sending}
+>
+  <h3>{f.title}</h3>
+  <input type="hidden" name="access_key" value={site.form.accessKey} />
+  <input type="hidden" name="subject" value={f.subject} />
+  <input type="hidden" name="from_name" value="FK Solution Design Website" />
+  <!-- Honeypot against spam bots; must stay empty. -->
+  <input type="checkbox" name="botcheck" class="visually-hidden" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+  <div class="field-row">
+    <label class="field">
+      <span>{f.name}</span>
+      <input type="text" name="name" autocomplete="name" required />
+    </label>
+    <label class="field">
+      <span>{f.company} <em>({f.optional})</em></span>
+      <input type="text" name="company" autocomplete="organization" />
+    </label>
+  </div>
+  <div class="field-row">
+    <label class="field">
+      <span>{f.email}</span>
+      <input type="email" name="email" autocomplete="email" required />
+    </label>
+    <label class="field">
+      <span>{f.phone} <em>({f.optional})</em></span>
+      <input type="tel" name="phone" autocomplete="tel" />
+    </label>
+  </div>
+  <label class="field">
+    <span>{f.message}</span>
+    <textarea name="message" rows="5" required></textarea>
+  </label>
+
+  <p class="form-privacy">
+    {f.privacy} <a href={`${base}datenschutz/`}>{f.privacyLink}</a>.
+  </p>
+  <button class="btn" type="submit">{f.submit}</button>
+  <p class="form-status" role="status" aria-live="polite"></p>
+</form>
+
+<script>
+  // Submit via fetch so visitors stay on the page and see the result inline.
+  for (const form of document.querySelectorAll<HTMLFormElement>('.contact-form')) {
+    const status = form.querySelector<HTMLElement>('.form-status')!;
+    const button = form.querySelector<HTMLButtonElement>('button[type="submit"]')!;
+    const label = button.textContent;
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      button.disabled = true;
+      button.textContent = form.dataset.sending ?? '';
+      status.textContent = '';
+      status.className = 'form-status';
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify(Object.fromEntries(new FormData(form))),
+        });
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok || data.success === false) throw new Error(data.message ?? res.statusText);
+        form.reset();
+        status.textContent = form.dataset.success ?? '';
+        status.classList.add('is-success');
+      } catch {
+        status.textContent = form.dataset.error ?? '';
+        status.classList.add('is-error');
+      } finally {
+        button.disabled = false;
+        button.textContent = label;
+      }
+    });
+  }
+</script>
