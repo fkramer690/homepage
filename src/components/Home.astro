@@ -6,6 +6,7 @@ import Blueprint from './Blueprint.astro';
 import Logo from './Logo.astro';
 import ExternalMark from './ExternalMark.astro';
 import ContactForm from './ContactForm.astro';
+import StructuredData from './StructuredData.astro';
 import { en } from '../i18n/en';
 import { de } from '../i18n/de';
 import { site, contactHref, contactExternal } from '../site';
@@ -25,6 +26,7 @@ const ctaAttrs = contactExternal ? { target: '_blank', rel: 'noopener' } : {};
 const [qOpen, qClose] = lang === 'de' ? ['„', '“'] : ['“', '”'];
 ---
 <Base lang={lang} title={t.meta.title} description={t.meta.description} alternates={{ en: enHome, de: deHome }}>
+  <StructuredData slot="head" t={t} url={new URL(home, Astro.site).href} />
   <a class="skip-link" href="#main">{lang === 'de' ? 'Zum Inhalt springen' : 'Skip to content'}</a>
   <Header t={t} home={home} switchHref={switchHref} />
 

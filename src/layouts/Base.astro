@@ -43,6 +43,8 @@ const abs = (path: string) => new URL(path, Astro.site).href;
     <meta property="og:image" content={abs(`${base}og-image.png`)} />
     <meta property="og:locale" content={lang === 'de' ? 'de_DE' : 'en_US'} />
     <meta name="twitter:card" content="summary_large_image" />
+    <link rel="sitemap" href={`${base}sitemap-index.xml`} />
+    <slot name="head" />
   </head>
   <body>
     <slot />
