@@ -56,6 +56,8 @@ A review is not a style check. Formatting, naming and known anti-patterns are th
 
 The repeatable part should be automated: static code analysis, naming conventions, API versions and the validation deployment. A reviewer who has to point out missing descriptions or wrong indentation has less attention left for the questions that matter.
 
+![Pull request review in four steps: one user story per pull request; the pipeline automatically checks the validation deployment, Apex tests, static code analysis, naming conventions and API versions; a human reviewer checks fit with the architecture, data model, automation and side effects, security and access, tests and quality, and traceability; the merge happens only when the change is approved and the pipeline is green. Machines check the repeatable part, people check what tools can't judge.](../../../assets/blog/pull-request-review-split-en.png)
+
 ## What did reviews change in a real programme?
 
 In one programme I joined, several implementation partners and internal teams worked on the same Salesforce org. Nobody had clearly defined who led which processes, objects and metadata. Changes overwrote each other because nobody coordinated who deployed what and when, and the technical approaches of the teams had drifted far apart.

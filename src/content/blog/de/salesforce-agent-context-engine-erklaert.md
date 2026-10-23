@@ -48,6 +48,8 @@ Laut Salesforce verbindet die Engine mehrere Bausteine:
 
 Die Engine baut auf Data 360 auf und übernimmt dessen Echtzeit-Pipeline, Zero-Copy-Zugriff, Identity Resolution und Governance. Daten, die in Snowflake, Databricks oder BigQuery bleiben, lassen sich per Zero Copy nutzen, mit der Governance von Data 360 darüber.
 
+![So stellt die Agent Context Engine Kontext zusammen: Daten aus CRM-Objekten, ERP-Systemen, Data Warehouses wie Snowflake, Databricks und BigQuery per Zero Copy, Wissensdatenbanken und früheren Gesprächen fließen in die Agent Context Engine auf Data 360. Die Engine verbindet gemeinsame Definitionen, ein begrenztes Paket pro Anfrage, Navigation im Graphen (GraphRAG) und geregelte Erinnerungen und wendet die bestehenden Objekt-, Feld- und Datensatzberechtigungen, Freigaberegeln und die Datenklassifizierung an. Agenten auf Agentforce, Google ADK, AWS Bedrock, LangGraph und dem OpenAI SDK nutzen sie über ein SDK oder MCP-Tools. Agenten erben jede Schwäche des bestehenden Berechtigungsmodells.](../../../assets/blog/agent-context-engine-de.png)
+
 ## Welche Agenten können sie nutzen?
 
 Das ist einer der interessanteren Punkte. Die Agent Context Engine ist nicht auf Agentforce beschränkt. Laut Salesforce können auch Agenten auf Google ADK, AWS Bedrock, LangGraph oder dem OpenAI SDK sie nutzen, über ein SDK oder MCP-Tools und begrenzt auf ihren erlaubten Bereich.

@@ -49,6 +49,8 @@ In manufacturing, field service is often where the customer relationship is deci
 
 When this information arrives as free text, on paper or days later, every one of these processes suffers. Guided workflows and voice input aim at exactly this point: better data, captured during the job, with less effort for the technician.
 
+![One service report feeds five processes: the technician on site records working time, travel, spare parts, the cause of the fault, fault codes and measured values. This feeds invoicing, warranty and goodwill, quality and product management, spare parts and logistics, and sales, which learns about machines nearing the end of their life. As free text, on paper or days later, every one of these processes suffers.](../../../assets/blog/field-service-report-en.png)
+
 ## Where do guided workflows help most?
 
 Guided workflows make the biggest difference where jobs vary and mistakes are expensive:

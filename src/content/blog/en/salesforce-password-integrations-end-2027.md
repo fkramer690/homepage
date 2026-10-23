@@ -35,6 +35,8 @@ Three changes overlap, and they are easy to mix up:
 
 Salesforce lists the details in its [developer guide to Winter '27](https://developer.salesforce.com/blogs/2026/10/developers-guide-to-the-winter-27-release). Normal data operations through the SOAP API, such as query, create or update, continue to work. What changes is how integrations log in.
 
+![Timeline of the Salesforce login changes for integrations: from 1 December 2026 SOAP login() needs the user permission Use Any API Auth, on 20 February 2027 the OAuth username-password flow for connected apps ends, in Summer '27 SOAP login() in API versions 31.0 to 64.0 is retired and API versions 31.0 to 40.0 get no more updates, and in Summer '28 SOAP, REST and Bulk API versions 31.0 to 40.0 fail. Query, create and update keep working; what changes is how integrations log in.](../../../assets/blog/password-flow-timeline-en.png)
+
 ## Why does this matter more in enterprise organisations?
 
 A small org has a handful of integrations, and the admin knows them. An enterprise org has grown over years. Typical sources of password-based logins are:

@@ -56,6 +56,8 @@ Ein Review ist keine Stilprüfung. Formatierung, Benennung und bekannte Anti-Pat
 
 Den wiederholbaren Teil sollten Sie automatisieren: statische Codeanalyse, Namenskonventionen, API-Versionen und das Validierungsdeployment. Ein Reviewer, der fehlende Beschreibungen oder falsche Einrückungen anmerken muss, hat weniger Aufmerksamkeit für die Fragen, die wirklich zählen.
 
+![Pull-Request-Review in vier Schritten: eine User Story pro Pull Request; die Pipeline prüft automatisch Validierungsdeployment, Apex-Tests, statische Codeanalyse, Namenskonventionen und API-Versionen; ein menschlicher Reviewer prüft Passung zur Architektur, Datenmodell, Automatisierung und Seiteneffekte, Sicherheit und Zugriff, Tests und Qualität sowie Nachvollziehbarkeit; gemergt wird nur mit Freigabe und grüner Pipeline. Die Maschine prüft den wiederholbaren Teil, der Mensch, was Werkzeuge nicht beurteilen können.](../../../assets/blog/pull-request-review-split-de.png)
+
 ## Was haben Reviews in einem echten Programm verändert?
 
 In einem Programm, zu dem ich dazukam, arbeiteten mehrere Umsetzungspartner und interne Teams an derselben Salesforce-Org. Niemand hatte klar festgelegt, wer für welche Prozesse, Objekte und Metadaten im Lead war. Änderungen überschrieben sich, weil niemand abstimmte, wer was wann deployt, und die technischen Ansätze der Teams lagen weit auseinander.

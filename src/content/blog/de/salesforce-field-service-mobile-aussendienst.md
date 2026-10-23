@@ -49,6 +49,8 @@ In der Fertigung entscheidet sich die Kundenbeziehung oft im Außendienst. Techn
 
 Kommen diese Informationen als Freitext, auf Papier oder Tage später an, leidet jeder dieser Prozesse. Geführte Abläufe und Spracheingabe zielen genau auf diesen Punkt: bessere Daten, erfasst während des Einsatzes, mit weniger Aufwand für den Techniker.
 
+![Ein Servicebericht speist fünf Prozesse: Der Techniker vor Ort erfasst Arbeitszeit, Anfahrt, Ersatzteile, Fehlerursache, Fehlercodes und Messwerte. Daraus speisen sich Abrechnung, Gewährleistung und Kulanz, Qualitäts- und Produktmanagement, Ersatzteile und Logistik sowie der Vertrieb, der von Maschinen am Ende ihrer Lebensdauer erfährt. Als Freitext, auf Papier oder Tage später leidet jeder dieser Prozesse.](../../../assets/blog/field-service-report-de.png)
+
 ## Wo helfen geführte Abläufe am meisten?
 
 Geführte Abläufe machen den größten Unterschied, wo Einsätze variieren und Fehler teuer sind:

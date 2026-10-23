@@ -37,6 +37,8 @@ What to do:
 2. Let each pipeline job authenticate directly, ideally with the JWT bearer flow and a certificate stored in the client's secret store, instead of passing tokens around between steps.
 3. Test the changed jobs in a feature branch before 28 October.
 
+![Pipeline authentication from 28 October 2026: pipelines that call sf org display, read the accessToken and pass it on break, because the command no longer shows secrets and the SF_TEMP_SHOW_SECRETS workaround ends on 28 October 2026. What works is each pipeline job authenticating itself with the JWT bearer flow and a certificate stored in the client's secret store, with no tokens passed between steps, tested in a feature branch first. Also check that the Salesforce CLI runs on Node.js 22 or later.](../../../assets/blog/winter-27-org-display-en.png)
+
 **The CLI requires Node.js 22 or later.** CI runners often use pinned Docker images or preinstalled Node versions. If a runner still has an older Node version, installing or updating the CLI fails. Check the base images of your pipeline, the setup steps of hosted runners and the machines of your developers. Tools that build on the Salesforce CLI, such as [sfdx-hardis](../sfdx-hardis-open-source-salesforce-devops/), follow the same requirement.
 
 ## Why does the Developer Console change matter?

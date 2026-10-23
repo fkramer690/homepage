@@ -31,6 +31,8 @@ Die Zahlen aus dem Oktober 2026 zeigen ein geteiltes Bild. Eine Umfrage der Inve
 
 Gleichzeitig wächst die Nachfrage nach Agentforce-Wissen schnell. Laut dem Talent-Report von 10K, ebenfalls [von Salesforce Ben aufgegriffen](https://www.salesforceben.com/agentforce-jobs-are-booming-while-projects-stall-in-pilot/), stiegen die Nennungen von Agentforce in Salesforce-Stellenanzeigen um 63 Prozent gegenüber dem Vorjahr, während die Nachfrage nach Salesforce-Fachkräften insgesamt um 13 Prozent sank.
 
+![Agentforce im Oktober 2026: 85 Prozent der befragten Salesforce-Kunden haben Agentforce getestet oder eingeführt, fast die Hälfte steckt noch in der Pilot- oder Testphase, Salesforce meldet mehr als 29.000 bezahlte Abschlüsse, und Agentforce-Nennungen in Salesforce-Stellenanzeigen stiegen gegenüber dem Vorjahr um 63 Prozent, während die Nachfrage nach Salesforce-Fachkräften insgesamt um 13 Prozent sank. Viel Interesse, viele Demos, der produktive Einsatz hinkt hinterher.](../../../assets/blog/agentforce-adoption-de.png)
+
 Unternehmen experimentieren und stellen ein, aber der produktive Einsatz hinkt hinterher. Das deckt sich mit dem, was ich auf Kundenseite sehe: viel Interesse, viele Demos und eine Lücke zwischen einer überzeugenden Demo und einem Agenten, der jeden Tag zuverlässig arbeitet.
 
 ## Was habe ich aus meinem ersten Piloten gelernt?
