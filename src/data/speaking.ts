@@ -51,6 +51,38 @@ export const talks: Talk[] = [
     },
   },
   {
+    title: 'Salesforce Flow vs OmniScript – who is the king of the hill?',
+    abstract: {
+      en: 'Many orgs with Industries licences have both: Flow from the core platform and OmniScript from OmniStudio. Teams then build the same guided process twice, or pick the tool the last consultant knew. In this session I compare the two side by side: what each does better, where they overlap, what they cost in licences and skills, and where Salesforce is taking both on its roadmap. You leave with a rule of thumb for which tool fits which process.',
+      de: 'Viele Orgs mit Industries-Lizenzen haben beides: Flow aus der Kernplattform und OmniScript aus OmniStudio. Dann baut ein Team denselben geführten Prozess zweimal, oder es nimmt das Werkzeug, das der letzte Berater kannte. In dieser Session vergleiche ich beide direkt: was jedes besser kann, wo sie sich überschneiden, was sie an Lizenzen und Know-how kosten und wohin Salesforce beide laut Roadmap entwickelt. Am Ende steht eine Faustregel, welches Werkzeug zu welchem Prozess passt.',
+    },
+    points: {
+      en: [
+        'The real differences: data handling, UI, deployment, maintenance',
+        'Decision criteria for choosing one over the other',
+        'What the roadmap means for tools you build today',
+      ],
+      de: [
+        'Die echten Unterschiede: Datenzugriff, Oberfläche, Deployment, Wartung',
+        'Entscheidungskriterien, wann welches Werkzeug passt',
+        'Was die Roadmap für das bedeutet, was Sie heute bauen',
+      ],
+    },
+    appearances: [
+      {
+        event: "French Touch Dreamin' 2024",
+        city: { en: 'Paris', de: 'Paris' },
+        country: 'FR',
+        date: '2024',
+        url: 'https://frenchtouchdreamin.com/index.php/french-touch-dreamin-2024/',
+      },
+    ],
+    recording: {
+      url: 'https://www.youtube.com/watch?v=YS6ScdxelO4',
+      label: { en: 'Event recap video', de: 'Video-Rückblick auf das Event' },
+    },
+  },
+  {
     title: 'Aim for Flow Excellence with the Lightning Flow Scanner',
     coSpeaker: 'Nicolas Vuillamy',
     abstract: {
@@ -88,15 +120,6 @@ export const talks: Talk[] = [
 // Appearances without a session of their own on this page.
 export const moreAppearances: { title: Text; text: Text; url?: string; linkLabel?: Text }[] = [
   {
-    title: { en: "French Touch Dreamin' 2024, Paris", de: "French Touch Dreamin' 2024, Paris" },
-    text: {
-      en: 'Back in Paris a year later as a speaker at the French Salesforce community conference.',
-      de: 'Ein Jahr später wieder in Paris, als Speaker auf der französischen Salesforce-Community-Konferenz.',
-    },
-    url: 'https://www.youtube.com/watch?v=YS6ScdxelO4',
-    linkLabel: { en: 'Event recap video', de: 'Video-Rückblick auf das Event' },
-  },
-  {
     title: { en: 'Salesforce User Group Cologne', de: 'Salesforce User Group Köln' },
     text: {
       en: 'Co-leader of the Cologne Trailblazer Community Group. I organise meetups and regularly give talks there myself.',
@@ -119,7 +142,7 @@ export const copy = {
     title: 'Speaker & events',
     metaTitle: 'Speaker & events | FK Solution Design',
     description:
-      'Talks by Fabian Kramer at Salesforce community conferences across Europe: Flow performance, Flow quality with the Lightning Flow Scanner, and the Cologne user group.',
+      'Talks by Fabian Kramer at Salesforce community conferences across Europe: Flow performance, Flow vs OmniScript, Flow quality with the Lightning Flow Scanner, and the Cologne user group.',
     lead: 'Since 2023 I have spoken at Salesforce community conferences in Paris, Rotterdam, Prague and London, and I co-lead the Salesforce User Group in Cologne. My talks are about the things that break in real orgs: flows that do not scale, quality checks nobody runs, releases without a safety net. I show it live in an org instead of on slides.',
     talksTitle: 'Talks',
     with: 'with',
@@ -129,9 +152,8 @@ export const copy = {
     topicsText: 'Beyond the talks above, I speak about the topics I work on every day:',
     topics: [
       'Salesforce Flow: quality, performance and testing',
+      'Flow or OmniStudio: choosing the right tool',
       'DevOps and release pipelines with sfdx-hardis',
-      'Steering implementation partners from the client side',
-      'Field Service in practice',
     ],
     formatsText: 'Conference talk, live demo or internal session for your team, in English or German.',
     photoAlt: 'Fabian Kramer giving a live demo on stage at a Salesforce community event',
@@ -145,7 +167,7 @@ export const copy = {
     title: 'Vorträge & Events',
     metaTitle: 'Vorträge & Events | FK Solution Design',
     description:
-      'Vorträge von Fabian Kramer auf Salesforce-Community-Konferenzen in Europa: Flow-Performance, Flow-Qualität mit dem Lightning Flow Scanner und die User Group Köln.',
+      'Vorträge von Fabian Kramer auf Salesforce-Community-Konferenzen in Europa: Flow-Performance, Flow vs OmniScript, Flow-Qualität mit dem Lightning Flow Scanner und die User Group Köln.',
     lead: 'Seit 2023 spreche ich auf Salesforce-Community-Konferenzen in Paris, Rotterdam, Prag und London, und ich leite die Salesforce User Group in Köln mit. In meinen Vorträgen geht es um das, was in echten Orgs kaputtgeht: Flows, die nicht skalieren, Qualitätsprüfungen, die niemand laufen lässt, Releases ohne Sicherheitsnetz. Ich zeige das live in einer Org statt auf Folien.',
     talksTitle: 'Vorträge',
     with: 'mit',
@@ -155,9 +177,8 @@ export const copy = {
     topicsText: 'Neben den Vorträgen oben spreche ich über die Themen, mit denen ich jeden Tag arbeite:',
     topics: [
       'Salesforce Flow: Qualität, Performance und Tests',
+      'Flow oder OmniStudio: das richtige Werkzeug wählen',
       'DevOps und Release-Pipelines mit sfdx-hardis',
-      'Implementierungspartner aus Kundensicht steuern',
-      'Field Service in der Praxis',
     ],
     formatsText: 'Konferenzvortrag, Live-Demo oder interne Session für Ihr Team, auf Deutsch oder Englisch.',
     photoAlt: 'Fabian Kramer bei einer Live-Demo auf der Bühne eines Salesforce-Community-Events',
