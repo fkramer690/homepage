@@ -137,6 +137,12 @@ const drawings: Record<string, Drawing> = {
     ${t(18, 18, l('LIMIT', 'GRENZE'), { fill: D, size: 7 })}${t(186, 18, 'WORKAROUND', { fill: C, size: 7 })}
     ${[[l('template = text field', 'Vorlage = Textfeld'), 'screen flow'], [l('fixed file name', 'fester Dateiname'), l('async flow', 'asynchroner Flow')], [l('no email', 'keine E-Mail'), 'flow'], [l('no defaults', 'keine Vorbelegung'), 'flow'], [l('basic styling', 'einfaches Styling'), 'LWC + GraphQL']]
       .map(([a, b], i) => box(18, 26 + i * 26, 126, 20) + t(26, 39 + i * 26, a, { size: 7 }) + arrow(150, 36 + i * 26, 180, C) + box(186, 26 + i * 26, 116, 20, C) + t(194, 39 + i * 26, b, { size: 7 })).join('')}`,
+  'salesforce-well-architected-2026': (l) => `
+    ${t(18, 16, l('PREVIOUSLY', 'BISHER'), { fill: D, size: 7 })}${t(168, 12, l('SINCE 14.09.2026', 'SEIT 14.09.2026'), { fill: D, size: 7 })}
+    ${['Trusted', 'Easy', 'Adaptable'].map((s, i) => box(18, 26 + i * 36, 82, 26) + t(59, 42 + i * 36, s, { size: 7.5, anchor: 'middle' })).join('')}
+    <path d="M100 39C124 39 124 77 140 77M100 75H140M100 111C124 111 124 77 140 77" fill="none" stroke="${G}" stroke-width="1.2"/>${arrow(140, 77, 162)}
+    ${['Trust', 'Reliability', 'Operational Excellence', 'Resource & Cost', 'Fairness'].map((s, i) => box(168, 20 + i * 22, 134, 17, i === 3 ? C : G) + t(176, 31.5 + i * 22, s, { fill: i === 3 ? C : G, size: 7 })).join('')}
+    <rect x="168" y="134" width="134" height="17" rx="4" fill="none" stroke="${C}" stroke-width="1.2" stroke-dasharray="4 3"/>${t(235, 145.5, l('+ Agentic Enterprise lens', '+ Agentic-Enterprise-Linse'), { fill: C, size: 7, anchor: 'middle' })}`,
 };
 
 export const hasDrawing = (key: string) => key in drawings;
