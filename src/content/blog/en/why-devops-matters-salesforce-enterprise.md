@@ -73,7 +73,19 @@ You don't have to buy a commercial platform to get there. A good example is [sfd
 - **Generated documentation** of the project, including flows, straight from the repository.
 - **A VS Code extension** that gives admins and consultants a visual way into the Git workflow, so DevOps is not only for developers.
 
-Commercial tools like Gearset or Copado have their place too, especially when a team wants a fully managed interface. The choice depends on the team, the existing toolchain and the budget. What matters is that a decision is made early and enforced for everyone, including every partner.
+Salesforce's own DevOps Center is another free option. It brings source control to teams that mostly work with clicks, but it covers less of the pipeline, monitoring and documentation side. Commercial tools like Gearset or Copado have their place too, especially when a team wants a fully managed interface. The choice depends on the team, the existing toolchain and the budget. What matters is that a decision is made early and enforced for everyone, including every partner.
+
+## What does the business side gain?
+
+DevOps sounds like a topic for developers. In practice the business side often benefits most:
+
+- **Predictable releases.** A fixed release calendar replaces "we'll deploy when it's ready". Departments can plan training and communication around it.
+- **Faster fixes.** When a bug hits production, a hotfix moves through the same tested pipeline in hours instead of waiting for the next big release.
+- **Fewer surprises at go-live.** Every change has already been deployed and tested in integration and UAT exactly the way it will reach production.
+- **Traceability for audits.** For every field, flow or permission you can show who changed it, when, why and who approved it.
+- **Lower dependency on individuals.** Knowledge lives in the repository and the pipeline, not in the head of one admin or one partner's lead developer.
+
+For a steering committee this translates into a simple question: how confident are we that the next release will not disrupt sales or service operations? Without DevOps, the honest answer is often a guess.
 
 ## Where should you start?
 

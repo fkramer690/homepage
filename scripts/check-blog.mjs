@@ -32,7 +32,7 @@ for (const lang of readdirSync(root)) {
 
     const text = body.replace(/```[\s\S]*?```/g, '');
     const words = text.split(/\s+/).filter(Boolean).length;
-    if (words < 600) fail(`${words} words, at least 600 needed`);
+    if (words < 1000) fail(`${words} words, at least 1000 needed`);
     if (words > 2500) fail(`${words} words, split it up (max 2500)`);
 
     if (/^# /m.test(text)) fail('no H1 (#) in the body, the title is the H1');
