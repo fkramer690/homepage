@@ -42,3 +42,10 @@ export async function getRelated(post: Post, limit = 3): Promise<Post[]> {
     .slice(0, limit)
     .map(({ p }) => p);
 }
+
+// The first graphic in the article body, shown as a section on the blog overview card.
+const graphics = import.meta.glob<{ default: ImageMetadata }>('../assets/blog/*.{png,jpg,webp}', { eager: true });
+export function cardImage(post: Post): ImageMetadata | undefined {
+  const file = (post.body ?? '').match(/!\[[^\]]*\]\([^)]*?assets\/blog\/([^)/]+)\)/)?.[1];
+  return file ? graphics[`../assets/blog/${file}`]?.default : undefined;
+}

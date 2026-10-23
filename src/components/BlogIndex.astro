@@ -3,7 +3,8 @@ import Page from '../layouts/Page.astro';
 import { en } from '../i18n/en';
 import { de } from '../i18n/de';
 import TopicVisual from './TopicVisual.astro';
-import { getPosts, postHref, readingMinutes, formatDate } from '../lib/blog';
+import { Image } from 'astro:assets';
+import { getPosts, postHref, readingMinutes, formatDate, cardImage } from '../lib/blog';
 import { topics } from '../lib/topics';
 
 interface Props {
@@ -27,8 +28,9 @@ const posts = await getPosts(lang);
           <li class:list={['post-tile', { featured: i === 0 }]}>
             <a href={postHref(post)}>
               <span class="post-tile-media">
-                <TopicVisual topic={post.data.topic} />
-                <span class="post-tile-topic mono">{topics[post.data.topic][lang]}</span>
+                {cardImage(post)
+                  ? <Image class="post-tile-graphic" src={cardImage(post)!} alt="" widths={[480, 720, 1080]} sizes="(max-width: 640px) 100vw, (max-width: 980px) 50vw, 560px" />
+                  : <><TopicVisual topic={post.data.topic} /><span class="post-tile-topic mono">{topics[post.data.topic][lang]}</span></>}
               </span>
               <span class="post-tile-body">
                 <span class="post-meta mono">
