@@ -1,0 +1,42 @@
+---
+import Legal from '../layouts/Legal.astro';
+import { site } from '../site';
+const l = site.legal;
+---
+<Legal title="Impressum">
+  <h2>Angaben gemäß § 5 DDG</h2>
+  <p>
+    {site.company}<br />
+    {l.street}<br />
+    {l.city}<br />
+    Deutschland
+  </p>
+
+  <h2>Vertreten durch</h2>
+  <p>Geschäftsführer: {l.managingDirector}</p>
+
+  <h2>Kontakt</h2>
+  <p>
+    E-Mail: <a href={`mailto:${site.email}`}>{site.email}</a>
+    {l.phone && (<><br />Telefon: {l.phone}</>)}
+  </p>
+
+  <h2>Registereintrag</h2>
+  <p>
+    Eintragung im Handelsregister<br />
+    Registergericht: {l.registerCourt}<br />
+    Registernummer: {l.register}
+  </p>
+
+  <h2>Umsatzsteuer-ID</h2>
+  <p>Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz: {l.vatId}</p>
+
+  <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
+  <p>{site.person}, Anschrift wie oben</p>
+
+  <h2>Verbraucherstreitbeilegung</h2>
+  <p>
+    Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer
+    Verbraucherschlichtungsstelle teilzunehmen.
+  </p>
+</Legal>
