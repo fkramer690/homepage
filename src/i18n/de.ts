@@ -138,7 +138,7 @@ export const de: Dict = {
     paragraphs: [
       'Ich helfe Fertigungsunternehmen, Salesforce zu einem verlässlichen Rückgrat für Vertrieb, Service und After-Sales zu machen – als Architekt auf Kundenseite.',
       'Zuletzt habe ich vor allem für deutsche Hersteller mit globalem Geschäft gearbeitet: vom ersten weltweiten Rollout der Salesforce Manufacturing Cloud über einen globalen CTI-Rollout mit Service Cloud Voice und Genesys bis zu einem Subunternehmer-Portal für den After-Sales im Schiffbau und einer Embedded-Chat-Lösung mit Rollout-Plan für 12 Locales.',
-      'Ich bin an keinen Hersteller und keinen Implementierungspartner gebunden. Deshalb frage ich regelmäßig, ob etwas überhaupt in Salesforce gebaut werden sollte. Make-or-Buy-Bewertungen, Lizenzprognosen und Best-of-Breed-Alternativen gehören zum Job und sind kein Nachgedanke.',
+      'Ich bin an keinen Hersteller und keinen Implementierungspartner gebunden. Deshalb frage ich regelmäßig, ob etwas überhaupt in Salesforce gebaut werden sollte. Wenn andere das fragen, kennen sie die Plattform oft nicht gut genug. Ich frage es, weil ich weiß, wo ihre Grenzen liegen und wo sie das richtige Werkzeug ist. Make-or-Buy-Bewertungen, Lizenzprognosen und Best-of-Breed-Alternativen gehören zum Job und sind kein Nachgedanke.',
     ],
     facts: [
       { label: 'Seit 2020', text: 'Gründer der FK Solution Design GmbH, Köln' },
@@ -146,6 +146,22 @@ export const de: Dict = {
       { label: 'Studium', text: 'M.Sc. Wirtschaftsinformatik, Universität Koblenz-Landau' },
     ],
     linkedin: 'LinkedIn-Profil',
+    speaking: 'Vorträge & Events',
+    certifications: 'Zertifizierungen',
+  },
+  subpages: {
+    speaking: {
+      title: 'Vorträge & Events',
+      metaTitle: 'Vorträge & Events | FK Solution Design',
+      intro: 'Vorträge, Live-Demos und Events, auf denen ich über Salesforce-Architektur spreche.',
+    },
+    certifications: {
+      title: 'Zertifizierungen',
+      metaTitle: 'Zertifizierungen | FK Solution Design',
+      intro: 'Meine Salesforce-Zertifizierungen und was sie abdecken.',
+    },
+    tbd: 'An dieser Seite schreibe ich gerade. Bis dahin finden Sie die Details in meinem LinkedIn-Profil.',
+    back: 'Zurück zur Startseite',
   },
   contact: {
     label: 'Kontakt',

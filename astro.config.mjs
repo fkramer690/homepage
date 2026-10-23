@@ -14,8 +14,8 @@ export default defineConfig({
   trailingSlash: 'always',
   integrations: [
     sitemap({
-      // Legal pages are noindex, so keep them out of the sitemap.
-      filter: (page) => !/\/(impressum|datenschutz)\/$/.test(page),
+      // Legal pages and unfinished subpages are noindex, so keep them out of the sitemap.
+      filter: (page) => !/\/(impressum|datenschutz|speaking|certifications)\/$/.test(page),
       i18n: {
         defaultLocale: 'en',
         locales: { en: 'en', de: 'de' },

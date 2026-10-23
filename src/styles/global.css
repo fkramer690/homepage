@@ -465,6 +465,8 @@ a:hover { color: var(--anthracite); }
   gap: clamp(32px, 6vw, 80px);
 }
 .about-main p { max-width: 62ch; }
+.about-links { list-style: none; padding: 0; margin: 1.2em 0 0; display: grid; gap: 0.5em; }
+.subpage-tbd { display: inline-block; color: var(--cyan); border: 1px solid currentColor; border-radius: 4px; padding: 0.1em 0.6em; letter-spacing: 0.12em; }
 .about-sub { color: var(--text-2); margin-top: -0.4em; }
 .about-facts {
   align-self: start;

@@ -136,7 +136,7 @@ export const en = {
     paragraphs: [
       'I help manufacturing companies turn Salesforce into a reliable backbone for sales, service and after-sales – as the architect on the client side.',
       'Most of my recent work is with German manufacturers operating globally: from the first worldwide Salesforce Manufacturing Cloud rollout to a global CTI rollout with Service Cloud Voice and Genesys, a subcontractor portal for after-sales in shipbuilding, and an embedded chat solution with a rollout plan for 12 locales.',
-      'I’m not tied to a vendor or an implementation partner. That’s why I regularly ask whether something should be built in Salesforce at all. Make-or-buy evaluations, license forecasts and best-of-breed alternatives are part of the job, not an afterthought.',
+      'I’m not tied to a vendor or an implementation partner. That’s why I regularly ask whether something should be built in Salesforce at all. When others ask that, it is often because they don’t know what the platform can do. I ask it because I know where its limits are and where it is the right tool. Make-or-buy evaluations, license forecasts and best-of-breed alternatives are part of the job, not an afterthought.',
     ],
     facts: [
       { label: 'Since 2020', text: 'Founder of FK Solution Design GmbH, Cologne' },
@@ -144,6 +144,22 @@ export const en = {
       { label: 'Education', text: 'M.Sc. Information Systems, University of Koblenz-Landau' },
     ],
     linkedin: 'LinkedIn profile',
+    speaking: 'Speaker & events',
+    certifications: 'Certifications',
+  },
+  subpages: {
+    speaking: {
+      title: 'Speaker & events',
+      metaTitle: 'Speaker & events | FK Solution Design',
+      intro: 'Talks, live demos and events where I speak about Salesforce architecture.',
+    },
+    certifications: {
+      title: 'Certifications',
+      metaTitle: 'Certifications | FK Solution Design',
+      intro: 'My Salesforce certifications and what they cover.',
+    },
+    tbd: 'This page is being written. Until then, my LinkedIn profile has the details.',
+    back: 'Back to the start page',
   },
   contact: {
     label: 'Contact',

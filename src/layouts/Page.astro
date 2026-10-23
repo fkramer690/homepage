@@ -16,14 +16,15 @@ interface Props {
   image?: string;
   // True when the page has its own #contact section (blog articles).
   hasContact?: boolean;
+  noindex?: boolean;
 }
-const { lang, title, description, alternates, ogType, image, hasContact = false } = Astro.props;
+const { lang, title, description, alternates, ogType, image, hasContact = false, noindex = false } = Astro.props;
 const t = lang === 'de' ? de : en;
 const base = import.meta.env.BASE_URL;
 const home = lang === 'de' ? `${base}de/` : base;
 const switchHref = alternates ? (lang === 'de' ? alternates.en : alternates.de) : lang === 'de' ? base : `${base}de/`;
 ---
-<Base lang={lang} title={title} description={description} alternates={alternates} ogType={ogType} image={image}>
+<Base lang={lang} title={title} description={description} alternates={alternates} ogType={ogType} image={image} noindex={noindex}>
   <slot name="head" slot="head" />
   <a class="skip-link" href="#main">{lang === 'de' ? 'Zum Inhalt springen' : 'Skip to content'}</a>
   <Header t={t} home={home} switchHref={switchHref} />
