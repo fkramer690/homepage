@@ -3,7 +3,7 @@ import type { Dict } from './en';
 export const de: Dict = {
   lang: 'de',
   meta: {
-    title: 'FK Solution Design – Salesforce-Architektur für Hersteller',
+    title: 'FK Solution Design – Salesforce-Architektur für die Manufacturing-Branche',
     description:
       'Unabhängiger Salesforce Enterprise Architect für Fertigungsunternehmen. After-Sales, Service, Field Service und B2B-Vertrieb – auf Kundenseite, ohne Bindung an Hersteller oder Implementierungspartner.',
   },
@@ -20,9 +20,8 @@ export const de: Dict = {
   },
   hero: {
     eyebrow: 'FK Solution Design GmbH · Köln',
-    title: 'Salesforce-Architektur für Hersteller – auf Kundenseite.',
+    title: 'Salesforce-Architektur für die Manufacturing-Branche – auf Kundenseite.',
     focus: ['After-Sales', 'Service', 'Field Service', 'B2B-Vertrieb'],
-    problem: 'Mehrere Implementierungspartner, eine Salesforce-Org, und niemand verantwortet das Ganze.',
     lead: 'Die zentrale Architektur-Instanz zwischen Fachbereich, interner IT und Ihren Implementierungspartnern.',
     ctaPrimary: '30-Minuten-Gespräch vereinbaren',
     ctaSecondary: 'Referenzen ansehen',
@@ -38,9 +37,10 @@ export const de: Dict = {
   role: {
     label: 'Die Rolle',
     title: 'Einer muss das Gesamtbild verantworten.',
+    problem: 'Mehrere Implementierungspartner, eine Salesforce-Org, und niemand verantwortet das Ganze.',
     situationTitle: 'Die Lage',
     situation:
-      'Viele Hersteller betreiben Salesforce mit mehreren Implementierungspartnern, immer mehr Clouds und enger Anbindung an ERP, Telefonie und Service-Systeme. Jeder Partner liefert sein Stück. Für das Ganze ist niemand zuständig.',
+      'Viele Hersteller betreiben Salesforce mit mehreren Implementierungspartnern, immer mehr Clouds und enger Anbindung an ERP, Telefonie und Service-Systeme. Jeder Partner liefert sein Stück.',
     approachTitle: 'Was ich dagegen tue',
     approach:
       'Ich arbeite als zentrale Architektur-Instanz auf Ihrer Seite. Ich verantworte Lösungsdesign und Gesamtarchitektur, setze Standards für Governance und DevOps, prüfe, was Partner liefern – und hinterfrage es, bevor es teuer wird.',
