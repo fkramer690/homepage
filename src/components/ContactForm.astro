@@ -17,6 +17,7 @@ const base = import.meta.env.BASE_URL;
   data-error={f.error}
   data-sending={f.sending}
 >
+  <div class="form-body">
   <h3>{f.title}</h3>
   <input type="hidden" name="access_key" value={site.form.accessKey} />
   <input type="hidden" name="subject" value={f.subject} />
@@ -53,12 +54,14 @@ const base = import.meta.env.BASE_URL;
     {f.privacy} <a href={`${base}datenschutz/`}>{f.privacyLink}</a>.
   </p>
   <button class="btn" type="submit">{f.submit}</button>
-  <p class="form-status" role="status" aria-live="polite"></p>
+  </div>
+  <p class="form-status" role="status" aria-live="polite" tabindex="-1"></p>
 </form>
 
 <script>
   // Submit via fetch so visitors stay on the page and see the result inline.
   for (const form of document.querySelectorAll<HTMLFormElement>('.contact-form')) {
+    const body = form.querySelector<HTMLElement>('.form-body')!;
     const status = form.querySelector<HTMLElement>('.form-status')!;
     const button = form.querySelector<HTMLButtonElement>('button[type="submit"]')!;
     const label = button.textContent;
@@ -78,8 +81,11 @@ const base = import.meta.env.BASE_URL;
         const data = await res.json().catch(() => ({}));
         if (!res.ok || data.success === false) throw new Error(data.message ?? res.statusText);
         form.reset();
+        // Collapse the form and leave only the confirmation.
+        body.hidden = true;
         status.textContent = form.dataset.success ?? '';
         status.classList.add('is-success');
+        status.focus();
       } catch {
         status.textContent = form.dataset.error ?? '';
         status.classList.add('is-error');

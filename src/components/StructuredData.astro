@@ -1,0 +1,51 @@
+---
+// Schema.org data so search engines understand who is behind the site.
+import type { Dict } from '../i18n/en';
+import { site } from '../site';
+
+interface Props {
+  t: Dict;
+  url: string;
+}
+const { t, url } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const abs = (path: string) => new URL(path, Astro.site).href;
+const l = site.legal;
+
+const data = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'ProfessionalService',
+      '@id': `${abs(base)}#organization`,
+      name: site.company,
+      url,
+      description: t.meta.description,
+      logo: abs(`${base}apple-touch-icon.png`),
+      image: abs(`${base}og-image.png`),
+      email: site.email,
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: l.street,
+        postalCode: l.city.split(' ')[0],
+        addressLocality: l.city.split(' ').slice(1).join(' '),
+        addressCountry: 'DE',
+      },
+      areaServed: ['DE', 'Europe', 'Worldwide'],
+      knowsAbout: ['Salesforce', 'Salesforce Architecture', 'Manufacturing Cloud', 'Field Service', 'Service Cloud', 'CPQ', 'B2B Commerce'],
+      founder: { '@id': `${abs(base)}#person` },
+      sameAs: [site.linkedin],
+      inLanguage: t.lang,
+    },
+    {
+      '@type': 'Person',
+      '@id': `${abs(base)}#person`,
+      name: site.person,
+      jobTitle: 'Salesforce Enterprise Architect',
+      worksFor: { '@id': `${abs(base)}#organization` },
+      sameAs: [site.linkedin],
+    },
+  ],
+};
+---
+<script type="application/ld+json" set:html={JSON.stringify(data)} />
