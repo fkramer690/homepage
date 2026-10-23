@@ -33,6 +33,7 @@ const ctaAttrs = contactExternal ? { target: '_blank', rel: 'noopener' } : {};
 const suffix = ' | FK Solution Design';
 const pageTitle = title.length + suffix.length <= 60 ? title + suffix : title;
 const modified = (updatedDate ?? pubDate).toISOString();
+const ogImage = `${base}og/${lang}/${post.data.slug}.png`;
 
 const schema = {
   '@context': 'https://schema.org',
@@ -47,7 +48,7 @@ const schema = {
       dateModified: modified,
       inLanguage: lang,
       mainEntityOfPage: url,
-      image: abs(`${base}og-image.png`),
+      image: abs(ogImage),
       keywords: tags.join(', '),
       wordCount: (post.body ?? '').split(/\s+/).filter(Boolean).length,
       author: { '@type': 'Person', '@id': `${abs(base)}#person`, name: site.person, url: site.linkedin, jobTitle: 'Salesforce Enterprise Architect' },
@@ -70,7 +71,7 @@ const schema = {
   ],
 };
 ---
-<Page lang={lang} title={pageTitle} description={description} alternates={alternates} ogType="article">
+<Page lang={lang} title={pageTitle} description={description} alternates={alternates} ogType="article" image={ogImage}>
   <Fragment slot="head">
     <meta property="article:published_time" content={pubDate.toISOString()} />
     <meta property="article:modified_time" content={modified} />

@@ -39,6 +39,15 @@ Below every article the template adds the author box, related articles and the c
 - Never identifiable: customers, partners, people. Never name the energy or utility sector (the script blocks typical terms). Do not highlight certifications.
 - Only claim experience Fabian actually has. If a claim or example is unclear, ask him.
 
+## Images
+
+- **Preview image (automatic):** every article gets its own 1200×630 image for LinkedIn and other link previews, generated at build time from the title in the site's style (`src/lib/og.ts`, served at `/og/<lang>/<slug>.png`). Nothing to do per article.
+- **Explanatory graphics (optional):** add one when it explains something faster than text, e.g. a release pipeline, an architecture sketch or a decision matrix. Use the site colours (anthracite, cyan, white).
+  - Store files in `src/assets/blog/` and reference them relative from the article: `![Release pipeline from sandbox to production](../../../assets/blog/devops-pipeline.png)`. Astro then optimises size and format.
+  - Alt text is required and describes what the graphic shows. Text in the graphic must also appear in the article, so search engines and AI assistants can read it.
+  - Provide a German version of the graphic when it contains text.
+- **No stock photos** and no decorative images. They add nothing for readers or rankings.
+
 ## SEO
 
 - One primary keyword (long tail, e.g. "Salesforce DevOps enterprise") in the title, the first paragraph, one H2 and the slug.
@@ -75,4 +84,5 @@ Before opening the pull request:
 - [ ] Nothing identifiable, no energy/utility reference, no certification focus
 - [ ] At least 1,000 words in the body, EN and DE
 - [ ] `npm run build` passes (runs `check-blog.mjs`)
+- [ ] Optional graphic has alt text and lives in `src/assets/blog/`
 - [ ] Draft of 2–3 LinkedIn teasers (thesis, example, checklist) for Fabian
