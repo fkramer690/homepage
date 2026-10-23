@@ -58,6 +58,8 @@ Der erste Schritt war einfach und wirksam: Jede Änderung ging über einen Pull 
 - **Eine Object Ownership Matrix**, die festlegte, welcher Stream für welches Objekt verantwortlich war. Bevor ein Team ein fremdes Objekt änderte, musste es sich mit dem Verantwortlichen abstimmen.
 - **Regeln für Konfiguration**, zum Beispiel welche Werte in Custom Metadata Types oder Custom Labels gehören, statt fest im Code zu stehen.
 
+![Vereinfachtes Beispiel einer Object Ownership Matrix: Der Stream Vertrieb verantwortet Account, Opportunity und Quote, der Stream Service verantwortet Case und Asset, der Stream Field Service verantwortet Work Order. Jeder andere Stream stimmt sich mit dem Verantwortlichen ab, bevor er eines dieser Objekte ändert.](../../../assets/blog/object-ownership-matrix-de.png)
+
 Bis die Standards stabil waren, hat es etwa drei Monate gedauert. Die erste Version deckte rund 80 Prozent der Fälle ab. In den Wochen danach kamen neue Randfälle hinzu. Wir haben sie in regelmäßigen Center-of-Excellence-Calls besprochen, in denen anstehende Änderungen mit genug Vorlauf für alle Streams auf den Tisch kamen. Irgendwann fielen die Randfälle ganz weg, weil Themen besprochen wurden, bevor sie zu Konflikten wurden. Als der Prozess rund lief, habe ich ihn an einen internen Kollegen übergeben, der ihn seitdem verantwortet.
 
 ## Warum gehört die Governance auf die Kundenseite?

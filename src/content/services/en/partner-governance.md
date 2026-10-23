@@ -58,6 +58,8 @@ The first step was simple and effective: every change went through a pull reques
 - **An object ownership matrix**, which defined which stream was responsible for which object. Before a team changed an object it did not own, it had to coordinate with the owner.
 - **Rules for configuration**, for example which values belong in custom metadata types or custom labels instead of being hardcoded.
 
+![Simplified example of an object ownership matrix: the sales stream owns Account, Opportunity and Quote, the service stream owns Case and Asset, the field service stream owns Work Order. Every other stream coordinates with the owner before it changes one of these objects.](../../../assets/blog/object-ownership-matrix-en.png)
+
 It took about three months until the standards were stable. The first version covered roughly 80 percent of the cases. New edge cases came up over the following weeks. We addressed them in regular Center of Excellence calls, where upcoming changes were raised with enough lead time for all streams. After a while the edge cases disappeared, because topics came up before they turned into conflicts. Once the process ran smoothly, I handed it over to an internal colleague who now owns it.
 
 ## Why does governance belong on the client side?

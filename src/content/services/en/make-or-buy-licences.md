@@ -60,6 +60,8 @@ The first-year price is the least interesting number. I look at several years an
 - **Maintenance and upgrades**, including the effort that custom code causes with every Salesforce release.
 - **Follow-up costs**, such as add-ons that become necessary later or the effort to switch to another option.
 
+![Make-or-buy with four options per requirement: standard product, industry cloud, custom build on the core platform or separate tool. The ROI case looks at several years, not the first-year price, and includes licences for every user group with the expected growth, implementation by internal teams and partners, maintenance and upgrades including the effort custom code causes with every release, and follow-up costs such as add-ons needed later or the effort to switch to another option. The second lever is the licence type, because full licences are often offered by default, even for users who only read or approve.](../../../assets/blog/make-or-buy-roi-en.png)
+
 ## What should you know about Salesforce licences?
 
 The list price is rarely the final offer. Timing matters: at the end of the vendor's fiscal year or during promotions, there is often room to include products the company will need in the next two to three years for little extra cost. That requires a roadmap that is clear enough to know what to ask for.

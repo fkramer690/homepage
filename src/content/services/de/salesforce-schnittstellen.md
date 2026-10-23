@@ -53,6 +53,8 @@ Die meisten Integrationsprobleme beginnen mit einer unklaren Antwort auf diese F
 - **Aufträge und Rechnungen:** im ERP angelegt oder bestätigt und in Salesforce sichtbar.
 - **Fälle und Servicehistorie:** Salesforce, mit Verweisen auf Aufträge und installierte Produkte aus dem ERP.
 
+![Systemlandkarte, welches System bei welchen Daten führt: Bei Kunden und Kontakten führt Salesforce für Interessenten und Kontakte und das ERP für Kunden mit Aufträgen und Rechnungen; bei Produkten und Preisen ist meist das ERP führend und Salesforce liest, was der Vertrieb braucht; Aufträge und Rechnungen werden im ERP angelegt oder bestätigt und sind in Salesforce sichtbar; bei Fällen und Servicehistorie führt Salesforce, mit Verweisen auf Aufträge und installierte Produkte aus dem ERP. Das ist eine typische Aufteilung, die Details unterscheiden sich in jedem Unternehmen.](../../../assets/blog/integration-leading-system-de.png)
+
 Die Details unterscheiden sich in jedem Unternehmen. Deshalb gehört diese Landkarte zur [Salesforce-Architektur](../salesforce-architektur/) und wird nicht der einzelnen Schnittstelle überlassen.
 
 ## Braucht es eine Middleware?
