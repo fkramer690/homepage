@@ -50,6 +50,9 @@ for (const lang of readdirSync(root)) {
     if (/\]\(\/(?!\/)/.test(text)) fail('internal links must be relative (../../#services), not start with /');
     if (/\]\(https?:\/\/fkramer690\.github\.io/.test(text)) fail('do not hardcode the site domain, use relative links');
 
+    if (/!\[\s*\]\(/.test(text)) fail('every image needs alt text: ![What the image shows](...)');
+    if (/!\[[^\]]*\]\(https?:/.test(text)) fail('store images in src/assets/blog/, do not hotlink external images');
+
     for (const re of banned) if (re.test(raw)) fail(`contains a banned term (${re})`);
   }
 }
