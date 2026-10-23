@@ -63,7 +63,7 @@ Changes to parts 1–2 and 4–7 are made once in the components and apply to al
 ## SEO
 
 - One primary keyword (long tail, e.g. "Salesforce DevOps enterprise") in the title, the first paragraph, one H2 and the slug.
-- Slug: lowercase words with hyphens, in the article's language. Never change it after publishing.
+- Slug: lowercase words with hyphens, in the article's language, unique across EN and DE (checked). Never change it after publishing.
 - At least 2 internal links, written relative so they survive the domain move: `../../#services`, `../../#references`, `../../#about`, `../other-slug/`. Never hardcode the domain or start a link with `/`.
 - External links only to sources that back a statement.
 - Set `updatedDate` whenever an article changes in substance.

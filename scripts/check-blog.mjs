@@ -10,6 +10,7 @@ const banned = [/energieversorg/i, /\bversorger\b/i, /\butilit(y|ies)\b/i, /stad
 
 const errors = [];
 const pairs = new Map();
+const slugs = new Map();
 
 for (const lang of readdirSync(root)) {
   for (const file of readdirSync(join(root, lang)).filter((f) => f.endsWith('.md'))) {
@@ -27,6 +28,10 @@ for (const lang of readdirSync(root)) {
 
     if (field('lang') !== lang) fail(`lang must be "${lang}" for files in ${lang}/`);
     const key = field('translationKey');
+    // Astro uses the slug as the entry id, so a slug shared by EN and DE silently drops one article.
+    const slug = field('slug');
+    if (slugs.has(slug)) fail(`slug "${slug}" is already used by ${slugs.get(slug)}, slugs must be unique across languages`);
+    else slugs.set(slug, name);
     if (!pairs.has(key)) pairs.set(key, new Set());
     pairs.get(key).add(lang);
 
