@@ -68,7 +68,7 @@ Die [Übersicht der Field-Service-Limits](https://help.salesforce.com/s/articleV
 - **Lücken in der Darstellung.** Lookup-Felder in verknüpften Listen zeigen Datensatz-IDs statt Namen, Bild-URLs werden nicht gerendert, Rich Text druckt nur schwarz, lange Textfelder gehen in verknüpften Listen nicht. Formelfelder helfen oft, aber das sollten Sie vor dem Vorlagen-Workshop wissen.
 - **Übersetzung.** Im Rich Text werden nur Custom Labels übersetzt. Layouts für Schriften von rechts nach links werden nicht unterstützt.
 
-Am meisten fehlt mir Bedingungslogik. Salesforce dokumentiert keine bedingten Abschnitte wie "Druckprüfung nur für diesen Maschinentyp anzeigen". Wenn Ihre Prüfprotokolle heute so aufgebaut sind, bildet der Document Builder sie nicht ab.
+Am meisten fehlt mir Bedingungslogik. Salesforce dokumentiert keine bedingten Abschnitte wie "Druckprüfung nur für diesen Maschinentyp anzeigen". Wenn Ihre Prüfprotokolle heute so aufgebaut sind, bildet der Document Builder sie nicht ab. Fünf kleinere Lücken, von der Vorlagenwahl bis zur E-Mail, lassen sich mit Flows und Komponenten schließen; ich beschreibe sie in [Document Builder: fünf Grenzen und Workarounds](../salesforce-document-builder-grenzen-workarounds/).
 
 ## Was ich bei Tool-Auswahlen sehe
 
