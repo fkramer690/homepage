@@ -73,7 +73,19 @@ Um dorthin zu kommen, muss man keine kommerzielle Plattform kaufen. Ein gutes Be
 - **Generierte Dokumentation** des Projekts, einschließlich Flows, direkt aus dem Repository.
 - **Eine VS-Code-Erweiterung**, die Admins und Beratern einen visuellen Zugang zum Git-Workflow gibt. So ist DevOps nicht nur etwas für Entwickler.
 
-Kommerzielle Tools wie Gearset oder Copado haben ebenfalls ihre Berechtigung, vor allem wenn ein Team eine komplett verwaltete Oberfläche möchte. Die Wahl hängt vom Team, der vorhandenen Toolchain und dem Budget ab. Entscheidend ist, dass früh entschieden und für alle verbindlich durchgesetzt wird, auch für jeden Partner.
+Das DevOps Center von Salesforce selbst ist eine weitere kostenlose Option. Es bringt Versionsverwaltung auch zu Teams, die vor allem mit Klicks arbeiten, deckt aber weniger von Pipeline, Monitoring und Dokumentation ab. Kommerzielle Tools wie Gearset oder Copado haben ebenfalls ihre Berechtigung, vor allem wenn ein Team eine komplett verwaltete Oberfläche möchte. Die Wahl hängt vom Team, der vorhandenen Toolchain und dem Budget ab. Entscheidend ist, dass früh entschieden und für alle verbindlich durchgesetzt wird, auch für jeden Partner.
+
+## Was gewinnt der Fachbereich?
+
+DevOps klingt nach einem Thema für Entwickler. In der Praxis profitiert oft der Fachbereich am meisten:
+
+- **Planbare Releases.** Ein fester Release-Kalender ersetzt „wir deployen, wenn es fertig ist“. Fachbereiche können Schulungen und Kommunikation darauf ausrichten.
+- **Schnellere Korrekturen.** Tritt ein Fehler in Produktion auf, läuft ein Hotfix in Stunden durch dieselbe getestete Pipeline, statt auf das nächste große Release zu warten.
+- **Weniger Überraschungen beim Go-live.** Jede Änderung wurde in Integration und UAT bereits genau so deployt und getestet, wie sie in Produktion ankommt.
+- **Nachvollziehbarkeit für Audits.** Für jedes Feld, jeden Flow und jede Berechtigung lässt sich zeigen, wer es wann und warum geändert und wer es freigegeben hat.
+- **Weniger Abhängigkeit von Einzelnen.** Das Wissen liegt im Repository und in der Pipeline, nicht im Kopf eines Admins oder des Lead-Entwicklers eines Partners.
+
+Für einen Lenkungsausschuss läuft das auf eine einfache Frage hinaus: Wie sicher sind wir, dass das nächste Release Vertrieb oder Service nicht stört? Ohne DevOps ist die ehrliche Antwort oft eine Schätzung.
 
 ## Wo fängt man an?
 

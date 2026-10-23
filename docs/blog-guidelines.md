@@ -28,7 +28,7 @@ Below every article the template adds the author box, related articles and the c
 
 ## Length
 
-- Standard: 800–1,500 words. Short notes from 600 words, deep dives up to 2,500 (the script enforces 600–2,500).
+- Minimum 1,000 words in the article body (takeaways and FAQ not counted), standard 1,000–1,500, deep dives up to 2,500. The script enforces 1,000–2,500 for both languages.
 - Length follows the topic. Cut filler instead of padding.
 
 ## Tone
@@ -73,5 +73,6 @@ Before opening the pull request:
 - [ ] At least one question H2 and one anonymised project example
 - [ ] At least 2 relative internal links, closing invitation links to `#contact`
 - [ ] Nothing identifiable, no energy/utility reference, no certification focus
+- [ ] At least 1,000 words in the body, EN and DE
 - [ ] `npm run build` passes (runs `check-blog.mjs`)
 - [ ] Draft of 2–3 LinkedIn teasers (thesis, example, checklist) for Fabian
