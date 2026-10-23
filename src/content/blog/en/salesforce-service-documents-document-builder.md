@@ -68,7 +68,7 @@ The [Field Service limits page](https://help.salesforce.com/s/articleView?id=ser
 - **Display gaps.** Lookup fields in related lists show record IDs instead of names, image URLs are not rendered, rich text prints only in black, long text fields cannot be used in related lists. Formula fields often help, but you have to know it before the template workshop.
 - **Translation.** In rich text only custom labels are translated. Right-to-left layouts are not supported.
 
-What I miss most is conditional logic. Salesforce does not document conditional sections like "show the pressure test only for this machine type". If your inspection reports work like that today, Document Builder will not reproduce them.
+What I miss most is conditional logic. Salesforce does not document conditional sections like "show the pressure test only for this machine type". If your inspection reports work like that today, Document Builder will not reproduce them. Five smaller gaps, from template choice to email, can be closed with flows and components; I describe them in [Document Builder: five limits and workarounds](../salesforce-document-builder-limits-workarounds/).
 
 ## What I see in tool selections
 
