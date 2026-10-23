@@ -1,0 +1,22 @@
+---
+// Forwards an old URL to its new address. GitHub Pages has no server-side
+// redirects, so this is a static page with a meta refresh and a canonical link.
+interface Props {
+  to: string;
+}
+const { to } = Astro.props;
+const target = new URL(to, Astro.site).href;
+---
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <title>Weiterleitung – FK Solution Design</title>
+    <meta name="robots" content="noindex" />
+    <link rel="canonical" href={target} />
+    <meta http-equiv="refresh" content={`0; url=${to}`} />
+  </head>
+  <body>
+    <p><a href={to}>{target}</a></p>
+  </body>
+</html>

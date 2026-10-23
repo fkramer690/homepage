@@ -1,6 +1,6 @@
 # FK Solution Design homepage
 
-Astro site on GitHub Pages. English at `/`, German under `/de/` (maintained in parallel, not advertised). See README.md for structure and deployment.
+Astro site on GitHub Pages. German at `/`, English under `/en/` (both maintained in parallel). Old `/de/…` and English `/blog/…` and `/services/…` URLs are redirect pages (`src/components/Redirect.astro`); build links with `src/lib/paths.ts`, never hard-code a language prefix. See README.md for structure and deployment.
 
 ## Blog articles
 

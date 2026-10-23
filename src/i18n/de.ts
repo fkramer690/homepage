@@ -22,6 +22,7 @@ export const de: Dict = {
     eyebrow: 'FK Solution Design GmbH · Köln',
     title: 'Salesforce-Architektur für Hersteller – auf Kundenseite.',
     focus: ['After-Sales', 'Service', 'Field Service', 'B2B-Vertrieb'],
+    problem: 'Mehrere Implementierungspartner, eine Salesforce-Org, und niemand verantwortet das Ganze.',
     lead: 'Die zentrale Architektur-Instanz zwischen Fachbereich, interner IT und Ihren Implementierungspartnern.',
     ctaPrimary: '30-Minuten-Gespräch vereinbaren',
     ctaSecondary: 'Referenzen ansehen',
@@ -31,7 +32,7 @@ export const de: Dict = {
     { value: '8', label: 'Jahre Salesforce' },
     { value: '20+', label: 'Enterprise-Projekte' },
     { value: '8 · 32', label: 'Teams · Entwickler in einem Programm' },
-    { value: 'Global', label: 'Rollouts über viele Länder' },
+    { value: '25', label: 'Salesforce-Zertifikate, 8 Architect' },
     { value: '0', label: 'Bindungen an Hersteller oder Partner' },
   ],
   role: {
@@ -131,6 +132,21 @@ export const de: Dict = {
       { title: 'Steuern', text: 'Standards für Governance, DevOps und Releases, und Reviews der Partnerlieferungen.' },
       { title: 'Umsetzen', text: 'Begleitung der Umsetzung bis zum globalen Rollout.' },
     ],
+  },
+  firstCall: {
+    label: 'Erstgespräch',
+    title: 'Warum zuerst 30 Minuten?',
+    paragraphs: [
+      'Die meisten Salesforce-Programme haben nicht ein Problem, sondern zehn. Wer an allen Fronten gleichzeitig kämpft, verbessert keine davon dauerhaft.',
+      'Im ersten Gespräch finden wir heraus, welches Problem am meisten kostet und wo sich der erste Schritt lohnt. Und wir klären, was nötig ist, damit das Ergebnis hält. Ein Healthcheck mit Cleanup bringt wenig, wenn zwei Wochen später dieselben Probleme wieder entstehen.',
+    ],
+    listTitle: 'Was wir im Gespräch klären',
+    items: [
+      'Startet das Projekt gerade, oder sind Sie schon live?',
+      'Was kann Ihr Team selbst stemmen, und wo fehlt Expertise?',
+      'Brauchen Sie einen Sparringspartner und Ideengeber oder eine feste Rolle im Projekt?',
+    ],
+    cta: '30-Minuten-Gespräch vereinbaren',
   },
   about: {
     label: 'Über mich',

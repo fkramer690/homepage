@@ -3,6 +3,7 @@ import ExternalMark from './ExternalMark.astro';
 import Logo from './Logo.astro';
 import type { Dict } from '../i18n/en';
 import { site } from '../site';
+import { homeHref } from '../lib/paths';
 
 interface Props {
   t: Dict;
@@ -10,7 +11,7 @@ interface Props {
 }
 const { t, switchHref } = Astro.props;
 const base = import.meta.env.BASE_URL;
-const home = t.lang === 'de' ? `${base}de/` : base;
+const home = homeHref(t.lang);
 const year = new Date().getFullYear();
 ---
 <footer class="site-footer">
@@ -24,7 +25,7 @@ const year = new Date().getFullYear();
       <a href={`${base}impressum/`}>{t.footer.imprint}</a>
       <a href={`${base}datenschutz/`}>{t.footer.privacy}</a>
       <a href={site.linkedin} target="_blank" rel="noopener">LinkedIn<ExternalMark label={t.nav.externalTab} /></a>
-      {(t.lang === 'de' || site.showGermanLink) && <a href={switchHref}>{t.nav.switchLabel}</a>}
+      <a href={switchHref}>{t.nav.switchLabel}</a>
     </nav>
     <p class="footer-copy">© {year} {site.company}</p>
   </div>

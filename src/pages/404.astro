@@ -5,35 +5,37 @@ import Footer from '../components/Footer.astro';
 import Blueprint from '../components/Blueprint.astro';
 import { en } from '../i18n/en';
 import { de } from '../i18n/de';
+import { homeHref } from '../lib/paths';
 
-// GitHub Pages serves this page for every unknown path, including /de/…,
-// so the German copy is swapped in client side for German URLs.
-const base = import.meta.env.BASE_URL;
+// GitHub Pages serves this page for every unknown path, including /en/…,
+// so the English copy is swapped in client side for English URLs.
+const deHome = homeHref('de');
+const enHome = homeHref('en');
 ---
-<Base lang="en" title={`${en.notFound.title} – FK Solution Design`} description={en.notFound.title} noindex>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <Header t={en} home={base} switchHref={`${base}de/`} />
+<Base lang="de" title={`${de.notFound.title} – FK Solution Design`} description={de.notFound.title} noindex>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+  <Header t={de} home={deHome} switchHref={enHome} />
   <main id="main">
     <section class="hero dark grid-bg not-found">
       <Blueprint />
       <div class="container hero-inner">
         <p class="eyebrow mono">404</p>
-        <h1 data-de={de.notFound.title}>{en.notFound.title}</h1>
-        <p class="hero-lead" data-de={de.notFound.text}>{en.notFound.text}</p>
+        <h1 data-en={en.notFound.title}>{de.notFound.title}</h1>
+        <p class="hero-lead" data-en={en.notFound.text}>{de.notFound.text}</p>
         <div class="hero-ctas">
-          <a class="btn" href={base} data-de={de.notFound.home} data-de-href={`${base}de/`}>{en.notFound.home}</a>
-          <a class="btn btn-ghost" href={`${base}#contact`} data-de={de.notFound.contact} data-de-href={`${base}de/#contact`}>{en.notFound.contact}</a>
+          <a class="btn" href={deHome} data-en={en.notFound.home} data-en-href={enHome}>{de.notFound.home}</a>
+          <a class="btn btn-ghost" href={`${deHome}#contact`} data-en={en.notFound.contact} data-en-href={`${enHome}#contact`}>{de.notFound.contact}</a>
         </div>
       </div>
     </section>
   </main>
-  <Footer t={en} switchHref={`${base}de/`} />
-  <script is:inline define:vars={{ dePrefix: `${base}de/` }}>
-    if (location.pathname.startsWith(dePrefix)) {
-      document.documentElement.lang = 'de';
-      document.querySelectorAll('[data-de]').forEach((el) => {
-        el.textContent = el.dataset.de;
-        if (el.dataset.deHref) el.setAttribute('href', el.dataset.deHref);
+  <Footer t={de} switchHref={enHome} />
+  <script is:inline define:vars={{ enPrefix: enHome }}>
+    if (location.pathname.startsWith(enPrefix)) {
+      document.documentElement.lang = 'en';
+      document.querySelectorAll('[data-en]').forEach((el) => {
+        el.textContent = el.dataset.en;
+        if (el.dataset.enHref) el.setAttribute('href', el.dataset.enHref);
       });
     }
   </script>

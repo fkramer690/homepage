@@ -227,6 +227,13 @@ a:hover { color: var(--anthracite); }
   margin-bottom: 1.2em;
 }
 .hero-focus .sep { color: var(--cyan); }
+.hero-problem {
+  max-width: 46ch;
+  color: var(--white);
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 0.6em;
+}
 .hero-lead {
   max-width: 46ch;
   color: rgba(255, 255, 255, 0.75);
@@ -423,6 +430,28 @@ a:hover { color: var(--anthracite); }
 .note { margin-top: 1.5em; font-size: 0.88rem; color: var(--text-2); }
 @media (max-width: 760px) {
   .refs { grid-template-columns: 1fr; }
+}
+
+/* First call */
+.call-questions {
+  list-style: none;
+  margin: 0.8em 0 1.6em;
+  padding: 0;
+  display: grid;
+  gap: 0.8em;
+}
+.call-questions li {
+  position: relative;
+  padding-left: 1.6em;
+  color: var(--text-2);
+}
+.call-questions li::before {
+  content: '?';
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-family: var(--mono);
+  color: var(--cyan-dark);
 }
 
 /* Approach steps */

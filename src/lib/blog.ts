@@ -1,8 +1,7 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
+import { localHref } from './paths';
 
 export type Post = CollectionEntry<'blog'>;
-
-const base = import.meta.env.BASE_URL;
 
 // Drafts show up in `astro dev` but never in the production build.
 export async function getPosts(lang: 'en' | 'de'): Promise<Post[]> {
@@ -13,7 +12,7 @@ export async function getPosts(lang: 'en' | 'de'): Promise<Post[]> {
   return posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 }
 
-export const blogIndex = (lang: 'en' | 'de') => (lang === 'de' ? `${base}de/blog/` : `${base}blog/`);
+export const blogIndex = (lang: 'en' | 'de') => localHref(lang, 'blog/');
 
 export const postHref = (post: Post) => `${blogIndex(post.data.lang)}${post.data.slug}/`;
 

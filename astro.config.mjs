@@ -2,6 +2,7 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import { satteri } from '@astrojs/markdown-satteri';
+import { readdirSync, readFileSync } from 'node:fs';
 import { externalLinks } from './src/lib/external-links.mjs';
 
 // Until the custom domain is connected, the site lives at
@@ -9,6 +10,14 @@ import { externalLinks } from './src/lib/external-links.mjs';
 // set SITE_URL to the domain and BASE_PATH to "/" (see README).
 const site = process.env.SITE_URL ?? 'https://fkramer690.github.io';
 const base = process.env.BASE_PATH ?? '/homepage';
+
+// German is the main version at the root, English lives under /en/. The old
+// URLs (/de/…, /services/…, English articles under /blog/…) are kept as
+// redirect pages, which must not show up in the sitemap.
+const enSlugs = readdirSync('src/content/blog/en').map(
+  (file) => readFileSync(`src/content/blog/en/${file}`, 'utf8').match(/^slug:\s*"?([^"\n]+)"?/m)?.[1],
+);
+const redirectPaths = [/^\/de\//, /^\/services\//, ...enSlugs.map((slug) => new RegExp(`^/blog/${slug}/$`))];
 
 export default defineConfig({
   site,
@@ -20,17 +29,21 @@ export default defineConfig({
   },
   integrations: [
     sitemap({
-      // Legal pages are noindex, so keep them out of the sitemap.
-      filter: (page) => !/\/(impressum|datenschutz)\/$/.test(page),
+      // Legal pages are noindex, so keep them out of the sitemap, as well as
+      // the redirect pages.
+      filter: (page) => {
+        const path = new URL(page).pathname.replace(new RegExp(`^${base.replace(/\/$/, '')}`), '');
+        return !/\/(impressum|datenschutz)\/$/.test(page) && !redirectPaths.some((re) => re.test(path));
+      },
       i18n: {
-        defaultLocale: 'en',
-        locales: { en: 'en', de: 'de' },
+        defaultLocale: 'de',
+        locales: { de: 'de', en: 'en' },
       },
     }),
   ],
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en', 'de'],
+    defaultLocale: 'de',
+    locales: ['de', 'en'],
     routing: { prefixDefaultLocale: false },
   },
 });

@@ -1,6 +1,6 @@
 # Service pages
 
-Each service from the home page ("What I take care of") has its own page: EN under `/services/<slug>/`, DE under `/de/leistungen/<slug>/`. The pages are Markdown files in `src/content/services/<lang>/`. `src/content.config.ts` checks the frontmatter and `scripts/check-blog.mjs` checks the body, both in `npm run build`.
+Each service from the home page ("What I take care of") has its own page: DE under `/leistungen/<slug>/`, EN under `/en/services/<slug>/`. The pages are Markdown files in `src/content/services/<lang>/`. `src/content.config.ts` checks the frontmatter and `scripts/check-blog.mjs` checks the body, both in `npm run build`.
 
 Service pages follow the content rules of the [blog guidelines](blog-guidelines.md): plain language, no AI slop, no en or em dashes, only experience Fabian has confirmed, no client names, never the energy or utility sector, relative links only.
 

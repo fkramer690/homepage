@@ -1,6 +1,6 @@
 # FK Solution Design – Homepage
 
-Static website for FK Solution Design GmbH, built with [Astro](https://astro.build) and hosted on GitHub Pages. English at `/`, German at `/de/`, Impressum and Datenschutz in German.
+Static website for FK Solution Design GmbH, built with [Astro](https://astro.build) and hosted on GitHub Pages. German at `/`, English at `/en/`, Impressum and Datenschutz in German. Links between the language versions come from `src/lib/paths.ts`. The old URLs from before the switch (`/de/…`, English articles under `/blog/…`, `/services/…`) are static redirect pages built with `src/components/Redirect.astro` and are kept out of the sitemap.
 
 ## Editing content
 
@@ -25,13 +25,13 @@ Setting `bookingUrl` in `src/site.ts` (e.g. a Microsoft Bookings page) turns all
 
 Each article is a Markdown file in `src/content/blog/<lang>/`. The frontmatter is checked at build time (see `src/content.config.ts`); [docs/blog-template.md](docs/blog-template.md) shows all fields (title, description, takeaways, FAQ, tags, …).
 
-The EN and DE versions of an article share the same `translationKey`, which links them via hreflang. Articles appear under `/blog/` and `/de/blog/`, in the sitemap, the RSS feed (`/blog/rss.xml`) and `llms.txt` automatically.
+The EN and DE versions of an article share the same `translationKey`, which links them via hreflang. Articles appear under `/blog/` (DE) and `/en/blog/` (EN), in the sitemap, the RSS feeds (`/blog/rss.xml`, `/en/blog/rss.xml`) and `llms.txt` automatically.
 
 Rules for structure, SEO and AI search are in [docs/blog-guidelines.md](docs/blog-guidelines.md); start new articles from [docs/blog-template.md](docs/blog-template.md). `npm run build` runs `scripts/check-blog.mjs` first and fails if an article breaks a rule (`npm run check:blog` runs only the check).
 
 ### Service pages
 
-Each service on the home page links to its own page under `/services/` and `/de/leistungen/`, built from Markdown files in `src/content/services/<lang>/` by `src/components/ServicePage.astro`. Rules are in [docs/service-pages.md](docs/service-pages.md); the same build check applies.
+Each service on the home page links to its own page under `/leistungen/` (DE) and `/en/services/` (EN), built from Markdown files in `src/content/services/<lang>/` by `src/components/ServicePage.astro`. Rules are in [docs/service-pages.md](docs/service-pages.md); the same build check applies.
 
 ### External links
 

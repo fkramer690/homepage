@@ -1,4 +1,5 @@
 ---
-import ServiceIndex from '../../components/ServiceIndex.astro';
+import Redirect from '../../components/Redirect.astro';
+import { servicesIndex } from '../../lib/services';
 ---
-<ServiceIndex lang="en" />
+<Redirect to={servicesIndex('en')} />

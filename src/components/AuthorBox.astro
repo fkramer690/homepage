@@ -7,13 +7,13 @@ import portrait from '../assets/portrait.png';
 import { en } from '../i18n/en';
 import { de } from '../i18n/de';
 import { site } from '../site';
+import { homeHref } from '../lib/paths';
 
 interface Props {
   lang: 'en' | 'de';
 }
 const { lang } = Astro.props;
 const t = lang === 'de' ? de : en;
-const base = import.meta.env.BASE_URL;
 ---
 <aside class="post-author" aria-label={t.blog.authorLabel}>
   <Image src={portrait} alt="" width={112} height={112} densities={[1, 2]} class="post-author-img" />
@@ -24,7 +24,7 @@ const base = import.meta.env.BASE_URL;
     <p class="post-author-bio">{t.blog.authorBio}</p>
     <div class="post-author-links">
       <a class="btn btn-small" href={site.linkedin} target="_blank" rel="noopener">{t.blog.authorLinkedIn}<ExternalMark label={t.nav.externalTab} /></a>
-      <a class="post-author-more" href={`${lang === 'de' ? `${base}de/` : base}#about`}>{t.blog.authorMore} →</a>
+      <a class="post-author-more" href={`${homeHref(lang)}#about`}>{t.blog.authorMore} →</a>
     </div>
   </div>
 </aside>
