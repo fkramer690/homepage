@@ -644,6 +644,66 @@ a:hover { color: var(--anthracite); }
 .post-author p { margin: 0; color: var(--text-2); font-size: 0.95rem; }
 .post-author .post-author-name { color: var(--text); font-weight: 600; margin-bottom: 0.2em; }
 
+/* Floating contact shortcuts */
+.float-contact {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  transform: translateY(-50%);
+  transition: opacity 0.2s, transform 0.2s;
+}
+.float-contact.is-hidden { opacity: 0; pointer-events: none; transform: translate(100%, -50%); }
+.float-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  background: var(--anthracite);
+  color: var(--cyan-light);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-right: 0;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+}
+.float-btn:first-child { border-top-left-radius: var(--radius); }
+.float-btn:last-child { border-bottom-left-radius: var(--radius); }
+.float-btn svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.float-btn:hover,
+.float-btn:focus-visible { background: var(--cyan); color: var(--anthracite); }
+.float-label {
+  position: absolute;
+  right: calc(100% + 10px);
+  padding: 7px 12px;
+  border-radius: 6px;
+  background: var(--anthracite);
+  color: var(--white);
+  font-size: 0.85rem;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(6px);
+  pointer-events: none;
+  transition: opacity 0.15s, transform 0.15s;
+}
+.float-btn:hover .float-label,
+.float-btn:focus-visible .float-label { opacity: 1; transform: none; }
+@media (max-width: 720px) {
+  .float-contact { top: auto; bottom: 16px; right: 16px; transform: none; flex-direction: row; gap: 10px; }
+  .float-contact.is-hidden { transform: translateY(calc(100% + 24px)); }
+  .float-btn { width: 50px; height: 50px; border: 0; border-radius: 50%; box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25); }
+  .float-btn:first-child,
+  .float-btn:last-child { border-radius: 50%; }
+  .float-label { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .float-contact, .float-btn, .float-label { transition: none; }
+}
+
 /* External booking link */
 .ext-mark { margin-left: 0.5em; vertical-align: -1px; }
 .booking-note { margin: 1em 0 0; font-size: 0.85rem; color: rgba(255, 255, 255, 0.55); }

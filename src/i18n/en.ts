@@ -184,6 +184,11 @@ export const en = {
     related: 'Related articles',
     authorBio: 'Independent Salesforce Enterprise Architect on the client side, working with manufacturers on sales, service and after-sales.',
   },
+  floating: {
+    label: 'Contact',
+    call: 'Book a 30-minute call',
+    message: 'Send a message',
+  },
   notFound: {
     title: 'This page doesn’t exist.',
     text: 'The link may be outdated or mistyped. Everything about my work as a Salesforce architect is on the start page.',
