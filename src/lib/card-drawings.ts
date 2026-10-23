@@ -120,6 +120,19 @@ const drawings: Record<string, Drawing> = {
     ${box(128, 50, 92, 60, C)}${t(174, 70, 'AGENT CONTEXT', { fill: D, size: 7.5, anchor: 'middle' })}${t(174, 82, 'ENGINE', { fill: D, size: 7.5, anchor: 'middle' })}${t(174, 98, 'Data 360', { size: 7, anchor: 'middle' })}
     ${arrow(220, 80, 240, C)}
     ${box(240, 60, 66, 40)}${t(273, 77, 'AGENT', { fill: D, size: 7.5, anchor: 'middle' })}${t(273, 90, l('per request', 'pro Anfrage'), { size: 6.8, anchor: 'middle' })}`,
+
+  'service-documents-document-builder': (l) => `
+    ${box(18, 42, 64, 92)}<path d="M18 54H82M18 120H82" stroke="${G}" stroke-width="1"/><circle cx="50" cy="127" r="2.6" fill="${G}"/>
+    ${t(50, 72, l('MOBILE APP', 'MOBILE APP'), { fill: D, size: 7, anchor: 'middle' })}${t(50, 88, l('offline', 'offline'), { fill: C, size: 7.5, anchor: 'middle' })}${t(50, 102, l('signature', 'Unterschrift'), { size: 6.8, anchor: 'middle' })}
+    ${arrow(82, 88, 108, C)}
+    <path d="M108 18H174L190 34V142H108Z" fill="#fff" stroke="${G}" stroke-width="1.2"/><path d="M174 18V34H190" fill="none" stroke="${G}" stroke-width="1.2"/>
+    ${t(116, 46, l('SERVICE REPORT', 'SERVICEBERICHT'), { fill: D, size: 6.8 })}
+    ${[62, 74, 86, 98].map((y) => `<path d="M116 ${y}H182" stroke="${L}"/>`).join('')}
+    <path d="M140 128c6-10 10 4 15-4s7 6 12-1 6 3 10 0" fill="none" stroke="${C}" stroke-width="1.3"/><path d="M138 134H182" stroke="${G}" stroke-width="0.8"/>
+    ${tag(116, 106, 32, 'PDF')}
+    ${[l('work order', 'Arbeitsauftrag'), l('line item', 'Auftragsposition'), l('service appointment', 'Servicetermin')].map((s, i) => check(208, 36 + i * 18) + t(220, 41 + i * 18, s, { size: 7 })).join('')}
+    ${cross(212, 92)}${t(220, 96, l('asset, custom objects', 'Asset, Custom Objects'), { size: 7 })}
+    ${t(208, 132, l('250 / user / month', '250 / Nutzer / Monat'), { fill: C, size: 7.5 })}`,
 };
 
 export const hasDrawing = (key: string) => key in drawings;
