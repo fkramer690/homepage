@@ -67,6 +67,7 @@ Articles must read like Fabian talking to a client, not like generated content. 
 
 ## Images
 
+- **Card image on the blog overview:** a small technical drawing per article in `src/lib/card-drawings.ts` (keyed by `translationKey`, EN/DE labels, light grid, grey lines, one cyan accent; labels state facts from the article). Add one for every new article. Until then the card shows the icon of the frontmatter `topic` (list in `src/lib/topics.ts`).
 - **Preview image (automatic):** every article gets its own 1200×630 image for LinkedIn and other link previews, generated at build time from the title in the site's style (`src/lib/og.ts`, served at `/og/<lang>/<slug>.png`). Nothing to do per article.
 - **Explanatory graphics (optional):** add one when it explains something faster than text, e.g. a release pipeline, an architecture sketch or a decision matrix. Use the site colours (anthracite, cyan, white).
   - Store files in `src/assets/blog/` and reference them relative from the article: `![Release pipeline from sandbox to production](../../../assets/blog/devops-pipeline.png)`. Astro then optimises size and format.

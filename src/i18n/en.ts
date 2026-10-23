@@ -206,6 +206,7 @@ export const en = {
     authorMore: 'More about me',
     relatedService: 'Related service',
     authorLinkedIn: 'LinkedIn profile',
+    readMore: 'Read article',
   },
   servicePage: {
     indexTitle: 'Services',

@@ -1,0 +1,24 @@
+---
+// Card image on the blog overview: the article's technical drawing
+// (src/lib/card-drawings.ts) on a light grid, or its topic icon if it has none yet.
+import { cardDrawing, hasDrawing } from '../lib/card-drawings';
+import { topics, type Topic } from '../lib/topics';
+
+interface Props {
+  translationKey: string;
+  topic: Topic;
+  lang: 'en' | 'de';
+}
+const { translationKey, topic, lang } = Astro.props;
+const grid =
+  Array.from({ length: 19 }, (_, i) => `M${16 * (i + 1)} 0V160`).join('') +
+  Array.from({ length: 9 }, (_, i) => `M0 ${16 * (i + 1)}H320`).join('');
+const inner = hasDrawing(translationKey)
+  ? cardDrawing(translationKey, lang)
+  : `<g transform="translate(124 44) scale(1.125)" fill="none" stroke="#5a5a5e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${topics[topic].icon}</g>`;
+---
+<svg class="card-drawing" viewBox="0 0 320 160" aria-hidden="true">
+  <rect width="320" height="160" fill="#f5f6f7" />
+  <path d={grid} stroke="#e3e5e7" stroke-width="1" />
+  <Fragment set:html={inner} />
+</svg>

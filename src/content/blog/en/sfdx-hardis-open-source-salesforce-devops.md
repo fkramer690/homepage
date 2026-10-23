@@ -5,6 +5,7 @@ pubDate: 2026-10-23
 lang: en
 slug: sfdx-hardis-open-source-salesforce-devops
 translationKey: sfdx-hardis-introduction
+topic: open-source
 tags: [sfdx-hardis, devops, open source, release management, ci/cd]
 takeaways:
   - "sfdx-hardis is a free, open-source toolkit for Salesforce DevOps, made of a Salesforce CLI plugin and a VS Code extension, led by Nicolas Vuillamy and Cloudity."

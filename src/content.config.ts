@@ -1,6 +1,7 @@
 import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
+import { topicIds } from './lib/topics';
 
 // Blog articles live as Markdown in src/content/blog/<lang>/<slug>.md.
 // The EN and DE version of an article share the same translationKey.
@@ -17,6 +18,8 @@ const blog = defineCollection({
     lang: z.enum(['en', 'de']),
     slug: z.string().regex(/^[a-z0-9]+(-[a-z0-9]+)*$/),
     translationKey: z.string(),
+    // Picks the small topic image on the blog overview (src/lib/topics.ts).
+    topic: z.enum(topicIds),
     tags: z.array(z.string()).min(1).max(6),
     // Short answers at the top of the article, easy to quote for AI search.
     takeaways: z.array(z.string().max(220)).min(3).max(5),

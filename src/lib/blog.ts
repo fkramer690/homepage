@@ -42,3 +42,4 @@ export async function getRelated(post: Post, limit = 3): Promise<Post[]> {
     .slice(0, limit)
     .map(({ p }) => p);
 }
+

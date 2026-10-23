@@ -5,6 +5,7 @@ pubDate: 2026-10-23
 lang: de
 slug: warum-pull-request-reviews-pflicht-sind
 translationKey: pull-request-reviews-enterprise
+topic: code-review
 tags: [Pull Request Review, DevOps, Partnersteuerung, Codequalität]
 takeaways:
   - "Ein Pull-Request-Review ist der letzte Punkt, an dem eine Änderung günstig gestoppt werden kann, bevor sie gemeinsame Umgebungen, Anwender und andere Teams erreicht."

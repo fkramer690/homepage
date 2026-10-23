@@ -5,6 +5,7 @@ pubDate: 2026-01-01
 lang: en
 slug: primary-keyword-in-the-slug
 translationKey: same-key-in-en-and-de
+topic: devops # picks the card image on the blog overview, see src/lib/topics.ts
 tags: [topic, second-topic]
 takeaways:
   - "First key statement as a complete sentence that stands on its own."

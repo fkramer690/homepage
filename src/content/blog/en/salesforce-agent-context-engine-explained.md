@@ -5,6 +5,7 @@ pubDate: 2026-10-23
 lang: en
 slug: salesforce-agent-context-engine-explained
 translationKey: agent-context-engine
+topic: data
 tags: [agentforce, data 360, ai agents, data governance, architecture]
 takeaways:
   - "The Agent Context Engine is a shared context layer on top of Data 360 that assembles, for each request, exactly the data an AI agent needs and is allowed to see."
