@@ -184,7 +184,11 @@ export const de: Dict = {
     takeaways: 'Das Wichtigste in Kürze',
     faq: 'Häufige Fragen',
     related: 'Weitere Artikel',
-    authorBio: 'Unabhängiger Salesforce Enterprise Architect auf Kundenseite, für Fertigungsunternehmen in Vertrieb, Service und After-Sales.',
+    authorBio: 'Ich helfe Fertigungsunternehmen, Salesforce zu einem verlässlichen Rückgrat für Vertrieb, Service und After-Sales zu machen, als Architekt auf Kundenseite und unabhängig von Herstellern und Partnern.',
+    authorLabel: 'Über den Autor',
+    authorRole: 'Salesforce Enterprise Architect · Köln',
+    authorMore: 'Mehr über mich',
+    authorLinkedIn: 'LinkedIn-Profil',
   },
   floating: {
     label: 'Kontakt',
