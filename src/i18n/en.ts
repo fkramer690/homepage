@@ -13,6 +13,7 @@ export const en = {
     contact: 'Contact',
     cta: 'Book a call',
     newTab: '(opens Microsoft Bookings in a new tab)',
+    externalTab: '(opens in a new tab)',
     switchLabel: 'Deutsch',
   },
   hero: {

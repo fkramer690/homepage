@@ -2,6 +2,7 @@
 // Author box below every blog article. Rendered by BlogPost.astro for all
 // articles, so it looks the same everywhere; never add one in Markdown.
 import { Image } from 'astro:assets';
+import ExternalMark from './ExternalMark.astro';
 import portrait from '../assets/portrait.png';
 import { en } from '../i18n/en';
 import { de } from '../i18n/de';
@@ -22,7 +23,7 @@ const base = import.meta.env.BASE_URL;
     <p class="post-author-role mono">{t.blog.authorRole}</p>
     <p class="post-author-bio">{t.blog.authorBio}</p>
     <div class="post-author-links">
-      <a class="btn btn-small" href={site.linkedin} rel="noopener">{t.blog.authorLinkedIn}</a>
+      <a class="btn btn-small" href={site.linkedin} target="_blank" rel="noopener">{t.blog.authorLinkedIn}<ExternalMark label={t.nav.externalTab} /></a>
       <a class="post-author-more" href={`${lang === 'de' ? `${base}de/` : base}#about`}>{t.blog.authorMore} →</a>
     </div>
   </div>
