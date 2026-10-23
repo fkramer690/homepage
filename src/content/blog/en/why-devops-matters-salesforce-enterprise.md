@@ -63,6 +63,18 @@ A solid setup does not need to be complicated. In my projects these building blo
 
 That last point matters a lot to me as an [architect on the client side](../../#about). A repository and pipeline under the client's control make partners comparable and replaceable, which is the basis for [partner steering and governance](../../#services). They also make onboarding a new partner much easier, because the standards are written down and enforced automatically.
 
+## What did this look like in a real programme?
+
+In one programme I joined, a large enterprise ran Salesforce with several implementation partners and internal teams. Nobody had clearly defined who led which processes, objects and metadata. The result was predictable:
+
+- Changes overwrote each other, because nobody coordinated who deployed what and when.
+- The technical approaches of the teams had drifted far apart, so similar problems were solved in very different ways.
+- Every release was a risk, and errors often surfaced only when users ran into them.
+
+We changed this in a few steps. First, every change went through a pull request with a review, and for a while every single one crossed my desk. Second, we wrote down development and architecture standards and enforced them in those reviews. Third, the pipeline became the only way to move changes from one org to the next. Once the process was stable, I handed it over to an internal colleague who now owns it.
+
+The effect was clear. Results became predictable, and validation runs in the pipeline caught missing dependencies and errors before any user saw them. On top of that came the classic DevOps benefits: we could roll back, trace every change and stopped losing work.
+
 ## sfdx-hardis as an open-source example
 
 You don't have to buy a commercial platform to get there. A good example is [sfdx-hardis](https://sfdx-hardis.cloudity.com/), an open-source toolkit maintained by Cloudity together with an active community. It bundles many of the building blocks above:
