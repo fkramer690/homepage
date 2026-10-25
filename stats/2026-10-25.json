@@ -1,0 +1,118 @@
+{
+  "generatedAt": "2026-10-25T04:47:34.213Z",
+  "range": {
+    "start": "2026-09-25",
+    "end": "2026-10-25"
+  },
+  "browsers": [
+    {
+      "count": 70,
+      "dimensions": {
+        "userAgentBrowser": "Chrome"
+      },
+      "sum": {
+        "visits": 10
+      }
+    }
+  ],
+  "countries": [
+    {
+      "count": 70,
+      "dimensions": {
+        "countryName": "DE"
+      },
+      "sum": {
+        "visits": 10
+      }
+    }
+  ],
+  "daily": [
+    {
+      "count": 70,
+      "dimensions": {
+        "date": "2026-10-23"
+      },
+      "sum": {
+        "visits": 10
+      }
+    }
+  ],
+  "devices": [
+    {
+      "count": 70,
+      "dimensions": {
+        "deviceType": "desktop"
+      },
+      "sum": {
+        "visits": 10
+      }
+    }
+  ],
+  "pages": [
+    {
+      "count": 30,
+      "dimensions": {
+        "requestPath": "/homepage/"
+      },
+      "sum": {
+        "visits": 10
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "requestPath": "/homepage/blog/salesforce-field-service-mobile-guided-voice/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "requestPath": "/homepage/blog/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "requestPath": "/homepage/blog/salesforce-service-documents-document-builder/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "requestPath": "/homepage/speaking/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    }
+  ],
+  "referers": [
+    {
+      "count": 60,
+      "dimensions": {
+        "refererHost": "fkramer690.github.io"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "refererHost": ""
+      },
+      "sum": {
+        "visits": 10
+      }
+    }
+  ]
+}
