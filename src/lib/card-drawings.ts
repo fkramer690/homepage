@@ -157,6 +157,15 @@ const drawings: Record<string, Drawing> = {
     }).join('')}
     ${t(238, 52, l('behind on volume', 'Rückstand'), { fill: C, size: 6.8, anchor: 'middle' })}
     ${t(18, 152, l('plan vs. actual per customer, product, period', 'Plan gegen Ist pro Kunde, Produkt, Zeitraum'), { size: 7 })}`,
+
+  'manufacturing-cloud-quote-to-agreement': (l) => `
+    ${box(14, 30, 88, 98)}${t(58, 46, l('CONFIGURATOR', 'KONFIGURATOR'), { fill: D, size: 7.5, anchor: 'middle' })}
+    ${[l('grind size', 'Mahlgrad'), l('raw materials', 'Rohstoffe'), l('certificate', 'Zertifikat')].map((s, i) => check(24, 62 + i * 18) + t(38, 67 + i * 18, s, { size: 7 })).join('')}
+    ${arrow(102, 79, 126)}
+    ${box(126, 52, 70, 54)}${t(161, 72, l('QUOTE', 'ANGEBOT'), { fill: D, size: 7.5, anchor: 'middle' })}${t(161, 85, l('price approval', 'Preisfreigabe'), { size: 6.8, anchor: 'middle' })}${check(156, 92)}
+    ${arrow(196, 79, 220, C)}${t(208, 70, 'API', { fill: C, size: 6.8, anchor: 'middle' })}
+    ${box(220, 46, 88, 66, C)}${t(264, 64, 'SALES', { fill: D, size: 7.5, anchor: 'middle' })}${t(264, 75, 'AGREEMENT', { fill: D, size: 7.5, anchor: 'middle' })}${t(264, 90, l('product + quantity', 'Produkt + Menge'), { size: 6.8, anchor: 'middle' })}${t(264, 101, l('per period', 'pro Zeitraum'), { size: 6.8, anchor: 'middle' })}
+    ${t(14, 152, l('one variant = one product, also in the ERP', 'eine Variante = ein Produkt, auch im ERP'), { size: 7 })}`,
 };
 
 export const hasDrawing = (key: string) => key in drawings;
