@@ -217,7 +217,7 @@ a:hover { color: var(--anthracite); }
   font-size: 0.8rem;
   margin-bottom: 1.4em;
 }
-.hero h1 { max-width: 17ch; }
+.hero h1 { max-width: 900px; }
 .hero-focus {
   display: flex;
   flex-wrap: wrap;
@@ -228,13 +228,13 @@ a:hover { color: var(--anthracite); }
 }
 .hero-focus .sep { color: var(--cyan); }
 .role-problem {
-  max-width: 46ch;
+  max-width: 900px;
   font-size: 1.15rem;
   font-weight: 600;
   margin-bottom: 1.5em;
 }
 .hero-lead {
-  max-width: 46ch;
+  max-width: 900px;
   color: rgba(255, 255, 255, 0.75);
   font-size: 1.1rem;
   margin-bottom: 2em;
