@@ -44,6 +44,13 @@ const drawings: Record<string, Drawing> = {
     ${check(167, 85)}${t(180, 90, l('pipeline green', 'Pipeline grün'), { size: 7.5 })}${check(167, 99)}${t(180, 104, l('reviewer approved', 'Reviewer gibt frei'), { size: 7.5 })}
     ${t(282, 114, 'merge', { size: 7.5 })}`,
 
+  'object-ownership-matrix': (l) => `
+    ${t(18, 18, 'OBJECT OWNERSHIP MATRIX', { fill: D, size: 7 })}
+    ${[l('Sales', 'Vertrieb'), 'Service', 'FS'].map((s, i) => t(116 + i * 40, 38, s, { size: 7, anchor: 'middle' })).join('')}
+    ${[['Account', 0], ['Opportunity', 0], ['Case', 1], ['Asset', 1], ['Work Order', 2]].map(([o, k], r) => `<path d="M18 ${46 + r * 18}H206" stroke="${L}"/>` + t(22, 58 + r * 18, String(o), { size: 7 }) + [0, 1, 2].map((c) => (c === k ? `<circle cx="${116 + c * 40}" cy="${55 + r * 18}" r="4" fill="${C}"/>` : dot(116 + c * 40, 55 + r * 18, L, 2.5))).join('')).join('')}
+    ${box(226, 30, 78, 46, C)}${t(265, 48, l('1 object =', '1 Objekt ='), { fill: C, size: 7, anchor: 'middle' })}${t(265, 62, l('1 owner', '1 Owner'), { fill: C, size: 7, anchor: 'middle' })}
+    ${t(226, 100, l('8 streams', '8 Streams'), { size: 7 })}${t(226, 114, l('30+ developers', '30+ Entwickler'), { size: 7 })}${t(226, 128, l('~3 months', '~3 Monate'), { size: 7 })}${t(226, 142, l('80 % in v1', '80 % in V1'), { size: 7 })}`,
+
   'field-service-mobile-guided-voice': (l) => `
     <path d="M34 128L72 98L116 110L150 64L190 76" fill="none" stroke="${G}" stroke-width="1.3" stroke-dasharray="4 3"/>
     ${pin(72, 98)}${pin(116, 110)}${pin(150, 64, C)}
