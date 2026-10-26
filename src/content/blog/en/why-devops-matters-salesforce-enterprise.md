@@ -64,7 +64,7 @@ A solid setup does not need to be complicated. In my projects these building blo
 
 > The pipeline belongs to the client, not to the partner. Whoever owns the release process owns the platform.
 
-That last point matters a lot to me as an [architect on the client side](../../#about). A repository and pipeline under the client's control make partners comparable and replaceable, which is the basis for [partner steering and governance](../../#services). They also make onboarding a new partner much easier, because the standards are written down and enforced automatically.
+That last point matters a lot to me as an [architect on the client side](../../#about). A repository and pipeline under the client's control make partners comparable and replaceable, which is the basis for [partner steering and governance](../../services/partner-governance/). They also make onboarding a new partner much easier, because the standards are written down and enforced automatically.
 
 ## What did this look like in a real programme?
 

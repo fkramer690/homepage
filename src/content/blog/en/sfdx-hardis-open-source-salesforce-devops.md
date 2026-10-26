@@ -95,4 +95,4 @@ For a real programme I recommend this order:
 4. Move deployment steps from spreadsheets into deployment actions.
 5. Turn on monitoring, backups and generated documentation.
 
-Choosing the toolchain is part of [architecture and partner governance](../../#services), not a side decision for developers. sfdx-hardis gives you a professional release process with no licence costs, as long as someone owns it. If you want to discuss whether it fits your programme, [send me a message](#contact).
+Choosing the toolchain is part of [architecture and partner governance](../../services/partner-governance/), not a side decision for developers. sfdx-hardis gives you a professional release process with no licence costs, as long as someone owns it. If you want to discuss whether it fits your programme, [send me a message](#contact).

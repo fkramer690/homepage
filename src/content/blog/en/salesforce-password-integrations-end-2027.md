@@ -62,7 +62,7 @@ Start the inventory now, not in January. These sources complement each other:
 4. **Sandbox test.** In a full or partial copy sandbox, turn off the setting "Allow OAuth Username-Password Flows" and run the integrations. What fails there would fail in production in February.
 5. **SOAP logins.** Check which integration users log in via SOAP and which API versions they use, so the December and Summer '27 steps don't catch you off guard.
 
-The result should be one list: integration, purpose, owner on the client side, technical user, flow, API version, vendor or partner, migration date. That list is worth keeping after the migration, as part of the [architecture documentation](../../#services).
+The result should be one list: integration, purpose, owner on the client side, technical user, flow, API version, vendor or partner, migration date. That list is worth keeping after the migration, as part of the [architecture documentation](../../services/salesforce-integration/).
 
 ## Which flow replaces the password login?
 

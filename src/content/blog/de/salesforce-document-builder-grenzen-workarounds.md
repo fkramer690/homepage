@@ -84,4 +84,4 @@ Die Flows aus Grenze 2 und 3 laufen nach der nächsten Synchronisierung auf dem 
 - **Bauen Sie die LWCs als kleine Bibliothek.** Trennlinie, verknüpfte Liste, eventuell ein Kopf mit Logo. Wiederverwendbar in jeder Vorlage.
 - **Testen Sie offline mit echten Geräten.** Einschließlich der Vorschau, auf iOS und Android, bevor der erste Techniker live geht.
 
-Wenn Sie einen Field-Service-Rollout planen und den Servicebericht von Anfang an richtig aufsetzen wollen, sehen Sie sich meine [Leistungen](../../#services) an oder [schreiben Sie mir](#contact).
+Wenn Sie einen Field-Service-Rollout planen und den Servicebericht von Anfang an richtig aufsetzen wollen, sehen Sie sich meine [Leistungen](../../leistungen/) an oder [schreiben Sie mir](#contact).

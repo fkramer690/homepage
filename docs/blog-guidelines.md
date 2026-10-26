@@ -79,7 +79,7 @@ Articles must read like Fabian talking to a client, not like generated content. 
 
 - One primary keyword (long tail, e.g. "Salesforce DevOps enterprise") in the title, the first paragraph, one H2 and the slug.
 - Slug: lowercase words with hyphens, in the article's language, unique across EN and DE (checked). Never change it after publishing.
-- At least 2 internal links, written relative so they survive the domain move: `../../#services`, `../../#references`, `../../#about`, `../other-slug/`. Never hardcode the domain or start a link with `/`.
+- At least 2 internal links, written relative so they survive the domain move: `../other-slug/`, the matching service page (`../../leistungen/<slug>/` in German, `../../services/<slug>/` in English), `../../#references`, `../../#about`. Prefer a specific service page over the generic `../../#services`. Never hardcode the domain or start a link with `/`.
 - External links only to sources that back a statement. They open in a new tab automatically (`src/lib/external-links.mjs`); write them as normal Markdown links.
 - Set `updatedDate` whenever an article changes in substance.
 - Handled automatically by the template: `<title>` (adds the site name only within 60 characters), canonical, hreflang EN/DE, Open Graph as `article`, BlogPosting, FAQPage and BreadcrumbList structured data, sitemap, RSS feed (`/blog/rss.xml`) and `llms.txt`.

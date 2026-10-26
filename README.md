@@ -50,6 +50,8 @@ npm run build    # output in dist/
 Every push to `main` builds and deploys the site via `.github/workflows/deploy.yml`.
 One-time setup: in the repository settings under **Pages**, set **Source** to **GitHub Actions**.
 
+After each deploy, `scripts/indexnow.mjs` sends the pages whose HTML changed to IndexNow (Bing and others). It compares against `indexnow-hashes.json` on the live site; the key file is `public/<key>.txt`.
+
 The site is served at https://www.fk-sd.de/ (`site` and `base` in `astro.config.mjs`, domain in `public/CNAME`). Both fk-sd.de and the old address https://fkramer690.github.io/homepage/ redirect there.
 
 ### Domain setup (Strato)
