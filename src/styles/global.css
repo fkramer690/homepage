@@ -46,12 +46,12 @@ h1, h2, h3 {
   font-weight: 600;
   line-height: 1.2;
   letter-spacing: -0.015em;
-  margin: 0 0 0.6em;
+  margin: 0 0 0.5em;
 }
 h1 { font-size: clamp(2rem, 4.6vw, 3.4rem); }
 h2 { font-size: clamp(1.6rem, 3vw, 2.3rem); }
 h3 { font-size: 1.125rem; }
-p { margin: 0 0 1em; }
+p { margin: 0 0 0.85em; }
 
 a { color: var(--cyan-dark); }
 a:hover { color: var(--anthracite); }
@@ -207,8 +207,8 @@ a:hover { color: var(--anthracite); }
 /* Hero */
 .hero-inner {
   position: relative;
-  padding-top: clamp(72px, 12vw, 140px);
-  padding-bottom: clamp(72px, 10vw, 120px);
+  padding-top: clamp(56px, 9vw, 104px);
+  padding-bottom: clamp(56px, 7vw, 88px);
 }
 .eyebrow {
   color: var(--cyan-light);
@@ -217,7 +217,7 @@ a:hover { color: var(--anthracite); }
   font-size: 0.8rem;
   margin-bottom: 1.4em;
 }
-.hero h1 { max-width: 17ch; }
+.hero h1 { max-width: 900px; }
 .hero-focus {
   display: flex;
   flex-wrap: wrap;
@@ -228,13 +228,13 @@ a:hover { color: var(--anthracite); }
 }
 .hero-focus .sep { color: var(--cyan); }
 .role-problem {
-  max-width: 46ch;
+  max-width: 900px;
   font-size: 1.15rem;
   font-weight: 600;
   margin-bottom: 1.5em;
 }
 .hero-lead {
-  max-width: 46ch;
+  max-width: 900px;
   color: rgba(255, 255, 255, 0.75);
   font-size: 1.1rem;
   margin-bottom: 2em;
@@ -284,7 +284,7 @@ a:hover { color: var(--anthracite); }
 }
 
 /* Sections */
-.section { padding: clamp(64px, 9vw, 112px) 0; }
+.section { padding: clamp(44px, 6vw, 76px) 0; }
 .section.alt {
   background: var(--bg);
   border-top: 1px solid var(--line);
@@ -298,7 +298,7 @@ a:hover { color: var(--anthracite); }
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--cyan-dark);
-  margin-bottom: 1em;
+  margin-bottom: 0.8em;
 }
 .label::before {
   content: '';
@@ -319,8 +319,8 @@ a:hover { color: var(--anthracite); }
 }
 
 .quote {
-  margin: 2.5em 0 0;
-  padding: 1.2em 0 1.2em 1.4em;
+  margin: 1.8em 0 0;
+  padding: 1em 0 1em 1.4em;
   border-left: 3px solid var(--cyan);
 }
 .quote p {
@@ -334,7 +334,7 @@ a:hover { color: var(--anthracite); }
 /* Service cards */
 .cards {
   list-style: none;
-  margin: 2em 0 0;
+  margin: 1.5em 0 0;
   padding: 0;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -369,7 +369,7 @@ a:hover { color: var(--anthracite); }
   .cards { grid-template-columns: 1fr; }
 }
 
-.focus { margin-top: 2.5em; }
+.focus { margin-top: 1.8em; }
 .tags {
   list-style: none;
   margin: 0;
@@ -396,7 +396,7 @@ a:hover { color: var(--anthracite); }
 /* References */
 .refs {
   list-style: none;
-  margin: 2em 0 0;
+  margin: 1.5em 0 0;
   padding: 0;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -456,7 +456,7 @@ a:hover { color: var(--anthracite); }
 /* Approach steps */
 .steps {
   list-style: none;
-  margin: 2.2em 0 0;
+  margin: 1.6em 0 0;
   padding: 0;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -524,8 +524,8 @@ a:hover { color: var(--anthracite); }
 /* Contact */
 .contact-inner {
   position: relative;
-  padding-top: clamp(72px, 10vw, 120px);
-  padding-bottom: clamp(72px, 10vw, 120px);
+  padding-top: clamp(56px, 7vw, 88px);
+  padding-bottom: clamp(56px, 7vw, 88px);
 }
 .contact-inner {
   display: grid;
@@ -537,12 +537,12 @@ a:hover { color: var(--anthracite); }
   .contact-inner { grid-template-columns: 1fr; }
 }
 .contact h2 { max-width: 22ch; }
-.contact-text { max-width: 52ch; color: rgba(255, 255, 255, 0.75); margin-bottom: 2em; }
+.contact-text { max-width: 52ch; color: rgba(255, 255, 255, 0.75); margin-bottom: 1.6em; }
 .contact-list {
   display: flex;
   flex-wrap: wrap;
   gap: 16px 48px;
-  margin: 2.5em 0 0;
+  margin: 1.8em 0 0;
 }
 .contact-list dt { font-size: 0.75rem; color: rgba(255, 255, 255, 0.55); text-transform: uppercase; letter-spacing: 0.1em; }
 .contact-list dd { margin: 4px 0 0; }
@@ -826,7 +826,7 @@ a:hover { color: var(--anthracite); }
   grid-template-columns: minmax(0, 1fr) minmax(0, 360px);
   gap: clamp(24px, 5vw, 64px);
   align-items: center;
-  margin-top: 2.5em;
+  margin-top: 1.8em;
 }
 .quote-row .quote { margin: 0; }
 .stage-photo { margin: 0; }
