@@ -53,6 +53,8 @@ I have worked in pre-sales together with Salesforce and know quotes from both si
 - **Approvers.** Someone who only approves discounts, quotes or orders spends a few minutes a week in the system.
 - **Users of one narrow process.** A team that only uses a custom app, for example for complaints or internal requests, needs neither sales nor service features.
 
+What they have in common: they do not use the main activities, or they only take on related work at the edges. An example from a field service project: at one client we created travel requests based on service appointments, as a custom object, and made them available to the technicians from there. The colleagues who handled the travel requests did not need a Field Service licence for that. They worked at a fraction of the cost of a full licence.
+
 An example with list prices: 100 users who only read and approve. With Sales Cloud Core that is $195 per user and month, with Platform Starter $25. The difference is $170 per user and month, or $204,000 per year. Over a three-year contract that is more than $600,000.
 
 With external users the mistake costs even more. Dealers or customers working on internal licences because a portal was supposed to come "later" cost many times a portal licence.

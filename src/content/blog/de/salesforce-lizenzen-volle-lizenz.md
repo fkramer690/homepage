@@ -53,6 +53,8 @@ Im Pre-Sales habe ich mit Salesforce zusammengearbeitet und kenne die Angebote v
 - **Freigeber.** Wer nur Rabatte, Angebote oder Aufträge freigibt, arbeitet wenige Minuten pro Woche im System.
 - **Nutzer eines engen Prozesses.** Ein Team, das nur eine eigene App nutzt, etwa für Reklamationen oder interne Anfragen, braucht weder Vertriebs- noch Servicefunktionen.
 
+Gemeinsam ist ihnen: Sie nutzen die Hauptaktivitäten nicht oder übernehmen nur am Rande verwandte Tätigkeiten. Ein Beispiel aus einem Field-Service-Projekt: Bei einem Kunden haben wir auf Basis der Servicetermine Reiseanträge erstellt, als eigenes Objekt, und sie von dort den Technikern zur Verfügung gestellt. Die Kollegen, die die Reiseanträge bearbeiteten, brauchten dafür keine Field-Service-Lizenz. Sie arbeiteten zu einem Bruchteil der Kosten einer vollen Lizenz.
+
 Ein Rechenbeispiel mit Listenpreisen: 100 Nutzer, die nur lesen und freigeben. Mit Sales Cloud Core sind das 195 € pro Nutzer und Monat, mit Platform Starter 25 €. Der Unterschied liegt bei 170 € pro Nutzer und Monat, also 204.000 € pro Jahr. Über eine Vertragslaufzeit von drei Jahren sind das mehr als 600.000 €.
 
 Bei externen Nutzern ist der Fehler noch teurer. Händler oder Kunden, die mit internen Lizenzen arbeiten, weil ein Portal „später“ kommen sollte, kosten ein Vielfaches einer Portallizenz.
