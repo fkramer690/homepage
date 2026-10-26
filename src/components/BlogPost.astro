@@ -9,8 +9,9 @@ import { en } from '../i18n/en';
 import { de } from '../i18n/de';
 import { site, contactHref, contactExternal } from '../site';
 import { getPostService, serviceHref } from '../lib/services';
-import { type Post, blogIndex, postHref, getTranslation, getRelated, readingMinutes, formatDate } from '../lib/blog';
+import { type Post, blogIndex, postHref, getTranslation, getRelated, getSeriesParts, readingMinutes, formatDate } from '../lib/blog';
 import { homeHref } from '../lib/paths';
+import { series as allSeries } from '../lib/series';
 
 interface Props {
   post: Post;
@@ -22,6 +23,12 @@ const { Content } = await render(post);
 const translation = await getTranslation(post);
 const related = await getRelated(post);
 const service = await getPostService(post);
+const seriesRef = post.data.series;
+const seriesInfo = seriesRef && allSeries[seriesRef.id];
+const seriesParts = await getSeriesParts(post);
+const upcoming = seriesParts.filter((p) => !p.post).length;
+const partLabel = (part: number) =>
+  t.blog.seriesPart.replace('{part}', String(part)).replace('{total}', String(seriesInfo?.parts ?? part));
 const alternates = translation
   ? lang === 'de'
     ? { en: postHref(translation), de: postHref(post) }
@@ -55,6 +62,7 @@ const schema = {
       wordCount: (post.body ?? '').split(/\s+/).filter(Boolean).length,
       author: { '@type': 'Person', '@id': `${abs(base)}#person`, name: site.person, url: site.linkedin, jobTitle: 'Salesforce Enterprise Architect' },
       publisher: { '@type': 'Organization', '@id': `${abs(base)}#organization`, name: site.company },
+      ...(seriesInfo && { isPartOf: { '@type': 'CreativeWorkSeries', name: seriesInfo[lang] } }),
     },
     {
       '@type': 'FAQPage',
@@ -90,6 +98,9 @@ const schema = {
         {updatedDate && <> · {t.blog.updated} <time datetime={updatedDate.toISOString()}>{formatDate(updatedDate, lang)}</time></>}
         {' · '}{readingMinutes(post)} {t.blog.readingTime}
       </p>
+      {seriesInfo && seriesRef && (
+        <p class="post-series-line mono"><a href="#series">{partLabel(seriesRef.part)} · {t.blog.series} {seriesInfo[lang]}</a></p>
+      )}
       <aside class="post-takeaways" aria-label={t.blog.takeaways}>
         <p class="label mono">{t.blog.takeaways}</p>
         <ul>
@@ -114,6 +125,24 @@ const schema = {
           <span class="label mono">{t.blog.relatedService}</span>
           <span class="post-service-title">{t.services.items[service.data.order - 1]?.title ?? service.data.title} →</span>
         </a>
+      )}
+      {seriesInfo && seriesRef && (
+        <nav class="post-series" id="series" aria-label={`${t.blog.series}: ${seriesInfo[lang]}`}>
+          <p class="label mono">{t.blog.series} · {partLabel(seriesRef.part)}</p>
+          <p class="post-series-title">{seriesInfo[lang]}</p>
+          <ol>
+            {seriesParts.filter(({ post: p }) => p).map(({ part, post: p }) => (
+              <li value={part} class:list={{ current: part === seriesRef.part }}>
+                {part === seriesRef.part ? (
+                  <span aria-current="page">{p!.data.title} <span class="post-series-note">· {t.blog.seriesCurrent}</span></span>
+                ) : (
+                  <a href={postHref(p!)}>{p!.data.title}</a>
+                )}
+              </li>
+            ))}
+          </ol>
+          {upcoming > 0 && <p class="post-series-note">{t.blog.seriesUpcoming.replace('{count}', String(upcoming))}</p>}
+        </nav>
       )}
       {related.length > 0 && (
         <nav class="post-related" aria-label={t.blog.related}>
