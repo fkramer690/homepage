@@ -825,7 +825,7 @@ a:hover { color: var(--anthracite); }
 /* Stage photo next to the quote */
 .quote-row {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 360px);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 300px);
   gap: clamp(24px, 5vw, 64px);
   align-items: center;
   margin-top: 1.8em;
@@ -845,6 +845,7 @@ a:hover { color: var(--anthracite); }
 }
 @media (max-width: 760px) {
   .quote-row { grid-template-columns: 1fr; }
+  .stage-photo { max-width: 300px; }
 }
 
 /* Small portrait in the contact section */
