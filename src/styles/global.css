@@ -891,6 +891,14 @@ a:hover { color: var(--anthracite); }
 }
 .service .eyebrow { color: var(--cyan-dark); margin-top: 1.2em; }
 
+/* Questions page */
+.questions .eyebrow { color: var(--cyan-dark); margin-top: 1.2em; }
+.question-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+.question-list li { padding: 20px 24px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--white); }
+.question-list h3 { font-size: 1.08rem; line-height: 1.35; margin: 0.3em 0 0.4em; }
+.question-list p { color: var(--text-2); margin: 0; }
+.approach-more { margin-top: 2em; }
+
 /* Speaker & events page */
 .speaking-intro { display: grid; grid-template-columns: 1fr 300px; gap: 32px; align-items: start; }
 .speaking-intro .service-lead { margin-top: 0; }
