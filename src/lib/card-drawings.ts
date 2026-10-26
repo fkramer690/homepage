@@ -44,6 +44,13 @@ const drawings: Record<string, Drawing> = {
     ${check(167, 85)}${t(180, 90, l('pipeline green', 'Pipeline grün'), { size: 7.5 })}${check(167, 99)}${t(180, 104, l('reviewer approved', 'Reviewer gibt frei'), { size: 7.5 })}
     ${t(282, 114, 'merge', { size: 7.5 })}`,
 
+  'object-ownership-matrix': (l) => `
+    ${t(18, 18, 'OBJECT OWNERSHIP MATRIX', { fill: D, size: 7 })}
+    ${[l('Sales', 'Vertrieb'), 'Service', 'FS'].map((s, i) => t(116 + i * 40, 38, s, { size: 7, anchor: 'middle' })).join('')}
+    ${[['Account', 0], ['Opportunity', 0], ['Case', 1], ['Asset', 1], ['Work Order', 2]].map(([o, k], r) => `<path d="M18 ${46 + r * 18}H206" stroke="${L}"/>` + t(22, 58 + r * 18, String(o), { size: 7 }) + [0, 1, 2].map((c) => (c === k ? `<circle cx="${116 + c * 40}" cy="${55 + r * 18}" r="4" fill="${C}"/>` : dot(116 + c * 40, 55 + r * 18, L, 2.5))).join('')).join('')}
+    ${box(226, 30, 78, 46, C)}${t(265, 48, l('1 object =', '1 Objekt ='), { fill: C, size: 7, anchor: 'middle' })}${t(265, 62, l('1 owner', '1 Owner'), { fill: C, size: 7, anchor: 'middle' })}
+    ${t(226, 100, l('8 streams', '8 Streams'), { size: 7 })}${t(226, 114, l('30+ developers', '30+ Entwickler'), { size: 7 })}${t(226, 128, l('~3 months', '~3 Monate'), { size: 7 })}${t(226, 142, l('80 % in v1', '80 % in V1'), { size: 7 })}`,
+
   'field-service-mobile-guided-voice': (l) => `
     <path d="M34 128L72 98L116 110L150 64L190 76" fill="none" stroke="${G}" stroke-width="1.3" stroke-dasharray="4 3"/>
     ${pin(72, 98)}${pin(116, 110)}${pin(150, 64, C)}
@@ -73,6 +80,14 @@ const drawings: Record<string, Drawing> = {
     <path d="M151 62V98" stroke="${G}" stroke-width="1.2" stroke-dasharray="3 3"/>${t(157, 84, l('goodwill: approval', 'Kulanz: Freigabe'), { size: 6.8 })}
     ${arrow(206, 116, 222)}${t(228, 113, l('serial number', 'Seriennummer'), { size: 7 })}${t(228, 125, l('error code, photos', 'Fehlercode, Fotos'), { size: 7 })}`,
 
+  'field-service-worth-it': (l) => `
+    ${t(18, 18, l('MANY SHORT JOBS / DAY', 'VIELE KURZE EINSÄTZE / TAG'), { fill: C, size: 7 })}
+    <path d="M18 40H302" stroke="${L}"/>${[0, 1, 2, 3, 4].map((i) => `<rect x="${24 + i * 56}" y="30" width="34" height="20" rx="3" fill="#fff" stroke="${C}" stroke-width="1.2"/>` + (i < 4 ? `<path d="M${58 + i * 56} 40H${80 + i * 56}" stroke="${C}" stroke-width="1.2" stroke-dasharray="3 3"/>` : '')).join('')}
+    ${t(18, 66, l('route + slot optimisation pays off', 'Routen- und Terminoptimierung lohnt'), { fill: C, size: 7 })}
+    ${t(18, 92, l('FEW LONG JOBS', 'WENIGE LANGE EINSÄTZE'), { fill: D, size: 7 })}
+    <rect x="24" y="100" width="270" height="20" rx="3" fill="#fff" stroke="${G}" stroke-width="1.2"/>${t(159, 113.5, l('commissioning, 2 weeks', 'Inbetriebnahme, 2 Wochen'), { size: 7, anchor: 'middle' })}
+    ${t(18, 140, l('little to optimise', 'wenig zu optimieren'), { size: 7 })}${t(302, 140, l('175 / technician / month', '175 / Techniker / Monat'), { size: 7, anchor: 'end' })}`,
+
   'sfdx-hardis-training': (l) => `
     <path d="M24 136H110V104H210V72H300" fill="none" stroke="${G}" stroke-width="1.3"/>
     ${[['Level 1', 'Contributor Basics', l('7 labs', '7 Labs'), 30, 126], ['Level 2', 'Contributor Advanced', l('9 labs', '9 Labs'), 116, 94], ['Level 3', 'Release Manager', l('11 labs', '11 Labs'), 216, 62]]
@@ -94,6 +109,12 @@ const drawings: Record<string, Drawing> = {
     <path d="M68 30H100V56M68 130H100V104M252 30H220V56M252 130H220V104" fill="none" stroke="${G}" stroke-width="1.2"/>
     ${t(160, 30, l('partner: access granted', 'Partner: Zugriff erteilt'), { size: 7, anchor: 'middle' })}
     ${t(160, 140, l('partner leaves: access revoked', 'Partner geht: Zugriff entzogen'), { fill: C, size: 7, anchor: 'middle' })}`,
+
+  'salesforce-licence-types': (l) => `
+    ${t(18, 18, l('USER GROUP', 'NUTZERGRUPPE'), { fill: D, size: 7 })}${t(170, 18, l('LICENCE / MONTH', 'LIZENZ / MONAT'), { fill: D, size: 7 })}
+    ${[[l('sales', 'Vertrieb'), 'Sales Cloud Core 195', false], [l('readers', 'Leser'), 'Platform Starter 25', true], [l('approvers', 'Freigeber'), 'Platform Starter 25', true], [l('dealers', 'Händler'), 'PRM 25', false], [l('interfaces', 'Schnittstellen'), 'Integration, API only', false]]
+      .map(([a, b, hi], i) => box(18, 26 + i * 22, 112, 17) + t(26, 37.5 + i * 22, String(a), { size: 7 }) + arrow(134, 34.5 + i * 22, 164, hi ? C : G) + box(170, 26 + i * 22, 132, 17, hi ? C : G) + t(178, 37.5 + i * 22, String(b), { fill: hi ? C : G, size: 7 })).join('')}
+    ${t(18, 150, l('100 users x 170 x 12 = 204,000 / year', '100 Nutzer x 170 x 12 = 204.000 / Jahr'), { fill: C, size: 7.5 })}`,
 
   'devops-salesforce-enterprise': (l) => `
     ${[l('dev sandbox', 'Dev-Sandbox'), 'pull request', l('validation', 'Validierung'), 'UAT', l('production', 'Produktion')]
@@ -137,6 +158,17 @@ const drawings: Record<string, Drawing> = {
     ${t(18, 18, l('LIMIT', 'GRENZE'), { fill: D, size: 7 })}${t(186, 18, 'WORKAROUND', { fill: C, size: 7 })}
     ${[[l('template = text field', 'Vorlage = Textfeld'), 'screen flow'], [l('fixed file name', 'fester Dateiname'), l('async flow', 'asynchroner Flow')], [l('no email', 'keine E-Mail'), 'flow'], [l('no defaults', 'keine Vorbelegung'), 'flow'], [l('basic styling', 'einfaches Styling'), 'LWC + GraphQL']]
       .map(([a, b], i) => box(18, 26 + i * 26, 126, 20) + t(26, 39 + i * 26, a, { size: 7 }) + arrow(150, 36 + i * 26, 180, C) + box(186, 26 + i * 26, 116, 20, C) + t(194, 39 + i * 26, b, { size: 7 })).join('')}`,
+  'manufacturing-cloud-worth-it': (l) => `
+    ${t(18, 18, l('LIST PRICE / USER / MONTH', 'LISTENPREIS / NUTZER / MONAT'), { fill: D, size: 7 })}
+    ${box(18, 26, 116, 22)}${t(26, 40, 'Sales Cloud Core', { size: 7 })}${t(126, 40, '195', { size: 7.5, anchor: 'end' })}
+    ${box(18, 54, 116, 22, C)}${t(26, 68, 'Manufacturing Core', { size: 7 })}${t(126, 68, '275', { fill: C, size: 7.5, anchor: 'end' })}
+    ${t(18, 94, l('+80 x 200 users = 192,000 / year', '+80 x 200 Nutzer = 192.000 / Jahr'), { fill: C, size: 7 })}
+    ${t(170, 18, 'SALES AGREEMENT', { fill: D, size: 7 })}
+    <path d="M170 112H302" stroke="${G}" stroke-width="1"/>
+    ${[[70, 62], [70, 74], [70, 44], [70, 66]].map(([p, a], i) => `<rect x="${176 + i * 32}" y="${112 - p}" width="10" height="${p}" fill="#fff" stroke="${G}" stroke-width="1.1"/><rect x="${188 + i * 32}" y="${112 - a}" width="10" height="${a}" fill="${C}" fill-opacity="0.18" stroke="${C}" stroke-width="1.1"/>` + t(187 + i * 32, 124, `Q${i + 1}`, { size: 6.8, anchor: 'middle' })).join('')}
+    ${t(176, 140, l('planned', 'geplant'), { size: 7 })}${t(226, 140, l('actual from ERP', 'Ist aus ERP'), { fill: C, size: 7 })}
+    ${check(18, 114)}${t(30, 120, l('volume agreements', 'Rahmenverträge'), { size: 7 })}${check(18, 128)}${t(30, 134, l('rebates, warranty', 'Rebates, Garantie'), { size: 7 })}
+    ${cross(22, 148)}${t(30, 152, l('industry name only', 'nur der Branchenname'), { size: 7 })}`,
   'salesforce-well-architected-2026': (l) => `
     ${t(18, 16, l('PREVIOUSLY', 'BISHER'), { fill: D, size: 7 })}${t(168, 12, l('SINCE 14.09.2026', 'SEIT 14.09.2026'), { fill: D, size: 7 })}
     ${['Trusted', 'Easy', 'Adaptable'].map((s, i) => box(18, 26 + i * 36, 82, 26) + t(59, 42 + i * 36, s, { size: 7.5, anchor: 'middle' })).join('')}
