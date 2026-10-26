@@ -92,6 +92,6 @@ This is ordinary project discipline, applied to a new kind of system. Agents sho
 
 ## What role does the architect play?
 
-On the client side, my job in Agentforce projects is to keep the focus on value and to make sure the foundations hold: data model, integrations, permissions and the release process. Partners and vendors understandably want to show what the technology can do. Someone has to ask whether a specific agent is worth its cost and whether the data supports it. That is a core part of [architecture and partner governance](../../#services).
+On the client side, my job in Agentforce projects is to keep the focus on value and to make sure the foundations hold: data model, integrations, permissions and the release process. Partners and vendors understandably want to show what the technology can do. Someone has to ask whether a specific agent is worth its cost and whether the data supports it. That is a core part of [architecture and partner governance](../../services/salesforce-architecture/).
 
 Agentforce can deliver real value, but only where a clear business goal meets data the agent can trust. If you are planning an Agentforce project or want to rescue one that is stuck in pilot, [send me a message](#contact).

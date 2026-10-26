@@ -1,9 +1,9 @@
 export const en = {
   lang: 'en',
   meta: {
-    title: 'FK Solution Design – Salesforce architecture for manufacturers',
+    title: 'Salesforce architect for manufacturers | FK Solution Design',
     description:
-      'Independent Salesforce Enterprise Architect for manufacturing companies. After-sales, service, Field Service and B2B sales – on the client side, not tied to a vendor or implementation partner.',
+      'Independent Salesforce Enterprise Architect for manufacturers: after-sales, service, Field Service and B2B sales, on the client side, tied to no vendor.',
   },
   nav: {
     services: 'Services',
@@ -174,6 +174,7 @@ export const en = {
     certifications: {
       title: 'Certifications',
       metaTitle: 'Salesforce certifications | FK Solution Design',
+      metaDescription: '25 Salesforce certifications, 8 of them architect credentials, plus 15 more, and what each one means for enterprise projects at manufacturers.',
       intro: 'I hold 25 Salesforce certifications, 8 of them architect credentials, earned since 2018. Another 15 certifications cover software architecture, integration, DevOps tools and project delivery.',
       architectTitle: 'Salesforce architect credentials',
       salesforceTitle: 'Further Salesforce certifications',
@@ -224,7 +225,8 @@ export const en = {
   },
   blog: {
     title: 'Blog',
-    metaTitle: 'Blog – Salesforce architecture notes | FK Solution Design',
+    metaTitle: 'Salesforce architecture blog | FK Solution Design',
+    metaDescription: 'Notes from client-side Salesforce work at manufacturers: architecture decisions, partner governance, DevOps, licences and Field Service.',
     intro: 'Notes from client-side Salesforce work at manufacturers: architecture decisions, partner governance, DevOps and the questions that come up in every enterprise project.',
     readingTime: 'min read',
     published: 'Published',
@@ -245,7 +247,8 @@ export const en = {
   },
   servicePage: {
     indexTitle: 'Services',
-    metaTitle: 'Services – Salesforce architecture on the client side | FK Solution Design',
+    metaTitle: 'Services: Salesforce architecture | FK Solution Design',
+    metaDescription: 'Salesforce architect on the client side: target architecture, partner governance, DevOps, integration, programme steering and make-or-buy for manufacturers.',
     indexIntro: 'What I take care of as the Salesforce architect on the client side: from target architecture and partner governance to DevOps, integration, programme steering and make-or-buy decisions.',
     back: 'All services',
     situations: 'Typical situation',

@@ -70,7 +70,7 @@ None of this is a reproach to partners. Most good partners prefer working in the
 
 A lot. As an [architect on the client side](../../#about), one of my main goals is to keep implementation partners comparable and replaceable. That only works if the foundations belong to the client: the repository, the pipeline, the backlog and the documentation. Then a new partner can be onboarded into a known setup with written standards, and an exiting partner hands over nothing but their user accounts.
 
-It also makes it possible to build internal ownership. In the programme I described in my DevOps article, the release process was eventually handed over to an internal colleague. A handover like that is only realistic when the tools and rights are already on the client side. Otherwise, the internal person inherits a process that still depends on someone else's accounts. Ownership of tools is the basis of good [partner steering and governance](../../#services).
+It also makes it possible to build internal ownership. In the programme I described in my DevOps article, the release process was eventually handed over to an internal colleague. A handover like that is only realistic when the tools and rights are already on the client side. Otherwise, the internal person inherits a process that still depends on someone else's accounts. Ownership of tools is the basis of good [partner steering and governance](../../services/partner-governance/).
 
 ## How do you set it up in practice?
 

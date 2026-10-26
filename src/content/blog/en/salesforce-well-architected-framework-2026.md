@@ -101,7 +101,7 @@ In practice that means:
 3. **Do not treat agents separately.** Agentforce work goes through the same review, extended by the agent variant of each pillar.
 4. **Take the cost pillar seriously.** Check licences and sandboxes against actual use once a year.
 
-How I set up standards and reviews in such programmes is part of my [work on partner governance and architecture](../../#services).
+How I set up standards and reviews in such programmes is part of my [work on partner governance and architecture](../../services/partner-governance/).
 
 ## Where should you start?
 

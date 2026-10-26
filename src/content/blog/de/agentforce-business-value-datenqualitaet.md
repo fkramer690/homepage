@@ -92,6 +92,6 @@ Das ist ganz normale Projektdisziplin, angewendet auf eine neue Art von System. 
 
 ## Welche Rolle spielt der Architekt?
 
-Auf Kundenseite ist meine Aufgabe in Agentforce-Projekten, den Fokus auf dem Nutzen zu halten und dafür zu sorgen, dass die Grundlagen tragen: Datenmodell, Schnittstellen, Berechtigungen und Release-Prozess. Partner und Hersteller möchten verständlicherweise zeigen, was die Technik kann. Jemand muss fragen, ob ein bestimmter Agent seine Kosten wert ist und ob die Daten ihn tragen. Das ist ein Kernteil von [Architektur und Partnersteuerung](../../#services).
+Auf Kundenseite ist meine Aufgabe in Agentforce-Projekten, den Fokus auf dem Nutzen zu halten und dafür zu sorgen, dass die Grundlagen tragen: Datenmodell, Schnittstellen, Berechtigungen und Release-Prozess. Partner und Hersteller möchten verständlicherweise zeigen, was die Technik kann. Jemand muss fragen, ob ein bestimmter Agent seine Kosten wert ist und ob die Daten ihn tragen. Das ist ein Kernteil von [Architektur und Partnersteuerung](../../leistungen/salesforce-architektur/).
 
 Agentforce kann echten Nutzen bringen, aber nur dort, wo ein klares fachliches Ziel auf Daten trifft, denen der Agent trauen kann. Wenn Sie ein Agentforce-Projekt planen oder eines aus der Pilotphase holen möchten, [schreiben Sie mir](#contact).

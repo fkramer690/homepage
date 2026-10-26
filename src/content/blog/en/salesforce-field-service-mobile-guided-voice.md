@@ -73,7 +73,7 @@ But a fast digital copy of a form is only as good as the form itself. Typical pr
 - **Missing structure**, for example fault descriptions as free text instead of codes that quality management can evaluate.
 - **Forms that differ by region or team** for the same job.
 
-Before forms are digitised at scale, it is worth deciding on a target data model for service protocols: which values are captured as fields, which picklists are shared, how results link to the asset and the work order. This is classic [architecture work](../../#services), and it decides whether the data can be used later for reporting, AI agents or integration with the ERP.
+Before forms are digitised at scale, it is worth deciding on a target data model for service protocols: which values are captured as fields, which picklists are shared, how results link to the asset and the work order. This is classic [architecture work](../../services/salesforce-architecture/), and it decides whether the data can be used later for reporting, AI agents or integration with the ERP.
 
 ## What needs to be clarified before using voice input?
 

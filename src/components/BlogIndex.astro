@@ -11,8 +11,33 @@ interface Props {
 const { lang } = Astro.props;
 const t = lang === 'de' ? de : en;
 const posts = await getPosts(lang);
+
+const abs = (path: string) => new URL(path, Astro.site).href;
+const root = abs(import.meta.env.BASE_URL);
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Blog',
+  '@id': `${abs(blogIndex(lang))}#blog`,
+  url: abs(blogIndex(lang)),
+  name: t.blog.metaTitle,
+  description: t.blog.metaDescription,
+  inLanguage: lang,
+  author: { '@id': `${root}#person` },
+  publisher: { '@id': `${root}#organization` },
+  blogPost: posts.map((post) => ({
+    '@type': 'BlogPosting',
+    '@id': `${abs(postHref(post))}#article`,
+    headline: post.data.title,
+    url: abs(postHref(post)),
+    datePublished: post.data.pubDate.toISOString(),
+    ...(post.data.updatedDate ? { dateModified: post.data.updatedDate.toISOString() } : {}),
+  })),
+};
 ---
-<Page lang={lang} title={t.blog.metaTitle} description={t.blog.intro} alternates={{ en: blogIndex('en'), de: blogIndex('de') }}>
+<Page lang={lang} title={t.blog.metaTitle} description={t.blog.metaDescription} alternates={{ en: blogIndex('en'), de: blogIndex('de') }}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </Fragment>
   <section class="section blog">
     <div class="container">
       <div class="blog-inner">

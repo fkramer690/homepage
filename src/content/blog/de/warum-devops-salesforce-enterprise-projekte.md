@@ -64,7 +64,7 @@ Ein solides Setup muss nicht kompliziert sein. In meinen Projekten sind diese Ba
 
 > Die Pipeline gehört dem Kunden, nicht dem Partner. Wer den Release-Prozess besitzt, besitzt die Plattform.
 
-Dieser letzte Punkt ist mir als [Architekt auf Kundenseite](../../#about) besonders wichtig. Ein Repository und eine Pipeline unter Kontrolle des Kunden machen Partner vergleichbar und austauschbar. Das ist die Grundlage für [Partnersteuerung und Governance](../../#services). Außerdem wird das Onboarding eines neuen Partners deutlich leichter, weil die Standards aufgeschrieben sind und automatisch durchgesetzt werden.
+Dieser letzte Punkt ist mir als [Architekt auf Kundenseite](../../#about) besonders wichtig. Ein Repository und eine Pipeline unter Kontrolle des Kunden machen Partner vergleichbar und austauschbar. Das ist die Grundlage für [Partnersteuerung und Governance](../../leistungen/partnersteuerung/). Außerdem wird das Onboarding eines neuen Partners deutlich leichter, weil die Standards aufgeschrieben sind und automatisch durchgesetzt werden.
 
 ## Wie sah das in einem echten Programm aus?
 

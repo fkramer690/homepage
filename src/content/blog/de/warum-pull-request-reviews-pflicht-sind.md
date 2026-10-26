@@ -82,7 +82,7 @@ Der häufigste Einwand ist die Geschwindigkeit. Nach meiner Erfahrung bremsen Re
 
 ## Wem sollte der Review-Prozess gehören?
 
-Dem Kunden. Das ist mir als [Architekt auf Kundenseite](../../#about) wichtig. Verantwortet ein Umsetzungspartner die Review-Regeln, entscheidet er, wie alle anderen bauen, auch seine Wettbewerber. Liegen die Regeln und die Freigabe architekturrelevanter Änderungen beim Kunden, bleiben Partner vergleichbar und austauschbar. Das ist die Grundlage guter [Partnersteuerung und Governance](../../#services).
+Dem Kunden. Das ist mir als [Architekt auf Kundenseite](../../#about) wichtig. Verantwortet ein Umsetzungspartner die Review-Regeln, entscheidet er, wie alle anderen bauen, auch seine Wettbewerber. Liegen die Regeln und die Freigabe architekturrelevanter Änderungen beim Kunden, bleiben Partner vergleichbar und austauschbar. Das ist die Grundlage guter [Partnersteuerung und Governance](../../leistungen/partnersteuerung/).
 
 Das heißt nicht, dass der Kunde jede Zeile selbst prüfen muss. Partner können und sollten sich gegenseitig reviewen. Aber die Standards, die Freigaberechte und das Repository gehören zum Kunden, am besten zu einer internen Person, die den Prozess langfristig übernimmt.
 
