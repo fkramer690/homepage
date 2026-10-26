@@ -37,6 +37,8 @@ const abs = (path: string) => new URL(path, Astro.site).href;
       </>
     )}
     {noindex && <meta name="robots" content="noindex" />}
+    <!-- Site ownership for Bing Webmaster Tools. -->
+    <meta name="msvalidate.01" content="78E682E9BF2EFA99741A3B21ADB0ADCE" />
     <meta name="theme-color" content="#232325" />
     <link rel="icon" href={`${base}favicon.svg`} type="image/svg+xml" />
     <link rel="icon" href={`${base}favicon-32.png`} sizes="32x32" type="image/png" />
