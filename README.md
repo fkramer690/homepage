@@ -41,7 +41,7 @@ Rule: every external link opens in a new tab. Links in Markdown get `target="_bl
 
 ```sh
 npm install
-npm run dev      # http://localhost:4321/homepage/
+npm run dev      # http://localhost:4321/
 npm run build    # output in dist/
 ```
 
@@ -50,15 +50,9 @@ npm run build    # output in dist/
 Every push to `main` builds and deploys the site via `.github/workflows/deploy.yml`.
 One-time setup: in the repository settings under **Pages**, set **Source** to **GitHub Actions**.
 
-Until a custom domain is connected, the site is served at https://fkramer690.github.io/homepage/.
+The site is served at https://www.fk-sd.de/ (`site` and `base` in `astro.config.mjs`, domain in `public/CNAME`). Both fk-sd.de and the old address https://fkramer690.github.io/homepage/ redirect there.
 
-### Connecting the domain later
+### Domain setup (Strato)
 
-1. At Strato, set A records for the apex domain to `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`, and a `www` CNAME to `fkramer690.github.io`. Leave MX records untouched.
-2. Verify the domain in your GitHub account settings, then enter it under **Pages → Custom domain** and enable **Enforce HTTPS**.
-3. In `.github/workflows/deploy.yml`, add to the build step:
-   ```yaml
-   env:
-     SITE_URL: https://your-domain.de
-     BASE_PATH: /
-   ```
+1. Apex `fk-sd.de`: A records `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153` and AAAA records `2606:50c0:8000::153` to `2606:50c0:8003::153`; `www` CNAME to `fkramer690.github.io`. Leave MX, SPF and other TXT records untouched (e-mail runs on this domain).
+2. In the repository settings under **Pages → Custom domain**, enter `www.fk-sd.de` and enable **Enforce HTTPS** once the certificate is issued.

@@ -5,11 +5,9 @@ import { satteri } from '@astrojs/markdown-satteri';
 import { readdirSync, readFileSync } from 'node:fs';
 import { externalLinks } from './src/lib/external-links.mjs';
 
-// Until the custom domain is connected, the site lives at
-// https://fkramer690.github.io/homepage. Once the domain is live,
-// set SITE_URL to the domain and BASE_PATH to "/" (see README).
-const site = process.env.SITE_URL ?? 'https://fkramer690.github.io';
-const base = process.env.BASE_PATH ?? '/homepage';
+// The site runs on the custom domain https://www.fk-sd.de (see public/CNAME).
+const site = process.env.SITE_URL ?? 'https://www.fk-sd.de';
+const base = process.env.BASE_PATH ?? '/';
 
 // German is the main version at the root, English lives under /en/. The old
 // URLs (/de/…, /services/…, English articles under /blog/…) are kept as
