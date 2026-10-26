@@ -69,6 +69,17 @@ const drawings: Record<string, Drawing> = {
     ${box(196, 52, 104, 56, C)}${t(248, 74, l('SCHEDULING', 'PLANUNG'), { fill: D, size: 8, anchor: 'middle' })}${t(248, 88, 'Match Skills', { size: 7, anchor: 'middle' })}
     ${tag(196, 120, 104, l('6 kinds of data', '6 Datenarten'))}`,
 
+  'field-service-scheduling-automation': (l) => `
+    ${box(18, 52, 74, 40)}${t(55, 70, l('AUTOMATION', 'AUTOMATIK'), { fill: D, size: 7.5, anchor: 'middle' })}${t(55, 83, 'policy', { size: 7, anchor: 'middle' })}
+    ${arrow(92, 72, 124)}
+    ${tag(124, 62, 66, 'Scheduled')}
+    ${arrow(190, 72, 222, C)}
+    ${tag(222, 62, 80, 'Dispatched')}
+    ${dot(157, 118, C, 9)}<path d="M151 136a8 8 0 0 1 12 0" fill="none" stroke="${C}" stroke-width="1.4"/>
+    <path d="M166 112C190 104 200 96 206 80" fill="none" stroke="${C}" stroke-width="1.2" stroke-dasharray="4 3"/>
+    ${t(176, 132, l('dispatcher reviews and releases', 'Disponent prüft und gibt frei'), { fill: C, size: 7 })}
+    ${t(18, 30, l('trust grows: more automatic', 'Vertrauen wächst: mehr Automatik'), { size: 7.5 })}`,
+
   'salesforce-winter-27-pipeline': (l) => `
     ${['build', 'validate', 'deploy'].map((s, i) => box(20 + i * 62, 30, 50, 26) + t(45 + i * 62, 47, s, { size: 7.5, anchor: 'middle' })).join('')}
     ${arrow(70, 43, 82)}${arrow(132, 43, 144)}
