@@ -207,15 +207,15 @@ a:hover { color: var(--anthracite); }
 /* Hero */
 .hero-inner {
   position: relative;
-  padding-top: clamp(56px, 9vw, 104px);
-  padding-bottom: clamp(56px, 7vw, 88px);
+  padding-top: clamp(32px, 5vw, 56px);
+  padding-bottom: clamp(36px, 5vw, 56px);
 }
 .eyebrow {
   color: var(--cyan-light);
   text-transform: uppercase;
   letter-spacing: 0.18em;
   font-size: 0.8rem;
-  margin-bottom: 1.4em;
+  margin-bottom: 1em;
 }
 .hero h1 { max-width: 900px; }
 .hero-focus {
@@ -257,7 +257,7 @@ a:hover { color: var(--anthracite); }
   display: flex;
   flex-direction: column;
   gap: 4px;
-  padding: 28px 20px;
+  padding: 22px 20px;
   border-left: 1px dashed var(--line);
 }
 .proof-list li:first-child { border-left: 0; padding-left: 0; }
@@ -284,7 +284,7 @@ a:hover { color: var(--anthracite); }
 }
 
 /* Sections */
-.section { padding: clamp(44px, 6vw, 76px) 0; }
+.section { padding: clamp(36px, 4.5vw, 56px) 0; }
 .section.alt {
   background: var(--bg);
   border-top: 1px solid var(--line);
@@ -524,8 +524,8 @@ a:hover { color: var(--anthracite); }
 /* Contact */
 .contact-inner {
   position: relative;
-  padding-top: clamp(56px, 7vw, 88px);
-  padding-bottom: clamp(56px, 7vw, 88px);
+  padding-top: clamp(40px, 5vw, 64px);
+  padding-bottom: clamp(40px, 5vw, 64px);
 }
 .contact-inner {
   display: grid;
