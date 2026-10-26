@@ -1,0 +1,100 @@
+---
+// "Questions I ask in every project" in either language; content lives in src/data/questions.ts.
+import Page from '../layouts/Page.astro';
+import ExternalMark from './ExternalMark.astro';
+import ContactForm from './ContactForm.astro';
+import AuthorBox from './AuthorBox.astro';
+import Blueprint from './Blueprint.astro';
+import { en } from '../i18n/en';
+import { de } from '../i18n/de';
+import { site, contactHref, contactExternal } from '../site';
+import { questions, questionPaths } from '../data/questions';
+import { homeHref, localHref } from '../lib/paths';
+
+interface Props {
+  lang: 'en' | 'de';
+}
+const { lang } = Astro.props;
+const t = lang === 'de' ? de : en;
+const c = questions[lang];
+const base = import.meta.env.BASE_URL;
+const home = homeHref(lang);
+const alternates = { en: localHref('en', questionPaths.en), de: localHref('de', questionPaths.de) };
+const url = new URL(alternates[lang], Astro.site).href;
+const abs = (path: string) => new URL(path, Astro.site).href;
+const ctaAttrs = contactExternal ? { target: '_blank', rel: 'noopener' } : {};
+const suffix = ' | FK Solution Design';
+const pageTitle = c.title.length + suffix.length <= 60 ? c.title + suffix : c.title;
+const ogImage = `${base}og/${lang}/questions.png`;
+// Questions are numbered across all groups.
+const offsets = c.groups.map((_, i) => c.groups.slice(0, i).reduce((n, g) => n + g.questions.length, 0));
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'FAQPage',
+      '@id': `${url}#faq`,
+      url,
+      name: c.title,
+      description: c.description,
+      inLanguage: lang,
+      image: abs(ogImage),
+      author: { '@type': 'Person', '@id': `${abs(base)}#person`, name: site.person },
+      mainEntity: c.groups.flatMap((g) =>
+        g.questions.map(({ q, a }) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })),
+      ),
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'FK Solution Design', item: abs(home) },
+        { '@type': 'ListItem', position: 2, name: c.title, item: url },
+      ],
+    },
+  ],
+};
+---
+<Page lang={lang} title={pageTitle} description={c.description} alternates={alternates} image={ogImage} hasContact>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </Fragment>
+  <article class="section post questions">
+    <div class="container post-inner">
+      <a class="post-back mono" href={`${home}#approach`}>← {c.back}</a>
+      <p class="eyebrow mono">{c.eyebrow}</p>
+      <h1>{c.title}</h1>
+      <p class="service-lead">{c.lead}</p>
+
+      {c.groups.map((group, gi) => (
+        <section class="service-block" aria-labelledby={`group-${gi + 1}`}>
+          <h2 id={`group-${gi + 1}`}>{group.title}</h2>
+          <ol class="question-list">
+            {group.questions.map(({ q, a }, qi) => (
+              <li>
+                <span class="card-index mono">{String(offsets[gi] + qi + 1).padStart(2, '0')}</span>
+                <h3>{q}</h3>
+                <p>{a}</p>
+              </li>
+            ))}
+          </ol>
+        </section>
+      ))}
+
+      <AuthorBox lang={lang} />
+    </div>
+  </article>
+  <section class="contact dark grid-bg" id="contact">
+    <Blueprint />
+    <div class="container contact-inner">
+      <div class="contact-intro">
+        <p class="label mono">{t.contact.label}</p>
+        <h2>{c.ctaTitle}</h2>
+        <p class="contact-text">{c.ctaText}</p>
+        <a class="btn" href={contactHref(c.formSubject)} {...ctaAttrs}>{t.nav.cta}{contactExternal && <ExternalMark label={t.nav.newTab} />}</a>
+        {contactExternal && <p class="booking-note">{t.contact.bookingNote}</p>}
+      </div>
+      <ContactForm t={t} subject={c.formSubject} />
+    </div>
+  </section>
+</Page>

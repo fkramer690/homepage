@@ -4,6 +4,7 @@ import { site } from '../site';
 import { getPosts, postHref, blogIndex } from '../lib/blog';
 import { getServices, serviceHref, servicesIndex } from '../lib/services';
 import { homeHref, localHref } from '../lib/paths';
+import { questionPaths } from '../data/questions';
 
 // Plain-text overview for AI assistants and crawlers (llmstxt.org).
 export const GET: APIRoute = async ({ site: origin }) => {
@@ -27,6 +28,7 @@ The German version is the main site at the root; the English version lives under
 - [Services](${abs(servicesIndex('en'))}), German: [Leistungen](${abs(servicesIndex('de'))})
 - [Blog](${abs(blogIndex('en'))}), German: [Blog](${abs(blogIndex('de'))})
 - [Speaker & events](${abs(localHref('en', 'speaking/'))}): talks at Salesforce community conferences (Flow performance, Flow vs OmniScript, Lightning Flow Scanner)
+- [Questions I ask in every Salesforce project](${abs(localHref('en', questionPaths.en))}), German: [Fragen, die ich in jedem Salesforce-Projekt stelle](${abs(localHref('de', questionPaths.de))}): goal and deadline, partner ownership, ERP interfaces, data volumes, operations, licences
 - [LinkedIn](${site.linkedin})
 
 ## Services

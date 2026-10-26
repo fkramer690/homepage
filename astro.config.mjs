@@ -48,6 +48,9 @@ for (const collection of Object.keys(contentPaths)) {
 const servicesIndex = { de: '/leistungen/', en: '/en/services/' };
 sitemapInfo.set(servicesIndex.de, { pair: servicesIndex });
 sitemapInfo.set(servicesIndex.en, { pair: servicesIndex });
+const questionsPage = { de: '/fragen/', en: '/en/questions/' };
+sitemapInfo.set(questionsPage.de, { pair: questionsPage });
+sitemapInfo.set(questionsPage.en, { pair: questionsPage });
 // The blog overviews change with every new article.
 for (const lang of ['de', 'en']) {
   const latest = readEntries('blog').filter((e) => e.lang === lang).map((e) => e.date).sort().at(-1);
