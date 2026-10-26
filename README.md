@@ -50,9 +50,9 @@ npm run build    # output in dist/
 Every push to `main` builds and deploys the site via `.github/workflows/deploy.yml`.
 One-time setup: in the repository settings under **Pages**, set **Source** to **GitHub Actions**.
 
-The site is served at https://fk-sd.de/ (`site` and `base` in `astro.config.mjs`, domain in `public/CNAME`). The old address https://fkramer690.github.io/homepage/ redirects there.
+The site is served at https://www.fk-sd.de/ (`site` and `base` in `astro.config.mjs`, domain in `public/CNAME`). Both fk-sd.de and the old address https://fkramer690.github.io/homepage/ redirect there.
 
 ### Domain setup (Strato)
 
 1. Apex `fk-sd.de`: A records `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153` and AAAA records `2606:50c0:8000::153` to `2606:50c0:8003::153`; `www` CNAME to `fkramer690.github.io`. Leave MX, SPF and other TXT records untouched (e-mail runs on this domain).
-2. In the repository settings under **Pages → Custom domain**, enter `fk-sd.de` and enable **Enforce HTTPS** once the certificate is issued.
+2. In the repository settings under **Pages → Custom domain**, enter `www.fk-sd.de` and enable **Enforce HTTPS** once the certificate is issued.

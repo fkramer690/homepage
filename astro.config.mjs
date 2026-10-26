@@ -5,8 +5,8 @@ import { satteri } from '@astrojs/markdown-satteri';
 import { readdirSync, readFileSync } from 'node:fs';
 import { externalLinks } from './src/lib/external-links.mjs';
 
-// The site runs on the custom domain https://fk-sd.de (see public/CNAME).
-const site = process.env.SITE_URL ?? 'https://fk-sd.de';
+// The site runs on the custom domain https://www.fk-sd.de (see public/CNAME).
+const site = process.env.SITE_URL ?? 'https://www.fk-sd.de';
 const base = process.env.BASE_PATH ?? '/';
 
 // German is the main version at the root, English lives under /en/. The old

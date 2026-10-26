@@ -4,7 +4,7 @@
 import { readdirSync, readFileSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 
-const site = process.env.SITE_URL ?? 'https://fk-sd.de';
+const site = process.env.SITE_URL ?? 'https://www.fk-sd.de';
 const dist = new URL('../dist/', import.meta.url).pathname;
 const errors = [];
 
