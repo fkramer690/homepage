@@ -72,11 +72,11 @@ Es gibt eine zweite Konstellation, in der ich vorsichtig bin. Liegen Rahmenvertr
 
 ## Wann lohnt sie sich doch?
 
-Ich habe auch die andere Seite erlebt: einen weltweiten Rollout der Manufacturing Cloud bei einem globalen Hersteller von Lebensmittelzutaten, zusammen mit CPQ, einem Produktkonfigurator und einem Kundenportal. Dort war die Manufacturing Cloud der Kern, auf dem Angebot, Konfiguration und Kundenzugang aufgebaut wurden.
+Ich habe auch die andere Seite erlebt: einen weltweiten Rollout der Manufacturing Cloud bei einem globalen Hersteller, zusammen mit CPQ, einem Produktkonfigurator und einem Kundenportal. Der wichtigste Grund für die Manufacturing Cloud waren dort die Sales Agreements. Der Vertrieb musste erkennen, welche Kunden die vereinbarten Mengen noch nicht abgenommen hatten, und planen, wie sich die offenen Mengen noch realisieren lassen, unter Berücksichtigung der aktuellen Lagerkapazitäten. Genau für diese Frage ist der Plan-Ist-Vergleich im Sales Agreement gebaut, und eine Kennzahl wie den Lagerbestand kann man laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/manufacturing-cloud-admin-essentials/configure-sales-agreements-to-negotiate-better) als eigene Kennzahl pro Zeitraum mitführen.
 
 Die Manufacturing Cloud lohnt sich nach meiner Erfahrung, wenn mindestens einer dieser Punkte klar zutrifft:
 
-- **Rahmenverträge mit Mengen sind der Normalfall.** Der Vertrieb verhandelt Jahresmengen pro Kunde und Produkt und will Plan gegen Ist sehen, ohne Excel.
+- **Rahmenverträge mit Mengen sind der Normalfall.** Der Vertrieb verhandelt Jahresmengen pro Kunde und Produkt und will sehen, wer hinter der Zusage liegt und wie sich die offenen Mengen mit dem vorhandenen Lager noch liefern lassen.
 - **Ein Händlerkanal mit Bonusprogrammen.** Rebates werden heute in Tabellen gerechnet, und Händler fragen regelmäßig nach ihrem Stand.
 - **Garantie über Händler und Partner.** Ansprüche kommen von außen, und die Prüfung kostet heute viel Handarbeit.
 - **Die Roadmap braucht die Funktionen in zwei bis drei Jahren.** Dann lohnt es sich, sie früh im Angebot mitzuverhandeln, statt sie später einzeln zu kaufen.

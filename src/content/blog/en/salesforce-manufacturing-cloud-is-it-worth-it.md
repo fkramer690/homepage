@@ -72,11 +72,11 @@ There is a second situation where I am careful. If framework contracts and call-
 
 ## When does it pay off?
 
-I have also seen the other side: a global Manufacturing Cloud rollout at a global manufacturer of food ingredients, together with CPQ, a product configurator and a customer portal. There, Manufacturing Cloud was the core that quoting, configuration and customer access were built on.
+I have also seen the other side: a global Manufacturing Cloud rollout at a global manufacturer, together with CPQ, a product configurator and a customer portal. The main reason for Manufacturing Cloud there was sales agreements. Sales needed to see which customers had not yet taken the agreed quantities, and to plan how the open volumes could still be realised, taking current warehouse capacity into account. That is exactly the question the plan versus actuals view in a sales agreement is built for, and according to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/manufacturing-cloud-admin-essentials/configure-sales-agreements-to-negotiate-better) a figure like inventory level can be carried along as its own metric per period.
 
 In my experience Manufacturing Cloud pays off when at least one of these points clearly applies:
 
-- **Volume agreements are the norm.** Sales negotiates annual quantities per customer and product and wants plan against actuals without Excel.
+- **Volume agreements are the norm.** Sales negotiates annual quantities per customer and product and wants to see who is behind on their commitment and how the open volumes can still be delivered from current stock.
 - **A dealer channel with bonus programmes.** Rebates are calculated in spreadsheets today, and dealers keep asking where they stand.
 - **Warranty through dealers and partners.** Claims come from outside, and checking them takes a lot of manual work today.
 - **The roadmap needs these features within two to three years.** Then it is worth negotiating them into the quote early instead of buying them one by one later.
