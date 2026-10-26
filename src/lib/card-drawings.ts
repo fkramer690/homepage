@@ -137,6 +137,17 @@ const drawings: Record<string, Drawing> = {
     ${t(18, 18, l('LIMIT', 'GRENZE'), { fill: D, size: 7 })}${t(186, 18, 'WORKAROUND', { fill: C, size: 7 })}
     ${[[l('template = text field', 'Vorlage = Textfeld'), 'screen flow'], [l('fixed file name', 'fester Dateiname'), l('async flow', 'asynchroner Flow')], [l('no email', 'keine E-Mail'), 'flow'], [l('no defaults', 'keine Vorbelegung'), 'flow'], [l('basic styling', 'einfaches Styling'), 'LWC + GraphQL']]
       .map(([a, b], i) => box(18, 26 + i * 26, 126, 20) + t(26, 39 + i * 26, a, { size: 7 }) + arrow(150, 36 + i * 26, 180, C) + box(186, 26 + i * 26, 116, 20, C) + t(194, 39 + i * 26, b, { size: 7 })).join('')}`,
+  'manufacturing-cloud-worth-it': (l) => `
+    ${t(18, 18, l('LIST PRICE / USER / MONTH', 'LISTENPREIS / NUTZER / MONAT'), { fill: D, size: 7 })}
+    ${box(18, 26, 116, 22)}${t(26, 40, 'Sales Cloud Core', { size: 7 })}${t(126, 40, '195', { size: 7.5, anchor: 'end' })}
+    ${box(18, 54, 116, 22, C)}${t(26, 68, 'Manufacturing Core', { size: 7 })}${t(126, 68, '275', { fill: C, size: 7.5, anchor: 'end' })}
+    ${t(18, 94, l('+80 x 200 users = 192,000 / year', '+80 x 200 Nutzer = 192.000 / Jahr'), { fill: C, size: 7 })}
+    ${t(170, 18, 'SALES AGREEMENT', { fill: D, size: 7 })}
+    <path d="M170 112H302" stroke="${G}" stroke-width="1"/>
+    ${[[70, 62], [70, 74], [70, 44], [70, 66]].map(([p, a], i) => `<rect x="${176 + i * 32}" y="${112 - p}" width="10" height="${p}" fill="#fff" stroke="${G}" stroke-width="1.1"/><rect x="${188 + i * 32}" y="${112 - a}" width="10" height="${a}" fill="${C}" fill-opacity="0.18" stroke="${C}" stroke-width="1.1"/>` + t(187 + i * 32, 124, `Q${i + 1}`, { size: 6.8, anchor: 'middle' })).join('')}
+    ${t(176, 140, l('planned', 'geplant'), { size: 7 })}${t(226, 140, l('actual from ERP', 'Ist aus ERP'), { fill: C, size: 7 })}
+    ${check(18, 114)}${t(30, 120, l('volume agreements', 'Rahmenverträge'), { size: 7 })}${check(18, 128)}${t(30, 134, l('rebates, warranty', 'Rebates, Garantie'), { size: 7 })}
+    ${cross(22, 148)}${t(30, 152, l('industry name only', 'nur der Branchenname'), { size: 7 })}`,
   'salesforce-well-architected-2026': (l) => `
     ${t(18, 16, l('PREVIOUSLY', 'BISHER'), { fill: D, size: 7 })}${t(168, 12, l('SINCE 14.09.2026', 'SEIT 14.09.2026'), { fill: D, size: 7 })}
     ${['Trusted', 'Easy', 'Adaptable'].map((s, i) => box(18, 26 + i * 36, 82, 26) + t(59, 42 + i * 36, s, { size: 7.5, anchor: 'middle' })).join('')}
