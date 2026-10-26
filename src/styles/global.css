@@ -207,8 +207,8 @@ a:hover { color: var(--anthracite); }
 /* Hero */
 .hero-inner {
   position: relative;
-  padding-top: clamp(32px, 5vw, 56px);
-  padding-bottom: clamp(36px, 5vw, 56px);
+  padding-top: clamp(32px, 4.2vw, 60px);
+  padding-bottom: clamp(32px, 3.5vw, 50px);
 }
 .eyebrow {
   color: var(--cyan-light);
@@ -284,7 +284,9 @@ a:hover { color: var(--anthracite); }
 }
 
 /* Sections */
-.section { padding: clamp(36px, 4.5vw, 56px) 0; }
+.section { padding: clamp(36px, 4vw, 52px) 0 clamp(32px, 3.5vw, 50px); }
+/* No trailing margin on the last element, so the visible gap equals the padding */
+.section .container :is(p, ul, ol, dl, .note, .refs, .cards, .steps):last-child { margin-bottom: 0; }
 .section.alt {
   background: var(--bg);
   border-top: 1px solid var(--line);
