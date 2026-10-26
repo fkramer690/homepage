@@ -80,6 +80,14 @@ const drawings: Record<string, Drawing> = {
     <path d="M151 62V98" stroke="${G}" stroke-width="1.2" stroke-dasharray="3 3"/>${t(157, 84, l('goodwill: approval', 'Kulanz: Freigabe'), { size: 6.8 })}
     ${arrow(206, 116, 222)}${t(228, 113, l('serial number', 'Seriennummer'), { size: 7 })}${t(228, 125, l('error code, photos', 'Fehlercode, Fotos'), { size: 7 })}`,
 
+  'field-service-worth-it': (l) => `
+    ${t(18, 18, l('MANY SHORT JOBS / DAY', 'VIELE KURZE EINSÄTZE / TAG'), { fill: C, size: 7 })}
+    <path d="M18 40H302" stroke="${L}"/>${[0, 1, 2, 3, 4].map((i) => `<rect x="${24 + i * 56}" y="30" width="34" height="20" rx="3" fill="#fff" stroke="${C}" stroke-width="1.2"/>` + (i < 4 ? `<path d="M${58 + i * 56} 40H${80 + i * 56}" stroke="${C}" stroke-width="1.2" stroke-dasharray="3 3"/>` : '')).join('')}
+    ${t(18, 66, l('route + slot optimisation pays off', 'Routen- und Terminoptimierung lohnt'), { fill: C, size: 7 })}
+    ${t(18, 92, l('FEW LONG JOBS', 'WENIGE LANGE EINSÄTZE'), { fill: D, size: 7 })}
+    <rect x="24" y="100" width="270" height="20" rx="3" fill="#fff" stroke="${G}" stroke-width="1.2"/>${t(159, 113.5, l('commissioning, 2 weeks', 'Inbetriebnahme, 2 Wochen'), { size: 7, anchor: 'middle' })}
+    ${t(18, 140, l('little to optimise', 'wenig zu optimieren'), { size: 7 })}${t(302, 140, l('175 / technician / month', '175 / Techniker / Monat'), { size: 7, anchor: 'end' })}`,
+
   'sfdx-hardis-training': (l) => `
     <path d="M24 136H110V104H210V72H300" fill="none" stroke="${G}" stroke-width="1.3"/>
     ${[['Level 1', 'Contributor Basics', l('7 labs', '7 Labs'), 30, 126], ['Level 2', 'Contributor Advanced', l('9 labs', '9 Labs'), 116, 94], ['Level 3', 'Release Manager', l('11 labs', '11 Labs'), 216, 62]]
