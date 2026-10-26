@@ -61,6 +61,14 @@ const drawings: Record<string, Drawing> = {
     <g transform="translate(217 120)" fill="none" stroke="${C}" stroke-width="1.4"><rect x="0" y="0" width="7" height="11" rx="3.5"/><path d="M-2.5 7a6 6 0 0 0 12 0M3.5 13v3"/></g>
     ${t(231, 130, l('voice input', 'Spracheingabe'), { fill: C, size: 7 })}`,
 
+  'field-service-master-data': (l) => `
+    ${box(22, 22, 128, 116)}${t(32, 38, l('MASTER DATA', 'STAMMDATEN'), { fill: D, size: 7.5 })}
+    ${[l('Territories', 'Servicegebiete'), l('Skills', 'Qualifikationen'), l('Work types', 'Arbeitstypen'), l('Assets', 'Anlagen'), l('Visiting hours', 'Öffnungszeiten'), l('Absences', 'Abwesenheiten')]
+      .map((s, i) => t(44, 56 + i * 14, s, { size: 7 }) + check(32, 50 + i * 14, i === 1 ? C : G)).join('')}
+    ${arrow(150, 80, 196, C)}
+    ${box(196, 52, 104, 56, C)}${t(248, 74, l('SCHEDULING', 'PLANUNG'), { fill: D, size: 8, anchor: 'middle' })}${t(248, 88, 'Match Skills', { size: 7, anchor: 'middle' })}
+    ${tag(196, 120, 104, l('6 kinds of data', '6 Datenarten'))}`,
+
   'salesforce-winter-27-pipeline': (l) => `
     ${['build', 'validate', 'deploy'].map((s, i) => box(20 + i * 62, 30, 50, 26) + t(45 + i * 62, 47, s, { size: 7.5, anchor: 'middle' })).join('')}
     ${arrow(70, 43, 82)}${arrow(132, 43, 144)}
