@@ -143,6 +143,20 @@ const drawings: Record<string, Drawing> = {
     <path d="M100 39C124 39 124 77 140 77M100 75H140M100 111C124 111 124 77 140 77" fill="none" stroke="${G}" stroke-width="1.2"/>${arrow(140, 77, 162)}
     ${['Trust', 'Reliability', 'Operational Excellence', 'Resource & Cost', 'Fairness'].map((s, i) => box(168, 20 + i * 22, 134, 17, i === 3 ? C : G) + t(176, 31.5 + i * 22, s, { fill: i === 3 ? C : G, size: 7 })).join('')}
     <rect x="168" y="134" width="134" height="17" rx="4" fill="none" stroke="${C}" stroke-width="1.2" stroke-dasharray="4 3"/>${t(235, 145.5, l('+ Agentic Enterprise lens', '+ Agentic-Enterprise-Linse'), { fill: C, size: 7, anchor: 'middle' })}`,
+
+  'manufacturing-cloud-sales-agreements-actuals': (l) => `
+    ${box(18, 34, 76, 34)}${t(56, 49, 'ERP', { fill: D, size: 7.5, anchor: 'middle' })}${t(56, 60, l('orders', 'Aufträge'), { size: 6.8, anchor: 'middle' })}
+    ${box(18, 92, 76, 34)}${t(56, 107, 'ERP', { fill: D, size: 7.5, anchor: 'middle' })}${t(56, 118, l('inventory', 'Lagerbestand'), { size: 6.8, anchor: 'middle' })}
+    ${arrow(94, 51, 132)}${t(113, 44, l('daily', 'täglich'), { size: 6.8, anchor: 'middle' })}
+    <path d="M94 109H120V60H132" fill="none" stroke="${G}" stroke-width="1.2" stroke-dasharray="4 3"/>
+    ${box(132, 18, 172, 124)}${t(142, 32, 'SALES AGREEMENT', { fill: D, size: 7.5 })}
+    <path d="M144 122H294" stroke="${G}" stroke-width="0.8"/>
+    ${[[60, 60], [60, 56], [60, 30], [60, 52]].map(([p, a], i) => {
+      const x = 152 + i * 36, hit = i === 2;
+      return `<rect x="${x}" y="${122 - p}" width="11" height="${p}" fill="#fff" stroke="${G}" stroke-width="1"/><rect x="${x + 13}" y="${122 - a}" width="11" height="${a}" fill="${hit ? C : L}" stroke="${hit ? C : G}" stroke-width="1"/>${t(x + 12, 133, 'Q' + (i + 1), { size: 6.8, anchor: 'middle' })}`;
+    }).join('')}
+    ${t(238, 52, l('behind on volume', 'Rückstand'), { fill: C, size: 6.8, anchor: 'middle' })}
+    ${t(18, 152, l('plan vs. actual per customer, product, period', 'Plan gegen Ist pro Kunde, Produkt, Zeitraum'), { size: 7 })}`,
 };
 
 export const hasDrawing = (key: string) => key in drawings;
