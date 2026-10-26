@@ -41,7 +41,7 @@ Der Kern ist die Planung. Laut [Trailhead](https://trailhead.salesforce.com/cont
 
 Die Optimierung bringt dort am meisten, wo es viel zu optimieren gibt. Nach meiner Erfahrung hängt das an der Art der Arbeit, den Standorten und der Dauer der Einsätze. Den größten Nutzen sehe ich bei:
 
-- **Vielen kurzen Einsätzen pro Tag**, etwa Wartung, Störungsbehebung oder Prüfungen mit einer bis drei Stunden Dauer.
+- **Vielen kurzen Einsätzen pro Tag**, etwa Wartung, Störungsbehebung oder Prüfungen. Ein typisches Beispiel sind Telekommunikationsunternehmen, deren Techniker bis zu 16 Termine am Tag haben.
 - **Einem hohen Anteil Fahrzeit**, weil Kunden über eine Region verteilt sind.
 - **Vielen Qualifikationen und Ersatzteilen**, die zusammenpassen müssen, damit der richtige Techniker mit dem richtigen Teil kommt.
 - **Zugesagten Reaktionszeiten** aus Serviceverträgen, die eingehalten und nachgewiesen werden müssen.
@@ -52,7 +52,7 @@ Salesforce selbst stützt diese Richtung mit eigener Forschung. In einem [Beitra
 
 Bei wenigen langen Einsätzen ist der Nutzen viel kleiner. Ein Techniker, der eine Anlage über zwei Wochen in Betrieb nimmt, braucht keine Routenoptimierung. Er braucht einen Projektplan, Zugang zu Zeichnungen und eine saubere Dokumentation am Ende.
 
-Ein Beispiel für diese andere Welt ist das After-Sales-Geschäft eines großen Werftunternehmens, für das ich gearbeitet habe. Dort standen After-Sales-Prozesse und ein Portal für Subunternehmer im Mittelpunkt, also die Zusammenarbeit mit Externen über lange Arbeiten hinweg. Das ist eine berechtigte Anforderung, aber eine andere als die Optimierung vieler kurzer Termine.
+Typisch dafür sind Inbetriebnahmen, Umbauten oder Revisionen, bei denen ein Team tagelang an einem Ort arbeitet. Der Unterschied zu 16 Terminen am Tag ist groß: Dort zählen Zugang zu Unterlagen, Abstimmung mit dem Kunden und eine vollständige Abnahme mehr als die Frage, welcher Techniker am Nachmittag wo ist.
 
 Für solche Fälle gibt es Alternativen, die ich vor einer Field-Service-Lizenz prüfe:
 

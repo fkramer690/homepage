@@ -41,7 +41,7 @@ Scheduling is the core. According to [Trailhead](https://trailhead.salesforce.co
 
 Optimisation helps most where there is a lot to optimise. In my experience that depends on the type of work, the locations and the duration of jobs. I see the biggest benefit with:
 
-- **Many short jobs per day**, such as maintenance, repairs or inspections lasting one to three hours.
+- **Many short jobs per day**, such as maintenance, repairs or inspections. A typical example is telecommunications companies whose technicians have up to 16 appointments a day.
 - **A high share of travel time**, because customers are spread across a region.
 - **Many skills and spare parts** that have to match, so the right technician arrives with the right part.
 - **Committed response times** from service contracts that have to be met and proven.
@@ -52,7 +52,7 @@ Salesforce backs this direction with its own research. In an [article on schedul
 
 With few long jobs the benefit is much smaller. A technician who commissions a plant over two weeks does not need route optimisation. He or she needs a project plan, access to drawings and clean documentation at the end.
 
-One example of this other world is the after-sales business of a large shipbuilding company I worked for. There the focus was on after-sales processes and a portal for subcontractors, meaning collaboration with external parties over long jobs. That is a legitimate requirement, but a different one from optimising many short appointments.
+Typical cases are commissioning, conversions or overhauls where a team works at one site for days. The difference from 16 appointments a day is big: access to documents, coordination with the customer and a complete acceptance matter more than which technician is where in the afternoon.
 
 For such cases there are alternatives I check before a Field Service licence:
 
