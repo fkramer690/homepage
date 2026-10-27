@@ -7,6 +7,7 @@ slug: festpreis-statt-aufwand-ki-salesforce
 translationKey: fixed-price-ai-salesforce-partners
 topic: governance
 category: architecture
+contactBrief: partner-governance
 tags: [Festpreis, Abrechnung nach Aufwand, Partnersteuerung, KI-Coding, Partnerprogramm, Maschinenbau]
 takeaways:
   - "KI drückt Salesforce-Arbeitspakete mit prüfbaren Abnahmekriterien in Richtung Festpreis; Discovery, undokumentierte ERP-Schnittstellen und Support bleiben bei Abrechnung nach Aufwand."

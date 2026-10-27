@@ -4,6 +4,7 @@ description: "Zielarchitektur, Datenmodell und Cloud-Auswahl für Salesforce-Pro
 lang: de
 slug: salesforce-architektur
 translationKey: service-architecture
+contactBrief: architecture
 order: 1
 lead: "Große Salesforce-Programme scheitern selten an einem Klick, sondern weil niemand früh entschieden hat, welche Clouds, welches Datenmodell und welche Schnittstellen das Unternehmen wirklich braucht. Ich entwerfe die Zielarchitektur auf Kundenseite und dokumentiere jede Entscheidung, auch für spätere Partnerwechsel."
 situations:

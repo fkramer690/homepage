@@ -4,6 +4,7 @@ description: "Industry Cloud, Eigenentwicklung oder anderes Tool? Make-or-buy-En
 lang: de
 slug: make-or-buy-lizenzen
 translationKey: service-make-or-buy
+contactBrief: make-or-buy
 order: 6
 lead: "Nicht alles gehört in Salesforce, und nicht jedes Salesforce-Produkt rechnet sich. Ich bewerte Make-or-buy-Entscheidungen und Lizenzbedarf, bevor der Vertrag unterschrieben ist, auf Basis eines langfristigen ROI inklusive Wartung und Folgekosten."
 situations:

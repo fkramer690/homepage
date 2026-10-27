@@ -7,6 +7,7 @@ slug: nearshore-teams-salesforce-acht-entwickler
 translationKey: nearshore-team-size
 topic: governance
 category: architecture
+contactBrief: nearshore
 tags: [Nearshore, Teamgröße, Programmsteuerung, Partnersteuerung, Scrum]
 takeaways:
   - "Ich begrenze Nearshore-Teams für Salesforce auf etwa acht Entwickler. Mit Product Owner und Scrum Master bleibt das Team damit bei zehn Personen, der Obergrenze aus dem Scrum Guide."

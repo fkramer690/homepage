@@ -16,7 +16,7 @@ Service pages follow the content rules of the [blog guidelines](blog-guidelines.
 6. FAQ, collapsible (`faq`)
 7. Author box
 8. Related blog articles (blog posts that share a tag with `blogTags`)
-9. Contact section with "Book a call" and the contact form, subject set to the service
+9. Contact section with "Book a call" and the contact form, subject set to the service. Heading, text and the lists "What to bring" / "What we clarify" come from the brief named in the required frontmatter field `contactBrief` (`src/lib/contact-briefs.ts`)
 
 Blog articles link back to the best matching service automatically (`getPostService` in `src/lib/services.ts`).
 

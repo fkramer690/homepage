@@ -35,7 +35,7 @@ Every article page is built by `src/components/BlogPost.astro` and looks the sam
 5. Author box (`src/components/AuthorBox.astro`)
 6. Series box, only for articles in a series (see below)
 7. Related articles
-8. Contact section with "Book a call" and the contact form
+8. Contact section with "Book a call" and the contact form. Heading, text and the two lists "What to bring" / "What we clarify" come from `src/lib/contact-briefs.ts`: by default the brief of the article's `category`; set `contactBrief` in the frontmatter when another brief fits the topic better (e.g. `licences` for licence and pricing articles, `partner-governance` for partner topics). Add a new brief there instead of writing a CTA in the article.
 
 Changes to parts 1–2 and 4–8 are made once in the components and apply to all articles. Markdown files contain no raw HTML, no author section and no CTA block; the check script rejects HTML.
 

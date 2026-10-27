@@ -4,6 +4,7 @@ description: "Change Management für Salesforce-Programme: neue Prozesse, Standa
 lang: de
 slug: change-management
 translationKey: service-change
+contactBrief: change
 order: 7
 lead: "Ein neues Salesforce-Release ist schnell ausgerollt. Ob Fachbereiche, Entwicklerteams und Partner danach anders arbeiten, ist eine andere Frage. Ich plane die Einführung neuer Prozesse und Standards auf Kundenseite so, dass sie im Alltag ankommen und dort bleiben."
 situations:

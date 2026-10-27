@@ -4,6 +4,7 @@ description: "Industry cloud, custom build or another tool? Make-or-buy decision
 lang: en
 slug: make-or-buy-licences
 translationKey: service-make-or-buy
+contactBrief: make-or-buy
 order: 6
 lead: "Not everything belongs in Salesforce, and not every Salesforce product pays off. I assess make-or-buy decisions and licence needs before the contract is signed, based on a long-term ROI that includes maintenance and follow-up costs."
 situations:
