@@ -7,6 +7,8 @@ export const categories = {
   architecture: { en: 'Architecture & partner governance', de: 'Architektur & Partnersteuerung' },
   'field-service': { en: 'Field Service', de: 'Field Service' },
   'manufacturing-cloud': { en: 'Manufacturing Cloud', de: 'Manufacturing Cloud' },
+  'b2b-commerce': { en: 'B2B Commerce', de: 'B2B Commerce' },
+  'revenue-cloud': { en: 'Revenue Cloud & CPQ', de: 'Revenue Cloud & CPQ' },
   ai: { en: 'Agentforce & AI', de: 'Agentforce & KI' },
 } as const;
 

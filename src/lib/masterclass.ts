@@ -15,8 +15,8 @@ export type { CourseId };
 export type CourseTexts = Dict['masterclass'];
 export const courseTexts = (lang: Lang, course: CourseId = 'ai'): CourseTexts => (lang === 'de' ? de : en)[courses[course].texts];
 
-// Planned number of chapters, shown as "Chapter 3 of 10".
-export const chapterTotal = 10;
+// Planned number of chapters of a masterclass, shown as "Chapter 3 of 10".
+export const chapterTotal = (course: CourseId = 'ai') => courses[course].chapters;
 
 // All masterclasses share one overview page (/masterclass/, /en/masterclass/);
 // each masterclass has its own hub below it (rules: docs/masterclass.md).

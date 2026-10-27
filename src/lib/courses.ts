@@ -5,7 +5,8 @@
 export const courseIds = ['ai', 'devops'] as const;
 export type CourseId = (typeof courseIds)[number];
 
-export const courses: Record<CourseId, { segment: { de: string; en: string }; texts: 'masterclass' | 'masterclassDevops'; og: string }> = {
-  ai: { segment: { de: 'ki-salesforce', en: 'ai-salesforce' }, texts: 'masterclass', og: 'masterclass' },
-  devops: { segment: { de: 'devops-release-management', en: 'devops-release-management' }, texts: 'masterclassDevops', og: 'masterclass-devops' },
+// `chapters` is the planned number of chapters, shown as "Chapter 3 of 10".
+export const courses: Record<CourseId, { segment: { de: string; en: string }; texts: 'masterclass' | 'masterclassDevops'; og: string; chapters: number }> = {
+  ai: { segment: { de: 'ki-salesforce', en: 'ai-salesforce' }, texts: 'masterclass', og: 'masterclass', chapters: 10 },
+  devops: { segment: { de: 'devops-release-management', en: 'devops-release-management' }, texts: 'masterclassDevops', og: 'masterclass-devops', chapters: 10 },
 };

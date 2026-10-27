@@ -56,7 +56,7 @@ const suffix = ' | FK Solution Design';
 const pageTitle = title.length + suffix.length <= 60 ? title + suffix : title;
 const ogImage = `${base}og/${lang}/masterclass/${chapter.data.slug}.png`;
 const nn = (n: number) => String(n).padStart(2, '0');
-const eyebrow = m.chapterEyebrow.replace('{nn}', nn(no)).replace('{n}', String(no)).replace('{total}', String(chapterTotal));
+const eyebrow = m.chapterEyebrow.replace('{nn}', nn(no)).replace('{n}', String(no)).replace('{total}', String(chapterTotal(course)));
 const chapterLabel = (c: Chapter) => m.chapterNo.replace('{nn}', nn(c.data.chapter));
 
 const schema = {

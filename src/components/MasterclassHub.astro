@@ -136,13 +136,14 @@ const schema = {
   <section class="proof" aria-label={m.factsLabel}>
     <div class="container">
       <ul class="proof-list mc-facts">
-        <li><span class="proof-value">{chapterTotal}</span><span class="proof-label mono">{m.facts.chapters}</span></li>
+        <li><span class="proof-value">{chapterTotal(course)}</span><span class="proof-label mono">{m.facts.chapters}</span></li>
         <li><span class="proof-value">{articleCount}</span><span class="proof-label mono">{m.facts.articles}</span></li>
         <li><span class="proof-value">DE · EN</span><span class="proof-label mono">{m.facts.languages}</span></li>
       </ul>
     </div>
   </section>
 
+  {m.deadlines.length > 0 && (
   <section class="section" id={m.deadlinesAnchor} aria-labelledby="mc-deadlines">
     <div class="container">
       <p class="label mono">{m.deadlinesLabel}</p>
@@ -166,6 +167,7 @@ const schema = {
       </ul>
     </div>
   </section>
+  )}
 
   <section class="section alt" id={m.chaptersAnchor} aria-labelledby="mc-chapters">
     <div class="container">
