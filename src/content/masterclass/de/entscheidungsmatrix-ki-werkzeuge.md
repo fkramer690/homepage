@@ -94,7 +94,7 @@ Am Ende hat jedes Vorhaben ein anderes Werkzeug, und das ist normal. Einheitlich
 
 Drei Fragen beantwortet keine Tabelle.
 
-- **Modellqualität für Apex.** Einen öffentlichen Benchmark, der Coding-Agenten an Apex, Flows und Metadaten misst, kenne ich nicht. Ich würde zwei Kandidaten zwei Wochen an echten Aufgaben aus Ihrem Backlog vergleichen und Fehlerquote im Review sowie Nacharbeit zählen.
+- **Modellqualität für Apex.** Einen öffentlichen Benchmark für Apex, Flows und Metadaten gibt es nicht, wie in [Kapitel 4](../externe-coding-agenten/) beschrieben. Entscheiden kann nur ein Vergleich an Ihrem eigenen Backlog, gemessen an Befunden im Review und Nacharbeit.
 - **Verantwortung.** Wer die Regeldatei im Repository pflegt, wer Hosted-MCP-Zugänge freigibt und wer Flex Credits bezahlt, ist eine Vertragsfrage zwischen Ihnen und Ihrem Partner. Das habe ich in [Kapitel 5](../aiforce-und-systemintegratoren/) behandelt.
 - **Ob Salesforce der richtige Ort ist.** Entscheidungen, die SAP schon trifft, gehören nicht in einen Agenten in Salesforce. Ein Flow oder ein ERP-Job ist für Routine ohne Sprache oft günstiger als jeder Agent.
 

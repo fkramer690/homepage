@@ -94,7 +94,7 @@ In the end each initiative uses a different tool, and that is normal. What stays
 
 Three questions no table answers.
 
-- **Model quality for Apex.** I know of no public benchmark that measures coding agents on Apex, flows and metadata. I would compare two candidates for two weeks on real tasks from your backlog and count review findings and rework.
+- **Model quality for Apex.** There is no public benchmark for Apex, flows and metadata, as described in [chapter 4](../external-coding-agents/). Only a comparison on your own backlog can decide, measured by review findings and rework.
 - **Ownership.** Who maintains the rules file in the repository, who approves Hosted MCP access and who pays for Flex Credits is a contract question between you and your partner. I covered that in [chapter 5](../aiforce-and-system-integrators/).
 - **Whether Salesforce is the right place.** Decisions SAP already makes do not belong in an agent in Salesforce. For routine work without language, a flow or an ERP job is often cheaper than any agent.
 
