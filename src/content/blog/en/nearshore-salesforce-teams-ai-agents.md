@@ -61,7 +61,7 @@ The risk is that the new person never builds a reviewer's understanding. In an [
 
 For a nearshore team that matters because today's juniors are the reviewers you need after the next rotation. If they spend their first months delegating, nobody can replace a senior who leaves.
 
-So I would build onboarding around explanation: the agent explains existing automation, the new person writes the test, and reviews of other people's agent pull requests start in the first month. A four-week plan is in [chapter 9 of my AI masterclass](../../ai-masterclass/teamwork-and-delivery/). About 38 percent of McKinsey's respondents name lack of time to learn as a top barrier, so I would put the onboarding days into the nearshore plan and agree who pays for them.
+So I would build onboarding around explanation: the agent explains existing automation, the new person writes the test, and reviews of other people's agent pull requests start in the first month. A four-week plan is in [chapter 9 of my AI masterclass](../../masterclass/ai-salesforce/teamwork-and-delivery/). About 38 percent of McKinsey's respondents name lack of time to learn as a top barrier, so I would put the onboarding days into the nearshore plan and agree who pays for them.
 
 ## Which access rules apply when nearshore developers use agents?
 

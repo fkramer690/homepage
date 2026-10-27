@@ -52,7 +52,7 @@ Für die IT-Leitung reichen drei Richtungen:
 2. **Agentforce zu fremden Tools.** Agentforce arbeitet als MCP-Client. Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/mcp-for-agentforce-quick-look/discover-mcp-for-agentforce) werden externe Server in der Agentforce Registry registriert, MuleSoft- und Salesforce-Server im API Catalog, und der Admin wählt die Tools, die ein Agent nutzen darf. Salesforce hat den Client [als Pilot für Juli 2025 angekündigt](https://developer.salesforce.com/blogs/2025/06/introducing-mcp-support-across-salesforce); eine aktuelle Statusangabe habe ich nicht gefunden, prüfen Sie die Verfügbarkeit in Ihrer Org.
 3. **Coding-Agenten zu Ihrem Projekt.** Die Entwickler Ihres Partners verbinden Claude Code, Cursor oder Agentforce Vibes über lokale Server wie den Salesforce DX MCP Server mit Sandboxes. Was sich dort ändert, steht in [Salesforce DX MCP Server: das Ende](../salesforce-dx-mcp-server-ende/).
 
-Die vollständige Schnittstellenübersicht mit Agent API, Models API und dem ERP-Weg über MuleSoft finden Sie in [Kapitel 3 meiner KI-Masterclass](../../masterclass-ki/mcp-und-schnittstellen/).
+Die vollständige Schnittstellenübersicht mit Agent API, Models API und dem ERP-Weg über MuleSoft finden Sie in [Kapitel 3 meiner KI-Masterclass](../../masterclass/ki-salesforce/mcp-und-schnittstellen/).
 
 ## Was überlässt das Protokoll Ihnen?
 

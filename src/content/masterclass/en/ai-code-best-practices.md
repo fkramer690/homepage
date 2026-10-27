@@ -55,7 +55,7 @@ Salesforce documents the weak spots itself. The [review checklist for Agentforce
 
 The last row is Salesforce's own advice: according to the [Vibes workflow patterns](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-workflow-patterns.html), permission sets, profiles, page layouts and sharing rules should be set up by hand in Setup, and code for encryption, authentication and permission logic deserves a line-by-line review. At a manufacturer, those are exactly the places that make sure dealers see only their own orders and warranty cases.
 
-On coverage: Salesforce requires 75 percent for a deployment, but its testing guide explicitly says not to focus on the percentage. An agent optimises for whatever check you give it. Give it only the 75 percent and you get tests that run through lines and prove nothing. How to have such code reviewed as the client is covered in [reviewing AI-generated Salesforce code](../../blog/reviewing-ai-generated-salesforce-code/), and why every pull request needs a review in [why pull request reviews are a must](../../blog/why-pull-request-reviews-are-a-must-in-enterprise-projects/).
+On coverage: Salesforce requires 75 percent for a deployment, but its testing guide explicitly says not to focus on the percentage. An agent optimises for whatever check you give it. Give it only the 75 percent and you get tests that run through lines and prove nothing. How to have such code reviewed as the client is covered in [reviewing AI-generated Salesforce code](../../../blog/reviewing-ai-generated-salesforce-code/), and why every pull request needs a review in [why pull request reviews are a must](../../../blog/why-pull-request-reviews-are-a-must-in-enterprise-projects/).
 
 ## The API 67.0 trap
 
@@ -63,7 +63,7 @@ With Summer '26, Salesforce changed Apex's default behaviour. According to the [
 
 The change is tied to each class's own API version. Code on 66.0 behaves as before until someone raises the version. That is where the risk sits: a query silently returns fewer records, with no error. Think of the batch job that writes order status from SAP into Salesforce every night, or the class that calculates warranty periods across all of a dealer's installed assets. Both have quietly seen everything until now.
 
-For AI code this matters twice over, in my view. Models have mostly seen older Apex, so they suggest patterns that no longer compile on 67.0 or behave differently. And agents like to raise API versions in passing when they touch a file anyway. The rules file should therefore fix three things: the target version for new classes, an explicit sharing declaration, and no raising of existing classes without a task and without a test as a restricted user. Where system mode is intended, the code says `WITH SYSTEM_MODE` on purpose, as the [LWC guide on secure Apex](https://developer.salesforce.com/docs/platform/lwc/guide/apex-security) describes. Details are in [API 67.0: why Apex sees fewer records](../../blog/api-67-apex-user-mode-fewer-records/), and the pipeline impact in [Winter '27: what changes for your pipeline](../../blog/salesforce-winter-27-what-changes-for-your-pipeline/).
+For AI code this matters twice over, in my view. Models have mostly seen older Apex, so they suggest patterns that no longer compile on 67.0 or behave differently. And agents like to raise API versions in passing when they touch a file anyway. The rules file should therefore fix three things: the target version for new classes, an explicit sharing declaration, and no raising of existing classes without a task and without a test as a restricted user. Where system mode is intended, the code says `WITH SYSTEM_MODE` on purpose, as the [LWC guide on secure Apex](https://developer.salesforce.com/docs/platform/lwc/guide/apex-security) describes. Details are in [API 67.0: why Apex sees fewer records](../../../blog/api-67-apex-user-mode-fewer-records/), and the pipeline impact in [Winter '27: what changes for your pipeline](../../../blog/salesforce-winter-27-what-changes-for-your-pipeline/).
 
 ## Rules the agent reads, and rules it cannot get around
 
@@ -88,7 +88,7 @@ The vendors agree on length. Anthropic's [Claude Code best practices](https://co
 
 The most important part is not in that file, though. Anthropic puts it this way: "If something has to happen every time, make it a hook, a deny rule, or a managed setting." The model may decide that a guideline in `CLAUDE.md` does not apply. Deny rules, on the other hand, hold in every permission mode, and a `Stop` hook sends the agent back to work while tests or Code Analyzer are red. For Salesforce that means: no reading of sf CLI credentials, no commands against production aliases, tests as a hook.
 
-The rules file belongs in your repository, not your partner's. Who maintains it and how it grows is covered in [the AI rules file in your Salesforce repository](../../blog/ai-rules-file-salesforce-repository/); why repository and tools should sit with the client in [why clients should own their DevOps tools](../../blog/why-clients-should-own-their-devops-tools/).
+The rules file belongs in your repository, not your partner's. Who maintains it and how it grows is covered in [the AI rules file in your Salesforce repository](../../../blog/ai-rules-file-salesforce-repository/); why repository and tools should sit with the client in [why clients should own their DevOps tools](../../../blog/why-clients-should-own-their-devops-tools/).
 
 ## Which quality gates belong in the pipeline?
 
@@ -101,7 +101,7 @@ What is in the rules file may go unchecked. What is in the pipeline is checked o
 | [Validation deployment](https://developer.salesforce.com/docs/platform/salesforce-cli-reference/guide/cli_reference_project_deploy_validate.html) | missing references, invented fields, failing tests | `sf project deploy validate`, default `RunLocalTests`, at least 75 % Apex coverage |
 | Human review | logic, sharing model, architecture | pull request that flags the AI-generated parts |
 
-The open [Salesforce Skills](https://developer.salesforce.com/blogs/2026/06/build-production-ready-apps-in-claude-code-with-salesforce-skills) already include part of this: they reject queries in loops, enforce sharing declarations and run Code Analyzer before reporting success. Salesforce still recommends checking field names against the schema and running Code Analyzer manually as well. A gate in the developer's tool does not replace the gate in your pipeline. If you do not want a commercial DevOps product, [sfdx-hardis](../../blog/sfdx-hardis-open-source-salesforce-devops/) is an open-source option. The gates in detail are in [quality gates for AI code in your Salesforce pipeline](../../blog/quality-gates-for-ai-code-salesforce-pipeline/).
+The open [Salesforce Skills](https://developer.salesforce.com/blogs/2026/06/build-production-ready-apps-in-claude-code-with-salesforce-skills) already include part of this: they reject queries in loops, enforce sharing declarations and run Code Analyzer before reporting success. Salesforce still recommends checking field names against the schema and running Code Analyzer manually as well. A gate in the developer's tool does not replace the gate in your pipeline. If you do not want a commercial DevOps product, [sfdx-hardis](../../../blog/sfdx-hardis-open-source-salesforce-devops/) is an open-source option. The gates in detail are in [quality gates for AI code in your Salesforce pipeline](../../../blog/quality-gates-for-ai-code-salesforce-pipeline/).
 
 Before the gate, the way of working decides how much fails. Three habits work, in my view:
 
@@ -121,13 +121,13 @@ My minimum rules for every programme:
 4. Deny rules block credentials and production aliases; credentials live outside the agent's environment, and Anthropic describes a proxy for this.
 5. Production deployments run only through the pipeline, with approval by a person.
 
-These rules belong in the contract with your partner, not only in their working instructions. They are part of my work in [DevOps and release management](../../services/devops-release-management/).
+These rules belong in the contract with your partner, not only in their working instructions. They are part of my work in [DevOps and release management](../../../services/devops-release-management/).
 
 ## A typical scenario: spare-part availability in the dealer portal
 
 Assume a machine builder with an Experience Cloud dealer portal, Service Cloud and SAP S/4. All figures are assumptions. The partner is to build, with four developers and Claude Code, a component that shows dealers the availability of spare parts for their machines.
 
-In the requirements workshop, a clickable draft comes together in two hours in a Developer Edition org. That is vibe coding at its best, and the draft is thrown away afterwards; where the line runs is covered in [vibe coding in Salesforce: prototype or production](../../blog/vibe-coding-salesforce-prototype-vs-production/). For the real build:
+In the requirements workshop, a clickable draft comes together in two hours in a Developer Edition org. That is vibe coding at its best, and the draft is thrown away afterwards; where the line runs is covered in [vibe coding in Salesforce: prototype or production](../../../blog/vibe-coding-salesforce-prototype-vs-production/). For the real build:
 
 - The rules file lives in the manufacturer's repository and names the SAP Named Credential, target version 67.0 and the scratch org commands.
 - The agent writes a plan first, and a developer approves it.

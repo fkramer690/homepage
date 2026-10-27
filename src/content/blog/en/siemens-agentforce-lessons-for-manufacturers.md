@@ -87,7 +87,7 @@ From the scenario I derive this order:
 3. **Engineering answers from PLM and serial numbers**, once the data project from day one has delivered. This is where the aftermarket value sits, and where the data work is heaviest.
 4. **Write steps into the ERP last**, with rules in logic, an approval by a person for anything with consequences and a test set agreed in advance.
 
-Before any of these goes live, agree one result metric beyond activity, for example the share of dealer enquiries closed without a back office reply. Siemens published an activity number; your board will ask for a result. The five criteria behind this order are in [Agentforce for manufacturers: start now or wait?](../agentforce-yes-or-no-manufacturers/), and the wider picture of what runs today is in the masterclass chapter [AI agents in manufacturing](../../ai-masterclass/ai-agents-in-manufacturing/).
+Before any of these goes live, agree one result metric beyond activity, for example the share of dealer enquiries closed without a back office reply. Siemens published an activity number; your board will ask for a result. The five criteria behind this order are in [Agentforce for manufacturers: start now or wait?](../agentforce-yes-or-no-manufacturers/), and the wider picture of what runs today is in the masterclass chapter [AI agents in manufacturing](../../masterclass/ai-salesforce/ai-agents-in-manufacturing/).
 
 When someone in your company says "Siemens already does this", ask four questions: which tense does the source use, is the number a baseline or a result, whose number is it, and does it name a source. Sorting that out before a budget decision is part of my work in [architecture and partner governance](../../services/salesforce-architecture/).
 

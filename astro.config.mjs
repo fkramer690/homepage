@@ -10,7 +10,8 @@ const site = process.env.SITE_URL ?? 'https://www.fk-sd.de';
 const base = process.env.BASE_PATH ?? '/';
 
 // German is the main version at the root, English lives under /en/. The old
-// URLs (/de/…, /services/…, English articles under /blog/…) are kept as
+// URLs (/de/…, /services/…, English articles under /blog/…, the AI masterclass
+// under /masterclass-ki/ and /en/ai-masterclass/) are kept as
 // redirect pages, which must not show up in the sitemap.
 const field = (text, name) => text.match(new RegExp(`^${name}:\\s*"?([^"\\n]+)"?`, 'm'))?.[1]?.trim();
 const readEntries = (collection) =>
@@ -34,7 +35,7 @@ const enSlugs = readEntries('blog').filter((e) => e.lang === 'en').map((e) => e.
 const contentPaths = {
   blog: { de: (slug) => `/blog/${slug}/`, en: (slug) => `/en/blog/${slug}/` },
   services: { de: (slug) => `/leistungen/${slug}/`, en: (slug) => `/en/services/${slug}/` },
-  masterclass: { de: (slug) => `/masterclass-ki/${slug}/`, en: (slug) => `/en/ai-masterclass/${slug}/` },
+  masterclass: { de: (slug) => `/masterclass/ki-salesforce/${slug}/`, en: (slug) => `/en/masterclass/ai-salesforce/${slug}/` },
 };
 const sitemapInfo = new Map();
 for (const collection of Object.keys(contentPaths)) {
@@ -49,7 +50,10 @@ for (const collection of Object.keys(contentPaths)) {
 const servicesIndex = { de: '/leistungen/', en: '/en/services/' };
 sitemapInfo.set(servicesIndex.de, { pair: servicesIndex });
 sitemapInfo.set(servicesIndex.en, { pair: servicesIndex });
-const masterclassIndex = { de: '/masterclass-ki/', en: '/en/ai-masterclass/' };
+const masterclassesIndex = { de: '/masterclass/', en: '/en/masterclass/' };
+sitemapInfo.set(masterclassesIndex.de, { pair: masterclassesIndex });
+sitemapInfo.set(masterclassesIndex.en, { pair: masterclassesIndex });
+const masterclassIndex = { de: '/masterclass/ki-salesforce/', en: '/en/masterclass/ai-salesforce/' };
 sitemapInfo.set(masterclassIndex.de, { pair: masterclassIndex });
 sitemapInfo.set(masterclassIndex.en, { pair: masterclassIndex });
 const questionsPage = { de: '/fragen/', en: '/en/questions/' };
@@ -60,7 +64,8 @@ for (const lang of ['de', 'en']) {
   const latest = readEntries('blog').filter((e) => e.lang === lang).map((e) => e.date).sort().at(-1);
   sitemapInfo.set(lang === 'de' ? '/blog/' : '/en/blog/', { date: latest });
 }
-const redirectPaths = [/^\/de\//, /^\/services\//, ...enSlugs.map((slug) => new RegExp(`^/blog/${slug}/$`))];
+// The AI masterclass moved from /masterclass-ki/ and /en/ai-masterclass/ on 2026-10-28.
+const redirectPaths = [/^\/de\//, /^\/services\//, /^\/masterclass-ki\//, /^\/en\/ai-masterclass\//, ...enSlugs.map((slug) => new RegExp(`^/blog/${slug}/$`))];
 
 export default defineConfig({
   site,

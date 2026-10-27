@@ -112,6 +112,6 @@ A Flex template also works outside Salesforce. [Hosted MCP servers](https://deve
 3. **Measure how much people edit.** If the reps send most drafts unchanged, that is the argument for the next step.
 4. **Add an agent** only where nobody should have to read first, where the path varies or where something must be written. Reuse the tested template as the agent's reference action.
 
-Which tool fits which job across the Salesforce platform is in the masterclass chapter on [Salesforce AI development tools](../../ai-masterclass/salesforce-ai-development-tools/), and this kind of decision is part of my [Salesforce architecture work](../../services/salesforce-architecture/).
+Which tool fits which job across the Salesforce platform is in the masterclass chapter on [Salesforce AI development tools](../../masterclass/ai-salesforce/salesforce-ai-development-tools/), and this kind of decision is part of my [Salesforce architecture work](../../services/salesforce-architecture/).
 
 For the four text tasks above a template does the job, and an agent earns its higher price only where it answers or acts without a person in between. If you want a second opinion on which of your use cases needs which, [send me a message](#contact).

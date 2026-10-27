@@ -98,6 +98,6 @@ The consumption is small next to six people on a desk. The work sits in four mon
 5. **Ask Salesforce in writing**: licence per partner user, which actions the agent calls, consumption model, and how it relates to the Revenue Management agent.
 6. **Build a test set** from real dealer requests, including wrong part numbers and unbuildable combinations, as in [testing Agentforce agents before go-live](../testing-agentforce-agents-before-go-live/).
 
-Where these agents fit among the other manufacturing agents is covered in the masterclass chapter [AI agents in manufacturing](../../ai-masterclass/ai-agents-in-manufacturing/), and drawing the line between ERP, configurator and agent is part of my [architecture work](../../services/salesforce-architecture/).
+Where these agents fit among the other manufacturing agents is covered in the masterclass chapter [AI agents in manufacturing](../../masterclass/ai-salesforce/ai-agents-in-manufacturing/), and drawing the line between ERP, configurator and agent is part of my [architecture work](../../services/salesforce-architecture/).
 
 AI quotes for dealers pay off once catalogue, prices and rules are clean enough that your sales desk would sign the quote unchanged. If you want to check whether your quoting data is ready, [send me a message](#contact).

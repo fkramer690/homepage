@@ -108,6 +108,6 @@ Die Reihenfolge: diese Anlagen den Produkten zuordnen, die 1.100 MB mit Variante
 5. **Den Weg wählen**: Data Library für eine Produktlinie, Filterfelder für mehrere.
 6. **Mit echten Störfällen testen**, bevor ein Techniker den Agenten sieht.
 
-Das Dokumentenmodell überlebt jede Agentenversion, deshalb gehört es für mich zur [Salesforce-Architektur](../../leistungen/salesforce-architektur/). Das größere Bild steht im Masterclass-Kapitel [KI-Agenten in der Fertigung](../../masterclass-ki/ki-agenten-in-der-fertigung/).
+Das Dokumentenmodell überlebt jede Agentenversion, deshalb gehört es für mich zur [Salesforce-Architektur](../../leistungen/salesforce-architektur/). Das größere Bild steht im Masterclass-Kapitel [KI-Agenten in der Fertigung](../../masterclass/ki-salesforce/ki-agenten-in-der-fertigung/).
 
 Der Agent für die Fehlersuche ist nur so genau wie die Verbindung zwischen Handbuch und Seriennummer, also bauen Sie diese Verbindung, bevor Sie ihn einschalten. Wenn Sie eine zweite Meinung zu Ihrem Dokumentenmodell möchten, [schreiben Sie mir](#contact).

@@ -88,6 +88,6 @@ Am längsten dürfte die Frage dauern, wer Hosted Server in der Produktion freig
 4. **Hosted Server bewusst aktivieren.** Zuerst in einer Sandbox, `sobject-reads` vor allem, was schreibt, mit einer External Client App, die auf ein Permission Set beschränkt ist.
 5. **Repository anpassen.** Die gemeinsame MCP-Konfiguration und die [KI-Regeldatei](../ki-regeldatei-salesforce-repository/) gehören in Ihr Repository und ändern sich nur über einen geprüften Pull Request, wie jeder andere Code. Claude Code unterstützt außerdem eine zentral verwaltete MCP-Konfiguration mit Allowlists, wenn Sie es selbst lizenzieren.
 
-Das ist normales Abhängigkeits- und Zugriffsmanagement, angewendet auf KI-Werkzeuge, und es gehört auf Kundenseite zu [DevOps und Release-Management](../../leistungen/devops-und-release-management/). Die übrigen Schnittstellen beschreibt [Kapitel 3 der Masterclass](../../masterclass-ki/mcp-und-schnittstellen/).
+Das ist normales Abhängigkeits- und Zugriffsmanagement, angewendet auf KI-Werkzeuge, und es gehört auf Kundenseite zu [DevOps und Release-Management](../../leistungen/devops-und-release-management/). Die übrigen Schnittstellen beschreibt [Kapitel 3 der Masterclass](../../masterclass/ki-salesforce/mcp-und-schnittstellen/).
 
 Nutzen Sie den Stichtag, um herauszufinden, welche KI-Werkzeuge mit wessen Anmeldung Ihre Orgs erreichen, dann wird der Wechsel des Servers selbst zur kleinen Aufgabe. Wenn Sie die Inventur mit Ihren Partnern gemeinsam angehen möchten, [schreiben Sie mir](#contact).

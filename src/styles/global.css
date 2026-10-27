@@ -1131,6 +1131,15 @@ p.post-series-note { margin: 0.6em 0 0; font-size: 0.95rem; }
 .mc-cluster-list { margin: 0.4em 0 0; padding-left: 1.2em; }
 .mc-cluster-list li { margin-bottom: 0.35em; font-size: 0.97rem; }
 .mc-cluster-list li::marker { color: var(--cyan-dark); }
+/* Masterclass overview (/masterclass/): one larger card per masterclass */
+.mc-list { grid-template-columns: repeat(2, 1fr); }
+.mc-list .card-link a { display: flex; flex-direction: column; }
+.mc-list .card-title { font-size: 1.25rem; }
+.card .mc-list-facts { margin-top: 1em; font-size: 0.8rem; }
+.mc-list .card-more { margin-top: auto; padding-top: 1em; }
+@media (max-width: 620px) {
+  .mc-list { grid-template-columns: 1fr; }
+}
 .mc-articles + .mc-author { padding-top: 0; }
 .mc-author .post-author { margin-top: 0; }
 .mc-chapter .eyebrow { color: var(--cyan-dark); }

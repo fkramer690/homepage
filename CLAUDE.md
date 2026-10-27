@@ -1,6 +1,6 @@
 # FK Solution Design homepage
 
-Astro site on GitHub Pages. German at `/`, English under `/en/` (both maintained in parallel). Old `/de/…` and English `/blog/…` and `/services/…` URLs are redirect pages (`src/components/Redirect.astro`); build links with `src/lib/paths.ts`, never hard-code a language prefix. See README.md for structure and deployment.
+Astro site on GitHub Pages. German at `/`, English under `/en/` (both maintained in parallel). Old `/de/…`, English `/blog/…` and `/services/…`, and the old masterclass URLs `/masterclass-ki/…` and `/en/ai-masterclass/…` are redirect pages (`src/components/Redirect.astro`); build links with `src/lib/paths.ts`, never hard-code a language prefix. See README.md for structure and deployment.
 
 ## Blog articles
 
@@ -14,7 +14,7 @@ Each service has its own page (`src/content/services/<lang>/`, built by `src/com
 
 ## Masterclass
 
-The AI masterclass (hub plus ten chapters in `src/content/masterclass/<lang>/`, built by `src/components/MasterclassHub.astro` and `MasterclassChapter.astro`) follows `docs/masterclass.md`; the blog content rules and build check apply.
+All masterclasses hang below one overview page (`/masterclass/`, `/en/masterclass/`, the single "Masterclasses" menu item); a new masterclass gets a hub below it and an entry in `src/lib/masterclasses.ts`, never a new menu item. The AI masterclass (hub plus ten chapters in `src/content/masterclass/<lang>/`, built by `src/components/MasterclassHub.astro` and `MasterclassChapter.astro`) follows `docs/masterclass.md`; the blog content rules and build check apply.
 
 ## External links
 

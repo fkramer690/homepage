@@ -98,6 +98,6 @@ Der Verbrauch ist klein im Vergleich zu sechs Personen im Innendienst. Die Arbei
 5. **Salesforce schriftlich fragen**: Lizenz je Partnerbenutzer, welche Aktionen der Agent aufruft, Verbrauchsmodell und Abgrenzung zum Revenue Management Agent.
 6. **Einen Testsatz bauen** aus echten Händleranfragen, auch mit falschen Teilenummern und nicht baubaren Kombinationen, wie in [Agentforce-Agenten testen und freigeben](../agentforce-agenten-testen-freigeben/).
 
-Wo diese Agenten zwischen den übrigen Fertigungsagenten stehen, zeigt das Masterclass-Kapitel [KI-Agenten in der Fertigung](../../masterclass-ki/ki-agenten-in-der-fertigung/). Die Grenze zwischen ERP, Konfigurator und Agent zu ziehen, gehört zu meiner [Salesforce-Architekturarbeit](../../leistungen/salesforce-architektur/).
+Wo diese Agenten zwischen den übrigen Fertigungsagenten stehen, zeigt das Masterclass-Kapitel [KI-Agenten in der Fertigung](../../masterclass/ki-salesforce/ki-agenten-in-der-fertigung/). Die Grenze zwischen ERP, Konfigurator und Agent zu ziehen, gehört zu meiner [Salesforce-Architekturarbeit](../../leistungen/salesforce-architektur/).
 
 KI-Angebote für Händler lohnen sich, sobald Katalog, Preise und Regeln so sauber sind, dass Ihr Innendienst das Angebot unverändert unterschreiben würde. Wenn Sie prüfen möchten, ob Ihre Angebotsdaten so weit sind, [schreiben Sie mir](#contact).

@@ -88,6 +88,6 @@ The decision I would expect to take longest is who approves hosted servers in pr
 4. **Activate hosted servers deliberately.** In a sandbox first, `sobject-reads` before anything that writes, with an External Client App restricted to a permission set.
 5. **Update the repository.** The shared MCP configuration and the [AI rules file](../ai-rules-file-salesforce-repository/) belong in your repository and change through a reviewed pull request, like any other code. Claude Code also supports organisation-managed MCP configuration with allowlists, if you license it centrally.
 
-This is ordinary dependency and access management applied to AI tools, and it belongs in [DevOps and release management](../../services/devops-release-management/) on the client side. The other interfaces are covered in [chapter 3 of the masterclass](../../ai-masterclass/mcp-and-interfaces/).
+This is ordinary dependency and access management applied to AI tools, and it belongs in [DevOps and release management](../../services/devops-release-management/) on the client side. The other interfaces are covered in [chapter 3 of the masterclass](../../masterclass/ai-salesforce/mcp-and-interfaces/).
 
 Use the deadline to find out which AI tools reach your orgs and with whose logins, and the server swap itself becomes a small task. If you want help running the inventory with your partners, [send me a message](#contact).

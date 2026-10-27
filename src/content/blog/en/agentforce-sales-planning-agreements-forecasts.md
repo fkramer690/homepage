@@ -100,6 +100,6 @@ Then a price increase for one product family has to go into 60 agreements. The b
 5. **Write access.** Bulk updates only with confirmation, tested as described in [testing Agentforce agents before go-live](../testing-agentforce-agents-before-go-live/).
 6. **Alerts.** If you need proactive alerts on build plan deviations, plan them as your own build or ask Salesforce for a dated roadmap.
 
-Whether agents fit your company at all is covered in [Agentforce for manufacturers: start now or wait?](../agentforce-yes-or-no-manufacturers/), and the overview of manufacturing agents in the masterclass chapter [AI agents in manufacturing](../../ai-masterclass/ai-agents-in-manufacturing/).
+Whether agents fit your company at all is covered in [Agentforce for manufacturers: start now or wait?](../agentforce-yes-or-no-manufacturers/), and the overview of manufacturing agents in the masterclass chapter [AI agents in manufacturing](../../masterclass/ai-salesforce/ai-agents-in-manufacturing/).
 
 The Sales Planning agent is a useful assistant on top of sales agreements once the ERP actuals are right, and less than the 2025 announcement suggests. If you are evaluating it for your sales team, [send me a message](#contact).

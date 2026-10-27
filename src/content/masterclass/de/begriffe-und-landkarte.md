@@ -51,7 +51,7 @@ Für einen Hersteller ziehe ich die Grenze so:
 - **Vibe Coding passt** für einen klickbaren Entwurf des Händlerportals im Anforderungsworkshop, für ein Skript, das Testdaten für Ersatzteile erzeugt, oder für eine Auswertung, die nach einer Woche niemand mehr braucht. Immer in einer Sandbox oder Developer Edition.
 - **Agentic engineering ist Pflicht** für alles, was in die produktive Org geht: Garantielogik, Preisfreigaben, Schnittstellen zu SAP oder proALPHA, Freigaben im Händlerportal. Dort gehören Review, Tests und automatische Prüfungen in der Pipeline dazu.
 
-Wo genau die Grenze verläuft und welche Prüfungen ein Prototyp durchlaufen muss, bevor er produktiv wird, beschreibe ich in [Vibe Coding in Salesforce: Prototyp oder Produktion](../../blog/vibe-coding-salesforce-prototyp-produktion/). Die Prüfregeln für KI-Code selbst sind Thema von [Kapitel 8](../best-practices-ki-code/).
+Wo genau die Grenze verläuft und welche Prüfungen ein Prototyp durchlaufen muss, bevor er produktiv wird, beschreibe ich in [Vibe Coding in Salesforce: Prototyp oder Produktion](../../../blog/vibe-coding-salesforce-prototyp-produktion/). Die Prüfregeln für KI-Code selbst sind Thema von [Kapitel 8](../best-practices-ki-code/).
 
 Ein dritter Begriff taucht in Partnerpräsentationen auf: „AI-native delivery“. Damit ist ein Delivery-Prozess gemeint, der von Anfang an mit Coding-Agenten geplant ist, mit kleineren Teams und anderen Rollen. Was das für Ihre Programmorganisation heißt, steht in [Kapitel 9](../teamarbeit-und-delivery/).
 
@@ -95,7 +95,7 @@ Für Architekten ist der Satz aus der Architects-Doku der wichtigste: Was sich a
 | 15.09.2026 | AIforce auf der Dreamforce, Salesforce in Claude als Beta | [Salesforce News](https://www.salesforce.com/news/stories/aiforce-announcement/) |
 | 09.10.2026 | Marc Benioff auf X: „AIForce is officially SIForce“, ohne Pressemitteilung | [Salesforce Ben](https://www.salesforceben.com/salesforce-renames-aiforce-to-siforce-after-trump-order/) (Sekundärquelle) |
 
-Zwei Lehren ziehe ich daraus. Erstens: Einstein for Developers, Agentforce for Developers und Agentforce Vibes sind dieselbe Produktlinie; Salesforce Ben beschreibt Vibes als [Umbenennung und Ausbau von Agentforce for Developers](https://www.salesforceben.com/developer-features-and-announcements-from-dreamforce-25/), und die Doku-URL enthält bis heute `einstein-for-devs`. Ein Angebot, das 2026 „Einstein for Developers“ verspricht, beschreibt einen veralteten Stand. Zweitens: Die Schicht für externe Oberflächen hieß laut Salesforce Ben in rund sechs Monaten Headless 360, AIforce und SIForce. Ich schreibe in Konzepten „AIforce (Stand Oktober 2026)“ und übernehme in Verträgen den Namen, der auf dem Bestellformular steht. Was hinter AIforce steckt und was eine IT-Leitung jetzt tun sollte, steht in [AIforce: Salesforce in Claude und Slack](../../blog/aiforce-salesforce-in-claude-und-slack/), die zweite Lesart von „SI“ als Systemintegrator in [Kapitel 5](../aiforce-und-systemintegratoren/).
+Zwei Lehren ziehe ich daraus. Erstens: Einstein for Developers, Agentforce for Developers und Agentforce Vibes sind dieselbe Produktlinie; Salesforce Ben beschreibt Vibes als [Umbenennung und Ausbau von Agentforce for Developers](https://www.salesforceben.com/developer-features-and-announcements-from-dreamforce-25/), und die Doku-URL enthält bis heute `einstein-for-devs`. Ein Angebot, das 2026 „Einstein for Developers“ verspricht, beschreibt einen veralteten Stand. Zweitens: Die Schicht für externe Oberflächen hieß laut Salesforce Ben in rund sechs Monaten Headless 360, AIforce und SIForce. Ich schreibe in Konzepten „AIforce (Stand Oktober 2026)“ und übernehme in Verträgen den Namen, der auf dem Bestellformular steht. Was hinter AIforce steckt und was eine IT-Leitung jetzt tun sollte, steht in [AIforce: Salesforce in Claude und Slack](../../../blog/aiforce-salesforce-in-claude-und-slack/), die zweite Lesart von „SI“ als Systemintegrator in [Kapitel 5](../aiforce-und-systemintegratoren/).
 
 ## Ein typisches Szenario: viermal „KI“ im Lenkungskreis
 
@@ -106,7 +106,7 @@ Nehmen wir einen Maschinenbauer mit Sales Cloud, Service Cloud, SAP und einem H�
 3. **Implementierungspartner:** Er will das neue Händlerportal mit Coding-Agenten bauen und verspricht kürzere Sprints. Das ist Ebene A. Hier zählen Review-Regeln, Regeldatei und Pipeline, nicht der Name des Werkzeugs.
 4. **IT-Leitung:** Sie fragt, wer eigentlich auf welche Daten zugreift, wenn Claude, der Partner-Agent und der Serviceagent gleichzeitig mit der Org sprechen. Das ist Ebene B, und sie betrifft alle drei anderen Punkte.
 
-Ohne die Ebenen landen diese vier Wünsche in einem Topf namens „KI-Initiative“ mit einem Budget und einem Verantwortlichen. Mit den Ebenen werden es vier Vorhaben mit vier Verantwortlichen: Vertrieb mit IT und Datenschutz, Service, Programmleitung mit Partnersteuerung, Integrationsarchitektur. Nur das zweite Vorhaben braucht eine Agentforce-Entscheidung. Ob der Serviceagent jetzt startet oder erst die Daten in Ordnung kommen, beantworte ich in [Agentforce für Hersteller: jetzt starten oder warten?](../../blog/agentforce-ja-oder-nein-hersteller/).
+Ohne die Ebenen landen diese vier Wünsche in einem Topf namens „KI-Initiative“ mit einem Budget und einem Verantwortlichen. Mit den Ebenen werden es vier Vorhaben mit vier Verantwortlichen: Vertrieb mit IT und Datenschutz, Service, Programmleitung mit Partnersteuerung, Integrationsarchitektur. Nur das zweite Vorhaben braucht eine Agentforce-Entscheidung. Ob der Serviceagent jetzt startet oder erst die Daten in Ordnung kommen, beantworte ich in [Agentforce für Hersteller: jetzt starten oder warten?](../../../blog/agentforce-ja-oder-nein-hersteller/).
 
 ## Wo Sie in dieser Masterclass weiterlesen
 
@@ -117,6 +117,6 @@ Die folgenden Kapitel gehen die Ebenen einzeln durch:
 - **Ebene C:** [Kapitel 10](../ki-agenten-in-der-fertigung/) behandelt Agenten im Service, im Außendienst und in der Garantie.
 - **Über alle Ebenen:** [Kapitel 6](../entscheidungsmatrix-ki-werkzeuge/) liefert die Entscheidungsmatrix, [Kapitel 7](../kosten-und-token/) die Kosten mit Rechenbeispielen.
 
-Die Übersicht aller Kapitel finden Sie auf der [Startseite der Masterclass](../). Wenn Sie die Ebenen für Ihr eigenes Programm sortieren wollen, ist das ein typischer Einstieg in meine Arbeit zur [Salesforce-Architektur](../../leistungen/salesforce-architektur/).
+Die Übersicht aller Kapitel finden Sie auf der [Startseite der Masterclass](../). Wenn Sie die Ebenen für Ihr eigenes Programm sortieren wollen, ist das ein typischer Einstieg in meine Arbeit zur [Salesforce-Architektur](../../../leistungen/salesforce-architektur/).
 
 Wer die vier Ebenen trennt und Produktnamen mit Datum verwendet, kann jedes KI-Angebot für Salesforce einordnen, bevor er über Werkzeuge spricht. Wenn Sie dabei eine unabhängige zweite Meinung möchten, [schreiben Sie mir](#contact).

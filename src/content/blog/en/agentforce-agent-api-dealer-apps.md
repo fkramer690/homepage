@@ -101,6 +101,6 @@ The open line is the Headless Platform Interaction meter. The rate card lists it
 5. **Log `externalSessionKey` with the dealer's user ID** in your app.
 6. **Get the Headless Platform Interaction question answered** before you size the Flex Credit order.
 
-Interface and identity design is what I do under [Salesforce integration](../../services/salesforce-integration/); all interfaces side by side are in the masterclass chapter [MCP and interfaces](../../ai-masterclass/mcp-and-interfaces/).
+Interface and identity design is what I do under [Salesforce integration](../../services/salesforce-integration/); all interfaces side by side are in the masterclass chapter [MCP and interfaces](../../masterclass/ai-salesforce/mcp-and-interfaces/).
 
 The Agent API brings an agent into your own apps quickly, but the dealer boundary becomes your code, so design it before the first screen. If you want a second opinion on your identity design, [send me a message](#contact).

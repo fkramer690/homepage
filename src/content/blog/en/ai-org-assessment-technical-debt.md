@@ -85,7 +85,7 @@ The [Claude Batch API](https://platform.claude.com/docs/en/build-with-claude/bat
 - **Opus 5.5:** 42.4 million × $2 + 3.4 million × $10 = **about $119**.
 - **Second pass** for 40 objects at 100,000 tokens in and 5,000 out on Opus 5.5: **about $10**.
 
-Prompt caching stacks with the batch discount, but in batches cache hits are best effort; Anthropic names hit rates from 30 to 98 percent. I calculate without caching and treat any saving as a bonus. Thinking tokens are [billed as output](https://code.claude.com/docs/en/costs) and cannot be turned off on the 5.5 models; if they triple the output, the Opus pass rises to about $187. The basics of this token math are in the [masterclass chapter on costs and tokens](../../ai-masterclass/costs-and-tokens/).
+Prompt caching stacks with the batch discount, but in batches cache hits are best effort; Anthropic names hit rates from 30 to 98 percent. I calculate without caching and treat any saving as a bonus. Thinking tokens are [billed as output](https://code.claude.com/docs/en/costs) and cannot be turned off on the 5.5 models; if they triple the output, the Opus pass rises to about $187. The basics of this token math are in the [masterclass chapter on costs and tokens](../../masterclass/ai-salesforce/costs-and-tokens/).
 
 ### Where the real cost sits
 

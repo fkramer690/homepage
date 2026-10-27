@@ -101,6 +101,6 @@ Im Szenario bringt ein Pilot mit zehn Technikern zwei Erkenntnisse. Für Maschin
 3. **Die API vor dem Agenten bauen.** Geben Sie der Ersatzteilabteilung zuerst eine Maske darauf. Hilft sie Menschen nicht, hilft auch kein Agent.
 4. **Mit Technikern starten** und Händler erst mit den Portalregeln von oben dazunehmen.
 
-Welches System welche Daten führt, ist Thema der [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/); das größere Bild zu Agenten in der Fertigung zeigt das Masterclass-Kapitel [KI-Agenten in der Fertigung](../../masterclass-ki/ki-agenten-in-der-fertigung/).
+Welches System welche Daten führt, ist Thema der [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/); das größere Bild zu Agenten in der Fertigung zeigt das Masterclass-Kapitel [KI-Agenten in der Fertigung](../../masterclass/ki-salesforce/ki-agenten-in-der-fertigung/).
 
 Ein Agent findet das richtige Ersatzteil nur so zuverlässig, wie Ihre Seriennummern zu einer As-built-Stückliste führen; wenn Sie das prüfen möchten, bevor jemand einen Agenten baut, [schreiben Sie mir](#contact).

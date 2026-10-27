@@ -101,6 +101,6 @@ Offen ist der Zähler für Headless Platform Interactions. Die Rate Card führt 
 5. **`externalSessionKey` mit der User-ID des Händlers protokollieren**, in Ihrer App.
 6. **Die Frage zu Headless Platform Interactions klären**, bevor Sie die Flex-Credit-Bestellung dimensionieren.
 
-Schnittstellen- und Identitätsdesign ist der Kern meiner Arbeit an [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/); alle Schnittstellen im Vergleich zeigt das Masterclass-Kapitel [MCP und Schnittstellen](../../masterclass-ki/mcp-und-schnittstellen/).
+Schnittstellen- und Identitätsdesign ist der Kern meiner Arbeit an [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/); alle Schnittstellen im Vergleich zeigt das Masterclass-Kapitel [MCP und Schnittstellen](../../masterclass/ki-salesforce/mcp-und-schnittstellen/).
 
 Die Agent API bringt einen Agenten schnell in Ihre eigenen Apps, aber die Grenze zwischen Händlern liegt dann in Ihrem Code, also entwerfen Sie sie vor dem ersten Bildschirm. Wenn Sie eine zweite Meinung zu Ihrem Identitätskonzept möchten, [schreiben Sie mir](#contact).

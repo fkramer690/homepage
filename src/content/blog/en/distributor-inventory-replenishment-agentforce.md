@@ -100,6 +100,6 @@ What I would expect to surface in such a pilot is data, not AI: distributors who
 5. **Add the four gates** and an approval threshold, then let the agent create orders.
 6. **Check licences early.** On the Manufacturing Cloud pricing page, the Core editions (US list price 275 USD per user and month) list Flex Credits for AI and Agentforce, and the Max editions (from 650 USD) include the full suite of Agentforce for Industries. Have the partner demonstrate the Summer '26 distributor procurement features in your sandbox.
 
-The interface design between Salesforce and the ERP is the larger part of this work; it is what I cover under [Salesforce integration](../../services/salesforce-integration/). The wider picture of agents in manufacturing is in the masterclass chapter [AI agents in manufacturing](../../ai-masterclass/ai-agents-in-manufacturing/).
+The interface design between Salesforce and the ERP is the larger part of this work; it is what I cover under [Salesforce integration](../../services/salesforce-integration/). The wider picture of agents in manufacturing is in the masterclass chapter [AI agents in manufacturing](../../masterclass/ai-salesforce/ai-agents-in-manufacturing/).
 
 A replenishment agent pays off when Salesforce owns the proposal and the ERP owns every figure with a right answer. If you want a second opinion on that split for your distributor network, [send me a message](#contact).

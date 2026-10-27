@@ -1,6 +1,21 @@
+# Masterclasses
+
+All masterclasses sit below one overview page, `/masterclass/` (DE) and `/en/masterclass/` (EN), which is the "Masterclasses" item in the main menu and footer. Each masterclass has its own hub and chapters below it, so a new masterclass never needs a new menu item.
+
+## Overview page
+
+`src/components/MasterclassIndex.astro` builds both language versions: eyebrow, H1, intro and one card per masterclass (number, name, title, summary, chapters, articles, languages). Texts live in `masterclasses` in `src/i18n/{de,en}.ts`; the list of masterclasses comes from `src/lib/masterclasses.ts`. A masterclass without published chapters is hidden. Breadcrumbs: Home › Masterclasses › hub › chapter.
+
+## Adding a masterclass
+
+1. Pick the URLs below the overview, e.g. `/masterclass/<thema>/` and `/en/masterclass/<topic>/`, with routes in `src/pages/masterclass/<thema>/` and `src/pages/en/masterclass/<topic>/`.
+2. Give it its own content collection, hub and chapter component, following the AI masterclass below (or generalise the `masterclass` collection with a field for the masterclass).
+3. Add a loader to `src/lib/masterclasses.ts`, the URL pair to `contentPaths` and the hub pair to the sitemap info in `astro.config.mjs`, and the hub and chapters to `src/pages/llms.txt.ts`.
+4. Never move a published masterclass again without redirect pages (see "Old URLs" below).
+
 # Masterclass "AI in the Salesforce ecosystem"
 
-A hub page plus ten chapter pages: DE under `/masterclass-ki/` and `/masterclass-ki/<slug>/`, EN under `/en/ai-masterclass/` and `/en/ai-masterclass/<slug>/`. Chapters are Markdown files in `src/content/masterclass/<lang>/`. `src/content.config.ts` checks the frontmatter and `scripts/check-blog.mjs` checks the body, both in `npm run build`. There is no PDF download.
+A hub page plus ten chapter pages: DE under `/masterclass/ki-salesforce/` and `/masterclass/ki-salesforce/<slug>/`, EN under `/en/masterclass/ai-salesforce/` and `/en/masterclass/ai-salesforce/<slug>/`. Chapters are Markdown files in `src/content/masterclass/<lang>/`. `src/content.config.ts` checks the frontmatter and `scripts/check-blog.mjs` checks the body, both in `npm run build`. There is no PDF download.
 
 Chapters follow the content rules of the [blog guidelines](blog-guidelines.md): plain language, no AI slop, no en or em dashes, no raw HTML, only experience Fabian has confirmed, no client names, never the energy or utility sector, relative links only.
 
@@ -41,6 +56,11 @@ Chapters follow the content rules of the [blog guidelines](blog-guidelines.md): 
 
 - 900–3,000 words, at least 3 H2 sections, at least one phrased as a question, no H1 and no H4+.
 - First paragraph gives the answer in at most 110 words.
-- At least 2 relative links, e.g. other chapters (`../<slug>/`), blog articles (`../../blog/<slug>/`), service pages (`../../leistungen/<slug>/` in DE, `../../services/<slug>/` in EN).
+- At least 2 relative links, e.g. other chapters (`../<slug>/`), the hub (`../`), blog articles (`../../../blog/<slug>/`), service pages (`../../../leistungen/<slug>/` in DE, `../../../services/<slug>/` in EN). Chapters sit three levels deep, so links outside the masterclass start with `../../../`.
+- Blog articles link to chapters with `../../masterclass/ki-salesforce/<slug>/` (DE) or `../../masterclass/ai-salesforce/<slug>/` (EN).
 - EN and DE versions are both required. No card drawing is needed.
 - The banned terms, slop phrases, dash and "it is not X, it is Y" checks of the blog apply unchanged.
+
+## Old URLs
+
+Until 2026-10-28 the AI masterclass lived at `/masterclass-ki/` and `/en/ai-masterclass/`. Those addresses, hub and every chapter, are redirect pages now (`src/pages/masterclass-ki/`, `src/pages/en/ai-masterclass/`, built with `src/components/Redirect.astro`), are `noindex` and are excluded from the sitemap via `redirectPaths` in `astro.config.mjs`. Keep them.
