@@ -33,7 +33,7 @@ Testing Agentforce agents ends with a number, not a gut feeling. An agent is rea
 
 An Apex test gives the same result every time: same input, same output, green or red. An agent built on a language model can answer the same dealer question in two different ways on two runs. Both answers may be fine, or one may be wrong. Anthropic describes this in its [guide to agent evaluations](https://anthropic.com/engineering/demystifying-evals-for-ai-agents): because model outputs vary between runs, you run several trials per task. The same guide shows why one green run proves little. An agent that solves a task in 75 percent of trials passes three trials in a row only about 42 percent of the time.
 
-For a decision maker this changes the question. "Did the test pass?" becomes "How often does it pass, and which failures can we live with?" A clumsy summary of a delivery date is annoying. A wrong statement that a machine is still under warranty costs money and a credit note. These two failures need different gates.
+So the question becomes: how often does it pass, and which failures can we live with? A clumsy delivery date summary is annoying. A wrong statement that a machine is still under warranty costs a credit note. These failures need different gates.
 
 ## Which tools does Salesforce provide for testing agents?
 
