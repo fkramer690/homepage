@@ -6,6 +6,7 @@ lang: de
 slug: agentforce-business-value-datenqualitaet
 translationKey: agentforce-business-value-data-quality
 topic: ai
+category: ai
 tags: [Agentforce, KI-Agenten, Datenqualität, Business Case, Architektur]
 takeaways:
   - "Laut einer Umfrage von Oppenheimer haben 85 Prozent der Salesforce-Kunden Agentforce getestet oder eingeführt, fast die Hälfte steckt aber noch in Pilot oder Test."

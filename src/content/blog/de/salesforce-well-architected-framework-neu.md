@@ -6,6 +6,7 @@ lang: de
 slug: salesforce-well-architected-framework-neu
 translationKey: salesforce-well-architected-2026
 topic: governance
+category: architecture
 tags: [Well-Architected, Architektur, Governance, Agentforce, Kosten]
 takeaways:
   - "Salesforce hat Well-Architected nach der Dreamforce 2024 nicht mehr gepflegt, im August 2025 die Rückkehr angekündigt und am 14. September 2026 ein neues Framework veröffentlicht."

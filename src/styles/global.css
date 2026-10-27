@@ -1020,6 +1020,25 @@ p.post-series-note { margin: 0.6em 0 0; font-size: 0.95rem; }
   .post-grid { grid-template-columns: 1fr; gap: 16px; }
   .post-tile-body { padding: 16px 18px 18px; }
 }
+/* Blog overview: category filter above the grid */
+.blog-filter { display: flex; flex-wrap: wrap; gap: 8px; margin: 1.4em 0 32px; }
+.filter-chip {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 7px 14px; font-size: 0.82rem; line-height: 1.2;
+  color: var(--text-2); background: var(--white);
+  border: 1px solid var(--line); border-radius: 999px; cursor: pointer;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+.filter-chip:hover { border-color: var(--cyan); color: var(--text); }
+.filter-chip[aria-pressed='true'] { background: var(--anthracite); border-color: var(--anthracite); color: var(--white); }
+.filter-count { font-size: 0.75rem; opacity: 0.6; }
+.post-tile[hidden] { display: none; }
+.post-tile .post-category { font-size: 0.72rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--cyan-dark); }
+@media (max-width: 640px) {
+  .blog-filter { flex-wrap: nowrap; overflow-x: auto; margin-inline: calc(-1 * var(--gutter)); padding: 0 var(--gutter) 4px; scrollbar-width: none; }
+  .blog-filter::-webkit-scrollbar { display: none; }
+  .filter-chip { flex: 0 0 auto; }
+}
 /* Certifications subpage */
 .blog-inner > h2 { margin-top: 1.6em; }
 .blog-inner > h3 { margin-top: 1.4em; font-size: 1rem; }

@@ -6,6 +6,7 @@ lang: de
 slug: salesforce-field-service-terminplanung-automatisieren
 translationKey: field-service-scheduling-automation
 topic: field-service
+category: field-service
 series: { id: field-service, part: 3 }
 tags: [Field Service, Außendienst, Terminplanung, Disposition, Fertigung]
 takeaways:

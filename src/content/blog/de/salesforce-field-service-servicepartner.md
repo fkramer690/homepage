@@ -6,6 +6,7 @@ lang: de
 slug: salesforce-field-service-servicepartner
 translationKey: field-service-service-partners
 topic: field-service
+category: field-service
 series: { id: field-service, part: 6 }
 tags: [Field Service, Außendienst, Servicepartner, Subunternehmer, Experience Cloud, Fertigung]
 takeaways:

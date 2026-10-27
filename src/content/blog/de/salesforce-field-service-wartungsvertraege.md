@@ -6,6 +6,7 @@ lang: de
 slug: salesforce-field-service-wartungsvertraege
 translationKey: field-service-maintenance-contracts
 topic: field-service
+category: field-service
 series: { id: field-service, part: 5 }
 tags: [Field Service, Außendienst, Wartungsverträge, Entitlements, Fertigung]
 takeaways:

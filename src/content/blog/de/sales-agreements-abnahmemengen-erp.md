@@ -6,6 +6,7 @@ lang: de
 slug: sales-agreements-abnahmemengen-erp
 translationKey: manufacturing-cloud-sales-agreements-actuals
 topic: data
+category: manufacturing-cloud
 tags: [Manufacturing Cloud, Sales Agreements, ERP, Integration, Fertigung]
 series: { id: manufacturing-cloud, part: 3 }
 takeaways:

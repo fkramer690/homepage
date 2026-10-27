@@ -6,6 +6,7 @@ lang: en
 slug: salesforce-licences-full-licence-needed
 translationKey: salesforce-licence-types
 topic: governance
+category: architecture
 tags: [licences, make-or-buy, business case, platform, experience cloud]
 takeaways:
   - "Not every Salesforce user needs a full licence. Users who only read, approve or work in one narrow custom process can often use a Platform licence."

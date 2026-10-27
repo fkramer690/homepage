@@ -6,6 +6,7 @@ lang: de
 slug: warum-devops-salesforce-enterprise-projekte
 translationKey: devops-salesforce-enterprise
 topic: devops
+category: devops
 tags: [devops, release management, partnersteuerung, sfdx-hardis]
 takeaways:
   - "Sobald mehrere Teams oder Partner an einer Salesforce-Org arbeiten, entscheidet DevOps, ob Releases sicher und nachvollziehbar bleiben."

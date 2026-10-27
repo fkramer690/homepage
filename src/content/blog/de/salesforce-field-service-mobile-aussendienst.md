@@ -6,6 +6,7 @@ lang: de
 slug: salesforce-field-service-mobile-aussendienst
 translationKey: field-service-mobile-guided-voice
 topic: field-service
+category: field-service
 tags: [Field Service, Außendienst, Mobile, Fertigung, Spracheingabe]
 takeaways:
   - "Salesforce hat im Oktober 2026 für die Field Service App geführte Abläufe, die sich an die Situation anpassen, ein Headless-Setup für Papierformulare und Spracheingabe für Formulare angekündigt."

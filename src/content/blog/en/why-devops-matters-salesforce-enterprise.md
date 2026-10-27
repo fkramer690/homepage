@@ -6,6 +6,7 @@ lang: en
 slug: why-devops-matters-salesforce-enterprise
 translationKey: devops-salesforce-enterprise
 topic: devops
+category: devops
 tags: [devops, release management, partner governance, sfdx-hardis]
 takeaways:
   - "As soon as several teams or partners work on one Salesforce org, DevOps decides whether releases stay safe and traceable."

@@ -6,6 +6,7 @@ lang: de
 slug: account-forecasting-absatzprognose-vertrieb
 translationKey: manufacturing-cloud-account-forecasting
 topic: data
+category: manufacturing-cloud
 tags: [Manufacturing Cloud, Account Forecasting, Absatzprognose, ERP, Fertigung]
 series: { id: manufacturing-cloud, part: 4 }
 takeaways:
