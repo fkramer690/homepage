@@ -12,7 +12,7 @@ takeaways:
   - "Salesforce documents for its store search that all search terms must match and that prefix and infix partial matches are not supported. Part numbers must be stored the way dealers type them."
   - "A store allows 25 searchable and 50 filterable attributes, 100 synonym rules and 100 boost and bury rules. 10 facets per query are standard, 50 on request."
   - "Old and cross-reference part numbers belong in a searchable field on the current product. Synonym rules are too few for numbers and better used for terms like O-ring and seal."
-  - "Since July 2026, search analytics via Data Cloud shows zero-result searches. They are the best list of product data that is missing."
+  - "Search analytics via Data Cloud, announced in July 2026, shows zero-result searches. They are the best list of product data that is missing."
   - "After changes to searchable fields, products, categories or entitlement policies, the search index has to be rebuilt before dealers see the result."
 faq:
   - q: "Can B2B Commerce search find part numbers?"

@@ -27,7 +27,7 @@ faq:
 draft: false
 ---
 
-Laut Trailhead brauchen Käufer und Buyer Manager in einem Salesforce-B2B-Commerce-Store eine Customer-Community-Plus-Lizenz. Merchandiser, die den Store pflegen, brauchen die Lizenz "B2B and D2C Commerce", Entwickler und Site-Builder eine volle Salesforce-Lizenz. Keine dieser Nutzerlizenzen steckt in der Commerce-Edition, die Salesforce als Anteil am Bruttowarenwert abrechnet. Zum Listenpreis von Experience Cloud for Manufacturing kostet ein Käufer 35 € pro Mitglied oder 15 € pro Login und Monat. Ob Member- oder Login-Lizenzen günstiger sind, entscheidet die Frage, wie oft sich Ihre Händler tatsächlich anmelden.
+Laut Trailhead brauchen Käufer und Buyer Manager in einem Salesforce-B2B-Commerce-Store eine Customer-Community-Plus-Lizenz. Merchandiser, die den Store pflegen, brauchen die Lizenz "B2B and D2C Commerce", Entwickler und Site-Builder eine volle Salesforce-Lizenz. Die Preisseite der Commerce-Editionen, die Salesforce als Anteil am Bruttowarenwert abrechnet, nennt keine dieser Nutzerlizenzen. Zum Listenpreis von Experience Cloud for Manufacturing kostet ein Käufer 35 € pro Mitglied oder 15 € pro Login und Monat. Ob Member- oder Login-Lizenzen günstiger sind, entscheidet die Frage, wie oft sich Ihre Händler tatsächlich anmelden.
 
 ## Welche Lizenzen braucht B2B Commerce?
 

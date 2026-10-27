@@ -27,7 +27,7 @@ faq:
 draft: false
 ---
 
-According to Trailhead, buyers and buyer managers in a Salesforce B2B Commerce store need a Customer Community Plus licence. Merchandisers who maintain the store need the "B2B and D2C Commerce" licence, developers and site builders a full Salesforce licence. None of these user licences is part of the Commerce edition, which Salesforce bills as a share of gross merchandise value. At the Experience Cloud for Manufacturing list price, a buyer costs $35 per member or $15 per login and month. Whether member or login licences are cheaper depends on how often your dealers actually log in.
+According to Trailhead, buyers and buyer managers in a Salesforce B2B Commerce store need a Customer Community Plus licence. Merchandisers who maintain the store need the "B2B and D2C Commerce" licence, developers and site builders a full Salesforce licence. The pricing page of the Commerce editions, which Salesforce bills as a share of gross merchandise value, lists none of these user licences. At the Experience Cloud for Manufacturing list price, a buyer costs $35 per member or $15 per login and month. Whether member or login licences are cheaper depends on how often your dealers actually log in.
 
 ## Which licences does B2B Commerce need?
 

@@ -74,7 +74,7 @@ I would be cautious when:
 - sales quotes in SAP or another CPQ tool and has no plan to move;
 - the store sells mainly spare parts at tier prices, which price books handle.
 
-Where your pricing engine should live in general is a question for the [Revenue Cloud masterclass](../../masterclass/revenue-cloud/). For the store, the decision follows the price master: the system that sales trusts for a quote should also price the cart.
+Where your pricing engine should live in general is a question for the Revenue Cloud masterclass. For the store, the decision follows the price master: the system that sales trusts for a quote should also price the cart.
 
 ## A typical scenario, as an assumption
 

@@ -1,6 +1,6 @@
 ---
 title: "B2B shop KPIs: what to measure after go-live"
-description: "Which KPIs show whether a Salesforce B2B store works after go-live: digital share of order lines, zero-result searches, conversion, inside sales effort, credits."
+description: "Which KPIs show whether a Salesforce B2B store works after go-live: share of order lines, zero-result searches, conversion, inside sales effort, credits."
 pubDate: 2026-10-28
 lang: en
 slug: b2b-shop-kpis-after-go-live
@@ -26,7 +26,7 @@ faq:
 draft: false
 ---
 
-After go-live, five numbers show whether a B2B store works: the share of order lines that arrive through the store per buyer group, zero-result searches, conversion from search to order, inside sales minutes per order line, and the rate of orders that need manual correction. The first shows adoption, the next two findability, the last two whether the store saves work or only moves it. Salesforce supplies part of the data through search analytics via Data Cloud and the Merchant Agent; the rest comes from the ERP and your own baseline. Measure per buyer group, start about three months after each wave and watch the Data Cloud credits that analytics consumes.
+After go-live, five numbers show whether a B2B store works: the share of order lines that arrive through the store per buyer group, zero-result searches, conversion from search to order, inside sales minutes per order line, and the rate of orders that need manual correction. They show adoption, findability and whether the store saves work or only moves it. Salesforce supplies part of the data through search analytics via Data Cloud and the Merchant Agent; the rest comes from the ERP and your own baseline. Measure per buyer group, about three months after each wave, and watch the Data Cloud credits.
 
 ## Which KPIs show whether a B2B shop works?
 

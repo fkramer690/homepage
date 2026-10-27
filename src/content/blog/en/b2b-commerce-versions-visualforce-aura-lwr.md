@@ -43,7 +43,7 @@ Salesforce announced the completed [acquisition of CloudCraze](https://salesforc
 
 The [release notes page in Salesforce Help](https://help.salesforce.com/s/articleView?language=en_US&id=commerce.b2b_commerce_release_notes.htm&type=5) lists patch notes for versions 4.5 to 4.13. The newest is [version 4.13 from Winter '21](https://help.salesforce.com/s/articleView?language=en_US&id=sf.b2b_commerce_rn_2021_winter_patches.htm&type=5). The same page says that since Summer '25 Salesforce maintains only patch notes for B2B Commerce for Visualforce. The [list of installation URLs](https://help.salesforce.com/s/articleView?id=000388718&language=en_US&type=1) calls it "the B2B Commerce managed package" and advises installing the most recent patch for your major release, because patches are cumulative.
 
-A Trailhead unit on [B2B Commerce on Lightning Experience](https://trailhead.salesforce.com/content/learn/modules/b2b-commerce-basics/explore-b2b-commerce-on-lightning-experience) answers the question whether customers must move with "no": Salesforce will continue to support the Visualforce deployment option. I take that at face value. I also note that the last major version listed is Winter '21, and that recent announcements such as the [June 2026 innovations](https://www.salesforce.com/blog/b2b-commerce-innovations-june-26/) with headless, Buyer Agent and Quote to Cart are features of the core platform.
+A Trailhead unit on [B2B Commerce on Lightning Experience](https://trailhead.salesforce.com/content/learn/modules/b2b-commerce-basics/explore-b2b-commerce-on-lightning-experience) answers the question whether customers must move with "no": Salesforce will continue to support the Visualforce deployment option. I take that at face value. I also note that the last major version listed is Winter '21, and that recent announcements such as the [June 2026 innovations](https://www.salesforce.com/blog/b2b-commerce-innovations-june-26/) with headless, Buyer Agent and Quote to Cart do not mention the Visualforce package.
 
 My reading: a Visualforce store keeps running and gets fixes. New capabilities come on the core platform. If your store does its job and your roadmap needs nothing new, there is no urgency. If you want agents, new search or headless, the path leads to a store on the core platform, and I would plan it as a new implementation with the same business requirements, not as an upgrade.
 
@@ -53,14 +53,14 @@ Both run on the same core platform with the same commerce data: buyer accounts, 
 
 - **Components.** Aura stores support Aura components and Lightning web components. LWR stores support only Lightning web components.
 - **Styling.** In Aura you write your own CSS classes. In LWR, components use shadow DOM, and you style them with "--dxp" styling hooks that map to the Theme panel.
-- **Data access.** Lightning web components get data through wire adapters. Aura uses older form components such as force:recordData.
+- **Data access.** Lightning web components get data through wire adapters. Aura uses more restrictive form-based components such as force:recordData.
 - **Checkout.** According to the [developer guide on the Aura checkout flow](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-setup-checkout-flow.html), Aura stores run checkout as a flow you configure in Flow Builder. LWR stores use Salesforce Commerce Checkout, and you configure its steps in Experience Builder.
 
 The [migration guide](https://developer.salesforce.com/docs/commerce/lwr-migration/guide) states that orgs which had Commerce enabled before Spring '23 can still choose an Aura template, and that Salesforce recommends the B2B LWR template for new stores and suggests that existing Aura stores consider migration.
 
 ## Is there a retirement date for Aura or Visualforce?
 
-No. As of 27 October 2026, neither Aura stores nor B2B Commerce for Visualforce appear in the [list of active product and feature retirements](https://help.salesforce.com/s/articleView?id=000381744&language=en_US&type=1), and the migration guide names no date. Some integrators write about deadlines. I would only act on a date that Salesforce publishes in Help or in a release note.
+No. As of 27 October 2026, neither Aura stores nor B2B Commerce for Visualforce appear in the [list of active product and feature retirements](https://help.salesforce.com/s/articleView?id=000381744&language=en_US&type=1), and the migration guide names no date. I would only act on a date that Salesforce publishes in Help or in a release note.
 
 That is why I plan by features, not fear. A typical scenario, as an assumption: a manufacturer runs an Aura store for spare parts since 2022, with 15 custom Aura components for the parts list per machine and a custom checkout flow. The store works, and dealers use it. The trigger for a move to LWR would be concrete: the company wants the Buyer Agent, or the next partner should build only Lightning web components, or the Aura code grows with every release. Without such a trigger, the migration costs money and brings dealers the same store.
 

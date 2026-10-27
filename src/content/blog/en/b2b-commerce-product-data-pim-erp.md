@@ -11,7 +11,7 @@ tags: [B2B Commerce, product data, PIM, ERP, catalogue, data quality]
 takeaways:
   - "For a Salesforce B2B Commerce store, the ERP should own material number, unit and sales status, a PIM should own texts, attributes and images, and Salesforce should hold a copy."
   - "A store has exactly one catalogue and can hold 4 million products, of which 1 million are searchable. A variation parent can have 200 variants."
-  - "Each product can carry 9 images and 5 file attachments. Since the July 2026 release, external DAM content, 3D models and technical specs can be shown on product pages."
+  - "Each product can carry 9 images and 5 file attachments. With the July 2026 release, Salesforce announced that external DAM content, 3D models and technical specs can be shown on product pages."
   - "Product name, description and SKU are searchable by default. Store search needs all search terms to match, so product data quality decides what dealers find."
   - "Write down one owner per product field before the first import. Changes made in Salesforce that the next ERP or PIM load overwrites cost more than the import itself."
 faq:
@@ -40,7 +40,7 @@ For a dealer ordering spare parts, a store needs per product:
 - **Media:** at least one picture, often a drawing or a data sheet.
 - **Navigation:** category in the store catalogue.
 
-Price and stock are not product data in this sense. They come from price books or a live ERP call, and from the inventory service. I treat them separately in the chapter on ERP integration.
+Price and stock come from price books or a live ERP call, and from the inventory service. I treat them separately in the chapter on ERP integration.
 
 ## Who should own which product data?
 
@@ -81,7 +81,7 @@ Category depth 5 is rarely a problem for spare parts. ERP material groups are of
 
 Variations bundle products that differ in one or more attributes, such as a seal in five diameters. A variation parent groups up to 200 variants, and the attributes that define the variants belong to an attribute set. The soft limit of 5 attributes per set is enough for most parts.
 
-The problem is rarely the limit. It is the source data. Variations need clean, consistent attribute values: "50 mm", "50mm" and "DN50" in three material masters produce three values in the filter. In many ERP systems such information sits in free text, not in fields. Before variations go live, someone has to normalise these values, and that someone should work in the owning system, not in Salesforce.
+The source data causes more trouble than the limit. Variations need clean, consistent attribute values: "50 mm", "50mm" and "DN50" in three material masters produce three values in the filter. In many ERP systems such information sits in free text, not in fields. Before variations go live, someone has to normalise these values, and that someone should work in the owning system, not in Salesforce.
 
 For many spare parts, variations are not needed at all. A dealer usually searches for one specific part number. Variations make more sense for consumables and accessories, where the buyer chooses size or colour.
 
@@ -101,7 +101,7 @@ For a parts catalogue, that has direct consequences:
 - A part number entered without the leading zeros or with a different separator does not match.
 - An old part number that only exists in the ERP history cannot be found at all.
 
-None of this is fixed in the store. It is fixed in the product data and in the search setup, which I cover in [finding parts by part number](../b2b-commerce-search-part-numbers/).
+All of this gets fixed in the product data and in the search setup, which I cover in [finding parts by part number](../b2b-commerce-search-part-numbers/).
 
 ## Where should you start?
 

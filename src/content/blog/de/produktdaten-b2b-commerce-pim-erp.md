@@ -11,7 +11,7 @@ tags: [B2B Commerce, Produktdaten, PIM, ERP, Katalog, Datenqualität]
 takeaways:
   - "Für einen Shop in Salesforce B2B Commerce sollte das ERP Materialnummer, Mengeneinheit und Vertriebsstatus führen, ein PIM Texte, Merkmale und Bilder, Salesforce hält eine Kopie."
   - "Ein Store hat genau einen Katalog und fasst 4 Mio. Produkte, davon 1 Mio. durchsuchbar. Ein Variantenträger kann 200 Varianten haben."
-  - "Pro Produkt sind 9 Bilder und 5 Dateianhänge möglich. Seit dem Release im Juli 2026 lassen sich externe DAM-Inhalte, 3D-Modelle und technische Daten auf Produktseiten zeigen."
+  - "Pro Produkt sind 9 Bilder und 5 Dateianhänge möglich. Mit dem Release im Juli 2026 hat Salesforce angekündigt, dass sich externe DAM-Inhalte, 3D-Modelle und technische Daten auf Produktseiten zeigen lassen."
   - "Produktname, Beschreibung und SKU sind standardmäßig durchsuchbar. Die Shopsuche braucht einen Treffer für alle Suchbegriffe, deshalb entscheidet die Datenqualität, was Händler finden."
   - "Legen Sie pro Produktfeld einen Owner fest, bevor der erste Import läuft. Änderungen in Salesforce, die der nächste ERP- oder PIM-Lauf überschreibt, kosten mehr als der Import."
 faq:
@@ -40,7 +40,7 @@ Für einen Händler, der Ersatzteile bestellt, braucht der Shop pro Produkt:
 - **Medien:** mindestens ein Bild, oft eine Zeichnung oder ein Datenblatt.
 - **Navigation:** Kategorie im Shop-Katalog.
 
-Preis und Bestand sind in diesem Sinn keine Produktdaten. Sie kommen aus Preisbüchern oder einem Live-Aufruf ans ERP und aus dem Bestandsservice. Ich behandle sie getrennt im Kapitel zur ERP-Anbindung.
+Preis und Bestand kommen aus Preisbüchern oder einem Live-Aufruf ans ERP und aus dem Bestandsservice. Ich behandle sie getrennt im Kapitel zur ERP-Anbindung.
 
 ## Wer sollte welche Produktdaten führen?
 
@@ -81,7 +81,7 @@ Die Kategorietiefe von 5 ist für Ersatzteile selten ein Problem. ERP-Warengrupp
 
 Varianten bündeln Produkte, die sich in einem oder mehreren Merkmalen unterscheiden, etwa eine Dichtung in fünf Durchmessern. Ein Variantenträger fasst bis zu 200 Varianten, und die Merkmale, die die Varianten unterscheiden, gehören zu einer Merkmalsgruppe. Das Soft Limit von 5 Merkmalen pro Gruppe reicht für die meisten Teile.
 
-Das Problem ist selten die Grenze, sondern die Quelldaten. Varianten brauchen saubere, einheitliche Merkmalswerte: "50 mm", "50mm" und "DN50" in drei Materialstämmen ergeben drei Werte im Filter. In vielen ERP-Systemen stehen solche Angaben im Freitext statt in Feldern. Bevor Varianten live gehen, muss jemand diese Werte vereinheitlichen, und zwar im führenden System, nicht in Salesforce.
+Mehr Ärger als die Grenze machen die Quelldaten. Varianten brauchen saubere, einheitliche Merkmalswerte: "50 mm", "50mm" und "DN50" in drei Materialstämmen ergeben drei Werte im Filter. In vielen ERP-Systemen stehen solche Angaben im Freitext statt in Feldern. Bevor Varianten live gehen, muss jemand diese Werte vereinheitlichen, und zwar im führenden System, nicht in Salesforce.
 
 Für viele Ersatzteile brauchen Sie gar keine Varianten. Ein Händler sucht meist eine bestimmte Teilenummer. Varianten passen besser zu Verbrauchsmaterial und Zubehör, wo der Käufer Größe oder Farbe wählt.
 
@@ -101,7 +101,7 @@ Für einen Teilekatalog hat das direkte Folgen:
 - Eine Teilenummer ohne führende Nullen oder mit anderem Trennzeichen passt nicht.
 - Eine alte Teilenummer, die nur in der ERP-Historie steht, ist gar nicht zu finden.
 
-Nichts davon wird im Shop behoben. Es wird in den Produktdaten und in der Sucheinrichtung behoben, beschrieben in [Ersatzteile über die Teilenummer finden](../b2b-shop-suche-teilenummer/).
+Behoben wird all das in den Produktdaten und in der Sucheinrichtung, beschrieben in [Ersatzteile über die Teilenummer finden](../b2b-shop-suche-teilenummer/).
 
 ## Wo starten Sie?
 
