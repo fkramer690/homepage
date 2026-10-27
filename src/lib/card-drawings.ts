@@ -889,6 +889,87 @@ const drawings: Record<string, Drawing> = {
     <path d="M14 136H306" stroke="${L}"/>
     ${t(14, 150, l('Siemens + Teamcenter: announced', 'Siemens + Teamcenter: angekündigt'), { size: 7 })}
     ${t(306, 150, l('3 actions = $0.30', '3 Aktionen = 0,30 €'), { fill: C, size: 7, anchor: 'end' })}`,
+
+  'aela-flat-fee-vs-credits': (l) => `
+    ${box(18, 28, 134, 58)}${t(28, 44, 'FLEX CREDITS', { fill: D, size: 7.5 })}${t(28, 58, l('$500 per 100K credits', '500 € je 100K Credits'), { size: 7 })}${t(28, 72, l('pay per use, no rollover', 'nach Verbrauch, kein Übertrag'), { size: 7 })}
+    ${box(168, 28, 134, 58, C)}${t(178, 44, 'AELA', { fill: D, size: 7.5 })}${t(178, 58, l('fixed fee, 2 or 3 years', 'Pauschale, 2 oder 3 Jahre'), { size: 7 })}${t(178, 72, l('price not public', 'Preis nicht öffentlich'), { fill: C, size: 7 })}
+    ${t(18, 106, l('PayGo or Pre-Commit', 'PayGo oder Pre-Commit'), { size: 7 })}
+    ${t(170, 100, l('term', 'Laufzeit'), { size: 7 })}${arrow(168, 106, 218, C)}${tag(220, 96, 82, l('RENEWAL', 'VERLÄNGERUNG'))}
+    <path d="M18 124H302" stroke="${L}"/>
+    ${t(18, 140, l('Scenario: $150K a year = 30M credits = 1.5M actions', 'Szenario: 150K € im Jahr = 30 Mio. Credits = 1,5 Mio. Aktionen'), { fill: D, size: 7.5 })}
+    ${t(18, 153, l('120+ AELAs sold in Q4 FY26 (earnings call)', '120+ AELAs verkauft in Q4 FY26 (Earnings Call)'), { size: 7 })}`,
+
+  'agentforce-agents-release-pipeline': (l) => `
+    ${[['Git PR', G], [l('validate', 'validieren'), G], [l('deploy', 'deployen'), G], ['publish', G], [l('activate', 'aktivieren'), C]]
+      .map(([s, c], i) => box(10 + i * 62, 20, 50, 24, String(c)) + t(35 + i * 62, 35, String(s), { fill: i === 4 ? C : D, size: 7, anchor: 'middle' }) + (i < 4 ? arrow(60 + i * 62, 32, 72 + i * 62) : '')).join('')}
+    ${t(221, 56, l('inactive', 'inaktiv'), { size: 7, anchor: 'middle' })}${t(283, 56, '--version N', { fill: C, size: 7, anchor: 'middle' })}
+    ${t(18, 84, l('rollback = reactivate v3', 'Rollback = v3 aktivieren'), { size: 7 })}
+    <path d="M90 106C82 92 50 92 44 104" fill="none" stroke="${G}" stroke-width="1.2" stroke-dasharray="4 3"/><path d="M43 97.5L44 104L49.5 101" fill="none" stroke="${G}" stroke-width="1.2"/>
+    <path d="M22 112H156" stroke="${G}" stroke-width="0.8"/>${dot(42, 112)}${dot(90, 112, C, 4.5)}${dot(138, 112)}
+    ${t(42, 128, 'v3', { size: 7, anchor: 'middle' })}${t(90, 128, l('v4 active', 'v4 aktiv'), { fill: C, size: 7, anchor: 'middle' })}${t(138, 128, 'v5', { size: 7, anchor: 'middle' })}
+    ${box(176, 72, 126, 64)}${t(186, 88, l('PRODUCTION', 'PRODUKTION'), { fill: D, size: 7.5 })}
+    ${[l('1 active version', '1 aktive Version'), l('no Builder hotfix', 'kein Builder-Hotfix'), l('activate: client', 'Aktivieren: Kunde')].map((s, i) => t(186, 102 + i * 13, s, { size: 7 })).join('')}
+    ${t(18, 152, l('release note: Git commit = prod version', 'Release Note: Git-Commit = Prod-Version'), { size: 7 })}`,
+
+  'ai-org-assessment-technical-debt': (l) => `
+    ${t(18, 18, l('ORG ASSESSMENT, 2,250 COMPONENTS', 'ORG-ANALYSE, 2.250 KOMPONENTEN'), { fill: D, size: 7 })}
+    ${box(18, 30, 92, 64)}${t(28, 46, l('TOOLS COUNT', 'TOOLS ZÄHLEN'), { fill: D, size: 7.5 })}
+    ${t(28, 62, 'Code Analyzer', { size: 7 })}${t(28, 74, 'sfdx-hardis', { size: 7 })}${t(28, 86, l('Apex test run', 'Apex-Testlauf'), { size: 7 })}
+    ${arrow(110, 62, 136)}
+    ${box(136, 30, 82, 64, C)}${t(177, 50, l('LLM READS', 'LLM LIEST'), { fill: D, size: 7.5, anchor: 'middle' })}${t(177, 66, 'Batch API', { fill: C, size: 7, anchor: 'middle' })}${t(177, 80, l('half price', 'halber Preis'), { size: 7, anchor: 'middle' })}
+    ${arrow(218, 62, 244)}
+    ${box(244, 30, 60, 64)}${t(274, 50, l('ARCHITECT', 'ARCHITEKT'), { fill: D, size: 7.5, anchor: 'middle' })}${t(274, 66, l('samples', 'Stichproben'), { size: 7, anchor: 'middle' })}${t(274, 80, l('~10 days', '~10 Tage'), { size: 7, anchor: 'middle' })}
+    <path d="M18 110H302" stroke="${L}"/>
+    ${t(18, 128, l('Sonnet 5.5: about $59', 'Sonnet 5.5: rund 59 $'), { fill: D, size: 7.5 })}${t(18, 144, l('Opus 5.5: about $119', 'Opus 5.5: rund 119 $'), { fill: D, size: 7.5 })}
+    ${t(302, 128, l('by hand: ~47 days', 'von Hand: ~47 Tage'), { size: 7, anchor: 'end' })}${t(302, 144, l('scenario, US list prices', 'Szenario, US-Listenpreise'), { size: 7, anchor: 'end' })}`,
+
+  'devops-ai-agents-copado-gearset': (l) => `
+    ${t(18, 18, l('DEVOPS AI AGENTS, VENDOR CLAIMS', 'DEVOPS-KI-AGENTEN, HERSTELLERANGABEN'), { fill: D, size: 7 })}
+    ${box(18, 28, 88, 70)}${t(26, 43, 'Copado Agentia', { fill: D, size: 7.5 })}${t(26, 58, l('available', 'verfügbar'), { size: 7 })}${t(26, 70, 'Advanced, Pro', { size: 7 })}${cross(30, 84)}${t(40, 87, l('model named', 'Modell genannt'), { size: 7 })}
+    ${box(116, 28, 88, 70)}${t(124, 43, 'Gearset Cam', { fill: D, size: 7.5 })}${t(124, 58, l('pilots, 09/2026', 'Piloten, 09/2026'), { size: 7 })}${t(124, 70, l('1 client: 44 % PRs', '1 Kunde: 44 % PRs'), { size: 7 })}${cross(128, 84)}${t(138, 87, l('model named', 'Modell genannt'), { size: 7 })}
+    ${box(214, 28, 88, 70)}${t(222, 43, 'Provar MCP', { fill: D, size: 7.5 })}${t(222, 58, l('local CLI plugin', 'lokales CLI-Plugin'), { size: 7 })}${t(222, 70, l('no extra cost', 'ohne Aufpreis'), { size: 7 })}${check(222, 83, G)}${t(236, 87, l('your assistant', 'Ihr Assistent'), { size: 7 })}
+    ${t(18, 116, l('ASK IN WRITING BEFORE YOU PAY', 'VOR DEM KAUF SCHRIFTLICH FRAGEN'), { fill: D, size: 7 })}
+    ${box(18, 124, 284, 24, C)}${t(160, 139, l('model · region · retention · cap · approval', 'Modell · Region · Speicherdauer · Limit · Freigabe'), { fill: C, size: 7.5, anchor: 'middle' })}`,
+
+  'digital-wallet-chargeback': (l) => `
+    ${t(18, 18, l('ONE ORG, ONE POOL (SCENARIO)', 'EINE ORG, EIN POOL (SZENARIO)'), { fill: D, size: 7 })}${t(302, 18, l('4.1M credits planned', '4,1 Mio. Credits geplant'), { fill: D, size: 7, anchor: 'end' })}
+    ${[[18, 125, l('DE 1.8M', 'DE 1,8 Mio.')], [143, 97, l('US 1.4M', 'US 1,4 Mio.')], [240, 41, l('APAC', 'Asien')], [281, 21, 'IT']]
+      .map(([x, w, s]) => `<rect x="${x}" y="28" width="${w}" height="22" fill="#fff" stroke="${G}" stroke-width="1.1"/>` + t(Number(x) + Number(w) / 2 - (Number(w) < 30 ? 5 : 0), 42, String(s), { size: 7, anchor: 'middle' })).join('')}
+    <path d="M295 24V58" stroke="${D}" stroke-width="1.3" stroke-dasharray="3 2"/>${t(302, 68, l('pool 4.0M, +100K overage', 'Pool 4,0 Mio., +100K Mehrverbrauch'), { size: 7, anchor: 'end' })}
+    <path d="M18 80H302" stroke="${L}"/>
+    ${[l('1 org = 1 pool, 1 contract owner', '1 Org = 1 Pool, 1 Vertragspartner'), l('chargeback: $5 per 1,000 credits', 'Verrechnung: 5 € pro 1.000 Credits'), l('overage: billed in arrears', 'Mehrverbrauch: nachträglich'), l('alerts yes, stop not documented', 'Warnungen ja, Stopp nicht dokumentiert')]
+      .map((s, i) => dot(22, 95 + i * 15, G, 2) + t(30, 98 + i * 15, s, { size: 7 })).join('')}
+    ${box(206, 88, 96, 56, C)}${t(254, 105, l('APAC 4 months late', 'Asien 4 Monate später'), { fill: C, size: 7, anchor: 'middle' })}${t(254, 119, l('300K credits expire', '300K Credits verfallen'), { fill: C, size: 7, anchor: 'middle' })}${t(254, 133, l('= $1,500', '= 1.500 €'), { fill: C, size: 7.5, anchor: 'middle' })}`,
+
+  'multilingual-dealer-agents': (l) => `
+    ${t(18, 18, l('AGENTFORCE LANGUAGES', 'AGENTFORCE-SPRACHEN'), { fill: D, size: 7 })}${t(166, 18, l('KNOWLEDGE', 'WISSEN'), { fill: D, size: 7 })}
+    ${box(18, 28, 130, 40)}${t(28, 43, 'TEXT', { fill: D, size: 7.5 })}${t(28, 58, l('31 languages + 25 beta', '31 Sprachen + 25 Beta'), { size: 7 })}
+    ${box(18, 76, 130, 40)}${t(28, 91, 'VOICE', { fill: D, size: 7.5 })}${t(28, 106, l('7 named, others unclear', '7 genannt, weitere offen'), { size: 7 })}
+    <path d="M18 128H148" stroke="${L}"/>
+    ${t(18, 140, l('Translation: 4,000 credits', 'Translation: 4.000 Credits'), { size: 7 })}${t(18, 152, l('per 1M characters = $20', 'pro 1 Mio. Zeichen = 20 €'), { size: 7 })}
+    ${tag(166, 28, 30, 'it')}${arrow(196, 38, 220)}
+    ${box(220, 28, 86, 20)}${t(263, 41, l('language filter', 'Sprachfilter'), { size: 7, anchor: 'middle' })}
+    ${dot(171, 62, G, 2.5)}${t(180, 65, l('only Italian articles', 'nur italienische Artikel'), { size: 7 })}
+    ${box(166, 76, 140, 40, C)}${t(176, 91, 'PIVOT', { fill: C, size: 7.5 })}${t(176, 106, l('question to EN, answer back', 'Frage nach EN, Antwort zurück'), { size: 7 })}
+    <path d="M166 128H306" stroke="${L}"/>
+    ${t(166, 140, l('Czech: 1.24x tokens (1 test)','Tschechisch: 1,24x Tokens (1 Test)'), { size: 7 })}${t(166, 152, l('prompts: 2,000-token units', 'Prompts: 2.000-Token-Einheiten'), { size: 7 })}`,
+
+  'sandbox-data-ai-coding-agents': (l) => `
+    ${box(14, 58, 72, 44, C)}${t(50, 76, l('CODING AGENT', 'CODING-AGENT'), { fill: C, size: 7.5, anchor: 'middle' })}${t(50, 90, l('read = prompt', 'gelesen = Prompt'), { size: 7, anchor: 'middle' })}
+    ${[l('Scratch org + seed data', 'Scratch Org + Seed-Daten'), l('Dev sandbox, metadata only', 'Dev-Sandbox, nur Metadaten'), l('Partial Copy masked, read only', 'Partial Copy maskiert, lesend'), l('Full Copy: all prod data', 'Full Copy: alle Prod-Daten')]
+      .map((s, i) => box(146, 18 + i * 32, 160, 26) + t(156, 35 + i * 32, s, { size: 7.5, fill: i === 3 ? D : G })).join('')}
+    ${[0, 1, 2].map((i) => `<path d="M86 80C116 80 116 ${31 + i * 32} 146 ${31 + i * 32}" fill="none" stroke="${C}" stroke-width="1.2"/>`).join('')}
+    <path d="M86 80C116 80 116 127 146 127" fill="none" stroke="${G}" stroke-width="1.2" stroke-dasharray="4 3"/>${cross(121, 110)}
+    ${t(14, 154, l('Claude Code: transcripts 30 days in plaintext', 'Claude Code: Protokolle 30 Tage im Klartext'), { size: 7 })}`,
+
+  'setup-with-agentforce-admin-changes': (l) => `
+    ${t(18, 18, 'SETUP WITH AGENTFORCE', { fill: D, size: 7 })}
+    ${box(18, 30, 88, 44)}${t(62, 48, 'ASK SETUP AGENT', { fill: D, size: 7, anchor: 'middle' })}${t(62, 63, l('admin approves', 'Admin gibt frei'), { size: 7, anchor: 'middle' })}
+    <path d="M106 52L132 41" stroke="${G}" stroke-width="1.2"/><path d="M106 52L132 84" stroke="${C}" stroke-width="1.3"/>
+    ${box(132, 28, 170, 26)}${check(140, 40, G)}${t(154, 45, l('prod: questions, access, users', 'Prod: Fragen, Zugriff, Benutzer'), { size: 7 })}
+    ${box(132, 66, 170, 36, C)}${t(142, 81, l('fields, flows, pages', 'Felder, Flows, Seiten'), { fill: D, size: 7 })}${t(142, 94, l('only via sandbox, PR, pipeline', 'nur über Sandbox, PR, Pipeline'), { fill: C, size: 7 })}
+    <path d="M18 124H302" stroke="${G}" stroke-width="0.8"/>${dot(60, 124, G, 2.5)}${dot(160, 124, G, 2.5)}${dot(260, 124, G, 2.5)}
+    ${t(60, 142, 'GA 05/2026', { size: 7, anchor: 'middle' })}${t(160, 142, l('500 free actions/month', '500 Aktionen frei/Monat'), { size: 7, anchor: 'middle' })}${t(260, 142, l('audit trail 180+ days', 'Audit Trail 180+ Tage'), { size: 7, anchor: 'middle' })}`,
 };
 
 export const hasDrawing = (key: string) => key in drawings;
