@@ -4,6 +4,7 @@ description: "Git-basierte Salesforce-Releases mit Branching, automatischen Prü
 lang: de
 slug: devops-und-release-management
 translationKey: service-devops
+contactBrief: devops
 order: 3
 lead: "Change Sets, manuelle Deployment-Schritte und Releases, die ein Wochenende brauchen, sind in großen Salesforce-Orgs noch verbreitet. Ich setze einen Git-basierten Release-Prozess mit automatischen Prüfungen und Reviews auf der Plattform des Kunden auf. Releases werden kleiner, häufiger und planbar."
 situations:

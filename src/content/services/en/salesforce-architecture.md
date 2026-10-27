@@ -4,6 +4,7 @@ description: "Target architecture, data model and cloud selection for Salesforce
 lang: en
 slug: salesforce-architecture
 translationKey: service-architecture
+contactBrief: architecture
 order: 1
 lead: "Large Salesforce programmes rarely fail because of one wrong click. They fail because nobody decided early which clouds, which data model and which integrations the company really needs. I design the target architecture on the client side and document every decision, so it still holds when partners change."
 situations:

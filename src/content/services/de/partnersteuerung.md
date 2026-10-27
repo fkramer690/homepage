@@ -4,6 +4,7 @@ description: "Mehrere Umsetzungspartner auf einer Salesforce-Org? Ein Governance
 lang: de
 slug: partnersteuerung
 translationKey: service-partner-governance
+contactBrief: partner-governance
 order: 2
 lead: "Arbeiten mehrere Umsetzungspartner an einer Salesforce-Org, liefert jeder seinen Teil und niemand verantwortet das Ganze. Ich setze auf Kundenseite einen gemeinsamen Governance- und Release-Rahmen auf und prüfe, was Partner liefern, bevor es teuer wird."
 situations:

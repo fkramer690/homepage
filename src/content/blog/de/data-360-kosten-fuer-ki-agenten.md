@@ -7,6 +7,7 @@ slug: data-360-kosten-fuer-ki-agenten
 translationKey: data-360-costs-for-agents
 topic: data
 category: ai
+contactBrief: licences
 tags: [Data 360, Agentforce, Flex Credits, Grounding, Ersatzteile, Maschinenbau]
 takeaways:
   - "Data 360 berechnet das Grounding auf Dokumenten an drei Stellen: Verarbeitung pro MB beim Indexieren, Abfragen pro Million Zeilen bei jeder Suche des Agenten und Speicher für Dateien, Chunks und Indexobjekte."

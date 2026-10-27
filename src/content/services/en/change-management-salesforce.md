@@ -4,6 +4,7 @@ description: "Change management for Salesforce programmes: introduce new process
 lang: en
 slug: change-management-salesforce
 translationKey: service-change
+contactBrief: change
 order: 7
 lead: "A new Salesforce release is rolled out quickly. Whether business teams, developers and partners work differently afterwards is another question. I plan the introduction of new processes and standards on the client side so they reach daily work and stay there."
 situations:

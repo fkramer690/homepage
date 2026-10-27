@@ -7,6 +7,7 @@ slug: partners-using-ai-coding-contract-rules
 translationKey: partners-ai-coding-sow-rules
 topic: governance
 category: architecture
+contactBrief: partner-governance
 tags: [partner governance, ai coding, statement of work, data protection, code review, manufacturing]
 takeaways:
   - "When a Salesforce partner codes with AI agents, the SOW should cover disclosed tools and model routes, allowed data, no production access for agents, review of every line, rights and liability."

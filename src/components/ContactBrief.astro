@@ -1,0 +1,24 @@
+---
+// Topic-specific heading, text and checklists of the contact section
+// under blog articles and service pages (texts: src/lib/contact-briefs.ts).
+import type { getContactBrief } from '../lib/contact-briefs';
+import type { Dict } from '../i18n/en';
+
+interface Props {
+  brief: ReturnType<typeof getContactBrief>;
+  t: Dict;
+}
+const { brief, t } = Astro.props;
+---
+<h2>{brief.title}</h2>
+<p class="contact-text">{brief.text}</p>
+<div class="contact-brief">
+  <div>
+    <h3 class="mono">{t.contact.briefBring}</h3>
+    <ul>{brief.bring.map((item) => <li>{item}</li>)}</ul>
+  </div>
+  <div>
+    <h3 class="mono">{t.contact.briefClarify}</h3>
+    <ul>{brief.clarify.map((item) => <li>{item}</li>)}</ul>
+  </div>
+</div>

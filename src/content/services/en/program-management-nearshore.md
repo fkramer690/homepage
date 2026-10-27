@@ -4,6 +4,7 @@ description: "Planning and steering of Salesforce programmes, including nearshor
 lang: en
 slug: program-management-nearshore
 translationKey: service-nearshore
+contactBrief: nearshore
 order: 5
 lead: "Nearshore teams can deliver a lot for a reasonable price, if the setup is right. Most problems have little to do with skills and a lot to do with team size, turnover and culture. I plan and steer Salesforce programmes on the client side, including nearshore teams in Eastern Europe and India."
 situations:

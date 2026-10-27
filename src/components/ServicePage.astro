@@ -4,6 +4,8 @@ import ExternalMark from './ExternalMark.astro';
 import ContactForm from './ContactForm.astro';
 import AuthorBox from './AuthorBox.astro';
 import Blueprint from './Blueprint.astro';
+import ContactBrief from './ContactBrief.astro';
+import { getContactBrief } from '../lib/contact-briefs';
 import { render } from 'astro:content';
 import { en } from '../i18n/en';
 import { de } from '../i18n/de';
@@ -135,8 +137,7 @@ const schema = {
     <div class="container contact-inner">
       <div class="contact-intro">
         <p class="label mono">{t.contact.label}</p>
-        <h2>{t.servicePage.ctaTitle}</h2>
-        <p class="contact-text">{t.servicePage.ctaText}</p>
+        <ContactBrief brief={getContactBrief(lang, service.data.contactBrief)} t={t} />
         <a class="btn" href={contactHref(name)} {...ctaAttrs}>{t.nav.cta}{contactExternal && <ExternalMark label={t.nav.newTab} />}</a>
         {contactExternal && <p class="booking-note">{t.contact.bookingNote}</p>}
       </div>

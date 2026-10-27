@@ -4,6 +4,7 @@ description: "Salesforce angebunden an SAP und andere ERP-Systeme, Middleware un
 lang: de
 slug: salesforce-schnittstellen
 translationKey: service-integration
+contactBrief: integration
 order: 4
 lead: "Salesforce ist nie das einzige System. Aufträge, Preise, Bestände und Rechnungen liegen im ERP, und der Service läuft über Telefon und E-Mail. Ich entwerfe die Integrationsarchitektur auf Kundenseite und arbeite mit ausgewählten Partnern, die Schnittstellen in großen internationalen Programmen gebaut haben."
 situations:

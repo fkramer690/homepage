@@ -821,6 +821,11 @@ p.post-series-note { margin: 0.6em 0 0; font-size: 0.95rem; }
 
 /* External booking link */
 .ext-mark { margin-left: 0.5em; vertical-align: -1px; }
+.contact-brief { display: grid; gap: 1.4em; margin: 0 0 1.8em; max-width: 52ch; }
+.contact-brief h3 { font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--cyan-light); margin: 0 0 0.6em; }
+.contact-brief ul { list-style: none; margin: 0; padding: 0; }
+.contact-brief li { position: relative; padding-left: 1.4em; margin: 0 0 0.45em; color: rgba(255, 255, 255, 0.85); font-size: 0.95rem; }
+.contact-brief li::before { content: ''; position: absolute; left: 0.1em; top: 0.5em; width: 0.6em; height: 0.32em; border-left: 2px solid var(--cyan-light); border-bottom: 2px solid var(--cyan-light); transform: rotate(-45deg); }
 .booking-note { margin: 1em 0 0; font-size: 0.85rem; color: rgba(255, 255, 255, 0.55); }
 
 /* Contact form */
