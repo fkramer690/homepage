@@ -296,6 +296,13 @@ const drawings: Record<string, Drawing> = {
     ${box(240, 62, 66, 36)}${t(273, 78, 'ERP', { fill: D, size: 7.5, anchor: 'middle' })}${t(273, 90, l('credit note', 'Gutschrift'), { size: 6.8, anchor: 'middle' })}
     <path d="M160 102V116" stroke="${G}" stroke-width="1.2"/><path d="M156.5 111l3.5 5 3.5-5" fill="none" stroke="${G}" stroke-width="1.2"/>
     ${box(104, 118, 112, 26)}${t(160, 134, l('supplier recovery per part', 'Regress pro Teil'), { size: 6.8, anchor: 'middle' })}`,
+
+  'manufacturing-cloud-global-rollout': (l) => `
+    ${box(14, 26, 116, 30, C)}${t(72, 40, l('GLOBAL TEMPLATE', 'GLOBALES TEMPLATE'), { fill: D, size: 7.5, anchor: 'middle' })}${t(72, 50, l('goal: harmonisation', 'Ziel: Harmonisierung'), { size: 6.5, anchor: 'middle' })}
+    <path d="M30 96H302" stroke="${G}" stroke-width="0.8"/>
+    ${[[60, l('phase 1', 'Phase 1'), l('large country', 'großes Land'), true], [140, l('phase 2', 'Phase 2'), l('large region', 'große Region'), true], [220, l('phase 3', 'Phase 3'), l('more countries', 'weitere Länder'), false], [290, '…', '', false]].map(([x, a, b, hit]) => dot(x, 96, hit ? C : G, hit ? 4 : 3) + t(x, 86, a, { fill: hit ? C : G, size: 7, anchor: 'middle' }) + t(x, 112, b, { size: 6.5, anchor: 'middle' })).join('')}
+    ${t(170, 40, l('≥ 80 % identical per country', '≥ 80 % identisch pro Land'), { size: 7 })}
+    ${t(14, 146, l('+ change management in every country', '+ Change Management in jedem Land'), { fill: D, size: 7 })}`,
 };
 
 export const hasDrawing = (key: string) => key in drawings;
