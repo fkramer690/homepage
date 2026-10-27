@@ -661,6 +661,120 @@ const drawings: Record<string, Drawing> = {
     ${check(18, 142)}${t(30, 147, l('tool account', 'Werkzeugkonto'), { size: 7 })}
     ${check(100, 142)}${t(112, 147, l('org access', 'Org-Zugang'), { size: 7 })}
     ${check(176, 142)}${t(188, 147, l('transcripts: 30 days', 'Transkripte: 30 Tage'), { size: 7 })}`,
+
+  'breakdown-hotline-voice-agent': (l) => `
+    ${box(18, 56, 78, 40)}${t(57, 73, l('HOTLINE CALL', 'HOTLINE-ANRUF'), { fill: D, size: 7.5, anchor: 'middle' })}${t(57, 86, l('German: GA', 'Deutsch: GA'), { size: 7, anchor: 'middle' })}
+    ${arrow(96, 76, 112)}
+    ${box(112, 40, 86, 72)}${t(155, 55, 'TRIAGE', { fill: D, size: 7.5, anchor: 'middle' })}
+    ${[l('caller + asset', 'Anrufer + Anlage'), l('machine down?', 'Stillstand?'), l('entitlement', 'Entitlement')].map((s, i) => dot(124, 69 + i * 14, G, 2) + t(131, 72 + i * 14, s, { size: 7 })).join('')}
+    ${arrow(198, 50, 218)}
+    ${box(218, 26, 84, 40)}${t(260, 43, l('MACHINE DOWN', 'STILLSTAND'), { fill: D, size: 7.5, anchor: 'middle' })}${t(260, 56, l('to dispatcher', 'an Disposition'), { size: 7, anchor: 'middle' })}
+    ${arrow(198, 100, 218, C)}
+    ${box(218, 82, 84, 40, C)}${t(260, 99, l('RUNS + COVERED', 'LÄUFT + ABGEDECKT'), { fill: D, size: 7, anchor: 'middle' })}${t(260, 112, l('agent books', 'Agent bucht'), { fill: C, size: 7, anchor: 'middle' })}
+    <path d="M18 132H302" stroke="${L}"/>
+    ${t(18, 144, l('4 voice actions = 120 credits = $0.60 per call', '4 Sprachaktionen = 120 Credits = 0,60 € pro Anruf'), { size: 7 })}
+    ${t(18, 155, l('Voice Minutes: 60 credits per minute', 'Voice Minutes: 60 Credits pro Minute'), { size: 7 })}`,
+
+  'distributor-replenishment-agent': (l) => `
+    ${t(18, 18, l('REPLENISHMENT: WHO OWNS WHAT', 'NACHSCHUB: WER FÜHRT WAS'), { fill: D, size: 7 })}
+    ${box(18, 28, 118, 70)}${t(77, 42, 'SALESFORCE', { fill: D, size: 7.5, anchor: 'middle' })}
+    ${[l('distributor stock', 'Händlerbestand'), l('min/max policy', 'Min/Max-Regel'), l('proposal', 'Vorschlag')].map((s, i) => t(28, 58 + i * 14, s, { size: 7 })).join('')}
+    ${box(184, 28, 118, 70, C)}${t(243, 42, 'SAP / proALPHA', { fill: D, size: 7.5, anchor: 'middle' })}
+    ${['ATP', l('price', 'Preis'), l('credit limit', 'Kreditlimit'), l('order number', 'Auftragsnummer')].map((s, i) => t(194, 56 + i * 11, s, { size: 7 })).join('')}
+    ${arrow(136, 54, 184, C)}${t(160, 48, l('simulate', 'simulieren'), { fill: C, size: 7, anchor: 'middle' })}
+    <path d="M184 76H137" stroke="${G}" stroke-width="1.3"/><path d="M141 72.5l-5 3.5 5 3.5" fill="none" stroke="${G}" stroke-width="1.3"/>${t(160, 90, l('confirms', 'bestätigt'), { size: 7, anchor: 'middle' })}
+    <path d="M18 106H302" stroke="${L}"/>
+    ${t(18, 118, l('GATES SET BY CODE', 'SPERREN PER CODE'), { fill: D, size: 7 })}
+    ${[[l('credit from ERP', 'Kredit aus ERP'), 18, 128], [l('quantity cap', 'Mengengrenze'), 110, 128], [l('dealer confirms', 'Händler bestätigt'), 18, 144], [l('duplicate check', 'Dublettenprüfung'), 110, 144]]
+      .map(([s, x, y], i) => check(Number(x), Number(y), i === 0 ? C : G) + t(Number(x) + 12, Number(y) + 5, String(s), { size: 7 })).join('')}
+    ${tag(210, 112, 92, l('read-only first', 'zuerst lesend'))}
+    ${t(256, 148, l('then write actions', 'dann schreibend'), { size: 7, anchor: 'middle' })}`,
+
+  'field-service-ai-troubleshooting-manuals': (l) => `
+    ${t(18, 18, l('SAME KEY ON ASSET AND DOCUMENT', 'GLEICHER SCHLÜSSEL AN ANLAGE UND DOKUMENT'), { fill: D, size: 7 })}
+    ${box(18, 28, 88, 42)}${t(62, 45, l('ASSET', 'ANLAGE'), { fill: D, size: 8, anchor: 'middle' })}${t(62, 59, 'MC-800 · SN 4217', { size: 7, anchor: 'middle' })}
+    ${arrow(106, 49, 146, C)}
+    ${box(146, 28, 156, 42, C)}${t(156, 41, l('MANUAL / BULLETIN', 'HANDBUCH / BULLETIN'), { fill: D, size: 7 })}${t(156, 53, l('variant key MC-800', 'Variantenschlüssel MC-800'), { size: 7 })}${t(156, 64, l('serial range 4100 to 4380', 'Seriennr. 4100 bis 4380'), { fill: C, size: 7 })}
+    ${t(18, 88, l('IN THE INDEX', 'IM INDEX'), { fill: D, size: 7 })}
+    ${check(18, 99, G)}${t(32, 104, l('one valid version', 'eine gültige Fassung'), { size: 7 })}
+    ${cross(124, 100)}${t(134, 104, l('old bulletins', 'überholte Bulletins'), { size: 7 })}
+    ${cross(218, 100)}${t(228, 104, l('stock, prices', 'Bestände, Preise'), { size: 7 })}
+    <path d="M18 114H302" stroke="${L}"/>
+    ${box(18, 122, 136, 30)}${t(86, 134, 'Data Library', { fill: D, size: 7, anchor: 'middle' })}${t(86, 146, l('1 source, 1 product line', '1 Quelle, 1 Produktlinie'), { size: 7, anchor: 'middle' })}
+    ${box(166, 122, 136, 30)}${t(234, 134, l('Data 360 setup', 'Data-360-Setup'), { fill: D, size: 7, anchor: 'middle' })}${t(234, 146, l('filter fields, up to 10 conditions', 'Filterfelder, bis 10 Bedingungen'), { size: 7, anchor: 'middle' })}`,
+
+  'partner-sales-assistant-dealer-quotes': (l) => `
+    ${t(18, 18, l('QUOTE DATA FIRST', 'ERST DIE ANGEBOTSDATEN'), { fill: D, size: 7 })}
+    ${tag(150, 4, 72, "Summer '26")}${tag(232, 4, 72, "Winter '27")}
+    ${t(186, 37, 'Partner Sales Assistant', { size: 6, anchor: 'middle' })}${t(268, 37, 'Sales Concierge', { size: 6, anchor: 'middle' })}
+    ${box(14, 30, 104, 100)}
+    ${[l('catalogue', 'Katalog'), l('tier prices', 'Stufenpreise'), l('build rules', 'Baubarkeit'), l('discount limits', 'Rabattgrenzen')].map((s, i) => check(24, 50 + i * 20, G) + t(38, 55 + i * 20, s, { size: 7.5 })).join('')}
+    ${arrow(118, 80, 150, C)}
+    ${box(150, 50, 74, 60, C)}${t(187, 70, 'AGENT', { fill: D, size: 7.5, anchor: 'middle' })}${t(187, 84, l('finds products', 'findet Produkte'), { size: 6.8, anchor: 'middle' })}${t(187, 96, l('builds quotes', 'baut Angebote'), { size: 6.8, anchor: 'middle' })}
+    ${arrow(224, 80, 246)}
+    ${box(246, 56, 64, 48)}${t(278, 76, l('QUOTE', 'ANGEBOT'), { fill: D, size: 7.5, anchor: 'middle' })}${t(278, 90, l('dealer, customer', 'Händler, Kunde'), { size: 6.5, anchor: 'middle' })}
+    ${t(14, 150, l('SAP tiers missing = list price in the quote', 'SAP-Stufen fehlen = Listenpreis im Angebot'), { size: 7 })}`,
+
+  'predictive-maintenance-data-readiness': (l) => `
+    ${t(18, 18, l('SCENARIO: 300 MACHINES, 12 SIGNALS / MONTH', 'SZENARIO: 300 MASCHINEN, 12 SIGNALE / MONAT'), { fill: D, size: 7 })}
+    <rect x="18" y="28" width="230" height="18" rx="3" fill="#fff" stroke="${G}" stroke-width="1.1"/>${t(24, 40, l('raw readings, 1 per second', 'Rohwerte im Sekundentakt'), { size: 7 })}${t(302, 40, l('~$65,900', '~65.900 €'), { fill: D, size: 8, anchor: 'end' })}
+    <rect x="18" y="54" width="4" height="18" rx="1" fill="${C}"/>${t(28, 66, l('15-minute aggregates', '15-Minuten-Aggregate'), { fill: C, size: 7 })}${t(302, 66, l('~$181', '~181 €'), { fill: C, size: 8, anchor: 'end' })}
+    <path d="M18 82H302" stroke="${L}"/>
+    ${t(18, 98, l('HISTORY BEFORE SENSORS', 'HISTORIE VOR SENSOREN'), { fill: D, size: 7 })}
+    ${[l('work orders on the asset', 'Work Orders an der Anlage'), l('failure causes coded', 'Ursachen codiert'), l('dealer repairs reported', 'Händlerreparaturen gemeldet')]
+      .map((s, i) => check(18, 108 + i * 14, G) + t(30, 113 + i * 14, s, { size: 7 })).join('')}
+    ${tag(182, 104, 120, l('3,500 credits/1M rows', '3.500 Credits/Mio. Zeilen'))}${t(242, 138, l('streaming, base tier', 'Streaming, Basisstaffel'), { size: 7, anchor: 'middle' })}`,
+
+  'prompt-builder-or-agent': (l) => `
+    ${box(18, 22, 130, 76)}${t(83, 38, 'PROMPT TEMPLATE', { fill: D, size: 7.5, anchor: 'middle' })}
+    ${t(28, 54, l('1 record in, 1 text out', '1 Datensatz rein, 1 Text raus'), { size: 7 })}
+    ${check(28, 62)}${t(42, 68, l('person reads first', 'Mensch liest vorher'), { size: 7 })}
+    ${t(28, 88, l('Standard prompt: 4 credits', 'Standard-Prompt: 4 Credits'), { fill: C, size: 7 })}
+    ${box(172, 22, 130, 76)}${t(237, 38, 'AGENTFORCE AGENT', { fill: D, size: 7.5, anchor: 'middle' })}
+    ${t(182, 54, l('picks next step', 'wählt nächsten Schritt'), { size: 7 })}
+    ${check(182, 62, G)}${t(196, 68, l('writes via actions', 'schreibt per Aktion'), { size: 7 })}
+    ${t(182, 88, l('action: 20 credits', 'Aktion: 20 Credits'), { size: 7 })}
+    <path d="M18 112H302" stroke="${L}"/>
+    ${t(18, 128, l('SCENARIO PER MONTH', 'SZENARIO PRO MONAT'), { fill: D, size: 7 })}
+    ${t(18, 144, l('4 template jobs: 53,600 credits', '4 Template-Aufgaben: 53.600 Credits'), { fill: C, size: 7 })}
+    ${t(172, 144, l('dealer agent: 132,000', 'Händleragent: 132.000'), { size: 7 })}
+    ${t(18, 156, l('per 2,000 tokens, rounded up', 'pro 2.000 Tokens, aufgerundet'), { size: 7 })}`,
+
+  'sales-planning-agent-agreements': (l) => `
+    ${box(14, 56, 58, 40)}${t(43, 73, 'ERP', { fill: D, size: 7.5, anchor: 'middle' })}${t(43, 85, l('actuals', 'Ist-Mengen'), { size: 6.8, anchor: 'middle' })}
+    ${arrow(72, 76, 100)}${t(86, 68, l('1:00 AM', '1:00 Uhr'), { size: 6.5, anchor: 'middle' })}
+    ${box(100, 52, 70, 48)}${t(135, 72, 'SALES', { fill: D, size: 7.5, anchor: 'middle' })}${t(135, 83, 'AGREEMENT', { fill: D, size: 7.5, anchor: 'middle' })}
+    <rect x="100" y="112" width="70" height="24" rx="5" fill="#fff" stroke="${G}" stroke-width="1" stroke-dasharray="4 3"/>${t(135, 127, 'Account Forecast', { size: 6.5, anchor: 'middle' })}${cross(180, 124)}
+    ${arrow(170, 76, 192, C)}
+    ${box(192, 18, 116, 94, C)}${t(250, 32, 'SALES PLANNING AGENT', { fill: D, size: 7, anchor: 'middle' })}
+    ${[l('questions, summaries', 'Fragen, Zusammenfassungen'), l('bulk updates', 'Massenänderungen'), l('visits, emails', 'Besuche, E-Mails'), l('program forecasts', 'Programmprognosen')].map((s, i) => check(200, 46 + i * 16) + t(214, 52 + i * 16, s, { size: 6.5 })).join('')}
+    <rect x="192" y="120" width="116" height="22" rx="5" fill="#fff" stroke="${G}" stroke-width="1" stroke-dasharray="4 3"/>${t(202, 134, l('build plan alerts', 'Hinweise Produktionsplan'), { size: 6.5 })}${cross(298, 131)}
+    ${t(14, 152, l('3 subagents documented, alerts not described', '3 Subagents dokumentiert, Hinweise nicht beschrieben'), { size: 7 })}`,
+
+  'siemens-agentforce-lessons': (l) => `
+    ${t(18, 18, l('SIEMENS · 15 SEP 2026', 'SIEMENS · 15.09.2026'), { fill: D, size: 7 })}${t(176, 18, l('ORDER, MID-SIZED (SCENARIO)', 'REIHENFOLGE MITTELSTAND'), { fill: D, size: 7 })}
+    ${box(18, 26, 134, 36, C)}${t(26, 41, l('LIVE: 2 lead agents', 'LIVE: 2 Lead-Agenten'), { fill: C, size: 7.5 })}${t(26, 54, l('18,000 sellers · 132 countries', '18.000 Vertriebler · 132 Länder'), { size: 7 })}
+    ${t(18, 80, l('ANNOUNCED ("will")', 'ANGEKÜNDIGT ("will")'), { fill: D, size: 7 })}
+    ${['Teamcenter', l('Piper for distributors', 'Piper für Vertriebspartner'), l('onboarding in SAP', 'Onboarding in SAP')].map((s, i) => dot(24, 92 + i * 14, G, 2.5) + t(34, 95 + i * 14, s, { size: 7 })).join('')}
+    ${arrow(156, 66, 174, C)}
+    ${[l('read only, high volume', 'nur lesen, hohes Volumen'), l('read ERP via API', 'ERP per API lesen'), l('parts by serial number', 'Teile per Seriennummer'), l('write to ERP last', 'ins ERP schreiben zuletzt')]
+      .map((s, i) => box(176, 26 + i * 26, 128, 20, i === 0 ? C : G) + t(186, 39 + i * 26, String(i + 1), { fill: i === 0 ? C : D, size: 7.5 }) + t(198, 39 + i * 26, s, { fill: i === 0 ? C : G, size: 7 })).join('')}
+    <path d="M18 136H304" stroke="${L}"/>
+    ${t(18, 150, l('data work for serial numbers starts on day one', 'Datenarbeit für Seriennummern startet am ersten Tag'), { fill: D, size: 7.5 })}`,
+
+  'spare-parts-serial-number-ai': (l) => `
+    ${t(18, 20, l('SPARE PARTS BY SERIAL NUMBER', 'ERSATZTEILE PER SERIENNUMMER'), { fill: D, size: 7 })}
+    ${[['PLM', l('as-built BOM', 'As-built-Stückliste')], ['ERP', l('material, price', 'Material, Preis')], ['Salesforce', l('asset, serial no.', 'Asset, Seriennr.')]]
+      .map(([a, b], i) => box(14, 30 + i * 34, 86, 26) + t(57, 41 + i * 34, String(a), { fill: D, size: 7, anchor: 'middle' }) + t(57, 51 + i * 34, String(b), { size: 7, anchor: 'middle' }) + arrow(100, 43 + i * 34, 136)).join('')}
+    ${box(136, 30, 64, 94, C)}${t(168, 72, l('PARTS API', 'TEILE-API'), { fill: D, size: 7.5, anchor: 'middle' })}${t(168, 86, l('rule-based', 'regelbasiert'), { fill: C, size: 7, anchor: 'middle' })}
+    ${arrow(200, 77, 224, C)}
+    ${box(224, 30, 82, 94)}${t(265, 46, 'AGENT', { fill: D, size: 7.5, anchor: 'middle' })}
+    ${check(231, 62)}${t(243, 67, l('narrows down', 'grenzt ein'), { size: 7 })}
+    ${check(231, 82)}${t(243, 87, l('work order', 'Arbeitsauftrag'), { size: 7 })}
+    ${cross(235, 105)}${t(243, 108, l('guesses part', 'rät Teilenr.'), { size: 7 })}
+    <path d="M14 136H306" stroke="${L}"/>
+    ${t(14, 150, l('Siemens + Teamcenter: announced', 'Siemens + Teamcenter: angekündigt'), { size: 7 })}
+    ${t(306, 150, l('3 actions = $0.30', '3 Aktionen = 0,30 €'), { fill: C, size: 7, anchor: 'end' })}`,
 };
 
 export const hasDrawing = (key: string) => key in drawings;

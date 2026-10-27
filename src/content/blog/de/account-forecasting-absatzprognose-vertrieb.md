@@ -2,6 +2,7 @@
 title: "Account Forecasting: Absatzprognose im Vertrieb"
 description: "Wann sich Account Forecasting der Manufacturing Cloud für die Absatzprognose lohnt, welche Daten es braucht und wo die Planung im ERP beginnen sollte."
 pubDate: 2026-10-27
+updatedDate: 2026-10-27
 lang: de
 slug: account-forecasting-absatzprognose-vertrieb
 translationKey: manufacturing-cloud-account-forecasting
@@ -84,7 +85,7 @@ Für die Architektur sind zwei Punkte wichtig:
 1. **Eine führende Zahl.** Gibt es eine Vertriebsprognose in Salesforce und eine Absatzplanung im ERP, muss festgelegt sein, welche Zahl gilt und wann sie übergeben wird. Zwei Prognosen, die beide gepflegt werden, laufen auseinander, und dann diskutiert das Meeting über Zahlen statt über Kunden.
 2. **Eine Richtung.** Fließt die Vertriebsprognose ins ERP, braucht die Schnittstelle dieselbe Granularität wie die Planung dort. Plant das ERP auf Materialnummer und Werk, hilft eine Prognose auf Produktkategorie nur begrenzt.
 
-Ein Hinweis zu Agentforce: Laut Trailhead erzeugt Agentforce Manufacturing zu Beginn jedes Anpassungszeitraums automatisch Prognosen für neue Produkte. Das klingt praktisch. Ich würde es erst nutzen, wenn die Historie aus dem ERP sauber ankommt, weil eine automatische Prognose auf schlechten Daten nur schneller falsch ist.
+Ein Hinweis zu Agentforce: Laut Trailhead erzeugt „Agentforce Manufacturing“ zu Beginn jedes Anpassungszeitraums automatisch Prognosen für neue Produkte. Agentforce Manufacturing ist dort der Produktname. So wie ich die Trailhead-Einheit lese, ist das die Prognoseberechnung zum Periodenstart und kein Agent, und die Salesforce-Hilfe zum Sales-Planning-Agenten dokumentiert dafür keinen Subagent ([was der Agent wirklich kann](../agentforce-vertriebsplanung-rahmenvertraege/)). Das klingt praktisch. Ich würde mich erst darauf verlassen, wenn die Historie aus dem ERP sauber ankommt, weil eine automatische Prognose auf schlechten Daten nur schneller falsch ist.
 
 ## Wann lohnt sich Account Forecasting?
 
