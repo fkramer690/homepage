@@ -87,6 +87,14 @@ const drawings: Record<string, Drawing> = {
     <path d="M214 100H107" stroke="${C}" stroke-width="1.3"/><path d="M112 96.5l-5 3.5 5 3.5" fill="none" stroke="${C}" stroke-width="1.3"/>${t(160, 114, l('consumption, requests', 'Verbrauch, Anforderung'), { fill: C, size: 7, anchor: 'middle' })}
     <rect x="234" y="128" width="26" height="14" rx="2" fill="${D}"/><circle cx="240" cy="144" r="2.6" fill="${D}"/><circle cx="254" cy="144" r="2.6" fill="${D}"/>${t(266, 140, l('van = location', 'Fahrzeug = Standort'), { size: 7 })}`,
 
+  'field-service-maintenance-contracts': (l) => `
+    ${box(18, 18, 120, 30)}${t(28, 37, 'Service Contract', { fill: D, size: 7.5 })}${t(130, 37, l('sold', 'verkauft'), { size: 7, anchor: 'end' })}
+    ${box(18, 64, 120, 30)}${t(28, 83, 'Maintenance Plan', { fill: D, size: 7.5 })}${t(130, 83, l('planned', 'geplant'), { size: 7, anchor: 'end' })}
+    ${box(18, 110, 120, 30, C)}${t(28, 129, 'Entitlement', { fill: D, size: 7.5 })}${t(130, 129, '24 h', { fill: C, size: 7, anchor: 'end' })}
+    ${arrow(138, 125, 196, C)}${t(167, 118, l('priority', 'Priorität'), { fill: C, size: 7, anchor: 'middle' })}
+    ${box(196, 98, 104, 44, C)}${t(248, 117, l('DISPATCH', 'DISPATCHING'), { fill: D, size: 7.5, anchor: 'middle' })}${t(248, 131, l('1 = highest', '1 = höchste'), { size: 7, anchor: 'middle' })}
+    ${arrow(138, 79, 196)}${box(196, 58, 104, 32)}${t(248, 78, l('work orders', 'Arbeitsaufträge'), { size: 7.5, anchor: 'middle' })}`,
+
   'salesforce-winter-27-pipeline': (l) => `
     ${['build', 'validate', 'deploy'].map((s, i) => box(20 + i * 62, 30, 50, 26) + t(45 + i * 62, 47, s, { size: 7.5, anchor: 'middle' })).join('')}
     ${arrow(70, 43, 82)}${arrow(132, 43, 144)}
