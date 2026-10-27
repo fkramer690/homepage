@@ -7,6 +7,7 @@ slug: sales-agreements-abnahmemengen-erp
 translationKey: manufacturing-cloud-sales-agreements-actuals
 topic: data
 tags: [Manufacturing Cloud, Sales Agreements, ERP, Integration, Fertigung]
+series: { id: manufacturing-cloud, part: 3 }
 takeaways:
   - "Ein Sales Agreement zeigt nur dann, welche Kunden hinter ihren vereinbarten Abnahmemengen liegen, wenn die Ist-Mengen aus dem ERP zuverlässig pro Kunde, Produkt und Zeitraum ankommen."
   - "Wie die Ist-Mengen berechnet werden, legt die Einstellung Actuals Calculation Mode fest. Jedes Sales Agreement übernimmt sie bei der Anlage, eine spätere Änderung gilt nur für neue Agreements."

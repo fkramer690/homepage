@@ -7,6 +7,7 @@ slug: angebot-zu-sales-agreement-produktkonfigurator
 translationKey: manufacturing-cloud-quote-to-agreement
 topic: data
 tags: [Manufacturing Cloud, Sales Agreements, CPQ, Produktkonfigurator, Fertigung]
+series: { id: manufacturing-cloud, part: 2 }
 takeaways:
   - "Bei Herstellern mit technisch definierten Produkten entscheidet der Produktkonfigurator, was im Angebot steht und später im Sales Agreement geplant und gemessen wird."
   - "Konfiguriert werden Eigenschaften, die dem Endkunden wichtig sind und beim Hersteller Preis oder Kosten beeinflussen, etwa physikalisch-chemische Kriterien, Rohstoffe oder Zertifikate."

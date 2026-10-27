@@ -7,6 +7,7 @@ slug: manufacturing-cloud-kundenportal
 translationKey: manufacturing-cloud-customer-portal
 topic: service
 tags: [Manufacturing Cloud, Experience Cloud, Kundenportal, Sales Agreements, Fertigung]
+series: { id: manufacturing-cloud, part: 7 }
 takeaways:
   - "Ein Kundenportal auf der Manufacturing Cloud kann Sales Agreements, Bestellungen, Stammdaten und Cases zeigen und Anfragen und Bestellungen annehmen."
   - "Die Salesforce-Hilfe nennt Sales Agreements nur für die Partnerlizenz, nicht für Customer Community Plus for Manufacturing. Der genaue Umfang gehört deshalb schriftlich ins Angebot."

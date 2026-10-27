@@ -7,6 +7,7 @@ slug: salesforce-manufacturing-cloud-is-it-worth-it
 translationKey: manufacturing-cloud-worth-it
 topic: governance
 tags: [manufacturing cloud, make-or-buy, licences, architecture, manufacturing]
+series: { id: manufacturing-cloud, part: 1 }
 takeaways:
   - "Manufacturing Cloud is worth it when a manufacturer runs long-term agreements with planned quantities over months or years and wants to see plan against actuals in Salesforce."
   - "At list price, Manufacturing Cloud Sales Core costs $275 per user and month and Sales Cloud Core $195. For 200 sales users that is $192,000 extra per year."

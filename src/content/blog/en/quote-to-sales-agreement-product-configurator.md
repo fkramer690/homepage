@@ -7,6 +7,7 @@ slug: quote-to-sales-agreement-product-configurator
 translationKey: manufacturing-cloud-quote-to-agreement
 topic: data
 tags: [Manufacturing Cloud, Sales Agreements, CPQ, Product Configurator, Manufacturing]
+series: { id: manufacturing-cloud, part: 2 }
 takeaways:
   - "For manufacturers with technically defined products, the product configurator decides what goes into the quote and what is later planned and measured in the sales agreement."
   - "What gets configured are properties that matter to the end customer and affect the manufacturer's price or cost, such as physical and chemical criteria, raw materials or certificates."

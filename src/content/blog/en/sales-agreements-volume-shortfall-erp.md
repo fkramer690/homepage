@@ -7,6 +7,7 @@ slug: sales-agreements-volume-shortfall-erp
 translationKey: manufacturing-cloud-sales-agreements-actuals
 topic: data
 tags: [Manufacturing Cloud, Sales Agreements, ERP, Integration, Manufacturing]
+series: { id: manufacturing-cloud, part: 3 }
 takeaways:
   - "A sales agreement only shows which customers are behind on their committed volume when actual quantities arrive reliably from the ERP per customer, product and period."
   - "The Actuals Calculation Mode setting decides how actuals are calculated. Every sales agreement takes it over when it is created, and a later change only applies to new agreements."
