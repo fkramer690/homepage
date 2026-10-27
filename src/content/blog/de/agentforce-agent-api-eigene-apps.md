@@ -33,7 +33,7 @@ draft: false
 
 ## Was leistet die Agent API?
 
-Salesforce beschreibt die [Agent API](https://developer.salesforce.com/docs/einstein/genai/guide/agent-api.html) als Zugang zu Agentforce-Agenten „from anywhere that can call a REST API“. Als Einsatzfälle nennt Salesforce Websites, Headless-Agenten ohne Oberfläche und Agenten, die andere Agenten aufrufen. Für einen Maschinenbauer heißt das: Händler-App, Maschinenportal oder die App eines Servicepartners können denselben Agenten nutzen wie Ihr Innendienst in Salesforce.
+Salesforce beschreibt die [Agent API](https://developer.salesforce.com/docs/einstein/genai/guide/agent-api.html) als Zugang zu Agentforce-Agenten „from anywhere that can call a REST API“. Als Einsatzfälle nennt Salesforce Websites, Headless-Agenten ohne Oberfläche und Agenten, die andere Agenten aufrufen. Für einen Maschinenbauer heißt das: Händler-App, Maschinenportal oder die App eines Servicepartners können denselben Agenten nutzen wie Ihr Service-Team in Salesforce.
 
 Die [Einrichtung](https://developer.salesforce.com/docs/ai/agentforce/guide/agent-api-get-started.html) ist kurz:
 
@@ -58,7 +58,7 @@ Sie geben die Freigaben als Grenze zwischen Händlern auf. Der Run-As-User brauc
 
 Beim zweiten Punkt zahlen sich [Agent Script und feste Regeln](../agent-script-regeln-statt-llm/) aus. Ein Händler, der „zeig mir die Aufträge von Account 4711“ tippt, versucht genau den Zugriff über Händlergrenzen, den Sie verhindern wollen. Ein Filter in der Logik stoppt ihn, eine Anweisung im Prompt vielleicht nicht. Das größere Muster beschreibe ich unter [Prompt Injection im Händlerportal](../prompt-injection-haendlerportal-agentforce/).
 
-Für die Nachvollziehbarkeit gilt dasselbe. Salesforce protokolliert den Run-As-User und weiß nicht, welcher Händler gefragt hat. Der Session-Start nimmt einen `externalSessionKey` entgegen, eine UUID, die laut Anleitung beim Nachverfolgen in Event Logs hilft. Ich würde diesen Schlüssel im Log Ihrer App neben die User-ID des Händlers schreiben. So lässt sich eine Frage Ihres Datenschutzbeauftragten von beiden Seiten beantworten.
+Für die Nachvollziehbarkeit gilt dasselbe. Salesforce protokolliert den Run-As-User und weiß nicht, welcher Händler gefragt hat. Der Session-Start nimmt einen `externalSessionKey` entgegen, eine UUID, mit der sich laut Anleitung das Gespräch in den Event Logs des Agenten nachverfolgen lässt. Ich würde diesen Schlüssel im Log Ihrer App neben die User-ID des Händlers schreiben. So lässt sich eine Frage Ihres Datenschutzbeauftragten von beiden Seiten beantworten.
 
 Für den Run-As-User würde ich die [Salesforce Integration User Lizenz](https://help.salesforce.com/s/articleView?language=en_US&id=platform.integration_user.htm&type=5) mit ihrem API-Only-Profil nehmen und Rechte über ein Permission Set vergeben. Orgs erhalten standardmäßig eine begrenzte Zahl dieser Lizenzen, die Seite nennt keine Zahl. Eine External Client App und ein Run-As-User pro externer App halten den möglichen Schaden klein; Token- und IP-Kontrollen stehen in [Connected Apps und OAuth für KI-Integrationen](../connected-apps-oauth-ki-integrationen/).
 
@@ -82,7 +82,7 @@ Nehmen wir einen Maschinenbauer mit 250 Händlern, einer eigenen Händler-App f�
 
 Die Händler-App bekommt einen Agenten für Auftragsstatus und offene Garantiefälle, das Maschinenportal einen für die Frage „welches Ersatzteilset passt zu meiner Maschine“. Das Backend übergibt die Account-ID des Händlers oder die Asset-IDs des Kunden, und die Aktionen fragen nur innerhalb dieser IDs ab.
 
-Angenommen sind 5.000 Sessions im Monat mit je drei Aktionen. Bei [20 Flex Credits pro Aktion](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) sind das 300.000 Credits im Monat und 3,6 Millionen im Jahr. Zum Listenpreis von [500 € pro 100.000 Credits](https://www.salesforce.com/de/agentforce/pricing/) kosten allein die Aktionen 1.500 € im Monat, Prompts und Data-360-Grounding kommen hinzu. Das Jahr übersteigt die 2,75 Millionen Flex Credits, die die [Max Edition](https://www.salesforce.com/service/pricing/) pro Org und Jahr enthält, bevor Ihr Service-Team einen einzigen Credit verbraucht hat.
+Angenommen sind 5.000 Sessions im Monat mit je drei Aktionen. Bei [20 Flex Credits pro Aktion](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) sind das 300.000 Credits im Monat und 3,6 Millionen im Jahr. Zum Listenpreis von [500 € pro 100.000 Credits](https://www.salesforce.com/eu/agentforce/pricing/) kosten allein die Aktionen 1.500 € im Monat, Prompts und Data-360-Grounding kommen hinzu. Das Jahr übersteigt die 2,75 Millionen Flex Credits, die die [Max Edition](https://www.salesforce.com/service/pricing/) pro Org und Jahr enthält, bevor Ihr Service-Team einen einzigen Credit verbraucht hat.
 
 Den Test, auf dem ich vor dem Go-live bestehen würde: Händler A fragt in zwanzig Formulierungen nach einer Auftragsnummer von Händler B. Jede Antwort muss „nicht gefunden“ lauten.
 
