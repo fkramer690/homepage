@@ -225,6 +225,17 @@ const drawings: Record<string, Drawing> = {
     ${arrow(212, 72, 236)}${check(218, 58)}
     ${box(236, 50, 70, 44, C)}${t(271, 68, 'ERP', { fill: D, size: 7.5, anchor: 'middle' })}${t(271, 81, l('credit note', 'Gutschrift'), { size: 6.8, anchor: 'middle' })}
     ${t(14, 136, l('Salesforce calculates and approves, the ERP pays', 'Salesforce rechnet und gibt frei, das ERP zahlt'), { size: 7 })}`,
+
+  'manufacturing-cloud-warranty-claims': (l) => `
+    ${box(14, 62, 66, 36)}${t(47, 78, l('DEALER', 'HÄNDLER'), { fill: D, size: 7.5, anchor: 'middle' })}${t(47, 90, 'Portal', { size: 6.8, anchor: 'middle' })}
+    ${arrow(80, 80, 104)}
+    ${box(104, 58, 112, 44)}${t(160, 75, 'CLAIM', { fill: D, size: 7.5, anchor: 'middle' })}${t(160, 89, l('parts · labour · transport', 'Teile · Arbeit · Transport'), { size: 6.3, anchor: 'middle' })}
+    ${box(104, 12, 112, 30, C)}${t(160, 25, l('ASSET', 'ANLAGE'), { fill: D, size: 7, anchor: 'middle' })}${t(160, 36, l('serial no. · start date', 'Seriennr. · Startdatum'), { size: 6.3, anchor: 'middle' })}
+    <path d="M160 42V58" stroke="${C}" stroke-width="1.3" stroke-dasharray="3 2"/>
+    ${arrow(216, 80, 240)}${check(222, 66)}
+    ${box(240, 62, 66, 36)}${t(273, 78, 'ERP', { fill: D, size: 7.5, anchor: 'middle' })}${t(273, 90, l('credit note', 'Gutschrift'), { size: 6.8, anchor: 'middle' })}
+    <path d="M160 102V116" stroke="${G}" stroke-width="1.2"/><path d="M156.5 111l3.5 5 3.5-5" fill="none" stroke="${G}" stroke-width="1.2"/>
+    ${box(104, 118, 112, 26)}${t(160, 134, l('supplier recovery per part', 'Regress pro Teil'), { size: 6.8, anchor: 'middle' })}`,
 };
 
 export const hasDrawing = (key: string) => key in drawings;
