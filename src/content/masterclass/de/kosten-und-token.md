@@ -30,7 +30,7 @@ KI im Salesforce-Projekt kostet in zwei Währungen. Coding-Agenten wie Claude Co
 
 ## Wofür bezahlen Sie bei KI im Salesforce-Projekt?
 
-Die beiden Rechenwelten haben unterschiedliche Einheiten, Hebel und blinde Flecken:
+Die beiden Rechenwelten im Vergleich:
 
 | | Entwicklung mit Coding-Agenten | Betrieb von Agentforce-Agenten |
 |---|---|---|
@@ -73,7 +73,7 @@ Preise in USD pro Million Tokens laut [Claude-Preisseite](https://platform.claud
 | Claude Opus 4.5 bis 4.8 | 5,00 $ | 6,25 $ | 0,50 $ | 25,00 $ |
 | Claude Sonnet 4.6 | 3,00 $ | 3,75 $ | 0,30 $ | 15,00 $ |
 
-Drei Regeln von derselben Seite zählen für die Planung. Die Batch API halbiert Input und Output. Der Cache-Read zum 0,05-fachen Input-Preis gilt nur für Opus 5.5 und Sonnet 5.5, ältere Modelle und Haiku 5.5 liegen beim 0,1-Fachen. Und Haiku 5.5 springt über 100.000 Prompt-Tokens, Cache eingerechnet, auf den fünffachen Satz. Agentische Sessions wachsen schnell über diese Grenze, Haiku ist deshalb vor allem für kurze, abgegrenzte Aufgaben billig. Zum Vergleich: [GPT-5.5](https://developers.openai.com/api/docs/models/gpt-5.5.md) kostet 5 $ Input, 0,50 $ Cache und 30 $ Output, und über 272.000 Input-Tokens das Doppelte beim Input und das 1,5-Fache beim Output für die ganze Session.
+Drei Regeln von derselben Seite zählen für die Planung. Die Batch API halbiert Input und Output. Der Cache-Read zum 0,05-fachen Input-Preis gilt nur für Opus 5.5 und Sonnet 5.5, ältere Modelle und Haiku 5.5 liegen beim 0,1-Fachen. Und Haiku 5.5 springt über 100.000 Prompt-Tokens, Cache eingerechnet, auf den fünffachen Satz. Agentische Sessions wachsen schnell darüber, Haiku ist also vor allem für kurze Aufgaben billig. Zum Vergleich: [GPT-5.5](https://developers.openai.com/api/docs/models/gpt-5.5.md) kostet 5 $ Input, 0,50 $ Cache und 30 $ Output, und über 272.000 Input-Tokens das Doppelte beim Input und das 1,5-Fache beim Output für die ganze Session.
 
 ### Seats und Abos
 
@@ -90,7 +90,7 @@ Drei Regeln von derselben Seite zählen für die Planung. Die Batch API halbiert
 
 Quellen: [claude.com/pricing](https://claude.com/pricing), [Copilot-Pläne](https://docs.github.com/pt/copilot/get-started/plans-for-github-copilot), [Codex Rate Card](https://help.openai.com/en/articles/20001106-codex-rate-card-2), [Vibes-Preise](https://www.salesforce.com/agentforce/developers/vibe-coding/pricing/), [Vibes-Abrechnung](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-admin-billing.html), [Gemini-Preise](https://cloud.google.com/products/gemini/pricing). Cursor fehlt, weil ich die offizielle Preisseite nicht öffnen konnte.
 
-Für Claude Code nennt Anthropic im [Unternehmenseinsatz](https://code.claude.com/docs/en/costs) rund 13 $ pro Entwickler und aktivem Tag und 150 bis 250 $ im Monat, für 90 Prozent der Nutzer unter 30 $ am Tag. Bei 20 aktiven Tagen sind das 260 $ zu API-Preisen. Ein Team-Premium-Seat kann für einen intensiven Nutzer günstiger sein, solange die Fenster reichen; wie viele Tokens das sind, veröffentlicht Anthropic nicht. Ich würde einen Monat zu API-Preisen messen und erst dann Seats kaufen. Wer die Kosten trägt, Auftraggeber oder Partner, behandle ich in [KI-Coding-Kosten im Salesforce-Projekt](../../blog/ki-coding-kosten-salesforce-projekt/). Meine Grundhaltung: Arbeitet der Agent in Ihrem Repository und Ihren Sandboxes, gehören die Konten Ihnen, aus denselben Gründen wie bei den [DevOps-Werkzeugen](../../blog/warum-kunden-devops-tools-selbst-besitzen-sollten/).
+Für Claude Code nennt Anthropic im [Unternehmenseinsatz](https://code.claude.com/docs/en/costs) rund 13 $ pro Entwickler und aktivem Tag und 150 bis 250 $ im Monat, für 90 Prozent der Nutzer unter 30 $ am Tag. Bei 20 aktiven Tagen sind das 260 $ zu API-Preisen. Ein Team-Premium-Seat kann für intensive Nutzer günstiger sein, solange die Fenster reichen; wie viele Tokens das sind, nennt die Preisseite nicht. Ich würde einen Monat zu API-Preisen messen und erst dann Seats kaufen. Wer die Kosten trägt, Auftraggeber oder Partner, behandle ich in [KI-Coding-Kosten im Salesforce-Projekt](../../blog/ki-coding-kosten-salesforce-projekt/). Meine Grundhaltung: Arbeitet der Agent in Ihrem Repository und Ihren Sandboxes, gehören die Konten Ihnen, aus denselben Gründen wie bei den [DevOps-Werkzeugen](../../blog/warum-kunden-devops-tools-selbst-besitzen-sollten/).
 
 ### Rechenbeispiel: eine agentische Session
 
@@ -168,7 +168,7 @@ Nehmen wir einen Maschinenbauer mit 80 Nutzern in der Service Cloud auf Core Edi
 | Headless Platform Interactions | 42.000 Aufrufe im Monat | unbekannt, Satz TBA |
 | **Summe ohne HPI** | | **rund 31.000 $** |
 
-Zum Vergleich: Die 80 Core-Lizenzen kosten zum Listenpreis 187.200 $ im Jahr. Der KI-Verbrauch ist in diesem Szenario nicht die große Zahl. Das Risiko liegt woanders: Arbeitet das Partnerteam standardmäßig mit Opus statt Sonnet, verdoppelt sich die Entwicklungszeile, wie das Session-Beispiel zeigt. Und der HPI-Satz kann die Rechnung für den Innendienst später verändern, ohne dass jemand etwas am System geändert hat.
+Zum Vergleich: Die 80 Core-Lizenzen kosten zum Listenpreis 187.200 $ im Jahr. Der KI-Verbrauch ist hier nicht die große Zahl. Das Risiko liegt woanders: Arbeitet das Partnerteam standardmäßig mit Opus statt Sonnet, kann sich die Entwicklungszeile verdoppeln, wie das Session-Beispiel zeigt. Und der HPI-Satz kann die Rechnung für den Innendienst später verändern, ohne dass jemand etwas am System geändert hat.
 
 ## Wie budgetieren Sie KI-Kosten im Salesforce-Projekt?
 
