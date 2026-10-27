@@ -39,7 +39,7 @@ Three details matter for planning:
 - **Deterministic steps are billed too.** According to the [help article on billable usage types](https://help.salesforce.com/s/articleView?language=en_US&id=ai.usage_flex_credits.htm&type=5), agent actions are billed when they run, whether deterministically or through LLM reasoning. Moving a warranty rule into [Agent Script](../agent-script-deterministic-rules/) makes the agent more reliable, but each action still costs the same.
 - **One pricing model per org.** Flex Credits and the $2 per conversation model are not supported in the same org.
 
-Salesforce offers three buying models. Pre-Purchase pays for the full term upfront. Pre-Commit sets a baseline that is billed monthly in arrears, with a true-up at the end of the term. PayGo bills what you use. Usage above the entitlement is billed at the contracted rate, and the pricing page states there is no overage penalty. Since the [Flex Agreement of May 2025](https://www.salesforce.com/news/press-releases/2025/05/15/agentforce-flexible-pricing-news/) you can also convert user licences into Flex Credits and back.
+Salesforce offers three buying models. Pre-Purchase pays for the full term upfront. Pre-Commit sets a baseline that is billed monthly in arrears, with a true-up at the end of the term. PayGo bills what you use. Usage above the entitlement is billed at the contracted rate, and the pricing page states there is no overage penalty. The [Flex Agreement announced in May 2025](https://www.salesforce.com/news/press-releases/2025/05/15/agentforce-flexible-pricing-news/) also allows converting user licences into Flex Credits and back, which helps when an agent takes over work from licensed users.
 
 ## What do prompts cost, and why does the model matter?
 
@@ -50,7 +50,7 @@ Prompts are the meter that is easiest to overlook, because the examples on the p
 | Basic | 2 | GPT-5 Mini, Gemini 2.5 Flash, Nova Lite |
 | Standard | 4 | Claude Sonnet 4.6, Claude Sonnet 5, GPT-5, Gemini 2.5 Pro |
 | Advanced | 16 | Claude Opus 4.8, GPT 5.5, GPT 5.6 Sol |
-| Starter | 2 | your own model through the LLM gateway |
+| Starter | 2 | only for bring-your-own models (BYOLLM) |
 
 Metering of Advanced prompts started on 21 July 2026. Model choice is therefore a cost decision: the same 6,500-token summary costs 8 credits on a Basic model, 16 on Standard and 64 on Advanced. For a case summary that a service rep reads and corrects, I would start with a Standard model and only move up if tests show a quality gap.
 
@@ -70,11 +70,11 @@ Actions in sandboxes and scratch orgs cost 16 credits, voice actions 24. Prompts
 
 When the agent grounds its answers on manuals, service bulletins or spare parts catalogues, Data 360 processes these documents. The rate card charges 150 credits per MB for unstructured processing and 600 per MB for intelligent processing in the base tier. Tiers reset on the first day of each month and apply per usage type: up to 300,000 credits the base rate applies, above that the rate drops in three steps to a fifth, 30 credits per MB from 12.5 million credits. Queries cost 3 credits per million rows. In a sandbox there are no tiers, and unstructured processing costs a flat 120 credits per MB.
 
-Two more cost drivers come from [Salesforce Ben's guide to the Data 360 vector database](https://www.salesforceben.com/data-360-formerly-data-cloud-deep-dive-your-guide-to-the-vector-database/): hybrid search costs twice as many credits as vector search, and search indexes must be rebuilt when new content is added. I go deeper on this in [Data 360 costs for AI agents](../data-360-costs-for-ai-agents/).
+Two more points come from [Salesforce Ben's guide to the Data 360 vector database](https://www.salesforceben.com/data-360-formerly-data-cloud-deep-dive-your-guide-to-the-vector-database/): hybrid search costs twice as many credits as vector search, and search indexes must be rebuilt when new articles or files are added. So I plan the monthly update volume, not only the initial load. I go deeper on this in [Data 360 costs for AI agents](../data-360-costs-for-ai-agents/).
 
 ## A typical scenario: a spare parts agent for dealers
 
-Assume a machine builder with SAP, Service Cloud, a dealer portal and about 2 GB of spare parts catalogues and manuals as PDF files. The agent answers dealers on part numbers, availability and delivery dates, in the portal and on a phone line. All numbers are assumptions to show the method.
+Assume a machine builder with SAP, Service Cloud, a dealer portal and about 2,000 MB of spare parts catalogues and manuals as PDF files. The agent answers dealers on part numbers, availability and delivery dates, in the portal and on a phone line. All numbers are assumptions to show the method.
 
 | Item per month | Assumption | Credits |
 |---|---|---|
@@ -85,13 +85,13 @@ Assume a machine builder with SAP, Service Cloud, a dealer portal and about 2 GB
 | Data 360 updates | 200 MB of changed documents × 150 | 30,000 |
 | **Total** | | **218,000, about $1,090** |
 
-On top come set-up and tests. Processing the 2,000 MB once costs 300,000 credits, or $1,500, which exactly fills the base tier of that month. Ten test runs with 200 conversations each cost 112,000 credits: 9,600 for actions at 16 and 1,600 for prompts per run. A 200 MB sample of the catalogues in the sandbox costs 24,000 credits; the full 2 GB there would cost 240,000. Twelve months at full volume plus set-up and tests come to about 3.05 million credits.
+On top come set-up and tests. Processing the 2,000 MB once costs 300,000 credits, or $1,500, which exactly fills the base tier of that month. Ten test runs with 200 conversations each cost 112,000 credits: 9,600 for actions at 16 and 1,600 for prompts per run. A 200 MB sample of the catalogues in the sandbox costs 24,000 credits; the full 2,000 MB there would cost 240,000. Twelve months at full volume plus set-up and tests come to about 3.05 million credits.
 
 The scenario shows three things:
 
 - **Text actions are only 55 percent of the monthly credits.** An estimate that multiplies conversations by actions misses almost half.
 - **The model is a price lever.** On an Advanced model the same summaries would cost 64,000 instead of 16,000 credits a month.
-- **Included pools run out fast.** One agent of this size uses more than the 2.75 million credits per org per year that the pricing page lists for Max Edition, and about six times the 500,000 included in Core Edition. What that means for licence planning is covered in [the editions Core, Advanced and Max](../salesforce-editions-core-advanced-max/).
+- **Included pools run out fast.** With set-up and tests, one agent of this size uses more than the 2.75 million credits per org per year that the pricing page lists for Max Edition, and about six times the 500,000 included in Core Edition. What that means for licence planning is covered in [the editions Core, Advanced and Max](../salesforce-editions-core-advanced-max/).
 
 The full calculation for an order status agent, including the comparison with conversation pricing, is in [what a dealer service agent costs](../dealer-service-agent-cost-calculation/).
 

@@ -20,7 +20,7 @@ faq:
   - q: "Ist SIForce der offizielle neue Name von AIforce?"
     a: "Bisher nicht belegt. Salesforce Ben berichtet über einen Post von Marc Benioff auf X vom 9. Oktober 2026, fand aber keine offizielle Ankündigung. Bis zum 27. Oktober 2026 habe ich kein Salesforce-Dokument mit dem Namen SIForce gefunden; ich schreibe deshalb weiter AIforce."
   - q: "Was ändert das neue Partnerprogramm für meinen Implementierungspartner?"
-    a: "Seit März 2026 gibt es zwei Stufen, Summit und Select, und 28 Kompetenzen statt 170 Auszeichnungen. Anreize hängen an aktivem Verbrauch statt an Lizenzen, und Agentforce-Fähigkeit muss in einer Sandbox nachgewiesen werden. Ihr Partner hat damit ein Interesse daran, dass Ihre Agenten live gehen und viel genutzt werden."
+    a: "Laut Salesforce-Meldung vom März 2026 gibt es zwei Stufen, Summit und Select, und 28 Kompetenzen statt 170 Auszeichnungen. Anreize hängen an aktivem Verbrauch statt an Lizenzen, und Agentforce-Fähigkeit muss in einer Sandbox nachgewiesen werden. Ihr Partner hat damit ein Interesse daran, dass Ihre Agenten live gehen und viel genutzt werden."
   - q: "Muss mein Partner im FDE Partner Network sein?"
     a: "Nein. Das Netzwerk ist eine exklusive Auswahl, angeführt von großen Beratungen wie Accenture und Deloitte. Für einen Mittelständler zählt mehr, ob der Partner Agenten in vergleichbaren Prozessen in Produktion gebracht hat und das ERP-Umfeld eines Herstellers kennt."
 draft: false
@@ -50,7 +50,7 @@ Salesforce beschreibt AIforce als „a live interface layer that brings the full
 | Agentforce Coworker | KI-Teammitglied in Lightning | verfügbar, laut Salesforce 100.000 Aktivierungen in 35 Tagen |
 | Headless Toolkit | MCPs, APIs, Plugins, Skills und Entwicklerwerkzeuge | ohne Statusangabe |
 
-Für einen Hersteller ist das heute vor allem ein Vertriebsthema. Die 37 Skills decken Account-Recherche, Pipeline und CRM-Pflege ab, Aftersales und Außendienst (Field Service) haben noch nichts zu testen. Zu den Kosten schreibt Salesforce selbst: „Pricing and packaging are subject to change.“ Die [Flex Credits Rate Card vom 31. August 2026](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) führt den Zähler Headless Platform Interactions für agentische Zugriffe weiter mit „TBA“. Wie Externe über MCP auf Ihre Org zugreifen, beschreibe ich in [Kapitel 3](../mcp-und-schnittstellen/), die Kostenseite in [Kapitel 7](../kosten-und-token/).
+Für einen Hersteller ist das heute vor allem ein Vertriebsthema. Die 37 Skills sind Vertriebs-Skills, Aftersales und Außendienst (Field Service) haben noch nichts zu testen. Zu den Kosten schreibt Salesforce selbst: „Pricing and packaging are subject to change.“ Die [Flex Credits Rate Card vom 31. August 2026](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) führt den Zähler Headless Platform Interactions für agentische Zugriffe weiter mit „TBA“. Wie Externe über MCP auf Ihre Org zugreifen, beschreibe ich in [Kapitel 3](../mcp-und-schnittstellen/), die Kostenseite in [Kapitel 7](../kosten-und-token/).
 
 Eine Unterscheidung spart viele Missverständnisse in Workshops. In der [Claudeforce-Meldung vom 27. August 2026](https://www.salesforce.com/ap/news/press-releases/2026/08/27/sg-salesforce-and-anthropic-announce-claudeforce-the-1-ai-meets-the-1-ai-crm/) ist Claude ein Reasoning-Modell der Atlas Reasoning Engine und Standardmodell in Agentforce Vibes, Agentforce Coworker und Slack. Das ist Claude in Salesforce. Salesforce in Claude ist die Gegenrichtung: CRM-Daten erscheinen in der Claude-App Ihrer Mitarbeitenden. Für den Datenschutz sind das zwei getrennte Prüfungen. Was die IT-Leitung konkret tun sollte, steht im Artikel [AIforce: Salesforce in Claude und Slack erklärt](../../blog/aiforce-salesforce-in-claude-und-slack/).
 
@@ -76,7 +76,7 @@ Die zweite Lesart betrifft Ihren Implementierungspartner. Salesforce hat das [Pa
 - Agentforce-Fähigkeit wird in einer Sandbox nachgewiesen, nicht nur per Wissenstest.
 - KI-Governance und Sicherheitsvorgaben sind Pflicht.
 
-Ein Startdatum für die neuen Stufen nennt die Meldung nicht. Am 15. April 2026 folgte das [Forward Deployed Engineer Partner Network](https://www.salesforce.com/news/stories/salesforce-launches-forward-deployed-engineer-partner-network-announcement/), kurz FDE-Netzwerk. Es ist eine exklusive Auswahl mit Accenture und Deloitte als Launch-Partnern, dazu Capgemini, Cognizant, IBM Consulting, KPMG, PwC, Slalom, TCS und kleinere Regionalfirmen. Die Partner bekommen direkten Zugang zu Salesforce-Engineering und zur Roadmap. Salesforce knüpft ihre Anreize daran, dass Agenten in Produktion gehen, und nennt Branchenwissen ausdrücklich als Kriterium, darunter Manufacturing. Die Aussage, diese Firmen hätten ein Drittel aller erfolgreichen Agentforce-Einführungen getragen, ist Salesforces eigene Zahl ohne offengelegte Methode.
+Ein Startdatum für die neuen Stufen nennt die Meldung nicht. Am 15. April 2026 folgte das [Forward Deployed Engineer Partner Network](https://www.salesforce.com/news/stories/salesforce-launches-forward-deployed-engineer-partner-network-announcement/), kurz FDE-Netzwerk. Es ist eine exklusive Auswahl mit Accenture und Deloitte als Launch-Partnern, dazu Capgemini, Cognizant, IBM Consulting, KPMG, PwC, Slalom, TCS und kleinere Regionalfirmen. Die Partner bekommen einen direkten Draht zu den Produktteams und Einblick in die Roadmap. Salesforce knüpft ihre Anreize daran, dass Agenten in Produktion gehen, und nennt Branchenwissen ausdrücklich als Kriterium, darunter Manufacturing. Die Aussage, diese Firmen hätten ein Drittel aller erfolgreichen Agentforce-Einführungen getragen, ist Salesforces eigene Zahl ohne offengelegte Methode.
 
 ### Was die neuen Anreize für Sie als Kunde bedeuten
 
@@ -100,7 +100,7 @@ Aus Architektensicht würde ich so vorgehen:
 4. **Festlegen, wer Flex Credits bezahlt**, in Sandbox und Produktion, und eine monatliche Obergrenze mit Warnung vereinbaren.
 5. **Die Ownership klären**: Wer betreibt den Agenten nach dem Go-live, wer pflegt Prompts, Tests und die SAP-Schnittstelle? Bei mehreren Partnern hilft eine [Object Ownership Matrix](../../blog/object-ownership-matrix-salesforce/).
 
-Das Ergebnis ist kein Urteil über den besseren Partner. Beide Angebote werden vergleichbar, weil KI-Einsatz, Zugriffe und Verbrauch auf dem Tisch liegen.
+Danach lassen sich beide Angebote vergleichen, weil KI-Einsatz, Zugriffe und Verbrauch offen auf dem Tisch liegen. Welcher Partner besser passt, entscheiden dann Preis, Referenzen und Team.
 
 ## Was sollten Hersteller jetzt mit ihren Partnern regeln?
 
