@@ -25,7 +25,7 @@ faq:
 draft: false
 ---
 
-AI coding pushes Salesforce projects towards fixed price for work packages with clear acceptance criteria, while time and materials keeps its place for discovery and undocumented interfaces. The question behind fixed price vs time and materials is who keeps the productivity gain when a partner builds with coding agents. Under hourly billing the partner loses revenue for every day the agent saves, so it has little reason to show you the saving. Salesforce, meanwhile, now pays partners for consumption and for agents in production. I would pay for results where you can measure them and by the hour only where nobody can estimate.
+AI coding pushes Salesforce projects towards fixed price for work packages with clear acceptance criteria, while time and materials keeps its place for discovery and undocumented interfaces. The question behind fixed price vs time and materials is who keeps the productivity gain when a partner builds with coding agents. Under hourly billing the partner loses revenue for every day the agent saves, so it has little reason to show you. Salesforce now pays partners for consumption and for agents in production. I would pay for results where you can measure them and by the hour only where nobody can estimate.
 
 ## Why does AI put time and materials under pressure?
 

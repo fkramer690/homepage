@@ -71,7 +71,7 @@ Assume a machine builder with SAP, Service Cloud, Field Service for its service 
 - **Codex in ChatGPT Business:** at OpenAI's average, $600 to $1,200 for the six developers plus two seats.
 - **Copilot Business:** eight seats = $152 with a pool of 15,200 credits. If GitHub's model rate is close to Anthropic's list price, the pool lasts about 70 sessions, two working days at six sessions per developer and day. After that every credit is billed, and the month ends near $1,400.
 
-At an assumed blended rate of $800 per person and day, the team itself costs 8 × 18 × $800 = $115,200 a month. AI coding adds about one percent. McKinsey [expects](https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/beyond-the-copilot-scaling-the-agentic-product-development-life-cycle) that as agents take on more work, spending on tokens, compute, infrastructure and AI Ops can rise to as much as 20 percent of existing labour costs. In my view the token bill is not today's risk. A meter without limits is, and so is the open question of who gets the productivity gain.
+At an assumed blended rate of $800 per person and day, the team itself costs 8 × 18 × $800 = $115,200 a month. AI coding adds about one percent. McKinsey [expects](https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/beyond-the-copilot-scaling-the-agentic-product-development-life-cycle) that as agents take on more work, spending on tokens, compute, infrastructure and AI Ops can rise to as much as 20 percent of existing labour costs. In my view the bigger risks today are a meter without limits and the open question of who gets the productivity gain.
 
 ## Why does Agentforce Vibes need its own calculation?
 

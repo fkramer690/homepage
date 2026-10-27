@@ -1,6 +1,6 @@
 ---
 title: "Festpreis statt Aufwand: KI in Salesforce-Projekten"
-description: "Verschiebt KI Salesforce-Projekte von Abrechnung nach Aufwand zum Festpreis? Vier Vergütungsmodelle, die neuen Partner-Anreize und ein durchgerechnetes Szenario."
+description: "Verschiebt KI Salesforce-Projekte von Abrechnung nach Aufwand zum Festpreis? Vier Vergütungsmodelle, neue Partner-Anreize und ein durchgerechnetes Szenario."
 pubDate: 2026-10-27
 lang: de
 slug: festpreis-statt-aufwand-ki-salesforce
