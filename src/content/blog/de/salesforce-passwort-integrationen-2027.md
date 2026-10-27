@@ -62,7 +62,7 @@ Beginnen Sie die Bestandsaufnahme jetzt und nicht im Januar. Diese Quellen ergä
 4. **Sandbox-Test.** Schalten Sie in einer Full- oder Partial-Copy-Sandbox die Einstellung „Allow OAuth Username-Password Flows“ ab und lassen Sie die Integrationen laufen. Was dort scheitert, würde im Februar in der Produktion scheitern.
 5. **SOAP-Logins.** Prüfen Sie, welche Integrationsuser sich per SOAP anmelden und welche API-Versionen sie nutzen, damit Sie die Schritte im Dezember und mit Summer '27 nicht überraschen.
 
-Das Ergebnis sollte eine einzige Liste sein: Integration, Zweck, Verantwortlicher auf Kundenseite, technischer Benutzer, Flow, API-Version, Hersteller oder Partner, Umstellungstermin. Diese Liste lohnt sich auch nach der Umstellung, als Teil der [Architekturdokumentation](../../#services).
+Das Ergebnis sollte eine einzige Liste sein: Integration, Zweck, Verantwortlicher auf Kundenseite, technischer Benutzer, Flow, API-Version, Hersteller oder Partner, Umstellungstermin. Diese Liste lohnt sich auch nach der Umstellung, als Teil der [Architekturdokumentation](../../leistungen/salesforce-schnittstellen/).
 
 ## Welcher Flow ersetzt den Passwort-Login?
 

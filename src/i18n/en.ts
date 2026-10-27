@@ -1,9 +1,9 @@
 export const en = {
   lang: 'en',
   meta: {
-    title: 'FK Solution Design – Salesforce architecture for manufacturers',
+    title: 'Salesforce architect for manufacturers | FK Solution Design',
     description:
-      'Independent Salesforce Enterprise Architect for manufacturing companies. After-sales, service, Field Service and B2B sales – on the client side, not tied to a vendor or implementation partner.',
+      'Independent Salesforce Enterprise Architect for manufacturers: after-sales, service, Field Service and B2B sales, on the client side, tied to no vendor.',
   },
   nav: {
     services: 'Services',
@@ -76,6 +76,15 @@ export const en = {
       },
     ],
     more: 'Learn more',
+    featured: 4,
+    moreTitle: 'More services',
+    moreAll: 'All services & partners',
+    moreSoon: 'Page coming',
+    moreItems: [
+      { order: 5, text: 'Plan and steer programmes, coordinate nearshore teams.' },
+      { order: 6, text: 'Does it belong in Salesforce? Alternatives and license costs assessed first.' },
+      { title: 'Change management', text: 'Embed new processes and Salesforce in the daily work of the business teams.' },
+    ],
     focusLabel: 'Focus areas',
     focus: [
       'After-sales & service',
@@ -174,6 +183,7 @@ export const en = {
     certifications: {
       title: 'Certifications',
       metaTitle: 'Salesforce certifications | FK Solution Design',
+      metaDescription: '25 Salesforce certifications, 8 of them architect credentials, plus 15 more, and what each one means for enterprise projects at manufacturers.',
       intro: 'I hold 25 Salesforce certifications, 8 of them architect credentials, earned since 2018. Another 15 certifications cover software architecture, integration, DevOps tools and project delivery.',
       architectTitle: 'Salesforce architect credentials',
       salesforceTitle: 'Further Salesforce certifications',
@@ -224,7 +234,8 @@ export const en = {
   },
   blog: {
     title: 'Blog',
-    metaTitle: 'Blog – Salesforce architecture notes | FK Solution Design',
+    metaTitle: 'Salesforce architecture blog | FK Solution Design',
+    metaDescription: 'Notes from client-side Salesforce work at manufacturers: architecture decisions, partner governance, DevOps, licences and Field Service.',
     intro: 'Notes from client-side Salesforce work at manufacturers: architecture decisions, partner governance, DevOps and the questions that come up in every enterprise project.',
     readingTime: 'min read',
     published: 'Published',
@@ -244,8 +255,26 @@ export const en = {
     readMore: 'Read article',
   },
   servicePage: {
+    partnersLabel: 'Partners',
+    partnersTitle: 'Partners I work with',
+    partnersIntro: 'Architecture and specifications stay on your side. For the build I work with selected partners who bring experience from large international programmes.',
+    partners: [
+      {
+        area: 'Integration',
+        name: 'Blue Apes',
+        text: 'Jitterbit partner. Builds interfaces between Salesforce, SAP and other systems, including in large international programmes.',
+        tags: ['Jitterbit', 'SAP', 'Middleware'],
+      },
+      {
+        area: 'Telephony / CTI',
+        name: 'Mirage',
+        text: 'CTI provider. Brings calls into Service Cloud so agents see the customer and the open cases when the phone rings.',
+        tags: ['CTI', 'Service Cloud', 'Telephony'],
+      },
+    ],
     indexTitle: 'Services',
-    metaTitle: 'Services – Salesforce architecture on the client side | FK Solution Design',
+    metaTitle: 'Services: Salesforce architecture | FK Solution Design',
+    metaDescription: 'Salesforce architect on the client side: target architecture, partner governance, DevOps, integration, programme steering and make-or-buy for manufacturers.',
     indexIntro: 'What I take care of as the Salesforce architect on the client side: from target architecture and partner governance to DevOps, integration, programme steering and make-or-buy decisions.',
     back: 'All services',
     situations: 'Typical situation',

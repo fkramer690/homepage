@@ -3,9 +3,9 @@ import type { Dict } from './en';
 export const de: Dict = {
   lang: 'de',
   meta: {
-    title: 'FK Solution Design – Salesforce-Architektur für die Manufacturing-Branche',
+    title: 'Salesforce-Architekt für die Fertigung | FK Solution Design',
     description:
-      'Unabhängiger Salesforce Enterprise Architect für Fertigungsunternehmen. After-Sales, Service, Field Service und B2B-Vertrieb – auf Kundenseite, ohne Bindung an Hersteller oder Implementierungspartner.',
+      'Unabhängiger Salesforce Enterprise Architect für Fertigungsunternehmen: After-Sales, Service, Field Service und B2B-Vertrieb, auf Kundenseite.',
   },
   nav: {
     services: 'Leistungen',
@@ -78,6 +78,15 @@ export const de: Dict = {
       },
     ],
     more: 'Mehr erfahren',
+    featured: 4,
+    moreTitle: 'Weitere Leistungen',
+    moreAll: 'Alle Leistungen & Partner',
+    moreSoon: 'Seite folgt',
+    moreItems: [
+      { order: 5, text: 'Programme planen und steuern, Nearshore-Teams koordinieren.' },
+      { order: 6, text: 'Gehört das in Salesforce? Alternativen und Lizenzkosten vorher bewertet.' },
+      { title: 'Change Management', text: 'Neue Prozesse und Salesforce im Alltag der Fachbereiche verankern.' },
+    ],
     focusLabel: 'Schwerpunkte',
     focus: [
       'After-Sales & Service',
@@ -176,6 +185,7 @@ export const de: Dict = {
     certifications: {
       title: 'Zertifizierungen',
       metaTitle: 'Salesforce-Zertifizierungen | FK Solution Design',
+      metaDescription: '25 Salesforce-Zertifizierungen, davon 8 Architect-Credentials, plus 15 weitere: was jede davon in Enterprise-Projekten bei Fertigern bedeutet.',
       intro: 'Seit 2018 habe ich 25 Salesforce-Zertifizierungen erworben, davon 8 Architect-Credentials. Weitere 15 Zertifizierungen decken Softwarearchitektur, Integration, DevOps-Tools und Projektabwicklung ab.',
       architectTitle: 'Salesforce Architect-Credentials',
       salesforceTitle: 'Weitere Salesforce-Zertifizierungen',
@@ -226,7 +236,8 @@ export const de: Dict = {
   },
   blog: {
     title: 'Blog',
-    metaTitle: 'Blog – Notizen zur Salesforce-Architektur | FK Solution Design',
+    metaTitle: 'Blog zur Salesforce-Architektur | FK Solution Design',
+    metaDescription: 'Notizen aus Salesforce-Projekten auf Kundenseite bei Fertigungsunternehmen: Architektur, Partnersteuerung, DevOps, Lizenzen und Field Service.',
     intro: 'Notizen aus der Salesforce-Arbeit auf Kundenseite bei Fertigungsunternehmen: Architekturentscheidungen, Partnersteuerung, DevOps und die Fragen, die in jedem Enterprise-Projekt aufkommen.',
     readingTime: 'Min. Lesezeit',
     published: 'Veröffentlicht',
@@ -246,8 +257,26 @@ export const de: Dict = {
     readMore: 'Artikel lesen',
   },
   servicePage: {
+    partnersLabel: 'Partner',
+    partnersTitle: 'Partner, mit denen ich arbeite',
+    partnersIntro: 'Architektur und Spezifikation bleiben auf Ihrer Seite. Für die Umsetzung arbeite ich mit ausgewählten Partnern, die Erfahrung aus großen internationalen Programmen mitbringen.',
+    partners: [
+      {
+        area: 'Integration',
+        name: 'Blue Apes',
+        text: 'Jitterbit-Partner. Setzt Schnittstellen zwischen Salesforce, SAP und weiteren Systemen um, auch in großen internationalen Programmen.',
+        tags: ['Jitterbit', 'SAP', 'Middleware'],
+      },
+      {
+        area: 'Telefonie / CTI',
+        name: 'Mirage',
+        text: 'CTI-Anbieter. Bringt Anrufe in die Service Cloud, damit Agenten beim Klingeln Kunde und offene Fälle sehen.',
+        tags: ['CTI', 'Service Cloud', 'Telefonie'],
+      },
+    ],
     indexTitle: 'Leistungen',
-    metaTitle: 'Leistungen – Salesforce-Architektur auf Kundenseite | FK Solution Design',
+    metaTitle: 'Leistungen: Salesforce-Architektur | FK Solution Design',
+    metaDescription: 'Salesforce-Architekt auf Kundenseite: Zielarchitektur, Partnersteuerung, DevOps, Integration, Programmsteuerung und Make-or-buy für Fertigungsunternehmen.',
     indexIntro: 'Was ich als Salesforce-Architekt auf Kundenseite übernehme: von Zielarchitektur und Partnersteuerung über DevOps und Integration bis zu Programmsteuerung und Make-or-buy-Entscheidungen.',
     back: 'Alle Leistungen',
     situations: 'Typische Ausgangslage',

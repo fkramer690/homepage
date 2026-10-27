@@ -70,7 +70,7 @@ Ich empfehle es drei Gruppen:
 - **Entwickler und Tech Leads**, die Git kennen, aber noch keine vollständige Salesforce-Pipeline mit Deployment Actions, Quality Gates und Monitoring gesehen haben.
 - **Release Manager und Architekten**, die den Release-Prozess verantworten. Level 3 würde ich für diese Rolle zur Pflicht machen, gerade in Programmen mit mehreren Partnern, in denen [Pull-Request-Reviews](../warum-pull-request-reviews-pflicht-sind/) und ein klarer Release-Rhythmus den Unterschied machen.
 
-Für Kunden ist das Training außerdem ein günstiger Weg, internes DevOps-Wissen aufzubauen. Das ist die Grundlage dafür, den Release-Prozess selbst zu besitzen, statt ihn einem Partner zu überlassen. Dieses Thema zieht sich durch einen Großteil meiner [Arbeit an Architektur und Governance](../../#services).
+Für Kunden ist das Training außerdem ein günstiger Weg, internes DevOps-Wissen aufzubauen. Das ist die Grundlage dafür, den Release-Prozess selbst zu besitzen, statt ihn einem Partner zu überlassen. Dieses Thema zieht sich durch einen Großteil meiner [Arbeit an Architektur und Governance](../../leistungen/partnersteuerung/).
 
 ## Wie fällt mein Fazit aus?
 

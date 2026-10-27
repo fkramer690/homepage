@@ -70,7 +70,7 @@ I would recommend it to three groups:
 - **Developers and tech leads** who know Git but have not seen a complete Salesforce pipeline, including deployment actions, quality gates and monitoring.
 - **Release managers and architects** who own the release process. Level 3 is the part I would make mandatory for anyone in that role, especially in programmes with several partners, where [pull request reviews](../why-pull-request-reviews-are-a-must-in-enterprise-projects/) and a clear release rhythm make the difference.
 
-For clients, it is also a cheap way to build internal DevOps knowledge, which is the basis for owning the release process instead of leaving it with a partner. That is a theme in most of my [architecture and governance work](../../#services).
+For clients, it is also a cheap way to build internal DevOps knowledge, which is the basis for owning the release process instead of leaving it with a partner. That is a theme in most of my [architecture and governance work](../../services/partner-governance/).
 
 ## What is my verdict?
 

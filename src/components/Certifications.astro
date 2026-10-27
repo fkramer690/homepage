@@ -27,8 +27,39 @@ const home = homeHref(lang);
 const coverage = lang === 'de' ? { wide: coverageWideDe, narrow: coverageNarrowDe } : { wide: coverageWideEn, narrow: coverageNarrowEn };
 const basics = lang === 'de' ? { wide: basicsWideDe, narrow: basicsNarrowDe } : { wide: basicsWideEn, narrow: basicsNarrowEn };
 const groups = Object.entries(otherCerts) as [keyof typeof otherCerts, Cert[]][];
+
+// The credentials as structured data, attached to the person on the home page.
+const root = new URL(import.meta.env.BASE_URL, Astro.site).href;
+const salesforce = { '@type': 'Organization', name: 'Salesforce', url: 'https://www.salesforce.com' };
+const credential = (cert: Cert, issuer?: typeof salesforce) => ({
+  '@type': 'EducationalOccupationalCredential',
+  name: issuer ? `Salesforce Certified ${cert.name}` : cert.name,
+  credentialCategory: 'certification',
+  dateCreated: String(cert.year),
+  ...(issuer ? { recognizedBy: issuer } : {}),
+});
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfilePage',
+  '@id': new URL(Astro.url.pathname, Astro.site).href,
+  name: c.metaTitle,
+  inLanguage: lang,
+  mainEntity: {
+    '@type': 'Person',
+    '@id': `${root}#person`,
+    name: site.person,
+    jobTitle: 'Salesforce Enterprise Architect',
+    hasCredential: [
+      ...[...architectCerts, ...salesforceCerts].map((cert) => credential(cert, salesforce)),
+      ...groups.flatMap(([, certs]) => certs.map((cert) => credential(cert))),
+    ],
+  },
+};
 ---
-<Page lang={lang} title={c.metaTitle} description={c.intro} alternates={{ en: localHref('en', 'certifications/'), de: localHref('de', 'certifications/') }}>
+<Page lang={lang} title={c.metaTitle} description={c.metaDescription} alternates={{ en: localHref('en', 'certifications/'), de: localHref('de', 'certifications/') }}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </Fragment>
   <section class="section blog">
     <div class="container blog-inner">
       <p class="eyebrow mono">{t.about.title}</p>

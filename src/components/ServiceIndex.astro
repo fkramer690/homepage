@@ -11,7 +11,7 @@ const { lang } = Astro.props;
 const t = lang === 'de' ? de : en;
 const services = await getServices(lang);
 ---
-<Page lang={lang} title={t.servicePage.metaTitle} description={t.servicePage.indexIntro} alternates={{ en: servicesIndex('en'), de: servicesIndex('de') }}>
+<Page lang={lang} title={t.servicePage.metaTitle} description={t.servicePage.metaDescription} alternates={{ en: servicesIndex('en'), de: servicesIndex('de') }}>
   <section class="section blog">
     <div class="container">
       <p class="eyebrow mono">FK Solution Design</p>
@@ -29,6 +29,24 @@ const services = await getServices(lang);
           </li>
         ))}
       </ul>
+
+      <div class="partners" id="partners">
+        <p class="label mono">{t.servicePage.partnersLabel}</p>
+        <h2>{t.servicePage.partnersTitle}</h2>
+        <p class="blog-intro">{t.servicePage.partnersIntro}</p>
+        <ul class="refs">
+          {t.servicePage.partners.map((p) => (
+            <li class="ref">
+              <p class="ref-sector mono">{p.area}</p>
+              <h3>{p.name}</h3>
+              <p>{p.text}</p>
+              <ul class="tags tags-small">
+                {p.tags.map((tag) => <li>{tag}</li>)}
+              </ul>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   </section>
 </Page>

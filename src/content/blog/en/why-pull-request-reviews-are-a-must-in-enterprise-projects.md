@@ -82,7 +82,7 @@ The most common objection is speed. In my experience reviews slow a project down
 
 ## Who should own the review process?
 
-The client. This matters to me as an [architect on the client side](../../#about). If one implementation partner owns the review rules, that partner decides how everyone else builds, including its competitors. When the client owns the rules and the approval for architecture-relevant changes, partners stay comparable and replaceable. That is the basis of good [partner steering and governance](../../#services).
+The client. This matters to me as an [architect on the client side](../../#about). If one implementation partner owns the review rules, that partner decides how everyone else builds, including its competitors. When the client owns the rules and the approval for architecture-relevant changes, partners stay comparable and replaceable. That is the basis of good [partner steering and governance](../../services/partner-governance/).
 
 This does not mean the client has to review every line personally. Partners can and should review each other's work. But the standards, the approval rights and the repository should sit with the client, ideally with an internal person who takes over the process long term.
 

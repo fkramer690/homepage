@@ -102,4 +102,4 @@ A pragmatic path:
 4. **Set up approvals** for every decision with financial impact.
 5. **Measure and expand** only when the numbers support it.
 
-Service Cloud is moving fast, and choosing the right building blocks is part of [architecture and partner governance](../../#services). If you want to discuss how these launches fit your service organisation, [send me a message](#contact).
+Service Cloud is moving fast, and choosing the right building blocks is part of [architecture and partner governance](../../services/salesforce-architecture/). If you want to discuss how these launches fit your service organisation, [send me a message](#contact).

@@ -1,7 +1,9 @@
 ---
 // Schema.org data so search engines understand who is behind the site.
 import type { Dict } from '../i18n/en';
+import { getImage } from 'astro:assets';
 import { site } from '../site';
+import portrait from '../assets/portrait.png';
 
 interface Props {
   t: Dict;
@@ -11,10 +13,21 @@ const { t, url } = Astro.props;
 const base = import.meta.env.BASE_URL;
 const abs = (path: string) => new URL(path, Astro.site).href;
 const l = site.legal;
+const photo = await getImage({ src: portrait, width: 720, format: 'jpg' });
 
 const data = {
   '@context': 'https://schema.org',
   '@graph': [
+    {
+      // Gives Google the site name shown above the search result.
+      '@type': 'WebSite',
+      '@id': `${abs(base)}#website`,
+      name: 'FK Solution Design',
+      alternateName: site.company,
+      url: abs(base),
+      inLanguage: ['de', 'en'],
+      publisher: { '@id': `${abs(base)}#organization` },
+    },
     {
       '@type': 'ProfessionalService',
       '@id': `${abs(base)}#organization`,
@@ -42,7 +55,11 @@ const data = {
       '@id': `${abs(base)}#person`,
       name: site.person,
       jobTitle: 'Salesforce Enterprise Architect',
+      url,
+      image: abs(photo.src),
       worksFor: { '@id': `${abs(base)}#organization` },
+      workLocation: { '@type': 'Place', name: 'Köln/Bonn' },
+      knowsAbout: ['Salesforce Architecture', 'Salesforce DevOps', 'Salesforce Field Service', 'Service Cloud', 'Manufacturing Cloud', 'B2B Commerce', 'Salesforce Integration', 'Partner Governance'],
       sameAs: [site.linkedin],
     },
   ],

@@ -101,7 +101,7 @@ Konkret heißt das:
 3. **Agenten nicht separat behandeln.** Agentforce-Vorhaben laufen durch dasselbe Review, ergänzt um die Agenten-Variante jeder Säule.
 4. **Kostensäule ernst nehmen.** Lizenzen und Sandboxes jährlich gegen die tatsächliche Nutzung prüfen.
 
-Wie ich Standards und Reviews in solchen Programmen aufsetze, gehört zu meiner [Arbeit an Partnersteuerung und Architektur](../../#services).
+Wie ich Standards und Reviews in solchen Programmen aufsetze, gehört zu meiner [Arbeit an Partnersteuerung und Architektur](../../leistungen/partnersteuerung/).
 
 ## Wo sollten Sie anfangen?
 
