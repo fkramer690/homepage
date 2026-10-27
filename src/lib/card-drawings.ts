@@ -635,6 +635,16 @@ const drawings: Record<string, Drawing> = {
     <path d="M16 118H304" stroke="${L}"/>
     ${t(16, 134, l('vibe coding: nobody reads the code', 'Vibe Coding: niemand liest den Code'), { fill: D, size: 7.5 })}
     ${t(16, 150, l('Developer Edition: 110 requests, 1 month', 'Developer Edition: 110 Anfragen, 1 Monat'), { size: 7 })}`,
+
+  'eu-ai-act-agentforce-deadlines': (l) => `
+    ${t(18, 18, l('EU AI ACT (REG. 2026/1744)', 'EU AI ACT (VO 2026/1744)'), { fill: D, size: 7 })}
+    <path d="M30 62H290" stroke="${G}" stroke-width="1.2"/>
+    ${dot(40, 62, C, 4)}${dot(120, 62, G, 3)}${dot(200, 62, G, 3)}${dot(280, 62, G, 3)}
+    ${t(40, 46, '02.08.2026', { fill: C, size: 7.5, anchor: 'middle' })}${t(120, 46, '02.12.2026', { size: 7.5, anchor: 'middle' })}${t(200, 46, '02.12.2027', { size: 7.5, anchor: 'middle' })}${t(280, 46, '02.08.2028', { size: 7.5, anchor: 'middle' })}
+    ${t(40, 80, 'Art. 50', { fill: C, size: 7.5, anchor: 'middle' })}${t(120, 80, 'Art. 50(2)', { size: 7.5, anchor: 'middle' })}${t(200, 80, l('Annex III', 'Anhang III'), { size: 7.5, anchor: 'middle' })}${t(280, 80, l('Annex I', 'Anhang I'), { size: 7.5, anchor: 'middle' })}
+    ${t(40, 92, l('AI notice', 'KI-Hinweis'), { size: 7, anchor: 'middle' })}${t(120, 92, l('marking', 'Kennzeichnung'), { size: 7, anchor: 'middle' })}${t(200, 92, 'HR', { size: 7, anchor: 'middle' })}${t(280, 92, l('machinery', 'Maschinen'), { size: 7, anchor: 'middle' })}
+    ${box(18, 106, 140, 40, C)}${t(28, 122, l('Dealer chat agent', 'Chat-Agent Händler'), { fill: D, size: 7.5 })}${t(28, 136, l('transparency, due now', 'Transparenz, jetzt fällig'), { fill: C, size: 7 })}
+    ${box(166, 106, 136, 40)}${t(176, 122, l('Applicant ranking', 'Bewerber-Ranking'), { fill: D, size: 7.5 })}${t(176, 136, l('high-risk from 12/2027', 'Hochrisiko ab 12/2027'), { size: 7 })}`,
 };
 
 export const hasDrawing = (key: string) => key in drawings;
