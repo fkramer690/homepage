@@ -58,7 +58,7 @@ The pricing page lists these items (October 2026):
 | CRM Analytics | 3 users | 5 users |
 | Knowledge Management | 3 users | 5 users |
 
-For most manufacturers the decisive line is Order Management. If the ERP stays the owner of the order, which is the normal case with SAP, full Order Management in Salesforce adds little. The storefront count matters when you run separate stores per brand or legal entity. For countries and dealer tiers, buyer groups in one store are usually enough.
+For most manufacturers the decisive line is Order Management. Order Management is the Salesforce solution that processes an order after checkout: allocation to a location, fulfilment, changes and returns. If the ERP stays the owner of the order, which is the normal case with SAP, full Order Management in Salesforce adds little. The storefront count matters when you run separate stores per brand or legal entity. For countries and dealer tiers, buyer groups in one store are usually enough.
 
 One rule applies to existing customers: the pricing page says customers who already use Order Management "will need to renew on Commerce Cloud Advanced". Upgrades during the contract term are possible.
 
@@ -77,6 +77,8 @@ This is where estimates go wrong most often. The GMV fee covers the store and th
 Integrators publish rates of about 1 percent of GMV for Growth and 2 percent for Advanced, for example [Elogic's pricing overview](https://elogic.co/blog/salesforce-pricing-plans). Salesforce does not confirm these figures: its pricing page shows "Contact for Pricing" for both editions. I treat them as a rough starting point for a first estimate and nothing more.
 
 What I would rather do is calculate with the rate as a variable. A typical scenario, as an assumption: a manufacturer expects 15 million euros of spare parts revenue through the store in year three, net of tax and shipping. Every percentage point of GMV is then 150,000 euros a year. The difference between a quote at 1 percent and one at 2 percent is the salary of more than one inside sales employee. That is why the rate, not the licence count, is what you negotiate.
+
+Buyer licences are still not small change. In the same scenario with 250 dealers and one buyer each on a member licence, that is 250 times $35 times 12, so $105,000 a year at list price. If some dealers only order on a few days a month, the login licence at $15 can be cheaper, because according to [Salesforce Help](https://help.salesforce.com/s/articleView?language=en_US&id=sf.users_license_types_communities.htm&type=5) several logins on the same day consume only one login. Work out that split before the quote, not after it.
 
 ## What should be in the contract?
 
