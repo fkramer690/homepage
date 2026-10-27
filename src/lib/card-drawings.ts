@@ -645,6 +645,22 @@ const drawings: Record<string, Drawing> = {
     ${t(40, 92, l('AI notice', 'KI-Hinweis'), { size: 7, anchor: 'middle' })}${t(120, 92, l('marking', 'Kennzeichnung'), { size: 7, anchor: 'middle' })}${t(200, 92, 'HR', { size: 7, anchor: 'middle' })}${t(280, 92, l('machinery', 'Maschinen'), { size: 7, anchor: 'middle' })}
     ${box(18, 106, 140, 40, C)}${t(28, 122, l('Dealer chat agent', 'Chat-Agent Händler'), { fill: D, size: 7.5 })}${t(28, 136, l('transparency, due now', 'Transparenz, jetzt fällig'), { fill: C, size: 7 })}
     ${box(166, 106, 136, 40)}${t(176, 122, l('Applicant ranking', 'Bewerber-Ranking'), { fill: D, size: 7.5 })}${t(176, 136, l('high-risk from 12/2027', 'Hochrisiko ab 12/2027'), { size: 7 })}`,
+
+  'nearshore-teams-with-ai-agents': (l) => `
+    ${t(18, 18, l('NEARSHORE TEAM WITH AGENTS (SCENARIO)', 'NEARSHORE-TEAM MIT AGENTEN (SZENARIO)'), { fill: D, size: 7 })}
+    ${[[28, 36], [46, 36], [28, 52], [46, 52], [28, 68], [46, 68], [28, 84]].map(([x, y]) => `<path d="M${x + 4} ${y}L120 60" stroke="${L}" stroke-width="1"/>` + dot(x, y, G, 4)).join('')}
+    ${t(18, 104, l('7 developers, 1 reviewer', '7 Entwickler, 1 Reviewer'), { size: 7 })}
+    ${box(120, 44, 64, 32, C)}${t(152, 58, 'REVIEW', { fill: D, size: 7.5, anchor: 'middle' })}${t(152, 70, l('bottleneck', 'Engpass'), { fill: C, size: 7, anchor: 'middle' })}
+    ${t(152, 92, l('25 to 40 PRs per sprint', '25 auf 40 PRs pro Sprint'), { size: 7, anchor: 'middle' })}
+    <path d="M204 30V100" stroke="${L}"/>
+    ${t(212, 40, 'MCKINSEY 2026', { fill: D, size: 7 })}
+    ${t(212, 56, l('time saved 11.8 %', 'Zeit gespart 11,8 %'), { size: 7 })}
+    ${t(212, 70, l('less rework 6.2 %', 'Nacharbeit -6,2 %'), { size: 7 })}
+    <path d="M18 116H302" stroke="${L}"/>
+    ${t(18, 132, l('ROTATION = ACCESS EVENT', 'ROTATION = ZUGRIFFSEREIGNIS'), { fill: D, size: 7.5 })}
+    ${check(18, 142)}${t(30, 147, l('tool account', 'Werkzeugkonto'), { size: 7 })}
+    ${check(100, 142)}${t(112, 147, l('org access', 'Org-Zugang'), { size: 7 })}
+    ${check(176, 142)}${t(188, 147, l('transcripts: 30 days', 'Transkripte: 30 Tage'), { size: 7 })}`,
 };
 
 export const hasDrawing = (key: string) => key in drawings;
