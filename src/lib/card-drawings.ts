@@ -303,6 +303,16 @@ const drawings: Record<string, Drawing> = {
     ${[[60, l('phase 1', 'Phase 1'), l('large country', 'großes Land'), true], [140, l('phase 2', 'Phase 2'), l('large region', 'große Region'), true], [220, l('phase 3', 'Phase 3'), l('more countries', 'weitere Länder'), false], [290, '…', '', false]].map(([x, a, b, hit]) => dot(x, 96, hit ? C : G, hit ? 4 : 3) + t(x, 86, a, { fill: hit ? C : G, size: 7, anchor: 'middle' }) + t(x, 112, b, { size: 6.5, anchor: 'middle' })).join('')}
     ${t(170, 40, l('≥ 80 % identical per country', '≥ 80 % identisch pro Land'), { size: 7 })}
     ${t(14, 146, l('+ change management in every country', '+ Change Management in jedem Land'), { fill: D, size: 7 })}`,
+
+  'agentforce-yes-or-no-manufacturers': (l) => `
+    ${t(18, 18, l('5 CRITERIA', '5 KRITERIEN'), { fill: D, size: 7 })}${t(136, 18, l('3 CANDIDATES (SCENARIO)', '3 KANDIDATEN (SZENARIO)'), { fill: D, size: 7 })}
+    ${[l('volume', 'Volumen'), l('data', 'Daten'), l('ERP API', 'ERP-API'), l('cost model', 'Kostenmodell'), l('edition', 'Edition')].map((s, i) => check(18, 32 + i * 16, G) + t(32, 36 + i * 16, s, { size: 7 })).join('')}
+    ${arrow(96, 68, 130, C)}
+    ${[[l('dealer enquiries', 'Händleranfragen'), l('start', 'starten'), true], [l('warranty pre-check', 'Garantie-Vorprüfung'), l('wait: data', 'warten: Daten'), false], [l('special machines', 'Sondermaschinen'), l('stays manual', 'bleibt manuell'), false]]
+      .map(([a, b, hi], i) => box(136, 26 + i * 30, 166, 22, hi ? C : G) + t(146, 40 + i * 30, String(a), { fill: D, size: 7 }) + t(294, 40 + i * 30, String(b), { fill: hi ? C : G, size: 7, anchor: 'end' })).join('')}
+    <path d="M18 120H302" stroke="${L}"/>
+    ${t(18, 136, l('1 action = 20 Flex Credits = $0.10', '1 Aktion = 20 Flex Credits = 0,10 $'), { fill: D, size: 7.5 })}
+    ${t(18, 150, l('sandbox: 16 credits per action', 'Sandbox: 16 Credits pro Aktion'), { size: 7 })}`,
 };
 
 export const hasDrawing = (key: string) => key in drawings;
