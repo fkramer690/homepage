@@ -89,7 +89,7 @@ You don't have to buy a commercial platform to get there. A good example is [sfd
 - **Generated documentation** of the project, including flows, straight from the repository.
 - **A VS Code extension** that gives admins and consultants a visual way into the Git workflow, so DevOps is not only for developers.
 
-Salesforce's own DevOps Center is another free option. It brings source control to teams that mostly work with clicks, but it covers less of the pipeline, monitoring and documentation side. Commercial tools like Gearset or Copado have their place too, especially when a team wants a fully managed interface. The choice depends on the team, the existing toolchain and the budget. What matters is that a decision is made early and enforced for everyone, including every partner.
+Salesforce's own DevOps Center is another free option. It brings source control to teams that mostly work with clicks, but it covers less of the pipeline, monitoring and documentation side; the direct comparison with sfdx-hardis is in [sfdx-hardis vs DevOps Center](../sfdx-hardis-vs-devops-center-comparison/). Commercial tools like Gearset or Copado have their place too, especially when a team wants a fully managed interface. The choice depends on the team, the existing toolchain and the budget. What matters is that a decision is made early and enforced for everyone, including every partner.
 
 ## What does the business side gain?
 

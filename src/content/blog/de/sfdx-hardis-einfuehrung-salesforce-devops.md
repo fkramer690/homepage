@@ -66,7 +66,7 @@ Kommerzielle Tools wie Gearset oder Copado haben ihre Berechtigung. Sie bieten e
 
 ![Vergleich von sfdx-hardis mit kommerziellen Plattformen wie Gearset oder Copado: sfdx-hardis hat keine Lizenzgebühren, hält den Prozess im Repository und in der Pipeline-Konfiguration des Kunden in einfachen Dateien, setzt Git-Grundlagen voraus, wobei die VS-Code-Erweiterung für Admins einen großen Teil der Lücke schließt, und setzt auf Community-Support oder bezahlte Beratung. Kommerzielle Plattformen werden meist pro Nutzer und Jahr abgerechnet, halten einen Teil des Prozesses im Produkt des Herstellers, verstecken mehr von Git hinter einer verwalteten Weboberfläche und bieten Herstellersupport. Kein Tool passt für jedes Team: früh wählen, sauber begründen und für jeden Partner verbindlich machen.](../../../assets/blog/sfdx-hardis-vs-commercial-de.png)
 
-Das DevOps Center von Salesforce ist eine weitere kostenlose Option. Es ist ein guter Einstieg für Teams, die vor allem klicken, deckt aber weniger von Pipeline, Monitoring und Dokumentation ab.
+Das DevOps Center von Salesforce ist eine weitere kostenlose Option. Es ist ein guter Einstieg für Teams, die vor allem klicken, deckt aber weniger von Pipeline, Monitoring und Dokumentation ab. Den ausführlichen Vergleich, inklusive der unterstützten Git-Plattformen, finden Sie in [sfdx-hardis oder DevOps Center](../sfdx-hardis-oder-devops-center-vergleich/).
 
 Wichtig ist mir dabei: Es gibt kein Tool, das für jedes Team richtig ist. Entscheidend ist, dass die Wahl früh getroffen, sauber begründet und dann für alle Beteiligten verbindlich wird, auch für jeden Partner. Ein Programm, in dem jeder Partner sein eigenes Werkzeug mitbringt, hat am Ende mehrere Release-Prozesse und damit keinen.
 

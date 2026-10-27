@@ -89,7 +89,7 @@ Um dorthin zu kommen, muss man keine kommerzielle Plattform kaufen. Ein gutes Be
 - **Generierte Dokumentation** des Projekts, einschließlich Flows, direkt aus dem Repository.
 - **Eine VS-Code-Erweiterung**, die Admins und Beratern einen visuellen Zugang zum Git-Workflow gibt. So ist DevOps nicht nur etwas für Entwickler.
 
-Das DevOps Center von Salesforce selbst ist eine weitere kostenlose Option. Es bringt Versionsverwaltung auch zu Teams, die vor allem mit Klicks arbeiten, deckt aber weniger von Pipeline, Monitoring und Dokumentation ab. Kommerzielle Tools wie Gearset oder Copado haben ebenfalls ihre Berechtigung, vor allem wenn ein Team eine komplett verwaltete Oberfläche möchte. Die Wahl hängt vom Team, der vorhandenen Toolchain und dem Budget ab. Entscheidend ist, dass früh entschieden und für alle verbindlich durchgesetzt wird, auch für jeden Partner.
+Das DevOps Center von Salesforce selbst ist eine weitere kostenlose Option. Es bringt Versionsverwaltung auch zu Teams, die vor allem mit Klicks arbeiten, deckt aber weniger von Pipeline, Monitoring und Dokumentation ab; den direkten Vergleich mit sfdx-hardis finden Sie in [sfdx-hardis oder DevOps Center](../sfdx-hardis-oder-devops-center-vergleich/). Kommerzielle Tools wie Gearset oder Copado haben ebenfalls ihre Berechtigung, vor allem wenn ein Team eine komplett verwaltete Oberfläche möchte. Die Wahl hängt vom Team, der vorhandenen Toolchain und dem Budget ab. Entscheidend ist, dass früh entschieden und für alle verbindlich durchgesetzt wird, auch für jeden Partner.
 
 ## Was gewinnt der Fachbereich?
 
