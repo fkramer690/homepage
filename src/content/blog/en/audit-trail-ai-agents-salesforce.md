@@ -49,7 +49,7 @@ Each question points to a different log, licence and retention period:
 | Unique Query events | Which SOQL queries, filters and reports ran | Not in the free tier | As Event Monitoring |
 | Setup Audit Trail | Who changed what in Setup | Standard | At least 180 days |
 | Field history | Which field value changed, when, by whom | Standard; Field Audit Trail as add-on | 18 to 24 months; archive until deleted |
-| Claude Enterprise audit logs | Logins, conversations created or deleted, exports | Enterprise plan | Export covers 180 days |
+| Claude Enterprise audit logs | Logins, file uploads, conversations created or deleted | Enterprise plan | Export covers 180 days |
 
 ## What do the agent logs inside Salesforce record?
 
@@ -73,7 +73,7 @@ With Shield or the Event Monitoring add-on, the [Event Monitoring FAQ](https://h
 
 The paid tier adds event types such as [Unique Query](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_eventlogfile_unique_query_event_elf.htm), which captures the SOQL queries, filter IDs and report IDs that were processed. That is the event that shows whether an AI client asked for one dealer's price agreement or for all of them.
 
-Salesforce's logs end where the data leaves Salesforce. For Claude, [Anthropic's audit logs](https://support.claude.com/en/articles/9970975-access-audit-logs) exist for Enterprise organisations only. They record sign-ins, file events and conversations created or deleted, without chat content, and an export covers the past 180 days. I would ask every other AI vendor the same: which events, how long, which export.
+Salesforce's logs end where the data leaves Salesforce. For Claude, [Anthropic's audit logs](https://support.claude.com/en/articles/9970975-access-audit-logs) exist for Enterprise organisations only. They record sign-ins, file uploads and conversations created, deleted or renamed, without chat content, and an export covers the past 180 days. I would ask every other AI vendor the same: which events, how long, which export.
 
 ## Which logs show who changed the agent?
 

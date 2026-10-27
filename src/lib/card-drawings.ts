@@ -748,7 +748,7 @@ const drawings: Record<string, Drawing> = {
     ${cross(22, 110)}${t(32, 114, l('postmark-mcp 1.0.16: BCC of every email', 'postmark-mcp 1.0.16: Blindkopie jeder Mail'), { size: 7 })}
     ${cross(22, 128)}${t(32, 132, l('mcp-remote: CVSS 9.6, 437,000+ downloads', 'mcp-remote: CVSS 9,6, über 437.000 Downloads'), { size: 7 })}
     ${t(18, 152, l('nightly jobs: integration, not MCP', 'nächtliche Jobs: Integration, kein MCP'), { fill: D, size: 7.5 })}
-    ${tag(232, 108, 74, '20.02.2027')}${t(269, 142, l('password flow ends', 'Passwort-Flow endet'), { size: 7, anchor: 'middle' })}`,
+    ${tag(232, 108, 74, l('20 Feb 2027', '20.02.2027'))}${t(269, 142, l('password flow ends', 'Passwort-Flow endet'), { size: 7, anchor: 'middle' })}`,
 
   'einstein-bots-to-agentforce': (l) => `
     ${t(18, 18, l('PORTAL BOT, 4,000 CHATS / MONTH (SCENARIO)', 'PORTAL-BOT, 4.000 GESPRÄCHE / MONAT (SZENARIO)'), { fill: D, size: 7 })}

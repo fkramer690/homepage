@@ -52,11 +52,11 @@ I would pin a model even when the default works. Salesforce can change the mix, 
 
 ## What does the model tier cost?
 
-Salesforce assigns every managed model to a usage tier on its [model support page](https://help.salesforce.com/s/articleView?id=ai.generative_ai_large_language_model_support.htm&type=5). The [rate card updated as of 31 August 2026](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) prices a prompt of up to 2,000 tokens at 2 Flex Credits on Basic, 4 on Standard and 16 on Advanced. Prompts to your own model are "Starter Prompts" at 2 credits. At the [list price of $500 per 100,000 credits](https://www.salesforce.com/agentforce/pricing/), one Advanced prompt costs $0.08.
+Salesforce assigns every managed model to a usage tier on its [model support page](https://help.salesforce.com/s/articleView?id=ai.generative_ai_large_language_model_support.htm&type=5). The [rate card updated as of 31 August 2026](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) prices a prompt at 2 Flex Credits on Basic, 4 on Standard and 16 on Advanced. Prompts to your own model are "Starter Prompts" at 2 credits. According to the [help article on billable usage](https://help.salesforce.com/s/articleView?language=en_US&id=ai.usage_flex_credits.htm&type=5), usage is counted in chunks of 2,000 tokens, rounded up. At the [list price of $500 per 100,000 credits](https://www.salesforce.com/agentforce/pricing/), one Advanced prompt costs $0.08.
 
 The tested models fall into different tiers: Gemini 3.5 Flash is Basic, Claude Haiku 4.5 and GPT 4.1 are Standard. Every Claude Opus model and GPT 5.6 Sol are Advanced, so moving a subagent from Haiku to Opus multiplies its prompt cost by four.
 
-The [help article on billable usage](https://help.salesforce.com/s/articleView?language=en_US&id=ai.usage_flex_credits.htm&type=5) does not say whether the reasoning engine's own LLM calls are metered as prompts on top of the 20 credits per action. For prompt templates the tier applies for certain; for reasoning, I would measure it in the pilot with Digital Wallet. The full meter set is in [Flex Credits: estimating cost per action](../flex-credits-agentforce-cost-per-action/), the template side in [Prompt Builder or Agentforce agent](../prompt-builder-or-agentforce-agent/).
+That help article does not say whether the reasoning engine's own LLM calls are metered as prompts on top of the 20 credits per action. For prompt templates the tier applies for certain; for reasoning, I would measure it in the pilot with Digital Wallet. The full meter set is in [Flex Credits: estimating cost per action](../flex-credits-agentforce-cost-per-action/), the template side in [Prompt Builder or Agentforce agent](../prompt-builder-or-agentforce-agent/).
 
 ## When does bring your own LLM make sense?
 
@@ -72,7 +72,7 @@ BYOLLM connects a model from your own Bedrock, Azure OpenAI, OpenAI or Vertex AI
 
 Anthropic's [model overview](https://platform.claude.com/docs/en/about-claude/models/overview) lists Claude Opus 5.5, Sonnet 5.5 and Haiku 5.5 as current models; Salesforce's managed list ends at Sonnet 5 and Opus 4.8. Even Salesforce's own pages differ: the help page lists Gemini 3.7 and 3.8 Flash, the developer page stops at 3.6 Flash. I assume a new frontier model reaches Agentforce weeks to months after release and never build a business case on a model that is not on the list.
 
-Models also leave. After its shutdown date a deprecated model is rerouted to a replacement, for example Claude Sonnet 4 to Sonnet 4.6, and Gemini 3 Pro (Beta) was retired on 23 April 2026. Announcements come monthly in the Einstein Platform release notes, without a stated notice period. A reroute is a model change your tests have not seen.
+Models also leave. After its shutdown date a deprecated model is rerouted to a replacement, for example Claude Sonnet 4 to Sonnet 4.6, and Gemini 3 Pro (Beta) was retired on 23 April 2026. The model page lists deprecation and reroute dates, and I found no stated notice period. A reroute is a model change your tests have not seen.
 
 Region is the third check. Managed models "eventually re-route to a US region" when a request fails in the designated region, unless an admin turns on "Enable In-Region Model Requests Only", which covers "some models". The help page lists `eu` inference profiles for Claude Sonnet 5 and Opus 4.8, and only the United States for GPT 5.6 Terra. More in [Agentforce EU data residency](../agentforce-eu-data-residency-models/).
 
@@ -101,7 +101,7 @@ BYOLLM saves at most $90 a month, about $1,080 a year, before the Azure token bi
 2. **Start with a tested model** in the lowest tier that passes; upgrade a subagent only with test evidence.
 3. **Check the region** of each model and decide on in-region only.
 4. **Use BYOLLM with a reason**: an approved contract, a model Salesforce does not offer, or data rules that require your own provider.
-5. **Read the monthly release notes** and rerun the tests after every reroute.
+5. **Check the model page and release notes regularly** and rerun the tests after every reroute.
 6. **Measure in Digital Wallet** whether reasoning calls show up as prompts.
 
 I treat these decisions as [Salesforce architecture](../../services/salesforce-architecture/) work, next to data model and permissions.

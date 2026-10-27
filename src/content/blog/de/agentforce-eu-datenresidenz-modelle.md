@@ -76,7 +76,7 @@ Koa, das eigene CRM-Reasoning-Modell von Salesforce, kommt zuerst in die USA. La
 
 ## Ist eine Verarbeitung in der EU Pflicht?
 
-Ich bin Salesforce-Architekt, kein Anwalt, und das hier ist keine Rechtsberatung. So wie ich es lese, verlangt die DSGVO nicht, dass Daten in der EU bleiben. Laut Datenschutz-FAQ von Salesforce sind alle Salesforce-Dienste einschließlich Agentforce durch die EU-Standardvertragsklauseln abgedeckt, dazu kommen Binding Corporate Rules für Auftragsverarbeiter. Ob das reicht, entscheidet Ihr Datenschutzbeauftragter. Manche Datenschutzbeauftragte im Maschinenbau verlangen trotzdem eine Verarbeitung in der EU, sobald Prompts Händlerkontakte, Namen von Technikern im Außendienst oder Garantiefälle enthalten.
+Ich bin Salesforce-Architekt, kein Anwalt, und das hier ist keine Rechtsberatung. So wie ich es lese, verlangt die DSGVO nicht, dass Daten in der EU bleiben. Laut Datenschutz-FAQ von Salesforce sind alle Salesforce-Dienste einschließlich Agentforce durch die EU-Standardvertragsklauseln abgedeckt, dazu kommen Binding Corporate Rules für Auftragsverarbeiter. Ob das reicht, entscheidet Ihr Datenschutzbeauftragter. Ein Datenschutzbeauftragter kann trotzdem eine Verarbeitung in der EU verlangen, sobald Prompts Händlerkontakte, Namen von Technikern im Außendienst oder Garantiefälle enthalten.
 
 Drei benachbarte Themen folgen eigenen Regeln: die [Fristen des EU AI Act für Agentforce](../eu-ai-act-fristen-agentforce/), [KI-Coding-Tools mit Betriebsrat und DSGVO](../ki-coding-betriebsrat-dsgvo/) und externe Modelle, die über [Hosted MCP Server](../salesforce-hosted-mcp-server-datenzugriff/) Salesforce-Daten lesen und für die die Aufbewahrungsvereinbarungen von Salesforce nicht greifen.
 

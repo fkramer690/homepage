@@ -61,7 +61,7 @@ Agent Health Monitoring, listed as GA in the [Dreamforce 2026 announcements](htt
 
 Deflection is the number vendors like to show, and the weakest of the set. A dealer who gets a wrong delivery date and closes the window counts as deflected. Salesforce writes in the Observability post that these rates "typically measure proxy signals" and is moving deflection and abandonment to an LLM that evaluates the full session with an editable prompt. That improves the metric, but the definition can change under your trend line, so note the prompt version next to each monthly figure.
 
-Billing adds a third definition. For resolution-based Help Agent pricing, according to [Salesforce Ben](https://www.salesforceben.com/complete-guide-to-agentforce-pricing-options/), a messaging session without feedback that runs past two hours is billed as resolved. That model is compared with Flex Credits in [what a dealer service agent costs](../dealer-service-agent-cost-calculation/).
+Billing adds a third definition. For resolution-based Help Agent pricing, according to [Salesforce Ben](https://www.salesforceben.com/complete-guide-to-agentforce-pricing-options/), a messaging session with more than two turns, no feedback and no escalation request that runs past two hours is billed as resolved. That model is compared with Flex Credits in [what a dealer service agent costs](../dealer-service-agent-cost-calculation/).
 
 So I count an enquiry as resolved only when the task resolution detector says so, and a senior service rep reads 50 sessions a month. Wrong answers in sessions marked as resolved mean the KPI is too optimistic, and that gap goes into the report.
 
@@ -90,7 +90,7 @@ Gartner [expects](https://www.gartner.com/en/newsroom/press-releases/2025-06-25-
 3. **On day 90:** cost per resolved enquiry above the cost of a service rep per enquiry.
 4. **At any time:** handle time on escalated enquiries clearly above the baseline for the same enquiry type, because then the agent shifts work instead of saving it.
 
-The 40 percent values are my starting points, not Salesforce figures. Switching off does not have to mean ending: narrow the agent to one subagent, run it only while the service desk is closed, or fix and retest. For the last option, Agent Optimizer (listed as GA in October 2026) ranks recurring failure patterns from production sessions by impact, and A/B Experimentation (beta since October) lets a fix compete with the current version on split traffic.
+The 40 percent values are my starting points, not Salesforce figures. Switching off does not have to mean ending: narrow the agent to one subagent, run it only while the service desk is closed, or fix and retest. For the last option, Agent Optimizer ranks recurring failure patterns from production sessions by impact. Salesforce's [September 2026 post](https://www.salesforce.com/blog/agent-optimizer/) calls it available in beta, and the Dreamforce list announces GA for October. A/B Experimentation lets a fix compete with the current version on split traffic and is announced as beta for October, so check the status in your org.
 
 ## How do you prepare the 90-day review before go-live?
 

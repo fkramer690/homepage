@@ -49,7 +49,7 @@ Jede Frage führt zu einem anderen Log, mit eigener Lizenz und eigener Aufbewahr
 | Unique-Query-Ereignisse | Welche SOQL-Abfragen, Filter und Reports liefen | Nicht in der kostenlosen Stufe | Wie Event Monitoring |
 | Setup Audit Trail | Wer hat was im Setup geändert | Standard | Mindestens 180 Tage |
 | Feldhistorie | Welcher Feldwert sich wann durch wen änderte | Standard; Field Audit Trail als Add-on | 18 bis 24 Monate; Archiv bis zur Löschung |
-| Audit-Logs von Claude Enterprise | Anmeldungen, angelegte oder gelöschte Unterhaltungen, Exporte | Enterprise-Plan | Export umfasst 180 Tage |
+| Audit-Logs von Claude Enterprise | Anmeldungen, Datei-Uploads, angelegte oder gelöschte Unterhaltungen | Enterprise-Plan | Export umfasst 180 Tage |
 
 ## Was protokollieren die Agenten-Logs in Salesforce?
 
@@ -73,7 +73,7 @@ Mit Shield oder dem Event-Monitoring-Add-on bleiben Logs laut [Event-Monitoring-
 
 Die bezahlte Stufe bringt Ereignistypen wie [Unique Query](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_eventlogfile_unique_query_event_elf.htm), das verarbeitete SOQL-Abfragen, Filter-IDs und Report-IDs erfasst. Daran sehen Sie, ob ein KI-Client die Preisvereinbarung eines Händlers abgefragt hat oder die aller Händler.
 
-Die Salesforce-Logs enden dort, wo die Daten Salesforce verlassen. Für Claude gibt es [Audit-Logs von Anthropic](https://support.claude.com/en/articles/9970975-access-audit-logs) nur für Enterprise-Organisationen. Sie erfassen Anmeldungen, Datei-Ereignisse und angelegte oder gelöschte Unterhaltungen, ohne Chatinhalte, und ein Export umfasst die letzten 180 Tage. Jedem anderen KI-Anbieter würde ich dieselben Fragen stellen: welche Ereignisse, wie lange, welcher Export.
+Die Salesforce-Logs enden dort, wo die Daten Salesforce verlassen. Für Claude gibt es [Audit-Logs von Anthropic](https://support.claude.com/en/articles/9970975-access-audit-logs) nur für Enterprise-Organisationen. Sie erfassen Anmeldungen, Datei-Uploads und angelegte, gelöschte oder umbenannte Unterhaltungen, ohne Chatinhalte, und ein Export umfasst die letzten 180 Tage. Jedem anderen KI-Anbieter würde ich dieselben Fragen stellen: welche Ereignisse, wie lange, welcher Export.
 
 ## Welche Logs zeigen, wer den Agenten geändert hat?
 
