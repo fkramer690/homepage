@@ -102,7 +102,7 @@ Meine Reihenfolge nach jedem Refresh einer Partial- oder Full-Sandbox:
 
 1. Maskierung starten und das Ausführungsprotokoll prüfen.
 2. Neue Felder seit dem letzten Lauf in die Maskierung aufnehmen; diese Prüfung steht in der Release-Checkliste.
-3. E-Mail-Felder in Kontakten auf der Maskierungsliste haben, damit keine Händlerin eine Testbenachrichtigung bekommt.
+3. E-Mail-Felder in Kontakten auf die Maskierungsliste setzen, damit kein Händler eine Testbenachrichtigung bekommt.
 4. Konfigurationsdaten aus dem Repository einspielen, falls die Sandbox einen neueren Stand braucht als die Produktion.
 5. Erst danach Zugänge für Partner und Fachbereich freigeben.
 

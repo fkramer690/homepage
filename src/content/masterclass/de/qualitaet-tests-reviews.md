@@ -78,7 +78,7 @@ Flows sind in vielen Fertigungs-Orgs die größere Automatisierung: Statuswechse
 
 **Abdeckung für aktiv deployte Flows.** Standardmäßig kommen Flows, die in der Sandbox aktiv sind, laut [Salesforce Help](https://help.salesforce.com/apex/HTViewHelpDoc?id=flow_distribute_deploy_active.htm) inaktiv in Produktion an und müssen von Hand aktiviert werden. Mit der Einstellung „Deploy processes and flows as active“ in den Process Automation Settings legen Sie eine Abdeckungsgrenze fest. Gemessen wird sie über Apex-Tests: Mindestens ein Apex-Test muss die eingestellte Abdeckung der aktiven autolaunched Flows erreichen, Flows mit Screens sind ausgenommen. Die Werte stehen im Tooling-API-Objekt [`FlowTestCoverage`](https://developer.salesforce.com/docs/atlas.en-us.api_tooling.meta/api_tooling/tooling_api_objects_flowtestcoverage.htm). Für eine Pipeline, die auch nach Produktion ohne Handarbeit deployen soll, ist diese Einstellung der saubere Weg.
 
-**Statische Analyse von Flows.** Der Flow Scanner in Code Analyzer prüft Flows auf typische Fehler, dazu gleich mehr.
+**Statische Analyse von Flows.** Der Flow Scanner in Code Analyzer findet typische Baufehler in Flows, bevor überhaupt ein Test läuft.
 
 Meine Empfehlung: Jeder record-triggered Flow auf einem Kernobjekt wie Arbeitsauftrag, Anlage oder Garantiefall bekommt mindestens einen Flow-Test für den Hauptpfad und einen für den wichtigsten Fehlerfall. Screen Flows testen Sie weiterhin fachlich in UAT.
 
@@ -91,7 +91,7 @@ Meine Empfehlung: Jeder record-triggered Flow auf einem Kernobjekt wie Arbeitsau
 | PMD | Apex und Visualforce | SOQL in Schleifen, fehlende Sharing-Deklaration, Tests ohne Assert |
 | ESLint | JavaScript in Lightning Web Components | unsichere Muster, Fehler im Komponentencode |
 | Flow Scanner | Flows | Datenbankzugriffe in Schleifen, fehlende Fehlerpfade, fest codierte IDs |
-| Salesforce Graph Engine | tiefere Datenflussanalyse in Apex | fehlende Berechtigungsprüfungen über mehrere Klassen |
+| Salesforce Graph Engine | tiefere Analyse von Apex über Aufrufpfade | Sicherheitslücken, die erst über mehrere Klassen sichtbar werden |
 | Regex | eigene Muster aus `code-analyzer.yml` | fest codierte Endpunkte statt Named Credential |
 | CPD | doppelten Code | kopierte Logik in mehreren Handlern |
 
@@ -109,7 +109,7 @@ Alle Werkzeuge aus [Kapitel 4](../devops-werkzeuge-vergleich/) decken die Gates 
 
 **Gearset** bringt mit [Code Reviews](https://docs.gearset.com/en/articles/11478945-what-is-code-reviews) eigene, anpassbare Regelsätze für alle Metadatentypen mit, Flows eingeschlossen, dazu eine automatische Korrektur und Dashboards zu technischen Schulden. Als Status Check an einem geschützten Branch sperrt es laut [Gearset](https://docs.gearset.com/en/articles/10139478-integrating-clayton-into-your-gearset-pipeline) die Promotion eines Pull Requests, der die Prüfung nicht besteht. Eine eigene Regel meldet [Flows ohne Test](https://docs.gearset.com/en/articles/14121616-code-reviews-rule-untested-flows). Das spart Ihnen das Skript, das Sie sonst selbst schreiben.
 
-**Copado** wirbt mit durchsetzbaren [Quality Gates](https://www.copado.com/product-detail/quality-assurance) entlang Ihrer Definition of Done und mit Robotic Testing für automatisierte Oberflächentests. Code Analyzer lässt sich laut Salesforce-Leitfaden so einbinden, dass gewählte Schweregrade Deployments blockieren.
+**Copado** wirbt mit durchsetzbaren [Quality Gates](https://www.copado.com/product-detail/quality-assurance) entlang Ihrer Definition of Done und mit Robotic Testing für automatisierte Oberflächentests. Code Analyzer lässt sich laut [Salesforce-Leitfaden](https://developer.salesforce.com/docs/platform/salesforce-code-analyzer/guide/ci-cd.html) so einbinden, dass gewählte Schweregrade Deployments blockieren.
 
 **Flosum** bietet einen [Code-Scan-Schritt](https://docs.flosum.com/devops/pipeline/pipeline-operations/pipeline-operation-code-scan) in der Pipeline mit PMD oder einem eigenen, breiteren Regelsatz, der auch Flows prüft. Erreicht ein Fund die eingestellte Schwelle, scheitert der Schritt.
 
@@ -117,7 +117,7 @@ Die kommerziellen Werkzeuge punkten bei Oberfläche, eigenen Regelsätzen und Su
 
 ## KI-generierter Code: dieselben Gates, keine Ausnahmen
 
-Arbeiten Ihre Partner mit Coding-Agenten, steigt die Zahl der Pull Requests, Ihre Reviewkapazität bleibt gleich. Das ist der Grund, die Gates oben ohne Ausnahme durchzusetzen, nicht ein Grund für neue. Typische Fehler von KI-Code wie Abfragen in Schleifen, fehlende Sharing-Deklarationen und Tests ohne Aussage findet dieselbe Kombination aus Code Analyzer, Validierung und Review. Zwei Ergänzungen lohnen sich: eine Prüfung, die einen Sprung der API-Version auf 67.0 ohne Auftrag stoppt, und die Pflicht, KI-Anteile im Pull Request zu kennzeichnen.
+Arbeiten Ihre Partner mit Coding-Agenten, steigt die Zahl der Pull Requests, Ihre Reviewkapazität bleibt gleich. Das spricht dafür, die Gates oben ohne Ausnahme durchzusetzen. Neue Gates braucht es kaum. Typische Fehler von KI-Code wie Abfragen in Schleifen, fehlende Sharing-Deklarationen und Tests ohne Aussage findet dieselbe Kombination aus Code Analyzer, Validierung und Review. Zwei Ergänzungen lohnen sich: eine Prüfung, die einen Sprung der API-Version auf 67.0 ohne Auftrag stoppt, und die Pflicht, KI-Anteile im Pull Request zu kennzeichnen.
 
 Was KI-Code darüber hinaus braucht, von der Regeldatei bis zu Org-Grenzen für Agenten, behandelt [Kapitel 8 der KI-Masterclass](../../ki-salesforce/best-practices-ki-code/). Die Gates im Detail stehen in [Quality Gates für KI-Code](../../../blog/quality-gates-ki-code-salesforce-pipeline/), das Review aus Kundensicht in [KI-generierten Salesforce-Code prüfen](../../../blog/ki-generierten-salesforce-code-pruefen/).
 
