@@ -22,15 +22,17 @@ faq:
   - q: "Brauche ich einen Auftragsverarbeitungsvertrag mit Anthropic?"
     a: "Laut Anthropic ist das DPA mit Standardvertragsklauseln automatisch Teil der Commercial Terms, gilt also für Team, Enterprise und API. Wer Claude über Amazon Bedrock nutzt, fällt unter die Bedingungen von AWS. Ob das Ihren Anforderungen genügt, entscheidet Ihr Datenschutzbeauftragter."
   - q: "Dürfen Entwickler einfach private KI-Konten nutzen?"
-    a: "Ich rate davon ab. Das Arbeitsgericht Hamburg sah 2024 bei privaten ChatGPT-Konten kein Mitbestimmungsrecht, weil der Arbeitgeber keine Daten erhält. Dafür läuft Ihr Code dann unter Verbraucherbedingungen, bei Claude etwa mit Training je nach Nutzereinstellung."
+    a: "Ich rate davon ab. Das Arbeitsgericht Hamburg sah 2024 in einem erstinstanzlichen Eilverfahren bei privaten ChatGPT-Konten kein Mitbestimmungsrecht, weil der Arbeitgeber keine Daten erhält. Dafür läuft Ihr Code dann unter Verbraucherbedingungen, bei Claude etwa mit Training je nach Nutzereinstellung."
+  - q: "Gilt das auch für Standorte außerhalb Deutschlands?"
+    a: "Die Regeln zum Betriebsrat sind deutsches Recht und gelten für Ihre deutschen Standorte und deren Beschäftigte. Die DSGVO gilt in der ganzen EU. Manche Konzerne mit deutschen Werken oder Entwicklungszentren entscheiden sich deshalb womöglich, den deutschen Prozess als Konzernstandard für KI-Tools zu nutzen."
 draft: false
 ---
 
-Wer in einem deutschen Unternehmen Claude Code, GitHub Copilot oder Codex für die eigenen Salesforce-Entwickler einführt, braucht in aller Regel die Zustimmung des Betriebsrats nach § 87 Abs. 1 Nr. 6 BetrVG, weil diese Tools Nutzungsdaten pro Person erzeugen. Dazu kommen zwei Fragen für den Datenschutz: welche Daten in den Kontext des Agenten dürfen und wo die Inferenz läuft. Die Anthropic-API bietet keine EU-Region; Amazon Bedrock, Copilot und OpenAI schon. Planen Sie beides vor dem Pilot, denn ohne Betriebsvereinbarung darf das Tool nicht live gehen.
+Wer in einem deutschen Unternehmen Claude Code, GitHub Copilot oder Codex für die eigenen Salesforce-Entwickler einführt, braucht in aller Regel die Zustimmung des Betriebsrats nach § 87 Abs. 1 Nr. 6 BetrVG, weil diese Tools Nutzungsdaten pro Person erzeugen. Dazu kommen zwei Fragen für den Datenschutz: welche Daten in den Kontext des Agenten dürfen und wo die Inferenz läuft. Die Anthropic-API bietet keine EU-Region; Amazon Bedrock, Copilot und OpenAI schon. Planen Sie beides vor dem Pilot, denn wo es einen Betriebsrat gibt, darf das Tool ohne dessen Zustimmung oder einen Spruch der Einigungsstelle nicht live gehen.
 
 Vorweg: Ich bin Salesforce-Architekt, kein Anwalt. Was folgt, ist meine technische Sicht auf die Fragen, die Betriebsrat und Datenschutzbeauftragte stellen werden. Es ist keine Rechtsberatung. Die Betriebsvereinbarung und die Bewertung der Datenübermittlung gehören in die Hände Ihrer Rechtsabteilung oder eines Fachanwalts.
 
-## Warum muss der Betriebsrat einem KI-Coding-Tool zustimmen?
+## Warum muss ein bestehender Betriebsrat einem KI-Coding-Tool zustimmen?
 
 § 87 Abs. 1 Nr. 6 BetrVG gibt dem Betriebsrat ein Mitbestimmungsrecht bei technischen Einrichtungen, die geeignet sind, Verhalten oder Leistung der Beschäftigten zu überwachen. Laut einer [Analyse von CMS vom Juli 2026](https://cms.law/de/deu/legal-updates/ki-transformation-und-betriebsrat-mitbestimmung-richtig-gestalten) bestehen bei KI-Systemen „in aller Regel“ solche Mitbestimmungsrechte. Maßgeblich ist nach der Rechtsprechung des BAG die objektive Möglichkeit zur Überwachung, auch ohne jede Absicht. Die Folge formuliert CMS deutlich: Ohne Zustimmung des Betriebsrats oder einen Spruch der Einigungsstelle darf der Arbeitgeber das System nicht einführen. Ob die Pläne der Bundesregierung daran etwas ändern, lässt CMS ausdrücklich offen.
 
@@ -41,13 +43,13 @@ Bei Coding-Agenten muss man die Überwachungsmöglichkeit nicht lange suchen, di
 
 Das sind Leistungsdaten im Wortsinn. Eine Rangliste „akzeptierte Zeilen pro Entwickler“ ist mit zwei Klicks erstellt, auch wenn niemand das vorhat.
 
-Es gibt eine Ausnahme, die gern zitiert wird. Das Arbeitsgericht Hamburg hat am 16. Januar 2024 (24 BVGa 1/24) entschieden, dass bei ChatGPT über private Konten der Beschäftigten kein Mitbestimmungsrecht besteht, weil der Arbeitgeber keine Daten darüber hat, wer wann was genutzt hat. CMS weist in der [Besprechung des Beschlusses](https://cms.law/de/deu/legal-updates/kein-mitbestimmungsrecht-des-betriebsrats-bei-chatgpt-co) darauf hin, dass das anders zu beurteilen ist, sobald der Arbeitgeber Konten oder Lizenzen bereitstellt. Für ein Salesforce-Team mit Firmenlizenzen hilft die Entscheidung also nicht.
+Es gibt eine Ausnahme, die gern zitiert wird. Das Arbeitsgericht Hamburg hat am 16. Januar 2024 (24 BVGa 1/24) in einem erstinstanzlichen Eilverfahren entschieden, dass bei ChatGPT über private Konten der Beschäftigten kein Mitbestimmungsrecht besteht, weil der Arbeitgeber keine Daten darüber hat, wer wann was genutzt hat. CMS weist in der [Besprechung des Beschlusses](https://cms.law/de/deu/legal-updates/kein-mitbestimmungsrecht-des-betriebsrats-bei-chatgpt-co) darauf hin, dass das anders zu beurteilen ist, sobald der Arbeitgeber Konten oder Lizenzen bereitstellt. Für ein Salesforce-Team mit Firmenlizenzen hilft die Entscheidung also nicht.
 
 Eine gute Nachricht für die Planung: Laut CMS ist ein KI-Werkzeug, das zusätzlich bereitgestellt wird, ohne Organisation oder Verantwortlichkeiten zu ändern, keine Betriebsänderung nach § 111 BetrVG. Interessenausgleich und Sozialplan stehen dann nicht im Raum. Das ändert sich, wenn Sie das Tool mit kleineren Teams oder neuen Rollen verknüpfen. CMS empfiehlt, beides zeitlich und inhaltlich zu trennen und das zu dokumentieren. Wer gleichzeitig auf [KI-native Delivery mit kleineren Teams](../ki-kleinere-salesforce-teams-delivery/) umstellt, sollte das ernst nehmen.
 
 ## Was gehört in die Betriebsvereinbarung für Coding-Agenten?
 
-CMS empfiehlt Rahmenbetriebsvereinbarungen, die das Verfahren für neue IT- und KI-Anwendungen regeln. Viele Industrieunternehmen haben schon eine IT-Rahmenvereinbarung; dann braucht jedes Tool eine Anlage. Aus technischer Sicht sollte diese Anlage für jede Datenquelle sagen, wer sie sieht und wofür:
+CMS empfiehlt Rahmenbetriebsvereinbarungen, die das Verfahren für neue IT- und KI-Anwendungen regeln, und weist darauf hin, dass das bei grundlegenderen KI-Transformationen mit Personalabbau nicht funktioniert. Viele Industrieunternehmen haben schon eine IT-Rahmenvereinbarung; dann braucht jedes Tool eine Anlage. Aus technischer Sicht sollte diese Anlage für jede Datenquelle sagen, wer sie sieht und wofür:
 
 | Datenquelle | Was sie zeigt | Mein Vorschlag für die Anlage |
 |---|---|---|
@@ -73,12 +75,12 @@ Drei Punkte sollte Ihr Datenschutzbeauftragter klären, bevor die erste Lizenz z
 
 ## Wo läuft die Inferenz, und braucht es die EU?
 
-Die DSGVO schreibt nicht vor, dass Daten die EU nie verlassen; dafür gibt es Standardvertragsklauseln. Viele Datenschutzbeauftragte in der Industrie wollen für Code mit Händlerkonditionen oder Garantieregeln trotzdem EU-Verarbeitung. Wenn das bei Ihnen gilt, sieht die Lage so aus:
+Die DSGVO schreibt nicht vor, dass Daten die EU nie verlassen; dafür gibt es Standardvertragsklauseln. Manche Datenschutzbeauftragte in der Industrie wollen für Code mit Händlerkonditionen oder Garantieregeln trotzdem EU-Verarbeitung. Wenn das bei Ihnen gilt, sieht die Lage so aus:
 
 - **Anthropic-API und Claude-Pläne:** Laut [Dokumentation zur Datenresidenz](https://platform.claude.com/docs/en/manage-claude/data-residency) gibt es für die Inferenz nur „us“ oder „global“, die Speicherung im Workspace nur „us“. US-Inferenz kostet das 1,1-Fache. Eine EU-Option fehlt.
 - **Claude Code über Amazon Bedrock:** In einer `eu-*`-Region nutzt Claude Code laut [Anthropic](https://code.claude.com/docs/en/amazon-bedrock) automatisch die `eu.`-Inferenzprofile. Telemetrie, Fehlerberichte und Feedback-Berichte an Anthropic sind auf Bedrock laut [Datennutzungsseite](https://code.claude.com/docs/en/data-usage) standardmäßig aus.
 - **GitHub Copilot:** Mit der [Richtlinie für Datenresidenz](https://docs.github.com/en/enterprise-cloud@latest/admin/data-residency/github-copilot-with-data-residency) bleiben Inferenz und Daten in der EU, für alle allgemein verfügbaren Funktionen. Die Richtlinie ist standardmäßig aus und kostet 10 Prozent mehr AI Credits. Claude Opus 5.5 und Sonnet 5.5 stehen auf der EU-Modellliste.
-- **OpenAI:** API-Projekte mit [europäischer Datenresidenz](https://openai.com/index/introducing-data-residency-in-europe/) gibt es seit Februar 2025, mit Zero Data Retention; bestehende Projekte lassen sich nicht umstellen. Für berechtigte Kunden von ChatGPT Enterprise gibt es seit Januar 2026 Inferenz in der Region. Codex App und CLI sind laut [OpenAI](https://help.openai.com/en/articles/9903489) abgedeckt, Codex Web nicht.
+- **OpenAI:** API-Projekte mit [europäischer Datenresidenz](https://openai.com/index/introducing-data-residency-in-europe/) gibt es seit Februar 2025, mit Zero Data Retention; bestehende Projekte lassen sich laut dem Beitrag zum Start nicht umstellen, prüfen Sie also die aktuelle Dokumentation. Für berechtigte Kunden von ChatGPT Enterprise gibt es laut einem Update desselben Beitrags seit Januar 2026 Inferenz in der Region. Codex App und CLI sind laut [OpenAI](https://help.openai.com/en/articles/9903489) abgedeckt, Codex Web nicht.
 
 Den vollständigen Vergleich der Tools nach Vertrag, Kosten und Governance finden Sie in [Agentforce Vibes, Claude Code, Codex oder Copilot?](../agentforce-vibes-claude-code-copilot-vergleich/). Für Agentforce-Agenten im HR-Umfeld kommen eigene Fristen aus dem EU AI Act dazu, siehe [EU AI Act: Fristen für Agentforce](../eu-ai-act-fristen-agentforce/).
 
@@ -106,4 +108,4 @@ Sechs Wochen klingen lang. Ein Pilot, den der Betriebsrat nach vier Wochen stopp
 
 Wie Teams und Partner neue Regeln im Alltag übernehmen, gehört zu meiner Arbeit im [Change Management](../../leistungen/change-management/); den Rahmen für Rollen und Review beschreibt [Kapitel 9 der Masterclass](../../masterclass-ki/teamarbeit-und-delivery/).
 
-KI-Coding-Tools gehen in Deutschland erst live, wenn Betriebsrat und Datenschutz zugestimmt haben, und mit guter Vorbereitung dauert das nach meiner Einschätzung Wochen statt Monate. Wenn Sie eine zweite Meinung zu Ihrer Anlage oder Ihren Modellwegen möchten, [schreiben Sie mir](#contact).
+KI-Coding-Tools gehen an einem deutschen Standort mit Betriebsrat erst live, wenn Betriebsrat und Datenschutz zugestimmt haben, und mit guter Vorbereitung dauert das nach meiner Einschätzung Wochen statt Monate. Wenn Sie eine zweite Meinung zu Ihrer Anlage oder Ihren Modellwegen möchten, [schreiben Sie mir](#contact).

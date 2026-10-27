@@ -21,12 +21,14 @@ faq:
     a: "Not through Anthropic's API, which offers only \"us\" or \"global\" inference. Through Amazon Bedrock in an EU region, Claude Code uses EU inference profiles. Claude models are also available in GitHub Copilot with EU data residency enabled."
   - q: "Do I need a data processing agreement with Anthropic?"
     a: "According to Anthropic, its DPA with Standard Contractual Clauses is automatically part of the Commercial Terms, so it covers Team, Enterprise and API. Claude on Amazon Bedrock falls under AWS terms. Whether that meets your requirements is your data protection officer's call."
+  - q: "Can developers simply use private AI accounts?"
+    a: "I advise against it. In a first-instance interim ruling in 2024, the Hamburg Labour Court saw no co-determination right for private ChatGPT accounts, because the employer receives no usage data. Your code then runs under consumer terms, with Claude for example with training depending on a user setting."
   - q: "Does this apply to sites outside Germany?"
-    a: "The works council rules are German law and apply to your German sites and their employees. GDPR applies across the EU. Many groups with German plants or engineering centres therefore use the German process as the group standard for AI tools."
+    a: "The works council rules are German law and apply to your German sites and their employees. GDPR applies across the EU. Some groups with German plants or engineering centres may choose to use the German process as the group standard for AI tools."
 draft: false
 ---
 
-If you roll out Claude Code, GitHub Copilot or Codex to Salesforce developers employed at a German site, you will as a rule need the works council's consent under section 87(1) no. 6 of the Works Constitution Act (BetrVG), because these tools produce usage data per person. Data protection adds two questions: which data may enter the agent's context, and where inference runs. Anthropic's API has no EU region; Amazon Bedrock, Copilot and OpenAI do. Plan both before the pilot, because without a works agreement the tool cannot go live.
+If you roll out Claude Code, GitHub Copilot or Codex to Salesforce developers employed at a German site, you will as a rule need the works council's consent under section 87(1) no. 6 of the Works Constitution Act (BetrVG), because these tools produce usage data per person. Data protection adds two questions: which data may enter the agent's context, and where inference runs. Anthropic's API has no EU region; Amazon Bedrock, Copilot and OpenAI do. Plan both before the pilot, because without the works council's consent or a ruling of the conciliation committee, the tool cannot go live, where a works council exists.
 
 One note first: I am a Salesforce architect, not a lawyer. What follows is my technical view of the questions your works council and data protection officer will ask, not legal advice. The works agreement and the transfer assessment belong with your legal department or an employment lawyer.
 
@@ -41,13 +43,13 @@ With coding agents you do not have to look hard for the monitoring capability. T
 
 That is performance data in the literal sense, and a ranking of developers takes two clicks.
 
-People like to quote one exception. On 16 January 2024 the Hamburg Labour Court (24 BVGa 1/24) found no co-determination right for ChatGPT used through employees' private accounts, because the employer had no data on who used it, when or for what. In its [note on the decision](https://cms.law/de/deu/legal-updates/kein-mitbestimmungsrecht-des-betriebsrats-bei-chatgpt-co), CMS points out that the assessment changes once the employer provides accounts or licences. For a Salesforce team on company licences, the ruling does not help.
+People like to quote one exception. On 16 January 2024 the Hamburg Labour Court (24 BVGa 1/24), in a first-instance ruling in interim proceedings, found no co-determination right for ChatGPT used through employees' private accounts, because the employer had no data on who used it, when or for what. In its [note on the decision](https://cms.law/de/deu/legal-updates/kein-mitbestimmungsrecht-des-betriebsrats-bei-chatgpt-co), CMS points out that the assessment changes once the employer provides accounts or licences. For a Salesforce team on company licences, the ruling does not help.
 
 Good news for planning: according to CMS, an AI tool added without changing the organisation or responsibilities is not an operational change under section 111 BetrVG, so no social plan is needed. Tie the tool to smaller teams or new roles and that changes. CMS recommends separating the two and documenting it, which matters if you move to [AI-native delivery with smaller teams](../ai-native-delivery-smaller-salesforce-teams/) at the same time.
 
 ## What belongs in the works agreement for coding agents?
 
-CMS recommends framework works agreements that set the procedure for new IT and AI applications. Many manufacturers already have an IT framework agreement, so each tool needs an annex that says for each data source who sees it and why:
+CMS recommends framework works agreements that set the procedure for new IT and AI applications, and notes that this does not work for more fundamental AI transformations that lead to job cuts. Many manufacturers already have an IT framework agreement, so each tool needs an annex that says for each data source who sees it and why:
 
 | Data source | What it shows | My proposal for the annex |
 |---|---|---|
@@ -73,12 +75,12 @@ Your data protection officer should settle three points before the first licence
 
 ## Where does inference run, and do you need the EU?
 
-GDPR does not require data to stay in the EU; Standard Contractual Clauses cover transfers. Many data protection officers in manufacturing still want EU processing for code with dealer conditions or warranty rules. The options:
+GDPR does not require data to stay in the EU; Standard Contractual Clauses cover transfers. Some data protection officers in manufacturing still want EU processing for code with dealer conditions or warranty rules. The options:
 
 - **Anthropic API and Claude plans:** according to the [data residency documentation](https://platform.claude.com/docs/en/manage-claude/data-residency), inference is "us" or "global" only, workspace storage "us" only. US-only inference costs 1.1 times the standard rate. There is no EU option.
 - **Claude Code on Amazon Bedrock:** in an `eu-*` region, Claude Code automatically prefers the `eu.` inference profiles, according to [Anthropic](https://code.claude.com/docs/en/amazon-bedrock). Telemetry, error reports and feedback reports to Anthropic are off by default on Bedrock, per the [data usage page](https://code.claude.com/docs/en/data-usage).
 - **GitHub Copilot:** with the [data residency policy](https://docs.github.com/en/enterprise-cloud@latest/admin/data-residency/github-copilot-with-data-residency), inference and data stay in the EU for all generally available features. The policy is off by default and costs 10 percent more AI credits. Claude Opus 5.5 and Sonnet 5.5 are on the EU model list.
-- **OpenAI:** API projects with [European data residency](https://openai.com/index/introducing-data-residency-in-europe/) have existed since February 2025, with zero data retention; existing projects cannot be switched. Eligible ChatGPT Enterprise customers have had in-region inference since January 2026. The Codex app and CLI are covered according to [OpenAI](https://help.openai.com/en/articles/9903489), Codex Web is not.
+- **OpenAI:** API projects with [European data residency](https://openai.com/index/introducing-data-residency-in-europe/) have existed since February 2025, with zero data retention; according to the launch post, existing projects cannot be switched, so check the current docs. Eligible ChatGPT Enterprise customers have had in-region inference since January 2026, according to an update to the same post. The Codex app and CLI are covered according to [OpenAI](https://help.openai.com/en/articles/9903489), Codex Web is not.
 
 The full comparison of the tools by contract, cost and governance is in [Agentforce Vibes, Claude Code, Codex or Copilot?](../agentforce-vibes-claude-code-copilot/). Agentforce agents in HR processes face separate EU AI Act deadlines, see [EU AI Act deadlines for Agentforce](../eu-ai-act-deadlines-agentforce/).
 
@@ -90,7 +92,7 @@ Assume a machine builder with its main plant in Germany, a works council, SAP, S
 
 **Week 2, works council.** IT presents the table above for each tool. The main concern is the per-person lines statistic.
 
-**Weeks 3 to 6, annex to the IT framework agreement.** The outcome: Copilot metrics on team level only, GitHub contribution metrics off, no performance assessment from tool data, local transcripts deleted after 14 days. Data protection decides in parallel: EU residency on in Copilot, Claude Code through Bedrock in an EU region. Anthropic's usage analytics do not cover Bedrock, so cost data sits in the client's AWS account, and the annex says who sees it.
+**Weeks 3 to 6, annex to the IT framework agreement.** The outcome: Copilot metrics on team level only, GitHub contribution metrics off, no performance assessment from tool data, local transcripts deleted after 14 days. Data protection decides in parallel: EU residency on in Copilot, Claude Code through Bedrock in an EU region. The support page lists usage analytics only for Team, Enterprise and Console, so Bedrock is not covered. Cost data then sits in the client's AWS account, and the annex says who sees it.
 
 **From week 7, pilot.** The partner's developers work on client licences; for their co-determination, as far as I understand it, the partner's own works council is responsible.
 
@@ -106,4 +108,4 @@ Six weeks sounds long. A pilot stopped after four weeks costs more.
 
 Getting teams and partners to adopt new rules in daily work is part of my [change management](../../services/change-management-salesforce/) work; the framework for roles and review is in [chapter 9 of the masterclass](../../ai-masterclass/teamwork-and-delivery/).
 
-At a German site, AI coding tools go live only once the works council and data protection have agreed, and with good preparation that takes weeks, not months, in my judgement. If you want a second opinion on your annex or your model routes, [send me a message](#contact).
+At a German site with a works council, AI coding tools go live only once the works council and data protection have agreed, and with good preparation that takes weeks, not months, in my judgement. If you want a second opinion on your annex or your model routes, [send me a message](#contact).

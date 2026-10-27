@@ -9,11 +9,11 @@ topic: security
 category: ai
 tags: [eu ai act, agentforce, compliance, ai agents, manufacturing, governance]
 takeaways:
-  - "Since 2 August 2026, Art. 50 of the EU AI Act requires that people chatting with an Agentforce agent, including dealer staff in a B2B portal, are told at the first interaction that they are dealing with AI."
+  - "Since 2 August 2026, Art. 50 of the EU AI Act requires that people chatting with an Agentforce agent are told at the first interaction that it is AI; in my reading that includes dealer staff in a B2B portal."
   - "Regulation (EU) 2026/1744 moves high-risk obligations to 2 December 2027 for Annex III uses such as recruitment and workforce management, and to 2 August 2028 for AI in products under Annex I."
   - "An agent that ranks applicants or assigns work by individual performance can be high-risk; configuring a general platform for that purpose can also make the manufacturer a provider under Art. 25."
   - "For machine builders, the Machinery Regulation moves to section B of Annex I, with AI requirements due through delegated acts by 2 August 2028; that concerns the machine, not the CRM agent."
-  - "Deployers of high-risk systems must keep automatically generated logs for at least six months and inform workers' representatives before use. This is an architect's reading, not legal advice."
+  - "Deployers of high-risk systems keep automatically generated logs for at least six months unless other law says otherwise, and inform workers' representatives before use. An architect's reading, not legal advice."
 faq:
   - q: "Is an Agentforce service agent a high-risk AI system under the EU AI Act?"
     a: "As a rule, no. An agent that answers order status, delivery dates or spare part questions is not on the Annex III list. It is a transparency case under Art. 50(1): people must be told at the start that they are talking to an AI. Have your legal team confirm the classification."
@@ -28,11 +28,11 @@ faq:
 draft: false
 ---
 
-The EU AI Act deadlines that Regulation (EU) 2026/1744 postponed matter less for most Agentforce projects in manufacturing than the one that has already passed. Since 2 August 2026, Art. 50 requires that people chatting with an AI agent know it is an AI, and a dealer service agent falls squarely under that. The new high-risk dates, 2 December 2027 for Annex III and 2 August 2028 for Annex I, hit you only if an agent helps decide about applicants or employees, or if AI sits in your machines. This is my reading as an architect, not legal advice.
+The EU AI Act deadlines that Regulation (EU) 2026/1744 postponed matter less for most Agentforce projects in manufacturing than the one that has already passed. Since 2 August 2026, Art. 50 requires that people chatting with an AI agent know it is an AI, and in my reading a dealer service agent falls under that. The new high-risk dates, 2 December 2027 for Annex III and 2 August 2028 for Annex I, hit you only if an agent helps decide about applicants or employees, or if AI sits in your machines. This is my reading as an architect, not legal advice.
 
 ## What did Regulation (EU) 2026/1744 change?
 
-According to [White & Case](https://www.whitecase.com/insight-alert/eu-ai-omnibus-enters-force-amending-ai-act), the regulation, known as the Digital Omnibus on AI, was published in the Official Journal on 24 July 2026 and entered into force on 27 July. It defers the high-risk obligations in Chapter III, where most of the work sits. The consolidated [Art. 113](https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-113) on the Commission's AI Act Service Desk and the [Commission's FAQ on Art. 50](https://digital-strategy.ec.europa.eu/en/faqs/transparency-obligations-under-article-50-ai-act) give these dates:
+According to [White & Case](https://www.whitecase.com/insight-alert/eu-ai-omnibus-enters-force-amending-ai-act), the regulation, known as the Digital Omnibus on AI, was published in the Official Journal on 24 July 2026 and entered into force on 27 July. It defers the high-risk obligations in Chapter III, where most of the work sits. The consolidated [Art. 113](https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-113) on the Commission's AI Act Service Desk gives the dates below; the 2 December 2026 date for machine-readable marking comes from the [Commission's FAQ on Art. 50](https://digital-strategy.ec.europa.eu/en/faqs/transparency-obligations-under-article-50-ai-act):
 
 | Obligation | Applies from |
 |---|---|
@@ -51,11 +51,11 @@ The AI Act assigns duties by role. Under [Art. 3](https://ai-act-service-desk.ec
 
 ## Why is a dealer chat agent a transparency case?
 
-Most Agentforce agents at manufacturers answer dealers, customers or service partners about orders, delivery dates, spare parts or appointments. None of that is high-risk. These agents fall under Art. 50(1), applicable since 2 August 2026.
+Most Agentforce agents at manufacturers answer dealers, customers or service partners about orders, delivery dates, spare parts or appointments. None of that is on the Annex III list. These agents fall under Art. 50(1), applicable since 2 August 2026.
 
-According to the Commission's FAQ, the duty applies when the system is AI, is built for a two-way exchange, communicates directly, and the counterpart is a natural person. A purchasing clerk at a dealer is a natural person, so B2B does not take you out. An agent that only classifies cases in the background is outside; one that answers the dealer is inside. The notice has to come at the start of the first interaction, clearly and accessibly. The exception for "obvious" AI is to be read restrictively, so I would not rely on a robot icon. The FAQ names fines of up to 15 million euros or 3 percent of worldwide annual turnover.
+According to the Commission's FAQ, the duty applies when the system is AI, is built for a two-way exchange, communicates directly, and the counterpart is a natural person. A purchasing clerk at a dealer is a natural person, so as I read the FAQ, B2B does not take you out. An agent that only classifies cases in the background is outside; one that answers the dealer is inside. The notice has to come at the start of the first interaction, clearly and accessibly. The exception for "obvious" AI is to be read restrictively, so I would not rely on a robot icon. The FAQ names fines of up to 15 million euros or 3 percent of worldwide annual turnover.
 
-Formally, Art. 50(1) is a provider duty. Whether that means Salesforce or you, the FAQ does not settle for this setup; in practice the welcome message lives in your org. On [Trailhead](https://trailhead.salesforce.com/content/learn/modules/guided-shopping-for-b2c-commerce-storefronts/set-up-messaging-channels-and-test-your-agent) the welcome message is what a user sees first, and you can edit it. Put the disclosure there, in every portal language. Salesforce's [trust patterns](https://trailhead.salesforce.com/content/learn/modules/trusted-agentic-ai/explore-agentforce-guardrails-and-trust-patterns) add clear rules for handing off to a human and the Einstein Trust Layer audit trail.
+Formally, Art. 50(1) is a provider duty. Whether that means Salesforce or you, the FAQ does not settle for this setup; in practice the agent's welcome message lives in your org. My recommendation: put the disclosure there, in every portal language. Salesforce's [Trailhead module on guardrails and trust patterns](https://trailhead.salesforce.com/content/learn/modules/trusted-agentic-ai/explore-agentforce-guardrails-and-trust-patterns) adds clear rules for handing off to a human and lists the Einstein Trust Layer audit trail among its implementation best practices.
 
 The machine-readable marking under Art. 50(2) is a provider duty for generative output; ask Salesforce in writing how it covers its features. The labelling of published text under Art. 50(4) concerns information to the public on matters of public interest, not a delivery date for a dealer.
 
@@ -70,13 +70,13 @@ Annex III lists stand-alone high-risk uses. In a manufacturer's Salesforce org, 
 
 The field service angle is easy to miss. Assigning jobs by skill, territory and availability is far from 4(b). Ranking technicians by first-time fix rate and assigning work accordingly comes close to allocating tasks based on individual behaviour, although whether a rule-based optimiser is an AI system at all is a separate question. How the engine decides is in [scheduling automation in Field Service](../salesforce-field-service-scheduling-automation/).
 
-If an agent is high-risk, [Art. 26](https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-26) gives you as deployer concrete duties from 2 December 2027: use it according to the provider's instructions, assign human oversight to competent people with authority, check the input data you control, monitor operation, keep automatically generated logs for at least six months, and inform workers' representatives and affected workers before use. In Germany the works council is involved much earlier anyway; that path is in [AI coding tools, works council and GDPR](../ai-coding-tools-works-council-gdpr/).
+If an agent is high-risk, [Art. 26](https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-26) gives you as deployer concrete duties from 2 December 2027: use it according to the provider's instructions, assign human oversight to competent people with authority, check the input data you control, monitor operation, keep automatically generated logs for at least six months unless other law provides otherwise, and inform workers' representatives and affected workers before use. In Germany the works council is involved much earlier anyway; that path is in [AI coding tools, works council and GDPR](../ai-coding-tools-works-council-gdpr/).
 
 ## What does the Annex I deadline mean for machine builders?
 
-Annex I covers AI in products under EU harmonisation law. For machine builders, [Cuatrecasas](https://www.cuatrecasas.com/en/spain/intellectual-property/art/digital-omnibus-ai-has-been-published) reports the key change: the Machinery Regulation (EU) 2023/1230 moves from section A to section B of Annex I. Only a few AI Act provisions then apply directly to AI in machinery. The substantive high-risk requirements are to be added to the Machinery Regulation through delegated acts, which the Commission must adopt by 2 August 2028 at the latest. Until then, manufacturers can rely on existing harmonised standards.
+Annex I covers AI in products under EU harmonisation law. For machine builders, [Cuatrecasas](https://www.cuatrecasas.com/en/spain/intellectual-property/art/digital-omnibus-ai-has-been-published) reports the key change: the Machinery Regulation (EU) 2023/1230 moves from section A to section B of Annex I. Only a few AI Act provisions then apply directly to AI in machinery. The substantive high-risk requirements are to be added to the Machinery Regulation through delegated acts, which the Commission must adopt by 2 August 2028 at the latest. Until those delegated acts or the corresponding harmonised standards exist, manufacturers can, according to Cuatrecasas, keep referring to the harmonised standards or common specifications adopted under the AI Act to show presumption of conformity.
 
-This concerns AI in machine control or safety functions and belongs with product engineering and legal, not with your Agentforce agents. The new [Art. 6(1a)](https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-6) also states that AI used only for user assistance or service efficiency is not a safety component, unless its failure endangers health and safety. An agent that suggests a spare part to a technician is user assistance.
+This concerns AI in machine control or safety functions and belongs with product engineering and legal, not with your Agentforce agents. The new [Art. 6(1a)](https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-6) also states that AI systems "solely used for non-safety related aspects of user assistance" are not safety components. Art. 6(1b) takes precedence: AI whose failure or malfunctioning would endanger health and safety is a safety component. An agent that suggests a spare part to a technician is user assistance in that sense.
 
 ## A typical scenario: four AI ideas at a machine builder
 
@@ -88,7 +88,7 @@ Assume a machine builder with SAP, Service Cloud, Field Service with 60 technici
 
 **Applicant pre-screening for service technicians.** HR wants an agent that ranks applications. Clearly Annex III 4(a), and under Art. 25 the company likely becomes the provider. The alternative is an agent that only schedules interviews and sends acknowledgements, both listed among the Art. 6(3) exceptions.
 
-**Condition monitoring in the next machine generation.** Product engineering embeds a model that detects wear. Annex I applies only if it acts as a safety component; pure maintenance support would not qualify under Art. 6(1a). Either way a workstream for product engineering, outside the CRM programme.
+**Condition monitoring in the next machine generation.** Product engineering embeds a model that detects wear. Annex I applies only if it acts as a safety component; pure maintenance support could fall under Art. 6(1a), unless its failure would endanger health and safety under Art. 6(1b). Either way a workstream for product engineering, outside the CRM programme.
 
 One idea is overdue, two get redesigned to stay out of high-risk, and one belongs to another team.
 
