@@ -19,3 +19,7 @@ The AI masterclass (hub plus ten chapters in `src/content/masterclass/<lang>/`, 
 ## External links
 
 Every external link opens in a new tab, on every page. Markdown links get this automatically from `src/lib/external-links.mjs`; in components use `target="_blank" rel="noopener"` plus `<ExternalMark>`. `scripts/check-links.mjs` runs after `astro build` and fails on violations; never weaken it.
+
+## Sitemap
+
+The sitemap must list exactly the indexable pages. `scripts/check-sitemap.mjs` runs after `astro build` and fails if a page without `noindex` is missing from it, a `noindex` page is in it, or a listed URL has no page. To keep a page out of the sitemap, give it `noindex` (and add it to the sitemap filter in `astro.config.mjs`); never weaken the check.

@@ -6,8 +6,9 @@
   "scripts": {
     "dev": "astro dev",
     "check:blog": "node scripts/check-blog.mjs",
-    "build": "node scripts/check-blog.mjs && astro build && node scripts/check-links.mjs",
+    "build": "node scripts/check-blog.mjs && astro build && node scripts/check-links.mjs && node scripts/check-sitemap.mjs",
     "check:links": "node scripts/check-links.mjs",
+    "check:sitemap": "node scripts/check-sitemap.mjs",
     "preview": "astro preview"
   },
   "dependencies": {
