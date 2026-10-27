@@ -76,16 +76,20 @@ export const de: Dict = {
         title: 'Make-or-Buy & Lizenzprognosen',
         text: 'Gehört das überhaupt in Salesforce? Best-of-Breed-Alternativen und Lizenzkosten, bewertet bevor die Entscheidung fällt.',
       },
+      {
+        title: 'Change Management',
+        text: 'Neue Prozesse und Salesforce im Alltag der Fachbereiche verankern.',
+      },
     ],
     more: 'Mehr erfahren',
     featured: 4,
     moreTitle: 'Weitere Leistungen',
-    moreAll: 'Alle Leistungen & Partner',
-    moreSoon: 'Seite folgt',
+    moreAll: 'Alle Leistungen',
+    morePartners: 'Partner',
     moreItems: [
       { order: 5, text: 'Programme planen und steuern, Nearshore-Teams koordinieren.' },
       { order: 6, text: 'Gehört das in Salesforce? Alternativen und Lizenzkosten vorher bewertet.' },
-      { title: 'Change Management', text: 'Neue Prozesse und Salesforce im Alltag der Fachbereiche verankern.' },
+      { order: 7, text: 'Neue Prozesse und Salesforce im Alltag der Fachbereiche verankern.' },
     ],
     focusLabel: 'Schwerpunkte',
     focus: [
@@ -256,24 +260,12 @@ export const de: Dict = {
     authorLinkedIn: 'LinkedIn-Profil',
     readMore: 'Artikel lesen',
   },
+  partnerPage: {
+    title: 'Partner',
+    metaTitle: 'Partner | FK Solution Design',
+    description: 'Partner, mit denen FK Solution Design in Salesforce-Programmen zusammenarbeitet.',
+  },
   servicePage: {
-    partnersLabel: 'Partner',
-    partnersTitle: 'Partner, mit denen ich arbeite',
-    partnersIntro: 'Architektur und Spezifikation bleiben auf Ihrer Seite. Für die Umsetzung arbeite ich mit ausgewählten Partnern, die Erfahrung aus großen internationalen Programmen mitbringen.',
-    partners: [
-      {
-        area: 'Integration',
-        name: 'Blue Apes',
-        text: 'Jitterbit-Partner. Setzt Schnittstellen zwischen Salesforce, SAP und weiteren Systemen um, auch in großen internationalen Programmen.',
-        tags: ['Jitterbit', 'SAP', 'Middleware'],
-      },
-      {
-        area: 'Telefonie / CTI',
-        name: 'Mirage',
-        text: 'CTI-Anbieter. Bringt Anrufe in die Service Cloud, damit Agenten beim Klingeln Kunde und offene Fälle sehen.',
-        tags: ['CTI', 'Service Cloud', 'Telefonie'],
-      },
-    ],
     indexTitle: 'Leistungen',
     metaTitle: 'Leistungen: Salesforce-Architektur | FK Solution Design',
     metaDescription: 'Salesforce-Architekt auf Kundenseite: Zielarchitektur, Partnersteuerung, DevOps, Integration, Programmsteuerung und Make-or-buy für Fertigungsunternehmen.',

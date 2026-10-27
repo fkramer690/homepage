@@ -375,6 +375,7 @@ a:hover { color: var(--anthracite); }
   margin-bottom: 0.6em;
 }
 .card-wide-head h3 { margin: 0; }
+.card-wide-links { display: flex; flex-wrap: wrap; gap: 6px 18px; }
 .card-wide-head .card-more { margin-top: 0; white-space: nowrap; text-decoration: none; }
 .more-rows { list-style: none; margin: 0; padding: 0; }
 .more-rows li { border-top: 1px dashed var(--line); }
@@ -392,12 +393,6 @@ a:hover { color: var(--anthracite); }
 .more-index { font-size: 0.75rem; color: var(--text-2); }
 .more-title { font-weight: 600; }
 .more-arrow { color: var(--cyan-dark); }
-.more-soon {
-  font-size: 0.68rem;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: var(--text-2);
-}
 .more-text { grid-column: 2 / 3; color: var(--text-2); font-size: 0.9rem; }
 @media (max-width: 620px) {
   .more-text { grid-column: 2 / -1; }
@@ -468,8 +463,6 @@ a:hover { color: var(--anthracite); }
 }
 .ref p:not(.ref-sector) { color: var(--text-2); font-size: 0.97rem; }
 .ref .tags { margin-top: auto; }
-.partners { margin-top: 64px; }
-.partners h3 { margin: 0 0 0.4em; }
 .note { margin-top: 1.5em; font-size: 0.88rem; color: var(--text-2); }
 @media (max-width: 760px) {
   .refs { grid-template-columns: 1fr; }

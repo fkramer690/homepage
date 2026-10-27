@@ -7,3 +7,5 @@ export const homeHref = (lang: Lang) => (lang === 'de' ? base : `${base}en/`);
 
 // Path of a page below the language root, e.g. localHref('en', 'speaking/').
 export const localHref = (lang: Lang, path: string) => `${homeHref(lang)}${path}`;
+
+export const partnersHref = (lang: Lang) => localHref(lang, lang === 'de' ? 'partner/' : 'partners/');
