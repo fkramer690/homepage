@@ -12,7 +12,7 @@ export const de: Dict = {
     references: 'Referenzen',
     about: 'Über mich',
     blog: 'Blog',
-    masterclass: 'Masterclass KI',
+    masterclass: 'Masterclass',
     contact: 'Kontakt',
     cta: 'Termin vereinbaren',
     newTab: '(öffnet Microsoft Bookings in einem neuen Tab)',
@@ -269,7 +269,22 @@ export const de: Dict = {
   partnerPage: {
     title: 'Partner',
     metaTitle: 'Partner | FK Solution Design',
-    description: 'Partner, mit denen FK Solution Design in Salesforce-Programmen zusammenarbeitet.',
+    description: 'Kooperationspartner von FK Solution Design für Themen neben der Salesforce-Architektur, zum Beispiel Change Management mit Juliane Winterscheid.',
+    lead: 'Niemand ist in jedem Bereich der beste Experte, ich auch nicht. Deshalb arbeite ich dort, wo andere mehr Erfahrung haben, mit Kooperationspartnern zusammen, die ich selbst kenne und denen ich vertraue.',
+    intro: 'Mein Schwerpunkt ist die Salesforce-Architektur auf Kundenseite. Ein Programm braucht aber mehr als eine gute Architektur: Die Menschen im Unternehmen müssen neue Prozesse auch annehmen. Für solche Themen hole ich Partner dazu, die genau darin stark sind. So bekommen Sie keinen Generalisten, der alles ein bisschen kann, sondern für jede Frage jemanden, der sie wirklich beherrscht.',
+    linkedIn: 'LinkedIn-Profil',
+    partners: [
+      {
+        area: 'Change Management',
+        name: 'Juliane Winterscheid',
+        text: 'Juliane ist Expertin für Change Management, mit zahlreichen renommierten Referenzen und einem starken Management-Hintergrund. Sie kennt Unternehmen deshalb nicht nur aus der Außenperspektive der Beratung, sondern auch von innen: wie Entscheidungen fallen, wo Widerstand entsteht und was ein Team braucht, um neue Arbeitsweisen anzunehmen. Bei Change Management in Salesforce-Programmen arbeiten wir zusammen.',
+        linkedin: 'https://www.linkedin.com/in/juliane-winterscheid-4794b8115/',
+        photo: 'juliane-winterscheid',
+        photoAlt: 'Juliane Winterscheid präsentiert vor einem Team',
+        service: 7,
+        serviceLink: 'Change Management bei mir',
+      },
+    ],
   },
   servicePage: {
     indexTitle: 'Leistungen',

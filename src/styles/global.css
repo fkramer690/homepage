@@ -179,10 +179,12 @@ a:hover { color: var(--anthracite); }
   .main-nav { display: none; }
 }
 .main-nav a { white-space: nowrap; }
-/* Between the mobile breakpoint and full width the logo alone carries the brand, so all nav items fit */
+/* Between the mobile breakpoint and full width the nav gaps shrink so all items fit next to the brand */
 @media (min-width: 881px) and (max-width: 1160px) {
   .header-inner { gap: 16px; }
   .main-nav { gap: 16px; }
+}
+@media (min-width: 881px) and (max-width: 1099px) {
   .brand-text { display: none; }
 }
 @media (max-width: 480px) {
@@ -1108,4 +1110,36 @@ p.post-series-note { margin: 0.6em 0 0; font-size: 0.95rem; }
   .mc-pager { grid-template-columns: 1fr; }
   .mc-pager > span:empty { display: none; }
   .mc-pager-next { text-align: left; border-left-width: 4px; border-right-width: 1px; }
+}
+
+/* Partner page */
+.partner-lead { color: var(--text-2); font-size: 1.15rem; max-width: 46em; margin: 0.4em 0 1em; }
+.partner-intro { color: var(--text-2); max-width: 46em; }
+.partner-card {
+  margin-top: 2.2em;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--white);
+}
+.partner-card figure { margin: 0; }
+.partner-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.partner-body { padding: 28px; }
+.partner-body .partner-area {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cyan-dark);
+  margin: 0 0 0.5em;
+}
+.partner-body h2 { margin: 0 0 0.5em; font-size: 1.5rem; }
+.partner-body p { color: var(--text-2); }
+.partner-links { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 1em 0 0; font-size: 0.85rem; }
+.partner-links a { text-decoration: none; }
+@media (max-width: 760px) {
+  .partner-card { grid-template-columns: 1fr; }
+  .partner-card img { aspect-ratio: 3 / 2; }
+  .partner-body { padding: 22px; }
 }

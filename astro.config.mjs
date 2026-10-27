@@ -72,11 +72,11 @@ export default defineConfig({
   },
   integrations: [
     sitemap({
-      // Legal pages and the empty partner page are noindex, so keep them out of
-      // the sitemap, as well as the redirect pages.
+      // Legal pages are noindex, so keep them out of the sitemap, as well as
+      // the redirect pages.
       filter: (page) => {
         const path = new URL(page).pathname.replace(new RegExp(`^${base.replace(/\/$/, '')}`), '');
-        return !/\/(impressum|datenschutz|partner|partners)\/$/.test(page) && !redirectPaths.some((re) => re.test(path));
+        return !/\/(impressum|datenschutz)\/$/.test(page) && !redirectPaths.some((re) => re.test(path));
       },
       i18n: {
         defaultLocale: 'de',

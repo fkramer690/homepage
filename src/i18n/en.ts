@@ -267,7 +267,22 @@ export const en = {
   partnerPage: {
     title: 'Partners',
     metaTitle: 'Partners | FK Solution Design',
-    description: 'Partners FK Solution Design works with in Salesforce programmes.',
+    description: 'Cooperation partners of FK Solution Design for topics next to Salesforce architecture, such as change management with Juliane Winterscheid.',
+    lead: 'Nobody is the best expert in every field, and neither am I. Where others have more experience, I work with cooperation partners I know personally and trust.',
+    intro: 'My focus is Salesforce architecture on the client side. A programme needs more than a good architecture, though: the people in the company also have to adopt new processes. For topics like this I bring in partners who are strong in exactly that area. So you do not get a generalist who knows a bit of everything, but someone for each question who really masters it.',
+    linkedIn: 'LinkedIn profile',
+    partners: [
+      {
+        area: 'Change management',
+        name: 'Juliane Winterscheid',
+        text: 'Juliane is an expert in change management, with many renowned references and a strong management background. She therefore knows companies not only from the outside view of consulting but also from the inside: how decisions are made, where resistance comes from and what a team needs to adopt new ways of working. We work together on change management in Salesforce programmes.',
+        linkedin: 'https://www.linkedin.com/in/juliane-winterscheid-4794b8115/',
+        photo: 'juliane-winterscheid',
+        photoAlt: 'Juliane Winterscheid presenting to a team',
+        service: 7,
+        serviceLink: 'Change management with me',
+      },
+    ],
   },
   servicePage: {
     indexTitle: 'Services',

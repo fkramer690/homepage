@@ -563,6 +563,44 @@ const drawings: Record<string, Drawing> = {
     <path d="M216 47C232 47 232 80 245 80M216 115C232 115 232 80 245 80" fill="none" stroke="${G}" stroke-width="1.2"/><path d="M241 76.5l5 3.5-5 3.5" fill="none" stroke="${G}" stroke-width="1.2"/>
     ${box(246, 60, 60, 40)}${t(276, 77, 'ERP', { fill: D, size: 7.5, anchor: 'middle' })}${t(276, 90, l('credit note', 'Gutschrift'), { size: 6.8, anchor: 'middle' })}
     ${t(18, 150, l('first: serial no. + start date per asset', 'zuerst: Seriennr. + Garantiebeginn je Anlage'), { size: 7 })}`,
+
+  'legacy-erp-without-api-agents': (l) => `
+    ${box(18, 26, 62, 86)}${t(49, 66, 'AGENT', { fill: D, anchor: 'middle' })}${t(49, 80, 'Agentforce', { size: 7, anchor: 'middle' })}
+    ${box(240, 26, 62, 86)}${t(271, 66, l('OLD ERP', 'ALTES ERP'), { fill: D, anchor: 'middle' })}${t(271, 80, l('no API', 'ohne API'), { size: 7, anchor: 'middle' })}
+    ${t(18, 18, l('3 DETOURS', '3 UMWEGE'), { fill: D, size: 7 })}
+    ${box(106, 26, 108, 22, C)}${t(160, 40, l('replica + read API', 'Replik + Lese-API'), { fill: C, size: 7, anchor: 'middle' })}
+    ${box(106, 58, 108, 22)}${t(160, 72, l('IDP + RPA bot', 'IDP + RPA-Bot'), { size: 7, anchor: 'middle' })}
+    ${box(106, 90, 108, 22)}${t(160, 104, 'Systems Integration Agent', { size: 7, anchor: 'middle' })}
+    ${arrow(80, 37, 106, C)}${arrow(214, 37, 240, C)}${arrow(80, 69, 106)}${arrow(214, 69, 240)}${arrow(80, 101, 106)}${arrow(214, 101, 240)}
+    <path d="M18 124H302" stroke="${L}"/>
+    ${t(18, 140, l('IDP below 80 % confidence: human review', 'IDP unter 80 % Konfidenz: manuelle Prüfung'), { fill: D, size: 7 })}
+    ${t(18, 154, l('credit limit + prices stay in the ERP', 'Kreditlimit + Preise bleiben im ERP'), { size: 7 })}`,
+
+  'mcp-explained-salesforce-it-leads': (l) => `
+    ${box(18, 34, 84, 46)}${t(60, 54, l('AI CLIENT', 'KI-CLIENT'), { fill: D, size: 7.5, anchor: 'middle' })}${t(60, 68, 'Claude · ChatGPT', { size: 7, anchor: 'middle' })}
+    ${arrow(102, 57, 150, C)}${t(126, 48, 'MCP', { fill: C, size: 7.5, anchor: 'middle' })}
+    ${box(150, 34, 74, 46, C)}${t(187, 54, 'HOSTED MCP', { fill: D, size: 7, anchor: 'middle' })}${t(187, 68, 'sobject-reads', { fill: C, size: 7, anchor: 'middle' })}
+    ${arrow(224, 57, 254)}
+    ${box(254, 34, 50, 46)}${t(279, 54, 'ORG', { fill: D, size: 7.5, anchor: 'middle' })}${t(279, 68, l('as user', 'als User'), { size: 7, anchor: 'middle' })}
+    ${t(18, 20, l('PROTOCOL ENFORCES NOTHING', 'PROTOKOLL SETZT NICHTS DURCH'), { fill: D, size: 7 })}${tag(210, 8, 94, l('off by default', 'standardmäßig aus'))}
+    <path d="M18 98H304" stroke="${L}"/>
+    ${t(18, 112, l('4 DECISIONS', '4 ENTSCHEIDUNGEN'), { fill: D, size: 7 })}
+    ${[l('servers', 'Server'), l('users', 'Benutzer'), l('data', 'Daten'), l('clients', 'Clients')].map((s, i) => check(18 + i * 72, 126, i === 0 ? C : G) + t(32 + i * 72, 132, s, { size: 7.5 })).join('')}
+    ${t(18, 152, l('no service accounts, every call in the audit trail', 'keine Service Accounts, jeder Aufruf im Audit'), { size: 7 })}`,
+
+  'prompt-injection-dealer-portals': (l) => `
+    ${t(18, 18, l('UNTRUSTED TEXT', 'FREMDER TEXT'), { fill: D, size: 7 })}
+    ${['Web-to-Lead', 'Email-to-Case', l('dealer portal', 'Händlerportal'), l('warranty claim', 'Garantieantrag')].map((s, i) => box(18, 26 + i * 22, 84, 17) + t(26, 37 + i * 22, s, { size: 7 })).join('')}
+    ${arrow(102, 66, 128)}
+    ${box(128, 44, 64, 44, C)}${t(160, 63, l('AGENT', 'AGENT'), { fill: D, size: 8, anchor: 'middle' })}${t(160, 77, 'Agentforce', { size: 7, anchor: 'middle' })}
+    ${t(206, 18, l('LETHAL TRIFECTA', 'LETHAL TRIFECTA'), { fill: D, size: 7 })}
+    ${check(206, 30, G)}${t(220, 35, l('narrow read rights', 'enge Leserechte'), { size: 7 })}
+    ${check(206, 48, G)}${t(220, 53, l('external text marked', 'externe Felder markiert'), { size: 7 })}
+    ${cross(210, 70)}${t(220, 73, l('no way out', 'kein Weg nach außen'), { fill: C, size: 7 })}
+    ${arrow(192, 66, 204, G, true)}
+    <path d="M18 120H302" stroke="${L}"/>
+    ${t(18, 136, l('ForcedLeak: CVSS 9.4, reported 07/2025', 'ForcedLeak: CVSS 9,4, gemeldet 07/2025'), { fill: D, size: 7.5 })}
+    ${t(18, 150, l('Trusted URLs enforced since 8 Sep 2025', 'Trusted URLs erzwungen seit 8.9.2025'), { size: 7 })}`,
 };
 
 export const hasDrawing = (key: string) => key in drawings;
