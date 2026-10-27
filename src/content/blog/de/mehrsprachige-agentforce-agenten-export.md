@@ -11,7 +11,7 @@ tags: [Agentforce, Mehrsprachigkeit, Knowledge, Flex Credits, Händlerservice, M
 takeaways:
   - "Salesforce listet für den Agentforce Service Agent 56 Sprachen, 25 davon als Beta, darunter Russisch, Slowakisch und Ukrainisch. Agentforce Voice nennt sieben Sprachen und ergänzt \"many others\"."
   - "Übersetzung kostet 4.000 Flex Credits pro Million Zeichen, rund 20 €. Ein übersetztes Händlergespräch kostet damit etwa fünf Cent."
-  - "Andere Sprachen brauchen mehr Tokens als Englisch, und Prompts werden in Einheiten von 2.000 Tokens abgerechnet. Eine Antwort auf Tschechisch kann deshalb zwei Einheiten kosten statt einer."
+  - "Andere Sprachen brauchen oft mehr Tokens als Englisch, und Prompts werden in Einheiten von 2.000 Tokens abgerechnet. Dieselbe Antwort in einer anderen Sprache kann deshalb zwei Einheiten kosten statt einer."
   - "Standardmäßig filtert der Retriever Wissensartikel nach der Sitzungssprache. Ein italienischer Händler findet nur italienische Artikel, solange Sie keinen eigenen Retriever bauen."
   - "Ich würde Wissen in ein oder zwei Sprachen pflegen, Sicherheits- und Gewährleistungsinhalte pro Land halten und jede freigegebene Sprache vor dem Go-live testen."
 faq:
@@ -24,7 +24,7 @@ faq:
   - q: "Brauche ich Wissensartikel in jeder Händlersprache?"
     a: "Nicht zwingend. Der Standard-Retriever filtert nach Sitzungssprache. Entweder pflegen Sie Artikel pro Sprache, oder Sie bauen einen eigenen Retriever ohne Sprachfilter. Salesforce selbst hält das Wissen seiner Help-Seite auf Englisch und übersetzt Frage und Antwort."
   - q: "Warum sind Prompts auf Deutsch oder Polnisch teurer als auf Englisch?"
-    a: "Derselbe Text zerfällt in den meisten anderen Sprachen in mehr Tokens, und Salesforce rechnet Prompts in Einheiten von 2.000 Eingabe- und Ausgabetokens ab. Überschreitet ein Prompt diese Grenze, zählt er doppelt. Aktionen kosten pro Aufruf, unabhängig von der Sprache."
+    a: "Derselbe Text zerfällt in anderen Sprachen oft in mehr Tokens, und Salesforce rechnet Prompts in Einheiten von 2.000 Eingabe- und Ausgabetokens ab. Überschreitet ein Prompt diese Grenze, zählt er doppelt. Aktionen kosten pro Aufruf, unabhängig von der Sprache."
 draft: false
 ---
 
@@ -64,9 +64,8 @@ Für Servicemitarbeitende gibt es eine eigene Funktion. [Real-Time Translations]
 
 Ein Token ist die Einheit, die ein Sprachmodell liest und schreibt, oft ein Wortteil. Das [Help Center von OpenAI](https://help.openai.com/en/articles/4936856-understanding-and-counting-tokens) nennt als Faustregel ein Token pro etwa vier Zeichen und merkt an, dass andere Sprachen ein anderes Verhältnis zwischen Zeichen, Wörtern und Tokens haben können.
 
-Das ist meine eigene Messung an einem einzigen Satz, kein Benchmark. Ich habe eine Händlerfrage mit gpt-tokenizer gezählt, einer Open-Source-Umsetzung der OpenAI-Tokenizer: „Alarm 2041 on the spindle drive of our lathe: which spare part do we need, is it covered by warranty, and when can a technician come?“ Die Übersetzungen in sechs Sprachen stammen von mir. Mit der Kodierung o200k_base braucht Englisch 33 Tokens, Deutsch 38, Russisch 39, Französisch und Polnisch 40, Tschechisch 41 und Japanisch 44. Mit der älteren Kodierung cl100k_base braucht Tschechisch 57 und Russisch 63, Englisch dagegen 33. Der Tokenizer hängt vom Modell ab, und ein Satz sagt wenig über Ihre Dokumente, aber die Richtung ist klar.
 
-Bei Flex Credits wirkt das in Stufen. Laut Hilfeartikel zählen Prompts in Einheiten von 2.000 Tokens, aufgerundet, Eingabe und Ausgabe zusammen. Das Beispiel dort: Ein Prompt mit 6.500 Tokens zählt als vier Prompts. Aktionen kosten pro Aufruf, egal in welcher Sprache. Eine Antwort mit Wissensbezug, die auf Englisch 1.750 Tokens braucht, passt in eine Einheit. Mit dem tschechischen Faktor 1,24 aus meinem Satz (41 statt 33 Tokens) braucht sie rund 2.170 Tokens und zwei Einheiten, also 8 statt 4 Credits auf einem Standard-Modell. Die Methode steht in [Flex Credits und Agentforce-Kosten pro Aktion](../flex-credits-agentforce-kosten-pro-aktion/), die Grundlagen im Masterclass-Kapitel [Kosten und Token](../../masterclass-ki/kosten-und-token/).
+Bei Flex Credits wirkt das in Stufen. Laut Hilfeartikel zählen Prompts in Einheiten von 2.000 Tokens, aufgerundet, Eingabe und Ausgabe zusammen. Das Beispiel dort: Ein Prompt mit 6.500 Tokens zählt als vier Prompts. Aktionen kosten pro Aufruf, egal in welcher Sprache. Eine Antwort mit Wissensbezug, die auf Englisch 1.750 Tokens braucht, passt in eine Einheit. Braucht dieselbe Antwort in einer anderen Sprache ein Viertel mehr Tokens, eine angenommene Größe, sind es rund 2.190 Tokens und zwei Einheiten, also 8 statt 4 Credits auf einem Standard-Modell. Die Methode steht in [Flex Credits und Agentforce-Kosten pro Aktion](../flex-credits-agentforce-kosten-pro-aktion/), die Grundlagen im Masterclass-Kapitel [Kosten und Token](../../masterclass-ki/kosten-und-token/).
 
 Die Qualität ist der zweite Grund, pro Sprache zu testen. Der Leitfaden warnt, dass die meisten großen Sprachmodelle überwiegend mit Englisch trainiert sind. Ich würde die Anweisungen einmal schreiben und in jeder erlaubten Sprache testen.
 

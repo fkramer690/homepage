@@ -11,7 +11,7 @@ tags: [agentforce, multilingual, knowledge, flex credits, dealer service, manufa
 takeaways:
   - "Salesforce lists 56 languages for Agentforce Service Agent, 25 of them in beta, including Russian, Slovak and Ukrainian. Agentforce Voice names seven languages and adds \"many others\"."
   - "The Translation meter costs 4,000 Flex Credits per million characters, about $20, so translating one dealer chat costs around five cents."
-  - "Other languages need more tokens than English, and prompts are metered in 2,000-token units, so a grounded answer in Czech can cost two prompt units where English needs one."
+  - "Other languages often need more tokens than English, and prompts are metered in 2,000-token units, so the same grounded answer in another language can cost two prompt units where English needs one."
   - "By default the knowledge retriever filters articles by the session language, so an Italian dealer finds only Italian articles unless you build a custom retriever."
   - "I would maintain knowledge in one or two languages, keep safety and warranty content per country and test every allowed language before go-live."
 faq:
@@ -24,7 +24,7 @@ faq:
   - q: "Do I need knowledge articles in every dealer language?"
     a: "Not necessarily. The standard retriever filters articles by session language, so either you maintain articles per language or you build a custom retriever without the language filter. Salesforce's own Help site keeps its knowledge in English and translates questions and answers."
   - q: "Why are prompts in German or Polish more expensive than in English?"
-    a: "The same text splits into more tokens in most other languages, and Salesforce meters prompts in units of 2,000 input and output tokens. When a prompt crosses that line, it counts as two prompts. Actions are billed per call, whatever the language."
+    a: "The same text often splits into more tokens in other languages, and Salesforce meters prompts in units of 2,000 input and output tokens. When a prompt crosses that line, it counts as two prompts. Actions are billed per call, whatever the language."
 draft: false
 ---
 
@@ -64,9 +64,8 @@ For human reps, [Real-Time Translations](https://help.salesforce.com/s/articleVi
 
 A token is the unit a language model reads and writes, often part of a word. OpenAI's [help center](https://help.openai.com/en/articles/4936856-understanding-and-counting-tokens) gives the rule of thumb "1 token is approximately 4 characters" and notes that "other languages can have different relationships between characters, words, and tokens".
 
-This is my own single-sentence measurement, not a benchmark. I ran one dealer question through gpt-tokenizer, an open-source implementation of OpenAI's tokenizers: "Alarm 2041 on the spindle drive of our lathe: which spare part do we need, is it covered by warranty, and when can a technician come?" I translated it myself into six languages. With the o200k_base encoding English needs 33 tokens, German 38, Russian 39, French and Polish 40, Czech 41 and Japanese 44. With the older cl100k_base encoding Czech needs 57 and Russian 63, against 33 for English. The tokenizer depends on your model, and one sentence says little about your documents, but the direction is clear.
 
-In Flex Credits the effect comes in steps. The help article counts prompts "in chunks of 2,000 tokens, rounded up", input and output together: "a prompt with a total of 6,500 input and output tokens will be metered as 4 prompts." Actions are metered per call, whatever the language. A grounded answer of 1,750 tokens in English fits one unit; at the Czech factor of 1.24 from my sentence (41 against 33 tokens) it needs about 2,170 tokens and two units, 8 credits instead of 4 on a Standard model. The method is in [Flex Credits and Agentforce cost per action](../flex-credits-agentforce-cost-per-action/), the basics in the masterclass chapter [costs and tokens](../../ai-masterclass/costs-and-tokens/).
+In Flex Credits the effect comes in steps. The help article counts prompts "in chunks of 2,000 tokens, rounded up", input and output together: "a prompt with a total of 6,500 input and output tokens will be metered as 4 prompts." Actions are metered per call, whatever the language. A grounded answer of 1,750 tokens in English fits one unit. If the same answer needs a quarter more tokens in another language, an assumed figure, it needs about 2,190 tokens and two units, 8 credits instead of 4 on a Standard model. The method is in [Flex Credits and Agentforce cost per action](../flex-credits-agentforce-cost-per-action/), the basics in the masterclass chapter [costs and tokens](../../ai-masterclass/costs-and-tokens/).
 
 Quality is the second reason to test. The guide warns that "most major LLMs are predominantly trained using English". I would write the instructions once and test them in every allowed language.
 
