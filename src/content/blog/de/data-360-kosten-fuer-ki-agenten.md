@@ -74,7 +74,7 @@ Nehmen wir einen Maschinenbauer, dessen Agent Händlern und Servicemitarbeitende
 
 Bei den Suchen nehme ich an, dass jede Abfrage den ganzen Index zählt. Laut Hilfeartikel werden bei hybrider Suche „the number of vectors and keyword records in the search index“ gezählt, und ein typischer Index hat so viele Keyword-Datensätze wie Vektoren. Das [Preisbeispiel von Salesforce](https://www.salesforce.com/data/pricing/agentforce-use-case/) geht davon aus, dass eine Abfrage 20 Prozent der unstrukturierten Daten durchsucht; meine Zahl liegt also auf der sicheren Seite.
 
-Drei Ergebnisse fallen auf. Die Suchen machen 7 Prozent der laufenden Kosten aus, geänderte Dokumente den Rest. Mit dem Standard-Parser auch für die Kataloge kostete die Erstbefüllung 1.164.000 statt 2.664.000 Credits. Und das erste Jahr kommt auf rund 5 Mio. Credits, mehr als die 2,75 Mio. Flex Credits pro Org und Jahr, die die Preisseite für die Max Edition nennt, und das vor der ersten Agentenaktion. Die Agentenseite der Rechnung steht in [was ein Serviceagent für Händleranfragen kostet](../serviceagent-haendleranfragen-kosten/).
+Drei Ergebnisse fallen auf. Die Suchen machen 7 Prozent der laufenden Kosten aus, geänderte Dokumente den Rest. Mit dem Standard-Parser auch für die Kataloge kostete die Erstbefüllung 1.164.000 statt 2.664.000 Credits. Und das erste Jahr kommt auf rund 5 Mio. Credits, mehr als die 2,75 Mio. Flex Credits pro Org und Jahr, die Salesforce für die Max Edition nennt, und das vor der ersten Agentenaktion. Die Agentenseite der Rechnung steht in [was ein Serviceagent für Händleranfragen kostet](../serviceagent-haendleranfragen-kosten/).
 
 ## Wo stecken die versteckten Data-360-Kosten?
 
@@ -92,11 +92,11 @@ In der Sandbox hat Data 360 keine Mengenstaffeln: 120 Credits pro MB unstrukturi
 
 ### Angereicherte Indizes
 
-Angereicherte Indizes (Enriched Indexing) erzeugen per LLM zusätzliche Chunks, laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/search-index-types-data-cloud-quick-look/get-to-know-search-index-types-in-data-cloud) drei neue pro Chunk. Der Hilfeartikel rechnet diese LLM-Aufrufe als Standard Prompts ab, zu 4 Credits je 2.000 Tokens. Braucht jeder der 300.000 Chunks einen solchen Aufruf, kommen 1,2 Mio. Credits dazu, und der größere Index erhöht die Zeilen, die jede Suche zählt. Die Bedingung von Trailhead passt: nur dort, wo höhere Trefferqualität einen messbaren Nutzen bringt.
+Angereicherte Indizes (Enriched Indexing) erzeugen per LLM zusätzliche Chunks, laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/search-index-types-data-cloud-quick-look/get-to-know-search-index-types-in-data-cloud) entstehen drei neue Chunks. Der Hilfeartikel rechnet diese LLM-Aufrufe als Standard Prompts ab, zu 4 Credits je 2.000 Tokens. Braucht jeder der 300.000 Chunks einen solchen Aufruf, kommen 1,2 Mio. Credits dazu, und der größere Index erhöht die Zeilen, die jede Suche zählt. Die Bedingung von Trailhead passt: nur dort, wo höhere Trefferqualität einen messbaren Nutzen bringt.
 
 ### Hybride Suche
 
-Teilenummern und Fehlercodes sind exakte Begriffe, und Trailhead empfiehlt hybride Suche für Anfragen mit konkreten Suchbegriffen. Der Aufbau kostet für Vektor- und Hybridindex gleich viel, aber jede hybride Abfrage zählt Vektoren und Keyword-Datensätze, also ungefähr die doppelte Zeilenzahl. Bei 14.400 Credits im Monat würde ich das für korrekte Teilenummern bezahlen.
+Teilenummern und Fehlercodes sind exakte Begriffe, und Trailhead empfiehlt hybride Suche für lange Anfragen mit konkreten Suchbegriffen. Der Aufbau kostet für Vektor- und Hybridindex gleich viel, aber jede hybride Abfrage zählt Vektoren und Keyword-Datensätze, also ungefähr die doppelte Zeilenzahl. Bei 14.400 Credits im Monat würde ich das für korrekte Teilenummern bezahlen.
 
 ## Welche Inhalte gehören nicht in den Index?
 

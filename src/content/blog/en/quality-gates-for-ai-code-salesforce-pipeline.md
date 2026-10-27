@@ -71,12 +71,12 @@ Gates only work if a red pipeline stops the merge. On GitHub, required status ch
 
 ## What does sfdx-hardis cover out of the box?
 
-[sfdx-hardis](../sfdx-hardis-open-source-salesforce-devops/) runs two control jobs on every pull request, according to its [documentation on reviewing pull requests](https://github.com/hardisgroupcom/sfdx-hardis/blob/main/docs/salesforce-devops-validate-merge-request.md):
+[sfdx-hardis](../sfdx-hardis-open-source-salesforce-devops/) runs two control jobs on every pull request, according to its [documentation on pull request results](https://sfdx-hardis.cloudity.com/salesforce-devops-handle-merge-request-results/):
 
-- **Check deploy job.** It simulates the deployment in the target org, runs the Apex tests, checks coverage and posts the result as a pull request comment, with a visual diff of changed flows. After the merge, the deployment reuses that validation as a quick deploy.
-- **Code quality job.** It runs MegaLinter, which checks Apex with PMD and comments the result of each linter on the pull request. The [documented configuration](https://github.com/hardisgroupcom/sfdx-hardis/blob/main/docs/salesforce-devops-solve-megalinter-errors.md) sets the Apex error threshold with the note "only the release manager can update this value", and `// NOPMD` is meant "only for false positives, never to publish faster".
+- **Check deploy job.** It simulates the deployment in the target org, runs the Apex tests, calculates coverage and posts the result as a pull request comment, with a visual diff of changed flows. The [sfdx-hardis overview](https://sfdx-hardis.cloudity.com/salesforce-devops-home/) says quick deploy reuses the validated deployment after the merge.
+- **Code quality job.** It runs MegaLinter, which checks Apex with PMD and Lightning Web Components with ESLint and comments the result on the pull request. In the [documented configuration](https://sfdx-hardis.cloudity.com/salesforce-devops-solve-megalinter-errors/) the Apex error threshold carries the note that only the release manager can update it, and `// NOPMD` is meant "only for false positives, never to publish faster".
 
-The default test level is `RunLocalTests` ([smart deployment](https://github.com/hardisgroupcom/sfdx-hardis/blob/main/docs/salesforce-devops-smart-deployment.md)). A beta [Coding Agent Auto-Fix](https://github.com/hardisgroupcom/sfdx-hardis/blob/main/docs/salesforce-deployment-agent-autofix.md) lets a coding agent such as Claude Code, Codex, Gemini or Copilot propose a fix for a failed deployment in a separate pull request, and the documentation says all proposed changes "must be carefully reviewed by an expert". That fix has to pass the same gates.
+The default test level is `RunLocalTests` ([smart deployment](https://sfdx-hardis.cloudity.com/salesforce-devops-smart-deployment/)). sfdx-hardis also lists a [Coding Agent Auto-Fix (Beta)](https://sfdx-hardis.cloudity.com/salesforce-devops-home/) for failed deployments. I would let an agent propose such fixes only if they pass the same gates and a person reviews them.
 
 ApexGuru and org-specific rules such as the API version check are not part of the documented jobs; add them as extra steps. How the rest of the pipeline fits together is in [why DevOps decides Salesforce enterprise projects](../why-devops-matters-salesforce-enterprise/).
 

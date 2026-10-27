@@ -12,7 +12,7 @@ takeaways:
   - "Which coding agent fits is usually decided by contracts, data residency and the existing toolchain, and less often by model quality."
   - "Salesforce says Agentforce Vibes is not available in the Hyperforce EU Operating Zone; Anthropic's direct Claude API offers only US or global inference, so EU processing runs through Amazon Bedrock, for example."
   - "For agents in production, rules such as warranty eligibility or credit limits belong in deterministic logic, while the language model handles language and intent."
-  - "If the ERP has no API, the options are document extraction with RPA or the Systems Integration Agent; both work through the user interface and need tests and monitoring."
+  - "If the ERP has no API, the options are document extraction with RPA or the Systems Integration Agent; the RPA step and the agent both work through the user interface and need tests and monitoring."
 articles: [agentforce-yes-or-no-manufacturers, vibes-claude-code-copilot-comparison, agentforce-sap-order-status, legacy-erp-without-api-agents]
 faq:
   - q: "Which coding agent is best for Salesforce?"
@@ -39,7 +39,7 @@ Each world has its own criteria, its own budget and its own tests. The terms beh
 
 ## The decision matrix for manufacturers
 
-I checked every statement on the linked pages on 27 October 2026. Prices are US list prices.
+Status as of 27 October 2026, based on the linked pages. Prices are US list prices.
 
 ### Building: coding agents, data and pipeline
 
@@ -52,7 +52,7 @@ I checked every statement on the linked pages on 27 October 2026. Prices are US 
 | 5 | Org sits in the Hyperforce EU Operating Zone, or EU processing is mandatory | Claude Code through Amazon Bedrock in an EU region, or OpenAI API projects with EU residency | Vibes is [not available in the EU Operating Zone](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-faqs.html); the direct Claude API offers [only "us" and "global"](https://platform.claude.com/docs/en/manage-claude/data-residency) | Data processing agreement, works council, no production data in prompts |
 | 6 | Agent needs data, such as checking the installed base before a migration | Hosted MCP with the sobject-reads server against a sandbox | [Named user, PKCE, field security and sharing apply](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/security-best-practices.html), read-only | Docs say [only for customers with Flex Credits](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/hosted-mcp-servers-overview.md); the meter for agentic access is still "TBA" |
 | 7 | Code quality, tests, deploy validation | sf CLI with Code Analyzer and Apex tests as a hook and in the pipeline | Deterministic and free of token cost; Salesforce itself [recommends the CLI over MCP](https://developer.salesforce.com/docs/platform/salesforce-code-analyzer/guide/mcp.html) when no LLM is needed | Free; the only reliable check that something is done |
-| 8 | Existing setup with the local DX MCP Server @salesforce/mcp | Pin version 0.30.15, move to skills, plugin and Hosted MCP | End of life on [2 November 2026](https://raw.githubusercontent.com/forcedotcom/mcp/main/README.md) | Restrict access to fixed sandbox aliases, never to all orgs |
+| 8 | Existing setup with the local DX MCP Server @salesforce/mcp | Pin version 0.30.15, move to skills, plugin and Hosted MCP | End of life on [2 November 2026](https://github.com/forcedotcom/mcp/issues/46) | Restrict access to fixed sandbox aliases, never to all orgs |
 
 ### Running: agents in service, sales and ERP
 
@@ -60,7 +60,7 @@ I checked every statement on the linked pages on 27 October 2026. Prices are US 
 |---|---|---|---|---|
 | 9 | Agent that pre-checks warranty claims from dealers | Agentforce Builder with Agent Script, tests before go-live | Salesforce's rule: what [can be expressed as code belongs in logic](https://architect.salesforce.com/docs/architect/fundamentals/guide/hybrid-reasoning-agentforce-builder-agent-script) | [20 Flex Credits per action in production, 16 in a sandbox](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) |
 | 10 | Agent returns order status or availability from SAP S/4 | MuleSoft API, [synced to API Catalog](https://developer.salesforce.com/blogs/2025/06/explore-mulesoft-for-agentforce-with-topic-center-and-api-catalog), used as an agent action | Documented pattern, named credentials are created automatically | MuleSoft licence; integration user with minimal permissions |
-| 11 | Old ERP or MES without an API | MuleSoft IDP with RPA, or the Systems Integration Agent | IDP routes documents under [80 percent confidence to a human](https://admin.salesforce.com/blog/2025/automate-order-entry-with-flow-mulesoft-agentforce-automate-with-agentforce); the Systems Integration Agent has been [GA since Dreamforce 2026](https://www.salesforce.com/blog/dreamforce-2026-announcements/) | Both work through the user interface; plan monitoring |
+| 11 | Old ERP or MES without an API | MuleSoft IDP with RPA, or the Systems Integration Agent | IDP routes documents under [80 percent confidence to a human](https://admin.salesforce.com/blog/2025/automate-order-entry-with-flow-mulesoft-agentforce-automate-with-agentforce); the Systems Integration Agent has been [GA since Dreamforce 2026](https://www.salesforce.com/blog/dreamforce-2026-announcements/) | RPA and the Systems Integration Agent work through the user interface; plan monitoring |
 | 12 | Sales wants to use Salesforce directly in Claude | Salesforce in Claude from the AIforce layer | [Available to all customers in beta](https://www.salesforce.com/news/stories/aiforce-announcement/) | "Pricing and packaging are subject to change"; pilot with a small group |
 
 Two notes on the matrix. Row 5 is often the decisive one for European manufacturers, because it can rule out row 2. IT should check whether the org sits in the EU Operating Zone before any tool comparison starts. And row 6 looks harmless, but it is the point where an external model reads real customer data. What to check there is covered in [chapter 3](../mcp-and-interfaces/).

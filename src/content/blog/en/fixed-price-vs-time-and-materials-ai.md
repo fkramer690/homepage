@@ -12,7 +12,7 @@ tags: [fixed price, time and materials, partner governance, ai coding, partner p
 takeaways:
   - "AI pushes Salesforce work packages with testable acceptance criteria towards fixed price; discovery, undocumented ERP interfaces and support stay on time and materials."
   - "Under hourly billing a partner loses revenue for every day a coding agent saves, so pure time and materials gives partners little reason to show you the productivity gain."
-  - "Since March 2026 Salesforce links partner payouts to active consumption instead of seats, and the FDE Partner Network ties incentives to agents reaching production."
+  - "Salesforce announced in March 2026 that it links partner payouts to active consumption instead of seats, and its FDE Partner Network ties incentives to agents reaching production."
   - "McKinsey found 11.8 percent average time savings but only 6.2 percent less rework, so prices should follow measured cycle times rather than a partner's claim."
   - "Outcome components work as a share of the fee, tied to a metric the manufacturer measures itself and combined with a cap on Flex Credits per transaction."
 faq:
@@ -35,7 +35,7 @@ Time and materials (T&M) means you pay for the person-days actually worked, what
 
 Coding agents break that stability. When a developer has Claude Code or Agentforce Vibes draft the Apex class, the test class and the deployment manifest, the build step can shrink a lot. Under T&M the partner then bills fewer days and earns less. Every incentive points towards using the agent quietly and billing as before. I do not assume bad intent here. I assume a business model that punishes honesty.
 
-How large the gain really is remains open, and that matters for pricing. McKinsey's [survey of 334 product and engineering leaders](https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/beyond-the-copilot-scaling-the-agentic-product-development-life-cycle) from August 2026 found 11.8 percent average time savings across the development life cycle, but only 6.2 percent less rework, and 30 percent reported that team productivity had fallen. METR's [randomised study](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/) measured experienced developers as 19 percent slower with AI in early 2025; its [February 2026 update](https://metr.org/blog/2026-02-24-uplift-update/) points to a speed-up but calls its own data "an unreliable signal". Before you renegotiate on a partner's claim, measure it yourself, as described in [measuring AI productivity in Salesforce projects](../measuring-ai-productivity-salesforce-projects/).
+How large the gain really is remains open, and that matters for pricing. McKinsey's [survey of 334 product and engineering leaders](https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/beyond-the-copilot-scaling-the-agentic-product-development-life-cycle) published in August 2026 (fielded in May) found 11.8 percent average time savings across the development life cycle, but only 6.2 percent less rework, and 30 percent reported that team productivity had fallen. METR's [randomised study](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/) measured experienced developers as 19 percent slower with AI in early 2025; its [February 2026 update](https://metr.org/blog/2026-02-24-uplift-update/) points to a speed-up but calls its own data "an unreliable signal". Before you renegotiate on a partner's claim, measure it yourself, as described in [measuring AI productivity in Salesforce projects](../measuring-ai-productivity-salesforce-projects/).
 
 So the gain is real for some tasks and uncertain on average. A commercial model has to settle who carries that uncertainty.
 
@@ -69,11 +69,11 @@ For a manufacturer this has two sides. A partner paid at go-live has less intere
 
 ## A typical scenario: renewing a framework contract
 
-Assume a machine builder with Sales Cloud, Service Cloud, Field Service and SAP. It works with one implementation partner on a framework contract of 600 person-days a year at €1,100 per day, €660,000 in total. At renewal the partner says its team now builds with coding agents and wants to keep the day rate. All figures are assumptions to show the method.
+Assume a machine builder with Sales Cloud, Service Cloud, Field Service and SAP. It works with one implementation partner on a framework contract of 600 person-days a year at $1,100 per day, $660,000 in total. At renewal the partner says its team now builds with coding agents and wants to keep the day rate. All figures are assumptions to show the method.
 
 Three work packages are planned for next year.
 
-**Warranty claim form in the dealer portal.** The SAP interface for credit notes exists and the rules are documented. Classic estimate: 45 person-days, €49,500. The partner expects about 30 days with agents. Under T&M you would pay €33,000, and the partner loses €16,500 of revenue for being honest. A fixed price of €49,500 lets the partner keep everything. I would offer a fixed price of around €41,000: the partner earns about €1,370 per day actually worked, you save 17 percent, and acceptance follows written test cases.
+**Warranty claim form in the dealer portal.** The SAP interface for credit notes exists and the rules are documented. Classic estimate: 45 person-days, $49,500. The partner expects about 30 days with agents. Under T&M you would pay $33,000, and the partner loses $16,500 of revenue for being honest. A fixed price of $49,500 lets the partner keep everything. I would offer a fixed price of around $41,000: the partner earns about $1,370 per day actually worked, you save 17 percent, and acceptance follows written test cases.
 
 **Spare part data from a subsidiary's legacy system.** Nobody knows the data model and there is no API documentation. Any fixed price would hide a large risk premium. I would buy ten days of discovery on T&M with a cap, then fix the price for the build once the interface is understood.
 

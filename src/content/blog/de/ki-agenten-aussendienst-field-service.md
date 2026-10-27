@@ -20,7 +20,7 @@ faq:
   - q: "Was kostet Agentforce for Field Service?"
     a: "Das Add-on für Disponenten und Techniker kostet 125 € pro Nutzer und Monat bei Jahresvertrag, mit nicht gemessener Nutzung durch Mitarbeitende. Der kundenseitige Scheduling Agent braucht Flex Credits; eine Aktion kostet 20 Credits, zum Listenpreis also 0,10 €."
   - q: "Kann ein KI-Agent Wartungstermine selbstständig planen?"
-    a: "Ja. Seit August 2025 kann ein Agent Kunden anhand anstehender Termine aus dem Maintenance Plan kontaktieren und Termine buchen. Bei Maschinen, die für die Wartung abgeschaltet werden müssen, braucht der Agent bekannte Stillstandsfenster oder übergibt an einen Disponenten."
+    a: "Ja. Salesforce hat die allgemeine Verfügbarkeit für August 2025 angekündigt: Ein Agent kontaktiert Kunden anhand anstehender Termine aus dem Maintenance Plan und bucht Termine. Bei Maschinen, die für die Wartung abgeschaltet werden müssen, braucht der Agent bekannte Stillstandsfenster oder übergibt an einen Disponenten."
   - q: "Muss der Betriebsrat bei KI-Agenten im Außendienst beteiligt werden?"
     a: "In Deutschland meist ja, wenn ein Agent Daten, Sprache oder Einsatzberichte der Techniker verarbeitet. Binden Sie Betriebsrat und Datenschutz vor dem Piloten ein, zusammen mit den übrigen Field-Service-Themen wie der Standortverfolgung."
 draft: false
@@ -35,10 +35,10 @@ Salesforce hat Agentforce for Field Service im [April 2025](https://www.salesfor
 | Für | Funktion | Status |
 |---|---|---|
 | Kunden | Termine per Web oder Messaging buchen, verschieben und absagen | GA seit Mai 2025 |
-| Kunden | Proaktive Wartung: Der Agent kontaktiert Kunden und bucht Termine anhand der Maintenance-Plan-Termine | GA seit August 2025 |
+| Kunden | Proaktive Wartung: Der Agent kontaktiert Kunden und bucht Termine anhand der Maintenance-Plan-Termine | GA für August 2025 angekündigt |
 | Kunden | Buchung per Telefon mit Agentforce Voice | Winter-'27-Highlights, Status in Ihrer Org prüfen |
 | Disponenten | Lücken durch Absagen, No-Shows und früh beendete Einsätze füllen | GA seit April 2025 |
-| Techniker | Pre-Work Brief, auch zum Anhören | Audio GA seit April 2025, interaktive Version mit Summer '26 |
+| Techniker | Pre-Work Brief, auch zum Anhören | Audio GA seit April 2025; die Salesforce-Hilfe beschreibt auch eine interaktive Version, Release nicht bestätigt |
 | Techniker | Post-Work Summary, als Entwurf am Work Order | GA seit April 2025 |
 | Techniker | Schrittweise Fehlersuche aus Handbüchern, früheren Reparaturen und Fotos | GA seit Juni 2025 |
 | Anlagen | Asset Service Prediction: wann und warum eine Anlage ausfällt | [Open Beta 2024 angekündigt](https://www.salesforce.com/news/stories/field-service-asset-management-news/), auf der Produktseite ohne GA-Datum |

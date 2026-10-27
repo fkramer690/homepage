@@ -74,7 +74,7 @@ Assume a machine builder whose agent answers dealers and service reps on spare p
 
 For the searches I assume each query counts the whole index. The help article says that for hybrid search "the number of vectors and keyword records in the search index are counted", and that a typical index has as many keyword records as vectors. Salesforce's own [pricing example](https://www.salesforce.com/data/pricing/agentforce-use-case/) assumes a query scans 20 percent of the unstructured data, so my figure errs on the safe side.
 
-Three results stand out. Searches are 7 percent of the running cost. With the default parser for the catalogues too, the initial load would cost 1,164,000 credits instead of 2,664,000. And the first year comes to about 5 million credits, more than the 2.75 million Flex Credits per org per year that the pricing page lists for Max Edition, before a single agent action. The agent side of the bill is in [what a dealer service agent costs](../dealer-service-agent-cost-calculation/).
+Three results stand out. Searches are 7 percent of the running cost. With the default parser for the catalogues too, the initial load would cost 1,164,000 credits instead of 2,664,000. And the first year comes to about 5 million credits, more than the 2.75 million Flex Credits per org per year that Salesforce lists for Max Edition, before a single agent action. The agent side of the bill is in [what a dealer service agent costs](../dealer-service-agent-cost-calculation/).
 
 ## Where do the hidden Data 360 costs sit?
 
@@ -92,11 +92,11 @@ In a sandbox, Data 360 has no volume tiers: 120 credits per MB unstructured, 480
 
 ### Enriched indexing
 
-Enriched indexes use an LLM to generate additional chunks, and [Trailhead](https://trailhead.salesforce.com/content/learn/modules/search-index-types-data-cloud-quick-look/get-to-know-search-index-types-in-data-cloud) says three new chunks are created per chunk. The help article bills these LLM calls as Standard Prompts at 4 credits per 2,000 tokens. If each of the 300,000 chunks needs one such call, enrichment adds 1.2 million credits, and the larger index raises the rows each search counts. Trailhead ties it to measurable value from better retrieval.
+Enriched indexes use an LLM to generate additional chunks, and [Trailhead](https://trailhead.salesforce.com/content/learn/modules/search-index-types-data-cloud-quick-look/get-to-know-search-index-types-in-data-cloud) says an enriched index creates three new chunks. The help article bills these LLM calls as Standard Prompts at 4 credits per 2,000 tokens. If each of the 300,000 chunks needs one such call, enrichment adds 1.2 million credits, and the larger index raises the rows each search counts. Trailhead ties it to measurable value from better retrieval.
 
 ### Hybrid search
 
-Trailhead recommends hybrid search for queries with specific terms, such as part numbers and error codes. Building the index costs the same for vector and hybrid search, but each hybrid query counts vectors and keyword records, so roughly twice the rows. At 14,400 credits a month I would pay that for correct part numbers.
+Trailhead recommends hybrid search for long queries with specific search terms, and part numbers and error codes are exactly that. Building the index costs the same for vector and hybrid search, but each hybrid query counts vectors and keyword records, so roughly twice the rows. At 14,400 credits a month I would pay that for correct part numbers.
 
 ## Which content does not belong in the index?
 

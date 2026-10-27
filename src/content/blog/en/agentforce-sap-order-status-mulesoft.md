@@ -39,10 +39,10 @@ For a machine builder the chain looks like this:
 1. **SAP S/4HANA** holds sales orders, schedule lines, deliveries and the availability check. The [MuleSoft SAP S/4HANA OData Connector](https://docs.mulesoft.com/sap-s4hana-cloud-connector/latest/) supports the OData APIs of S/4HANA Cloud and on-premise and can query entities, invoke remote functions and run batch requests. On the SAP side it needs a communication user assigned to the communication arrangements for exactly the APIs you want to expose.
 2. **A Mule API** turns these OData services into a few operations an agent can use.
 3. **Topic Center** marks operations as agent actions in the OpenAPI spec. According to [MuleSoft's documentation](https://docs.mulesoft.com/anypoint-code-builder/ai-enabling-api-project-topic-center), only OAS 3.0 and 3.1 are supported, and agent metadata cannot sit in a schema defined with `$ref`.
-4. **API Catalog** in Salesforce receives the API once an active API instance exists in API Manager. In Salesforce's [Agentforce workshop](https://developer.salesforce.com/workshops/agentforce-workshop/mulesoft/3-explore-api-catalog) you then activate the actions and grant them to users through a permission set.
+4. **API Catalog** in Salesforce can sync only APIs from Exchange that have managed instances, according to [MuleSoft](https://docs.mulesoft.com/access-management/enabling-api-catalog). In Salesforce's [Agentforce workshop](https://developer.salesforce.com/workshops/agentforce-workshop/mulesoft/3-explore-api-catalog) you then activate the actions and grant them to users through a permission set.
 5. **The agent** gets the topic and its actions in Agent Builder.
 
-Two prerequisites are easy to miss: a tenant relationship between the Anypoint organisation and a Salesforce org with agent entitlements, and API Catalog enabled in that org. If MuleSoft and Salesforce contracts sit with different departments, sort this out before the first sprint.
+Two prerequisites are easy to miss: a trusted connection between the Anypoint organisation and a Salesforce org, with Agentforce enabled for Anypoint Platform, and API Catalog enabled in that org. If MuleSoft and Salesforce contracts sit with different departments, sort this out before the first sprint.
 
 I have not found an official Salesforce reference architecture for Agentforce with S/4HANA, only this generic MuleSoft pattern. So your partner's design is the architecture, and someone on your side should review it.
 

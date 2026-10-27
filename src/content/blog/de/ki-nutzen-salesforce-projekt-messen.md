@@ -20,7 +20,7 @@ faq:
   - q: "Macht KI Salesforce-Entwickler schneller?"
     a: "Das hängt vom Umfeld ab. GitHub hat bei einer kleinen, neuen JavaScript-Aufgabe 55 Prozent Zeitgewinn gemessen, METR bei erfahrenen Entwicklern in großen bestehenden Codebasen 19 Prozent Zeitverlust. Eine Salesforce-Org mit Jahren an Triggern, Flows und Schnittstellen liegt näher an METR, deshalb sollten Sie den Gewinn messen statt annehmen."
   - q: "Welche Kennzahlen taugen nicht, um KI-Produktivität zu bewerten?"
-    a: "Codezeilen, der Anteil KI-generierten Codes, Lizenzzahlen, aktive Nutzer und Prompt-Volumen. McKinsey empfiehlt, über diese Nutzungskennzahlen hinauszugehen und Qualität, Time-to-Market, Zuverlässigkeit und Kosten zu messen."
+    a: "Codezeilen, der Anteil KI-generierten Codes, Lizenzzahlen, aktive Nutzer und Prompt-Volumen. McKinsey weist darauf hin, dass sie nur zeigen, ob die Werkzeuge benutzt werden, nicht ob Releases schneller oder zuverlässiger werden. Ergebniskennzahlen wie Qualität, Tempo und Produktivität sagen mehr."
   - q: "Was sind die DORA-Metriken?"
     a: "DORA nutzt derzeit fünf Kennzahlen: Change Lead Time, Deployment-Häufigkeit und Wiederherstellungszeit nach fehlgeschlagenem Deployment für den Durchsatz, Change Fail Rate und Deployment Rework Rate für die Instabilität. Die Rework Rate kam 2024 dazu."
 draft: false
@@ -30,7 +30,7 @@ Den KI-Nutzen im Salesforce-Projekt messen Sie mit Ergebniskennzahlen gegen Ihre
 
 ## Was sagen die Studien zur Produktivität mit KI-Coding?
 
-Vier Quellen tauchen in jeder Diskussion auf, und sie messen sehr Unterschiedliches.
+Fünf Quellen tauchen in jeder Diskussion auf, und sie messen sehr Unterschiedliches.
 
 - **GitHub, 2022.** In einem [kontrollierten Experiment](https://github.blog/news-insights/research/research-quantifying-github-copilots-impact-on-developer-productivity-and-happiness/) schrieben 95 Entwickler einen HTTP-Server in JavaScript. Die Gruppe mit Copilot brauchte rund 1 Stunde 11 Minuten, die Kontrollgruppe 2 Stunden 41 Minuten: 55 Prozent schneller. Eine kleine, neue, klar umrissene Aufgabe.
 - **METR, 2025.** In einer [randomisierten Studie](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/) bearbeiteten 16 erfahrene Open-Source-Entwickler 246 echte Issues in ihren eigenen Projekten mit im Schnitt über einer Million Codezeilen. Mit KI brauchten sie 19 Prozent länger. Vorher erwarteten sie 24 Prozent Beschleunigung, hinterher glaubten sie immer noch, KI habe sie 20 Prozent schneller gemacht.
@@ -56,7 +56,7 @@ Ich würde fünf Zahlen verfolgen, getrennt nach Art der Story (Konfiguration, A
 4. **Change Fail Rate und Change Lead Time.** Zwei der fünf [DORA-Metriken](https://dora.dev/guides/dora-metrics/history/). Sie kommen aus der Pipeline, nicht aus einer Umfrage; eine Open-Source-Option, die sie ausweist, beschreibe ich in [sfdx-hardis als Einstieg in Salesforce DevOps](../sfdx-hardis-einfuehrung-salesforce-devops/).
 5. **Größe der Pull Requests und Wartezeit im Review.** KI macht große Änderungen billig. DORA zählt [Arbeiten in kleinen Paketen](https://dora.dev/capabilities/) zu den sieben Fähigkeiten, die den Nutzen von KI verstärken, und ich erwarte, dass genau diese Disziplin als Erstes nachlässt, wenn Agenten den Code schreiben.
 
-Als Erfolgsmaß weglassen würde ich Codezeilen, den Anteil KI-generierten Codes, Lizenzen und Prompt-Volumen. McKinsey empfiehlt ausdrücklich, über solche Nutzungskennzahlen hinauszugehen, und 86 Prozent der Spitzenreiter in der Umfrage messen stattdessen Ergebnisse. Token-Kosten pro Story sind für das Budget nützlich, dazu mehr in [was KI-Coding im Salesforce-Projekt kostet](../ki-coding-kosten-salesforce-projekt/).
+Als Erfolgsmaß weglassen würde ich Codezeilen, den Anteil KI-generierten Codes, Lizenzen und Prompt-Volumen. McKinsey weist darauf hin, dass Nutzungskennzahlen nur zeigen, ob die Werkzeuge benutzt werden, nicht ob Releases schneller oder zuverlässiger werden, und 86 Prozent der Spitzenreiter in der Umfrage messen stattdessen Ergebnisse. Token-Kosten pro Story sind für das Budget nützlich, dazu mehr in [was KI-Coding im Salesforce-Projekt kostet](../ki-coding-kosten-salesforce-projekt/).
 
 ## Ein typisches Szenario: zwei Zahlen, zwei Geschichten
 

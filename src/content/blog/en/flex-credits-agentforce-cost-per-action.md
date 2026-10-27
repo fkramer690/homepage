@@ -41,7 +41,7 @@ Three details matter for planning:
 - **Deterministic steps are billed too.** According to the [help article on billable usage types](https://help.salesforce.com/s/articleView?language=en_US&id=ai.usage_flex_credits.htm&type=5), actions are billed when they run, also when they run deterministically. Moving a warranty rule into [Agent Script](../agent-script-deterministic-rules/) makes the agent more reliable, not cheaper.
 - **One pricing model per org.** Flex Credits and the $2 per conversation model are not supported in the same org.
 
-There are three buying models: Pre-Purchase pays the full term upfront, Pre-Commit bills a baseline monthly in arrears with a true-up at term end, PayGo bills what you use. Overage is billed at the contracted rate without a penalty. The [Flex Agreement announced in May 2025](https://www.salesforce.com/news/press-releases/2025/05/15/agentforce-flexible-pricing-news/) also allows converting user licences into Flex Credits and back.
+There are three buying models, according to [Salesforce Ben's pricing guide](https://www.salesforceben.com/complete-guide-to-agentforce-pricing-options/): Pre-Purchase pays the full term upfront, Pre-Commit bills a baseline monthly in arrears with a true-up at term end, PayGo bills what you use. Overage is billed at the contracted rate without a penalty. The [Flex Agreement announced in May 2025](https://www.salesforce.com/news/press-releases/2025/05/15/agentforce-flexible-pricing-news/) also allows converting user licences into Flex Credits and back.
 
 ## What do prompts cost, and why does the model matter?
 
@@ -56,7 +56,7 @@ Prompts are easy to overlook, because the examples on the pricing page count onl
 
 Advanced prompts have been metered since 21 July 2026. The same 6,500-token summary costs 8 credits on a Basic model, 16 on Standard and 64 on Advanced. For a case summary that a service rep reads and corrects, I would start on Standard and move up only if tests show a quality gap.
 
-The help article also names embedded generative features such as Service Replies. It does not say whether the reasoning engine's own LLM calls are metered as prompts on top of the actions. I budget every prompt template and generative feature in the design and check in the pilot whether Digital Wallet shows more.
+The help article also names embedded generative features such as Service Replies. It does not say whether the reasoning engine's own LLM calls are metered as prompts on top of the actions. I would budget every prompt template and generative feature in the design and check in the pilot whether Digital Wallet shows more.
 
 ## Voice, sandbox and Data 360: where estimates go wrong
 
@@ -111,6 +111,6 @@ Four weeks after go-live, compare the estimate with [Digital Wallet](https://www
 
 They expire. The rate card says Flex Credits must be used before the order end date, with no rollover into the next term. If you buy a year of credits in January and go-live slips from March to June, three months of volume are paid for and lost.
 
-I would buy the first year along the ramp-up profile: a small pre-purchase for pilot and tests, PayGo or Pre-Commit for the ramp-up, and a larger volume once Digital Wallet shows real numbers. Because overage is billed at the contracted rate without a penalty, a tight first purchase carries little risk. Also ask whether included edition credits are per org and per year: the pricing page says so for Max, while the [editions announcement of September 2026](https://www.salesforce.com/news/stories/salesforce-simplifies-editions-2026/) does not say it for Core and Advanced. These questions are part of my [make-or-buy and licence planning](../../services/make-or-buy-licences/).
+I would buy the first year along the ramp-up profile: a small pre-purchase for pilot and tests, PayGo or Pre-Commit for the ramp-up, and a larger volume once Digital Wallet shows real numbers. Because overage is billed at the contracted rate without a penalty, a tight first purchase carries little risk. Also note the period of the included edition credits: the [Sales Cloud pricing page](https://www.salesforce.com/sales-cloud/pricing/) lists the pools per org and per year, while the [editions announcement of September 2026](https://www.salesforce.com/news/stories/salesforce-simplifies-editions-2026/) gives no period. Several agents share one pool, so ask how consumption per agent is monitored. These questions are part of my [make-or-buy and licence planning](../../services/make-or-buy-licences/).
 
 Flex Credits are simple to price per action, but you can only plan them per conversation with every meter counted. If you want a second pair of eyes on your Agentforce estimate, [send me a message](#contact).

@@ -20,7 +20,7 @@ faq:
   - q: "Does AI make Salesforce developers faster?"
     a: "It depends on the setting. GitHub measured 55 percent faster on a small new JavaScript task, METR measured 19 percent slower for experienced developers in large existing codebases. A Salesforce org with years of triggers, Flows and integrations is closer to the METR setting, so gains should be measured, not assumed."
   - q: "Which metrics should I not use to judge AI productivity?"
-    a: "Lines of code, the share of AI-generated code, number of licences, active users and prompt volume. McKinsey recommends moving beyond these adoption metrics to quality, time to market, reliability and cost."
+    a: "Lines of code, the share of AI-generated code, number of licences, active users and prompt volume. McKinsey notes that they show whether people use the tools, not whether releases are faster or more reliable. Outcome metrics such as quality, speed and productivity say more."
   - q: "What are the DORA metrics?"
     a: "DORA currently uses five software delivery metrics: change lead time, deployment frequency and failed deployment recovery time for throughput, and change fail rate and deployment rework rate for instability. Rework rate was added in 2024."
 draft: false
@@ -30,7 +30,7 @@ You measure AI productivity in a Salesforce project with outcome metrics on your
 
 ## What do the studies say about AI coding productivity?
 
-Four sources come up in every discussion, and they measure very different things.
+Five sources come up in every discussion, and they measure very different things.
 
 - **GitHub, 2022.** In a [controlled experiment](https://github.blog/news-insights/research/research-quantifying-github-copilots-impact-on-developer-productivity-and-happiness/) 95 developers wrote an HTTP server in JavaScript. The Copilot group took about 1 hour 11 minutes, the control group 2 hours 41 minutes: 55 percent faster. A small, new, well-defined task.
 - **METR, 2025.** In a [randomised study](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/) 16 experienced open-source developers worked on 246 real issues in their own projects, which average more than one million lines of code. With AI they took 19 percent longer. Beforehand they expected a 24 percent speed-up, and afterwards they still believed AI had made them 20 percent faster.
@@ -56,7 +56,7 @@ I would track five numbers, split by story type (configuration, Apex, integratio
 4. **Change fail rate and change lead time.** Two of the five [DORA metrics](https://dora.dev/guides/dora-metrics/history/). They come from the pipeline, not from a survey; one open-source option that reports them is described in [sfdx-hardis as open-source Salesforce DevOps](../sfdx-hardis-open-source-salesforce-devops/).
 5. **Pull request size and review wait.** AI makes large diffs cheap. DORA lists [working in small batches](https://dora.dev/capabilities/) as one of seven capabilities that amplify AI's benefit, and I would expect it to be the first discipline to slip once agents write the code.
 
-What I would leave out as a success measure: lines of code, the share of AI-generated code, licences and prompt volume. McKinsey explicitly recommends moving beyond these adoption metrics, and 86 percent of its top accelerators track outcome metrics instead. Token cost per story is useful for budgeting, which I cover in [what AI coding costs in a Salesforce project](../ai-coding-costs-salesforce-project/).
+What I would leave out as a success measure: lines of code, the share of AI-generated code, licences and prompt volume. McKinsey points out that adoption metrics show whether people use the tools, not whether releases get faster or more reliable, and 86 percent of its top accelerators track outcome metrics instead. Token cost per story is useful for budgeting, which I cover in [what AI coding costs in a Salesforce project](../ai-coding-costs-salesforce-project/).
 
 ## A typical scenario: two numbers that tell different stories
 

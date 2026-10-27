@@ -45,7 +45,7 @@ Salesforce describes AIforce as "a live interface layer that brings the full pow
 
 | Component | Contents | Status according to Salesforce |
 |---|---|---|
-| Claudeforce | Salesforce in Claude (MCP server with 37 sales skills), Salesforce Development plug-in for Claude Code with 40+ skills | Salesforce in Claude: beta for all customers; service and industry skills only announced |
+| Claudeforce | Salesforce in Claude (MCP server with 37 sales skills), Salesforce Development plug-in for Claude Code with about 40 skills | Salesforce in Claude: beta for all customers; service and industry skills only announced |
 | Slackforce | Slackforce Surfaces, Slackbot, Slack CRM, Slack Code | no availability dates |
 | Agentforce Coworker | AI teammate in Lightning | available; Salesforce reports 100,000 activations in 35 days |
 | Headless Toolkit | MCPs, APIs, plug-ins, skills and developer tools | no status given |
@@ -64,7 +64,7 @@ All that is documented is one post. On 9 October 2026 Marc Benioff wrote on X: "
 
 The trigger, on the other hand, can be read in the primary source. [Executive Order 14434](https://www.whitehouse.gov/presidential-actions/2026/09/inaugurating-the-era-of-super-intelligence/) of 29 September 2026 tells US executive departments and agencies to write "Super Intelligence" instead of "Artificial Intelligence" in their own documents. Existing regulations stay as they are, no enforceable rights are created, and private companies are not mentioned. Salesforce did not have to rename anything; it was a voluntary choice. That US federal agencies are Salesforce customers and now have to say "SI" is a plausible motive, but it is my assumption.
 
-For your documents I recommend "AIforce (announced by the CEO as SIForce)" until Salesforce confirms the name in writing. Three names in just over six months are also a good reason to structure architecture documents by capability rather than by product name.
+For your documents I recommend "AIforce (announced by the CEO as SIForce)" until Salesforce confirms the name in writing. Three names in about six months are also a good reason to structure architecture documents by capability rather than by product name.
 
 ## SI as system integrator: what changes in the partner model
 

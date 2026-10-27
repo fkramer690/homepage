@@ -20,7 +20,7 @@ faq:
   - q: "What does Agentforce for Field Service cost?"
     a: "The add-on for dispatchers and technicians costs $125 or €125 per user and month on an annual contract, with unmetered employee agent usage. The customer-facing Scheduling Agent needs Flex Credits; one action costs 20 credits, which is $0.10 at list price."
   - q: "Can an AI agent schedule maintenance visits on its own?"
-    a: "Yes. Since August 2025 an agent can contact customers and book appointments based on upcoming maintenance plan dates. For machines that have to be shut down for maintenance, the agent needs known shutdown windows or hands the case to a dispatcher."
+    a: "Yes. Salesforce announced general availability for August 2025: an agent contacts customers and books appointments based on upcoming maintenance plan dates. For machines that have to be shut down for maintenance, the agent needs known shutdown windows or hands the case to a dispatcher."
   - q: "Do AI agents in field service need the works council?"
     a: "In Germany usually yes, when an agent processes technicians' data, speech or job reports. Involve the works council and data protection before the pilot, together with the other Field Service topics such as location tracking."
 draft: false
@@ -35,10 +35,10 @@ Salesforce announced Agentforce for Field Service in [April 2025](https://www.sa
 | For | Function | Status |
 |---|---|---|
 | Customers | Book, reschedule and cancel appointments via web or messaging | GA since May 2025 |
-| Customers | Proactive maintenance: the agent contacts customers and books visits based on maintenance plan dates | GA since August 2025 |
+| Customers | Proactive maintenance: the agent contacts customers and books visits based on maintenance plan dates | GA announced for August 2025 |
 | Customers | Booking by phone with Agentforce Voice | Winter '27 highlights, check status in your org |
 | Dispatchers | Fill gaps from cancellations, no-shows and early completions | GA since April 2025 |
-| Technicians | Pre-Work Brief, also as audio playback | Playback GA since April 2025, interactive version in Summer '26 |
+| Technicians | Pre-Work Brief, also as audio playback | Playback GA since April 2025; Salesforce Help also describes an interactive version, release not confirmed |
 | Technicians | Post-Work Summary, drafted onto the work order | GA since April 2025 |
 | Technicians | Step-by-step troubleshooting from manuals, past repairs and photos | GA since June 2025 |
 | Assets | Asset Service Prediction: when and why an asset fails | [Open beta announced in 2024](https://www.salesforce.com/news/stories/field-service-asset-management-news/), listed on the product page without a GA date |

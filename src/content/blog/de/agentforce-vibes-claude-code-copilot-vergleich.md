@@ -16,7 +16,7 @@ takeaways:
   - "Ich empfehle höchstens zwei freigegebene Coding-Agenten, Konten im Besitz des Kunden und eine Regeldatei im Kunden-Repository, die jeder Agent liest."
 faq:
   - q: "Welcher Coding-Agent ist für die Salesforce-Entwicklung am besten?"
-    a: "Für Apex, LWC oder Flow belegt das kein öffentlicher Benchmark. Salesforce hat sein erstes offizielles Plugin für Claude Code gebaut, Agentforce Vibes läuft in Ihrem Salesforce-Vertrag, Copilot in GitHub. Entscheiden Sie nach Vertrag, Datenresidenz und Governance und testen Sie dann an Aufgaben aus Ihrem Backlog."
+    a: "Mir ist kein öffentlicher Benchmark bekannt, der das für Apex, LWC oder Flow klärt. Salesforce hat sein erstes offizielles Plugin für Claude Code gebaut, Agentforce Vibes läuft in Ihrem Salesforce-Vertrag, Copilot in GitHub. Entscheiden Sie nach Vertrag, Datenresidenz und Governance und testen Sie dann an Aufgaben aus Ihrem Backlog."
   - q: "Können wir Agentforce Vibes in der EU nutzen?"
     a: "Ja, für Orgs außerhalb der Hyperforce EU Operating Zone. Laut Salesforce ist Vibes in der EU Operating Zone und in der Government Cloud nicht verfügbar; Daten bleiben in der Trust Boundary von Salesforce und werden nach der Sitzung nicht gespeichert."
   - q: "Gibt es Claude Code mit Verarbeitung in der EU?"

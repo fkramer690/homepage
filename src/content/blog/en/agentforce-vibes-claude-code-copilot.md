@@ -16,7 +16,7 @@ takeaways:
   - "I recommend at most two approved coding agents, accounts owned by the client and one rules file in the client's repository that every agent reads."
 faq:
   - q: "Which coding agent is best for Salesforce development?"
-    a: "No public benchmark settles that for Apex, LWC or Flow. Salesforce built its first official plugin for Claude Code, Agentforce Vibes runs inside your Salesforce contract, Copilot inside GitHub. Choose by contract, data residency and governance, then test on tasks from your own backlog."
+    a: "I know of no public benchmark that settles that for Apex, LWC or Flow. Salesforce built its first official plugin for Claude Code, Agentforce Vibes runs inside your Salesforce contract, Copilot inside GitHub. Choose by contract, data residency and governance, then test on tasks from your own backlog."
   - q: "Can we use Agentforce Vibes in the EU?"
     a: "Yes for orgs outside the Hyperforce EU Operating Zone. Salesforce states that Vibes is not available in the EU Operating Zone or in Government Cloud, and that data is handled within Salesforce's trust boundary and not stored after the session."
   - q: "Is there an EU option for Claude Code?"

@@ -10,7 +10,7 @@ categories: [ai, architecture]
 tags: [Agentforce, SAP, MuleSoft, Schnittstellen, Maschinenbau, Händlerservice]
 takeaways:
   - "Ein Agentforce-Agent liest den Auftragsstatus aus SAP S/4HANA über eine API: Eine in Topic Center freigeschaltete MuleSoft-API, in Exchange veröffentlicht und in den API Catalog synchronisiert, wird zur Agenten-Aktion."
-  - "Laut MuleSoft-Dokumentation sind Topic-Instructions nicht deterministisch und gehören nicht zu Geschäftsregeln; welcher Händler welchen Auftrag sehen darf, regeln API und Code."
+  - "Laut MuleSoft-Dokumentation sind Topic-Instructions nicht deterministisch und sollen keine Geschäftsregeln enthalten; welcher Händler welchen Auftrag sehen darf, regeln API und Code."
   - "Verfügbarkeit kommt aus der Verfügbarkeitsprüfung in SAP; der Agent gibt den bestätigten Termin weiter und schätzt nie selbst aus Bestand oder Wiederbeschaffungszeit."
   - "Eine schmale Agenten-API mit drei Operationen und vorberechneten Feldern wie Gesamtstatus und nächstem bestätigtem Termin liefert stabilere Antworten als generische OData-Services."
   - "Geben Sie dem Agenten eine eigene Client-Anwendung im API Manager, damit ein Rate Limit pro Vertrag einen Agenten in der Schleife stoppt, bevor das Händlerportal langsam wird."
@@ -39,10 +39,10 @@ Für einen Maschinenbauer sieht die Kette so aus:
 1. **SAP S/4HANA** hält Kundenaufträge, Einteilungen, Lieferungen und die Verfügbarkeitsprüfung. Der [MuleSoft SAP S/4HANA OData Connector](https://docs.mulesoft.com/sap-s4hana-cloud-connector/latest/) unterstützt die OData-APIs von S/4HANA Cloud und On-Premise, kann Entitäten abfragen, Remote-Funktionen aufrufen und Batch-Requests ausführen. Auf SAP-Seite braucht er einen Kommunikationsbenutzer, der den Kommunikationsvereinbarungen für genau die APIs zugeordnet ist, die Sie freigeben wollen.
 2. **Eine Mule-API** macht aus diesen OData-Services wenige Operationen, mit denen ein Agent arbeiten kann.
 3. **Topic Center** markiert Operationen in der OpenAPI-Spezifikation als Agenten-Aktionen. Laut [MuleSoft-Dokumentation](https://docs.mulesoft.com/anypoint-code-builder/ai-enabling-api-project-topic-center) werden nur OAS 3.0 und 3.1 unterstützt, und Agenten-Metadaten dürfen nicht in einem per `$ref` definierten Schema stehen.
-4. **Der API Catalog** in Salesforce erhält die API, sobald im API Manager eine aktive API-Instanz existiert. Im [Agentforce-Workshop](https://developer.salesforce.com/workshops/agentforce-workshop/mulesoft/3-explore-api-catalog) von Salesforce aktivieren Sie dann die Aktionen und vergeben sie per Permission Set an Benutzer.
+4. **Der API Catalog** in Salesforce kann laut [MuleSoft](https://docs.mulesoft.com/access-management/enabling-api-catalog) nur APIs aus Exchange synchronisieren, die verwaltete Instanzen haben. Im [Agentforce-Workshop](https://developer.salesforce.com/workshops/agentforce-workshop/mulesoft/3-explore-api-catalog) von Salesforce aktivieren Sie dann die Aktionen und vergeben sie per Permission Set an Benutzer.
 5. **Der Agent** bekommt Topic und Aktionen im Agent Builder.
 
-Zwei Voraussetzungen übersieht man leicht: eine Tenant-Beziehung zwischen der Anypoint-Organisation und einer Salesforce-Org mit Agenten-Berechtigungen sowie ein aktivierter API Catalog in dieser Org. Liegen MuleSoft- und Salesforce-Vertrag in verschiedenen Abteilungen, klären Sie das vor dem ersten Sprint.
+Zwei Voraussetzungen übersieht man leicht: eine vertrauenswürdige Verbindung zwischen der Anypoint-Organisation und einer Salesforce-Org, bei der Agentforce für die Anypoint Platform aktiviert ist, sowie ein aktivierter API Catalog in dieser Org. Liegen MuleSoft- und Salesforce-Vertrag in verschiedenen Abteilungen, klären Sie das vor dem ersten Sprint.
 
 Eine offizielle Referenzarchitektur von Salesforce für Agentforce mit S/4HANA habe ich nicht gefunden, nur dieses allgemeine MuleSoft-Muster. Das Design Ihres Partners ist also die Architektur, und jemand auf Ihrer Seite sollte es prüfen.
 

@@ -60,7 +60,7 @@ Decide before go-live which claims may pass automatically and which always go to
 
 ### The dealer portal as an attack surface
 
-The agent reads text that dealers write. In 2025 the ForcedLeak vulnerability (CVSS 9.4) showed that instructions hidden in the description field of a Web-to-Lead form could make Agentforce send lead data to an outside domain; Salesforce responded by enforcing a Trusted URL allowlist, as [The Hacker News reported](https://thehackernews.com/2025/09/salesforce-patches-critical-forcedleak.html). A fault description in a warranty claim is the same kind of field. I cover the protection in [prompt injection in dealer portals](../prompt-injection-dealer-portals-agentforce/).
+The agent reads text that dealers write. In 2025 the ForcedLeak vulnerability (rated CVSS 9.4 by its finder, Noma Security) showed that instructions hidden in the description field of a Web-to-Lead form could make Agentforce send lead data to an outside domain; Salesforce responded by enforcing a Trusted URL allowlist, as [The Hacker News reported](https://thehackernews.com/2025/09/salesforce-patches-critical-forcedleak.html). A fault description in a warranty claim is the same kind of field. I cover the protection in [prompt injection in dealer portals](../prompt-injection-dealer-portals-agentforce/).
 
 ### Licence and test budget
 

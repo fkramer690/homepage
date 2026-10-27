@@ -36,7 +36,7 @@ Most coding tools now sell a seat with a budget and bill usage above it per toke
 
 - **Claude Code at API rates.** Anthropic [reports](https://code.claude.com/docs/en/costs) about $13 per developer per active day and $150 to $250 per month across enterprise deployments, with 90 percent of users below $30 per active day.
 - **Claude Team and Enterprise.** Team Standard costs $25 per seat and month ($20 annually), Premium $125 ($100 annually), Enterprise $20 per seat plus usage at API rates, according to [Anthropic's pricing page](https://claude.com/pricing). Seat usage draws from an allowance that resets in a five-hour and a weekly window. Its size in tokens is not published.
-- **OpenAI Codex.** The [Codex rate card](https://help.openai.com/en/articles/20001106-codex-rate-card-2) gives an average of about $100 to $200 per developer per month. OpenAI lists Codex among the features of [ChatGPT Business](https://openai.com/business/pricing/) at $25 per seat ($20 annually).
+- **OpenAI Codex.** The [Codex rate card](https://help.openai.com/en/articles/20001106-codex-rate-card-2) gives an average of about $100 to $200 per developer per month. OpenAI lists Codex among the features of [ChatGPT Business](https://openai.com/business/pricing/) at $25 per standard seat ($20 annually).
 - **GitHub Copilot.** Business costs [$19 per user with 1,900 AI credits](https://docs.github.com/en/copilot/tutorials/roll-out-at-scale/assign-licenses/choose-enterprise-plan), Enterprise $39 with 3,900. One credit is $0.01, credits are [pooled across the organisation](https://docs.github.com/en/enterprise-cloud@latest/copilot/concepts/billing/organizations-and-enterprises/usage-based-billing), and code completions are not billed.
 - **Agentforce Vibes.** Flat fee of $125 per user and month or metered Flex Credits, see below.
 
@@ -72,7 +72,7 @@ Assume a machine builder with SAP, Service Cloud, Field Service for its service 
 - **Codex in ChatGPT Business:** at OpenAI's average, $600 to $1,200 for the six developers plus two seats.
 - **Copilot Business:** eight seats = $152 with a pool of 15,200 credits. If GitHub's model rate is close to Anthropic's list price, the pool lasts about 70 sessions, two working days at six sessions per developer and day. After that every credit is billed, and the month ends near $1,400.
 
-At an assumed blended rate of $800 per person and day, the team itself costs 8 × 18 × $800 = $115,200 a month. AI coding adds about one percent. McKinsey [expects](https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/beyond-the-copilot-scaling-the-agentic-product-development-life-cycle) that as agents take on more work, spending on tokens, compute, infrastructure and AI Ops can rise to as much as 20 percent of existing labour costs. In my view the bigger risks today are a meter without limits and the open question of who gets the productivity gain.
+At an assumed blended rate of $800 per person and day, the team itself costs 8 × 18 × $800 = $115,200 a month. AI coding adds about one percent. McKinsey [writes](https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/beyond-the-copilot-scaling-the-agentic-product-development-life-cycle) that spending on tokens, compute, infrastructure and AI Ops can rise to as much as 20 percent of existing labour costs as agents take on more work. In my view the bigger risks today are a meter without limits and the open question of who gets the productivity gain.
 
 ## Why does Agentforce Vibes need its own calculation?
 
