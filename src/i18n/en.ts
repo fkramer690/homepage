@@ -76,6 +76,15 @@ export const en = {
       },
     ],
     more: 'Learn more',
+    featured: 4,
+    moreTitle: 'More services',
+    moreAll: 'All services & partners',
+    moreSoon: 'Page coming',
+    moreItems: [
+      { order: 5, text: 'Plan and steer programmes, coordinate nearshore teams.' },
+      { order: 6, text: 'Does it belong in Salesforce? Alternatives and license costs assessed first.' },
+      { title: 'Change management', text: 'Embed new processes and Salesforce in the daily work of the business teams.' },
+    ],
     focusLabel: 'Focus areas',
     focus: [
       'After-sales & service',
@@ -246,6 +255,23 @@ export const en = {
     readMore: 'Read article',
   },
   servicePage: {
+    partnersLabel: 'Partners',
+    partnersTitle: 'Partners I work with',
+    partnersIntro: 'Architecture and specifications stay on your side. For the build I work with selected partners who bring experience from large international programmes.',
+    partners: [
+      {
+        area: 'Integration',
+        name: 'Blue Apes',
+        text: 'Jitterbit partner. Builds interfaces between Salesforce, SAP and other systems, including in large international programmes.',
+        tags: ['Jitterbit', 'SAP', 'Middleware'],
+      },
+      {
+        area: 'Telephony / CTI',
+        name: 'Mirage',
+        text: 'CTI provider. Brings calls into Service Cloud so agents see the customer and the open cases when the phone rings.',
+        tags: ['CTI', 'Service Cloud', 'Telephony'],
+      },
+    ],
     indexTitle: 'Services',
     metaTitle: 'Services: Salesforce architecture | FK Solution Design',
     metaDescription: 'Salesforce architect on the client side: target architecture, partner governance, DevOps, integration, programme steering and make-or-buy for manufacturers.',
