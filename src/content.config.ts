@@ -57,4 +57,30 @@ const services = defineCollection({
   }),
 });
 
-export const collections = { blog, services };
+// Masterclass chapters live in src/content/masterclass/<lang>/<slug>.md, ten per language.
+// src/components/MasterclassChapter.astro renders them, the hub lists them
+// (rules: docs/masterclass.md); scripts/check-blog.mjs checks the body.
+const masterclass = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/masterclass' }),
+  schema: z.object({
+    title: z.string().min(20).max(60),
+    description: z.string().min(120).max(160),
+    lang: z.enum(['en', 'de']),
+    slug: z.string().regex(/^[a-z0-9]+(-[a-z0-9]+)*$/),
+    // masterclass-01 … masterclass-10, the same for EN and DE.
+    translationKey: z.string(),
+    chapter: z.number().int().min(1).max(10),
+    // Short title on the chapter card of the hub page.
+    short: z.string().min(5).max(40),
+    // One sentence on the chapter card.
+    summary: z.string().min(40).max(160),
+    takeaways: z.array(z.string().max(220)).min(3).max(5),
+    // Blog translationKeys covered by this chapter; unpublished ones are skipped.
+    articles: z.array(z.string()).min(1).max(8),
+    faq: z.array(z.object({ q: z.string().max(120), a: z.string().max(600) })).max(6).default([]),
+    updatedDate: z.coerce.date().optional(),
+    draft: z.boolean().default(false),
+  }),
+});
+
+export const collections = { blog, services, masterclass };

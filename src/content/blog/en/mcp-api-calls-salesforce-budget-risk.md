@@ -43,7 +43,7 @@ The details come from a Salesforce Help article (005360285) that I could only re
 
 The [Hosted MCP Servers documentation](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/hosted-mcp-servers-overview.md) already says the servers are "intended only for customers with Flex Credits and you may be billed for server usage". When Salesforce made them [generally available on 29 April 2026](https://developer.salesforce.com/blogs/2026/04/salesforce-hosted-mcp-servers-are-now-generally-available) for Enterprise Edition and above, the announcement did not mention pricing. If you connected Claude in the spring and filed it under free, that assumption now has an end date, and nobody knows it yet.
 
-## Why do external agents become a budget item?
+## Why do MCP calls to Salesforce become a budget item?
 
 With an Agentforce agent you design the actions, so you know that an order status request costs, say, two actions at 20 credits each. With an external agent you do not decide the call count. Salesforce Ben quotes it plainly: the cost per interaction does not vary, but the number of interactions depends on the third-party agent's behaviour and implementation. Claude may answer "which orders of this dealer are late?" with one query, or with a search, five record reads and two follow-up queries because the first answer was incomplete.
 

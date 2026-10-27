@@ -58,13 +58,13 @@ The order of gates and open source options are in [quality gates for AI code](..
 
 ## What does the human reviewer on the client side check?
 
-You do not need to read every line. Once the pipeline is green, I go through a pull request with AI-generated code in this order:
+You do not need to read every line. Once the pipeline is green, I would go through a pull request with AI-generated code in this order:
 
 1. **Tests first.** Do the assertions check business behaviour, including a negative case and a bulk case with at least 20 records, as Salesforce recommends? A test class that creates one record and checks for "not null" sends the pull request back.
 2. **Data access.** Every `without sharing` and every `WITH SYSTEM_MODE` needs a written reason. In a dealer portal this is the line that decides whether one dealer sees another dealer's data.
 3. **Fields and objects.** Are these the fields the business actually maintains? Are new fields in the right permission sets?
 4. **Scope.** Does the diff touch only what the story needs? An agent that "also tidied up" three other classes or raised their API version adds risk nobody asked for.
-5. **Business rule.** Does the logic match the acceptance criteria, including the exceptions? For anything around warranty, prices or credit limits I pull in the domain lead.
+5. **Business rule.** Does the logic match the acceptance criteria, including the exceptions? For anything around warranty, prices or credit limits I would pull in the domain lead.
 
 Ask the partner for evidence: as Anthropic's guidance puts it, "All tests pass" on its own tells you very little. I want the test run and the Code Analyzer result in the pull request, plus a note which parts an agent generated. That belongs in the contract, as described in [rules for partners who code with AI](../partners-using-ai-coding-contract-rules/), and it is part of my [partner governance](../../services/partner-governance/) work.
 

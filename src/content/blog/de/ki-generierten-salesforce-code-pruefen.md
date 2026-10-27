@@ -37,7 +37,7 @@ Salesforce schreibt es in der Dokumentation des eigenen Coding-Agenten Agentforc
 
 ## Sechs typische Fehler in KI-generiertem Salesforce-Code
 
-Diese Fehler stehen in den Review-Checklisten, die Salesforce selbst für Agenten-Code veröffentlicht, und in den Regeln der statischen Codeanalyse. Einen Teil findet die Pipeline, den Rest nur jemand, der Ihre Org kennt.
+Die meisten dieser Fehler nennt Salesforce selbst in seinen Checklisten für Agenten-Code. Einen Teil findet die Pipeline, den Rest nur jemand, der Ihre Org kennt.
 
 1. **SOQL und DML in Schleifen.** Der Code funktioniert mit einem Datensatz und bricht bei einer Datenladung oder einem Massenupdate aus dem ERP. Die Salesforce-Checkliste fragt, ob Abfragen in Triggern bei Massenoperationen „the 100 SOQL limit“ erreichen könnten. Die PMD-Regel `OperationWithLimitsInLoop` meldet Abfragen, DML und andere limitierte Operationen in Schleifen ([PMD Performance-Regeln](https://docs.pmd-code.org/latest/pmd_rules_apex_performance.html)). Pipeline.
 2. **Fehlendes Sharing und fehlende Feldberechtigungen.** PMD meldet Klassen mit DML ohne Sharing-Deklaration (`ApexSharingViolations`) und Datenzugriffe ohne Berechtigungsprüfung (`ApexCRUDViolation`); eine Abfrage `WITH USER_MODE` besteht diese Regel ([PMD Security-Regeln](https://docs.pmd-code.org/latest/pmd_rules_apex_security.html)). Seit API-Version 67.0 läuft Apex standardmäßig im User Mode, Klassen ohne Deklaration laufen im Sharing-Kontext des aktuellen Benutzers, und `WITH SECURITY_ENFORCED` kompiliert nicht mehr ([Apex Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apex/versioned_behavior_changes.htm)). Nach meiner Einschätzung werden Modelle, die überwiegend mit älterem Apex trainiert sind, die alten Muster noch eine Weile erzeugen, und ein Agent hebt die API-Version einer Klasse womöglich nebenbei an, wenn Ihre Regeln das nicht verbieten. Warum Abfragen danach weniger Datensätze liefern können, beschreibe ich in [API 67.0 und User Mode](../api-67-apex-user-mode-weniger-datensaetze/). Pipeline für die Deklaration, Mensch für die Absicht.
@@ -58,13 +58,13 @@ Welche Prüfungen in welcher Reihenfolge laufen und welche Open-Source-Werkzeuge
 
 ## Was prüft der menschliche Reviewer auf Kundenseite?
 
-Sie müssen nicht jede Zeile lesen. Ist die Pipeline grün, gehe ich einen Pull Request mit KI-generiertem Code in dieser Reihenfolge durch:
+Sie müssen nicht jede Zeile lesen. Ist die Pipeline grün, würde ich einen Pull Request mit KI-generiertem Code in dieser Reihenfolge durchgehen:
 
 1. **Zuerst die Tests.** Prüfen die Assertions fachliches Verhalten, auch einen Negativfall und einen Massenfall mit mindestens 20 Datensätzen, wie Salesforce es empfiehlt? Eine Testklasse, die einen Datensatz anlegt und auf „nicht null“ prüft, geht zurück.
 2. **Datenzugriff.** Jedes `without sharing` und jedes `WITH SYSTEM_MODE` braucht eine schriftliche Begründung. In einem Händlerportal entscheidet genau diese Zeile, ob ein Händler die Daten eines anderen sieht.
 3. **Felder und Objekte.** Sind das die Felder, die der Fachbereich wirklich pflegt? Stehen neue Felder in den richtigen Permission Sets?
 4. **Umfang.** Berührt der Diff nur, was die Story braucht? Ein Agent, der „nebenbei“ drei weitere Klassen aufgeräumt oder ihre API-Version angehoben hat, bringt Risiko, das niemand bestellt hat.
-5. **Geschäftsregel.** Passt die Logik zu den Akzeptanzkriterien, auch bei den Ausnahmen? Bei allem rund um Garantie, Preise oder Kreditlimits hole ich den fachlichen Lead dazu.
+5. **Geschäftsregel.** Passt die Logik zu den Akzeptanzkriterien, auch bei den Ausnahmen? Bei allem rund um Garantie, Preise oder Kreditlimits würde ich den fachlichen Lead dazuholen.
 
 Verlangen Sie Belege vom Partner. Anthropic formuliert es in seinem Leitfaden treffend: „All tests pass“ allein sagt wenig, der ausgeführte Befehl und seine Ausgabe sagen mehr. Ich möchte den Testlauf und das Ergebnis von Code Analyzer im Pull Request sehen, dazu einen Hinweis, welche Teile ein Agent erzeugt hat. Das gehört in den Vertrag, wie in [Regeln für Partner, die mit KI programmieren](../partner-ki-coding-regeln-vertrag/) beschrieben, und ist Teil meiner Arbeit in der [Partnersteuerung](../../leistungen/partnersteuerung/).
 
