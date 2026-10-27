@@ -40,7 +40,7 @@ Salesforce announced Agentforce for Field Service in [April 2025](https://www.sa
 | Technicians | Pre-Work Brief, also as audio playback | Playback GA since April 2025, interactive version in Summer '26 |
 | Technicians | Post-Work Summary, drafted onto the work order | GA since April 2025 |
 | Technicians | Step-by-step troubleshooting from manuals, past repairs and photos | GA since June 2025 |
-| Assets | Asset Service Prediction: when and why an asset fails | Announced as open beta in 2024, no GA date found |
+| Assets | Asset Service Prediction: when and why an asset fails | [Open beta announced in 2024](https://www.salesforce.com/news/stories/field-service-asset-management-news/), listed on the product page without a GA date |
 
 Salesforce backs the booking agent with its own numbers: an on-site appointment takes 17 minutes to schedule, 15 to change and 12 to cancel, and the agent should get it done in under five. The [Winter '27 announcement](https://salesforce.com/news/stories/winter-2027-product-release-announcement) promises voice booking in seconds instead of 15 minutes. These are vendor figures from mixed industries, not results from machine builders.
 
@@ -60,13 +60,13 @@ The consequence for budgeting: a booking agent costs cents per booking, while th
 
 Field service at a machine builder differs from installing routers or servicing alarm systems. Jobs are fewer and longer, machines carry serial numbers and contracts, and the person on the other end is a plant manager who has to plan a shutdown. Measured against that, I sort the functions like this.
 
-**Proactive maintenance booking fits best.** Maintenance plans already generate the work orders, as described in [modelling maintenance contracts](../salesforce-field-service-maintenance-contracts/). The agent only has to agree a date. The catch is the shutdown window: the agent knows the operating hours on the account and nothing about next week's production peak. If no window is maintained, it should propose dates and pass the case to a dispatcher instead of booking.
+**Proactive maintenance booking fits best.** Maintenance plans already generate the work orders, as described in [modelling maintenance contracts](../salesforce-field-service-maintenance-contracts/). The agent only has to agree a date. The catch is the shutdown window: the agent sees the operating hours maintained in Salesforce and nothing about next week's production peak. If no window is maintained, it should propose dates and pass the case to a dispatcher instead of booking.
 
 **The drafted job report fits, under one condition.** The Post-Work Summary is prose. Warranty, invoicing and the ERP need parts, working time and fault codes as fields. I would keep the structured fields as the master record and use the summary for the text the customer reads, for example in the service report from [Document Builder](../salesforce-service-documents-document-builder/). The [guided mobile workflows](../salesforce-field-service-mobile-guided-voice/) belong to the same data model.
 
 **The Pre-Work Brief is as good as the asset history.** If half of the past work orders are not linked to an asset, the brief has little to say. The data question is the one from [master data for scheduling](../salesforce-field-service-master-data/).
 
-**Gap filling depends on the job mix.** With many short jobs a day it saves real dispatcher time. With commissioning over several days there are hardly any gaps to fill. Winter '27 at least shows multi-day appointments as one connected job in the scheduling console.
+**Gap filling depends on the job mix.** With many short jobs a day it saves real dispatcher time. With commissioning over several days there are hardly any gaps to fill. Whether a dispatcher should still release each proposal is the question from [how much scheduling should be automatic](../salesforce-field-service-scheduling-automation/). Winter '27 at least shows multi-day appointments as one connected job in the scheduling console.
 
 **Self-booking for breakdowns needs triage first.** When a machine stands still, someone has to clarify what failed, which part is needed and whether the contract promises a response within 24 hours. The entitlement decides that, and it belongs in deterministic logic, as described in [Agent Script: rules instead of the LLM](../agent-script-deterministic-rules/). An agent can take the call and open the case. I would let it book only clearly classified jobs.
 
