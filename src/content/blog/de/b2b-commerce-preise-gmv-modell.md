@@ -58,7 +58,7 @@ Die Preisseite nennt diese Positionen (Oktober 2026):
 | CRM Analytics | 3 Nutzer | 5 Nutzer |
 | Knowledge Management | 3 Nutzer | 5 Nutzer |
 
-Für die meisten Hersteller ist die Zeile Order Management die entscheidende. Order Management ist die Salesforce-Lösung, die einen Auftrag nach dem Checkout weiterverarbeitet: Zuordnung zum Lager, Lieferung, Änderungen und Retouren. Bleibt das ERP Eigentümer des Auftrags, was bei SAP der Normalfall ist, bringt volles Order Management in Salesforce wenig. Die Zahl der Storefronts zählt, wenn Sie getrennte Stores je Marke oder Gesellschaft betreiben. Für Länder und Händlerstufen reichen meist Käufergruppen in einem Store.
+Für die meisten Hersteller ist die Zeile Order Management die entscheidende. [Order Management](https://trailhead.salesforce.com/content/learn/modules/scom-order-management/scom-som-get-started) ist die Salesforce-Lösung, die einen Auftrag nach dem Checkout weiterverarbeitet: Zuordnung zum Lager, Lieferung, Änderungen und Retouren. Bleibt das ERP Eigentümer des Auftrags, was bei SAP der Normalfall ist, bringt volles Order Management in Salesforce wenig. Die Zahl der Storefronts zählt, wenn Sie getrennte Stores je Marke oder Gesellschaft betreiben. Für Länder und Händlerstufen reichen meist Käufergruppen in einem Store.
 
 Für Bestandskunden gilt eine Regel: Laut Preisseite müssen Kunden, die bereits Order Management nutzen, auf Commerce Cloud Advanced verlängern. Upgrades während der Vertragslaufzeit sind möglich.
 

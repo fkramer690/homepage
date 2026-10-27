@@ -58,7 +58,7 @@ The pricing page lists these items (October 2026):
 | CRM Analytics | 3 users | 5 users |
 | Knowledge Management | 3 users | 5 users |
 
-For most manufacturers the decisive line is Order Management. Order Management is the Salesforce solution that processes an order after checkout: allocation to a location, fulfilment, changes and returns. If the ERP stays the owner of the order, which is the normal case with SAP, full Order Management in Salesforce adds little. The storefront count matters when you run separate stores per brand or legal entity. For countries and dealer tiers, buyer groups in one store are usually enough.
+For most manufacturers the decisive line is Order Management. [Order Management](https://trailhead.salesforce.com/content/learn/modules/scom-order-management/scom-som-get-started) is the Salesforce solution that processes an order after checkout: allocation to a location, fulfilment, changes and returns. If the ERP stays the owner of the order, which is the normal case with SAP, full Order Management in Salesforce adds little. The storefront count matters when you run separate stores per brand or legal entity. For countries and dealer tiers, buyer groups in one store are usually enough.
 
 One rule applies to existing customers: the pricing page says customers who already use Order Management "will need to renew on Commerce Cloud Advanced". Upgrades during the contract term are possible.
 

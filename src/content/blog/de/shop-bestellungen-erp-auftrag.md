@@ -46,7 +46,7 @@ Zum Namen: Salesforce vermarktet B2B Commerce inzwischen auch als "Agentforce Co
 
 Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/scom-order-management/scom-som-get-started) deckt Order Management die Zuteilung (welcher Standort liefert), die Erfüllung (Kommissionieren, Verpacken, Versenden, Fakturieren) und den Service ab (Stornos, Nachlässe, Retouren, Ersatzlieferungen und Umtausch). Es bietet "a single view of orders, actions taken on orders, and order history". Nach der Fakturierung exportiert es die Rechnungen ins ERP.
 
-Das ist ein vollständiges Auftragsmanagement. Es passt zu Unternehmen, die aus mehreren Standorten liefern und Retouren und Umtausch in Salesforce abwickeln wollen, wie viele Händler im Einzelhandel. Ein Maschinenbauer mit SAP SD (Vertrieb), Lagerverwaltung und Fakturierung hat all das schon in SAP.
+Das ist ein vollständiges Auftragsmanagement. Es passt zu Unternehmen, die aus mehreren Standorten liefern und Retouren und Umtausch in Salesforce abwickeln wollen, wie viele Einzelhändler. Ein Maschinenbauer mit SAP SD (Vertrieb), Lagerverwaltung und Fakturierung hat all das schon in SAP.
 
 ## Welche Edition enthält was?
 
