@@ -60,13 +60,13 @@ Daneben gibt es eine zweite Grenze, die mit Flex Credits nichts zu tun hat. Agen
 
 Nehmen wir einen Maschinenbauer mit 60 Key Account und Händlermanagern, die Claude mit Salesforce nutzen. Jede und jeder stellt an 220 Arbeitstagen 15 Fragen am Tag: offene Aufträge eines Händlers, letzte Serviceeinsätze an einer installierten Maschine, Garantiefälle des Quartals. Das sind 198.000 Fragen im Jahr. Alle Zahlen sind Annahmen, und die drei Sätze unten sind hypothetisch, weil Salesforce keinen veröffentlicht hat.
 
-Entscheidend ist die Zahl der Aufrufe pro Frage. Mit den generischen sObject-Tools braucht Claude für eine Antwort oft mehrere Lesezugriffe; angenommen sind acht. Mit einem gezielten Custom Tool, zum Beispiel einem Autolaunched Flow „Auftragsübersicht Händler“, der alles in einer Antwort liefert, sind zwei angenommen. Ein Flex Credit kostet [zum Listenpreis 0,005 $](https://www.salesforce.com/agentforce/pricing/).
+Entscheidend ist die Zahl der Aufrufe pro Frage. Mit den generischen sObject-Tools braucht Claude für eine Antwort oft mehrere Lesezugriffe; angenommen sind acht. Mit einem gezielten Custom Tool, zum Beispiel einem Autolaunched Flow „Auftragsübersicht Händler“, der alles in einer Antwort liefert, sind zwei angenommen. Ein Flex Credit kostet [zum Listenpreis 0,005 €](https://www.salesforce.com/eu/agentforce/pricing/).
 
 | Angenommener Satz pro Interaktion | 2 Aufrufe pro Frage | 8 Aufrufe pro Frage |
 |---|---|---|
-| 1 Credit | 396.000 Credits, 1.980 $ | 1.584.000 Credits, 7.920 $ |
-| 4 Credits | 1.584.000 Credits, 7.920 $ | 6.336.000 Credits, 31.680 $ |
-| 20 Credits (wie eine Aktion) | 7.920.000 Credits, 39.600 $ | 31.680.000 Credits, 158.400 $ |
+| 1 Credit | 396.000 Credits, 1.980 € | 1.584.000 Credits, 7.920 € |
+| 4 Credits | 1.584.000 Credits, 7.920 € | 6.336.000 Credits, 31.680 € |
+| 20 Credits (wie eine Aktion) | 7.920.000 Credits, 39.600 € | 31.680.000 Credits, 158.400 € |
 
 Zwei Dinge fallen auf. Erstens verändert das Tool-Design die Rechnung um den Faktor vier, genauso stark wie der Sprung vom niedrigsten zum mittleren Satz. Zweitens enthält die [Max Edition](https://www.salesforce.com/news/stories/salesforce-simplifies-editions-2026/) 2,75 Mio. Flex Credits. In der mittleren Zeile mit generischen Tools würde allein dieses Team den Pool 2,3-mal verbrauchen, bevor eine einzige Agentforce-Aktion oder Data-360-Abfrage läuft. Salesforce kündigt an, dass künftige Max-Editionen „an allocation for Headless 360 capacity“ enthalten, ohne eine Größe zu nennen. Solange diese Zahl fehlt, würde ich nichts dagegen planen.
 

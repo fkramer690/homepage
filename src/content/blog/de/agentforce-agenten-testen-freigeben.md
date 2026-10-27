@@ -11,7 +11,7 @@ tags: [Agentforce, Testing Center, KI-Agenten, Quality Gates, DevOps, Maschinenb
 takeaways:
   - "Ein Agentforce-Agent ist produktionsreif, wenn er einen vereinbarten Testsatz mit einer vereinbarten Passrate über mehrere Läufe besteht; Salesforce liefert die Werkzeuge, aber keine Schwelle."
   - "Jeder Agentforce-Testfall kann Subagent, ausgeführte Aktionen und Ergebnis prüfen; das Ergebnis bewertet ein Sprachmodell als Prüfer, harte Geschäftsregeln brauchen exakte Prüfungen."
-  - "Agententests laufen in Sandboxes, verbrauchen Credits und können Daten ändern; eine Aktion kostet dort 16 Flex Credits, drei Läufe mit 60 Fällen à drei Aktionen also rund 43 $."
+  - "Agententests laufen in Sandboxes, verbrauchen Credits und können Daten ändern; eine Aktion kostet dort 16 Flex Credits, drei Läufe mit 60 Fällen à drei Aktionen also rund 43 €."
   - "Ich empfehle 100 Prozent für harte Regeln wie die Garantieberechtigung und rund 90 Prozent über drei Läufe für die Antwortqualität, vor dem Piloten mit der Fachseite vereinbart."
   - "Session Traces, Health-Metriken und ein gestufter Rollout müssen ab dem ersten Tag aktiv sein, und jedes fehlgeschlagene Gespräch in Produktion wird ein neuer Testfall."
 faq:
@@ -67,7 +67,7 @@ Nehmen wir einen Maschinenbauer mit SAP, Service Cloud und einem Händlerportal.
 
 **Der Testsatz.** Das Team schreibt 60 Testfälle: 40 typische Fragen aus echten Händler-E-Mails, 10 Grenzfälle wie ersetzte Teilenummern oder eine Seriennummer, die in der installierten Basis fehlt, und 10 Schutzfälle wie die Frage nach Aufträgen eines anderen Händlers. Jeder Fall nutzt im Schnitt drei Aktionen: Maschine identifizieren, SAP abfragen, Antwort formulieren. Anthropics Leitfaden nennt 20 bis 50 Aufgaben aus echten Fehlern einen guten Start.
 
-**Die Kosten.** Ein vollständiger Lauf sind 60 × 3 = 180 Aktionen zu 16 Sandbox-Credits, also 2.880 Credits. Drei Läufe pro Release ergeben 8.640 Credits, beim [Listenpreis von 500 $ je 100.000 Credits](https://www.salesforce.com/news/press-releases/2025/05/15/agentforce-flexible-pricing-news/) rund 43 $, ohne Prompts. Drei Läufe pro Woche über einen zwölfwöchigen Piloten kosten rund 520 $, weniger als eine falsche Verfügbarkeitszusage an einen Händler, dessen Maschine steht. Wie Sie den Rest der Rechnung schätzen, steht in [Flex Credits: Agentforce-Kosten pro Aktion](../flex-credits-agentforce-kosten-pro-aktion/).
+**Die Kosten.** Ein vollständiger Lauf sind 60 × 3 = 180 Aktionen zu 16 Sandbox-Credits, also 2.880 Credits. Drei Läufe pro Release ergeben 8.640 Credits, beim [Listenpreis von 500 € je 100.000 Credits](https://www.salesforce.com/eu/agentforce/pricing/) rund 43 €, ohne Prompts. Drei Läufe pro Woche über einen zwölfwöchigen Piloten kosten rund 520 €, weniger als eine falsche Verfügbarkeitszusage an einen Händler, dessen Maschine steht. Wie Sie den Rest der Rechnung schätzen, steht in [Flex Credits: Agentforce-Kosten pro Aktion](../flex-credits-agentforce-kosten-pro-aktion/).
 
 **Das erste Ergebnis.** Routing und Aktionen bestehen in 58 von 60 Fällen, das Ergebnis in 49 von 60. Die Fehler häufen sich: Acht der elf betreffen ersetzte Teilenummern, bei denen SAP die alte Nummer liefert und der Agent das Teil als nicht verfügbar meldet. Das ist eine Aufgabe für das SAP-Team, kein Prompt-Problem. Liefert die API das Nachfolgeteil, besteht das Ergebnis in drei Läufen in 56, 55 und 56 von 60 Fällen, jedes Mal über 90 Prozent, alle Schutzfälle bestehen, und die Serviceleitung gibt den Go-live zuerst für die Händler eines Landes frei.
 

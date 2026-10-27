@@ -22,7 +22,7 @@ faq:
   - q: "Was muss stehen, bevor ich den Agenten einschalte?"
     a: "Anlagen mit Seriennummer und Garantiebeginn in Salesforce, Garantiebedingungen als gepflegte Regeln, eine vereinbarte Freigabegrenze und ein Händlerportal, dessen Freitextfelder als nicht vertrauenswürdige Eingabe behandelt werden."
   - q: "Was kostet der Agent?"
-    a: "Einen eigenen Preis hat Salesforce in den Quellen, die ich öffnen konnte, nicht genannt. Die vorhandenen Garantie-Aktionen von Agentforce for Manufacturing brauchen eine Add-on-Lizenz pro Nutzer, und eine Agentforce-Aktion kostet zum Listenpreis 20 Flex Credits (0,10 $), in der Sandbox 16."
+    a: "Einen eigenen Preis hat Salesforce in den Quellen, die ich öffnen konnte, nicht genannt. Die vorhandenen Garantie-Aktionen von Agentforce for Manufacturing brauchen eine Add-on-Lizenz pro Nutzer, und eine Agentforce-Aktion kostet zum Listenpreis 20 Flex Credits (0,10 €), in der Sandbox 16."
 draft: false
 ---
 
@@ -64,7 +64,7 @@ Der Agent liest Text, den Händler schreiben. 2025 hat die Schwachstelle ForcedL
 
 ### Lizenz und Testbudget
 
-Laut [Flex Credits Rate Card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) kostet eine Standard- oder Custom-Aktion in Produktion 20 Credits, in der Sandbox 16. Flex Credits kosten [500 $ je 100.000](https://www.salesforce.com/news/press-releases/2025/05/15/agentforce-flexible-pricing-news/), eine Aktion also 0,10 $. Planen Sie zwei getrennte Posten: den Verbrauch, den Sie schätzen können, und die Lizenz, die vorerst nur Salesforce beantworten kann.
+Laut [Flex Credits Rate Card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) kostet eine Standard- oder Custom-Aktion in Produktion 20 Credits, in der Sandbox 16. Flex Credits kosten [500 € je 100.000](https://www.salesforce.com/eu/agentforce/pricing/), eine Aktion also 0,10 €. Planen Sie zwei getrennte Posten: den Verbrauch, den Sie schätzen können, und die Lizenz, die vorerst nur Salesforce beantworten kann.
 
 ## Ein typisches Szenario: Landmaschinen über 90 Händler
 
@@ -78,7 +78,7 @@ Nehmen wir einen Landmaschinenhersteller mit 90 Händlern in Deutschland und Ös
 
 **Dann der Agent.** Er liest die Fehlerbeschreibung, gleicht sie mit Fehlercode und Teilen ab, markiert wiederholte Seriennummern und Fehler kurz nach der Installation, schreibt eine Zusammenfassung und entwirft die Nachforderung fehlender Angaben. Ansprüche über 2.500 €, jede Markierung und jede Datenlücke gehen an die Sachbearbeiter. Angenommen sind das 30 Prozent des Volumens.
 
-**Verbrauch.** Angenommen sind fünf Aktionen pro Anspruch: 350 × 5 × 20 = 35.000 Credits, rund 175 $ im Monat. Ein Testsatz aus 200 echten, anonymisierten Ansprüchen kostet 200 × 5 × 16 = 16.000 Credits, also 80 $ pro Sandbox-Lauf. Zehn Läufe vor dem Go-live ergeben 800 $.
+**Verbrauch.** Angenommen sind fünf Aktionen pro Anspruch: 350 × 5 × 20 = 35.000 Credits, rund 175 € im Monat. Ein Testsatz aus 200 echten, anonymisierten Ansprüchen kostet 200 × 5 × 16 = 16.000 Credits, also 80 € pro Sandbox-Lauf. Zehn Läufe vor dem Go-live ergeben 800 €.
 
 Der Verbrauch ist klein. Die eigentlichen Kosten stecken in den drei Monaten Datenarbeit, und offen bleibt die Lizenz.
 

@@ -9,10 +9,10 @@ topic: governance
 category: architecture
 tags: [Lizenzen, Editionen, Flex Credits, Agentforce, Make-or-buy, Maschinenbau]
 takeaways:
-  - "Seit dem 3. September 2026 verkauft Salesforce Sales und Service Cloud als Core, Advanced und Max zu 195 $, 395 $ und 550 $ pro Nutzer und Monat; für Bestandskunden bleiben die Preise bisheriger Editionen unverändert."
-  - "Die Preisseiten nennen die enthaltenen Flex Credits pro Org und Jahr: 500.000 in Core, 1 Mio. in Advanced, 2,75 Mio. in Max, zum Listenpreis 2.500 $, 5.000 $ und 13.750 $ wert."
+  - "Seit dem 3. September 2026 verkauft Salesforce Sales und Service Cloud als Core, Advanced und Max zu 195 €, 395 € und 550 € pro Nutzer und Monat; für Bestandskunden bleiben die Preise bisheriger Editionen unverändert."
+  - "Die Preisseiten nennen die enthaltenen Flex Credits pro Org und Jahr: 500.000 in Core, 1 Mio. in Advanced, 2,75 Mio. in Max, zum Listenpreis 2.500 €, 5.000 € und 13.750 € wert."
   - "Ein Serviceagent für 1.500 Händleranfragen im Monat mit je drei Aktionen verbraucht 1,08 Mio. Credits im Jahr, mehr als der Advanced-Pool, noch ohne Prompts, Tests und Data 360."
-  - "Der Wechsel von 200 Nutzern von Core auf Advanced kostet zum Listenpreis 480.000 $ im Jahr für 500.000 Credits im Wert von 2.500 $. Wählen Sie die Edition nach Funktionen."
+  - "Der Wechsel von 200 Nutzern von Core auf Advanced kostet zum Listenpreis 480.000 € im Jahr für 500.000 Credits im Wert von 2.500 €. Wählen Sie die Edition nach Funktionen."
   - "Die neuen Preise für die Industries-Editionen, wichtig für die Manufacturing Cloud, waren am 27. Oktober 2026 noch nicht veröffentlicht, und Field Service hat weiter ein eigenes Lizenzmodell."
 faq:
   - q: "Müssen Bestandskunden auf Core, Advanced oder Max wechseln?"
@@ -22,13 +22,13 @@ faq:
   - q: "Wie viele Agentforce-Aktionen deckt der Core-Pool?"
     a: "500.000 Credits reichen für 25.000 Standardaktionen zu je 20 Credits, also rund 2.080 im Monat. Prompts, Sandbox-Tests und Data-360-Verarbeitung werden ebenfalls in Flex Credits abgerechnet, die tatsächliche Zahl liegt also darunter."
   - q: "Lohnt sich die Max-Edition für einen Maschinenbauer?"
-    a: "Max lohnt sich, wenn Sie die Funktionen brauchen, etwa die volle Agentforce-for-Industries-Ausstattung der Manufacturing Cloud oder Service Rep Assistant und Contact-Center-Funktionen in der Service Cloud. Nur wegen der Credits ist sie viel zu teuer: 2,25 Mio. zusätzliche Credits kosten zum Listenpreis rund 11.250 $."
+    a: "Max lohnt sich, wenn Sie die Funktionen brauchen, etwa die volle Agentforce-for-Industries-Ausstattung der Manufacturing Cloud oder Service Rep Assistant und Contact-Center-Funktionen in der Service Cloud. Nur wegen der Credits ist sie viel zu teuer: 2,25 Mio. zusätzliche Credits kosten zum Listenpreis rund 11.250 €."
   - q: "Was kostet die Manufacturing Cloud in den neuen Editionen?"
     a: "Die Preisseite nennt Sales Core und Service Core zu 275 € und die Max-Editionen zu 650 € oder 700 € pro Nutzer und Monat bei jährlicher Abrechnung. Neue Industries-Preise hat Salesforce für den Herbst angekündigt; am 27. Oktober 2026 waren sie noch nicht veröffentlicht."
 draft: false
 ---
 
-Die Salesforce-Editionen Core, Advanced und Max verändern die Lizenzplanung eines Herstellers vor allem bei der nächsten Vertragsverlängerung. Bestehende Editionen behalten ihre Preise, und die enthaltenen Flex-Credit-Pools sind klein im Vergleich zu den Lizenzkosten: Die 500.000 Credits in Core sind zum Listenpreis 2.500 $ wert. Schon ein einzelner Serviceagent für Händleranfragen kann mehr verbrauchen als der Advanced-Pool. Ich würde die Edition deshalb nach den Funktionen wählen, die Vertrieb und Service brauchen, und den Verbrauch der Agenten als eigene Budgetzeile planen. Für die Manufacturing Cloud sind die neuen Industries-Preise noch offen.
+Die Salesforce-Editionen Core, Advanced und Max verändern die Lizenzplanung eines Herstellers vor allem bei der nächsten Vertragsverlängerung. Bestehende Editionen behalten ihre Preise, und die enthaltenen Flex-Credit-Pools sind klein im Vergleich zu den Lizenzkosten: Die 500.000 Credits in Core sind zum Listenpreis 2.500 € wert. Schon ein einzelner Serviceagent für Händleranfragen kann mehr verbrauchen als der Advanced-Pool. Ich würde die Edition deshalb nach den Funktionen wählen, die Vertrieb und Service brauchen, und den Verbrauch der Agenten als eigene Budgetzeile planen. Für die Manufacturing Cloud sind die neuen Industries-Preise noch offen.
 
 ## Was hat sich mit Core, Advanced und Max geändert?
 
@@ -36,11 +36,11 @@ Am 3. September 2026 hat Salesforce [drei Editionen angekündigt](https://www.sa
 
 | Edition | Listenpreis pro Nutzer und Monat | Flex Credits pro Org und Jahr | Wert der Credits zum Listenpreis |
 |---|---|---|---|
-| Core | 195 $ | 500.000 | 2.500 $ |
-| Advanced | 395 $ | 1.000.000 | 5.000 $ |
-| Max | 550 $ | 2.750.000 | 13.750 $ |
+| Core | 195 € | 500.000 | 2.500 € |
+| Advanced | 395 € | 1.000.000 | 5.000 € |
+| Max | 550 € | 2.750.000 | 13.750 € |
 
-Die Ankündigung selbst sagt nicht, ob die Pools pro Org oder pro Jahr gelten. Die [Preisseite der Sales Cloud](https://www.salesforce.com/eu/products/sales-pricing/) schon: Ihre Vergleichstabelle nennt „500K Flex Credits/org/year“ bis „2.75M Flex Credits/org/year“, die [Preisseite der Service Cloud](https://www.salesforce.com/service/pricing/) für Max dieselbe Formulierung. Alle drei Editionen werden jährlich abgerechnet. In Euro nennt die Sales-Cloud-Seite dieselben Zahlen, 195 € bis 550 €. Den Wert der Credits habe ich mit dem Listenpreis von [500 $ je 100.000 Credits](https://www.salesforce.com/news/press-releases/2025/05/15/agentforce-flexible-pricing-news/) berechnet.
+Die Ankündigung selbst sagt nicht, ob die Pools pro Org oder pro Jahr gelten. Die [Preisseite der Sales Cloud](https://www.salesforce.com/eu/products/sales-pricing/) schon: Ihre Vergleichstabelle nennt „500K Flex Credits/org/year“ bis „2.75M Flex Credits/org/year“, die [Preisseite der Service Cloud](https://www.salesforce.com/eu/service/pricing/) für Max dieselbe Formulierung. Alle drei Editionen werden jährlich abgerechnet. Den Wert der Credits habe ich mit dem Listenpreis von [500 € je 100.000 Credits](https://www.salesforce.com/eu/agentforce/pricing/) berechnet.
 
 Jede Edition enthält Slack, Tableau Next, Datensicherheit und den Premier Success Plan. Die Unterschiede, auf die es für Hersteller ankommt, liegen bei KI- und Servicefunktionen. In der Service Cloud bringt Advanced den Help Agent Casey, Max die volle Agentforce-for-Service-Ausstattung mit Service Rep Assistant, Agentforce Coworker ohne Verbrauchsabrechnung und Contact-Center-Funktionen wie Workforce und Quality Management. In der Sales Cloud bringt Max Agentforce for Sales, Sales Planning und Salesforce Maps. Was Casey und Service Rep Assistant für ein Serviceteam leisten, steht in [KI-Assistenten in der Service Cloud](../service-cloud-casey-und-service-rep-assistant/).
 
@@ -80,21 +80,21 @@ Zusammen rund 1,47 Mio. Credits im Jahr. Zum Listenpreis für 200 Nutzer:
 
 | Edition | Lizenzen pro Jahr | Enthaltene Credits | Zuzukaufen | Summe |
 |---|---|---|---|---|
-| Core | 468.000 $ | 500.000 | 970.000 für 4.850 $ | 472.850 $ |
-| Advanced | 948.000 $ | 1.000.000 | 470.000 für 2.350 $ | 950.350 $ |
-| Max | 1.320.000 $ | 2.750.000 | keine, 1,28 Mio. verfallen | 1.320.000 $ |
+| Core | 468.000 € | 500.000 | 970.000 für 4.850 € | 472.850 € |
+| Advanced | 948.000 € | 1.000.000 | 470.000 für 2.350 € | 950.350 € |
+| Max | 1.320.000 € | 2.750.000 | keine, 1,28 Mio. verfallen | 1.320.000 € |
 
-Der Schritt von Core zu Advanced kostet 480.000 $ im Jahr und bringt 500.000 Credits im Wert von 2.500 $. In dieser Größenordnung sind Credits kein Argument für eine Edition. Entscheidend sind die Funktionen: Braucht der Service Casey, nutzt der Vertrieb Sales Programs? Wenn ja, wechseln Sie wegen dieser Funktionen. Wenn nein, ist Core plus zugekaufte Credits günstiger. Eine vierte Option: auf Enterprise Edition zu unveränderten Preisen bleiben und die 1,47 Mio. Credits für rund 7.350 $ zum Listenpreis zukaufen, plus die Agentforce-Lizenz, die Ihr Vertrag verlangt. Den Agenten selbst rechne ich ausführlich in [was ein Serviceagent für Händleranfragen kostet](../serviceagent-haendleranfragen-kosten/) durch.
+Der Schritt von Core zu Advanced kostet 480.000 € im Jahr und bringt 500.000 Credits im Wert von 2.500 €. In dieser Größenordnung sind Credits kein Argument für eine Edition. Entscheidend sind die Funktionen: Braucht der Service Casey, nutzt der Vertrieb Sales Programs? Wenn ja, wechseln Sie wegen dieser Funktionen. Wenn nein, ist Core plus zugekaufte Credits günstiger. Eine vierte Option: auf Enterprise Edition zu unveränderten Preisen bleiben und die 1,47 Mio. Credits für rund 7.350 € zum Listenpreis zukaufen, plus die Agentforce-Lizenz, die Ihr Vertrag verlangt. Den Agenten selbst rechne ich ausführlich in [was ein Serviceagent für Händleranfragen kostet](../serviceagent-haendleranfragen-kosten/) durch.
 
 ## Was gilt für Manufacturing Cloud und Field Service?
 
 **Manufacturing Cloud.** Neue Preise für die Industries-Editionen hat Salesforce für „later this fall“ angekündigt. Am 27. Oktober 2026 habe ich keine gefunden. Die [Preisseite der Manufacturing Cloud](https://www.salesforce.com/eu/manufacturing/cloud/) zeigt schon jetzt Sales Core und Service Core zu 275 € und die Max-Editionen zu 650 €, Sales & Service Max zu 700 €, jährlich abgerechnet. Laut [US-Preisseite](https://www.salesforce.com/manufacturing/cloud/pricing/) enthält Core 500K Flex Credits pro Org und Jahr, Max 2,75 Mio. Eine Advanced-Edition hat keinen Preis, und die volle Agentforce-for-Industries-Ausstattung steht nur bei Max. Die Fußnoten zu Enterprise und Unlimited widersprechen sich, das habe ich in [wann sich die Manufacturing Cloud lohnt](../manufacturing-cloud-wann-lohnt-sie-sich/) beschrieben. Fällt Ihre Verlängerung in die nächsten Monate, würde ich keine drei Jahre Manufacturing-Cloud-Lizenzen unterschreiben, bevor die Industries-Preise da sind, es sei denn, die Bestellung erlaubt danach einen Editionswechsel.
 
-**Field Service.** Die [Preisseite von Field Service](https://www.salesforce.com/service/field-service-management/pricing/) kennt kein Core, Advanced oder Max. Dispatcher und Technician kosten 175 $, Field Service Plus 230 $ und Agentforce 1 Field Service 650 $ pro Nutzer und Monat. Nur Letzteres enthält Credits: „1M Flex Credits & 2.5M Data Cloud Credits per org every year“. Bei den übrigen Lizenzen braucht der Scheduling Agent laut Seite Flex Credits. Ein Maschinenbauer mit Außendienst plant also zwei Modelle nebeneinander: Editionen für Vertrieb und Service im Büro, klassische Lizenzen plus zugekaufte Credits für die Techniker im Feld. Ob sich Field Service überhaupt lohnt, steht in [lohnt sich Salesforce Field Service](../salesforce-field-service-lohnt-sich/).
+**Field Service.** Die [Preisseite von Field Service](https://www.salesforce.com/eu/service/field-service-management/pricing/) kennt kein Core, Advanced oder Max. Dispatcher und Technician kosten 175 €, Field Service Plus 230 € und Agentforce 1 Field Service 650 € pro Nutzer und Monat. Nur Letzteres enthält Credits: „1M Flex Credits & 2.5M Data Cloud Credits per org every year“. Bei den übrigen Lizenzen braucht der Scheduling Agent laut Seite Flex Credits. Ein Maschinenbauer mit Außendienst plant also zwei Modelle nebeneinander: Editionen für Vertrieb und Service im Büro, klassische Lizenzen plus zugekaufte Credits für die Techniker im Feld. Ob sich Field Service überhaupt lohnt, steht in [lohnt sich Salesforce Field Service](../salesforce-field-service-lohnt-sich/).
 
 ## Wann lohnt sich Max für einen Hersteller?
 
-Max lohnt sich wegen der Funktionen, nie wegen der Credits. Gegenüber Core enthält Max 2,25 Mio. Credits mehr, zum Listenpreis rund 11.250 $. Der Preisunterschied für 200 Nutzer liegt bei 852.000 $ im Jahr.
+Max lohnt sich wegen der Funktionen, nie wegen der Credits. Gegenüber Core enthält Max 2,25 Mio. Credits mehr, zum Listenpreis rund 11.250 €. Der Preisunterschied für 200 Nutzer liegt bei 852.000 € im Jahr.
 
 Max kann sinnvoll sein, wenn:
 
