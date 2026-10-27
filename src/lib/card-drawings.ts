@@ -27,6 +27,256 @@ const pin = (x: number, y: number, color = G) =>
   `<g transform="translate(${x} ${y})"><path d="M0 0c-6-8-9-12-9-16a9 9 0 0 1 18 0c0 4-3 8-9 16z" fill="#fff" stroke="${color}" stroke-width="1.4"/><circle cx="0" cy="-16" r="3" fill="${color}"/></g>`;
 
 const drawings: Record<string, Drawing> = {
+  'commerce-advanced-pricing-revenue-cloud': (l) => `
+    ${t(18, 24, l('LICENCES', 'LIZENZEN'), { fill: D, size: 7 })}
+    ${tag(18, 32, 112, 'Commerce Growth/Adv.')}${t(139, 46, '+', { fill: D, size: 10, anchor: 'middle' })}${tag(148, 32, 118, 'Revenue Cloud Adv.')}
+    ${[l('List price', 'Listenpreis'), l('Contract', 'Vertragspreis'), l('Volume tier', 'Mengenstaffel'), l('Net price', 'Nettopreis')].map((s, i) => box(18 + i * 76, 74, 60, 30, i === 3 ? C : G) + t(48 + i * 76, 92, s, { fill: i === 3 ? C : G, size: 7, anchor: 'middle' })).join('')}
+    ${arrow(78, 89, 94)}${arrow(154, 89, 170)}${arrow(230, 89, 246, C)}
+    ${t(18, 122, 'Pricing Procedure', { size: 7 })}
+    ${check(18, 136)}${t(32, 143, l('one logic for quote, order and store', 'eine Logik für Angebot, Auftrag und Shop'), { fill: C, size: 7 })}`,
+
+  'commerce-aura-to-lwr-migration': (l) => `
+    ${box(20, 30, 104, 92)}${t(72, 48, l('AURA STORE', 'AURA-STORE'), { fill: D, size: 7.5, anchor: 'middle' })}
+    ${t(32, 66, l('Aura components', 'Aura-Komponenten'), { size: 7 })}${t(32, 82, l('checkout flow', 'Checkout-Flow'), { size: 7 })}${t(32, 98, l('own CSS classes', 'eigene CSS-Klassen'), { size: 7 })}${t(32, 114, l('cart = record page', 'Warenkorb = Record Page'), { size: 7 })}
+    ${arrow(124, 76, 196, C)}${t(160, 68, l('new store', 'neuer Store'), { fill: C, size: 7, anchor: 'middle' })}${t(160, 92, l('no tool', 'kein Tool'), { size: 7, anchor: 'middle' })}
+    ${box(196, 30, 104, 92, C)}${t(248, 48, l('LWR STORE', 'LWR-STORE'), { fill: D, size: 7.5, anchor: 'middle' })}
+    ${check(206, 61)}${t(218, 66, l('LWC only', 'nur LWC'), { size: 7 })}${check(206, 77)}${t(218, 82, 'Commerce Checkout', { size: 7 })}${check(206, 93)}${t(218, 98, '--dxp hooks', { size: 7 })}${check(206, 109)}${t(218, 114, 'named page', { size: 7 })}
+    ${tag(20, 132, 150, l('no retirement date', 'kein Abschaltdatum'))}${t(180, 145, l('as of 27.10.2026', 'Stand 27.10.2026'), { size: 7 })}`,
+
+  'commerce-business-case': (l) => `
+    ${t(18, 18, l('3 YEARS · 40,000 LINES · 2 % GMV (ASSUMED)', '3 JAHRE · 40.000 POSITIONEN · 2 % GMV (ANNAHME)'), { fill: D, size: 7 })}
+    <path d="M40 132H300" stroke="${G}" stroke-width="1"/>
+    ${[[48700, 112000], [97300, 173500], [136300, 229000]].map(([s, c], i) => {
+      const x = 60 + i * 84, hs = s / 2900, hc = c / 2900;
+      return `<rect x="${x}" y="${132 - hs}" width="22" height="${hs}" fill="#fff" stroke="${C}" stroke-width="1.3"/><rect x="${x + 26}" y="${132 - hc}" width="22" height="${hc}" fill="#fff" stroke="${G}" stroke-width="1.3"/>` + t(x + 24, 146, l('year ' + (i + 1), 'Jahr ' + (i + 1)), { size: 7, anchor: 'middle' });
+    }).join('')}
+    <rect x="18" y="28" width="8" height="8" fill="#fff" stroke="${C}"/>${t(30, 35, l('savings', 'Ersparnis'), { fill: C, size: 7 })}
+    <rect x="90" y="28" width="8" height="8" fill="#fff" stroke="${G}"/>${t(102, 35, l('costs', 'Kosten'), { size: 7 })}
+    ${t(18, 156, l('savings cover 37 %, the rest is new revenue', 'Ersparnis deckt 37 %, der Rest ist Mehrumsatz'), { fill: C, size: 7 })}`,
+
+  'commerce-buyer-agent-whatsapp': (l) => `
+    ${box(18, 22, 84, 116)}<rect x="24" y="34" width="72" height="18" rx="4" fill="#fff" stroke="${G}" stroke-width="1"/>${t(60, 46, l('order status?', 'Auftragsstatus?'), { size: 7, anchor: 'middle' })}
+    <rect x="24" y="58" width="72" height="18" rx="4" fill="#fff" stroke="${C}" stroke-width="1.2"/>${t(60, 70, l('same as last time', 'wie letztes Mal'), { fill: C, size: 7, anchor: 'middle' })}
+    ${t(60, 96, l('web chat', 'Web-Chat'), { size: 7, anchor: 'middle' })}${t(60, 110, 'WhatsApp · SMS', { size: 7, anchor: 'middle' })}${t(60, 128, l('dealer', 'Händler'), { fill: D, size: 7.5, anchor: 'middle' })}
+    ${arrow(102, 62, 126, C)}
+    ${box(126, 22, 102, 96, C)}${t(177, 38, 'BUYER AGENT', { fill: D, size: 7.5, anchor: 'middle' })}
+    ${[l('product search', 'Produktsuche'), l('order status', 'Auftragsstatus'), l('reorder', 'Nachbestellung'), l('switch account', 'Accountwechsel'), l('verify user', 'Nutzer prüfen')].map((s, i) => check(134, 48 + i * 14, i === 2 ? C : G) + t(146, 54 + i * 14, s, { size: 7 })).join('')}
+    ${arrow(228, 62, 252)}
+    ${box(252, 40, 56, 44)}${t(280, 58, l('STORE', 'SHOP'), { fill: D, size: 7.5, anchor: 'middle' })}${t(280, 72, 'ERP', { size: 7, anchor: 'middle' })}
+    ${t(280, 98, l('price, credit', 'Preis, Kredit'), { size: 7, anchor: 'middle' })}${t(280, 110, l('from code', 'aus Code'), { size: 7, anchor: 'middle' })}
+    ${tag(234, 124, 76, 'Carter 01/2027')}`,
+
+  'commerce-buyer-groups-entitlements': (l) => `
+    ${t(18, 18, l('WHO SEES WHICH PRODUCT', 'WER SIEHT WELCHES PRODUKT'), { fill: D, size: 7 })}
+    ${box(18, 30, 70, 36)}${t(53, 46, l('BUYER ACCOUNT', 'KÄUFERACCOUNT'), { fill: D, size: 7, anchor: 'middle' })}${t(53, 58, l('max 20 groups', 'max. 20 Gruppen'), { size: 7, anchor: 'middle' })}
+    ${arrow(88, 48, 118)}
+    ${box(118, 30, 80, 36, C)}${t(158, 46, 'BUYER GROUP', { fill: C, size: 7, anchor: 'middle' })}${t(158, 58, l('country · tier · brand', 'Land · Stufe · Marke'), { size: 7, anchor: 'middle' })}
+    ${arrow(198, 40, 224)}${arrow(198, 58, 224)}
+    ${box(224, 26, 80, 20)}${t(264, 39, 'entitlement policy', { size: 7, anchor: 'middle' })}
+    ${box(224, 50, 80, 20)}${t(264, 63, l('price book', 'Preisbuch'), { size: 7, anchor: 'middle' })}
+    ${t(264, 82, l('max 200 groups per policy', 'max. 200 Gruppen je Policy'), { size: 7, anchor: 'middle' })}
+    <path d="M18 98H302" stroke="${L}"/>
+    ${t(18, 114, l('Scenario: 800 dealers, 12 countries, 3 tiers', 'Szenario: 800 Händler, 12 Länder, 3 Stufen'), { fill: D, size: 7.5 })}
+    ${cross(24, 130)}${t(34, 133, l('1 group per dealer: 800 groups per part', '1 Gruppe pro Händler: 800 Gruppen je Teil'), { size: 7 })}
+    ${check(20, 143)}${t(34, 147, l('country x tier: 36 groups, limit 2,000 per part', 'Land x Stufe: 36 Gruppen, Grenze 2.000 je Teil'), { fill: C, size: 7 })}`,
+
+  'commerce-buyer-licences': (l) => `
+    ${t(18, 20, l('B2B COMMERCE LICENCES', 'B2B-COMMERCE-LIZENZEN'), { fill: D, size: 7.5 })}
+    ${[[l('Buyer', 'Käufer'), 'Customer Community Plus', C], ['Buyer Manager', 'Customer Community Plus', C], ['Merchandiser', 'B2B and D2C Commerce', G], [l('Developer', 'Entwickler'), l('Full licence', 'Volle Lizenz'), G]]
+      .map(([r, lic, c], i) => `<path d="M18 ${36 + i * 22}H190" stroke="${L}"/>` + t(22, 50 + i * 22, String(r), { size: 7.5 }) + t(186, 50 + i * 22, String(lic), { fill: String(c), size: 7, anchor: 'end' })).join('')}
+    ${box(206, 30, 96, 58)}${t(254, 46, l('PER MONTH', 'PRO MONAT'), { fill: D, size: 7, anchor: 'middle' })}
+    ${t(214, 62, l('Member', 'Mitglied'), { size: 7 })}${t(294, 62, l('$35', '35 €'), { fill: C, size: 7.5, anchor: 'end' })}
+    ${t(214, 78, 'Login', { size: 7 })}${t(294, 78, l('$15', '15 €'), { size: 7.5, anchor: 'end' })}
+    <path d="M206 128H302" stroke="${G}" stroke-width="0.8"/>${dot(222, 128, G, 2.5)}${dot(254, 128, C, 3.5)}${dot(286, 128, G, 2.5)}
+    ${t(254, 118, l('break-even', 'Schwelle'), { fill: C, size: 7, anchor: 'middle' })}${t(254, 144, l('3 login days', '3 Login-Tage'), { fill: C, size: 7, anchor: 'middle' })}
+    ${tag(18, 128, 172, l('50,000 portal roles by default', 'Standard: 50.000 Portalrollen'))}`,
+
+  'commerce-checkout-purchase-order': (l) => `
+    ${box(18, 58, 64, 44)}${t(50, 77, l('CART', 'WARENKORB'), { fill: D, size: 7.5, anchor: 'middle' })}${t(50, 90, 'checkout', { size: 7, anchor: 'middle' })}
+    <path d="M82 72C100 72 100 40 116 40" fill="none" stroke="${C}" stroke-width="1.4"/><path d="M82 88C100 88 100 120 116 120" fill="none" stroke="${G}" stroke-width="1.3"/>
+    ${box(116, 26, 78, 28, C)}${t(155, 44, l('PO number', 'Bestellnummer'), { fill: C, size: 7.5, anchor: 'middle' })}
+    ${box(116, 106, 78, 28)}${t(155, 124, l('Card · gateway', 'Karte · Gateway'), { size: 7.5, anchor: 'middle' })}
+    ${arrow(194, 40, 222, C)}
+    ${box(222, 22, 82, 36, C)}${t(263, 37, 'validate()', { fill: C, size: 7.5, anchor: 'middle' })}${t(263, 50, l('ERP credit check', 'ERP-Kreditprüfung'), { size: 7, anchor: 'middle' })}
+    <path d="M263 58V76M194 120H263V96" fill="none" stroke="${G}" stroke-width="1.2"/>
+    ${tag(228, 76, 70, l('order', 'Bestellung'))}
+    ${cross(24, 140)}${t(34, 143, l('neither PO nor payment: no order', 'weder PO noch Zahlung: keine Bestellung'), { size: 7 })}`,
+
+  'commerce-customer-prices': (l) => `
+    ${box(18, 20, 104, 58)}${t(70, 36, l('PRICE BOOKS', 'PREISBÜCHER'), { fill: D, size: 7.5, anchor: 'middle' })}${t(70, 50, l('5 per store', '5 je Store'), { size: 7, anchor: 'middle' })}${t(70, 63, l('25 per call · hard', '25 je Aufruf · hart'), { size: 7, anchor: 'middle' })}
+    ${box(18, 96, 104, 44, C)}${t(70, 114, 'SAP', { fill: D, size: 8, anchor: 'middle' })}${t(70, 128, l('conditions · live', 'Konditionen · live'), { fill: C, size: 7, anchor: 'middle' })}
+    <path d="M122 49C140 49 140 72 156 72" fill="none" stroke="${G}" stroke-width="1.3"/><path d="M122 118C140 118 140 88 156 88" fill="none" stroke="${C}" stroke-width="1.4"/>
+    ${box(156, 58, 84, 44, C)}${t(198, 76, 'Pricing', { fill: D, size: 7.5, anchor: 'middle' })}${t(198, 89, 'Service', { fill: D, size: 7.5, anchor: 'middle' })}
+    ${arrow(240, 80, 262, C)}${tag(262, 70, 44, l('price', 'Preis'))}
+    ${t(156, 124, 'Best Price · Priority Price', { size: 7 })}
+    ${t(156, 138, l('decide the price master first', 'Preis-Master zuerst festlegen'), { fill: C, size: 7 })}`,
+
+  'commerce-dealer-rollout': (l) => `
+    ${t(20, 22, l('BUYER GROUPS IN WAVES', 'BUYER GROUPS IN WELLEN'), { fill: D, size: 7.5 })}
+    ${[[l('Wave 1', 'Welle 1'), l('15 pilot dealers', '15 Pilothändler')], [l('Wave 2', 'Welle 2'), l('3 groups by tier', '3 Gruppen je Stufe')], [l('Wave 3', 'Welle 3'), l('AT, CH, key accounts', 'AT, CH, Großkunden')]]
+      .map(([a, b], i) => box(20 + i * 98, 34 + i * 20, 86, 40, i === 0 ? C : G) + t(63 + i * 98, 51 + i * 20, a, { fill: D, size: 7.5, anchor: 'middle' }) + t(63 + i * 98, 65 + i * 20, b, { size: 6.5, anchor: 'middle' })).join('')}
+    ${arrow(106, 54, 118)}${arrow(204, 74, 216)}
+    ${t(20, 118, l('test per wave as a real buyer:', 'Test je Welle als echter Käufer:'), { size: 7 })}
+    ${[l('entitlements', 'Entitlements'), l('prices', 'Preise'), l('stock', 'Bestand'), 'checkout'].map((s, i) => check(20 + i * 62, 128) + t(32 + i * 62, 134, s, { size: 7 })).join('')}
+    ${t(20, 152, l('buyer manager admins own users', 'Buyer Manager verwaltet eigene Benutzer'), { fill: C, size: 7 })}`,
+
+  'commerce-extensions-custom-code': (l) => `
+    ${box(18, 22, 120, 56)}${t(78, 40, 'PricingService', { fill: D, size: 7.5, anchor: 'middle' })}${t(78, 54, l('Salesforce standard', 'Salesforce-Standard'), { size: 7, anchor: 'middle' })}${t(78, 67, l('price books', 'Preisbücher'), { size: 7, anchor: 'middle' })}
+    ${box(18, 96, 120, 44, C)}${t(78, 114, l('YOUR EXTENSION', 'IHRE EXTENSION'), { fill: C, size: 7.5, anchor: 'middle' })}${t(78, 128, l('+ ERP discount', '+ ERP-Rabatt'), { size: 7, anchor: 'middle' })}
+    <path d="M78 96V79" stroke="${C}" stroke-width="1.3"/><path d="M74.5 84l3.5-5 3.5 5" fill="none" stroke="${C}" stroke-width="1.3"/>${t(84, 90, 'super()', { fill: C, size: 7 })}
+    ${box(182, 22, 120, 118)}${t(242, 38, l('CLIENT REPO', 'KUNDEN-REPO'), { fill: D, size: 7.5, anchor: 'middle' })}
+    ${[l('Apex class + tests', 'Apex-Klasse + Tests'), 'extension:register', 'extension:map', l('pull request review', 'Pull-Request-Review')]
+      .map((s, i) => check(192, 52 + i * 18, i === 2 ? C : G) + t(206, 58 + i * 18, s, { size: 7 })).join('')}
+    ${arrow(138, 118, 182)}${cross(24, 151)}${t(34, 154, l('payments: no extension', 'Zahlungen: keine Extension'), { size: 7 })}`,
+
+  'commerce-gmv-pricing': (l) => `
+    ${t(18, 18, l('STORE REVENUE', 'STORE-UMSATZ'), { fill: D, size: 7 })}
+    <rect x="18" y="26" width="284" height="22" rx="4" fill="#fff" stroke="${G}" stroke-width="1.2"/>
+    <rect x="18" y="26" width="226" height="22" rx="4" fill="#fff" stroke="${C}" stroke-width="1.4"/>
+    ${t(131, 40.5, 'GMV', { fill: C, size: 7.5, anchor: 'middle' })}${t(273, 40.5, l('tax, shipping', 'Steuer, Versand'), { size: 6.5, anchor: 'middle' })}
+    ${t(18, 64, l('% of GMV: not published', '% vom GMV: nicht veröffentlicht'), { fill: C, size: 7 })}
+    ${box(18, 76, 136, 66)}${t(28, 92, 'GROWTH', { fill: D, size: 7.5 })}${t(28, 106, l('6 storefronts', '6 Storefronts'), { size: 7 })}${t(28, 119, 'Order Management Lite', { size: 7 })}${t(28, 132, l('250K Data Cloud credits', '250.000 Data-Cloud-Credits'), { size: 7 })}
+    ${box(166, 76, 136, 66)}${t(176, 92, 'ADVANCED', { fill: D, size: 7.5 })}${t(176, 106, l('10 storefronts', '10 Storefronts'), { size: 7 })}${t(176, 119, l('full Order Management', 'volles Order Management'), { size: 7 })}${t(176, 132, l('500K Data Cloud credits', '500.000 Data-Cloud-Credits'), { size: 7 })}
+    ${t(160, 156, l('+ buyer licences, Revenue Cloud, implementation', '+ Käuferlizenzen, Revenue Cloud, Umsetzung'), { size: 7, anchor: 'middle' })}`,
+
+  'commerce-headless-b2b': (l) => `
+    ${box(18, 18, 92, 30)}${t(64, 37, l('LWR STORE', 'LWR-STORE'), { fill: D, anchor: 'middle' })}
+    ${box(18, 64, 92, 30, C)}${t(64, 83, l('OWN WEBSITE', 'EIGENE WEBSITE'), { fill: C, anchor: 'middle' })}
+    ${box(18, 110, 92, 30)}${t(64, 129, l('CUSTOMER APP', 'KUNDEN-APP'), { fill: D, anchor: 'middle' })}
+    ${arrow(110, 33, 196)}${arrow(110, 79, 196, C)}${arrow(110, 125, 196)}
+    ${t(153, 72, 'Connect REST API', { fill: C, size: 7, anchor: 'middle' })}
+    ${box(196, 18, 106, 122)}${t(249, 36, 'B2B COMMERCE', { fill: D, size: 7.5, anchor: 'middle' })}
+    ${[l('Catalogue', 'Katalog'), l('Prices', 'Preise'), l('Cart', 'Warenkorb'), 'Checkout', l('Orders', 'Aufträge')]
+      .map((s, i) => check(208, 48 + i * 17, G) + t(222, 54 + i * 17, s, { size: 7 })).join('')}
+    ${t(64, 154, l('frontend: you host it', 'Frontend: Sie hosten'), { size: 7, anchor: 'middle' })}${t(249, 154, l('core: Salesforce', 'Kern: Salesforce'), { size: 7, anchor: 'middle' })}`,
+
+  'commerce-kpis-after-go-live': (l) => `
+    ${t(20, 22, l('ORDER LINES AFTER 6 MONTHS', 'POSITIONEN NACH 6 MONATEN'), { fill: D, size: 7.5 })}
+    <path d="M20 112H180" stroke="${G}" stroke-width="1"/>
+    ${[[l('phone, e-mail', 'Telefon, E-Mail'), 55, G], [l('store', 'Shop'), 45, C]].map(([s, v, c], i) => `<rect x="${44 + i * 70}" y="${112 - Number(v) * 1.2}" width="34" height="${Number(v) * 1.2}" rx="2" fill="#fff" stroke="${c}" stroke-width="1.3"/>` + t(61 + i * 70, 106 - Number(v) * 1.2, `${v} %`, { fill: String(c), size: 7, anchor: 'middle' }) + t(61 + i * 70, 124, String(s), { size: 7, anchor: 'middle' })).join('')}
+    ${box(198, 30, 104, 92)}
+    ${[l('zero-result searches', 'Suchen ohne Treffer'), l('conversion', 'Conversion'), l('minutes per line', 'Minuten je Position'), l('manual corrections', 'Korrekturen')].map((s, i) => dot(210, 48 + i * 20, i === 0 ? C : G, 2.5) + t(218, 51 + i * 20, s, { size: 7 })).join('')}
+    ${tag(198, 132, 104, l('review after 3 months', 'Review nach 3 Monaten'))}
+    ${t(20, 145, l('Data Cloud credits: 250K / 500K', 'Data-Cloud-Credits: 250K / 500K'), { size: 7 })}`,
+
+  'commerce-merchandising-agent': (l) => `
+    ${t(18, 20, l('SEARCH: PART 4711', 'SUCHE: TEIL 4711'), { fill: D, size: 7.5 })}
+    ${box(18, 28, 150, 22, C)}${t(28, 43, l('4711-B successor', '4711-B Nachfolger'), { fill: C, size: 7.5 })}<path d="M156 44V34M152 38l4-4 4 4" fill="none" stroke="${C}" stroke-width="1.3"/>
+    ${box(18, 56, 150, 22)}${t(28, 71, l('repair kit 4711', 'Reparatursatz 4711'), { size: 7.5 })}
+    ${box(18, 84, 150, 22)}${t(28, 99, l('4711 superseded', '4711 ersetzt'), { size: 7.5 })}<path d="M156 90V100M152 96l4 4 4-4" fill="none" stroke="${G}" stroke-width="1.3"/>
+    ${t(18, 126, l('max. 100 boost and bury rules', 'max. 100 Boost-und-Bury-Regeln'), { size: 7 })}
+    ${box(196, 22, 108, 64)}${t(250, 38, 'MERCHANDISING', { fill: D, size: 7.5, anchor: 'middle' })}${t(250, 50, 'AGENT', { fill: D, size: 7.5, anchor: 'middle' })}
+    ${t(250, 66, 'boost · bury', { size: 7, anchor: 'middle' })}${t(250, 78, l('AOV · conversion', 'AOV · Conversion'), { size: 7, anchor: 'middle' })}
+    <path d="M196 54H176" stroke="${G}" stroke-width="1.2" stroke-dasharray="4 3"/>
+    ${box(196, 100, 108, 42)}${t(250, 117, l('ERP / PIM master', 'ERP / PIM Master'), { fill: D, size: 7.5, anchor: 'middle' })}${cross(212, 131)}${t(222, 134, l('no master data', 'keine Stammdaten'), { size: 7 })}`,
+
+  'commerce-order-to-erp': (l) => `
+    ${box(18, 44, 86, 64)}${t(61, 62, l('STORE', 'SHOP'), { fill: D, size: 7.5, anchor: 'middle' })}${t(61, 76, 'Order Summary', { size: 7, anchor: 'middle' })}${t(61, 94, 'unmanaged', { fill: C, size: 7.5, anchor: 'middle' })}
+    ${box(218, 44, 86, 64, C)}${t(261, 66, 'SAP', { fill: D, size: 9, anchor: 'middle' })}${t(261, 80, l('owns the order', 'führt den Auftrag'), { fill: C, size: 7, anchor: 'middle' })}${t(261, 94, l('delivery · invoice', 'Lieferung · Rechnung'), { size: 7, anchor: 'middle' })}
+    ${arrow(104, 62, 218, C)}${t(161, 56, 'CreateOrder', { fill: C, size: 7, anchor: 'middle' })}
+    <path d="M218 92H105" stroke="${G}" stroke-width="1.3"/><path d="M110 88.5l-5 3.5 5 3.5" fill="none" stroke="${G}" stroke-width="1.3"/>${t(161, 104, l('number · status back', 'Nummer · Status zurück'), { size: 7, anchor: 'middle' })}
+    ${t(18, 132, 'Growth: Order Management Lite', { size: 7 })}${t(18, 146, l('Advanced: full Order Management', 'Advanced: volles Order Management'), { size: 7 })}
+    ${cross(214, 138)}${t(224, 141, l('two order systems', 'zwei Auftragssysteme'), { size: 7 })}`,
+
+  'commerce-product-data-pim': (l) => `
+    ${box(18, 22, 100, 44)}${t(68, 38, 'ERP', { fill: D, size: 7.5, anchor: 'middle' })}${t(68, 52, l('number · unit · status', 'Nummer · Einheit · Status'), { size: 7, anchor: 'middle' })}
+    ${box(18, 76, 100, 44)}${t(68, 92, 'PIM / DAM', { fill: D, size: 7.5, anchor: 'middle' })}${t(68, 106, l('texts · attributes · media', 'Texte · Merkmale · Medien'), { size: 7, anchor: 'middle' })}
+    ${arrow(118, 44, 156)}${arrow(118, 98, 156)}${t(137, 74, l('copy', 'Kopie'), { size: 7, anchor: 'middle' })}
+    ${box(156, 22, 148, 98, C)}${t(166, 38, 'B2B STORE', { fill: C, size: 7.5 })}
+    ${[l('1 catalogue per store', '1 Katalog pro Store'), l('4M products, 1M searchable', '4 Mio. Produkte, 1 Mio. suchbar'), l('200 variants per parent', '200 Varianten je Träger'), l('9 images + 5 files', '9 Bilder + 5 Dateien'), l('category depth 5', 'Kategorietiefe 5')]
+      .map((s, i) => dot(170, 52 + i * 14, G, 2) + t(178, 55 + i * 14, s, { size: 7 })).join('')}
+    <path d="M18 134H302" stroke="${L}"/>
+    ${t(18, 150, l('1 owner per field, Salesforce owns only categories and search', '1 Owner pro Feld, Salesforce führt nur Kategorien und Suche'), { fill: D, size: 7 })}`,
+
+  'commerce-reorder-order-templates': (l) => `
+    ${[l('Past order', 'Alte Bestellung'), l('Order template', 'Bestellvorlage'), 'CSV · JSON'].map((s, i) => box(18, 22 + i * 40, 92, 28, i === 0 ? C : G) + t(64, 40 + i * 40, s, { fill: i === 0 ? C : D, size: 7.5, anchor: 'middle' })).join('')}
+    <path d="M110 36C140 36 140 70 160 70" fill="none" stroke="${C}" stroke-width="1.4"/><path d="M110 76H160M110 116C140 116 140 82 160 82" fill="none" stroke="${G}" stroke-width="1.2"/>
+    <path d="M163 72.5l5 3.5-5 3.5" fill="none" stroke="${G}" stroke-width="1.3"/>
+    ${box(168, 22, 132, 96)}${t(178, 38, l('CART', 'WARENKORB'), { fill: D, size: 7.5 })}
+    ${[0, 1, 2, 3].map((i) => `<path d="M178 ${50 + i * 12}H290" stroke="${L}"/>`).join('')}
+    ${t(178, 106, l('500 lines · 2,000 large cart', '500 Pos. · 2.000 Large Cart'), { size: 7 })}
+    ${tag(196, 128, 104, l('Jan 2027: shared cart', 'Jan. 2027: Multi-Cart'))}`,
+
+  'commerce-request-for-quote': (l) => `
+    ${box(18, 50, 64, 40)}${t(50, 68, l('CART', 'WARENKORB'), { fill: D, size: 7.5, anchor: 'middle' })}${t(50, 81, l('buyer', 'Käufer'), { size: 7, anchor: 'middle' })}
+    ${arrow(82, 70, 112)}${t(97, 64, 'RFQ', { size: 7, anchor: 'middle' })}
+    ${box(112, 50, 90, 40)}${t(157, 68, 'QUOTE', { fill: D, size: 7.5, anchor: 'middle' })}${t(157, 81, l('Draft · sales desk', 'Draft · Innendienst'), { size: 7, anchor: 'middle' })}
+    ${arrow(202, 70, 228)}
+    ${box(228, 50, 76, 40, C)}${t(266, 68, 'Approved', { fill: D, size: 7.5, anchor: 'middle' })}${t(266, 81, 'My Quotes', { size: 7, anchor: 'middle' })}
+    <path d="M250 50C250 28 170 28 170 50" fill="none" stroke="${G}" stroke-width="1.2" stroke-dasharray="4 3"/><path d="M166.5 45l3.5 5 3.5-5" fill="none" stroke="${G}" stroke-width="1.2"/>${t(210, 26, 'Renegotiate', { size: 7, anchor: 'middle' })}
+    <path d="M266 90V118H50V96" fill="none" stroke="${C}" stroke-width="1.4"/><path d="M46.5 101l3.5-5 3.5 5" fill="none" stroke="${C}" stroke-width="1.4"/>${t(158, 113, 'Quote to Cart', { fill: C, size: 7.5, anchor: 'middle' })}
+    ${tag(18, 130, 120, l('needs Advanced Pricing', 'braucht Advanced Pricing'))}${t(150, 144, 'ConnectApi.CommerceQuotes', { size: 7 })}`,
+
+  'commerce-sap-data-flows': (l) => `
+    ${box(18, 40, 92, 80)}${t(64, 58, 'B2B COMMERCE', { fill: D, size: 7.5, anchor: 'middle' })}${t(64, 72, l('store · cart', 'Shop · Warenkorb'), { size: 7, anchor: 'middle' })}${t(64, 84, 'checkout', { size: 7, anchor: 'middle' })}${t(64, 104, 'extensions', { fill: C, size: 7, anchor: 'middle' })}
+    ${box(228, 40, 76, 80)}${t(266, 76, 'SAP', { fill: D, size: 9, anchor: 'middle' })}${t(266, 90, l('master', 'führend'), { size: 7, anchor: 'middle' })}
+    <path d="M228 50H111" stroke="${G}" stroke-width="1.3" stroke-dasharray="4 3"/><path d="M116 46.5l-5 3.5 5 3.5" fill="none" stroke="${G}" stroke-width="1.3"/>${t(170, 45, l('master data · batch', 'Stammdaten · Batch'), { size: 7, anchor: 'middle' })}
+    ${arrow(110, 72, 228, C)}${t(170, 67, l('price · stock · credit live', 'Preis · Bestand · Kredit live'), { fill: C, size: 7, anchor: 'middle' })}
+    ${arrow(110, 94, 228)}${t(170, 89, l('order', 'Auftrag'), { size: 7, anchor: 'middle' })}
+    <path d="M228 114H111" stroke="${G}" stroke-width="1.3"/><path d="M116 110.5l-5 3.5 5 3.5" fill="none" stroke="${G}" stroke-width="1.3"/>${t(170, 109, l('status · delivery · invoice', 'Status · Lieferung · Rechnung'), { size: 7, anchor: 'middle' })}
+    ${tag(18, 132, 92, l('4 data flows', '4 Datenflüsse'))}${t(122, 145, l('password flow ends 20.02.2027', 'Passwort-Flow endet 20.02.2027'), { size: 7 })}`,
+
+  'commerce-search-part-numbers': (l) => `
+    ${box(18, 22, 150, 24)}${t(28, 37, l('search: 0815-112', 'Suche: 0815-112'), { fill: D, size: 7.5 })}<circle cx="154" cy="33" r="5" fill="none" stroke="${G}" stroke-width="1.2"/><path d="M158 37l4 4" stroke="${G}" stroke-width="1.2"/>
+    ${arrow(168, 34, 188)}
+    ${box(188, 16, 116, 70, C)}${t(198, 31, l('PRODUCT', 'PRODUKT'), { fill: D, size: 7.5 })}
+    ${t(198, 46, 'SKU 0815-118', { size: 7 })}${t(198, 59, l('former: 0815-112', 'früher: 0815-112'), { fill: C, size: 7 })}${t(198, 72, l('searchable field', 'durchsuchbares Feld'), { size: 7 })}
+    ${check(26, 60)}${t(40, 66, l('all terms must match', 'alle Begriffe müssen passen'), { size: 7 })}
+    ${cross(30, 80)}${t(40, 83, l('no prefix or infix match', 'kein Teiltreffer'), { size: 7 })}
+    <path d="M18 98H302" stroke="${L}"/>
+    ${[['25', l('searchable', 'suchbar')], ['50', l('filterable', 'filterbar')], ['100', l('synonyms', 'Synonyme')], ['100', 'boost/bury']]
+      .map(([n, s], i) => t(50 + i * 72, 118, String(n), { fill: D, size: 10, anchor: 'middle' }) + t(50 + i * 72, 131, String(s), { size: 7, anchor: 'middle' })).join('')}
+    ${t(18, 152, l('Zero-result searches (Data Cloud) = missing data', 'Suchen ohne Treffer (Data Cloud) = fehlende Daten'), { fill: C, size: 7 })}`,
+
+  'commerce-shop-or-portal': (l) => `
+    ${box(18, 26, 128, 92)}${t(82, 42, l('PORTAL', 'PORTAL'), { fill: D, size: 7.5, anchor: 'middle' })}
+    ${[l('view orders', 'Bestellungen sehen'), l('request', 'anfragen'), l('report a case', 'Case melden')].map((s, i) => check(28, 54 + i * 16, G) + t(42, 60 + i * 16, s, { size: 7 })).join('')}
+    ${box(174, 26, 128, 92, C)}${t(238, 42, 'B2B COMMERCE', { fill: C, size: 7.5, anchor: 'middle' })}
+    ${[l('catalogue', 'Katalog'), l('buyer group prices', 'Preise je Käufergruppe'), l('cart + checkout', 'Warenkorb + Checkout'), l('reorder', 'nachbestellen')].map((s, i) => check(184, 50 + i * 15, C) + t(198, 56 + i * 15, s, { size: 7 })).join('')}
+    <path d="M146 72H174" stroke="${L}" stroke-width="1.2"/>
+    ${t(160, 140, l('both: Customer Community Plus, 35 / member', 'beide: Customer Community Plus, 35 / Mitglied'), { size: 7, anchor: 'middle' })}
+    ${t(160, 154, l('250 dealers · 30,000 lines / year', '250 Händler · 30.000 Positionen / Jahr'), { fill: D, size: 7, anchor: 'middle' })}`,
+
+  'commerce-spare-parts-per-machine': (l) => `
+    ${t(14, 18, l('PARTS PER MACHINE', 'TEILE PRO MASCHINE'), { fill: D, size: 7 })}
+    ${box(14, 30, 86, 40)}${t(57, 46, l('BUYER GROUP', 'KÄUFERGRUPPE'), { fill: D, size: 7, anchor: 'middle' })}${t(57, 59, l('per machine', 'pro Maschine'), { size: 6.5, anchor: 'middle' })}
+    ${cross(112, 50)}${t(124, 47, l('2,000 entitlements', '2.000 Entitlements'), { size: 6.5 })}${t(124, 58, l('per product', 'pro Produkt'), { size: 6.5 })}
+    ${box(14, 86, 86, 52)}${t(57, 102, l('DEALER ASSETS', 'HÄNDLER-ASSETS'), { fill: D, size: 7, anchor: 'middle' })}${t(57, 115, l('own account only', 'nur eigenes Konto'), { size: 6.5, anchor: 'middle' })}${t(57, 127, l('serial no.', 'Seriennr.'), { size: 6.5, anchor: 'middle' })}
+    ${arrow(100, 112, 138, C)}
+    ${box(138, 86, 86, 52, C)}${t(181, 102, l('MACHINE PAGE', 'MASCHINENSEITE'), { fill: D, size: 7, anchor: 'middle' })}${t(181, 115, 'LWC', { fill: C, size: 6.5, anchor: 'middle' })}${t(181, 127, l('parts + cart', 'Teile + Warenkorb'), { size: 6.5, anchor: 'middle' })}
+    ${box(244, 86, 62, 52)}${t(275, 108, 'PLM', { fill: D, size: 7.5, anchor: 'middle' })}${t(275, 121, 'as-built', { size: 6.5, anchor: 'middle' })}
+    <path d="M244 112H226" stroke="${G}" stroke-width="1.3" stroke-dasharray="4 3"/>${t(235, 106, 'live', { size: 6, anchor: 'middle' })}
+    ${t(244, 52, l('search filter:', 'Suchfilter:'), { size: 6.5 })}${t(244, 63, l('extension (Beta)', 'Extension (Beta)'), { size: 6.5 })}`,
+
+  'commerce-stock-availability-erp': (l) => `
+    ${box(18, 22, 100, 46)}${t(68, 40, l('PRODUCT LIST', 'PRODUKTLISTE'), { fill: D, size: 7.5, anchor: 'middle' })}${t(68, 54, l('reads the copy', 'liest die Kopie'), { size: 7, anchor: 'middle' })}
+    ${box(18, 92, 100, 46, C)}${t(68, 110, 'CHECKOUT', { fill: D, size: 7.5, anchor: 'middle' })}${t(68, 124, l('asks SAP live', 'fragt SAP live'), { fill: C, size: 7, anchor: 'middle' })}
+    ${box(150, 22, 80, 46)}${t(190, 40, 'OCI', { fill: D, size: 7.5, anchor: 'middle' })}${t(190, 54, l('20 locations', '20 Lagerorte'), { size: 7, anchor: 'middle' })}
+    <path d="M150 45H119" stroke="${G}" stroke-width="1.3"/><path d="M124 41.5l-5 3.5 5 3.5" fill="none" stroke="${G}" stroke-width="1.3"/>
+    ${box(254, 70, 50, 50)}${t(279, 99, 'SAP', { fill: D, size: 8.5, anchor: 'middle' })}
+    <path d="M254 82C240 82 240 45 231 45" fill="none" stroke="${G}" stroke-width="1.2" stroke-dasharray="4 3"/>${t(236, 32, l('copy', 'Kopie'), { size: 7 })}
+    ${arrow(118, 115, 254, C)}${t(186, 110, l('ATP · confirmed date', 'ATP · bestätigter Termin'), { fill: C, size: 7, anchor: 'middle' })}
+    ${check(150, 140)}${t(162, 146, l('in stock', 'lieferbar'), { size: 7 })}${dot(212, 143, G, 3)}${t(220, 146, l('on request', 'auf Anfrage'), { size: 7 })}`,
+
+  'commerce-stores-countries-brands': (l) => `
+    ${t(14, 18, l('1 STORE PER BRAND, BUYER GROUPS INSIDE', '1 STORE PRO MARKE, KÄUFERGRUPPEN INNEN'), { fill: D, size: 7 })}
+    ${box(14, 30, 140, 92, C)}${t(24, 46, l('STORE · BRAND A', 'STORE · MARKE A'), { fill: D, size: 7.5 })}${t(144, 46, l('1 catalogue', '1 Katalog'), { fill: C, size: 6.5, anchor: 'end' })}
+    ${[l('DE · tier 1', 'DE · Stufe 1'), l('FR · tier 2', 'FR · Stufe 2'), l('CH · CHF', 'CH · CHF'), '…'].map((s, i) => `<rect x="24" y="${54 + i * 15}" width="120" height="12" rx="3" fill="#fff" stroke="${L}"/>` + t(30, 63 + i * 15, s, { size: 6.5 })).join('')}
+    ${box(166, 30, 140, 92)}${t(176, 46, l('STORE · BRAND B', 'STORE · MARKE B'), { fill: D, size: 7.5 })}${t(296, 46, l('own ERP', 'eigenes ERP'), { size: 6.5, anchor: 'end' })}
+    ${[l('IT · tier 1', 'IT · Stufe 1'), l('ES · tier 2', 'ES · Stufe 2'), '…'].map((s, i) => `<rect x="176" y="${54 + i * 15}" width="120" height="12" rx="3" fill="#fff" stroke="${L}"/>` + t(182, 63 + i * 15, s, { size: 6.5 })).join('')}
+    <path d="M14 136H306" stroke="${L}"/>
+    ${t(14, 150, l('max 25 languages · 5 price books per store', 'max. 25 Sprachen · 5 Preisbücher pro Store'), { size: 7 })}${tag(236, 139, 70, 'Growth: 6')}`,
+
+  'commerce-versions-visualforce-aura-lwr': (l) => `
+    ${box(18, 40, 86, 56)}${t(61, 58, 'VISUALFORCE', { fill: D, size: 7.5, anchor: 'middle' })}${t(61, 72, l('managed package', 'Managed Package'), { size: 7, anchor: 'middle' })}${t(61, 86, '4.13 · Winter \'21', { size: 7, anchor: 'middle' })}
+    ${arrow(104, 68, 118)}
+    ${box(118, 40, 86, 56)}${t(161, 58, 'AURA STORE', { fill: D, size: 7.5, anchor: 'middle' })}${t(161, 72, l('Aura + LWC', 'Aura + LWC'), { size: 7, anchor: 'middle' })}${t(161, 86, l('enabled < Spring \'23', 'aktiviert < Spring \'23'), { size: 7, anchor: 'middle' })}
+    ${arrow(204, 68, 218, C)}
+    ${box(218, 40, 86, 56, C)}${t(261, 58, 'LWR STORE', { fill: D, size: 7.5, anchor: 'middle' })}${t(261, 72, l('LWC only', 'nur LWC'), { size: 7, anchor: 'middle' })}${t(261, 86, l('recommended', 'empfohlen'), { fill: C, size: 7, anchor: 'middle' })}
+    ${t(61, 28, 'CloudCraze 2018', { size: 7, anchor: 'middle' })}${t(211, 28, l('core platform · Experience Cloud', 'Kernplattform · Experience Cloud'), { size: 7, anchor: 'middle' })}
+    <path d="M118 32H304" stroke="${L}"/>
+    ${cross(30, 128)}${t(42, 131, l('no retirement date published (27.10.2026)', 'kein Abkündigungsdatum veröffentlicht (27.10.2026)'), { size: 7.5 })}`,
+
   'salesforce-password-integrations-2027': (l) => `
     ${box(22, 56, 80, 48)}${t(62, 77, l('INTEGRATION', 'SCHNITTSTELLE'), { fill: D, anchor: 'middle' })}${t(62, 91, 'ERP · middleware', { size: 7, anchor: 'middle' })}
     ${box(218, 56, 80, 48)}${t(258, 77, 'SALESFORCE', { fill: D, anchor: 'middle' })}${t(258, 91, 'connected app', { size: 7, anchor: 'middle' })}
