@@ -13,7 +13,7 @@ import speaking from '../assets/speaking.jpg';
 import { en } from '../i18n/en';
 import { de } from '../i18n/de';
 import { site, contactHref, contactExternal } from '../site';
-import { getServices, serviceHref } from '../lib/services';
+import { getServices, serviceHref, servicesIndex } from '../lib/services';
 import { homeHref } from '../lib/paths';
 import { questions, questionPaths } from '../data/questions';
 
@@ -97,7 +97,7 @@ const [qOpen, qClose] = lang === 'de' ? ['„', '“'] : ['“', '”'];
         <p class="label mono">{t.services.label}</p>
         <h2>{t.services.title}</h2>
         <ul class="cards">
-          {t.services.items.map((s, i) => {
+          {t.services.items.slice(0, t.services.featured).map((s, i) => {
             const href = serviceLinks.get(i + 1);
             const inner = (
               <>
@@ -109,6 +109,28 @@ const [qOpen, qClose] = lang === 'de' ? ['„', '“'] : ['“', '”'];
             );
             return href ? <li class="card card-link"><a href={href}>{inner}</a></li> : <li class="card">{inner}</li>;
           })}
+          <li class="card card-wide">
+            <div class="card-wide-head">
+              <h3>{t.services.moreTitle}</h3>
+              <a class="card-more mono" href={`${servicesIndex(lang)}#partners`}>{t.services.moreAll} →</a>
+            </div>
+            <ul class="more-rows">
+              {t.services.moreItems.map((m, i) => {
+                const index = String(t.services.featured + i + 1).padStart(2, '0');
+                const href = 'order' in m ? serviceLinks.get(m.order) : undefined;
+                const title = 'order' in m ? t.services.items[m.order - 1].title : m.title;
+                const inner = (
+                  <>
+                    <span class="more-index mono">{index}</span>
+                    <span class="more-title">{title}</span>
+                    {href ? <span class="more-arrow mono" aria-hidden="true">→</span> : <span class="more-soon mono">{t.services.moreSoon}</span>}
+                    <span class="more-text">{m.text}</span>
+                  </>
+                );
+                return <li>{href ? <a href={href}>{inner}</a> : <div>{inner}</div>}</li>;
+              })}
+            </ul>
+          </li>
         </ul>
         <div class="focus">
           <p class="label mono">{t.services.focusLabel}</p>
