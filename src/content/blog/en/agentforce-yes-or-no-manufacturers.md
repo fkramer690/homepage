@@ -10,7 +10,7 @@ tags: [agentforce, ai agents, manufacturing, business case, flex credits, erp]
 takeaways:
   - "Start with Agentforce now if one process has high volume, clear rules, clean asset and order data and an API to the ERP; if one of these is missing, fix it first."
   - "One Agentforce action costs 20 Flex Credits, which is $0.10 at the list price of $500 per 100,000 credits; the same action in a sandbox costs 16 credits."
-  - "The Core, Advanced and Max editions include 500,000, 1 million and 2.75 million Flex Credits, but Salesforce does not say whether these pools are per org or per year."
+  - "The Core, Advanced and Max editions include 500,000, 1 million and 2.75 million Flex Credits per org and year; if the pool runs out, you buy more credits."
   - "Salesforce is not the answer for decisions the ERP already makes, for the shop floor or for rare expert questions where volume never pays back the build and test effort."
   - "Gartner expects more than 40 percent of agentic AI projects to be cancelled by the end of 2027; a go or no-go date agreed before the pilot protects the budget."
 faq:
@@ -55,7 +55,7 @@ Agentforce is billed per action. According to the [Flex Credits rate card](https
 
 ### 5. Which edition are you on?
 
-On 3 September 2026 Salesforce announced [Core, Advanced and Max editions](https://www.salesforce.com/news/stories/salesforce-simplifies-editions-2026/) at $195, $395 and $550 per user and month, with 500,000, 1 million and 2.75 million Flex Credits included. The release does not say whether these pools are per org or per year, so ask before you plan with them. Pricing for existing customers on legacy editions stays unchanged. New pricing for the Industries editions was announced for "later this fall". For manufacturers, the Manufacturing Cloud page already lists the full Agentforce for Industries suite only in the Max editions, at $650 or $700 per user and month. If you are mid-contract, the practical question is whether to buy credits for one process now or change editions at renewal. I look at that in [the editions Core, Advanced and Max](../salesforce-editions-core-advanced-max/).
+On 3 September 2026 Salesforce announced [Core, Advanced and Max editions](https://www.salesforce.com/news/stories/salesforce-simplifies-editions-2026/) at $195, $395 and $550 per user and month, with 500,000, 1 million and 2.75 million Flex Credits included. The release itself gives no period, but the [Sales Cloud pricing page](https://www.salesforce.com/sales-cloud/pricing/) lists the pools per org and year. One pool for the whole org runs out quickly when several agents draw on it. Pricing for existing customers on legacy editions stays unchanged. New pricing for the Industries editions was announced for "later this fall". For manufacturers, the Manufacturing Cloud page already lists the full Agentforce for Industries suite only in the Max editions, at $650 or $700 per user and month. If you are mid-contract, the practical question is whether to buy credits for one process now or change editions at renewal. I look at that in [the editions Core, Advanced and Max](../salesforce-editions-core-advanced-max/).
 
 ## A typical scenario: three candidates at a machine builder
 
@@ -87,7 +87,7 @@ Gartner [expects](https://www.gartner.com/en/newsroom/press-releases/2025-06-25-
 
 1. **Pick one process** that passes the five criteria and write down one target number, for example the share of dealer enquiries answered without a service rep.
 2. **Measure today's baseline**: volume, handling time, error rate.
-3. **Check your contract**: edition, included Flex Credits, whether they are per org or per year, and when the order ends.
+3. **Check your contract**: edition, included Flex Credits per org and year, how many of them other agents already use, and when the order ends.
 4. **Budget the full cost**: production actions, sandbox tests at 16 credits per action, prompts, Data 360 for documents and the integration work.
 5. **Put rules into logic** and leave only language and intent to the model.
 6. **Agree a go or no-go date** before the pilot starts, for example after eight weeks against the target number.

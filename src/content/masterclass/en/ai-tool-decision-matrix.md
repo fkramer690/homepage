@@ -10,7 +10,7 @@ summary: "Which AI tool fits which job, in twelve scenarios for manufacturers, f
 takeaways:
   - "The baseline rule for AI in a Salesforce programme: agents work in a sandbox or scratch org, data arrives read-only through Hosted MCP, and releases go only through the pipeline with review."
   - "Which coding agent fits is usually decided by contracts, data residency and the existing toolchain, and less often by model quality."
-  - "Salesforce says Agentforce Vibes is not available in the Hyperforce EU Operating Zone, and Anthropic's direct Claude API offers only US or global inference; EU processing for Claude runs through Amazon Bedrock, for example."
+  - "Salesforce says Agentforce Vibes is not available in the Hyperforce EU Operating Zone; Anthropic's direct Claude API offers only US or global inference, so EU processing runs through Amazon Bedrock, for example."
   - "For agents in production, rules such as warranty eligibility or credit limits belong in deterministic logic, while the language model handles language and intent."
   - "If the ERP has no API, the options are document extraction with RPA or the Systems Integration Agent; both work through the user interface and need tests and monitoring."
 articles: [agentforce-yes-or-no-manufacturers, vibes-claude-code-copilot-comparison, agentforce-sap-order-status, legacy-erp-without-api-agents]

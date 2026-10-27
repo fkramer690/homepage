@@ -10,7 +10,7 @@ tags: [Agentforce, KI-Agenten, Maschinenbau, Business Case, Flex Credits, ERP]
 takeaways:
   - "Starten Sie jetzt mit Agentforce, wenn ein Prozess hohes Volumen, klare Regeln, saubere Anlagen- und Auftragsdaten und eine API zum ERP hat; fehlt eines davon, beheben Sie das zuerst."
   - "Eine Agentforce-Aktion kostet 20 Flex Credits, beim Listenpreis von 500 $ je 100.000 Credits also 0,10 $; dieselbe Aktion in einer Sandbox kostet 16 Credits."
-  - "Die Editionen Core, Advanced und Max enthalten 500.000, 1 Mio. und 2,75 Mio. Flex Credits, Salesforce sagt aber nicht, ob diese Pools pro Org oder pro Jahr gelten."
+  - "Die Editionen Core, Advanced und Max enthalten 500.000, 1 Mio. und 2,75 Mio. Flex Credits pro Org und Jahr; reicht der Pool nicht, kaufen Sie Credits nach."
   - "Salesforce ist nicht die Antwort für Entscheidungen, die das ERP schon trifft, für die Fertigung selbst und für seltene Expertenfragen, bei denen das Volumen den Aufwand nie einspielt."
   - "Gartner erwartet, dass mehr als 40 Prozent der Projekte mit KI-Agenten bis Ende 2027 abgebrochen werden; ein vor dem Piloten vereinbarter Entscheidungstermin schützt das Budget."
 faq:
@@ -55,7 +55,7 @@ Agentforce wird pro Aktion abgerechnet. Laut [Flex Credits Rate Card](https://ww
 
 ### 5. Auf welcher Edition sind Sie?
 
-Am 3. September 2026 hat Salesforce die [Editionen Core, Advanced und Max](https://www.salesforce.com/news/stories/salesforce-simplifies-editions-2026/) angekündigt, zu 195 $, 395 $ und 550 $ pro Nutzer und Monat, mit 500.000, 1 Mio. und 2,75 Mio. enthaltenen Flex Credits. Die Meldung sagt nicht, ob diese Pools pro Org oder pro Jahr gelten; fragen Sie das, bevor Sie damit planen. Für Bestandskunden auf bisherigen Editionen bleiben die Preise unverändert. Neue Preise für die Industries-Editionen sind für „later this fall“ angekündigt. Für Hersteller nennt die Seite der Manufacturing Cloud die volle Agentforce-for-Industries-Ausstattung schon jetzt nur in den Max-Editionen, zu 650 $ oder 700 $ pro Nutzer und Monat. Mitten in der Vertragslaufzeit lautet die praktische Frage: jetzt Credits für einen Prozess kaufen oder bei der Verlängerung die Edition wechseln? Das betrachte ich in [die Editionen Core, Advanced und Max](../salesforce-editionen-core-advanced-max/).
+Am 3. September 2026 hat Salesforce die [Editionen Core, Advanced und Max](https://www.salesforce.com/news/stories/salesforce-simplifies-editions-2026/) angekündigt, zu 195 $, 395 $ und 550 $ pro Nutzer und Monat, mit 500.000, 1 Mio. und 2,75 Mio. enthaltenen Flex Credits. Die Meldung selbst nennt keine Laufzeit, die [Preisseite der Sales Cloud](https://www.salesforce.com/eu/products/sales-pricing/) gibt die Pools aber pro Org und Jahr an. Ein Pool für die ganze Org ist schnell verbraucht, wenn mehrere Agenten daraus schöpfen. Für Bestandskunden auf bisherigen Editionen bleiben die Preise unverändert. Neue Preise für die Industries-Editionen sind für „later this fall“ angekündigt. Für Hersteller nennt die Seite der Manufacturing Cloud die volle Agentforce-for-Industries-Ausstattung schon jetzt nur in den Max-Editionen, zu 650 $ oder 700 $ pro Nutzer und Monat. Mitten in der Vertragslaufzeit lautet die praktische Frage: jetzt Credits für einen Prozess kaufen oder bei der Verlängerung die Edition wechseln? Das betrachte ich in [die Editionen Core, Advanced und Max](../salesforce-editionen-core-advanced-max/).
 
 ## Ein typisches Szenario: drei Kandidaten bei einem Maschinenbauer
 
@@ -87,7 +87,7 @@ Gartner [erwartet](https://www.gartner.com/en/newsroom/press-releases/2025-06-25
 
 1. **Einen Prozess wählen**, der die fünf Kriterien besteht, und eine Zielzahl festhalten, etwa den Anteil der Händleranfragen, die ohne Servicemitarbeitende beantwortet werden.
 2. **Den Ist-Zustand messen**: Volumen, Bearbeitungszeit, Fehlerquote.
-3. **Den Vertrag prüfen**: Edition, enthaltene Flex Credits, ob sie pro Org oder pro Jahr gelten und wann die Bestellung endet.
+3. **Den Vertrag prüfen**: Edition, enthaltene Flex Credits pro Org und Jahr, wie viele davon schon andere Agenten verbrauchen und wann die Bestellung endet.
 4. **Die vollen Kosten budgetieren**: Aktionen in Produktion, Sandbox-Tests mit 16 Credits pro Aktion, Prompts, Data 360 für Dokumente und die Integrationsarbeit.
 5. **Regeln in Logik gießen** und dem Modell nur Sprache und Absicht überlassen.
 6. **Einen Entscheidungstermin vereinbaren**, bevor der Pilot startet, zum Beispiel nach acht Wochen gegen die Zielzahl.

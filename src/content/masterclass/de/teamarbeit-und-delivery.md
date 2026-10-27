@@ -12,7 +12,7 @@ takeaways:
   - "Laut McKinsey-Umfrage 2026 sparen Teams im Schnitt 11,8 Prozent Zeit, aber nur 6,2 Prozent Nacharbeit, und 30 Prozent der Befragten melden sinkende Produktivität."
   - "Ich empfehle für jede agentengenerierte Änderung einen benannten menschlichen Owner, feste Review-Gates mit klaren Verantwortlichen und eine schriftliche Definition of Done."
   - "KI-Systeme lösen laut CMS in aller Regel Mitbestimmung nach § 87 Abs. 1 Nr. 6 BetrVG aus; Coding-Agenten mit Nutzungsstatistiken pro Person gehören nach meiner Einschätzung klar dazu."
-  - "Die Verordnung (EU) 2026/1744 verschiebt die Hochrisiko-Pflichten des AI Act auf den 2. Dezember 2027 (Anhang III) und den 2. August 2028 (Anhang I); Coding-Assistenten sind nach meiner Einschätzung meist nicht betroffen."
+  - "Die Verordnung (EU) 2026/1744 verschiebt die Hochrisiko-Pflichten des AI Act auf den 2. Dezember 2027 (Anhang III) und 2. August 2028 (Anhang I); Coding-Assistenten betrifft das meist nicht."
 articles: [smaller-teams-ai-native-delivery, measuring-ai-benefit-salesforce-projects, nearshore-teams-with-ai-agents, partners-ai-coding-sow-rules, ai-coding-works-council-gdpr, eu-ai-act-agentforce-deadlines]
 faq:
   - q: "Wird ein Salesforce-Team mit Coding-Agenten kleiner?"
