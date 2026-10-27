@@ -52,7 +52,7 @@ Prompts are easy to overlook, because the examples on the pricing page count onl
 | Advanced | 16 | Claude Opus 4.8, GPT 5.5, GPT 5.6 Sol |
 | Starter | 2 | only for bring-your-own models (BYOLLM) |
 
-Advanced prompts have been metered since 21 July 2026. The same 6,500-token summary costs 8 credits on a Basic model, 16 on Standard and 64 on Advanced. For a case summary that a service rep reads and corrects, I would start with a Standard model and only move up if tests show a quality gap.
+Advanced prompts have been metered since 21 July 2026. The same 6,500-token summary costs 8 credits on a Basic model, 16 on Standard and 64 on Advanced. For a case summary that a service rep reads and corrects, I would start on Standard and move up only if tests show a quality gap.
 
 The help article also names embedded generative features such as Service Replies. It does not say whether the reasoning engine's own LLM calls are metered as prompts on top of the actions. I budget every prompt template and generative feature in the design and check in the pilot whether Digital Wallet shows more.
 
