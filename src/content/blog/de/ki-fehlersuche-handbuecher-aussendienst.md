@@ -30,7 +30,7 @@ Ein KI-Agent für die Fehlersuche im Außendienst gibt dem Techniker nur dann di
 
 ## Was liest der Field-Service-Agent bei der Fehlersuche?
 
-Salesforce hat die Fehlersuche vor Ort im April 2025 mit [Agentforce for Field Service](https://www.salesforce.com/news/stories/agentforce-for-field-service-announcement/) angekündigt, allgemein verfügbar ab Juni 2025. Laut Ankündigung fragt der Agent „product manuals, similar repairs, and sensor data“ ab, dazu „previous chats and emails“, und führt den Techniker im Dialog durch jeden Schritt, auch anhand von Fotos. Die [Field-Service-Produktseite](https://www.salesforce.com/service/field-service-management/) verspricht Antworten „from your internal and external knowledge base“. Welche Funktionen heute live sind und was sie kosten, steht in [KI-Agenten im Außendienst: was Field Service heute kann](../ki-agenten-aussendienst-field-service/).
+Salesforce hat die Fehlersuche vor Ort im April 2025 mit [Agentforce for Field Service](https://www.salesforce.com/news/stories/agentforce-for-field-service-announcement/) angekündigt und für Juni 2025 als allgemein verfügbar vorgesehen. Laut Ankündigung fragt der Agent „product manuals, similar repairs, and sensor data“ ab, dazu „previous chats and emails“, und führt den Techniker im Dialog durch jeden Schritt, auch anhand von Fotos. Die [Field-Service-Produktseite](https://www.salesforce.com/service/field-service-management/) verspricht Antworten „from your internal and external knowledge base“. Welche Funktionen heute live sind und was sie kosten, steht in [KI-Agenten im Außendienst: was Field Service heute kann](../ki-agenten-aussendienst-field-service/).
 
 Wie der Agent das Handbuch für eine bestimmte Anlage auswählt, erklärt keine der Seiten, die ich geöffnet habe. Die Technik dahinter ist dokumentiert: Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/data-cloud-powered-agentforce/enable-trusted-agents-with-data-cloud) zerlegt Data 360 Dokumente in Abschnitte (Chunks), legt sie als Vektoren in einen Suchindex, und ein Retriever, „the link between the prompt and the search index“, holt die Abschnitte, die der Frage am nächsten kommen. Ob ein Abschnitt Variante A oder Variante B beschreibt, spielt dabei keine Rolle, solange das Dokument diese Information nicht als Daten mitbringt.
 
@@ -86,7 +86,7 @@ So lese ich das: Eine Data Library passt für einen Piloten mit einer Produktlin
 - **Bestände, Preise und Liefertermine.** Sie ändern sich täglich und gehören ins ERP. Warum das ERP den Ersatzteilbestand führt, steht in [Ersatzteile zwischen ERP und Field Service](../salesforce-field-service-ersatzteile-erp/).
 - **Überholte Fassungen und Entwürfe**, aus den Gründen oben.
 - **Rohe E-Mail-Verläufe und Chats.** Die Ankündigung nennt sie als Quelle. Ich würde stattdessen abgeschlossene Fälle mit sauberen Feldern für Fehler und Lösung indexieren. Das hält auch Kundenkontakte und Technikernamen aus dem Index.
-- **Dokumente an Datensätzen, die eine Schnittstelle aktualisiert.** Laut Abrechnungshinweisen gelten ein Datensatz und alle seine Anhänge als eine Einheit, ein geändertes Feld indexiert also jeden Anhang neu.
+- **Dokumente an Datensätzen, die eine Schnittstelle aktualisiert.** Laut Abrechnungshinweisen gelten ein Data Model Object und alle seine Dateianhänge als eine Einheit, eine Änderung an einem Feld oder Anhang kann also eine Neuindexierung aller Anhänge auslösen.
 - **Maschinen, die Sie nicht mehr betreuen.** Jedes Megabyte kostet Credits und liefert einen Kandidaten für einen falschen Treffer.
 
 ## Ein typisches Szenario: vier Produktlinien, 1.500 Maschinen
@@ -97,7 +97,7 @@ Die Bestandsaufnahme findet zwei bis vier Stände je Handbuch, 1.100 MB davon si
 
 Die Reihenfolge: diese Anlagen den Produkten zuordnen, die 1.100 MB mit Variantenschlüssel, Seriennummernbereich, Dokumentart und Sprache versehen, die 120 gültigen Bulletins mit Seriennummernfeldern nach Knowledge übernehmen und die 25 Standard-Wartungsanleitungen an ihre Work Types hängen.
 
-1.100 statt 3.000 MB mit dem Standard-Parser zu indexieren, kostet 165.000 statt 450.000 Credits pro vollem Lauf, bei [500 € pro 100.000 Credits](https://www.salesforce.com/de/agentforce/pricing/) also 825 € statt 2.250 €. Der größere Effekt zeigt sich im Test mit 50 echten Störfällen je Produktlinie und bekannten richtigen Antworten, wie in [Agentforce-Agenten testen und freigeben](../agentforce-agenten-testen-freigeben/) beschrieben. Der Pilot läuft mit einer Data Library auf der Produktlinie mit den besten Dokumenten. Die zweite Produktlinie löst den Wechsel ins erweiterte Setup aus.
+1.100 statt 3.000 MB mit dem Standard-Parser zu indexieren, kostet 165.000 statt 450.000 Credits pro vollem Lauf bei 150 Credits pro MB, bei [500 € pro 100.000 Credits](https://www.salesforce.com/eu/agentforce/pricing/) also 825 € statt 2.250 € vor Mengenstaffeln. Der größere Effekt zeigt sich im Test mit 50 echten Störfällen je Produktlinie und bekannten richtigen Antworten, wie in [Agentforce-Agenten testen und freigeben](../agentforce-agenten-testen-freigeben/) beschrieben. Der Pilot läuft mit einer Data Library auf der Produktlinie mit den besten Dokumenten. Die zweite Produktlinie löst den Wechsel ins erweiterte Setup aus.
 
 ## Wo fangen Sie an?
 

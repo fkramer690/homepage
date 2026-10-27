@@ -86,7 +86,7 @@ My reading: a Data Library fits a pilot on one product line with one current sta
 - **Stock, prices and delivery dates.** They change daily and belong to the ERP. Why the ERP owns parts stock is covered in [spare parts between ERP and Field Service](../salesforce-field-service-spare-parts-erp/).
 - **Superseded versions and drafts**, for the reasons above.
 - **Raw email threads and chats.** The announcement lists them as a source. I would index resolved cases with clean fault and fix fields instead, which also keeps customer contacts and technician names out of the index.
-- **Documents on records an interface updates.** According to the billing notes, a record and all its file attachments count as one unit, so a changed field reindexes every attachment of that record.
+- **Documents on records an interface updates.** According to the billing notes, a data model object and all its file attachments are treated as a single unit for processing, so a change to a field or attachment can trigger reindexing of every attachment of that object.
 - **Machines you no longer service.** Every megabyte costs credits and adds a candidate for a wrong match.
 
 ## A typical scenario: four product lines, 1,500 machines
@@ -97,7 +97,7 @@ The inventory finds two to four versions per manual; 1,100 MB are current states
 
 The order of work: link those assets to products, tag the 1,100 MB with variant key, serial range, type and language, move the 120 valid bulletins into Knowledge with serial range fields and attach the 25 standard maintenance procedures to their work types.
 
-Indexing 1,100 MB instead of 3,000 MB with the default parser costs 165,000 credits instead of 450,000 per full run, $825 instead of $2,250 at [$500 per 100,000 credits](https://www.salesforce.com/agentforce/pricing/). The larger effect shows in testing with 50 real fault cases per product line and known correct answers, as described in [testing Agentforce agents before go-live](../testing-agentforce-agents-before-go-live/). The pilot runs on a Data Library for the product line with the best documents; the second product line triggers the move to the advanced setup.
+Indexing 1,100 MB instead of 3,000 MB with the default parser costs 165,000 credits instead of 450,000 per full run at the base rate of 150 credits per MB, $825 instead of $2,250 before volume tiers at [$500 per 100,000 credits](https://www.salesforce.com/agentforce/pricing/). The larger effect shows in testing with 50 real fault cases per product line and known correct answers, as described in [testing Agentforce agents before go-live](../testing-agentforce-agents-before-go-live/). The pilot runs on a Data Library for the product line with the best documents; the second product line triggers the move to the advanced setup.
 
 ## Where should you start?
 
