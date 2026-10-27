@@ -31,7 +31,7 @@ MCP in Salesforce means that AI tools such as Claude, ChatGPT or Cursor, and Age
 
 ## What is MCP, explained without the developer detail?
 
-The Model Context Protocol (MCP) is an open protocol that standardises how AI applications connect to tools and data. The [specification](https://modelcontextprotocol.io/specification/latest) uses JSON-RPC 2.0 messages and names the Language Server Protocol as its model: LSP lets any code editor support any programming language, and MCP lets any AI application use any tool that speaks the protocol. The current version is dated 28 July 2026.
+The Model Context Protocol (MCP) is an open protocol that standardises how AI applications connect to tools and data. The [specification](https://modelcontextprotocol.io/specification/latest) uses JSON-RPC 2.0 messages and names the Language Server Protocol as its model: LSP lets any code editor support any programming language, and MCP lets any AI application use any tool that speaks the protocol.
 
 Three roles matter, according to the [architecture overview](https://modelcontextprotocol.io/docs/learn/architecture):
 
@@ -39,7 +39,7 @@ Three roles matter, according to the [architecture overview](https://modelcontex
 - **Client:** a component inside the host that holds the connection to exactly one server.
 - **Server:** the program that offers tools, for example a Salesforce Hosted MCP Server.
 
-A server offers tools the AI can execute (a query, a record update, a Flow), resources with context data (a schema, a document) and prompts as reusable templates. The model decides during the conversation which tool it calls. Servers run either locally on the user's machine, typically for one client, or remotely over HTTP for many clients. For remote servers the protocol recommends OAuth.
+A server offers tools the AI can execute (a query, a record update, a Flow), resources with context data and prompt templates. The model decides during the conversation which tool it calls. Servers run locally on the user's machine or remotely over HTTP, where the protocol recommends OAuth.
 
 One sentence in the overview is worth reading twice: MCP covers only the exchange of context and does not dictate how the AI application uses the language model or the context it receives. The protocol tells you nothing about where your CRM data goes once Claude or ChatGPT has read it. That is a question for your contract with the AI vendor.
 
@@ -57,9 +57,9 @@ The full interface overview with Agent API, Models API and the ERP path through 
 
 The MCP specification is honest about its limits. Under Security and Trust & Safety it says that hosts must obtain explicit user consent before invoking any tool and that tool descriptions should be treated as untrusted unless they come from a trusted server. Then it adds that MCP "cannot enforce these security principles at the protocol level". The [tools section](https://modelcontextprotocol.io/specification/2025-11-25/server/tools) asks for a human in the loop who can deny a tool call.
 
-So the controls sit in three places outside the protocol: in the AI application (does it ask before writing?), in the server (which tools does it offer?) and in Salesforce (which records may this user see?). Salesforce has made the third part strict. According to the [Hosted MCP security best practices](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/security-best-practices.html), servers are disabled by default, every tool call runs with the permissions of the user who authorised the connection and appears under that user's name in the audit trail, and there are no service accounts or machine-to-machine flows.
+So the controls sit outside the protocol: in the AI application (does it ask before writing?), in the server (which tools does it offer?) and in Salesforce (which records may this user see?). Salesforce made the last part strict. According to the [Hosted MCP security best practices](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/security-best-practices.html), servers are disabled by default, every tool call runs with the permissions of the user who authorised the connection and appears under that user's name in the audit trail, and there are no service accounts or machine-to-machine flows.
 
-One detail matters for audits. By design, servers receive only the context they need, and the full conversation stays with the host, according to the [specification's design principles](https://modelcontextprotocol.io/specification/2026-07-28/architecture). My reading: Salesforce logs which records Claude read for a user, but not the question the user typed. If you ever need to reconstruct why an agent changed a warranty case, you need the AI application's logs as well.
+One detail matters for audits. By design, servers receive only the context they need and the full conversation stays with the host, according to the [specification's design principles](https://modelcontextprotocol.io/specification/2026-07-28/architecture). My reading: Salesforce logs which records Claude read, not the question the user typed. To reconstruct why a warranty case was changed, you need the AI application's logs too.
 
 ## Four decisions for the IT lead
 
@@ -67,11 +67,11 @@ One detail matters for audits. By design, servers receive only the context they 
 
 Salesforce lists seven standard servers in its [server reference](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/servers-reference.html): four for sObjects (all, reads, mutations, deletes), Data 360, Tableau Next and Headless 360, which is still beta and reaches into Setup. Their tool sets cannot be modified. [Custom servers](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/custom-servers.html) expose your own Flows, invocable Apex, Apex REST and API Catalog endpoints, each under its own URL. Salesforce warns that beyond a few dozen tools an AI client struggles to pick the right one and recommends one server per persona.
 
-Community servers from npm or GitHub are the third option. The MCP project's own [security best practices](https://modelcontextprotocol.io/docs/tutorials/security/security_best_practices) warn that local servers run with the same privileges as the client and can execute arbitrary code. Against production I would allow only servers that Salesforce operates. On vendor risk, Salesforce's [end-of-life policy](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/end-of-life.html) promises at least three years of support per hosted server version and a year's notice, but also says tools may be upgraded or replaced between releases.
+Community servers from npm or GitHub are the third option. The MCP project's own [security best practices](https://modelcontextprotocol.io/docs/tutorials/security/security_best_practices) warn that local servers run with the same privileges as the client and can execute arbitrary code. Against production I would allow only servers that Salesforce operates.
 
 ### 2. Which users may connect?
 
-Because every call runs as the named user, your sharing model becomes the boundary. If service agents can see dealer price agreements today because sharing was opened years ago, a chat window shows them in seconds. Salesforce lets you link the External Client App to specific profiles and permission sets, so MCP access can be its own permission set instead of a side effect of a profile. In the pilot I would keep admins and users with View All Data out of MCP entirely.
+Because every call runs as the named user, your sharing model becomes the boundary. If service agents can see dealer price agreements because sharing was opened years ago, a chat window shows them in seconds. Salesforce lets you link the External Client App to specific profiles and permission sets, so MCP access can be its own permission set instead of a side effect of a profile. In the pilot I would keep admins and users with View All Data out of MCP entirely.
 
 ### 3. Which data may the tools reach?
 
@@ -79,7 +79,7 @@ Start with `sobject-reads`. Salesforce recommends the read-only server in a sand
 
 ### 4. Which AI clients and agents do you approve?
 
-Salesforce names [Claude, ChatGPT, Cursor and Postman](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/setup-overview.html) as clients. Each needs an External Client App with its own callback URL, created by an admin, and dynamic client registration is not supported. No employee can connect a new AI tool without IT, and every External Client App you create is a decision about a vendor, a contract and a data flow.
+Salesforce names [Claude, ChatGPT, Cursor and Postman](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/setup-overview.html) as clients. Each needs an External Client App with its own callback URL, created by an admin; dynamic client registration is not supported. So no employee connects a new AI tool without IT, and every External Client App is a decision about a vendor, a contract and a data flow.
 
 For Salesforce in Claude, [Anthropic's setup guide](https://support.claude.com/en/articles/16952184-set-up-salesforce-in-claude-for-your-organization) gives Claude owners an installation preference per group, each member signs in with their own Salesforce account, and by default Claude asks before each change is written. For Agentforce as client, Trailhead says the Einstein Trust Layer applies and Agentforce Gateway policies can limit how often an agent calls a tool. For external clients reading your data I found no comparable statement; that gap is the topic of [hosted MCP servers and data access](../salesforce-hosted-mcp-servers-data-access/).
 
@@ -92,14 +92,14 @@ Assume a machine builder with Sales Cloud, Service Cloud, a dealer portal and SA
 - **Implementation partner:** wants a community MCP server with a production login to fix data faster. Decision: no. Partners work in sandboxes, and production changes go through the pipeline. This belongs in the contract, see [partners using AI coding: contract rules](../partners-using-ai-coding-contract-rules/).
 - **Spare parts:** wants an Agentforce agent that queries a parts supplier's MCP server for availability. Decision: test. Register the server in Agentforce Registry, release two tools, set a Gateway limit, and check the supplier's terms for what happens to your queries.
 
-One pilot, one deferral, one refusal and one test. In my judgement that ratio is normal for the first month, and far better than four tools connected without anyone deciding.
+One pilot, one deferral, one refusal and one test. That beats four tools connected without anyone deciding.
 
 ## Where is MCP the wrong interface?
 
 Hosted MCP Servers are built for a person working with an AI tool. Three cases need a different path:
 
 - **Unattended agents.** A nightly job that pre-sorts warranty claims has no user who could authorise it. The [Agent API](https://developer.salesforce.com/docs/ai/agentforce/guide/agent-api-get-started.html) works with client credentials and a run-as user, which I would treat like any integration user.
-- **System-to-system integration.** The SAP order sync belongs in middleware, not in an AI tool that happens to reach both systems.
+- **System-to-system integration.** The SAP order sync belongs in middleware.
 - **Mass operations.** Checking thousands of records is a report or a batch job. Salesforce says hosted servers are ["intended only for customers with Flex Credits"](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/hosted-mcp-servers-overview.md) and usage may be billed; why that becomes a budget line is in [MCP calls as a budget risk](../mcp-api-calls-salesforce-budget-risk/).
 
 Which interface fits which consumer, under which identity, is part of my work on [Salesforce integration](../../services/salesforce-integration/).

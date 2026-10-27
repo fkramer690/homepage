@@ -86,7 +86,7 @@ The requests on the table: the admins want Vibes, the internal developers want C
 
 How I would decide:
 
-1. **Copilot Enterprise as the default for all nine developers**, with EU data residency enabled. It runs on the existing GitHub contract, partner developers get seats in the client's organisation, and Claude Sonnet 5.5 is available under EU processing. At list price: 9 × $39 = $351 a month including pooled credits, with 10 percent more credits per request.
+1. **Copilot Enterprise as the default for all nine developers**, with EU data residency enabled. It runs on the existing GitHub contract, partner developers get seats in the client's organisation, and Claude Sonnet 5.5 is available under EU processing. I take Enterprise over Business because agent sessions burn credits and Enterprise includes $39 instead of $19 per seat. At list price: 9 × $39 = $351 a month including pooled credits, with 10 percent more credits per request.
 2. **Vibes flat fee for the two admins** at 2 × $125 = $250 a month, on one condition: Salesforce confirms the processing region in writing. Until then the admins use Copilot.
 3. **No partner accounts.** If the partner insists on Claude Code for the official plugin, it runs through the client's AWS account in an EU region, with a budget and OpenTelemetry.
 4. **No Codex for now.** ChatGPT Business has no data residency, and Enterprise would be a third contract for one developer.
