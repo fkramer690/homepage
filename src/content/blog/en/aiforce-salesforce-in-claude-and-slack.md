@@ -8,7 +8,7 @@ translationKey: aiforce-salesforce-in-claude-slack
 topic: ai
 tags: [aiforce, claude, slack, agentforce coworker, mcp, manufacturing]
 takeaways:
-  - "AIforce is the layer Salesforce launched on 15 September 2026 to make its data, workflows and permissions usable from Claude, Slack and Lightning, made up of Salesforce in Claude, Slackforce, Agentforce Coworker and the Headless Toolkit."
+  - "AIforce, launched on 15 September 2026, makes Salesforce data and workflows usable from Claude, Slack and Lightning through Salesforce in Claude, Slackforce, Agentforce Coworker and the Headless Toolkit."
   - "The rename to SIForce rests on a post by Marc Benioff on X on 9 October 2026, known only from secondary sources; Salesforce has published no press release, so documents should keep the name AIforce."
   - "Salesforce in Claude is a beta with 37 sales skills; service, marketing and industry skills are only announced, so after-sales and field service teams at manufacturers have nothing to test yet."
   - "Every AIforce request runs with the user's own Salesforce permissions, so sharing rules that are too broad today become visible in a chat window tomorrow."

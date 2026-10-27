@@ -1,6 +1,6 @@
 ---
 title: "Agent Script: why business rules don't belong in the LLM"
-description: "Credit limits, warranty eligibility and price approvals belong in Agent Script logic, not in the LLM. How hybrid reasoning works and what to check in your agent."
+description: "Credit limits, warranty eligibility and price approvals belong in Agent Script logic, not in the LLM. How hybrid reasoning works and what to check in a design."
 pubDate: 2026-10-27
 lang: en
 slug: agent-script-deterministic-rules
@@ -9,7 +9,7 @@ topic: ai
 tags: [agent script, agentforce, ai agents, manufacturing, warranty, architecture]
 takeaways:
   - "Credit limit checks, warranty eligibility and price approvals belong in Agent Script logic or in the Flow, Apex or ERP call behind it; the LLM only understands the request and explains the result."
-  - "The new Agentforce, generally available since February 2026, uses hybrid reasoning: logic instructions execute as code without an LLM call, prompt instructions trigger one, and Atlas executes the compiled script as a state machine."
+  - "The new Agentforce, generally available since February 2026, uses hybrid reasoning: logic instructions execute as code without an LLM call, prompt instructions trigger one."
   - "An action with an available when condition disappears from the LLM's tool list while the condition is false, so the model cannot place an order for a dealer who is over the credit limit."
   - "Gate variables must be set by code, never by the LLM; otherwise the gate brings back exactly the variability it was meant to remove."
   - "before_reasoning runs on every parse, so an ERP lookup placed there without a guard runs several times per user turn."
