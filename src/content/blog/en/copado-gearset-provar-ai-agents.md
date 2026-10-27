@@ -28,21 +28,21 @@ faq:
 draft: false
 ---
 
-Copado Agentia, Gearset Cam and Provar MCP are the AI agents three Salesforce DevOps and testing vendors brought out in 2026, and everything about them rests on vendor claims. Copado says Agentia is available in its Advanced and Pro editions, Gearset launched Cam with pilot customers, and Provar MCP is a free local plugin for Provar Automation customers. Before a manufacturer pays, I would ask four questions: which model runs, where the data is processed, how long it is kept and who approves what the agent produces. Only Gearset answers part of that in public.
+Copado Agentia, Gearset Cam and Provar MCP are the 2026 AI agents of three Salesforce DevOps and testing vendors, and everything about them rests on vendor claims. Copado says Agentia is available in its Advanced and Pro editions, Gearset launched Cam with pilot customers, and Provar MCP is a free local plugin for Provar Automation customers. Before a manufacturer pays, I would ask four questions: which model runs, where the data is processed, how long it is kept and who approves what the agent produces. Of the two selling their own agent, only Gearset answers part of that publicly.
 
 ## What do Copado Agentia, Gearset Cam and Provar MCP do?
 
 The descriptions below are the vendors' own; I found no independent test on Salesforce Ben or comparable Salesforce press.
 
-- **Copado Agentia.** Announced on 13 April 2026 in [Copado's press release](https://www.copado.com/resources/blog/copado-introduces-agentia-tm-bringing-context-aware-ai-agents-to-salesforce-devops). A Context Hub combines org metadata, dependencies, pipelines and history with your own documentation and policies. On top sit agents for plan, build, test, release and operate, an Orchestrate Agent that coordinates them, and Agentia Studio for custom workflows and Agentforce agents. Copado lists policy-driven controls, automated testing, approval gates, audit trails and role-based access as built-in governance.
-- **Gearset Cam.** According to [Gearset's announcement of 2 September 2026](https://assets.gearset.com/2026/09/01112431/Gearset-2026-Cam-Announcement.pdf), Cam takes a ticket, asks for clarification when the request is unclear, plans and builds the change and checks that it is deployable before it opens a pull request. Its work runs through the team's existing release process with the same tests and reviews as human changes, and an audit trail records what Cam built and why.
-- **Provar MCP.** Published on 1 July 2026 on the [Provar blog](https://provar.com/blog/product/provar-mcp-bringing-ai-to-salesforce-test-automation/). It is an open-source Salesforce CLI plugin that lets an AI assistant such as Claude, GitHub Copilot or Cursor read org metadata, generate Provar tests and Page Objects, validate them against more than 240 quality rules, run them and triage failures. It covers test automation only.
+- **Copado Agentia.** Announced on 13 April 2026 in [Copado's press release](https://www.copado.com/resources/blog/copado-introduces-agentia-tm-bringing-context-aware-ai-agents-to-salesforce-devops). A Context Hub combines org metadata, dependencies, pipelines and history with your own documentation and policies. On top sit agents for plan, build, test, release and operate, an Orchestrate Agent that coordinates them, and Agentia Studio for custom workflows and Agentforce agents. Built-in governance, per Copado: policy controls, automated testing, approval gates, audit trails and role-based access.
+- **Gearset Cam.** According to [Gearset's announcement of 2 September 2026](https://assets.gearset.com/2026/09/01112431/Gearset-2026-Cam-Announcement.pdf), Cam takes a ticket, asks for clarification when the request is unclear, plans and builds the change and checks that it is deployable before it opens a pull request. Its work runs through the team's release process with the same tests and reviews as human changes, with an audit trail.
+- **Provar MCP.** Published on 1 July 2026 on the [Provar blog](https://provar.com/blog/product/provar-mcp-bringing-ai-to-salesforce-test-automation/). This open-source Salesforce CLI plugin lets an AI assistant such as Claude, GitHub Copilot or Cursor read org metadata, generate Provar tests and Page Objects, validate them against more than 240 quality rules, run them and triage failures.
 
 Copado and Gearset sell an agent that changes your org. Provar adds a tool to the AI assistant your developers already use, which makes its due diligence much shorter.
 
 ## What is generally available and what is still a pilot?
 
-A pilot rarely comes with a service level or a fixed price, so status matters. As of 27 October 2026 the vendors state this:
+A pilot rarely comes with a service level or a fixed price, so status matters. As of 27 October 2026:
 
 | Product | Status as the vendor states it | Price published | Model named |
 |---|---|---|---|
@@ -53,11 +53,11 @@ A pilot rarely comes with a service level or a fixed price, so status matters. A
 
 Sources: Copado press release, [Copado Dreamforce 2026 page](https://www.copado.com/dreamforce-2026-copado), Gearset announcement and [Gearset agent page](https://gearset.com/solutions/gearset-agent/), [Provar MCP documentation](https://documentation.provar.com/documentation/v3/provar-mcp/).
 
-The one hard number comes from Gearset: "Within a week, one customer had Cam creating 44% of their team's pull requests, with 75% of these successfully merged." That is one customer, measured by the vendor, after one week. It shows that Cam can produce mergeable pull requests in a real org, nothing more. One in four was not merged, and a person reviewed every one.
+The one hard number comes from Gearset: "Within a week, one customer had Cam creating 44% of their team's pull requests, with 75% of these successfully merged." That is one customer, measured by the vendor, after one week. It shows that Cam can produce mergeable pull requests in a real org, nothing more. One in four was not merged, and every one went through the team's review.
 
 ## Which model, which region, which retention?
 
-Here the products differ most, and a manufacturer with GDPR obligations and a works council should look here first.
+Here the three products differ most, and this is where a manufacturer with GDPR obligations and a works council should start.
 
 **Gearset** publishes general AI terms in its [product and location specific terms](https://gearset.com/legal/product-and-location-terms/), in a version effective from 15 September 2026. They do not mention Cam by name, but they cover Gearset's AI functionality as a whole:
 
@@ -71,7 +71,7 @@ US data centres mean a third-country transfer your data protection officer must 
 
 **Copado** names no model and no region for Agentia on the pages I opened. Its public data sheet "Copado AI and your data" dates from June 2024 and covers CopadoGPT and Test Copilot, not Agentia. That says nothing about the quality of the answers; it means you need them in writing before you sign.
 
-**Provar MCP** runs "entirely on your local machine", according to its documentation, and sends "no project files, test code, or credentials" to Provar servers unless you switch on an optional API validation. The metadata and test cases still reach whichever AI assistant you connect. The data question therefore moves to your contract with Anthropic, GitHub or Cursor, which you should have settled anyway; the [works council and GDPR article](../ai-coding-tools-works-council-gdpr/) covers that part. As I read the vendors' pages, Provar MCP is the easiest of the three to approve. My reading of these terms is not legal advice.
+**Provar MCP** runs "entirely on your local machine", according to its documentation, and sends "no project files, test code, or credentials" to Provar servers unless you switch on an optional API validation. The metadata and test cases still reach whichever AI assistant you connect. The data question moves to your contract with Anthropic, GitHub or Cursor; the [works council and GDPR article](../ai-coding-tools-works-council-gdpr/) covers that part. As I read the vendors' pages, Provar MCP is the easiest of the three to approve. My reading of these terms is not legal advice.
 
 ## A typical scenario: a machine builder with Copado and a nearshore partner
 
@@ -81,7 +81,7 @@ Copado offers an upgrade to Agentia. This is how I would handle it:
 
 1. **Separate building from governing.** The coding agent already writes Apex and Flows. The question for Agentia is whether its Context Hub and approval gates add something the existing pipeline and the [quality gates for AI code](../quality-gates-for-ai-code-salesforce-pipeline/) do not.
 2. **Get the four answers in writing.** Model and provider, processing region, retention, and how usage is metered and capped. Until they are on paper, Agentia only sees a developer sandbox without customer or dealer data.
-3. **Pilot one narrow ticket type.** For example 20 small changes on the warranty claim object: new fields, picklist values, a validation rule. Measure how many pull requests merge without rework and how long review takes, against the same kind of tickets done by the coding agent alone.
+3. **Pilot one narrow ticket type.** For example 20 small changes on the warranty claim object: new fields, picklist values, a validation rule. Measure merges without rework and review time against similar tickets done by the coding agent alone.
 4. **Add Provar MCP if Provar is already licensed.** The regression tests for the dealer portal are the obvious target. It costs nothing extra, and the data stays inside a tool chain that is already approved.
 5. **Decide after six weeks** on numbers from your own org, not on the vendor's 44 and 75 percent.
 
@@ -91,13 +91,13 @@ With Gearset the steps are the same; step 2 starts from Gearset's published term
 
 Paid DevOps agents bring a prepared view of your org and pipeline and a governance layer the vendor maintains. For teams without Git and pipeline know-how in house, that is worth real money.
 
-A team that already runs [sfdx-hardis](../sfdx-hardis-open-source-salesforce-devops/) gets much of it without a second AI contract. According to the [sfdx-hardis AI setup guide](https://sfdx-hardis.cloudity.com/salesforce-ai-setup/), it explains deployment errors, describes Flows and Apex classes and improves generated documentation. The provider can be Agentforce, OpenAI, Anthropic, Google or a local Ollama model, set by environment variables or routed through a corporate gateway. You choose the model and therefore the region. Its coding agent auto-fix is in beta, and the guide says an expert must review those changes before merging.
+A team that already runs [sfdx-hardis](../sfdx-hardis-open-source-salesforce-devops/) gets much of it without a second AI contract. According to the [sfdx-hardis AI setup guide](https://sfdx-hardis.cloudity.com/salesforce-ai-setup/), it explains deployment errors and describes Flows and Apex classes. The provider can be Agentforce, OpenAI, Anthropic, Google or a local Ollama model, set by environment variables or routed through a corporate gateway. You choose the model and therefore the region. Its coding agent auto-fix is in beta, and the guide says an expert must review those changes before merging.
 
-Pair that with Claude Code, Codex or Copilot for the build work, compared in [Agentforce Vibes, Claude Code, Codex or Copilot](../agentforce-vibes-claude-code-copilot/), and a pipeline you own decides what reaches production. The trade-off is support. With open source, you or your architect own the setup. With Copado or Gearset you pay someone else to own it, and you inherit their model choice.
+Pair that with Claude Code, Codex or Copilot, compared in [Agentforce Vibes, Claude Code, Codex or Copilot](../agentforce-vibes-claude-code-copilot/), and a pipeline you own decides what reaches production. The trade-off is support: with open source, you or your architect own the setup. With Copado or Gearset you pay someone else to own it, and you inherit their model choice.
 
 ## What should you ask before you pay?
 
-I would put these questions to any DevOps vendor selling an AI agent, and get the answers into the order form:
+I would put these questions to any DevOps vendor selling an AI agent and get the answers into the order form:
 
 - Which model and which provider run the agent, and will you tell us before you change them?
 - In which region is input processed, and is an EU region available?

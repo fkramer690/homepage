@@ -28,17 +28,17 @@ faq:
 draft: false
 ---
 
-Copado Agentia, Gearset Cam und Provar MCP sind die KI-Agenten, die drei Salesforce-DevOps- und Testanbieter 2026 herausgebracht haben, und bisher beruht alles darüber auf Herstellerangaben. Laut Copado ist Agentia in den Editionen Advanced und Pro verfügbar, Gearset hat Cam mit Pilotkunden gestartet, Provar MCP ist ein kostenloses lokales Plugin für Kunden von Provar Automation. Bevor ein Maschinenbauer für einen davon zahlt, würde ich vier Fragen stellen: Welches Modell läuft, wo werden die Daten verarbeitet, wie lange werden sie gespeichert und wer gibt frei, was der Agent liefert? Öffentlich beantwortet nur Gearset einen Teil davon.
+Copado Agentia, Gearset Cam und Provar MCP sind die KI-Agenten, die drei Salesforce-DevOps- und Testanbieter 2026 herausgebracht haben, und bisher beruht alles darüber auf Herstellerangaben. Laut Copado ist Agentia in den Editionen Advanced und Pro verfügbar, Gearset hat Cam mit Pilotkunden gestartet, Provar MCP ist ein kostenloses lokales Plugin für Kunden von Provar Automation. Bevor ein Maschinenbauer zahlt, würde ich vier Fragen stellen: Welches Modell läuft, wo werden die Daten verarbeitet, wie lange werden sie gespeichert und wer gibt frei, was der Agent liefert? Von den beiden Anbietern mit eigenem Agenten beantwortet nur Gearset öffentlich einen Teil davon.
 
 ## Was können Copado Agentia, Gearset Cam und Provar MCP?
 
-Alle drei setzen einen KI-Agenten zwischen Ticket und Release, an jeweils anderer Stelle. Die Beschreibungen unten stammen von den Herstellern selbst. Einen unabhängigen Test bei Salesforce Ben oder vergleichbarer Salesforce-Fachpresse habe ich nicht gefunden.
+Die Beschreibungen unten stammen von den Herstellern selbst; einen unabhängigen Test bei Salesforce Ben oder vergleichbarer Salesforce-Fachpresse habe ich nicht gefunden.
 
-- **Copado Agentia.** Angekündigt am 13. April 2026 in [Copados Pressemitteilung](https://www.copado.com/resources/blog/copado-introduces-agentia-tm-bringing-context-aware-ai-agents-to-salesforce-devops). Ein Context Hub verbindet Org-Metadaten, Abhängigkeiten, Pipelines und Historie mit Ihrer eigenen Dokumentation und Ihren Richtlinien. Darauf setzen Agenten für Planung, Entwicklung, Test, Release und Betrieb auf, ein Orchestrate Agent koordiniert sie, und mit Agentia Studio bauen Sie eigene Abläufe und Agentforce-Agenten. Als eingebaute Governance nennt Copado richtlinienbasierte Kontrollen, automatisierte Tests, Freigabeschritte, Audit Trails und rollenbasierte Zugriffe. Agentia Headless bringt die Agenten in die Entwicklungsumgebung (IDE).
+- **Copado Agentia.** Angekündigt am 13. April 2026 in [Copados Pressemitteilung](https://www.copado.com/resources/blog/copado-introduces-agentia-tm-bringing-context-aware-ai-agents-to-salesforce-devops). Ein Context Hub verbindet Org-Metadaten, Abhängigkeiten, Pipelines und Historie mit Ihrer eigenen Dokumentation und Ihren Richtlinien. Darauf setzen Agenten für Planung, Entwicklung, Test, Release und Betrieb auf, ein Orchestrate Agent koordiniert sie, und mit Agentia Studio bauen Sie eigene Abläufe und Agentforce-Agenten. Als eingebaute Governance nennt Copado richtlinienbasierte Kontrollen, automatisierte Tests, Freigabeschritte, Audit Trails und rollenbasierte Zugriffe.
 - **Gearset Cam.** Laut [Gearsets Ankündigung vom 2. September 2026](https://assets.gearset.com/2026/09/01112431/Gearset-2026-Cam-Announcement.pdf) übernimmt Cam ein Ticket, fragt bei unklaren Anforderungen nach, plant und baut die Änderung und prüft, ob sie deploybar ist, bevor ein Pull Request entsteht. Die Arbeit läuft durch den bestehenden Release-Prozess des Teams, mit denselben Tests und Reviews wie menschliche Änderungen, und ein Audit Trail hält fest, was Cam gebaut hat und warum.
 - **Provar MCP.** Veröffentlicht am 1. Juli 2026 im [Provar-Blog](https://provar.com/blog/product/provar-mcp-bringing-ai-to-salesforce-test-automation/). Provar MCP ist ein Open-Source-Plugin für die Salesforce CLI. Damit liest ein KI-Assistent wie Claude, GitHub Copilot oder Cursor Org-Metadaten, erzeugt Provar-Tests und Page Objects, prüft sie gegen mehr als 240 Qualitätsregeln, führt sie aus und analysiert Fehlschläge. Es deckt nur die Testautomatisierung ab.
 
-Copado und Gearset verkaufen einen Agenten, der Ihre Org verändert. Provar ergänzt den KI-Assistenten, den Ihre Entwickler ohnehin nutzen, um ein Werkzeug. Dieser Unterschied bestimmt den Großteil der Prüfung weiter unten.
+Copado und Gearset verkaufen einen Agenten, der Ihre Org verändert. Provar ergänzt den KI-Assistenten, den Ihre Entwickler ohnehin nutzen, um ein Werkzeug. Das macht die Prüfung bei Provar deutlich kürzer.
 
 ## Was ist allgemein verfügbar, was noch Pilot?
 
@@ -47,13 +47,13 @@ Für einen Industriebetrieb zählt der Produktstatus, weil ein Pilot selten mit 
 | Produkt | Status laut Hersteller | Preis veröffentlicht | Modell genannt |
 |---|---|---|---|
 | Copado Agentia | "available today" in den Editionen Agentia Advanced und Agentia Pro (April 2026) | nein | nein |
-| Copado Agentia Headless | "officially GA" auf Copados Dreamforce-2026-Seite, ohne Datum | nein | nein |
+| Copado Agentia Headless (Agenten in der IDE) | "officially GA" auf Copados Dreamforce-2026-Seite, ohne Datum | nein | nein |
 | Gearset Cam | gestartet mit Piloten bei "a selection of Gearset customers", kein GA-Hinweis | nein | nein |
 | Provar MCP | in der Provar-Automation-Lizenz enthalten, CLI-Plugin aus dem Beta-Kanal installiert | kein Aufpreis | nutzt Ihren KI-Assistenten |
 
 Quellen: Copado-Pressemitteilung, [Copados Dreamforce-2026-Seite](https://www.copado.com/dreamforce-2026-copado), Gearset-Ankündigung und [Gearsets Agentenseite](https://gearset.com/solutions/gearset-agent/), [Dokumentation zu Provar MCP](https://documentation.provar.com/documentation/v3/provar-mcp/).
 
-Die einzige harte Zahl liefert Gearset: Innerhalb einer Woche erstellte Cam bei einem Kunden 44 Prozent der Pull Requests des Teams, 75 Prozent davon wurden erfolgreich gemergt. Das ist ein Kunde, gemessen vom Hersteller, nach einer Woche. Ich lese das als Beleg, dass Cam in einer echten Org mergefähige Pull Requests erzeugen kann, mehr nicht. Jeder vierte dieser Pull Requests wurde nicht gemergt, und jeden einzelnen hat ein Mensch geprüft.
+Die einzige harte Zahl liefert Gearset: Innerhalb einer Woche erstellte Cam bei einem Kunden 44 Prozent der Pull Requests des Teams, 75 Prozent davon wurden erfolgreich gemergt. Das ist ein Kunde, gemessen vom Hersteller, nach einer Woche. Es zeigt, dass Cam in einer echten Org mergefähige Pull Requests erzeugen kann, mehr nicht. Jeder vierte wurde nicht gemergt, und jeder lief durch das Review des Teams.
 
 ## Welches Modell, welche Region, welche Aufbewahrung?
 
@@ -85,11 +85,11 @@ Copado bietet ein Upgrade auf Agentia an. So würde ich vorgehen:
 4. **Provar MCP ergänzen, wenn Provar schon lizenziert ist.** Die Regressionstests für das Händlerportal sind das naheliegende Ziel. Es kostet nichts extra, und die Daten bleiben in einer bereits freigegebenen Werkzeugkette.
 5. **Nach sechs Wochen entscheiden**, auf Basis von Zahlen aus Ihrer eigenen Org, nicht anhand der 44 und 75 Prozent des Herstellers.
 
-Liefe beim selben Maschinenbauer Gearset, blieben die Schritte gleich. Schritt 2 startet dann bei Gearsets veröffentlichten Bedingungen und fragt, ob eine EU-Region verfügbar ist.
+Mit Gearset bleiben die Schritte gleich; Schritt 2 startet bei Gearsets veröffentlichten Bedingungen und fragt nach einer EU-Region.
 
 ## Wann reichen Open Source und ein allgemeiner Coding-Agent?
 
-Bezahlte DevOps-Agenten bringen zwei Dinge mit, die ein allgemeiner Coding-Agent nicht von Haus aus hat: eine aufbereitete Sicht auf Org und Pipeline und eine Governance-Schicht, die der Hersteller pflegt. Für Teams ohne eigenes Git- und Pipeline-Wissen ist das echtes Geld wert.
+Bezahlte DevOps-Agenten bringen eine aufbereitete Sicht auf Org und Pipeline und eine Governance-Schicht mit, die der Hersteller pflegt. Für Teams ohne eigenes Git- und Pipeline-Wissen ist das echtes Geld wert.
 
 Ein Team, das bereits [sfdx-hardis](../sfdx-hardis-einfuehrung-salesforce-devops/) nutzt, bekommt vieles davon ohne zweiten KI-Vertrag. Laut der [KI-Einrichtungsanleitung von sfdx-hardis](https://sfdx-hardis.cloudity.com/salesforce-ai-setup/) erklärt es Deployment-Fehler, beschreibt Flows und Apex-Klassen und verbessert die erzeugte Dokumentation. Als Anbieter kommen Agentforce, OpenAI, Anthropic, Google oder ein lokales Ollama-Modell in Frage, eingestellt über Umgebungsvariablen oder über ein firmeneigenes Gateway geleitet. Sie wählen das Modell und damit die Region. Die automatische Fehlerkorrektur per Coding-Agent ist in Beta, und die Anleitung verlangt, dass ein Experte diese Änderungen vor dem Merge prüft.
 
@@ -101,8 +101,7 @@ Diese Fragen würde ich jedem DevOps-Anbieter stellen, der einen KI-Agenten verk
 
 - Welches Modell und welcher Anbieter betreiben den Agenten, und informieren Sie uns vor einem Wechsel?
 - In welcher Region werden Eingaben verarbeitet, und gibt es eine EU-Region?
-- Wie lange werden Prompts, Code und Metadaten gespeichert, bei Ihnen und beim Modellanbieter, und können wir das verkürzen?
-- Werden unsere Daten für Training oder zur Verbesserung Ihres Dienstes genutzt?
+- Wie lange werden Prompts, Code und Metadaten gespeichert, bei Ihnen und beim Modellanbieter, und fließen sie ins Training?
 - Wie wird der Verbrauch gemessen, wo liegt die monatliche Obergrenze, und was passiert, wenn wir sie erreichen?
 - Ist das Produkt allgemein verfügbar, in Beta oder im Pilot, und welches Service Level gilt?
 - Wer gibt die Pull Requests des Agenten frei, und kann er jemals ohne Menschen deployen?
