@@ -1,6 +1,6 @@
 ---
 title: "Spare parts shop: show only parts for each machine"
-description: "How a Salesforce B2B Commerce store shows dealers only the spare parts that fit their installed machine: entitlement limits, a machine page, endpoint extensions."
+description: "How a Salesforce B2B Commerce store shows dealers only the spare parts that fit their installed machine: entitlement limits, machine page, endpoint extensions."
 pubDate: 2026-10-28
 lang: en
 slug: spare-parts-shop-parts-per-machine
