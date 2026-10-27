@@ -6,6 +6,7 @@ lang: en
 slug: primary-keyword-in-the-slug
 translationKey: same-key-in-en-and-de
 topic: devops # picks the card image on the blog overview, see src/lib/topics.ts
+category: devops # filter category on the blog overview (one per article), see src/lib/categories.ts
 tags: [topic, second-topic]
 # series: { id: field-service, part: 2 } # only for articles in a series, see src/lib/series.ts
 takeaways:
