@@ -1,6 +1,6 @@
 ---
 title: "Kundenpreise in B2B Commerce: Preisbücher oder ERP?"
-description: "Wie Salesforce B2B Commerce kundenindividuelle Preise zeigt: Preisbücher, Preisstrategie, Limits und wann ein Live-Aufruf ans ERP über die Pricing Extension passt."
+description: "Wie Salesforce B2B Commerce Kundenpreise zeigt: Preisbücher, Preisstrategie, Limits und wann ein Live-Aufruf ans ERP über die Pricing Extension besser passt."
 pubDate: 2026-10-28
 lang: de
 slug: kundenpreise-b2b-commerce-preisbuecher-erp
@@ -65,7 +65,7 @@ Ein Preisbucheintrag ist ein Preis für ein Produkt in einem Preisbuch, mit Wäh
 
 Um das in Preisbücher zu bringen, müssen Sie das Ergebnis für jede Kombination vorab berechnen, die ein Käufer sehen kann. Bei vier Händlerstufen und stabiler Preisliste ist das einfach: vier Preisbücher, eine nächtliche Ladung. Bei Preisen, die je Kunde verhandelt sind, wächst das schnell, und jede Änderung in SAP braucht eine neue Ladung, bevor der Shop den richtigen Preis zeigt. Befristete Aktionen, Frachtzuschläge und Mindermengenzuschläge sind meist die Stellen, an denen die Replikation zuerst scheitert.
 
-Das zweite Risiko ist leiser. Zeigt der Shop einen Preis aus einer Kopie und berechnet SAP beim Eingang des Auftrags einen anderen, muss jemand entscheiden, welcher gilt. Nach meiner Erfahrung landet diese Frage beim Innendienst, Auftrag für Auftrag, wenn sie nicht vor dem Go-live entschieden wurde. Dasselbe Risiko beschreibe ich für KI-Angebote in [KI-Angebote für Händler mit dem Partner Sales Assistant](../ki-angebote-haendler-partner-sales-assistant/).
+Das zweite Risiko ist leiser. Zeigt der Shop einen Preis aus einer Kopie und berechnet SAP beim Eingang des Auftrags einen anderen, muss jemand entscheiden, welcher gilt. Hat das vor dem Go-live niemand entschieden, landet diese Frage beim Innendienst, Auftrag für Auftrag. Dasselbe Risiko beschreibe ich für KI-Angebote in [KI-Angebote für Händler mit dem Partner Sales Assistant](../ki-angebote-haendler-partner-sales-assistant/).
 
 ## Wann sollte der Preis live aus dem ERP kommen?
 

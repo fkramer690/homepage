@@ -1,6 +1,6 @@
 ---
 title: "Customer prices in B2B Commerce: price books or ERP?"
-description: "How Salesforce B2B Commerce shows buyer-specific prices: price books, pricing strategy, limits, and when a live ERP call through the pricing extension is better."
+description: "How Salesforce B2B Commerce shows buyer-specific prices: price books, pricing strategy, limits, and when a live ERP call via the pricing extension is better."
 pubDate: 2026-10-28
 lang: en
 slug: b2b-commerce-customer-prices-price-books-erp
@@ -65,7 +65,7 @@ A price book entry is one price for one product in one price book, with a curren
 
 To bring that into price books, you have to calculate the result in advance for every combination a buyer can see. With four dealer tiers and a stable price list that is easy: four price books, one nightly load. With prices negotiated per customer it grows quickly, and every change in SAP needs a new load before the store shows the right price. Temporary promotions, freight surcharges and minimum quantity surcharges are usually where replication fails first.
 
-The second risk is quieter. If the store shows a price calculated from a copy and SAP calculates a different one when the order arrives, someone has to decide which one applies. In my experience that question lands with inside sales, one order at a time, unless it was decided before go-live. I describe the same risk for AI-built quotes in [AI Partner Sales Assistant: dealer quotes with AI](../ai-partner-sales-assistant-dealer-quotes/).
+The second risk is quieter. If the store shows a price calculated from a copy and SAP calculates a different one when the order arrives, someone has to decide which one applies. If nobody decided it before go-live, that question lands with inside sales, one order at a time. I describe the same risk for AI-built quotes in [AI Partner Sales Assistant: dealer quotes with AI](../ai-partner-sales-assistant-dealer-quotes/).
 
 ## When should the price come live from the ERP?
 

@@ -106,7 +106,7 @@ A manufacturer of compressors starts a store on Growth Edition for 180 dealers. 
 4. Deliveries and invoices are written back on change; cancellations by inside sales too.
 5. Buyers see one order history for store orders. Phone orders stay invisible in the store in the first release, which inside sales knows and explains.
 
-Point five is a real limit. Showing all SAP orders in the store needs importing them as order summaries, and the pricing page footnote on other channels then applies to Order Management, not to unmanaged summaries. Clarify that with Salesforce before you promise dealers a complete history.
+Point five is a real limit. Showing all SAP orders in the store means bringing phone and EDI orders into Salesforce as order summaries too. Whether that touches the pricing page footnote on orders from other channels is a question to put to Salesforce in writing before you promise dealers a complete history.
 
 ## Where should you start?
 

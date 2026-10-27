@@ -16,7 +16,7 @@ takeaways:
   - "The dealer may only see machines registered to their own account, read from the asset record and never typed in as free text."
 faq:
   - q: "Can B2B Commerce entitlements restrict parts by serial number?"
-    a: "No. Entitlement policies give buyer groups access to products. A serial number is an attribute of an installed machine, usually an asset record, and B2B Commerce has no standard link between assets and entitlements."
+    a: "No. Entitlement policies give buyer groups access to products. A serial number is an attribute of an installed machine, usually an asset record, and in the B2B Commerce documentation I found no standard link between assets and entitlements."
   - q: "What is a machine page in a spare parts shop?"
     a: "A custom page in the store that lists the machines registered to the dealer's account and, for each machine, the spare parts that fit it. The parts list comes from asset records or live from PLM, and the dealer adds parts to the cart from there."
   - q: "What are Commerce endpoint extensions?"

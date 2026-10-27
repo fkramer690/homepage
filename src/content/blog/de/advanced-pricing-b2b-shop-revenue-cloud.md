@@ -41,7 +41,7 @@ Die [Salesforce-Hilfe zu Agentforce Revenue Management for B2B Commerce](https:/
 - **Qualification Rules**, die Sichtbarkeit von Produkten und Kategorien je Käufergruppe aus Kontodaten ableiten und die manuelle Pflege von Entitlement Policies ersetzen.
 - **Abonnements** für digitale Produkte, einmalig, unbefristet oder befristet.
 
-Ein paar Begriffe, weil sie in jedem Workshop fallen. Eine Pricing Procedure ist die geordnete Folge von Schritten, die aus einem Listenpreis einen Nettopreis macht. Eine Entscheidungstabelle (Decision Table) ist eine Nachschlagetabelle, die die Procedure liest, etwa den Rabatt je Kundengruppe und Materialgruppe. Der [Preisbereich der Salesforce-Hilfe für B2B-Stores](https://help.salesforce.com/s/articleView?language=en_US&id=commerce.comm_pricebooks.htm&type=5) hat eigene Artikel zu Advanced Pricing, darunter Pricing Procedure Plans, das Aktualisieren der Entscheidungstabellen des Stores, eigene Felder in der Pricing Procedure und vertragsbasierte Preise für B2B-Stores.
+Zwei Begriffe vorab, weil der Rest des Artikels sie nutzt. Eine Pricing Procedure ist die geordnete Folge von Schritten, die aus einem Listenpreis einen Nettopreis macht. Eine Entscheidungstabelle (Decision Table) ist eine Nachschlagetabelle, die die Procedure liest, etwa den Rabatt je Kundengruppe und Materialgruppe. Der [Preisbereich der Salesforce-Hilfe für B2B-Stores](https://help.salesforce.com/s/articleView?language=en_US&id=commerce.comm_pricebooks.htm&type=5) hat eigene Artikel zu Advanced Pricing, darunter Pricing Procedure Plans, das Aktualisieren der Entscheidungstabellen des Stores, eigene Felder in der Pricing Procedure und vertragsbasierte Preise für B2B-Stores.
 
 ## Welche Lizenzen brauchen Sie?
 

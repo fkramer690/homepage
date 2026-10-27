@@ -16,7 +16,7 @@ takeaways:
   - "Der Händler sieht nur Maschinen, die auf sein eigenes Konto registriert sind, gelesen aus dem Asset-Datensatz und nie als Freitext eingegeben."
 faq:
   - q: "Können Entitlements in B2B Commerce Teile nach Seriennummer einschränken?"
-    a: "Nein. Entitlement Policies geben Käufergruppen Zugriff auf Produkte. Eine Seriennummer gehört zu einer installierten Maschine, meist einem Asset-Datensatz, und B2B Commerce hat keine Standardverbindung zwischen Assets und Entitlements."
+    a: "Nein. Entitlement Policies geben Käufergruppen Zugriff auf Produkte. Eine Seriennummer gehört zu einer installierten Maschine, meist einem Asset-Datensatz, und in der Dokumentation zu B2B Commerce habe ich keine Standardverbindung zwischen Assets und Entitlements gefunden."
   - q: "Was ist eine Maschinenseite in einem Ersatzteilshop?"
     a: "Eine eigene Seite im Store, die die auf das Händlerkonto registrierten Maschinen zeigt und zu jeder Maschine die passenden Ersatzteile. Die Teileliste kommt aus Asset-Datensätzen oder live aus dem PLM, und der Händler legt die Teile von dort in den Warenkorb."
   - q: "Was sind Commerce Endpoint Extensions?"

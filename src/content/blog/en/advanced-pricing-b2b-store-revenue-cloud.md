@@ -1,6 +1,6 @@
 ---
 title: "Advanced Pricing in B2B stores: when Revenue Cloud?"
-description: "When a Salesforce B2B store needs Advanced Pricing powered by Revenue Cloud: licence prerequisites, pricing procedures, contract prices, bundles, and when SAP is enough."
+description: "When a Salesforce B2B store needs Advanced Pricing powered by Revenue Cloud: licences, pricing procedures, contract prices, and when SAP pricing is enough."
 pubDate: 2026-10-28
 lang: en
 slug: advanced-pricing-b2b-store-revenue-cloud
@@ -41,7 +41,7 @@ Standard pricing in Salesforce B2B Commerce, which Salesforce now also markets a
 - **Qualification rules**, which decide product and category visibility for buyer groups from account data and replace manual upkeep of entitlement policies.
 - **Subscriptions** for digital products, one-time, evergreen or term-based.
 
-A few terms, because they come up in every workshop. A pricing procedure is the ordered sequence of steps that turns a list price into a net price. A decision table is a lookup table the procedure reads, for example the discount per customer group and material group. The [pricing section of Salesforce Help for B2B stores](https://help.salesforce.com/s/articleView?language=en_US&id=commerce.comm_pricebooks.htm&type=5) has its own articles for Advanced Pricing, among them pricing procedure plans, refreshing the store's pricing decision tables, custom fields in the pricing procedure and contract-based pricing for B2B stores.
+Two terms explained, because the rest of the article uses them. A pricing procedure is the ordered sequence of steps that turns a list price into a net price. A decision table is a lookup table the procedure reads, for example the discount per customer group and material group. The [pricing section of Salesforce Help for B2B stores](https://help.salesforce.com/s/articleView?language=en_US&id=commerce.comm_pricebooks.htm&type=5) has its own articles for Advanced Pricing, among them pricing procedure plans, refreshing the store's pricing decision tables, custom fields in the pricing procedure and contract-based pricing for B2B stores.
 
 ## Which licences do you need?
 

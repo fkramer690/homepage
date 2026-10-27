@@ -78,6 +78,8 @@ Integratoren veröffentlichen Sätze von etwa 1 Prozent des GMV für Growth und 
 
 Lieber rechne ich mit dem Satz als Variable. Ein typisches Szenario, als Annahme: Ein Hersteller erwartet im dritten Jahr 15 Millionen Euro Ersatzteilumsatz über den Store, ohne Steuern und Versand. Jeder Prozentpunkt GMV sind dann 150.000 Euro im Jahr. Der Unterschied zwischen einem Angebot mit 1 Prozent und einem mit 2 Prozent ist mehr als das Gehalt einer Person im Innendienst. Deshalb verhandeln Sie den Satz, nicht die Lizenzanzahl.
 
+Die Käuferlizenzen sind trotzdem kein Kleingeld. Im selben Szenario mit 250 Händlern und je einem Käufer auf Mitgliedslizenz sind das 250 mal 35 € mal 12, also 105.000 € im Jahr zum Listenpreis. Bestellt ein Teil der Händler nur an wenigen Tagen im Monat, kann die Login-Lizenz zu 15 € günstiger sein, weil laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?language=en_US&id=sf.users_license_types_communities.htm&type=5) mehrere Logins am selben Tag nur einen Login verbrauchen. Diese Aufteilung lohnt sich vor dem Angebot, nicht danach.
+
 ## Was gehört in den Vertrag?
 
 Vor der Unterschrift würde ich diese Punkte schriftlich festhalten:

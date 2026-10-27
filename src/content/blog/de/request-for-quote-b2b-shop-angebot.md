@@ -1,6 +1,6 @@
 ---
 title: "Request for Quote im B2B-Shop: vom Warenkorb zum Angebot"
-description: "Wie Käufer in Salesforce B2B Commerce aus dem Warenkorb ein Angebot anfragen, wie das freigegebene Angebot als Warenkorb zurückkommt und was der Innendienst regeln muss."
+description: "Wie Käufer in Salesforce B2B Commerce aus dem Warenkorb ein Angebot anfragen, wie das Angebot als Warenkorb zurückkommt und was der Innendienst regeln muss."
 pubDate: 2026-10-28
 lang: de
 slug: request-for-quote-b2b-shop-angebot
