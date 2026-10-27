@@ -73,7 +73,7 @@ The docs do not say whether Vibes also reads `CLAUDE.md` or `AGENTS.md`. Accordi
 
 Sources: [Vibes usage and billing](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-admin-billing.html), [Vibes FAQ](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-faqs.html).
 
-The figure I would check first: according to the FAQ the unmetered cap applies per org, not per user. Once it is reached, the team carries on with GPT-5 or pays Flex Credits. Opus runs as an "Advanced prompt", which the [Flex Credits rate card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) prices at 16 credits; at $500 per 100,000 credits that is $0.08 per started block of 2,000 tokens. The billing page does not say which tier Sonnet and GPT fall into, and I found no dollar price for the unmetered licence on any official page. Ask your account team for both.
+The figure I would check first: according to the FAQ the unmetered cap applies per org, not per user. Once it is reached, the team carries on with GPT-5 or pays Flex Credits. Opus runs as an "Advanced prompt", which the [Flex Credits rate card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) prices at 16 credits; at $500 per 100,000 credits that is $0.08 per started block of 2,000 tokens. The [Vibes pricing page](https://www.salesforce.com/agentforce/developers/vibe-coding/pricing/) lists the unmetered licence as a flat fee of $125 per user and month. The billing page does not say which tier Sonnet and GPT fall into; ask your account team.
 
 Since 1 June 2026, Vibes outside Developer Edition has required [Flex Credits or a paid licence](https://www.salesforceben.com/agentforce-vibes-no-longer-free-for-use/). At Dreamforce 2026, SalesforceBen reported a restored Developer Edition allowance of [50 requests or 1 million tokens with a daily reset](https://www.salesforceben.com/developer-features-and-announcements-from-dreamforce-26/). The official FAQ still says 110 requests for one month without refresh. I plan with the FAQ.
 
@@ -136,7 +136,7 @@ In this scenario the question of which agent is answered quickly. The time goes 
 ## What should you decide now?
 
 1. **Clarify the org location.** EU Operating Zone or not decides whether Vibes is an option.
-2. **Calculate the licence route.** Unmetered against Flex Credits, with the per-org cap and a price from your account team.
+2. **Calculate the licence route.** Unmetered against Flex Credits, with the per-org cap and $125 per user and month for the flat fee.
 3. **Create a rules file in the client repository** for every tool your partners may use.
 4. **Accept Agentforce agents only as Agent Script in Git**, with a test spec and an agreed pass rate.
 5. **Make Code Analyzer a mandatory pipeline step**, with ApexGuru runtime data from production or a full copy sandbox.

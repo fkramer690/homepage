@@ -73,7 +73,7 @@ Die Doku sagt nicht, ob Vibes auch `CLAUDE.md` oder `AGENTS.md` liest. Claude Co
 
 Quellen: [Vibes Usage and Billing](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-admin-billing.html), [Vibes FAQ](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-faqs.html).
 
-Die Zahl, die ich zuerst prüfen würde: Die Grenze der Unmetered-Lizenz gilt laut FAQ pro Org, nicht pro Nutzer. Ist sie erreicht, arbeitet das Team mit GPT-5 weiter oder zahlt Flex Credits. Opus läuft als „Advanced Prompt“; die [Flex Credits Rate Card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) setzt dafür 16 Credits an, bei 500 $ je 100.000 Credits also 0,08 $ je angefangene 2.000 Token. Welche Stufe Sonnet und GPT haben, nennt die Billing-Seite nicht, und einen Dollarpreis für die Unmetered-Lizenz habe ich auf keiner offiziellen Seite gefunden. Fragen Sie beides beim Account Team an.
+Die Zahl, die ich zuerst prüfen würde: Die Grenze der Unmetered-Lizenz gilt laut FAQ pro Org, nicht pro Nutzer. Ist sie erreicht, arbeitet das Team mit GPT-5 weiter oder zahlt Flex Credits. Opus läuft als „Advanced Prompt“; die [Flex Credits Rate Card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) setzt dafür 16 Credits an, bei [500 € je 100.000 Credits](https://www.salesforce.com/agentforce/developers/vibe-coding/pricing/) also 0,08 € je angefangene 2.000 Token. Die Unmetered-Lizenz führt die [Preisseite von Vibes](https://www.salesforce.com/agentforce/developers/vibe-coding/pricing/) als Flat Fee zu 125 € pro Nutzer und Monat. Welche Stufe Sonnet und GPT haben, nennt die Billing-Seite nicht. Das fragen Sie beim Account Team an.
 
 Seit dem 1. Juni 2026 braucht Vibes außerhalb der Developer Edition [Flex Credits oder eine bezahlte Lizenz](https://www.salesforceben.com/agentforce-vibes-no-longer-free-for-use/). SalesforceBen meldete zur Dreamforce 2026 für Developer Editions wieder [50 Requests oder 1 Mio. Token mit täglichem Reset](https://www.salesforceben.com/developer-features-and-announcements-from-dreamforce-26/). Die offizielle FAQ nennt weiter 110 Requests für einen Monat ohne Refresh. Ich plane mit der FAQ.
 
@@ -127,8 +127,8 @@ Nehmen wir einen Maschinenbauer mit Sales Cloud, Service Cloud, Händlerportal u
 
 1. **Org-Standort.** Liegt die Org in der EU Operating Zone, ist Vibes keine Option. Nehmen wir an, sie liegt in einer EU-Org außerhalb davon.
 2. **Coding-Lizenz.** Der Partner möchte die Unmetered-Lizenz mit Sonnet. Angenommen sind 25 agentische Requests pro Entwickler und Arbeitstag mit durchschnittlich 30.000 Token. Sechs Entwickler kommen auf 150 Requests und 4,5 Mio. Token am Tag. Die Grenze von 36 Mio. Token ist nach acht Arbeitstagen erreicht, die 2.500 Requests wären es nach knapp 17. Weil die Grenze pro Org gilt, arbeitet das Team ab dem neunten Arbeitstag mit GPT-5 weiter oder zahlt Flex Credits. Ob Salesforce den Kontext jedes Agentenschritts voll zählt, habe ich nicht dokumentiert gefunden; das gehört vor die Unterschrift geklärt.
-3. **Metered mit Opus.** Dieselben 30.000 Token sind 15 Einheiten zu 16 Credits, also 240 Credits oder 1,20 $ pro Request. 150 Requests am Tag kosten damit 180 $, rund 3.780 $ in 21 Arbeitstagen.
-4. **Der Agent selbst.** Er entsteht als Agent Script in Git, Kreditprüfung und Auftragsabfrage laufen als Logik. Für den Test sind 60 Fälle mit je drei Aktionen in drei Durchläufen angenommen. Das sind 540 Aktionen zu je 16 Credits in der Sandbox, also 8.640 Credits oder 43,20 $.
+3. **Metered mit Opus.** Dieselben 30.000 Token sind 15 Einheiten zu 16 Credits, also 240 Credits oder 1,20 € pro Request. 150 Requests am Tag kosten damit 180 €, rund 3.780 € in 21 Arbeitstagen.
+4. **Der Agent selbst.** Er entsteht als Agent Script in Git, Kreditprüfung und Auftragsabfrage laufen als Logik. Für den Test sind 60 Fälle mit je drei Aktionen in drei Durchläufen angenommen. Das sind 540 Aktionen zu je 16 Credits in der Sandbox, also 8.640 Credits oder 43,20 €.
 5. **Das Gate.** Code Analyzer läuft bei jedem Pull Request in der Pipeline, egal ob Vibes, Claude Code oder ein Mensch den Code geschrieben hat.
 
 In diesem Szenario ist die Frage nach dem Agenten schnell beantwortet. Zeit kosten die Grenze der Lizenz, die offene Zählweise und die Gates.
@@ -136,7 +136,7 @@ In diesem Szenario ist die Frage nach dem Agenten schnell beantwortet. Zeit kost
 ## Was sollten Sie jetzt entscheiden?
 
 1. **Org-Standort klären.** EU Operating Zone ja oder nein entscheidet über Vibes.
-2. **Lizenzweg rechnen.** Unmetered gegen Flex Credits, mit der Grenze pro Org und einem Preis vom Account Team.
+2. **Lizenzweg rechnen.** Unmetered gegen Flex Credits, mit der Grenze pro Org und 125 € pro Nutzer und Monat für die Flat Fee.
 3. **Regeldatei im Kunden-Repository anlegen**, für jedes Werkzeug, das Ihre Partner nutzen dürfen.
 4. **Agentforce-Agenten nur als Agent Script in Git abnehmen**, mit Testspezifikation und vereinbarter Bestehensquote.
 5. **Code Analyzer als Pflichtschritt in die Pipeline setzen**, ApexGuru mit Laufzeitdaten aus Produktion oder Full-Copy-Sandbox.

@@ -17,7 +17,7 @@ takeaways:
   - "Im Beispielszenario verbraucht ein Ersatzteilagent für Händler rund 218.000 Credits im Monat, und reine Textaktionen machen davon nur 55 Prozent aus."
 faq:
   - q: "Was ist ein Flex Credit wert?"
-    a: "Salesforce listet Flex Credits zu 500 € oder 500 $ je 100.000 Credits, ein Credit kostet also einen halben Cent. Eine Standard- oder Custom-Aktion in Agentforce verbraucht 20 Credits, also 0,10 €."
+    a: "Salesforce listet Flex Credits zu 500 € je 100.000 Credits, ein Credit kostet also einen halben Cent. Eine Standard- oder Custom-Aktion in Agentforce verbraucht 20 Credits, also 0,10 €."
   - q: "Werden Prompts zusätzlich zu Agentforce-Aktionen berechnet?"
     a: "Prompts werden pro Aufruf des LLM-Gateways gezählt, in Einheiten bis 2.000 Tokens. Ob die eigenen Reasoning-Aufrufe des Agenten als Prompts zählen, sagt der Hilfeartikel nicht; klären Sie das mit Ihrem Account Executive und beobachten Sie Digital Wallet im Piloten."
   - q: "Kosten Agententests in der Sandbox Flex Credits?"
@@ -33,13 +33,13 @@ Die Agentforce-Kosten pro Aktion sind schnell genannt und leicht unterschätzt. 
 
 ## Wie funktionieren Flex Credits?
 
-Flex Credits sind die Währung, in der Salesforce den Agentforce-Verbrauch abrechnet. Die [Agentforce-Preisseite](https://www.salesforce.com/agentforce/pricing/) nennt 500 € oder 500 $ je 100.000 Credits. Jedes abrechenbare Ereignis zieht eine feste Zahl Credits laut [Flex Credits Rate Card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) mit Stand 31. August 2026. Eine Aktion ist laut Salesforce „a specific function that an AI agent executes on the platform“, etwa einen Auftrag aus SAP lesen oder ein Ersatzteil nachschlagen. Ob sich ein Agent überhaupt lohnt, steht in [Agentforce für Hersteller](../agentforce-ja-oder-nein-hersteller/).
+Flex Credits sind die Währung, in der Salesforce den Agentforce-Verbrauch abrechnet. Die [Agentforce-Preisseite](https://www.salesforce.com/eu/agentforce/pricing/) nennt 500 € je 100.000 Credits. Jedes abrechenbare Ereignis zieht eine feste Zahl Credits laut [Flex Credits Rate Card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) mit Stand 31. August 2026. Eine Aktion ist laut Salesforce „a specific function that an AI agent executes on the platform“, etwa einen Auftrag aus SAP lesen oder ein Ersatzteil nachschlagen. Ob sich ein Agent überhaupt lohnt, steht in [Agentforce für Hersteller](../agentforce-ja-oder-nein-hersteller/).
 
 Für die Planung zählen drei Details:
 
 - **Alle Credits kommen aus einem Topf.** Aktionen, Prompts, Sprache und Übersetzung ziehen dieselben Credits, und die Rate Card rechnet auch Data 360 in Flex Credits ab.
 - **Auch deterministische Schritte kosten.** Laut [Hilfeartikel zu den abrechenbaren Nutzungsarten](https://help.salesforce.com/s/articleView?language=en_US&id=ai.usage_flex_credits.htm&type=5) werden Aktionen abgerechnet, wenn sie laufen, auch wenn sie deterministisch laufen. Eine Garantieregel in [Agent Script](../agent-script-regeln-statt-llm/) macht den Agenten verlässlicher, nicht günstiger.
-- **Ein Preismodell pro Org.** Flex Credits und das Modell mit 2 $ pro Gespräch werden nicht in derselben Org unterstützt.
+- **Ein Preismodell pro Org.** Flex Credits und das Modell mit 2 € pro Gespräch werden nicht in derselben Org unterstützt.
 
 Es gibt drei Kaufmodelle: Pre-Purchase zahlt die ganze Laufzeit im Voraus, Pre-Commit rechnet eine Grundmenge monatlich nachträglich ab und gleicht zum Laufzeitende aus, PayGo rechnet ab, was Sie nutzen. Verbrauch über dem Kontingent kostet den vereinbarten Satz, ohne Strafaufschlag. Das [im Mai 2025 angekündigte Flex Agreement](https://www.salesforce.com/news/press-releases/2025/05/15/agentforce-flexible-pricing-news/) erlaubt außerdem, Nutzerlizenzen in Flex Credits umzuwandeln und zurück.
 

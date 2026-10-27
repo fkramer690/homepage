@@ -9,7 +9,7 @@ topic: devops
 category: devops
 tags: [KI-Coding, Claude Code, GitHub Copilot, Agentforce Vibes, Partnersteuerung, Kosten]
 takeaways:
-  - "KI-Coding kostet im Salesforce-Projekt zu Listenpreisen etwa 19 $ bis 250 $ pro Entwickler und Monat, von Copilot Business mit Inklusiv-Credits bis Claude Code zu API-Preisen."
+  - "KI-Coding kostet im Salesforce-Projekt zu US-Listenpreisen etwa 19 $ bis 250 $ pro Entwickler und Monat, von Copilot Business mit Inklusiv-Credits bis Claude Code zu API-Preisen."
   - "Anthropic nennt für Claude Code rund 13 $ pro Entwickler und aktivem Arbeitstag; Caching macht wiederholten Kontext billig, teuer sind Output und Thinking."
   - "Im Szenario kosten KI-Werkzeuge für ein Partnerteam mit acht Personen etwa 650 $ bis 1.500 $ im Monat, rund ein Prozent der Tagessätze des Teams."
   - "Agentforce Vibes im Verbrauchsmodell zieht aus denselben Flex Credits wie Ihre Agenten in Produktion und zählt in Einheiten zu 2.000 Tokens; Opus kostet 16 Credits pro Einheit."
@@ -22,23 +22,23 @@ faq:
   - q: "Wer sollte KI-Coding-Werkzeuge bezahlen, Kunde oder Umsetzungspartner?"
     a: "Das folgt dem Vertragsmodell. Bei Aufwand bekommt der Kunde den Produktivitätsgewinn über weniger abgerechnete Tage, also sollte er die Accounts besitzen und zahlen. Beim Festpreis behält der Partner den Gewinn und trägt die Token-Kosten."
   - q: "Verbraucht Agentforce Vibes meine Agentforce Flex Credits?"
-    a: "Im Verbrauchsmodell ja. Laut Salesforce nutzt es dieselben Credits wie Agentforce, gezählt in Einheiten zu 2.000 Tokens. Die Flat Fee von 125 $ pro Nutzer und Monat vermeidet das, begrenzt Premium-Modelle aber auf 2.500 Requests oder 36 Mio. Tokens pro 30 Tage."
+    a: "Im Verbrauchsmodell ja. Laut Salesforce nutzt es dieselben Credits wie Agentforce, gezählt in Einheiten zu 2.000 Tokens. Die Flat Fee von 125 € pro Nutzer und Monat vermeidet das, begrenzt Premium-Modelle aber auf 2.500 Requests oder 36 Mio. Tokens pro 30 Tage."
   - q: "Warum ist Prompt-Caching für KI-Coding-Kosten so wichtig?"
     a: "Ein Coding-Agent schickt bei jedem Schritt das ganze Gespräch erneut. Bei Claude Opus 5.5 und Sonnet 5.5 kostet ein Cache-Treffer 5 Prozent des normalen Input-Preises; im Rechenbeispiel wird aus einer Session für rund 9,80 $ eine für rund 2,20 $."
 draft: false
 ---
 
-KI-Coding kostet im Salesforce-Projekt weniger, als die meisten Budgetdiskussionen annehmen: etwa 19 $ bis 250 $ pro Entwickler und Monat zu Listenpreisen. Copilot Business kostet 19 $, Seats für Claude und ChatGPT 20 $ bis 125 $, und Anthropic beziffert Claude Code zu API-Preisen auf 150 $ bis 250 $ im Monat. Für ein Partnerteam mit acht Personen sind das rund 650 $ bis 1.500 $ im Monat, etwa ein Prozent der Tagessätze. Schwieriger ist die Frage, wem die Accounts gehören und wer das Verbrauchsrisiko trägt. Meine Regel: bei Aufwand zahlt der Kunde, beim Festpreis der Partner.
+KI-Coding kostet im Salesforce-Projekt weniger, als die meisten Budgetdiskussionen annehmen: etwa 19 $ bis 250 $ pro Entwickler und Monat zu US-Listenpreisen. Copilot Business kostet 19 $, Seats für Claude und ChatGPT 20 $ bis 125 $, und Anthropic beziffert Claude Code zu API-Preisen auf 150 $ bis 250 $ im Monat. Für ein Partnerteam mit acht Personen sind das rund 650 $ bis 1.500 $ im Monat, etwa ein Prozent der Tagessätze. Schwieriger ist die Frage, wem die Accounts gehören und wer das Verbrauchsrisiko trägt. Meine Regel: bei Aufwand zahlt der Kunde, beim Festpreis der Partner.
 
 ## Was kostet KI-Coding pro Entwickler und Monat?
 
-Die meisten Coding-Werkzeuge verkaufen inzwischen einen Seat mit Budget und rechnen jede Nutzung jenseits davon pro Token ab. Hier die US-Listenpreise vom 27. Oktober 2026:
+Die meisten Coding-Werkzeuge verkaufen inzwischen einen Seat mit Budget und rechnen jede Nutzung jenseits davon pro Token ab. Hier die Listenpreise vom 27. Oktober 2026; außer bei Salesforce sind es US-Listenpreise in USD:
 
 - **Claude Code zu API-Preisen.** Anthropic [nennt](https://code.claude.com/docs/en/costs) für Unternehmenseinsätze rund 13 $ pro Entwickler und aktivem Tag und 150 $ bis 250 $ pro Monat; 90 Prozent der Nutzer bleiben unter 30 $ pro aktivem Tag.
 - **Claude Team und Enterprise.** Laut [Preisseite von Anthropic](https://claude.com/pricing) kostet ein Team-Standard-Seat 25 $ im Monat (20 $ jährlich), Premium 125 $ (100 $ jährlich), Enterprise 20 $ pro Seat plus Nutzung zu API-Preisen. Die Nutzung zieht aus einem Kontingent, das sich in einem Fünf-Stunden- und einem Wochenfenster erneuert. Wie viele Tokens das sind, veröffentlicht Anthropic nicht.
 - **OpenAI Codex.** Die [Codex Rate Card](https://help.openai.com/en/articles/20001106-codex-rate-card-2) nennt im Schnitt rund 100 $ bis 200 $ pro Entwickler und Monat. OpenAI führt Codex unter den Funktionen von [ChatGPT Business](https://openai.com/business/pricing/) zu 25 $ pro Seat (20 $ jährlich).
 - **GitHub Copilot.** Business kostet [19 $ pro Nutzer mit 1.900 AI Credits](https://docs.github.com/en/copilot/tutorials/roll-out-at-scale/assign-licenses/choose-enterprise-plan), Enterprise 39 $ mit 3.900. Ein Credit kostet 0,01 $, die Credits werden [organisationsweit gepoolt](https://docs.github.com/de/copilot/concepts/billing/organizations-and-enterprises/usage-based-billing), Code-Vervollständigungen kosten keine Credits.
-- **Agentforce Vibes.** Flat Fee von 125 $ oder 125 € pro Nutzer und Monat oder Verbrauch in Flex Credits, dazu unten mehr.
+- **Agentforce Vibes.** Flat Fee von 125 € pro Nutzer und Monat oder Verbrauch in Flex Credits, dazu unten mehr.
 
 Der Seat-Preis sagt wenig über die Rechnung. GitHub rechnet Tokens zum Preis des jeweiligen Modells in Credits um, die 19 $ Inklusivnutzung reichen also nur für eine Handvoll der Agenten-Sessions unten.
 
@@ -72,14 +72,14 @@ Nehmen wir einen Maschinenbauer mit SAP, Service Cloud, Field Service für den A
 - **Codex in ChatGPT Business:** mit OpenAIs Durchschnitt 600 $ bis 1.200 $ für die sechs Entwickler plus zwei Seats.
 - **Copilot Business:** acht Seats = 152 $ mit einem Pool von 15.200 Credits. Liegt GitHubs Modellpreis nahe an Anthropics Listenpreis, reicht der Pool für rund 70 Sessions, zwei Arbeitstage bei sechs Sessions pro Entwickler und Tag. Danach wird jeder Credit berechnet, und der Monat endet bei rund 1.400 $.
 
-Bei einem angenommenen Mischsatz von 800 $ pro Person und Tag kostet das Team selbst 8 × 18 × 800 $ = 115.200 $ im Monat. KI-Coding kommt mit etwa einem Prozent dazu. McKinsey [erwartet](https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/beyond-the-copilot-scaling-the-agentic-product-development-life-cycle), dass die Ausgaben für Tokens, Rechenleistung, Infrastruktur und AI Ops auf bis zu 20 Prozent der bisherigen Personalkosten steigen können, je mehr Arbeit Agenten übernehmen. Die größeren Risiken sind aus meiner Sicht heute ein Zähler ohne Limit und die offene Frage, wem der Produktivitätsgewinn gehört.
+Bei einem in USD angenommenen Mischsatz von 800 $ pro Person und Tag kostet das Team selbst 8 × 18 × 800 $ = 115.200 $ im Monat. KI-Coding kommt mit etwa einem Prozent dazu. McKinsey [erwartet](https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/beyond-the-copilot-scaling-the-agentic-product-development-life-cycle), dass die Ausgaben für Tokens, Rechenleistung, Infrastruktur und AI Ops auf bis zu 20 Prozent der bisherigen Personalkosten steigen können, je mehr Arbeit Agenten übernehmen. Die größeren Risiken sind aus meiner Sicht heute ein Zähler ohne Limit und die offene Frage, wem der Produktivitätsgewinn gehört.
 
 ## Warum braucht Agentforce Vibes eine eigene Rechnung?
 
 Agentforce Vibes ist der Coding-Agent von Salesforce. Zwei Punkte sind wichtig:
 
 1. **Vibes im Verbrauchsmodell nutzt die Flex Credits Ihrer Agenten.** Laut [Preisseite von Vibes](https://www.salesforce.com/agentforce/developers/vibe-coding/pricing/) verbraucht es „the same credits used by Agentforce“. Ein Partnerteam auf Verbrauchsbasis zieht also aus dem Pool, den Sie für einen Serviceagenten für Händleranfragen eingeplant haben, siehe [Flex Credits: Agentforce-Kosten pro Aktion](../flex-credits-agentforce-kosten-pro-aktion/).
-2. **Die Einheit sind 2.000 Tokens.** Die [Abrechnungsdokumentation](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-admin-billing.html) zählt Input und Output in Einheiten zu 2.000 Tokens, aufgerundet. Opus-Modelle laufen als Advanced Prompts, laut [Rate Card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) 16 Credits pro Einheit, also 0,08 $. Ob erneut gesendeter Kontext voll zählt, sagt Salesforce nicht. Wenn ja, kostet ein einzelner Opus-Request mit 70.000 Tokens Kontext 560 Credits oder 2,80 $, mehr als die ganze Session oben. Ich würde das eine Woche im Digital Wallet messen, bevor jemand auf Verbrauch arbeitet.
+2. **Die Einheit sind 2.000 Tokens.** Die [Abrechnungsdokumentation](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-admin-billing.html) zählt Input und Output in Einheiten zu 2.000 Tokens, aufgerundet. Opus-Modelle laufen als Advanced Prompts, laut [Rate Card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) 16 Credits pro Einheit, also 0,08 €. Ob erneut gesendeter Kontext voll zählt, sagt Salesforce nicht. Wenn ja, kostet ein einzelner Opus-Request mit 70.000 Tokens Kontext 560 Credits oder 2,80 €, mehr als die ganze Session oben. Ich würde das eine Woche im Digital Wallet messen, bevor jemand auf Verbrauch arbeitet.
 
 Die Flat Fee begrenzt Premium-Modelle auf 2.500 Requests oder 36 Mio. Tokens pro 30 Tage, und Opus gibt es nur im Verbrauchsmodell. In der EU Operating Zone ist Vibes nicht verfügbar. Dafür spricht: Die Lizenz liegt in der Org des Kunden, und laut [FAQ](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-faqs.html) bleiben die Daten innerhalb der Vertrauensgrenze von Salesforce. Die Werkzeugwahl selbst behandle ich in [Agentforce Vibes, Claude Code oder Copilot](../agentforce-vibes-claude-code-copilot-vergleich/).
 

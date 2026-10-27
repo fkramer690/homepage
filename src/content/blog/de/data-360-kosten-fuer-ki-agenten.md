@@ -17,7 +17,7 @@ takeaways:
   - "In der Sandbox hat Data 360 keine Mengenstaffeln: 6.000 MB Kataloge mit LLM-Parsing kosten dort 2,88 Mio. Credits, mehr als die 2,22 Mio. in Produktion."
 faq:
   - q: "Was kostet Data 360 pro MB Dokumente?"
-    a: "Laut Flex Credits Rate Card kostet Unstructured Processing in der Basisstaffel 150 Credits pro MB, Intelligent Processing wie LLM-basiertes Parsing 600 Credits pro MB. Bei 500 $ je 100.000 Credits sind das 0,75 $ und 3 $ pro MB. Höhere Monatsmengen bekommen je Nutzungsart günstigere Sätze."
+    a: "Laut Flex Credits Rate Card kostet Unstructured Processing in der Basisstaffel 150 Credits pro MB, Intelligent Processing wie LLM-basiertes Parsing 600 Credits pro MB. Bei 500 € je 100.000 Credits sind das 0,75 € und 3 € pro MB. Höhere Monatsmengen bekommen je Nutzungsart günstigere Sätze."
   - q: "Kosten die Suchen eines Agenten in Data 360 Credits?"
     a: "Ja. Abfragen kosten in der Basisstaffel 3 Credits pro Million Zeilen. Bei Vektorsuche zählt Salesforce die Vektoren im Suchindex, bei hybrider Suche Vektoren und Keyword-Datensätze, hybride Suche verdoppelt also ungefähr die gezählten Zeilen."
   - q: "Wird ein Dokument erneut berechnet, wenn es sich ändert?"
@@ -29,7 +29,7 @@ faq:
 draft: false
 ---
 
-Die Data 360 Kosten für KI-Agenten entstehen vor allem durch Dokumente, die sich ändern, und kaum durch die Fragen an den Agenten. Liest ein Agentforce-Agent Ersatzteilkataloge, Betriebsanleitungen und Serviceinformationen, berechnet Data 360 fürs Indexieren 150 Flex Credits pro MB mit dem Standard-Parser und 600 pro MB mit LLM-basiertem Parsing. Suchen kosten 3 Credits pro Million Zeilen. Im Szenario unten kosten die Suchen rund 72 $ im Monat, das Neuindexieren geänderter Dokumente fast 1.000 $. Die Hebel sind der Parser, der Dokumentenumfang und der Ort, an dem die Dateien liegen.
+Die Data 360 Kosten für KI-Agenten entstehen vor allem durch Dokumente, die sich ändern, und kaum durch die Fragen an den Agenten. Liest ein Agentforce-Agent Ersatzteilkataloge, Betriebsanleitungen und Serviceinformationen, berechnet Data 360 fürs Indexieren 150 Flex Credits pro MB mit dem Standard-Parser und 600 pro MB mit LLM-basiertem Parsing. Suchen kosten 3 Credits pro Million Zeilen. Im Szenario unten kosten die Suchen rund 72 € im Monat, das Neuindexieren geänderter Dokumente fast 1.000 €. Die Hebel sind der Parser, der Dokumentenumfang und der Ort, an dem die Dateien liegen.
 
 ## Was berechnet Data 360, wenn ein Agent Dokumente liest?
 
@@ -41,7 +41,7 @@ Daraus ergeben sich drei Zähler:
 - **Abfragen pro Million Zeilen** bei jeder Suche des Agenten: 3 Credits in der Basisstaffel.
 - **Speicher.** Jede aufgenommene Datei zählt zum Data-360-Speicher, ebenso die Chunk- und Indexobjekte, die für den Suchindex entstehen.
 
-Die Sätze sinken mit der Menge. Bis 300.000 Credits im Monat gilt der Basissatz, danach fällt er in drei Stufen auf ein Fünftel, bei Unstructured Processing auf 30 Credits pro MB oberhalb von 12,5 Mio. Credits. Die Staffeln gelten je Nutzungsart und beginnen am ersten Tag jedes Kalendermonats neu. Flex Credits kosten [500 $ je 100.000](https://www.salesforce.com/agentforce/pricing/), und dieselbe Seite vermerkt bei ihren Agentforce-Beispielen, dass Data-360-Credits nicht enthalten sind. Deshalb fehlen diese Zahlen in der ersten Schätzung so oft.
+Die Sätze sinken mit der Menge. Bis 300.000 Credits im Monat gilt der Basissatz, danach fällt er in drei Stufen auf ein Fünftel, bei Unstructured Processing auf 30 Credits pro MB oberhalb von 12,5 Mio. Credits. Die Staffeln gelten je Nutzungsart und beginnen am ersten Tag jedes Kalendermonats neu. Flex Credits kosten [500 € je 100.000](https://www.salesforce.com/eu/agentforce/pricing/), und dieselbe Seite vermerkt bei ihren Agentforce-Beispielen, dass Data-360-Credits nicht enthalten sind. Deshalb fehlen diese Zahlen in der ersten Schätzung so oft.
 
 ## Standard-Parser oder LLM-Parsing: Warum kosten Kataloge das Vierfache?
 
@@ -67,10 +67,10 @@ Nehmen wir einen Maschinenbauer, dessen Agent Händlern und Servicemitarbeitende
 |---|---|---|
 | Erstbefüllung Kataloge | 500 MB × 600, 2.500 × 480, 3.000 × 240 | 2.220.000 |
 | Erstbefüllung Anleitungen und Serviceinfos | 2.000 MB × 150, 1.200 × 120 | 444.000 |
-| **Erstbefüllung in einem Monat** | | **2.664.000 (13.320 $)** |
+| **Erstbefüllung in einem Monat** | | **2.664.000 (13.320 €)** |
 | Monatliche Änderungen | 300 MB × 600 + 100 MB × 150 | 195.000 |
 | Monatliche Suchen | 8.000 × 600.000 Zeilen × 3 je Million | 14.400 |
-| **Laufende Kosten pro Monat** | | **209.400 (1.047 $)** |
+| **Laufende Kosten pro Monat** | | **209.400 (1.047 €)** |
 
 Bei den Suchen nehme ich an, dass jede Abfrage den ganzen Index zählt. Laut Hilfeartikel werden bei hybrider Suche „the number of vectors and keyword records in the search index“ gezählt, und ein typischer Index hat so viele Keyword-Datensätze wie Vektoren. Das [Preisbeispiel von Salesforce](https://www.salesforce.com/data/pricing/agentforce-use-case/) geht davon aus, dass eine Abfrage 20 Prozent der unstrukturierten Daten durchsucht; meine Zahl liegt also auf der sicheren Seite.
 
@@ -80,11 +80,11 @@ Drei Ergebnisse fallen auf. Die Suchen machen 7 Prozent der laufenden Kosten aus
 
 ### Neuindexierung ganzer Datensätze
 
-Der Hilfeartikel behandelt einen Quelldatensatz und alle seine Dateianhänge als eine Einheit. Ändert sich ein Feld an diesem Datensatz oder ein einziger Anhang, werden alle Anhänge neu indexiert. Stellen Sie sich Kataloge vor, die an Produktdatensätzen hängen, deren Preise oder Bestände die SAP-Schnittstelle jede Nacht aktualisiert. Würde das alle Kataloge auch nur einmal pro Woche neu verarbeiten, stünden im Monat 24.000 MB Intelligent Processing auf der Rechnung: rund 6,5 Mio. Credits oder 32.700 $ statt der geplanten 195.000 Credits. Ich würde Dokumente an Objekten oder in einer Data Library ablegen, die keine Schnittstelle anfasst, und das Verhalten vor dem Go-live mit einer kleinen Stichprobe in der Sandbox prüfen.
+Der Hilfeartikel behandelt einen Quelldatensatz und alle seine Dateianhänge als eine Einheit. Ändert sich ein Feld an diesem Datensatz oder ein einziger Anhang, werden alle Anhänge neu indexiert. Stellen Sie sich Kataloge vor, die an Produktdatensätzen hängen, deren Preise oder Bestände die SAP-Schnittstelle jede Nacht aktualisiert. Würde das alle Kataloge auch nur einmal pro Woche neu verarbeiten, stünden im Monat 24.000 MB Intelligent Processing auf der Rechnung: rund 6,5 Mio. Credits oder 32.700 € statt der geplanten 195.000 Credits. Ich würde Dokumente an Objekten oder in einer Data Library ablegen, die keine Schnittstelle anfasst, und das Verhalten vor dem Go-live mit einer kleinen Stichprobe in der Sandbox prüfen.
 
 ### Staffeln beginnen jeden Monat neu
 
-Weil die Staffeln am Monatsersten neu starten, zählt der Zeitpunkt. Die Erstbefüllung oben kostet in einem Monat 2.664.000 Credits. Auf drei Monate verteilt kosten dieselben Dokumente rund 3,54 Mio., also 4.380 $ mehr. Ich plane die Erstbefüllung als einen Lauf in einem Kalendermonat.
+Weil die Staffeln am Monatsersten neu starten, zählt der Zeitpunkt. Die Erstbefüllung oben kostet in einem Monat 2.664.000 Credits. Auf drei Monate verteilt kosten dieselben Dokumente rund 3,54 Mio., also 4.380 € mehr. Ich plane die Erstbefüllung als einen Lauf in einem Kalendermonat.
 
 ### Sandbox ohne Staffeln
 
