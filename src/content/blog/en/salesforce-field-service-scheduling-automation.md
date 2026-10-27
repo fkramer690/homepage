@@ -6,6 +6,7 @@ lang: en
 slug: salesforce-field-service-scheduling-automation
 translationKey: field-service-scheduling-automation
 topic: field-service
+category: field-service
 series: { id: field-service, part: 3 }
 tags: [Field Service, Scheduling, Dispatching, Manufacturing]
 takeaways:

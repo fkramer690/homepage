@@ -6,6 +6,7 @@ lang: de
 slug: manufacturing-cloud-kundenportal
 translationKey: manufacturing-cloud-customer-portal
 topic: service
+category: manufacturing-cloud
 tags: [Manufacturing Cloud, Experience Cloud, Kundenportal, Sales Agreements, Fertigung]
 series: { id: manufacturing-cloud, part: 7 }
 takeaways:

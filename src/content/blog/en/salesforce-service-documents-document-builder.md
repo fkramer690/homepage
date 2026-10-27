@@ -6,6 +6,7 @@ lang: en
 slug: salesforce-service-documents-document-builder
 translationKey: service-documents-document-builder
 topic: field-service
+category: field-service
 tags: [field service, service documents, document builder, document generation, manufacturing]
 takeaways:
   - "Salesforce Service Documents are PDFs that Field Service creates from work orders, work order line items and service appointments, using templates built in Document Builder."

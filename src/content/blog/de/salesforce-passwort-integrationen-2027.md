@@ -6,6 +6,7 @@ lang: de
 slug: salesforce-passwort-integrationen-2027
 translationKey: salesforce-password-integrations-2027
 topic: security
+category: devops
 tags: [Integration, Sicherheit, OAuth, Release-Management, Partnersteuerung]
 takeaways:
   - "Salesforce schaltet den OAuth 2.0 Username-Password Flow für Connected Apps am 20. Februar 2027 ab; Integrationen, die sich mit Benutzer, Passwort und Security Token anmelden, schlagen dann fehl."

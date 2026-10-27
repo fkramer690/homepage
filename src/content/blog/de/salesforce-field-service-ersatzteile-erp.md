@@ -6,6 +6,7 @@ lang: de
 slug: salesforce-field-service-ersatzteile-erp
 translationKey: field-service-spare-parts
 topic: field-service
+category: field-service
 series: { id: field-service, part: 4 }
 tags: [Field Service, Außendienst, Ersatzteile, ERP, Schnittstellen, Fertigung]
 takeaways:

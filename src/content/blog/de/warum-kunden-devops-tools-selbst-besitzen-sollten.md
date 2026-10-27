@@ -6,6 +6,7 @@ lang: de
 slug: warum-kunden-devops-tools-selbst-besitzen-sollten
 translationKey: client-owned-devops-tools
 topic: ownership
+category: devops
 tags: [Partnersteuerung, DevOps, Jira, Vendor Lock-in, Berechtigungsmanagement]
 takeaways:
   - "Kunden sollten Accounts, Lizenzen und Zugriffsrechte ihrer Projekt-Tools immer selbst in der Hand haben, vom Git-Repository und der CI/CD-Pipeline bis zu Jira, Confluence und Miro."

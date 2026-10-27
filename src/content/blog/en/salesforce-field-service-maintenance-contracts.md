@@ -6,6 +6,7 @@ lang: en
 slug: salesforce-field-service-maintenance-contracts
 translationKey: field-service-maintenance-contracts
 topic: field-service
+category: field-service
 series: { id: field-service, part: 5 }
 tags: [Field Service, Maintenance contracts, Entitlements, Manufacturing]
 takeaways:

@@ -6,6 +6,7 @@ lang: de
 slug: salesforce-field-service-einfuehrung
 translationKey: field-service-rollout
 topic: field-service
+category: field-service
 series: { id: field-service, part: 7 }
 tags: [Field Service, Außendienst, Einführung, Betriebsrat, Datenschutz, Fertigung]
 takeaways:

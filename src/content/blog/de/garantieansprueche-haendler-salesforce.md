@@ -6,6 +6,7 @@ lang: de
 slug: garantieansprueche-haendler-salesforce
 translationKey: manufacturing-cloud-warranty-claims
 topic: service
+category: manufacturing-cloud
 tags: [Manufacturing Cloud, Garantie, Händler, After-Sales, Fertigung]
 series: { id: manufacturing-cloud, part: 6 }
 takeaways:
