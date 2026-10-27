@@ -8,7 +8,7 @@ Service pages follow the content rules of the [blog guidelines](blog-guidelines.
 
 `src/components/ServicePage.astro` builds every page the same way. The Markdown file provides the frontmatter and the body:
 
-1. Eyebrow with number and short name (from `src/i18n`), title, lead, "Book a call"
+1. Optional note (`note`), eyebrow with number and short name (from `src/i18n`), title, lead, "Book a call"
 2. Typical situations (`situations`)
 3. What you get (`deliverables`) and results (`results`)
 4. How I work (`phases`, 3–4 steps)
@@ -35,6 +35,7 @@ Blog articles link back to the best matching service automatically (`getPostServ
 | `results` | 3–6 items |
 | `phases` | 3–4 items with `title` (max. 40) and `text` (max. 260) |
 | `faq` | 2–6 questions, answers up to 600 characters |
+| `note`, `notePartner` | optional, max. 240 characters: note shown at the very top, e.g. who the approach was developed with. `notePartner` is a name from `partnerPage.partners` in `src/i18n` and must appear in `note`; it is linked to the partner page and LinkedIn |
 | `blogTags` | 1–8 tags, matched case-insensitively against blog tags |
 
 ## Body
