@@ -58,7 +58,7 @@ What I did not find: an automatic stop. The pages I opened describe alerts only.
 
 ## A typical scenario: three regions in one org
 
-Assume a machine builder with two plants in Germany, a US sales and service subsidiary and a service region in Asia Pacific, all in one org on Advanced Edition. A dealer service agent answers order status and spare parts questions for all regions, and a scheduling agent supports field service in Germany and the US. All numbers are assumptions.
+Assume a machine builder with two plants in Germany, a US sales and service subsidiary and a service region in Asia Pacific (APAC), all in one org on Advanced Edition. A dealer service agent answers order status and spare parts questions for all regions, and a scheduling agent supports field service in Germany and the US. All numbers are assumptions.
 
 | Item per year | Credits | At $5 per 1,000 credits |
 |---|---|---|

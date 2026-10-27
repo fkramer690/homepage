@@ -29,11 +29,11 @@ faq:
 draft: false
 ---
 
-An AI org assessment is worth doing before a relaunch or partner change, as long as the model reads and the tools count. An LLM explains what each Apex class, flow and permission set does, which business process it serves and where partners built the same logic twice. Through the Claude Batch API, a run over 2,250 components costs roughly $59 to $119 in the scenario below. Whether something is unused, which rules it breaks and how much test coverage exists must come from deterministic tools: Code Analyzer, sfdx-hardis monitoring and an Apex test run. I run those first and give their results to the model.
+An AI org assessment is worth doing before a relaunch or partner change, as long as the model reads and the tools count. An LLM explains what each Apex class, flow and permission set does, which business process it serves and where partners built the same logic twice. In the scenario below, a batch run over 2,250 components costs about $59 to $119. Usage, rule violations and test coverage must come from deterministic tools: Code Analyzer, sfdx-hardis monitoring and an Apex test run. I run those first and give their results to the model.
 
 ## Why look at a grown org before a partner change?
 
-A machine builder's org that is ten or twelve years old usually carries the handwriting of several partners: one built the dealer portal, another the service processes for field service (Außendienst in German companies), a third the SAP integration for orders and spare parts. Each brought its own trigger framework, naming and test style. Before a new partner takes over or a relaunch starts, someone has to answer three questions: what is in the org, what of it is used, and what of it is risky to keep.
+A Salesforce org that has grown for ten years under several partners carries their handwriting. At a machine builder, one partner may have built the dealer portal, another the field service processes, a third the SAP integration for orders and spare parts. Each brought its own trigger framework, naming and test style. Before a new partner takes over or a relaunch starts, someone has to answer three questions: what is in the org, what of it is used, and what of it is risky to keep.
 
 The two obvious candidates for that answer are poor ones. The outgoing partner defends its code. The incoming partner has an interest in finding a lot to rebuild. An assessment run by the client, with the client's tools, is the neutral baseline, and it later feeds the [object ownership matrix](../salesforce-object-ownership-matrix/) for the new set-up.
 
@@ -52,10 +52,10 @@ Every finding must point to a method name or line number. I would drop every AI 
 
 ## Which findings must come from deterministic tools?
 
-Anything that is a count, a usage figure or a rule violation. A model reading one class at a time cannot know whether that class is called anywhere, and it cannot prove that something is absent. These tools can:
+Anything that is a count, a usage figure or a rule violation. A model reading one class at a time cannot know whether that class is called anywhere, or prove that something is absent. These tools can:
 
 - **[Salesforce Code Analyzer](https://developer.salesforce.com/docs/platform/salesforce-code-analyzer/guide/engines.html)** bundles eight engines, among them PMD for Apex, CPD, which "identifies blocks of duplication across files", a Flow Scanner for security issues in flows and the Salesforce Graph Engine for deeper Apex analysis.
-- **ApexGuru** is "available only in Production and Full Copy Sandbox orgs" and rates severity with runtime data, according to the [Salesforce Developers Blog](https://developer.salesforce.com/blogs/2026/04/performance-first-apex-development-with-apexguru-in-salesforce-dx-mcp-server). In a pipeline that is a limit. In an assessment against production it is exactly what you want: performance findings ranked by real CPU use.
+- **ApexGuru** is "available only in Production and Full Copy Sandbox orgs" and rates severity with runtime data, according to the [Salesforce Developers Blog](https://developer.salesforce.com/blogs/2026/04/performance-first-apex-development-with-apexguru-in-salesforce-dx-mcp-server). For an assessment against production that is exactly what you want: performance findings ranked by real CPU use.
 - **sfdx-hardis monitoring** runs, according to its [monitoring overview](https://sfdx-hardis.cloudity.com/salesforce-monitoring-home/), checks such as "Detect unused Apex classes in an org", "Detect Apex classes and triggers with deprecated API version", "Detect underused permission sets", "Detect inactive metadata", active users without logins in six months and the Salesforce Security Health Check.
 - **An Apex test run** gives the real coverage per class, which no model should estimate.
 - **Dependencies** come from the Tooling API object [MetadataComponentDependency](https://developer.salesforce.com/docs/atlas.en-us.api_tooling.meta/api_tooling/tooling_api_objects_metadatacomponentdependency.htm), which Salesforce still labels Beta. Who built what comes from Git history or the LastModifiedBy fields, not from the model's guess about coding style.
@@ -85,17 +85,17 @@ The [Claude Batch API](https://platform.claude.com/docs/en/build-with-claude/bat
 - **Opus 5.5:** 42.4 million × $2 + 3.4 million × $10 = **about $119**.
 - **Second pass** for 40 objects at 100,000 tokens in and 5,000 out on Opus 5.5: **about $10**.
 
-Prompt caching stacks with the batch discount, but in batches cache hits are best effort; Anthropic names hit rates from 30 to 98 percent. I calculate without caching and treat any saving as a bonus. Thinking counts as output: if it triples the output, the Opus pass rises to about $186. The basics of this token math are in the [masterclass chapter on costs and tokens](../../ai-masterclass/costs-and-tokens/).
+Prompt caching stacks with the batch discount, but in batches cache hits are best effort; Anthropic names hit rates from 30 to 98 percent. I calculate without caching and treat any saving as a bonus. Thinking tokens are [billed as output](https://code.claude.com/docs/en/costs) and cannot be turned off on the 5.5 models; if they triple the output, the Opus pass rises to about $187. The basics of this token math are in the [masterclass chapter on costs and tokens](../../ai-masterclass/costs-and-tokens/).
 
 ### Where the real cost sits
 
-The token bill is small. The work sits with people. In the scenario I would plan about ten architect days: three or four to set up the tools and write the questions, the rest to check a sample of 10 percent of the findings and every finding marked high risk. Reading 2,250 components by hand at an assumed ten minutes each would take about 375 hours, or 47 days. The LLM does the first read, and people decide.
+The token bill is small; the work sits with people. In the scenario I would plan about ten architect days: three or four to set up the tools and write the questions, the rest to check a sample of 10 percent of the findings and every finding marked high risk. Reading 2,250 components by hand at an assumed ten minutes each would take about 375 hours, or 47 days. The LLM does the first read, and people decide.
 
 ## What about source code and data protection?
 
 The org's source code belongs to the client, and test classes often contain names, email addresses or record IDs. Anthropic's [data retention page](https://platform.claude.com/docs/en/manage-claude/api-and-data-retention) lists batch processing as not eligible for zero data retention, because results are stored for 29 days. The same page says retained data is "never used for model training without your express permission". Strip personal data before the run and agree the set-up with your data protection officer; the German angle is in [AI coding tools, works council and GDPR](../ai-coding-tools-works-council-gdpr/).
 
-If the zero-retention rule is strict, there are two alternatives. You pay full price without the batch, about $119 to $237 in the scenario, after checking which endpoints your contract covers. Or you use the AI documentation in sfdx-hardis, which according to its [AI setup page](https://sfdx-hardis.cloudity.com/salesforce-ai-setup/) works with Agentforce, OpenAI or, through LangChain.js, Anthropic, Google GenAI and Ollama for locally run models. The same page warns that the first documentation run "can make hundreds of API calls" and recommends committing the AI cache, and it caps calls per command at 10,000 by default.
+If the zero-retention rule is strict, there are two alternatives. You pay full price without the batch, about $119 to $238 in the scenario, after checking which endpoints your contract covers. Or you use the AI documentation in sfdx-hardis, which according to its [AI setup page](https://sfdx-hardis.cloudity.com/salesforce-ai-setup/) works with Agentforce, OpenAI or, through LangChain.js, Anthropic, Google GenAI and Ollama for locally run models. The same page warns that the first documentation run "can make hundreds of API calls" and recommends committing the AI cache, and it caps calls per command at 10,000 by default.
 
 ## Who should own the assessment?
 
