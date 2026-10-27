@@ -220,6 +220,35 @@ const drawings: Record<string, Drawing> = {
     ${arrow(110, 66, 144, C)}${arrow(214, 66, 248, C)}${t(229, 58, 'sync', { fill: C, size: 6.8, anchor: 'middle' })}
     <path d="M248 90H214M144 90H110" stroke="${G}" stroke-width="1.2" stroke-dasharray="4 3"/>
     ${t(14, 152, l('billing address: portal, then Salesforce, then ERP', 'Rechnungsadresse: Portal, dann Salesforce, dann ERP'), { size: 7 })}`,
+
+  'manufacturing-cloud-account-forecasting': (l) => `
+    ${[l('ERP order history', 'ERP-Historie'), 'Sales Agreements', 'Opportunities'].map((s, i) => box(14, 26 + i * 34, 84, 24) + t(56, 41 + i * 34, s, { size: 6.8, anchor: 'middle' })).join('')}
+    <path d="M98 38C114 38 112 72 126 72M98 72H126M98 106C114 106 112 72 126 72" fill="none" stroke="${G}" stroke-width="1.2"/>${arrow(126, 72, 140)}
+    ${box(140, 42, 92, 60, C)}${t(186, 62, 'ACCOUNT', { fill: D, size: 7.5, anchor: 'middle' })}${t(186, 73, 'FORECAST', { fill: D, size: 7.5, anchor: 'middle' })}${t(186, 89, l('customer × product × month', 'Kunde × Produkt × Monat'), { size: 6.3, anchor: 'middle' })}
+    <path d="M246 20V124" stroke="${G}" stroke-width="1" stroke-dasharray="4 3"/>${arrow(232, 72, 262, C)}
+    ${box(262, 52, 46, 40)}${t(285, 70, 'ERP', { fill: D, size: 7.5, anchor: 'middle' })}${t(285, 82, l('planning', 'Planung'), { size: 6.8, anchor: 'middle' })}
+    ${t(14, 146, l('2,000 × 500 × 24 = 24 million combinations', '2.000 × 500 × 24 = 24 Mio. Kombinationen'), { size: 7 })}`,
+
+  'manufacturing-cloud-rebate-management': (l) => `
+    ${box(14, 50, 62, 44)}${t(45, 68, 'ERP', { fill: D, size: 7.5, anchor: 'middle' })}${t(45, 81, l('invoices', 'Rechnungen'), { size: 6.8, anchor: 'middle' })}
+    ${arrow(76, 72, 96)}
+    ${box(96, 38, 116, 68)}${t(154, 52, 'TRANSACTION JOURNAL', { fill: D, size: 7, anchor: 'middle' })}
+    <path d="M108 96H136V84H164V72H192V60" fill="none" stroke="${C}" stroke-width="1.6"/>
+    ${t(120, 91, l('tier 1', 'Stufe 1'), { size: 6.3, anchor: 'middle' })}${t(148, 79, l('tier 2', 'Stufe 2'), { size: 6.3, anchor: 'middle' })}${t(176, 67, l('tier 3', 'Stufe 3'), { size: 6.3, anchor: 'middle' })}
+    ${arrow(212, 72, 236)}${check(218, 58)}
+    ${box(236, 50, 70, 44, C)}${t(271, 68, 'ERP', { fill: D, size: 7.5, anchor: 'middle' })}${t(271, 81, l('credit note', 'Gutschrift'), { size: 6.8, anchor: 'middle' })}
+    ${t(14, 136, l('Salesforce calculates and approves, the ERP pays', 'Salesforce rechnet und gibt frei, das ERP zahlt'), { size: 7 })}`,
+
+  'manufacturing-cloud-warranty-claims': (l) => `
+    ${box(14, 62, 66, 36)}${t(47, 78, l('DEALER', 'HÄNDLER'), { fill: D, size: 7.5, anchor: 'middle' })}${t(47, 90, 'Portal', { size: 6.8, anchor: 'middle' })}
+    ${arrow(80, 80, 104)}
+    ${box(104, 58, 112, 44)}${t(160, 75, 'CLAIM', { fill: D, size: 7.5, anchor: 'middle' })}${t(160, 89, l('parts · labour · transport', 'Teile · Arbeit · Transport'), { size: 6.3, anchor: 'middle' })}
+    ${box(104, 12, 112, 30, C)}${t(160, 25, l('ASSET', 'ANLAGE'), { fill: D, size: 7, anchor: 'middle' })}${t(160, 36, l('serial no. · start date', 'Seriennr. · Startdatum'), { size: 6.3, anchor: 'middle' })}
+    <path d="M160 42V58" stroke="${C}" stroke-width="1.3" stroke-dasharray="3 2"/>
+    ${arrow(216, 80, 240)}${check(222, 66)}
+    ${box(240, 62, 66, 36)}${t(273, 78, 'ERP', { fill: D, size: 7.5, anchor: 'middle' })}${t(273, 90, l('credit note', 'Gutschrift'), { size: 6.8, anchor: 'middle' })}
+    <path d="M160 102V116" stroke="${G}" stroke-width="1.2"/><path d="M156.5 111l3.5 5 3.5-5" fill="none" stroke="${G}" stroke-width="1.2"/>
+    ${box(104, 118, 112, 26)}${t(160, 134, l('supplier recovery per part', 'Regress pro Teil'), { size: 6.8, anchor: 'middle' })}`,
 };
 
 export const hasDrawing = (key: string) => key in drawings;
