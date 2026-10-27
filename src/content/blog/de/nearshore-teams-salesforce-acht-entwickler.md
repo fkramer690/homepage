@@ -11,7 +11,7 @@ takeaways:
   - "Ich begrenze Nearshore-Teams für Salesforce auf etwa acht Entwickler. Mit Product Owner und Scrum Master bleibt das Team damit bei zehn Personen, der Obergrenze aus dem Scrum Guide."
   - "Mit jeder weiteren Person wächst die Zahl der Abstimmungswege schneller als die Kapazität: Acht Personen haben 28 Wege miteinander, zwölf schon 66 und sechzehn 120."
   - "Braucht ein Programm mehr Kapazität, setze ich mehrere Teams mit klaren Verantwortlichkeiten auf statt eines großen Teams, etwa über eine Object Ownership Matrix."
-  - "Rotation, Fluktuation und zu seniore Teams bremsen Nearshore-Teams öfter als fehlende Skills. Regeln zu Besetzung und Rotation gehören deshalb vor den ersten Sprint."
+  - "Rotation, Fluktuation und zu seniore Teams bremsen Nearshore-Teams öfter als fehlende Skills. Eine Mindestverweildauer von etwa sechs Monaten gehört deshalb vor den ersten Sprint."
 faq:
   - q: "Wie groß sollte ein Nearshore-Team für Salesforce sein?"
     a: "Bis zu etwa acht Entwickler pro Team. Mit Product Owner und Scrum Master sind das zehn Personen, die Obergrenze, die der Scrum Guide nennt. Darüber nimmt die Abstimmung überhand, und Sprint-Meetings werden lang."
@@ -68,6 +68,10 @@ Damit mehrere Teams nicht wieder ein großes Team werden, brauchen sie vier geme
 
 Die Teams müssen nicht gleich groß sein. Ein Stream mit vielen Schnittstellen braucht vielleicht sechs Entwickler, ein kleiner Stream drei. Wichtig ist, dass keins über acht wächst und dass jedes weiß, wofür es verantwortlich ist.
 
+In der Praxis ist die Grenze selten ein Problem, wenn die Teams entlang der Streams geschnitten sind. Ein Stream ist selten so groß, dass mehr als acht Personen zum Beispiel an der Sales Cloud arbeiten. Wird ein Team größer, liegen die Aufgaben meist schon so weit auseinander, dass zwei Teams mehr Sinn ergeben. Häufig sehe ich das Gegenteil: Sales und Service landen in einem Topf, weil beide auf Account und Contact arbeiten. Das ergibt nur bedingt Sinn, denn die Prozesse, Fachbereiche und Releases der beiden unterscheiden sich stark.
+
+In meinem größten Programm waren auch Nearshore-Teams dabei. Meist haben sie einzelne Streams komplett gestemmt, vom Backlog bis zum Release. Das funktioniert gut, weil ein Team dann einen klaren Bereich hat und nicht für mehrere Streams gleichzeitig arbeitet.
+
 ## Was bremst Nearshore-Teams außer der Größe?
 
 Liefert ein Nearshore-Team weniger als erwartet, werden oft zuerst die Skills verantwortlich gemacht. Ich habe mit Nearshore-Teams in Osteuropa und Indien gearbeitet, und die Gründe lagen in beiden Regionen meist woanders:
@@ -79,12 +83,12 @@ Liefert ein Nearshore-Team weniger als erwartet, werden oft zuerst die Skills ve
 
 Kultur zählt dabei so viel wie Skills: gemeinsame Werte, Vertrauen und der Wille zu liefern, auf beiden Seiten. Ein kleines, stabiles Team baut das schneller auf als ein großes, das sich ständig neu zusammensetzt.
 
-## Welche Regeln vereinbare ich vor dem ersten Sprint?
+## Welche Regeln gehören vor den ersten Sprint?
 
-Die meisten dieser Probleme lassen sich vertraglich und organisatorisch begrenzen, wenn man sie vor dem Start anspricht. Mit dem Nearshore-Partner vereinbare ich deshalb Regeln zu:
+Die meisten dieser Probleme lassen sich vertraglich und organisatorisch begrenzen, wenn man sie vor dem Start anspricht. Kunde und Nearshore-Partner sollten deshalb Regeln vereinbaren zu:
 
 - **Teamgröße und Rollen**, also wie viele Entwickler, welche Seniorität und wer Reviews übernimmt.
-- **Besetzung und Rotation.** Wie lange bleibt eine Person mindestens im Team, und wie viel Vorlauf gibt es bei einem Wechsel?
+- **Besetzung und Rotation.** Wie lange bleibt eine Person mindestens im Team, und wie viel Vorlauf gibt es bei einem Wechsel? Je nach Größe des Programms halte ich sechs Monate Mindestverweildauer für sinnvoll.
 - **Übergabe bei Wechseln.** Wer arbeitet eine neue Person ein, und wie lange überlappen alte und neue Person?
 - **Kommunikation.** Welche Meetings sind gemeinsam, wer ist auf Kundenseite für Fragen erreichbar, und in welcher Zeit wird geantwortet?
 

@@ -11,7 +11,7 @@ takeaways:
   - "I cap Salesforce nearshore teams at about eight developers. With a product owner and a scrum master, the team stays at ten people, the upper limit in the Scrum Guide."
   - "With every extra person, the number of communication paths grows faster than capacity: eight people have 28 paths between them, twelve have 66 and sixteen have 120."
   - "If a programme needs more capacity, I set up several teams with clear responsibilities instead of one large team, for example through an object ownership matrix."
-  - "Rotation, turnover and overly senior teams slow nearshore teams down more often than missing skills. Rules on staffing and rotation belong before the first sprint."
+  - "Rotation, turnover and overly senior teams slow nearshore teams down more often than missing skills. A minimum stay of about six months belongs in the agreement before the first sprint."
 faq:
   - q: "How large should a Salesforce nearshore team be?"
     a: "Up to about eight developers per team. With a product owner and a scrum master that makes ten people, the upper limit the Scrum Guide names. Beyond that, coordination takes over and sprint meetings get long."
@@ -68,6 +68,10 @@ To keep several teams from turning back into one large team, they need four shar
 
 The teams do not have to be the same size. A stream with many interfaces may need six developers, a small stream three. What matters is that none grows beyond eight and that each one knows what it is responsible for.
 
+In practice the limit is rarely a problem when teams are cut along streams. A stream is rarely so large that more than eight people work on, say, Sales Cloud. When a team grows bigger, the tasks are usually far enough apart that two teams make more sense. I often see the opposite: sales and service end up in one pot because both work on Account and Contact. That only makes limited sense, because their processes, business owners and releases differ a lot.
+
+My largest programme included nearshore teams as well. Mostly they carried individual streams completely, from backlog to release. That works well, because the team then has a clear area and does not work for several streams at once.
+
 ## What slows nearshore teams down besides size?
 
 When a nearshore team delivers less than expected, skills are often blamed first. I have worked with nearshore teams in Eastern Europe and India, and in both regions the reasons were usually elsewhere:
@@ -79,12 +83,12 @@ When a nearshore team delivers less than expected, skills are often blamed first
 
 Culture counts as much as skills: shared values, trust and the will to deliver, on both sides. A small, stable team builds that faster than a large one that keeps changing its members.
 
-## Which rules do I agree before the first sprint?
+## Which rules belong before the first sprint?
 
-Most of these problems can be limited contractually and organisationally if you raise them before the start. With the nearshore partner I therefore agree rules on:
+Most of these problems can be limited contractually and organisationally if you raise them before the start. The client and the nearshore partner should therefore agree rules on:
 
 - **Team size and roles**, meaning how many developers, which seniority and who does reviews.
-- **Staffing and rotation.** How long does a person stay in the team at least, and how much notice is there before a change?
+- **Staffing and rotation.** How long does a person stay in the team at least, and how much notice is there before a change? Depending on the size of the programme, I consider a minimum of six months sensible.
 - **Handover on changes.** Who onboards a new person, and how long do the old and new person overlap?
 - **Communication.** Which meetings are shared, who on the client side is available for questions, and how quickly are they answered?
 
