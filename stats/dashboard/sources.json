@@ -6,7 +6,12 @@
  },
  {
   "source": "Direct",
-  "pageviews": 10,
-  "visits": 10
+  "pageviews": 40,
+  "visits": 40
+ },
+ {
+  "source": "www.fk-sd.de",
+  "pageviews": 20,
+  "visits": 0
  }
 ]

@@ -1,5 +1,10 @@
 [
  {
+  "page": "/",
+  "pageviews": 50,
+  "visits": 30
+ },
+ {
   "page": "/homepage/",
   "pageviews": 30,
   "visits": 10

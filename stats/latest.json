@@ -1,28 +1,28 @@
 {
-  "generatedAt": "2026-10-26T11:03:18.560Z",
+  "generatedAt": "2026-10-27T04:48:16.532Z",
   "range": {
-    "start": "2026-09-26",
-    "end": "2026-10-26"
+    "start": "2026-09-27",
+    "end": "2026-10-27"
   },
   "browsers": [
     {
-      "count": 70,
+      "count": 120,
       "dimensions": {
         "userAgentBrowser": "Chrome"
       },
       "sum": {
-        "visits": 10
+        "visits": 40
       }
     }
   ],
   "countries": [
     {
-      "count": 70,
+      "count": 120,
       "dimensions": {
         "countryName": "DE"
       },
       "sum": {
-        "visits": 10
+        "visits": 40
       }
     }
   ],
@@ -35,20 +35,38 @@
       "sum": {
         "visits": 10
       }
+    },
+    {
+      "count": 50,
+      "dimensions": {
+        "date": "2026-10-26"
+      },
+      "sum": {
+        "visits": 30
+      }
     }
   ],
   "devices": [
     {
-      "count": 70,
+      "count": 120,
       "dimensions": {
         "deviceType": "desktop"
       },
       "sum": {
-        "visits": 10
+        "visits": 40
       }
     }
   ],
   "pages": [
+    {
+      "count": 50,
+      "dimensions": {
+        "requestPath": "/"
+      },
+      "sum": {
+        "visits": 30
+      }
+    },
     {
       "count": 30,
       "dimensions": {
@@ -106,12 +124,21 @@
       }
     },
     {
-      "count": 10,
+      "count": 40,
       "dimensions": {
         "refererHost": ""
       },
       "sum": {
-        "visits": 10
+        "visits": 40
+      }
+    },
+    {
+      "count": 20,
+      "dimensions": {
+        "refererHost": "www.fk-sd.de"
+      },
+      "sum": {
+        "visits": 0
       }
     }
   ]
