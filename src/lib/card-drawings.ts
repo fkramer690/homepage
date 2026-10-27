@@ -80,6 +80,13 @@ const drawings: Record<string, Drawing> = {
     ${t(176, 132, l('dispatcher reviews and releases', 'Disponent prüft und gibt frei'), { fill: C, size: 7 })}
     ${t(18, 30, l('trust grows: more automatic', 'Vertrauen wächst: mehr Automatik'), { size: 7.5 })}`,
 
+  'field-service-spare-parts': (l) => `
+    ${box(20, 40, 86, 80)}${t(63, 62, 'ERP', { fill: D, size: 9, anchor: 'middle' })}${t(63, 78, l('stock leads', 'führt Bestand'), { size: 7, anchor: 'middle' })}${t(63, 92, l('valuation', 'Bewertung'), { size: 7, anchor: 'middle' })}${t(63, 106, l('purchasing', 'Einkauf'), { size: 7, anchor: 'middle' })}
+    ${box(214, 40, 86, 80, C)}${t(257, 62, 'FIELD SERVICE', { fill: D, size: 7.5, anchor: 'middle' })}${t(257, 78, l('copy of stock', 'Kopie Bestand'), { size: 7, anchor: 'middle' })}${t(257, 92, l('parts consumed', 'Verbrauch'), { size: 7, anchor: 'middle' })}
+    ${arrow(106, 62, 214)}${t(160, 56, l('stock, material', 'Bestand, Material'), { size: 7, anchor: 'middle' })}
+    <path d="M214 100H107" stroke="${C}" stroke-width="1.3"/><path d="M112 96.5l-5 3.5 5 3.5" fill="none" stroke="${C}" stroke-width="1.3"/>${t(160, 114, l('consumption, requests', 'Verbrauch, Anforderung'), { fill: C, size: 7, anchor: 'middle' })}
+    <rect x="234" y="128" width="26" height="14" rx="2" fill="${D}"/><circle cx="240" cy="144" r="2.6" fill="${D}"/><circle cx="254" cy="144" r="2.6" fill="${D}"/>${t(266, 140, l('van = location', 'Fahrzeug = Standort'), { size: 7 })}`,
+
   'salesforce-winter-27-pipeline': (l) => `
     ${['build', 'validate', 'deploy'].map((s, i) => box(20 + i * 62, 30, 50, 26) + t(45 + i * 62, 47, s, { size: 7.5, anchor: 'middle' })).join('')}
     ${arrow(70, 43, 82)}${arrow(132, 43, 144)}
