@@ -221,6 +221,8 @@ export const en = {
     cta: 'Book a 30-minute call',
     bookingNote: 'Pick a slot in my calendar via Microsoft Bookings. Prefer to write? Use the form and I’ll get back to you.',
     linkedinLabel: 'LinkedIn',
+    briefBring: 'What to bring',
+    briefClarify: 'What we clarify',
     form: {
       title: 'Send a message',
       name: 'Name',
@@ -249,8 +251,6 @@ export const en = {
     back: 'All articles',
     filterLabel: 'Filter by topic',
     filterAll: 'All',
-    ctaTitle: 'Facing a similar decision?',
-    ctaText: 'Let’s talk for 30 minutes about your project. No sales pitch, just an architect’s view.',
     takeaways: 'Key takeaways',
     faq: 'Frequently asked questions',
     related: 'Related articles',
@@ -298,8 +298,6 @@ export const en = {
     phases: 'How we work together',
     faq: 'Frequently asked questions',
     posts: 'Further reading',
-    ctaTitle: 'Does this sound like your programme?',
-    ctaText: 'Let’s talk for 30 minutes about where you stand. No sales pitch, just an architect’s view.',
   },
   masterclass: {
     name: 'AI masterclass',

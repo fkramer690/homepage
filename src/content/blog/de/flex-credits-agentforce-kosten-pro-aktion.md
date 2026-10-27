@@ -7,6 +7,7 @@ slug: flex-credits-agentforce-kosten-pro-aktion
 translationKey: flex-credits-agentforce-costs
 topic: ai
 category: ai
+contactBrief: licences
 tags: [Agentforce, Flex Credits, Kostenschätzung, Lizenzen, Data 360, Maschinenbau]
 takeaways:
   - "Eine Agentforce-Schätzung braucht mehrere Zähler: Aktionen zu 20 Flex Credits, Sprachaktionen zu 30, Prompts nach Modellstufe, Data-360-Verarbeitung von Dokumenten und Testläufe in der Sandbox."

@@ -2,6 +2,7 @@
 title: "Salesforce Well-Architected: What the new framework changes"
 description: "Since September 2026 the Salesforce Well-Architected Framework has five pillars and an agentic lens. What changed and how to use it in your programme."
 pubDate: 2026-10-23
+updatedDate: 2026-10-27
 lang: en
 slug: salesforce-well-architected-framework-2026
 translationKey: salesforce-well-architected-2026
@@ -90,6 +91,8 @@ For all the agreement: it is still a vendor document.
 - **It does not replace a decision.** The framework provides questions and patterns. Whether you need 99.5 percent availability or 99, whether you build or buy, depends on your business model and not on the document.
 
 ## How do I use the framework in a programme with several partners?
+
+I already used the old framework with Trusted, Easy and Adaptable in client projects and presented it in user group talks.
 
 In my largest programme so far, more than 30 developers in 8 streams worked for 5 implementation partners in the same org. It took us about three months to settle the shared standards: naming conventions, one automation per object, test coverage rules, a matrix of which stream owns which object, and rules for what belongs in custom metadata types or custom labels. 80 percent were in place after the first round, the rest was added over the following months.
 

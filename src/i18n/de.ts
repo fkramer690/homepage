@@ -223,6 +223,8 @@ export const de: Dict = {
     cta: '30-Minuten-Gespräch vereinbaren',
     bookingNote: 'Wählen Sie einen Termin in meinem Kalender über Microsoft Bookings. Lieber schreiben? Nutzen Sie das Formular, ich melde mich bei Ihnen.',
     linkedinLabel: 'LinkedIn',
+    briefBring: 'Bitte mitbringen',
+    briefClarify: 'Das klären wir',
     form: {
       title: 'Nachricht senden',
       name: 'Name',
@@ -251,8 +253,6 @@ export const de: Dict = {
     back: 'Alle Artikel',
     filterLabel: 'Nach Thema filtern',
     filterAll: 'Alle',
-    ctaTitle: 'Stehen Sie vor einer ähnlichen Entscheidung?',
-    ctaText: 'Lassen Sie uns 30 Minuten über Ihr Projekt sprechen. Kein Verkaufsgespräch, sondern der Blick eines Architekten.',
     takeaways: 'Das Wichtigste in Kürze',
     faq: 'Häufige Fragen',
     related: 'Weitere Artikel',
@@ -300,8 +300,6 @@ export const de: Dict = {
     phases: 'So läuft die Zusammenarbeit',
     faq: 'Häufige Fragen',
     posts: 'Weiterlesen im Blog',
-    ctaTitle: 'Klingt das nach Ihrem Programm?',
-    ctaText: 'Lassen Sie uns 30 Minuten darüber sprechen, wo Sie stehen. Kein Verkaufsgespräch, sondern der Blick eines Architekten.',
   },
   masterclass: {
     name: 'Masterclass KI',

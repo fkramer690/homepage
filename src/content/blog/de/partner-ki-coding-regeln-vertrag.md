@@ -7,6 +7,7 @@ slug: partner-ki-coding-regeln-vertrag
 translationKey: partners-ai-coding-sow-rules
 topic: governance
 category: architecture
+contactBrief: partner-governance
 tags: [Partnersteuerung, KI-Coding, Leistungsbeschreibung, Datenschutz, Code-Review, Maschinenbau]
 takeaways:
   - "Programmiert ein Salesforce-Partner mit KI-Agenten, sollte die Leistungsbeschreibung offengelegte Tools und Modellwege, erlaubte Daten, keinen Produktionszugriff, Review jeder Zeile, Rechte und Haftung regeln."

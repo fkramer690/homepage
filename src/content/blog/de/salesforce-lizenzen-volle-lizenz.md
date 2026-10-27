@@ -7,6 +7,7 @@ slug: salesforce-lizenzen-volle-lizenz
 translationKey: salesforce-licence-types
 topic: governance
 category: architecture
+contactBrief: licences
 tags: [Lizenzen, Make-or-buy, Business Case, Platform, Experience Cloud]
 takeaways:
   - "Nicht jeder Salesforce-Nutzer braucht eine volle Lizenz. Wer nur liest, freigibt oder in einem engen eigenen Prozess arbeitet, kommt oft mit einer Platform-Lizenz aus."

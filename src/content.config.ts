@@ -4,6 +4,7 @@ import { z } from 'astro/zod';
 import { topicIds } from './lib/topics';
 import { seriesIds } from './lib/series';
 import { categoryIds } from './lib/categories';
+import { contactBriefIds } from './lib/contact-briefs';
 
 // Blog articles live as Markdown in src/content/blog/<lang>/<slug>.md.
 // The EN and DE version of an article share the same translationKey.
@@ -24,6 +25,8 @@ const blog = defineCollection({
     topic: z.enum(topicIds),
     // Filter category on the blog overview (src/lib/categories.ts).
     category: z.enum(categoryIds),
+    // Optional: closing call to action other than the category's (src/lib/contact-briefs.ts).
+    contactBrief: z.enum(contactBriefIds).optional(),
     tags: z.array(z.string()).min(1).max(6),
     // Optional: the article is part `part` of a series defined in src/lib/series.ts.
     series: z.object({ id: z.enum(seriesIds), part: z.number().int().min(1) }).optional(),
@@ -57,6 +60,8 @@ const services = defineCollection({
     faq: z.array(z.object({ q: z.string().max(120), a: z.string().max(600) })).min(2).max(6),
     // Blog tags whose articles are listed as further reading on this page.
     blogTags: z.array(z.string()).min(1).max(8),
+    // Closing call to action: what to bring to the first call (src/lib/contact-briefs.ts).
+    contactBrief: z.enum(contactBriefIds),
   }),
 });
 
