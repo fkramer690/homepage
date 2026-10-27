@@ -47,7 +47,7 @@ The developer guide lists these options for B2B stores, available in Enterprise,
 | Purchase Order | For B2B stores that accept purchase orders only | No gateway |
 | Payment | Card payment through a third-party provider | Server-side gateway |
 | Dual Payment | Card and purchase order, for B2B stores only | Server-side gateway for the card |
-| Salesforce Payments | Several payment methods, saved methods optional, B2B stores can show a PO option | Stripe merchant account |
+| Salesforce Payments | Several payment methods, saved methods optional, B2B stores can show a PO option | Merchant account set up in the Commerce app |
 | Express Checkout | Apple Pay, Google Pay, PayPal and Venmo | Salesforce Payments |
 | Custom component | Your own client-side component that talks to the provider directly | Own development |
 
@@ -93,7 +93,7 @@ If the workshops turn out to be fewer than expected, the simpler alternative is 
 
 ## What happens after the order is placed?
 
-An order from the store creates an order summary in Salesforce. Order summaries created by B2B Commerce have the lifecycle type unmanaged, and updates from the external system "must be reflected in Salesforce" ([Salesforce Developers, managed and unmanaged order summaries](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-import-export-managed-unmanaged.html)). The order with PO number, billing address and payment information goes to the ERP, which creates the sales order and later the invoice.
+An order from the store creates an order summary in Salesforce. Order summaries created by B2B Commerce itself have the lifecycle type unmanaged, those created by Salesforce Order Management are managed. For unmanaged ones, updates from the external system "must be reflected in Salesforce" ([Salesforce Developers, managed and unmanaged order summaries](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-import-export-managed-unmanaged.html)). The order with PO number, billing address and payment information goes to the ERP, which creates the sales order and later the invoice.
 
 Who owns the order from that point on is covered in [B2B store orders to the ERP](../b2b-store-orders-to-erp/), and which data flows between store and SAP in [B2B Commerce and SAP: which data flows where?](../b2b-commerce-sap-data-flows/). How dealers get to the checkout faster, with past orders and templates, is the topic of [reorders in B2B Commerce](../b2b-commerce-reorder-order-templates/).
 

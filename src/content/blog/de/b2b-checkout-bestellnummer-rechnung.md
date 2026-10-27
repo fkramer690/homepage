@@ -47,7 +47,7 @@ Das Entwicklerhandbuch nennt für B2B-Shops diese Optionen, verfügbar in Enterp
 | Purchase Order | Für B2B-Shops, die nur Bestellnummern annehmen | Kein Gateway |
 | Payment | Kartenzahlung über einen Drittanbieter | Serverseitiges Gateway |
 | Dual Payment | Karte und Bestellnummer, nur für B2B | Serverseitiges Gateway für die Karte |
-| Salesforce Payments | Mehrere Zahlarten, gespeicherte Zahlungsmittel optional, in B2B mit Bestellnummer | Stripe-Händlerkonto |
+| Salesforce Payments | Mehrere Zahlarten, gespeicherte Zahlungsmittel optional, in B2B mit Bestellnummer | Händlerkonto in der Commerce-App |
 | Express Checkout | Apple Pay, Google Pay, PayPal und Venmo | Salesforce Payments |
 | Eigene Komponente | Clientseitige Komponente, die direkt mit dem Anbieter spricht | Eigenentwicklung |
 
@@ -93,7 +93,7 @@ Sind es am Ende weniger Werkstätten als gedacht, ist die einfachere Alternative
 
 ## Was passiert nach dem Abschicken der Bestellung?
 
-Eine Bestellung im Shop erzeugt in Salesforce eine Order Summary. Order Summaries aus B2B Commerce haben den Lebenszyklustyp unmanaged, und Änderungen im externen System "must be reflected in Salesforce" ([Salesforce Developers, managed und unmanaged Order Summaries](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-import-export-managed-unmanaged.html)). Die Bestellung mit Bestellnummer, Rechnungsadresse und Zahlungsinformation geht ans ERP, das den Kundenauftrag und später die Rechnung erzeugt.
+Eine Bestellung im Shop erzeugt in Salesforce eine Order Summary. Order Summaries, die B2B Commerce selbst anlegt, haben den Lebenszyklustyp unmanaged, solche aus Salesforce Order Management sind managed. Bei unmanaged gilt: Änderungen im externen System "must be reflected in Salesforce" ([Salesforce Developers, managed und unmanaged Order Summaries](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-import-export-managed-unmanaged.html)). Die Bestellung mit Bestellnummer, Rechnungsadresse und Zahlungsinformation geht ans ERP, das den Kundenauftrag und später die Rechnung erzeugt.
 
 Wem der Auftrag ab dann gehört, beschreibe ich in [Shop-Bestellungen ins ERP](../shop-bestellungen-erp-auftrag/), welche Daten zwischen Shop und SAP fließen, in [B2B Commerce und SAP](../b2b-commerce-sap-datenfluesse/). Wie Händler mit alten Bestellungen und Vorlagen schneller zum Checkout kommen, steht in [Nachbestellen im B2B-Shop](../nachbestellen-b2b-shop-vorlagen/).
 
