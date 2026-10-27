@@ -8,6 +8,11 @@ export const series = {
     de: 'Salesforce Field Service für Hersteller',
     parts: 7,
   },
+  'manufacturing-cloud': {
+    en: 'Salesforce Manufacturing Cloud for manufacturers',
+    de: 'Salesforce Manufacturing Cloud für Hersteller',
+    parts: 8,
+  },
 } as const;
 
 export type SeriesId = keyof typeof series;
