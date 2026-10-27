@@ -37,10 +37,10 @@ Salesforce announced Agentforce for Field Service in [April 2025](https://www.sa
 | Customers | Proactive maintenance: the agent contacts customers and books visits based on maintenance plan dates | GA since August 2025 |
 | Customers | Booking by phone with Agentforce Voice | Winter '27 highlights, check status in your org |
 | Dispatchers | Fill gaps from cancellations, no-shows and early completions | GA since April 2025 |
-| Technicians | Pre-Work Brief, also as audio playback | GA since April 2025, interactive in Summer '26 |
+| Technicians | Pre-Work Brief, also as audio playback | Playback GA since April 2025, interactive version in Summer '26 |
 | Technicians | Post-Work Summary, drafted onto the work order | GA since April 2025 |
 | Technicians | Step-by-step troubleshooting from manuals, past repairs and photos | GA since June 2025 |
-| Assets | Asset Service Prediction | Announced as open beta in 2024, no GA date found |
+| Assets | Asset Service Prediction: when and why an asset fails | Announced as open beta in 2024, no GA date found |
 
 Salesforce backs the booking agent with its own numbers: an on-site appointment takes 17 minutes to schedule, 15 to change and 12 to cancel, and the agent should get it done in under five. The [Winter '27 announcement](https://salesforce.com/news/stories/winter-2027-product-release-announcement) promises voice booking in seconds instead of 15 minutes. These are vendor figures from mixed industries, not results from machine builders.
 
@@ -54,11 +54,11 @@ Field Service agents have two price models, and they follow the line between cus
 
 **Employee functions are priced per user.** The [Agentforce for Field Service](https://www.salesforce.com/service/field-service-management/ai/pricing/) add-on costs $125 or €125 per user and month on an annual contract and includes assistive AI for dispatchers and technicians with unmetered employee agent usage. The alternative is Agentforce 1 Field Service at $650 per user and month, with unlimited employee usage plus 1 million Flex Credits and 2.5 million Data Cloud credits per org every year. Both come on top of, or instead of, the $175 Technician licence from [part 1 of the Field Service series](../salesforce-field-service-worth-it/).
 
-The consequence for budgeting: a booking agent costs cents per booking, while the employee add-on for 60 technicians costs $90,000 a year at list price. Manuals for troubleshooting add Data 360 processing at 150 credits per MB. How to estimate credits per process is covered in [Flex Credits and Agentforce cost per action](../flex-credits-agentforce-cost-per-action/), and what grounding on documents costs in [Data 360 costs for AI agents](../data-360-costs-for-ai-agents/).
+The consequence for budgeting: a booking agent costs cents per booking, while the employee add-on for 60 technicians costs $90,000 a year at list price. If troubleshooting is grounded on manuals in Data 360, processing adds 150 credits per MB. How to estimate credits per process is covered in [Flex Credits and Agentforce cost per action](../flex-credits-agentforce-cost-per-action/), and what grounding on documents costs in [Data 360 costs for AI agents](../data-360-costs-for-ai-agents/).
 
 ## Which functions make sense for a machine builder?
 
-Field service at a machine builder differs from installing routers or servicing heating systems. Jobs are fewer and longer, machines carry serial numbers and contracts, and the person on the other end is a plant manager who has to plan a shutdown. Measured against that, I sort the functions like this.
+Field service at a machine builder differs from installing routers or servicing alarm systems. Jobs are fewer and longer, machines carry serial numbers and contracts, and the person on the other end is a plant manager who has to plan a shutdown. Measured against that, I sort the functions like this.
 
 **Proactive maintenance booking fits best.** Maintenance plans already generate the work orders, as described in [modelling maintenance contracts](../salesforce-field-service-maintenance-contracts/). The agent only has to agree a date. The catch is the shutdown window: the agent knows the operating hours on the account and nothing about next week's production peak. If no window is maintained, it should propose dates and pass the case to a dispatcher instead of booking.
 
