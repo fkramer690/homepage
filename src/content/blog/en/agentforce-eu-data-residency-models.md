@@ -42,7 +42,7 @@ According to the privacy FAQ, in some cases "Customer Data is sent to OpenAI dir
 
 ## Which model answers your dealer today?
 
-The first question is which model your agent uses. The Supported Models page says the "Salesforce Default" option for Agentforce is a managed mix that currently includes GPT-4o, and the "AWS-Hosted" option uses Claude Sonnet 4 on Bedrock. Trailhead says Agentforce reasoning engine calls use OpenAI GPT-4o, "and in some cases Azure OpenAI GPT-4o", as the default. Since the [Claudeforce release](https://www.salesforce.com/ap/news/press-releases/2026/08/27/sg-salesforce-and-anthropic-announce-claudeforce-the-1-ai-meets-the-1-ai-crm/) of 27 August 2026, Claude also serves "as a reasoning model for the Atlas Reasoning Engine" and is available in Agent Builder.
+The first question is which model your agent uses. The Supported Models page says the "Salesforce Default" option for Agentforce is a managed mix that currently includes GPT-4o, and the "AWS-Hosted" option uses Claude Sonnet 4 on Bedrock. Trailhead says Agentforce reasoning engine calls use OpenAI GPT-4o, "and in some cases Azure OpenAI GPT-4o", as the default. Since the [Claudeforce release](https://www.salesforce.com/ap/news/press-releases/2026/08/27/sg-salesforce-and-anthropic-announce-claudeforce-the-1-ai-meets-the-1-ai-crm/) of 27 August 2026, Claude also serves "as a reasoning model for the Atlas Reasoning Engine".
 
 Salesforce's [Infrastructure and Sub-processors document](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/documents/legal/misc/salesforce-infrastructure-and-subprocessors.pdf) of 19 December 2025 counts Agentforce under Einstein Generative AI Services and lists, among others:
 
@@ -56,7 +56,7 @@ My reading: a model on Bedrock has a documented rule that ties it to the AWS reg
 
 ## Does geo-aware routing keep requests in the EU?
 
-According to the Supported Models page, geo-aware models route "your LLM request to a nearby data center based on where Data 360 is provisioned for your org", and your Einstein generative AI platform region is the same as your Data 360 region. Otherwise Salesforce refers you to your account executive. A [Salesforce Help article](https://help.salesforce.com/s/articleView?id=000396615&language=en_US&type=1) lists Einstein Platform and Agentforce instances on AWS in Frankfurt, Paris, Milan, Stockholm, London and Zurich.
+According to the Supported Models page, geo-aware models route "your LLM request to a nearby data center based on where Data 360 is provisioned for your org", and your Einstein generative AI platform region is the same as your Data 360 region. A [Salesforce Help article](https://help.salesforce.com/s/articleView?id=000396615&language=en_US&type=1) lists Einstein Platform and Agentforce instances on AWS in Frankfurt, Paris, Milan, Stockholm, London and Zurich.
 
 Three points remain open:
 
@@ -88,7 +88,7 @@ Assume a machine builder in Germany with 300 dealers in France, Italy, Austria, 
 
 **Switzerland.** The documented failover for Swiss data runs through AWS in the US. The data protection officer accepts it under the Standard Contractual Clauses and documents it.
 
-**The prompt.** The agent identifies dealers by account number and leaves contact names out of the prompt, because the answer does not need them.
+**The prompt.** The agent identifies dealers by account number and leaves contact names out of the prompt, which the answer does not need.
 
 **Koa.** The evaluation is postponed until an EU date exists.
 

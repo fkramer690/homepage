@@ -32,64 +32,60 @@ For most manufacturers, the right Agentforce LLM choice is a pinned Salesforce-m
 
 ## Which models can an Agentforce agent use today?
 
-Salesforce offers three groups of models, listed on the [Supported Models page](https://developer.salesforce.com/docs/ai/agentforce/guide/supported-models.html), which carries no update date:
+The [Supported Models page](https://developer.salesforce.com/docs/ai/agentforce/guide/supported-models.html), which carries no update date, lists three groups:
 
-- **Salesforce Default.** Described as "a managed mix of trusted models" that currently includes GPT-4o. An alternative "AWS-Hosted" option uses Claude Sonnet 4 on Amazon Bedrock, which the same page lists as rerouted to Sonnet 4.6. You change the default on the Agentforce Agents page in Setup.
-- **Salesforce-managed models.** On Bedrock: Claude Haiku 4.5, Sonnet 4.5, 4.6 and 5, Opus 4.5 to 4.8, Amazon Nova and NVIDIA Nemotron 3 (Beta). From OpenAI and Azure OpenAI: GPT-4o up to GPT 5.6 Luna, Sol and Terra, plus o3 and o4-mini. On Vertex AI: Gemini 2.5 Flash up to 3.6 Flash and Gemini 3.1 Pro (Beta).
-- **Bring your own LLM (BYOLLM).** Your own account at Amazon Bedrock, Azure OpenAI, OpenAI or Vertex AI, or any model behind the LLM Open Connector.
+- **Salesforce Default**, "a managed mix of trusted models" that currently includes GPT-4o. You change the org default on the Agentforce Agents page in Setup.
+- **Salesforce-managed models**: Claude Haiku 4.5 up to Sonnet 5 and Opus 4.8, Amazon Nova and NVIDIA Nemotron 3 (Beta) on Bedrock; GPT-4o up to GPT 5.6 Luna, Sol and Terra from OpenAI and Azure OpenAI; Gemini 2.5 Flash up to 3.6 Flash and Gemini 3.1 Pro (Beta) on Vertex AI.
+- **Bring your own LLM (BYOLLM)**: your own account at Amazon Bedrock, Azure OpenAI, OpenAI or Vertex AI, or any model behind the LLM Open Connector.
 
-Where the model runs differs by group. Anthropic and Amazon models run on Bedrock "entirely within the Salesforce Trust Boundary", other managed models "inside a shared trust zone" with Salesforce's partners. What that means for masking and logging is covered in [what the Einstein Trust Layer protects](../einstein-trust-layer-what-it-protects/).
+Anthropic and Amazon models run on Bedrock "entirely within the Salesforce Trust Boundary", other managed models "inside a shared trust zone" with Salesforce's partners. What that means for masking and logging is covered in [what the Einstein Trust Layer protects](../einstein-trust-layer-what-it-protects/).
 
-Two announcements add to the picture. The [Claudeforce press release of 27 August 2026](https://www.salesforce.com/ap/news/press-releases/2026/08/27/sg-salesforce-and-anthropic-announce-claudeforce-the-1-ai-meets-the-1-ai-crm/) names Claude as "a reasoning model for the Atlas Reasoning Engine" and says it is "available in Agent Builder". The release does not call Claude the default for agents, and the developer documentation still names GPT-4o in the default mix. And Salesforce's own CRM reasoning model Koa is, according to the [announcement of 15 September 2026](https://investor.salesforce.com/news/news-details/2026/Announcing-Koa-Salesforces-First-CRM-Reasoning-Model-Built-on-NVIDIA-Nemotron/default.aspx), in pilot with general availability "expected Winter 2026 in U.S. regions". For a German machine builder planning now, Koa is not yet an option.
+The [Claudeforce press release of 27 August 2026](https://www.salesforce.com/ap/news/press-releases/2026/08/27/sg-salesforce-and-anthropic-announce-claudeforce-the-1-ai-meets-the-1-ai-crm/) names Claude as "a reasoning model for the Atlas Reasoning Engine" and "available in Agent Builder". It does not call Claude the default for agents, and the developer documentation still names GPT-4o in the default mix. Salesforce's own CRM reasoning model Koa is, according to the [announcement of 15 September 2026](https://investor.salesforce.com/news/news-details/2026/Announcing-Koa-Salesforces-First-CRM-Reasoning-Model-Built-on-NVIDIA-Nemotron/default.aspx), in pilot, with general availability "expected Winter 2026 in U.S. regions". For a German machine builder planning now, Koa is not yet an option.
 
 ## How do you pin a model per agent or subagent?
 
-Agent Script decides which model runs where. According to the [model configuration guide](https://developer.salesforce.com/docs/ai/agentforce/guide/ascript-model.html), every agent uses the org default from Setup unless you add `model_config`. You can set it at three levels: for the whole agent, inside a single subagent, and on the agent router that picks the subagent. A subagent model overrides the agent model.
+According to the [model configuration guide](https://developer.salesforce.com/docs/ai/agentforce/guide/ascript-model.html), every agent uses the org default unless Agent Script sets `model_config`: for the whole agent, inside a single subagent, or on the agent router that picks the subagent. A subagent model overrides the agent model.
 
-Salesforce names three models as "thoroughly tested with agents": GPT 4.1, Claude Haiku 4.5 and Gemini 3.5 Flash. For routing there is also EinsteinHyperClassifier, a Salesforce model that the Agentforce Service agent template uses by default. It only classifies and transitions; it cannot call other tools.
+Salesforce names three models as "thoroughly tested with agents": GPT 4.1, Claude Haiku 4.5 and Gemini 3.5 Flash. For routing, the Agentforce Service agent template uses EinsteinHyperClassifier, a Salesforce model that only classifies and cannot call other tools.
 
-I would pin a model even when the default works. Salesforce Default is a mix that Salesforce can change, and an agent that passed its test suite in May may answer differently in November without a single change on your side. The guide itself warns that "some supported models may not be suitable for your agent or agent's tools". Pinning makes the model part of the agent version, so a model change goes through the same test and release path as any other change. The test gates for that are in [testing Agentforce agents before go-live](../testing-agentforce-agents-before-go-live/).
+I would pin a model even when the default works. Salesforce can change the mix, and an agent that passed its tests in May may answer differently in November without a change on your side. A pinned model is part of the agent version, so a model change goes through the same gates as any other change, described in [testing Agentforce agents before go-live](../testing-agentforce-agents-before-go-live/).
 
 ## What does the model tier cost?
 
 Salesforce assigns every managed model to a usage tier on its [model support page](https://help.salesforce.com/s/articleView?id=ai.generative_ai_large_language_model_support.htm&type=5). The [rate card updated as of 31 August 2026](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) prices a prompt of up to 2,000 tokens at 2 Flex Credits on Basic, 4 on Standard and 16 on Advanced. Prompts to your own model are "Starter Prompts" at 2 credits. At the [list price of $500 per 100,000 credits](https://www.salesforce.com/agentforce/pricing/), one Advanced prompt costs $0.08.
 
-The three tested models fall into different tiers: Gemini 3.5 Flash is Basic, Claude Haiku 4.5 and GPT 4.1 are Standard. Every Claude Opus model and GPT 5.6 Sol are Advanced, so moving one subagent from Haiku to Opus multiplies its prompt cost by four.
+The tested models fall into different tiers: Gemini 3.5 Flash is Basic, Claude Haiku 4.5 and GPT 4.1 are Standard. Every Claude Opus model and GPT 5.6 Sol are Advanced, so moving a subagent from Haiku to Opus multiplies its prompt cost by four.
 
-One gap remains. The [help article on billable usage](https://help.salesforce.com/s/articleView?language=en_US&id=ai.usage_flex_credits.htm&type=5) does not say whether the reasoning engine's own LLM calls are metered as prompts on top of the 20 credits per action. For prompt templates the tier applies for certain. For the agent's reasoning, I would measure it in the pilot with Digital Wallet before scaling. How the meters add up per conversation is in [Flex Credits: estimating cost per action](../flex-credits-agentforce-cost-per-action/), and the template side in [Prompt Builder or Agentforce agent](../prompt-builder-or-agentforce-agent/).
+The [help article on billable usage](https://help.salesforce.com/s/articleView?language=en_US&id=ai.usage_flex_credits.htm&type=5) does not say whether the reasoning engine's own LLM calls are metered as prompts on top of the 20 credits per action. For prompt templates the tier applies for certain; for reasoning, I would measure it in the pilot with Digital Wallet. The full meter set is in [Flex Credits: estimating cost per action](../flex-credits-agentforce-cost-per-action/), the template side in [Prompt Builder or Agentforce agent](../prompt-builder-or-agentforce-agent/).
 
 ## When does bring your own LLM make sense?
 
-BYOLLM connects a model from your own account at Bedrock, Azure OpenAI, OpenAI or Vertex AI with your own credentials. The [LLM Open Connector](https://developer.salesforce.com/blogs/2024/10/build-generative-ai-solutions-with-llm-open-connector) goes further: any model behind a REST endpoint that follows Salesforce's specification, including one you host yourself. Then your team runs that endpoint, with availability, scaling and security included.
+BYOLLM connects a model from your own Bedrock, Azure OpenAI, OpenAI or Vertex AI account with your own credentials. The [LLM Open Connector](https://developer.salesforce.com/blogs/2024/10/build-generative-ai-solutions-with-llm-open-connector) accepts any model behind a REST endpoint that follows Salesforce's specification, including one you host. Your team then runs that endpoint. Three points decide whether it is worth it.
 
-Three points decide whether it is worth it.
+**Where it is documented.** The Supported Models page says custom actions that run prompt templates, Apex or the Models API "can use any Salesforce-managed or BYO model". The Agent Script guide only refers to models on the supported list and says nothing about BYO models for reasoning. Until Salesforce confirms otherwise in writing, I plan BYOLLM for template-based actions, such as a case summary, and keep the agent's reasoning on a managed model.
 
-**Where it is documented.** The Supported Models page says custom actions that run prompt templates, Apex or the Models API "can use any Salesforce-managed or BYO model". The Agent Script model guide only refers to models on the supported list and says nothing about BYO models as the reasoning model. Until Salesforce confirms otherwise in writing, I plan BYOLLM for template-based actions, such as a case summary, and keep the agent's reasoning on a managed model.
+**Who is responsible for the data.** Trust Layer features are "fully supported" for BYOLLM, according to the Supported Models page. The contract side changes. Salesforce's [Agentforce privacy FAQ](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/documents/legal/Privacy/agentforce-privacy-FAQ.pdf) (June 2025) states that its answers "do not apply to BYO LLM", that the provider is "a Non-SFDC Application" and that the customer must comply "with its own contract with the LLM provider". Retention, training use and region then follow your Azure or AWS agreement. If your IT has already negotiated that agreement, this can be the reason to use BYOLLM; for everyone else it is extra contract work. That is my reading of the documents, not legal advice.
 
-**Who is responsible for the data.** The Supported Models page says Trust Layer features are "fully supported" for BYOLLM. The contract side changes. Salesforce's [Agentforce privacy FAQ](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/documents/legal/Privacy/agentforce-privacy-FAQ.pdf) (June 2025) states that its answers "do not apply to BYO LLM", that the provider is "a Non-SFDC Application" and that the customer must comply "with its own contract with the LLM provider". Retention, training use and region then follow your Azure or AWS agreement, not Salesforce's sub-processor list. For a company whose IT has already negotiated that agreement, this can be the reason to use BYOLLM. For everyone else it is extra contract work. That is my reading of the documents, not legal advice.
-
-**What it saves.** Starter prompts cost 2 credits instead of 4 on a Standard model, and the Supported Models page speaks of "30% fewer Einstein Requests". Your provider bills the tokens on top. The saving on the Salesforce side is real, but small, as the scenario below shows.
+**What it saves.** Starter prompts cost 2 credits instead of 4 on Standard, and the Supported Models page speaks of "30% fewer Einstein Requests". Your provider bills the tokens on top.
 
 ## Why does the model list lag behind?
 
-Anthropic's [model overview](https://platform.claude.com/docs/en/about-claude/models/overview) lists Claude Opus 5.5, Sonnet 5.5 and Haiku 5.5 as current models. Salesforce's managed list ends at Sonnet 5 and Opus 4.8. Even Salesforce's own pages differ: the help page lists Gemini 3.7 Flash and 3.8 Flash in the Basic tier, the developer page stops at 3.6 Flash. For planning, I assume a new frontier model reaches Agentforce weeks to months after release, and I do not build a business case on a model that is not on the list.
+Anthropic's [model overview](https://platform.claude.com/docs/en/about-claude/models/overview) lists Claude Opus 5.5, Sonnet 5.5 and Haiku 5.5 as current models; Salesforce's managed list ends at Sonnet 5 and Opus 4.8. Even Salesforce's own pages differ: the help page lists Gemini 3.7 and 3.8 Flash, the developer page stops at 3.6 Flash. I assume a new frontier model reaches Agentforce weeks to months after release and never build a business case on a model that is not on the list.
 
-Models also leave. Deprecated models stay usable until their shutdown date, after which requests are rerouted to a replacement, for example Claude Sonnet 4 to Sonnet 4.6. Gemini 3 Pro (Beta) was retired on 23 April 2026. Announcements come monthly in the Einstein Platform release notes, and the page states no fixed notice period. A rerouted model is a model change your tests have not seen, so someone has to read those notes every month.
+Models also leave. After its shutdown date a deprecated model is rerouted to a replacement, for example Claude Sonnet 4 to Sonnet 4.6, and Gemini 3 Pro (Beta) was retired on 23 April 2026. Announcements come monthly in the Einstein Platform release notes, without a stated notice period. A reroute is a model change your tests have not seen.
 
-Region is the third check. The help page says managed models "eventually re-route to a US region" if a request fails in the designated region, unless an admin turns on "Enable In-Region Model Requests Only", which covers "some models". It lists `eu` inference profiles for Claude Sonnet 5 and Opus 4.8, while GPT 5.6 Terra is listed for the United States only. Which model qualifies for EU processing is a question for [Agentforce EU data residency](../agentforce-eu-data-residency-models/).
+Region is the third check. Managed models "eventually re-route to a US region" when a request fails in the designated region, unless an admin turns on "Enable In-Region Model Requests Only", which covers "some models". The help page lists `eu` inference profiles for Claude Sonnet 5 and Opus 4.8, and only the United States for GPT 5.6 Terra. More in [Agentforce EU data residency](../agentforce-eu-data-residency-models/).
 
 ## A typical scenario: a service agent with an Azure OpenAI contract
 
-Assume a machine builder with Service Cloud, Field Service, a dealer portal and SAP. Corporate IT runs an internal chatbot on an Azure OpenAI contract and asks why Agentforce should not simply use it. All numbers are assumptions.
-
-The agent has three subagents behind a router:
+Assume a machine builder with Service Cloud, Field Service, a dealer portal and SAP. Corporate IT has an Azure OpenAI contract and asks why Agentforce should not use it. All numbers are assumptions.
 
 - **Router:** EinsteinHyperClassifier, as in the service template.
-- **Order status** for dealers, reading SAP through MuleSoft: Gemini 3.5 Flash (Basic), because the answer is a lookup.
-- **Warranty pre-check**, with the rule itself in [Agent Script logic](../agent-script-deterministic-rules/): Claude Haiku 4.5 (Standard) to read serial numbers and fault descriptions from free text.
-- **Troubleshooting** from manuals for dealer technicians: Claude Haiku 4.5 at first, tested against Claude Opus 4.8 on 100 real fault descriptions before anyone pays for Advanced.
+- **Order status** for dealers from SAP via MuleSoft: Gemini 3.5 Flash (Basic), because the answer is a lookup.
+- **Warranty pre-check**, the rule itself in [Agent Script logic](../agent-script-deterministic-rules/): Claude Haiku 4.5 (Standard) reads serial number and fault description from free text.
+- **Troubleshooting** from manuals for dealer technicians: Claude Haiku 4.5, tested against Opus 4.8 on 100 real fault descriptions before anyone pays for Advanced.
 
-On top, a prompt template writes a case summary for the field service technician: 3,000 summaries a month at about 5,000 tokens, so three prompts each.
+A prompt template also writes a case summary for the field service technician: 3,000 a month at about 5,000 tokens, three prompts each.
 
 | Option for the summary | Credits per month | Salesforce side |
 |---|---|---|
@@ -97,17 +93,17 @@ On top, a prompt template writes a case summary for the field service technician
 | BYOLLM via Azure OpenAI (Starter) | 3,000 × 3 × 2 = 18,000 | $90 plus Azure tokens |
 | Managed Advanced model | 3,000 × 3 × 16 = 144,000 | $720 |
 
-BYOLLM saves at most $90 a month on the Salesforce side, about $1,080 a year, before the Azure token bill. That alone does not justify a second contract path. The model tier matters more: putting the summary on an Advanced model costs four times the Standard price. My recommendation in this scenario would be managed models for the agent, BYOLLM only if IT's Azure agreement is the approved data path for service data, and Opus only for the troubleshooting subagent if the test shows a clear gap.
+BYOLLM saves at most $90 a month, about $1,080 a year, before the Azure token bill. That alone does not justify a second contract path; the model tier moves four times as much. Here I would recommend managed models for the agent, BYOLLM only if the Azure agreement is IT's approved data path for service data, and Opus for troubleshooting only if the test shows a clear gap.
 
 ## How should you decide on the model?
 
-1. **Pin the model** for every agent and subagent in Agent Script instead of relying on Salesforce Default.
-2. **Start with a tested model** in the lowest tier that passes your test suite, and move a single subagent up only with test evidence.
-3. **Check the region** of each chosen model and decide whether in-region only is switched on.
-4. **Use BYOLLM with a reason**: an existing approved contract, a model Salesforce does not offer, or data rules that require your own provider. Then get retention and region from that contract.
-5. **Read the monthly release notes** for deprecations and rerun the tests after every reroute.
-6. **Measure in Digital Wallet** during the pilot whether reasoning calls show up as prompts.
+1. **Pin the model** per agent and subagent in Agent Script.
+2. **Start with a tested model** in the lowest tier that passes; upgrade a subagent only with test evidence.
+3. **Check the region** of each model and decide on in-region only.
+4. **Use BYOLLM with a reason**: an approved contract, a model Salesforce does not offer, or data rules that require your own provider.
+5. **Read the monthly release notes** and rerun the tests after every reroute.
+6. **Measure in Digital Wallet** whether reasoning calls show up as prompts.
 
-These decisions belong in the agent architecture, next to the data model and permissions, which is why I treat them as part of [Salesforce architecture](../../services/salesforce-architecture/) work rather than as a developer setting.
+I treat these decisions as [Salesforce architecture](../../services/salesforce-architecture/) work, next to data model and permissions.
 
-The model choice in Agentforce is a configuration with cost, contract and test consequences, and it should be made per subagent and written down. If you want a second opinion on the model setup of your agent, [send me a message](#contact).
+The model choice in Agentforce has cost, contract and test consequences, so make it per subagent and write it down. If you want a second opinion on the model setup of your agent, [send me a message](#contact).
