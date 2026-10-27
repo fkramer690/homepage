@@ -6,7 +6,7 @@ lang: de
 slug: quality-gates-ki-code-salesforce-pipeline
 translationKey: quality-gates-ai-code-pipeline
 topic: devops
-category: devops
+categories: [devops, ai]
 tags: [Quality Gates, KI-Coding, Code Analyzer, sfdx-hardis, DevOps, Maschinenbau]
 takeaways:
   - "KI-generierter Salesforce-Code sollte bei jedem Pull Request blockierende Prüfungen bestehen: Code Analyzer mit Schwellenwert, Validierungsdeployment mit Apex-Tests, eigene Regeln und eine Merge-Sperre ohne Ausnahme."

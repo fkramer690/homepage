@@ -6,7 +6,7 @@ lang: en
 slug: ai-coding-costs-salesforce-project
 translationKey: ai-coding-costs-salesforce-project
 topic: devops
-category: devops
+categories: [devops, ai]
 tags: [ai coding, claude code, github copilot, agentforce vibes, partner governance, costs]
 takeaways:
   - "AI coding in a Salesforce project costs about $19 to $250 per developer and month at list price, from Copilot Business with included credits to Claude Code at API rates."

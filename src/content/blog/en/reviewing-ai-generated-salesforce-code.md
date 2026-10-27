@@ -6,7 +6,7 @@ lang: en
 slug: reviewing-ai-generated-salesforce-code
 translationKey: reviewing-ai-generated-salesforce-code
 topic: code-review
-category: devops
+categories: [devops, ai]
 tags: [code review, ai coding, apex, partner governance, devops, manufacturing]
 takeaways:
   - "As the client, let the pipeline catch SOQL in loops, missing sharing declarations and missing CRUD checks, and spend human review time on tests, field choice, data access and business rules."

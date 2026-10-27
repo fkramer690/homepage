@@ -6,7 +6,7 @@ lang: de
 slug: nearshore-salesforce-teams-ki-agenten
 translationKey: nearshore-teams-with-ai-agents
 topic: governance
-category: architecture
+categories: [architecture, ai]
 tags: [Nearshore, KI-Coding, Code-Review, Einarbeitung, Partnersteuerung, Maschinenbau]
 takeaways:
   - "Arbeiten Nearshore-Teams für Salesforce mit KI-Agenten, wandert der Engpass vom Schreiben ins Review; geplant werden muss die Review-Kapazität mit Wissen über Ihre Org, nicht die Zahl der Entwickler."

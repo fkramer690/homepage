@@ -6,7 +6,7 @@ lang: en
 slug: flex-credits-agentforce-cost-per-action
 translationKey: flex-credits-agentforce-costs
 topic: ai
-category: ai
+categories: [ai]
 contactBrief: licences
 tags: [agentforce, flex credits, cost estimation, licensing, data 360, manufacturing]
 takeaways:

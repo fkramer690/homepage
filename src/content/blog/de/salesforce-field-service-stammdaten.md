@@ -6,7 +6,7 @@ lang: de
 slug: salesforce-field-service-stammdaten
 translationKey: field-service-master-data
 topic: field-service
-category: field-service
+categories: [field-service]
 series: { id: field-service, part: 2 }
 tags: [Field Service, Außendienst, Datenmodell, Stammdaten, Fertigung]
 takeaways:

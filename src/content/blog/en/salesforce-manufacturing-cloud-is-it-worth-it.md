@@ -6,7 +6,7 @@ lang: en
 slug: salesforce-manufacturing-cloud-is-it-worth-it
 translationKey: manufacturing-cloud-worth-it
 topic: governance
-category: manufacturing-cloud
+categories: [manufacturing-cloud]
 tags: [manufacturing cloud, make-or-buy, licences, architecture, manufacturing]
 series: { id: manufacturing-cloud, part: 1 }
 takeaways:

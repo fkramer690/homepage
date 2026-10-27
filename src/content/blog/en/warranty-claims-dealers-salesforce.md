@@ -6,7 +6,7 @@ lang: en
 slug: warranty-claims-dealers-salesforce
 translationKey: manufacturing-cloud-warranty-claims
 topic: service
-category: manufacturing-cloud
+categories: [manufacturing-cloud]
 tags: [Manufacturing Cloud, Warranty, Dealers, After-Sales, Manufacturing]
 series: { id: manufacturing-cloud, part: 6 }
 takeaways:

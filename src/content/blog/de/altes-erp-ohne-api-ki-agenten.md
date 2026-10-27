@@ -6,7 +6,7 @@ lang: de
 slug: altes-erp-ohne-api-ki-agenten
 translationKey: legacy-erp-without-api-agents
 topic: data
-category: ai
+categories: [ai, architecture]
 tags: [Agentforce, ERP, Altsysteme, RPA, MuleSoft, Maschinenbau]
 takeaways:
   - "Ein Agent kann über drei Umwege mit einem ERP ohne API arbeiten: eine lesende Datenbankreplik hinter einer kleinen API, Dokumentenerkennung mit RPA oder den Systems Integration Agent."

@@ -6,7 +6,7 @@ lang: de
 slug: salesforce-passwort-integrationen-2027
 translationKey: salesforce-password-integrations-2027
 topic: security
-category: devops
+categories: [devops]
 contactBrief: integration
 tags: [Integration, Sicherheit, OAuth, Release-Management, Partnersteuerung]
 takeaways:

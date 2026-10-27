@@ -6,7 +6,7 @@ lang: de
 slug: nearshore-teams-salesforce-acht-entwickler
 translationKey: nearshore-team-size
 topic: governance
-category: architecture
+categories: [architecture]
 contactBrief: nearshore
 tags: [Nearshore, Teamgröße, Programmsteuerung, Partnersteuerung, Scrum]
 takeaways:

@@ -6,7 +6,7 @@ lang: de
 slug: ki-nutzen-salesforce-projekt-messen
 translationKey: measuring-ai-benefit-salesforce-projects
 topic: governance
-category: architecture
+categories: [architecture, ai]
 tags: [KI-Coding, Produktivität, DORA-Metriken, Programmsteuerung, Salesforce DevOps]
 takeaways:
   - "Den KI-Nutzen im Salesforce-Programm messen Sie mit Durchlaufzeit pro Story, Fehlerdurchschlupf, Nacharbeit und Change Fail Rate gegen die eigene Basislinie, nie mit Selbstauskünften der Entwickler."

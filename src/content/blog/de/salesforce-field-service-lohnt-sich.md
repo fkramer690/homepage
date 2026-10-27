@@ -6,7 +6,7 @@ lang: de
 slug: salesforce-field-service-lohnt-sich
 translationKey: field-service-worth-it
 topic: field-service
-category: field-service
+categories: [field-service]
 series: { id: field-service, part: 1 }
 tags: [Field Service, Außendienst, Lizenzen, Make-or-buy, Fertigung]
 takeaways:

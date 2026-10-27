@@ -6,7 +6,7 @@ lang: de
 slug: salesforce-lizenzen-volle-lizenz
 translationKey: salesforce-licence-types
 topic: governance
-category: architecture
+categories: [architecture]
 contactBrief: licences
 tags: [Lizenzen, Make-or-buy, Business Case, Platform, Experience Cloud]
 takeaways:

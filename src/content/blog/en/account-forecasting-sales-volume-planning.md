@@ -6,7 +6,7 @@ lang: en
 slug: account-forecasting-sales-volume-planning
 translationKey: manufacturing-cloud-account-forecasting
 topic: data
-category: manufacturing-cloud
+categories: [manufacturing-cloud]
 tags: [Manufacturing Cloud, Account Forecasting, Demand Planning, ERP, Manufacturing]
 series: { id: manufacturing-cloud, part: 4 }
 takeaways:

@@ -6,7 +6,7 @@ lang: en
 slug: nearshore-salesforce-teams-ai-agents
 translationKey: nearshore-teams-with-ai-agents
 topic: governance
-category: architecture
+categories: [architecture, ai]
 tags: [nearshore, ai coding, code review, onboarding, partner governance, manufacturing]
 takeaways:
   - "When nearshore Salesforce teams work with AI agents, the bottleneck moves from writing code to review; reviewer capacity with knowledge of your org becomes the number to plan, not developer headcount."

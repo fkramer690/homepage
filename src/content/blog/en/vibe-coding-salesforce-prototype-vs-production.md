@@ -6,7 +6,7 @@ lang: en
 slug: vibe-coding-salesforce-prototype-vs-production
 translationKey: vibe-coding-prototype-not-production
 topic: devops
-category: devops
+categories: [devops, ai]
 tags: [vibe coding, agentforce vibes, ai coding, prototyping, devops, manufacturing]
 takeaways:
   - "Vibe coding in Salesforce is fine for workshop prototypes such as a dealer-portal mock-up or a service cockpit LWC, built in a Developer Edition or scratch org with dummy data and then thrown away."

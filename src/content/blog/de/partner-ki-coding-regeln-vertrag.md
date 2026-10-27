@@ -6,7 +6,7 @@ lang: de
 slug: partner-ki-coding-regeln-vertrag
 translationKey: partners-ai-coding-sow-rules
 topic: governance
-category: architecture
+categories: [architecture, ai]
 contactBrief: partner-governance
 tags: [Partnersteuerung, KI-Coding, Leistungsbeschreibung, Datenschutz, Code-Review, Maschinenbau]
 takeaways:

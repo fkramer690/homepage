@@ -6,7 +6,7 @@ lang: en
 slug: dealer-service-agent-cost-calculation
 translationKey: dealer-service-agent-costs
 topic: ai
-category: ai
+categories: [ai]
 tags: [agentforce, flex credits, dealer service, data 360, manufacturing, business case]
 takeaways:
   - "In the scenario, 3,000 dealer conversations a month with three actions and two prompts each cost 204,000 Flex Credits, about $1,020 a month in production."

@@ -6,7 +6,7 @@ lang: de
 slug: salesforce-document-builder-grenzen-workarounds
 translationKey: document-builder-limits-workarounds
 topic: field-service
-category: field-service
+categories: [field-service]
 tags: [Field Service, Außendienst, Document Builder, Service Documents, Flow, LWC]
 takeaways:
   - "Der Salesforce Document Builder deckt den Servicebericht im Field Service gut ab, aber fünf Lücken tauchen in jedem Projekt auf: Vorlagenwahl, Dateiname, E-Mail, Vorbelegung und Styling."

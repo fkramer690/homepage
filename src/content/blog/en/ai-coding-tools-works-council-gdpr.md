@@ -6,7 +6,7 @@ lang: en
 slug: ai-coding-tools-works-council-gdpr
 translationKey: ai-coding-works-council-gdpr
 topic: governance
-category: architecture
+categories: [architecture, ai]
 tags: [ai coding, works council, gdpr, data residency, claude code, github copilot]
 takeaways:
   - "When a company provides coding agents through company accounts in Germany, CMS says section 87(1) no. 6 BetrVG applies as a rule; without works council consent or a conciliation ruling the tool cannot go live."

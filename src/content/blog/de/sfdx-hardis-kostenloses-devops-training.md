@@ -6,7 +6,7 @@ lang: de
 slug: sfdx-hardis-kostenloses-devops-training
 translationKey: sfdx-hardis-training
 topic: training
-category: devops
+categories: [devops]
 tags: [sfdx-hardis, DevOps-Training, Release-Management, DORA-Metriken]
 takeaways:
   - "Das sfdx-hardis-DevOps-Training ist kostenlos und praxisnah: In 27 Labs auf drei Leveln entsteht eine komplette Salesforce-CI/CD-Pipeline auf kostenlosen Orgs, ohne Lizenz oder Kreditkarte."

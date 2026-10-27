@@ -6,7 +6,7 @@ lang: en
 slug: rebate-management-dealer-rebates
 translationKey: manufacturing-cloud-rebate-management
 topic: data
-category: manufacturing-cloud
+categories: [manufacturing-cloud]
 tags: [Manufacturing Cloud, Rebate Management, Dealer Rebates, ERP, Manufacturing]
 series: { id: manufacturing-cloud, part: 5 }
 takeaways:

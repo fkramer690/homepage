@@ -6,7 +6,7 @@ lang: en
 slug: ai-native-delivery-smaller-salesforce-teams
 translationKey: smaller-teams-ai-native-delivery
 topic: governance
-category: architecture
+categories: [architecture, ai]
 tags: [ai-native delivery, programme management, team setup, ai coding, partner governance, manufacturing]
 takeaways:
   - "AI-native delivery means coding agents draft, build and test, while people set the intent, review the output and own the result; teams shrink to small pods of architect, builder-reviewer and domain lead."

@@ -6,7 +6,7 @@ lang: en
 slug: service-cloud-casey-service-rep-assistant
 translationKey: service-cloud-casey-assistant
 topic: service
-category: ai
+categories: [ai]
 tags: [service cloud, agentforce, contact center, customer service, manufacturing]
 takeaways:
   - "Casey is Salesforce's out-of-the-box Agentforce agent for customer service, formerly called Help Agent; it is set up from knowledge articles, PDFs and URLs and can be attached to channels including voice."

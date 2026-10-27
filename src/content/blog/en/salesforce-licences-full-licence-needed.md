@@ -6,7 +6,7 @@ lang: en
 slug: salesforce-licences-full-licence-needed
 translationKey: salesforce-licence-types
 topic: governance
-category: architecture
+categories: [architecture]
 contactBrief: licences
 tags: [licences, make-or-buy, business case, platform, experience cloud]
 takeaways:

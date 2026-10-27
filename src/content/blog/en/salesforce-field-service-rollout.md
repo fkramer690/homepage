@@ -6,7 +6,7 @@ lang: en
 slug: salesforce-field-service-rollout
 translationKey: field-service-rollout
 topic: field-service
-category: field-service
+categories: [field-service]
 series: { id: field-service, part: 7 }
 tags: [Field Service, Rollout, Works council, Data protection, Manufacturing]
 takeaways:

@@ -34,6 +34,7 @@ const collections = {
 function check(collection, rules) {
   const dir = new URL(`../src/content/${collection}/`, import.meta.url).pathname;
   const pairs = new Map();
+  const categoriesByKey = new Map();
   // Astro uses the slug as the entry id, so a slug shared by EN and DE silently drops one entry.
   const slugs = new Map();
   // A collection without any files yet (e.g. masterclass chapters still being written) is fine.
@@ -59,6 +60,13 @@ function check(collection, rules) {
       else slugs.set(slug, name);
       if (!pairs.has(key)) pairs.set(key, new Set());
       pairs.get(key).add(lang);
+      // EN and DE list the same blog categories in the same order (the first decides the contact section).
+      if (collection === 'blog') {
+        const cats = field('categories') ?? '';
+        if (!cats) fail('set categories: [..] (see src/lib/categories.ts)');
+        if (!categoriesByKey.has(key)) categoriesByKey.set(key, new Map());
+        categoriesByKey.get(key).set(lang, cats.replace(/\s+/g, ''));
+      }
 
       const text = body.replace(/```[\s\S]*?```/g, '');
       const words = text.split(/\s+/).filter(Boolean).length;
@@ -94,6 +102,11 @@ function check(collection, rules) {
     }
   }
 
+  for (const [key, byLang] of categoriesByKey) {
+    if (new Set(byLang.values()).size > 1) {
+      errors.push(`blog: translationKey "${key}": EN and DE need the same categories in the same order (${[...byLang].map(([l, c]) => `${l}: ${c}`).join(', ')})`);
+    }
+  }
   for (const [key, langs] of pairs) {
     if (langs.size < 2) errors.push(`${collection}: translationKey "${key}": only ${[...langs].join(', ')}, EN and DE are both required`);
     // Every article needs its own technical drawing for the card on the blog overview.

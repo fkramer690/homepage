@@ -6,7 +6,7 @@ lang: en
 slug: field-service-ai-agents-what-works-today
 translationKey: field-service-ai-agents-today
 topic: field-service
-category: field-service
+categories: [field-service, ai]
 tags: [field service, agentforce, ai agents, manufacturing, maintenance, flex credits]
 takeaways:
   - "Generally available AI agent functions in Salesforce Field Service: appointment booking, proactive maintenance scheduling, schedule gap filling, pre-work briefs, post-work summaries and on-site troubleshooting."

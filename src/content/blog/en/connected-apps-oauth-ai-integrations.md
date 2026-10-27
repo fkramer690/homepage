@@ -6,7 +6,7 @@ lang: en
 slug: connected-apps-oauth-ai-integrations
 translationKey: oauth-connected-apps-ai-lessons
 topic: security
-category: architecture
+categories: [architecture, ai]
 tags: [connected apps, oauth, security, ai integrations, external client apps, manufacturing]
 takeaways:
   - "In August 2025 attackers used stolen OAuth tokens of the Drift AI chat app to export Cases, Accounts, Users and Opportunities from Salesforce orgs without exploiting any Salesforce vulnerability."

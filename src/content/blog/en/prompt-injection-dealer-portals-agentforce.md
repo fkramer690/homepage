@@ -6,7 +6,7 @@ lang: en
 slug: prompt-injection-dealer-portals-agentforce
 translationKey: prompt-injection-dealer-portals
 topic: security
-category: ai
+categories: [ai]
 tags: [agentforce, prompt injection, security, dealer portal, experience cloud, manufacturing]
 takeaways:
   - "Every field a dealer, customer or website visitor can write, from a warranty fault description to Web-to-Lead and Email-to-Case, is text an Agentforce agent may read and follow."
