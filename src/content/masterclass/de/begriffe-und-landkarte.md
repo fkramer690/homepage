@@ -31,7 +31,7 @@ Ich sortiere jedes KI-Thema in Salesforce-Programmen zuerst in eine von vier Ebe
 
 | Ebene | Frage | Typische Produkte (Stand Oktober 2026) | Beispiel bei einem Hersteller | Wie abgerechnet wird |
 |---|---|---|---|---|
-| A: KI zum Bauen | Wie entstehen Apex, LWC, Flows und Metadaten? | Agentforce Vibes, Claude Code mit Salesforce-Plugin, Codex, GitHub Copilot | Der Partner baut Komponenten für das Händlerportal mit einem Coding-Agenten | Tokens oder Nutzerlizenz, meist beim Partner |
+| A: KI zum Bauen | Wie entstehen Apex, LWC, Flows und Metadaten? | Agentforce Vibes, Claude Code mit Salesforce-Plugin, Codex, GitHub Copilot | Der Partner baut Komponenten für das Händlerportal mit einem Coding-Agenten | Tokens oder Nutzerlizenz, je nach Vertrag beim Partner oder bei Ihnen |
 | B: Schnittstellen | Wie greift ein Agent auf Org, Metadaten und Daten zu? | sf CLI, Skills, Hosted MCP Servers, MuleSoft-APIs als MCP-Server | Ein Agent liest den Auftragsstatus über eine MuleSoft-API aus SAP | Integrationsaufwand, für agentische Aufrufe künftig Flex Credits |
 | C: KI im Produkt | Welche KI läuft für Anwender in der Org? | Agentforce mit Builder, Agent Script und Atlas Reasoning Engine, Agentforce for Manufacturing | Ein Serviceagent beantwortet Händleranfragen zu Ersatzteilen und Lieferterminen | Flex Credits pro Aktion |
 | D: KI als Oberfläche | Wo arbeiten Nutzer künftig mit Salesforce? | AIforce: Salesforce in Claude, Slackforce, Agentforce Coworker | Key Account Manager bereiten Händlerbesuche in Claude vor | Noch offen, laut Salesforce „subject to change“ |
@@ -77,7 +77,7 @@ Für Architekten ist der Satz aus der Architects-Doku der wichtigste: Was sich a
 
 ## Warum heißt alles Agentforce? Die Namen mit Datum
 
-„Agentforce“ steht im Herbst 2026 für mindestens vier Dinge: die Agentenplattform, das Coding-Werkzeug Agentforce Vibes, den KI-Kollegen Agentforce Coworker in Lightning und die Dachmarke Agentforce 360. Dazu kommen Umbenennungen, die alte Konzepte und Angebote schnell veralten lassen.
+„Agentforce“ steht im Herbst 2026 für mindestens vier Dinge: die Agentenplattform, das Coding-Werkzeug Agentforce Vibes, den KI-Kollegen Agentforce Coworker und die Dachmarke Agentforce 360. Dazu kommen Umbenennungen, die alte Konzepte und Angebote schnell veralten lassen.
 
 | Datum | Ereignis | Quelle |
 |---|---|---|
@@ -95,7 +95,7 @@ Für Architekten ist der Satz aus der Architects-Doku der wichtigste: Was sich a
 | 15.09.2026 | AIforce auf der Dreamforce, Salesforce in Claude als Beta | [Salesforce News](https://www.salesforce.com/news/stories/aiforce-announcement/) |
 | 09.10.2026 | Marc Benioff auf X: „AIForce is officially SIForce“, ohne Pressemitteilung | [Salesforce Ben](https://www.salesforceben.com/salesforce-renames-aiforce-to-siforce-after-trump-order/) (Sekundärquelle) |
 
-Zwei Lehren ziehe ich daraus. Erstens: Einstein for Developers, Agentforce for Developers und Agentforce Vibes sind dieselbe Produktlinie, die Doku-URL enthält bis heute `einstein-for-devs`. Ein Angebot, das 2026 „Einstein for Developers“ verspricht, beschreibt einen veralteten Stand. Zweitens: Die Schicht für externe Oberflächen hieß laut Salesforce Ben in gut sechs Monaten Headless 360, AIforce und SIForce. Ich schreibe in Konzepten „AIforce (Stand Oktober 2026)“ und übernehme in Verträgen den Namen, der auf dem Bestellformular steht. Was hinter AIforce steckt und was eine IT-Leitung jetzt tun sollte, steht in [AIforce: Salesforce in Claude und Slack](../../blog/aiforce-salesforce-in-claude-und-slack/), die zweite Lesart von „SI“ als Systemintegrator in [Kapitel 5](../aiforce-und-systemintegratoren/).
+Zwei Lehren ziehe ich daraus. Erstens: Einstein for Developers, Agentforce for Developers und Agentforce Vibes sind dieselbe Produktlinie; Salesforce Ben beschreibt Vibes als [Umbenennung und Ausbau von Agentforce for Developers](https://www.salesforceben.com/developer-features-and-announcements-from-dreamforce-25/), und die Doku-URL enthält bis heute `einstein-for-devs`. Ein Angebot, das 2026 „Einstein for Developers“ verspricht, beschreibt einen veralteten Stand. Zweitens: Die Schicht für externe Oberflächen hieß laut Salesforce Ben in gut sechs Monaten Headless 360, AIforce und SIForce. Ich schreibe in Konzepten „AIforce (Stand Oktober 2026)“ und übernehme in Verträgen den Namen, der auf dem Bestellformular steht. Was hinter AIforce steckt und was eine IT-Leitung jetzt tun sollte, steht in [AIforce: Salesforce in Claude und Slack](../../blog/aiforce-salesforce-in-claude-und-slack/), die zweite Lesart von „SI“ als Systemintegrator in [Kapitel 5](../aiforce-und-systemintegratoren/).
 
 ## Ein typisches Szenario: viermal „KI“ im Lenkungskreis
 

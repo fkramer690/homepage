@@ -10,7 +10,7 @@ tags: [Agentforce, Flex Credits, Kostenschätzung, Lizenzen, Data 360, Maschinen
 takeaways:
   - "Eine Agentforce-Schätzung braucht mehrere Zähler: Aktionen zu 20 Flex Credits, Sprachaktionen zu 30, Prompts nach Modellstufe, Data-360-Verarbeitung von Dokumenten und Testläufe in der Sandbox."
   - "Prompts werden je angefangene 2.000 Tokens abgerechnet: 2 Credits bei Basic-Modellen, 4 bei Standard-Modellen wie Claude Sonnet, 16 bei Advanced-Modellen wie Claude Opus oder GPT 5.5."
-  - "Aktionen kosten in der Sandbox 16 statt 20 Credits, Prompts aber so viel wie in Produktion, und Data 360 rechnet dort pauschal 120 Credits pro MB ohne Mengenstaffel."
+  - "Aktionen kosten in der Sandbox 16 statt 20 Credits, Prompts aber so viel wie in Produktion, und Unstructured Processing in Data 360 kostet dort pauschal 120 Credits pro MB."
   - "Nicht genutzte Flex Credits verfallen zum Ende der Bestellung, ohne Übertrag; kaufen Sie Credits deshalb entlang des Go-live-Plans statt entlang des Budgetjahrs."
   - "Im Beispielszenario verbraucht ein Ersatzteilagent für Händler rund 218.000 Credits im Monat, und reine Textaktionen machen davon nur 55 Prozent aus."
 faq:
@@ -27,7 +27,7 @@ faq:
 draft: false
 ---
 
-Die Agentforce-Kosten pro Aktion sind schnell genannt und leicht unterschätzt. Eine Standardaktion kostet 20 Flex Credits, also 0,10 €. Eine belastbare Schätzung zählt außerdem Prompts nach Modellstufe, Sprachaktionen zu 30 Credits, Data-360-Verarbeitung für Handbücher und Ersatzteilkataloge sowie Testläufe in der Sandbox. Nicht genutzte Credits verfallen zum Ende der Bestellung. Ich schätze pro Gesprächstyp, zähle jeden Zähler einzeln und kaufe Credits entlang des Go-live-Plans. Im Beispielszenario unten machen reine Textaktionen nur 55 Prozent der Credits im Monat aus.
+Die Agentforce-Kosten pro Aktion sind schnell genannt und leicht unterschätzt. Eine Standardaktion kostet 20 Flex Credits, also 0,10 €. Eine belastbare Schätzung zählt außerdem Prompts nach Modellstufe, Sprachaktionen zu 30 Credits, Data-360-Verarbeitung für Handbücher und Ersatzteilkataloge sowie Testläufe in der Sandbox. Nicht genutzte Credits verfallen zum Ende der Bestellung. Ich schätze pro Gesprächstyp, erfasse jeden Zähler einzeln und kaufe Credits entlang des Go-live-Plans. Im Beispielszenario unten machen reine Textaktionen nur 55 Prozent der Credits im Monat aus.
 
 ## Wie funktionieren Flex Credits?
 

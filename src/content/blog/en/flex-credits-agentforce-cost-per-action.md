@@ -10,7 +10,7 @@ tags: [agentforce, flex credits, cost estimation, licensing, data 360, manufactu
 takeaways:
   - "An Agentforce estimate needs several meters: actions at 20 Flex Credits, voice actions at 30, prompts priced by model tier, Data 360 document processing and test runs in the sandbox."
   - "Prompts are billed per 2,000 tokens, rounded up: 2 credits on Basic models, 4 on Standard models such as Claude Sonnet, 16 on Advanced models such as Claude Opus or GPT 5.5."
-  - "Sandbox actions cost 16 credits instead of 20, but prompts cost the same as in production, and Data 360 in a sandbox runs at a flat 120 credits per MB without volume tiers."
+  - "Sandbox actions cost 16 credits instead of 20, but prompts cost the same as in production, and unstructured Data 360 processing costs a flat 120 credits per MB there."
   - "Unused Flex Credits expire at the order end date and do not roll over, so buy credits along the go-live plan rather than the budget year."
   - "In the illustrative scenario, a spare parts agent for dealers uses about 218,000 credits a month, and plain text actions make up only 55 percent of that."
 faq:

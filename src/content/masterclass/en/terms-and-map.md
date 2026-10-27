@@ -31,7 +31,7 @@ I sort every AI topic in a Salesforce programme into one of four layers first. O
 
 | Layer | Question | Typical products (October 2026) | Example at a manufacturer | How it is billed |
 |---|---|---|---|---|
-| A: AI for building | How are Apex, LWC, flows and metadata created? | Agentforce Vibes, Claude Code with the Salesforce plug-in, Codex, GitHub Copilot | The partner builds dealer portal components with a coding agent | Tokens or user licence, usually on the partner's side |
+| A: AI for building | How are Apex, LWC, flows and metadata created? | Agentforce Vibes, Claude Code with the Salesforce plug-in, Codex, GitHub Copilot | The partner builds dealer portal components with a coding agent | Tokens or user licence, paid by the partner or by you, depending on the contract |
 | B: Interfaces | How does an agent reach the org, metadata and data? | sf CLI, skills, Hosted MCP Servers, MuleSoft APIs as MCP servers | An agent reads order status from SAP through a MuleSoft API | Integration work, Flex Credits for agentic calls in future |
 | C: AI in the product | Which AI runs for users inside the org? | Agentforce with Builder, Agent Script and the Atlas Reasoning Engine, Agentforce for Manufacturing | A service agent answers dealer questions about spare parts and delivery dates | Flex Credits per action |
 | D: AI as the interface | Where will users work with Salesforce? | AIforce: Salesforce in Claude, Slackforce, Agentforce Coworker | Key account managers prepare dealer visits in Claude | Still open, "subject to change" according to Salesforce |
@@ -77,7 +77,7 @@ For architects the key sentence is in the Architects guide: if you can express a
 
 ## Why is everything called Agentforce? Names with dates
 
-In autumn 2026 "Agentforce" stands for at least four things: the agent platform, the coding tool Agentforce Vibes, the AI teammate Agentforce Coworker in Lightning and the umbrella brand Agentforce 360. Add the renames, and concepts and offers age quickly.
+In autumn 2026 "Agentforce" stands for at least four things: the agent platform, the coding tool Agentforce Vibes, the AI teammate Agentforce Coworker and the umbrella brand Agentforce 360. Add the renames, and concepts and offers age quickly.
 
 | Date | Event | Source |
 |---|---|---|
@@ -95,7 +95,7 @@ In autumn 2026 "Agentforce" stands for at least four things: the agent platform,
 | 15 Sep 2026 | AIforce at Dreamforce, Salesforce in Claude in beta | [Salesforce News](https://www.salesforce.com/news/stories/aiforce-announcement/) |
 | 9 Oct 2026 | Marc Benioff on X: "AIForce is officially SIForce", no press release | [Salesforce Ben](https://www.salesforceben.com/salesforce-renames-aiforce-to-siforce-after-trump-order/) (secondary source) |
 
-I take two lessons from this. First, Einstein for Developers, Agentforce for Developers and Agentforce Vibes are one product line; the documentation URL still contains `einstein-for-devs`. An offer in 2026 that promises "Einstein for Developers" describes an outdated state. Second, according to Salesforce Ben the layer for external interfaces was called Headless 360, AIforce and SIForce within just over six months. In concepts I write "AIforce (as of October 2026)", and in contracts I use the name printed on the order form. What AIforce contains and what an IT lead should do now is in [AIforce: Salesforce in Claude and Slack](../../blog/aiforce-salesforce-in-claude-and-slack/); the second reading of "SI" as system integrator is in [chapter 5](../aiforce-and-system-integrators/).
+I take two lessons from this. First, Einstein for Developers, Agentforce for Developers and Agentforce Vibes are one product line: Salesforce Ben describes Vibes as a [rebrand and upgrade of Agentforce for Developers](https://www.salesforceben.com/developer-features-and-announcements-from-dreamforce-25/), and the documentation URL still contains `einstein-for-devs`. An offer in 2026 that promises "Einstein for Developers" describes an outdated state. Second, according to Salesforce Ben the layer for external interfaces was called Headless 360, AIforce and SIForce within just over six months. In concepts I write "AIforce (as of October 2026)", and in contracts I use the name printed on the order form. What AIforce contains and what an IT lead should do now is in [AIforce: Salesforce in Claude and Slack](../../blog/aiforce-salesforce-in-claude-and-slack/); the second reading of "SI" as system integrator is in [chapter 5](../aiforce-and-system-integrators/).
 
 ## A typical scenario: "AI" four times in one steering committee
 
