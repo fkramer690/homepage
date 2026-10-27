@@ -7,6 +7,7 @@ slug: primary-keyword-in-the-slug
 translationKey: same-key-in-en-and-de
 topic: devops # picks the card image on the blog overview, see src/lib/topics.ts
 tags: [topic, second-topic]
+# series: { id: field-service, part: 2 } # only for articles in a series, see src/lib/series.ts
 takeaways:
   - "First key statement as a complete sentence that stands on its own."
   - "Second key statement."

@@ -33,10 +33,19 @@ Every article page is built by `src/components/BlogPost.astro` and looks the sam
 3. **Article body (the only part that comes from Markdown)**
 4. FAQ, collapsible (from frontmatter)
 5. Author box (`src/components/AuthorBox.astro`)
-6. Related articles
-7. Contact section with "Book a call" and the contact form
+6. Series box, only for articles in a series (see below)
+7. Related articles
+8. Contact section with "Book a call" and the contact form
 
-Changes to parts 1–2 and 4–7 are made once in the components and apply to all articles. Markdown files contain no raw HTML, no author section and no CTA block; the check script rejects HTML.
+Changes to parts 1–2 and 4–8 are made once in the components and apply to all articles. Markdown files contain no raw HTML, no author section and no CTA block; the check script rejects HTML.
+
+## Series
+
+A topic too big for one article becomes a series (for example Salesforce Field Service). Each part answers one question, builds on the previous part and links to its neighbours in the body instead of repeating them.
+
+- Define the series once in `src/lib/series.ts`: title in EN and DE and the planned number of parts.
+- Each part sets `series: { id: <series-id>, part: <number> }` in the frontmatter, with the same value in EN and DE.
+- `BlogPost.astro` then shows "Part 2 of 7" under the title and the series box with all published parts. Related articles leave out the other parts of the same series.
 
 ## Length
 
