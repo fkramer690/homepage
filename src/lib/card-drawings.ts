@@ -591,16 +591,50 @@ const drawings: Record<string, Drawing> = {
   'prompt-injection-dealer-portals': (l) => `
     ${t(18, 18, l('UNTRUSTED TEXT', 'FREMDER TEXT'), { fill: D, size: 7 })}
     ${['Web-to-Lead', 'Email-to-Case', l('dealer portal', 'Händlerportal'), l('warranty claim', 'Garantieantrag')].map((s, i) => box(18, 26 + i * 22, 84, 17) + t(26, 37 + i * 22, s, { size: 7 })).join('')}
-    ${arrow(102, 66, 128)}
-    ${box(128, 44, 64, 44, C)}${t(160, 63, l('AGENT', 'AGENT'), { fill: D, size: 8, anchor: 'middle' })}${t(160, 77, 'Agentforce', { size: 7, anchor: 'middle' })}
-    ${t(206, 18, l('LETHAL TRIFECTA', 'LETHAL TRIFECTA'), { fill: D, size: 7 })}
-    ${check(206, 30, G)}${t(220, 35, l('narrow read rights', 'enge Leserechte'), { size: 7 })}
-    ${check(206, 48, G)}${t(220, 53, l('external text marked', 'externe Felder markiert'), { size: 7 })}
-    ${cross(210, 70)}${t(220, 73, l('no way out', 'kein Weg nach außen'), { fill: C, size: 7 })}
-    ${arrow(192, 66, 204, G, true)}
+    ${arrow(102, 66, 130)}
+    ${box(130, 44, 64, 44)}${t(162, 63, 'AGENT', { fill: D, size: 8, anchor: 'middle' })}${t(162, 77, 'Agentforce', { size: 7, anchor: 'middle' })}
+    ${t(207, 18, 'LETHAL TRIFECTA', { fill: D, size: 7 })}
+    ${dot(211, 34)}${t(220, 37, l('private data: narrow', 'private Daten: eng'), { size: 7 })}
+    ${dot(211, 54)}${t(220, 57, l('untrusted text', 'fremder Text'), { size: 7 })}
+    ${cross(211, 74)}${t(220, 77, l('way out: closed', 'Weg nach außen: zu'), { fill: C, size: 7 })}
+    <path d="M194 66H202" stroke="${G}" stroke-width="1.2" stroke-dasharray="3 3"/>
     <path d="M18 120H302" stroke="${L}"/>
     ${t(18, 136, l('ForcedLeak: CVSS 9.4, reported 07/2025', 'ForcedLeak: CVSS 9,4, gemeldet 07/2025'), { fill: D, size: 7.5 })}
     ${t(18, 150, l('Trusted URLs enforced since 8 Sep 2025', 'Trusted URLs erzwungen seit 8.9.2025'), { size: 7 })}`,
+
+  'ai-coding-works-council-gdpr': (l) => `
+    ${box(18, 16, 100, 58)}${t(68, 32, l('CODING AGENT', 'CODING-AGENT'), { fill: D, size: 7.5, anchor: 'middle' })}${t(68, 48, l('lines per person', 'Zeilen pro Person'), { size: 7, anchor: 'middle' })}${t(68, 62, l('PRs per person', 'PRs pro Person'), { size: 7, anchor: 'middle' })}
+    ${arrow(118, 45, 160, C)}
+    ${box(160, 16, 142, 58, C)}${t(231, 32, l('§ 87 (1) no. 6 BetrVG', '§ 87 Abs. 1 Nr. 6 BetrVG'), { fill: C, size: 7.5, anchor: 'middle' })}${t(231, 48, l('works agreement first', 'erst Betriebsvereinbarung'), { size: 7, anchor: 'middle' })}${t(231, 62, l('team level metrics only', 'nur Teamkennzahlen'), { size: 7, anchor: 'middle' })}
+    <path d="M18 88H302" stroke="${L}"/>
+    ${t(18, 102, l('INFERENCE IN THE EU?', 'INFERENZ IN DER EU?'), { fill: D, size: 7 })}
+    ${cross(24, 116)}${t(34, 119, l('Anthropic API: us or global', 'Anthropic-API: us oder global'), { size: 7 })}
+    ${check(166, 113, G)}${t(178, 119, 'Bedrock eu-*', { size: 7 })}
+    ${check(18, 129, G)}${t(30, 135, l('Copilot EU: +10 % credits', 'Copilot EU: +10 % Credits'), { size: 7 })}
+    ${check(166, 129, G)}${t(178, 135, l('OpenAI EU projects', 'OpenAI EU-Projekte'), { size: 7 })}
+    ${t(18, 152, l('not legal advice', 'keine Rechtsberatung'), { size: 7 })}`,
+
+  'oauth-connected-apps-ai-lessons': (l) => `
+    ${t(18, 18, l('SALESLOFT DRIFT, AUG 2025', 'SALESLOFT DRIFT, AUG. 2025'), { fill: D, size: 7 })}${t(232, 18, l('CONTROLS', 'KONTROLLEN'), { fill: D, size: 7 })}
+    ${box(18, 30, 80, 42)}${t(58, 48, l('AI APP', 'KI-APP'), { fill: D, anchor: 'middle' })}${t(58, 62, l('vendor cloud', 'Anbieter-Cloud'), { size: 7, anchor: 'middle' })}
+    ${arrow(98, 51, 146, C)}${t(122, 44, 'refresh token', { fill: C, size: 7, anchor: 'middle' })}
+    ${box(146, 30, 74, 42)}${t(183, 48, 'SALESFORCE', { fill: D, anchor: 'middle' })}${t(183, 62, 'org', { size: 7, anchor: 'middle' })}
+    ${t(18, 99, l('stolen token', 'gestohlenes Token'), { size: 7 })}
+    <path d="M94 96H183V76" fill="none" stroke="${G}" stroke-width="1.2" stroke-dasharray="4 3"/>${cross(140, 96)}${t(140, 112, 'Tor · cloud IPs', { size: 7, anchor: 'middle' })}
+    ${[l('own API user', 'eigener User'), l('no full scope', 'kein Scope full'), l('token expiry', 'Token-Ablauf'), l('IP filter', 'IP-Filter'), l('logs > 1 day', 'Logs > 1 Tag')].map((s, i) => check(232, 30 + i * 16, i === 0 ? C : G) + t(244, 35 + i * 16, s, { size: 7 })).join('')}
+    <path d="M18 124H302" stroke="${L}"/>
+    ${t(18, 138, l('exported: Cases, Accounts, Users, Opportunities', 'exportiert: Cases, Accounts, User, Opportunities'), { fill: D, size: 7.5 })}
+    ${t(18, 152, l('not a Salesforce vulnerability', 'keine Schwachstelle in Salesforce'), { size: 7 })}`,
+
+  'vibe-coding-prototype-not-production': (l) => `
+    ${box(16, 22, 124, 74)}${t(26, 38, l('PROTOTYPE', 'PROTOTYP'), { fill: D, size: 7.5 })}
+    ${t(26, 54, 'Developer Edition', { size: 7 })}${t(26, 68, l('scratch org, max. 30 days', 'Scratch Org, max. 30 Tage'), { size: 7 })}${t(26, 82, l('dummy data, no SAP', 'Testdaten, kein SAP'), { size: 7 })}
+    ${arrow(140, 59, 180, C)}${t(160, 50, 'Specs', { fill: C, size: 7, anchor: 'middle' })}${t(160, 74, l('no code', 'kein Code'), { fill: C, size: 7, anchor: 'middle' })}
+    ${box(180, 22, 124, 74, C)}${t(190, 38, l('PRODUCTION', 'PRODUKTION'), { fill: C, size: 7.5 })}
+    ${[l('approved plan', 'freigegebener Plan'), l('human review', 'menschliches Review'), l('tests + pipeline', 'Tests + Pipeline')].map((s, i) => check(190, 48 + i * 14, G) + t(204, 54 + i * 14, s, { size: 7 })).join('')}
+    <path d="M16 118H304" stroke="${L}"/>
+    ${t(16, 134, l('vibe coding: nobody reads the code', 'Vibe Coding: niemand liest den Code'), { fill: D, size: 7.5 })}
+    ${t(16, 150, l('Developer Edition: 110 requests, 1 month', 'Developer Edition: 110 Anfragen, 1 Monat'), { size: 7 })}`,
 };
 
 export const hasDrawing = (key: string) => key in drawings;

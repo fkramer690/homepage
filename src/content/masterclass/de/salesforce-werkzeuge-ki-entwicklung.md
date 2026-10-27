@@ -73,7 +73,7 @@ Die Doku sagt nicht, ob Vibes auch `CLAUDE.md` oder `AGENTS.md` liest. Claude Co
 
 Quellen: [Vibes Usage and Billing](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-admin-billing.html), [Vibes FAQ](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-faqs.html).
 
-Die Zahl, die ich zuerst prüfen würde: Die Grenze der Unmetered-Lizenz gilt laut FAQ pro Org, nicht pro Nutzer. Ist sie erreicht, arbeitet das Team mit GPT-5 weiter oder zahlt Flex Credits. Opus läuft als „Advanced Prompt“; die [Flex Credits Rate Card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) setzt dafür 16 Credits an, bei 500 $ je 100.000 Credits also 0,08 $ je angefangene 2.000 Token. Welche Stufe Sonnet und GPT haben, nennt die Billing-Seite nicht, und einen Dollarpreis für die Unmetered-Lizenz habe ich auf keiner offiziellen Seite gefunden. Fragen Sie beides beim Account Team an.
+Die Zahl, die ich zuerst prüfen würde: Die Grenze der Unmetered-Lizenz gilt laut FAQ pro Org, nicht pro Nutzer. Ist sie erreicht, arbeitet das Team mit GPT-5 weiter oder zahlt Flex Credits. Opus läuft als „Advanced Prompt“; die [Flex Credits Rate Card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) setzt dafür 16 Credits an, bei [500 € je 100.000 Credits](https://www.salesforce.com/agentforce/developers/vibe-coding/pricing/) also 0,08 € je angefangene 2.000 Token. Die Unmetered-Lizenz führt die [Preisseite von Vibes](https://www.salesforce.com/agentforce/developers/vibe-coding/pricing/) als Flat Fee zu 125 € pro Nutzer und Monat. Welche Stufe Sonnet und GPT haben, nennt die Billing-Seite nicht. Das fragen Sie beim Account Team an.
 
 Seit dem 1. Juni 2026 braucht Vibes außerhalb der Developer Edition [Flex Credits oder eine bezahlte Lizenz](https://www.salesforceben.com/agentforce-vibes-no-longer-free-for-use/). SalesforceBen meldete zur Dreamforce 2026 für Developer Editions wieder [50 Requests oder 1 Mio. Token mit täglichem Reset](https://www.salesforceben.com/developer-features-and-announcements-from-dreamforce-26/). Die offizielle FAQ nennt weiter 110 Requests für einen Monat ohne Refresh. Ich plane mit der FAQ.
 
@@ -136,7 +136,7 @@ In diesem Szenario ist die Frage nach dem Agenten schnell beantwortet. Zeit kost
 ## Was sollten Sie jetzt entscheiden?
 
 1. **Org-Standort klären.** EU Operating Zone ja oder nein entscheidet über Vibes.
-2. **Lizenzweg rechnen.** Unmetered gegen Flex Credits, mit der Grenze pro Org und einem Preis vom Account Team.
+2. **Lizenzweg rechnen.** Unmetered gegen Flex Credits, mit der Grenze pro Org und 125 € pro Nutzer und Monat für die Flat Fee.
 3. **Regeldatei im Kunden-Repository anlegen**, für jedes Werkzeug, das Ihre Partner nutzen dürfen.
 4. **Agentforce-Agenten nur als Agent Script in Git abnehmen**, mit Testspezifikation und vereinbarter Bestehensquote.
 5. **Code Analyzer als Pflichtschritt in die Pipeline setzen**, ApexGuru mit Laufzeitdaten aus Produktion oder Full-Copy-Sandbox.
