@@ -76,7 +76,7 @@ The order of work:
 
 ### What the batch run costs
 
-The [Claude Batch API](https://platform.claude.com/docs/en/build-with-claude/batch-processing) processes requests asynchronously, most batches within an hour, and charges 50 percent of standard prices. According to the [pricing page](https://platform.claude.com/docs/en/about-claude/pricing), that means $1 input and $5 output per million tokens for Sonnet 5.5, and $2 and $10 for Opus 5.5. A batch holds up to 100,000 requests, so one batch is enough here.
+The [Claude Batch API](https://platform.claude.com/docs/en/build-with-claude/batch-processing) processes requests asynchronously, most batches within an hour, and charges 50 percent of standard prices. According to the [pricing page](https://platform.claude.com/docs/en/about-claude/pricing), that means $1 input and $5 output per million tokens for Sonnet 5.5, and $2 and $10 for Opus 5.5. A batch holds up to 100,000 requests or 256 MB, whichever comes first. The scenario's input is roughly 150 MB of text (my estimate), so I would split it into two batches to stay clear of the limit.
 
 - Code and metadata: 1,400 classes at 6,000 tokens, 600 flows at 10,000 tokens of flow XML, 250 permission sets at 4,000 tokens = 15.4 million tokens.
 - Questions and tool findings: 12,000 tokens per request × 2,250 requests = 27 million tokens.

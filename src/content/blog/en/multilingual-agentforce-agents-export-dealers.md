@@ -9,7 +9,7 @@ topic: ai
 categories: [ai, manufacturing-cloud]
 tags: [agentforce, multilingual, knowledge, flex credits, dealer service, manufacturing]
 takeaways:
-  - "Salesforce lists 56 languages for Agentforce Service Agent, 25 of them in beta, including Russian, Slovak and Ukrainian. Agentforce Voice lists seven languages."
+  - "Salesforce lists 56 languages for Agentforce Service Agent, 25 of them in beta, including Russian, Slovak and Ukrainian. Agentforce Voice names seven languages and adds \"many others\"."
   - "The Translation meter costs 4,000 Flex Credits per million characters, about $20, so translating one dealer chat costs around five cents."
   - "Other languages need more tokens than English, and prompts are metered in 2,000-token units, so a grounded answer in Czech can cost two prompt units where English needs one."
   - "By default the knowledge retriever filters articles by the session language, so an Italian dealer finds only Italian articles unless you build a custom retriever."
@@ -18,7 +18,7 @@ faq:
   - q: "Which languages does Agentforce support?"
     a: "The help page for Agentforce Service Agent lists 56 languages. 31 have no beta label, among them German, French, Italian, Spanish, Polish, Czech and Turkish. 25 are in beta, including Russian, Ukrainian, Slovak and Arabic, and for those Salesforce leaves quality assurance to you."
   - q: "Does Agentforce Voice speak French or Polish?"
-    a: "The Agentforce Voice product page lists English, French, Spanish, Italian, German, Portuguese and Japanese. The Dreamforce 2026 announcement calls the French variant Canadian French, so confirm French for France before you plan. Polish is not listed."
+    a: "The Agentforce Voice product page lists English, French, Spanish, Italian, German, Portuguese and Japanese. The Dreamforce 2026 announcement calls the French variant Canadian French, so confirm French for France before you plan. Polish is not named, but the page adds \"many others\"."
   - q: "What does translation cost in Agentforce?"
     a: "The Flex Credits rate card lists Translation at 4,000 credits per million characters translated, about $20 at list price. Salesforce does not say on its pricing pages which agent features draw on this meter, so ask your account executive."
   - q: "Do I need knowledge articles in every dealer language?"
@@ -28,7 +28,7 @@ faq:
 draft: false
 ---
 
-Multilingual Agentforce agents can serve dealers in most export markets today. Salesforce lists 56 languages for Agentforce Service Agent, 25 of them in beta, and seven for Agentforce Voice. Translation itself is cheap at 4,000 Flex Credits per million characters. The decisions that matter sit elsewhere: prompts in other languages need more tokens, and by default the knowledge retriever only finds articles in the dealer's session language. I would maintain knowledge in one or two languages, keep safety and warranty content per country and test every language before go-live.
+Multilingual Agentforce agents can serve dealers in most export markets today. Salesforce lists 56 languages for Agentforce Service Agent, 25 of them in beta, and names seven for Agentforce Voice. Translation itself is cheap at 4,000 Flex Credits per million characters. The decisions that matter sit elsewhere: prompts in other languages need more tokens, and by default the knowledge retriever only finds articles in the dealer's session language. I would maintain knowledge in one or two languages, keep safety and warranty content per country and test every language before go-live.
 
 ## Which languages does Agentforce support for text and voice?
 
@@ -36,7 +36,7 @@ The [considerations page for Agentforce Service Agent](https://help.salesforce.c
 
 The label matters. Salesforce's [guide to multi-language support](https://www.salesforce.com/blog/multi-language-guide/) says that for beta languages customers "are responsible for quality assurance", while GA "means Salesforce has verified the quality of responses across Agentforce". For an exporter: dealers in Czechia are covered, dealers next door in Slovakia are a beta case you test yourself.
 
-Voice has a shorter list. The [Agentforce Voice product page](https://www.salesforce.com/agentforce/voice/) names English, French, Spanish, Italian, German, Portuguese and Japanese. The [Dreamforce 2026 announcements](https://www.salesforce.com/blog/dreamforce-2026-announcements/) call the French variant "Canadian French", and a [help article](https://help.salesforce.com/s/articleView?language=en_US&id=ai.agentforce_voice.htm&type=5) still says "supported only in English". Get French for France confirmed in writing before you plan a voice line for French dealers. Polish or Czech callers have no voice agent yet; the hotline design is in [breakdown hotline with Agentforce Voice](../breakdown-hotline-agentforce-voice/).
+Voice has a shorter list. The [Agentforce Voice product page](https://www.salesforce.com/agentforce/voice/) names English, French, Spanish, Italian, German, Portuguese and Japanese, "and many others" without saying which. The [Dreamforce 2026 announcements](https://www.salesforce.com/blog/dreamforce-2026-announcements/) call the French variant "Canadian French", and a [help article](https://help.salesforce.com/s/articleView?language=en_US&id=ai.agentforce_voice.htm&type=5) still says "supported only in English". Get French for France confirmed in writing before you plan a voice line for French dealers, and do the same for Polish or Czech, which the page does not name. The hotline design is in [breakdown hotline with Agentforce Voice](../breakdown-hotline-agentforce-voice/).
 
 ## How does the agent pick its language?
 
@@ -62,11 +62,11 @@ For human reps, [Real-Time Translations](https://help.salesforce.com/s/articleVi
 
 ## Why do prompts in other languages use more tokens?
 
-A token is the unit a language model reads and writes, often part of a word. OpenAI's [help center](https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-) gives the rule "1 token ~= 4 chars in English" and says a higher token-to-character ratio "can make it more expensive to implement the API for languages other than English".
+A token is the unit a language model reads and writes, often part of a word. OpenAI's [help center](https://help.openai.com/en/articles/4936856-understanding-and-counting-tokens) gives the rule of thumb "1 token is approximately 4 characters" and notes that "other languages can have different relationships between characters, words, and tokens".
 
-I ran one dealer question through gpt-tokenizer, an open-source implementation of OpenAI's tokenizers: alarm 2041 on a lathe's spindle drive, which spare part, warranty cover, technician date. With the o200k_base encoding English needs 50 tokens, German 58, French 64, Russian 67, Polish 69, Czech 70 and Japanese 74. With the older cl100k_base encoding Czech needs 103 and Russian 112, more than twice English. One sentence is no benchmark, and the tokenizer depends on your model, but the direction is clear.
+This is my own single-sentence measurement, not a benchmark. I ran one dealer question through gpt-tokenizer, an open-source implementation of OpenAI's tokenizers: "Alarm 2041 on the spindle drive of our lathe: which spare part do we need, is it covered by warranty, and when can a technician come?" I translated it myself into six languages. With the o200k_base encoding English needs 33 tokens, German 38, Russian 39, French and Polish 40, Czech 41 and Japanese 44. With the older cl100k_base encoding Czech needs 57 and Russian 63, against 33 for English. The tokenizer depends on your model, and one sentence says little about your documents, but the direction is clear.
 
-In Flex Credits the effect comes in steps. The help article counts prompts "in chunks of 2,000 tokens, rounded up", input and output together: "a prompt with a total of 6,500 input and output tokens will be metered as 4 prompts." Actions are metered per call, whatever the language. A grounded answer of 1,750 tokens in English fits one unit; at the Czech factor of 1.4 it needs 2,450 tokens and two units, 8 credits instead of 4 on a Standard model. The method is in [Flex Credits and Agentforce cost per action](../flex-credits-agentforce-cost-per-action/), the basics in the masterclass chapter [costs and tokens](../../ai-masterclass/costs-and-tokens/).
+In Flex Credits the effect comes in steps. The help article counts prompts "in chunks of 2,000 tokens, rounded up", input and output together: "a prompt with a total of 6,500 input and output tokens will be metered as 4 prompts." Actions are metered per call, whatever the language. A grounded answer of 1,750 tokens in English fits one unit; at the Czech factor of 1.24 from my sentence (41 against 33 tokens) it needs about 2,170 tokens and two units, 8 credits instead of 4 on a Standard model. The method is in [Flex Credits and Agentforce cost per action](../flex-credits-agentforce-cost-per-action/), the basics in the masterclass chapter [costs and tokens](../../ai-masterclass/costs-and-tokens/).
 
 Quality is the second reason to test. The guide warns that "most major LLMs are predominantly trained using English". I would write the instructions once and test them in every allowed language.
 

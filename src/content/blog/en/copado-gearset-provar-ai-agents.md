@@ -62,14 +62,14 @@ Here the three products differ most, and this is where a manufacturer with GDPR 
 **Gearset** publishes general AI terms in its [product and location specific terms](https://gearset.com/legal/product-and-location-terms/), in a version effective from 15 September 2026. They do not mention Cam by name, but they cover Gearset's AI functionality as a whole:
 
 - Providers include "OpenAI and Amazon Web Services", with "data centres in the United States and as otherwise specified in the Documentation".
-- Gearset keeps input and output for 90 days, or a shorter period you set; the providers keep nothing.
+- Gearset keeps input and output for 90 days or, where the software offers it, a shorter period you set; the providers keep nothing.
 - Gearset does not train models on customer data, but may use input and output to assess and improve its services.
 - Usage is measured in credits with a monthly cap from the order form. At the cap, Gearset suspends the AI functionality until the end of the month.
 - The customer "may not use the AI functionality to replace or substantially replace human decision making".
 
 US data centres mean a third-country transfer your data protection officer must assess before production metadata goes in.
 
-**Copado** names no model and no region for Agentia on the pages I opened. Its public data sheet "Copado AI and your data" dates from June 2024 and covers CopadoGPT and Test Copilot, not Agentia. That says nothing about the quality of the answers; it means you need them in writing before you sign.
+**Copado** names no model and no region for Agentia on the pages I opened. Its public data sheet "Copado AI and your data" dates from June 2024 and covers CopadoGPT and Test Copilot, not Agentia; I could read only its summary page. That says nothing about the quality of the answers; it means you need them in writing before you sign.
 
 **Provar MCP** runs "entirely on your local machine", according to its documentation, and sends "no project files, test code, or credentials" to Provar servers unless you switch on an optional API validation. The metadata and test cases still reach whichever AI assistant you connect. The data question moves to your contract with Anthropic, GitHub or Cursor; the [works council and GDPR article](../ai-coding-tools-works-council-gdpr/) covers that part. As I read the vendors' pages, Provar MCP is the easiest of the three to approve. My reading of these terms is not legal advice.
 

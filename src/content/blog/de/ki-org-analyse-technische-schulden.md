@@ -76,7 +76,7 @@ Die Reihenfolge:
 
 ### Was der Batch-Lauf kostet
 
-Die [Claude Batch API](https://platform.claude.com/docs/en/build-with-claude/batch-processing) verarbeitet Anfragen asynchron, die meisten Batches innerhalb einer Stunde, und berechnet 50 Prozent der Standardpreise. Laut [Preisseite](https://platform.claude.com/docs/en/about-claude/pricing) sind das für Sonnet 5.5 1 $ Input und 5 $ Output pro Million Tokens, für Opus 5.5 2 $ und 10 $. Einen Euro-Listenpreis veröffentlicht Anthropic dort nicht, die Beträge sind US-Listenpreise. Ein Batch fasst bis zu 100.000 Anfragen, hier reicht also einer.
+Die [Claude Batch API](https://platform.claude.com/docs/en/build-with-claude/batch-processing) verarbeitet Anfragen asynchron, die meisten Batches innerhalb einer Stunde, und berechnet 50 Prozent der Standardpreise. Laut [Preisseite](https://platform.claude.com/docs/en/about-claude/pricing) sind das für Sonnet 5.5 1 $ Input und 5 $ Output pro Million Tokens, für Opus 5.5 2 $ und 10 $. Einen Euro-Listenpreis veröffentlicht Anthropic dort nicht, die Beträge sind US-Listenpreise. Ein Batch fasst bis zu 100.000 Anfragen oder 256 MB, je nachdem, was zuerst erreicht ist. Der Input im Szenario umfasst grob 150 MB Text (meine Schätzung), ich würde ihn deshalb auf zwei Batches aufteilen.
 
 - Code und Metadaten: 1.400 Klassen zu 6.000 Tokens, 600 Flows zu 10.000 Tokens Flow-XML, 250 Permission Sets zu 4.000 Tokens = 15,4 Mio. Tokens.
 - Fragenkatalog und Tool-Befunde: 12.000 Tokens pro Anfrage × 2.250 Anfragen = 27 Mio. Tokens.

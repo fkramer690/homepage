@@ -102,7 +102,7 @@ The assumed effort is 6 to 10 person days for seed set and mask, plus half a day
 The strongest control: no full copy login on any machine where an agent runs. Tool settings come second:
 
 - **Claude Code.** Anthropic's [best practices](https://code.claude.com/docs/en/best-practices) say deny rules "hold in every permission mode", but also that a WebFetch deny does nothing against curl unless the sandbox is on. Deny rules back up the missing login; they do not replace it.
-- **Salesforce DX MCP Server.** It reaches only [explicitly allowlisted](https://developer.salesforce.com/docs/platform/sfdx-dev/guide/sfdx-dev-mcp.html) orgs. It reaches [end of life on 2 November 2026](../salesforce-dx-mcp-server-end-of-life/); whatever replaces it needs the same restriction.
+- **Salesforce DX MCP Server.** It reaches only [explicitly allowlisted](https://developer.salesforce.com/docs/platform/sfdx-dev/guide/sfdx-dev-mcp.html) orgs. According to its README it reaches [end of life on 2 November 2026](../salesforce-dx-mcp-server-end-of-life/); whatever replaces it needs the same restriction.
 - **Agentforce Vibes.** Salesforce describes [disabling Vibes per org](https://developer.salesforce.com/blogs/2025/12/five-pro-tips-for-using-agentforce-vibes) under Setup, Agentforce Vibes Extensions, for production. I would do the same for the full copy.
 - **Transcripts.** Shorten local retention with `cleanupPeriodDays` and have partners confirm deletion when they leave.
 

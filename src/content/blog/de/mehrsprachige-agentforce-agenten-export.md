@@ -9,7 +9,7 @@ topic: ai
 categories: [ai, manufacturing-cloud]
 tags: [Agentforce, Mehrsprachigkeit, Knowledge, Flex Credits, Händlerservice, Maschinenbau]
 takeaways:
-  - "Salesforce listet für den Agentforce Service Agent 56 Sprachen, 25 davon als Beta, darunter Russisch, Slowakisch und Ukrainisch. Agentforce Voice nennt sieben Sprachen."
+  - "Salesforce listet für den Agentforce Service Agent 56 Sprachen, 25 davon als Beta, darunter Russisch, Slowakisch und Ukrainisch. Agentforce Voice nennt sieben Sprachen und ergänzt \"many others\"."
   - "Übersetzung kostet 4.000 Flex Credits pro Million Zeichen, rund 20 €. Ein übersetztes Händlergespräch kostet damit etwa fünf Cent."
   - "Andere Sprachen brauchen mehr Tokens als Englisch, und Prompts werden in Einheiten von 2.000 Tokens abgerechnet. Eine Antwort auf Tschechisch kann deshalb zwei Einheiten kosten statt einer."
   - "Standardmäßig filtert der Retriever Wissensartikel nach der Sitzungssprache. Ein italienischer Händler findet nur italienische Artikel, solange Sie keinen eigenen Retriever bauen."
@@ -18,7 +18,7 @@ faq:
   - q: "Welche Sprachen unterstützt Agentforce?"
     a: "Die Hilfeseite zum Agentforce Service Agent nennt 56 Sprachen. 31 tragen kein Beta-Label, darunter Deutsch, Französisch, Italienisch, Spanisch, Polnisch, Tschechisch und Türkisch. 25 sind Beta, etwa Russisch, Ukrainisch, Slowakisch und Arabisch; dort liegt die Qualitätssicherung laut Salesforce beim Kunden."
   - q: "Spricht Agentforce Voice Französisch oder Polnisch?"
-    a: "Die Produktseite von Agentforce Voice nennt Englisch, Französisch, Spanisch, Italienisch, Deutsch, Portugiesisch und Japanisch. Die Dreamforce-Ankündigung 2026 spricht von kanadischem Französisch, lassen Sie sich Französisch für Frankreich also bestätigen. Polnisch fehlt."
+    a: "Die Produktseite von Agentforce Voice nennt Englisch, Französisch, Spanisch, Italienisch, Deutsch, Portugiesisch und Japanisch. Die Dreamforce-Ankündigung 2026 spricht von kanadischem Französisch, lassen Sie sich Französisch für Frankreich also bestätigen. Polnisch wird nicht genannt, die Seite ergänzt aber „many others“."
   - q: "Was kostet Übersetzung in Agentforce?"
     a: "Die Flex-Credits-Rate-Card nennt für Translation 4.000 Credits pro Million übersetzter Zeichen, zum Listenpreis rund 20 €. Welche Agentenfunktionen diesen Zähler nutzen, steht auf keiner Preisseite. Fragen Sie Ihren Account Executive."
   - q: "Brauche ich Wissensartikel in jeder Händlersprache?"
@@ -28,7 +28,7 @@ faq:
 draft: false
 ---
 
-Mehrsprachige Agentforce-Agenten können Händler in den meisten Exportmärkten heute bedienen. Salesforce listet für den Agentforce Service Agent 56 Sprachen, 25 davon als Beta, und für Agentforce Voice sieben. Die Übersetzung selbst ist mit 4.000 Flex Credits pro Million Zeichen günstig. Die eigentlichen Entscheidungen liegen woanders: Prompts in anderen Sprachen brauchen mehr Tokens, und der Retriever findet standardmäßig nur Wissensartikel in der Sitzungssprache des Händlers. Ich würde Wissen in ein oder zwei Sprachen pflegen, Sicherheits- und Gewährleistungsinhalte pro Land halten und jede Sprache vor dem Go-live testen.
+Mehrsprachige Agentforce-Agenten können Händler in den meisten Exportmärkten heute bedienen. Salesforce listet für den Agentforce Service Agent 56 Sprachen, 25 davon als Beta, und nennt für Agentforce Voice sieben. Die Übersetzung selbst ist mit 4.000 Flex Credits pro Million Zeichen günstig. Die eigentlichen Entscheidungen liegen woanders: Prompts in anderen Sprachen brauchen mehr Tokens, und der Retriever findet standardmäßig nur Wissensartikel in der Sitzungssprache des Händlers. Ich würde Wissen in ein oder zwei Sprachen pflegen, Sicherheits- und Gewährleistungsinhalte pro Land halten und jede Sprache vor dem Go-live testen.
 
 ## Welche Sprachen unterstützt Agentforce in Text und Voice?
 
@@ -36,7 +36,7 @@ Die [Hinweisseite zum Agentforce Service Agent](https://help.salesforce.com/s/ar
 
 Das Label hat Folgen. Im [Leitfaden zur Mehrsprachigkeit in Agentforce](https://www.salesforce.com/blog/multi-language-guide/) schreibt Salesforce, dass bei Beta-Sprachen der Kunde für die Qualitätssicherung verantwortlich ist. GA bedeutet dort, dass Salesforce die Antwortqualität geprüft hat. Für einen Exporteur heißt das: Händler in Tschechien sind abgedeckt, Händler nebenan in der Slowakei sind ein Beta-Fall, den Sie selbst testen.
 
-Für Voice ist die Liste kürzer. Die [Produktseite von Agentforce Voice](https://www.salesforce.com/agentforce/voice/) nennt Englisch, Französisch, Spanisch, Italienisch, Deutsch, Portugiesisch und Japanisch. Die [Dreamforce-Ankündigungen 2026](https://www.salesforce.com/blog/dreamforce-2026-announcements/) sprechen von „Canadian French“, und ein [Hilfeartikel](https://help.salesforce.com/s/articleView?language=en_US&id=ai.agentforce_voice.htm&type=5) sagt noch, Agentforce Voice werde nur auf Englisch unterstützt. Lassen Sie sich Französisch für Frankreich schriftlich bestätigen, bevor Sie eine Sprachhotline für französische Händler planen. Polnische oder tschechische Anrufer haben noch keinen Voice-Agenten. Wie eine Hotline aufgebaut sein sollte, steht in [Störungshotline mit Agentforce Voice](../stoerungshotline-agentforce-voice-deutsch/).
+Für Voice ist die Liste kürzer. Die [Produktseite von Agentforce Voice](https://www.salesforce.com/agentforce/voice/) nennt Englisch, Französisch, Spanisch, Italienisch, Deutsch, Portugiesisch und Japanisch, dazu „many others“, ohne zu sagen, welche. Die [Dreamforce-Ankündigungen 2026](https://www.salesforce.com/blog/dreamforce-2026-announcements/) sprechen von „Canadian French“, und ein [Hilfeartikel](https://help.salesforce.com/s/articleView?language=en_US&id=ai.agentforce_voice.htm&type=5) sagt noch, Agentforce Voice werde nur auf Englisch unterstützt. Lassen Sie sich Französisch für Frankreich schriftlich bestätigen, bevor Sie eine Sprachhotline für französische Händler planen. Gleiches gilt für Polnisch und Tschechisch, die die Seite nicht nennt. Wie eine Hotline aufgebaut sein sollte, steht in [Störungshotline mit Agentforce Voice](../stoerungshotline-agentforce-voice-deutsch/).
 
 ## Wie wählt der Agent seine Sprache?
 
@@ -62,11 +62,11 @@ Für Servicemitarbeitende gibt es eine eigene Funktion. [Real-Time Translations]
 
 ## Warum brauchen Prompts in anderen Sprachen mehr Tokens?
 
-Ein Token ist die Einheit, die ein Sprachmodell liest und schreibt, oft ein Wortteil. Das [Help Center von OpenAI](https://help.openai.com/en/articles/4936856-what-are-tokens-and-how-) nennt als Faustregel ein Token pro etwa vier Zeichen englischen Texts. Die Aufteilung hänge von der Sprache ab, und ein höheres Verhältnis von Tokens zu Zeichen könne die Nutzung für andere Sprachen als Englisch teurer machen.
+Ein Token ist die Einheit, die ein Sprachmodell liest und schreibt, oft ein Wortteil. Das [Help Center von OpenAI](https://help.openai.com/en/articles/4936856-understanding-and-counting-tokens) nennt als Faustregel ein Token pro etwa vier Zeichen und merkt an, dass andere Sprachen ein anderes Verhältnis zwischen Zeichen, Wörtern und Tokens haben können.
 
-Ich habe eine Händlerfrage mit gpt-tokenizer gezählt, einer Open-Source-Umsetzung der OpenAI-Tokenizer: Alarm 2041 am Spindelantrieb einer Drehmaschine, welches Ersatzteil, Gewährleistung, Technikertermin. Mit der Kodierung o200k_base braucht Englisch 50 Tokens, Deutsch 58, Französisch 64, Russisch 67, Polnisch 69, Tschechisch 70 und Japanisch 74. Mit der älteren Kodierung cl100k_base braucht Tschechisch 103 und Russisch 112, mehr als doppelt so viele wie Englisch. Ein Satz ist kein Benchmark, und der Tokenizer hängt vom Modell ab, aber die Richtung ist klar.
+Das ist meine eigene Messung an einem einzigen Satz, kein Benchmark. Ich habe eine Händlerfrage mit gpt-tokenizer gezählt, einer Open-Source-Umsetzung der OpenAI-Tokenizer: „Alarm 2041 on the spindle drive of our lathe: which spare part do we need, is it covered by warranty, and when can a technician come?“ Die Übersetzungen in sechs Sprachen stammen von mir. Mit der Kodierung o200k_base braucht Englisch 33 Tokens, Deutsch 38, Russisch 39, Französisch und Polnisch 40, Tschechisch 41 und Japanisch 44. Mit der älteren Kodierung cl100k_base braucht Tschechisch 57 und Russisch 63, Englisch dagegen 33. Der Tokenizer hängt vom Modell ab, und ein Satz sagt wenig über Ihre Dokumente, aber die Richtung ist klar.
 
-Bei Flex Credits wirkt das in Stufen. Laut Hilfeartikel zählen Prompts in Einheiten von 2.000 Tokens, aufgerundet, Eingabe und Ausgabe zusammen. Das Beispiel dort: Ein Prompt mit 6.500 Tokens zählt als vier Prompts. Aktionen kosten pro Aufruf, egal in welcher Sprache. Eine Antwort mit Wissensbezug, die auf Englisch 1.750 Tokens braucht, passt in eine Einheit. Mit dem tschechischen Faktor 1,4 braucht sie 2.450 Tokens und zwei Einheiten, also 8 statt 4 Credits auf einem Standard-Modell. Die Methode steht in [Flex Credits und Agentforce-Kosten pro Aktion](../flex-credits-agentforce-kosten-pro-aktion/), die Grundlagen im Masterclass-Kapitel [Kosten und Token](../../masterclass-ki/kosten-und-token/).
+Bei Flex Credits wirkt das in Stufen. Laut Hilfeartikel zählen Prompts in Einheiten von 2.000 Tokens, aufgerundet, Eingabe und Ausgabe zusammen. Das Beispiel dort: Ein Prompt mit 6.500 Tokens zählt als vier Prompts. Aktionen kosten pro Aufruf, egal in welcher Sprache. Eine Antwort mit Wissensbezug, die auf Englisch 1.750 Tokens braucht, passt in eine Einheit. Mit dem tschechischen Faktor 1,24 aus meinem Satz (41 statt 33 Tokens) braucht sie rund 2.170 Tokens und zwei Einheiten, also 8 statt 4 Credits auf einem Standard-Modell. Die Methode steht in [Flex Credits und Agentforce-Kosten pro Aktion](../flex-credits-agentforce-kosten-pro-aktion/), die Grundlagen im Masterclass-Kapitel [Kosten und Token](../../masterclass-ki/kosten-und-token/).
 
 Die Qualität ist der zweite Grund, pro Sprache zu testen. Der Leitfaden warnt, dass die meisten großen Sprachmodelle überwiegend mit Englisch trainiert sind. Ich würde die Anweisungen einmal schreiben und in jeder erlaubten Sprache testen.
 

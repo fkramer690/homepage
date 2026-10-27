@@ -25,7 +25,7 @@ faq:
   - q: "Bekommt ein mittelständischer Hersteller eine AELA?"
     a: "Eine Schwelle nennt Salesforce nicht. Die veröffentlichten Abschlüsse sind groß, etwa das US-Veteranenministerium mit einer Obergrenze von 1,6 Mrd. US-Dollar. Fragen Sie, ob sie bei Ihrem Volumen angeboten wird, und vergleichen Sie mit einem Dreijahresplan für Flex Credits."
   - q: "Wie behalte ich den Verbrauch bei einer Pauschale im Blick?"
-    a: "Digital Wallet zeigt den Verbrauch bis auf Agent, Aktion und Kanal und unterstützt eigene Tags für die interne Verrechnung. Voraussetzung ist Data 360. Erfassen Sie die Zahlen auch bei einer Pauschale, denn sie sind Ihre Grundlage für die Verlängerung."
+    a: "Digital Wallet zeigt den Verbrauch bis auf Agent, Aktion und Kanal und unterstützt eigene Tags für die interne Verrechnung. Laut FAQ erreichen Sie es, nachdem Data 360 eingeschaltet ist. Erfassen Sie die Zahlen auch bei einer Pauschale, denn sie sind Ihre Grundlage für die Verlängerung."
 draft: false
 ---
 
@@ -35,7 +35,7 @@ Eine Salesforce AELA lohnt sich für einen Hersteller nur, wenn die Nutzung von 
 
 Das Agentic Enterprise License Agreement (AELA) ist ein Pauschalvertrag für die Nutzung von Agenten. Forrester-Analystin Lisa Singer [schrieb im Dezember 2025](https://www.forrester.com/blogs/ai-agents-become-economic-actors-salesforce-rewrites-the-rules-of-pricing), die AELA „gives customers unlimited use of consumption‑based products such as Agentforce, Data 360/Data Cloud, and MuleSoft for a fixed fee over two or three years“. Laut Forrester sagte Chief Revenue Officer Miguel Milano auf einer Konferenz, „that Salesforce is OK with losing money on some AI deals“.
 
-Die eigenen Aussagen von Salesforce stammen aus den Telefonkonferenzen zu den Quartalszahlen. Im [Transkript zum vierten Quartal FY26](https://s205.q4cdn.com/626266368/files/doc_financials/2026/q4/Transcript-Salesforce-Inc-Q4-FY26-Earnings-Conference-Call-2-25-26.pdf) vom 25. Februar 2026 sagt Milano, Salesforce habe in diesem Quartal mehr als 120 AELAs verkauft, erwartet habe man 50 bis 100. Acht der zehn größten Abschlüsse seien AELAs gewesen. Finanzchefin Robin Washington nennt die Forward Deployed Engineers den Schlüssel für das „converting it from AELAS to ultimately consuming“ (Schreibweise wie im Transkript). Im [Call zum ersten Quartal FY27](https://s205.q4cdn.com/626266368/files/doc_financials/2027/q1/Salesforce-Q1-FY27-Earnings-Transcript.pdf) vom 27. Mai 2026 beschreibt Milano sechs der zehn größten Abschlüsse als ELAs, „where we threw in a bunch of flex credits“. Ausgeschrieben werden die Abkürzungen in beiden Transkripten nicht.
+Die eigenen Aussagen von Salesforce stammen aus den Telefonkonferenzen zu den Quartalszahlen. Im [Transkript zum vierten Quartal FY26](https://s205.q4cdn.com/626266368/files/doc_financials/2026/q4/Transcript-Salesforce-Inc-Q4-FY26-Earnings-Conference-Call-2-25-26.pdf) vom 25. Februar 2026 sagt Milano, Salesforce habe in diesem Quartal mehr als 120 AELAs verkauft, erwartet habe man 50 bis 100. Acht der zehn größten Abschlüsse seien AELAs gewesen. Finanzchefin Robin Washington nennt die Forward Deployed Engineers den Schlüssel für das „converting it from AELAS to ultimately consuming“ (Schreibweise wie im Transkript). Im [Call zum ersten Quartal FY27](https://s205.q4cdn.com/626266368/files/doc_financials/2027/q1/Salesforce-Q1-FY27-Earnings-Transcript.pdf) vom 27. Mai 2026 beschreibt Milano sechs der zehn größten Abschlüsse als ELAs, „where we threw in a bunch of flex credits“. Das Q4-Transkript definiert AELA nirgends; das Q1-Transkript erklärt ELA als „a limited enterprise license agreement“.
 
 Zwei Abschlüsse sind öffentlich:
 
@@ -49,7 +49,7 @@ Nicht öffentlich sind der Preis, die Zugangsvoraussetzungen, die Fair-Use-Regel
 | Modell | Sie zahlen | Wer trägt das Mengenrisiko | Öffentliche Konditionen |
 |---|---|---|---|
 | Flex Credits, PayGo | 500 € je 100.000 verbrauchte Credits | Sie, pro Credit | Preisliste und Rate Card |
-| Flex Credits, Pre-Commit | eine zugesagte Grundmenge ohne Vorauszahlung | Sie, wenn die Zusage zu hoch ist | Preisliste und Rate Card |
+| Flex Credits, Pre-Commit | vorab zugesagte Credits (die Preisseite nennt keine Details) | Sie, wenn die Zusage zu hoch ist | Preisliste und Rate Card |
 | Pool der Edition | Lizenzen, mit Credit-Pool pro Org und Jahr | Sie, oberhalb des Pools | Preisseiten |
 | Add-on pro Nutzer | 125 $ pro Nutzer und Monat (US-Listenpreis) | Salesforce, für Mitarbeiternutzung | Preisseite |
 | AELA | Pauschale über zwei oder drei Jahre | Salesforce in der Laufzeit, Sie bei Verlängerung | keine |
@@ -98,7 +98,7 @@ Die Finanzchefin von Salesforce spricht offen über den Wechsel von AELA-Kunden 
 3. **Umfang schriftlich.** Produkte, Zähler, Sandboxes, Data-360-Stufen, MuleSoft, der Headless-Zähler, sobald er bepreist ist, und welche Tochtergesellschaften, Werke und Orgs abgedeckt sind.
 4. **Fair-Use-Klauseln.** „Unlimited“ hat Bedingungen, wie die Fußnote bei Adecco zeigt. Lassen Sie sich diese vor Ende der Verhandlung geben.
 5. **Kopplung an Lizenzen.** Was mit der Pauschale passiert, wenn Sie Nutzer abbauen oder einen Geschäftsbereich verkaufen.
-6. **Ihre eigenen Verbrauchsdaten.** [Digital Wallet](https://www.salesforce.com/agentforce/digital-wallet/) zeigt den Verbrauch bis auf Agent, Aktion und Kanal und unterstützt eigene Tags für die interne Verrechnung; Voraussetzung ist Data 360. Exportieren Sie die Daten monatlich, dann wissen Sie bei der Verlängerung so viel wie Salesforce.
+6. **Ihre eigenen Verbrauchsdaten.** [Digital Wallet](https://www.salesforce.com/agentforce/digital-wallet/) zeigt den Verbrauch bis auf Agent, Aktion und Kanal und unterstützt eigene Tags für die interne Verrechnung; laut FAQ erreichen Sie es, nachdem Data 360 eingeschaltet ist. Exportieren Sie die Daten monatlich, dann wissen Sie bei der Verlängerung so viel wie Salesforce.
 
 Diese Liste ist eine kaufmännische Checkliste und keine Rechtsberatung. Den Vertrag selbst sollte Ihre Rechtsabteilung oder Ihr Anwalt prüfen.
 

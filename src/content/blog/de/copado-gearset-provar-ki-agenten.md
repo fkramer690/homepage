@@ -62,14 +62,14 @@ Hier unterscheiden sich die drei Produkte am stärksten, und hier sollte ein Her
 **Gearset** veröffentlicht allgemeine KI-Bedingungen in seinen [Product and Location Specific Terms](https://gearset.com/legal/product-and-location-terms/), in einer Fassung gültig ab 15. September 2026. Cam wird darin nicht namentlich genannt, die Regeln gelten aber für Gearsets KI-Funktionen insgesamt:
 
 - Zu den Anbietern gehören "OpenAI and Amazon Web Services", mit "data centres in the United States and as otherwise specified in the Documentation".
-- Gearset speichert Ein- und Ausgaben 90 Tage oder kürzer, wenn Sie das einstellen; die Modellanbieter speichern nichts.
+- Gearset speichert Ein- und Ausgaben 90 Tage oder, wo die Software es anbietet, kürzer, wenn Sie das einstellen; die Modellanbieter speichern nichts.
 - Gearset trainiert keine Modelle mit Kundendaten, darf Ein- und Ausgaben aber nutzen, um seine Dienste zu bewerten und zu verbessern.
 - Der Verbrauch wird in Credits gemessen, mit einer monatlichen Obergrenze aus dem Bestellformular. Ist sie erreicht, sperrt Gearset die KI-Funktionen bis zum Monatsende.
 - Der Kunde darf die KI-Funktionen nicht nutzen, um menschliche Entscheidungen ganz oder im Wesentlichen zu ersetzen.
 
 Rechenzentren in den USA bedeuten eine Übermittlung in ein Drittland. Die muss Ihr Datenschutzbeauftragter bewerten, bevor produktive Metadaten hineingehen.
 
-**Copado** nennt für Agentia auf den Seiten, die ich geöffnet habe, weder Modell noch Region. Das öffentliche Datenblatt "Copado AI and your data" stammt vom Juni 2024 und behandelt CopadoGPT und Test Copilot, nicht Agentia. Über die Qualität der Antworten sagt das nichts. Sie brauchen sie aber schriftlich, bevor Sie unterschreiben.
+**Copado** nennt für Agentia auf den Seiten, die ich geöffnet habe, weder Modell noch Region. Das öffentliche Datenblatt "Copado AI and your data" stammt vom Juni 2024 und behandelt CopadoGPT und Test Copilot, nicht Agentia; ich konnte nur die Zusammenfassungsseite lesen. Über die Qualität der Antworten sagt das nichts. Sie brauchen sie aber schriftlich, bevor Sie unterschreiben.
 
 **Provar MCP** läuft laut Dokumentation "entirely on your local machine" und sendet keine Projektdateien, keinen Testcode und keine Zugangsdaten an Provar, solange Sie die optionale API-Validierung nicht einschalten. Metadaten und Testfälle erreichen aber den KI-Assistenten, den Sie anbinden. Die Datenfrage verschiebt sich damit in Ihren Vertrag mit Anthropic, GitHub oder Cursor, den Sie ohnehin geklärt haben sollten; dazu mehr im Beitrag zu [Betriebsrat und DSGVO bei KI-Coding](../ki-coding-betriebsrat-dsgvo/). Nach meiner Lesart der Herstellerseiten ist Provar MCP das am leichtesten freizugebende der drei Produkte. Meine Lesart der Bedingungen ist keine Rechtsberatung.
 

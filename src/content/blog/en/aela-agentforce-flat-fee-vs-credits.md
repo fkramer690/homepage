@@ -25,7 +25,7 @@ faq:
   - q: "Can a mid-sized manufacturer get an AELA?"
     a: "Salesforce publishes no threshold. The deals made public are large, such as the US Department of Veterans Affairs with a ceiling of $1.6 billion. Ask whether it is offered at your volume and compare it with a three-year Flex Credit plan."
   - q: "How do I track agent usage under a flat fee?"
-    a: "Digital Wallet shows consumption down to agent, action and channel and supports custom tags for internal chargeback. It requires Data 360. Keep these numbers under a flat fee too, because they are your basis for the renewal."
+    a: "Digital Wallet shows consumption down to agent, action and channel and supports custom tags for internal chargeback. Its FAQ describes access after turning on Data 360. Keep these numbers under a flat fee too, because they are your basis for the renewal."
 draft: false
 ---
 
@@ -35,7 +35,7 @@ A Salesforce AELA pays off for a manufacturer only when agent use across sales, 
 
 The Agentic Enterprise License Agreement (AELA) is a fixed-fee contract for agent use. Forrester analyst Lisa Singer [wrote in December 2025](https://www.forrester.com/blogs/ai-agents-become-economic-actors-salesforce-rewrites-the-rules-of-pricing) that it "gives customers unlimited use of consumption‑based products such as Agentforce, Data 360/Data Cloud, and MuleSoft for a fixed fee over two or three years". Forrester also reports that Chief Revenue Officer Miguel Milano said at a conference "that Salesforce is OK with losing money on some AI deals".
 
-Salesforce's own statements come from its earnings calls. In the [transcript of the Q4 FY26 call](https://s205.q4cdn.com/626266368/files/doc_financials/2026/q4/Transcript-Salesforce-Inc-Q4-FY26-Earnings-Conference-Call-2-25-26.pdf) of 25 February 2026, Milano said Salesforce sold more than 120 AELAs in that quarter, against an internal expectation of 50 to 100, and that eight of the ten largest deals were AELAs. CFO Robin Washington named the forward deployed engineers as the key to "converting it from AELAS to ultimately consuming" (spelling as in the transcript). In the [Q1 FY27 call](https://s205.q4cdn.com/626266368/files/doc_financials/2027/q1/Salesforce-Q1-FY27-Earnings-Transcript.pdf) of 27 May 2026, Milano described six of the ten largest deals as ELAs "where we threw in a bunch of flex credits". Neither transcript spells out the acronyms.
+Salesforce's own statements come from its earnings calls. In the [transcript of the Q4 FY26 call](https://s205.q4cdn.com/626266368/files/doc_financials/2026/q4/Transcript-Salesforce-Inc-Q4-FY26-Earnings-Conference-Call-2-25-26.pdf) of 25 February 2026, Milano said Salesforce sold more than 120 AELAs in that quarter, against an internal expectation of 50 to 100, and that eight of the ten largest deals were AELAs. CFO Robin Washington named the forward deployed engineers as the key to "converting it from AELAS to ultimately consuming" (spelling as in the transcript). In the [Q1 FY27 call](https://s205.q4cdn.com/626266368/files/doc_financials/2027/q1/Salesforce-Q1-FY27-Earnings-Transcript.pdf) of 27 May 2026, Milano described six of the ten largest deals as ELAs "where we threw in a bunch of flex credits". The Q4 transcript never defines AELA; the Q1 transcript glosses ELA as "a limited enterprise license agreement".
 
 Two deals have been made public:
 
@@ -49,7 +49,7 @@ What is not public: the price, who qualifies, the fair-use rules, which meters a
 | Model | You pay | Who carries the volume risk | Public terms |
 |---|---|---|---|
 | Flex Credits, PayGo | $500 per 100,000 credits used | you, per credit | price list and rate card |
-| Flex Credits, Pre-Commit | a committed baseline, no upfront payment | you, if you commit too high | price list and rate card |
+| Flex Credits, Pre-Commit | credits committed in advance (the pricing page gives no details) | you, if you commit too high | price list and rate card |
 | Edition pool | seats, with a credit pool per org and year | you, above the pool | pricing pages |
 | Per-user add-on | $125 per user and month | Salesforce, for employee use | pricing page |
 | AELA | a fixed fee over two or three years | Salesforce in the term, you at renewal | none |
@@ -98,7 +98,7 @@ Salesforce's CFO speaks openly about converting AELA customers to consumption. T
 3. **Scope in writing.** Products, meters, sandboxes, Data 360 tiers, MuleSoft, the Headless meter once priced, and which subsidiaries, plants and orgs are covered.
 4. **Fair-use clauses.** "Unlimited" comes with terms, as the Adecco footnote shows. Ask for them before the commercial talks end.
 5. **Seat coupling.** What happens to the fee when you reduce users or sell a division.
-6. **Your own usage data.** [Digital Wallet](https://www.salesforce.com/agentforce/digital-wallet/) shows consumption down to agent, action and channel and supports custom tags for internal chargeback; it requires Data 360. Export it monthly, so you know as much as Salesforce at the renewal.
+6. **Your own usage data.** [Digital Wallet](https://www.salesforce.com/agentforce/digital-wallet/) shows consumption down to agent, action and channel and supports custom tags for internal chargeback; according to its FAQ you reach it after turning on Data 360. Export it monthly, so you know as much as Salesforce at the renewal.
 
 This list is a commercial checklist, not legal advice. Have the contract itself reviewed by your lawyer.
 

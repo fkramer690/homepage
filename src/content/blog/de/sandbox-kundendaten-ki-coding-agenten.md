@@ -102,7 +102,7 @@ Der angenommene Aufwand: 6 bis 10 Personentage für Seed-Datensatz und Maskierun
 Die wirksamste Kontrolle: Auf keinem Rechner, auf dem ein Agent läuft, existiert ein Login für die Full Copy. Werkzeugeinstellungen sichern das ab:
 
 - **Claude Code.** Laut Anthropics [Best Practices](https://code.claude.com/docs/en/best-practices) gelten Deny-Regeln in jedem Berechtigungsmodus. Dieselbe Seite sagt aber, dass eine WebFetch-Sperre nichts gegen curl ausrichtet, solange die Sandbox nicht aktiv ist. Deny-Regeln ergänzen den fehlenden Login, ersetzen ihn aber nicht.
-- **Salesforce DX MCP Server.** Er erreicht nur [ausdrücklich freigegebene](https://developer.salesforce.com/docs/platform/sfdx-dev/guide/sfdx-dev-mcp.html) Orgs. Sein [Supportende am 2. November 2026](../salesforce-dx-mcp-server-ende/) heißt: Was ihn ersetzt, braucht dieselbe Einschränkung.
+- **Salesforce DX MCP Server.** Er erreicht nur [ausdrücklich freigegebene](https://developer.salesforce.com/docs/platform/sfdx-dev/guide/sfdx-dev-mcp.html) Orgs. Laut README erreicht er am 2. November 2026 das [Ende seiner Lebensdauer](../salesforce-dx-mcp-server-ende/), und was ihn ersetzt, braucht dieselbe Einschränkung.
 - **Agentforce Vibes.** Salesforce beschreibt, wie man [Vibes pro Org abschaltet](https://developer.salesforce.com/blogs/2025/12/five-pro-tips-for-using-agentforce-vibes), im Setup unter Agentforce Vibes Extensions, für Produktions-Orgs. Ich würde das auch für die Full Copy tun.
 - **Protokolle.** Verkürzen Sie die lokale Aufbewahrung mit `cleanupPeriodDays` und lassen Sie sich von Partnern bei Projektende die Löschung bestätigen.
 

@@ -49,13 +49,13 @@ The [June 2026 post on the Agentic Development Lifecycle](https://developer.sale
 1. **Pull request.** The partner commits the changed `.agent` file and any changed Flows or Apex on a feature branch; the reviewer reads the Agent Script diff like code.
 2. **Validate.** `sf agent validate authoring-bundle` checks that the Agent Script compiles. Salesforce says validation "is required before the agent can be published", so it belongs in the pipeline as a gate.
 3. **Scoped deploy.** Flows first, then the authoring bundle, each named with `--metadata`. The post warns that a bare `sf project deploy start` ships everything that changed, agent metadata included.
-4. **Publish.** `sf agent publish authoring-bundle` compiles the Agent Script and creates a new agent, or a new version of an existing one, with its Bot, BotVersion and GenAi metadata, according to the [CLI reference](https://developer.salesforce.com/docs/platform/salesforce-cli-reference/guide/cli_reference_agent_publish_authoring-bundle.html). The new version is inactive; the ADLC post notes that you can publish now and activate later.
+4. **Publish.** `sf agent publish authoring-bundle` compiles the Agent Script and creates a new agent, or a new version of an existing one, with its Bot, BotVersion and GenAi metadata, according to the [CLI reference](https://developer.salesforce.com/docs/platform/salesforce-cli-reference/guide/cli_reference_agent_publish_authoring-bundle.html). The ADLC post says you can publish now and activate later, so as I read it the new version starts inactive.
 5. **Test.** The suite runs against the published version in the sandbox; gates and pass rates are covered in [testing Agentforce agents before go-live](../testing-agentforce-agents-before-go-live/).
 6. **Activate.** `sf agent activate` with `--api-name` and `--version` turns the version on. Activation "makes it immediately available to your users", says the [activate reference](https://developer.salesforce.com/docs/platform/salesforce-cli-reference/guide/cli_reference_agent_activate.html).
 
 One flag deserves attention. The same reference says that with `--json` and without `--version`, "the latest agent version is automatically activated". In an unattended script I always pass the version number, so the pipeline activates what the business owner approved, not whatever was published last.
 
-The May post names two variants. Most pipelines keep only the `AiAuthoringBundle` in Git and publish a new version in each org. Fully automated pipelines also deploy the generated `GenAiPlannerBundle` and skip the manual commit step. For a manufacturer with one production org I prefer the first: Git holds only what people write. The price is that version numbers differ between orgs, since planner version numbers "won't necessarily match" the bundle versions. Every release note should therefore say which production version belongs to which Git commit.
+The May post names two variants. In the first variant only the `AiAuthoringBundle` is in Git and each org publishes its own new version. Fully automated pipelines also deploy the generated `GenAiPlannerBundle` and skip the manual commit step. For a manufacturer with one production org I prefer the first: Git holds only what people write. The price is that version numbers differ between orgs, since planner version numbers "won't necessarily match" the bundle versions. Every release note should therefore say which production version belongs to which Git commit.
 
 The guide on moving agents adds three traps: the first deployment to a new org needs the whole agent definition, Data 360 dependencies and custom objects must be added to the manifest by hand, and the agent user must be assigned in the target org.
 
@@ -85,7 +85,7 @@ Two days later the spare parts subagent recommends the wrong successor part for 
 
 The client, with clear lines between the roles:
 
-- **Partner:** builds in scratch orgs or sandboxes, writes tests, opens pull requests. The ADLC post says "never give your agent access to the production environment"; I extend that to the partner's build users.
+- **Partner:** builds in scratch orgs or sandboxes, writes tests, opens pull requests. The ADLC post advises building in scratch orgs or sandboxes and not giving the agent production access; I extend that to the partner's build users.
 - **Client architect:** reviews Agent Script and actions, above all warranty, discount and credit limit rules.
 - **Client release manager:** owns the pipeline, deploys, publishes and activates in production.
 - **Business owner, for example the head of service:** approves activation on the basis of test results and decides on rollbacks with the release manager.

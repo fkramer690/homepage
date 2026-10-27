@@ -937,14 +937,14 @@ const drawings: Record<string, Drawing> = {
       .map(([x, w, s]) => `<rect x="${x}" y="28" width="${w}" height="22" fill="#fff" stroke="${G}" stroke-width="1.1"/>` + t(Number(x) + Number(w) / 2 - (Number(w) < 30 ? 5 : 0), 42, String(s), { size: 7, anchor: 'middle' })).join('')}
     <path d="M295 24V58" stroke="${D}" stroke-width="1.3" stroke-dasharray="3 2"/>${t(302, 68, l('pool 4.0M, +100K overage', 'Pool 4,0 Mio., +100K Mehrverbrauch'), { size: 7, anchor: 'end' })}
     <path d="M18 80H302" stroke="${L}"/>
-    ${[l('1 org = 1 pool, 1 contract owner', '1 Org = 1 Pool, 1 Vertragspartner'), l('chargeback: $5 per 1,000 credits', 'Verrechnung: 5 € pro 1.000 Credits'), l('overage: billed in arrears', 'Mehrverbrauch: nachträglich'), l('alerts yes, automatic stop no', 'Warnungen ja, Stopp nein')]
+    ${[l('1 org = 1 pool, 1 contract owner', '1 Org = 1 Pool, 1 Vertragspartner'), l('chargeback: $5 per 1,000 credits', 'Verrechnung: 5 € pro 1.000 Credits'), l('overage: billed in arrears', 'Mehrverbrauch: nachträglich'), l('alerts yes, stop not documented', 'Warnungen ja, Stopp nicht dokumentiert')]
       .map((s, i) => dot(22, 95 + i * 15, G, 2) + t(30, 98 + i * 15, s, { size: 7 })).join('')}
     ${box(206, 88, 96, 56, C)}${t(254, 105, l('APAC 4 months late', 'Asien 4 Monate später'), { fill: C, size: 7, anchor: 'middle' })}${t(254, 119, l('300K credits expire', '300K Credits verfallen'), { fill: C, size: 7, anchor: 'middle' })}${t(254, 133, l('= $1,500', '= 1.500 €'), { fill: C, size: 7.5, anchor: 'middle' })}`,
 
   'multilingual-dealer-agents': (l) => `
     ${t(18, 18, l('AGENTFORCE LANGUAGES', 'AGENTFORCE-SPRACHEN'), { fill: D, size: 7 })}${t(166, 18, l('KNOWLEDGE', 'WISSEN'), { fill: D, size: 7 })}
     ${box(18, 28, 130, 40)}${t(28, 43, 'TEXT', { fill: D, size: 7.5 })}${t(28, 58, l('31 languages + 25 beta', '31 Sprachen + 25 Beta'), { size: 7 })}
-    ${box(18, 76, 130, 40)}${t(28, 91, 'VOICE', { fill: D, size: 7.5 })}${t(28, 106, l('7 languages', '7 Sprachen'), { size: 7 })}
+    ${box(18, 76, 130, 40)}${t(28, 91, 'VOICE', { fill: D, size: 7.5 })}${t(28, 106, l('7 named, others unclear', '7 genannt, weitere offen'), { size: 7 })}
     <path d="M18 128H148" stroke="${L}"/>
     ${t(18, 140, l('Translation: 4,000 credits', 'Translation: 4.000 Credits'), { size: 7 })}${t(18, 152, l('per 1M characters = $20', 'pro 1 Mio. Zeichen = 20 €'), { size: 7 })}
     ${tag(166, 28, 30, 'it')}${arrow(196, 38, 220)}
@@ -952,7 +952,7 @@ const drawings: Record<string, Drawing> = {
     ${dot(171, 62, G, 2.5)}${t(180, 65, l('only Italian articles', 'nur italienische Artikel'), { size: 7 })}
     ${box(166, 76, 140, 40, C)}${t(176, 91, 'PIVOT', { fill: C, size: 7.5 })}${t(176, 106, l('question to EN, answer back', 'Frage nach EN, Antwort zurück'), { size: 7 })}
     <path d="M166 128H306" stroke="${L}"/>
-    ${t(166, 140, l('Czech: 1.4x English tokens','Tschechisch: 1,4-fache Tokens'), { size: 7 })}${t(166, 152, l('prompts: 2,000-token units', 'Prompts: 2.000-Token-Einheiten'), { size: 7 })}`,
+    ${t(166, 140, l('Czech: 1.24x tokens (1 test)','Tschechisch: 1,24x Tokens (1 Test)'), { size: 7 })}${t(166, 152, l('prompts: 2,000-token units', 'Prompts: 2.000-Token-Einheiten'), { size: 7 })}`,
 
   'sandbox-data-ai-coding-agents': (l) => `
     ${box(14, 58, 72, 44, C)}${t(50, 76, l('CODING AGENT', 'CODING-AGENT'), { fill: C, size: 7.5, anchor: 'middle' })}${t(50, 90, l('read = prompt', 'gelesen = Prompt'), { size: 7, anchor: 'middle' })}
