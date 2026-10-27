@@ -54,7 +54,7 @@ What is not public: the price, who qualifies, the fair-use rules, which meters a
 | Per-user add-on | $125 per user and month | Salesforce, for employee use | pricing page |
 | AELA | a fixed fee over two or three years | Salesforce in the term, you at renewal | none |
 
-Two lines of this table matter most for a manufacturer. The [pricing page](https://www.salesforce.com/agentforce/pricing/) sells the per-user add-ons as "Unmetered Agentforce usage for employees", and it states that "Unused Flex Credits do not roll over into subsequent subscription terms". So employee use inside Salesforce can already be bought at a fixed price per seat. The hard-to-forecast part is everything facing dealers and customers, plus document processing and integrations.
+For a manufacturer two lines matter most. The [pricing page](https://www.salesforce.com/agentforce/pricing/) sells the per-user add-ons as "Unmetered Agentforce usage for employees", and it states that "Unused Flex Credits do not roll over into subsequent subscription terms". So employee use inside Salesforce can already be bought at a fixed price per seat. The hard-to-forecast part is everything facing dealers and customers, plus document processing and integrations.
 
 That part is metered on the [Flex Credits rate card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf): 20 credits per standard action in production, 16 in a sandbox, 150 credits per MB for unstructured Data 360 processing at the base tier. The rate for Headless Platform Interactions, the meter for agents calling Salesforce through API or MCP, is still "TBA". This is where an AELA removes the meter. How to estimate each of these meters is in [Flex Credits and Agentforce cost per action](../flex-credits-agentforce-cost-per-action/), and how the edition pools fit in is in [Salesforce editions Core, Advanced, Max](../salesforce-editions-core-advanced-max/).
 
@@ -87,7 +87,7 @@ I would consider an AELA when most of these points are true:
 - **Consumption is hard to forecast,** because large document sets for spare parts and manuals have to be indexed or the API rate is still open.
 - **You have the capacity to roll out.** Under a flat fee, capacity you do not use is pure cost, and Salesforce's CFO ties the later conversion to consumption to its engineers on site.
 
-I would not sign one in a pilot, for a single plant or while spare part and asset data are still unreliable. In that state agents do not reach volume, as described in [Agentforce business value starts with data quality](../agentforce-business-value-data-quality-first/). Forrester expects CFOs to ask about ROI, IRR and "the useful life of the agent". For a machine builder that means one business case per agent with a metric you measure yourself, such as first-time fix rate or warranty claim throughput.
+I would not sign one in a pilot, for a single plant or while spare part and asset data are still unreliable. In that state agents do not reach volume, as described in [Agentforce pilots: business value and data quality first](../agentforce-business-value-data-quality-first/). Forrester expects CFOs to ask about ROI, IRR and "the useful life of the agent". For a machine builder that means one business case per agent with a metric you measure yourself, such as first-time fix rate or warranty claim throughput.
 
 ## What must you negotiate for the renewal?
 

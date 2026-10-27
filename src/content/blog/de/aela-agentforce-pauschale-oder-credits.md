@@ -87,7 +87,7 @@ Ich würde eine AELA prüfen, wenn die meisten dieser Punkte zutreffen:
 - **Der Verbrauch ist schwer zu schätzen,** weil große Bestände an Ersatzteillisten und Handbüchern indexiert werden müssen oder der API-Satz noch offen ist.
 - **Sie haben die Kapazität für den Rollout.** Bei einer Pauschale ist ungenutzte Kapazität reiner Kostenblock, und die Finanzchefin von Salesforce verknüpft den späteren Wechsel in den Verbrauch mit den Forward Deployed Engineers vor Ort.
 
-Nicht unterschreiben würde ich in der Pilotphase, für ein einzelnes Werk oder solange Ersatzteil- und Anlagendaten unzuverlässig sind. Dann erreichen Agenten kein Volumen, wie in [Agentforce-Business-Value beginnt bei der Datenqualität](../agentforce-business-value-datenqualitaet/) beschrieben. Forrester erwartet, dass Finanzvorstände nach ROI, IRR und „the useful life of the agent“ fragen. Für einen Maschinenbauer heißt das: ein Business Case pro Agent mit einer Kennzahl, die Sie selbst messen, etwa First-Time-Fix-Rate oder Durchlaufzeit von Garantieanträgen.
+Nicht unterschreiben würde ich in der Pilotphase, für ein einzelnes Werk oder solange Ersatzteil- und Anlagendaten unzuverlässig sind. Dann erreichen Agenten kein Volumen, wie in [Agentforce: Business Value und Datenqualität zuerst](../agentforce-business-value-datenqualitaet/) beschrieben. Forrester erwartet, dass Finanzvorstände nach ROI, IRR und „the useful life of the agent“ fragen. Für einen Maschinenbauer heißt das: ein Business Case pro Agent mit einer Kennzahl, die Sie selbst messen, etwa First-Time-Fix-Rate oder Durchlaufzeit von Garantieanträgen.
 
 ## Was müssen Sie für die Verlängerung verhandeln?
 
