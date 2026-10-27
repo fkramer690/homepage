@@ -43,6 +43,10 @@ The AI masterclass has a hub page (`/masterclass-ki/`, `/en/ai-masterclass/`) an
 
 Rule: every external link opens in a new tab. Links in Markdown get `target="_blank"`, the arrow and a screen-reader hint from `src/lib/external-links.mjs` (a Sätteri plugin in `astro.config.mjs`). Links in components need `target="_blank" rel="noopener"` and `<ExternalMark label={t.nav.externalTab} />`. After the build, `scripts/check-links.mjs` checks every page in `dist/` and fails the build on an external link without a new tab (`npm run check:links` runs only the check).
 
+### Sitemap
+
+`@astrojs/sitemap` builds `sitemap-index.xml` on every build; new pages and articles land in it automatically. Rule: the sitemap lists exactly the indexable pages. After the build, `scripts/check-sitemap.mjs` compares it with `dist/` and fails if a page without `<meta name="robots" content="noindex">` is missing, a noindex page (legal pages, redirects, 404) is listed, or a listed URL has no page (`npm run check:sitemap` runs only the check). To hide a page from search engines, set `noindex` on it and exclude it in the sitemap `filter` in `astro.config.mjs`.
+
 ## Local development
 
 ```sh
