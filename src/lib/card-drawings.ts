@@ -162,6 +162,15 @@ const drawings: Record<string, Drawing> = {
     ${arrow(92, 80, 118)}${arrow(202, 80, 228)}
     ${t(160, 140, l('open source · no licence fees', 'Open Source · keine Lizenzkosten'), { fill: C, size: 7.5, anchor: 'middle' })}`,
 
+  'sfdx-hardis-vs-devops-center': (l) => `
+    ${box(18, 20, 128, 40)}${t(82, 38, 'LIFECYCLE CENTER', { fill: D, anchor: 'middle' })}${t(82, 51, l('hub org · clicks', 'Hub-Org · Klicks'), { size: 7, anchor: 'middle' })}
+    <path d="M47 60V82M114 60V82" stroke="${G}" stroke-width="1.2"/>
+    ${box(18, 82, 58, 20)}${t(47, 95, 'GitHub.com', { size: 7, anchor: 'middle' })}${box(82, 82, 64, 20)}${t(114, 95, 'Bitbucket Cloud', { size: 7, anchor: 'middle' })}
+    ${t(18, 120, l('GitLab, Azure DevOps: no date', 'GitLab, Azure DevOps: kein Termin'), { size: 7 })}
+    ${box(174, 20, 128, 40, C)}${t(238, 38, 'sfdx-hardis', { fill: D, anchor: 'middle' })}${t(238, 51, l("client's CI", 'CI des Kunden'), { size: 7, anchor: 'middle' })}
+    ${['GitHub', 'GitLab', 'Azure DevOps', 'Bitbucket', 'Jenkins'].map((s, i) => check(184, 72 + i * 11, C) + t(196, 77 + i * 11, s, { size: 7 })).join('')}
+    ${t(160, 148, l('both: no licence fees', 'beide: keine Lizenzgebühren'), { fill: C, size: 7.5, anchor: 'middle' })}`,
+
   'client-owned-devops-tools': (l) => `
     ${box(112, 56, 96, 48, C)}${t(160, 76, l('CLIENT', 'KUNDE'), { fill: D, anchor: 'middle' })}${t(160, 90, l('owns the accounts', 'besitzt die Accounts'), { size: 7, anchor: 'middle' })}
     ${[['Git', 40, 30], ['Pipeline', 40, 130], ['Jira', 280, 30], ['Miro', 280, 130]]
