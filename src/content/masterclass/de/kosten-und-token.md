@@ -46,7 +46,7 @@ Bei den Coding-Werkzeugen ist 2026 aus Request-Zählern ein Token-Budget geworde
 
 ## Was ist ein Token, und warum zählt der Kontext mehr als der Prompt?
 
-Ein Token ist die kleinste Einheit, die ein Sprachmodell verarbeitet: ein Wort, ein Wortteil oder ein einzelnes Zeichen. Laut [Anthropic-Glossar](https://platform.claude.com/docs/en/about-claude/glossary) steht ein Token bei älteren Claude-Modellen für etwa 3,5 englische Zeichen, und Claude ab Version 4.7 erzeugt mit einem neuen Tokenizer rund 30 Prozent mehr Tokens für denselben Text. Eine Apex-Klasse mit 40.000 Zeichen landet nach dieser Faustregel bei etwa 11.400 Tokens, auf den 5.5-Modellen eher bei 14.900. Code und deutsche Texte weichen davon ab: Anthropic schreibt nur, dass die Zeichen pro Token von Modell und Sprache abhängen. Eine offizielle Quote für Deutsch habe ich nicht gefunden. Die [Token-Zählung der Claude API](https://platform.claude.com/docs/en/build-with-claude/token-counting) ist kostenlos; zählen Sie damit ein echtes Lastenheft und eine typische Klasse aus Ihrem Repository.
+Ein Token ist die kleinste Einheit, die ein Sprachmodell verarbeitet: ein Wort, ein Wortteil oder ein einzelnes Zeichen. Laut [Anthropic-Glossar](https://platform.claude.com/docs/en/about-claude/glossary) steht ein Token bei älteren Claude-Modellen für etwa 3,5 englische Zeichen, und Claude ab Version 4.7 erzeugt mit einem neuen Tokenizer rund 30 Prozent mehr Tokens für denselben Text. Grob nach dieser Faustregel landet eine Apex-Klasse mit 40.000 Zeichen bei etwa 11.400 Tokens, auf den 5.5-Modellen eher bei 14.900. Code und deutsche Texte können abweichen: Anthropic schreibt nur, dass die Zeichen pro Token von Modell und Sprache abhängen. Eine offizielle Quote für Deutsch habe ich nicht gefunden. Die [Token-Zählung der Claude API](https://platform.claude.com/docs/en/build-with-claude/token-counting) ist kostenlos; zählen Sie damit ein echtes Lastenheft und eine typische Klasse aus Ihrem Repository.
 
 Der Tokenizer verschiebt auch Preisvergleiche. Sonnet 4.6 kostet 3 $ pro Million Input-Tokens, Sonnet 5.5 nur 2 $, braucht für denselben Text aber rund 30 Prozent mehr Tokens. Nach meiner Rechnung bleibt Sonnet 5.5 günstiger, nur um etwa 13 statt 33 Prozent.
 
@@ -110,11 +110,11 @@ Ohne Caching kosten 2,8 Mio. Input-Tokens zu 4 $ allein 11,20 $, mit Output **12
 3. Eine agentische Anfrage mit 30.000 Tokens: 15 Einheiten × 4 = 60 Credits = **0,30 $**.
 4. Break-even der Flat Fee: 125 $ ÷ 0,30 $ ≈ **417 Anfragen im Monat**, rund 20 pro Arbeitstag. In Tokens: 25.000 Credits ÷ 4 × 2.000 = **12,5 Mio. Tokens** auf Standard-Modellen.
 
-Wer täglich agentisch arbeitet, fährt mit der Flat Fee günstiger, bis zur Grenze von 2.500 Anfragen oder 36 Mio. Tokens auf dem Premium-Modell. Danach geht es mit Flex Credits oder dem enthaltenen GPT-5 weiter. Für einen Admin, der zweimal die Woche einen Flow erklären lässt, reicht der Verbrauch über Credits.
+Wer täglich agentisch arbeitet, fährt mit der Flat Fee günstiger, bis zur Grenze von 2.500 Anfragen oder 36 Mio. Tokens auf dem Premium-Modell. Danach geht es mit Flex Credits oder dem enthaltenen GPT-5 weiter.
 
 ### Batch: ein Org-Assessment vor dem Programmstart
 
-Ein Maschinenbauer übernimmt eine zehn Jahre alte Org mit 2.000 Apex-Klassen und will vor dem Neustart wissen, was jede Klasse tut. Angenommen sind 8.000 Tokens Input und 1.000 Tokens Output pro Klasse mit Sonnet 5.5 über die Batch API: 16 Mio. × 1 $ + 2 Mio. × 5 $ = **26 $** statt 52 $. Weil Thinking bei den 5.5-Modellen immer läuft, kann der Output höher liegen. Ich würde 20 Klassen vorab rechnen lassen und dann hochrechnen. Selbst beim Dreifachen ist das ein Betrag, der in keinem Programmbudget auffällt.
+Ein Maschinenbauer übernimmt eine zehn Jahre alte Org mit 2.000 Apex-Klassen und will vor dem Neustart wissen, was jede Klasse tut. Angenommen sind 8.000 Tokens Input und 1.000 Tokens Output pro Klasse mit Sonnet 5.5 über die Batch API: 16 Mio. × 1 $ + 2 Mio. × 5 $ = **26 $** statt 52 $. Weil Thinking bei den 5.5-Modellen immer läuft, kann der Output höher liegen; selbst das Dreifache fällt in keinem Programmbudget auf.
 
 ## Was kostet Agentforce im Betrieb?
 
