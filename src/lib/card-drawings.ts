@@ -662,6 +662,120 @@ const drawings: Record<string, Drawing> = {
     ${check(100, 142)}${t(112, 147, l('org access', 'Org-Zugang'), { size: 7 })}
     ${check(176, 142)}${t(188, 147, l('transcripts: 30 days', 'Transkripte: 30 Tage'), { size: 7 })}`,
 
+  'agent-api-own-apps': (l) => `
+    ${t(14, 18, l('ALL DEALERS, ONE IDENTITY', 'ALLE HÄNDLER, EINE IDENTITÄT'), { fill: D, size: 7 })}${tag(232, 4, 74, l('HPI rate: TBA', 'HPI-Satz: TBA'))}
+    ${box(14, 32, 70, 44)}${t(49, 51, l('DEALER APP', 'HÄNDLER-APP'), { fill: D, size: 7, anchor: 'middle' })}${t(49, 65, l('own login', 'eigenes Login'), { size: 7, anchor: 'middle' })}
+    ${arrow(84, 54, 122)}
+    ${box(122, 32, 74, 44)}${t(159, 51, 'BACKEND', { fill: D, size: 7, anchor: 'middle' })}${t(159, 65, 'client secret', { size: 7, anchor: 'middle' })}
+    ${arrow(196, 54, 234, C)}${t(215, 47, 'REST', { fill: C, size: 7, anchor: 'middle' })}
+    ${box(234, 32, 72, 44)}${t(270, 51, 'AGENT API', { fill: D, size: 7, anchor: 'middle' })}${t(270, 65, l('1 run-as user', '1 Run-As-User'), { fill: C, size: 7, anchor: 'middle' })}
+    <path d="M14 92H306" stroke="${L}"/>
+    ${check(14, 107)}${t(26, 112, l('dealer account set at session start', 'Händler-Account beim Session-Start'), { size: 7 })}
+    ${check(14, 123, G)}${t(26, 128, l('actions filter in logic, not the LLM', 'Aktionen filtern in Logik, nicht im LLM'), { size: 7 })}
+    ${check(14, 139, G)}${t(26, 144, l('120 s timeout, 1 request per session', '120 s Timeout, 1 Anfrage pro Session'), { size: 7 })}
+    ${t(306, 128, l('20 credits per action', '20 Credits pro Aktion'), { size: 7, anchor: 'end' })}`,
+
+  'agentforce-a2a-multi-agent': (l) => `
+    ${t(18, 18, l('WHO OWNS THE CONVERSATION', 'WER FÜHRT DAS GESPRÄCH'), { fill: D, size: 7 })}
+    ${box(18, 28, 62, 30)}${t(49, 41, l('DEALER', 'HÄNDLER'), { fill: D, size: 7.5, anchor: 'middle' })}${t(49, 52, 'portal', { size: 7, anchor: 'middle' })}
+    ${arrow(80, 43, 104, C)}
+    ${box(104, 28, 92, 30, C)}${t(150, 41, 'AGENTFORCE', { fill: D, size: 7.5, anchor: 'middle' })}${t(150, 52, l('owner', 'führt'), { fill: C, size: 7, anchor: 'middle' })}
+    ${arrow(196, 43, 222)}
+    ${box(222, 28, 80, 30)}${t(262, 41, 'SAP S/4', { fill: D, size: 7.5, anchor: 'middle' })}${t(262, 52, l('API action', 'API-Aktion'), { size: 7, anchor: 'middle' })}
+    ${box(18, 70, 62, 30)}${t(49, 83, 'COPILOT', { fill: D, size: 7.5, anchor: 'middle' })}${t(49, 94, 'Teams', { size: 7, anchor: 'middle' })}
+    ${arrow(80, 85, 104, G, true)}
+    ${box(104, 70, 92, 30)}${t(150, 83, 'A2A BRIDGE', { fill: D, size: 7.5, anchor: 'middle' })}${t(150, 94, 'MuleSoft', { size: 7, anchor: 'middle' })}
+    <path d="M150 70V59" stroke="${G}" stroke-width="1.3"/><path d="M146.5 63.5l3.5-4.5 3.5 4.5" fill="none" stroke="${G}" stroke-width="1.3"/>
+    ${box(222, 70, 80, 30)}${t(262, 83, 'SAP JOULE', { fill: D, size: 7.5, anchor: 'middle' })}${t(262, 94, l('inbound only', 'nur eingehend'), { size: 7, anchor: 'middle' })}
+    <path d="M18 110H302" stroke="${L}"/>
+    ${check(18, 118)}${t(32, 124, l("in-org orchestration GA since Winter '27", "Orchestrierung in der Org GA seit Winter '27"), { size: 7 })}
+    ${check(18, 132, G)}${t(32, 138, l('A2A Bridge: sync only, 120 s timeout', 'A2A Bridge: nur synchron, 120 s Timeout'), { size: 7 })}
+    ${cross(22, 149)}${t(32, 152, l('native Agentforce A2A: no status yet', 'natives Agentforce-A2A: noch ohne Status'), { size: 7 })}`,
+
+  'agentforce-eu-data-residency': (l) => `
+    ${box(14, 40, 96, 56)}${t(62, 58, 'AGENTFORCE', { fill: D, size: 7.5, anchor: 'middle' })}${t(62, 72, l('dealer enquiry', 'Händleranfrage'), { size: 7, anchor: 'middle' })}${t(62, 85, l('Data 360 region', 'Data-360-Region'), { size: 7, anchor: 'middle' })}
+    ${tag(14, 104, 96, l('get it in writing', 'schriftlich klären'))}
+    <path d="M110 68H126M126 28V112" stroke="${G}" stroke-width="1.2"/>
+    ${arrow(126, 28, 152, C)}${arrow(126, 70, 152)}${arrow(126, 112, 152)}
+    ${box(152, 12, 154, 32, C)}${t(162, 25, 'BEDROCK', { fill: C, size: 7.5 })}${t(162, 37, l('Claude, Amazon: trust boundary', 'Claude, Amazon: Trust Boundary'), { size: 7 })}
+    ${box(152, 54, 154, 32)}${t(162, 67, 'SHARED TRUST ZONE', { fill: D, size: 7.5 })}${t(162, 79, l('OpenAI: US or Azure EU', 'OpenAI: USA oder Azure EU'), { size: 7 })}
+    ${box(152, 96, 154, 32)}${t(162, 109, 'BYOLLM', { fill: D, size: 7.5 })}${t(162, 121, l('your own contract governs', 'Ihr eigener Vertrag gilt'), { size: 7 })}
+    <path d="M14 138H306" stroke="${L}"/>
+    ${t(14, 152, l('EU Operating Zone: Agentforce not confirmed', 'EU Operating Zone: Agentforce unbestätigt'), { size: 7 })}
+    ${t(306, 152, l('Koa: US regions first', 'Koa: zuerst US-Regionen'), { size: 7, anchor: 'end' })}`,
+
+  'agentforce-kpis-after-go-live': (l) => `
+    ${t(18, 18, l('DAY 90 REVIEW (SCENARIO)', 'PRÜFUNG AN TAG 90 (SZENARIO)'), { fill: D, size: 7 })}
+    ${[[l('escalation rate', 'Eskalationsquote'), '30 %'], [l('task resolution', 'Task Resolution'), '52 %'], [l('out of hours', 'außerhalb Servicezeit'), '26 %'], [l('per resolved enquiry', 'pro gelöster Anfrage'), l('$3.06', '3,06 €')], [l('service rep per enquiry', 'Servicekraft pro Anfrage'), l('$6.00', '6,00 €')]]
+      .map(([a, b], i) => t(18, 38 + i * 16, String(a), { size: 7 }) + t(150, 38 + i * 16, String(b), { fill: i === 3 ? C : D, size: 7.5, anchor: 'end' }) + `<path d="M18 ${42 + i * 16}H150" stroke="${L}"/>`).join('')}
+    ${t(176, 18, l('PER SUBAGENT', 'PRO SUBAGENT'), { fill: D, size: 7 })}
+    ${box(176, 26, 126, 22)}${check(184, 34)}${t(198, 40, l('order status: stays', 'Auftragsstatus: bleibt'), { size: 7 })}
+    ${box(176, 56, 126, 22, C)}${cross(188, 67)}${t(198, 70, l('spare parts: $9.12', 'Ersatzteile: 9,12 €'), { fill: C, size: 7 })}
+    ${t(176, 94, l('escalation 57 %, switched off', 'Eskalation 57 %, abgeschaltet'), { size: 7 })}
+    <path d="M18 128H302" stroke="${G}" stroke-width="0.8"/>${dot(60, 128, G, 2.5)}${dot(160, 128, G, 2.5)}${dot(260, 128, C, 3.5)}
+    ${t(60, 146, l('day 30', 'Tag 30'), { size: 7, anchor: 'middle' })}${t(160, 146, l('day 60', 'Tag 60'), { size: 7, anchor: 'middle' })}${t(260, 146, l('day 90: decision', 'Tag 90: Entscheidung'), { fill: C, size: 7, anchor: 'middle' })}`,
+
+  'agentforce-llm-choice-byollm': (l) => `
+    ${t(18, 16, l('MODEL PER SUBAGENT', 'MODELL PRO SUBAGENT'), { fill: D, size: 7 })}
+    ${box(18, 62, 70, 36)}${t(53, 78, 'ROUTER', { fill: D, size: 7.5, anchor: 'middle' })}${t(53, 90, 'HyperClassifier', { size: 6.5, anchor: 'middle' })}
+    <path d="M88 80H98M98 38V122" stroke="${G}" stroke-width="1.2"/>
+    ${arrow(98, 38, 112)}${arrow(98, 80, 112)}${arrow(98, 122, 112)}
+    ${[[24, l('Order status', 'Auftragsstatus'), 'Gemini 3.5 Flash · Basic'], [66, l('Warranty check', 'Garantieprüfung'), 'Claude Haiku 4.5 · Standard'], [108, l('Troubleshooting', 'Fehlersuche'), 'Haiku 4.5 vs Opus 4.8']]
+      .map(([y, a, b]) => box(112, Number(y), 108, 28) + t(118, Number(y) + 12, String(a), { fill: D, size: 7 }) + t(118, Number(y) + 23, String(b), { size: 6.5 })).join('')}
+    ${box(232, 24, 70, 112)}${t(267, 38, l('CREDITS / PROMPT', 'CREDITS / PROMPT'), { fill: D, size: 6.5, anchor: 'middle' })}
+    ${[['Basic', '2'], ['Standard', '4'], ['Advanced', '16']].map(([a, b], i) => t(238, 58 + i * 16, a, { size: 7 }) + t(296, 58 + i * 16, b, { size: 7, anchor: 'end' }) + `<path d="M238 ${62 + i * 16}H296" stroke="${L}"/>`).join('')}
+    <rect x="236" y="104" width="62" height="28" rx="3" fill="#fff" stroke="${C}" stroke-width="1.2" stroke-dasharray="3 2"/>
+    ${t(241, 116, 'BYOLLM', { fill: C, size: 7 })}${t(293, 116, '2', { fill: C, size: 7, anchor: 'end' })}${t(267, 127, l('+ own contract', '+ eigener Vertrag'), { fill: C, size: 6.5, anchor: 'middle' })}
+    ${t(18, 152, l('Salesforce Default: managed mix, currently incl. GPT-4o', 'Salesforce Default: verwalteter Mix, derzeit mit GPT-4o'), { size: 7 })}`,
+
+  'audit-trail-ai-agents': (l) => `
+    ${box(14, 50, 72, 52)}${t(50, 72, 'AGENT', { fill: D, anchor: 'middle' })}${t(50, 86, 'Claude · MCP', { size: 7, anchor: 'middle' })}
+    <path d="M86 76H100M100 26V122" stroke="${G}" stroke-width="1.2"/>
+    ${arrow(100, 26, 120)}${arrow(100, 58, 120, C)}${arrow(100, 90, 120)}${arrow(100, 122, 120)}
+    ${box(120, 14, 184, 24)}${t(128, 29, l('Trust Layer audit', 'Trust-Layer-Audit'), { fill: D })}${t(296, 29, l('Data 360, no period', 'Data 360, ohne Frist'), { size: 7, anchor: 'end' })}
+    ${box(120, 46, 184, 24, C)}${t(128, 61, l('API logs (MCP)', 'API-Logs (MCP)'), { fill: D })}${t(296, 61, l('1 day free', '1 Tag kostenlos'), { fill: C, size: 7, anchor: 'end' })}
+    ${box(120, 78, 184, 24)}${t(128, 93, 'Event Monitoring', { fill: D })}${t(296, 93, l('30 days to 1 year', '30 Tage bis 1 Jahr'), { size: 7, anchor: 'end' })}
+    ${box(120, 110, 184, 24)}${t(128, 125, 'Setup Audit Trail', { fill: D })}${t(296, 125, l('min. 180 days', 'mind. 180 Tage'), { size: 7, anchor: 'end' })}
+    ${t(160, 151, l('no backfill: switch on before go-live', 'kein Nachtrag: vor Go-live einschalten'), { size: 7, anchor: 'middle' })}`,
+
+  'community-mcp-servers-risks': (l) => `
+    ${t(18, 18, l('BEFORE APPROVAL: 6 CHECKS', 'VOR DER FREIGABE: 6 PRÜFPUNKTE'), { fill: D, size: 7.5 })}
+    ${[l('identity', 'Identität'), l('credentials', 'Zugangsdaten'), l('pinned version', 'gepinnte Version')].map((s, i) => dot(22, 35 + i * 16, G, 2.5) + t(30, 38 + i * 16, s, { size: 7 })).join('')}
+    ${[l('tool list', 'Werkzeugliste'), l('other tools', 'andere Werkzeuge'), l('target org', 'Ziel-Org')].map((s, i) => dot(112, 35 + i * 16, G, 2.5) + t(120, 38 + i * 16, s, { size: 7 })).join('')}
+    ${arrow(190, 52, 214, C)}
+    ${box(214, 24, 92, 58, C)}${t(260, 40, 'HOSTED MCP', { fill: C, size: 7.5, anchor: 'middle' })}${t(260, 53, 'named user', { size: 7, anchor: 'middle' })}${t(260, 64, 'OAuth + PKCE', { size: 7, anchor: 'middle' })}${t(260, 75, l('off by default', 'standardmäßig aus'), { size: 7, anchor: 'middle' })}
+    <path d="M18 96H302" stroke="${L}"/>
+    ${cross(22, 110)}${t(32, 114, l('postmark-mcp 1.0.16: BCC of every email', 'postmark-mcp 1.0.16: Blindkopie jeder Mail'), { size: 7 })}
+    ${cross(22, 128)}${t(32, 132, l('mcp-remote: CVSS 9.6, 437,000+ downloads', 'mcp-remote: CVSS 9,6, über 437.000 Downloads'), { size: 7 })}
+    ${t(18, 152, l('nightly jobs: integration, not MCP', 'nächtliche Jobs: Integration, kein MCP'), { fill: D, size: 7.5 })}
+    ${tag(232, 108, 74, l('20 Feb 2027', '20.02.2027'))}${t(269, 142, l('password flow ends', 'Passwort-Flow endet'), { size: 7, anchor: 'middle' })}`,
+
+  'einstein-bots-to-agentforce': (l) => `
+    ${t(18, 18, l('PORTAL BOT, 4,000 CHATS / MONTH (SCENARIO)', 'PORTAL-BOT, 4.000 GESPRÄCHE / MONAT (SZENARIO)'), { fill: D, size: 7 })}
+    ${box(18, 26, 128, 84)}${t(28, 41, l('EINSTEIN BOT: MENU', 'EINSTEIN BOT: MENÜ'), { fill: D, size: 7.5 })}
+    ${[l('Order status', 'Auftragsstatus'), l('Manuals by serial', 'Handbücher per Serie'), l('Warranty registration', 'Garantieregistrierung'), l('Breakdown to human', 'Ausfall an Menschen')]
+      .map((s, i) => check(28, 51 + i * 14, G) + t(42, 57 + i * 14, s, { size: 7 })).join('')}
+    ${arrow(146, 68, 196, C)}${t(171, 61, l('free text', 'Freitext'), { fill: C, size: 7, anchor: 'middle' })}${t(171, 82, '35 %', { fill: C, size: 7, anchor: 'middle' })}
+    ${box(196, 44, 106, 48, C)}${t(249, 64, 'AGENTFORCE', { fill: D, size: 8, anchor: 'middle' })}${t(249, 78, 'Service Agent', { size: 7, anchor: 'middle' })}
+    ${tag(196, 100, 106, 'Upgrade Agent: Labs')}
+    <path d="M18 126H302" stroke="${L}"/>
+    ${t(18, 140, l('all to agent: 2.88M credits/yr > 2.75M Max pool', 'alles zum Agenten: 2,88 Mio. Credits/Jahr > 2,75 Mio. Max'), { fill: D, size: 7 })}
+    ${t(18, 153, l('hybrid: 1.34M credits/yr, 20 credits ($0.10) per action', 'hybrid: 1,34 Mio. Credits/Jahr, 20 Credits (0,10 €) pro Aktion'), { size: 7 })}`,
+
+  'einstein-trust-layer-explained': (l) => `
+    ${box(14, 40, 70, 44)}${t(49, 58, l('AGENT', 'AGENT'), { fill: D, size: 8, anchor: 'middle' })}${t(49, 72, 'Agentforce', { size: 7, anchor: 'middle' })}
+    ${arrow(84, 62, 112)}
+    ${box(112, 18, 130, 92, C)}${t(122, 34, 'TRUST LAYER', { fill: C, size: 7.5 })}
+    ${check(122, 42, G)}${t(136, 48, 'zero data retention', { size: 7 })}
+    ${check(122, 58, G)}${t(136, 64, l('toxicity score 0 to 1', 'Toxizität 0 bis 1'), { size: 7 })}
+    ${check(122, 74, G)}${t(136, 80, l('audit trail, Data 360', 'Audit Trail, Data 360'), { size: 7 })}
+    ${cross(126, 94)}${t(136, 98, l('masking: off for agents', 'Maskierung: aus für Agenten'), { size: 7 })}
+    ${arrow(242, 62, 262)}
+    ${box(262, 40, 44, 44)}${t(284, 66, 'LLM', { fill: D, size: 8, anchor: 'middle' })}
+    <path d="M14 124H306" stroke="${L}"/>
+    ${t(14, 140, l('prices, contracts: permissions + actions', 'Preise, Verträge: Rechte + Aktionen'), { fill: D, size: 7.5 })}
+    ${t(14, 154, l('masking on = 65,536 token context', 'Maskierung an = 65.536 Token Kontext'), { size: 7 })}`,
+
   'breakdown-hotline-voice-agent': (l) => `
     ${box(18, 56, 78, 40)}${t(57, 73, l('HOTLINE CALL', 'HOTLINE-ANRUF'), { fill: D, size: 7.5, anchor: 'middle' })}${t(57, 86, l('German: GA', 'Deutsch: GA'), { size: 7, anchor: 'middle' })}
     ${arrow(96, 76, 112)}
