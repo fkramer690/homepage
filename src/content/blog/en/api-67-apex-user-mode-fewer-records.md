@@ -43,11 +43,11 @@ Triggers are the deliberate exception, described in different words. The [Summer
 
 ## Why does Apex see fewer records after the bump?
 
-Two different mechanisms are at work, and they show up very differently.
+Two mechanisms are at work, and they show up very differently.
 
 **Sharing filters silently.** Once a class runs with sharing, a query returns only the records the running user can see through org-wide defaults, roles, sharing rules and teams. No exception, no log entry. A method that counted all open service cases for a machine now counts those in the rep's territory and carries on with the smaller number.
 
-**Permissions fail loudly.** In user mode, a query that selects a field the user cannot read fails. The [access mode documentation](https://developer.salesforce.com/docs/atlas.en-us.264.0.apexcode.meta/apexref/apex_classes_enforce_usermode.htm) describes `getInaccessibleFields()` on the `QueryException`, which lists every field concerned, and `getDmlFieldNames()` for DML. That hurts in UAT, but at least someone notices.
+**Permissions fail loudly.** In user mode, a query that selects a field the user cannot read fails. The [access mode documentation](https://developer.salesforce.com/docs/atlas.en-us.264.0.apexcode.meta/apexref/apex_classes_enforce_usermode.htm) describes `getInaccessibleFields()` on the `QueryException`, which lists every field concerned, and `getDmlFieldNames()` for DML. That hurts in UAT, but someone notices.
 
 The same page settles a detail that matters for every migration: a database operation in user mode "always respects the user's sharing rules". At 67.0, `without sharing` on the class is therefore not enough for a query without an access mode. Keeping the old behaviour deliberately takes both, the class keyword and `WITH SYSTEM_MODE`.
 
