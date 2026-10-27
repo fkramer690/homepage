@@ -91,7 +91,7 @@ I start with four numbers from your own field service, before the product even c
 
 These numbers can usually be pulled from the ERP or the existing scheduling tool. If nobody knows them, that is a finding in itself: the basis for any business case is missing, whatever the product.
 
-Then comes the data question. Field Service only schedules as well as assets, locations, skills and availability are maintained. A technician whose skills are recorded nowhere will be scheduled wrongly by the engine.
+Then comes the data question. Field Service only schedules as well as assets, locations, skills and availability are maintained. A technician whose skills are recorded nowhere will be scheduled wrongly by the engine. Which data that is exactly is covered in [part 2 of this series](../salesforce-field-service-master-data/).
 
 ## Where should you start?
 

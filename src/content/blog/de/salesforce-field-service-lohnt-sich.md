@@ -91,7 +91,7 @@ Ich beginne mit vier Zahlen aus dem eigenen Außendienst, noch bevor es um das P
 
 Diese Zahlen lassen sich meist aus dem ERP oder der bestehenden Einsatzplanung ziehen. Sind sie unbekannt, ist das schon ein Ergebnis: Dann fehlt die Grundlage für jeden Business Case, egal mit welchem Produkt.
 
-Danach kommt die Frage nach den Daten. Field Service plant nur so gut, wie Anlagen, Standorte, Qualifikationen und Verfügbarkeiten gepflegt sind. Ein Techniker, dessen Qualifikationen nirgends hinterlegt sind, wird von der Engine falsch eingeplant.
+Danach kommt die Frage nach den Daten. Field Service plant nur so gut, wie Anlagen, Standorte, Qualifikationen und Verfügbarkeiten gepflegt sind. Ein Techniker, dessen Qualifikationen nirgends hinterlegt sind, wird von der Engine falsch eingeplant. Welche Daten das genau sind, beschreibe ich in [Teil 2 dieser Serie](../salesforce-field-service-stammdaten/).
 
 ## Wo sollten Sie anfangen?
 

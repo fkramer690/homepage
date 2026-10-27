@@ -101,6 +101,13 @@ const drawings: Record<string, Drawing> = {
     ${box(22, 82, 116, 56)}${t(80, 100, l('INTERNAL', 'INTERN'), { fill: D, size: 7.5, anchor: 'middle' })}${t(80, 114, 'Service Resource', { size: 7, anchor: 'middle' })}${t(80, 127, l('same app', 'gleiche App'), { size: 7, anchor: 'middle' })}
     ${box(182, 82, 116, 56)}${t(240, 100, l('PARTNER', 'PARTNER'), { fill: D, size: 7.5, anchor: 'middle' })}${t(240, 114, 'Service Resource', { size: 7, anchor: 'middle' })}${t(240, 127, l('own territory', 'eigenes Gebiet'), { size: 7, anchor: 'middle' })}`,
 
+  'field-service-rollout': (l) => `
+    ${[l('Wave 1', 'Welle 1'), l('Wave 2', 'Welle 2'), l('Wave 3', 'Welle 3')].map((s, i) => box(20 + i * 98, 30 + i * 22, 86, 34, i === 0 ? C : G) + t(63 + i * 98, 51 + i * 22, s, { fill: D, size: 7.5, anchor: 'middle' })).join('')}
+    ${arrow(106, 47, 118)}${arrow(204, 69, 216)}
+    ${tag(20, 120, 132, l('works council early', 'Betriebsrat früh'))}
+    ${t(164, 128, l('timesheets · location', 'Timesheets · Standort'), { size: 7 })}
+    ${t(164, 142, l('rules per country', 'Regeln je Land'), { fill: C, size: 7 })}`,
+
   'salesforce-winter-27-pipeline': (l) => `
     ${['build', 'validate', 'deploy'].map((s, i) => box(20 + i * 62, 30, 50, 26) + t(45 + i * 62, 47, s, { size: 7.5, anchor: 'middle' })).join('')}
     ${arrow(70, 43, 82)}${arrow(132, 43, 144)}
