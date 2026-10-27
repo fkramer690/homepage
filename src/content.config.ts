@@ -23,9 +23,14 @@ const blog = defineCollection({
     translationKey: z.string(),
     // Picks the small topic image on the blog overview (src/lib/topics.ts).
     topic: z.enum(topicIds),
-    // Filter category on the blog overview (src/lib/categories.ts).
-    category: z.enum(categoryIds),
-    // Optional: closing call to action other than the category's (src/lib/contact-briefs.ts).
+    // Filter categories on the blog overview (src/lib/categories.ts), one to three.
+    // The first one is the main category: it decides the closing call to action.
+    categories: z
+      .array(z.enum(categoryIds))
+      .min(1)
+      .max(3)
+      .refine((c) => new Set(c).size === c.length, 'each category only once'),
+    // Optional: closing call to action other than the main category's (src/lib/contact-briefs.ts).
     contactBrief: z.enum(contactBriefIds).optional(),
     tags: z.array(z.string()).min(1).max(6),
     // Optional: the article is part `part` of a series defined in src/lib/series.ts.

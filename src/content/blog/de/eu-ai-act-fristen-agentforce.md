@@ -6,7 +6,7 @@ lang: de
 slug: eu-ai-act-fristen-agentforce
 translationKey: eu-ai-act-agentforce-deadlines
 topic: security
-category: ai
+categories: [ai]
 tags: [EU AI Act, KI-Verordnung, Agentforce, Compliance, KI-Agenten, Maschinenbau]
 takeaways:
   - "Seit dem 2. August 2026 verlangt Art. 50 des EU AI Act, dass Menschen im Chat mit einem Agentforce-Agenten beim ersten Kontakt erfahren, dass es eine KI ist; nach meiner Lesart auch Händlermitarbeitende im B2B-Portal."

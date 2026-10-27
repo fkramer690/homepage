@@ -1,6 +1,7 @@
-// Categories of blog articles. Each article sets exactly one in its frontmatter
-// (`category`); the blog overview shows them as filter buttons. The order here
-// is the order of the buttons.
+// Categories of blog articles. Each article sets one to three in its frontmatter
+// (`categories`, the first is the main one); the blog overview shows them as
+// filter buttons, and an article appears under each of its categories. The order
+// here is the order of the buttons.
 export const categories = {
   devops: { en: 'DevOps & releases', de: 'DevOps & Releases' },
   architecture: { en: 'Architecture & partner governance', de: 'Architektur & Partnersteuerung' },

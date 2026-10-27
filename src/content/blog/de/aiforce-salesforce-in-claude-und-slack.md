@@ -6,7 +6,7 @@ lang: de
 slug: aiforce-salesforce-in-claude-und-slack
 translationKey: aiforce-salesforce-in-claude-slack
 topic: ai
-category: ai
+categories: [ai]
 tags: [AIforce, Claude, Slack, Agentforce Coworker, MCP, Maschinenbau]
 takeaways:
   - "AIforce, vorgestellt am 15. September 2026, macht Salesforce-Daten und Workflows aus Claude, Slack und Lightning nutzbar, über Salesforce in Claude, Slackforce, Agentforce Coworker und das Headless Toolkit."

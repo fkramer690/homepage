@@ -6,8 +6,8 @@ lang: en
 slug: primary-keyword-in-the-slug
 translationKey: same-key-in-en-and-de
 topic: devops # picks the card image on the blog overview, see src/lib/topics.ts
-category: devops # filter category on the blog overview (one per article), see src/lib/categories.ts
-# contactBrief: licences # optional: closing call to action other than the category's, see src/lib/contact-briefs.ts
+categories: [devops] # filter categories on the blog overview, one to three, the first is the main one; see src/lib/categories.ts
+# contactBrief: licences # optional: closing call to action other than the main category's, see src/lib/contact-briefs.ts
 tags: [topic, second-topic]
 # series: { id: field-service, part: 2 } # only for articles in a series, see src/lib/series.ts
 takeaways:

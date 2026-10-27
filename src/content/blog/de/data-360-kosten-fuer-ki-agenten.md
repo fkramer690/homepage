@@ -6,7 +6,7 @@ lang: de
 slug: data-360-kosten-fuer-ki-agenten
 translationKey: data-360-costs-for-agents
 topic: data
-category: ai
+categories: [ai]
 contactBrief: licences
 tags: [Data 360, Agentforce, Flex Credits, Grounding, Ersatzteile, Maschinenbau]
 takeaways:

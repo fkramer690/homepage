@@ -39,7 +39,7 @@ const alternates = translation
 const url = new URL(postHref(post), Astro.site).href;
 const base = import.meta.env.BASE_URL;
 const abs = (path: string) => new URL(path, Astro.site).href;
-const brief = getContactBrief(lang, post.data.contactBrief, post.data.category);
+const brief = getContactBrief(lang, post.data.contactBrief, post.data.categories[0]);
 const ctaAttrs = contactExternal ? { target: '_blank', rel: 'noopener' } : {};
 // Keep the <title> within the ~60 characters search results show.
 const suffix = ' | FK Solution Design';

@@ -6,7 +6,7 @@ lang: de
 slug: connected-apps-oauth-ki-integrationen
 translationKey: oauth-connected-apps-ai-lessons
 topic: security
-category: architecture
+categories: [architecture, ai]
 tags: [Connected Apps, OAuth, Sicherheit, KI-Integrationen, External Client Apps, Maschinenbau]
 takeaways:
   - "Im August 2025 exportierten Angreifer mit gestohlenen OAuth-Tokens der KI-Chat-App Drift Cases, Accounts, User und Opportunities aus Salesforce-Orgs, ohne eine Schwachstelle in Salesforce auszunutzen."

@@ -6,7 +6,7 @@ lang: en
 slug: quote-to-sales-agreement-product-configurator
 translationKey: manufacturing-cloud-quote-to-agreement
 topic: data
-category: manufacturing-cloud
+categories: [manufacturing-cloud]
 tags: [Manufacturing Cloud, Sales Agreements, CPQ, Product Configurator, Manufacturing]
 series: { id: manufacturing-cloud, part: 2 }
 takeaways:

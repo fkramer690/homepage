@@ -6,7 +6,7 @@ lang: de
 slug: agentforce-ja-oder-nein-hersteller
 translationKey: agentforce-yes-or-no-manufacturers
 topic: ai
-category: ai
+categories: [ai, manufacturing-cloud]
 tags: [Agentforce, KI-Agenten, Maschinenbau, Business Case, Flex Credits, ERP]
 takeaways:
   - "Starten Sie jetzt mit Agentforce, wenn ein Prozess hohes Volumen, klare Regeln, saubere Anlagen- und Auftragsdaten und eine API zum ERP hat; fehlt eines davon, beheben Sie das zuerst."

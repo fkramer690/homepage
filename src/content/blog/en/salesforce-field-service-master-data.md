@@ -6,7 +6,7 @@ lang: en
 slug: salesforce-field-service-master-data
 translationKey: field-service-master-data
 topic: field-service
-category: field-service
+categories: [field-service]
 series: { id: field-service, part: 2 }
 tags: [Field Service, Data model, Master data, Manufacturing]
 takeaways:

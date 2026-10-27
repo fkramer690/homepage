@@ -6,7 +6,7 @@ lang: de
 slug: ki-coding-kosten-salesforce-projekt
 translationKey: ai-coding-costs-salesforce-project
 topic: devops
-category: devops
+categories: [devops, ai]
 tags: [KI-Coding, Claude Code, GitHub Copilot, Agentforce Vibes, Partnersteuerung, Kosten]
 takeaways:
   - "KI-Coding kostet im Salesforce-Projekt zu US-Listenpreisen etwa 19 $ bis 250 $ pro Entwickler und Monat, von Copilot Business mit Inklusiv-Credits bis Claude Code zu API-Preisen."

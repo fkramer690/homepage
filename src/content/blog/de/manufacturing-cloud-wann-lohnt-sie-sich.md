@@ -6,7 +6,7 @@ lang: de
 slug: manufacturing-cloud-wann-lohnt-sie-sich
 translationKey: manufacturing-cloud-worth-it
 topic: governance
-category: manufacturing-cloud
+categories: [manufacturing-cloud]
 tags: [Manufacturing Cloud, Make-or-buy, Lizenzen, Architektur, Fertigung]
 series: { id: manufacturing-cloud, part: 1 }
 takeaways:

@@ -6,7 +6,7 @@ lang: en
 slug: data-360-costs-for-ai-agents
 translationKey: data-360-costs-for-agents
 topic: data
-category: ai
+categories: [ai]
 contactBrief: licences
 tags: [data 360, agentforce, flex credits, grounding, spare parts, manufacturing]
 takeaways:

@@ -6,7 +6,7 @@ lang: en
 slug: fixed-price-vs-time-and-materials-ai
 translationKey: fixed-price-ai-salesforce-partners
 topic: governance
-category: architecture
+categories: [architecture, ai]
 contactBrief: partner-governance
 tags: [fixed price, time and materials, partner governance, ai coding, partner program, manufacturing]
 takeaways:

@@ -6,7 +6,7 @@ lang: de
 slug: salesforce-agent-context-engine-erklaert
 translationKey: agent-context-engine
 topic: data
-category: ai
+categories: [ai]
 tags: [Agentforce, Data 360, KI-Agenten, Data Governance, Architektur]
 takeaways:
   - "Die Agent Context Engine ist eine gemeinsame Kontextschicht auf Data 360, die für jede Anfrage genau die Daten zusammenstellt, die ein KI-Agent braucht und sehen darf."

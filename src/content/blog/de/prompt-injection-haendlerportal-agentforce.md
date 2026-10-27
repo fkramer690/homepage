@@ -6,7 +6,7 @@ lang: de
 slug: prompt-injection-haendlerportal-agentforce
 translationKey: prompt-injection-dealer-portals
 topic: security
-category: ai
+categories: [ai]
 tags: [Agentforce, Prompt Injection, Sicherheit, Händlerportal, Experience Cloud, Maschinenbau]
 takeaways:
   - "Jedes Feld, das Händler, Kunden oder Websitebesucher beschreiben können, von der Fehlerbeschreibung im Garantieantrag bis zu Web-to-Lead und Email-to-Case, ist Text, den ein Agentforce-Agent liest und befolgen kann."

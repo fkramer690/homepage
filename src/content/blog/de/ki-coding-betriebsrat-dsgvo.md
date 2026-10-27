@@ -6,7 +6,7 @@ lang: de
 slug: ki-coding-betriebsrat-dsgvo
 translationKey: ai-coding-works-council-gdpr
 topic: governance
-category: architecture
+categories: [architecture, ai]
 tags: [KI-Coding, Betriebsrat, DSGVO, Datenresidenz, Claude Code, GitHub Copilot]
 takeaways:
   - "Stellt ein Unternehmen Coding-Agenten über Firmenkonten bereit, gilt laut CMS in aller Regel § 87 Abs. 1 Nr. 6 BetrVG; ohne Zustimmung des Betriebsrats oder Einigungsstelle darf das Tool nicht live gehen."

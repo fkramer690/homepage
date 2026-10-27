@@ -6,7 +6,7 @@ lang: en
 slug: partners-using-ai-coding-contract-rules
 translationKey: partners-ai-coding-sow-rules
 topic: governance
-category: architecture
+categories: [architecture, ai]
 contactBrief: partner-governance
 tags: [partner governance, ai coding, statement of work, data protection, code review, manufacturing]
 takeaways:

@@ -6,7 +6,7 @@ lang: en
 slug: ai-rules-file-salesforce-repository
 translationKey: ai-rules-file-salesforce-repo
 topic: devops
-category: devops
+categories: [devops, ai]
 tags: [ai coding, devops, partner governance, claude code, agentforce vibes, manufacturing]
 takeaways:
   - "Your Salesforce repository needs an AI rules file as soon as anyone codes with an agent: CLAUDE.md for Claude Code, AGENTS.md for Codex and Copilot, .vibes/rules/ for Agentforce Vibes."

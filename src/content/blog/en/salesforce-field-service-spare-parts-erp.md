@@ -6,7 +6,7 @@ lang: en
 slug: salesforce-field-service-spare-parts-erp
 translationKey: field-service-spare-parts
 topic: field-service
-category: field-service
+categories: [field-service]
 series: { id: field-service, part: 4 }
 tags: [Field Service, Spare parts, ERP, Integration, Manufacturing]
 takeaways:

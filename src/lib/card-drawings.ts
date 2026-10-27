@@ -311,7 +311,7 @@ const drawings: Record<string, Drawing> = {
     ${[[l('dealer enquiries', 'Händleranfragen'), l('start', 'starten'), true], [l('warranty pre-check', 'Garantie-Vorprüfung'), l('wait: data', 'warten: Daten'), false], [l('special machines', 'Sondermaschinen'), l('stays manual', 'bleibt manuell'), false]]
       .map(([a, b, hi], i) => box(136, 26 + i * 30, 166, 22, hi ? C : G) + t(146, 40 + i * 30, String(a), { fill: D, size: 7 }) + t(294, 40 + i * 30, String(b), { fill: hi ? C : G, size: 7, anchor: 'end' })).join('')}
     <path d="M18 120H302" stroke="${L}"/>
-    ${t(18, 136, l('1 action = 20 Flex Credits = $0.10', '1 Aktion = 20 Flex Credits = 0,10 $'), { fill: D, size: 7.5 })}
+    ${t(18, 136, l('1 action = 20 Flex Credits = $0.10', '1 Aktion = 20 Flex Credits = 0,10 €'), { fill: D, size: 7.5 })}
     ${t(18, 150, l('sandbox: 16 credits per action', 'Sandbox: 16 Credits pro Aktion'), { size: 7 })}`,
 
   'agent-script-deterministic-rules': (l) => `
@@ -392,7 +392,7 @@ const drawings: Record<string, Drawing> = {
 
   'dealer-service-agent-costs': (l) => `
     ${t(18, 18, l('3,000 DEALER CHATS / MONTH (SCENARIO)', '3.000 HÄNDLERGESPRÄCHE / MONAT (SZENARIO)'), { fill: D, size: 7 })}
-    ${[['Flex Credits', l('$1,020', '1.020 $'), 26, true], [l('per resolution, 60 %', 'pro Lösung, 60 %'), l('$3,600', '3.600 $'), 90, false], [l('per conversation', 'pro Gespräch'), l('$6,000', '6.000 $'), 150, false]]
+    ${[['Flex Credits', l('$1,020', '1.020 €'), 26, true], [l('per resolution, 60 %', 'pro Lösung, 60 %'), l('$3,600', '3.600 €'), 90, false], [l('per conversation', 'pro Gespräch'), l('$6,000', '6.000 €'), 150, false]]
       .map(([a, b, w, hi], i) => t(18, 40 + i * 22, String(a), { size: 7 }) + `<rect x="104" y="${31 + i * 22}" width="${w}" height="12" rx="2" fill="${hi ? C : '#fff'}" fill-opacity="${hi ? 0.25 : 1}" stroke="${hi ? C : G}" stroke-width="1.1"/>` + t(110 + Number(w), 40 + i * 22, String(b), { fill: hi ? C : G, size: 7 })).join('')}
     <path d="M18 104H302" stroke="${L}"/>
     ${t(18, 120, l('1 chat = 3 actions + 2 prompts = 68 credits', '1 Gespräch = 3 Aktionen + 2 Prompts = 68 Credits'), { fill: D, size: 7.5 })}
@@ -403,7 +403,7 @@ const drawings: Record<string, Drawing> = {
     ${t(18, 18, l('AVAILABLE TODAY', 'HEUTE VERFÜGBAR'), { fill: D, size: 7 })}${t(186, 18, l('MACHINE BUILDER', 'MASCHINENBAUER'), { fill: D, size: 7 })}
     ${[[l('maintenance booking', 'Wartungsbuchung'), l('start', 'starten'), true], [l('job report draft', 'Berichtsentwurf'), l('clean fields', 'Felder sauber'), false], [l('pre-work brief', 'Pre-Work Brief'), l('asset history', 'Anlagenhistorie'), false], [l('breakdown booking', 'Störungsbuchung'), l('triage first', 'erst Triage'), false], [l('troubleshooting', 'Fehlersuche'), l('later', 'später'), false]]
       .map(([a, b, hi], i) => (hi ? check(18, 30 + i * 18, C) : dot(22, 33 + i * 18, G, 2.5)) + t(32, 36 + i * 18, String(a), { fill: hi ? C : G, size: 7 }) + `<path d="M18 ${41 + i * 18}H302" stroke="${L}"/>` + t(186, 36 + i * 18, String(b), { fill: hi ? C : G, size: 7 })).join('')}
-    ${box(18, 124, 136, 28, C)}${t(86, 136, l('customer agent', 'Kundenagent'), { fill: D, size: 7, anchor: 'middle' })}${t(86, 147, l('20 credits = $0.10 / action', '20 Credits = 0,10 $ / Aktion'), { fill: C, size: 7, anchor: 'middle' })}
+    ${box(18, 124, 136, 28, C)}${t(86, 136, l('customer agent', 'Kundenagent'), { fill: D, size: 7, anchor: 'middle' })}${t(86, 147, l('20 credits = $0.10 / action', '20 Credits = 0,10 € / Aktion'), { fill: C, size: 7, anchor: 'middle' })}
     ${box(166, 124, 136, 28)}${t(234, 136, l('employee add-on', 'Add-on Mitarbeitende'), { fill: D, size: 7, anchor: 'middle' })}${t(234, 147, l('$125 per user / month', '125 € pro Nutzer / Monat'), { size: 7, anchor: 'middle' })}`,
 
   'fixed-price-ai-salesforce-partners': (l) => `
@@ -512,12 +512,12 @@ const drawings: Record<string, Drawing> = {
 
   'salesforce-editions-core-advanced-max': (l) => `
     ${t(18, 18, l('EDITION / USER / MONTH', 'EDITION / NUTZER / MONAT'), { fill: D, size: 7 })}${t(302, 18, l('FLEX CREDITS / ORG / YEAR', 'FLEX CREDITS / ORG / JAHR'), { fill: D, size: 7, anchor: 'end' })}
-    ${[['Core', l('$195', '195 $'), '500K', 50, true], ['Advanced', l('$395', '395 $'), '1M', 100, false], ['Max', l('$550', '550 $'), l('2.75M', '2,75M'), 275, false]]
+    ${[['Core', l('$195', '195 €'), '500K', 50, true], ['Advanced', l('$395', '395 €'), '1M', 100, false], ['Max', l('$550', '550 €'), l('2.75M', '2,75M'), 275, false]]
       .map(([n, p, c, w, hi], i) => box(18, 28 + i * 26, 92, 20, hi ? C : G) + t(26, 41 + i * 26, String(n), { fill: D, size: 7.5 }) + t(102, 41 + i * 26, String(p), { size: 7.5, anchor: 'end' })
         + `<rect x="${120}" y="${33 + i * 26}" width="${(Number(w) / 275) * 140}" height="10" rx="2" fill="${hi ? C : L}"/>` + t(302, 41 + i * 26, String(c), { fill: hi ? C : G, size: 7.5, anchor: 'end' })).join('')}
     <path d="M18 112H302" stroke="${L}"/>
     ${t(18, 128, l('1 action = 20 credits: Core pool = 25,000 actions', '1 Aktion = 20 Credits: Core-Pool = 25.000 Aktionen'), { fill: D, size: 7.5 })}
-    ${t(18, 144, l('Core to Advanced, 200 users: +$480K for $2.5K credits', 'Core zu Advanced, 200 Nutzer: +480K $ für 2,5K $ Credits'), { size: 7 })}`,
+    ${t(18, 144, l('Core to Advanced, 200 users: +$480K for $2.5K credits', 'Core zu Advanced, 200 Nutzer: +480K € für 2,5K € Credits'), { size: 7 })}`,
 
   'smaller-teams-ai-native-delivery': (l) => `
     ${t(18, 18, l('TODAY (SCENARIO)', 'HEUTE (SZENARIO)'), { fill: D, size: 7 })}
@@ -543,7 +543,7 @@ const drawings: Record<string, Drawing> = {
       .map(([a, b, hi], i) => box(166, 26 + i * 26, 136, 20, hi ? C : G) + t(174, 39 + i * 26, String(a), { size: 7 }) + t(294, 39 + i * 26, String(b), { fill: hi ? C : D, size: 7.5, anchor: 'end' })).join('')}
     <path d="M18 124H302" stroke="${L}"/>
     ${t(18, 140, l('sandbox: 16 credits per action', 'Sandbox: 16 Credits pro Aktion'), { fill: D, size: 7.5 })}
-    ${t(18, 153, l('60 cases x 3 actions x 3 runs = about $43', '60 Fälle x 3 Aktionen x 3 Läufe = rund 43 $'), { size: 7 })}`,
+    ${t(18, 153, l('60 cases x 3 actions x 3 runs = about $43', '60 Fälle x 3 Aktionen x 3 Läufe = rund 43 €'), { size: 7 })}`,
 
   'vibes-claude-code-copilot-comparison': (l) => `
     ${t(18, 18, l('CODING AGENT', 'CODING-AGENT'), { fill: D, size: 7 })}${t(302, 18, l('EU PROCESSING', 'EU-VERARBEITUNG'), { fill: D, size: 7, anchor: 'end' })}

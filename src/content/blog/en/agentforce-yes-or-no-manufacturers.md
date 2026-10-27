@@ -6,7 +6,7 @@ lang: en
 slug: agentforce-yes-or-no-manufacturers
 translationKey: agentforce-yes-or-no-manufacturers
 topic: ai
-category: ai
+categories: [ai, manufacturing-cloud]
 tags: [agentforce, ai agents, manufacturing, business case, flex credits, erp]
 takeaways:
   - "Start with Agentforce now if one process has high volume, clear rules, clean asset and order data and an API to the ERP; if one of these is missing, fix it first."

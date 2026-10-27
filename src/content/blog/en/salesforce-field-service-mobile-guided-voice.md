@@ -6,7 +6,7 @@ lang: en
 slug: salesforce-field-service-mobile-guided-voice
 translationKey: field-service-mobile-guided-voice
 topic: field-service
-category: field-service
+categories: [field-service]
 tags: [field service, mobile, manufacturing, service, voice]
 takeaways:
   - "In October 2026 Salesforce announced guided workflows that adapt to the situation, a headless setup that digitises paper forms and voice input that fills forms for the Field Service mobile app."

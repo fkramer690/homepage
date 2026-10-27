@@ -6,7 +6,7 @@ lang: de
 slug: festpreis-statt-aufwand-ki-salesforce
 translationKey: fixed-price-ai-salesforce-partners
 topic: governance
-category: architecture
+categories: [architecture, ai]
 contactBrief: partner-governance
 tags: [Festpreis, Abrechnung nach Aufwand, Partnersteuerung, KI-Coding, Partnerprogramm, Maschinenbau]
 takeaways:

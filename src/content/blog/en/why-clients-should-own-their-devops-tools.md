@@ -6,7 +6,7 @@ lang: en
 slug: why-clients-should-own-their-devops-tools
 translationKey: client-owned-devops-tools
 topic: ownership
-category: devops
+categories: [devops]
 tags: [partner governance, devops, jira, vendor lock-in, access management]
 takeaways:
   - "Clients should always control the accounts, licences and access rights of their project tools, including the Git repository, CI/CD pipeline, Jira, Confluence and Miro."

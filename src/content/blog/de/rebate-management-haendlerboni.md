@@ -6,7 +6,7 @@ lang: de
 slug: rebate-management-haendlerboni
 translationKey: manufacturing-cloud-rebate-management
 topic: data
-category: manufacturing-cloud
+categories: [manufacturing-cloud]
 tags: [Manufacturing Cloud, Rebate Management, Händlerboni, ERP, Fertigung]
 series: { id: manufacturing-cloud, part: 5 }
 takeaways:

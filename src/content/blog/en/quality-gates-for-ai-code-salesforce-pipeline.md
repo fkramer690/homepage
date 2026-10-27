@@ -6,7 +6,7 @@ lang: en
 slug: quality-gates-for-ai-code-salesforce-pipeline
 translationKey: quality-gates-ai-code-pipeline
 topic: devops
-category: devops
+categories: [devops, ai]
 tags: [quality gates, ai coding, code analyzer, sfdx-hardis, devops, manufacturing]
 takeaways:
   - "AI-generated Salesforce code should pass blocking gates on every pull request: Code Analyzer with a severity threshold, a validation deploy with Apex tests, org-specific rules and a merge block nobody bypasses."

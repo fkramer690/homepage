@@ -2,7 +2,7 @@ import type { Category } from './categories';
 
 // Closing call to action under every blog article and service page: what the
 // reader should bring to the 30-minute call and what we clarify in it.
-// An article gets the brief of its category; `contactBrief` in the frontmatter
+// An article gets the brief of its main category (the first in `categories`); `contactBrief` in the frontmatter
 // overrides it (e.g. licence articles in the architecture category). Every
 // service page sets `contactBrief` in its frontmatter.
 // scripts/check-blog.mjs runs the same wording checks on this file as on articles.

@@ -6,7 +6,7 @@ lang: en
 slug: salesforce-object-ownership-matrix
 translationKey: object-ownership-matrix
 topic: governance
-category: architecture
+categories: [architecture]
 contactBrief: partner-governance
 tags: [partner governance, object ownership matrix, governance, pull request review, automation]
 takeaways:

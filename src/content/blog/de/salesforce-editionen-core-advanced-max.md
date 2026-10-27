@@ -6,7 +6,7 @@ lang: de
 slug: salesforce-editionen-core-advanced-max
 translationKey: salesforce-editions-core-advanced-max
 topic: governance
-category: architecture
+categories: [architecture, ai]
 contactBrief: licences
 tags: [Lizenzen, Editionen, Flex Credits, Agentforce, Make-or-buy, Maschinenbau]
 takeaways:
