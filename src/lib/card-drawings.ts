@@ -95,6 +95,12 @@ const drawings: Record<string, Drawing> = {
     ${box(196, 98, 104, 44, C)}${t(248, 117, l('DISPATCH', 'DISPATCHING'), { fill: D, size: 7.5, anchor: 'middle' })}${t(248, 131, l('1 = highest', '1 = höchste'), { size: 7, anchor: 'middle' })}
     ${arrow(138, 79, 196)}${box(196, 58, 104, 32)}${t(248, 78, l('work orders', 'Arbeitsaufträge'), { size: 7.5, anchor: 'middle' })}`,
 
+  'field-service-service-partners': (l) => `
+    ${box(106, 16, 108, 34, C)}${t(160, 31, l('DISPATCHER', 'DISPONENT'), { fill: D, size: 7.5, anchor: 'middle' })}${t(160, 43, l('one plan', 'ein Plan'), { fill: C, size: 7, anchor: 'middle' })}
+    <path d="M160 50V66M80 66H240M80 66V82M240 66V82" fill="none" stroke="${G}" stroke-width="1.2"/>
+    ${box(22, 82, 116, 56)}${t(80, 100, l('INTERNAL', 'INTERN'), { fill: D, size: 7.5, anchor: 'middle' })}${t(80, 114, 'Service Resource', { size: 7, anchor: 'middle' })}${t(80, 127, l('same app', 'gleiche App'), { size: 7, anchor: 'middle' })}
+    ${box(182, 82, 116, 56)}${t(240, 100, l('PARTNER', 'PARTNER'), { fill: D, size: 7.5, anchor: 'middle' })}${t(240, 114, 'Service Resource', { size: 7, anchor: 'middle' })}${t(240, 127, l('own territory', 'eigenes Gebiet'), { size: 7, anchor: 'middle' })}`,
+
   'salesforce-winter-27-pipeline': (l) => `
     ${['build', 'validate', 'deploy'].map((s, i) => box(20 + i * 62, 30, 50, 26) + t(45 + i * 62, 47, s, { size: 7.5, anchor: 'middle' })).join('')}
     ${arrow(70, 43, 82)}${arrow(132, 43, 144)}
