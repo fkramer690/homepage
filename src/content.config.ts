@@ -2,6 +2,7 @@ import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
 import { topicIds } from './lib/topics';
+import { seriesIds } from './lib/series';
 
 // Blog articles live as Markdown in src/content/blog/<lang>/<slug>.md.
 // The EN and DE version of an article share the same translationKey.
@@ -21,6 +22,8 @@ const blog = defineCollection({
     // Picks the small topic image on the blog overview (src/lib/topics.ts).
     topic: z.enum(topicIds),
     tags: z.array(z.string()).min(1).max(6),
+    // Optional: the article is part `part` of a series defined in src/lib/series.ts.
+    series: z.object({ id: z.enum(seriesIds), part: z.number().int().min(1) }).optional(),
     // Short answers at the top of the article, easy to quote for AI search.
     takeaways: z.array(z.string().max(220)).min(3).max(5),
     // Questions a reader would type into Google or an AI assistant.
@@ -41,7 +44,7 @@ const services = defineCollection({
     lang: z.enum(['en', 'de']),
     slug: z.string().regex(/^[a-z0-9]+(-[a-z0-9]+)*$/),
     translationKey: z.string(),
-    order: z.number().int().min(1).max(6),
+    order: z.number().int().min(1).max(7),
     // One or two sentences under the H1: the problem and what this service does about it.
     lead: z.string().min(80).max(320),
     situations: z.array(z.string().max(220)).min(3).max(5),

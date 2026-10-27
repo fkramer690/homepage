@@ -28,7 +28,7 @@ Blog articles link back to the best matching service automatically (`getPostServ
 | `description` | 120–160 characters |
 | `slug` | lowercase with hyphens, unique across EN and DE |
 | `translationKey` | same for EN and DE, e.g. `service-devops` |
-| `order` | 1–6, position on the home page; the short name comes from `services.items` in `src/i18n`. The first `services.featured` services are cards, the rest are rows in the "More services" card (`services.moreItems`) |
+| `order` | 1–7, position on the home page; the short name comes from `services.items` in `src/i18n`. The first `services.featured` services are cards, the rest are rows in the "More services" card (`services.moreItems`) |
 | `lead` | 80–320 characters, the problem and what I do about it |
 | `situations` | 3–5 items, each a situation the reader recognises |
 | `deliverables` | 3–8 items |

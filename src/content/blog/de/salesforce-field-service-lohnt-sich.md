@@ -6,6 +6,7 @@ lang: de
 slug: salesforce-field-service-lohnt-sich
 translationKey: field-service-worth-it
 topic: field-service
+series: { id: field-service, part: 1 }
 tags: [Field Service, Außendienst, Lizenzen, Make-or-buy, Fertigung]
 takeaways:
   - "Salesforce Field Service lohnt sich am meisten bei vielen kurzen Einsätzen pro Techniker und Tag, weil Termin- und Routenoptimierung dort die Kennzahlen deutlich verbessern."
