@@ -1,7 +1,8 @@
-// Checks every blog article and service page against docs/blog-guidelines.md and docs/service-pages.md.
+// Checks every blog article, service page and masterclass chapter against docs/blog-guidelines.md,
+// docs/service-pages.md and docs/masterclass.md.
 // Runs before `astro build`, so a violating article fails CI.
 // Frontmatter fields and lengths are validated by src/content.config.ts.
-import { readdirSync, readFileSync } from 'node:fs';
+import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 
 // Branches and terms that must not appear publicly (see briefing).
@@ -23,10 +24,11 @@ const slop = [
 const errors = [];
 const drawings = readFileSync(new URL('../src/lib/card-drawings.ts', import.meta.url), 'utf8');
 
-// Blog articles and service pages share the content rules; only length and structure differ.
+// Blog articles, service pages and masterclass chapters share the content rules; only length and structure differ.
 const collections = {
   blog: { minWords: 1000, maxWords: 2500, minH2: 3 },
   services: { minWords: 400, maxWords: 1200, minH2: 2 },
+  masterclass: { minWords: 900, maxWords: 3000, minH2: 3 },
 };
 
 function check(collection, rules) {
@@ -34,7 +36,9 @@ function check(collection, rules) {
   const pairs = new Map();
   // Astro uses the slug as the entry id, so a slug shared by EN and DE silently drops one entry.
   const slugs = new Map();
-  for (const lang of readdirSync(dir)) {
+  // A collection without any files yet (e.g. masterclass chapters still being written) is fine.
+  const langs = existsSync(dir) ? readdirSync(dir).filter((lang) => statSync(join(dir, lang)).isDirectory()) : [];
+  for (const lang of langs) {
     for (const file of readdirSync(join(dir, lang)).filter((f) => f.endsWith('.md'))) {
       const name = `${collection}/${lang}/${file}`;
       const fail = (msg) => errors.push(`${name}: ${msg}`);
@@ -103,7 +107,7 @@ function check(collection, rules) {
 const counts = Object.entries(collections).map(([name, rules]) => `${check(name, rules)} ${name}`);
 
 if (errors.length) {
-  console.error(`Content check failed (see docs/blog-guidelines.md and docs/service-pages.md):\n- ${errors.join('\n- ')}`);
+  console.error(`Content check failed (see docs/blog-guidelines.md, docs/service-pages.md and docs/masterclass.md):\n- ${errors.join('\n- ')}`);
   process.exit(1);
 }
 console.log(`Content check passed (${counts.join(', ')}).`);

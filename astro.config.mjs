@@ -2,7 +2,7 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import { satteri } from '@astrojs/markdown-satteri';
-import { readdirSync, readFileSync } from 'node:fs';
+import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { externalLinks } from './src/lib/external-links.mjs';
 
 // The site runs on the custom domain https://www.fk-sd.de (see public/CNAME).
@@ -15,7 +15,7 @@ const base = process.env.BASE_PATH ?? '/';
 const field = (text, name) => text.match(new RegExp(`^${name}:\\s*"?([^"\\n]+)"?`, 'm'))?.[1]?.trim();
 const readEntries = (collection) =>
   ['de', 'en'].flatMap((lang) =>
-    readdirSync(`src/content/${collection}/${lang}`).map((file) => {
+    (existsSync(`src/content/${collection}/${lang}`) ? readdirSync(`src/content/${collection}/${lang}`) : []).filter((file) => file.endsWith('.md')).map((file) => {
       const text = readFileSync(`src/content/${collection}/${lang}/${file}`, 'utf8');
       return {
         lang,
@@ -34,6 +34,7 @@ const enSlugs = readEntries('blog').filter((e) => e.lang === 'en').map((e) => e.
 const contentPaths = {
   blog: { de: (slug) => `/blog/${slug}/`, en: (slug) => `/en/blog/${slug}/` },
   services: { de: (slug) => `/leistungen/${slug}/`, en: (slug) => `/en/services/${slug}/` },
+  masterclass: { de: (slug) => `/masterclass-ki/${slug}/`, en: (slug) => `/en/ai-masterclass/${slug}/` },
 };
 const sitemapInfo = new Map();
 for (const collection of Object.keys(contentPaths)) {
@@ -48,6 +49,9 @@ for (const collection of Object.keys(contentPaths)) {
 const servicesIndex = { de: '/leistungen/', en: '/en/services/' };
 sitemapInfo.set(servicesIndex.de, { pair: servicesIndex });
 sitemapInfo.set(servicesIndex.en, { pair: servicesIndex });
+const masterclassIndex = { de: '/masterclass-ki/', en: '/en/ai-masterclass/' };
+sitemapInfo.set(masterclassIndex.de, { pair: masterclassIndex });
+sitemapInfo.set(masterclassIndex.en, { pair: masterclassIndex });
 const questionsPage = { de: '/fragen/', en: '/en/questions/' };
 sitemapInfo.set(questionsPage.de, { pair: questionsPage });
 sitemapInfo.set(questionsPage.en, { pair: questionsPage });
