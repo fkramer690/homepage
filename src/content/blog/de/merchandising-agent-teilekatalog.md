@@ -26,7 +26,7 @@ faq:
 draft: false
 ---
 
-Der Merchandising Agent in Salesforce B2B Commerce erledigt Backoffice-Arbeit im Gespräch: Er hebt Produkte in der Suche hervor oder stuft sie herab, legt Produkte an und verwaltet Käufer-Accounts, seine Merchandising-Skills fassen Bestellwert und Conversion zusammen und entwerfen Aktionen. Im Ersatzteilkatalog eines Herstellers ist die Suchreihenfolge der nützliche Teil: ersetzte Teile nach unten, aktuelle Sätze und Verschleißteile nach oben. Produktstammdaten bleiben in ERP oder PIM, und jede Änderung des Agenten braucht eine Prüfung. Merchant Agent steht in beiden Editionen, den B2B Merchandising Agent datiert Salesforce auf August 2026.
+Der Merchandising Agent in Salesforce B2B Commerce erledigt Backoffice-Arbeit im Gespräch: Er hebt Produkte in der Suche hervor oder stuft sie herab, legt Produkte an und verwaltet Käufer-Accounts, seine Merchandising-Skills fassen Bestellwert und Conversion zusammen und entwerfen Aktionen. Im Ersatzteilkatalog eines Herstellers ist die Suchreihenfolge der nützliche Teil: ersetzte Teile nach unten, aktuelle Sätze und Verschleißteile nach oben. Produktstammdaten bleiben in ERP oder PIM, und jede Änderung des Agenten würde ich prüfen lassen. Merchant Agent steht in beiden Editionen, den B2B Merchandising Agent datiert Salesforce auf August 2026.
 
 ## Was ist der Merchandising Agent?
 
@@ -80,7 +80,7 @@ Meine Regel für einen Teileshop:
 | Teil aus dem ERP-Materialstamm | Nein | ERP oder PIM ist Master |
 | Neuer Käufer-Account | Nur mit benanntem Freigeber | Entscheidet Sichtbarkeit und Preise |
 
-Jede Änderung des Agenten sollte nachvollziehbar sein: Wer hat gefragt, was hat sich geändert, wer hat freigegeben. Welche Protokolle Salesforce dafür bietet, steht in [Audit Trail für KI-Agenten in Salesforce: welche Logs?](../audit-trail-ki-agenten-salesforce/).
+Jede Änderung des Agenten sollte nachvollziehbar sein: Wer hat gefragt, was hat sich geändert, wer hat freigegeben. Welche Protokolle Salesforce dafür bietet, steht in [Audit-Trail für KI-Agenten in Salesforce: welche Logs?](../audit-trail-ki-agenten-salesforce/).
 
 ## Wie könnte das in der Praxis aussehen?
 

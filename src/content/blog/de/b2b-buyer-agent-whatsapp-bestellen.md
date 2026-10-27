@@ -46,7 +46,7 @@ Für einen Hersteller heißt das: Der Agent deckt die Fragen ab, die der Innendi
 
 ## WhatsApp und SMS: Was ist wann verfügbar?
 
-Hier lohnt genaues Lesen. Im Blogbeitrag vom Juni steht, der Buyer Agent sei dort verfügbar, wo der Käufer ist, "WhatsApp, SMS, and more". Die [Trailhead-Einheit zur Anbindung an einen Kanal](https://trailhead.salesforce.com/content/learn/modules/agentforce-for-guided-shopping-for-b2b-and-d2c/connect-a-guided-shopping-agent-to-a-channel) beschreibt die Einrichtung über Messaging for In-App and Web: Omni-Channel aktivieren, eine Queue anlegen, einen Omni-Channel-Flow bauen, der an den Buyer Agent routet und eine Ausweich-Queue hat, dann den Messaging-Kanal anlegen. Die Einheit sagt ausdrücklich, dass diese Schritte nicht für Enhanced WhatsApp oder SMS gelten.
+Hier lohnt genaues Lesen. Im Blogbeitrag vom Juni steht, der Buyer Agent sei dort verfügbar, wo der Käufer ist, "WhatsApp, SMS, and more". Die [Trailhead-Einheit zur Anbindung an einen Kanal](https://trailhead.salesforce.com/content/learn/modules/agentforce-for-guided-shopping-for-b2b-and-d2c/connect-a-guided-shopping-agent-to-a-channel) beschreibt die Einrichtung über Messaging for In-App and Web: Omni-Channel aktivieren, eine Queue anlegen, einen Omni-Channel-Flow bauen, der an den Buyer Agent routet und eine Ausweich-Queue hat, dann den Messaging-Kanal anlegen. Die Einheit sagt ausdrücklich, dass diese Schritte nicht für Standard- oder Enhanced-Kanäle von WhatsApp und SMS gelten.
 
 Auf der [Innovationsseite zu Commerce](https://www.salesforce.com/de/commerce/innovations/) führt Salesforce "Carter für Käufer" mit "AV Jan. 27". Laut Beschreibung läuft dann die ganze Bestellung im Chat, mit Nachbestellung, Bestätigung und Zahlung zum Vertragspreis, über WhatsApp oder per SMS.
 
@@ -63,7 +63,7 @@ Die Einführungseinheit auf Trailhead nennt diese Voraussetzungen:
 | Add-on-Lizenzen | Agentforce und Einstein for Service |
 | Plattform | Einstein generative AI, eingerichtet zusammen mit Data 360 |
 
-Zwei Punkte fallen auf. Erstens braucht der Buyer Agent Service Cloud. Wer neben dem Shop nur Sales Cloud betreibt, kauft also mehr als den Agenten. Zweitens habe ich auf den offiziellen Seiten keinen eigenen Preis für den Buyer Agent gefunden. Die Nutzung läuft über das Agentforce-Add-on, die Kosten hängen also an Ihrem Vertrag und Ihrem Volumen. Wie so eine Rechnung für einen Serviceagenten im Händlergeschäft aussieht, zeige ich in [Serviceagent für Händleranfragen: Kosten pro Monat](../serviceagent-haendleranfragen-kosten/).
+Zwei Punkte fallen auf. Erstens braucht der Buyer Agent Service Cloud. Wer neben dem Shop nur Sales Cloud betreibt, kauft also mehr als den Agenten. Zweitens habe ich auf den offiziellen Seiten keinen eigenen Preis für den Buyer Agent gefunden. Die Nutzung läuft über das Agentforce-Add-on, die Kosten hängen also an Ihrem Vertrag und Ihrem Volumen. Wie so eine Rechnung für einen Serviceagenten im Händlergeschäft aussieht, zeige ich in [Agentforce-Serviceagent für Händler: Kosten pro Monat](../serviceagent-haendleranfragen-kosten/).
 
 ## Warum müssen Vertragspreis und Kredit aus Systemen kommen?
 

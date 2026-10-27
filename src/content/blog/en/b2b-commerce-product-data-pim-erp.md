@@ -12,7 +12,7 @@ takeaways:
   - "For a Salesforce B2B Commerce store, the ERP should own material number, unit and sales status, a PIM should own texts, attributes and images, and Salesforce should hold a copy."
   - "A store has exactly one catalogue and can hold 4 million products, of which 1 million are searchable. A variation parent can have 200 variants."
   - "Each product can carry 9 images and 5 file attachments. Since the July 2026 release, external DAM content, 3D models and technical specs can be shown on product pages."
-  - "Product name, description and SKU are searchable by default. Search matches whole words only, so product data quality decides what dealers find."
+  - "Product name, description and SKU are searchable by default. Store search needs all search terms to match, so product data quality decides what dealers find."
   - "Write down one owner per product field before the first import. Changes made in Salesforce that the next ERP or PIM load overwrites cost more than the import itself."
 faq:
   - q: "Do I need a PIM for Salesforce B2B Commerce?"
@@ -93,7 +93,7 @@ With its July 2026 release, Salesforce announced product media extensibility. Ac
 
 ## Why does data quality decide search quality?
 
-Store search can only find what is in the data. According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/b2b2c-commerce-for-merchandisers/b2b2c-make-store-searchable), product name, description and SKU are searchable by default, and further fields can be made searchable. The same unit describes how matching works: results appear only when all search terms are present, and prefix or infix partial matches are not supported.
+Store search can only find what is in the data. According to the [Trailhead unit on store search](https://trailhead.salesforce.com/content/learn/modules/b2b2c-commerce-for-merchandisers/b2b2c-make-store-searchable), product name, description and SKU are searchable by default, and further fields can be made searchable. The unit, written for D2C stores on the same core platform search, also describes how matching works: results appear only when all search terms are present, and prefix or infix partial matches are not supported.
 
 For a parts catalogue, that has direct consequences:
 

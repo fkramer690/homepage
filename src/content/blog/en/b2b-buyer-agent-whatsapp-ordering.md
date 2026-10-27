@@ -46,7 +46,7 @@ For a manufacturer this means: the agent covers the questions inside sales answe
 
 ## WhatsApp and SMS: what is available when?
 
-Here the sources need careful reading. The June blog post says the Buyer Agent is "available wherever your buyer is (WhatsApp, SMS, and more)". The [Trailhead unit on connecting the agent to a channel](https://trailhead.salesforce.com/content/learn/modules/agentforce-for-guided-shopping-for-b2b-and-d2c/connect-a-guided-shopping-agent-to-a-channel) describes the setup through Messaging for In-App and Web: enable Omni-Channel, create a queue, build an Omni-Channel flow that routes to the Buyer Agent with a fallback queue, then create the messaging channel. The unit states that these steps do not apply to enhanced WhatsApp or SMS channels.
+Here the sources need careful reading. The June blog post says the Buyer Agent is "available wherever your buyer is (WhatsApp, SMS, and more)". The [Trailhead unit on connecting the agent to a channel](https://trailhead.salesforce.com/content/learn/modules/agentforce-for-guided-shopping-for-b2b-and-d2c/connect-a-guided-shopping-agent-to-a-channel) describes the setup through Messaging for In-App and Web: enable Omni-Channel, create a queue, build an Omni-Channel flow that routes to the Buyer Agent with a fallback queue, then create the messaging channel. The unit states that these steps do not apply to standard or enhanced WhatsApp and SMS channels.
 
 On the [Commerce innovations page](https://www.salesforce.com/commerce/innovations/), Salesforce lists "Carter for Buyers" with "GA Jan '27". According to the description, the whole order then closes inside the chat: reorder, confirm and pay at contract pricing, in WhatsApp or SMS.
 

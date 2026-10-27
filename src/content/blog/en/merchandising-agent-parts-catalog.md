@@ -26,7 +26,7 @@ faq:
 draft: false
 ---
 
-The Merchandising Agent in Salesforce B2B Commerce does back office work in conversation: it boosts or buries products in search, creates products and manages buyer accounts, and its merchandising skills summarise order value and conversion and draft promotions. For a manufacturer's parts catalogue the useful part is search ranking: superseded parts down, current kits and wear parts up. Product master data stays in the ERP or PIM, and every change the agent makes needs a review. Merchant Agent is listed in both editions; Salesforce dates the B2B Merchandising Agent to August 2026.
+The Merchandising Agent in Salesforce B2B Commerce does back office work in conversation: it boosts or buries products in search, creates products and manages buyer accounts, and its merchandising skills summarise order value and conversion and draft promotions. For a manufacturer's parts catalogue the useful part is search ranking: superseded parts down, current kits and wear parts up. Product master data stays in the ERP or PIM, and I would have every change the agent makes reviewed. Merchant Agent is listed in both editions; Salesforce dates the B2B Merchandising Agent to August 2026.
 
 ## What is the Merchandising Agent?
 

@@ -12,7 +12,7 @@ takeaways:
   - "Für einen Shop in Salesforce B2B Commerce sollte das ERP Materialnummer, Mengeneinheit und Vertriebsstatus führen, ein PIM Texte, Merkmale und Bilder, Salesforce hält eine Kopie."
   - "Ein Store hat genau einen Katalog und fasst 4 Mio. Produkte, davon 1 Mio. durchsuchbar. Ein Variantenträger kann 200 Varianten haben."
   - "Pro Produkt sind 9 Bilder und 5 Dateianhänge möglich. Seit dem Release im Juli 2026 lassen sich externe DAM-Inhalte, 3D-Modelle und technische Daten auf Produktseiten zeigen."
-  - "Produktname, Beschreibung und SKU sind standardmäßig durchsuchbar. Die Suche findet nur ganze Wörter, deshalb entscheidet die Datenqualität, was Händler finden."
+  - "Produktname, Beschreibung und SKU sind standardmäßig durchsuchbar. Die Shopsuche braucht einen Treffer für alle Suchbegriffe, deshalb entscheidet die Datenqualität, was Händler finden."
   - "Legen Sie pro Produktfeld einen Owner fest, bevor der erste Import läuft. Änderungen in Salesforce, die der nächste ERP- oder PIM-Lauf überschreibt, kosten mehr als der Import."
 faq:
   - q: "Brauche ich ein PIM für Salesforce B2B Commerce?"
@@ -93,7 +93,7 @@ Mit dem Release im Juli 2026 hat Salesforce die Product Media Extensibility ange
 
 ## Warum entscheidet die Datenqualität über die Suche?
 
-Die Shopsuche findet nur, was in den Daten steht. Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/b2b2c-commerce-for-merchandisers/b2b2c-make-store-searchable) sind Produktname, Beschreibung und SKU standardmäßig durchsuchbar, weitere Felder lassen sich ergänzen. Dieselbe Einheit beschreibt, wie der Abgleich funktioniert: Ergebnisse erscheinen nur, wenn alle Suchbegriffe vorkommen, und Teiltreffer am Wortanfang oder in der Wortmitte werden nicht unterstützt.
+Die Shopsuche findet nur, was in den Daten steht. Laut der [Trailhead-Einheit zur Shopsuche](https://trailhead.salesforce.com/content/learn/modules/b2b2c-commerce-for-merchandisers/b2b2c-make-store-searchable) sind Produktname, Beschreibung und SKU standardmäßig durchsuchbar, weitere Felder lassen sich ergänzen. Die Einheit ist für D2C-Stores auf derselben Plattformsuche geschrieben und beschreibt auch, wie der Abgleich funktioniert: Ergebnisse erscheinen nur, wenn alle Suchbegriffe vorkommen, und Teiltreffer am Wortanfang oder in der Wortmitte werden nicht unterstützt.
 
 Für einen Teilekatalog hat das direkte Folgen:
 
