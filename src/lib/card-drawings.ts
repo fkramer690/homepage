@@ -198,6 +198,15 @@ const drawings: Record<string, Drawing> = {
     ${arrow(196, 79, 220, C)}${t(208, 70, 'API', { fill: C, size: 6.8, anchor: 'middle' })}
     ${box(220, 46, 88, 66, C)}${t(264, 64, 'SALES', { fill: D, size: 7.5, anchor: 'middle' })}${t(264, 75, 'AGREEMENT', { fill: D, size: 7.5, anchor: 'middle' })}${t(264, 90, l('product + quantity', 'Produkt + Menge'), { size: 6.8, anchor: 'middle' })}${t(264, 101, l('per period', 'pro Zeitraum'), { size: 6.8, anchor: 'middle' })}
     ${t(14, 152, l('one variant = one product, also in the ERP', 'eine Variante = ein Produkt, auch im ERP'), { size: 7 })}`,
+
+  'manufacturing-cloud-customer-portal': (l) => `
+    ${box(14, 24, 96, 108)}${t(62, 40, l('CUSTOMER PORTAL', 'KUNDENPORTAL'), { fill: D, size: 7.5, anchor: 'middle' })}
+    ${[l('sales agreements', 'Sales Agreements'), l('orders', 'Bestellungen'), l('master data', 'Stammdaten'), l('cases', 'Cases')].map((s, i) => check(22, 56 + i * 18) + t(36, 61 + i * 18, s, { size: 7 })).join('')}
+    ${box(144, 52, 70, 50)}${t(179, 74, 'SALESFORCE', { fill: D, size: 7.5, anchor: 'middle' })}${t(179, 87, l('reduced view', 'reduziert'), { size: 6.8, anchor: 'middle' })}
+    ${box(248, 52, 58, 50)}${t(277, 80, 'ERP', { fill: D, size: 7.5, anchor: 'middle' })}
+    ${arrow(110, 66, 144, C)}${arrow(214, 66, 248, C)}${t(229, 58, 'sync', { fill: C, size: 6.8, anchor: 'middle' })}
+    <path d="M248 90H214M144 90H110" stroke="${G}" stroke-width="1.2" stroke-dasharray="4 3"/>
+    ${t(14, 152, l('billing address: portal, then Salesforce, then ERP', 'Rechnungsadresse: Portal, dann Salesforce, dann ERP'), { size: 7 })}`,
 };
 
 export const hasDrawing = (key: string) => key in drawings;
