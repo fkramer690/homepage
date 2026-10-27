@@ -2,6 +2,7 @@
 title: "Salesforce Well-Architected: Was das neue Framework ändert"
 description: "Das Salesforce Well-Architected Framework hat seit September 2026 fünf Säulen und eine Agenten-Linse. Was sich geändert hat und wie Sie es im Projekt nutzen."
 pubDate: 2026-10-23
+updatedDate: 2026-10-27
 lang: de
 slug: salesforce-well-architected-framework-neu
 translationKey: salesforce-well-architected-2026
@@ -90,6 +91,8 @@ Bei aller Zustimmung: Es bleibt ein Herstellerdokument.
 - **Es ersetzt keine Entscheidung.** Das Framework liefert Fragen und Muster. Ob Sie 99,5 Prozent Verfügbarkeit brauchen oder 99, ob Sie Make oder Buy wählen, entscheidet Ihr Geschäftsmodell und nicht das Dokument.
 
 ## Wie nutze ich das Framework in einem Programm mit mehreren Partnern?
+
+Ich habe schon das alte Framework mit Trusted, Easy und Adaptable in Kundenprojekten genutzt und in User-Group-Vorträgen vorgestellt.
 
 In meinem bisher größten Programm arbeiteten über 30 Entwickler in 8 Streams für 5 Umsetzungspartner in derselben Org. Wir haben rund drei Monate gebraucht, bis die gemeinsamen Standards standen: Namenskonventionen, eine Automatisierung pro Objekt, Vorgaben zur Testabdeckung, eine Matrix, welcher Stream welches Objekt verantwortet, und Regeln, was in Custom Metadata Types oder Custom Labels gehört. 80 Prozent standen nach der ersten Runde, der Rest kam über die Monate dazu.
 
