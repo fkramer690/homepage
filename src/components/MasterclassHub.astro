@@ -1,5 +1,5 @@
 ---
-// Hub page of the masterclass "AI in the Salesforce ecosystem" in either language.
+// Hub page of one masterclass (`course`, default the AI masterclass) in either language.
 // Chapters come from src/content/masterclass/<lang>/, article clusters from
 // src/lib/masterclass.ts, all texts from src/i18n (rules: docs/masterclass.md).
 import Page from '../layouts/Page.astro';
@@ -12,16 +12,18 @@ import { de } from '../i18n/de';
 import { site, contactHref, contactExternal } from '../site';
 import { postHref } from '../lib/blog';
 import { homeHref } from '../lib/paths';
-import { chapterHref, chapterTotal, getChapters, getClusters, masterclassIndex, masterclassesIndex, postsForKeys } from '../lib/masterclass';
+import { chapterHref, chapterTotal, courseTexts, getChapters, getClusters, masterclassIndex, masterclassesIndex, postsForKeys } from '../lib/masterclass';
+import { courses, type CourseId } from '../lib/courses';
 
 interface Props {
   lang: 'en' | 'de';
+  course?: CourseId;
 }
-const { lang } = Astro.props;
+const { lang, course = 'ai' } = Astro.props;
 const t = lang === 'de' ? de : en;
-const m = t.masterclass;
-const chapters = await getChapters(lang);
-const clusters = await getClusters(lang);
+const m = courseTexts(lang, course);
+const chapters = await getChapters(lang, course);
+const clusters = await getClusters(lang, course);
 const articleCount = new Set(clusters.flatMap(({ posts }) => posts.map((p) => p.id))).size;
 const deadlinePosts = new Map(
   await Promise.all(
@@ -31,12 +33,12 @@ const deadlinePosts = new Map(
 
 const base = import.meta.env.BASE_URL;
 const abs = (path: string) => new URL(path, Astro.site).href;
-const alternates = { en: masterclassIndex('en'), de: masterclassIndex('de') };
-const url = abs(masterclassIndex(lang));
+const alternates = { en: masterclassIndex('en', course), de: masterclassIndex('de', course) };
+const url = abs(masterclassIndex(lang, course));
 const ctaAttrs = contactExternal ? { target: '_blank', rel: 'noopener' } : {};
 const suffix = ' | FK Solution Design';
 const pageTitle = m.metaTitle.length + suffix.length <= 60 ? m.metaTitle + suffix : m.metaTitle;
-const ogImage = `${base}og/${lang}/masterclass.png`;
+const ogImage = `${base}og/${lang}/${courses[course].og}.png`;
 const nn = (n: number) => String(n).padStart(2, '0');
 const countLabel = (n: number) => (n === 1 ? m.articleCount.one : m.articleCount.other).replace('{n}', String(n));
 

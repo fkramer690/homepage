@@ -17,8 +17,8 @@ export const GET: APIRoute = async ({ site: origin }) => {
   const services = async (lang: 'en' | 'de') =>
     (await getServices(lang)).map((s) => `- [${s.data.title}](${abs(serviceHref(s))}): ${s.data.description}`).join('\n');
 
-  const chapters = async (lang: 'en' | 'de') =>
-    (await getChapters(lang)).map((c) => `- [${c.data.title}](${abs(chapterHref(c))}): ${c.data.description}`).join('\n');
+  const chapters = async (lang: 'en' | 'de', course: 'ai' | 'devops' = 'ai') =>
+    (await getChapters(lang, course)).map((c) => `- [${c.data.title}](${abs(chapterHref(c))}): ${c.data.description}`).join('\n');
 
   const body = `# ${site.company}
 
@@ -34,6 +34,7 @@ The German version is the main site at the root; the English version lives under
 - [Blog](${abs(blogIndex('en'))}), German: [Blog](${abs(blogIndex('de'))})
 - [Masterclasses](${abs(masterclassesIndex('en'))}), German: [Masterclasses](${abs(masterclassesIndex('de'))}): overview of all masterclasses
 - [AI masterclass](${abs(masterclassIndex('en'))}), German: [Masterclass KI](${abs(masterclassIndex('de'))}): ten chapters on AI in Salesforce programmes at manufacturing companies (coding agents, Agentforce, MCP, costs, delivery)
+- [DevOps masterclass](${abs(masterclassIndex('en', 'devops'))}), German: [Masterclass DevOps](${abs(masterclassIndex('de', 'devops'))}): ten chapters on Salesforce DevOps and release management at manufacturing companies (ownership, environments, tools, pipeline, quality, data, release planning, operations)
 - [Speaker & events](${abs(localHref('en', 'speaking/'))}): talks at Salesforce community conferences (Flow performance, Flow vs OmniScript, Lightning Flow Scanner)
 - [Questions I ask in every Salesforce project](${abs(localHref('en', questionPaths.en))}), German: [Fragen, die ich in jedem Salesforce-Projekt stelle](${abs(localHref('de', questionPaths.de))}): goal and deadline, partner ownership, ERP interfaces, data volumes, operations, licences
 - [LinkedIn](${site.linkedin})
@@ -55,6 +56,16 @@ ${await chapters('en')}
 
 - [${de.masterclass.title}](${abs(masterclassIndex('de'))}): ${de.masterclass.metaDescription}
 ${await chapters('de')}
+
+## DevOps masterclass
+
+- [${en.masterclassDevops.title}](${abs(masterclassIndex('en', 'devops'))}): ${en.masterclassDevops.metaDescription}
+${await chapters('en', 'devops')}
+
+## DevOps masterclass (German)
+
+- [${de.masterclassDevops.title}](${abs(masterclassIndex('de', 'devops'))}): ${de.masterclassDevops.metaDescription}
+${await chapters('de', 'devops')}
 
 ## Articles
 

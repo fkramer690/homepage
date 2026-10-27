@@ -18,6 +18,7 @@ import {
   chapterHref,
   chapterTotal,
   chapterReadingMinutes,
+  courseTexts,
   getChapters,
   getChapterTranslation,
   masterclassIndex,
@@ -29,14 +30,14 @@ interface Props {
   chapter: Chapter;
 }
 const { chapter } = Astro.props;
-const { lang, title, description, takeaways, faq, articles, updatedDate } = chapter.data;
+const { lang, course, title, description, takeaways, faq, articles, updatedDate } = chapter.data;
 const no = chapter.data.chapter;
 const t = lang === 'de' ? de : en;
-const m = t.masterclass;
+const m = courseTexts(lang, course);
 const { Content } = await render(chapter);
 const translation = await getChapterTranslation(chapter);
 const posts = await postsForKeys(lang, articles);
-const chapters = await getChapters(lang);
+const chapters = await getChapters(lang, course);
 const index = chapters.findIndex((c) => c.id === chapter.id);
 const prev = index > 0 ? chapters[index - 1] : undefined;
 const next = index >= 0 && index < chapters.length - 1 ? chapters[index + 1] : undefined;
@@ -47,7 +48,7 @@ const alternates = translation
     : { en: chapterHref(chapter), de: chapterHref(translation) }
   : undefined;
 const url = new URL(chapterHref(chapter), Astro.site).href;
-const hub = new URL(masterclassIndex(lang), Astro.site).href;
+const hub = new URL(masterclassIndex(lang, course), Astro.site).href;
 const base = import.meta.env.BASE_URL;
 const abs = (path: string) => new URL(path, Astro.site).href;
 const ctaAttrs = contactExternal ? { target: '_blank', rel: 'noopener' } : {};
@@ -110,7 +111,7 @@ const schema = {
   </Fragment>
   <article class="section post mc-chapter">
     <div class="container post-inner">
-      <a class="post-back mono" href={masterclassIndex(lang)}>← {m.back}</a>
+      <a class="post-back mono" href={masterclassIndex(lang, course)}>← {m.back}</a>
       <p class="eyebrow mono">{eyebrow}</p>
       <h1>{title}</h1>
       <p class="post-meta mono">
