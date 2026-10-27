@@ -70,7 +70,7 @@ Salesforce has not documented this case. What follows is my reading of the docum
 
 The [Trust Layer documentation](https://developer.salesforce.com/docs/ai/agentforce/guide/trust.html) lists protections "when interfacing with LLMs": grounding, masking of sensitive data, toxicity detection, audit trail and zero data retention agreements with third-party LLM partners. Trailhead describes [the path](https://trailhead.salesforce.com/content/learn/modules/the-einstein-trust-layer/follow-the-response-journey): personal data is masked before the prompt leaves Salesforce, passes the Secure LLM Gateway, and "no customer data including the prompt text and generated responses are stored outside of Salesforce". All [Models API](https://developer.salesforce.com/docs/ai/agentforce/guide/models-api.html) calls go through the Trust Layer, and when Agentforce is the MCP client, [Trailhead promises](https://trailhead.salesforce.com/content/learn/modules/mcp-for-agentforce-quick-look/discover-mcp-for-agentforce) the Trust Layer and zero data retention as well.
 
-Hosted MCP reverses the direction. Claude, ChatGPT or Cursor is the client and brings its own model. Salesforce checks token and permissions, runs the query and returns records, which the client then puts into a prompt for its model. Salesforce makes no LLM call on this path, so there is no gateway step where masking could act, and its zero data retention agreements bind Salesforce's LLM partners for Salesforce's calls, not a model your employees use under your own contract. The documents fit this reading: the hosted MCP overview, the security guide, the GA post and the Claude setup post cover authentication, permissions and logging, and none mentions the Trust Layer.
+Hosted MCP reverses the direction. Claude, ChatGPT or Cursor is the client and brings its own model. Salesforce checks token and permissions, runs the query and returns records, which the client then puts into a prompt for its model. Salesforce makes no LLM call on this path, so no gateway step exists where masking could act, and its zero data retention agreements bind Salesforce's LLM partners for Salesforce's calls, not a model you license yourself. The documents fit this reading: the hosted MCP overview, the security guide, the GA post and the Claude setup post cover authentication, permissions and logging, and none mentions the Trust Layer.
 
 Two statements need care. The [Claudeforce release](https://www.salesforce.com/ap/news/press-releases/2026/08/27/sg-salesforce-and-anthropic-announce-claudeforce-the-1-ai-meets-the-1-ai-crm/) says that through Amazon Bedrock, Claude is available within the Salesforce Trust Boundary. That is Claude as a model inside Salesforce, not the Claude app on a sales rep's laptop. The [AIforce announcement](https://www.salesforce.com/news/stories/aiforce-announcement/) says business data "is not retained by the model provider", while Anthropic's setup guide says nothing about retention. I would ask both vendors in writing which contract backs that sentence for your org.
 
@@ -80,7 +80,7 @@ Until then your AI contract governs the data. For Claude Code, Anthropic's [data
 
 Assume a machine builder with Sales Cloud, Service Cloud, SAP, a dealer network and Claude Enterprise. All numbers are assumptions. In one month IT receives three requests.
 
-**Dealer managers.** Twelve users want Claude to prepare dealer visits. Their profile can read purchase prices and discount fields on the dealer price agreements. Decision: a custom server "dealer visit" with a Flow that returns the overview without price fields, and an External Client App restricted to a permission set for these twelve.
+**Dealer managers.** Twelve users want Claude to prepare dealer visits. Their profile can read purchase prices on the dealer price agreements. Decision: a custom server "dealer visit" whose Flow returns the overview without price fields, restricted to a permission set for these twelve.
 
 **Service back office.** Thirty users want to look up cases, installed base and warranty status by serial number. Decision: `sobject-reads` plus a Named Query by serial number. Some case descriptions come from the dealer portal, so web access in their Claude workspace stays off.
 
@@ -98,6 +98,6 @@ Two of three go ahead, both narrower than asked. In my judgement that is the nor
 6. **Settle the AI contract**: training, retention, zero data retention, hosting region.
 7. **Watch the API logs**, filtered on `API_CLIENT_CATEGORY = SALESFORCE_HOSTED_MCP`, for who reads which objects in which volume.
 
-These steps are part of my work on [Salesforce integration](../../services/salesforce-integration/), because an MCP server is an interface like any other and needs an owner.
+This is part of my work on [Salesforce integration](../../services/salesforce-integration/): an MCP server is an interface and needs an owner.
 
 Hosted MCP enforces Salesforce permissions reliably, so the real decision is which people, which fields and which AI contract you trust with your data. If you want a second opinion before the first department connects, [send me a message](#contact).
