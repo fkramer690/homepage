@@ -303,6 +303,304 @@ const drawings: Record<string, Drawing> = {
     ${[[60, l('phase 1', 'Phase 1'), l('large country', 'großes Land'), true], [140, l('phase 2', 'Phase 2'), l('large region', 'große Region'), true], [220, l('phase 3', 'Phase 3'), l('more countries', 'weitere Länder'), false], [290, '…', '', false]].map(([x, a, b, hit]) => dot(x, 96, hit ? C : G, hit ? 4 : 3) + t(x, 86, a, { fill: hit ? C : G, size: 7, anchor: 'middle' }) + t(x, 112, b, { size: 6.5, anchor: 'middle' })).join('')}
     ${t(170, 40, l('≥ 80 % identical per country', '≥ 80 % identisch pro Land'), { size: 7 })}
     ${t(14, 146, l('+ change management in every country', '+ Change Management in jedem Land'), { fill: D, size: 7 })}`,
+
+  'agentforce-yes-or-no-manufacturers': (l) => `
+    ${t(18, 18, l('5 CRITERIA', '5 KRITERIEN'), { fill: D, size: 7 })}${t(136, 18, l('3 CANDIDATES (SCENARIO)', '3 KANDIDATEN (SZENARIO)'), { fill: D, size: 7 })}
+    ${[l('volume', 'Volumen'), l('data', 'Daten'), l('ERP API', 'ERP-API'), l('cost model', 'Kostenmodell'), l('edition', 'Edition')].map((s, i) => check(18, 32 + i * 16, G) + t(32, 36 + i * 16, s, { size: 7 })).join('')}
+    ${arrow(96, 68, 130, C)}
+    ${[[l('dealer enquiries', 'Händleranfragen'), l('start', 'starten'), true], [l('warranty pre-check', 'Garantie-Vorprüfung'), l('wait: data', 'warten: Daten'), false], [l('special machines', 'Sondermaschinen'), l('stays manual', 'bleibt manuell'), false]]
+      .map(([a, b, hi], i) => box(136, 26 + i * 30, 166, 22, hi ? C : G) + t(146, 40 + i * 30, String(a), { fill: D, size: 7 }) + t(294, 40 + i * 30, String(b), { fill: hi ? C : G, size: 7, anchor: 'end' })).join('')}
+    <path d="M18 120H302" stroke="${L}"/>
+    ${t(18, 136, l('1 action = 20 Flex Credits = $0.10', '1 Aktion = 20 Flex Credits = 0,10 $'), { fill: D, size: 7.5 })}
+    ${t(18, 150, l('sandbox: 16 credits per action', 'Sandbox: 16 Credits pro Aktion'), { size: 7 })}`,
+
+  'agent-script-deterministic-rules': (l) => `
+    ${box(18, 26, 86, 50)}${t(61, 44, l('DEALER', 'HÄNDLER'), { fill: D, anchor: 'middle' })}${t(61, 58, l('free text', 'Freitext'), { size: 7, anchor: 'middle' })}
+    ${arrow(104, 51, 124)}
+    ${box(124, 18, 86, 66, C)}${t(167, 34, 'AGENT SCRIPT', { fill: D, size: 7.5, anchor: 'middle' })}
+    ${check(132, 42)}${t(145, 48, l('credit limit', 'Kreditlimit'), { size: 7 })}${check(132, 56)}${t(145, 62, l('warranty', 'Garantie'), { size: 7 })}${check(132, 70)}${t(145, 76, l('price approval', 'Preisfreigabe'), { size: 7 })}
+    ${arrow(210, 51, 230, C)}
+    ${box(230, 26, 72, 50)}${t(266, 44, 'LLM', { fill: D, anchor: 'middle' })}${t(266, 58, l('intent, wording', 'Absicht, Text'), { size: 7, anchor: 'middle' })}
+    <path d="M18 100H302" stroke="${L}"/>
+    ${t(18, 118, 'available when credit_ok == True', { fill: C, size: 7.5 })}
+    ${t(18, 134, l('false: action hidden from the LLM', 'falsch: Aktion für das LLM verborgen'), { size: 7 })}
+    ${t(18, 150, l('logic runs as code, no LLM call', 'Logik läuft als Code, ohne LLM-Aufruf'), { size: 7 })}`,
+
+  'agentforce-sap-order-status': (l) => `
+    ${t(18, 20, l('ORDER STATUS FROM SAP', 'AUFTRAGSSTATUS AUS SAP'), { fill: D, size: 7 })}
+    ${[[l('Dealer', 'Händler'), 'portal'], ['Agent', l('action', 'Aktion')], ['API Catalog', 'sync'], ['MuleSoft', l('3 operations', '3 Operationen')], ['SAP S/4', 'OData']]
+      .map(([a, b], i) => box(14 + i * 62, 34, 48, 28, i === 3 ? C : G) + t(38 + i * 62, 51, String(a), { fill: D, size: 7, anchor: 'middle' }) + t(38 + i * 62, 76, String(b), { fill: i === 3 ? C : G, size: 7, anchor: 'middle' })).join('')}
+    ${[0, 1, 2, 3].map((i) => arrow(62 + i * 62, 48, 76 + i * 62, i === 2 ? C : G)).join('')}
+    <path d="M18 92H302" stroke="${L}"/>
+    ${t(18, 108, l('STAYS DETERMINISTIC', 'BLEIBT DETERMINISTISCH'), { fill: D, size: 7 })}
+    ${[l('sold-to set by code', 'Auftraggeber per Code'), l('confirmed date from SAP', 'bestätigter Termin aus SAP'), l('read-only in release 1', 'Release 1 nur lesend')].map((s, i) => check(18, 116 + i * 14, i === 0 ? C : G) + t(32, 122 + i * 14, s, { size: 7 })).join('')}
+    ${box(196, 112, 106, 36)}${t(249, 127, l('own rate limit', 'eigenes Rate Limit'), { size: 7, anchor: 'middle' })}${t(249, 140, l('HTTP 429 when exceeded', 'HTTP 429 bei Überlauf'), { size: 7, anchor: 'middle' })}`,
+
+  'ai-coding-costs-salesforce-project': (l) => `
+    ${t(18, 18, l('ONE AGENT SESSION, OPUS 5.5', 'EINE AGENTEN-SESSION, OPUS 5.5'), { fill: D, size: 7 })}
+    ${box(18, 28, 132, 22)}${t(26, 42, l('without cache', 'ohne Cache'), { size: 7 })}${t(142, 42, '$9.80', { size: 7.5, anchor: 'end' })}
+    ${box(18, 58, 132, 22, C)}${t(26, 72, l('with cache', 'mit Cache'), { size: 7 })}${t(142, 72, '$2.20', { fill: C, size: 7.5, anchor: 'end' })}
+    ${t(18, 96, l('output: 3 % of tokens,', 'Output: 3 % der Tokens,'), { size: 7 })}${t(18, 107, l('over half of the cost', 'über die Hälfte der Kosten'), { size: 7 })}
+    ${t(174, 18, l('WHO PAYS?', 'WER ZAHLT?'), { fill: D, size: 7 })}
+    ${box(174, 28, 128, 22, C)}${t(182, 42, l('T&M', 'Aufwand'), { fill: D, size: 7 })}${t(294, 42, l('client', 'Kunde'), { fill: C, size: 7, anchor: 'end' })}
+    ${box(174, 58, 128, 22)}${t(182, 72, l('fixed price', 'Festpreis'), { fill: D, size: 7 })}${t(294, 72, 'Partner', { size: 7, anchor: 'end' })}
+    <path d="M18 120H302" stroke="${L}"/>
+    ${t(18, 136, l('$19 to $250 per developer and month', '19 $ bis 250 $ pro Entwickler und Monat'), { fill: D, size: 7.5 })}
+    ${t(18, 150, l('team of 8: about 1 % of day rates', 'Team mit 8: rund 1 % der Tagessätze'), { size: 7 })}`,
+
+  'ai-rules-file-salesforce-repo': (l) => `
+    ${[['Claude Code', false], ['Codex', false], ['Copilot', false], ['Vibes', true]].map(([s, d], i) => t(16, 41 + i * 20, String(s), { size: 7.5 }) + arrow(68, 38 + i * 20, 106, G, Boolean(d))).join('')}
+    ${box(106, 26, 96, 88)}${t(154, 44, 'AGENTS.md', { fill: D, size: 8, anchor: 'middle' })}
+    ${[l('client repo', 'Kunden-Repo'), l('owner: architect', 'Owner: Architekt'), l('< 200 lines', '< 200 Zeilen'), l('changes via PR', 'Änderung per PR')].map((s, i) => t(154, 62 + i * 14, s, { size: 7, anchor: 'middle' })).join('')}
+    ${arrow(202, 70, 216, C)}
+    ${box(216, 26, 90, 88, C)}${t(226, 42, l('ENFORCED', 'ERZWUNGEN'), { fill: C, size: 7.5 })}
+    ${[l('deny rules', 'Deny-Regeln'), l('Stop hook', 'Stop-Hook'), l('CI gates', 'CI-Gates'), 'CODEOWNERS'].map((s, i) => check(226, 52 + i * 16, C) + t(240, 58 + i * 16, s, { size: 7 })).join('')}
+    ${t(154, 128, l('guides the agent', 'leitet den Agenten'), { size: 7, anchor: 'middle' })}${t(261, 128, l('holds every time', 'gilt jedes Mal'), { fill: C, size: 7, anchor: 'middle' })}
+    <path d="M16 138H306" stroke="${L}"/>
+    ${t(16, 152, l('CLAUDE.md is context, not enforced config', 'CLAUDE.md ist Kontext, keine erzwungene Regel'), { fill: D, size: 7.5 })}`,
+
+  'aiforce-salesforce-in-claude-slack': (l) => `
+    ${t(18, 18, l('AIFORCE LAYER (15.09.2026)', 'AIFORCE-SCHICHT (15.09.2026)'), { fill: D, size: 7 })}
+    ${[['Claude', l('beta, 37 sales skills', 'Beta, 37 Vertriebs-Skills'), true], ['Slack', l('Slackforce, announced', 'Slackforce, angekündigt'), false], ['Lightning', l('Coworker, needs Data 360', 'Coworker, braucht Data 360'), false]]
+      .map(([a, b, hi], i) => box(18, 26 + i * 26, 168, 20, hi ? C : G) + t(26, 39 + i * 26, String(a), { fill: D, size: 7.5 }) + t(178, 39 + i * 26, String(b), { fill: hi ? C : G, size: 6.8, anchor: 'end' })).join('')}
+    <path d="M186 62H206V108H186" fill="none" stroke="${G}" stroke-width="1.2"/>${arrow(206, 85, 226)}
+    ${box(226, 62, 78, 46)}${t(265, 80, 'SALESFORCE', { fill: D, size: 7.5, anchor: 'middle' })}${t(265, 94, l('user permissions', 'Nutzerrechte'), { size: 6.8, anchor: 'middle' })}
+    <path d="M18 120H302" stroke="${L}"/>
+    ${t(18, 136, l('SIForce: CEO post on X, 09.10.2026', 'SIForce: CEO-Post auf X, 09.10.2026'), { fill: D, size: 7.5 })}
+    ${t(18, 150, l('no press release, keep the name AIforce', 'keine Pressemitteilung, Name AIforce behalten'), { size: 7 })}`,
+
+  'api-67-user-mode-apex': (l) => `
+    ${box(18, 26, 124, 60)}${t(28, 42, 'API 66.0', { fill: D, size: 7.5 })}${t(28, 58, 'system mode', { size: 7 })}${t(28, 72, l('no decl. = without sharing', 'ohne Dekl. = without sharing'), { size: 7 })}
+    ${arrow(142, 56, 180, C)}${t(161, 47, l('bump', 'Sprung'), { fill: C, size: 7, anchor: 'middle' })}
+    ${box(180, 26, 124, 60, C)}${t(190, 42, 'API 67.0', { fill: C, size: 7.5 })}${t(190, 58, 'user mode', { size: 7 })}${t(190, 72, l('no decl. = with sharing', 'ohne Dekl. = with sharing'), { size: 7 })}
+    ${[0, 1, 2, 3, 4, 5, 6, 7].map((i) => dot(30 + i * 13, 102, G, 3)).join('')}
+    ${[0, 1, 2, 3, 4, 5, 6, 7].map((i) => (i < 3 ? `<circle cx="${192 + i * 13}" cy="102" r="3" fill="${C}"/>` : dot(192 + i * 13, 102, L, 3))).join('')}
+    ${t(28, 118, l('all records', 'alle Datensätze'), { size: 7 })}${t(190, 118, l('fewer records, no error', 'weniger Datensätze, kein Fehler'), { fill: C, size: 7 })}
+    <path d="M18 130H304" stroke="${L}"/>
+    ${cross(24, 144)}${t(34, 148, 'WITH SECURITY_ENFORCED', { size: 7 })}${arrow(130, 145, 150)}${check(156, 144, G)}${t(168, 148, 'WITH USER_MODE', { fill: D, size: 7 })}`,
+
+  'data-360-costs-for-agents': (l) => `
+    ${t(18, 18, l('CREDITS PER MB (BASE TIER)', 'CREDITS PRO MB (BASISSTAFFEL)'), { fill: D, size: 7 })}
+    ${[[l('catalogue PDF', 'Katalog-PDF'), l('LLM parsing', 'LLM-Parsing'), '600', true], [l('manual PDF', 'Handbuch-PDF'), l('default parser', 'Standard-Parser'), '150', false]]
+      .map(([a, b, c, hi], i) => box(18, 26 + i * 30, 82, 22) + t(59, 40 + i * 30, String(a), { size: 7, anchor: 'middle' }) + arrow(100, 37 + i * 30, 124, hi ? C : G) + box(124, 26 + i * 30, 84, 22, hi ? C : G) + t(166, 40 + i * 30, String(b), { size: 7, anchor: 'middle' }) + t(222, 41 + i * 30, String(c), { fill: hi ? C : D, size: 8.5 })).join('')}
+    ${t(244, 41, l('/ MB', '/ MB'), { size: 7 })}${t(244, 71, l('/ MB', '/ MB'), { size: 7 })}
+    <path d="M18 98H302" stroke="${L}"/>
+    ${t(18, 114, l('SCENARIO PER MONTH', 'SZENARIO PRO MONAT'), { fill: D, size: 7 })}
+    ${t(18, 130, l('searches: 14,400 credits', 'Suchen: 14.400 Credits'), { size: 7 })}
+    ${t(18, 146, l('changed documents: 195,000 credits', 'geänderte Dokumente: 195.000 Credits'), { fill: C, size: 7 })}
+    ${tag(194, 128, 108, l('sandbox: no tiers', 'Sandbox: ohne Staffel'))}`,
+
+  'dealer-service-agent-costs': (l) => `
+    ${t(18, 18, l('3,000 DEALER CHATS / MONTH (SCENARIO)', '3.000 HÄNDLERGESPRÄCHE / MONAT (SZENARIO)'), { fill: D, size: 7 })}
+    ${[['Flex Credits', l('$1,020', '1.020 $'), 26, true], [l('per resolution, 60 %', 'pro Lösung, 60 %'), l('$3,600', '3.600 $'), 90, false], [l('per conversation', 'pro Gespräch'), l('$6,000', '6.000 $'), 150, false]]
+      .map(([a, b, w, hi], i) => t(18, 40 + i * 22, String(a), { size: 7 }) + `<rect x="104" y="${31 + i * 22}" width="${w}" height="12" rx="2" fill="${hi ? C : '#fff'}" fill-opacity="${hi ? 0.25 : 1}" stroke="${hi ? C : G}" stroke-width="1.1"/>` + t(110 + Number(w), 40 + i * 22, String(b), { fill: hi ? C : G, size: 7 })).join('')}
+    <path d="M18 104H302" stroke="${L}"/>
+    ${t(18, 120, l('1 chat = 3 actions + 2 prompts = 68 credits', '1 Gespräch = 3 Aktionen + 2 Prompts = 68 Credits'), { fill: D, size: 7.5 })}
+    ${t(18, 136, l('Data 360: 150 credits per MB of catalogue', 'Data 360: 150 Credits pro MB Katalog'), { size: 7 })}
+    ${t(18, 150, l('sandbox: 120 credits per MB, test a subset', 'Sandbox: 120 Credits pro MB, Ausschnitt testen'), { size: 7 })}`,
+
+  'field-service-ai-agents-today': (l) => `
+    ${t(18, 18, l('AVAILABLE TODAY', 'HEUTE VERFÜGBAR'), { fill: D, size: 7 })}${t(186, 18, l('MACHINE BUILDER', 'MASCHINENBAUER'), { fill: D, size: 7 })}
+    ${[[l('maintenance booking', 'Wartungsbuchung'), l('start', 'starten'), true], [l('job report draft', 'Berichtsentwurf'), l('clean fields', 'Felder sauber'), false], [l('pre-work brief', 'Pre-Work Brief'), l('asset history', 'Anlagenhistorie'), false], [l('breakdown booking', 'Störungsbuchung'), l('triage first', 'erst Triage'), false], [l('troubleshooting', 'Fehlersuche'), l('later', 'später'), false]]
+      .map(([a, b, hi], i) => (hi ? check(18, 30 + i * 18, C) : dot(22, 33 + i * 18, G, 2.5)) + t(32, 36 + i * 18, String(a), { fill: hi ? C : G, size: 7 }) + `<path d="M18 ${41 + i * 18}H302" stroke="${L}"/>` + t(186, 36 + i * 18, String(b), { fill: hi ? C : G, size: 7 })).join('')}
+    ${box(18, 124, 136, 28, C)}${t(86, 136, l('customer agent', 'Kundenagent'), { fill: D, size: 7, anchor: 'middle' })}${t(86, 147, l('20 credits = $0.10 / action', '20 Credits = 0,10 $ / Aktion'), { fill: C, size: 7, anchor: 'middle' })}
+    ${box(166, 124, 136, 28)}${t(234, 136, l('employee add-on', 'Add-on Mitarbeitende'), { fill: D, size: 7, anchor: 'middle' })}${t(234, 147, l('$125 per user / month', '125 € pro Nutzer / Monat'), { size: 7, anchor: 'middle' })}`,
+
+  'fixed-price-ai-salesforce-partners': (l) => `
+    ${t(18, 18, l('WARRANTY FORM (SCENARIO)', 'GARANTIEANTRAG (SZENARIO)'), { fill: D, size: 7 })}
+    ${box(18, 28, 130, 58)}${t(83, 45, l('TIME & MATERIALS', 'NACH AUFWAND'), { fill: D, size: 7.5, anchor: 'middle' })}${t(83, 60, l('45 days, with AI 30', '45 Tage, mit KI 30'), { size: 7, anchor: 'middle' })}${t(83, 74, l('partner loses €16,500', 'Partner verliert 16.500 €'), { size: 7, anchor: 'middle' })}
+    ${arrow(148, 57, 172, C)}
+    ${box(172, 28, 130, 58, C)}${t(237, 45, l('FIXED PRICE €41,000', 'FESTPREIS 41.000 €'), { fill: D, size: 7.5, anchor: 'middle' })}${t(237, 60, l('~€1,370 per day worked', '~1.370 € pro Arbeitstag'), { fill: C, size: 7, anchor: 'middle' })}${t(237, 74, l('client saves 17 %', 'Kunde spart 17 %'), { size: 7, anchor: 'middle' })}
+    <path d="M18 102H302" stroke="${L}"/>
+    ${t(18, 118, l('SALESFORCE PARTNER INCENTIVES 2026', 'SALESFORCE-PARTNERANREIZE 2026'), { fill: D, size: 7 })}
+    ${tag(18, 126, 138, l('active consumption', 'aktiver Verbrauch'))}${tag(164, 126, 138, l('agents in production', 'Agenten in Produktion'))}`,
+
+  'flex-credits-agentforce-costs': (l) => `
+    ${t(18, 18, l('SCENARIO: CREDITS PER MONTH', 'SZENARIO: CREDITS PRO MONAT'), { fill: D, size: 7 })}${t(302, 18, l('218,000 ≈ $1,090', '218.000 ≈ 1.090 €'), { fill: D, size: 7.5, anchor: 'end' })}
+    <rect x="18" y="28" width="156" height="22" rx="3" fill="${C}" fill-opacity="0.18" stroke="${C}" stroke-width="1.2"/>
+    ${[[174, 63], [237, 39], [276, 21], [297, 5]].map(([x, w]) => `<rect x="${x}" y="28" width="${w}" height="22" fill="#fff" stroke="${G}" stroke-width="1.1"/>`).join('')}
+    ${t(96, 64, l('text actions 55 %', 'Textaktionen 55 %'), { fill: C, size: 7, anchor: 'middle' })}${t(205, 64, l('voice', 'Sprache'), { size: 7, anchor: 'middle' })}${t(256, 64, 'Data 360', { size: 7, anchor: 'middle' })}${t(302, 76, l('prompts', 'Prompts'), { size: 7, anchor: 'end' })}
+    <path d="M18 86H302" stroke="${L}"/>
+    ${[l('action: 20 · sandbox 16', 'Aktion: 20 · Sandbox 16'), l('voice action: 30 · sandbox 24', 'Sprachaktion: 30 · Sandbox 24'), l('prompt / 2,000 tokens: 2 · 4 · 16', 'Prompt / 2.000 Tokens: 2 · 4 · 16'), l('Data 360: 150 credits per MB', 'Data 360: 150 Credits pro MB')].map((s, i) => dot(22, 99 + i * 14, G, 2) + t(30, 102 + i * 14, s, { size: 7 })).join('')}
+    ${box(214, 96, 88, 50, C)}${t(258, 114, l('unused credits', 'ungenutzte Credits'), { fill: C, size: 7, anchor: 'middle' })}${t(258, 126, l('expire at', 'verfallen zum'), { fill: C, size: 7, anchor: 'middle' })}${t(258, 138, l('order end', 'Bestellende'), { fill: C, size: 7, anchor: 'middle' })}`,
+
+  'headless-platform-interactions-budget': (l) => `
+    ${box(18, 30, 80, 46)}${t(58, 50, l('EXTERNAL AGENT', 'EXTERNER AGENT'), { fill: D, size: 7, anchor: 'middle' })}${t(58, 64, 'Claude · ChatGPT', { size: 7, anchor: 'middle' })}
+    ${box(222, 30, 80, 46)}${t(262, 50, 'SALESFORCE', { fill: D, size: 7.5, anchor: 'middle' })}${t(262, 64, l('production org', 'Produktions-Org'), { size: 7, anchor: 'middle' })}
+    ${arrow(98, 44, 222, C)}${arrow(98, 52, 222, C)}${arrow(98, 60, 222, C)}
+    ${t(160, 36, l('MCP / agentic API', 'MCP / agentische API'), { fill: C, size: 7, anchor: 'middle' })}
+    ${tag(130, 66, 60, l('rate: TBA', 'Satz: TBA'))}
+    ${t(18, 102, l('1 successful call = 1 interaction', '1 erfolgreicher Aufruf = 1 Interaktion'), { fill: D, size: 7.5 })}
+    ${t(18, 116, l('sandbox not metered, 30 days notice', 'Sandbox ohne Zähler, 30 Tage Vorlauf'), { size: 7 })}
+    <path d="M18 126H302" stroke="${L}"/>
+    ${t(18, 142, l('scenario: 2 vs 8 calls per question', 'Szenario: 2 statt 8 Aufrufe pro Frage'), { fill: D, size: 7.5 })}
+    ${t(18, 154, l('tool design changes the bill by factor 4', 'Tool-Design ändert die Rechnung um Faktor 4'), { fill: C, size: 7 })}`,
+
+  'hosted-mcp-servers-data-access': (l) => `
+    ${box(14, 30, 92, 50)}${t(60, 48, 'SALESFORCE', { fill: D, size: 7.5, anchor: 'middle' })}${t(60, 61, 'hosted MCP', { size: 7, anchor: 'middle' })}${t(60, 73, 'sobject-reads', { size: 7, anchor: 'middle' })}
+    ${box(214, 30, 92, 50)}${t(260, 48, l('AI CLIENT', 'KI-CLIENT'), { fill: D, size: 7.5, anchor: 'middle' })}${t(260, 61, 'Claude · ChatGPT', { size: 7, anchor: 'middle' })}${t(260, 73, l('own model', 'eigenes Modell'), { size: 7, anchor: 'middle' })}
+    ${arrow(106, 55, 214, C)}
+    <path d="M160 22V92" stroke="${G}" stroke-width="1" stroke-dasharray="3 3"/>
+    ${t(166, 18, l('Trust Layer ends here', 'hier endet der Trust Layer'), { fill: C, size: 7 })}
+    ${t(18, 18, l('named user, OAuth + PKCE', 'Named User, OAuth + PKCE'), { size: 7 })}
+    ${check(18, 100, G)}${t(32, 104, l('rights of the user', 'Rechte des Benutzers'), { size: 7 })}
+    ${check(18, 114, G)}${t(32, 118, l('logged per person', 'Log pro Person'), { size: 7 })}
+    ${cross(222, 102)}${t(232, 106, l('no masking', 'keine Maskierung'), { size: 7 })}
+    ${t(218, 120, l('AI contract governs', 'KI-Vertrag zählt'), { fill: C, size: 7 })}
+    <path d="M18 130H302" stroke="${L}"/>
+    ${t(18, 146, l('start: sobject-reads in a sandbox', 'Start: sobject-reads in der Sandbox'), { fill: D, size: 7.5 })}
+    ${t(18, 157, l('no service accounts, no M2M', 'keine Service Accounts, kein M2M'), { size: 7 })}`,
+
+  'measuring-ai-benefit-salesforce-projects': (l) => `
+    ${t(18, 18, l('CYCLE TIME PER STORY (SCENARIO)', 'DURCHLAUFZEIT PRO STORY (SZENARIO)'), { fill: D, size: 7 })}
+    ${t(18, 40, l('before', 'vorher'), { size: 7 })}
+    <rect x="58" y="31" width="48" height="12" fill="${D}"/><rect x="106" y="31" width="36" height="12" fill="#fff" stroke="${G}"/><rect x="142" y="31" width="72" height="12" fill="#fff" stroke="${G}"/><rect x="214" y="31" width="60" height="12" fill="#fff" stroke="${G}"/>
+    ${t(280, 40, l('18 d', '18 T'), { fill: D, size: 7.5 })}
+    ${t(18, 62, l('with AI', 'mit KI'), { size: 7 })}
+    <rect x="58" y="53" width="30" height="12" fill="${C}"/><rect x="88" y="53" width="48" height="12" fill="#fff" stroke="${G}"/><rect x="136" y="53" width="72" height="12" fill="#fff" stroke="${G}"/><rect x="208" y="53" width="60" height="12" fill="#fff" stroke="${G}"/>
+    ${t(274, 62, l('17.5 d', '17,5 T'), { fill: C, size: 7.5 })}
+    ${t(58, 78, l('build', 'Bauen'), { size: 7 })}${t(100, 78, 'review', { size: 7 })}${t(160, 78, 'UAT', { size: 7 })}${t(222, 78, l('test, release', 'Test, Release'), { size: 7 })}
+    <path d="M18 92H302" stroke="${L}"/>
+    ${t(18, 108, 'METR 2025', { fill: D, size: 7.5 })}${t(84, 108, l('felt +20 %, measured 19 % slower', 'gefühlt +20 %, gemessen 19 % langsamer'), { size: 7 })}
+    ${t(18, 124, 'McKinsey 2026', { fill: D, size: 7.5 })}${t(84, 124, l('11.8 % time saved, 6.2 % less rework', '11,8 % Zeit, 6,2 % weniger Nacharbeit'), { size: 7 })}
+    ${tag(18, 134, 120, l('baseline first', 'Basislinie zuerst'))}`,
+
+  'partners-ai-coding-sow-rules': (l) => `
+    ${box(18, 16, 150, 128)}${t(28, 32, l('SOW ANNEX: AI CODING', 'SOW-ANLAGE: KI-CODING'), { fill: D, size: 7.5 })}
+    ${[l('tools + model routes', 'Tools + Modellwege'), l('commercial accounts', 'kommerzielle Konten'), l('no prod data in context', 'keine Produktivdaten'), l('no prod access', 'kein Prod-Zugriff'), l('review every line', 'Review jeder Zeile'), l('rights + liability', 'Rechte + Haftung')]
+      .map((s, i) => check(28, 44 + i * 16, i === 3 ? C : G) + t(42, 50 + i * 16, s, { size: 7, fill: i === 3 ? C : G })).join('')}
+    ${box(200, 20, 102, 28)}${t(251, 38, l('CODING AGENT', 'CODING-AGENT'), { fill: D, size: 7.5, anchor: 'middle' })}
+    <path d="M251 48V68M223 68H279M223 68V92" fill="none" stroke="${G}" stroke-width="1.2"/>
+    <path d="M279 68V92" stroke="${C}" stroke-width="1.2" stroke-dasharray="4 3"/>${cross(279, 80)}
+    ${box(198, 92, 50, 24)}${t(223, 107, 'sandbox', { size: 7, anchor: 'middle' })}${check(219, 122, G)}
+    ${box(254, 92, 50, 24, C)}${t(279, 107, 'prod', { fill: C, size: 7, anchor: 'middle' })}
+    ${t(254, 132, l('pipeline only', 'nur Pipeline'), { fill: C, size: 7 })}
+    ${t(198, 150, l('not legal advice', 'keine Rechtsberatung'), { size: 7 })}`,
+
+  'quality-gates-ai-code-pipeline': (l) => `
+    ${box(16, 52, 56, 40)}${t(44, 69, l('AI CODE', 'KI-CODE'), { fill: D, size: 7.5, anchor: 'middle' })}${t(44, 82, 'pull request', { size: 7, anchor: 'middle' })}
+    ${arrow(72, 72, 94)}
+    ${box(94, 16, 134, 112)}${t(104, 32, l('BLOCKING GATES', 'SPERRENDE GATES'), { fill: D, size: 7.5 })}
+    ${[l('Code Analyzer, High', 'Code Analyzer ab High'), l('API version check', 'API-Version prüfen'), l('validate + Apex tests', 'Validierung + Tests'), l('merge block, no bypass', 'Merge-Sperre')].map((s, i) => check(104, 44 + i * 20, G) + t(118, 50 + i * 20, s, { size: 7 })).join('')}
+    ${arrow(228, 72, 250, C)}
+    ${box(250, 52, 56, 40, C)}${t(278, 76, 'MERGE', { fill: C, size: 7.5, anchor: 'middle' })}
+    <path d="M16 138H306" stroke="${L}"/>
+    ${t(16, 152, l('ApexGuru advisory · quick deploy valid 10 days', 'ApexGuru beratend · Quick Deploy 10 Tage gültig'), { fill: D, size: 7.5 })}`,
+
+  'reviewing-ai-generated-salesforce-code': (l) => `
+    ${box(18, 52, 58, 40)}${t(47, 69, l('AI DIFF', 'KI-DIFF'), { fill: D, size: 7.5, anchor: 'middle' })}${t(47, 82, l('~400 lines', '~400 Zeilen'), { size: 7, anchor: 'middle' })}
+    ${arrow(76, 72, 100)}
+    ${box(100, 18, 96, 108)}${t(110, 34, 'PIPELINE', { fill: D, size: 7.5 })}
+    ${[l('SOQL in loop', 'SOQL in Schleife'), l('no sharing decl.', 'kein Sharing'), l('CRUD check', 'CRUD-Prüfung'), l('validate deploy', 'Validierung')].map((s, i) => check(110, 46 + i * 18, G) + t(124, 52 + i * 18, s, { size: 7 })).join('')}
+    ${arrow(196, 72, 220, C)}
+    ${box(220, 18, 86, 108, C)}${t(230, 34, l('CLIENT REVIEW', 'KUNDENREVIEW'), { fill: C, size: 7.5 })}
+    ${[l('tests', 'Tests'), l('data access', 'Datenzugriff'), l('right fields', 'richtige Felder'), l('scope', 'Umfang'), l('business rule', 'Geschäftsregel')].map((s, i) => dot(234, 49 + i * 15, C, 2.5) + t(242, 52 + i * 15, s, { size: 7 })).join('')}
+    <path d="M18 136H306" stroke="${L}"/>
+    ${t(18, 150, l('Veracode 2026: 56 % pass rate, Java 30 %', 'Veracode 2026: 56 % Passrate, Java 30 %'), { fill: D, size: 7.5 })}`,
+
+  'salesforce-dx-mcp-server-end-of-life': (l) => `
+    ${box(14, 30, 100, 62)}${t(64, 46, 'DX MCP SERVER', { fill: D, size: 7.5, anchor: 'middle' })}${t(64, 59, l('local, @salesforce/mcp', 'lokal, @salesforce/mcp'), { size: 6.5, anchor: 'middle' })}
+    ${t(64, 72, l('pin 0.30.15', '0.30.15 pinnen'), { fill: C, size: 7, anchor: 'middle' })}${t(64, 84, l('not @latest', 'nicht @latest'), { size: 6.5, anchor: 'middle' })}
+    ${tag(14, 8, 100, 'EOL 02.11.2026')}
+    ${arrow(114, 61, 150, C, true)}
+    ${[['sf CLI + sf-skills', l('deploy, tests', 'Deploy, Tests')], [l('Claude Code plugin', 'Claude-Code-Plugin'), 'Apex, SOQL'], ['Hosted MCP', 'sobject-reads']]
+      .map(([a, b], i) => box(154, 18 + i * 30, 152, 24, i === 2 ? C : G) + t(162, 33 + i * 30, String(a), { fill: D, size: 7 }) + t(298, 33 + i * 30, String(b), { size: 6.5, anchor: 'end' })).join('')}
+    <path d="M14 116H306" stroke="${L}"/>
+    ${cross(22, 132)}${t(32, 135, 'ALLOW_ALL_ORGS', { size: 7 })}${cross(122, 132)}${t(132, 135, l('production', 'Produktion'), { size: 7 })}
+    ${check(208, 129)}${t(220, 135, l('sandbox aliases', 'Sandbox-Aliase'), { fill: C, size: 7 })}
+    ${t(14, 152, l('1. inventory  2. pin  3. lock orgs  4. migrate', '1. Inventur  2. Pinnen  3. Orgs festlegen  4. Umstellen'), { size: 7 })}`,
+
+  'salesforce-editions-core-advanced-max': (l) => `
+    ${t(18, 18, l('EDITION / USER / MONTH', 'EDITION / NUTZER / MONAT'), { fill: D, size: 7 })}${t(302, 18, l('FLEX CREDITS / ORG / YEAR', 'FLEX CREDITS / ORG / JAHR'), { fill: D, size: 7, anchor: 'end' })}
+    ${[['Core', l('$195', '195 $'), '500K', 50, true], ['Advanced', l('$395', '395 $'), '1M', 100, false], ['Max', l('$550', '550 $'), l('2.75M', '2,75M'), 275, false]]
+      .map(([n, p, c, w, hi], i) => box(18, 28 + i * 26, 92, 20, hi ? C : G) + t(26, 41 + i * 26, String(n), { fill: D, size: 7.5 }) + t(102, 41 + i * 26, String(p), { size: 7.5, anchor: 'end' })
+        + `<rect x="${120}" y="${33 + i * 26}" width="${(Number(w) / 275) * 140}" height="10" rx="2" fill="${hi ? C : L}"/>` + t(302, 41 + i * 26, String(c), { fill: hi ? C : G, size: 7.5, anchor: 'end' })).join('')}
+    <path d="M18 112H302" stroke="${L}"/>
+    ${t(18, 128, l('1 action = 20 credits: Core pool = 25,000 actions', '1 Aktion = 20 Credits: Core-Pool = 25.000 Aktionen'), { fill: D, size: 7.5 })}
+    ${t(18, 144, l('Core to Advanced, 200 users: +$480K for $2.5K credits', 'Core zu Advanced, 200 Nutzer: +480K $ für 2,5K $ Credits'), { size: 7 })}`,
+
+  'smaller-teams-ai-native-delivery': (l) => `
+    ${t(18, 18, l('TODAY (SCENARIO)', 'HEUTE (SZENARIO)'), { fill: D, size: 7 })}
+    ${[0, 1, 2, 3].map((r) => [0, 1, 2].map((c) => dot(30 + c * 18, 36 + r * 16, G, 4)).join('')).join('')}
+    ${t(18, 112, l('12 partner people', '12 beim Partner'), { size: 7 })}
+    ${arrow(84, 60, 116, C)}
+    ${t(124, 18, l('3 PODS: 7 PARTNER PEOPLE', '3 PODS: 7 BEIM PARTNER'), { fill: D, size: 7 })}
+    ${[0, 1, 2].map((i) => box(124 + i * 60, 26, 54, 70, i === 0 ? C : G) + dot(140 + i * 60, 42, G, 4) + dot(160 + i * 60, 42, G, 4) + dot(150 + i * 60, 62, C, 4)
+      + t(151 + i * 60, 80, l('domain', 'Fach-'), { fill: C, size: 7, anchor: 'middle' }) + t(151 + i * 60, 90, l('lead', 'experte'), { fill: C, size: 7, anchor: 'middle' })).join('')}
+    ${t(124, 112, l('architect + builder-reviewer', 'Architekt + Builder-Reviewer'), { size: 7 })}
+    <path d="M18 124H302" stroke="${L}"/>
+    ${t(18, 140, l('median squad: about 10 to 7 (McKinsey)', 'Median-Team: etwa 10 auf 7 (McKinsey)'), { fill: D, size: 7.5 })}
+    ${t(18, 153, l('one named owner per artifact', 'ein benannter Owner pro Artefakt'), { size: 7 })}`,
+
+  'testing-agentforce-agents': (l) => `
+    ${t(18, 18, l('TEST CASE (YAML)', 'TESTFALL (YAML)'), { fill: D, size: 7 })}
+    ${box(18, 26, 112, 70)}
+    ${[l('utterance', 'Anfrage'), 'expectedTopic', 'expectedActions', 'expectedOutcome'].map((s, i) => t(28, 42 + i * 14, s, { fill: i === 3 ? C : G, size: 7 })).join('')}
+    ${t(28, 108, l('outcome: LLM judge', 'Ergebnis: LLM-Prüfer'), { fill: C, size: 7 })}
+    ${arrow(130, 61, 160, C)}
+    ${t(166, 18, l('GO-LIVE GATES', 'GO-LIVE-SCHWELLEN'), { fill: D, size: 7 })}
+    ${[[l('rules', 'Regeln'), '100 %', false], [l('guardrails', 'Schutzfälle'), '100 %', false], [l('answers, 3 runs', 'Antworten, 3 Läufe'), '90 %', true]]
+      .map(([a, b, hi], i) => box(166, 26 + i * 26, 136, 20, hi ? C : G) + t(174, 39 + i * 26, String(a), { size: 7 }) + t(294, 39 + i * 26, String(b), { fill: hi ? C : D, size: 7.5, anchor: 'end' })).join('')}
+    <path d="M18 124H302" stroke="${L}"/>
+    ${t(18, 140, l('sandbox: 16 credits per action', 'Sandbox: 16 Credits pro Aktion'), { fill: D, size: 7.5 })}
+    ${t(18, 153, l('60 cases x 3 actions x 3 runs = about $43', '60 Fälle x 3 Aktionen x 3 Läufe = rund 43 $'), { size: 7 })}`,
+
+  'vibes-claude-code-copilot-comparison': (l) => `
+    ${t(18, 18, l('CODING AGENT', 'CODING-AGENT'), { fill: D, size: 7 })}${t(302, 18, l('EU PROCESSING', 'EU-VERARBEITUNG'), { fill: D, size: 7, anchor: 'end' })}
+    ${[['Agentforce Vibes', l('not in EU Op. Zone', 'nicht in EU Op. Zone'), false, false], ['Claude Code, API', l('us / global only', 'nur us / global'), false, false], ['Claude Code, Bedrock', l('EU region, +10 %', 'EU-Region, +10 %'), true, false], ['GitHub Copilot', l('EU since 04/2026', 'EU seit 04/2026'), true, true], ['Codex', l('Enterprise only', 'nur Enterprise'), true, false]]
+      .map(([a, b, ok, hi], i) => box(18, 26 + i * 22, 110, 17, hi ? C : G) + t(26, 37.5 + i * 22, String(a), { fill: hi ? C : D, size: 7 }) + (ok ? check(140, 32 + i * 22, hi ? C : G) : cross(144, 34.5 + i * 22)) + t(302, 37.5 + i * 22, String(b), { fill: hi ? C : G, size: 7, anchor: 'end' })).join('')}
+    <path d="M18 140H302" stroke="${L}"/>
+    ${t(18, 154, l('decide by contract, residency, cost, governance', 'Entscheidung: Vertrag, Residenz, Kosten, Governance'), { size: 7 })}`,
+
+  'warranty-adjudication-agent-winter-27': (l) => `
+    ${t(18, 18, l('WHO DECIDES WHAT', 'WER ENTSCHEIDET WAS'), { fill: D, size: 7 })}${tag(224, 6, 82, 'GA 12.10.2026')}
+    ${box(14, 60, 62, 40)}${t(45, 77, l('CLAIM', 'ANSPRUCH'), { fill: D, size: 7.5, anchor: 'middle' })}${t(45, 90, l('dealer', 'Händler'), { size: 6.8, anchor: 'middle' })}
+    <path d="M76 80C90 80 90 47 104 47M76 80H104M76 80C90 80 90 115 104 115" fill="none" stroke="${G}" stroke-width="1.2"/>
+    ${box(104, 34, 112, 26)}${t(160, 50, l('rules: coverage, dates', 'Regeln: Deckung, Fristen'), { size: 7, anchor: 'middle' })}
+    ${box(104, 68, 112, 26, C)}${t(160, 84, l('agent: text, fraud flag', 'Agent: Text, Verdacht'), { fill: C, size: 7, anchor: 'middle' })}
+    ${box(104, 102, 112, 26)}${t(160, 118, l('human: limit, goodwill', 'Mensch: Grenze, Kulanz'), { size: 7, anchor: 'middle' })}
+    <path d="M160 94V101" stroke="${C}" stroke-width="1.3" stroke-dasharray="2 2"/>
+    <path d="M216 47C232 47 232 80 245 80M216 115C232 115 232 80 245 80" fill="none" stroke="${G}" stroke-width="1.2"/><path d="M241 76.5l5 3.5-5 3.5" fill="none" stroke="${G}" stroke-width="1.2"/>
+    ${box(246, 60, 60, 40)}${t(276, 77, 'ERP', { fill: D, size: 7.5, anchor: 'middle' })}${t(276, 90, l('credit note', 'Gutschrift'), { size: 6.8, anchor: 'middle' })}
+    ${t(18, 150, l('first: serial no. + start date per asset', 'zuerst: Seriennr. + Garantiebeginn je Anlage'), { size: 7 })}`,
+
+  'legacy-erp-without-api-agents': (l) => `
+    ${box(18, 26, 62, 86)}${t(49, 66, 'AGENT', { fill: D, anchor: 'middle' })}${t(49, 80, 'Agentforce', { size: 7, anchor: 'middle' })}
+    ${box(240, 26, 62, 86)}${t(271, 66, l('OLD ERP', 'ALTES ERP'), { fill: D, anchor: 'middle' })}${t(271, 80, l('no API', 'ohne API'), { size: 7, anchor: 'middle' })}
+    ${t(18, 18, l('3 DETOURS', '3 UMWEGE'), { fill: D, size: 7 })}
+    ${box(106, 26, 108, 22, C)}${t(160, 40, l('replica + read API', 'Replik + Lese-API'), { fill: C, size: 7, anchor: 'middle' })}
+    ${box(106, 58, 108, 22)}${t(160, 72, l('IDP + RPA bot', 'IDP + RPA-Bot'), { size: 7, anchor: 'middle' })}
+    ${box(106, 90, 108, 22)}${t(160, 104, 'Systems Integration Agent', { size: 7, anchor: 'middle' })}
+    ${arrow(80, 37, 106, C)}${arrow(214, 37, 240, C)}${arrow(80, 69, 106)}${arrow(214, 69, 240)}${arrow(80, 101, 106)}${arrow(214, 101, 240)}
+    <path d="M18 124H302" stroke="${L}"/>
+    ${t(18, 140, l('IDP below 80 % confidence: human review', 'IDP unter 80 % Konfidenz: manuelle Prüfung'), { fill: D, size: 7 })}
+    ${t(18, 154, l('credit limit + prices stay in the ERP', 'Kreditlimit + Preise bleiben im ERP'), { size: 7 })}`,
+
+  'mcp-explained-salesforce-it-leads': (l) => `
+    ${box(18, 34, 84, 46)}${t(60, 54, l('AI CLIENT', 'KI-CLIENT'), { fill: D, size: 7.5, anchor: 'middle' })}${t(60, 68, 'Claude · ChatGPT', { size: 7, anchor: 'middle' })}
+    ${arrow(102, 57, 150, C)}${t(126, 48, 'MCP', { fill: C, size: 7.5, anchor: 'middle' })}
+    ${box(150, 34, 74, 46, C)}${t(187, 54, 'HOSTED MCP', { fill: D, size: 7, anchor: 'middle' })}${t(187, 68, 'sobject-reads', { fill: C, size: 7, anchor: 'middle' })}
+    ${arrow(224, 57, 254)}
+    ${box(254, 34, 50, 46)}${t(279, 54, 'ORG', { fill: D, size: 7.5, anchor: 'middle' })}${t(279, 68, l('as user', 'als User'), { size: 7, anchor: 'middle' })}
+    ${t(18, 20, l('PROTOCOL ENFORCES NOTHING', 'PROTOKOLL SETZT NICHTS DURCH'), { fill: D, size: 7 })}${tag(210, 8, 94, l('off by default', 'standardmäßig aus'))}
+    <path d="M18 98H304" stroke="${L}"/>
+    ${t(18, 112, l('4 DECISIONS', '4 ENTSCHEIDUNGEN'), { fill: D, size: 7 })}
+    ${[l('servers', 'Server'), l('users', 'Benutzer'), l('data', 'Daten'), l('clients', 'Clients')].map((s, i) => check(18 + i * 72, 126, i === 0 ? C : G) + t(32 + i * 72, 132, s, { size: 7.5 })).join('')}
+    ${t(18, 152, l('no service accounts, every call in the audit trail', 'keine Service Accounts, jeder Aufruf im Audit'), { size: 7 })}`,
+
+  'prompt-injection-dealer-portals': (l) => `
+    ${t(18, 18, l('UNTRUSTED TEXT', 'FREMDER TEXT'), { fill: D, size: 7 })}
+    ${['Web-to-Lead', 'Email-to-Case', l('dealer portal', 'Händlerportal'), l('warranty claim', 'Garantieantrag')].map((s, i) => box(18, 26 + i * 22, 84, 17) + t(26, 37 + i * 22, s, { size: 7 })).join('')}
+    ${arrow(102, 66, 128)}
+    ${box(128, 44, 64, 44, C)}${t(160, 63, l('AGENT', 'AGENT'), { fill: D, size: 8, anchor: 'middle' })}${t(160, 77, 'Agentforce', { size: 7, anchor: 'middle' })}
+    ${t(206, 18, l('LETHAL TRIFECTA', 'LETHAL TRIFECTA'), { fill: D, size: 7 })}
+    ${check(206, 30, G)}${t(220, 35, l('narrow read rights', 'enge Leserechte'), { size: 7 })}
+    ${check(206, 48, G)}${t(220, 53, l('external text marked', 'externe Felder markiert'), { size: 7 })}
+    ${cross(210, 70)}${t(220, 73, l('no way out', 'kein Weg nach außen'), { fill: C, size: 7 })}
+    ${arrow(192, 66, 204, G, true)}
+    <path d="M18 120H302" stroke="${L}"/>
+    ${t(18, 136, l('ForcedLeak: CVSS 9.4, reported 07/2025', 'ForcedLeak: CVSS 9,4, gemeldet 07/2025'), { fill: D, size: 7.5 })}
+    ${t(18, 150, l('Trusted URLs enforced since 8 Sep 2025', 'Trusted URLs erzwungen seit 8.9.2025'), { size: 7 })}`,
 };
 
 export const hasDrawing = (key: string) => key in drawings;

@@ -178,6 +178,15 @@ a:hover { color: var(--anthracite); }
 @media (max-width: 880px) {
   .main-nav { display: none; }
 }
+.main-nav a { white-space: nowrap; }
+/* Between the mobile breakpoint and full width the nav gaps shrink so all items fit next to the brand */
+@media (min-width: 881px) and (max-width: 1160px) {
+  .header-inner { gap: 16px; }
+  .main-nav { gap: 16px; }
+}
+@media (min-width: 881px) and (max-width: 1099px) {
+  .brand-text { display: none; }
+}
 @media (max-width: 480px) {
   .brand-sub { display: none; }
   .header-actions .btn { display: none; }
@@ -1056,6 +1065,71 @@ p.post-series-note { margin: 0.6em 0 0; font-size: 0.95rem; }
 .cert-item summary:hover > span:first-child { color: var(--cyan); }
 .cert-item p { margin: 0 0 0.9em calc(1ch + 12px); color: var(--text-2); font-size: 0.95rem; }
 .cert-links { margin-top: 2em; }
+
+/* Masterclass: hub and chapter pages (src/components/Masterclass*.astro) */
+.mc-hero-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  gap: clamp(28px, 5vw, 64px);
+  align-items: center;
+}
+.mc-hero h1 { font-size: clamp(1.9rem, 3.8vw, 2.9rem); text-wrap: balance; }
+.mc-hero .hero-lead { margin-bottom: 1.6em; }
+.mc-figure { margin: 0; }
+.mc-drawing {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+.mc-drawing text { font-family: var(--mono); }
+@media (max-width: 900px) {
+  .mc-hero-inner { grid-template-columns: 1fr; }
+  .mc-figure { max-width: 520px; }
+}
+.proof-list.mc-facts { grid-template-columns: repeat(3, 1fr); }
+.mc-deadlines { grid-template-columns: repeat(5, 1fr); }
+.mc-deadlines .card,
+.mc-deadlines .card-link a { padding: 22px 18px 18px; }
+.mc-deadlines .card-link { padding: 0; }
+.mc-deadlines .card::before { left: 18px; background: none; border-top-color: var(--line); }
+.mc-deadlines .card.mc-accent { border-color: var(--cyan); }
+.mc-deadlines .card.mc-accent::before { border-top-color: var(--cyan); }
+.mc-deadlines .card-index { font-size: 0.85rem; color: var(--anthracite); }
+.mc-deadlines .mc-accent .card-index { color: var(--cyan-dark); }
+.mc-deadlines p { font-size: 0.92rem; }
+@media (max-width: 1080px) {
+  .mc-deadlines { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 760px) {
+  .mc-deadlines { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .mc-deadlines { grid-template-columns: 1fr; }
+}
+.mc-chapters .card-link a { display: flex; flex-direction: column; }
+.mc-chapters .card-more { margin-top: auto; padding-top: 1em; }
+.mc-clusters .ref h3 { margin-bottom: 0.3em; }
+.mc-cluster-list { margin: 0.4em 0 0; padding-left: 1.2em; }
+.mc-cluster-list li { margin-bottom: 0.35em; font-size: 0.97rem; }
+.mc-cluster-list li::marker { color: var(--cyan-dark); }
+.mc-articles + .mc-author { padding-top: 0; }
+.mc-author .post-author { margin-top: 0; }
+.mc-chapter .eyebrow { color: var(--cyan-dark); }
+.mc-pager {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 2em;
+}
+.mc-pager .post-service { margin-top: 0; }
+.mc-pager-next { text-align: right; border-left-width: 1px; border-right: 4px solid var(--cyan); }
+@media (max-width: 620px) {
+  .mc-pager { grid-template-columns: 1fr; }
+  .mc-pager > span:empty { display: none; }
+  .mc-pager-next { text-align: left; border-left-width: 4px; border-right-width: 1px; }
+}
 
 /* Partner page */
 .partner-lead { color: var(--text-2); font-size: 1.15rem; max-width: 46em; margin: 0.4em 0 1em; }

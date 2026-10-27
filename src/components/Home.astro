@@ -15,6 +15,7 @@ import { de } from '../i18n/de';
 import { site, contactHref, contactExternal } from '../site';
 import { getServices, serviceHref, servicesIndex } from '../lib/services';
 import { homeHref, partnersHref } from '../lib/paths';
+import { masterclassIndex } from '../lib/masterclass';
 import { questions, questionPaths } from '../data/questions';
 
 interface Props {
@@ -190,6 +191,7 @@ const [qOpen, qClose] = lang === 'de' ? ['„', '“'] : ['“', '”'];
           <ul class="about-links">
             <li><a class="text-link" href={`${home}speaking/`}>{t.about.speaking} →</a></li>
             <li><a class="text-link" href={`${home}certifications/`}>{t.about.certifications} →</a></li>
+            <li><a class="text-link" href={masterclassIndex(lang)}>{t.about.masterclass} →</a></li>
             <li><a class="text-link" href={site.linkedin} target="_blank" rel="noopener">{t.about.linkedin}<ExternalMark label={t.nav.externalTab} /></a></li>
           </ul>
         </div>

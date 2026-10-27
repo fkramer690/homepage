@@ -4,6 +4,7 @@ import Logo from './Logo.astro';
 import type { Dict } from '../i18n/en';
 import { site } from '../site';
 import { homeHref } from '../lib/paths';
+import { masterclassIndex } from '../lib/masterclass';
 
 interface Props {
   t: Dict;
@@ -22,6 +23,7 @@ const year = new Date().getFullYear();
     </div>
     <nav class="footer-nav" aria-label="Footer">
       <a href={`${home}blog/`}>{t.footer.blog}</a>
+      <a href={masterclassIndex(t.lang)}>{t.nav.masterclass}</a>
       <a href={`${base}impressum/`}>{t.footer.imprint}</a>
       <a href={`${base}datenschutz/`}>{t.footer.privacy}</a>
       <a href={site.linkedin} target="_blank" rel="noopener">LinkedIn<ExternalMark label={t.nav.externalTab} /></a>

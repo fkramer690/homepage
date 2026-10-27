@@ -14,6 +14,8 @@ Static website for FK Solution Design GmbH, built with [Astro](https://astro.bui
 | Logo | `src/components/Logo.astro`, `public/favicon.svg` |
 | Blog articles | `src/content/blog/en/`, `src/content/blog/de/` |
 | Service pages | `src/content/services/en/`, `src/content/services/de/` |
+| Masterclass chapters | `src/content/masterclass/en/`, `src/content/masterclass/de/` (rules: [docs/masterclass.md](docs/masterclass.md)) |
+| Masterclass hub texts, article clusters | `masterclass` in `src/i18n/`, `src/lib/masterclass.ts` |
 
 The contact form uses [Web3Forms](https://web3forms.com). Its access key is stored as the repository secret `WEB3FORMS_ACCESS_KEY` (Settings → Secrets and variables → Actions) and injected at build time. For local testing, run `PUBLIC_WEB3FORMS_KEY=<key> npm run dev`.
 
@@ -32,6 +34,10 @@ Rules for structure, SEO and AI search are in [docs/blog-guidelines.md](docs/blo
 ### Service pages
 
 Each service on the home page links to its own page under `/leistungen/` (DE) and `/en/services/` (EN), built from Markdown files in `src/content/services/<lang>/` by `src/components/ServicePage.astro`. Rules are in [docs/service-pages.md](docs/service-pages.md); the same build check applies.
+
+### Masterclass
+
+The AI masterclass has a hub page (`/masterclass-ki/`, `/en/ai-masterclass/`) and ten chapter pages built from `src/content/masterclass/<lang>/` by `src/components/MasterclassHub.astro` and `src/components/MasterclassChapter.astro`. Rules are in [docs/masterclass.md](docs/masterclass.md); the same build check applies.
 
 ### External links
 
