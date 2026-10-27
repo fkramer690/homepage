@@ -102,6 +102,6 @@ One idea is overdue, two get redesigned to stay out of high-risk, and one belong
 6. **Put AI Act roles into contracts** with Salesforce and your implementation partner.
 7. **Get legal sign-off** on the classification before go-live.
 
-Where the classification shapes the architecture, for example which decision needs a human approval step, I support the client side as part of [Salesforce architecture](../../services/salesforce-architecture/). Whether Agentforce is the right start at all is covered in [Agentforce for manufacturers: start now or wait?](../agentforce-yes-or-no-manufacturers/), and chapter 9 of the [AI masterclass](../../ai-masterclass/teamwork-and-delivery/) puts the AI Act next to works council and GDPR.
+Where the classification shapes the architecture, for example which decision needs a human approval step, I support the client side as part of [Salesforce architecture](../../services/salesforce-architecture/). Whether Agentforce is the right start at all is covered in [Agentforce for manufacturers: start now or wait?](../agentforce-yes-or-no-manufacturers/), and chapter 9 of the [AI masterclass](../../masterclass/ai-salesforce/teamwork-and-delivery/) puts the AI Act next to works council and GDPR.
 
 Add the AI disclosure to every customer-facing agent now and decide on HR and workforce agents well before 2 December 2027. If you want a second pair of eyes on your agent inventory, [send me a message](#contact).

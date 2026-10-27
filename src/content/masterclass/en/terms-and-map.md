@@ -51,7 +51,7 @@ For a manufacturer I draw the line like this:
 - **Vibe coding is fine** for a clickable draft of the dealer portal in a requirements workshop, a script that generates spare-part test data, or an analysis nobody needs after a week. Always in a sandbox or Developer Edition.
 - **Agentic engineering is required** for anything that goes into the production org: warranty logic, price approvals, interfaces to SAP or proALPHA, approvals in the dealer portal. Review, tests and automated checks in the pipeline come with it.
 
-Where exactly the line runs, and which checks a prototype has to pass before it goes live, is covered in [vibe coding in Salesforce: prototype or production](../../blog/vibe-coding-salesforce-prototype-vs-production/). The review rules for AI code itself are the topic of [chapter 8](../ai-code-best-practices/).
+Where exactly the line runs, and which checks a prototype has to pass before it goes live, is covered in [vibe coding in Salesforce: prototype or production](../../../blog/vibe-coding-salesforce-prototype-vs-production/). The review rules for AI code itself are the topic of [chapter 8](../ai-code-best-practices/).
 
 A third term shows up in partner decks: "AI-native delivery". It describes a delivery process planned around coding agents from the start, with smaller teams and different roles. What that means for your programme organisation is in [chapter 9](../teamwork-and-delivery/).
 
@@ -95,7 +95,7 @@ In autumn 2026 "Agentforce" stands for at least four things: the agent platform,
 | 15 Sep 2026 | AIforce at Dreamforce, Salesforce in Claude in beta | [Salesforce News](https://www.salesforce.com/news/stories/aiforce-announcement/) |
 | 9 Oct 2026 | Marc Benioff on X: "AIForce is officially SIForce", no press release | [Salesforce Ben](https://www.salesforceben.com/salesforce-renames-aiforce-to-siforce-after-trump-order/) (secondary source) |
 
-I take two lessons from this. First, Einstein for Developers, Agentforce for Developers and Agentforce Vibes are one product line: Salesforce Ben describes Vibes as a [rebrand and upgrade of Agentforce for Developers](https://www.salesforceben.com/developer-features-and-announcements-from-dreamforce-25/), and the documentation URL still contains `einstein-for-devs`. An offer in 2026 that promises "Einstein for Developers" describes an outdated state. Second, according to Salesforce Ben the layer for external interfaces was called Headless 360, AIforce and SIForce within about six months. In concepts I write "AIforce (as of October 2026)", and in contracts I use the name printed on the order form. What AIforce contains and what an IT lead should do now is in [AIforce: Salesforce in Claude and Slack](../../blog/aiforce-salesforce-in-claude-and-slack/); the second reading of "SI" as system integrator is in [chapter 5](../aiforce-and-system-integrators/).
+I take two lessons from this. First, Einstein for Developers, Agentforce for Developers and Agentforce Vibes are one product line: Salesforce Ben describes Vibes as a [rebrand and upgrade of Agentforce for Developers](https://www.salesforceben.com/developer-features-and-announcements-from-dreamforce-25/), and the documentation URL still contains `einstein-for-devs`. An offer in 2026 that promises "Einstein for Developers" describes an outdated state. Second, according to Salesforce Ben the layer for external interfaces was called Headless 360, AIforce and SIForce within about six months. In concepts I write "AIforce (as of October 2026)", and in contracts I use the name printed on the order form. What AIforce contains and what an IT lead should do now is in [AIforce: Salesforce in Claude and Slack](../../../blog/aiforce-salesforce-in-claude-and-slack/); the second reading of "SI" as system integrator is in [chapter 5](../aiforce-and-system-integrators/).
 
 ## A typical scenario: "AI" four times in one steering committee
 
@@ -106,7 +106,7 @@ Assume a machine builder with Sales Cloud, Service Cloud, SAP and a dealer netwo
 3. **Implementation partner:** it wants to build the new dealer portal with coding agents and promises shorter sprints. That is layer A. What counts here are review rules, the rules file and the pipeline, whatever the tool is called.
 4. **IT lead:** asks who actually reads which data when Claude, the partner's agent and the service agent all talk to the org at once. That is layer B, and it affects the other three.
 
-Without the layers, these four requests land in one pot called "AI initiative" with one budget and one owner. With the layers they become four projects with four owners: sales with IT and data protection, service, programme management with partner governance, integration architecture. Only the second needs an Agentforce decision. Whether the service agent starts now or the data gets fixed first is answered in [Agentforce for manufacturers: start now or wait?](../../blog/agentforce-yes-or-no-manufacturers/).
+Without the layers, these four requests land in one pot called "AI initiative" with one budget and one owner. With the layers they become four projects with four owners: sales with IT and data protection, service, programme management with partner governance, integration architecture. Only the second needs an Agentforce decision. Whether the service agent starts now or the data gets fixed first is answered in [Agentforce for manufacturers: start now or wait?](../../../blog/agentforce-yes-or-no-manufacturers/).
 
 ## Where to read on in this masterclass
 
@@ -117,6 +117,6 @@ The following chapters take the layers one at a time:
 - **Layer C:** [chapter 10](../ai-agents-in-manufacturing/) deals with agents in service, field service and warranty.
 - **Across layers:** [chapter 6](../ai-tool-decision-matrix/) gives the decision matrix, [chapter 7](../costs-and-tokens/) the costs with worked examples.
 
-All chapters are listed on the [masterclass overview](../). Sorting the layers for your own programme is a typical starting point for my work on [Salesforce architecture](../../services/salesforce-architecture/).
+All chapters are listed on the [masterclass overview](../). Sorting the layers for your own programme is a typical starting point for my work on [Salesforce architecture](../../../services/salesforce-architecture/).
 
 Once you separate the four layers and date every product name, you can place any AI offer for Salesforce before anyone talks about tools. If you would like an independent second opinion on that, [send me a message](#contact).

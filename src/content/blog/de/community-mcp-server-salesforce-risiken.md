@@ -101,6 +101,6 @@ Alle drei Anliegen werden erfüllt, und kein Community-Server erreicht die Org.
 3. **Durchsetzen, wo es geht.** Lizenzieren Sie Claude Code zentral, sperren [Managed Settings](https://code.claude.com/docs/en/managed-mcp) mit `allowedMcpServers` und `allowManagedMcpServersOnly` jeden Server, der nicht auf Ihrer Liste steht.
 4. **Bei jedem Update neu prüfen.** Eine neue Version ist eine neue Freigabe.
 
-Partner bei solchen Werkzeugen zu steuern gehört zu meiner Arbeit in der [Partnersteuerung](../../leistungen/partnersteuerung/), die Übersicht der Schnittstellen steht in [Kapitel 3 der Masterclass](../../masterclass-ki/mcp-und-schnittstellen/).
+Partner bei solchen Werkzeugen zu steuern gehört zu meiner Arbeit in der [Partnersteuerung](../../leistungen/partnersteuerung/), die Übersicht der Schnittstellen steht in [Kapitel 3 der Masterclass](../../masterclass/ki-salesforce/mcp-und-schnittstellen/).
 
 Einen Community-MCP-Server gebe ich erst frei, wenn sich sein Benutzer, sein Geheimnis, sein Maintainer und seine Version benennen lassen. Wenn Sie eine zweite Meinung zu einer Anfrage Ihres Partners möchten, [schreiben Sie mir](#contact).

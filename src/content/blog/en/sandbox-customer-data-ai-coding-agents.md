@@ -112,7 +112,7 @@ Where I would start:
 2. **Classify the fields** into personal, commercial and free text, with your data protection officer.
 3. **Build the seed set** with service and sales, including edge cases, and check it into the repository.
 4. **Configure the mask** for the partial copy and add the field check to every release.
-5. **Remove agent access** to the full copy and write the levels into the partner annex and the AI rules file; more agent rules are in [chapter 8 of the masterclass](../../ai-masterclass/ai-code-best-practices/).
+5. **Remove agent access** to the full copy and write the levels into the partner annex and the AI rules file; more agent rules are in [chapter 8 of the masterclass](../../masterclass/ai-salesforce/ai-code-best-practices/).
 
 Sandbox levels and pipelines are part of my [DevOps and release management](../../services/devops-release-management/) work.
 

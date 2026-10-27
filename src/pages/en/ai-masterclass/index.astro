@@ -1,4 +1,6 @@
 ---
-import MasterclassHub from '../../../components/MasterclassHub.astro';
+// Old address of the AI masterclass hub, kept as a redirect (see src/lib/masterclass.ts).
+import Redirect from '../../../components/Redirect.astro';
+import { masterclassIndex } from '../../../lib/masterclass';
 ---
-<MasterclassHub lang="en" />
+<Redirect to={masterclassIndex('en')} />

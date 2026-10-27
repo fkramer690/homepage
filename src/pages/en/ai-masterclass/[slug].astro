@@ -1,11 +1,12 @@
 ---
-import MasterclassChapter from '../../../components/MasterclassChapter.astro';
-import { getChapters } from '../../../lib/masterclass';
+// Old addresses of the AI masterclass chapters, kept as redirects (see src/lib/masterclass.ts).
+import Redirect from '../../../components/Redirect.astro';
+import { chapterHref, getChapters } from '../../../lib/masterclass';
 
 export async function getStaticPaths() {
   const chapters = await getChapters('en');
-  return chapters.map((chapter) => ({ params: { slug: chapter.data.slug }, props: { chapter } }));
+  return chapters.map((chapter) => ({ params: { slug: chapter.data.slug }, props: { to: chapterHref(chapter) } }));
 }
-const { chapter } = Astro.props;
+const { to } = Astro.props;
 ---
-<MasterclassChapter chapter={chapter} />
+<Redirect to={to} />

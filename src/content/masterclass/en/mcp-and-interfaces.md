@@ -34,7 +34,7 @@ MCP is an open protocol that lets an AI tool call other systems as tools: read r
 2. **External AI to your data.** Someone in your service back office asks Claude about the open cases for a machine. This is where the Hosted MCP Servers and "Salesforce in Claude" sit.
 3. **Agentforce to other systems.** An Agentforce agent calls a tool outside Salesforce, such as an order lookup in the ERP. This is where Agentforce's MCP client and the route through MuleSoft and the API Catalog sit.
 
-Interfaces without MCP still matter: the Agent API, which lets other systems call an Agentforce agent, the Models API for LLM calls from Apex, and the sf CLI, which runs deployments in the pipeline. MCP replaces none of them. [Chapter 1](../terms-and-map/) sorts out the terms, and [MCP and Salesforce explained for IT leads](../../blog/mcp-salesforce-explained-for-it-leads/) covers the decisions that sit with IT.
+Interfaces without MCP still matter: the Agent API, which lets other systems call an Agentforce agent, the Models API for LLM calls from Apex, and the sf CLI, which runs deployments in the pipeline. MCP replaces none of them. [Chapter 1](../terms-and-map/) sorts out the terms, and [MCP and Salesforce explained for IT leads](../../../blog/mcp-salesforce-explained-for-it-leads/) covers the decisions that sit with IT.
 
 ## The interfaces at a glance
 
@@ -70,7 +70,7 @@ My plan up to the deadline:
 3. **Map:** deploy and tests through the sf CLI and skills, metadata knowledge through the plugin, data access through Hosted MCP.
 4. **Run both in a sandbox**, then remove the old entry and update the AI rules file in the repository.
 
-The details are in [Salesforce DX MCP Server end of life](../../blog/salesforce-dx-mcp-server-end-of-life/). The other tools Salesforce offers for AI-assisted development are in [chapter 2](../salesforce-ai-development-tools/).
+The details are in [Salesforce DX MCP Server end of life](../../../blog/salesforce-dx-mcp-server-end-of-life/). The other tools Salesforce offers for AI-assisted development are in [chapter 2](../salesforce-ai-development-tools/).
 
 ## Hosted MCP: who may read which data?
 
@@ -93,13 +93,13 @@ This sets an architectural limit. A night-time agent that pre-sorts warranty cla
 
 For the Models API, Salesforce states that all calls go through the [Einstein Trust Layer](https://developer.salesforce.com/docs/ai/agentforce/guide/models-api.html). In the Hosted MCP documentation I read, I find no matching statement for the case where an external model processes the responses. My reading: when Claude or ChatGPT reads cases and asset data through Hosted MCP, the AI vendor's contract and data processing govern that data. Salesforce checks permissions, not what happens to the data afterwards. That belongs in the data protection review before the first business team starts.
 
-Then there is prompt injection. In [ForcedLeak](https://thehackernews.com/2025/09/salesforce-patches-critical-forcedleak.html) (CVSS 9.4, published September 2025), attackers hid instructions in the description field of a Web-to-Lead form, and Agentforce sent CRM data to an outside domain. Simon Willison calls the mix of private data, untrusted content and a way out the ["lethal trifecta"](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/) and points out that MCP encourages exactly this mixing of tools. At manufacturers, outside text reaches the CRM through dealer portals, warranty claims and Email-to-Case. More in [Hosted MCP servers: who may read which data](../../blog/salesforce-hosted-mcp-servers-data-access/) and [prompt injection in dealer portals](../../blog/prompt-injection-dealer-portals-agentforce/).
+Then there is prompt injection. In [ForcedLeak](https://thehackernews.com/2025/09/salesforce-patches-critical-forcedleak.html) (CVSS 9.4, published September 2025), attackers hid instructions in the description field of a Web-to-Lead form, and Agentforce sent CRM data to an outside domain. Simon Willison calls the mix of private data, untrusted content and a way out the ["lethal trifecta"](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/) and points out that MCP encourages exactly this mixing of tools. At manufacturers, outside text reaches the CRM through dealer portals, warranty claims and Email-to-Case. More in [Hosted MCP servers: who may read which data](../../../blog/salesforce-hosted-mcp-servers-data-access/) and [prompt injection in dealer portals](../../../blog/prompt-injection-dealer-portals-agentforce/).
 
 ## What do MCP calls to Salesforce cost?
 
 The [Hosted MCP Servers overview](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/hosted-mcp-servers-overview.md) says: "intended only for customers with Flex Credits and you may be billed for server usage". The [Flex Credits rate card dated 31 Aug 2026](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) lists the meter "Headless Platform Interaction" with the rate TBA. According to [SalesforceBen](https://www.salesforceben.com/salesforce-will-charge-flex-credits-for-agentic-mcp-and-api-calls/), successful calls by registered agents via MCP or API count, metering applies only to active production orgs, customers get 30 days' notice, and existing API integrations keep their current pricing.
 
-For planning, this means you do not know the price, but you can estimate the volume. Count users, questions per day and tool calls per question, because an agent often calls several tools for one answer. The worked numbers are in [MCP and API calls to Salesforce as a budget risk](../../blog/mcp-api-calls-salesforce-budget-risk/), and the cost models as a whole in [chapter 7](../costs-and-tokens/).
+For planning, this means you do not know the price, but you can estimate the volume. Count users, questions per day and tool calls per question, because an agent often calls several tools for one answer. The worked numbers are in [MCP and API calls to Salesforce as a budget risk](../../../blog/mcp-api-calls-salesforce-budget-risk/), and the cost models as a whole in [chapter 7](../costs-and-tokens/).
 
 ## A typical scenario: service data in Claude at a machine builder
 
@@ -109,7 +109,7 @@ This is how I would approach it:
 
 - **Partner first.** Before 2 November, inventory the DX MCP entries, pin 0.30.15 and switch the sandboxes to the plugin and skills. No agent gets a production org.
 - **Start read-only.** Enable only `sobject-reads`, restrict the External Client App to a dedicated permission set, test in a sandbox first. For serial number lookups, use a Named Query instead of free SOQL.
-- **ERP stays deterministic.** Order status and delivery dates from SAP come through a MuleSoft API in the API Catalog, not from a model interpreting tables. The route is described in [Agentforce and SAP order status](../../blog/agentforce-sap-order-status-mulesoft/).
+- **ERP stays deterministic.** Order status and delivery dates from SAP come through a MuleSoft API in the API Catalog, not from a model interpreting tables. The route is described in [Agentforce and SAP order status](../../../blog/agentforce-sap-order-status-mulesoft/).
 - **Estimate volume.** Assume 25 people, 20 questions a day, four tool calls per question and 21 working days: that is 42,000 calls a month. If every successful call counts, which is my assumption today, this is the number you multiply by the rate once Salesforce publishes it.
 - **Settle data protection.** The contract with Anthropic and sign-off from data protection and the works council come before the start, because in my reading the Trust Layer does not apply here.
 
@@ -123,6 +123,6 @@ Salesforce puts the setup at under 30 minutes. The real work is in five decision
 4. **Which models and contracts** are approved: Claude, ChatGPT, a model through a cloud provider in the EU?
 5. **Who pays** for Headless Platform Interactions, the business unit or IT?
 
-These questions are part of my work on [Salesforce integration](../../services/salesforce-integration/). [Chapter 4](../external-coding-agents/) covers the external coding agents your partner can use, and the [masterclass overview](../) lists all chapters.
+These questions are part of my work on [Salesforce integration](../../../services/salesforce-integration/). [Chapter 4](../external-coding-agents/) covers the external coding agents your partner can use, and the [masterclass overview](../) lists all chapters.
 
 MCP makes Salesforce reachable for every AI tool; whether that helps your service depends on permissions, data routes and budget. If you want your interfaces reviewed before 2 November or before the first rollout, [send me a message](#contact).

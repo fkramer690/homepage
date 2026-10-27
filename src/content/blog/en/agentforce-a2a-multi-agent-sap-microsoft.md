@@ -94,6 +94,6 @@ One of three requests goes through A2A. For a first year, I consider that ratio 
 4. **Check identity, timeout, cost and logging** for every cross-vendor hop before building it.
 5. **Pilot one read-only A2A hop** if MuleSoft already runs in your company, and ask SAP and Microsoft for the GA status of their side in writing.
 
-Which integration pattern fits which system is part of [Salesforce integration](../../services/salesforce-integration/), and the masterclass chapter [MCP and interfaces](../../ai-masterclass/mcp-and-interfaces/) maps the protocols.
+Which integration pattern fits which system is part of [Salesforce integration](../../services/salesforce-integration/), and the masterclass chapter [MCP and interfaces](../../masterclass/ai-salesforce/mcp-and-interfaces/) maps the protocols.
 
 One agent per audience owns the conversation, and A2A is for the few hops where another agent owns real logic. If you are sorting out which agent should talk to your dealers, [send me a message](#contact).

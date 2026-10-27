@@ -101,6 +101,6 @@ All three needs get met, and no community server reaches the org.
 3. **Enforce it where you can.** If you license Claude Code centrally, [managed settings](https://code.claude.com/docs/en/managed-mcp) with `allowedMcpServers` and `allowManagedMcpServersOnly` block every server that is not on your list.
 4. **Review on every update.** A new version is a new approval.
 
-Steering partners on tools like this is part of my [partner governance](../../services/partner-governance/) work, and the interface overview is in [chapter 3 of the masterclass](../../ai-masterclass/mcp-and-interfaces/).
+Steering partners on tools like this is part of my [partner governance](../../services/partner-governance/) work, and the interface overview is in [chapter 3 of the masterclass](../../masterclass/ai-salesforce/mcp-and-interfaces/).
 
 A community MCP server earns approval only when you can name its user, its secret, its maintainer and its version. If you want a second opinion on a request from your partner, [send me a message](#contact).

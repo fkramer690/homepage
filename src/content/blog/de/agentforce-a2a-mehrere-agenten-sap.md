@@ -94,6 +94,6 @@ Eine von drei Anfragen läuft über A2A. Für ein erstes Jahr halte ich dieses V
 4. **Prüfen Sie Identität, Timeout, Kosten und Logging** für jeden herstellerübergreifenden Sprung, bevor Sie ihn bauen.
 5. **Pilotieren Sie einen lesenden A2A-Sprung**, wenn MuleSoft bei Ihnen schon läuft, und lassen Sie sich von SAP und Microsoft den GA-Status ihrer Seite schriftlich bestätigen.
 
-Welches Integrationsmuster zu welchem System passt, gehört zu [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/), und das Masterclass-Kapitel [MCP und Schnittstellen](../../masterclass-ki/mcp-und-schnittstellen/) ordnet die Protokolle ein.
+Welches Integrationsmuster zu welchem System passt, gehört zu [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/), und das Masterclass-Kapitel [MCP und Schnittstellen](../../masterclass/ki-salesforce/mcp-und-schnittstellen/) ordnet die Protokolle ein.
 
 Ein Agent pro Zielgruppe führt das Gespräch, A2A ist für die wenigen Sprünge, bei denen ein anderer Agent echte Logik besitzt. Wenn Sie klären möchten, welcher Agent mit Ihren Händlern sprechen soll, [schreiben Sie mir](#contact).

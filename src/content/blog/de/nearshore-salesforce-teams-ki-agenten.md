@@ -61,7 +61,7 @@ Das Risiko: Die neue Person baut nie das Verständnis eines Reviewers auf. In ei
 
 Für ein Nearshore-Team zählt das, weil die Juniors von heute die Reviewer sind, die Sie nach der nächsten Rotation brauchen. Delegieren sie in den ersten Monaten alles, kann niemand einen Senior ersetzen, der geht.
 
-Ich würde die Einarbeitung deshalb um Erklären herum bauen: Der Agent erklärt bestehende Automatisierung, die neue Person schreibt den Test, und Reviews fremder Agenten-Pull-Requests beginnen im ersten Monat. Einen Vier-Wochen-Plan finden Sie in [Kapitel 9 meiner Masterclass KI](../../masterclass-ki/teamarbeit-und-delivery/). Etwa 38 Prozent der Befragten nennen bei McKinsey fehlende Lernzeit als eine der größten Hürden. Ich würde die Einarbeitungstage deshalb in den Nearshore-Plan schreiben und vereinbaren, wer sie bezahlt.
+Ich würde die Einarbeitung deshalb um Erklären herum bauen: Der Agent erklärt bestehende Automatisierung, die neue Person schreibt den Test, und Reviews fremder Agenten-Pull-Requests beginnen im ersten Monat. Einen Vier-Wochen-Plan finden Sie in [Kapitel 9 meiner Masterclass KI](../../masterclass/ki-salesforce/teamarbeit-und-delivery/). Etwa 38 Prozent der Befragten nennen bei McKinsey fehlende Lernzeit als eine der größten Hürden. Ich würde die Einarbeitungstage deshalb in den Nearshore-Plan schreiben und vereinbaren, wer sie bezahlt.
 
 ## Welche Zugriffsregeln gelten, wenn Nearshore-Entwickler Agenten nutzen?
 

@@ -104,7 +104,7 @@ This list is a commercial checklist, not legal advice. Have the contract itself 
 
 ## Where should you start?
 
-1. **Build a three-year consumption plan per agent,** with prompts, tests and Data 360. The method is in the [masterclass chapter on costs and tokens](../../ai-masterclass/costs-and-tokens/).
+1. **Build a three-year consumption plan per agent,** with prompts, tests and Data 360. The method is in the [masterclass chapter on costs and tokens](../../masterclass/ai-salesforce/costs-and-tokens/).
 2. **Price the Flex Credit path** with your edition pool and the per-user add-ons for employees.
 3. **Ask for the AELA offer in writing,** including the renewal terms and the list of covered meters.
 4. **Compare whole contracts** and run the stress test with tripled consumption.

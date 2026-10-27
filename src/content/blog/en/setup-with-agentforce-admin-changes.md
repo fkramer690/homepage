@@ -52,7 +52,7 @@ What I could not find on any Salesforce page I opened:
 - whether behaviour or allowance differ between sandbox and production
 - what an action beyond the 500 costs, and whether the Data 360 change after Dreamforce happened
 
-One independent test is worth knowing. Andy Engin Utkan tried the agent in a production org for [Salesforce Break in July 2026](https://salesforcebreak.com/2026/07/07/setup-with-agentforce-review/); it could not list users with View All Data or Modify All Data, and his verdict was "This feature launched before it was fully baked." That is one author's test, and he did not try flow creation. For the wider tool overview, see the masterclass chapter on [Salesforce AI development tools](../../ai-masterclass/salesforce-ai-development-tools/).
+One independent test is worth knowing. Andy Engin Utkan tried the agent in a production org for [Salesforce Break in July 2026](https://salesforcebreak.com/2026/07/07/setup-with-agentforce-review/); it could not list users with View All Data or Modify All Data, and his verdict was "This feature launched before it was fully baked." That is one author's test, and he did not try flow creation. For the wider tool overview, see the masterclass chapter on [Salesforce AI development tools](../../masterclass/ai-salesforce/salesforce-ai-development-tools/).
 
 Einstein for Flow is the narrower tool. According to [Salesforce Ben](https://www.salesforceben.com/einstein-for-flow-now-generally-available-tutorial-and-first-steps/), it became GA in Spring '25, drafts flows of up to about six elements, needs the Manage Flows permission and consumes Einstein Requests in production and sandboxes. The draft is not saved automatically.
 

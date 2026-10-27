@@ -44,7 +44,7 @@ Quellen: [McKinsey: Beyond the copilot](https://www.mckinsey.com/capabilities/te
 
 McKinseys Zahlen dämpfen die Erwartungen. Nur 25 Prozent der Führungskräfte ab Direktorenebene berichten von deutlicher Beschleunigung, 30 Prozent der Befragten von sinkender Produktivität. Rund 80 Prozent der Entwickler gewinnen im Schnitt etwa 3 Prozent, die oberen 20 Prozent etwa 55 Prozent. DORA formuliert es so: „AI doesn't fix a team; it amplifies what's already there.“
 
-Für ein Salesforce-Programm bei einem Hersteller lese ich daraus: Wer nur Lizenzen für Coding-Agenten kauft, bekommt schnelleren Code und dieselbe Warteschlange vor Review, Integrationstest mit SAP und Abnahme durch den Service. Was sich an der Organisation ändern muss, vertieft der Artikel [KI-native Delivery mit kleineren Salesforce-Teams](../../blog/ki-kleinere-salesforce-teams-delivery/).
+Für ein Salesforce-Programm bei einem Hersteller lese ich daraus: Wer nur Lizenzen für Coding-Agenten kauft, bekommt schnelleren Code und dieselbe Warteschlange vor Review, Integrationstest mit SAP und Abnahme durch den Service. Was sich an der Organisation ändern muss, vertieft der Artikel [KI-native Delivery mit kleineren Salesforce-Teams](../../../blog/ki-kleinere-salesforce-teams-delivery/).
 
 ## Welche Rollen braucht ein Salesforce-Team mit Coding-Agenten?
 
@@ -62,9 +62,9 @@ Für die kritischste Rolle bei einem Hersteller halte ich den Domain-Lead. Ohne 
 
 ### Nearshore-Teams und Partner
 
-Bei Nearshore-Teams verschiebt sich die Last ebenfalls zum Review. Mehr Code pro Entwickler heißt mehr Pull Requests pro Reviewer, und genau dort fehlt in vielen Teams die Seniorität. Warum ich Nearshore-Teams ohnehin bei etwa acht Entwicklern begrenze, steht in [Nearshore-Teams für Salesforce: warum höchstens acht](../../blog/nearshore-teams-salesforce-acht-entwickler/). Was sich mit Agenten an Rollen, Einarbeitung und Zugriffsregeln ändert, beschreibe ich in [Nearshore-Salesforce-Teams mit KI-Agenten](../../blog/nearshore-salesforce-teams-ki-agenten/).
+Bei Nearshore-Teams verschiebt sich die Last ebenfalls zum Review. Mehr Code pro Entwickler heißt mehr Pull Requests pro Reviewer, und genau dort fehlt in vielen Teams die Seniorität. Warum ich Nearshore-Teams ohnehin bei etwa acht Entwicklern begrenze, steht in [Nearshore-Teams für Salesforce: warum höchstens acht](../../../blog/nearshore-teams-salesforce-acht-entwickler/). Was sich mit Agenten an Rollen, Einarbeitung und Zugriffsregeln ändert, beschreibe ich in [Nearshore-Salesforce-Teams mit KI-Agenten](../../../blog/nearshore-salesforce-teams-ki-agenten/).
 
-Arbeitet ein Partner mit Agenten, gehören die Spielregeln in den Vertrag. ApexHours nennt erlaubte Werkzeuge, Datenumgang ohne Produktiv- und personenbezogene Daten, Rechte am Code und Offenlegung des KI-Einsatzes, geregelt vor dem Kick-off. Meine Prüfpunkte dazu stehen in [Partner codet mit KI: was in den Vertrag gehört](../../blog/partner-ki-coding-regeln-vertrag/), wie sich die Anreize der Partner verschieben, in [Kapitel 5](../aiforce-und-systemintegratoren/).
+Arbeitet ein Partner mit Agenten, gehören die Spielregeln in den Vertrag. ApexHours nennt erlaubte Werkzeuge, Datenumgang ohne Produktiv- und personenbezogene Daten, Rechte am Code und Offenlegung des KI-Einsatzes, geregelt vor dem Kick-off. Meine Prüfpunkte dazu stehen in [Partner codet mit KI: was in den Vertrag gehört](../../../blog/partner-ki-coding-regeln-vertrag/), wie sich die Anreize der Partner verschieben, in [Kapitel 5](../aiforce-und-systemintegratoren/).
 
 ## Wie sieht der Ablauf vom Intent bis zum Release aus?
 
@@ -94,7 +94,7 @@ Welche automatischen Prüfungen in die Pipeline gehören, beschreibt [Kapitel 8]
 | G5 Fachabnahme | Akzeptanzkriterien in der Demo | Domain-Lead | ja |
 | G6 Release | Change-Freigabe, Rollback-Plan | Release Manager | ja |
 
-G2 ist bewusst nicht blockierend. Ein zweiter Agent findet Auffälligkeiten, die Verantwortung bleibt bei G3. Warum jeder Pull Request ein menschliches Review braucht, unabhängig davon, wer den Code geschrieben hat, steht in [warum Pull-Request-Reviews Pflicht sind](../../blog/warum-pull-request-reviews-pflicht-sind/). Für Agentforce-Agenten selbst kommt ein Testgate mit Testing Center hinzu, beschrieben in [Agentforce-Agenten testen und freigeben](../../blog/agentforce-agenten-testen-freigeben/).
+G2 ist bewusst nicht blockierend. Ein zweiter Agent findet Auffälligkeiten, die Verantwortung bleibt bei G3. Warum jeder Pull Request ein menschliches Review braucht, unabhängig davon, wer den Code geschrieben hat, steht in [warum Pull-Request-Reviews Pflicht sind](../../../blog/warum-pull-request-reviews-pflicht-sind/). Für Agentforce-Agenten selbst kommt ein Testgate mit Testing Center hinzu, beschrieben in [Agentforce-Agenten testen und freigeben](../../../blog/agentforce-agenten-testen-freigeben/).
 
 ### Definition of Done als Empfehlung
 
@@ -122,7 +122,7 @@ Selbstauskünfte taugen nicht als Beleg. In der [METR-Studie](https://metr.org/b
 | DORA-Kennzahlen | Change Lead Time, Deployment-Häufigkeit, Wiederherstellungszeit, Change Fail Rate, Deployment Rework Rate | vergleichbar über Teams und Partner |
 | KI-Kosten pro Story | Werkzeug- und Tokenkosten durch gelieferte Stories | Budgetsteuerung |
 
-Die fünf DORA-Kennzahlen stehen im [DORA-Leitfaden](https://dora.dev/guides/dora-metrics/). Entscheidend ist die Basislinie: Erfassen Sie die Werte, bevor der erste Agent kommt, und berichten Sie sie als Trend, nie als Rangliste von Personen. Warum die Rangliste auch arbeitsrechtlich heikel ist, folgt im nächsten Abschnitt. Wie Sie die Messung aufsetzen und welche Zahlen in die Irre führen, beschreibe ich in [KI-Nutzen im Salesforce-Projekt messen](../../blog/ki-nutzen-salesforce-projekt-messen/). Die Kostenseite behandelt [Kapitel 7](../kosten-und-token/).
+Die fünf DORA-Kennzahlen stehen im [DORA-Leitfaden](https://dora.dev/guides/dora-metrics/). Entscheidend ist die Basislinie: Erfassen Sie die Werte, bevor der erste Agent kommt, und berichten Sie sie als Trend, nie als Rangliste von Personen. Warum die Rangliste auch arbeitsrechtlich heikel ist, folgt im nächsten Abschnitt. Wie Sie die Messung aufsetzen und welche Zahlen in die Irre führen, beschreibe ich in [KI-Nutzen im Salesforce-Projekt messen](../../../blog/ki-nutzen-salesforce-projekt-messen/). Die Kostenseite behandelt [Kapitel 7](../kosten-und-token/).
 
 ### Lernzeit gehört ins Budget
 
@@ -138,7 +138,7 @@ Wie konkret das bei Coding-Agenten wird, zeigt die [Nutzungsanalyse von Claude C
 
 ### DSGVO
 
-Produktivdaten und personenbezogene Daten gehören nicht in den Kontext eines Coding-Agenten. Agenten arbeiten in Scratch Orgs und Sandboxes mit anonymisierten Testdaten, Händler- und Kundenstammdaten aus der Full-Copy-Sandbox bleiben draußen. Für die Modellwege gilt: Die Anthropic-API bietet laut [Dokumentation zur Datenresidenz](https://platform.claude.com/docs/en/manage-claude/data-residency) für die Inferenz nur „us“ und „global“, eine EU-Option fehlt. Über Amazon Bedrock oder Google Cloud bestimmt der regionale Endpunkt den Ort. Die Optionen der Anbieter vergleicht [Kapitel 4](../externe-coding-agenten/), den Weg durch Betriebsrat und Datenschutz der Artikel [KI-Coding, Betriebsrat und DSGVO](../../blog/ki-coding-betriebsrat-dsgvo/).
+Produktivdaten und personenbezogene Daten gehören nicht in den Kontext eines Coding-Agenten. Agenten arbeiten in Scratch Orgs und Sandboxes mit anonymisierten Testdaten, Händler- und Kundenstammdaten aus der Full-Copy-Sandbox bleiben draußen. Für die Modellwege gilt: Die Anthropic-API bietet laut [Dokumentation zur Datenresidenz](https://platform.claude.com/docs/en/manage-claude/data-residency) für die Inferenz nur „us“ und „global“, eine EU-Option fehlt. Über Amazon Bedrock oder Google Cloud bestimmt der regionale Endpunkt den Ort. Die Optionen der Anbieter vergleicht [Kapitel 4](../externe-coding-agenten/), den Weg durch Betriebsrat und Datenschutz der Artikel [KI-Coding, Betriebsrat und DSGVO](../../../blog/ki-coding-betriebsrat-dsgvo/).
 
 ### EU AI Act
 
@@ -151,7 +151,7 @@ Die Verordnung (EU) 2026/1744 ist laut [White & Case](https://www.whitecase.com/
 | Großteil der Transparenzpflichten aus Art. 50 | seit 2. August 2026 | White & Case |
 | Kennzeichnung nach Art. 50(2) für generative Systeme, die vor dem 2. August 2026 am Markt waren | 2. Dezember 2026 | [Cuatrecasas](https://www.cuatrecasas.com/en/spain/intellectual-property/art/digital-omnibus-ai-has-been-published) |
 
-Coding-Assistenten im Salesforce-Projekt sind nach meiner Einschätzung in aller Regel keine Hochrisiko-Systeme. Ein Agentforce-Agent, der Bewerbungen vorsortiert, könnte dagegen unter Anhang III fallen. Für Maschinenbauer gibt es eine zweite, getrennte Baustelle: Laut Cuatrecasas wandert die Maschinenverordnung in Abschnitt B von Anhang I, die inhaltlichen Hochrisiko-Anforderungen sollen über delegierte Rechtsakte kommen, spätestens am 2. August 2028. Das betrifft KI in Ihren Maschinen, nicht Ihr CRM, und gehört zu Produktentwicklung und Rechtsabteilung. Was die Fristen für Agentforce-Projekte bedeuten, steht in [EU AI Act: Fristen für Agentforce](../../blog/eu-ai-act-fristen-agentforce/); Agenten in Service und Vertrieb behandelt [Kapitel 10](../ki-agenten-in-der-fertigung/).
+Coding-Assistenten im Salesforce-Projekt sind nach meiner Einschätzung in aller Regel keine Hochrisiko-Systeme. Ein Agentforce-Agent, der Bewerbungen vorsortiert, könnte dagegen unter Anhang III fallen. Für Maschinenbauer gibt es eine zweite, getrennte Baustelle: Laut Cuatrecasas wandert die Maschinenverordnung in Abschnitt B von Anhang I, die inhaltlichen Hochrisiko-Anforderungen sollen über delegierte Rechtsakte kommen, spätestens am 2. August 2028. Das betrifft KI in Ihren Maschinen, nicht Ihr CRM, und gehört zu Produktentwicklung und Rechtsabteilung. Was die Fristen für Agentforce-Projekte bedeuten, steht in [EU AI Act: Fristen für Agentforce](../../../blog/eu-ai-act-fristen-agentforce/); Agenten in Service und Vertrieb behandelt [Kapitel 10](../ki-agenten-in-der-fertigung/).
 
 ## Ein typisches Szenario: die ersten acht Wochen bei einem Maschinenbauer
 
@@ -165,6 +165,6 @@ So würde ich die ersten acht Wochen aufsetzen:
 - **Woche 3 bis 6: Einarbeitung.** Zwei Entwickler des Partners durchlaufen die vier Wochen, die übrigen arbeiten zunächst weiter wie bisher. Das liefert nebenbei eine Vergleichsgruppe.
 - **Woche 7 bis 8: Auswertung.** Angenommen sinkt die Durchlaufzeit im Pilotstrom auf 12 Tage, die Nacharbeit steigt aber auf 13 Prozent, weil die Pull Requests größer wurden. Konsequenz: kleinere Pull Requests als Regel, ein zweiter Reviewer auf Kundenseite, dann der nächste Strom.
 
-Der Garantiestrom kommt erst danach, weil Gutschriften in SAP gebucht werden und dort ein Ende-zu-Ende-Test vor jedem Release bleibt. Diese Reihenfolge ist Teil dessen, was ich in der [Projektsteuerung für Salesforce-Programme](../../leistungen/projektsteuerung-nearshore/) aufsetze; die Freigabe der Fachbereiche und die Kommunikation ins Team gehören ins [Change Management](../../leistungen/change-management/). Alle Kapitel finden Sie in der [Übersicht der Masterclass](../).
+Der Garantiestrom kommt erst danach, weil Gutschriften in SAP gebucht werden und dort ein Ende-zu-Ende-Test vor jedem Release bleibt. Diese Reihenfolge ist Teil dessen, was ich in der [Projektsteuerung für Salesforce-Programme](../../../leistungen/projektsteuerung-nearshore/) aufsetze; die Freigabe der Fachbereiche und die Kommunikation ins Team gehören ins [Change Management](../../../leistungen/change-management/). Alle Kapitel finden Sie in der [Übersicht der Masterclass](../).
 
 KI beschleunigt ein Salesforce-Programm nur so weit, wie Review, Abnahme und Mitbestimmung mithalten, und das organisieren Sie als Auftraggeber. Wenn Sie Ihr Team und Ihre Partner darauf vorbereiten möchten, [schreiben Sie mir](#contact).

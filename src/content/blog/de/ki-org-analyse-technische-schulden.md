@@ -85,7 +85,7 @@ Die [Claude Batch API](https://platform.claude.com/docs/en/build-with-claude/bat
 - **Opus 5.5:** 42,4 Mio. × 2 $ + 3,4 Mio. × 10 $ = **rund 119 $**.
 - **Zweiter Durchlauf** für 40 Objekte mit je 100.000 Tokens Input und 5.000 Output auf Opus 5.5: **rund 10 $**.
 
-Prompt-Caching lässt sich mit dem Batch-Rabatt kombinieren, im Batch sind Cache-Treffer aber nicht garantiert; Anthropic nennt Trefferquoten von 30 bis 98 Prozent. Ich rechne ohne Caching und betrachte jede Ersparnis als Zugabe. Thinking-Tokens werden [als Output abgerechnet](https://code.claude.com/docs/en/costs) und lassen sich bei den 5.5-Modellen nicht abschalten; verdreifachen sie den Output, steigt der Opus-Lauf auf rund 187 $. Die Grundlagen der Token-Rechnung stehen im [Masterclass-Kapitel zu Kosten und Token](../../masterclass-ki/kosten-und-token/).
+Prompt-Caching lässt sich mit dem Batch-Rabatt kombinieren, im Batch sind Cache-Treffer aber nicht garantiert; Anthropic nennt Trefferquoten von 30 bis 98 Prozent. Ich rechne ohne Caching und betrachte jede Ersparnis als Zugabe. Thinking-Tokens werden [als Output abgerechnet](https://code.claude.com/docs/en/costs) und lassen sich bei den 5.5-Modellen nicht abschalten; verdreifachen sie den Output, steigt der Opus-Lauf auf rund 187 $. Die Grundlagen der Token-Rechnung stehen im [Masterclass-Kapitel zu Kosten und Token](../../masterclass/ki-salesforce/kosten-und-token/).
 
 ### Wo die echten Kosten liegen
 

@@ -9,7 +9,13 @@ export type Chapter = CollectionEntry<'masterclass'>;
 // Planned number of chapters, shown as "Chapter 3 of 10".
 export const chapterTotal = 10;
 
-export const masterclassIndex = (lang: Lang) => localHref(lang, lang === 'de' ? 'masterclass-ki/' : 'ai-masterclass/');
+// All masterclasses share one overview page (/masterclass/, /en/masterclass/);
+// each masterclass has its own hub below it (rules: docs/masterclass.md).
+export const masterclassesIndex = (lang: Lang) => localHref(lang, 'masterclass/');
+
+// Hub of the AI masterclass. Before 2026-10-28 it lived at /masterclass-ki/ and
+// /en/ai-masterclass/; those URLs are redirect pages now.
+export const masterclassIndex = (lang: Lang) => `${masterclassesIndex(lang)}${lang === 'de' ? 'ki-salesforce/' : 'ai-salesforce/'}`;
 
 export const chapterHref = (chapter: Chapter) => `${masterclassIndex(chapter.data.lang)}${chapter.data.slug}/`;
 

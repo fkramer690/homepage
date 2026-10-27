@@ -52,7 +52,7 @@ Salesforce beschreibt AIforce als „a live interface layer that brings the full
 
 Für einen Hersteller ist das heute vor allem ein Vertriebsthema. Die 37 Skills sind Vertriebs-Skills, Aftersales und Außendienst (Field Service) haben noch nichts zu testen. Zu den Kosten schreibt Salesforce selbst: „Pricing and packaging are subject to change.“ Die [Flex Credits Rate Card vom 31. August 2026](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) führt den Zähler Headless Platform Interactions für agentische Zugriffe weiter mit „TBA“. Wie Externe über MCP auf Ihre Org zugreifen, beschreibe ich in [Kapitel 3](../mcp-und-schnittstellen/), die Kostenseite in [Kapitel 7](../kosten-und-token/).
 
-Eine Unterscheidung spart viele Missverständnisse in Workshops. In der [Claudeforce-Meldung vom 27. August 2026](https://www.salesforce.com/ap/news/press-releases/2026/08/27/sg-salesforce-and-anthropic-announce-claudeforce-the-1-ai-meets-the-1-ai-crm/) ist Claude ein Reasoning-Modell der Atlas Reasoning Engine und Standardmodell in Agentforce Vibes, Agentforce Coworker und Slack. Das ist Claude in Salesforce. Salesforce in Claude ist die Gegenrichtung: CRM-Daten erscheinen in der Claude-App Ihrer Mitarbeitenden. Für den Datenschutz sind das zwei getrennte Prüfungen. Was die IT-Leitung konkret tun sollte, steht im Artikel [AIforce: Salesforce in Claude und Slack erklärt](../../blog/aiforce-salesforce-in-claude-und-slack/).
+Eine Unterscheidung spart viele Missverständnisse in Workshops. In der [Claudeforce-Meldung vom 27. August 2026](https://www.salesforce.com/ap/news/press-releases/2026/08/27/sg-salesforce-and-anthropic-announce-claudeforce-the-1-ai-meets-the-1-ai-crm/) ist Claude ein Reasoning-Modell der Atlas Reasoning Engine und Standardmodell in Agentforce Vibes, Agentforce Coworker und Slack. Das ist Claude in Salesforce. Salesforce in Claude ist die Gegenrichtung: CRM-Daten erscheinen in der Claude-App Ihrer Mitarbeitenden. Für den Datenschutz sind das zwei getrennte Prüfungen. Was die IT-Leitung konkret tun sollte, steht im Artikel [AIforce: Salesforce in Claude und Slack erklärt](../../../blog/aiforce-salesforce-in-claude-und-slack/).
 
 ### AIforce und Headless 360
 
@@ -82,7 +82,7 @@ Ein Startdatum für die neuen Stufen nennt die Meldung nicht. Am 15. April 2026 
 
 Die Logik hat sich verschoben: früher „Lizenz verkauft, Projekt nach Stunden“, jetzt „Agent in Produktion, Verbrauch läuft“. Das ist in Teilen gut für Sie. Ein Partner, der erst am Go-live verdient, hat weniger Interesse an Piloten, die nie produktiv werden. Es gibt aber einen Konflikt. Jede Agentenaktion kostet Flex Credits, und an diesem Verbrauch hängt jetzt die Vergütung Ihres Partners durch Salesforce. Ein Agent, der drei Aktionen statt einer ausführt, ist für Sie teurer und für den Partner kein Nachteil.
 
-Dazu kommt, dass Partner selbst mit Coding-Agenten bauen. Das verkürzt Arbeit, die bisher nach Stunden abgerechnet wurde. Ob deshalb Festpreis oder ergebnisbasierte Verträge besser passen, untersuche ich in [Festpreis statt Aufwand](../../blog/festpreis-statt-aufwand-ki-salesforce/). Was im Vertrag stehen muss, wenn ein Partner mit KI programmiert, also Offenlegung, Datenumgang, Rechte am Code, kein Zugriff auf Produktion und Review, steht in [Partner mit KI-Coding: Regeln für den Vertrag](../../blog/partner-ki-coding-regeln-vertrag/).
+Dazu kommt, dass Partner selbst mit Coding-Agenten bauen. Das verkürzt Arbeit, die bisher nach Stunden abgerechnet wurde. Ob deshalb Festpreis oder ergebnisbasierte Verträge besser passen, untersuche ich in [Festpreis statt Aufwand](../../../blog/festpreis-statt-aufwand-ki-salesforce/). Was im Vertrag stehen muss, wenn ein Partner mit KI programmiert, also Offenlegung, Datenumgang, Rechte am Code, kein Zugriff auf Produktion und Review, steht in [Partner mit KI-Coding: Regeln für den Vertrag](../../../blog/partner-ki-coding-regeln-vertrag/).
 
 ## Ein typisches Szenario: zwei Angebote für einen Händleragenten
 
@@ -98,7 +98,7 @@ Aus Architektensicht würde ich so vorgehen:
 2. **Den Festpreis von B annehmen, den Produktivzugang ablehnen.** Agenten arbeiten in Sandboxes und Scratch-Orgs, Releases laufen über die Pipeline.
 3. **Die Erfolgsmessung von B schärfen.** Die Quote zählt nur, wenn falsche Auskünfte stichprobenartig geprüft werden und die Kosten pro beantworteter Anfrage unter einer vereinbarten Grenze bleiben.
 4. **Festlegen, wer Flex Credits bezahlt**, in Sandbox und Produktion, und eine monatliche Obergrenze mit Warnung vereinbaren.
-5. **Die Ownership klären**: Wer betreibt den Agenten nach dem Go-live, wer pflegt Prompts, Tests und die SAP-Schnittstelle? Bei mehreren Partnern hilft eine [Object Ownership Matrix](../../blog/object-ownership-matrix-salesforce/).
+5. **Die Ownership klären**: Wer betreibt den Agenten nach dem Go-live, wer pflegt Prompts, Tests und die SAP-Schnittstelle? Bei mehreren Partnern hilft eine [Object Ownership Matrix](../../../blog/object-ownership-matrix-salesforce/).
 
 Danach lassen sich beide Angebote vergleichen, weil KI-Einsatz, Zugriffe und Verbrauch offen auf dem Tisch liegen. Welcher Partner besser passt, entscheiden dann Preis, Referenzen und Team.
 
@@ -110,6 +110,6 @@ Danach lassen sich beide Angebote vergleichen, weil KI-Einsatz, Zugriffe und Ver
 - **KI-Regeln in den Vertrag schreiben**: Offenlegung der Werkzeuge, kein Produktivzugriff, Review durch Menschen, Rechte am Code.
 - **Branchentiefe prüfen.** Fragen Sie nach Agenten in Produktion bei Garantie, Ersatzteilen oder Händlervertrieb, nicht nach Zertifikaten oder dem Logo des FDE-Netzwerks.
 
-Diese Punkte gehören zu meiner Arbeit in der [Partnersteuerung](../../leistungen/partnersteuerung/). Welches Werkzeug für welchen Zweck passt, zeigt das nächste Kapitel, die [Entscheidungsmatrix](../entscheidungsmatrix-ki-werkzeuge/); wie sich Teams mit KI organisieren, behandelt [Kapitel 9](../teamarbeit-und-delivery/). Alle Kapitel finden Sie in der [Übersicht der Masterclass](../).
+Diese Punkte gehören zu meiner Arbeit in der [Partnersteuerung](../../../leistungen/partnersteuerung/). Welches Werkzeug für welchen Zweck passt, zeigt das nächste Kapitel, die [Entscheidungsmatrix](../entscheidungsmatrix-ki-werkzeuge/); wie sich Teams mit KI organisieren, behandelt [Kapitel 9](../teamarbeit-und-delivery/). Alle Kapitel finden Sie in der [Übersicht der Masterclass](../).
 
 AIforce ändert, wo Ihre Leute mit Salesforce arbeiten, das neue Partnermodell ändert, woran Ihr Partner verdient, und beides sollten Sie im Vertrag sichtbar machen. Wenn Sie ein Partnerangebot mit KI-Anteil einordnen möchten, [schreiben Sie mir](#contact).

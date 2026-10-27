@@ -112,6 +112,6 @@ Ein Flex-Template funktioniert auch außerhalb von Salesforce. [Hosted MCP Serve
 3. **Messen, wie viel nachbearbeitet wird.** Versendet der Service die meisten Entwürfe unverändert, ist das das Argument für den nächsten Schritt.
 4. **Einen Agenten ergänzen** nur dort, wo niemand vorher lesen soll, der Weg variiert oder etwas geschrieben werden muss. Verwenden Sie das getestete Template als Referenzaktion des Agenten.
 
-Welches Werkzeug auf der Salesforce-Plattform zu welcher Aufgabe passt, steht im Masterclass-Kapitel zu [Salesforce-Werkzeugen für KI-Entwicklung](../../masterclass-ki/salesforce-werkzeuge-ki-entwicklung/). Solche Entscheidungen sind Teil meiner [Salesforce-Architekturarbeit](../../leistungen/salesforce-architektur/).
+Welches Werkzeug auf der Salesforce-Plattform zu welcher Aufgabe passt, steht im Masterclass-Kapitel zu [Salesforce-Werkzeugen für KI-Entwicklung](../../masterclass/ki-salesforce/salesforce-werkzeuge-ki-entwicklung/). Solche Entscheidungen sind Teil meiner [Salesforce-Architekturarbeit](../../leistungen/salesforce-architektur/).
 
 Für die vier Textaufgaben oben reicht ein Template, und ein Agent verdient seinen höheren Preis nur dort, wo er ohne Mensch dazwischen antwortet oder handelt. Wenn Sie eine zweite Meinung dazu möchten, welcher Ihrer Anwendungsfälle was braucht, [schreiben Sie mir](#contact).

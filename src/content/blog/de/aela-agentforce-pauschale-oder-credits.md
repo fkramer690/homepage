@@ -104,7 +104,7 @@ Diese Liste ist eine kaufmännische Checkliste und keine Rechtsberatung. Den Ver
 
 ## Womit sollten Sie anfangen?
 
-1. **Erstellen Sie einen Dreijahresplan für den Verbrauch pro Agent,** mit Prompts, Tests und Data 360. Die Methode steht im [Masterclass-Kapitel zu Kosten und Token](../../masterclass-ki/kosten-und-token/).
+1. **Erstellen Sie einen Dreijahresplan für den Verbrauch pro Agent,** mit Prompts, Tests und Data 360. Die Methode steht im [Masterclass-Kapitel zu Kosten und Token](../../masterclass/ki-salesforce/kosten-und-token/).
 2. **Rechnen Sie den Weg über Flex Credits** mit dem Pool Ihrer Edition und den Add-ons pro Nutzer für Mitarbeiter.
 3. **Fordern Sie das AELA-Angebot schriftlich an,** mit Verlängerungskonditionen und der Liste der abgedeckten Zähler.
 4. **Vergleichen Sie ganze Verträge** und rechnen Sie den Stresstest mit dreifachem Verbrauch.

@@ -101,6 +101,6 @@ In the scenario, a pilot with ten technicians brings two findings. For machines 
 3. **Build the API before the agent.** Give the parts desk a screen on it first. If it does not help people, an agent will not help either.
 4. **Start with technicians,** then open it to dealers with the portal rules above.
 
-Which system leads for which data is the subject of [Salesforce integration](../../services/salesforce-integration/); the wider agent picture is in the masterclass chapter [AI agents in manufacturing](../../ai-masterclass/ai-agents-in-manufacturing/).
+Which system leads for which data is the subject of [Salesforce integration](../../services/salesforce-integration/); the wider agent picture is in the masterclass chapter [AI agents in manufacturing](../../masterclass/ai-salesforce/ai-agents-in-manufacturing/).
 
 An agent finds the right spare part only as reliably as your serial numbers lead to an as-built list, so if you want to check that before anyone builds an agent, [send me a message](#contact).

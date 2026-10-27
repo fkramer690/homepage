@@ -108,6 +108,6 @@ Indexing 1,100 MB instead of 3,000 MB with the default parser costs 165,000 cred
 5. **Choose the path**: Data Library for one product line, filter fields for several.
 6. **Test with real faults** before any technician sees the agent.
 
-The document model outlives any agent version, so I treat it as part of [Salesforce architecture](../../services/salesforce-architecture/). The wider picture is in the masterclass chapter [AI agents in manufacturing](../../ai-masterclass/ai-agents-in-manufacturing/).
+The document model outlives any agent version, so I treat it as part of [Salesforce architecture](../../services/salesforce-architecture/). The wider picture is in the masterclass chapter [AI agents in manufacturing](../../masterclass/ai-salesforce/ai-agents-in-manufacturing/).
 
 The troubleshooting agent is only as precise as the link between manual and serial number, so build that link before you switch the agent on. If you want a second opinion on your document model, [send me a message](#contact).

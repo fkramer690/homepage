@@ -112,7 +112,7 @@ So würde ich anfangen:
 2. **Felder einteilen** in personenbezogen, kaufmännisch und Freitext, zusammen mit dem Datenschutzbeauftragten.
 3. **Den Seed-Datensatz bauen** mit Service und Vertrieb, inklusive Sonderfällen, und ins Repository einchecken.
 4. **Die Maskierung konfigurieren** für die Partial Copy und die Feldprüfung in jedes Release aufnehmen.
-5. **Agentenzugriff auf die Full Copy entfernen** und die Stufen in die Partneranlage und die KI-Regeldatei schreiben; weitere Agentenregeln stehen in [Kapitel 8 der Masterclass](../../masterclass-ki/best-practices-ki-code/).
+5. **Agentenzugriff auf die Full Copy entfernen** und die Stufen in die Partneranlage und die KI-Regeldatei schreiben; weitere Agentenregeln stehen in [Kapitel 8 der Masterclass](../../masterclass/ki-salesforce/best-practices-ki-code/).
 
 Sandbox-Stufen und Pipelines gehören zu meiner Arbeit in [DevOps und Release-Management](../../leistungen/devops-und-release-management/).
 

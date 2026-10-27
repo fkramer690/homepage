@@ -100,6 +100,6 @@ In so einem Piloten würde ich vor allem Datenthemen erwarten, keine KI-Themen: 
 5. **Die vier Sperren und eine Freigabegrenze einbauen**, erst dann legt der Agent Aufträge an.
 6. **Lizenzen früh klären.** Auf der [EU-Preisseite von Manufacturing Cloud](https://www.salesforce.com/eu/manufacturing/cloud/) nennen die Core-Editionen (Listenpreis 275 € pro Nutzer und Monat) Flex Credits für KI, Agentforce und Daten, die Max-Editionen (650 €) enthalten die volle Suite von Agentforce for Industries. Lassen Sie sich die Summer-'26-Funktionen zur Distributor-Beschaffung vom Partner in Ihrer Sandbox zeigen.
 
-Den größeren Teil der Arbeit macht das Schnittstellendesign zwischen Salesforce und ERP aus, also das, was ich unter [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/) anbiete. Das Gesamtbild der Agenten in der Fertigung finden Sie im Masterclass-Kapitel [KI-Agenten in der Fertigung](../../masterclass-ki/ki-agenten-in-der-fertigung/).
+Den größeren Teil der Arbeit macht das Schnittstellendesign zwischen Salesforce und ERP aus, also das, was ich unter [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/) anbiete. Das Gesamtbild der Agenten in der Fertigung finden Sie im Masterclass-Kapitel [KI-Agenten in der Fertigung](../../masterclass/ki-salesforce/ki-agenten-in-der-fertigung/).
 
 Ein Nachschubagent lohnt sich, wenn Salesforce den Vorschlag verantwortet und das ERP jede Zahl mit einer richtigen Antwort. Wenn Sie diese Aufteilung für Ihr Händlernetz gegenprüfen möchten, [schreiben Sie mir](#contact).

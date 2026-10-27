@@ -52,7 +52,7 @@ Salesforce describes AIforce as "a live interface layer that brings the full pow
 
 For a manufacturer this is mainly a sales topic today. The 37 skills are sales skills; after-sales and field service teams have nothing to test yet. On cost, Salesforce itself writes: "Pricing and packaging are subject to change." The [Flex Credits rate card of 31 August 2026](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) still lists the Headless Platform Interactions meter for agentic access as "TBA". How external tools reach your org through MCP is covered in [chapter 3](../mcp-and-interfaces/), the cost side in [chapter 7](../costs-and-tokens/).
 
-One distinction saves a lot of confusion in workshops. In the [Claudeforce announcement of 27 August 2026](https://www.salesforce.com/ap/news/press-releases/2026/08/27/sg-salesforce-and-anthropic-announce-claudeforce-the-1-ai-meets-the-1-ai-crm/) Claude is a reasoning model for the Atlas Reasoning Engine and the default model in Agentforce Vibes, Agentforce Coworker and Slack. That is Claude in Salesforce. Salesforce in Claude is the other direction: CRM data shows up in the Claude app your staff use. For data protection these are two separate reviews. What an IT lead should do about it now is in the article [AIforce: Salesforce in Claude and Slack explained](../../blog/aiforce-salesforce-in-claude-and-slack/).
+One distinction saves a lot of confusion in workshops. In the [Claudeforce announcement of 27 August 2026](https://www.salesforce.com/ap/news/press-releases/2026/08/27/sg-salesforce-and-anthropic-announce-claudeforce-the-1-ai-meets-the-1-ai-crm/) Claude is a reasoning model for the Atlas Reasoning Engine and the default model in Agentforce Vibes, Agentforce Coworker and Slack. That is Claude in Salesforce. Salesforce in Claude is the other direction: CRM data shows up in the Claude app your staff use. For data protection these are two separate reviews. What an IT lead should do about it now is in the article [AIforce: Salesforce in Claude and Slack explained](../../../blog/aiforce-salesforce-in-claude-and-slack/).
 
 ### AIforce and Headless 360
 
@@ -82,7 +82,7 @@ The announcement gives no start date for the new tiers. On 15 April 2026 Salesfo
 
 The logic has shifted from "licence sold, project billed by the hour" to "agent in production, consumption running". Partly that is good for you. A partner who earns at go-live has less interest in pilots that never reach production. But there is a conflict. Every agent action costs Flex Credits, and Salesforce now rewards your partner for that consumption. An agent that runs three actions instead of one costs you more and costs the partner nothing.
 
-On top of that, partners now build with coding agents themselves. That shortens work that used to be billed by the hour. Whether fixed price or outcome-based contracts fit better as a result is the subject of [fixed price vs. time and materials with AI](../../blog/fixed-price-vs-time-and-materials-ai/). What belongs in the contract when a partner codes with AI, meaning disclosure, data handling, IP, no production access and review, is in [partners using AI coding: contract rules](../../blog/partners-using-ai-coding-contract-rules/).
+On top of that, partners now build with coding agents themselves. That shortens work that used to be billed by the hour. Whether fixed price or outcome-based contracts fit better as a result is the subject of [fixed price vs. time and materials with AI](../../../blog/fixed-price-vs-time-and-materials-ai/). What belongs in the contract when a partner codes with AI, meaning disclosure, data handling, IP, no production access and review, is in [partners using AI coding: contract rules](../../../blog/partners-using-ai-coding-contract-rules/).
 
 ## A typical scenario: two offers for a dealer agent
 
@@ -98,7 +98,7 @@ From an architect's point of view I would proceed like this:
 2. **Accept B's fixed price, refuse the production access.** Agents work in sandboxes and scratch orgs; releases go through the pipeline.
 3. **Sharpen B's success measure.** The rate only counts if wrong answers are sampled and checked and the cost per answered enquiry stays below an agreed limit.
 4. **Decide who pays for Flex Credits**, in sandbox and production, and agree a monthly cap with an alert.
-5. **Settle ownership**: who runs the agent after go-live, who maintains prompts, tests and the SAP interface? With several partners an [object ownership matrix](../../blog/salesforce-object-ownership-matrix/) helps.
+5. **Settle ownership**: who runs the agent after go-live, who maintains prompts, tests and the SAP interface? With several partners an [object ownership matrix](../../../blog/salesforce-object-ownership-matrix/) helps.
 
 After that the two offers can be compared, because AI use, access and consumption are on the table. Price, references and team then decide which partner fits better.
 
@@ -110,6 +110,6 @@ After that the two offers can be compared, because AI use, access and consumptio
 - **Write AI rules into the contract**: disclosure of tools, no production access, human review, IP in the code.
 - **Check industry depth.** Ask for agents in production for warranty, spare parts or dealer sales, not for certificates or the FDE network logo.
 
-These points are part of my work in [partner governance](../../services/partner-governance/). Which tool fits which purpose is the subject of the next chapter, the [decision matrix](../ai-tool-decision-matrix/); how teams organise themselves around AI is covered in [chapter 9](../teamwork-and-delivery/). All chapters are listed on the [masterclass overview](../).
+These points are part of my work in [partner governance](../../../services/partner-governance/). Which tool fits which purpose is the subject of the next chapter, the [decision matrix](../ai-tool-decision-matrix/); how teams organise themselves around AI is covered in [chapter 9](../teamwork-and-delivery/). All chapters are listed on the [masterclass overview](../).
 
 AIforce changes where your people work with Salesforce, the new partner model changes what your partner earns on, and both should be visible in your contract. If you want a second opinion on a partner offer with an AI component, [send me a message](#contact).

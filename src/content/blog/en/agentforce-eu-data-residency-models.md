@@ -106,6 +106,6 @@ Ask Salesforce per agent and file the answers in the architecture documentation:
 6. **Retention.** Does zero data retention apply to your model, and if you use BYOLLM, which clauses in your own provider contract cover it?
 7. **Changes.** How will you learn when the default model or the sub-processor list changes?
 
-Settling these questions per agent is part of my work on [Salesforce architecture](../../services/salesforce-architecture/); the wider map of agents in manufacturing is in [chapter 10 of the AI masterclass](../../ai-masterclass/ai-agents-in-manufacturing/).
+Settling these questions per agent is part of my work on [Salesforce architecture](../../services/salesforce-architecture/); the wider map of agents in manufacturing is in [chapter 10 of the AI masterclass](../../masterclass/ai-salesforce/ai-agents-in-manufacturing/).
 
 Where an Agentforce agent processes your dealer data depends on the model you choose, and only Salesforce's written confirmation for your org settles it. If you want a second opinion before your data protection officer signs off, [send me a message](#contact).

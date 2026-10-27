@@ -1,0 +1,88 @@
+---
+// Overview of all masterclasses (/masterclass/, /en/masterclass/), linked from the
+// main menu. Each card leads to the hub of one masterclass; the list comes from
+// src/lib/masterclasses.ts, the texts from `masterclasses` in src/i18n.
+import Page from '../layouts/Page.astro';
+import { en } from '../i18n/en';
+import { de } from '../i18n/de';
+import { site } from '../site';
+import { homeHref } from '../lib/paths';
+import { masterclassesIndex } from '../lib/masterclass';
+import { getMasterclasses } from '../lib/masterclasses';
+
+interface Props {
+  lang: 'en' | 'de';
+}
+const { lang } = Astro.props;
+const t = lang === 'de' ? de : en;
+const o = t.masterclasses;
+const masterclasses = await getMasterclasses(lang);
+
+const base = import.meta.env.BASE_URL;
+const abs = (path: string) => new URL(path, Astro.site).href;
+const url = abs(masterclassesIndex(lang));
+const suffix = ' | FK Solution Design';
+const pageTitle = o.metaTitle.length + suffix.length <= 60 ? o.metaTitle + suffix : o.metaTitle;
+const ogImage = `${base}og/${lang}/masterclasses.png`;
+const nn = (n: number) => String(n).padStart(2, '0');
+const articles = (n: number) => (n === 1 ? t.masterclass.articleCount.one : t.masterclass.articleCount.other).replace('{n}', String(n));
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'CollectionPage',
+      '@id': `${url}#page`,
+      url,
+      name: o.title,
+      description: o.metaDescription,
+      inLanguage: lang,
+      image: abs(ogImage),
+      author: { '@type': 'Person', '@id': `${abs(base)}#person`, name: site.person, url: site.linkedin, jobTitle: 'Salesforce Enterprise Architect' },
+      publisher: { '@type': 'Organization', '@id': `${abs(base)}#organization`, name: site.company },
+      mainEntity: {
+        '@type': 'ItemList',
+        '@id': `${url}#masterclasses`,
+        numberOfItems: masterclasses.length,
+        itemListElement: masterclasses.map((mc, i) => ({ '@type': 'ListItem', position: i + 1, name: mc.title, url: abs(mc.href) })),
+      },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'FK Solution Design', item: abs(homeHref(lang)) },
+        { '@type': 'ListItem', position: 2, name: o.name, item: url },
+      ],
+    },
+  ],
+};
+---
+<Page lang={lang} title={pageTitle} description={o.metaDescription} alternates={{ en: masterclassesIndex('en'), de: masterclassesIndex('de') }} image={ogImage}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </Fragment>
+  <section class="section blog">
+    <div class="container">
+      <p class="eyebrow mono">{o.eyebrow}</p>
+      <h1>{o.title}</h1>
+      <p class="blog-intro">{o.intro}</p>
+      <ul class="cards mc-list">
+        {masterclasses.map((mc, i) => (
+          <li class="card card-link">
+            <a href={mc.href}>
+              <span class="card-index mono">{o.cardNo.replace('{nn}', nn(i + 1))} · {mc.name}</span>
+              <h2 class="card-title">{mc.title}</h2>
+              <p>{mc.summary}</p>
+              <p class="mc-list-facts mono">
+                {o.chapters.replace('{n}', String(mc.chapters))}
+                {mc.articles > 0 && <> · {articles(mc.articles)}</>}
+                {' · '}{o.languages}
+              </p>
+              <span class="card-more mono">{o.open} →</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+</Page>
