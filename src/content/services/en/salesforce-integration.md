@@ -61,7 +61,7 @@ The details differ in every company, which is why this map is part of the [Sales
 
 The approach depends on the size of the company and the number of systems. With a few stable interfaces, a direct integration can be the simplest solution. With many systems, several teams and frequent changes, a middleware such as MuleSoft or another integration platform pays off, because interfaces become reusable and errors are visible in one place.
 
-For the build I work with selected partners who have integration experience from large international programmes, for example Blue Apes, a Jitterbit partner. That gives the client a partner that fits the size of the task, while the architecture and the specifications stay on the client side.
+For the build I work with selected partners who have integration experience from large international programmes. That gives the client a partner that fits the size of the task, while the architecture and the specifications stay on the client side.
 
 ## How does telephony fit into Service Cloud?
 

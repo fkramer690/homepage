@@ -61,7 +61,7 @@ Die Details unterscheiden sich in jedem Unternehmen. Deshalb gehört diese Landk
 
 Der Ansatz hängt von der Größe des Unternehmens und der Zahl der Systeme ab. Bei wenigen stabilen Schnittstellen kann eine direkte Anbindung die einfachste Lösung sein. Bei vielen Systemen, mehreren Teams und häufigen Änderungen lohnt sich eine Middleware wie MuleSoft oder eine andere Integrationsplattform, weil Schnittstellen wiederverwendbar werden und Fehler an einer Stelle sichtbar sind.
 
-Für die Umsetzung arbeite ich mit ausgewählten Partnern, die Integrationserfahrung aus großen internationalen Programmen haben, zum Beispiel Blue Apes als Jitterbit-Partner. So bekommt der Kunde einen Partner, der zur Größe der Aufgabe passt, während Architektur und Spezifikationen auf Kundenseite bleiben.
+Für die Umsetzung arbeite ich mit ausgewählten Partnern, die Integrationserfahrung aus großen internationalen Programmen haben. So bekommt der Kunde einen Partner, der zur Größe der Aufgabe passt, während Architektur und Spezifikationen auf Kundenseite bleiben.
 
 ## Wie passt Telefonie in die Service Cloud?
 
