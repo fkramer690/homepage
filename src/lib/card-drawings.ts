@@ -61,6 +61,53 @@ const drawings: Record<string, Drawing> = {
     <g transform="translate(217 120)" fill="none" stroke="${C}" stroke-width="1.4"><rect x="0" y="0" width="7" height="11" rx="3.5"/><path d="M-2.5 7a6 6 0 0 0 12 0M3.5 13v3"/></g>
     ${t(231, 130, l('voice input', 'Spracheingabe'), { fill: C, size: 7 })}`,
 
+  'field-service-master-data': (l) => `
+    ${box(22, 22, 128, 116)}${t(32, 38, l('MASTER DATA', 'STAMMDATEN'), { fill: D, size: 7.5 })}
+    ${[l('Territories', 'Servicegebiete'), l('Skills', 'Qualifikationen'), l('Work types', 'Arbeitstypen'), l('Assets', 'Anlagen'), l('Visiting hours', 'Öffnungszeiten'), l('Absences', 'Abwesenheiten')]
+      .map((s, i) => t(44, 56 + i * 14, s, { size: 7 }) + check(32, 50 + i * 14, i === 1 ? C : G)).join('')}
+    ${arrow(150, 80, 196, C)}
+    ${box(196, 52, 104, 56, C)}${t(248, 74, l('SCHEDULING', 'PLANUNG'), { fill: D, size: 8, anchor: 'middle' })}${t(248, 88, 'Match Skills', { size: 7, anchor: 'middle' })}
+    ${tag(196, 120, 104, l('6 kinds of data', '6 Datenarten'))}`,
+
+  'field-service-scheduling-automation': (l) => `
+    ${box(18, 52, 74, 40)}${t(55, 70, l('AUTOMATION', 'AUTOMATIK'), { fill: D, size: 7.5, anchor: 'middle' })}${t(55, 83, 'policy', { size: 7, anchor: 'middle' })}
+    ${arrow(92, 72, 124)}
+    ${tag(124, 62, 66, 'Scheduled')}
+    ${arrow(190, 72, 222, C)}
+    ${tag(222, 62, 80, 'Dispatched')}
+    ${dot(157, 118, C, 9)}<path d="M151 136a8 8 0 0 1 12 0" fill="none" stroke="${C}" stroke-width="1.4"/>
+    <path d="M166 112C190 104 200 96 206 80" fill="none" stroke="${C}" stroke-width="1.2" stroke-dasharray="4 3"/>
+    ${t(176, 132, l('dispatcher reviews and releases', 'Disponent prüft und gibt frei'), { fill: C, size: 7 })}
+    ${t(18, 30, l('trust grows: more automatic', 'Vertrauen wächst: mehr Automatik'), { size: 7.5 })}`,
+
+  'field-service-spare-parts': (l) => `
+    ${box(20, 40, 86, 80)}${t(63, 62, 'ERP', { fill: D, size: 9, anchor: 'middle' })}${t(63, 78, l('stock leads', 'führt Bestand'), { size: 7, anchor: 'middle' })}${t(63, 92, l('valuation', 'Bewertung'), { size: 7, anchor: 'middle' })}${t(63, 106, l('purchasing', 'Einkauf'), { size: 7, anchor: 'middle' })}
+    ${box(214, 40, 86, 80, C)}${t(257, 62, 'FIELD SERVICE', { fill: D, size: 7.5, anchor: 'middle' })}${t(257, 78, l('copy of stock', 'Kopie Bestand'), { size: 7, anchor: 'middle' })}${t(257, 92, l('parts consumed', 'Verbrauch'), { size: 7, anchor: 'middle' })}
+    ${arrow(106, 62, 214)}${t(160, 56, l('stock, material', 'Bestand, Material'), { size: 7, anchor: 'middle' })}
+    <path d="M214 100H107" stroke="${C}" stroke-width="1.3"/><path d="M112 96.5l-5 3.5 5 3.5" fill="none" stroke="${C}" stroke-width="1.3"/>${t(160, 114, l('consumption, requests', 'Verbrauch, Anforderung'), { fill: C, size: 7, anchor: 'middle' })}
+    <rect x="234" y="128" width="26" height="14" rx="2" fill="${D}"/><circle cx="240" cy="144" r="2.6" fill="${D}"/><circle cx="254" cy="144" r="2.6" fill="${D}"/>${t(266, 140, l('van = location', 'Fahrzeug = Standort'), { size: 7 })}`,
+
+  'field-service-maintenance-contracts': (l) => `
+    ${box(18, 18, 120, 30)}${t(28, 37, 'Service Contract', { fill: D, size: 7.5 })}${t(130, 37, l('sold', 'verkauft'), { size: 7, anchor: 'end' })}
+    ${box(18, 64, 120, 30)}${t(28, 83, 'Maintenance Plan', { fill: D, size: 7.5 })}${t(130, 83, l('planned', 'geplant'), { size: 7, anchor: 'end' })}
+    ${box(18, 110, 120, 30, C)}${t(28, 129, 'Entitlement', { fill: D, size: 7.5 })}${t(130, 129, '24 h', { fill: C, size: 7, anchor: 'end' })}
+    ${arrow(138, 125, 196, C)}${t(167, 118, l('priority', 'Priorität'), { fill: C, size: 7, anchor: 'middle' })}
+    ${box(196, 98, 104, 44, C)}${t(248, 117, l('DISPATCH', 'DISPATCHING'), { fill: D, size: 7.5, anchor: 'middle' })}${t(248, 131, l('1 = highest', '1 = höchste'), { size: 7, anchor: 'middle' })}
+    ${arrow(138, 79, 196)}${box(196, 58, 104, 32)}${t(248, 78, l('work orders', 'Arbeitsaufträge'), { size: 7.5, anchor: 'middle' })}`,
+
+  'field-service-service-partners': (l) => `
+    ${box(106, 16, 108, 34, C)}${t(160, 31, l('DISPATCHER', 'DISPONENT'), { fill: D, size: 7.5, anchor: 'middle' })}${t(160, 43, l('one plan', 'ein Plan'), { fill: C, size: 7, anchor: 'middle' })}
+    <path d="M160 50V66M80 66H240M80 66V82M240 66V82" fill="none" stroke="${G}" stroke-width="1.2"/>
+    ${box(22, 82, 116, 56)}${t(80, 100, l('INTERNAL', 'INTERN'), { fill: D, size: 7.5, anchor: 'middle' })}${t(80, 114, 'Service Resource', { size: 7, anchor: 'middle' })}${t(80, 127, l('same app', 'gleiche App'), { size: 7, anchor: 'middle' })}
+    ${box(182, 82, 116, 56)}${t(240, 100, l('PARTNER', 'PARTNER'), { fill: D, size: 7.5, anchor: 'middle' })}${t(240, 114, 'Service Resource', { size: 7, anchor: 'middle' })}${t(240, 127, l('own territory', 'eigenes Gebiet'), { size: 7, anchor: 'middle' })}`,
+
+  'field-service-rollout': (l) => `
+    ${[l('Wave 1', 'Welle 1'), l('Wave 2', 'Welle 2'), l('Wave 3', 'Welle 3')].map((s, i) => box(20 + i * 98, 30 + i * 22, 86, 34, i === 0 ? C : G) + t(63 + i * 98, 51 + i * 22, s, { fill: D, size: 7.5, anchor: 'middle' })).join('')}
+    ${arrow(106, 47, 118)}${arrow(204, 69, 216)}
+    ${tag(20, 120, 132, l('works council early', 'Betriebsrat früh'))}
+    ${t(164, 128, l('timesheets · location', 'Timesheets · Standort'), { size: 7 })}
+    ${t(164, 142, l('rules per country', 'Regeln je Land'), { fill: C, size: 7 })}`,
+
   'salesforce-winter-27-pipeline': (l) => `
     ${['build', 'validate', 'deploy'].map((s, i) => box(20 + i * 62, 30, 50, 26) + t(45 + i * 62, 47, s, { size: 7.5, anchor: 'middle' })).join('')}
     ${arrow(70, 43, 82)}${arrow(132, 43, 144)}
