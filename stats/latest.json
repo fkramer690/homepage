@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-27T04:48:16.532Z",
+  "generatedAt": "2026-10-27T10:31:05.650Z",
   "range": {
     "start": "2026-09-27",
     "end": "2026-10-27"
   },
   "browsers": [
     {
-      "count": 120,
+      "count": 130,
       "dimensions": {
         "userAgentBrowser": "Chrome"
       },
@@ -17,7 +17,7 @@
   ],
   "countries": [
     {
-      "count": 120,
+      "count": 130,
       "dimensions": {
         "countryName": "DE"
       },
@@ -44,11 +44,20 @@
       "sum": {
         "visits": 30
       }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "date": "2026-10-27"
+      },
+      "sum": {
+        "visits": 0
+      }
     }
   ],
   "devices": [
     {
-      "count": 120,
+      "count": 130,
       "dimensions": {
         "deviceType": "desktop"
       },
@@ -97,6 +106,15 @@
     {
       "count": 10,
       "dimensions": {
+        "requestPath": "/leistungen/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
         "requestPath": "/homepage/blog/salesforce-service-documents-document-builder/"
       },
       "sum": {
@@ -133,7 +151,7 @@
       }
     },
     {
-      "count": 20,
+      "count": 30,
       "dimensions": {
         "refererHost": "www.fk-sd.de"
       },
