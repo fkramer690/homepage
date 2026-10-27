@@ -1,6 +1,6 @@
 ---
 title: "Setup with Agentforce: allow admin AI in production?"
-description: "Setup with Agentforce changes fields, flows and permissions on request. Where the admin agent fits into a governed release process and what to allow in production."
+description: "Setup with Agentforce changes fields, flows and permissions on request. Where the admin agent fits a governed release process and what to allow in production."
 pubDate: 2026-10-27
 lang: en
 slug: setup-with-agentforce-admin-changes
@@ -83,7 +83,7 @@ Yes, for a defined part of its work. I split by whether the action produces meta
 
 User administration is already done in production in most orgs and never travels through a repository. Everything below that line is metadata and follows the release process.
 
-You enforce this through permissions, not through a policy document. Salesforce says the agent can only do what the admin is allowed to do. So the question is who holds Customize Application and similar rights in production. If only the release user and one emergency admin hold them, the Setup agent cannot build a flow in production for anyone else, whatever its button offers.
+You enforce this through permissions, not through a policy document. Salesforce says the agent can only do what the admin is allowed to do. So the question is who holds Customize Application and similar rights in production. If only the release user and one emergency admin hold them, no other admin can have the Setup agent build a flow in production, whatever its button offers.
 
 ## A typical scenario: an extended warranty field before a trade fair
 
