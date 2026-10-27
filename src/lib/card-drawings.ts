@@ -94,6 +94,19 @@ const drawings: Record<string, Drawing> = {
       .map(([a, b, c, x, y], i) => `${t(Number(x), Number(y) - 18, String(a), { fill: i === 2 ? C : G, size: 7 })}${t(Number(x), Number(y) - 7, String(b), { fill: D, size: 6.8 })}${t(Number(x), Number(y) + 4, String(c), { size: 7 })}`).join('')}
     <g transform="translate(276 14)" fill="none" stroke="${C}" stroke-width="1.4"><circle cx="10" cy="10" r="9"/><path d="M6 18l-2 9 6-3 6 3-2-9"/>${check(6, 10)}</g>`,
 
+  'nearshore-team-size': (l) => {
+    const ring = (cx: number, cy: number, r: number, n: number, line: string, color: string) => {
+      const pts = Array.from({ length: n }, (_, i) => [cx + r * Math.cos((2 * Math.PI * i) / n - Math.PI / 2), cy + r * Math.sin((2 * Math.PI * i) / n - Math.PI / 2)]);
+      const lines = pts.flatMap((a, i) => pts.slice(i + 1).map((b) => `M${a[0].toFixed(1)} ${a[1].toFixed(1)}L${b[0].toFixed(1)} ${b[1].toFixed(1)}`)).join('');
+      return `<path d="${lines}" stroke="${line}" stroke-width="0.7" fill="none"/>` + pts.map(([x, y]) => dot(x, y, color, 3)).join('');
+    };
+    return `
+    ${ring(72, 74, 46, 16, L, G)}
+    ${cross(140, 30)}${t(72, 140, l('16 people', '16 Personen'), { fill: D, size: 7, anchor: 'middle' })}${t(72, 151, l('120 paths', '120 Wege'), { size: 7, anchor: 'middle' })}
+    ${ring(196, 74, 28, 8, G, C)}${ring(272, 74, 28, 8, G, G)}
+    ${check(296, 26)}${t(234, 140, l('2 teams of 8', '2 Teams à 8'), { fill: C, size: 7, anchor: 'middle' })}${t(234, 151, l('28 paths each', 'je 28 Wege'), { size: 7, anchor: 'middle' })}`;
+  },
+
   'sfdx-hardis-introduction': (l) => `
     ${box(20, 52, 72, 56)}${t(56, 72, 'GIT', { fill: D, anchor: 'middle' })}${t(56, 86, 'repository', { size: 7, anchor: 'middle' })}${t(56, 98, l('client-owned', 'beim Kunden'), { size: 7, anchor: 'middle' })}
     ${box(118, 40, 84, 80, C)}${t(160, 58, 'sfdx-hardis', { fill: D, anchor: 'middle' })}
