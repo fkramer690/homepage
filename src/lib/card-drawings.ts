@@ -207,6 +207,14 @@ const drawings: Record<string, Drawing> = {
     ${arrow(110, 66, 144, C)}${arrow(214, 66, 248, C)}${t(229, 58, 'sync', { fill: C, size: 6.8, anchor: 'middle' })}
     <path d="M248 90H214M144 90H110" stroke="${G}" stroke-width="1.2" stroke-dasharray="4 3"/>
     ${t(14, 152, l('billing address: portal, then Salesforce, then ERP', 'Rechnungsadresse: Portal, dann Salesforce, dann ERP'), { size: 7 })}`,
+
+  'manufacturing-cloud-account-forecasting': (l) => `
+    ${[l('ERP order history', 'ERP-Historie'), 'Sales Agreements', 'Opportunities'].map((s, i) => box(14, 26 + i * 34, 84, 24) + t(56, 41 + i * 34, s, { size: 6.8, anchor: 'middle' })).join('')}
+    <path d="M98 38C114 38 112 72 126 72M98 72H126M98 106C114 106 112 72 126 72" fill="none" stroke="${G}" stroke-width="1.2"/>${arrow(126, 72, 140)}
+    ${box(140, 42, 92, 60, C)}${t(186, 62, 'ACCOUNT', { fill: D, size: 7.5, anchor: 'middle' })}${t(186, 73, 'FORECAST', { fill: D, size: 7.5, anchor: 'middle' })}${t(186, 89, l('customer × product × month', 'Kunde × Produkt × Monat'), { size: 6.3, anchor: 'middle' })}
+    <path d="M246 20V124" stroke="${G}" stroke-width="1" stroke-dasharray="4 3"/>${arrow(232, 72, 262, C)}
+    ${box(262, 52, 46, 40)}${t(285, 70, 'ERP', { fill: D, size: 7.5, anchor: 'middle' })}${t(285, 82, l('planning', 'Planung'), { size: 6.8, anchor: 'middle' })}
+    ${t(14, 146, l('2,000 × 500 × 24 = 24 million combinations', '2.000 × 500 × 24 = 24 Mio. Kombinationen'), { size: 7 })}`,
 };
 
 export const hasDrawing = (key: string) => key in drawings;
