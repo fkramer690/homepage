@@ -752,7 +752,7 @@ const drawings: Record<string, Drawing> = {
     ${t(14, 152, l('3 subagents documented, alerts not described', '3 Subagents dokumentiert, Hinweise nicht beschrieben'), { size: 7 })}`,
 
   'siemens-agentforce-lessons': (l) => `
-    ${t(18, 18, 'SIEMENS · 15.09.2026', { fill: D, size: 7 })}${t(176, 18, l('ORDER, MID-SIZED (SCENARIO)', 'REIHENFOLGE MITTELSTAND'), { fill: D, size: 7 })}
+    ${t(18, 18, l('SIEMENS · 15 SEP 2026', 'SIEMENS · 15.09.2026'), { fill: D, size: 7 })}${t(176, 18, l('ORDER, MID-SIZED (SCENARIO)', 'REIHENFOLGE MITTELSTAND'), { fill: D, size: 7 })}
     ${box(18, 26, 134, 36, C)}${t(26, 41, l('LIVE: 2 lead agents', 'LIVE: 2 Lead-Agenten'), { fill: C, size: 7.5 })}${t(26, 54, l('18,000 sellers · 132 countries', '18.000 Vertriebler · 132 Länder'), { size: 7 })}
     ${t(18, 80, l('ANNOUNCED ("will")', 'ANGEKÜNDIGT ("will")'), { fill: D, size: 7 })}
     ${['Teamcenter', l('Piper for distributors', 'Piper für Vertriebspartner'), l('onboarding in SAP', 'Onboarding in SAP')].map((s, i) => dot(24, 92 + i * 14, G, 2.5) + t(34, 95 + i * 14, s, { size: 7 })).join('')}
