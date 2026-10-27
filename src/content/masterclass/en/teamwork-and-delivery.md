@@ -58,7 +58,7 @@ Roles get broader and accountability gets sharper. ApexHours sums up the governa
 | Platform and DevOps (shared) | pipeline, org strategy, tool approvals, cost monitoring | internal IT or partner with a clear handover |
 | Coding agent | drafts, code, tests, documentation, runbooks | works only in scratch orgs and sandboxes |
 
-The role manufacturers underestimate most is the domain lead. Without someone who decides every day whether a warranty workflow or a spare part reservation is right, a fast team quickly builds past the need. The head of service has to release that time before the partner restructures its team.
+In my view the domain lead is the most critical role at a manufacturer. Without someone who decides every day whether a warranty workflow or a spare part reservation is right, a fast team quickly builds past the need. The head of service has to release that time before the partner restructures its team.
 
 ### Nearshore teams and partners
 
@@ -134,7 +134,7 @@ According to McKinsey, about 38 percent of respondents name lack of time to lear
 
 This part applies to German companies. According to [CMS](https://cms.law/de/deu/legal-updates/ki-transformation-und-betriebsrat-mitbestimmung-richtig-gestalten), AI systems "as a rule" trigger co-determination rights under section 87(1) no. 6 of the Works Constitution Act (BetrVG). What counts is the objective possibility of monitoring, even without any intent. Without the works council's consent or a conciliation committee ruling, the employer may not introduce the system. CMS recommends framework works agreements that set the procedure for IT and AI applications.
 
-How concrete this gets with coding agents shows in [Claude Code usage analytics](https://support.claude.com/en/articles/12157520-claude-code-usage-analytics): admins see each team member's lines of code accepted per month, and in beta also merged pull requests per person. That is exactly the kind of performance data section 87 is about. So I schedule the works council before the pilot. It applies directly to your own developers, admins and reviewers; for the partner's staff, as far as I understand it, the partner's own works council is responsible. This is my view as an architect, not legal advice.
+How concrete this gets with coding agents shows in [Claude Code usage analytics](https://support.claude.com/en/articles/12157520-claude-code-usage-analytics): admins see each team member's lines of code accepted per month, and in beta also merged pull requests per person. That is exactly the kind of performance data section 87 is about. So I would schedule the works council before the pilot. It applies directly to your own developers, admins and reviewers; for the partner's staff, as far as I understand it, the partner's own works council is responsible. This is my view as an architect, not legal advice.
 
 ### GDPR
 

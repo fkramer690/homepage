@@ -37,7 +37,7 @@ Drei Quellen beschreiben dasselbe Muster aus unterschiedlichen Richtungen. Die a
 | Basis | Erfahrungsbericht für Salesforce | 334 Produkt- und Engineering-Leads, Mai 2026 | knapp 5.000 Befragte |
 | Team | kleine Pods: Architekt, Builder-Reviewer, Domain- oder BA-Lead | 79 % der Spitzenreiter mit kleineren Squads, Median von etwa 10 auf 7 | keine Teamgröße |
 | Engpass | Review und Verantwortung | 11,8 % Zeitersparnis, aber nur 6,2 % weniger Nacharbeit | KI erhöht den Durchsatz, schadet weiter der Stabilität |
-| Prozess | Intent statt Lastenheft, täglicher Demo, gleiche Gates für Mensch und Agent | Workflow vor der KI umbauen: mehr als doppelt so oft über 20 % Gewinn | kleine Batches, Versionskontrolle, Plattform-Engineering |
+| Prozess | Intent statt Lastenheft, tägliche Demo, gleiche Gates für Mensch und Agent | Workflow vor der KI umbauen: mehr als doppelt so oft über 20 % Gewinn | kleine Batches, Versionskontrolle, Plattform-Engineering |
 | Messung | Durchlaufzeit, Fehlerdurchschlupf, Nacharbeit, Anteil akzeptierter KI-Arbeit | 86 % der Spitzenreiter messen Ergebnisse statt Nutzung | DORA-Kennzahlen |
 
 Quellen: [McKinsey: Beyond the copilot](https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/beyond-the-copilot-scaling-the-agentic-product-development-life-cycle), [DORA Report 2025](https://cloud.google.com/blog/products/ai-machine-learning/announcing-the-2025-dora-report), [DORA Capabilities](https://dora.dev/capabilities/).
@@ -54,11 +54,11 @@ Die Rollen werden breiter, die Verantwortung schärfer. ApexHours fasst die Gove
 |---|---|---|
 | Architekt | Intent, Datenmodell, Sharing-Modell, Flow oder Apex, Regeldatei | idealerweise auf Kundenseite oder unabhängig |
 | Builder-Reviewer | Agenten steuern, Diffs prüfen, Tests bewerten, Code-Owner im Pull Request | Partner oder eigene Entwickler |
-| Domain-Lead | Akzeptanzkriterien, tägliche Abnahme im Demo | Garantiesachbearbeitung, Disposition im Außendienst, Händlervertrieb |
+| Domain-Lead | Akzeptanzkriterien, tägliche Abnahme in der Demo | Garantiesachbearbeitung, Disposition im Außendienst, Händlervertrieb |
 | Plattform und DevOps (geteilt) | Pipeline, Org-Strategie, Freigaben für Werkzeuge, Kostenüberwachung | interne IT oder Partner mit klarer Übergabe |
 | Coding-Agent | Entwürfe, Code, Tests, Dokumentation, Runbooks | arbeitet nur in Scratch Orgs und Sandboxes |
 
-Die Rolle, die Hersteller am häufigsten unterschätzen, ist der Domain-Lead. Ohne jemanden, der täglich entscheidet, ob ein Garantie-Workflow oder eine Ersatzteilreservierung so stimmt, baut ein schnelles Team schnell am Bedarf vorbei. Diese Zeit muss die Serviceleitung freigeben, bevor der Partner sein Team umbaut.
+Für die kritischste Rolle bei einem Hersteller halte ich den Domain-Lead. Ohne jemanden, der täglich entscheidet, ob ein Garantie-Workflow oder eine Ersatzteilreservierung so stimmt, baut ein schnelles Team schnell am Bedarf vorbei. Diese Zeit muss die Serviceleitung freigeben, bevor der Partner sein Team umbaut.
 
 ### Nearshore-Teams und Partner
 
@@ -68,7 +68,7 @@ Arbeitet ein Partner mit Agenten, gehören die Spielregeln in den Vertrag. ApexH
 
 ## Wie sieht der Ablauf vom Intent bis zum Release aus?
 
-ApexHours ersetzt das klassische Lastenheft durch einen „Intent“: eine ergebnisorientierte Anforderung mit gewünschtem Ergebnis, Begründung, betroffenen Nutzern, Rahmenbedingungen und Erfolgskriterien. Den Status-Standup ersetzt ein täglicher Demo mit funktionierender Software. Für Schnittstellen zu SAP oder Regeln mit finanzieller Wirkung, etwa Garantiegutschriften, würde ich trotzdem eine präzise Spezifikation behalten.
+ApexHours ersetzt das klassische Lastenheft durch einen „Intent“: eine ergebnisorientierte Anforderung mit gewünschtem Ergebnis, Begründung, betroffenen Nutzern, Rahmenbedingungen und Erfolgskriterien. Den Status-Standup ersetzt eine tägliche Demo mit funktionierender Software. Für Schnittstellen zu SAP oder Regeln mit finanzieller Wirkung, etwa Garantiegutschriften, würde ich trotzdem eine präzise Spezifikation behalten.
 
 Daraus ergibt sich ein Ablauf, den ich für Salesforce-Programme empfehle:
 
@@ -77,7 +77,7 @@ Daraus ergibt sich ein Ablauf, den ich für Salesforce-Programme empfehle:
 3. **Plan freigeben**: Der Architekt prüft, ob der Plan Intent und Ausschlüsse abdeckt.
 4. **Bauen in kleinen Schritten** in einer Scratch Org oder Feature-Sandbox ohne Kundendaten, Tests zuerst.
 5. **Pull Request** mit gekennzeichnetem KI-Anteil, Review durch den Code-Owner, Prüfungen in der Pipeline.
-6. **Täglicher Demo**: Der Domain-Lead nimmt am laufenden System ab.
+6. **Tägliche Demo**: Der Domain-Lead nimmt am laufenden System ab.
 7. **Release über die Pipeline** mit menschlicher Freigabe; kein Agent hat Rechte in Produktion.
 
 ### Review-Gates als Empfehlung
@@ -91,7 +91,7 @@ Welche automatischen Prüfungen in die Pipeline gehören, beschreibt [Kapitel 8]
 | G2 Agenten-Review | Abweichung von der Spezifikation, Sicherheitsmuster | zweiter Agent als Reviewer | nein, nur Hinweise |
 | G3 Mensch | Logik, Sharing, Datenmodell, Lesbarkeit | benannter Code-Owner | ja |
 | G4 Pipeline | Analyzer, Apex-Tests, Validierungs-Deployment | CI | ja |
-| G5 Fachabnahme | Akzeptanzkriterien im Demo | Domain-Lead | ja |
+| G5 Fachabnahme | Akzeptanzkriterien in der Demo | Domain-Lead | ja |
 | G6 Release | Change-Freigabe, Rollback-Plan | Release Manager | ja |
 
 G2 ist bewusst nicht blockierend. Ein zweiter Agent findet Auffälligkeiten, die Verantwortung bleibt bei G3. Warum jeder Pull Request ein menschliches Review braucht, unabhängig davon, wer den Code geschrieben hat, steht in [warum Pull-Request-Reviews Pflicht sind](../../blog/warum-pull-request-reviews-pflicht-sind/). Für Agentforce-Agenten selbst kommt ein Testgate mit Testing Center hinzu, beschrieben in [Agentforce-Agenten testen und freigeben](../../blog/agentforce-agenten-testen-freigeben/).
@@ -107,7 +107,7 @@ Diese Punkte würde ich für jede agentengenerierte Salesforce-Änderung schrift
 - Neue Felder und Objekte in Permission Sets, keine Änderung an Sharing Settings ohne Freigabe.
 - API-Version unverändert oder bewusst angehoben und getestet.
 - KI-Anteil gekennzeichnet, Regeldatei bei neuen Konventionen ergänzt.
-- Fachliche Abnahme im Demo dokumentiert.
+- Fachliche Abnahme in der Demo dokumentiert.
 
 ## Welche Kennzahlen zeigen, ob KI Ihr Programm schneller macht?
 
@@ -134,7 +134,7 @@ Laut McKinsey nennen rund 38 Prozent der Befragten fehlende Zeit zum Lernen als 
 
 Laut [CMS](https://cms.law/de/deu/legal-updates/ki-transformation-und-betriebsrat-mitbestimmung-richtig-gestalten) bestehen bei KI-Systemen „in aller Regel“ Mitbestimmungsrechte nach § 87 Abs. 1 Nr. 6 BetrVG. Maßgeblich ist die objektive Möglichkeit zur Überwachung, auch ohne jede Absicht. Ohne Zustimmung des Betriebsrats oder Spruch der Einigungsstelle darf der Arbeitgeber das System nicht einführen. CMS empfiehlt Rahmenbetriebsvereinbarungen, die das Vorgehen für IT- und KI-Anwendungen regeln.
 
-Wie konkret das bei Coding-Agenten wird, zeigt die [Nutzungsanalyse von Claude Code](https://support.claude.com/en/articles/12157520-claude-code-usage-analytics): Administratoren sehen für jedes Teammitglied die akzeptierten Codezeilen im Monat, in der Beta auch gemergte Pull Requests pro Person. Das ist genau die Art Leistungsdaten, um die es in § 87 geht. Ich plane die Abstimmung deshalb vor dem Pilot ein. Ihre eigenen Entwickler, Admins und Reviewer betrifft das direkt, für die Leute des Partners ist nach meinem Verständnis dessen Betriebsrat zuständig. Das ist meine Einschätzung als Architekt, keine Rechtsberatung.
+Wie konkret das bei Coding-Agenten wird, zeigt die [Nutzungsanalyse von Claude Code](https://support.claude.com/en/articles/12157520-claude-code-usage-analytics): Administratoren sehen für jedes Teammitglied die akzeptierten Codezeilen im Monat, in der Beta auch gemergte Pull Requests pro Person. Das ist genau die Art Leistungsdaten, um die es in § 87 geht. Ich würde die Abstimmung deshalb vor dem Pilot einplanen. Ihre eigenen Entwickler, Admins und Reviewer betrifft das direkt, für die Leute des Partners ist nach meinem Verständnis dessen Betriebsrat zuständig. Das ist meine Einschätzung als Architekt, keine Rechtsberatung.
 
 ### DSGVO
 
