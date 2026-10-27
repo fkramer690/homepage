@@ -2,6 +2,7 @@
 title: "Account Forecasting: Sales Volume Planning"
 description: "When Manufacturing Cloud account forecasting pays off for sales volume planning, which data it needs and where planning in the ERP should take over."
 pubDate: 2026-10-27
+updatedDate: 2026-10-27
 lang: en
 slug: account-forecasting-sales-volume-planning
 translationKey: manufacturing-cloud-account-forecasting
@@ -84,7 +85,7 @@ Two points matter for the architecture:
 1. **One leading number.** If there is a sales forecast in Salesforce and demand planning in the ERP, it has to be clear which number counts and when it is handed over. Two forecasts that are both maintained drift apart, and then the meeting argues about numbers instead of customers.
 2. **One direction.** If the sales forecast flows into the ERP, the integration needs the same granularity as planning there. If the ERP plans by material number and plant, a forecast by product category helps only so much.
 
-A note on Agentforce: according to Trailhead, Agentforce Manufacturing automatically creates forecasts for new products at the start of each adjustment period. That sounds useful. I would only use it once history from the ERP arrives cleanly, because an automatic forecast on bad data is just wrong faster.
+A note on Agentforce: Trailhead says that "Agentforce Manufacturing" generates forecasts automatically for new products at the start of each adjustment period. Agentforce Manufacturing is the product name there. As I read the Trailhead unit, this is the forecast calculation at the start of the period, not an agent, and the Salesforce Help page for the Sales Planning agent documents no subagent for it ([what the agent really does](../agentforce-sales-planning-agreements-forecasts/)). That sounds useful. I would only rely on it once history from the ERP arrives cleanly, because an automatic forecast on bad data is just wrong faster.
 
 ## When does account forecasting pay off?
 
