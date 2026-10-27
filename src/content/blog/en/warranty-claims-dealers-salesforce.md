@@ -74,7 +74,7 @@ For that to work, the causal part has to be captured cleanly in the claim, with 
 
 ## Where does warranty end and Field Service begin?
 
-At the customer's door. Manufacturing Cloud settles whether damage is covered, who gets which amount and who pays in the end. Who drives to the customer when, with which spare part, is a question for Field Service. The same goes for maintenance contracts and committed response times, which run through service contracts and entitlements in Salesforce.
+At the customer's door. Manufacturing Cloud settles whether damage is covered, who gets which amount and who pays in the end. Who drives to the customer when, with which spare part, is a question for Field Service. The same goes for maintenance contracts and committed response times, which run through service contracts and entitlements in Salesforce. How that works is covered in [part 5 of the Field Service series](../salesforce-field-service-maintenance-contracts/).
 
 Both topics meet at the asset. The same asset carries the warranty, the maintenance history and the work orders. If you introduce both, design the asset model once, not per project. Whether Field Service pays off is covered in the [Field Service series](../salesforce-field-service-worth-it/).
 
