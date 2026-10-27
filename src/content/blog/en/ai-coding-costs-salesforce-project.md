@@ -31,7 +31,7 @@ AI coding costs in a Salesforce project are lower than most budget discussions a
 
 ## What does AI coding cost per developer and month?
 
-Almost every coding tool now sells a seat with a budget and bills usage above it per token. List prices on 27 October 2026:
+Most coding tools now sell a seat with a budget and bill usage above it per token. List prices on 27 October 2026:
 
 - **Claude Code at API rates.** Anthropic [reports](https://code.claude.com/docs/en/costs) about $13 per developer per active day and $150 to $250 per month across enterprise deployments, with 90 percent of users below $30 per active day.
 - **Claude Team and Enterprise.** Team Standard costs $25 per seat and month ($20 annually), Premium $125 ($100 annually), Enterprise $20 per seat plus usage at API rates, according to [Anthropic's pricing page](https://claude.com/pricing). Seat usage draws from an allowance that resets in a five-hour and a weekly window. Its size in tokens is not published.
@@ -88,7 +88,7 @@ The answer follows the commercial model. In time and materials the client pays f
 
 - **The client provides the accounts.** Partner developers work with seats in the client's Claude, ChatGPT or GitHub organisation, or a Vibes licence in the client's org. The client sets limits, sees spend per person and removes access when the partner leaves. This is the logic of [client-owned DevOps tools](../why-clients-should-own-their-devops-tools/).
 - **The partner brings its own tools.** The cost sits in the rate, and so does the consumption risk. But your source code then runs through a contract you have never read, so the contract must name the allowed tools, models and data rules, as in [contract rules for partners coding with AI](../partners-using-ai-coding-contract-rules/).
-- **Pass-through at cost.** The partner invoices tokens monthly. I would accept this only with a cap per developer, a usage report per person and no mark-up. Without a cap, nobody has a reason to pick Sonnet over Opus.
+- **Pass-through at cost.** The partner invoices tokens monthly. I would accept this only with a cap per developer, a usage report per person and no mark-up, or nobody has a reason to pick Sonnet over Opus.
 
 In time and materials I prefer the first setup: for $650 to $1,500 a month, the client controls data, limits and offboarding. In a German company the works council has a say, see [AI coding tools, works council and GDPR](../ai-coding-tools-works-council-gdpr/). Whether to buy seats at all is part of my [make-or-buy and licence planning](../../services/make-or-buy-licences/).
 
@@ -99,6 +99,6 @@ In time and materials I prefer the first setup: for $650 to $1,500 a month, the 
 3. **Default to Sonnet.** Anthropic recommends Sonnet for most coding tasks and Opus for complex architectural decisions.
 4. **Keep the rules file short.** Anthropic advises keeping CLAUDE.md under 200 lines, see [the AI rules file for your repository](../ai-rules-file-salesforce-repository/).
 5. **Pilot with two developers for two weeks** and read the real spend.
-6. **Budget the review.** Generated Apex still needs a human reviewer, and that time costs more than the tokens, see [reviewing AI-generated Salesforce code](../reviewing-ai-generated-salesforce-code/).
+6. **Budget the review.** A human reviewer for generated Apex costs more than the tokens, see [reviewing AI-generated Salesforce code](../reviewing-ai-generated-salesforce-code/).
 
 AI coding costs about one percent of a Salesforce partner team in the scenario, so settle accounts and limits before you negotiate the price. If you want a second opinion on your setup or your partner's offer, [send me a message](#contact).
