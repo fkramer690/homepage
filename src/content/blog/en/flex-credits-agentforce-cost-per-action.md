@@ -31,7 +31,7 @@ Agentforce cost per action is easy to state and easy to underestimate. A standar
 
 ## How do Flex Credits work?
 
-Flex Credits are the currency in which Salesforce bills Agentforce consumption. The [Agentforce pricing page](https://www.salesforce.com/agentforce/pricing/) lists them at $500 or €500 per 100,000 credits. Every billable event draws a fixed number of credits from the [Flex Credits rate card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf), updated as of 31 August 2026. An action is "a specific function that an AI agent executes on the platform", for example reading an order from SAP or looking up a spare part.
+Flex Credits are the currency in which Salesforce bills Agentforce consumption. The [Agentforce pricing page](https://www.salesforce.com/agentforce/pricing/) lists them at $500 or €500 per 100,000 credits. Every billable event draws a fixed number of credits from the [Flex Credits rate card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf), updated as of 31 August 2026. An action is "a specific function that an AI agent executes on the platform", for example reading an order from SAP. Whether an agent pays off at all is covered in [Agentforce for manufacturers](../agentforce-yes-or-no-manufacturers/).
 
 Three details matter for planning:
 
@@ -39,7 +39,7 @@ Three details matter for planning:
 - **Deterministic steps are billed too.** According to the [help article on billable usage types](https://help.salesforce.com/s/articleView?language=en_US&id=ai.usage_flex_credits.htm&type=5), actions are billed when they run, also when they run deterministically. Moving a warranty rule into [Agent Script](../agent-script-deterministic-rules/) makes the agent more reliable, not cheaper.
 - **One pricing model per org.** Flex Credits and the $2 per conversation model are not supported in the same org.
 
-There are three buying models: Pre-Purchase pays the full term upfront, Pre-Commit bills a baseline monthly in arrears with a true-up at term end, PayGo bills what you use. Usage above the entitlement is billed at the contracted rate with no overage penalty. The [Flex Agreement announced in May 2025](https://www.salesforce.com/news/press-releases/2025/05/15/agentforce-flexible-pricing-news/) also allows converting user licences into Flex Credits and back.
+There are three buying models: Pre-Purchase pays the full term upfront, Pre-Commit bills a baseline monthly in arrears with a true-up at term end, PayGo bills what you use. Overage is billed at the contracted rate without a penalty. The [Flex Agreement announced in May 2025](https://www.salesforce.com/news/press-releases/2025/05/15/agentforce-flexible-pricing-news/) also allows converting user licences into Flex Credits and back.
 
 ## What do prompts cost, and why does the model matter?
 
@@ -86,8 +86,6 @@ Assume a machine builder with SAP, Service Cloud, a dealer portal and about 2,00
 | **Total** | | **218,000, about $1,090** |
 
 On top come set-up and tests. Processing the 2,000 MB once costs 300,000 credits, or $1,500. Ten test runs with 200 conversations each cost 112,000 credits: 9,600 for actions at 16 and 1,600 for prompts per run. A 200 MB sample of the catalogues in the sandbox costs 24,000 credits; the full 2,000 MB there would cost 240,000. Twelve months at full volume plus set-up and tests come to about 3.05 million credits.
-
-The scenario shows three things:
 
 - **Text actions are only 55 percent of the monthly credits.** Multiplying conversations by actions misses almost half.
 - **The model is a price lever.** On an Advanced model the same summaries would cost 64,000 instead of 16,000 credits a month.
