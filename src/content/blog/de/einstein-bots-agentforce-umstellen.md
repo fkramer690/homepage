@@ -73,7 +73,7 @@ Nehmen wir einen Maschinenbauer mit 300 Händlern und Servicepartnern auf einem 
 
 **Variante 2, hybrid.** Der Bot behält die ersten vier Pfade, also 2.600 Gespräche. Die 1.400 Freitextgespräche gehen an den Agenten. Freitext braucht meist mehr Schritte, nehmen wir vier Aktionen an: 112.000 Credits, 560 € im Monat, rund 1,34 Millionen im Jahr. Ich nehme an, dass die Bot-Pfade im bestehenden Lizenzkontingent bleiben. Klären Sie das mit Ihrem Account Executive, denn ein Wechsel auf die neuen Editionen kann daran etwas ändern.
 
-Die Kosten sind das kleinere Argument für Variante 2: Im Freitext scheitert der Bot heute, die Menüpfade funktionieren bereits. Ein Beitrag im Salesforce Developers Blog vom Dezember 2025, geschrieben von zwei Salesforce-Mitarbeitenden, beschreibt dieses Muster mit Einstein Enhanced Bots: Der Bot "triages transactions (Log/Status) and routes complex knowledge to an Agentforce Service agent", über ein Feld auf der Messaging Session, einen ausgehenden Omni-Channel-Flow und eine Ausweich-Queue. Der Beitrag behandelt nur die Übergabe vom Bot an den Agenten, nicht den Rückweg.
+Die Kosten sind das kleinere Argument für Variante 2: Im Freitext scheitert der Bot heute, die Menüpfade funktionieren bereits. Ein [Beitrag im Salesforce Developers Blog vom Dezember 2025](https://developer.salesforce.com/blogs/2025/12/the-seamless-handoff-integrating-einstein-enhanced-bots-with-agentforce-agents), geschrieben von zwei Salesforce-Mitarbeitenden, beschreibt dieses Muster mit Einstein Enhanced Bots: Der Bot "triages transactions (Log/Status) and routes complex knowledge to an Agentforce Service agent", über ein Feld auf der Messaging Session, einen ausgehenden Omni-Channel-Flow und eine Ausweich-Queue. Der Beitrag behandelt nur die Übergabe vom Bot an den Agenten, nicht den Rückweg.
 
 ## Welche Pfade sollten im Menü bleiben?
 
@@ -81,7 +81,7 @@ Meine Kriterien, in dieser Reihenfolge:
 
 - **Identifikation und Prüfung.** Kundennummer, Händler-ID und Seriennummer entscheiden, was das Gespräch sehen darf. Das sollte nicht davon abhängen, wie ein Modell einen Satz liest, und Freitextfelder sind der Einstieg für [Prompt Injection im Händlerportal](../prompt-injection-haendlerportal-agentforce/).
 - **Erfassung mit rechtlichem Gewicht.** Garantieregistrierung, Inbetriebnahmedatum, Ansprechpartner für Sicherheitshinweise. Ein Menü oder Formular erfasst genau die Pflichtfelder.
-- **Sicherheitsrelevante Meldungen.** Ein Ausfall mit Gefahr für Menschen geht direkt in eine Queue mit Seriennummer und Fotos, ohne Zusammenfassung dazwischen.
+- **Sicherheitsrelevante Meldungen.** Ein Ausfall mit Gefahr für Menschen geht direkt in eine Queue mit Seriennummer und Fotos, ohne Zusammenfassung dazwischen. Für den Telefonkanal behandle ich dieselbe Frage in [Störungshotline mit Agentforce Voice](../stoerungshotline-agentforce-voice-deutsch/).
 - **Einzelabfragen mit einem Schlüssel.** Auftragsstatus per Auftragsnummer ist ein SAP-Aufruf. Ein Agent kann das auch, wie in [Agentforce und SAP-Auftragsstatus](../agentforce-sap-auftragsstatus/) beschrieben, verbraucht aber zwei oder mehr Aktionen für eine Antwort, die das Menü mit zwei Klicks liefert.
 - **Zusagen mit Haftung**, etwa bestätigte Liefertermine.
 

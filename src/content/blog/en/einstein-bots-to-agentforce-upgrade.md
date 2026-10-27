@@ -73,7 +73,7 @@ Assume a machine builder with 300 dealers and service partners on an Experience 
 
 **Option 2, hybrid.** The bot keeps the first four paths, 2,600 conversations. The 1,400 free-text conversations go to the agent. Free text tends to need more steps, so assume four actions: 112,000 credits, $560 a month, about 1.34 million a year. I assume the bot paths stay inside the existing licence allowance; confirm that with your account executive, because a move to the new editions may change it.
 
-Cost is the smaller argument for option 2: the free-text bucket is where the bot fails today, while the menu paths already work. A December 2025 post on the Salesforce Developers blog, written by two Salesforce employees, describes this pattern with Einstein Enhanced Bots: the bot "triages transactions (Log/Status) and routes complex knowledge to an Agentforce Service agent", using a field on the Messaging Session, an outbound Omni-Channel flow and a fallback queue. The post covers only the handoff from bot to agent, not the way back.
+Cost is the smaller argument for option 2: the free-text bucket is where the bot fails today, while the menu paths already work. A [December 2025 post on the Salesforce Developers blog](https://developer.salesforce.com/blogs/2025/12/the-seamless-handoff-integrating-einstein-enhanced-bots-with-agentforce-agents), written by two Salesforce employees, describes this pattern with Einstein Enhanced Bots: the bot "triages transactions (Log/Status) and routes complex knowledge to an Agentforce Service agent", using a field on the Messaging Session, an outbound Omni-Channel flow and a fallback queue. The post covers only the handoff from bot to agent, not the way back.
 
 ## Which flows should stay menu-driven?
 
@@ -81,7 +81,7 @@ My criteria, in this order:
 
 - **Identification and verification.** Customer number, dealer ID and serial number decide what the conversation may see. That should not depend on how a model reads a sentence, and free-text entry points are where [prompt injection in dealer portals](../prompt-injection-dealer-portals-agentforce/) starts.
 - **Data capture with legal weight.** Warranty registration, commissioning date, the contact for safety notices. A menu or form captures exactly the mandatory fields.
-- **Safety-relevant reports.** A breakdown with risk to people goes straight to a human queue with serial number and photos, without a summary in between.
+- **Safety-relevant reports.** A breakdown with risk to people goes straight to a human queue with serial number and photos, without a summary in between. For the phone channel I cover the same question in [the breakdown hotline article](../breakdown-hotline-agentforce-voice/).
 - **Single lookups with one key.** Order status by order number is one SAP call. An agent can answer it too, as described in [the SAP order status article](../agentforce-sap-order-status-mulesoft/), but it spends two or more actions on an answer the menu gives in two clicks.
 - **Promises with liability**, such as confirmed delivery dates.
 
