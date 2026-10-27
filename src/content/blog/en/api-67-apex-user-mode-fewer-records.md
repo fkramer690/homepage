@@ -6,6 +6,7 @@ lang: en
 slug: api-67-apex-user-mode-fewer-records
 translationKey: api-67-user-mode-apex
 topic: release
+category: devops
 tags: [apex, api 67.0, user mode, ai coding, release management, manufacturing]
 takeaways:
   - "From API version 67.0, Apex database operations run in user mode and classes without a sharing declaration run with sharing; code saved at 66.0 or earlier keeps the old behaviour until its version is raised."

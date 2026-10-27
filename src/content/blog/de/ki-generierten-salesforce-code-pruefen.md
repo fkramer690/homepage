@@ -6,6 +6,7 @@ lang: de
 slug: ki-generierten-salesforce-code-pruefen
 translationKey: reviewing-ai-generated-salesforce-code
 topic: code-review
+category: devops
 tags: [Code-Review, KI-Coding, Apex, Partnersteuerung, DevOps, Maschinenbau]
 takeaways:
   - "Lassen Sie als Kunde die Pipeline SOQL in Schleifen, fehlende Sharing-Deklarationen und fehlende CRUD-Prüfungen finden, und setzen Sie menschliche Reviewzeit für Tests, Feldwahl, Datenzugriff und Geschäftsregeln ein."

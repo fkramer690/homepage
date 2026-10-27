@@ -6,6 +6,7 @@ lang: en
 slug: flex-credits-agentforce-cost-per-action
 translationKey: flex-credits-agentforce-costs
 topic: ai
+category: ai
 tags: [agentforce, flex credits, cost estimation, licensing, data 360, manufacturing]
 takeaways:
   - "An Agentforce estimate needs several meters: actions at 20 Flex Credits, voice actions at 30, prompts priced by model tier, Data 360 document processing and test runs in the sandbox."

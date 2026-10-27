@@ -6,6 +6,7 @@ lang: de
 slug: agent-script-regeln-statt-llm
 translationKey: agent-script-deterministic-rules
 topic: ai
+category: ai
 tags: [Agent Script, Agentforce, KI-Agenten, Maschinenbau, Garantie, Architektur]
 takeaways:
   - "Kreditlimitprüfung, Garantieberechtigung und Preisfreigabe gehören in Agent-Script-Logik oder in den Flow-, Apex- oder ERP-Aufruf dahinter; das LLM versteht die Anfrage und erklärt das Ergebnis."

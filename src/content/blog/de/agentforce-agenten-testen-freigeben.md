@@ -6,6 +6,7 @@ lang: de
 slug: agentforce-agenten-testen-freigeben
 translationKey: testing-agentforce-agents
 topic: ai
+category: ai
 tags: [Agentforce, Testing Center, KI-Agenten, Quality Gates, DevOps, Maschinenbau]
 takeaways:
   - "Ein Agentforce-Agent ist produktionsreif, wenn er einen vereinbarten Testsatz mit einer vereinbarten Passrate über mehrere Läufe besteht; Salesforce liefert die Werkzeuge, aber keine Schwelle."

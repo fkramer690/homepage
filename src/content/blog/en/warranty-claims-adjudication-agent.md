@@ -6,6 +6,7 @@ lang: en
 slug: warranty-claims-adjudication-agent
 translationKey: warranty-adjudication-agent-winter-27
 topic: ai
+category: ai
 tags: [agentforce, warranty, manufacturing cloud, ai agents, dealers, after-sales]
 takeaways:
   - "Salesforce describes the Winter '27 Warranty Claims Adjudication Agent as validating coverage and flagging potential fraud; Winter '27 became generally available on 12 October 2026."

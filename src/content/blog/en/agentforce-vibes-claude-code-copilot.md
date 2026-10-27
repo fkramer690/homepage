@@ -6,6 +6,7 @@ lang: en
 slug: agentforce-vibes-claude-code-copilot
 translationKey: vibes-claude-code-copilot-comparison
 topic: devops
+category: devops
 tags: [ai coding, agentforce vibes, claude code, github copilot, data residency, partner governance]
 takeaways:
   - "Which coding agent a Salesforce team uses is mostly decided by four client-side facts: existing contracts, EU data residency, cost model and governance, and only then by the model."

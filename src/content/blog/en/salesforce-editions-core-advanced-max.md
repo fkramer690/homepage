@@ -6,6 +6,7 @@ lang: en
 slug: salesforce-editions-core-advanced-max
 translationKey: salesforce-editions-core-advanced-max
 topic: governance
+category: architecture
 tags: [licences, editions, flex credits, agentforce, make-or-buy, manufacturing]
 takeaways:
   - "Since 3 September 2026 Salesforce sells Sales and Service Cloud as Core, Advanced and Max at $195, $395 and $550 per user and month; pricing on legacy editions stays unchanged for existing customers."

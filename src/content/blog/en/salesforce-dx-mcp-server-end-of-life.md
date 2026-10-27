@@ -6,6 +6,7 @@ lang: en
 slug: salesforce-dx-mcp-server-end-of-life
 translationKey: salesforce-dx-mcp-server-end-of-life
 topic: devops
+category: devops
 tags: [mcp, salesforce dx, claude code, agentforce vibes, partner governance, devops]
 takeaways:
   - "The official README of the local Salesforce DX MCP Server (@salesforce/mcp) states that it reaches end of life on 2 November 2026; on 27 October npm still served 0.30.15 without a deprecation flag."

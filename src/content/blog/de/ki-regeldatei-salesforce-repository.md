@@ -6,6 +6,7 @@ lang: de
 slug: ki-regeldatei-salesforce-repository
 translationKey: ai-rules-file-salesforce-repo
 topic: devops
+category: devops
 tags: [KI-Coding, DevOps, Partnersteuerung, Claude Code, Agentforce Vibes, Maschinenbau]
 takeaways:
   - "Ihr Salesforce-Repository braucht eine KI-Regeldatei, sobald jemand mit einem Agenten programmiert: CLAUDE.md für Claude Code, AGENTS.md für Codex und Copilot, .vibes/rules/ für Agentforce Vibes."

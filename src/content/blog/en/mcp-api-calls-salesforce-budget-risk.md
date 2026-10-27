@@ -6,6 +6,7 @@ lang: en
 slug: mcp-api-calls-salesforce-budget-risk
 translationKey: headless-platform-interactions-budget
 topic: ai
+category: ai
 tags: [mcp, flex credits, headless platform interactions, claude, budget, manufacturing]
 takeaways:
   - "Salesforce will bill every successful MCP or agentic API call by a registered external agent as a Headless Platform Interaction in Flex Credits; the rate card of 31 August 2026 lists the rate as TBA."

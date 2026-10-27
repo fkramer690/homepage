@@ -6,6 +6,7 @@ lang: en
 slug: fixed-price-vs-time-and-materials-ai
 translationKey: fixed-price-ai-salesforce-partners
 topic: governance
+category: architecture
 tags: [fixed price, time and materials, partner governance, ai coding, partner program, manufacturing]
 takeaways:
   - "AI pushes Salesforce work packages with testable acceptance criteria towards fixed price; discovery, undocumented ERP interfaces and support stay on time and materials."

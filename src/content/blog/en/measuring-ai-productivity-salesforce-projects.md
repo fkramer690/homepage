@@ -6,6 +6,7 @@ lang: en
 slug: measuring-ai-productivity-salesforce-projects
 translationKey: measuring-ai-benefit-salesforce-projects
 topic: governance
+category: architecture
 tags: [ai coding, productivity, dora metrics, programme management, salesforce devops]
 takeaways:
   - "Measure AI productivity in a Salesforce programme with cycle time per story, defect escape rate, rework and change fail rate against your own baseline, never with developer self-reports."

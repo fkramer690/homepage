@@ -6,6 +6,7 @@ lang: en
 slug: agentforce-sap-order-status-mulesoft
 translationKey: agentforce-sap-order-status
 topic: ai
+category: ai
 tags: [agentforce, sap, mulesoft, integration, manufacturing, dealer service]
 takeaways:
   - "An Agentforce agent reads order status from SAP S/4HANA through an API: a MuleSoft API enabled in Topic Center, published to Exchange and synced into API Catalog becomes an agent action."

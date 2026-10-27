@@ -6,6 +6,7 @@ lang: en
 slug: agent-script-deterministic-rules
 translationKey: agent-script-deterministic-rules
 topic: ai
+category: ai
 tags: [agent script, agentforce, ai agents, manufacturing, warranty, architecture]
 takeaways:
   - "Credit limit checks, warranty eligibility and price approvals belong in Agent Script logic or in the Flow, Apex or ERP call behind it; the LLM only understands the request and explains the result."

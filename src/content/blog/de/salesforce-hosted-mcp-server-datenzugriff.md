@@ -6,6 +6,7 @@ lang: de
 slug: salesforce-hosted-mcp-server-datenzugriff
 translationKey: hosted-mcp-servers-data-access
 topic: security
+category: ai
 tags: [MCP, Hosted MCP, Datenschutz, Einstein Trust Layer, Claude, Maschinenbau]
 takeaways:
   - "Jeder Aufruf über Hosted MCP läuft als der Benutzer, der die Verbindung autorisiert hat, mit seinen Objektrechten, Feldrechten und Freigaben; Service Accounts und Machine-to-Machine-Flows gibt es nicht."

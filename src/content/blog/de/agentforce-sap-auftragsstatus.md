@@ -6,6 +6,7 @@ lang: de
 slug: agentforce-sap-auftragsstatus
 translationKey: agentforce-sap-order-status
 topic: ai
+category: ai
 tags: [Agentforce, SAP, MuleSoft, Schnittstellen, Maschinenbau, Händlerservice]
 takeaways:
   - "Ein Agentforce-Agent liest den Auftragsstatus aus SAP S/4HANA über eine API: Eine in Topic Center freigeschaltete MuleSoft-API, in Exchange veröffentlicht und in den API Catalog synchronisiert, wird zur Agenten-Aktion."

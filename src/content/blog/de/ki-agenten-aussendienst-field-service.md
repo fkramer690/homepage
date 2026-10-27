@@ -6,6 +6,7 @@ lang: de
 slug: ki-agenten-aussendienst-field-service
 translationKey: field-service-ai-agents-today
 topic: field-service
+category: field-service
 tags: [Field Service, Außendienst, Agentforce, KI-Agenten, Maschinenbau, Wartung]
 takeaways:
   - "Allgemein verfügbar sind in Salesforce Field Service heute KI-Agenten für Terminbuchung, proaktive Wartungsplanung, das Füllen von Planungslücken, Pre-Work Briefs, Einsatzberichte und Fehlersuche vor Ort."

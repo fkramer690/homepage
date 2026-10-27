@@ -6,6 +6,7 @@ lang: de
 slug: garantie-pruefagent-winter-27
 translationKey: warranty-adjudication-agent-winter-27
 topic: ai
+category: ai
 tags: [Agentforce, Garantie, Manufacturing Cloud, KI-Agenten, Händler, After-Sales]
 takeaways:
   - "Laut Salesforce prüft der Warranty Claims Adjudication Agent aus Winter '27 die Deckung von Garantieansprüchen und markiert mögliche Betrugsfälle; Winter '27 ist seit dem 12. Oktober 2026 allgemein verfügbar."

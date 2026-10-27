@@ -6,6 +6,7 @@ lang: de
 slug: ki-kleinere-salesforce-teams-delivery
 translationKey: smaller-teams-ai-native-delivery
 topic: governance
+category: architecture
 tags: [KI-native Delivery, Programmsteuerung, Teamaufstellung, KI-Coding, Partnersteuerung, Maschinenbau]
 takeaways:
   - "KI-native Delivery heißt: Coding-Agenten entwerfen, bauen und testen, Menschen geben die Absicht vor, prüfen das Ergebnis und verantworten es; Teams schrumpfen auf Pods aus Architekt, Builder-Reviewer und Fachexperte."

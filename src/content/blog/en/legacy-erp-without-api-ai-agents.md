@@ -6,6 +6,7 @@ lang: en
 slug: legacy-erp-without-api-ai-agents
 translationKey: legacy-erp-without-api-agents
 topic: data
+category: ai
 tags: [agentforce, erp, legacy systems, rpa, mulesoft, manufacturing]
 takeaways:
   - "An agent can work with an ERP that has no API through three detours: a read-only database replica behind a small API, document extraction with RPA, or the Systems Integration Agent."

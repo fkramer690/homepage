@@ -6,6 +6,7 @@ lang: en
 slug: data-360-costs-for-ai-agents
 translationKey: data-360-costs-for-agents
 topic: data
+category: ai
 tags: [data 360, agentforce, flex credits, grounding, spare parts, manufacturing]
 takeaways:
   - "Data 360 bills document grounding in three places: processing per MB when a document is indexed, queries per million rows when the agent searches, and storage for files, chunks and index objects."

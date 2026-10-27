@@ -6,6 +6,7 @@ lang: de
 slug: agentforce-vibes-claude-code-copilot-vergleich
 translationKey: vibes-claude-code-copilot-comparison
 topic: devops
+category: devops
 tags: [KI-Coding, Agentforce Vibes, Claude Code, GitHub Copilot, Datenresidenz, Partnersteuerung]
 takeaways:
   - "Welchen Coding-Agenten ein Salesforce-Team nutzt, entscheiden vor allem vier Punkte auf Kundenseite: bestehende Verträge, EU-Datenresidenz, Kostenmodell und Governance, erst danach das Modell."

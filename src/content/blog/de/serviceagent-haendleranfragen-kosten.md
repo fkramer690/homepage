@@ -6,6 +6,7 @@ lang: de
 slug: serviceagent-haendleranfragen-kosten
 translationKey: dealer-service-agent-costs
 topic: ai
+category: ai
 tags: [Agentforce, Flex Credits, Händlerservice, Data 360, Maschinenbau, Business Case]
 takeaways:
   - "Im Szenario kosten 3.000 Händlergespräche im Monat mit je drei Aktionen und zwei Prompts 204.000 Flex Credits, in Produktion also rund 1.020 $ im Monat."

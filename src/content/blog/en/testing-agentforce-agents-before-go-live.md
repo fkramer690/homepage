@@ -6,6 +6,7 @@ lang: en
 slug: testing-agentforce-agents-before-go-live
 translationKey: testing-agentforce-agents
 topic: ai
+category: ai
 tags: [agentforce, testing center, ai agents, quality gates, devops, manufacturing]
 takeaways:
   - "An Agentforce agent is ready for production when it passes an agreed test set at an agreed pass rate over several runs; Salesforce provides the tools but publishes no threshold."

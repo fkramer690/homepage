@@ -6,6 +6,7 @@ lang: en
 slug: mcp-salesforce-explained-for-it-leads
 translationKey: mcp-explained-salesforce-it-leads
 topic: data
+category: ai
 tags: [mcp, salesforce integration, claude, security, it governance, manufacturing]
 takeaways:
   - "MCP (Model Context Protocol) is an open protocol through which AI applications such as Claude, ChatGPT, Cursor or Agentforce call tools in other systems, Salesforce included."
