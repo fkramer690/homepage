@@ -245,6 +245,8 @@ export const en = {
     published: 'Published',
     updated: 'Updated',
     back: 'All articles',
+    filterLabel: 'Filter by topic',
+    filterAll: 'All',
     ctaTitle: 'Facing a similar decision?',
     ctaText: 'Let’s talk for 30 minutes about your project. No sales pitch, just an architect’s view.',
     takeaways: 'Key takeaways',

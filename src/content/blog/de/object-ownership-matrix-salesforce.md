@@ -6,6 +6,7 @@ lang: de
 slug: object-ownership-matrix-salesforce
 translationKey: object-ownership-matrix
 topic: governance
+category: architecture
 tags: [Partnersteuerung, Object Ownership Matrix, Governance, Pull Request Review, Automatisierung]
 takeaways:
   - "Eine Object Ownership Matrix ist eine Tabelle, die jedem Salesforce-Objekt und seinen Metadaten genau einen verantwortlichen Stream zuordnet."

@@ -6,6 +6,7 @@ lang: en
 slug: salesforce-field-service-worth-it
 translationKey: field-service-worth-it
 topic: field-service
+category: field-service
 series: { id: field-service, part: 1 }
 tags: [field service, licences, make-or-buy, manufacturing, service]
 takeaways:

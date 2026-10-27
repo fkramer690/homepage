@@ -6,6 +6,7 @@ lang: en
 slug: manufacturing-cloud-global-rollout
 translationKey: manufacturing-cloud-global-rollout
 topic: governance
+category: manufacturing-cloud
 tags: [Manufacturing Cloud, Rollout, Harmonisation, Change Management, Manufacturing]
 series: { id: manufacturing-cloud, part: 8 }
 takeaways:

@@ -6,6 +6,7 @@ lang: en
 slug: salesforce-password-integrations-end-2027
 translationKey: salesforce-password-integrations-2027
 topic: security
+category: devops
 tags: [integration, security, oauth, release management, partner governance]
 takeaways:
   - "Salesforce retires the OAuth 2.0 username-password flow for connected apps on 20 February 2027; integrations that log in with username, password and security token will then fail."

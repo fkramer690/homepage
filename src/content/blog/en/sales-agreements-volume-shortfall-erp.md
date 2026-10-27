@@ -6,6 +6,7 @@ lang: en
 slug: sales-agreements-volume-shortfall-erp
 translationKey: manufacturing-cloud-sales-agreements-actuals
 topic: data
+category: manufacturing-cloud
 tags: [Manufacturing Cloud, Sales Agreements, ERP, Integration, Manufacturing]
 series: { id: manufacturing-cloud, part: 3 }
 takeaways:

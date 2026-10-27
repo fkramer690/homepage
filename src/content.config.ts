@@ -3,6 +3,7 @@ import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
 import { topicIds } from './lib/topics';
 import { seriesIds } from './lib/series';
+import { categoryIds } from './lib/categories';
 
 // Blog articles live as Markdown in src/content/blog/<lang>/<slug>.md.
 // The EN and DE version of an article share the same translationKey.
@@ -21,6 +22,8 @@ const blog = defineCollection({
     translationKey: z.string(),
     // Picks the small topic image on the blog overview (src/lib/topics.ts).
     topic: z.enum(topicIds),
+    // Filter category on the blog overview (src/lib/categories.ts).
+    category: z.enum(categoryIds),
     tags: z.array(z.string()).min(1).max(6),
     // Optional: the article is part `part` of a series defined in src/lib/series.ts.
     series: z.object({ id: z.enum(seriesIds), part: z.number().int().min(1) }).optional(),

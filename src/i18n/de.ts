@@ -247,6 +247,8 @@ export const de: Dict = {
     published: 'Veröffentlicht',
     updated: 'Aktualisiert',
     back: 'Alle Artikel',
+    filterLabel: 'Nach Thema filtern',
+    filterAll: 'Alle',
     ctaTitle: 'Stehen Sie vor einer ähnlichen Entscheidung?',
     ctaText: 'Lassen Sie uns 30 Minuten über Ihr Projekt sprechen. Kein Verkaufsgespräch, sondern der Blick eines Architekten.',
     takeaways: 'Das Wichtigste in Kürze',
