@@ -1,0 +1,60 @@
+/* MOCKUP ONLY */
+.sketch { display: block; width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--line); }
+.sketch-card { margin: -4px 0 16px; }
+.m-role-sketch { margin: 28px 0 32px; }
+.m-role-sketch .sketch-narrow { display: none; max-width: 420px; margin: 0 auto; }
+@media (max-width: 760px) {
+  .m-role-sketch .sketch-wide, .m-timeline .sketch-wide { display: none; }
+  .m-role-sketch .sketch-narrow, .m-timeline .sketch-narrow { display: block; }
+}
+.m-timeline { margin-top: 36px; }
+.m-timeline .sketch-narrow { display: none; max-width: 420px; }
+.step-icon { width: 44px; height: 44px; display: block; margin-bottom: 10px; }
+.m-hide { display: none; }
+
+/* B: compare */
+.m-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 28px 0 8px; }
+.m-compare-col { border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 24px; background: var(--white); }
+.m-compare-good { border-color: var(--cyan); box-shadow: inset 0 3px 0 var(--cyan); }
+.m-compare-head { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-2); margin: 0 0 12px; }
+.m-compare-good .m-compare-head { color: var(--cyan-dark); }
+.m-compare ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.m-compare li { position: relative; padding-left: 28px; font-weight: 500; }
+.m-compare li::before { content: '✕'; position: absolute; left: 0; top: 0; color: #8a8a8e; font-size: 0.9rem; }
+.m-compare-good li::before { content: '✓'; color: var(--cyan); font-weight: 700; }
+@media (max-width: 760px) { .m-compare { grid-template-columns: 1fr; } }
+.m-ref-fig { display: flex; align-items: baseline; gap: 10px; margin: 0 0 12px; padding-bottom: 12px; border-bottom: 1px dashed var(--line); }
+.m-ref-fig span:first-child { font-size: 2.1rem; font-weight: 600; color: var(--cyan-dark); line-height: 1; }
+.m-ref-fig span:last-child { font-size: 0.75rem; color: var(--text-2); text-transform: uppercase; letter-spacing: 0.06em; }
+
+/* C */
+.m-hero-split { display: grid; grid-template-columns: 1fr 300px; gap: 48px; align-items: center; }
+.m-hero-photo { margin: 0; }
+.m-hero-photo img { display: block; width: 100%; height: auto; border-radius: 12px; border: 1px solid rgba(255,255,255,.15); }
+.m-hero-photo figcaption { margin-top: 10px; font-size: 0.75rem; color: #9a9aa0; }
+@media (max-width: 860px) {
+  .m-hero-split { grid-template-columns: 1fr; gap: 28px; }
+  .m-hero-photo { max-width: 200px; order: -1; }
+  .m-hero-photo figcaption { display: none; }
+}
+.m-trio { list-style: none; padding: 0; margin: 28px 0 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.m-trio li { border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 22px; display: flex; flex-direction: column; gap: 4px; background: var(--white); }
+.m-trio strong { font-size: 1.2rem; }
+.m-trio span:last-child { color: var(--text-2); }
+.m-trio-no { font-size: 0.75rem; color: var(--text-2); }
+.m-trio-hi { border-color: var(--cyan) !important; box-shadow: inset 0 3px 0 var(--cyan); }
+.m-trio-hi .m-trio-no { color: var(--cyan-dark); }
+@media (max-width: 760px) { .m-trio { grid-template-columns: 1fr; } }
+.m-stage { display: grid; grid-template-columns: 1fr 1fr; align-items: stretch; }
+.m-stage-img { width: 100%; height: 100%; max-height: 440px; object-fit: cover; display: block; }
+.m-stage-text { padding: clamp(28px, 5vw, 64px); display: flex; flex-direction: column; justify-content: center; }
+.m-stage-quote { margin: 0; border-left: 3px solid var(--cyan); padding-left: 1.2em; }
+.m-stage-quote p { margin: 0; font-size: clamp(1.4rem, 2.6vw, 2rem); font-weight: 600; line-height: 1.3; color: var(--white); }
+.m-stage-cap { color: #9a9aa0; font-size: 0.8rem; margin-top: 18px; }
+@media (max-width: 760px) { .m-stage { grid-template-columns: 1fr; } .m-stage-img { max-height: 300px; } }
+.m-lead { font-size: 1.2rem; font-weight: 500; max-width: 50ch; }
+.m-qcards { list-style: none; padding: 0; margin: 20px 0 28px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.m-qcards li { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 22px; }
+.m-qcards span { color: var(--cyan); font-size: 1.4rem; font-weight: 600; }
+.m-qcards p { margin: 8px 0 0; font-weight: 500; }
+@media (max-width: 760px) { .m-qcards { grid-template-columns: 1fr; } }
