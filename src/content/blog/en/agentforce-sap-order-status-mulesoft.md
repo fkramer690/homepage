@@ -41,7 +41,7 @@ For a machine builder the chain looks like this:
 4. **API Catalog** in Salesforce receives the API once an active API instance exists in API Manager. In Salesforce's [Agentforce workshop](https://developer.salesforce.com/workshops/agentforce-workshop/mulesoft/3-explore-api-catalog) you then activate the actions and grant them to users through a permission set.
 5. **The agent** gets the topic and its actions in Agent Builder.
 
-Two prerequisites tend to surprise teams: a tenant relationship between the Anypoint organisation and a Salesforce org with agent entitlements, and API Catalog enabled in that org. If MuleSoft and Salesforce contracts sit with different departments, sort this out before the first sprint.
+Two prerequisites are easy to miss: a tenant relationship between the Anypoint organisation and a Salesforce org with agent entitlements, and API Catalog enabled in that org. If MuleSoft and Salesforce contracts sit with different departments, sort this out before the first sprint.
 
 I have not found an official Salesforce reference architecture for Agentforce with S/4HANA, only this generic MuleSoft pattern. So your partner's design is the architecture, and someone on your side should review it.
 
@@ -79,7 +79,7 @@ Assume a machine builder with S/4HANA on-premise, 400 dealers in Europe, a deale
 
 Assume 2,000 order enquiries a month, each with up to three API calls: order status, delivery dates, availability of one replacement item. That is about 6,000 calls a month, roughly 300 per working day. SAP will not notice. A bug that makes the agent call the API in a loop will. MuleSoft's [Rate-Limiting SLA policy](https://docs.mulesoft.com/mule-gateway/policies-included-rate-limiting-sla) sets limits per client application through contracts in API Manager and answers with HTTP 429 once the quota is used up. So the agent gets its own client application with its own limit, assume 60 requests a minute, separate from the portal. A looping agent hits its own ceiling, and dealers in the portal keep working.
 
-Three findings typically show up in the first test week. Orders taken by phone carry no dealer purchase order number, so the agent must also search by SAP order number. Some dealers have several sold-to numbers for subsidiaries, so the account needs a mapping that someone maintains, the same problem as with [sales agreements and ERP actuals](../sales-agreements-volume-shortfall-erp/). And one plant does not maintain confirmed dates for spare parts, so for those items the agent can only say "not confirmed yet". That is a data problem, and no prompt fixes it.
+In the scenario, the first test week brings three findings. Orders taken by phone carry no dealer purchase order number, so the agent must also search by SAP order number. Some dealers have several sold-to numbers for subsidiaries, so the account needs a mapping that someone maintains, the same problem as with [sales agreements and ERP actuals](../sales-agreements-volume-shortfall-erp/). And one plant does not maintain confirmed dates for spare parts, so for those items the agent can only say "not confirmed yet". That is a data problem, and no prompt fixes it.
 
 What a conversation costs in Flex Credits is calculated in [the dealer service agent cost calculation](../dealer-service-agent-cost-calculation/).
 

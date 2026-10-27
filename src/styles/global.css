@@ -1068,9 +1068,6 @@ p.post-series-note { margin: 0.6em 0 0; font-size: 0.95rem; }
   .mc-figure { max-width: 520px; }
 }
 .proof-list.mc-facts { grid-template-columns: repeat(3, 1fr); }
-@media (max-width: 900px) {
-  .proof-list.mc-facts li:nth-child(3) { border-top: 1px dashed var(--line); }
-}
 .mc-deadlines { grid-template-columns: repeat(5, 1fr); }
 .mc-deadlines .card,
 .mc-deadlines .card-link a { padding: 22px 18px 18px; }
@@ -1096,7 +1093,7 @@ p.post-series-note { margin: 0.6em 0 0; font-size: 0.95rem; }
 .mc-cluster-list { margin: 0.4em 0 0; padding-left: 1.2em; }
 .mc-cluster-list li { margin-bottom: 0.35em; font-size: 0.97rem; }
 .mc-cluster-list li::marker { color: var(--cyan-dark); }
-.mc-author { padding-top: 0; }
+.mc-articles + .mc-author { padding-top: 0; }
 .mc-author .post-author { margin-top: 0; }
 .mc-chapter .eyebrow { color: var(--cyan-dark); }
 .mc-pager {

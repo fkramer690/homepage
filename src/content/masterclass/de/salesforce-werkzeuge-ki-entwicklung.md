@@ -10,7 +10,7 @@ summary: "Welche KI-Werkzeuge Salesforce selbst für Entwicklung und Administrat
 takeaways:
   - "Salesforce bietet einen eigenen Coding-Agenten, Agentforce Vibes, und dieselben Fähigkeiten als Skills, Claude-Code-Plugin und MCP-Server für fremde Agenten. Die Wahl des Agenten bleibt damit offen."
   - "Agentforce Vibes ist in der EU Operating Zone nicht verfügbar. Außerhalb der Developer Edition braucht es seit Juni 2026 Flex Credits oder eine Unmetered-Lizenz."
-  - "Die Unmetered-Lizenz begrenzt das Premium-Modell auf 2.500 Requests oder 36 Mio. Token pro Org und 30 Tage, nicht pro Nutzer. Ein Partnerteam mit sechs Entwicklern kann das in gut einer Woche aufbrauchen."
+  - "Die Unmetered-Lizenz begrenzt das Premium-Modell auf 2.500 Requests oder 36 Mio. Token pro Org und 30 Tage, nicht pro Nutzer. Sechs Entwickler mit je 25 Requests am Tag erreichen sie nach acht Arbeitstagen."
   - "Neue Agentforce-Agenten entstehen seit Juli 2026 nur noch mit Agent Script. Als AiAuthoringBundle lassen sie sich in Git versionieren, testen und über die Pipeline ausrollen."
   - "Code Analyzer und ApexGuru prüfen ohne Sprachmodell. Eigene Regeln für KI-generierten Code hat Salesforce nicht, deshalb gehören diese Prüfungen als Pflicht in die Pipeline."
 articles: [vibes-claude-code-copilot-comparison, testing-agentforce-agents, ai-rules-file-salesforce-repo, agent-script-deterministic-rules]
@@ -52,7 +52,7 @@ Ein Hinweis für Angebote von Partnern: „Einstein for Developers“ und „Age
 
 ## Agentforce Vibes: was es kann und was es kostet
 
-Vibes 2.0 läuft laut [GA-Ankündigung](https://developer.salesforce.com/developer-centers/agentforce-vibes/announcements/agentforce-vibes-4-1-0) auf Salesforces Coding Agent Platform, „powered by Claude and the Mastra agent orchestration engines“. Claude ist seit der [Claudeforce-Ankündigung](https://www.salesforce.com/ap/news/press-releases/2026/08/27/sg-salesforce-and-anthropic-announce-claudeforce-the-1-ai-meets-the-1-ai-crm/) vom August 2026 das Standardmodell. Die Funktionen, die für einen Auftraggeber zählen:
+Vibes 2.0 läuft laut [GA-Ankündigung](https://developer.salesforce.com/developer-centers/agentforce-vibes/announcements/agentforce-vibes-4-1-0) auf Salesforces Coding Agent Platform, „powered by Claude and the Mastra agent orchestration engines“. Laut [Claudeforce-Ankündigung](https://www.salesforce.com/ap/news/press-releases/2026/08/27/sg-salesforce-and-anthropic-announce-claudeforce-the-1-ai-meets-the-1-ai-crm/) vom August 2026 ist Claude das Standardmodell. Die Funktionen, die für einen Auftraggeber zählen:
 
 - **Plan Mode:** Der Agent zerlegt eine Aufgabe in einen Plan, bevor er Dateien ändert.
 - **Freigaben:** Der Standardmodus „Run safe defaults“ ändert Dateien im Workspace ohne Rückfrage. Pfade außerhalb, geschützte Dateien und Schreibzugriffe auf `.git/` brauchen eine Freigabe.
@@ -83,7 +83,7 @@ Für deutsche Hersteller wiegt ein Satz der FAQ am schwersten: „Agentforce Vib
 
 Die Skills-Bibliothek `forcedotcom/sf-skills` ist Open Source. Salesforce nennt im [Juni 2026](https://developer.salesforce.com/blogs/2026/06/build-production-ready-apps-in-claude-code-with-salesforce-skills) Beispiele wie `generating-apex`, `generating-apex-test`, `generating-lwc-components`, `debugging-apex-logs` und `generating-flow`. Installiert wird mit `npx skills add forcedotcom/sf-skills`. In Vibes ist die Bibliothek vorinstalliert, für OpenCode, Claude Code, Codex und Cursor nennt Salesforce im [August 2026](https://developer.salesforce.com/blogs/2026/08/headless-development-with-skills-and-a-claude-code-plugin) denselben Installationsweg.
 
-Das Claude-Code-Plugin aus derselben Ankündigung bündelt rund 40 dieser Skills, ohne Data 360, Commerce und Mobile. Dazu kommen drei MCP-Server (`salesforce-api-context`, `salesforce-metadata-experts`, `salesforce-lsp`), ein Entwicklungsagent, ein nur lesender Agent `architecture-review`, der ein Projekt gegen die Säulen des Well-Architected Framework bewertet, und Hooks. Ein Hook prüft die Syntax von Agent-Script-Dateien, ein anderer validiert Deployments. Ein Hook greift bei jeder Änderung, ein Satz im Prompt nur, wenn das Modell ihn beachtet. Deshalb halte ich die Hooks für den wertvollsten Teil.
+Das Claude-Code-Plugin aus derselben Ankündigung bündelt rund 40 dieser Skills, ohne Data 360, Commerce und Mobile. Dazu kommen drei MCP-Server (`salesforce-api-context`, `salesforce-metadata-experts`, `salesforce-lsp`), ein Entwicklungsagent, ein nur lesender Agent `architecture-review`, der ein Projekt gegen die Säulen des Well-Architected Framework bewertet, und Hooks. Ein Hook prüft die Syntax von Agent-Script-Dateien, ein anderer validiert Deployments. Ein Hook läuft automatisch, ein Satz im Prompt wirkt nur, wenn das Modell ihn beachtet. Deshalb halte ich die Hooks für den wertvollsten Teil.
 
 Salesforce weist selbst darauf hin, dass Plugins herstellerspezifisch sind, Skills und MCP dagegen Standards. Skills sind im Kern Anweisungen und Skripte, die das Modell bei Bedarf lädt. Sie machen einen Agenten besser in Salesforce, erzwingen aber nichts. Durchgesetzt wird über Hooks, Code Analyzer und die Pipeline.
 

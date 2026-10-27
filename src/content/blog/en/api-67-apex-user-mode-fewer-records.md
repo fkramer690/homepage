@@ -45,7 +45,7 @@ Triggers are the deliberate exception, and Salesforce's sources describe it in d
 
 Two different mechanisms are at work, and they show up very differently.
 
-**Sharing filters silently.** Once a class runs with sharing, a query returns only the records the running user can see through org-wide defaults, roles, sharing rules and teams. There is no exception and no log entry. A method that counted all open service cases for a machine now counts the ones in the rep's territory, and the code carries on with the smaller number.
+**Sharing filters silently.** Once a class runs with sharing, a query returns only the records the running user can see through org-wide defaults, roles, sharing rules and teams. No exception, no log entry. A method that counted all open service cases for a machine now counts those in the rep's territory and carries on with the smaller number.
 
 **Permissions fail loudly.** In user mode, a query that selects a field the user cannot read fails. The [access mode documentation](https://developer.salesforce.com/docs/atlas.en-us.264.0.apexcode.meta/apexref/apex_classes_enforce_usermode.htm) describes `getInaccessibleFields()` on the `QueryException`, which lists every field concerned, and `getDmlFieldNames()` for DML. That hurts in UAT, but at least someone notices.
 
@@ -59,11 +59,9 @@ For a manufacturer, who runs the code matters more than the code itself:
 
 ## Why is AI-generated Apex especially exposed?
 
-Four reasons, each tied to the way coding agents work today.
+**The models learned the old patterns.** Most public Apex predates Summer '26 and uses `WITH SECURITY_ENFORCED` or quietly relies on system mode. The first fails to compile at 67.0, which is the good case. The second compiles and fails only against real data. Salesforce's [guide on securing Apex for Lightning web components](https://developer.salesforce.com/docs/platform/lwc/guide/apex-security) now builds on `WITH USER_MODE` and `Security.stripInaccessible()`.
 
-**The models learned the old patterns.** Most public Apex predates Summer '26, and much of it uses `WITH SECURITY_ENFORCED` or quietly relies on system mode. The first fails at compile time at 67.0, which is the good case. The second compiles and fails only against real data. Salesforce's [guide on securing Apex for Lightning web components](https://developer.salesforce.com/docs/platform/lwc/guide/apex-security) now builds on `WITH USER_MODE` and `Security.stripInaccessible()`.
-
-**Agents pick the version.** An agent that creates a class writes a `-meta.xml` file with an API version, and agents like to tidy up metadata while they change a class. Salesforce itself recommends the latest API version and as few versions as possible in one codebase, ideally one. In my judgement an agent that follows that advice without knowing the consequences will bump classes as a side effect of unrelated user stories.
+**Agents pick the version.** An agent writes the API version into every `-meta.xml` file it creates and likes to tidy up metadata while it changes a class. Salesforce itself recommends the latest API version and as few versions as possible in one codebase, ideally one. In my judgement an agent following that advice blindly will bump classes as a side effect of unrelated user stories.
 
 **Generated tests do not test visibility.** An agent asked for 75 percent coverage writes tests that create their own records and run as a user who sees everything. The architect highlights state that tests passing at 66.0 do not guarantee the behaviour at 67.0 and recommend testing as restricted users. Without `System.runAs()` and a realistic profile, the missing records never show up.
 
@@ -79,7 +77,7 @@ UAT finds three problems:
 2. **The dealer page for open warranty claims stays empty.** Its query selects an internal cost field that dealers may not read. The fix is to remove the field from the query.
 3. **The goodwill rule decides wrongly.** A trigger handler without a declaration counts warranty claims per machine over the past twelve months; more than two claims means no automatic goodwill. At 67.0 the handler runs in the service rep's sharing context. Claims filed by a dealer in another region are invisible to the rep, so the handler counts one claim instead of three and approves goodwill. No error anywhere. A tester from the warranty team only noticed because she compared results with a report.
 
-Two of three problems announce themselves. The third would have gone live and cost money one credit note at a time.
+Two of three problems announce themselves. The third would have gone live and cost money, one credit note at a time.
 
 ## How should you plan the move to API 67.0?
 

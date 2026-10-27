@@ -46,7 +46,7 @@ Two details belong in your review. The [official Claude setup](https://developer
 
 The security guide states the rule: what a user cannot do in the Lightning UI or the REST API, they cannot do through MCP. The reverse holds too. Everything a key account manager can open in Lightning, the AI client can query, and one query returns hundreds of records that a person would click through one at a time.
 
-Field-level security belongs to the user, not to the channel. If your sales users can read dealer purchase prices, margin fields or the personal data of service technicians, Claude can read them too, and they leave Salesforce. Sharing for cases, warranty claims and price agreements was designed for a human who opens one record at a time, not for a client that reads 400 in a row.
+Field-level security belongs to the user, not to the channel. If your sales users can read dealer purchase prices, margin fields or the personal data of service technicians, Claude can read them too, and they leave Salesforce.
 
 If an external model should see less than the person, the standard sObject servers cannot help, because their tool sets cannot be changed. Three things can:
 
@@ -66,7 +66,7 @@ My order: `sobject-reads` in a sandbox for a small group; Named Queries or a cus
 
 ## Does the Einstein Trust Layer protect data that Claude reads?
 
-Salesforce has not documented this case. What follows is my reading of the documentation, not a Salesforce statement.
+Salesforce has not documented this case; what follows is my reading, not a Salesforce statement.
 
 The [Trust Layer documentation](https://developer.salesforce.com/docs/ai/agentforce/guide/trust.html) lists protections "when interfacing with LLMs": grounding, masking of sensitive data, toxicity detection, audit trail and zero data retention agreements with third-party LLM partners. Trailhead describes [the path](https://trailhead.salesforce.com/content/learn/modules/the-einstein-trust-layer/follow-the-response-journey): personal data is masked before the prompt leaves Salesforce, passes the Secure LLM Gateway, and "no customer data including the prompt text and generated responses are stored outside of Salesforce". All [Models API](https://developer.salesforce.com/docs/ai/agentforce/guide/models-api.html) calls go through the Trust Layer, and when Agentforce is the MCP client, [Trailhead promises](https://trailhead.salesforce.com/content/learn/modules/mcp-for-agentforce-quick-look/discover-mcp-for-agentforce) the Trust Layer and zero data retention as well.
 
@@ -96,7 +96,7 @@ Two of three go ahead, both narrower than asked. In my judgement that is the nor
 4. **Narrow with Named Queries or custom servers** wherever the person sees more than the model should.
 5. **Set the refresh token policy** and a revocation process for leavers and lost laptops. Why stolen OAuth tokens are a real attack path is covered in [connected apps and OAuth lessons](../connected-apps-oauth-ai-integrations/).
 6. **Settle the AI contract**: training, retention, zero data retention, hosting region.
-7. **Watch the API logs**, filtered on `API_CLIENT_CATEGORY = SALESFORCE_HOSTED_MCP`, for who reads which objects in which volume.
+7. **Watch the API logs** for who reads which objects in which volume.
 
 This is part of my work on [Salesforce integration](../../services/salesforce-integration/): an MCP server is an interface and needs an owner.
 

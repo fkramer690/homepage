@@ -1,6 +1,6 @@
 ---
 title: "Salesforce DX MCP Server end of life: what to change"
-description: "The local Salesforce DX MCP Server reaches end of life on 2 November 2026. What IT leads should ask partners now: inventory, pinning, skills, plugin, Hosted MCP."
+description: "The local Salesforce DX MCP Server reaches end of life on 2 November 2026. What IT leads should ask partners: inventory, pinning, skills, plugin, Hosted MCP."
 pubDate: 2026-10-27
 lang: en
 slug: salesforce-dx-mcp-server-end-of-life
@@ -12,7 +12,7 @@ takeaways:
   - "Salesforce's own setup guide configures the server with @latest and says it then updates automatically, so every partner machine should pin 0.30.15 until the old entry is removed."
   - "The server works with every org a developer has logged into through the Salesforce CLI; ALLOW_ALL_ORGS or DEFAULT_TARGET_ORG can let an AI agent reach production without anyone noticing."
   - "Salesforce offers the open sf-skills library, a Claude Code plugin and Hosted MCP servers, but does not call them successors in the sources I could open; treating them as such is my reading."
-  - "Two of the plugin's MCP servers are hosted in your org, so a client-side admin has to activate them; one of them is a beta service whose calls count against the org's API quota."
+  - "Two of the plugin's MCP servers run on Salesforce infrastructure and must be activated in your org by a client-side admin; one of them is a beta service whose calls count against the org's API quota."
 faq:
   - q: "What happens to the Salesforce DX MCP Server on 2 November 2026?"
     a: "According to the README in both Salesforce repositories, the local server @salesforce/mcp reaches end of life on that date. The details are in GitHub issue 46, which I could not open, so what exactly happens to the repository and the npm package afterwards is unconfirmed."
@@ -49,7 +49,7 @@ MCP (Model Context Protocol) is the open standard through which an AI tool calls
 - `DEFAULT_TARGET_ORG` is resolved again on every tool call. If the developer switches the default org, the agent works in the new one without a warning.
 - Explicit usernames or aliases fix the server to named orgs. This is the only setting I accept for agents.
 
-The tools behind that flag are not harmless. `deploy_metadata` deploys to an org, `assign_permission_set` assigns permission sets to other users, `run_soql_query` reads data. Telemetry is on by default. A partner developer who supports your production org on Monday and builds in a sandbox on Tuesday may have both orgs on the same laptop.
+The tools behind that flag are not harmless. `deploy_metadata` deploys to an org, `assign_permission_set` assigns permission sets, also on behalf of other users, `run_soql_query` reads data. Telemetry is on by default. A partner developer who supports your production org on Monday and builds in a sandbox on Tuesday may have both orgs on the same laptop.
 
 For a manufacturer the production org holds dealer price agreements, warranty claims, installed base and service contracts. You would not give an integration user broad rights without a review. An AI agent with a developer's login deserves the same scrutiny, and the end of life is a good occasion to apply it. How MCP fits into your architecture overall is the topic of [MCP in Salesforce, explained for IT leads](../mcp-salesforce-explained-for-it-leads/).
 
@@ -77,7 +77,7 @@ The IT lead asks each partner for a written answer to one question: where is `@s
 
 None of this is negligence. It is what happens when a tool spreads through partner teams without anyone on the client side owning it. The fixes are short: the shared file is pinned to 0.30.15 and gets explicit sandbox aliases, the hotfix developer separates his production login from agent work, and the portal agency checks what Vibes enables. Then the service partner tests the plugin and skills in a development sandbox for two weeks, the client's admin activates the hosted servers there and only there, and the old entry is deleted from the repository.
 
-The one decision that took longest in this scenario is who approves hosted servers in production. I would leave production out until there is a concrete need.
+The decision I would expect to take longest is who approves hosted servers in production. I would leave production out until there is a concrete need.
 
 ## What should you ask your partners before 2 November?
 

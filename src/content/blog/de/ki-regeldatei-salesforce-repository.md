@@ -1,6 +1,6 @@
 ---
 title: "KI-Regeldatei im Salesforce-Repository: wem gehört sie?"
-description: "Warum Ihr Salesforce-Repository eine KI-Regeldatei braucht (CLAUDE.md, AGENTS.md, .vibes/rules), wer sie beim Kunden verantwortet und was Settings und CI erzwingen."
+description: "Warum Ihr Salesforce-Repository eine KI-Regeldatei braucht (CLAUDE.md, AGENTS.md, .vibes/rules), wer sie verantwortet und was Settings und CI erzwingen."
 pubDate: 2026-10-27
 lang: de
 slug: ki-regeldatei-salesforce-repository
@@ -58,7 +58,7 @@ Verantwortung heißt: Eine benannte Person auf Kundenseite gibt jede Änderung f
 
 Anthropic benennt die Grenze klar: Claude behandelt `CLAUDE.md`-Dateien „as context, not enforced configuration“. In den [Claude Code Best Practices](https://code.claude.com/docs/en/best-practices) heißt es weiter: „If something has to happen every time, make it a hook, a deny rule, or a managed setting. `CLAUDE.md` is for guidelines, and Claude is allowed to decide a guideline doesn't apply.“ OpenAI ergänzt zur Länge: „A short, accurate `AGENTS.md` is more useful than a long file full of vague rules.“
 
-Die Datei enthält also, was der Agent nicht im Code sieht. Anthropics Liste: die genauen Befehle, mit denen sich Arbeit prüfen lässt, Stellen, an denen der Code in die Irre führt, Entscheidungen, die nirgends im Repository stehen, und „anything you've had to correct twice already“. Die Memory-Doku nennt als Ziel unter 200 Zeilen pro Datei. Ein Beispiel für das Repository eines Maschinenbauers, Feld- und Aliasnamen sind Platzhalter. Ich halte die Datei englisch, weil alle Werkzeuge und die meisten Nearshore-Teams damit arbeiten:
+Die Datei enthält also, was der Agent nicht im Code sieht. Anthropics Liste: die genauen Befehle, mit denen sich Arbeit prüfen lässt, Stellen, an denen der Code in die Irre führt, Entscheidungen, die nirgends im Repository stehen, und „anything you've had to correct twice already“. Die Memory-Doku nennt als Ziel unter 200 Zeilen pro Datei. Ein Beispiel für das Repository eines Maschinenbauers, Feld- und Aliasnamen sind Platzhalter. Ich halte die Datei englisch, damit Nearshore-Teams und Partner sie ohne Übersetzung lesen:
 
 ```markdown
 # AGENTS.md (owner: lead architect; changes only via pull request)
