@@ -45,7 +45,7 @@ Die [Dokumentation der Hosted MCP Servers](https://developer.salesforce.com/docs
 
 ## Warum werden MCP-Zugriffe auf Salesforce zum Budgetposten?
 
-Bei einem Agentforce-Agenten legen Sie die Aktionen selbst fest und wissen, dass eine Auftragsstatus-Anfrage etwa zwei Aktionen zu je 20 Credits kostet. Bei einem externen Agenten bestimmen Sie die Zahl der Aufrufe nicht. Salesforce Ben zitiert es deutlich: Der Preis pro Interaktion ist fest, die Zahl der Interaktionen hängt aber vom Verhalten und der Umsetzung des fremden Agenten ab. Claude beantwortet „Welche Aufträge dieses Händlers sind verspätet?“ vielleicht mit einer Abfrage, vielleicht mit einer Suche, fünf Datensatz-Lesezugriffen und zwei Nachfragen, weil die erste Antwort unvollständig war.
+Bei einem Agentforce-Agenten legen Sie die Aktionen selbst fest und wissen, dass eine Auftragsstatus-Anfrage etwa zwei Aktionen zu je 20 Credits kostet. Bei einem externen Agenten bestimmen Sie die Zahl der Aufrufe nicht. Salesforce Ben formuliert es deutlich: Der Preis pro Interaktion ist fest, die Zahl der Interaktionen hängt aber vom Verhalten und der Umsetzung des fremden Agenten ab. Claude beantwortet „Welche Aufträge dieses Händlers sind verspätet?“ vielleicht mit einer Abfrage, vielleicht mit einer Suche, fünf Datensatz-Lesezugriffen und zwei Nachfragen, weil die erste Antwort unvollständig war.
 
 Drei Effekte machen das für einen Hersteller zur Budgetfrage:
 
