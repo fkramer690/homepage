@@ -11,7 +11,7 @@ takeaways:
   - "KI im Salesforce-Projekt hat vier Ebenen: KI zum Bauen, Schnittstellen für Agenten, KI im Produkt und KI als Oberfläche. Jede hat andere Verantwortliche, andere Risiken und ein anderes Abrechnungsmodell."
   - "Ein Coding-Agent wie Claude Code oder Agentforce Vibes schreibt Metadaten und Code; ein Agentforce-Agent läuft in der Org und beantwortet zum Beispiel Händleranfragen. Wer beides vermischt, plant das falsche Budget."
   - "Vibe Coding heißt, Code von der KI erzeugen zu lassen, ohne ihn zu prüfen. Für Workshop-Prototypen ist das in Ordnung, für eine Kundenorg mit Händler- und Garantiedaten braucht es Review, Tests und CI."
-  - "Salesforce hat die KI-Schicht für externe Oberflächen in gut sechs Monaten dreimal benannt: Headless 360, AIforce, SIForce. Schreiben Sie Produktnamen in Konzepten deshalb immer mit Datum."
+  - "Salesforce hat die KI-Schicht für externe Oberflächen in rund sechs Monaten dreimal benannt: Headless 360, AIforce, SIForce. Schreiben Sie Produktnamen in Konzepten deshalb immer mit Datum."
 articles: [vibe-coding-prototype-not-production, aiforce-salesforce-in-claude-slack, agentforce-yes-or-no-manufacturers]
 faq:
   - q: "Was ist der Unterschied zwischen Agentforce und Agentforce Vibes?"
@@ -42,7 +42,7 @@ Die Ebenen wachsen zusammen. Salesforce beschreibt einen [Entwicklungsweg für A
 
 ## Was ist der Unterschied zwischen Vibe Coding und agentic engineering?
 
-Andrej Karpathy hat „Vibe Coding“ am 6. Februar 2025 geprägt: Man gibt sich den Vibes hin und „vergisst, dass der Code überhaupt existiert“. Simon Willison hat das [kurz danach präzisiert](https://feeds.simonwillison.net/2025/May/1/not-vibe-coding/): Vibe Coding heißt, Code mit KI zu erzeugen, ohne sich um den erzeugten Code zu kümmern. Nicht jede KI-gestützte Programmierung fällt darunter.
+Andrej Karpathy hat „Vibe Coding“ im Februar 2025 geprägt: Man gibt sich den Vibes hin und „vergisst, dass der Code überhaupt existiert“. Simon Willison hat das [im Mai 2025 präzisiert](https://simonwillison.net/2025/May/1/not-vibe-coding/): Vibe Coding heißt, Code mit KI zu erzeugen, ohne sich um den erzeugten Code zu kümmern. Nicht jede KI-gestützte Programmierung fällt darunter.
 
 Martin Fowler trennt seit dem 21. Mai 2026 [Vibe Coding von „agentic engineering“](https://martinfowler.com/bliki/VibeCoding.html). Beim agentic engineering schreibt das Sprachmodell den Code, Entwickler prüfen ihn aber und achten auf seine Struktur. Vibe Coding hält Fowler für Wegwerfsoftware, persönliche Werkzeuge und Prototypen für angemessen. Als Risiken nennt er Sicherheit, weil solche Anwendungen Daten oder Zugangsdaten preisgeben können, Wartbarkeit und unbemerkt falsches Verhalten.
 
@@ -83,7 +83,7 @@ Für Architekten ist der Satz aus der Architects-Doku der wichtigste: Was sich a
 |---|---|---|
 | 10.08.2023 | Einstein for Developers in Open Beta, Apex aus natürlicher Sprache | [Salesforce Developers](https://developer.salesforce.com/blogs/2023/08/einstein-for-developers-open-beta) |
 | 16.09.2024 | Umbenennung in Agentforce for Developers, GA | [Salesforce Developers](https://developer.salesforce.com/blogs/2024/09/introducing-agentforce-for-developers) |
-| 23.06.2025 | Agentforce 3 mit Command Center und nativem MCP-Client | [Salesforce IR](https://investor.salesforce.com/news/news-details/2025/Salesforce-Launches-Agentforce-3-to-Solve-the-Biggest-Blockers-to-Scaling-AI-Agents-Visibility-and-Control/default.aspx) |
+| 23.06.2025 | Agentforce 3 angekündigt, mit Command Center und nativem MCP-Client (beide für den Sommer 2025 vorgesehen) | [Salesforce IR](https://investor.salesforce.com/news/news-details/2025/Salesforce-Launches-Agentforce-3-to-Solve-the-Biggest-Blockers-to-Scaling-AI-Agents-Visibility-and-Control/default.aspx) |
 | 21.08.2025 | Agentforce for Manufacturing mit Vorlagen für Absatzplanung, Bestand und Anlagenservice | [Salesforce News](https://salesforce.com/news/stories/agentforce-for-manufacturing-announcement) |
 | 01.10.2025 | Agentforce Vibes GA, mit begrenzten Anfragen und Chatfunktionen aus dem Open-Source-Projekt Cline | [Salesforce Developers](https://developer.salesforce.com/blogs/2025/10/unleash-your-innovation-with-agentforce-vibes-vibe-coding-for-the-enterprise) |
 | 13.10.2025 | Agentforce 360 weltweit verfügbar, Data Cloud heißt jetzt Data 360 | [Salesforce Presse](https://www.salesforce.com/de/news/press-releases/2025/10/13/agentic-enterprise-announcement/), [Salesforce Ben](https://www.salesforceben.com/salesforce-data-cloud-renamed-to-data-360-as-part-of-agentforce-360/) |
@@ -95,7 +95,7 @@ Für Architekten ist der Satz aus der Architects-Doku der wichtigste: Was sich a
 | 15.09.2026 | AIforce auf der Dreamforce, Salesforce in Claude als Beta | [Salesforce News](https://www.salesforce.com/news/stories/aiforce-announcement/) |
 | 09.10.2026 | Marc Benioff auf X: „AIForce is officially SIForce“, ohne Pressemitteilung | [Salesforce Ben](https://www.salesforceben.com/salesforce-renames-aiforce-to-siforce-after-trump-order/) (Sekundärquelle) |
 
-Zwei Lehren ziehe ich daraus. Erstens: Einstein for Developers, Agentforce for Developers und Agentforce Vibes sind dieselbe Produktlinie; Salesforce Ben beschreibt Vibes als [Umbenennung und Ausbau von Agentforce for Developers](https://www.salesforceben.com/developer-features-and-announcements-from-dreamforce-25/), und die Doku-URL enthält bis heute `einstein-for-devs`. Ein Angebot, das 2026 „Einstein for Developers“ verspricht, beschreibt einen veralteten Stand. Zweitens: Die Schicht für externe Oberflächen hieß laut Salesforce Ben in gut sechs Monaten Headless 360, AIforce und SIForce. Ich schreibe in Konzepten „AIforce (Stand Oktober 2026)“ und übernehme in Verträgen den Namen, der auf dem Bestellformular steht. Was hinter AIforce steckt und was eine IT-Leitung jetzt tun sollte, steht in [AIforce: Salesforce in Claude und Slack](../../blog/aiforce-salesforce-in-claude-und-slack/), die zweite Lesart von „SI“ als Systemintegrator in [Kapitel 5](../aiforce-und-systemintegratoren/).
+Zwei Lehren ziehe ich daraus. Erstens: Einstein for Developers, Agentforce for Developers und Agentforce Vibes sind dieselbe Produktlinie; Salesforce Ben beschreibt Vibes als [Umbenennung und Ausbau von Agentforce for Developers](https://www.salesforceben.com/developer-features-and-announcements-from-dreamforce-25/), und die Doku-URL enthält bis heute `einstein-for-devs`. Ein Angebot, das 2026 „Einstein for Developers“ verspricht, beschreibt einen veralteten Stand. Zweitens: Die Schicht für externe Oberflächen hieß laut Salesforce Ben in rund sechs Monaten Headless 360, AIforce und SIForce. Ich schreibe in Konzepten „AIforce (Stand Oktober 2026)“ und übernehme in Verträgen den Namen, der auf dem Bestellformular steht. Was hinter AIforce steckt und was eine IT-Leitung jetzt tun sollte, steht in [AIforce: Salesforce in Claude und Slack](../../blog/aiforce-salesforce-in-claude-und-slack/), die zweite Lesart von „SI“ als Systemintegrator in [Kapitel 5](../aiforce-und-systemintegratoren/).
 
 ## Ein typisches Szenario: viermal „KI“ im Lenkungskreis
 

@@ -45,7 +45,7 @@ Salesforce beschreibt AIforce als „a live interface layer that brings the full
 
 | Bestandteil | Inhalt | Stand laut Salesforce |
 |---|---|---|
-| Claudeforce | Salesforce in Claude (MCP-Server mit 37 Vertriebs-Skills), Salesforce-Development-Plugin für Claude Code mit mehr als 40 Skills | Salesforce in Claude: Beta für alle Kunden; Skills für Service und Branchen nur angekündigt |
+| Claudeforce | Salesforce in Claude (MCP-Server mit 37 Vertriebs-Skills), Salesforce-Development-Plugin für Claude Code mit rund 40 Skills | Salesforce in Claude: Beta für alle Kunden; Skills für Service und Branchen nur angekündigt |
 | Slackforce | Slackforce Surfaces, Slackbot, Slack CRM, Slack Code | ohne Verfügbarkeitstermine |
 | Agentforce Coworker | KI-Teammitglied in Lightning | verfügbar, laut Salesforce 100.000 Aktivierungen in 35 Tagen |
 | Headless Toolkit | MCPs, APIs, Plugins, Skills und Entwicklerwerkzeuge | ohne Statusangabe |
@@ -64,7 +64,7 @@ Belegt ist nur ein Post. Am 9. Oktober 2026 schrieb Marc Benioff auf X: „The e
 
 Der Anlass ist dagegen als Primärquelle nachlesbar. Die [Executive Order 14434](https://www.whitehouse.gov/presidential-actions/2026/09/inaugurating-the-era-of-super-intelligence/) vom 29. September 2026 weist die Ministerien und Behörden der US-Exekutive an, in eigenen Dokumenten „Super Intelligence“ statt „Artificial Intelligence“ zu schreiben. Bestehende Verordnungen bleiben unverändert, einklagbare Rechte entstehen nicht, private Unternehmen kommen nicht vor. Salesforce musste also nichts umbenennen, die Entscheidung war freiwillig. Dass US-Bundesbehörden Salesforce-Kunden sind und künftig „SI“ schreiben müssen, ist ein naheliegendes Motiv, aber meine Vermutung.
 
-Für Ihre Unterlagen empfehle ich „AIforce (vom CEO als SIForce angekündigt)“, bis Salesforce den Namen schriftlich bestätigt. Drei Namen in gut sechs Monaten sind auch ein Grund, Architekturdokumente nach Funktionen zu gliedern statt nach Produktnamen.
+Für Ihre Unterlagen empfehle ich „AIforce (vom CEO als SIForce angekündigt)“, bis Salesforce den Namen schriftlich bestätigt. Drei Namen in rund sechs Monaten sind auch ein Grund, Architekturdokumente nach Funktionen zu gliedern statt nach Produktnamen.
 
 ## SI als Systemintegrator: was sich im Partnermodell ändert
 

@@ -10,7 +10,7 @@ categories: [architecture, ai]
 tags: [KI-native Delivery, Programmsteuerung, Teamaufstellung, KI-Coding, Partnersteuerung, Maschinenbau]
 takeaways:
   - "KI-native Delivery heißt: Coding-Agenten entwerfen, bauen und testen, Menschen geben die Absicht vor, prüfen das Ergebnis und verantworten es; Teams schrumpfen auf Pods aus Architekt, Builder-Reviewer und Fachexperte."
-  - "In der McKinsey-Umfrage von 2026 meldeten 79 Prozent der Organisationen mit dem größten Tempogewinn kleinere Teams, der Median sank von etwa zehn auf sieben Personen."
+  - "In der McKinsey-Umfrage von 2026 meldeten 79 Prozent der Befragten aus Organisationen mit dem größten Tempogewinn kleinere Teams, der Median sank von etwa zehn auf sieben Personen."
   - "Der Engpass wandert zum Hersteller: Jeder Pod braucht einen Fachexperten aus Service, Vertrieb oder After-Sales, der täglich laufende Software abnimmt."
   - "Ein kurzer Intent mit prüfbaren Akzeptanzkriterien ersetzt für die meisten Stories das lange Lastenheft; SAP-Schnittstellen sowie Garantie- und Preisregeln brauchen weiter genaue Spezifikationen."
   - "Jedes Artefakt hat einen benannten Verantwortlichen, Agenten arbeiten nur in Sandboxes und Scratch Orgs, und für Menschen- und Agentencode gelten dieselben Pipeline-Prüfungen."
@@ -18,7 +18,7 @@ faq:
   - q: "Was ist KI-native Delivery in Salesforce-Projekten?"
     a: "Ein Liefermodell, das von Anfang an um Coding-Agenten herum gebaut ist: Agenten entwerfen Stories, Code, Tests und Runbooks, Menschen definieren den Intent, prüfen das Ergebnis und verantworten jedes Artefakt. Kleine Pods ersetzen die klassische Pyramide aus vielen Junior-Entwicklern."
   - q: "Brauchen KI-native Salesforce-Teams wirklich weniger Personen?"
-    a: "Die Evidenz deutet darauf hin, ist aber dünn. McKinsey meldet, dass 79 Prozent der Spitzenreiter ihre Teams verkleinert haben, Median von etwa zehn auf sieben, auf Basis einer Umfrage mit Selbstauskunft. Messen Sie Ihre eigenen Durchlaufzeiten, bevor Sie ein Team verkleinern."
+    a: "Die Evidenz deutet darauf hin, ist aber dünn. McKinsey meldet, dass 79 Prozent der Befragten aus den Spitzenorganisationen kleinere Teams sehen, Median von etwa zehn auf sieben, in einer Umfrage mit Selbstauskunft. Messen Sie Ihre eigenen Durchlaufzeiten, bevor Sie ein Team verkleinern."
   - q: "Wer sollte bei einem Hersteller Fachexperte im Pod sein?"
     a: "Jemand aus dem Fachbereich, der den Prozess kennt und darüber entscheiden darf, etwa eine Garantiesachbearbeiterin aus dem After-Sales oder ein Disponent aus dem Außendienst. Planen Sie rund die Hälfte der Arbeitszeit dieser Person ein; ohne sie baut der Pod auf Annahmen."
   - q: "Ersetzt die tägliche Demo den Abnahmetest?"
@@ -44,7 +44,7 @@ Ich lese ApexHours als gut begründetes Praxis-Framework. Es nennt keine Teamgr�
 
 ## Warum werden Salesforce-Teams kleiner?
 
-McKinsey hat im Mai 2026 334 Führungskräfte aus Produkt und Engineering befragt und die Ergebnisse im August unter dem Titel [Beyond the copilot](https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/beyond-the-copilot-scaling-the-agentic-product-development-life-cycle) veröffentlicht. Unter den Organisationen mit dem größten Tempogewinn gaben 79 Prozent an, dass ihre Teams kleiner geworden sind; der Median sank von etwa zehn auf sieben Personen. Ein globales Technologieunternehmen ging von Produktteams mit 8 bis 10 Personen auf agentische Teams mit 4 bis 6 über und meldet etwa doppelte Kapazität und 50 bis 80 Prozent kürzere Entwicklungszyklen. McKinsey sieht zwei Rollenfamilien entstehen: „Definers“, die Produkt und Design verbinden, und „Builders“, die Entwicklung, Test und Betrieb verbinden.
+McKinsey hat im Mai 2026 334 Führungskräfte aus Produkt und Engineering befragt und die Ergebnisse im August unter dem Titel [Beyond the copilot](https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/beyond-the-copilot-scaling-the-agentic-product-development-life-cycle) veröffentlicht. Unter den Befragten aus Organisationen mit dem größten Tempogewinn gaben 79 Prozent an, dass ihre Teams kleiner geworden sind; der Median sank von etwa zehn auf sieben Personen. Ein globales Technologieunternehmen ging von Produktteams mit 8 bis 10 Personen auf agentische Teams mit 4 bis 6 über und meldet etwa doppelte Kapazität und 50 bis 80 Prozent kürzere Entwicklungszyklen. McKinsey sieht zwei Rollenfamilien entstehen: „Definers“, die Produkt und Design verbinden, und „Builders“, die Entwicklung, Test und Betrieb verbinden.
 
 Zwei Einschränkungen aus derselben Quelle. Die Zahlen sind Selbstauskünfte von Führungskräften, und 30 Prozent der Befragten sagen, die Produktivität ihrer Teams sei gesunken. McKinsey schreibt außerdem, dass sich das Tempo schneller verbessert als die Qualität. Der DORA-Bericht 2025 fand weiter einen [negativen Zusammenhang zwischen KI-Einsatz und Lieferstabilität](https://cloud.google.com/blog/products/ai-machine-learning/announcing-the-2025-dora-report), und DORA zählt [kleine Batches und Nutzerzentrierung](https://dora.dev/capabilities/) zu den sieben Fähigkeiten, die den Nutzen von KI verstärken. Kleine Pods mit täglichem Feedback sind eine direkte Antwort auf beide Punkte. Wie Sie prüfen, ob Ihr eigenes Programm schneller wird, beschreibe ich in [KI-Nutzen im Salesforce-Projekt messen](../ki-nutzen-salesforce-projekt-messen/).
 

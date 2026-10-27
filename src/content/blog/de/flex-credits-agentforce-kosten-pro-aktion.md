@@ -41,7 +41,7 @@ Für die Planung zählen drei Details:
 - **Auch deterministische Schritte kosten.** Laut [Hilfeartikel zu den abrechenbaren Nutzungsarten](https://help.salesforce.com/s/articleView?language=en_US&id=ai.usage_flex_credits.htm&type=5) werden Aktionen abgerechnet, wenn sie laufen, auch wenn sie deterministisch laufen. Eine Garantieregel in [Agent Script](../agent-script-regeln-statt-llm/) macht den Agenten verlässlicher, nicht günstiger.
 - **Ein Preismodell pro Org.** Flex Credits und das Modell mit 2 € pro Gespräch werden nicht in derselben Org unterstützt.
 
-Es gibt drei Kaufmodelle: Pre-Purchase zahlt die ganze Laufzeit im Voraus, Pre-Commit rechnet eine Grundmenge monatlich nachträglich ab und gleicht zum Laufzeitende aus, PayGo rechnet ab, was Sie nutzen. Verbrauch über dem Kontingent kostet den vereinbarten Satz, ohne Strafaufschlag. Das [im Mai 2025 angekündigte Flex Agreement](https://www.salesforce.com/news/press-releases/2025/05/15/agentforce-flexible-pricing-news/) erlaubt außerdem, Nutzerlizenzen in Flex Credits umzuwandeln und zurück.
+Es gibt laut [Salesforce Bens Preisleitfaden](https://www.salesforceben.com/complete-guide-to-agentforce-pricing-options/) drei Kaufmodelle: Pre-Purchase zahlt die ganze Laufzeit im Voraus, Pre-Commit rechnet eine Grundmenge monatlich nachträglich ab und gleicht zum Laufzeitende aus, PayGo rechnet ab, was Sie nutzen. Verbrauch über dem Kontingent kostet den vereinbarten Satz, ohne Strafaufschlag. Das [im Mai 2025 angekündigte Flex Agreement](https://www.salesforce.com/news/press-releases/2025/05/15/agentforce-flexible-pricing-news/) erlaubt außerdem, Nutzerlizenzen in Flex Credits umzuwandeln und zurück.
 
 ## Was kosten Prompts, und warum zählt das Modell?
 
@@ -56,7 +56,7 @@ Prompts übersieht man leicht, weil die Beispiele auf der Preisseite nur Aktione
 
 Advanced-Prompts werden seit dem 21. Juli 2026 gezählt. Dieselbe Zusammenfassung mit 6.500 Tokens kostet auf einem Basic-Modell 8 Credits, auf Standard 16 und auf Advanced 64. Für eine Fallzusammenfassung, die eine Servicemitarbeiterin liest und korrigiert, würde ich mit einem Standard-Modell starten und nur wechseln, wenn Tests eine Qualitätslücke zeigen.
 
-Der Hilfeartikel nennt außerdem eingebettete generative Funktionen wie Service Replies. Er sagt nicht, ob die eigenen LLM-Aufrufe der Reasoning Engine zusätzlich zu den Aktionen als Prompts zählen. Ich budgetiere jede Prompt-Vorlage und jede generative Funktion im Design und prüfe im Piloten, ob Digital Wallet mehr zeigt.
+Der Hilfeartikel nennt außerdem eingebettete generative Funktionen wie Service Replies. Er sagt nicht, ob die eigenen LLM-Aufrufe der Reasoning Engine zusätzlich zu den Aktionen als Prompts zählen. Ich würde jede Prompt-Vorlage und jede generative Funktion im Design budgetieren und im Piloten prüfen, ob Digital Wallet mehr zeigt.
 
 ## Sprache, Sandbox und Data 360: wo Schätzungen danebenliegen
 
@@ -113,6 +113,6 @@ Vier Wochen nach dem Go-live vergleichen Sie die Schätzung mit [Digital Wallet]
 
 Sie verfallen. Laut Rate Card müssen Flex Credits vor dem Enddatum der Bestellung verbraucht werden, ohne Übertrag in die nächste Laufzeit. Kaufen Sie im Januar Credits für ein Jahr und rutscht der Go-live von März auf Juni, sind drei Monate Volumen bezahlt und verloren.
 
-Ich würde das erste Jahr entlang des Hochlaufs kaufen: ein kleines Pre-Purchase für Pilot und Tests, PayGo oder Pre-Commit für den Hochlauf und ein größeres Volumen, sobald Digital Wallet echte Zahlen zeigt. Weil Mehrverbrauch ohne Aufschlag zum vereinbarten Satz abgerechnet wird, ist ein knapper erster Kauf wenig riskant. Fragen Sie außerdem, ob enthaltene Credits einer Edition pro Org und pro Jahr gelten: Die Preisseite sagt das für Max, die [Ankündigung der Editionen vom September 2026](https://www.salesforce.com/news/stories/salesforce-simplifies-editions-2026/) sagt es für Core und Advanced nicht. Diese Fragen gehören zu meiner Arbeit in [Make-or-buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/).
+Ich würde das erste Jahr entlang des Hochlaufs kaufen: ein kleines Pre-Purchase für Pilot und Tests, PayGo oder Pre-Commit für den Hochlauf und ein größeres Volumen, sobald Digital Wallet echte Zahlen zeigt. Weil Mehrverbrauch ohne Aufschlag zum vereinbarten Satz abgerechnet wird, ist ein knapper erster Kauf wenig riskant. Beachten Sie außerdem den Zeitraum der enthaltenen Edition-Credits: Die [Preisseite der Sales Cloud](https://www.salesforce.com/eu/products/sales-pricing/) führt die Pools pro Org und Jahr, die [Ankündigung der Editionen vom September 2026](https://www.salesforce.com/news/stories/salesforce-simplifies-editions-2026/) nennt keinen Zeitraum. Mehrere Agenten teilen sich einen Pool, fragen Sie also, wie der Verbrauch pro Agent überwacht wird. Diese Fragen gehören zu meiner Arbeit in [Make-or-buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/).
 
 Flex Credits sind pro Aktion einfach bepreist, planen lassen sie sich aber nur pro Gespräch und mit allen Zählern. Wenn Sie eine zweite Meinung zu Ihrer Agentforce-Schätzung möchten, [schreiben Sie mir](#contact).

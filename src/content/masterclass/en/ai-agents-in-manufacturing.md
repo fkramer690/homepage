@@ -30,19 +30,19 @@ AI agents in manufacturing work today where a process has high volume, clear rul
 
 ## Which agents are available to manufacturers today?
 
-Salesforce offers three groups of building blocks for manufacturing: templates from Agentforce for Manufacturing, agents in Manufacturing Cloud and agent features in Field Service. I checked the status on the linked pages on 27 October 2026.
+Salesforce offers three groups of building blocks for manufacturing: templates from Agentforce for Manufacturing, agents in Manufacturing Cloud and agent features in Field Service. Status as of 27 October 2026, based on the linked pages.
 
 | Area | Feature | Status |
 |---|---|---|
 | Sales planning | Spot gaps between build plan and sales, schedule an account visit with talking points | [available since August 2025](https://salesforce.com/news/stories/agentforce-for-manufacturing-announcement) |
 | Inventory | Check stock during a customer call, request replenishment across distributors | available since August 2025 |
 | Asset service | Find assets needing maintenance, draft repair quote and work order | available since August 2025 |
-| Channel sales | Channel Management | GA since October 2025 |
+| Channel sales | Channel Management | slated for GA in October 2025 |
 | Warranty | AI Warranty Concierge guides customers through a claim | [Summer '26](https://www.salesforce.com/manufacturing/cloud/) |
 | Channel sales | AI Partner Sales Assistant finds products and builds quotes | Summer '26 |
-| Warranty | Warranty Claims Adjudication Agent validates coverage and flags potential fraud | Winter '27, [GA since 12 October 2026](https://www.salesforce.com/news/stories/winter-2027-product-release-announcement/) |
+| Warranty | Warranty Claims Adjudication Agent validates coverage and flags potential fraud | Part of the Winter '27 release, which was [GA on 12 October 2026](https://www.salesforce.com/news/stories/winter-2027-product-release-announcement/); no separate status stated for the agent |
 | Sales | AI Sales Concierge finds products and builds quotes for self-service visitors | Winter '27 |
-| Field service | Proactive maintenance booking based on maintenance plan dates | GA since August 2025 |
+| Field service | Proactive maintenance booking based on maintenance plan dates | [announced May 2025](https://www.salesforce.com/blog/proactive-maintenance/), no GA date found |
 | Voice | Agentforce Voice in German and five other new languages | [GA since Dreamforce 2026](https://www.salesforce.com/blog/dreamforce-2026-announcements/) |
 | Legacy systems | Systems Integration Agent learns browser-based applications and, per Salesforce, works without code, APIs or RPA | GA since Dreamforce 2026 |
 
@@ -83,7 +83,7 @@ An Agentforce agent is now a set of metadata that a coding agent can help write.
 
 For decision makers this means an agent is a release artefact like Apex. It belongs in the same pipeline with review and approval, and I would rule out changes directly in the production org's builder in the contract. Because a model grades answer quality, results vary between runs. Go-live therefore needs a pass rate agreed in advance, and Salesforce does not give one. My split by risk, with 100 percent for business rules, is in [testing Agentforce agents before go-live](../../blog/testing-agentforce-agents-before-go-live/).
 
-Dreamforce 2026 added tools for operations: Agent Optimizer and Agent Health Monitoring with 16+ metrics are GA, A/B experimentation and voice and conversation testing are in beta. If you plan a German-language voice agent, you test the voice side with beta tools for now. I would build that into the schedule and acceptance criteria. The automated checks for code are in [chapter 8](../ai-code-best-practices/).
+Dreamforce 2026 added tools for operations: Agent Health Monitoring with 16+ metrics is GA and Agent Optimizer was slated for GA in October, while A/B experimentation (from October) and voice and conversation testing are in beta. If you plan a German-language voice agent, you test the voice side with beta tools for now. I would build that into the schedule and acceptance criteria. The automated checks for code are in [chapter 8](../ai-code-best-practices/).
 
 ## What security risks do agents bring?
 

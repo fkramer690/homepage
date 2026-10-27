@@ -30,19 +30,19 @@ KI-Agenten in der Fertigung tragen heute dort, wo ein Prozess viel Volumen, klar
 
 ## Welche Agenten gibt es für Hersteller heute?
 
-Salesforce liefert für die Fertigung drei Gruppen von Bausteinen: Vorlagen aus Agentforce for Manufacturing, Agenten in der Manufacturing Cloud und Agentenfunktionen in Field Service. Den Stand habe ich am 27. Oktober 2026 auf den verlinkten Seiten geprüft.
+Salesforce liefert für die Fertigung drei Gruppen von Bausteinen: Vorlagen aus Agentforce for Manufacturing, Agenten in der Manufacturing Cloud und Agentenfunktionen in Field Service. Stand 27. Oktober 2026, gestützt auf die verlinkten Seiten.
 
 | Bereich | Funktion | Status |
 |---|---|---|
 | Absatzplanung | Abweichungen zwischen Bauplan und Absatz erkennen, Kundenbesuch mit Gesprächspunkten planen | [verfügbar seit August 2025](https://salesforce.com/news/stories/agentforce-for-manufacturing-announcement) |
 | Bestand | Bestand im Kundengespräch prüfen, Nachschub über Distributoren anstoßen | verfügbar seit August 2025 |
 | Anlagenservice | Wartungsbedürftige Anlagen finden, Reparaturangebot und Work Order entwerfen | verfügbar seit August 2025 |
-| Händlervertrieb | Channel Management | GA seit Oktober 2025 |
+| Händlervertrieb | Channel Management | für Oktober 2025 als GA vorgesehen |
 | Garantie | AI Warranty Concierge führt Kunden durch einen Anspruch | [Summer '26](https://www.salesforce.com/manufacturing/cloud/) |
 | Händlervertrieb | AI Partner Sales Assistant findet Produkte und baut Angebote | Summer '26 |
-| Garantie | Warranty Claims Adjudication Agent prüft die Deckung und markiert mögliche Betrugsfälle | Winter '27, [GA seit 12. Oktober 2026](https://www.salesforce.com/news/stories/winter-2027-product-release-announcement/) |
+| Garantie | Warranty Claims Adjudication Agent prüft die Deckung und markiert mögliche Betrugsfälle | Teil des Releases Winter '27, das am [12. Oktober 2026 GA](https://www.salesforce.com/news/stories/winter-2027-product-release-announcement/) wurde; eigener Status für den Agenten nicht genannt |
 | Vertrieb | AI Sales Concierge findet Produkte und baut Angebote für Besucher im Self-Service | Winter '27 |
-| Außendienst | Proaktive Wartungsbuchung anhand der Termine aus dem Maintenance Plan | GA seit August 2025 |
+| Außendienst | Proaktive Wartungsbuchung anhand der Termine aus dem Maintenance Plan | [angekündigt im Mai 2025](https://www.salesforce.com/blog/proactive-maintenance/), kein GA-Datum gefunden |
 | Sprache | Agentforce Voice auf Deutsch | [GA seit Dreamforce 2026](https://www.salesforce.com/blog/dreamforce-2026-announcements/) |
 | Altsysteme | Systems Integration Agent lernt browserbasierte Anwendungen und arbeitet laut Salesforce ohne Code, APIs oder RPA | GA seit Dreamforce 2026 |
 
@@ -83,7 +83,7 @@ Ein Agentforce-Agent ist heute ein Satz Metadaten, den ein Coding-Agent mitschre
 
 Für Entscheider folgt daraus: Ein Agent ist ein Release-Artefakt wie Apex. Er gehört in dieselbe Pipeline mit Review und Freigabe, und Änderungen direkt im Builder der Produktivorg würde ich vertraglich ausschließen. Weil ein Modell die Antwortqualität bewertet, schwankt das Ergebnis zwischen Läufen. Der Go-live braucht deshalb eine vorab vereinbarte Passrate, und Salesforce nennt keine. Meine Aufteilung nach Risiko, mit 100 Prozent für Geschäftsregeln, steht in [Agentforce-Agenten testen und freigeben](../../blog/agentforce-agenten-testen-freigeben/).
 
-Zur Dreamforce 2026 kamen Werkzeuge für den Betrieb dazu: Agent Optimizer und Agent Health Monitoring mit mehr als 16 Metriken sind GA, A/B-Experimente sowie Voice- und Conversation-Testing sind Beta. Wer einen deutschsprachigen Sprachagenten plant, testet die Sprachseite also noch mit Beta-Werkzeugen. Das würde ich in Zeitplan und Abnahme einrechnen. Welche automatischen Prüfungen für Code gelten, steht in [Kapitel 8](../best-practices-ki-code/).
+Zur Dreamforce 2026 kamen Werkzeuge für den Betrieb dazu: Agent Health Monitoring mit mehr als 16 Metriken ist GA, Agent Optimizer war für Oktober als GA vorgesehen, A/B-Experimente (ab Oktober) sowie Voice- und Conversation-Testing sind Beta. Wer einen deutschsprachigen Sprachagenten plant, testet die Sprachseite also noch mit Beta-Werkzeugen. Das würde ich in Zeitplan und Abnahme einrechnen. Welche automatischen Prüfungen für Code gelten, steht in [Kapitel 8](../best-practices-ki-code/).
 
 ## Welche Sicherheitsrisiken bringen Agenten mit?
 

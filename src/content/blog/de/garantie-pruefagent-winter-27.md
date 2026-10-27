@@ -60,7 +60,7 @@ Legen Sie vor dem Go-live fest, welche Ansprüche automatisch durchlaufen dürfe
 
 ### Das Händlerportal als Angriffsfläche
 
-Der Agent liest Text, den Händler schreiben. 2025 hat die Schwachstelle ForcedLeak (CVSS 9,4) gezeigt, dass versteckte Anweisungen im Beschreibungsfeld eines Web-to-Lead-Formulars Agentforce dazu bringen konnten, Lead-Daten an eine fremde Domain zu senden; Salesforce hat daraufhin eine Trusted-URL-Allowlist erzwungen, wie [The Hacker News berichtet](https://thehackernews.com/2025/09/salesforce-patches-critical-forcedleak.html). Die Fehlerbeschreibung in einem Garantieanspruch ist dieselbe Art Feld. Den Schutz beschreibe ich in [Prompt Injection im Händlerportal](../prompt-injection-haendlerportal-agentforce/).
+Der Agent liest Text, den Händler schreiben. 2025 hat die Schwachstelle ForcedLeak (vom Entdecker Noma Security mit CVSS 9,4 bewertet) gezeigt, dass versteckte Anweisungen im Beschreibungsfeld eines Web-to-Lead-Formulars Agentforce dazu bringen konnten, Lead-Daten an eine fremde Domain zu senden; Salesforce hat daraufhin eine Trusted-URL-Allowlist erzwungen, wie [The Hacker News berichtet](https://thehackernews.com/2025/09/salesforce-patches-critical-forcedleak.html). Die Fehlerbeschreibung in einem Garantieanspruch ist dieselbe Art Feld. Den Schutz beschreibe ich in [Prompt Injection im Händlerportal](../prompt-injection-haendlerportal-agentforce/).
 
 ### Lizenz und Testbudget
 

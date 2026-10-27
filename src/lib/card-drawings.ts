@@ -361,7 +361,7 @@ const drawings: Record<string, Drawing> = {
 
   'aiforce-salesforce-in-claude-slack': (l) => `
     ${t(18, 18, l('AIFORCE LAYER (15.09.2026)', 'AIFORCE-SCHICHT (15.09.2026)'), { fill: D, size: 7 })}
-    ${[['Claude', l('beta, 37 sales skills', 'Beta, 37 Vertriebs-Skills'), true], ['Slack', l('Slackforce, announced', 'Slackforce, angekündigt'), false], ['Lightning', l('Coworker, needs Data 360', 'Coworker, braucht Data 360'), false]]
+    ${[['Claude', l('beta, 37 sales skills', 'Beta, 37 Vertriebs-Skills'), true], ['Slack', l('Slackforce, GA Oct', 'Slackforce, GA Okt'), false], ['Lightning', l('Coworker, needs Data 360', 'Coworker, braucht Data 360'), false]]
       .map(([a, b, hi], i) => box(18, 26 + i * 26, 168, 20, hi ? C : G) + t(26, 39 + i * 26, String(a), { fill: D, size: 7.5 }) + t(178, 39 + i * 26, String(b), { fill: hi ? C : G, size: 6.8, anchor: 'end' })).join('')}
     <path d="M186 62H206V108H186" fill="none" stroke="${G}" stroke-width="1.2"/>${arrow(206, 85, 226)}
     ${box(226, 62, 78, 46)}${t(265, 80, 'SALESFORCE', { fill: D, size: 7.5, anchor: 'middle' })}${t(265, 94, l('user permissions', 'Nutzerrechte'), { size: 6.8, anchor: 'middle' })}
@@ -408,9 +408,9 @@ const drawings: Record<string, Drawing> = {
 
   'fixed-price-ai-salesforce-partners': (l) => `
     ${t(18, 18, l('WARRANTY FORM (SCENARIO)', 'GARANTIEANTRAG (SZENARIO)'), { fill: D, size: 7 })}
-    ${box(18, 28, 130, 58)}${t(83, 45, l('TIME & MATERIALS', 'NACH AUFWAND'), { fill: D, size: 7.5, anchor: 'middle' })}${t(83, 60, l('45 days, with AI 30', '45 Tage, mit KI 30'), { size: 7, anchor: 'middle' })}${t(83, 74, l('partner loses €16,500', 'Partner verliert 16.500 €'), { size: 7, anchor: 'middle' })}
+    ${box(18, 28, 130, 58)}${t(83, 45, l('TIME & MATERIALS', 'NACH AUFWAND'), { fill: D, size: 7.5, anchor: 'middle' })}${t(83, 60, l('45 days, with AI 30', '45 Tage, mit KI 30'), { size: 7, anchor: 'middle' })}${t(83, 74, l('partner loses $16,500', 'Partner verliert 16.500 €'), { size: 7, anchor: 'middle' })}
     ${arrow(148, 57, 172, C)}
-    ${box(172, 28, 130, 58, C)}${t(237, 45, l('FIXED PRICE €41,000', 'FESTPREIS 41.000 €'), { fill: D, size: 7.5, anchor: 'middle' })}${t(237, 60, l('~€1,370 per day worked', '~1.370 € pro Arbeitstag'), { fill: C, size: 7, anchor: 'middle' })}${t(237, 74, l('client saves 17 %', 'Kunde spart 17 %'), { size: 7, anchor: 'middle' })}
+    ${box(172, 28, 130, 58, C)}${t(237, 45, l('FIXED PRICE $41,000', 'FESTPREIS 41.000 €'), { fill: D, size: 7.5, anchor: 'middle' })}${t(237, 60, l('~$1,370 per day worked', '~1.370 € pro Arbeitstag'), { fill: C, size: 7, anchor: 'middle' })}${t(237, 74, l('client saves 17 %', 'Kunde spart 17 %'), { size: 7, anchor: 'middle' })}
     <path d="M18 102H302" stroke="${L}"/>
     ${t(18, 118, l('SALESFORCE PARTNER INCENTIVES 2026', 'SALESFORCE-PARTNERANREIZE 2026'), { fill: D, size: 7 })}
     ${tag(18, 126, 138, l('active consumption', 'aktiver Verbrauch'))}${tag(164, 126, 138, l('agents in production', 'Agenten in Produktion'))}`,

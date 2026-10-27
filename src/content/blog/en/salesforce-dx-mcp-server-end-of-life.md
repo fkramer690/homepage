@@ -38,7 +38,7 @@ What I could check on 27 October 2026:
 - The Salesforce DX developer guide still describes the server [without any end-of-life notice](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_mcp_server.htm). It configures the package with `@latest` "so you always get the latest version" and says new versions install automatically.
 - The [Agentforce Vibes documentation](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-mcp-servers.html) says the DX MCP Server ships with Vibes and is "installed and enabled by default in Code Builder".
 
-That combination is what I would plan around. A server that updates itself, configured on machines you do not control, reaches the end of support while the DX developer guide and the Vibes documentation do not mention it. Whatever Salesforce publishes to npm after the date lands on those machines without anyone deciding it.
+The date itself rests on the README banner alone: none of the three documentation pages above mentions it. That combination is what I would plan around. A server that updates itself, configured on machines you do not control, reaches the end of support while the DX developer guide and the Vibes documentation do not mention it. Whatever Salesforce publishes to npm after the date lands on those machines without anyone deciding it.
 
 Compare that with the [retirement policy for Hosted MCP Servers](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/end-of-life.html): each version is supported for at least three years, with at least one year's notice before support ends. For the local server I found no comparable commitment.
 

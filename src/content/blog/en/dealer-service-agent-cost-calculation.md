@@ -40,7 +40,7 @@ Agentforce bills usage in Flex Credits, listed at [$500 per 100,000 credits](htt
 - **Data 360:** Unstructured Processing 150 credits per MB and Queries 3 credits per million rows in the base tier.
 - **Headless Platform Interaction:** "TBA".
 
-An action is one step the agent executes, for example reading an order from SAP. Salesforce's own "Where is my order?" example on the pricing page has two actions, 40 credits per request, and comes to $120 a month at 20 requests a day. For its other examples the page notes that Data 360 credits are not included. Most estimates I see share that gap.
+An action is one step the agent executes, for example reading an order from SAP. Salesforce's own "Where is my order?" example on the pricing page has two actions, 40 credits per request, and comes to $120 a month at 20 requests a day. For its other examples the page notes that Data 360 credits are not included. An estimate that skips Data 360 is too low for any agent that reads documents.
 
 Unused Flex Credits do not roll over and must be used before the order end date. An oversized pool costs money just as surely as running short.
 
@@ -104,7 +104,7 @@ For narrow dealer enquiries I would therefore plan with Flex Credits. Resolution
 
 ## Do the credits in your edition cover it?
 
-The [Core, Advanced and Max editions](https://www.salesforce.com/news/stories/salesforce-simplifies-editions-2026/) include 500,000, 1 million and 2.75 million Flex Credits. The Agentforce pricing page states "2.75M Flex Credits per org per year" for Max; for Core and Advanced I found no such statement. The editions release lists Help Agent in Advanced and Max.
+The [Core, Advanced and Max editions](https://www.salesforce.com/news/stories/salesforce-simplifies-editions-2026/) include 500,000, 1 million and 2.75 million Flex Credits. The Salesforce pricing pages list the pools per org and year (for Max literally "2.75M Flex Credits per org per year"). The editions release lists Help Agent in Advanced and Max.
 
 The scenario needs about 3 million credits in the first year, more than even the Max pool, and that pool also covers every other metered agent in the org. Additional credits are sold as PayGo or Pre-Commit. Plan the ramp-up: a dealer agent rarely reaches full volume in its first month, and credits committed for a year but used only from month four partly expire. How to estimate this per action is the topic of [Flex Credits and Agentforce cost per action](../flex-credits-agentforce-cost-per-action/), and the editions themselves are covered in [Core, Advanced and Max](../salesforce-editions-core-advanced-max/). Whether you buy credits, change edition at renewal or build nothing in Salesforce is a question for [make-or-buy and licence planning](../../services/make-or-buy-licences/).
 

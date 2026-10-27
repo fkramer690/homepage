@@ -10,7 +10,7 @@ categories: [architecture, ai]
 tags: [ai-native delivery, programme management, team setup, ai coding, partner governance, manufacturing]
 takeaways:
   - "AI-native delivery means coding agents draft, build and test, while people set the intent, review the output and own the result; teams shrink to small pods of architect, builder-reviewer and domain lead."
-  - "In McKinsey's 2026 survey, 79 percent of top-accelerating organisations reported smaller squads, with the median falling from about ten people to seven."
+  - "In McKinsey's 2026 survey, 79 percent of respondents at top-accelerating organisations reported smaller squads, with the median falling from about ten people to seven."
   - "The bottleneck moves to the manufacturer: each pod needs a domain lead from service, sales or after-sales who accepts working software every day."
   - "A short intent with testable acceptance criteria replaces the long specification for most stories; SAP interfaces and warranty or pricing rules still need precise specifications."
   - "A named person owns every artifact, agents work only in sandboxes and scratch orgs, and the same pipeline gates apply to human and agent code."
@@ -18,7 +18,7 @@ faq:
   - q: "What is AI-native delivery in Salesforce projects?"
     a: "A delivery model built around coding agents from the start: agents draft stories, code, tests and runbooks, while people define the intent, review the output and own each artifact. Small pods replace the classic pyramid of many junior developers."
   - q: "Do AI-native Salesforce teams really need fewer people?"
-    a: "The evidence points that way but is thin. McKinsey reports that 79 percent of top accelerators shrank their squads, median from about ten to seven, based on a self-reported survey. Measure your own cycle times before you cut a team."
+    a: "The evidence points that way but is thin. McKinsey reports that 79 percent of respondents at top-accelerating organisations saw smaller squads, median from about ten to seven, in a self-reported survey. Measure your own cycle times before you cut a team."
   - q: "Who should be the domain lead in a pod at a manufacturer?"
     a: "Someone from the business who knows the process and may decide on it, for example a warranty specialist from after-sales or a dispatcher from field service. Plan around half of that person's time; without it, the pod builds on assumptions."
   - q: "Does a daily demo replace user acceptance testing?"
@@ -44,7 +44,7 @@ I treat ApexHours as a well-argued practice framework. It gives no team sizes an
 
 ## Why do Salesforce teams get smaller?
 
-McKinsey surveyed 334 product and engineering leaders in May 2026 and published the results in [Beyond the copilot](https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/beyond-the-copilot-scaling-the-agentic-product-development-life-cycle) in August. Among the top-accelerating organisations, 79 percent said their squads had shrunk, with the median falling from about ten people to seven. One global technology company moved from product pods of 8 to 10 people to agentic teams of 4 to 6 and reported roughly twice the capacity and 50 to 80 percent shorter development cycles. McKinsey sees two role families emerging: "definers who fuse product and design, and builders who fuse development, testing, and operations".
+McKinsey surveyed 334 product and engineering leaders in May 2026 and published the results in [Beyond the copilot](https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/beyond-the-copilot-scaling-the-agentic-product-development-life-cycle) in August. Among respondents at top-accelerating organisations, 79 percent said their squads had shrunk, with the median falling from about ten people to seven. One global technology company moved from product pods of 8 to 10 people to agentic teams of 4 to 6 and reported roughly twice the capacity and 50 to 80 percent shorter development cycles. McKinsey sees two role families emerging: "definers who fuse product and design, and builders who fuse development, testing, and operations".
 
 Two caveats from the same source. The figures are self-reported by leaders, and 30 percent of respondents said team productivity fell. McKinsey also writes that "Speed is improving faster than quality". DORA's 2025 report found that AI adoption still has a [negative relationship with delivery stability](https://cloud.google.com/blog/products/ai-machine-learning/announcing-the-2025-dora-report), and DORA lists [working in small batches and a user-centric focus](https://dora.dev/capabilities/) among the seven capabilities that amplify AI's benefit. Small pods with daily feedback are a direct answer to both points. How to check whether your own programme gets faster is the topic of [measuring AI productivity in Salesforce projects](../measuring-ai-productivity-salesforce-projects/).
 

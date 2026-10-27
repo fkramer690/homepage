@@ -12,7 +12,7 @@ takeaways:
   - "Welcher Coding-Agent passt, entscheiden meist Verträge, Datenresidenz und vorhandene Werkzeuge, seltener die Modellqualität."
   - "Agentforce Vibes gibt es laut Salesforce nicht in der Hyperforce EU Operating Zone; Anthropics Claude API verarbeitet direkt nur in den USA oder global, EU-Verarbeitung geht etwa über Amazon Bedrock."
   - "Für Agenten im Betrieb gilt: Regeln wie Garantieberechtigung oder Kreditlimit gehören in deterministische Logik, das Sprachmodell übernimmt Sprache und Absicht."
-  - "Hat das ERP keine API, bleiben Dokumentenerkennung mit RPA oder der Systems Integration Agent; beide arbeiten über die Oberfläche und brauchen Tests und Monitoring."
+  - "Hat das ERP keine API, bleiben Dokumentenerkennung mit RPA oder der Systems Integration Agent; der RPA-Schritt und der Agent arbeiten beide über die Oberfläche und brauchen Tests und Monitoring."
 articles: [agentforce-yes-or-no-manufacturers, vibes-claude-code-copilot-comparison, agentforce-sap-order-status, legacy-erp-without-api-agents]
 faq:
   - q: "Welcher Coding-Agent ist der beste für Salesforce?"
@@ -39,7 +39,7 @@ Für beide Welten gibt es eigene Kriterien, eigene Budgets und eigene Tests. Die
 
 ## Die Entscheidungsmatrix für Hersteller
 
-Alle Angaben habe ich am 27. Oktober 2026 auf den verlinkten Seiten geprüft. Preise von Salesforce sind Euro-Listenpreise, alle anderen US-Listenpreise in USD.
+Stand 27. Oktober 2026, gestützt auf die verlinkten Seiten. Preise von Salesforce sind Euro-Listenpreise, alle anderen US-Listenpreise in USD.
 
 ### Bauen: Coding-Agenten, Daten und Pipeline
 
@@ -52,7 +52,7 @@ Alle Angaben habe ich am 27. Oktober 2026 auf den verlinkten Seiten geprüft. Pr
 | 5 | Org liegt in der Hyperforce EU Operating Zone oder EU-Verarbeitung ist Pflicht | Claude Code über Amazon Bedrock in einer EU-Region oder OpenAI-API-Projekte mit EU-Residenz | Vibes ist [in der EU Operating Zone nicht verfügbar](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-faqs.html); die Claude API kennt direkt [nur „us“ und „global“](https://platform.claude.com/docs/en/manage-claude/data-residency) | Auftragsverarbeitung, Betriebsrat, keine Produktivdaten im Prompt |
 | 6 | Agent braucht Daten, etwa Prüfung der installierten Basis vor einer Migration | Hosted MCP mit dem Server sobject-reads gegen eine Sandbox | [Benannter Nutzer, PKCE, Feldrechte und Sharing gelten](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/security-best-practices.html), nur Lesen | Laut Doku [nur für Kunden mit Flex Credits](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/hosted-mcp-servers-overview.md); Zähler für agentische Zugriffe noch „TBA“ |
 | 7 | Code-Qualität, Tests, Deploy-Validierung | sf CLI mit Code Analyzer und Apex-Tests als Hook und in der Pipeline | Deterministisch und ohne Tokenkosten; Salesforce selbst [empfiehlt CLI statt MCP](https://developer.salesforce.com/docs/platform/salesforce-code-analyzer/guide/mcp.html), wenn kein LLM nötig ist | Kostenlos; die einzige verlässliche Prüfung, ob etwas fertig ist |
-| 8 | Bestehende Konfiguration mit dem lokalen DX MCP Server @salesforce/mcp | Version 0.30.15 festhalten, auf Skills, Plugin und Hosted MCP umstellen | End of Life am [2. November 2026](https://raw.githubusercontent.com/forcedotcom/mcp/main/README.md) | Dabei Freigaben auf feste Sandbox-Aliasse beschränken, nie auf alle Orgs |
+| 8 | Bestehende Konfiguration mit dem lokalen DX MCP Server @salesforce/mcp | Version 0.30.15 festhalten, auf Skills, Plugin und Hosted MCP umstellen | End of Life am [2. November 2026](https://github.com/forcedotcom/mcp/issues/46) | Dabei Freigaben auf feste Sandbox-Aliasse beschränken, nie auf alle Orgs |
 
 ### Betreiben: Agenten in Service, Vertrieb und ERP
 
@@ -60,7 +60,7 @@ Alle Angaben habe ich am 27. Oktober 2026 auf den verlinkten Seiten geprüft. Pr
 |---|---|---|---|---|
 | 9 | Agent für die Garantie-Vorprüfung von Händleranträgen | Agentforce Builder mit Agent Script, Tests vor dem Go-live | Salesforce rät: was sich [als Code ausdrücken lässt, gehört in Logik](https://architect.salesforce.com/docs/architect/fundamentals/guide/hybrid-reasoning-agentforce-builder-agent-script) | [20 Flex Credits pro Aktion in Produktion, 16 in der Sandbox](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) |
 | 10 | Agent liefert Auftragsstatus oder Verfügbarkeit aus SAP S/4 | MuleSoft-API, [synchronisiert in den API Catalog](https://developer.salesforce.com/blogs/2025/06/explore-mulesoft-for-agentforce-with-topic-center-and-api-catalog), als Agenten-Aktion | Dokumentiertes Muster, Named Credentials entstehen automatisch | MuleSoft-Lizenz; Integrationsnutzer mit minimalen Rechten |
-| 11 | Altes ERP oder MES ohne API | MuleSoft IDP mit RPA oder der Systems Integration Agent | IDP gibt Dokumente unter [80 Prozent Konfidenz an Menschen](https://admin.salesforce.com/blog/2025/automate-order-entry-with-flow-mulesoft-agentforce-automate-with-agentforce); der Systems Integration Agent ist [seit der Dreamforce 2026 GA](https://www.salesforce.com/blog/dreamforce-2026-announcements/) | Beide arbeiten über die Oberfläche; Monitoring einplanen |
+| 11 | Altes ERP oder MES ohne API | MuleSoft IDP mit RPA oder der Systems Integration Agent | IDP gibt Dokumente unter [80 Prozent Konfidenz an Menschen](https://admin.salesforce.com/blog/2025/automate-order-entry-with-flow-mulesoft-agentforce-automate-with-agentforce); der Systems Integration Agent ist [seit der Dreamforce 2026 GA](https://www.salesforce.com/blog/dreamforce-2026-announcements/) | RPA und der Systems Integration Agent arbeiten über die Oberfläche; Monitoring einplanen |
 | 12 | Vertrieb will Salesforce direkt in Claude nutzen | Salesforce in Claude aus der AIforce-Schicht | Für alle Kunden [als Beta verfügbar](https://www.salesforce.com/news/stories/aiforce-announcement/) | „Pricing and packaging are subject to change“; Pilot mit kleinem Kreis |
 
 Zwei Hinweise zur Matrix. Zeile 5 ist für deutsche Hersteller oft die entscheidende, weil sie Zeile 2 ausschließen kann. Ob eine Org in der EU Operating Zone liegt, sollte die IT vor jedem Werkzeugvergleich klären. Und Zeile 6 sieht harmlos aus, ist aber der Punkt, an dem ein externes Modell echte Kundendaten liest. Was dabei zu prüfen ist, steht in [Kapitel 3](../mcp-und-schnittstellen/).
