@@ -1,6 +1,6 @@
 ---
 title: "Quality gates for AI code in the Salesforce pipeline"
-description: "Which automatic gates AI-generated Salesforce code must pass: Code Analyzer, validation deploy, Apex tests, ApexGuru, a merge block, and what sfdx-hardis covers."
+description: "Which automatic gates AI-generated Salesforce code must pass: Code Analyzer, validation deploy, Apex tests, ApexGuru, a merge block and what sfdx-hardis covers."
 pubDate: 2026-10-27
 lang: en
 slug: quality-gates-for-ai-code-salesforce-pipeline

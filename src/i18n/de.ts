@@ -180,6 +180,7 @@ export const de: Dict = {
     linkedin: 'LinkedIn-Profil',
     speaking: 'Vorträge & Events',
     certifications: 'Zertifizierungen',
+    masterclass: 'Masterclass KI: Salesforce in der Fertigung',
   },
   subpages: {
     speaking: {

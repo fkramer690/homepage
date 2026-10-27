@@ -178,6 +178,7 @@ export const en = {
     linkedin: 'LinkedIn profile',
     speaking: 'Speaker & events',
     certifications: 'Certifications',
+    masterclass: 'AI masterclass: Salesforce in manufacturing',
   },
   subpages: {
     speaking: {
