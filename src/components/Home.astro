@@ -17,6 +17,7 @@ import { getServices, serviceHref, servicesIndex } from '../lib/services';
 import { homeHref, partnersHref } from '../lib/paths';
 import { masterclassIndex } from '../lib/masterclass';
 import { questions, questionPaths } from '../data/questions';
+import StepIcon from './StepIcon.astro';
 
 interface Props {
   lang: 'en' | 'de';
@@ -73,14 +74,14 @@ const [qOpen, qClose] = lang === 'de' ? ['„', '“'] : ['“', '”'];
         <p class="label mono">{t.role.label}</p>
         <h2>{t.role.title}</h2>
         <p class="role-problem">{t.role.problem}</p>
-        <div class="two-col">
-          <div>
-            <h3>{t.role.situationTitle}</h3>
-            <p>{t.role.situation}</p>
+        <div class="compare">
+          <div class="compare-col">
+            <h3 class="compare-head mono">{t.role.withoutTitle}</h3>
+            <ul>{t.role.without.map((item) => <li>{item}</li>)}</ul>
           </div>
-          <div>
-            <h3>{t.role.approachTitle}</h3>
-            <p>{t.role.approach}</p>
+          <div class="compare-col compare-with">
+            <h3 class="compare-head mono">{t.role.withTitle}</h3>
+            <ul>{t.role.with.map((item) => <li>{item}</li>)}</ul>
           </div>
         </div>
         <div class="quote-row">
@@ -171,6 +172,7 @@ const [qOpen, qClose] = lang === 'de' ? ['„', '“'] : ['“', '”'];
         <ol class="steps">
           {t.approach.steps.map((s, i) => (
             <li>
+              <StepIcon index={i} />
               <span class="step-no mono">{String(i + 1).padStart(2, '0')}</span>
               <h3>{s.title}</h3>
               <p>{s.text}</p>

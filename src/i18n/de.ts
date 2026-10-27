@@ -39,12 +39,18 @@ export const de: Dict = {
     label: 'Die Rolle',
     title: 'Einer muss das Gesamtbild verantworten.',
     problem: 'Mehrere Implementierungspartner, eine Salesforce-Org, und niemand verantwortet das Ganze.',
-    situationTitle: 'Die Lage',
-    situation:
-      'Viele Hersteller betreiben Salesforce mit mehreren Implementierungspartnern, immer mehr Clouds und enger Anbindung an ERP, Telefonie und Service-Systeme. Jeder Partner liefert sein Stück.',
-    approachTitle: 'Was ich dagegen tue',
-    approach:
-      'Ich arbeite als zentrale Architektur-Instanz auf Ihrer Seite. Ich verantworte Lösungsdesign und Gesamtarchitektur, setze Standards für Governance und DevOps, prüfe, was Partner liefern – und hinterfrage es, bevor es teuer wird.',
+    withoutTitle: 'Ohne zentrale Architektur',
+    without: [
+      'Jeder Partner liefert sein Stück',
+      'Mehr Clouds, mehr Schnittstellen, niemand verantwortet das Ganze',
+      'Probleme fallen erst auf, wenn sie teuer sind',
+    ],
+    withTitle: 'Mit Architekt auf Ihrer Seite',
+    with: [
+      'Einer verantwortet Lösungsdesign und Gesamtarchitektur',
+      'Gemeinsame Standards für Governance und DevOps, für alle Partner',
+      'Lieferungen geprüft, bevor es teuer wird',
+    ],
     photoAlt: 'Fabian Kramer bei einer Live-Demo auf der Bühne',
     photoCaption: 'Auf der Bühne: Live-Demo statt Foliensatz.',
     quote: 'Nicht alles, was man in Salesforce bauen kann, sollte man in Salesforce bauen.',

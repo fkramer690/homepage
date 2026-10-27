@@ -37,12 +37,18 @@ export const en = {
     label: 'The role',
     title: 'Somebody has to own the big picture.',
     problem: 'Several implementation partners, one Salesforce org, and nobody owns the whole.',
-    situationTitle: 'The situation',
-    situation:
-      'Many manufacturers run Salesforce with several implementation partners, a growing number of clouds and close links to ERP, telephony and service systems. Every partner delivers their piece.',
-    approachTitle: 'What I do about it',
-    approach:
-      'I work as the central architectural authority on your side. I own solution design and the overall architecture, set governance and DevOps standards, review what partners deliver – and challenge it before it gets expensive.',
+    withoutTitle: 'Without a central architect',
+    without: [
+      'Every partner delivers their piece',
+      'More clouds, more interfaces, nobody owns the whole',
+      'Problems show up when they are already expensive',
+    ],
+    withTitle: 'With an architect on your side',
+    with: [
+      'One owner for solution design and the overall architecture',
+      'Shared governance and DevOps standards for all partners',
+      'Deliveries reviewed before it gets expensive',
+    ],
     photoAlt: 'Fabian Kramer giving a live demo on stage',
     photoCaption: 'On stage: live demos instead of slideware.',
     quote: 'Not everything that can be built in Salesforce should be built in Salesforce.',
