@@ -215,6 +215,16 @@ const drawings: Record<string, Drawing> = {
     <path d="M246 20V124" stroke="${G}" stroke-width="1" stroke-dasharray="4 3"/>${arrow(232, 72, 262, C)}
     ${box(262, 52, 46, 40)}${t(285, 70, 'ERP', { fill: D, size: 7.5, anchor: 'middle' })}${t(285, 82, l('planning', 'Planung'), { size: 6.8, anchor: 'middle' })}
     ${t(14, 146, l('2,000 × 500 × 24 = 24 million combinations', '2.000 × 500 × 24 = 24 Mio. Kombinationen'), { size: 7 })}`,
+
+  'manufacturing-cloud-rebate-management': (l) => `
+    ${box(14, 50, 62, 44)}${t(45, 68, 'ERP', { fill: D, size: 7.5, anchor: 'middle' })}${t(45, 81, l('invoices', 'Rechnungen'), { size: 6.8, anchor: 'middle' })}
+    ${arrow(76, 72, 96)}
+    ${box(96, 38, 116, 68)}${t(154, 52, 'TRANSACTION JOURNAL', { fill: D, size: 7, anchor: 'middle' })}
+    <path d="M108 96H136V84H164V72H192V60" fill="none" stroke="${C}" stroke-width="1.6"/>
+    ${t(120, 91, l('tier 1', 'Stufe 1'), { size: 6.3, anchor: 'middle' })}${t(148, 79, l('tier 2', 'Stufe 2'), { size: 6.3, anchor: 'middle' })}${t(176, 67, l('tier 3', 'Stufe 3'), { size: 6.3, anchor: 'middle' })}
+    ${arrow(212, 72, 236)}${check(218, 58)}
+    ${box(236, 50, 70, 44, C)}${t(271, 68, 'ERP', { fill: D, size: 7.5, anchor: 'middle' })}${t(271, 81, l('credit note', 'Gutschrift'), { size: 6.8, anchor: 'middle' })}
+    ${t(14, 136, l('Salesforce calculates and approves, the ERP pays', 'Salesforce rechnet und gibt frei, das ERP zahlt'), { size: 7 })}`,
 };
 
 export const hasDrawing = (key: string) => key in drawings;
