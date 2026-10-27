@@ -114,7 +114,7 @@ Wer täglich agentisch arbeitet, fährt mit der Flat Fee günstiger, bis zur Gre
 
 ### Batch: ein Org-Assessment vor dem Programmstart
 
-Ein Maschinenbauer übernimmt eine zehn Jahre alte Org mit 2.000 Apex-Klassen und will vor dem Neustart wissen, was jede Klasse tut. Angenommen sind 8.000 Tokens Input und 1.000 Tokens Output pro Klasse mit Sonnet 5.5 über die Batch API: 16 Mio. × 1 $ + 2 Mio. × 5 $ = **26 $** statt 52 $. Weil Thinking bei den 5.5-Modellen immer läuft, kann der Output höher liegen; selbst das Dreifache fällt in keinem Programmbudget auf.
+Angenommen, eine zehn Jahre alte Org mit 2.000 Apex-Klassen soll vor dem Neustart zusammengefasst werden, mit 8.000 Tokens Input und 1.000 Tokens Output pro Klasse auf Sonnet 5.5 über die Batch API: 16 Mio. × 1 $ + 2 Mio. × 5 $ = **26 $** statt 52 $. Weil Thinking bei den 5.5-Modellen immer läuft, kann der Output höher liegen; selbst das Dreifache fällt in keinem Programmbudget auf.
 
 ## Was kostet Agentforce im Betrieb?
 
@@ -149,11 +149,9 @@ Mit der Aufbereitung von 2.000 MB Ersatzteilkatalogen in Data 360 (300.000 Credi
 
 ### Die zwei häufigsten Lücken
 
-**Data 360.** Stützt sich ein Agent auf Handbücher, Explosionszeichnungen oder Ersatzteilkataloge, kostet 1 GB unstrukturierter Dokumente in der Basisstufe rund 150.000 Credits, etwa 750 $. In der Sandbox kostet dasselbe 120 Credits pro MB. Testen Sie mit einem Ausschnitt und sortieren Sie veraltete Katalogstände vorher aus. Mehr in [Data-360-Kosten für KI-Agenten](../../blog/data-360-kosten-fuer-ki-agenten/).
+**Data 360.** Stützt sich ein Agent auf Handbücher, Explosionszeichnungen oder Ersatzteilkataloge, kostet 1 GB unstrukturierter Dokumente in der Basisstufe rund 150.000 Credits, etwa 750 $, und das Vierfache, wenn Explosionszeichnungen LLM-basiertes Intelligent Processing zu 600 Credits pro MB brauchen. In der Sandbox gibt es keine Mengenstaffel. Testen Sie mit einem Ausschnitt und sortieren Sie veraltete Katalogstände vorher aus. Mehr in [Data-360-Kosten für KI-Agenten](../../blog/data-360-kosten-fuer-ki-agenten/).
 
-**Headless Platform Interactions.** Greifen Claude, ChatGPT oder andere Agenten über MCP oder API auf Salesforce zu, soll laut [SalesforceBen](https://www.salesforceben.com/salesforce-will-charge-flex-credits-for-agentic-mcp-and-api-calls/) jeder erfolgreiche Aufruf eines registrierten Agenten zählen, nur in aktiven Produktions-Orgs und mit 30 Tagen Vorlauf. Klassische Integrationen bleiben bei ihrer heutigen Preislogik. Den Satz kennen Sie nicht, die Menge können Sie schätzen, wie in [Kapitel 3](../mcp-und-schnittstellen/) gezeigt. Den Budgetposten beschreibe ich in [MCP-Zugriffe auf Salesforce als Budgetrisiko](../../blog/mcp-zugriffe-salesforce-budgetrisiko/).
-
-Den tatsächlichen Verbrauch zeigt das [Digital Wallet](https://www.salesforce.com/agentforce/digital-wallet/) bis auf Agent, Aktion und Kanal, mit Warnschwellen. Es ist mit Digital-Wallet-fähigen Produkten kostenlos, setzt aber ein aktiviertes Data 360 voraus.
+**Headless Platform Interactions.** Greifen Claude, ChatGPT oder andere Agenten über MCP oder API auf Salesforce zu, soll laut [SalesforceBen](https://www.salesforceben.com/salesforce-will-charge-flex-credits-for-agentic-mcp-and-api-calls/) jeder erfolgreiche Aufruf eines registrierten Agenten zählen, nur in aktiven Produktions-Orgs und mit 30 Tagen Vorlauf. Klassische Integrationen bleiben bei ihrer heutigen Preislogik. Wer Claude auf Salesforce-Daten nutzt, zahlt dann doppelt: Anthropic für Tokens, Salesforce für Interaktionen. Die Menge können Sie schätzen, wie in [Kapitel 3](../mcp-und-schnittstellen/) gezeigt; den Budgetposten beschreibe ich in [MCP-Zugriffe auf Salesforce als Budgetrisiko](../../blog/mcp-zugriffe-salesforce-budgetrisiko/).
 
 ## Ein typisches Szenario: das erste KI-Jahr eines Maschinenbauers
 
@@ -179,7 +177,7 @@ Zum Vergleich: Die 80 Core-Lizenzen kosten zum Listenpreis 187.200 $ im Jahr. De
 5. **Seats nach Messung kaufen:** einen Monat zu API-Preisen oder nach Verbrauch laufen lassen, dann pro Person über Flat Fee oder Seat entscheiden.
 6. **Agentforce pro Gesprächstyp schätzen:** Aktionen, Prompts, Sandbox-Tests und Dokumente in MB, Credits entlang des Go-live-Plans kaufen, weil sie verfallen.
 7. **Reserve für offene Zähler einplanen** und vom Account Executive schriftlich bestätigen lassen, wie Pool, Orgs und Headless Platform Interactions abgerechnet werden.
-8. **Monatlich messen:** Digital Wallet für Agentforce, Spend-Report oder Console für Claude, Credit-Verbrauch bei Copilot und Vibes.
+8. **Monatlich messen:** Das [Digital Wallet](https://www.salesforce.com/agentforce/digital-wallet/) zeigt den Agentforce-Verbrauch nach Agent, Aktion und Kanal und setzt ein aktiviertes Data 360 voraus; für Claude dienen Spend-Report oder Console.
 
 Diese Fragen gehören zu meiner Arbeit in [Make-or-buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/). Alle Kapitel der Masterclass finden Sie auf der [Übersichtsseite](../).
 

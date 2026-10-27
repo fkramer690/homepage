@@ -294,6 +294,7 @@ export const de: Dict = {
     lead: 'Coding-Agenten, Agentforce, MCP und neue Kostenmodelle verändern, wie Salesforce-Programme gebaut und betrieben werden. Ich ordne sie für Service, Außendienst und B2B-Vertrieb ein, auch dort, wo Salesforce nicht die richtige Antwort ist.',
     toChapters: 'Zu den Kapiteln',
     chaptersAnchor: 'kapitel',
+    deadlinesAnchor: 'termine',
     articlesAnchor: 'artikel',
     factsLabel: 'Masterclass in Zahlen',
     facts: { chapters: 'Kapitel', articles: 'Fachartikel', languages: 'Deutsch und Englisch' },

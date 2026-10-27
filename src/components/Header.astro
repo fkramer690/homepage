@@ -3,6 +3,7 @@ import Logo from './Logo.astro';
 import type { Dict } from '../i18n/en';
 import ExternalMark from './ExternalMark.astro';
 import { contactHref, contactExternal } from '../site';
+import { masterclassIndex } from '../lib/masterclass';
 
 interface Props {
   t: Dict;
@@ -26,6 +27,7 @@ const anchor = (id: string) => `${home}#${id}`;
       <a href={anchor('references')}>{t.nav.references}</a>
       <a href={anchor('about')}>{t.nav.about}</a>
       <a href={`${home}blog/`}>{t.nav.blog}</a>
+      <a href={masterclassIndex(t.lang)}>{t.nav.masterclass}</a>
       <a href={anchor('contact')}>{t.nav.contact}</a>
     </nav>
     <div class="header-actions">

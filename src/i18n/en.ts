@@ -292,6 +292,7 @@ export const en = {
     lead: 'Coding agents, Agentforce, MCP and new cost models are changing how Salesforce programmes are built and run. I put them in context for service, field service and B2B sales, including where Salesforce is not the right answer.',
     toChapters: 'Go to the chapters',
     chaptersAnchor: 'chapters',
+    deadlinesAnchor: 'deadlines',
     articlesAnchor: 'articles',
     factsLabel: 'Masterclass in figures',
     facts: { chapters: 'chapters', articles: 'articles', languages: 'German and English' },

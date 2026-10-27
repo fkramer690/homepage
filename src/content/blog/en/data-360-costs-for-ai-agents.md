@@ -39,11 +39,11 @@ Three meters follow from this:
 - **Queries per million rows** each time the agent searches: 3 credits in the base tier.
 - **Storage.** Every ingested file counts toward Data 360 storage, and so do the chunk and index objects created for the search index.
 
-Rates fall with volume. Up to 300,000 credits a month the base rate applies, then it drops in three steps to a fifth, for unstructured processing 30 credits per MB above 12.5 million credits. Tiers apply per usage type and reset on the first day of each calendar month. Flex Credits cost [$500 per 100,000](https://www.salesforce.com/agentforce/pricing/), and the same page notes for its Agentforce examples that Data 360 credits are not included. That is why these numbers rarely make it into the first estimate.
+Rates fall with volume: above 300,000 credits a month they drop in three steps to a fifth, for unstructured processing 30 credits per MB above 12.5 million credits. Tiers apply per usage type and reset on the first day of each calendar month. Flex Credits cost [$500 per 100,000](https://www.salesforce.com/agentforce/pricing/), and the same page notes for its Agentforce examples that Data 360 credits are not included. That is why these numbers rarely make it into the first estimate.
 
 ## Default parser or LLM parsing: why do catalogues cost four times as much?
 
-A spare part catalogue is mostly exploded drawings with position numbers and tables of part numbers. The default parser extracts text. For multimodal documents [Trailhead](https://trailhead.salesforce.com/content/learn/modules/data-cloud-process-content/use-rag-to-bring-unstructured-data-to-agentforce) describes an LLM-based parser, a Docling parser for nested tables and image processing for diagrams. The help article spells out how each option is billed:
+A spare part catalogue is mostly exploded drawings with position numbers and tables of part numbers. The default parser extracts text. For multimodal documents [Trailhead](https://trailhead.salesforce.com/content/learn/modules/data-cloud-process-content/use-rag-to-bring-unstructured-data-to-agentforce) describes an LLM-based parser, a Docling parser for nested tables and image processing for diagrams. The help article sets out the billing:
 
 - **LLM-based parsing:** the entire document goes to the LLM, and its full size is billed as Intelligent Processing.
 - **LLM-based visual preprocessing:** only documents that contain visual elements or tables are billed as Intelligent Processing, the rest as Unstructured Processing.
@@ -72,17 +72,17 @@ Assume a machine builder whose agent answers dealers and service reps on spare p
 
 For the searches I assume each query counts the whole index. The help article says that for hybrid search "the number of vectors and keyword records in the search index are counted", and that a typical index has as many keyword records as vectors. Salesforce's own [pricing example](https://www.salesforce.com/data/pricing/agentforce-use-case/) assumes a query scans 20 percent of the unstructured data, so my figure errs on the safe side.
 
-Three results stand out. Searches make up 7 percent of the running cost, changed documents the rest. With the default parser for the catalogues too, the initial load would cost 1,164,000 credits instead of 2,664,000. And the first year comes to about 5 million credits, more than the 2.75 million Flex Credits per org per year that the pricing page lists for Max Edition, before a single agent action. The agent side of the bill is in [what a dealer service agent costs](../dealer-service-agent-cost-calculation/).
+Three results stand out. Searches are 7 percent of the running cost. With the default parser for the catalogues too, the initial load would cost 1,164,000 credits instead of 2,664,000. And the first year comes to about 5 million credits, more than the 2.75 million Flex Credits per org per year that the pricing page lists for Max Edition, before a single agent action. The agent side of the bill is in [what a dealer service agent costs](../dealer-service-agent-cost-calculation/).
 
 ## Where do the hidden Data 360 costs sit?
 
 ### Re-indexing whole records
 
-The help article treats a source record and all its file attachments as one unit. If a field on that record or one attachment changes, all attachments are reindexed. Picture catalogues attached to product records that the SAP interface updates with prices or stock every night. If that reprocessed all catalogues just once a week, the month would carry 24,000 MB of Intelligent Processing: about 6.5 million credits or $32,700 instead of the planned 195,000. I would keep documents on objects or in a Data Library that no interface touches, and check the behaviour with a small sample in the sandbox before go-live.
+The help article treats a source record and all its file attachments as one unit. If a field on that record or one attachment changes, all attachments are reindexed. Picture catalogues attached to product records that the SAP interface updates with prices or stock every night. If that reprocessed all catalogues just once a week, the month would carry 24,000 MB of Intelligent Processing: about 6.5 million credits or $32,700 instead of the planned 195,000. I would keep documents on objects or in a Data Library that no interface touches, and test this in the sandbox before go-live.
 
 ### Tiers reset every month
 
-Because tiers start again on the first of each month, timing matters. The initial load above costs 2,664,000 credits in one month. Spread over three months, the same documents cost about 3.54 million, $4,380 more. I plan the initial load as one batch in one calendar month.
+Because tiers restart each month, timing matters. The initial load above costs 2,664,000 credits in one month. Spread over three months, the same documents cost about 3.54 million, $4,380 more. I plan the initial load as one batch in one calendar month.
 
 ### Sandbox without tiers
 
@@ -90,11 +90,11 @@ In a sandbox, Data 360 has no volume tiers: 120 credits per MB unstructured, 480
 
 ### Enriched indexing
 
-Enriched indexes use an LLM to generate additional chunks, and [Trailhead](https://trailhead.salesforce.com/content/learn/modules/search-index-types-data-cloud-quick-look/get-to-know-search-index-types-in-data-cloud) says three new chunks are created per chunk. The help article bills these LLM calls as Standard Prompts at 4 credits per 2,000 tokens. If each of the 300,000 chunks needs one such call, enrichment adds 1.2 million credits, and the larger index raises the rows every search counts. Trailhead's own condition fits: only where higher retrieval accuracy brings measurable value.
+Enriched indexes use an LLM to generate additional chunks, and [Trailhead](https://trailhead.salesforce.com/content/learn/modules/search-index-types-data-cloud-quick-look/get-to-know-search-index-types-in-data-cloud) says three new chunks are created per chunk. The help article bills these LLM calls as Standard Prompts at 4 credits per 2,000 tokens. If each of the 300,000 chunks needs one such call, enrichment adds 1.2 million credits, and the larger index raises the rows each search counts. Trailhead ties it to measurable value from better retrieval.
 
 ### Hybrid search
 
-Part numbers and error codes are exact terms, and Trailhead recommends hybrid search for queries that contain specific terms. Building the index costs the same for vector and hybrid search, but each hybrid query counts vectors and keyword records, so roughly twice the rows. At 14,400 credits a month I would pay that for correct part numbers.
+Trailhead recommends hybrid search for queries with specific terms, such as part numbers and error codes. Building the index costs the same for vector and hybrid search, but each hybrid query counts vectors and keyword records, so roughly twice the rows. At 14,400 credits a month I would pay that for correct part numbers.
 
 ## Which content does not belong in the index?
 
@@ -103,7 +103,7 @@ The cheapest megabyte is the one you never process.
 - **Stock, prices and delivery dates.** These live in the ERP and change daily. The agent should read them through an API action, as described in [Agentforce and SAP order status](../agentforce-sap-order-status-mulesoft/), not from an indexed price list. Why the ERP owns spare parts stock is explained in [spare parts between ERP and Field Service](../salesforce-field-service-spare-parts-erp/).
 - **Superseded catalogue versions.** With both versions in the index you pay twice, and the agent may quote an old part number.
 - **Files above the Data Library limits.** Trailhead lists [100 MB per PDF and 4 MB per text or HTML file](https://trailhead.salesforce.com/content/learn/modules/agentforce-data-library-basics/build-a-file-based-data-library-for-an-agent), and the data source of a library cannot be changed later. Large catalogues need splitting, ideally by product line.
-- **Documents nobody asks about.** Start with the catalogues behind the most frequent dealer enquiries and add the rest when the questions show up.
+- **Documents nobody asks about.** Start with the catalogues behind the most frequent dealer enquiries.
 
 ## How do you budget Data 360 for an agent?
 
