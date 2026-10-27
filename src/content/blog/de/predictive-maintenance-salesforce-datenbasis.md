@@ -22,7 +22,7 @@ faq:
   - q: "Wie viel Servicehistorie brauche ich für eine Ausfallprognose?"
     a: "Salesforce nennt kein Minimum. Meine Faustregel: pro Baureihe und Ausfallart einige Dutzend dokumentierte Ausfälle mit codierter Ursache, auf Work Orders, die über die Seriennummer mit der Anlage verknüpft sind."
   - q: "Was ist die Alternative zu Predictive Maintenance in Salesforce?"
-    a: "Wartungspläne und Maintenance Work Rules erzeugen Work Orders im Intervall, und Salesforce beschreibt vorbeugende Pläne nach Nutzung, Zustand und Kriterien wie einem Temperaturschwellwert. Seit August 2025 kann ein Agent diese Termine mit dem Kunden buchen."
+    a: "Wartungspläne und Maintenance Work Rules erzeugen Work Orders im Intervall, und Salesforce beschreibt vorbeugende Pläne nach Nutzung, Zustand und Kriterien wie einem Temperaturschwellwert. Für August 2025 hat Salesforce einen Agenten angekündigt, der diese Termine mit dem Kunden bucht."
 draft: false
 ---
 
@@ -36,7 +36,7 @@ Salesforce verkauft unter dem Stichwort proaktiver Service mehrere Funktionen, u
 |---|---|---|
 | Maintenance Plans und Work Rules | Erzeugen Work Orders pro Anlage im Intervall | Standard in Field Service |
 | Nutzungs- und Zustandskriterien | Vorbeugende Pläne nach „asset use, condition, and specific criteria“, etwa einem Temperaturschwellwert | Auf der [Produktseite](https://www.salesforce.com/service/field-service-management/), ohne eigenen Preis |
-| Agent für proaktive Wartung | Kontaktiert Kunden und bucht Termine aus den Fälligkeiten der Wartungspläne | GA seit August 2025, 20 Flex Credits pro Aktion |
+| Agent für proaktive Wartung | Kontaktiert Kunden und bucht Termine aus den Fälligkeiten der Wartungspläne | Für August 2025 als GA angekündigt, 20 Flex Credits pro Aktion |
 | Agentenvorlage Asset Service | Erkennt „asset issues that require maintenance“, entwirft Reparaturangebote und Serviceaufträge | Verfügbar seit August 2025 |
 | Asset Health Score | Bewertet Anlagen nach Alter, Nutzung, Telemetrie und Reparaturhistorie über Data 360 | Teil von Connected Assets, 15.000 $ pro Org und Monat (US-Listenpreis) |
 | Asset Service Prediction | Sagt Zeitpunkt und Grund eines Ausfalls voraus | Open Beta im Juni 2024 angekündigt, Produktseite ohne Status |

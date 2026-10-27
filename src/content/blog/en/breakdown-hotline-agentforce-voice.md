@@ -46,7 +46,7 @@ Salesforce's examples are planned appointments: the [Winter '27 announcement](ht
 
 The caller is usually a maintenance technician standing next to a stopped line in a loud hall. They want a technician of yours, not a menu. Four facts decide the next step, and the caller says none of them in a form a system can use:
 
-- **Which machine.** Serial numbers are long and alphanumeric. The Salesforce developer blog warns that speech to text can mishear technical terms, and Salesforce's [Agentforce Voice guide](https://www.salesforce.com/agentforce/voice/agentforce-voice-guide-full/) says the pronunciation of product identifiers needs testing before launch. I would identify the machine through caller number, contact, account and installed assets, and ask for the serial number only when the account has several machines of that type.
+- **Which machine.** Serial numbers are long and alphanumeric. The Salesforce developer blog warns that speech to text can mishear technical terms, and Salesforce's [Agentforce Voice guide](https://www.salesforce.com/agentforce/voice/agentforce-voice-guide-full/) advises checking in pre-launch testing how the agent pronounces product identifiers and numerical codes. I would identify the machine through caller number, contact, account and installed assets, and ask for the serial number only when the account has several machines of that type.
 - **Down or running.** "It makes a strange noise and we stopped it" can mean either. The LLM should not infer this from a story. The agent asks a closed question, "Is the machine standing still right now?", and stores the answer in a variable.
 - **What the contract promises.** The response time sits on the entitlement record. According to [Salesforce Ben](https://www.salesforceben.com/complete-guide-to-salesforce-entitlements-and-milestones-in-service-cloud/), entitlements can be related to accounts, assets, cases and service contracts, and milestones count down within business hours. How to model this is in [modelling maintenance contracts](../salesforce-field-service-maintenance-contracts/).
 - **Safety.** Injury, fire, a leaking medium: the agent transfers at once and asks nothing except a callback number.
@@ -78,7 +78,7 @@ A footnote on the rate card says that for certain customers the Agentforce Voice
 Two items are open or extra:
 
 - **Speech meters.** The rate card lists speech to text at 150 credits per hour of transcription. It does not say whether a voice agent call triggers it in addition, and I found no Salesforce page that does. Ask before you sign.
-- **Telephony and seats.** As I read the developer blog, the dispatchers who take transferred calls need a Salesforce Voice seat. The [Salesforce Voice pricing page](https://www.salesforce.com/eu/service/call-center-integration/voice-pricing/) lists Contact Center at $125 per user and month with unlimited platform voice minutes, or Partner Contact Center at $50 if you keep your telephony provider.
+- **Telephony and seats.** I found no Salesforce page that says whether dispatchers who take transferred calls need their own Salesforce Voice seat, so I would plan for it and ask. The [Salesforce Voice pricing page](https://www.salesforce.com/eu/service/call-center-integration/voice-pricing/) lists Contact Center at $125 per user and month with unlimited platform voice minutes, or Partner Contact Center at $50 if you keep your telephony provider.
 
 For the method behind per-action estimates, see [Flex Credits and Agentforce cost per action](../flex-credits-agentforce-cost-per-action/).
 

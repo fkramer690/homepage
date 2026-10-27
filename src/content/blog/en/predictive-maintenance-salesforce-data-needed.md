@@ -22,7 +22,7 @@ faq:
   - q: "How much service history do I need for failure prediction?"
     a: "Salesforce publishes no minimum. My rule of thumb: per model series and failure mode, a few dozen documented failures with a coded cause, on work orders linked to the asset by serial number."
   - q: "What is the alternative to predictive maintenance in Salesforce?"
-    a: "Maintenance plans and maintenance work rules generate work orders by interval, and Salesforce describes preventive plans built around asset use, condition and criteria such as a temperature threshold. Since August 2025 an agent can book those visits with the customer."
+    a: "Maintenance plans and maintenance work rules generate work orders by interval, and Salesforce describes preventive plans built around asset use, condition and criteria such as a temperature threshold. For August 2025 Salesforce announced an agent that books those visits with the customer."
 draft: false
 ---
 
@@ -36,7 +36,7 @@ Salesforce sells several functions under the heading of proactive service, and o
 |---|---|---|
 | Maintenance plans and work rules | Generate work orders per asset by interval | Standard Field Service |
 | Usage and condition criteria | Preventive plans around "asset use, condition, and specific criteria", for example a temperature threshold | On the [product page](https://www.salesforce.com/service/field-service-management/), no separate price |
-| Proactive maintenance agent | Contacts customers and books visits from maintenance plan dates | GA since August 2025, 20 Flex Credits per action |
+| Proactive maintenance agent | Contacts customers and books visits from maintenance plan dates | Announced as GA for August 2025, 20 Flex Credits per action |
 | Asset Service agent template | Identifies "asset issues that require maintenance", drafts repair estimates and service orders | Available since August 2025 |
 | Asset Health Score | Scores assets by age, usage, telemetry and repair history via Data 360 | Part of Connected Assets, $15,000 per org per month |
 | Asset Service Prediction | Predicts the time of and reason for a failure | Open beta announced in June 2024, product page without a status |
