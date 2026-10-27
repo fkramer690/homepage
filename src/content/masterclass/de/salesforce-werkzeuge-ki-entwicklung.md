@@ -127,8 +127,8 @@ Nehmen wir einen Maschinenbauer mit Sales Cloud, Service Cloud, Händlerportal u
 
 1. **Org-Standort.** Liegt die Org in der EU Operating Zone, ist Vibes keine Option. Nehmen wir an, sie liegt in einer EU-Org außerhalb davon.
 2. **Coding-Lizenz.** Der Partner möchte die Unmetered-Lizenz mit Sonnet. Angenommen sind 25 agentische Requests pro Entwickler und Arbeitstag mit durchschnittlich 30.000 Token. Sechs Entwickler kommen auf 150 Requests und 4,5 Mio. Token am Tag. Die Grenze von 36 Mio. Token ist nach acht Arbeitstagen erreicht, die 2.500 Requests wären es nach knapp 17. Weil die Grenze pro Org gilt, arbeitet das Team ab dem neunten Arbeitstag mit GPT-5 weiter oder zahlt Flex Credits. Ob Salesforce den Kontext jedes Agentenschritts voll zählt, habe ich nicht dokumentiert gefunden; das gehört vor die Unterschrift geklärt.
-3. **Metered mit Opus.** Dieselben 30.000 Token sind 15 Einheiten zu 16 Credits, also 240 Credits oder 1,20 $ pro Request. 150 Requests am Tag kosten damit 180 $, rund 3.780 $ in 21 Arbeitstagen.
-4. **Der Agent selbst.** Er entsteht als Agent Script in Git, Kreditprüfung und Auftragsabfrage laufen als Logik. Für den Test sind 60 Fälle mit je drei Aktionen in drei Durchläufen angenommen. Das sind 540 Aktionen zu je 16 Credits in der Sandbox, also 8.640 Credits oder 43,20 $.
+3. **Metered mit Opus.** Dieselben 30.000 Token sind 15 Einheiten zu 16 Credits, also 240 Credits oder 1,20 € pro Request. 150 Requests am Tag kosten damit 180 €, rund 3.780 € in 21 Arbeitstagen.
+4. **Der Agent selbst.** Er entsteht als Agent Script in Git, Kreditprüfung und Auftragsabfrage laufen als Logik. Für den Test sind 60 Fälle mit je drei Aktionen in drei Durchläufen angenommen. Das sind 540 Aktionen zu je 16 Credits in der Sandbox, also 8.640 Credits oder 43,20 €.
 5. **Das Gate.** Code Analyzer läuft bei jedem Pull Request in der Pipeline, egal ob Vibes, Claude Code oder ein Mensch den Code geschrieben hat.
 
 In diesem Szenario ist die Frage nach dem Agenten schnell beantwortet. Zeit kosten die Grenze der Lizenz, die offene Zählweise und die Gates.

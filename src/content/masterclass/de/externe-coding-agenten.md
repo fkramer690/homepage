@@ -89,7 +89,7 @@ Dazu kommt das Arbeitsrecht. Laut [CMS](https://cms.law/de/deu/legal-updates/ki-
 
 ## Was kosten Coding-Agenten pro Entwickler?
 
-Alle großen Anbieter rechnen inzwischen nach Token ab. Der Seatpreis kauft ein Kontingent, keine unbegrenzte Nutzung.
+Alle großen Anbieter rechnen inzwischen nach Token ab. Der Seatpreis kauft ein Kontingent, keine unbegrenzte Nutzung. Alle Beträge sind US-Listenpreise in USD.
 
 | Werkzeug | Abrechnung | Richtwert laut Anbieter |
 |---|---|---|

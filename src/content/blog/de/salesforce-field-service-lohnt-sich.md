@@ -19,7 +19,7 @@ faq:
   - q: "Was ist Salesforce Field Service?"
     a: "Salesforce Field Service ist das Produkt für den Außendienst auf Basis der Service Cloud. Es plant Einsätze nach Qualifikation, Verfügbarkeit und Fahrzeit, schickt sie an eine mobile App für Techniker, die auch offline funktioniert, und dokumentiert Arbeit, Material und Unterschrift."
   - q: "Was kostet Salesforce Field Service?"
-    a: "Laut Salesforce-Preisseite (Stand Oktober 2026) kosten Dispatcher und Technician je 175 € pro Nutzer und Monat in der Enterprise Edition, Field Service Plus 230 €. In der Unlimited Edition sind es 330 € und 380 €, jeweils mit Jahresvertrag."
+    a: "Laut Salesforce-Preisseite (Stand Oktober 2026) kosten Dispatcher und Technician je 175 € pro Nutzer und Monat in der Enterprise Edition, Field Service Plus 230 €. In der Unlimited Edition nennt die Fußnote 330 und 380 US-Dollar, jeweils mit Jahresvertrag."
   - q: "Brauche ich für Field Service eine Service-Cloud-Lizenz?"
     a: "Ja, Field Service setzt mindestens eine Service-Cloud-Lizenz voraus, und Techniker brauchen mindestens einen Dispatcher, damit die Terminplanung funktioniert. Field Service Plus erfüllt die Service-Cloud-Voraussetzung selbst."
   - q: "Gibt es Lizenzen für externe Servicepartner?"

@@ -39,7 +39,7 @@ Für beide Welten gibt es eigene Kriterien, eigene Budgets und eigene Tests. Die
 
 ## Die Entscheidungsmatrix für Hersteller
 
-Alle Angaben habe ich am 27. Oktober 2026 auf den verlinkten Seiten geprüft. Preise sind US-Listenpreise.
+Alle Angaben habe ich am 27. Oktober 2026 auf den verlinkten Seiten geprüft. Preise von Salesforce sind Euro-Listenpreise, alle anderen US-Listenpreise in USD.
 
 ### Bauen: Coding-Agenten, Daten und Pipeline
 

@@ -32,7 +32,7 @@ KI-Coding kostet im Salesforce-Projekt weniger, als die meisten Budgetdiskussion
 
 ## Was kostet KI-Coding pro Entwickler und Monat?
 
-Die meisten Coding-Werkzeuge verkaufen inzwischen einen Seat mit Budget und rechnen jede Nutzung jenseits davon pro Token ab. Hier die US-Listenpreise vom 27. Oktober 2026:
+Die meisten Coding-Werkzeuge verkaufen inzwischen einen Seat mit Budget und rechnen jede Nutzung jenseits davon pro Token ab. Hier die Listenpreise vom 27. Oktober 2026; außer bei Salesforce sind es US-Listenpreise in USD:
 
 - **Claude Code zu API-Preisen.** Anthropic [nennt](https://code.claude.com/docs/en/costs) für Unternehmenseinsätze rund 13 $ pro Entwickler und aktivem Tag und 150 $ bis 250 $ pro Monat; 90 Prozent der Nutzer bleiben unter 30 $ pro aktivem Tag.
 - **Claude Team und Enterprise.** Laut [Preisseite von Anthropic](https://claude.com/pricing) kostet ein Team-Standard-Seat 25 $ im Monat (20 $ jährlich), Premium 125 $ (100 $ jährlich), Enterprise 20 $ pro Seat plus Nutzung zu API-Preisen. Die Nutzung zieht aus einem Kontingent, das sich in einem Fünf-Stunden- und einem Wochenfenster erneuert. Wie viele Tokens das sind, veröffentlicht Anthropic nicht.
