@@ -952,7 +952,7 @@ const drawings: Record<string, Drawing> = {
     ${dot(171, 62, G, 2.5)}${t(180, 65, l('only Italian articles', 'nur italienische Artikel'), { size: 7 })}
     ${box(166, 76, 140, 40, C)}${t(176, 91, 'PIVOT', { fill: C, size: 7.5 })}${t(176, 106, l('question to EN, answer back', 'Frage nach EN, Antwort zurück'), { size: 7 })}
     <path d="M166 128H306" stroke="${L}"/>
-    ${t(166, 140, l('Czech: 1.24x tokens (1 test)','Tschechisch: 1,24x Tokens (1 Test)'), { size: 7 })}${t(166, 152, l('prompts: 2,000-token units', 'Prompts: 2.000-Token-Einheiten'), { size: 7 })}`,
+    ${t(166, 140, l('other languages: often more tokens', 'andere Sprachen: oft mehr Tokens'), { size: 7 })}${t(166, 152, l('prompts: 2,000-token units', 'Prompts: 2.000-Token-Einheiten'), { size: 7 })}`,
 
   'sandbox-data-ai-coding-agents': (l) => `
     ${box(14, 58, 72, 44, C)}${t(50, 76, l('CODING AGENT', 'CODING-AGENT'), { fill: C, size: 7.5, anchor: 'middle' })}${t(50, 90, l('read = prompt', 'gelesen = Prompt'), { size: 7, anchor: 'middle' })}
