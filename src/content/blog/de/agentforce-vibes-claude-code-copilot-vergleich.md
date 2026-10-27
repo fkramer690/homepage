@@ -3,7 +3,7 @@ title: "Agentforce Vibes, Claude Code, Codex oder Copilot?"
 description: "Welchen Coding-Agenten sollten Ihr Salesforce-Team oder Ihr Partner nutzen? Eine Entscheidung nach Verträgen, EU-Datenresidenz, Kostenmodell und Governance."
 pubDate: 2026-10-27
 lang: de
-slug: agentforce-vibes-claude-code-copilot
+slug: agentforce-vibes-claude-code-copilot-vergleich
 translationKey: vibes-claude-code-copilot-comparison
 topic: devops
 tags: [KI-Coding, Agentforce Vibes, Claude Code, GitHub Copilot, Datenresidenz, Partnersteuerung]
@@ -65,7 +65,7 @@ Zwei Details zählen für Salesforce-Teams. Die [EU-Modellliste für Copilot](ht
 Die Werkzeuge unterscheiden sich weniger im Preis als darin, wer die Ausgaben sieht:
 
 - **Copilot** enthält Credits im Wert des Seatpreises, [19 $ oder 39 $ pro Nutzer](https://docs.github.com/en/copilot/tutorials/roll-out-at-scale/assign-licenses/choose-enterprise-plan) (US-Listenpreis), gepoolt über das Unternehmen, danach 0,01 $ pro Credit. Admins setzen [Budgets pro Unternehmen, Kostenstelle und Nutzer](https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/).
-- **Claude Team und Enterprise** zehren von einem Kontingent pro Seat. Nutzung darüber hinaus braucht Usage Credits mit Ausgabelimits pro Organisation, Gruppe oder Mitglied.
+- **Claude Team und Enterprise** zehren von einem Kontingent pro Seat. Wer mehr braucht, aktiviert Usage Credits mit Ausgabelimits pro Organisation, Gruppe oder Mitglied.
 - **Claude Code über Bedrock** erscheint auf der AWS-Rechnung. Die Analytics von Anthropic erfassen das nicht; Zahlen pro Nutzer brauchen OpenTelemetry oder ein Gateway.
 - **Vibes nach Verbrauch** zieht aus demselben Flex-Credit-Pool wie Ihre produktiven Agenten. Ein Partnerteam kann das Budget aufbrauchen, das Sie für einen Serviceagenten für Händleranfragen eingeplant haben.
 

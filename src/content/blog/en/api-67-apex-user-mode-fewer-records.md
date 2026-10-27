@@ -39,7 +39,7 @@ Summer '26 reached production orgs between 15 May and 13 June 2026, depending on
 
 The word "versioned" carries the risk. Each class and trigger stores its own API version in its metadata, and the new behaviour applies only to code saved at 67.0 or later. A class at 62.0 keeps running in system mode until somebody raises the version. One side effect is easy to miss: according to the [sharing documentation](https://developer.salesforce.com/docs/atlas.en-us.264.0.apexcode.meta/pages/apex_classes_keywords_sharing.htm), an older class without a declaration runs with sharing as soon as any class in its inheritance chain is saved at 67.0. Bumping a base class can change classes nobody touched.
 
-Triggers are the deliberate exception, and Salesforce's sources describe it in different words. The [Summer '26 architect highlights](https://www.salesforce.com/blog/summer-26-release-architect-highlights/) say triggers "always run in system mode and always will", while the handler classes they call are affected if they lack a declaration. The current guide says the trigger runs without sharing, but in its 67.0 example a query in the trigger body without an access mode runs in user mode. Both agree on the advice, and I follow it: set the access mode explicitly in triggers and handlers, and keep the logic in the handlers.
+Triggers are the deliberate exception, described in different words. The [Summer '26 architect highlights](https://www.salesforce.com/blog/summer-26-release-architect-highlights/) say triggers "always run in system mode and always will", while the handler classes they call are affected if they lack a declaration. The current guide says the trigger runs without sharing, but in its 67.0 example a query in the trigger body without an access mode runs in user mode. Both give the same advice, and I follow it: set the access mode explicitly in triggers and handlers, and keep the logic in the handlers.
 
 ## Why does Apex see fewer records after the bump?
 
@@ -53,7 +53,7 @@ The same page settles a detail that matters for every migration: a database oper
 
 For a manufacturer, who runs the code matters more than the code itself:
 
-- **Integration users.** An Apex REST service that SAP or proALPHA calls to update order status runs as the integration user. Its permission set was often built for system mode and only covers the fields the API itself needed.
+- **Integration users.** An Apex REST service that SAP or proALPHA calls to update order status runs as the integration user, whose permission set was often built for system mode.
 - **Dealers in the portal.** Controllers behind an Experience Cloud dealer portal mostly ran with sharing already, because `@AuraEnabled` methods did. The new part is field-level security: a field the dealer profile cannot read, selected but never shown, now breaks the component. More on portals in [the Manufacturing Cloud customer portal](../manufacturing-cloud-customer-portal/).
 - **Technicians and service reps.** Field Service technicians and service reps often see only their territory or their accounts. Logic that decides on goodwill, warranty or spare parts based on counts across all records gives different answers.
 
@@ -69,7 +69,7 @@ For a manufacturer, who runs the code matters more than the code itself:
 
 ## A typical scenario: consolidating API versions at a machine builder
 
-Assume a machine builder with Service Cloud, a dealer portal and SAP S/4, connected through Apex REST services. All numbers are assumptions. After the Winter '27 compiler warnings for very old API versions, described in [what Winter '27 changes for your pipeline](../salesforce-winter-27-what-changes-for-your-pipeline/), IT decides to move 220 Apex classes, saved between 38.0 and 62.0, to 67.0. The partner uses a coding agent. It raises the versions, replaces `WITH SECURITY_ENFORCED` with `WITH USER_MODE` in 15 queries and fixes every compile error. All tests pass, coverage stays at 84 percent.
+Assume a machine builder with Service Cloud, a dealer portal and SAP S/4, connected through Apex REST services. All numbers are assumptions. After the Winter '27 compiler warnings for very old API versions, described in [what Winter '27 changes for your pipeline](../salesforce-winter-27-what-changes-for-your-pipeline/), IT decides to move 220 Apex classes, saved between 38.0 and 62.0, to 67.0. The partner's coding agent raises the versions, replaces `WITH SECURITY_ENFORCED` with `WITH USER_MODE` in 15 queries and fixes every compile error. All tests pass, coverage stays at 84 percent.
 
 UAT finds three problems:
 
