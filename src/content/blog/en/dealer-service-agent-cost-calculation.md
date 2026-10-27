@@ -31,18 +31,17 @@ An Agentforce service agent for dealer enquiries costs about $1,020 a month in p
 
 ## What does an Agentforce service agent cost per month?
 
-Agentforce bills usage in Flex Credits. Salesforce lists them at [$500 per 100,000 credits](https://www.salesforce.com/agentforce/pricing/), so one credit costs half a cent. The [Flex Credits rate card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf), updated as of 31 August 2026, sets a multiplier per usage type:
+Agentforce bills usage in Flex Credits, listed at [$500 per 100,000 credits](https://www.salesforce.com/agentforce/pricing/), so one credit costs half a cent. The [Flex Credits rate card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf), updated as of 31 August 2026, sets a multiplier per usage type:
 
 - **Standard or custom action:** 20 credits in production, 16 in a sandbox or scratch org.
-- **Voice action:** 30 credits, 24 in a sandbox.
 - **Prompts on Salesforce-enabled models:** Basic 2, Standard 4, Advanced 16 credits.
 - **Help Agent resolution:** 400 credits, 0 in a sandbox.
 - **Data 360:** Unstructured Processing 150 credits per MB and Queries 3 credits per million rows in the base tier.
 - **Headless Platform Interaction:** "TBA".
 
-An action is one step the agent executes, for example reading an order from SAP. Salesforce's own "Where is my order?" example on the pricing page has two actions, 40 credits per request, and comes to $120 a month at 20 requests a day. For its other examples the page notes that Data 360 credits are not included. That is the gap I see in most estimates.
+An action is one step the agent executes, for example reading an order from SAP. Salesforce's own "Where is my order?" example on the pricing page has two actions, 40 credits per request, and comes to $120 a month at 20 requests a day. For its other examples the page notes that Data 360 credits are not included. Most estimates I see share that gap.
 
-Unused Flex Credits do not roll over and must be used before the order end date. Buying a large pool "to be safe" costs money just as surely as running short.
+Unused Flex Credits do not roll over and must be used before the order end date. An oversized pool costs money just as surely as running short.
 
 ## A typical scenario: 3,000 dealer enquiries a month
 
@@ -62,7 +61,7 @@ Whether your agent really calls two prompts or five shows after the first test w
 
 For spare part questions the agent needs documents: catalogues, exploded drawings with part numbers, manuals. Agentforce grounds on files through a Data Library, which Salesforce's own [workshop](https://developer.salesforce.com/workshops/agentforce-new-workshop/rag/1-ingest-unstructured-data-index) builds on a Data Cloud search index.
 
-Assume 2,000 MB of PDFs. The initial processing costs 2,000 × 150 = 300,000 credits, $1,500. That is exactly the upper limit of the base tier, which applies per usage type and resets on the first day of each month. Assume a further 100 MB of updated documents per month: 15,000 credits, $75. Queries cost 3 credits per million rows processed, small at this volume, but worth a look in Digital Wallet.
+Assume 2,000 MB of PDFs. The initial processing costs 2,000 × 150 = 300,000 credits, $1,500. That is exactly the upper limit of the base tier, which applies per usage type and resets on the first day of each month. Assume a further 100 MB of updated documents per month: 15,000 credits, $75.
 
 Indexing the catalogue once costs as much as six weeks of dealer conversations. Removing superseded catalogue versions before indexing is the cheapest saving in the whole project. The details are in [Data 360 costs for AI agents](../data-360-costs-for-ai-agents/).
 
@@ -84,7 +83,7 @@ The expensive trap is Data 360 in the sandbox: 120 credits per MB, without tiers
 | Regression tests, 4 runs | 44,800 | 224 |
 | **Total** | **3,009,800** | **15,049** |
 
-Not included: MuleSoft licences (Digital Wallet tracks MuleSoft Automation Credits as a separate meter), implementation, licences for your service reps and the people who maintain the agent. All figures are list prices without discounts.
+Not included: MuleSoft licences, implementation, licences for your service reps and the people who maintain the agent. All figures are list prices without discounts.
 
 Now the value side. Assume a service rep needs six minutes per enquiry today, so 3,000 enquiries take 300 hours a month. If the agent resolves 60 percent, 180 hours are freed. In steady state the agent costs 219,000 credits a month, about $1,095, or around $6 per freed hour. In my judgement consumption rarely decides this business case. Build, test and maintenance effort does.
 
@@ -94,9 +93,9 @@ Salesforce offers three ways to pay for this agent:
 
 - **Flex Credits per action and prompt.** In the scenario $1,020 a month in production.
 - **Per conversation.** The pricing page lists $2 per conversation, so $6,000 a month. According to the same page, Flex Credits and conversations are not supported in the same org, and conversation pricing is not available with the PayGo and Pre-Commit models.
-- **Per resolution.** Help Agent, now called Casey (see [Casey and the Service Rep Assistant](../service-cloud-casey-service-rep-assistant/)), costs 400 credits or $2 per resolved conversation. According to [Salesforce Germany](https://www.salesforce.com/de/news/press-releases/2026/06/30/salesforce-agentforce-help-agent/), there is no fee when a case is handed over, including the Data 360 and Agentforce calls made before. The model has been generally available since July 2026, with portals among the channels. At 60 percent resolved: 1,800 × $2 = $3,600 a month.
+- **Per resolution.** Help Agent, now called Casey (see [Casey and the Service Rep Assistant](../service-cloud-casey-service-rep-assistant/)), costs 400 credits or $2 per resolved conversation. According to [Salesforce Germany](https://www.salesforce.com/de/news/press-releases/2026/06/30/salesforce-agentforce-help-agent/), there is no fee when a case is handed over, including the Data 360 and Agentforce calls made before. It has been generally available since July 2026, portals included. At 60 percent resolved: 1,800 × $2 = $3,600 a month.
 
-What counts as resolved matters. [Salesforce Ben](https://www.salesforceben.com/complete-guide-to-agentforce-pricing-options/) lists the conditions: at least two message turns, final feedback not explicitly negative, and either no escalation to a human or explicitly positive feedback. Without feedback, a messaging session that runs past two hours counts as resolved. A dealer who reads the status and closes the window is billed. So is a dealer who got a wrong date and gave up.
+What counts as resolved matters. [Salesforce Ben](https://www.salesforceben.com/complete-guide-to-agentforce-pricing-options/) lists the conditions: at least two message turns, final feedback not explicitly negative, and either no escalation to a human or explicitly positive feedback. Without feedback, a messaging session that runs past two hours counts as resolved. A dealer who asks twice, reads the status and closes the window is billed. So is a dealer who got a wrong date and gave up.
 
 The break-even is simple. Flex Credits cost 68 credits per conversation in the scenario, a resolution 400. As soon as more than 17 percent of conversations are resolved, Flex Credits are cheaper. At 60 percent the agent would need twelve or more actions per conversation before resolution pricing wins.
 
@@ -117,7 +116,7 @@ The scenario needs about 3 million credits in the first year, more than even the
 ## How do you budget a dealer service agent?
 
 1. **Count enquiries by type** from cases and emails of the last three months.
-2. **Define actions and prompts per conversation** for each type, together with whoever builds the agent.
+2. **Define actions and prompts per conversation** for each type.
 3. **Measure the document volume** in MB after removing superseded catalogues.
 4. **Plan the sandbox** with a document subset and a fixed number of test conversations.
 5. **Check the contract:** edition pool, order end date and whether the org already runs on conversation pricing.
