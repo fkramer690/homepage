@@ -68,7 +68,7 @@ Actions in sandboxes and scratch orgs cost 16 credits, prompts the full rate. Ag
 
 ### Data 360
 
-When the agent grounds its answers on manuals, service bulletins or spare parts catalogues, Data 360 processes these documents. The base tier charges 150 credits per MB for unstructured processing and 600 per MB for intelligent processing. Tiers reset monthly per usage type: above 300,000 credits the rate drops in three steps to a fifth, 30 credits per MB from 12.5 million. Queries cost 3 credits per million rows. Sandboxes have no tiers; unstructured processing costs a flat 120 credits per MB there.
+If the agent grounds answers on manuals or spare parts catalogues, Data 360 processes them. The base tier charges 150 credits per MB for unstructured processing and 600 per MB for intelligent processing. Tiers reset monthly per usage type: above 300,000 credits the rate drops in three steps to a fifth, 30 credits per MB from 12.5 million. Queries cost 3 credits per million rows. Sandboxes have no tiers; unstructured processing costs a flat 120 credits per MB there.
 
 Two more points come from [Salesforce Ben's guide to the Data 360 vector database](https://www.salesforceben.com/data-360-formerly-data-cloud-deep-dive-your-guide-to-the-vector-database/): hybrid search costs twice as many credits as vector search, and indexes must be rebuilt when new files are added. Plan the monthly update volume, not only the initial load. More in [Data 360 costs for AI agents](../data-360-costs-for-ai-agents/).
 
