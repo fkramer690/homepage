@@ -94,7 +94,7 @@ Nehmen wir einen Maschinenbauer mit Betriebsrat, SAP, Sales Cloud, Service Cloud
 
 **Wochen 3 bis 6, Anlage zur IT-Rahmenvereinbarung.** Die Lösung in diesem Szenario: Copilot-Metriken nur auf Teamebene, GitHub-Beitragsmetriken bleiben aus, keine Leistungsbewertung aus Tooldaten, lokale Protokolle werden nach 14 Tagen gelöscht. Parallel entscheidet der Datenschutz: EU-Residenz in Copilot an, Claude Code über Bedrock in einer EU-Region. Die Supportseite nennt die Nutzungsanalyse nur für Team, Enterprise und die Console, Bedrock gehört nicht dazu. Die Kostendaten liegen dann im AWS-Konto des Kunden, und die Anlage regelt, wer sie sieht.
 
-**Ab Woche 7, Pilot.** Die Entwickler des Partners arbeiten auf Lizenzen des Kunden; für deren Mitbestimmung ist nach meinem Verständnis der Betriebsrat des Partners zuständig.
+**Ab Woche 7, Pilot.** Copilot und Claude Code starten mit den Regeln aus der Anlage, auch die Entwickler des Partners arbeiten auf Lizenzen des Kunden.
 
 Sechs Wochen klingen lang. Ein Pilot, den der Betriebsrat nach vier Wochen stoppt, kostet mehr.
 
