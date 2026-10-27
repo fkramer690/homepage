@@ -68,12 +68,12 @@ Salesforce zählt Prompts pro Aufruf des LLM-Gateways. Laut [Hilfeartikel zu den
 
 | Zähler | Credits | Beispielmodelle | Listenpreis in EUR |
 |---|---|---|---|
-| Basic Prompt | 2 | Claude Haiku 4.5, GPT-5 Mini | 0,01 € |
-| Standard Prompt | 4 | Claude Sonnet 4.6, Claude Sonnet 5, GPT-5 | 0,02 € |
+| Basic Prompt | 2 | GPT-5 Mini | 0,01 € |
+| Standard Prompt | 4 | Claude Haiku 4.5, Claude Sonnet 4.6, Claude Sonnet 5, GPT-5 | 0,02 € |
 | Advanced Prompt | 16 | Claude Opus 4.8, GPT 5.5 | 0,08 € |
 | Agentenaktion | 20 (Sandbox 16) | | 0,10 € |
 
-Die Euro-Werte beruhen auf dem Listenpreis von 500 € pro 100.000 Credits auf der [deutschen Agentforce-Preisseite](https://www.salesforce.com/de/agentforce/pricing/). Prompts kosten in der Sandbox genauso viel wie in Produktion.
+Die Euro-Werte beruhen auf dem Listenpreis von 500 € pro 100.000 Credits auf der [EU-Preisseite von Agentforce](https://www.salesforce.com/eu/agentforce/pricing/). Prompts kosten in der Sandbox genauso viel wie in Produktion.
 
 Eine Fallzusammenfassung mit 5.000 Tokens ist auf einem Standard-Modell drei Prompts, also 12 Credits. Auf einem Advanced-Modell kostet dieselbe Zusammenfassung 48 Credits, mehr als zwei Agentenaktionen. Günstig macht ein Template erst die Modellstufe, die Sie wählen.
 

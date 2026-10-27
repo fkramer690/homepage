@@ -68,8 +68,8 @@ Salesforce meters prompts per call to the LLM gateway. According to the [help ar
 
 | Meter | Credits | Example models | USD at list price |
 |---|---|---|---|
-| Basic prompt | 2 | Claude Haiku 4.5, GPT-5 Mini | $0.01 |
-| Standard prompt | 4 | Claude Sonnet 4.6, Claude Sonnet 5, GPT-5 | $0.02 |
+| Basic prompt | 2 | GPT-5 Mini | $0.01 |
+| Standard prompt | 4 | Claude Haiku 4.5, Claude Sonnet 4.6, Claude Sonnet 5, GPT-5 | $0.02 |
 | Advanced prompt | 16 | Claude Opus 4.8, GPT 5.5 | $0.08 |
 | Agent action | 20 (sandbox 16) | | $0.10 |
 
