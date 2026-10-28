@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-10-28T20:24:20.090Z",
+  "generatedAt": "2026-10-28T20:42:49.645Z",
   "domain": "fk-sd.de",
   "location": "Germany",
   "depth": 50,
-  "balanceBefore": 101,
-  "cost": 0.542,
+  "balanceBefore": 100.448,
+  "cost": 0.632,
   "de": [
     {
       "keyword": "salesforce berater",
@@ -13,9 +13,17 @@
       "volume": 90,
       "cpc": 14.95,
       "competition": "LOW",
+      "aiOverview": true,
+      "aiCited": false,
+      "questions": [
+        "Was macht Salesforce?",
+        "Wie viel verdient man bei Salesforce?",
+        "Warum ist die Salesforce Aktie so schwach?",
+        "Wie viele Mitarbeiter hat Salesforce?"
+      ],
       "top3": [
-        "comselect.de",
-        "www.stepstone.de",
+        "de.indeed.com",
+        "www.sortlist.de",
         "infotip.de"
       ]
     },
@@ -26,10 +34,13 @@
       "volume": 30,
       "cpc": 3.63,
       "competition": "MEDIUM",
+      "aiOverview": true,
+      "aiCited": false,
+      "questions": [],
       "top3": [
-        "de.indeed.com",
-        "www.upwork.com",
-        "www.reddit.com"
+        "trailhead.salesforce.com",
+        "trailhead.salesforce.com",
+        "www.freelance.de"
       ]
     },
     {
@@ -39,9 +50,12 @@
       "volume": null,
       "cpc": null,
       "competition": null,
+      "aiOverview": true,
+      "aiCited": false,
+      "questions": [],
       "top3": [
+        "trailhead.salesforce.com",
         "www.freelancermap.com",
-        "www.it-projekte.de",
         "www.freelancermap.com"
       ]
     },
@@ -52,6 +66,9 @@
       "volume": 20,
       "cpc": null,
       "competition": "LOW",
+      "aiOverview": true,
+      "aiCited": false,
+      "questions": [],
       "top3": [
         "www.reddit.com",
         "www.apexhours.com",
@@ -65,10 +82,13 @@
       "volume": null,
       "cpc": null,
       "competition": null,
+      "aiOverview": true,
+      "aiCited": false,
+      "questions": [],
       "top3": [
-        "www.salesforce.com",
-        "www.salesforce.com",
-        "www.bc-advisory.de"
+        "www.dotsource.de",
+        "www.cloudcomputing-insider.de",
+        "www.kndr.team"
       ]
     },
     {
@@ -78,36 +98,45 @@
       "volume": null,
       "cpc": null,
       "competition": null,
+      "aiOverview": true,
+      "aiCited": false,
+      "questions": [],
       "top3": [
-        "www.dotsource.de",
-        "mind-force.de",
-        "help.salesforce.com"
+        "comselect.de",
+        "help.salesforce.com",
+        "www.deloittedigital.com"
       ]
     },
     {
       "keyword": "salesforce devops beratung",
-      "position": 5,
+      "position": 8,
       "url": "https://www.fk-sd.de/blog/warum-devops-salesforce-enterprise-projekte/",
       "volume": null,
       "cpc": null,
       "competition": null,
+      "aiOverview": true,
+      "aiCited": false,
+      "questions": [],
       "top3": [
-        "trailhead.salesforce.com",
-        "trailhead.salesforce.com",
-        "comselect.de"
+        "www.youtube.com",
+        "www.stevetecharc.com",
+        "trailhead.salesforce.com"
       ]
     },
     {
       "keyword": "salesforce release management",
-      "position": null,
-      "url": null,
+      "position": 37,
+      "url": "https://www.fk-sd.de/en/services/devops-release-management/",
       "volume": 10,
       "cpc": null,
       "competition": "HIGH",
+      "aiOverview": true,
+      "aiCited": false,
+      "questions": [],
       "top3": [
-        "docs.gearset.com",
-        "www.wildnetedge.com",
-        "www.facebook.com"
+        "trailhead.salesforce.com",
+        "trailhead.salesforce.com",
+        "www.flosum.com"
       ]
     },
     {
@@ -117,6 +146,9 @@
       "volume": 40,
       "cpc": 62.33,
       "competition": "LOW",
+      "aiOverview": true,
+      "aiCited": false,
+      "questions": [],
       "top3": [
         "sfdx-hardis.cloudity.com",
         "medium.com",
@@ -130,6 +162,9 @@
       "volume": 30,
       "cpc": 21.12,
       "competition": "MEDIUM",
+      "aiOverview": true,
+      "aiCited": false,
+      "questions": [],
       "top3": [
         "help.salesforce.com",
         "developer.salesforce.com",
@@ -143,71 +178,103 @@
       "volume": null,
       "cpc": null,
       "competition": null,
+      "aiOverview": true,
+      "aiCited": false,
+      "questions": [],
       "top3": [
-        "www.kinpoint.de",
-        "www.tecla.io",
-        "www.linkedin.com"
+        "www.salesforce.com",
+        "plugg.tech",
+        "silverlinecentralamerica.com"
       ]
     },
     {
       "keyword": "salesforce lizenzen",
-      "position": 35,
-      "url": "https://www.fk-sd.de/blog/salesforce-lizenzen-volle-lizenz/",
+      "position": null,
+      "url": null,
       "volume": 30,
       "cpc": 6.78,
       "competition": "MEDIUM",
+      "aiOverview": true,
+      "aiCited": false,
+      "questions": [
+        "Was kostet ein CRM-System im Monat?",
+        "Auf welcher Cloud läuft Salesforce?",
+        "Was ist besser, SAP oder Salesforce?",
+        "Wie gut ist Salesforce?"
+      ],
       "top3": [
+        "www.salesforce.com",
         "apracor.sunzinet.com",
-        "blog.factory42.com",
-        "mind-force.de"
+        "help.salesforce.com"
       ]
     },
     {
       "keyword": "salesforce field service",
-      "position": 28,
+      "position": 33,
       "url": "https://www.fk-sd.de/blog/salesforce-field-service-lohnt-sich/",
       "volume": 170,
       "cpc": 15.75,
       "competition": "MEDIUM",
+      "aiOverview": true,
+      "aiCited": false,
+      "questions": [],
       "top3": [
-        "comselect.de",
         "www.salesforce.com",
-        "www.getapp.de"
-      ]
-    },
-    {
-      "keyword": "salesforce field service einführung",
-      "position": 17,
-      "url": "https://www.fk-sd.de/blog/salesforce-field-service-lohnt-sich/",
-      "volume": null,
-      "cpc": null,
-      "competition": null,
-      "top3": [
-        "apracor.sunzinet.com",
-        "mind-force.de",
+        "help.salesforce.com",
         "www.salesforce.com"
       ]
     },
     {
+      "keyword": "salesforce field service einführung",
+      "position": 27,
+      "url": "https://www.fk-sd.de/blog/salesforce-field-service-lohnt-sich/",
+      "volume": null,
+      "cpc": null,
+      "competition": null,
+      "aiOverview": true,
+      "aiCited": false,
+      "questions": [],
+      "top3": [
+        "mind-force.de",
+        "trailheadacademy.salesforce.com",
+        "mind-force.de"
+      ]
+    },
+    {
       "keyword": "field service lizenzen salesforce",
-      "error": "serp/google/organic/live/regular: Internal SE Server Error."
+      "error": "serp/google/organic/live/advanced: Internal SE Server Error."
     },
     {
       "keyword": "salesforce manufacturing cloud",
-      "position": 47,
-      "url": "https://www.fk-sd.de/blog/manufacturing-cloud-wann-lohnt-sie-sich/",
+      "position": null,
+      "url": null,
       "volume": 30,
       "cpc": 91.6,
       "competition": "MEDIUM",
+      "aiOverview": true,
+      "aiCited": false,
+      "questions": [],
       "top3": [
-        "trailhead.salesforce.com",
-        "www.salesforce.com",
-        "routine-automation.com"
+        "help.salesforce.com",
+        "www.youtube.com",
+        "www.salesforceben.com"
       ]
     },
     {
       "keyword": "manufacturing cloud funktionen",
-      "error": "serp/google/organic/live/regular: Internal SE Server Error."
+      "position": null,
+      "url": null,
+      "volume": null,
+      "cpc": null,
+      "competition": null,
+      "aiOverview": true,
+      "aiCited": false,
+      "questions": [],
+      "top3": [
+        "mind-force.de",
+        "nttdata-solutions.com",
+        "de.linkedin.com"
+      ]
     },
     {
       "keyword": "salesforce revenue cloud",
@@ -216,10 +283,13 @@
       "volume": 110,
       "cpc": 11.58,
       "competition": "MEDIUM",
+      "aiOverview": true,
+      "aiCited": false,
+      "questions": [],
       "top3": [
-        "help.salesforce.com",
+        "aprika.com",
         "www.salesforce.com",
-        "trailhead.salesforce.com"
+        "developer.salesforce.com"
       ]
     },
     {
@@ -229,10 +299,13 @@
       "volume": 10,
       "cpc": null,
       "competition": null,
+      "aiOverview": true,
+      "aiCited": false,
+      "questions": [],
       "top3": [
+        "experlogix.com",
         "www.salesforce.com",
-        "www.reddit.com",
-        "www.apexhours.com"
+        "plative.com"
       ]
     },
     {
@@ -242,6 +315,14 @@
       "volume": 10,
       "cpc": null,
       "competition": null,
+      "aiOverview": true,
+      "aiCited": false,
+      "questions": [
+        "Is Salesforce phasing out CPQ?",
+        "Is CPQ being phased out?",
+        "Is CPQ end of life?",
+        "What will replace Salesforce CPQ?"
+      ],
       "top3": [
         "www.salesforce.com",
         "www.salesforceben.com",
@@ -255,10 +336,13 @@
       "volume": 20,
       "cpc": 11.61,
       "competition": "MEDIUM",
+      "aiOverview": true,
+      "aiCited": false,
+      "questions": [],
       "top3": [
+        "help.salesforce.com",
         "www.salesforce.com",
-        "developer.salesforce.com",
-        "www.salesforce.com"
+        "www.kernpunkt.de"
       ]
     },
     {
@@ -268,10 +352,18 @@
       "volume": null,
       "cpc": null,
       "competition": null,
+      "aiOverview": true,
+      "aiCited": false,
+      "questions": [
+        "Was ist besser, SAP oder Salesforce?",
+        "Was ist B2B-Commerce?",
+        "Was kostet Salesforce?",
+        "Was macht Salesforce so besonders?"
+      ],
       "top3": [
-        "www.salesforce.com",
-        "www.salesforce.com",
-        "omr.com"
+        "www.dotsource.de",
+        "de.linkedin.com",
+        "apracor.sunzinet.com"
       ]
     },
     {
@@ -281,10 +373,18 @@
       "volume": null,
       "cpc": null,
       "competition": null,
+      "aiOverview": true,
+      "aiCited": false,
+      "questions": [
+        "Was ist Agentforce?",
+        "Wie hoch sind die Kosten für Agentforce?",
+        "Was genau macht die Firma Salesforce?",
+        "Welche Unternehmen gehören zu Salesforce?"
+      ],
       "top3": [
-        "topsoft.ch",
-        "ai-first.ai",
-        "www.increscotech.com"
+        "www.salesforce.com",
+        "www.salesfive.com",
+        "routine-automation.com"
       ]
     },
     {
@@ -294,10 +394,18 @@
       "volume": null,
       "cpc": null,
       "competition": null,
+      "aiOverview": true,
+      "aiCited": false,
+      "questions": [
+        "Ist Trailhead kostenlos?",
+        "Was macht Salesforce so besonders?",
+        "Was macht Agentforce?",
+        "Wie hoch sind die Lizenzkosten für Salesforce?"
+      ],
       "top3": [
         "www.salesforce.com",
-        "www.salesfive.com",
-        "cloudconsultants.ch"
+        "de.linkedin.com",
+        "ai11.io"
       ]
     },
     {
@@ -307,10 +415,13 @@
       "volume": 10,
       "cpc": null,
       "competition": null,
+      "aiOverview": true,
+      "aiCited": false,
+      "questions": [],
       "top3": [
         "www.saksoft.com",
-        "www.linkedin.com",
-        "ashapurasoftech.com"
+        "myaskai.com",
+        "www.linkedin.com"
       ]
     },
     {
@@ -320,6 +431,9 @@
       "volume": 40,
       "cpc": 9.88,
       "competition": "HIGH",
+      "aiOverview": true,
+      "aiCited": false,
+      "questions": [],
       "top3": [
         "erlebe-software.de",
         "mind-force.de",
@@ -328,15 +442,18 @@
     },
     {
       "keyword": "salesforce document builder",
-      "position": 25,
+      "position": 17,
       "url": "https://www.fk-sd.de/en/blog/salesforce-service-documents-document-builder/",
       "volume": 10,
       "cpc": null,
       "competition": null,
+      "aiOverview": true,
+      "aiCited": false,
+      "questions": [],
       "top3": [
-        "www.youtube.com",
+        "help.salesforce.com",
         "trailhead.salesforce.com",
-        "trailhead.salesforce.com"
+        "help.salesforce.com"
       ]
     },
     {
@@ -346,17 +463,25 @@
       "volume": 10,
       "cpc": null,
       "competition": "LOW",
+      "aiOverview": true,
+      "aiCited": false,
+      "questions": [
+        "What is Salesforce customer 360?",
+        "What are the five pillars of Azure?",
+        "Is Salesforce in AWS or Azure?",
+        "What is MVC architecture in Salesforce?"
+      ],
       "top3": [
-        "www.linkedin.com",
-        "www.salesforce.com",
-        "architect.salesforce.com"
+        "www.salesforceben.com",
+        "medium.com",
+        "www.apexhours.com"
       ]
     }
   ],
   "en": [
     {
       "keyword": "salesforce solution architect freelance",
-      "error": "serp/google/organic/live/regular: Internal SE Server Error."
+      "error": "serp/google/organic/live/advanced: Internal SE Server Error."
     },
     {
       "keyword": "salesforce consultant germany",
@@ -365,6 +490,9 @@
       "volume": null,
       "cpc": null,
       "competition": null,
+      "aiOverview": true,
+      "aiCited": false,
+      "questions": [],
       "top3": [
         "www.sunzinet.com",
         "job.deloitte.com",
@@ -373,7 +501,19 @@
     },
     {
       "keyword": "salesforce partner governance",
-      "error": "serp/google/organic/live/regular: Internal SE Server Error."
+      "position": null,
+      "url": null,
+      "volume": null,
+      "cpc": null,
+      "competition": null,
+      "aiOverview": true,
+      "aiCited": false,
+      "questions": [],
+      "top3": [
+        "www.aquilliance.de",
+        "www.salesforceben.com",
+        "advancedcommunities.com"
+      ]
     },
     {
       "keyword": "salesforce devops consulting",
@@ -382,28 +522,46 @@
       "volume": null,
       "cpc": null,
       "competition": null,
+      "aiOverview": true,
+      "aiCited": false,
+      "questions": [],
       "top3": [
         "www.nbs-consulting.net",
-        "appexchange.salesforce.com",
-        "www.facebook.com"
+        "s2-labs.com",
+        "trailhead.salesforce.com"
       ]
     },
     {
       "keyword": "sfdx-hardis",
-      "position": 14,
-      "url": "https://www.fk-sd.de/en/blog/sfdx-hardis-open-source-salesforce-devops/",
+      "position": null,
+      "url": null,
       "volume": 40,
       "cpc": 62.33,
       "competition": "LOW",
+      "aiOverview": true,
+      "aiCited": false,
+      "questions": [],
       "top3": [
         "sfdx-hardis.cloudity.com",
-        "sfdx-hardis.cloudity.com",
-        "www.youtube.com"
+        "github.com",
+        "marketplace.visualstudio.com"
       ]
     },
     {
       "keyword": "sfdx-hardis vs devops center",
-      "error": "serp/google/organic/live/regular: Internal SE Server Error."
+      "position": null,
+      "url": null,
+      "volume": null,
+      "cpc": null,
+      "competition": null,
+      "aiOverview": true,
+      "aiCited": false,
+      "questions": [],
+      "top3": [
+        "new.salesforcedevops.net",
+        "www.reddit.com",
+        "bluecanvas.io"
+      ]
     },
     {
       "keyword": "salesforce field service implementation",
@@ -412,9 +570,12 @@
       "volume": null,
       "cpc": null,
       "competition": null,
+      "aiOverview": true,
+      "aiCited": false,
+      "questions": [],
       "top3": [
+        "noltic.com",
         "dazeworks.com",
-        "cyntexa.com",
         "sptechusa.com"
       ]
     },
@@ -425,10 +586,13 @@
       "volume": 10,
       "cpc": null,
       "competition": null,
+      "aiOverview": true,
+      "aiCited": false,
+      "questions": [],
       "top3": [
+        "cyntexa.com",
         "www.salesforce.com",
-        "www.salesforce.com",
-        "help.salesforce.com"
+        "mind-force.de"
       ]
     },
     {
@@ -438,6 +602,9 @@
       "volume": 10,
       "cpc": null,
       "competition": "LOW",
+      "aiOverview": true,
+      "aiCited": false,
+      "questions": [],
       "top3": [
         "www.salesforce.com",
         "developer.salesforce.com",
@@ -451,6 +618,14 @@
       "volume": null,
       "cpc": null,
       "competition": null,
+      "aiOverview": true,
+      "aiCited": false,
+      "questions": [
+        "Is Salesforce revenue Cloud the same as CPQ?",
+        "Is Salesforce discontinuing CPQ?",
+        "What is Salesforce revenue Cloud called now?",
+        "Is Salesforce CPQ hard?"
+      ],
       "top3": [
         "www.apexhours.com",
         "www.everstage.com",
@@ -464,6 +639,9 @@
       "volume": 10,
       "cpc": null,
       "competition": null,
+      "aiOverview": true,
+      "aiCited": false,
+      "questions": [],
       "top3": [
         "www.salesforce.com",
         "help.salesforce.com",
@@ -477,23 +655,29 @@
       "volume": null,
       "cpc": null,
       "competition": null,
+      "aiOverview": true,
+      "aiCited": false,
+      "questions": [],
       "top3": [
+        "aquiva.com",
         "nebulaconsulting.co.uk",
-        "medium.com",
-        "www.salesfive.com"
+        "www.salesforce.com"
       ]
     },
     {
       "keyword": "salesforce document builder limitations",
-      "position": 7,
+      "position": 4,
       "url": "https://www.fk-sd.de/en/blog/salesforce-service-documents-document-builder/",
       "volume": null,
       "cpc": null,
       "competition": null,
+      "aiOverview": true,
+      "aiCited": false,
+      "questions": [],
       "top3": [
-        "help.salesforce.com",
-        "trailhead.salesforce.com",
-        "www.salesforceben.com"
+        "www.xfilespro.com",
+        "www.salesforceben.com",
+        "medium.com"
       ]
     },
     {
@@ -503,11 +687,17 @@
       "volume": 10,
       "cpc": null,
       "competition": "LOW",
+      "aiOverview": true,
+      "aiCited": false,
+      "questions": [],
       "top3": [
-        "www.linkedin.com",
-        "ezprotect.io",
-        "architect.salesforce.com"
+        "medium.com",
+        "www.awaf.dev",
+        "www.linkedin.com"
       ]
     }
-  ]
+  ],
+  "ranked": {
+    "de": []
+  }
 }
