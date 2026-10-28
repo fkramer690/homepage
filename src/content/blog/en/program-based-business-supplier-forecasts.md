@@ -1,6 +1,6 @@
 ---
 title: "Program-based business: forecasts for suppliers"
-description: "How program-based business in Manufacturing Cloud turns OEM programme forecasts into component forecasts, opportunities and sales agreements, and when it is overkill."
+description: "How program-based business in Manufacturing Cloud turns OEM programme forecasts into component forecasts and sales agreements, and when it is overkill."
 pubDate: 2026-10-28
 lang: en
 slug: program-based-business-supplier-forecasts
