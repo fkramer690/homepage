@@ -23,6 +23,8 @@ The contact form uses [Web3Forms](https://web3forms.com). Its access key is stor
 
 Visitor statistics use [Cloudflare Web Analytics](https://www.cloudflare.com/web-analytics/) (no cookies). The site token is stored as the repository secret `CF_ANALYTICS_TOKEN`; without it no analytics script is included.
 
+Search and AI visibility come from [DataForSEO](https://dataforseo.com) (secrets `DATAFORSEO_LOGIN` and `DATAFORSEO_PASSWORD`, the API login, not the account e-mail). `.github/workflows/rankings.yml` runs every Monday: Google positions, search volumes and AI Overview citations for the keywords in `seo/keywords.json`, plus every keyword fk-sd.de ranks for. `.github/workflows/ai-visibility.yml` runs on the 1st of each month and asks the questions in `seo/ai-prompts.json` to ChatGPT, Claude, Gemini, Perplexity and Google AI Mode. Both store snapshots on the `stats` branch (`stats/rankings/`, `stats/ai/`) and the dashboard rows in `stats/seo-dashboard/`. Edit the two JSON files to change what is tracked.
+
 Setting `bookingUrl` in `src/site.ts` (e.g. a Microsoft Bookings page) turns all "Book a call" buttons into links to that page; otherwise they open an email.
 
 ### Blog articles

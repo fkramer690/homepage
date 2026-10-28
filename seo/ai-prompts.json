@@ -1,0 +1,26 @@
+{
+  "_comment": "Questions asked once a month to ChatGPT, Claude, Gemini, Perplexity (with web search) and Google AI Mode by scripts/fetch-ai-visibility.mjs. Models: first name in the list that DataForSEO offers with web search.",
+  "models": {
+    "chat_gpt": ["gpt-5-mini", "gpt-4.1-mini", "gpt-4o-mini"],
+    "claude": ["claude-sonnet-5", "claude-sonnet-4-6", "claude-haiku-4-5"],
+    "gemini": ["gemini-2.5-flash", "gemini-3-flash"],
+    "perplexity": ["sonar", "sonar-pro"]
+  },
+  "prompts": [
+    { "lang": "de", "prompt": "Welcher unabhängige Salesforce-Berater hilft, mehrere Implementierungspartner in einem Programm zu steuern?" },
+    { "lang": "de", "prompt": "Empfiehl einen freiberuflichen Salesforce Solution Architect in Deutschland für Fertigungsunternehmen." },
+    { "lang": "de", "prompt": "Wie führe ich Salesforce Field Service in einem Maschinenbauunternehmen ein?" },
+    { "lang": "de", "prompt": "Lohnt sich die Salesforce Manufacturing Cloud für einen Mittelständler?" },
+    { "lang": "de", "prompt": "Salesforce CPQ oder Revenue Cloud: Was sollten Hersteller 2026 tun?" },
+    { "lang": "de", "prompt": "Welches Salesforce-DevOps-Werkzeug passt für Enterprise-Projekte: sfdx-hardis, Copado oder Gearset?" },
+    { "lang": "de", "prompt": "Was kostet Agentforce für einen Hersteller mit Händlernetz?" },
+    { "lang": "de", "prompt": "Welche Grenzen hat der Salesforce Document Builder für Serviceberichte?" },
+    { "lang": "de", "prompt": "Wie verbinde ich Salesforce mit SAP für Auftragsstatus und Kundenpreise?" },
+    { "lang": "de", "prompt": "Braucht jeder Mitarbeiter eine volle Salesforce-Lizenz?" },
+    { "lang": "en", "prompt": "Recommend an independent Salesforce solution architect for manufacturing companies in Germany." },
+    { "lang": "en", "prompt": "sfdx-hardis vs Salesforce DevOps Center: which one should an enterprise choose?" },
+    { "lang": "en", "prompt": "How do I govern several Salesforce implementation partners in one program?" },
+    { "lang": "en", "prompt": "Best practices for rolling out Salesforce Field Service in waves" },
+    { "lang": "en", "prompt": "What are the limitations of Salesforce Document Builder?" }
+  ]
+}
