@@ -29,7 +29,7 @@ faq:
 draft: false
 ---
 
-Once the features are designed, three questions decide a Manufacturing Cloud project: which system owns which data, where Agentforce actually takes work off people, and in which order the countries go live. SAP stays the master for accounts, products, orders and usually prices. Manufacturing Cloud receives actuals daily and sends approved rebates and warranty amounts back as credit memos. Agentforce pays off first in read-only processes with high volume and an API to the ERP. The rollout starts with a large country of reasonable complexity, and all countries work at least 80 percent the same way. And no interface should still log in with SOAP login() after 1 December 2026 without a check.
+Once the features are designed, three questions decide a Manufacturing Cloud project: which system owns which data, where Agentforce actually takes work off people, and in which order the countries go live. SAP stays the master for accounts, products, orders and usually prices. Manufacturing Cloud receives actuals daily and sends approved rebates and warranty amounts back as credit memos. Agentforce pays off first in read-only processes with high volume and an API to the ERP. The rollout starts with a large country of reasonable complexity, and all countries work at least 80 percent the same way. Check every interface that logs in with SOAP login() before 1 December 2026.
 
 ## Which system owns which object?
 
@@ -97,7 +97,7 @@ First the goal is fixed, usually harmonising processes. That leads to a global t
 
 - **First country:** large, with reasonable complexity. A small pilot country confirms a template that later breaks at the first large country.
 - **Large region early:** one of the largest regions joins in the first two phases, so the template is under real load while changes are still cheap.
-- **Order after that:** a table with one row per country and columns for processes, business units, IT landscape and brands. For Manufacturing Cloud I add two columns: own ERP or shared, and dealer languages.
+- **Order after that:** a table with one row per country and columns for processes, business units, IT systems and brands. For Manufacturing Cloud I add two columns: own ERP or shared, and dealer languages.
 - **80 percent the same:** legal requirements are given, every other local requirement is justified and decided by one role on the client side.
 - **Change management:** key users, communication before go-live and a look at usage afterwards, in every country.
 
