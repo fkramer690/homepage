@@ -51,6 +51,8 @@ Rule: every external link opens in a new tab. Links in Markdown get `target="_bl
 
 `@astrojs/sitemap` builds `sitemap-index.xml` on every build; new pages and articles land in it automatically. Rule: the sitemap lists exactly the indexable pages. After the build, `scripts/check-sitemap.mjs` compares it with `dist/` and fails if a page without `<meta name="robots" content="noindex">` is missing, a noindex page (legal pages, redirects, 404) is listed, or a listed URL has no page (`npm run check:sitemap` runs only the check). To hide a page from search engines, set `noindex` on it and exclude it in the sitemap `filter` in `astro.config.mjs`.
 
+Page titles: `scripts/check-titles.mjs` runs after the sitemap check and fails if an indexable page has no `<title>`, a title longer than 60 characters, or the same title as another page (`npm run check:titles`). Articles, chapters and most pages add ` | FK Solution Design` only when it still fits in 60 characters, so the keyword stays at the front.
+
 ## Local development
 
 ```sh
