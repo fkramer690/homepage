@@ -85,7 +85,7 @@ Ein Bereitschaftsplan in Field Service berührt alle drei. Schichten verteilen A
 - ob Auswertungen pro Techniker erlaubt sind und wer sie sieht
 - wie der Bereitschaftsplan mit Zeiterfassung und Vergütung zusammenhängt
 
-Das ist dasselbe Gespräch wie bei Timesheets und Standort, das ich in [Field Service einführen: Warum in Wellen?](../salesforce-field-service-einfuehrung/) beschreibe. Einfacher ist es, dieses Gespräch einmal für alle Themen zu führen. Ich bin kein Jurist, die rechtliche Bewertung gehört zu Ihren Fachleuten für Arbeitsrecht.
+Das ist dasselbe Gespräch wie bei Timesheets und Standort, das ich in [Salesforce Field Service Einführung: Warum in Wellen?](../salesforce-field-service-einfuehrung/) beschreibe. Einfacher ist es, dieses Gespräch einmal für alle Themen zu führen. Ich bin kein Jurist, die rechtliche Bewertung gehört zu Ihren Fachleuten für Arbeitsrecht.
 
 ## Ein typisches Szenario, als Annahme
 

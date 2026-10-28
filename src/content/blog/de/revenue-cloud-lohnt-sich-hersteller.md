@@ -72,7 +72,7 @@ Für Hersteller, deren Angebote überwiegend Standardartikel mit Preisen aus dem
 - **Die Regeln liegen woanders und bleiben dort.** Stecken die Variantenregeln in der SAP-Variantenkonfiguration oder in den Köpfen der Anwendungstechnik, und niemand pflegt sie doppelt, bleibt der Konfigurator in Salesforce leer.
 - **Kein wiederkehrender Umsatz.** Ist jeder Verkauf eine einzelne Maschine und bleibt die Rechnung in SAP FI, liegen die stärksten Teile des Produkts brach.
 
-Die Alternativen sind Angebote in Sales Cloud mit ERP-Schnittstelle, ein CPQ-Produkt eines Partners oder ein eigener Ansatz auf der Plattform, wie in [Vom Angebot zum Sales Agreement: der Konfigurator](../angebot-zu-sales-agreement-produktkonfigurator/) beschrieben. Ob zusätzlich Manufacturing Cloud passt, ist eine eigene Frage, die [Manufacturing Cloud: Wann lohnt sie sich?](../manufacturing-cloud-wann-lohnt-sie-sich/) beantwortet.
+Die Alternativen sind Angebote in Sales Cloud mit ERP-Schnittstelle, ein CPQ-Produkt eines Partners oder ein eigener Ansatz auf der Plattform, wie in [Vom Angebot zum Sales Agreement: der Konfigurator](../angebot-zu-sales-agreement-produktkonfigurator/) beschrieben. Ob zusätzlich Manufacturing Cloud passt, ist eine eigene Frage, die [Manufacturing Cloud vs. Sales Cloud: Wann lohnt sie sich?](../manufacturing-cloud-wann-lohnt-sie-sich/) beantwortet.
 
 ## Was kostet Revenue Cloud?
 

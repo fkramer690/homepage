@@ -31,7 +31,7 @@ Mit Sales Agreements sieht der Vertrieb, welche Kunden hinter ihren vereinbarten
 
 ## Welche Frage beantwortet ein Sales Agreement im Alltag?
 
-Was ein Sales Agreement ist und wann sich die Manufacturing Cloud dafür lohnt, beschreibe ich in [Manufacturing Cloud: Wann lohnt sie sich?](../manufacturing-cloud-wann-lohnt-sie-sich/). Hier geht es um den Betrieb danach.
+Was ein Sales Agreement ist und wann sich die Manufacturing Cloud dafür lohnt, beschreibe ich in [Manufacturing Cloud vs. Sales Cloud: Wann lohnt sie sich?](../manufacturing-cloud-wann-lohnt-sie-sich/). Hier geht es um den Betrieb danach.
 
 Im Alltag stellt der Vertrieb eine einfache Frage: Wer liegt hinter seiner Zusage? Ein Kunde hat für das Jahr eine Menge zugesagt, aufgeteilt in Monate oder Quartale. Pro Zeitraum und Produkt stehen im Sales Agreement geplante Menge, tatsächliche Menge und Prognose nebeneinander. Die Abweichung ist die Zahl, mit der Account Manager arbeiten.
 

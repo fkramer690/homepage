@@ -63,7 +63,7 @@ Die Schritte stehen in der [Salesforce-Hilfe für Contractor-Zugänge](https://h
 - **Eigenes Profil und eigene Mobile-Einstellungen.** So lässt sich die App für Partner anders konfigurieren, ohne die interne Version zu ändern.
 - **Ein Servicegebiet pro Partnerfirma.** Damit sieht der Partner-Manager nur seine eigenen Leute und Termine. Soll er selbst disponieren, lässt sich die Dispatch Console in die Experience Cloud Site einbauen.
 
-Bei den Lizenzen gibt es zwei Varianten. Partner, die regelmäßig arbeiten, bekommen Lizenzen pro Nutzer. Für saisonale oder seltene Einsätze gibt es Lizenzen pro Login, laut Salesforce bis zu 20 Benutzer je gekauftem Login. Wie man Lizenzen über alle Rollen hinweg sinnvoll verteilt, beschreibe ich in [Salesforce-Lizenzen: Braucht jeder eine volle Lizenz?](../salesforce-lizenzen-volle-lizenz/), die Rollen in Field Service im Detail in [Field Service Lizenzen: Welche Rolle braucht welche?](../field-service-lizenzen-rollen-dispatcher-techniker/).
+Bei den Lizenzen gibt es zwei Varianten. Partner, die regelmäßig arbeiten, bekommen Lizenzen pro Nutzer. Für saisonale oder seltene Einsätze gibt es Lizenzen pro Login, laut Salesforce bis zu 20 Benutzer je gekauftem Login. Wie man Lizenzen über alle Rollen hinweg sinnvoll verteilt, beschreibe ich in [Salesforce-Lizenzen: Braucht jeder eine volle Lizenz?](../salesforce-lizenzen-volle-lizenz/), die Rollen in Field Service im Detail in [Salesforce Field Service Lizenzen: Wer braucht welche?](../field-service-lizenzen-rollen-dispatcher-techniker/).
 
 ```hinweis achtung
 Contractor-Lizenzen sind nur für externe Dienstleister, nicht für eigene Mitarbeitende.

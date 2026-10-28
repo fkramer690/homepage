@@ -86,7 +86,7 @@ The record chain also decides the licence mix.
 According to the [Field Service pricing page](https://www.salesforce.com/service/field-service-management/pricing/), Dispatcher and Technician licences may not be used for contact centre, call centre or customer case management. Whoever works cases needs Service Cloud or Field Service Plus.
 ```
 
-In practice this hits the small service team where the dispatcher also answers the hotline. That person needs Field Service Plus at $230 instead of Dispatcher at $175 (price list, October 2026). The full role matrix is in [Field Service licences: which role needs which one?](../field-service-licences-by-role/).
+In practice this hits the small service team where the dispatcher also answers the hotline. That person needs Field Service Plus at $230 instead of Dispatcher at $175 (price list, October 2026). The full role matrix is in [Salesforce Field Service licences: who needs which?](../field-service-licences-by-role/).
 
 ## A typical scenario: a "machine down" call
 
