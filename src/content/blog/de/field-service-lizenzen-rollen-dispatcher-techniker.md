@@ -1,6 +1,6 @@
 ---
 title: "Field Service Lizenzen: Welche Rolle braucht welche?"
-description: "Hotline, Disposition, Techniker, Backoffice, Servicepartner: welche Field-Service-Lizenz jede Rolle braucht, was sie kostet und welche Regeln die Rechnung ändern."
+description: "Hotline, Disposition, Techniker, Backoffice, Servicepartner: welche Field-Service-Lizenz jede Rolle braucht, was sie kostet und welche Regeln zählen."
 pubDate: 2026-10-28
 lang: de
 slug: field-service-lizenzen-rollen-dispatcher-techniker

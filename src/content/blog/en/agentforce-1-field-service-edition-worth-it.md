@@ -1,6 +1,6 @@
 ---
 title: "Agentforce 1 Field Service: when does the bundle pay off?"
-description: "Agentforce 1 Field Service costs $650 per user and month. A calculation against Field Service Plus with add-ons, what the included credits are worth and when it pays."
+description: "Agentforce 1 Field Service costs $650 per user and month. A calculation against Field Service Plus with add-ons, the value of its credits and when it pays."
 pubDate: 2026-10-28
 lang: en
 slug: agentforce-1-field-service-edition-worth-it

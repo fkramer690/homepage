@@ -1,6 +1,6 @@
 ---
 title: "Agentforce 1 Field Service: Wann rechnet sich das Paket?"
-description: "Agentforce 1 Field Service kostet 650 € pro Nutzer und Monat. Eine Rechnung gegen Field Service Plus mit Add-ons, was die Credits wert sind und wann es sich lohnt."
+description: "Agentforce 1 Field Service kostet 650 € pro Nutzer und Monat. Eine Rechnung gegen Field Service Plus mit Add-ons, der Wert der Credits und wann es sich lohnt."
 pubDate: 2026-10-28
 lang: de
 slug: agentforce-1-field-service-paket-rechnung
@@ -10,7 +10,7 @@ categories: [field-service, ai]
 contactBrief: licences
 tags: [Field Service, Agentforce, Lizenzen, Flex Credits, Außendienst]
 takeaways:
-  - "Agentforce 1 Field Service kostet 650 € pro Nutzer und Monat und enthält Field Service Plus, unbegrenzte Agentforce-Nutzung für Mitarbeitende, Appointment Assistant, Visual Remote Assistant, Digital Channels, Slack und Tableau Next."
+  - "Agentforce 1 Field Service kostet 650 € pro Nutzer und Monat und enthält Field Service Plus, unbegrenzte Agentforce-Nutzung für Mitarbeitende, Appointment Assistant, Visual Remote Assistant, Slack und Tableau Next."
   - "Aus Einzelteilen kosten Field Service Plus und die Add-ons für Agentforce, Visual Remote Assistant und Appointment Assistant 430 Dollar. Das Paket kostet also 220 Dollar mehr pro Nutzer und Monat."
   - "Das Paket enthält 1 Million Flex Credits und 2,5 Millionen Data-Cloud-Credits pro Org und Jahr. 1 Million Flex Credits sind zum Listenpreis 5.000 Dollar wert und decken den Aufpreis für etwa zwei Nutzer."
   - "Das Paket rechnet sich, wenn Slack, Tableau Next, Digital Channels und Data Cloud ohnehin gekauft würden. Für Techniker, die nur das KI-Add-on brauchen, sind Einzellizenzen klar günstiger."

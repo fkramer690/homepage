@@ -27,6 +27,41 @@ const pin = (x: number, y: number, color = G) =>
   `<g transform="translate(${x} ${y})"><path d="M0 0c-6-8-9-12-9-16a9 9 0 0 1 18 0c0 4-3 8-9 16z" fill="#fff" stroke="${color}" stroke-width="1.4"/><circle cx="0" cy="-16" r="3" fill="${color}"/></g>`;
 
 const drawings: Record<string, Drawing> = {
+  'revenue-cloud-discount-approvals': (l) => `
+    ${t(18, 18, l('ADVANCED APPROVALS ON THE QUOTE', 'ADVANCED APPROVALS AM ANGEBOT'), { fill: D, size: 7 })}
+    ${box(18, 40, 66, 48)}${t(51, 58, l('QUOTE', 'ANGEBOT'), { fill: D, size: 7.5, anchor: 'middle' })}${t(51, 72, l('discount 32 %', 'Rabatt 32 %'), { size: 7, anchor: 'middle' })}
+    ${arrow(84, 64, 112)}${t(98, 58, l('preview', 'Vorschau'), { size: 7, anchor: 'middle' })}
+    ${box(112, 34, 108, 24)}${t(166, 49, l('> 15 %: sales manager', '> 15 %: Vertrieb Region'), { size: 7, anchor: 'middle' })}
+    ${box(112, 70, 108, 24, C)}${t(166, 85, l('> 30 %: head of sales', '> 30 %: Vertrieb gesamt'), { fill: C, size: 7, anchor: 'middle' })}
+    ${arrow(220, 46, 242)}${arrow(220, 82, 242)}
+    ${box(242, 40, 62, 48)}${t(273, 58, l('APPROVED', 'FREIGABE'), { fill: D, size: 7.5, anchor: 'middle' })}${t(273, 72, 'audit trail', { size: 7, anchor: 'middle' })}
+    <path d="M18 106H302" stroke="${L}"/>
+    ${check(18, 118)}${t(32, 125, l('margin needs cost data from the ERP', 'Marge braucht Kostendaten aus dem ERP'), { size: 7 })}
+    ${cross(22, 142)}${t(32, 145, l('CPQ approval rules do not carry over', 'CPQ-Freigaberegeln werden nicht übernommen'), { size: 7 })}`,
+
+  'revenue-cloud-quoting-agent': (l) => `
+    ${t(18, 18, l('QUOTING AGENT IN REVENUE CLOUD', 'ANGEBOTSAGENT IN REVENUE CLOUD'), { fill: D, size: 7 })}
+    ${box(18, 34, 84, 44)}${t(60, 52, l('wear part kit', 'Verschleißteilsatz'), { size: 7, anchor: 'middle' })}${t(60, 66, l('+ 2 service days', '+ 2 Servicetage'), { size: 7, anchor: 'middle' })}
+    ${t(60, 92, l('plain language', 'normale Sprache'), { size: 7, anchor: 'middle' })}
+    ${arrow(102, 56, 126, C)}
+    ${box(126, 28, 110, 74, C)}${t(181, 42, 'Quote Management', { fill: D, size: 7.5, anchor: 'middle' })}
+    ${[l('valid products', 'gültige Produkte'), l('synced prices', 'synchrone Preise'), l('discount guardrails', 'Rabatt-Leitplanken')].map((s, i) => check(134, 50 + i * 15) + t(146, 56 + i * 15, s, { size: 7 })).join('')}
+    ${arrow(236, 56, 256)}
+    ${box(256, 36, 48, 40)}${t(280, 54, l('QUOTE', 'ANGEBOT'), { fill: D, size: 7, anchor: 'middle' })}${t(280, 67, l('draft', 'Entwurf'), { size: 7, anchor: 'middle' })}
+    ${tag(18, 114, 120, l('20 Flex Credits / action', '20 Flex Credits je Aktion'))}${t(146, 128, l("Winter '27: buyers, partners, renewals", "Winter '27: Kunden, Partner, Verlängerung"), { size: 7 })}
+    ${t(18, 150, l('75 % less quoting time: vendor figure', '75 % weniger Zeit: Herstellerangabe'), { size: 7 })}`,
+
+  'salesforce-contracts-revenue-cloud': (l) => `
+    ${t(18, 18, l('SALESFORCE CONTRACTS · 5 STAGES', 'SALESFORCE CONTRACTS · 5 PHASEN'), { fill: D, size: 7 })}
+    ${[[l('Author', 'Erstellen'), l('clauses', 'Klauseln')], [l('Negotiate', 'Verhandeln'), 'Word'], [l('Approve', 'Freigeben'), 'Matrix'], [l('Sign', 'Signieren'), 'DocuSign'], [l('Activate', 'Aktivieren'), l('obligations', 'Pflichten')]].map(([a, b], i) => box(18 + i * 60, 32, 52, 36, i === 4 ? C : G) + t(44 + i * 60, 47, a, { fill: i === 4 ? C : D, size: 7, anchor: 'middle' }) + t(44 + i * 60, 60, b, { size: 7, anchor: 'middle' })).join('')}
+    ${[0, 1, 2, 3].map((i) => arrow(70 + i * 60, 50, 78 + i * 60)).join('')}
+    <path d="M18 84H302" stroke="${L}"/>
+    ${t(18, 100, l('Contracts: what was signed', 'Contracts: was unterschrieben ist'), { size: 7 })}
+    ${t(18, 114, l('Sales agreement: volumes per period', 'Sales Agreement: Mengen je Periode'), { size: 7 })}
+    ${t(18, 128, l('Service contract: covered assets', 'Servicevertrag: abgedeckte Anlagen'), { size: 7 })}
+    ${tag(196, 96, 108, l('from €50 / user / month', 'ab 50 € je Nutzer/Monat'))}
+    ${t(18, 150, l('SKU needs prerequisite products', 'SKU braucht Voraussetzungsprodukte'), { size: 7 })}`,
+
   'asset-service-lifecycle-management-addon': (l) => `
     ${t(18, 22, l('CORE FIELD SERVICE', 'FIELD-SERVICE-KERN'), { fill: D, size: 7.5 })}${t(176, 22, l('ASLM ADD-ON', 'ADD-ON ASLM'), { fill: D, size: 7.5 })}
     ${box(18, 30, 126, 86)}
@@ -60,6 +95,7 @@ const drawings: Record<string, Drawing> = {
     ${t(304, 156, l('tree grid: max 500', 'Baumansicht: max. 500'), { size: 6.5, anchor: 'end' })}`,
 
   'field-service-data-capture-forms': (l) => `
+    ${t(18, 18, l('PROTOCOL SPLIT BY VARIANT (ASSUMED)', 'PROTOKOLL NACH VARIANTE GETEILT (ANNAHME)'), { fill: D, size: 7 })}
     ${box(18, 30, 62, 84)}${t(49, 46, l('PAPER', 'PAPIER'), { fill: D, size: 7.5, anchor: 'middle' })}
     ${[56, 64, 72, 80].map((y) => `<path d="M28 ${y}H70" stroke="${L}" stroke-width="1.2"/>`).join('')}
     ${t(49, 96, l('80 points', '80 Punkte'), { size: 7, anchor: 'middle' })}${t(49, 107, l('12 pages', '12 Seiten'), { size: 7, anchor: 'middle' })}
@@ -67,7 +103,7 @@ const drawings: Record<string, Drawing> = {
     <path d="M196 38H206M196 74H206M196 110H206M206 38V110" fill="none" stroke="${G}" stroke-width="1.2"/>
     ${arrow(206, 47, 220, C)}${arrow(206, 97, 220)}
     ${box(220, 30, 88, 34, C)}${t(264, 44, l('FIELDS', 'FELDER'), { fill: C, size: 7, anchor: 'middle' })}${t(264, 57, l('asset · work order', 'Asset · Arbeitsauftrag'), { size: 6.5, anchor: 'middle' })}
-    ${box(220, 80, 88, 34)}${t(264, 94, l('FORM ANSWERS', 'FORMULARANTWORTEN'), { fill: D, size: 7, anchor: 'middle' })}${t(264, 107, l('checks, signature', 'Prüfpunkte, Unterschrift'), { size: 6.5, anchor: 'middle' })}
+    ${box(220, 80, 88, 34)}${t(264, 94, l('FORM ANSWERS', 'FORMULARANTWORTEN'), { fill: D, size: 6.5, anchor: 'middle' })}${t(264, 107, l('checks, signature', 'Prüfpunkte, Unterschrift'), { size: 6.5, anchor: 'middle' })}
     ${t(18, 140, l("Voice to Form: GA since 260.0, German since Winter '27", "Voice to Form: GA seit 260.0, Deutsch seit Winter '27"), { fill: C, size: 7 })}
     ${t(18, 153, l('offline, auto-save, every submission logged', 'offline, automatisch gespeichert, jede Übermittlung protokolliert'), { size: 7 })}`,
 
@@ -91,7 +127,7 @@ const drawings: Record<string, Drawing> = {
     <path d="M44 60H192" stroke="${C}" stroke-width="2"/>
     ${dot(196, 60, C)}${t(196, 50, 'GA', { fill: C, size: 7, anchor: 'middle' })}
     ${dot(290, 60)}${t(290, 50, l('all users', 'alle Nutzer'), { fill: D, size: 7, anchor: 'middle' })}
-    ${t(118, 76, l('pilot: 8 technicians, iOS + Android', 'Pilot: 8 Techniker, iOS + Android'), { fill: C, size: 7, anchor: 'middle' })}
+    ${t(118, 76, l('pilot (assumed): 8 technicians, iOS + Android', 'Pilot (Annahme): 8 Techniker, iOS + Android'), { fill: C, size: 7, anchor: 'middle' })}
     ${t(243, 76, l('up to 7 days', 'bis zu 7 Tage'), { size: 7, anchor: 'middle' })}
     ${box(18, 90, 138, 46)}${t(26, 104, 'BETA', { fill: D, size: 7 })}${t(26, 117, l('1 month before major', '1 Monat vor Hauptversion'), { size: 7 })}${t(26, 129, l('1 week before patch', '1 Woche vor Patch'), { size: 7 })}
     ${box(166, 90, 138, 46)}${t(174, 104, 'PATCH 262.3', { fill: D, size: 7 })}${t(174, 117, l('beta 26 Aug 2026', 'Beta 26.08.2026'), { size: 7 })}${t(174, 129, l('release 4 Sep 2026', 'Release 04.09.2026'), { size: 7 })}
