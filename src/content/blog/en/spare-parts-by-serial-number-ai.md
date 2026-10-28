@@ -77,7 +77,7 @@ What stays rule-based: the parts list itself, successor materials (resolved in E
 
 The technician is the easier start: internal user, known machine, work order as context. A dealer in the portal needs stricter rules:
 
-- **Serial numbers from the dealer's own assets.** The agent takes the serial number from asset records shared with the dealer's account, never from free text. Otherwise one dealer reads the configuration of a machine sold by another.
+- **Serial numbers from the dealer's own assets.** The agent takes the serial number from asset records shared with the dealer's account, never from free text. Otherwise one dealer reads the configuration of a machine sold by another. A spare parts store can use the same rule, see [show only parts for each machine](../spare-parts-shop-parts-per-machine/).
 - **Dealer prices and availability from the ERP.** Show whether and when a part is available, as in the SAP article, and keep stock levels internal.
 - **Only spare-relevant positions.** The full as-built structure is design knowledge and has no place in a dealer chat.
 - **Free text is untrusted.** Portal fields are entry points for manipulated instructions, see [prompt injection through dealer portals](../prompt-injection-dealer-portals-agentforce/).

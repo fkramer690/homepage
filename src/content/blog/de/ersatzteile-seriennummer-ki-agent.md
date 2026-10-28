@@ -77,7 +77,7 @@ Regelbasiert bleiben: die Teileliste selbst, Nachfolgematerialien (aufgelöst in
 
 Der Techniker im Außendienst ist der leichtere Start: interner Benutzer, bekannte Maschine, Arbeitsauftrag als Kontext. Ein Händler im Portal braucht strengere Regeln:
 
-- **Seriennummern nur aus eigenen Assets.** Der Agent übernimmt die Seriennummer aus Assets, die für den Händler-Account freigegeben sind, nie aus Freitext. Sonst liest ein Händler die Konfiguration einer Maschine, die ein anderer verkauft hat.
+- **Seriennummern nur aus eigenen Assets.** Der Agent übernimmt die Seriennummer aus Assets, die für den Händler-Account freigegeben sind, nie aus Freitext. Sonst liest ein Händler die Konfiguration einer Maschine, die ein anderer verkauft hat. Ein Ersatzteilshop kann dieselbe Regel nutzen, siehe [nur Teile zur eigenen Maschine zeigen](../ersatzteilshop-teile-pro-maschine/).
 - **Händlerpreise und Verfügbarkeit aus dem ERP.** Zeigen Sie, ob und wann ein Teil lieferbar ist, wie im SAP-Beitrag, und behalten Sie Lagerbestände intern.
 - **Nur ersatzteilrelevante Positionen.** Die vollständige As-built-Struktur ist Konstruktionswissen und gehört nicht in einen Händlerchat.
 - **Freitext ist nicht vertrauenswürdig.** Portalfelder sind Einfallstore für manipulierte Anweisungen, siehe [Prompt Injection über das Händlerportal](../prompt-injection-haendlerportal-agentforce/).
