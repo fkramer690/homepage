@@ -57,7 +57,7 @@ When orders live in the ERP, there are two architectures:
 - **Replicate orders to Salesforce.** Orders arrive in Salesforce as order records and are linked to the sales agreement. Upside: sales and service see the orders themselves, not just totals. Downside: more data volume, and the integration or an automation has to link each order to the right agreement.
 - **Load totals through the API.** The ERP or the middleware calculates quantities per customer, product and period and loads only those values. Upside: lean, and the ERP stays the only place where orders are counted. Downside: anyone who wants to know which orders sit behind a number has to look in the ERP.
 
-Which one fits depends on what else Salesforce needs to know about orders. The basic rule is the same as for any integration: one leading system per type of data. How I split that for customers, products, prices and orders is described under [integration with ERP, middleware and telephony](../../services/salesforce-integration/).
+Which one fits depends on what else Salesforce needs to know about orders. The basic rule is the same as for any integration: one leading system per type of data. How I split that for customers, products, prices and orders is described under [integration with ERP, middleware and telephony](../../services/salesforce-integration/). Which data flows between SAP and Manufacturing Cloud overall is in [Manufacturing Cloud and SAP: which data flows where](../manufacturing-cloud-sap-integration-data-flows/).
 
 ## What I saw in a project
 
