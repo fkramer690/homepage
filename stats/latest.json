@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-27T10:31:05.650Z",
+  "generatedAt": "2026-10-28T04:48:03.962Z",
   "range": {
-    "start": "2026-09-27",
-    "end": "2026-10-27"
+    "start": "2026-09-28",
+    "end": "2026-10-28"
   },
   "browsers": [
     {
-      "count": 130,
+      "count": 180,
       "dimensions": {
         "userAgentBrowser": "Chrome"
       },
@@ -17,7 +17,7 @@
   ],
   "countries": [
     {
-      "count": 130,
+      "count": 180,
       "dimensions": {
         "countryName": "DE"
       },
@@ -46,7 +46,7 @@
       }
     },
     {
-      "count": 10,
+      "count": 60,
       "dimensions": {
         "date": "2026-10-27"
       },
@@ -57,7 +57,7 @@
   ],
   "devices": [
     {
-      "count": 130,
+      "count": 180,
       "dimensions": {
         "deviceType": "desktop"
       },
@@ -68,7 +68,7 @@
   ],
   "pages": [
     {
-      "count": 50,
+      "count": 70,
       "dimensions": {
         "requestPath": "/"
       },
@@ -83,6 +83,24 @@
       },
       "sum": {
         "visits": 10
+      }
+    },
+    {
+      "count": 20,
+      "dimensions": {
+        "requestPath": "/masterclass-ki/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "requestPath": "/fragen/"
+      },
+      "sum": {
+        "visits": 0
       }
     },
     {
@@ -133,6 +151,15 @@
   ],
   "referers": [
     {
+      "count": 80,
+      "dimensions": {
+        "refererHost": "www.fk-sd.de"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
       "count": 60,
       "dimensions": {
         "refererHost": "fkramer690.github.io"
@@ -148,15 +175,6 @@
       },
       "sum": {
         "visits": 40
-      }
-    },
-    {
-      "count": 30,
-      "dimensions": {
-        "refererHost": "www.fk-sd.de"
-      },
-      "sum": {
-        "visits": 0
       }
     }
   ]
