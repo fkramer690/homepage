@@ -50,7 +50,7 @@ The €800,000 threshold applies per company. A group with several German entiti
 
 ## What does Revenue Cloud Billing deliver today?
 
-Revenue Cloud Billing, which Salesforce Help and the Winter '27 developer documentation also call Revenue Management Billing, creates invoices from billing schedules. According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/billing-management-with-revenue-cloud/generate-invoices-revenue), you generate a batch of invoice PDFs from an invoice run with "Generate Invoice Documents", or a single PDF with Flow, Apex or OmniScript, and send posted invoices by email to the bill-to contact. The [InvoiceDocument object](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_invoicedocument.htm) "tracks and displays the status of documents generated for invoices". The [product page](https://www.salesforce.com/sales/revenue-cloud-billing/) names "Invoicing Engine & Document Production".
+Revenue Cloud Billing creates invoices from billing schedules. Salesforce Help and the Winter '27 developer documentation file it under Revenue Management, the newer name of the product family, earlier called Revenue Lifecycle Management. According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/billing-management-with-revenue-cloud/generate-invoices-revenue), you generate a batch of invoice PDFs from an invoice run with "Generate Invoice Documents", or a single PDF with Flow, Apex or OmniScript, and send posted invoices by email to the bill-to contact. The [InvoiceDocument object](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_invoicedocument.htm) "tracks and displays the status of documents generated for invoices". The [product page](https://www.salesforce.com/sales/revenue-cloud-billing/) names "Invoicing Engine & Document Production".
 
 None of these sources mentions EN 16931, XRechnung, ZUGFeRD or Peppol, and I found no other Salesforce documentation for native e-invoice output as of October 2026. A community post on [UnofficialSF](https://unofficialsf.com/e-invoicing-with-revenue-cloud/) from October 2025 describes e-invoicing with Revenue Cloud as an extension: a posted invoice publishes a platform event, middleware such as MuleSoft maps the data to a format like UBL or Factur-X/ZUGFeRD, and an external provider delivers it, for example through Peppol. That is one author's approach, not product documentation.
 
@@ -70,7 +70,7 @@ I see three routes, and the right one depends on where your invoices come from t
 
 **An e-invoicing service** keeps Billing as the invoicing system. I would choose a service that also handles SAP's invoices, so customers receive every invoice through the same channel and the same validation. The integration is a normal integration project with an owner, monitoring and error handling, the kind of work I describe under [Salesforce integration](../../services/salesforce-integration/).
 
-**A partner app** can be the fastest route. Check which formats and versions it supports, how it validates, how it handles credit memos and who supports it after a Salesforce release.
+**A partner app** keeps the logic inside the org, but adds another vendor to every Salesforce release. Check which formats and versions it supports, how it validates, how it handles credit memos and who fixes it when a release breaks something.
 
 ## A typical scenario, as an assumption
 
