@@ -88,7 +88,7 @@ const schema = {
             '@type': 'FAQPage',
             '@id': `${url}#faq`,
             inLanguage: lang,
-            mainEntity: faq.map(({ q, a }) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })),
+            mainEntity: faq.map(({ q, a }) => ({ '@type': 'Question', name: q, text: q, answerCount: 1, acceptedAnswer: { '@type': 'Answer', text: a } })),
           },
         ]
       : []),

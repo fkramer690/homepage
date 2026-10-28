@@ -85,7 +85,7 @@ Two conditions from the small print matter for licence planning. Field Service r
 Dispatcher and Technician licences may not be used for a contact centre or case management. Anyone in the back office who handles cases and plans jobs needs Field Service Plus.
 ```
 
-Which role needs which licence, subcontractors included, is in [chapter 1 of the Field Service masterclass](../../masterclass/field-service/field-service-business-case-licences/).
+Which role needs which licence, subcontractors included, is in [Salesforce Field Service licences: who needs which?](../field-service-licences-by-role/) and in [chapter 1 of the Field Service masterclass](../../masterclass/field-service/field-service-business-case-licences/).
 
 ## How do I decide?
 
@@ -102,6 +102,6 @@ Then comes the data question. Field Service only schedules as well as assets, lo
 
 ## Where should you start?
 
-Collect the four numbers for one month and one region. If they show many short jobs with a lot of travel, build the business case for Field Service with licences, implementation and maintenance over several years. If they show few long jobs, first check whether Service Cloud, a portal or the ERP can close the gap. What the mobile app can do for technicians today is covered in [Field Service mobile: guidance and voice](../salesforce-field-service-mobile-guided-voice/).
+Collect the four numbers for one month and one region. If they show many short jobs with a lot of travel, build the business case for Field Service with licences, implementation and maintenance over several years. How the rollout then works region by region is covered in [Salesforce Field Service implementation: why in waves?](../salesforce-field-service-rollout/). If they show few long jobs, first check whether Service Cloud, a portal or the ERP can close the gap. What the mobile app can do for technicians today is covered in [Field Service mobile: guidance and voice](../salesforce-field-service-mobile-guided-voice/).
 
 Field Service is worth it when your field team runs many short appointments, and rarely when it handles long projects. If you are facing this decision and want an independent assessment, [send me a message](#contact).

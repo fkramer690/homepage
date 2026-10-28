@@ -1,5 +1,5 @@
 ---
-title: "Field Service Lizenzen: Welche Rolle braucht welche?"
+title: "Salesforce Field Service Lizenzen: Wer braucht welche?"
 description: "Hotline, Disposition, Techniker, Backoffice, Servicepartner: welche Field-Service-Lizenz jede Rolle braucht, was sie kostet und welche Regeln zählen."
 pubDate: 2026-10-28
 lang: de

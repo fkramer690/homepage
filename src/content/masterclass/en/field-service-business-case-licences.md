@@ -109,7 +109,7 @@ $80 divided by $32 is 2.5. A partner technician who logs in three or more times 
 The pricing page refers to sales for login-based contractor licences, so I would have the counting rule written into the order form.
 ```
 
-Contractor licences are meant for your service partners' staff; putting your own people on them to save money is a risk I would not take. The full role matrix with an annual bill is in [Field Service licences: which role needs which one?](../../../blog/field-service-licences-by-role/).
+Contractor licences are meant for your service partners' staff; putting your own people on them to save money is a risk I would not take. The full role matrix with an annual bill is in [Salesforce Field Service licences: who needs which?](../../../blog/field-service-licences-by-role/).
 
 ## Which add-ons exist, and when does the Agentforce 1 bundle pay off?
 

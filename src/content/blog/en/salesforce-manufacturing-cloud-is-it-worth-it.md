@@ -1,5 +1,5 @@
 ---
-title: "Salesforce Manufacturing Cloud: Is It Worth It?"
+title: "Manufacturing Cloud vs Sales Cloud: Is It Worth It?"
 description: "Manufacturing Cloud costs $80 more per user and month than Sales Cloud. How manufacturers tell whether sales agreements, rebates and warranty justify that."
 pubDate: 2026-10-26
 lang: en
@@ -16,6 +16,8 @@ takeaways:
   - "Rebate management, warranty processes and dealer portals can carry the case even when sales agreements play no role."
   - "The decision belongs in a multi-year ROI case that compares licences, implementation and the maintenance of a custom build."
 faq:
+  - q: "What is the difference between Manufacturing Cloud and Sales Cloud?"
+    a: "Manufacturing Cloud is built on Sales Cloud and includes its features. On top it adds sales agreements for framework contracts with planned quantities, rebate management, warranty claims and a data model for manufacturers. At list price, Manufacturing Cloud Sales Core costs $275 per user and month and Sales Cloud Core $195."
   - q: "What is Salesforce Manufacturing Cloud?"
     a: "Manufacturing Cloud is Salesforce's industry product for manufacturers. It sits on top of Sales Cloud and Service Cloud and adds features such as sales agreements, rebate management, warranty claims and a data model for manufacturing companies."
   - q: "How much does Manufacturing Cloud cost?"
