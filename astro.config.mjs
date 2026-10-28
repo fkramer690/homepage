@@ -37,6 +37,10 @@ const enSlugs = readEntries('blog').filter((e) => e.lang === 'en').map((e) => e.
 const masterclassSegments = {
   ai: { de: 'ki-salesforce', en: 'ai-salesforce' },
   devops: { de: 'devops-release-management', en: 'devops-release-management' },
+  'manufacturing-cloud': { de: 'manufacturing-cloud', en: 'manufacturing-cloud' },
+  'revenue-cloud': { de: 'revenue-cloud', en: 'revenue-cloud' },
+  'b2b-commerce': { de: 'b2b-commerce', en: 'b2b-commerce' },
+  'field-service': { de: 'field-service', en: 'field-service' },
 };
 const contentPaths = {
   blog: { de: (slug) => `/blog/${slug}/`, en: (slug) => `/en/blog/${slug}/` },

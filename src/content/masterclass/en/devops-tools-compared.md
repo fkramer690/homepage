@@ -53,7 +53,7 @@ Since October 2026, Next Generation DevOps Center has been called [Lifecycle Cen
 
 The [setup considerations](https://help.salesforce.com/s/articleView?id=platform.next_gen_devops_center_setup_considerations.htm&language=en_US&type=5) contain the points that often decide the matter in manufacturing:
 
-- Only GitHub.com cloud plans, including GitHub Enterprise Cloud, and Bitbucket Cloud work as Git platforms. Salesforce has named GitLab and Azure as a priority, with no date.
+- Only GitHub.com cloud plans, including GitHub Enterprise Cloud, and Bitbucket Cloud work as Git platforms. Salesforce has named GitLab and Azure as a priority in its [admin blog](https://admin.salesforce.com/blog/2026/the-future-of-salesforce-devops-is-here-whats-new-for-admins), with no date.
 - Lifecycle Center is not available in the EU Operating Zone or in Government Cloud Plus.
 - The hub org cannot be a sandbox, and only one of Lifecycle Center or the old DevOps Center managed package can be active.
 - Migrating projects from the managed package is a developer preview. I would not rely on it for production projects until it is generally available.
@@ -66,7 +66,7 @@ How Lifecycle Center compares with sfdx-hardis in detail is in my [comparison of
 
 I have used sfdx-hardis in client projects for about two years. In programmes with several implementation partners, what counts for me is that the whole process sits as configuration in the client's repository. With branch protection, a partner can change it only through a pull request the client approves.
 
-The price is know-how. There are no licence fees, but there are CI minutes, the setup and a person on the client side who understands the pipeline. Cloudity offers paid help, but you do not need it. What the toolkit covers is in my [introduction to sfdx-hardis](../../../blog/sfdx-hardis-open-source-salesforce-devops/).
+The price is know-how. There are no licence fees, but there are CI minutes, the setup and a person on the client side who understands the pipeline. Cloudity offers help as a service provider, but you do not need it. What the toolkit covers is in my [introduction to sfdx-hardis](../../../blog/sfdx-hardis-open-source-salesforce-devops/).
 
 ## What do Gearset, Copado and Flosum do better?
 
@@ -74,7 +74,7 @@ The three big commercial platforms sell what open source does not provide: a rea
 
 **Gearset** runs as a service outside your org; according to [Gearset](https://gearset.com/), nothing has to be installed in your orgs. Gearset supports GitHub, GitLab, Bitbucket, Azure DevOps, AWS CodeCommit and generic Git. Its strength is the visual comparison of metadata between orgs, plus pipelines, backup, sandbox seeding with masked data, observability and code reviews as separate products. Gearset is the only one of the three with a public [price list](https://gearset.com/pricing/): the Starter plan for comparison and deployment costs 215 USD per Gearset user per month, and pipelines and CI/CD come as an automation plan from 550 USD per team per month. You can trial it for 30 days without a card.
 
-**Copado** describes itself on its [website](https://www.copado.com/) as a Salesforce-native DevOps solution and has sold its editions under the Agentia name since 2026. According to the [Copado documentation](https://docs.copado.com/), the Agentia Advanced edition targets teams with one production org and 3 to 10 people, and Agentia Pro targets enterprises with several orgs, with quality gates, governance and the Orchestrate Agent. On top come robotic testing and a context hub for the AI agents. The documentation for the Advanced edition lists [GitHub, GitLab, Bitbucket and Azure](https://docs.essentials.copado.com/en/articles/4109764-setup-git-connections) as Git platforms, each also self-hosted. Copado does not publish prices.
+**Copado** describes itself on its [website](https://www.copado.com/) as a Salesforce-native DevOps solution and has offered the Agentia Advanced and Agentia Pro editions since April 2026. According to the [Copado documentation](https://docs.copado.com/), the Agentia Advanced edition targets teams with one production org and 3 to 10 people, and Agentia Pro targets enterprises with several orgs, with quality gates, governance and the Orchestrate Agent. On top come robotic testing and a context hub for the AI agents. The documentation for the Advanced edition lists [GitHub, GitLab, Bitbucket and Azure](https://docs.essentials.copado.com/en/articles/4109764-setup-git-connections) as Git platforms, each also self-hosted. I found no public price list from Copado.
 
 **Flosum** is, according to the [vendor](https://www.flosum.com/products/devops), also Salesforce-native and has its own metadata-aware version control. Git is explicitly optional there; GitHub, GitLab, Bitbucket and Azure DevOps can be connected. Flosum stresses audit evidence generated in the pipeline itself and names frameworks such as SOX and GxP. That is relevant for makers of medical devices or lab equipment. Besides DevOps there are Backup and Archive, a Data Migrator and a Trust Center. Pricing is quote-based, according to Flosum.
 
@@ -88,7 +88,7 @@ I go through the criteria in this order, because the first ones rule out the mos
 2. **Team.** Who works with the tool every day: admins who click, or developers at home with VS Code and branches? And is there someone on the client side who can own a pipeline?
 3. **Partners.** How many teams and implementation partners work on the same org? From the second partner on, you need pull requests with [mandatory reviews](../../../blog/why-pull-request-reviews-are-a-must-in-enterprise-projects/) and one process that everyone uses the same way.
 4. **Ownership.** Is the contract in your name, do your employees hold admin rights, does the repository sit in your organisation? Why that matters is in [why clients should own their DevOps tools](../../../blog/why-clients-should-own-their-devops-tools/).
-5. **Cost.** Licence, CI minutes, setup and above all the release role. In the programmes I support, that role costs more than any tool.
+5. **Cost.** Licence, CI minutes, setup and above all the release role. In my assessment, in a programme with several partners that role costs more than any tool.
 6. **Support.** Do you need a contract with response times, or are the community and a service provider on demand enough?
 
 ## The decision matrix
@@ -101,8 +101,8 @@ The facts in the table come from the vendor pages linked above. The "Fits" row i
 | Where the process lives | Setup of the orgs | hub org | client's repository and CI | Gearset service | Salesforce-native, per Copado | Salesforce-native, per Flosum |
 | User interface | clicks in Setup | clicks in Salesforce | VS Code and CLI | web interface | vendor interface | vendor interface |
 | Add-ons | none | tests, quality gates, governance (beta) | monitoring, metadata backup, documentation | backup, seeding, observability, code reviews | robotic testing, AI agents | backup, Data Migrator, Trust Center |
-| Licence cost | none | none | none | public, from 215 USD per user per month | on request | on request |
-| Support | Salesforce | Salesforce | community, paid through Cloudity | vendor | vendor | vendor |
+| Licence cost | none | none | none | public, from 215 USD per user per month | no public price list found | on request |
+| Support | Salesforce | Salesforce | community, Cloudity as service provider | vendor | vendor | vendor |
 | Fits | a few admins, small changes | one admin team without partners on GitHub or Bitbucket Cloud | several partners, if a release role exists on the client side | mixed teams wanting comparison and modules from one source | large programmes with several orgs and governance needs | regulated environments with audit duties |
 
 Two things the matrix does not show. First, the quality of support, which you only learn in reference calls. Second, how well a tool handles your actual metadata, for example Field Service configuration or Experience Cloud pages for a dealer portal. Check that in a short test with your own org before you sign.

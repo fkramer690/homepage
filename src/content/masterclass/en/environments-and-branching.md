@@ -13,7 +13,7 @@ takeaways:
   - "Scratch orgs live for 30 days at most and start empty; in a mature client org, developer sandboxes with source tracking are often the more practical workplace."
   - "Developer sandboxes fall behind with every merge; sfdx-hardis backpromote, Gearset developer sandbox updates and the back promotions in Copado and Flosum bring them back."
   - "A hotfix is finished only when a retrofit has put it into the integration branch too; otherwise the next release overwrites the fix in production."
-  - "A refresh deletes and replaces the sandbox, and source tracking, sandbox-only users and undelivered changes go with it."
+  - "A refresh replaces the sandbox with a new copy of production; source tracking and undelivered changes are lost in the process."
 articles: [devops-salesforce-enterprise, sfdx-hardis-training, sandbox-data-ai-coding-agents]
 faq:
   - q: "How many sandboxes does a Salesforce programme with several partners need?"
@@ -93,7 +93,7 @@ The process is called back promotion or backpromote: changes from a higher stage
 - **sfdx-hardis.** The [backpromote](https://sfdx-hardis.cloudity.com/salesforce-devops-backpromote/) deploys into a developer sandbox or scratch org what has been merged into the parent branch since the last run, including deletions and deployment actions. Before it runs, it shows each item compared with the sandbox; where they differ, you choose between overwriting, keeping and merging. It refuses production and the orgs of major branches, never runs a deployment action twice in the same sandbox, and runs from the VS Code extension or as `sf hardis:work:backpromote`. According to Cloudity the feature is in beta.
 - **Gearset.** [Developer sandbox updates](https://docs.gearset.com/en/articles/9729558-getting-started-with-developer-sandbox-updates-in-pipelines) list each promotion to the base branch as an update you deploy to the sandbox. Before that, Gearset captures uncommitted work in the sandbox and merges it with the updates.
 - **Copado.** [Back promotions](https://docs.essentials.copado.com/en/articles/8098362-back-promotions-with-copado-essentials) show which deployments an environment is missing and deploy them back together, without a refresh.
-- **Flosum.** A prebuilt [backpromotion pipeline](https://flosum.com/blog/keep-all-your-salesforce-sandboxes-in-sync-using-flosum-pipelines) brings production changes into the sandboxes.
+- **Flosum.** A [backpromotion pipeline](https://flosum.com/blog/keep-all-your-salesforce-sandboxes-in-sync-using-flosum-pipelines) brings production changes into the sandboxes.
 
 The commercial tools make this convenient and usable with little Git knowledge; that is their strength. Which tool you pick matters less than one rule in the partner contract: before every new story and after every refresh, the developer sandbox is brought up to the state of its parent branch.
 
