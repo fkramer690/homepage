@@ -119,7 +119,12 @@ export const de: Dict = {
   references: {
     label: 'Referenzen',
     title: 'Ausgewählte Projekte',
-    note: 'Kundennamen aus Vertraulichkeitsgründen nicht genannt. Details auf Anfrage.',
+    note: 'Projektbeschreibungen anonymisiert, die Logos sind keinem Projekt zugeordnet. Details auf Anfrage.',
+    prev: 'Vorheriges Projekt',
+    next: 'Nächstes Projekt',
+    logosLabel: 'Kundenlogos',
+    logosTitle: 'Menschen lieben Logos. Hier sind ein paar.',
+    logosText: 'Über die Details eines Projekts sagen sie wenig. Über Größenordnung und Komplexität dafür umso mehr.',
     items: [
       {
         sector: 'Globaler Hersteller von Lebensmittelzutaten',

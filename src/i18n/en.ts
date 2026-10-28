@@ -117,7 +117,12 @@ export const en = {
   references: {
     label: 'References',
     title: 'Selected work',
-    note: 'Client names withheld for confidentiality. Details on request.',
+    note: 'Project descriptions anonymised; the logos are not linked to any specific project. Details on request.',
+    prev: 'Previous project',
+    next: 'Next project',
+    logosLabel: 'Client logos',
+    logosTitle: 'People love logos. Here are a few.',
+    logosText: 'They say little about the details of a project, and a lot about its scale and complexity.',
     items: [
       {
         sector: 'Global food ingredients manufacturer',
