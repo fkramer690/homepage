@@ -606,7 +606,9 @@ export const de: Dict = {
     open: 'Zur Masterclass',
     homeLabel: 'Masterclasses',
     homeTitle: 'Wissen zum Nachlesen, Kapitel für Kapitel',
-    homeText: 'Sechs Masterclasses führen Entscheider in Fertigungsunternehmen durch die Salesforce-Themen, die Programme gerade bestimmen: KI, DevOps, Manufacturing Cloud, Revenue Cloud, B2B Commerce und Field Service. Frei lesbar, auf Deutsch und Englisch.',
+    homeText: 'Sechs Masterclasses für Entscheider in Fertigungsunternehmen, frei lesbar auf Deutsch und Englisch.',
+    // Short names for the compact list on the start page, keyed by course id.
+    homeNames: { ai: 'KI & Agentforce', devops: 'DevOps & Release-Management', 'manufacturing-cloud': 'Manufacturing Cloud', 'revenue-cloud': 'Revenue Cloud', 'b2b-commerce': 'B2B Commerce', 'field-service': 'Field Service' },
     homeAll: 'Alle Masterclasses im Überblick',
   },
   floating: {

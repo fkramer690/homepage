@@ -188,22 +188,25 @@ const [qOpen, qClose] = lang === 'de' ? ['„', '“'] : ['“', '”'];
 
     <section class="section" id="masterclasses">
       <div class="container">
-        <p class="label mono">{mcTexts.homeLabel}</p>
-        <h2>{mcTexts.homeTitle}</h2>
-        <p class="section-intro">{mcTexts.homeText}</p>
-        <ul class="cards">
-          {masterclasses.map((mc) => (
-            <li class="card card-link">
-              <a href={mc.href}>
-                <span class="card-index mono">{mcTexts.chapters.replace('{n}', String(mc.chapters))}</span>
-                <h3 class="card-title">{mc.name}</h3>
-                <p>{mc.summary}</p>
-                <span class="card-more mono">{mcTexts.open} →</span>
-              </a>
-            </li>
-          ))}
-        </ul>
-        <p class="approach-more"><a class="text-link" href={masterclassesIndex(lang)}>{mcTexts.homeAll} →</a></p>
+        <div class="mc-home">
+          <div>
+            <p class="label mono">{mcTexts.homeLabel}</p>
+            <h2>{mcTexts.homeTitle}</h2>
+            <p class="section-intro">{mcTexts.homeText}</p>
+            <p><a class="text-link" href={masterclassesIndex(lang)}>{mcTexts.homeAll} →</a></p>
+          </div>
+          <ul class="mc-home-list">
+            {masterclasses.map((mc) => (
+              <li>
+                <a href={mc.href}>
+                  <span class="mc-home-name">{mcTexts.homeNames[mc.id]}</span>
+                  <span class="mc-home-meta mono">{mcTexts.chapters.replace('{n}', String(mc.chapters))}</span>
+                  <span class="mc-home-arrow" aria-hidden="true">→</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </section>
 
