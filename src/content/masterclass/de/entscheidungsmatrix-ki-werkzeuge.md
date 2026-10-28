@@ -73,12 +73,20 @@ Zeile 6 sieht harmlos aus, ist aber der Punkt, an dem ein externes Modell echte 
 
 Die Matrix hilft beim Nachschlagen. Im Gespräch mit IT-Leitung und Programmleitung gehe ich lieber diese sechs Fragen der Reihe nach durch, weil frühe Antworten spätere Optionen streichen.
 
-1. **Prototyp oder Produktion?** Für einen Prototyp ist Vibe Coding in einer Developer Edition oder Scratch-Org in Ordnung. Für Produktion gilt agentic engineering: Ein Mensch liest den Code, Tests und Pipeline entscheiden über den Merge. Fowler trennt beide Begriffe genau aus diesem Grund.
-2. **Welche Daten- und Residenzvorgaben gelten?** Liegt die Org in der EU Operating Zone, fällt Agentforce Vibes weg. Verlangt der Datenschutz EU-Verarbeitung, fällt die Claude API von Anthropic im direkten Zugang weg, Claude über Bedrock in einer EU-Region bleibt. Für Codex habe ich keine Aussage von OpenAI gefunden, dass die [EU-Residenz für API-Projekte](https://openai.com/index/introducing-data-residency-in-europe/) auch dort gilt; das würde ich schriftlich klären.
-3. **Welche Verträge und Werkzeuge gibt es schon?** Sind Flex Credits schon im Salesforce-Vertrag, liegt Vibes nahe. Hat die IT GitHub Enterprise, liegt Copilot nahe. Bei freier Wahl nehme ich Claude Code als Referenz, weil Salesforce dafür das erste offizielle Plugin gebaut hat. Den Vergleich mit allen Kriterien finden Sie in [Agentforce Vibes, Claude Code oder Copilot](../../../blog/agentforce-vibes-claude-code-copilot-vergleich/).
-4. **Was ist die Aufgabe?** Code geht an den Coding-Agenten, Metadaten-Wissen an den API-Context-Server, Daten an Hosted MCP, Geschäftsregeln eines Laufzeit-Agenten an Agent Script, Releases an die Pipeline.
-5. **Welches Kostenmodell passt?** Viel und gleichmäßige Nutzung spricht für Pauschalen pro Nutzer, wenig oder schwankende Nutzung für Abrechnung nach Verbrauch. Die Rechnung dazu steht in [Kapitel 7](../kosten-und-token/).
-6. **Welche Prüfungen sind deterministisch?** Code Analyzer, Apex-Tests, Validierungs-Deploy und ein menschlicher Review stehen vor jedem Merge, egal welcher Agent den Code geschrieben hat. Wie diese Prüfungen aussehen, beschreibt [Kapitel 8](../best-practices-ki-code/).
+```schritte
+Prototyp oder Produktion?
+  Für einen Prototyp ist Vibe Coding in einer Developer Edition oder Scratch-Org in Ordnung. Für Produktion gilt agentic engineering: Ein Mensch liest den Code, Tests und Pipeline entscheiden über den Merge. Fowler trennt beide Begriffe genau aus diesem Grund.
+Welche Daten- und Residenzvorgaben gelten?
+  Liegt die Org in der EU Operating Zone, fällt Agentforce Vibes weg. Verlangt der Datenschutz EU-Verarbeitung, fällt die Claude API von Anthropic im direkten Zugang weg, Claude über Bedrock in einer EU-Region bleibt. Für Codex habe ich keine Aussage von OpenAI gefunden, dass die [EU-Residenz für API-Projekte](https://openai.com/index/introducing-data-residency-in-europe/) auch dort gilt; das würde ich schriftlich klären.
+Welche Verträge und Werkzeuge gibt es schon?
+  Sind Flex Credits schon im Salesforce-Vertrag, liegt Vibes nahe. Hat die IT GitHub Enterprise, liegt Copilot nahe. Bei freier Wahl nehme ich Claude Code als Referenz, weil Salesforce dafür das erste offizielle Plugin gebaut hat. Den Vergleich mit allen Kriterien finden Sie in [Agentforce Vibes, Claude Code oder Copilot](../../../blog/agentforce-vibes-claude-code-copilot-vergleich/).
+Was ist die Aufgabe?
+  Code geht an den Coding-Agenten, Metadaten-Wissen an den API-Context-Server, Daten an Hosted MCP, Geschäftsregeln eines Laufzeit-Agenten an Agent Script, Releases an die Pipeline.
+Welches Kostenmodell passt?
+  Viel und gleichmäßige Nutzung spricht für Pauschalen pro Nutzer, wenig oder schwankende Nutzung für Abrechnung nach Verbrauch. Die Rechnung dazu steht in [Kapitel 7](../kosten-und-token/).
+Welche Prüfungen sind deterministisch?
+  Code Analyzer, Apex-Tests, Validierungs-Deploy und ein menschlicher Review stehen vor jedem Merge, egal welcher Agent den Code geschrieben hat. Wie diese Prüfungen aussehen, beschreibt [Kapitel 8](../best-practices-ki-code/).
+```
 
 Für Agenten im Betrieb kommt eine siebte Frage vor alle anderen: Lohnt sich der Prozess überhaupt? Volumen, Datenqualität, ERP-Zugriff, Kostenmodell und Edition prüfe ich in [Agentforce für Hersteller: jetzt starten oder warten?](../../../blog/agentforce-ja-oder-nein-hersteller/).
 

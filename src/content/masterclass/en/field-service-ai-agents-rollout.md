@@ -70,10 +70,10 @@ An agent can name the right spare part for a serial number only when one of your
 
 ```ablauf
 sf: Salesforce assets, Spare parts agent
-erp: ERP material
+erp: Material and price
 ext: PLM parts list
 PLM parts list --as-built--> Spare parts agent
-ERP material --availability, price--> Spare parts agent
+Material and price --availability--> Spare parts agent
 Salesforce assets --service history--> Spare parts agent
 ```
 

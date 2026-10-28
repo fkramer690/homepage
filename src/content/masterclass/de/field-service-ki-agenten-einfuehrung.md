@@ -70,10 +70,10 @@ Ein Agent nennt das richtige Ersatzteil zu einer Seriennummer nur, wenn eines Ih
 
 ```ablauf
 sf: Salesforce-Assets, Ersatzteilagent
-erp: ERP-Material
+erp: Material und Preis
 ext: PLM-Stückliste
 PLM-Stückliste --As-built--> Ersatzteilagent
-ERP-Material --Verfügbarkeit, Preis--> Ersatzteilagent
+Material und Preis --Verfügbarkeit--> Ersatzteilagent
 Salesforce-Assets --Servicehistorie--> Ersatzteilagent
 ```
 

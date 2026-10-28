@@ -59,7 +59,10 @@ Each question points to a different log, licence and retention period:
 
 **Agent Platform Tracing.** A [developer blog post from May 2026](https://developer.salesforce.com/blogs/2026/05/agent-platform-tracing-debug-agentforce-with-trace-trees-soql-and-slack) describes spans for LLM calls, Flows and Apex in Data 360, linked to Session Tracing by the same trace ID, and warns: "There's no backfill of historical data."
 
+```vertiefung For developers
+title: How do agent traces reach the SIEM?
 For a SIEM (the security team's central log system), the [Session Trace OTel API](https://developer.salesforce.com/docs/ai/agentforce/guide/otel-api.md) is in beta and returns sessions started within the previous 72 hours, one session per query; native push is "planned".
+```
 
 These logs are a store of personal data in their own right: the input of a "check warranty" action contains serial numbers, dealer names and sometimes the end customer. None of the pages I opened says what storing it costs in Data 360 consumption.
 
@@ -69,7 +72,11 @@ When Claude, ChatGPT or Cursor reads Salesforce data through hosted MCP, the [se
 
 The catch is retention. According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/event_monitoring/event_monitoring_intro), Enterprise, Unlimited and Performance Edition orgs get a handful of event types for free, among them Login, Logout and API Total Usage, with one day of retention. In my reading, an org without the add-on that does not download these files every day has no MCP history at all.
 
-With Shield or the Event Monitoring add-on, the [Event Monitoring FAQ](https://help.salesforce.com/s/articleView?id=000396295&language=en_US&type=1) says logs are kept 30 days by default and up to one year. Paid logs "cannot be retrieved retroactively for periods before the contract start date". The Salesloft Drift attackers were active from 8 August until at least 18 August 2025, [according to The Hacker News](https://thehackernews.com/2025/08/salesloft-oauth-breach-via-drift-ai.html), so a question asked on day ten needs logs from day one. The token side of that incident is in [connected apps and OAuth lessons](../connected-apps-oauth-ai-integrations/).
+With Shield or the Event Monitoring add-on, the [Event Monitoring FAQ](https://help.salesforce.com/s/articleView?id=000396295&language=en_US&type=1) says logs are kept 30 days by default and up to one year. The Salesloft Drift attackers were active from 8 August until at least 18 August 2025, [according to The Hacker News](https://thehackernews.com/2025/08/salesloft-oauth-breach-via-drift-ai.html), so a question asked on day ten needs logs from day one. The token side of that incident is in [connected apps and OAuth lessons](../connected-apps-oauth-ai-integrations/).
+
+```hinweis achtung
+Paid logs "cannot be retrieved retroactively for periods before the contract start date". Event Monitoring bought after an incident will not show that incident.
+```
 
 The paid tier adds event types such as [Unique Query](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_eventlogfile_unique_query_event_elf.htm), which captures the SOQL queries, filter IDs and report IDs that were processed. That is the event that shows whether an AI client asked for one dealer's price agreement or for all of them.
 

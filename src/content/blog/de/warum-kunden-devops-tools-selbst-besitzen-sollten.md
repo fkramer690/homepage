@@ -71,7 +71,13 @@ Das ist kein Vorwurf an Partner. Die meisten guten Partner arbeiten lieber in de
 
 Sehr viel. Als [Architekt auf Kundenseite](../../#about) ist eines meiner wichtigsten Ziele, Umsetzungspartner vergleichbar und austauschbar zu halten. Das funktioniert nur, wenn die Grundlagen dem Kunden gehören: Repository, Pipeline, Backlog und Dokumentation. Dann lässt sich ein neuer Partner in ein bekanntes Setup mit schriftlichen Standards einarbeiten, und ein scheidender Partner gibt nichts weiter ab als seine Benutzer.
 
-Es ist auch die Voraussetzung, um internes Ownership aufzubauen. In dem Programm, das ich in meinem DevOps-Artikel beschreibe, wurde der Release-Prozess am Ende an einen internen Kollegen übergeben. Eine solche Übergabe ist nur realistisch, wenn Tools und Rechte bereits auf Kundenseite liegen. Sonst erbt die interne Person einen Prozess, der weiter an fremden Accounts hängt. Der Besitz der Tools ist die Grundlage guter [Partnersteuerung und Governance](../../leistungen/partnersteuerung/).
+Es ist auch die Voraussetzung, um internes Ownership aufzubauen.
+
+```praxis
+In einem Programm, das ich begleitet und in meinem DevOps-Artikel beschrieben habe, lief anfangs jeder Pull Request über meinen Schreibtisch. Als der Prozess stabil lief, habe ich ihn an einen internen Kollegen übergeben.
+```
+
+Eine solche Übergabe ist nur realistisch, wenn Tools und Rechte bereits auf Kundenseite liegen. Sonst erbt die interne Person einen Prozess, der weiter an fremden Accounts hängt. Der Besitz der Tools ist die Grundlage guter [Partnersteuerung und Governance](../../leistungen/partnersteuerung/).
 
 ## Wie setzen Sie das in der Praxis auf?
 
@@ -85,7 +91,9 @@ Am besten, bevor der erste Partner startet. Diese Regeln haben sich bewährt:
 6. **Secrets bleiben im Tresor des Kunden.** Integrationsuser und Zertifikate gehören dem Kunden und werden beim Partnerwechsel erneuert.
 7. **Im Vertrag festhalten.** Die Leistungsbeschreibung regelt, dass alle Arbeitsergebnisse, auch Code, Tickets und Dokumentation, in den Tools des Kunden entstehen.
 
+```hinweis tipp
 Besitzt ein Partner bereits einige der Tools, planen Sie den Umzug früh und in einer ruhigen Phase, nicht während eines Ausstiegs. Ein Repository lässt sich mit voller Historie an einem Tag umziehen. Jira und Miro brauchen mehr Planung, sind aber jetzt immer noch deutlich günstiger umzuziehen als später.
+```
 
 ## Wo fangen Sie an?
 

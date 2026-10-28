@@ -36,6 +36,8 @@ In Salesforce B2B Commerce entscheiden zwei getrennte Mechanismen, ob ein Händl
 
 Salesforce B2B Commerce, das Salesforce inzwischen auch als "Agentforce Commerce for B2B" vermarktet ([Trailhead](https://trailhead.salesforce.com/content/learn/modules/agentforce-for-guided-shopping-for-b2b-and-d2c/increase-revenue-with-agentforce-for-guided-shopping)), steuert den Zugang über eine Kette von Standardobjekten. Die [Trailhead-Einheit zum Zugang der Käufer](https://trailhead.salesforce.com/content/learn/modules/b2b-commerce-lightning-experience-data-model/organize-how-buyers-access-your-store) sagt es knapp: Käufer sind über Buyer Groups mit Stores verbunden, und Entitlement Policies legen fest, welche Produkte ein Käufer aufgrund seiner Gruppenmitgliedschaften sieht.
 
+```vertiefung Für Admins
+titel: Welche Standardobjekte bilden die Kette?
 - **BuyerAccount:** ein normaler Account, der für den Einkauf freigeschaltet ist. Seine Kontakte werden Käufer oder Buyer Manager.
 - **BuyerGroup und BuyerGroupMember:** Die Gruppe bündelt Käuferaccounts mit gleichen Einstellungen, jede Mitgliedschaft ist ein eigener Datensatz.
 - **WebStoreBuyerGroup:** verbindet eine Buyer Group mit einem Store.

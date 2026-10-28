@@ -119,13 +119,16 @@ I found no case study from the German-speaking market with hard figures on servi
 
 Assume a machine builder with SAP S/4 and an existing MuleSoft API, Service Cloud, Field Service with 45 technicians and around 200 dealers who order through a portal. Manufacturing Cloud is being introduced. All circumstances and numbers are assumptions meant to show the approach.
 
-**Quarter 1: dealer agent for order status.** The agent reads order and delivery date through the MuleSoft API. `before_reasoning` makes sure a dealer only sees their own orders. Before go-live, 150 test cases from real, anonymised enquiries run, including questions about other dealers' orders and free text with hidden instructions. The decision date after eight weeks is agreed in advance.
-
-**In parallel: data work and inventory.** IT reconciles the installed base with SAP until every machine has a serial number and warranty start, and lists all connected apps with their scopes.
-
-**Quarter 2: maintenance booking.** The agent books maintenance for customers with maintained downtime windows. For everyone else it proposes slots and hands over to dispatch.
-
-**Quarters 3 and 4: warranty pre-check.** Only once the asset data is right does the agent check coverage. The rule stays in the expression set; amounts above the agreed limit and every fraud flag go to a claims handler.
+```schritte
+Dealer agent for order status | Quarter 1
+  The agent reads order and delivery date through the MuleSoft API. `before_reasoning` makes sure a dealer only sees their own orders. Before go-live, 150 test cases from real, anonymised enquiries run, including questions about other dealers' orders and free text with hidden instructions. The decision date after eight weeks is agreed in advance.
+Data work and inventory | in parallel · IT
+  IT reconciles the installed base with SAP until every machine has a serial number and warranty start, and lists all connected apps with their scopes.
+Maintenance booking | Quarter 2
+  The agent books maintenance for customers with maintained downtime windows. For everyone else it proposes slots and hands over to dispatch.
+Warranty pre-check | Quarters 3 and 4
+  Only once the asset data is right does the agent check coverage. The rule stays in the expression set; amounts above the agreed limit and every fraud flag go to a claims handler.
+```
 
 **Deliberately not in the plan:** troubleshooting for special-purpose machines while manuals are not mapped to serial numbers, and agents in SAP processes that the ERP decides itself today.
 
@@ -133,10 +136,17 @@ At year end three agents run, all under the same rules: own user, rules in logic
 
 ## What is coming until 2028?
 
-- **Long-horizon agents** that pursue a goal over days or weeks are in pilot; Salesforce announced GA for November 2026.
+```zeitleiste
+2026-11 | Long-horizon agents: GA announced by Salesforce
+2026-12-02 | EU AI Act: marking obligation for generative systems on the market before 2 August 2026
+2027-12-02 | EU AI Act: high-risk obligations under Annex III
+2028-08-02 | EU AI Act: high-risk obligations under Annex I, AI as a safety component in products
+```
+
+- **Long-horizon agents** that pursue a goal over days or weeks are still in pilot.
 - **Koa**, Salesforce's first CRM reasoning model built on NVIDIA Nemotron, is expected to reach GA in Winter 2026, [in US regions first](https://investor.salesforce.com/news/news-details/2026/Announcing-Koa-Salesforces-First-CRM-Reasoning-Model-Built-on-NVIDIA-Nemotron/default.aspx). For orgs in the EU it is not relevant for now.
 - **Headless Platform Interactions**, the meter for agentic API and MCP access, is still listed as "TBA" on the rate card. When external agents access Salesforce, that becomes a budget line, described in [MCP access as a budget risk](../../../blog/mcp-api-calls-salesforce-budget-risk/).
-- **EU AI Act:** according to [White & Case](https://www.whitecase.com/insight-alert/eu-ai-omnibus-enters-force-amending-ai-act), Regulation (EU) 2026/1744 moves high-risk obligations under Annex III to 2 December 2027 and under Annex I, AI as a safety component in products, to 2 August 2028. Generative systems on the market before 2 August 2026 have until 2 December 2026 to meet the marking obligation. For machine builders, Annex I concerns the machine more than the CRM agent. What this means for Agentforce projects is in [EU AI Act deadlines for Agentforce](../../../blog/eu-ai-act-deadlines-agentforce/) and [chapter 9](../teamwork-and-delivery/).
+- **EU AI Act:** according to [White & Case](https://www.whitecase.com/insight-alert/eu-ai-omnibus-enters-force-amending-ai-act), the deadlines in the timeline follow from Regulation (EU) 2026/1744. For machine builders, Annex I concerns the machine more than the CRM agent. What this means for Agentforce projects is in [EU AI Act deadlines for Agentforce](../../../blog/eu-ai-act-deadlines-agentforce/) and [chapter 9](../teamwork-and-delivery/).
 
 Which rules belong in your agents and which stay in the ERP is something I sort out on the client side as part of [Salesforce architecture](../../../services/salesforce-architecture/), the ERP connection as part of [Salesforce integration](../../../services/salesforce-integration/). All chapters are listed on the [masterclass overview](../).
 

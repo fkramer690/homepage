@@ -40,7 +40,14 @@ Lead-Beschreibung --liest Anweisung--> Agentforce
 Agentforce --Daten in Bild-URL--> Abgelaufene Domain
 ```
 
-Salesforce hat die Meldung am 31. Juli bestätigt und erzwingt laut [SalesforceBen](https://www.salesforceben.com/agentforce-web-to-lead-vulnerability-exposed-could-you-be-impacted/) seit 8. September 2025 Trusted URLs für Agentforce und Einstein AI. Gegenüber The Hacker News erklärte Salesforce, die Allowlist stelle sicher, dass über Prompt Injection „no malicious links are called or generated“. Laut Noma wurde die abgelaufene Domain wieder gesichert. Noma hat die Details am 25. September veröffentlicht.
+Salesforce hat die Meldung am 31. Juli bestätigt und erzwingt laut [SalesforceBen](https://www.salesforceben.com/agentforce-web-to-lead-vulnerability-exposed-could-you-be-impacted/) seit 8. September 2025 Trusted URLs für Agentforce und Einstein AI. Gegenüber The Hacker News erklärte Salesforce, die Allowlist stelle sicher, dass über Prompt Injection „no malicious links are called or generated“. Laut Noma wurde die abgelaufene Domain wieder gesichert.
+
+```zeitleiste
+2025-07-28 | Noma Security meldet ForcedLeak an Salesforce, CVSS 9,4
+2025-07-31 | Salesforce bestätigt die Meldung
+2025-09-08 | Salesforce erzwingt Trusted URLs für Agentforce und Einstein AI
+2025-09-25 | Noma veröffentlicht die Details
+```
 
 Zwei Punkte sind mir wichtiger als der Patch. Noma schreibt, dem Modell habe die Fähigkeit gefehlt („lacked the ability to distinguish“), zwischen Daten in seinem Kontext und Anweisungen aus vertrauenswürdigen Quellen zu unterscheiden. Das gilt für jedes Sprachmodell. Und ein Sprecher von Salesforce nannte Prompt Injection gegenüber [SalesforceBen](https://www.salesforceben.com/agentforce-web-to-lead-vulnerability-exposed-could-you-be-impacted/) „a complex and evolving area“. Der konkrete Ausgang ist zu. Das Muster bleibt.
 

@@ -40,7 +40,14 @@ Lead description --Hidden instruction--> Agentforce
 Agentforce --Image URL leak--> Expired domain
 ```
 
-Salesforce acknowledged the report on 31 July and has enforced Trusted URLs for Agentforce and Einstein AI since 8 September 2025, according to [SalesforceBen](https://www.salesforceben.com/agentforce-web-to-lead-vulnerability-exposed-could-you-be-impacted/). Salesforce told The Hacker News that the allowlist ensures "no malicious links are called or generated" through prompt injection. According to Noma, the expired domain was re-secured. Noma published the details on 25 September.
+Salesforce acknowledged the report on 31 July and has enforced Trusted URLs for Agentforce and Einstein AI since 8 September 2025, according to [SalesforceBen](https://www.salesforceben.com/agentforce-web-to-lead-vulnerability-exposed-could-you-be-impacted/). Salesforce told The Hacker News that the allowlist ensures "no malicious links are called or generated" through prompt injection. According to Noma, the expired domain was re-secured.
+
+```zeitleiste
+2025-07-28 | Noma Security reports ForcedLeak to Salesforce, CVSS 9.4
+2025-07-31 | Salesforce acknowledges the report
+2025-09-08 | Salesforce enforces Trusted URLs for Agentforce and Einstein AI
+2025-09-25 | Noma publishes the details
+```
 
 Two points matter more to me than the patch. Noma wrote that the model "lacked the ability to distinguish" between data loaded into its context and instructions from trusted sources. That holds for every language model. And a Salesforce spokesperson told [SalesforceBen](https://www.salesforceben.com/agentforce-web-to-lead-vulnerability-exposed-could-you-be-impacted/) that prompt injection is "a complex and evolving area". The specific exit is closed. The pattern behind it stays.
 

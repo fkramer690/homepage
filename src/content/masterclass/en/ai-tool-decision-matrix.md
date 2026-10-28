@@ -63,7 +63,11 @@ Status as of 27 October 2026, based on the linked pages. Prices are US list pric
 | 11 | Old ERP or MES without an API | MuleSoft IDP with RPA, or the Systems Integration Agent | IDP routes documents under [80 percent confidence to a human](https://admin.salesforce.com/blog/2025/automate-order-entry-with-flow-mulesoft-agentforce-automate-with-agentforce); the Systems Integration Agent has been [GA since Dreamforce 2026](https://www.salesforce.com/blog/dreamforce-2026-announcements/) | RPA and the Systems Integration Agent work through the user interface; plan monitoring |
 | 12 | Sales wants to use Salesforce directly in Claude | Salesforce in Claude from the AIforce layer | [Available to all customers in beta](https://www.salesforce.com/news/stories/aiforce-announcement/) | "Pricing and packaging are subject to change"; pilot with a small group |
 
-Two notes on the matrix. Row 5 is often the decisive one for European manufacturers, because it can rule out row 2. IT should check whether the org sits in the EU Operating Zone before any tool comparison starts. And row 6 looks harmless, but it is the point where an external model reads real customer data. What to check there is covered in [chapter 3](../mcp-and-interfaces/).
+```hinweis achtung
+Row 5 is often the decisive one for European manufacturers, because it can rule out row 2. IT should check whether the org sits in the EU Operating Zone before any tool comparison starts.
+
+Row 6 looks harmless, but it is the point where an external model reads real customer data. What to check there is covered in [chapter 3](../mcp-and-interfaces/).
+```
 
 ## Six questions in the right order
 
