@@ -43,10 +43,6 @@ Eine Pipeline ist eine feste Folge automatischer Schritte, die eine Änderung au
 7. Nach dem Merge deployt die Pipeline in die Org, wenn möglich als Quick Deploy, und führt die Schritte vor und nach dem Deployment aus.
 8. Team und Ticket erfahren das Ergebnis.
 
-```praxis
-In einem Programm, das ich begleitet habe, lief anfangs jeder Pull Request über meinen Schreibtisch. Als der Prozess stabil lief, habe ich ihn an einen internen Kollegen übergeben.
-```
-
 Von Integration nach UAT und von dort nach Produktion wiederholt sich dasselbe Muster. Gearset Pipelines arbeitet im Kern genauso: Laut [Gearset-Dokumentation](https://docs.gearset.com/en/articles/6166062-promoting-your-first-features-in-gearset-pipelines) prüft Gearset jeden Pull Request auf Merge-Konflikte und validiert seine Metadaten gegen die Zielorg; „Promote changes“ startet dann einen Job, der mergt und deployt. Der Unterschied liegt in der Bedienung über eine Weboberfläche.
 
 ## Validierung und Quick Deploy

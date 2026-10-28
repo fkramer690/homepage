@@ -43,10 +43,6 @@ A pipeline is a fixed sequence of automated steps that takes a change from the r
 7. After the merge, the pipeline deploys to the org, as a quick deploy where possible, and runs the steps before and after the deployment.
 8. The team and the ticket learn the result.
 
-```praxis
-In one programme I supported, every pull request went across my desk at first. Once the process ran smoothly, I handed it over to an internal colleague.
-```
-
 The same pattern repeats from integration to UAT and from UAT to production. Gearset Pipelines works the same way at its core: according to the [Gearset docs](https://docs.gearset.com/en/articles/6166062-promoting-your-first-features-in-gearset-pipelines), Gearset checks each pull request for merge conflicts and validates its metadata against the target org, and "Promote changes" then starts a job that merges and deploys. The difference is that you operate it through a web interface.
 
 ## Validation and quick deploy

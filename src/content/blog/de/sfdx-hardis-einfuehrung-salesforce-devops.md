@@ -90,10 +90,6 @@ Im zweiten Fall kann eine kommerzielle Plattform die ehrlichere Antwort sein.
 
 Der Punkt mit den Lizenzbudgets wird oft unterschätzt. Die eingesparten Lizenzkosten sind am besten in eine interne Rolle investiert, die das Setup pflegt, neue Teams einarbeitet und den Release-Kalender verantwortet. Ohne diese Rolle verliert auch das beste Werkzeug nach einigen Monaten an Wirkung.
 
-```praxis
-In einem Programm, das ich begleitet habe, habe ich den Release-Prozess aufgebaut. Anfangs lief jeder Pull Request über meinen Schreibtisch. Als der Prozess stabil lief, habe ich ihn an einen internen Kollegen übergeben.
-```
-
 ## Wie steigen Sie ein?
 
 Am schnellsten verstehen Sie sfdx-hardis, indem Sie es ausprobieren, nicht indem Sie darüber lesen. Cloudity bietet ein kostenloses Praxistraining mit drei Leveln und geprüften Badges an. Ich habe alle drei abgeschlossen und meine Erfahrungen in [was ich aus dem kostenlosen sfdx-hardis-Training mitgenommen habe](../sfdx-hardis-kostenloses-devops-training/) aufgeschrieben.

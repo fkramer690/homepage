@@ -90,10 +90,6 @@ In the second case a commercial platform can be the more honest answer.
 
 The point about licence budgets is often underestimated. The saved licence costs are best invested in an internal role that maintains the setup, onboards new teams and owns the release calendar. Without that role, even the best tool loses its effect after a few months.
 
-```praxis
-In one programme I supported, I built the release process. At first every pull request went across my desk. Once the process ran stably, I handed it over to an internal colleague.
-```
-
 ## How do you get started?
 
 The fastest way to understand sfdx-hardis is to try it, not to read about it. Cloudity offers a free, hands-on training with three levels and verified badges. I completed all three and wrote about my experience in [what I learned from the free sfdx-hardis training](../sfdx-hardis-free-devops-training/).
