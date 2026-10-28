@@ -1,0 +1,50 @@
+name: OnPage crawl
+
+# Monthly crawl of www.fk-sd.de with the DataForSEO OnPage API (duplicates, broken
+# links, redirect chains, non-indexable pages). Stored on the "stats" branch.
+on:
+  schedule:
+    - cron: '10 2 1 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# Shares the group with the other stats workflows so they never push to "stats" at once.
+# Scheduled at night so the long crawl is done before analytics (03:47 UTC) starts;
+# a run waiting in the group would be cancelled by the next one.
+concurrency:
+  group: analytics
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Query DataForSEO
+        env:
+          DATAFORSEO_LOGIN: ${{ secrets.DATAFORSEO_LOGIN }}
+          DATAFORSEO_PASSWORD: ${{ secrets.DATAFORSEO_PASSWORD }}
+        run: |
+          node scripts/fetch-onpage.mjs > /tmp/onpage.json
+      - name: Commit snapshot to stats branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git ls-remote --exit-code origin stats >/dev/null; then
+            git fetch origin stats
+            git switch stats
+          else
+            git switch --orphan stats
+          fi
+          mkdir -p stats/onpage
+          cp /tmp/onpage.json stats/onpage/latest.json
+          cp /tmp/onpage.json "stats/onpage/$(date -u +%F).json"
+          git add stats/onpage
+          git commit -m "OnPage crawl $(date -u +%F)" || exit 0
+          git push origin stats
