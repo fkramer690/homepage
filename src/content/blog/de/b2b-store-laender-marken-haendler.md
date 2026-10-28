@@ -94,10 +94,16 @@ Das folgt derselben Logik wie ein [weltweiter Rollout von Manufacturing Cloud](.
 
 ## Womit sollten Sie anfangen?
 
-1. **Alles auf eine Seite.** Eine Zeile pro Marke, Gesellschaft, ERP-Mandant, Land, Währung, Sprache und Händlerstufe.
-2. **Echte Unterschiede markieren.** Nur Zeilen, die sich in Auftritt, Katalogstruktur, Checkout oder ERP unterscheiden, bekommen einen eigenen Store. Alles andere wird eine Käufergruppe.
-3. **Limits prüfen.** Sprachen pro Store, Store-Preisbücher und Käufergruppen pro Käuferkonto gegen die Tabelle oben zählen.
-4. **Das Kaufmännische klären.** Zahl der Storefronts und Preis für weitere schriftlich festhalten.
+```schritte
+Alles auf eine Seite
+  Eine Zeile pro Marke, Gesellschaft, ERP-Mandant, Land, Währung, Sprache und Händlerstufe.
+Echte Unterschiede markieren
+  Nur Zeilen, die sich in Auftritt, Katalogstruktur, Checkout oder ERP unterscheiden, bekommen einen eigenen Store. Alles andere wird eine Käufergruppe.
+Limits prüfen
+  Sprachen pro Store, Store-Preisbücher und Käufergruppen pro Käuferkonto gegen die Tabelle oben zählen.
+Das Kaufmännische klären
+  Zahl der Storefronts und Preis für weitere schriftlich festhalten.
+```
 
 Das Kapitel [Katalog, Suche, Sichtbarkeit](../../masterclass/b2b-commerce/katalog-suche-sichtbarkeit/) der [Masterclass B2B Commerce](../../masterclass/b2b-commerce/) ordnet diese Entscheidung in das gesamte Store-Design ein, und wie ich solche Schnitte angehe, beschreibe ich unter [Salesforce-Architektur](../../leistungen/salesforce-architektur/).
 

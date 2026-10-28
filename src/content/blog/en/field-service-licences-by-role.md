@@ -51,7 +51,9 @@ Three footnotes on the price list matter more than the prices themselves.
 2. **At least one Dispatcher licence.** Technicians and contractors need at least one Dispatcher in the org to use the scheduling tool. A pure technician rollout without a dispatcher licence does not work.
 3. **No case management on Dispatcher or Technician.** The price list says these two licences cannot be used for contact centre, call centre or customer case management. Field Service Plus can.
 
+```hinweis achtung
 The third rule is where I see the most risk. In smaller service teams the same three people often answer the breakdown line in the morning and plan technicians in the afternoon. On a Dispatcher licence, that is a breach of the licence terms, even if the system technically lets them open a case.
+```
 
 ## Which role needs which licence?
 
@@ -72,7 +74,11 @@ The back office is the role I check most carefully. People who only invoice in t
 
 ## When does Contractor Plus per login pay off?
 
-Contractor Plus costs $80 per user and month or $32 per login. The break-even is simple: $80 divided by $32 is 2.5. A partner technician who logs in more than two or three times a month is cheaper on a user licence. Below that, per login wins. The pricing page says contractor licences are also available on a monthly logins basis and refers to sales for details, so I would have the counting rule written into the order form.
+Contractor Plus costs $80 per user and month or $32 per login. The break-even is simple: $80 divided by $32 is 2.5. A partner technician who logs in more than two or three times a month is cheaper on a user licence. Below that, per login wins.
+
+```hinweis offen
+The pricing page says contractor licences are also available on a monthly logins basis and refers to sales for details, so I would have the counting rule written into the order form.
+```
 
 Salesforce's [architecture guide on contractor sharing](https://architect.salesforce.com/docs/architect/fundamentals/guide/field-service-contractor-sharing-patterns.html) describes a contractor company as a third-party entity that manages its own workforce. That is who these licences are for: your service partners, not your own staff on a cheaper ticket. How partner technicians get their own resource and territory is covered in [Field Service: how to bring in service partners](../salesforce-field-service-service-partners/).
 

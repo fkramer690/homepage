@@ -74,7 +74,11 @@ Das Backoffice prüfe ich am genauesten. Wer nur im ERP fakturiert, braucht gar 
 
 ## Wann lohnt sich Contractor Plus pro Login?
 
-Contractor Plus kostet 80 € pro Nutzer und Monat oder 32 € pro Login. Die Schwelle ist einfach: 80 geteilt durch 32 ergibt 2,5. Ein Partnertechniker, der sich mehr als zwei- bis dreimal im Monat anmeldet, ist mit einer Nutzerlizenz günstiger. Darunter gewinnt die Login-Lizenz. Die Preisseite schreibt, dass Contractor-Lizenzen auch auf Basis monatlicher Logins erhältlich sind, und verweist für Details an den Vertrieb. Die Zählregel würde ich deshalb im Bestellformular festhalten lassen.
+Contractor Plus kostet 80 € pro Nutzer und Monat oder 32 € pro Login. Die Schwelle ist einfach: 80 geteilt durch 32 ergibt 2,5. Ein Partnertechniker, der sich mehr als zwei- bis dreimal im Monat anmeldet, ist mit einer Nutzerlizenz günstiger. Darunter gewinnt die Login-Lizenz.
+
+```hinweis offen
+Die Preisseite schreibt, dass Contractor-Lizenzen auch auf Basis monatlicher Logins erhältlich sind, und verweist für Details an den Vertrieb. Die Zählregel würde ich deshalb im Bestellformular festhalten lassen.
+```
 
 Der [Architektur-Leitfaden von Salesforce zu Servicepartnern](https://architect.salesforce.com/docs/architect/fundamentals/guide/field-service-contractor-sharing-patterns.html) beschreibt eine Contractor-Firma als Drittunternehmen, das seine eigenen Leute steuert. Für sie sind diese Lizenzen gedacht, für Ihre Servicepartner, nicht für eigene Mitarbeitende zum kleineren Preis. Wie Partnertechniker eine eigene Ressource und ein eigenes Gebiet bekommen, steht in [Field Service: Servicepartner einbinden](../salesforce-field-service-servicepartner/).
 

@@ -61,7 +61,11 @@ On coverage: Salesforce requires 75 percent for a deployment, but its testing gu
 
 With Summer '26, Salesforce changed Apex's default behaviour. According to the [Apex Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apex/versioned_behavior_changes.htm), code saved at API 67.0 runs in user context, classes without a sharing declaration run with the current user's sharing, and `WITH SECURITY_ENFORCED` is no longer allowed in SOQL. The [Summer '26 architect blog](https://www.salesforce.com/blog/summer-26-release-architect-highlights/) adds two points: triggers always run in system mode, but the handler classes they call are affected if they lack a declaration. And classes still using the old clause will not compile on 67.0.
 
-The change is tied to each class's own API version. Code on 66.0 behaves as before until someone raises the version. That is where the risk sits: a query silently returns fewer records, with no error. Think of the batch job that writes order status from SAP into Salesforce every night, or the class that calculates warranty periods across all of a dealer's installed assets. Both have quietly seen everything until now.
+```hinweis achtung
+The change is tied to each class's own API version. Code on 66.0 behaves as before until someone raises the version. That is where the risk sits: a query silently returns fewer records, with no error.
+```
+
+Think of the batch job that writes order status from SAP into Salesforce every night, or the class that calculates warranty periods across all of a dealer's installed assets. Both have quietly seen everything until now.
 
 For AI code this matters twice over, in my view. Models have mostly seen older Apex, so they suggest patterns that no longer compile on 67.0 or behave differently. And agents like to raise API versions in passing when they touch a file anyway. The rules file should therefore fix three things: the target version for new classes, an explicit sharing declaration, and no raising of existing classes without a task and without a test as a restricted user. Where system mode is intended, the code says `WITH SYSTEM_MODE` on purpose, as the [LWC guide on secure Apex](https://developer.salesforce.com/docs/platform/lwc/guide/apex-security) describes. Details are in [API 67.0: why Apex sees fewer records](../../../blog/api-67-apex-user-mode-fewer-records/), and the pipeline impact in [Winter '27: what changes for your pipeline](../../../blog/salesforce-winter-27-what-changes-for-your-pipeline/).
 
