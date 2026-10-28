@@ -32,7 +32,13 @@ The Warranty Claims Adjudication Agent in Manufacturing Cloud, part of Winter '2
 
 Salesforce lists it on the [Manufacturing Cloud product page](https://www.salesforce.com/manufacturing/cloud/) under Winter '27 with one sentence: it should "speed up claim decisions" by validating coverage and flagging potential fraud. The same release adds guided warranty parts returns for dealers. Summer '26 had already brought the AI Warranty Concierge, which guides customers through a claim. Winter '27 became [generally available on 12 October 2026](https://www.salesforce.com/news/stories/winter-2027-product-release-announcement/).
 
-For a purchasing decision that is thin. In the sources I could open, Salesforce has not published which fraud signals the agent uses, which licence it needs or a setup guide like the ones for its other manufacturing agents. What is documented are the [Agentforce for Manufacturing warranty actions](https://help.salesforce.com/s/articleView?id=ai.agent_ref_mfg_get_wrnty_claims_for_acct.htm&language=en_US&type=5): Check Asset For Warranty, Check Coverage for Parts, Get Asset Warranties and Get Warranty Claims for Account, which finds claims by asset ID, serial number or claim number. They require the Agentforce for Manufacturing add-on for each user, or Agentforce 1 Manufacturing Edition. I expect the adjudication agent to build on these actions, but that is my assumption, so ask your account team before you put a number in the budget.
+For a purchasing decision that is thin.
+
+```hinweis offen
+In the sources I could open, Salesforce has not published which fraud signals the agent uses, which licence it needs or a setup guide like the ones for its other manufacturing agents. Ask your account team before you put a number in the budget.
+```
+
+What is documented are the [Agentforce for Manufacturing warranty actions](https://help.salesforce.com/s/articleView?id=ai.agent_ref_mfg_get_wrnty_claims_for_acct.htm&language=en_US&type=5): Check Asset For Warranty, Check Coverage for Parts, Get Asset Warranties and Get Warranty Claims for Account, which finds claims by asset ID, serial number or claim number. They require the Agentforce for Manufacturing add-on for each user, or Agentforce 1 Manufacturing Edition. I expect the adjudication agent to build on these actions, but that is my assumption, so ask your account team before you put a number in the budget.
 
 The data model underneath, from warranty terms to supplier recovery, is described in [warranty claims from dealers in Salesforce](../warranty-claims-dealers-salesforce/). Here I look only at the agent and what it needs.
 

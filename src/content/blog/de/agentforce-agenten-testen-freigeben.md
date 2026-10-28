@@ -101,13 +101,13 @@ Inakzeptable Fehler benennen
 20 bis 50 echte Fragen sammeln
   Aus Händler-E-Mails und Servicetickets, dann Grenz- und Schutzfälle ergänzen.
 Regeln markieren
-  Die Regeln, die exakte Prüfungen statt des LLM-Prüfers brauchen.
+  Welche Regeln brauchen exakte Prüfungen statt des LLM-Prüfers?
 Schwellen vereinbaren
   Schwellen und Anzahl der Läufe, vor dem ersten Test, nicht nach dem ersten Ergebnis.
 Sandbox-Credits budgetieren
   Für jeden Regressionslauf bis zum Ende des Piloten.
 Monitoring einschalten
-  Monitoring aktivieren und die Rollout-Gruppe festlegen, bevor Sie den Agenten aktivieren.
+  Und die Rollout-Gruppe festlegen, bevor Sie den Agenten aktivieren.
 ```
 
 Ein Agentforce-Agent ist bereit, wenn er vorab festgelegte Schwellen Lauf für Lauf erreicht und Sie ab dem ersten Tag sehen, was er in Produktion tut. Wenn Sie eine zweite Meinung zu Ihrem Testsatz oder Ihren Go-live-Kriterien möchten, [schreiben Sie mir](#contact).

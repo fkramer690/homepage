@@ -68,7 +68,12 @@ List prices in October 2026, per user and month, billed annually, from the [Manu
 | Max | $550 | $650 (Sales Max or Service Max) |
 | Sales & Service Max | | $700 |
 
-The Core premium is $80 per user and month, or $960 per user and year. For 120 sales users that is $115,200 per year at list price.
+```kennzahlen
+$80 | Core premium per user and month
+$960 | Core premium per user and year
+$115,200 | Premium per year for 120 sales users
+source: Manufacturing Cloud and Sales Cloud pricing pages, list prices October 2026
+```
 
 One uncertainty belongs in every calculation. The pricing page has two footnotes that contradict each other. One says the prices are for Enterprise Edition and Unlimited costs $425. The other says they are for Unlimited Edition and Enterprise costs $275. Which price applies to your edition only shows up in the quote. On top of that, Salesforce [announced in September 2026](https://www.salesforce.com/in/news/?p=14535) that "new pricing for Agentforce Industry Editions will go into effect later this fall". The Manufacturing Cloud page already uses Core and Max, but its footnotes still speak of Enterprise and Unlimited. How the new editions differ is in [Salesforce editions Core, Advanced and Max](../../../blog/salesforce-editions-core-advanced-max/). If your renewal is due now, keep the option to switch editions once the industry prices are final.
 
@@ -111,7 +116,9 @@ A quote from a partner or account team often assumes that every user gets the in
 4. **Dealers and customers** get portal licences, member licences for frequent use, login licences for occasional use.
 5. **Interfaces** to the ERP run on integration users without a user interface.
 
+```hinweis offen
 The pricing page does not say which service features a Sales Core user may use, nor whether a mixed set of Core, Max and Sales Cloud users is allowed in one org. Get both confirmed in writing before the licence count goes into the contract.
+```
 
 ## When is Manufacturing Cloud the wrong choice?
 

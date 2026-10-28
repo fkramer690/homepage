@@ -91,7 +91,15 @@ Das Claude-Code-Plugin aus derselben Ankündigung bündelt rund 40 dieser Skills
 
 Salesforce weist selbst darauf hin, dass Plugins herstellerspezifisch sind, Skills und MCP dagegen Standards. Skills sind im Kern Anweisungen und Skripte, die das Modell bei Bedarf lädt. Sie machen einen Agenten besser in Salesforce, erzwingen aber nichts. Durchgesetzt wird über Hooks, Code Analyzer und die Pipeline.
 
-Drei Termine gehören in diesen Teil. Der lokale Salesforce DX MCP Server erreicht laut [End-of-Life-Hinweis der Maintainer](https://github.com/forcedotcom/mcp/issues/46) am 2. November 2026 sein End of Life; was das für Ihren Partner bedeutet, beschreibt [Kapitel 3](../mcp-und-schnittstellen/). Laut [SalesforceBen](https://www.salesforceben.com/developer-features-and-announcements-from-dreamforce-26/) ist ein MCP-Plugin für Claude Code für Winter '27 zu erwarten, für ein Codex-Plugin peilt Salesforce Spring '27 nur an, und Governance für Tools und Skills in Vibes ist dann erhofft. Behandeln Sie das als Roadmap, nicht als Zusage. DevOps Center MCP wurde zur TDX 2026 [angekündigt](https://www.salesforceben.com/salesforce-headless-360-and-agentforce-vibes-2-0-revealed-at-tdx-2026/), ein Verfügbarkeitsdatum fehlt.
+Drei Termine gehören in diesen Teil:
+
+```zeitleiste
+2026-11-02 | End of Life des lokalen Salesforce DX MCP Server
+Winter '27 | MCP-Plugin für Claude Code erwartet
+Spring '27 | Codex-Plugin, von Salesforce nur angepeilt; dann auch erhoffte Governance für Tools und Skills in Vibes
+```
+
+Das End of Life steht im [Hinweis der Maintainer](https://github.com/forcedotcom/mcp/issues/46); was es für Ihren Partner bedeutet, beschreibt [Kapitel 3](../mcp-und-schnittstellen/). Die beiden Plugin-Termine meldet [SalesforceBen](https://www.salesforceben.com/developer-features-and-announcements-from-dreamforce-26/). Behandeln Sie sie als Roadmap, nicht als Zusage. DevOps Center MCP wurde zur TDX 2026 [angekündigt](https://www.salesforceben.com/salesforce-headless-360-and-agentforce-vibes-2-0-revealed-at-tdx-2026/), ein Verfügbarkeitsdatum fehlt.
 
 ## Agentforce DX und Agent Script: Agenten als Metadaten
 
@@ -130,10 +138,14 @@ Damit verbraucht die Admin-KI drei Währungen: Einstein Requests, Data 360 Credi
 Nehmen wir einen Maschinenbauer mit Sales Cloud, Service Cloud, Händlerportal und SAP an. Ein Implementierungspartner arbeitet mit sechs Entwicklern, geplant ist ein erster Agentforce-Agent für Händleranfragen zum Auftragsstatus. Alle Zahlen sind Annahmen, die das Vorgehen zeigen sollen.
 
 1. **Org-Standort.** Liegt die Org in der EU Operating Zone, ist Vibes keine Option. Nehmen wir an, sie liegt in einer EU-Org außerhalb davon.
-2. **Coding-Lizenz.** Der Partner möchte die Unmetered-Lizenz mit Sonnet. Angenommen sind 25 agentische Requests pro Entwickler und Arbeitstag mit durchschnittlich 30.000 Token. Sechs Entwickler kommen auf 150 Requests und 4,5 Mio. Token am Tag. Die Grenze von 36 Mio. Token ist nach acht Arbeitstagen erreicht, die 2.500 Requests wären es nach knapp 17. Weil die Grenze pro Org gilt, arbeitet das Team ab dem neunten Arbeitstag mit GPT-5 weiter oder zahlt Flex Credits. Ob Salesforce den Kontext jedes Agentenschritts voll zählt, habe ich nicht dokumentiert gefunden; das gehört vor die Unterschrift geklärt.
+2. **Coding-Lizenz.** Der Partner möchte die Unmetered-Lizenz mit Sonnet. Angenommen sind 25 agentische Requests pro Entwickler und Arbeitstag mit durchschnittlich 30.000 Token. Sechs Entwickler kommen auf 150 Requests und 4,5 Mio. Token am Tag. Die Grenze von 36 Mio. Token ist nach acht Arbeitstagen erreicht, die 2.500 Requests wären es nach knapp 17. Weil die Grenze pro Org gilt, arbeitet das Team ab dem neunten Arbeitstag mit GPT-5 weiter oder zahlt Flex Credits.
 3. **Metered mit Opus.** Dieselben 30.000 Token sind 15 Einheiten zu 16 Credits, also 240 Credits oder 1,20 € pro Request. 150 Requests am Tag kosten damit 180 €, rund 3.780 € in 21 Arbeitstagen.
 4. **Der Agent selbst.** Er entsteht als Agent Script in Git, Kreditprüfung und Auftragsabfrage laufen als Logik. Für den Test sind 60 Fälle mit je drei Aktionen in drei Durchläufen angenommen. Das sind 540 Aktionen zu je 16 Credits in der Sandbox, also 8.640 Credits oder 43,20 €.
 5. **Das Gate.** Code Analyzer läuft bei jedem Pull Request in der Pipeline, egal ob Vibes, Claude Code oder ein Mensch den Code geschrieben hat.
+
+```hinweis offen
+Ob Salesforce den Kontext jedes Agentenschritts voll zählt, habe ich nicht dokumentiert gefunden. Auch welche Stufe Sonnet und GPT haben, nennt die Billing-Seite nicht. Beides klären Sie vor der Unterschrift mit dem Account Team.
+```
 
 In diesem Szenario ist die Frage nach dem Agenten schnell beantwortet. Zeit kosten die Grenze der Lizenz, die offene Zählweise und die Gates.
 

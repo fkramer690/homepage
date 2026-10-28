@@ -101,13 +101,13 @@ Name unacceptable failures
 Collect 20 to 50 real questions
   From dealer emails and service tickets, then add edge cases and guardrail cases.
 Mark the rules
-  The rules that need exact checks instead of the judge.
+  Which rules need exact checks instead of the judge?
 Agree thresholds
   Thresholds and the number of runs, before the first test, not after the first result.
 Budget sandbox credits
   For every regression run until the end of the pilot.
 Switch on monitoring
-  Turn monitoring on and define the rollout group before you activate the agent.
+  And define the rollout group, before you activate the agent.
 ```
 
 An Agentforce agent is ready when it meets thresholds you set in advance, run after run, and when you can see what it does in production from the first day. If you want a second pair of eyes on your test set or your go-live gates, [send me a message](#contact).
