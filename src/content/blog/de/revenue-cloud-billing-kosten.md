@@ -64,7 +64,11 @@ Die Definitionen im Rate Sheet sind kurz, und jedes Wort zählt:
 - **Subtotal** ist der Wert der Waren oder Leistungen plus Versand und Handling. Steuern sind ausgenommen.
 - **Währung:** Zwischensummen in anderen Währungen werden zum durchschnittlichen Tageskurs des jeweiligen Kursanbieters von Salesforce in Dollar umgerechnet.
 
-Für einen deutschen Hersteller, der in Euro fakturiert, bewegt sich die Zahl der Events also auch mit dem Euro-Dollar-Kurs. Drei Fragen beantwortet das Rate Sheet nicht: ob Gutschriften den gezählten Betrag mindern, ob die Rundung auf angefangene 50 Dollar je Rechnung oder auf die Summe gilt, und was passiert, wenn Sie mehr Events verbrauchen als gekauft. Lassen Sie sich alle drei schriftlich beantworten.
+Für einen deutschen Hersteller, der in Euro fakturiert, bewegt sich die Zahl der Events also auch mit dem Euro-Dollar-Kurs.
+
+```hinweis offen
+Drei Fragen beantwortet das Rate Sheet nicht: ob Gutschriften den gezählten Betrag mindern, ob die Rundung auf angefangene 50 Dollar je Rechnung oder auf die Summe gilt, und was passiert, wenn Sie mehr Events verbrauchen als gekauft. Lassen Sie sich alle drei schriftlich beantworten.
+```
 
 ## Wie schätzen Sie die Kosten?
 

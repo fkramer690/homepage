@@ -39,9 +39,21 @@ Nicht verwechseln sollten Sie den Namen mit S-Docs. S-Docs ist ein eigenständig
 
 ## Was kostet der Document Builder?
 
-Nichts extra, solange Field Service lizenziert ist. Laut [Salesforce-Hilfe zu den Berechtigungen](https://help.salesforce.com/s/articleView?id=fs_document_builder_perm_sets.htm&language=en_US&type=5) brauchen Nutzer entweder die Permission Set License Field Service Dispatcher oder Field Service Mobile. Contractor- und Contractor+-Lizenzen sind ausgeschlossen. Das ist wichtig, wenn Subunternehmer Dokumente erstellen sollen.
+Nichts extra, solange Field Service lizenziert ist. Laut [Salesforce-Hilfe zu den Berechtigungen](https://help.salesforce.com/s/articleView?id=fs_document_builder_perm_sets.htm&language=en_US&type=5) brauchen Nutzer entweder die Permission Set License Field Service Dispatcher oder Field Service Mobile.
 
-Das Volumen ist begrenzt. Jeder Nutzer mit Dispatcher-, Dispatcher-Plus- oder Mobile-Lizenz bekommt 250 Dokumente pro Monat. Braucht die Org mehr, gibt es ein einmaliges Zusatzkontingent von 10.000 Dokumenten. Eine schnelle Rechnung: Ein Techniker mit fünf Einsätzen am Tag und 21 Arbeitstagen erstellt rund 105 Berichte im Monat. Das liegt deutlich unter der Grenze. Eng wird es, wenn pro Einsatz mehrere Dokumente entstehen, etwa Servicebericht, Checkliste und eine korrigierte Fassung nach einer Reklamation.
+```hinweis achtung
+Contractor- und Contractor+-Lizenzen sind ausgeschlossen. Das ist wichtig, wenn Subunternehmer Dokumente erstellen sollen.
+```
+
+Das Volumen ist begrenzt:
+
+```kennzahlen
+250 | Dokumente pro Nutzer und Monat mit Dispatcher-, Dispatcher-Plus- oder Mobile-Lizenz
+10.000 | Dokumente als einmaliges Zusatzkontingent, wenn die Org mehr braucht
+quelle: Salesforce-Hilfe zu Document Builder und zu den Field-Service-Limits
+```
+
+Eine schnelle Rechnung: Ein Techniker mit fünf Einsätzen am Tag und 21 Arbeitstagen erstellt rund 105 Berichte im Monat. Das liegt deutlich unter der Grenze. Eng wird es, wenn pro Einsatz mehrere Dokumente entstehen, etwa Servicebericht, Checkliste und eine korrigierte Fassung nach einer Reklamation.
 
 Die Einrichtung dauert etwa eine Stunde. Sie legen ein Permission Set ohne Lizenz an, aktivieren die Systemberechtigungen "Document Builder" und "Lightning SDK for Field Service Mobile" und weisen es Disponenten und Technikern zu. Außerdem muss das Vorlagenfeld auf die Seitenlayouts von Arbeitsauftrag und Servicetermin, sonst kann niemand eine Vorlage wählen.
 

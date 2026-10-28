@@ -47,14 +47,17 @@ The consequence: a Revenue Cloud release is always two deployments, metadata and
 
 The [Revenue Management deployment guide](https://developer.salesforce.com/docs/revenue/revenue-management/guide/deployment-overview.html) says plainly: "There's no built-in, Revenue Management-specific deployment tool." Instead it describes the rules in [deployment workflows and sequence](https://developer.salesforce.com/docs/revenue/revenue-management/guide/deployment-workflows-and-sequence.html): metadata has to be in place before the records of an object, parents come before children, and circular references sometimes need a second pass. Two of Salesforce's examples: the product specification record type before any product, and decision tables before pricing recipes.
 
-The [object deployment reference](https://developer.salesforce.com/docs/atlas.en-us.revenue_lifecycle_management_dev_guide.meta/revenue_lifecycle_management_dev_guide/deployment_appendix_A.htm) has one table per area: product catalog, pricing, configurator, transactions, Dynamic Revenue Orchestrator, usage, billing and contracts. Shortened, the catalog and pricing order reads:
+The [object deployment reference](https://developer.salesforce.com/docs/atlas.en-us.revenue_lifecycle_management_dev_guide.meta/revenue_lifecycle_management_dev_guide/deployment_appendix_A.htm) has one table per area: product catalog, pricing, configurator, transactions, Dynamic Revenue Orchestrator, usage, billing and contracts. The shortened order for catalog and pricing is here:
 
-1. Product specification type and record type (metadata).
-2. Attribute picklists and values, units of measure, attribute definitions and categories.
-3. Product classifications and their attributes, then Product2.
-4. Product selling models and their options, then bundle components.
-5. Catalogs, categories and their product assignments.
-6. Price books, cost books, price book entries, then price adjustment schedules and tiers.
+```vertiefung For developers
+title: Catalog and pricing order, from top to bottom
+- Product specification type and record type (metadata).
+- Attribute picklists and values, units of measure, attribute definitions and categories.
+- Product classifications and their attributes, then Product2.
+- Product selling models and their options, then bundle components.
+- Catalogs, categories and their product assignments.
+- Price books, cost books, price book entries, then price adjustment schedules and tiers.
+```
 
 Billing has its own sequence, from legal entity and billing policy to tax engine, payment terms and accounting periods. I keep these tables as the source for the order of data steps in the pipeline, not a partner's memory.
 
@@ -67,7 +70,13 @@ Some parts move only with care. From the Developer Guide and Gearset:
 - **Configurator rules.** Per the [configurator notes](https://developer.salesforce.com/docs/revenue/revenue-management/guide/deployment-product-configurator-additional-info.html), rules in active status cannot be updated, and the target constraint model must be deactivated before an update. The rule content references product IDs, so Salesforce points to an npm package, `rev-config-rule-migrator`, for migrating rules.
 - **After every deployment.** The [post-deployment steps](https://developer.salesforce.com/docs/revenue/revenue-management/guide/post-deployment-steps.html) are: refresh decision tables, sync pricing data, rebuild the product index, create manually what the API could not deploy, and set up test users.
 
-The release point is the easiest one to miss. During the Salesforce preview window, sandboxes run the new release weeks before production. A context definition built in a preview sandbox then cannot go to production until production has the same release. Which sandbox runs which release is part of the [environments and branching](../../masterclass/devops-release-management/environments-and-branching/) plan.
+The release point is the easiest one to miss:
+
+```hinweis achtung
+During the Salesforce preview window, sandboxes run the new release weeks before production. A context definition built in a preview sandbox then cannot go to production until production has the same release.
+```
+
+Which sandbox runs which release is part of the [environments and branching](../../masterclass/devops-release-management/environments-and-branching/) plan.
 
 ## How do records find each other across orgs?
 

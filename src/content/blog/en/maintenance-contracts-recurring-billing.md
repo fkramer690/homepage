@@ -58,7 +58,9 @@ Every change to the contract is a quote, then an order. The [Trailhead unit on a
 
 For renewals there are two options according to the [unit on renewals and cancellations](https://trailhead.salesforce.com/content/learn/modules/asset-lifecycle-management-with-revenue-cloud/manage-customer-asset-renewals-and-cancellations): automatic renewal with the asset's renewal term, or an overridden term with your own start and end dates. A renewal creates a new state period. A cancellation sets the quantity to the negative of the total, so the end quantity is zero, and creates no new state period. Negative invoice lines can become credit memo lines if that setting is active.
 
-The practical consequence: a service manager who adds a machine to the contract on a call has not changed anything Billing sees. The change only counts once it runs through an amendment quote.
+```hinweis achtung
+A service manager who adds a machine to the contract on a call has not changed anything Billing sees. The change only counts once it runs through an amendment quote.
+```
 
 ## What does Field Service need from the contract?
 
@@ -66,7 +68,19 @@ Field Service works with its own objects. As I describe in [modelling maintenanc
 
 Both clouds use the Asset object, but for different things. The Revenue Cloud asset is the sold subscription with quantity, price and term. The Field Service asset is the physical machine with serial number, location and history. I would keep them as separate records and not try to make the machine asset carry the subscription. How the two asset views meet is covered in [assets, amendments and renewals](../revenue-cloud-assets-amendments-renewals/).
 
-I found no documented standard link between a Revenue Cloud subscription and the Field Service service contract. So plan it as your own automation: on order activation, a flow creates or updates the service contract, adds the covered machines as contract line items and assigns the entitlement for the sold service level. Amendments and cancellations go the same way. The Field Service side of this, including maintenance plans by calendar or operating hours, is in the [chapter on assets and maintenance](../../masterclass/field-service/field-service-assets-maintenance-parts/).
+I found no documented standard link between a Revenue Cloud subscription and the Field Service service contract. So plan it as your own automation: on order activation, a flow creates or updates the service contract, adds the covered machines as contract line items and assigns the entitlement for the sold service level. Amendments and cancellations go the same way.
+
+```ablauf
+sf: Quote, Order, Asset, Billing schedules, Invoice
+ext: Service contract
+Quote --> Order
+Order --Activation--> Asset
+Order --Activation--> Billing schedules
+Billing schedules --Invoice scheduler--> Invoice
+Order --Flow--> Service contract
+```
+
+The Field Service side of this, including maintenance plans by calendar or operating hours, is in the [chapter on assets and maintenance](../../masterclass/field-service/field-service-assets-maintenance-parts/).
 
 ## Which record answers "what was sold"?
 

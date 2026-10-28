@@ -93,13 +93,32 @@ I would split it like this:
 | Maintenance contract fee | Revenue Cloud Billing | Fixed fee per period, amendments from sales |
 | Usage beyond included hours | Revenue Cloud Billing | Rated in Salesforce |
 
-Billing then creates journal entries for the subscription and contract invoices, and SAP receives them through the interface. The customer gets two kinds of invoices, which customer service has to be able to explain. If that is not acceptable, the alternative is to keep every invoice in SAP and send it the billing data from Revenue Cloud, which needs a reliable interface for amendments. Which system owns which object is in [Revenue Cloud and SAP: who owns what in quote to cash](../revenue-cloud-sap-quote-to-cash-ownership/).
+For subscription and contract invoices, Billing creates the journal entries and SAP receives them through the interface:
+
+```ablauf
+sf: Order, Billing schedule, Billing invoice
+erp: SAP delivery, SAP invoice, SAP general ledger
+Order --Recurring fees--> Billing schedule
+Billing schedule --Invoice run--> Billing invoice
+Billing invoice --Journal entries--> SAP general ledger
+Order --Machine, parts--> SAP delivery
+SAP delivery --> SAP invoice
+SAP invoice --> SAP general ledger
+```
+
+The customer gets two kinds of invoices, which customer service has to be able to explain. If that is not acceptable, the alternative is to keep every invoice in SAP and send it the billing data from Revenue Cloud, which needs a reliable interface for amendments. Which system owns which object is in [Revenue Cloud and SAP: who owns what in quote to cash](../revenue-cloud-sap-quote-to-cash-ownership/).
 
 ## Who should make the decision?
 
 Finance. The CRM team can show what Billing does, but finance carries the consequences: a second receivables ledger, a second period close and a second place auditors look at. The [object ownership matrix](../salesforce-object-ownership-matrix/) helps here as well: every billing object needs an owner, and for legal entities, accounting periods and general ledger accounts that owner sits in finance.
 
-I would bring the head of accounting into the first architecture workshop, not into user acceptance testing. Agree three points in writing: which revenue types Salesforce invoices, who closes periods, and how the reconciliation with SAP works. The interfaces for journal entries and invoice status are part of my work on [Salesforce integration](../../services/salesforce-integration/).
+I would bring the head of accounting into the first architecture workshop, not into user acceptance testing.
+
+```hinweis offen
+Agree three points with finance in writing: which revenue types Salesforce invoices, who closes periods, and how the reconciliation with SAP works.
+```
+
+The interfaces for journal entries and invoice status are part of my work on [Salesforce integration](../../services/salesforce-integration/).
 
 ## Where should you start?
 

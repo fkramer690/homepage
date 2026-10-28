@@ -45,12 +45,11 @@ Für die Governance zählen drei Aussagen von Salesforce. In derselben Trailhead
 
 Bei den Kosten widersprechen sich die Quellen. Die [Produktseite](https://www.salesforce.com/platform/setup/) nennt 500 kostenlose Aktionen des Setup-Agenten pro Org und Monat, geteilt über alle Benutzer, und sagt, dass die Nutzung Data 360 Credits verbraucht. Der Admin-Blog nennt Setup-Aktionen nicht abrechnungspflichtig; nur die Aktion für Hilfe und Navigation verbrauche etwas Data 360 Credits und solle rund um Dreamforce 2026 auf ein anderes Framework umziehen. Nehmen wir drei Admins mit je 12 Anfragen pro Arbeitstag an: Das sind rund 750 Anfragen im Monat. Zählt jede Anfrage als eine Aktion, was keine Seite definiert, wäre das Kontingent in der dritten Woche aufgebraucht.
 
-Was ich auf keiner der geöffneten Salesforce-Seiten gefunden habe:
+```hinweis offen
+Auf keiner der geöffneten Salesforce-Seiten habe ich gefunden, ob Flows, die der Agent baut, aktiv oder inaktiv gespeichert werden und ob der Setup Audit Trail eine Änderung als Agentenänderung kennzeichnet oder nur den Namen des Admins zeigt.
 
-- ob Flows, die der Agent baut, aktiv oder inaktiv gespeichert werden
-- ob der Setup Audit Trail eine Änderung als Agentenänderung kennzeichnet oder nur den Namen des Admins zeigt
-- ob sich Verhalten oder Kontingent zwischen Sandbox und Produktion unterscheiden
-- was eine Aktion über den 500 kostet und ob die Umstellung bei Data 360 nach Dreamforce stattgefunden hat
+Ebenso offen: ob sich Verhalten oder Kontingent zwischen Sandbox und Produktion unterscheiden, was eine Aktion über den 500 kostet und ob die Umstellung bei Data 360 nach Dreamforce stattgefunden hat.
+```
 
 Ein unabhängiger Test lohnt einen Blick. Andy Engin Utkan hat den Agenten für [Salesforce Break im Juli 2026](https://salesforcebreak.com/2026/07/07/setup-with-agentforce-review/) in einer Produktions-Org ausprobiert. Benutzer mit View All Data oder Modify All Data konnte der Agent nicht auflisten, sein Urteil: „This feature launched before it was fully baked.“ Das ist der Test eines einzelnen Autors, und die Flow-Erstellung hat er nicht geprüft. Den Überblick über alle Werkzeuge gibt das Masterclass-Kapitel zu [Salesforce-Werkzeugen für KI-Entwicklung](../../masterclass/ki-salesforce/salesforce-werkzeuge-ki-entwicklung/).
 
@@ -97,11 +96,19 @@ Dieselbe Anfrage in einer Developer-Sandbox mit Source Tracking hätte ebenfalls
 
 ## Wo sollten Sie anfangen?
 
-1. **Die Regel aufschreiben.** Metadatenänderungen kommen nur über die Pipeline in Produktion, egal ob ein Mensch, ein Partner oder ein Agent sie gebaut hat. Sie gehört neben die Ownership Matrix.
-2. **Rechte in Produktion prüfen.** Listen Sie auf, wer Customize Application und vergleichbare Berechtigungen hat. Genau diese Liste erbt der Setup-Agent.
-3. **Den Agenten zuerst in Developer-Sandboxes aktivieren.** [Source Tracking](https://developer.salesforce.com/docs/platform/sfdx-dev/guide/sfdx-setup-enable-source-tracking-sandboxes.html) gibt es nur in Developer- und Developer-Pro-Sandboxes; dort lassen sich Agentenänderungen abrufen und landen in einem Pull Request.
-4. **Dieselben Prüfungen anwenden.** Flows und Felder aus dem Agenten bestehen dieselben Prüfungen wie Partnercode, wie in [Quality Gates für KI-Code](../quality-gates-ki-code-salesforce-pipeline/) beschrieben.
-5. **Den Audit Trail lesen.** Prüfen Sie den Setup Audit Trail der Produktion wöchentlich auf Änderungen, die nicht vom Release-User stammen, und exportieren Sie ihn, bevor die 180 Tage ablaufen.
-6. **Den Verbrauch beobachten.** Verfolgen Sie die Nutzung gegen die 500 Aktionen und lassen Sie sich von Salesforce schriftlich bestätigen, wie Aktionen darüber abgerechnet werden.
+```schritte
+Die Regel aufschreiben
+  Metadatenänderungen kommen nur über die Pipeline in Produktion, egal ob ein Mensch, ein Partner oder ein Agent sie gebaut hat. Sie gehört neben die Ownership Matrix.
+Rechte in Produktion prüfen
+  Listen Sie auf, wer Customize Application und vergleichbare Berechtigungen hat. Genau diese Liste erbt der Setup-Agent.
+Erst in Developer-Sandboxes
+  Aktivieren Sie den Agenten zuerst in Developer-Sandboxes. [Source Tracking](https://developer.salesforce.com/docs/platform/sfdx-dev/guide/sfdx-setup-enable-source-tracking-sandboxes.html) gibt es nur in Developer- und Developer-Pro-Sandboxes; dort lassen sich Agentenänderungen abrufen und landen in einem Pull Request.
+Dieselben Prüfungen anwenden
+  Flows und Felder aus dem Agenten bestehen dieselben Prüfungen wie Partnercode, wie in [Quality Gates für KI-Code](../quality-gates-ki-code-salesforce-pipeline/) beschrieben.
+Den Audit Trail lesen
+  Prüfen Sie den Setup Audit Trail der Produktion wöchentlich auf Änderungen, die nicht vom Release-User stammen, und exportieren Sie ihn, bevor die 180 Tage ablaufen.
+Den Verbrauch beobachten
+  Verfolgen Sie die Nutzung gegen die 500 Aktionen und lassen Sie sich von Salesforce schriftlich bestätigen, wie Aktionen darüber abgerechnet werden.
+```
 
 Wenn Release-Prozess und Rechtemodell die Admin-KI abdecken sollen, ist das Teil von [DevOps und Release-Management](../../leistungen/devops-und-release-management/). Der Setup-Agent ist ein schneller Weg, Metadaten zu bauen, und ein schlechter Weg, sie auszurollen; wenn Sie diese Grenze in Ihrer Org ziehen möchten, [schreiben Sie mir](#contact).

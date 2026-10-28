@@ -69,13 +69,28 @@ With four predefined Data Processing Engine templates, process type Program Base
 
 Admins clone and customise the templates, and scheduled flows run them; weekly in the example. The engine reads programmes, variant forecasts, Product Related Material, products, price book entries and periods, and writes forecasted quantity and revenue per component and period.
 
-Two consequences for the architecture. Cloned DPE definitions, forecast sets and flows are configuration that has to move through the release process like everything else, as described in [data and configuration in the pipeline](../../masterclass/devops-release-management/data-and-configuration/). And the record count grows with programmes, variants, components, dimensions and periods. Account forecasting has documented limits for forecast records, described in [account forecasting for sales volume planning](../account-forecasting-sales-volume-planning/). Whether component forecasts count against the same limits I could not find documented; check it before the first large programme.
+Two consequences for the architecture. Cloned DPE definitions, forecast sets and flows are configuration that has to move through the release process like everything else, as described in [data and configuration in the pipeline](../../masterclass/devops-release-management/data-and-configuration/). And the record count grows with programmes, variants, components, dimensions and periods.
+
+```hinweis offen
+Account forecasting has documented limits for forecast records, described in [account forecasting for sales volume planning](../account-forecasting-sales-volume-planning/). Whether component forecasts count against the same limits I could not find documented; clarify it before the first large programme.
+```
 
 ## How does an approved forecast become a sales agreement?
 
 In two API steps. First, the Transformation API converts finalised component forecasts into an opportunity. The mappings are defined with the ObjectHierarchyRelationship metadata, usage type Transformation Mapping: component forecast to opportunity, to opportunity line item and to opportunity line item schedule, plus a support mapping from the programme to the opportunity, because the account is not set automatically. The result is one opportunity with a line item per component and a schedule per period.
 
 Second, once the opportunity is won, the Sales Agreement Connect API converts opportunity and line items into a sales agreement with sales agreement products. From there, actuals from the ERP take over, as described in [sales agreements: spot customers behind on volume](../sales-agreements-volume-shortfall-erp/). If the agreement comes out of a configured quote instead, the path is in [from quote to sales agreement](../quote-to-sales-agreement-product-configurator/).
+
+```ablauf
+ext: Market data CSV
+sf: Programme forecast, Component forecast, Opportunity, Sales agreement
+erp: ERP
+Market data CSV --Import--> Programme forecast
+Programme forecast --DPE--> Component forecast
+Component forecast --Transformation API--> Opportunity
+Opportunity --Won--> Sales agreement
+ERP ..Actuals..> Sales agreement
+```
 
 Trailhead describes no approval status for the forecast. Who declares a component forecast final, and when, is your process to define. The Sales Planning agent has a documented subagent that converts program component forecasts into opportunities, covered in [what the Sales Planning agent really does](../agentforce-sales-planning-agreements-forecasts/). I would only let it run once that approval step exists.
 

@@ -43,6 +43,10 @@ A pipeline is a fixed sequence of automated steps that takes a change from the r
 7. After the merge, the pipeline deploys to the org, as a quick deploy where possible, and runs the steps before and after the deployment.
 8. The team and the ticket learn the result.
 
+```praxis
+In one programme I supported, every pull request went across my desk at first. Once the process ran smoothly, I handed it over to an internal colleague.
+```
+
 The same pattern repeats from integration to UAT and from UAT to production. Gearset Pipelines works the same way at its core: according to the [Gearset docs](https://docs.gearset.com/en/articles/6166062-promoting-your-first-features-in-gearset-pipelines), Gearset checks each pull request for merge conflicts and validates its metadata against the target org, and "Promote changes" then starts a job that merges and deploys. The difference is that you operate it through a web interface.
 
 ## Validation and quick deploy
@@ -65,7 +69,14 @@ The test level decides which Apex tests a deployment runs. The [CLI reference fo
 | `RunAllTestsInOrg` | also the tests of installed packages | rarely useful |
 | `RunRelevantTests` (beta) | only tests relevant to the deployed files | try it in an integration sandbox |
 
-`RunRelevantTests` arrived with Spring '26. According to the [Salesforce blog](https://www.salesforce.com/blog/faster-deployment-test-runs/), the platform selects tests from the compile-time dependency graph and can therefore miss dependencies that only exist at runtime, for example through dependency injection. Two annotations cover that: `@IsTest(testFor=...)` ties a test class to specific classes, and `@IsTest(critical=true)` makes it run in every deployment. The [Metadata API Developer Guide for Winter '27](https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_deploy_run_relevant_tests.htm) still marks the feature as beta, with 75 percent coverage per class and trigger. The blog says plainly that it should not yet be integrated into production pipelines. I would stick to that.
+`RunRelevantTests` arrived with Spring '26. The [Metadata API Developer Guide for Winter '27](https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_deploy_run_relevant_tests.htm) still marks the feature as beta, with 75 percent coverage per class and trigger. The Salesforce blog says plainly that it should not yet be integrated into production pipelines. I would stick to that.
+
+```vertiefung For developers
+title: How does RunRelevantTests pick the tests?
+According to the [Salesforce blog](https://www.salesforce.com/blog/faster-deployment-test-runs/), the platform selects tests from the compile-time dependency graph and can therefore miss dependencies that only exist at runtime, for example through dependency injection.
+
+Two annotations cover that: `@IsTest(testFor=...)` ties a test class to specific classes, and `@IsTest(critical=true)` makes it run in every deployment.
+```
 
 sfdx-hardis also offers `RunRepositoryTests`, which detects and runs all test classes in the repository. That helps when the org holds old tests that nobody manages in the repository. Why 75 percent coverage is only the floor is covered in [chapter 6](../quality-tests-reviews/).
 
@@ -103,7 +114,9 @@ My rule: deleting a field also deletes its data. Think of a field on the asset t
 
 The pipeline needs a login for every org, and it must not be a password. The [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/platform/sfdx-dev/guide/sfdx-dev-auth-jwt-flow.html) describes the JWT bearer flow for this: the pipeline signs a token with a private key, and Salesforce checks it against the certificate of an external client app. For a Dev Hub that creates scratch orgs or sandboxes, the guide says you need a connected app instead. The command is `sf org login jwt` with client ID, key file and username.
 
-This matters beyond style. The OAuth username-password flow ends on 20 February 2027; if your pipeline still logs in with username, password and security token, the details are in [Salesforce password integrations end in 2027](../../../blog/salesforce-password-integrations-end-2027/).
+```hinweis achtung
+The OAuth username-password flow ends on 20 February 2027. If your pipeline still logs in with username, password and security token, the details are in [Salesforce password integrations end in 2027](../../../blog/salesforce-password-integrations-end-2027/).
+```
 
 sfdx-hardis sets this up with [`hardis:project:configure:auth`](https://sfdx-hardis.cloudity.com/hardis/project/configure/auth/): the command creates an external client app with the JWT bearer flow and a certificate, per branch. The certificate is stored encrypted in the repository or, if you prefer, in a password manager; client ID and decryption key are variables on the Git platform. With commercial platforms you authorise the orgs inside the vendor's platform. Ask which flow sits behind it and how the connection is removed when you cancel.
 

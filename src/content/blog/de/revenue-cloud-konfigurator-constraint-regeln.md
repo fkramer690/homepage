@@ -66,7 +66,21 @@ Ein nützliches Detail: Tabellen-Constraints können ihre Zeilen laut Developer 
 
 ## Wie testen Sie Constraint-Modelle?
 
-Der CML-Leitfaden setzt klare Ziele: Ausführungszeit pro Modell idealerweise unter 100 Millisekunden, weniger als 1.000 Backtracks und keine Verletzungen. Dafür empfiehlt er kleine Wertebereiche, die kleinste nötige Kardinalität und wenige Nachkommastellen, weil jedes davon die Kombinationen vervielfacht, die die Engine durchprobiert. Zur Analyse zeigen Debug-Logs auf Stufe FINE einen Abschnitt RLM_CONFIGURATOR_STATS mit Ausführungszeit, Verletzungen und Backtracking.
+Der CML-Leitfaden setzt klare Ziele pro Modell:
+
+```kennzahlen
+< 100 ms | Ausführungszeit pro Modell, idealerweise
+< 1.000 | Backtracks
+0 | Verletzungen
+quelle: CML User Guide von Salesforce
+```
+
+```vertiefung Für Entwickler
+titel: Wie erreichen und messen Sie diese Ziele?
+Der Leitfaden empfiehlt kleine Wertebereiche, die kleinste nötige Kardinalität und wenige Nachkommastellen, weil jedes davon die Kombinationen vervielfacht, die die Engine durchprobiert.
+
+Zur Analyse zeigen Debug-Logs auf Stufe FINE einen Abschnitt RLM_CONFIGURATOR_STATS mit Ausführungszeit, Verletzungen und Backtracking.
+```
 
 Ich ergänze für jede Produktfamilie zwei Arten von Tests:
 

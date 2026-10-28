@@ -45,11 +45,13 @@ The page does not explain where "Consumption & Invoicing" in Advanced ends and I
 
 ## What is a billing event?
 
-A billing event is the unit Salesforce uses to measure Revenue Cloud Billing. The [Revenue Cloud Billing rate sheet](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/documents/pricing/revenue-cloud-billing-rate-sheet-feb-2026.pdf) from February 2026 defines one usage type, "Invoicing", with this meter:
+A billing event is the unit Salesforce uses to measure Revenue Cloud Billing. The [Revenue Cloud Billing rate sheet](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/documents/pricing/revenue-cloud-billing-rate-sheet-feb-2026.pdf) from February 2026 defines one usage type, "Invoicing", metered per $1 (or portion thereof) of total invoice amount:
 
-- **Unit:** per $1 (or portion thereof) of total invoice amount.
-- **Multiplier:** 0.02.
-- **Footnote:** one billing event is consumed for each $50 of total invoice amount, including any partial $50.
+```kennzahlen
+0.02 | Multiplier: billing events per dollar of invoice amount
+$50 | Invoice amount per billing event, including any partial $50
+source: Revenue Cloud Billing rate sheet, February 2026
+```
 
 The entitlement is part of the order form, in the usage details table. Billing events "must be used before the Order End Date", and no rollover is permitted. The rate sheet also says that usage types and multipliers may change over time. That is the same logic as with [Flex Credits for Agentforce](../flex-credits-agentforce-cost-per-action/): you buy a pool for the term and lose what you do not use.
 
@@ -62,7 +64,11 @@ The definitions in the rate sheet are short, and every word matters:
 - **Subtotal** is the value of goods or services plus shipping and handling. Taxes are excluded.
 - **Currency:** subtotals in other currencies are converted to US dollars at the average exchange rate of the day, from Salesforce's exchange rate provider at the time.
 
-For a German manufacturer invoicing in euros, that means the event count also moves with the euro to dollar rate. Three things the rate sheet does not answer: whether credit memos reduce the counted amount, whether the "portion thereof" rounding applies per invoice or to the total, and what happens when you use more events than you bought. Ask for all three in writing.
+For a German manufacturer invoicing in euros, that means the event count also moves with the euro to dollar rate.
+
+```hinweis offen
+Three things the rate sheet does not answer: whether credit memos reduce the counted amount, whether the "portion thereof" rounding applies per invoice or to the total, and what happens when you use more events than you bought. Ask for all three in writing.
+```
 
 ## How do you estimate the cost?
 

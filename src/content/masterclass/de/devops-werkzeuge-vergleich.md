@@ -73,7 +73,14 @@ Der Preis dafür ist Know-how. Lizenzgebühren fallen nicht an, wohl aber CI-Min
 
 Die drei großen kommerziellen Plattformen verkaufen das, was Open Source nicht liefert: eine fertige Oberfläche, Zusatzmodule aus einer Hand und einen Hersteller, der für den Betrieb geradesteht. Die DevOps-Kurse aller drei Anbieter habe ich durchgearbeitet. Die folgenden Angaben stammen von den Seiten der Hersteller, Stand Oktober 2026.
 
-**Gearset** läuft als Dienst außerhalb Ihrer Org, laut [Gearset](https://gearset.com/) muss in den Orgs nichts installiert werden. Gearset unterstützt GitHub, GitLab, Bitbucket, Azure DevOps, AWS CodeCommit und generisches Git. Die Stärke ist der visuelle Vergleich von Metadaten zwischen Orgs, dazu Pipelines, Backup, Sandbox Seeding mit maskierten Daten, Observability und Code Reviews als eigene Produkte. Gearset ist der einzige der drei mit öffentlicher [Preisliste](https://gearset.com/pricing/): Das Starter-Paket für Vergleich und Deployment kostet 215 USD pro Gearset-Nutzer und Monat, Pipelines und CI/CD gibt es als Automatisierungspaket ab 550 USD pro Team und Monat. Testen können Sie 30 Tage ohne Kreditkarte.
+**Gearset** läuft als Dienst außerhalb Ihrer Org, laut [Gearset](https://gearset.com/) muss in den Orgs nichts installiert werden. Gearset unterstützt GitHub, GitLab, Bitbucket, Azure DevOps, AWS CodeCommit und generisches Git. Die Stärke ist der visuelle Vergleich von Metadaten zwischen Orgs, dazu Pipelines, Backup, Sandbox Seeding mit maskierten Daten, Observability und Code Reviews als eigene Produkte. Gearset ist der einzige der drei mit öffentlicher [Preisliste](https://gearset.com/pricing/):
+
+```kennzahlen
+215 USD | Starter-Paket für Vergleich und Deployment, pro Gearset-Nutzer und Monat
+ab 550 USD | Automatisierungspaket mit Pipelines und CI/CD, pro Team und Monat
+30 Tage | Testzeitraum ohne Kreditkarte
+quelle: Gearset-Preisliste, Stand Oktober 2026
+```
 
 **Copado** beschreibt sich auf seiner [Website](https://www.copado.com/) als Salesforce-native DevOps-Lösung und bietet seit April 2026 die Editionen Agentia Advanced und Agentia Pro an. Laut [Copado-Dokumentation](https://docs.copado.com/) richtet sich die Edition Agentia Advanced an Teams mit einer Produktions-Org und 3 bis 10 Personen, Agentia Pro an Unternehmen mit mehreren Orgs, mit Quality Gates, Governance und dem Orchestrate Agent. Dazu kommen Robotic Testing und ein Context Hub für die KI-Agenten. Als Git-Plattformen nennt die Dokumentation der Advanced-Edition [GitHub, GitLab, Bitbucket und Azure](https://docs.essentials.copado.com/en/articles/4109764-setup-git-connections), jeweils auch selbst gehostet. Eine öffentliche Preisliste habe ich bei Copado nicht gefunden.
 
@@ -106,7 +113,9 @@ Die Fakten in der Tabelle stammen von den oben verlinkten Herstellerseiten. Die 
 | Support | Salesforce | Salesforce | Community, Cloudity als Dienstleister | Hersteller | Hersteller | Hersteller |
 | Passt zu | wenigen Admins, kleinen Änderungen | einem Admin-Team ohne Partner auf GitHub oder Bitbucket Cloud | mehreren Partnern, wenn eine Release-Rolle beim Kunden existiert | gemischten Teams, die Vergleich und Module aus einer Hand wollen | großen Programmen mit mehreren Orgs und Governance-Bedarf | regulierten Umgebungen mit Audit-Pflichten |
 
+```hinweis tipp
 Zwei Dinge zeigt die Matrix nicht. Erstens die Qualität des Supports, die Sie nur in Referenzgesprächen erfahren. Zweitens, wie gut ein Werkzeug Ihre konkreten Metadaten verarbeitet, etwa Field-Service-Konfiguration oder Experience-Cloud-Seiten für ein Händlerportal. Das prüfen Sie in einem kurzen Test mit Ihrer eigenen Org, bevor Sie unterschreiben.
+```
 
 ## Ein typisches Szenario, als Annahme
 

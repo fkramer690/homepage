@@ -77,26 +77,36 @@ Dealers without Field Service report through the portal. Which licence that need
 
 ## When is a list in the quality system enough?
 
-Not every manufacturer needs this data model. If you run one or two field actions a year on a few dozen machines and your own technicians do the work, a list of serial numbers in the quality system plus one work order or case per machine is enough. The overhead of definitions, partners and partner inventory only pays off at scale.
+Not every manufacturer needs this data model. For small actions, a list of serial numbers in the quality system plus one work order or case per machine is enough. The overhead of definitions, partners and partner inventory only pays off at scale. I would use product service campaigns when several of the points in their favour apply:
 
-I would use product service campaigns when several of these apply:
-
-- **Hundreds of machines per action**, spread across many customers.
-- **Dealers or service partners do the work**, and you need status per machine from outside your own company.
-- **Unsold stock sits at dealers** and has to be fixed before sale.
-- **Supplier recovery matters**, because the faulty part was bought in.
-- **Upgrades happen regularly**, for example retrofit kits for a whole series.
+```pro-contra
+pro: What speaks for service campaigns
+- **Hundreds of machines per action**, spread across many customers
+- **Dealers or service partners do the work**, and you need status per machine from outside your own company
+- **Unsold stock sits at dealers** and has to be fixed before sale
+- **Supplier recovery matters**, because the faulty part was bought in
+- **Upgrades happen regularly**, for example retrofit kits for a whole series
+contra: When a list is enough
+- One or two field actions a year
+- A few dozen machines per action
+- Your own technicians do the work
+```
 
 The selection problem stays the same either way: without clean serial numbers and batches, the best list does not help.
 
 ## What should you decide before building?
 
-Four questions I would answer in writing:
+Three questions I would answer in writing:
 
 1. **Who triggers a campaign?** Usually quality, sometimes product management for upgrades. One role creates it, another approves.
 2. **Who pays?** Parts, labour for the dealer and travel. The causal item covers supplier recovery; how dealers get paid for labour, through claims or a flat rate, is your decision.
 3. **How is completion reported?** Per machine, with date and who did it, through work order, portal or claim.
-4. **Which licence covers it?** The [Manufacturing Cloud pricing page](https://www.salesforce.com/manufacturing/cloud/pricing/) does not mention service campaigns, and the reference pages name no licence. Ask in writing.
+
+Then there is the licence question:
+
+```hinweis offen
+The [Manufacturing Cloud pricing page](https://www.salesforce.com/manufacturing/cloud/pricing/) does not mention service campaigns, and the reference pages name no licence. Get Salesforce to confirm in writing which licence covers product service campaigns.
+```
 
 The full after-sales picture is in the [warranty and after-sales chapter](../../masterclass/manufacturing-cloud/warranty-and-after-sales/) of the Manufacturing Cloud masterclass.
 

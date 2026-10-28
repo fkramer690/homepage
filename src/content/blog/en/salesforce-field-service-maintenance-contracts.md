@@ -70,7 +70,20 @@ Milestones on work orders need an entitlement process of type Work Order. A proc
 
 You build the link between the two yourself, usually with a flow: a work order with a "response within 24 hours" entitlement gets a higher priority than one without a commitment. That way the commitment from the contract goes straight into the scheduling engine's decision, and the dispatcher does not have to look up the contract for every breakdown.
 
-Played through once, it looks like this: a press fails at a customer with a premium contract. The back office creates a work order for the asset, and the entitlement "technician on site within 24 hours" is assigned. The milestone starts. A flow sets the priority to Critical, which the formula turns into a 1. The next optimization run schedules the appointment ahead of another customer's half-yearly inspection, which comes from a maintenance plan and still fits a day later. The dispatcher reviews the proposal and releases it. When the milestone counts as met, for example with the status In Progress on site, you define yourself in the entitlement process.
+Played through once: a press fails at a customer with a premium contract.
+
+```schritte
+Create the work order | Back office
+  The back office creates a work order for the asset and assigns the entitlement "technician on site within 24 hours". The milestone starts.
+Set the priority | Flow
+  A flow sets the priority to Critical, which the formula turns into a 1.
+Optimize | Scheduling engine
+  The next optimization run schedules the appointment ahead of another customer's half-yearly inspection, which comes from a maintenance plan and still fits a day later.
+Release | Dispatcher
+  The dispatcher reviews the proposal and releases it.
+```
+
+When the milestone counts as met, for example with the status In Progress on site, you define yourself in the entitlement process.
 
 ## What should you watch out for?
 

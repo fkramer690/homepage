@@ -66,7 +66,21 @@ A useful detail: table constraints can import their rows from a standard or cust
 
 ## How do you test constraint models?
 
-The CML guide sets clear targets: execution time per model ideally below 100 milliseconds, fewer than 1,000 backtracks and no violations. To get there, it recommends small value ranges, the smallest required cardinality and few decimal places, because each of these multiplies the combinations the engine tries. For analysis, debug logs at level FINE show a section RLM_CONFIGURATOR_STATS with execution time, violations and backtracking.
+The CML guide sets clear targets per model:
+
+```kennzahlen
+< 100 ms | execution time per model, ideally
+< 1,000 | backtracks
+0 | violations
+source: Salesforce CML User Guide
+```
+
+```vertiefung For developers
+title: How do you reach and measure these targets?
+The guide recommends small value ranges, the smallest required cardinality and few decimal places, because each of these multiplies the combinations the engine tries.
+
+For analysis, debug logs at level FINE show a section RLM_CONFIGURATOR_STATS with execution time, violations and backtracking.
+```
 
 I add two kinds of tests for every product family:
 

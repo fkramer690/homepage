@@ -54,7 +54,11 @@ Das [Monitoring von sfdx-hardis](https://sfdx-hardis.cloudity.com/salesforce-mon
 - **Täglich:** Apex-Tests, Apex- und Flow-Fehler zur Laufzeit, Org-Limits, Aufrufe veralteter API-Versionen, verdächtige Setup-Aktionen außerhalb des Deployment-Benutzers, Auswertung der Deployments und Validierungen, Codequalität über MegaLinter.
 - **Wöchentlich:** Security Health Check, MFA-Konfiguration, Lizenznutzung, aktive Benutzer ohne Login seit sechs Monaten, anstehende Release Updates und das Datum des nächsten Salesforce-Upgrades.
 
-Die Ergebnisse gehen an Slack, Microsoft Teams, E-Mail oder per API an Grafana. Laut Doku ersetzt sfdx-hardis Benutzernamen und E-Mail-Adressen in Berichten und Benachrichtigungen durch stabile Pseudonyme, wenn das Monitoring in CI läuft. Für einen Betriebsrat ist das ein hilfreiches Argument. Ein Detail aus der Doku sollten Sie kennen: Ein grüner Job heißt nur, dass er durchgelaufen ist. Rote Tests oder ein Limit kurz vor dem Maximum stehen in den Benachrichtigungen. Rot wird der Job erst, wenn er selbst nicht laufen konnte, etwa wegen einer abgelaufenen Anmeldung. Richten Sie deshalb mindestens einen Kanal ein, den jemand wirklich liest.
+Die Ergebnisse gehen an Slack, Microsoft Teams, E-Mail oder per API an Grafana. Laut Doku ersetzt sfdx-hardis Benutzernamen und E-Mail-Adressen in Berichten und Benachrichtigungen durch stabile Pseudonyme, wenn das Monitoring in CI läuft. Für einen Betriebsrat ist das ein hilfreiches Argument.
+
+```hinweis tipp
+Laut Doku heißt ein grüner Job nur, dass er durchgelaufen ist. Rote Tests oder ein Limit kurz vor dem Maximum stehen in den Benachrichtigungen. Rot wird der Job erst, wenn er selbst nicht laufen konnte, etwa wegen einer abgelaufenen Anmeldung. Richten Sie deshalb mindestens einen Kanal ein, den jemand wirklich liest.
+```
 
 Ich setze sfdx-hardis seit etwa zwei Jahren in Kundenprojekten ein, und das Monitoring braucht kein CI/CD-Projekt. Sie können es also auch einschalten, bevor die Pipeline steht. Gearset bietet mit dem [Change Monitoring](https://docs.gearset.com/en/articles/604536-automating-org-change-tracking-and-metadata-backup) einen täglichen Snapshot der Metadaten mit Vergleich zum Vortag, Rollback einzelner Änderungen und Benachrichtigung per E-Mail, Slack, Teams oder Chatter. Wer Gearset ohnehin für Deployments nutzt, bekommt das ohne eigenes Repository und mit einer gut gemachten Oberfläche.
 
@@ -81,7 +85,13 @@ Welche Lösung passt, hängt weniger an Funktionen als an Ihrem Umfeld: Wo dürf
 
 ### Warum Sie den Restore üben sollten
 
-Ein Backup, aus dem nie wiederhergestellt wurde, ist eine Annahme. Die [Salesforce-Hilfe zum Restore mit Salesforce Backup](https://help.salesforce.com/s/articleView?language=en_US&id=xcloud.backup_restore_restore_records.htm&type=5) zeigt zwei Punkte, die in der Fertigung wehtun können. Nach einem Restore lässt sich ein Bericht exportieren, der die ursprüngliche Datensatz-ID der neuen zuordnet; wiederhergestellte Datensätze können also neue IDs haben. Schreibt Ihre SAP-Schnittstelle Auftragsstände über die Salesforce-ID zurück, laufen diese Updates danach ins Leere. Externe IDs auf den betroffenen Objekten helfen dagegen. Und laut [Leitfaden zur Backup-Strategie](https://help.salesforce.com/s/articleView?language=en_US&id=xcloud.backup_restore_plan.htm&type=5) können wiederhergestellte Share-Objekte veraltete Zugriffsrechte zurückbringen. Prüfen Sie nach einem Restore deshalb, ob Händler nur ihre eigenen Anlagen sehen. Salesforce Help führt Salesforce Backup, Backup & Recover und Backup & Recover Next als getrennte Themen; klären Sie, welches Produkt Sie lizenziert haben, und üben Sie den Restore genau damit.
+Ein Backup, aus dem nie wiederhergestellt wurde, ist eine Annahme. Die [Salesforce-Hilfe zum Restore mit Salesforce Backup](https://help.salesforce.com/s/articleView?language=en_US&id=xcloud.backup_restore_restore_records.htm&type=5) zeigt zwei Punkte, die in der Fertigung wehtun können. Nach einem Restore lässt sich ein Bericht exportieren, der die ursprüngliche Datensatz-ID der neuen zuordnet; wiederhergestellte Datensätze können also neue IDs haben.
+
+```hinweis achtung
+Schreibt Ihre SAP-Schnittstelle Auftragsstände über die Salesforce-ID zurück, laufen diese Updates nach einem Restore ins Leere. Externe IDs auf den betroffenen Objekten helfen dagegen.
+```
+
+Außerdem können laut [Leitfaden zur Backup-Strategie](https://help.salesforce.com/s/articleView?language=en_US&id=xcloud.backup_restore_plan.htm&type=5) wiederhergestellte Share-Objekte veraltete Zugriffsrechte zurückbringen. Prüfen Sie nach einem Restore deshalb, ob Händler nur ihre eigenen Anlagen sehen. Salesforce Help führt Salesforce Backup, Backup & Recover und Backup & Recover Next als getrennte Themen; klären Sie, welches Produkt Sie lizenziert haben, und üben Sie den Restore genau damit.
 
 Ich würde einen Restore einmal pro Quartal in einer Sandbox üben, mit einem Objekt, an dem Prozesse hängen, etwa Assets mit Wartungsplänen. Wie Daten zwischen Orgs bewegt und maskiert werden, beschreibt [Kapitel 7](../daten-und-konfiguration/).
 
@@ -111,11 +121,18 @@ Zwei Regeln würde ich festlegen. Erstens: Vergleichen Sie Zahlen nur innerhalb 
 
 Wenn in Produktion etwas kaputt ist, ist die erste Frage: Daten oder Metadaten? Davon hängt der Weg ab.
 
-1. **Erkennen.** Das Monitoring meldet Apex- oder Flow-Fehler, oder Anwender melden sich. Gearset kann ungewöhnliche Datenänderungen melden.
-2. **Einordnen.** Ist Konfiguration oder Code falsch, geht es über die Pipeline. Sind Datensätze verloren oder überschrieben, geht es über das Daten-Backup.
-3. **Korrigieren.** Metadaten über einen Hotfix-Branch mit Review und Validierung. Daten über einen gezielten Restore der betroffenen Felder und Datensätze.
-4. **Zurückführen.** Der Hotfix kommt zurück in die Entwicklungs-Branches.
-5. **Nachbereiten.** Ursache, Dauer und ob ein Deployment beteiligt war, festhalten. Daraus speisen sich Change Fail Rate und Rework Rate.
+```schritte
+Erkennen
+  Das Monitoring meldet Apex- oder Flow-Fehler, oder Anwender melden sich. Gearset kann ungewöhnliche Datenänderungen melden.
+Einordnen
+  Ist Konfiguration oder Code falsch, geht es über die Pipeline. Sind Datensätze verloren oder überschrieben, geht es über das Daten-Backup.
+Korrigieren
+  Metadaten über einen Hotfix-Branch mit Review und Validierung. Daten über einen gezielten Restore der betroffenen Felder und Datensätze.
+Zurückführen
+  Der Hotfix kommt zurück in die Entwicklungs-Branches.
+Nachbereiten
+  Ursache, Dauer und ob ein Deployment beteiligt war, festhalten. Daraus speisen sich Change Fail Rate und Rework Rate.
+```
 
 sfdx-hardis beschreibt das als zwei Ströme: RUN für schnelle Korrekturen, BUILD für die nächste Version. Ein [Hotfix](https://sfdx-hardis.cloudity.com/salesforce-devops-hotfixes/) geht über einen Branch nach Preprod und Produktion, danach folgt der Retrofit in die BUILD-Branches. Die Doku formuliert es deutlich: Eine Korrektur von Hand im Setup ist nie vorgesehen, auch nicht um zwei Uhr nachts, weil das nächste Deployment sie überschreibt. Den Hotfix-Weg in der Branch-Strategie beschreibt [Kapitel 3](../umgebungen-und-branching/), die Validierung in der Pipeline [Kapitel 5](../pipeline-aufbauen/).
 

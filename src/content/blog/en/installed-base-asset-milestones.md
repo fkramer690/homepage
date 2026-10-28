@@ -65,7 +65,9 @@ Rarely one company. The manufacturer builds it, a dealer sells it, a customer op
 - **Asset account participant** links an account to an asset. The [reference](https://developer.salesforce.com/docs/atlas.en-us.246.0.mfg_api_devguide.meta/mfg_api_devguide/sforce_api_objects_assetaccountparticipant.htm) lists "Customer" as a stakeholder role.
 - **Asset contact participant** links a contact to an asset. The [reference](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/sforce_api_objects_assetcontactparticipant.htm) lists "Service Manager" as the role.
 
+```hinweis achtung
 Both role fields are restricted picklists with very short value lists in the documentation. Check in a sandbox whether you can add roles such as dealer or service partner before you design the portal sharing around them.
+```
 
 For customers with many machines there are fleets. The [Fleet reference](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/sforce_api_objects_fleet.htm) describes "a group of assets used in commercial, service, or transport operations in the manufacturing industry", with an owner account, a location, a parent fleet, a status and the types Commercial, Employee, Executive and Material. The [fleet asset](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/sforce_api_objects_fleetasset.htm) record links a machine to a fleet with start and end dates and holds its usage with a unit of measure. That suits a rental company or a logistics customer with forklifts at several sites.
 
@@ -99,11 +101,18 @@ Two add-ons often come up here. According to the [add-ons page](https://www.sale
 
 ## Where should you start?
 
-1. **Count the gaps.** Take last year's warranty claims and check how many serial numbers exist as assets with owner and start date.
-2. **Write the start date rule.** Which milestone starts the warranty, and what applies when it is missing.
-3. **Assign owners per field.** ERP, dealer or service, one per field.
-4. **Define milestone types.** Delivery, registration, installation, resale, scrapping: only those someone will actually maintain.
-5. **Make registration required** in the dealer process.
+```schritte
+Count the gaps
+  Take last year's warranty claims and check how many serial numbers exist as assets with owner and start date.
+Write the start date rule
+  Which milestone starts the warranty, and what applies when it is missing.
+Assign owners per field
+  ERP, dealer or service, one per field.
+Define milestone types
+  Delivery, registration, installation, resale, scrapping: only those someone will actually maintain.
+Make registration required
+  As a fixed step in the dealer process.
+```
 
 The full after-sales picture is in the [warranty and after-sales chapter](../../masterclass/manufacturing-cloud/warranty-and-after-sales/) of the Manufacturing Cloud masterclass.
 

@@ -68,7 +68,11 @@ According to its [releases page](https://www.salesforce.com/releases/), Salesfor
 | 4 September, 2 October, 9 October 2026 | Upgrade of production orgs, depending on the instance |
 | 9 and 10 October 2026 | Upgrade of sandboxes on non-preview instances |
 
-The exact date for your production instance is in the [maintenance calendar on Salesforce Trust](https://status.salesforce.com/products/all/maintenances). I give no dates for Spring '27 here, because I could not find them published by Salesforce yet. Add them once Trust shows them for your instance. If Spring '27 arrives in February as usual, it falls into the same weeks as the end of the password flow on 20 February 2027. That belongs in the plan.
+The exact date for your production instance is in the [maintenance calendar on Salesforce Trust](https://status.salesforce.com/products/all/maintenances). I give no dates for Spring '27 here, because I could not find them published by Salesforce yet. Add them once Trust shows them for your instance.
+
+```hinweis achtung
+If Spring '27 arrives in February as usual, it falls into the same weeks as the end of the password flow on 20 February 2027. That belongs in the plan.
+```
 
 ### Sandbox preview: which sandbox gets the release early?
 
@@ -79,7 +83,10 @@ Two rules follow for the release calendar:
 - **At least one sandbox deliberately on preview.** Salesforce recommends this in the [Trailhead module on the sandbox preview](https://trailhead.salesforce.com/content/learn/modules/sf_releases/sf-releases-sandbox-preview). That is where regression tests, SAP interface tests and the release update tests run. Schedule the planned sandbox refreshes from [chapter 3](../environments-and-branching/) before the cutoff.
 - **Preview sandboxes stay out of the deployment path to production.** A preview sandbox works with the new API version and knows metadata that production does not know yet. Gearset's [documentation on preview sandboxes](https://docs.gearset.com/en/articles/9297189-salesforce-preview-and-non-preview-sandboxes) explicitly advises against adding them to the pipeline, and Gearset makes a new API version its [default](https://docs.gearset.com/en/articles/4934349-how-does-gearset-handle-salesforce-metadata-api-releases) only after general availability. For Winter '27, Salesforce itself offered an Apex setting that keeps the old heap limit when deploying from a Winter '27 sandbox to a production org still on Summer '26, as described in the [developer guide to Winter '27](https://developer.salesforce.com/blogs/2026/10/developers-guide-to-the-winter-27-release).
 
+```vertiefung For developers
+title: Which API version does the Salesforce CLI use?
 For the Salesforce CLI, which sfdx-hardis builds on, the [Salesforce documentation](https://developer.salesforce.com/docs/platform/sfdx-setup/guide/sfdx-setup-apiversion.html) says: without a setting, the CLI uses the highest API version the target org supports. Set `sourceApiVersion` in `sfdx-project.json` and raise it only after production has been upgraded, in a pull request of its own.
+```
 
 ### Release updates: changes with an enforcement date
 

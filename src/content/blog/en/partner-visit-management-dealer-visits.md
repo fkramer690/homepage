@@ -42,12 +42,20 @@ On the [product page](https://salesforce.com/manufacturing/cloud/sales) Salesfor
 
 The [unit on creating and executing visits](https://trailhead.salesforce.com/content/learn/modules/partner-visit-management-for-dealers-and-distributors/create-and-execute-partner-visits) shows the steps in the back office:
 
-1. **Tasks.** Create generic tasks and mark reusable ones as task definitions.
-2. **Context.** Link a task to a distributor account, a product, an order or a sales agreement.
-3. **Assessment indicator definitions.** Define what is measured and in which data type.
-4. **Generic visit KPIs.** Store the expected value per task.
-5. **Action plan templates.** Bundle tasks and metrics for recurring visits. Ad hoc visits do not need one.
-6. **Visit.** Enter location, account and priority, optionally assign a rep.
+```schritte
+Tasks
+  Create generic tasks and mark reusable ones as task definitions.
+Context
+  Link a task to a distributor account, a product, an order or a sales agreement.
+Assessment indicator definitions
+  Define what is measured and in which data type.
+Generic visit KPIs
+  Store the expected value per task.
+Action plan templates
+  Bundle tasks and metrics for recurring visits. Ad hoc visits do not need one.
+Visit
+  Enter location, account and priority, optionally assign a rep.
+```
 
 The rep opens the Partner Visits app from the App Launcher, sees scheduled visits, taps Get Directions and works through the tasks. For each task the app shows context, metrics and expected values. The rep enters values, adds notes and uploads screenshots. When all metrics of a task are captured, the task completes, and when all tasks are done, the visit completes. If a mandatory task cannot be done, the rep abandons the visit and has to give a reason.
 
@@ -82,14 +90,19 @@ If the shared KPIs cannot be agreed, the feature collects data that nobody compa
 
 ## When is a simple visit report enough?
 
-With few dealers, rare visits or no fixed checklist. A custom object with date, dealer, rep, three picklists and a notes field, or standard Salesforce events with a short page layout, covers that. It costs little to build, runs on the licences your sales team already has and is easy to report on.
+With few dealers, rare visits or no fixed checklist. A custom object with date, dealer, rep, three picklists and a notes field, or standard Salesforce events with a short page layout, covers that.
 
-Partner visit management pays off when these points apply:
-
-- **Many dealers** visited on a fixed cycle, so templates save planning time.
-- **The same KPIs** for every dealer, so comparisons make sense.
-- **Context matters,** such as sales agreements, assets or warranty terms that the rep needs on site.
-- **Dealer performance is managed** with the numbers, for example as input for [dealer rebates](../rebate-management-dealer-rebates/) or for the portal content dealers see in the [Manufacturing Cloud customer portal](../manufacturing-cloud-customer-portal/).
+```pro-contra
+pro: Partner visit management pays off with
+- Many dealers visited on a fixed cycle, so templates save planning time
+- The same KPIs for every dealer, so comparisons make sense
+- Context such as sales agreements, assets or warranty terms that the rep needs on site
+- Managed dealer performance, for example as input for [dealer rebates](../rebate-management-dealer-rebates/) or the [Manufacturing Cloud customer portal](../manufacturing-cloud-customer-portal/)
+contra: What speaks for the simple report
+- It costs little to build and runs on the licences your sales team already has
+- It is easy to report on
+- Licence and offline use of the visit app are not documented
+```
 
 The chapter on the [dealer and partner channel](../../masterclass/manufacturing-cloud/dealer-and-partner-channel/) shows how visits sit next to rebates, portals and ship and debit. Whether to buy or build such a feature is part of my [make-or-buy and licence forecasts](../../services/make-or-buy-licences/).
 

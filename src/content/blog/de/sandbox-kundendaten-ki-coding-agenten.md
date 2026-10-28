@@ -70,9 +70,16 @@ Ich würde jeder Umgebung eine Datenstufe und eine Agentenregel geben:
 | Partial Copy, maskiert | Auszug nach Maskierungslauf | nur lesend, nach geprüftem Maskierungsjob | Integrationstests mit SAP-QS-System |
 | Full | alles | nein | UAT, End-to-End- und Lasttests |
 
-Für die maskierte Partial Copy verkauft Salesforce [Data Mask & Seed](https://www.salesforce.com/eu/platform/data-masking/). Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/salesforce-data-mask/install-and-configure-salesforce-data-mask) ist Data Mask ein Managed Package, das in der Produktion installiert wird. Eine dort konfigurierte Maskierung erscheint in der Sandbox, wenn diese angelegt oder aktualisiert wird, und Sie starten sie jedes Mal im Data-Mask-Tab der Sandbox. Pro Feld wählen Sie Zufallszeichen oder Zufallszahlen zwischen Minimum und Maximum, einen Ersatz aus einer Bibliothek wie Nachname, Firmenname oder Straße, oder Löschen. Fallkommentare lassen sich maskieren, E-Mails und Chatter-Feeds komplett löschen. Checkbox-, Lookup- und Picklist-Felder werden nicht unterstützt. Einen Preis nennt die Produktseite nicht.
+Für die maskierte Partial Copy verkauft Salesforce [Data Mask & Seed](https://www.salesforce.com/eu/platform/data-masking/). Einen Preis nennt die Produktseite nicht.
 
+```vertiefung Für Admins
+titel: Wie arbeitet Data Mask?
+Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/salesforce-data-mask/install-and-configure-salesforce-data-mask) ist Data Mask ein Managed Package, das in der Produktion installiert wird. Eine dort konfigurierte Maskierung erscheint in der Sandbox, wenn diese angelegt oder aktualisiert wird, und Sie starten sie jedes Mal im Data-Mask-Tab der Sandbox. Pro Feld wählen Sie Zufallszeichen oder Zufallszahlen zwischen Minimum und Maximum, einen Ersatz aus einer Bibliothek wie Nachname, Firmenname oder Straße, oder Löschen. Fallkommentare lassen sich maskieren, E-Mails und Chatter-Feeds komplett löschen. Checkbox-, Lookup- und Picklist-Felder werden nicht unterstützt.
+```
+
+```hinweis achtung
 Bis der Maskierungsjob nach einem Refresh gelaufen ist, behandle ich eine Sandbox als unmaskiert. Agenten-Logins gibt es erst, wenn das Ausführungsprotokoll den Lauf als abgeschlossen zeigt.
+```
 
 Scratch Orgs sind standardmäßig leer. Für kleine Mengen empfiehlt Salesforce die [data-tree-Befehle](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_test_data.htm), passend für weniger als 3.000 Datensätze. Liegt ein solcher Seed-Datensatz im Repository, starten alle Entwickler und Agenten vom selben Stand.
 

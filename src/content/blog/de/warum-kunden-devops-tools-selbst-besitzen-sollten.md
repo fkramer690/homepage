@@ -71,9 +71,7 @@ Das ist kein Vorwurf an Partner. Die meisten guten Partner arbeiten lieber in de
 
 Sehr viel. Als [Architekt auf Kundenseite](../../#about) ist eines meiner wichtigsten Ziele, Umsetzungspartner vergleichbar und austauschbar zu halten. Das funktioniert nur, wenn die Grundlagen dem Kunden gehören: Repository, Pipeline, Backlog und Dokumentation. Dann lässt sich ein neuer Partner in ein bekanntes Setup mit schriftlichen Standards einarbeiten, und ein scheidender Partner gibt nichts weiter ab als seine Benutzer.
 
-Es ist auch die Voraussetzung, um internes Ownership aufzubauen.
-
-Eine solche Übergabe ist nur realistisch, wenn Tools und Rechte bereits auf Kundenseite liegen. Sonst erbt die interne Person einen Prozess, der weiter an fremden Accounts hängt. Der Besitz der Tools ist die Grundlage guter [Partnersteuerung und Governance](../../leistungen/partnersteuerung/).
+Es ist auch die Voraussetzung, um internes Ownership aufzubauen. In dem Programm, das ich in meinem DevOps-Artikel beschreibe, wurde der Release-Prozess am Ende an einen internen Kollegen übergeben. Eine solche Übergabe ist nur realistisch, wenn Tools und Rechte bereits auf Kundenseite liegen. Sonst erbt die interne Person einen Prozess, der weiter an fremden Accounts hängt. Der Besitz der Tools ist die Grundlage guter [Partnersteuerung und Governance](../../leistungen/partnersteuerung/).
 
 ## Wie setzen Sie das in der Praxis auf?
 

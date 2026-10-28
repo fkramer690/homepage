@@ -54,7 +54,20 @@ Die Editionskarten auf der Preisseite nennen drei Funktionen für Growth und dre
 
 Welche Zeile in welcher Edition enthalten ist, konnte ich auf der Seite nicht zuverlässig lesen, weil die Markierungen im Seitentext nicht ankommen. Ich würde deshalb nicht mit meiner eigenen Lesart der Tabelle planen, sondern mir die Funktionsliste pro Edition mit dem Angebot von Salesforce geben lassen.
 
-Für einen ersten Schnitt reichen die Editionskarten. Für einen Hersteller, dessen Auftrag an SAP geht und dessen Rechnung in SAP FI bleibt, kann Growth Angebote mit konfigurierten Produkten und Serviceabonnements abdecken. Sollen Verträge, verbrauchsabhängige Preise oder Rechnungen in Salesforce laufen, ist Advanced der Ausgangspunkt. Welche Schritte bei SAP bleiben, behandelt [Revenue Cloud und SAP: Wer führt was im Quote-to-Cash?](../revenue-cloud-sap-quote-to-cash-aufteilung/).
+Für einen ersten Schnitt reichen die Editionskarten:
+
+```pro-contra
+pro: Growth kann reichen, wenn
+- der Auftrag an SAP geht und die Rechnung in SAP FI bleibt
+- Angebote mit konfigurierten Produkten abgedeckt sein sollen
+- Serviceabonnements genügen
+contra: Advanced ist der Ausgangspunkt, wenn
+- Verträge in Salesforce laufen sollen
+- verbrauchsabhängige Preise gebraucht werden
+- Rechnungen in Salesforce laufen sollen
+```
+
+Welche Schritte bei SAP bleiben, behandelt [Revenue Cloud und SAP: Wer führt was im Quote-to-Cash?](../revenue-cloud-sap-quote-to-cash-aufteilung/).
 
 ## Welche Add-ons gibt es?
 
@@ -67,7 +80,13 @@ Die Vergleichstabelle markiert vier Zeilen mit "Available for purchase":
 | Invoice Management | Advanced | "Freemium access available" |
 | External User Support | Advanced | Keine weitere Beschreibung |
 
-"Freemium access" ist auf der Seite nicht erklärt. Dynamic Revenue Orchestration zerlegt einen Auftrag in Erfüllungsschritte, zum Beispiel einen Aufruf an SAP. Baut Ihr Design darauf, fragen Sie, was der freie Zugang abdeckt und ab welchem Volumen er kostet. Auch External User Support ist nicht beschrieben. Ich würde fragen, ob es Händler oder Kunden abdeckt, die in einem Portal Angebote erstellen, denn das verändert den Lizenzplan für ein Händlernetz.
+Dynamic Revenue Orchestration zerlegt einen Auftrag in Erfüllungsschritte, zum Beispiel einen Aufruf an SAP.
+
+```hinweis offen
+"Freemium access" ist auf der Seite nicht erklärt. Baut Ihr Design auf Dynamic Revenue Orchestration oder Invoice Management, lassen Sie sich schriftlich geben, was der freie Zugang abdeckt und ab welchem Volumen er kostet.
+```
+
+Auch External User Support ist nicht beschrieben. Ich würde fragen, ob es Händler oder Kunden abdeckt, die in einem Portal Angebote erstellen, denn das verändert den Lizenzplan für ein Händlernetz.
 
 Für das Vertragsmanagement gibt es einen zweiten Anhaltspunkt. Die ältere [Billing-Preisseite](https://www.salesforce.com/eu/sales/revenue-lifecycle-management/billing-pricing/) von Salesforce, zuletzt geändert im Mai 2025, nennt Salesforce Contracts ab 50 Dollar pro Nutzer und Monat. Dieselbe Seite führt noch CPQ ab 75 Dollar, obwohl Salesforce laut [CPQ-Seite zum Verkaufsende](https://www.salesforce.com/sales/cpq/end-of-life/) keine CPQ-Lizenzen mehr an Neukunden verkauft. Prüfen Sie bei jeder Preisseite, die Sie intern zitieren, das Änderungsdatum.
 

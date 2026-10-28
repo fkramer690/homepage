@@ -38,7 +38,11 @@ On 13 October 2026 Salesforce summarised [ten Service Cloud launches](https://ww
 - **Customer signals and topic clustering.** Live sentiment and insights across cases, voice and chat, and automatic ranking of the main contact reasons.
 - **New channels.** WhatsApp with sales and payment inside the conversation, and RCS for rich media in native message threads.
 
-Salesforce also introduced new Service Cloud editions, Core, Advanced and Max, which bundle Service Cloud, contact center, workforce management, Slack and Tableau Next with a fixed amount of consumption credits. The announcement does not say which edition includes which AI features, so this needs to be clarified with Salesforce before planning.
+Salesforce also introduced new Service Cloud editions, Core, Advanced and Max, which bundle Service Cloud, contact center, workforce management, Slack and Tableau Next with a fixed amount of consumption credits.
+
+```hinweis offen
+The announcement does not say which edition includes which AI features. Clarify this with Salesforce before planning.
+```
 
 ## Who is Casey?
 
@@ -97,10 +101,17 @@ These points apply to every AI agent, which is why I argue for putting [business
 
 A pragmatic path:
 
-1. **Start with the Service Rep Assistant** for one team, so people stay in control while the organisation learns.
-2. **Clean up knowledge for the most frequent contact reasons**, using topic clustering to find them.
-3. **Introduce Casey for one narrow channel and topic**, for example documentation requests in the customer portal.
-4. **Set up approvals** for every decision with financial impact.
-5. **Measure and expand** only when the numbers support it.
+```schritte
+Start with the Service Rep Assistant
+  For one team, so people stay in control while the organisation learns.
+Clean up knowledge
+  For the most frequent contact reasons, using topic clustering to find them.
+Introduce Casey narrowly
+  For one channel and one topic, for example documentation requests in the customer portal.
+Set up approvals
+  For every decision with financial impact.
+Measure and expand
+  Only when the numbers support it.
+```
 
 Service Cloud is moving fast, and choosing the right building blocks is part of [architecture and partner governance](../../services/salesforce-architecture/). If you want to discuss how these launches fit your service organisation, [send me a message](#contact).

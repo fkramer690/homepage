@@ -47,14 +47,17 @@ Die Folge: Ein Revenue-Cloud-Release besteht immer aus zwei Deployments, Metadat
 
 Der [Deployment-Leitfaden für Revenue Management](https://developer.salesforce.com/docs/revenue/revenue-management/guide/deployment-overview.html) sagt es deutlich: "There's no built-in, Revenue Management-specific deployment tool." Stattdessen beschreibt er die Regeln unter [Deployment Workflows and Sequence](https://developer.salesforce.com/docs/revenue/revenue-management/guide/deployment-workflows-and-sequence.html): Metadaten müssen vor den Datensätzen eines Objekts stehen, Eltern kommen vor Kindern, und zirkuläre Verweise brauchen manchmal einen zweiten Durchlauf. Zwei Beispiele von Salesforce: der Datensatztyp Product Specification vor jedem Produkt und Decision Tables vor Pricing Recipes.
 
-Die [Object Deployment Reference](https://developer.salesforce.com/docs/atlas.en-us.revenue_lifecycle_management_dev_guide.meta/revenue_lifecycle_management_dev_guide/deployment_appendix_A.htm) hat eine Tabelle je Bereich: Produktkatalog, Pricing, Konfigurator, Transaktionen, Dynamic Revenue Orchestrator, Usage, Billing und Contracts. Gekürzt lautet die Reihenfolge für Katalog und Preise:
+Die [Object Deployment Reference](https://developer.salesforce.com/docs/atlas.en-us.revenue_lifecycle_management_dev_guide.meta/revenue_lifecycle_management_dev_guide/deployment_appendix_A.htm) hat eine Tabelle je Bereich: Produktkatalog, Pricing, Konfigurator, Transaktionen, Dynamic Revenue Orchestrator, Usage, Billing und Contracts. Für Katalog und Preise steht die gekürzte Reihenfolge hier:
 
-1. Product Specification Type und Datensatztyp (Metadaten).
-2. Attribut-Picklisten und Werte, Mengeneinheiten, Attributdefinitionen und Attributkategorien.
-3. Produktklassifizierungen und ihre Attribute, dann Product2.
-4. Product Selling Models und ihre Optionen, danach Bundle-Komponenten.
-5. Kataloge, Kategorien und deren Produktzuordnungen.
-6. Preisbücher, Kostenbücher, Preisbucheinträge, danach Preisanpassungspläne und Staffeln.
+```vertiefung Für Entwickler
+titel: Reihenfolge für Katalog und Preise, von oben nach unten
+- Product Specification Type und Datensatztyp (Metadaten).
+- Attribut-Picklisten und Werte, Mengeneinheiten, Attributdefinitionen und Attributkategorien.
+- Produktklassifizierungen und ihre Attribute, dann Product2.
+- Product Selling Models und ihre Optionen, danach Bundle-Komponenten.
+- Kataloge, Kategorien und deren Produktzuordnungen.
+- Preisbücher, Kostenbücher, Preisbucheinträge, danach Preisanpassungspläne und Staffeln.
+```
 
 Billing hat eine eigene Reihenfolge, von Rechtseinheit und Billing Policy über Steuer-Engine und Zahlungsbedingungen bis zu den Buchungsperioden. Diese Tabellen sind für mich die Quelle für die Reihenfolge der Datenschritte in der Pipeline, nicht das Gedächtnis eines Partners.
 
@@ -67,7 +70,13 @@ Einige Teile wandern nur mit Sorgfalt. Aus Developer Guide und Gearset-Dokumenta
 - **Konfiguratorregeln.** Laut den [Hinweisen zum Product Configurator](https://developer.salesforce.com/docs/revenue/revenue-management/guide/deployment-product-configurator-additional-info.html) lassen sich aktive Regeln nicht ändern, und das Ziel-Constraint-Modell muss vor einer Änderung deaktiviert sein. Die Regelinhalte verweisen auf Produkt-IDs, deshalb nennt Salesforce für die Migration ein npm-Werkzeug, `rev-config-rule-migrator`.
 - **Nach jedem Deployment.** Die [Post-Deployment-Schritte](https://developer.salesforce.com/docs/revenue/revenue-management/guide/post-deployment-steps.html) sind: Decision Tables aktualisieren, Preisdaten synchronisieren, Produktindex neu aufbauen, von Hand anlegen, was die API nicht deployen konnte, und Testnutzer einrichten.
 
-Der Release-Punkt wird am leichtesten übersehen. Im Preview-Fenster von Salesforce laufen Sandboxes Wochen vor der Produktion auf dem neuen Release. Eine Context Definition, die in einer Preview-Sandbox entsteht, kann dann erst in die Produktion, wenn diese dasselbe Release hat. Welche Sandbox auf welchem Release läuft, gehört in die Planung von [Umgebungen und Branching](../../masterclass/devops-release-management/umgebungen-und-branching/).
+Der Release-Punkt wird am leichtesten übersehen:
+
+```hinweis achtung
+Im Preview-Fenster von Salesforce laufen Sandboxes Wochen vor der Produktion auf dem neuen Release. Eine Context Definition, die in einer Preview-Sandbox entsteht, kann dann erst in die Produktion, wenn diese dasselbe Release hat.
+```
+
+Welche Sandbox auf welchem Release läuft, gehört in die Planung von [Umgebungen und Branching](../../masterclass/devops-release-management/umgebungen-und-branching/).
 
 ## Wie finden sich Datensätze über Orgs hinweg?
 

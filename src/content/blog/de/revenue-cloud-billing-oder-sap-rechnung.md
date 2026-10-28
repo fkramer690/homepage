@@ -93,13 +93,32 @@ Ich würde so aufteilen:
 | Wartungsgebühr | Revenue Cloud Billing | Feste Gebühr je Periode, Nachträge aus dem Vertrieb |
 | Nutzung über Inklusivstunden | Revenue Cloud Billing | In Salesforce bewertet |
 
-Billing erzeugt dann Buchungssätze für Abo- und Vertragsrechnungen, und SAP erhält sie über die Schnittstelle. Der Kunde bekommt zwei Arten von Rechnungen, die der Kundenservice erklären können muss. Ist das nicht akzeptabel, bleibt jede Rechnung in SAP, und Revenue Cloud liefert die Abrechnungsdaten. Dafür braucht es eine verlässliche Schnittstelle für Nachträge. Welches System welches Objekt führt, steht in [Revenue Cloud und SAP: Wer führt was im Quote-to-Cash?](../revenue-cloud-sap-quote-to-cash-aufteilung/).
+Für Abo- und Vertragsrechnungen erzeugt Billing die Buchungssätze, SAP erhält sie über die Schnittstelle:
+
+```ablauf
+sf: Auftrag, Abrechnungsplan, Rechnung Billing
+erp: Lieferung SAP, Rechnung SAP, Hauptbuch SAP
+Auftrag --Abo, Wartung--> Abrechnungsplan
+Abrechnungsplan --Rechnungslauf--> Rechnung Billing
+Rechnung Billing --Buchungssätze--> Hauptbuch SAP
+Auftrag --Maschine, Teile--> Lieferung SAP
+Lieferung SAP --> Rechnung SAP
+Rechnung SAP --> Hauptbuch SAP
+```
+
+Der Kunde bekommt zwei Arten von Rechnungen, die der Kundenservice erklären können muss. Ist das nicht akzeptabel, bleibt jede Rechnung in SAP, und Revenue Cloud liefert die Abrechnungsdaten. Dafür braucht es eine verlässliche Schnittstelle für Nachträge. Welches System welches Objekt führt, steht in [Revenue Cloud und SAP: Wer führt was im Quote-to-Cash?](../revenue-cloud-sap-quote-to-cash-aufteilung/).
 
 ## Wer sollte entscheiden?
 
 Finance. Das CRM-Team kann zeigen, was Billing kann, aber die Folgen trägt die Finanzabteilung: ein zweites Debitorenbuch, ein zweiter Periodenabschluss und eine zweite Stelle, die sich Wirtschaftsprüfer ansehen. Die [Object Ownership Matrix](../object-ownership-matrix-salesforce/) hilft auch hier: Jedes Billing-Objekt braucht einen Owner, und bei Legal Entities, Buchungsperioden und Sachkonten sitzt dieser Owner in der Buchhaltung.
 
-Ich würde die Leitung Rechnungswesen in den ersten Architektur-Workshop holen, nicht erst in den Abnahmetest. Halten Sie drei Punkte schriftlich fest: welche Umsatzarten Salesforce fakturiert, wer Perioden schließt und wie die Abstimmung mit SAP funktioniert. Die Schnittstellen für Buchungssätze und Rechnungsstatus gehören zu meiner Arbeit bei [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).
+Ich würde die Leitung Rechnungswesen in den ersten Architektur-Workshop holen, nicht erst in den Abnahmetest.
+
+```hinweis offen
+Halten Sie drei Punkte mit Finance schriftlich fest: welche Umsatzarten Salesforce fakturiert, wer Perioden schließt und wie die Abstimmung mit SAP funktioniert.
+```
+
+Die Schnittstellen für Buchungssätze und Rechnungsstatus gehören zu meiner Arbeit bei [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).
 
 ## Wo starten Sie?
 

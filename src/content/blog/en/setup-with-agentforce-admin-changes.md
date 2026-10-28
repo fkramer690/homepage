@@ -45,12 +45,11 @@ Three statements from Salesforce matter for governance. The same Trailhead unit 
 
 On cost the sources do not agree. The [product page](https://www.salesforce.com/platform/setup/) lists 500 free Setup agent actions per org and month, shared across all users, and says usage consumes Data 360 credits. The Admin blog calls Setup actions non-billable and says only the Help and Navigation action uses a small amount of Data 360 credits, which was to move to a different framework around Dreamforce 2026. Assume three admins with 12 requests each per working day: that is about 750 requests a month. If every request counts as one action, which no page defines, the org would pass the allowance in the third week.
 
-What I could not find on any Salesforce page I opened:
+```hinweis offen
+On no Salesforce page I opened could I find whether flows the agent builds are saved active or inactive, or whether the Setup Audit Trail marks a change as agent-made or only shows the admin's name.
 
-- whether flows the agent builds are saved active or inactive
-- whether the Setup Audit Trail marks a change as agent-made or only shows the admin's name
-- whether behaviour or allowance differ between sandbox and production
-- what an action beyond the 500 costs, and whether the Data 360 change after Dreamforce happened
+Also open: whether behaviour or allowance differ between sandbox and production, what an action beyond the 500 costs, and whether the Data 360 change after Dreamforce happened.
+```
 
 One independent test is worth knowing. Andy Engin Utkan tried the agent in a production org for [Salesforce Break in July 2026](https://salesforcebreak.com/2026/07/07/setup-with-agentforce-review/); it could not list users with View All Data or Modify All Data, and his verdict was "This feature launched before it was fully baked." That is one author's test, and he did not try flow creation. For the wider tool overview, see the masterclass chapter on [Salesforce AI development tools](../../masterclass/ai-salesforce/salesforce-ai-development-tools/).
 
@@ -97,11 +96,19 @@ The same request in a developer sandbox with source tracking would have taken th
 
 ## Where should you start?
 
-1. **Write the rule down.** Metadata changes reach production only through the pipeline, regardless of whether a person, a partner or an agent produced them. Put it next to the ownership matrix.
-2. **Check production rights.** List who holds Customize Application and comparable permissions. The Setup agent inherits exactly that list.
-3. **Enable the agent in developer sandboxes first.** [Source tracking](https://developer.salesforce.com/docs/platform/sfdx-dev/guide/sfdx-setup-enable-source-tracking-sandboxes.html) works only in Developer and Developer Pro sandboxes, so agent changes can be retrieved and land in a pull request.
-4. **Run the same gates.** Agent-built flows and fields pass the same checks as partner code, as described in [quality gates for AI code](../quality-gates-for-ai-code-salesforce-pipeline/).
-5. **Read the audit trail.** Review production's Setup Audit Trail every week for changes not made by the release user, and export it before the 180 days run out.
-6. **Watch consumption.** Track Setup agent usage against the 500 actions and ask Salesforce in writing how actions beyond that are billed.
+```schritte
+Write the rule down
+  Metadata changes reach production only through the pipeline, regardless of whether a person, a partner or an agent produced them. Put it next to the ownership matrix.
+Check production rights
+  List who holds Customize Application and comparable permissions. The Setup agent inherits exactly that list.
+Sandboxes first
+  Enable the agent in developer sandboxes first. [Source tracking](https://developer.salesforce.com/docs/platform/sfdx-dev/guide/sfdx-setup-enable-source-tracking-sandboxes.html) works only in Developer and Developer Pro sandboxes, so agent changes can be retrieved and land in a pull request.
+Run the same gates
+  Agent-built flows and fields pass the same checks as partner code, as described in [quality gates for AI code](../quality-gates-for-ai-code-salesforce-pipeline/).
+Read the audit trail
+  Review production's Setup Audit Trail every week for changes not made by the release user, and export it before the 180 days run out.
+Watch consumption
+  Track Setup agent usage against the 500 actions and ask Salesforce in writing how actions beyond that are billed.
+```
 
 If you want the release process and the rights model to cover admin AI, that is part of [DevOps and release management](../../services/devops-release-management/). The Setup agent is a fast way to build metadata and a poor way to deploy it; if you want to set that boundary in your org, [send me a message](#contact).
