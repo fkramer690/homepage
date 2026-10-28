@@ -105,7 +105,7 @@ The ERP column carries the most weight. A country with its own SAP system or its
 
 ## What do you need to retest after every Salesforce release?
 
-Salesforce ships three releases a year, and each one reaches the sandbox before it reaches production. How to align that with your own release calendar is in the [release planning](../../devops-release-management/release-planning-salesforce-releases/) chapter of the DevOps masterclass. In a Manufacturing Cloud org the parts that produce numbers belong in the regression test first:
+Salesforce ships three releases a year, and preview sandboxes get each one before production. How to align that with your own release calendar is in the [release planning](../../devops-release-management/release-planning-salesforce-releases/) chapter of the DevOps masterclass. In a Manufacturing Cloud org the parts that produce numbers belong in the regression test first:
 
 - **Forecast sets.** They are metadata of type [AdvAccountForecastSet](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/meta_advaccountforecastset.htm), available since API version 53.0, and define the forecast configuration per business unit.
 - **Data Processing Engine definitions.** They aggregate actuals, forecasts and rebates; Salesforce lists them as [BatchCalcJobDefinition](https://developer.salesforce.com/docs/atlas.en-us.264.0.loyalty.meta/loyalty/tooling_api_objects_batchcalcjobdefinition.htm).

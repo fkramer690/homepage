@@ -11,7 +11,7 @@ summary: "Was Manufacturing Cloud enthält, was es kostet und wann Sales Cloud m
 takeaways:
   - "Manufacturing Cloud ist eine Branchenlösung auf Sales Cloud und Service Cloud mit eigenem Datenmodell; Trailhead nennt dasselbe Produkt Agentforce Manufacturing."
   - "Laut Preisliste kostet Manufacturing Cloud Sales Core 275 Dollar pro Nutzer und Monat, Sales Cloud Core 195 Dollar. Bei 120 Vertriebsnutzern sind das 115.200 Dollar Aufschlag pro Jahr."
-  - "Core und Max unterscheiden sich nicht nur im Preis: Max hat 2,75 Millionen statt 500.000 Flex Credits pro Org und Jahr, zehnmal so viele Omnistudio-Aufrufe und als einzige Edition die volle Agentforce-for-Industries-Suite."
+  - "Max kostet 650 statt 275 Dollar und bringt 2,75 Millionen statt 500.000 Flex Credits pro Org und Jahr, zehnmal so viele Omnistudio-Aufrufe und als einzige Edition die volle Agentforce-for-Industries-Suite."
   - "Portallizenzen, das Agentforce-Add-on, Channel Revenue Management und Connected Assets stehen nicht in der Edition und kommen oft erst spät ins Angebot."
   - "Ohne Rahmenverträge, Händlerboni oder Garantieabwicklung über Partner fehlt der Grund für die Branchenlizenz; dann rechne ich Sales Cloud mit Eigenbau über fünf Jahre dagegen."
 articles: [manufacturing-cloud-worth-it, manufacturing-cloud-feature-map, manufacturing-cloud-add-ons-costs, salesforce-editions-core-advanced-max, salesforce-licence-types]
@@ -89,7 +89,7 @@ Für Hersteller zählen die Aufrufgrenzen oft mehr als die Credits. Omnistudio b
 
 ## Welche Add-ons kommen später ins Angebot?
 
-Die Edition ist die erste Zeile eines Angebots. Die folgenden Add-ons stehen auf der Add-on-Seite und tauchen nach meiner Beobachtung oft erst auf, wenn der Umfang schon feststeht:
+Die Edition ist die erste Zeile eines Angebots. Die folgenden Add-ons stehen auf der Add-on-Seite und gehören von Anfang an in die Kalkulation, nicht erst in die letzte Angebotsrunde:
 
 - **Portallizenzen.** Experience Cloud for Manufacturing kostet für Kunden 15 Dollar pro Login oder 35 Dollar pro Mitglied und Monat, für Partner 20 oder 50 Dollar. Wer Händler anbindet, braucht sie fast immer.
 - **Agentforce for Manufacturing Cloud Add-on.** Die Add-on-Seite nennt 150 Dollar pro Nutzer und Monat, die Preisseite „ab 150 Dollar“ pro Login. Die Einheit gehört schriftlich ins Angebot.

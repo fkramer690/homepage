@@ -105,7 +105,7 @@ Die ERP-Spalte hat das meiste Gewicht. Ein Land mit eigenem SAP-System oder eige
 
 ## Was müssen Sie nach jedem Salesforce-Release neu testen?
 
-Salesforce bringt drei Releases im Jahr, und jedes landet in der Sandbox, bevor es Produktion erreicht. Wie Sie das mit dem eigenen Release-Kalender abstimmen, beschreibt das Kapitel [Release-Planung](../../devops-release-management/release-planung-salesforce-releases/) der DevOps-Masterclass. In einer Manufacturing-Cloud-Org gehören vor allem die Teile in den Regressionstest, die Zahlen erzeugen:
+Salesforce bringt drei Releases im Jahr, und Preview-Sandboxes bekommen jedes davon vor der Produktion. Wie Sie das mit dem eigenen Release-Kalender abstimmen, beschreibt das Kapitel [Release-Planung](../../devops-release-management/release-planung-salesforce-releases/) der DevOps-Masterclass. In einer Manufacturing-Cloud-Org gehören vor allem die Teile in den Regressionstest, die Zahlen erzeugen:
 
 - **Forecast Sets.** Sie sind Metadaten vom Typ [AdvAccountForecastSet](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/meta_advaccountforecastset.htm), seit API-Version 53.0, und legen die Prognosekonfiguration pro Geschäftsbereich fest.
 - **Definitionen der Data Processing Engine.** Sie rechnen Ist-Mengen, Prognosen und Boni zusammen; Salesforce führt sie als [BatchCalcJobDefinition](https://developer.salesforce.com/docs/atlas.en-us.264.0.loyalty.meta/loyalty/tooling_api_objects_batchcalcjobdefinition.htm).
