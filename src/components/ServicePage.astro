@@ -18,7 +18,7 @@ interface Props {
   service: Service;
 }
 const { service } = Astro.props;
-const { lang, title, description, lead, situations, deliverables, results, phases, faq, order, note, notePartner } = service.data;
+const { lang, title, headline, description, lead, situations, deliverables, results, phases, faq, order, note, notePartner } = service.data;
 const t = lang === 'de' ? de : en;
 const { Content } = await render(service);
 const translation = await getServiceTranslation(service);
@@ -92,7 +92,7 @@ const schema = {
         </p>
       )}
       <p class="eyebrow mono">{String(order).padStart(2, '0')} · {name}</p>
-      <h1>{title}</h1>
+      <h1>{headline ?? title}</h1>
       <p class="service-lead">{lead}</p>
       <a class="btn" href={contactHref(name)} {...ctaAttrs}>{t.nav.cta}{contactExternal && <ExternalMark label={t.nav.newTab} />}</a>
 

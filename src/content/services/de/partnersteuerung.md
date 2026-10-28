@@ -1,5 +1,6 @@
 ---
 title: "Salesforce-Partnersteuerung mit mehreren Dienstleistern"
+headline: "Mehrere Salesforce-Partner, eine Verantwortung beim Kunden"
 description: "Mehrere Umsetzungspartner auf einer Salesforce-Org? Ein Governance- und Release-Rahmen, klare Verantwortung und Reviews beim Kunden halten es unter Kontrolle."
 lang: de
 slug: partnersteuerung

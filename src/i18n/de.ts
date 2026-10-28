@@ -21,12 +21,12 @@ export const de: Dict = {
   },
   hero: {
     eyebrow: 'FK Solution Design GmbH · Köln',
-    title: 'Salesforce-Architektur für die Manufacturing-Branche – auf Kundenseite.',
+    title: 'Salesforce-Architektur für die Manufacturing-Branche, auf Kundenseite.',
     focus: ['After-Sales', 'Service', 'Field Service', 'B2B-Vertrieb'],
     lead: 'Die zentrale Architektur-Instanz zwischen Fachbereich, interner IT und Ihren Implementierungspartnern.',
     ctaPrimary: '30-Minuten-Gespräch vereinbaren',
     ctaSecondary: 'Referenzen ansehen',
-    mailSubject: 'Salesforce-Architektur – Erstgespräch',
+    mailSubject: 'Salesforce-Architektur: Erstgespräch',
   },
   proof: [
     { value: '8', label: 'Jahre Salesforce' },

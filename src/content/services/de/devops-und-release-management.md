@@ -1,5 +1,6 @@
 ---
 title: "Salesforce DevOps und Release-Management Beratung"
+headline: "Salesforce-Releases, die kein Wochenende mehr brauchen"
 description: "Git-basierte Salesforce-Releases mit Branching, automatischen Prüfungen und Pull-Request-Reviews auf der Plattform des Kunden, etwa GitHub oder GitLab."
 lang: de
 slug: devops-und-release-management

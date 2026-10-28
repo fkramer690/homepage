@@ -1,5 +1,6 @@
 ---
 title: "Salesforce programme management and nearshore teams"
+headline: "Nearshore Salesforce teams that deliver steadily"
 description: "Planning and steering of Salesforce programmes, including nearshore development teams in Eastern Europe and India, with team setups that stay stable."
 lang: en
 slug: program-management-nearshore

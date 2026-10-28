@@ -1,5 +1,6 @@
 ---
 title: "Salesforce DevOps and release management consulting"
+headline: "Salesforce releases that no longer take a weekend"
 description: "Git-based Salesforce releases with branching, automated checks and pull request reviews, on the platform the client already owns, such as GitHub or GitLab."
 lang: en
 slug: devops-release-management

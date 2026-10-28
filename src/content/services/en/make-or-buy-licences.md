@@ -1,5 +1,6 @@
 ---
 title: "Salesforce make-or-buy and licence forecasts"
+headline: "Check your Salesforce licences before you sign"
 description: "Industry cloud, custom build or another tool? Make-or-buy decisions and Salesforce licence forecasts, calculated on long-term ROI including maintenance."
 lang: en
 slug: make-or-buy-licences
