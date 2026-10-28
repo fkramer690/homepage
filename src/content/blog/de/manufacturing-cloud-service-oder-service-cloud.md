@@ -1,6 +1,6 @@
 ---
 title: "Manufacturing Cloud for Service oder Service Cloud?"
-description: "Wann Manufacturing Cloud Service Core 80 bis 100 US-Dollar mehr pro Nutzer und Monat wert ist als Service Cloud und wer im Service welche Lizenz braucht."
+description: "Wann Manufacturing Cloud Service Core 80 US-Dollar mehr pro Nutzer und Monat wert ist als Service Cloud Core und wer im Service welche Lizenz braucht."
 pubDate: 2026-10-28
 lang: de
 slug: manufacturing-cloud-service-oder-service-cloud
@@ -10,7 +10,7 @@ categories: [manufacturing-cloud, field-service]
 contactBrief: licences
 tags: [Manufacturing Cloud, Service Cloud, Lizenzen, Garantie, Make-or-Buy]
 takeaways:
-  - "Manufacturing Cloud Service Core kostet laut Liste 275 US-Dollar pro Nutzer und Monat, Service Cloud Core 195 und die bisherige Service Cloud Enterprise 175. Der Aufpreis liegt bei 80 bis 100 US-Dollar."
+  - "Manufacturing Cloud Service Core kostet laut Liste 275 US-Dollar pro Nutzer und Monat, Service Cloud Core 195. Der Aufpreis liegt bei 80 US-Dollar; Core ist die Edition, die Service Cloud Enterprise ersetzt."
   - "Der Aufpreis bringt Warranty Lifecycle Management, die Asset Service Console, die Service Console for Manufacturing, Pre-Work Estimation und das Fertigungs-Datenmodell."
   - "Case-Management, Hilfecenter, Entitlements und Knowledge sind Funktionen der Service Cloud. Eine Hotline, die nur Cases bearbeitet, braucht keine Manufacturing Cloud."
   - "Gemischte Lizenzen sind der Normalfall: Garantiesachbearbeiter und Kampagnenverantwortliche auf Manufacturing Cloud, First Level auf Service Cloud. Lassen Sie sich den Mix schriftlich bestätigen."
@@ -27,7 +27,7 @@ faq:
 draft: false
 ---
 
-Manufacturing Cloud Service Core kostet laut Preisliste 275 US-Dollar pro Nutzer und Monat. Service Cloud kostet 195 US-Dollar in Core, der Edition, die Salesforce heute anstelle von Enterprise verkauft, und 175 US-Dollar zum bisherigen Listenpreis der Enterprise Edition. Der Aufpreis liegt also bei 80 bis 100 US-Dollar pro Nutzer und Monat. Aus meiner Sicht lohnt er sich für die Nutzer, die Garantieanträge von Händlern oder Kunden bearbeiten und Rückrufe oder Upgrades über eine installierte Basis steuern. Für Case-Bearbeitung, Entitlements und Knowledge reicht Service Cloud. Die meisten Hersteller landen bei gemischten Lizenzen, und dieser Mix gehört in den Vertrag.
+Manufacturing Cloud Service Core kostet laut Preisliste 275 US-Dollar pro Nutzer und Monat. Service Cloud kostet 195 US-Dollar in Core, der Edition, die Salesforce heute anstelle von Enterprise verkauft. Der Aufpreis liegt also bei 80 US-Dollar pro Nutzer und Monat. Aus meiner Sicht lohnt er sich für die Nutzer, die Garantieanträge von Händlern oder Kunden bearbeiten und Rückrufe oder Upgrades über eine installierte Basis steuern. Für Case-Bearbeitung, Entitlements und Knowledge reicht Service Cloud. Die meisten Hersteller landen bei gemischten Lizenzen, und dieser Mix gehört in den Vertrag.
 
 ## Was kosten die Lizenzen?
 
@@ -36,12 +36,11 @@ Listenpreise pro Nutzer und Monat bei jährlicher Abrechnung, Stand Oktober 2026
 | Lizenz | Listenpreis | Flex Credits pro Org und Jahr |
 |---|---|---|
 | Service Cloud Core | 195 US-Dollar | 500.000 |
-| Service Cloud Enterprise (bisher) | 175 US-Dollar | keine angegeben |
 | Manufacturing Cloud Service Core | 275 US-Dollar | 500.000 |
 | Manufacturing Cloud Service Max | 650 US-Dollar | 2.750.000 |
 | Manufacturing Cloud Sales & Service Max | 700 US-Dollar | 2.750.000 |
 
-Die [Preisseite der Service Cloud](https://www.salesforce.com/service/pricing/) sagt in ihren FAQ: „Core replaces Enterprise Edition, Advanced replaces Unlimited Edition, and Max replaces Agentforce 1 Edition“. Je nachdem, welche Fassung der Seite lädt, zeigt sie noch Enterprise für 175 US-Dollar. Salesforce hat im September [angekündigt](https://www.salesforce.com/in/news/?p=14535), dass „existing customer pricing on legacy editions remains unchanged“. Bestandskunden mit Enterprise vergleichen also mit 175, Neukunden mit 195 US-Dollar. Was die neuen Editionen unterscheidet, steht in [Salesforce-Editionen Core, Advanced und Max](../salesforce-editionen-core-advanced-max/).
+Die [Preisseite der Service Cloud](https://www.salesforce.com/service/pricing/) nennt Core mit 195 US-Dollar und sagt in ihren FAQ: „Core replaces Enterprise Edition, Advanced replaces Unlimited Edition, and Max replaces Agentforce 1 Edition“. Einen Preis für Enterprise zeigt sie nicht mehr. Salesforce hat im September [angekündigt](https://www.salesforce.com/in/news/?p=14535), dass „existing customer pricing on legacy editions remains unchanged“. Neukunden vergleichen also mit 195 US-Dollar, Bestandskunden mit Enterprise mit dem Preis aus ihrem laufenden Vertrag. Was die neuen Editionen unterscheidet, steht in [Salesforce-Editionen Core, Advanced und Max](../salesforce-editionen-core-advanced-max/).
 
 Die [Preisseite der Manufacturing Cloud](https://www.salesforce.com/manufacturing/cloud/pricing/) hat zwei Fußnoten, die sich widersprechen. Die eine sagt, die Preise gelten für die Enterprise Edition und Unlimited koste 425 US-Dollar. Die andere sagt, die Preise gelten für die Unlimited Edition. Dieselbe Ankündigung sagt, neue Preise für die Branchen-Editionen folgen „later this fall“. Welcher Preis für Sie gilt, zeigt erst das Angebot.
 
@@ -53,7 +52,7 @@ Was diese Funktionen leisten:
 
 - **Warranty Lifecycle Management.** Garantiebedingungen, Anträge von Händlern, Prüfung und Lieferantenregress, beschrieben in [Garantieansprüche von Händlern](../garantieansprueche-haendler-salesforce/).
 - **Asset Service Console.** Meilensteine, Garantien, Cases, Arbeitsaufträge und Anträge pro Maschine. Die Daten dahinter sind Thema von [Installierte Basis in Manufacturing Cloud](../installierte-basis-asset-meilensteine/).
-- **Service Console for Manufacturing.** Eine neu gestaltete Kontaktseite mit Assets, Cases und Aufträgen des Accounts, der anruft. Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/service-console-for-manufacturing-cloud-admin-essentials/learn-about-the-service-console-for-manufacturing) brauchen ihre Komponenten „an Industry Service Excellence add-on license“. Fragen Sie, ob Service Core diese enthält.
+- **Service Console for Manufacturing.** Eine neu gestaltete Kontaktseite mit Assets, Cases und Aufträgen des Accounts, der anruft. Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/service-console-for-manufacturing-cloud-admin-essentials/learn-about-the-service-console-for-manufacturing) sind ihre Komponenten Timeline, Empfehlungen und Datensatzwarnungen „available with the Industries Service Excellence license“. Fragen Sie, ob Service Core diese Lizenz enthält.
 - **Product Service Campaigns** für Rückrufe und Upgrades. Trailhead führt sie als Funktion der Manufacturing Cloud, die Preisseite nicht. Mehr dazu in [Rückrufaktionen in Salesforce](../rueckrufaktionen-service-kampagnen/).
 
 ## Was deckt die Service Cloud allein ab?
@@ -96,6 +95,6 @@ Das ist dieselbe Make-or-Buy-Frage wie bei der ganzen Branchen-Cloud, beschriebe
 
 ## Wo fangen Sie an?
 
-Zählen Sie die Nutzer pro Rolle für eine Region: wie viele Garantieanträge bearbeiten, wie viele Kampagnen steuern, wie viele nur Anrufe annehmen. Fordern Sie dann ein Angebot mit genau diesem Mix an, einschließlich der Frage nach Industry Service Excellence und dem Lesezugriff für Service-Cloud-Nutzer. Die After-Sales-Funktionen selbst stehen im [Kapitel Garantie und After-Sales](../../masterclass/manufacturing-cloud/garantie-und-after-sales/) der Masterclass Manufacturing Cloud.
+Zählen Sie die Nutzer pro Rolle für eine Region: wie viele Garantieanträge bearbeiten, wie viele Kampagnen steuern, wie viele nur Anrufe annehmen. Fordern Sie dann ein Angebot mit genau diesem Mix an, einschließlich der Frage nach Industries Service Excellence und dem Lesezugriff für Service-Cloud-Nutzer. Die After-Sales-Funktionen selbst stehen im [Kapitel Garantie und After-Sales](../../masterclass/manufacturing-cloud/garantie-und-after-sales/) der Masterclass Manufacturing Cloud.
 
 Manufacturing Cloud for Service ist ihren Aufpreis für die Menschen wert, die an Garantie und Rückrufen arbeiten, selten für das ganze Serviceteam. Wenn Sie diesen Lizenzmix abwägen, [schreiben Sie mir](#contact).

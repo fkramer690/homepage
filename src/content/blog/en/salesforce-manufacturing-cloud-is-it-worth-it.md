@@ -74,7 +74,7 @@ There is a second situation where I am careful. If framework contracts and call-
 
 ## When does it pay off?
 
-I have also seen the other side: a global Manufacturing Cloud rollout at a global manufacturer, together with CPQ, a product configurator and a customer portal. The main reason for Manufacturing Cloud there was sales agreements. Sales needed to see which customers had not yet taken the agreed quantities, and to plan how the open volumes could still be realised, taking current warehouse capacity into account. That is exactly the question the plan versus actuals view in a sales agreement is built for, and according to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/manufacturing-cloud-admin-essentials/configure-sales-agreements-to-negotiate-better) a figure like inventory level can be carried along as its own metric per period.
+I have also seen the other side: a global Manufacturing Cloud rollout at a global manufacturer, together with CPQ, a product configurator and a customer portal. The main reason for Manufacturing Cloud there was sales agreements. Sales needed to see which customers had not yet taken the agreed quantities, and to plan how the open volumes could still be realised, taking current warehouse capacity into account. That is exactly the question the plan versus actuals view in a sales agreement is built for, and according to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/manufacturing-cloud-admin-essentials/configure-sales-agreements-to-negotiate-better) a figure like inventory level can be carried along as its own metric per period. What became of CPQ and how Revenue Cloud fits next to Manufacturing Cloud is covered in [chapter 1 of the Revenue Cloud masterclass](../../masterclass/revenue-cloud/revenue-cloud-overview/).
 
 In my experience Manufacturing Cloud pays off when at least one of these points clearly applies:
 
@@ -102,6 +102,6 @@ One more point: anyone buying Manufacturing Cloud for the agents should check th
 
 Before a quote is on the table, three questions to your own sales and service teams help: what share of revenue runs through volume agreements? How are dealer bonuses calculated today? Who checks warranty claims, and how long does it take? The answers show faster than any demo whether Manufacturing Cloud fits your business.
 
-After that, the question belongs in your [Salesforce architecture](../../services/salesforce-architecture/), with an entry in the decision log so the reasons stay traceable after a partner change.
+After that, the question belongs in your [Salesforce architecture](../../services/salesforce-architecture/), with an entry in the decision log so the reasons stay traceable after a partner change. The full picture of features, add-ons and licences is in [chapter 1 of the Manufacturing Cloud masterclass](../../masterclass/manufacturing-cloud/scope-and-business-case/).
 
 Manufacturing Cloud is worth it when its core features match your business, not because you are a manufacturer. If you have a Manufacturing Cloud quote on the table and want an independent second opinion, [send me a message](#contact).

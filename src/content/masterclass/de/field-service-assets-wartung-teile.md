@@ -90,7 +90,7 @@ Maschinendaten kosten Geld, sobald sie in Data 360 landen. Die [Flex-Credits-Pre
 Zu Beginn meist nicht. Assets mit Hierarchien, Wartungspläne, Serviceverträge und Entitlements gehören zum Kern von Field Service. Die [Preisliste](https://www.salesforce.com/service/field-service-management/pricing/) (Oktober 2026) zeigt zwei Asset-Add-ons:
 
 - **Asset Service Lifecycle Management** für 75 US-Dollar pro Nutzer und Monat. Der [ASLM-Bereich der Salesforce-Hilfe](https://help.salesforce.com/s/articleView?language=en_US&id=xcloud.aslm_asset_service_lifecycle_management.htm&type=5) nennt unter anderem Asset Coverage View, Asset Interactive Hierarchy, Work Order Estimation, Product Service Campaigns, Depotreparatur, Advanced Exchange, Lagerfunktionen und Stundenzettel.
-- **Connected Assets** für 15.000 US-Dollar pro Org und Monat, zum Listenpreis also 180.000 US-Dollar im Jahr, für Telemetrie, den Asset Health Score und bis zu 10.000 vernetzte digitale Assets.
+- **Connected Assets** für 15.000 US-Dollar pro Org und Monat, zum Listenpreis also 180.000 US-Dollar im Jahr, für Telemetrie, den Asset Health Score und 10.000 vernetzte digitale Assets.
 
 Die Vergleichstabelle der Preisliste markiert Asset Coverage View und Interactive Hierarchy sogar bei Agentforce 1 Field Service als „Available for Purchase“. Lassen Sie sich das im Angebot bestätigen.
 
