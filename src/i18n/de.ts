@@ -305,6 +305,7 @@ export const de: Dict = {
     ],
   },
   servicePage: {
+    note: 'Hinweis',
     indexTitle: 'Leistungen',
     metaTitle: 'Leistungen: Salesforce-Architektur | FK Solution Design',
     metaDescription: 'Salesforce-Architekt auf Kundenseite: Zielarchitektur, Partnersteuerung, DevOps, Integration, Programmsteuerung und Make-or-buy für Fertigungsunternehmen.',
