@@ -27,6 +27,87 @@ const pin = (x: number, y: number, color = G) =>
   `<g transform="translate(${x} ${y})"><path d="M0 0c-6-8-9-12-9-16a9 9 0 0 1 18 0c0 4-3 8-9 16z" fill="#fff" stroke="${color}" stroke-width="1.4"/><circle cx="0" cy="-16" r="3" fill="${color}"/></g>`;
 
 const drawings: Record<string, Drawing> = {
+  'cpq-vs-revenue-cloud-differences': (l) => `
+    ${box(18, 22, 118, 108)}${t(77, 38, 'CPQ · BILLING', { fill: D, size: 7.5, anchor: 'middle' })}
+    ${[l('SBQQ · blng packages', 'Pakete SBQQ · blng'), l('product rules', 'Produktregeln'), l('price rules + QCP', 'Preisregeln + QCP'), l('subscriptions', 'Subscriptions'), l('end of sale', 'Verkaufsende')].map((s, i) => t(28, 56 + i * 16, s, { size: 7 })).join('')}
+    ${arrow(136, 76, 184, C)}${t(160, 68, l('redesign', 'Neuentwurf'), { fill: C, size: 7, anchor: 'middle' })}${t(160, 90, l('no upgrade', 'kein Upgrade'), { size: 7, anchor: 'middle' })}
+    ${box(184, 22, 118, 108, C)}${t(243, 38, 'REVENUE CLOUD', { fill: D, size: 7.5, anchor: 'middle' })}
+    ${[l('standard objects', 'Standardobjekte'), l('constraint engine, CML', 'Constraint-Engine, CML'), l('pricing procedures', 'Preisprozeduren'), l('assets, state periods', 'Assets, Zeiträume'), l('actively developed', 'wird weiterentwickelt')].map((s, i) => t(194, 56 + i * 16, s, { size: 7 })).join('')}
+    ${t(18, 150, l('Help: data models "differ significantly"', 'Hilfe: Datenmodelle „differ significantly“'), { size: 7 })}`,
+
+  'e-invoicing-germany-revenue-cloud': (l) => `
+    <path d="M30 44H290" stroke="${G}" stroke-width="1.2"/>
+    ${dot(40, 44)}${t(40, 30, '2025', { fill: D, size: 7.5, anchor: 'middle' })}${t(40, 60, l('receive', 'empfangen'), { size: 7, anchor: 'middle' })}
+    ${dot(160, 44, C, 4.5)}${t(160, 30, '2027', { fill: C, size: 7.5, anchor: 'middle' })}${t(160, 60, l('issue > €800,000', 'ausstellen > 800.000 €'), { fill: C, size: 7, anchor: 'middle' })}
+    ${dot(270, 44)}${t(270, 30, '2028', { fill: D, size: 7.5, anchor: 'middle' })}${t(270, 60, l('all B2B', 'alle B2B'), { size: 7, anchor: 'middle' })}
+    ${box(18, 76, 136, 50)}${t(28, 92, 'EN 16931', { fill: D, size: 7.5 })}${check(28, 101)}${t(40, 106, 'XRechnung', { size: 7 })}${check(28, 113)}${t(40, 118, 'ZUGFeRD 2.0.1+', { size: 7 })}
+    ${box(166, 76, 136, 50)}${t(176, 92, l('PDF BY EMAIL', 'PDF PER E-MAIL'), { fill: D, size: 7.5 })}${cross(180, 108)}${t(190, 111, l('no e-invoice', 'keine E-Rechnung'), { size: 7 })}
+    ${t(18, 146, l('Revenue Cloud Billing: PDFs documented, EN 16931 not found', 'Revenue Cloud Billing: PDFs dokumentiert, EN 16931 nicht gefunden'), { size: 7 })}`,
+
+  'revenue-cloud-billing-costs-billing-events': (l) => `
+    ${t(18, 20, l('RATE SHEET FEB 2026', 'RATE SHEET FEB. 2026'), { fill: D, size: 7 })}
+    ${[0, 1, 2, 3, 4].map((i) => `<rect x="${18 + i * 30}" y="28" width="26" height="22" rx="3" fill="#fff" stroke="${i === 4 ? C : G}" stroke-width="1.2"/>` + t(31 + i * 30, 42.5, '$50', { fill: i === 4 ? C : G, size: 6.5, anchor: 'middle' })).join('')}
+    ${arrow(172, 39, 200, C)}${t(206, 42.5, l('1 billing event each', 'je 1 Billing Event'), { fill: C, size: 7 })}
+    ${t(18, 68, l('invoice subtotal, no tax, with shipping', 'Zwischensumme ohne Steuer, mit Versand'), { size: 7 })}
+    ${box(18, 78, 284, 44)}${t(28, 94, l('EXAMPLE (ASSUMED, 1.15 $/€)', 'BEISPIEL (ANNAHME, 1,15 $/€)'), { fill: D, size: 6.5 })}
+    ${t(28, 110, l('€18M subscriptions', '18 Mio. € Abos'), { size: 7 })}${arrow(112, 107, 136)}${t(142, 110, l('414,000 events/year', '414.000 Events/Jahr'), { fill: C, size: 7 })}
+    ${cross(24, 141)}${t(36, 144, l('no rollover', 'kein Übertrag'), { size: 7 })}${t(130, 144, l('price per event: on request', 'Preis pro Event: auf Anfrage'), { size: 7 })}`,
+
+  'revenue-cloud-billing-or-erp-invoicing': (l) => `
+    ${box(18, 22, 118, 100)}${t(77, 40, 'SAP', { fill: D, size: 7.5, anchor: 'middle' })}
+    ${t(30, 58, l('machine invoice', 'Maschinenrechnung'), { size: 7 })}${t(30, 74, l('spare parts', 'Ersatzteile'), { size: 7 })}${t(30, 90, l('down payments', 'Anzahlungen'), { size: 7 })}${t(30, 110, l('general ledger', 'Hauptbuch'), { fill: D, size: 7 })}
+    ${box(184, 22, 118, 100, C)}${t(243, 40, 'REVENUE CLOUD BILLING', { fill: D, size: 7, anchor: 'middle' })}
+    ${t(196, 58, l('subscriptions', 'Abonnements'), { size: 7 })}${t(196, 74, l('maintenance fees', 'Wartungsgebühren'), { size: 7 })}${t(196, 90, l('usage', 'Nutzung'), { size: 7 })}${t(196, 110, l('subledger', 'Nebenbuch'), { fill: C, size: 7 })}
+    <path d="M184 107H137" stroke="${C}" stroke-width="1.3"/><path d="M142 103.5l-5 3.5 5 3.5" fill="none" stroke="${C}" stroke-width="1.3"/>${t(160, 100, l('journals', 'Buchungen'), { fill: C, size: 6.5, anchor: 'middle' })}
+    ${tag(18, 132, 118, l('finance decides', 'Finance entscheidet'))}${t(146, 145, l('legal entities, periods, G/L', 'Legal Entities, Perioden, Konten'), { size: 7 })}`,
+
+  'revenue-cloud-editions-pricing': (l) => `
+    ${t(18, 18, l('LIST PRICE / USER / MONTH, ANNUAL', 'LISTENPREIS / NUTZER / MONAT, JÄHRLICH'), { fill: D, size: 7 })}
+    ${box(18, 26, 136, 42)}${t(28, 42, 'GROWTH', { fill: D, size: 7.5 })}${t(144, 58, '150 €', { size: 11, anchor: 'end' })}${t(28, 58, l('quote, order, subs', 'Angebot, Auftrag, Abo'), { size: 7 })}
+    ${box(166, 26, 136, 42, C)}${t(176, 42, 'ADVANCED', { fill: D, size: 7.5 })}${t(292, 58, '200 €', { fill: C, size: 11, anchor: 'end' })}${t(176, 58, l('+ contracts, invoicing', '+ Verträge, Rechnung'), { size: 7 })}
+    ${t(18, 84, l('+ Sales Cloud required (Core 195 €)', '+ Sales Cloud nötig (Core 195 €)'), { size: 7 })}
+    ${['CLM', 'DRO *', 'Invoice Mgmt *', l('External users', 'Externe Nutzer')].map((s, i) => box(18 + i * 72, 94, 66, 18) + t(51 + i * 72, 106, s, { size: 6.8, anchor: 'middle' })).join('')}
+    ${t(18, 132, l('Billing: on request, 1 event per $50 invoiced', 'Billing: auf Anfrage, 1 Event je 50 $ Rechnung'), { size: 7 })}
+    ${t(18, 148, l('* freemium access available', '* Freemium-Zugang verfügbar'), { size: 6.5 })}`,
+
+  'revenue-cloud-product-names': (l) => `
+    ${t(18, 18, l('ONE PRODUCT, MANY NAMES', 'EIN PRODUKT, VIELE NAMEN'), { fill: D, size: 7 })}
+    <path d="M18 90H166" stroke="${G}" stroke-width="1.3"/><path d="M166 90H302" stroke="${C}" stroke-width="1.6"/>
+    ${dot(34, 90)}${dot(100, 90)}${dot(166, 90, C)}${dot(232, 90, C)}${dot(286, 90, C)}
+    ${t(34, 56, '2015', { size: 7, anchor: 'middle' })}${t(34, 68, 'SteelBrick', { fill: D, size: 7, anchor: 'middle' })}${t(34, 78, l('$360M', '360 Mio. $'), { size: 7, anchor: 'middle' })}
+    ${t(100, 108, '2020', { size: 7, anchor: 'middle' })}${t(100, 120, 'Revenue Cloud', { fill: D, size: 7, anchor: 'middle' })}${t(100, 130, 'CPQ + Billing', { size: 7, anchor: 'middle' })}
+    ${t(166, 56, "Spring '24", { size: 7, anchor: 'middle' })}${t(166, 68, 'RLM', { fill: D, size: 7, anchor: 'middle' })}${t(166, 78, 'API 60.0', { size: 7, anchor: 'middle' })}
+    ${t(232, 108, "Winter '27", { size: 7, anchor: 'middle' })}${t(232, 120, 'Revenue Management', { fill: D, size: 7, anchor: 'middle' })}${t(232, 130, 'Developer Guide', { size: 7, anchor: 'middle' })}
+    ${t(302, 56, l('Oct 2026', 'Okt. 2026'), { size: 7, anchor: 'end' })}${t(302, 68, 'Revenue Cloud', { fill: C, size: 7, anchor: 'end' })}${t(302, 78, 'Growth · Advanced', { size: 7, anchor: 'end' })}
+    ${t(18, 152, l('order form: edition + SKU, never just the name', 'Bestellformular: Edition + SKU, nie nur der Name'), { size: 7.5 })}`,
+
+  'revenue-cloud-worth-it-manufacturers': (l) => `
+    ${t(18, 20, l('PAYS OFF', 'LOHNT SICH'), { fill: C, size: 7 })}${t(166, 20, l('RARELY', 'SELTEN'), { fill: D, size: 7 })}
+    ${box(18, 28, 140, 90, C)}${box(166, 28, 136, 90)}
+    ${[l('many variants with rules', 'viele Varianten mit Regeln'), l('service + subscriptions', 'Service + Abonnements'), l('frequent amendments', 'häufige Nachträge'), l('up to 15,000 lines per deal', 'bis 15.000 Positionen je Deal')]
+      .map((s, i) => check(26, 42 + i * 20, G) + t(38, 47 + i * 20, s, { size: 7 })).join('')}
+    ${[l('quote = SAP price lookup', 'Angebot = SAP-Preisabfrage'), l('few products, few options', 'wenige Produkte, Optionen'), l('invoice stays in SAP FI', 'Rechnung bleibt in SAP FI')]
+      .map((s, i) => cross(176, 44 + i * 20) + t(186, 47 + i * 20, s, { size: 7 })).join('')}
+    ${t(18, 140, l('Advanced: 200 € / user / month + Sales Cloud', 'Advanced: 200 € / Nutzer / Monat + Sales Cloud'), { fill: C, size: 7.5 })}
+    ${t(18, 154, l('decide price master and invoice owner first', 'erst Preismaster und Rechnungssystem klären'), { size: 7 })}`,
+
+  'salesforce-cpq-end-of-sale-status': (l) => `
+    ${t(18, 20, l('SALESFORCE CPQ · OCTOBER 2026', 'SALESFORCE CPQ · OKTOBER 2026'), { fill: D, size: 7 })}
+    ${[[l('keep using, renew', 'weiter nutzen, verlängern'), 1], [l('buy more users', 'Nutzer nachkaufen'), 1], [l('support, critical fixes', 'Support, kritische Fixes'), 1], [l('new features', 'neue Funktionen'), 0], [l('new customers', 'Neukunden'), 0]].map(([s, ok], i) => (ok ? check(20, 36 + i * 16, G) : cross(24, 37 + i * 16)) + t(36, 41 + i * 16, String(s), { size: 7 })).join('')}
+    ${tag(178, 28, 124, l('no end-of-life date', 'kein End-of-Life-Datum'))}
+    ${t(178, 64, l('no forced migration', 'keine erzwungene Migration'), { size: 7 })}
+    ${t(178, 82, l('Billing: full access', 'Billing: voller Zugang'), { size: 7 })}
+    ${t(178, 94, l('(spokesperson, 2025)', '(Sprecher, 2025)'), { size: 7 })}
+    <path d="M18 114H302" stroke="${L}"/>
+    ${box(18, 122, 284, 24, C)}${t(160, 137, l('next renewal: term · price cap · coexistence', 'nächste Verlängerung: Laufzeit · Preisdeckel · Parallelbetrieb'), { fill: C, size: 7, anchor: 'middle' })}`,
+
+  'stay-on-cpq-or-migrate': (l) => `
+    ${box(18, 60, 74, 40, C)}${t(55, 77, l('ASSESS', 'ANALYSE'), { fill: C, size: 7.5, anchor: 'middle' })}${t(55, 90, l('CPQ org', 'CPQ-Org'), { size: 7, anchor: 'middle' })}
+    <path d="M92 80H110M110 38V122" stroke="${G}" stroke-width="1.3"/>
+    ${arrow(110, 38, 130)}${arrow(110, 80, 130)}${arrow(110, 122, 130)}
+    ${[[l('STAY ON CPQ', 'BEI CPQ BLEIBEN'), l('stable process, ERP prices', 'stabiler Prozess, Preise aus ERP')], [l('MOVE TO REVENUE CLOUD', 'WECHSEL ZU REVENUE CLOUD'), l('agent quoting, usage billing', 'Agenten-Angebote, Nutzungsabrechnung')], [l('THIRD ROUTE', 'DRITTER WEG'), l('rules in SAP or PLM', 'Regeln in SAP oder PLM')]].map(([h, s], i) => box(130, 22 + i * 42, 172, 32) + t(140, 35 + i * 42, h, { fill: D, size: 7 }) + t(140, 47 + i * 42, s, { size: 7 })).join('')}
+    ${t(18, 154, l('no end-of-life date · 15 % of RCA customers came from CPQ', 'kein End-of-Life-Datum · 15 % der RCA-Kunden kamen von CPQ'), { size: 7 })}`,
+
   'field-service-headless-setup-ai': (l) => `
     ${t(18, 20, l('HEADLESS SETUP (ASSUMED SCENARIO)', 'HEADLESS-EINRICHTUNG (ANNAHME)'), { fill: D, size: 7.5 })}
     ${box(18, 30, 80, 50)}${t(58, 50, l('website', 'Website'), { size: 7.5, anchor: 'middle' })}${t(58, 66, l('AI assistant', 'KI-Assistent'), { size: 7, anchor: 'middle' })}

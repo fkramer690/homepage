@@ -70,6 +70,8 @@ A partner who says "we have done 30 Revenue Cloud projects" may mean CPQ project
 2. How many projects since Spring '24 ran on Revenue Lifecycle Management or Revenue Cloud Advanced?
 3. Who in the proposed team built pricing procedures and configurator rules in the new product?
 
+The reverse applies to existing CPQ customers: if a proposal says "Revenue Cloud", check whether it describes a new implementation on the new data model. There is no version upgrade from CPQ. Salesforce itself writes that Revenue Cloud Advanced is not simply CPQ with a new name, and names three to six months from discovery to go-live for a typical migration.
+
 The status of the old packages is a topic of its own: CPQ is no longer sold to new customers, but existing customers can renew and get support. The [chapter on moving from CPQ to Revenue Cloud](../../masterclass/revenue-cloud/from-cpq-to-revenue-cloud/) covers what that means.
 
 ## Which name belongs in an order form or tender?

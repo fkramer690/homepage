@@ -1,6 +1,6 @@
 ---
 title: "Revenue Cloud, RLM, RCA: Welcher Name gilt jetzt?"
-description: "Revenue Cloud, Revenue Lifecycle Management, Revenue Cloud Advanced, Agentforce Revenue Management: was die Namen bedeuten und welcher ins Bestellformular gehört."
+description: "Revenue Cloud, Revenue Lifecycle Management, Revenue Cloud Advanced, Agentforce Revenue Management: was die Namen bedeuten und welcher in den Vertrag gehört."
 pubDate: 2026-10-28
 lang: de
 slug: revenue-cloud-produktnamen-rlm-rca
@@ -69,6 +69,8 @@ Ein Partner, der von "30 Revenue-Cloud-Projekten" spricht, meint vielleicht CPQ-
 1. Welches Datenmodell hatten die Referenzen, CPQ-Objekte mit Namespace SBQQ oder Standardobjekte?
 2. Wie viele Projekte liefen seit Spring '24 auf Revenue Lifecycle Management oder Revenue Cloud Advanced?
 3. Wer im vorgeschlagenen Team hat im neuen Produkt Preisprozeduren und Konfiguratorregeln gebaut?
+
+Umgekehrt gilt für CPQ-Bestandskunden: Beschreibt ein Angebot "Revenue Cloud", prüfen Sie, ob damit eine Neueinführung auf dem neuen Datenmodell gemeint ist. Ein Versionsupgrade von CPQ gibt es nicht. Salesforce schreibt selbst, Revenue Cloud Advanced sei nicht einfach CPQ mit neuem Namen, und nennt für eine typische Migration drei bis sechs Monaten von der Analyse bis zum Go-live.
 
 Der Status der alten Pakete ist ein eigenes Thema: CPQ wird an Neukunden nicht mehr verkauft, Bestandskunden können aber verlängern und bekommen Support. Was das bedeutet, behandelt das [Kapitel zum Umstieg von CPQ auf Revenue Cloud](../../masterclass/revenue-cloud/von-cpq-zu-revenue-cloud/).
 
