@@ -79,7 +79,9 @@ Three groups fall outside this table:
 - **Dealers** who submit claims work in a portal with partner licences, see [the Manufacturing Cloud customer portal](../manufacturing-cloud-customer-portal/).
 - **Managers who only read reports** may not need a full licence at all, see [does everyone need a full licence](../salesforce-licences-full-licence-needed/).
 
+```hinweis offen
 One point I would always get in writing: which Manufacturing Cloud records, such as warranty claims or asset warranties, a Service Cloud user may see. The hotline usually needs to read them, even if it never edits them.
+```
 
 ## How do I decide?
 
@@ -89,7 +91,16 @@ A short rule that works for most manufacturers:
 - **Service means cases, contracts and answers:** Service Cloud, with a custom field for the warranty end date if needed.
 - **Many technicians in the field:** decide Field Service separately; it does not depend on this choice.
 
-The alternative is a custom build on Service Cloud: your own objects for warranty terms, claims and campaigns. In the scenario above the premium for the 15 Manufacturing Cloud users is $14,400 a year compared with Service Cloud Core, or $72,000 over five years at list price. A custom warranty process with dealer portal, approvals and supplier recovery rarely costs less to build and maintain, and you own every change yourself. The custom build wins when your warranty process is simple, such as one term per product and few claims.
+The alternative is a custom build on Service Cloud: your own objects for warranty terms, claims and campaigns.
+
+```pro-contra
+pro: Custom build on Service Cloud
+- Saves $14,400 a year for the 15 users in the scenario above, $72,000 over five years at list price
+- Wins when your warranty process is simple, such as one term per product and few claims
+contra: What you take on
+- A custom warranty process with dealer portal, approvals and supplier recovery rarely costs less to build and maintain
+- You own every change yourself
+```
 
 This is the same make-or-buy question as for the whole industry cloud, covered in [is Manufacturing Cloud worth it](../salesforce-manufacturing-cloud-is-it-worth-it/) and in the [scope and business case chapter](../../masterclass/manufacturing-cloud/scope-and-business-case/). I describe the approach under [make-or-buy and licence forecasts](../../services/make-or-buy-licences/).
 

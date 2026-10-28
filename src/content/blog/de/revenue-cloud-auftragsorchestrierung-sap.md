@@ -82,6 +82,17 @@ Ein Referenzmuster von Salesforce für Revenue Cloud und SAP habe ich nicht gefu
 3. Nach der Übergabe führt SAP Lieferung, bestätigte Termine und Rechnung. Salesforce zeigt den Status an und ändert ihn nicht.
 4. Änderungen nach der Übergabe laufen als neue Aufträge in Revenue Cloud, die DRO erneut an SAP übergibt. Wie Nachträge auf der Asset-Seite funktionieren, steht in [Assets, Nachträge und Verlängerungen](../revenue-cloud-assets-nachtraege-verlaengerungen/).
 
+```ablauf
+sf: Auftrag, DRO-Plan, Fallout-Queue
+erp: SAP-Kundenauftrag, Lieferung, Rechnung
+Auftrag --aktiviert--> DRO-Plan
+DRO-Plan --Callout--> SAP-Kundenauftrag
+SAP-Kundenauftrag ..Auftragsnummer..> Auftrag
+SAP-Kundenauftrag ..abgelehnt..> Fallout-Queue
+SAP-Kundenauftrag --> Lieferung
+Lieferung --> Rechnung
+```
+
 Welches System welchen Schritt vom Angebot bis zur Rechnung führt, behandelt [Revenue Cloud und SAP: Wer führt was?](../revenue-cloud-sap-quote-to-cash-aufteilung/). Dieselbe Aufteilung gehört in Ihre [Object Ownership Matrix](../object-ownership-matrix-salesforce/), damit kein Partner einen zweiten Weg zu SAP baut. Wie Händler den Auftragsstatus aus SAP abfragen, steht in [Agentforce und SAP: Auftragsstatus über MuleSoft](../agentforce-sap-auftragsstatus/).
 
 ## Was passiert, wenn SAP den Auftrag ablehnt?
@@ -101,7 +112,11 @@ Ich würde DRO prüfen, wenn mindestens zwei dieser Punkte zutreffen:
 - Zusagen haben Fristen, die pro Schritt überwacht werden sollen.
 - Aufträge mischen Einmalprodukte und Abonnements, die unterschiedlich abgewickelt werden.
 
-Zu den Kosten: Die [Preisseite von Revenue Cloud](https://www.salesforce.com/eu/sales/revenue-lifecycle-management/pricing/) führt Dynamic Revenue Orchestration als zukaufbares Add-on zu Revenue Cloud Advanced, das laut Liste 200 Euro pro Nutzer und Monat kostet, mit dem Hinweis "Freemium access available". Was dieser Freemium-Zugang umfasst, steht dort nicht. Lassen Sie es sich schriftlich geben, bevor Ihr Design davon abhängt.
+Zu den Kosten: Die [Preisseite von Revenue Cloud](https://www.salesforce.com/eu/sales/revenue-lifecycle-management/pricing/) führt Dynamic Revenue Orchestration als zukaufbares Add-on zu Revenue Cloud Advanced, das laut Liste 200 Euro pro Nutzer und Monat kostet, mit dem Hinweis "Freemium access available".
+
+```hinweis offen
+Was dieser Freemium-Zugang umfasst, steht auf der Preisseite nicht. Lassen Sie es sich schriftlich geben, bevor Ihr Design davon abhängt.
+```
 
 ## Wo starten Sie?
 

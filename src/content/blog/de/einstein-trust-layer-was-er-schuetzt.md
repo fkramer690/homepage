@@ -37,7 +37,12 @@ Die [Entwicklerdokumentation](https://developer.salesforce.com/docs/ai/agentforc
 - **Audit Trail.** Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/data-cloud-powered-agentforce/enable-trusted-agents-with-data-cloud) enthält er Prompt-ID und Benutzer, "Prompt text and PII-masked prompt", Sicherheits- und Toxizitätswerte sowie das Feedback der Anwender. "This data is stored and analyzed in Data 360." Fertige Dashboards zeigen Maskierung, Toxizität, Nutzungstrends und Akzeptanzraten.
 - **Grounding.** Antworten entstehen aus CRM-Datensätzen und Data-360-Inhalten statt aus dem Allgemeinwissen des Modells.
 
-Auffällig ist, was in der Liste fehlt: alles, was festlegt, welche Datensätze ein Agent lesen darf. Das kommt vom Benutzer des Agenten. Ein Service-Agent läuft unter einem eigenen Agentenbenutzer; im [Trailhead-Beispiel](https://trailhead.salesforce.com/content/learn/modules/programmatic-instructions-in-agentforce/give-your-agent-more-information-with-flows-actions-and-permissions) muss der Lesezugriff auf ein eigenes Feld ausdrücklich im Permission Set "Service Agent Permissions" freigegeben werden. Mitarbeiteragenten sind laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/agentforce-for-employees-quick-look/get-started-with-agentforce-for-employees) "logged in as the person they're helping" und folgen dessen Berechtigungen.
+Auffällig ist, was in der Liste fehlt: alles, was festlegt, welche Datensätze ein Agent lesen darf. Das kommt vom Benutzer des Agenten.
+
+```vertiefung Für Admins
+titel: Unter welchem Benutzer liest ein Agent Daten?
+Ein Service-Agent läuft unter einem eigenen Agentenbenutzer; im [Trailhead-Beispiel](https://trailhead.salesforce.com/content/learn/modules/programmatic-instructions-in-agentforce/give-your-agent-more-information-with-flows-actions-and-permissions) muss der Lesezugriff auf ein eigenes Feld ausdrücklich im Permission Set "Service Agent Permissions" freigegeben werden. Mitarbeiteragenten sind laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/agentforce-for-employees-quick-look/get-started-with-agentforce-for-employees) "logged in as the person they're helping" und folgen dessen Berechtigungen.
+```
 
 ## Warum ist die Datenmaskierung für Agenten abgeschaltet?
 
@@ -45,7 +50,11 @@ Die Maskierung ersetzt sensible Werte durch Platzhalter, bevor der Prompt Salesf
 
 Ganz einheitlich ist die Dokumentation nicht. Eine Trailhead-Einheit zu [Agenten in Marketing Cloud Next](https://trailhead.salesforce.com/content/learn/modules/conversational-marketing-fundamentals-for-marketing-cloud-next/secure-agents-with-the-einstein-trust-layer) beschreibt eine Maskierung vor dem Versand des Prompts. Ich würde mich auf keine der beiden Aussagen verlassen und im Audit Trail der eigenen Org Prompt-Text und maskierten Prompt vergleichen.
 
-Außerhalb von Agentforce arbeitet die Maskierung laut Blogbeitrag "the same as it always has". Das [Trailhead-Modul zur Maskierung](https://trailhead.salesforce.com/content/learn/modules/llm-data-masking-in-the-einstein-trust-layer/configure-llm-data-masking-policies) zeigt, wie sie entscheidet: Name, E-Mail-Adresse, Telefonnummer, Kreditkarte und US-Sozialversicherungsnummer sind standardmäßig maskiert, der Firmenname lässt sich zuschalten, und Formate werden geprüft: "If an item isn't a valid value, it won't be masked." Für einen Hersteller folgt daraus der entscheidende Punkt. Ein Händlernettopreis, ein Bonus von 3 Prozent oder "Zahlung 60 Tage netto" passt auf keines dieser Muster. Selbst wo die Maskierung aktiv ist, schützt sie keine kaufmännischen Daten.
+Außerhalb von Agentforce arbeitet die Maskierung laut Blogbeitrag "the same as it always has". Das [Trailhead-Modul zur Maskierung](https://trailhead.salesforce.com/content/learn/modules/llm-data-masking-in-the-einstein-trust-layer/configure-llm-data-masking-policies) zeigt, wie sie entscheidet: Name, E-Mail-Adresse, Telefonnummer, Kreditkarte und US-Sozialversicherungsnummer sind standardmäßig maskiert, der Firmenname lässt sich zuschalten, und Formate werden geprüft: "If an item isn't a valid value, it won't be masked." Für einen Hersteller folgt daraus der entscheidende Punkt.
+
+```hinweis achtung
+Ein Händlernettopreis, ein Bonus von 3 Prozent oder "Zahlung 60 Tage netto" passt auf keines dieser Muster. Selbst wo die Maskierung aktiv ist, schützt sie keine kaufmännischen Daten.
+```
 
 ## Wo endet der Trust Layer?
 
@@ -59,7 +68,9 @@ Für eine Architekturentscheidung zählen vier Grenzen.
 
 **Externe Modelle bleiben draußen.** Liest Claude oder ChatGPT CRM-Daten über Hosted MCP, macht Salesforce keinen LLM-Aufruf, und der Trust Layer hat keinen Schritt, an dem er eingreifen könnte. Diesen Weg erkläre ich in [Hosted MCP Server und Datenzugriff](../salesforce-hosted-mcp-server-datenzugriff/).
 
-Ein Punkt geht leicht unter: Der Audit Trail speichert den Prompt-Text selbst. Was ein Agent in einen Prompt schreibt, auch Preise und Personendaten, landet in Data-360-Objekten. Die Trailhead-Einheiten, die ich gelesen habe, nennen keine Aufbewahrungsfrist, die Entscheidung liegt also bei Ihnen, und sie berührt die Protokollpflichten aus [EU AI Act: Fristen für Agentforce](../eu-ai-act-fristen-agentforce/).
+```hinweis achtung
+Der Audit Trail speichert den Prompt-Text selbst. Was ein Agent in einen Prompt schreibt, auch Preise und Personendaten, landet in Data-360-Objekten. Die Trailhead-Einheiten, die ich gelesen habe, nennen keine Aufbewahrungsfrist, die Entscheidung liegt also bei Ihnen, und sie berührt die Protokollpflichten aus [EU AI Act: Fristen für Agentforce](../eu-ai-act-fristen-agentforce/).
+```
 
 ## Ein typisches Szenario: Händleragent mit Nettopreisen
 

@@ -57,7 +57,9 @@ The [price book data limits](https://developer.salesforce.com/docs/commerce/sale
 
 The 25 per call matters most. Only the first 25 valid price books are evaluated, meaning active and in the buyer's currency; anything beyond is ignored without an error. A buyer who belongs to many buyer groups, each with several price books, can therefore see a price that is not the one you intended. A buyer account can belong to up to 20 buyer groups by default.
 
+```hinweis offen
 The last row is a documentation problem. The same Salesforce page states 50 price books per buyer group in the table and 25 in a note. If your design depends on that number, get the answer from Salesforce in writing.
+```
 
 ## Why do SAP conditions rarely fit price books one to one?
 
@@ -86,6 +88,16 @@ A third option is Advanced Pricing powered by Revenue Cloud, a pricing engine in
 A typical scenario, as an assumption: a maker of compressors sells spare parts to 600 dealers in 9 countries. SAP holds a list price per country, a discount per dealer tier and material group, and customer prices for about 40 large dealers. Around 25,000 parts are sold online.
 
 I would split it. For the roughly 560 dealers on tier discounts, a nightly job calculates the net prices into one price book per country and tier; with 9 countries and 3 tiers that is 27 price books of at most 25,000 entries each, and each buyer sees exactly one of them. For the 40 large dealers with customer prices, the pricing extension asks SAP live in the cart. Freight and minimum quantity surcharges come from SAP at checkout for everyone. The order that goes back to SAP carries the price the buyer saw, and SAP checks it against its own result with a defined tolerance.
+
+```ablauf
+sf: Store price books, Pricing extension, Cart
+erp: SAP pricing, SAP order
+SAP pricing --nightly load--> Store price books
+Store price books --560 dealers--> Cart
+SAP pricing --live price--> Pricing extension
+Pricing extension --40 dealers--> Cart
+Cart --order with price--> SAP order
+```
 
 The numbers are invented to show the method. The point is that the split follows how prices are made in SAP, not what the store can technically do.
 

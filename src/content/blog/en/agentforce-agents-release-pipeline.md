@@ -46,18 +46,34 @@ One detail matters now. The [Metadata API reference](https://developer.salesforc
 
 The [June 2026 post on the Agentic Development Lifecycle](https://developer.salesforce.com/blogs/2026/06/master-the-agentic-development-lifecycle-for-agentforce) describes the pro-code path. In a client pipeline:
 
-1. **Pull request.** The partner commits the changed `.agent` file and any changed Flows or Apex on a feature branch; the reviewer reads the Agent Script diff like code.
-2. **Validate.** `sf agent validate authoring-bundle` checks that the Agent Script compiles. Salesforce says validation "is required before the agent can be published", so it belongs in the pipeline as a gate.
-3. **Scoped deploy.** Flows first, then the authoring bundle, each named with `--metadata`. The post warns that a bare `sf project deploy start` ships everything that changed, agent metadata included.
-4. **Publish.** `sf agent publish authoring-bundle` compiles the Agent Script and creates a new agent, or a new version of an existing one, with its Bot, BotVersion and GenAi metadata, according to the [CLI reference](https://developer.salesforce.com/docs/platform/salesforce-cli-reference/guide/cli_reference_agent_publish_authoring-bundle.html). The ADLC post says you can publish now and activate later, so as I read it the new version starts inactive.
-5. **Test.** The suite runs against the published version in the sandbox; gates and pass rates are covered in [testing Agentforce agents before go-live](../testing-agentforce-agents-before-go-live/).
-6. **Activate.** `sf agent activate` with `--api-name` and `--version` turns the version on. Activation "makes it immediately available to your users", says the [activate reference](https://developer.salesforce.com/docs/platform/salesforce-cli-reference/guide/cli_reference_agent_activate.html).
+```schritte
+Pull request
+  The partner commits the changed `.agent` file and any changed Flows or Apex on a feature branch; the reviewer reads the Agent Script diff like code.
+Validate
+  `sf agent validate authoring-bundle` checks that the Agent Script compiles. Salesforce says validation "is required before the agent can be published", so it belongs in the pipeline as a gate.
+Scoped deploy
+  Flows first, then the authoring bundle, each named with `--metadata`. The post warns that a bare `sf project deploy start` ships everything that changed, agent metadata included.
+Publish
+  `sf agent publish authoring-bundle` creates a new agent, or a new version of an existing one, with its Bot, BotVersion and GenAi metadata, according to the [CLI reference](https://developer.salesforce.com/docs/platform/salesforce-cli-reference/guide/cli_reference_agent_publish_authoring-bundle.html). The ADLC post says you can publish now and activate later, so as I read it the version starts inactive.
+Test
+  The suite runs against the published version in the sandbox; gates and pass rates are covered in [testing Agentforce agents before go-live](../testing-agentforce-agents-before-go-live/).
+Activate
+  `sf agent activate` with `--api-name` and `--version` turns the version on. Activation "makes it immediately available to your users", says the [activate reference](https://developer.salesforce.com/docs/platform/salesforce-cli-reference/guide/cli_reference_agent_activate.html).
+```
 
-One flag deserves attention. The same reference says that with `--json` and without `--version`, "the latest agent version is automatically activated". In an unattended script I always pass the version number, so the pipeline activates what the business owner approved, not whatever was published last.
+```hinweis achtung
+With `--json` and without `--version`, "the latest agent version is automatically activated", says the same reference. In an unattended script I always pass the version number, so the pipeline activates what the business owner approved, not whatever was published last.
+```
 
 The May post names two variants. In the first variant only the `AiAuthoringBundle` is in Git and each org publishes its own new version. Fully automated pipelines also deploy the generated `GenAiPlannerBundle` and skip the manual commit step. For a manufacturer with one production org I prefer the first: Git holds only what people write. The price is that version numbers differ between orgs, since planner version numbers "won't necessarily match" the bundle versions. Every release note should therefore say which production version belongs to which Git commit.
 
-The guide on moving agents adds three traps: the first deployment to a new org needs the whole agent definition, Data 360 dependencies and custom objects must be added to the manifest by hand, and the agent user must be assigned in the target org.
+```vertiefung For developers
+title: Three traps when moving an agent to a new org
+The guide on moving agents names them explicitly:
+- The first deployment to a new org needs the whole agent definition.
+- Data 360 dependencies and custom objects must be added to the manifest by hand.
+- The agent user must be assigned in the target org.
+```
 
 ## Why does a quick fix in the production Builder break the pipeline?
 

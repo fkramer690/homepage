@@ -74,7 +74,13 @@ Den Materialstamm zu kopieren ist der erste Fehler, den ich in einem Katalogentw
 | Verkaufsmodell | Salesforce | Einmalig, feste Laufzeit oder unbefristet |
 | Stückliste | ERP oder PLM | Nicht in Salesforce |
 
-Die fünfte Zeile braucht Sorgfalt. Hat das Attribut "Steuerung" in Salesforce den Wert "S2", muss derselbe Wert in SAP als Merkmalswert existieren, sonst scheitert der Auftrag bei der Übergabe. Ich würde pro Attribut eine Zuordnungstabelle führen und sie von der Schnittstelle prüfen lassen. Wer welches Objekt in der Org verantwortet, legt eine [Object Ownership Matrix](../object-ownership-matrix-salesforce/) fest. Wie die Preise dann aus dem Preisbuch kommen, steht in [Salesforce Pricing: Wie Revenue Cloud Preise berechnet](../revenue-cloud-preisprozeduren/).
+Die fünfte Zeile braucht Sorgfalt.
+
+```hinweis achtung
+Hat das Attribut "Steuerung" in Salesforce den Wert "S2", muss derselbe Wert in SAP als Merkmalswert existieren, sonst scheitert der Auftrag bei der Übergabe. Ich würde pro Attribut eine Zuordnungstabelle führen und sie von der Schnittstelle prüfen lassen.
+```
+
+Wer welches Objekt in der Org verantwortet, legt eine [Object Ownership Matrix](../object-ownership-matrix-salesforce/) fest. Wie die Preise dann aus dem Preisbuch kommen, steht in [Salesforce Pricing: Wie Revenue Cloud Preise berechnet](../revenue-cloud-preisprozeduren/).
 
 ## Brauchen Ersatzteile und Services eigene Kataloge?
 
@@ -98,7 +104,12 @@ Der Produktkatalog für Angebote umfasst dann rund 140 Datensätze plus die Bund
 
 ## Katalogdaten sind Konfiguration: Wer pflegt sie, und wie kommen sie in die Produktion?
 
-Klassifizierungen, Attribute und Bundles sind Datensätze, keine Metadaten. Der Developer Guide enthält eine [Object Deployment Reference](https://developer.salesforce.com/docs/atlas.en-us.revenue_lifecycle_management_dev_guide.meta/revenue_lifecycle_management_dev_guide/deployment_appendix_A.htm), die für Product Catalog Management Deployment-Reihenfolge, Objekttypen, Lookup-Felder und Anforderungen an Übersetzungen aufführt. Katalogänderungen werden also in einer Sandbox getestet und als Daten in genau dieser Reihenfolge durch dieselbe Pipeline gebracht wie Metadaten. Wie das mit SFDMU oder kommerziellen Werkzeugen geht, steht im DevOps-Kapitel [Daten und Konfiguration](../../masterclass/devops-release-management/daten-und-konfiguration/), die Besonderheiten von Revenue Cloud in [Revenue Cloud Deployments](../revenue-cloud-konfiguration-deployment/).
+Klassifizierungen, Attribute und Bundles sind Datensätze, keine Metadaten. Katalogänderungen werden also in einer Sandbox getestet und als Daten durch dieselbe Pipeline gebracht wie Metadaten. Wie das mit SFDMU oder kommerziellen Werkzeugen geht, steht im DevOps-Kapitel [Daten und Konfiguration](../../masterclass/devops-release-management/daten-und-konfiguration/), die Besonderheiten von Revenue Cloud in [Revenue Cloud Deployments](../revenue-cloud-konfiguration-deployment/).
+
+```vertiefung Für Entwickler
+titel: Was die Object Deployment Reference vorgibt
+Der Developer Guide enthält eine [Object Deployment Reference](https://developer.salesforce.com/docs/atlas.en-us.revenue_lifecycle_management_dev_guide.meta/revenue_lifecycle_management_dev_guide/deployment_appendix_A.htm), die für Product Catalog Management Deployment-Reihenfolge, Objekttypen, Lookup-Felder und Anforderungen an Übersetzungen aufführt. Die Katalogdaten wandern in genau dieser Reihenfolge durch die Pipeline.
+```
 
 Verantwortlich sollte das Produktmanagement des Herstellers sein, nicht der Implementierungspartner. Nach dem Go-live kommen jedes Quartal neue Maschinen, Optionen und Preisänderungen, und wer den Katalog pflegt, bestimmt, wie schnell der Vertrieb sie anbieten kann.
 

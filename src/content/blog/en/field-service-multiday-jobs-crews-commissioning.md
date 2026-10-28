@@ -66,11 +66,18 @@ For a commissioning team that means the crew has to be maintained with care. A v
 
 ## What does complex work add, and where does it stop?
 
-Complex work links appointments in a fixed order. The [object reference](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/api/sforce_api_objects_fsl__time_dependency__c.htm) lists four dependency types: Same Start, Start After Finish, Start After Finish And Same Day, and Immediately Follow. A separate flag says whether both appointments go to the same resource.
+Complex work links appointments in a fixed order.
+
+```vertiefung For admins
+title: Which dependency types does complex work offer?
+The [object reference](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/api/sforce_api_objects_fsl__time_dependency__c.htm) lists four dependency types: Same Start, Start After Finish, Start After Finish And Same Day, and Immediately Follow. A separate flag says whether both appointments go to the same resource.
+```
 
 According to [Salesforce Help on complex work](https://help.salesforce.com/s/articleView?id=pfs_complex_work_considerations.htm&language=en_US&type=0), ESO schedules a dependency group all or none, with up to five appointments per group. Larger groups are scheduled by hand. Without ESO, dependencies are only enforced pairwise, so chains of three or more can break. Capacity-based resources cannot be assigned to dependent appointments automatically.
 
+```hinweis achtung
 The limit that hits commissioning hardest: multiday scheduling and complex work cannot be combined. A site survey followed by a two-week commissioning cannot be linked with a dependency.
+```
 
 | Need | Feature | Limit that matters |
 |---|---|---|

@@ -66,9 +66,22 @@ The [headless checkout guide](https://developer.salesforce.com/docs/commerce/sal
 
 The important detail for an architect: the pricing, inventory, tax and checkout logic runs behind these calls. Commerce extensions are triggered by Connect API requests, so a pricing extension that asks SAP for the customer price runs for your React app in the same way as for the LWR store. How to build those extensions so they survive releases is covered in [Commerce extensions: custom code that survives updates](../commerce-extensions-custom-code/), and where customer prices should come from in [Customer prices in B2B Commerce](../b2b-commerce-customer-prices-price-books-erp/).
 
+```ablauf
+ext: Your frontend
+sf: Connect REST API, Pricing extension, Order summary
+erp: SAP customer price
+Your frontend --checkout call--> Connect REST API
+Connect REST API --triggers--> Pricing extension
+Pricing extension --asks for price--> SAP customer price
+SAP customer price ..price back..> Pricing extension
+Connect REST API --prepare, submit--> Order summary
+```
+
 Login is the part you build yourself. For registered buyers, the [headless login guide](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-comm-headless-login.html) uses the OAuth authorize and token endpoints, supports external identity providers and custom Apex-based authentication, and after login all storefront calls rely on the active session. For guests, Salesforce documents [cart and checkout with a JWT](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-comm-headless-guest-jwt.html): a backend for frontend, a unique visitor ID per guest, and as prerequisites an active Experience Cloud site, a launched web store and a configured domain. Headless therefore does not mean you get rid of the Experience Cloud site.
 
+```hinweis offen
 Which licence buyers in a headless store need is not stated in the guides I read. For a standard store, Trailhead names Customer Community Plus, see [B2B Commerce buyer licences](../b2b-commerce-buyer-licences/). I would get the headless case confirmed in writing before anyone calculates a business case.
+```
 
 ## When does headless pay off for a manufacturer?
 

@@ -54,7 +54,9 @@ Salesforce dokumentiert die Grenzen für [Buyer Groups und Käuferaccounts](http
 | Entitlement Policies pro Org | 105.000 | hart |
 | Accounts pro Käufer im Account Switcher | 200 | soft |
 
+```hinweis achtung
 Die Grenze von 2.000 hat die unangenehmste Wirkung. Salesforce schreibt, dass nur die ersten 2.000 Buyer Groups eines Produkts für die Suche indiziert werden und weitere Buyer Groups in der Suche keine Berechtigung liefern. Beim Datenimport wird die Grenze nicht geprüft. Der Import läuft also fehlerfrei, und manche Händler finden das Produkt einfach nicht mehr.
+```
 
 Zu den 200 Buyer Groups pro Policy warnt Salesforce, dass ein Überschreiten zu Skalierungsproblemen führen kann. Die Grenze im Account Switcher betrifft Händler mit vielen Niederlassungen: Ein Käufer, der für mehr als 200 Accounts bestellt, braucht einen eigenen Switcher, der Standard versagt bei 2.000.
 

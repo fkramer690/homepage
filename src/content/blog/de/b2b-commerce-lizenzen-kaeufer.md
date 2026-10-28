@@ -46,7 +46,9 @@ Die [Preisseite für B2B Commerce](https://www.salesforce.com/editions-pricing/c
 
 Beide bekommen Customer Community Plus. Laut [Salesforce-Hilfe zu externen Lizenzen](https://help.salesforce.com/s/articleView?language=en_US&id=sf.users_license_types_communities.htm&type=5) ist diese Lizenz für externe Nutzer gedacht, die Berichte, Dashboards und das normale Freigabemodell brauchen. Partner Community beschreibt die Hilfe für B2B-Sites mit Zugriff auf Vertriebsdaten, etwa Partner Relationship Management. Für den Store erwähnt Trailhead Partner Community nicht.
 
+```hinweis offen
 Haben Ihre Händler schon Partner-Community-Lizenzen für ein Partnerportal, würde ich Salesforce schriftlich fragen, ob diese Nutzer mit ihrer vorhandenen Lizenz im Store kaufen dürfen. Zwei Lizenzen für dieselbe Person beim selben Händler sind die teuerste Antwort.
+```
 
 Käufer und Buyer Manager teilen sich die Lizenz und unterscheiden sich im Berechtigungssatz. Ein Buyer Manager kann laut Trailhead:
 
@@ -71,7 +73,9 @@ Die Schwelle ist schnell gerechnet. Ein Käufer mit zwei Login-Tagen im Monat ko
 
 Ein typisches Szenario, als Annahme: ein Hersteller mit 250 Händlern, jeder mit einem Buyer Manager und zwei Käufern, also 750 Nutzer. 150 davon bestellen mehrmals pro Woche und bekommen Member-Lizenzen: 150 × 35 € = 5.250 € im Monat. Die übrigen 600 melden sich im Schnitt einmal im Monat an: 600 Logins × 15 € = 9.000 €. Zusammen sind das 14.250 € im Monat oder 171.000 € im Jahr zum Listenpreis. Mit Member-Lizenzen für alle 750 Nutzer wären es 26.250 € im Monat oder 315.000 € im Jahr.
 
-Ein Detail bestimmt die Zahl. Ein Login-Tag ist jeder Tag, an dem sich jemand anmeldet, auch nur für einen Lieferstatus. Wird der Shop zum Ort, an dem Händler Liefertermine nachsehen, steigen die Login-Tage, auch wenn die Bestellungen gleich bleiben.
+```hinweis achtung
+Ein Login-Tag ist jeder Tag, an dem sich jemand anmeldet, auch nur für einen Lieferstatus. Wird der Shop zum Ort, an dem Händler Liefertermine nachsehen, steigen die Login-Tage, auch wenn die Bestellungen gleich bleiben.
+```
 
 ## Welche Limits zählen für die Lizenzplanung?
 

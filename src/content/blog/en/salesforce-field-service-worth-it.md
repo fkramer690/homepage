@@ -79,7 +79,13 @@ On Unlimited Edition, Dispatcher and Technician cost $330 according to the footn
 
 An example with list prices: 40 technicians and 4 dispatchers on Enterprise Edition are 44 licences at $175, so $7,700 per month or $92,400 per year. Implementation, ERP integration and maintenance come on top.
 
-Two conditions from the small print matter for licence planning. Field Service requires at least one Service Cloud licence, and technicians need at least one dispatcher for scheduling to work. Dispatcher and Technician licences may also not be used for a contact centre or case management. Anyone in the back office who handles cases and plans jobs needs Field Service Plus. Which role needs which licence, subcontractors included, is in [chapter 1 of the Field Service masterclass](../../masterclass/field-service/field-service-business-case-licences/).
+Two conditions from the small print matter for licence planning. Field Service requires at least one Service Cloud licence, and technicians need at least one dispatcher for scheduling to work. The second condition is the one many miss:
+
+```hinweis achtung
+Dispatcher and Technician licences may not be used for a contact centre or case management. Anyone in the back office who handles cases and plans jobs needs Field Service Plus.
+```
+
+Which role needs which licence, subcontractors included, is in [chapter 1 of the Field Service masterclass](../../masterclass/field-service/field-service-business-case-licences/).
 
 ## How do I decide?
 
@@ -93,6 +99,10 @@ I start with four numbers from your own field service, before the product even c
 These numbers can usually be pulled from the ERP or the existing scheduling tool. If nobody knows them, that is a finding in itself: the basis for any business case is missing, whatever the product.
 
 Then comes the data question. Field Service only schedules as well as assets, locations, skills and availability are maintained. A technician whose skills are recorded nowhere will be scheduled wrongly by the engine. Which data that is exactly is covered in [part 2 of this series](../salesforce-field-service-master-data/).
+
+```praxis
+In my Field Service projects with maintenance, breakdown jobs and commissioning, automatic scheduling, and spare parts and installed base from the ERP, the stumbling blocks sat in three places: asset data quality, technician acceptance and the ERP interfaces.
+```
 
 ## Where should you start?
 

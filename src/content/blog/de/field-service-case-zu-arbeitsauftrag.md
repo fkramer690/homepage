@@ -80,7 +80,11 @@ Die Folge: Geplante und ungeplante Arbeit landen in derselben Dispositionsliste 
 
 ## Wo steckt die Lizenzfalle in dieser Kette?
 
-Die Datensatzkette entscheidet auch über den Lizenzmix. Laut [Field-Service-Preisseite](https://www.salesforce.com/de/products/field-service/pricing) dürfen Dispatcher- und Technician-Lizenzen nicht für Contact Center, Call Center oder Case Management genutzt werden. Wer Cases bearbeitet, braucht Service Cloud oder Field Service Plus.
+Die Datensatzkette entscheidet auch über den Lizenzmix.
+
+```hinweis achtung
+Laut [Field-Service-Preisseite](https://www.salesforce.com/de/products/field-service/pricing) dürfen Dispatcher- und Technician-Lizenzen nicht für Contact Center, Call Center oder Case Management genutzt werden. Wer Cases bearbeitet, braucht Service Cloud oder Field Service Plus.
+```
 
 In der Praxis trifft das das kleine Serviceteam, in dem der Disponent auch die Hotline annimmt. Diese Person braucht Field Service Plus für 230 € statt Dispatcher für 175 € (Preisliste Oktober 2026). Die vollständige Rollenmatrix steht in [Field Service Lizenzen: Welche Rolle braucht welche?](../field-service-lizenzen-rollen-dispatcher-techniker/).
 
@@ -88,12 +92,20 @@ In der Praxis trifft das das kleine Serviceteam, in dem der Disponent auch die H
 
 Ein typisches Szenario, als Annahme: Ein Kunde ruft an einem Dienstag um 7:40 Uhr an, weil eine Verpackungsmaschine mit einem Fehler stoppt.
 
-1. Die Hotline findet das Asset über die Seriennummer und legt einen Case an. Der Anspruch zeigt einen Servicevertrag mit 8 Stunden Reaktionszeit.
-2. Triage: Der Fehlercode deutet auf einen defekten Sensor, der Kunde hat keinen Ersatz. Fernhilfe löst es nicht.
-3. Die Hotline legt aus dem Case einen Arbeitsauftrag mit dem Work Type "Störungsbehebung Sensor" an. Der Work Type trägt 3 Stunden Dauer und den Skill "Sensorik Baureihe B". Eine Position für den Probelauf kommt dazu.
-4. Der Work Type legt den Servicetermin automatisch an. Die Hotline setzt das Fälligkeitsdatum so, dass die 8 Stunden Reaktionszeit eingehalten werden.
-5. Die Disposition startet die Kandidatensuche, verschiebt eine geplante Wartung von Dienstag auf Donnerstag und plant den Techniker ein, der den Sensor im Fahrzeuglager hat. Status Scheduled, dann Dispatched.
-6. Der Techniker sieht den Auftrag in der mobilen App, dokumentiert Tausch und Probelauf und schließt den Arbeitsauftrag. Der Case wird geschlossen, nachdem der Kunde bestätigt hat.
+```schritte
+Case anlegen | Hotline
+  Die Hotline findet das Asset über die Seriennummer und legt einen Case an. Der Anspruch zeigt einen Servicevertrag mit 8 Stunden Reaktionszeit.
+Triage | Hotline
+  Der Fehlercode deutet auf einen defekten Sensor, der Kunde hat keinen Ersatz. Fernhilfe löst es nicht.
+Arbeitsauftrag anlegen | Hotline
+  Die Hotline legt aus dem Case einen Arbeitsauftrag mit dem Work Type "Störungsbehebung Sensor" an. Der Work Type trägt 3 Stunden Dauer und den Skill "Sensorik Baureihe B". Eine Position für den Probelauf kommt dazu.
+Termin entsteht | Work Type und Hotline
+  Der Work Type legt den Servicetermin automatisch an. Die Hotline setzt das Fälligkeitsdatum so, dass die 8 Stunden Reaktionszeit eingehalten werden.
+Einplanen | Disposition
+  Die Disposition startet die Kandidatensuche, verschiebt eine geplante Wartung von Dienstag auf Donnerstag und plant den Techniker ein, der den Sensor im Fahrzeuglager hat. Status Scheduled, dann Dispatched.
+Einsatz und Abschluss | Techniker
+  Der Techniker sieht den Auftrag in der mobilen App, dokumentiert Tausch und Probelauf und schließt den Arbeitsauftrag. Der Case wird geschlossen, nachdem der Kunde bestätigt hat.
+```
 
 Bei den Schritten 3 und 4 zahlt sich das Datenmodell aus. Ohne Work Type muss die Hotline Dauer und Skills selbst kennen, und der Termin entsteht von Hand.
 

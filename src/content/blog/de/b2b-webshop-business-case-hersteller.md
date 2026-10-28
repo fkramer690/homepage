@@ -56,9 +56,13 @@ Ein typisches Szenario, als Annahme: Ein Hersteller von Förderanlagen verkauft 
 - 40.000 Ersatzteil-Bestellpositionen im Jahr, durchschnittlich 150 Euro pro Position, also 6 Millionen Euro netto.
 - Der Innendienst braucht 4 Minuten pro Position bei Vollkosten von 55 Euro pro Stunde: rund 3,67 Euro pro Position.
 - 2 Prozent der manuell erfassten Positionen enthalten einen Fehler, dessen Korrektur 60 Euro kostet: 1,20 Euro pro Position.
-- Die GMV-Gebühr ist mit 2 Prozent angenommen. Diese Zahl nennen Integratoren, Salesforce bestätigt sie nicht. Ersetzen Sie sie durch den Satz aus Ihrem Angebot.
+- Die GMV-Gebühr ist mit 2 Prozent angenommen.
 - Eine Mitgliedslizenz pro aktivem Händler zu 35 Euro im Monat.
 - Umsetzung einschließlich ERP-Anbindung 250.000 Euro, Betrieb 40.000 Euro im Jahr.
+
+```hinweis offen
+Den GMV-Satz von 2 Prozent nennen Integratoren, Salesforce bestätigt ihn nicht. Ersetzen Sie ihn durch den Satz aus Ihrem Angebot.
+```
 
 Bei einem digitalen Anteil, der über drei Jahre von 25 auf 70 Prozent steigt, sieht das so aus:
 
@@ -82,7 +86,16 @@ Deshalb rechne ich immer drei Jahre mit steigendem Anteil. Eine Einjahresbetrach
 
 ## Was ist mit der Forrester-Studie?
 
-Salesforce wirbt mit einer [Total-Economic-Impact-Studie von Forrester Consulting](https://tei.forrester.com/go/salesforce/b2bcommerce2024), beauftragt von Salesforce und veröffentlicht im April 2024. Sie nennt einen Dreijahres-ROI von 289 Prozent und eine Amortisation in unter sechs Monaten. Die Grundlage: Interviews mit vier Kundenvertretern, zusammengefasst zu einem fiktiven Hersteller mit 1 Milliarde Dollar Umsatz. Forrester selbst empfiehlt, mit eigenen Schätzungen zu rechnen.
+Salesforce wirbt mit einer [Total-Economic-Impact-Studie von Forrester Consulting](https://tei.forrester.com/go/salesforce/b2bcommerce2024), beauftragt von Salesforce und veröffentlicht im April 2024. Ihre Kernzahlen:
+
+```kennzahlen
+289 % | Dreijahres-ROI laut Studie
+unter 6 Monate | Amortisation laut Studie
+4 | befragte Kundenvertreter als Grundlage
+quelle: Forrester Consulting, Total-Economic-Impact-Studie zu Salesforce B2B Commerce im Auftrag von Salesforce, April 2024
+```
+
+Die vier Interviews sind zu einem fiktiven Hersteller mit 1 Milliarde Dollar Umsatz zusammengefasst. Forrester selbst empfiehlt, mit eigenen Schätzungen zu rechnen.
 
 Ich lese solche Studien als Liste von Hebeln: Welchen Nutzen haben diese Kunden gesehen, welche Kosten haben sie genannt. Die Zahlen lassen sich nicht auf einen Hersteller mit 250 Händlern und 6 Millionen Euro Ersatzteilumsatz übertragen. Ihre eigene Stoppuhr im Innendienst ist mehr wert als jedes zusammengesetzte Unternehmen.
 

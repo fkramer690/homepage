@@ -73,7 +73,11 @@ Salesforce führt die [Grenzen für Produkte und Kategorien](https://developer.s
 | Kategorietiefe | 5 Ebenen | soft |
 | Kategorien pro Katalog | 15.000 | soft |
 
-Zwei davon prägen das Design. Ein Katalog pro Store heißt: Ein zweites Sortiment mit eigener Struktur braucht einen zweiten Store, das bespreche ich in [ein B2B-Store oder mehrere](../b2b-store-laender-marken-haendler/). Und der Abstand zwischen 4 Mio. Produkten und 1 Mio. durchsuchbaren zählt für Hersteller mit großem Ersatzteilsortiment. Salesforce schreibt, dass nur bis zu 1 Mio. Produkte von der Suche unterstützt werden, und bittet, für mehr als eine Million SKUs den Account Representative anzusprechen. Mit einem Suchanbieter eines Drittherstellers wie Coveo, Algolia oder Bloomreach gilt die Grenze von 4 Mio. nicht.
+Zwei davon prägen das Design. Ein Katalog pro Store heißt: Ein zweites Sortiment mit eigener Struktur braucht einen zweiten Store, das bespreche ich in [ein B2B-Store oder mehrere](../b2b-store-laender-marken-haendler/). Und der Abstand zwischen 4 Mio. Produkten und 1 Mio. durchsuchbaren zählt für Hersteller mit großem Ersatzteilsortiment.
+
+```hinweis achtung
+Salesforce schreibt, dass nur bis zu 1 Mio. Produkte von der Suche unterstützt werden, und bittet, für mehr als eine Million SKUs den Account Representative anzusprechen. Mit einem Suchanbieter eines Drittherstellers wie Coveo, Algolia oder Bloomreach gilt die Grenze von 4 Mio. nicht.
+```
 
 Die Kategorietiefe von 5 ist für Ersatzteile selten ein Problem. ERP-Warengruppen sind oft tiefer, aber Käufer klicken sich nicht durch acht Ebenen. Ich würde sie auf drei oder vier Ebenen verflachen und den Rest Suche und Filtern überlassen.
 
@@ -89,7 +93,11 @@ Für viele Ersatzteile brauchen Sie gar keine Varianten. Ein Händler sucht meis
 
 9 Bilder pro Produkt reichen für die meisten Ersatzteile. Zeichnungen, Datenblätter und Zertifikate sind etwas anderes: Sie ändern sich mit Revisionen und liegen oft schon in einem DAM- oder PLM-System. Eine Kopie in Salesforce erzeugt eine zweite Version, die bald nicht mehr stimmt.
 
-Mit dem Release im Juli 2026 hat Salesforce die Product Media Extensibility angekündigt. Laut [Salesforce-Blog](https://www.salesforce.com/blog/b2b-commerce-innovations-july-26/) lassen sich damit externe DAM-Plattformen (Digital Asset Management), 3D-Modelle, technische Daten und gehostete CMS-Videos anbinden und über LWC-Wrapper auf Produktdetailseiten zeigen. Der Beitrag nennt keine Verfügbarkeit pro Funktion, deshalb würde ich das in einer Sandbox testen, bevor ich damit plane. Die Richtung stimmt: Medien bleiben im System, das Revisionen verwaltet, und der Shop zeigt sie an.
+Mit dem Release im Juli 2026 hat Salesforce die Product Media Extensibility angekündigt. Laut [Salesforce-Blog](https://www.salesforce.com/blog/b2b-commerce-innovations-july-26/) lassen sich damit externe DAM-Plattformen (Digital Asset Management), 3D-Modelle, technische Daten und gehostete CMS-Videos anbinden und über LWC-Wrapper auf Produktdetailseiten zeigen. Die Richtung stimmt: Medien bleiben im System, das Revisionen verwaltet, und der Shop zeigt sie an.
+
+```hinweis offen
+Der Beitrag nennt keine Verfügbarkeit pro Funktion. Ich würde die Product Media Extensibility deshalb in einer Sandbox testen, bevor ich damit plane.
+```
 
 ## Warum entscheidet die Datenqualität über die Suche?
 

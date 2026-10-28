@@ -53,7 +53,10 @@ The developer guide lists these options for B2B stores, available in Enterprise,
 
 For the gateway, the [gateway options page](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-payment-gateway-options.html) names three routes: a provider package from AppExchange, Salesforce Payments as the native Stripe integration, or a custom gateway. For AppExchange packages, Salesforce asks you to check that the package supports B2B stores. A custom server-side gateway requires an Apex adapter.
 
-One limit matters for anyone planning custom logic. The extension framework that covers pricing, inventory, tax, shipping and order creation does not cover payments: "Currently, payments can't be customized with an extension" ([Salesforce Developers, extensions](https://developer.salesforce.com/docs/commerce/extensions/guide/extensions.html)). Special payment rules therefore end up in the Apex adapter or a custom component, and both are code your team has to own through every release.
+```vertiefung For developers
+title: Where does custom payment logic go?
+The extension framework that covers pricing, inventory, tax, shipping and order creation does not cover payments: "Currently, payments can't be customized with an extension" ([Salesforce Developers, extensions](https://developer.salesforce.com/docs/commerce/extensions/guide/extensions.html)). Special payment rules therefore end up in the Apex adapter or a custom component, and both are code your team has to own through every release.
+```
 
 In the flow-based checkout, buyers choose between purchase order and card on the order summary page. When they choose purchase order, they are asked for the PO number and the billing address ([Salesforce Developers, purchase order or credit card flows](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-checkout-choose-po-or-cc.html)).
 
@@ -74,6 +77,17 @@ So I recommend the Purchase Order component when the store is for known dealers 
 Credit limits, open items and order blocks live in the ERP, in SAP for example in credit management. The store knows none of this. Without a check, a blocked dealer can place an order that the ERP will reject later, and inside sales has to call and explain.
 
 The place for the check is the PlaceOrder service, extension point `Commerce_Domain_Checkout_PlaceOrder`. According to the [list of available extensions](https://developer.salesforce.com/docs/commerce/extensions/guide/available-extensions.html), it runs cart validations when a buyer places an order, as part of the Place Order Action API. For your own logic you extend the base Apex class and override the `validate` method. Inside it, a live call asks the ERP two questions: is the account blocked, and does the order total fit the open credit? If not, the order is not created and the buyer sees a message.
+
+```ablauf
+sf: Checkout, Validate check, Order summary
+erp: Credit check, Sales order, Invoice
+Checkout --PO number--> Validate check
+Validate check --Live call--> Credit check
+Credit check ..Answer..> Validate check
+Validate check --> Order summary
+Order summary --Handover--> Sales order
+Sales order --> Invoice
+```
 
 Three decisions belong in the specification:
 

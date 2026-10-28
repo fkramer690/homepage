@@ -70,7 +70,9 @@ Den Katalog einmal aufzubereiten kostet so viel wie sechs Wochen Händlergesprä
 
 Die [Testdokumentation von Salesforce](https://developer.salesforce.com/docs/ai/agentforce/guide/testing-api-get-started.html) sagt, dass Testläufe „requests and credits“ verbrauchen. Angenommen sind 500 Testgespräche vor dem Go-live: 500 × (3 × 16 + 2 × 4) = 28.000 Credits, 140 €. Dazu vier Regressionsläufe mit je 200 Gesprächen pro Jahr: 44.800 Credits, 224 €.
 
+```hinweis achtung
 Die teure Falle ist Data 360 in der Sandbox: 120 Credits pro MB, ohne Staffel. Den vollen Katalog mit 2.000 MB dort aufzubereiten kostet 240.000 Credits, 1.200 €, fast so viel wie in Produktion. Ein repräsentativer Ausschnitt von 200 MB kostet 24.000 Credits, 120 €.
+```
 
 ### Das erste Jahr in Summe
 
@@ -104,7 +106,14 @@ Für enge Händleranfragen würde ich deshalb mit Flex Credits planen. Der Preis
 
 ## Reichen die Credits Ihrer Edition?
 
-Die [Editionen Core, Advanced und Max](https://www.salesforce.com/news/stories/salesforce-simplifies-editions-2026/) enthalten 500.000, 1 Mio. und 2,75 Mio. Flex Credits. Die Preisseiten von Salesforce führen die Pools pro Org und Jahr („per org per year“, für Max wörtlich „2.75M Flex Credits per org per year“). Den Help Agent führt die Meldung zu den Editionen in Advanced und Max.
+Die Preisseiten von Salesforce führen die Flex-Credit-Pools der [Editionen Core, Advanced und Max](https://www.salesforce.com/news/stories/salesforce-simplifies-editions-2026/) pro Org und Jahr („per org per year“, für Max wörtlich „2.75M Flex Credits per org per year“). Den Help Agent führt die Meldung zu den Editionen in Advanced und Max.
+
+```kennzahlen
+500.000 | Flex Credits pro Org und Jahr in Core
+1 Mio. | Flex Credits pro Org und Jahr in Advanced
+2,75 Mio. | Flex Credits pro Org und Jahr in Max
+quelle: Salesforce, Meldung zu den Editionen 2026 und Preisseiten
+```
 
 Das Szenario braucht im ersten Jahr rund 3 Mio. Credits, mehr als selbst der Max-Pool, und dieser Pool deckt auch jeden anderen verbrauchsabhängigen Agenten in der Org. Zusätzliche Credits gibt es als PayGo oder Pre-Commit. Planen Sie den Hochlauf: Ein Händleragent erreicht selten im ersten Monat das volle Volumen, und Credits, die für ein Jahr gebucht, aber erst ab dem vierten Monat genutzt werden, verfallen zum Teil. Wie Sie das pro Aktion schätzen, beschreibe ich in [Flex Credits: Agentforce-Kosten pro Aktion](../flex-credits-agentforce-kosten-pro-aktion/), die Editionen selbst in [Core, Advanced und Max](../salesforce-editionen-core-advanced-max/). Ob Sie Credits kaufen, bei der Verlängerung die Edition wechseln oder gar nichts in Salesforce bauen, ist eine Frage für [Make-or-buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/).
 
@@ -116,11 +125,19 @@ Das Szenario braucht im ersten Jahr rund 3 Mio. Credits, mehr als selbst der Max
 
 ## Wie budgetieren Sie einen Serviceagenten für Händler?
 
-1. **Anfragen nach Typ zählen**, aus Cases und E-Mails der letzten drei Monate.
-2. **Aktionen und Prompts pro Gespräch festlegen**, für jeden Typ.
-3. **Das Dokumentenvolumen in MB messen**, nachdem veraltete Kataloge aussortiert sind.
-4. **Die Sandbox planen**, mit einem Dokumentausschnitt und einer festen Zahl an Testgesprächen.
-5. **Den Vertrag prüfen:** Pool der Edition, Ende der Bestellung und ob die Org schon mit Gesprächspreisen läuft.
-6. **Zwei Testwochen fahren**, das Digital Wallet auswerten, neu rechnen und Warnschwellen auf den Credit-Pool setzen.
+```schritte
+Anfragen nach Typ zählen
+  Aus Cases und E-Mails der letzten drei Monate.
+Aktionen und Prompts festlegen
+  Pro Gespräch, für jeden Anfragetyp.
+Dokumentenvolumen messen
+  In MB, nachdem veraltete Kataloge aussortiert sind.
+Sandbox planen
+  Mit einem Dokumentausschnitt und einer festen Zahl an Testgesprächen.
+Vertrag prüfen
+  Pool der Edition, Ende der Bestellung und ob die Org schon mit Gesprächspreisen läuft.
+Zwei Testwochen fahren
+  Das Digital Wallet auswerten, neu rechnen und Warnschwellen auf den Credit-Pool setzen.
+```
 
 Ein Serviceagent für Händler kostet pro Gespräch wenig, das Budgetrisiko liegt in Dokumenten, Sandboxes und einem zu großen Credit-Pool. Wenn Sie einen zweiten Blick auf Ihre Rechnung möchten, [schreiben Sie mir](#contact).

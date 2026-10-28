@@ -48,7 +48,9 @@ Die Regel zeigt auf zwei Felder am Asset. Das Nutzungsfeld enthält den Zähler,
 
 Pro Zählerart brauchen Sie also ein Zahlenfeld am Asset, das von außen gefüllt wird, und pro Regel ein Feld, das das System pflegt. Die Übersichtsseite nennt die Felder, beschreibt aber nicht jeden Schritt der Berechnung. Ich teste das deshalb in einer Sandbox mit ein paar echten Zählerständen, bevor der erste Plan live geht.
 
+```hinweis achtung
 Eine Falle ist die Kombination von Regeln. Laut Hilfeartikel zur [kriterienbasierten Wartung](https://help.salesforce.com/s/articleView?id=sf.fs_rfc_create_any_criteria.htm&language=en_US&type=5) erzeugen eine Kriterienregel und eine Kalenderregel ihre Arbeitsaufträge unabhängig voneinander, auch mit demselben vorgeschlagenen Datum. Wer neben die Stundenregel eine Kalenderregel „alle 12 Monate“ legt, bekommt womöglich zwei Arbeitsaufträge für denselben Kompressor in derselben Woche. „Was zuerst eintritt“ gehört in eine einzige Regel.
+```
 
 ## Wie verhalten sich kriterienbasierte Regeln?
 
@@ -78,11 +80,15 @@ Ein Wert pro Tag reicht. Ein Intervall von 2.000 Stunden braucht keine Minutenwe
 
 Die [Limits von Field Service](https://help.salesforce.com/s/articleView?id=service.fs_limits.htm&language=en_US&type=5), die nutzungsbasierte Pläne zuerst treffen:
 
-- **2.600 Arbeitsaufträge pro Lauf.** Ein Generierungslauf erzeugt pro Wartungsplan höchstens 2.600 Arbeitsaufträge und Positionen zusammen.
-- **Praktische Zahl an Assets.** Die Hilfe nennt 2.600 Assets pro Plan als praktische Grenze, weniger als 1.300 bei zwei Regeln pro Asset und weniger als 650 bei vier.
-- **Zählregeln.** Ein Plan mit einer Regel vom Typ Count ist auf 2.000 Wartungs-Assets begrenzt.
-- **Fünf Regeln.** Salesforce empfiehlt höchstens fünf Maintenance Work Rules pro Plan oder Asset.
-- **Horizont.** Der Generation Horizon beträgt höchstens 365 Tage, der Generation Timeframe höchstens 20 Jahre.
+```kennzahlen
+2.600 | Arbeitsaufträge und Positionen zusammen, höchstens pro Wartungsplan und Generierungslauf
+2.000 | Wartungs-Assets, höchstens in einem Plan mit einer Regel vom Typ Count
+5 | Maintenance Work Rules pro Plan oder Asset, höchstens (Empfehlung von Salesforce)
+365 Tage | Generation Horizon, höchstens
+quelle: Salesforce-Hilfe, Field Service Limits
+```
+
+Als praktische Grenze nennt die Hilfe 2.600 Assets pro Plan, weniger als 1.300 bei zwei Regeln pro Asset und weniger als 650 bei vier. Der Generation Timeframe beträgt höchstens 20 Jahre.
 
 In der Praxis teile ich Pläne nach Baureihe oder Serviceregion. So bleibt jeder Plan unter den Grenzen, und jeder hat einen Verantwortlichen.
 

@@ -50,18 +50,36 @@ According to [Salesforce Help](https://help.salesforce.com/apex/HTViewHelpDoc?id
 
 According to [Salesforce Help on actuals](https://help.salesforce.com/s/articleView?id=sf.mfg_sa_actuals_parent.htm&language=en_US&type=5), a daily run calculates the values, and for an activated sales agreement the calculation can also be triggered by hand. If you expect a list of customers behind on volume every morning, you get the state of the last run. For volumes committed over months, that is usually enough.
 
-One detail from the help has consequences for planning: every sales agreement takes over the mode when it is created. If the admin changes the default later, it only applies to new agreements. Start with one mode and switch after a year, and you have two kinds of agreements in the org. So I fix the mode before the first production sales agreement is created and write the decision into the decision log.
+One detail from the help has consequences for planning:
+
+```hinweis achtung
+Every sales agreement takes over the mode when it is created. If the admin changes the default later, it only applies to new agreements.
+```
+
+Start with one mode and switch after a year, and you have two kinds of agreements in the org. So I fix the mode before the first production sales agreement is created and write the decision into the decision log.
 
 When orders live in the ERP, there are two architectures:
 
 - **Replicate orders to Salesforce.** Orders arrive in Salesforce as order records and are linked to the sales agreement. Upside: sales and service see the orders themselves, not just totals. Downside: more data volume, and the integration or an automation has to link each order to the right agreement.
 - **Load totals through the API.** The ERP or the middleware calculates quantities per customer, product and period and loads only those values. Upside: lean, and the ERP stays the only place where orders are counted. Downside: anyone who wants to know which orders sit behind a number has to look in the ERP.
 
+```ablauf
+sf: Order records, Sales agreement
+erp: ERP orders
+ext: Middleware
+ERP orders --replication--> Order records
+Order records --linked--> Sales agreement
+ERP orders --> Middleware
+Middleware --totals via API--> Sales agreement
+```
+
 Which one fits depends on what else Salesforce needs to know about orders. The basic rule is the same as for any integration: one leading system per type of data. How I split that for customers, products, prices and orders is described under [integration with ERP, middleware and telephony](../../services/salesforce-integration/). Which data flows between SAP and Manufacturing Cloud overall is in [Manufacturing Cloud and SAP: which data flows where](../manufacturing-cloud-sap-integration-data-flows/).
 
 ## What I saw in a project
 
+```praxis
 At a global manufacturer I worked on a worldwide Manufacturing Cloud rollout. The main reason for the licence was sales agreements. Sales needed to see which customers had not yet taken their agreed volume, and to plan how the open volume could still be realised. Both orders and inventory levels came from the ERP.
+```
 
 Three things turned out to be harder than the feature suggests.
 

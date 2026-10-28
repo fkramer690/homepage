@@ -59,8 +59,17 @@ The 25 per call is the limit that can hurt: price books beyond it are left out o
 
 A price book entry holds one price for one product in one price book. SAP condition logic, in contrast, calculates the net price at order time from customer prices, discounts per material group, surcharges and validity dates. The store has two routes:
 
-- **Replicate:** a job calculates net prices in advance and loads them into price books. The store is fast and independent of the ERP; the prices are as old as the last load, and the pricing logic exists twice.
+- **Replicate:** a job calculates net prices in advance and loads them into price books.
 - **Ask live:** according to the [list of extensions](https://developer.salesforce.com/docs/commerce/extensions/guide/available-extensions.html), `Commerce_Domain_Pricing_Service` uses price books by default, and `Commerce_Domain_Pricing_CartCalculator` prices cart and checkout based on that service. Replace the service with Apex that calls SAP and the buyer sees the real net price. In return, SAP must answer as fast as a buyer is willing to wait on a product list.
+
+```pro-contra
+pro: Replicate
+- The store is fast
+- The store is independent of the ERP
+contra: The price you pay
+- Prices are as old as the last load
+- The pricing logic exists twice
+```
 
 With four dealer tiers and a stable price list, four price books and a nightly load are enough. With prices negotiated per customer I would call SAP live or split: price books for the bulk of dealers, a live call for key accounts. One detail from the extension list: if the store uses Faster Add-to-Cart, every product still needs an entry in a store price book.
 
@@ -78,9 +87,14 @@ My rule: Advanced Pricing pays off when sales already calculates quotes in Reven
 
 Dealers ask for a price on 200 pieces instead of 5, or for a project with a delivery date. Today that is an email with a spreadsheet. With Request for Quote, signed-in buyers send their cart as a quote request, and inside sales works on the quote in Sales Cloud or Agentforce Revenue Management. In its [June 2026 post](https://www.salesforce.com/blog/b2b-commerce-innovations-june-26/) Salesforce calls RFQ "already generally available". The same post introduces Quote to Cart and round-trip quoting: an approved quote comes back to the buyer as a cart, ready to order in the store.
 
+```vertiefung For developers
+title: Which Apex methods handle quotes in the store?
 For custom components there is the Apex class [ConnectApi.CommerceQuotes](https://developer.salesforce.com/docs/atlas.en-us.264.0.apexref.meta/apexref/apex_ConnectAPI_CommerceQuotes_static_methods.htm): getQuotes and getQuoteDetail from API 66.0, createQuoteFromProduct and updateQuote from API 67.0. With updateQuote the buyer renegotiates or declines an approved quote.
+```
 
+```hinweis offen
 On licensing, the sources read differently. Help names Advanced Pricing as a prerequisite for RFQ, while the Apex reference supports simple products in createQuoteFromProduct with a B2B Commerce licence alone. Get the answer for your products in writing.
+```
 
 Inside sales matters more than the technology. A buyer who waits three days for a quote from the store sends the next request by email again. Response time, ownership per queue and discount limits go on paper before go-live. I describe the whole loop in [Request for Quote in B2B Commerce](../../../blog/request-for-quote-b2b-commerce-cart-to-quote/).
 

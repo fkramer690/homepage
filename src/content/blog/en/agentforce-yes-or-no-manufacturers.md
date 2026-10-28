@@ -52,7 +52,20 @@ In manufacturing the answers usually sit in the ERP: order status, stock, prices
 
 ### 4. Does the cost model fit?
 
-Agentforce is billed per action. According to the [Flex Credits rate card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf), a standard or custom action costs 20 credits in production and 16 in a sandbox, a voice action 30. Flex Credits cost [$500 per 100,000](https://www.salesforce.com/news/press-releases/2025/05/15/agentforce-flexible-pricing-news/), so one action costs $0.10. Unused credits do not roll over past the order end date. Two items are still open. The rate for Headless Platform Interactions, the meter for agentic API and MCP calls, is listed as "TBA". And Data 360 charges 150 credits per MB for unstructured documents such as manuals and spare part catalogues. How to estimate this per action is the topic of [Flex Credits and Agentforce cost per action](../flex-credits-agentforce-cost-per-action/).
+Agentforce is billed per action. The rates are in the [Flex Credits rate card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf), and Flex Credits cost [$500 per 100,000](https://www.salesforce.com/news/press-releases/2025/05/15/agentforce-flexible-pricing-news/). A voice action costs 30 credits. Unused credits do not roll over past the order end date.
+
+```kennzahlen
+20 | Flex Credits per standard or custom action in production
+16 | Flex Credits per action in a sandbox
+$0.10 | per action at the list price of $500 per 100,000 credits
+source: Salesforce Flex Credits rate card (as of 31 August 2026) and Agentforce pricing announcement
+```
+
+```hinweis offen
+The rate for Headless Platform Interactions, the meter for agentic API and MCP calls, is still listed as "TBA" in the rate card.
+```
+
+Data 360 also charges 150 credits per MB for unstructured documents such as manuals and spare part catalogues. How to estimate this per action is the topic of [Flex Credits and Agentforce cost per action](../flex-credits-agentforce-cost-per-action/).
 
 ### 5. Which edition are you on?
 
@@ -86,11 +99,19 @@ These questions are part of my [make-or-buy and licence planning](../../services
 
 Gartner [expects](https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027) more than 40 percent of agentic AI projects to be cancelled by the end of 2027, citing rising costs, unclear business value and inadequate risk controls. These steps address all three:
 
-1. **Pick one process** that passes the five criteria and write down one target number, for example the share of dealer enquiries answered without a service rep.
-2. **Measure today's baseline**: volume, handling time, error rate.
-3. **Check your contract**: edition, included Flex Credits per org and year, how many of them other agents already use, and when the order ends.
-4. **Budget the full cost**: production actions, sandbox tests at 16 credits per action, prompts, Data 360 for documents and the integration work.
-5. **Put rules into logic** and leave only language and intent to the model.
-6. **Agree a go or no-go date** before the pilot starts, for example after eight weeks against the target number.
+```schritte
+Pick one process
+  One process that passes the five criteria, and one target number, for example the share of dealer enquiries answered without a service rep.
+Measure the baseline
+  Volume, handling time, error rate.
+Check your contract
+  Edition, included Flex Credits per org and year, how many of them other agents already use, and when the order ends.
+Budget the full cost
+  Production actions, sandbox tests at 16 credits per action, prompts, Data 360 for documents and the integration work.
+Put rules into logic
+  Leave only language and intent to the model.
+Agree a go or no-go date
+  Before the pilot starts, for example after eight weeks against the target number.
+```
 
 Start with Agentforce where volume, data and ERP access are in place, and use the time elsewhere to get them there. If you want a second opinion on which of your processes is ready, [send me a message](#contact).

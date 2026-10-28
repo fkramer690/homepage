@@ -36,7 +36,9 @@ The Salesforce Help page for the [Inventory Management subagent](https://help.sa
 
 For Summer '26, the [Manufacturing Cloud product page](https://www.salesforce.com/manufacturing/cloud/) promises to "automate distributor procurement to reduce manual effort and cost". The Manufacturing Cloud developer guide documents a [PurchaseOrder](https://developer.salesforce.com/docs/atlas.en-us.264.0.mfg_api_devguide.meta/mfg_api_devguide/sforce_api_objects_purchaseorder.htm) object with a usage type value `DistributorManagement`, and a [GoodsReceivedNote](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/sforce_api_objects_goodsreceivednote.htm) object that confirms the delivery of goods against a purchase order, both from API version 65.0. My reading is that this is the data model behind the product page sentence, but Salesforce does not connect the two explicitly, and I found no Help page that describes the distributor procurement feature.
 
+```hinweis offen
 Salesforce's own [manufacturing AI page](https://www.salesforce.com/manufacturing/artificial-intelligence/) adds that its prebuilt capabilities "may not reflect actual product details". So I would ask the partner to show the template in your sandbox, with your data, before anyone plans with it.
+```
 
 ## Which stock data lives in Salesforce?
 
@@ -86,6 +88,19 @@ Assume a manufacturer of compressed air components with SAP S/4HANA, 120 distrib
 Assume each distributor uploads stock for 300 fast-moving spare parts every Monday. With one min/max policy per part and distributor location, that is 36,000 policy records. Nobody maintains 36,000 records by hand, so the minimum should come from consumption history or from [account forecasting](../account-forecasting-sales-volume-planning/), and sales ops only maintains exceptions.
 
 On Monday night the periodic process finds 40 parts below minimum at one distributor and creates product requests. On Tuesday the distributor opens the portal, and the agent summarises the proposal, says the stock figures date from Monday, and asks whether quantities are still right. The distributor removes two items. The agent then calls the SAP simulation. Prices come back from SAP, not from the portal list. Three items have no confirmed date yet, and the agent says exactly that. The distributor confirms, the create call returns an SAP order number, and the agent reports it.
+
+```ablauf
+sf: Distributor stock, Product Request, Agent in portal
+erp: SAP simulation, SAP order
+ext: Credit management
+Distributor stock --below minimum--> Product Request
+Product Request --> Agent in portal
+Agent in portal --> SAP simulation
+SAP simulation ..price and date..> Agent in portal
+Agent in portal --after approval--> SAP order
+SAP order ..order number..> Agent in portal
+Agent in portal --on credit block--> Credit management
+```
 
 Now assume the same distributor is over its credit limit. The simulation returns a block, the create action stays hidden, and the agent hands the conversation to credit management with the proposal attached. It does not explain the credit situation itself; what a distributor is told about a block is a business decision that belongs in the API response.
 

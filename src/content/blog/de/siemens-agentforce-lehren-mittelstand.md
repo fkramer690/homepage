@@ -54,7 +54,9 @@ Der Lead-Fall hat die Eigenschaften, die ich bei einem ersten Agenten suche:
 
 Im Aufbau steckt eine zweite Lehre. Siemens setzt zwei schmale Agenten hintereinander ein statt eines Agenten, der alles macht. Jeder hat eine Aufgabe und eine Übergaberegel, also können Sie die Qualifizierungskriterien getrennt vom Ton der Ansprache testen. Wie ich solche Tests aufsetzen würde, steht in [Agentforce-Agenten testen und freigeben](../agentforce-agenten-testen-freigeben/).
 
+```hinweis achtung
 Was die Meldung weglässt, ist genauso wichtig. Das einzige Ergebnis ist der Anteil angesprochener Leads, 100 Prozent. Eine Konversionsrate, einen Pipeline-Wert oder eingesparte Vertriebsstunden nennt sie nicht. Jeden Lead anzusprechen ist eine Aktivitätskennzahl. Wenn Sie den Siemens-Fall Ihrer Geschäftsführung zeigen, sagen Sie das dazu, sonst erwartet jemand einen Umsatzeffekt, der nie veröffentlicht wurde.
+```
 
 Die anderen Industriereferenzen folgen demselben Muster. In der [Ankündigung von Agentforce for Manufacturing](https://www.salesforce.com/news/stories/agentforce-for-manufacturing-announcement/) vom August 2025 sagt Terri Eshleman von JPW Industries, die manuelle Auftragserfassung habe früher 16 bis 24 Stunden gedauert und dauere jetzt weniger als eine Stunde; die Bearbeitungszeit von Fällen sei trotz 15 Prozent mehr Arbeitslast um fast 40 Prozent gesunken. Der Chemiedistributor Brenntag [meldete im November 2024](https://corporate.brenntag.com/en/media/news/brenntag-implements-autonomous-ai-agents-on-its-salesforce-platform-as-first-customer-in-germany.html) Agenten für Auftrags- und Produktanfragen als Pilot für ausgewählte Kunden und Lieferpartner, ohne Zahlen. Die Referenzen mit Kennzahlen betreffen enge, häufige Prozesse in Vertrieb und Auftragsabwicklung. Die Geschichten zu Service und Engineering sind noch Ankündigungen.
 
@@ -82,10 +84,16 @@ Nehmen wir einen Maschinenbauer mit 1.100 Beschäftigten, SAP S/4HANA, Sales Clo
 
 Aus dem Szenario leite ich diese Reihenfolge ab:
 
-1. **Nur lesen, hohes Volumen, eine Person übernimmt.** Händleranfragen, Auftragsstatus, Liefertermine. Nehmen Sie den Prozess in Ihrem Haus mit den meisten gleichartigen Anfragen.
-2. **Aus dem ERP per API lesen**, weiterhin ohne Schreibrechte. Bestand, Preise und Kreditstatus kommen aus SAP oder proALPHA; der Agent erklärt, er rechnet nicht neu.
-3. **Antworten aus PLM und Seriennummern**, sobald das Datenprojekt vom ersten Tag geliefert hat. Hier liegt der Wert im Aftermarket, und hier ist die Datenarbeit am größten.
-4. **Schreibende Schritte ins ERP zuletzt**, mit Regeln in Logik, einer Freigabe durch einen Menschen für alles mit Folgen und einem vorab vereinbarten Testset.
+```schritte
+Nur lesen, hohes Volumen
+  Händleranfragen, Auftragsstatus, Liefertermine, und eine Person übernimmt. Nehmen Sie den Prozess in Ihrem Haus mit den meisten gleichartigen Anfragen.
+Aus dem ERP per API lesen
+  Weiterhin ohne Schreibrechte. Bestand, Preise und Kreditstatus kommen aus SAP oder proALPHA; der Agent erklärt, er rechnet nicht neu.
+Antworten aus PLM und Seriennummern
+  Sobald das Datenprojekt vom ersten Tag geliefert hat. Hier liegt der Wert im Aftermarket, und hier ist die Datenarbeit am größten.
+Schreibende Schritte ins ERP
+  Zuletzt, mit Regeln in Logik, einer Freigabe durch einen Menschen für alles mit Folgen und einem vorab vereinbarten Testset.
+```
 
 Bevor einer dieser Fälle live geht, vereinbaren Sie eine Ergebniskennzahl jenseits der Aktivität, etwa den Anteil der Händleranfragen, die ohne Antwort des Innendienstes abgeschlossen werden. Siemens hat eine Aktivitätszahl veröffentlicht; Ihre Geschäftsführung wird nach einem Ergebnis fragen. Die fünf Kriterien hinter dieser Reihenfolge stehen in [Agentforce für Hersteller: jetzt starten oder warten?](../agentforce-ja-oder-nein-hersteller/), das Gesamtbild dessen, was heute läuft, im Masterclass-Kapitel [KI-Agenten in der Fertigung](../../masterclass/ki-salesforce/ki-agenten-in-der-fertigung/).
 

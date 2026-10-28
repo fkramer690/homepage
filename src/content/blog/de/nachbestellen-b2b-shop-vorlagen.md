@@ -46,7 +46,11 @@ Deshalb schaue ich mir in einem B2B-Shop eines Herstellers die Wege zum Nachbest
 | Multi-Cart-Zusammenarbeit | Mehrere Nutzer füllen und geben einen Warenkorb frei | Für Januar 2027 angekündigt |
 | Reorder Portal | Nutzt eine kleine Seite, die auf frühere Bestellungen ausgerichtet ist | Verfügbar, Trailhead-Modul |
 
-**Alte Bestellung in den Warenkorb.** Zu den [Order-Summary-APIs](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-d2c-comm-order-summaries-apis.html) gehört Add Order to Cart. Die API vereinfacht laut Salesforce das Nachbestellen, indem sie alle Positionen einer Order Summary direkt in den aktuellen Warenkorb legt. Gibt es keinen aktiven Warenkorb, legt sie einen an. Wie Positionen behandelt werden, die nicht mehr bestellbar sind, steht nicht in der Dokumentation. Eine ersetzte Teilenummer sollten Sie also in der Sandbox testen, nicht voraussetzen.
+**Alte Bestellung in den Warenkorb.** Zu den [Order-Summary-APIs](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-d2c-comm-order-summaries-apis.html) gehört Add Order to Cart. Die API vereinfacht laut Salesforce das Nachbestellen, indem sie alle Positionen einer Order Summary direkt in den aktuellen Warenkorb legt. Gibt es keinen aktiven Warenkorb, legt sie einen an.
+
+```hinweis achtung
+Wie Positionen behandelt werden, die nicht mehr bestellbar sind, steht nicht in der Dokumentation. Eine ersetzte Teilenummer sollten Sie also in der Sandbox testen, nicht voraussetzen.
+```
 
 Eine Folge für Hersteller: Die API arbeitet mit Order Summaries in Salesforce. Eine Telefonbestellung, die nur in SAP existiert, ist keine Order Summary, also kann der Händler sie nicht aus der Shop-Historie nachbestellen. Erwarten Händler, alle ihre Aufträge zu sehen, wird daraus eine Integrationsentscheidung, die ins Masterclass-Kapitel [ERP-Anbindung](../../masterclass/b2b-commerce/erp-integration-bestand-auftraege/) gehört.
 
@@ -56,11 +60,15 @@ Eine Folge für Hersteller: Die API arbeitet mit Order Summaries in Salesforce. 
 
 ## Wie groß darf ein Warenkorb werden?
 
-Die [Warenkorblimits](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-cart-limits.html) setzen den Rahmen für Importe und Vorlagen:
+Die [Warenkorblimits](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-cart-limits.html) setzen den Rahmen für Importe und Vorlagen. Die Zahl der Warenkörbe pro Nutzer ist ein Soft Limit, das der Salesforce-Support erhöhen kann.
 
-- **Positionen pro Warenkorb:** Die meisten Shops begrenzen den Warenkorb auf 500 Positionen pro Bestellung. Mit aktivierter Large-Cart-Unterstützung verarbeitet ein Shop bis zu 2.000.
-- **Warenkörbe pro Nutzer:** 100, ein aktiver und bis zu 99 weitere. Das ist ein Soft Limit, das der Salesforce-Support erhöhen kann.
-- **Gültigkeit eines laufenden Checkouts:** standardmäßig 7 Tage, höchstens 30 Tage.
+```kennzahlen
+500 | Positionen pro Warenkorb in den meisten Shops
+2.000 | Positionen mit aktivierter Large-Cart-Unterstützung
+100 | Warenkörbe pro Nutzer, ein aktiver und bis zu 99 weitere
+7 Tage | Gültigkeit eines laufenden Checkouts, höchstens 30 Tage
+quelle: Salesforce Developer Documentation, Cart Limits, Stand Oktober 2026
+```
 
 500 Positionen klingen nach viel, bis ein Händler die Jahresbestellung für eine neue Filiale importiert. Bevor jemand "Laden Sie Ihre ganze Liste hoch" verspricht, würde ich aus dem ERP holen, wie lang die längsten Bestellungen wirklich sind, und mit dieser Zahl über Large Carts entscheiden. Lange Warenkörbe bedeuten auch lange Preis- und Bestandsabfragen ans ERP im Checkout, und die haben eigene Grenzen bei der Antwortzeit.
 

@@ -44,7 +44,16 @@ Ich lese ApexHours als gut begründetes Praxis-Framework. Es nennt keine Teamgr�
 
 ## Warum werden Salesforce-Teams kleiner?
 
-McKinsey hat im Mai 2026 334 Führungskräfte aus Produkt und Engineering befragt und die Ergebnisse im August unter dem Titel [Beyond the copilot](https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/beyond-the-copilot-scaling-the-agentic-product-development-life-cycle) veröffentlicht. Unter den Befragten aus Organisationen mit dem größten Tempogewinn gaben 79 Prozent an, dass ihre Teams kleiner geworden sind; der Median sank von etwa zehn auf sieben Personen. Ein globales Technologieunternehmen ging von Produktteams mit 8 bis 10 Personen auf agentische Teams mit 4 bis 6 über und meldet etwa doppelte Kapazität und 50 bis 80 Prozent kürzere Entwicklungszyklen. McKinsey sieht zwei Rollenfamilien entstehen: „Definers“, die Produkt und Design verbinden, und „Builders“, die Entwicklung, Test und Betrieb verbinden.
+McKinsey hat im Mai 2026 334 Führungskräfte aus Produkt und Engineering befragt und die Ergebnisse im August unter dem Titel [Beyond the copilot](https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/beyond-the-copilot-scaling-the-agentic-product-development-life-cycle) veröffentlicht.
+
+```kennzahlen
+79 % | der Befragten aus Organisationen mit dem größten Tempogewinn melden kleinere Teams
+7 | Personen hat ein Team dort im Median, vorher etwa zehn
+50 bis 80 % | kürzere Entwicklungszyklen meldet ein globales Technologieunternehmen
+quelle: McKinsey, Beyond the copilot, August 2026
+```
+
+Dieses Technologieunternehmen ging von Produktteams mit 8 bis 10 Personen auf agentische Teams mit 4 bis 6 über und meldet etwa doppelte Kapazität. McKinsey sieht zwei Rollenfamilien entstehen: „Definers“, die Produkt und Design verbinden, und „Builders“, die Entwicklung, Test und Betrieb verbinden.
 
 Zwei Einschränkungen aus derselben Quelle. Die Zahlen sind Selbstauskünfte von Führungskräften, und 30 Prozent der Befragten sagen, die Produktivität ihrer Teams sei gesunken. McKinsey schreibt außerdem, dass sich das Tempo schneller verbessert als die Qualität. Der DORA-Bericht 2025 fand weiter einen [negativen Zusammenhang zwischen KI-Einsatz und Lieferstabilität](https://cloud.google.com/blog/products/ai-machine-learning/announcing-the-2025-dora-report), und DORA zählt [kleine Batches und Nutzerzentrierung](https://dora.dev/capabilities/) zu den sieben Fähigkeiten, die den Nutzen von KI verstärken. Kleine Pods mit täglichem Feedback sind eine direkte Antwort auf beide Punkte. Wie Sie prüfen, ob Ihr eigenes Programm schneller wird, beschreibe ich in [KI-Nutzen im Salesforce-Projekt messen](../ki-nutzen-salesforce-projekt-messen/).
 
@@ -89,11 +98,18 @@ Ob sieben Personen liefern, was vorher zwölf geliefert haben, bleibt offen, bis
 
 ## Wo sollten Sie anfangen?
 
-1. **Einen Stream wählen** mit klarem Prozess, einer entscheidungsbefugten Person im Fachbereich und wenigen ERP-Abhängigkeiten. Stories im Händlerportal passen oft gut.
-2. **Zuerst den Fachexperten benennen** und seine Zeit von der Führungskraft freigeben lassen, bevor der Partner umbaut.
-3. **Intents schreiben** für die ersten zehn Stories, mit prüfbaren Akzeptanzkriterien; genaue Spezifikationen bleiben für Schnittstellen und Regeln mit finanzieller Wirkung.
-4. **Leitplanken mit dem Partner vereinbaren**: benannter Verantwortlicher pro Artefakt, Agenten nur in Sandboxes und Scratch Orgs, dieselben Prüfungen für allen Code. Die Vertragsseite beschreibe ich in [Partner mit KI-Coding: Regeln für den Vertrag](../partner-ki-coding-regeln-vertrag/).
-5. **Durchlaufzeit und Nacharbeit messen**, drei Monate lang, und erst dann über die anderen Streams entscheiden.
+```schritte
+Einen Stream wählen
+  Mit klarem Prozess, einer entscheidungsbefugten Person im Fachbereich und wenigen ERP-Abhängigkeiten. Stories im Händlerportal passen oft gut.
+Fachexperten benennen
+  Zuerst, und seine Zeit von der Führungskraft freigeben lassen, bevor der Partner umbaut.
+Intents schreiben
+  Für die ersten zehn Stories, mit prüfbaren Akzeptanzkriterien; genaue Spezifikationen bleiben für Schnittstellen und Regeln mit finanzieller Wirkung.
+Leitplanken vereinbaren
+  Mit dem Partner: benannter Verantwortlicher pro Artefakt, Agenten nur in Sandboxes und Scratch Orgs, dieselben Prüfungen für allen Code. Die Vertragsseite beschreibe ich in [Partner mit KI-Coding: Regeln für den Vertrag](../partner-ki-coding-regeln-vertrag/).
+Messen und entscheiden | 3 Monate
+  Durchlaufzeit und Nacharbeit messen und erst dann über die anderen Streams entscheiden.
+```
 
 Streams, Teamaufstellungen und die Fachbereichszeit dahinter zu planen, ist der Kern meiner [Programmsteuerung für Salesforce-Programme](../../leistungen/projektsteuerung-nearshore/).
 

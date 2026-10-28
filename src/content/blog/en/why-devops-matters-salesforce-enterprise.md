@@ -75,7 +75,11 @@ In one programme I joined, a large enterprise ran Salesforce with several implem
 - The technical approaches of the teams had drifted far apart, so similar problems were solved in very different ways.
 - Every release was a risk, and errors often surfaced only when users ran into them.
 
-We changed this in a few steps. First, every change went through a pull request with a review, and for a while every single one crossed my desk. Second, we wrote down development and architecture standards and enforced them in those reviews. Third, the pipeline became the only way to move changes from one org to the next. Once the process was stable, I handed it over to an internal colleague who now owns it.
+We changed this in a few steps. First, every change went through a pull request with a review. Second, we wrote down development and architecture standards and enforced them in those reviews. Third, the pipeline became the only way to move changes from one org to the next.
+
+```praxis
+For a while, every single pull request crossed my desk. Once the process was stable, I handed it over to an internal colleague who now owns it.
+```
 
 The effect was clear. Results became predictable, and validation runs in the pipeline caught missing dependencies and errors before any user saw them. On top of that came the classic DevOps benefits: we could roll back, trace every change and stopped losing work.
 
@@ -107,10 +111,17 @@ For a steering committee this translates into a simple question: how confident a
 
 If your Salesforce programme still works with change sets or manual deployments, you don't need a big-bang migration. A pragmatic order:
 
-1. Put the current production metadata into a Git repository.
-2. Add validation deployments and tests for every pull request.
-3. Define the branch and environment strategy and make it binding for all partners.
-4. Switch production deployments to the pipeline.
-5. Add monitoring, backups and generated documentation.
+```schritte
+Repository
+  Put the current production metadata into a Git repository.
+Quality gates
+  Add validation deployments and tests for every pull request.
+Branch strategy
+  Define the branch and environment strategy and make it binding for all partners.
+Production
+  Switch production deployments to the pipeline.
+Operations
+  Add monitoring, backups and generated documentation.
+```
 
 DevOps is not an extra layer for later. In enterprise projects it is part of the architecture, and it should be in place before the second partner starts working on the org. If you want a second opinion on your release process, [send me a message](#contact).

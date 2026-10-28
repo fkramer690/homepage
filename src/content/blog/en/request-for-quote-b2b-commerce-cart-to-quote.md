@@ -40,12 +40,18 @@ Request for Quote (RFQ) keeps that conversation in the store. Salesforce describ
 
 The round trip has four steps:
 
-1. **Request.** The buyer fills a cart, or opens a product page, and requests a quote instead of checking out.
-2. **Negotiation.** The request becomes a quote. The sales desk adjusts prices or quantities and approves it in Sales Cloud or Revenue Management.
-3. **Response.** The buyer sees the quote on the My Quotes page and either accepts, asks for changes or declines.
-4. **Order.** With Quote to Cart, the approved quote comes back as a cart. The June 2026 post says: "once a quote is negotiated and approved, sellers can share it with customers as a cart". The buyer checks out with the negotiated prices, usually with a purchase order number, as described in [B2B checkout: purchase order, card or invoice?](../b2b-checkout-purchase-order-card-invoice/).
+```schritte
+Request | Buyer
+  The buyer fills a cart, or opens a product page, and requests a quote instead of checking out.
+Negotiation | Sales desk
+  The request becomes a quote. The sales desk adjusts prices or quantities and approves it in Sales Cloud or Revenue Management.
+Response | Buyer
+  The buyer sees the quote on the My Quotes page and either accepts, asks for changes or declines.
+Order | Buyer
+  With Quote to Cart, the approved quote comes back as a cart. The buyer checks out with the negotiated prices, usually with a purchase order number, as described in [B2B checkout: purchase order, card or invoice?](../b2b-checkout-purchase-order-card-invoice/).
+```
 
-Salesforce calls this round-trip quoting. The June post presents Quote to Cart and round-trip quoting as part of a release labelled "GA June 2026", but it gives the explicit status "generally available" only for RFQ. Before you plan step 4 into a rollout, check in your org which of these parts are active.
+On step 4, the June 2026 post says: "once a quote is negotiated and approved, sellers can share it with customers as a cart". Salesforce calls this round-trip quoting. The June post presents Quote to Cart and round-trip quoting as part of a release labelled "GA June 2026", but it gives the explicit status "generally available" only for RFQ. Before you plan step 4 into a rollout, check in your org which of these parts are active.
 
 ## What do the CommerceQuotes APIs do?
 
@@ -58,13 +64,16 @@ If you build your own components or a headless frontend, the Apex class [Connect
 | createQuoteFromProduct | 67.0 | Creates a quote from a product page |
 | updateQuote | 67.0 | Renegotiate or decline an approved quote |
 
-Three details from the reference matter for design:
+Two details from the reference matter for design:
 
 - **createQuoteFromProduct** creates a temporary secondary cart to process the request and deletes it afterwards, whether the call succeeds or fails. The buyer's real cart stays untouched.
-- **Licences per product type.** Simple products are supported with B2B Commerce or B2B Commerce and Revenue Cloud licences; static bundled products require B2B Commerce and Revenue Cloud. This reads less strict than the Help page, which lists Advanced Pricing as required for Request for Quote. Get the binding answer for your products from Salesforce in writing.
 - **updateQuote** only works on approved quotes. Renegotiate moves the quote back to Draft and saves the buyer's comments, Decline sets it to Denied.
 
 The statuses are the hook for your process. Every quote in Draft is work for the sales desk, every Approved quote waits for the buyer, every Denied quote is a reason worth reading.
+
+```hinweis offen
+**Licences per product type.** According to the Apex reference, simple products are supported with B2B Commerce or B2B Commerce and Revenue Cloud licences; static bundled products require B2B Commerce and Revenue Cloud. This reads less strict than the Help page, which lists Advanced Pricing as required for Request for Quote. Get the binding answer for your products from Salesforce in writing.
+```
 
 ## Who answers the quote, and how fast?
 

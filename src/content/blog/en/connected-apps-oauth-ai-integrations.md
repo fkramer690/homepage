@@ -32,11 +32,20 @@ The Salesloft Drift breach showed that a connected app can be an unmonitored way
 
 ## What happened in the Salesloft Drift breach?
 
-Drift is an AI chat agent from Salesloft that companies connected to Salesforce through a connected app. According to [Google Threat Intelligence](https://cloud.google.com/blog/topics/threat-intelligence/data-theft-salesforce-instances-via-salesloft-drift), a group tracked as UNC6395 used stolen OAuth access and refresh tokens of the Drift app from 8 August 2025 until at least 18 August. The attacker queried Cases, Accounts, Users and Opportunities in customer orgs, exported the results and deleted the query jobs; the logs survived.
+Drift is an AI chat agent from Salesloft that companies connected to Salesforce through a connected app. According to [Google Threat Intelligence](https://cloud.google.com/blog/topics/threat-intelligence/data-theft-salesforce-instances-via-salesloft-drift), a group tracked as UNC6395 used stolen OAuth access and refresh tokens of the Drift app in August 2025. The attacker queried Cases, Accounts, Users and Opportunities in customer orgs, exported the results and deleted the query jobs; the logs survived.
 
 GTIG assesses that the main goal was harvesting credentials: AWS access keys, passwords and Snowflake tokens found in the exported records. [The Hacker News](https://thehackernews.com/2025/08/salesloft-oauth-breach-via-drift-ai.html) reports that GTIG knew of more than 700 potentially affected organisations, while Salesforce spoke of a "small number of customers".
 
-On 20 August, according to GTIG, Salesloft and Salesforce revoked all active Drift tokens, and Salesforce removed the app from AppExchange. According to Salesforce's [security response](https://help.salesforce.com/s/articleView?id=005134951&language=en_US&type=1), it disabled all Salesloft integrations on 28 August and re-enabled them on 7 September, except Drift. GTIG's update of 28 August added that Drift Email tokens had been used against Google Workspace too, and that customers should treat every token stored in Drift as compromised.
+```zeitleiste
+2025-08-08 | Attackers start using stolen Drift tokens
+2025-08-18 | Access continues at least until this day, per GTIG
+2025-08-20 | Salesloft and Salesforce revoke all active Drift tokens
+2025-08-28 | Salesforce disables all Salesloft integrations
+2025-09-07 | Integrations re-enabled, except Drift
+source: Google Threat Intelligence and Salesforce security response
+```
+
+Salesforce also removed the app from AppExchange, according to its [security response](https://help.salesforce.com/s/articleView?id=005134951&language=en_US&type=1). GTIG's update of 28 August added that Drift Email tokens had been used against Google Workspace too, and that customers should treat every token stored in Drift as compromised.
 
 GTIG and Salesforce both state that the issue did not stem from a vulnerability in the core Salesforce platform. That is accurate and no comfort: Salesforce saw an authorised app calling the API with valid tokens, which at first glance looks like a normal sync.
 
@@ -63,7 +72,9 @@ Salesforce has tightened OAuth access in several steps:
 - **Refresh token rotation on new ECAs**, on by default and locked. Salesforce says it "materially reduces the blast radius of a stolen refresh token" ([Help article](https://help.salesforce.com/s/articleView?id=005390912&language=en_US&type=1)).
 - **Required controls for partner apps.** Apps used by more than two customer production orgs had to enable PKCE, refresh token rotation, a 30-day idle expiry and a refresh token IP allowlist by 11 May 2026, where each applies to the app's OAuth flow, according to the [partner FAQ](https://help.salesforce.com/s/articleView?id=005387798&language=en_US&type=1).
 
+```hinweis offen
 One line in that FAQ matters for buyers: admins cannot directly verify most of these controls. You depend on what the vendor tells you, so get it in writing.
+```
 
 ECAs also do not support the username-password flow. What that means for older ERP and middleware connections is covered in [the end of password integrations in 2027](../salesforce-password-integrations-end-2027/).
 

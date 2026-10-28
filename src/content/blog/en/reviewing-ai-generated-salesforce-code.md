@@ -41,11 +41,18 @@ Salesforce says it plainly in the documentation for its own coding agent, Agentf
 Salesforce lists most of these in its own checklists for agent output. Some are a job for the pipeline, the rest need a person who knows your org.
 
 1. **SOQL and DML inside loops.** The code works with one record and fails during a data load or a bulk update from the ERP. Salesforce's checklist asks whether queries in triggers "could hit the 100 SOQL limit in bulk operations". The PMD rule `OperationWithLimitsInLoop` flags queries, DML and other limited operations inside loops ([PMD performance rules](https://docs.pmd-code.org/latest/pmd_rules_apex_performance.html)). Pipeline.
-2. **Missing sharing and field-level security.** PMD flags classes with DML but no sharing declaration (`ApexSharingViolations`) and data access without a permission check (`ApexCRUDViolation`); a query `WITH USER_MODE` passes that rule ([PMD security rules](https://docs.pmd-code.org/latest/pmd_rules_apex_security.html)). Since API version 67.0, Apex runs in user mode by default, classes without a declaration run in the current user's sharing context and `WITH SECURITY_ENFORCED` no longer compiles ([Apex Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apex/versioned_behavior_changes.htm)). In my judgement, models trained mostly on older Apex will keep producing old patterns, and an agent may raise a class's API version on the side. Why that can make queries return fewer records is the topic of [API 67.0 and user mode](../api-67-apex-user-mode-fewer-records/). Pipeline for the declaration, person for the intent.
+2. **Missing sharing and field-level security.** PMD flags classes with DML but no sharing declaration and data access without a permission check. Since API version 67.0, Apex runs in user mode by default. In my judgement, models trained mostly on older Apex will keep producing old patterns, and an agent may raise a class's API version on the side. Why that can make queries return fewer records is the topic of [API 67.0 and user mode](../api-67-apex-user-mode-fewer-records/). Pipeline for the declaration, person for the intent.
 3. **Tests that prove nothing.** Salesforce requires 75 percent coverage for a deployment and says in the same guide "don't focus on the percentage" ([Apex testing best practices](https://developer.salesforce.com/docs/atlas.en-us.264.0.apexcode.meta/pages/apex_testing_best_practices.htm)). An agent told to reach 75 percent reaches it. Salesforce's checklist for agent output names `System.assertNotEquals(null, result)` as an example of an assertion that is not meaningful. Person.
 4. **Invented or wrong fields.** Salesforce asks reviewers whether the code references "real fields and objects from your org (not placeholder names)" ([Workflow Patterns](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-workflow-patterns.html)). A field that does not exist usually fails the validation deploy. The expensive case is a field that exists but is the wrong one, for example an old warranty date from a data migration next to the one your SAP interface maintains. Only someone who knows your data model sees that. Person.
 5. **Incomplete metadata.** New fields that are missing from the permission sets, or references to objects that are not part of the deployment. The validation deploy finds missing references; missing permissions show up when service reps report empty fields. Pipeline plus checklist.
 6. **Business logic that looks right.** Warranty eligibility, discount limits, delivery date rules for spare parts. The agent builds what the user story says, and user stories in manufacturing rarely list every exception. Person, ideally the domain lead.
+
+```vertiefung For developers
+title: Which PMD rules cover sharing, and what does API version 67.0 change?
+`ApexSharingViolations` flags classes with DML but no sharing declaration, `ApexCRUDViolation` flags data access without a permission check; a query `WITH USER_MODE` passes that rule ([PMD security rules](https://docs.pmd-code.org/latest/pmd_rules_apex_security.html)).
+
+Since API version 67.0, classes without a declaration run in the current user's sharing context and `WITH SECURITY_ENFORCED` no longer compiles ([Apex Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apex/versioned_behavior_changes.htm)).
+```
 
 ## What should the pipeline check automatically?
 
@@ -66,6 +73,10 @@ You do not need to read every line. Once the pipeline is green, I would go throu
 3. **Fields and objects.** Are these the fields the business actually maintains? Are new fields in the right permission sets?
 4. **Scope.** Does the diff touch only what the story needs? An agent that "also tidied up" three other classes or raised their API version adds risk nobody asked for.
 5. **Business rule.** Does the logic match the acceptance criteria, including the exceptions? For anything around warranty, prices or credit limits I would pull in the domain lead.
+
+```praxis
+In one programme I supported, every pull request went across my desk at first. Once the process ran smoothly, I handed it over to an internal colleague.
+```
 
 Ask the partner for evidence: as Anthropic's guidance puts it, "All tests pass" on its own tells you very little. I want the test run and the Code Analyzer result in the pull request, plus a note which parts an agent generated. That belongs in the contract, as described in [rules for partners who code with AI](../partners-using-ai-coding-contract-rules/), and it is part of my [partner governance](../../services/partner-governance/) work.
 

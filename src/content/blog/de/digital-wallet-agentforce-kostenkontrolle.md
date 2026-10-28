@@ -33,7 +33,17 @@ Agentforce-Kostenkontrolle über mehrere Werke beginnt mit einer Entscheidung: W
 
 ## Wem gehört der Flex-Credit-Pool, wenn Werke eine Org teilen?
 
-Die kaufmännische Einheit ist die Org. Die [EU-Preisseite für Sales Cloud](https://www.salesforce.com/eu/products/sales-pricing/) nennt "500K Flex Credits/org/year" für Core, 1 Million für Advanced und 2,75 Millionen für Max. Zusätzliche Credits kosten laut [Agentforce-Preisseite](https://www.salesforce.com/eu/agentforce/pricing/) 500 € pro 100.000, also einen halben Cent pro Credit. Jedes Werk, jede Tochter und jede Serviceregion in dieser Org bedient sich aus demselben Pool. Wie weit die Pools reichen und wann Max sich lohnt, steht in [den Editionen Core, Advanced und Max](../salesforce-editionen-core-advanced-max/).
+Die kaufmännische Einheit ist die Org. Die [EU-Preisseite für Sales Cloud](https://www.salesforce.com/eu/products/sales-pricing/) nennt die enthaltenen Pools als "500K Flex Credits/org/year" für Core, die [Agentforce-Preisseite](https://www.salesforce.com/eu/agentforce/pricing/) den Preis zusätzlicher Credits, einen halben Cent pro Credit:
+
+```kennzahlen
+500.000 | Flex Credits pro Org und Jahr in Core
+1 Mio. | Flex Credits pro Org und Jahr in Advanced
+2,75 Mio. | Flex Credits pro Org und Jahr in Max
+500 € | pro 100.000 zusätzliche Credits
+quelle: Salesforce EU-Preisseite Sales Cloud und Agentforce-Preisseite
+```
+
+Jedes Werk, jede Tochter und jede Serviceregion in dieser Org bedient sich aus demselben Pool. Wie weit die Pools reichen und wann Max sich lohnt, steht in [den Editionen Core, Advanced und Max](../salesforce-editionen-core-advanced-max/).
 
 Drei Vertragsbedingungen entscheiden, wo das Geld landet:
 
@@ -54,7 +64,9 @@ Für einen Fertigungskonzern ist das deshalb eine Organisationsfrage. Ich würde
 
 Die Grenzen zählen genauso. Die Salesforce-Hilfe verlangt eine Data-360-Lizenz, "not a Customer Data Platform (CDP) license", und nennt Digital Wallet in Sandboxes als nicht verfügbar. Sandbox-Verbrauch kostet trotzdem Credits; die Flex-Credits-Karte in Produktion hat einen Filter für den Umgebungstyp. Laut [Trailhead-Kurzüberblick](https://trailhead.salesforce.com/de/content/learn/modules/salesforce-digital-wallet-quick-look/get-to-know-salesforce-digital-wallet) werden die Daten mehrmals täglich aktualisiert, und "your monthly statement is the definitive source of truth". Die interne Rechnung folgt deshalb der Monatsabrechnung, keinem Dashboard-Screenshot.
 
+```hinweis achtung
 Was ich nicht gefunden habe: einen automatischen Stopp. Die Seiten, die ich geöffnet habe, beschreiben nur Warnungen. [Salesforce Ben schrieb im Mai 2025](https://www.salesforceben.com/understanding-common-agentforce-pain-points-and-how-salesforce-addresses-them/), es gebe keinen "Kill Switch", der Agenten bei einem Schwellenwert einfriert, und ich habe nichts Neueres gefunden, das dem widerspricht. Ein Werksbudget bleibt damit eine Zahl im Controlling. Wer eine harte Grenze braucht, deaktiviert den Agenten selbst.
+```
 
 ## Ein typisches Szenario: drei Regionen in einer Org
 

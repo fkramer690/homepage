@@ -79,7 +79,9 @@ Drei Gruppen fallen aus dieser Tabelle heraus:
 - **Händler**, die Anträge einreichen, arbeiten im Portal mit Partnerlizenzen, siehe [Kundenportal der Manufacturing Cloud](../manufacturing-cloud-kundenportal/).
 - **Führungskräfte, die nur Berichte lesen**, brauchen eventuell gar keine volle Lizenz, siehe [Braucht jeder eine volle Lizenz?](../salesforce-lizenzen-volle-lizenz/).
 
+```hinweis offen
 Einen Punkt würde ich immer schriftlich festhalten: welche Datensätze der Manufacturing Cloud, etwa Garantieanträge oder Asset-Garantien, ein Service-Cloud-Nutzer sehen darf. Die Hotline muss sie meist lesen, auch wenn sie sie nie bearbeitet.
+```
 
 ## Wie entscheide ich?
 
@@ -89,7 +91,16 @@ Eine kurze Regel, die für die meisten Hersteller passt:
 - **Service heißt Cases, Verträge und Antworten:** Service Cloud, bei Bedarf mit einem eigenen Feld für das Garantieende.
 - **Viele Techniker im Außendienst:** Field Service getrennt entscheiden, das hängt nicht an dieser Wahl.
 
-Die Alternative ist ein Eigenbau auf Service Cloud: eigene Objekte für Garantiebedingungen, Anträge und Kampagnen. Im Szenario oben beträgt der Aufpreis für die 15 Nutzer der Manufacturing Cloud gegenüber Service Cloud Core 14.400 US-Dollar im Jahr, über fünf Jahre 72.000 US-Dollar zum Listenpreis. Ein eigener Garantieprozess mit Händlerportal, Freigaben und Lieferantenregress ist in Bau und Pflege selten günstiger, und jede Änderung liegt dann bei Ihnen. Der Eigenbau gewinnt, wenn Ihr Garantieprozess einfach ist, etwa eine Bedingung pro Produkt und wenige Anträge.
+Die Alternative ist ein Eigenbau auf Service Cloud: eigene Objekte für Garantiebedingungen, Anträge und Kampagnen.
+
+```pro-contra
+pro: Eigenbau auf Service Cloud
+- Spart im Szenario oben für die 15 Nutzer 14.400 US-Dollar im Jahr, über fünf Jahre 72.000 US-Dollar zum Listenpreis
+- Gewinnt, wenn Ihr Garantieprozess einfach ist, etwa eine Bedingung pro Produkt und wenige Anträge
+contra: Was Sie dafür tragen
+- Ein eigener Garantieprozess mit Händlerportal, Freigaben und Lieferantenregress ist in Bau und Pflege selten günstiger
+- Jede Änderung liegt dann bei Ihnen
+```
 
 Das ist dieselbe Make-or-Buy-Frage wie bei der ganzen Branchen-Cloud, beschrieben in [Manufacturing Cloud: Wann lohnt sie sich?](../manufacturing-cloud-wann-lohnt-sie-sich/) und im [Kapitel Einordnung und Business Case](../../masterclass/manufacturing-cloud/einordnung-und-business-case/). Mein Vorgehen beschreibe ich unter [Make-or-Buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/).
 

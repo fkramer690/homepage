@@ -42,7 +42,11 @@ The [help page for the template](https://help.salesforce.com/s/articleView?id=in
 | Account forecasts | not named | not named in the body |
 | Program forecasts | not named | convert to opportunities |
 
-The help page lists three subagents: Sales Agreement Management, Sales Agreement Bulk Update and Program Forecasts to Opportunities. Licensing is stated as Enterprise, Performance or Unlimited Edition with the Agentforce for Manufacturing add-on, or Agentforce 1 Manufacturing Edition, and "each user" needs the add-on. The [Manufacturing Cloud product page](https://www.salesforce.com/manufacturing/cloud/) lists the "full suite of Agentforce for Industries" in the Max editions. How the two fit together for your contract is a question for the account team before the pilot, not after.
+The help page lists three subagents: Sales Agreement Management, Sales Agreement Bulk Update and Program Forecasts to Opportunities.
+
+```hinweis offen
+Licensing is stated as Enterprise, Performance or Unlimited Edition with the Agentforce for Manufacturing add-on, or Agentforce 1 Manufacturing Edition, and "each user" needs the add-on. The [Manufacturing Cloud product page](https://www.salesforce.com/manufacturing/cloud/) lists the "full suite of Agentforce for Industries" in the Max editions. How the two fit together for your contract is a question for the account team before the pilot, not after.
+```
 
 ## Why is "Agentforce Manufacturing" not always an agent?
 
@@ -70,12 +74,16 @@ The build plan comparison from the announcement is the biggest gap. I found no d
 
 When an account manager asks which agreements are behind, the agent compares planned and actual quantities on the sales agreement product schedules. At a manufacturer, the actual quantities live in the ERP. If they are missing or late, the agent reports a shortfall with full confidence.
 
-According to [Salesforce Help on importing actuals](https://help.salesforce.com/s/articleView?id=ind.mfg_sa_actuals_api_external.htm&language=en_US&type=5), external actuals arrive like this:
+According to [Salesforce Help on importing actuals](https://help.salesforce.com/s/articleView?id=ind.mfg_sa_actuals_api_external.htm&language=en_US&type=5), the admin first sets the actuals calculation to "Manually using API upload". An integration writes Actual Quantity and Actual Amount on Sales Agreement Product Schedule records through Bulk API or Data Loader, and the daily job runs in the org's time zone. Users who correct values by hand need the permission "Edit Actual Quantity of Sales Agreements Products".
 
-1. The admin sets the actuals calculation to "Manually using API upload".
-2. An integration writes Actual Quantity and Actual Amount on Sales Agreement Product Schedule records, through Bulk API or Data Loader.
-3. A daily job at 1:00 AM in the org's time zone refreshes the related agreements.
-4. Users who correct values by hand need the permission "Edit Actual Quantity of Sales Agreements Products".
+```ablauf
+erp: ERP orders
+sf: Product Schedules, Daily job, Sales Agreements, Sales Planning agent
+ERP orders --actual quantities--> Product Schedules
+Product Schedules --at 1:00 AM--> Daily job
+Daily job --refreshes--> Sales Agreements
+Sales Agreements --plan and actuals--> Sales Planning agent
+```
 
 Which calculation mode fits and why it is hard to change later is covered in [sales agreements: spot customers behind on volume](../sales-agreements-volume-shortfall-erp/). For the agent, three extra points matter. The feed has to cover every ERP that books orders for a customer, including the subsidiary on a second system. The mapping from sold-to party to agreement account needs an owner. And the agent's answer should show the date of the last load, so a gap from a missing night run is visible as such.
 

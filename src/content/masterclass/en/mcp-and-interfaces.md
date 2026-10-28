@@ -61,14 +61,28 @@ The maintainers' [end-of-life notice](https://github.com/forcedotcom/mcp/issues/
 
 The notice names the open skills library `forcedotcom/sf-skills` as the replacement. Salesforce also published the [Claude Code plugin](https://developer.salesforce.com/blogs/2026/08/headless-development-with-skills-and-a-claude-code-plugin) with about 40 of those skills and three MCP servers (salesforce-api-context, salesforce-metadata-experts, salesforce-lsp), and Hosted MCP for data access. The plugin announcement does not mention the DX MCP end of life. Treating all three as the successors is my reading, not a Salesforce statement.
 
-As the client, the question that matters most is which permissions the old server has at your partner. According to the [Salesforce documentation](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_mcp.htm), it reads existing encrypted auth files and only reaches orgs allowlisted at start-up. In the [README](https://github.com/salesforcecli/mcp), `ALLOW_ALL_ORGS` grants access to all authorised orgs, production included, and Salesforce advises using it with caution. `DEFAULT_TARGET_ORG` is resolved again on every tool call: if the developer switches their default org, the agent silently works in the other one. For agents I would only allow fixed sandbox aliases.
+As the client, the question that matters most is which permissions the old server has at your partner. For agents I would only allow fixed sandbox aliases, because two settings otherwise widen access without anyone noticing.
+
+```vertiefung For developers
+title: How the local DX MCP Server reaches orgs
+According to the [Salesforce documentation](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_mcp.htm), it reads existing encrypted auth files and only reaches orgs allowlisted at start-up.
+
+- In the [README](https://github.com/salesforcecli/mcp), `ALLOW_ALL_ORGS` grants access to all authorised orgs, production included, and Salesforce advises using it with caution.
+- `DEFAULT_TARGET_ORG` is resolved again on every tool call: if the developer switches their default org, the agent silently works in the other one.
+```
 
 My plan up to the deadline:
 
-1. **Inventory:** ask your partner to list which MCP configurations, machines and repositories contain the server.
-2. **Pin:** set version 0.30.15 explicitly instead of `latest`, so the transition stays predictable.
-3. **Map:** deploy and tests through the sf CLI and skills, metadata knowledge through the plugin, data access through Hosted MCP.
-4. **Run both in a sandbox**, then remove the old entry and update the AI rules file in the repository.
+```schritte
+Inventory
+  Ask your partner to list which MCP configurations, machines and repositories contain the server.
+Pin
+  Set version 0.30.15 explicitly instead of `latest`, so the transition stays predictable.
+Map
+  Deploy and tests through the sf CLI and skills, metadata knowledge through the plugin, data access through Hosted MCP.
+Run both in a sandbox
+  Then remove the old entry and update the AI rules file in the repository.
+```
 
 The details are in [Salesforce DX MCP Server end of life](../../../blog/salesforce-dx-mcp-server-end-of-life/). The other tools Salesforce offers for AI-assisted development are in [chapter 2](../salesforce-ai-development-tools/).
 

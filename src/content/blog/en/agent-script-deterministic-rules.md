@@ -111,11 +111,18 @@ Agent Script is also not always the right place for the rule itself. If the rule
 
 Before your partner starts building, I would go through these steps:
 
-1. **List every decision** the agent touches and mark the ones with a right answer.
-2. **Name the system that owns each rule**: ERP, Manufacturing Cloud, Business Rules Engine or Flow.
-3. **Define the gates**: which action is available under which condition, and which code sets the variable.
-4. **Define "data missing"** as its own result that goes to a person.
-5. **Test the rules like code**, with cases on both sides of every threshold, as described in [testing Agentforce agents before go-live](../testing-agentforce-agents-before-go-live/).
+```schritte
+List every decision
+  Collect every decision the agent touches and mark the ones with a right answer.
+Name the owning system
+  Record for each rule where it lives: ERP, Manufacturing Cloud, Business Rules Engine or Flow.
+Define the gates
+  Which action is available under which condition, and which code sets the variable?
+Define "data missing"
+  Its own result that goes to a person.
+Test the rules like code
+  With cases on both sides of every threshold, as described in [testing Agentforce agents before go-live](../testing-agentforce-agents-before-go-live/).
+```
 
 This is the part of an agent design I review on the client side as part of [Salesforce architecture](../../services/salesforce-architecture/), because it decides whether the agent can be audited later. Whether your process is ready for an agent at all is covered in [Agentforce for manufacturers: start now or wait](../agentforce-yes-or-no-manufacturers/).
 

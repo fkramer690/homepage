@@ -37,6 +37,10 @@ Field Service changes the working day of dispatchers and technicians. A dispatch
 
 A wave limits the risk. If skills or visiting hours are missing in the first region, it affects one territory and not the whole field service. The mistakes of the first wave become checkpoints for the next. There is also a practical reason: the master data from part 2 can be cleaned region by region. Whoever starts everything at once needs everything clean at once.
 
+```praxis
+In my Field Service projects with maintenance, breakdown jobs and commissioning, the stumbling blocks were in three places: asset data quality, technician acceptance and the ERP interfaces. All three are easier to get under control in one region than across the whole field service at once.
+```
+
 A wave should cover:
 
 - the cleaned master data of the region: assets, skills, visiting hours, absences
@@ -68,7 +72,11 @@ The good news: the technology can be configured. This is what I would discuss wi
 
 On top come the skills and absences from part 2 and the voice input I describe in [Field Service Mobile: guided flows and voice](../salesforce-field-service-mobile-guided-voice/). That is employee data too.
 
-In Germany, the works council has a right of co-determination under [section 87 of the Works Constitution Act](https://www.gesetze-im-internet.de/betrvg/__87.html) for technical systems that monitor employee behaviour or performance. How that applies in a given case is for legal to decide. From a project point of view, timing matters most. Whoever talks to the works council only once the app is fully configured risks weeks of delay and a configuration that has to be rebuilt.
+In Germany, the works council has a right of co-determination under [section 87 of the Works Constitution Act](https://www.gesetze-im-internet.de/betrvg/__87.html) for technical systems that monitor employee behaviour or performance. How that applies in a given case is for legal to decide.
+
+```hinweis achtung
+From a project point of view, timing matters most. Whoever talks to the works council only once the app is fully configured risks weeks of delay and a configuration that has to be rebuilt.
+```
 
 ## Why do regions and countries differ?
 

@@ -54,7 +54,11 @@ Salesforce sells Field Service today as Field Service and Operations, and its an
 
 Salesforce Help describes [Field Service Intelligence](https://help.salesforce.com/s/articleView?id=service.ifs_intro.htm&language=en_US&type=5) as including Data 360, CRM Analytics and Agentforce Service. Its [Service data kit](https://help.salesforce.com/s/articleView?id=sf.ifs_install_data_kit.htm&language=en_US&type=5) deploys more than 20 data streams, and Help warns not to remove the installed objects, fields or mappings, because the dashboards rely on them. Tableau Next itself needs Data Cloud configured first, according to the [Tableau Next setup guide](https://help.tableau.com/current/tableau-next/en-us/tableau_next_setup_guide_configure_data_cloud.htm).
 
-The licence question is not obvious from the [price list](https://www.salesforce.com/service/field-service-management/pricing/). Its comparison table marks Tableau Next as "Available for Purchase" for Dispatcher, Technician and Field Service Plus, and Agentforce 1 Field Service includes it together with 2.5 million Data Cloud credits per org and year. Operations Home and Field Service Intelligence also appear with "Available for Purchase" entries. Ask your account team in writing which line items your edition needs before you promise anyone a dashboard.
+The licence question is not obvious from the [price list](https://www.salesforce.com/service/field-service-management/pricing/). Its comparison table marks Tableau Next as "Available for Purchase" for Dispatcher, Technician and Field Service Plus, and Agentforce 1 Field Service includes it together with 2.5 million Data Cloud credits per org and year. Operations Home and Field Service Intelligence also appear with "Available for Purchase" entries.
+
+```hinweis offen
+Have your account team confirm which line items your edition needs for Operations Home, Field Service Intelligence and Tableau Next before you promise anyone a dashboard.
+```
 
 My view: the ready-made views are worth it once the definitions are agreed and Data 360 is in place anyway. For the first wave, standard reports on service appointments and work orders cover the business case numbers.
 
@@ -94,11 +98,18 @@ If you add Field Service agents later, measure them separately with their own KP
 
 ## Where should you start?
 
-1. **Pick the KPIs** from your business case, at most six.
-2. **Write the definitions**, especially for first-time fix.
-3. **Measure the baseline** for three months in the old system.
-4. **Start with standard reports** in the first wave and move to Operations Home or Field Service Intelligence once licences and definitions are clear.
-5. **Review monthly per region** and tie every outlier to a data or process fix.
+```schritte
+Pick the KPIs
+  Take them from your business case, at most six.
+Write the definitions
+  Especially for first-time fix.
+Measure the baseline | three months
+  In the old system, with the same definitions you will use after go-live.
+Start with standard reports
+  In the first wave; move to Operations Home or Field Service Intelligence once licences and definitions are clear.
+Review monthly per region
+  Tie every outlier to a data or process fix.
+```
 
 How the KPIs fit into rollout and operations is covered in the [Field Service masterclass chapter on AI agents, rollout and operations](../../masterclass/field-service/field-service-ai-agents-rollout/).
 

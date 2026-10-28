@@ -74,12 +74,18 @@ The rules I would set:
 
 Trailhead describes two paths. The Agentforce Data Library takes Knowledge articles, files or web search, supports only unstructured data, and "each library can only contain one data source". The advanced Data 360 setup combines structured and unstructured sources and "takes more time, but gives you more control". For manuals these facts decide:
 
-- The source of a library cannot be changed later, according to the [Trailhead unit on file-based libraries](https://trailhead.salesforce.com/content/learn/modules/agentforce-data-library-basics/build-a-file-based-data-library-for-an-agent).
-- Files are limited to 100 MB per PDF and 4 MB per text or HTML file, and the help article notes that PDFs with embedded content are not supported.
-- A Knowledge library can limit search to selected data categories. That filter applies to the whole library, not per question.
-- A Data 360 retriever can "set filters to target specific subsets of your data", but [only if the search index has defined filter fields](https://trailhead.salesforce.com/content/learn/modules/agentforce-specialist-certification-maintenance-summer-25/learn-whats-new-with-agentforce-and-data-cloud), with up to 10 conditions on text or number fields.
+```pro-contra
+pro: Data Library
+- Quicker to set up than the advanced setup
+- Fits a pilot on one product line with one current state of its manuals
+contra: What you give up
+- The source of a library cannot be changed later, according to the [Trailhead unit on file-based libraries](https://trailhead.salesforce.com/content/learn/modules/agentforce-data-library-basics/build-a-file-based-data-library-for-an-agent)
+- At most 100 MB per PDF and 4 MB per text or HTML file, and PDFs with embedded content are not supported according to the help article
+- A Knowledge library filters by data category only for the whole library, not per question
+- Only a Data 360 retriever can "set filters to target specific subsets of your data", and [only if the search index has defined filter fields](https://trailhead.salesforce.com/content/learn/modules/agentforce-specialist-certification-maintenance-summer-25/learn-whats-new-with-agentforce-and-data-cloud), with up to 10 conditions on text or number fields
+```
 
-My reading: a Data Library fits a pilot on one product line with one current state of its manuals. Once several variants share an index, variant key and serial range become filter fields in the advanced setup. Whether the filter value can come from the asset on the work order at runtime is not described on the pages I opened, so I would test it in a sandbox before committing. How Data 360 assembles context beyond documents is covered in [the Agent Context Engine explained](../salesforce-agent-context-engine-explained/).
+My reading: once several variants share an index, variant key and serial range become filter fields in the advanced setup. Whether the filter value can come from the asset on the work order at runtime is not described on the pages I opened, so I would test it in a sandbox before committing. How Data 360 assembles context beyond documents is covered in [the Agent Context Engine explained](../salesforce-agent-context-engine-explained/).
 
 ## What should stay out of the index?
 
@@ -101,12 +107,20 @@ Indexing 1,100 MB instead of 3,000 MB with the default parser costs 165,000 cred
 
 ## Where should you start?
 
-1. **Count documents** per product line: versions, languages, megabytes.
-2. **Check the asset to product links** in the installed base.
-3. **Define the document attributes** with the asset's keys.
-4. **Remove superseded versions** and name an owner per product line.
-5. **Choose the path**: Data Library for one product line, filter fields for several.
-6. **Test with real faults** before any technician sees the agent.
+```schritte
+Count documents
+  Per product line: versions, languages, megabytes.
+Check product links
+  Check the asset to product links in the installed base.
+Define document attributes
+  With the keys the asset already carries.
+Remove superseded versions
+  And name an owner per product line.
+Choose the path
+  Data Library for one product line, filter fields for several.
+Test with real faults
+  Before any technician sees the agent.
+```
 
 The document model outlives any agent version, so I treat it as part of [Salesforce architecture](../../services/salesforce-architecture/). The wider picture is in the masterclass chapter [AI agents in manufacturing](../../masterclass/ai-salesforce/ai-agents-in-manufacturing/).
 

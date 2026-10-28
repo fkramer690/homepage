@@ -68,11 +68,18 @@ Assume a machine builder with Sales Cloud, Service Cloud, Field Service, a deale
 
 The order of work:
 
-1. Retrieve all metadata into a repository the client owns.
-2. Run Code Analyzer, sfdx-hardis monitoring and a full Apex test run.
-3. Remove hard-coded personal data from test classes with a pattern search.
-4. Send each component to the model, together with the assessment questions and the tool findings for that component.
-5. Group the answers by object and run a second pass per object, because a trigger, two flows and a validation rule on Work Order only make sense together.
+```schritte
+Retrieve metadata
+  Retrieve all metadata into a repository the client owns.
+Run the tools
+  Run Code Analyzer, sfdx-hardis monitoring and a full Apex test run.
+Clean the data
+  Remove hard-coded personal data from test classes with a pattern search.
+Let the model read
+  Send each component to the model, together with the assessment questions and the tool findings for that component.
+Condense per object
+  Group the answers by object and run a second pass per object, because a trigger, two flows and a validation rule on Work Order only make sense together.
+```
 
 ### What the batch run costs
 
@@ -81,9 +88,13 @@ The [Claude Batch API](https://platform.claude.com/docs/en/build-with-claude/bat
 - Code and metadata: 1,400 classes at 6,000 tokens, 600 flows at 10,000 tokens of flow XML, 250 permission sets at 4,000 tokens = 15.4 million tokens.
 - Questions and tool findings: 12,000 tokens per request × 2,250 requests = 27 million tokens.
 - Output: 1,500 tokens per component = 3.4 million tokens.
-- **Sonnet 5.5:** 42.4 million × $1 + 3.4 million × $5 = **about $59**.
-- **Opus 5.5:** 42.4 million × $2 + 3.4 million × $10 = **about $119**.
-- **Second pass** for 40 objects at 100,000 tokens in and 5,000 out on Opus 5.5: **about $10**.
+
+```kennzahlen
+$59 | Sonnet 5.5, first pass: 42.4 million × $1 + 3.4 million × $5, rounded
+$119 | Opus 5.5, first pass: 42.4 million × $2 + 3.4 million × $10, rounded
+$10 | Second pass for 40 objects at 100,000 tokens in and 5,000 out on Opus 5.5
+source: Claude pricing page (batch prices, US list prices), token volumes as assumptions in the scenario
+```
 
 Prompt caching stacks with the batch discount, but in batches cache hits are best effort; Anthropic names hit rates from 30 to 98 percent. I calculate without caching and treat any saving as a bonus. Thinking tokens are [billed as output](https://code.claude.com/docs/en/costs) and cannot be turned off on the 5.5 models; if they triple the output, the Opus pass rises to about $187. The basics of this token math are in the [masterclass chapter on costs and tokens](../../masterclass/ai-salesforce/costs-and-tokens/).
 

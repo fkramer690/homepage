@@ -35,7 +35,16 @@ Abrechnung nach Aufwand, im Englischen Time and Materials (T&M), heißt: Sie bez
 
 Coding-Agenten brechen diese Stabilität auf. Lässt ein Entwickler Claude Code oder Agentforce Vibes die Apex-Klasse, die Testklasse und das Deployment-Manifest entwerfen, kann der Bauschritt deutlich schrumpfen. Bei Aufwandsabrechnung stellt der Partner dann weniger Tage in Rechnung und verdient weniger. Alle Anreize sprechen dafür, den Agenten still zu nutzen und abzurechnen wie bisher. Ich unterstelle hier keine böse Absicht. Ich sehe ein Geschäftsmodell, das Ehrlichkeit bestraft.
 
-Wie groß der Gewinn wirklich ist, bleibt offen, und das zählt für die Preisgestaltung. McKinseys [Umfrage unter 334 Produkt- und Engineering-Verantwortlichen](https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/beyond-the-copilot-scaling-the-agentic-product-development-life-cycle) (veröffentlicht im August 2026, durchgeführt im Mai) fand über den Entwicklungszyklus im Schnitt 11,8 Prozent Zeitersparnis, aber nur 6,2 Prozent weniger Nacharbeit, und 30 Prozent berichteten, dass die Produktivität ihrer Teams gesunken ist. METRs [randomisierte Studie](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/) maß erfahrene Entwickler Anfang 2025 mit KI als 19 Prozent langsamer; das [Update vom Februar 2026](https://metr.org/blog/2026-02-24-uplift-update/) deutet auf eine Beschleunigung hin, nennt die eigenen Daten aber „an unreliable signal“. Bevor Sie auf Basis einer Partneraussage nachverhandeln, messen Sie selbst, wie in [KI-Nutzen im Salesforce-Projekt messen](../ki-nutzen-salesforce-projekt-messen/) beschrieben.
+Wie groß der Gewinn wirklich ist, bleibt offen, und das zählt für die Preisgestaltung. McKinseys [Umfrage unter 334 Produkt- und Engineering-Verantwortlichen](https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/beyond-the-copilot-scaling-the-agentic-product-development-life-cycle) (veröffentlicht im August 2026, durchgeführt im Mai) fand über den Entwicklungszyklus diese Werte:
+
+```kennzahlen
+11,8 % | Zeitersparnis im Schnitt
+6,2 % | weniger Nacharbeit
+30 % | der Befragten sehen die Produktivität ihrer Teams gesunken
+quelle: McKinsey, Umfrage unter 334 Produkt- und Engineering-Verantwortlichen, August 2026
+```
+
+METRs [randomisierte Studie](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/) maß erfahrene Entwickler Anfang 2025 mit KI als 19 Prozent langsamer; das [Update vom Februar 2026](https://metr.org/blog/2026-02-24-uplift-update/) deutet auf eine Beschleunigung hin, nennt die eigenen Daten aber „an unreliable signal“. Bevor Sie auf Basis einer Partneraussage nachverhandeln, messen Sie selbst, wie in [KI-Nutzen im Salesforce-Projekt messen](../ki-nutzen-salesforce-projekt-messen/) beschrieben.
 
 Der Gewinn ist also bei manchen Aufgaben real und im Durchschnitt unsicher. Ein Vergütungsmodell muss regeln, wer diese Unsicherheit trägt.
 

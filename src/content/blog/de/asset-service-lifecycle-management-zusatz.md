@@ -57,7 +57,11 @@ Das Add-on kauft also Arbeit, die auf dem Datenmodell aufsetzt:
 - **Angebot vor dem Einsatz.** Eine Reparaturschätzung, die anhand von Entitlements und Garantien festlegt, was der Kunde zahlt.
 - **Kampagnen in großer Zahl.** Die Produktseite nennt Automatisierung und Durchführung von Servicekampagnen. Der Kern liefert die Objekte, ASLM das Werkzeug, um sie für Hunderte Assets zu füllen.
 
-Was mich in der [Vergleichstabelle der Preisliste](https://www.salesforce.com/service/field-service-management/pricing/) überrascht hat: Die Zeile "Asset Coverage View and Interactive Hierarchy" steht bei Dispatcher, Technician, Field Service Plus und sogar bei Agentforce 1 Field Service für 650 € auf "Available for Purchase". Auch die größte Edition enthält sie also nicht. Die Asset-Management-Seite schreibt dagegen, manche Editionen enthielten diese Funktionen bereits, ohne sie zu nennen. Lassen Sie beides im Angebot klären.
+Was mich in der [Vergleichstabelle der Preisliste](https://www.salesforce.com/service/field-service-management/pricing/) überrascht hat: Die Zeile "Asset Coverage View and Interactive Hierarchy" steht bei Dispatcher, Technician, Field Service Plus und sogar bei Agentforce 1 Field Service für 650 € auf "Available for Purchase". Auch die größte Edition enthält sie also nicht. Die Asset-Management-Seite schreibt dagegen, manche Editionen enthielten diese Funktionen bereits, ohne sie zu nennen.
+
+```hinweis offen
+Lassen Sie im Angebot klären, was für Ihre Edition gilt: zukaufbar laut Preisliste oder enthalten laut Asset-Management-Seite.
+```
 
 ## Welche ASLM-Funktionen braucht ein Hersteller mit SAP wirklich?
 
@@ -67,9 +71,16 @@ Zum Maschinenbauer passen meist die Funktionen, die das ERP auf der Serviceseite
 
 ## Was bringt Connected Assets, und wann sind 15.000 Dollar im Monat gerechtfertigt?
 
-Connected Assets ist das Telemetrie-Add-on. Die Asset-Management-Seite nennt vorgefertigte Konnektoren, Telemetrie in Echtzeit, einen Asset Health Score aus Alter, Nutzung, Telemetrie und Reparaturhistorie, 10.000 verbundene digitale Assets und ein "Actionable Telematics Framework". Die Ankündigung vom Juni 2024 beschreibt die Idee: Überschreitet der Health Score eine Schwelle, kann das System eine automatische Korrektur versuchen, etwa ein Firmware-Update, und bei Misserfolg einen Arbeitsauftrag anlegen.
+Connected Assets ist das Telemetrie-Add-on. Die Asset-Management-Seite nennt vorgefertigte Konnektoren, Telemetrie in Echtzeit, einen Asset Health Score aus Alter, Nutzung, Telemetrie und Reparaturhistorie und ein "Actionable Telematics Framework". Die Ankündigung vom Juni 2024 beschreibt die Idee: Überschreitet der Health Score eine Schwelle, kann das System eine automatische Korrektur versuchen, etwa ein Firmware-Update, und bei Misserfolg einen Arbeitsauftrag anlegen.
 
-Zum Listenpreis sind das 180.000 Dollar im Jahr pro Org. Aus meiner Sicht rechnet sich das nur, wenn eine große vernetzte Flotte Signale liefert, die Servicearbeit auslösen sollen, ohne dass jemand auf ein Dashboard schaut. Für die meisten Maschinenbauer ist der erste Schritt kleiner. Ein Betriebsstundenzähler, den ERP oder IoT-Plattform einmal am Tag schreibt, reicht für Wartungspläne nach Nutzung im Field-Service-Kern. Verdichtete Zustandssignale über Data 360 kosten einen Bruchteil des Add-ons, wie die Rechnung in [Predictive Maintenance: welche Datenbasis Sie brauchen](../predictive-maintenance-salesforce-datenbasis/) zeigt.
+```kennzahlen
+15.000 $ | Connected Assets pro Org und Monat
+180.000 $ | pro Org und Jahr zum Listenpreis
+10.000 | verbundene digitale Assets laut Asset-Management-Seite
+quelle: Salesforce Preisliste Field Service, Stand Oktober 2026, und Asset-Management-Seite
+```
+
+Aus meiner Sicht rechnet sich der Listenpreis nur, wenn eine große vernetzte Flotte Signale liefert, die Servicearbeit auslösen sollen, ohne dass jemand auf ein Dashboard schaut. Für die meisten Maschinenbauer ist der erste Schritt kleiner. Ein Betriebsstundenzähler, den ERP oder IoT-Plattform einmal am Tag schreibt, reicht für Wartungspläne nach Nutzung im Field-Service-Kern. Verdichtete Zustandssignale über Data 360 kosten einen Bruchteil des Add-ons, wie die Rechnung in [Predictive Maintenance: welche Datenbasis Sie brauchen](../predictive-maintenance-salesforce-datenbasis/) zeigt.
 
 ## Wer führt die Garantie: Field Service, ASLM oder Manufacturing Cloud?
 

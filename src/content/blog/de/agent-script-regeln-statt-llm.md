@@ -111,11 +111,18 @@ Agent Script ist auch nicht immer der richtige Ort für die Regel selbst. Hat di
 
 Bevor Ihr Partner mit dem Bau beginnt, würde ich diese Schritte durchgehen:
 
-1. **Alle Entscheidungen auflisten**, die der Agent berührt, und die mit einer richtigen Antwort markieren.
-2. **Für jede Regel das führende System benennen**: ERP, Manufacturing Cloud, Business Rules Engine oder Flow.
-3. **Die Gates festlegen**: welche Aktion unter welcher Bedingung verfügbar ist und welcher Code die Variable setzt.
-4. **„Daten fehlen“ als eigenes Ergebnis definieren**, das an einen Menschen geht.
-5. **Die Regeln wie Code testen**, mit Fällen auf beiden Seiten jeder Schwelle, wie in [Agentforce-Agenten testen und freigeben](../agentforce-agenten-testen-freigeben/) beschrieben.
+```schritte
+Entscheidungen auflisten
+  Alle Entscheidungen, die der Agent berührt, sammeln und die mit einer richtigen Antwort markieren.
+Führendes System benennen
+  Für jede Regel festhalten, wo sie lebt: ERP, Manufacturing Cloud, Business Rules Engine oder Flow.
+Gates festlegen
+  Welche Aktion ist unter welcher Bedingung verfügbar, und welcher Code setzt die Variable?
+„Daten fehlen“ definieren
+  Ein eigenes Ergebnis, das an einen Menschen geht.
+Regeln wie Code testen
+  Mit Fällen auf beiden Seiten jeder Schwelle, wie in [Agentforce-Agenten testen und freigeben](../agentforce-agenten-testen-freigeben/) beschrieben.
+```
 
 Diesen Teil eines Agentendesigns prüfe ich auf Kundenseite im Rahmen der [Salesforce-Architektur](../../leistungen/salesforce-architektur/), weil er entscheidet, ob sich der Agent später prüfen lässt. Ob Ihr Prozess überhaupt reif für einen Agenten ist, steht in [Agentforce für Hersteller: jetzt starten oder warten](../agentforce-ja-oder-nein-hersteller/).
 

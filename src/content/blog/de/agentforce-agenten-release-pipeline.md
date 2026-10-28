@@ -67,7 +67,13 @@ Mit `--json` und ohne `--version` aktiviert `sf agent activate` automatisch die 
 
 Der Mai-Beitrag nennt zwei Varianten. In der ersten Variante liegt nur das `AiAuthoringBundle` in Git, und jede Org publisht eine eigene neue Version. Voll automatisierte Pipelines deployen zusätzlich das erzeugte `GenAiPlannerBundle` und sparen sich den manuellen Commit-Schritt. Für einen Hersteller mit einer Produktiv-Org ziehe ich die erste vor: In Git liegt nur, was Menschen schreiben. Der Preis sind abweichende Versionsnummern zwischen den Orgs, denn die Nummern des Planners stimmen laut Salesforce nicht unbedingt mit denen des Bundles überein. Jede Release Note sollte deshalb festhalten, welche Produktivversion zu welchem Git-Commit gehört.
 
-Der Leitfaden zum Umzug nennt drei Fallen: Das erste Deployment in eine neue Org braucht die komplette Agentendefinition, Abhängigkeiten zu Data 360 und eigene Objekte müssen von Hand ins Manifest, und der Agent User muss in der Ziel-Org zugewiesen sein.
+```vertiefung Für Entwickler
+titel: Drei Fallen beim Umzug eines Agenten in eine neue Org
+Der Leitfaden zum Umzug von Agenten nennt sie ausdrücklich:
+- Das erste Deployment in eine neue Org braucht die komplette Agentendefinition.
+- Abhängigkeiten zu Data 360 und eigene Objekte müssen von Hand ins Manifest.
+- Der Agent User muss in der Ziel-Org zugewiesen sein.
+```
 
 ## Warum bricht ein Schnellfix im Builder der Produktion die Pipeline?
 

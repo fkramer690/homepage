@@ -56,7 +56,11 @@ On top comes optimization. According to [Salesforce Help](https://help.salesforc
 
 The engine only knows what is in the data. An experienced dispatcher knows more. They know that a customer has to shut down the machine for maintenance first and can only do that on certain days. They know that a spare part is booked in the warehouse but not yet in the van. They know which technician once had trouble with a customer, even if that is written down nowhere.
 
-In my experience it is the customer's trust in the technology that decides how much they leave to automation. A company that had scheduling in experienced hands for years does not hand it to software on day one. A model in which automation schedules up to Scheduled and the dispatcher releases with Dispatched takes that seriously. The dispatcher stays responsible, but starts from a finished proposal instead of an empty calendar.
+```praxis
+In my Field Service projects with automatic scheduling, it was the customer's trust in the technology that decided how much they left to automation. A company that had scheduling in experienced hands for years does not hand it to software on day one.
+```
+
+A model in which automation schedules up to Scheduled and the dispatcher releases with Dispatched takes that seriously. The dispatcher stays responsible, but starts from a finished proposal instead of an empty calendar.
 
 A fixed rhythm helps with the review. Trailhead suggests releasing the morning appointments first and checking the plan again before midday, before the afternoon appointments go out. That keeps the afternoon flexible if something goes wrong in the morning.
 
@@ -81,6 +85,17 @@ That way automation grows with trust, and not by a plan someone fixed before the
 
 ## Where should you start?
 
-Start with Customer First, the work rules for skills and visiting hours and the rule that the dispatcher releases every appointment. Have the dispatchers note for four weeks why they change a proposal. That list is the basis for every further step of automation and shows which data is still missing.
+```schritte
+Start with release
+  Customer First, the work rules for skills and visiting hours and the rule that the dispatcher releases every appointment.
+Note the changes | 4 weeks · dispatchers
+  The dispatchers write down why they change a proposal from the engine.
+Turn reasons into data
+  The list becomes operating hours, skills, absences, resource preferences or work rules.
+Automate dispatch
+  Once the dispatcher hardly changes the proposals, simple work types such as planned maintenance run without them.
+```
+
+The list from the second step is the basis for every further step of automation and shows which data is still missing.
 
 If you are about to introduce scheduling and want an independent view on how much automation fits your field service, [get in touch](#contact).

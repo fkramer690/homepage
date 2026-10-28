@@ -70,7 +70,11 @@ How to settle such interfaces and the question of which system leads is describe
 
 ## Where do the problems come from?
 
-In my projects the split itself rarely caused trouble. When there were problems, they came from data maintenance quality. This is what I would work on before go-live:
+```praxis
+In my Field Service projects, spare parts and the installed base came from the ERP. The split itself rarely caused trouble. When there were problems, they came from data maintenance quality.
+```
+
+This is what I would work on before go-live:
 
 - **Material numbers:** a part that exists twice in the ERP, or with an outdated number, also lands twice in Salesforce. The technician then books against the wrong one.
 - **Unbooked withdrawals:** if a technician takes a part from the warehouse without a posting, the van stock no longer matches. Field Service then shows a part that is not there.
@@ -81,6 +85,12 @@ None of these problems is solved by software. Each needs an owner who maintains 
 
 ## Where should you start?
 
-Check how accurate van stock in the ERP is today. A simple test: have three technicians count their van and compare the result with the ERP. If it differs a lot, that is the first thing to fix, before any interface. If it matches, decide which of the objects above you really need, and start with stock, required parts and consumption.
+Check how accurate van stock in the ERP is today.
+
+```hinweis tipp
+A simple test: have three technicians count their van and compare the result with the ERP. If it differs a lot, that is the first thing to fix, before any interface.
+```
+
+If it matches, decide which of the objects above you really need, and start with stock, required parts and consumption.
 
 The next part of the series covers maintenance contracts and committed response times. If you want an independent look at your spare parts processes before then, [get in touch](#contact).

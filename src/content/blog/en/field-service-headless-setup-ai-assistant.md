@@ -78,10 +78,16 @@ Because most of what the assistant creates are records. Territories, operating h
 
 That leads to a clear route:
 
-1. Run the headless setup in a sandbox.
-2. Retrieve flows and other metadata into a branch.
-3. Export the configuration records with an external ID per record into a data workspace in the repository, for example for SFDMU.
-4. Review both in a pull request and deploy through the pipeline: metadata first, then data.
+```schritte
+Set up in a sandbox
+  Run the headless setup in a sandbox, never directly in production.
+Retrieve metadata
+  Retrieve flows and other metadata into a branch.
+Export the data
+  Export the configuration records with an external ID per record into a data workspace in the repository, for example for SFDMU.
+Review and deploy
+  Review both in a pull request and deploy through the pipeline: metadata first, then data.
+```
 
 Approval in a chat is no review. The person who asked the assistant also approves its plan, just as with the Setup agent. I described why that matters in [Setup with Agentforce: allow admin AI in production?](../setup-with-agentforce-admin-changes/) The assistant is a fast way to build a configuration and a poor way to deploy it.
 

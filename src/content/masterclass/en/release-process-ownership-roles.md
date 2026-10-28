@@ -56,7 +56,11 @@ Programmes with several partners easily develop the same gap: each partner owns 
 - **Technical lead per partner.** Makes sure the team's pull requests arrive complete, small and checked, does the first review within the stream and supplies the input for the release notes. Has no approval rights for stages that affect other partners.
 - **Product owner in the business.** For example the head of service for Field Service or the head of sales for the dealer portal. Accepts stories in UAT and decides from a business point of view whether a feature goes live for users with the next release.
 
-The release role is the one programmes most often save on. My position, which I have set out in several articles: if you save licence costs with an open-source tool such as sfdx-hardis, the money is best invested in an internal release role. The same holds for commercial platforms such as Gearset, Copado or Flosum. Their advantage is that roles and approvals can be set up in one interface and the vendor provides support; a person on your side still has to own the approvals. In one programme I supported, every pull request went across my desk at first. Once the process was stable, I handed it over to an internal colleague. That is the path I recommend: build it with outside help, hand it over internally. More on this in [why DevOps decides Salesforce enterprise projects](../../../blog/why-devops-matters-salesforce-enterprise/).
+The release role is the one programmes most often save on. My position, which I have set out in several articles: if you save licence costs with an open-source tool such as sfdx-hardis, the money is best invested in an internal release role. The same holds for commercial platforms such as Gearset, Copado or Flosum. Their advantage is that roles and approvals can be set up in one interface and the vendor provides support; a person on your side still has to own the approvals. More on this in [why DevOps decides Salesforce enterprise projects](../../../blog/why-devops-matters-salesforce-enterprise/).
+
+```praxis
+In one programme I supported, every pull request went across my desk at first. Once the process was stable, I handed it over to an internal colleague. That is the path I recommend: build it with outside help, hand it over internally.
+```
 
 ## Who approves what?
 
@@ -86,7 +90,13 @@ The commercial platforms bring their own approvals. According to its [docs](http
 
 ### In the Salesforce org
 
-A pipeline is of little use if someone can deploy around it. According to the [Metadata API Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_metadata_perm.htm), deploying through the Metadata API needs "Modify Metadata Through Metadata API Functions" or "Modify All Data", and the first is switched on automatically as soon as someone has "Deploy Change Sets" or "Author Apex". So check in production, UAT and staging which partner users hold one of these permissions. Only the pipeline's technical user should deploy there, as [chapter 5](../building-the-pipeline/) describes. For temporary rights, say for an analysis in production, permission set assignments can get an expiration date according to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/platform-app-builder-certification-maintenance-winter-23/get-hands-on-with-permission-set-expiration), after which the rights lapse automatically.
+A pipeline is of little use if someone can deploy around it.
+
+```hinweis achtung
+According to the [Metadata API Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_metadata_perm.htm), deploying through the Metadata API needs "Modify Metadata Through Metadata API Functions" or "Modify All Data". The first is switched on automatically as soon as someone has "Deploy Change Sets" or "Author Apex".
+```
+
+So check in production, UAT and staging which partner users hold one of these permissions. Only the pipeline's technical user should deploy there, as [chapter 5](../building-the-pipeline/) describes. For temporary rights, say for an analysis in production, permission set assignments can get an expiration date according to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/platform-app-builder-certification-maintenance-winter-23/get-hands-on-with-permission-set-expiration), after which the rights lapse automatically.
 
 ## Which rules belong in every partner contract?
 

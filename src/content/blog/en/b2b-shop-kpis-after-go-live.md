@@ -74,12 +74,33 @@ A typical scenario, as an assumption: before go-live, inside sales handles 40,00
 
 ## What do the Data Cloud credits limit?
 
-Search analytics runs on Data Cloud, and Data Cloud work consumes credits. According to the pricing page, Growth includes 250K and Advanced 500K Data Cloud credits. According to [Trailhead on credit consumption](https://trailhead.salesforce.com/content/learn/modules/data-cloud-credit-consumption-quick-look/get-started-with-data-cloud-credit-consumption), ingestion, queries for reports and dashboards, segmentation and calculated insights each consume credits, calculated insights again on every refresh. Ingesting data from your Salesforce org through the CRM connector does not consume credits.
+Search analytics runs on Data Cloud, and Data Cloud work consumes credits from your edition's allowance.
+
+```kennzahlen
+250K | Data Cloud credits in Commerce Cloud B2B Growth
+500K | Data Cloud credits in Commerce Cloud B2B Advanced
+source: Salesforce pricing page for Commerce Cloud B2B
+```
+
+According to [Trailhead on credit consumption](https://trailhead.salesforce.com/content/learn/modules/data-cloud-credit-consumption-quick-look/get-started-with-data-cloud-credit-consumption), ingestion, queries for reports and dashboards, segmentation and calculated insights each consume credits, calculated insights again on every refresh. Ingesting data from your Salesforce org through the CRM connector does not consume credits.
 
 Salesforce does not publish how many credits search analytics uses. So check consumption in Digital Wallet after the first month, before someone builds ten more dashboards on Data Cloud. How credits relate to other AI costs is covered in the AI masterclass chapter on [costs and tokens](../../masterclass/ai-salesforce/costs-and-tokens/).
 
 ## Where should you start?
 
-Collect the baseline before go-live: order lines per channel and buyer group from the ERP, and two weeks of inside sales time per order line. Agree on the channel marker in the order interface, and fix the date of the first review three months after the first wave. The same discipline for agents is described in [Agentforce KPIs after go-live](../agentforce-kpis-after-go-live/), and the whole chapter is in the masterclass on [agents, migration and rollout](../../masterclass/b2b-commerce/agentforce-migration-rollout/).
+Measuring starts before go-live, not after it.
+
+```schritte
+Collect the baseline | 2 weeks · inside sales
+  Order lines per channel and buyer group from the ERP, plus inside sales time per order line.
+Agree on the channel marker
+  In the design of the order interface, so every line keeps its channel.
+First review | 3 months after the first wave
+  Fix the date before go-live and repeat the same measurements.
+Repeat per wave
+  Every further buyer group is measured three months after its go-live.
+```
+
+The same discipline for agents is described in [Agentforce KPIs after go-live](../agentforce-kpis-after-go-live/), and the whole chapter is in the masterclass on [agents, migration and rollout](../../masterclass/b2b-commerce/agentforce-migration-rollout/).
 
 A B2B store works when dealers order more lines through it and inside sales types fewer, and only a baseline from before go-live proves that. If you want to set up these KPIs for your store, [send me a message](#contact).

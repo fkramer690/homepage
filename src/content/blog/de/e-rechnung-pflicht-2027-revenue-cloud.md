@@ -30,13 +30,13 @@ Ab 1. Januar 2027 müssen Unternehmen mit mehr als 800.000 Euro Umsatz in 2026 i
 
 ## Was verlangt die E-Rechnungspflicht?
 
-Die Regeln stehen im Umsatzsteuergesetz und in Schreiben des Bundesfinanzministeriums. Die [IHK Köln](https://www.ihk.de/koeln/hauptnavigation/recht-steuern/recht/e-rechnungen-5943094) und die [IHK Stuttgart](https://www.ihk.de/stuttgart/fuer-unternehmen/recht-und-steuern/steuerrecht/steuermeldungen/e-rechnungen-5864496) fassen sie zusammen. Der Zeitplan:
+Die Regeln stehen im Umsatzsteuergesetz und in Schreiben des Bundesfinanzministeriums. Die [IHK Köln](https://www.ihk.de/koeln/hauptnavigation/recht-steuern/recht/e-rechnungen-5943094) und die [IHK Stuttgart](https://www.ihk.de/stuttgart/fuer-unternehmen/recht-und-steuern/steuerrecht/steuermeldungen/e-rechnungen-5864496) fassen sie zusammen. Der Zeitplan für inländische B2B-Rechnungen:
 
-| Ab | Was für inländische B2B-Rechnungen gilt |
-|---|---|
-| 01.01.2025 | Alle inländischen Unternehmen müssen E-Rechnungen empfangen können. Für den Versand sind Papier und, mit Zustimmung, PDF noch erlaubt. |
-| 01.01.2027 | Unternehmen mit mehr als 800.000 Euro Umsatz in 2026 müssen E-Rechnungen ausstellen. Kleinere dürfen weiter sonstige Rechnungen schicken. EDI-Rechnungen bleiben 2027 mit Zustimmung des Empfängers zulässig. |
-| 01.01.2028 | E-Rechnung für alle inländischen B2B-Rechnungen. |
+```zeitleiste
+2025-01-01 | Alle inländischen Unternehmen müssen E-Rechnungen empfangen können. Für den Versand sind Papier und, mit Zustimmung, PDF noch erlaubt.
+2027-01-01 | Unternehmen mit mehr als 800.000 Euro Umsatz in 2026 müssen E-Rechnungen ausstellen. Kleinere dürfen weiter sonstige Rechnungen schicken. EDI-Rechnungen bleiben 2027 mit Zustimmung des Empfängers zulässig.
+2028-01-01 | E-Rechnung für alle inländischen B2B-Rechnungen.
+```
 
 Eine E-Rechnung wird "in einem strukturierten elektronischen Format ausgestellt, übermittelt und empfangen", das der EU-Richtlinie 2014/55/EU und damit der europäischen Norm EN 16931 entspricht. Laut IHK Stuttgart lässt das Ministerium unter anderem XRechnung und ZUGFeRD ab Version 2.0.1 zu. Eine PDF-Rechnung per E-Mail gilt seit 2025 als sonstige Rechnung.
 
@@ -54,7 +54,9 @@ Revenue Cloud Billing erzeugt Rechnungen aus Abrechnungsplänen. Die Salesforce-
 
 Keine dieser Quellen erwähnt EN 16931, XRechnung, ZUGFeRD oder Peppol, und weitere Salesforce-Dokumentation zu einer nativen E-Rechnungsausgabe habe ich mit Stand Oktober 2026 nicht gefunden. Ein Community-Beitrag auf [UnofficialSF](https://unofficialsf.com/e-invoicing-with-revenue-cloud/) vom Oktober 2025 beschreibt die E-Rechnung mit Revenue Cloud als Erweiterung: Eine gebuchte Rechnung löst ein Platform Event aus, Middleware wie MuleSoft bildet die Daten auf ein Format wie UBL oder Factur-X/ZUGFeRD ab, und ein externer Anbieter stellt sie zu, zum Beispiel über Peppol. Das ist der Ansatz eines Autors und keine Produktdokumentation.
 
+```hinweis offen
 Behandeln Sie die E-Rechnung also als Lücke, die Sie schließen müssen, und bitten Sie Salesforce um eine schriftliche Aussage, was Billing für Deutschland unterstützt und ab wann.
+```
 
 ## Welche Wege gibt es?
 

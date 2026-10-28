@@ -49,7 +49,9 @@ Hardly any of this is created in Field Service. Assets come from the ERP, skills
 
 My starting point for the data check is always the same: the failed visits of the last three months, each with a cause. Missing parts, no access, wrong technician, technician absent. The most frequent cause shows which data needs to be clean first.
 
-From my own project experience: I have introduced Field Service for maintenance, breakdown jobs and commissioning, with automatic scheduling instead of purely manual dispatch. Whether the engine made good suggestions depended above all on the master data in this section.
+```praxis
+I have introduced Field Service for maintenance, breakdown jobs and commissioning, with automatic scheduling instead of purely manual dispatch. Whether the engine made good suggestions depended above all on the master data in this section.
+```
 
 ## How does the scheduling engine decide?
 
@@ -113,11 +115,18 @@ For a machine builder I see the dispatcher staying in three places: breakdowns w
 
 A typical scenario, as an assumption: a component maker with 40 technicians in three territories and four dispatchers. Field Service has been live since 2022 on the older engine. Two dispatchers plan maintenance in Excel and copy dates into the Classic Dispatch Console; two handle breakdowns directly in the Gantt. All numbers are assumptions to show the method.
 
-1. **Weeks 1 to 3, data.** The failed visits of one quarter show that most go back to missing skills and missing visiting hours. Skills come from the training system through an interface, visiting hours are entered by inside service. A report finds 8 percent of open appointments without a territory.
-2. **Weeks 4 to 6, policy.** Customer First with adjusted weights for maintenance, Emergency for breakdowns with overtime allowed. One scheduling recipe for late jobs is rebuilt as a Fix Schedule Overlaps flow.
-3. **Weeks 7 to 10, pilot.** One territory switches to ESO. The engine schedules, the dispatchers release and note every change with a reason. Two dispatchers get the Scheduling Console permission set for that territory.
-4. **Week 11, decision.** The changed proposals in the pilot territory are no higher than before, so the other territories follow. The maintenance planner keeps the Classic Dispatch Console for long-range views until the new console has them.
-5. **Alongside, on-call.** Weekend shifts per region are created from a pattern and confirmed once the works council has approved the quarter's rota.
+```schritte
+Data | Weeks 1 to 3
+  The failed visits of one quarter show that most go back to missing skills and missing visiting hours. Skills come from the training system through an interface, visiting hours are entered by inside service. A report finds 8 percent of open appointments without a territory.
+Policy | Weeks 4 to 6
+  Customer First with adjusted weights for maintenance, Emergency for breakdowns with overtime allowed. One scheduling recipe for late jobs is rebuilt as a Fix Schedule Overlaps flow.
+Pilot | Weeks 7 to 10
+  One territory switches to ESO. The engine schedules, the dispatchers release and note every change with a reason. Two dispatchers get the Scheduling Console permission set for that territory.
+Decision | Week 11
+  The changed proposals in the pilot territory are no higher than before, so the other territories follow. The maintenance planner keeps the Classic Dispatch Console for long-range views until the new console has them.
+On-call | Alongside
+  Weekend shifts per region are created from a pattern and confirmed once the works council has approved the quarter's rota.
+```
 
 The Excel list is gone after week 10. The dispatchers still decide, but from a proposal instead of an empty calendar.
 
@@ -129,6 +138,10 @@ Three decisions need a name next to them before a partner configures scheduling:
 - **Console.** Which dispatchers move to the Scheduling Console and which views they need every day.
 - **Policy owner.** One person in service management owns scheduling policies, work rules and weights, and approves every change.
 
-Policies, work rules, operating hours and territories are records, not metadata. A metadata deployment does not carry them, so they belong in the pipeline as described in the DevOps masterclass chapter on [data and configuration](../../devops-release-management/data-and-configuration/). Otherwise the tested sandbox and production drift apart after the first change. Where the scheduling design touches ERP, project tools and partners, I help with the [Salesforce architecture](../../../services/salesforce-architecture/). The next step for technicians is the app: [chapter 3](../field-service-mobile-app-documents/) covers offline data, forms and service reports, and the [overview](../) lists all chapters.
+```hinweis achtung
+Policies, work rules, operating hours and territories are records, not metadata. A metadata deployment does not carry them, so they belong in the pipeline as described in the DevOps masterclass chapter on [data and configuration](../../devops-release-management/data-and-configuration/). Otherwise the tested sandbox and production drift apart after the first change.
+```
+
+Where the scheduling design touches ERP, project tools and partners, I help with the [Salesforce architecture](../../../services/salesforce-architecture/). The next step for technicians is the app: [chapter 3](../field-service-mobile-app-documents/) covers offline data, forms and service reports, and the [overview](../) lists all chapters.
 
 Good scheduling in Field Service starts with clean data and a named policy owner, and the engine, the console and the agents build on that. If you want an independent view of your scheduling setup, [send me a message](#contact).

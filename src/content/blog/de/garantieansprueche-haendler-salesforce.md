@@ -53,6 +53,17 @@ Der Partner trägt pro Posten den geforderten Betrag ein und setzt den Anspruch 
 
 Die Gutschrift an den Händler würde ich wie bei den Boni in [Teil 5](../rebate-management-haendlerboni/) im ERP buchen. Salesforce prüft und gibt frei, eine Schnittstelle überträgt den genehmigten Betrag, und die Finanzabteilung bucht. Diese Schnittstelle gehört von Anfang an in die Planung, sonst sieht der Händler einen genehmigten Anspruch im Portal und wartet trotzdem auf sein Geld.
 
+```ablauf
+sf: Händlerportal, Garantieanspruch, Prüfung, Regressanspruch
+erp: Gutschrift
+ext: Lieferant
+Händlerportal --eingereicht--> Garantieanspruch
+Garantieanspruch --> Prüfung
+Prüfung --genehmigter Betrag--> Gutschrift
+Garantieanspruch --pro Teil--> Regressanspruch
+Regressanspruch --eingereicht--> Lieferant
+```
+
 ## Warum hängt alles an den Anlagendaten?
 
 Weil jede Prüfung eine Frage an die Anlage ist. Ist diese Seriennummer noch in der Garantie? Seit wann läuft sie, ab Kauf oder ab Installation? Liegt die Nutzung unter dem Grenzwert? Ist das defekte Teil gedeckt?
@@ -81,14 +92,20 @@ Beide Themen treffen sich an der Anlage. Dieselbe Anlage trägt die Garantie, di
 
 ## Wann lohnt sich die Garantieabwicklung in Salesforce?
 
-Ich würde sie empfehlen, wenn mehrere dieser Punkte zutreffen:
+Ich würde sie empfehlen, wenn mehrere der Punkte auf der Pro-Seite zutreffen:
 
-- **Ansprüche kommen von außen.** Händler und Servicepartner reichen regelmäßig Garantieansprüche ein, heute per E-Mail oder Formular.
-- **Die Bedingungen sind vielfältig.** Mehrere Produktfamilien, Teile mit eigenen Regeln, Kulanz für einzelne Anlagen.
-- **Regress lohnt sich.** Ein relevanter Teil der Garantiekosten geht auf zugekaufte Teile zurück.
-- **Die Anlagendaten sind da oder kommen.** Seriennummern und Startdaten liegen in Salesforce oder können per Schnittstelle kommen.
+```pro-contra
+pro: Salesforce lohnt sich, wenn
+- Händler und Servicepartner regelmäßig Ansprüche einreichen, heute per E-Mail oder Formular
+- die Bedingungen vielfältig sind: mehrere Produktfamilien, Teile mit eigenen Regeln, Kulanz für einzelne Anlagen
+- ein relevanter Teil der Garantiekosten auf zugekaufte Teile zurückgeht
+- Seriennummern und Startdaten in Salesforce liegen oder per Schnittstelle kommen können
+contra: Zurückhaltend wäre ich, wenn
+- es wenige Garantiefälle im Jahr gibt, die eine Qualitätsabteilung im ERP gut bearbeitet
+- die Anlagendaten fehlen und niemand sie beschaffen will
+```
 
-Zurückhaltend wäre ich bei wenigen Garantiefällen im Jahr, die eine Qualitätsabteilung im ERP gut bearbeitet, und wenn die Anlagendaten fehlen und niemand sie beschaffen will. Dann bringt das Datenmodell wenig. Ob sich die Manufacturing Cloud insgesamt lohnt, behandelt [Teil 1 der Serie](../manufacturing-cloud-wann-lohnt-sie-sich/).
+Im zweiten Fall bringt das Datenmodell wenig. Ob sich die Manufacturing Cloud insgesamt lohnt, behandelt [Teil 1 der Serie](../manufacturing-cloud-wann-lohnt-sie-sich/).
 
 ## Wo sollten Sie anfangen?
 

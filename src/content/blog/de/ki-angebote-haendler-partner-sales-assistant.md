@@ -32,9 +32,18 @@ Der AI Partner Sales Assistant (Summer '26) hilft Händlern in der Manufacturing
 
 Beide stehen auf der [Produktseite der Manufacturing Cloud](https://www.salesforce.com/manufacturing/cloud/). Unter Summer '26 verspricht Salesforce, mit dem AI Partner Sales Assistant den Vertrieb über Partner zu beschleunigen, weil er „finds products and builds quotes in seconds“. Unter Winter '27 soll der AI Sales Concierge Self-Service-Besuche in qualifizierte Pipeline verwandeln, mit derselben Formulierung: Er findet Produkte und baut Angebote in Sekunden. Winter '27 ist seit dem [12. Oktober 2026 allgemein verfügbar](https://www.salesforce.com/news/stories/winter-2027-product-release-announcement/).
 
-Die Release-Unterlagen ergänzen wenig. Die [Winter '27 Highlights auf Trailhead](https://trailhead.salesforce.com/content/learn/modules/winter-27-release-highlights/see-whats-new-manfacturing-media-netzero-nonprofit) beschreiben Sales Concierge for Customers als KI-gestütztes Einkaufserlebnis auf Ihrer Experience-Cloud-Site, auf der Kunden „search assets, locate dealers, and request quotes“. Einen Sales Concierge for Manufacturing mit Produkt- und Zubehörsuche, Händlersuche und schneller Angebotserstellung nannten bereits die [Spring '26 Highlights](https://trailhead.salesforce.com/it/content/learn/modules/spring-26-release-highlights/see-whats-new-agentforce-manufacturing-media-public-sector-nonprofit). Zum Partner Sales Assistant fand ich in den [Summer '26 Highlights für Manufacturing](https://trailhead.salesforce.com/content/learn/modules/summer-26-release-highlights/see-whats-new-manufacturing-media-nonprofit-and-agentforce-net-zero) keinen Eintrag; dort stehen Garantieunterstützung, Musterverwaltung und Bestellungen. Einrichtungsanleitung, Lizenz und Preis beider Agenten fand ich am 27. Oktober 2026 in keiner Quelle, die ich öffnen konnte.
+Die Release-Unterlagen ergänzen wenig. Die [Winter '27 Highlights auf Trailhead](https://trailhead.salesforce.com/content/learn/modules/winter-27-release-highlights/see-whats-new-manfacturing-media-netzero-nonprofit) beschreiben Sales Concierge for Customers als KI-gestütztes Einkaufserlebnis auf Ihrer Experience-Cloud-Site, auf der Kunden „search assets, locate dealers, and request quotes“. Einen Sales Concierge for Manufacturing mit Produkt- und Zubehörsuche, Händlersuche und schneller Angebotserstellung nannten bereits die [Spring '26 Highlights](https://trailhead.salesforce.com/it/content/learn/modules/spring-26-release-highlights/see-whats-new-agentforce-manufacturing-media-public-sector-nonprofit). Zum Partner Sales Assistant fand ich in den [Summer '26 Highlights für Manufacturing](https://trailhead.salesforce.com/content/learn/modules/summer-26-release-highlights/see-whats-new-manufacturing-media-nonprofit-and-agentforce-net-zero) keinen Eintrag; dort stehen Garantieunterstützung, Musterverwaltung und Bestellungen.
 
-Für die Entscheidung zählen zwei Details. „Angebot anfragen“ und „Angebot bauen“ sind verschiedene Dinge: Eine Anfrage landet im Vertriebsinnendienst, ein gebautes Angebot trägt einen Preis, auf den sich der Händler beruft. Und die Bausteine darunter sind dokumentiert. Die Navigation der Standard Agent Action Reference in der Salesforce-Hilfe führt im Bereich Manufacturing Aktionen von Agentforce for Manufacturing auf, etwa Search Product And Parts, Get Product Price Details, Get Price Books, Search Dealers for Products, Create Opportunity with Products and Preferred Seller und Create Quote from Opportunity. Eine Hilfeseite, die diese Aktionen im Detail beschreibt, habe ich nicht gefunden. Die einzige Aktionsseite, die ich geöffnet habe, [Get Warranty Claims for Account](https://help.salesforce.com/s/articleView?id=ai.agent_ref_mfg_get_wrnty_claims_for_acct.htm&language=en_US&type=5), verlangt das Add-on Agentforce for Manufacturing für jeden Benutzer oder die Agentforce 1 Manufacturing Edition. Ich erwarte, dass beide Agenten solche Aktionen nutzen. Salesforce sagt das nicht, es ist also meine Annahme.
+```hinweis offen
+Einrichtungsanleitung, Lizenz und Preis beider Agenten fand ich am 27. Oktober 2026 in keiner Quelle, die ich öffnen konnte. Fragen Sie Salesforce, bevor Sie budgetieren.
+```
+
+Für die Entscheidung zählt ein Unterschied. „Angebot anfragen“ und „Angebot bauen“ sind verschiedene Dinge: Eine Anfrage landet im Vertriebsinnendienst, ein gebautes Angebot trägt einen Preis, auf den sich der Händler beruft.
+
+```vertiefung Für Admins
+titel: Welche Agentenaktionen liegen darunter?
+Die Navigation der Standard Agent Action Reference in der Salesforce-Hilfe führt im Bereich Manufacturing Aktionen von Agentforce for Manufacturing auf, etwa Search Product And Parts, Get Product Price Details, Get Price Books, Search Dealers for Products, Create Opportunity with Products and Preferred Seller und Create Quote from Opportunity. Eine Hilfeseite, die diese Aktionen im Detail beschreibt, habe ich nicht gefunden. Die einzige Aktionsseite, die ich geöffnet habe, [Get Warranty Claims for Account](https://help.salesforce.com/s/articleView?id=ai.agent_ref_mfg_get_wrnty_claims_for_acct.htm&language=en_US&type=5), verlangt das Add-on Agentforce for Manufacturing für jeden Benutzer oder die Agentforce 1 Manufacturing Edition. Ich erwarte, dass beide Agenten solche Aktionen nutzen. Salesforce sagt das nicht, es ist also meine Annahme.
+```
 
 ## Welcher Angebotsagent passt zu welchem Kanal?
 
@@ -91,12 +100,20 @@ Der Verbrauch ist klein im Vergleich zu sechs Personen im Innendienst. Die Arbei
 
 ## Wo fangen Sie an?
 
-1. **Einen Kanal zuerst wählen**: Händler über den Partner Sales Assistant oder Endkunden über den Sales Concierge.
-2. **Den Katalog messen**: Anteil des Zubehörs mit Zuordnung zu Maschinenmodellen, Anteil der Produkte mit einer Beschreibung, nach der ein Händler sucht.
-3. **Den Preis-Master festlegen** und Stufenpreise mit Gültigkeit in Preisbücher bringen.
-4. **Rabattgrenzen als Regeln schreiben**, mit einem Verantwortlichen in Vertrieb und Finanzen.
-5. **Salesforce schriftlich fragen**: Lizenz je Partnerbenutzer, welche Aktionen der Agent aufruft, Verbrauchsmodell und Abgrenzung zum Revenue Management Agent.
-6. **Einen Testsatz bauen** aus echten Händleranfragen, auch mit falschen Teilenummern und nicht baubaren Kombinationen, wie in [Agentforce-Agenten testen und freigeben](../agentforce-agenten-testen-freigeben/).
+```schritte
+Einen Kanal zuerst wählen
+  Händler über den Partner Sales Assistant oder Endkunden über den Sales Concierge.
+Den Katalog messen
+  Anteil des Zubehörs mit Zuordnung zu Maschinenmodellen, Anteil der Produkte mit einer Beschreibung, nach der ein Händler sucht.
+Den Preis-Master festlegen
+  Stufenpreise mit Gültigkeit in Preisbücher bringen.
+Rabattgrenzen als Regeln schreiben
+  Mit einem Verantwortlichen in Vertrieb und Finanzen.
+Salesforce schriftlich fragen
+  Lizenz je Partnerbenutzer, welche Aktionen der Agent aufruft, Verbrauchsmodell und Abgrenzung zum Revenue Management Agent.
+Einen Testsatz bauen
+  Aus echten Händleranfragen, auch mit falschen Teilenummern und nicht baubaren Kombinationen, wie in [Agentforce-Agenten testen und freigeben](../agentforce-agenten-testen-freigeben/).
+```
 
 Wo diese Agenten zwischen den übrigen Fertigungsagenten stehen, zeigt das Masterclass-Kapitel [KI-Agenten in der Fertigung](../../masterclass/ki-salesforce/ki-agenten-in-der-fertigung/). Die Grenze zwischen ERP, Konfigurator und Agent zu ziehen, gehört zu meiner [Salesforce-Architekturarbeit](../../leistungen/salesforce-architektur/).
 

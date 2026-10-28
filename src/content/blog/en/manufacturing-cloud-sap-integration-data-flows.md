@@ -88,9 +88,11 @@ Stock belongs in the same daily run. A shortfall reads differently when the good
 
 Many ERP interfaces to Salesforce were set up years ago with a technical user and a password. According to the [developer guide to Winter '27](https://developer.salesforce.com/blogs/2026/10/developers-guide-to-the-winter-27-release), three steps apply:
 
-1. From 1 December 2026, every user who authenticates with SOAP API login() needs the Use Any API Auth permission. Users without it get an error.
-2. In Summer '27, SOAP login() in API versions 31.0 to 64.0 is retired.
-3. SOAP, REST and Bulk API versions 31.0 to 40.0 stop getting fixes in Summer '27, and calls to them fail from Summer '28.
+```zeitleiste
+2026-12-01 | Users who authenticate with SOAP API login() need the Use Any API Auth permission, otherwise they get an error
+Summer '27 | SOAP login() in API versions 31.0 to 64.0 is retired; SOAP, REST and Bulk API 31.0 to 40.0 stop getting fixes
+Summer '28 | Calls to SOAP, REST and Bulk API 31.0 to 40.0 fail
+```
 
 Salesforce's advice in the same guide is to "move those integrations to OAuth with external client apps". An actuals feed that fails quietly is worse than one that fails loudly, because sales sees an old shortfall and believes it. How to find every affected interface is described in [Salesforce password integrations end in 2027](../salesforce-password-integrations-end-2027/).
 

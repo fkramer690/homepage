@@ -88,9 +88,11 @@ Der Lagerbestand gehört in denselben täglichen Lauf. Ein Rückstand liest sich
 
 Viele ERP-Schnittstellen zu Salesforce wurden vor Jahren mit einem technischen Nutzer und einem Passwort eingerichtet. Laut dem [Developer Guide zu Winter '27](https://developer.salesforce.com/blogs/2026/10/developers-guide-to-the-winter-27-release) gelten drei Stufen:
 
-1. Ab 1. Dezember 2026 braucht jeder Nutzer, der sich über SOAP API login() anmeldet, die Berechtigung Use Any API Auth. Ohne sie gibt es einen Fehler.
-2. Mit Summer '27 entfällt SOAP login() in den API-Versionen 31.0 bis 64.0.
-3. SOAP-, REST- und Bulk-API in den Versionen 31.0 bis 40.0 bekommen ab Summer '27 keine Korrekturen mehr, ab Summer '28 schlagen Aufrufe fehl.
+```zeitleiste
+2026-12-01 | Wer sich über SOAP API login() anmeldet, braucht die Berechtigung Use Any API Auth, sonst gibt es einen Fehler
+Summer '27 | SOAP login() in den API-Versionen 31.0 bis 64.0 entfällt; SOAP-, REST- und Bulk-API 31.0 bis 40.0 bekommen keine Korrekturen mehr
+Summer '28 | Aufrufe an SOAP-, REST- und Bulk-API 31.0 bis 40.0 schlagen fehl
+```
 
 Salesforce rät im selben Guide, diese Schnittstellen auf OAuth mit External Client Apps umzustellen. Ein Ist-Mengen-Lauf, der still ausfällt, ist schlimmer als einer, der laut ausfällt, weil der Vertrieb einen alten Rückstand sieht und ihm glaubt. Wie Sie alle betroffenen Schnittstellen finden, steht in [Salesforce-Passwort-Integrationen enden 2027](../salesforce-passwort-integrationen-2027/).
 

@@ -80,7 +80,11 @@ The consequence: planned and unplanned work land in the same dispatch queue and 
 
 ## Where is the licence trap in this chain?
 
-The record chain also decides the licence mix. According to the [Field Service pricing page](https://www.salesforce.com/service/field-service-management/pricing/), Dispatcher and Technician licences may not be used for contact centre, call centre or customer case management. Whoever works cases needs Service Cloud or Field Service Plus.
+The record chain also decides the licence mix.
+
+```hinweis achtung
+According to the [Field Service pricing page](https://www.salesforce.com/service/field-service-management/pricing/), Dispatcher and Technician licences may not be used for contact centre, call centre or customer case management. Whoever works cases needs Service Cloud or Field Service Plus.
+```
 
 In practice this hits the small service team where the dispatcher also answers the hotline. That person needs Field Service Plus at $230 instead of Dispatcher at $175 (price list, October 2026). The full role matrix is in [Field Service licences: which role needs which one?](../field-service-licences-by-role/).
 
@@ -88,12 +92,20 @@ In practice this hits the small service team where the dispatcher also answers t
 
 A typical scenario, as an assumption: a customer calls at 7:40 on a Tuesday because a packaging machine stops with an error.
 
-1. The hotline agent finds the asset by serial number and creates a case. The entitlement shows a service contract with 8 hours response time.
-2. Triage: the error code points to a defective sensor, the customer has no spare. Remote help does not solve it.
-3. The agent creates a work order from the case with the work type "Breakdown repair, sensor". The work type carries 3 hours duration and the skill "Sensors, series B". A line item for the test run follows.
-4. The work type creates the service appointment automatically. The agent sets its due date so the 8-hour response time is met.
-5. The dispatcher runs the candidate search, moves a planned maintenance visit from Tuesday to Thursday and schedules the technician who has the sensor in his van. Status Scheduled, then Dispatched.
-6. The technician sees the job in the mobile app, documents the replacement and the test run, and closes the work order. The case is closed after the customer confirms.
+```schritte
+Create the case | Hotline
+  The hotline agent finds the asset by serial number and creates a case. The entitlement shows a service contract with 8 hours response time.
+Triage | Hotline
+  The error code points to a defective sensor, the customer has no spare. Remote help does not solve it.
+Create the work order | Hotline
+  The agent creates a work order from the case with the work type "Breakdown repair, sensor". The work type carries 3 hours duration and the skill "Sensors, series B". A line item for the test run follows.
+Appointment appears | Work type and hotline
+  The work type creates the service appointment automatically. The agent sets its due date so the 8-hour response time is met.
+Schedule | Dispatcher
+  The dispatcher runs the candidate search, moves a planned maintenance visit from Tuesday to Thursday and schedules the technician who has the sensor in his van. Status Scheduled, then Dispatched.
+Visit and close | Technician
+  The technician sees the job in the mobile app, documents the replacement and the test run, and closes the work order. The case is closed after the customer confirms.
+```
 
 Steps 3 and 4 are where the data model pays off. Without the work type, the agent has to know duration and skills, and the appointment is created by hand.
 

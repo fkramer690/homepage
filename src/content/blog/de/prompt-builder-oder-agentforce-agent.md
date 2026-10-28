@@ -77,7 +77,11 @@ Die Euro-Werte beruhen auf dem Listenpreis von 500 € pro 100.000 Credits auf d
 
 Eine Fallzusammenfassung mit 5.000 Tokens ist auf einem Standard-Modell drei Prompts, also 12 Credits. Auf einem Advanced-Modell kostet dieselbe Zusammenfassung 48 Credits, mehr als zwei Agentenaktionen. Günstig macht ein Template erst die Modellstufe, die Sie wählen.
 
-Der Hilfeartikel sagt nicht, ob ein Template, das ein Agent als Aktion aufruft, als eine Aktion plus Prompts zählt. Ich plane beides ein, bis der Pilot den tatsächlichen Verbrauch zeigt. Alle weiteren Zähler stehen in [Flex Credits pro Aktion](../flex-credits-agentforce-kosten-pro-aktion/).
+```hinweis offen
+Der Hilfeartikel sagt nicht, ob ein Template, das ein Agent als Aktion aufruft, als eine Aktion plus Prompts zählt. Ich plane beides ein, bis der Pilot den tatsächlichen Verbrauch zeigt.
+```
+
+Alle weiteren Zähler stehen in [Flex Credits pro Aktion](../flex-credits-agentforce-kosten-pro-aktion/).
 
 ## Ein typisches Szenario: erst Templates, dann der Händleragent
 
@@ -107,10 +111,16 @@ Ein Flex-Template funktioniert auch außerhalb von Salesforce. [Hosted MCP Serve
 
 ## Wo sollten Sie anfangen?
 
-1. **Textaufgaben auflisten** in Service und Vertrieb, mit Volumen und Leser.
-2. **Templates bauen** für die Aufgaben, bei denen ein Mensch den Text liest. Starten Sie auf einem Standard-Modell und wechseln Sie nur, wenn Tests eine Qualitätslücke zeigen.
-3. **Messen, wie viel nachbearbeitet wird.** Versendet der Service die meisten Entwürfe unverändert, ist das das Argument für den nächsten Schritt.
-4. **Einen Agenten ergänzen** nur dort, wo niemand vorher lesen soll, der Weg variiert oder etwas geschrieben werden muss. Verwenden Sie das getestete Template als Referenzaktion des Agenten.
+```schritte
+Textaufgaben auflisten
+  In Service und Vertrieb, mit Volumen und Leser.
+Templates bauen
+  Für die Aufgaben, bei denen ein Mensch den Text liest. Starten Sie auf einem Standard-Modell und wechseln Sie nur, wenn Tests eine Qualitätslücke zeigen.
+Nachbearbeitung messen
+  Versendet der Service die meisten Entwürfe unverändert, ist das das Argument für den nächsten Schritt.
+Einen Agenten ergänzen
+  Nur dort, wo niemand vorher lesen soll, der Weg variiert oder etwas geschrieben werden muss. Verwenden Sie das getestete Template als Referenzaktion des Agenten.
+```
 
 Welches Werkzeug auf der Salesforce-Plattform zu welcher Aufgabe passt, steht im Masterclass-Kapitel zu [Salesforce-Werkzeugen für KI-Entwicklung](../../masterclass/ki-salesforce/salesforce-werkzeuge-ki-entwicklung/). Solche Entscheidungen sind Teil meiner [Salesforce-Architekturarbeit](../../leistungen/salesforce-architektur/).
 

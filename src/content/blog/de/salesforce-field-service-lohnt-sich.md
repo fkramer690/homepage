@@ -79,7 +79,13 @@ In der Unlimited Edition kosten Dispatcher und Technician laut Fußnote 330 US-D
 
 Ein Rechenbeispiel mit Listenpreisen: 40 Techniker und 4 Disponenten in der Enterprise Edition sind 44 Lizenzen zu 175 €, also 7.700 € pro Monat oder 92.400 € pro Jahr. Dazu kommen Umsetzung, Integration mit dem ERP und Wartung.
 
-Zwei Bedingungen aus dem Kleingedruckten zählen für die Lizenzplanung. Field Service setzt mindestens eine Service-Cloud-Lizenz voraus, und Techniker brauchen mindestens einen Dispatcher, damit die Planung funktioniert. Außerdem dürfen Dispatcher- und Technician-Lizenzen nicht für Contact Center oder Fallbearbeitung genutzt werden. Wer im Innendienst Fälle bearbeitet und zugleich Einsätze plant, braucht Field Service Plus. Welche Rolle welche Lizenz braucht, Subunternehmer eingeschlossen, steht in [Kapitel 1 der Masterclass Field Service](../../masterclass/field-service/field-service-lohnt-sich-lizenzen/).
+Zwei Bedingungen aus dem Kleingedruckten zählen für die Lizenzplanung. Field Service setzt mindestens eine Service-Cloud-Lizenz voraus, und Techniker brauchen mindestens einen Dispatcher, damit die Planung funktioniert. Die zweite Bedingung übersehen viele:
+
+```hinweis achtung
+Dispatcher- und Technician-Lizenzen dürfen nicht für Contact Center oder Fallbearbeitung genutzt werden. Wer im Innendienst Fälle bearbeitet und zugleich Einsätze plant, braucht Field Service Plus.
+```
+
+Welche Rolle welche Lizenz braucht, Subunternehmer eingeschlossen, steht in [Kapitel 1 der Masterclass Field Service](../../masterclass/field-service/field-service-lohnt-sich-lizenzen/).
 
 ## Woran entscheide ich?
 
@@ -93,6 +99,10 @@ Ich beginne mit vier Zahlen aus dem eigenen Außendienst, noch bevor es um das P
 Diese Zahlen lassen sich meist aus dem ERP oder der bestehenden Einsatzplanung ziehen. Sind sie unbekannt, ist das schon ein Ergebnis: Dann fehlt die Grundlage für jeden Business Case, egal mit welchem Produkt.
 
 Danach kommt die Frage nach den Daten. Field Service plant nur so gut, wie Anlagen, Standorte, Qualifikationen und Verfügbarkeiten gepflegt sind. Ein Techniker, dessen Qualifikationen nirgends hinterlegt sind, wird von der Engine falsch eingeplant. Welche Daten das genau sind, beschreibe ich in [Teil 2 dieser Serie](../salesforce-field-service-stammdaten/).
+
+```praxis
+In meinen Field-Service-Projekten mit Wartung, Störungseinsätzen und Inbetriebnahmen, automatischer Terminplanung sowie Ersatzteilen und installierter Basis aus dem ERP lagen die Stolpersteine an drei Stellen: Datenqualität der Anlagen, Akzeptanz bei den Technikern und die Schnittstellen zum ERP.
+```
 
 ## Wo sollten Sie anfangen?
 

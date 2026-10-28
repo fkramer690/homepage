@@ -71,6 +71,10 @@ Without a defined process, the Salesforce hierarchy then shows the machine as de
 2. **Which system leads afterwards?** If the ERP stays the master for the installed base, the change from the app has to go back to the ERP. If Salesforce leads after delivery, the ERP gets a copy. Both work, a mix does not. This is the same ownership question as in [master data for scheduling](../salesforce-field-service-master-data/), and it belongs in the interface design on the [Salesforce integration](../../services/salesforce-integration/) page.
 3. **What about retrofits by dealers or the customer?** If a dealer exchanges a component and reports only warranty cases, the hierarchy has gaps. That also hurts every later analysis, as described in [predictive maintenance in Salesforce: what data you need](../predictive-maintenance-salesforce-data-needed/).
 
+```praxis
+In my Field Service projects with maintenance, breakdown jobs and commissioning, the installed base came from the ERP. The stumbling blocks were asset data quality, technician acceptance and the ERP interfaces.
+```
+
 Warranty claims on the installed base belong to Manufacturing Cloud and are covered in the [warranty and after-sales chapter](../../masterclass/manufacturing-cloud/warranty-and-after-sales/) of that masterclass.
 
 ## Why does a deep hierarchy cost you later?

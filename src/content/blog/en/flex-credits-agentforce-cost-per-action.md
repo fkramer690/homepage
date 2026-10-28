@@ -56,7 +56,11 @@ Prompts are easy to overlook, because the examples on the pricing page count onl
 
 Advanced prompts have been metered since 21 July 2026. The same 6,500-token summary costs 8 credits on a Basic model, 16 on Standard and 64 on Advanced. For a case summary that a service rep reads and corrects, I would start on Standard and move up only if tests show a quality gap.
 
-The help article also names embedded generative features such as Service Replies. It does not say whether the reasoning engine's own LLM calls are metered as prompts on top of the actions. I would budget every prompt template and generative feature in the design and check in the pilot whether Digital Wallet shows more.
+The help article also names embedded generative features such as Service Replies. I would budget every prompt template and generative feature in the design.
+
+```hinweis offen
+The help article does not say whether the reasoning engine's own LLM calls are metered as prompts on top of the actions. Confirm it with your account executive and check in the pilot whether Digital Wallet shows more.
+```
 
 ## Voice, sandbox and Data 360: where estimates go wrong
 
@@ -109,7 +113,11 @@ Four weeks after go-live, compare the estimate with [Digital Wallet](https://www
 
 ## What happens to unused Flex Credits?
 
-They expire. The rate card says Flex Credits must be used before the order end date, with no rollover into the next term. If you buy a year of credits in January and go-live slips from March to June, three months of volume are paid for and lost.
+They expire. The rate card says Flex Credits must be used before the order end date, with no rollover into the next term.
+
+```hinweis achtung
+If you buy a year of credits in January and go-live slips from March to June, three months of volume are paid for and lost.
+```
 
 I would buy the first year along the ramp-up profile: a small pre-purchase for pilot and tests, PayGo or Pre-Commit for the ramp-up, and a larger volume once Digital Wallet shows real numbers. Because overage is billed at the contracted rate without a penalty, a tight first purchase carries little risk. Also note the period of the included edition credits: the [Sales Cloud pricing page](https://www.salesforce.com/sales-cloud/pricing/) lists the pools per org and per year, while the [editions announcement of September 2026](https://www.salesforce.com/news/stories/salesforce-simplifies-editions-2026/) gives no period. Several agents share one pool, so ask how consumption per agent is monitored. These questions are part of my [make-or-buy and licence planning](../../services/make-or-buy-licences/).
 

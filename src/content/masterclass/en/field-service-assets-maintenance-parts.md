@@ -48,7 +48,11 @@ Everything else stays in the PLM parts list. For most machines that leaves two o
 
 Two decisions come before the first ERP load. First, values that differ per series, such as a firmware version, go into asset attributes. The [AssetAttribute object](https://developer.salesforce.com/docs/atlas.en-us.field_service_dev.meta/field_service_dev/sforce_api_objects_assetattribute.htm), available since API version 57.0, stores a value per asset against an attribute definition, so a new machine series needs no new custom field. Counters that drive maintenance stay number fields on the asset. Second, someone owns the tree after delivery. The ERP delivers the installed base, but a year later a technician exchanges a gearbox. One system has to lead from then on, or nobody trusts the tree.
 
-From my own project experience: in my Field Service projects, spare parts and the installed base came from the ERP, and that is where two stumbling blocks were, the data quality of the assets and the ERP interfaces. Check serial numbers and locations before maintenance plans build on them.
+```praxis
+In my Field Service projects, spare parts and the installed base came from the ERP, and that is where two stumbling blocks were, the data quality of the assets and the ERP interfaces.
+```
+
+Check serial numbers and locations before maintenance plans build on them.
 
 ## Service contract, maintenance plan, entitlement: which object does what?
 
@@ -95,7 +99,9 @@ Usually not at the start. Assets with hierarchies, maintenance plans, service co
 - **Asset Service Lifecycle Management** at $75 per user and month. The [ASLM section in Salesforce Help](https://help.salesforce.com/s/articleView?language=en_US&id=xcloud.aslm_asset_service_lifecycle_management.htm&type=5) lists, among others, the Asset Coverage View, the Asset Interactive Hierarchy, work order estimation, product service campaigns, depot repair, advanced exchange, inventory functions and timesheets.
 - **Connected Assets** at $15,000 per org and month, so $180,000 a year at list price, for telemetry, the Asset Health Score and 10,000 connected digital assets.
 
+```hinweis offen
 The price list marks the Asset Coverage View as "Available for Purchase" even for Agentforce 1 Field Service. Confirm that in your quote.
+```
 
 Several ASLM functions handle stock, such as counts and replenishment; if SAP owns stock, they create a second truth. For a machine builder I see the fit in what the ERP does poorly on the service side: coverage at the hotline, repair quotes, retrofit campaigns and depot repair. The comparison of add-on and own build for 30 users is in [Asset Service Lifecycle Management: worth the add-on?](../../../blog/asset-service-lifecycle-management-add-on/).
 
@@ -104,6 +110,15 @@ Several ASLM functions handle stock, such as counts and replenishment; if SAP ow
 In the ERP a spare part has a value, a purchasing process and postings to accounting. Field Service only needs quantities per location. According to the [inventory data model](https://developer.salesforce.com/docs/atlas.en-us.field_service_dev.meta/field_service_dev/fsl_dev_soap_inventory.htm), a product item holds the stock of one part at one location, products required list what a job needs, and products consumed record what was used, with the product item quantity updated automatically. A [location](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_location.htm) can be a warehouse or a service vehicle.
 
 The ERP sends material master and stock, Salesforce sends back consumed parts and part requests. Bring only the vans and the warehouses that restock them into Salesforce. 40 vans with 300 parts each are already 12,000 product items, and every one of them ends up offline on a device. Which data the app should hold offline is in [Field Service mobile offline](../../../blog/field-service-mobile-app-offline-data/), the split of tasks in [spare parts: ERP or Salesforce?](../../../blog/salesforce-field-service-spare-parts-erp/).
+
+```ablauf
+sf: Product Item, Products Consumed, Part request
+erp: ERP
+ERP --Master and stock--> Product Item
+Products Consumed ..Quantity update..> Product Item
+Products Consumed --Consumed parts--> ERP
+Part request --> ERP
+```
 
 Many spare parts calls need no visit. If customers order a known part for their machine themselves, the hotline has less to do; the B2B Commerce chapter on [catalogue, search and entitlements](../../b2b-commerce/catalog-search-entitlements/) shows how parts per machine become visible in a store.
 

@@ -80,7 +80,9 @@ Three things I could not find in any official source on 28 October 2026:
 2. **Loading condition records from SAP.** The highlights promise "ERP integration", but the developer guide describes no import or sync of SAP condition records. The [Consumer Goods Trailhead module](https://trailhead.salesforce.com/content/learn/modules/penny-perfect-pricing-with-consumer-goods-cloud-offline-mobile-app/set-up-pricing-configuration) says pricing conditions from the ERP can be used and mentions an import of condition records, without describing how.
 3. **Multimarket and units of measure.** The highlights name both. The object reference I read does not explain how currencies or unit conversion are configured.
 
+```hinweis offen
 So the ERP integration is yours to build, and the licence is yours to ask about. Both belong in writing before a project plan depends on them.
+```
 
 ## Why do two price engines drift apart?
 

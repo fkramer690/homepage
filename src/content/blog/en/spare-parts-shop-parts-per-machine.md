@@ -34,7 +34,16 @@ In Salesforce B2B Commerce, which Salesforce now also markets as "Agentforce Com
 
 "Does this part fit this machine?" is a question about the machine. A dealer with 40 installed machines from five series needs a different parts list for each one, and a seal that fits series A may also be orderable for series B as a spare. An entitlement says yes or no per product and buyer group, without a machine in between.
 
-The obvious workaround is one buyer group per machine. The [entitlement limits](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-entitlement-limits.html) end that quickly: a product can have 2,000 buyer entitlements, as a hard limit, and during search indexing "only the first two thousand buyer groups for a product are included in the index". A standard screw built into 6,000 machines would be findable for only a third of them. On top of that, the [buyer group limits](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-shopper-buyer-groups-accounts-limits.html) allow 20 buyer groups per buyer account by default, 30 with an Apex extension. A dealer with 40 machines does not fit.
+The obvious workaround is one buyer group per machine. The [entitlement limits](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-entitlement-limits.html) and the [buyer group limits](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-shopper-buyer-groups-accounts-limits.html) end that quickly:
+
+```kennzahlen
+2,000 | buyer entitlements per product, hard limit
+20 | buyer groups per buyer account by default
+30 | buyer groups per buyer account with an Apex extension
+source: Salesforce Commerce developer guide, entitlement limits and buyer group limits
+```
+
+During search indexing "only the first two thousand buyer groups for a product are included in the index". A standard screw built into 6,000 machines would be findable for only a third of them. And a dealer with 40 machines fits neither limit per buyer account.
 
 So entitlements stay what they are good at: which countries, tiers and brands may buy which parts. How to cut those groups is covered in [buyer groups and entitlements](../buyer-groups-entitlements-product-visibility/).
 
@@ -89,10 +98,16 @@ The decision in the scenario: buyer groups stay per country and dealer tier. A m
 
 ## Where should you start?
 
-1. **Check the data first.** Take 20 recent spare part orders and test whether serial number, asset and as-built list lead to the part that was ordered.
-2. **Clean up the asset sharing.** Which machines belong to which dealer account, including machines sold to end customers.
-3. **Build the parts API before the page.** The parts desk can use it first; the store, the [Field Service technicians](../salesforce-field-service-spare-parts-erp/) and an agent can reuse it later.
-4. **Start with the machine page,** and consider search filtering only when dealers ask for it.
+```schritte
+Check the data first
+  Take 20 recent spare part orders and test whether serial number, asset and as-built list lead to the part that was ordered.
+Clean up the asset sharing
+  Settle which machines belong to which dealer account, including machines sold to end customers.
+Build the parts API before the page
+  The parts desk can use it first; the store, the [Field Service technicians](../salesforce-field-service-spare-parts-erp/) and an agent can reuse it later.
+Start with the machine page
+  Consider search filtering only when dealers ask for it.
+```
 
 The chapter [catalogue, search and entitlements](../../masterclass/b2b-commerce/catalog-search-entitlements/) of the [B2B Commerce masterclass](../../masterclass/b2b-commerce/) places this in the store design; which system leads for which data is the subject of [Salesforce integration](../../services/salesforce-integration/).
 

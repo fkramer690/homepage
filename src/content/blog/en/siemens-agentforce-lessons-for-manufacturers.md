@@ -54,7 +54,9 @@ The lead case has the properties I look for in a first agent:
 
 The design holds a second lesson. Siemens runs two narrow agents in tandem instead of one agent that does everything. Each has one job and one handover rule, so you can test the qualification criteria separately from the tone of the outreach. How I would set up those tests is in [testing Agentforce agents before go-live](../testing-agentforce-agents-before-go-live/).
 
+```hinweis achtung
 What the release leaves out matters as much. The only result is the share of leads engaged, 100 percent. There is no conversion rate, no pipeline value and no figure for seller hours saved. Engaging every lead is an activity metric. If you show the Siemens case to your board, say so, or someone will expect a revenue effect that was never published.
+```
 
 The other industrial references follow the same pattern. In Salesforce's [Agentforce for Manufacturing announcement](https://www.salesforce.com/news/stories/agentforce-for-manufacturing-announcement/) of August 2025, Terri Eshleman of JPW Industries says manual order processing used to take 16 to 24 hours and now takes less than an hour, and case resolution time fell by almost 40 percent despite a 15 percent increase in workload. Brenntag, a chemical distributor, [announced in November 2024](https://corporate.brenntag.com/en/media/news/brenntag-implements-autonomous-ai-agents-on-its-salesforce-platform-as-first-customer-in-germany.html) agents for order and product enquiries as a pilot for selected customers and supply partners, without any figures. The references with numbers concern narrow, frequent processes in sales and order handling. The service and engineering stories are still announcements.
 
@@ -82,10 +84,16 @@ Assume a machine builder with 1,100 employees, SAP S/4HANA, Sales Cloud and Serv
 
 From the scenario I derive this order:
 
-1. **Read only, high volume, a person takes over.** Dealer enquiries, order status, delivery dates. Pick whichever process in your company has the most similar requests.
-2. **Read from the ERP through an API**, still without write access. Stock, prices and credit status come from SAP or proALPHA; the agent explains, it does not recalculate.
-3. **Engineering answers from PLM and serial numbers**, once the data project from day one has delivered. This is where the aftermarket value sits, and where the data work is heaviest.
-4. **Write steps into the ERP last**, with rules in logic, an approval by a person for anything with consequences and a test set agreed in advance.
+```schritte
+Read only, high volume
+  Dealer enquiries, order status, delivery dates, and a person takes over. Pick whichever process in your company has the most similar requests.
+Read from the ERP through an API
+  Still without write access. Stock, prices and credit status come from SAP or proALPHA; the agent explains, it does not recalculate.
+Engineering answers from PLM and serial numbers
+  Once the data project from day one has delivered. This is where the aftermarket value sits, and where the data work is heaviest.
+Write steps into the ERP
+  Last, with rules in logic, an approval by a person for anything with consequences and a test set agreed in advance.
+```
 
 Before any of these goes live, agree one result metric beyond activity, for example the share of dealer enquiries closed without a back office reply. Siemens published an activity number; your board will ask for a result. The five criteria behind this order are in [Agentforce for manufacturers: start now or wait?](../agentforce-yes-or-no-manufacturers/), and the wider picture of what runs today is in the masterclass chapter [AI agents in manufacturing](../../masterclass/ai-salesforce/ai-agents-in-manufacturing/).
 

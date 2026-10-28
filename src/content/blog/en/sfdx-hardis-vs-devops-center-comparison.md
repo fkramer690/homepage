@@ -65,7 +65,14 @@ So if you work on Azure DevOps, like many industrial companies that run on Micro
 
 ## Where does the release process live, and who owns it?
 
-In Lifecycle Center, projects, pipelines and work items are records in the hub org. The repository stays with the client, the process around it lives in Salesforce. IT should know two details upfront: the GitHub connection runs through a Salesforce OAuth app that requests access to all repositories of the account, and repositories of a GitHub organisation only show up once an owner of that organisation approves the app. If the Git platform has IP restrictions, the Lifecycle Center addresses need to go on the allowlist.
+In Lifecycle Center, projects, pipelines and work items are records in the hub org. The repository stays with the client, the process around it lives in Salesforce.
+
+```vertiefung For IT
+title: What IT should know before connecting Lifecycle Center
+- The GitHub connection runs through a Salesforce OAuth app that requests access to all repositories of the account.
+- Repositories of a GitHub organisation only show up once an owner of that organisation approves the app.
+- If the Git platform has IP restrictions, the Lifecycle Center addresses need to go on the allowlist.
+```
 
 With sfdx-hardis, everything sits in files in the repository and in the pipeline configuration. With branch protection, a partner can only change them through a pull request the client approves. That fits my basic rule that [clients should own their DevOps tools](../why-clients-should-own-their-devops-tools/): whoever controls repository and pipeline controls the release process.
 
@@ -106,7 +113,11 @@ If you need a fully managed service with org comparisons and contractual support
 
 ## Can you combine both?
 
-Technically both can point at the same org and even the same repository. Lifecycle Center handles merges that happen outside the app, and sfdx-hardis validates every pull request, wherever it comes from. I still would not do it. When two tools decide on the same stage branches, there are two release processes, and in the end nobody knows which state counts in production. Decide per repository which tool owns merges and promotions. If you switch later, make it a planned cut, not a gradual drift.
+Technically both can point at the same org and even the same repository. Lifecycle Center handles merges that happen outside the app, and sfdx-hardis validates every pull request, wherever it comes from. I still would not do it. When two tools decide on the same stage branches, there are two release processes, and in the end nobody knows which state counts in production.
+
+```hinweis tipp
+Decide per repository which tool owns merges and promotions. If you switch later, make it a planned cut, not a gradual drift.
+```
 
 For teams using coding agents this question matters more. Lifecycle Center is building a governance layer for agents in the hub org, sfdx-hardis relies on the checks in the pipeline. Which [quality gates should stop AI-generated code](../quality-gates-for-ai-code-salesforce-pipeline/) applies to both tools in the same way.
 

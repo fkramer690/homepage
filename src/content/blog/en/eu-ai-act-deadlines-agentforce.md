@@ -34,12 +34,12 @@ The EU AI Act deadlines that Regulation (EU) 2026/1744 postponed matter less for
 
 According to [White & Case](https://www.whitecase.com/insight-alert/eu-ai-omnibus-enters-force-amending-ai-act), the regulation, known as the Digital Omnibus on AI, was published in the Official Journal on 24 July 2026 and entered into force on 27 July. It defers the high-risk obligations in Chapter III, where most of the work sits. The consolidated [Art. 113](https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-113) on the Commission's AI Act Service Desk gives the dates below; the 2 December 2026 date for machine-readable marking comes from the [Commission's FAQ on Art. 50](https://digital-strategy.ec.europa.eu/en/faqs/transparency-obligations-under-article-50-ai-act):
 
-| Obligation | Applies from |
-|---|---|
-| Transparency under Art. 50: chatbots, deepfakes, published text | 2 August 2026 |
-| Machine-readable marking under Art. 50(2) for generative systems on the market before 2 August 2026 | 2 December 2026 |
-| High-risk systems under Annex III, stand-alone uses such as recruitment and workforce management | 2 December 2027 |
-| High-risk systems under Annex I, AI in regulated products | 2 August 2028 |
+```zeitleiste
+2026-08-02 | Transparency under Art. 50: chatbots, deepfakes, published text
+2026-12-02 | Machine-readable marking under Art. 50(2) for generative systems on the market before 2 August 2026
+2027-12-02 | High-risk systems under Annex III, stand-alone uses such as recruitment and workforce management
+2028-08-02 | High-risk systems under Annex I, AI in regulated products
+```
 
 White & Case stresses that the deferral is limited to Chapter III and does not cover transparency. The AI literacy duty in Art. 4 got softer: providers and deployers now take measures that support their staff's AI literacy instead of ensuring a sufficient level.
 
@@ -57,7 +57,11 @@ According to the Commission's FAQ, the duty applies when the system is AI, is bu
 
 Formally, Art. 50(1) is a provider duty. Whether that means Salesforce or you, the FAQ does not settle for this setup; in practice the agent's welcome message lives in your org. My recommendation: put the disclosure there, in every portal language. Salesforce's [Trailhead module on guardrails and trust patterns](https://trailhead.salesforce.com/content/learn/modules/trusted-agentic-ai/explore-agentforce-guardrails-and-trust-patterns) adds clear rules for handing off to a human and lists the Einstein Trust Layer audit trail among its implementation best practices.
 
-The machine-readable marking under Art. 50(2) is a provider duty for generative output; ask Salesforce in writing how it covers its features. The labelling of published text under Art. 50(4) concerns information to the public on matters of public interest, not a delivery date for a dealer.
+```hinweis offen
+The machine-readable marking under Art. 50(2) is a provider duty for generative output; ask Salesforce in writing how it covers its features.
+```
+
+The labelling of published text under Art. 50(4) concerns information to the public on matters of public interest, not a delivery date for a dealer.
 
 ## When does an Agentforce agent become high-risk?
 

@@ -60,7 +60,9 @@ The [B2B pricing page](https://www.salesforce.com/editions-pricing/commerce-clou
 
 Two footnotes matter more than the table. Orders "taken on other channels or integrated from any other third-party system" need Salesforce Order Management bought standalone. And existing customers with Order Management "will need to renew on Commerce Cloud Advanced".
 
-The page does not spell out what Lite leaves out compared to the full version. If Order Management is part of your plan, ask Salesforce for that list in writing before choosing the edition.
+```hinweis offen
+The pricing page does not spell out what Lite leaves out compared to the full version. If Order Management is part of your plan, ask Salesforce for that list before choosing the edition.
+```
 
 ## Why SAP should usually stay the order owner
 
@@ -73,6 +75,19 @@ I see three reasons in manufacturing.
 **Credit, prices and taxes are in SAP.** The order is only final when SAP has accepted it. My article on [distributor replenishment](../distributor-inventory-replenishment-agentforce/) follows the same rule: a request becomes a binding order only once the ERP has accepted it and returned an order number.
 
 So the store is the place where the order starts and where the buyer follows it. SAP is the place where it is processed.
+
+```ablauf
+sf: Cart, Order summary, Order history
+erp: Sales order, Delivery, Invoice
+Cart --> Order summary
+Order summary --Order--> Sales order
+Sales order --> Delivery
+Delivery --> Invoice
+Sales order ..Order number..> Order summary
+Delivery ..Tracking number..> Order summary
+Invoice ..> Order summary
+Order summary --> Order history
+```
 
 ## What comes back from SAP, and when?
 

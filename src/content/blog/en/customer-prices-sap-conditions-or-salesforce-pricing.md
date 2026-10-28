@@ -39,11 +39,31 @@ Salesforce now even has a pricing engine that mirrors the SAP condition techniqu
 
 ## Route A: SAP calculates, Salesforce asks
 
-The pattern is documented in the [MuleSoft Accelerator for SAP, use case 3a](https://anypoint.mulesoft.com/exchange/org.mule.examples/mulesoft-accelerator-for-sap/minor/1.6/pages/Use%20case%203a%20-%20Quote-to-cash%20-%20Salesforce%20and%20SAP%20S4HANA/). SAP S/4HANA is the system of record for pricing conditions. In the variant with Salesforce CPQ, the sales rep clicks Calculate, the integration calls SAP through MuleSoft APIs and gets back the net price for the requested quantity, including scales and contract pricing from SAP. An API uses the SAP sales order simulation for this and also checks additional discounts against thresholds configured in SAP. Creating the order in Salesforce then creates the order in SAP, and the SAP order number comes back.
+The pattern is documented in the [MuleSoft Accelerator for SAP, use case 3a](https://anypoint.mulesoft.com/exchange/org.mule.examples/mulesoft-accelerator-for-sap/minor/1.6/pages/Use%20case%203a%20-%20Quote-to-cash%20-%20Salesforce%20and%20SAP%20S4HANA/). SAP S/4HANA is the system of record for pricing conditions. In the variant with Salesforce CPQ, the sales rep clicks Calculate, the integration calls SAP through MuleSoft APIs and gets back the net price for the requested quantity, including scales and contract pricing from SAP. An API uses the SAP sales order simulation for this and also checks additional discounts against thresholds configured in SAP. Creating the order in Salesforce then creates the order in SAP:
+
+```ablauf
+sf: Quote, Order
+ext: MuleSoft APIs
+erp: Order simulation, SAP order
+Quote --Calculate--> MuleSoft APIs
+MuleSoft APIs --> Order simulation
+Order simulation ..Net price..> Quote
+Quote --> Order
+Order --Create--> SAP order
+SAP order ..Order number..> Order
+```
 
 The accelerator covers Sales Cloud and Salesforce CPQ, not Revenue Cloud. For Revenue Cloud you build the call yourself. Salesforce documents procedure plans with the Apex namespace [RevSignaling](https://developer.salesforce.com/docs/atlas.en-us.revenue_lifecycle_management_dev_guide.meta/revenue_lifecycle_management_dev_guide/apex_namespace_RevSignaling.htm) as the way to extend the standard pricing flow with custom logic. Whether a synchronous SAP call fits into your response times there, test in a prototype with real quote sizes. The simpler alternative is a defined point, such as a "check price" action before approval, instead of a call on every recalculation.
 
-Strengths: the quote shows the SAP price, so quote and order confirmation match, and conditions are maintained in one place. Weaknesses: every call depends on SAP and the middleware, a quote with many lines waits for the answer, and the price waterfall in Salesforce shows only the result, while the explanation stays in SAP.
+```pro-contra
+pro: Strengths of route A
+- The quote shows the SAP price, so quote and order confirmation match.
+- Conditions are maintained in one place.
+contra: Weaknesses of route A
+- Every call depends on SAP and the middleware.
+- A quote with many lines waits for the answer.
+- The price waterfall in Salesforce shows only the result, while the explanation stays in SAP.
+```
 
 ## Route B: rebuild conditions in Salesforce Pricing
 

@@ -50,6 +50,15 @@ Three sources carry the forecast, and at manufacturers two of them rarely live i
 2. **Sales agreements.** Agreed volumes are a fixed input to the forecast. How actuals for them come from the ERP is covered in [part 3: sales agreements, spotting customers behind on volume](../sales-agreements-volume-shortfall-erp/).
 3. **Opportunities.** New business that has not closed yet. This is the only source that is created in Salesforce anyway.
 
+```ablauf
+sf: Sales agreements, Opportunities, Account forecast
+erp: Order history, ERP planning
+Order history --integration--> Account forecast
+Sales agreements --> Account forecast
+Opportunities --> Account forecast
+Account forecast ..handover..> ERP planning
+```
+
 For the architecture, that means account forecasting is an integration project first. In the global rollout I describe in part 3, orders and inventory came from the ERP. A forecast needs exactly that data too. Anyone introducing account forecasting should therefore plan the order history integration before configuring the forecast set. How I decide leading systems for orders and prices is described under [integration with ERP, middleware and telephony](../../services/salesforce-integration/).
 
 ## How big does the forecast get?
@@ -89,14 +98,21 @@ A note on Agentforce: Trailhead says that "Agentforce Manufacturing" generates f
 
 ## When does account forecasting pay off?
 
-I would recommend account forecasting when several of these points apply:
+I would recommend account forecasting when several of the first four points apply:
 
-- **A lot of recurring business.** A large share of revenue comes from regular offtake by existing customers.
-- **Sales agreements are already planned.** Then agreed volumes live in Salesforce anyway, and the forecast builds on them.
-- **The sales forecast lives in spreadsheets today.** One file per account manager that someone merges every month.
-- **Production or procurement is waiting for the number.** There is a fixed date when the sales view is needed.
+```pro-contra
+pro: Account forecasting pays off
+- **A lot of recurring business:** a large share of revenue comes from regular offtake by existing customers.
+- **Sales agreements are already planned:** agreed volumes live in Salesforce anyway, and the forecast builds on them.
+- **The sales forecast lives in spreadsheets today:** one file per account manager that someone merges every month.
+- **Production or procurement is waiting for the number:** there is a fixed date when the sales view is needed.
+contra: I would hold back
+- With a few large projects instead of running offtake.
+- With demand planning that works well in the ERP and only needs read access in the CRM.
+- When the order history cannot reach Salesforce.
+```
 
-I would hold back with a few large projects instead of running offtake, with demand planning that works well in the ERP and only needs read access in the CRM, and when the order history cannot reach Salesforce. Then the company pays for a feature that cannot work with its own data. Whether Manufacturing Cloud pays off as a whole is covered in [part 1 of this series](../salesforce-manufacturing-cloud-is-it-worth-it/).
+In the last case the company pays for a feature that cannot work with its own data. Whether Manufacturing Cloud pays off as a whole is covered in [part 1 of this series](../salesforce-manufacturing-cloud-is-it-worth-it/).
 
 ## Where should you start?
 

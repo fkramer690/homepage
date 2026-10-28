@@ -42,7 +42,9 @@ Für einen Maschinenbauer sieht die Kette so aus:
 4. **Der API Catalog** in Salesforce kann laut [MuleSoft](https://docs.mulesoft.com/access-management/enabling-api-catalog) nur APIs aus Exchange synchronisieren, die verwaltete Instanzen haben. Im [Agentforce-Workshop](https://developer.salesforce.com/workshops/agentforce-workshop/mulesoft/3-explore-api-catalog) von Salesforce aktivieren Sie dann die Aktionen und vergeben sie per Permission Set an Benutzer.
 5. **Der Agent** bekommt Topic und Aktionen im Agent Builder.
 
+```hinweis achtung
 Zwei Voraussetzungen übersieht man leicht: eine vertrauenswürdige Verbindung zwischen der Anypoint-Organisation und einer Salesforce-Org, bei der Agentforce für die Anypoint Platform aktiviert ist, sowie ein aktivierter API Catalog in dieser Org. Liegen MuleSoft- und Salesforce-Vertrag in verschiedenen Abteilungen, klären Sie das vor dem ersten Sprint.
+```
 
 Eine offizielle Referenzarchitektur von Salesforce für Agentforce mit S/4HANA habe ich nicht gefunden, nur dieses allgemeine MuleSoft-Muster. Das Design Ihres Partners ist also die Architektur, und jemand auf Ihrer Seite sollte es prüfen.
 
@@ -58,7 +60,15 @@ Für einen Händleragenten würde ich drei Operationen entwerfen:
 - **Liefertermine** pro Position, nur mit bestätigtem Termin und Teillieferungen einzeln aufgeführt.
 - **Verfügbarkeit** für Material, Menge und Wunschtermin: ja oder nein plus frühester bestätigter Termin aus der Verfügbarkeitsprüfung in SAP. Keine Bestandszahl, denn Lagerbestände sind kaufmännische Information, die Händler nicht brauchen.
 
-Die MuleSoft-Kennzeichen legen fest, was der Agent mit jedem Feld tun darf. `x-sfdc/agent/action/publishAsAgentAction` macht eine Operation zur Aktion, `isUserInput` markiert, was der Agent beim Händler erfragt, `isDisplayable`, was er anzeigen darf, und `x-sfdc/privacy/isPii` schaltet für eine Operation den PII-Service ein. Der Blog zu External Services ergänzt, dass Beschreibungen von Aktionen und Parametern aus der Spezifikation übernommen werden. Gute Beschreibungen im OpenAPI-Dokument sind Prompt Engineering, einmal erledigt, in einer geprüften Datei.
+Die MuleSoft-Kennzeichen in der OpenAPI-Spezifikation legen fest, was der Agent mit jedem Feld tun darf. Der Blog zu External Services ergänzt, dass Beschreibungen von Aktionen und Parametern aus der Spezifikation übernommen werden. Gute Beschreibungen im OpenAPI-Dokument sind Prompt Engineering, einmal erledigt, in einer geprüften Datei.
+
+```vertiefung Für Entwickler
+titel: Welche Kennzeichen steuern den Agenten?
+- `x-sfdc/agent/action/publishAsAgentAction` macht eine Operation zur Aktion.
+- `isUserInput` markiert, was der Agent beim Händler erfragt.
+- `isDisplayable` markiert, was er anzeigen darf.
+- `x-sfdc/privacy/isPii` schaltet für eine Operation den PII-Service ein.
+```
 
 Berechnen Sie vor, was Händler am häufigsten fragen. „Gesamtstatus“ und „nächster bestätigter Termin“ sollten Felder sein, die die API berechnet, keine Schlüsse, die das Modell aus zehn Einteilungen zieht.
 
@@ -86,7 +96,20 @@ Was ein Gespräch in Flex Credits kostet, rechne ich in [was ein Serviceagent f�
 
 ## Live-Aufruf oder Kopie in Salesforce?
 
-Der Agent sollte SAP live aufrufen. Der Händler fragt nach heute, und eine nächtliche Kopie zeigt gestern. Der Preis ist eine Abhängigkeit: Während eines SAP-Wartungsfensters schlägt die Aktion fehl. Der Agent muss das dann sagen und einen Rückruf oder eine Übergabe anbieten, und dieser Fall gehört in die Testfälle, wie in [Agentforce-Agenten testen und freigeben](../agentforce-agenten-testen-freigeben/) beschrieben.
+Der Agent sollte SAP live aufrufen. Der Händler fragt nach heute, und eine nächtliche Kopie zeigt gestern.
+
+```ablauf
+ext: Händler, Mule-API
+sf: Agentforce-Agent
+erp: SAP S/4HANA
+Händler --Frage im Portal--> Agentforce-Agent
+Agentforce-Agent --Aktion--> Mule-API
+Mule-API --OData--> SAP S/4HANA
+SAP S/4HANA ..Bestätigter Termin..> Mule-API
+Mule-API ..Antwortfelder..> Agentforce-Agent
+```
+
+Der Preis ist eine Abhängigkeit: Während eines SAP-Wartungsfensters schlägt die Aktion fehl. Der Agent muss das dann sagen und einen Rückruf oder eine Übergabe anbieten, und dieser Fall gehört in die Testfälle, wie in [Agentforce-Agenten testen und freigeben](../agentforce-agenten-testen-freigeben/) beschrieben.
 
 Eine Kopie hat trotzdem ihren Platz, etwa der Fahrzeugbestand, den Techniker im Außendienst offline brauchen, wie in [Ersatzteile zwischen ERP und Field Service](../salesforce-field-service-ersatzteile-erp/). Termine aus einer solchen Kopie würde ich den Agenten nicht als aktuell ausgeben lassen.
 

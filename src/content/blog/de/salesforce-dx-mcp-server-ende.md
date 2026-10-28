@@ -42,6 +42,14 @@ Das Datum selbst stützt sich allein auf das README-Banner: Keine der drei Dokum
 
 Zum Vergleich die [Richtlinie für Hosted MCP Server](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/end-of-life.html): Jede Version wird mindestens drei Jahre unterstützt, und das Ende wird mindestens ein Jahr vorher angekündigt. Für den lokalen Server habe ich keine vergleichbare Zusage gefunden.
 
+```zeitleiste
+2025-04 | Erste Versionen von `@salesforce/mcp` auf npm
+2026-04-29 | Hosted MCP Server allgemein verfügbar
+2026-07-09 | Version 0.30.15, die bisher letzte
+2026-08-19 | Ankündigung des Claude-Code-Plugins
+2026-11-02 | End of Life des lokalen DX MCP Servers laut README
+```
+
 ## Warum ist ein Entwicklerwerkzeug Sache der IT-Leitung?
 
 MCP (Model Context Protocol) ist der offene Standard, über den ein KI-Werkzeug Funktionen in einem anderen System aufruft. Der DX MCP Server gibt einem Coding-Agenten mehr als 60 solcher Funktionen für Ihre Salesforce-Orgs. Er läuft auf dem Rechner des Entwicklers und nutzt die Orgs, an denen dieser per Salesforce CLI angemeldet ist. Welche Orgs der Agent anfassen darf, legt beim Start ein einziger Parameter fest, `--orgs`. Das [README](https://raw.githubusercontent.com/salesforcecli/mcp/main/README.md) nennt die Werte:

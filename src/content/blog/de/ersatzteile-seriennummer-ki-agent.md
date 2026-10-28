@@ -61,6 +61,18 @@ Die Zeile, die ich zuerst prüfen würde, ist die dritte. Die As-built-Stücklis
 
 **Meine Empfehlung: nach Nutzung trennen.** Salesforce hält die Maschine und ihre servicerelevanten Hauptbaugruppen als Asset-Hierarchie, die Garantie, Wartungsverträge und Händlerportal ohnehin brauchen. Die vollständige Stückliste bleibt im PLM und kommt live. Für den Hallenkeller ohne Netz läuft der Agent vor dem Einsatz und schreibt seinen Vorschlag als Products Required, also benötigte Teile, in den Arbeitsauftrag. Der Techniker hat die Liste dann offline.
 
+```ablauf
+sf: Asset, Agent, Arbeitsauftrag
+erp: Verfügbarkeit
+ext: As-built-Stückliste
+Asset --Seriennummer--> Agent
+Agent --Seriennummer--> As-built-Stückliste
+As-built-Stückliste ..Teilenummern..> Agent
+Agent --Teilenummern--> Verfügbarkeit
+Verfügbarkeit ..Preis..> Agent
+Agent --Vorschlag--> Arbeitsauftrag
+```
+
 Hat Ihr PLM keine API oder keine As-built-Daten je Seriennummer, kann der Agent nichts abfragen; Optionen für ältere Systeme stehen in [altes ERP ohne API](../altes-erp-ohne-api-ki-agenten/).
 
 ## Was darf der Agent entscheiden, und was nicht?
@@ -96,10 +108,16 @@ Im Szenario bringt ein Pilot mit zehn Technikern zwei Erkenntnisse. Für Maschin
 
 ## Wo sollten Sie anfangen?
 
-1. **Zuerst von Hand testen.** Nehmen Sie 20 aktuelle Ersatzteilbestellungen aus dem Service und prüfen Sie, ob Seriennummer, Asset und As-built-Stückliste zum tatsächlich bestellten Teil führen.
-2. **Die Seriennummer als Schlüssel vereinbaren.** Gleiches Format auf dem Typenschild, im ERP, im PLM und in Salesforce, inklusive führender Nullen und Werkspräfixe.
-3. **Die API vor dem Agenten bauen.** Geben Sie der Ersatzteilabteilung zuerst eine Maske darauf. Hilft sie Menschen nicht, hilft auch kein Agent.
-4. **Mit Technikern starten** und Händler erst mit den Portalregeln von oben dazunehmen.
+```schritte
+Zuerst von Hand testen
+  Nehmen Sie 20 aktuelle Ersatzteilbestellungen aus dem Service und prüfen Sie, ob Seriennummer, Asset und As-built-Stückliste zum tatsächlich bestellten Teil führen.
+Seriennummer als Schlüssel vereinbaren
+  Gleiches Format auf dem Typenschild, im ERP, im PLM und in Salesforce, inklusive führender Nullen und Werkspräfixe.
+API vor dem Agenten bauen
+  Geben Sie der Ersatzteilabteilung zuerst eine Maske darauf. Hilft sie Menschen nicht, hilft auch kein Agent.
+Mit Technikern starten
+  Nehmen Sie Händler erst mit den Portalregeln von oben dazu.
+```
 
 Welches System welche Daten führt, ist Thema der [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/); das größere Bild zu Agenten in der Fertigung zeigt das Masterclass-Kapitel [KI-Agenten in der Fertigung](../../masterclass/ki-salesforce/ki-agenten-in-der-fertigung/).
 

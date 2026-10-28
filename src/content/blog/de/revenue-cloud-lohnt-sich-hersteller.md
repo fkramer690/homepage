@@ -43,7 +43,13 @@ Revenue Cloud ist das Quote-to-Cash-Produkt von Salesforce, also der Weg vom Pro
 
 Das Produkt hatte mehrere Namen, darunter Revenue Lifecycle Management und Agentforce Revenue Management. Welcher wo gilt, steht in [Revenue Cloud, RLM, RCA: Welcher Name gilt jetzt?](../revenue-cloud-produktnamen-rlm-rca/).
 
-Für ein neues Projekt ist eine Option weggefallen. Laut der [Salesforce-Seite zum Verkaufsende von CPQ](https://www.salesforce.com/sales/cpq/end-of-life/) verkauft Salesforce keine CPQ-Lizenzen mehr an Neukunden. Dieselbe Seite beschreibt CPQ als Managed Package und Revenue Cloud Advanced als Nachfolger, nativ auf der Plattform gebaut. Bestandskunden können CPQ weiter nutzen, Nutzer nachkaufen und verlängern, eine erzwungene Migration gibt es nicht.
+Für ein neues Projekt ist eine Option weggefallen.
+
+```hinweis achtung
+Laut der [Salesforce-Seite zum Verkaufsende von CPQ](https://www.salesforce.com/sales/cpq/end-of-life/) verkauft Salesforce keine CPQ-Lizenzen mehr an Neukunden.
+```
+
+Dieselbe Seite beschreibt CPQ als Managed Package und Revenue Cloud Advanced als Nachfolger, nativ auf der Plattform gebaut. Bestandskunden können CPQ weiter nutzen, Nutzer nachkaufen und verlängern, eine erzwungene Migration gibt es nicht.
 
 ## Wann lohnt sich Revenue Cloud für einen Hersteller?
 

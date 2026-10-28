@@ -60,7 +60,9 @@ Die [B2B-Preisseite](https://www.salesforce.com/editions-pricing/commerce-cloud/
 
 Zwei Fußnoten zählen mehr als die Tabelle. Aufträge "taken on other channels or integrated from any other third-party system" brauchen ein separat gekauftes Salesforce Order Management. Und Bestandskunden mit Order Management "will need to renew on Commerce Cloud Advanced".
 
-Was Lite gegenüber der vollen Version weglässt, schlüsselt die Seite nicht auf. Wenn Order Management Teil Ihres Plans ist, lassen Sie sich diese Liste vor der Wahl der Edition schriftlich von Salesforce geben.
+```hinweis offen
+Was Lite gegenüber der vollen Version weglässt, schlüsselt die Preisseite nicht auf. Wenn Order Management Teil Ihres Plans ist, lassen Sie sich diese Liste vor der Wahl der Edition von Salesforce geben.
+```
 
 ## Warum SAP meist Herr des Auftrags bleiben sollte
 
@@ -73,6 +75,19 @@ Ich sehe in der Fertigung drei Gründe.
 **Kredit, Preise und Steuern liegen in SAP.** Endgültig ist der Auftrag erst, wenn SAP ihn angenommen hat. Mein Artikel zu [Händlerbestand und Nachschub](../haendlerbestand-nachschub-agentforce/) folgt derselben Regel: Eine Anforderung wird erst zum verbindlichen Auftrag, wenn das ERP sie angenommen und eine Auftragsnummer zurückgegeben hat.
 
 Der Shop ist also der Ort, an dem der Auftrag beginnt und an dem der Käufer ihn verfolgt. SAP ist der Ort, an dem er abgewickelt wird.
+
+```ablauf
+sf: Warenkorb, Order Summary, Bestellhistorie
+erp: Kundenauftrag, Lieferung, Rechnung
+Warenkorb --> Order Summary
+Order Summary --Bestellung--> Kundenauftrag
+Kundenauftrag --> Lieferung
+Lieferung --> Rechnung
+Kundenauftrag ..Auftragsnummer..> Order Summary
+Lieferung ..Sendungsnummer..> Order Summary
+Rechnung ..> Order Summary
+Order Summary --> Bestellhistorie
+```
 
 ## Was kommt aus SAP zurück, und wann?
 

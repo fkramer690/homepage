@@ -39,9 +39,14 @@ If you don't know the tool yet, start with my [introduction to sfdx-hardis](../s
 
 The [training](https://sfdx-hardis.cloudity.com/salesforce-devops-training/) is built by Cloudity and runs entirely on free resources: a GitHub account, VS Code and free Salesforce Developer Edition orgs. If you can't install software on your machine, it also runs in a browser-based VS Code. Every lab comes with screenshots of the real screens. The course is split into two tracks and three levels:
 
-- **Level 1, Contributor Basics** (7 labs, about 2 h 15): installing VS Code, Git and sfdx-hardis, setting up a Dev Hub, scratch orgs and the pipeline, working on a branch, building a custom field, publishing the change, passing the deployment check and merging.
-- **Level 2, Contributor Advanced** (9 labs, about 4 h): fixing a missing dependency, deployment actions for data fixes and reference data, the code quality gate and Apex test coverage, permission sets and profiles, resolving a merge conflict and recovering from committing the wrong metadata.
-- **Level 3, Release Manager** (11 labs, about 6 h 55): configuring the pipeline, reviewing pull requests, reading deployment logs, merging colliding pull requests, promoting to UAT with release notes, releasing to production with DORA metrics, hotfixes and retrofits, production monitoring, generated documentation and promotion branches.
+```schritte
+Level 1, Contributor Basics | 7 labs · about 2 h 15
+  Installing VS Code, Git and sfdx-hardis, setting up a Dev Hub, scratch orgs and the pipeline, working on a branch, building a custom field, publishing the change, passing the deployment check and merging.
+Level 2, Contributor Advanced | 9 labs · about 4 h
+  Fixing a missing dependency, deployment actions for data fixes and reference data, the code quality gate and Apex test coverage, permission sets and profiles, resolving a merge conflict and recovering from committing the wrong metadata.
+Level 3, Release Manager | 11 labs · about 6 h 55
+  Configuring the pipeline, reviewing pull requests, reading deployment logs, merging colliding pull requests, promoting to UAT with release notes, releasing to production with DORA metrics, hotfixes and retrofits, production monitoring, generated documentation and promotion branches.
+```
 
 ![The three levels of the sfdx-hardis DevOps training: Level 1 Contributor Basics with 7 labs and about 2 hours 15 minutes, Level 2 Contributor Advanced with 9 labs and about 4 hours, Level 3 Release Manager with 11 labs and about 6 hours 55 minutes. Each badge is verified by a job that re-runs every check against your own repository.](../../../assets/blog/sfdx-hardis-training-levels-en.png)
 
@@ -75,6 +80,12 @@ For clients, it is also a cheap way to build internal DevOps knowledge, which is
 
 ## What is my verdict?
 
-Plan for a full day if you have experience and more if you don't. It is time well spent. Work through the labs in one go rather than spread over weeks, because the levels build directly on each other and the links between branch, pull request, pipeline and org become clearest that way. The course is free, hands-on and close to real project work, and the badge means something because it is verified. Huge credit and thanks to Nicolas Vuillamy and the Cloudity team.
+Plan for a full day if you have experience and more if you don't. It is time well spent.
+
+```hinweis tipp
+Work through the labs in one go rather than spread over weeks, because the levels build directly on each other and the links between branch, pull request, pipeline and org become clearest that way.
+```
+
+The course is free, hands-on and close to real project work, and the badge means something because it is verified. Huge credit and thanks to Nicolas Vuillamy and the Cloudity team.
 
 If you want to talk about how sfdx-hardis or a DevOps setup could work in your Salesforce programme, [send me a message](#contact).

@@ -54,7 +54,10 @@ Unterhalb der Teamebene kommen laut [Unit zur Verteilung](https://trailhead.sale
 
 Zwei Details zählen in der Praxis. Erstens müssen die verteilten Werte nicht genau das Elternziel ergeben. Trailhead nennt das eine Funktion, weil ein Manager einen Teil behalten kann. Für das Controlling heißt es: Lücken oder Überdeckungen fallen nur auf, wenn ein Bericht sie zeigt. Zweitens laufen Änderungen nicht von selbst nach unten. Der Manager klickt Propagate to Assignments, und Salesforce benachrichtigt die Betroffenen in der App.
 
+```vertiefung Für Entwickler
+titel: Ziele per Flow aktualisieren
 Für Automatisierung gibt es die [Aktion Update Account Manager Target Values](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/mfg_actions_account_manager_target.htm), seit API-Version 49.0. Sie bekommt die ID eines Zieldatensatzes und aktualisiert die Zuordnungen auf Basis von Wert und Prozentsatz des Elternziels. Ein Flow kann sie aufrufen, wenn die Geschäftsführung im März das Jahresziel ändert. Laut Developer Guide setzt die Aktion eine Manufacturing-Cloud-Lizenz voraus.
+```
 
 ## Was passiert nach einer Umorganisation?
 
@@ -85,7 +88,11 @@ Für den Vergleich beschreibt Trailhead ein [Team-Performance-Dashboard](https:/
 
 Ein typisches Szenario, als Annahme: Ein Hersteller von Antriebskomponenten hat eine Vertriebsleitung, sechs Regionalleiter und 40 Account Manager. Jeder Account Manager betreut 150 Kunden, und die Ziele sollen pro Kunde, Produkt und Monat für 60 Produkte laufen.
 
-Verteilte jeder Account Manager jeden Kunden auf jedes Produkt und jeden Monat, wären das 40 × 150 × 60 × 12, also 4,32 Millionen Periodendatensätze. Die Setup-Unit auf Trailhead nennt ein Limit für Datensätze vom Typ Account Manager Periodic Target Distribution, das der Account Executive von Salesforce mit dem Admin festlegt. Das Beispiel dort nutzt 10 Millionen. Ein Beispielwert ist keine Zusage für Ihren Vertrag. Ich würde die erwartete Zahl vor dem ersten Zieljahr rechnen und das Limit im Angebot bestätigen lassen.
+Verteilte jeder Account Manager jeden Kunden auf jedes Produkt und jeden Monat, wären das 40 × 150 × 60 × 12, also 4,32 Millionen Periodendatensätze. Die Setup-Unit auf Trailhead nennt ein Limit für Datensätze vom Typ Account Manager Periodic Target Distribution, das der Account Executive von Salesforce mit dem Admin festlegt. Das Beispiel dort nutzt 10 Millionen.
+
+```hinweis offen
+Ein Beispielwert ist keine Zusage für Ihren Vertrag. Ich würde die erwartete Zahl der Periodendatensätze vor dem ersten Zieljahr rechnen und das Limit im Angebot bestätigen lassen.
+```
 
 In der Praxis würde ich das Szenario zuschneiden: Kundenziele für die 20 größten Kunden pro Person, Produktkategorie statt Produkt, der Rest als Teamziel. Das deckt den Großteil des Umsatzes und hält die Datensätze deutlich unter einer Million.
 

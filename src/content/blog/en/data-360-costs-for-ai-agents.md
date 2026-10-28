@@ -37,9 +37,16 @@ An agent does not read a PDF directly. According to [Trailhead](https://trailhea
 
 Three meters follow from this:
 
-- **Processing per MB** whenever a document is indexed or indexed again. The [Flex Credits rate card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) charges 150 credits per MB for Unstructured Processing and 600 for Intelligent Processing in the base tier. According to the [help article on unstructured data billing](https://help.salesforce.com/s/articleView?id=data.c360_a_unstructured_data_billing_considerations.htm&language=en_US&type=5), chunking and vectorising count only once, so a 100 MB PDF is billed as 100 MB.
-- **Queries per million rows** each time the agent searches: 3 credits in the base tier.
+- **Processing per MB** whenever a document is indexed or indexed again, split into Unstructured Processing and Intelligent Processing. According to the [help article on unstructured data billing](https://help.salesforce.com/s/articleView?id=data.c360_a_unstructured_data_billing_considerations.htm&language=en_US&type=5), chunking and vectorising count only once, so a 100 MB PDF is billed as 100 MB.
+- **Queries per million rows** each time the agent searches.
 - **Storage.** Every ingested file counts toward Data 360 storage, and so do the chunk and index objects created for the search index.
+
+```kennzahlen
+150 | credits per MB of Unstructured Processing, base tier
+600 | credits per MB of Intelligent Processing, base tier
+3 | credits per million rows queried, base tier
+source: [Flex Credits rate card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf), as of 31 August 2026
+```
 
 Rates fall with volume: above 300,000 credits a month they drop in three steps to a fifth, for unstructured processing 30 credits per MB above 12.5 million credits. Tiers apply per usage type and reset on the first day of each calendar month. Flex Credits cost [$500 per 100,000](https://www.salesforce.com/agentforce/pricing/), and the same page notes for its Agentforce examples that Data 360 credits are not included. That is why these numbers rarely make it into the first estimate.
 
@@ -80,7 +87,11 @@ Three results stand out. Searches are 7 percent of the running cost. With the de
 
 ### Re-indexing whole records
 
-The help article treats a source record and all its file attachments as one unit. If a field on that record or one attachment changes, all attachments are reindexed. Picture catalogues attached to product records that the SAP interface updates with prices or stock every night. If that reprocessed all catalogues just once a week, the month would carry 24,000 MB of Intelligent Processing: about 6.5 million credits or $32,700 instead of the planned 195,000. I would keep documents on objects or in a Data Library that no interface touches, and test this in the sandbox before go-live.
+```hinweis achtung
+The help article treats a source record and all its file attachments as one unit. If a field on that record or one attachment changes, all attachments are reindexed.
+```
+
+Picture catalogues attached to product records that the SAP interface updates with prices or stock every night. If that reprocessed all catalogues just once a week, the month would carry 24,000 MB of Intelligent Processing: about 6.5 million credits or $32,700 instead of the planned 195,000. I would keep documents on objects or in a Data Library that no interface touches, and test this in the sandbox before go-live.
 
 ### Tiers reset every month
 

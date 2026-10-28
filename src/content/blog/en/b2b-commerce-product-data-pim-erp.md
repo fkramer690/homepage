@@ -73,7 +73,11 @@ Salesforce lists the [product and category limits](https://developer.salesforce.
 | Category depth | 5 levels | soft |
 | Categories per catalogue | 15,000 | soft |
 
-Two of these shape the design. One catalogue per store means that a second assortment with its own structure needs a second store, which I discuss in [one B2B store or several](../b2b-stores-countries-brands-dealers/). And the gap between 4 million products and 1 million searchable ones matters for manufacturers with large spare parts ranges. Salesforce writes that only up to 1 million products are supported for search and asks you to contact your account representative if you need to upload more than a million SKUs. With a third-party search provider such as Coveo, Algolia or Bloomreach, the 4 million limit does not apply.
+Two of these shape the design. One catalogue per store means that a second assortment with its own structure needs a second store, which I discuss in [one B2B store or several](../b2b-stores-countries-brands-dealers/). And the gap between 4 million products and 1 million searchable ones matters for manufacturers with large spare parts ranges.
+
+```hinweis achtung
+Salesforce writes that only up to 1 million products are supported for search and asks you to contact your account representative if you need to upload more than a million SKUs. With a third-party search provider such as Coveo, Algolia or Bloomreach, the 4 million limit does not apply.
+```
 
 Category depth 5 is rarely a problem for spare parts. ERP material groups are often deeper, but buyers do not click through eight levels. I would flatten them to three or four levels and let search and filters do the rest.
 
@@ -89,7 +93,11 @@ For many spare parts, variations are not needed at all. A dealer usually searche
 
 9 images per product cover most spare parts. Drawings, data sheets and certificates are a different matter: they change with revisions and often already live in a DAM or PLM system. Copying them into Salesforce creates a second version that falls out of step.
 
-With its July 2026 release, Salesforce announced product media extensibility. According to the [Salesforce blog](https://www.salesforce.com/blog/b2b-commerce-innovations-july-26/), it lets you "connect external digital asset management (DAM) platforms, 3D models, technical specs, and hosted CMS videos" and show them on product detail pages through LWC wrappers. The post does not give separate availability details per feature, so I would test it in a sandbox before planning around it. The direction is right: media stays in the system that manages revisions, and the store shows it.
+With its July 2026 release, Salesforce announced product media extensibility. According to the [Salesforce blog](https://www.salesforce.com/blog/b2b-commerce-innovations-july-26/), it lets you "connect external digital asset management (DAM) platforms, 3D models, technical specs, and hosted CMS videos" and show them on product detail pages through LWC wrappers. The direction is right: media stays in the system that manages revisions, and the store shows it.
+
+```hinweis offen
+The post does not give separate availability details per feature, so I would test product media extensibility in a sandbox before planning around it.
+```
 
 ## Why does data quality decide search quality?
 

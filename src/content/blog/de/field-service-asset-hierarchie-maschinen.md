@@ -71,6 +71,10 @@ Ohne festen Prozess zeigt die Hierarchie in Salesforce dann die Maschine im Ausl
 2. **Welches System führt danach?** Bleibt das ERP führend für die installierte Basis, muss die Änderung aus der App zurück ins ERP. Führt Salesforce nach der Auslieferung, bekommt das ERP eine Kopie. Beides funktioniert, eine Mischung nicht. Das ist dieselbe Frage nach dem führenden System wie bei den [Stammdaten für die Planung](../salesforce-field-service-stammdaten/), und sie gehört in das Schnittstellendesign, siehe [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).
 3. **Was ist mit Umbauten durch Händler oder Kunden?** Tauscht ein Händler eine Komponente und meldet nur Garantiefälle, hat die Hierarchie Lücken. Das schadet auch jeder späteren Auswertung, wie in [Predictive Maintenance in Salesforce: die Datenbasis](../predictive-maintenance-salesforce-datenbasis/) beschrieben.
 
+```praxis
+In meinen Field-Service-Projekten mit Wartung, Störungseinsätzen und Inbetriebnahmen kam die installierte Basis aus dem ERP. Die Stolpersteine waren die Datenqualität der Assets, die Akzeptanz bei den Technikern und die ERP-Schnittstellen.
+```
+
 Garantieansprüche auf die installierte Basis gehören zu Manufacturing Cloud und stehen im Kapitel [Garantie und After-Sales](../../masterclass/manufacturing-cloud/garantie-und-after-sales/) dieser Masterclass.
 
 ## Warum kostet eine tiefe Hierarchie später?

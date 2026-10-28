@@ -95,6 +95,18 @@ Ein Maschinenbauer mit SAP S/4HANA verkauft 40 Grundmaschinen mit Optionen, Ersa
 
 Ich würde Schnitt 2 wählen. Revenue Cloud führt Katalog, Konfiguration und Angebot für Maschinen und Abonnements. Maschinenpreise rechnet Revenue Cloud auf Listenpreisen, die aus SAP synchronisiert werden. Ersatzteile im selben Angebot bekommen ihren Nettopreis per API aus SAP, denn diese Konditionen sollte niemand nachbauen. Der aktivierte Auftrag geht per Callout an SAP, die SAP-Auftragsnummer kommt zurück. Das Abonnement bleibt ein Asset in Salesforce, Verlängerungen und Nachträge beginnen dort. Die Rechnung für Maschine und Abonnement kommt im ersten Jahr aus SAP. Billing in Salesforce wird erst ein Thema, wenn die Abonnements zu einem eigenen Geschäft wachsen.
 
+```ablauf
+sf: Angebot, Auftrag, Abonnement-Asset
+erp: SAP-Listenpreise, SAP-Konditionen, SAP-Auftrag, SAP-Rechnung
+SAP-Listenpreise --Synchronisation--> Angebot
+SAP-Konditionen --Nettopreis per API--> Angebot
+Angebot --> Auftrag
+Auftrag --Callout--> SAP-Auftrag
+SAP-Auftrag ..Auftragsnummer..> Auftrag
+Auftrag --> Abonnement-Asset
+SAP-Auftrag --> SAP-Rechnung
+```
+
 Was der Vertriebsinnendienst dann zusätzlich braucht, etwa den Auftragsstatus live aus SAP, folgt dem Muster aus [Agentforce und SAP: Auftragsstatus über MuleSoft](../agentforce-sap-auftragsstatus/).
 
 ## Wie halten Sie die Aufteilung fest?

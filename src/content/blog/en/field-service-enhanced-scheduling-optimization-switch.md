@@ -59,8 +59,10 @@ According to the [considerations for Enhanced Scheduling and Optimization](https
 
 Two things go away. Scheduling recipes, the automations that certain events trigger to solve overlaps in the schedule, are not available. Salesforce Help names the Fix Schedule Overlaps automated flow as the replacement. Optimization Insights is replaced by the Optimization Hub. If your dispatchers rely on recipes today, the replacement has to be designed and tested before the switch, not after it.
 
-Then there are work rules that give different results with the same data. The same Help article lists them:
+Then there are work rules that give different results with the same data. The same Help article lists them.
 
+```vertiefung For admins
+title: Which work rules behave differently?
 - **Match Fields and Extended Match** handle empty fields differently.
 - **Match Boolean** is not applied if the Boolean field on the service resource is empty.
 - **Match Territory** treats an appointment with an empty territory field as open to resources from all territories.
@@ -68,6 +70,7 @@ Then there are work rules that give different results with the same data. The sa
 - **Match Skills** gets an additional "at least one skill matches" option.
 - **Capacity-based resources** lose support for absences and resource efficiency.
 - **In-day optimization** has a different run time.
+```
 
 Most of these points have one thing in common: empty fields. An appointment without a territory, a resource without a value in a checkbox field, a work order with a missing match field. On the older engine these gaps may have been harmless by accident. On the new one they lead to different candidates. That is why the switch is first a data project, and why I would start with the checks from [what data Field Service scheduling needs](../salesforce-field-service-master-data/).
 
@@ -83,10 +86,16 @@ That links two decisions that look separate. An org that stays on the older engi
 
 Assume a machine builder with 45 technicians in five service territories, Field Service live since 2021 on the older engine, four dispatchers and two scheduling recipes for late appointments. All numbers are assumptions to show the method.
 
-1. **Data check, two weeks.** A report lists appointments without a territory, resources with empty fields used in Match Fields or Match Boolean rules and technicians with secondary territory memberships. The result: 6 percent of open appointments have no territory, mostly breakdowns created from cases.
-2. **Recipes, two weeks.** The two recipes get rebuilt with the Fix Schedule Overlaps flow and tested in a full sandbox.
-3. **Pilot, four weeks.** One territory with nine technicians switches to the enhanced engine. Dispatchers note every proposal they change and why, as they did when automation was introduced.
-4. **Comparison.** If the share of changed proposals in the pilot territory is no higher than in the others, the remaining territories follow one per week.
+```schritte
+Data check | 2 weeks
+  A report lists appointments without a territory, resources with empty fields used in Match Fields or Match Boolean rules and technicians with secondary territory memberships. The result: 6 percent of open appointments have no territory, mostly breakdowns created from cases.
+Rebuild recipes | 2 weeks
+  The two recipes get rebuilt with the Fix Schedule Overlaps flow and tested in a full sandbox.
+Pilot | 4 weeks
+  One territory with nine technicians switches to the enhanced engine. Dispatchers note every proposal they change and why, as they did when automation was introduced.
+Comparison
+  If the share of changed proposals in the pilot territory is no higher than in the others, the remaining territories follow one per week.
+```
 
 The configuration for this, the territory setting, scheduling policies and work rules, consists of records rather than metadata. It belongs in the pipeline as described in the DevOps masterclass chapter on [data and configuration](../../masterclass/devops-release-management/data-and-configuration/), otherwise the tested sandbox state and production drift apart.
 

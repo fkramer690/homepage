@@ -64,7 +64,9 @@ Eine neue Prozedur beginnt als leere Version V1, jedes hinzugefügte Element wir
 
 Dieser Schritt wird in den ersten Wochen am leichtesten vergessen. Ändern Sie einen Preisbucheintrag oder eine Mengenstaffel, rechnet das Angebot weiter mit dem alten Wert, bis die Decision Table aktualisiert ist. Trailhead zeigt zwei Wege: Sync Pricing Data im Salesforce Pricing Setup ausführen oder einzelne Decision Tables im Setup aktualisieren, etwa Volume Discount Entries oder für Vertragspreise Contract Pricing Entries und Contract Pricing Volume Tiers.
 
+```hinweis achtung
 Kommen bei einem Hersteller die Listenpreise jede Nacht aus SAP, gehört die Aktualisierung in den Ladejob. Der Ladevorgang ist erst fertig, wenn die Decision Tables aktuell sind. Ich würde danach eine Prüfung einbauen, die eine Handvoll Referenzpreise vergleicht, denn eine vergessene Aktualisierung erzeugt keine Fehlermeldung, nur falsche Preise.
+```
 
 ## Was zeigt der Preiswasserfall?
 
@@ -74,12 +76,15 @@ Für den Vertrieb beantwortet er die Frage "Warum ist der Preis so?" ohne Ticket
 
 ## Können andere Systeme Revenue Cloud nach einem Preis fragen?
 
-Ja. Die [Salesforce Pricing Business APIs](https://developer.salesforce.com/docs/atlas.en-us.revenue_lifecycle_management_dev_guide.meta/revenue_lifecycle_management_dev_guide/pricing_business_apis.htm) im Revenue Management Developer Guide (Winter '27, API 68.0) enthalten unter anderem:
+Ja. Die [Salesforce Pricing Business APIs](https://developer.salesforce.com/docs/atlas.en-us.revenue_lifecycle_management_dev_guide.meta/revenue_lifecycle_management_dev_guide/pricing_business_apis.htm) im Revenue Management Developer Guide (Winter '27, API 68.0) enthalten Ressourcen für Headless Pricing, für die Aktualisierung der Nachschlagetabellen und für den Preiswasserfall.
 
-- `/connect/core-pricing/pricing` für Headless Pricing, das in einem Aufruf einen Kontext anlegt und befüllt und Preise je Position samt Fehlern zurückgibt;
-- `/connect/core-pricing/price-contexts/{contextId}`, um einen bestehenden Kontext zu bepreisen;
-- `/connect/core-pricing/sync/{pricingSyncOrigin}`, um die Nachschlagetabellen zu aktualisieren;
-- `/connect/core-pricing/waterfall`, um den Preiswasserfall einer Position zu schreiben und zu lesen.
+```vertiefung Für Entwickler
+titel: Welche Ressourcen der Pricing Business APIs brauchen Sie?
+- `/connect/core-pricing/pricing` für Headless Pricing, das in einem Aufruf einen Kontext anlegt und befüllt und Preise je Position samt Fehlern zurückgibt
+- `/connect/core-pricing/price-contexts/{contextId}`, um einen bestehenden Kontext zu bepreisen
+- `/connect/core-pricing/sync/{pricingSyncOrigin}`, um die Nachschlagetabellen zu aktualisieren
+- `/connect/core-pricing/waterfall`, um den Preiswasserfall einer Position zu schreiben und zu lesen
+```
 
 Das zählt, wenn derselbe Preis in einem Händlerportal, einem B2B-Shop oder in der Antwort eines Agenten erscheinen soll. Den Shop behandle ich in [Advanced Pricing im B2B-Shop](../advanced-pricing-b2b-shop-revenue-cloud/) und im Kapitel [Preise, Warenkorb und Checkout](../../masterclass/b2b-commerce/preise-warenkorb-checkout/). Ein Agent sollte die Pricing API aufrufen und nie selbst einen Preis ausrechnen, nach derselben Regel, die ich in [Agent Script: Geschäftsregeln gehören nicht ins LLM](../agent-script-regeln-statt-llm/) beschreibe.
 

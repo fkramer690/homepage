@@ -74,7 +74,11 @@ Hier liegen Schätzungen am häufigsten daneben. Die GMV-Gebühr deckt den Store
 
 ## Was bedeuten die Zahlen von 1 bis 2 Prozent?
 
-Integratoren veröffentlichen Sätze von etwa 1 Prozent des GMV für Growth und 2 Prozent für Advanced, zum Beispiel in [Elogics Preisübersicht](https://elogic.co/blog/salesforce-pricing-plans). Salesforce bestätigt diese Zahlen nicht: Die Preisseite zeigt für beide Editionen nur "Preisangebot anfordern". Ich behandle sie als groben Startwert für eine erste Schätzung, mehr nicht.
+Integratoren veröffentlichen Sätze von etwa 1 Prozent des GMV für Growth und 2 Prozent für Advanced, zum Beispiel in [Elogics Preisübersicht](https://elogic.co/blog/salesforce-pricing-plans).
+
+```hinweis achtung
+Salesforce bestätigt diese Zahlen nicht: Die Preisseite zeigt für beide Editionen nur "Preisangebot anfordern". Ich behandle sie als groben Startwert für eine erste Schätzung, mehr nicht.
+```
 
 Lieber rechne ich mit dem Satz als Variable. Ein typisches Szenario, als Annahme: Ein Hersteller erwartet im dritten Jahr 15 Millionen Euro Ersatzteilumsatz über den Store, ohne Steuern und Versand. Jeder Prozentpunkt GMV sind dann 150.000 Euro im Jahr. Der Unterschied zwischen einem Angebot mit 1 Prozent und einem mit 2 Prozent ist mehr als das Gehalt einer Person im Innendienst. Deshalb verhandeln Sie den Satz, nicht die Lizenzanzahl.
 

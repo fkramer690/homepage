@@ -54,7 +54,11 @@ Salesforce offers two portal licences for Manufacturing Cloud. According to [Sal
 
 Help also says that Customer Community Plus for Manufacturing does not share leads, opportunities, campaigns or quotes with external users. It does not explicitly name sales agreements for this licence.
 
-In my project, customers had Customer Community Plus for Manufacturing and saw their sales agreements in a reduced list view. So I read Help as describing typical use cases, not a complete list. I still would not rely on it. If customers should see sales agreements in the portal, put that into the quote as a requirement, with written confirmation from Salesforce that the chosen licence covers it.
+In my project, customers had Customer Community Plus for Manufacturing and saw their sales agreements in a reduced list view. So I read Help as describing typical use cases, not a complete list. I still would not rely on it.
+
+```hinweis offen
+If customers should see sales agreements in the portal, put that into the quote as a requirement, with written confirmation from Salesforce that the chosen licence covers it.
+```
 
 What portal licences cost and how they differ from internal licences is covered in [Salesforce licences: does everyone need a full one?](../salesforce-licences-full-licence-needed/). How the portal fits into the dealer channel next to rebates and partner visits is in [chapter 3 of the Manufacturing Cloud masterclass](../../masterclass/manufacturing-cloud/dealer-and-partner-channel/).
 
@@ -76,7 +80,9 @@ One side effect is worth a thought: when customers see for themselves that they 
 
 ## Who owns master data when customers maintain it themselves?
 
+```praxis
 In the project, customers could maintain certain information themselves, such as the billing address. That data was saved in Salesforce first and then synced to the ERP.
+```
 
 That sounds like a detail, but it shifts the roles of the systems. At manufacturers, the ERP usually leads for customer master data, because orders and invoices are created there. When a customer maintains a field in the portal, Salesforce becomes the entry system for that field. That leads to three rules I settle before building:
 
@@ -88,7 +94,18 @@ How I decide the leading system for customers, products, prices and orders is de
 
 ## What happens to orders and requests from the portal?
 
-An order in the portal is the last step for the customer and the first one for the manufacturer. It has to reach the ERP, be confirmed there and flow back into the sales agreement as an actual quantity. Planning the portal means planning the whole loop: order, ERP, confirmation, actual quantity, display in the portal.
+An order in the portal is the last step for the customer and the first one for the manufacturer. It has to reach the ERP, be confirmed there and flow back into the sales agreement as an actual quantity. Planning the portal means planning the whole loop.
+
+```ablauf
+ext: Customer
+sf: Portal order, Sales agreement, Portal view
+erp: ERP order, Confirmation
+Customer --> Portal order
+Portal order --> ERP order
+ERP order --> Confirmation
+Confirmation ..Actual quantity..> Sales agreement
+Sales agreement --> Portal view
+```
 
 Requests for new products or prices take a different route. They go to sales and run through configuration, quote and approval. What matters most to the customer is seeing the status of the request instead of having to chase it.
 

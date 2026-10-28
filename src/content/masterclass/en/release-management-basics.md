@@ -84,7 +84,12 @@ Hardly any company jumps straight from change sets to a fully automated pipeline
 
 Two places in this table are the hardest in practice. The step from stage 2 to 3 moves the source of truth from the org into the repository. From then on, every change made directly in a shared org is a process failure. And the step from 3 to 4 closes the back door: as long as someone with admin rights may deploy to production, the pipeline is only a recommendation.
 
-The validation deployment is the first tool that pays off as early as stage 3. With `sf project deploy validate` the [Salesforce CLI](https://developer.salesforce.com/docs/platform/salesforce-cli-reference/guide/cli_reference_project_deploy_validate.html) checks whether a deployment would succeed without changing anything. After a successful validation the package can be rolled out by quick deploy for up to ten days without running the tests again.
+The validation deployment is the first tool that pays off as early as stage 3.
+
+```vertiefung For developers
+title: How do validation and quick deploy work?
+With `sf project deploy validate` the [Salesforce CLI](https://developer.salesforce.com/docs/platform/salesforce-cli-reference/guide/cli_reference_project_deploy_validate.html) checks whether a deployment would succeed without changing anything. After a successful validation the package can be rolled out by quick deploy for up to ten days without running the tests again.
+```
 
 Stages 3 to 5 need a tool. One open-source option is [sfdx-hardis](https://sfdx-hardis.cloudity.com/), maintained by Cloudity with a community; it ships pipelines for GitHub, GitLab, Azure DevOps, Bitbucket and Jenkins as well as monitoring and metadata backup. I have used it in client projects for about two years. Commercial platforms such as [Gearset](https://gearset.com/), [Copado](https://www.copado.com/) or [Flosum](https://www.flosum.com/products/devops) offer a managed interface, vendor support and less operating effort on your side; Flosum describes itself as a native solution on the Salesforce platform. [Chapter 4](../devops-tools-compared/) compares which tool fits which programme. For this chapter two rules count: the choice is made early and binds every partner. And if open source saves you licence costs, the money is best spent on an internal release role.
 
@@ -93,6 +98,10 @@ Stages 3 to 5 need a tool. One open-source option is [sfdx-hardis](https://sfdx-
 You do. That is the basic assumption of every chapter that follows. Repository, pipeline, DevOps tool and sandboxes are in your name, and partners get personal users with the rights their task needs. Why the same applies to Jira, Confluence and Miro is in [why clients should own their DevOps tools](../../../blog/why-clients-should-own-their-devops-tools/).
 
 The second principle: every change goes through a pull request with a review, flows and permission sets included. The review is the cheapest point at which a programme with many teams agrees on one way of building. What a good review checks is in [why pull request reviews are a must](../../../blog/why-pull-request-reviews-are-a-must-in-enterprise-projects/).
+
+```praxis
+In one programme I worked on, at first every pull request went across my desk. Once the process was stable, I handed it over to an internal colleague.
+```
 
 Both principles are governance questions and belong in the contracts with your partners. That is where I start in [DevOps and release management](../../../services/devops-release-management/) and in [partner governance](../../../services/partner-governance/).
 

@@ -70,7 +70,11 @@ Wie man solche Schnittstellen und die Frage nach dem führenden System sauber kl
 
 ## Wo entstehen die Probleme?
 
-Die Aufteilung selbst hat in meinen Projekten selten Ärger gemacht. Wenn es Probleme gab, lagen sie an der Pflegequalität. Daran würde ich vor dem Start arbeiten:
+```praxis
+In meinen Field-Service-Projekten kamen Ersatzteile und installierte Basis aus dem ERP. Die Aufteilung selbst hat dabei selten Ärger gemacht. Wenn es Probleme gab, lagen sie an der Pflegequalität der Daten.
+```
+
+Daran würde ich vor dem Start arbeiten:
 
 - **Materialnummern:** Ein Teil, das im ERP doppelt oder mit veralteter Nummer existiert, landet auch doppelt in Salesforce. Der Techniker bucht dann auf das falsche.
 - **Nicht gebuchte Entnahmen:** Nimmt ein Techniker ein Teil aus dem Lager, ohne dass es gebucht wird, stimmt der Fahrzeugbestand nicht mehr. Field Service zeigt dann ein Teil, das nicht da ist.
@@ -81,6 +85,12 @@ Keines dieser Probleme löst eine Software. Jedes braucht einen Verantwortlichen
 
 ## Wo sollten Sie anfangen?
 
-Prüfen Sie, wie genau der Fahrzeugbestand im ERP heute ist. Ein einfacher Test: Lassen Sie drei Techniker ihr Fahrzeug zählen und vergleichen Sie das Ergebnis mit dem ERP. Weicht es stark ab, ist das die erste Baustelle, vor jeder Schnittstelle. Stimmt es, legen Sie fest, welche der Objekte oben Sie wirklich brauchen, und starten Sie mit Bestand, benötigten Teilen und Verbrauch.
+Prüfen Sie, wie genau der Fahrzeugbestand im ERP heute ist.
+
+```hinweis tipp
+Ein einfacher Test: Lassen Sie drei Techniker ihr Fahrzeug zählen und vergleichen Sie das Ergebnis mit dem ERP. Weicht es stark ab, ist das die erste Baustelle, vor jeder Schnittstelle.
+```
+
+Stimmt es, legen Sie fest, welche der Objekte oben Sie wirklich brauchen, und starten Sie mit Bestand, benötigten Teilen und Verbrauch.
 
 Im nächsten Teil der Serie geht es um Wartungsverträge und zugesagte Reaktionszeiten. Wenn Sie vorher Ihre Ersatzteilprozesse mit einem unabhängigen Blick prüfen möchten, [schreiben Sie mir](#contact).

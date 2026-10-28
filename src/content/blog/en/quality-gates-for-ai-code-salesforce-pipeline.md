@@ -42,7 +42,11 @@ I would run five gates, in this order, so the cheap ones fail first.
 
 ### 1. Code Analyzer with a severity threshold
 
-[Salesforce Code Analyzer](https://developer.salesforce.com/docs/platform/salesforce-code-analyzer/guide/engines.html) v5 bundles eight engines, among them PMD for Apex, ESLint for JavaScript in Lightning Web Components and a Flow Scanner that reports security issues in flows. In CI you call `sf code-analyzer run` or the official GitHub Action in version 2; version 1 still uses the retired Code Analyzer v4 ([CI/CD integration](https://developer.salesforce.com/docs/platform/salesforce-code-analyzer/guide/ci-cd.html)). The flag that turns a report into a gate is `--severity-threshold`: a violation that meets or exceeds it makes the command fail with a non-zero exit code ([command reference](https://developer.salesforce.com/docs/platform/salesforce-cli-reference/guide/cli_reference_code-analyzer_run.html)). Without it, the pipeline stays green whatever the report says.
+[Salesforce Code Analyzer](https://developer.salesforce.com/docs/platform/salesforce-code-analyzer/guide/engines.html) v5 bundles eight engines, among them PMD for Apex, ESLint for JavaScript in Lightning Web Components and a Flow Scanner that reports security issues in flows. In CI you call `sf code-analyzer run` or the official GitHub Action in version 2; version 1 still uses the retired Code Analyzer v4 ([CI/CD integration](https://developer.salesforce.com/docs/platform/salesforce-code-analyzer/guide/ci-cd.html)). The flag that turns a report into a gate is `--severity-threshold`: a violation that meets or exceeds it makes the command fail with a non-zero exit code ([command reference](https://developer.salesforce.com/docs/platform/salesforce-cli-reference/guide/cli_reference_code-analyzer_run.html)).
+
+```hinweis achtung
+Without `--severity-threshold`, the pipeline stays green whatever the Code Analyzer report says.
+```
 
 My recommendation: block at High from day one and report the rest. Blocking everything on an org with ten years of Apex produces hundreds of legacy findings, and partners start suppressing rules instead of fixing them.
 
@@ -68,6 +72,10 @@ ApexGuru finds performance antipatterns such as SOQL in loops, unbounded queries
 ### 5. A merge block nobody bypasses
 
 Gates only work if a red pipeline stops the merge. On GitHub, required status checks must pass before anyone can change a protected branch, and code owners can be required to approve changes to their paths. Administrators can bypass both unless "Do not allow bypassing the above settings" is on ([GitHub Docs](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches)). With partner admins on the repository, I would switch it on and make a person on the client side the code owner for sharing, permission sets and integration classes.
+
+```praxis
+In one programme I supported, every pull request crossed my desk at first. Once the process was stable, I handed it over to an internal colleague.
+```
 
 ## What does sfdx-hardis cover out of the box?
 

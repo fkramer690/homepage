@@ -42,7 +42,11 @@ Ich würde fünf Prüfungen in dieser Reihenfolge laufen lassen, damit die güns
 
 ### 1. Code Analyzer mit Schwellenwert
 
-[Salesforce Code Analyzer](https://developer.salesforce.com/docs/platform/salesforce-code-analyzer/guide/engines.html) v5 bündelt acht Engines, darunter PMD für Apex, ESLint für JavaScript in Lightning Web Components und einen Flow Scanner, der Sicherheitsprobleme in Flows meldet. In der CI rufen Sie `sf code-analyzer run` auf oder die offizielle GitHub Action in Version 2; Version 1 nutzt noch den abgekündigten Code Analyzer v4 ([CI/CD-Integration](https://developer.salesforce.com/docs/platform/salesforce-code-analyzer/guide/ci-cd.html)). Aus einem Bericht wird erst mit `--severity-threshold` eine Sperre: Erreicht oder überschreitet ein Fund diesen Wert, endet der Befehl mit einem Fehlercode ([Befehlsreferenz](https://developer.salesforce.com/docs/platform/salesforce-cli-reference/guide/cli_reference_code-analyzer_run.html)). Ohne den Parameter bleibt die Pipeline grün, egal was im Bericht steht.
+[Salesforce Code Analyzer](https://developer.salesforce.com/docs/platform/salesforce-code-analyzer/guide/engines.html) v5 bündelt acht Engines, darunter PMD für Apex, ESLint für JavaScript in Lightning Web Components und einen Flow Scanner, der Sicherheitsprobleme in Flows meldet. In der CI rufen Sie `sf code-analyzer run` auf oder die offizielle GitHub Action in Version 2; Version 1 nutzt noch den abgekündigten Code Analyzer v4 ([CI/CD-Integration](https://developer.salesforce.com/docs/platform/salesforce-code-analyzer/guide/ci-cd.html)). Aus einem Bericht wird erst mit `--severity-threshold` eine Sperre: Erreicht oder überschreitet ein Fund diesen Wert, endet der Befehl mit einem Fehlercode ([Befehlsreferenz](https://developer.salesforce.com/docs/platform/salesforce-cli-reference/guide/cli_reference_code-analyzer_run.html)).
+
+```hinweis achtung
+Ohne `--severity-threshold` bleibt die Pipeline grün, egal was im Bericht von Code Analyzer steht.
+```
 
 Meine Empfehlung: ab dem ersten Tag ab High blockieren und den Rest berichten. Wer in einer Org mit zehn Jahren Apex alles blockiert, bekommt Hunderte Altfunde, und Partner beginnen, Regeln abzuschalten, statt Code zu korrigieren.
 
@@ -68,6 +72,10 @@ ApexGuru findet Performance-Antipattern wie SOQL in Schleifen, unbegrenzte Abfra
 ### 5. Eine Merge-Sperre ohne Ausnahme
 
 Prüfungen wirken nur, wenn eine rote Pipeline den Merge stoppt. Auf GitHub müssen Required Status Checks bestanden sein, bevor jemand einen geschützten Branch ändert, und Code Owner können als Pflichtfreigabe für ihre Pfade gesetzt werden. Administratoren können beides umgehen, solange „Do not allow bypassing the above settings“ nicht aktiv ist ([GitHub Docs](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches)). Haben Partner Admin-Rechte im Repository, würde ich die Option einschalten und eine Person auf Kundenseite zum Code Owner für Sharing, Permission Sets und Schnittstellenklassen machen.
+
+```praxis
+In einem Programm, das ich begleitet habe, lief anfangs jeder Pull Request über meinen Schreibtisch. Als der Prozess stabil lief, habe ich ihn an einen internen Kollegen übergeben.
+```
 
 ## Was deckt sfdx-hardis ab?
 

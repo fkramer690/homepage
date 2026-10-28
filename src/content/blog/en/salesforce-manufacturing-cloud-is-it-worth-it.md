@@ -52,7 +52,9 @@ The list prices on the [Manufacturing Cloud pricing page](https://salesforce.com
 | Max | $550 | $650 (Sales Max or Service Max) |
 | Sales and Service Max | | $700 |
 
-One thing is unclear and I will say so: the Manufacturing Cloud pricing page has two footnotes that contradict each other. One says the prices apply to Enterprise Edition and Unlimited Edition costs $425. The other says the prices apply to Unlimited Edition. Which price applies to your edition only shows up in the quote.
+```hinweis offen
+The Manufacturing Cloud pricing page has two footnotes that contradict each other. One says the prices apply to Enterprise Edition and Unlimited Edition costs $425. The other says the prices apply to Unlimited Edition. Which price applies to your edition only shows up in the quote.
+```
 
 Let's use the Core prices. The premium is $80 per user and month, or $960 per user and year. For 200 sales users that is $192,000 per year at list price, close to one million over five years. List prices are rarely where negotiations end, but the order of magnitude shows why this deserves its own decision.
 
@@ -66,7 +68,9 @@ The feature is built for run-rate business. A customer buys the same products re
 
 ## When is Manufacturing Cloud the wrong choice?
 
+```praxis
 In one manufacturing project I evaluated Manufacturing Cloud and decided against it. Sales agreements, the central sales feature, were not relevant to the business. The company did not sell through long-term volume agreements, so the main reason for the licence was gone. A custom solution on the core platform was cheaper and easier to maintain.
+```
 
 I took one rule from that: an industry cloud is bought for its features, not for the industry name. "We are a manufacturer, so Manufacturing Cloud" is not a business case. If the core feature does not fit, the company pays for features it does not use and still builds around the ones that do not fit.
 

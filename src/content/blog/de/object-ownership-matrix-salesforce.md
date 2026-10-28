@@ -60,7 +60,9 @@ Der erste Schritt war, jede Änderung über einen Pull Request mit Review laufen
 
 Die Regel war einfach: Bevor ein Team ein fremdes Objekt änderte, musste es sich mit dem verantwortlichen Stream abstimmen. Im vereinfachten Beispiel oben verantwortet der Vertrieb Account, Opportunity und Quote, der Service Case und Asset, Field Service die Work Order.
 
+```praxis
 Bis die Standards stabil waren, hat es etwa drei Monate gedauert. Die erste Version deckte rund 80 Prozent der Fälle ab. Danach kamen Randfälle dazu, die wir in regelmäßigen Center-of-Excellence-Calls besprochen haben. Irgendwann fielen sie fast ganz weg, weil anstehende Änderungen früh genug auf den Tisch kamen, bevor sie zu Konflikten wurden.
+```
 
 ## Was gehört in die Matrix?
 
@@ -80,8 +82,13 @@ Was nicht in die Matrix gehört: Detailregeln für Namenskonventionen, Tests ode
 Eine Tabelle im Wiki ändert allein nichts. Die Matrix wirkt erst, wenn sie im täglichen Ablauf geprüft wird.
 
 - **Im Pull-Request-Review.** Berührt eine Änderung ein fremdes Objekt, fragt der Reviewer, ob der Verantwortliche zugestimmt hat. Wie solche Reviews ablaufen, beschreibe ich in [warum Pull-Request-Reviews in Großprojekten Pflicht sind](../warum-pull-request-reviews-pflicht-sind/).
-- **Technisch im Repository.** Liegen die Metadaten in Git, lässt sich die Matrix teilweise abbilden. Auf GitHub ordnet eine [CODEOWNERS-Datei](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners) Pfade einem Team zu, zum Beispiel den Ordner eines Objekts. Ändert ein Pull Request diese Dateien, wird das Team automatisch als Reviewer angefragt, und mit einer Branch-Protection-Regel ist seine Freigabe Pflicht.
+- **Technisch im Repository.** Liegen die Metadaten in Git, lässt sich die Matrix teilweise abbilden, auf GitHub mit einer CODEOWNERS-Datei.
 - **Im Center of Excellence.** Regelmäßige Calls, in denen Streams anstehende Änderungen an gemeinsamen Objekten vorstellen, mit genug Vorlauf für alle anderen.
+
+```vertiefung Für Entwickler
+titel: Wie bildet CODEOWNERS die Matrix ab?
+Eine [CODEOWNERS-Datei](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners) ordnet Pfade einem Team zu, zum Beispiel den Ordner eines Objekts. Ändert ein Pull Request diese Dateien, wird das Team automatisch als Reviewer angefragt, und mit einer Branch-Protection-Regel ist seine Freigabe Pflicht.
+```
 
 Die Matrix gehört dem Kunden, nicht einem Partner. Legt ein Partner fest, wer welches Objekt verantwortet, entscheidet er auch darüber, was seine Wettbewerber bauen dürfen. Dasselbe gilt für Repository und Pipeline, wie in [warum Kunden ihre DevOps-Tools selbst besitzen sollten](../warum-kunden-devops-tools-selbst-besitzen-sollten/) beschrieben.
 

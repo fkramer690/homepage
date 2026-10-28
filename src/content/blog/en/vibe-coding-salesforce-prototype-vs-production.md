@@ -45,7 +45,14 @@ Fowler names disposable software and prototypes as fitting uses: "Experienced pr
 
 The value lies in the conversation: business teams correct a working screen faster than a specification document.
 
-The environments cost little. Salesforce's [April 2026 announcement](https://developer.salesforce.com/blogs/2026/04/new-developer-edition-agentforce-vibes-claude-mcp) put Agentforce Vibes, a browser-based VS Code and hosted MCP servers into every Developer Edition at no cost. The [Vibes FAQ](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-faqs.html) limits that to 110 requests or 1.5 million tokens per org, for one month after first use, without refresh. Teams with a Dev Hub can use scratch orgs instead: according to the [Salesforce DX guide](https://developer.salesforce.com/docs/platform/sfdx-dev/guide/sfdx-dev-scratch-orgs.html) they are "source-driven and disposable", live 7 days by default and 30 days at most, and start without data.
+The environments cost little. Salesforce's [April 2026 announcement](https://developer.salesforce.com/blogs/2026/04/new-developer-edition-agentforce-vibes-claude-mcp) put Agentforce Vibes, a browser-based VS Code and hosted MCP servers into every Developer Edition at no cost. The [Vibes FAQ](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-faqs.html) limits that per org, for one month after first use, without refresh. Teams with a Dev Hub can use scratch orgs instead: according to the [Salesforce DX guide](https://developer.salesforce.com/docs/platform/sfdx-dev/guide/sfdx-dev-scratch-orgs.html) they are "source-driven and disposable" and start without data.
+
+```kennzahlen
+110 | Agentforce Vibes requests per Developer Edition, or 1.5 million tokens
+7 days | Default lifetime of a scratch org
+30 days | Maximum lifetime of a scratch org
+source: Agentforce Vibes FAQ and Salesforce DX guide, as of October 2026
+```
 
 ## Rules for the prototype org
 
@@ -77,11 +84,18 @@ Fowler adds maintainability: unreviewed code grows into code that is hard to cha
 
 I treat the prototype as a specification. What survives the workshop are screens, decisions and acceptance criteria. The production build then follows agentic engineering:
 
-1. **Freeze the result.** Screenshots or a short recording, the field list, the open questions and acceptance criteria written with the business, for example "a dealer sees only orders for machines sold through that dealer".
-2. **Start in your repository.** The developer works in a scratch org or developer sandbox created from the client's repository, with a rules file that names your Named Credentials, API version and test rules. Why that file belongs to you is explained in [the AI rules file of your repository](../ai-rules-file-salesforce-repository/).
-3. **Plan before code.** Agentforce Vibes' [Plan Mode](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-workflow-patterns.html) produces goals, non-goals, an approach and numbered tasks, and "No files change until you click Approve Plan." The developer checks the plan against the acceptance criteria, sharing and permissions first.
-4. **Configure security by hand.** The same Salesforce guide recommends building permission sets, profiles, sharing rules and org-wide defaults manually in Setup and reviewing every generated security change before accepting it.
-5. **Review and gates.** Pull request, human review, Code Analyzer, validation deploy with Apex tests. The gates are described in [quality gates for AI code](../quality-gates-for-ai-code-salesforce-pipeline/).
+```schritte
+Freeze the result
+  Screenshots or a short recording, the field list, the open questions and acceptance criteria written with the business, for example "a dealer sees only orders for machines sold through that dealer".
+Start in your repository
+  The developer works in a scratch org or developer sandbox created from the client's repository, with a rules file that names your Named Credentials, API version and test rules. Why that file belongs to you is explained in [the AI rules file of your repository](../ai-rules-file-salesforce-repository/).
+Plan before code
+  Agentforce Vibes' [Plan Mode](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-workflow-patterns.html) produces goals, non-goals, an approach and numbered tasks, and "No files change until you click Approve Plan." The developer checks the plan against the acceptance criteria, sharing and permissions first.
+Configure security by hand
+  The same Salesforce guide recommends building permission sets, profiles, sharing rules and org-wide defaults manually in Setup and reviewing every generated security change before accepting it.
+Review and gates
+  Pull request, human review, Code Analyzer, validation deploy with Apex tests. The gates are described in [quality gates for AI code](../quality-gates-for-ai-code-salesforce-pipeline/).
+```
 
 One exception I accept: the HTML template and CSS of a mock-up LWC can be carried over if they pass the same review. Apex and data access are always rebuilt.
 

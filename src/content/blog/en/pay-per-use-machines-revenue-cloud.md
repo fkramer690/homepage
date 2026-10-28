@@ -60,6 +60,16 @@ Wallets can raise alerts, block further usage or offer a top-up when a balance r
 
 Salesforce expects time-stamped usage records with customer, product, resource and quantity. How they get there from a machine is your integration. In a typical setup the controller reports to an IoT platform or historian, which keeps the time series. From there a job sends one aggregated record per machine and day into Salesforce.
 
+```ablauf
+ext: Controller, IoT platform
+sf: Usage record, Rating, Liable summary, Invoice
+Controller --> IoT platform
+IoT platform --daily aggregate--> Usage record
+Usage record --wallet, rate card--> Rating
+Rating --> Liable summary
+Liable summary --> Invoice
+```
+
 Between the two systems sit the checks that decide whether the invoice holds:
 
 1. **Serial number to asset and account.** Every counter must point to the asset that was sold to a specific customer. Machines that were moved or resold break this first.
@@ -92,7 +102,11 @@ These are commercial and legal decisions. A partner configures them; your compan
 
 ## Which licences does pay-per-use need?
 
-The [Revenue Cloud pricing page](https://www.salesforce.com/sales/cpq/pricing/) shows Revenue Cloud Advanced at $200 or €200 per user and month, billed annually, with "Consumption & Invoicing" in its scope. The same page lists Revenue Cloud Billing as an add-on with "Usage Rating & Digital Wallet", the invoicing engine and the accounting subledger, price on request. Which of the two covers rating and invoicing for your contract belongs in writing in the order form.
+The [Revenue Cloud pricing page](https://www.salesforce.com/sales/cpq/pricing/) shows Revenue Cloud Advanced at $200 or €200 per user and month, billed annually, with "Consumption & Invoicing" in its scope. The same page lists Revenue Cloud Billing as an add-on with "Usage Rating & Digital Wallet", the invoicing engine and the accounting subledger, price on request.
+
+```hinweis offen
+Which of the two covers rating and invoicing for your contract belongs in the order form.
+```
 
 Billing is charged in Billing Events. According to the [rate sheet of February 2026](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/documents/pricing/revenue-cloud-billing-rate-sheet-feb-2026.pdf), one event is consumed per $50 of invoice subtotal, other currencies are converted at the average daily rate, and unused events do not roll over. If the invoices in the scenario above added up to $1 million a year, they would consume 20,000 events. The price per event is not public. The details are in [Revenue Cloud Billing costs](../revenue-cloud-billing-costs/).
 

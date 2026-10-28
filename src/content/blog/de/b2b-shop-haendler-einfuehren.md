@@ -53,7 +53,14 @@ Salesforce unterscheidet Käufer und Buyer Manager. Laut dem [Trailhead-Modul zu
 
 [Delegated External User Administration](https://help.salesforce.com/s/articleView?id=platform.networks_DPUA.htm&language=en-us&type=5) macht Wellen günstig im Betrieb. Benutzer mit dieser Berechtigung können Mitglieder des Kontos, das sie verwalten, anlegen und bearbeiten, Passwörter zurücksetzen und Mitglieder aktivieren oder deaktivieren. Die Einkaufsleitung eines Händlers nimmt dann eine neue Kollegin auf, ohne ein Ticket bei Ihrem Service Desk. Planen Sie vor jeder Welle einen Buyer Manager pro Händler ein und zeigen Sie ihm die Benutzerverwaltung in einem kurzen Termin.
 
-Auch Lizenzen gehören in den Plan. Der Listenpreis für Customer Community Plus auf der [Seite zu Experience Cloud for Manufacturing](https://www.salesforce.com/manufacturing/cloud/experience-cloud/) liegt bei 35 Dollar pro Mitglied oder 15 Dollar pro Login und Monat, jährlich abgerechnet. Welche Variante passt, hängt davon ab, wie oft Händler bestellen, siehe [B2B Commerce Lizenzen für Käufer](../b2b-commerce-lizenzen-kaeufer/). Große Händlergruppen mit vielen Standorten brauchen eine weitere Prüfung: Der Account Switcher, mit dem ein Käufer für mehrere Konten bestellt, wird laut den [Salesforce-Limits](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-shopper-buyer-groups-accounts-limits.html) ab 200 Konten pro Käufer langsamer.
+Auch Lizenzen gehören in den Plan. Customer Community Plus gibt es laut der [Seite zu Experience Cloud for Manufacturing](https://www.salesforce.com/manufacturing/cloud/experience-cloud/) pro Mitglied oder pro Login, jährlich abgerechnet. Welche Variante passt, hängt davon ab, wie oft Händler bestellen, siehe [B2B Commerce Lizenzen für Käufer](../b2b-commerce-lizenzen-kaeufer/). Große Händlergruppen mit vielen Standorten brauchen eine weitere Prüfung beim Account Switcher, mit dem ein Käufer für mehrere Konten bestellt; die Grenze steht in den [Salesforce-Limits](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-shopper-buyer-groups-accounts-limits.html).
+
+```kennzahlen
+35 $ | Customer Community Plus pro Mitglied und Monat
+15 $ | Customer Community Plus pro Login und Monat
+200 | Konten pro Käufer, ab denen der Account Switcher langsamer wird
+quelle: Salesforce, Seite zu Experience Cloud for Manufacturing (Listenpreise, jährliche Abrechnung) und Salesforce-Limits zu Buyer Groups und Konten
+```
 
 ## Was muss vor jeder Welle getestet werden?
 
@@ -77,9 +84,14 @@ Der Innendienst bekommt aber eine neue Aufgabe: Ruft ein Pilothändler mit einer
 
 Ein typisches Szenario, als Annahme: Ein Hersteller von Kompressoren verkauft Ersatzteile an 250 Händler in Deutschland, Österreich und der Schweiz.
 
-- **Monat 1 und 2, Welle 1:** 15 Pilothändler in Deutschland mit hohem Nachbestellvolumen und Standard-Händlerpreisen, eine Buyer Group. Wöchentliche Feedback-Termine, Korrekturen alle zwei Wochen.
-- **Monat 3 und 4, Welle 2:** die übrigen deutschen Händler in drei Buyer Groups nach Händlerstufe. Der Innendienst weist Anrufer aktiv auf den Shop hin.
-- **Monat 5 und 6, Welle 3:** Österreich und die Schweiz mit eigenen Preisbüchern und Lieferbedingungen, dazu die großen Schlüsselkunden mit Sonderkonditionen.
+```schritte
+Welle 1 | Monat 1 und 2
+  15 Pilothändler in Deutschland mit hohem Nachbestellvolumen und Standard-Händlerpreisen, eine Buyer Group. Wöchentliche Feedback-Termine, Korrekturen alle zwei Wochen.
+Welle 2 | Monat 3 und 4
+  Die übrigen deutschen Händler in drei Buyer Groups nach Händlerstufe. Der Innendienst weist Anrufer aktiv auf den Shop hin.
+Welle 3 | Monat 5 und 6
+  Österreich und die Schweiz mit eigenen Preisbüchern und Lieferbedingungen, dazu die großen Schlüsselkunden mit Sonderkonditionen.
+```
 
 Zwischen den Wellen liegen jeweils zwei Wochen ohne neue Gruppe, reserviert für Korrekturen und den Test der Daten der nächsten Welle. Zeigt Welle 1, dass die Suche Teile über alte Teilenummern nicht findet, wartet Welle 2, bis das gelöst ist.
 

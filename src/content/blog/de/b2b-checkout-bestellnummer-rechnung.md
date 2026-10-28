@@ -78,6 +78,17 @@ Kreditlimit, offene Posten und Auftragssperren liegen im ERP, bei SAP zum Beispi
 
 Der Ort für die Prüfung ist der PlaceOrder-Service, Extension Point `Commerce_Domain_Checkout_PlaceOrder`. Laut [Liste der verfügbaren Extensions](https://developer.salesforce.com/docs/commerce/extensions/guide/available-extensions.html) führt er Warenkorbprüfungen aus, wenn ein Käufer bestellt, als Teil der Place Order Action API. Für eigene Logik erweitern Sie die Apex-Basisklasse und überschreiben die Methode `validate`. Darin fragt ein Live-Aufruf das ERP zwei Dinge: Ist das Konto gesperrt, und passt die Bestellsumme in den offenen Kreditrahmen? Wenn nicht, entsteht keine Bestellung, und der Käufer sieht einen Hinweis.
 
+```ablauf
+sf: Checkout, validate-Prüfung, Order Summary
+erp: Kreditprüfung, Kundenauftrag, Rechnung
+Checkout --Bestellnummer--> validate-Prüfung
+validate-Prüfung --Live-Aufruf--> Kreditprüfung
+Kreditprüfung ..Antwort..> validate-Prüfung
+validate-Prüfung --> Order Summary
+Order Summary --Übergabe--> Kundenauftrag
+Kundenauftrag --> Rechnung
+```
+
 Drei Entscheidungen gehören in die Spezifikation:
 
 1. **Was der Käufer sieht.** "Bitte wenden Sie sich an Ihren Ansprechpartner im Vertrieb" reicht; das Kreditlimit selbst sollte der Einkäufer eines Händlers in der Regel nicht im Shop lesen.

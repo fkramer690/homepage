@@ -31,6 +31,15 @@ Prompt Injection im Händlerportal ist der wahrscheinlichste Weg, auf dem ein Ag
 
 ForcedLeak ist eine Kette von Schwachstellen, die Noma Security am 28. Juli 2025 an Salesforce gemeldet hat, bewertet mit CVSS 9,4. Laut [The Hacker News](https://thehackernews.com/2025/09/salesforce-patches-critical-forcedleak.html) betraf sie jede Org, die Agentforce mit aktiviertem Web-to-Lead nutzte. Ein Angreifer schickte ein Webformular ab, im Feld Description standen versteckte Anweisungen. Später stellte eine Mitarbeiterin Agentforce eine gewöhnliche Frage zu diesem Lead. Der Agent führte die versteckten Anweisungen zusammen mit der echten Frage aus, las weitere Lead-Daten und schickte sie nach außen, eingebettet in die Adresse eines Bildes. Die Zieldomain stand auf der Allowlist von Salesforce, war aber abgelaufen und für etwa 5 US-Dollar zu kaufen.
 
+```ablauf
+ext: Angreifer, Mitarbeiterin, Abgelaufene Domain
+sf: Lead-Beschreibung, Agentforce
+Angreifer --Webformular--> Lead-Beschreibung
+Mitarbeiterin --Frage zum Lead--> Agentforce
+Lead-Beschreibung --liest Anweisung--> Agentforce
+Agentforce --Daten in Bild-URL--> Abgelaufene Domain
+```
+
 Salesforce hat die Meldung am 31. Juli bestätigt und erzwingt laut [SalesforceBen](https://www.salesforceben.com/agentforce-web-to-lead-vulnerability-exposed-could-you-be-impacted/) seit 8. September 2025 Trusted URLs für Agentforce und Einstein AI. Gegenüber The Hacker News erklärte Salesforce, die Allowlist stelle sicher, dass über Prompt Injection „no malicious links are called or generated“. Laut Noma wurde die abgelaufene Domain wieder gesichert. Noma hat die Details am 25. September veröffentlicht.
 
 Zwei Punkte sind mir wichtiger als der Patch. Noma schreibt, dem Modell habe die Fähigkeit gefehlt („lacked the ability to distinguish“), zwischen Daten in seinem Kontext und Anweisungen aus vertrauenswürdigen Quellen zu unterscheiden. Das gilt für jedes Sprachmodell. Und ein Sprecher von Salesforce nannte Prompt Injection gegenüber [SalesforceBen](https://www.salesforceben.com/agentforce-web-to-lead-vulnerability-exposed-could-you-be-impacted/) „a complex and evolving area“. Der konkrete Ausgang ist zu. Das Muster bleibt.

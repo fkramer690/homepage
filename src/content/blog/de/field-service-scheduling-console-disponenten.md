@@ -38,7 +38,11 @@ Der Bildschirm hat drei Teile:
 - **Liste der Servicetermine.** Offene und geplante Termine in einer normalen Salesforce-Listenansicht mit eigenen Spalten und Filtern. Termine werden aus der Liste auf das Gantt gezogen.
 - **Karte.** Ressourcen und Termine in Echtzeit, mit Ebenen für geplante Routen, Verkehr und genaue Einsatzorte, synchron mit Gantt und Liste.
 
-Die alte Konsole hat inzwischen einen neuen Namen. Laut einem [Wissensartikel von Salesforce](https://help.salesforce.com/s/articleView?id=005389875&language=en_US&type=1) wurde der Tab des Managed Package mit Version 262 (Summer '26) in Classic Dispatch Console umbenannt, um ihn von der neuen Scheduling Console zu unterscheiden. Zeigen Visualforce-Seiten, eigene Tabs oder Navigationsregeln auf die alte Bezeichnung, können sie brechen. Der Artikel beschreibt einen Workaround mit einem eigenen Visualforce-Tab.
+Die alte Konsole hat inzwischen einen neuen Namen. Laut einem [Wissensartikel von Salesforce](https://help.salesforce.com/s/articleView?id=005389875&language=en_US&type=1) wurde der Tab des Managed Package mit Version 262 (Summer '26) in Classic Dispatch Console umbenannt, um ihn von der neuen Scheduling Console zu unterscheiden.
+
+```hinweis achtung
+Zeigen Visualforce-Seiten, eigene Tabs oder Navigationsregeln auf die alte Bezeichnung, können sie brechen. Der Artikel beschreibt einen Workaround mit einem eigenen Visualforce-Tab.
+```
 
 ## Was macht die neue Konsole besser?
 
@@ -73,10 +77,16 @@ Für Hersteller ist das der entscheidende Punkt. Disponenten, die Jahreswartunge
 
 Ein typisches Szenario, als Annahme: Ein Komponentenhersteller mit vier Disponenten und drei Servicegebieten nutzt bereits Enhanced Scheduling and Optimization. Alle Zahlen sind Annahmen, um die Methode zu zeigen.
 
-1. **Bestandsaufnahme, eine Woche.** Der Admin listet jede Anpassung der Classic Dispatch Console auf: eigene Aktionen, Visualforce-Seiten, Filter, Farbregeln. Jeder Disponent notiert, welche Gantt-Ansichten er täglich nutzt.
-2. **Pilot, sechs Wochen.** Zwei Disponenten bekommen das Permission Set und planen ein Gebiet in der Scheduling Console. Die anderen beiden bleiben für die übrigen Gebiete bei der Classic Dispatch Console.
-3. **Wöchentlicher Abgleich.** Die Pilot-Disponenten notieren, was sie in der neuen Konsole nicht erledigen konnten und in der alten tun mussten, und wie oft sie Why? genutzt haben, um einen Vorschlag zu verstehen.
-4. **Entscheidung.** Blockiert nichts auf der Liste die tägliche Arbeit, folgen die anderen beiden. Fehlen noch die langen Ansichten, behält die Planerin für vorbeugende Wartung die Classic Dispatch Console für diese Aufgabe.
+```schritte
+Bestandsaufnahme | 1 Woche · Admin und Disponenten
+  Der Admin listet jede Anpassung der Classic Dispatch Console auf: eigene Aktionen, Visualforce-Seiten, Filter, Farbregeln. Jeder Disponent notiert, welche Gantt-Ansichten er täglich nutzt.
+Pilot | 6 Wochen · zwei Disponenten
+  Zwei Disponenten bekommen das Permission Set und planen ein Gebiet in der Scheduling Console. Die anderen beiden bleiben für die übrigen Gebiete bei der Classic Dispatch Console.
+Wöchentlicher Abgleich | wöchentlich · Pilot-Disponenten
+  Die Pilot-Disponenten notieren, was sie in der neuen Konsole nicht erledigen konnten und in der alten tun mussten, und wie oft sie Why? genutzt haben, um einen Vorschlag zu verstehen.
+Entscheidung
+  Blockiert nichts auf der Liste die tägliche Arbeit, folgen die anderen beiden. Fehlen noch die langen Ansichten, behält die Planerin für vorbeugende Wartung die Classic Dispatch Console für diese Aufgabe.
+```
 
 Die Notiz zu Why? lohnt sich. Nutzen Disponenten die Erklärung oft und ändern den Vorschlag trotzdem, zeigt sie auf fehlende Daten oder eine unpassende Policy. Das ist eine nützliche Rückmeldung, lange bevor ein KI-Agent selbst plant. Welche Agenten Disponenten heute helfen, steht in [KI-Agenten im Außendienst: Was Field Service heute kann](../ki-agenten-aussendienst-field-service/), das größere Bild im Kapitel [KI-Agenten in der Fertigung](../../masterclass/ki-salesforce/ki-agenten-in-der-fertigung/) der KI-Masterclass.
 

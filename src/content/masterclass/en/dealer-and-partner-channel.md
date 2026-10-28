@@ -68,7 +68,9 @@ On price, the Salesforce pages contradict each other:
 | [Channel Revenue Management pricing](https://www.salesforce.com/sales/channel-revenue-management/pricing/) | No price, request a quote; requires a Sales Cloud or CRM licence; includes 10 channel manager admin users; partner access, additional users and payouts available for purchase |
 | [Manufacturing Cloud Experience Cloud page](https://salesforce.com/manufacturing/cloud/experience-cloud) | Rebate management "from $75", without a unit |
 
+```hinweis offen
 The $75 does not fit the $30,000. I would get it in writing whether rebate management is already part of your edition, what the add-on costs on top and how many payouts the price covers.
+```
 
 The functional boundary is simple: rebates reward volume over a period, ship and debit and price protection compensate price, deal by deal. Ship and debit needs sell-through and stock data from the distributors. Without them, validation can only check whether the documents match the programme, and not whether the sale happened.
 
@@ -97,7 +99,11 @@ Partner visit management plans visits to dealers and distributors and makes them
 
 The feature has its own switch. In the [IndustriesManufacturingSettings](https://developer.salesforce.com/docs/atlas.en-us.automotive_cloud.meta/automotive_cloud/auto_metadata_api_industriesmanufacturingsettings.htm) metadata it is `enablePartnerVisitManagement`, available since API version 56.0, next to `enablePartnerLeadManagement` and `enablePartnerPerformanceManagement`. All three default to off. So "we have Manufacturing Cloud" does not yet mean that visits, partner leads or partner performance are running. The quote should say which of these features the partner sets up.
 
-Two points are open in the sources: which licence reps need for the visits app, and whether it works offline. Get both clarified in writing before you plan. The flow from visit plan to KPI, and when a simple visit report object is enough, is covered in [partner visit management: dealer visits with KPIs](../../../blog/partner-visit-management-dealer-visits/). My short rule: without five agreed KPIs with an expected value per dealer group, the feature collects data nobody compares.
+```hinweis offen
+Two points are open in the sources: which licence reps need for the visits app, and whether it works offline. Get both clarified in writing before you plan.
+```
+
+The flow from visit plan to KPI, and when a simple visit report object is enough, is covered in [partner visit management: dealer visits with KPIs](../../../blog/partner-visit-management-dealer-visits/). My short rule: without five agreed KPIs with an expected value per dealer group, the feature collects data nobody compares.
 
 ## Measuring dealer performance: dashboards and their data
 
@@ -119,9 +125,14 @@ The Agentforce for Manufacturing Cloud Add-on is listed at $150 per user and mon
 
 My order in the channel:
 
-1. **Start read-only.** Stock summaries, rebate status, status of a request.
-2. **Proposals instead of orders.** The agent prepares a replenishment or a quote, and a person or the ERP confirms it.
-3. **Write actions behind gates in code.** Credit status from the ERP, a quantity cap, confirmation by the dealer, a duplicate check.
+```schritte
+Start read-only
+  Stock summaries, rebate status, status of a request.
+Proposals, not orders
+  The agent prepares a replenishment or a quote, and a person or the ERP confirms it.
+Writes behind gates
+  Write actions only behind gates in code: credit status from the ERP, a quantity cap, confirmation by the dealer, a duplicate check.
+```
 
 Every field a dealer writes in the portal is outside input that an agent reads. How to protect against that is in [prompt injection through dealer portals](../../../blog/prompt-injection-dealer-portals-agentforce/). Where these agents sit among the other manufacturing agents is shown in the AI masterclass chapter [AI agents in manufacturing](../../ai-salesforce/ai-agents-in-manufacturing/).
 

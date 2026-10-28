@@ -74,7 +74,13 @@ The first mistake I would avoid in a catalog design is copying the material mast
 | Selling model | Salesforce | One-time, term-defined or evergreen |
 | Bill of materials | ERP or PLM | Not in Salesforce |
 
-The fifth row needs care. When the attribute "control" has the value "S2" in Salesforce, the same value must exist as a characteristic value in SAP, or the order fails at hand-over. I would keep a mapping table per attribute and let the integration check it. Who owns each object in the org is set in an [object ownership matrix](../salesforce-object-ownership-matrix/). How prices then come from the price book is covered in [Salesforce Pricing: how Revenue Cloud calculates prices](../revenue-cloud-pricing-procedures-explained/).
+The fifth row needs care.
+
+```hinweis achtung
+When the attribute "control" has the value "S2" in Salesforce, the same value must exist as a characteristic value in SAP, or the order fails at hand-over. I would keep a mapping table per attribute and let the integration check it.
+```
+
+Who owns each object in the org is set in an [object ownership matrix](../salesforce-object-ownership-matrix/). How prices then come from the price book is covered in [Salesforce Pricing: how Revenue Cloud calculates prices](../revenue-cloud-pricing-procedures-explained/).
 
 ## Should spare parts and services get their own catalog?
 
@@ -98,7 +104,12 @@ The product catalog for quotes then holds around 140 records plus the bundles, a
 
 ## Catalog data is configuration: who maintains it and how does it move?
 
-Classifications, attributes and bundles are records, not metadata. The Developer Guide has an [object deployment reference](https://developer.salesforce.com/docs/atlas.en-us.revenue_lifecycle_management_dev_guide.meta/revenue_lifecycle_management_dev_guide/deployment_appendix_A.htm) that lists the deployment sequence, object types, lookup fields and data translation requirements for Product Catalog Management. So catalog changes are tested in a sandbox and moved as data, in that order, through the same pipeline as metadata. How that works with SFDMU or commercial tools is in the DevOps chapter on [data and configuration](../../masterclass/devops-release-management/data-and-configuration/), and the Revenue Cloud specifics are in [Revenue Cloud deployments](../revenue-cloud-configuration-deployment/).
+Classifications, attributes and bundles are records, not metadata. So catalog changes are tested in a sandbox and moved as data through the same pipeline as metadata. How that works with SFDMU or commercial tools is in the DevOps chapter on [data and configuration](../../masterclass/devops-release-management/data-and-configuration/), and the Revenue Cloud specifics are in [Revenue Cloud deployments](../revenue-cloud-configuration-deployment/).
+
+```vertiefung For developers
+title: What the object deployment reference sets
+The Developer Guide has an [object deployment reference](https://developer.salesforce.com/docs/atlas.en-us.revenue_lifecycle_management_dev_guide.meta/revenue_lifecycle_management_dev_guide/deployment_appendix_A.htm) that lists the deployment sequence, object types, lookup fields and data translation requirements for Product Catalog Management. The catalog data moves through the pipeline in exactly that order.
+```
 
 The owner should be product management at the manufacturer, not the implementation partner. After go-live new machines, options and price changes arrive every quarter, and whoever maintains the catalog decides how fast sales can quote them.
 

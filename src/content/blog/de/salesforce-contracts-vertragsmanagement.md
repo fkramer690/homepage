@@ -63,9 +63,22 @@ Für Vertragsmanager gibt es eine Console-App als zentralen Arbeitsplatz und Sal
 
 ## Was kostet Salesforce Contracts?
 
-Die [Preisseite zu Salesforce Contracts](https://www.salesforce.com/eu/sales/revenue-lifecycle-management/contracts-pricing/) nennt Salesforce Contracts ab 50 Euro oder 50 Dollar je Nutzer und Monat bei jährlicher Abrechnung. Enthalten sind Vertragserstellung und Dokumentenablage, Integrationen für Redlining und elektronische Unterschrift sowie Pflichtenverwaltung. Eine Fußnote sagt, dass die SKU "requires prerequisite products", und laut FAQ ist das Produkt auf die Zusammenarbeit mit Sales Cloud ausgelegt.
+Die [Preisseite zu Salesforce Contracts](https://www.salesforce.com/eu/sales/revenue-lifecycle-management/contracts-pricing/) nennt einen Preis je Nutzer und Monat bei jährlicher Abrechnung. Enthalten sind Vertragserstellung und Dokumentenablage, Integrationen für Redlining und elektronische Unterschrift sowie Pflichtenverwaltung. Eine Fußnote sagt, dass die SKU "requires prerequisite products", und laut FAQ ist das Produkt auf die Zusammenarbeit mit Sales Cloud ausgelegt.
 
-Nutzen Sie ohnehin Revenue Cloud, sehen Sie sich zuerst die Editionen an. Laut [Preisseite zu Revenue Cloud](https://www.salesforce.com/eu/sales/revenue-lifecycle-management/pricing/) enthält Revenue Cloud Advanced für 200 Euro Contracts & Orders, für Revenue Cloud Growth für 150 Euro ist Contract Lifecycle Management zukaufbar. Die Funktionsmatrix auf beiden Seiten zeigt nicht lesbar, welche Edition welche Vertragsfunktion enthält. Lassen Sie sich das vor der Unterschrift schriftlich bestätigen, zusammen mit dem, was die DocuSign-Integration auf Seiten von DocuSign voraussetzt. Mehr zur Lizenzplanung in [Salesforce-Lizenzen: Braucht jeder eine volle Lizenz?](../salesforce-lizenzen-volle-lizenz/)
+Nutzen Sie ohnehin Revenue Cloud, sehen Sie sich zuerst die Editionen an. Laut [Preisseite zu Revenue Cloud](https://www.salesforce.com/eu/sales/revenue-lifecycle-management/pricing/) enthält Revenue Cloud Advanced Contracts & Orders, für Revenue Cloud Growth ist Contract Lifecycle Management zukaufbar.
+
+```kennzahlen
+50 € | Salesforce Contracts je Nutzer und Monat (auch 50 $), jährliche Abrechnung, braucht Voraussetzungsprodukte
+150 € | Revenue Cloud Growth je Nutzer und Monat, Contract Lifecycle Management zukaufbar
+200 € | Revenue Cloud Advanced je Nutzer und Monat, mit Contracts & Orders
+quelle: Salesforce-Preisseiten zu Salesforce Contracts und Revenue Cloud
+```
+
+```hinweis offen
+Die Funktionsmatrix auf beiden Preisseiten zeigt nicht lesbar, welche Edition welche Vertragsfunktion enthält. Lassen Sie sich das vor der Unterschrift bestätigen, zusammen mit dem, was die DocuSign-Integration auf Seiten von DocuSign voraussetzt.
+```
+
+Mehr zur Lizenzplanung in [Salesforce-Lizenzen: Braucht jeder eine volle Lizenz?](../salesforce-lizenzen-volle-lizenz/)
 
 ## Welcher Vertrag gehört in welchen Datensatz?
 

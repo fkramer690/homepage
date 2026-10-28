@@ -68,7 +68,11 @@ Salesforce hat den Abschluss der [Übernahme von CloudCraze](https://salesforce.
 
 ## Was kostet B2B Commerce?
 
-Salesforce nennt keinen Listenpreis. Beide Editionen stehen auf der [Preisseite](https://www.salesforce.com/editions-pricing/commerce-cloud/b2b/) auf "Contact for Pricing". Die Gebühr ist ein Prozentsatz des Bruttowarenwerts (Gross Merchandise Value, GMV), also des Umsatzes über den Store abzüglich Steuern und Versand. Bei Growth und Advanced zählt nur der Umsatz über die Commerce-Storefront, Bestellungen per EDI, E-Mail oder Telefon nicht. Einen Prozentsatz veröffentlicht Salesforce nicht. Integratoren nennen Werte um 1 bis 2 Prozent, die Salesforce nicht bestätigt.
+Salesforce nennt keinen Listenpreis. Beide Editionen stehen auf der [Preisseite](https://www.salesforce.com/editions-pricing/commerce-cloud/b2b/) auf "Contact for Pricing". Die Gebühr ist ein Prozentsatz des Bruttowarenwerts (Gross Merchandise Value, GMV), also des Umsatzes über den Store abzüglich Steuern und Versand. Bei Growth und Advanced zählt nur der Umsatz über die Commerce-Storefront, Bestellungen per EDI, E-Mail oder Telefon nicht.
+
+```hinweis offen
+Einen Prozentsatz veröffentlicht Salesforce nicht. Integratoren nennen Werte um 1 bis 2 Prozent, die Salesforce nicht bestätigt.
+```
 
 Die Preisseite nennt diesen Umfang:
 
