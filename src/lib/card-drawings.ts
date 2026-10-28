@@ -203,6 +203,19 @@ const drawings: Record<string, Drawing> = {
     ${check(196, 120)}${t(208, 125, l('data quality', 'Datenqualität'), { size: 7.5 })}${check(196, 136)}${t(208, 141, l('measurable value', 'messbarer Nutzen'), { size: 7.5 })}
     ${t(18, 36, l('85% have tested or deployed Agentforce', '85 % haben Agentforce getestet oder im Einsatz'), { size: 7.5 })}`,
 
+  'open-cti-retirement-telephony': (l) => `
+    ${t(18, 22, 'OPEN CTI', { fill: D, size: 7.5 })}
+    <path d="M24 60H150" stroke="${G}" stroke-width="1.3"/>
+    ${dot(24, 60)}${dot(84, 60)}${cross(150, 60)}
+    ${t(24, 80, '2020', { size: 7, anchor: 'middle' })}${t(24, 91, l('maintenance', 'Wartung'), { size: 6.5, anchor: 'middle' })}
+    ${t(84, 80, '02/2026', { size: 7, anchor: 'middle' })}${t(84, 91, l('no new orgs', 'keine neuen Orgs'), { size: 6.5, anchor: 'middle' })}
+    ${t(150, 80, '28.02.2028', { fill: C, size: 7, anchor: 'middle' })}${t(150, 91, l('retired', 'abgeschaltet'), { fill: C, size: 6.5, anchor: 'middle' })}
+    ${arrow(166, 60, 196, C)}
+    ${box(200, 18, 104, 124, C)}${t(252, 34, 'SALESFORCE VOICE', { fill: C, size: 7, anchor: 'middle' })}
+    ${[['Partner', '50 €'], ['Amazon', '75-200 €'], [l('own AWS', 'eigenes AWS'), ''], [l('native', 'nativ'), '125 €']]
+      .map(([a, b], i) => `<path d="M208 ${46 + i * 24}H296" stroke="${L}"/>` + t(210, 60 + i * 24, String(a), { size: 6.8 }) + t(296, 60 + i * 24, String(b), { fill: D, size: 6.8, anchor: 'end' })).join('')}
+    ${t(24, 128, 'Genesys · Mirage · Teams', { size: 7 })}${t(24, 140, l('which path?', 'welcher Weg?'), { fill: D, size: 7 })}`,
+
   'agent-context-engine': (l) => `
     ${[l('CRM objects', 'CRM-Objekte'), 'ERP', l('data warehouse', 'Data Warehouse'), l('knowledge', 'Wissen')]
       .map((s, i) => box(14, 22 + i * 30, 84, 22) + t(56, 36 + i * 30, s, { size: 6.8, anchor: 'middle' })).join('')}
