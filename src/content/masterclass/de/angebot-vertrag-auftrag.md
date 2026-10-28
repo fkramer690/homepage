@@ -50,7 +50,7 @@ Das Angebot bearbeiten Vertriebsmitarbeiter im Transaction Line Editor, einer Ta
 
 Für Hersteller mit langen Stücklisten sind zwei Punkte wichtig. Angebotspositionen lassen sich in Gruppen ordnen, von Hand oder automatisch nach einer Spalte, etwa nach Produktkategorie oder Standort. Und für Winter '27 nennt Salesforce in den [Release Highlights](https://trailhead.salesforce.com/content/learn/modules/winter-27-release-highlights/see-whats-new-marketing-commerce-revenue-management) bis zu 15.000 Transaktionspositionen pro Geschäft. Ein Ersatzteilangebot für eine ganze Anlage passt damit in ein Angebot.
 
-Ich würde Gruppen nicht als Gestaltungsmittel für das PDF sehen, sondern als Struktur, die der Kunde wiedererkennt: eine Gruppe pro Linie oder pro Werk. Dann lassen sich spätere Nachträge der richtigen Stelle zuordnen.
+Gruppen würde ich nach einer Struktur bilden, die der Kunde wiedererkennt: eine Gruppe pro Linie oder pro Werk. Dann lassen sich spätere Nachträge der richtigen Stelle zuordnen, und der Kunde findet im Angebot seine eigene Anlage wieder.
 
 ## Wer gibt Rabatte und Margen frei?
 
@@ -97,7 +97,7 @@ Field Service nutzt dasselbe Asset-Objekt, dort als Maschine beim Kunden mit Ser
 Ein Hersteller von Verpackungsanlagen verkauft einem Bestandskunden auf einem Angebot zwei Dinge: ein Verschleißteilpaket für drei Linien und ein Fernüberwachungsabo für dieselben drei Maschinen, zwölf Monate Laufzeit. Alle Details sind Annahmen.
 
 - **Angebot.** Eine Gruppe pro Linie, darin Teilepaket und Abo. Die Verschleißteile kommen mit Listenpreis aus SAP, das Abo mit Preis aus Salesforce Pricing. Der Rabatt von 18 Prozent liegt über der Schwelle von 15 Prozent und geht an die Vertriebsleitung; die Vorschau zeigt das vor dem Absenden.
-- **Vertrag.** Salesforce Contracts erzeugt aus dem Angebot einen Servicevertrag mit Standardklauseln zur Datennutzung, unterschrieben per DocuSign.
+- **Vertrag.** Salesforce Contracts erzeugt aus dem Angebot einen Vertrag mit Standardklauseln zur Datennutzung, unterschrieben per DocuSign.
 - **Auftrag.** DRO zerlegt den Auftrag in einen SAP-Kundenauftrag für die Teile per Callout und eine Aktivierung der Fernüberwachung als Auto Task. Die Teile laufen danach komplett in SAP.
 - **Assets.** Das Abo wird pro Maschine als eigene Position verkauft, mit Menge eins, und mit dem Maschinen-Asset aus Field Service verknüpft. Fällt später eine Maschine weg, kündigt ein Nachtrag genau diese Position.
 - **Verlängerung.** Vor Ablauf bereitet der Agent das Verlängerungsangebot vor, der Vertrieb prüft und sendet es.
