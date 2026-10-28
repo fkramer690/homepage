@@ -35,14 +35,14 @@ The history explains most of the confusion. In short:
 | When | Name | What it means | Source |
 |---|---|---|---|
 | December 2015 | SteelBrick | Quote-to-cash startup with CPQ and billing, bought by Salesforce for $360 million | [SiliconANGLE](https://siliconangle.com/2015/12/24/salesforce-confirms-360m-acquisition-of-quote-to-cash-startup-steelbrick/) |
-| From 2016 | Salesforce CPQ, Salesforce Billing | Managed packages with the namespaces SBQQ and blng | [CPQ](https://developer.salesforce.com/docs/revenue/cpq-developer-guide/guide/cpq-api-get-started.html) and [Billing](https://developer.salesforce.com/docs/atlas.en-us.254.0.blng_dev.meta/blng_dev/apex_blng_apex_reference_overview.htm) developer docs |
+| After the acquisition | Salesforce CPQ, Salesforce Billing | Managed packages with the namespaces SBQQ and blng | [CPQ](https://developer.salesforce.com/docs/revenue/cpq-developer-guide/guide/cpq-api-get-started.html) and [Billing](https://developer.salesforce.com/docs/atlas.en-us.254.0.blng_dev.meta/blng_dev/apex_blng_apex_reference_overview.htm) developer docs |
 | End of 2020 | Revenue Cloud (first) | Suite around CPQ, Billing and further components | [Salesforce blog, December 2020](https://www.salesforce.com/uk/blog/2020/12/rev-up-the-b2b-journey-with-revenue-cloud.html) |
 | Spring '24 | Revenue Lifecycle Management | New product on core platform objects | [Developer Guide, API 60.0](https://developer.salesforce.com/docs/atlas.en-us.248.0.revenue_lifecycle_management_dev_guide.meta/revenue_lifecycle_management_dev_guide/rlm_get_started.htm) |
 | Later | Revenue Cloud Advanced, Agentforce Revenue Management | Edition name, and the name of the suite it belongs to | [CPQ end-of-sale page](https://www.salesforce.com/sales/cpq/end-of-life/) |
 | Winter '27 | Revenue Management | Title of the Developer Guide | [Developer Guide, API 68.0](https://developer.salesforce.com/docs/atlas.en-us.revenue_lifecycle_management_dev_guide.meta/pcm_parent.htm) |
 | October 2026 | Revenue Cloud | Heading of the product and pricing pages | [Product page](https://www.salesforce.com/uk/products/revenue-cycle-management) |
 
-Two remarks on the table. The Spring '24 Developer Guide is the oldest version I found, titled Revenue Lifecycle Management Developer Guide, so the product may be slightly older. The row "From 2016" is my own simplification: the packages kept the SteelBrick technology, and their names have not changed since.
+One remark on the table: the Spring '24 Developer Guide is the oldest version I found, titled Revenue Lifecycle Management Developer Guide. The two packages still carry their names and namespaces today, which is why "CPQ" in a conversation almost always means the SBQQ package.
 
 ## Why do Salesforce sources use different names?
 
@@ -55,7 +55,7 @@ Because they were updated at different times. As of late October 2026:
 
 Search engines add to this. In late October 2026 several salesforce.com pages still appear in search results with the title "Agentforce Revenue Management (formerly Revenue Cloud)", while the pages themselves now say Revenue Cloud. Partner blogs report that the Agentforce name came with Dreamforce 2025 and that Salesforce quietly went back to Revenue Cloud around September 2026. I have not found a formal announcement from Salesforce for either step, so I treat this as reported, not as official.
 
-The same pattern runs through the whole portfolio: many products got the Agentforce prefix in 2025, and some lost it again. The [chapter on terms and the AI map](../../masterclass/ai-salesforce/terms-and-map/) in my AI masterclass sorts these names.
+The same pattern runs through the portfolio: the Agentforce name now appears on many Salesforce products, Trailhead for example also speaks of Agentforce Manufacturing. The [chapter on terms and the AI map](../../masterclass/ai-salesforce/terms-and-map/) in my AI masterclass sorts these names.
 
 ## Which Revenue Cloud does a partner mean?
 
