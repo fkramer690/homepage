@@ -29,7 +29,7 @@ Ein weltweiter Rollout der Manufacturing Cloud beginnt mit einer Entscheidung, d
 
 ## Was muss vor dem ersten Land feststehen?
 
-Das Ziel. Ein Rollout, der Prozesse harmonisieren soll, wird anders geplant als einer, der jedem Land ein eigenes CRM geben soll. Bei Herstellern mit Gesellschaften in vielen Ländern geht es meistens um Harmonisierung: gleiche Abläufe im Vertrieb, gleiche Sales Agreements, gleiche Berichte für die Zentrale.
+Das Ziel. Ein Rollout, der Prozesse harmonisieren soll, wird anders geplant als einer, der jedem Land ein eigenes CRM geben soll. Bei Herstellern mit Gesellschaften in vielen Ländern geht es meistens um Harmonisierung: gleiche Abläufe im Vertrieb, gleiche Sales Agreements, gleiche Berichte für die Zentrale. Wie der Rollout mit ERP-Anbindung und KI zusammenhängt, steht in [Kapitel 5 der Masterclass Manufacturing Cloud](../../masterclass/manufacturing-cloud/erp-ki-und-rollout/).
 
 Aus diesem Ziel ergibt sich ein globales Template, also die gemeinsame Konfiguration, die jedes Land übernimmt. Für die Manufacturing Cloud gehören dazu mindestens die Entscheidungen aus den früheren Teilen dieser Serie:
 

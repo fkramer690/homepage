@@ -50,7 +50,7 @@ Die Engine vergibt Termine nach einer Scheduling Policy. Laut [Salesforce-Hilfe]
 
 Salesforce liefert vier Policies mit. Customer First wägt Kundenwunsch und kurze Fahrzeit ab. High Intensity stellt die Produktivität der Techniker über Kundenwünsche, gedacht für Spitzenzeiten. Soft Boundaries erlaubt, Techniker über Gebietsgrenzen hinweg einzusetzen. Emergency ist für Notfälle. Als Ausgangspunkt empfehle ich Customer First und danach angepasste Gewichte, statt eine Policy von null aufzubauen.
 
-Dazu kommt die Optimierung. Laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?id=pfs_optimization.htm&language=en_US&type=5) kann sie den Plan für ein oder mehrere Gebiete über mehrere Tage neu ordnen, etwa jede Nacht. Am Einsatztag fängt eine In-Day-Optimierung kurzfristige Änderungen auf, und für einzelne Techniker gibt es eine eigene Optimierung, wenn ein Termin ausfällt oder sich verspätet.
+Dazu kommt die Optimierung. Laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?id=pfs_optimization.htm&language=en_US&type=5) kann sie den Plan für ein oder mehrere Gebiete über mehrere Tage neu ordnen, etwa jede Nacht. Am Einsatztag fängt eine In-Day-Optimierung kurzfristige Änderungen auf, und für einzelne Techniker gibt es eine eigene Optimierung, wenn ein Termin ausfällt oder sich verspätet. Ob sich der Umstieg auf die neuere Engine lohnt, steht in [Enhanced Scheduling and Optimization: jetzt umstellen?](../field-service-enhanced-scheduling-umstellen/), das Gesamtbild aus Engine, Konsole und Regeln in [Kapitel 2 der Masterclass Field Service](../../masterclass/field-service/field-service-terminplanung-disposition/).
 
 ## Warum prüft ein Disponent vor dem Dispatch?
 

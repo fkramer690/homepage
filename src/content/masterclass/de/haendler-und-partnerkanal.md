@@ -31,7 +31,7 @@ Für den Vertrieb über Händler gibt es rund um Manufacturing Cloud vier Bauste
 
 ## Welche Kanalmodelle gibt es bei Herstellern?
 
-Bevor Sie über Funktionen sprechen, lohnt ein Blick darauf, wie Ihre Ware zum Endkunden kommt. Bei den meisten Herstellern sehe ich drei Modelle, oft nebeneinander:
+Bevor Sie über Funktionen sprechen, lohnt ein Blick darauf, wie Ihre Ware zum Endkunden kommt. Hersteller nutzen typischerweise drei Modelle, oft nebeneinander:
 
 | Kanalmodell | Typisch für | Was in der Manufacturing Cloud passt |
 |---|---|---|
@@ -140,7 +140,7 @@ Ein Hersteller von Kompaktmaschinen verkauft über 80 Händler in Deutschland, �
 - **Ship and Debit:** nein. Sechs Distributoren mit wenigen Sonderpreisen rechtfertigen keine 30.000 Dollar im Jahr; schärfere Freigaberegeln reichen.
 - **Agenten:** später, lesend, nachdem Bonusdaten und Bestände ein Quartal lang gestimmt haben.
 
-Die größte Position ist hier das Portal und nicht die Bonuslogik. Das passiert oft, weil Händlerbenutzer im ersten Angebot gern fehlen. Ich zähle sie deshalb vor jeder Lizenzverhandlung, ebenso wie die Rollen der Partner, die das Portal bauen; das gehört zur [Partnersteuerung](../../../leistungen/partnersteuerung/).
+Die größte Position ist hier das Portal und nicht die Bonuslogik. Händlerbenutzer fehlen in einem ersten Angebot leicht, deshalb würde ich sie vor jeder Lizenzverhandlung zählen, ebenso wie die Rollen der Partner, die das Portal bauen; das gehört zur [Partnersteuerung](../../../leistungen/partnersteuerung/).
 
 Garantieansprüche, die Händler einreichen, und Rückrufaktionen über das Händlernetz behandelt [Kapitel 4](../garantie-und-after-sales/). Alle Kapitel finden Sie auf der [Übersichtsseite](../).
 

@@ -31,7 +31,7 @@ For selling through dealers, Salesforce offers four building blocks around Manuf
 
 ## Which channel models do manufacturers use?
 
-Before talking about features, look at how your goods reach the end customer. At most manufacturers I see three models, often side by side:
+Before talking about features, look at how your goods reach the end customer. Manufacturers typically use three models, often side by side:
 
 | Channel model | Typical for | What fits in Manufacturing Cloud |
 |---|---|---|
@@ -140,7 +140,7 @@ A maker of compact machinery sells through 80 dealers in Germany, Austria and Sw
 - **Ship and debit:** no. Six distributors with few special prices do not justify $30,000 a year; tighter approval rules are enough.
 - **Agents:** later, read-only, once rebate data and stock have been right for a quarter.
 
-The largest line here is the portal and not the rebate logic. That happens often, because dealer users tend to be missing from the first quote. So I count them before every licence negotiation, together with the roles of the partners who build the portal; that is part of [partner governance](../../../services/partner-governance/).
+The largest line here is the portal and not the rebate logic. Dealer users are easy to leave out of a first quote, so I would count them before every licence negotiation, together with the roles of the partners who build the portal; that is part of [partner governance](../../../services/partner-governance/).
 
 Warranty claims submitted by dealers and recalls across the dealer network are covered in [chapter 4](../warranty-and-after-sales/). All chapters are on the [overview page](../).
 

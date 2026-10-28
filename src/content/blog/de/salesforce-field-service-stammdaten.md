@@ -62,7 +62,7 @@ Wichtig ist der Unterschied zwischen Hinterlegen und Durchsetzen. Erst die Work 
 
 ### Arbeitstypen
 
-Ein Arbeitstyp (Work Type) ist die Vorlage für eine Art von Einsatz, etwa Jahreswartung, Störungsbehebung oder Inbetriebnahme. Er legt die geschätzte Dauer und die benötigten Skills fest. Arbeitsaufträge erben die Skills ihres Arbeitstyps. Wer zehn sauber gepflegte Arbeitstypen hat, muss nicht bei jedem Auftrag von Hand eintragen, wer ihn übernehmen darf.
+Ein Arbeitstyp (Work Type) ist die Vorlage für eine Art von Einsatz, etwa Jahreswartung, Störungsbehebung oder Inbetriebnahme. Er legt die geschätzte Dauer und die benötigten Skills fest. Arbeitsaufträge erben die Skills ihres Arbeitstyps. Wer zehn sauber gepflegte Arbeitstypen hat, muss nicht bei jedem Auftrag von Hand eintragen, wer ihn übernehmen darf. Wie aus einem Case ein Arbeitsauftrag mit dem passenden Arbeitstyp wird, steht in [vom Case zum Techniker](../field-service-case-zu-arbeitsauftrag/).
 
 ### Anlagen und Standorte
 

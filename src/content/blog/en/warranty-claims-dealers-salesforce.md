@@ -60,7 +60,7 @@ Because every check is a question about the asset. Is this serial number still u
 The asset warranty only answers these questions when the asset and its data are in Salesforce. For many manufacturers that is exactly the gap:
 
 - **Sales through dealers.** The manufacturer ships to the dealer, the dealer sells to the end customer. Only the dealer knows whether and when the asset was installed. Without registration at sale, the warranty start date is missing.
-- **Installed base in the ERP.** Serial numbers live in the ERP or in production, but not as assets in Salesforce. Then an integration is needed before the first claim can be checked.
+- **Installed base in the ERP.** Serial numbers live in the ERP or in production, but not as assets in Salesforce. Then an integration is needed before the first claim can be checked. How to get the installed base into Salesforce is covered in [installed base in Manufacturing Cloud](../installed-base-asset-milestones/).
 - **Usage.** Operating hours or cycles come from the asset itself, from the dealer or not at all. If usage is part of the term, it needs a source.
 
 For the Winter '27 agent this matters even more. An agent that checks coverage reads the same fields as a person, just faster and without asking. If the data is missing, it judges on gaps. Why I look at data quality first with agents is described in [Agentforce: business value and data quality first](../agentforce-business-value-data-quality-first/).
@@ -77,7 +77,7 @@ For that to work, the causal part has to be captured cleanly in the claim, with 
 
 At the customer's door. Manufacturing Cloud settles whether damage is covered, who gets which amount and who pays in the end. Who drives to the customer when, with which spare part, is a question for Field Service. The same goes for maintenance contracts and committed response times, which run through service contracts and entitlements in Salesforce. How that works is covered in [part 5 of the Field Service series](../salesforce-field-service-maintenance-contracts/).
 
-Both topics meet at the asset. The same asset carries the warranty, the maintenance history and the work orders. If you introduce both, design the asset model once, not per project. Whether Field Service pays off is covered in the [Field Service series](../salesforce-field-service-worth-it/).
+Both topics meet at the asset. The same asset carries the warranty, the maintenance history and the work orders. If you introduce both, design the asset model once, not per project. Where the line runs in detail is in [chapter 4 of the Manufacturing Cloud masterclass](../../masterclass/manufacturing-cloud/warranty-and-after-sales/). Whether Field Service pays off is covered in the [Field Service series](../salesforce-field-service-worth-it/).
 
 ## When does warranty management in Salesforce pay off?
 

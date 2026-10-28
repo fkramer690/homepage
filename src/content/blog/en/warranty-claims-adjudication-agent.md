@@ -48,7 +48,7 @@ So the question "is this covered?" already has a deterministic answer. An agent 
 
 ### Asset data with serial numbers and start dates
 
-Every coverage check is a question about one machine. If the asset is missing in Salesforce or has no warranty start date, the agent has nothing to check against and will judge on gaps. For manufacturers selling through dealers, the gap usually sits in registration: the dealer knows when the machine was handed over, the manufacturer does not. Take the claims of the last twelve months and count how many serial numbers exist as assets with a start date. Below about 95 percent I would fix registration first.
+Every coverage check is a question about one machine. If the asset is missing in Salesforce or has no warranty start date, the agent has nothing to check against and will judge on gaps. For manufacturers selling through dealers, the gap usually sits in registration: the dealer knows when the machine was handed over, the manufacturer does not. Take the claims of the last twelve months and count how many serial numbers exist as assets with a start date. Below about 95 percent I would fix registration first. How to build that asset data is covered in [installed base in Manufacturing Cloud](../installed-base-asset-milestones/).
 
 ### Warranty terms as rules, not as PDFs
 

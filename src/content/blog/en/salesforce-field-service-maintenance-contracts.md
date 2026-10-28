@@ -43,7 +43,7 @@ The terms sound alike and often get mixed up in projects. According to [Salesfor
 | Entitlement | What the customer is entitled to | Technician on site within 24 hours |
 | Entitlement process with milestones | How the entitlement is measured | Clock starts when the work order is created |
 
-The service contract is the commercial side. The maintenance plan is the plannable work. The entitlement is the unplanned work with a commitment, the breakdown where a response time applies. A contract can have all three, but does not have to. A pure warranty case often has only an entitlement on the asset and no maintenance plan.
+The service contract is the commercial side; how it is billed on a recurring basis is covered in [maintenance contracts: recurring billing in Revenue Cloud](../maintenance-contracts-recurring-billing/). The maintenance plan is the plannable work. The entitlement is the unplanned work with a commitment, the breakdown where a response time applies. A contract can have all three, but does not have to. A pure warranty case often has only an entitlement on the asset and no maintenance plan. How warranty claims run in Manufacturing Cloud is in [chapter 4 of the Manufacturing Cloud masterclass](../../masterclass/manufacturing-cloud/warranty-and-after-sales/).
 
 ## How is planned maintenance created?
 

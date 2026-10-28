@@ -69,7 +69,7 @@ List prices in October 2026, per user and month, billed annually, from the [Manu
 
 The Core premium is $80 per user and month, or $960 per user and year. For 120 sales users that is $115,200 per year at list price.
 
-One uncertainty belongs in every calculation. The pricing page has two footnotes that contradict each other. One says the prices are for Enterprise Edition and Unlimited costs $425. The other says they are for Unlimited Edition and Enterprise costs $275. Which price applies to your edition only shows up in the quote. Salesforce had also announced new pricing for the Industries editions, still unpublished at the end of October 2026, as described in [Salesforce editions Core, Advanced and Max](../../../blog/salesforce-editions-core-advanced-max/). If your renewal is due now, keep the option to switch editions once those prices are out.
+One uncertainty belongs in every calculation. The pricing page has two footnotes that contradict each other. One says the prices are for Enterprise Edition and Unlimited costs $425. The other says they are for Unlimited Edition and Enterprise costs $275. Which price applies to your edition only shows up in the quote. On top of that, Salesforce [announced in September 2026](https://www.salesforce.com/in/news/?p=14535) that "new pricing for Agentforce Industry Editions will go into effect later this fall". The Manufacturing Cloud page already uses Core and Max, but its footnotes still speak of Enterprise and Unlimited. How the new editions differ is in [Salesforce editions Core, Advanced and Max](../../../blog/salesforce-editions-core-advanced-max/). If your renewal is due now, keep the option to switch editions once the industry prices are final.
 
 ### Core or Max: what changes besides the price
 

@@ -62,7 +62,7 @@ The difference between recording and enforcing matters here. Only the [Match Ski
 
 ### Work types
 
-A work type is the template for a kind of job, such as annual maintenance, breakdown repair or commissioning. It sets the estimated duration and the required skills. Work orders inherit the skills of their work type. With ten well-maintained work types, nobody has to enter by hand on every work order who may take it.
+A work type is the template for a kind of job, such as annual maintenance, breakdown repair or commissioning. It sets the estimated duration and the required skills. Work orders inherit the skills of their work type. With ten well-maintained work types, nobody has to enter by hand on every work order who may take it. How a case becomes a work order with the right work type is covered in [from case to technician](../field-service-case-to-work-order/).
 
 ### Assets and locations
 

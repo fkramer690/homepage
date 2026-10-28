@@ -48,7 +48,7 @@ Die Frage „Ist das gedeckt?“ hat also schon eine deterministische Antwort. E
 
 ### Anlagendaten mit Seriennummer und Garantiebeginn
 
-Jede Deckungsprüfung ist eine Frage an eine Maschine. Fehlt die Anlage in Salesforce oder hat sie keinen Garantiebeginn, hat der Agent nichts, wogegen er prüfen kann, und entscheidet auf Lücken. Bei Herstellern mit Händlervertrieb liegt die Lücke meist in der Registrierung: Der Händler weiß, wann die Maschine übergeben wurde, der Hersteller nicht. Nehmen Sie die Ansprüche der letzten zwölf Monate und zählen Sie, wie viele Seriennummern als Anlage mit Startdatum existieren. Unter etwa 95 Prozent würde ich zuerst die Registrierung reparieren.
+Jede Deckungsprüfung ist eine Frage an eine Maschine. Fehlt die Anlage in Salesforce oder hat sie keinen Garantiebeginn, hat der Agent nichts, wogegen er prüfen kann, und entscheidet auf Lücken. Bei Herstellern mit Händlervertrieb liegt die Lücke meist in der Registrierung: Der Händler weiß, wann die Maschine übergeben wurde, der Hersteller nicht. Nehmen Sie die Ansprüche der letzten zwölf Monate und zählen Sie, wie viele Seriennummern als Anlage mit Startdatum existieren. Unter etwa 95 Prozent würde ich zuerst die Registrierung reparieren. Wie diese Anlagendaten entstehen, steht in [Installierte Basis in Manufacturing Cloud](../installierte-basis-asset-meilensteine/).
 
 ### Garantiebedingungen als Regeln, nicht als PDF
 

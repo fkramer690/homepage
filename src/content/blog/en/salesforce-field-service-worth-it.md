@@ -54,7 +54,7 @@ Salesforce backs this direction with its own research. In an [article on schedul
 
 With few long jobs the benefit is much smaller. A technician who commissions a plant over two weeks does not need route optimisation. He or she needs a project plan, access to drawings and clean documentation at the end.
 
-Typical cases are commissioning, conversions or overhauls where a team works at one site for days. The difference from 16 appointments a day is big: access to documents, coordination with the customer and a complete acceptance matter more than which technician is where in the afternoon.
+Typical cases are commissioning, conversions or overhauls where a team works at one site for days. The difference from 16 appointments a day is big: access to documents, coordination with the customer and a complete acceptance matter more than which technician is where in the afternoon. If you still plan such jobs in Field Service, see [multiday jobs and crews](../field-service-multiday-jobs-crews-commissioning/).
 
 For such cases there are alternatives I check before a Field Service licence:
 
@@ -79,7 +79,7 @@ On Unlimited Edition, Dispatcher and Technician cost $330 according to the footn
 
 An example with list prices: 40 technicians and 4 dispatchers on Enterprise Edition are 44 licences at $175, so $7,700 per month or $92,400 per year. Implementation, ERP integration and maintenance come on top.
 
-Two conditions from the small print matter for licence planning. Field Service requires at least one Service Cloud licence, and technicians need at least one dispatcher for scheduling to work. Dispatcher and Technician licences may also not be used for a contact centre or case management. Anyone in the back office who handles cases and plans jobs needs Field Service Plus.
+Two conditions from the small print matter for licence planning. Field Service requires at least one Service Cloud licence, and technicians need at least one dispatcher for scheduling to work. Dispatcher and Technician licences may also not be used for a contact centre or case management. Anyone in the back office who handles cases and plans jobs needs Field Service Plus. Which role needs which licence, subcontractors included, is in [chapter 1 of the Field Service masterclass](../../masterclass/field-service/field-service-business-case-licences/).
 
 ## How do I decide?
 

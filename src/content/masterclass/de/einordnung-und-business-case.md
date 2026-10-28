@@ -67,9 +67,9 @@ Die Listenpreise im Oktober 2026, pro Nutzer und Monat, jährlich abgerechnet, l
 | Max | 550 Dollar | 650 Dollar (Sales Max oder Service Max) |
 | Sales & Service Max | | 700 Dollar |
 
-Der Aufschlag in Core beträgt 80 Dollar pro Nutzer und Monat, also 960 Dollar pro Nutzer und Jahr. Bei 120 Vertriebsnutzern sind das 115.200 Dollar pro Jahr zum Listenpreis. Die Preisseite nennt auch Euro-Preise, für Sales Core 275 Euro.
+Der Aufschlag in Core beträgt 80 Dollar pro Nutzer und Monat, also 960 Dollar pro Nutzer und Jahr. Bei 120 Vertriebsnutzern sind das 115.200 Dollar pro Jahr zum Listenpreis.
 
-Eine Unklarheit gehört in jede Kalkulation. Die Preisseite hat zwei Fußnoten, die sich widersprechen. Die eine sagt, die Preise gelten für Enterprise Edition, und Unlimited koste 425 Dollar. Die andere sagt, sie gelten für Unlimited Edition, und Enterprise koste 275 Dollar. Welcher Preis für Ihre Edition gilt, zeigt erst das Angebot. Außerdem hatte Salesforce neue Preise für die Industries-Editionen angekündigt, die Ende Oktober 2026 noch nicht veröffentlicht waren, wie in [Salesforce-Editionen Core, Advanced und Max](../../../blog/salesforce-editionen-core-advanced-max/) beschrieben. Wer jetzt verlängert, sollte sich den Wechsel der Edition nach Veröffentlichung offenhalten.
+Eine Unklarheit gehört in jede Kalkulation. Die Preisseite hat zwei Fußnoten, die sich widersprechen. Die eine sagt, die Preise gelten für Enterprise Edition, und Unlimited koste 425 Dollar. Die andere sagt, sie gelten für Unlimited Edition, und Enterprise koste 275 Dollar. Welcher Preis für Ihre Edition gilt, zeigt erst das Angebot. Außerdem hat Salesforce [im September 2026 angekündigt](https://www.salesforce.com/in/news/?p=14535), dass „new pricing for Agentforce Industry Editions will go into effect later this fall“. Die Seite der Manufacturing Cloud nutzt schon Core und Max, ihre Fußnoten sprechen aber noch von Enterprise und Unlimited. Wie sich die neuen Editionen unterscheiden, steht in [Salesforce-Editionen Core, Advanced und Max](../../../blog/salesforce-editionen-core-advanced-max/). Wer jetzt verlängert, sollte sich den Wechsel der Edition offenhalten, bis die Branchenpreise feststehen.
 
 ### Core oder Max: was sich außer dem Preis ändert
 
