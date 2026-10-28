@@ -22,6 +22,21 @@ Bestehende Artikel nachschärfen (Titel, Einstieg, FAQ um den Suchbegriff ergän
 - L11. CPQ-Verkaufsende-Artikel auf „salesforce cpq end of life / retirement / replacement“ (je 10).
 - L12. Field-Service-Einführung auf „salesforce field service implementation guide“ (10); laut Benchmark rankt für „field service einführung“ bisher der Artikel „lohnt sich“ statt des Einführungsartikels.
 
+## Blog: Themen aus dem täglichen Lauf (übernommen 28.10.2026)
+
+Der tägliche Lauf schreibt einen Artikel pro Tag (EN + DE) und ergänzt hier neue Ideen. Reihenfolge: zuerst Priorität 1 (L1 bis L7), dann diese Liste. Ideen ohne bestätigtes Praxisbeispiel sind markiert.
+
+- B1. SAP-Thema (Leitsystem für Kunden, Preise, Aufträge) → aufgegangen in L2 und L3.
+- B2. Embedded Chat für 12 Sprachen: was ein Proof of Concept klären muss.
+- B3. Center of Excellence auf Kundenseite: Format und Rhythmus.
+- B4. MuleSoft oder Jitterbit: welche Middleware für Salesforce und das ERP? *Braucht Beispiel von Fabian.*
+- B5. Salesforce an proALPHA anbinden: was anders ist als bei SAP. *Braucht Beispiel von Fabian.*
+- B6. Technische Benutzer mit zu vielen Rechten: Integrationen aufräumen.
+- B7. Teams Phone als Telefonie für den Service (Folgeartikel zu Open CTI). *Braucht Erfahrung aus dem CTI-Rollout.*
+- B8. Spring '27: was ändert sich für Hersteller? (News, sobald die Release Notes erscheinen, ca. Mitte Januar 2027; passt zu L7.)
+
+Erledigt im täglichen Lauf: Manufacturing Cloud lohnt sich (#41), Object Ownership Matrix (#42), Salesforce-Lizenzen (#43), Field Service lohnt sich (#44), Nearshore-Teams (#55), Open CTI endet 2028 (#82, Entwurf).
+
 ## Priorität: Sichtbarkeit und SEO (Audit 26.10.2026)
 
 Technik erledigt in PR #51 (Sitemap, IndexNow, Schema, Titel, interne Links).
