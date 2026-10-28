@@ -1,6 +1,6 @@
 ---
 title: "Asset Service Lifecycle Management: Lohnt das Add-on?"
-description: "Was das Add-on Asset Service Lifecycle Management für 75 Dollar und Connected Assets zu Field Service ergänzen, was die Basislizenz kann und wann es sich rechnet."
+description: "Was die Add-ons Asset Service Lifecycle Management (75 Dollar) und Connected Assets zu Field Service ergänzen, was der Kern kann und wann es sich rechnet."
 pubDate: 2026-10-28
 lang: de
 slug: asset-service-lifecycle-management-zusatz

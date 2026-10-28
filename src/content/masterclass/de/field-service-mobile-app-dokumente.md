@@ -80,7 +80,7 @@ Für den klassischen Bericht an der Maschine, mit Arbeitszeit, Teilen, Fotos und
 - **Android hinkt hinterher.** Unter iOS entstehen Dokumente aus Arbeitsauftrag und Service-Termin, unter Android nur aus dem Service-Termin.
 - **Umfang.** Höchstens 50 Seiten und 100 MB pro Dokument.
 
-Fünf kleinere Lücken zeigen sich in jedem Projekt: Vorlagenwahl, Dateiname, E-Mail, Vorbelegung und Gestaltung. Flows und kleine Komponenten schließen sie ohne weitere Lizenz, wie ich in [Document Builder: fünf Grenzen und Workarounds](../../../blog/salesforce-document-builder-grenzen-workarounds/) zeige.
+Fünf kleinere Lücken sollten Sie beim Standardbericht einplanen: Vorlagenwahl, Dateiname, E-Mail, Vorbelegung und Gestaltung. Flows und kleine Komponenten schließen sie ohne weitere Lizenz, wie ich in [Document Builder: fünf Grenzen und Workarounds](../../../blog/salesforce-document-builder-grenzen-workarounds/) zeige.
 
 ### Wann brauchen Sie ein zweites Werkzeug?
 

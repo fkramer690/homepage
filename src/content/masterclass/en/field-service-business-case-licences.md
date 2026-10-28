@@ -92,7 +92,7 @@ I build the matrix from what a person does in the system, not from their job tit
 
 ### Field Service Plus or Service Cloud plus Dispatcher?
 
-At many machine builders the same people answer the breakdown line in the morning and plan technicians in the afternoon. On a Dispatcher licence that breaches the licence terms, even if the system technically lets them open the case. For this mixed role the price list names Field Service Plus. Compared with Service Cloud Core it costs $35 more per month, and that difference buys the right to dispatch. If you separate hotline and dispatch cleanly, Service Cloud for one group and Dispatcher for the other is enough.
+In smaller service teams the same people often answer the breakdown line in the morning and plan technicians in the afternoon. On a Dispatcher licence that breaches the licence terms, even if the system technically lets them open the case. For this mixed role the price list names Field Service Plus. Compared with Service Cloud Core it costs $35 more per month, and that difference buys the right to dispatch. If you separate hotline and dispatch cleanly, Service Cloud for one group and Dispatcher for the other is enough.
 
 ### Contractor Plus per user or per login?
 

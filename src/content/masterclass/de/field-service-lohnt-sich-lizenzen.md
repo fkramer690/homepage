@@ -92,7 +92,7 @@ Die Matrix baue ich aus dem, was jemand im System tut, nicht aus der Stellenbeze
 
 ### Field Service Plus oder Service Cloud plus Dispatcher?
 
-Bei vielen Maschinenbauern nehmen dieselben Leute morgens die Störungshotline an und planen nachmittags die Techniker. Mit einer Dispatcher-Lizenz verstößt das gegen die Lizenzbedingungen, auch wenn das System den Case technisch öffnen lässt. Für diese Mischrolle nennt die Preisliste Field Service Plus. Gegenüber Service Cloud Core kostet sie 35 € mehr pro Monat, und dieser Unterschied kauft das Recht zu disponieren. Trennen Sie Hotline und Disposition sauber, reichen Service Cloud für die einen und Dispatcher für die anderen.
+In kleineren Serviceteams nehmen oft dieselben Leute morgens die Störungshotline an und planen nachmittags die Techniker. Mit einer Dispatcher-Lizenz verstößt das gegen die Lizenzbedingungen, auch wenn das System den Case technisch öffnen lässt. Für diese Mischrolle nennt die Preisliste Field Service Plus. Gegenüber Service Cloud Core kostet sie 35 € mehr pro Monat, und dieser Unterschied kauft das Recht zu disponieren. Trennen Sie Hotline und Disposition sauber, reichen Service Cloud für die einen und Dispatcher für die anderen.
 
 ### Contractor Plus pro Nutzer oder pro Login?
 

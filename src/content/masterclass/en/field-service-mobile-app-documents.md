@@ -80,7 +80,7 @@ For the classic report at the machine, with working time, parts, photos and the 
 - **Android is behind.** On iOS documents come from work order and service appointment, on Android only from the service appointment.
 - **Size.** At most 50 pages and 100 MB per document.
 
-Five smaller gaps show up in every project: template choice, file name, email, default values and styling. Flows and small components close them without another licence, as I describe in [Document Builder: five limits and workarounds](../../../blog/salesforce-document-builder-limits-workarounds/).
+Plan for five smaller gaps in the standard report: template choice, file name, email, default values and styling. Flows and small components close them without another licence, as I describe in [Document Builder: five limits and workarounds](../../../blog/salesforce-document-builder-limits-workarounds/).
 
 ### When do you need a second tool?
 
