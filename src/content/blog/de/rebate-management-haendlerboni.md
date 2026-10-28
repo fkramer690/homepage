@@ -93,7 +93,7 @@ In einem Fertigungsprojekt habe ich die Manufacturing Cloud bewertet und mich da
 - **Fehler in der Tabelle.** Die Berechnung ist heute aufwendig, fehleranfällig oder hängt an einer Person.
 - **Händler fragen nach.** Der Innendienst beantwortet regelmäßig Anfragen zum Bonusstand.
 
-Zurückhaltend wäre ich bei einem einfachen Jahresbonus für wenige Kunden. Den können viele ERP-Systeme über Konditionen abrechnen, ohne eine zweite Logik in Salesforce. Ob sich die Manufacturing Cloud insgesamt lohnt, behandelt [Teil 1 der Serie](../manufacturing-cloud-wann-lohnt-sie-sich/).
+Zurückhaltend wäre ich bei einem einfachen Jahresbonus für wenige Kunden. Den können viele ERP-Systeme über Konditionen abrechnen, ohne eine zweite Logik in Salesforce. Boni belohnen Menge; Preisansprüche von Distributoren sind ein anderer Prozess, siehe [Ship and Debit](../ship-and-debit-preisschutz-haendler/). Ob sich die Manufacturing Cloud insgesamt lohnt, behandelt [Teil 1 der Serie](../manufacturing-cloud-wann-lohnt-sie-sich/).
 
 ## Wo sollten Sie anfangen?
 
