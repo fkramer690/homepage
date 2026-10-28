@@ -199,7 +199,7 @@ export const en = {
   subpages: {
     speaking: {
       title: 'Speaker & events',
-      metaTitle: 'Speaker & events | FK Solution Design',
+      metaTitle: 'Salesforce speaker: talks and events | FK Solution Design',
       intro: 'Talks, live demos and events where I speak about Salesforce architecture.',
     },
     certifications: {
@@ -284,7 +284,7 @@ export const en = {
   },
   partnerPage: {
     title: 'Partners',
-    metaTitle: 'Partners | FK Solution Design',
+    metaTitle: 'Partners for Salesforce programmes | FK Solution Design',
     description: 'Cooperation partners of FK Solution Design for topics next to Salesforce architecture, such as change management with Juliane Winterscheid.',
     lead: 'Nobody is the best expert in every field, and neither am I. Where others have more experience, I work with cooperation partners I know personally and trust.',
     intro: 'My focus is Salesforce architecture on the client side. A programme needs more than a good architecture, though: the people in the company also have to adopt new processes. For topics like this I bring in partners who are strong in exactly that area. So you do not get a generalist who knows a bit of everything, but someone for each question who really masters it.',

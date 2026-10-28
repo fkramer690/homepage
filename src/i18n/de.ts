@@ -201,7 +201,7 @@ export const de: Dict = {
   subpages: {
     speaking: {
       title: 'Vorträge & Events',
-      metaTitle: 'Vorträge & Events | FK Solution Design',
+      metaTitle: 'Salesforce-Vorträge und Events | FK Solution Design',
       intro: 'Vorträge, Live-Demos und Events, auf denen ich über Salesforce-Architektur spreche.',
     },
     certifications: {
@@ -286,7 +286,7 @@ export const de: Dict = {
   },
   partnerPage: {
     title: 'Partner',
-    metaTitle: 'Partner | FK Solution Design',
+    metaTitle: 'Partner für Salesforce-Programme | FK Solution Design',
     description: 'Kooperationspartner von FK Solution Design für Themen neben der Salesforce-Architektur, zum Beispiel Change Management mit Juliane Winterscheid.',
     lead: 'Niemand ist in jedem Bereich der beste Experte, ich auch nicht. Deshalb arbeite ich dort, wo andere mehr Erfahrung haben, mit Kooperationspartnern zusammen, die ich selbst kenne und denen ich vertraue.',
     intro: 'Mein Schwerpunkt ist die Salesforce-Architektur auf Kundenseite. Ein Programm braucht aber mehr als eine gute Architektur: Die Menschen im Unternehmen müssen neue Prozesse auch annehmen. Für solche Themen hole ich Partner dazu, die genau darin stark sind. So bekommen Sie keinen Generalisten, der alles ein bisschen kann, sondern für jede Frage jemanden, der sie wirklich beherrscht.',
