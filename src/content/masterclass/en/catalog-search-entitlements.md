@@ -43,6 +43,7 @@ title: Which standard objects form the chain?
 - **WebStoreBuyerGroup:** connects a buyer group to a store.
 - **CommerceEntitlementPolicy:** connects buyer groups to products and controls whether product and price are visible.
 - **BuyerGroupPricebook:** attaches price books to the buyer group.
+```
 
 Visibility and price therefore hang on the same groups. If you cut buyer groups for the assortment only, you find out in [chapter 3](../prices-cart-checkout/) that prices would need a different split. That is why I design both together. What B2B Commerce is and what it costs is covered in [chapter 1](../b2b-commerce-worth-it-overview/).
 
@@ -63,7 +64,13 @@ Salesforce documents the limits on separate pages for [entitlements](https://dev
 | Stores per org | 100 | hard |
 | Price books per store | 5 | hard |
 
-The 2,000 buyer groups per product have the nastiest effect. According to Salesforce, search indexing includes only the first 2,000 buyer groups of a product, and the limit is not enforced when you load data. So the import runs through, and some dealers simply stop finding the part. The buyer group page also has a note with a different value than its table; I plan with the 20 from the table.
+The 2,000 buyer groups per product have the nastiest effect.
+
+```hinweis achtung
+According to Salesforce, search indexing includes only the first 2,000 buyer groups of a product, and the limit is not enforced when you load data. So the import runs through, and some dealers simply stop finding the part.
+```
+
+The buyer group page also has a note with a different value than its table; I plan with the 20 from the table.
 
 ## Why never one buyer group per dealer?
 

@@ -116,6 +116,17 @@ Die Credits sind in beiden Modellen klein. Der Gewinn liegt in der Nacht: Der Be
 
 ## Wo fangen Sie an?
 
-Setzen Sie den Sprachagenten zuerst außerhalb der Geschäftszeiten ein, nur für Annahme und Triage, ohne Buchung. Vergleichen Sie vier Wochen lang seine Einstufung mit dem Urteil des Bereitschaftstechnikers. Dann schalten Sie die Buchung für die Zeile „läuft eingeschränkt“ frei und erst danach für Anrufe tagsüber. Wo das zwischen den anderen Außendienst-Agenten steht, beschreibe ich in [KI-Agenten im Außendienst: Was Field Service heute kann](../ki-agenten-aussendienst-field-service/), die Lizenzseite gehört zu [Make-or-buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/).
+Ich würde den Sprachagenten in drei Stufen einführen:
+
+```schritte
+Nachts nur Triage | 4 Wochen
+  Der Agent übernimmt außerhalb der Geschäftszeiten Annahme und Triage, ohne Buchung. Vergleichen Sie seine Einstufung mit dem Urteil des Bereitschaftstechnikers.
+Buchung bei Einschränkung
+  Schalten Sie die Buchung für die Zeile „läuft eingeschränkt“ frei.
+Buchung tagsüber
+  Erst danach geben Sie die Buchung auch für Anrufe während der Geschäftszeiten frei.
+```
+
+Wo das zwischen den anderen Außendienst-Agenten steht, beschreibe ich in [KI-Agenten im Außendienst: Was Field Service heute kann](../ki-agenten-aussendienst-field-service/), die Lizenzseite gehört zu [Make-or-buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/).
 
 Ein Sprachagent an der Störungshotline lohnt sich, wenn er der Disposition einen klassifizierten Fall übergibt und die Entscheidung über Stillstände bei ihr lässt. Wenn Sie die Triage-Regeln für Ihre Hotline durchgehen möchten, [schreiben Sie mir](#contact).

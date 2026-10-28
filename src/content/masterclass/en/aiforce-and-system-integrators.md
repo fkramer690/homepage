@@ -89,7 +89,17 @@ The announcement gives no start date for the new tiers. On 15 April 2026 Salesfo
 
 ### What the new incentives mean for you as a client
 
-The logic has shifted from "licence sold, project billed by the hour" to "agent in production, consumption running". Partly that is good for you. A partner who earns at go-live has less interest in pilots that never reach production. But there is a conflict. Every agent action costs Flex Credits, and Salesforce now rewards your partner for that consumption. An agent that runs three actions instead of one costs you more and costs the partner nothing.
+The logic has shifted from "licence sold, project billed by the hour" to "agent in production, consumption running". Partly that is good for you, but there is a conflict.
+
+```pro-contra
+pro: What works for you
+- A partner who earns at go-live wants agents in production
+- Less interest in pilots that never reach production
+contra: Where the conflict lies
+- Every agent action costs you Flex Credits
+- Salesforce now rewards your partner for that consumption
+- Three actions instead of one cost you more and the partner nothing
+```
 
 On top of that, partners now build with coding agents themselves. That shortens work that used to be billed by the hour. Whether fixed price or outcome-based contracts fit better as a result is the subject of [fixed price vs. time and materials with AI](../../../blog/fixed-price-vs-time-and-materials-ai/). What belongs in the contract when a partner codes with AI, meaning disclosure, data handling, IP, no production access and review, is in [partners using AI coding: contract rules](../../../blog/partners-using-ai-coding-contract-rules/).
 

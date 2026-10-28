@@ -40,14 +40,22 @@ Preisschutz ist der zweite Anwendungsfall. Salesforce beschreibt ihn als Schutz 
 
 Die [Trailhead-Unit zum Ablauf](https://trailhead.salesforce.com/content/learn/modules/ship-and-debit-process-management/explore-the-ship-and-debit-lifecycle) beschreibt sechs Schritte:
 
-1. **Org vorbereiten.** Der Admin schaltet die Funktionen ein und richtet die Zusammenarbeit mit Partnern über Experience Cloud ein.
-2. **Programm gestalten.** Der Channel Manager legt Sonderpreiskonditionen, Berechtigungen und Anforderungen an Ansprüche fest und nimmt Partner und berechtigte Endkunden auf.
-3. **Verkaufen.** Der Distributor verkauft zum Sonderpreis.
-4. **Anspruch einreichen.** Ein Sachbearbeiter beim Distributor reicht ihn über das Partnerportal ein, mit Rechnungen oder Bestellungen als Verkaufsnachweis.
-5. **Prüfen.** Automatische Prüfungen vergleichen den Anspruch mit Programmregeln, Sonderpreiskonditionen und Transaktionsdaten. Sie markieren Dubletten, falsche Mengen und nicht berechtigte Verkäufe. Flows steuern Einreichung und Freigabe, die Data Processing Engine große Mengen.
-6. **Abrechnen.** Die Finanzabteilung prüft, korrigiert und erstattet. Das Transaction Journal hält freigegebene Auszahlungen für die Prüfung fest.
+```schritte
+Org vorbereiten | Admin
+  Funktionen einschalten und die Zusammenarbeit mit Partnern über Experience Cloud einrichten.
+Programm gestalten | Channel Manager
+  Sonderpreiskonditionen, Berechtigungen und Anforderungen an Ansprüche festlegen, Partner und berechtigte Endkunden aufnehmen.
+Verkaufen | Distributor
+  Der Distributor verkauft zum Sonderpreis.
+Anspruch einreichen | Sachbearbeiter beim Distributor
+  Einreichung über das Partnerportal, mit Rechnungen oder Bestellungen als Verkaufsnachweis.
+Prüfen | automatisch
+  Prüfungen vergleichen den Anspruch mit Programmregeln, Sonderpreiskonditionen und Transaktionsdaten und markieren Dubletten, falsche Mengen und nicht berechtigte Verkäufe.
+Abrechnen | Finanzabteilung
+  Prüfen, korrigieren und erstatten. Das Transaction Journal hält freigegebene Auszahlungen für die Prüfung fest.
+```
 
-Das zentrale Objekt ist der Rebate Partner Special Pricing Term. Er enthält Sonderpreis, Referenzpreis, erstattungsfähige Differenz, Mengenschwellen, Berechtigungen und Produkte. Ein Anspruch, der alle Prüfungen besteht, bekommt den Status System Processed. Die erste Unit nennt außerdem CRM-Analytics-Dashboards und vordefinierte Workflows für die Prüfung und setzt das Modul Business Rules Engine voraus.
+Flows steuern Einreichung und Freigabe, die Data Processing Engine verarbeitet große Mengen. Das zentrale Objekt ist der Rebate Partner Special Pricing Term. Er enthält Sonderpreis, Referenzpreis, erstattungsfähige Differenz, Mengenschwellen, Berechtigungen und Produkte. Ein Anspruch, der alle Prüfungen besteht, bekommt den Status System Processed. Die erste Unit nennt außerdem CRM-Analytics-Dashboards und vordefinierte Workflows für die Prüfung und setzt das Modul Business Rules Engine voraus.
 
 Die Zahlung bleibt, wo sie heute ist. Salesforce rechnet und gibt frei, die Gutschrift bucht das ERP. Das ist dieselbe Aufteilung wie beim [Rebate Management](../rebate-management-haendlerboni/), und die Schnittstelle, die freigegebene Beträge nach SAP bringt, sollte gleich mitgeplant werden.
 
@@ -61,7 +69,11 @@ Salesforce veröffentlicht zwei unterschiedliche Sichten:
 | [Preisseite Channel Revenue Management](https://www.salesforce.com/sales/channel-revenue-management/pricing/) | Kein Preis, Angebot auf Anfrage. Setzt eine Sales-Cloud- oder CRM-Lizenz voraus. Enthält 10 Channel-Manager-Admin-Nutzer, Kanalbestandsverfolgung, Deal- und Design-Registrierung, Rebate-, Ship-and-Debit- und Preisschutz-Management. Partnerzugang, weitere Nutzer und Auszahlungen zukaufbar |
 | [Experience-Cloud-Add-on-Seite](https://salesforce.com/manufacturing/cloud/experience-cloud) | Rebate Management „ab 75 Dollar“, ohne Einheit |
 
-Die 30.000 Dollar decken also das Add-on für die Org, Partnerzugang für Distributoren kommt dazu. Die Add-on-Seite der Manufacturing Cloud nennt für Partner Community for Manufacturing 20 Dollar pro Login oder 50 Dollar pro Mitglied und Monat. Ob Auszahlungen gezählt werden und wie viele enthalten sind, sagen die Seiten nicht. Die 75 Dollar für Rebate Management passen nicht zu den 30.000 Dollar. Fragen Sie Salesforce, was davon für Ihren Vertrag gilt und ob Rebate Management allein schon in Ihrer Edition steckt.
+Die 30.000 Dollar decken also das Add-on für die Org, Partnerzugang für Distributoren kommt dazu. Die Add-on-Seite der Manufacturing Cloud nennt für Partner Community for Manufacturing 20 Dollar pro Login oder 50 Dollar pro Mitglied und Monat. Die 75 Dollar für Rebate Management passen nicht zu den 30.000 Dollar.
+
+```hinweis offen
+Ob Auszahlungen gezählt werden und wie viele enthalten sind, sagen die Seiten nicht. Lassen Sie sich von Salesforce schriftlich geben, welcher Preis für Ihren Vertrag gilt und ob Rebate Management allein schon in Ihrer Edition steckt.
+```
 
 Wie ich daraus einen Vergleich über fünf Jahre gegen den heutigen Prozess mache, beschreibe ich unter [Make-or-Buy und Lizenzprognose](../../leistungen/make-or-buy-lizenzen/).
 

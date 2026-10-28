@@ -73,12 +73,20 @@ Row 6 looks harmless, but it is the point where an external model reads real cus
 
 The matrix is for looking things up. In a conversation with the IT lead and the programme manager I prefer to walk through these six questions in order, because early answers remove later options.
 
-1. **Prototype or production?** Vibe coding in a Developer Edition or scratch org is fine for a prototype. Production needs agentic engineering: a human reads the code, and tests and the pipeline decide on the merge. Fowler keeps the two terms apart for exactly this reason.
-2. **Which data and residency rules apply?** If the org sits in the EU Operating Zone, Agentforce Vibes is out. If data protection requires EU processing, Anthropic's direct Claude API is out, while Claude through Bedrock in an EU region remains. For Codex I found no statement from OpenAI that the [EU residency for API projects](https://openai.com/index/introducing-data-residency-in-europe/) applies there too; I would get that in writing.
-3. **Which contracts and tools already exist?** If Flex Credits are already in the Salesforce contract, Vibes is the natural choice. If IT runs GitHub Enterprise, Copilot is. With a free choice I use Claude Code as the reference, because Salesforce built its first official plugin for it. The full comparison is in [Agentforce Vibes, Claude Code or Copilot](../../../blog/agentforce-vibes-claude-code-copilot/).
-4. **What is the job?** Code goes to the coding agent, metadata knowledge to the API context server, data to Hosted MCP, business rules of a runtime agent to Agent Script, releases to the pipeline.
-5. **Which cost model fits?** Heavy, steady use favours flat per-user fees; light or fluctuating use favours pay-per-use. The numbers are in [chapter 7](../costs-and-tokens/).
-6. **Which checks are deterministic?** Code Analyzer, Apex tests, a validation deploy and human review come before every merge, whichever agent wrote the code. What those checks look like is covered in [chapter 8](../ai-code-best-practices/).
+```schritte
+Prototype or production?
+  Vibe coding in a Developer Edition or scratch org is fine for a prototype. Production needs agentic engineering: a human reads the code, and tests and the pipeline decide on the merge. Fowler keeps the two terms apart for exactly this reason.
+Which data and residency rules apply?
+  If the org sits in the EU Operating Zone, Agentforce Vibes is out. If data protection requires EU processing, Anthropic's direct Claude API is out, while Claude through Bedrock in an EU region remains. For Codex I found no statement from OpenAI that the [EU residency for API projects](https://openai.com/index/introducing-data-residency-in-europe/) applies there too; I would get that in writing.
+Which contracts and tools already exist?
+  If Flex Credits are already in the Salesforce contract, Vibes is the natural choice. If IT runs GitHub Enterprise, Copilot is. With a free choice I use Claude Code as the reference, because Salesforce built its first official plugin for it. The full comparison is in [Agentforce Vibes, Claude Code or Copilot](../../../blog/agentforce-vibes-claude-code-copilot/).
+What is the job?
+  Code goes to the coding agent, metadata knowledge to the API context server, data to Hosted MCP, business rules of a runtime agent to Agent Script, releases to the pipeline.
+Which cost model fits?
+  Heavy, steady use favours flat per-user fees; light or fluctuating use favours pay-per-use. The numbers are in [chapter 7](../costs-and-tokens/).
+Which checks are deterministic?
+  Code Analyzer, Apex tests, a validation deploy and human review come before every merge, whichever agent wrote the code. What those checks look like is covered in [chapter 8](../ai-code-best-practices/).
+```
 
 For agents in production a seventh question comes before all others: is the process worth it at all? I go through volume, data quality, ERP access, cost model and edition in [Agentforce for manufacturers: start now or wait?](../../../blog/agentforce-yes-or-no-manufacturers/).
 
