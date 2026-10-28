@@ -1,6 +1,6 @@
 ---
 title: "CPQ behalten oder zu Revenue Cloud wechseln?"
-description: "Wann Hersteller vorerst bei Salesforce CPQ bleiben, zu Revenue Cloud wechseln oder einen dritten Weg gehen sollten: Auslöser, Entscheidungsmatrix, erste Schritte."
+description: "Wann Hersteller vorerst bei Salesforce CPQ bleiben, zu Revenue Cloud wechseln oder einen dritten Weg gehen: Auslöser, Entscheidungsmatrix, erste Schritte."
 pubDate: 2026-10-28
 lang: de
 slug: cpq-behalten-oder-revenue-cloud

@@ -74,11 +74,11 @@ How catalog and prices then move from sandbox to production is a separate topic:
 
 ## What do migration tools do, and what do they not?
 
-On its CPQ page, Salesforce names three partner offerings: Forsys RevRamp for data transformation and schema mapping, IdeaHelix with automation across the migration lifecycle, and Prodly, which analyses the existing CPQ setup. Salesforce also says that about 15% of Revenue Cloud Advanced customers migrated from CPQ, so experience in the market is still limited.
+On its CPQ page, Salesforce names three partner offerings: Forsys RevRamp for data transformation and schema mapping, IdeaHelix with automation across the migration lifecycle, and Prodly, which analyses the existing CPQ setup. Salesforce also says that about 15% of Revenue Cloud Advanced customers are companies that migrated from CPQ.
 
 These tools save time on products, price book entries and subscriptions. Help is clear about the limit: tools do not replace human design decisions, "especially for custom logic and integration remapping". A price rule that fixes a historical rounding problem, a script that reads a field from SAP, an approval chain with exceptions for one country: someone has to decide whether that logic is still needed and how it looks in a pricing procedure.
 
-When you compare partner offers, I would ask each partner for the same three numbers: how many price rules, product rules and scripts they counted in your org, and what they plan for each. A partner who quotes without counting is selling a range, not a plan. How to set up such a comparison and which commercial model fits is covered in [fixed price vs time and materials](../fixed-price-vs-time-and-materials-ai/) and in the AI masterclass chapter on [AIforce and system integrators](../../masterclass/ai-salesforce/aiforce-and-system-integrators/).
+When you compare partner offers, I would ask each partner for the same three numbers: how many price rules, product rules and scripts they counted in your org, and what they plan for each. A partner who quotes without counting is selling a range. How to set up such a comparison and which commercial model fits is covered in [fixed price vs time and materials](../fixed-price-vs-time-and-materials-ai/) and in the AI masterclass chapter on [AIforce and system integrators](../../masterclass/ai-salesforce/aiforce-and-system-integrators/).
 
 ## A typical scenario, as an assumption
 
