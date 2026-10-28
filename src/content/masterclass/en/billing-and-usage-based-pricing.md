@@ -57,7 +57,7 @@ The [product page](https://www.salesforce.com/sales/revenue-cloud-billing/) adds
 
 ## Who closes the period: finance or the CRM team?
 
-A subledger records the detail of receivables, every invoice, credit memo and payment, and passes journal entries to the general ledger. The general ledger stays in SAP. According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/billing-management-with-revenue-cloud/set-up-billing-basics), all Billing transactions relate to legal entity records, and the configuration contains accounting periods, general ledger accounts and rules for journal entries. Each of these already exists in SAP as company codes, fiscal periods and G/L accounts.
+A subledger records the detail of receivables, every invoice, credit memo and payment, and passes journal entries to the general ledger. The general ledger stays in SAP. According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/billing-management-with-revenue-cloud/set-up-billing-basics), legal entity records tie every billing transaction to the right accounting periods and general ledger accounts. Each of these already exists in SAP as company codes, fiscal periods and G/L accounts.
 
 So before a partner configures anything, finance answers four questions:
 
