@@ -58,6 +58,10 @@ The nine chapters before this one each describe one building block. For the roll
 
 The most important investment is a person: an internal release role that owns the pipeline, the calendar and the approvals. If you pick an open-source tool or a cheaper package, the licence savings are better spent there than on extra partner days. Without that role, the process effectively belongs to whichever partner knows it best again.
 
+```praxis
+In one programme I supported, every pull request went across my desk at first. Once the process ran smoothly, I handed it over to an internal colleague.
+```
+
 Training comes next, and it should be hands-on. I have used sfdx-hardis in client projects for about two years and completed all three levels of the [free sfdx-hardis training](https://sfdx-hardis.cloudity.com/salesforce-devops-training/) in October 2026. In 27 labs you build a complete pipeline on free Developer Edition orgs and a GitHub account, and you only get a badge once a job has checked the work in your own repository. Even with prior experience it took me almost a day. My notes are in [what I learned from the sfdx-hardis training](../../../blog/sfdx-hardis-free-devops-training/).
 
 The commercial vendors have their own offers, and I have taken courses from Gearset, Flosum and Copado. Gearset runs [DevOps Launchpad](https://docs.gearset.com/en/articles/4497508-what-is-devops-launchpad), a free platform with courses, quizzes and certificates whose content is mostly not tied to Gearset. According to its [training page](https://copado.com/training), Copado offers the Copado Academy and free workshops that include an exam voucher. Flosum has two courses, Professional and Expert, under [Flosum Certified Learning](https://flosum.com/certification). Use the training for the tool you chose; for Git and pull request basics, any of them will do.
@@ -104,11 +108,18 @@ Take the baseline before phase 2 starts, from the release plans of the last six 
 
 A typical scenario, as an assumption: a machine builder runs Service Cloud, Field Service for its field technicians, a dealer portal on Experience Cloud and an SAP integration for orders and spare parts. Three partners deploy by change set, and every four weeks there is a release with a plan of 60 manual lines. All figures are assumptions.
 
-- **Months 1 and 2:** The client names an internal release manager, decides on a tool and adds an annex to all three contracts with the branch model, the review duty and the cut-off date.
-- **Month 3:** The repository is built from production, and the dealer portal stream starts as the pilot.
-- **Months 4 and 5:** Validation on every pull request, gates block severe findings. The release manager and two admins do the training.
-- **Month 6:** The Field Service and SAP partners switch, cut-off date for change sets.
-- **Months 7 to 9:** Price books and Field Service configuration move into the repository, the release calendar is set, and monitoring reports drift.
+```schritte
+Settle ownership | Months 1 and 2 · client
+  The client names an internal release manager, decides on a tool and adds an annex to all three contracts with the branch model, the review duty and the cut-off date.
+Start the pilot | Month 3
+  The repository is built from production, and the dealer portal stream starts as the pilot.
+Validate and train | Months 4 and 5
+  Validation on every pull request, gates block severe findings. The release manager and two admins do the training.
+Switch all streams | Month 6
+  The Field Service and SAP partners switch, cut-off date for change sets.
+Data and operations | Months 7 to 9
+  Price books and Field Service configuration move into the repository, the release calendar is set, and monitoring reports drift.
+```
 
 After nine months the release plan has twelve manual lines instead of 60, UAT gets new builds weekly instead of monthly, and a partner change in the Field Service stream would be a contract question, not a technical project. These figures are planning values for the example, not measurements.
 

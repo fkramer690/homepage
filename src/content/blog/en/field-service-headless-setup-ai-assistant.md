@@ -80,7 +80,7 @@ That leads to a clear route:
 
 ```schritte
 Set up in a sandbox
-  Run the headless setup in a sandbox, never directly in production.
+  Run the headless setup in a sandbox.
 Retrieve metadata
   Retrieve flows and other metadata into a branch.
 Export the data

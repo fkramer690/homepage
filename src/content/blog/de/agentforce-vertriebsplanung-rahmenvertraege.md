@@ -74,6 +74,10 @@ Die größte Lücke ist der Abgleich mit dem Produktionsplan aus der Ankündigun
 
 Fragt ein Account Manager, welche Verträge im Rückstand sind, vergleicht der Agent Plan- und Ist-Mengen in den Zeitplänen der Sales-Agreement-Produkte. Beim Hersteller liegen die Ist-Mengen im ERP. Fehlen sie oder kommen sie spät, meldet der Agent einen Rückstand mit voller Überzeugung.
 
+```praxis
+Ich habe Sales Agreements mit Ist-Mengen aus dem ERP in der Manufacturing Cloud eingeführt. Der Stolperstein war die ERP-Schnittstelle.
+```
+
 Laut [Salesforce-Hilfe zum Import von Ist-Werten](https://help.salesforce.com/s/articleView?id=ind.mfg_sa_actuals_api_external.htm&language=en_US&type=5) stellt der Admin dafür die Ist-Berechnung auf „Manually using API upload“. Eine Schnittstelle schreibt Actual Quantity und Actual Amount per Bulk API oder Data Loader in die Datensätze Sales Agreement Product Schedule, der tägliche Job läuft in der Zeitzone der Org. Wer Werte von Hand korrigiert, braucht die Berechtigung „Edit Actual Quantity of Sales Agreements Products“.
 
 ```ablauf

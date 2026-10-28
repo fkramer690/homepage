@@ -101,8 +101,8 @@ Ob sieben Personen liefern, was vorher zwölf geliefert haben, bleibt offen, bis
 ```schritte
 Einen Stream wählen
   Mit klarem Prozess, einer entscheidungsbefugten Person im Fachbereich und wenigen ERP-Abhängigkeiten. Stories im Händlerportal passen oft gut.
-Fachexperten benennen
-  Zuerst, und seine Zeit von der Führungskraft freigeben lassen, bevor der Partner umbaut.
+Fachexperten zuerst benennen
+  Seine Zeit von der Führungskraft freigeben lassen, bevor der Partner umbaut.
 Intents schreiben
   Für die ersten zehn Stories, mit prüfbaren Akzeptanzkriterien; genaue Spezifikationen bleiben für Schnittstellen und Regeln mit finanzieller Wirkung.
 Leitplanken vereinbaren

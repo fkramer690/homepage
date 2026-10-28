@@ -51,7 +51,11 @@ title: What else a test spec can check
 
 The tooling is changing quickly. Testing Center enhancements with custom scoring and multi-turn tests went GA in May 2026, according to the [TDX 2026 roundup](https://www.salesforce.com/blog/tdx-2026-roundup-agentforce-edition/). At [Dreamforce 2026](https://www.salesforce.com/blog/dreamforce-2026-announcements/) Salesforce added conversation testing with a task resolution metric (beta) and custom scorers (API GA, user interface in beta). The developer docs I cite still describe the legacy test process, not the newer Testing Center in Agentforce Studio, so check the current behaviour in your org. Keep your test cases as plain files in Git, so they survive the next tool change.
 
-Two practical points are easy to miss. Agent testing is [available only in sandboxes](https://developer.salesforce.com/docs/ai/agentforce/guide/testing-api-get-started.html), and Salesforce notes that running tests consumes requests and credits and can modify data. According to the [Flex Credits rate card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf), an action costs 16 credits in a sandbox or scratch org instead of 20 in production. And if an action reserves a part in a connected test ERP, every test run does that too.
+```hinweis achtung
+Agent testing is [available only in sandboxes](https://developer.salesforce.com/docs/ai/agentforce/guide/testing-api-get-started.html), and Salesforce notes that running tests consumes requests and credits and can modify data. According to the [Flex Credits rate card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf), an action costs 16 credits in a sandbox or scratch org instead of 20 in production.
+
+And if an action reserves a part in a connected test ERP, every test run does that too.
+```
 
 ## How do you set pass-rate gates for go-live?
 
@@ -91,11 +95,19 @@ Retest whenever something under the agent changes: a subagent, a Flow, knowledge
 
 The client. The partner writes and runs the tests, but the test set, the thresholds and the go-live decision belong to the company that answers to its dealers. It is the principle from [DevOps for enterprise projects](../why-devops-matters-salesforce-enterprise/): agent tests live in the same repository and pipeline, with JUnit output and a gate that blocks the deployment below the threshold. Setting this up is part of my [DevOps and release management](../../services/devops-release-management/) work.
 
-1. **Name the unacceptable failures** together with the business owner, for example a wrong warranty statement or data from another dealer.
-2. **Collect 20 to 50 real questions** from dealer emails and service tickets, then add edge cases and guardrail cases.
-3. **Mark the rules** that need exact checks instead of the judge.
-4. **Agree thresholds and the number of runs** before the first test, not after the first result.
-5. **Budget sandbox credits** for every regression run until the end of the pilot.
-6. **Switch on monitoring and define the rollout group** before you activate the agent.
+```schritte
+Name unacceptable failures
+  Together with the business owner, for example a wrong warranty statement or data from another dealer.
+Collect 20 to 50 real questions
+  From dealer emails and service tickets, then add edge cases and guardrail cases.
+Mark the rules
+  The rules that need exact checks instead of the judge.
+Agree thresholds
+  Thresholds and the number of runs, before the first test, not after the first result.
+Budget sandbox credits
+  For every regression run until the end of the pilot.
+Switch on monitoring
+  Turn monitoring on and define the rollout group before you activate the agent.
+```
 
 An Agentforce agent is ready when it meets thresholds you set in advance, run after run, and when you can see what it does in production from the first day. If you want a second pair of eyes on your test set or your go-live gates, [send me a message](#contact).

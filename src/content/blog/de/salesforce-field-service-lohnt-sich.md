@@ -79,7 +79,7 @@ In der Unlimited Edition kosten Dispatcher und Technician laut Fußnote 330 US-D
 
 Ein Rechenbeispiel mit Listenpreisen: 40 Techniker und 4 Disponenten in der Enterprise Edition sind 44 Lizenzen zu 175 €, also 7.700 € pro Monat oder 92.400 € pro Jahr. Dazu kommen Umsetzung, Integration mit dem ERP und Wartung.
 
-Zwei Bedingungen aus dem Kleingedruckten zählen für die Lizenzplanung. Field Service setzt mindestens eine Service-Cloud-Lizenz voraus, und Techniker brauchen mindestens einen Dispatcher, damit die Planung funktioniert. Die zweite Bedingung übersehen viele:
+Zwei Bedingungen aus dem Kleingedruckten zählen für die Lizenzplanung. Field Service setzt mindestens eine Service-Cloud-Lizenz voraus, und Techniker brauchen mindestens einen Dispatcher, damit die Planung funktioniert. Die zweite betrifft den Innendienst:
 
 ```hinweis achtung
 Dispatcher- und Technician-Lizenzen dürfen nicht für Contact Center oder Fallbearbeitung genutzt werden. Wer im Innendienst Fälle bearbeitet und zugleich Einsätze plant, braucht Field Service Plus.

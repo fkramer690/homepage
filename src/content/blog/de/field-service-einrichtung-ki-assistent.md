@@ -80,7 +80,7 @@ Daraus folgt ein klarer Weg:
 
 ```schritte
 In der Sandbox einrichten
-  Die Headless-Einrichtung läuft in einer Sandbox, nie direkt in Produktion.
+  Die Headless-Einrichtung läuft in einer Sandbox.
 Metadaten holen
   Flows und andere Metadaten holen Sie in einen Branch.
 Daten exportieren

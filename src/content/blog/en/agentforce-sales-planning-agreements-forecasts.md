@@ -74,6 +74,10 @@ The build plan comparison from the announcement is the biggest gap. I found no d
 
 When an account manager asks which agreements are behind, the agent compares planned and actual quantities on the sales agreement product schedules. At a manufacturer, the actual quantities live in the ERP. If they are missing or late, the agent reports a shortfall with full confidence.
 
+```praxis
+I have introduced sales agreements with actuals from the ERP in Manufacturing Cloud. The stumbling block was the ERP interface.
+```
+
 According to [Salesforce Help on importing actuals](https://help.salesforce.com/s/articleView?id=ind.mfg_sa_actuals_api_external.htm&language=en_US&type=5), the admin first sets the actuals calculation to "Manually using API upload". An integration writes Actual Quantity and Actual Amount on Sales Agreement Product Schedule records through Bulk API or Data Loader, and the daily job runs in the org's time zone. Users who correct values by hand need the permission "Edit Actual Quantity of Sales Agreements Products".
 
 ```ablauf

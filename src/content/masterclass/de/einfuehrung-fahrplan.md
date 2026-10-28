@@ -58,6 +58,10 @@ Die neun Kapitel davor beschreiben jeweils einen Baustein. Für die Einführung 
 
 Die wichtigste Investition ist eine Person: eine interne Release-Rolle, die Pipeline, Kalender und Freigaben verantwortet. Wählen Sie ein Open-Source-Werkzeug oder ein günstigeres Paket, ist die Lizenzersparnis dort besser angelegt als in zusätzlichen Partnertagen. Ohne diese Rolle gehört der Prozess faktisch wieder dem Partner, der ihn am besten kennt.
 
+```praxis
+In einem Programm, das ich begleitet habe, lief anfangs jeder Pull Request über meinen Schreibtisch. Als der Prozess stabil lief, habe ich ihn an einen internen Kollegen übergeben.
+```
+
 Dazu kommt Training, und zwar praxisnah. Ich setze sfdx-hardis seit rund zwei Jahren in Kundenprojekten ein und habe im Oktober 2026 alle drei Level des [kostenlosen sfdx-hardis-Trainings](https://sfdx-hardis.cloudity.com/salesforce-devops-training/) abgeschlossen. In 27 Labs entsteht auf kostenlosen Developer Edition Orgs und einem GitHub-Account eine komplette Pipeline, und ein Badge gibt es erst, wenn ein Job die Arbeit im eigenen Repository geprüft hat. Trotz Vorerfahrung habe ich fast einen Tag gebraucht. Meine Eindrücke stehen in [was ich aus dem sfdx-hardis-Training lernte](../../../blog/sfdx-hardis-kostenloses-devops-training/).
 
 Die kommerziellen Anbieter haben eigene Angebote, und ich habe Kurse von Gearset, Flosum und Copado gemacht. Gearset betreibt mit [DevOps Launchpad](https://docs.gearset.com/en/articles/4497508-what-is-devops-launchpad) eine kostenlose Plattform mit Kursen, Quizzes und Zertifikaten, deren Inhalte größtenteils nicht an Gearset gebunden sind. Copado bietet laut seiner [Trainingsseite](https://copado.com/training) die Copado Academy und kostenlose Workshops mit Prüfungsgutschein an. Flosum führt mit [Flosum Certified Learning](https://flosum.com/certification) zwei Kurse, Professional und Expert. Nutzen Sie das Training des Werkzeugs, das Sie gewählt haben; für die Grundlagen von Git und Pull Requests taugen alle.

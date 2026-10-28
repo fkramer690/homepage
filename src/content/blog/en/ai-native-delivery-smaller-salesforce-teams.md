@@ -101,8 +101,8 @@ Whether seven people deliver what twelve did is an open question until cycle tim
 ```schritte
 Pick one stream
   With a clear process, a decision maker in the business and few ERP dependencies. Dealer portal stories are often a good fit.
-Name the domain lead
-  First, and get the time approved by their manager before the partner restructures.
+Name the domain lead first
+  Get the time approved by their manager before the partner restructures.
 Write intents
   For the first ten stories with testable acceptance criteria; keep precise specifications for interfaces and rules with financial effect.
 Agree the guardrails
