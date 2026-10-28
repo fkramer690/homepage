@@ -1,7 +1,8 @@
 name: Fetch rankings
 
-# Weekly Google positions and search volumes from DataForSEO for the keywords
-# in seo/keywords.json, stored on the "stats" branch next to the analytics.
+# Weekly Google positions, search volumes and AI Overview citations from DataForSEO
+# for the keywords in seo/keywords.json, stored on the "stats" branch next to the
+# analytics, plus the rows the analytics dashboard reads (stats/seo-dashboard/).
 on:
   schedule:
     - cron: '45 5 * * 1'
@@ -10,7 +11,7 @@ on:
 permissions:
   contents: write
 
-# Shares the group with analytics.yml so both never push to "stats" at once.
+# Shares the group with analytics.yml and ai-visibility.yml so they never push to "stats" at once.
 concurrency:
   group: analytics
   cancel-in-progress: false
@@ -27,7 +28,9 @@ jobs:
         env:
           DATAFORSEO_LOGIN: ${{ secrets.DATAFORSEO_LOGIN }}
           DATAFORSEO_PASSWORD: ${{ secrets.DATAFORSEO_PASSWORD }}
-        run: node scripts/fetch-rankings.mjs > /tmp/rankings.json
+        run: |
+          node scripts/fetch-rankings.mjs > /tmp/rankings.json
+          cp scripts/seo-rows.mjs /tmp/seo-rows.mjs
       - name: Commit snapshot to stats branch
         run: |
           git config user.name "github-actions[bot]"
@@ -41,6 +44,7 @@ jobs:
           mkdir -p stats/rankings
           cp /tmp/rankings.json stats/rankings/latest.json
           cp /tmp/rankings.json "stats/rankings/$(date -u +%F).json"
-          git add stats/rankings
+          node /tmp/seo-rows.mjs stats stats/seo-dashboard
+          git add stats/rankings stats/seo-dashboard
           git commit -m "Rankings snapshot $(date -u +%F)" || exit 0
           git push origin stats

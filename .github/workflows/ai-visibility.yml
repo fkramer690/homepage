@@ -1,0 +1,50 @@
+name: AI visibility
+
+# Monthly check whether ChatGPT, Claude, Gemini, Perplexity and Google AI Mode
+# name or cite fk-sd.de for the questions in seo/ai-prompts.json (DataForSEO).
+# Stored on the "stats" branch, plus the rows the analytics dashboard reads.
+on:
+  schedule:
+    - cron: '50 4 1 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# Shares the group with analytics.yml and rankings.yml so they never push to "stats" at once.
+concurrency:
+  group: analytics
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Query DataForSEO
+        env:
+          DATAFORSEO_LOGIN: ${{ secrets.DATAFORSEO_LOGIN }}
+          DATAFORSEO_PASSWORD: ${{ secrets.DATAFORSEO_PASSWORD }}
+        run: |
+          node scripts/fetch-ai-visibility.mjs > /tmp/ai.json
+          cp scripts/seo-rows.mjs /tmp/seo-rows.mjs
+      - name: Commit snapshot to stats branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git ls-remote --exit-code origin stats >/dev/null; then
+            git fetch origin stats
+            git switch stats
+          else
+            git switch --orphan stats
+          fi
+          mkdir -p stats/ai
+          cp /tmp/ai.json stats/ai/latest.json
+          cp /tmp/ai.json "stats/ai/$(date -u +%F).json"
+          node /tmp/seo-rows.mjs stats stats/seo-dashboard
+          git add stats/ai stats/seo-dashboard
+          git commit -m "AI visibility snapshot $(date -u +%F)" || exit 0
+          git push origin stats
