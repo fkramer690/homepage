@@ -1,6 +1,6 @@
 ---
 title: "Usage-based maintenance in Field Service: hours, not dates"
-description: "How to trigger maintenance in Salesforce Field Service by operating hours or counters: usage and criteria rules, where the counter comes from and which limits apply."
+description: "Trigger maintenance in Salesforce Field Service by operating hours or counters: usage and criteria rules, where the counter comes from and which limits apply."
 pubDate: 2026-10-28
 lang: en
 slug: field-service-usage-based-maintenance

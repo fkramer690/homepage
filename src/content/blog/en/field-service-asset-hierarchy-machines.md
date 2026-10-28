@@ -1,6 +1,6 @@
 ---
 title: "Field Service asset hierarchy: how deep for a machine?"
-description: "How deep a machine builder should model machines, assemblies and components as assets in Salesforce Field Service, which limits apply and who keeps the tree current."
+description: "How deep machine builders should model machines, assemblies and parts as assets in Salesforce Field Service, which limits apply and who maintains the tree."
 pubDate: 2026-10-28
 lang: en
 slug: field-service-asset-hierarchy-machines

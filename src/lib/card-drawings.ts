@@ -29,8 +29,8 @@ const pin = (x: number, y: number, color = G) =>
 const drawings: Record<string, Drawing> = {
   'revenue-cloud-discount-approvals': (l) => `
     ${t(18, 18, l('ADVANCED APPROVALS ON THE QUOTE', 'ADVANCED APPROVALS AM ANGEBOT'), { fill: D, size: 7 })}
-    ${box(18, 40, 66, 48)}${t(51, 58, l('QUOTE', 'ANGEBOT'), { fill: D, size: 7.5, anchor: 'middle' })}${t(51, 72, l('discount 32 %', 'Rabatt 32 %'), { size: 7, anchor: 'middle' })}
-    ${arrow(84, 64, 112)}${t(98, 58, l('preview', 'Vorschau'), { size: 7, anchor: 'middle' })}
+    ${box(18, 40, 60, 48)}${t(48, 58, l('QUOTE', 'ANGEBOT'), { fill: D, size: 7.5, anchor: 'middle' })}${t(48, 72, l('discount 32 %', 'Rabatt 32 %'), { size: 7, anchor: 'middle' })}
+    ${arrow(78, 64, 112)}${t(95, 58, l('preview', 'Vorschau'), { size: 7, anchor: 'middle' })}
     ${box(112, 34, 108, 24)}${t(166, 49, l('> 15 %: sales manager', '> 15 %: Vertrieb Region'), { size: 7, anchor: 'middle' })}
     ${box(112, 70, 108, 24, C)}${t(166, 85, l('> 30 %: head of sales', '> 30 %: Vertrieb gesamt'), { fill: C, size: 7, anchor: 'middle' })}
     ${arrow(220, 46, 242)}${arrow(220, 82, 242)}

@@ -87,6 +87,8 @@ Built as one form, it would contain every checkpoint of every variant, with cond
 
 A machine therefore still gets 80 checkpoints, but each form is short enough to test. Defects found in form 2 become line items, so the dispatcher sees the follow-up work.
 
+In this scenario the back office gains the most. After the sync the readings are on the asset, nobody types them in again, and the overall result on the work order shows when the invoice can go out. If a limit value changes for one variant, the admin changes only that variant's form and tests only that one.
+
 ## Where should you start?
 
 1. **Pick one protocol** with high volume, for example annual maintenance of your most common machine type.

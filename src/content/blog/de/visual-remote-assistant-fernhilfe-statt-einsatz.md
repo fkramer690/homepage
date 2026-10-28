@@ -1,6 +1,6 @@
 ---
 title: "Visual Remote Assistant: Videohilfe statt Einsatz?"
-description: "Wann eine Videositzung mit Visual Remote Assistant den Technikereinsatz beim Maschinenbauer ersetzt, was sie kostet und was vor dem ersten Anruf geklärt sein muss."
+description: "Wann eine Videositzung mit Visual Remote Assistant den Technikereinsatz beim Maschinenbauer ersetzt, was sie kostet und was Sie vorher klären müssen."
 pubDate: 2026-10-28
 lang: de
 slug: visual-remote-assistant-fernhilfe-statt-einsatz

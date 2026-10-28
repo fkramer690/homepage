@@ -1,6 +1,6 @@
 ---
 title: "Wartung nach Betriebsstunden im Field Service einrichten"
-description: "Wie Sie Wartung in Salesforce Field Service nach Betriebsstunden oder Zählern auslösen: Nutzungs- und Kriterienregeln, Herkunft des Zählers und welche Limits gelten."
+description: "Wartung in Salesforce Field Service nach Betriebsstunden oder Zählern auslösen: Nutzungs- und Kriterienregeln, Herkunft des Zählers und welche Limits gelten."
 pubDate: 2026-10-28
 lang: de
 slug: field-service-wartung-nach-betriebsstunden

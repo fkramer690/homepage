@@ -1,6 +1,6 @@
 ---
 title: "Asset-Hierarchie im Field Service: Wie tief pro Maschine?"
-description: "Wie tief Maschinenbauer Maschinen, Baugruppen und Komponenten in Salesforce Field Service als Assets abbilden sollten, welche Limits gelten und wer den Baum pflegt."
+description: "Wie tief Maschinenbauer Maschinen, Baugruppen und Teile in Salesforce Field Service als Assets abbilden sollten, welche Limits gelten und wer den Baum pflegt."
 pubDate: 2026-10-28
 lang: de
 slug: field-service-asset-hierarchie-maschinen
