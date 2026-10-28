@@ -22,7 +22,7 @@ faq:
   - q: "What replaces CPQ price rules in Revenue Cloud?"
     a: "Pricing procedures in Salesforce Pricing. A procedure runs pricing elements in sequence, reads data through decision tables and shows every step in a price waterfall. Custom logic from a JavaScript quote calculator plugin has to be redesigned for it."
   - q: "What replaces CPQ product rules?"
-    a: "The Product Configurator with product classifications and attributes, and for complex products the constraint rules engine with the Constraint Modeling Language (CML). Rules are written as declarative constraints instead of if-then rules."
+    a: "The Product Configurator with product classifications and attributes, and for complex products the constraint rules engine with the Constraint Modeling Language (CML). Simple dependencies can stay if-then configuration rules; complex ones are written as declarative constraints."
   - q: "Can CPQ and Revenue Cloud run in the same org?"
     a: "Salesforce Help lists coexistence during the transition and keeping the CPQ licence as planning topics for a migration. In practice both run side by side for a while, so plan which products and customers move first."
 draft: false
@@ -38,20 +38,21 @@ Revenue Cloud's developer documentation goes back to Spring '24 (API 60.0), when
 
 ## The differences at a glance
 
-| Area | Salesforce CPQ and Billing | Revenue Cloud |
+| Area | Salesforce CPQ and Billing (SteelBrick) | Revenue Cloud |
 |---|---|---|
-| Technical form | Managed packages, namespaces `SBQQ` and `blng` | Part of the platform, no CPQ package |
-| Data model | Package objects such as `SBQQ__Quote__c`, subscription records on the contract | Standard objects such as Product2, Quote, Order, Asset |
-| Product model | Products, bundles with features and options | Catalogs, categories, product classifications with attributes, bundles |
-| Configuration rules | Product rules: validation, selection, filter, alert | Constraint rules engine with CML, Visual Builder for simple rules |
-| Pricing | Price rules, optional JavaScript quote calculator plugin | Pricing procedures, context definitions, decision tables, price waterfall |
+| Technical form | Managed packages, namespaces `SBQQ` and `blng` | Standard data model of the platform, API-first quoting |
+| Quote, order, sold products | Package objects such as `SBQQ__Quote__c`, subscription records on the contract | Standard objects Quote, Order, Asset |
+| Product model | Products and bundles with features and options | Catalogs, categories, product classifications with attributes, bundles |
+| Configuration rules | Product rules: validation, selection, filter, alert | Configuration rules and the constraint rules engine with CML |
+| Pricing | Price rules, optional JavaScript quote calculator plugin | Pricing procedures, decision tables, context definitions, price waterfall |
 | After the sale | Contract with subscription records | Assets with asset state periods and asset actions |
-| Amendment | New quote and opportunity on the contract | Amendment quote, then an order |
+| Amendment and renewal | New quote and opportunity on the contract | Amendment or renewal quote, then an order |
 | Approvals | Advanced Approvals package | Advanced Approvals as invocable actions and business APIs |
-| Order to fulfilment | Order generated from the quote | Dynamic Revenue Orchestrator as add-on |
-| Billing | Salesforce Billing package | Revenue Cloud Billing add-on with usage rating, digital wallet, invoicing engine, accounting subledger |
-| Configuration storage | Mostly data records | Mostly data records |
-| Status October 2026 | End of sale, maintenance phase, no new features | Actively developed |
+| Order to fulfilment | Order generated from the quote | Order, optionally through Dynamic Revenue Orchestrator (add-on) |
+| Billing | Salesforce Billing package | Revenue Cloud Billing add-on: usage rating and digital wallet, invoicing, payments, collections, accounting subledger |
+| Reports and dashboards | Built on package objects | Rebuilt on standard objects |
+| Configuration storage | Mostly records | Mostly records |
+| Status October 2026 | End of sale, maintenance phase, no new features | Actively developed, sold as Growth and Advanced |
 
 Sources for the table follow in the sections below. The row on configuration storage is the one similarity that matters for operations: according to [Gearset](https://docs.gearset.com/en/articles/10981375-understanding-the-difference-between-salesforce-cpq-and-revenue-lifecycle-management-rlm-revenue-cloud-advanced-rca), most configuration lives as data in both products, so deployments need data templates in both cases, just for different objects.
 

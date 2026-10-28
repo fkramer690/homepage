@@ -60,7 +60,7 @@ Meine Regel: Offline gehört, was der Techniker braucht, um den Einsatz abzuschl
 | Bestände aller Lager | Das ERP führt sie, der Innendienst schaut dort nach |
 | Abgeschlossene Aufträge, älter als einige Monate | Selten gebraucht, schwer zu synchronisieren |
 
-Das Fahrzeuglager wird am häufigsten unterschätzt. Eine Live-Abfrage im ERP funktioniert im Keller einer Werkshalle nicht, wie ich in [Ersatzteile im Außendienst: ERP oder Salesforce?](../salesforce-field-service-ersatzteile-erp/) beschrieben habe. Die Kopie des Fahrzeugbestands muss in Salesforce und auf dem Gerät liegen.
+Das Fahrzeuglager wird leicht unterschätzt. Eine Live-Abfrage im ERP funktioniert im Keller einer Werkshalle nicht, wie ich in [Ersatzteile im Außendienst: ERP oder Salesforce?](../salesforce-field-service-ersatzteile-erp/) beschrieben habe. Die Kopie des Fahrzeugbestands muss in Salesforce und auf dem Gerät liegen.
 
 Handbücher brauchen einen zweiten Blick. Ein Agent zur Fehlersuche findet das richtige Handbuch nur, wenn jedes Dokument denselben Produktschlüssel trägt wie das Asset. Das steht in [KI-Fehlersuche im Außendienst: erst die Handbücher](../ki-fehlersuche-handbuecher-aussendienst/). Derselbe Schlüssel entscheidet, ob der Briefcase das richtige Handbuch für das Gerät filtern kann. Ob sich die Datei selbst ohne Netz öffnet, hängt davon ab, wie sie gespeichert ist. Testen Sie das mit einem großen PDF.
 

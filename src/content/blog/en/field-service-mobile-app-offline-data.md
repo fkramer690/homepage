@@ -60,7 +60,7 @@ My rule: whatever the technician needs to finish the job and document it without
 | Stock of all warehouses | The ERP owns it, the back office looks it up |
 | Closed work orders older than a few months | Rarely needed, heavy to sync |
 
-Van stock is the point most often underestimated. A live lookup from the ERP does not work in the basement of a factory, as I described in [Field Service spare parts: ERP or Salesforce?](../salesforce-field-service-spare-parts-erp/). The copy of the van stock has to be in Salesforce and on the device.
+Van stock is easy to underestimate. A live lookup from the ERP does not work in the basement of a factory, as I described in [Field Service spare parts: ERP or Salesforce?](../salesforce-field-service-spare-parts-erp/). The copy of the van stock has to be in Salesforce and on the device.
 
 Manuals need a second look. A troubleshooting agent finds the right manual only if every document carries the same product key as the asset, which is covered in [Field Service AI troubleshooting: fix the manuals first](../field-service-ai-troubleshooting-manuals/). The same key decides whether the briefcase can filter the right manual for the device. Whether the file itself opens without a network depends on how it is stored, so test it with a large PDF.
 

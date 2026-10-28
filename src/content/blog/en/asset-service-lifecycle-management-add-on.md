@@ -19,7 +19,7 @@ faq:
   - q: "What is Asset Service Lifecycle Management in Salesforce?"
     a: "It is a paid add-on for Field Service and several industry clouds. Salesforce Help lists functions such as the Asset Coverage View, an interactive asset hierarchy, work order estimation, product service campaigns, depot repair, advanced exchange, inventory functions and timesheets."
   - q: "How much does Asset Service Lifecycle Management cost?"
-    a: "According to the Field Service price list of October 2026 it costs $75 or 75 euros per user and month, billed annually. Connected Assets is priced separately at $15,000 per org and month."
+    a: "According to the Field Service price list of October 2026 it costs $75 per user and month, billed annually; the price list shows the add-ons in US dollars only. Connected Assets is priced separately at $15,000 per org and month."
   - q: "Is Asset Service Lifecycle Management included in Agentforce 1 Field Service?"
     a: "Not according to the comparison table on the price list. It marks the Asset Coverage View and Interactive Hierarchy as available for purchase for Dispatcher, Technician, Field Service Plus and Agentforce 1 Field Service. Confirm it in your quote."
   - q: "Do I need Connected Assets for usage-based maintenance?"

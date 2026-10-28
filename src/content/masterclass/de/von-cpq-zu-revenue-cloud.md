@@ -56,7 +56,7 @@ Beide Produkte konfigurieren, bepreisen, erstellen Angebote und rechnen ab, und 
 | Bereich | Salesforce CPQ und Billing (SteelBrick) | Revenue Cloud |
 |---|---|---|
 | Technische Form | Managed Packages, Namespaces `SBQQ` und `blng` | Standarddatenmodell der Plattform, API-first beim Angebot |
-| Angebot, Auftrag, Verkauftes | Paketobjekte wie `SBQQ__Quote__c` | Standardobjekte Quote, Order, Asset |
+| Angebot, Auftrag, Verkauftes | Paketobjekte wie `SBQQ__Quote__c`, Subscription-Datensätze am Vertrag | Standardobjekte Quote, Order, Asset |
 | Produktmodell | Produkte und Bundles mit Features und Optionen | Kataloge, Kategorien, Produktklassifizierungen mit Attributen, Bundles |
 | Konfigurationsregeln | Produktregeln: Validation, Selection, Filter, Alert | Konfigurationsregeln und Constraint Rules Engine mit CML |
 | Preisberechnung | Preisregeln, optional JavaScript Quote Calculator Plugin | Preisprozeduren, Decision Tables, Context Definitions, Preis-Wasserfall |
@@ -64,10 +64,10 @@ Beide Produkte konfigurieren, bepreisen, erstellen Angebote und rechnen ab, und 
 | Nachtrag und Verlängerung | Neues Angebot mit Opportunity zum Vertrag | Nachtrags- oder Verlängerungsangebot, dann Auftrag |
 | Freigaben | Paket Advanced Approvals | Advanced Approvals als Invocable Actions und Business APIs |
 | Auftrag bis Erfüllung | Auftrag aus dem Angebot erzeugt | Auftrag, optional über Dynamic Revenue Orchestrator (Add-on) |
-| Abrechnung | Paket Salesforce Billing | Add-on Revenue Cloud Billing: Usage Rating, Rechnungen, Zahlungen, Mahnwesen, Nebenbuch |
+| Abrechnung | Paket Salesforce Billing | Add-on Revenue Cloud Billing: Usage Rating und Digital Wallet, Rechnungen, Zahlungen, Mahnwesen, Nebenbuch |
 | Berichte und Dashboards | Auf Paketobjekten gebaut | Auf Standardobjekten neu gebaut |
 | Ablage der Konfiguration | Überwiegend Datensätze | Überwiegend Datensätze |
-| Status Oktober 2026 | Verkaufsende, Wartungsphase | Aktiv weiterentwickelt, verkauft als Growth und Advanced |
+| Status Oktober 2026 | Verkaufsende, Wartungsphase, keine neuen Funktionen | Aktiv weiterentwickelt, verkauft als Growth und Advanced |
 
 Drei Zeilen tragen den größten Teil des Aufwands.
 

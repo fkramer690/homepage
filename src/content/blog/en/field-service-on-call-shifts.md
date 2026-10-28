@@ -60,7 +60,7 @@ Shifts do not have to be created one by one. [Trailhead on templates and pattern
 
 ## Why does a machine-down call on Saturday find no technician?
 
-This is the most common surprise after go-live. A customer with a contract for "technician on site within 24 hours" reports a stopped machine on Saturday morning. The work order gets the entitlement, the milestone starts, and the engine searches for a candidate. If the territory's operating hours end on Friday and no confirmed shift exists, there is nobody to schedule. The appointment stays at None, and the response time runs.
+This is a typical surprise after go-live. A customer with a contract for "technician on site within 24 hours" reports a stopped machine on Saturday morning. The work order gets the entitlement, the milestone starts, and the engine searches for a candidate. If the territory's operating hours end on Friday and no confirmed shift exists, there is nobody to schedule. The appointment stays at None, and the response time runs.
 
 Three things have to fit together:
 

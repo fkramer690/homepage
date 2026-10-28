@@ -22,7 +22,7 @@ faq:
   - q: "Was ersetzt die CPQ-Preisregeln in Revenue Cloud?"
     a: "Preisprozeduren in Salesforce Pricing. Eine Prozedur führt Preiselemente nacheinander aus, liest Daten über Decision Tables und zeigt jeden Schritt in einem Preis-Wasserfall. Eigene Logik aus einem JavaScript Quote Calculator Plugin muss dafür neu entworfen werden."
   - q: "Was ersetzt die CPQ-Produktregeln?"
-    a: "Der Product Configurator mit Produktklassifizierungen und Attributen, für komplexe Produkte die Constraint Rules Engine mit der Constraint Modeling Language (CML). Regeln werden als deklarative Bedingungen formuliert statt als Wenn-dann-Regeln."
+    a: "Der Product Configurator mit Produktklassifizierungen und Attributen, für komplexe Produkte die Constraint Rules Engine mit der Constraint Modeling Language (CML). Einfache Abhängigkeiten können Wenn-dann-Konfigurationsregeln bleiben, komplexe werden als deklarative Bedingungen formuliert."
   - q: "Können CPQ und Revenue Cloud in derselben Org laufen?"
     a: "Die Salesforce-Hilfe nennt den Parallelbetrieb während der Umstellung und das Behalten der CPQ-Lizenz als Planungsthemen einer Migration. In der Praxis laufen beide eine Zeit lang nebeneinander, planen Sie also, welche Produkte und Kunden zuerst umziehen."
 draft: false
@@ -38,20 +38,21 @@ Die Entwicklerdokumentation von Revenue Cloud reicht bis Spring '24 (API 60.0) z
 
 ## Die Unterschiede auf einen Blick
 
-| Bereich | Salesforce CPQ und Billing | Revenue Cloud |
+| Bereich | Salesforce CPQ und Billing (SteelBrick) | Revenue Cloud |
 |---|---|---|
-| Technische Form | Managed Packages, Namespaces `SBQQ` und `blng` | Teil der Plattform, kein CPQ-Paket |
-| Datenmodell | Paketobjekte wie `SBQQ__Quote__c`, Subscription-Datensätze am Vertrag | Standardobjekte wie Product2, Quote, Order, Asset |
-| Produktmodell | Produkte, Bundles mit Features und Optionen | Kataloge, Kategorien, Produktklassifizierungen mit Attributen, Bundles |
-| Konfigurationsregeln | Produktregeln: Validation, Selection, Filter, Alert | Constraint Rules Engine mit CML, Visual Builder für einfache Regeln |
-| Preisberechnung | Preisregeln, optional JavaScript Quote Calculator Plugin | Preisprozeduren, Context Definitions, Decision Tables, Preis-Wasserfall |
+| Technische Form | Managed Packages, Namespaces `SBQQ` und `blng` | Standarddatenmodell der Plattform, API-first beim Angebot |
+| Angebot, Auftrag, Verkauftes | Paketobjekte wie `SBQQ__Quote__c`, Subscription-Datensätze am Vertrag | Standardobjekte Quote, Order, Asset |
+| Produktmodell | Produkte und Bundles mit Features und Optionen | Kataloge, Kategorien, Produktklassifizierungen mit Attributen, Bundles |
+| Konfigurationsregeln | Produktregeln: Validation, Selection, Filter, Alert | Konfigurationsregeln und Constraint Rules Engine mit CML |
+| Preisberechnung | Preisregeln, optional JavaScript Quote Calculator Plugin | Preisprozeduren, Decision Tables, Context Definitions, Preis-Wasserfall |
 | Nach dem Verkauf | Vertrag mit Subscription-Datensätzen | Assets mit Asset State Periods und Asset Actions |
-| Nachtrag | Neues Angebot mit Opportunity zum Vertrag | Nachtragsangebot, dann Auftrag |
+| Nachtrag und Verlängerung | Neues Angebot mit Opportunity zum Vertrag | Nachtrags- oder Verlängerungsangebot, dann Auftrag |
 | Freigaben | Paket Advanced Approvals | Advanced Approvals als Invocable Actions und Business APIs |
-| Auftrag bis Erfüllung | Auftrag aus dem Angebot erzeugt | Dynamic Revenue Orchestrator als Add-on |
-| Abrechnung | Paket Salesforce Billing | Add-on Revenue Cloud Billing mit Usage Rating, Digital Wallet, Invoicing Engine, Accounting Subledger |
+| Auftrag bis Erfüllung | Auftrag aus dem Angebot erzeugt | Auftrag, optional über Dynamic Revenue Orchestrator (Add-on) |
+| Abrechnung | Paket Salesforce Billing | Add-on Revenue Cloud Billing: Usage Rating und Digital Wallet, Rechnungen, Zahlungen, Mahnwesen, Nebenbuch |
+| Berichte und Dashboards | Auf Paketobjekten gebaut | Auf Standardobjekten neu gebaut |
 | Ablage der Konfiguration | Überwiegend Datensätze | Überwiegend Datensätze |
-| Status Oktober 2026 | Verkaufsende, Wartungsphase, keine neuen Funktionen | Wird aktiv weiterentwickelt |
+| Status Oktober 2026 | Verkaufsende, Wartungsphase, keine neuen Funktionen | Aktiv weiterentwickelt, verkauft als Growth und Advanced |
 
 Die Quellen zur Tabelle folgen in den Abschnitten unten. Die Zeile zur Ablage der Konfiguration ist die eine Gemeinsamkeit, die im Betrieb zählt: Laut [Gearset](https://docs.gearset.com/en/articles/10981375-understanding-the-difference-between-salesforce-cpq-and-revenue-lifecycle-management-rlm-revenue-cloud-advanced-rca) liegt die Konfiguration in beiden Produkten überwiegend als Daten vor. Deployments brauchen also in beiden Fällen Daten-Templates, nur für andere Objekte.
 

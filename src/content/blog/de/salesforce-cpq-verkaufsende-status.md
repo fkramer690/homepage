@@ -23,20 +23,20 @@ faq:
   - q: "Gilt das Verkaufsende auch für Salesforce Billing?"
     a: "Für das Billing-Paket hat Salesforce keine eigene Seite zum Verkaufsende veröffentlicht. Ein Salesforce-Sprecher sagte 2025, dass CPQ- und Billing-Bestandskunden vollen Zugang behalten. Neukunden verweist Salesforce auf Revenue Cloud Advanced und Revenue Cloud Billing."
   - q: "Kann ich noch zusätzliche CPQ-Lizenzen kaufen?"
-    a: "Ja, als Bestandskunde. Laut Salesforce können Sie weitere Nutzer kaufen und zu Ihren bestehenden Vertragsbedingungen verlängern."
+    a: "Ja, als Bestandskunde. Laut Salesforce können Sie CPQ im Rahmen Ihrer laufenden Verträge weiter nutzen, weitere Nutzer kaufen und verlängern. Zu welchen Konditionen, regelt Ihr Vertrag, nicht die Statusseite."
   - q: "Seit wann verkauft Salesforce CPQ nicht mehr?"
-    a: "Die Salesforce-Seite selbst nennt kein Datum. Dritte wie SalesforceBen berichteten im März 2025 über das Verkaufsende."
+    a: "Die Salesforce-Seite selbst nennt kein Datum. Berichte Dritter datieren das Verkaufsende auf März 2025, etwa ein Artikel von SalesforceBen, aktualisiert am 27. März 2025. Das ist ein Bericht, keine Angabe von Salesforce."
 draft: false
 ---
 
-Salesforce CPQ ist laut Salesforce "end of sale, not end of life", also Verkaufsende ohne Abschaltung. Neukunden können CPQ nicht mehr kaufen. Bestandskunden nutzen es weiter, kaufen Nutzer nach, verlängern zu ihren bestehenden Vertragsbedingungen und erhalten Support und kritische Fehlerbehebungen. Neue Funktionen kommen nicht mehr. Ein End-of-Life-Datum gibt es nicht, und laut Salesforce auch keine erzwungene Migration. Für das Paket Salesforce Billing fehlt eine eigene Aussage auf einer Salesforce-Seite, es gibt nur die Zusage eines Sprechers. Niemand muss also hektisch migrieren. Die nächste CPQ-Verlängerung ist aber der Moment, die Bedingungen für einen späteren Umstieg auf Revenue Cloud festzulegen.
+Salesforce CPQ ist laut Salesforce "end of sale, not end of life", also Verkaufsende ohne Abschaltung. Neukunden können CPQ nicht mehr kaufen. Bestandskunden nutzen es im Rahmen ihrer laufenden Verträge weiter, kaufen Nutzer nach, verlängern und erhalten Support und kritische Fehlerbehebungen. Neue Funktionen kommen nicht mehr. Ein End-of-Life-Datum gibt es nicht, und laut Salesforce auch keine erzwungene Migration. Für das Paket Salesforce Billing fehlt eine eigene Aussage auf einer Salesforce-Seite, es gibt nur die Zusage eines Sprechers. Niemand muss also hektisch migrieren. Die nächste CPQ-Verlängerung ist aber der Moment, die Bedingungen für einen späteren Umstieg auf Revenue Cloud festzulegen.
 
 ## Was hat Salesforce zu CPQ genau angekündigt?
 
 Die verbindliche Quelle ist die Salesforce-Seite [Navigating the Future of Salesforce CPQ](https://www.salesforce.com/sales/cpq/end-of-life/). Stand Oktober 2026 steht dort:
 
 - "Salesforce CPQ is end of sale, not end of life."
-- Bestandskunden "can continue using Salesforce CPQ, buy additional users, renew licenses, and receive support", und zwar zu ihren bestehenden Vertragsbedingungen.
+- Bestandskunden "can continue using Salesforce CPQ, buy additional users, renew licenses, and receive support", an anderer Stelle mit dem Zusatz "under their current contracts".
 - CPQ ist in einer Wartungsphase: Bestandskunden erhalten weiter "support and critical fixes", CPQ "will not receive new features or innovations".
 - "Salesforce has not announced an end-of-life date for CPQ."
 - "There is no forced migration" auf das neue Produkt.
@@ -52,7 +52,7 @@ Praktisch bedeutet der Status:
 |---|---|
 | CPQ produktiv weiter nutzen | Ja |
 | Zusätzliche CPQ-Nutzer kaufen | Ja |
-| CPQ-Vertrag verlängern | Ja, zu bestehenden Vertragsbedingungen |
+| CPQ-Vertrag verlängern | Ja, Konditionen verhandeln Sie bei der Verlängerung |
 | Support und kritische Fehlerbehebungen | Ja |
 | Neue Funktionen | Nein |
 | End-of-Life-Datum | Nicht angekündigt |

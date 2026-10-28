@@ -75,7 +75,7 @@ Alle meinen dasselbe Produkt, die Quellen wurden nur zu unterschiedlichen Zeitpu
 
 Partnerblogs berichten, der Agentforce-Name sei mit der Dreamforce 2025 gekommen und Salesforce sei um September 2026 still zu Revenue Cloud zurückgekehrt. Eine offizielle Ankündigung habe ich für keinen der beiden Schritte gefunden, ich behandle das deshalb als Bericht. Das Agentforce-Etikett zieht sich durch das ganze Portfolio; das [Kapitel zu Begriffen und Landkarte](../../ki-salesforce/begriffe-und-landkarte/) meiner KI-Masterclass ordnet diese Namen.
 
-Eine ältere Bedeutung führt zu echten Missverständnissen. Im Dezember 2020 stellte Salesforce [Revenue Cloud als Suite](https://www.salesforce.com/uk/blog/2020/12/rev-up-the-b2b-journey-with-revenue-cloud.html) rund um CPQ und eine Billing-Engine vor. Ein Partner mit „30 Revenue-Cloud-Projekten“ meint womöglich Projekte auf dem CPQ-Paket. Fragen Sie, welches Datenmodell die Referenzen nutzten.
+Eine ältere Bedeutung führt zu echten Missverständnissen. Im November 2020 [stellte Salesforce Revenue Cloud vor](https://www.salesforce.com/news/stories/introducing-revenue-cloud/), als Suite aus CPQ und Billing, Partner Relationship Management und B2B Commerce. Angebot und Abrechnung waren in dieser Suite die Pakete CPQ und Billing. Ein Partner mit „30 Revenue-Cloud-Projekten“ meint womöglich Projekte auf dem CPQ-Paket. Fragen Sie, welches Datenmodell die Referenzen nutzten.
 
 Für Verträge gilt bei mir eine einfache Regel: Im Bestellformular stehen Edition, jedes Zusatzprodukt und die SKUs aus dem Salesforce-Angebot, nie nur „Revenue Cloud“. Zeitleiste und Suchtipps stehen in [Revenue Cloud, RLM, RCA: Welcher Name gilt jetzt?](../../../blog/revenue-cloud-produktnamen-rlm-rca/).
 

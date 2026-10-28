@@ -56,7 +56,7 @@ Both products configure, price, quote and bill, and underneath they share almost
 | Area | Salesforce CPQ and Billing (SteelBrick) | Revenue Cloud |
 |---|---|---|
 | Technical form | Managed packages, namespaces `SBQQ` and `blng` | Standard data model of the platform, API-first quoting |
-| Quote, order, sold products | Package objects such as `SBQQ__Quote__c` | Standard objects Quote, Order, Asset |
+| Quote, order, sold products | Package objects such as `SBQQ__Quote__c`, subscription records on the contract | Standard objects Quote, Order, Asset |
 | Product model | Products and bundles with features and options | Catalogs, categories, product classifications with attributes, bundles |
 | Configuration rules | Product rules: validation, selection, filter, alert | Configuration rules and the constraint rules engine with CML |
 | Pricing | Price rules, optional JavaScript quote calculator plugin | Pricing procedures, decision tables, context definitions, price waterfall |
@@ -64,10 +64,10 @@ Both products configure, price, quote and bill, and underneath they share almost
 | Amendment and renewal | New quote and opportunity on the contract | Amendment or renewal quote, then an order |
 | Approvals | Advanced Approvals package | Advanced Approvals as invocable actions and business APIs |
 | Order to fulfilment | Order generated from the quote | Order, optionally through Dynamic Revenue Orchestrator (add-on) |
-| Billing | Salesforce Billing package | Revenue Cloud Billing add-on: usage rating, invoicing, payments, collections, subledger |
+| Billing | Salesforce Billing package | Revenue Cloud Billing add-on: usage rating and digital wallet, invoicing, payments, collections, accounting subledger |
 | Reports and dashboards | Built on package objects | Rebuilt on standard objects |
 | Configuration storage | Mostly records | Mostly records |
-| Status October 2026 | End of sale, maintenance phase | Actively developed, sold as Growth and Advanced |
+| Status October 2026 | End of sale, maintenance phase, no new features | Actively developed, sold as Growth and Advanced |
 
 Three rows carry most of the effort.
 

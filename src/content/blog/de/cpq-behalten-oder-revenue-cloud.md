@@ -31,7 +31,7 @@ Bei Salesforce CPQ zu bleiben ist erlaubt und vorerst oft richtig. Bestandskunde
 
 ## Können Sie einfach bei CPQ bleiben?
 
-Ja. Laut [Salesforce](https://www.salesforce.com/sales/cpq/end-of-life/) ist CPQ "end of sale, not end of life". Bestandskunden nutzen es weiter, kaufen Nutzer nach, verlängern zu ihren bestehenden Vertragsbedingungen und erhalten Support und kritische Fehlerbehebungen. Ein End-of-Life-Datum gibt es nicht, und laut Salesforce auch "no forced migration". Neue Funktionen bekommt CPQ nicht mehr. Den genauen Status, auch für das Billing-Paket, beschreibe ich in [Salesforce CPQ Verkaufsende: Was gilt im Oktober 2026?](../salesforce-cpq-verkaufsende-status/).
+Ja. Laut [Salesforce](https://www.salesforce.com/sales/cpq/end-of-life/) ist CPQ "end of sale, not end of life". Bestandskunden nutzen es im Rahmen ihrer laufenden Verträge weiter, kaufen Nutzer nach, verlängern und erhalten Support und kritische Fehlerbehebungen. Ein End-of-Life-Datum gibt es nicht, und laut Salesforce auch "no forced migration". Neue Funktionen bekommt CPQ nicht mehr. Den genauen Status, auch für das Billing-Paket, beschreibe ich in [Salesforce CPQ Verkaufsende: Was gilt im Oktober 2026?](../salesforce-cpq-verkaufsende-status/).
 
 Bleiben ist also eine legitime Entscheidung. Sie hat trotzdem einen Preis: Jedes Release erweitert Revenue Cloud und nichts an CPQ. Ich erwarte außerdem, dass Partner eher Revenue-Cloud-Teams aufbauen als CPQ-Teams, das Wissen für eine stark angepasste CPQ-Org wird also nicht günstiger. Ich würde bewusst entscheiden und festhalten, wann Sie die Frage wieder aufnehmen, statt es laufen zu lassen.
 

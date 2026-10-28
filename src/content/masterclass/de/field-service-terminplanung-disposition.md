@@ -98,7 +98,7 @@ Die letzte Grenze trifft Inbetriebnahmen am härtesten: Eine Baustellenbegehung 
 
 Arbeitszeiten beschreiben die reguläre Arbeitszeit eines Gebiets, meist Montag bis Freitag. Das Objekt Shift ergänzt Arbeitszeit außerhalb davon: Wochenendbereitschaft, Nächte, Überstunden. Für die Planung zählen nur bestätigte Schichten. Eine Schicht vom Typ Extended nimmt nur Termine an, wenn die Work Rule Service Resource Availability in der Policy Überstunden erlaubt, und Filterkriterien beschränken eine Schicht auf bestimmte Einsätze, etwa Störungen mit hoher Priorität.
 
-Die häufigste Überraschung nach dem Go-live: Ein Vertrag verspricht einen Techniker binnen 24 Stunden, am Samstag steht eine Maschine, und der Termin bleibt auf None, weil keine bestätigte Schicht existiert. Entitlement, Schicht und Policy müssen zusammenpassen. In Deutschland bestimmt der Betriebsrat bei Bereitschaftsplänen und Überstunden nach [§ 87 BetrVG](https://www.gesetze-im-internet.de/betrvg/__87.html) mit. Einrichtung und Abstimmungspunkte stehen in [Bereitschaftsdienst im Field Service](../../../blog/field-service-bereitschaft-schichten/).
+Eine typische Überraschung nach dem Go-live: Ein Vertrag verspricht einen Techniker binnen 24 Stunden, am Samstag steht eine Maschine, und der Termin bleibt auf None, weil keine bestätigte Schicht existiert. Entitlement, Schicht und Policy müssen zusammenpassen. In Deutschland bestimmt der Betriebsrat bei Bereitschaftsplänen und Überstunden nach [§ 87 BetrVG](https://www.gesetze-im-internet.de/betrvg/__87.html) mit. Einrichtung und Abstimmungspunkte stehen in [Bereitschaftsdienst im Field Service](../../../blog/field-service-bereitschaft-schichten/).
 
 ## Wo bleibt der Disponent, wenn KI-Agenten planen?
 

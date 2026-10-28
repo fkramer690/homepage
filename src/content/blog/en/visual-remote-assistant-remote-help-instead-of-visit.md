@@ -10,7 +10,7 @@ categories: [field-service]
 tags: [Visual Remote Assistant, field service, remote service, breakdown hotline, works council]
 takeaways:
   - "Visual Remote Assistant sends the customer a link by SMS or email; the two-way video opens in the mobile browser without an app, login or password."
-  - "The add-on costs $50 or 50 € per user and month on the price list of October 2026 and is included in Agentforce 1 Field Service. The customer needs no licence."
+  - "The add-on costs $50 or 50 € per user and month according to the product page of October 2026 and is included in Agentforce 1 Field Service. The customer needs no licence."
   - "Video replaces a visit when the operator can fix the fault: parameters, operating errors, a reset. For mechanical repairs it shortens the visit, because the technician brings the right part."
   - "Before the first session, settle recording consent with the customer, the works council for your own staff and which faults may be closed remotely."
   - "Start with your breakdown history: count how many past visits needed no part and no tool. That share is your realistic potential."

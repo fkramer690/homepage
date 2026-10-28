@@ -98,7 +98,7 @@ The last limit hits commissioning hardest: a site survey cannot be linked to the
 
 Operating hours describe the regular working time of a territory, usually Monday to Friday. The Shift object adds working time outside it: weekend call, nights, overtime. Only confirmed shifts count for scheduling. An Extended shift takes appointments only when the Service Resource Availability work rule in the policy allows overtime, and filter criteria limit a shift to certain jobs, for example breakdowns with high priority.
 
-The most common surprise after go-live: a contract promises a technician within 24 hours, a machine stops on Saturday, and the appointment stays at None because no confirmed shift exists. Entitlement, shift and policy have to fit together. In Germany the works council has a say on on-call rotas and overtime under [section 87 of the Works Constitution Act](https://www.gesetze-im-internet.de/betrvg/__87.html). Setup and the points to agree are in [Field Service on-call duty](../../../blog/field-service-on-call-shifts/).
+A typical surprise after go-live: a contract promises a technician within 24 hours, a machine stops on Saturday, and the appointment stays at None because no confirmed shift exists. Entitlement, shift and policy have to fit together. In Germany the works council has a say on on-call rotas and overtime under [section 87 of the Works Constitution Act](https://www.gesetze-im-internet.de/betrvg/__87.html). Setup and the points to agree are in [Field Service on-call duty](../../../blog/field-service-on-call-shifts/).
 
 ## Where does the human dispatcher stay when AI agents schedule?
 
