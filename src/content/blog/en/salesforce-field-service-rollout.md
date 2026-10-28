@@ -85,7 +85,7 @@ Every wave needs numbers from before and after. I would take the ones that alrea
 - the share of proposals the dispatcher changes before release, from part 3
 - the response times met, from part 5
 
-If the numbers do not improve in the first wave, in my view it is rarely the product. Usually data is missing, or scheduling still happens on the side.
+If the numbers do not improve in the first wave, in my view it is rarely the product. Usually data is missing, or scheduling still happens on the side. Which numbers to watch is covered in [Field Service KPIs after go-live](../field-service-kpis-after-go-live/).
 
 ## Where should you start?
 
