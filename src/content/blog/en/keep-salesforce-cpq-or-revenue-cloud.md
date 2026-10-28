@@ -21,7 +21,7 @@ faq:
   - q: "How long does a migration from CPQ to Revenue Cloud take?"
     a: "Salesforce names three to six months as typical, from discovery to go-live. I would plan the lower end only for a clean org with few customisations."
   - q: "How many companies have moved from CPQ to Revenue Cloud?"
-    a: "According to Salesforce, about 15 percent of Revenue Cloud Advanced customers migrated from Salesforce CPQ. The rest started with Revenue Cloud directly."
+    a: "According to Salesforce, about 15 percent of Revenue Cloud Advanced customers migrated from Salesforce CPQ. The rest did not come from CPQ."
   - q: "What does Revenue Cloud cost compared with CPQ?"
     a: "Revenue Cloud Advanced is listed at €200 per user and month on an annual contract, Revenue Cloud Growth at €150 (October 2026). Your CPQ renewal price depends on your existing contract, so compare it with a quote from your account team."
 draft: false
@@ -33,7 +33,7 @@ Staying on Salesforce CPQ is allowed and often the right choice for now. Existin
 
 Yes. According to [Salesforce](https://www.salesforce.com/sales/cpq/end-of-life/), CPQ is "end of sale, not end of life". Existing customers can keep using it, buy additional users, renew under their existing contract terms and receive support and critical fixes. There is no end-of-life date and "no forced migration". What CPQ will not get is new features. The exact status, including what applies to the Billing package, is in [Salesforce CPQ end of sale: what applies in October 2026](../salesforce-cpq-end-of-sale-status/).
 
-Staying is therefore a legitimate decision. It is still a decision with a price: every release adds to Revenue Cloud and nothing to CPQ, partners build their Revenue Cloud teams, and the knowledge to maintain a heavily customised CPQ org will not get cheaper. I would decide consciously and write down when you will look at it again, instead of letting it drift.
+Staying is therefore a legitimate decision. It is still a decision with a price: every release adds to Revenue Cloud and nothing to CPQ. I also expect partners to build up Revenue Cloud teams rather than CPQ teams, so the knowledge to maintain a heavily customised CPQ org will not get cheaper. I would decide consciously and write down when you will look at it again, instead of letting it drift.
 
 ## When should you move to Revenue Cloud?
 
@@ -58,11 +58,11 @@ Waiting does not mean doing nothing. Delete unused rules, document the price log
 
 ## Is there a third route?
 
-Yes, and I would always check it before signing anything. For quoting there are three routes today: Revenue Cloud, a partner product, or a custom approach on the platform. In a global Manufacturing Cloud rollout we took a custom CPQ approach with our own product configurator; how that fitted the sales agreement process is described in [from quote to sales agreement](../quote-to-sales-agreement-product-configurator/).
+Yes, and I would always check it before signing anything. For quoting there are three routes today: Revenue Cloud, a partner product, or a custom approach on the platform. How a custom approach with its own product configurator feeds quotes and sales agreements is described in [from quote to sales agreement](../quote-to-sales-agreement-product-configurator/).
 
 A third route fits when your configuration rules live in SAP variant configuration, in a PLM system or with application engineers, and Salesforce would only display the result. Then a full constraint model in Revenue Cloud duplicates rules that someone has to keep in sync. The make-or-buy questions are the same as for any product: how well does the standard fit, who maintains the rules, and what do licence and maintenance cost over several years. I describe how I calculate that under [make-or-buy and licence forecasts](../../services/make-or-buy-licences/).
 
-Salesforce's own numbers give some context. According to the CPQ page, about 15 percent of Revenue Cloud Advanced customers migrated from CPQ. Most Revenue Cloud customers therefore started there directly, and many CPQ customers have not moved yet. You are not late if you are still deciding.
+Salesforce's own numbers give some context. According to the CPQ page, about 15 percent of Revenue Cloud Advanced customers migrated from CPQ. So about 85 percent of them did not come from CPQ. The figure shows that migrations happen. It does not show that CPQ customers are running out of time.
 
 ## The decision matrix
 
@@ -77,7 +77,7 @@ Salesforce's own numbers give some context. According to the CPQ page, about 15 
 | ERP migration running | Yes | After the ERP | After the ERP |
 | Fragile CPQ customisations | Short term | Yes | Yes |
 
-The matrix is a starting point, not a verdict. If two columns are ticked, the deciding factors are usually budget and the people who can model rules and prices.
+The matrix is a starting point. If two columns are ticked, the deciding factors are usually budget and the people who can model rules and prices.
 
 ## What does a move cost?
 

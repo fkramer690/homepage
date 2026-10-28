@@ -13,7 +13,7 @@ takeaways:
   - "Mit Revenue Cloud und SAP S/4HANA führt Salesforce meist Verkaufskatalog, Konfiguration, Angebot und Freigabe, SAP behält Materialstamm, Lieferung und die Rechnung für das Maschinengeschäft."
   - "Der SAP-Accelerator von MuleSoft beschreibt SAP als führendes System für Preiskonditionen und legt den SAP-Auftrag aus Salesforce an, allerdings nur für Sales Cloud und Salesforce CPQ, nicht für Revenue Cloud."
   - "Es gibt drei sinnvolle Schnitte: nur Angebot, Angebot und Auftrag oder Quote-to-Cash komplett mit Revenue Cloud Billing als Nebenbuch, das Buchungen an das ERP übergibt."
-  - "Revenue Cloud Billing bringt eigene Buchungskreise als Legal Entities, Buchungsperioden und Sachkonten mit, deshalb muss die Finanzabteilung vor der ersten Rechnung aus Salesforce zustimmen."
+  - "Revenue Cloud Billing bringt eigene Gesellschaften (Legal Entities), Buchungsperioden und Sachkonten mit, deshalb muss die Finanzabteilung vor der ersten Rechnung aus Salesforce zustimmen."
   - "Halten Sie die Aufteilung in einer Tabelle fest: Eigentümer pro Objekt, Richtung jeder Schnittstelle und eine benannte Person für Fehler, unterschrieben von Vertrieb, Finanzen und IT."
 faq:
   - q: "Soll SAP oder Revenue Cloud die Preise führen?"

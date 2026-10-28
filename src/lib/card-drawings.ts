@@ -77,7 +77,7 @@ const drawings: Record<string, Drawing> = {
     ${t(160, 66, l('A · net price via API', 'A · Nettopreis per API'), { fill: C, size: 7, anchor: 'middle' })}${arrow(90, 72, 230, C)}
     ${t(160, 88, l('B · conditions rebuilt', 'B · Konditionen nachgebaut'), { size: 7, anchor: 'middle' })}${arrow(90, 94, 230, G, true)}
     ${t(160, 110, l('C · list prices only', 'C · nur Listenpreise'), { size: 7, anchor: 'middle' })}${arrow(90, 116, 230)}
-    ${tag(18, 134, 168, l('one master per price type', 'ein Master je Preisart'))}
+    ${tag(18, 134, 168, l('one master per price type', 'ein führendes System je Preisart'))}
     ${t(196, 148, l('EDI orders: price from SAP', 'EDI-Aufträge: Preis aus SAP'), { size: 7 })}`,
 
   'field-service-asset-hierarchy': (l) => `
@@ -140,7 +140,7 @@ const drawings: Record<string, Drawing> = {
     ${arrow(222, 42, 248, C)}
     ${box(248, 22, 56, 40, C)}${t(276, 38, l('WORK', 'ARBEITS-'), { fill: D, size: 7, anchor: 'middle' })}${t(276, 50, l('ORDER', 'AUFTRAG'), { fill: D, size: 7, anchor: 'middle' })}
     ${tag(124, 76, 98, l('≥ 2,000 h OR ≥ 12 m', '≥ 2.000 h ODER ≥ 12 M'))}
-    <path d="M276 62V108H200" fill="none" stroke="${G}" stroke-width="1.2" stroke-dasharray="4 3"/>${t(238, 120, l('reset on completion', 'Reset bei Abschluss'), { size: 7, anchor: 'middle' })}
+    <path d="M276 62V110H173V97" fill="none" stroke="${G}" stroke-width="1.2" stroke-dasharray="4 3"/>${t(238, 122, l('reset on completion', 'Reset bei Abschluss'), { size: 7, anchor: 'middle' })}
     <path d="M18 132H302" stroke="${L}"/>
     ${t(18, 148, l('max 2,600 work orders per run', 'max. 2.600 Arbeitsaufträge pro Lauf'), { fill: C, size: 7 })}${t(302, 148, l('≤ 5 rules', '≤ 5 Regeln'), { size: 7, anchor: 'end' })}`,
 
@@ -178,7 +178,7 @@ const drawings: Record<string, Drawing> = {
 
   'revenue-cloud-pricing-procedures': (l) => `
     ${t(18, 22, 'PRICING PROCEDURE', { fill: D, size: 7.5 })}
-    ${[l('List price', 'Listenpreis'), l('Volume', 'Menge'), l('Attribute', 'Attribut'), l('Manual', 'Manuell'), l('Aggregate', 'Aggregat')].map((s, i) => box(18 + i * 57, 32, 48, 26, i === 0 ? C : G) + t(42 + i * 57, 48, s, { fill: i === 0 ? C : G, size: 6.5, anchor: 'middle' })).join('')}
+    ${[l('List price', 'Listenpreis'), l('Volume', 'Menge'), l('Attribute', 'Attribut'), l('Manual', 'Manuell'), l('Aggregate', 'Aggregat')].map((s, i) => box(18 + i * 57, 32, 48, 26) + t(42 + i * 57, 48, s, { fill: G, size: 6.5, anchor: 'middle' })).join('')}
     ${[0, 1, 2, 3].map((i) => arrow(66 + i * 57, 45, 75 + i * 57)).join('')}
     <path d="M42 58V78" stroke="${C}" stroke-width="1.3" stroke-dasharray="3 2"/>
     ${box(18, 78, 120, 34, C)}${t(78, 93, 'Decision Tables', { fill: D, size: 7.5, anchor: 'middle' })}${t(78, 105, l('sync after every change', 'Sync nach jeder Änderung'), { fill: C, size: 6.5, anchor: 'middle' })}
@@ -211,7 +211,7 @@ const drawings: Record<string, Drawing> = {
     ${box(18, 22, 92, 92)}${t(64, 38, l('HOTLINE', 'HOTLINE'), { fill: D, size: 7.5, anchor: 'middle' })}
     ${t(28, 56, l('annotate image', 'ins Bild zeichnen'), { size: 7 })}${t(28, 70, l('add expert', 'Experten dazuholen'), { size: 7 })}${t(28, 84, l('OCR: QR, barcode', 'OCR: QR, Barcode'), { size: 7 })}${t(28, 98, l('$50 / user / month', '50 € / Nutzer / Monat'), { fill: C, size: 7 })}
     ${arrow(110, 50, 170, C)}${t(140, 42, l('SMS or email', 'SMS oder E-Mail'), { fill: C, size: 7, anchor: 'middle' })}
-    ${arrow(170, 80, 110)}${t(140, 94, l('two-way video', 'Video beidseitig'), { size: 7, anchor: 'middle' })}
+    <path d="M169 80H111" stroke="${G}" stroke-width="1.3"/><path d="M115 76.5l-5 3.5 5 3.5" fill="none" stroke="${G}" stroke-width="1.3"/>${t(140, 94, l('two-way video', 'Video beidseitig'), { size: 7, anchor: 'middle' })}
     ${box(170, 22, 56, 92, C)}<rect x="180" y="34" width="36" height="56" rx="3" fill="#fff" stroke="${G}" stroke-width="1"/>${t(198, 104, l('browser', 'Browser'), { size: 7, anchor: 'middle' })}
     <circle cx="198" cy="62" r="9" fill="none" stroke="${C}" stroke-width="1.3"/>
     ${t(238, 40, l('no app', 'keine App'), { size: 7 })}${t(238, 54, l('no login', 'kein Login'), { size: 7 })}${t(238, 68, l('customer', 'Kunde'), { fill: D, size: 7.5 })}

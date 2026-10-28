@@ -87,6 +87,8 @@ Als ein einziges Formular enthielte es jeden Prüfpunkt jeder Variante, und die 
 
 Eine Maschine bekommt damit weiterhin 80 Prüfpunkte, aber jedes Formular ist kurz genug, um es zu testen. Mängel aus Formular 2 werden Auftragspositionen, und die Disposition sieht die Folgearbeit.
 
+Den größten Gewinn hat in diesem Szenario der Innendienst. Nach der Synchronisation stehen die Messwerte am Asset, niemand tippt sie mehr ab, und das Gesamtergebnis am Arbeitsauftrag zeigt, ab wann die Rechnung gestellt werden kann. Ändert sich bei einer Variante ein Grenzwert, passt der Admin nur das Formular dieser Variante an und testet nur dieses.
+
 ## Wo fangen Sie an?
 
 1. **Ein Protokoll auswählen** mit hohem Volumen, etwa die Jahreswartung Ihres häufigsten Maschinentyps.

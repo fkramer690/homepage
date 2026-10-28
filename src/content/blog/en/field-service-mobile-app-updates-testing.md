@@ -1,6 +1,6 @@
 ---
 title: "Field Service app updates: how to test each release"
-description: "How a manufacturer tests new versions of the Salesforce Field Service mobile app with beta builds, debug builds and a fixed routine before they reach technicians."
+description: "How manufacturers test new versions of the Salesforce Field Service mobile app with beta builds, debug builds and a fixed routine before technicians get them."
 pubDate: 2026-10-28
 lang: en
 slug: field-service-mobile-app-updates-testing

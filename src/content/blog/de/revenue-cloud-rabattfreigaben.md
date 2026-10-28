@@ -1,6 +1,6 @@
 ---
 title: "Rabattfreigaben in Revenue Cloud: Advanced Approvals"
-description: "Wie Sie Rabatt- und Margenfreigaben mit Advanced Approvals in Revenue Cloud aufsetzen, damit der Vertrieb schnell bleibt und das Controlling die Kontrolle behält."
+description: "Wie Sie Rabatt- und Margenfreigaben mit Advanced Approvals in Revenue Cloud aufsetzen, damit der Vertrieb schnell bleibt und das Controlling Kontrolle behält."
 pubDate: 2026-10-28
 lang: de
 slug: revenue-cloud-rabattfreigaben

@@ -22,7 +22,7 @@ faq:
   - q: "Which renewal options does Revenue Cloud offer?"
     a: "Automatic Renewal extends the subscription at the end of the term with the asset's predefined renewal term. Override Renewal Term sets custom start and end dates and creates a quote or order that refunds the unused part of the current subscription."
   - q: "Can Revenue Cloud and Field Service use the same assets?"
-    a: "Both work on the standard Asset object. Revenue Cloud tracks what was sold with quantity and recurring revenue, Field Service tracks the installed machine with serial number and hierarchy. One record can carry both only if every machine is sold as its own line with quantity one."
+    a: "Both work on the standard Asset object. Revenue Cloud tracks what was sold with quantity and recurring revenue, Field Service tracks the installed machine with serial number and hierarchy. In my view one record can carry both only if every machine is sold as its own line with quantity one."
 draft: false
 ---
 
@@ -35,7 +35,7 @@ In Revenue Cloud, what a customer bought becomes an asset under the account when
 These are lifecycle-managed assets. Next to the classic fields such as serial number, parent asset and root asset, the Asset object has a Lifecycle-managed asset flag, a current quantity and a current monthly recurring revenue, as the [Salesforce field reference](https://developer.salesforce.com/docs/atlas.en-us.226.0.sfFieldRef.meta/sfFieldRef/salesforce_field_reference_Asset.htm) lists. Two related objects hold the history:
 
 - **Asset action:** according to the [object reference](https://developer.salesforce.com/docs/atlas.en-us.264.0.object_reference.meta/object_reference/sforce_api_objects_assetaction.htm), it represents a change made to a lifecycle-managed asset. Trailhead shows business categories such as Upsells, Renewals and Cancellations.
-- **Asset state period:** per the [object reference](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_assetstateperiod.htm), a time span in which an asset has the same quantity, amount and monthly recurring revenue. Each change during the lifecycle adds a period.
+- **Asset state period:** per the [object reference](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_assetstateperiod.htm), a time span in which an asset has the same quantity, amount and monthly recurring revenue. Amendments and renewals add a new period.
 
 The fields of both objects cannot be edited. The history comes from quotes and orders, or from the [asset lifecycle APIs](https://developer.salesforce.com/docs/atlas.en-us.chatterapi.meta/chatterapi/features_asset_lifecycle_use_cases.htm). So an interface from SAP should never overwrite quantities on these assets. A change in quantity is a commercial change and belongs in a quote and an order.
 
@@ -58,7 +58,7 @@ For a manufacturer this means: a customer who adds remote monitoring for three m
 - **Automatic Renewal** extends the subscription at the end of the current term with the asset's predefined renewal term.
 - **Override Renewal Term** sets your own start and end dates. It replaces the existing renewal term and creates a quote or order that refunds the unused part of the current subscription.
 
-Both lead to a renewal quote, then an order, then an asset action with the category Renewals.
+In Trailhead's example, setting the renewal term creates a renewal quote. The rep creates an order from it and activates it, and the asset gets an asset action with the category Renewals and a new period with the new dates.
 
 A cancellation starts with a cancellation date. In the cancellation quote, Revenue Cloud sets the quantity to the negative of the asset's total quantity, so the end quantity becomes zero. After the order is activated, the asset gets an asset action with the category Cancellations. Unlike amendments and renewals, a cancellation creates no new state period; the dashboard shows the last day of the current one.
 

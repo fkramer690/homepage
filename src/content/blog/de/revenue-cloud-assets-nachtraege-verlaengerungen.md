@@ -22,7 +22,7 @@ faq:
   - q: "Welche Verlängerungsoptionen gibt es in Revenue Cloud?"
     a: "Automatic Renewal verlängert das Abonnement am Laufzeitende mit der hinterlegten Verlängerungslaufzeit des Assets. Override Renewal Term setzt eigene Start- und Enddaten und erzeugt ein Angebot oder einen Auftrag, der den ungenutzten Teil der laufenden Periode gutschreibt."
   - q: "Können Revenue Cloud und Field Service dieselben Assets nutzen?"
-    a: "Beide arbeiten auf dem Standardobjekt Asset. Revenue Cloud führt, was verkauft wurde, mit Menge und wiederkehrendem Umsatz, Field Service die installierte Maschine mit Seriennummer und Hierarchie. Ein Datensatz trägt beides nur, wenn jede Maschine als eigene Position mit Menge eins verkauft wird."
+    a: "Beide arbeiten auf dem Standardobjekt Asset. Revenue Cloud führt, was verkauft wurde, mit Menge und wiederkehrendem Umsatz, Field Service die installierte Maschine mit Seriennummer und Hierarchie. Aus meiner Sicht trägt ein Datensatz beides nur, wenn jede Maschine als eigene Position mit Menge eins verkauft wird."
 draft: false
 ---
 
@@ -35,7 +35,7 @@ Ein Asset steht in Salesforce für ein bestimmtes gekauftes oder installiertes P
 Salesforce nennt das lifecycle-managed Assets. Neben den klassischen Feldern wie Seriennummer, übergeordnetem Asset und Root-Asset hat das Asset-Objekt laut [Feldreferenz von Salesforce](https://developer.salesforce.com/docs/atlas.en-us.226.0.sfFieldRef.meta/sfFieldRef/salesforce_field_reference_Asset.htm) ein Kennzeichen Lifecycle-managed asset, eine aktuelle Menge und einen aktuellen monatlich wiederkehrenden Umsatz. Zwei verbundene Objekte halten die Historie:
 
 - **Asset Action:** laut [Objektreferenz](https://developer.salesforce.com/docs/atlas.en-us.264.0.object_reference.meta/object_reference/sforce_api_objects_assetaction.htm) eine Änderung an einem lifecycle-managed Asset. Trailhead zeigt Geschäftskategorien wie Upsells, Renewals und Cancellations.
-- **Asset State Period:** laut [Objektreferenz](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_assetstateperiod.htm) ein Zeitraum, in dem ein Asset dieselbe Menge, denselben Betrag und denselben monatlich wiederkehrenden Umsatz hat. Jede Änderung im Lebenszyklus fügt einen Zeitraum hinzu.
+- **Asset State Period:** laut [Objektreferenz](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_assetstateperiod.htm) ein Zeitraum, in dem ein Asset dieselbe Menge, denselben Betrag und denselben monatlich wiederkehrenden Umsatz hat. Nachträge und Verlängerungen fügen einen neuen Zeitraum hinzu.
 
 Die Felder beider Objekte lassen sich nicht bearbeiten. Die Historie entsteht aus Angeboten und Aufträgen oder über die [Asset-Lifecycle-APIs](https://developer.salesforce.com/docs/atlas.en-us.chatterapi.meta/chatterapi/features_asset_lifecycle_use_cases.htm). Eine Schnittstelle aus SAP sollte Mengen an diesen Assets deshalb nie überschreiben. Eine Mengenänderung ist eine kaufmännische Änderung und gehört in Angebot und Auftrag.
 
@@ -58,7 +58,7 @@ Für einen Hersteller heißt das: Ein Kunde, der die Fernüberwachung für drei 
 - **Automatic Renewal** verlängert das Abonnement am Ende der laufenden Periode mit der hinterlegten Verlängerungslaufzeit des Assets.
 - **Override Renewal Term** setzt eigene Start- und Enddaten. Die Option ersetzt die bisherige Verlängerungslaufzeit und erzeugt ein Angebot oder einen Auftrag, der den ungenutzten Teil des laufenden Abonnements gutschreibt.
 
-Beide führen zu einem Verlängerungsangebot, dann zu einem Auftrag und dann zu einer Asset Action mit der Kategorie Renewals.
+Im Trailhead-Beispiel erzeugt das Setzen der Verlängerungslaufzeit ein Verlängerungsangebot. Daraus entsteht ein Auftrag, der aktiviert wird, und das Asset erhält eine Asset Action mit der Kategorie Renewals und einen neuen Zeitraum mit den neuen Daten.
 
 Eine Kündigung beginnt mit einem Kündigungsdatum. Im Kündigungsangebot setzt Revenue Cloud die Menge automatisch auf das Negative der Gesamtmenge des Assets, die Endmenge wird also null. Nach Aktivierung des Auftrags erhält das Asset eine Asset Action mit der Kategorie Cancellations. Anders als bei Nachträgen und Verlängerungen entsteht dabei keine neue State Period; das Dashboard zeigt den letzten Tag der laufenden.
 

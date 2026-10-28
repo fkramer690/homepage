@@ -94,7 +94,7 @@ These are commercial and legal decisions. A partner configures them; your compan
 
 The [Revenue Cloud pricing page](https://www.salesforce.com/sales/cpq/pricing/) shows Revenue Cloud Advanced at $200 or €200 per user and month, billed annually, with "Consumption & Invoicing" in its scope. The same page lists Revenue Cloud Billing as an add-on with "Usage Rating & Digital Wallet", the invoicing engine and the accounting subledger, price on request. Which of the two covers rating and invoicing for your contract belongs in writing in the order form.
 
-Billing is charged in Billing Events. According to the [rate sheet of February 2026](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/documents/pricing/revenue-cloud-billing-rate-sheet-feb-2026.pdf), one event is consumed per $50 of invoice subtotal, other currencies are converted at the average daily rate, and unused events do not roll over. In the scenario above, $1 million of usage invoices a year would consume 20,000 events. The price per event is not public. The details are in [Revenue Cloud Billing costs](../revenue-cloud-billing-costs/).
+Billing is charged in Billing Events. According to the [rate sheet of February 2026](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/documents/pricing/revenue-cloud-billing-rate-sheet-feb-2026.pdf), one event is consumed per $50 of invoice subtotal, other currencies are converted at the average daily rate, and unused events do not roll over. If the invoices in the scenario above added up to $1 million a year, they would consume 20,000 events. The price per event is not public. The details are in [Revenue Cloud Billing costs](../revenue-cloud-billing-costs/).
 
 ## When would I not use Revenue Cloud for pay-per-use?
 
