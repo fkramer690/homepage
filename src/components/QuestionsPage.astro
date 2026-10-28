@@ -42,7 +42,7 @@ const schema = {
       image: abs(ogImage),
       author: { '@type': 'Person', '@id': `${abs(base)}#person`, name: site.person },
       mainEntity: c.groups.flatMap((g) =>
-        g.questions.map(({ q, a }) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })),
+        g.questions.map(({ q, a }) => ({ '@type': 'Question', name: q, text: q, answerCount: 1, acceptedAnswer: { '@type': 'Answer', text: a } })),
       ),
     },
     {
