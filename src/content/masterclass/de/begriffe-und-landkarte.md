@@ -36,7 +36,15 @@ Ich sortiere jedes KI-Thema in Salesforce-Programmen zuerst in eine von vier Ebe
 | C: KI im Produkt | Welche KI läuft für Anwender in der Org? | Agentforce mit Builder, Agent Script und Atlas Reasoning Engine, Agentforce for Manufacturing | Ein Serviceagent beantwortet Händleranfragen zu Ersatzteilen und Lieferterminen | Flex Credits pro Aktion |
 | D: KI als Oberfläche | Wo arbeiten Nutzer künftig mit Salesforce? | AIforce: Salesforce in Claude, Slackforce, Agentforce Coworker | Key Account Manager bereiten Händlerbesuche in Claude vor | Noch offen, laut Salesforce „subject to change“ |
 
-Drei Zahlen zeigen, wie unterschiedlich die Abrechnung ist. Eine Agentforce-Aktion in Ebene C kostet laut [Salesforce](https://www.salesforce.com/eu/agentforce/pricing/) 20 Flex Credits, also 0,10 €, bei 500 € je 100.000 Credits. Agentforce Vibes in Ebene A zählt laut [Abrechnungsdoku](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-admin-billing.html) in Einheiten von bis zu 2.000 Tokens oder läuft über eine Unmetered-Lizenz mit Obergrenze für Premium-Modelle. Für agentische API- und MCP-Aufrufe in Ebene B führt die [Rate Card vom 31. August 2026](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) den Zähler „Headless Platform Interaction“, der Satz steht dort als „TBA“.
+Die Abrechnung unterscheidet sich je Ebene deutlich. Ebene C rechnet laut [Salesforce](https://www.salesforce.com/eu/agentforce/pricing/) in Flex Credits pro Aktion ab. Agentforce Vibes in Ebene A zählt laut [Abrechnungsdoku](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-admin-billing.html) in Token-Einheiten oder läuft über eine Unmetered-Lizenz mit Obergrenze für Premium-Modelle. Für agentische API- und MCP-Aufrufe in Ebene B führt die [Rate Card vom 31. August 2026](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) den Zähler „Headless Platform Interaction“, noch ohne festen Satz.
+
+```kennzahlen
+20 | Flex Credits pro Agentforce-Aktion in Ebene C
+0,10 € | pro Aktion, bei 500 € je 100.000 Credits
+2.000 | Tokens höchstens pro Abrechnungseinheit von Agentforce Vibes in Ebene A
+TBA | Satz für Headless Platform Interaction in Ebene B
+quelle: Salesforce Agentforce-Preisseite, Abrechnungsdoku Agentforce Vibes, Flex Credits Rate Card vom 31. August 2026
+```
 
 Die Ebenen wachsen zusammen. Salesforce beschreibt einen [Entwicklungsweg für Agentforce-Agenten](https://developer.salesforce.com/blogs/2026/06/master-the-agentic-development-lifecycle-for-agentforce), bei dem ein Coding-Agent wie Claude Code, Codex oder Agentforce Vibes mit Agent Skills die Agentendefinition in Agent Script schreibt. Ebene A baut dann Ebene C. Ebene D ist die jüngste und unreifste Schicht. Für die Verantwortung bleibt die Trennung trotzdem richtig: Ebene A gehört in die Delivery und den Partnervertrag, B zur Integrationsarchitektur, C zu den Fachbereichen Service und Vertrieb, D zur IT-Leitung und zum Datenschutz.
 

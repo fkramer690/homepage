@@ -59,7 +59,9 @@ In practice the status means:
 | Forced migration | None |
 | New CPQ for a new company or subsidiary org | Not as a new customer; clarify with your account team |
 
+```hinweis offen
 The last row is my own reading. A group that already licenses CPQ and wants to open a new org for a subsidiary should ask in writing whether that counts as an existing customer. I would not assume it.
+```
 
 What "no new features" means over time is easy to underestimate. Salesforce ships three releases a year. Each one adds to Revenue Cloud, and CPQ stays where it is. The Agentforce quoting functions that Salesforce announced in July 2025, for example, are part of Revenue Cloud. A CPQ org does not stop working, it just falls further behind the product Salesforce is actively building.
 

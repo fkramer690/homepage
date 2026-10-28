@@ -91,6 +91,15 @@ Two numbers show after three months whether it works: the share of video session
 
 ## Where should you start?
 
-Tag last year's breakdown visits by cause and count the ones that needed no part and no tool. Pick one product line and one export region for a three-month pilot with two or three users. Measure the fix rate and repeat calls, then decide on the full rollout. How this fits with the mobile app and service documents is part of the [masterclass chapter on the mobile app](../../masterclass/field-service/field-service-mobile-app-documents/). Whether Field Service pays off at all is covered in [Salesforce Field Service: when is it worth it?](../salesforce-field-service-worth-it/), and the licence question as a whole under [make-or-buy and licences](../../services/make-or-buy-licences/).
+```schritte
+Tag the breakdowns
+  Sort last year's breakdown visits by cause and count the ones that needed no part and no tool.
+Run a pilot | 3 months
+  One product line, one export region, two or three users.
+Measure and decide
+  Check the fix rate and repeat calls, then decide on the full rollout.
+```
+
+How this fits with the mobile app and service documents is part of the [masterclass chapter on the mobile app](../../masterclass/field-service/field-service-mobile-app-documents/). Whether Field Service pays off at all is covered in [Salesforce Field Service: when is it worth it?](../salesforce-field-service-worth-it/), and the licence question as a whole under [make-or-buy and licences](../../services/make-or-buy-licences/).
 
 Visual Remote Assistant saves visits where the operator can fix the fault and saves second visits where the technician has to come anyway. If you want to check that potential with your own breakdown data, [send me a message](#contact).
