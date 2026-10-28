@@ -303,6 +303,7 @@ export const en = {
     ],
   },
   servicePage: {
+    note: 'Note',
     indexTitle: 'Services',
     metaTitle: 'Services: Salesforce architecture | FK Solution Design',
     metaDescription: 'Salesforce architect on the client side: target architecture, partner governance, DevOps, integration, programme steering and make-or-buy for manufacturers.',
