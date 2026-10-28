@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-28T21:04:57.039Z",
+  "generatedAt": "2026-10-28T21:24:53.644Z",
   "domain": "fk-sd.de",
-  "cost": 0.225,
+  "cost": 0,
   "crawl": {
     "pages": 458,
     "stopReason": "empty_queue"
@@ -112,6 +112,80 @@
     {
       "page": "/impressum/",
       "reason": "meta_tag"
+    }
+  ],
+  "microdata": [
+    {
+      "page": "/",
+      "messages": [
+        "info potentialAction: missing field 'potentialAction'",
+        "info priceRange: missing field 'priceRange'",
+        "warning telephone: missing field 'telephone'"
+      ]
+    },
+    {
+      "page": "/blog/account-forecasting-absatzprognose-vertrieb/",
+      "messages": [
+        "error answerCount: missing field 'answerCount'",
+        "warning text: missing field 'text'"
+      ]
+    },
+    {
+      "page": "/en/",
+      "messages": [
+        "info potentialAction: missing field 'potentialAction'",
+        "info priceRange: missing field 'priceRange'",
+        "warning telephone: missing field 'telephone'"
+      ]
+    },
+    {
+      "page": "/en/blog/account-forecasting-sales-volume-planning/",
+      "messages": [
+        "error answerCount: missing field 'answerCount'",
+        "warning text: missing field 'text'"
+      ]
+    },
+    {
+      "page": "/en/masterclass/ai-salesforce/ai-agents-in-manufacturing/",
+      "messages": [
+        "error answerCount: missing field 'answerCount'",
+        "warning text: missing field 'text'"
+      ]
+    },
+    {
+      "page": "/en/questions/",
+      "messages": [
+        "error answerCount: missing field 'answerCount'",
+        "warning text: missing field 'text'"
+      ]
+    },
+    {
+      "page": "/en/services/change-management-salesforce/",
+      "messages": [
+        "error answerCount: missing field 'answerCount'",
+        "warning text: missing field 'text'"
+      ]
+    },
+    {
+      "page": "/fragen/",
+      "messages": [
+        "error answerCount: missing field 'answerCount'",
+        "warning text: missing field 'text'"
+      ]
+    },
+    {
+      "page": "/leistungen/change-management/",
+      "messages": [
+        "error answerCount: missing field 'answerCount'",
+        "warning text: missing field 'text'"
+      ]
+    },
+    {
+      "page": "/masterclass/b2b-commerce/agentforce-migration-einfuehrung/",
+      "messages": [
+        "error answerCount: missing field 'answerCount'",
+        "warning text: missing field 'text'"
+      ]
     }
   ],
   "issues": [
