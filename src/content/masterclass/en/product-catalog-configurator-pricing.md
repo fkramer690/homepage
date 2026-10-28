@@ -36,6 +36,16 @@ In Revenue Cloud, three parts decide what sales can quote. The product catalog d
 
 The catalog holds products, attributes and bundle structure. The configurator checks which options and attribute values fit together. Salesforce Pricing takes the configured line and calculates the net price step by step. A badly modelled catalog makes rules and pricing harder, so the catalog design comes first.
 
+```ablauf
+erp: SAP
+sf: Catalog, Configurator, Pricing, Quote, Sales agreement
+SAP --Products, prices--> Catalog
+Catalog --> Configurator
+Configurator --Configured line--> Pricing
+Pricing --Net price--> Quote
+Quote --Price carried over--> Sales agreement
+```
+
 All three run on standard objects of the core platform, not in a managed package. A note on names: salesforce.com says Revenue Cloud, Trailhead says Agentforce Revenue Management, and the Developer Guide for Winter '27 is titled Revenue Management Developer Guide. The [overview of product names](../../../blog/revenue-cloud-product-names-rlm-rca/) sorts this out.
 
 If you come from Salesforce CPQ, the mapping is simple to state and laborious to do. Product rules become configuration rules or constraint models. Price rules and the quote calculator plugin become pricing procedures. Nothing is converted automatically; the other differences are in [Salesforce CPQ vs Revenue Cloud](../../../blog/salesforce-cpq-vs-revenue-cloud-differences/). Whether Revenue Cloud fits your business at all is covered in [chapter 1](../revenue-cloud-overview/).
@@ -89,7 +99,13 @@ Salesforce Pricing has four base parts, per the [Trailhead unit on pricing](http
 
 A typical sequence for a manufacturer is list price (or a contract price), attribute discount, volume discount, manual discount and an aggregate per product family. The order is business logic: whether the manual discount comes before or after the volume discount changes the net price. Sales management and controlling decide it, not the person who builds the procedure. The result is a price waterfall that shows every step from list price to net price, in the simulation and on the quote line.
 
-One detail is easy to miss in the first weeks. After a price book entry or a volume tier changes, the quote still calculates with the old value until Sync Pricing Data has refreshed the decision tables. If SAP loads list prices every night, the sync belongs in the same job. The [Salesforce Pricing Business APIs](https://developer.salesforce.com/docs/atlas.en-us.revenue_lifecycle_management_dev_guide.meta/revenue_lifecycle_management_dev_guide/pricing_business_apis.htm) also offer headless pricing, which builds a context and prices it in one call, so a portal, a store or an agent can ask for the same price without creating a quote. How the B2B store does that is in the B2B Commerce chapter on [prices, cart and checkout](../../b2b-commerce/prices-cart-checkout/). The elements, the sync and the testing are explained in [Salesforce Pricing: how Revenue Cloud calculates prices](../../../blog/revenue-cloud-pricing-procedures-explained/).
+One detail is easy to miss in the first weeks:
+
+```hinweis achtung
+After a price book entry or a volume tier changes, the quote still calculates with the old value until Sync Pricing Data has refreshed the decision tables. If SAP loads list prices every night, the sync belongs in the same job.
+```
+
+The [Salesforce Pricing Business APIs](https://developer.salesforce.com/docs/atlas.en-us.revenue_lifecycle_management_dev_guide.meta/revenue_lifecycle_management_dev_guide/pricing_business_apis.htm) also offer headless pricing, which builds a context and prices it in one call, so a portal, a store or an agent can ask for the same price without creating a quote. How the B2B store does that is in the B2B Commerce chapter on [prices, cart and checkout](../../b2b-commerce/prices-cart-checkout/). The elements, the sync and the testing are explained in [Salesforce Pricing: how Revenue Cloud calculates prices](../../../blog/revenue-cloud-pricing-procedures-explained/).
 
 ## Which prices should come from SAP?
 
@@ -116,8 +132,15 @@ How configured products move from the quote into the agreement, and what the con
 Catalog, constraint models and pricing procedures change what every sales rep can quote. A wrong rule shows up at the customer, not in a log. I treat all three like code:
 
 - **Regression cases for pricing.** A fixed set of reference quotes with documented net prices: each product group, each volume tier, contract customers, manual discounts above and below approval thresholds. The JSON mode of the pricing simulation lets you store a case and run it again after every change.
-- **Regression and performance cases for constraint models.** Valid configurations that must work, invalid ones that must be rejected with the expected message. The [CML User Guide](https://resources.docs.salesforce.com/rel1/doc/en-us/static/pdf/CML_User_Guide.pdf) names the target: less than 100 milliseconds per model run, fewer than 1,000 backtracks and no violations.
+- **Regression and performance cases for constraint models.** Valid configurations that must work, invalid ones that must be rejected with the expected message. The performance targets are below the list.
 - **Catalog as data.** Classifications, attributes and bundles are records. The Developer Guide has an [object deployment reference](https://developer.salesforce.com/docs/atlas.en-us.revenue_lifecycle_management_dev_guide.meta/revenue_lifecycle_management_dev_guide/deployment_appendix_A.htm) with the deployment sequence and lookup fields per area, including catalog, pricing and configurator.
+
+```kennzahlen
+< 100 ms | per constraint model run
+< 1,000 | backtracks per model run
+0 | violations
+source: [CML User Guide](https://resources.docs.salesforce.com/rel1/doc/en-us/static/pdf/CML_User_Guide.pdf)
+```
 
 How configuration data moves through a pipeline is the subject of the DevOps chapter on [data and configuration](../../devops-release-management/data-and-configuration/), and how tests fit into the release process is in [quality, tests and reviews](../../devops-release-management/quality-tests-reviews/).
 

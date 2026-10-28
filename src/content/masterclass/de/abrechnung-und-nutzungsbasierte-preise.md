@@ -75,13 +75,28 @@ Für Revenue Cloud selbst gibt es Listenpreise. Die [Preisseite](https://www.sal
 
 Billing wird nach Rechnungsvolumen abgerechnet, nicht nach Benutzern. Das [Rate Sheet vom Februar 2026](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/documents/pricing/revenue-cloud-billing-rate-sheet-feb-2026.pdf) setzt 0,02 Billing Events je Dollar Rechnungssumme an, also ein Event je 50 Dollar. Gezählt wird die Zwischensumme gebuchter Rechnungen, mit Versandkosten und ohne Steuern. Andere Währungen werden zum Tagesdurchschnittskurs in Dollar umgerechnet. Die Events müssen bis zum Vertragsende verbraucht sein, nichts wird übertragen. Einen Preis je Event veröffentlicht Salesforce nicht.
 
+```kennzahlen
+150 € | Revenue Cloud Growth je Benutzer und Monat, jährlich abgerechnet
+200 € | Revenue Cloud Advanced je Benutzer und Monat, mit Consumption & Invoicing
+0,02 | Billing Events je Dollar Rechnungssumme, also ein Event je 50 Dollar
+quelle: Revenue Cloud Preisseite (EU) und Revenue Cloud Billing Rate Sheet vom Februar 2026
+```
+
 Ein typisches Szenario, als Annahme: Ein Maschinenbauer fakturiert 18 Millionen Euro im Jahr an Abonnements und Wartungspauschalen aus Billing, ohne Steuer. Bei angenommenen 1,15 Dollar je Euro sind das 20,7 Millionen Dollar oder 414.000 Billing Events im Jahr. Laufen zusätzlich 120 Millionen Euro Maschinenrechnungen über Billing, steigt die Zahl auf mehr als das Siebenfache, für Rechnungen, die SAP ohnehin erstellt. Der Umfang bestimmt die Kosten stärker als jede Verhandlung.
 
 Was ins Order Form gehört, wie Rundung und Gutschriften zählen könnten und wie Sie das Kontingent über die Laufzeit staffeln, steht in [Revenue Cloud Billing: Kosten](../../../blog/revenue-cloud-billing-kosten/). Solche Lizenzprognosen gehören zu meiner Arbeit an [Make-or-Buy und Lizenzen](../../../leistungen/make-or-buy-lizenzen/).
 
 ## Was verlangt die E-Rechnungspflicht ab 2027?
 
-Laut [IHK Köln](https://www.ihk.de/koeln/hauptnavigation/recht-steuern/recht/e-rechnungen-5943094) muss jedes deutsche Unternehmen seit 1. Januar 2025 E-Rechnungen empfangen können. 2027 bleiben sonstige Rechnungen wie PDFs nur noch für Aussteller mit bis zu 800.000 Euro Vorjahresumsatz erlaubt, dazu EDI-Rechnungen mit Zustimmung des Empfängers. Ab 2028 ist die E-Rechnung für alle inländischen B2B-Rechnungen Pflicht. Eine E-Rechnung wird in einem strukturierten Format nach EN 16931 ausgestellt, übermittelt und empfangen. Eine per E-Mail versandte PDF-Rechnung gilt seit 2025 nicht mehr als E-Rechnung. Die [IHK Stuttgart](https://www.ihk.de/stuttgart/fuer-unternehmen/recht-und-steuern/steuerrecht/steuermeldungen/e-rechnungen-5864496) nennt XRechnung und ZUGFeRD ab Version 2.0.1 als zulässige Formate.
+Laut [IHK Köln](https://www.ihk.de/koeln/hauptnavigation/recht-steuern/recht/e-rechnungen-5943094) gelten für deutsche Unternehmen diese Stufen:
+
+```zeitleiste
+2025-01-01 | Jedes deutsche Unternehmen muss E-Rechnungen empfangen können
+2027-01-01 | Sonstige Rechnungen wie PDFs nur noch für Aussteller mit bis zu 800.000 Euro Vorjahresumsatz erlaubt, dazu EDI-Rechnungen mit Zustimmung des Empfängers
+2028-01 | Ab 2028 ist die E-Rechnung für alle inländischen B2B-Rechnungen Pflicht
+```
+
+Eine E-Rechnung wird in einem strukturierten Format nach EN 16931 ausgestellt, übermittelt und empfangen. Eine per E-Mail versandte PDF-Rechnung gilt seit 2025 nicht mehr als E-Rechnung. Die [IHK Stuttgart](https://www.ihk.de/stuttgart/fuer-unternehmen/recht-und-steuern/steuerrecht/steuermeldungen/e-rechnungen-5864496) nennt XRechnung und ZUGFeRD ab Version 2.0.1 als zulässige Formate.
 
 Für einen typischen Maschinenbauer heißt das: 1. Januar 2027, und zwar für jede Rechnung an einen deutschen Geschäftskunden, ob Maschine, Ersatzteil, Wartungspauschale oder Abonnement.
 
@@ -96,6 +111,14 @@ Gehen Billing-Rechnungen nach dem 1. Januar 2027 hinaus, brauchen sie ab der ers
 ## Wie funktioniert Pay-per-Use mit Usage Management?
 
 Usage Management ist der Teil von Revenue Cloud für verbrauchsbasierte Produkte. [Trailhead](https://trailhead.salesforce.com/content/learn/modules/usage-management-foundations/explore-components-and-personas) nennt fünf Bausteine: Usage Modelling, Rate Management, Usage Selling, Wallet Management und Consumption Management. Rohe Nutzungsereignisse landen im Transaction Journal. Bewertete Nutzung endet in einer Liable Summary, dem Betrag, den der Kunde schuldet, und die geht zur Rechnung an Billing.
+
+```ablauf
+ext: IoT-Plattform
+sf: Transaction Journal, Liable Summary, Billing-Rechnung
+IoT-Plattform --Wert je Tag--> Transaction Journal
+Transaction Journal --Rate Card--> Liable Summary
+Liable Summary --> Billing-Rechnung
+```
 
 Für eine Maschine lässt sich das direkt übertragen. Betriebsstunden werden zur Nutzungsressource, das verkaufte Produkt trägt ein Kontingent von zum Beispiel 300 Stunden im Monat, und eine Rate Card bepreist die Stunden darüber in Staffeln. Jeder Kunde bekommt mit der Auftragsaktivierung ein Wallet je Ressource. Die Beispiele von Salesforce sind allerdings Cloud-Speicher und Mobilfunktarife, und der schwierige Teil liegt bei Maschinen außerhalb von Salesforce:
 

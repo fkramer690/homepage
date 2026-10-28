@@ -59,7 +59,7 @@ Für einen ersten Schnitt reichen die Editionskarten:
 ```pro-contra
 pro: Growth kann reichen, wenn
 - der Auftrag an SAP geht und die Rechnung in SAP FI bleibt
-- Angebote mit konfigurierten Produkten abgedeckt sein sollen
+- Angebote mit konfigurierten Produkten gebraucht werden
 - Serviceabonnements genügen
 contra: Advanced ist der Ausgangspunkt, wenn
 - Verträge in Salesforce laufen sollen

@@ -75,13 +75,28 @@ Revenue Cloud itself has list prices. The [EU pricing page](https://www.salesfor
 
 Billing is charged by invoice volume, not by user. The [rate sheet of February 2026](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/documents/pricing/revenue-cloud-billing-rate-sheet-feb-2026.pdf) sets 0.02 billing events per dollar of total invoice amount, so one event per $50. The amount is the subtotal of posted invoices, with shipping and without tax. Other currencies are converted to US dollars at the average rate of the day. Events must be used before the order end date, and nothing rolls over. Salesforce does not publish a price per event.
 
+```kennzahlen
+€150 | Revenue Cloud Growth per user and month, billed annually
+€200 | Revenue Cloud Advanced per user and month, with Consumption & Invoicing
+0.02 | Billing events per dollar of invoice amount, one event per $50
+source: Revenue Cloud EU pricing page and Revenue Cloud Billing rate sheet of February 2026
+```
+
 A typical scenario, as an assumption: a machine builder invoices €18 million a year of subscriptions and maintenance fees from Billing, without tax. At an assumed 1.15 dollars per euro that is $20.7 million, or 414,000 billing events a year. Put €120 million of machine invoices through Billing as well and the count grows more than sevenfold, for invoices SAP creates anyway. Scope drives the cost more than anything you negotiate.
 
 What to settle on the order form, how rounding and credit memos might count and how to ramp the entitlement over the term is in [Revenue Cloud Billing costs](../../../blog/revenue-cloud-billing-costs/). Licence forecasts like this are part of my [make-or-buy and licence](../../../services/make-or-buy-licences/) work.
 
 ## What does German e-invoicing from 2027 require?
 
-According to the [IHK Köln](https://www.ihk.de/koeln/hauptnavigation/recht-steuern/recht/e-rechnungen-5943094), every German business has had to be able to receive e-invoices since 1 January 2025. In 2027, other invoices such as PDFs remain allowed only for issuers with up to €800,000 turnover in the previous year, and EDI invoices with the recipient's consent. From 2028, e-invoices are mandatory for all domestic B2B invoices. An e-invoice is issued, transmitted and received in a structured format that follows EN 16931. A PDF sent by email has not counted as an e-invoice since 2025. The [IHK Stuttgart](https://www.ihk.de/stuttgart/fuer-unternehmen/recht-und-steuern/steuerrecht/steuermeldungen/e-rechnungen-5864496) names XRechnung and ZUGFeRD from version 2.0.1 as accepted formats.
+According to the [IHK Köln](https://www.ihk.de/koeln/hauptnavigation/recht-steuern/recht/e-rechnungen-5943094), these stages apply to German businesses:
+
+```zeitleiste
+2025-01-01 | Every German business has to be able to receive e-invoices
+2027-01-01 | Other invoices such as PDFs remain allowed only for issuers with up to €800,000 turnover in the previous year, and EDI invoices with the recipient's consent
+2028-01 | From 2028, e-invoices are mandatory for all domestic B2B invoices
+```
+
+An e-invoice is issued, transmitted and received in a structured format that follows EN 16931. A PDF sent by email has not counted as an e-invoice since 2025. The [IHK Stuttgart](https://www.ihk.de/stuttgart/fuer-unternehmen/recht-und-steuern/steuerrecht/steuermeldungen/e-rechnungen-5864496) names XRechnung and ZUGFeRD from version 2.0.1 as accepted formats.
 
 For a typical machine builder that means 1 January 2027, and it applies to every invoice to a German business customer: machines, parts, maintenance fees and subscriptions.
 
@@ -96,6 +111,14 @@ If Billing invoices go out after 1 January 2027, they need a structured route fr
 ## How does pay-per-use work with Usage Management?
 
 Usage Management is the part of Revenue Cloud for consumption-based products. [Trailhead](https://trailhead.salesforce.com/content/learn/modules/usage-management-foundations/explore-components-and-personas) names five components: usage modelling, rate management, usage selling, wallet management and consumption management. Raw usage events land in the transaction journal. Rated usage ends up in a liable summary, the final amount the customer owes, which goes to billing for the invoice.
+
+```ablauf
+ext: IoT platform
+sf: Transaction journal, Liable summary, Billing invoice
+IoT platform --Value per day--> Transaction journal
+Transaction journal --Rate card--> Liable summary
+Liable summary --> Billing invoice
+```
 
 For a machine that translates directly. Operating hours become a usage resource, the sold product carries a grant of, say, 300 hours per month, and a rate card prices the hours above the grant in tiers. Each customer gets a wallet per resource when the order is activated. Salesforce's own examples are cloud storage and mobile plans, though, and the hard part for machines lies outside Salesforce:
 

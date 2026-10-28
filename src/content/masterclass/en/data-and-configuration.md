@@ -96,7 +96,11 @@ The commercial platforms have their own data modules with a user interface. Acco
 
 What these tools do well: an admin sees before the run which related records will go along and does not have to write an `export.json`. For CPQ configuration with many nested objects, that is a real advantage. Which tool fits your programme overall is decided in [chapter 4](../devops-tools-compared/); for data the same rule applies as for metadata. The tool runs in your name, and the data templates sit with you, not in a partner's account. The reasons are in [why clients should own their DevOps tools](../../../blog/why-clients-should-own-their-devops-tools/).
 
-One point applies to every tool. Gearset says openly that a failed data deployment can leave data only partly deployed. Back up the affected objects before every release with a data step; backup and restore are covered in [chapter 9](../operations-monitoring-backup/).
+One point applies to every tool:
+
+```hinweis achtung
+Gearset says openly that a failed data deployment can leave data only partly deployed. Back up the affected objects before every release with a data step; backup and restore are covered in [chapter 9](../operations-monitoring-backup/).
+```
 
 ## How does customer data in sandboxes stay protected?
 
@@ -108,11 +112,18 @@ The seed part, according to the product page, fills developer, developer pro, pa
 
 My order after every refresh of a partial or full sandbox:
 
-1. Start the mask and check the execution log.
-2. Add fields created since the last run to the mask; this check sits in the release checklist.
-3. Make sure email fields on contacts are on the mask list, so no dealer receives a test notification.
-4. Load configuration data from the repository if the sandbox needs a newer state than production.
-5. Only then open access for partners and business users.
+```schritte
+Start the mask
+  Start the run and check the execution log.
+Add new fields
+  Add fields created since the last run to the mask; this check sits in the release checklist.
+Mask email fields
+  Make sure email fields on contacts are on the mask list, so no dealer receives a test notification.
+Load configuration
+  Load configuration data from the repository if the sandbox needs a newer state than production.
+Open access
+  Only then open access for partners and business users.
+```
 
 Coding agents get a stricter rule, described in [chapter 8 of the AI masterclass](../../ai-salesforce/ai-code-best-practices/): they work in scratch orgs and developer sandboxes with seed data, never in a full copy.
 
