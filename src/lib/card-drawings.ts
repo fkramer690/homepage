@@ -27,6 +27,17 @@ const pin = (x: number, y: number, color = G) =>
   `<g transform="translate(${x} ${y})"><path d="M0 0c-6-8-9-12-9-16a9 9 0 0 1 18 0c0 4-3 8-9 16z" fill="#fff" stroke="${color}" stroke-width="1.4"/><circle cx="0" cy="-16" r="3" fill="${color}"/></g>`;
 
 const drawings: Record<string, Drawing> = {
+  'field-service-headless-setup-ai': (l) => `
+    ${t(18, 20, l('HEADLESS SETUP (ASSUMED SCENARIO)', 'HEADLESS-EINRICHTUNG (ANNAHME)'), { fill: D, size: 7.5 })}
+    ${box(18, 30, 80, 50)}${t(58, 50, l('website', 'Website'), { size: 7.5, anchor: 'middle' })}${t(58, 66, l('AI assistant', 'KI-Assistent'), { size: 7, anchor: 'middle' })}
+    ${arrow(98, 55, 120)}
+    ${box(120, 30, 80, 50)}${t(160, 50, l('plan', 'Plan'), { size: 7.5, anchor: 'middle' })}${t(160, 66, l('14 territories', '14 Gebiete'), { size: 7, anchor: 'middle' })}
+    ${arrow(200, 55, 222, C)}${t(211, 46, l('review', 'Prüfung'), { fill: C, size: 6.5, anchor: 'middle' })}
+    ${box(222, 30, 80, 50, C)}${t(262, 50, l('6 territories', '6 Gebiete'), { fill: C, size: 7.5, anchor: 'middle' })}${t(262, 66, l('approved', 'freigegeben'), { size: 7, anchor: 'middle' })}
+    ${[l('sandbox', 'Sandbox'), 'Git, SFDMU', l('pipeline', 'Pipeline')].map((s, i) => box(18 + i * 102, 98, 80, 26) + t(58 + i * 102, 114, s, { size: 7, anchor: 'middle' })).join('')}
+    ${arrow(98, 111, 120)}${arrow(200, 111, 222)}
+    ${t(18, 146, l('territories, work types, policies are records', 'Gebiete, Arbeitstypen, Policies sind Datensätze'), { size: 7 })}`,
+
   'revenue-cloud-discount-approvals': (l) => `
     ${t(18, 18, l('ADVANCED APPROVALS ON THE QUOTE', 'ADVANCED APPROVALS AM ANGEBOT'), { fill: D, size: 7 })}
     ${box(18, 40, 60, 48)}${t(48, 56, l('QUOTE', 'ANGEBOT'), { fill: D, size: 7.5, anchor: 'middle' })}${t(48, 69, l('discount 32 %', 'Rabatt 32 %'), { size: 7, anchor: 'middle' })}${t(48, 81, l('+ preview', '+ Vorschau'), { size: 7, anchor: 'middle' })}
