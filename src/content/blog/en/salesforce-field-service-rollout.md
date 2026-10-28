@@ -1,5 +1,5 @@
 ---
-title: "Rolling Out Salesforce Field Service: Why in Waves?"
+title: "Salesforce Field Service Implementation: Why in Waves?"
 description: "Rolling out Salesforce Field Service in waves: what a wave contains, which topics go to the works council early and why every country has its own rules."
 pubDate: 2026-10-27
 lang: en

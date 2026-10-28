@@ -109,7 +109,7 @@ Für diese Mischrolle nennt die Preisliste Field Service Plus. Gegenüber Servic
 Die Preisseite verweist für loginbasierte Contractor-Lizenzen an den Vertrieb, deshalb würde ich die Zählregel ins Bestellformular schreiben lassen.
 ```
 
-Contractor-Lizenzen sind für das Personal Ihrer Servicepartner gedacht; eigene Leute darauf zu setzen, um zu sparen, würde ich nicht riskieren. Die ganze Rollenmatrix mit einer Jahresrechnung steht in [Field Service Lizenzen: Welche Rolle braucht welche?](../../../blog/field-service-lizenzen-rollen-dispatcher-techniker/).
+Contractor-Lizenzen sind für das Personal Ihrer Servicepartner gedacht; eigene Leute darauf zu setzen, um zu sparen, würde ich nicht riskieren. Die ganze Rollenmatrix mit einer Jahresrechnung steht in [Salesforce Field Service Lizenzen: Wer braucht welche?](../../../blog/field-service-lizenzen-rollen-dispatcher-techniker/).
 
 ## Welche Add-ons gibt es, und wann lohnt das Agentforce-1-Paket?
 

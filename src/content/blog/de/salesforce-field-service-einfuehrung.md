@@ -1,5 +1,5 @@
 ---
-title: "Field Service einführen: Warum in Wellen?"
+title: "Salesforce Field Service Einführung: Warum in Wellen?"
 description: "Salesforce Field Service in Wellen einführen: was eine Welle enthält, welche Themen früh zum Betriebsrat gehören und warum jedes Land eigene Regeln hat."
 pubDate: 2026-10-27
 lang: de

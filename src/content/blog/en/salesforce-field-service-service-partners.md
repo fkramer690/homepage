@@ -63,7 +63,7 @@ The steps are in [Salesforce Help on contractor access](https://help.salesforce.
 - **Own profile and own mobile settings.** That way the app can be configured differently for partners without changing the internal version.
 - **One service territory per partner company.** The partner manager then sees only their own people and appointments. If they should dispatch themselves, the dispatch console can be added to the Experience Cloud site.
 
-There are two kinds of licences. Partners who work regularly get licences per user. For seasonal or rare work there are licences per login, according to Salesforce up to 20 users per login bought. How to spread licences sensibly across all roles is covered in [Salesforce licences: does everyone need a full licence?](../salesforce-licences-full-licence-needed/), and the Field Service roles in detail in [Field Service licences: which role needs which one?](../field-service-licences-by-role/).
+There are two kinds of licences. Partners who work regularly get licences per user. For seasonal or rare work there are licences per login, according to Salesforce up to 20 users per login bought. How to spread licences sensibly across all roles is covered in [Salesforce licences: does everyone need a full licence?](../salesforce-licences-full-licence-needed/), and the Field Service roles in detail in [Salesforce Field Service licences: who needs which?](../field-service-licences-by-role/).
 
 ```hinweis achtung
 Contractor licences are only for third-party contractors, not for your own employees.

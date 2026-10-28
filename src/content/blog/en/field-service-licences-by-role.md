@@ -1,5 +1,5 @@
 ---
-title: "Field Service licences: which role needs which one?"
+title: "Salesforce Field Service licences: who needs which?"
 description: "Hotline, dispatcher, technician, back office, partner: which Salesforce Field Service licence each role needs, what it costs and which rules trip up the bill."
 pubDate: 2026-10-28
 lang: en
