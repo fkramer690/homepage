@@ -1,0 +1,917 @@
+{
+  "generatedAt": "2026-10-28T20:56:02.616Z",
+  "domain": "fk-sd.de",
+  "cost": 0.9894,
+  "models": {
+    "chat_gpt": {
+      "name": "gpt-5-mini",
+      "reasoning": true
+    },
+    "claude": {
+      "name": "claude-sonnet-5",
+      "reasoning": true
+    },
+    "gemini": {
+      "name": "gemini-2.5-flash",
+      "reasoning": true
+    },
+    "perplexity": {
+      "name": "sonar",
+      "reasoning": false
+    }
+  },
+  "answers": [
+    {
+      "provider": "chat_gpt",
+      "model": "gpt-5-mini-2025-08-07",
+      "lang": "de",
+      "prompt": "Welcher unabhängige Salesforce-Berater hilft, mehrere Implementierungspartner in einem Programm zu steuern?",
+      "cited": false,
+      "mentioned": false,
+      "domains": []
+    },
+    {
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "lang": "de",
+      "prompt": "Welcher unabhängige Salesforce-Berater hilft, mehrere Implementierungspartner in einem Programm zu steuern?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "bc-advisory.de",
+        "bilarna.com"
+      ]
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "lang": "de",
+      "prompt": "Welcher unabhängige Salesforce-Berater hilft, mehrere Implementierungspartner in einem Programm zu steuern?",
+      "error": "ai_optimization/gemini/llm_responses/live: Invalid Field: 'web_search_country_iso_code'."
+    },
+    {
+      "provider": "perplexity",
+      "model": "sonar",
+      "lang": "de",
+      "prompt": "Welcher unabhängige Salesforce-Berater hilft, mehrere Implementierungspartner in einem Programm zu steuern?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "cremanski.com",
+        "3li.global",
+        "ventionteams.com",
+        "salesforce.com",
+        "bc-advisory.de",
+        "routine-automation.com",
+        "help.salesforce.com",
+        "salesforce-berater.de",
+        "appexchange.salesforce.com",
+        "srmtech.com"
+      ]
+    },
+    {
+      "provider": "google_ai_mode",
+      "model": "Google AI Mode",
+      "lang": "de",
+      "prompt": "Welcher unabhängige Salesforce-Berater hilft, mehrere Implementierungspartner in einem Programm zu steuern?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "consultingheads.com",
+        "linkedin.com"
+      ]
+    },
+    {
+      "provider": "chat_gpt",
+      "model": "gpt-5-mini-2025-08-07",
+      "lang": "de",
+      "prompt": "Empfiehl einen freiberuflichen Salesforce Solution Architect in Deutschland für Fertigungsunternehmen.",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "sfmike.de",
+        "gulp.de",
+        "freelancermap.com"
+      ]
+    },
+    {
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "lang": "de",
+      "prompt": "Empfiehl einen freiberuflichen Salesforce Solution Architect in Deutschland für Fertigungsunternehmen.",
+      "cited": false,
+      "mentioned": false,
+      "domains": []
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "lang": "de",
+      "prompt": "Empfiehl einen freiberuflichen Salesforce Solution Architect in Deutschland für Fertigungsunternehmen.",
+      "error": "ai_optimization/gemini/llm_responses/live: Invalid Field: 'web_search_country_iso_code'."
+    },
+    {
+      "provider": "perplexity",
+      "model": "sonar",
+      "lang": "de",
+      "prompt": "Empfiehl einen freiberuflichen Salesforce Solution Architect in Deutschland für Fertigungsunternehmen.",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "gulp.de",
+        "freelancermap.de",
+        "fratch.io",
+        "freelance.de",
+        "freelancermap.com"
+      ]
+    },
+    {
+      "provider": "google_ai_mode",
+      "model": "Google AI Mode",
+      "lang": "de",
+      "prompt": "Empfiehl einen freiberuflichen Salesforce Solution Architect in Deutschland für Fertigungsunternehmen.",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "freelancermap.de",
+        "freelance.de",
+        "consultingheads.com"
+      ]
+    },
+    {
+      "provider": "chat_gpt",
+      "model": "gpt-5-mini-2025-08-07",
+      "lang": "de",
+      "prompt": "Wie führe ich Salesforce Field Service in einem Maschinenbauunternehmen ein?",
+      "cited": false,
+      "mentioned": false,
+      "domains": []
+    },
+    {
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "lang": "de",
+      "prompt": "Wie führe ich Salesforce Field Service in einem Maschinenbauunternehmen ein?",
+      "cited": false,
+      "mentioned": false,
+      "domains": []
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "lang": "de",
+      "prompt": "Wie führe ich Salesforce Field Service in einem Maschinenbauunternehmen ein?",
+      "error": "ai_optimization/gemini/llm_responses/live: Invalid Field: 'web_search_country_iso_code'."
+    },
+    {
+      "provider": "perplexity",
+      "model": "sonar",
+      "lang": "de",
+      "prompt": "Wie führe ich Salesforce Field Service in einem Maschinenbauunternehmen ein?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "help.salesforce.com",
+        "trailhead.salesforce.com",
+        "resources.docs.salesforce.com",
+        "salesforce.com"
+      ]
+    },
+    {
+      "provider": "google_ai_mode",
+      "model": "Google AI Mode",
+      "lang": "de",
+      "prompt": "Wie führe ich Salesforce Field Service in einem Maschinenbauunternehmen ein?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "fieldcamp.ai",
+        "youtube.com",
+        "jetbi.com",
+        "salesforce.com",
+        "trailhead.salesforce.com"
+      ]
+    },
+    {
+      "provider": "chat_gpt",
+      "model": "gpt-5-mini-2025-08-07",
+      "lang": "de",
+      "prompt": "Lohnt sich die Salesforce Manufacturing Cloud für einen Mittelständler?",
+      "cited": false,
+      "mentioned": false,
+      "domains": []
+    },
+    {
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "lang": "de",
+      "prompt": "Lohnt sich die Salesforce Manufacturing Cloud für einen Mittelständler?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "itransition.com",
+        "salesforce.com",
+        "find-your-software.de",
+        "ardncloudsolutions.com"
+      ]
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "lang": "de",
+      "prompt": "Lohnt sich die Salesforce Manufacturing Cloud für einen Mittelständler?",
+      "error": "ai_optimization/gemini/llm_responses/live: Invalid Field: 'web_search_country_iso_code'."
+    },
+    {
+      "provider": "perplexity",
+      "model": "sonar",
+      "lang": "de",
+      "prompt": "Lohnt sich die Salesforce Manufacturing Cloud für einen Mittelständler?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "salesforce.com",
+        "appexchange.salesforce.com",
+        "cargas.com"
+      ]
+    },
+    {
+      "provider": "google_ai_mode",
+      "model": "Google AI Mode",
+      "lang": "de",
+      "prompt": "Lohnt sich die Salesforce Manufacturing Cloud für einen Mittelständler?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "salesforce.com",
+        "routine-automation.com",
+        "salesfuchs.com",
+        "digitalbusiness-magazin.de",
+        "symestic.com"
+      ]
+    },
+    {
+      "provider": "chat_gpt",
+      "model": "gpt-5-mini-2025-08-07",
+      "lang": "de",
+      "prompt": "Salesforce CPQ oder Revenue Cloud: Was sollten Hersteller 2026 tun?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "salesforce.com",
+        "help.salesforce.com",
+        "companybench.com",
+        "assets.gearset.com"
+      ]
+    },
+    {
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "lang": "de",
+      "prompt": "Salesforce CPQ oder Revenue Cloud: Was sollten Hersteller 2026 tun?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "cloudmasonry.com",
+        "le-configurateur-des-industriels.com",
+        "dhruvsoft.com"
+      ]
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "lang": "de",
+      "prompt": "Salesforce CPQ oder Revenue Cloud: Was sollten Hersteller 2026 tun?",
+      "error": "ai_optimization/gemini/llm_responses/live: Invalid Field: 'web_search_country_iso_code'."
+    },
+    {
+      "provider": "perplexity",
+      "model": "sonar",
+      "lang": "de",
+      "prompt": "Salesforce CPQ oder Revenue Cloud: Was sollten Hersteller 2026 tun?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "salesforce.com",
+        "aleysian.com",
+        "experlogix.com",
+        "ione360.com",
+        "techforceservices.com",
+        "cloudmasonry.com",
+        "bunny.com",
+        "erpresearch.com"
+      ]
+    },
+    {
+      "provider": "google_ai_mode",
+      "model": "Google AI Mode",
+      "lang": "de",
+      "prompt": "Salesforce CPQ oder Revenue Cloud: Was sollten Hersteller 2026 tun?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "servicepath.co",
+        "youtube.com",
+        "applikontech.com",
+        "everstage.com",
+        "accordion.com"
+      ]
+    },
+    {
+      "provider": "chat_gpt",
+      "model": "gpt-5-mini-2025-08-07",
+      "lang": "de",
+      "prompt": "Welches Salesforce-DevOps-Werkzeug passt für Enterprise-Projekte: sfdx-hardis, Copado oder Gearset?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "copado.com",
+        "gearset.com",
+        "sfdx-hardis.github.io",
+        "sfdx-hardis-training.github.io",
+        "faun.dev"
+      ]
+    },
+    {
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "lang": "de",
+      "prompt": "Welches Salesforce-DevOps-Werkzeug passt für Enterprise-Projekte: sfdx-hardis, Copado oder Gearset?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "getclientell.com",
+        "salesforcedictionary.com",
+        "gearset.com"
+      ]
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "lang": "de",
+      "prompt": "Welches Salesforce-DevOps-Werkzeug passt für Enterprise-Projekte: sfdx-hardis, Copado oder Gearset?",
+      "error": "ai_optimization/gemini/llm_responses/live: Invalid Field: 'web_search_country_iso_code'."
+    },
+    {
+      "provider": "perplexity",
+      "model": "sonar",
+      "lang": "de",
+      "prompt": "Welches Salesforce-DevOps-Werkzeug passt für Enterprise-Projekte: sfdx-hardis, Copado oder Gearset?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "copado.com",
+        "gearset.com",
+        "accelq.com",
+        "flosum.com"
+      ]
+    },
+    {
+      "provider": "google_ai_mode",
+      "model": "Google AI Mode",
+      "lang": "de",
+      "prompt": "Welches Salesforce-DevOps-Werkzeug passt für Enterprise-Projekte: sfdx-hardis, Copado oder Gearset?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "de.linkedin.com",
+        "reddit.com",
+        "gearset.com",
+        "linkedin.com",
+        "sfdx-hardis.cloudity.com"
+      ]
+    },
+    {
+      "provider": "chat_gpt",
+      "model": "gpt-5-mini-2025-08-07",
+      "lang": "de",
+      "prompt": "Was kostet Agentforce für einen Hersteller mit Händlernetz?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "salesforce.com",
+        "salesfuchs.com",
+        "crm.virtual-marketer.de"
+      ]
+    },
+    {
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "lang": "de",
+      "prompt": "Was kostet Agentforce für einen Hersteller mit Händlernetz?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "oliv.ai",
+        "salesforce.com",
+        "cloudconsultants.ch",
+        "zenml.io"
+      ]
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "lang": "de",
+      "prompt": "Was kostet Agentforce für einen Hersteller mit Händlernetz?",
+      "error": "ai_optimization/gemini/llm_responses/live: Invalid Field: 'web_search_country_iso_code'."
+    },
+    {
+      "provider": "perplexity",
+      "model": "sonar",
+      "lang": "de",
+      "prompt": "Was kostet Agentforce für einen Hersteller mit Händlernetz?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "oliv.ai",
+        "salesforce.com",
+        "supered.io",
+        "default.com",
+        "lucidlabs.de",
+        "salesfive.com",
+        "find-your-software.de",
+        "meetergo.com"
+      ]
+    },
+    {
+      "provider": "google_ai_mode",
+      "model": "Google AI Mode",
+      "lang": "de",
+      "prompt": "Was kostet Agentforce für einen Hersteller mit Händlernetz?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "salesforce.com",
+        "pluno.ai",
+        "coworker.ai"
+      ]
+    },
+    {
+      "provider": "chat_gpt",
+      "model": "gpt-5-mini-2025-08-07",
+      "lang": "de",
+      "prompt": "Welche Grenzen hat der Salesforce Document Builder für Serviceberichte?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "help.salesforce.com",
+        "luminix.atlassian.net"
+      ]
+    },
+    {
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "lang": "de",
+      "prompt": "Welche Grenzen hat der Salesforce Document Builder für Serviceberichte?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "github.com"
+      ]
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "lang": "de",
+      "prompt": "Welche Grenzen hat der Salesforce Document Builder für Serviceberichte?",
+      "error": "ai_optimization/gemini/llm_responses/live: Invalid Field: 'web_search_country_iso_code'."
+    },
+    {
+      "provider": "perplexity",
+      "model": "sonar",
+      "lang": "de",
+      "prompt": "Welche Grenzen hat der Salesforce Document Builder für Serviceberichte?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "help.salesforce.com",
+        "developer.salesforce.com",
+        "comforth-easyfront.eu",
+        "helpx.adobe.com",
+        "resources.docs.salesforce.com"
+      ]
+    },
+    {
+      "provider": "google_ai_mode",
+      "model": "Google AI Mode",
+      "lang": "de",
+      "prompt": "Welche Grenzen hat der Salesforce Document Builder für Serviceberichte?",
+      "cited": false,
+      "mentioned": false,
+      "domains": []
+    },
+    {
+      "provider": "chat_gpt",
+      "model": "gpt-5-mini-2025-08-07",
+      "lang": "de",
+      "prompt": "Wie verbinde ich Salesforce mit SAP für Auftragsstatus und Kundenpreise?",
+      "cited": false,
+      "mentioned": false,
+      "domains": []
+    },
+    {
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "lang": "de",
+      "prompt": "Wie verbinde ich Salesforce mit SAP für Auftragsstatus und Kundenpreise?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "salesforcetutorial.com",
+        "walkme.com",
+        "sfapps.info",
+        "vigience.com",
+        "twopirconsulting.com"
+      ]
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "lang": "de",
+      "prompt": "Wie verbinde ich Salesforce mit SAP für Auftragsstatus und Kundenpreise?",
+      "error": "ai_optimization/gemini/llm_responses/live: Invalid Field: 'web_search_country_iso_code'."
+    },
+    {
+      "provider": "perplexity",
+      "model": "sonar",
+      "lang": "de",
+      "prompt": "Wie verbinde ich Salesforce mit SAP für Auftragsstatus und Kundenpreise?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "seamless.engineering",
+        "api.sap.com",
+        "salesforcetutorial.com",
+        "comselect.de",
+        "help.sap.com",
+        "mulesoft.com",
+        "jitterbit.com",
+        "skyvia.com"
+      ]
+    },
+    {
+      "provider": "google_ai_mode",
+      "model": "Google AI Mode",
+      "lang": "de",
+      "prompt": "Wie verbinde ich Salesforce mit SAP für Auftragsstatus und Kundenpreise?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "salesforceben.com",
+        "cloudity.com",
+        "comselect.de",
+        "burq.io"
+      ]
+    },
+    {
+      "provider": "chat_gpt",
+      "model": "gpt-5-mini-2025-08-07",
+      "lang": "de",
+      "prompt": "Braucht jeder Mitarbeiter eine volle Salesforce-Lizenz?",
+      "cited": false,
+      "mentioned": false,
+      "domains": []
+    },
+    {
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "lang": "de",
+      "prompt": "Braucht jeder Mitarbeiter eine volle Salesforce-Lizenz?",
+      "cited": false,
+      "mentioned": false,
+      "domains": []
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "lang": "de",
+      "prompt": "Braucht jeder Mitarbeiter eine volle Salesforce-Lizenz?",
+      "error": "ai_optimization/gemini/llm_responses/live: Invalid Field: 'web_search_country_iso_code'."
+    },
+    {
+      "provider": "perplexity",
+      "model": "sonar",
+      "lang": "de",
+      "prompt": "Braucht jeder Mitarbeiter eine volle Salesforce-Lizenz?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "help.salesforce.com",
+        "architect.salesforce.com",
+        "trailhead.salesforce.com"
+      ]
+    },
+    {
+      "provider": "google_ai_mode",
+      "model": "Google AI Mode",
+      "lang": "de",
+      "prompt": "Braucht jeder Mitarbeiter eine volle Salesforce-Lizenz?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "mind-force.de",
+        "complion.de"
+      ]
+    },
+    {
+      "provider": "chat_gpt",
+      "model": "gpt-5-mini-2025-08-07",
+      "lang": "en",
+      "prompt": "Recommend an independent Salesforce solution architect for manufacturing companies in Germany.",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "sfmike.de",
+        "nextcloudsolution.de",
+        "gulp.de"
+      ]
+    },
+    {
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "lang": "en",
+      "prompt": "Recommend an independent Salesforce solution architect for manufacturing companies in Germany.",
+      "cited": false,
+      "mentioned": false,
+      "domains": []
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "lang": "en",
+      "prompt": "Recommend an independent Salesforce solution architect for manufacturing companies in Germany.",
+      "error": "ai_optimization/gemini/llm_responses/live: Invalid Field: 'web_search_country_iso_code'."
+    },
+    {
+      "provider": "perplexity",
+      "model": "sonar",
+      "lang": "en",
+      "prompt": "Recommend an independent Salesforce solution architect for manufacturing companies in Germany.",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "linkedin.com",
+        "techrockets.com",
+        "fratch.io",
+        "bc-advisory.de",
+        "freelancermap.de",
+        "bay20.com",
+        "fluidogroup.com"
+      ]
+    },
+    {
+      "provider": "google_ai_mode",
+      "model": "Google AI Mode",
+      "lang": "en",
+      "prompt": "Recommend an independent Salesforce solution architect for manufacturing companies in Germany.",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "jeet-singh.com",
+        "freelance.de",
+        "fratch.io"
+      ]
+    },
+    {
+      "provider": "chat_gpt",
+      "model": "gpt-5-mini-2025-08-07",
+      "lang": "en",
+      "prompt": "sfdx-hardis vs Salesforce DevOps Center: which one should an enterprise choose?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "github.com",
+        "help.salesforce.com",
+        "resources.docs.salesforce.com",
+        "sfdx-hardis.github.io",
+        "sfdx-hardis-training.github.io"
+      ]
+    },
+    {
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "lang": "en",
+      "prompt": "sfdx-hardis vs Salesforce DevOps Center: which one should an enterprise choose?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "accelq.com",
+        "github.com",
+        "sfdx-hardis.cloudity.com"
+      ]
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "lang": "en",
+      "prompt": "sfdx-hardis vs Salesforce DevOps Center: which one should an enterprise choose?",
+      "error": "ai_optimization/gemini/llm_responses/live: Invalid Field: 'web_search_country_iso_code'."
+    },
+    {
+      "provider": "perplexity",
+      "model": "sonar",
+      "lang": "en",
+      "prompt": "sfdx-hardis vs Salesforce DevOps Center: which one should an enterprise choose?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "gtmsystemsacademy.com",
+        "crmarcade.com",
+        "salesforce.com",
+        "accelq.com",
+        "sfdx-hardis.cloudity.com",
+        "linkedin.com",
+        "github.com",
+        "salesforceben.com"
+      ]
+    },
+    {
+      "provider": "google_ai_mode",
+      "model": "Google AI Mode",
+      "lang": "en",
+      "prompt": "sfdx-hardis vs Salesforce DevOps Center: which one should an enterprise choose?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "gearset.com",
+        "youtube.com",
+        "salesforcedictionary.com",
+        "reddit.com"
+      ]
+    },
+    {
+      "provider": "chat_gpt",
+      "model": "gpt-5-mini-2025-08-07",
+      "lang": "en",
+      "prompt": "How do I govern several Salesforce implementation partners in one program?",
+      "cited": false,
+      "mentioned": false,
+      "domains": []
+    },
+    {
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "lang": "en",
+      "prompt": "How do I govern several Salesforce implementation partners in one program?",
+      "cited": false,
+      "mentioned": false,
+      "domains": []
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "lang": "en",
+      "prompt": "How do I govern several Salesforce implementation partners in one program?",
+      "error": "ai_optimization/gemini/llm_responses/live: Invalid Field: 'web_search_country_iso_code'."
+    },
+    {
+      "provider": "perplexity",
+      "model": "sonar",
+      "lang": "en",
+      "prompt": "How do I govern several Salesforce implementation partners in one program?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "salesforce.com",
+        "help.salesforce.com",
+        "developer.salesforce.com",
+        "partners.salesforce.com"
+      ]
+    },
+    {
+      "provider": "google_ai_mode",
+      "model": "Google AI Mode",
+      "lang": "en",
+      "prompt": "How do I govern several Salesforce implementation partners in one program?",
+      "cited": false,
+      "mentioned": false,
+      "domains": []
+    },
+    {
+      "provider": "chat_gpt",
+      "model": "gpt-5-mini-2025-08-07",
+      "lang": "en",
+      "prompt": "Best practices for rolling out Salesforce Field Service in waves",
+      "cited": false,
+      "mentioned": false,
+      "domains": []
+    },
+    {
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "lang": "en",
+      "prompt": "Best practices for rolling out Salesforce Field Service in waves",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "praxedo.com",
+        "andrewreise.com",
+        "clicklearn.com",
+        "techforceservices.com",
+        "fieldservicesoftware.io"
+      ]
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "lang": "en",
+      "prompt": "Best practices for rolling out Salesforce Field Service in waves",
+      "error": "ai_optimization/gemini/llm_responses/live: Invalid Field: 'web_search_country_iso_code'."
+    },
+    {
+      "provider": "perplexity",
+      "model": "sonar",
+      "lang": "en",
+      "prompt": "Best practices for rolling out Salesforce Field Service in waves",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "salesforce.com",
+        "salesforcedictionary.com",
+        "resources.docs.salesforce.com",
+        "help.salesforce.com",
+        "appexchange.salesforce.com",
+        "fluidogroup.com"
+      ]
+    },
+    {
+      "provider": "google_ai_mode",
+      "model": "Google AI Mode",
+      "lang": "en",
+      "prompt": "Best practices for rolling out Salesforce Field Service in waves",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "australia.viseo.com",
+        "salesforce.com",
+        "help.salesforce.com",
+        "salesforceben.com"
+      ]
+    },
+    {
+      "provider": "chat_gpt",
+      "model": "gpt-5-mini-2025-08-07",
+      "lang": "en",
+      "prompt": "What are the limitations of Salesforce Document Builder?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "help.salesforce.com",
+        "developer.salesforce.com",
+        "levelupsalesforce.com",
+        "salesforceben.com",
+        "reddit.com"
+      ]
+    },
+    {
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "lang": "en",
+      "prompt": "What are the limitations of Salesforce Document Builder?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "help.salesforce.com",
+        "tinkertimelabs.com",
+        "thecloudupdate.co",
+        "salesforceben.com",
+        "experlogix.com",
+        "titandxp.com",
+        "helpx.adobe.com"
+      ]
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "lang": "en",
+      "prompt": "What are the limitations of Salesforce Document Builder?",
+      "error": "ai_optimization/gemini/llm_responses/live: Invalid Field: 'web_search_country_iso_code'."
+    },
+    {
+      "provider": "perplexity",
+      "model": "sonar",
+      "lang": "en",
+      "prompt": "What are the limitations of Salesforce Document Builder?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "help.salesforce.com",
+        "developer.salesforce.com",
+        "helpx.adobe.com",
+        "trailhead.salesforce.com"
+      ]
+    },
+    {
+      "provider": "google_ai_mode",
+      "model": "Google AI Mode",
+      "lang": "en",
+      "prompt": "What are the limitations of Salesforce Document Builder?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "help.salesforce.com",
+        "developer.salesforce.com"
+      ]
+    }
+  ]
+}

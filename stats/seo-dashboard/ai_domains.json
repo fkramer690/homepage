@@ -1,1 +1,82 @@
-[]
+[
+ {
+  "domain": "salesforce.com",
+  "citations": 16
+ },
+ {
+  "domain": "help.salesforce.com",
+  "citations": 14
+ },
+ {
+  "domain": "gearset.com",
+  "citations": 5
+ },
+ {
+  "domain": "developer.salesforce.com",
+  "citations": 5
+ },
+ {
+  "domain": "salesforceben.com",
+  "citations": 5
+ },
+ {
+  "domain": "linkedin.com",
+  "citations": 4
+ },
+ {
+  "domain": "trailhead.salesforce.com",
+  "citations": 4
+ },
+ {
+  "domain": "resources.docs.salesforce.com",
+  "citations": 4
+ },
+ {
+  "domain": "github.com",
+  "citations": 4
+ },
+ {
+  "domain": "bc-advisory.de",
+  "citations": 3
+ },
+ {
+  "domain": "appexchange.salesforce.com",
+  "citations": 3
+ },
+ {
+  "domain": "gulp.de",
+  "citations": 3
+ },
+ {
+  "domain": "freelancermap.de",
+  "citations": 3
+ },
+ {
+  "domain": "fratch.io",
+  "citations": 3
+ },
+ {
+  "domain": "freelance.de",
+  "citations": 3
+ },
+ {
+  "domain": "youtube.com",
+  "citations": 3
+ },
+ {
+  "domain": "salesforcedictionary.com",
+  "citations": 3
+ },
+ {
+  "domain": "accelq.com",
+  "citations": 3
+ },
+ {
+  "domain": "reddit.com",
+  "citations": 3
+ },
+ {
+  "domain": "sfdx-hardis.cloudity.com",
+  "citations": 3
+ }
+]

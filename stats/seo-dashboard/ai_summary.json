@@ -1,1 +1,42 @@
-[]
+[
+ {
+  "key": "2026-10-28:chat_gpt",
+  "date": "2026-10-28",
+  "provider": "chat_gpt",
+  "answers": 15,
+  "cited": 0,
+  "mentioned": 0
+ },
+ {
+  "key": "2026-10-28:claude",
+  "date": "2026-10-28",
+  "provider": "claude",
+  "answers": 15,
+  "cited": 0,
+  "mentioned": 0
+ },
+ {
+  "key": "2026-10-28:gemini",
+  "date": "2026-10-28",
+  "provider": "gemini",
+  "answers": 0,
+  "cited": 0,
+  "mentioned": 0
+ },
+ {
+  "key": "2026-10-28:perplexity",
+  "date": "2026-10-28",
+  "provider": "perplexity",
+  "answers": 15,
+  "cited": 0,
+  "mentioned": 0
+ },
+ {
+  "key": "2026-10-28:google_ai_mode",
+  "date": "2026-10-28",
+  "provider": "google_ai_mode",
+  "answers": 15,
+  "cited": 0,
+  "mentioned": 0
+ }
+]
