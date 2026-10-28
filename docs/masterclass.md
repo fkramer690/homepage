@@ -26,6 +26,19 @@ All chapters of all masterclasses live in the one `masterclass` collection (`src
 4. Write the chapters with `course: <id>` and their own translationKeys.
 5. Never move a published masterclass again without redirect pages (see "Old URLs" below).
 
+# Product masterclasses (Manufacturing Cloud, Revenue Cloud, B2B Commerce, Field Service)
+
+Four masterclasses with a hub and five chapters each, same frontmatter, body rules and build check as the AI masterclass below:
+
+| Masterclass | `course` | translationKeys | URL segment (DE and EN) | Texts in i18n |
+|---|---|---|---|---|
+| Manufacturing Cloud | `manufacturing-cloud` | `mfg-01` … `mfg-05` | `manufacturing-cloud` | `masterclassManufacturing` |
+| Revenue Cloud | `revenue-cloud` | `revenue-01` … `revenue-05` | `revenue-cloud` | `masterclassRevenue` |
+| B2B Commerce | `b2b-commerce` | `commerce-01` … `commerce-05` | `b2b-commerce` | `masterclassCommerce` |
+| Field Service | `field-service` | `fsl-01` … `fsl-05` | `field-service` | `masterclassFieldService` |
+
+Each chapter links its articles (blog categories and the topics `commerce`, `revenue`, `field-service`), its neighbouring chapters and the matching chapters of the other masterclasses (`../../<segment>/<slug>/`). Boundaries: sales agreements, rebates and warranty belong to Manufacturing Cloud; quote, configurator, pricing, billing and the move from Salesforce CPQ and Billing to Revenue Cloud; storefront, cart and checkout to B2B Commerce; scheduling, mobile app and maintenance to Field Service. Examples are marked as assumptions until Fabian confirms them. Hub clusters are in `src/lib/masterclass.ts`.
+
 # Masterclass "DevOps and release management"
 
 Hub plus ten chapters, `course: devops`, translationKeys `devops-01` … `devops-10`: DE under `/masterclass/devops-release-management/`, EN under `/en/masterclass/devops-release-management/`. Same frontmatter, body rules and build check as the AI masterclass below. DevOps Center / Lifecycle Center is covered only in chapter 4 (tools); sfdx-hardis appears as an example next to Gearset, Copado and Flosum. Links to the AI masterclass go to `../../ki-salesforce/<slug>/` (DE) and `../../ai-salesforce/<slug>/` (EN).
