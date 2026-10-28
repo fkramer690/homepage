@@ -1,6 +1,6 @@
 ---
 title: "Garantie und After-Sales in Manufacturing Cloud"
-description: "Garantieansprüche, Rückrufe und installierte Basis in Manufacturing Cloud: was die Servicefunktionen leisten, wer welche Lizenz braucht, wo Field Service beginnt."
+description: "Garantieansprüche, Rückrufe und installierte Basis in Manufacturing Cloud: was die Servicefunktionen leisten, wer welche Lizenz braucht und wo Field Service beginnt."
 lang: de
 slug: garantie-und-after-sales
 course: manufacturing-cloud
