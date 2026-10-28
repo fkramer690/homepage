@@ -38,6 +38,8 @@ Field Service, das Salesforce heute als [Field Service and Operations](https://w
 
 Die Field Service App ist eine eigene App im App Store und bei Google Play. Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/field-service-mobile/work-from-anywhere) bekommen Techniker darin ihre Einsätze, Kundendaten, Änderungen am Arbeitsauftrag und die Unterschrift des Kunden, ohne im Büro anzurufen. Die Salesforce Mobile App ist die allgemeine App für Vertrieb und Innendienst. Für einen Hersteller zählt vor allem der Unterschied beim Offline-Betrieb: Laut [Salesforce Developers](https://developer.salesforce.com/docs/atlas.en-us.mobile_offline.meta/mobile_offline/intro_enabled_apps.htm) kann jede Field-Service-Org eigene Lightning Web Components in der Field Service App offline nutzen, die Salesforce Mobile App braucht dafür die Lizenz Mobile App Plus. Meine Regel: Techniker arbeiten in der Field Service App, Disposition und Innendienst bleiben im Browser.
 
+In meinen Field-Service-Projekten war die Akzeptanz der Techniker einer der Stolpersteine. Planen Sie deshalb Zeit ein, um Formulare und Abläufe mit den Technikern selbst zu testen, bevor die App ausgerollt wird.
+
 ## Welche Daten braucht der Techniker offline?
 
 Eine Grundausstattung für offline bringt die App mit. Laut dem [Trailhead-Modul zu Offline-Briefcases](https://trailhead.salesforce.com/content/learn/modules/offline-briefcase/allow-access-to-information-online) legt Briefcase Builder fest, welche Datensätze jede Technikergruppe herunterlädt, und Performance Priming synchronisiert die wichtigsten Änderungen alle fünf Minuten, solange Verbindung besteht. Offline erfasste Änderungen speichert das Gerät und überträgt sie später.

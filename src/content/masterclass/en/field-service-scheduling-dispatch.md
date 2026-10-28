@@ -49,6 +49,8 @@ Hardly any of this is created in Field Service. Assets come from the ERP, skills
 
 My starting point for the data check is always the same: the failed visits of the last three months, each with a cause. Missing parts, no access, wrong technician, technician absent. The most frequent cause shows which data needs to be clean first.
 
+From my own project experience: I have introduced Field Service for maintenance, breakdown jobs and commissioning, with automatic scheduling instead of purely manual dispatch. Whether the engine made good suggestions depended above all on the master data in this section.
+
 ## How does the scheduling engine decide?
 
 The engine assigns appointments by a scheduling policy. Work rules filter out technicians who cannot take a job, such as Match Skills or the visiting hours rule. Service objectives rank the rest with a weight: short travel, early slot, preferred technician. Field Service ships four policies: Customer First, High Intensity, Soft Boundaries and Emergency. I start with Customer First and adjust the weights instead of building a policy from scratch.
