@@ -47,7 +47,8 @@ Zwei Begriffe vorab, weil der Rest des Artikels sie nutzt. Eine Pricing Procedur
 
 Laut Salesforce-Hilfe sind die Revenue-Management-Funktionen für B2B Commerce in Orgs mit einer Lizenz Commerce Growth oder Commerce Advanced zusammen mit einer Lizenz Revenue Cloud Advanced verfügbar. Die Revenue Settings müssen aktiviert sein, und die Lizenzen kaufen Sie über Ihren Account Executive.
 
-Zwei Fakten aus den offiziellen Preisseiten für das Budget. Die [B2B-Commerce-Editionen](https://www.salesforce.com/editions-pricing/commerce-cloud/b2b/) stehen auf "Contact for Pricing" und werden als Anteil am Bruttowarenwert (GMV) über den Storefront abgerechnet; einen Prozentsatz veröffentlicht Salesforce nicht. Die [Preisseite von Revenue Cloud](https://www.salesforce.com/sales/revenue-lifecycle-management/pricing/) nennt für Revenue Cloud Advanced 200 US-Dollar pro Nutzer und Monat bei jährlicher Abrechnung und beschreibt es als eigenes Produkt, das zusätzlich zum Sales-Cloud-Abonnement gekauft wird. 
+Zwei Fakten aus den offiziellen Preisseiten für das Budget. Die [B2B-Commerce-Editionen](https://www.salesforce.com/editions-pricing/commerce-cloud/b2b/) stehen auf "Contact for Pricing" und werden als Anteil am Bruttowarenwert (GMV) über den Storefront abgerechnet; einen Prozentsatz veröffentlicht Salesforce nicht. Die [Preisseite von Revenue Cloud](https://www.salesforce.com/sales/revenue-lifecycle-management/pricing/) nennt für Revenue Cloud Advanced 200 US-Dollar pro Nutzer und Monat bei jährlicher Abrechnung und beschreibt es als eigenes Produkt, das zusätzlich zum Sales-Cloud-Abonnement gekauft wird.
+
 ```hinweis offen
 Wie viele Nutzer mit Revenue Cloud Advanced ein Store mit externen Käufern braucht, steht auf keiner der beiden Seiten. Stellen Sie diese Frage, bevor Sie den Business Case rechnen, denn die Antwort kann die Zahl stark verschieben.
 ```

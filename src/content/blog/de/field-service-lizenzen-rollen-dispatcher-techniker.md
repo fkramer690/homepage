@@ -51,7 +51,9 @@ Drei Fußnoten der Preisliste sind wichtiger als die Preise selbst.
 2. **Mindestens eine Dispatcher-Lizenz.** Techniker und Contractors brauchen mindestens einen Dispatcher in der Org, um das Planungswerkzeug zu nutzen. Ein reiner Techniker-Rollout ohne Dispatcher-Lizenz funktioniert nicht.
 3. **Kein Case Management mit Dispatcher oder Technician.** Laut Preisliste dürfen diese beiden Lizenzen nicht für Contact Center, Call Center oder Case Management genutzt werden. Field Service Plus darf das.
 
+```hinweis achtung
 Die dritte Regel ist für mich das größte Risiko. In kleineren Serviceteams nehmen oft dieselben drei Leute morgens die Störungshotline an und planen nachmittags die Techniker. Mit einer Dispatcher-Lizenz verstößt das gegen die Lizenzbedingungen, auch wenn das System technisch einen Case öffnen lässt.
+```
 
 ## Welche Rolle braucht welche Lizenz?
 
