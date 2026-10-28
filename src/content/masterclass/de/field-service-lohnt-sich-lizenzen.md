@@ -31,7 +31,7 @@ Salesforce Field Service rechnet sich für Hersteller, deren Techniker viele kur
 
 ## Was ist Salesforce Field Service heute?
 
-Salesforce Field Service ist das Außendienstprodukt auf Basis von Service Cloud. Salesforce verkauft es heute als Field Service and Operations, so heißt auch die [Preisseite](https://www.salesforce.com/de/products/field-service/pricing). Ich bleibe bei Salesforce Field Service, weil Kunden und Partner danach suchen. Das Produkt deckt vier Bereiche ab:
+Salesforce Field Service ist das Außendienstprodukt auf Basis von Service Cloud. Salesforce verkauft es heute als Field Service and Operations, so heißt auch die [Preisseite](https://www.salesforce.com/de/products/field-service/pricing). Das Produkt deckt vier Bereiche ab:
 
 - **Terminplanung.** Eine Scheduling Engine wählt für jeden Serviceauftrag einen passenden Techniker und ein Zeitfenster. Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/field-service-lightning-scheduling-basics/examine-scheduling-policies) filtern Work Rules ungeeignete Techniker heraus, etwa wegen eines fehlenden Skills, und Service Objectives bewerten die übrigen, etwa nach kürzester Fahrzeit. Zusammen bilden sie eine Scheduling Policy.
 - **Mobile App.** Techniker sehen ihre Einsätze, Assets und die Historie, auch offline, und erfassen Zeiten, Teile, Fotos und Unterschriften.
@@ -49,9 +49,9 @@ Optimierung hilft dort, wo es viel zu optimieren gibt. Ich frage vor jeder Produ
 3. **Zahl der Skills und Teile, die passen müssen.** Je mehr, desto schwerer wird die Planung von Hand.
 4. **Erstlösungsquote**, also wie oft ein Einsatz beim ersten Besuch erledigt ist. Ist sie niedrig, weil Teile oder Skills fehlen, hilft bessere Planung direkt.
 
-Wartung, Reparaturen und Inspektionen mit mehreren Kunden pro Tag sind der beste Fall. Ein Techniker, der zwei Wochen eine Anlage in Betrieb nimmt, braucht Zeichnungen, einen Projektplan und eine saubere Abnahme; Routenoptimierung hilft ihm wenig. Wer beides hat, plant die langen Einsätze in Field Service als mehrtägige Aufträge mit, verdient das Geld aber mit den kurzen.
+Wartung, Reparaturen und Inspektionen mit mehreren Kunden pro Tag sind der beste Fall. Ein Techniker, der zwei Wochen eine Anlage in Betrieb nimmt, braucht Zeichnungen, einen Projektplan und eine saubere Abnahme; Routenoptimierung hilft ihm wenig.
 
-Kennt niemand die vier Zahlen, ist das bereits ein Befund: Dann fehlt die Grundlage für jeden Business Case, egal mit welchem Produkt. Die Kriterien im Detail und die Rechnung mit 40 Technikern stehen in [Salesforce Field Service: Wann lohnt es sich?](../../../blog/salesforce-field-service-lohnt-sich/).
+Kennt niemand die vier Zahlen, fehlt die Grundlage für jeden Business Case. Die Kriterien im Detail und die Rechnung mit 40 Technikern stehen in [Salesforce Field Service: Wann lohnt es sich?](../../../blog/salesforce-field-service-lohnt-sich/).
 
 ## Wie kommt ein Auftrag vom Case zum Techniker?
 
@@ -92,7 +92,7 @@ Die Matrix baue ich aus dem, was jemand im System tut, nicht aus der Stellenbeze
 
 ### Field Service Plus oder Service Cloud plus Dispatcher?
 
-Bei vielen Maschinenbauern nehmen dieselben Leute morgens die Störungshotline an und planen nachmittags die Techniker. Mit einer Dispatcher-Lizenz verstößt das gegen die Lizenzbedingungen, auch wenn das System den Case technisch öffnen lässt. Für diese Mischrolle nennt die Preisliste Field Service Plus. Gegenüber Service Cloud Core kostet sie 35 € mehr pro Monat, und dieser Unterschied kauft das Recht zu disponieren. Trennen Sie Hotline und Disposition sauber, reichen Service Cloud für die einen und Dispatcher für die anderen. Das ist zuerst eine Prozessfrage und erst dann eine Lizenzfrage.
+Bei vielen Maschinenbauern nehmen dieselben Leute morgens die Störungshotline an und planen nachmittags die Techniker. Mit einer Dispatcher-Lizenz verstößt das gegen die Lizenzbedingungen, auch wenn das System den Case technisch öffnen lässt. Für diese Mischrolle nennt die Preisliste Field Service Plus. Gegenüber Service Cloud Core kostet sie 35 € mehr pro Monat, und dieser Unterschied kauft das Recht zu disponieren. Trennen Sie Hotline und Disposition sauber, reichen Service Cloud für die einen und Dispatcher für die anderen.
 
 ### Contractor Plus pro Nutzer oder pro Login?
 
@@ -116,13 +116,13 @@ Meine Regel: Das Paket lohnt sich, wenn Slack, Tableau Next, Digital Channels un
 
 ## Wo ist Salesforce Field Service nicht die richtige Antwort?
 
-Field Service ist ein starkes Planungsprodukt. Nicht jeder Außendienst braucht eins. Drei Alternativen prüfe ich vor jeder Lizenz:
+Nicht jeder Außendienst braucht ein Planungsprodukt. Drei Alternativen prüfe ich vor jeder Lizenz:
 
 - **Das Servicemodul im ERP**, wenn Aufträge, Teile und Abrechnung dort ohnehin laufen und die Techniker wenige, lange Einsätze haben.
 - **Ein schlankes Planungswerkzeug** neben dem CRM, wenn nur die Disposition fehlt und Assets, Verträge und Historie anderswo sauber gepflegt sind.
 - **Service Cloud ohne Field-Service-Lizenzen**, wenn vor allem Case-Bearbeitung und Dokumentation fehlen und Termine einfach vereinbart werden.
 
-Zwei Grenzen zu anderen Salesforce-Produkten sollten Sie vor dem Angebot kennen. Bearbeitet dieselbe Serviceorganisation Garantieansprüche von Händlern, kommt Manufacturing Cloud for Service ins Spiel; wo die Garantie endet und Field Service beginnt, klärt das Kapitel [Garantie und After-Sales](../../manufacturing-cloud/garantie-und-after-sales/) der Manufacturing-Cloud-Masterclass. Werden Wartungsverträge als wiederkehrender Umsatz verkauft und abgerechnet, ist das ein Thema für Revenue Cloud, eingeordnet im [Überblick zu Revenue Cloud](../../revenue-cloud/revenue-cloud-ueberblick/). Field Service liefert dann die Besuche, die der Vertrag verspricht.
+Zwei Grenzen zu anderen Salesforce-Produkten sollten Sie vor dem Angebot kennen. Bearbeitet dieselbe Serviceorganisation Garantieansprüche von Händlern, kommt Manufacturing Cloud for Service ins Spiel; wo die Garantie endet und Field Service beginnt, klärt das Kapitel [Garantie und After-Sales](../../manufacturing-cloud/garantie-und-after-sales/) der Manufacturing-Cloud-Masterclass. Werden Wartungsverträge als wiederkehrender Umsatz verkauft und abgerechnet, ist das ein Thema für Revenue Cloud, eingeordnet im [Überblick zu Revenue Cloud](../../revenue-cloud/revenue-cloud-ueberblick/).
 
 ## Ein typisches Szenario, als Annahme: die Lizenzrechnung eines Komponentenherstellers
 
@@ -138,7 +138,7 @@ Ein Komponentenhersteller hat drei Mitarbeitende, die Hotline und Disposition ge
 
 Das sind 5.930 € im Monat und 71.160 € im Jahr zum Listenpreis, Implementierung und ERP-Schnittstelle nicht eingerechnet. Die Partnertechniker melden sich je etwa dreimal im Monat an. Pro Login wären das 12 Logins zu 32 €, also 384 € statt 320 €. Bei dieser Nutzung gewinnt die Nutzerlizenz knapp, bei zwei Logins pro Kopf wäre es umgekehrt.
 
-Soll die Hotline zusätzlich einen KI-Agenten bekommen, kosten die fünf Büroarbeitsplätze mit dem Agentforce-Add-on 625 Dollar mehr im Monat. Dieselben fünf Plätze auf Agentforce 1 Field Service kosten 3.250 € im Monat, aus Einzelteilen sind es 1.665 € (Field Service Plus und Dispatcher plus je 125 Dollar für das Add-on, das die deutsche Seite nur in Dollar nennt). Ohne geplanten Bedarf für Slack, Tableau Next und Data Cloud spricht hier nichts für das Paket.
+Soll die Hotline zusätzlich einen KI-Agenten bekommen, kosten die fünf Büroarbeitsplätze mit dem Agentforce-Add-on 625 Dollar mehr im Monat. Dieselben fünf Plätze auf Agentforce 1 Field Service kosten 3.250 € im Monat. Aus Einzelteilen sind es 1.040 € für Field Service Plus und Dispatcher plus 625 Dollar für das Add-on, das die deutsche Seite nur in Dollar nennt. Ohne geplanten Bedarf für Slack, Tableau Next und Data Cloud spricht hier nichts für das Paket.
 
 ## Was sollten Sie entscheiden, bevor ein Partner baut?
 

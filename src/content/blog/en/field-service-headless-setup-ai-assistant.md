@@ -70,7 +70,7 @@ I would review the plan in one workshop with the service manager and the dispatc
 | Scheduling policies | Start from a standard policy, weights explained | Dispatch lead |
 | Mobile app | Which values a form captures as fields, voice input, location | Service, data protection |
 
-Two points deserve extra attention. First, data capture forms. Before forms are built at scale, decide which values become fields on the asset or work order, as I argue in [Field Service mobile: guided work and voice](../salesforce-field-service-mobile-guided-voice/). Voice to form records employee speech, which in Germany touches the works council. Second, sample data. The setup loads sample service appointments for technicians, which belong in a sandbox and nowhere else.
+Two points deserve extra attention. First, data capture forms. Before forms are built at scale, decide which values become fields on the asset or work order, as I argue in [Field Service mobile: guided work and voice](../salesforce-field-service-mobile-guided-voice/). Voice to form processes what technicians say, which in Germany touches the works council. Second, sample data. The setup loads sample service appointments for technicians, which belong in a sandbox and nowhere else.
 
 ## Why does an AI-built configuration still go through Git?
 

@@ -33,7 +33,7 @@ In Revenue Cloud, three parts decide what sales can quote. The product catalog d
 
 ## How do catalog, configurator and pricing work together?
 
-The three parts build on each other. The catalog holds products, attributes and bundle structure. The configurator works on that structure and checks which options and attribute values fit together. Salesforce Pricing then takes the configured line, reads the price book and calculates the net price step by step. A badly modelled catalog makes both the rules and the pricing harder, so the catalog design comes first.
+The catalog holds products, attributes and bundle structure. The configurator checks which options and attribute values fit together. Salesforce Pricing takes the configured line and calculates the net price step by step. A badly modelled catalog makes rules and pricing harder, so the catalog design comes first.
 
 All three run on standard objects of the core platform, not in a managed package. A note on names: salesforce.com says Revenue Cloud, Trailhead says Agentforce Revenue Management, and the Developer Guide for Winter '27 is titled Revenue Management Developer Guide. The [overview of product names](../../../blog/revenue-cloud-product-names-rlm-rca/) sorts this out.
 
@@ -92,7 +92,7 @@ One detail catches most teams in the first weeks. After a price book entry or a 
 
 ## Which prices should come from SAP?
 
-SAP calculates customer prices with the condition technique: price lists, customer prices, discounts per material group, surcharges and scales, each with a validity period. Revenue Cloud can calculate the same prices. Trouble starts when both do it for the same price, because the quote and the SAP order confirmation then differ sooner or later, and inside sales sorts it out order by order.
+SAP calculates customer prices with the condition technique: price lists, customer prices, discounts, surcharges and scales, each with a validity period. Revenue Cloud can calculate the same prices. If both do it for the same price, quote and SAP order confirmation differ sooner or later, and inside sales sorts it out order by order.
 
 There are three routes, and you can choose per price type:
 
@@ -106,7 +106,7 @@ For route A, the [MuleSoft Accelerator for SAP](https://anypoint.mulesoft.com/ex
 
 ## From the configured quote to the sales agreement
 
-Many manufacturers do not stop at the quote. In run-rate business the configured product is planned in a sales agreement in Manufacturing Cloud, with quantities per product and period. Two things follow for this chapter. Every variant that is planned in an agreement needs its own product identity that SAP knows too, which is the second of the three catalog tests above. And the price is approved once, on the quote, and carried into the agreement, so the agreement needs no pricing logic of its own.
+In run-rate business the configured product is planned in a sales agreement in Manufacturing Cloud, with quantities per product and period. Two things follow. Every variant that is planned in an agreement needs its own product identity that SAP knows too, which is the second of the three catalog tests above. And the price is approved once, on the quote, and carried into the agreement, so the agreement needs no pricing logic of its own.
 
 How configured products move from the quote into the agreement, and what the configurator has to settle beforehand, is described in [From quote to sales agreement: the configurator](../../../blog/quote-to-sales-agreement-product-configurator/). The agreement side is covered in the Manufacturing Cloud chapter on [agreements and forecasting](../../manufacturing-cloud/agreements-and-forecasting/).
 
@@ -124,7 +124,7 @@ How configuration data moves through a pipeline is the subject of the DevOps cha
 
 A typical scenario, as an assumption: a manufacturer of packaging machines sells 30 base machines in three families through direct sales, and spare parts through dealers. Two families have their compatibility rules in spreadsheets kept by application engineers, the third uses SAP variant configuration.
 
-The design would look like this. Three classifications with about a dozen attributes each, 30 base machines, configurable bundles for tooling and safety packages, a separate spare parts catalog loaded from SAP. Constraint models for the two spreadsheet families, with compatibility tables loaded from a custom object and regression cases per family. The SAP family keeps its configurator for now, and Salesforce takes the result through an interface. Machine prices follow route C with list prices from SAP every night and the sync right after the load. Dealer prices for spare parts follow route A. Product management owns the catalog and the constraint models, a pricing admin in sales operations owns the procedures, and controlling signs off every pricing change.
+Three classifications with about a dozen attributes each, 30 base machines, configurable bundles for tooling and safety packages, a separate spare parts catalog loaded from SAP. Constraint models for the two spreadsheet families, with compatibility tables loaded from a custom object and regression cases per family. The SAP family keeps its configurator for now, and Salesforce takes the result through an interface. Machine prices follow route C with list prices from SAP every night and the sync right after the load. Dealer prices for spare parts follow route A. Product management owns the catalog and the constraint models, a pricing admin in sales operations owns the procedures, and controlling signs off every pricing change.
 
 ## What should be decided before a partner builds?
 

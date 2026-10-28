@@ -70,7 +70,7 @@ Ich würde den Plan in einem Workshop mit Serviceleitung und Dispositionsleitung
 | Scheduling Policies | Start mit Standard-Policy, Gewichte begründet | Dispositionsleitung |
 | Mobile App | Welche Werte ein Formular als Feld erfasst, Spracheingabe, Standort | Service, Datenschutz |
 
-Zwei Punkte verdienen besondere Aufmerksamkeit. Erstens die Erfassungsformulare. Bevor Formulare in großem Stil entstehen, legen Sie fest, welche Werte Felder am Asset oder Arbeitsauftrag werden, wie ich in [Field Service mobil: Führung und Sprache](../salesforce-field-service-mobile-aussendienst/) begründe. Voice to Form zeichnet die Sprache von Beschäftigten auf, das betrifft in Deutschland den Betriebsrat. Zweitens die Beispieldaten. Die Einrichtung lädt Beispieltermine für Techniker, die gehören in eine Sandbox und nirgendwo sonst hin.
+Zwei Punkte verdienen besondere Aufmerksamkeit. Erstens die Erfassungsformulare. Bevor Formulare in großem Stil entstehen, legen Sie fest, welche Werte Felder am Asset oder Arbeitsauftrag werden, wie ich in [Field Service mobil: Führung und Sprache](../salesforce-field-service-mobile-aussendienst/) begründe. Voice to Form verarbeitet, was Techniker sagen, das betrifft in Deutschland den Betriebsrat. Zweitens die Beispieldaten. Die Einrichtung lädt Beispieltermine für Techniker, die gehören in eine Sandbox und nirgendwo sonst hin.
 
 ## Warum geht eine KI-gebaute Konfiguration trotzdem über Git?
 
