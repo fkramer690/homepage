@@ -48,14 +48,14 @@ Warum das auch für Jira, Confluence und Miro gilt und wie Sie einen Umzug plane
 
 ## Welche Rollen braucht ein Release-Prozess?
 
-In Programmen mit mehreren Partnern sehe ich immer dieselbe Lücke: Jeder Partner verantwortet seinen Stream, niemand das Ganze. Vier Rollen schließen sie. Eine Person kann in kleinen Programmen zwei Rollen tragen, die Verantwortung muss trotzdem benannt sein.
+In Programmen mit mehreren Partnern entsteht leicht dieselbe Lücke: Jeder Partner verantwortet seinen Stream, niemand das Ganze. Vier Rollen schließen sie. Eine Person kann in kleinen Programmen zwei Rollen tragen, die Verantwortung muss trotzdem benannt sein.
 
 - **Release Manager (Kundenseite).** Verantwortet Pipeline, Release-Kalender und jede Promotion von Integration über UAT bis Produktion. Die [Release-Manager-Anleitung von sfdx-hardis](https://sfdx-hardis.cloudity.com/salesforce-devops-release-home/) beschreibt die Aufgaben gut: Validierungsjobs prüfen, Konflikte lösen, in die Stufen-Branches mergen, Hotfixes ausliefern und danach zurück in die Entwicklungs-Branches bringen, Release Notes und DORA-Kennzahlen erzeugen. Laut derselben Seite übernehmen das ein oder zwei Teammitglieder, in kleinen Projekten ein Tech Lead oder erfahrener Admin in Teilzeit.
 - **Architekt (Kundenseite).** Schreibt die Entwicklungs- und Architekturstandards, gibt architekturrelevante Änderungen frei (neue Objekte, Schnittstellen, Sharing, Rechtekonzept) und entscheidet, wenn zwei Streams dasselbe Objekt brauchen. Welcher Stream welches Objekt verantwortet, steht in einer [Object Ownership Matrix](../../../blog/object-ownership-matrix-salesforce/).
 - **Technischer Lead pro Partner.** Sorgt dafür, dass die Pull Requests seines Teams vollständig, klein und geprüft ankommen, macht das erste Review im eigenen Stream und liefert die Angaben für die Release Notes. Er hat keine Freigaberechte für Stufen, die andere Partner betreffen.
 - **Product Owner im Fachbereich.** Etwa die Serviceleitung für Field Service oder die Vertriebsleitung für das Händlerportal. Nimmt Stories in UAT ab und entscheidet fachlich, ob eine Funktion mit dem nächsten Release für Anwender freigeschaltet wird.
 
-Die Release-Rolle ist die, an der am häufigsten gespart wird. Meine Position dazu steht in mehreren Artikeln: Wer mit einem Open-Source-Werkzeug wie sfdx-hardis Lizenzkosten spart, investiert das Geld am besten in eine interne Release-Rolle. Bei kommerziellen Plattformen wie Gearset, Copado oder Flosum gilt dasselbe. Ihr Vorteil ist, dass sich Rollen und Freigaben in einer Oberfläche einrichten lassen und der Hersteller Support leistet; verantworten muss die Freigaben trotzdem ein Mensch auf Ihrer Seite. In einem Programm, das ich begleitet habe, lief anfangs jeder Pull Request über meinen Schreibtisch. Als der Prozess stabil lief, habe ich ihn an einen internen Kollegen übergeben. Das ist der Weg, den ich empfehle: extern aufbauen, intern übergeben.
+Die Release-Rolle ist die, an der am häufigsten gespart wird. Meine Position dazu steht in mehreren Artikeln: Wer mit einem Open-Source-Werkzeug wie sfdx-hardis Lizenzkosten spart, investiert das Geld am besten in eine interne Release-Rolle. Bei kommerziellen Plattformen wie Gearset, Copado oder Flosum gilt dasselbe. Ihr Vorteil ist, dass sich Rollen und Freigaben in einer Oberfläche einrichten lassen und der Hersteller Support leistet; verantworten muss die Freigaben trotzdem ein Mensch auf Ihrer Seite. Den Weg, den ich empfehle, fasse ich so zusammen: extern aufbauen, intern übergeben. Wie das in einem Programm aussehen kann, beschreibe ich in [warum DevOps über Salesforce-Großprojekte entscheidet](../../../blog/warum-devops-salesforce-enterprise-projekte/).
 
 ## Wer gibt was frei?
 
@@ -89,7 +89,7 @@ Die Pipeline nützt wenig, wenn jemand an ihr vorbei deployen kann. Für Deploym
 
 ## Welche Regeln gehören in jeden Partnervertrag?
 
-Ich bin Architekt, kein Anwalt. Die folgenden Punkte beschreiben, was ich aus technischer Sicht schriftlich sehen möchte. Ihre Rechtsabteilung macht daraus Klauseln. Bewährt hat sich eine Anlage zum Rahmenvertrag, die für jeden Partner identisch gilt, statt Regeln in jeder Leistungsbeschreibung neu zu verhandeln.
+Ich bin Architekt, kein Anwalt. Die folgenden Punkte beschreiben, was ich aus technischer Sicht schriftlich sehen möchte. Ihre Rechtsabteilung macht daraus Klauseln. Ich empfehle eine Anlage zum Rahmenvertrag, die für jeden Partner identisch gilt, statt Regeln in jeder Leistungsbeschreibung neu zu verhandeln.
 
 1. **Arbeiten in Ihren Werkzeugen.** Code, Tickets und Dokumentation entstehen in Ihrem Repository und Ihrem Backlog, mit persönlichen, benannten Benutzern. Geteilte Logins sind ausgeschlossen.
 2. **Das Werkzeug steht fest.** Die Wahl fällt am Anfang des Programms und gilt für jeden Partner. Wer später kommt, bringt kein eigenes Release-Werkzeug mit.
@@ -101,7 +101,7 @@ Ich bin Architekt, kein Anwalt. Die folgenden Punkte beschreiben, was ich aus te
 8. **Regeln für KI-Coding.** Welche Tools, welche Daten, welches Review. Die Prüfpunkte dafür stehen in [Partner codet mit KI: Was in den Vertrag gehört](../../../blog/partner-ki-coding-regeln-vertrag/).
 9. **Ausstieg.** Übergabe ohne Arbeit außerhalb des Repositorys, Bestätigung, dass lokale Kopien mit Ihrem Code und Ihren Zugangsdaten gelöscht sind, aktive Mitarbeit an der Übergabe für einen vereinbarten Zeitraum.
 
-Mit Nearshore-Teams in Osteuropa und Indien habe ich erlebt, dass schriftliche Regeln mehr wert sind als jede Abstimmung im Call. Ein Team in einer anderen Zeitzone kann nicht kurz nachfragen, ob ein Setup-Klick in UAT in Ordnung ist. Es braucht die Regel vorher.
+Ich habe mit Nearshore-Teams in Osteuropa und Indien gearbeitet, und meine Einschätzung ist: Schriftliche Regeln sind mehr wert als jede Abstimmung im Call. Ein Team in einer anderen Zeitzone kann nicht kurz nachfragen, ob ein Setup-Klick in UAT in Ordnung ist. Es braucht die Regel vorher.
 
 ## Wie übersteht der Release-Prozess einen Partnerwechsel?
 

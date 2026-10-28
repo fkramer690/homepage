@@ -48,14 +48,14 @@ Why the same applies to Jira, Confluence and Miro, and how to plan a move when a
 
 ## Which roles does a release process need?
 
-In programmes with several partners I keep seeing the same gap: each partner owns its stream, nobody owns the whole. Four roles close it. In small programmes one person can hold two roles, but the responsibility still has to be named.
+Programmes with several partners easily develop the same gap: each partner owns its stream, nobody owns the whole. Four roles close it. In small programmes one person can hold two roles, but the responsibility still has to be named.
 
 - **Release manager (client side).** Owns the pipeline, the release calendar and every promotion from integration through UAT to production. The [sfdx-hardis release manager guide](https://sfdx-hardis.cloudity.com/salesforce-devops-release-home/) describes the job well: check validation jobs, solve conflicts, merge into the major branches, ship hotfixes and bring them back into the build branches afterwards, produce release notes and DORA metrics. According to the same page, one or two team members take this role, and on small projects a tech lead or senior admin can do it part time.
 - **Architect (client side).** Writes the development and architecture standards, approves architecture-relevant changes (new objects, integrations, sharing, the permission model) and decides when two streams need the same object. Which stream owns which object is set out in an [object ownership matrix](../../../blog/salesforce-object-ownership-matrix/).
 - **Technical lead per partner.** Makes sure the team's pull requests arrive complete, small and checked, does the first review within the stream and supplies the input for the release notes. Has no approval rights for stages that affect other partners.
 - **Product owner in the business.** For example the head of service for Field Service or the head of sales for the dealer portal. Accepts stories in UAT and decides from a business point of view whether a feature goes live for users with the next release.
 
-The release role is the one programmes most often save on. My position, which I have set out in several articles: if you save licence costs with an open-source tool such as sfdx-hardis, the money is best invested in an internal release role. The same holds for commercial platforms such as Gearset, Copado or Flosum. Their advantage is that roles and approvals can be set up in one interface and the vendor provides support; a person on your side still has to own the approvals. In one programme I supported, every pull request went across my desk at first. Once the process was stable, I handed it over to an internal colleague. That is the path I recommend: build it with outside help, hand it over internally.
+The release role is the one programmes most often save on. My position, which I have set out in several articles: if you save licence costs with an open-source tool such as sfdx-hardis, the money is best invested in an internal release role. The same holds for commercial platforms such as Gearset, Copado or Flosum. Their advantage is that roles and approvals can be set up in one interface and the vendor provides support; a person on your side still has to own the approvals. The path I recommend comes down to this: build it with outside help, hand it over internally. What that can look like in a programme is described in [why DevOps decides Salesforce enterprise projects](../../../blog/why-devops-matters-salesforce-enterprise/).
 
 ## Who approves what?
 
@@ -89,7 +89,7 @@ A pipeline is of little use if someone can deploy around it. According to the [M
 
 ## Which rules belong in every partner contract?
 
-I am an architect, not a lawyer. The points below describe what I want to see in writing from a technical point of view. Your legal department turns them into clauses. What has worked well is one annex to the framework contract that applies identically to every partner, instead of renegotiating rules in every statement of work.
+I am an architect, not a lawyer. The points below describe what I want to see in writing from a technical point of view. Your legal department turns them into clauses. I recommend one annex to the framework contract that applies identically to every partner, instead of renegotiating rules in every statement of work.
 
 1. **Work happens in your tools.** Code, tickets and documentation are created in your repository and your backlog, with personal, named users. Shared logins are ruled out.
 2. **The tool is fixed.** The choice is made at the start of the programme and applies to every partner. Whoever joins later does not bring their own release tool.
@@ -101,7 +101,7 @@ I am an architect, not a lawyer. The points below describe what I want to see in
 8. **Rules for AI coding.** Which tools, which data, which review. The checklist for this is in [partners coding with AI: what belongs in the contract](../../../blog/partners-using-ai-coding-contract-rules/).
 9. **Exit.** Handover with no work outside the repository, confirmation that local copies of your code and credentials are deleted, and active support for the handover over an agreed period.
 
-Working with nearshore teams in Eastern Europe and India taught me that written rules are worth more than any alignment call. A team in another time zone cannot quickly ask whether a Setup click in UAT is fine. It needs the rule beforehand.
+I have worked with nearshore teams in Eastern Europe and India, and my view is that written rules are worth more than any alignment call. A team in another time zone cannot quickly ask whether a Setup click in UAT is fine. It needs the rule beforehand.
 
 ## How does the release process survive a partner change?
 

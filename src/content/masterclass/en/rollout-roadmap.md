@@ -23,7 +23,7 @@ faq:
   - q: "What training do admins and developers need for Salesforce DevOps?"
     a: "For Git, pull requests and merge conflicts, hands-on courses such as levels 1 and 2 of the free sfdx-hardis training or the free courses on Gearset's DevOps Launchpad are enough. Release managers also need level 3 or their tool vendor's training."
   - q: "Which metrics show that the DevOps rollout is working?"
-    a: "The DORA metrics, meaning deployment frequency, lead time, change failure rate and recovery time, measured against a baseline. Add your own figures: share of deployments through the pipeline, manual steps per release and waiting time until the first review."
+    a: "The five DORA metrics, meaning deployment frequency, lead time, change fail rate, recovery time and deployment rework rate, measured against a baseline. Add your own figures: share of deployments through the pipeline, manual steps per release and waiting time until the first review."
   - q: "When should coding agents enter the Salesforce pipeline?"
     a: "Once pull request reviews are mandatory, the quality gates block and a rules file sits in the client's repository. Before that, agents mostly produce more unreviewed changes."
 draft: false
@@ -45,7 +45,7 @@ The nine chapters before this one each describe one building block. For the roll
 | 6. Release rhythm | Release calendar, freeze windows, plan for the three Salesforce releases | Calendar for twelve months published | [8](../release-planning-salesforce-releases/) |
 | 7. Operations | Monitoring, backup, hotfix path, metrics | Restore rehearsed once, hotfix runs through the pipeline | [9](../operations-monitoring-backup/) |
 
-**Phase 1 needs little technology and decides the most.** Whoever picks the tool sets the standard. If the choice comes late, or a client leaves it to the first partner, two partners build two processes and the client pays to merge them. I therefore make the tool decision early and binding for every partner, for the reasons in [why clients should own their DevOps tools](../../../blog/why-clients-should-own-their-devops-tools/).
+**Phase 1 needs little technology and decides the most.** Whoever picks the tool sets the standard. If the choice comes late, or a client leaves it to the first partner, two partners build two processes and the client pays to merge them. I therefore recommend making the tool decision early and binding for every partner, for the reasons in [why clients should own their DevOps tools](../../../blog/why-clients-should-own-their-devops-tools/).
 
 **Phase 2 starts with production as the truth.** Until the repository exists, the production org is the only complete source. You pull the starting point with `sf project retrieve start` and a `package.xml` passed via `--manifest`, according to the [CLI reference](https://developer.salesforce.com/docs/platform/salesforce-cli-reference/guide/cli_reference_project_retrieve_start.html). From that day on, anyone who changes something in production Setup creates drift, and drift goes back into the repository before the next release runs.
 
@@ -68,7 +68,7 @@ The commercial vendors have their own offers, and I have taken courses from Gear
 | Release managers | Reviews, UAT, production, hotfix, metrics | sfdx-hardis level 3, the tool vendor's training |
 | Product owners, business units | Read the release calendar, sign off UAT | no course, one hour with the release manager |
 
-I treat partners like internal teams. I would require in the contract that every developer shows the basic training and has read the onboarding document in your repository before their first pull request. That costs a day per person and saves the discussion in sprint three about why the partner would like to deploy by change set after all. How this fits into steering several partners is part of my [partner governance](../../../services/partner-governance/) work.
+I would treat partners like internal teams and require in the contract that every developer shows the basic training and has read the onboarding document in your repository before their first pull request. That costs a day per person and saves the discussion in sprint three about why the partner would like to deploy by change set after all. How this fits into steering several partners is part of my [partner governance](../../../services/partner-governance/) work.
 
 ## Which mistakes slow the rollout down?
 
@@ -88,16 +88,16 @@ Mandatory reviews belong in from the start, even while the pipeline is still sim
 
 DORA now describes [five metrics](https://dora.dev/guides/dora-metrics-four-keys/) for software delivery: change lead time, deployment frequency, failed deployment recovery time, change fail rate, and deployment rework rate, the share of unplanned deployments caused by a production incident. The first three measure throughput, the last two instability.
 
-The tools provide part of this. According to its [overview](https://sfdx-hardis.cloudity.com/salesforce-devops-home/), sfdx-hardis reports the four classic metrics and rates them against industry benchmarks. Gearset has a [DevOps performance dashboard](https://docs.gearset.com/en/articles/11560575-measuring-your-devops-performance) with the same four, which requires a Teams or Enterprise Automation Platform licence and Pipelines with the promotion branch strategy; change failure rate and time to restore are based on bugs your team reports in promotions. Both figures are therefore only as good as the discipline in reporting.
+The tools provide part of this. According to its documentation, the [sfdx-hardis DORA report](https://sfdx-hardis.cloudity.com/hardis/doc/salesforce-devops-dora-report/) computes all five per major branch, as described in [chapter 9](../operations-monitoring-backup/), and the [overview](https://sfdx-hardis.cloudity.com/salesforce-devops-home/) rates the classic four against industry benchmarks. Gearset has a [DevOps performance dashboard](https://docs.gearset.com/en/articles/11560575-measuring-your-devops-performance) with the same four, which requires a Teams or Enterprise Automation Platform licence and Pipelines with the promotion branch strategy; change failure rate and time to restore are based on bugs your team reports in promotions. Both figures are therefore only as good as the discipline in reporting.
 
-For a programme in rollout, I add four figures of my own, because they show progress earlier than DORA:
+For a programme in rollout, I would add four figures of my own, because they show progress earlier than DORA:
 
 1. **Share of deployments through the pipeline** among all deployments to UAT and production. The target is 100 percent by the cut-off date.
 2. **Manual steps in the release plan.** Every line someone executes by hand in Setup is a risk on release night.
 3. **Waiting time until the first review** per pull request. If it rises, you are short of review capacity, not developer capacity.
 4. **Drift findings per month** from monitoring, meaning changes in production that did not come from the repository.
 
-Take the baseline before phase 2 starts, from the release plans of the last six months if need be. I report these figures to the steering committee every quarter on one page, split by stream and partner.
+Take the baseline before phase 2 starts, from the release plans of the last six months if need be. I would report these figures to the steering committee every quarter on one page, split by stream and partner.
 
 ## A typical scenario, as an assumption: three partners, one org
 

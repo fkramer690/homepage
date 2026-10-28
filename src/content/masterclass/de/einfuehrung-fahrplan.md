@@ -23,7 +23,7 @@ faq:
   - q: "Welches Training brauchen Admins und Entwickler für Salesforce DevOps?"
     a: "Für Git, Pull Requests und Merge-Konflikte reichen praxisnahe Kurse wie Level 1 und 2 des kostenlosen sfdx-hardis-Trainings oder die kostenlosen Kurse auf DevOps Launchpad von Gearset. Release Manager brauchen zusätzlich Level 3 oder das Training ihres Werkzeuganbieters."
   - q: "Welche Kennzahlen zeigen, ob die DevOps-Einführung wirkt?"
-    a: "Die DORA-Kennzahlen, also Deployment-Häufigkeit, Durchlaufzeit, Änderungsfehlerrate und Wiederherstellungszeit, gemessen gegen eine Basislinie. Dazu kommen eigene Werte: Anteil der Deployments über die Pipeline, manuelle Schritte pro Release und Wartezeit bis zum ersten Review."
+    a: "Die fünf DORA-Kennzahlen, also Deployment-Häufigkeit, Durchlaufzeit, Änderungsfehlerrate, Wiederherstellungszeit und Deployment Rework Rate, gemessen gegen eine Basislinie. Dazu kommen eigene Werte: Anteil der Deployments über die Pipeline, manuelle Schritte pro Release und Wartezeit bis zum ersten Review."
   - q: "Wann sollten Coding-Agenten in die Salesforce-Pipeline?"
     a: "Wenn Pull-Request-Reviews Pflicht sind, die Quality Gates blockieren und eine Regeldatei im Repository des Kunden liegt. Vorher erzeugen Agenten vor allem mehr ungeprüfte Änderungen."
 draft: false
@@ -45,7 +45,7 @@ Die neun Kapitel davor beschreiben jeweils einen Baustein. Für die Einführung 
 | 6. Release-Rhythmus | Release-Kalender, Freeze-Fenster, Plan für die drei Salesforce-Releases | Kalender für zwölf Monate veröffentlicht | [8](../release-planung-salesforce-releases/) |
 | 7. Betrieb | Monitoring, Backup, Hotfix-Weg, Kennzahlen | Restore einmal geprobt, Hotfix läuft über die Pipeline | [9](../betrieb-monitoring-backup/) |
 
-**Phase 1 braucht kaum Technik und entscheidet am meisten.** Wer das Werkzeug wählt, setzt den Standard. Fällt die Wahl spät oder überlässt ein Kunde sie dem ersten Partner, bauen zwei Partner zwei Prozesse, und der Kunde bezahlt die Zusammenführung. Ich treffe die Werkzeugentscheidung deshalb früh und mache sie für jeden Partner verbindlich, wie in [warum Kunden ihre DevOps-Tools selbst besitzen sollten](../../../blog/warum-kunden-devops-tools-selbst-besitzen-sollten/) begründet.
+**Phase 1 braucht kaum Technik und entscheidet am meisten.** Wer das Werkzeug wählt, setzt den Standard. Fällt die Wahl spät oder überlässt ein Kunde sie dem ersten Partner, bauen zwei Partner zwei Prozesse, und der Kunde bezahlt die Zusammenführung. Ich empfehle deshalb, die Werkzeugentscheidung früh zu treffen und für jeden Partner verbindlich zu machen, wie in [warum Kunden ihre DevOps-Tools selbst besitzen sollten](../../../blog/warum-kunden-devops-tools-selbst-besitzen-sollten/) begründet.
 
 **Phase 2 beginnt mit der Produktion als Wahrheit.** Bis das Repository steht, ist die Produktiv-Org die einzige vollständige Quelle. Den Ausgangsstand holen Sie mit `sf project retrieve start` und einer `package.xml` über `--manifest`, so die [CLI-Referenz](https://developer.salesforce.com/docs/platform/salesforce-cli-reference/guide/cli_reference_project_retrieve_start.html). Ab diesem Tag gilt: Wer in Produktion im Setup etwas ändert, erzeugt Drift, und Drift wird zurück ins Repository geholt, bevor das nächste Release läuft.
 
@@ -68,7 +68,7 @@ Die kommerziellen Anbieter haben eigene Angebote, und ich habe Kurse von Gearset
 | Release Manager | Reviews, UAT, Produktion, Hotfix, Kennzahlen | sfdx-hardis Level 3, Training des Werkzeuganbieters |
 | Product Owner, Fachbereich | Release-Kalender lesen, UAT abnehmen | kein Kurs, eine Stunde mit dem Release Manager |
 
-Partner behandle ich wie interne Teams. Ich würde im Vertrag verlangen, dass jeder Entwickler vor dem ersten Pull Request das Basistraining nachweist und das Onboarding-Dokument aus Ihrem Repository gelesen hat. Das kostet einen Tag pro Person und spart die Diskussion im dritten Sprint, warum der Partner doch wieder per Change Set deployen möchte. Wie das in die Steuerung mehrerer Partner passt, beschreibe ich in der [Partnersteuerung](../../../leistungen/partnersteuerung/).
+Partner würde ich wie interne Teams behandeln und im Vertrag verlangen, dass jeder Entwickler vor dem ersten Pull Request das Basistraining nachweist und das Onboarding-Dokument aus Ihrem Repository gelesen hat. Das kostet einen Tag pro Person und spart die Diskussion im dritten Sprint, warum der Partner doch wieder per Change Set deployen möchte. Wie das in die Steuerung mehrerer Partner passt, beschreibe ich in der [Partnersteuerung](../../../leistungen/partnersteuerung/).
 
 ## Welche Fehler bremsen die Einführung?
 
@@ -88,16 +88,16 @@ Pflicht-Reviews gehören von Anfang an dazu, auch wenn die Pipeline noch einfach
 
 DORA beschreibt heute [fünf Kennzahlen](https://dora.dev/guides/dora-metrics-four-keys/) für die Auslieferung von Software: Durchlaufzeit von Änderungen, Deployment-Häufigkeit, Wiederherstellungszeit nach einem fehlgeschlagenen Deployment, Änderungsfehlerrate und die Rate der ungeplanten Deployments nach einem Produktionsvorfall (Deployment Rework Rate). Die ersten drei messen Durchsatz, die letzten zwei Instabilität.
 
-Die Werkzeuge liefern einen Teil davon mit. sfdx-hardis berichtet laut seiner [Übersicht](https://sfdx-hardis.cloudity.com/salesforce-devops-home/) die vier klassischen Kennzahlen und ordnet sie gegen Branchenwerte ein. Gearset hat ein [DevOps-Performance-Dashboard](https://docs.gearset.com/en/articles/11560575-measuring-your-devops-performance) mit denselben vier, das eine Lizenz für Teams oder Enterprise Automation Platform und Pipelines mit Promotion-Branch-Strategie voraussetzt; Änderungsfehlerrate und Wiederherstellungszeit beruhen dort auf Fehlern, die Ihr Team in den Promotions meldet. Beide Zahlen sind also nur so gut wie die Disziplin beim Melden.
+Die Werkzeuge liefern einen Teil davon mit. Der [DORA-Bericht von sfdx-hardis](https://sfdx-hardis.cloudity.com/hardis/doc/salesforce-devops-dora-report/) berechnet laut Dokumentation alle fünf pro Hauptbranch, wie in [Kapitel 9](../betrieb-monitoring-backup/) beschrieben, und die [Übersicht](https://sfdx-hardis.cloudity.com/salesforce-devops-home/) ordnet die klassischen vier gegen Branchenwerte ein. Gearset hat ein [DevOps-Performance-Dashboard](https://docs.gearset.com/en/articles/11560575-measuring-your-devops-performance) mit denselben vier, das eine Lizenz für Teams oder Enterprise Automation Platform und Pipelines mit Promotion-Branch-Strategie voraussetzt; Änderungsfehlerrate und Wiederherstellungszeit beruhen dort auf Fehlern, die Ihr Team in den Promotions meldet. Beide Zahlen sind also nur so gut wie die Disziplin beim Melden.
 
-Für ein Programm in der Einführung ergänze ich vier eigene Werte, weil sie den Fortschritt früher zeigen als DORA:
+Für ein Programm in der Einführung würde ich vier eigene Werte ergänzen, weil sie den Fortschritt früher zeigen als DORA:
 
 1. **Anteil der Deployments über die Pipeline** an allen Deployments nach UAT und Produktion. Ziel ist 100 Prozent zum Stichtag.
 2. **Manuelle Schritte im Release-Plan.** Jede Zeile, die jemand von Hand im Setup ausführt, ist ein Risiko am Release-Abend.
 3. **Wartezeit bis zum ersten Review** pro Pull Request. Steigt sie, fehlt Review-Kapazität, nicht Entwicklerkapazität.
 4. **Drift-Funde pro Monat** aus dem Monitoring, also Änderungen in Produktion, die nicht aus dem Repository kamen.
 
-Erheben Sie die Basislinie, bevor Phase 2 beginnt, notfalls aus den Release-Plänen des letzten Halbjahres. Dem Lenkungsausschuss berichte ich diese Werte quartalsweise auf einer Seite, nach Stream und Partner getrennt.
+Erheben Sie die Basislinie, bevor Phase 2 beginnt, notfalls aus den Release-Plänen des letzten Halbjahres. Dem Lenkungsausschuss würde ich diese Werte quartalsweise auf einer Seite berichten, nach Stream und Partner getrennt.
 
 ## Ein typisches Szenario, als Annahme: drei Partner, eine Org
 
