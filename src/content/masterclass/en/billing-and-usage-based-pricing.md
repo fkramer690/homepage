@@ -122,7 +122,7 @@ The details, including a scenario with 800 machines billed quarterly, are in [ma
 
 A typical scenario, as an assumption: a machine builder with SAP S/4HANA quotes machines, spare parts, remote monitoring and maintenance contracts in Revenue Cloud. Machines and parts are invoiced from SAP, which already issues e-invoices. Subscriptions, maintenance fees and extra operating hours move to Billing, connected to the e-invoicing service SAP already uses. The customer receives two kinds of invoices through one channel, and customer service can explain why.
 
-To get there, the client decides, and the partner configures:
+To get there, the client settles these points before the partner configures anything:
 
 1. **Invoice owner per revenue type**, written down, with finance's signature.
 2. **The Accounts Receivable Admin** in accounting, plus the order of the period close in Salesforce and SAP.

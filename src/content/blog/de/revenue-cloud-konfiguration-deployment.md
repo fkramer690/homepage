@@ -9,7 +9,7 @@ topic: devops
 categories: [revenue-cloud, devops]
 tags: [Revenue Cloud, Deployment, Konfigurationsdaten, Context Definitions, SFDMU, Gearset]
 takeaways:
-  - "Revenue-Cloud-Konfiguration besteht meist aus Datensätzen auf Standardobjekten: Attribute, Klassifizierungen, Produkte, Verkaufsmodelle, Preisbucheinträge, Billing Policies. Ein Metadaten-Deployment allein bringt wenig davon mit."
+  - "Revenue-Cloud-Konfiguration besteht meist aus Datensätzen: Attribute, Klassifizierungen, Produkte, Verkaufsmodelle, Preisbucheinträge, Billing Policies. Ein Metadaten-Deployment allein bringt wenig davon mit."
   - "Salesforce hat kein eingebautes Deployment-Werkzeug für Revenue Cloud. Der Developer Guide gibt eine Reihenfolge je Bereich vor: Metadaten zuerst, Eltern vor Kindern."
   - "Context Definitions: Nur eigene lassen sich abrufen und deployen, die Aktivierung ist ein manueller Schritt, und ein Deployment in eine Org mit älterem Release wird nicht unterstützt."
   - "Nach jedem Deployment werden Decision Tables aktualisiert, Preisdaten synchronisiert und der Produktindex neu aufgebaut. Diese Schritte gehören in die Release-Checkliste."

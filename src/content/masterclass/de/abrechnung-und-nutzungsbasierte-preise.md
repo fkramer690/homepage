@@ -45,7 +45,7 @@ Eine Maschinenrechnung hängt an Versand, Abnahme und Anzahlungen, und alle drei
 
 Das Signal, auf das ich achte: Der Vertrieb ändert jede Woche Verträge, und die Buchhaltung korrigiert jeden Monat Rechnungen, weil SAP von einer Änderung nichts erfahren hat. Dann spart Billing in Salesforce eine Übergabe. Besteht das wiederkehrende Geschäft aus ein paar hundert Verträgen mit einer Rechnung im Jahr, reicht SAP. Die ganze Abwägung steht in [Revenue Cloud Billing oder SAP](../../../blog/revenue-cloud-billing-oder-sap-rechnung/), die Systemgrenze für den gesamten Prozess aus [Kapitel 1](../revenue-cloud-ueberblick/) in [Revenue Cloud und SAP: Wer führt was im Quote-to-Cash?](../../../blog/revenue-cloud-sap-quote-to-cash-aufteilung/).
 
-Die Zahlung in einem B2B-Shop ist eine eigene Grenze. Händler, die Ersatzteile im Shop bestellen, zahlen meist auf Rechnung, und die Rechnung kommt aus dem ERP. Diese Seite behandelt das [B2B-Commerce-Kapitel zu Preisen, Warenkorb und Checkout](../../b2b-commerce/preise-warenkorb-checkout/).
+Die Zahlung in einem B2B-Shop ist eine eigene Grenze. Händler, die Ersatzteile im Shop bestellen, zahlen meist auf Rechnung, und die Rechnung kommt aus dem ERP. Das behandelt das [B2B-Commerce-Kapitel zu Preisen, Warenkorb und Checkout](../../b2b-commerce/preise-warenkorb-checkout/).
 
 ## Was kann Revenue Cloud Billing?
 
@@ -102,7 +102,7 @@ Für eine Maschine lässt sich das direkt übertragen. Betriebsstunden werden zu
 - **Prüfungen vor der Bewertung.** Seriennummer zu Asset und Account, Zählerrücksprünge nach einem Steuerungstausch, Lücken, wenn eine Maschine offline war, Dubletten aus wiederholten Übertragungen.
 - **Ein Vertrag, der die Einheit festlegt.** Betriebsstunden, Laststunden oder Gutteile; welcher Zähler verbindlich ist; wie Lücken behandelt werden; das Mindestentgelt, das die Finanzierung der Maschine absichert.
 
-Derselbe Tageszähler steuert oft auch die Wartung nach Betriebsstunden in Field Service, ein Datenstrom kann also beides bedienen. Diese Seite behandelt das [Field-Service-Kapitel zu Assets und Wartung](../../field-service/field-service-assets-wartung-teile/). Die Bewertung steckt als "Usage Rating & Digital Wallet" im Billing-Add-on; klären Sie im Order Form, welche Lizenz sie abdeckt. Szenario und Vertrags-Checkliste stehen in [Pay-per-Use für Maschinen](../../../blog/pay-per-use-maschinen-revenue-cloud/).
+Derselbe Tageszähler steuert oft auch die Wartung nach Betriebsstunden in Field Service, ein Datenstrom kann also beides bedienen. Die Field-Service-Seite behandelt das [Kapitel zu Assets und Wartung](../../field-service/field-service-assets-wartung-teile/). Die Bewertung steckt als "Usage Rating & Digital Wallet" im Billing-Add-on; klären Sie im Order Form, welche Lizenz sie abdeckt. Szenario und Vertrags-Checkliste stehen in [Pay-per-Use für Maschinen](../../../blog/pay-per-use-maschinen-revenue-cloud/).
 
 Bleiben alle Rechnungen in SAP, würde ich zweimal überlegen, ob die Nutzung in Salesforce bewertet werden soll. Eine dokumentierte Standardübergabe bewerteter Nutzung an ein externes Abrechnungssystem habe ich nicht gefunden.
 
@@ -122,9 +122,9 @@ Die Details, mit einem Szenario über 800 quartalsweise abgerechnete Maschinen, 
 
 Ein typisches Szenario, als Annahme: Ein Maschinenbauer mit SAP S/4HANA erstellt Angebote für Maschinen, Ersatzteile, Fernüberwachung und Wartungsverträge in Revenue Cloud. Maschinen und Ersatzteile fakturiert SAP, das bereits E-Rechnungen erzeugt. Abonnements, Wartungspauschalen und zusätzliche Betriebsstunden gehen an Billing, angebunden an den E-Rechnungsdienst, den SAP schon nutzt. Der Kunde bekommt zwei Arten von Rechnungen über einen Kanal, und der Kundendienst kann erklären, warum.
 
-Damit das klappt, entscheidet der Kunde, und der Partner konfiguriert:
+Damit das klappt, legt der Kunde diese Punkte selbst fest, bevor der Partner konfiguriert:
 
-1. **Rechnungssteller je Umsatzart**, schriftlich und von Finance unterschrieben.
+1. **Den Rechnungssteller je Umsatzart**, schriftlich und von Finance unterschrieben.
 2. **Den Accounts Receivable Admin** in der Buchhaltung, dazu die Reihenfolge des Periodenabschlusses in Salesforce und SAP.
 3. **Den E-Rechnungsweg** für jede deutsche Legal Entity, vor der ersten Billing-Rechnung.
 4. **Eine Prognose der Billing Events** je Vertragsjahr, verantwortet von Finance, mit dem Preis je Event aus dem Angebot.
