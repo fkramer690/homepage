@@ -15,7 +15,18 @@ const DEPTH = 50;
 const auth = 'Basic ' + Buffer.from(`${login}:${password}`).toString('base64');
 let cost = 0;
 
-async function call(path, body) {
+// Live SERP calls fail now and then with "Internal SE Server Error"; one retry fixes most.
+async function call(path, body, retries = 1) {
+  try {
+    return await request(path, body);
+  } catch (err) {
+    if (retries <= 0) throw err;
+    await new Promise((r) => setTimeout(r, 5000));
+    return call(path, body, retries - 1);
+  }
+}
+
+async function request(path, body) {
   const res = await fetch(`https://api.dataforseo.com/v3/${path}`, {
     method: body ? 'POST' : 'GET',
     headers: { Authorization: auth, 'Content-Type': 'application/json' },
