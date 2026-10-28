@@ -6,6 +6,7 @@ slug: rollout-roadmap
 course: devops
 translationKey: devops-10
 chapter: 10
+pubDate: 2026-10-28
 short: "Rollout and roadmap"
 summary: "Seven phases from change sets to a client-owned pipeline, with training, metrics and an outlook on coding agents."
 takeaways:

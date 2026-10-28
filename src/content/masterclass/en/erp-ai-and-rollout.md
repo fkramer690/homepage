@@ -6,6 +6,7 @@ slug: erp-ai-and-rollout
 course: manufacturing-cloud
 translationKey: mfg-05
 chapter: 5
+pubDate: 2026-10-28
 short: "ERP, AI and rollout"
 summary: "Which data flows between SAP and Manufacturing Cloud, when Agentforce pays off and in which order countries go live."
 takeaways:

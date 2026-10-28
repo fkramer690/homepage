@@ -6,6 +6,7 @@ slug: field-service-assets-wartung-teile
 course: field-service
 translationKey: fsl-04
 chapter: 4
+pubDate: 2026-10-28
 short: "Assets, Wartung, Teile, Partner"
 summary: "Wie Maschinen als Assets abgebildet werden, Wartung nach Kalender oder Betriebsstunden, Ersatzteile mit dem ERP und Servicepartner im selben Prozess."
 takeaways:

@@ -6,6 +6,7 @@ slug: catalog-search-entitlements
 course: b2b-commerce
 translationKey: commerce-02
 chapter: 2
+pubDate: 2026-10-28
 short: "Catalogue, search, entitlements"
 summary: "How product data, buyer groups and search work together so every dealer finds the right parts."
 takeaways:

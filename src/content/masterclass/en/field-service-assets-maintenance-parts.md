@@ -6,6 +6,7 @@ slug: field-service-assets-maintenance-parts
 course: field-service
 translationKey: fsl-04
 chapter: 4
+pubDate: 2026-10-28
 short: "Assets, maintenance, parts, partners"
 summary: "How machines become assets, maintenance by calendar or operating hours, spare parts with the ERP and service partners in the same process."
 takeaways:

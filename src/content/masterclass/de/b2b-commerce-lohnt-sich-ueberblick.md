@@ -6,6 +6,7 @@ slug: b2b-commerce-lohnt-sich-ueberblick
 course: b2b-commerce
 translationKey: commerce-01
 chapter: 1
+pubDate: 2026-10-28
 short: "Lohnt sich B2B Commerce?"
 summary: "Was Salesforce B2B Commerce ist, was es kostet und wann ein Portal oder ein anderes Shopsystem reicht."
 takeaways:

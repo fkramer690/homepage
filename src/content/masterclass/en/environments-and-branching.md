@@ -6,6 +6,7 @@ slug: environments-and-branching
 course: devops
 translationKey: devops-03
 chapter: 3
+pubDate: 2026-10-28
 short: "Environments and branches"
 summary: "How sandboxes, scratch orgs and branches fit together so developer orgs stay current and hotfixes do not get lost."
 takeaways:

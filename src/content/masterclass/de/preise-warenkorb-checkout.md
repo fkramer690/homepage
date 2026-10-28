@@ -6,6 +6,7 @@ slug: preise-warenkorb-checkout
 course: b2b-commerce
 translationKey: commerce-03
 chapter: 3
+pubDate: 2026-10-28
 short: "Preise, Warenkorb, Checkout"
 summary: "Kundenpreise, Angebotsanfrage, Bestellnummer statt Karte und schnelles Nachbestellen im B2B-Shop."
 takeaways:

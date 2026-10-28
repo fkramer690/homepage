@@ -6,6 +6,7 @@ slug: qualitaet-tests-reviews
 course: devops
 translationKey: devops-06
 chapter: 6
+pubDate: 2026-10-28
 short: "Qualität, Tests, Reviews"
 summary: "Welche Reviews, Tests und automatischen Prüfungen jede Änderung bestehen muss, bevor sie gemergt wird, für Code und für Flows."
 takeaways:

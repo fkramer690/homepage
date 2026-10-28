@@ -6,6 +6,7 @@ slug: prices-cart-checkout
 course: b2b-commerce
 translationKey: commerce-03
 chapter: 3
+pubDate: 2026-10-28
 short: "Prices, cart and checkout"
 summary: "Customer prices, request for quote, purchase order instead of card and fast reordering in the B2B store."
 takeaways:

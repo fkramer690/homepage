@@ -6,6 +6,7 @@ slug: release-management-grundlagen
 course: devops
 translationKey: devops-01
 chapter: 1
+pubDate: 2026-10-28
 short: "Warum Releases entscheiden"
 summary: "Die Grundbegriffe, die Kosten schlechter Releases mit mehreren Partnern und fünf Reifestufen von Change Sets bis zur eigenen Pipeline."
 takeaways:

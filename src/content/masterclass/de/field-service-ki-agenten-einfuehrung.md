@@ -6,6 +6,7 @@ slug: field-service-ki-agenten-einfuehrung
 course: field-service
 translationKey: fsl-05
 chapter: 5
+pubDate: 2026-10-28
 short: "KI-Agenten, Einführung, Betrieb"
 summary: "Welche Field-Service-Agenten heute tragen, wie Sie in Wellen einführen, was ein KI-Assistent einrichten darf und welche Kennzahlen danach zählen."
 takeaways:

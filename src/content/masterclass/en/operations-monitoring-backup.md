@@ -6,6 +6,7 @@ slug: operations-monitoring-backup
 course: devops
 translationKey: devops-09
 chapter: 9
+pubDate: 2026-10-28
 short: "Operations and monitoring"
 summary: "What go-live adds to the job: daily org monitoring, tested backups, visible technical debt, DORA metrics and a hotfix path."
 takeaways:

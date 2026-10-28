@@ -6,6 +6,7 @@ slug: katalog-suche-sichtbarkeit
 course: b2b-commerce
 translationKey: commerce-02
 chapter: 2
+pubDate: 2026-10-28
 short: "Katalog, Suche, Sichtbarkeit"
 summary: "Wie Produktdaten, Käufergruppen und Suche zusammenspielen, damit jeder Händler die richtigen Teile findet."
 takeaways:

@@ -6,6 +6,7 @@ slug: warranty-and-after-sales
 course: manufacturing-cloud
 translationKey: mfg-04
 chapter: 4
+pubDate: 2026-10-28
 short: "Warranty and after-sales"
 summary: "Warranty claims, recalls and the installed base: when Manufacturing Cloud for Service is enough and where Field Service begins."
 takeaways:

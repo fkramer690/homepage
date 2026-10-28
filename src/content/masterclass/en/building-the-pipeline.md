@@ -6,6 +6,7 @@ slug: building-the-pipeline
 course: devops
 translationKey: devops-05
 chapter: 5
+pubDate: 2026-10-28
 short: "Building the pipeline"
 summary: "The building blocks of a Salesforce pipeline, from pull requests, test levels and delta deployments to a login without passwords."
 takeaways:

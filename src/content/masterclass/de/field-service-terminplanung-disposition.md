@@ -6,6 +6,7 @@ slug: field-service-terminplanung-disposition
 course: field-service
 translationKey: fsl-02
 chapter: 2
+pubDate: 2026-10-28
 short: "Terminplanung und Disposition"
 summary: "Stammdaten, Scheduling Policies, Enhanced Scheduling, die neue Scheduling Console und mehrtägige Einsätze: was die Planung im Außendienst trägt."
 takeaways:

@@ -6,6 +6,7 @@ slug: rahmenvertraege-und-prognosen
 course: manufacturing-cloud
 translationKey: mfg-02
 chapter: 2
+pubDate: 2026-10-28
 short: "Rahmenverträge und Prognosen"
 summary: "Sales Agreements, Account Forecasting, Programmgeschäft und Vertriebsziele: was sie leisten und welche ERP-Daten sie brauchen."
 takeaways:

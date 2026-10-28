@@ -6,6 +6,7 @@ slug: einfuehrung-fahrplan
 course: devops
 translationKey: devops-10
 chapter: 10
+pubDate: 2026-10-28
 short: "Einführung und Fahrplan"
 summary: "In sieben Phasen von Change Sets zur Pipeline in Kundenhand, mit Training, Kennzahlen und einem Ausblick auf Coding-Agenten."
 takeaways:

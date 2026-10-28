@@ -6,6 +6,7 @@ slug: haendler-und-partnerkanal
 course: manufacturing-cloud
 translationKey: mfg-03
 chapter: 3
+pubDate: 2026-10-28
 short: "Händler und Partnerkanal"
 summary: "Händlerboni, Ship and Debit, Partnerportal und Händlerbesuche: was Manufacturing Cloud für den Vertrieb über Händler bietet."
 takeaways:

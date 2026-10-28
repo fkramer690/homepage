@@ -6,6 +6,7 @@ slug: erp-ki-und-rollout
 course: manufacturing-cloud
 translationKey: mfg-05
 chapter: 5
+pubDate: 2026-10-28
 short: "ERP, KI und Rollout"
 summary: "Welche Daten zwischen SAP und Manufacturing Cloud fließen, wann Agentforce sich lohnt und in welcher Reihenfolge Länder live gehen."
 takeaways:

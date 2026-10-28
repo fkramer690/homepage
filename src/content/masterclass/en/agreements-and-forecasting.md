@@ -6,6 +6,7 @@ slug: agreements-and-forecasting
 course: manufacturing-cloud
 translationKey: mfg-02
 chapter: 2
+pubDate: 2026-10-28
 short: "Agreements and forecasting"
 summary: "Sales agreements, account forecasting, program-based business and targets: what they do and which ERP data they need."
 takeaways:

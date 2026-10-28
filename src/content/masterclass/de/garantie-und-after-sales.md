@@ -6,6 +6,7 @@ slug: garantie-und-after-sales
 course: manufacturing-cloud
 translationKey: mfg-04
 chapter: 4
+pubDate: 2026-10-28
 short: "Garantie und After-Sales"
 summary: "Garantieansprüche, Rückrufaktionen und installierte Basis: wann Manufacturing Cloud for Service reicht und wo Field Service beginnt."
 takeaways:

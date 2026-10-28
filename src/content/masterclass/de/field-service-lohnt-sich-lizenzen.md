@@ -6,6 +6,7 @@ slug: field-service-lohnt-sich-lizenzen
 course: field-service
 translationKey: fsl-01
 chapter: 1
+pubDate: 2026-10-28
 short: "Nutzen und Lizenzen"
 summary: "Wann sich Salesforce Field Service für Hersteller rechnet, welche Rolle welche Lizenz braucht und wie ein Auftrag vom Case zum Techniker kommt."
 takeaways:

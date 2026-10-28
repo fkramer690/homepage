@@ -6,6 +6,7 @@ slug: devops-tools-compared
 course: devops
 translationKey: devops-04
 chapter: 4
+pubDate: 2026-10-28
 short: "Tools compared"
 summary: "From change sets to commercial platforms: which DevOps tool fits your Git platform, your team and your implementation partners."
 takeaways:

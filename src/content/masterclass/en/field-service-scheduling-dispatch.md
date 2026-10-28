@@ -6,6 +6,7 @@ slug: field-service-scheduling-dispatch
 course: field-service
 translationKey: fsl-02
 chapter: 2
+pubDate: 2026-10-28
 short: "Scheduling and dispatch"
 summary: "Master data, scheduling policies, Enhanced Scheduling, the new Scheduling Console and multiday jobs: what carries field service planning."
 takeaways:

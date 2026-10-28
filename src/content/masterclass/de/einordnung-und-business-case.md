@@ -6,6 +6,7 @@ slug: einordnung-und-business-case
 course: manufacturing-cloud
 translationKey: mfg-01
 chapter: 1
+pubDate: 2026-10-28
 short: "Einordnung und Business Case"
 summary: "Was Manufacturing Cloud enthält, was es kostet und wann Sales Cloud mit Eigenbau die bessere Wahl ist."
 takeaways:

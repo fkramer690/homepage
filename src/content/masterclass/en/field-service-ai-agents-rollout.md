@@ -6,6 +6,7 @@ slug: field-service-ai-agents-rollout
 course: field-service
 translationKey: fsl-05
 chapter: 5
+pubDate: 2026-10-28
 short: "AI agents, rollout, operations"
 summary: "Which Field Service agents work today, how to roll out in waves, what an AI assistant may set up and which KPIs count afterwards."
 takeaways:

@@ -6,6 +6,7 @@ slug: field-service-business-case-licences
 course: field-service
 translationKey: fsl-01
 chapter: 1
+pubDate: 2026-10-28
 short: "Business case and licences"
 summary: "When Salesforce Field Service pays off for manufacturers, which role needs which licence and how a job gets from the case to the technician."
 takeaways:

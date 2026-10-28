@@ -30,7 +30,7 @@ interface Props {
   chapter: Chapter;
 }
 const { chapter } = Astro.props;
-const { lang, course, title, description, takeaways, faq, articles, updatedDate } = chapter.data;
+const { lang, course, title, description, takeaways, faq, articles, pubDate, updatedDate } = chapter.data;
 const no = chapter.data.chapter;
 const t = lang === 'de' ? de : en;
 const m = courseTexts(lang, course);
@@ -69,7 +69,8 @@ const schema = {
       name: title,
       description,
       abstract: takeaways.join(' '),
-      ...(updatedDate && { dateModified: updatedDate.toISOString() }),
+      ...(pubDate && { datePublished: pubDate.toISOString() }),
+      ...((updatedDate ?? pubDate) && { dateModified: (updatedDate ?? pubDate)!.toISOString() }),
       inLanguage: lang,
       mainEntityOfPage: url,
       image: abs(ogImage),

@@ -6,6 +6,7 @@ slug: field-service-mobile-app-documents
 course: field-service
 translationKey: fsl-03
 chapter: 3
+pubDate: 2026-10-28
 short: "Mobile app and documents"
 summary: "What technicians need offline, how inspection reports work without paper, when the service report is enough and how to test every app update."
 takeaways:

@@ -6,6 +6,7 @@ slug: dealer-and-partner-channel
 course: manufacturing-cloud
 translationKey: mfg-03
 chapter: 3
+pubDate: 2026-10-28
 short: "Dealer and partner channel"
 summary: "Dealer rebates, ship and debit, partner portal and dealer visits: what Manufacturing Cloud offers for selling through dealers."
 takeaways:

@@ -6,6 +6,7 @@ slug: umgebungen-und-branching
 course: devops
 translationKey: devops-03
 chapter: 3
+pubDate: 2026-10-28
 short: "Umgebungen und Branches"
 summary: "Wie Sandboxes, Scratch Orgs und Branches zusammenpassen, damit Entwickler-Orgs aktuell bleiben und Hotfixes nicht verloren gehen."
 takeaways:

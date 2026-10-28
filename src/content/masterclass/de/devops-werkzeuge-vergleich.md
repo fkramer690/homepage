@@ -6,6 +6,7 @@ slug: devops-werkzeuge-vergleich
 course: devops
 translationKey: devops-04
 chapter: 4
+pubDate: 2026-10-28
 short: "Werkzeuge im Überblick"
 summary: "Vom Change Set bis zur kommerziellen Plattform: welches DevOps-Werkzeug zu Ihrer Git-Plattform, Ihrem Team und Ihren Partnern passt."
 takeaways:

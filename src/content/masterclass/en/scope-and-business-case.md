@@ -6,6 +6,7 @@ slug: scope-and-business-case
 course: manufacturing-cloud
 translationKey: mfg-01
 chapter: 1
+pubDate: 2026-10-28
 short: "Scope and business case"
 summary: "What Manufacturing Cloud contains, what it costs and when Sales Cloud plus a custom build is the better choice."
 takeaways:

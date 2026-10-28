@@ -6,6 +6,7 @@ slug: release-process-ownership-roles
 course: devops
 translationKey: devops-02
 chapter: 2
+pubDate: 2026-10-28
 short: "Ownership and roles"
 summary: "Who owns repository and pipeline, which four roles a release needs, who approves what and how the process survives a partner change."
 takeaways:

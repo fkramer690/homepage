@@ -6,6 +6,7 @@ slug: data-and-configuration
 course: devops
 translationKey: devops-07
 chapter: 7
+pubDate: 2026-10-28
 short: "Data and configuration"
 summary: "Which configuration and reference data is not metadata, how it moves through the pipeline and how sandboxes stay masked."
 takeaways:

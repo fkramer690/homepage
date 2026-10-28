@@ -6,6 +6,7 @@ slug: field-service-mobile-app-dokumente
 course: field-service
 translationKey: fsl-03
 chapter: 3
+pubDate: 2026-10-28
 short: "Mobile App und Dokumente"
 summary: "Was Techniker offline brauchen, wie Prüfprotokolle ohne Papier entstehen, wann der Servicebericht reicht und wie Sie jedes App-Update testen."
 takeaways:

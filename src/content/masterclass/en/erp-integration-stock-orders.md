@@ -6,6 +6,7 @@ slug: erp-integration-stock-orders
 course: b2b-commerce
 translationKey: commerce-04
 chapter: 4
+pubDate: 2026-10-28
 short: "ERP integration"
 summary: "Which data flows between store and ERP, what is called live and who owns the order."
 takeaways:

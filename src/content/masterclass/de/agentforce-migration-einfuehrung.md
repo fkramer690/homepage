@@ -6,6 +6,7 @@ slug: agentforce-migration-einfuehrung
 course: b2b-commerce
 translationKey: commerce-05
 chapter: 5
+pubDate: 2026-10-28
 short: "Agenten, Migration, Einführung"
 summary: "Buyer Agent und Merchandising Agent, der Weg von Aura zu LWR und die Einführung bei Händlern in Wellen."
 takeaways:

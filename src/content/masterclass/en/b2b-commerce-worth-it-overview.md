@@ -6,6 +6,7 @@ slug: b2b-commerce-worth-it-overview
 course: b2b-commerce
 translationKey: commerce-01
 chapter: 1
+pubDate: 2026-10-28
 short: "Is B2B Commerce worth it?"
 summary: "What Salesforce B2B Commerce is, what it costs and when a portal or another shop system is enough."
 takeaways:

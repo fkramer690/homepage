@@ -6,6 +6,7 @@ slug: agentforce-migration-rollout
 course: b2b-commerce
 translationKey: commerce-05
 chapter: 5
+pubDate: 2026-10-28
 short: "Agents, migration, rollout"
 summary: "Buyer Agent and Merchandising Agent, the path from Aura to LWR and rolling out to dealers in waves."
 takeaways:

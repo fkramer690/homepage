@@ -6,6 +6,7 @@ slug: erp-integration-bestand-auftraege
 course: b2b-commerce
 translationKey: commerce-04
 chapter: 4
+pubDate: 2026-10-28
 short: "ERP-Anbindung"
 summary: "Welche Daten zwischen Shop und ERP fließen, was live abgefragt wird und wem der Auftrag gehört."
 takeaways:
