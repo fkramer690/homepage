@@ -66,7 +66,18 @@ According to the April 2025 announcement, the troubleshooting agent reads produc
 
 ### Spare parts by serial number
 
-An agent can name the right spare part for a serial number only when one of your systems already answers that by rule. The data comes from three places: the as-built parts list from PLM, material, availability and price from the ERP, and the installed base with its service history from Salesforce assets. The agent understands the question, narrows it to an assembly and presents the result. It never picks a part number on its own. Whether to copy parts lists into Salesforce or call PLM live, and what dealers may see, is in [Spare parts by serial number: can an AI agent do it?](../../../blog/spare-parts-by-serial-number-ai/). The asset hierarchy behind it is covered in [chapter 4](../field-service-assets-maintenance-parts/).
+An agent can name the right spare part for a serial number only when one of your systems already answers that by rule. The data comes from three places: the as-built parts list from PLM, material, availability and price from the ERP, and the installed base with its service history from Salesforce assets.
+
+```ablauf
+sf: Salesforce assets, Spare parts agent
+erp: ERP material
+ext: PLM parts list
+PLM parts list --as-built--> Spare parts agent
+ERP material --availability, price--> Spare parts agent
+Salesforce assets --service history--> Spare parts agent
+```
+
+The agent understands the question, narrows it to an assembly and presents the result. It never picks a part number on its own. Whether to copy parts lists into Salesforce or call PLM live, and what dealers may see, is in [Spare parts by serial number: can an AI agent do it?](../../../blog/spare-parts-by-serial-number-ai/). The asset hierarchy behind it is covered in [chapter 4](../field-service-assets-maintenance-parts/).
 
 ## What may an AI assistant set up?
 
@@ -88,7 +99,11 @@ Agents fit into the same waves. I would switch on an agent in a region that has 
 
 Field Service has to move the numbers from the business case. I track six per region and month: jobs per technician and day, travel share, first-time fix rate, response times met, arrivals within the promised window and the share of engine proposals dispatchers change before release. The last one is the most useful in the first months, because it shows whether data and scheduling policy fit.
 
-Salesforce offers two ready-made views. According to the [Salesforce blog of September 2025](https://www.salesforce.com/blog/how-to-transform-field-service-operations-with-agentic-analytics/), Operations Home shows 12 KPIs, among them first-time fix rate, utilization, job duration and asset downtime, and Field Service Intelligence has five dashboards with more than 30 KPIs. The blog names Tableau Next, Data Cloud and Agentforce as the basis, and [Salesforce Help](https://help.salesforce.com/s/articleView?id=service.ifs_intro.htm&language=en_US&type=5) describes Field Service Intelligence as including Data 360, CRM Analytics and Agentforce Service. The pricing page shows Operations Home and Field Service Intelligence with "Available for Purchase" entries and includes Tableau Next only in Agentforce 1 Field Service, so ask your account team in writing which line items you need. For the first wave, standard reports on service appointments and work orders cover the business case numbers.
+Salesforce offers two ready-made views. According to the [Salesforce blog of September 2025](https://www.salesforce.com/blog/how-to-transform-field-service-operations-with-agentic-analytics/), Operations Home shows 12 KPIs, among them first-time fix rate, utilization, job duration and asset downtime, and Field Service Intelligence has five dashboards with more than 30 KPIs. The blog names Tableau Next, Data Cloud and Agentforce as the basis, and [Salesforce Help](https://help.salesforce.com/s/articleView?id=service.ifs_intro.htm&language=en_US&type=5) describes Field Service Intelligence as including Data 360, CRM Analytics and Agentforce Service. For the first wave, standard reports on service appointments and work orders cover the business case numbers.
+
+```hinweis offen
+The pricing page shows Operations Home and Field Service Intelligence with "Available for Purchase" entries and includes Tableau Next only in Agentforce 1 Field Service, so ask your account team in writing which line items you need.
+```
 
 Before any dashboard, write down how each KPI is defined. First-time fix needs a time window, a scope such as same asset, a rule on fault codes and a list of planned follow-ups that do not count. Then measure a baseline for three months in the old system with the same definitions. The KPI table and the five definition decisions are in [Field Service KPIs after go-live: what to measure](../../../blog/field-service-kpis-after-go-live/).
 

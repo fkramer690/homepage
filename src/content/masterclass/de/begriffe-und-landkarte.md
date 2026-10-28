@@ -103,7 +103,13 @@ Für Architekten ist der Satz aus der Architects-Doku der wichtigste: Was sich a
 | 15.09.2026 | AIforce auf der Dreamforce, Salesforce in Claude als Beta | [Salesforce News](https://www.salesforce.com/news/stories/aiforce-announcement/) |
 | 09.10.2026 | Marc Benioff auf X: „AIForce is officially SIForce“, ohne Pressemitteilung | [Salesforce Ben](https://www.salesforceben.com/salesforce-renames-aiforce-to-siforce-after-trump-order/) (Sekundärquelle) |
 
-Zwei Lehren ziehe ich daraus. Erstens: Einstein for Developers, Agentforce for Developers und Agentforce Vibes sind dieselbe Produktlinie; Salesforce Ben beschreibt Vibes als [Umbenennung und Ausbau von Agentforce for Developers](https://www.salesforceben.com/developer-features-and-announcements-from-dreamforce-25/), und die Doku-URL enthält bis heute `einstein-for-devs`. Ein Angebot, das 2026 „Einstein for Developers“ verspricht, beschreibt einen veralteten Stand. Zweitens: Die Schicht für externe Oberflächen hieß laut Salesforce Ben in rund sechs Monaten Headless 360, AIforce und SIForce. Ich schreibe in Konzepten „AIforce (Stand Oktober 2026)“ und übernehme in Verträgen den Namen, der auf dem Bestellformular steht. Was hinter AIforce steckt und was eine IT-Leitung jetzt tun sollte, steht in [AIforce: Salesforce in Claude und Slack](../../../blog/aiforce-salesforce-in-claude-und-slack/), die zweite Lesart von „SI“ als Systemintegrator in [Kapitel 5](../aiforce-und-systemintegratoren/).
+Zwei Lehren ziehe ich daraus. Erstens: Einstein for Developers, Agentforce for Developers und Agentforce Vibes sind dieselbe Produktlinie; Salesforce Ben beschreibt Vibes als [Umbenennung und Ausbau von Agentforce for Developers](https://www.salesforceben.com/developer-features-and-announcements-from-dreamforce-25/), und die Doku-URL enthält bis heute `einstein-for-devs`. Ein Angebot, das 2026 „Einstein for Developers“ verspricht, beschreibt einen veralteten Stand. Zweitens: Die Schicht für externe Oberflächen hieß laut Salesforce Ben in rund sechs Monaten Headless 360, AIforce und SIForce.
+
+```hinweis tipp
+Ich schreibe in Konzepten „AIforce (Stand Oktober 2026)“ und übernehme in Verträgen den Namen, der auf dem Bestellformular steht.
+```
+
+Was hinter AIforce steckt und was eine IT-Leitung jetzt tun sollte, steht in [AIforce: Salesforce in Claude und Slack](../../../blog/aiforce-salesforce-in-claude-und-slack/), die zweite Lesart von „SI“ als Systemintegrator in [Kapitel 5](../aiforce-und-systemintegratoren/).
 
 ## Ein typisches Szenario: viermal „KI“ im Lenkungskreis
 

@@ -57,7 +57,7 @@ Agentforce wird pro Aktion abgerechnet. Die Sätze stehen in der [Flex Credits R
 ```kennzahlen
 20 | Flex Credits pro Standard- oder Custom-Aktion in Produktion
 16 | Flex Credits pro Aktion in einer Sandbox
-0,10 € | pro Aktion beim Listenpreis von 500 € je 100.000 Credits
+0,10 € | pro Aktion zum Listenpreis
 quelle: Salesforce Flex Credits Rate Card (Stand 31.08.2026) und Agentforce-Preisseite
 ```
 

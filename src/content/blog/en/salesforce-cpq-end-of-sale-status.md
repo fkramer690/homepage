@@ -77,7 +77,15 @@ Whether the Billing package is still sold to new customers is not stated on any 
 
 Many articles say Salesforce stopped selling CPQ in March 2025. That date comes from third-party reporting such as the SalesforceBen article quoted above, updated on 27 March 2025. The Salesforce page itself names neither an end-of-sale date nor an end-of-life date. If you cite a date in a board paper or a tender, mark it as reported.
 
-The background helps when partners use different names. Salesforce CPQ and Salesforce Billing are managed packages with the namespaces `SBQQ` and `blng`, based on SteelBrick, which Salesforce bought for $360 million according to [SiliconANGLE](https://siliconangle.com/2015/12/24/salesforce-confirms-360m-acquisition-of-quote-to-cash-startup-steelbrick/) in December 2015. The successor appeared from Spring '24 as Revenue Lifecycle Management, then as Revenue Cloud Advanced. Salesforce documentation now also says Revenue Management or Agentforce Revenue Management. When a partner says "Revenue Cloud", ask whether they mean the new product or the offering Salesforce [introduced in November 2020](https://www.salesforce.com/news/stories/introducing-revenue-cloud/) under the same name, which brought together CPQ, Billing, partner relationship management and B2B Commerce. How the two products differ technically is covered in [Salesforce CPQ vs Revenue Cloud: the real differences](../salesforce-cpq-vs-revenue-cloud-differences/).
+The background helps when partners use different names. Salesforce CPQ and Salesforce Billing are managed packages with the namespaces `SBQQ` and `blng`. For the successor, Salesforce documentation now also says Revenue Management or Agentforce Revenue Management.
+
+```zeitleiste
+2015-12 | Salesforce buys SteelBrick, the base of CPQ and Billing, for $360 million according to [SiliconANGLE](https://siliconangle.com/2015/12/24/salesforce-confirms-360m-acquisition-of-quote-to-cash-startup-steelbrick/)
+2020-11 | Salesforce [introduces Revenue Cloud](https://www.salesforce.com/news/stories/introducing-revenue-cloud/), bringing together CPQ, Billing, partner relationship management and B2B Commerce
+Spring '24 | The successor appears as Revenue Lifecycle Management, then as Revenue Cloud Advanced
+```
+
+When a partner says "Revenue Cloud", ask whether they mean the new product or the 2020 offering of the same name. How the two products differ technically is covered in [Salesforce CPQ vs Revenue Cloud: the real differences](../salesforce-cpq-vs-revenue-cloud-differences/).
 
 ## What should you secure at the next CPQ renewal?
 

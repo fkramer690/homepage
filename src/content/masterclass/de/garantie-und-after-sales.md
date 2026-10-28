@@ -74,7 +74,7 @@ Genehmigter Anspruch ..Regressanspruch..> Lieferant
 
 Der Händler reicht den Anspruch im Partnerportal mit Maschine, Fehler, verursachendem Teil und Kosten pro Position ein. Die Regeln prüfen Garantiezeitraum, Nutzungsgrenze und gedecktes Teil. Bei einem Zukaufteil geht ein Regressanspruch (Supplier Recovery Claim) an den Lieferanten, und die Buchhaltung bucht die Gutschrift im ERP.
 
-Die Gutschrift fällt in Planungen leicht unter den Tisch. Ohne ihn sieht der Händler im Portal einen genehmigten Anspruch und wartet trotzdem auf sein Geld. Die Objekte, den Lieferantenregress und die Portallizenzen für Händler behandelt [Garantieansprüche von Händlern in Salesforce](../../../blog/garantieansprueche-haendler-salesforce/). Welche Portallizenz Händler brauchen, war Thema in [Kapitel 3](../haendler-und-partnerkanal/).
+Die Gutschrift fällt in Planungen leicht unter den Tisch. Ohne sie sieht der Händler im Portal einen genehmigten Anspruch und wartet trotzdem auf sein Geld. Die Objekte, den Lieferantenregress und die Portallizenzen für Händler behandelt [Garantieansprüche von Händlern in Salesforce](../../../blog/garantieansprueche-haendler-salesforce/). Welche Portallizenz Händler brauchen, war Thema in [Kapitel 3](../haendler-und-partnerkanal/).
 
 ### Was bringt der Garantie-Prüfagent?
 

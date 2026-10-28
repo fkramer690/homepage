@@ -63,7 +63,11 @@ Stand 27. Oktober 2026, gestützt auf die verlinkten Seiten. Preise von Salesfor
 | 11 | Altes ERP oder MES ohne API | MuleSoft IDP mit RPA oder der Systems Integration Agent | IDP gibt Dokumente unter [80 Prozent Konfidenz an Menschen](https://admin.salesforce.com/blog/2025/automate-order-entry-with-flow-mulesoft-agentforce-automate-with-agentforce); der Systems Integration Agent ist [seit der Dreamforce 2026 GA](https://www.salesforce.com/blog/dreamforce-2026-announcements/) | RPA und der Systems Integration Agent arbeiten über die Oberfläche; Monitoring einplanen |
 | 12 | Vertrieb will Salesforce direkt in Claude nutzen | Salesforce in Claude aus der AIforce-Schicht | Für alle Kunden [als Beta verfügbar](https://www.salesforce.com/news/stories/aiforce-announcement/) | „Pricing and packaging are subject to change“; Pilot mit kleinem Kreis |
 
-Zwei Hinweise zur Matrix. Zeile 5 ist für deutsche Hersteller oft die entscheidende, weil sie Zeile 2 ausschließen kann. Ob eine Org in der EU Operating Zone liegt, sollte die IT vor jedem Werkzeugvergleich klären. Und Zeile 6 sieht harmlos aus, ist aber der Punkt, an dem ein externes Modell echte Kundendaten liest. Was dabei zu prüfen ist, steht in [Kapitel 3](../mcp-und-schnittstellen/).
+```hinweis achtung
+Zeile 5 ist für deutsche Hersteller oft die entscheidende, weil sie Zeile 2 ausschließen kann. Ob eine Org in der EU Operating Zone liegt, sollte die IT vor jedem Werkzeugvergleich klären.
+
+Zeile 6 sieht harmlos aus, ist aber der Punkt, an dem ein externes Modell echte Kundendaten liest. Was dabei zu prüfen ist, steht in [Kapitel 3](../mcp-und-schnittstellen/).
+```
 
 ## Sechs Fragen in der richtigen Reihenfolge
 
