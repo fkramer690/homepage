@@ -16,7 +16,7 @@ takeaways:
   - "A pilot group of technicians running the beta for two weeks before each major version finds the problems that admins in the office miss."
 faq:
   - q: "How often is the Salesforce Field Service mobile app updated?"
-    a: "The app follows the three platform releases a year with a major version each, for example 260.0 for Spring '26, and gets patch versions in between. In September 2026 alone Salesforce released patch 262.3 on 4 September and a further patch on 23 September."
+    a: "The app has major versions, such as 260.0 for Spring '26, and patch versions in between. In September 2026 alone Salesforce released patch 262.3 on 4 September and a further patch on 23 September."
   - q: "How do I get beta versions of the Field Service mobile app?"
     a: "Through the Field Service Mobile Beta and Early Adopters Program on Salesforce Developers. Beta builds are available one month before major releases and one week before as-needed patch releases. For 260.0 the beta only worked with Spring '26 sandbox orgs."
   - q: "Can I stop the Field Service app from updating on technicians' devices?"
@@ -30,7 +30,7 @@ A manufacturer should test every new version of the Salesforce Field Service mob
 
 ## How often does the Field Service app change?
 
-The app has its own version numbers, which follow the platform releases: 260.0 belonged to Spring '26, 262 to Summer '26. In between come patch versions. A few dates from the release posts in the Field Service Mobile group of the Trailblazer Community:
+The app has its own version numbers next to the platform releases: the major version 260.0 belonged to Spring '26. In between come patch versions. A few dates from the release posts in the Field Service Mobile group of the Trailblazer Community:
 
 | Version | Beta | Release | Content |
 |---|---|---|---|
@@ -46,7 +46,7 @@ Both posts add that Salesforce deploys major and patch releases over several day
 
 The [Field Service Mobile Beta and Early Adopters Program](https://developer.salesforce.com/tools/field-service-mobile-beta) is open to customers. According to Salesforce, beta releases are available one month before major releases and one week before as-needed patch releases. The 262.3 dates match that: beta on 26 August, release on 4 September.
 
-Two limits matter for planning. First, the beta is tied to the matching preview: according to the 260.0 post, that beta could only be used with Spring '26 sandbox orgs. Technicians cannot test it in their daily work against production. Second, a beta is for testing compatibility and preparing your own customisations, not for productive use.
+Two limits matter for planning. First, the beta is tied to the matching preview: according to the 260.0 post, that beta could only be used with Spring '26 sandbox orgs. Technicians cannot test it in their daily work against production. Second, Salesforce describes the beta as a way to test compatibility and prepare your own customisations ahead of the rollout to workers, so it belongs on test devices.
 
 Debug builds are the developers' tool. Salesforce offers them for major and patch releases, to test your own customisations in sandboxes. They run in the Android emulator or the iOS simulator, so they need a developer machine and not a technician's device.
 
@@ -80,11 +80,11 @@ The calendar for this is the same one that holds the platform releases. How to b
 A machine builder runs 100 technicians, 70 on iPads and 30 on Android tablets, plus 15 partner technicians. The release manager sets up a pilot group of eight: five internal technicians on iOS, two on Android and one partner technician.
 
 - **Four weeks before a major version.** The beta arrives. The release manager refreshes a preview sandbox with test data from three typical machines.
-- **Weeks one and two of the beta.** The pilot technicians run the routine twice a week, about two hours each time, on spare devices with the beta installed. Developers test the team's own components with debug builds in parallel.
+- **Weeks one and two of the beta.** The pilot technicians run the routine once a week, about two hours each time, on spare devices with the beta installed. Developers test the team's own components with debug builds in parallel.
 - **Two weeks before release.** Results are in. In this scenario one custom component in the service report shows an empty field on Android. The developer fixes it, and the fix goes into the next deployment before the app version reaches production.
 - **Release week.** The update rolls out over several days. The pilot technicians are the first contact for colleagues, and support asks for the version number on every ticket.
 
-The effort is about 30 hours of technician time per major version, plus the release manager's time. One failed login wave across 100 technicians on a Monday morning costs more.
+The effort is about 32 hours of technician time per major version, plus the release manager's time. One failed login wave across 100 technicians on a Monday morning costs more.
 
 ## Where should you start?
 

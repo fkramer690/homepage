@@ -90,7 +90,7 @@ Trailhead describes no approval status for the forecast. Who declares a componen
 
 A supplier of hydraulic cylinders delivers into 12 programmes of four agricultural machinery OEMs. Each programme has about four variants, each variant uses about ten of the supplier's parts, built in two plants. Today every key account manager keeps a spreadsheet per OEM.
 
-With 24 monthly periods, that is about 12 x 4 x 10 x 2 x 24 = 23,040 component forecast records per run, a size the engine handles and the team can still review. The benefit lies in three places: one calculation logic instead of twelve spreadsheets, adjustments with a reason, and opportunities created from the forecast instead of typed in again. The cost lies in data: lead times and quantities per unit have to come from engineering, and market data for agricultural machinery programmes has to be bought or collected.
+With 24 monthly periods, that is about 12 x 4 x 10 x 2 x 24 = 23,040 component forecast records per run, still few enough for the team to review the large deviations. The benefit lies in three places: one calculation logic instead of twelve spreadsheets, adjustments with a reason, and opportunities created from the forecast instead of typed in again. The cost lies in data: lead times and quantities per unit have to come from engineering, and market data for agricultural machinery programmes has to be bought or collected.
 
 ## When is program-based business overkill?
 

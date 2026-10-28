@@ -44,7 +44,7 @@ Die [Limits für Enhanced Scheduling and Optimization](https://help.salesforce.c
 |---|---|
 | Skills pro Serviceressource | 250, bei der älteren Engine 100 |
 | Optimierte Servicetermine | 50.000 pro rollierenden 24 Stunden oder 500 pro Field Service Scheduling-Lizenz, je nachdem, was höher ist |
-| Horizont für Abwesenheiten und Terminänderungen | 30 Tage, Änderungen darüber hinaus bekommen keine Aktualisierung von Fahrzeit und Mittagspause |
+| Horizont für Abwesenheiten und Terminänderungen | 30 Tage, spätere Änderungen bekommen keine Aktualisierung von Fahrzeit und Mittagspause |
 | Servicegebiete pro geplantem Optimierungsjob | 100, mit Dynamic Scaling 1.000 |
 
 Auf das Skill-Limit würde ich zuerst schauen. Ein Servicetechniker bei einem Maschinenbauer hat oft Skills pro Baureihe, pro Steuerung, pro Sicherheitsunterweisung und pro Sprache. Mit 100 Skills wird das bei größeren Produktprogrammen eng. Mit 250 ist Luft.
