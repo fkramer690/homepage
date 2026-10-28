@@ -75,6 +75,18 @@ Usually dealers and service partners, sometimes the manufacturer's own technicia
 
 Dealers without Field Service report through the portal. Which licence that needs is covered in [the Manufacturing Cloud customer portal](../manufacturing-cloud-customer-portal/). Whichever path you choose, completion must be reported per machine, not per dealer as a number, or the campaign status in Salesforce is fiction.
 
+## When is a list in the quality system enough?
+
+Not every manufacturer needs this data model. If you run one or two field actions a year on a few dozen machines and your own technicians do the work, a list of serial numbers in the quality system plus one work order or case per machine is enough. The overhead of definitions, partners and partner inventory only pays off at scale.
+
+I would use product service campaigns when several of these apply:
+
+- **Hundreds of machines per action**, spread across many customers.
+- **Dealers or service partners do the work**, and you need status per machine from outside your own company.
+- **Unsold stock sits at dealers** and has to be fixed before sale.
+- **Supplier recovery matters**, because the faulty part was bought in.
+- **Upgrades happen regularly**, for example retrofit kits for a whole series.
+
 ## What should you decide before building?
 
 Four questions I would answer in writing:

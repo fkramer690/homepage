@@ -103,4 +103,4 @@ Zwei Entscheidungen gehören in das Design, bevor ein Partner etwas baut. Ersten
 
 Nehmen Sie Ihre letzten zehn Inbetriebnahmen und notieren Sie Dauer, Teamgröße, Vorarbeiten und ob Partner beteiligt waren. Bleiben die meisten unter 30 Tagen und sind die Teams stabil, tragen mehrtägige Termine mit Crews die Planung. Laufen viele länger oder haben mehr als fünf verknüpfte Schritte, halten Sie den Projektplan außerhalb und nutzen Field Service für die Arbeit vor Ort.
 
-Field Service plant mehrtägige Einsätze und Crews gut, solange sie in 30 Tage passen und ohne Abhängigkeiten auskommen, darüber hinaus muss ein Projektplan die Last tragen. Wenn Sie Ihren Inbetriebnahme-Prozess an diesen Grenzen prüfen möchten, [schreiben Sie mir](#contact).
+Field Service plant mehrtägige Einsätze und Crews gut, solange sie in 30 Tage passen und ohne Abhängigkeiten auskommen, bei längeren Einsätzen muss ein Projektplan die Last tragen. Wenn Sie Ihren Inbetriebnahme-Prozess an diesen Grenzen prüfen möchten, [schreiben Sie mir](#contact).

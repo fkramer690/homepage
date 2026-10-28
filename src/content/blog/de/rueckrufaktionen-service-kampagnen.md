@@ -75,6 +75,20 @@ Meist Händler und Servicepartner, manchmal eigene Techniker des Herstellers. Ar
 
 Händler ohne Field Service melden über das Portal. Welche Lizenz das braucht, steht im Beitrag zum [Kundenportal der Manufacturing Cloud](../manufacturing-cloud-kundenportal/). Egal welcher Weg: Die Erledigung muss pro Maschine gemeldet werden, nicht als Zahl pro Händler, sonst ist der Kampagnenstatus in Salesforce Fiktion.
 
+## Wann reicht eine Liste im Qualitätssystem?
+
+Nicht jeder Hersteller braucht dieses Datenmodell. Wenn Sie ein oder zwei Feldaktionen im Jahr an einigen Dutzend Maschinen durchführen und eigene Techniker die Arbeit erledigen, reicht eine Liste der Seriennummern im Qualitätssystem plus ein Arbeitsauftrag oder Case pro Maschine. Der Aufwand für Definitionen, Partner und Partnerbestand lohnt sich erst ab einer gewissen Größe.
+
+Ich würde Product Service Campaigns einsetzen, wenn mehrere dieser Punkte zutreffen:
+
+- **Hunderte Maschinen pro Aktion**, verteilt auf viele Kunden.
+- **Händler oder Servicepartner erledigen die Arbeit**, und Sie brauchen den Status pro Maschine von außerhalb des eigenen Unternehmens.
+- **Unverkaufter Bestand steht bei Händlern** und muss vor dem Verkauf repariert werden.
+- **Lieferantenregress ist relevant**, weil das fehlerhafte Teil zugekauft wurde.
+- **Upgrades kommen regelmäßig vor**, etwa Nachrüstsätze für eine ganze Baureihe.
+
+Für die Auswahl der Maschinen gilt in beiden Fällen dasselbe: Ohne saubere Seriennummern und Chargen hilft auch die beste Liste nicht.
+
 ## Was sollten Sie vor dem Bau entscheiden?
 
 Vier Fragen würde ich schriftlich beantworten:

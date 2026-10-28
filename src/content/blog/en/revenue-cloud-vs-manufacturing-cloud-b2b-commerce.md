@@ -10,7 +10,7 @@ categories: [revenue-cloud, manufacturing-cloud, b2b-commerce]
 tags: [revenue cloud, manufacturing cloud, b2b commerce, quoting, architecture, manufacturing]
 takeaways:
   - "Revenue Cloud prices and sells configured offers, from catalog and configurator through quote and order to billing. It is the quoting system among the three."
-  - "Manufacturing Cloud tracks run-rate business: sales agreements with plan against actuals, account forecasts and dealer rebates. It brings no configurator and no pricing engine."
+  - "Manufacturing Cloud tracks run-rate business: sales agreements with plan against actuals, account forecasts and dealer rebates. Configured quotes belong in Revenue Cloud."
   - "B2B Commerce lets dealers and customers order known items themselves, such as spare parts and consumables, in a store with buyer groups, price books, cart and checkout."
   - "The three overlap at catalog, price and quote. Salesforce lets Manufacturing Cloud and B2B Commerce use Revenue Cloud's catalog and pricing, but only if you decide on one model."
   - "Two quote models or two quoting agents for the same products lead to two prices for the same machine. Decide per process step which product leads."
@@ -32,7 +32,7 @@ Revenue Cloud, Manufacturing Cloud and B2B Commerce cover different parts of a m
 
 **Revenue Cloud** is Salesforce's quote-to-cash product. Trailhead now calls it Agentforce Revenue Management, the salesforce.com product page says Revenue Cloud again. According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/revenue-lifecycle-management-foundations/explore-revenue-lifecycle-management), it consists of Product Catalog Management, Product Configurator, Salesforce Pricing and Rate Management, Transaction Management for quotes, orders and assets, Dynamic Revenue Orchestrator, Salesforce Contracts and billing. The [product page](https://www.salesforce.com/uk/products/revenue-cycle-management) promises "a single, attribute-based catalogue" that exposes products across all channels. Revenue Cloud Advanced is listed at €200 per user and month on the [pricing page](https://www.salesforce.com/eu/sales/revenue-lifecycle-management/pricing/), billed annually.
 
-**Manufacturing Cloud** is the industry cloud for run-rate business. The [product page](https://www.salesforce.com/manufacturing/cloud/) describes run-rate agreements and demand forecasts in Sales Core, and Summer '26 brought rebate management improvements. The core is the sales agreement: planned and actual quantities per customer, product and period. Whether that fits your business is covered in [Manufacturing Cloud: is it worth it?](../salesforce-manufacturing-cloud-is-it-worth-it/). Manufacturing Cloud has no configurator and no pricing engine of its own.
+**Manufacturing Cloud** is the industry cloud for run-rate business. The [product page](https://www.salesforce.com/manufacturing/cloud/) describes run-rate agreements and demand forecasts in Sales Core, and Summer '26 brought rebate management improvements. The core is the sales agreement: planned and actual quantities per customer, product and period. Whether that fits your business is covered in [Manufacturing Cloud: is it worth it?](../salesforce-manufacturing-cloud-is-it-worth-it/). For rebates there is a separate article on [rebate management for dealers](../rebate-management-dealer-rebates/).
 
 **B2B Commerce** is the Salesforce store for business customers, which Salesforce now also markets as Agentforce Commerce for B2B. Dealers log in, see the products their buyer group may buy at their price, fill a cart and order. It pays off for spare parts, consumables and accessories with known part numbers. The [B2B Commerce masterclass](../../masterclass/b2b-commerce/b2b-commerce-worth-it-overview/) covers it in detail.
 
@@ -72,7 +72,7 @@ Four setups I would not accept in a design review:
 1. **Two catalogs.** Products and attributes maintained once for Revenue Cloud and once for the store or for Manufacturing Cloud. Every new variant then has to be created twice, and one of them will be missing.
 2. **Two price masters.** Price books for the store, pricing procedures for the quote, conditions in SAP. The dealer sees one price in the store and another in the quote.
 3. **Two quote models.** Dealers quote on standard quotes with price books in Manufacturing Cloud, the sales desk quotes in Revenue Cloud. Reports, approvals and the hand-over to the ERP exist twice.
-4. **Two quoting agents** on these two quote models. Each agent needs its own tests, guardrails and consumption budget, and both give answers that disagree.
+4. **Two quoting agents** on these two quote models. Each agent needs its own tests, guardrails and consumption budget, and their answers can disagree.
 
 ## A typical scenario, as an assumption
 

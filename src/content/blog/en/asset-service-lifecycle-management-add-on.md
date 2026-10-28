@@ -85,11 +85,11 @@ My rule of thumb:
 
 Assume a maker of hydraulic components with SAP as ERP and Field Service for 30 users: 8 people in hotline and back office on Field Service Plus, 4 dispatchers and 18 technicians. Service sells repairs on returned pumps and runs one or two retrofit campaigns a year. All numbers are assumptions.
 
-**Option A, the add-on for everyone.** 30 × $75 × 12 = $27,000 a year at list price. Salesforce does not state on the pages I opened whether every Field Service user needs the add-on, so this is the upper bound.
+**Option A, the add-on for everyone.** 30 × $75 × 12 = $27,000 a year at list price. Salesforce does not state on the pages I opened whether every Field Service user needs the add-on, so this is the upper bound. Setup of estimation with pricing procedures and campaigns takes an assumed 20 partner days.
 
-**Option B, core plus own build.** A Lightning component that lists entitlements on the asset page, repair quotes from the ERP and campaign items loaded from a spreadsheet. Assume 30 partner days to build and five days of upkeep per year, because each release and each change to contracts touches the component.
+**Option B, core plus own build.** A Lightning component that lists entitlements on the asset page, a repair quote flow with prices from the ERP and campaign items loaded from a spreadsheet. Assume 60 partner days to build and 10 days of upkeep per year, because each release and each change to contracts touches the custom parts.
 
-**The decision.** The company uses three functions: coverage view, estimation for depot repairs and campaigns. That is enough to make the standard cheaper than the own build within two years, and Salesforce maintains it. If only the coverage view were needed, I would ask Salesforce for a quote limited to the hotline users before building anything. How I compare such options is part of [make-or-buy and licence forecasts](../../services/make-or-buy-licences/).
+**The comparison.** At an assumed day rate of $1,200, option A costs $24,000 for setup plus $54,000 in licences over two years, $78,000 in total. Option B costs $72,000 plus $24,000 upkeep, $96,000 in total, and the company owns every bug. The company uses three functions: coverage view, estimation for depot repairs and campaigns. With three functions in use the add-on wins. If only the coverage view were needed, I would ask Salesforce for a quote limited to the hotline users before building anything. How I compare such options is part of [make-or-buy and licence forecasts](../../services/make-or-buy-licences/).
 
 ## Where should you start?
 
