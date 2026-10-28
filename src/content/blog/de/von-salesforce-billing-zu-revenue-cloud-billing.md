@@ -65,7 +65,7 @@ Die Salesforce-Hilfe führt Billing-Daten im [Migrationsleitfaden](https://help.
 - **Offene Rechnungen:** im Paket abschließen. Zahlungen dort verbuchen oder den offenen Betrag als Saldo ins neue System übernehmen, mit Verweis auf die alte Rechnungsnummer.
 - **Offene Gutschriften:** wenn möglich vor dem Cutover verrechnen. Der Rest wandert wie eine offene Rechnung als Saldo.
 - **Abrechnungspläne aktiver Verträge:** aus migrierten Assets und Aufträgen neu aufbauen. Der erste Rechnungslauf in Revenue Cloud muss genau nach dem letzten abgerechneten Zeitraum im Paket beginnen, sonst bekommt ein Kunde doppelt oder gar keine Rechnung.
-- **Gespeicherte Zahlungsmittel:** mit dem Zahlungsanbieter klären, ob Tokens in der neuen Anbindung weiter nutzbar sind. Diese Frage beantwortet Ihr Zahlungsanbieter.
+- **Gespeicherte Zahlungsmittel:** mit dem Zahlungsanbieter klären, ob Tokens in der neuen Anbindung weiter nutzbar sind.
 
 ## Warum sollte der Cutover am Periodenende liegen?
 

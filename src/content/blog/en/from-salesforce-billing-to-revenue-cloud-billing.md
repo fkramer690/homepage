@@ -65,7 +65,7 @@ Salesforce Help lists billing data as its own topic in the [migration guide](htt
 - **Open invoices:** finish them in the package. Collect the payments there or move the open amount as a balance into the new system, with a reference to the old invoice number.
 - **Open credit notes:** apply them before the cutover where possible. What remains moves as a balance, like an open invoice.
 - **Billing schedules for active contracts:** rebuild them from migrated assets and orders. The first invoice run in Revenue Cloud must start exactly after the last billed period in the package, otherwise a customer gets billed twice or not at all.
-- **Stored payment methods:** clarify with your payment provider whether tokens can be reused in the new connection. Your gateway answers that question.
+- **Stored payment methods:** clarify with your payment provider whether tokens can be reused in the new connection.
 
 ## Why should the cutover sit at a period end?
 
