@@ -1,5 +1,6 @@
 ---
 title: "Salesforce Make-or-buy und Lizenzprognosen"
+headline: "Salesforce-Lizenzen prüfen, bevor Sie unterschreiben"
 description: "Industry Cloud, Eigenentwicklung oder anderes Tool? Make-or-buy-Entscheidungen und Salesforce-Lizenzprognosen auf Basis eines langfristigen ROI mit Wartung."
 lang: de
 slug: make-or-buy-lizenzen

@@ -1,5 +1,6 @@
 ---
 title: "Salesforce architecture and solution design"
+headline: "A Salesforce target architecture before the partner builds"
 description: "Target architecture, data model and cloud selection for Salesforce programmes with several clouds, portals and integrations, designed on the client side."
 lang: en
 slug: salesforce-architecture

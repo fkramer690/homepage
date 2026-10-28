@@ -52,6 +52,8 @@ const services = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/services' }),
   schema: z.object({
     title: z.string().min(20).max(60),
+    // Optional H1 written for the reader's problem; title stays the SEO title.
+    headline: z.string().min(20).max(60).optional(),
     description: z.string().min(120).max(160),
     lang: z.enum(['en', 'de']),
     slug: z.string().regex(/^[a-z0-9]+(-[a-z0-9]+)*$/),

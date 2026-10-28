@@ -1,5 +1,6 @@
 ---
 title: "Salesforce-Programmsteuerung und Nearshore-Teams"
+headline: "Nearshore-Teams für Salesforce, die stabil liefern"
 description: "Planung und Steuerung von Salesforce-Programmen inklusive Nearshore-Entwicklungsteams in Osteuropa und Indien, mit Team-Setups, die stabil bleiben."
 lang: de
 slug: projektsteuerung-nearshore

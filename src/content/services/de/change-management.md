@@ -1,5 +1,6 @@
 ---
 title: "Change Management für Salesforce-Programme"
+headline: "Salesforce ist live, aber kaum jemand nutzt es?"
 description: "Change Management für Salesforce-Programme nach Prosci und ADKAR: neue Prozesse und Releases so einführen, dass Fachbereiche und Partner sie nutzen."
 lang: de
 slug: change-management

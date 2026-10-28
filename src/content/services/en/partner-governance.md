@@ -1,5 +1,6 @@
 ---
 title: "Salesforce partner governance for multi-vendor programmes"
+headline: "Several Salesforce partners, one owner on the client side"
 description: "Several implementation partners on one Salesforce org? One governance and release framework, clear ownership and reviews on the client side keep it in control."
 lang: en
 slug: partner-governance

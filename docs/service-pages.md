@@ -8,7 +8,7 @@ Service pages follow the content rules of the [blog guidelines](blog-guidelines.
 
 `src/components/ServicePage.astro` builds every page the same way. The Markdown file provides the frontmatter and the body:
 
-1. Optional note (`note`), eyebrow with number and short name (from `src/i18n`), title, lead, "Book a call"
+1. Optional note (`note`), eyebrow with number and short name (from `src/i18n`), headline (or title), lead, "Book a call"
 2. Typical situations (`situations`)
 3. What you get (`deliverables`) and results (`results`)
 4. How I work (`phases`, 3–4 steps)
@@ -24,7 +24,8 @@ Blog articles link back to the best matching service automatically (`getPostServ
 
 | Field | Rule |
 |---|---|
-| `title` | 20–60 characters, main keyword first |
+| `title` | 20–60 characters, main keyword first. Used for the browser and search title |
+| `headline` | optional, 20–60 characters: the H1 when set, written for the reader's problem or goal instead of the keyword. Only claims the page already makes |
 | `description` | 120–160 characters |
 | `slug` | lowercase with hyphens, unique across EN and DE |
 | `translationKey` | same for EN and DE, e.g. `service-devops` |

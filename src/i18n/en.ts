@@ -19,12 +19,12 @@ export const en = {
   },
   hero: {
     eyebrow: 'FK Solution Design GmbH · Cologne',
-    title: 'Salesforce architecture for manufacturers – on the client side.',
+    title: 'Salesforce architecture for manufacturers, on the client side.',
     focus: ['After-Sales', 'Service', 'Field Service', 'B2B Sales'],
     lead: 'The central architectural authority between your business, your IT and your implementation partners.',
     ctaPrimary: 'Book a 30-minute call',
     ctaSecondary: 'See references',
-    mailSubject: 'Salesforce architecture – first call',
+    mailSubject: 'Salesforce architecture: first call',
   },
   proof: [
     { value: '8', label: 'years Salesforce' },

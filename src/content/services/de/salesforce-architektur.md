@@ -1,5 +1,6 @@
 ---
 title: "Salesforce-Architektur und Solution Design"
+headline: "Salesforce-Zielarchitektur, bevor der Partner baut"
 description: "Zielarchitektur, Datenmodell und Cloud-Auswahl für Salesforce-Programme mit mehreren Clouds, Portalen und Schnittstellen, entworfen auf Kundenseite."
 lang: de
 slug: salesforce-architektur
