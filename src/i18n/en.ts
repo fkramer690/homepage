@@ -604,7 +604,9 @@ export const en = {
     open: 'Open the masterclass',
     homeLabel: 'Masterclasses',
     homeTitle: 'Knowledge to read up on, chapter by chapter',
-    homeText: 'Six masterclasses take decision makers at manufacturing companies through the Salesforce topics that shape programmes today: AI, DevOps, Manufacturing Cloud, Revenue Cloud, B2B Commerce and Field Service. Free to read, in German and English.',
+    homeText: 'Six masterclasses for decision makers at manufacturing companies, free to read in English and German.',
+    // Short names for the compact list on the start page, keyed by course id.
+    homeNames: { ai: 'AI & Agentforce', devops: 'DevOps & release management', 'manufacturing-cloud': 'Manufacturing Cloud', 'revenue-cloud': 'Revenue Cloud', 'b2b-commerce': 'B2B Commerce', 'field-service': 'Field Service' },
     homeAll: 'All masterclasses at a glance',
   },
   floating: {
