@@ -5,6 +5,7 @@ import { topicIds } from './lib/topics';
 import { seriesIds } from './lib/series';
 import { categoryIds } from './lib/categories';
 import { contactBriefIds } from './lib/contact-briefs';
+import { courseIds } from './lib/courses';
 
 // Blog articles live as Markdown in src/content/blog/<lang>/<slug>.md.
 // The EN and DE version of an article share the same translationKey.
@@ -84,7 +85,9 @@ const masterclass = defineCollection({
     description: z.string().min(120).max(160),
     lang: z.enum(['en', 'de']),
     slug: z.string().regex(/^[a-z0-9]+(-[a-z0-9]+)*$/),
-    // masterclass-01 … masterclass-10, the same for EN and DE.
+    // Which masterclass the chapter belongs to (src/lib/courses.ts); AI if not set.
+    course: z.enum(courseIds).default('ai'),
+    // masterclass-01 … masterclass-10 (AI) or devops-01 … devops-10, the same for EN and DE.
     translationKey: z.string(),
     chapter: z.number().int().min(1).max(10),
     // Short title on the chapter card of the hub page.

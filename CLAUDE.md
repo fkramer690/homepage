@@ -14,7 +14,7 @@ Each service has its own page (`src/content/services/<lang>/`, built by `src/com
 
 ## Masterclass
 
-All masterclasses hang below one overview page (`/masterclass/`, `/en/masterclass/`, the single "Masterclasses" menu item); a new masterclass gets a hub below it and an entry in `src/lib/masterclasses.ts`, never a new menu item. The AI masterclass (hub plus ten chapters in `src/content/masterclass/<lang>/`, built by `src/components/MasterclassHub.astro` and `MasterclassChapter.astro`) follows `docs/masterclass.md`; the blog content rules and build check apply.
+All masterclasses hang below one overview page (`/masterclass/`, `/en/masterclass/`, the single "Masterclasses" menu item); a new masterclass gets a hub below it and an entry in `src/lib/masterclasses.ts`, never a new menu item. Both masterclasses (AI and DevOps, field `course`) share one chapter collection and the same components. The AI masterclass (hub plus ten chapters in `src/content/masterclass/<lang>/`, built by `src/components/MasterclassHub.astro` and `MasterclassChapter.astro`) follows `docs/masterclass.md`; the blog content rules and build check apply.
 
 ## External links
 

@@ -24,6 +24,7 @@ const readEntries = (collection) =>
         key: field(text, 'translationKey'),
         date: field(text, 'updatedDate') ?? field(text, 'pubDate'),
         draft: field(text, 'draft') === 'true',
+        course: field(text, 'course') ?? 'ai',
       };
     }),
   ).filter((e) => !e.draft);
@@ -32,19 +33,27 @@ const enSlugs = readEntries('blog').filter((e) => e.lang === 'en').map((e) => e.
 // Articles and service pages have different slugs per language, so the
 // sitemap's i18n option cannot pair them. This map gives each of their URLs
 // the DE/EN alternates and, for articles, the last change date.
+// URL part of each masterclass below /masterclass/ (see src/lib/courses.ts).
+const masterclassSegments = {
+  ai: { de: 'ki-salesforce', en: 'ai-salesforce' },
+  devops: { de: 'devops-release-management', en: 'devops-release-management' },
+};
 const contentPaths = {
   blog: { de: (slug) => `/blog/${slug}/`, en: (slug) => `/en/blog/${slug}/` },
   services: { de: (slug) => `/leistungen/${slug}/`, en: (slug) => `/en/services/${slug}/` },
-  masterclass: { de: (slug) => `/masterclass/ki-salesforce/${slug}/`, en: (slug) => `/en/masterclass/ai-salesforce/${slug}/` },
+  masterclass: {
+    de: (slug, e) => `/masterclass/${masterclassSegments[e.course].de}/${slug}/`,
+    en: (slug, e) => `/en/masterclass/${masterclassSegments[e.course].en}/${slug}/`,
+  },
 };
 const sitemapInfo = new Map();
 for (const collection of Object.keys(contentPaths)) {
   const entries = readEntries(collection);
   for (const entry of entries) {
     const pair = Object.fromEntries(
-      entries.filter((e) => e.key === entry.key).map((e) => [e.lang, contentPaths[collection][e.lang](e.slug)]),
+      entries.filter((e) => e.key === entry.key).map((e) => [e.lang, contentPaths[collection][e.lang](e.slug, e)]),
     );
-    sitemapInfo.set(contentPaths[collection][entry.lang](entry.slug), { pair, date: entry.date });
+    sitemapInfo.set(contentPaths[collection][entry.lang](entry.slug, entry), { pair, date: entry.date });
   }
 }
 const servicesIndex = { de: '/leistungen/', en: '/en/services/' };
@@ -53,9 +62,11 @@ sitemapInfo.set(servicesIndex.en, { pair: servicesIndex });
 const masterclassesIndex = { de: '/masterclass/', en: '/en/masterclass/' };
 sitemapInfo.set(masterclassesIndex.de, { pair: masterclassesIndex });
 sitemapInfo.set(masterclassesIndex.en, { pair: masterclassesIndex });
-const masterclassIndex = { de: '/masterclass/ki-salesforce/', en: '/en/masterclass/ai-salesforce/' };
-sitemapInfo.set(masterclassIndex.de, { pair: masterclassIndex });
-sitemapInfo.set(masterclassIndex.en, { pair: masterclassIndex });
+for (const segment of Object.values(masterclassSegments)) {
+  const hub = { de: `/masterclass/${segment.de}/`, en: `/en/masterclass/${segment.en}/` };
+  sitemapInfo.set(hub.de, { pair: hub });
+  sitemapInfo.set(hub.en, { pair: hub });
+}
 const questionsPage = { de: '/fragen/', en: '/en/questions/' };
 sitemapInfo.set(questionsPage.de, { pair: questionsPage });
 sitemapInfo.set(questionsPage.en, { pair: questionsPage });

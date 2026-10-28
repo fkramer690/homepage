@@ -6,12 +6,29 @@ All masterclasses sit below one overview page, `/masterclass/` (DE) and `/en/mas
 
 `src/components/MasterclassIndex.astro` builds both language versions: eyebrow, H1, intro and one card per masterclass (number, name, title, summary, chapters, articles, languages). Texts live in `masterclasses` in `src/i18n/{de,en}.ts`; the list of masterclasses comes from `src/lib/masterclasses.ts`. A masterclass without published chapters is hidden. Breadcrumbs: Home › Masterclasses › hub › chapter.
 
+## How several masterclasses share one setup
+
+All chapters of all masterclasses live in the one `masterclass` collection (`src/content/masterclass/<lang>/`). The frontmatter field `course` says which masterclass a chapter belongs to (`ai` if not set, `devops`). The same components build every masterclass: `MasterclassHub.astro` (prop `course`) and `MasterclassChapter.astro` (reads `course` from the chapter).
+
+| What | Where |
+|---|---|
+| Masterclass ids, URL segment, text key, preview image | `src/lib/courses.ts` |
+| Hub and chapter texts | `masterclass` (AI) and `masterclassDevops` (DevOps) in `src/i18n/{de,en}.ts`, same shape |
+| Article clusters on each hub | `aiClusters` and `devopsClusters` in `src/lib/masterclass.ts` |
+| Cards on the overview page | `src/lib/masterclasses.ts`, in the order of `courseIds` |
+| URLs in the sitemap | `masterclassSegments` in `astro.config.mjs` |
+
 ## Adding a masterclass
 
-1. Pick the URLs below the overview, e.g. `/masterclass/<thema>/` and `/en/masterclass/<topic>/`, with routes in `src/pages/masterclass/<thema>/` and `src/pages/en/masterclass/<topic>/`.
-2. Give it its own content collection, hub and chapter component, following the AI masterclass below (or generalise the `masterclass` collection with a field for the masterclass).
-3. Add a loader to `src/lib/masterclasses.ts`, the URL pair to `contentPaths` and the hub pair to the sitemap info in `astro.config.mjs`, and the hub and chapters to `src/pages/llms.txt.ts`.
-4. Never move a published masterclass again without redirect pages (see "Old URLs" below).
+1. Add an id to `courseIds` and an entry to `courses` in `src/lib/courses.ts` (URL segment per language, text key, preview image name).
+2. Add a text block with the same shape as `masterclass` to both `src/i18n/` files, and its clusters to `src/lib/masterclass.ts`.
+3. Add the hub and chapter routes below `src/pages/masterclass/<segment>/` and `src/pages/en/masterclass/<segment>/` (copy the DevOps ones), a preview image route in `src/pages/og/[lang]/`, the segment to `masterclassSegments` in `astro.config.mjs` and a section to `src/pages/llms.txt.ts`.
+4. Write the chapters with `course: <id>` and their own translationKeys.
+5. Never move a published masterclass again without redirect pages (see "Old URLs" below).
+
+# Masterclass "DevOps and release management"
+
+Hub plus ten chapters, `course: devops`, translationKeys `devops-01` … `devops-10`: DE under `/masterclass/devops-release-management/`, EN under `/en/masterclass/devops-release-management/`. Same frontmatter, body rules and build check as the AI masterclass below. DevOps Center / Lifecycle Center is covered only in chapter 4 (tools); sfdx-hardis appears as an example next to Gearset, Copado and Flosum. Links to the AI masterclass go to `../../ki-salesforce/<slug>/` (DE) and `../../ai-salesforce/<slug>/` (EN).
 
 # Masterclass "AI in the Salesforce ecosystem"
 
@@ -42,7 +59,8 @@ Chapters follow the content rules of the [blog guidelines](blog-guidelines.md): 
 | `description` | 120–160 characters |
 | `lang` | `de` or `en`, matches the folder |
 | `slug` | lowercase with hyphens, unique across EN and DE, never changed after publishing |
-| `translationKey` | `masterclass-01` … `masterclass-10`, the same for EN and DE |
+| `course` | `ai` (default) or `devops`, see `src/lib/courses.ts` |
+| `translationKey` | `masterclass-01` … `masterclass-10` (AI) or `devops-01` … `devops-10`, the same for EN and DE |
 | `chapter` | 1–10, sets the order |
 | `short` | 5–40 characters, card title on the hub |
 | `summary` | 40–160 characters, one sentence for the card |

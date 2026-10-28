@@ -16,7 +16,8 @@ Static website for FK Solution Design GmbH, built with [Astro](https://astro.bui
 | Service pages | `src/content/services/en/`, `src/content/services/de/` |
 | Masterclass chapters | `src/content/masterclass/en/`, `src/content/masterclass/de/` (rules: [docs/masterclass.md](docs/masterclass.md)) |
 | Masterclass hub texts, article clusters | `masterclass` in `src/i18n/`, `src/lib/masterclass.ts` |
-| Masterclass overview texts, list of masterclasses | `masterclasses` in `src/i18n/`, `src/lib/masterclasses.ts` |
+| Masterclass overview texts, list of masterclasses | `masterclasses` in `src/i18n/`, `src/lib/courses.ts`, `src/lib/masterclasses.ts` |
+| DevOps masterclass hub texts, article clusters | `masterclassDevops` in `src/i18n/`, `src/lib/masterclass.ts` |
 
 The contact form uses [Web3Forms](https://web3forms.com). Its access key is stored as the repository secret `WEB3FORMS_ACCESS_KEY` (Settings → Secrets and variables → Actions) and injected at build time. For local testing, run `PUBLIC_WEB3FORMS_KEY=<key> npm run dev`.
 
@@ -38,7 +39,7 @@ Each service on the home page links to its own page under `/leistungen/` (DE) an
 
 ### Masterclass
 
-All masterclasses are listed on one overview page (`/masterclass/`, `/en/masterclass/`), the "Masterclasses" menu item, built by `src/components/MasterclassIndex.astro`. The AI masterclass has a hub page (`/masterclass/ki-salesforce/`, `/en/masterclass/ai-salesforce/`; the old `/masterclass-ki/` and `/en/ai-masterclass/` URLs are redirect pages) and ten chapter pages built from `src/content/masterclass/<lang>/` by `src/components/MasterclassHub.astro` and `src/components/MasterclassChapter.astro`. Rules are in [docs/masterclass.md](docs/masterclass.md); the same build check applies.
+All masterclasses are listed on one overview page (`/masterclass/`, `/en/masterclass/`), the "Masterclasses" menu item, built by `src/components/MasterclassIndex.astro`. The AI masterclass has a hub page (`/masterclass/ki-salesforce/`, `/en/masterclass/ai-salesforce/`; the old `/masterclass-ki/` and `/en/ai-masterclass/` URLs are redirect pages) and ten chapter pages; the DevOps masterclass (`/masterclass/devops-release-management/`, `/en/masterclass/devops-release-management/`) works the same way. All chapters are built from `src/content/masterclass/<lang>/` by `src/components/MasterclassHub.astro` and `src/components/MasterclassChapter.astro`. Rules are in [docs/masterclass.md](docs/masterclass.md); the same build check applies.
 
 ### External links
 

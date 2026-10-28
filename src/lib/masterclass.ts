@@ -1,36 +1,46 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
 import { getPosts, type Post } from './blog';
 import { localHref, type Lang } from './paths';
+import { courses, type CourseId } from './courses';
+import { en, type Dict } from '../i18n/en';
+import { de } from '../i18n/de';
 
-// Masterclass "AI in the Salesforce ecosystem": one hub page per language and
-// ten chapter pages from src/content/masterclass/<lang>/ (rules: docs/masterclass.md).
+// Masterclasses: one hub page per masterclass and language plus its chapter pages,
+// all from src/content/masterclass/<lang>/ (the `course` field says which
+// masterclass a chapter belongs to; rules: docs/masterclass.md).
 export type Chapter = CollectionEntry<'masterclass'>;
+export type { CourseId };
 
-// Planned number of chapters, shown as "Chapter 3 of 10".
-export const chapterTotal = 10;
+// Hub, chapter and card texts of one masterclass from src/i18n.
+export type CourseTexts = Dict['masterclass'];
+export const courseTexts = (lang: Lang, course: CourseId = 'ai'): CourseTexts => (lang === 'de' ? de : en)[courses[course].texts];
+
+// Planned number of chapters of a masterclass, shown as "Chapter 3 of 10".
+export const chapterTotal = (course: CourseId = 'ai') => courses[course].chapters;
 
 // All masterclasses share one overview page (/masterclass/, /en/masterclass/);
 // each masterclass has its own hub below it (rules: docs/masterclass.md).
 export const masterclassesIndex = (lang: Lang) => localHref(lang, 'masterclass/');
 
-// Hub of the AI masterclass. Before 2026-10-28 it lived at /masterclass-ki/ and
-// /en/ai-masterclass/; those URLs are redirect pages now.
-export const masterclassIndex = (lang: Lang) => `${masterclassesIndex(lang)}${lang === 'de' ? 'ki-salesforce/' : 'ai-salesforce/'}`;
+// Hub of a masterclass, by default the AI masterclass. Before 2026-10-28 the AI
+// masterclass lived at /masterclass-ki/ and /en/ai-masterclass/; those URLs are
+// redirect pages now.
+export const masterclassIndex = (lang: Lang, course: CourseId = 'ai') => `${masterclassesIndex(lang)}${courses[course].segment[lang]}/`;
 
-export const chapterHref = (chapter: Chapter) => `${masterclassIndex(chapter.data.lang)}${chapter.data.slug}/`;
+export const chapterHref = (chapter: Chapter) => `${masterclassIndex(chapter.data.lang, chapter.data.course)}${chapter.data.slug}/`;
 
 // Drafts show up in `astro dev` but never in the production build, like blog articles.
-export async function getChapters(lang: Lang): Promise<Chapter[]> {
+export async function getChapters(lang: Lang, course: CourseId = 'ai'): Promise<Chapter[]> {
   const chapters = await getCollection(
     'masterclass',
-    ({ data }) => data.lang === lang && (import.meta.env.DEV || !data.draft),
+    ({ data }) => data.lang === lang && data.course === course && (import.meta.env.DEV || !data.draft),
   );
   return chapters.sort((a, b) => a.data.chapter - b.data.chapter);
 }
 
 export async function getChapterTranslation(chapter: Chapter): Promise<Chapter | undefined> {
   const other = chapter.data.lang === 'de' ? 'en' : 'de';
-  return (await getChapters(other)).find((c) => c.data.translationKey === chapter.data.translationKey);
+  return (await getChapters(other, chapter.data.course)).find((c) => c.data.translationKey === chapter.data.translationKey);
 }
 
 export function chapterReadingMinutes(chapter: Chapter): number {
@@ -53,8 +63,8 @@ export interface Cluster {
   articles: string[];
 }
 
-// Article clusters on the hub page. Each card lists the published articles of its cluster.
-export const clusters: Cluster[] = [
+// Article clusters on the hub page of the AI masterclass. Each card lists the published articles of its cluster.
+const aiClusters: Cluster[] = [
   {
     id: 'agentforce',
     en: {
@@ -167,13 +177,75 @@ export const clusters: Cluster[] = [
   },
 ];
 
+// Article clusters on the hub page of the DevOps masterclass.
+const devopsClusters: Cluster[] = [
+  {
+    id: 'foundations',
+    en: {
+      title: 'Foundations and ownership',
+      text: 'Why the release process decides enterprise programmes and why the client should own it.',
+    },
+    de: {
+      title: 'Grundlagen und Eigentum',
+      text: 'Warum der Release-Prozess über Großprojekte entscheidet und warum er dem Kunden gehören sollte.',
+    },
+    articles: ['devops-salesforce-enterprise', 'client-owned-devops-tools', 'pull-request-reviews-enterprise', 'ai-org-assessment-technical-debt'],
+  },
+  {
+    id: 'tools',
+    en: {
+      title: 'Tools',
+      text: 'sfdx-hardis, DevOps Center and commercial platforms: what each covers and when it fits.',
+    },
+    de: {
+      title: 'Werkzeuge',
+      text: 'sfdx-hardis, DevOps Center und kommerzielle Plattformen: was sie abdecken und wann sie passen.',
+    },
+    articles: ['sfdx-hardis-introduction', 'sfdx-hardis-vs-devops-center', 'sfdx-hardis-training', 'devops-ai-agents-copado-gearset'],
+  },
+  {
+    id: 'platform-changes',
+    en: {
+      title: 'Releases and platform changes',
+      text: 'What Salesforce releases and retirements change in your pipeline and when to act.',
+    },
+    de: {
+      title: 'Releases und Plattformänderungen',
+      text: 'Was Salesforce-Releases und Abkündigungen in Ihrer Pipeline ändern und wann Sie handeln müssen.',
+    },
+    articles: ['salesforce-winter-27-pipeline', 'api-67-user-mode-apex', 'salesforce-password-integrations-2027', 'salesforce-dx-mcp-server-end-of-life'],
+  },
+  {
+    id: 'ai-pipeline',
+    en: {
+      title: 'AI in the pipeline',
+      text: 'Reviews, quality gates and data rules when coding agents contribute to the release.',
+    },
+    de: {
+      title: 'KI in der Pipeline',
+      text: 'Reviews, Quality Gates und Datenregeln, wenn Coding-Agenten am Release mitarbeiten.',
+    },
+    articles: [
+      'quality-gates-ai-code-pipeline',
+      'reviewing-ai-generated-salesforce-code',
+      'agentforce-agents-release-pipeline',
+      'sandbox-data-ai-coding-agents',
+      'ai-rules-file-salesforce-repo',
+    ],
+  },
+];
+
+// Kept for code that only knows the AI masterclass.
+export const clusters = aiClusters;
+const clustersByCourse: Record<CourseId, Cluster[]> = { ai: aiClusters, devops: devopsClusters };
+
 export interface ClusterWithPosts {
   cluster: Cluster;
   posts: Post[];
 }
 
 // Clusters with their published articles; clusters without any are left out.
-export async function getClusters(lang: Lang): Promise<ClusterWithPosts[]> {
-  const result = await Promise.all(clusters.map(async (cluster) => ({ cluster, posts: await postsForKeys(lang, cluster.articles) })));
+export async function getClusters(lang: Lang, course: CourseId = 'ai'): Promise<ClusterWithPosts[]> {
+  const result = await Promise.all(clustersByCourse[course].map(async (cluster) => ({ cluster, posts: await postsForKeys(lang, cluster.articles) })));
   return result.filter(({ posts }) => posts.length > 0);
 }
