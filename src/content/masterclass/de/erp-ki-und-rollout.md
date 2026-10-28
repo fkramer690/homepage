@@ -54,6 +54,16 @@ Für Objekte innerhalb der Org nutze ich die [Object Ownership Matrix](../../../
 
 Nach Salesforce fließen Stammdaten und Ist-Mengen, zurück fließt Geld. Den Takt bestimmt die Frage, die die Daten beantworten. Sales Agreements laufen über Monate, für ihre Ist-Mengen reicht ein täglicher Lauf. Ein Händler, der nach seinem Auftrag fragt, will den Stand von heute; diesen Status frage ich live in SAP ab, statt ihn zu kopieren, wie in [Agentforce und SAP: Auftragsstatus über MuleSoft](../../../blog/agentforce-sap-auftragsstatus/). Alle Flüsse mit Richtung und Takt stehen in [Manufacturing Cloud und SAP: welche Daten wohin](../../../blog/manufacturing-cloud-sap-integration-datenfluesse/).
 
+```ablauf
+erp: Stammdaten SAP, Aufträge SAP, Gutschrift SAP
+sf: Sales Agreements, Boni und Garantie, Händleranfrage
+Stammdaten SAP --Abgleich--> Sales Agreements
+Aufträge SAP --Ist-Mengen täglich--> Sales Agreements
+Boni und Garantie --freigegeben--> Gutschrift SAP
+Händleranfrage --live--> Aufträge SAP
+Aufträge SAP ..Status..> Händleranfrage
+```
+
 Der [MuleSoft Accelerator for Manufacturing](https://docs.mulesoft.com/manufacturing/latest/) liefert Vorlagen für zwei dieser Flüsse: den Abgleich von Accounts, Produkten und Aufträgen aus SAP S/4HANA und Gutschriften für freigegebene Bonusauszahlungen. Sales Agreements legt er nicht an, einen Garantiefluss nennt er nicht. Salesforce führt MuleSoft auf der [Seite mit den Add-ons](https://www.salesforce.com/manufacturing/cloud/pricing/add-ons/) nur mit "Request a quote". Läuft MuleSoft bei Ihnen schon, sparen die Vorlagen Designzeit. Nur dafür zu kaufen, lohnt sich selten.
 
 Für verspätete Aufträge und Korrekturen gibt es die Aktion [Refresh Actuals Calculation](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/mfg_actions_refresh_actuals_calculation.htm). Sie ist seit API-Version 47.0 verfügbar und berechnet die Ist-Mengen eines Sales Agreements für den aktuellen, vergangene oder künftige Zeiträume neu. Bucht SAP eine Retoure für den Vormonat, ruft die Middleware sie für die betroffenen Agreements auf. Sonst rufen Account Manager Kunden wegen eines Rückstands an, den es nicht mehr gibt.
@@ -62,11 +72,14 @@ Wie dieselbe Frage für einen B2B-Shop aussieht, beschreibt das Kapitel [ERP-Anb
 
 ### Welche Login-Fristen gelten für ERP-Schnittstellen?
 
-Viele ERP-Schnittstellen melden sich noch mit technischem Nutzer und Passwort an. Laut dem [Developer Guide zu Winter '27](https://developer.salesforce.com/blogs/2026/10/developers-guide-to-the-winter-27-release) gelten drei Stufen:
+Viele ERP-Schnittstellen melden sich noch mit technischem Nutzer und Passwort an. Laut dem [Developer Guide zu Winter '27](https://developer.salesforce.com/blogs/2026/10/developers-guide-to-the-winter-27-release) gelten diese Fristen:
 
-1. Ab 1. Dezember 2026 braucht jeder Nutzer, der sich per SOAP API login() anmeldet, die Berechtigung Use Any API Auth. Ohne sie gibt es einen Fehler.
-2. Mit Summer '27 entfällt SOAP login() in den API-Versionen 31.0 bis 64.0.
-3. SOAP-, REST- und Bulk-API in den Versionen 31.0 bis 40.0 bekommen ab Summer '27 keine Korrekturen mehr, ab Summer '28 schlagen Aufrufe fehl.
+```zeitleiste
+2026-12-01 | Wer sich per SOAP API login() anmeldet, braucht die Berechtigung Use Any API Auth, sonst gibt es einen Fehler
+Summer '27 | SOAP login() entfällt in den API-Versionen 31.0 bis 64.0
+Summer '27 | SOAP-, REST- und Bulk-API 31.0 bis 40.0 bekommen keine Korrekturen mehr
+Summer '28 | Aufrufe an SOAP-, REST- und Bulk-API 31.0 bis 40.0 schlagen fehl
+```
 
 Ein Ist-Mengen-Lauf, der still ausfällt, ist das Risiko dabei: Der Vertrieb sieht einen alten Rückstand und glaubt ihm. Wie Sie betroffene Schnittstellen finden, steht in [Salesforce-Passwort-Integrationen enden 2027](../../../blog/salesforce-passwort-integrationen-2027/).
 

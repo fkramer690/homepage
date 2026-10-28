@@ -48,7 +48,11 @@ In einer [Pressemitteilung vom 16. Juli 2025](https://www.salesforce.com/news/st
 
 Zum Billing-Paket gibt es weniger Aussagen. Ein Salesforce-Sprecher sagte im März 2025 gegenüber [SalesforceBen](https://www.salesforceben.com/salesforce-confirms-the-future-of-cpq/), heutige CPQ- und Billing-Kunden "will continue to receive full access", einschließlich Support, und Neukunden würden auf Revenue Cloud Advanced und Revenue Cloud Billing verwiesen. Eine eigene Aussage zum Verkaufsende des Billing-Pakets habe ich auf den Seiten von Salesforce nicht gefunden. Auch das oft genannte Datum März 2025 für das Verkaufsende von CPQ stammt aus Berichten Dritter; die Salesforce-Seite nennt kein Datum.
 
-Die praktische Frist ist Ihre nächste Verlängerung. Laufzeit, eine Obergrenze für Preiserhöhungen und das Recht, CPQ und Revenue Cloud während einer Migration parallel zu betreiben, müssen dann vereinbart werden. Was Sie genau absichern sollten, steht in [Salesforce CPQ Verkaufsende: Was gilt im Oktober 2026?](../../../blog/salesforce-cpq-verkaufsende-status/).
+Die praktische Frist ist Ihre nächste Verlängerung. Was Sie genau absichern sollten, steht in [Salesforce CPQ Verkaufsende: Was gilt im Oktober 2026?](../../../blog/salesforce-cpq-verkaufsende-status/).
+
+```hinweis offen
+Vereinbaren Sie bei der Verlängerung die Laufzeit, eine Obergrenze für Preiserhöhungen und das Recht, CPQ und Revenue Cloud während einer Migration parallel zu betreiben.
+```
 
 ## Worin unterscheiden sich Salesforce CPQ und Revenue Cloud?
 
@@ -94,9 +98,14 @@ Laut CPQ-Seite sind etwa 15 Prozent der Kunden von Revenue Cloud Advanced von CP
 
 Die Hilfeseite [Migrate to Revenue Management](https://help.salesforce.com/s/articleView?language=en_US&id=ind.rev_data_migration.htm&type=5) verlangt, alle Aufgaben einer Phase in der genannten Reihenfolge abzuschließen, bevor die nächste beginnt:
 
-1. **Vorbereiten.** Prüfen, welche Funktionen von Revenue Cloud Sie brauchen, und den Betrieb planen. Die Hilfe nennt hier "Retain CPQ License" und "Coexistence During Transition": CPQ erstellt weiter Angebote in Produktion, während Revenue Cloud in derselben Org aufgebaut wird.
-2. **Strategie wählen.** Festlegen, wie Bewegungsdaten umziehen und wie Rollout und Cutover laufen, zum Beispiel je Produktlinie.
-3. **Umsetzen.** Produkt-, Asset- und Abrechnungsdaten migrieren, Berichte neu bauen und das Change Management von Anfang an parallel führen.
+```schritte
+Vorbereiten
+  Prüfen, welche Funktionen von Revenue Cloud Sie brauchen, und den Betrieb planen. Die Hilfe nennt hier "Retain CPQ License" und "Coexistence During Transition": CPQ erstellt weiter Angebote in Produktion, während Revenue Cloud in derselben Org aufgebaut wird.
+Strategie wählen
+  Festlegen, wie Bewegungsdaten umziehen und wie Rollout und Cutover laufen, zum Beispiel je Produktlinie.
+Umsetzen
+  Produkt-, Asset- und Abrechnungsdaten migrieren, Berichte neu bauen und das Change Management von Anfang an parallel führen.
+```
 
 Einen festen Zeitrahmen gibt die Hilfe nicht vor ("There's no set time frame"). Die CPQ-Seite nennt 3 bis 6 Monate von der Analyse bis zum Go-live als typisch. Drei Monate würde ich nur für eine aufgeräumte Org planen; eine [Org-Analyse](../../../blog/ki-org-analyse-technische-schulden/) vor der Schätzung zeigt, welche Sie haben. In dieser Zeit laufen beide Lizenzen parallel, also ziehen Sie das Projekt nicht in die Länge. Die Koexistenz braucht außerdem Sandboxes, in denen beide Produkte mit realistischen Daten laufen, ein Punkt für die Planung von [Umgebungen und Branching](../../devops-release-management/umgebungen-und-branching/).
 

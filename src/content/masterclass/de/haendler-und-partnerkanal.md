@@ -68,7 +68,9 @@ Beim Preis widersprechen sich die Salesforce-Seiten:
 | [Preisseite Channel Revenue Management](https://www.salesforce.com/sales/channel-revenue-management/pricing/) | kein Preis, Angebot auf Anfrage; verlangt eine Sales-Cloud- oder CRM-Lizenz; enthält 10 Channel-Manager-Admins; Partnerzugang, weitere Benutzer und Auszahlungen zukaufbar |
 | [Experience-Cloud-Seite der Manufacturing Cloud](https://salesforce.com/manufacturing/cloud/experience-cloud) | Rebate Management „from $75“, ohne Einheit |
 
+```hinweis offen
 Die 75 Dollar passen nicht zu den 30.000. Ich würde mir schriftlich geben lassen, ob Rebate Management in Ihrer Edition schon enthalten ist, was das Add-on zusätzlich kostet und wie viele Auszahlungen der Preis abdeckt.
+```
 
 Inhaltlich ist die Grenze einfach: Boni belohnen Menge über einen Zeitraum, Ship and Debit und Preisschutz gleichen Preis aus, Geschäft für Geschäft. Ship and Debit braucht Abverkaufs- und Bestandsdaten der Distributoren. Ohne sie prüft die Validierung nur, ob die Belege zum Programm passen, und nicht, ob der Verkauf stattgefunden hat.
 
@@ -97,7 +99,11 @@ Partner Visit Management plant Besuche bei Händlern und Distributoren und macht
 
 Die Funktion hat einen eigenen Schalter. In den [IndustriesManufacturingSettings](https://developer.salesforce.com/docs/atlas.en-us.automotive_cloud.meta/automotive_cloud/auto_metadata_api_industriesmanufacturingsettings.htm) heißt er `enablePartnerVisitManagement`, verfügbar seit API-Version 56.0, daneben `enablePartnerLeadManagement` und `enablePartnerPerformanceManagement`. Alle drei stehen standardmäßig auf aus. „Wir haben Manufacturing Cloud“ heißt also noch nicht, dass Besuche, Partner-Leads oder Partnerleistung laufen. Im Angebot sollte stehen, welche dieser Funktionen der Partner einrichtet.
 
-Zwei Punkte sind in den Quellen offen: welche Lizenz der Außendienst für die Besuchs-App braucht und ob sie offline arbeitet. Beides gehört schriftlich geklärt, bevor Sie planen. Den Ablauf vom Besuchsplan bis zur Kennzahl und die Frage, wann ein einfaches Besuchsberichtsobjekt reicht, behandelt [Partner Visit Management: Händlerbesuche mit KPIs](../../../blog/partner-visit-management-haendlerbesuche/). Meine kurze Regel: Ohne fünf vereinbarte Kennzahlen mit Sollwert pro Händlergruppe sammelt die Funktion Daten, die niemand vergleicht.
+```hinweis offen
+Zwei Punkte sind in den Quellen offen: welche Lizenz der Außendienst für die Besuchs-App braucht und ob sie offline arbeitet. Beides gehört schriftlich geklärt, bevor Sie planen.
+```
+
+Den Ablauf vom Besuchsplan bis zur Kennzahl und die Frage, wann ein einfaches Besuchsberichtsobjekt reicht, behandelt [Partner Visit Management: Händlerbesuche mit KPIs](../../../blog/partner-visit-management-haendlerbesuche/). Meine kurze Regel: Ohne fünf vereinbarte Kennzahlen mit Sollwert pro Händlergruppe sammelt die Funktion Daten, die niemand vergleicht.
 
 ## Händlerleistung messen: Dashboards und ihre Daten
 
@@ -119,9 +125,14 @@ Das Agentforce for Manufacturing Cloud Add-on steht mit 150 Dollar pro Benutzer 
 
 Meine Reihenfolge im Kanal:
 
-1. **Lesend starten.** Bestandszusammenfassung, Bonusstand, Status einer Anfrage.
-2. **Vorschläge statt Aufträge.** Der Agent bereitet einen Nachschub oder ein Angebot vor, ein Mensch oder das ERP bestätigt.
-3. **Schreibende Aktionen hinter Sperren im Code.** Kreditstatus aus dem ERP, Mengengrenze, Bestätigung durch den Händler, Prüfung auf Dubletten.
+```schritte
+Lesend starten
+  Bestandszusammenfassung, Bonusstand, Status einer Anfrage.
+Vorschläge statt Aufträge
+  Der Agent bereitet einen Nachschub oder ein Angebot vor, ein Mensch oder das ERP bestätigt.
+Schreiben hinter Sperren
+  Schreibende Aktionen nur hinter Sperren im Code: Kreditstatus aus dem ERP, Mengengrenze, Bestätigung durch den Händler, Prüfung auf Dubletten.
+```
 
 Jedes Feld, das ein Händler im Portal beschreibt, ist Eingabe von außen, die ein Agent liest. Wie Sie das absichern, steht in [Prompt Injection im Händlerportal](../../../blog/prompt-injection-haendlerportal-agentforce/). Wo diese Agenten neben den übrigen Agenten in der Fertigung stehen, zeigt das Kapitel [KI-Agenten in der Fertigung](../../ki-salesforce/ki-agenten-in-der-fertigung/) der KI-Masterclass.
 

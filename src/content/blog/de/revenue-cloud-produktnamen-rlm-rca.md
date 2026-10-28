@@ -70,7 +70,9 @@ Ein Partner, der von "30 Revenue-Cloud-Projekten" spricht, meint vielleicht CPQ-
 2. Wie viele Projekte liefen seit Spring '24 auf Revenue Lifecycle Management oder Revenue Cloud Advanced?
 3. Wer im vorgeschlagenen Team hat im neuen Produkt Preisprozeduren und Konfiguratorregeln gebaut?
 
-Umgekehrt gilt für CPQ-Bestandskunden: Beschreibt ein Angebot "Revenue Cloud", prüfen Sie, ob damit eine Neueinführung auf dem neuen Datenmodell gemeint ist. Ein Versionsupgrade von CPQ gibt es nicht. Salesforce schreibt selbst, Revenue Cloud Advanced sei nicht einfach CPQ mit neuem Namen, und nennt für eine typische Migration drei bis sechs Monate von der Analyse bis zum Go-live.
+```hinweis achtung
+Für CPQ-Bestandskunden gilt umgekehrt: Beschreibt ein Angebot "Revenue Cloud", prüfen Sie, ob damit eine Neueinführung auf dem neuen Datenmodell gemeint ist. Ein Versionsupgrade von CPQ gibt es nicht. Salesforce schreibt selbst, Revenue Cloud Advanced sei nicht einfach CPQ mit neuem Namen, und nennt für eine typische Migration drei bis sechs Monate von der Analyse bis zum Go-live.
+```
 
 Der Status der alten Pakete ist ein eigenes Thema: CPQ wird an Neukunden nicht mehr verkauft, Bestandskunden können aber verlängern und bekommen Support. Was das bedeutet, behandelt das [Kapitel zum Umstieg von CPQ auf Revenue Cloud](../../masterclass/revenue-cloud/von-cpq-zu-revenue-cloud/).
 

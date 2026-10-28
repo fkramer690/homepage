@@ -94,7 +94,9 @@ Which automated checks belong in the pipeline is covered in [chapter 8](../ai-co
 | G5 Business acceptance | acceptance criteria in the demo | domain lead | yes |
 | G6 Release | change approval, rollback plan | release manager | yes |
 
-G2 is deliberately non-blocking. A second agent spots anomalies; accountability stays with G3. Why every pull request needs a human review no matter who wrote the code is explained in [why pull request reviews are a must](../../../blog/why-pull-request-reviews-are-a-must-in-enterprise-projects/). For Agentforce agents themselves a test gate with Testing Center comes on top, described in [testing Agentforce agents before go-live](../../../blog/testing-agentforce-agents-before-go-live/).
+G2 is deliberately non-blocking. A second agent spots anomalies; accountability stays with G3.
+
+ Why every pull request needs a human review no matter who wrote the code is explained in [why pull request reviews are a must](../../../blog/why-pull-request-reviews-are-a-must-in-enterprise-projects/). For Agentforce agents themselves a test gate with Testing Center comes on top, described in [testing Agentforce agents before go-live](../../../blog/testing-agentforce-agents-before-go-live/).
 
 ### Definition of Done: a recommendation
 
@@ -159,11 +161,18 @@ Assume a machine builder with Service Cloud, Field Service, a dealer portal and 
 
 This is how I would set up the first eight weeks:
 
-- **Weeks 1 to 2: baseline and works council.** The programme office pulls three months of history from Jira and Git: an assumed 35 stories a month, 16 working days cycle time, 10 percent rework. In parallel a draft framework agreement goes to the works council, with no per-person evaluation as the core commitment.
-- **Week 2: contract and rules.** The partner discloses tools and model routes; agents get access only to scratch orgs and developer sandboxes. The rules file lives in the manufacturer's repository, owned by the internal architect.
-- **Weeks 3 to 6: one stream as pilot.** Spare part ordering in the dealer portal, because the process is clear and little depends on SAP postings. A coordinator from spare parts sales is released half time as domain lead and accepts work daily. Gates G0 to G6 apply from the first pull request.
-- **Weeks 3 to 6: onboarding.** Two of the partner's developers go through the four weeks; the others keep working as before for now. That also gives a comparison group.
-- **Weeks 7 to 8: evaluation.** Assume cycle time in the pilot stream falls to 12 days, but rework rises to 13 percent because pull requests grew. Consequence: smaller pull requests as a rule, a second reviewer on the client side, then the next stream.
+```schritte
+Baseline and works council | weeks 1 to 2 · programme office
+  Three months of history from Jira and Git: an assumed 35 stories a month, 16 working days cycle time, 10 percent rework. In parallel a draft framework agreement goes to the works council, with no per-person evaluation as the core commitment.
+Contract and rules | week 2 · partner and internal architect
+  The partner discloses tools and model routes; agents get access only to scratch orgs and developer sandboxes. The rules file lives in the manufacturer's repository, owned by the internal architect.
+One stream as pilot | weeks 3 to 6 · domain lead
+  Spare part ordering in the dealer portal, because the process is clear and little depends on SAP postings. A coordinator from spare parts sales is released half time and accepts work daily. Gates G0 to G6 apply from the first pull request.
+Onboarding | weeks 3 to 6 · two partner developers
+  Two developers go through the four weeks; the others keep working as before for now. That also gives a comparison group.
+Evaluation | weeks 7 to 8
+  Assume cycle time in the pilot stream falls to 12 days, but rework rises to 13 percent because pull requests grew. Consequence: smaller pull requests as a rule, a second reviewer on the client side, then the next stream.
+```
 
 The warranty stream comes later, because credit notes are posted in SAP and an end-to-end test before each release stays there. This sequencing is part of what I set up in [programme management for Salesforce programmes](../../../services/program-management-nearshore/); getting business time released and communicating with the team belong to [change management](../../../services/change-management-salesforce/). All chapters are on the [masterclass overview](../).
 

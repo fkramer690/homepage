@@ -45,7 +45,11 @@ The template on the work order and the service appointment is only a text field.
 
 The Document Builder names the generated file itself. You cannot define a pattern like work order number, customer and date. For the service office this is annoying, because the PDF ends up in the customer's mailbox, in the ERP or in a document archive, and nobody can tell from the file name which job it belongs to.
 
-**Workaround:** A record-triggered flow with an asynchronous path. It starts when the document has been created and renames the file shortly afterwards. It has to run asynchronously, shortly after creation, so the file already exists when the flow renames it. The naming rule then lives in one place and can be changed by an admin without code.
+**Workaround:** A record-triggered flow with an asynchronous path. It starts when the document has been created and renames the file shortly afterwards. The naming rule then lives in one place and can be changed by an admin without code.
+
+```hinweis achtung
+The flow has to run asynchronously, shortly after creation. Only then does the file already exist when the flow renames it.
+```
 
 ## Limit 3: How do I send the service report by email?
 
@@ -68,7 +72,10 @@ The standard components cover fields, tables, images and signatures. Anything be
 - **Graphic elements.** A horizontal divider or similar visual separators between sections. Small, but the report looks like a designed document instead of a data dump.
 - **Your own related list.** A component that also shows fields with more than 255 characters, for example the technician's work description, and that overrides field labels just for the report. The standard field "Created By" can then appear as "Technician" in the document, without changing the label in the whole org.
 
-Salesforce points out that LWCs for service documents need their own print styling, as described in the [developer guide for custom components in service documents](https://developer.salesforce.com/docs/atlas.en-us.field_service_dev.meta/field_service_dev/fsl_dev_mobile_document_builder.htm). Components from the mobile app cannot simply be reused. Plan them as their own small library.
+```vertiefung For developers
+title: Can I reuse LWCs from the mobile app?
+Not simply as they are. Salesforce points out that LWCs for service documents need their own print styling, as described in the [developer guide for custom components in service documents](https://developer.salesforce.com/docs/atlas.en-us.field_service_dev.meta/field_service_dev/fsl_dev_mobile_document_builder.htm). So plan the components for the report as their own small library.
+```
 
 ![Five limits of the Salesforce Document Builder and how to close them. Template choice: the template is only a text field that points to a Lightning page, solved with a screen flow or quick action. File name: cannot be defined, an asynchronous flow renames the file shortly after creation. Email: no sending out of the box, rebuilt with a flow. Defaults: language and template preset by flow on service appointment and work order. Styling: custom LWCs as building blocks, for example a divider or a related list with long text fields and report labels such as Technician instead of Created By. Custom components read data through GraphQL, so they work offline and show correctly in the mobile preview.](../../../assets/blog/document-builder-workarounds-en.png)
 

@@ -93,7 +93,13 @@ The FAQ on that page says Revenue Cloud is a paid add-on to a Sales Cloud subscr
 
 A calculation at list price, as an assumption: 50 users who create quotes get Revenue Cloud Advanced, which is 50 × €200 × 12 = €120,000 a year. If they do not have Sales Cloud yet, Sales Cloud Core at €195 per user and month according to the [Sales Cloud pricing page](https://www.salesforce.com/eu/sales/pricing/) adds €117,000. Implementation, the SAP integration and operations come on top.
 
-The number of users moves the budget more than the edition does. I group users by what they do with quotes: create, approve, only read, maintain the catalog, or quote as a dealer. For the last four groups, get the licence requirement from Salesforce in writing. Add-ons, Billing Events and the licence forecast are in [Revenue Cloud pricing: Growth, Advanced and add-ons](../../../blog/revenue-cloud-editions-pricing/), and an independent check of a quote is part of [make-or-buy and licence forecasts](../../../services/make-or-buy-licences/).
+The number of users moves the budget more than the edition does. I group users by what they do with quotes: create, approve, only read, maintain the catalog, or quote as a dealer.
+
+```hinweis offen
+For every group except the users who create quotes, get the licence requirement from Salesforce in writing.
+```
+
+Add-ons, Billing Events and the licence forecast are in [Revenue Cloud pricing: Growth, Advanced and add-ons](../../../blog/revenue-cloud-editions-pricing/), and an independent check of a quote is part of [make-or-buy and licence forecasts](../../../services/make-or-buy-licences/).
 
 ## Which tasks should stay in SAP?
 
@@ -144,7 +150,20 @@ The alternatives are Sales Cloud quotes with an ERP interface, a CPQ product fro
 
 A maker of packaging machines with SAP S/4HANA sells 25 base models with options, plus spare parts packages and a remote monitoring subscription per machine. 60 people work in sales; 20 of them create project quotes. Spare parts prices are SAP conditions per customer. All details are assumptions.
 
-I would license Revenue Cloud Advanced for the 20 quote creators: €48,000 a year at list price. Catalog, configurator and quote for machines and subscriptions move to Revenue Cloud. Spare parts on the same quote get their net price from SAP through an API. The order goes to SAP, the SAP order number comes back, and the subscription stays an asset in Salesforce for renewals. Invoices stay in SAP in year one; Billing becomes a question once subscriptions are a business of their own.
+I would license Revenue Cloud Advanced for the 20 quote creators: €48,000 a year at list price. Catalog, configurator and quote for machines and subscriptions move to Revenue Cloud. Spare parts on the same quote get their net price from SAP, and the subscription stays an asset in Salesforce for renewals:
+
+```ablauf
+sf: Quote, Order, Subscription asset
+erp: SAP conditions, SAP sales order, SAP invoice
+SAP conditions --Net price via API--> Quote
+Quote --> Order
+Order --Handover--> SAP sales order
+SAP sales order ..Order number..> Order
+Order --> Subscription asset
+SAP sales order --> SAP invoice
+```
+
+Invoices stay in SAP in year one; Billing becomes a question once subscriptions are a business of their own.
 
 ## What should you decide before a partner builds?
 

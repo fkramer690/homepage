@@ -93,7 +93,13 @@ Laut FAQ derselben Seite ist Revenue Cloud ein kostenpflichtiges Zusatzprodukt z
 
 Eine Rechnung zum Listenpreis, als Annahme: 50 Nutzer, die Angebote erstellen, bekommen Revenue Cloud Advanced. Das sind 50 × 200 Euro × 12 = 120.000 Euro im Jahr. Haben diese Nutzer noch kein Sales Cloud, kommen mit Sales Cloud Core zu 195 Euro pro Nutzer und Monat laut [Sales-Cloud-Preisseite](https://www.salesforce.com/eu/sales/pricing/) 117.000 Euro hinzu. Umsetzung, SAP-Integration und Betrieb kommen obendrauf.
 
-Die Zahl der Nutzer bewegt das Budget stärker als die Edition. Ich gruppiere Nutzer danach, was sie mit Angeboten tun: erstellen, freigeben, nur lesen, Katalog pflegen oder als Händler anbieten. Für die letzten vier Gruppen sollten Sie sich die Lizenzpflicht von Salesforce schriftlich geben lassen. Zusatzprodukte, Billing Events und die Lizenzprognose stehen in [Revenue Cloud Preise: Growth, Advanced und Add-ons](../../../blog/revenue-cloud-editionen-preise/), eine unabhängige Prüfung eines Angebots gehört zu [Make-or-Buy und Lizenzprognosen](../../../leistungen/make-or-buy-lizenzen/).
+Die Zahl der Nutzer bewegt das Budget stärker als die Edition. Ich gruppiere Nutzer danach, was sie mit Angeboten tun: erstellen, freigeben, nur lesen, Katalog pflegen oder als Händler anbieten.
+
+```hinweis offen
+Für alle Gruppen außer denen, die Angebote erstellen, sollten Sie sich die Lizenzpflicht von Salesforce schriftlich geben lassen.
+```
+
+Zusatzprodukte, Billing Events und die Lizenzprognose stehen in [Revenue Cloud Preise: Growth, Advanced und Add-ons](../../../blog/revenue-cloud-editionen-preise/), eine unabhängige Prüfung eines Angebots gehört zu [Make-or-Buy und Lizenzprognosen](../../../leistungen/make-or-buy-lizenzen/).
 
 ## Welche Aufgaben sollten bei SAP bleiben?
 
@@ -144,7 +150,20 @@ Die Alternativen sind Angebote in Sales Cloud mit ERP-Schnittstelle, ein CPQ-Pro
 
 Ein Hersteller von Verpackungsmaschinen mit SAP S/4HANA verkauft 25 Grundmodelle mit Optionen, dazu Ersatzteilpakete und ein Abonnement für Fernüberwachung je Maschine. Im Vertrieb arbeiten 60 Personen, 20 davon erstellen Projektangebote. Ersatzteilpreise sind SAP-Konditionen je Kunde. Alle Details sind Annahmen.
 
-Ich würde Revenue Cloud Advanced für die 20 Angebotsersteller lizenzieren: 48.000 Euro im Jahr zum Listenpreis. Katalog, Konfigurator und Angebot für Maschinen und Abonnements wandern in Revenue Cloud. Ersatzteile auf demselben Angebot bekommen ihren Nettopreis über eine API aus SAP. Der Auftrag geht an SAP, die SAP-Auftragsnummer kommt zurück, und das Abonnement bleibt als Asset in Salesforce für Verlängerungen. Die Rechnungen bleiben im ersten Jahr in SAP; Billing wird erst zum Thema, wenn die Abonnements ein eigenes Geschäft sind.
+Ich würde Revenue Cloud Advanced für die 20 Angebotsersteller lizenzieren: 48.000 Euro im Jahr zum Listenpreis. Katalog, Konfigurator und Angebot für Maschinen und Abonnements wandern in Revenue Cloud. Ersatzteile auf demselben Angebot bekommen ihren Nettopreis aus SAP, und das Abonnement bleibt als Asset in Salesforce für Verlängerungen:
+
+```ablauf
+sf: Angebot, Auftrag, Abo als Asset
+erp: Konditionen SAP, Kundenauftrag SAP, Rechnung SAP
+Konditionen SAP --Nettopreis per API--> Angebot
+Angebot --> Auftrag
+Auftrag --Übergabe--> Kundenauftrag SAP
+Kundenauftrag SAP ..Auftragsnummer..> Auftrag
+Auftrag --> Abo als Asset
+Kundenauftrag SAP --> Rechnung SAP
+```
+
+Die Rechnungen bleiben im ersten Jahr in SAP; Billing wird erst zum Thema, wenn die Abonnements ein eigenes Geschäft sind.
 
 ## Was sollten Sie entscheiden, bevor ein Partner baut?
 

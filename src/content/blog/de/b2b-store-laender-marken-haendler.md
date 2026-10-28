@@ -55,6 +55,10 @@ Diese Limits stammen von den Salesforce-Developers-Seiten zu [Store-Limits](http
 
 Weiche Limits hebt der Salesforce-Support auf Anfrage an, feste nicht. Die 100 Stores sind für jeden Hersteller, den ich mir vorstellen kann, weit weg. Früher greifen der eine Katalog und die fünf Store-Preisbücher. Eine Marke, die einen eigenen Kategoriebaum braucht, bekommt ihn in einem gemeinsamen Store nicht, und eine Preisstruktur mit vielen Listen gehört in Käufergruppen-Preisbücher statt in Store-Preisbücher. Woher die Preise selbst kommen sollten, behandelt [Kundenpreise: Preisbücher oder ERP](../kundenpreise-b2b-commerce-preisbuecher-erp/).
 
+```hinweis offen
+Für Preisbücher pro Käufergruppe nennt die Seite zu Preisbuch-Limits in der Tabelle 50, in einem Hinweis 25. Planen Sie viele Preislisten in Käufergruppen, lassen Sie sich die gültige Zahl von Salesforce bestätigen.
+```
+
 ## Wann reicht ein Store mit Käufergruppen?
 
 Für Länder in den meisten Fällen. Sprachen werden pro Store eingestellt, bis zu 25. Zu Währungen sagt der Developer Guide zu [Währungswechseln](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-cart-currency-change.html), dass der Warenkorb die Standardwährung des Kontos nutzt und Produkte und Preisbücher für jede Währung eingerichtet sein müssen, die der Store unterstützt. Ein Händler in der Schweiz und einer in Deutschland können also im selben Store in CHF und EUR kaufen. Ein Detail zählt fürs Design: Warenkörbe unterstützen keinen automatischen Währungswechsel, und Salesforce empfiehlt, die Währungsauswahl abzuschalten, sobald ein Artikel im Warenkorb liegt.
@@ -94,10 +98,16 @@ Das folgt derselben Logik wie ein [weltweiter Rollout von Manufacturing Cloud](.
 
 ## Womit sollten Sie anfangen?
 
-1. **Alles auf eine Seite.** Eine Zeile pro Marke, Gesellschaft, ERP-Mandant, Land, Währung, Sprache und Händlerstufe.
-2. **Echte Unterschiede markieren.** Nur Zeilen, die sich in Auftritt, Katalogstruktur, Checkout oder ERP unterscheiden, bekommen einen eigenen Store. Alles andere wird eine Käufergruppe.
-3. **Limits prüfen.** Sprachen pro Store, Store-Preisbücher und Käufergruppen pro Käuferkonto gegen die Tabelle oben zählen.
-4. **Das Kaufmännische klären.** Zahl der Storefronts und Preis für weitere schriftlich festhalten.
+```schritte
+Alles auf eine Seite
+  Eine Zeile pro Marke, Gesellschaft, ERP-Mandant, Land, Währung, Sprache und Händlerstufe.
+Echte Unterschiede markieren
+  Nur Zeilen, die sich in Auftritt, Katalogstruktur, Checkout oder ERP unterscheiden, bekommen einen eigenen Store. Alles andere wird eine Käufergruppe.
+Limits prüfen
+  Sprachen pro Store, Store-Preisbücher und Käufergruppen pro Käuferkonto gegen die Tabelle oben zählen.
+Das Kaufmännische klären
+  Zahl der Storefronts und Preis für weitere schriftlich festhalten.
+```
 
 Das Kapitel [Katalog, Suche, Sichtbarkeit](../../masterclass/b2b-commerce/katalog-suche-sichtbarkeit/) der [Masterclass B2B Commerce](../../masterclass/b2b-commerce/) ordnet diese Entscheidung in das gesamte Store-Design ein, und wie ich solche Schnitte angehe, beschreibe ich unter [Salesforce-Architektur](../../leistungen/salesforce-architektur/).
 

@@ -33,7 +33,9 @@ Ob sich Field Service für Ihren Außendienst überhaupt lohnt, beschreibe ich i
 
 ## Warum scheitern Einsätze an fehlenden Daten?
 
+```praxis
 In Serviceprojekten habe ich immer wieder dasselbe Muster gesehen. Techniker waren vor Ort und konnten ihren Job nicht ausführen. Mal waren die Ersatzteile nicht da. Mal war die Maschine nicht zugänglich. Mal stand der falsche Techniker vor der Anlage, oder der richtige war nicht arbeitsfähig. Teils lag es am Kunden, teils an der Planung der Techniker.
+```
 
 Jeder dieser Fehleinsätze kostet eine Anfahrt, einen Technikertag und meist einen zweiten Termin. Und fast jeder lässt sich auf eine Information zurückführen, die bei der Planung gefehlt hat:
 
@@ -72,7 +74,11 @@ Standorte (Locations) sind Orte wie Lager, Fahrzeuge oder Kundenstandorte. Ein S
 
 ### Öffnungszeiten der Kunden
 
-Kunden haben eigene Zeiten, zu denen ein Techniker an die Maschine kommt. In Field Service hinterlegen Sie sie als Arbeitszeiten am Account. Laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?language=en_US&id=sf.pfs_optimization_theory_work_rules_visiting_hours.htm&type=5) übernimmt jeder neue Arbeitsauftrag sie als Besuchszeiten (Visiting Hours). Die Planung beachtet sie aber nur, wenn die Work Rule für Besuchszeiten in der Scheduling Policy aktiv ist. Ein Disponent kann sie übersteuern, sieht dann aber einen Regelverstoß.
+Kunden haben eigene Zeiten, zu denen ein Techniker an die Maschine kommt. In Field Service hinterlegen Sie sie als Arbeitszeiten am Account. Laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?language=en_US&id=sf.pfs_optimization_theory_work_rules_visiting_hours.htm&type=5) übernimmt jeder neue Arbeitsauftrag sie als Besuchszeiten (Visiting Hours).
+
+```hinweis achtung
+Die Planung beachtet Besuchszeiten nur, wenn die Work Rule für Besuchszeiten in der Scheduling Policy aktiv ist. Ein Disponent kann sie übersteuern, sieht dann aber einen Regelverstoß.
+```
 
 Öffnungszeiten lösen nicht jeden Zugangsfall. Wenn eine Maschine für die Wartung abgeschaltet werden muss, braucht es eine Abstimmung mit dem Kunden. Wie man das in der Planung abbildet, gehört in den nächsten Teil der Serie.
 

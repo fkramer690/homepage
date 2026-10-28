@@ -77,6 +77,16 @@ Ich schlage drei Zustände für Produktliste und Produktseite vor:
 - **Auf Anfrage**, wenn das Teil auftragsbezogen gefertigt wird oder die Kopie nichts zeigt.
 - **Liefertermin**, im Checkout, aus der Live-Verfügbarkeitsprüfung in SAP.
 
+```ablauf
+erp: Bestand in SAP, Verfügbarkeit SAP
+sf: Kopie in OCI, Produktliste, Checkout
+Bestand in SAP --Updates--> Kopie in OCI
+Kopie in OCI --Zustand--> Produktliste
+Produktliste --> Checkout
+Checkout --Extension--> Verfügbarkeit SAP
+Verfügbarkeit SAP ..Termin..> Checkout
+```
+
 Das hat drei Vorteile. Die Produktliste bleibt schnell, weil sie nur die Kopie liest. Der eine Moment, in dem der Shop etwas verspricht, die Bestellung, nutzt den genauen Wert. Und exakte Mengen bleiben intern, was zählt, wenn Wiederverkäufer oder Wettbewerber Zugang zum Shop haben.
 
 Dieselbe Logik gilt für Agenten. In meinem Artikel zum [Auftragsstatus aus SAP](../agentforce-sap-auftragsstatus/) gibt der Agent den bestätigten Termin aus SAP weiter und schätzt nie einen aus Beständen. Ein Shop sollte es genauso halten.
@@ -91,7 +101,9 @@ Ein Pumpenhersteller verkauft 12.000 Ersatzteile an 250 Händler. Der Bestand li
 4. Im Checkout ruft die Inventory-Extension über die Middleware die SAP-Verfügbarkeitsprüfung für die Warenkorbpositionen auf und zeigt den bestätigten Termin pro Position.
 5. Antwortet SAP nicht in einer festgelegten Zeit, nimmt der Shop die Bestellung mit "Termin folgt" an, und SAP bestätigt später.
 
+```hinweis achtung
 Den fünften Punkt vergessen Teams am häufigsten. Schreiben Sie die Rückfallregel auf, bevor die erste Zeile Code entsteht.
+```
 
 ## Wie passt das zu Field Service und Händlerbeständen?
 

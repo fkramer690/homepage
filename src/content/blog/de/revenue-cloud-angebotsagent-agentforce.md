@@ -57,13 +57,26 @@ Ich würde zuerst zählen, welcher Anteil der Produkte sich mit den Worten finde
 
 Die [Ankündigung zu Winter '27](https://www.salesforce.com/news/stories/winter-2027-product-release-announcement/), allgemein verfügbar seit dem 12. Oktober 2026, erweitert Angebote per Agent auf drei Gruppen: "self-service quoting for customer buyers, integrated quoting for partners, and automated renewal package assembly for account executives". Kunden bestellen ohne Vertriebsmitarbeiter, Partner arbeiten, ohne ihren Arbeitsbereich zu verlassen, und Account Manager bekommen vor einer Verlängerung "a drafted quote and risk signals".
 
-Für Hersteller ist der Verlängerungsentwurf der interessanteste Teil. Wartungs- und Fernüberwachungsabos verlängern sich jedes Jahr, und das Verlängerungsangebot vorzubereiten ist Routinearbeit. Partner- und Self-Service-Angebote werfen zuerst kaufmännische Fragen auf: Welche Preise sieht ein Händler, und darf das Self-Service-Angebot eines Kunden das Angebot des Händlers unterbieten? Die Hilfe dokumentiert eine Einrichtungsseite für den Zugriff von Communities und Partnern auf Agentforce in Revenue Management; die Lizenzen für externe Nutzer sind ein eigener Klärungspunkt.
+Für Hersteller ist der Verlängerungsentwurf der interessanteste Teil. Wartungs- und Fernüberwachungsabos verlängern sich jedes Jahr, und das Verlängerungsangebot vorzubereiten ist Routinearbeit. Partner- und Self-Service-Angebote werfen zuerst kaufmännische Fragen auf: Welche Preise sieht ein Händler, und darf das Self-Service-Angebot eines Kunden das Angebot des Händlers unterbieten?
+
+```hinweis offen
+Die Hilfe dokumentiert eine Einrichtungsseite für den Zugriff von Communities und Partnern auf Agentforce in Revenue Management. Die Lizenzen für externe Nutzer sind ein eigener Klärungspunkt.
+```
 
 Wenn Ihre Händler stattdessen in Manufacturing Cloud Angebote erstellen, sehen Sie sich den [AI Partner Sales Assistant für Händlerangebote](../ki-angebote-haendler-partner-sales-assistant/) an. Zwei Angebotsagenten auf zwei Angebotsmodellen würde ich vermeiden.
 
 ## Was kostet der Angebotsagent?
 
-Es gibt zwei Kostenblöcke. Erstens die Revenue-Cloud-Lizenzen der Nutzer, für die der Agent arbeitet. Zweitens den Verbrauch des Agenten in Flex Credits. Die [Agentforce-Preisseite](https://www.salesforce.com/agentforce/pricing/) nennt 500 Dollar je 100.000 Credits, eine Standardaktion verbraucht 20 Credits, also 0,10 Dollar. Prompts kommen je nach Modellstufe dazu.
+Es gibt zwei Kostenblöcke. Erstens die Revenue-Cloud-Lizenzen der Nutzer, für die der Agent arbeitet. Zweitens den Verbrauch des Agenten in Flex Credits, zu den Sätzen der [Agentforce-Preisseite](https://www.salesforce.com/agentforce/pricing/):
+
+```kennzahlen
+500 $ | je 100.000 Flex Credits
+20 | Flex Credits je Standardaktion
+0,10 $ | je Standardaktion
+quelle: Agentforce-Preisseite von Salesforce
+```
+
+Prompts kommen je nach Modellstufe dazu.
 
 Eine grobe Schätzung, als Annahme: Ein Angebotsdialog braucht fünf Aktionen, etwa Account finden, Produkte suchen, Angebot anlegen, Positionen hinzufügen und Rabatt setzen. Das sind 100 Credits oder 0,50 Dollar je Angebot. Bei 1.500 Agentenangeboten im Monat liegen Sie bei rund 750 Dollar plus Prompts. Auch Tests in der Sandbox verbrauchen Credits. Wie Sie alle Zähler schätzen, steht in [Flex Credits: Agentforce-Kosten pro Aktion](../flex-credits-agentforce-kosten-pro-aktion/), und das Kapitel [Kosten und Token](../../masterclass/ki-salesforce/kosten-und-token/) der KI-Masterclass macht daraus ein Budget.
 

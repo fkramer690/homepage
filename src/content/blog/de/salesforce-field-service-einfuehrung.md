@@ -37,6 +37,10 @@ Field Service verändert den Arbeitstag von Disponenten und Technikern. Ein Disp
 
 Eine Welle begrenzt das Risiko. Fehlen in der ersten Region Qualifikationen oder Öffnungszeiten, betrifft das ein Servicegebiet und nicht den ganzen Außendienst. Die Fehler der ersten Welle werden zu Prüfpunkten für die nächste. Dazu kommt ein praktischer Grund: Die Stammdaten aus Teil 2 lassen sich Region für Region bereinigen. Wer alles auf einmal startet, muss alles auf einmal sauber haben.
 
+```praxis
+In meinen Field-Service-Projekten mit Wartung, Störungseinsätzen und Inbetriebnahmen lagen die Stolpersteine an drei Stellen: Datenqualität der Anlagen, Akzeptanz bei den Technikern und Schnittstellen zum ERP. Alle drei bekommt man in einer Region leichter in den Griff als im ganzen Außendienst auf einmal.
+```
+
 Eine Welle sollte umfassen:
 
 - die bereinigten Stammdaten der Region: Anlagen, Qualifikationen, Öffnungszeiten, Abwesenheiten
@@ -68,7 +72,11 @@ Die gute Nachricht: Die Technik lässt sich einstellen. Darüber würde ich mit 
 
 Dazu kommen die Qualifikationen und Abwesenheiten aus Teil 2 und die Spracheingabe, die ich in [Field Service Mobile im Außendienst](../salesforce-field-service-mobile-aussendienst/) beschreibe. Auch das sind Daten über Mitarbeitende.
 
-In Deutschland hat der Betriebsrat nach [§ 87 BetrVG](https://www.gesetze-im-internet.de/betrvg/__87.html) ein Mitbestimmungsrecht bei technischen Einrichtungen, die Verhalten oder Leistung der Arbeitnehmer überwachen. Wie das im Einzelfall auszulegen ist, klärt die Rechtsabteilung. Aus Projektsicht zählt vor allem der Zeitpunkt. Wer erst mit dem Betriebsrat spricht, wenn die App fertig konfiguriert ist, riskiert Wochen Verzug und eine Konfiguration, die noch einmal umgebaut werden muss.
+In Deutschland hat der Betriebsrat nach [§ 87 BetrVG](https://www.gesetze-im-internet.de/betrvg/__87.html) ein Mitbestimmungsrecht bei technischen Einrichtungen, die Verhalten oder Leistung der Arbeitnehmer überwachen. Wie das im Einzelfall auszulegen ist, klärt die Rechtsabteilung.
+
+```hinweis achtung
+Aus Projektsicht zählt vor allem der Zeitpunkt. Wer erst mit dem Betriebsrat spricht, wenn die App fertig konfiguriert ist, riskiert Wochen Verzug und eine Konfiguration, die noch einmal umgebaut werden muss.
+```
 
 ## Warum unterscheiden sich Regionen und Länder?
 

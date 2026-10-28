@@ -55,9 +55,20 @@ Im Pre-Sales habe ich mit Salesforce zusammengearbeitet und kenne die Angebote v
 - **Freigeber.** Wer nur Rabatte, Angebote oder Aufträge freigibt, arbeitet wenige Minuten pro Woche im System.
 - **Nutzer eines engen Prozesses.** Ein Team, das nur eine eigene App nutzt, etwa für Reklamationen oder interne Anfragen, braucht weder Vertriebs- noch Servicefunktionen.
 
-Gemeinsam ist ihnen: Sie nutzen die Hauptaktivitäten nicht oder übernehmen nur am Rande verwandte Tätigkeiten. Ein Beispiel aus einem Field-Service-Projekt: Bei einem Kunden haben wir auf Basis der Servicetermine Reiseanträge erstellt, als eigenes Objekt, und sie von dort den Technikern zur Verfügung gestellt. Die Kollegen, die die Reiseanträge bearbeiteten, brauchten dafür keine Field-Service-Lizenz. Sie arbeiteten zu einem Bruchteil der Kosten einer vollen Lizenz.
+Gemeinsam ist ihnen: Sie nutzen die Hauptaktivitäten nicht oder übernehmen nur am Rande verwandte Tätigkeiten.
 
-Ein Rechenbeispiel mit Listenpreisen: 100 Nutzer, die nur lesen und freigeben. Mit Sales Cloud Core sind das 195 € pro Nutzer und Monat, mit Platform Starter 25 €. Der Unterschied liegt bei 170 € pro Nutzer und Monat, also 204.000 € pro Jahr. Über eine Vertragslaufzeit von drei Jahren sind das mehr als 600.000 €.
+```praxis
+In einem Field-Service-Projekt haben wir bei einem Kunden auf Basis der Servicetermine Reiseanträge erstellt, als eigenes Objekt, und sie von dort den Technikern zur Verfügung gestellt. Die Kollegen, die die Reiseanträge bearbeiteten, brauchten dafür keine Field-Service-Lizenz. Sie arbeiteten zu einem Bruchteil der Kosten einer vollen Lizenz.
+```
+
+Ein Rechenbeispiel mit Listenpreisen: 100 Nutzer, die nur lesen und freigeben. Der Unterschied liegt bei 170 € pro Nutzer und Monat, über eine Vertragslaufzeit von drei Jahren bei mehr als 600.000 €.
+
+```kennzahlen
+195 € | Sales Cloud Core pro Nutzer und Monat
+25 € | Platform Starter pro Nutzer und Monat
+204.000 € | Unterschied pro Jahr bei 100 Nutzern, die nur lesen und freigeben
+quelle: Salesforce-Preisseiten für Sales Cloud und Platform, Listenpreise Stand Oktober 2026
+```
 
 Bei externen Nutzern ist der Fehler noch teurer. Händler oder Kunden, die mit internen Lizenzen arbeiten, weil ein Portal „später“ kommen sollte, kosten ein Vielfaches einer Portallizenz. Käufer, die in einem B2B-Shop bestellen, brauchen einen eigenen Lizenztyp, siehe [B2B Commerce Lizenzen für Käufer: Wer braucht welche?](../b2b-commerce-lizenzen-kaeufer/).
 
@@ -77,10 +88,16 @@ Deshalb gehört die Lizenzfrage in die Architektur. Ob ein Freigabeprozess auf P
 
 Eine Lizenzprognose beantwortet, welche Lizenztypen ein Unternehmen in welcher Menge braucht, heute und in den nächsten Jahren. Ich gehe dabei so vor:
 
-1. **Nutzer nach Tätigkeit gruppieren**, nicht nach Abteilung. Ein Vertriebsinnendienst, der Aufträge erfasst, ist eine andere Gruppe als ein Key Account Manager.
-2. **Pro Gruppe festhalten, welche Objekte sie liest und bearbeitet.** Daraus ergibt sich die kleinste Lizenz, die passt.
-3. **Wachstum schätzen**, etwa neue Länder, neue Geschäftsbereiche oder ein Portal, das in zwei Jahren kommt.
-4. **Gegen das Angebot legen.** Weicht das Angebot ab, gibt es eine Begründung oder einen Verhandlungspunkt.
+```schritte
+Nutzer nach Tätigkeit gruppieren
+  Nicht nach Abteilung. Ein Vertriebsinnendienst, der Aufträge erfasst, ist eine andere Gruppe als ein Key Account Manager.
+Objekte pro Gruppe festhalten
+  Welche Objekte liest und bearbeitet die Gruppe? Daraus ergibt sich die kleinste Lizenz, die passt.
+Wachstum schätzen
+  Etwa neue Länder, neue Geschäftsbereiche oder ein Portal, das in zwei Jahren kommt.
+Gegen das Angebot legen
+  Weicht das Angebot ab, gibt es eine Begründung oder einen Verhandlungspunkt.
+```
 
 Bei bestehenden Orgs hilft ein Blick auf die Login-Historie und die zuletzt bearbeiteten Datensätze. Nutzer mit voller Lizenz, die sich einmal im Monat anmelden, sind Kandidaten für eine andere Lizenz oder für gar keine.
 

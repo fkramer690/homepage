@@ -73,7 +73,10 @@ Commerce Extensions sind Apex-Klassen, die Salesforce an benannten Erweiterungsp
 
 Laut der [Seite zur Integrationsarchitektur](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-integration-architecture.html) gibt es Extensions für Preise, Bestand, Versand und Steuer seit Winter '24, und Salesforce empfiehlt sie gegenüber dem älteren Checkout-Integrations-Framework, das weiter unterstützt wird. Zahlungen lassen sich laut [Extensions-Leitfaden](https://developer.salesforce.com/docs/commerce/extensions/guide/extensions.html) nicht per Extension anpassen.
 
+```vertiefung Für Entwickler
+titel: Extensions wartbar halten: `super()` und Registrierung im Repository
 Für die Wartbarkeit zählen zwei Punkte aus demselben Leitfaden. Salesforce empfiehlt ausdrücklich, in Domain Extensions `super()` aufzurufen, damit Ihr Code den Standard ergänzt und spätere Releases weiter ankommen. Und Registrierung und Zuordnung zum Store laufen am einfachsten über die Salesforce CLI mit dem Commerce-Plug-in, alternativ über die Objekte `RegisteredExternalService` und `StoreIntegratedService`. Damit können Code, Registrierung und Mapping im Repository und in der Pipeline des Kunden liegen. Wie Sie Partnercode daraufhin prüfen, steht in [Commerce Extensions: Eigenentwicklung, die Updates übersteht](../../../blog/commerce-extensions-eigenentwicklung/), wie Store-Konfiguration durch die Umgebungen wandert, im Kapitel [Daten und Konfiguration](../../devops-release-management/daten-und-konfiguration/) der DevOps-Masterclass.
+```
 
 Meine Regel für Bestandsshops: Neue Logik kommt in Extensions, funktionierende alte Integrationen bleiben, bis sich der Code ohnehin ändern muss.
 
@@ -89,9 +92,25 @@ Meine Empfehlung ist eine Mischung: Produktliste und Produktseite lesen die Kopi
 
 Sendet ein Käufer die Bestellung ab, legt B2B Commerce einen Auftrag und eine Order Summary an. Das Feld `OrderLifeCycleType` unterscheidet laut [Developer Guide](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-import-export-managed-unmanaged.html) zwei Fälle: managed, von Salesforce Order Management angelegt, und unmanaged, vom Shop angelegt. Unmanaged Summaries darf ein Nutzer mit der Berechtigung B2B Commerce Integrator User oder Edit Unmanaged Order Summaries aktualisieren. Geben Sie sie einem eigenen Integrationsnutzer, keiner Person.
 
-Die Editionen unterscheiden sich hier deutlich. Growth enthält Order Management Lite, Advanced das volle Order Management. Aufträge aus anderen Kanälen oder Drittsystemen brauchen laut Preisseite ein separat gekauftes Order Management, und Bestandskunden mit Order Management verlängern auf Advanced. Was Lite weglässt, schlüsselt die Seite nicht auf; lassen Sie sich das schriftlich geben, bevor Sie eine Edition wählen.
+Die Editionen unterscheiden sich hier deutlich. Growth enthält Order Management Lite, Advanced das volle Order Management. Aufträge aus anderen Kanälen oder Drittsystemen brauchen laut Preisseite ein separat gekauftes Order Management, und Bestandskunden mit Order Management verlängern auf Advanced.
+
+```hinweis offen
+Was Order Management Lite in Growth weglässt, schlüsselt die Preisseite nicht auf. Lassen Sie sich das schriftlich geben, bevor Sie eine Edition wählen.
+```
 
 Order Management deckt laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/scom-order-management/scom-som-get-started) Zuteilung, Erfüllung und Service mit Stornos, Retouren und Umtausch ab und exportiert Rechnungen ins ERP. Ein Maschinenbauer mit SAP SD, Lagerverwaltung und Fakturierung hat all das schon. Dazu kommen Telefon-, E-Mail- und EDI-Aufträge, die weiter in SAP landen. Deshalb sollte bei den meisten Herstellern SAP Herr des Auftrags bleiben: Der Shop nimmt an, SAP wickelt ab, die Schnittstelle schreibt Auftragsnummer, Termine, Lieferungen und Rechnungen zurück. Die Begründung und was im Rückweg mindestens ankommen muss, steht in [Shop-Bestellungen ins ERP: Wem gehört der Auftrag?](../../../blog/shop-bestellungen-erp-auftrag/).
+
+```ablauf
+sf: Checkout, Order Summary
+erp: SAP-Auftrag, Lieferung, Rechnung
+Checkout --unmanaged--> Order Summary
+Checkout --Auftrag an SAP--> SAP-Auftrag
+SAP-Auftrag --> Lieferung
+SAP-Auftrag --> Rechnung
+SAP-Auftrag ..Nummer, Termine..> Order Summary
+Lieferung ..zurück..> Order Summary
+Rechnung ..zurück..> Order Summary
+```
 
 Planen Sie den Rückweg so sorgfältig wie den Hinweg. Ein Händler, der drei Tage lang "Bestellung eingegangen" sieht, ruft im Innendienst an.
 

@@ -69,10 +69,16 @@ Today these rules usually live in the spreadsheet someone in sales or finance ca
 
 The payout. According to Help, an integration pulls approved amounts and accruals into the ERP, and finance settles them there, by cheque, credit note or another method.
 
-For the architecture that gives a clear split:
+This gives the architecture a clear split. **Salesforce leads** for programmes, members, tiers, the calculation and the approval, **the ERP leads** for invoices, credit notes, accruals and posting:
 
-- **Salesforce leads** for programmes, members, tiers, the calculation and the approval.
-- **The ERP leads** for invoices, credit notes, accruals and posting.
+```ablauf
+erp: Invoices, Payout
+sf: Transaction Journal, Calculation, Approval
+Invoices --Integration--> Transaction Journal
+Transaction Journal --> Calculation
+Calculation --> Approval
+Approval --Amounts--> Payout
+```
 
 Accruals deserve their own meeting with finance. Anyone accruing an annual rebate monthly needs a number every month. If it comes from Salesforce, it has to be in the ERP in time for month-end close. How I decide leading systems per type of data is described under [integration with ERP, middleware and telephony](../../services/salesforce-integration/).
 
@@ -82,11 +88,17 @@ Optionally, their amounts. According to Help, partners can see their payouts thr
 
 In the overview of portal licences I describe in [part 7: Manufacturing Cloud customer portal](../manufacturing-cloud-customer-portal/), Salesforce lists rebate claims under the Partner Community for Manufacturing licence. So if you want to show dealers their rebates in the portal, plan for partner licences, not the cheaper customer licence.
 
-One point of caution: a dealer who sees their interim status adjusts their behaviour to it. If returns are missing there or numbers are a week old, there is trouble at the end of the period. I would only switch on the interim status once the calculation has been right internally for a few periods.
+```hinweis achtung
+A dealer who sees their interim status adjusts their behaviour to it. If returns are missing there or numbers are a week old, there is trouble at the end of the period. I would only switch on the interim status once the calculation has been right internally for a few periods.
+```
 
 ## When does rebate management pay off?
 
-In one manufacturing project I evaluated Manufacturing Cloud and decided against it, because its core feature did not fit the business. The rule from that applies here too: you buy a feature when it fits the business. For rebate management, I would recommend it when several of these points apply:
+```praxis
+In one manufacturing project I evaluated Manufacturing Cloud and decided against it, because its core feature did not fit the business.
+```
+
+The rule from that applies here too: you buy a feature when it fits the business. For rebate management, I would recommend it when several of these points apply:
 
 - **Many members.** Dozens or hundreds of dealers, not a handful of customers.
 - **Tiered programmes.** Several levels, product groups or periods that change every year.

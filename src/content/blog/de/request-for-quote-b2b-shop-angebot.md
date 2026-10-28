@@ -40,12 +40,18 @@ Die [Salesforce-Hilfe zu Preisen in B2B-Stores](https://help.salesforce.com/s/ar
 
 Der Kreislauf hat vier Schritte:
 
-1. **Anfrage.** Der Käufer füllt einen Warenkorb oder öffnet eine Produktseite und fragt ein Angebot an, statt zu bestellen.
-2. **Verhandlung.** Aus der Anfrage wird ein Angebot. Der Innendienst passt Preise oder Mengen an und gibt es in Sales Cloud oder Revenue Management frei.
-3. **Antwort.** Der Käufer sieht das Angebot auf der Seite My Quotes und nimmt es an, bittet um Änderungen oder lehnt ab.
-4. **Bestellung.** Mit Quote to Cart kommt das freigegebene Angebot als Warenkorb zurück. Im Juni-Beitrag heißt es: "once a quote is negotiated and approved, sellers can share it with customers as a cart". Der Käufer bestellt zu den verhandelten Preisen, meist mit Bestellnummer, wie in [B2B-Checkout: Bestellnummer, Karte oder Rechnung?](../b2b-checkout-bestellnummer-rechnung/) beschrieben.
+```schritte
+Anfrage | Käufer
+  Der Käufer füllt einen Warenkorb oder öffnet eine Produktseite und fragt ein Angebot an, statt zu bestellen.
+Verhandlung | Innendienst
+  Aus der Anfrage wird ein Angebot. Der Innendienst passt Preise oder Mengen an und gibt es in Sales Cloud oder Revenue Management frei.
+Antwort | Käufer
+  Der Käufer sieht das Angebot auf der Seite My Quotes und nimmt es an, bittet um Änderungen oder lehnt ab.
+Bestellung | Käufer
+  Mit Quote to Cart kommt das freigegebene Angebot als Warenkorb zurück. Der Käufer bestellt zu den verhandelten Preisen, meist mit Bestellnummer, wie in [B2B-Checkout: Bestellnummer, Karte oder Rechnung?](../b2b-checkout-bestellnummer-rechnung/) beschrieben.
+```
 
-Salesforce nennt das Round-Trip Quoting. Der Juni-Beitrag stellt Quote to Cart und Round-Trip Quoting als Teil eines Pakets mit dem Etikett "GA June 2026" vor, den ausdrücklichen Status "generally available" gibt er aber nur für RFQ an. Bevor Sie Schritt 4 in eine Einführung einplanen, prüfen Sie in Ihrer Org, welche Teile aktiv sind.
+Im Juni-Beitrag heißt es zu Schritt 4: "once a quote is negotiated and approved, sellers can share it with customers as a cart". Salesforce nennt das Round-Trip Quoting. Der Juni-Beitrag stellt Quote to Cart und Round-Trip Quoting als Teil eines Pakets mit dem Etikett "GA June 2026" vor, den ausdrücklichen Status "generally available" gibt er aber nur für RFQ an. Bevor Sie Schritt 4 in eine Einführung einplanen, prüfen Sie in Ihrer Org, welche Teile aktiv sind.
 
 ## Was leisten die CommerceQuotes-APIs?
 
@@ -58,13 +64,16 @@ Bauen Sie eigene Komponenten oder ein Headless-Frontend, ist die Apex-Klasse [Co
 | createQuoteFromProduct | 67.0 | Erzeugt ein Angebot von der Produktseite |
 | updateQuote | 67.0 | Freigegebenes Angebot nachverhandeln oder ablehnen |
 
-Drei Details aus der Referenz sind für das Design wichtig:
+Zwei Details aus der Referenz sind für das Design wichtig:
 
 - **createQuoteFromProduct** legt zur Verarbeitung einen temporären zweiten Warenkorb an und löscht ihn danach, egal ob der Aufruf gelingt oder scheitert. Der eigentliche Warenkorb des Käufers bleibt unberührt.
-- **Lizenzen je Produkttyp.** Einfache Produkte werden mit Lizenzen für B2B Commerce oder B2B Commerce und Revenue Cloud unterstützt; statische Bundles brauchen B2B Commerce und Revenue Cloud. Das liest sich weniger streng als die Hilfe-Seite, die Advanced Pricing für Request for Quote voraussetzt. Holen Sie sich die verbindliche Antwort für Ihre Produkte schriftlich von Salesforce.
 - **updateQuote** funktioniert nur bei freigegebenen Angeboten. Renegotiate setzt das Angebot auf Draft zurück und speichert die Kommentare des Käufers, Decline setzt es auf Denied.
 
 Die Status sind der Anker für Ihren Prozess. Jedes Angebot in Draft ist Arbeit für den Innendienst, jedes Approved-Angebot wartet auf den Käufer, jedes Denied-Angebot hat einen Grund, den man lesen sollte.
+
+```hinweis offen
+**Lizenzen je Produkttyp.** Laut Apex-Referenz werden einfache Produkte mit Lizenzen für B2B Commerce oder B2B Commerce und Revenue Cloud unterstützt; statische Bundles brauchen B2B Commerce und Revenue Cloud. Das liest sich weniger streng als die Hilfe-Seite, die Advanced Pricing für Request for Quote voraussetzt. Holen Sie sich die verbindliche Antwort für Ihre Produkte schriftlich von Salesforce.
+```
 
 ## Wer beantwortet das Angebot, und wie schnell?
 

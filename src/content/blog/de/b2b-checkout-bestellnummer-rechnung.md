@@ -53,7 +53,10 @@ Das Entwicklerhandbuch nennt für B2B-Shops diese Optionen, verfügbar in Enterp
 
 Für das Gateway nennt die [Seite zu den Gateway-Optionen](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-payment-gateway-options.html) drei Wege: ein Anbieterpaket vom AppExchange, Salesforce Payments als native Stripe-Integration oder ein eigenes Gateway. Bei AppExchange-Paketen sollen Sie laut Salesforce prüfen, ob das Paket B2B-Shops unterstützt. Ein eigenes serverseitiges Gateway braucht einen Apex-Adapter.
 
-Eine Grenze ist wichtig für alle, die eigene Logik planen. Das Extension-Framework, das Preise, Bestand, Steuer, Versand und Auftragserzeugung abdeckt, gilt nicht für Zahlungen: "Currently, payments can't be customized with an extension" ([Salesforce Developers, Extensions](https://developer.salesforce.com/docs/commerce/extensions/guide/extensions.html)). Sonderregeln für Zahlungen landen deshalb im Apex-Adapter oder in einer eigenen Komponente, und beides ist Code, den Ihr Team über jedes Release hinweg verantwortet.
+```vertiefung Für Entwickler
+titel: Wo landet eigene Zahlungslogik?
+Das Extension-Framework, das Preise, Bestand, Steuer, Versand und Auftragserzeugung abdeckt, gilt nicht für Zahlungen: "Currently, payments can't be customized with an extension" ([Salesforce Developers, Extensions](https://developer.salesforce.com/docs/commerce/extensions/guide/extensions.html)). Sonderregeln für Zahlungen landen deshalb im Apex-Adapter oder in einer eigenen Komponente, und beides ist Code, den Ihr Team über jedes Release hinweg verantwortet.
+```
 
 Im Flow-basierten Checkout wählen Käufer auf der Bestellübersicht zwischen Bestellnummer und Karte. Wer die Bestellnummer wählt, gibt PO-Nummer und Rechnungsadresse ein ([Salesforce Developers, Purchase Order oder Kreditkarte](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-checkout-choose-po-or-cc.html)).
 
@@ -74,6 +77,17 @@ Ich empfehle daher die Purchase-Order-Komponente, wenn der Shop nur für bekannt
 Kreditlimit, offene Posten und Auftragssperren liegen im ERP, bei SAP zum Beispiel im Kreditmanagement. Der Shop kennt davon nichts. Ohne Prüfung kann ein gesperrter Händler eine Bestellung abschicken, die das ERP später ablehnt, und der Innendienst muss anrufen und erklären.
 
 Der Ort für die Prüfung ist der PlaceOrder-Service, Extension Point `Commerce_Domain_Checkout_PlaceOrder`. Laut [Liste der verfügbaren Extensions](https://developer.salesforce.com/docs/commerce/extensions/guide/available-extensions.html) führt er Warenkorbprüfungen aus, wenn ein Käufer bestellt, als Teil der Place Order Action API. Für eigene Logik erweitern Sie die Apex-Basisklasse und überschreiben die Methode `validate`. Darin fragt ein Live-Aufruf das ERP zwei Dinge: Ist das Konto gesperrt, und passt die Bestellsumme in den offenen Kreditrahmen? Wenn nicht, entsteht keine Bestellung, und der Käufer sieht einen Hinweis.
+
+```ablauf
+sf: Checkout, validate-Prüfung, Order Summary
+erp: Kreditprüfung, Kundenauftrag, Rechnung
+Checkout --Bestellnummer--> validate-Prüfung
+validate-Prüfung --Live-Aufruf--> Kreditprüfung
+Kreditprüfung ..Antwort..> validate-Prüfung
+validate-Prüfung --> Order Summary
+Order Summary --Übergabe--> Kundenauftrag
+Kundenauftrag --> Rechnung
+```
 
 Drei Entscheidungen gehören in die Spezifikation:
 

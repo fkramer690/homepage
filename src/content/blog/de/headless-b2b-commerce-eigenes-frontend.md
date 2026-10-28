@@ -66,9 +66,22 @@ Der [Guide zum Headless-Checkout](https://developer.salesforce.com/docs/commerce
 
 Der wichtige Punkt für die Architektur: Hinter diesen Aufrufen laufen Preis-, Bestands-, Steuer- und Checkout-Logik. Commerce Extensions werden durch Connect-API-Aufrufe ausgelöst, eine Preis-Extension, die SAP nach dem Kundenpreis fragt, läuft also für Ihre React-App genauso wie für den LWR-Store. Wie man diese Extensions so baut, dass sie Releases überstehen, steht in [Commerce Extensions: Eigenentwicklung, die Updates übersteht](../commerce-extensions-eigenentwicklung/), woher Kundenpreise kommen sollten in [Kundenpreise in B2B Commerce](../kundenpreise-b2b-commerce-preisbuecher-erp/).
 
+```ablauf
+ext: Ihr Frontend
+sf: Connect REST API, Preis-Extension, Order Summary
+erp: SAP Kundenpreis
+Ihr Frontend --Checkout-Aufruf--> Connect REST API
+Connect REST API --löst aus--> Preis-Extension
+Preis-Extension --fragt Preis--> SAP Kundenpreis
+SAP Kundenpreis ..Preis zurück..> Preis-Extension
+Connect REST API --prepare, submit--> Order Summary
+```
+
 Den Login bauen Sie selbst. Für registrierte Käufer nutzt der [Guide zum Headless-Login](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-comm-headless-login.html) die OAuth-Endpunkte für Authorize und Token, unterstützt externe Identity Provider und eigene Anmeldung in Apex, und nach dem Login hängen alle Storefront-Aufrufe nur an der aktiven Sitzung. Für Gäste dokumentiert Salesforce [Warenkorb und Checkout mit einem JWT](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-comm-headless-guest-jwt.html): ein Backend for Frontend, eine eindeutige Besucher-ID pro Gast und als Voraussetzung eine aktive Experience-Cloud-Site, einen gestarteten Web Store und eine konfigurierte Domain. Headless heißt also nicht, dass die Experience-Cloud-Site wegfällt.
 
+```hinweis offen
 Welche Lizenz Käufer in einem headless Shop brauchen, steht in den Guides, die ich gelesen habe, nicht. Für einen Standard-Store nennt Trailhead Customer Community Plus, siehe [B2B Commerce Lizenzen für Käufer](../b2b-commerce-lizenzen-kaeufer/). Den Headless-Fall würde ich mir schriftlich bestätigen lassen, bevor jemand einen Business Case rechnet.
+```
 
 ## Wann lohnt sich headless für einen Hersteller?
 

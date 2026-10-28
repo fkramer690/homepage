@@ -45,11 +45,13 @@ Wo "Consumption & Invoicing" in Advanced endet und wo Invoice Management oder da
 
 ## Was ist ein Billing Event?
 
-Ein Billing Event ist die Einheit, in der Salesforce den Verbrauch von Revenue Cloud Billing misst. Das [Rate Sheet zu Revenue Cloud Billing](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/documents/pricing/revenue-cloud-billing-rate-sheet-feb-2026.pdf) vom Februar 2026 definiert einen Verbrauchstyp, "Invoicing", mit dieser Messung:
+Ein Billing Event ist die Einheit, in der Salesforce den Verbrauch von Revenue Cloud Billing misst. Das [Rate Sheet zu Revenue Cloud Billing](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/documents/pricing/revenue-cloud-billing-rate-sheet-feb-2026.pdf) vom Februar 2026 definiert einen Verbrauchstyp, "Invoicing", gemessen pro Dollar (oder Teil davon) des gesamten Rechnungsbetrags:
 
-- **Einheit:** pro Dollar (oder Teil davon) des gesamten Rechnungsbetrags.
-- **Faktor:** 0,02.
-- **Fußnote:** Je 50 Dollar Rechnungsbetrag wird ein Billing Event verbraucht, auch für angefangene 50 Dollar.
+```kennzahlen
+0,02 | Faktor: Billing Events pro Dollar Rechnungsbetrag
+50 Dollar | Rechnungsbetrag je Billing Event, auch angefangene 50 Dollar
+quelle: Revenue Cloud Billing Rate Sheet, Februar 2026
+```
 
 Das Kontingent steht im Order Form, in der Tabelle Usage Details. Billing Events müssen bis zum Order End Date verbraucht werden, ein Übertrag ist ausgeschlossen. Das Rate Sheet sagt außerdem, dass sich Verbrauchstypen und Faktoren ändern können. Das ist dieselbe Logik wie bei [Flex Credits für Agentforce](../flex-credits-agentforce-kosten-pro-aktion/): Sie kaufen ein Kontingent für die Laufzeit, und was Sie nicht nutzen, verfällt.
 
@@ -62,7 +64,11 @@ Die Definitionen im Rate Sheet sind kurz, und jedes Wort zählt:
 - **Subtotal** ist der Wert der Waren oder Leistungen plus Versand und Handling. Steuern sind ausgenommen.
 - **Währung:** Zwischensummen in anderen Währungen werden zum durchschnittlichen Tageskurs des jeweiligen Kursanbieters von Salesforce in Dollar umgerechnet.
 
-Für einen deutschen Hersteller, der in Euro fakturiert, bewegt sich die Zahl der Events also auch mit dem Euro-Dollar-Kurs. Drei Fragen beantwortet das Rate Sheet nicht: ob Gutschriften den gezählten Betrag mindern, ob die Rundung auf angefangene 50 Dollar je Rechnung oder auf die Summe gilt, und was passiert, wenn Sie mehr Events verbrauchen als gekauft. Lassen Sie sich alle drei schriftlich beantworten.
+Für einen deutschen Hersteller, der in Euro fakturiert, bewegt sich die Zahl der Events also auch mit dem Euro-Dollar-Kurs.
+
+```hinweis offen
+Drei Fragen beantwortet das Rate Sheet nicht: ob Gutschriften den gezählten Betrag mindern, ob die Rundung auf angefangene 50 Dollar je Rechnung oder auf die Summe gilt, und was passiert, wenn Sie mehr Events verbrauchen als gekauft. Lassen Sie sich alle drei schriftlich beantworten.
+```
 
 ## Wie schätzen Sie die Kosten?
 

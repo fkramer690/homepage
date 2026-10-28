@@ -84,7 +84,12 @@ Kaum ein Unternehmen springt von Change Sets direkt zu einer vollautomatischen P
 
 Zwei Stellen in dieser Tabelle sind in der Praxis die schwierigsten. Der Schritt von Stufe 2 zu 3 verschiebt die Quelle der Wahrheit von der Org ins Repository. Ab dann ist jede Änderung, die direkt in einer gemeinsamen Org entsteht, ein Fehler im Prozess. Und der Schritt von 3 zu 4 schließt die Hintertür: Solange jemand mit Admin-Rechten in Produktion deployen darf, ist die Pipeline eine Empfehlung.
 
-Das Validierungs-Deployment ist das erste Werkzeug, das sich schon in Stufe 3 bezahlt macht. Mit `sf project deploy validate` prüft die [Salesforce CLI](https://developer.salesforce.com/docs/platform/salesforce-cli-reference/guide/cli_reference_project_deploy_validate.html), ob ein Deployment gelingen würde, ohne etwas zu ändern. Nach einer erfolgreichen Validierung lässt sich das Paket bis zu zehn Tage lang per Quick Deploy ohne erneuten Testlauf ausrollen.
+Das Validierungs-Deployment ist das erste Werkzeug, das sich schon in Stufe 3 bezahlt macht.
+
+```vertiefung Für Entwickler
+titel: Wie funktionieren Validierung und Quick Deploy?
+Mit `sf project deploy validate` prüft die [Salesforce CLI](https://developer.salesforce.com/docs/platform/salesforce-cli-reference/guide/cli_reference_project_deploy_validate.html), ob ein Deployment gelingen würde, ohne etwas zu ändern. Nach einer erfolgreichen Validierung lässt sich das Paket bis zu zehn Tage lang per Quick Deploy ohne erneuten Testlauf ausrollen.
+```
 
 Für die Stufen 3 bis 5 brauchen Sie ein Werkzeug. Eine Open-Source-Option ist [sfdx-hardis](https://sfdx-hardis.cloudity.com/), das Cloudity mit einer Community pflegt; es bringt Pipelines für GitHub, GitLab, Azure DevOps, Bitbucket und Jenkins sowie Monitoring und Metadaten-Backup mit. Ich setze es seit rund zwei Jahren in Kundenprojekten ein. Kommerzielle Plattformen wie [Gearset](https://gearset.com/), [Copado](https://www.copado.com/) oder [Flosum](https://www.flosum.com/products/devops) bieten eine verwaltete Oberfläche, Herstellersupport und weniger eigenen Betriebsaufwand; Flosum beschreibt sich als native Lösung auf der Salesforce-Plattform. Welches Werkzeug zu welchem Programm passt, vergleicht [Kapitel 4](../devops-werkzeuge-vergleich/). Für dieses Kapitel zählen zwei Regeln: Die Wahl fällt früh und gilt für jeden Partner. Und wenn Sie mit Open Source Lizenzkosten sparen, investieren Sie das Geld am besten in eine interne Release-Rolle.
 

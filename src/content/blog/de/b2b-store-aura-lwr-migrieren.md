@@ -60,16 +60,26 @@ Der Leitfaden trennt die Vorbereitung im Aura-Store vom Wechsel auf einen neuen 
 
 1. **Bestand aufnehmen.** Suchen Sie im Setup nach Lightning Components, um alle Aura-Komponenten und Lightning Web Components zu sehen.
 2. **Aura-Komponenten ersetzen.** Lightning Web Components laufen in Aura- und LWR-Stores, oft ohne Änderung. Aura-Komponenten können Lightning Web Components enthalten, aber nicht umgekehrt, also stellen Sie zuerst die inneren Komponenten um. Lässt sich eine Aura-Komponente noch nicht ersetzen, reduzieren Sie sie auf eine dünne Hülle. Am Ende müssen alle Aura-Komponenten weg.
-3. **Datenzugriffe nach oben ziehen.** Halten Sie Datenoperationen in der äußersten Komponente. Dann ändert sich die Datenschicht an einer Stelle, und innere Komponenten bleiben wiederverwendbar.
-4. **Events umbauen.** Aura-Events, deklariert mit `aura:event`, werden in Lightning Web Components zu DOM-Events.
-5. **Wire-Adapter nutzen.** Ersetzen Sie `force:recordData` durch `@wire` und Adapter aus den Namespaces `lightning/ui*Api` und Commerce. Apex-Methoden, die Sie behalten wollen, lassen sich in Lightning Web Components importieren.
+
+```vertiefung Für Entwickler
+titel: Wie baue ich Datenzugriff und Events für LWR um?
+- **Datenzugriffe nach oben ziehen.** Halten Sie Datenoperationen in der äußersten Komponente. Dann ändert sich die Datenschicht an einer Stelle, und innere Komponenten bleiben wiederverwendbar.
+- **Events umbauen.** Aura-Events, deklariert mit `aura:event`, werden in Lightning Web Components zu DOM-Events.
+- **Wire-Adapter nutzen.** Ersetzen Sie `force:recordData` durch `@wire` und Adapter aus den Namespaces `lightning/ui*Api` und Commerce. Apex-Methoden, die Sie behalten wollen, lassen sich in Lightning Web Components importieren.
+```
 
 **Der Wechsel:**
 
-1. Legen Sie im Setup einen Store aus dem Template **B2B Commerce (LWR)** an. Laut Leitfaden ist ein neues Template nötig, um die Migration abzuschließen ([Create a Store with the LWR Template](https://developer.salesforce.com/docs/commerce/lwr-migration/guide/create-lwr-template.html)).
-2. Legen Sie die Komponenten in ein SFDX-Projekt, schließen Sie den Umbau ab, passen Sie die Navigation zum Warenkorb an und übertragen Sie das Branding auf Styling-Hooks.
-3. Übertragen Sie die Store-Konfiguration per Change Set vom alten in den neuen Store.
-4. Deployen, Komponenten in Experience Builder platzieren, Vorschau auf Desktop und Mobilgerät prüfen, veröffentlichen.
+```schritte
+Store anlegen
+  Im Setup einen Store aus dem Template **B2B Commerce (LWR)** anlegen. Laut Leitfaden ist ein neues Template nötig, um die Migration abzuschließen ([Create a Store with the LWR Template](https://developer.salesforce.com/docs/commerce/lwr-migration/guide/create-lwr-template.html)).
+Umbau abschließen
+  Komponenten in ein SFDX-Projekt legen, den Umbau abschließen, die Navigation zum Warenkorb anpassen und das Branding auf Styling-Hooks übertragen.
+Konfiguration übertragen
+  Die Store-Konfiguration per Change Set vom alten in den neuen Store übertragen.
+Veröffentlichen
+  Deployen, Komponenten in Experience Builder platzieren, Vorschau auf Desktop und Mobilgerät prüfen, veröffentlichen.
+```
 
 Salesforce schreibt, dass Sie den Store nicht von Grund auf neu bauen müssen und die Migration vor allem Umbau ist. Für die Commerce-Daten stimmt das. Für die Storefront würde ich mich nicht darauf verlassen: neue Site, neues Styling, neuer Checkout und neue Warenkorbseite ergeben zusammen einen Neubau von allem, was der Käufer sieht. Ich schätze und teste es auch so.
 

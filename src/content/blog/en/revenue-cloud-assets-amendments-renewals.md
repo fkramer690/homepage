@@ -37,15 +37,22 @@ These are lifecycle-managed assets. Next to the classic fields such as serial nu
 - **Asset action:** according to the [object reference](https://developer.salesforce.com/docs/atlas.en-us.264.0.object_reference.meta/object_reference/sforce_api_objects_assetaction.htm), it represents a change made to a lifecycle-managed asset. Trailhead shows business categories such as Upsells, Renewals and Cancellations.
 - **Asset state period:** per the [object reference](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_assetstateperiod.htm), a time span in which an asset has the same quantity, amount and monthly recurring revenue. Amendments and renewals add a new period.
 
-The fields of both objects cannot be edited. The history comes from quotes and orders, or from the [asset lifecycle APIs](https://developer.salesforce.com/docs/atlas.en-us.chatterapi.meta/chatterapi/features_asset_lifecycle_use_cases.htm). So an interface from SAP should never overwrite quantities on these assets. A change in quantity is a commercial change and belongs in a quote and an order.
+The fields of both objects cannot be edited. The history comes from quotes and orders, or from the [asset lifecycle APIs](https://developer.salesforce.com/docs/atlas.en-us.chatterapi.meta/chatterapi/features_asset_lifecycle_use_cases.htm).
+
+```hinweis achtung
+An interface from SAP should never overwrite quantities on lifecycle-managed assets. A change in quantity is a commercial change and belongs in a quote and an order.
+```
 
 ## How does an amendment work?
 
 Every amendment is a quote, and every quote becomes an order. Trailhead's example: a customer has five licences and needs eight more. The rep selects the asset, clicks Amend and sets an amendment date, the day the change takes effect. Revenue Cloud creates an amendment quote with three quantities:
 
-- **Start quantity:** what the customer has today, 5.
-- **Quantity:** the delta, +8 to add or a negative number such as -3 to reduce.
-- **End quantity:** the result, 13.
+```kennzahlen
+5 | Start quantity: what the customer has today
++8 | Quantity: the delta, a negative number such as -3 to reduce
+13 | End quantity: the result
+source: Trailhead, Manage Customer Asset Amendments (Asset Lifecycle Management with Revenue Cloud)
+```
 
 From the quote the rep creates an order and activates it. The asset gets a new asset action with the business category Upsells and a new state period with the higher quantity from the amendment date onwards.
 

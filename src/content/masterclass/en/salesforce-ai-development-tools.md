@@ -73,11 +73,15 @@ The docs do not say whether Vibes also reads `CLAUDE.md` or `AGENTS.md`. Accordi
 
 Sources: [Vibes usage and billing](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-admin-billing.html), [Vibes FAQ](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-faqs.html).
 
-The figure I would check first: according to the FAQ the unmetered cap applies per org, not per user. Once it is reached, the team carries on with GPT-5 or pays Flex Credits. Opus runs as an "Advanced prompt", which the [Flex Credits rate card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) prices at 16 credits; at $500 per 100,000 credits that is $0.08 per started block of 2,000 tokens. The [Vibes pricing page](https://www.salesforce.com/agentforce/developers/vibe-coding/pricing/) lists the unmetered licence as a flat fee of $125 per user and month. The billing page does not say which tier Sonnet and GPT fall into; ask your account team.
+The figure I would check first: according to the FAQ the unmetered cap applies per org, not per user. Once it is reached, the team carries on with GPT-5 or pays Flex Credits. Opus runs as an "Advanced prompt", which the [Flex Credits rate card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) prices at 16 credits; at $500 per 100,000 credits that is $0.08 per started block of 2,000 tokens. The [Vibes pricing page](https://www.salesforce.com/agentforce/developers/vibe-coding/pricing/) lists the unmetered licence as a flat fee of $125 per user and month.
 
 Since 1 June 2026, Vibes outside Developer Edition has required [Flex Credits or a paid licence](https://www.salesforceben.com/agentforce-vibes-no-longer-free-for-use/). At Dreamforce 2026, SalesforceBen reported a restored Developer Edition allowance of [50 requests or 1 million tokens with a daily reset](https://www.salesforceben.com/developer-features-and-announcements-from-dreamforce-26/). The official FAQ still says 110 requests for one month without refresh. I plan with the FAQ.
 
-For European manufacturers one FAQ sentence weighs most: "Agentforce Vibes isn't available in the EU Operating Zone." In EU orgs outside the Operating Zone, Vibes is supported under standard terms. Group, Professional, Essentials and Government Cloud are excluded as well. If you chose the EU Operating Zone for data protection reasons, you end up with external agents and their own data residency questions. The comparison by contract, data residency and cost model is in [Agentforce Vibes, Claude Code or Copilot](../../../blog/agentforce-vibes-claude-code-copilot/), and the external agents themselves are in [chapter 4](../external-coding-agents/).
+```hinweis achtung
+For European manufacturers one FAQ sentence weighs most: "Agentforce Vibes isn't available in the EU Operating Zone." In EU orgs outside the Operating Zone, Vibes is supported under standard terms. Group, Professional, Essentials and Government Cloud are excluded as well.
+```
+
+If you chose the EU Operating Zone for data protection reasons, you end up with external agents and their own data residency questions. The comparison by contract, data residency and cost model is in [Agentforce Vibes, Claude Code or Copilot](../../../blog/agentforce-vibes-claude-code-copilot/), and the external agents themselves are in [chapter 4](../external-coding-agents/).
 
 ## Skills, the plugin and Headless 360: Salesforce knowledge for other agents
 
@@ -87,7 +91,15 @@ The Claude Code plugin from the same announcement bundles about 40 of these skil
 
 Salesforce itself points out that plugins are vendor-specific, while skills and MCP are standards. Skills are essentially instructions and scripts the model loads when needed. They make an agent better at Salesforce, but they enforce nothing. Enforcement comes from hooks, Code Analyzer and the pipeline.
 
-Three dates belong here. According to the maintainers' [end-of-life notice](https://github.com/forcedotcom/mcp/issues/46), the local Salesforce DX MCP Server reaches end of life on 2 November 2026; what that means for your partner is in [chapter 3](../mcp-and-interfaces/). According to [SalesforceBen](https://www.salesforceben.com/developer-features-and-announcements-from-dreamforce-26/), an MCP plugin for Claude Code is due in Winter '27, while Salesforce is only projecting Spring '27 for a Codex plugin and hopes for governance of tools and skills in Vibes by then. Treat these as roadmap, not commitments. DevOps Center MCP was [announced at TDX 2026](https://www.salesforceben.com/salesforce-headless-360-and-agentforce-vibes-2-0-revealed-at-tdx-2026/) without an availability date.
+Three dates belong here:
+
+```zeitleiste
+2026-11-02 | End of life of the local Salesforce DX MCP Server
+Winter '27 | MCP plugin for Claude Code due
+Spring '27 | Codex plugin, only projected by Salesforce; governance of tools and skills in Vibes hoped for by then
+```
+
+The end of life comes from the maintainers' [end-of-life notice](https://github.com/forcedotcom/mcp/issues/46); what it means for your partner is in [chapter 3](../mcp-and-interfaces/). Both plugin dates were reported by [SalesforceBen](https://www.salesforceben.com/developer-features-and-announcements-from-dreamforce-26/). Treat them as roadmap, not commitments. DevOps Center MCP was [announced at TDX 2026](https://www.salesforceben.com/salesforce-headless-360-and-agentforce-vibes-2-0-revealed-at-tdx-2026/) without an availability date.
 
 ## Agentforce DX and Agent Script: agents as metadata
 
@@ -126,10 +138,14 @@ Admin AI therefore draws on three currencies: Einstein Requests, Data 360 credit
 Assume a machine builder with Sales Cloud, Service Cloud, a dealer portal and SAP. An implementation partner works with six developers, and a first Agentforce agent for dealer order status enquiries is planned. All numbers are assumptions to show the method.
 
 1. **Org location.** If the org sits in the EU Operating Zone, Vibes is not an option. Assume it is an EU org outside it.
-2. **Coding licence.** The partner wants the unmetered licence with Sonnet. Assume 25 agentic requests per developer per working day at an average of 30,000 tokens. Six developers make 150 requests and 4.5 million tokens a day. The 36 million token cap is reached after eight working days; the 2,500 requests would last just under 17. Because the cap applies per org, the team works with GPT-5 from day nine or pays Flex Credits. I found no documentation on whether Salesforce counts the full context of each agent step, so clarify that before signing.
+2. **Coding licence.** The partner wants the unmetered licence with Sonnet. Assume 25 agentic requests per developer per working day at an average of 30,000 tokens. Six developers make 150 requests and 4.5 million tokens a day. The 36 million token cap is reached after eight working days; the 2,500 requests would last just under 17. Because the cap applies per org, the team works with GPT-5 from day nine or pays Flex Credits.
 3. **Metered with Opus.** The same 30,000 tokens are 15 units of 16 credits, so 240 credits or $1.20 per request. 150 requests a day cost $180, about $3,780 over 21 working days.
 4. **The agent itself.** It is built as Agent Script in Git, with the credit check and the order lookup as logic. Assume 60 test cases with three actions each, run three times. That is 540 actions at 16 credits in the sandbox, so 8,640 credits or $43.20.
 5. **The gate.** Code Analyzer runs on every pull request in the pipeline, whether Vibes, Claude Code or a person wrote the code.
+
+```hinweis offen
+I found no documentation on whether Salesforce counts the full context of each agent step. Nor does the billing page say which tier Sonnet and GPT fall into. Clarify both with your account team before signing.
+```
 
 In this scenario the question of which agent is answered quickly. The time goes into the licence cap, the open counting question and the gates.
 

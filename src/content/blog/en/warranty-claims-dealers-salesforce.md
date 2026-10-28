@@ -53,6 +53,17 @@ The partner enters the claimed amount per item and sets the claim to submitted. 
 
 I would book the credit note to the dealer in the ERP, as with rebates in [part 5](../rebate-management-dealer-rebates/). Salesforce checks and approves, an integration transfers the approved amount, and finance books it. That integration belongs in the plan from the start, or the dealer sees an approved claim in the portal and is still waiting for the money.
 
+```ablauf
+sf: Dealer portal, Warranty claim, Adjudication, Recovery claim
+erp: Credit note
+ext: Supplier
+Dealer portal --submitted--> Warranty claim
+Warranty claim --> Adjudication
+Adjudication --approved amount--> Credit note
+Warranty claim --per causal part--> Recovery claim
+Recovery claim --submitted--> Supplier
+```
+
 ## Why does everything depend on the asset data?
 
 Because every check is a question about the asset. Is this serial number still under warranty? When did it start, at purchase or at installation? Is usage below the limit? Is the defective part covered?
@@ -81,14 +92,20 @@ Both topics meet at the asset. The same asset carries the warranty, the maintena
 
 ## When does warranty management in Salesforce pay off?
 
-I would recommend it when several of these points apply:
+I would recommend it when several of the points on the pro side apply:
 
-- **Claims come from outside.** Dealers and service partners submit warranty claims regularly, today by email or form.
-- **Terms are varied.** Several product families, parts with their own rules, goodwill for individual assets.
-- **Recovery is worth it.** A relevant share of warranty costs goes back to purchased parts.
-- **Asset data exists or is coming.** Serial numbers and start dates are in Salesforce or can arrive through an integration.
+```pro-contra
+pro: Salesforce pays off when
+- dealers and service partners submit claims regularly, today by email or form
+- terms are varied: several product families, parts with their own rules, goodwill for individual assets
+- a relevant share of warranty costs goes back to purchased parts
+- serial numbers and start dates are in Salesforce or can arrive through an integration
+contra: I would hold back when
+- there are few warranty cases a year that a quality department handles well in the ERP
+- asset data is missing and nobody wants to collect it
+```
 
-I would hold back with few warranty cases a year that a quality department handles well in the ERP, and when asset data is missing and nobody wants to collect it. Then the data model adds little. Whether Manufacturing Cloud pays off as a whole is covered in [part 1 of this series](../salesforce-manufacturing-cloud-is-it-worth-it/).
+In the second case the data model adds little. Whether Manufacturing Cloud pays off as a whole is covered in [part 1 of this series](../salesforce-manufacturing-cloud-is-it-worth-it/).
 
 ## Where should you start?
 

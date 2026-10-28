@@ -32,7 +32,14 @@ MCP-Zugriffe auf Salesforce werden zum Budgetrisiko, weil jeder erfolgreiche Auf
 
 ## Was sind Headless Platform Interactions?
 
-Headless Platform Interactions sind eine neue Verbrauchsart auf der [Flex Credits Rate Card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) mit Stand 31. August 2026. Die Zeile steht unter Customer 360 Platform, als Multiplikator steht dort „TBA“, und eine Fußnote sagt, dass diese Verbrauchsarten nur für Headless 360 gelten und zu den übrigen Verbrauchsarten hinzukommen. Headless 360 ist Salesforces Name dafür, die Plattform für externe Agenten zu öffnen: laut Developer Blog [mehr als 4.000 APIs, über 60 MCP-Tools und mehr als 220 CLI-Befehle](https://developer.salesforce.com/blogs/2026/05/headless-360-what-it-means-for-developers).
+Headless Platform Interactions sind eine neue Verbrauchsart auf der [Flex Credits Rate Card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) mit Stand 31. August 2026. Die Zeile steht unter Customer 360 Platform, als Multiplikator steht dort „TBA“, und eine Fußnote sagt, dass diese Verbrauchsarten nur für Headless 360 gelten und zu den übrigen Verbrauchsarten hinzukommen. Headless 360 ist Salesforces Name dafür, die Plattform für externe Agenten zu öffnen, laut Developer Blog mit diesem Umfang:
+
+```kennzahlen
+4.000+ | APIs
+60+ | MCP-Tools
+220+ | CLI-Befehle
+quelle: Salesforce Developers Blog, [Headless 360: What it means for developers](https://developer.salesforce.com/blogs/2026/05/headless-360-what-it-means-for-developers)
+```
 
 Die Details stehen in einem Salesforce-Hilfeartikel (005360285), den ich nur über den [Bericht von Salesforce Ben vom 24. September 2026](https://www.salesforceben.com/salesforce-will-charge-flex-credits-for-agentic-mcp-and-api-calls/) nachvollziehen konnte:
 
@@ -54,7 +61,11 @@ Drei Effekte machen das für einen Hersteller zur Budgetfrage:
 - **Der Pool ist geteilt.** Flex Credits für Interaktionen kommen aus demselben Pool wie Agentforce-Aktionen, Prompts und Data 360. Nicht genutzte Credits [verfallen zum Ende der Bestellung](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf), zu viel kaufen kostet also ebenfalls Geld.
 - **Das Volumen wächst ohne Projekt.** Sobald einige Key Account Manager Salesforce in Claude nutzen, ziehen Kolleginnen und Kollegen nach. Dafür stellt niemand einen Change Request, das erste Signal ist das Digital Wallet.
 
-Daneben gibt es eine zweite Grenze, die mit Flex Credits nichts zu tun hat. Agenten, die die REST API direkt aufrufen, verbrauchen das [tägliche API-Kontingent der Org](https://developer.salesforce.com/docs/platform/salesforce-app-limits-cheatsheet/guide/salesforce-app-limits-platform-api.html): in der Enterprise Edition 100.000 plus 1.000 pro Salesforce-Lizenz in 24 Stunden, geteilt von allen Aufrufern. Ihre SAP-Schnittstelle und Ihre Middleware nutzen dasselbe Kontingent. Die Grenze ist weich, oberhalb der Schutzgrenze des Systems schlagen Aufrufe aber mit [REQUEST_LIMIT_EXCEEDED](https://developer.salesforce.com/blogs/2024/11/api-limits-and-monitoring-your-api-usage) fehl. Ob Hosted-MCP-Aufrufe dagegen zählen, steht in der Dokumentation, die ich gelesen habe, nicht. Ich würde das klären, bevor es Ihnen ein voller Monatsabschluss zeigt.
+Daneben gibt es eine zweite Grenze, die mit Flex Credits nichts zu tun hat. Agenten, die die REST API direkt aufrufen, verbrauchen das [tägliche API-Kontingent der Org](https://developer.salesforce.com/docs/platform/salesforce-app-limits-cheatsheet/guide/salesforce-app-limits-platform-api.html): in der Enterprise Edition 100.000 plus 1.000 pro Salesforce-Lizenz in 24 Stunden, geteilt von allen Aufrufern. Ihre SAP-Schnittstelle und Ihre Middleware nutzen dasselbe Kontingent. Die Grenze ist weich, oberhalb der Schutzgrenze des Systems schlagen Aufrufe aber mit [REQUEST_LIMIT_EXCEEDED](https://developer.salesforce.com/blogs/2024/11/api-limits-and-monitoring-your-api-usage) fehl.
+
+```hinweis offen
+Ob Hosted-MCP-Aufrufe gegen das tägliche API-Kontingent zählen, steht in der Dokumentation, die ich gelesen habe, nicht. Ich würde das klären, bevor es Ihnen ein voller Monatsabschluss zeigt.
+```
 
 ## Ein typisches Szenario: Key Account Manager mit Claude
 

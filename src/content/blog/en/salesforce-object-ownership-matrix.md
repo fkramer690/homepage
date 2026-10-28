@@ -60,7 +60,9 @@ The first step was to route every change through a pull request with a review. F
 
 The rule was simple: before a team changed another stream's object, it had to agree the change with the owner. In the simplified example above, sales owns Account, Opportunity and Quote, service owns Case and Asset, and field service owns Work Order.
 
+```praxis
 It took about three months until the standards were stable. The first version covered around 80 percent of cases. Edge cases came up afterwards, and we discussed them in regular centre of excellence calls. Eventually they almost disappeared, because upcoming changes came up early enough, before they turned into conflicts.
+```
 
 ## What belongs in the matrix?
 
@@ -80,8 +82,13 @@ What does not belong in the matrix: detailed rules for naming, tests or code sty
 A table in the wiki changes nothing on its own. The matrix only works once it is checked in the daily workflow.
 
 - **In the pull request review.** If a change touches another stream's object, the reviewer asks whether the owner agreed. How such reviews work is described in [why pull request reviews are a must in enterprise projects](../why-pull-request-reviews-are-a-must-in-enterprise-projects/).
-- **Technically in the repository.** Once the metadata lives in Git, parts of the matrix can be mapped. On GitHub, a [CODEOWNERS file](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners) assigns paths to a team, for example an object's folder. If a pull request changes those files, the team is requested as reviewer automatically, and a branch protection rule makes its approval mandatory.
+- **Technically in the repository.** Once the metadata lives in Git, parts of the matrix can be mapped, on GitHub with a CODEOWNERS file.
 - **In the centre of excellence.** Regular calls where streams present upcoming changes to shared objects, with enough lead time for everyone else.
+
+```vertiefung For developers
+title: How does CODEOWNERS map the matrix?
+A [CODEOWNERS file](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners) assigns paths to a team, for example an object's folder. If a pull request changes those files, the team is requested as reviewer automatically, and a branch protection rule makes its approval mandatory.
+```
 
 The matrix belongs to the client, not to a partner. If a partner decides who owns which object, it also decides what its competitors may build. The same applies to repository and pipeline, as described in [why clients should own their DevOps tools](../why-clients-should-own-their-devops-tools/).
 

@@ -69,9 +69,24 @@ Two things stand out. First, the Buyer Agent needs Service Cloud, so a company t
 
 Carter for Buyers promises payment "at contract pricing". For a manufacturer the contract price is the most sensitive number in the whole chat. It must come from the store's pricing, which in turn reads price books or calls the ERP, never from the language model.
 
+```ablauf
+sf: Buyer Agent, Store pricing, Order summaries
+erp: ERP
+ext: Dealer chat
+Dealer chat --question--> Buyer Agent
+Buyer Agent --price--> Store pricing
+Store pricing --conditions--> ERP
+Store pricing ..contract price..> Buyer Agent
+Buyer Agent --status--> Order summaries
+ERP ..keeps current..> Order summaries
+Buyer Agent ..answer..> Dealer chat
+```
+
 The same applies to credit limits, blocked accounts and delivery dates. The model understands the dealer's question and phrases the answer. Which price applies, whether the account may order on credit and when the goods ship are decided by code, the store or the ERP. I explain the general rule for agents in the AI masterclass chapter [AI agents in manufacturing](../../masterclass/ai-salesforce/ai-agents-in-manufacturing/), and how a confirmed delivery date comes from SAP in [Agentforce and SAP: order status through MuleSoft](../agentforce-sap-order-status-mulesoft/).
 
-A practical consequence: if the store shows list prices because contract prices still live only in SAP conditions, the agent will also quote list prices. Settle the price master before the agent goes live.
+```hinweis achtung
+If the store shows list prices because contract prices still live only in SAP conditions, the agent will also quote list prices. Settle the price master before the agent goes live.
+```
 
 ## Why is dealer chat text untrusted input?
 

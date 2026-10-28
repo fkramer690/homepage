@@ -61,13 +61,24 @@ Zur Abdeckung: Salesforce verlangt 75 Prozent für ein Deployment, schreibt im T
 
 Mit Summer '26 hat Salesforce das Standardverhalten von Apex geändert. Laut [Apex Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apex/versioned_behavior_changes.htm) läuft Code ab API 67.0 im Benutzerkontext, Klassen ohne Sharing-Deklaration laufen mit den Freigaben des aktuellen Benutzers, und `WITH SECURITY_ENFORCED` ist in SOQL nicht mehr erlaubt. Der [Architektenblog zu Summer '26](https://www.salesforce.com/blog/summer-26-release-architect-highlights/) ergänzt zwei Punkte: Trigger laufen immer im System Mode, die Handler-Klassen, die sie aufrufen, sind aber betroffen, wenn ihnen die Deklaration fehlt. Und Klassen mit der alten Klausel kompilieren auf 67.0 nicht mehr.
 
-Die Änderung hängt an der API-Version jeder einzelnen Klasse. Code auf 66.0 verhält sich wie bisher, bis jemand die Version anhebt. Genau dort liegt das Risiko: Eine Abfrage liefert danach still weniger Datensätze, ohne Fehlermeldung. Nehmen Sie den Batch-Job, der nachts Auftragsstände aus SAP in Salesforce schreibt, oder die Klasse, die Garantiefristen über alle Anlagen eines Händlers berechnet. Beide haben bisher stillschweigend alles gesehen.
+```hinweis achtung
+Die Änderung hängt an der API-Version jeder einzelnen Klasse. Code auf 66.0 verhält sich wie bisher, bis jemand die Version anhebt. Genau dort liegt das Risiko: Eine Abfrage liefert danach still weniger Datensätze, ohne Fehlermeldung.
+```
+
+Nehmen Sie den Batch-Job, der nachts Auftragsstände aus SAP in Salesforce schreibt, oder die Klasse, die Garantiefristen über alle Anlagen eines Händlers berechnet. Beide haben bisher stillschweigend alles gesehen.
 
 Für KI-Code ist das aus meiner Sicht doppelt relevant. Modelle haben überwiegend älteres Apex gesehen und schlagen deshalb Muster vor, die auf 67.0 nicht mehr kompilieren oder anders wirken. Und Agenten heben API-Versionen gern nebenbei an, wenn sie eine Datei ohnehin anfassen. Die Regeldatei sollte deshalb drei Dinge festlegen: Zielversion für neue Klassen, explizite Sharing-Deklaration, kein Anheben bestehender Klassen ohne Auftrag und ohne Test mit eingeschränktem Benutzer. Wo System Mode gewollt ist, schreibt der Code `WITH SYSTEM_MODE` bewusst hin, wie es die [LWC-Dokumentation zu sicherem Apex](https://developer.salesforce.com/docs/platform/lwc/guide/apex-security) beschreibt. Details stehen in [API 67.0: warum Apex weniger Datensätze sieht](../../../blog/api-67-apex-user-mode-weniger-datensaetze/), die Folgen für die Pipeline in [Winter '27: was sich ändert](../../../blog/salesforce-winter-27-aenderungen-pipeline/).
 
 ## Regeln, die der Agent liest, und Regeln, die er nicht umgehen kann
 
-Jeder Coding-Agent liest eine Projektdatei mit dauerhaften Anweisungen: `CLAUDE.md` bei Claude Code, `AGENTS.md` bei Codex, `.vibes/rules/` bei Agentforce Vibes. GitHub Copilot liest laut [GitHub-Dokumentation](https://docs.github.com/en/copilot/how-tos/configure-custom-instructions/add-repository-instructions) `.github/copilot-instructions.md`, `AGENTS.md` oder eine einzelne `CLAUDE.md` im Wurzelverzeichnis. Ob Vibes `AGENTS.md` liest, ist in der [Vibes-Dokumentation zu Regeln](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-rules.html) nicht beschrieben; für gemischte Teams würde ich eine kanonische `AGENTS.md` plus eine kurze Vibes-Regel pflegen, die darauf verweist.
+Jeder Coding-Agent liest eine Projektdatei mit dauerhaften Anweisungen, nur heißt sie bei jedem Werkzeug anders.
+
+```vertiefung Für Entwickler
+titel: Welche Datei liest welcher Agent?
+Claude Code liest `CLAUDE.md`, Codex `AGENTS.md`, Agentforce Vibes `.vibes/rules/`. GitHub Copilot liest laut [GitHub-Dokumentation](https://docs.github.com/en/copilot/how-tos/configure-custom-instructions/add-repository-instructions) `.github/copilot-instructions.md`, `AGENTS.md` oder eine einzelne `CLAUDE.md` im Wurzelverzeichnis.
+
+Ob Vibes `AGENTS.md` liest, ist in der [Vibes-Dokumentation zu Regeln](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-rules.html) nicht beschrieben; für gemischte Teams würde ich eine kanonische `AGENTS.md` plus eine kurze Vibes-Regel pflegen, die darauf verweist.
+```
 
 Die Anbieter sind sich bei der Länge einig. Anthropic empfiehlt in den [Claude Code Best Practices](https://code.claude.com/docs/en/best-practices) unter 200 Zeilen und nur das, was der Agent nicht aus dem Code ableiten kann: Befehle für Tests und Prüfungen, irreführende Stellen im Code, Entscheidungen, die nirgends stehen, und „anything you've had to correct twice already“. OpenAI schreibt in den [Codex Best Practices](https://developers.openai.com/codex/learn/best-practices): „A short, accurate AGENTS.md is more useful than a long file full of vague rules.“ Ein Auszug für ein Salesforce-Repository:
 

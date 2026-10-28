@@ -61,14 +61,28 @@ Der [End-of-Life-Hinweis](https://github.com/forcedotcom/mcp/issues/46) der Main
 
 Der Hinweis nennt die offene Skills-Bibliothek `forcedotcom/sf-skills` als Ersatz. Daneben hat Salesforce das [Claude-Code-Plugin](https://developer.salesforce.com/blogs/2026/08/headless-development-with-skills-and-a-claude-code-plugin) mit rund 40 dieser Skills und drei MCP-Servern (salesforce-api-context, salesforce-metadata-experts, salesforce-lsp) sowie Hosted MCP für den Datenzugriff veröffentlicht. Die Plugin-Ankündigung erwähnt das Ende des DX MCP Servers nicht. Alle drei als Nachfolger zu sehen, ist meine Lesart, keine Salesforce-Aussage.
 
-Für Sie als Auftraggeber ist vor allem die Frage wichtig, mit welchen Rechten der alte Server bei Ihrem Partner läuft. Laut [Salesforce-Dokumentation](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_mcp.htm) liest er vorhandene verschlüsselte Anmeldedaten und erreicht nur Orgs, die beim Start freigegeben wurden. Laut [README](https://github.com/salesforcecli/mcp) gibt `ALLOW_ALL_ORGS` Zugriff auf alle autorisierten Orgs, auch eine Produktion, und Salesforce rät zur Vorsicht. `DEFAULT_TARGET_ORG` wird bei jedem Tool-Aufruf neu aufgelöst: Wechselt der Entwickler seine Standard-Org, arbeitet der Agent ohne Warnung in der anderen. Ich würde für Agenten nur feste Sandbox-Aliase zulassen.
+Für Sie als Auftraggeber ist vor allem die Frage wichtig, mit welchen Rechten der alte Server bei Ihrem Partner läuft. Ich würde für Agenten nur feste Sandbox-Aliase zulassen, weil zwei Einstellungen den Zugriff sonst still ausweiten.
+
+```vertiefung Für Entwickler
+titel: Wie der lokale DX MCP Server Orgs erreicht
+Laut [Salesforce-Dokumentation](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_mcp.htm) liest er vorhandene verschlüsselte Anmeldedaten und erreicht nur Orgs, die beim Start freigegeben wurden.
+
+- Laut [README](https://github.com/salesforcecli/mcp) gibt `ALLOW_ALL_ORGS` Zugriff auf alle autorisierten Orgs, auch eine Produktion, und Salesforce rät zur Vorsicht.
+- `DEFAULT_TARGET_ORG` wird bei jedem Tool-Aufruf neu aufgelöst: Wechselt der Entwickler seine Standard-Org, arbeitet der Agent ohne Warnung in der anderen.
+```
 
 Mein Vorgehen bis zum Stichtag:
 
-1. **Inventur:** Lassen Sie sich vom Partner auflisten, in welchen MCP-Konfigurationen, auf welchen Rechnern und in welchen Repositories der Server eingetragen ist.
-2. **Pinnen:** Version 0.30.15 fest eintragen statt `latest`, damit der Übergang planbar bleibt.
-3. **Abbilden:** Deploy und Tests über sf CLI und Skills, Metadatenwissen über das Plugin, Datenzugriff über Hosted MCP.
-4. **Parallel testen** in einer Sandbox, dann den alten Eintrag entfernen und die KI-Regeldatei im Repository anpassen.
+```schritte
+Inventur
+  Lassen Sie sich vom Partner auflisten, in welchen MCP-Konfigurationen, auf welchen Rechnern und in welchen Repositories der Server eingetragen ist.
+Pinnen
+  Version 0.30.15 fest eintragen statt `latest`, damit der Übergang planbar bleibt.
+Abbilden
+  Deploy und Tests über sf CLI und Skills, Metadatenwissen über das Plugin, Datenzugriff über Hosted MCP.
+Parallel testen
+  In einer Sandbox beide Wege prüfen, dann den alten Eintrag entfernen und die KI-Regeldatei im Repository anpassen.
+```
 
 Die Details stehen in [Salesforce DX MCP Server: Ende am 2. November](../../../blog/salesforce-dx-mcp-server-ende/). Welche Werkzeuge Salesforce sonst für KI-gestützte Entwicklung anbietet, beschreibt [Kapitel 2](../salesforce-werkzeuge-ki-entwicklung/).
 

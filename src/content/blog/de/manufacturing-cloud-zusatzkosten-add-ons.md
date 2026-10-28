@@ -58,9 +58,23 @@ Welche Objekte externe Nutzer mit welcher Lizenz sehen, etwa Sales Agreements od
 
 ## Agentforce: Add-on oder Max-Edition?
 
-Die Add-on-Seite nennt das Agentforce for Manufacturing Cloud Add-on mit „$150/user/month“. Die Preisseite führt dasselbe Add-on mit „from $150 per login per month“. Ein Preis pro Nutzer und ein Preis pro Login sind verschiedene Verträge: Bei Logins kosten Nutzer, die den Agenten selten verwenden, weniger, bei Nutzern zählt jede benannte Person. Mit keiner der beiden Einheiten würde ich planen, bevor sie im Angebot steht.
+Die Add-on-Seite nennt das Agentforce for Manufacturing Cloud Add-on mit „$150/user/month“. Die Preisseite führt dasselbe Add-on mit „from $150 per login per month“.
 
-Das Add-on gibt es für Core und Advanced. Die Max-Editionen enthalten die „full Agentforce for Industries suite“, 2,75 Millionen statt 500.000 Flex Credits pro Org und Jahr und höhere Plattformgrenzen. Zum Listenpreis kosten Core plus Add-on 425 $ pro Nutzer und Monat, Max 650 $. Brauchen nur 20 Key Account Manager Agenten, kostet das Add-on 36.000 $ im Jahr. Dieselben 20 Nutzer von Core auf Max zu heben, kostet 90.000 $, und ob eine Org Core- und Max-Nutzer mischen darf, ist eine Frage an das Account-Team.
+```hinweis offen
+Ein Preis pro Nutzer und ein Preis pro Login sind verschiedene Verträge: Bei Logins kosten Nutzer, die den Agenten selten verwenden, weniger, bei Nutzern zählt jede benannte Person. Mit keiner der beiden Einheiten würde ich planen, bevor sie im Angebot steht.
+```
+
+Das Add-on gibt es für Core und Advanced, die Max-Editionen enthalten die „full Agentforce for Industries suite“. Zum Listenpreis kosten Core plus Add-on 425 $ pro Nutzer und Monat, Max 650 $. Brauchen nur 20 Key Account Manager Agenten, sieht die Abwägung so aus:
+
+```pro-contra
+pro: Add-on zu Core
+- 36.000 $ im Jahr für die 20 Nutzer
+- Dieselben 20 Nutzer von Core auf Max zu heben, kostet 90.000 $
+contra: Was Max zusätzlich bringt
+- 2,75 Millionen statt 500.000 Flex Credits pro Org und Jahr
+- Höhere Plattformgrenzen, etwa bei Omnistudio-Aufrufen
+- Ob eine Org Core- und Max-Nutzer mischen darf, ist eine Frage an das Account-Team
+```
 
 In beiden Fällen kostet jede Aktion eines Agenten Flex Credits; für Core nennt die Preisseite Agentforce „via Flex Credits“. Wie Sie den Verbrauch schätzen, steht in [Flex Credits: Agentforce-Kosten pro Aktion](../flex-credits-agentforce-kosten-pro-aktion/) und im Masterclass-Kapitel [Kosten und Token](../../masterclass/ki-salesforce/kosten-und-token/).
 

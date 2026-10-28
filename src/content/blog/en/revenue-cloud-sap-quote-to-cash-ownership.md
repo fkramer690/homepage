@@ -95,6 +95,18 @@ A machine builder with SAP S/4HANA sells 40 base machines with options, spare pa
 
 I would choose cut 2. Revenue Cloud holds catalog, configuration and quote for machines and subscriptions. Machine prices are calculated in Revenue Cloud on list prices synced from SAP. Spare parts on the same quote get their net price from SAP through an API, because nobody should rebuild those conditions. The activated order goes to SAP with a callout, and the SAP order number comes back. The subscription stays an asset in Salesforce, so renewals and amendments start there. The invoice for machine and subscription comes from SAP in year one. Billing in Salesforce becomes a question only if subscriptions grow into a business of their own.
 
+```ablauf
+sf: Quote, Order, Subscription asset
+erp: SAP list prices, SAP conditions, SAP order, SAP invoice
+SAP list prices --sync--> Quote
+SAP conditions --net price via API--> Quote
+Quote --> Order
+Order --callout--> SAP order
+SAP order ..order number..> Order
+Order --> Subscription asset
+SAP order --> SAP invoice
+```
+
 What the sales desk then needs on top, live order status from SAP for example, follows the pattern in [Agentforce and SAP: order status through MuleSoft](../agentforce-sap-order-status-mulesoft/).
 
 ## How do you write the split down?

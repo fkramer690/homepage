@@ -36,10 +36,16 @@ Ein Quality Gate ist eine automatische oder menschliche Prüfung, die eine Ände
 
 Ich ordne Gates nach Kosten. Günstige Prüfungen laufen zuerst und scheitern schnell, teure kommen danach:
 
-1. Statische Analyse von Apex, Lightning Web Components und Flows, Laufzeit in Minuten.
-2. Validierungs-Deployment gegen die Zielorg mit Apex-Tests und Abdeckung.
-3. Flow-Tests für die kritischen Automatisierungen.
-4. Review durch einen Menschen, der nur noch Änderungen sieht, die 1 bis 3 bestanden haben.
+```schritte
+Statische Analyse | Laufzeit in Minuten
+  Apex, Lightning Web Components und Flows prüfen.
+Validierungs-Deployment
+  Gegen die Zielorg, mit Apex-Tests und Abdeckung.
+Flow-Tests
+  Für die kritischen Automatisierungen.
+Review
+  Durch einen Menschen, der nur noch Änderungen sieht, die die Schritte 1 bis 3 bestanden haben.
+```
 
 Die Sperre selbst setzt Ihre Git-Plattform. Auf GitHub verlangt ein geschützter Branch laut [Dokumentation](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches) eine festgelegte Zahl von Freigaben und bestandene Status Checks. Zwei Optionen würde ich in jedem Programm mit mehreren Partnern einschalten: Freigaben verfallen, wenn danach neue Commits kommen, und „Do not allow bypassing the above settings“, denn ohne diese Option gelten die Regeln nicht für Administratoren. Haben Partner Admin-Rechte im Repository, ist der Branch-Schutz sonst eine Empfehlung.
 
@@ -98,7 +104,11 @@ Meine Empfehlung: Jeder record-triggered Flow auf einem Kernobjekt wie Arbeitsau
 
 Die [Regeln des Flow Scanners](https://developer.salesforce.com/docs/platform/salesforce-code-analyzer/guide/rules-flow.html) sind für Admins der Partner besonders nützlich: `DbInLoop` meldet Get-, Create-, Update- und Delete-Elemente in Schleifen, `MissingFaultHandler` Elemente ohne Fehlerpfad, `HardcodedId` org-spezifische IDs, die beim Deployment brechen. Zwei Regeln melden, wenn Benutzereingaben in einem Flow im Systemkontext Datensätze auswählen oder ändern, ein Risiko für Rechteausweitung.
 
-In der Pipeline rufen Sie `sf code-analyzer run` auf oder die GitHub Action. Laut [CI/CD-Leitfaden](https://developer.salesforce.com/docs/platform/salesforce-code-analyzer/guide/ci-cd.html) muss es Version 2 der Action sein, Version 1 nutzt den abgekündigten Code Analyzer v4. Zum Gate wird der Lauf erst mit `--severity-threshold`: Laut [Befehlsreferenz](https://developer.salesforce.com/docs/platform/salesforce-cli-reference/guide/cli_reference_code-analyzer_run.html) endet der Befehl mit einem Fehlercode, sobald ein Fund diesen Schweregrad erreicht. Ohne den Parameter bleibt alles grün. Ohne `--rule-selector` läuft der Regelsatz `Recommended`.
+In der Pipeline rufen Sie `sf code-analyzer run` auf oder die GitHub Action. Laut [CI/CD-Leitfaden](https://developer.salesforce.com/docs/platform/salesforce-code-analyzer/guide/ci-cd.html) muss es Version 2 der Action sein, Version 1 nutzt den abgekündigten Code Analyzer v4. Ohne `--rule-selector` läuft der Regelsatz `Recommended`.
+
+```hinweis achtung
+Zum Gate wird der Lauf erst mit `--severity-threshold`: Laut [Befehlsreferenz](https://developer.salesforce.com/docs/platform/salesforce-cli-reference/guide/cli_reference_code-analyzer_run.html) endet der Befehl mit einem Fehlercode, sobald ein Fund diesen Schweregrad erreicht. Ohne den Parameter bleibt alles grün.
+```
 
 In einer Org mit zehn Jahren Apex würde ich ab „High“ blockieren und den Rest berichten. Wer am ersten Tag alles blockiert, bekommt Hunderte Altfunde, und Partner fangen an, Regeln abzuschalten statt Code zu korrigieren. Die Schwelle senken Sie, sobald der Bestand aufgeräumt ist; wie Sie technische Schulden vorher sichtbar machen, beschreibe ich in [Kapitel 9](../betrieb-monitoring-backup/).
 

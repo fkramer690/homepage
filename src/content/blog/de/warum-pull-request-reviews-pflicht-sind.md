@@ -64,9 +64,11 @@ Den wiederholbaren Teil sollten Sie automatisieren: statische Codeanalyse, Namen
 
 In einem Programm, zu dem ich dazukam, arbeiteten mehrere Umsetzungspartner und interne Teams an derselben Salesforce-Org. Niemand hatte klar festgelegt, wer für welche Prozesse, Objekte und Metadaten im Lead war. Änderungen überschrieben sich, weil niemand abstimmte, wer was wann deployt, und die technischen Ansätze der Teams lagen weit auseinander.
 
+```praxis
 Der erste und wirksamste Schritt war eine einfache Regel: Jede Änderung geht über einen Pull Request mit Review. Eine Zeit lang lief jeder einzelne Pull Request über meinen Schreibtisch. Das klingt nach Flaschenhals, und ein paar Wochen lang war es viel Arbeit. Aber es gab uns etwas, das kein Workshop liefern konnte: einen konkreten Blick darauf, wie jedes Team tatsächlich baut. Aus diesen Reviews haben wir Entwicklungs- und Architekturstandards aufgeschrieben, und ab dann haben die Reviews sie durchgesetzt.
 
 Nach einigen Wochen ging die Zahl der Review-Kommentare deutlich zurück, weil die Teams die Standards kannten. Releases wurden planbar, und die Validierungsläufe der Pipeline fanden fehlende Abhängigkeiten, bevor ein Anwender sie sah. Als der Prozess stabil lief, habe ich ihn an einen internen Kollegen übergeben und ihn eingearbeitet. Seitdem verantwortet der Kunde den Review-Prozess selbst.
+```
 
 > Reviews sind der Weg, auf dem sich ein Programm mit vielen Teams auf eine gemeinsame Bauweise einigt.
 
@@ -91,10 +93,17 @@ Das heißt nicht, dass der Kunde jede Zeile selbst prüfen muss. Partner können
 
 Wenn in Ihrem Programm noch ohne Reviews gemergt oder deployt wird, starten Sie klein:
 
-1. Schützen Sie die Haupt-Branches, sodass niemand ohne freigegebenen Pull Request mergen kann.
-2. Hängen Sie die automatischen Prüfungen an jeden Pull Request: Validierungsdeployment, Apex-Tests, Codeanalyse.
-3. Schreiben Sie die zehn wichtigsten Entwicklungsstandards auf. Für den Anfang reicht das.
-4. Legen Sie fest, wer was freigibt, und vereinbaren Sie eine Reaktionszeit.
-5. Prüfen Sie die ersten Wochen zentral und verteilen Sie die Verantwortung danach.
+```schritte
+Branches schützen
+  Schützen Sie die Haupt-Branches, sodass niemand ohne freigegebenen Pull Request mergen kann.
+Prüfungen anhängen
+  Hängen Sie die automatischen Prüfungen an jeden Pull Request: Validierungsdeployment, Apex-Tests, Codeanalyse.
+Standards aufschreiben
+  Schreiben Sie die zehn wichtigsten Entwicklungsstandards auf. Für den Anfang reicht das.
+Freigaben regeln
+  Legen Sie fest, wer was freigibt, und vereinbaren Sie eine Reaktionszeit.
+Zentral starten
+  Prüfen Sie die ersten Wochen zentral und verteilen Sie die Verantwortung danach.
+```
 
 Pull-Request-Reviews kosten Minuten pro Änderung und sparen Tage pro Release. Wenn Sie darüber sprechen möchten, wie Sie Reviews in Ihrem Programm einführen, [schreiben Sie mir](#contact).

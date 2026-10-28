@@ -89,7 +89,11 @@ Der Schritt von Core zu Advanced kostet 480.000 € im Jahr und bringt 500.000 C
 
 ## Was gilt für Manufacturing Cloud und Field Service?
 
-**Manufacturing Cloud.** Neue Preise für die Industries-Editionen hat Salesforce für „later this fall“ angekündigt. Am 27. Oktober 2026 habe ich keine gefunden. Die [Preisseite der Manufacturing Cloud](https://www.salesforce.com/eu/manufacturing/cloud/) zeigt schon jetzt Sales Core und Service Core zu 275 € und die Max-Editionen zu 650 €, Sales & Service Max zu 700 €, jährlich abgerechnet. Laut [US-Preisseite](https://www.salesforce.com/manufacturing/cloud/pricing/) enthält Core 500K Flex Credits pro Org und Jahr, Max 2,75 Mio. Eine Advanced-Edition hat keinen Preis, und die volle Agentforce-for-Industries-Ausstattung steht nur bei Max. Was als Add-on dazukommt, steht in [Manufacturing Cloud Add-ons: was extra kostet](../manufacturing-cloud-zusatzkosten-add-ons/). Die Fußnoten zu Enterprise und Unlimited widersprechen sich, das habe ich in [wann sich die Manufacturing Cloud lohnt](../manufacturing-cloud-wann-lohnt-sie-sich/) beschrieben. Fällt Ihre Verlängerung in die nächsten Monate, würde ich keine drei Jahre Manufacturing-Cloud-Lizenzen unterschreiben, bevor die Industries-Preise da sind, es sei denn, die Bestellung erlaubt danach einen Editionswechsel.
+**Manufacturing Cloud.** Neue Preise für die Industries-Editionen hat Salesforce für „later this fall“ angekündigt. Am 27. Oktober 2026 habe ich keine gefunden. Die [Preisseite der Manufacturing Cloud](https://www.salesforce.com/eu/manufacturing/cloud/) zeigt schon jetzt Sales Core und Service Core zu 275 € und die Max-Editionen zu 650 €, Sales & Service Max zu 700 €, jährlich abgerechnet. Laut [US-Preisseite](https://www.salesforce.com/manufacturing/cloud/pricing/) enthält Core 500K Flex Credits pro Org und Jahr, Max 2,75 Mio. Eine Advanced-Edition hat keinen Preis, und die volle Agentforce-for-Industries-Ausstattung steht nur bei Max. Was als Add-on dazukommt, steht in [Manufacturing Cloud Add-ons: was extra kostet](../manufacturing-cloud-zusatzkosten-add-ons/). Die Fußnoten zu Enterprise und Unlimited widersprechen sich, das habe ich in [wann sich die Manufacturing Cloud lohnt](../manufacturing-cloud-wann-lohnt-sie-sich/) beschrieben.
+
+```hinweis achtung
+Fällt Ihre Verlängerung in die nächsten Monate, würde ich keine drei Jahre Manufacturing-Cloud-Lizenzen unterschreiben, bevor die Industries-Preise da sind, es sei denn, die Bestellung erlaubt danach einen Editionswechsel.
+```
 
 **Field Service.** Die [Preisseite von Field Service](https://www.salesforce.com/eu/service/field-service-management/pricing/) kennt kein Core, Advanced oder Max. Dispatcher und Technician kosten 175 €, Field Service Plus 230 € und Agentforce 1 Field Service 650 € pro Nutzer und Monat. Nur Letzteres enthält Credits: „1M Flex Credits & 2.5M Data Cloud Credits per org every year“. Bei den übrigen Lizenzen braucht der Scheduling Agent laut Seite Flex Credits. Ein Maschinenbauer mit Außendienst plant also zwei Modelle nebeneinander: Editionen für Vertrieb und Service im Büro, klassische Lizenzen plus zugekaufte Credits für die Techniker im Feld. Ob sich Field Service überhaupt lohnt, steht in [lohnt sich Salesforce Field Service](../salesforce-field-service-lohnt-sich/).
 
@@ -97,14 +101,18 @@ Der Schritt von Core zu Advanced kostet 480.000 € im Jahr und bringt 500.000 C
 
 ## Wann lohnt sich Max für einen Hersteller?
 
-Max lohnt sich wegen der Funktionen, nie wegen der Credits. Gegenüber Core enthält Max 2,25 Mio. Credits mehr, zum Listenpreis rund 11.250 €. Der Preisunterschied für 200 Nutzer liegt bei 852.000 € im Jahr.
+Max lohnt sich wegen der Funktionen, nie wegen der Credits.
 
-Max kann sinnvoll sein, wenn:
-
-- **der Service Service Rep Assistant und Contact-Center-Funktionen** ohnehin braucht.
-- **Nutzer der Manufacturing Cloud die volle Agentforce-for-Industries-Ausstattung brauchen,** die die Preisseite nur bei Max nennt.
-- **Sie heute Agentforce 1 Edition haben.** Der Wechsel auf Max kostet nichts extra.
-- **viele Mitarbeitende Agentforce Coworker nutzen,** den die Service-Cloud-Seite bei Max ohne Verbrauchsabrechnung führt.
+```pro-contra
+pro: Max kann sinnvoll sein, wenn
+- der Service **Service Rep Assistant und Contact-Center-Funktionen** ohnehin braucht
+- Nutzer der Manufacturing Cloud die **volle Agentforce-for-Industries-Ausstattung** brauchen, die die Preisseite nur bei Max nennt
+- Sie heute **Agentforce 1 Edition** haben; der Wechsel auf Max kostet nichts extra
+- viele Mitarbeitende **Agentforce Coworker** nutzen, den die Service-Cloud-Seite bei Max ohne Verbrauchsabrechnung führt
+contra: Was die Credits nicht aufwiegen
+- Gegenüber Core enthält Max 2,25 Mio. Credits mehr, zum Listenpreis rund 11.250 €
+- Der Preisunterschied für 200 Nutzer liegt bei 852.000 € im Jahr
+```
 
 Braucht nur eine kleine Gruppe von Power-Usern KI-Funktionen, fragen Sie, ob sich diese Gruppe getrennt lizenzieren lässt, statt alle 200 Nutzer anzuheben. Genau diese Abwägungen gehören zu meiner Arbeit in [Make-or-buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/).
 

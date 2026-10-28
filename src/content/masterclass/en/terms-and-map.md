@@ -36,7 +36,15 @@ I sort every AI topic in a Salesforce programme into one of four layers first. O
 | C: AI in the product | Which AI runs for users inside the org? | Agentforce with Builder, Agent Script and the Atlas Reasoning Engine, Agentforce for Manufacturing | A service agent answers dealer questions about spare parts and delivery dates | Flex Credits per action |
 | D: AI as the interface | Where will users work with Salesforce? | AIforce: Salesforce in Claude, Slackforce, Agentforce Coworker | Key account managers prepare dealer visits in Claude | Still open, "subject to change" according to Salesforce |
 
-Three figures show how different the billing is. An Agentforce action in layer C costs 20 Flex Credits according to [Salesforce](https://www.salesforce.com/news/press-releases/2025/05/15/agentforce-flexible-pricing-news/), which is $0.10 at $500 per 100,000 credits. Agentforce Vibes in layer A counts usage in units of up to 2,000 tokens according to its [billing documentation](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-admin-billing.html), or runs on an unmetered licence with a cap for premium models. For agentic API and MCP calls in layer B, the [rate card of 31 August 2026](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) lists a "Headless Platform Interaction" meter with the rate shown as "TBA".
+Billing differs sharply between the layers. Layer C is billed in Flex Credits per action according to [Salesforce](https://www.salesforce.com/news/press-releases/2025/05/15/agentforce-flexible-pricing-news/). Agentforce Vibes in layer A counts usage in token units according to its [billing documentation](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-admin-billing.html), or runs on an unmetered licence with a cap for premium models. For agentic API and MCP calls in layer B, the [rate card of 31 August 2026](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) lists a "Headless Platform Interaction" meter without a fixed rate yet.
+
+```kennzahlen
+20 | Flex Credits per Agentforce action in layer C
+$0.10 | per action, at $500 per 100,000 credits
+2,000 | tokens at most per billing unit of Agentforce Vibes in layer A
+TBA | rate for Headless Platform Interaction in layer B
+source: Salesforce Agentforce pricing announcement, Agentforce Vibes billing documentation, Flex Credits rate card of 31 August 2026
+```
 
 The layers are growing together. Salesforce describes a [development path for Agentforce agents](https://developer.salesforce.com/blogs/2026/06/master-the-agentic-development-lifecycle-for-agentforce) in which a coding agent such as Claude Code, Codex or Agentforce Vibes uses Agent Skills to write the agent definition in Agent Script. Layer A then builds layer C. Layer D is the newest and least mature. For accountability the split still holds: layer A belongs to delivery and the partner contract, B to integration architecture, C to the service and sales functions, D to the IT lead and data protection.
 
@@ -95,7 +103,13 @@ In autumn 2026 "Agentforce" stands for at least four things: the agent platform,
 | 15 Sep 2026 | AIforce at Dreamforce, Salesforce in Claude in beta | [Salesforce News](https://www.salesforce.com/news/stories/aiforce-announcement/) |
 | 9 Oct 2026 | Marc Benioff on X: "AIForce is officially SIForce", no press release | [Salesforce Ben](https://www.salesforceben.com/salesforce-renames-aiforce-to-siforce-after-trump-order/) (secondary source) |
 
-I take two lessons from this. First, Einstein for Developers, Agentforce for Developers and Agentforce Vibes are one product line: Salesforce Ben describes Vibes as a [rebrand and upgrade of Agentforce for Developers](https://www.salesforceben.com/developer-features-and-announcements-from-dreamforce-25/), and the documentation URL still contains `einstein-for-devs`. An offer in 2026 that promises "Einstein for Developers" describes an outdated state. Second, according to Salesforce Ben the layer for external interfaces was called Headless 360, AIforce and SIForce within about six months. In concepts I write "AIforce (as of October 2026)", and in contracts I use the name printed on the order form. What AIforce contains and what an IT lead should do now is in [AIforce: Salesforce in Claude and Slack](../../../blog/aiforce-salesforce-in-claude-and-slack/); the second reading of "SI" as system integrator is in [chapter 5](../aiforce-and-system-integrators/).
+I take two lessons from this. First, Einstein for Developers, Agentforce for Developers and Agentforce Vibes are one product line: Salesforce Ben describes Vibes as a [rebrand and upgrade of Agentforce for Developers](https://www.salesforceben.com/developer-features-and-announcements-from-dreamforce-25/), and the documentation URL still contains `einstein-for-devs`. An offer in 2026 that promises "Einstein for Developers" describes an outdated state. Second, according to Salesforce Ben the layer for external interfaces was called Headless 360, AIforce and SIForce within about six months.
+
+```hinweis tipp
+In concepts I write "AIforce (as of October 2026)", and in contracts I use the name printed on the order form.
+```
+
+What AIforce contains and what an IT lead should do now is in [AIforce: Salesforce in Claude and Slack](../../../blog/aiforce-salesforce-in-claude-and-slack/); the second reading of "SI" as system integrator is in [chapter 5](../aiforce-and-system-integrators/).
 
 ## A typical scenario: "AI" four times in one steering committee
 

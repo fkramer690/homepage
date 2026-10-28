@@ -35,7 +35,16 @@ Time and materials (T&M) means you pay for the person-days actually worked, what
 
 Coding agents break that stability. When a developer has Claude Code or Agentforce Vibes draft the Apex class, the test class and the deployment manifest, the build step can shrink a lot. Under T&M the partner then bills fewer days and earns less. Every incentive points towards using the agent quietly and billing as before. I do not assume bad intent here. I assume a business model that punishes honesty.
 
-How large the gain really is remains open, and that matters for pricing. McKinsey's [survey of 334 product and engineering leaders](https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/beyond-the-copilot-scaling-the-agentic-product-development-life-cycle) published in August 2026 (fielded in May) found 11.8 percent average time savings across the development life cycle, but only 6.2 percent less rework, and 30 percent reported that team productivity had fallen. METR's [randomised study](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/) measured experienced developers as 19 percent slower with AI in early 2025; its [February 2026 update](https://metr.org/blog/2026-02-24-uplift-update/) points to a speed-up but calls its own data "an unreliable signal". Before you renegotiate on a partner's claim, measure it yourself, as described in [measuring AI productivity in Salesforce projects](../measuring-ai-productivity-salesforce-projects/).
+How large the gain really is remains open, and that matters for pricing. McKinsey's [survey of 334 product and engineering leaders](https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/beyond-the-copilot-scaling-the-agentic-product-development-life-cycle) published in August 2026 (fielded in May) found these values across the development life cycle:
+
+```kennzahlen
+11.8 % | average time savings
+6.2 % | less rework
+30 % | of respondents saw team productivity fall
+source: McKinsey, survey of 334 product and engineering leaders, August 2026
+```
+
+METR's [randomised study](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/) measured experienced developers as 19 percent slower with AI in early 2025; its [February 2026 update](https://metr.org/blog/2026-02-24-uplift-update/) points to a speed-up but calls its own data "an unreliable signal". Before you renegotiate on a partner's claim, measure it yourself, as described in [measuring AI productivity in Salesforce projects](../measuring-ai-productivity-salesforce-projects/).
 
 So the gain is real for some tasks and uncertain on average. A commercial model has to settle who carries that uncertainty.
 

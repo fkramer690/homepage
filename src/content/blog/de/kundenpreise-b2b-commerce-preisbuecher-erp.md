@@ -57,7 +57,9 @@ Die [Limits für Preisbuchdaten](https://developer.salesforce.com/docs/commerce/
 
 Am wichtigsten sind die 25 je Aufruf. Ausgewertet werden nur die ersten 25 gültigen Preisbücher, also aktiv und in der Währung des Käufers; alles darüber ignoriert der Store ohne Fehlermeldung. Ein Käufer in vielen Käufergruppen mit jeweils mehreren Preisbüchern kann so einen Preis sehen, den Sie nicht vorgesehen haben. Ein Käuferkonto kann im Standard bis zu 20 Käufergruppen angehören.
 
+```hinweis offen
 Die letzte Zeile ist ein Problem der Dokumentation. Dieselbe Salesforce-Seite nennt in der Tabelle 50 Preisbücher je Käufergruppe und in einem Hinweis 25. Hängt Ihr Design an dieser Zahl, holen Sie sich die Antwort von Salesforce schriftlich.
+```
 
 ## Warum passen SAP-Konditionen selten eins zu eins in Preisbücher?
 
@@ -86,6 +88,16 @@ Eine dritte Option ist Advanced Pricing powered by Revenue Cloud, eine Preis-Eng
 Ein typisches Szenario, als Annahme: Ein Hersteller von Kompressoren verkauft Ersatzteile an 600 Händler in 9 Ländern. SAP hält einen Listenpreis je Land, einen Rabatt je Händlerstufe und Materialgruppe und Kundenpreise für etwa 40 große Händler. Rund 25.000 Teile werden online verkauft.
 
 Ich würde aufteilen. Für die rund 560 Händler mit Stufenrabatt berechnet ein nächtlicher Job die Nettopreise in je ein Preisbuch pro Land und Stufe; bei 9 Ländern und 3 Stufen sind das 27 Preisbücher mit höchstens 25.000 Einträgen, und jeder Käufer sieht genau eines davon. Für die 40 großen Händler mit Kundenpreisen fragt die Pricing Extension im Warenkorb live bei SAP. Fracht- und Mindermengenzuschläge kommen für alle im Checkout aus SAP. Der Auftrag, der zurück an SAP geht, trägt den Preis, den der Käufer gesehen hat, und SAP prüft ihn mit einer festgelegten Toleranz gegen das eigene Ergebnis.
+
+```ablauf
+sf: Store-Preisbücher, Pricing Extension, Warenkorb
+erp: SAP-Preisfindung, SAP-Auftrag
+SAP-Preisfindung --nächtliche Ladung--> Store-Preisbücher
+Store-Preisbücher --560 Händler--> Warenkorb
+SAP-Preisfindung --Live-Preis--> Pricing Extension
+Pricing Extension --40 Händler--> Warenkorb
+Warenkorb --Auftrag mit Preis--> SAP-Auftrag
+```
 
 Die Zahlen sind erfunden, um die Methode zu zeigen. Entscheidend ist, dass die Aufteilung der Preisfindung in SAP folgt und nicht dem, was der Shop technisch kann.
 

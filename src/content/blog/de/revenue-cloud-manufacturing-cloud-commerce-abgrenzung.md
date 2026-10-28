@@ -78,7 +78,16 @@ Vier Konstellationen würde ich in keinem Design-Review durchgehen lassen:
 
 Ein Hersteller von Industriekompressoren verkauft konfigurierte Maschinen über einen Innendienst und 200 Händler. Händler bestellen Filter und Ersatzteile per E-Mail nach. Zehn Großkunden haben Jahresmengenverträge, und Händler bekommen einen Jahresbonus, der in Tabellen berechnet wird.
 
-Alle drei Produkte könnten passen, und ich würde sie nicht gleichzeitig einführen. Am meisten schmerzen die Ersatzteilbestellungen per E-Mail, also kommt B2B Commerce mit Preisbüchern zuerst. Die Kompressorangebote sind der zweite Kandidat: Kosten Konfigurationsfehler heute Geld, folgt Revenue Cloud, und ab dann nutzt der Shop dessen Katalog und, sobald Vertragspreise in Salesforce liegen, dessen Preislogik. Manufacturing Cloud kommt erst dazu, wenn die Mengenverträge von zehn Großkunden die Lizenz für die Nutzer rechtfertigen, die sie betreuen. Bis dahin kann ein Bericht auf den Istwerten aus dem ERP reichen. Die Bonustabelle wartet auf diese Entscheidung.
+Alle drei Produkte könnten passen, und ich würde sie nacheinander einführen:
+
+```schritte
+B2B Commerce mit Preisbüchern
+  Kommt zuerst, weil die Ersatzteilbestellungen per E-Mail am meisten schmerzen.
+Revenue Cloud
+  Die Kompressorangebote sind der zweite Kandidat. Kosten Konfigurationsfehler heute Geld, folgt Revenue Cloud, und ab dann nutzt der Shop dessen Katalog und, sobald Vertragspreise in Salesforce liegen, dessen Preislogik.
+Manufacturing Cloud
+  Kommt erst dazu, wenn die Mengenverträge von zehn Großkunden die Lizenz für die Nutzer rechtfertigen, die sie betreuen. Bis dahin kann ein Bericht auf den Istwerten aus dem ERP reichen. Die Bonustabelle wartet auf diese Entscheidung.
+```
 
 Die Reihenfolge ist weniger wichtig als die Regel dahinter: Das zweite Produkt nutzt Katalog und Preismaster des ersten.
 

@@ -77,26 +77,36 @@ Händler ohne Field Service melden über das Portal. Welche Lizenz das braucht, 
 
 ## Wann reicht eine Liste im Qualitätssystem?
 
-Nicht jeder Hersteller braucht dieses Datenmodell. Wenn Sie ein oder zwei Feldaktionen im Jahr an einigen Dutzend Maschinen durchführen und eigene Techniker die Arbeit erledigen, reicht eine Liste der Seriennummern im Qualitätssystem plus ein Arbeitsauftrag oder Case pro Maschine. Der Aufwand für Definitionen, Partner und Partnerbestand lohnt sich erst ab einer gewissen Größe.
+Nicht jeder Hersteller braucht dieses Datenmodell. Für kleine Aktionen reicht eine Liste der Seriennummern im Qualitätssystem plus ein Arbeitsauftrag oder Case pro Maschine. Der Aufwand für Definitionen, Partner und Partnerbestand lohnt sich erst ab einer gewissen Größe. Ich würde Product Service Campaigns einsetzen, wenn mehrere der Punkte für sie zutreffen:
 
-Ich würde Product Service Campaigns einsetzen, wenn mehrere dieser Punkte zutreffen:
-
-- **Hunderte Maschinen pro Aktion**, verteilt auf viele Kunden.
-- **Händler oder Servicepartner erledigen die Arbeit**, und Sie brauchen den Status pro Maschine von außerhalb des eigenen Unternehmens.
-- **Unverkaufter Bestand steht bei Händlern** und muss vor dem Verkauf repariert werden.
-- **Lieferantenregress ist relevant**, weil das fehlerhafte Teil zugekauft wurde.
-- **Upgrades kommen regelmäßig vor**, etwa Nachrüstsätze für eine ganze Baureihe.
+```pro-contra
+pro: Was für Servicekampagnen spricht
+- **Hunderte Maschinen pro Aktion**, verteilt auf viele Kunden
+- **Händler oder Servicepartner erledigen die Arbeit**, und Sie brauchen den Status pro Maschine von außerhalb des eigenen Unternehmens
+- **Unverkaufter Bestand steht bei Händlern** und muss vor dem Verkauf repariert werden
+- **Lieferantenregress ist relevant**, weil das fehlerhafte Teil zugekauft wurde
+- **Upgrades kommen regelmäßig vor**, etwa Nachrüstsätze für eine ganze Baureihe
+contra: Wann eine Liste reicht
+- Ein oder zwei Feldaktionen im Jahr
+- Einige Dutzend Maschinen pro Aktion
+- Eigene Techniker erledigen die Arbeit
+```
 
 Für die Auswahl der Maschinen gilt in beiden Fällen dasselbe: Ohne saubere Seriennummern und Chargen hilft auch die beste Liste nicht.
 
 ## Was sollten Sie vor dem Bau entscheiden?
 
-Vier Fragen würde ich schriftlich beantworten:
+Drei Fragen würde ich schriftlich beantworten:
 
 1. **Wer löst eine Kampagne aus?** Meist die Qualität, bei Upgrades manchmal das Produktmanagement. Eine Rolle legt an, eine andere gibt frei.
 2. **Wer zahlt?** Teile, Arbeitszeit des Händlers, Anfahrt. Das Causal Item deckt den Lieferantenregress ab; ob Händler ihre Arbeitszeit über Garantieanträge oder pauschal vergütet bekommen, entscheiden Sie.
 3. **Wie wird die Erledigung gemeldet?** Pro Maschine, mit Datum und Ausführendem, über Arbeitsauftrag, Portal oder Antrag.
-4. **Welche Lizenz deckt das ab?** Die [Preisseite der Manufacturing Cloud](https://www.salesforce.com/manufacturing/cloud/pricing/) erwähnt Servicekampagnen nicht, und die Referenzseiten nennen keine Lizenz. Fragen Sie schriftlich nach.
+
+Dazu kommt die Lizenzfrage:
+
+```hinweis offen
+Die [Preisseite der Manufacturing Cloud](https://www.salesforce.com/manufacturing/cloud/pricing/) erwähnt Servicekampagnen nicht, und die Referenzseiten nennen keine Lizenz. Lassen Sie sich von Salesforce schriftlich bestätigen, welche Lizenz Product Service Campaigns abdeckt.
+```
 
 Das ganze Bild zum After-Sales steht im [Kapitel Garantie und After-Sales](../../masterclass/manufacturing-cloud/garantie-und-after-sales/) der Masterclass Manufacturing Cloud.
 

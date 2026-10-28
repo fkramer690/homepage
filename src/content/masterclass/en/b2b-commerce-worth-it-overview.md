@@ -68,7 +68,11 @@ Salesforce announced the completion of the [CloudCraze acquisition](https://sale
 
 ## What does B2B Commerce cost?
 
-Salesforce publishes no list price. Both editions show "Contact for Pricing" on the [pricing page](https://www.salesforce.com/editions-pricing/commerce-cloud/b2b/). The fee is a percentage of gross merchandise value (GMV), the revenue through the store minus tax and shipping. For Growth and Advanced only revenue through the commerce storefront counts, not orders by EDI, email or phone. Salesforce publishes no percentage. Integrators report figures around 1 to 2 percent, which Salesforce does not confirm.
+Salesforce publishes no list price. Both editions show "Contact for Pricing" on the [pricing page](https://www.salesforce.com/editions-pricing/commerce-cloud/b2b/). The fee is a percentage of gross merchandise value (GMV), the revenue through the store minus tax and shipping. For Growth and Advanced only revenue through the commerce storefront counts, not orders by EDI, email or phone.
+
+```hinweis offen
+Salesforce publishes no percentage. Integrators report figures around 1 to 2 percent, which Salesforce does not confirm.
+```
 
 The pricing page lists this scope:
 

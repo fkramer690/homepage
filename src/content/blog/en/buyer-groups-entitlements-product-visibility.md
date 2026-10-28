@@ -54,7 +54,9 @@ Salesforce documents the limits for [buyer groups and buyer accounts](https://de
 | Entitlement policies per org | 105,000 | hard |
 | Accounts per buyer in the Account Switcher | 200 | soft |
 
+```hinweis achtung
 The 2,000 limit has the worst failure mode. Salesforce writes that only the first 2,000 buyer groups of a product are indexed for search, and that buyer groups beyond that return no entitlements in a search. The limit is not enforced when you load data. So the import runs without an error, and some dealers simply stop finding the product.
+```
 
 For the 200 buyer groups per policy, Salesforce warns that going beyond capacity "can lead to data scaling issues". The Account Switcher limit matters for dealers with many branches: one buyer who orders for more than 200 accounts needs a custom switcher, and the standard one fails at 2,000.
 

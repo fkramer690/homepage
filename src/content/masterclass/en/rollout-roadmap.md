@@ -104,11 +104,18 @@ Take the baseline before phase 2 starts, from the release plans of the last six 
 
 A typical scenario, as an assumption: a machine builder runs Service Cloud, Field Service for its field technicians, a dealer portal on Experience Cloud and an SAP integration for orders and spare parts. Three partners deploy by change set, and every four weeks there is a release with a plan of 60 manual lines. All figures are assumptions.
 
-- **Months 1 and 2:** The client names an internal release manager, decides on a tool and adds an annex to all three contracts with the branch model, the review duty and the cut-off date.
-- **Month 3:** The repository is built from production, and the dealer portal stream starts as the pilot.
-- **Months 4 and 5:** Validation on every pull request, gates block severe findings. The release manager and two admins do the training.
-- **Month 6:** The Field Service and SAP partners switch, cut-off date for change sets.
-- **Months 7 to 9:** Price books and Field Service configuration move into the repository, the release calendar is set, and monitoring reports drift.
+```schritte
+Settle ownership | Months 1 and 2 · client
+  The client names an internal release manager, decides on a tool and adds an annex to all three contracts with the branch model, the review duty and the cut-off date.
+Start the pilot | Month 3
+  The repository is built from production, and the dealer portal stream starts as the pilot.
+Validate and train | Months 4 and 5
+  Validation on every pull request, gates block severe findings. The release manager and two admins do the training.
+Switch all streams | Month 6
+  The Field Service and SAP partners switch, cut-off date for change sets.
+Data and operations | Months 7 to 9
+  Price books and Field Service configuration move into the repository, the release calendar is set, and monitoring reports drift.
+```
 
 After nine months the release plan has twelve manual lines instead of 60, UAT gets new builds weekly instead of monthly, and a partner change in the Field Service stream would be a contract question, not a technical project. These figures are planning values for the example, not measurements.
 

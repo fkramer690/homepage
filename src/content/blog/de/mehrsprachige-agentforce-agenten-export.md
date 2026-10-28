@@ -36,7 +36,11 @@ Die [Hinweisseite zum Agentforce Service Agent](https://help.salesforce.com/s/ar
 
 Das Label hat Folgen. Im [Leitfaden zur Mehrsprachigkeit in Agentforce](https://www.salesforce.com/blog/multi-language-guide/) schreibt Salesforce, dass bei Beta-Sprachen der Kunde für die Qualitätssicherung verantwortlich ist. GA bedeutet dort, dass Salesforce die Antwortqualität geprüft hat. Für einen Exporteur heißt das: Händler in Tschechien sind abgedeckt, Händler nebenan in der Slowakei sind ein Beta-Fall, den Sie selbst testen.
 
-Für Voice ist die Liste kürzer. Die [Produktseite von Agentforce Voice](https://www.salesforce.com/agentforce/voice/) nennt Englisch, Französisch, Spanisch, Italienisch, Deutsch, Portugiesisch und Japanisch, dazu „many others“, ohne zu sagen, welche. Die [Dreamforce-Ankündigungen 2026](https://www.salesforce.com/blog/dreamforce-2026-announcements/) sprechen von „Canadian French“, und ein [Hilfeartikel](https://help.salesforce.com/s/articleView?language=en_US&id=ai.agentforce_voice.htm&type=5) sagt noch, Agentforce Voice werde nur auf Englisch unterstützt. Lassen Sie sich Französisch für Frankreich schriftlich bestätigen, bevor Sie eine Sprachhotline für französische Händler planen. Gleiches gilt für Polnisch und Tschechisch, die die Seite nicht nennt. Wie eine Hotline aufgebaut sein sollte, steht in [Störungshotline mit Agentforce Voice](../stoerungshotline-agentforce-voice-deutsch/).
+Für Voice ist die Liste kürzer. Die [Produktseite von Agentforce Voice](https://www.salesforce.com/agentforce/voice/) nennt Englisch, Französisch, Spanisch, Italienisch, Deutsch, Portugiesisch und Japanisch, dazu „many others“, ohne zu sagen, welche. Die [Dreamforce-Ankündigungen 2026](https://www.salesforce.com/blog/dreamforce-2026-announcements/) sprechen von „Canadian French“, und ein [Hilfeartikel](https://help.salesforce.com/s/articleView?language=en_US&id=ai.agentforce_voice.htm&type=5) sagt noch, Agentforce Voice werde nur auf Englisch unterstützt. Wie eine Hotline aufgebaut sein sollte, steht in [Störungshotline mit Agentforce Voice](../stoerungshotline-agentforce-voice-deutsch/).
+
+```hinweis offen
+Lassen Sie sich Französisch für Frankreich bestätigen, bevor Sie eine Sprachhotline für französische Händler planen. Gleiches gilt für Polnisch und Tschechisch, die die Produktseite nicht nennt.
+```
 
 ## Wie wählt der Agent seine Sprache?
 
@@ -48,11 +52,15 @@ Für ein Händlerportal hat das zwei Folgen. Erstens filtert die Sitzungssprache
 
 ## Was kostet die Übersetzung zur Laufzeit?
 
-Die [Flex-Credits-Rate-Card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) vom 31. August 2026 nennt drei Sprachzähler. Zum [EU-Listenpreis von 500 € pro 100.000 Credits](https://www.salesforce.com/eu/agentforce/pricing/):
+Die [Flex-Credits-Rate-Card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) vom 31. August 2026 nennt drei Sprachzähler, hier umgerechnet zum [EU-Listenpreis von 500 € pro 100.000 Credits](https://www.salesforce.com/eu/agentforce/pricing/). Der Translation-Zähler läuft auch in der Sandbox.
 
-- **Translation:** 4.000 Credits pro Million Zeichen, auch in der Sandbox: 20 €.
-- **Text to Speech:** 6.000 Credits pro Million Zeichen: 30 €.
-- **Speech to Text:** 150 Credits pro Stunde Transkription: 0,75 €.
+```kennzahlen
+4.000 Credits | Translation pro Million Zeichen, rund 20 €
+6.000 Credits | Text to Speech pro Million Zeichen, rund 30 €
+150 Credits | Speech to Text pro Stunde Transkription, rund 0,75 €
+quelle: Salesforce Flex Credits Rate Card vom 31.08.2026,
+  EU-Listenpreis laut Agentforce-Preisseite
+```
 
 Ein Händlergespräch mit 2.500 Zeichen zu übersetzen kostet 10 Credits, 0,05 €. Drei Aktionen im selben Gespräch kosten 60 Credits.
 

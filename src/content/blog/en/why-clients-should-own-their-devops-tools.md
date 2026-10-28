@@ -85,7 +85,9 @@ Ideally, before the first partner starts. These rules have proven useful:
 6. **Secrets stay in the client's vault.** Integration users and certificates belong to the client and are rotated when a partner leaves.
 7. **Write it into the contract.** The statement of work says that all work products, including code, tickets and documentation, are created in the client's tools.
 
+```hinweis tipp
 If a partner already owns some of the tools, plan the move early and do it in a calm phase, not during an exit. A repository can be moved with its full history in a day. Jira and Miro take more planning, but are still far cheaper to move now than later.
+```
 
 ## Where should you start?
 

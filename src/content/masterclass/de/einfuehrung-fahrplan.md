@@ -104,11 +104,18 @@ Erheben Sie die Basislinie, bevor Phase 2 beginnt, notfalls aus den Release-Plä
 
 Ein typisches Szenario, als Annahme: Ein Maschinenbauer betreibt Service Cloud, Field Service für den Außendienst, ein Händlerportal auf Experience Cloud und eine SAP-Schnittstelle für Aufträge und Ersatzteile. Drei Partner deployen per Change Set, alle vier Wochen gibt es ein Release mit einem Plan von 60 manuellen Zeilen. Alle Zahlen sind Annahmen.
 
-- **Monate 1 und 2:** Der Kunde benennt eine interne Release Managerin, entscheidet sich für ein Werkzeug und ergänzt die drei Verträge um eine Anlage mit Branch-Modell, Review-Pflicht und Stichtag.
-- **Monat 3:** Das Repository entsteht aus Produktion, der Händlerportal-Stream startet als Pilot.
-- **Monate 4 und 5:** Validierung bei jedem Pull Request, Gates blockieren schwere Funde. Die Release Managerin und zwei Admins machen das Training.
-- **Monat 6:** Die Partner für Field Service und SAP wechseln, Stichtag für Change Sets.
-- **Monate 7 bis 9:** Preisbücher und Field-Service-Konfiguration kommen ins Repository, der Release-Kalender steht, das Monitoring meldet Drift.
+```schritte
+Eigentum klären | Monate 1 und 2 · Kunde
+  Der Kunde benennt eine interne Release Managerin, entscheidet sich für ein Werkzeug und ergänzt die drei Verträge um eine Anlage mit Branch-Modell, Review-Pflicht und Stichtag.
+Pilot starten | Monat 3
+  Das Repository entsteht aus Produktion, der Händlerportal-Stream startet als Pilot.
+Validieren und schulen | Monate 4 und 5
+  Validierung bei jedem Pull Request, Gates blockieren schwere Funde. Die Release Managerin und zwei Admins machen das Training.
+Alle Streams umstellen | Monat 6
+  Die Partner für Field Service und SAP wechseln, Stichtag für Change Sets.
+Daten und Betrieb | Monate 7 bis 9
+  Preisbücher und Field-Service-Konfiguration kommen ins Repository, der Release-Kalender steht, das Monitoring meldet Drift.
+```
 
 Nach neun Monaten hat der Release-Plan zwölf statt 60 manuelle Zeilen, UAT bekommt wöchentlich statt monatlich neue Stände, und ein Partnerwechsel im Field-Service-Stream wäre eine Vertragsfrage, kein Technikprojekt. Diese Zahlen sind Planwerte für das Beispiel, keine Messung.
 

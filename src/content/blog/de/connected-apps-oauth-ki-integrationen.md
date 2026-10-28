@@ -32,11 +32,19 @@ Der Salesloft-Drift-Vorfall hat gezeigt, dass eine Connected App ein unüberwach
 
 ## Was ist beim Salesloft-Drift-Vorfall passiert?
 
-Drift ist ein KI-Chat-Agent von Salesloft, den Unternehmen über eine Connected App mit Salesforce verbunden hatten. Laut [Google Threat Intelligence](https://cloud.google.com/blog/topics/threat-intelligence/data-theft-salesforce-instances-via-salesloft-drift) nutzte eine als UNC6395 geführte Gruppe vom 8. bis mindestens 18. August 2025 gestohlene OAuth-Access- und Refresh-Tokens der Drift-App. Der Angreifer fragte in Kunden-Orgs Cases, Accounts, User und Opportunities ab, exportierte die Ergebnisse und löschte danach die Query-Jobs; die Logs blieben erhalten.
+Drift ist ein KI-Chat-Agent von Salesloft, den Unternehmen über eine Connected App mit Salesforce verbunden hatten. Laut [Google Threat Intelligence](https://cloud.google.com/blog/topics/threat-intelligence/data-theft-salesforce-instances-via-salesloft-drift) nutzte eine als UNC6395 geführte Gruppe im August 2025 gestohlene OAuth-Access- und Refresh-Tokens der Drift-App. Der Angreifer fragte in Kunden-Orgs Cases, Accounts, User und Opportunities ab, exportierte die Ergebnisse und löschte danach die Query-Jobs; die Logs blieben erhalten.
 
 GTIG geht davon aus, dass es vor allem um Zugangsdaten ging: AWS-Schlüssel, Passwörter und Snowflake-Tokens in den exportierten Datensätzen. [The Hacker News](https://thehackernews.com/2025/08/salesloft-oauth-breach-via-drift-ai.html) berichtet, dass GTIG mehr als 700 potenziell betroffene Organisationen kannte, Salesforce sprach von einer „small number of customers“.
 
-Am 20. August widerriefen Salesloft und Salesforce laut GTIG alle aktiven Drift-Tokens, Salesforce nahm die App aus dem AppExchange. Laut der [Sicherheitsmeldung von Salesforce](https://help.salesforce.com/s/articleView?id=005134951&language=en_US&type=1) wurden am 28. August alle Salesloft-Integrationen abgeschaltet und am 7. September wieder freigegeben, außer Drift. Das GTIG-Update vom 28. August ergänzte, dass auch Drift-Email-Tokens gegen Google Workspace eingesetzt wurden und Kunden jedes in Drift gespeicherte Token als kompromittiert behandeln sollten.
+```zeitleiste
+2025-08-08 | Angreifer beginnen, gestohlene Drift-Tokens zu nutzen
+2025-08-18 | Zugriffe laufen laut GTIG mindestens bis zu diesem Tag
+2025-08-20 | Salesloft und Salesforce widerrufen alle aktiven Drift-Tokens
+2025-08-28 | Salesforce schaltet alle Salesloft-Integrationen ab
+2025-09-07 | Integrationen wieder freigegeben, außer Drift
+```
+
+Salesforce nahm die App außerdem aus dem AppExchange, laut seiner [Sicherheitsmeldung](https://help.salesforce.com/s/articleView?id=005134951&language=en_US&type=1). Das GTIG-Update vom 28. August ergänzte, dass auch Drift-Email-Tokens gegen Google Workspace eingesetzt wurden und Kunden jedes in Drift gespeicherte Token als kompromittiert behandeln sollten.
 
 GTIG und Salesforce stellen beide fest, dass der Vorfall nicht auf eine Schwachstelle der Salesforce-Plattform zurückgeht. Das stimmt und hilft Ihnen trotzdem nicht: Salesforce sah eine autorisierte App, die mit gültigen Tokens die API aufrief, und das sieht auf den ersten Blick aus wie eine normale Synchronisation.
 
@@ -63,7 +71,9 @@ Salesforce hat den OAuth-Zugang in mehreren Schritten verschärft:
 - **Refresh-Token-Rotation bei neuen ECAs**, standardmäßig aktiv und gesperrt. Laut Salesforce verkleinert sie den Schaden eines gestohlenen Refresh Tokens deutlich ([Help-Artikel](https://help.salesforce.com/s/articleView?id=005390912&language=en_US&type=1)).
 - **Pflichtkontrollen für Partner-Apps.** Apps, die in mehr als zwei Produktions-Orgs von Kunden laufen, mussten bis 11. Mai 2026 PKCE, Refresh-Token-Rotation, einen Ablauf nach 30 Tagen Inaktivität und eine IP-Allowlist für Refresh Tokens aktivieren, soweit die jeweilige Kontrolle auf den OAuth-Flow der App anwendbar ist, laut [Partner-FAQ](https://help.salesforce.com/s/articleView?id=005387798&language=en_US&type=1).
 
+```hinweis offen
 Ein Satz in dieser FAQ ist für Käufer wichtig: Die meisten dieser Kontrollen können Admins nicht direkt prüfen. Sie verlassen sich auf die Auskunft des Anbieters, also lassen Sie sie sich schriftlich geben.
+```
 
 ECAs unterstützen außerdem den Username-Password Flow nicht. Was das für ältere ERP- und Middleware-Anbindungen heißt, steht in [Passwort-Integrationen enden 2027](../salesforce-passwort-integrationen-2027/).
 

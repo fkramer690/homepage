@@ -64,7 +64,9 @@ Salesforce gibt an, dass beim Zusammenstellen des Kontexts die bestehenden Berec
 
 Das ist das richtige Prinzip. Es bedeutet aber auch, dass Agenten jede Schwäche des bestehenden Berechtigungsmodells erben. Sind Freigaberegeln heute zu großzügig, sieht ein Agent morgen zu viel. Sind sensible Felder nicht klassifiziert, können sie nicht maskiert werden. Vor einem Agentenprojekt verdient das Berechtigungsmodell dieselbe Aufmerksamkeit wie das Agentendesign.
 
+```hinweis offen
 Die Erinnerungsfunktion wirft für europäische Unternehmen eine weitere Frage auf: Wie werden gespeicherte Erinnerungen behandelt, wenn ein Kunde nach DSGVO Löschung oder Auskunft verlangt? Salesforce gibt an, dass jede Erinnerung auf ihre Quelle zurückführbar ist. Das ist ein guter Ausgangspunkt, aber der Prozess für Löschung und Aufbewahrung sollte stehen, bevor Erinnerungen eingeschaltet werden.
+```
 
 ## Was sollten Unternehmen jetzt vorbereiten?
 

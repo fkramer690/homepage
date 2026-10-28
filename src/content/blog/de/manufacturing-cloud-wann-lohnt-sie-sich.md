@@ -52,7 +52,9 @@ Die Listenpreise auf der [Preisseite der Manufacturing Cloud](https://salesforce
 | Max | 550 € | 650 € (Sales Max oder Service Max) |
 | Sales und Service Max | | 700 € |
 
-Eine Unklarheit nenne ich offen: Die Preisseite der Manufacturing Cloud hat zwei Fußnoten, die sich widersprechen. Die eine sagt, die Preise gelten für die Enterprise Edition und die Unlimited Edition koste 425 US-Dollar. Die andere sagt, die Preise gelten für die Unlimited Edition. Welcher Preis für Ihre Edition gilt, steht erst im Angebot.
+```hinweis offen
+Die Preisseite der Manufacturing Cloud hat zwei Fußnoten, die sich widersprechen. Die eine sagt, die Preise gelten für die Enterprise Edition und die Unlimited Edition koste 425 US-Dollar. Die andere sagt, die Preise gelten für die Unlimited Edition. Welcher Preis für Ihre Edition gilt, steht erst im Angebot.
+```
 
 Rechnen wir mit den Core-Preisen. Der Aufpreis liegt bei 80 € pro Nutzer und Monat, also 960 € pro Nutzer und Jahr. Bei 200 Vertriebsnutzern sind das 192.000 € pro Jahr zum Listenpreis, über fünf Jahre knapp eine Million. Listenpreise sind selten das Ende der Verhandlung, aber die Größenordnung zeigt, warum die Frage eine eigene Entscheidung verdient.
 
@@ -66,7 +68,9 @@ Gedacht ist das für das sogenannte Run-Rate-Geschäft. Ein Kunde nimmt über ei
 
 ## Wann passt die Manufacturing Cloud nicht?
 
+```praxis
 In einem Fertigungsprojekt habe ich die Manufacturing Cloud bewertet und mich dagegen entschieden. Sales Agreements, die zentrale Vertriebsfunktion, waren für das Geschäft nicht relevant. Das Unternehmen verkaufte nicht über langfristige Mengenvereinbarungen, und damit fiel der wichtigste Grund für die Lizenz weg. Eine eigene Lösung auf der Kernplattform war günstiger und einfacher zu warten.
+```
 
 Daraus habe ich eine Regel mitgenommen: Eine Industry Cloud wird nach ihren Funktionen gekauft, nicht nach dem Branchennamen. „Wir sind Hersteller, also Manufacturing Cloud“ ist kein Business Case. Passt die Kernfunktion nicht, zahlt das Unternehmen für Funktionen, die es nicht nutzt, und baut trotzdem um die herum, die nicht passen.
 

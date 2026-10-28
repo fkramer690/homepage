@@ -59,7 +59,11 @@ Agent Health Monitoring, in den [Dreamforce-2026-Ankündigungen](https://www.sal
 
 ## Warum zählt eine abgefangene Sitzung nicht als gelöst?
 
-Deflection ist die Zahl, die Anbieter gern zeigen, und die schwächste der fünf. Ein Händler, der einen falschen Liefertermin bekommt und das Fenster schließt, zählt als abgefangen. Salesforce schreibt im Observability-Beitrag selbst, dass diese Quoten „typically measure proxy signals“, und lässt Deflection und Abbruch künftig von einem LLM bewerten, das die ganze Sitzung mit einem anpassbaren Prompt liest. Das verbessert die Kennzahl, aber die Definition kann sich unter Ihrer Zeitreihe ändern. Notieren Sie deshalb die Prompt-Version neben jedem Monatswert.
+Deflection ist die Zahl, die Anbieter gern zeigen, und die schwächste der fünf. Ein Händler, der einen falschen Liefertermin bekommt und das Fenster schließt, zählt als abgefangen. Salesforce schreibt im Observability-Beitrag selbst, dass diese Quoten „typically measure proxy signals“, und lässt Deflection und Abbruch künftig von einem LLM bewerten, das die ganze Sitzung mit einem anpassbaren Prompt liest. Das verbessert die Kennzahl.
+
+```hinweis achtung
+Wenn ein LLM Deflection und Abbruch bewertet, kann sich die Definition unter Ihrer Zeitreihe ändern. Notieren Sie die Prompt-Version neben jedem Monatswert.
+```
 
 Die Abrechnung bringt eine dritte Definition. Bei der Abrechnung pro Lösung für den Help Agent gilt laut [Salesforce Ben](https://www.salesforceben.com/complete-guide-to-agentforce-pricing-options/) eine Messaging-Sitzung mit mehr als zwei Wortwechseln, ohne Feedback und ohne Eskalationswunsch, die länger als zwei Stunden läuft, als gelöst und wird berechnet. Den Vergleich mit Flex Credits rechne ich in [was ein Serviceagent für Händleranfragen kostet](../serviceagent-haendleranfragen-kosten/) durch.
 
@@ -78,6 +82,13 @@ Nehmen wir einen Maschinenbauer mit 350 Händlern in 30 Ländern, SAP als ERP un
 **Außerhalb der Servicezeiten.** 26 Prozent der Sitzungen beginnen außerhalb von 7 bis 18 Uhr MEZ, davon werden 58 Prozent gelöst: rund 360 Händler im Monat, die nicht mehr bis zum nächsten Morgen warten.
 
 **Pro Subagent.** Auftragsstatus: Eskalation 14 Prozent, Task Resolution 70 Prozent. Ersatzteile: Eskalation 57 Prozent, Task Resolution 22 Prozent, weil Teile außerhalb des Zentrallagers eine manuelle Prüfung durch die Ersatzteilabteilung brauchen. Der Ersatzteil-Subagent verbraucht 306 € an Credits und hat die meisten Korrekturen verursacht, trägt also die Hälfte der Betriebskosten: 1.806 € für 198 gelöste Anfragen, 9,12 € pro Stück und damit mehr als eine Servicekraft.
+
+```kennzahlen
+3,06 € | pro gelöster Anfrage, ganzer Agent
+6 € | pro Anfrage bei einer Servicekraft vor dem Go-live
+9,12 € | pro gelöster Anfrage, Ersatzteil-Subagent
+quelle: Szenario mit angenommenen Werten; Credit-Faktoren laut Flex Credits Rate Card vom 31. August 2026, Listenpreis laut Salesforce
+```
 
 Die Entscheidung an Tag 90: Der Auftragsstatus bleibt und geht an die nächste Händlergruppe. Ersatzteile kommen aus dem Agenten heraus und gehen über ein strukturiertes Portalformular an die Ersatzteilabteilung, bis die Bestände der Regionallager in Salesforce ankommen. Wie ein Agent das richtige Teil findet, behandle ich in [Ersatzteile per Seriennummer](../ersatzteile-seriennummer-ki-agent/).
 

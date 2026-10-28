@@ -38,7 +38,9 @@ Salesforce uses three names here, and they appear on different pages:
 - **Merchandising Agent (B2B)** is listed on the [Commerce innovations page](https://www.salesforce.com/ca/commerce/innovations/) with "GA August '26". Salesforce calls it the back office agent that "comes to B2B" and says you can tell it to boost or bury products in search, spin up new products or manage buyer accounts, done in conversation instead of clicks.
 - **Agentforce Skills for Merchandising** is the title of the [Trailhead unit](https://trailhead.salesforce.com/content/learn/modules/agentforce-merchant-quick-look/get-to-know-your-merchant-agent) that explains KPI summaries and promotions.
 
+```hinweis offen
 Salesforce does not explain on these pages how the three relate in licensing. I would ask the account team in writing which skills the included Merchant Agent covers in your contract.
+```
 
 ## What can it do for a parts catalogue?
 
@@ -64,7 +66,16 @@ Trailhead lists the prerequisites: Salesforce generative AI, Agentforce, bots an
 
 The editions include Data Cloud credits: 250K in Growth and 500K in Advanced, according to the pricing page. What the agent consumes per request is not published. I would therefore measure consumption in a sandbox with real requests before go-live; how such an estimate works is shown in [Flex Credits: estimating Agentforce cost per action](../flex-credits-agentforce-cost-per-action/).
 
-The store's limits also apply to the agent. According to the [search limits](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-search-limits.html), a store has at most 100 boost and bury rules and 100 synonym rules, both hard limits, and searchable attributes, filterable attributes and sort rules share a maximum of 70. An agent that writes a new rule for every request uses up the 100 quickly. Someone has to clean up rules regularly, whoever created them.
+The store's limits also apply to the agent, and both rule limits are hard limits:
+
+```kennzahlen
+100 | boost and bury rules per store
+100 | synonym rules per store
+70 | searchable and filterable attributes plus sort rules combined
+source: Salesforce Developers, [search limits](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-search-limits.html)
+```
+
+An agent that writes a new rule for every request uses up the 100 quickly. Someone has to clean up rules regularly, whoever created them.
 
 ## What should the agent not do?
 

@@ -58,18 +58,26 @@ Salesforce führt die [Suchgrenzen](https://developer.salesforce.com/docs/commer
 
 25 durchsuchbare Merkmale klingen nach viel, bis Sie aufschreiben, was Händler eintippen: aktuelle Nummer, alte Nummern, Vergleichsnummern, Maschinentyp, Bezeichnung, Kurztext, vielleicht eine EAN. Das passt, aber nicht ein Feld pro Sprache und Nummernart. Ich plane die durchsuchbaren Felder wie jede knappe Ressource und schreibe auf, warum jedes da ist.
 
-Ein offener Punkt: Die [Seite zur Search Settings API](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-d2c-comm-search-settings-apis.html) sagt, dass Synonyme über Include Rules angelegt werden und dass pro Store bis zu 50 Regeln möglich sind. Die Limitseite nennt 100 Synonymregeln. Prüfen Sie den Wert in Ihrer Org, bevor Sie nahe an eine der beiden Zahlen planen.
+```hinweis offen
+Die [Seite zur Search Settings API](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-d2c-comm-search-settings-apis.html) sagt, dass Synonyme über Include Rules angelegt werden und dass pro Store bis zu 50 Regeln möglich sind. Die Limitseite nennt 100 Synonymregeln. Prüfen Sie den Wert in Ihrer Org, bevor Sie nahe an eine der beiden Zahlen planen.
+```
 
 ## Wohin gehören alte Nummern und Vergleichsnummern?
 
 Hersteller benennen Teile um. Eine Dichtung bekommt nach einer Konstruktionsänderung eine neue Nummer, ein Zukaufteil bekommt die Herstellernummer, ein Händler hat noch die Nummer aus einer 15 Jahre alten Ersatzteilliste. Händler tippen sie alle.
 
-Es gibt zwei Wege, eine alte Nummer auffindbar zu machen:
+Es gibt zwei Wege, eine alte Nummer auffindbar zu machen: eine Synonymregel pro Nummer, wobei die Search Settings API Synonyme aus einem und aus mehreren Wörtern unterstützt, oder ein durchsuchbares Textfeld "frühere und alternative Nummern" am aktuellen Produkt. Darin steht jede alte Nummer, jede Lieferantennummer und jede Vergleichsnummer, getrennt durch Leerzeichen.
 
-- **Eine Synonymregel pro Nummer.** Die Search Settings API unterstützt Synonyme aus einem und aus mehreren Wörtern. Mit 100 Regeln pro Store, laut API-Seite 50, reicht das für eine Handvoll Nummern, nicht für eine Teilehistorie.
-- **Ein durchsuchbares Feld am aktuellen Produkt.** Ein Textfeld "frühere und alternative Nummern" enthält jede alte Nummer, jede Lieferantennummer und jede Vergleichsnummer, getrennt durch Leerzeichen. Das Feld zählt als eines der 25 durchsuchbaren Merkmale, egal wie viele Nummern darin stehen.
+```pro-contra
+pro: Durchsuchbares Feld am Produkt
+- Nimmt beliebig viele alte und Vergleichsnummern auf
+- Zählt als eines der 25 durchsuchbaren Merkmale, egal wie viele Nummern darin stehen
+contra: Synonymregel pro Nummer
+- Nur 100 Regeln pro Store, laut API-Seite 50
+- Reicht für eine Handvoll Nummern, nicht für eine Teilehistorie
+```
 
-Für Nummern würde ich immer den zweiten Weg nehmen. Die Daten gibt es im ERP schon, in Nachfolgeketten oder Notizen im Materialstamm, und die Schnittstelle kann das Feld bei jedem Lauf füllen. Ein typisches Szenario, als Annahme: ein Hersteller mit 30.000 aktiven Ersatzteilen, von denen 8.000 eine oder mehrere Vorgängernummern haben. Als Synonymregeln unmöglich, als Feld eine Spalte mehr im Produktimport.
+Für Nummern würde ich immer das Feld nehmen. Die Daten gibt es im ERP schon, in Nachfolgeketten oder Notizen im Materialstamm, und die Schnittstelle kann das Feld bei jedem Lauf füllen. Ein typisches Szenario, als Annahme: ein Hersteller mit 30.000 aktiven Ersatzteilen, von denen 8.000 eine oder mehrere Vorgängernummern haben. Als Synonymregeln unmöglich, als Feld eine Spalte mehr im Produktimport.
 
 Dasselbe Feld kann Schreibweisen aufnehmen: "4711-0020" und "47110020" nebeneinander, wenn Händler beides tippen. Welche Schreibweisen zählen, zeigt die Suchanalyse nach einigen Wochen.
 

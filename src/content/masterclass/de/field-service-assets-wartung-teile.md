@@ -48,7 +48,11 @@ Alles andere bleibt in der Stückliste im PLM. Bei den meisten Maschinen bleiben
 
 Zwei Entscheidungen gehören vor den ersten Import aus dem ERP. Erstens: Werte, die sich je Baureihe unterscheiden, etwa eine Firmware-Version, kommen in Asset-Attribute. Das [Objekt AssetAttribute](https://developer.salesforce.com/docs/atlas.en-us.field_service_dev.meta/field_service_dev/sforce_api_objects_assetattribute.htm), verfügbar seit API-Version 57.0, speichert einen Wert pro Asset zu einer Attributdefinition, eine neue Baureihe braucht also kein neues Feld. Zähler, die Wartung auslösen, bleiben Zahlenfelder am Asset. Zweitens: Jemand verantwortet den Baum nach der Auslieferung. Das ERP liefert die installierte Basis, aber ein Jahr später tauscht ein Techniker ein Getriebe oder ein Händler rüstet einen Roboter nach. Ab dann muss ein System führen. Eine Mischung aus beiden ergibt eine Hierarchie, der niemand traut.
 
-Aus eigener Projekterfahrung: In meinen Field-Service-Projekten kamen Ersatzteile und installierte Basis aus dem ERP, und genau dort lagen zwei Stolpersteine, die Datenqualität der Assets und die ERP-Schnittstellen. Prüfen Sie Seriennummern und Standorte, bevor Wartungspläne darauf aufbauen.
+```praxis
+In meinen Field-Service-Projekten kamen Ersatzteile und installierte Basis aus dem ERP, und genau dort lagen zwei Stolpersteine, die Datenqualität der Assets und die ERP-Schnittstellen.
+```
+
+Prüfen Sie Seriennummern und Standorte, bevor Wartungspläne darauf aufbauen.
 
 ## Servicevertrag, Wartungsplan, Entitlement: Welches Objekt macht was?
 
@@ -95,7 +99,9 @@ Zu Beginn meist nicht. Assets mit Hierarchien, Wartungspläne, Serviceverträge 
 - **Asset Service Lifecycle Management** für 75 US-Dollar pro Nutzer und Monat. Der [ASLM-Bereich der Salesforce-Hilfe](https://help.salesforce.com/s/articleView?language=en_US&id=xcloud.aslm_asset_service_lifecycle_management.htm&type=5) nennt unter anderem Asset Coverage View, Asset Interactive Hierarchy, Work Order Estimation, Product Service Campaigns, Depotreparatur, Advanced Exchange, Lagerfunktionen und Stundenzettel.
 - **Connected Assets** für 15.000 US-Dollar pro Org und Monat, zum Listenpreis also 180.000 US-Dollar im Jahr, für Telemetrie, den Asset Health Score und 10.000 vernetzte digitale Assets.
 
+```hinweis offen
 Die Vergleichstabelle der Preisliste markiert Asset Coverage View und Interactive Hierarchy sogar bei Agentforce 1 Field Service als „Available for Purchase“. Lassen Sie sich das im Angebot bestätigen.
+```
 
 Mehrere ASLM-Funktionen betreffen den Bestand: Reservierung, Chargen, Inventur, Nachschub. Wenn SAP den Bestand führt, entsteht damit eine zweite Wahrheit. Für einen Maschinenbauer passen aus meiner Sicht die Funktionen, die das ERP auf der Serviceseite schlecht kann: Deckungsprüfung an der Hotline, Reparaturangebote, Nachrüstkampagnen und Depotreparatur. Den Vergleich von Add-on und Eigenbau für 30 Nutzer finden Sie in [Asset Service Lifecycle Management: Lohnt das Add-on?](../../../blog/asset-service-lifecycle-management-zusatz/).
 
@@ -104,6 +110,15 @@ Mehrere ASLM-Funktionen betreffen den Bestand: Reservierung, Chargen, Inventur, 
 Im ERP hat ein Ersatzteil einen Wert, einen Einkaufsprozess, Mindestbestände und Buchungen in die Finanzbuchhaltung. Field Service hält Mengen je Standort und protokolliert Bewegungen, und mehr soll es auch nicht tun. Laut [Datenmodell für die Lagerverwaltung](https://developer.salesforce.com/docs/atlas.en-us.field_service_dev.meta/field_service_dev/fsl_dev_soap_inventory.htm) hält ein Product Item den Bestand eines Teils an einem Standort, Products Required listen, was ein Auftrag braucht, und Products Consumed erfassen, was verbaut wurde. Die Menge am Product Item passt sich dabei automatisch an. Eine [Location](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_location.htm) kann ein Lager oder ein Servicefahrzeug sein.
 
 Die Datenflüsse folgen einer Regel: Das ERP schickt Materialstamm und Bestand, Salesforce meldet zurück, was vor Ort passiert ist. Verbaute Teile gehen nach Abschluss des Einsatzes ans ERP, Teileanforderungen werden dort zu Umlagerungen oder Bestellungen. Holen Sie nur die Fahrzeuge und die Lager nach Salesforce, die sie auffüllen. 40 Fahrzeuge mit je 300 Teilen sind schon 12.000 Product Items, und jedes davon landet offline auf einem Gerät. Welche Daten die App offline halten sollte, steht in [Field Service App offline](../../../blog/field-service-app-offline-briefcase/), die Aufgabenteilung in [Ersatzteile: ERP oder Salesforce?](../../../blog/salesforce-field-service-ersatzteile-erp/).
+
+```ablauf
+sf: Product Item, Products Consumed, Teileanforderung
+erp: ERP
+ERP --Stamm und Bestand--> Product Item
+Products Consumed ..Menge anpassen..> Product Item
+Products Consumed --verbaute Teile--> ERP
+Teileanforderung --> ERP
+```
 
 Viele Ersatzteilanfragen brauchen gar keinen Einsatz. Wenn Kunden ein bekanntes Teil für ihre Maschine selbst finden und bestellen, entlastet ein B2B-Shop die Hotline. Das B2B-Commerce-Kapitel zu [Katalog, Suche und Sichtbarkeit](../../b2b-commerce/katalog-suche-sichtbarkeit/) zeigt, wie Teile pro Maschine im Shop sichtbar werden.
 

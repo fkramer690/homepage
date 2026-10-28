@@ -74,6 +74,18 @@ Articles must read like Fabian talking to a client, not like generated content. 
 - **Fabian's voice.** First person, direct, a little dry, with his own phrasing where he gave it (e.g. from LinkedIn posts). Keep real quirks instead of smoothing them out.
 - **Read-aloud test.** Read the article once out loud. Anything Fabian would not say to a client in a meeting gets rewritten.
 
+## Content blocks
+
+Every article and every masterclass chapter loosens up its text with building blocks from the library in [content-blocks.md](content-blocks.md): note (`hinweis tipp|achtung|offen`), from my practice (`praxis`), key figures (`kennzahlen`), timeline (`zeitleiste`), flow diagram (`ablauf`), pro and contra (`pro-contra`), collapsible detail (`vertiefung`) and steps (`schritte`). They are fenced code blocks with the block name as language, so the article stays free of HTML. The build check enforces the counts.
+
+- At least one block or a Markdown table per text; texts over 1,300 words need at least two different ones (a table counts as one kind).
+- At most four blocks per text, at most two notes and one practice block, so the text leads and not the boxes.
+- Pick the block by content, never for decoration: dates in a sequence → timeline; a decision with arguments on both sides → pro-contra; data flows between Salesforce and the ERP → flow diagram; phases with duration and owner → steps; figures the section explains → key figures; detail only specialists need → collapsible detail; a fact readers must not miss, an open point to confirm in writing → note.
+- `praxis` only with experience Fabian has confirmed (list in content-blocks.md); assumption scenarios stay in the running text, marked "as an assumption".
+- Key figures and timelines only with values that are sourced in the text.
+- A block repeats nothing the paragraph around it says word for word; it condenses or adds structure. Same blocks in EN and DE.
+- Flow diagrams: run `node scripts/render-diagrams.mjs` after adding or changing one; it fails if a label does not fit its box.
+
 ## Images
 
 - **Card image on the blog overview:** a small technical drawing per article in `src/lib/card-drawings.ts` (keyed by `translationKey`, EN/DE labels, light grid, grey lines, one cyan accent; labels state facts from the article). Required for every article: `scripts/check-blog.mjs` fails the build when an article has no drawing. The frontmatter `topic` (list in `src/lib/topics.ts`) picks a fallback icon if a drawing key ever goes missing.
@@ -122,5 +134,6 @@ Before opening the pull request:
 - [ ] At least 1,000 words in the body, EN and DE
 - [ ] No AI slop: every paragraph has a concrete point, read-aloud test done
 - [ ] `npm run build` passes (runs `check-blog.mjs`)
+- [ ] At least one content block or table (two kinds over 1,300 words), chosen by content (see Content blocks)
 - [ ] Optional graphic has alt text and lives in `src/assets/blog/`
 - [ ] Draft of 2–3 LinkedIn teasers (thesis, example, checklist) for Fabian

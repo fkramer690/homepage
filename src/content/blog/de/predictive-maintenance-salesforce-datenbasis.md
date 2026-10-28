@@ -63,14 +63,23 @@ Die [Flex Credits Rate Card vom 31. August 2026](https://www.salesforce.com/en-u
 - **Streaming Pipeline:** 3.500 Credits pro Million Zeilen in der Basisstaffel, bei höheren Monatsmengen 2.800, 1.400 und 700. Laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?id=data.c360_a_data_usage_types.htm&language=en_US&type=5) zählt die Streaming-Variante der Ingestion API hierzu.
 - **Real-Time Pipeline:** 250.000 Credits pro Million Ereignisse, pro Einheit rund 71 Mal der Streaming-Satz. Gezählt werden Ereignisse nur, wenn sie zu einem Real-Time Data Graph gehören.
 
-Die Staffeln gelten je Nutzungsart und beginnen am Monatsersten neu. Flex Credits kosten [500 € je 100.000](https://www.salesforce.com/eu/agentforce/pricing/). Die [Streaming Ingestion API](https://developer.salesforce.com/docs/data/data-cloud-ref/guide/c360a-api-streaming-ingestion.htm) verarbeitet Daten „approximately every 3 minutes“. Für die Wartung, bei der eine Work Order Stunden oder Tage vor dem Einsatz entsteht, ist das schnell genug, und ich sehe keinen Grund, den Real-Time-Satz zu bezahlen. Die [Bulk-Variante](https://developer.salesforce.com/docs/data/data-cloud-ref/guide/c360a-api-salesforce-cdp-ingestion.htm) passt für tägliche oder wöchentliche Ladungen. Die Hilfe verbucht sie als Batch Data Pipeline, ein Name, den die Rate Card vom August nicht zeigt. Fragen Sie Ihren Account Executive, welche Position gilt.
+Die Staffeln gelten je Nutzungsart und beginnen am Monatsersten neu. Flex Credits kosten [500 € je 100.000](https://www.salesforce.com/eu/agentforce/pricing/). Die [Streaming Ingestion API](https://developer.salesforce.com/docs/data/data-cloud-ref/guide/c360a-api-streaming-ingestion.htm) verarbeitet Daten „approximately every 3 minutes“. Für die Wartung, bei der eine Work Order Stunden oder Tage vor dem Einsatz entsteht, ist das schnell genug, und ich sehe keinen Grund, den Real-Time-Satz zu bezahlen. Die [Bulk-Variante](https://developer.salesforce.com/docs/data/data-cloud-ref/guide/c360a-api-salesforce-cdp-ingestion.htm) passt für tägliche oder wöchentliche Ladungen. Die Hilfe verbucht sie als Batch Data Pipeline, ein Name, den die Rate Card vom August nicht zeigt.
 
 Rechnen wir mit 300 vernetzten Maschinen und je 12 Signalen:
 
-- **Rohwerte im Sekundentakt:** 9,3 Milliarden Zeilen im Monat. Selbst mit Mengenstaffeln sind das rund 13,2 Mio. Credits, also etwa 65.900 € im Monat.
-- **15-Minuten-Aggregate**, eine Zeile pro Signal mit Minimum, Maximum und Mittelwert: 10,4 Mio. Zeilen, 36.288 Credits, etwa 181 € im Monat.
+```kennzahlen
+65.900 € | im Monat für Rohwerte im Sekundentakt: 9,3 Milliarden Zeilen, selbst mit Mengenstaffeln rund 13,2 Mio. Credits
+181 € | im Monat für 15-Minuten-Aggregate mit Minimum, Maximum und Mittelwert pro Signal: 10,4 Mio. Zeilen, 36.288 Credits
+quelle: Flex Credits Rate Card vom 31. August 2026 und Agentforce-Preisseite (500 € je 100.000 Credits), Mengen als Annahme
+```
 
-Für Zeitreihen, die schon in einem Data Lake liegen, wirbt Salesforce mit Zero-Copy-Zugriff. Die Hilfe rechnet Federation nach Datensätzen ab, die aus der Quelle gelesen werden, und ich habe keine passende Position in der Rate Card gefunden. Lassen Sie sich auch diesen Satz schriftlich geben. Das Grounding von Agenten auf Betriebsanleitungen ist ein eigener Kostenblock, beschrieben in [Data 360 Kosten für KI-Agenten](../data-360-kosten-fuer-ki-agenten/).
+Für Zeitreihen, die schon in einem Data Lake liegen, wirbt Salesforce mit Zero-Copy-Zugriff. Die Hilfe rechnet Federation nach Datensätzen ab, die aus der Quelle gelesen werden, und ich habe keine passende Position in der Rate Card gefunden.
+
+```hinweis offen
+Für die Bulk-Variante (Batch Data Pipeline) und für Federation zeigt die Rate Card keine eigene Position. Fragen Sie Ihren Account Executive, welche Position jeweils gilt, und lassen Sie sich beide Sätze schriftlich geben.
+```
+
+Das Grounding von Agenten auf Betriebsanleitungen ist ein eigener Kostenblock, beschrieben in [Data 360 Kosten für KI-Agenten](../data-360-kosten-fuer-ki-agenten/).
 
 Rohe Zeitreihen gehören in die IoT-Plattform oder den Historian, den der Maschinenbauer ohnehin betreibt. Salesforce braucht Zähler, Aggregate und Schwellwertereignisse, denn genau die lösen eine Work Order aus.
 

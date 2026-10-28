@@ -80,7 +80,20 @@ Für neue Shops würde ich jeden SAP-Aufruf als Extension bauen. Registrierung u
 
 Sendet der Händler die Bestellung ab, legt B2B Commerce in Salesforce einen Auftrag und eine Order Summary an. Die Order Summary hat ein Feld `OrderLifeCycleType`. Laut [Developer Guide](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-import-export-managed-unmanaged.html) kennzeichnet "unmanaged" eine von B2B Commerce angelegte Summary, deren Lebenszyklus in einem externen System läuft, und Änderungen dort "must be reflected in Salesforce".
 
-Mit SAP ist das der Normalfall. Der Auftrag geht raus, SAP legt den Kundenauftrag an, und die Schnittstelle schreibt SAP-Auftragsnummer, bestätigte Termine, Lieferungen und Rechnungen zurück. Nutzer mit der Berechtigung B2B Commerce Integrator User oder Edit Unmanaged Order Summaries dürfen diese Summaries aktualisieren. Wem der Auftrag gehören sollte und wann Salesforce Order Management stattdessen sinnvoll ist, steht in [Shop-Bestellungen ins ERP](../shop-bestellungen-erp-auftrag/).
+Mit SAP ist das der Normalfall. Der Auftrag geht raus, SAP legt den Kundenauftrag an, und die Schnittstelle schreibt den Status zurück:
+
+```ablauf
+sf: Checkout, Order Summary
+erp: Kredit und Preis, Kundenauftrag, Lieferung und Rechnung
+Checkout --live abfragen--> Kredit und Preis
+Checkout --> Order Summary
+Order Summary --Auftrag raus--> Kundenauftrag
+Kundenauftrag --> Lieferung und Rechnung
+Kundenauftrag ..Nummer, Termine..> Order Summary
+Lieferung und Rechnung ..Status zurück..> Order Summary
+```
+
+Nutzer mit der Berechtigung B2B Commerce Integrator User oder Edit Unmanaged Order Summaries dürfen diese Summaries aktualisieren. Wem der Auftrag gehören sollte und wann Salesforce Order Management stattdessen sinnvoll ist, steht in [Shop-Bestellungen ins ERP](../shop-bestellungen-erp-auftrag/).
 
 Planen Sie den Rückweg so sorgfältig wie den Hinweg. Ein Händler, der drei Tage lang "Bestellung eingegangen" sieht, ruft im Innendienst an, und der Shop hat nichts gespart.
 
@@ -90,7 +103,9 @@ MuleSoft bietet einen [Accelerator for SAP](https://anypoint.mulesoft.com/exchan
 
 Direkte Apex-Callouts mit Named Credentials reichen für einen Shop mit zwei oder drei Live-Abfragen und einem Auftragsexport. Eine Middleware lohnt sich, wenn dieselben SAP-Daten auch Field Service, Manufacturing Cloud oder Agentforce-Agenten versorgen. Dann bedient eine Auftragsstatus-API den Shop, den [Auftragsstatus-Agenten](../agentforce-sap-auftragsstatus/) und den Service. Warum Agenten solche APIs mitnutzen sollten, statt eigene zu bekommen, erklärt die KI-Masterclass im Kapitel [MCP und Schnittstellen](../../masterclass/ki-salesforce/mcp-und-schnittstellen/).
 
+```hinweis achtung
 Eine Frist gilt für jede Batch-Schnittstelle. Salesforce schaltet den [OAuth Username-Password Flow](https://help.salesforce.com/s/articleView?id=release-notes.rn_security_unpw_flow_retirement.htm&language=en_US&release=262&type=5) für Connected Apps am 20. Februar 2027 ab. Ein nächtlicher Produktimport, der sich mit Passwort anmeldet, läuft dann nicht mehr, oft ohne dass es jemand merkt. Wie Sie diese Schnittstellen finden und umstellen, steht in [Passwort-Integrationen enden 2027](../salesforce-passwort-integrationen-2027/).
+```
 
 ## Ein typisches Szenario, als Annahme
 

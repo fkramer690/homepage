@@ -85,7 +85,9 @@ Am besten, bevor der erste Partner startet. Diese Regeln haben sich bewährt:
 6. **Secrets bleiben im Tresor des Kunden.** Integrationsuser und Zertifikate gehören dem Kunden und werden beim Partnerwechsel erneuert.
 7. **Im Vertrag festhalten.** Die Leistungsbeschreibung regelt, dass alle Arbeitsergebnisse, auch Code, Tickets und Dokumentation, in den Tools des Kunden entstehen.
 
+```hinweis tipp
 Besitzt ein Partner bereits einige der Tools, planen Sie den Umzug früh und in einer ruhigen Phase, nicht während eines Ausstiegs. Ein Repository lässt sich mit voller Historie an einem Tag umziehen. Jira und Miro brauchen mehr Planung, sind aber jetzt immer noch deutlich günstiger umzuziehen als später.
+```
 
 ## Wo fangen Sie an?
 

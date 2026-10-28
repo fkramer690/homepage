@@ -26,6 +26,8 @@ All chapters of all masterclasses live in the one `masterclass` collection (`src
 4. Write the chapters with `course: <id>` and their own translationKeys.
 5. Never move a published masterclass again without redirect pages (see "Old URLs" below).
 
+Chapters use the content blocks from [content-blocks.md](content-blocks.md) under the same rules as articles (see "Content blocks" in the blog guidelines); a chapter condenses, so prefer timelines, flow diagrams, steps and pro-contra over notes.
+
 # Product masterclasses (Manufacturing Cloud, Revenue Cloud, B2B Commerce, Field Service)
 
 Four masterclasses with a hub and five chapters each, same frontmatter, body rules and build check as the AI masterclass below:

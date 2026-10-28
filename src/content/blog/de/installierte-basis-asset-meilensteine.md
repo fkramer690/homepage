@@ -65,7 +65,9 @@ Selten nur eine Firma. Der Hersteller baut sie, ein Händler verkauft sie, ein K
 - **Asset Account Participant** verbindet einen Account mit einem Asset. Die [Referenz](https://developer.salesforce.com/docs/atlas.en-us.246.0.mfg_api_devguide.meta/mfg_api_devguide/sforce_api_objects_assetaccountparticipant.htm) nennt „Customer“ als Rolle.
 - **Asset Contact Participant** verbindet einen Kontakt mit einem Asset. Die [Referenz](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/sforce_api_objects_assetcontactparticipant.htm) nennt „Service Manager“ als Rolle.
 
+```hinweis achtung
 Beide Rollenfelder sind eingeschränkte Auswahllisten mit sehr kurzen Wertelisten in der Dokumentation. Prüfen Sie in einer Sandbox, ob Sie Rollen wie Händler oder Servicepartner ergänzen können, bevor Sie die Freigaben im Portal darauf aufbauen.
+```
 
 Für Kunden mit vielen Maschinen gibt es Flotten. Die [Referenz zu Fleet](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/sforce_api_objects_fleet.htm) beschreibt „a group of assets used in commercial, service, or transport operations in the manufacturing industry“, mit Owner-Account, Standort, übergeordneter Flotte, Status und den Typen Commercial, Employee, Executive und Material. Der [Fleet-Asset-Datensatz](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/sforce_api_objects_fleetasset.htm) verbindet eine Maschine mit Start- und Enddatum mit der Flotte und hält ihre Nutzung mit Maßeinheit fest. Das passt zu einem Vermieter oder einem Logistikkunden mit Gabelstaplern an mehreren Standorten.
 
@@ -99,11 +101,18 @@ Zwei Add-ons kommen hier oft auf den Tisch. Laut [Add-on-Seite](https://www.sale
 
 ## Wo fangen Sie an?
 
-1. **Lücken zählen.** Nehmen Sie die Garantieanträge des Vorjahres und prüfen Sie, wie viele Seriennummern als Asset mit Betreiber und Startdatum existieren.
-2. **Regel für den Garantiebeginn schreiben.** Welcher Meilenstein startet die Garantie, und was gilt, wenn er fehlt.
-3. **Owner pro Feld festlegen.** ERP, Händler oder Service, einer pro Feld.
-4. **Meilensteintypen definieren.** Lieferung, Registrierung, Installation, Weiterverkauf, Verschrottung: nur die, die jemand wirklich pflegt.
-5. **Registrierung zur Pflicht machen** im Händlerprozess.
+```schritte
+Lücken zählen
+  Nehmen Sie die Garantieanträge des Vorjahres und prüfen Sie, wie viele Seriennummern als Asset mit Betreiber und Startdatum existieren.
+Regel für den Garantiebeginn schreiben
+  Welcher Meilenstein startet die Garantie, und was gilt, wenn er fehlt.
+Owner pro Feld festlegen
+  ERP, Händler oder Service, einer pro Feld.
+Meilensteintypen definieren
+  Lieferung, Registrierung, Installation, Weiterverkauf, Verschrottung: nur die, die jemand wirklich pflegt.
+Registrierung zur Pflicht machen
+  Als festen Schritt im Händlerprozess.
+```
 
 Das ganze Bild zum After-Sales steht im [Kapitel Garantie und After-Sales](../../masterclass/manufacturing-cloud/garantie-und-after-sales/) der Masterclass Manufacturing Cloud.
 

@@ -85,7 +85,21 @@ Der aktivierte Auftrag gelangt nach [Trailhead](https://trailhead.salesforce.com
 
 Die Übergabe an SAP gehört in einen Callout früh im Plan, weil Produktion, Lieferung und Rechnung davon abhängen. Drei Regeln würde ich festschreiben: Die Salesforce-Auftrags-ID geht als Referenz mit, damit ein erneuter Versuch keinen zweiten SAP-Auftrag anlegt. Die SAP-Auftragsnummer kommt zurück. Und nach der Übergabe führt SAP Lieferung, Termine und Rechnung, Salesforce zeigt sie nur an. Lehnt SAP ab, etwa wegen fehlendem Warenempfänger oder Kreditsperre, wird der Schritt zum Fallout: Er wird so oft wiederholt wie eingestellt und landet dann in einer Queue, die eine Person im Auftragsmanagement abarbeitet.
 
-DRO ist laut Preisseite ein Add-on zu Revenue Cloud Advanced mit „Freemium access available“; was das umfasst, steht dort nicht, also fragen Sie schriftlich. Geht der Auftrag in einem Stück an SAP und passiert danach in Salesforce nichts mehr, reicht eine einfache Schnittstelle bei Aktivierung. Details und Kriterien stehen in [Auftrag an SAP übergeben](../../../blog/revenue-cloud-auftragsorchestrierung-sap/). Welches System welchen Schritt führt, behandelt [Revenue Cloud und SAP: Wer führt was?](../../../blog/revenue-cloud-sap-quote-to-cash-aufteilung/), und beim Entwurf der Schnittstelle unterstütze ich im Rahmen von [Salesforce-Schnittstellen](../../../leistungen/salesforce-schnittstellen/).
+```ablauf
+sf: Aktivierter Auftrag, DRO, Fallout-Queue
+erp: SAP-Auftrag, Lieferung und Rechnung
+Aktivierter Auftrag --Flow--> DRO
+DRO --Callout--> SAP-Auftrag
+SAP-Auftrag ..SAP-Nummer zurück..> DRO
+DRO ..Ablehnung..> Fallout-Queue
+SAP-Auftrag --> Lieferung und Rechnung
+```
+
+Geht der Auftrag in einem Stück an SAP und passiert danach in Salesforce nichts mehr, reicht eine einfache Schnittstelle bei Aktivierung. Details und Kriterien stehen in [Auftrag an SAP übergeben](../../../blog/revenue-cloud-auftragsorchestrierung-sap/). Welches System welchen Schritt führt, behandelt [Revenue Cloud und SAP: Wer führt was?](../../../blog/revenue-cloud-sap-quote-to-cash-aufteilung/), und beim Entwurf der Schnittstelle unterstütze ich im Rahmen von [Salesforce-Schnittstellen](../../../leistungen/salesforce-schnittstellen/).
+
+```hinweis offen
+DRO ist laut Preisseite ein Add-on zu Revenue Cloud Advanced mit „Freemium access available“. Was das umfasst, steht dort nicht. Lassen Sie sich den Umfang schriftlich bestätigen, bevor Sie die Orchestrierung einplanen.
+```
 
 ## Was passiert nach dem Auftrag mit den Assets?
 

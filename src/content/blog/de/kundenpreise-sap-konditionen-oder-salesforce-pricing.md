@@ -39,11 +39,31 @@ Salesforce hat inzwischen sogar eine Preis-Engine, die die SAP-Konditionstechnik
 
 ## Weg A: SAP rechnet, Salesforce fragt
 
-Das Muster ist im [MuleSoft Accelerator for SAP, Use Case 3a](https://anypoint.mulesoft.com/exchange/org.mule.examples/mulesoft-accelerator-for-sap/minor/1.6/pages/Use%20case%203a%20-%20Quote-to-cash%20-%20Salesforce%20and%20SAP%20S4HANA/) beschrieben. SAP S/4HANA ist dort das führende System für Preiskonditionen. In der Variante mit Salesforce CPQ klickt der Vertrieb auf Calculate, die Integration ruft SAP über MuleSoft-APIs auf und bekommt den Nettopreis für die angefragte Menge zurück, einschließlich Staffeln und Vertragspreisen aus SAP. Eine API nutzt dafür die SAP-Auftragssimulation und prüft zusätzliche Rabatte gegen Grenzwerte, die in SAP gepflegt sind. Wird der Auftrag in Salesforce angelegt, entsteht er auch in SAP, und die SAP-Auftragsnummer kommt zurück.
+Das Muster ist im [MuleSoft Accelerator for SAP, Use Case 3a](https://anypoint.mulesoft.com/exchange/org.mule.examples/mulesoft-accelerator-for-sap/minor/1.6/pages/Use%20case%203a%20-%20Quote-to-cash%20-%20Salesforce%20and%20SAP%20S4HANA/) beschrieben. SAP S/4HANA ist dort das führende System für Preiskonditionen. In der Variante mit Salesforce CPQ klickt der Vertrieb auf Calculate, die Integration ruft SAP über MuleSoft-APIs auf und bekommt den Nettopreis für die angefragte Menge zurück, einschließlich Staffeln und Vertragspreisen aus SAP. Eine API nutzt dafür die SAP-Auftragssimulation und prüft zusätzliche Rabatte gegen Grenzwerte, die in SAP gepflegt sind. Wird der Auftrag in Salesforce angelegt, entsteht er auch in SAP:
+
+```ablauf
+sf: Angebot, Auftrag
+ext: MuleSoft-APIs
+erp: Auftragssimulation, SAP-Auftrag
+Angebot --Calculate--> MuleSoft-APIs
+MuleSoft-APIs --> Auftragssimulation
+Auftragssimulation ..Nettopreis..> Angebot
+Angebot --> Auftrag
+Auftrag --Anlage--> SAP-Auftrag
+SAP-Auftrag ..Auftragsnummer..> Auftrag
+```
 
 Der Accelerator deckt Sales Cloud und Salesforce CPQ ab, nicht Revenue Cloud. Für Revenue Cloud bauen Sie den Aufruf selbst. Salesforce dokumentiert Procedure Plans mit dem Apex-Namespace [RevSignaling](https://developer.salesforce.com/docs/atlas.en-us.revenue_lifecycle_management_dev_guide.meta/revenue_lifecycle_management_dev_guide/apex_namespace_RevSignaling.htm) als Weg, den Standardablauf der Preisfindung um eigene Logik zu erweitern. Ob ein synchroner SAP-Aufruf dort in Ihre Antwortzeiten passt, testen Sie in einem Prototyp mit echten Angebotsgrößen. Die einfachere Alternative ist ein fester Zeitpunkt, etwa eine Aktion "Preis prüfen" vor der Freigabe, statt eines Aufrufs bei jeder Neuberechnung.
 
-Stärken: Das Angebot zeigt den SAP-Preis, Angebot und Auftragsbestätigung passen zusammen, und Konditionen werden an einer Stelle gepflegt. Schwächen: Jeder Aufruf hängt an SAP und der Middleware, ein Angebot mit vielen Positionen wartet auf die Antwort, und der Preiswasserfall in Salesforce zeigt nur das Ergebnis, die Erklärung bleibt in SAP.
+```pro-contra
+pro: Stärken von Weg A
+- Das Angebot zeigt den SAP-Preis, Angebot und Auftragsbestätigung passen zusammen.
+- Konditionen werden an einer Stelle gepflegt.
+contra: Schwächen von Weg A
+- Jeder Aufruf hängt an SAP und der Middleware.
+- Ein Angebot mit vielen Positionen wartet auf die Antwort.
+- Der Preiswasserfall in Salesforce zeigt nur das Ergebnis, die Erklärung bleibt in SAP.
+```
 
 ## Weg B: Konditionen in Salesforce Pricing nachbauen
 

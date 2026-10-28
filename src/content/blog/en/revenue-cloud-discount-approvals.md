@@ -32,7 +32,10 @@ In Revenue Cloud, discount and margin approvals run on Advanced Approvals: appro
 
 Revenue Cloud is Salesforce's quote-to-cash suite on standard objects; Help and the developer guide currently call it Revenue Management. Its approval feature is Advanced Approvals. According to the [developer guide](https://developer.salesforce.com/docs/atlas.en-us.revenue_lifecycle_management_dev_guide.meta/revenue_lifecycle_management_dev_guide/advanced_approvals_overview.htm), it provides invocable actions for "intricate parallel or sequential approval chains" with "detailed audit trails". Business APIs let you preview approval levels before a record is submitted. It is available in Enterprise, Unlimited and Developer Edition orgs where Advanced Approvals is enabled.
 
+```vertiefung For admins
+title: What is Advanced Approvals built on?
 Technically it sits on the Flow approval model. Salesforce documents [Flow Approval Process and Advanced Approvals](https://developer.salesforce.com/docs/platform/data-models/guide/flow-approval-process-and-advanced-approvals.html) in one data model: stages, steps and decisions are built in Flow Builder, and each run creates approval submissions and approval work items. For you that means two things. An admin who knows Flow can read and change the approval logic. And every approval leaves records that reporting and audits can use.
+```
 
 ## How does an approval run on a quote?
 
@@ -82,7 +85,9 @@ Because an approval has a right answer. A discount is above 30 percent or it is 
 
 Salesforce Help lists an Agentforce area for Advanced Approvals with three subagents: Approval Management, Search Approval Record and Summarize Multiple Approval Work Items. That is a sensible split. The agent helps approvers find and understand their work items and helps reps track their submissions. The workflow keeps the threshold and the approver. The same idea for agents in general is in [Agent Script: why business rules don't belong in the LLM](../agent-script-deterministic-rules/).
 
+```hinweis offen
 Third-party Winter '27 summaries also mention an approval agent for reps. I could not open the Revenue Cloud release notes to confirm it, so check them before you plan with it.
+```
 
 ## What changes when you migrate approvals from CPQ?
 

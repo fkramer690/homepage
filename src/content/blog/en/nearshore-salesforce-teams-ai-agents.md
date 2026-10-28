@@ -30,13 +30,25 @@ Nearshore Salesforce teams with AI agents produce more code per developer, and t
 
 ## What changes for nearshore Salesforce teams with AI agents?
 
-In [my article on nearshore team size](../salesforce-nearshore-teams-eight-developers/) I describe what slows nearshore teams down more often than missing skills: rotation, turnover, overly senior teams and missing backing from the client. I have worked with nearshore teams in Eastern Europe and India, and those factors were the same in both regions. Coding agents such as Claude Code, Codex, Copilot or Agentforce Vibes remove none of them. They move the pressure to review, to the mix of roles, to onboarding and to access.
+In [my article on nearshore team size](../salesforce-nearshore-teams-eight-developers/) I describe what slows nearshore teams down more often than missing skills: rotation, turnover, overly senior teams and missing backing from the client. Coding agents such as Claude Code, Codex, Copilot or Agentforce Vibes remove none of them. They move the pressure to review, to the mix of roles, to onboarding and to access.
+
+```praxis
+I have worked with nearshore teams in Eastern Europe and India, and rotation, turnover, overly senior teams and missing backing from the client were the same brakes in both regions.
+```
 
 The cap of about eight developers per team and a minimum stay agreed before the first sprint stay as they are. The pod model with architect, builder-reviewer and domain lead is covered in [AI-native delivery: smaller Salesforce teams](../ai-native-delivery-smaller-salesforce-teams/). Here the focus is on a team that sits in another country and another company.
 
 ## Why does review become the bottleneck?
 
-In McKinsey's survey of 334 product and engineering leaders, respondents reported average time savings of 11.8 percent but only 6.2 percent less rework: "Speed is improving faster than quality" ([Beyond the copilot](https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/beyond-the-copilot-scaling-the-agentic-product-development-life-cycle)). The [2025 DORA report](https://cloud.google.com/blog/products/ai-machine-learning/announcing-the-2025-dora-report) warns that without strong testing, version control and fast feedback, "an increase in change volume leads to instability". Veracode measured a [56 percent security pass rate](https://www.veracode.com/news/llms-are-getting-smarter-but-not-safer-veracode-2026-genai-code-security-report-finds-ai-generated-code-security-has-stalled-at-56%25-pass-rate/) for raw AI-generated code in July 2026, and 30 percent for Java, the closest relative of Apex.
+McKinsey surveyed 334 product and engineering leaders and sums it up: "Speed is improving faster than quality" ([Beyond the copilot](https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/beyond-the-copilot-scaling-the-agentic-product-development-life-cycle)). The [2025 DORA report](https://cloud.google.com/blog/products/ai-machine-learning/announcing-the-2025-dora-report) warns that without strong testing, version control and fast feedback, "an increase in change volume leads to instability". Veracode measured the [security pass rate](https://www.veracode.com/news/llms-are-getting-smarter-but-not-safer-veracode-2026-genai-code-security-report-finds-ai-generated-code-security-has-stalled-at-56%25-pass-rate/) of raw AI-generated code in July 2026, including Java, the closest relative of Apex.
+
+```kennzahlen
+11.8 % | average time savings
+6.2 % | less rework
+56 % | security pass rate for raw AI-generated code
+30 % | security pass rate for Java
+source: McKinsey, Beyond the copilot, August 2026; Veracode GenAI Code Security Report, July 2026
+```
 
 In a nearshore team this lands on very few people. The mix I recommend, a few seniors who carry architecture and reviews plus developers who like to build, works at human writing speed. With agents, the same few seniors face more and larger pull requests. If they wave them through, defects reach your integration sandbox. If they check properly, the speed gain turns into waiting time. With a team in India the working day also starts hours before yours, so a pull request that needs your architect waits until Germany is online. This is what I would set up:
 

@@ -93,11 +93,23 @@ Die Matrix baue ich aus dem, was jemand im System tut, nicht aus der Stellenbeze
 
 ### Field Service Plus oder Service Cloud plus Dispatcher?
 
-In kleineren Serviceteams nehmen oft dieselben Leute morgens die Störungshotline an und planen nachmittags die Techniker. Mit einer Dispatcher-Lizenz verstößt das gegen die Lizenzbedingungen, auch wenn das System den Case technisch öffnen lässt. Für diese Mischrolle nennt die Preisliste Field Service Plus. Gegenüber Service Cloud Core kostet sie 35 € mehr pro Monat, und dieser Unterschied kauft das Recht zu disponieren. Trennen Sie Hotline und Disposition sauber, reichen Service Cloud für die einen und Dispatcher für die anderen.
+In kleineren Serviceteams nehmen oft dieselben Leute morgens die Störungshotline an und planen nachmittags die Techniker.
+
+```hinweis achtung
+Beides mit einer Dispatcher-Lizenz zu machen verstößt gegen die Lizenzbedingungen, auch wenn das System den Case technisch öffnen lässt.
+```
+
+Für diese Mischrolle nennt die Preisliste Field Service Plus. Gegenüber Service Cloud Core kostet sie 35 € mehr pro Monat, und dieser Unterschied kauft das Recht zu disponieren. Trennen Sie Hotline und Disposition sauber, reichen Service Cloud für die einen und Dispatcher für die anderen.
 
 ### Contractor Plus pro Nutzer oder pro Login?
 
-80 € geteilt durch 32 € ergibt 2,5. Ein Partnertechniker, der sich dreimal oder öfter im Monat anmeldet, ist mit der Nutzerlizenz günstiger, darunter gewinnt die Abrechnung pro Login. Die Preisseite verweist für loginbasierte Contractor-Lizenzen an den Vertrieb, deshalb würde ich die Zählregel ins Bestellformular schreiben lassen. Contractor-Lizenzen sind für das Personal Ihrer Servicepartner gedacht; eigene Leute darauf zu setzen, um zu sparen, würde ich nicht riskieren. Die ganze Rollenmatrix mit einer Jahresrechnung steht in [Field Service Lizenzen: Welche Rolle braucht welche?](../../../blog/field-service-lizenzen-rollen-dispatcher-techniker/).
+80 € geteilt durch 32 € ergibt 2,5. Ein Partnertechniker, der sich dreimal oder öfter im Monat anmeldet, ist mit der Nutzerlizenz günstiger, darunter gewinnt die Abrechnung pro Login.
+
+```hinweis offen
+Die Preisseite verweist für loginbasierte Contractor-Lizenzen an den Vertrieb, deshalb würde ich die Zählregel ins Bestellformular schreiben lassen.
+```
+
+Contractor-Lizenzen sind für das Personal Ihrer Servicepartner gedacht; eigene Leute darauf zu setzen, um zu sparen, würde ich nicht riskieren. Die ganze Rollenmatrix mit einer Jahresrechnung steht in [Field Service Lizenzen: Welche Rolle braucht welche?](../../../blog/field-service-lizenzen-rollen-dispatcher-techniker/).
 
 ## Welche Add-ons gibt es, und wann lohnt das Agentforce-1-Paket?
 

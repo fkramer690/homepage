@@ -104,11 +104,18 @@ Ein Refresh ersetzt die Sandbox durch eine neue Kopie der Produktion. Laut [Sale
 
 Meine Checkliste für jeden Refresh einer Stufen-Sandbox:
 
-1. **Vorher** alle Änderungen, die nur in der Sandbox stehen, committen oder bewusst verwerfen. Gearset empfiehlt außerdem, den Umgebungs-Branch vorher mit `main` abzugleichen und Pipeline-Läufe in diese Org während des Refreshs [anzuhalten](https://docs.gearset.com/en/articles/10256103-salesforce-sandbox-refresh-in-a-pipeline).
-2. **Danach** den Stand des Stufen-Branches deployen, denn die Sandbox enthält jetzt nur, was schon in Produktion ist.
-3. **Schnittstellen prüfen.** Zeigen Named Credentials und Endpunkte auf das SAP-QS-System statt auf das produktive?
-4. **Kontaktadressen, Maskierung und Seed-Daten** nachziehen, wie in [Kapitel 7 zu Daten und Konfiguration](../daten-und-konfiguration/) beschrieben.
-5. **Pipeline-Zugang neu einrichten,** falls die Authentifizierung an der alten Org hing.
+```schritte
+Vorher sichern
+  Alle Änderungen, die nur in der Sandbox stehen, committen oder bewusst verwerfen. Gearset empfiehlt außerdem, den Umgebungs-Branch vorher mit `main` abzugleichen und Pipeline-Läufe in diese Org während des Refreshs [anzuhalten](https://docs.gearset.com/en/articles/10256103-salesforce-sandbox-refresh-in-a-pipeline).
+Stufen-Branch deployen
+  Die Sandbox enthält nach dem Refresh nur, was schon in Produktion ist.
+Schnittstellen prüfen
+  Zeigen Named Credentials und Endpunkte auf das SAP-QS-System statt auf das produktive?
+Daten nachziehen
+  Kontaktadressen, Maskierung und Seed-Daten, wie in [Kapitel 7 zu Daten und Konfiguration](../daten-und-konfiguration/) beschrieben.
+Pipeline-Zugang neu einrichten
+  Falls die Authentifizierung an der alten Org hing.
+```
 
 Bei Entwickler-Sandboxes ist es einfacher: Nach dem Refresh ein Backpromote, und der Entwickler ist auf Stand. sfdx-hardis markiert frühere Läufe dann als „Before refresh“ und behandelt Deployment Actions als noch nicht ausgeführt.
 
@@ -116,7 +123,11 @@ Der Zeitpunkt eines Refreshs hat noch eine Nebenwirkung: Er entscheidet, ob eine
 
 ## Der Hotfix-Pfad
 
-Ein Fehler in Produktion kann nicht warten, bis UAT abgenommen ist. Deshalb braucht jedes Programm einen zweiten, kurzen Weg. In sfdx-hardis sieht er laut [Hotfix-Dokumentation](https://sfdx-hardis.cloudity.com/salesforce-devops-hotfixes/) so aus: Der Entwickler startet eine Story mit Ziel `preprod` in einer Sandbox mit Produktionsstand, der Pull Request geht nach `preprod` und von dort nach `main`. Wichtig: Dieser zweite Pull Request befördert alles, was seit der letzten Beförderung in `preprod` liegt, nicht nur den Hotfix. In `preprod` darf deshalb nichts Halbfertiges liegen.
+Ein Fehler in Produktion kann nicht warten, bis UAT abgenommen ist. Deshalb braucht jedes Programm einen zweiten, kurzen Weg. In sfdx-hardis sieht er laut [Hotfix-Dokumentation](https://sfdx-hardis.cloudity.com/salesforce-devops-hotfixes/) so aus: Der Entwickler startet eine Story mit Ziel `preprod` in einer Sandbox mit Produktionsstand, der Pull Request geht nach `preprod` und von dort nach `main`.
+
+```hinweis achtung
+Der zweite Pull Request nach `main` befördert alles, was seit der letzten Beförderung in `preprod` liegt, nicht nur den Hotfix. In `preprod` darf deshalb nichts Halbfertiges liegen.
+```
 
 Der kritische Schritt kommt danach. Die Stufen-Branches darunter wurden vor dem Fix abgezweigt und enthalten die alte Version derselben Metadaten. Werden sie befördert, verschwindet die Korrektur wieder aus Produktion. sfdx-hardis nennt den Rückweg [Retrofit](https://sfdx-hardis.cloudity.com/salesforce-devops-retrofit/): `main` wird in einen Branch `retrofit/from-main` gemergt und per Pull Request nach `integration` gebracht, und zwar sofort, weil ein aufgeschobener Retrofit zu einem wachsenden Konflikt wird. Gearset erzeugt nach einem Hotfix in `main` automatisch [Back-Propagation-Pull-Requests](https://docs.gearset.com/en/articles/9773388-org-syncing-with-pipelines) für die tieferen Umgebungen, befördert sie aber nicht selbst. Jemand muss sie also prüfen und mergen.
 

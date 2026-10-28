@@ -42,12 +42,20 @@ Auf der [Produktseite](https://salesforce.com/manufacturing/cloud/sales) ergänz
 
 Die [Unit zum Anlegen und Durchführen von Besuchen](https://trailhead.salesforce.com/content/learn/modules/partner-visit-management-for-dealers-and-distributors/create-and-execute-partner-visits) zeigt die Schritte im Innendienst:
 
-1. **Aufgaben.** Allgemeine Aufgaben anlegen und wiederverwendbare als Task Definitions markieren.
-2. **Kontext.** Eine Aufgabe mit einem Distributor-Account, einem Produkt, einem Auftrag oder einem Sales Agreement verknüpfen.
-3. **Assessment Indicator Definitions.** Festlegen, was gemessen wird und in welchem Datentyp.
-4. **Generic Visit KPIs.** Den Sollwert pro Aufgabe hinterlegen.
-5. **Action Plan Templates.** Aufgaben und Kennzahlen für wiederkehrende Besuche bündeln. Spontane Besuche brauchen keine Vorlage.
-6. **Besuch.** Ort, Account und Priorität eintragen, optional einen Mitarbeiter zuweisen.
+```schritte
+Aufgaben
+  Allgemeine Aufgaben anlegen und wiederverwendbare als Task Definitions markieren.
+Kontext
+  Eine Aufgabe mit einem Distributor-Account, einem Produkt, einem Auftrag oder einem Sales Agreement verknüpfen.
+Assessment Indicator Definitions
+  Festlegen, was gemessen wird und in welchem Datentyp.
+Generic Visit KPIs
+  Den Sollwert pro Aufgabe hinterlegen.
+Action Plan Templates
+  Aufgaben und Kennzahlen für wiederkehrende Besuche bündeln. Spontane Besuche brauchen keine Vorlage.
+Besuch
+  Ort, Account und Priorität eintragen, optional einen Mitarbeiter zuweisen.
+```
 
 Der Außendienst öffnet die App Partner Visits über den App Launcher, sieht die geplanten Besuche, tippt auf Get Directions und arbeitet die Aufgaben ab. Zu jeder Aufgabe zeigt die App Kontext, Kennzahlen und Sollwerte. Der Mitarbeiter trägt Werte ein, ergänzt Notizen und lädt Screenshots hoch. Sind alle Kennzahlen einer Aufgabe erfasst, ist die Aufgabe erledigt, und sind alle Aufgaben erledigt, ist der Besuch abgeschlossen. Lässt sich eine Pflichtaufgabe nicht erledigen, bricht der Mitarbeiter den Besuch ab und muss einen Grund angeben.
 
@@ -82,14 +90,19 @@ Lassen sich gemeinsame Kennzahlen nicht vereinbaren, sammelt die Funktion Daten,
 
 ## Wann reicht ein einfacher Besuchsbericht?
 
-Bei wenigen Händlern, seltenen Besuchen oder ohne feste Checkliste. Ein eigenes Objekt mit Datum, Händler, Mitarbeiter, drei Auswahllisten und einem Notizfeld oder Standard-Termine in Salesforce mit einem kurzen Seitenlayout decken das ab. Das kostet wenig, läuft mit den Lizenzen, die Ihr Vertrieb schon hat, und lässt sich leicht auswerten.
+Bei wenigen Händlern, seltenen Besuchen oder ohne feste Checkliste. Ein eigenes Objekt mit Datum, Händler, Mitarbeiter, drei Auswahllisten und einem Notizfeld oder Standard-Termine in Salesforce mit einem kurzen Seitenlayout decken das ab.
 
-Partner Visit Management lohnt sich, wenn diese Punkte zutreffen:
-
-- **Viele Händler** in festem Rhythmus, sodass Vorlagen Planungszeit sparen.
-- **Dieselben Kennzahlen** für jeden Händler, sodass Vergleiche Sinn ergeben.
-- **Kontext zählt,** etwa Sales Agreements, Anlagen oder Garantiebedingungen, die der Mitarbeiter vor Ort braucht.
-- **Die Händlerleistung wird gesteuert,** zum Beispiel als Eingang für [Händlerboni](../rebate-management-haendlerboni/) oder für das, was Händler im [Manufacturing-Cloud-Kundenportal](../manufacturing-cloud-kundenportal/) sehen.
+```pro-contra
+pro: Partner Visit Management lohnt sich bei
+- Vielen Händlern in festem Rhythmus, sodass Vorlagen Planungszeit sparen
+- Denselben Kennzahlen für jeden Händler, sodass Vergleiche Sinn ergeben
+- Kontext wie Sales Agreements, Anlagen oder Garantiebedingungen, den der Mitarbeiter vor Ort braucht
+- Gesteuerter Händlerleistung, etwa als Eingang für [Händlerboni](../rebate-management-haendlerboni/) oder für das [Manufacturing-Cloud-Kundenportal](../manufacturing-cloud-kundenportal/)
+contra: Was für den einfachen Bericht spricht
+- Er kostet wenig und läuft mit den Lizenzen, die Ihr Vertrieb schon hat
+- Er lässt sich leicht auswerten
+- Lizenz und Offline-Fähigkeit der Besuchs-App sind nicht dokumentiert
+```
 
 Das Kapitel [Händler und Partnerkanal](../../masterclass/manufacturing-cloud/haendler-und-partnerkanal/) der Masterclass zeigt, wie Besuche neben Boni, Portalen und Ship and Debit stehen. Ob man eine solche Funktion kauft oder baut, gehört zu meiner Arbeit an [Make-or-Buy und Lizenzprognose](../../leistungen/make-or-buy-lizenzen/).
 

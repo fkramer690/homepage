@@ -57,9 +57,15 @@ Assume a developer asks the agent for a trigger handler for warranty claims, inc
 - Cache writes: 115,000 tokens at $5 per million = $0.58
 - Cache reads: 30 calls of about 68,000 tokens, 2.04 million at $0.20 per million = $0.41
 - Output: 60,000 tokens at $20 per million = $1.20
-- **Total on Opus 5.5: about $2.20.** On Sonnet 5.5: about $1.10.
 
-Without caching, the 2.16 million input tokens cost $8.62 and the session about $9.80. Output is under 3 percent of the tokens and more than half the cost. Six such sessions per active day give about $13, Anthropic's average.
+```kennzahlen
+$2.20 | Session on Opus 5.5 with caching
+$1.10 | Same session on Sonnet 5.5
+$9.80 | Same session on Opus 5.5 without caching
+source: own calculation with the list prices on Anthropic's pricing page, as of 27 October 2026
+```
+
+Without caching, the 2.16 million input tokens alone cost $8.62. Output is under 3 percent of the tokens and more than half the cost. Six such sessions per active day give about $13, Anthropic's average.
 
 Two effects push this up: Claude 4.7 and later produce about 30 percent more tokens for the same text, and agent teams use about 7 times more tokens than a standard session in plan mode.
 
@@ -79,7 +85,11 @@ At an assumed blended rate of $800 per person and day, the team itself costs 8 Ã
 Agentforce Vibes is Salesforce's coding agent. Two points matter:
 
 1. **Metered Vibes uses your agents' Flex Credits.** The [Vibes pricing page](https://www.salesforce.com/agentforce/developers/vibe-coding/pricing/) says metered use "consumes the same credits used by Agentforce". A partner team on metered Vibes draws from the pool you planned for a dealer service agent, see [Flex Credits and Agentforce cost per action](../flex-credits-agentforce-cost-per-action/).
-2. **The unit is 2,000 tokens.** The [billing documentation](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-admin-billing.html) counts input and output in units of 2,000 tokens, rounded up. Opus models count as Advanced prompts at 16 credits per unit on the [rate card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf), $0.08 per unit. Salesforce does not say whether re-sent context counts in full. If it does, one Opus request with 70,000 tokens of context costs 560 credits or $2.80, more than the whole session above. I would measure a week in Digital Wallet first.
+2. **The unit is 2,000 tokens.** The [billing documentation](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-admin-billing.html) counts input and output in units of 2,000 tokens, rounded up. Opus models count as Advanced prompts at 16 credits per unit on the [rate card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf), $0.08 per unit.
+
+```hinweis offen
+Salesforce does not say whether re-sent context counts in full. If it does, one Opus request with 70,000 tokens of context costs 560 credits or $2.80, more than the whole session above. I would measure a week in Digital Wallet first.
+```
 
 The flat fee caps premium models at 2,500 requests or 36 million tokens per 30 days, and Opus is only available metered. Vibes is not available in the EU Operating Zone. In its favour, the licence sits in the client's org, and the [FAQ](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-faqs.html) says data stays within Salesforce's trust boundary. The tool choice itself is covered in [Agentforce Vibes, Claude Code or Copilot](../agentforce-vibes-claude-code-copilot/).
 

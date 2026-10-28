@@ -33,7 +33,9 @@ Whether Field Service is worth it for your field service operation at all is the
 
 ## Why do field service visits fail on missing data?
 
+```praxis
 In service projects I have seen the same pattern again and again. Technicians were on site and could not do their job. Sometimes the spare parts were not there. Sometimes the machine was not accessible. Sometimes the wrong technician stood in front of the equipment, or the right one was not able to work. Partly the customer caused it, partly the way technicians were planned.
+```
 
 Every one of these failed visits costs a trip, a technician day and usually a second appointment. And almost every one goes back to a piece of information that was missing when the visit was planned:
 
@@ -72,7 +74,11 @@ Locations are places such as warehouses, vehicles or customer sites. A service v
 
 ### Customer visiting hours
 
-Customers have their own times when a technician can reach the machine. In Field Service you record them as operating hours on the account. According to [Salesforce Help](https://help.salesforce.com/s/articleView?language=en_US&id=sf.pfs_optimization_theory_work_rules_visiting_hours.htm&type=5), each new work order takes them over as visiting hours. Scheduling only respects them when the visiting hours work rule is active in the scheduling policy. A dispatcher can override them, but then sees a rule violation.
+Customers have their own times when a technician can reach the machine. In Field Service you record them as operating hours on the account. According to [Salesforce Help](https://help.salesforce.com/s/articleView?language=en_US&id=sf.pfs_optimization_theory_work_rules_visiting_hours.htm&type=5), each new work order takes them over as visiting hours.
+
+```hinweis achtung
+Scheduling only respects visiting hours when the visiting hours work rule is active in the scheduling policy. A dispatcher can override them, but then sees a rule violation.
+```
 
 Opening hours do not solve every access problem. When a machine has to be shut down for maintenance, the visit needs to be agreed with the customer. How to handle that in scheduling belongs in the next part of the series.
 

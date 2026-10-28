@@ -40,14 +40,22 @@ Price protection is the second use case. Salesforce describes it as protecting p
 
 The [Trailhead unit on the lifecycle](https://trailhead.salesforce.com/content/learn/modules/ship-and-debit-process-management/explore-the-ship-and-debit-lifecycle) describes six steps:
 
-1. **Prepare the org.** The admin enables the features and sets up partner collaboration through Experience Cloud.
-2. **Design the programme.** The channel manager defines special pricing terms, eligibility and claim requirements, then enrols partners and eligible end customers.
-3. **Sell.** The distributor sells at the special price.
-4. **Submit the claim.** A claim clerk at the distributor submits it through the partner portal, with invoices or purchase orders as proof of sale.
-5. **Validate.** Automated checks compare the claim with programme rules, special pricing terms and transaction data. They flag duplicates, wrong quantities and ineligible transactions. Flows handle submission and approval, the Data Processing Engine handles large volumes.
-6. **Settle.** Finance reviews, adjusts and reimburses. The Transaction Journal records approved payouts for audit.
+```schritte
+Prepare the org | Admin
+  Enable the features and set up partner collaboration through Experience Cloud.
+Design the programme | Channel manager
+  Define special pricing terms, eligibility and claim requirements, then enrol partners and eligible end customers.
+Sell | Distributor
+  The distributor sells at the special price.
+Submit the claim | Claim clerk at the distributor
+  Submission through the partner portal, with invoices or purchase orders as proof of sale.
+Validate | Automated
+  Checks compare the claim with programme rules, special pricing terms and transaction data and flag duplicates, wrong quantities and ineligible transactions.
+Settle | Finance
+  Review, adjust and reimburse. The Transaction Journal records approved payouts for audit.
+```
 
-The core object is the rebate partner special pricing term. It holds the special price, the reference price, the reimbursable difference, quantity thresholds, eligibility criteria and products. A claim that passes all checks gets the status System Processed. The first unit also names CRM Analytics dashboards and predefined workflows for claim validation, and lists Business Rules Engine as a prerequisite module.
+Flows handle submission and approval, the Data Processing Engine handles large volumes. The core object is the rebate partner special pricing term. It holds the special price, the reference price, the reimbursable difference, quantity thresholds, eligibility criteria and products. A claim that passes all checks gets the status System Processed. The first unit also names CRM Analytics dashboards and predefined workflows for claim validation, and lists Business Rules Engine as a prerequisite module.
 
 Payment itself stays where it is today. Salesforce calculates and approves, the credit note is booked in the ERP. That is the same split as for [rebate management](../rebate-management-dealer-rebates/), and the interface carrying approved amounts to SAP should be planned with it.
 
@@ -61,7 +69,11 @@ Salesforce publishes two different views:
 | [Channel Revenue Management pricing](https://www.salesforce.com/sales/channel-revenue-management/pricing/) | No price, request a quote. Requires a Sales Cloud or CRM licence. Includes 10 channel manager admin users, channel inventory tracking, deal and design registration, rebate, ship and debit and price protection management. Partner access, additional users and payouts available for purchase |
 | [Experience Cloud add-on page](https://salesforce.com/manufacturing/cloud/experience-cloud) | Rebate Management "from $75", without a unit |
 
-So the $30,000 covers the add-on for the org, and partner access for distributors comes on top. The Manufacturing Cloud add-ons page lists Partner Community for Manufacturing at $20 per login or $50 per member and month. Whether payouts are counted and how many are included, the pages do not say. The $75 rebate management listing does not fit the $30,000 figure. Ask Salesforce which of these applies to your contract, and whether rebate management alone is already part of your edition.
+So the $30,000 covers the add-on for the org, and partner access for distributors comes on top. The Manufacturing Cloud add-ons page lists Partner Community for Manufacturing at $20 per login or $50 per member and month. The $75 rebate management listing does not fit the $30,000 figure.
+
+```hinweis offen
+Whether payouts are counted and how many are included, the pages do not say. Get Salesforce to state in writing which price applies to your contract and whether rebate management alone is already part of your edition.
+```
 
 How I would turn that into a five-year comparison against the current process is described under [make-or-buy and licence forecasts](../../services/make-or-buy-licences/).
 

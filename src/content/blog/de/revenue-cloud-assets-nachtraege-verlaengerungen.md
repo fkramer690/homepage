@@ -37,15 +37,22 @@ Salesforce nennt das lifecycle-managed Assets. Neben den klassischen Feldern wie
 - **Asset Action:** laut [Objektreferenz](https://developer.salesforce.com/docs/atlas.en-us.264.0.object_reference.meta/object_reference/sforce_api_objects_assetaction.htm) eine Änderung an einem lifecycle-managed Asset. Trailhead zeigt Geschäftskategorien wie Upsells, Renewals und Cancellations.
 - **Asset State Period:** laut [Objektreferenz](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_assetstateperiod.htm) ein Zeitraum, in dem ein Asset dieselbe Menge, denselben Betrag und denselben monatlich wiederkehrenden Umsatz hat. Nachträge und Verlängerungen fügen einen neuen Zeitraum hinzu.
 
-Die Felder beider Objekte lassen sich nicht bearbeiten. Die Historie entsteht aus Angeboten und Aufträgen oder über die [Asset-Lifecycle-APIs](https://developer.salesforce.com/docs/atlas.en-us.chatterapi.meta/chatterapi/features_asset_lifecycle_use_cases.htm). Eine Schnittstelle aus SAP sollte Mengen an diesen Assets deshalb nie überschreiben. Eine Mengenänderung ist eine kaufmännische Änderung und gehört in Angebot und Auftrag.
+Die Felder beider Objekte lassen sich nicht bearbeiten. Die Historie entsteht aus Angeboten und Aufträgen oder über die [Asset-Lifecycle-APIs](https://developer.salesforce.com/docs/atlas.en-us.chatterapi.meta/chatterapi/features_asset_lifecycle_use_cases.htm).
+
+```hinweis achtung
+Eine Schnittstelle aus SAP sollte Mengen an lifecycle-managed Assets nie überschreiben. Eine Mengenänderung ist eine kaufmännische Änderung und gehört in Angebot und Auftrag.
+```
 
 ## Wie funktioniert ein Nachtrag?
 
 Jeder Nachtrag ist ein Angebot, und aus jedem Angebot wird ein Auftrag. Das Trailhead-Beispiel: Ein Kunde hat fünf Lizenzen und braucht acht weitere. Der Vertrieb wählt das Asset, klickt auf Amend und setzt ein Nachtragsdatum, also den Tag, ab dem die Änderung gilt. Revenue Cloud legt ein Nachtragsangebot mit drei Mengen an:
 
-- **Startmenge:** was der Kunde heute hat, 5.
-- **Menge:** das Delta, +8 zum Erhöhen oder eine negative Zahl wie -3 zum Reduzieren.
-- **Endmenge:** das Ergebnis, 13.
+```kennzahlen
+5 | Startmenge: was der Kunde heute hat
++8 | Menge: das Delta, zum Reduzieren eine negative Zahl wie -3
+13 | Endmenge: das Ergebnis
+quelle: Trailhead, Manage Customer Asset Amendments (Asset Lifecycle Management with Revenue Cloud)
+```
 
 Aus dem Angebot entsteht ein Auftrag, der aktiviert wird. Das Asset erhält eine neue Asset Action mit der Geschäftskategorie Upsells und eine neue State Period mit der höheren Menge ab dem Nachtragsdatum.
 

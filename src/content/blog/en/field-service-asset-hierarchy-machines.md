@@ -77,6 +77,14 @@ Warranty claims on the installed base belong to Manufacturing Cloud and are cove
 
 Each level looks cheap when the data is loaded once. It costs later, in three places:
 
+
+```kennzahlen
+2,600 | Assets per maintenance plan as a practical limit
+1,300 | Assets per plan with two maintenance work rules per asset
+500 | Assets above which the tree view no longer shows the hierarchy
+source: Salesforce Help, Field Service limits
+```
+
 - **Maintenance plans.** Help gives a practical limit of 2,600 assets per plan, and less than 1,300 with two maintenance work rules per asset. If every component is a maintenance asset, plans fill up fast.
 - **The tree view.** Above 500 assets the hierarchy can no longer be displayed in the tree grid. A line with 900 parts as assets is then unreadable for the back office.
 - **The mobile app.** The technician's device loads the records belonging to their jobs. In my view, every additional record per machine adds to load time and to the data that has to stay in step offline, so I would rather leave a part in PLM than carry it onto every tablet.

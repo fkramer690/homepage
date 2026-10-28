@@ -65,7 +65,14 @@ Das Testlevel legt fest, welche Apex-Tests ein Deployment ausführt. Die [CLI-Re
 | `RunAllTestsInOrg` | zusätzlich die Tests installierter Pakete | selten sinnvoll |
 | `RunRelevantTests` (Beta) | nur Tests, die zu den deployten Dateien passen | in einer Integrations-Sandbox ausprobieren |
 
-`RunRelevantTests` ist mit Spring '26 gekommen. Die Plattform wählt die Tests laut [Salesforce-Blog](https://www.salesforce.com/blog/faster-deployment-test-runs/) über den Abhängigkeitsgraphen zur Kompilierzeit aus und kann deshalb Abhängigkeiten übersehen, die erst zur Laufzeit entstehen, etwa über Dependency Injection. Dafür gibt es zwei Annotationen: `@IsTest(testFor=...)` bindet eine Testklasse an bestimmte Klassen, `@IsTest(critical=true)` lässt sie bei jedem Deployment laufen. Auch im [Metadata API Developer Guide zu Winter '27](https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_deploy_run_relevant_tests.htm) ist die Funktion noch als Beta markiert, die 75 Prozent gelten pro Klasse und Trigger. Der Blog sagt deutlich, dass sie noch nicht in Produktions-Pipelines gehört. Daran würde ich mich halten.
+`RunRelevantTests` ist mit Spring '26 gekommen. Im [Metadata API Developer Guide zu Winter '27](https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_deploy_run_relevant_tests.htm) ist die Funktion noch als Beta markiert, die 75 Prozent gelten pro Klasse und Trigger. Der Salesforce-Blog sagt deutlich, dass sie noch nicht in Produktions-Pipelines gehört. Daran würde ich mich halten.
+
+```vertiefung Für Entwickler
+titel: Wie wählt RunRelevantTests die Tests aus?
+Die Plattform wählt die Tests laut [Salesforce-Blog](https://www.salesforce.com/blog/faster-deployment-test-runs/) über den Abhängigkeitsgraphen zur Kompilierzeit aus und kann deshalb Abhängigkeiten übersehen, die erst zur Laufzeit entstehen, etwa über Dependency Injection.
+
+Dafür gibt es zwei Annotationen: `@IsTest(testFor=...)` bindet eine Testklasse an bestimmte Klassen, `@IsTest(critical=true)` lässt sie bei jedem Deployment laufen.
+```
 
 sfdx-hardis kennt zusätzlich `RunRepositoryTests`, das alle Testklassen aus dem Repository erkennt und ausführt. Das hilft, wenn in der Org alte Tests liegen, die nicht im Repository verwaltet werden. Warum 75 Prozent Abdeckung nur die Untergrenze sind, behandelt [Kapitel 6](../qualitaet-tests-reviews/).
 
@@ -103,7 +110,9 @@ Meine Regel: Ein gelöschtes Feld löscht auch seine Daten. Nehmen Sie ein Feld 
 
 Die Pipeline braucht für jede Org einen Login, und der darf kein Passwort sein. Der [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/platform/sfdx-dev/guide/sfdx-dev-auth-jwt-flow.html) beschreibt dafür den JWT Bearer Flow: Die Pipeline signiert ein Token mit einem privaten Schlüssel, Salesforce prüft es mit dem Zertifikat einer External Client App. Für einen Dev Hub, der Scratch Orgs oder Sandboxes anlegt, braucht es laut Guide eine Connected App. Der Befehl lautet `sf org login jwt` mit Client-ID, Schlüsseldatei und Benutzername.
 
-Das ist mehr als Stil. Der OAuth Username-Password Flow endet am 20. Februar 2027; wer seine Pipeline noch mit Benutzer, Passwort und Security Token anmeldet, findet die Details in [Passwort-Integrationen enden 2027](../../../blog/salesforce-passwort-integrationen-2027/).
+```hinweis achtung
+Der OAuth Username-Password Flow endet am 20. Februar 2027. Wer seine Pipeline noch mit Benutzer, Passwort und Security Token anmeldet, findet die Details in [Passwort-Integrationen enden 2027](../../../blog/salesforce-passwort-integrationen-2027/).
+```
 
 sfdx-hardis richtet das mit [`hardis:project:configure:auth`](https://sfdx-hardis.cloudity.com/hardis/project/configure/auth/) ein: Der Befehl legt eine External Client App mit JWT Bearer Flow und Zertifikat an, pro Branch. Das Zertifikat liegt verschlüsselt im Repository oder auf Wunsch in einem Passwortmanager, Client-ID und Entschlüsselungsschlüssel liegen als Variablen auf der Git-Plattform. Bei kommerziellen Plattformen autorisieren Sie die Orgs in der Plattform des Herstellers. Fragen Sie dort, welcher Flow dahintersteht und wie die Verbindung beim Kündigen getrennt wird.
 

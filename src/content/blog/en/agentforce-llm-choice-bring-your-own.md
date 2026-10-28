@@ -52,7 +52,15 @@ I would pin a model even when the default works. Salesforce can change the mix, 
 
 ## What does the model tier cost?
 
-Salesforce assigns every managed model to a usage tier on its [model support page](https://help.salesforce.com/s/articleView?id=ai.generative_ai_large_language_model_support.htm&type=5). The [rate card updated as of 31 August 2026](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) prices a prompt at 2 Flex Credits on Basic, 4 on Standard and 16 on Advanced. Prompts to your own model are "Starter Prompts" at 2 credits. According to the [help article on billable usage](https://help.salesforce.com/s/articleView?language=en_US&id=ai.usage_flex_credits.htm&type=5), usage is counted in chunks of 2,000 tokens, rounded up. At the [list price of $500 per 100,000 credits](https://www.salesforce.com/agentforce/pricing/), one Advanced prompt costs $0.08.
+Salesforce assigns every managed model to a usage tier on its [model support page](https://help.salesforce.com/s/articleView?id=ai.generative_ai_large_language_model_support.htm&type=5). The [rate card updated as of 31 August 2026](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) prices a prompt by tier and calls prompts to your own model "Starter Prompts". According to the [help article on billable usage](https://help.salesforce.com/s/articleView?language=en_US&id=ai.usage_flex_credits.htm&type=5), usage is counted in chunks of 2,000 tokens, rounded up. At the [list price of $500 per 100,000 credits](https://www.salesforce.com/agentforce/pricing/), one Advanced prompt costs $0.08.
+
+```kennzahlen
+2 | Flex Credits per prompt on Basic
+4 | Flex Credits per prompt on Standard
+16 | Flex Credits per prompt on Advanced
+2 | Flex Credits per Starter Prompt to your own model
+source: Flex Credits rate card, updated as of 31 August 2026
+```
 
 The tested models fall into different tiers: Gemini 3.5 Flash is Basic, Claude Haiku 4.5 and GPT 4.1 are Standard. Every Claude Opus model and GPT 5.6 Sol are Advanced, so moving a subagent from Haiku to Opus multiplies its prompt cost by four.
 
@@ -62,7 +70,11 @@ That help article does not say whether the reasoning engine's own LLM calls are 
 
 BYOLLM connects a model from your own Bedrock, Azure OpenAI, OpenAI or Vertex AI account with your own credentials. The [LLM Open Connector](https://developer.salesforce.com/blogs/2024/10/build-generative-ai-solutions-with-llm-open-connector) accepts any model behind a REST endpoint that follows Salesforce's specification, including one you host. Your team then runs that endpoint. Three points decide whether it is worth it.
 
-**Where it is documented.** The Supported Models page says custom actions that run prompt templates, Apex or the Models API "can use any Salesforce-managed or BYO model". The Agent Script guide only refers to models on the supported list and says nothing about BYO models for reasoning. Until Salesforce confirms otherwise in writing, I plan BYOLLM for template-based actions, such as a case summary, and keep the agent's reasoning on a managed model.
+**Where it is documented.** The Supported Models page says custom actions that run prompt templates, Apex or the Models API "can use any Salesforce-managed or BYO model". The Agent Script guide only refers to models on the supported list and says nothing about BYO models for reasoning.
+
+```hinweis offen
+Whether a BYOLLM model may also run the agent's reasoning is something to get Salesforce to confirm in writing. Until then, I plan BYOLLM for template-based actions, such as a case summary, and keep the agent's reasoning on a managed model.
+```
 
 **Who is responsible for the data.** Trust Layer features are "fully supported" for BYOLLM, according to the Supported Models page. The contract side changes. Salesforce's [Agentforce privacy FAQ](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/documents/legal/Privacy/agentforce-privacy-FAQ.pdf) (June 2025) states that its answers "do not apply to BYO LLM", that the provider is "a Non-SFDC Application" and that the customer must comply "with its own contract with the LLM provider". Retention, training use and region then follow your Azure or AWS agreement. If your IT has already negotiated that agreement, this can be the reason to use BYOLLM; for everyone else it is extra contract work. That is my reading of the documents, not legal advice.
 

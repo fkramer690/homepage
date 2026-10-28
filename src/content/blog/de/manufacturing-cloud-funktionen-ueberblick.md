@@ -65,7 +65,11 @@ Hier werden die Listen unübersichtlich. Trailhead ordnet die Kanalfunktionen un
 
 Das [Trailhead-Modul zu Ship and Debit](https://trailhead.salesforce.com/content/learn/modules/ship-and-debit-process-management/get-to-know-ship-and-debit) ist eindeutig: „Ship and Debit Process Management is a feature within Channel Revenue Management.“ Und die [Add-on-Seite](https://www.salesforce.com/manufacturing/cloud/pricing/add-ons/) verkauft Channel Revenue Management for Manufacturing separat, für 30.000 $ pro Org und Jahr. Eine Funktion auf der Liste von Agentforce Manufacturing ist im Angebot also ein Add-on.
 
-Partner Visit Management ist der umgekehrte Fall. Es hat einen eigenen Schalter in den Manufacturing-Einstellungen, neben Partner Lead Management und Partner Performance Management, steht bei Trailhead aber unter der Überschrift Channel Revenue Management. Welche Lizenz es abdeckt, habe ich nirgends schriftlich gefunden. Fragen Sie nach, bevor Sie Händlerbesuche darauf planen.
+Partner Visit Management ist der umgekehrte Fall. Es hat einen eigenen Schalter in den Manufacturing-Einstellungen, neben Partner Lead Management und Partner Performance Management, steht bei Trailhead aber unter der Überschrift Channel Revenue Management. Welche Lizenz es abdeckt, habe ich nirgends schriftlich gefunden.
+
+```hinweis offen
+Klären Sie, ob Partner Visit Management mit Ihrer Edition abgedeckt ist oder Channel Revenue Management braucht, bevor Sie Händlerbesuche darauf planen.
+```
 
 Rebate Management selbst beschreibe ich in [Teil 5 der Serie](../rebate-management-haendlerboni/). Ob es zusätzliche Lizenzen braucht, ist ein weiterer offener Punkt; die Preise, die sich widersprechen, stehen in [Manufacturing Cloud Add-ons: was extra kostet](../manufacturing-cloud-zusatzkosten-add-ons/).
 

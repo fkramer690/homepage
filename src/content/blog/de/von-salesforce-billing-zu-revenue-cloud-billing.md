@@ -51,11 +51,14 @@ Das Paket hat laut seinem [Developer Guide](https://developer.salesforce.com/doc
 | Rechtseinheit | `blng__LegalEntity__c` | LegalEntity |
 | Zahlungen | `blng__Payment__c`, `blng__PaymentGateway__c` | Objekte von Salesforce Payments plus PaymentLineInvoiceLine |
 
-Drei Unterschiede wiegen schwerer als die Namen:
+Zwei Unterschiede wiegen schwerer als die Namen, ein dritter Punkt ist offen:
 
 - **Abrechnungspläne entstehen aus Aufträgen.** Laut [Billing-Übersicht](https://developer.salesforce.com/docs/revenue/revenue-management/guide/billing-overview.html) erzeugt Revenue Cloud Abrechnungspläne über den Context Service und daraus die Rechnungen. Ein alter Plan wird also aus einem migrierten Asset und Auftrag neu aufgebaut.
 - **Steuer und Zahlungen sind anders angebunden.** Steuer läuft über einen TaxEngine-Datensatz mit Provider-Adapter und Named Credential. Zahlungen nutzen Standardobjekte von Salesforce Payments mit einem externen Zahlungsanbieter. Steuer- und Zahlungsanbieter müssen die neue Anbindung bestätigen.
-- **Umsatzrealisierung.** Das Paket hat Objekte wie `blng__RevenueSchedule__c`. In der Liste der Billing-Standardobjekte habe ich kein Objekt für Umsatzpläne gefunden. Wenn Sie heute im Paket Umsätze realisieren, fragen Sie Salesforce schriftlich, wo das nach dem Wechsel passiert.
+
+```hinweis offen
+**Umsatzrealisierung.** Das Paket hat Objekte wie `blng__RevenueSchedule__c`. In der Liste der Billing-Standardobjekte habe ich kein Objekt für Umsatzpläne gefunden. Wenn Sie heute im Paket Umsätze realisieren, fragen Sie Salesforce schriftlich, wo das nach dem Wechsel passiert.
+```
 
 ## Was passiert mit offenen Rechnungen, Plänen und Zahlungen?
 
@@ -71,6 +74,15 @@ Die Salesforce-Hilfe führt Billing-Daten im [Migrationsleitfaden](https://help.
 
 Revenue Cloud Billing arbeitet mit Buchungsperioden je Rechtseinheit. Die [Deployment-Hinweise zu Billing](https://developer.salesforce.com/docs/revenue/revenue-management/guide/deployment-billing-additional-info.html) sagen, dass Buchungsperioden nur im Status Open angelegt werden können und dass eine Rechtseinheit aktiv sein muss, wenn abhängige Datensätze entstehen. Buchungssätze fließen dann von Salesforce ins ERP. Die [Produktseite zu Revenue Cloud Billing](https://www.salesforce.com/sales/revenue-cloud-billing/) beschreibt Salesforce als Nebenbuch, das Buchungssätze synchronisiert.
 
+```ablauf
+sf: Auftrag, Abrechnungsplan, Rechnung, Buchungssatz
+erp: ERP
+Auftrag --Context Service--> Abrechnungsplan
+Abrechnungsplan --Rechnungslauf--> Rechnung
+Rechnung --> Buchungssatz
+Buchungssatz --Synchronisation--> ERP
+```
+
 Am Periodenende ist das alte Nebenbuch geschlossen und mit dem ERP abgestimmt. Das neue System startet mit Eröffnungssalden, denen die Finanzabteilung zugestimmt hat. Mitten in einer Periode müssten Sie einen Monat auf zwei Nebenbücher aufteilen, und die Abstimmung wird doppelt so schwer.
 
 Rechnungsnummern brauchen dieselbe Sorgfalt. Revenue Cloud Billing hat Objekte für Nummernkreise (SequencePolicy, SequenceGapReconciliation). Lassen Sie sich vom Partner zeigen, dass sie Ihre Rechnungsnummern abdecken. Setzen Sie die Startnummer so, dass neue Rechnungen den Nummernkreis ohne Überschneidung fortsetzen, und stimmen Sie das Format mit Ihrer Steuerberatung ab.
@@ -79,11 +91,18 @@ Rechnungsnummern brauchen dieselbe Sorgfalt. Revenue Cloud Billing hat Objekte f
 
 Die Deployment-Hinweise nennen mehrere Einrichtungsschritte, die leicht übersehen werden:
 
-1. Data Pipeline ist aktiviert, bevor Billing aktiviert wird.
-2. Der Flow Order to Billing Schedule ist aus seiner Vorlage kopiert und aktiviert.
-3. Rechtseinheiten und offene Buchungsperioden sind angelegt.
-4. Abrechnungs-, Steuer- und Zahlungskonfiguration ist in der richtigen Reihenfolge aktiviert: Billing Treatment Item, Billing Treatment, Billing Policy; Tax Treatment, Tax Policy; Payment Term Item, Payment Term.
-5. Steuer-Engine und Zahlungsanbieter sind angebunden und mit echten Adressen und Beträgen getestet.
+```schritte
+Data Pipeline
+  Ist aktiviert, bevor Billing aktiviert wird.
+Flow Order to Billing Schedule
+  Ist aus seiner Vorlage kopiert und aktiviert.
+Rechtseinheiten und Perioden
+  Rechtseinheiten und offene Buchungsperioden sind angelegt.
+Konfiguration in Reihenfolge
+  Billing Treatment Item, Billing Treatment, Billing Policy; Tax Treatment, Tax Policy; Payment Term Item, Payment Term.
+Steuer und Zahlungen
+  Steuer-Engine und Zahlungsanbieter sind angebunden und mit echten Adressen und Beträgen getestet.
+```
 
 Wie diese Konfigurationsdatensätze von der Sandbox in die Produktion kommen, beschreibt [Revenue Cloud Deployments](../revenue-cloud-konfiguration-deployment/), den allgemeinen Ansatz das Kapitel der DevOps-Masterclass zu [Daten und Konfiguration](../../masterclass/devops-release-management/daten-und-konfiguration/).
 

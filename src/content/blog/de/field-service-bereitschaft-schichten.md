@@ -60,7 +60,11 @@ Schichten müssen Sie nicht einzeln anlegen. [Trailhead zu Vorlagen und Mustern]
 
 ## Warum findet eine Störung am Samstag keinen Techniker?
 
-Das ist eine typische Überraschung nach dem Go-live. Ein Kunde mit dem Vertrag "Techniker innerhalb von 24 Stunden vor Ort" meldet am Samstagmorgen eine stehende Maschine. Der Arbeitsauftrag bekommt das Entitlement, der Milestone startet, und die Planung sucht einen Kandidaten. Enden die Arbeitszeiten des Gebiets am Freitag und gibt es keine bestätigte Schicht, ist niemand verplanbar. Der Termin bleibt im Status None, und die Reaktionszeit läuft.
+Das ist eine typische Überraschung nach dem Go-live. Ein Kunde mit dem Vertrag "Techniker innerhalb von 24 Stunden vor Ort" meldet am Samstagmorgen eine stehende Maschine. Der Arbeitsauftrag bekommt das Entitlement, der Milestone startet, und die Planung sucht einen Kandidaten.
+
+```hinweis achtung
+Enden die Arbeitszeiten des Gebiets am Freitag und gibt es keine bestätigte Schicht, ist niemand verplanbar. Der Termin bleibt im Status None, und die Reaktionszeit läuft.
+```
 
 Drei Dinge müssen zusammenpassen:
 

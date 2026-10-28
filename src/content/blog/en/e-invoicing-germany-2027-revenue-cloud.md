@@ -30,13 +30,13 @@ From 1 January 2027, German companies with more than €800,000 turnover in 2026
 
 ## What does the German e-invoicing duty require?
 
-The rules come from the German VAT Act and letters from the Federal Ministry of Finance. The [IHK Köln](https://www.ihk.de/koeln/hauptnavigation/recht-steuern/recht/e-rechnungen-5943094) and the [IHK Stuttgart](https://www.ihk.de/stuttgart/fuer-unternehmen/recht-und-steuern/steuerrecht/steuermeldungen/e-rechnungen-5864496) summarise them. The timeline:
+The rules come from the German VAT Act and letters from the Federal Ministry of Finance. The [IHK Köln](https://www.ihk.de/koeln/hauptnavigation/recht-steuern/recht/e-rechnungen-5943094) and the [IHK Stuttgart](https://www.ihk.de/stuttgart/fuer-unternehmen/recht-und-steuern/steuerrecht/steuermeldungen/e-rechnungen-5864496) summarise them. The timeline for domestic B2B invoices:
 
-| From | What applies to domestic B2B invoices |
-|---|---|
-| 1 Jan 2025 | Every domestic business must be able to receive e-invoices. Paper and, with consent, PDF are still allowed for sending. |
-| 1 Jan 2027 | Companies with more than €800,000 turnover in 2026 must issue e-invoices. Smaller companies may still send other invoices. EDI invoices remain allowed with the recipient's consent in 2027. |
-| 1 Jan 2028 | E-invoices for all domestic B2B invoices. |
+```zeitleiste
+2025-01-01 | Every domestic business must be able to receive e-invoices. Paper and, with consent, PDF are still allowed for sending.
+2027-01-01 | Companies with more than €800,000 turnover in 2026 must issue e-invoices. Smaller companies may still send other invoices. EDI invoices remain allowed with the recipient's consent in 2027.
+2028-01-01 | E-invoices for all domestic B2B invoices.
+```
 
 An e-invoice is an invoice "issued, transmitted and received in a structured electronic format" that follows EU directive 2014/55/EU and therefore the European standard EN 16931. According to the IHK Stuttgart, the ministry accepts XRechnung and ZUGFeRD from version 2.0.1, among others. A PDF invoice sent by email has counted as an "other invoice" since 2025.
 
@@ -54,7 +54,9 @@ Revenue Cloud Billing creates invoices from billing schedules. Salesforce Help a
 
 None of these sources mentions EN 16931, XRechnung, ZUGFeRD or Peppol, and I found no other Salesforce documentation for native e-invoice output as of October 2026. A community post on [UnofficialSF](https://unofficialsf.com/e-invoicing-with-revenue-cloud/) from October 2025 describes e-invoicing with Revenue Cloud as an extension: a posted invoice publishes a platform event, middleware such as MuleSoft maps the data to a format like UBL or Factur-X/ZUGFeRD, and an external provider delivers it, for example through Peppol. That is one author's approach, not product documentation.
 
+```hinweis offen
 So treat e-invoicing as a gap you have to close, and ask Salesforce for a written statement on what Billing supports for Germany and when.
+```
 
 ## What are the routes?
 

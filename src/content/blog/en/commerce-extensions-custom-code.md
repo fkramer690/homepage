@@ -55,7 +55,11 @@ The [list of available extensions](https://developer.salesforce.com/docs/commerc
 | Custom buyer group assignment | `Commerce_Domain_BuyerGroup_EvaluationService` |
 | Filter or enrich products and search results | `Commerce_Endpoint_Catalog_Products`, `Commerce_Endpoint_Search_ProductSearch` |
 
-The page also states the defaults you replace: inventory uses Omnichannel Inventory, pricing uses Salesforce price books, tax uses the Salesforce tax service, and shipping charges nothing until you extend it. One detail from the same page: if the store uses Faster Add-to-Cart, every product needs an entry in a store price book before you implement the pricing extension, even if the real price later comes from the ERP.
+The page also states the defaults you replace: inventory uses Omnichannel Inventory, pricing uses Salesforce price books, tax uses the Salesforce tax service, and shipping charges nothing until you extend it.
+
+```hinweis achtung
+According to the same page, if the store uses Faster Add-to-Cart, every product needs an entry in a store price book before you implement the pricing extension, even if the real price later comes from the ERP.
+```
 
 Which data should come live from the ERP and which should be copied into Salesforce is a design decision of its own. I cover it in [B2B Commerce and SAP: which data flows where?](../b2b-commerce-sap-data-flows/).
 
@@ -69,7 +73,14 @@ Salesforce writes that it "strongly recommend[s] calling the `super()` method as
 
 Variants 2 and 3 survive releases better. When Salesforce adds something to the standard service, such as a new field or a promotion feature, a provider that calls `super()` gets it automatically. A provider that replaces everything has silently frozen the standard at the state of the day it was written. In a review of partner code, a full replacement without `super()` is the first thing I would ask about. Sometimes it is justified, for example when the ERP is the only price master, but then the reason belongs in the code and in the architecture decision log.
 
-Testing has a catch. The base classes live in a Salesforce namespace, and the [guide on mocking the base class](https://developer.salesforce.com/docs/commerce/extensions/guide/mock-the-base-apex-class.html) explains that the Apex test framework cannot mock across namespaces. The documented pattern is to make the provider `virtual`, wrap the `super()` call in a separate `@TestVisible` method and override that method in a test subclass. ERP callouts are simulated with `HttpCalloutMock`, as described in [writing tests for an extension provider](https://developer.salesforce.com/docs/commerce/extensions/guide/write-tests-for-an-extension-provider.html). If a partner delivers extensions without these tests, coverage is usually reached by calling code without asserting anything.
+```vertiefung For developers
+title: How do I test a provider that calls super()?
+The base classes live in a Salesforce namespace, and the [guide on mocking the base class](https://developer.salesforce.com/docs/commerce/extensions/guide/mock-the-base-apex-class.html) explains that the Apex test framework cannot mock across namespaces. The documented pattern is to make the provider `virtual`, wrap the `super()` call in a separate `@TestVisible` method and override that method in a test subclass.
+
+ERP callouts are simulated with `HttpCalloutMock`, as described in [writing tests for an extension provider](https://developer.salesforce.com/docs/commerce/extensions/guide/write-tests-for-an-extension-provider.html).
+```
+
+If a partner delivers extensions without these tests, coverage is usually reached by calling code without asserting anything.
 
 ## Extensions or the older integrations?
 

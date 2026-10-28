@@ -104,11 +104,18 @@ A refresh replaces the sandbox with a new copy of production. According to [Sale
 
 My checklist for every refresh of a stage sandbox:
 
-1. **Before:** commit or consciously discard every change that exists only in the sandbox. Gearset also recommends syncing the environment branch with `main` first and [pausing](https://docs.gearset.com/en/articles/10256103-salesforce-sandbox-refresh-in-a-pipeline) pipeline runs into that org during the refresh.
-2. **After:** deploy the state of the stage branch, because the sandbox now contains only what is already in production.
-3. **Check interfaces.** Do named credentials and endpoints point to the SAP QA system instead of the production one?
-4. **Restore contact addresses, masking and seed data,** as described in [chapter 7 on data and configuration](../data-and-configuration/).
-5. **Reconnect the pipeline** if its authentication was tied to the old org.
+```schritte
+Secure changes first
+  Commit or consciously discard every change that exists only in the sandbox. Gearset also recommends syncing the environment branch with `main` first and [pausing](https://docs.gearset.com/en/articles/10256103-salesforce-sandbox-refresh-in-a-pipeline) pipeline runs into that org during the refresh.
+Deploy the stage branch
+  After the refresh, the sandbox contains only what is already in production.
+Check interfaces
+  Do named credentials and endpoints point to the SAP QA system instead of the production one?
+Restore the data
+  Contact addresses, masking and seed data, as described in [chapter 7 on data and configuration](../data-and-configuration/).
+Reconnect the pipeline
+  If its authentication was tied to the old org.
+```
 
 Developer sandboxes are simpler: after the refresh, run a backpromote and the developer is up to date. sfdx-hardis then marks earlier runs as "Before refresh" and treats deployment actions as not yet run.
 
@@ -116,7 +123,11 @@ The timing of a refresh has one more side effect: it decides whether a sandbox s
 
 ## The hotfix path
 
-A defect in production cannot wait until UAT is accepted. So every programme needs a second, short path. In sfdx-hardis, according to the [hotfix documentation](https://sfdx-hardis.cloudity.com/salesforce-devops-hotfixes/), it looks like this: the developer starts a story targeting `preprod` in a sandbox cloned from production, the pull request goes to `preprod` and from there to `main`. Note that this second pull request promotes everything merged into `preprod` since its last promotion, not only the hotfix. So nothing half-finished may sit in `preprod`.
+A defect in production cannot wait until UAT is accepted. So every programme needs a second, short path. In sfdx-hardis, according to the [hotfix documentation](https://sfdx-hardis.cloudity.com/salesforce-devops-hotfixes/), it looks like this: the developer starts a story targeting `preprod` in a sandbox cloned from production, the pull request goes to `preprod` and from there to `main`.
+
+```hinweis achtung
+The second pull request to `main` promotes everything merged into `preprod` since its last promotion, not only the hotfix. So nothing half-finished may sit in `preprod`.
+```
 
 The critical step comes afterwards. The stage branches below were cut before the fix and hold the old version of the same metadata. Once they are promoted, the fix disappears from production again. sfdx-hardis calls the way back a [retrofit](https://sfdx-hardis.cloudity.com/salesforce-devops-retrofit/): `main` is merged into a `retrofit/from-main` branch and brought to `integration` by pull request, and right away, because a delayed retrofit turns into a growing conflict. After a hotfix into `main`, Gearset automatically creates [back propagation pull requests](https://docs.gearset.com/en/articles/9773388-org-syncing-with-pipelines) for the lower environments, but does not promote them itself. Someone still has to review and merge them.
 

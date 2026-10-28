@@ -54,7 +54,11 @@ Salesforce records Setup changes in the [Setup Audit Trail](https://developer.sa
 - **Daily:** Apex tests, Apex and Flow runtime errors, org limits, calls to deprecated API versions, suspect Setup actions by anyone other than the deployment user, analysis of deployments and validations, code quality through MegaLinter.
 - **Weekly:** Security Health Check, MFA configuration, licence usage, active users without a login for six months, upcoming Release Updates and the date of the next Salesforce upgrade.
 
-Results go to Slack, Microsoft Teams, email, or through an API to Grafana. According to the docs, sfdx-hardis replaces usernames and email addresses with stable pseudonyms in reports and notifications when monitoring runs in CI. That helps if your works council asks. One detail from the docs is worth knowing: a green job only means it ran to the end. Failing tests or a limit close to its maximum show up in the notifications. The job turns red only when it could not run itself, for example because of expired authentication. So set up at least one channel that someone actually reads.
+Results go to Slack, Microsoft Teams, email, or through an API to Grafana. According to the docs, sfdx-hardis replaces usernames and email addresses with stable pseudonyms in reports and notifications when monitoring runs in CI. That helps if your works council asks.
+
+```hinweis tipp
+According to the docs, a green job only means it ran to the end. Failing tests or a limit close to its maximum show up in the notifications. The job turns red only when it could not run itself, for example because of expired authentication. So set up at least one channel that someone actually reads.
+```
 
 I have used sfdx-hardis in client projects for about two years, and monitoring does not need a CI/CD project. You can switch it on before the pipeline is in place. Gearset's [change monitoring](https://docs.gearset.com/en/articles/604536-automating-org-change-tracking-and-metadata-backup) takes a daily metadata snapshot with a comparison to the previous day, rollback of individual changes and notifications by email, Slack, Teams or Chatter. If you already deploy with Gearset, you get this without a separate repository and with a well-made interface.
 
@@ -81,7 +85,13 @@ Which product fits depends less on features than on your setting: where may the 
 
 ### Why you should rehearse the restore
 
-A backup that nobody has ever restored from is an assumption. The [Salesforce Help page on restoring records with Salesforce Backup](https://help.salesforce.com/s/articleView?language=en_US&id=xcloud.backup_restore_restore_records.htm&type=5) points to two things that can hurt in manufacturing. After a restore you can export a report that maps each original record ID to the new one, so restored records can have new IDs. If your SAP integration writes order status back by Salesforce ID, those updates miss after a restore. External IDs on the affected objects protect you against this. And according to the [guide on planning a backup strategy](https://help.salesforce.com/s/articleView?language=en_US&id=xcloud.backup_restore_plan.htm&type=5), restored share objects can bring back outdated access. After a restore, check that dealers still see only their own assets. Salesforce Help lists Salesforce Backup, Backup & Recover and Backup & Recover Next as separate topics; find out which product you have licensed and rehearse the restore with exactly that one.
+A backup that nobody has ever restored from is an assumption. The [Salesforce Help page on restoring records with Salesforce Backup](https://help.salesforce.com/s/articleView?language=en_US&id=xcloud.backup_restore_restore_records.htm&type=5) points to two things that can hurt in manufacturing. After a restore you can export a report that maps each original record ID to the new one, so restored records can have new IDs.
+
+```hinweis achtung
+If your SAP integration writes order status back by Salesforce ID, those updates miss after a restore. External IDs on the affected objects protect you against this.
+```
+
+Also, according to the [guide on planning a backup strategy](https://help.salesforce.com/s/articleView?language=en_US&id=xcloud.backup_restore_plan.htm&type=5), restored share objects can bring back outdated access. After a restore, check that dealers still see only their own assets. Salesforce Help lists Salesforce Backup, Backup & Recover and Backup & Recover Next as separate topics; find out which product you have licensed and rehearse the restore with exactly that one.
 
 I would rehearse a restore once a quarter in a sandbox, using an object that processes depend on, such as assets with maintenance plans. Moving and masking data between orgs is covered in [chapter 7](../data-and-configuration/).
 
@@ -111,11 +121,18 @@ I would set two rules. First, compare numbers only within one tool. sfdx-hardis 
 
 When something breaks in production, the first question is: data or metadata? The path depends on the answer.
 
-1. **Detect.** Monitoring reports Apex or Flow errors, or users call in. Gearset can alert on unusual data changes.
-2. **Classify.** If configuration or code is wrong, it goes through the pipeline. If records were lost or overwritten, it goes through the data backup.
-3. **Fix.** Metadata through a hotfix branch with review and validation. Data through a targeted restore of the affected fields and records.
-4. **Merge back.** The hotfix goes back into the development branches.
-5. **Follow up.** Record the cause, the duration and whether a deployment was involved. Change fail rate and rework rate come from this.
+```schritte
+Detect
+  Monitoring reports Apex or Flow errors, or users call in. Gearset can alert on unusual data changes.
+Classify
+  If configuration or code is wrong, it goes through the pipeline. If records were lost or overwritten, it goes through the data backup.
+Fix
+  Metadata through a hotfix branch with review and validation. Data through a targeted restore of the affected fields and records.
+Merge back
+  The hotfix goes back into the development branches.
+Follow up
+  Record the cause, the duration and whether a deployment was involved. Change fail rate and rework rate come from this.
+```
 
 sfdx-hardis describes this as two streams: RUN for quick fixes, BUILD for the next version. A [hotfix](https://sfdx-hardis.cloudity.com/salesforce-devops-hotfixes/) goes through a branch to preprod and production, followed by a retrofit into the BUILD branches. The docs are blunt about it: fixing something by hand in Setup is never on the list, not even at 2 am, because the next deployment overwrites it. The hotfix path in the branch model is covered in [chapter 3](../environments-and-branching/), validation in the pipeline in [chapter 5](../building-the-pipeline/).
 

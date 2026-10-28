@@ -80,7 +80,9 @@ Drei Dinge habe ich am 28. Oktober 2026 in keiner offiziellen Quelle gefunden:
 2. **Konditionssätze aus SAP laden.** Die Highlights versprechen ERP-Anbindung, der Developer Guide beschreibt aber keinen Import und keinen Abgleich von SAP-Konditionssätzen. Das [Trailhead-Modul für Consumer Goods](https://trailhead.salesforce.com/content/learn/modules/penny-perfect-pricing-with-consumer-goods-cloud-offline-mobile-app/set-up-pricing-configuration) sagt, dass Preiskonditionen aus dem ERP genutzt werden können, und erwähnt einen Import von Konditionssätzen, ohne ihn zu beschreiben.
 3. **Mehrere Märkte und Mengeneinheiten.** Die Highlights nennen beides. Die Objektreferenz, die ich gelesen habe, erklärt nicht, wie Währungen oder Umrechnung von Mengeneinheiten eingerichtet werden.
 
+```hinweis offen
 Die ERP-Anbindung bauen also Sie, und nach der Lizenz fragen auch Sie. Beides gehört schriftlich geklärt, bevor ein Projektplan davon abhängt.
+```
 
 ## Warum laufen zwei Preisfindungen auseinander?
 

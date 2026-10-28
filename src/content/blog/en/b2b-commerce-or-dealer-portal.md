@@ -54,7 +54,15 @@ On top of that come the cart, the checkout and the order summary that the buyer 
 
 Here the two options are closer than many expect. Trailhead lists the [personas and permissions](https://trailhead.salesforce.com/content/learn/modules/b2b-commerce-lightning-roles-permissons-store-setup/define-personas-permissions) for a B2B store: buyers and buyer managers use a Customer Community Plus licence. Buyers get the permission B2B Commerce User, buyer managers B2B Commerce Super User plus Delegated External User Administration, so they can look after the buyers of their own company. Merchandisers who maintain the store internally need the "B2B and D2C Commerce" licence.
 
-Customer Community Plus is also the licence family for a customer portal. On the [Experience Cloud for Manufacturing price list](https://www.salesforce.com/manufacturing/cloud/experience-cloud/), Customer Community Plus costs $35 per member or $15 per login per month, billed annually. Partner Community costs $50 or $20.
+Customer Community Plus is also the licence family for a customer portal. The list prices on the [Experience Cloud for Manufacturing price list](https://www.salesforce.com/manufacturing/cloud/experience-cloud/), billed annually:
+
+```kennzahlen
+$35 | Customer Community Plus per member per month
+$15 | Customer Community Plus per login per month
+$50 | Partner Community per member per month
+$20 | Partner Community per login per month
+source: Salesforce, Experience Cloud for Manufacturing price list, billed annually
+```
 
 So the buyer licence does not decide between portal and store. The difference is the commerce fee, which Salesforce charges as a share of the revenue through the store, and the effort to build catalogue, prices and ERP calls. I cover the fee in [B2B Commerce pricing: what the GMV model costs](../b2b-commerce-pricing-gmv-model/). How portal licences compare to internal ones is in [Salesforce licences: does everyone need a full one?](../salesforce-licences-full-licence-needed/).
 

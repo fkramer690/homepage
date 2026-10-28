@@ -40,7 +40,9 @@ Was ein Formular enthalten kann:
 
 Für den Einsatz vor Ort zählen zwei Eigenschaften mehr als die Bausteine. Die Formulare funktionieren offline mit einer eigenen Offline-Engine, und die automatische Speicherung sichert jede Eingabe. Ein Techniker kann ein Formular an der Maschine schließen und später weitermachen. Jede Übermittlung wird protokolliert, online wie offline.
 
+```hinweis achtung
 Offline funktioniert nur, wenn die Datensätze, die das Formular liest, auf dem Gerät liegen. Welche Datensätze in den Briefcase gehören, steht in [Field Service App offline: Welche Daten aufs Gerät?](../field-service-app-offline-briefcase/).
+```
 
 ## Was ist allgemein verfügbar, und was kam später?
 
@@ -91,11 +93,18 @@ Den größten Gewinn hat in diesem Szenario der Innendienst. Nach der Synchronis
 
 ## Wo fangen Sie an?
 
-1. **Ein Protokoll auswählen** mit hohem Volumen, etwa die Jahreswartung Ihres häufigsten Maschinentyps.
-2. **Jede Frage markieren** als Feld, Formularantwort, Auftragsposition oder "schon bekannt". Die letzte Gruppe streichen.
-3. **Die Felder mit Innendienst und ERP-Team abstimmen**, bevor jemand den Flow Builder öffnet.
-4. **Offline bauen und testen**, unter iOS und Android, mit einem internen und einem Partnertechniker.
-5. **Voice to Form in einem eigenen Schritt ergänzen**, wenn Datenschutz und Betriebsrat zugestimmt haben.
+```schritte
+Ein Protokoll auswählen
+  Eines mit hohem Volumen, etwa die Jahreswartung Ihres häufigsten Maschinentyps.
+Jede Frage markieren
+  Als Feld, Formularantwort, Auftragsposition oder "schon bekannt". Die letzte Gruppe streichen.
+Felder abstimmen
+  Mit Innendienst und ERP-Team, bevor jemand den Flow Builder öffnet.
+Offline bauen und testen
+  Unter iOS und Android, mit einem internen und einem Partnertechniker.
+Voice to Form ergänzen
+  In einem eigenen Schritt, wenn Datenschutz und Betriebsrat zugestimmt haben.
+```
 
 Formulare, Offline-Daten und Servicebericht bilden zusammen [Kapitel 3 der Masterclass Field Service](../../masterclass/field-service/field-service-mobile-app-dokumente/).
 

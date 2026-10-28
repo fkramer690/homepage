@@ -75,7 +75,11 @@ In einem Programm, in das ich eingestiegen bin, betrieb ein großes Unternehmen 
 - Die technischen Ansätze der Teams lagen weit auseinander, ähnliche Probleme wurden sehr unterschiedlich gelöst.
 - Jedes Release war ein Risiko, und Fehler fielen oft erst auf, wenn Anwender darauf stießen.
 
-Wir haben das in wenigen Schritten geändert. Erstens lief jede Änderung über einen Pull Request mit Review, und eine Zeit lang ging jeder einzelne über meinen Schreibtisch. Zweitens haben wir Entwicklungs- und Architekturstandards aufgeschrieben und in diesen Reviews durchgesetzt. Drittens wurde die Pipeline der einzige Weg, Änderungen von einer Org in die nächste zu bringen. Als der Prozess stabil lief, habe ich ihn an einen internen Kollegen übergeben, der ihn heute verantwortet.
+Wir haben das in wenigen Schritten geändert. Erstens lief jede Änderung über einen Pull Request mit Review. Zweitens haben wir Entwicklungs- und Architekturstandards aufgeschrieben und in diesen Reviews durchgesetzt. Drittens wurde die Pipeline der einzige Weg, Änderungen von einer Org in die nächste zu bringen.
+
+```praxis
+Eine Zeit lang ging jeder einzelne Pull Request über meinen Schreibtisch. Als der Prozess stabil lief, habe ich ihn an einen internen Kollegen übergeben, der ihn heute verantwortet.
+```
 
 Die Wirkung war deutlich. Ergebnisse wurden planbar, und Validierungsläufe in der Pipeline haben fehlende Abhängigkeiten und Fehler erkannt, bevor ein Anwender sie gesehen hat. Dazu kamen die klassischen DevOps-Vorteile: Wir konnten zurückrollen, jede Änderung nachvollziehen, und es ging keine Arbeit mehr verloren.
 
@@ -107,10 +111,17 @@ Für einen Lenkungsausschuss läuft das auf eine einfache Frage hinaus: Wie sich
 
 Wenn Ihr Salesforce-Programm noch mit Change Sets oder manuellen Deployments arbeitet, brauchen Sie keine Big-Bang-Umstellung. Eine pragmatische Reihenfolge:
 
-1. Die aktuellen Produktions-Metadaten in ein Git-Repository bringen.
-2. Validierungs-Deployments und Tests für jeden Pull Request einführen.
-3. Branch- und Umgebungsstrategie festlegen und für alle Partner verbindlich machen.
-4. Produktions-Deployments auf die Pipeline umstellen.
-5. Monitoring, Backups und generierte Dokumentation ergänzen.
+```schritte
+Repository
+  Die aktuellen Produktions-Metadaten in ein Git-Repository bringen.
+Qualitätsschranken
+  Validierungs-Deployments und Tests für jeden Pull Request einführen.
+Branch-Strategie
+  Branch- und Umgebungsstrategie festlegen und für alle Partner verbindlich machen.
+Produktion
+  Produktions-Deployments auf die Pipeline umstellen.
+Betrieb
+  Monitoring, Backups und generierte Dokumentation ergänzen.
+```
 
 DevOps ist keine zusätzliche Schicht für später. In Enterprise-Projekten ist es Teil der Architektur, und es sollte stehen, bevor der zweite Partner an der Org arbeitet. Wenn Sie eine zweite Meinung zu Ihrem Release-Prozess möchten, [schreiben Sie mir](#contact).

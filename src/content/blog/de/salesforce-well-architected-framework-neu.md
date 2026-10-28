@@ -56,10 +56,16 @@ Salesforce hat die alten Inhalte nicht weggeworfen, sondern umsortiert. Die Seit
 
 ![Wie die alten Well-Architected-Bereiche auf die fünf neuen Säulen verteilt wurden: Secure geht zu Trust. Reliable geht zu Reliability, Performance zu Resource and Cost Optimization, Monitoring zu Operational Excellence. Compliant geht zu Fairness, Recht und Data Residency bleiben bei Trust. Intentional und Automated gehen zu Operational Excellence, ROI und Wartbarkeit zu Resource and Cost Optimization. Engaging geht zu Fairness. Resilient geht zu Operational Excellence, Disaster Recovery zu Reliability. Composable geht zu Resource and Cost Optimization, Messaging, Eventing und APIs zu den Integration Patterns. Neu dazu kommt die Agentic-Enterprise-Linse für jede Säule.](../../../assets/blog/well-architected-mapping-de.png)
 
-Auffällig ist, wie konkret die neuen Seiten geworden sind. Ein paar Beispiele aus dem Text:
+Auffällig ist, wie konkret die neuen Seiten geworden sind. Zwei Zahlen daraus:
 
-- **Governor Limits:** Planen Sie im Normalbetrieb mit 70 Prozent der Limits als Obergrenze, damit Reserve für Lastspitzen bleibt.
-- **Service Level:** Legen Sie das Ziel der eigenen Lösung unter das SLA der Plattform, etwa 99,5 Prozent bei 99,9 Prozent Plattform-SLA, damit ein Fehlerbudget bleibt.
+```kennzahlen
+70 % | der Governor Limits als Obergrenze im Normalbetrieb, damit Reserve für Lastspitzen bleibt
+99,5 % | als Ziel der eigenen Lösung bei 99,9 % Plattform-SLA, damit ein Fehlerbudget bleibt
+quelle: Salesforce Well-Architected Framework im Architecture Center
+```
+
+Weitere Beispiele aus dem Text:
+
 - **Disaster Recovery:** RTO und RPO pro Fachfunktion festlegen, Backups regelmäßig zurückspielen, für kritische Systeme einmal im Jahr einen vollständigen Failover üben.
 - **Multi-Org:** nur, wenn Geschäftsanforderungen den Mehraufwand rechtfertigen, etwa regulatorische Datentrennung.
 - **DevOps:** DORA-Metriken messen (Deployment-Häufigkeit, Durchlaufzeit, Fehlerquote bei Änderungen, Wiederherstellungszeit, Nacharbeit) und regelmäßig prüfen, ob Produktion vom Stand in der Versionsverwaltung abweicht.
@@ -94,7 +100,9 @@ Bei aller Zustimmung: Es bleibt ein Herstellerdokument.
 
 Ich habe schon das alte Framework mit Trusted, Easy und Adaptable in Kundenprojekten genutzt und in User-Group-Vorträgen vorgestellt.
 
+```praxis
 In meinem bisher größten Programm arbeiteten über 30 Entwickler in 8 Streams für 5 Umsetzungspartner in derselben Org. Wir haben rund drei Monate gebraucht, bis die gemeinsamen Standards standen: Namenskonventionen, eine Automatisierung pro Objekt, Vorgaben zur Testabdeckung, eine Matrix, welcher Stream welches Objekt verantwortet, und Regeln, was in Custom Metadata Types oder Custom Labels gehört. 80 Prozent standen nach der ersten Runde, der Rest kam über die Monate dazu.
+```
 
 Mit dem neuen Framework würde ich diese Standards heute entlang der fünf Säulen ordnen. Namenskonventionen, Packaging und Objektverantwortung sind Resource and Cost Optimization und Operational Excellence. Berechtigungen und Integrationsbenutzer sind Trust. Der Vorteil: Jeder Partner kennt das Framework, die Diskussion beginnt also nicht bei null, und Abweichungen lassen sich einer Säule zuordnen.
 

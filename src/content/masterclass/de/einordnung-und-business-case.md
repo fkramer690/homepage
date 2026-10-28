@@ -68,7 +68,14 @@ Die Listenpreise im Oktober 2026, pro Nutzer und Monat, jährlich abgerechnet, l
 | Max | 550 Dollar | 650 Dollar (Sales Max oder Service Max) |
 | Sales & Service Max | | 700 Dollar |
 
-Der Aufschlag in Core beträgt 80 Dollar pro Nutzer und Monat, also 960 Dollar pro Nutzer und Jahr. Bei 120 Vertriebsnutzern sind das 115.200 Dollar pro Jahr zum Listenpreis. Die Preisseite nennt auch Euro-Preise, für Sales Core 275 Euro.
+```kennzahlen
+80 Dollar | Aufschlag in Core pro Nutzer und Monat
+960 Dollar | Aufschlag in Core pro Nutzer und Jahr
+115.200 Dollar | Aufschlag pro Jahr bei 120 Vertriebsnutzern
+quelle: Preisseiten von Manufacturing Cloud und Sales Cloud, Listenpreise Oktober 2026
+```
+
+Die Preisseite nennt auch Euro-Preise, für Sales Core 275 Euro.
 
 Eine Unklarheit gehört in jede Kalkulation. Die Preisseite hat zwei Fußnoten, die sich widersprechen. Die eine sagt, die Preise gelten für Enterprise Edition, und Unlimited koste 425 Dollar. Die andere sagt, sie gelten für Unlimited Edition, und Enterprise koste 275 Dollar. Welcher Preis für Ihre Edition gilt, zeigt erst das Angebot. Außerdem hat Salesforce [im September 2026 angekündigt](https://www.salesforce.com/in/news/?p=14535), dass „new pricing for Agentforce Industry Editions will go into effect later this fall“. Die Seite der Manufacturing Cloud nutzt schon Core und Max, ihre Fußnoten sprechen aber noch von Enterprise und Unlimited. Wie sich die neuen Editionen unterscheiden, steht in [Salesforce-Editionen Core, Advanced und Max](../../../blog/salesforce-editionen-core-advanced-max/). Wer jetzt verlängert, sollte sich den Wechsel der Edition offenhalten, bis die Branchenpreise feststehen.
 
@@ -111,7 +118,9 @@ Das Angebot eines Partners oder Account Teams geht oft davon aus, dass alle Nutz
 4. **Händler und Kunden** bekommen Portallizenzen, Mitglied bei häufiger Nutzung, Login bei seltener.
 5. **Schnittstellen** zum ERP laufen über Integrationsnutzer ohne Oberfläche.
 
+```hinweis offen
 Welche Funktionen ein Sales-Core-Nutzer aus dem Servicebereich nutzen darf, steht nicht auf der Preisseite. Ob ein gemischter Bestand aus Core, Max und Sales Cloud in einer Org zulässig ist, ebenfalls nicht. Beides lassen Sie sich schriftlich bestätigen, bevor die Lizenzzahl in den Vertrag geht.
+```
 
 ## Wann ist Manufacturing Cloud die falsche Wahl?
 

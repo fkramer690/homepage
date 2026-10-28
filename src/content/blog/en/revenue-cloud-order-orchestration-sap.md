@@ -82,6 +82,17 @@ I have not found a Salesforce reference pattern for Revenue Cloud and SAP. The c
 3. After the hand-over, SAP owns delivery, confirmed dates and the invoice. Salesforce shows the status and does not change it.
 4. Changes after the hand-over run as new orders in Revenue Cloud, which DRO hands to SAP again. How amendments work on the asset side is in [assets, amendments and renewals](../revenue-cloud-assets-amendments-renewals/).
 
+```ablauf
+sf: Order, DRO plan, Fallout queue
+erp: SAP sales order, Delivery, Invoice
+Order --activated--> DRO plan
+DRO plan --callout--> SAP sales order
+SAP sales order ..order number..> Order
+SAP sales order ..rejected..> Fallout queue
+SAP sales order --> Delivery
+Delivery --> Invoice
+```
+
 Which system owns which step from quote to invoice is the topic of [Revenue Cloud and SAP: who owns what](../revenue-cloud-sap-quote-to-cash-ownership/). The same split belongs in your [object ownership matrix](../salesforce-object-ownership-matrix/), so no partner builds a second path to SAP. Reading the order status back from SAP for dealers is covered in [Agentforce and SAP: order status through MuleSoft](../agentforce-sap-order-status-mulesoft/).
 
 ## What happens when SAP rejects the order?
@@ -101,7 +112,11 @@ I would look at DRO when at least two of these apply:
 - Commitments have deadlines that should be tracked per step.
 - Orders mix one-off products and subscriptions that need different handling.
 
-On cost, the [Revenue Cloud pricing page](https://www.salesforce.com/eu/sales/revenue-lifecycle-management/pricing/) lists Dynamic Revenue Orchestration as available for purchase with Revenue Cloud Advanced, which costs €200 per user and month at list price, marked "Freemium access available". What the freemium access includes is not stated there. Get it in writing before your design depends on it.
+On cost, the [Revenue Cloud pricing page](https://www.salesforce.com/eu/sales/revenue-lifecycle-management/pricing/) lists Dynamic Revenue Orchestration as available for purchase with Revenue Cloud Advanced, which costs €200 per user and month at list price, marked "Freemium access available".
+
+```hinweis offen
+What the freemium access includes is not stated on the pricing page. Get it in writing before your design depends on it.
+```
 
 ## Where should you start?
 

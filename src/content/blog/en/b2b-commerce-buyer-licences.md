@@ -46,7 +46,9 @@ The [B2B Commerce pricing page](https://www.salesforce.com/editions-pricing/comm
 
 Both get Customer Community Plus. According to [Salesforce Help on external user licences](https://help.salesforce.com/s/articleView?language=en_US&id=sf.users_license_types_communities.htm&type=5), this licence is meant for external users who need reports, dashboards and standard sharing. Partner Community is described there for business-to-business sites that need sales data, such as partner relationship management. Trailhead does not mention Partner Community for the store.
 
+```hinweis offen
 If your dealers already have Partner Community licences for a partner portal, I would ask Salesforce in writing whether these users can buy in the store with the licence they have. Two licences for the same person at the same dealer is the most expensive answer.
+```
 
 Buyer and buyer manager share the licence and differ in their permission set. A buyer manager, according to Trailhead:
 
@@ -71,7 +73,9 @@ The break-even is simple. A buyer with two login days a month costs $30 on login
 
 A typical scenario, as an assumption: a manufacturer with 250 dealers, each with one buyer manager and two buyers, so 750 users. 150 of them order several times a week and get member licences: 150 × $35 = $5,250 a month. The other 600 log in once a month on average: 600 logins × $15 = $9,000. Together that is $14,250 a month, or $171,000 a year at list price. With member licences for all 750 users it would be $26,250 a month, or $315,000 a year.
 
-One detail drives the count. A login day is any day someone logs in, also to check an order status. If the store is where dealers look up delivery dates, login days rise even when orders do not.
+```hinweis achtung
+A login day is any day someone logs in, also to check an order status. If the store is where dealers look up delivery dates, login days rise even when orders do not.
+```
 
 ## What limits matter for licence planning?
 

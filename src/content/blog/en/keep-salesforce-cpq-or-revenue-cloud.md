@@ -31,9 +31,22 @@ Staying on Salesforce CPQ is allowed and often the right choice for now. Existin
 
 ## Can you simply stay on CPQ?
 
-Yes. According to [Salesforce](https://www.salesforce.com/sales/cpq/end-of-life/), CPQ is "end of sale, not end of life". Existing customers can keep using it under their current contracts, buy additional users, renew and receive support and critical fixes. There is no end-of-life date and "no forced migration". What CPQ will not get is new features. The exact status, including what applies to the Billing package, is in [Salesforce CPQ end of sale: what applies in October 2026](../salesforce-cpq-end-of-sale-status/).
+Yes. According to [Salesforce](https://www.salesforce.com/sales/cpq/end-of-life/), CPQ is "end of sale, not end of life". The exact status, including what applies to the Billing package, is in [Salesforce CPQ end of sale: what applies in October 2026](../salesforce-cpq-end-of-sale-status/).
 
-Staying is therefore a legitimate decision. It is still a decision with a price: every release adds to Revenue Cloud and nothing to CPQ. I also expect partners to build up Revenue Cloud teams rather than CPQ teams, so the knowledge to maintain a heavily customised CPQ org will not get cheaper. I would decide consciously and write down when you will look at it again, instead of letting it drift.
+Staying is therefore a legitimate decision. It is still a decision with a price:
+
+```pro-contra
+pro: What you keep
+- Existing customers keep using CPQ under their current contracts, renew and buy additional users
+- Support and critical fixes
+- No end-of-life date and, according to Salesforce, "no forced migration"
+contra: What you give up
+- No new features: every release adds to Revenue Cloud and nothing to CPQ
+- Partners build up Revenue Cloud teams rather than CPQ teams, I expect
+- So the knowledge to maintain a heavily customised CPQ org will not get cheaper
+```
+
+I would decide consciously and write down when you will look at it again, instead of letting it drift.
 
 ## When should you move to Revenue Cloud?
 
@@ -81,7 +94,15 @@ The matrix is a starting point. If two columns are ticked, the deciding factors 
 
 ## What does a move cost?
 
-Licences are the easier part. The [Revenue Cloud pricing page](https://www.salesforce.com/eu/sales/revenue-lifecycle-management/pricing/) lists Revenue Cloud Growth at €150 and Revenue Cloud Advanced at €200 per user and month on an annual contract (October 2026). As an assumption, 50 quoting users on Advanced cost €120,000 a year at list price. Billing, Dynamic Revenue Orchestrator and other add-ons come on top. Your current CPQ price depends on your contract, so ask your account team for both figures.
+Licences are the easier part. The [Revenue Cloud pricing page](https://www.salesforce.com/eu/sales/revenue-lifecycle-management/pricing/) lists these prices on an annual contract:
+
+```kennzahlen
+€150 | Revenue Cloud Growth per user and month
+€200 | Revenue Cloud Advanced per user and month
+source: Salesforce Revenue Cloud pricing page, October 2026
+```
+
+As an assumption, 50 quoting users on Advanced cost €120,000 a year at list price. Billing, Dynamic Revenue Orchestrator and other add-ons come on top. Your current CPQ price depends on your contract, so ask your account team for both figures.
 
 The larger cost is the redesign. Salesforce names three to six months as a typical migration, and its [migration guide](https://help.salesforce.com/s/articleView?language=en_US&id=ind.rev_data_migration.htm&type=5) makes clear that tools do not replace design decisions for custom logic and integrations. Why that is so is explained in [Salesforce CPQ vs Revenue Cloud: the real differences](../salesforce-cpq-vs-revenue-cloud-differences/).
 

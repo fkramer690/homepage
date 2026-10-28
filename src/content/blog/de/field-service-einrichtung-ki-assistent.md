@@ -78,10 +78,16 @@ Weil der Assistent vor allem Datensätze anlegt. Gebiete, Betriebszeiten, Arbeit
 
 Daraus folgt ein klarer Weg:
 
-1. Die Headless-Einrichtung läuft in einer Sandbox.
-2. Flows und andere Metadaten holen Sie in einen Branch.
-3. Die Konfigurationsdatensätze exportieren Sie mit einer externen ID pro Datensatz in einen Datenbereich im Repository, zum Beispiel für SFDMU.
-4. Beides wird im Pull Request geprüft und über die Pipeline ausgerollt: erst Metadaten, dann Daten.
+```schritte
+In der Sandbox einrichten
+  Die Headless-Einrichtung läuft in einer Sandbox.
+Metadaten holen
+  Flows und andere Metadaten holen Sie in einen Branch.
+Daten exportieren
+  Die Konfigurationsdatensätze exportieren Sie mit einer externen ID pro Datensatz in einen Datenbereich im Repository, zum Beispiel für SFDMU.
+Prüfen und ausrollen
+  Beides wird im Pull Request geprüft und über die Pipeline ausgerollt: erst Metadaten, dann Daten.
+```
 
 Eine Freigabe im Chat ersetzt kein Review. Wer den Assistenten beauftragt, gibt auch dessen Plan frei, genau wie beim Setup-Agenten. Warum das zählt, habe ich in [Setup with Agentforce: Admin-KI in Produktion zulassen?](../setup-with-agentforce-admin-aenderungen/) beschrieben. Der Assistent baut eine Konfiguration schnell und eignet sich schlecht, sie auszurollen.
 

@@ -55,7 +55,11 @@ Die [Liste der verfügbaren Extensions](https://developer.salesforce.com/docs/co
 | Eigene Zuordnung zu Käufergruppen | `Commerce_Domain_BuyerGroup_EvaluationService` |
 | Produkte und Suchergebnisse filtern oder anreichern | `Commerce_Endpoint_Catalog_Products`, `Commerce_Endpoint_Search_ProductSearch` |
 
-Die Seite nennt auch die Standards, die Sie ersetzen: Bestand kommt aus Omnichannel Inventory, Preise aus Salesforce-Preisbüchern, Steuer aus dem Salesforce-Steuerdienst, und Versand kostet nichts, bis Sie ihn erweitern. Ein Detail von derselben Seite: Nutzt der Store Faster Add-to-Cart, braucht jedes Produkt einen Eintrag in einem Store-Preisbuch, bevor Sie die Preis-Extension umsetzen, auch wenn der echte Preis später aus dem ERP kommt.
+Die Seite nennt auch die Standards, die Sie ersetzen: Bestand kommt aus Omnichannel Inventory, Preise aus Salesforce-Preisbüchern, Steuer aus dem Salesforce-Steuerdienst, und Versand kostet nichts, bis Sie ihn erweitern.
+
+```hinweis achtung
+Nutzt der Store Faster Add-to-Cart, braucht laut derselben Seite jedes Produkt einen Eintrag in einem Store-Preisbuch, bevor Sie die Preis-Extension umsetzen, auch wenn der echte Preis später aus dem ERP kommt.
+```
 
 Welche Daten live aus dem ERP kommen und welche nach Salesforce kopiert werden, ist eine eigene Designentscheidung. Sie steht in [B2B Commerce und SAP: Welche Daten fließen wohin?](../b2b-commerce-sap-datenfluesse/).
 
@@ -69,7 +73,14 @@ Salesforce schreibt, man empfehle ausdrücklich, `super()` aufzurufen, um die Ko
 
 Variante 2 und 3 überstehen Releases besser. Ergänzt Salesforce den Standarddienst, etwa um ein neues Feld oder eine Promotion-Funktion, bekommt ein Provider mit `super()` das automatisch. Ein Provider, der alles ersetzt, hat den Standard still auf dem Stand des Tages eingefroren, an dem er geschrieben wurde. Bei einem Review von Partnercode wäre ein kompletter Ersatz ohne `super()` meine erste Frage. Manchmal ist er begründet, etwa wenn das ERP der einzige Preis-Master ist, aber dann gehört die Begründung in den Code und ins Architektur-Entscheidungslog.
 
-Beim Testen gibt es einen Haken. Die Basisklassen liegen in einem Salesforce-Namespace, und der [Guide zum Mocken der Basisklasse](https://developer.salesforce.com/docs/commerce/extensions/guide/mock-the-base-apex-class.html) erklärt, dass das Apex-Testframework nicht über Namespaces hinweg mocken kann. Das dokumentierte Muster: den Provider `virtual` machen, den `super()`-Aufruf in eine eigene `@TestVisible`-Methode legen und diese im Test in einer Unterklasse überschreiben. ERP-Aufrufe werden mit `HttpCalloutMock` simuliert, wie im Guide zum [Testen eines Extension Providers](https://developer.salesforce.com/docs/commerce/extensions/guide/write-tests-for-an-extension-provider.html) beschrieben. Liefert ein Partner Extensions ohne diese Tests, ist die Testabdeckung meist durch Aufrufe ohne echte Prüfungen erreicht.
+```vertiefung Für Entwickler
+titel: Wie teste ich einen Provider, der super() aufruft?
+Die Basisklassen liegen in einem Salesforce-Namespace, und der [Guide zum Mocken der Basisklasse](https://developer.salesforce.com/docs/commerce/extensions/guide/mock-the-base-apex-class.html) erklärt, dass das Apex-Testframework nicht über Namespaces hinweg mocken kann. Das dokumentierte Muster: den Provider `virtual` machen, den `super()`-Aufruf in eine eigene `@TestVisible`-Methode legen und diese im Test in einer Unterklasse überschreiben.
+
+ERP-Aufrufe werden mit `HttpCalloutMock` simuliert, wie im Guide zum [Testen eines Extension Providers](https://developer.salesforce.com/docs/commerce/extensions/guide/write-tests-for-an-extension-provider.html) beschrieben.
+```
+
+Liefert ein Partner Extensions ohne diese Tests, ist die Testabdeckung meist durch Aufrufe ohne echte Prüfungen erreicht.
 
 ## Extensions oder die älteren Integrationen?
 

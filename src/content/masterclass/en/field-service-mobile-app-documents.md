@@ -38,7 +38,11 @@ Field Service, which Salesforce sells today as [Field Service and Operations](ht
 
 The Field Service mobile app is a separate app in the App Store and Google Play. According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/field-service-mobile/work-from-anywhere), it gives technicians their jobs, customer details, work order updates and signature capture without calling the office. The Salesforce mobile app is the general app for sales and service staff. For a manufacturer the difference that matters most is offline: according to [Salesforce Developers](https://developer.salesforce.com/docs/atlas.en-us.mobile_offline.meta/mobile_offline/intro_enabled_apps.htm), any Field Service org can opt into offline Lightning web components in the Field Service app, while the Salesforce mobile app needs the Mobile App Plus licence for them. My rule: technicians work in the Field Service app, and dispatchers and inside service stay in the browser.
 
-In my Field Service projects, technician acceptance was one of the stumbling blocks. Plan time to test forms and flows with the technicians themselves before the app is rolled out.
+```praxis
+In my Field Service projects, technician acceptance was one of the stumbling blocks.
+```
+
+Plan time to test forms and flows with the technicians themselves before the app is rolled out.
 
 ## Which data does the technician need offline?
 
@@ -117,11 +121,18 @@ The pilot group, the calendar and who owns app versions are in [Field Service ap
 
 A typical scenario, as an assumption: a machine builder with 60 technicians commissions packaging machines in three variants. The paper protocol has 80 checkpoints. The technician fills it in by hand, scans it in the evening, and the back office types the readings into the ERP. All numbers are assumptions to show the order of decisions.
 
-1. **Weeks 1 and 2, data model.** Service, back office and the ERP team mark every checkpoint as field, form answer, follow-up line item or already known. Twelve questions disappear because serial number, customer and machine type are on the asset already.
-2. **Week 3, briefcase.** One briefcase for internal technicians, one for the two partner companies, both filtered on territory and date.
-3. **Weeks 4 to 7, forms.** Three forms: general checks on the service appointment, one variant form per machine type on the line item, acceptance with signature. Readings such as cycle rate go to fields on the asset.
-4. **Week 8, report.** The service report template shows the overall result from the work order field. The detailed inspection report with variant logic stays a separate document from the office.
-5. **Weeks 9 and 10, pilot.** Eight technicians, including one partner, run real commissioning jobs and the test routine on both platforms.
+```schritte
+Data model | Weeks 1 and 2 · service, back office, ERP team
+  Mark every checkpoint as field, form answer, follow-up line item or already known. Twelve questions disappear because serial number, customer and machine type are on the asset already.
+Briefcase | Week 3
+  One briefcase for internal technicians, one for the two partner companies, both filtered on territory and date.
+Forms | Weeks 4 to 7
+  General checks on the service appointment, one variant form per machine type on the line item, acceptance with signature. Readings such as cycle rate go to fields on the asset.
+Report | Week 8
+  The service report template shows the overall result from the work order field. The detailed inspection report with variant logic stays a separate document from the office.
+Pilot | Weeks 9 and 10 · eight technicians
+  Including one partner. They run real commissioning jobs and the test routine on both platforms.
+```
 
 Voice to Form waits until data protection and the works council have agreed. After the pilot the readings are on the asset the evening of the job, and nobody types them in again.
 

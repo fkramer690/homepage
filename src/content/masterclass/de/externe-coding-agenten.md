@@ -68,7 +68,9 @@ Trennen Sie zwei Entscheidungen: welches Modell Ihre Agentforce-Agenten zur Lauf
 
 Quellen: [Supported Models](https://developer.salesforce.com/docs/ai/agentforce/guide/supported-models.html), [Anthropic, Oktober 2025](https://www.anthropic.com/news/salesforce-anthropic-expanded-partnership), [Claudeforce](https://www.salesforce.com/ap/news/press-releases/2026/08/27/sg-salesforce-and-anthropic-announce-claudeforce-the-1-ai-meets-the-1-ai-crm/), [SalesforceBen zur Dreamforce 2026](https://www.salesforceben.com/biggest-dreamforce-26-announcements-everything-in-a-nutshell/).
 
-Ein Detail für Ihre Architektur: Die Seite Supported Models listet Claude derzeit bis Sonnet 5 und Opus 4.8 und beschreibt das Modell „Salesforce Default“ als „managed mix of trusted models (currently including GPT-4o)“. Pressemitteilung und Dokumentation laufen also nicht im Gleichschritt. Prüfen Sie im Setup, welches Modell Ihr Agent tatsächlich nutzt, statt sich auf die Ankündigung zu verlassen.
+```hinweis achtung
+Die Seite Supported Models listet Claude derzeit bis Sonnet 5 und Opus 4.8 und beschreibt das Modell „Salesforce Default“ als „managed mix of trusted models (currently including GPT-4o)“. Pressemitteilung und Dokumentation laufen also nicht im Gleichschritt. Prüfen Sie im Setup, welches Modell Ihr Agent tatsächlich nutzt, statt sich auf die Ankündigung zu verlassen.
+```
 
 ## Wo werden Code, Metadaten und Testdaten verarbeitet?
 
@@ -85,7 +87,11 @@ Bei Herstellern steckt im Repository mehr, als man denkt: Preisfindung, Rabattfr
 
 Quellen: [Anthropic Data Residency](https://platform.claude.com/docs/en/manage-claude/data-residency), [Anthropic Pricing](https://platform.claude.com/docs/en/about-claude/pricing), [OpenAI Data Residency in Europe](https://openai.com/index/introducing-data-residency-in-europe/), [GitHub Changelog September 2026](https://github.blog/changelog/month/09-2026/).
 
-Dazu kommt das Arbeitsrecht. Laut [CMS](https://cms.law/de/deu/legal-updates/ki-transformation-und-betriebsrat-mitbestimmung-richtig-gestalten) sind KI-Systeme grundsätzlich geeignet, Leistungs- oder Verhaltensdaten auszuwerten, weshalb für ihre Einführung in aller Regel eine Betriebsvereinbarung nötig ist und ihre Nutzung ohne sie unzulässig bleibt. Coding-Agenten mit Nutzungsstatistiken fallen nach meiner Lesart darunter; lassen Sie das für Ihr Setup von Ihrem Fachanwalt bestätigen. Wie Sie Betriebsrat und DSGVO früh einbinden, beschreibe ich in [KI-Coding, Betriebsrat und DSGVO](../../../blog/ki-coding-betriebsrat-dsgvo/).
+Dazu kommt das Arbeitsrecht. Laut [CMS](https://cms.law/de/deu/legal-updates/ki-transformation-und-betriebsrat-mitbestimmung-richtig-gestalten) sind KI-Systeme grundsätzlich geeignet, Leistungs- oder Verhaltensdaten auszuwerten, weshalb für ihre Einführung in aller Regel eine Betriebsvereinbarung nötig ist und ihre Nutzung ohne sie unzulässig bleibt. Wie Sie Betriebsrat und DSGVO früh einbinden, beschreibe ich in [KI-Coding, Betriebsrat und DSGVO](../../../blog/ki-coding-betriebsrat-dsgvo/).
+
+```hinweis offen
+Coding-Agenten mit Nutzungsstatistiken fallen nach meiner Lesart unter diese Mitbestimmung. Lassen Sie das für Ihr Setup von Ihrem Fachanwalt bestätigen.
+```
 
 ## Was kosten Coding-Agenten pro Entwickler?
 

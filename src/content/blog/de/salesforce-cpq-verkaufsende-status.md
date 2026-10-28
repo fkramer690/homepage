@@ -59,7 +59,9 @@ Praktisch bedeutet der Status:
 | Erzwungene Migration | Keine |
 | CPQ für eine neue Gesellschaft oder eine neue Org | Nicht als Neukunde; mit dem Account-Team klären |
 
+```hinweis offen
 Die letzte Zeile ist meine eigene Lesart. Ein Konzern, der CPQ bereits lizenziert und für eine Tochtergesellschaft eine neue Org aufsetzen will, sollte schriftlich klären lassen, ob das als Bestandskunde zählt. Ich würde es nicht voraussetzen.
+```
 
 Was "keine neuen Funktionen" über die Zeit bedeutet, wird leicht unterschätzt. Salesforce liefert drei Releases pro Jahr. Jedes erweitert Revenue Cloud, CPQ bleibt stehen. Die Agentforce-Funktionen für Angebote, die Salesforce im Juli 2025 angekündigt hat, gehören zum Beispiel zu Revenue Cloud. Eine CPQ-Org hört nicht auf zu funktionieren. Sie fällt nur jedes Jahr weiter hinter das Produkt zurück, das Salesforce aktiv weiterentwickelt.
 
@@ -75,7 +77,15 @@ Ob das Billing-Paket noch an Neukunden verkauft wird, steht auf keiner Salesforc
 
 Viele Beiträge schreiben, Salesforce habe den Verkauf von CPQ im März 2025 eingestellt. Das Datum stammt aus Berichten Dritter wie dem oben zitierten Artikel von SalesforceBen, aktualisiert am 27. März 2025. Die Salesforce-Seite selbst nennt weder ein Datum für das Verkaufsende noch eines für das Lebensende. Wenn Sie ein Datum in einer Vorstandsvorlage oder einer Ausschreibung nennen, kennzeichnen Sie es als berichtet.
 
-Der Hintergrund hilft, wenn Partner unterschiedliche Namen verwenden. Salesforce CPQ und Salesforce Billing sind Managed Packages mit den Namespaces `SBQQ` und `blng`. Sie gehen auf SteelBrick zurück, das Salesforce laut [SiliconANGLE](https://siliconangle.com/2015/12/24/salesforce-confirms-360m-acquisition-of-quote-to-cash-startup-steelbrick/) im Dezember 2015 für 360 Millionen Dollar übernommen hat. Der Nachfolger erschien ab Spring '24 als Revenue Lifecycle Management, dann als Revenue Cloud Advanced. Die Dokumentation von Salesforce spricht inzwischen auch von Revenue Management oder Agentforce Revenue Management. Wenn ein Partner "Revenue Cloud" sagt, fragen Sie nach, ob er das neue Produkt meint oder das Angebot, das Salesforce [im November 2020](https://www.salesforce.com/news/stories/introducing-revenue-cloud/) unter demselben Namen vorgestellt hat und das CPQ, Billing, Partner Relationship Management und B2B Commerce zusammenfasste. Wie sich die beiden Produkte technisch unterscheiden, beschreibe ich in [Salesforce CPQ vs. Revenue Cloud: Die echten Unterschiede](../salesforce-cpq-revenue-cloud-unterschiede/).
+Der Hintergrund hilft, wenn Partner unterschiedliche Namen verwenden. Salesforce CPQ und Salesforce Billing sind Managed Packages mit den Namespaces `SBQQ` und `blng`. Die Dokumentation von Salesforce spricht beim Nachfolger inzwischen auch von Revenue Management oder Agentforce Revenue Management.
+
+```zeitleiste
+2015-12 | Salesforce übernimmt laut [SiliconANGLE](https://siliconangle.com/2015/12/24/salesforce-confirms-360m-acquisition-of-quote-to-cash-startup-steelbrick/) SteelBrick für 360 Millionen Dollar, die Basis von CPQ und Billing
+2020-11 | Salesforce [stellt Revenue Cloud vor](https://www.salesforce.com/news/stories/introducing-revenue-cloud/), das CPQ, Billing, Partner Relationship Management und B2B Commerce zusammenfasst
+Spring '24 | Der Nachfolger erscheint als Revenue Lifecycle Management, dann als Revenue Cloud Advanced
+```
+
+Wenn ein Partner "Revenue Cloud" sagt, fragen Sie nach, ob er das neue Produkt meint oder das gleichnamige Angebot von 2020. Wie sich die beiden Produkte technisch unterscheiden, beschreibe ich in [Salesforce CPQ vs. Revenue Cloud: Die echten Unterschiede](../salesforce-cpq-revenue-cloud-unterschiede/).
 
 ## Was sollten Sie bei der nächsten CPQ-Verlängerung sichern?
 

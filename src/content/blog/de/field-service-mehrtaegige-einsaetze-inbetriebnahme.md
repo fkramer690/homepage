@@ -66,11 +66,18 @@ Für ein Inbetriebnahme-Team heißt das: Die Crew braucht sorgfältige Pflege. E
 
 ## Was leistet Complex Work, und wo hört es auf?
 
-Complex Work verknüpft Termine in einer festen Reihenfolge. Die [Objektreferenz](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/api/sforce_api_objects_fsl__time_dependency__c.htm) nennt vier Abhängigkeitstypen: Same Start, Start After Finish, Start After Finish And Same Day und Immediately Follow. Ein eigenes Kennzeichen legt fest, ob beide Termine an dieselbe Ressource gehen.
+Complex Work verknüpft Termine in einer festen Reihenfolge.
+
+```vertiefung Für Admins
+titel: Welche Abhängigkeitstypen kennt Complex Work?
+Die [Objektreferenz](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/api/sforce_api_objects_fsl__time_dependency__c.htm) nennt vier Abhängigkeitstypen: Same Start, Start After Finish, Start After Finish And Same Day und Immediately Follow. Ein eigenes Kennzeichen legt fest, ob beide Termine an dieselbe Ressource gehen.
+```
 
 Laut [Salesforce-Hilfe zu Complex Work](https://help.salesforce.com/s/articleView?id=pfs_complex_work_considerations.htm&language=en_US&type=0) plant ESO eine Abhängigkeitsgruppe ganz oder gar nicht, mit bis zu fünf Terminen pro Gruppe. Größere Gruppen planen Disponenten von Hand. Ohne ESO werden Abhängigkeiten nur paarweise geprüft, Ketten aus drei oder mehr Terminen können also reißen. Kapazitätsbasierte Ressourcen lassen sich abhängigen Terminen nicht automatisch zuweisen.
 
+```hinweis achtung
 Die Grenze, die Inbetriebnahmen am stärksten trifft: Mehrtägige Planung und Complex Work sind nicht kombinierbar. Eine Besichtigung mit anschließender zweiwöchiger Inbetriebnahme lässt sich nicht per Abhängigkeit verknüpfen.
+```
 
 | Bedarf | Funktion | Grenze, die zählt |
 |---|---|---|

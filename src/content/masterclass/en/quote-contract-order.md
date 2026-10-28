@@ -85,7 +85,21 @@ According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/
 
 The hand-over to SAP belongs in a callout early in the plan, because production, delivery and invoice depend on it. I would fix three rules: the Salesforce order ID goes along as a reference, so a retry does not create a second SAP order. The SAP order number comes back. And after the hand-over SAP owns delivery, dates and invoice, while Salesforce only shows them. If SAP rejects the order, for example because the ship-to party is missing or the customer has a credit block, the step becomes fallout: it is retried as often as configured and then lands in a queue that someone in order management works through.
 
-According to the pricing page, DRO is an add-on to Revenue Cloud Advanced with "Freemium access available"; what that covers is not stated, so ask in writing. If the order goes to SAP in one piece and nothing else happens in Salesforce, a plain integration on activation is enough. Details and criteria are in [handing orders to SAP](../../../blog/revenue-cloud-order-orchestration-sap/). Which system owns which step is covered in [Revenue Cloud and SAP: who owns what?](../../../blog/revenue-cloud-sap-quote-to-cash-ownership/), and I support the interface design as part of [Salesforce integration](../../../services/salesforce-integration/).
+```ablauf
+sf: Activated order, DRO, Fallout queue
+erp: SAP order, Delivery and invoice
+Activated order --Flow--> DRO
+DRO --Callout--> SAP order
+SAP order ..SAP number back..> DRO
+DRO ..Rejected..> Fallout queue
+SAP order --> Delivery and invoice
+```
+
+If the order goes to SAP in one piece and nothing else happens in Salesforce, a plain integration on activation is enough. Details and criteria are in [handing orders to SAP](../../../blog/revenue-cloud-order-orchestration-sap/). Which system owns which step is covered in [Revenue Cloud and SAP: who owns what?](../../../blog/revenue-cloud-sap-quote-to-cash-ownership/), and I support the interface design as part of [Salesforce integration](../../../services/salesforce-integration/).
+
+```hinweis offen
+According to the pricing page, DRO is an add-on to Revenue Cloud Advanced with "Freemium access available". What that covers is not stated. Get the scope confirmed in writing before you plan on orchestration.
+```
 
 ## What happens to the assets after the order?
 

@@ -54,7 +54,15 @@ Dazu kommen Warenkorb, Checkout und die Order Summary, die der Käufer in seiner
 
 Hier liegen beide Varianten näher beieinander, als viele erwarten. Trailhead nennt die [Personas und Berechtigungen](https://trailhead.salesforce.com/content/learn/modules/b2b-commerce-lightning-roles-permissons-store-setup/define-personas-permissions) für einen B2B-Store: Käufer und Buyer Manager nutzen eine Customer-Community-Plus-Lizenz. Käufer bekommen die Berechtigung B2B Commerce User, Buyer Manager B2B Commerce Super User plus Delegated External User Administration, damit sie die Käufer ihres eigenen Unternehmens betreuen können. Merchandiser, die den Store intern pflegen, brauchen die Lizenz "B2B and D2C Commerce".
 
-Customer Community Plus ist auch die Lizenzfamilie für ein Kundenportal. Laut [Preisliste für Experience Cloud for Manufacturing](https://www.salesforce.com/manufacturing/cloud/experience-cloud/) kostet Customer Community Plus 35 € pro Mitglied oder 15 € pro Login im Monat, jährlich abgerechnet. Partner Community kostet 50 € oder 20 €.
+Customer Community Plus ist auch die Lizenzfamilie für ein Kundenportal. Die Listenpreise laut [Preisliste für Experience Cloud for Manufacturing](https://www.salesforce.com/manufacturing/cloud/experience-cloud/), jährlich abgerechnet:
+
+```kennzahlen
+35 € | Customer Community Plus pro Mitglied und Monat
+15 € | Customer Community Plus pro Login und Monat
+50 € | Partner Community pro Mitglied und Monat
+20 € | Partner Community pro Login und Monat
+quelle: Salesforce, Preisliste Experience Cloud for Manufacturing, jährliche Abrechnung
+```
 
 Die Käuferlizenz entscheidet also nicht zwischen Portal und Shop. Den Unterschied machen die Commerce-Gebühr, die Salesforce als Anteil am Umsatz über den Store berechnet, und der Aufwand für Katalog, Preise und ERP-Aufrufe. Die Gebühr erkläre ich in [B2B Commerce Preise: Was das GMV-Modell kostet](../b2b-commerce-preise-gmv-modell/). Wie sich Portallizenzen von internen Lizenzen unterscheiden, steht in [Salesforce-Lizenzen: Braucht jeder eine volle Lizenz?](../salesforce-lizenzen-volle-lizenz/).
 

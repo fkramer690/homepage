@@ -41,7 +41,12 @@ Das Zugriffsmodell beschreiben die [Security Best Practices](https://developer.s
 - **OAuth mit PKCE.** Die Anmeldung läuft über den Authorization Code Flow im Browser. PKCE (Proof Key for Code Exchange) ist Pflicht und verhindert, dass ein abgefangener Autorisierungscode von jemand anderem eingelöst wird.
 - **Keine Selbstregistrierung.** Ein Admin legt für jeden KI-Client eine External Client App an und kann sie auf Profile und Permission Sets beschränken.
 
-Zwei Details gehören in Ihre Prüfung. Die [offizielle Anleitung für Claude](https://developer.salesforce.com/blogs/2026/05/connect-claude-with-salesforce-hosted-mcp-servers) fordert die Scopes `refresh_token, offline_access` an, beschriftet mit „Perform requests at any time“. Nach einer Anmeldung arbeitet der Client weiter, bis das Token widerrufen wird oder abläuft; die Refresh-Token-Richtlinie zählt also. Positiv: Der Scope `mcp_api` gibt laut GA-Ankündigung Zugriff auf MCP, „but not our existing REST APIs“. Ein Token, das aus einem MCP-Client gestohlen wird, öffnet weniger als ein klassisches API-Token.
+```vertiefung Für Admins
+titel: Welche Scopes fordert der KI-Client an?
+Die [offizielle Anleitung für Claude](https://developer.salesforce.com/blogs/2026/05/connect-claude-with-salesforce-hosted-mcp-servers) fordert die Scopes `refresh_token, offline_access` an, beschriftet mit „Perform requests at any time“. Nach einer Anmeldung arbeitet der Client weiter, bis das Token widerrufen wird oder abläuft; die Refresh-Token-Richtlinie zählt also.
+
+Positiv: Der Scope `mcp_api` gibt laut GA-Ankündigung Zugriff auf MCP, „but not our existing REST APIs“. Ein Token, das aus einem MCP-Client gestohlen wird, öffnet weniger als ein klassisches API-Token.
+```
 
 ## Warum schützen Rechte pro Person nicht pro Kanal?
 
@@ -73,7 +78,20 @@ Die [Dokumentation zum Trust Layer](https://developer.salesforce.com/docs/ai/age
 
 Hosted MCP dreht die Richtung um. Claude, ChatGPT oder Cursor ist der Client und bringt sein eigenes Modell mit. Salesforce prüft Token und Rechte, führt die Abfrage aus und gibt Datensätze zurück, die der Client dann in einen Prompt für sein Modell packt. Salesforce macht auf diesem Weg keinen LLM-Aufruf. Es gibt also keinen Gateway-Schritt, in dem Maskierung greifen könnte, und die Zero-Data-Retention-Vereinbarungen binden die LLM-Partner von Salesforce für Aufrufe von Salesforce, nicht ein Modell, das Sie selbst lizenzieren. Die Dokumente passen zu dieser Lesart: Übersicht, Security-Seite, GA-Ankündigung und Claude-Anleitung behandeln Anmeldung, Rechte und Protokollierung, keine erwähnt den Trust Layer.
 
-Zwei Aussagen brauchen Sorgfalt. Die [Claudeforce-Meldung](https://www.salesforce.com/ap/news/press-releases/2026/08/27/sg-salesforce-and-anthropic-announce-claudeforce-the-1-ai-meets-the-1-ai-crm/) sagt, dass Claude über Amazon Bedrock innerhalb der Salesforce Trust Boundary verfügbar ist. Das betrifft Claude als Modell in Salesforce, nicht die Claude-App auf dem Laptop eines Vertriebsmitarbeiters. Die [AIforce-Ankündigung](https://www.salesforce.com/news/stories/aiforce-announcement/) schreibt, Geschäftsdaten seien „not retained by the model provider“, Anthropics Einrichtungsanleitung sagt zur Speicherung nichts. Ich würde beide Anbieter schriftlich fragen, welcher Vertrag diesen Satz für Ihre Org trägt.
+```ablauf
+ext: KI-Client, Externes Modell
+sf: Token und Rechte, sObject-Abfrage
+KI-Client --Tool-Aufruf--> Token und Rechte
+Token und Rechte --> sObject-Abfrage
+sObject-Abfrage ..Datensätze..> KI-Client
+KI-Client --Prompt--> Externes Modell
+```
+
+Zwei Aussagen brauchen Sorgfalt. Die [Claudeforce-Meldung](https://www.salesforce.com/ap/news/press-releases/2026/08/27/sg-salesforce-and-anthropic-announce-claudeforce-the-1-ai-meets-the-1-ai-crm/) sagt, dass Claude über Amazon Bedrock innerhalb der Salesforce Trust Boundary verfügbar ist. Das betrifft Claude als Modell in Salesforce, nicht die Claude-App auf dem Laptop eines Vertriebsmitarbeiters. Die [AIforce-Ankündigung](https://www.salesforce.com/news/stories/aiforce-announcement/) schreibt, Geschäftsdaten seien „not retained by the model provider“, Anthropics Einrichtungsanleitung sagt zur Speicherung nichts.
+
+```hinweis offen
+Fragen Sie Salesforce und Anthropic, welcher Vertrag den Satz „not retained by the model provider“ aus der AIforce-Ankündigung für Ihre Org trägt.
+```
 
 Bis dahin regelt Ihr KI-Vertrag die Daten. Für Claude Code schreibt Anthropic auf der [Seite zur Datennutzung](https://code.claude.com/docs/en/data-usage), dass Prompts unter kommerziellen Bedingungen nicht zum Training genutzt werden, die Standardaufbewahrung 30 Tage beträgt und Zero Data Retention pro Organisation für berechtigte Enterprise-Konten freigeschaltet wird. Diese Bedingungen gehören zum Datenschutzbeauftragten und, wo Beschäftigtendaten betroffen sind, zum Betriebsrat, siehe [KI-Coding, Betriebsrat und DSGVO](../ki-coding-betriebsrat-dsgvo/).
 

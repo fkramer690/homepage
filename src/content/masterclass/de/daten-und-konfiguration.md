@@ -73,7 +73,14 @@ Drei Dinge machen einen Datenschritt wiederholbar.
 
 [SFDMU](https://help.sfdmu.com/) ist ein Open-Source-Plugin der Salesforce CLI für Datenmigrationen, laut [npm-Eintrag](https://www.npmjs.com/package/sfdmu) unter BSD-3-Lizenz. Es kopiert Datensätze direkt von Org zu Org oder aus CSV-Dateien, beherrscht Insert, Upsert, Update und Delete, verarbeitet mehrere verknüpfte Objekte in einem Lauf und wird über eine einzige Datei `export.json` konfiguriert. Dazu kommen Feldzuordnungen, Anonymisierung und zusammengesetzte externe ID-Schlüssel. Die Verarbeitung läuft lokal oder auf dem Pipeline-Runner, ohne Cloud-Dienst dazwischen.
 
-sfdx-hardis bindet SFDMU über [Deployment Actions](https://sfdx-hardis.cloudity.com/salesforce-devops-work-on-user-story-deployment-actions/) ein. Eine Aktion vom Typ `data` lädt Datensätze aus einem SFDMU-Arbeitsbereich des Projekts in die Ziel-Org. Die Aktionen stehen in `config/.sfdx-hardis.yml` oder in einer Datei pro Pull Request, laufen standardmäßig einmal pro Org und werden nach einem fehlgeschlagenen Metadaten-Deployment nicht ausgeführt. Eine gescheiterte Aktion läuft beim nächsten Deployment mit demselben Pull Request erneut. Wie Deployment Actions in den Pull-Request-Fluss passen, steht in [Kapitel 5](../pipeline-aufbauen/). Im kostenlosen sfdx-hardis-Training gehören Deployment Actions für Referenzdaten zu Level 2; meine Eindrücke stehen in [was ich aus dem sfdx-hardis-Training mitgenommen habe](../../../blog/sfdx-hardis-kostenloses-devops-training/), eine Einführung in [sfdx-hardis: Open-Source-DevOps erklärt](../../../blog/sfdx-hardis-einfuehrung-salesforce-devops/).
+sfdx-hardis bindet SFDMU über [Deployment Actions](https://sfdx-hardis.cloudity.com/salesforce-devops-work-on-user-story-deployment-actions/) ein. Wie Deployment Actions in den Pull-Request-Fluss passen, steht in [Kapitel 5](../pipeline-aufbauen/). Im kostenlosen sfdx-hardis-Training gehören Deployment Actions für Referenzdaten zu Level 2; meine Eindrücke stehen in [was ich aus dem sfdx-hardis-Training mitgenommen habe](../../../blog/sfdx-hardis-kostenloses-devops-training/), eine Einführung in [sfdx-hardis: Open-Source-DevOps erklärt](../../../blog/sfdx-hardis-einfuehrung-salesforce-devops/).
+
+```vertiefung Für Entwickler
+titel: Wie laufen Deployment Actions vom Typ data?
+Eine Aktion vom Typ `data` lädt Datensätze aus einem SFDMU-Arbeitsbereich des Projekts in die Ziel-Org. Die Aktionen stehen in `config/.sfdx-hardis.yml` oder in einer Datei pro Pull Request und laufen standardmäßig einmal pro Org.
+
+Nach einem fehlgeschlagenen Metadaten-Deployment werden sie nicht ausgeführt. Eine gescheiterte Aktion läuft beim nächsten Deployment mit demselben Pull Request erneut.
+```
 
 Für kleine Seed-Datensätze reicht oft die Salesforce CLI selbst. Salesforce empfiehlt die [data-tree-Befehle](https://developer.salesforce.com/docs/platform/sfdx-dev/guide/sfdx-dev-test-data.html) für kleine Mengen, etwa unter 3.000 Datensätzen, und die data-bulk-Befehle für große Volumen.
 
@@ -89,7 +96,11 @@ Die kommerziellen Plattformen haben eigene Datenmodule mit Oberfläche. Laut Dok
 
 Was diese Werkzeuge gut machen: Ein Admin sieht vor dem Lauf, welche verknüpften Datensätze mitgehen, und muss keine `export.json` schreiben. Für CPQ-Konfiguration mit vielen verschachtelten Objekten ist das ein echter Vorteil. Welches Werkzeug insgesamt zu Ihrem Programm passt, entscheidet [Kapitel 4](../devops-werkzeuge-vergleich/); für Daten gilt dieselbe Regel wie für Metadaten. Das Werkzeug läuft auf Ihren Namen, und die Datenvorlagen liegen bei Ihnen, nicht im Konto eines Partners. Warum, steht in [warum Kunden ihre DevOps-Tools selbst besitzen sollten](../../../blog/warum-kunden-devops-tools-selbst-besitzen-sollten/).
 
-Ein Punkt gilt für alle Werkzeuge. Gearset schreibt offen, dass ein abgebrochenes Datendeployment Daten nur teilweise einspielen kann. Sichern Sie die betroffenen Objekte vor jedem Release mit Datenschritt; Backup und Wiederherstellung behandelt [Kapitel 9](../betrieb-monitoring-backup/).
+Ein Punkt gilt für alle Werkzeuge:
+
+```hinweis achtung
+Gearset schreibt offen, dass ein abgebrochenes Datendeployment Daten nur teilweise einspielen kann. Sichern Sie die betroffenen Objekte vor jedem Release mit Datenschritt; Backup und Wiederherstellung behandelt [Kapitel 9](../betrieb-monitoring-backup/).
+```
 
 ## Wie bleiben Kundendaten in Sandboxes geschützt?
 
@@ -101,11 +112,18 @@ Der Seed-Teil füllt laut Produktseite Developer-, Developer-Pro-, Partial- und 
 
 Meine Reihenfolge nach jedem Refresh einer Partial- oder Full-Sandbox:
 
-1. Maskierung starten und das Ausführungsprotokoll prüfen.
-2. Neue Felder seit dem letzten Lauf in die Maskierung aufnehmen; diese Prüfung steht in der Release-Checkliste.
-3. E-Mail-Felder in Kontakten auf die Maskierungsliste setzen, damit kein Händler eine Testbenachrichtigung bekommt.
-4. Konfigurationsdaten aus dem Repository einspielen, falls die Sandbox einen neueren Stand braucht als die Produktion.
-5. Erst danach Zugänge für Partner und Fachbereich freigeben.
+```schritte
+Maskierung starten
+  Den Lauf starten und das Ausführungsprotokoll prüfen.
+Neue Felder aufnehmen
+  Felder, die seit dem letzten Lauf entstanden sind, in die Maskierung aufnehmen; diese Prüfung steht in der Release-Checkliste.
+E-Mail-Felder maskieren
+  E-Mail-Felder in Kontakten auf die Maskierungsliste setzen, damit kein Händler eine Testbenachrichtigung bekommt.
+Konfiguration einspielen
+  Konfigurationsdaten aus dem Repository laden, falls die Sandbox einen neueren Stand braucht als die Produktion.
+Zugänge freigeben
+  Erst danach Zugänge für Partner und Fachbereich freigeben.
+```
 
 Für Coding-Agenten gilt eine strengere Regel, die [Kapitel 8 der KI-Masterclass](../../ki-salesforce/best-practices-ki-code/) beschreibt: Sie arbeiten in Scratch Orgs und Developer-Sandboxes mit Seed-Daten, nie in einer Full Copy.
 

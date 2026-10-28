@@ -77,6 +77,16 @@ I suggest three states in the product list and on the product page:
 - **On request**, when the part is made to order or the copy shows nothing.
 - **Delivery date**, at checkout, from the live availability check in SAP.
 
+```ablauf
+erp: Stock in SAP, SAP availability
+sf: Copy in OCI, Product list, Checkout
+Stock in SAP --updates--> Copy in OCI
+Copy in OCI --stock state--> Product list
+Product list --> Checkout
+Checkout --extension--> SAP availability
+SAP availability ..date..> Checkout
+```
+
 That has three advantages. The product list stays fast, because it only reads the copy. The one moment where the store makes a promise, the order, uses the exact value. And exact quantities stay internal, which matters when resellers or competitors have store access.
 
 The same logic applies to agents. My article on [order status from SAP](../agentforce-sap-order-status-mulesoft/) makes the point that an agent passes on the confirmed date from SAP and never estimates one from stock figures. A store should do the same.
@@ -91,7 +101,9 @@ A manufacturer of pumps sells 12,000 spare parts to 250 dealers. Stock sits in S
 4. At checkout, the inventory extension calls the SAP availability check through middleware for the cart lines and shows the confirmed date per line.
 5. If SAP does not answer within a set time, the store accepts the order with "date follows" and SAP confirms it later.
 
+```hinweis achtung
 The fifth point is the one teams forget. Write the fallback down before the first line of code.
+```
 
 ## How does this fit with Field Service and distributors?
 

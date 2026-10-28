@@ -32,7 +32,10 @@ In Revenue Cloud laufen Rabatt- und Margenfreigaben über Advanced Approvals: Fr
 
 Revenue Cloud ist die Quote-to-Cash-Suite von Salesforce auf Standardobjekten; Hilfe und Developer Guide nennen sie derzeit Revenue Management. Ihre Freigabefunktion heißt Advanced Approvals. Laut [Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.revenue_lifecycle_management_dev_guide.meta/revenue_lifecycle_management_dev_guide/advanced_approvals_overview.htm) liefert sie Invocable Actions für "intricate parallel or sequential approval chains" mit "detailed audit trails". Über Business APIs lassen sich die Freigabestufen anzeigen, bevor ein Datensatz eingereicht wird. Verfügbar ist das in Enterprise, Unlimited und Developer Edition, wenn Advanced Approvals aktiviert ist.
 
+```vertiefung Für Admins
+titel: Worauf baut Advanced Approvals technisch auf?
 Technisch steht es auf dem Freigabemodell von Flow. Salesforce dokumentiert [Flow Approval Process und Advanced Approvals](https://developer.salesforce.com/docs/platform/data-models/guide/flow-approval-process-and-advanced-approvals.html) in einem gemeinsamen Datenmodell: Stufen, Schritte und Entscheidungen werden im Flow Builder gebaut, jeder Durchlauf erzeugt Approval Submissions und Approval Work Items. Für Sie heißt das zweierlei. Ein Admin, der Flow kennt, kann die Freigabelogik lesen und ändern. Und jede Freigabe hinterlässt Datensätze, die Reporting und Prüfungen nutzen können.
+```
 
 ## Wie läuft eine Freigabe am Angebot ab?
 
@@ -82,7 +85,9 @@ Weil eine Freigabe eine richtige Antwort hat. Ein Rabatt liegt über 30 Prozent 
 
 Die Salesforce-Hilfe führt einen Agentforce-Bereich für Advanced Approvals mit drei Subagenten: Approval Management, Search Approval Record und Summarize Multiple Approval Work Items. Diese Aufteilung halte ich für vernünftig. Der Agent hilft Freigebenden, ihre Work Items zu finden und zu verstehen, und dem Vertrieb, seine Einreichungen zu verfolgen. Schwelle und Freigebender bleiben im Workflow. Denselben Gedanken für Agenten allgemein beschreibe ich in [Agent Script: Warum Geschäftsregeln nicht ins LLM gehören](../agent-script-regeln-statt-llm/).
 
+```hinweis offen
 Zusammenfassungen von Drittanbietern zu Winter '27 erwähnen außerdem einen Freigabe-Agenten für den Vertrieb. Die Release Notes zu Revenue Cloud konnte ich dafür nicht öffnen, prüfen Sie sie also, bevor Sie damit planen.
+```
 
 ## Was ändert sich, wenn Sie Freigaben aus CPQ migrieren?
 

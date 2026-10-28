@@ -73,7 +73,10 @@ Commerce extensions are Apex classes that Salesforce runs at named extension poi
 
 According to the [integration architecture page](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-integration-architecture.html), extensions for pricing, inventory, shipping and tax have existed since Winter '24, and Salesforce recommends them over the older checkout integrations framework, which remains supported. Payments cannot be customised with an extension, according to the [extensions guide](https://developer.salesforce.com/docs/commerce/extensions/guide/extensions.html).
 
+```vertiefung For developers
+title: Keeping extensions maintainable: `super()` and registration in the repository
 Two points from the same guide decide how maintainable this is. Salesforce strongly recommends calling `super()` in domain extensions, so your code adds to the default and later releases still reach you. And registering and mapping a class to the store is easiest with the Salesforce CLI and its Commerce plug-in, or through the `RegisteredExternalService` and `StoreIntegratedService` objects. That means code, registration and mapping can live in the client's repository and pipeline. How to review partner code against this is in [Commerce extensions: custom code that survives updates](../../../blog/commerce-extensions-custom-code/); how store configuration moves through environments is in the DevOps masterclass chapter [Data and configuration](../../devops-release-management/data-and-configuration/).
+```
 
 My rule for existing stores: new logic goes into extensions, working old integrations stay until the code has to change anyway.
 
@@ -89,9 +92,25 @@ My recommendation is a mix: product list and product page read the copy and show
 
 When a buyer submits an order, B2B Commerce creates an order and an order summary. The field `OrderLifeCycleType` separates two cases according to the [developer guide](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-import-export-managed-unmanaged.html): managed, created by Salesforce Order Management, and unmanaged, created by the store. Users with the B2B Commerce Integrator User or Edit Unmanaged Order Summaries permission can update unmanaged summaries. Give that permission to a dedicated integration user, not a person.
 
-The editions differ clearly here. Growth includes Order Management Lite, Advanced full Order Management. According to the pricing page, orders from other channels or third-party systems need a separately purchased Order Management, and existing customers with Order Management renew on Advanced. The page does not list what Lite leaves out; get that in writing before you choose an edition.
+The editions differ clearly here. Growth includes Order Management Lite, Advanced full Order Management. According to the pricing page, orders from other channels or third-party systems need a separately purchased Order Management, and existing customers with Order Management renew on Advanced.
+
+```hinweis offen
+The pricing page does not list what Order Management Lite in Growth leaves out. Get that in writing before you choose an edition.
+```
 
 According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/scom-order-management/scom-som-get-started), Order Management covers allocation, fulfilment and servicing with cancellations, returns and exchanges, and exports invoices to the ERP. A machine builder with SAP SD, warehouse management and billing already has all of that. On top come phone, email and EDI orders that keep landing in SAP. That is why for most manufacturers SAP should stay the order owner: the store takes the order, SAP fulfils it, and the integration writes back order number, dates, deliveries and invoices. The reasoning and what the return path must carry at minimum are in [B2B store orders to the ERP: who owns the order?](../../../blog/b2b-store-orders-to-erp/).
+
+```ablauf
+sf: Checkout, Order summary
+erp: SAP order, Delivery, Invoice
+Checkout --unmanaged--> Order summary
+Checkout --order to SAP--> SAP order
+SAP order --> Delivery
+SAP order --> Invoice
+SAP order ..number, dates..> Order summary
+Delivery ..written back..> Order summary
+Invoice ..written back..> Order summary
+```
 
 Plan the way back as carefully as the way out. A dealer who sees "order received" for three days calls inside sales.
 

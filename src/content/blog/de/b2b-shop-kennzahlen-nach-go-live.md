@@ -74,12 +74,33 @@ Ein typisches Szenario, als Annahme: Vor dem Go-live erfasst der Innendienst 40.
 
 ## Was begrenzen die Data-Cloud-Credits?
 
-Die Suchanalyse läuft auf Data Cloud, und Arbeit in Data Cloud verbraucht Credits. Laut Preisseite enthält Growth 250K und Advanced 500K Data-Cloud-Credits. Laut [Trailhead zum Credit-Verbrauch](https://trailhead.salesforce.com/content/learn/modules/data-cloud-credit-consumption-quick-look/get-started-with-data-cloud-credit-consumption) verbrauchen Datenaufnahme, Abfragen für Berichte und Dashboards, Segmentierung und Calculated Insights jeweils Credits, Calculated Insights bei jeder Aktualisierung erneut. Daten aus Ihrer Salesforce-Org über den CRM-Connector aufzunehmen, verbraucht keine Credits.
+Die Suchanalyse läuft auf Data Cloud, und Arbeit in Data Cloud verbraucht Credits aus dem Kontingent Ihrer Edition.
+
+```kennzahlen
+250K | Data-Cloud-Credits in Commerce Cloud B2B Growth
+500K | Data-Cloud-Credits in Commerce Cloud B2B Advanced
+quelle: Salesforce-Preisseite Commerce Cloud B2B
+```
+
+Laut [Trailhead zum Credit-Verbrauch](https://trailhead.salesforce.com/content/learn/modules/data-cloud-credit-consumption-quick-look/get-started-with-data-cloud-credit-consumption) verbrauchen Datenaufnahme, Abfragen für Berichte und Dashboards, Segmentierung und Calculated Insights jeweils Credits, Calculated Insights bei jeder Aktualisierung erneut. Daten aus Ihrer Salesforce-Org über den CRM-Connector aufzunehmen, verbraucht keine Credits.
 
 Wie viele Credits die Suchanalyse verbraucht, veröffentlicht Salesforce nicht. Prüfen Sie den Verbrauch deshalb nach dem ersten Monat im Digital Wallet, bevor jemand zehn weitere Dashboards auf Data Cloud baut. Wie Credits mit anderen KI-Kosten zusammenhängen, steht im KI-Masterclass-Kapitel [Kosten und Token](../../masterclass/ki-salesforce/kosten-und-token/).
 
 ## Wo starten Sie?
 
-Erheben Sie die Ausgangswerte vor dem Go-live: Auftragspositionen je Kanal und Buyer Group aus dem ERP und zwei Wochen Innendienstzeit pro Position. Vereinbaren Sie das Kanalkennzeichen in der Auftragsschnittstelle und legen Sie den Termin der ersten Auswertung drei Monate nach der ersten Welle fest. Dieselbe Disziplin für Agenten beschreibe ich in [Agentforce Kennzahlen nach dem Go-live](../agentforce-kennzahlen-nach-go-live/), das ganze Kapitel steht in der Masterclass unter [Agenten, Migration, Einführung](../../masterclass/b2b-commerce/agentforce-migration-einfuehrung/).
+Die Messung beginnt vor dem Go-live, nicht danach.
+
+```schritte
+Ausgangswerte erheben | 2 Wochen · Innendienst
+  Auftragspositionen je Kanal und Buyer Group aus dem ERP, dazu die Innendienstzeit pro Position.
+Kanalkennzeichen vereinbaren
+  Im Entwurf der Auftragsschnittstelle, damit jede Position ihrem Kanal zugeordnet bleibt.
+Erste Auswertung | 3 Monate nach der ersten Welle
+  Termin vor dem Go-live festlegen, dieselben Messungen wiederholen.
+Je Welle wiederholen
+  Jede weitere Buyer Group wird drei Monate nach ihrem Go-live gemessen.
+```
+
+Dieselbe Disziplin für Agenten beschreibe ich in [Agentforce Kennzahlen nach dem Go-live](../agentforce-kennzahlen-nach-go-live/), das ganze Kapitel steht in der Masterclass unter [Agenten, Migration, Einführung](../../masterclass/b2b-commerce/agentforce-migration-einfuehrung/).
 
 Ein B2B-Shop wirkt, wenn Händler mehr Positionen darüber bestellen und der Innendienst weniger tippt, und beweisen lässt sich das nur mit Ausgangswerten von vor dem Go-live. Wenn Sie diese Kennzahlen für Ihren Shop aufsetzen möchten, [schreiben Sie mir](#contact).

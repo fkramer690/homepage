@@ -38,7 +38,9 @@ Salesforce verwendet dafür drei Namen auf verschiedenen Seiten:
 - **Merchandising-Agent (B2B)** steht auf der [Innovationsseite zu Commerce](https://www.salesforce.com/de/commerce/innovations/) mit "AV Aug. 26". Salesforce beschreibt ihn als Backoffice-Agenten, der im Gespräch statt per Klick Produkte in den Suchergebnissen hervorhebt oder herabstuft, neue Produkte einführt und Käufer-Accounts verwaltet.
 - **Agentforce Skills for Merchandising** heißt die [Trailhead-Einheit](https://trailhead.salesforce.com/content/learn/modules/agentforce-merchant-quick-look/get-to-know-your-merchant-agent), die Kennzahlen und Aktionen erklärt.
 
+```hinweis offen
 Wie die drei lizenzrechtlich zusammenhängen, erklärt Salesforce auf diesen Seiten nicht. Ich würde das Account-Team schriftlich fragen, welche Skills der enthaltene Merchant Agent in Ihrem Vertrag abdeckt.
+```
 
 ## Was leistet er im Ersatzteilkatalog?
 
@@ -64,7 +66,16 @@ Trailhead nennt die Voraussetzungen: generative KI von Salesforce, Agentforce, B
 
 Die Editionen enthalten laut Preisseite Data-Cloud-Credits: 250K in Growth und 500K in Advanced. Was der Agent pro Anfrage verbraucht, ist nicht veröffentlicht. Ich würde den Verbrauch deshalb vor dem Go-live in einer Sandbox mit echten Anfragen messen. Wie so eine Schätzung funktioniert, zeige ich in [Flex Credits: Agentforce-Kosten pro Aktion schätzen](../flex-credits-agentforce-kosten-pro-aktion/).
 
-Die Grenzen des Shops gelten auch für den Agenten. Laut den [Suchgrenzen](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-search-limits.html) hat ein Shop höchstens 100 Boost-und-Bury-Regeln und 100 Synonymregeln, beides harte Grenzen, und durchsuchbare Attribute, filterbare Attribute und Sortierregeln teilen sich ein Maximum von 70. Ein Agent, der für jede Bitte eine neue Regel schreibt, verbraucht die 100 schnell. Jemand muss die Regeln regelmäßig aufräumen, egal wer sie angelegt hat.
+Die Grenzen des Shops gelten auch für den Agenten, und die beiden Regelgrenzen sind hart:
+
+```kennzahlen
+100 | Boost-und-Bury-Regeln pro Shop
+100 | Synonymregeln pro Shop
+70 | durchsuchbare und filterbare Attribute plus Sortierregeln zusammen
+quelle: Salesforce Developers, [Suchgrenzen](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-search-limits.html)
+```
+
+Ein Agent, der für jede Bitte eine neue Regel schreibt, verbraucht die 100 schnell. Jemand muss die Regeln regelmäßig aufräumen, egal wer sie angelegt hat.
 
 ## Was sollte der Agent nicht tun?
 

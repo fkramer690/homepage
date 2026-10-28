@@ -64,7 +64,9 @@ A new procedure starts as an empty version V1, and each element you add becomes 
 
 This step is the easiest to forget in the first weeks. Change a price book entry or a volume tier, and the quote still calculates with the old value until the decision table has been refreshed. Trailhead shows two ways: run Sync Pricing Data in Salesforce Pricing Setup, or refresh single decision tables in Setup, such as Volume Discount Entries or, for contract prices, Contract Pricing Entries and Contract Pricing Volume Tiers.
 
+```hinweis achtung
 For a manufacturer whose list prices arrive from SAP every night, the refresh belongs into the load job. The load is finished only when the decision tables are current. I would add a check that compares a handful of reference prices after each load, because a forgotten refresh produces no error message, only wrong prices.
+```
 
 ## What does the price waterfall show?
 
@@ -74,12 +76,15 @@ For sales it answers "why is the price this one?" without a ticket to IT. For co
 
 ## Can other systems ask Revenue Cloud for a price?
 
-Yes. The [Salesforce Pricing Business APIs](https://developer.salesforce.com/docs/atlas.en-us.revenue_lifecycle_management_dev_guide.meta/revenue_lifecycle_management_dev_guide/pricing_business_apis.htm) in the Revenue Management Developer Guide (Winter '27, API 68.0) include:
+Yes. The [Salesforce Pricing Business APIs](https://developer.salesforce.com/docs/atlas.en-us.revenue_lifecycle_management_dev_guide.meta/revenue_lifecycle_management_dev_guide/pricing_business_apis.htm) in the Revenue Management Developer Guide (Winter '27, API 68.0) include resources for headless pricing, for refreshing the lookup tables and for the price waterfall.
 
-- `/connect/core-pricing/pricing` for headless pricing, which builds and fills a context in one call and returns prices per line plus any errors;
-- `/connect/core-pricing/price-contexts/{contextId}` to price an existing context;
-- `/connect/core-pricing/sync/{pricingSyncOrigin}` to refresh the lookup tables;
-- `/connect/core-pricing/waterfall` resources to write and read the price waterfall of a line.
+```vertiefung For developers
+title: Which Pricing Business API resources do you need?
+- `/connect/core-pricing/pricing` for headless pricing, which builds and fills a context in one call and returns prices per line plus any errors
+- `/connect/core-pricing/price-contexts/{contextId}` to price an existing context
+- `/connect/core-pricing/sync/{pricingSyncOrigin}` to refresh the lookup tables
+- `/connect/core-pricing/waterfall` resources to write and read the price waterfall of a line
+```
 
 This matters when the same price should appear in a dealer portal, a B2B store or an agent's answer. The store case is covered in [Advanced Pricing in B2B stores](../advanced-pricing-b2b-store-revenue-cloud/) and in the chapter [prices, cart and checkout](../../masterclass/b2b-commerce/prices-cart-checkout/). An agent should call the pricing API and never work out a price itself, the same rule I describe in [Agent Script: why business rules don't belong in the LLM](../agent-script-deterministic-rules/).
 

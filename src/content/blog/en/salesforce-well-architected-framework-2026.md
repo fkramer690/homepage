@@ -56,10 +56,16 @@ Salesforce did not throw the old content away; it re-sorted it. The [Legacy Fram
 
 ![How the old Well-Architected areas were split across the five new pillars: Secure goes to Trust. Reliable goes to Reliability, performance to Resource and Cost Optimization, monitoring to Operational Excellence. Compliant goes to Fairness, while legal and data residency stay with Trust. Intentional and Automated go to Operational Excellence, ROI and maintainability to Resource and Cost Optimization. Engaging goes to Fairness. Resilient goes to Operational Excellence, disaster recovery to Reliability. Composable goes to Resource and Cost Optimization, messaging, eventing and APIs to the Integration Patterns. New on top is the Agentic Enterprise lens for every pillar.](../../../assets/blog/well-architected-mapping-en.png)
 
-What stands out is how concrete the new pages are. A few examples from the text:
+What stands out is how concrete the new pages are. Two figures from them:
 
-- **Governor limits:** plan with 70 percent of the limits as the ceiling under normal load, so there is headroom for peaks.
-- **Service levels:** set your own solution's target below the platform SLA, for example 99.5 percent against a 99.9 percent platform SLA, so an error budget remains.
+```kennzahlen
+70% | of governor limits as the ceiling under normal load, so there is headroom for peaks
+99.5% | as your own solution's target against a 99.9% platform SLA, so an error budget remains
+source: Salesforce Well-Architected Framework in the Architecture Center
+```
+
+More examples from the text:
+
 - **Disaster recovery:** define RTO and RPO per business capability, restore backups regularly, and run a full failover drill once a year for critical systems.
 - **Multi-org:** only when business requirements justify the extra complexity, for example regulatory data isolation.
 - **DevOps:** measure DORA metrics (deployment frequency, lead time, change failure rate, recovery time, rework rate) and check regularly whether production has drifted from what is in version control.
@@ -94,7 +100,9 @@ For all the agreement: it is still a vendor document.
 
 I already used the old framework with Trusted, Easy and Adaptable in client projects and presented it in user group talks.
 
+```praxis
 In my largest programme so far, more than 30 developers in 8 streams worked for 5 implementation partners in the same org. It took us about three months to settle the shared standards: naming conventions, one automation per object, test coverage rules, a matrix of which stream owns which object, and rules for what belongs in custom metadata types or custom labels. 80 percent were in place after the first round, the rest was added over the following months.
+```
 
 With the new framework I would sort these standards along the five pillars today. Naming conventions, packaging and object ownership are Resource and Cost Optimization and Operational Excellence. Permissions and integration users are Trust. The advantage: every partner knows the framework, so the discussion does not start from zero, and every deviation can be assigned to a pillar.
 

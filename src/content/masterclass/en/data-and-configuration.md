@@ -73,7 +73,14 @@ Three things make a data step repeatable.
 
 [SFDMU](https://help.sfdmu.com/) is an open-source Salesforce CLI plugin for data migration, licensed under BSD-3 according to its [npm entry](https://www.npmjs.com/package/sfdmu). It copies records directly from org to org or from CSV files, supports insert, upsert, update and delete, handles several related objects in one run and is configured through a single `export.json` file. Field mapping, anonymisation and composite external ID keys come on top. Processing runs locally or on the pipeline runner, with no cloud service in between.
 
-sfdx-hardis runs SFDMU through [deployment actions](https://sfdx-hardis.cloudity.com/salesforce-devops-work-on-user-story-deployment-actions/). An action of type `data` loads records from one of the project's SFDMU workspaces into the target org. Actions are stored in `config/.sfdx-hardis.yml` or in a file per pull request, run once per org by default and are skipped when the metadata deployment failed. A failed action runs again with the next deployment that carries its pull request. How deployment actions fit into the pull request flow is covered in [chapter 5](../building-the-pipeline/). In the free sfdx-hardis training, deployment actions for reference data are part of level 2; my notes are in [what I learned from the free sfdx-hardis training](../../../blog/sfdx-hardis-free-devops-training/), and an introduction is in [sfdx-hardis: open-source Salesforce DevOps explained](../../../blog/sfdx-hardis-open-source-salesforce-devops/).
+sfdx-hardis runs SFDMU through [deployment actions](https://sfdx-hardis.cloudity.com/salesforce-devops-work-on-user-story-deployment-actions/). How deployment actions fit into the pull request flow is covered in [chapter 5](../building-the-pipeline/). In the free sfdx-hardis training, deployment actions for reference data are part of level 2; my notes are in [what I learned from the free sfdx-hardis training](../../../blog/sfdx-hardis-free-devops-training/), and an introduction is in [sfdx-hardis: open-source Salesforce DevOps explained](../../../blog/sfdx-hardis-open-source-salesforce-devops/).
+
+```vertiefung For developers
+title: How do deployment actions of type data run?
+An action of type `data` loads records from one of the project's SFDMU workspaces into the target org. Actions are stored in `config/.sfdx-hardis.yml` or in a file per pull request and run once per org by default.
+
+They are skipped when the metadata deployment failed. A failed action runs again with the next deployment that carries its pull request.
+```
 
 For small seed sets the Salesforce CLI itself is often enough. Salesforce recommends the [data tree commands](https://developer.salesforce.com/docs/platform/sfdx-dev/guide/sfdx-dev-test-data.html) for small sets, such as fewer than 3,000 records, and the data bulk commands for large volumes.
 
@@ -89,7 +96,11 @@ The commercial platforms have their own data modules with a user interface. Acco
 
 What these tools do well: an admin sees before the run which related records will go along and does not have to write an `export.json`. For CPQ configuration with many nested objects, that is a real advantage. Which tool fits your programme overall is decided in [chapter 4](../devops-tools-compared/); for data the same rule applies as for metadata. The tool runs in your name, and the data templates sit with you, not in a partner's account. The reasons are in [why clients should own their DevOps tools](../../../blog/why-clients-should-own-their-devops-tools/).
 
-One point applies to every tool. Gearset says openly that a failed data deployment can leave data only partly deployed. Back up the affected objects before every release with a data step; backup and restore are covered in [chapter 9](../operations-monitoring-backup/).
+One point applies to every tool:
+
+```hinweis achtung
+Gearset says openly that a failed data deployment can leave data only partly deployed. Back up the affected objects before every release with a data step; backup and restore are covered in [chapter 9](../operations-monitoring-backup/).
+```
 
 ## How does customer data in sandboxes stay protected?
 
@@ -101,11 +112,18 @@ The seed part, according to the product page, fills developer, developer pro, pa
 
 My order after every refresh of a partial or full sandbox:
 
-1. Start the mask and check the execution log.
-2. Add fields created since the last run to the mask; this check sits in the release checklist.
-3. Make sure email fields on contacts are on the mask list, so no dealer receives a test notification.
-4. Load configuration data from the repository if the sandbox needs a newer state than production.
-5. Only then open access for partners and business users.
+```schritte
+Start the mask
+  Start the run and check the execution log.
+Add new fields
+  Add fields created since the last run to the mask; this check sits in the release checklist.
+Mask email fields
+  Make sure email fields on contacts are on the mask list, so no dealer receives a test notification.
+Load configuration
+  Load configuration data from the repository if the sandbox needs a newer state than production.
+Open access
+  Only then open access for partners and business users.
+```
 
 Coding agents get a stricter rule, described in [chapter 8 of the AI masterclass](../../ai-salesforce/ai-code-best-practices/): they work in scratch orgs and developer sandboxes with seed data, never in a full copy.
 

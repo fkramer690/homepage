@@ -49,14 +49,30 @@ Hintergrund ist eine US-Executive-Order vom 29. September 2026, [„Inaugurating
 
 In Ihren eigenen Unterlagen würde ich „AIforce“ schreiben und einmal „(vom CEO als SIForce angekündigt)“ ergänzen. In Bestellformularen und Verträgen steht der Name, den Salesforce dort druckt, und der zählt.
 
+```zeitleiste
+2026-04-29 | Hosted MCP Server allgemein verfügbar
+2026-08-27 | Claudeforce: Claude wird Standardmodell für Coworker und Slackbot
+2026-09-15 | AIforce zur Dreamforce vorgestellt
+2026-09-29 | US-Executive-Order „Super Intelligence“ für Behörden
+2026-10-09 | Marc Benioff auf X: AIforce heißt SIForce
+2026-10-12 | Salesforce Ben findet keine offizielle Ankündigung
+```
+
 ## Was ist heute tatsächlich verfügbar?
 
 Die Ankündigungen sind größer als das, was sich einschalten lässt. Stand 27. Oktober 2026:
 
 - **Salesforce in Claude** ist eine Beta. Laut [Anthropics Einrichtungsanleitung](https://support.claude.com/en/articles/16952184-set-up-salesforce-in-claude-for-your-organization) läuft es auf bezahlten Claude-Plänen für Organisationen, die Salesforce über die Beta-Anmeldung freigibt, setzt die aktuelle Sales Cloud Enterprise Edition voraus und funktioniert im Chat und in Claude Cowork im Web und auf dem Desktop. Claude handelt als eigenes Salesforce-Konto des Nutzers und fragt standardmäßig vor jeder Änderung nach Freigabe.
 - **Agentforce Coworker** ist laut Ankündigung „instantly available“. Salesforces eigener [Coworker-Blog](https://www.salesforce.com/blog/agentforce-coworker-salesforce-ai-teammate/) schreibt sowohl „Generally Available“ als auch „in beta“ und nennt Microsoft Teams, ChatGPT, Claude und eine Desktop-App als „coming later this year“. Die [Einrichtungsdokumentation](https://developer.salesforce.com/docs/data/agentforce-coworker/guide/agentforce-coworker-turn-on-infrastructure.html) verlangt Enterprise, Unlimited oder Agentforce 1 Edition sowie Data Cloud oder Data 360.
-- **Slackforce** steht im [Dreamforce-2026-Überblick](https://www.salesforce.com/blog/dreamforce-2026-announcements/) als GA im Oktober; eine eigene Release-Meldung dazu habe ich nicht gefunden. Slackbot-Aktionen haben bereits einen Preis: 40 Flex Credits für eine Standard- und 200 für eine Advanced-Aktion, je Slack-Workspace, laut [Rate Card vom 31. August 2026](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf).
+- **Slackforce** steht im [Dreamforce-2026-Überblick](https://www.salesforce.com/blog/dreamforce-2026-announcements/) als GA im Oktober; eine eigene Release-Meldung dazu habe ich nicht gefunden. Slackbot-Aktionen haben bereits feste Preise in Flex Credits, je Slack-Workspace, laut [Rate Card vom 31. August 2026](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf).
 - **Hosted MCP Server**, über die externe KI-Werkzeuge wie Claude auf eine Org zugreifen, sind [seit dem 29. April 2026 allgemein verfügbar](https://developer.salesforce.com/blogs/2026/04/salesforce-hosted-mcp-servers-are-now-generally-available), ab Enterprise Edition. Die aktuelle Dokumentation ergänzt, dass sie für Kunden mit Flex Credits gedacht sind und die Nutzung berechnet werden kann. Wer darüber was lesen darf, behandle ich in [Hosted MCP Server und Datenzugriff](../salesforce-hosted-mcp-server-datenzugriff/).
+
+```kennzahlen
+37 | Vertriebs-Skills in Salesforce in Claude (Beta)
+40 Flex Credits | je Standard-Aktion in Slackbot
+200 Flex Credits | je Advanced-Aktion in Slackbot
+quelle: Anthropic zu Salesforce in Claude; Salesforce Flex Credits Rate Card vom 31.08.2026
+```
 
 Zu den Kosten sagt die Ankündigung: „Pricing and packaging are subject to change.“ Die Rate Card führt Headless Platform Interactions, den Zähler für agentische API- und MCP-Aufrufe, als „TBA“. Warum daraus ein Budgetposten wird, steht in [MCP-Zugriffe als Budgetrisiko](../mcp-zugriffe-salesforce-budgetrisiko/).
 

@@ -64,6 +64,14 @@ All that is documented is one post. On 9 October 2026 Marc Benioff wrote on X: "
 
 The trigger, on the other hand, can be read in the primary source. [Executive Order 14434](https://www.whitehouse.gov/presidential-actions/2026/09/inaugurating-the-era-of-super-intelligence/) of 29 September 2026 tells US executive departments and agencies to write "Super Intelligence" instead of "Artificial Intelligence" in their own documents. Existing regulations stay as they are, no enforceable rights are created, and private companies are not mentioned. Salesforce did not have to rename anything; it was a voluntary choice. That US federal agencies are Salesforce customers and now have to say "SI" is a plausible motive, but it is my assumption.
 
+```zeitleiste
+2026-04 | Headless 360 at TDX, according to Salesforce Ben
+2026-09-15 | Salesforce launches AIforce at Dreamforce
+2026-09-29 | Executive Order 14434 for US executive agencies
+2026-10-09 | Marc Benioff on X: "AIForce is officially SIForce"
+2026-10-12 | Salesforce Ben finds no official announcement
+```
+
 For your documents I recommend "AIforce (announced by the CEO as SIForce)" until Salesforce confirms the name in writing. Three names in about six months are also a good reason to structure architecture documents by capability rather than by product name.
 
 ## SI as system integrator: what changes in the partner model
@@ -80,7 +88,17 @@ The announcement gives no start date for the new tiers. On 15 April 2026 Salesfo
 
 ### What the new incentives mean for you as a client
 
-The logic has shifted from "licence sold, project billed by the hour" to "agent in production, consumption running". Partly that is good for you. A partner who earns at go-live has less interest in pilots that never reach production. But there is a conflict. Every agent action costs Flex Credits, and Salesforce now rewards your partner for that consumption. An agent that runs three actions instead of one costs you more and costs the partner nothing.
+The logic has shifted from "licence sold, project billed by the hour" to "agent in production, consumption running". Partly that is good for you, but there is a conflict.
+
+```pro-contra
+pro: What works for you
+- A partner who earns at go-live wants agents in production
+- Less interest in pilots that never reach production
+contra: Where the conflict lies
+- Every agent action costs you Flex Credits
+- Salesforce now rewards your partner for that consumption
+- Three actions instead of one cost you more and the partner nothing
+```
 
 On top of that, partners now build with coding agents themselves. That shortens work that used to be billed by the hour. Whether fixed price or outcome-based contracts fit better as a result is the subject of [fixed price vs. time and materials with AI](../../../blog/fixed-price-vs-time-and-materials-ai/). What belongs in the contract when a partner codes with AI, meaning disclosure, data handling, IP, no production access and review, is in [partners using AI coding: contract rules](../../../blog/partners-using-ai-coding-contract-rules/).
 

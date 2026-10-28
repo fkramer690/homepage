@@ -38,7 +38,11 @@ Field Service, das Salesforce heute als [Field Service and Operations](https://w
 
 Die Field Service App ist eine eigene App im App Store und bei Google Play. Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/field-service-mobile/work-from-anywhere) bekommen Techniker darin ihre Einsätze, Kundendaten, Änderungen am Arbeitsauftrag und die Unterschrift des Kunden, ohne im Büro anzurufen. Die Salesforce Mobile App ist die allgemeine App für Vertrieb und Innendienst. Für einen Hersteller zählt vor allem der Unterschied beim Offline-Betrieb: Laut [Salesforce Developers](https://developer.salesforce.com/docs/atlas.en-us.mobile_offline.meta/mobile_offline/intro_enabled_apps.htm) kann jede Field-Service-Org eigene Lightning Web Components in der Field Service App offline nutzen, die Salesforce Mobile App braucht dafür die Lizenz Mobile App Plus. Meine Regel: Techniker arbeiten in der Field Service App, Disposition und Innendienst bleiben im Browser.
 
-In meinen Field-Service-Projekten war die Akzeptanz der Techniker einer der Stolpersteine. Planen Sie deshalb Zeit ein, um Formulare und Abläufe mit den Technikern selbst zu testen, bevor die App ausgerollt wird.
+```praxis
+In meinen Field-Service-Projekten war die Akzeptanz der Techniker einer der Stolpersteine.
+```
+
+Planen Sie deshalb Zeit ein, um Formulare und Abläufe mit den Technikern selbst zu testen, bevor die App ausgerollt wird.
 
 ## Welche Daten braucht der Techniker offline?
 
@@ -117,11 +121,18 @@ Pilotgruppe, Kalender und wer für App-Versionen verantwortlich ist, beschreibe 
 
 Ein typisches Szenario, als Annahme: Ein Maschinenbauer mit 60 Technikern nimmt Verpackungsmaschinen in drei Varianten in Betrieb. Das Papierprotokoll hat 80 Prüfpunkte. Der Techniker füllt es von Hand aus und scannt es abends ein, der Innendienst tippt die Messwerte ins ERP. Alle Zahlen sind Annahmen, um die Reihenfolge der Entscheidungen zu zeigen.
 
-1. **Wochen 1 und 2, Datenmodell.** Service, Innendienst und ERP-Team markieren jeden Prüfpunkt als Feld, Formularantwort, Folgeposition oder bereits bekannt. Zwölf Fragen fallen weg, weil Seriennummer, Kunde und Maschinentyp schon am Asset stehen.
-2. **Woche 3, Briefcase.** Ein Briefcase für eigene Techniker, einer für die zwei Partnerfirmen, beide gefiltert nach Gebiet und Datum.
-3. **Wochen 4 bis 7, Formulare.** Drei Formulare: allgemeine Prüfungen am Service-Termin, ein Variantenformular pro Maschinentyp an der Auftragsposition, Abnahme mit Unterschrift. Messwerte wie die Taktzahl landen in Feldern am Asset.
-4. **Woche 8, Bericht.** Die Vorlage für den Servicebericht zeigt das Gesamtergebnis aus dem Feld am Arbeitsauftrag. Der ausführliche Prüfbericht mit Variantenlogik bleibt ein eigenes Dokument aus dem Innendienst.
-5. **Wochen 9 und 10, Pilot.** Acht Techniker, darunter einer von einem Partner, fahren echte Inbetriebnahmen und die Testroutine auf beiden Plattformen.
+```schritte
+Datenmodell | Wochen 1 und 2 · Service, Innendienst, ERP-Team
+  Jeden Prüfpunkt als Feld, Formularantwort, Folgeposition oder bereits bekannt markieren. Zwölf Fragen fallen weg, weil Seriennummer, Kunde und Maschinentyp schon am Asset stehen.
+Briefcase | Woche 3
+  Ein Briefcase für eigene Techniker, einer für die zwei Partnerfirmen, beide gefiltert nach Gebiet und Datum.
+Formulare | Wochen 4 bis 7
+  Allgemeine Prüfungen am Service-Termin, ein Variantenformular pro Maschinentyp an der Auftragsposition, Abnahme mit Unterschrift. Messwerte wie die Taktzahl landen in Feldern am Asset.
+Bericht | Woche 8
+  Die Vorlage für den Servicebericht zeigt das Gesamtergebnis aus dem Feld am Arbeitsauftrag. Der ausführliche Prüfbericht mit Variantenlogik bleibt ein eigenes Dokument aus dem Innendienst.
+Pilot | Wochen 9 und 10 · acht Techniker
+  Darunter einer von einem Partner. Sie fahren echte Inbetriebnahmen und die Testroutine auf beiden Plattformen.
+```
 
 Voice to Form wartet, bis Datenschutz und Betriebsrat zugestimmt haben. Nach dem Pilot stehen die Messwerte am Abend des Einsatzes am Asset, und niemand tippt sie noch einmal ab.
 

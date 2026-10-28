@@ -58,9 +58,23 @@ Which objects each licence lets external users see, for example sales agreements
 
 ## Agentforce: add-on or Max edition?
 
-The add-ons page prices the Agentforce for Manufacturing Cloud Add-on at "$150/user/month". The pricing page lists the same add-on as "from $150 per login per month". A per-user and a per-login price are different contracts: with logins, users who rarely use the agent cost less; with users, every named person counts. I would not plan with either unit until the quote states it.
+The add-ons page prices the Agentforce for Manufacturing Cloud Add-on at "$150/user/month". The pricing page lists the same add-on as "from $150 per login per month".
 
-The add-on is available with Core and Advanced. The Max editions include the "full Agentforce for Industries suite", 2.75 million instead of 500,000 Flex Credits per org and year, and higher platform limits. In list prices, Core plus add-on is $425 per user and month, Max $650. If only 20 key account managers need agents, the add-on costs $36,000 per year. Moving the same 20 users from Core to Max would cost $90,000, and whether one org may mix Core and Max users is a question for the account team.
+```hinweis offen
+A per-user and a per-login price are different contracts: with logins, users who rarely use the agent cost less; with users, every named person counts. I would not plan with either unit until the quote states it.
+```
+
+The add-on is available with Core and Advanced, and the Max editions include the "full Agentforce for Industries suite". In list prices, Core plus add-on is $425 per user and month, Max $650. If only 20 key account managers need agents, the trade-off looks like this:
+
+```pro-contra
+pro: Add-on on Core
+- $36,000 per year for the 20 users
+- Moving the same 20 users from Core to Max would cost $90,000
+contra: What Max adds
+- 2.75 million instead of 500,000 Flex Credits per org and year
+- Higher platform limits, for example for Omnistudio calls
+- Whether one org may mix Core and Max users is a question for the account team
+```
 
 Either way, every agent action still costs Flex Credits; for Core the pricing page lists Agentforce "via Flex Credits". How to estimate that consumption is in [Flex Credits: Agentforce cost per action](../flex-credits-agentforce-cost-per-action/) and in the masterclass chapter [costs and tokens](../../masterclass/ai-salesforce/costs-and-tokens/).
 

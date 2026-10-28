@@ -48,7 +48,9 @@ The rule points to two fields on the asset. The usage field holds the counter, f
 
 That means: one number field per counter type on the asset, filled from outside, plus one system-maintained field per rule. The overview page names the fields but does not spell out every step of the calculation, so I test it in a sandbox with a few real counter readings before the first plan goes live.
 
+```hinweis achtung
 One trap is combining rules. According to the help article on [criteria-based maintenance](https://help.salesforce.com/s/articleView?id=sf.fs_rfc_create_any_criteria.htm&language=en_US&type=5), a criteria rule and a calendar rule generate work orders independently of each other, even with the same suggested date. If you add a calendar rule "every 12 months" next to an hours rule, you can get two work orders for the same compressor in the same week. "Whichever comes first" belongs in one rule.
+```
 
 ## How do criteria-based rules behave?
 
@@ -78,11 +80,15 @@ A daily value is enough. A maintenance interval of 2,000 hours does not need min
 
 The [Field Service limits](https://help.salesforce.com/s/articleView?id=service.fs_limits.htm&language=en_US&type=5) that hit usage-based plans first:
 
-- **2,600 work orders per run.** One generation run creates at most 2,600 work orders and line items combined per maintenance plan.
-- **Practical asset count.** Help gives 2,600 assets per plan as the practical limit, less than 1,300 with two rules per asset and less than 650 with four.
-- **Count rules.** A plan with a count-based work rule is limited to 2,000 maintenance assets.
-- **Five rules.** Salesforce recommends no more than five maintenance work rules per plan or asset.
-- **Horizon.** The generation horizon is at most 365 days, the generation timeframe at most 20 years.
+```kennzahlen
+2,600 | Work orders and line items combined, at most per maintenance plan and generation run
+2,000 | Maintenance assets, at most in a plan with a count-based work rule
+5 | Maintenance work rules per plan or asset, at most (Salesforce recommendation)
+365 days | Generation horizon, at most
+source: Salesforce Help, Field Service limits
+```
+
+Help gives 2,600 assets per plan as the practical limit, less than 1,300 with two rules per asset and less than 650 with four. The generation timeframe is at most 20 years.
 
 In practice I split plans by product series or service region. That keeps every plan below the limits and gives each one an owner.
 

@@ -40,7 +40,11 @@ Die App hat eigene Versionsnummern neben den Plattform-Releases: Die Hauptversio
 
 Der [Beitrag zu 262.3](https://trailhead.salesforce.com/trailblazer-community/feed/0D5KX00000pPWBC0A4) zeigt, warum Patches zählen. Unter iOS konnte die App Nutzer unerwartet abmelden, nachdem sie im Hintergrund gelegen hatte, und eine Startüberwachung rechnete die Zeit im Hintergrund mit und meldete falsche Zeitüberschreitungen. Unter Android konnten Nutzer bei der Anmeldung im App-internen Browser hängen bleiben. Genau solche Fehler halten einen Techniker vor der Tür des Kunden auf.
 
-Beide Beiträge ergänzen, dass Salesforce Haupt- und Patch-Versionen über mehrere Tage verteilt und Updates unter Umständen erst sieben Tage nach der allgemeinen Verfügbarkeit alle Nutzer erreichen. Für eine Serviceorganisation heißt das: Bis zu einer Woche arbeiten manche Techniker mit der alten und manche mit der neuen Version. Der Support muss zuerst nach der Version fragen. Sie steht in der App unter Profil, Einstellungen, Info.
+Beide Beiträge ergänzen, dass Salesforce Haupt- und Patch-Versionen über mehrere Tage verteilt und Updates unter Umständen erst sieben Tage nach der allgemeinen Verfügbarkeit alle Nutzer erreichen. Für eine Serviceorganisation heißt das: Bis zu einer Woche arbeiten manche Techniker mit der alten und manche mit der neuen Version.
+
+```hinweis tipp
+Der Support fragt bei jedem Ticket zuerst nach der App-Version. Sie steht in der App unter Profil, Einstellungen, Info.
+```
 
 ## Was bieten Beta-Programm und Debug-Builds?
 
@@ -79,10 +83,16 @@ Der Kalender dafür ist derselbe, der die Plattform-Releases enthält. Wie Sie i
 
 Ein Maschinenbauer beschäftigt 100 Techniker, 70 mit iPads und 30 mit Android-Tablets, dazu 15 Partnertechniker. Der Release-Manager stellt eine Pilotgruppe aus acht Personen zusammen: fünf interne Techniker unter iOS, zwei unter Android und ein Partnertechniker.
 
-- **Vier Wochen vor einer Hauptversion.** Die Beta kommt. Der Release-Manager aktualisiert eine Preview-Sandbox mit Testdaten von drei typischen Maschinen.
-- **Woche eins und zwei der Beta.** Die Pilottechniker spielen die Routine einmal pro Woche durch, jeweils etwa zwei Stunden, auf Ersatzgeräten mit der Beta. Parallel testen Entwickler die eigenen Komponenten mit Debug-Builds.
-- **Zwei Wochen vor der Veröffentlichung.** Die Ergebnisse liegen vor. In diesem Szenario zeigt eine eigene Komponente im Servicebericht unter Android ein leeres Feld. Der Entwickler behebt es, und die Korrektur geht ins nächste Deployment, bevor die App-Version die Produktion erreicht.
-- **Woche der Veröffentlichung.** Das Update verteilt sich über mehrere Tage. Die Pilottechniker sind die ersten Ansprechpartner für Kollegen, und der Support fragt bei jedem Ticket nach der Versionsnummer.
+```schritte
+Beta kommt | vier Wochen vor der Hauptversion · Release-Manager
+  Der Release-Manager aktualisiert eine Preview-Sandbox mit Testdaten von drei typischen Maschinen.
+Routine durchspielen | Woche eins und zwei der Beta · Pilottechniker und Entwickler
+  Die Pilottechniker spielen die Routine einmal pro Woche durch, jeweils etwa zwei Stunden, auf Ersatzgeräten mit der Beta. Parallel testen Entwickler die eigenen Komponenten mit Debug-Builds.
+Fehler beheben | zwei Wochen vor der Veröffentlichung · Entwickler
+  In diesem Szenario zeigt eine eigene Komponente im Servicebericht unter Android ein leeres Feld. Die Korrektur geht ins nächste Deployment, bevor die App-Version die Produktion erreicht.
+Veröffentlichung | Woche der Veröffentlichung · Pilottechniker
+  Das Update verteilt sich über mehrere Tage. Die Pilottechniker sind die ersten Ansprechpartner für Kollegen.
+```
 
 Der Aufwand liegt bei etwa 32 Stunden Technikerzeit pro Hauptversion, dazu die Zeit des Release-Managers. Eine fehlgeschlagene Anmeldewelle bei 100 Technikern an einem Montagmorgen kostet mehr.
 

@@ -60,6 +60,16 @@ Wallets können warnen, weitere Nutzung sperren oder ein Nachkaufen anbieten, we
 
 Salesforce erwartet Nutzungsdatensätze mit Zeitstempel, Kunde, Produkt, Ressource und Menge. Wie sie von der Maschine dorthin kommen, ist Ihre Schnittstelle. Üblich ist: Die Steuerung meldet an eine IoT-Plattform oder einen Historian, der die Zeitreihen hält. Von dort schickt ein Job einen verdichteten Datensatz je Maschine und Tag nach Salesforce.
 
+```ablauf
+ext: Steuerung, IoT-Plattform
+sf: Nutzungsdatensatz, Rating, Liable Summary, Rechnung
+Steuerung --> IoT-Plattform
+IoT-Plattform --je Tag verdichtet--> Nutzungsdatensatz
+Nutzungsdatensatz --Wallet, Rate Card--> Rating
+Rating --> Liable Summary
+Liable Summary --> Rechnung
+```
+
 Zwischen den beiden Systemen liegen die Prüfungen, an denen die Rechnung hängt:
 
 1. **Seriennummer zu Asset und Kunde.** Jeder Zähler muss auf das Asset zeigen, das an einen bestimmten Kunden verkauft wurde. Umgesetzte oder weiterverkaufte Maschinen brechen diese Zuordnung zuerst.
@@ -92,7 +102,11 @@ Das sind kaufmännische und rechtliche Entscheidungen. Ein Partner konfiguriert 
 
 ## Welche Lizenzen braucht Pay-per-Use?
 
-Die [Preisseite von Revenue Cloud](https://www.salesforce.com/de/sales/cpq/pricing/) nennt Revenue Cloud Advanced mit 200 Euro pro Nutzer und Monat bei jährlicher Abrechnung, mit "Consumption & Invoicing" im Umfang. Dieselbe Seite führt Revenue Cloud Billing als Zusatzprodukt mit "Usage Rating & Digital Wallet", der Rechnungsmaschine und dem Accounting Subledger, Preis auf Anfrage. Welches der beiden Produkte Rating und Rechnung für Ihren Vertrag abdeckt, gehört schriftlich ins Bestellformular.
+Die [Preisseite von Revenue Cloud](https://www.salesforce.com/de/sales/cpq/pricing/) nennt Revenue Cloud Advanced mit 200 Euro pro Nutzer und Monat bei jährlicher Abrechnung, mit "Consumption & Invoicing" im Umfang. Dieselbe Seite führt Revenue Cloud Billing als Zusatzprodukt mit "Usage Rating & Digital Wallet", der Rechnungsmaschine und dem Accounting Subledger, Preis auf Anfrage.
+
+```hinweis offen
+Welches der beiden Produkte Rating und Rechnung für Ihren Vertrag abdeckt, gehört ins Bestellformular.
+```
 
 Billing wird in Billing Events abgerechnet. Laut dem [Rate Sheet vom Februar 2026](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/documents/pricing/revenue-cloud-billing-rate-sheet-feb-2026.pdf) wird ein Event je 50 US-Dollar Rechnungszwischensumme verbraucht, andere Währungen werden zum durchschnittlichen Tageskurs umgerechnet, ungenutzte Events verfallen. Summieren sich die Rechnungen im Szenario oben auf 1 Million US-Dollar im Jahr, verbrauchen sie 20.000 Events. Den Preis je Event veröffentlicht Salesforce nicht. Die Einzelheiten stehen in [Revenue Cloud Billing: Kosten](../revenue-cloud-billing-kosten/).
 

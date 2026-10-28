@@ -74,7 +74,9 @@ Die [Hinweise zu LWC Offline in der Field Service App](https://developer.salesfo
 4. **Appointment Assistant und LWC Offline.** Salesforce nennt einen Konflikt, der zu fehlenden URLs führen kann.
 5. **Kaltstart unter iOS.** Änderungen an Lightning Web Components lädt die App unter iOS erst, wenn sie vollständig beendet und neu gestartet wurde. Ein Techniker, der die App nie schließt, arbeitet mit der alten Version weiter.
 
+```hinweis achtung
 Punkt 5 betrifft auch jedes Release Ihrer eigenen Komponenten. Wer sagt 50 Technikern, dass sie die App nach einem Deployment komplett schließen sollen? Das gehört in den Release-Plan, zusammen mit den App-Versionen, die Salesforce ausliefert. Die Routine dafür beschreibe ich in [Field Service App Updates: jede Version vorher testen](../field-service-app-updates-testen/).
+```
 
 ## Warum sollten Partnertechniker offline getrennt testen?
 
@@ -97,11 +99,18 @@ Der Servicebericht in diesem Szenario kommt aus dem Document Builder. Eigene Kom
 
 ## Wo fangen Sie an?
 
-1. **Rollen auf Briefcases abbilden.** Interner Techniker, Partnertechniker, Meister. Ein Briefcase pro Rolle, mit Filtern auf Gebiet und Datum.
-2. **Datensätze pro Einsatzart auflisten.** Für Jahreswartung, Störung und Inbetriebnahme prüfen, was der Techniker vor Ort öffnet. Alles weglassen, was niemand öffnet.
-3. **In einer echten Halle testen.** Morgens laden, in den Flugmodus wechseln, einen kompletten Einsatz mit Teilen, Formular und Unterschrift durchspielen, abends synchronisieren.
-4. **Die fünf bekannten Probleme durchgehen.** Jedes mit internem Nutzer und Partnernutzer, unter iOS und Android.
-5. **Die Synchronisation messen.** Dauer des Primings am Morgen und Speicherbedarf auf dem Gerät, mit dem Briefcase Ihrer stärksten Region.
+```schritte
+Rollen auf Briefcases abbilden
+  Interner Techniker, Partnertechniker, Meister. Ein Briefcase pro Rolle, mit Filtern auf Gebiet und Datum.
+Datensätze pro Einsatzart auflisten
+  Für Jahreswartung, Störung und Inbetriebnahme prüfen, was der Techniker vor Ort öffnet. Alles weglassen, was niemand öffnet.
+In einer echten Halle testen
+  Morgens laden, in den Flugmodus wechseln, einen kompletten Einsatz mit Teilen, Formular und Unterschrift durchspielen, abends synchronisieren.
+Die fünf bekannten Probleme durchgehen
+  Jedes mit internem Nutzer und Partnernutzer, unter iOS und Android.
+Die Synchronisation messen
+  Dauer des Primings am Morgen und Speicherbedarf auf dem Gerät, mit dem Briefcase Ihrer stärksten Region.
+```
 
 Das Offline-Design entscheidet, ob Formulare und Dokumente später funktionieren. Der nächste Schritt ist das Formular selbst, beschrieben in [Field Service Data Capture: Prüfprotokolle ohne Papier](../field-service-data-capture-pruefprotokolle/). Das ganze Thema gehört zu [Kapitel 3 der Masterclass Field Service](../../masterclass/field-service/field-service-mobile-app-dokumente/).
 

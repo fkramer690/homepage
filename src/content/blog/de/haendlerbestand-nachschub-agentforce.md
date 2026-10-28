@@ -36,7 +36,9 @@ Die Salesforce-Hilfe zum [Inventory-Management-Subagenten](https://help.salesfor
 
 Für Summer '26 verspricht die [Produktseite von Manufacturing Cloud](https://www.salesforce.com/manufacturing/cloud/), "distributor procurement" zu automatisieren, um manuellen Aufwand und Kosten zu senken. Der Entwicklerleitfaden zu Manufacturing Cloud dokumentiert ein Objekt [PurchaseOrder](https://developer.salesforce.com/docs/atlas.en-us.264.0.mfg_api_devguide.meta/mfg_api_devguide/sforce_api_objects_purchaseorder.htm) mit dem Nutzungstyp `DistributorManagement` und ein Objekt [GoodsReceivedNote](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/sforce_api_objects_goodsreceivednote.htm), das den Wareneingang zu einer Bestellung bestätigt, beide ab API-Version 65.0. Ich lese das so, dass dies das Datenmodell hinter dem Satz auf der Produktseite ist. Salesforce verbindet beides aber nicht ausdrücklich, und eine Hilfeseite, die die Distributor-Beschaffung beschreibt, habe ich nicht gefunden.
 
+```hinweis offen
 Salesforce schreibt auf der eigenen [Seite zu KI in der Fertigung](https://www.salesforce.com/manufacturing/artificial-intelligence/) selbst, dass die vorgefertigten Funktionen "may not reflect actual product details". Ich würde den Partner deshalb bitten, die Vorlage in Ihrer Sandbox mit Ihren Daten zu zeigen, bevor jemand damit plant.
+```
 
 ## Welche Bestandsdaten liegen in Salesforce?
 
@@ -86,6 +88,19 @@ Nehmen wir einen Hersteller von Druckluftkomponenten mit SAP S/4HANA, 120 Händl
 Angenommen, jeder Händler lädt montags den Bestand für 300 Schnelldreher unter den Ersatzteilen hoch. Mit einer Min/Max-Regel pro Teil und Händlerstandort sind das 36.000 Regeln. Die pflegt niemand von Hand. Die Mindestmenge sollte deshalb aus dem Verbrauch oder aus der [Absatzprognose mit Account Forecasting](../account-forecasting-absatzprognose-vertrieb/) kommen, und der Vertriebsinnendienst pflegt nur die Ausnahmen.
 
 In der Nacht auf Dienstag findet der periodische Prozess bei einem Händler 40 Teile unter Mindestmenge und legt Product Requests an. Am Dienstag öffnet der Händler das Portal. Der Agent fasst den Vorschlag zusammen, sagt dazu, dass die Bestände vom Montag stammen, und fragt, ob die Mengen noch stimmen. Der Händler streicht zwei Positionen. Dann ruft der Agent die SAP-Simulation auf. Die Preise kommen aus SAP, nicht aus der Portal-Preisliste. Drei Positionen haben noch keinen bestätigten Termin, und genau das sagt der Agent. Der Händler bestätigt, der Anlageaufruf liefert eine SAP-Auftragsnummer, und der Agent meldet sie.
+
+```ablauf
+sf: Händlerbestand, Product Request, Agent im Portal
+erp: SAP-Simulation, SAP-Auftrag
+ext: Kreditmanagement
+Händlerbestand --unter Mindestmenge--> Product Request
+Product Request --> Agent im Portal
+Agent im Portal --> SAP-Simulation
+SAP-Simulation ..Preis und Termin..> Agent im Portal
+Agent im Portal --nach Freigabe--> SAP-Auftrag
+SAP-Auftrag ..Auftragsnummer..> Agent im Portal
+Agent im Portal --bei Kreditsperre--> Kreditmanagement
+```
 
 Nehmen wir nun an, derselbe Händler liegt über seinem Kreditlimit. Die Simulation meldet eine Sperre, die Aktion zum Anlegen bleibt verborgen, und der Agent übergibt das Gespräch mit dem Vorschlag an das Kreditmanagement. Die Kreditlage erklärt er nicht selbst; was ein Händler über eine Sperre erfährt, ist eine fachliche Entscheidung und gehört in die Antwort der API.
 

@@ -49,7 +49,9 @@ Kaum etwas davon entsteht in Field Service. Assets kommen aus dem ERP, Skills au
 
 Mein Einstieg in die Datenprüfung ist immer derselbe: die gescheiterten Einsätze der letzten drei Monate, jeweils mit Ursache. Teile fehlten, kein Zugang zur Maschine, falscher Techniker, Techniker abwesend. Die häufigste Ursache zeigt, welche Daten zuerst sauber sein müssen.
 
-Aus eigener Projekterfahrung: Ich habe Field Service für Wartung, Störungseinsätze und Inbetriebnahmen eingeführt, mit automatischer Planung statt reiner Disposition per Hand. Ob die Engine gute Vorschläge macht, hing dort vor allem an den Stammdaten aus diesem Abschnitt.
+```praxis
+Ich habe Field Service für Wartung, Störungseinsätze und Inbetriebnahmen eingeführt, mit automatischer Planung statt reiner Disposition per Hand. Ob die Engine gute Vorschläge macht, hing dort vor allem an den Stammdaten aus diesem Abschnitt.
+```
 
 ## Wie entscheidet die Scheduling Engine?
 
@@ -113,11 +115,18 @@ Bei einem Maschinenbauer sehe ich den Disponenten an drei Stellen: bei Störunge
 
 Ein typisches Szenario, als Annahme: ein Komponentenhersteller mit 40 Technikern in drei Gebieten und vier Disponenten. Field Service läuft seit 2022 mit der älteren Engine. Zwei Disponenten planen Wartungen in Excel und übertragen Termine in die Classic Dispatch Console, zwei bearbeiten Störungen direkt im Gantt. Alle Zahlen sind Annahmen und sollen das Vorgehen zeigen.
 
-1. **Woche 1 bis 3, Daten.** Die gescheiterten Einsätze eines Quartals gehen meist auf fehlende Skills und fehlende Besuchszeiten zurück. Skills kommen per Schnittstelle aus dem Schulungssystem, Besuchszeiten pflegt der Innendienst. Ein Bericht findet 8 Prozent offene Termine ohne Gebiet.
-2. **Woche 4 bis 6, Policy.** Customer First mit angepassten Gewichten für Wartungen, Emergency mit erlaubten Überstunden für Störungen. Ein Scheduling Recipe für verspätete Einsätze wird als Flow Fix Schedule Overlaps neu gebaut.
-3. **Woche 7 bis 10, Pilot.** Ein Gebiet wechselt auf ESO. Die Engine plant, die Disponenten geben frei und notieren jede Änderung mit Grund. Zwei Disponenten bekommen für dieses Gebiet das Permission Set der Scheduling Console.
-4. **Woche 11, Entscheidung.** Im Pilotgebiet ändern die Disponenten nicht mehr Vorschläge als vorher, also folgen die anderen Gebiete. Die Wartungsplanerin behält die Classic Dispatch Console für die Ansichten mit langem Horizont, bis die neue Konsole sie hat.
-5. **Parallel, Bereitschaft.** Wochenendschichten pro Region entstehen aus einem Muster und werden bestätigt, sobald der Betriebsrat den Plan für das Quartal freigegeben hat.
+```schritte
+Daten | Woche 1 bis 3
+  Die gescheiterten Einsätze eines Quartals gehen meist auf fehlende Skills und fehlende Besuchszeiten zurück. Skills kommen per Schnittstelle aus dem Schulungssystem, Besuchszeiten pflegt der Innendienst. Ein Bericht findet 8 Prozent offene Termine ohne Gebiet.
+Policy | Woche 4 bis 6
+  Customer First mit angepassten Gewichten für Wartungen, Emergency mit erlaubten Überstunden für Störungen. Ein Scheduling Recipe für verspätete Einsätze wird als Flow Fix Schedule Overlaps neu gebaut.
+Pilot | Woche 7 bis 10
+  Ein Gebiet wechselt auf ESO. Die Engine plant, die Disponenten geben frei und notieren jede Änderung mit Grund. Zwei Disponenten bekommen für dieses Gebiet das Permission Set der Scheduling Console.
+Entscheidung | Woche 11
+  Im Pilotgebiet ändern die Disponenten nicht mehr Vorschläge als vorher, also folgen die anderen Gebiete. Die Wartungsplanerin behält die Classic Dispatch Console für die Ansichten mit langem Horizont, bis die neue Konsole sie hat.
+Bereitschaft | parallel
+  Wochenendschichten pro Region entstehen aus einem Muster und werden bestätigt, sobald der Betriebsrat den Plan für das Quartal freigegeben hat.
+```
 
 Nach Woche 10 ist die Excel-Liste weg. Die Disponenten entscheiden weiter, aber auf Basis eines Vorschlags statt eines leeren Kalenders.
 
@@ -129,6 +138,10 @@ Drei Entscheidungen brauchen einen Namen, bevor ein Partner die Terminplanung ko
 - **Konsole.** Welche Disponenten auf die Scheduling Console wechseln und welche Ansichten sie täglich brauchen.
 - **Policy-Verantwortung.** Eine Person im Servicemanagement verantwortet Scheduling Policies, Work Rules und Gewichte und gibt jede Änderung frei.
 
-Policies, Work Rules, Arbeitszeiten und Gebiete sind Datensätze und keine Metadaten. Ein Metadaten-Deployment nimmt sie nicht mit, sie gehören deshalb in die Pipeline, wie im Kapitel [Daten und Konfiguration](../../devops-release-management/daten-und-konfiguration/) der DevOps-Masterclass beschrieben. Sonst laufen getestete Sandbox und Produktion nach der ersten Änderung auseinander. Wo das Planungsdesign ERP, Projektwerkzeuge und Partner berührt, unterstütze ich bei der [Salesforce-Architektur](../../../leistungen/salesforce-architektur/). Der nächste Schritt für die Techniker ist die App: [Kapitel 3](../field-service-mobile-app-dokumente/) behandelt Offline-Daten, Formulare und Serviceberichte, die [Übersicht](../) zeigt alle Kapitel.
+```hinweis achtung
+Policies, Work Rules, Arbeitszeiten und Gebiete sind Datensätze und keine Metadaten. Ein Metadaten-Deployment nimmt sie nicht mit, sie gehören deshalb in die Pipeline, wie im Kapitel [Daten und Konfiguration](../../devops-release-management/daten-und-konfiguration/) der DevOps-Masterclass beschrieben. Sonst laufen getestete Sandbox und Produktion nach der ersten Änderung auseinander.
+```
+
+Wo das Planungsdesign ERP, Projektwerkzeuge und Partner berührt, unterstütze ich bei der [Salesforce-Architektur](../../../leistungen/salesforce-architektur/). Der nächste Schritt für die Techniker ist die App: [Kapitel 3](../field-service-mobile-app-dokumente/) behandelt Offline-Daten, Formulare und Serviceberichte, die [Übersicht](../) zeigt alle Kapitel.
 
 Gute Terminplanung im Field Service beginnt mit sauberen Daten und einer verantwortlichen Person für die Policies, Engine, Konsole und Agenten bauen darauf auf. Wenn Sie Ihre Terminplanung unabhängig prüfen lassen möchten, [schreiben Sie mir](#contact).

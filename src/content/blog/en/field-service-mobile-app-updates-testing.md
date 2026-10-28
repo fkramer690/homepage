@@ -40,7 +40,11 @@ The app has its own version numbers next to the platform releases: the major ver
 
 The [262.3 post](https://trailhead.salesforce.com/trailblazer-community/feed/0D5KX00000pPWBC0A4) shows why patches matter. On iOS the app could log users out unexpectedly after it had been in the background, and a startup watchdog counted time in the background and caused false timeouts. On Android users could get stuck in the in-app browser during sign-in. These are exactly the errors that stop a technician at the customer's door.
 
-Both posts add that Salesforce deploys major and patch releases over several days, and that updates may not reach all users until seven days after general availability. For a service organisation this means for up to a week some technicians run the old version and some the new one. Support has to ask for the version first. It is shown in the app under Profile, Settings, About.
+Both posts add that Salesforce deploys major and patch releases over several days, and that updates may not reach all users until seven days after general availability. For a service organisation this means for up to a week some technicians run the old version and some the new one.
+
+```hinweis tipp
+Support asks for the app version first on every ticket. It is shown in the app under Profile, Settings, About.
+```
 
 ## What do the beta programme and debug builds offer?
 
@@ -79,10 +83,16 @@ The calendar for this is the same one that holds the platform releases. How to b
 
 A machine builder runs 100 technicians, 70 on iPads and 30 on Android tablets, plus 15 partner technicians. The release manager sets up a pilot group of eight: five internal technicians on iOS, two on Android and one partner technician.
 
-- **Four weeks before a major version.** The beta arrives. The release manager refreshes a preview sandbox with test data from three typical machines.
-- **Weeks one and two of the beta.** The pilot technicians run the routine once a week, about two hours each time, on spare devices with the beta installed. Developers test the team's own components with debug builds in parallel.
-- **Two weeks before release.** Results are in. In this scenario one custom component in the service report shows an empty field on Android. The developer fixes it, and the fix goes into the next deployment before the app version reaches production.
-- **Release week.** The update rolls out over several days. The pilot technicians are the first contact for colleagues, and support asks for the version number on every ticket.
+```schritte
+Beta arrives | four weeks before the major version · release manager
+  The release manager refreshes a preview sandbox with test data from three typical machines.
+Run the routine | weeks one and two of the beta · pilot technicians and developers
+  The pilot technicians run the routine once a week, about two hours each time, on spare devices with the beta installed. Developers test the team's own components with debug builds in parallel.
+Fix the findings | two weeks before release · developer
+  In this scenario one custom component in the service report shows an empty field on Android. The fix goes into the next deployment before the app version reaches production.
+Release | release week · pilot technicians
+  The update rolls out over several days. The pilot technicians are the first contact for colleagues.
+```
 
 The effort is about 32 hours of technician time per major version, plus the release manager's time. One failed login wave across 100 technicians on a Monday morning costs more.
 

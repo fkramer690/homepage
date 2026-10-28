@@ -54,7 +54,10 @@ Below the team level, the [unit on distribution](https://trailhead.salesforce.co
 
 Two details matter in practice. First, the assigned values do not have to add up to the parent target. Trailhead calls that a feature, because a manager can keep a share. For controlling it means a gap or an overshoot nobody notices unless a report shows it. Second, changes do not flow down by themselves. The manager clicks Propagate to Assignments, and Salesforce sends in-app notifications to the people affected.
 
+```vertiefung For developers
+title: Updating targets from a flow
 For automation there is the [Update Account Manager Target Values action](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/mfg_actions_account_manager_target.htm), available since API version 49.0. It takes the ID of a target record and updates the assignment values "based on the parent's target value and percentage". A flow can call it when the board changes the yearly target in March. The developer guide notes that the action requires a Manufacturing Cloud licence.
+```
 
 ## What happens after a reorganisation?
 
@@ -85,7 +88,11 @@ For the comparison itself, Trailhead describes a [Team Performance dashboard](ht
 
 A typical scenario, as an assumption: a manufacturer of drive components with one head of sales, six regional managers and 40 account managers. Each account manager has 150 accounts, and targets should run per account, per product and per month for 60 products.
 
-If every account manager distributed every account by every product and month, that would be 40 × 150 × 60 × 12, or 4.32 million period records. Trailhead's setup unit mentions a limit for Account Manager Periodic Target Distribution records that the Salesforce account executive sets together with the admin; its example uses 10 million. The example value is no promise for your contract. I would calculate the expected number of records before the first target year and get the limit confirmed in the quote.
+If every account manager distributed every account by every product and month, that would be 40 × 150 × 60 × 12, or 4.32 million period records. Trailhead's setup unit mentions a limit for Account Manager Periodic Target Distribution records that the Salesforce account executive sets together with the admin; its example uses 10 million.
+
+```hinweis offen
+The example value is no promise for your contract. I would calculate the expected number of period records before the first target year and get the limit confirmed in the quote.
+```
 
 In practice I would cut the scenario down. Targets per account for the 20 largest customers per person, per product category instead of product, and the rest as one team target. That still covers most of the revenue and keeps the record count well below a million.
 

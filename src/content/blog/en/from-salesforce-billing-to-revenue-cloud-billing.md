@@ -51,11 +51,14 @@ The package has 59 custom objects in its [developer guide](https://developer.sal
 | Legal entity | `blng__LegalEntity__c` | LegalEntity |
 | Payments | `blng__Payment__c`, `blng__PaymentGateway__c` | Salesforce Payments objects plus PaymentLineInvoiceLine |
 
-Three differences matter more than the names:
+Two differences matter more than the names, and a third point is open:
 
 - **Billing schedules come from orders.** According to the [Billing overview](https://developer.salesforce.com/docs/revenue/revenue-management/guide/billing-overview.html), Revenue Cloud generates billing schedules through the context service and creates invoices from them. An old schedule is therefore rebuilt from a migrated asset and order.
 - **Tax and payments are connected differently.** Tax runs through a TaxEngine record with a provider adapter and a named credential. Payments use standard Salesforce Payments objects with an external gateway. Your tax provider and payment provider both need to confirm the new connection.
-- **Revenue recognition.** The package has objects such as `blng__RevenueSchedule__c`. In the Billing standard object list I found no revenue schedule object. If you recognise revenue in the package today, ask Salesforce in writing where that happens after the move.
+
+```hinweis offen
+**Revenue recognition.** The package has objects such as `blng__RevenueSchedule__c`. In the Billing standard object list I found no revenue schedule object. If you recognise revenue in the package today, ask Salesforce in writing where that happens after the move.
+```
 
 ## What happens to open invoices, schedules and payments?
 
@@ -71,6 +74,15 @@ Salesforce Help lists billing data as its own topic in the [migration guide](htt
 
 Revenue Cloud Billing works with accounting periods per legal entity. The [billing deployment notes](https://developer.salesforce.com/docs/revenue/revenue-management/guide/deployment-billing-additional-info.html) state that accounting periods can only be created in Open status, and that a legal entity must be active when child records are created. Journal entries then flow from Salesforce to the ERP; Salesforce's [Revenue Cloud Billing page](https://www.salesforce.com/sales/revenue-cloud-billing/) describes Salesforce acting as a sub-ledger "while synchronizing journal entries".
 
+```ablauf
+sf: Order, Billing schedule, Invoice, Journal entry
+erp: ERP
+Order --Context service--> Billing schedule
+Billing schedule --Invoice run--> Invoice
+Invoice --> Journal entry
+Journal entry --Synchronisation--> ERP
+```
+
 At a period end the old subledger is closed and reconciled with the ERP. The new system starts with opening balances that finance has agreed. In the middle of a period you would have to split one month across two subledgers, and reconciliation gets twice as hard.
 
 Invoice numbers need the same care. Revenue Cloud Billing has sequence policy objects (SequencePolicy, SequenceGapReconciliation); check with your partner that they cover your invoice numbering. Set the starting number so that new invoices continue the series without collisions, and check the format with your tax adviser.
@@ -79,11 +91,18 @@ Invoice numbers need the same care. Revenue Cloud Billing has sequence policy ob
 
 The deployment notes name several setup steps that are easy to miss:
 
-1. Data pipeline is enabled before Billing is enabled.
-2. The Order to Billing Schedule flow is copied from its template and activated.
-3. Legal entities and open accounting periods exist.
-4. Billing, tax and payment configuration is activated in order: billing treatment item, billing treatment, billing policy; tax treatment, tax policy; payment term item, payment term.
-5. Tax engine and payment gateway are connected and tested with real addresses and amounts.
+```schritte
+Data pipeline
+  Is enabled before Billing is enabled.
+Order to Billing Schedule flow
+  Is copied from its template and activated.
+Legal entities and periods
+  Legal entities and open accounting periods exist.
+Configuration in order
+  Billing treatment item, billing treatment, billing policy; tax treatment, tax policy; payment term item, payment term.
+Tax and payments
+  Tax engine and payment gateway are connected and tested with real addresses and amounts.
+```
 
 How these configuration records move from sandbox to production is covered in [Revenue Cloud deployments](../revenue-cloud-configuration-deployment/), and the general approach in the DevOps masterclass chapter on [data and configuration](../../masterclass/devops-release-management/data-and-configuration/).
 

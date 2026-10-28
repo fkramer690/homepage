@@ -59,7 +59,11 @@ Agent Health Monitoring, listed as GA in the [Dreamforce 2026 announcements](htt
 
 ## Why does a deflected session not count as resolved?
 
-Deflection is the number vendors like to show, and the weakest of the set. A dealer who gets a wrong delivery date and closes the window counts as deflected. Salesforce writes in the Observability post that these rates "typically measure proxy signals" and is moving deflection and abandonment to an LLM that evaluates the full session with an editable prompt. That improves the metric, but the definition can change under your trend line, so note the prompt version next to each monthly figure.
+Deflection is the number vendors like to show, and the weakest of the set. A dealer who gets a wrong delivery date and closes the window counts as deflected. Salesforce writes in the Observability post that these rates "typically measure proxy signals" and is moving deflection and abandonment to an LLM that evaluates the full session with an editable prompt. That improves the metric.
+
+```hinweis achtung
+Once an LLM judges deflection and abandonment, the definition can change under your trend line. Note the prompt version next to each monthly figure.
+```
 
 Billing adds a third definition. For resolution-based Help Agent pricing, according to [Salesforce Ben](https://www.salesforceben.com/complete-guide-to-agentforce-pricing-options/), a messaging session with more than two turns, no feedback and no escalation request that runs past two hours is billed as resolved. That model is compared with Flex Credits in [what a dealer service agent costs](../dealer-service-agent-cost-calculation/).
 
@@ -78,6 +82,13 @@ Assume a machine builder with 350 dealers in 30 countries, SAP as ERP and an age
 **Out of hours.** 26 percent of sessions start outside 7:00 to 18:00 CET, and 58 percent of those are resolved: about 360 dealers a month who no longer wait for the next morning.
 
 **Per subagent.** Order status: escalation 14 percent, task resolution 70 percent. Spare parts: escalation 57 percent, task resolution 22 percent, because parts outside the central warehouse need a manual check by the parts desk. The spare parts subagent uses $306 in credits and caused most of the fixes, so it carries half of the run costs: $1,806 for 198 resolved enquiries, or $9.12 each, more than a service rep.
+
+```kennzahlen
+$3.06 | per resolved enquiry, whole agent
+$6 | per enquiry for a service rep before go-live
+$9.12 | per resolved enquiry, spare parts subagent
+source: scenario with assumed values; credit multipliers from the Flex Credits rate card of 31 August 2026, list price from Salesforce
+```
 
 The decision on day 90: order status stays and goes to the next dealer group. Spare parts comes out of the agent and goes to the parts desk through a structured portal form until regional stock data reaches Salesforce. Part identification is covered in [spare parts by serial number](../spare-parts-by-serial-number-ai/).
 

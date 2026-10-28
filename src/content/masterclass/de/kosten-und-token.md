@@ -90,7 +90,16 @@ Drei Regeln von derselben Seite zählen für die Planung. Die Batch API halbiert
 
 Quellen: [claude.com/pricing](https://claude.com/pricing), [Copilot-Pläne](https://docs.github.com/en/copilot/tutorials/roll-out-at-scale/assign-licenses/choose-enterprise-plan), [Codex Rate Card](https://help.openai.com/en/articles/20001106-codex-rate-card-2), [Vibes-Preise](https://www.salesforce.com/agentforce/developers/vibe-coding/pricing/), [Vibes-Abrechnung](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-admin-billing.html), [Gemini-Preise](https://cloud.google.com/products/gemini/pricing). Cursor fehlt, weil ich die offizielle Preisseite nicht öffnen konnte.
 
-Für Claude Code nennt Anthropic im [Unternehmenseinsatz](https://code.claude.com/docs/en/costs) rund 13 $ pro Entwickler und aktivem Tag und 150 bis 250 $ im Monat, für 90 Prozent der Nutzer unter 30 $ am Tag. Bei 20 aktiven Tagen sind das 260 $ zu API-Preisen. Ein Team-Premium-Seat kann für intensive Nutzer günstiger sein, solange die Fenster reichen; wie viele Tokens das sind, nennt die Preisseite nicht. Ich würde einen Monat zu API-Preisen messen und erst dann Seats kaufen. Wer die Kosten trägt, Auftraggeber oder Partner, behandle ich in [KI-Coding-Kosten im Salesforce-Projekt](../../../blog/ki-coding-kosten-salesforce-projekt/). Meine Grundhaltung: Arbeitet der Agent in Ihrem Repository und Ihren Sandboxes, gehören die Konten Ihnen, aus denselben Gründen wie bei den [DevOps-Werkzeugen](../../../blog/warum-kunden-devops-tools-selbst-besitzen-sollten/).
+Für Claude Code nennt Anthropic im [Unternehmenseinsatz](https://code.claude.com/docs/en/costs) diese Werte:
+
+```kennzahlen
+13 $ | im Schnitt pro Entwickler und aktivem Tag
+150 bis 250 $ | pro Entwickler und Monat
+unter 30 $ | pro aktivem Tag bei 90 Prozent der Nutzer
+quelle: Anthropic, Kostendokumentation von Claude Code für Unternehmenseinsätze
+```
+
+Bei 20 aktiven Tagen sind das 260 $ zu API-Preisen. Ein Team-Premium-Seat kann für intensive Nutzer günstiger sein, solange die Fenster reichen; wie viele Tokens das sind, nennt die Preisseite nicht. Ich würde einen Monat zu API-Preisen messen und erst dann Seats kaufen. Wer die Kosten trägt, Auftraggeber oder Partner, behandle ich in [KI-Coding-Kosten im Salesforce-Projekt](../../../blog/ki-coding-kosten-salesforce-projekt/). Meine Grundhaltung: Arbeitet der Agent in Ihrem Repository und Ihren Sandboxes, gehören die Konten Ihnen, aus denselben Gründen wie bei den [DevOps-Werkzeugen](../../../blog/warum-kunden-devops-tools-selbst-besitzen-sollten/).
 
 ### Rechenbeispiel: eine agentische Session
 
@@ -153,6 +162,10 @@ Mit der Aufbereitung von 2.000 MB Ersatzteilkatalogen in Data 360 (300.000 Credi
 
 **Headless Platform Interactions.** Greifen Claude, ChatGPT oder andere Agenten über MCP oder API auf Salesforce zu, soll laut [SalesforceBen](https://www.salesforceben.com/salesforce-will-charge-flex-credits-for-agentic-mcp-and-api-calls/) jeder erfolgreiche Aufruf eines registrierten Agenten zählen, nur in aktiven Produktions-Orgs und mit 30 Tagen Vorlauf. Klassische Integrationen bleiben bei ihrer heutigen Preislogik. Wer Claude auf Salesforce-Daten nutzt, zahlt dann doppelt: Anthropic für Tokens, Salesforce für Interaktionen. Die Menge können Sie schätzen, wie in [Kapitel 3](../mcp-und-schnittstellen/) gezeigt; den Budgetposten beschreibe ich in [MCP-Zugriffe auf Salesforce als Budgetrisiko](../../../blog/mcp-zugriffe-salesforce-budgetrisiko/).
 
+```hinweis offen
+Der Satz für Headless Platform Interactions steht auf der Rate Card noch als TBA. Lassen Sie sich vom Account Executive bestätigen, wie Pool, mehrere Orgs und Headless Platform Interactions abgerechnet werden.
+```
+
 ## Ein typisches Szenario: das erste KI-Jahr eines Maschinenbauers
 
 Nehmen wir einen Maschinenbauer mit 80 Nutzern in der Service Cloud auf Core Edition, SAP S/4 und einem Partner, dessen sechs Entwickler mit Claude Code zu API-Preisen arbeiten. Geplant sind der Händleragent von oben, ein Org-Assessment und Hosted MCP für 25 Mitarbeitende im Innendienst. Alle Mengen sind Annahmen.
@@ -176,7 +189,7 @@ Zum Vergleich: Die 80 Core-Lizenzen kosten zum Listenpreis 187.200 € im Jahr. 
 4. **Kontext klein halten:** `/clear` zwischen Aufgaben, Regeldatei unter 200 Zeilen, nur benötigte MCP-Server. Die Regeln für sauberen KI-Code stehen in [Kapitel 8](../best-practices-ki-code/).
 5. **Seats nach Messung kaufen:** einen Monat zu API-Preisen oder nach Verbrauch laufen lassen, dann pro Person über Flat Fee oder Seat entscheiden.
 6. **Agentforce pro Gesprächstyp schätzen:** Aktionen, Prompts, Sandbox-Tests und Dokumente in MB, Credits entlang des Go-live-Plans kaufen, weil nicht genutzte Credits nicht übertragen werden.
-7. **Reserve für offene Zähler einplanen** und vom Account Executive schriftlich bestätigen lassen, wie Pool, Orgs und Headless Platform Interactions abgerechnet werden.
+7. **Reserve für offene Zähler einplanen**, bis die Abrechnung oben bestätigt ist.
 8. **Monatlich messen:** Das [Digital Wallet](https://www.salesforce.com/agentforce/digital-wallet/) zeigt den Agentforce-Verbrauch nach Agent, Aktion und Kanal und setzt ein aktiviertes Data 360 voraus; für Claude dienen Spend-Report oder Console.
 
 Diese Fragen gehören zu meiner Arbeit in [Make-or-buy und Lizenzprognosen](../../../leistungen/make-or-buy-lizenzen/). Alle Kapitel der Masterclass finden Sie auf der [Übersichtsseite](../).

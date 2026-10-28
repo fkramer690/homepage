@@ -60,13 +60,21 @@ Manufacturing Cloud models warranties on three levels. According to [Trailhead](
 
 The claim itself usually comes from outside. The [service page](https://salesforce.com/manufacturing/cloud/service) says partners and customers can submit claims "via API or portals" and that business rules can automate approvals. The flow in short:
 
-1. The dealer submits the claim in the partner portal with machine, fault, causal part and costs per item.
-2. Rules check coverage: warranty period, usage limit, covered part.
-3. Routine claims pass, the rest go to an adjudicator, who enters the approved amount.
-4. For a purchased part, a supplier recovery claim goes back to the supplier.
-5. An integration transfers the approved amount to the ERP, and finance books the credit note.
+```ablauf
+sf: Claim in portal, Rules check, Adjudicator, Approved claim
+erp: Credit note
+ext: Supplier
+Claim in portal --> Rules check
+Rules check --Routine claim--> Approved claim
+Rules check --Other claims--> Adjudicator
+Adjudicator --Amount--> Approved claim
+Approved claim --Interface--> Credit note
+Approved claim ..Recovery claim..> Supplier
+```
 
-Step 5 is easy to leave out of the plan. Without it the dealer sees an approved claim in the portal and is still waiting for the money. The objects, the supplier recovery and the portal licences for dealers are covered in [warranty claims from dealers](../../../blog/warranty-claims-dealers-salesforce/). Which portal licence dealers need was the topic of [chapter 3](../dealer-and-partner-channel/).
+The dealer submits the claim in the partner portal with machine, fault, causal part and costs per item. The rules check warranty period, usage limit and covered part. For a purchased part, a supplier recovery claim goes back to the supplier, and finance books the credit note in the ERP.
+
+The credit note is easy to leave out of the plan. Without it the dealer sees an approved claim in the portal and is still waiting for the money. The objects, the supplier recovery and the portal licences for dealers are covered in [warranty claims from dealers](../../../blog/warranty-claims-dealers-salesforce/). Which portal licence dealers need was the topic of [chapter 3](../dealer-and-partner-channel/).
 
 ### What does the adjudication agent add?
 
@@ -80,7 +88,11 @@ A product service campaign, according to the [object reference](https://develope
 
 The weak point is the selection. A campaign finds the right machines only when every machine exists as an asset with a serial number and the link from component batch to machine is known. Select too broadly and you pay for work on machines that are fine; too narrowly and faulty machines stay in the field.
 
-A typical scenario, as an assumption: a supplier's valve batch is faulty and sits in 1,800 machines sold through 70 dealers, 120 of them still unsold in dealer stock. The campaign covers the 1,680 machines at end customers as items, the unsold ones as partner inventory, and the valve as causal part with a product return against credit from the supplier. Dealers report each machine as done, not a number per dealer. The full walkthrough, and when a list in the quality system is enough, is in [product recalls in Salesforce](../../../blog/product-recalls-service-campaigns/). Since the pricing page does not mention campaigns, ask in writing which edition includes them.
+A typical scenario, as an assumption: a supplier's valve batch is faulty and sits in 1,800 machines sold through 70 dealers, 120 of them still unsold in dealer stock. The campaign covers the 1,680 machines at end customers as items, the unsold ones as partner inventory, and the valve as causal part with a product return against credit from the supplier. Dealers report each machine as done, not a number per dealer. The full walkthrough, and when a list in the quality system is enough, is in [product recalls in Salesforce](../../../blog/product-recalls-service-campaigns/).
+
+```hinweis offen
+The pricing page does not mention product service campaigns. Get confirmed which edition includes them before you plan a recall process on them.
+```
 
 ## What does the service agent see on one screen?
 

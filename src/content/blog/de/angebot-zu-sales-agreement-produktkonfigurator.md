@@ -71,6 +71,15 @@ Wie die Ist-Mengen danach aus dem ERP ins Sales Agreement kommen, beschreibe ich
 
 Salesforce bietet dafür einen Standardweg. Die [Connect API der Manufacturing Cloud](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/connect_resources_sales_agreement.htm) erzeugt ein Sales Agreement aus einem Angebot, einer Opportunity oder einem eigenen Objekt. Welche Felder übernommen werden, steht in einem Mapping vom Typ ConvertToSalesAgreement. Felder, die das Mapping nicht abdeckt, lassen sich beim Aufruf mit Standardwerten füllen. Das passt auch zu einem eigenen CPQ-Ansatz, weil das Angebot ein eigenes Objekt sein darf.
 
+```ablauf
+sf: Konfigurator, Angebot, Sales Agreement
+erp: Materialnummer, Ist-Mengen
+Konfigurator --> Angebot
+Konfigurator ..neue Variante..> Materialnummer
+Angebot --Connect API--> Sales Agreement
+Ist-Mengen --pro Produkt--> Sales Agreement
+```
+
 Inhaltlich muss das Mapping diese Punkte abdecken:
 
 | Was | Im Angebot | Im Sales Agreement |

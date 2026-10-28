@@ -80,7 +80,20 @@ For new stores I would build every SAP call as an extension. Registration and st
 
 When the buyer places the order, B2B Commerce creates an order and an order summary in Salesforce. The order summary has a field `OrderLifeCycleType`. According to the [developer guide](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-import-export-managed-unmanaged.html), "unmanaged" marks a summary created by B2B Commerce whose lifecycle runs in an external system, and changes there "must be reflected in Salesforce".
 
-That is the normal case with SAP. The order goes out, SAP creates the sales order, and the integration writes the SAP order number, confirmed dates, deliveries and invoices back. Users with the permission B2B Commerce Integrator User or Edit Unmanaged Order Summaries may update these summaries. Who should own the order, and when Salesforce Order Management makes sense instead, is the subject of [B2B store orders to the ERP](../b2b-store-orders-to-erp/).
+That is the normal case with SAP. The order goes out, SAP creates the sales order, and the integration writes the status back:
+
+```ablauf
+sf: Checkout, Order Summary
+erp: Credit and price, Sales order, Delivery and invoice
+Checkout --live call--> Credit and price
+Checkout --> Order Summary
+Order Summary --order out--> Sales order
+Sales order --> Delivery and invoice
+Sales order ..number, dates..> Order Summary
+Delivery and invoice ..status back..> Order Summary
+```
+
+Users with the permission B2B Commerce Integrator User or Edit Unmanaged Order Summaries may update these summaries. Who should own the order, and when Salesforce Order Management makes sense instead, is the subject of [B2B store orders to the ERP](../b2b-store-orders-to-erp/).
 
 Plan the return flow as carefully as the outbound one. A dealer who sees "order received" for three days calls inside sales, and the store has saved nothing.
 
@@ -90,7 +103,9 @@ MuleSoft offers an [Accelerator for SAP](https://anypoint.mulesoft.com/exchange/
 
 Direct Apex callouts with named credentials are fine for one store with two or three live calls and one order export. A middleware layer pays off when the same SAP data also feeds Field Service, Manufacturing Cloud or Agentforce agents. Then one order status API serves the store, the [order status agent](../agentforce-sap-order-status-mulesoft/) and the service team. The AI masterclass explains in the chapter on [MCP and interfaces](../../masterclass/ai-salesforce/mcp-and-interfaces/) why agents should reuse such APIs instead of getting their own.
 
+```hinweis achtung
 One deadline applies to every batch interface. Salesforce retires the [OAuth username-password flow](https://help.salesforce.com/s/articleView?id=release-notes.rn_security_unpw_flow_retirement.htm&language=en_US&release=262&type=5) for connected apps on 20 February 2027. A nightly product import that logs in with a password then stops working, often without anyone noticing. How to find and move those interfaces is described in [password integrations end in 2027](../salesforce-password-integrations-end-2027/).
+```
 
 ## A typical scenario, as an assumption
 

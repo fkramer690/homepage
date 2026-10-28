@@ -64,6 +64,14 @@ Belegt ist nur ein Post. Am 9. Oktober 2026 schrieb Marc Benioff auf X: „The e
 
 Der Anlass ist dagegen als Primärquelle nachlesbar. Die [Executive Order 14434](https://www.whitehouse.gov/presidential-actions/2026/09/inaugurating-the-era-of-super-intelligence/) vom 29. September 2026 weist die Ministerien und Behörden der US-Exekutive an, in eigenen Dokumenten „Super Intelligence“ statt „Artificial Intelligence“ zu schreiben. Bestehende Verordnungen bleiben unverändert, einklagbare Rechte entstehen nicht, private Unternehmen kommen nicht vor. Salesforce musste also nichts umbenennen, die Entscheidung war freiwillig. Dass US-Bundesbehörden Salesforce-Kunden sind und künftig „SI“ schreiben müssen, ist ein naheliegendes Motiv, aber meine Vermutung.
 
+```zeitleiste
+2026-04 | Headless 360 zur TDX, laut Salesforce Ben
+2026-09-15 | Salesforce stellt AIforce zur Dreamforce vor
+2026-09-29 | Executive Order 14434 für Behörden der US-Exekutive
+2026-10-09 | Marc Benioff auf X: „AIForce is officially SIForce“
+2026-10-12 | Salesforce Ben findet keine offizielle Ankündigung
+```
+
 Für Ihre Unterlagen empfehle ich „AIforce (vom CEO als SIForce angekündigt)“, bis Salesforce den Namen schriftlich bestätigt. Drei Namen in rund sechs Monaten sind auch ein Grund, Architekturdokumente nach Funktionen zu gliedern statt nach Produktnamen.
 
 ## SI als Systemintegrator: was sich im Partnermodell ändert
@@ -80,7 +88,17 @@ Ein Startdatum für die neuen Stufen nennt die Meldung nicht. Am 15. April 2026 
 
 ### Was die neuen Anreize für Sie als Kunde bedeuten
 
-Die Logik hat sich verschoben: früher „Lizenz verkauft, Projekt nach Stunden“, jetzt „Agent in Produktion, Verbrauch läuft“. Das ist in Teilen gut für Sie. Ein Partner, der erst am Go-live verdient, hat weniger Interesse an Piloten, die nie produktiv werden. Es gibt aber einen Konflikt. Jede Agentenaktion kostet Flex Credits, und an diesem Verbrauch hängt jetzt die Vergütung Ihres Partners durch Salesforce. Ein Agent, der drei Aktionen statt einer ausführt, ist für Sie teurer und für den Partner kein Nachteil.
+Die Logik hat sich verschoben: früher „Lizenz verkauft, Projekt nach Stunden“, jetzt „Agent in Produktion, Verbrauch läuft“. Das ist in Teilen gut für Sie, es gibt aber einen Konflikt.
+
+```pro-contra
+pro: Was für Sie spricht
+- Ein Partner, der erst am Go-live verdient, will produktive Agenten
+- Weniger Interesse an Piloten, die nie produktiv werden
+contra: Wo der Konflikt liegt
+- Jede Agentenaktion kostet Sie Flex Credits
+- An diesem Verbrauch hängt die Vergütung Ihres Partners durch Salesforce
+- Drei Aktionen statt einer sind für Sie teurer, für den Partner kein Nachteil
+```
 
 Dazu kommt, dass Partner selbst mit Coding-Agenten bauen. Das verkürzt Arbeit, die bisher nach Stunden abgerechnet wurde. Ob deshalb Festpreis oder ergebnisbasierte Verträge besser passen, untersuche ich in [Festpreis statt Aufwand](../../../blog/festpreis-statt-aufwand-ki-salesforce/). Was im Vertrag stehen muss, wenn ein Partner mit KI programmiert, also Offenlegung, Datenumgang, Rechte am Code, kein Zugriff auf Produktion und Review, steht in [Partner mit KI-Coding: Regeln für den Vertrag](../../../blog/partner-ki-coding-regeln-vertrag/).
 

@@ -36,6 +36,16 @@ In Revenue Cloud entscheiden drei Bausteine, was der Vertrieb anbieten kann. Der
 
 Der Katalog hält Produkte, Attribute und die Bundle-Struktur. Der Konfigurator prüft, welche Optionen und Attributwerte zusammenpassen. Salesforce Pricing nimmt die konfigurierte Position und rechnet den Nettopreis Schritt für Schritt aus. Ein schlecht modellierter Katalog macht Regeln und Preisfindung schwerer, deshalb steht das Katalogdesign am Anfang.
 
+```ablauf
+erp: SAP
+sf: Katalog, Konfigurator, Pricing, Angebot, Sales Agreement
+SAP --Produkte, Preise--> Katalog
+Katalog --> Konfigurator
+Konfigurator --Position--> Pricing
+Pricing --Nettopreis--> Angebot
+Angebot --Preis übernommen--> Sales Agreement
+```
+
 Alle drei laufen auf Standardobjekten der Core-Plattform und nicht in einem Managed Package. Zu den Namen: salesforce.com sagt Revenue Cloud, Trailhead sagt Agentforce Revenue Management, und der Developer Guide für Winter '27 heißt Revenue Management Developer Guide. Die [Übersicht der Produktnamen](../../../blog/revenue-cloud-produktnamen-rlm-rca/) ordnet das ein.
 
 Wer von Salesforce CPQ kommt, kann die Zuordnung schnell aufschreiben und braucht lange, um sie umzusetzen. Produktregeln werden zu Konfigurationsregeln oder Constraint-Modellen. Preisregeln und das Quote Calculator Plugin werden zu Pricing Procedures. Automatisch umgewandelt wird nichts; die weiteren Unterschiede stehen in [Salesforce CPQ vs. Revenue Cloud](../../../blog/salesforce-cpq-revenue-cloud-unterschiede/). Ob Revenue Cloud überhaupt zu Ihrem Geschäft passt, klärt [Kapitel 1](../revenue-cloud-ueberblick/).
@@ -89,7 +99,13 @@ Salesforce Pricing hat laut [Trailhead-Einheit zur Preisfindung](https://trailhe
 
 Eine typische Abfolge bei einem Hersteller: Listenpreis (oder Vertragspreis), Attributrabatt, Mengenrabatt, manueller Rabatt und ein Aggregat pro Produktfamilie. Die Reihenfolge ist Geschäftslogik. Ob der manuelle Rabatt vor oder nach dem Mengenrabatt greift, ändert den Nettopreis. Das entscheiden Vertriebsleitung und Controlling, nicht die Person, die die Prozedur baut. Das Ergebnis ist ein Preiswasserfall, der jeden Schritt vom Listenpreis zum Nettopreis zeigt, in der Simulation und an der Angebotsposition.
 
-Ein Detail wird in den ersten Wochen leicht übersehen. Ändert sich ein Preisbucheintrag oder eine Staffel, rechnet das Angebot weiter mit dem alten Wert, bis Sync Pricing Data die Decision Tables aktualisiert hat. Lädt SAP die Listenpreise jede Nacht, gehört der Sync in denselben Job. Die [Salesforce Pricing Business APIs](https://developer.salesforce.com/docs/atlas.en-us.revenue_lifecycle_management_dev_guide.meta/revenue_lifecycle_management_dev_guide/pricing_business_apis.htm) bieten außerdem Headless Pricing, das einen Kontext anlegt und in einem Aufruf bepreist. So fragen Portal, Shop oder Agent denselben Preis ab, ohne ein Angebot anzulegen. Wie der B2B-Shop das macht, steht im B2B-Commerce-Kapitel [Preise, Warenkorb und Checkout](../../b2b-commerce/preise-warenkorb-checkout/). Die Elemente, den Sync und die Tests erklärt [Salesforce Pricing: Wie Revenue Cloud Preise berechnet](../../../blog/revenue-cloud-preisprozeduren/).
+Ein Detail wird in den ersten Wochen leicht übersehen:
+
+```hinweis achtung
+Ändert sich ein Preisbucheintrag oder eine Staffel, rechnet das Angebot weiter mit dem alten Wert, bis Sync Pricing Data die Decision Tables aktualisiert hat. Lädt SAP die Listenpreise jede Nacht, gehört der Sync in denselben Job.
+```
+
+Die [Salesforce Pricing Business APIs](https://developer.salesforce.com/docs/atlas.en-us.revenue_lifecycle_management_dev_guide.meta/revenue_lifecycle_management_dev_guide/pricing_business_apis.htm) bieten außerdem Headless Pricing, das einen Kontext anlegt und in einem Aufruf bepreist. So fragen Portal, Shop oder Agent denselben Preis ab, ohne ein Angebot anzulegen. Wie der B2B-Shop das macht, steht im B2B-Commerce-Kapitel [Preise, Warenkorb und Checkout](../../b2b-commerce/preise-warenkorb-checkout/). Die Elemente, den Sync und die Tests erklärt [Salesforce Pricing: Wie Revenue Cloud Preise berechnet](../../../blog/revenue-cloud-preisprozeduren/).
 
 ## Welche Preise sollten aus SAP kommen?
 
@@ -116,8 +132,15 @@ Wie konfigurierte Produkte vom Angebot in den Rahmenvertrag kommen und was der K
 Katalog, Constraint-Modelle und Pricing Procedures ändern, was jeder Vertriebsmitarbeiter anbieten kann. Eine falsche Regel zeigt sich beim Kunden, nicht im Log. Ich behandle alle drei wie Code:
 
 - **Regressionsfälle für Preise.** Ein fester Satz Referenzangebote mit dokumentierten Nettopreisen: jede Produktgruppe, jede Staffel, Vertragskunden, manuelle Rabatte über und unter den Freigabegrenzen. Im JSON-Modus der Preissimulation lässt sich ein Fall speichern und nach jeder Änderung erneut ausführen.
-- **Regressions- und Performancefälle für Constraint-Modelle.** Gültige Konfigurationen, die funktionieren müssen, ungültige, die mit der erwarteten Meldung abgelehnt werden. Der [CML User Guide](https://resources.docs.salesforce.com/rel1/doc/en-us/static/pdf/CML_User_Guide.pdf) nennt das Ziel: unter 100 Millisekunden pro Modelllauf, weniger als 1.000 Backtracks und keine Verletzungen.
+- **Regressions- und Performancefälle für Constraint-Modelle.** Gültige Konfigurationen, die funktionieren müssen, ungültige, die mit der erwarteten Meldung abgelehnt werden. Die Zielwerte für die Performance stehen unter der Liste.
 - **Katalog als Daten.** Klassifizierungen, Attribute und Bundles sind Datensätze. Der Developer Guide hat eine [Referenz für das Deployment der Objekte](https://developer.salesforce.com/docs/atlas.en-us.revenue_lifecycle_management_dev_guide.meta/revenue_lifecycle_management_dev_guide/deployment_appendix_A.htm) mit Reihenfolge und Lookup-Feldern pro Bereich, darunter Katalog, Preisfindung und Konfigurator.
+
+```kennzahlen
+< 100 ms | pro Lauf eines Constraint-Modells
+< 1.000 | Backtracks pro Modelllauf
+0 | Verletzungen
+quelle: [CML User Guide](https://resources.docs.salesforce.com/rel1/doc/en-us/static/pdf/CML_User_Guide.pdf)
+```
 
 Wie Konfigurationsdaten durch eine Pipeline wandern, behandelt das DevOps-Kapitel [Daten und Konfiguration](../../devops-release-management/daten-und-konfiguration/), wie Tests in den Release-Prozess gehören, das Kapitel [Qualität, Tests und Reviews](../../devops-release-management/qualitaet-tests-reviews/).
 

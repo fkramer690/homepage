@@ -57,13 +57,26 @@ I would count the share of products that a rep can find by the words customers u
 
 The [Winter '27 announcement](https://www.salesforce.com/news/stories/winter-2027-product-release-announcement/), generally available since 12 October 2026, extends agent quoting to three groups: "self-service quoting for customer buyers, integrated quoting for partners, and automated renewal package assembly for account executives". Customers "order without a rep", partners "transact without leaving their workspace", and account executives get "a drafted quote and risk signals" before a renewal.
 
-For manufacturers, renewal drafts are the most interesting part. Maintenance and remote monitoring subscriptions renew every year, and preparing the renewal quote is routine work. Partner and self-service quoting raise commercial questions first: which prices a dealer sees, and whether a customer's self-service quote may undercut the dealer. Help documents a setup page for community and partner access to Agentforce in Revenue Management; the licences for external users are a separate item to clarify.
+For manufacturers, renewal drafts are the most interesting part. Maintenance and remote monitoring subscriptions renew every year, and preparing the renewal quote is routine work. Partner and self-service quoting raise commercial questions first: which prices a dealer sees, and whether a customer's self-service quote may undercut the dealer.
+
+```hinweis offen
+Help documents a setup page for community and partner access to Agentforce in Revenue Management. The licences for external users are a separate item to clarify.
+```
 
 If your dealers quote in Manufacturing Cloud instead, look at the [AI Partner Sales Assistant for dealer quotes](../ai-partner-sales-assistant-dealer-quotes/). Two quoting agents on two quote models is the setup I would avoid.
 
 ## What does the quoting agent cost?
 
-Two cost blocks apply. First the Revenue Cloud licences for the users the agent works for. Second the agent's consumption in Flex Credits. The [Agentforce pricing page](https://www.salesforce.com/agentforce/pricing/) lists credits at $500 per 100,000, and a standard action uses 20 credits, so $0.10. Prompts come on top and depend on the model tier.
+Two cost blocks apply. First the Revenue Cloud licences for the users the agent works for. Second the agent's consumption in Flex Credits, at the rates on the [Agentforce pricing page](https://www.salesforce.com/agentforce/pricing/):
+
+```kennzahlen
+$500 | per 100,000 Flex Credits
+20 | Flex Credits per standard action
+$0.10 | per standard action
+source: Salesforce Agentforce pricing page
+```
+
+Prompts come on top and depend on the model tier.
 
 A rough estimate, as an assumption: a quote dialogue needs five actions, such as finding the account, searching products, creating the quote, adding lines and applying a discount. That is 100 credits or $0.50 per quote. At 1,500 agent quotes a month you are at about $750 plus prompts. Tests in a sandbox also consume credits. How to estimate all meters is in [Flex Credits: estimating Agentforce cost per action](../flex-credits-agentforce-cost-per-action/), and the AI masterclass chapter on [costs and tokens](../../masterclass/ai-salesforce/costs-and-tokens/) puts it into a budget.
 

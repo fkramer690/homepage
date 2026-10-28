@@ -40,7 +40,9 @@ What a form can contain:
 
 For field work, two properties matter more than the components. The forms work offline with a dedicated offline engine, and auto-save captures every entry, so a technician can close a form at the machine and resume it later. Every submission is logged, online or offline.
 
+```hinweis achtung
 Offline only works if the records the form reads are on the device. Which records belong in the briefcase is covered in [Field Service mobile offline: which data goes on the device?](../field-service-mobile-app-offline-data/).
+```
 
 ## What is generally available, and what came later?
 
@@ -91,11 +93,18 @@ In this scenario the back office gains the most. After the sync the readings are
 
 ## Where should you start?
 
-1. **Pick one protocol** with high volume, for example annual maintenance of your most common machine type.
-2. **Mark every question** as field, form answer, line item or "already known". Delete the last group.
-3. **Agree the fields with the back office** and the ERP team before anyone opens Flow Builder.
-4. **Build and test offline** on iOS and Android, with an internal and a partner technician.
-5. **Add Voice to Form** in a separate step, after data protection and the works council have agreed.
+```schritte
+Pick one protocol
+  One with high volume, for example annual maintenance of your most common machine type.
+Mark every question
+  As field, form answer, line item or "already known". Delete the last group.
+Agree the fields
+  With the back office and the ERP team, before anyone opens Flow Builder.
+Build and test offline
+  On iOS and Android, with an internal and a partner technician.
+Add Voice to Form
+  In a separate step, after data protection and the works council have agreed.
+```
 
 Forms, offline data and the service report together make up [chapter 3 of the Field Service masterclass](../../masterclass/field-service/field-service-mobile-app-documents/).
 

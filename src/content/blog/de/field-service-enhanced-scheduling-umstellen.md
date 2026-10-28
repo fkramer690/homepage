@@ -59,8 +59,10 @@ Laut den [Hinweisen zu Enhanced Scheduling and Optimization](https://help.salesf
 
 Zwei Dinge fallen weg. Scheduling Recipes, also Automatismen, die bestimmte Ereignisse auslösen, um Überschneidungen im Plan aufzulösen, sind nicht verfügbar. Die Salesforce-Hilfe nennt den automatisierten Flow Fix Schedule Overlaps als Ersatz. Optimization Insights wird durch den Optimization Hub ersetzt. Wenn Ihre Disponenten heute auf Recipes bauen, muss der Ersatz vor dem Wechsel entworfen und getestet sein, nicht danach.
 
-Dazu kommen Work Rules, die mit denselben Daten andere Ergebnisse liefern. Derselbe Hilfeartikel listet sie auf:
+Dazu kommen Work Rules, die mit denselben Daten andere Ergebnisse liefern. Derselbe Hilfeartikel listet sie auf.
 
+```vertiefung Für Admins
+titel: Welche Work Rules verhalten sich anders?
 - **Match Fields und Extended Match** behandeln leere Felder anders.
 - **Match Boolean** greift nicht, wenn das Boolean-Feld an der Serviceressource leer ist.
 - **Match Territory** macht einen Termin ohne Servicegebiet für Ressourcen aus allen Gebieten offen.
@@ -68,6 +70,7 @@ Dazu kommen Work Rules, die mit denselben Daten andere Ergebnisse liefern. Derse
 - **Match Skills** bekommt zusätzlich die Option "mindestens ein Skill passt".
 - **Kapazitätsbasierte Ressourcen** verlieren die Unterstützung für Abwesenheiten und Effizienz.
 - **In-Day-Optimierung** hat eine andere Laufzeit.
+```
 
 Die meisten Punkte haben eines gemeinsam: leere Felder. Ein Termin ohne Servicegebiet, eine Ressource ohne Wert in einem Checkbox-Feld, ein Arbeitsauftrag mit fehlendem Vergleichsfeld. Bei der älteren Engine waren solche Lücken vielleicht zufällig harmlos. Bei der neuen führen sie zu anderen Kandidaten. Deshalb ist der Wechsel zuerst ein Datenthema, und deshalb würde ich mit den Prüfungen aus [welche Daten die Terminplanung im Field Service braucht](../salesforce-field-service-stammdaten/) beginnen.
 
@@ -83,10 +86,16 @@ Damit hängen zwei Entscheidungen zusammen, die getrennt aussehen. Eine Org, die
 
 Ein typisches Szenario, als Annahme: Ein Maschinenbauer hat 45 Techniker in fünf Servicegebieten, Field Service läuft seit 2021 mit der älteren Engine, dazu vier Disponenten und zwei Scheduling Recipes für verspätete Termine. Alle Zahlen sind Annahmen, um die Methode zu zeigen.
 
-1. **Datenprüfung, zwei Wochen.** Ein Bericht listet Termine ohne Servicegebiet, Ressourcen mit leeren Feldern, die Match-Fields- oder Match-Boolean-Regeln lesen, und Techniker mit sekundären Gebietszuordnungen. Ergebnis: 6 Prozent der offenen Termine haben kein Gebiet, meist Störungen, die aus Cases entstanden sind.
-2. **Recipes, zwei Wochen.** Die beiden Recipes werden mit dem Flow Fix Schedule Overlaps nachgebaut und in einer Full Sandbox getestet.
-3. **Pilot, vier Wochen.** Ein Gebiet mit neun Technikern wechselt auf die neue Engine. Die Disponenten notieren jeden Vorschlag, den sie ändern, und den Grund, so wie bei der Einführung der Automatik.
-4. **Vergleich.** Liegt der Anteil geänderter Vorschläge im Pilotgebiet nicht höher als in den anderen, folgen die übrigen Gebiete, eines pro Woche.
+```schritte
+Datenprüfung | 2 Wochen
+  Ein Bericht listet Termine ohne Servicegebiet, Ressourcen mit leeren Feldern, die Match-Fields- oder Match-Boolean-Regeln lesen, und Techniker mit sekundären Gebietszuordnungen. Ergebnis: 6 Prozent der offenen Termine haben kein Gebiet, meist Störungen, die aus Cases entstanden sind.
+Recipes nachbauen | 2 Wochen
+  Die beiden Recipes werden mit dem Flow Fix Schedule Overlaps nachgebaut und in einer Full Sandbox getestet.
+Pilot | 4 Wochen
+  Ein Gebiet mit neun Technikern wechselt auf die neue Engine. Die Disponenten notieren jeden Vorschlag, den sie ändern, und den Grund, so wie bei der Einführung der Automatik.
+Vergleich
+  Liegt der Anteil geänderter Vorschläge im Pilotgebiet nicht höher als in den anderen, folgen die übrigen Gebiete, eines pro Woche.
+```
 
 Die Konfiguration dafür, also die Einstellung pro Gebiet, Scheduling Policies und Work Rules, besteht aus Datensätzen, nicht aus Metadaten. Sie gehört in die Pipeline, wie im Kapitel [Daten und Konfiguration](../../masterclass/devops-release-management/daten-und-konfiguration/) der DevOps-Masterclass beschrieben, sonst laufen getesteter Sandbox-Stand und Produktion auseinander.
 

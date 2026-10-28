@@ -61,6 +61,18 @@ The row I would check first is the third. The as-built list shows the machine on
 
 **My recommendation: split by use.** Salesforce holds the machine and its service-relevant main assemblies as an asset hierarchy, which warranty, service contracts and the dealer portal need anyway. The full parts list stays in PLM and comes live. For the factory basement without network, the agent runs before the visit and writes its proposal to the work order as products required. The technician then has the list offline.
 
+```ablauf
+sf: Asset, Agent, Work order
+erp: Availability
+ext: As-built list
+Asset --Serial number--> Agent
+Agent --Serial number--> As-built list
+As-built list ..Part numbers..> Agent
+Agent --Part numbers--> Availability
+Availability ..Price..> Agent
+Agent --Proposal--> Work order
+```
+
 If your PLM has no API or no as-built data per serial number, the agent has nothing to call; for older systems see [legacy ERP without an API](../legacy-erp-without-api-ai-agents/).
 
 ## What should the agent decide, and what not?
@@ -96,10 +108,16 @@ In the scenario, a pilot with ten technicians brings two findings. For machines 
 
 ## Where should you start?
 
-1. **Test by hand first.** Take 20 recent spare part orders from the service desk and check whether serial number, asset and as-built list lead to the part that was actually ordered.
-2. **Agree on the serial number as the key.** Same format on the nameplate, in ERP, PLM and Salesforce, including leading zeros and plant prefixes.
-3. **Build the API before the agent.** Give the parts desk a screen on it first. If it does not help people, an agent will not help either.
-4. **Start with technicians,** then open it to dealers with the portal rules above.
+```schritte
+Test by hand first
+  Take 20 recent spare part orders from the service desk and check whether serial number, asset and as-built list lead to the part that was actually ordered.
+Agree on the serial number as the key
+  Same format on the nameplate, in ERP, PLM and Salesforce, including leading zeros and plant prefixes.
+Build the API before the agent
+  Give the parts desk a screen on it first. If it does not help people, an agent will not help either.
+Start with technicians
+  Then open it to dealers with the portal rules above.
+```
 
 Which system leads for which data is the subject of [Salesforce integration](../../services/salesforce-integration/); the wider agent picture is in the masterclass chapter [AI agents in manufacturing](../../masterclass/ai-salesforce/ai-agents-in-manufacturing/).
 

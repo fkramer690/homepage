@@ -93,11 +93,23 @@ I build the matrix from what a person does in the system, not from their job tit
 
 ### Field Service Plus or Service Cloud plus Dispatcher?
 
-In smaller service teams the same people often answer the breakdown line in the morning and plan technicians in the afternoon. On a Dispatcher licence that breaches the licence terms, even if the system technically lets them open the case. For this mixed role the price list names Field Service Plus. Compared with Service Cloud Core it costs $35 more per month, and that difference buys the right to dispatch. If you separate hotline and dispatch cleanly, Service Cloud for one group and Dispatcher for the other is enough.
+In smaller service teams the same people often answer the breakdown line in the morning and plan technicians in the afternoon.
+
+```hinweis achtung
+Doing both on a Dispatcher licence breaches the licence terms, even if the system technically lets them open the case.
+```
+
+For this mixed role the price list names Field Service Plus. Compared with Service Cloud Core it costs $35 more per month, and that difference buys the right to dispatch. If you separate hotline and dispatch cleanly, Service Cloud for one group and Dispatcher for the other is enough.
 
 ### Contractor Plus per user or per login?
 
-$80 divided by $32 is 2.5. A partner technician who logs in three or more times a month is cheaper on a user licence, below that per login wins. The pricing page refers to sales for login-based contractor licences, so I would have the counting rule written into the order form. Contractor licences are meant for your service partners' staff; putting your own people on them to save money is a risk I would not take. The full role matrix with an annual bill is in [Field Service licences: which role needs which one?](../../../blog/field-service-licences-by-role/).
+$80 divided by $32 is 2.5. A partner technician who logs in three or more times a month is cheaper on a user licence, below that per login wins.
+
+```hinweis offen
+The pricing page refers to sales for login-based contractor licences, so I would have the counting rule written into the order form.
+```
+
+Contractor licences are meant for your service partners' staff; putting your own people on them to save money is a risk I would not take. The full role matrix with an annual bill is in [Field Service licences: which role needs which one?](../../../blog/field-service-licences-by-role/).
 
 ## Which add-ons exist, and when does the Agentforce 1 bundle pay off?
 

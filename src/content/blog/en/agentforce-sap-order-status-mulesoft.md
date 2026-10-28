@@ -42,7 +42,9 @@ For a machine builder the chain looks like this:
 4. **API Catalog** in Salesforce can sync only APIs from Exchange that have managed instances, according to [MuleSoft](https://docs.mulesoft.com/access-management/enabling-api-catalog). In Salesforce's [Agentforce workshop](https://developer.salesforce.com/workshops/agentforce-workshop/mulesoft/3-explore-api-catalog) you then activate the actions and grant them to users through a permission set.
 5. **The agent** gets the topic and its actions in Agent Builder.
 
+```hinweis achtung
 Two prerequisites are easy to miss: a trusted connection between the Anypoint organisation and a Salesforce org, with Agentforce enabled for Anypoint Platform, and API Catalog enabled in that org. If MuleSoft and Salesforce contracts sit with different departments, sort this out before the first sprint.
+```
 
 I have not found an official Salesforce reference architecture for Agentforce with S/4HANA, only this generic MuleSoft pattern. So your partner's design is the architecture, and someone on your side should review it.
 
@@ -58,7 +60,15 @@ I would design three operations for a dealer agent:
 - **Delivery dates** per item, with only the confirmed date and partial deliveries listed separately.
 - **Availability** for material, quantity and desired date: yes or no plus the earliest confirmed date from the SAP availability check. No stock figure, because stock levels are commercial information dealers do not need.
 
-The MuleSoft flags decide what the agent may do with each field. `x-sfdc/agent/action/publishAsAgentAction` makes an operation an action, `isUserInput` marks what the agent asks the dealer for, `isDisplayable` marks what it may show, and `x-sfdc/privacy/isPii` switches on the PII service for an operation. The External Services blog adds that action and parameter descriptions are taken from the spec. Good descriptions in the OpenAPI document are prompt engineering done once, in a reviewed file.
+The MuleSoft flags in the OpenAPI spec decide what the agent may do with each field. The External Services blog adds that action and parameter descriptions are taken from the spec. Good descriptions in the OpenAPI document are prompt engineering done once, in a reviewed file.
+
+```vertiefung For developers
+title: Which flags steer the agent?
+- `x-sfdc/agent/action/publishAsAgentAction` makes an operation an action.
+- `isUserInput` marks what the agent asks the dealer for.
+- `isDisplayable` marks what it may show.
+- `x-sfdc/privacy/isPii` switches on the PII service for an operation.
+```
 
 Precompute what dealers ask most. "Overall status" and "next confirmed date" should be fields the API calculates, not conclusions the model draws from ten schedule lines.
 
@@ -86,7 +96,20 @@ What a conversation costs in Flex Credits is calculated in [the dealer service a
 
 ## Live call or a copy in Salesforce?
 
-The agent should call SAP live. The dealer asks about today, and a nightly copy shows yesterday. The price is a dependency: during an SAP maintenance window the action fails. The agent must then say so and offer a callback or a handover, and that case belongs in the test set, as described in [testing Agentforce agents before go-live](../testing-agentforce-agents-before-go-live/).
+The agent should call SAP live. The dealer asks about today, and a nightly copy shows yesterday.
+
+```ablauf
+ext: Dealer, Mule API
+sf: Agentforce agent
+erp: SAP S/4HANA
+Dealer --Portal question--> Agentforce agent
+Agentforce agent --Action--> Mule API
+Mule API --OData--> SAP S/4HANA
+SAP S/4HANA ..Confirmed date..> Mule API
+Mule API ..Response fields..> Agentforce agent
+```
+
+The price is a dependency: during an SAP maintenance window the action fails. The agent must then say so and offer a callback or a handover, and that case belongs in the test set, as described in [testing Agentforce agents before go-live](../testing-agentforce-agents-before-go-live/).
 
 A copy still has its place, for example van stock that technicians need offline, as in [spare parts between ERP and Field Service](../salesforce-field-service-spare-parts-erp/). I would not let the agent present dates from such a copy as current.
 

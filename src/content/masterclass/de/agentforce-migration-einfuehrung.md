@@ -38,7 +38,13 @@ Meine Reihenfolge für den Rest ist trotzdem nüchtern: erst der Shop bei den er
 
 ## Was leisten Buyer Agent und Merchandising Agent heute?
 
-Salesforce bietet für B2B Commerce zwei Arten von Agenten an. Der eine spricht mit Händlern, der andere arbeitet für das Team, das den Shop betreibt.
+Salesforce bietet für B2B Commerce zwei Arten von Agenten an. Der eine spricht mit Händlern, der andere arbeitet für das Team, das den Shop betreibt. Die Termine, die Salesforce dafür nennt:
+
+```zeitleiste
+2026-06 | Buyer Agent allgemein verfügbar, mit WhatsApp und SMS
+2026-08 | Merchandising Agent für B2B laut Innovationsseite
+2027-01 | Carter für Käufer: vollständiger Auftrag im Chat mit Zahlung zum Vertragspreis
+```
 
 ### Buyer Agent für Händler
 
@@ -73,14 +79,19 @@ Salesforce B2B Commerce gab es als Visualforce-Paket, als Aura-Store und als LWR
 
 Die [wichtigsten Unterschiede](https://developer.salesforce.com/docs/commerce/lwr-migration/guide/key-differences.html) betreffen jeden eigenen Code: LWR unterstützt nur Lightning Web Components, Styling läuft über `--dxp`-Styling-Hooks statt eigener CSS-Klassen, Daten kommen über Wire-Adapter, und der Checkout ist der eingebaute Salesforce Commerce Checkout statt eines Flows. Ein Migrationswerkzeug dokumentiert Salesforce nicht. Ich plane den Umstieg deshalb als Neubau der Storefront auf denselben Commerce-Daten.
 
-Ich würde migrieren, wenn mindestens einer dieser Punkte zutrifft:
+```pro-contra
+pro: Migrieren, wenn einer dieser Punkte zutrifft
+- Eine Funktion, die Sie brauchen, fehlt im Aura-Store oder ist schwer zu bauen; prüfen Sie das je Funktion in Release Notes und Dokumentation
+- Eigener Aura-Code wächst weiter, und jede neue Komponente ist Code, den Sie später neu schreiben
+- Der Checkout muss ohnehin geändert werden, etwa für eine neue Kreditprüfung im ERP
+- Der Partner, der den Store gebaut hat, verlässt das Programm
+contra: Was für Abwarten spricht
+- Ein Abschaltdatum gibt es nicht
+- Der Umstieg ist ein Neubau der Storefront
+- Läuft der Store stabil mit wenig eigenem Code, ist Abwarten legitim
+```
 
-- Eine Funktion, die Sie brauchen, ist im Aura-Store nicht verfügbar oder schwer zu bauen. Prüfen Sie das je Funktion in Release Notes und Dokumentation.
-- Eigener Aura-Code wächst weiter, und jede neue Komponente ist Code, den Sie später neu schreiben.
-- Der Checkout muss ohnehin geändert werden, etwa für eine neue Kreditprüfung im ERP.
-- Der Partner, der den Store gebaut hat, verlässt das Programm.
-
-Läuft der Store stabil mit wenig eigenem Code, ist Abwarten legitim. Den ersten Schritt würde ich trotzdem gehen: Aura-Komponenten im laufenden Store durch Lightning Web Components ersetzen, denn die laufen in beiden Store-Typen. Schritte, Checkout und offene Punkte des Leitfadens beschreibe ich in [Von Aura zu LWR: einen B2B-Commerce-Store migrieren](../../../blog/b2b-store-aura-lwr-migrieren/).
+Auch wenn Sie abwarten, würde ich den ersten Schritt gehen: Aura-Komponenten im laufenden Store durch Lightning Web Components ersetzen, denn die laufen in beiden Store-Typen. Schritte, Checkout und offene Punkte des Leitfadens beschreibe ich in [Von Aura zu LWR: einen B2B-Commerce-Store migrieren](../../../blog/b2b-store-aura-lwr-migrieren/).
 
 ## Wie führen Sie den Shop bei Händlern ein?
 
@@ -125,11 +136,18 @@ Die Store-Konfiguration, also Buyer Groups, Entitlement Policies und Preisbüche
 
 ## Wo fangen Sie an?
 
-1. **Shop vor Agent.** Erste Welle live, Daten geprüft, Kennzahlen erhoben. Dann Auftragsstatus und Nachbestellung im Web-Chat für die Pilotgruppe, WhatsApp erst danach.
-2. **Store-Generation klären.** Aura oder LWR, Umfang des eigenen Aura-Codes, geplante Änderungen am Checkout. Daraus folgt, ob die Migration vor oder nach der Einführung kommt.
-3. **Wellen schneiden.** Händlerliste mit Auftragspositionen, Preislogik und Datenqualität, daraus Pilot und Folgewellen.
-4. **Ausgangswerte messen.** Kanalkennzeichen im ERP und Innendienstzeit pro Position, bevor der erste Händler bestellt.
-5. **Regressionsliste schreiben.** Sechs Punkte wie oben, gepflegt im Repository des Kunden.
+```schritte
+Shop vor Agent
+  Erste Welle live, Daten geprüft, Kennzahlen erhoben. Dann Auftragsstatus und Nachbestellung im Web-Chat für die Pilotgruppe, WhatsApp erst danach.
+Store-Generation klären
+  Aura oder LWR, Umfang des eigenen Aura-Codes, geplante Änderungen am Checkout. Daraus folgt, ob die Migration vor oder nach der Einführung kommt.
+Wellen schneiden
+  Händlerliste mit Auftragspositionen, Preislogik und Datenqualität, daraus Pilot und Folgewellen.
+Ausgangswerte messen
+  Kanalkennzeichen im ERP und Innendienstzeit pro Position, bevor der erste Händler bestellt.
+Regressionsliste schreiben
+  Sechs Punkte wie oben, gepflegt im Repository des Kunden.
+```
 
 Alle fünf Kapitel finden Sie auf der [Übersichtsseite der Masterclass](../). Wer entscheiden muss, welche Daten zwischen ERP, PIM und Salesforce wem gehören, findet meine Unterstützung unter [Salesforce-Architektur](../../../leistungen/salesforce-architektur/).
 

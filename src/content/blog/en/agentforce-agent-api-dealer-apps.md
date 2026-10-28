@@ -35,11 +35,16 @@ The Agentforce Agent API lets your own dealer app, machine portal or service app
 
 Salesforce describes the [Agent API](https://developer.salesforce.com/docs/einstein/genai/guide/agent-api.html) as access to Agentforce agents "from anywhere that can call a REST API". The listed use cases include websites, headless agents and agents calling other agents. For a machine builder that means the dealer app, the machine portal or a service partner's app can use the agent your service team uses inside Salesforce.
 
-The [setup guide](https://developer.salesforce.com/docs/ai/agentforce/guide/agent-api-get-started.html) is short:
+The setup is short: an External Client App, a run-as user and a token, then start a session, send messages, end the session.
 
+```vertiefung For developers
+title: What the setup guide asks for in detail
 - An External Client App with OAuth scopes `api`, `refresh_token`, `offline_access`, `chatbot_api` and `sfap_api`, the client credentials flow and JWT-based access tokens.
 - A Run As user with at least API Only access.
 - A token from your My Domain, then calls to `api.salesforce.com/einstein/ai-agent/v1`: start a session for an agent ID, send messages, end the session with a `DELETE`.
+
+Source: [Agent API Get Started](https://developer.salesforce.com/docs/ai/agentforce/guide/agent-api-get-started.html)
+```
 
 Messages go either synchronously or as a [server-sent event stream](https://developer.salesforce.com/docs/ai/agentforce/guide/agent-api-examples.html) with text chunks. One event matters for your app team: on `ValidationFailureChunk` the client has to remove chunks it already displayed, so a dealer may see text appear and disappear.
 
@@ -90,7 +95,13 @@ The test I would insist on before go-live: dealer A asks for an order number of 
 
 The considerations page says Agent API usage "impacts credit consumption" and links to a Salesforce Help article on generative AI usage and billing, which did not render for me. So I calculate with the action rate above, and sandbox actions cost 16 credits instead of 20.
 
-The open line is the Headless Platform Interaction meter. The rate card lists it as "TBA". According to [Salesforce Ben](https://www.salesforceben.com/salesforce-will-charge-flex-credits-for-agentic-mcp-and-api-calls/), every successful call by a registered agent through MCP or direct API traffic classed as agentic will count, with 30 days' notice before metering starts. Neither source says whether a call to the Agent API from your dealer app counts on top of the agent's actions. I would ask your account executive for that answer in writing. How to budget a meter without a price is in [MCP calls as a budget risk](../mcp-api-calls-salesforce-budget-risk/).
+The open line is the Headless Platform Interaction meter. The rate card lists it as "TBA". According to [Salesforce Ben](https://www.salesforceben.com/salesforce-will-charge-flex-credits-for-agentic-mcp-and-api-calls/), every successful call by a registered agent through MCP or direct API traffic classed as agentic will count, with 30 days' notice before metering starts.
+
+```hinweis offen
+Neither source says whether a call to the Agent API from your dealer app counts as a Headless Platform Interaction on top of the agent's actions. I would ask your account executive for that answer in writing.
+```
+
+How to budget a meter without a price is in [MCP calls as a budget risk](../mcp-api-calls-salesforce-budget-risk/).
 
 ## Where should you start?
 

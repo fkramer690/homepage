@@ -46,7 +46,13 @@ Zwei technische Details aus dem [Installations- und Konfigurationshandbuch](http
 
 ## Was kostet das?
 
-Die Produktseite nennt 50 € oder 50 Dollar pro Nutzer und Monat bei jährlicher Abrechnung. Die [Preisseite für Field Service](https://www.salesforce.com/service/field-service-management/pricing/) führt das Add-on nur in Dollar, mit denselben 50 Dollar, und listet Visual Remote Assistant als Bestandteil von Agentforce 1 Field Service für 650 € oder 650 Dollar pro Nutzer und Monat. Trailhead nennt Service-Cloud- oder Field-Service-Lizenzen als Voraussetzung, die Lizenzen für Visual Remote Assistant kaufen Sie über den Account Executive.
+```kennzahlen
+50 € | pro Nutzer und Monat für das Add-on, bei jährlicher Abrechnung
+650 € | pro Nutzer und Monat für Agentforce 1 Field Service, Add-on enthalten
+quelle: Salesforce-Produktseite Visual Remote Assistant und Preisseite Field Service, Stand Oktober 2026
+```
+
+Die Produktseite nennt dieselben Beträge auch in Dollar. Die [Preisseite für Field Service](https://www.salesforce.com/service/field-service-management/pricing/) führt das Add-on nur in Dollar, mit denselben 50 Dollar, und listet Visual Remote Assistant als Bestandteil von Agentforce 1 Field Service. Trailhead nennt Service-Cloud- oder Field-Service-Lizenzen als Voraussetzung, die Lizenzen für Visual Remote Assistant kaufen Sie über den Account Executive.
 
 Lizenziert werden die Personen, die Sitzungen starten: Hotline, Remote-Experten, vielleicht erfahrene Techniker. Der Kunde kommt über den Link dazu und braucht nichts. Acht Nutzer kosten zum Listenpreis 400 € im Monat oder 4.800 € im Jahr. Verglichen mit einer einzigen eingesparten Reise ins Ausland ist das wenig. Der eigentliche Aufwand liegt in der Einrichtung, in den Regeln für Ferndiagnosen und in der Schulung der Hotline.
 
@@ -85,6 +91,15 @@ Nach drei Monaten zeigen zwei Zahlen, ob es funktioniert: der Anteil der Videosi
 
 ## Wo fangen Sie an?
 
-Ordnen Sie die Störungseinsätze des letzten Jahres nach Ursache und zählen Sie die, die weder Teil noch Werkzeug gebraucht haben. Wählen Sie eine Produktlinie und eine Exportregion für einen Pilot über drei Monate mit zwei oder drei Nutzern. Messen Sie Lösungsquote und erneute Anrufe, dann entscheiden Sie über den Rollout. Wie das zu mobiler App und Servicedokumenten passt, steht im [Masterclass-Kapitel zur mobilen App](../../masterclass/field-service/field-service-mobile-app-dokumente/). Ob sich Field Service überhaupt rechnet, beschreibe ich in [Salesforce Field Service: Wann lohnt es sich?](../salesforce-field-service-lohnt-sich/), und die Lizenzfrage im Ganzen unter [Make-or-Buy und Lizenzen](../../leistungen/make-or-buy-lizenzen/).
+```schritte
+Störungen ordnen
+  Die Einsätze des letzten Jahres nach Ursache ordnen und die zählen, die weder Teil noch Werkzeug gebraucht haben.
+Pilot fahren | 3 Monate
+  Eine Produktlinie, eine Exportregion, zwei oder drei Nutzer.
+Messen und entscheiden
+  Lösungsquote und erneute Anrufe auswerten, dann über den Rollout entscheiden.
+```
+
+Wie das zu mobiler App und Servicedokumenten passt, steht im [Masterclass-Kapitel zur mobilen App](../../masterclass/field-service/field-service-mobile-app-dokumente/). Ob sich Field Service überhaupt rechnet, beschreibe ich in [Salesforce Field Service: Wann lohnt es sich?](../salesforce-field-service-lohnt-sich/), und die Lizenzfrage im Ganzen unter [Make-or-Buy und Lizenzen](../../leistungen/make-or-buy-lizenzen/).
 
 Visual Remote Assistant spart Einsätze, wo der Bediener den Fehler selbst beheben kann, und zweite Einsätze, wo der Techniker ohnehin kommen muss. Wenn Sie dieses Potenzial mit Ihren eigenen Störungsdaten prüfen wollen, [schreiben Sie mir](#contact).

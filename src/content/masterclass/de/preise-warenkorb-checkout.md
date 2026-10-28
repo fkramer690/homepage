@@ -59,8 +59,17 @@ Die 25 je Aufruf sind das Limit, das in Projekten wehtun kann: Preisbücher dar�
 
 Ein Preisbucheintrag hält einen Preis für ein Produkt in einem Preisbuch. Die Konditionstechnik in SAP berechnet den Nettopreis dagegen zum Zeitpunkt des Auftrags aus Kundenpreisen, Rabatten je Materialgruppe, Zuschlägen und Gültigkeiten. Für den Shop gibt es zwei Wege:
 
-- **Replizieren:** Ein Job berechnet die Nettopreise vorab und lädt sie in Preisbücher. Der Shop ist schnell und unabhängig vom ERP, die Preise sind so alt wie die letzte Ladung, und die Preislogik existiert zweimal.
+- **Replizieren:** Ein Job berechnet die Nettopreise vorab und lädt sie in Preisbücher.
 - **Live fragen:** Laut [Liste der Extensions](https://developer.salesforce.com/docs/commerce/extensions/guide/available-extensions.html) nutzt `Commerce_Domain_Pricing_Service` im Standard Preisbücher, und `Commerce_Domain_Pricing_CartCalculator` rechnet Warenkorb und Checkout auf Basis dieses Dienstes. Ersetzen Sie den Dienst durch Apex, das SAP aufruft, sieht der Käufer den echten Nettopreis. Dafür muss SAP so schnell antworten, wie ein Käufer auf einer Produktliste wartet.
+
+```pro-contra
+pro: Replizieren
+- Der Shop ist schnell
+- Der Shop ist unabhängig vom ERP
+contra: Der Preis dafür
+- Die Preise sind so alt wie die letzte Ladung
+- Die Preislogik existiert zweimal
+```
 
 Bei vier Händlerstufen und stabiler Preisliste reichen vier Preisbücher und eine nächtliche Ladung. Bei Preisen, die je Kunde verhandelt sind, würde ich SAP live fragen oder aufteilen: Preisbücher für die breite Masse, Live-Aufruf für die Schlüsselkunden. Ein Detail aus der Extension-Liste: Nutzt der Store Faster Add-to-Cart, braucht jedes Produkt trotzdem einen Eintrag in einem Store-Preisbuch.
 
@@ -78,9 +87,14 @@ Meine Regel: Advanced Pricing lohnt sich, wenn der Vertrieb seine Angebote schon
 
 Händler fragen nach einem Preis für 200 Stück statt 5 oder für ein Projekt mit Liefertermin. Heute ist das eine E-Mail mit Excel-Liste. Mit Request for Quote senden angemeldete Käufer den Warenkorb als Angebotsanfrage, und der Innendienst bearbeitet das Angebot in Sales Cloud oder Agentforce Revenue Management. Salesforce nennt RFQ im [Beitrag vom Juni 2026](https://www.salesforce.com/blog/b2b-commerce-innovations-june-26/) "already generally available". Im selben Beitrag stehen Quote to Cart und Round-Trip Quoting: Ein freigegebenes Angebot kommt als Warenkorb zum Käufer zurück, der es im Shop bestellt.
 
+```vertiefung Für Entwickler
+titel: Welche Apex-Methoden gibt es für Angebote im Shop?
 Für eigene Komponenten gibt es die Apex-Klasse [ConnectApi.CommerceQuotes](https://developer.salesforce.com/docs/atlas.en-us.264.0.apexref.meta/apexref/apex_ConnectAPI_CommerceQuotes_static_methods.htm): getQuotes und getQuoteDetail ab API 66.0, createQuoteFromProduct und updateQuote ab API 67.0. Mit updateQuote verhandelt der Käufer ein freigegebenes Angebot nach oder lehnt es ab.
+```
 
+```hinweis offen
 Bei der Lizenz lesen sich die Quellen unterschiedlich. Die Hilfe nennt Advanced Pricing als Voraussetzung für RFQ, die Apex-Referenz unterstützt einfache Produkte bei createQuoteFromProduct auch mit einer reinen B2B-Commerce-Lizenz. Holen Sie die Antwort für Ihre Produkte schriftlich ein.
+```
 
 Wichtiger als die Technik ist der Innendienst. Ein Käufer, der drei Tage auf ein Angebot aus dem Shop wartet, schickt die nächste Anfrage wieder per E-Mail. Antwortzeit, Zuständigkeit je Queue und Rabattgrenzen gehören vor dem Go-live auf Papier. Den ganzen Kreislauf beschreibe ich in [Request for Quote im B2B-Shop](../../../blog/request-for-quote-b2b-shop-angebot/).
 

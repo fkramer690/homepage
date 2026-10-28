@@ -41,11 +41,18 @@ Salesforce says it plainly in the documentation for its own coding agent, Agentf
 Salesforce lists most of these in its own checklists for agent output. Some are a job for the pipeline, the rest need a person who knows your org.
 
 1. **SOQL and DML inside loops.** The code works with one record and fails during a data load or a bulk update from the ERP. Salesforce's checklist asks whether queries in triggers "could hit the 100 SOQL limit in bulk operations". The PMD rule `OperationWithLimitsInLoop` flags queries, DML and other limited operations inside loops ([PMD performance rules](https://docs.pmd-code.org/latest/pmd_rules_apex_performance.html)). Pipeline.
-2. **Missing sharing and field-level security.** PMD flags classes with DML but no sharing declaration (`ApexSharingViolations`) and data access without a permission check (`ApexCRUDViolation`); a query `WITH USER_MODE` passes that rule ([PMD security rules](https://docs.pmd-code.org/latest/pmd_rules_apex_security.html)). Since API version 67.0, Apex runs in user mode by default, classes without a declaration run in the current user's sharing context and `WITH SECURITY_ENFORCED` no longer compiles ([Apex Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apex/versioned_behavior_changes.htm)). In my judgement, models trained mostly on older Apex will keep producing old patterns, and an agent may raise a class's API version on the side. Why that can make queries return fewer records is the topic of [API 67.0 and user mode](../api-67-apex-user-mode-fewer-records/). Pipeline for the declaration, person for the intent.
+2. **Missing sharing and field-level security.** PMD flags classes with DML but no sharing declaration and data access without a permission check. Since API version 67.0, Apex runs in user mode by default. In my judgement, models trained mostly on older Apex will keep producing old patterns, and an agent may raise a class's API version on the side. Why that can make queries return fewer records is the topic of [API 67.0 and user mode](../api-67-apex-user-mode-fewer-records/). Pipeline for the declaration, person for the intent.
 3. **Tests that prove nothing.** Salesforce requires 75 percent coverage for a deployment and says in the same guide "don't focus on the percentage" ([Apex testing best practices](https://developer.salesforce.com/docs/atlas.en-us.264.0.apexcode.meta/pages/apex_testing_best_practices.htm)). An agent told to reach 75 percent reaches it. Salesforce's checklist for agent output names `System.assertNotEquals(null, result)` as an example of an assertion that is not meaningful. Person.
 4. **Invented or wrong fields.** Salesforce asks reviewers whether the code references "real fields and objects from your org (not placeholder names)" ([Workflow Patterns](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-workflow-patterns.html)). A field that does not exist usually fails the validation deploy. The expensive case is a field that exists but is the wrong one, for example an old warranty date from a data migration next to the one your SAP interface maintains. Only someone who knows your data model sees that. Person.
 5. **Incomplete metadata.** New fields that are missing from the permission sets, or references to objects that are not part of the deployment. The validation deploy finds missing references; missing permissions show up when service reps report empty fields. Pipeline plus checklist.
 6. **Business logic that looks right.** Warranty eligibility, discount limits, delivery date rules for spare parts. The agent builds what the user story says, and user stories in manufacturing rarely list every exception. Person, ideally the domain lead.
+
+```vertiefung For developers
+title: Which PMD rules cover sharing, and what does API version 67.0 change?
+`ApexSharingViolations` flags classes with DML but no sharing declaration, `ApexCRUDViolation` flags data access without a permission check; a query `WITH USER_MODE` passes that rule ([PMD security rules](https://docs.pmd-code.org/latest/pmd_rules_apex_security.html)).
+
+Since API version 67.0, classes without a declaration run in the current user's sharing context and `WITH SECURITY_ENFORCED` no longer compiles ([Apex Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apex/versioned_behavior_changes.htm)).
+```
 
 ## What should the pipeline check automatically?
 
@@ -85,11 +92,19 @@ The third finding is the expensive one: a data leak between competing dealers th
 
 ## Where should you start?
 
-1. **Protect your main branches** and require approval from a person on your side for changes to the data model, sharing, integrations and portal access.
-2. **Put Code Analyzer, Apex tests and a validation deploy** in front of every merge, in a pipeline you own. This is the core of my [DevOps and release management](../../services/devops-release-management/) work.
-3. **Write a one-page review checklist** with the six defects above and give it to every partner.
-4. **Require evidence in the pull request**: test output, Code Analyzer result, the AI-generated parts marked.
-5. **Keep pull requests small.** One story per pull request; a 400-line agent diff is reviewable, a 4,000-line one gets waved through.
-6. **Count review findings by category.** After a few sprints you know which rules belong in the [AI rules file of your repository](../ai-rules-file-salesforce-repository/) and which gate is missing.
+```schritte
+Protect the main branches
+  Require approval from a person on your side for changes to the data model, sharing, integrations and portal access.
+Gates before every merge
+  Put Code Analyzer, Apex tests and a validation deploy in front of every merge, in a pipeline you own. This is the core of my [DevOps and release management](../../services/devops-release-management/) work.
+Write a review checklist
+  Write a one-page checklist with the six defects above and give it to every partner.
+Require evidence
+  Require test output, the Code Analyzer result and the AI-generated parts marked in the pull request.
+Keep pull requests small
+  One story per pull request; a 400-line agent diff is reviewable, a 4,000-line one gets waved through.
+Count findings
+  Count review findings by category. After a few sprints you know which rules belong in the [AI rules file of your repository](../ai-rules-file-salesforce-repository/) and which gate is missing.
+```
 
 AI-generated Salesforce code needs a review like any other code, with the human attention moved from syntax to tests, data access and business rules. If you want a second pair of eyes on how your partners' code gets reviewed, [send me a message](#contact).

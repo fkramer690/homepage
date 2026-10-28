@@ -69,9 +69,24 @@ Zwei Punkte fallen auf. Erstens braucht der Buyer Agent Service Cloud. Wer neben
 
 Carter für Käufer verspricht Zahlung zum Vertragspreis. Für einen Hersteller ist der Vertragspreis die heikelste Zahl im ganzen Chat. Er muss aus der Preisfindung des Shops kommen, die ihrerseits Preisbücher liest oder das ERP aufruft, und nie aus dem Sprachmodell.
 
+```ablauf
+sf: Buyer Agent, Preisfindung Shop, Order Summaries
+erp: ERP
+ext: Händler-Chat
+Händler-Chat --Frage--> Buyer Agent
+Buyer Agent --Preis--> Preisfindung Shop
+Preisfindung Shop --Konditionen--> ERP
+Preisfindung Shop ..Vertragspreis..> Buyer Agent
+Buyer Agent --Status--> Order Summaries
+ERP ..hält aktuell..> Order Summaries
+Buyer Agent ..Antwort..> Händler-Chat
+```
+
 Dasselbe gilt für Kreditlimits, gesperrte Kunden und Liefertermine. Das Modell versteht die Frage des Händlers und formuliert die Antwort. Welcher Preis gilt, ob der Kunde auf Rechnung bestellen darf und wann die Ware rausgeht, entscheiden Code, Shop oder ERP. Die allgemeine Regel für Agenten erkläre ich im Kapitel [KI-Agenten in der Fertigung](../../masterclass/ki-salesforce/ki-agenten-in-der-fertigung/) der KI-Masterclass, und wie ein bestätigter Liefertermin aus SAP kommt, in [Agentforce und SAP: Auftragsstatus über MuleSoft](../agentforce-sap-auftragsstatus/).
 
-Eine praktische Folge: Zeigt der Shop Listenpreise, weil Vertragspreise nur in SAP-Konditionen stehen, nennt auch der Agent Listenpreise. Klären Sie den Preis-Master, bevor der Agent live geht.
+```hinweis achtung
+Zeigt der Shop Listenpreise, weil Vertragspreise nur in SAP-Konditionen stehen, nennt auch der Agent Listenpreise. Klären Sie den Preis-Master, bevor der Agent live geht.
+```
 
 ## Warum ist Chat-Text von Händlern nicht vertrauenswürdig?
 

@@ -58,18 +58,26 @@ Salesforce lists the [search limits](https://developer.salesforce.com/docs/comme
 
 25 searchable attributes sound like a lot until you list what dealers type: current number, old numbers, cross-references, machine type, name, short text, maybe an EAN. That leaves room, but not for one field per language and number type. I plan the searchable fields like any scarce resource and write down why each one is there.
 
-One open point: the [search settings API page](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-d2c-comm-search-settings-apis.html) says synonyms are added through search include rules and that "you can create up to 50 rules for a web store". The limits page says 100 synonym rules. Check the value in your org before you plan close to either number.
+```hinweis offen
+The [search settings API page](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-d2c-comm-search-settings-apis.html) says synonyms are added through search include rules and that "you can create up to 50 rules for a web store". The limits page says 100 synonym rules. Check the value in your org before you plan close to either number.
+```
 
 ## Where do old and cross-reference numbers go?
 
 Manufacturers rename parts. A seal gets a new number after a design change, a supplier part gets the manufacturer's own number, a dealer still has the number from a 15-year-old parts list. Dealers type all of them.
 
-There are two ways to make an old number findable:
+There are two ways to make an old number findable: a synonym rule per number, where the search settings API supports single-word and multi-word synonyms, or a searchable text field "former and alternative numbers" on the current product. That field holds every old number, every supplier number and every cross-reference, separated by spaces.
 
-- **Synonym rule per number.** The search settings API supports single-word and multi-word synonyms. With 100 rules per store, or 50 according to the API page, that covers a handful of numbers, not a parts history.
-- **Searchable field on the current product.** A text field "former and alternative numbers" holds every old number, every supplier number and every cross-reference, separated by spaces. The field counts as one of the 25 searchable attributes, regardless of how many numbers it contains.
+```pro-contra
+pro: Searchable field on the product
+- Holds any number of old and cross-reference numbers
+- Counts as one of the 25 searchable attributes, regardless of how many numbers it contains
+contra: Synonym rule per number
+- Only 100 rules per store, or 50 according to the API page
+- Covers a handful of numbers, not a parts history
+```
 
-I would always take the second way for numbers. The data already exists in the ERP, in supersession chains or material master notes, and the interface can fill the field with every load. A typical scenario, as an assumption: a manufacturer with 30,000 active spare parts, of which 8,000 have one or more predecessor numbers. As synonym rules that is impossible. As a field it is one more column in the product import.
+I would always take the field for numbers. The data already exists in the ERP, in supersession chains or material master notes, and the interface can fill the field with every load. A typical scenario, as an assumption: a manufacturer with 30,000 active spare parts, of which 8,000 have one or more predecessor numbers. As synonym rules that is impossible. As a field it is one more column in the product import.
 
 The same field can hold spellings: "4711-0020" and "47110020" side by side if dealers type both. Which spellings matter, the search analytics will show after a few weeks.
 

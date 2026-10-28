@@ -56,7 +56,11 @@ Prompts übersieht man leicht, weil die Beispiele auf der Preisseite nur Aktione
 
 Advanced-Prompts werden seit dem 21. Juli 2026 gezählt. Dieselbe Zusammenfassung mit 6.500 Tokens kostet auf einem Basic-Modell 8 Credits, auf Standard 16 und auf Advanced 64. Für eine Fallzusammenfassung, die eine Servicemitarbeiterin liest und korrigiert, würde ich mit einem Standard-Modell starten und nur wechseln, wenn Tests eine Qualitätslücke zeigen.
 
-Der Hilfeartikel nennt außerdem eingebettete generative Funktionen wie Service Replies. Er sagt nicht, ob die eigenen LLM-Aufrufe der Reasoning Engine zusätzlich zu den Aktionen als Prompts zählen. Ich würde jede Prompt-Vorlage und jede generative Funktion im Design budgetieren und im Piloten prüfen, ob Digital Wallet mehr zeigt.
+Der Hilfeartikel nennt außerdem eingebettete generative Funktionen wie Service Replies. Ich würde jede Prompt-Vorlage und jede generative Funktion im Design budgetieren.
+
+```hinweis offen
+Ob die eigenen LLM-Aufrufe der Reasoning Engine zusätzlich zu den Aktionen als Prompts zählen, sagt der Hilfeartikel nicht. Klären Sie das mit Ihrem Account Executive und prüfen Sie im Piloten, ob Digital Wallet mehr zeigt.
+```
 
 ## Sprache, Sandbox und Data 360: wo Schätzungen danebenliegen
 
@@ -111,7 +115,11 @@ Vier Wochen nach dem Go-live vergleichen Sie die Schätzung mit [Digital Wallet]
 
 ## Was passiert mit nicht genutzten Flex Credits?
 
-Sie verfallen. Laut Rate Card müssen Flex Credits vor dem Enddatum der Bestellung verbraucht werden, ohne Übertrag in die nächste Laufzeit. Kaufen Sie im Januar Credits für ein Jahr und rutscht der Go-live von März auf Juni, sind drei Monate Volumen bezahlt und verloren.
+Sie verfallen. Laut Rate Card müssen Flex Credits vor dem Enddatum der Bestellung verbraucht werden, ohne Übertrag in die nächste Laufzeit.
+
+```hinweis achtung
+Kaufen Sie im Januar Credits für ein Jahr und rutscht der Go-live von März auf Juni, sind drei Monate Volumen bezahlt und verloren.
+```
 
 Ich würde das erste Jahr entlang des Hochlaufs kaufen: ein kleines Pre-Purchase für Pilot und Tests, PayGo oder Pre-Commit für den Hochlauf und ein größeres Volumen, sobald Digital Wallet echte Zahlen zeigt. Weil Mehrverbrauch ohne Aufschlag zum vereinbarten Satz abgerechnet wird, ist ein knapper erster Kauf wenig riskant. Beachten Sie außerdem den Zeitraum der enthaltenen Edition-Credits: Die [Preisseite der Sales Cloud](https://www.salesforce.com/eu/products/sales-pricing/) führt die Pools pro Org und Jahr, die [Ankündigung der Editionen vom September 2026](https://www.salesforce.com/news/stories/salesforce-simplifies-editions-2026/) nennt keinen Zeitraum. Mehrere Agenten teilen sich einen Pool, fragen Sie also, wie der Verbrauch pro Agent überwacht wird. Diese Fragen gehören zu meiner Arbeit in [Make-or-buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/).
 

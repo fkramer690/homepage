@@ -66,7 +66,18 @@ Laut der Ankündigung vom April 2025 liest der Agent für die Fehlersuche Produk
 
 ### Ersatzteile per Seriennummer
 
-Ein Agent nennt das richtige Ersatzteil zu einer Seriennummer nur, wenn eines Ihrer Systeme diese Frage schon nach Regeln beantwortet. Die Daten kommen aus drei Quellen: die As-built-Stückliste aus dem PLM, Material, Verfügbarkeit und Preis aus dem ERP, die installierte Basis mit Servicehistorie aus den Salesforce-Assets. Der Agent versteht die Frage, grenzt sie auf eine Baugruppe ein und zeigt das Ergebnis. Eine Teilenummer wählt er nie selbst. Ob Sie Stücklisten nach Salesforce kopieren oder das PLM live abfragen und was Händler sehen dürfen, steht in [Ersatzteile per Seriennummer: Kann ein KI-Agent das?](../../../blog/ersatzteile-seriennummer-ki-agent/). Die Asset-Hierarchie dahinter behandelt [Kapitel 4](../field-service-assets-wartung-teile/).
+Ein Agent nennt das richtige Ersatzteil zu einer Seriennummer nur, wenn eines Ihrer Systeme diese Frage schon nach Regeln beantwortet. Die Daten kommen aus drei Quellen: die As-built-Stückliste aus dem PLM, Material, Verfügbarkeit und Preis aus dem ERP, die installierte Basis mit Servicehistorie aus den Salesforce-Assets.
+
+```ablauf
+sf: Salesforce-Assets, Ersatzteilagent
+erp: Material und Preis
+ext: PLM-Stückliste
+PLM-Stückliste --As-built--> Ersatzteilagent
+Material und Preis --Verfügbarkeit--> Ersatzteilagent
+Salesforce-Assets --Servicehistorie--> Ersatzteilagent
+```
+
+Der Agent versteht die Frage, grenzt sie auf eine Baugruppe ein und zeigt das Ergebnis. Eine Teilenummer wählt er nie selbst. Ob Sie Stücklisten nach Salesforce kopieren oder das PLM live abfragen und was Händler sehen dürfen, steht in [Ersatzteile per Seriennummer: Kann ein KI-Agent das?](../../../blog/ersatzteile-seriennummer-ki-agent/). Die Asset-Hierarchie dahinter behandelt [Kapitel 4](../field-service-assets-wartung-teile/).
 
 ## Was darf ein KI-Assistent einrichten?
 
@@ -88,7 +99,11 @@ Agenten passen in dieselben Wellen. Ich würde einen Agenten in einer Region ein
 
 Field Service muss die Zahlen aus dem Business Case bewegen. Ich verfolge sechs pro Region und Monat: Einsätze pro Techniker und Tag, Fahrzeitanteil, Erstlösungsquote, eingehaltene Reaktionszeiten, Ankunft im zugesagten Zeitfenster und den Anteil der Vorschläge, den die Disposition vor der Freigabe ändert. Die letzte Zahl ist in den ersten Monaten die nützlichste, weil sie zeigt, ob Daten und Scheduling Policy passen.
 
-Salesforce bietet zwei fertige Ansichten. Laut [Salesforce-Blog vom September 2025](https://www.salesforce.com/blog/how-to-transform-field-service-operations-with-agentic-analytics/) zeigt Operations Home 12 Kennzahlen, darunter Erstlösungsquote, Auslastung, Einsatzdauer und Stillstandszeit der Assets, und Field Service Intelligence hat fünf Dashboards mit mehr als 30 Kennzahlen. Der Blog nennt Tableau Next, Data Cloud und Agentforce als Basis, und die [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?id=service.ifs_intro.htm&language=en_US&type=5) beschreibt Field Service Intelligence als Paket aus Data 360, CRM Analytics und Agentforce Service. Die Preisseite führt Operations Home und Field Service Intelligence mit Einträgen "Available for Purchase" und enthält Tableau Next nur in Agentforce 1 Field Service. Lassen Sie sich deshalb schriftlich bestätigen, welche Positionen Sie brauchen. Für die erste Welle decken Standardberichte auf Terminen und Arbeitsaufträgen die Zahlen aus dem Business Case ab.
+Salesforce bietet zwei fertige Ansichten. Laut [Salesforce-Blog vom September 2025](https://www.salesforce.com/blog/how-to-transform-field-service-operations-with-agentic-analytics/) zeigt Operations Home 12 Kennzahlen, darunter Erstlösungsquote, Auslastung, Einsatzdauer und Stillstandszeit der Assets, und Field Service Intelligence hat fünf Dashboards mit mehr als 30 Kennzahlen. Der Blog nennt Tableau Next, Data Cloud und Agentforce als Basis, und die [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?id=service.ifs_intro.htm&language=en_US&type=5) beschreibt Field Service Intelligence als Paket aus Data 360, CRM Analytics und Agentforce Service. Für die erste Welle decken Standardberichte auf Terminen und Arbeitsaufträgen die Zahlen aus dem Business Case ab.
+
+```hinweis offen
+Die Preisseite führt Operations Home und Field Service Intelligence mit Einträgen "Available for Purchase" und enthält Tableau Next nur in Agentforce 1 Field Service. Lassen Sie sich deshalb schriftlich bestätigen, welche Positionen Sie brauchen.
+```
 
 Legen Sie vor jedem Dashboard schriftlich fest, wie jede Kennzahl definiert ist. Die Erstlösungsquote braucht ein Zeitfenster, einen Bezug wie dasselbe Asset, eine Regel zu Fehlercodes und eine Liste geplanter Folgeeinsätze, die nicht zählen. Dann messen Sie drei Monate lang eine Ausgangsbasis im Altsystem, mit denselben Definitionen. Die Kennzahlentabelle und die fünf Entscheidungen zur Definition stehen in [Field Service Kennzahlen nach dem Go-live: Was messen?](../../../blog/field-service-kennzahlen-operations-home/).
 
@@ -106,10 +121,16 @@ Scheduling Policies, Gebiete, Arbeitstypen und Betriebszeiten sind Datensätze, 
 
 Ein typisches Szenario, als Annahme: ein Komponentenhersteller mit 90 Technikern in drei Regionen, SAP als ERP und Field Service in drei Wellen über neun Monate. Alle Zahlen sind Annahmen, sie zeigen die Reihenfolge der Entscheidungen.
 
-1. **Vor der ersten Welle.** Sechs Kennzahlen definiert, drei Monate Ausgangsbasis aus SAP-Serviceaufträgen und Stundenzetteln, Vereinbarung mit dem Betriebsrat zur Standortübermittlung mit grober Genauigkeit und festem Intervall.
-2. **Monate 1 bis 3, Region eins mit 30 Technikern.** Keine Agenten. Die Disposition ändert im ersten Monat 40 Prozent der Vorschläge, meist wegen fehlender Zugangszeiten der Kunden. Das Team pflegt sie vor der zweiten Welle nach.
-3. **Monate 4 bis 6, Region zwei.** Region eins bekommt den Agenten für die Wartungsbuchung. Angenommen werden 250 geplante Einsätze im Monat mit je fünf Aktionen: 25.000 Credits, etwa 125 € im Monat zum Listenpreis. Stillstandsfenster gibt es für zwei Drittel der Kunden, der Rest bleibt bei der Disposition.
-4. **Monate 7 bis 9, Region drei in einem anderen Land.** Eigene Prüfung der örtlichen Mitbestimmungsregeln, bevor Termine feststehen. Region eins bekommt nachts einen Sprachagenten auf der Hotline, nur für die Triage.
+```schritte
+Vor der ersten Welle
+  Sechs Kennzahlen definiert, drei Monate Ausgangsbasis aus SAP-Serviceaufträgen und Stundenzetteln, Vereinbarung mit dem Betriebsrat zur Standortübermittlung mit grober Genauigkeit und festem Intervall.
+Region eins mit 30 Technikern | Monate 1 bis 3
+  Keine Agenten. Die Disposition ändert im ersten Monat 40 Prozent der Vorschläge, meist wegen fehlender Zugangszeiten der Kunden. Das Team pflegt sie vor der zweiten Welle nach.
+Region zwei | Monate 4 bis 6
+  Region eins bekommt den Agenten für die Wartungsbuchung. Angenommen werden 250 geplante Einsätze im Monat mit je fünf Aktionen: 25.000 Credits, etwa 125 € im Monat zum Listenpreis. Stillstandsfenster gibt es für zwei Drittel der Kunden, der Rest bleibt bei der Disposition.
+Region drei in einem anderen Land | Monate 7 bis 9
+  Eigene Prüfung der örtlichen Mitbestimmungsregeln, bevor Termine feststehen. Region eins bekommt nachts einen Sprachagenten auf der Hotline, nur für die Triage.
+```
 
 Die Fehlersuche wartet, bis die Handbücher den Produktschlüssel des Assets tragen, der Ersatzteilagent, bis das PLM As-built-Stücklisten über eine API liefert. Der monatliche Kennzahlentermin entscheidet, wo der nächste Agent hinkommt.
 

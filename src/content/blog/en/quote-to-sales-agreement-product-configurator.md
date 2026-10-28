@@ -71,6 +71,15 @@ How actuals then get from the ERP into the sales agreement is covered in [part 3
 
 Salesforce provides a standard route. The [Manufacturing Cloud Connect API](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/connect_resources_sales_agreement.htm) creates a sales agreement from a quote, an opportunity or a custom object. A mapping of type ConvertToSalesAgreement defines which fields carry over. Fields the mapping does not cover can be filled with default values in the call. That also works with a custom CPQ approach, because the quote may be a custom object.
 
+```ablauf
+sf: Configurator, Quote, Sales agreement
+erp: Material number, Actuals
+Configurator --> Quote
+Configurator ..new variant..> Material number
+Quote --Connect API--> Sales agreement
+Actuals --per product--> Sales agreement
+```
+
 In terms of content, the mapping has to cover these points:
 
 | What | In the quote | In the sales agreement |

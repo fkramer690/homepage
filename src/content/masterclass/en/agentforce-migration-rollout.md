@@ -38,7 +38,13 @@ My order for the rest is still sober: first the store with the first dealers, th
 
 ## What do the Buyer Agent and the Merchandising Agent do today?
 
-Salesforce offers two kinds of agents for B2B Commerce. One talks to dealers, the other works for the team that runs the store.
+Salesforce offers two kinds of agents for B2B Commerce. One talks to dealers, the other works for the team that runs the store. The dates Salesforce gives for them:
+
+```zeitleiste
+2026-06 | Buyer Agent generally available, with WhatsApp and SMS
+2026-08 | Merchandising Agent for B2B, according to the innovations page
+2027-01 | Carter for Buyers: complete order in the chat with payment at contract price
+```
 
 ### Buyer Agent for dealers
 
@@ -73,14 +79,19 @@ Salesforce B2B Commerce has existed as a Visualforce package, as an Aura store a
 
 The [key differences](https://developer.salesforce.com/docs/commerce/lwr-migration/guide/key-differences.html) touch every piece of custom code: LWR supports only Lightning web components, styling uses `--dxp` styling hooks instead of custom CSS classes, data comes through wire adapters, and checkout is the built-in Salesforce Commerce Checkout instead of a flow. Salesforce documents no migration tool. So I plan the move as a rebuild of the storefront on the same commerce data.
 
-I would migrate when at least one of these applies:
+```pro-contra
+pro: Migrate when one of these applies
+- A feature you need is missing in the Aura store or hard to build there; check each feature in the release notes and documentation
+- Custom Aura code keeps growing, and every new component is code you will rewrite later
+- Checkout has to change anyway, for example for a new credit check in the ERP
+- The partner who built the store is leaving the programme
+contra: What speaks for waiting
+- There is no retirement date
+- The move is a rebuild of the storefront
+- If the store runs stably with little custom code, waiting is a legitimate choice
+```
 
-- A feature you need is not available in the Aura store or is hard to build there. Check each feature in the release notes and documentation.
-- Custom Aura code keeps growing, and every new component is code you will rewrite later.
-- Checkout has to change anyway, for example for a new credit check in the ERP.
-- The partner who built the store is leaving the programme.
-
-If the store runs stably with little custom code, waiting is a legitimate choice. I would still take the first step: replace Aura components in the running store with Lightning web components, because those run in both store types. Steps, checkout and the gaps in the guide are in [Aura to LWR: migrating a B2B Commerce store](../../../blog/b2b-store-aura-to-lwr-migration/).
+Even if you wait, I would take the first step: replace Aura components in the running store with Lightning web components, because those run in both store types. Steps, checkout and the gaps in the guide are in [Aura to LWR: migrating a B2B Commerce store](../../../blog/b2b-store-aura-to-lwr-migration/).
 
 ## How do you roll the store out to dealers?
 
@@ -125,11 +136,18 @@ Store configuration, meaning buyer groups, entitlement policies and price books,
 
 ## Where should you start?
 
-1. **Store before agent.** First wave live, data checked, KPIs collected. Then order status and reorder in web chat for the pilot group, WhatsApp only after that.
-2. **Clarify the store generation.** Aura or LWR, amount of custom Aura code, planned changes to checkout. That decides whether the migration comes before or after the rollout.
-3. **Cut the waves.** A dealer list with order lines, pricing logic and data quality, and from it the pilot and the following waves.
-4. **Measure baselines.** Channel flag in the ERP and inside sales time per line, before the first dealer orders.
-5. **Write the regression list.** Six items as above, kept in the client's repository.
+```schritte
+Store before agent
+  First wave live, data checked, KPIs collected. Then order status and reorder in web chat for the pilot group, WhatsApp only after that.
+Clarify the store generation
+  Aura or LWR, amount of custom Aura code, planned changes to checkout. That decides whether the migration comes before or after the rollout.
+Cut the waves
+  A dealer list with order lines, pricing logic and data quality, and from it the pilot and the following waves.
+Measure baselines
+  Channel flag in the ERP and inside sales time per line, before the first dealer orders.
+Write the regression list
+  Six items as above, kept in the client's repository.
+```
 
 All five chapters are on the [masterclass overview page](../). If you need to decide which data between ERP, PIM and Salesforce belongs to whom, see how I help under [Salesforce architecture](../../../services/salesforce-architecture/).
 

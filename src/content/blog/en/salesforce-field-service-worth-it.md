@@ -79,7 +79,13 @@ On Unlimited Edition, Dispatcher and Technician cost $330 according to the footn
 
 An example with list prices: 40 technicians and 4 dispatchers on Enterprise Edition are 44 licences at $175, so $7,700 per month or $92,400 per year. Implementation, ERP integration and maintenance come on top.
 
-Two conditions from the small print matter for licence planning. Field Service requires at least one Service Cloud licence, and technicians need at least one dispatcher for scheduling to work. Dispatcher and Technician licences may also not be used for a contact centre or case management. Anyone in the back office who handles cases and plans jobs needs Field Service Plus. Which role needs which licence, subcontractors included, is in [chapter 1 of the Field Service masterclass](../../masterclass/field-service/field-service-business-case-licences/).
+Two conditions from the small print matter for licence planning. Field Service requires at least one Service Cloud licence, and technicians need at least one dispatcher for scheduling to work. The second concerns the back office:
+
+```hinweis achtung
+Dispatcher and Technician licences may not be used for a contact centre or case management. Anyone in the back office who handles cases and plans jobs needs Field Service Plus.
+```
+
+Which role needs which licence, subcontractors included, is in [chapter 1 of the Field Service masterclass](../../masterclass/field-service/field-service-business-case-licences/).
 
 ## How do I decide?
 

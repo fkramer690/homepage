@@ -56,9 +56,13 @@ A typical scenario, as an assumption: a manufacturer of conveyor systems sells s
 - 40,000 spare parts order lines a year, average value 150 euros per line, so 6 million euros net.
 - Inside sales needs 4 minutes per line at a full cost of 55 euros per hour: about 3.67 euros per line.
 - 2 percent of manually entered lines contain an error that costs 60 euros to fix: 1.20 euros per line.
-- The GMV fee is assumed at 2 percent. That is a figure reported by integrators, not confirmed by Salesforce. Replace it with the rate from your quote.
+- The GMV fee is assumed at 2 percent.
 - One member licence per active dealer at 35 euros a month.
 - Implementation including ERP integration 250,000 euros, run costs 40,000 euros a year.
+
+```hinweis offen
+The GMV rate of 2 percent is a figure reported by integrators, not confirmed by Salesforce. Replace it with the rate from your quote.
+```
 
 With a digital share rising from 25 to 70 percent over three years, the result looks like this:
 
@@ -82,7 +86,16 @@ That is why I always model three years with a rising share. A one-year view hide
 
 ## What about the Forrester study?
 
-Salesforce promotes a [Total Economic Impact study by Forrester Consulting](https://tei.forrester.com/go/salesforce/b2bcommerce2024), commissioned by Salesforce and published in April 2024. It reports a three-year ROI of 289 percent and a payback of under six months. The basis: interviews with four customer representatives, combined into one composite manufacturer with 1 billion dollars in revenue. Forrester itself advises readers to use their own estimates.
+Salesforce promotes a [Total Economic Impact study by Forrester Consulting](https://tei.forrester.com/go/salesforce/b2bcommerce2024), commissioned by Salesforce and published in April 2024. Its headline figures:
+
+```kennzahlen
+289 % | three-year ROI reported by the study
+under 6 months | payback reported by the study
+4 | customer representatives interviewed as its basis
+source: Forrester Consulting, Total Economic Impact study of Salesforce B2B Commerce, commissioned by Salesforce, April 2024
+```
+
+The four interviews are combined into one composite manufacturer with 1 billion dollars in revenue. Forrester itself advises readers to use their own estimates.
 
 I read such studies as a list of levers: which benefits did those customers see, which costs did they name. The numbers do not transfer to a manufacturer with 250 dealers and 6 million euros in spare parts revenue. Your own clock in inside sales is worth more than any composite company.
 

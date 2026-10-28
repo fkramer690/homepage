@@ -47,7 +47,11 @@ Two terms explained, because the rest of the article uses them. A pricing proced
 
 According to Salesforce Help, the Revenue Management features for B2B Commerce are available in orgs with a Commerce Growth or Commerce Advanced licence together with a Revenue Cloud Advanced licence. Revenue Settings must be enabled, and you buy the licences through your account executive.
 
-Two facts from the official pricing pages for budgeting. The [B2B Commerce editions](https://www.salesforce.com/editions-pricing/commerce-cloud/b2b/) show "Contact for Pricing" and are charged as a share of gross merchandise value through the storefront; Salesforce publishes no percentage. The [Revenue Cloud pricing page](https://www.salesforce.com/sales/revenue-lifecycle-management/pricing/) lists Revenue Cloud Advanced at $200 per user and month, billed annually, and describes it as a separate product bought in addition to a Sales Cloud subscription. How many Revenue Cloud Advanced users a store with external buyers needs is not stated on either page. Ask that question in writing before the business case, because the answer can move the number a lot.
+Two facts from the official pricing pages for budgeting. The [B2B Commerce editions](https://www.salesforce.com/editions-pricing/commerce-cloud/b2b/) show "Contact for Pricing" and are charged as a share of gross merchandise value through the storefront; Salesforce publishes no percentage. The [Revenue Cloud pricing page](https://www.salesforce.com/sales/revenue-lifecycle-management/pricing/) lists Revenue Cloud Advanced at $200 per user and month, billed annually, and describes it as a separate product bought in addition to a Sales Cloud subscription.
+
+```hinweis offen
+How many Revenue Cloud Advanced users a store with external buyers needs is not stated on either page. Ask that question before the business case, because the answer can move the number a lot.
+```
 
 ## How do contract prices reach the buyer?
 
@@ -57,22 +61,30 @@ The [Trailhead unit on contract-based pricing](https://trailhead.salesforce.com/
 
 The refresh is where I would look first in a design. If contract prices are created in Salesforce, the refresh is part of the process. If they come from SAP, every SAP change needs an import plus a refresh before the store is right.
 
+```ablauf
+erp: SAP contract price
+sf: Contract Item Price, Decision table, Pricing procedure, Store cart
+SAP contract price --Import--> Contract Item Price
+Contract Item Price --Refresh--> Decision table
+Decision table --> Pricing procedure
+Pricing procedure --Contract price--> Store cart
+```
+
 ## When is Advanced Pricing worth it?
 
 The strongest argument is consistency. Salesforce wrote in its [Spring '26 B2B innovations post](https://www.salesforce.com/blog/b2b-commerce-innovations-spring-26/) that buyers should see "one price, one catalog, and one history" across site, agent and sales rep. With Advanced Pricing, the procedure that prices a quote for the sales desk also prices the dealer's cart.
 
-I would recommend it when:
-
-- sales already quotes in Revenue Cloud, so the pricing logic exists and is maintained there;
-- the store sells configured bundles or made-to-order variants that need the configuration engine;
-- contract prices are negotiated and stored in Salesforce, not in SAP;
-- you want Request for Quote, because Salesforce Help lists Advanced Pricing as its requirement.
-
-I would be cautious when:
-
-- SAP calculates every customer price and will keep doing so. Then you either replicate SAP's logic into decision tables, which means two engines that must agree, or you call SAP anyway;
-- sales quotes in SAP or another CPQ tool and has no plan to move;
-- the store sells mainly spare parts at tier prices, which price books handle.
+```pro-contra
+pro: I would recommend it when
+- sales already quotes in Revenue Cloud and maintains the pricing logic there
+- the store sells configured bundles or made-to-order variants
+- contract prices are negotiated and stored in Salesforce, not in SAP
+- you want Request for Quote, which needs Advanced Pricing according to Salesforce Help
+contra: I would be cautious when
+- SAP calculates every customer price and will keep doing so; then you replicate SAP's logic into decision tables (two engines that must agree) or call SAP anyway
+- sales quotes in SAP or another CPQ tool and has no plan to move
+- the store sells mainly spare parts at tier prices, which price books handle
+```
 
 Where your pricing engine should live in general is covered in the chapter [catalog, configurator and pricing](../../masterclass/revenue-cloud/product-catalog-configurator-pricing/) of the Revenue Cloud masterclass. For the store, the decision follows the price master: the system that sales trusts for a quote should also price the cart.
 

@@ -69,13 +69,28 @@ Mit vier vordefinierten Vorlagen der Data Processing Engine, Prozesstyp Program 
 
 Admins klonen und passen die Vorlagen an, geplante Flows starten sie, im Beispiel wöchentlich. Die Engine liest Programme, Variantenprognosen, Product Related Material, Produkte, Preisbucheinträge und Perioden und schreibt prognostizierte Menge und Umsatz pro Komponente und Periode.
 
-Für die Architektur folgt daraus zweierlei. Geklonte DPE-Definitionen, Forecast Sets und Flows sind Konfiguration, die wie alles andere durch den Release-Prozess muss, wie in [Daten und Konfiguration in der Pipeline](../../masterclass/devops-release-management/daten-und-konfiguration/) beschrieben. Und die Zahl der Datensätze wächst mit Programmen, Varianten, Komponenten, Dimensionen und Perioden. Für Account Forecasting gibt es dokumentierte Grenzen bei Prognosedatensätzen, beschrieben in [Account Forecasting für die Absatzprognose](../account-forecasting-absatzprognose-vertrieb/). Ob Komponentenprognosen gegen dieselben Grenzen zählen, habe ich nicht dokumentiert gefunden; prüfen Sie das vor dem ersten großen Programm.
+Für die Architektur folgt daraus zweierlei. Geklonte DPE-Definitionen, Forecast Sets und Flows sind Konfiguration, die wie alles andere durch den Release-Prozess muss, wie in [Daten und Konfiguration in der Pipeline](../../masterclass/devops-release-management/daten-und-konfiguration/) beschrieben. Und die Zahl der Datensätze wächst mit Programmen, Varianten, Komponenten, Dimensionen und Perioden.
+
+```hinweis offen
+Für Account Forecasting gibt es dokumentierte Grenzen bei Prognosedatensätzen, beschrieben in [Account Forecasting für die Absatzprognose](../account-forecasting-absatzprognose-vertrieb/). Ob Komponentenprognosen gegen dieselben Grenzen zählen, habe ich nicht dokumentiert gefunden; klären Sie das vor dem ersten großen Programm.
+```
 
 ## Wie wird aus einer freigegebenen Prognose ein Sales Agreement?
 
 In zwei API-Schritten. Zuerst wandelt die Transformation API abgeschlossene Komponentenprognosen in eine Opportunity um. Die Zuordnungen werden über die Metadaten ObjectHierarchyRelationship mit dem Usage Type Transformation Mapping definiert: Komponentenprognose zu Opportunity, zu Opportunity-Position und zu deren Zeitplan, dazu eine Hilfszuordnung vom Programm zur Opportunity, weil der Account nicht automatisch gesetzt wird. Ergebnis ist eine Opportunity mit einer Position pro Komponente und einem Zeitplan pro Periode.
 
 Ist die Opportunity gewonnen, macht die Sales Agreement Connect API aus Opportunity und Positionen ein Sales Agreement mit Produkten. Ab dann übernehmen die Ist-Mengen aus dem ERP, wie in [Sales Agreements: Kunden mit offenen Abnahmemengen erkennen](../sales-agreements-abnahmemengen-erp/) beschrieben. Entsteht das Agreement stattdessen aus einem konfigurierten Angebot, steht der Weg in [vom Angebot zum Sales Agreement](../angebot-zu-sales-agreement-produktkonfigurator/).
+
+```ablauf
+ext: Marktdaten CSV
+sf: Programmprognose, Komponentenprognose, Opportunity, Sales Agreement
+erp: ERP
+Marktdaten CSV --Import--> Programmprognose
+Programmprognose --DPE--> Komponentenprognose
+Komponentenprognose --Transformation API--> Opportunity
+Opportunity --gewonnen--> Sales Agreement
+ERP ..Ist-Mengen..> Sales Agreement
+```
 
 Einen Freigabestatus für die Prognose beschreibt Trailhead nicht. Wer eine Komponentenprognose wann für abgeschlossen erklärt, müssen Sie selbst festlegen. Der Sales-Planning-Agent hat einen dokumentierten Subagenten, der Programmkomponentenprognosen in Opportunities umwandelt, beschrieben in [was der Sales-Planning-Agent wirklich tut](../agentforce-vertriebsplanung-rahmenvertraege/). Laufen lassen würde ich ihn erst, wenn dieser Freigabeschritt existiert.
 

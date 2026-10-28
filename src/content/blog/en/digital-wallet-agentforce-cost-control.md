@@ -33,7 +33,17 @@ Agentforce cost control across plants starts with one decision: who owns the Fle
 
 ## Who owns the Flex Credit pool when plants share one org?
 
-The commercial unit is the org. The [EU pricing page for Sales Cloud](https://www.salesforce.com/eu/products/sales-pricing/) lists "500K Flex Credits/org/year" for Core, 1 million for Advanced and 2.75 million for Max. Extra credits cost $500 per 100,000 on the [Agentforce pricing page](https://www.salesforce.com/agentforce/pricing/), half a cent per credit. Every plant, subsidiary and service region working in that org draws from the same pool. How large the pools are and when Max pays off is covered in [the editions Core, Advanced and Max](../salesforce-editions-core-advanced-max/).
+The commercial unit is the org. The [EU pricing page for Sales Cloud](https://www.salesforce.com/eu/products/sales-pricing/) lists the included pools as "500K Flex Credits/org/year" for Core, and the [Agentforce pricing page](https://www.salesforce.com/agentforce/pricing/) gives the price of extra credits, half a cent per credit:
+
+```kennzahlen
+500,000 | Flex Credits per org per year in Core
+1 million | Flex Credits per org per year in Advanced
+2.75 million | Flex Credits per org per year in Max
+$500 | per 100,000 extra credits
+source: Salesforce EU pricing page for Sales Cloud and Agentforce pricing page
+```
+
+Every plant, subsidiary and service region working in that org draws from the same pool. How large the pools are and when Max pays off is covered in [the editions Core, Advanced and Max](../salesforce-editions-core-advanced-max/).
 
 Three contract terms decide where the money goes:
 
@@ -54,7 +64,9 @@ So the question for a manufacturing group is organisational. I would make one pe
 
 The limits matter as much as the functions. Salesforce Help says you need a Data 360 license, "not a Customer Data Platform (CDP) license", and lists Digital Wallet as not available in sandboxes. Sandbox consumption still costs credits; the Flex Credits card in production has a filter for the environment type. The [Trailhead quick look](https://trailhead.salesforce.com/content/learn/modules/salesforce-digital-wallet-quick-look/get-to-know-salesforce-digital-wallet) says data is updated multiple times a day and that "your monthly statement is the definitive source of truth". The internal invoice therefore follows the monthly statement, not a dashboard screenshot.
 
+```hinweis achtung
 What I did not find: an automatic stop. The pages I opened describe alerts only. [Salesforce Ben noted in May 2025](https://www.salesforceben.com/understanding-common-agentforce-pain-points-and-how-salesforce-addresses-them/) that there was no kill switch to freeze agents at a threshold, and I found nothing newer that says otherwise. A plant budget is therefore a number in controlling. If you need a hard stop, you deactivate the agent yourself.
+```
 
 ## A typical scenario: three regions in one org
 

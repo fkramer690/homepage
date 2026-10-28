@@ -43,7 +43,17 @@ Salesforce announced Agentforce for Field Service in [April 2025](https://www.sa
 | Technicians | Step-by-step troubleshooting from manuals, past repairs and photos | GA since June 2025 |
 | Assets | Asset Service Prediction: when and why an asset fails | [Open beta announced in 2024](https://www.salesforce.com/news/stories/field-service-asset-management-news/), listed on the product page without a GA date |
 
-Salesforce backs the booking agent with its own numbers: an on-site appointment takes 17 minutes to schedule, 15 to change and 12 to cancel, and the agent should get it done in under five. The [Winter '27 announcement](https://salesforce.com/news/stories/winter-2027-product-release-announcement) promises voice booking in seconds instead of 15 minutes. These are vendor figures from mixed industries, not results from machine builders.
+Salesforce backs the booking agent with its own numbers:
+
+```kennzahlen
+17 min | to schedule an on-site appointment
+15 min | to change it
+12 min | to cancel it
+under 5 min | is the target for the agent
+source: Salesforce vendor figures for the booking agent in Agentforce for Field Service
+```
+
+The [Winter '27 announcement](https://salesforce.com/news/stories/winter-2027-product-release-announcement) promises voice booking in seconds instead of 15 minutes. These are vendor figures from mixed industries, not results from machine builders.
 
 The industrial references are thinner. In the [Siemens release](https://investor.salesforce.com/news/news-details/2026/Siemens-and-Salesforce-Deepen-AI-Partnership-to-Redefine-Industrial-Sales-and-Service/default.aspx) of September 2026, a technician "can identify the right spare parts for a specific serial number before the first site visit", but the Teamcenter link behind it is phrased as "will work with". The live, quantified part concerns inbound leads. For service at a machine builder, I would plan with the functions in the table and treat everything else as announced.
 
@@ -87,11 +97,18 @@ The pattern behind it: the agent with the lowest price per transaction is the ea
 
 ## Where should you start?
 
-1. **Pick one function** from the table above with high volume. For most machine builders that is maintenance booking.
-2. **Check the data behind it**: maintenance plans, shutdown windows, asset links of past work orders.
-3. **Put rules into logic**: entitlements, response times and warranty status stay out of the prompt.
-4. **Budget test runs** at 16 credits per action in the sandbox and agree a measurable target, such as the share of maintenance visits booked without a dispatcher.
-5. **Involve the works council early.** Agents that read job reports or process technicians' speech touch co-determination in Germany, alongside location tracking from the [Field Service rollout](../salesforce-field-service-rollout/).
+```schritte
+Pick one function
+  One from the table above with high volume. For most machine builders that is maintenance booking.
+Check the data behind it
+  Maintenance plans, shutdown windows, asset links of past work orders.
+Put rules into logic
+  Entitlements, response times and warranty status stay out of the prompt.
+Budget test runs
+  At 16 credits per action in the sandbox, plus a measurable target such as the share of maintenance visits booked without a dispatcher.
+Involve the works council early
+  Agents that read job reports or process technicians' speech touch co-determination in Germany, alongside location tracking from the [Field Service rollout](../salesforce-field-service-rollout/).
+```
 
 Whether the add-on or Agentforce 1 Field Service is the better buy is a licence question I handle in [make-or-buy and licence planning](../../services/make-or-buy-licences/). For the general go or no-go on agents, see [Agentforce for manufacturers: start now or wait?](../agentforce-yes-or-no-manufacturers/). How to roll out agents in field service step by step is in [chapter 5 of the Field Service masterclass](../../masterclass/field-service/field-service-ai-agents-rollout/).
 

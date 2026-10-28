@@ -46,7 +46,11 @@ So in a manufacturer's B2B store I look at reorder paths before I look at the pr
 | Multi-cart collaboration | Several users build and approve one cart | Listed for January 2027 |
 | Reorder portal | Uses a small site focused on past orders | Available, Trailhead module |
 
-**Past order to cart.** The [order summary APIs](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-d2c-comm-order-summaries-apis.html) include Add Order to Cart, which "simplifies the reorder process by adding all items from a specified order summary directly to your current cart". If no active cart exists, the API creates one. The documentation does not say how items are handled that are no longer orderable, so a superseded part number is something to test in the sandbox, not to assume.
+**Past order to cart.** The [order summary APIs](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-d2c-comm-order-summaries-apis.html) include Add Order to Cart, which "simplifies the reorder process by adding all items from a specified order summary directly to your current cart". If no active cart exists, the API creates one.
+
+```hinweis achtung
+The documentation does not say how items are handled that are no longer orderable, so a superseded part number is something to test in the sandbox, not to assume.
+```
 
 One consequence for manufacturers: the API works on order summaries in Salesforce. A phone order that exists only in SAP is not an order summary, so a dealer cannot reorder it from the store history. If dealers expect to see all their orders, that becomes an integration decision, covered in the masterclass chapter [ERP integration](../../masterclass/b2b-commerce/erp-integration-stock-orders/).
 
@@ -56,11 +60,15 @@ One consequence for manufacturers: the API works on order summaries in Salesforc
 
 ## How large can a cart get?
 
-The [cart limits](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-cart-limits.html) set the frame for imports and templates:
+The [cart limits](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-cart-limits.html) set the frame for imports and templates. The number of carts per user is a soft limit that Salesforce support can raise.
 
-- **Line items per cart:** most stores limit cart size to 500 line items per order. With large cart support enabled, a store can process up to 2,000.
-- **Carts per user:** 100, one active cart and up to 99 secondary carts. This is a soft limit that Salesforce support can raise.
-- **Checkout time to live:** 7 days by default, at most 30 days.
+```kennzahlen
+500 | line items per cart in most stores
+2,000 | line items with large cart support enabled
+100 | carts per user, one active and up to 99 secondary
+7 days | checkout time to live by default, at most 30 days
+source: Salesforce Developer Documentation, cart limits, as of October 2026
+```
 
 500 lines sound like plenty until a dealer imports the annual stock order for a new branch. Before anyone promises "upload your whole list", I would ask how long the longest orders really are, from the ERP, and decide on large cart support with that number. Long carts also mean long pricing and stock calls to the ERP at checkout, which has its own response time limits.
 

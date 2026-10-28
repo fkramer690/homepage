@@ -54,7 +54,11 @@ Salesforce bietet für die Manufacturing Cloud zwei Portallizenzen an. Laut [Sal
 
 In der Hilfe steht außerdem, dass Customer Community Plus for Manufacturing keine Leads, Opportunities, Kampagnen und Angebote mit externen Nutzern teilt. Sales Agreements nennt die Hilfe für diese Lizenz nicht ausdrücklich.
 
-In meinem Projekt hatten die Kunden Customer Community Plus for Manufacturing und sahen ihre Sales Agreements in einer reduzierten Listenansicht. Ich lese die Hilfe deshalb so: Sie beschreibt die typischen Anwendungsfälle, keine vollständige Liste. Verlassen würde ich mich darauf trotzdem nicht. Wenn Kunden Sales Agreements im Portal sehen sollen, gehört das als Anforderung ins Angebot, mit schriftlicher Bestätigung von Salesforce, dass die gewählte Lizenz das abdeckt.
+In meinem Projekt hatten die Kunden Customer Community Plus for Manufacturing und sahen ihre Sales Agreements in einer reduzierten Listenansicht. Ich lese die Hilfe deshalb so: Sie beschreibt die typischen Anwendungsfälle, keine vollständige Liste. Verlassen würde ich mich darauf trotzdem nicht.
+
+```hinweis offen
+Wenn Kunden Sales Agreements im Portal sehen sollen, gehört das als Anforderung ins Angebot, mit schriftlicher Bestätigung von Salesforce, dass die gewählte Lizenz das abdeckt.
+```
 
 Was Portallizenzen kosten und wie sie sich von internen Lizenzen unterscheiden, beschreibe ich in [Salesforce-Lizenzen: Braucht jeder eine volle Lizenz?](../salesforce-lizenzen-volle-lizenz/). Wie das Portal neben Händlerboni und Partnerbesuchen in den Händlerkanal passt, steht in [Kapitel 3 der Masterclass Manufacturing Cloud](../../masterclass/manufacturing-cloud/haendler-und-partnerkanal/).
 
@@ -76,7 +80,9 @@ Ein Nebeneffekt lohnt einen Gedanken: Sieht ein Kunde selbst, dass er hinter sei
 
 ## Wer führt die Stammdaten, wenn Kunden sie selbst pflegen?
 
+```praxis
 Im Projekt konnten Kunden bestimmte Informationen selbst pflegen, etwa die Rechnungsadresse. Diese Daten wurden zuerst in Salesforce gespeichert und dann ins ERP synchronisiert.
+```
 
 Das klingt nach einem Detail, verschiebt aber die Rollen der Systeme. Für Kundenstammdaten ist bei Herstellern meist das ERP führend, weil dort Aufträge und Rechnungen entstehen. Pflegt der Kunde ein Feld im Portal, ist Salesforce für dieses Feld das Eingangssystem. Daraus ergeben sich drei Regeln, die ich vor dem Bau festlege:
 
@@ -88,7 +94,18 @@ Wie ich das führende System für Kunden, Produkte, Preise und Aufträge festleg
 
 ## Was passiert mit Bestellungen und Anfragen aus dem Portal?
 
-Eine Bestellung im Portal ist für den Kunden der letzte Schritt und für den Hersteller der erste. Sie muss ins ERP, dort bestätigt werden und als Ist-Menge zurück ins Sales Agreement fließen. Wer das Portal plant, plant damit den ganzen Kreis: Bestellung, ERP, Bestätigung, Ist-Menge, Anzeige im Portal.
+Eine Bestellung im Portal ist für den Kunden der letzte Schritt und für den Hersteller der erste. Sie muss ins ERP, dort bestätigt werden und als Ist-Menge zurück ins Sales Agreement fließen. Wer das Portal plant, plant damit den ganzen Kreis.
+
+```ablauf
+ext: Kunde
+sf: Portalbestellung, Sales Agreement, Anzeige im Portal
+erp: ERP-Auftrag, Bestätigung
+Kunde --> Portalbestellung
+Portalbestellung --> ERP-Auftrag
+ERP-Auftrag --> Bestätigung
+Bestätigung ..Ist-Menge..> Sales Agreement
+Sales Agreement --> Anzeige im Portal
+```
 
 Anfragen nach neuen Produkten oder Preisen gehen einen anderen Weg. Sie landen beim Vertrieb und laufen durch Konfiguration, Angebot und Freigabe. Für den Kunden zählt dabei vor allem, dass er den Stand seiner Anfrage sieht, statt nachzufragen.
 

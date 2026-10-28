@@ -57,7 +57,11 @@ The add-on therefore buys work done on top of the data model:
 - **Quotes before the visit.** A repair estimate that uses entitlements and warranties to decide what the customer pays.
 - **Campaigns at scale.** The product page lists automation and execution of service campaigns. Core Field Service gives you the objects, ASLM the tooling to fill them for hundreds of assets.
 
-What surprised me in the [comparison table of the price list](https://www.salesforce.com/service/field-service-management/pricing/): the row "Asset Coverage View and Interactive Hierarchy" says "Available for Purchase" for Dispatcher, Technician, Field Service Plus and even Agentforce 1 Field Service at $650. Even the largest edition does not include it. The asset management page adds that "some editions already include these capabilities", without naming them. Get both statements clarified in your quote.
+What surprised me in the [comparison table of the price list](https://www.salesforce.com/service/field-service-management/pricing/): the row "Asset Coverage View and Interactive Hierarchy" says "Available for Purchase" for Dispatcher, Technician, Field Service Plus and even Agentforce 1 Field Service at $650. Even the largest edition does not include it. The asset management page adds that "some editions already include these capabilities", without naming them.
+
+```hinweis offen
+Get it clarified in your quote which statement applies to your edition: available for purchase per the price list, or included per the asset management page.
+```
 
 ## Which ASLM functions does a manufacturer with SAP actually need?
 
@@ -67,9 +71,16 @@ The functions that usually fit a machine builder are the ones the ERP does not d
 
 ## What does Connected Assets add, and when is $15,000 a month justified?
 
-Connected Assets is the telemetry add-on. The asset management page lists prebuilt connectors, real-time telemetry, an Asset Health Score calculated from age, usage, telemetry and repair history, 10,000 connected digital assets and an "Actionable Telematics Framework". The June 2024 announcement describes the idea: when the health score crosses a threshold, the system can try an automatic fix, such as a firmware update, and open a work order if that fails.
+Connected Assets is the telemetry add-on. The asset management page lists prebuilt connectors, real-time telemetry, an Asset Health Score calculated from age, usage, telemetry and repair history and an "Actionable Telematics Framework". The June 2024 announcement describes the idea: when the health score crosses a threshold, the system can try an automatic fix, such as a firmware update, and open a work order if that fails.
 
-At list price that is $180,000 a year per org. In my view it pays off only when a large connected fleet produces signals that should start service work without anyone looking at a dashboard. For most machine builders the first step is smaller. An operating hours counter written once a day from the ERP or the IoT platform is enough for usage-based maintenance plans in core Field Service. Aggregated condition signals through Data 360 cost a fraction of the add-on, as the calculation in [predictive maintenance: what data you need](../predictive-maintenance-salesforce-data-needed/) shows.
+```kennzahlen
+$15,000 | Connected Assets per org and month
+$180,000 | per org and year at list price
+10,000 | connected digital assets per the asset management page
+source: Salesforce Field Service price list, October 2026, and asset management page
+```
+
+In my view the list price pays off only when a large connected fleet produces signals that should start service work without anyone looking at a dashboard. For most machine builders the first step is smaller. An operating hours counter written once a day from the ERP or the IoT platform is enough for usage-based maintenance plans in core Field Service. Aggregated condition signals through Data 360 cost a fraction of the add-on, as the calculation in [predictive maintenance: what data you need](../predictive-maintenance-salesforce-data-needed/) shows.
 
 ## Who owns warranty: Field Service, ASLM or Manufacturing Cloud?
 

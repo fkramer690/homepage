@@ -36,10 +36,16 @@ A quality gate is an automated or human check that holds a change back until it 
 
 I order gates by cost, cheap ones first:
 
-1. Static analysis of Apex, Lightning Web Components and flows, running in minutes.
-2. Validation deployment against the target org with Apex tests and coverage.
-3. Flow tests for the critical automations.
-4. Review by a person who only sees changes that have passed 1 to 3.
+```schritte
+Static analysis | Runs in minutes
+  Check Apex, Lightning Web Components and flows.
+Validation deployment
+  Against the target org, with Apex tests and coverage.
+Flow tests
+  For the critical automations.
+Review
+  By a person who only sees changes that have passed steps 1 to 3.
+```
 
 Your Git platform does the blocking. On GitHub, a protected branch can require, according to the [documentation](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches), a set number of approvals and passing status checks. I would switch on two options in every programme with several partners: approvals are dismissed when new commits arrive, and "Do not allow bypassing the above settings", because without it the rules do not apply to administrators. If partners have admin rights on the repository, branch protection is otherwise just a suggestion.
 
@@ -98,7 +104,11 @@ Version 5 of [Salesforce Code Analyzer](https://developer.salesforce.com/docs/pl
 
 The [Flow Scanner rules](https://developer.salesforce.com/docs/platform/salesforce-code-analyzer/guide/rules-flow.html) are especially useful for partner admins: `DbInLoop` reports Get, Create, Update and Delete elements inside loops, `MissingFaultHandler` elements without a fault path, `HardcodedId` org-specific IDs that break on deployment. Two rules report when user input in a flow running in system context selects or changes records, a privilege escalation risk.
 
-In the pipeline you call `sf code-analyzer run` or the GitHub Action. According to the [CI/CD guide](https://developer.salesforce.com/docs/platform/salesforce-code-analyzer/guide/ci-cd.html), it has to be version 2 of the action; version 1 uses the retired Code Analyzer v4. The run only becomes a gate with `--severity-threshold`: according to the [command reference](https://developer.salesforce.com/docs/platform/salesforce-cli-reference/guide/cli_reference_code-analyzer_run.html), the command exits with an error code as soon as a finding meets that severity. Without the flag everything stays green. Without `--rule-selector`, the `Recommended` rule set runs.
+In the pipeline you call `sf code-analyzer run` or the GitHub Action. According to the [CI/CD guide](https://developer.salesforce.com/docs/platform/salesforce-code-analyzer/guide/ci-cd.html), it has to be version 2 of the action; version 1 uses the retired Code Analyzer v4. Without `--rule-selector`, the `Recommended` rule set runs.
+
+```hinweis achtung
+The run only becomes a gate with `--severity-threshold`: according to the [command reference](https://developer.salesforce.com/docs/platform/salesforce-cli-reference/guide/cli_reference_code-analyzer_run.html), the command exits with an error code as soon as a finding meets that severity. Without the flag everything stays green.
+```
 
 In an org with ten years of Apex, I would block from "High" and report the rest. Block everything on day one and you get hundreds of legacy findings, and partners start switching off rules instead of fixing code. Lower the threshold once the backlog is cleaned up; how to make technical debt visible first is covered in [chapter 9](../operations-monitoring-backup/).
 

@@ -74,7 +74,9 @@ The [considerations for LWC Offline in the Field Service mobile app](https://dev
 4. **Appointment Assistant and LWC Offline.** Salesforce names a conflict that can result in missing URLs.
 5. **iOS cold start.** Changes to Lightning web components load on iOS only after the app is fully closed and started again. A technician who never closes the app keeps the old version.
 
+```hinweis achtung
 Point 5 also matters for every release of your own components. Who tells 50 technicians to close the app completely after a deployment? This belongs in the release plan, together with the app versions Salesforce ships. I cover the routine for that in [Field Service app updates: how to test each release](../field-service-mobile-app-updates-testing/).
+```
 
 ## Why should partner technicians test offline separately?
 
@@ -97,11 +99,18 @@ The service report in this scenario comes from Document Builder. Custom componen
 
 ## Where should you start?
 
-1. **Map roles to briefcases.** Internal technician, partner technician, supervisor. One briefcase per role, with filters on territory and date.
-2. **List the records per job type.** For annual maintenance, breakdown and commissioning, check what the technician opens on site. Leave out everything nobody opens.
-3. **Test in a real hall.** Prime in the morning, switch to airplane mode, run a full job with parts, form and signature, sync in the evening.
-4. **Run the five known issues.** Each one with internal and partner user, on iOS and Android.
-5. **Measure the sync.** Time for the morning priming and size on the device, with the briefcase of your busiest region.
+```schritte
+Map roles to briefcases
+  Internal technician, partner technician, supervisor. One briefcase per role, with filters on territory and date.
+List the records per job type
+  For annual maintenance, breakdown and commissioning, check what the technician opens on site. Leave out everything nobody opens.
+Test in a real hall
+  Prime in the morning, switch to airplane mode, run a full job with parts, form and signature, sync in the evening.
+Run the five known issues
+  Each one with internal and partner user, on iOS and Android.
+Measure the sync
+  Time for the morning priming and size on the device, with the briefcase of your busiest region.
+```
 
 Offline design decides whether forms and documents work later. The next step is the form itself, covered in [Field Service Data Capture: inspection forms without paper](../field-service-data-capture-inspection-forms/), and the whole topic is part of [chapter 3 of the Field Service masterclass](../../masterclass/field-service/field-service-mobile-app-documents/).
 

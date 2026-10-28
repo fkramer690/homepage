@@ -54,6 +54,16 @@ For objects inside the org I use the [object ownership matrix](../../../blog/sal
 
 Master data and actuals flow into Salesforce, money flows back. The frequency follows the question the data answers. Sales agreements run for months, so a daily load is enough for their actuals. A dealer asking about an order wants today's status; I call that live in SAP instead of copying it, as in [Agentforce and SAP: order status through MuleSoft](../../../blog/agentforce-sap-order-status-mulesoft/). All flows with direction and frequency are in [Manufacturing Cloud and SAP: which data flows where](../../../blog/manufacturing-cloud-sap-integration-data-flows/).
 
+```ablauf
+erp: SAP master data, SAP orders, SAP credit memo
+sf: Sales agreements, Rebates and warranty, Dealer question
+SAP master data --sync--> Sales agreements
+SAP orders --daily actuals--> Sales agreements
+Rebates and warranty --approved--> SAP credit memo
+Dealer question --live--> SAP orders
+SAP orders ..status..> Dealer question
+```
+
 The [MuleSoft Accelerator for Manufacturing](https://docs.mulesoft.com/manufacturing/latest/) provides templates for two of these flows: syncing accounts, products and orders from SAP S/4HANA, and credit memos for approved rebate payouts. It does not create sales agreements and names no warranty flow. Salesforce lists MuleSoft on the [add-ons page](https://www.salesforce.com/manufacturing/cloud/pricing/add-ons/) only with "Request a quote". If you already run MuleSoft, the templates save design time. Buying it just for these flows rarely pays off.
 
 For late orders and corrections there is the [Refresh Actuals Calculation](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/mfg_actions_refresh_actuals_calculation.htm) action. It is available from API version 47.0 and recalculates the actuals of a sales agreement for the current, past or future periods. When SAP books a return for last month, the middleware calls it for the affected agreements. Otherwise account managers call customers about a shortfall that no longer exists.
@@ -62,11 +72,14 @@ How the same question looks for a B2B store is covered in the [ERP integration](
 
 ### Which login deadlines apply to ERP interfaces?
 
-Many ERP interfaces still log in with a technical user and a password. According to the [developer's guide to Winter '27](https://developer.salesforce.com/blogs/2026/10/developers-guide-to-the-winter-27-release) there are three steps:
+Many ERP interfaces still log in with a technical user and a password. According to the [developer's guide to Winter '27](https://developer.salesforce.com/blogs/2026/10/developers-guide-to-the-winter-27-release), these deadlines apply:
 
-1. From 1 December 2026 every user who logs in through SOAP API login() needs the Use Any API Auth permission. Without it they get an error.
-2. In Summer '27 SOAP login() in API versions 31.0 to 64.0 is retired.
-3. SOAP, REST and Bulk API versions 31.0 to 40.0 stop getting fixes in Summer '27, and calls fail from Summer '28.
+```zeitleiste
+2026-12-01 | Every user who logs in through SOAP API login() needs the Use Any API Auth permission, otherwise they get an error
+Summer '27 | SOAP login() in API versions 31.0 to 64.0 is retired
+Summer '27 | SOAP, REST and Bulk API versions 31.0 to 40.0 stop getting fixes
+Summer '28 | Calls to SOAP, REST and Bulk API versions 31.0 to 40.0 fail
+```
 
 The risk is an actuals load that fails silently: sales sees an old shortfall and believes it. How to find the affected interfaces is in [Salesforce password integrations end in 2027](../../../blog/salesforce-password-integrations-end-2027/).
 

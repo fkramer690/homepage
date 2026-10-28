@@ -34,7 +34,16 @@ In Salesforce B2B Commerce, das Salesforce laut [Trailhead](https://trailhead.sa
 
 "Passt dieses Teil in diese Maschine?" ist eine Frage über die Maschine. Ein Händler mit 40 installierten Maschinen aus fünf Baureihen braucht für jede eine andere Teileliste, und eine Dichtung für Baureihe A ist vielleicht auch für Baureihe B als Ersatz bestellbar. Ein Entitlement sagt ja oder nein pro Produkt und Käufergruppe, ohne Maschine dazwischen.
 
-Der naheliegende Umweg ist eine Käufergruppe pro Maschine. Die [Entitlement-Limits](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-entitlement-limits.html) beenden das schnell: Ein Produkt kann 2.000 Buyer Entitlements haben, als festes Limit, und bei der Suchindexierung werden nur die ersten 2.000 Käufergruppen eines Produkts in den Index übernommen. Eine Standardschraube, die in 6.000 Maschinen verbaut ist, wäre nur für ein Drittel davon auffindbar. Dazu erlauben die [Käufergruppen-Limits](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-shopper-buyer-groups-accounts-limits.html) standardmäßig 20 Käufergruppen pro Käuferkonto, 30 mit einer Apex-Extension. Ein Händler mit 40 Maschinen passt nicht hinein.
+Der naheliegende Umweg ist eine Käufergruppe pro Maschine. Die [Entitlement-Limits](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-entitlement-limits.html) und die [Käufergruppen-Limits](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-shopper-buyer-groups-accounts-limits.html) beenden das schnell:
+
+```kennzahlen
+2.000 | Buyer Entitlements pro Produkt, festes Limit
+20 | Käufergruppen pro Käuferkonto, standardmäßig
+30 | Käufergruppen pro Käuferkonto mit Apex-Extension
+quelle: Salesforce Commerce Developer Guide, Entitlement-Limits und Käufergruppen-Limits
+```
+
+Bei der Suchindexierung werden nur die ersten 2.000 Käufergruppen eines Produkts in den Index übernommen. Eine Standardschraube, die in 6.000 Maschinen verbaut ist, wäre nur für ein Drittel davon auffindbar. Und ein Händler mit 40 Maschinen passt in keine der beiden Grenzen pro Käuferkonto.
 
 Entitlements bleiben also bei dem, was sie gut können: welche Länder, Stufen und Marken welche Teile kaufen dürfen. Wie man diese Gruppen schneidet, steht in [Buyer Groups und Entitlements](../buyer-groups-entitlements-sichtbarkeit/).
 
@@ -89,10 +98,16 @@ Die Entscheidung im Szenario: Käufergruppen bleiben pro Land und Händlerstufe.
 
 ## Womit sollten Sie anfangen?
 
-1. **Zuerst die Daten prüfen.** Nehmen Sie 20 aktuelle Ersatzteilbestellungen und testen Sie, ob Seriennummer, Asset und As-built-Stückliste zum tatsächlich bestellten Teil führen.
-2. **Die Asset-Freigabe aufräumen.** Welche Maschinen gehören zu welchem Händlerkonto, einschließlich der an Endkunden verkauften.
-3. **Die Teile-API vor der Seite bauen.** Der Ersatzteilinnendienst kann sie zuerst nutzen, Store, [Außendienst](../salesforce-field-service-ersatzteile-erp/) und ein Agent später.
-4. **Mit der Maschinenseite starten** und das Filtern der Suche erst angehen, wenn Händler danach fragen.
+```schritte
+Zuerst die Daten prüfen
+  Nehmen Sie 20 aktuelle Ersatzteilbestellungen und testen Sie, ob Seriennummer, Asset und As-built-Stückliste zum tatsächlich bestellten Teil führen.
+Die Asset-Freigabe aufräumen
+  Klären Sie, welche Maschinen zu welchem Händlerkonto gehören, einschließlich der an Endkunden verkauften.
+Die Teile-API vor der Seite bauen
+  Der Ersatzteilinnendienst kann sie zuerst nutzen, Store, [Außendienst](../salesforce-field-service-ersatzteile-erp/) und ein Agent später.
+Mit der Maschinenseite starten
+  Das Filtern der Suche gehen Sie erst an, wenn Händler danach fragen.
+```
 
 Das Kapitel [Katalog, Suche, Sichtbarkeit](../../masterclass/b2b-commerce/katalog-suche-sichtbarkeit/) der [Masterclass B2B Commerce](../../masterclass/b2b-commerce/) ordnet das in das Store-Design ein. Welches System welche Daten führt, ist Thema von [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).
 

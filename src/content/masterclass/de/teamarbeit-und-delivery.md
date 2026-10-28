@@ -94,7 +94,9 @@ Welche automatischen Prüfungen in die Pipeline gehören, beschreibt [Kapitel 8]
 | G5 Fachabnahme | Akzeptanzkriterien in der Demo | Domain-Lead | ja |
 | G6 Release | Change-Freigabe, Rollback-Plan | Release Manager | ja |
 
-G2 ist bewusst nicht blockierend. Ein zweiter Agent findet Auffälligkeiten, die Verantwortung bleibt bei G3. Warum jeder Pull Request ein menschliches Review braucht, unabhängig davon, wer den Code geschrieben hat, steht in [warum Pull-Request-Reviews Pflicht sind](../../../blog/warum-pull-request-reviews-pflicht-sind/). Für Agentforce-Agenten selbst kommt ein Testgate mit Testing Center hinzu, beschrieben in [Agentforce-Agenten testen und freigeben](../../../blog/agentforce-agenten-testen-freigeben/).
+G2 ist bewusst nicht blockierend. Ein zweiter Agent findet Auffälligkeiten, die Verantwortung bleibt bei G3.
+
+ Warum jeder Pull Request ein menschliches Review braucht, unabhängig davon, wer den Code geschrieben hat, steht in [warum Pull-Request-Reviews Pflicht sind](../../../blog/warum-pull-request-reviews-pflicht-sind/). Für Agentforce-Agenten selbst kommt ein Testgate mit Testing Center hinzu, beschrieben in [Agentforce-Agenten testen und freigeben](../../../blog/agentforce-agenten-testen-freigeben/).
 
 ### Definition of Done als Empfehlung
 
@@ -159,11 +161,18 @@ Nehmen wir einen Maschinenbauer mit Service Cloud, Field Service, einem Händler
 
 So würde ich die ersten acht Wochen aufsetzen:
 
-- **Woche 1 bis 2: Basislinie und Betriebsrat.** Die Programmleitung zieht drei Monate Historie aus Jira und Git: angenommen 35 Stories im Monat, 16 Arbeitstage Durchlaufzeit, 10 Prozent Nacharbeit. Parallel geht ein Entwurf der Rahmenvereinbarung an den Betriebsrat, mit dem Verzicht auf Auswertungen pro Person als Kernpunkt.
-- **Woche 2: Vertrag und Regeln.** Der Partner legt Werkzeuge und Modellwege offen, Agenten erhalten nur Zugriff auf Scratch Orgs und Developer-Sandboxes. Die Regeldatei liegt im Repository des Herstellers, verantwortet vom internen Architekten.
-- **Woche 3 bis 6: ein Strom als Pilot.** Ersatzteilbestellung im Händlerportal, weil der Prozess klar ist und wenig an SAP-Buchungen hängt. Eine Disponentin aus dem Ersatzteilvertrieb ist zur Hälfte als Domain-Lead freigestellt und nimmt täglich ab. Die Gates G0 bis G6 gelten ab dem ersten Pull Request.
-- **Woche 3 bis 6: Einarbeitung.** Zwei Entwickler des Partners durchlaufen die vier Wochen, die übrigen arbeiten zunächst weiter wie bisher. Das liefert nebenbei eine Vergleichsgruppe.
-- **Woche 7 bis 8: Auswertung.** Angenommen sinkt die Durchlaufzeit im Pilotstrom auf 12 Tage, die Nacharbeit steigt aber auf 13 Prozent, weil die Pull Requests größer wurden. Konsequenz: kleinere Pull Requests als Regel, ein zweiter Reviewer auf Kundenseite, dann der nächste Strom.
+```schritte
+Basislinie und Betriebsrat | Woche 1 bis 2 · Programmleitung
+  Drei Monate Historie aus Jira und Git: angenommen 35 Stories im Monat, 16 Arbeitstage Durchlaufzeit, 10 Prozent Nacharbeit. Parallel geht ein Entwurf der Rahmenvereinbarung an den Betriebsrat, mit dem Verzicht auf Auswertungen pro Person als Kernpunkt.
+Vertrag und Regeln | Woche 2 · Partner und interner Architekt
+  Der Partner legt Werkzeuge und Modellwege offen, Agenten erhalten nur Zugriff auf Scratch Orgs und Developer-Sandboxes. Die Regeldatei liegt im Repository des Herstellers, verantwortet vom internen Architekten.
+Ein Strom als Pilot | Woche 3 bis 6 · Domain-Lead
+  Ersatzteilbestellung im Händlerportal, weil der Prozess klar ist und wenig an SAP-Buchungen hängt. Eine Disponentin aus dem Ersatzteilvertrieb ist zur Hälfte freigestellt und nimmt täglich ab. Die Gates G0 bis G6 gelten ab dem ersten Pull Request.
+Einarbeitung | Woche 3 bis 6 · zwei Entwickler des Partners
+  Zwei Entwickler durchlaufen die vier Wochen, die übrigen arbeiten zunächst weiter wie bisher. Das liefert nebenbei eine Vergleichsgruppe.
+Auswertung | Woche 7 bis 8
+  Angenommen sinkt die Durchlaufzeit im Pilotstrom auf 12 Tage, die Nacharbeit steigt aber auf 13 Prozent, weil die Pull Requests größer wurden. Konsequenz: kleinere Pull Requests als Regel, ein zweiter Reviewer auf Kundenseite, dann der nächste Strom.
+```
 
 Der Garantiestrom kommt erst danach, weil Gutschriften in SAP gebucht werden und dort ein Ende-zu-Ende-Test vor jedem Release bleibt. Diese Reihenfolge ist Teil dessen, was ich in der [Projektsteuerung für Salesforce-Programme](../../../leistungen/projektsteuerung-nearshore/) aufsetze; die Freigabe der Fachbereiche und die Kommunikation ins Team gehören ins [Change Management](../../../leistungen/change-management/). Alle Kapitel finden Sie in der [Übersicht der Masterclass](../).
 

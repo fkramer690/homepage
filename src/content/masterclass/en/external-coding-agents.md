@@ -68,7 +68,9 @@ Separate two decisions: which model your Agentforce agents use at runtime, for e
 
 Sources: [Supported Models](https://developer.salesforce.com/docs/ai/agentforce/guide/supported-models.html), [Anthropic, October 2025](https://www.anthropic.com/news/salesforce-anthropic-expanded-partnership), [Claudeforce](https://www.salesforce.com/ap/news/press-releases/2026/08/27/sg-salesforce-and-anthropic-announce-claudeforce-the-1-ai-meets-the-1-ai-crm/), [SalesforceBen on Dreamforce 2026](https://www.salesforceben.com/biggest-dreamforce-26-announcements-everything-in-a-nutshell/).
 
-One detail for your architecture: the Supported Models page currently lists Claude up to Sonnet 5 and Opus 4.8, and describes the "Salesforce Default" model as a "managed mix of trusted models (currently including GPT-4o)". Press release and documentation are not in step. Check in Setup which model your agent actually uses instead of relying on the announcement.
+```hinweis achtung
+The Supported Models page currently lists Claude up to Sonnet 5 and Opus 4.8, and describes the "Salesforce Default" model as a "managed mix of trusted models (currently including GPT-4o)". Press release and documentation are not in step. Check in Setup which model your agent actually uses instead of relying on the announcement.
+```
 
 ## Where are code, metadata and test data processed?
 
@@ -85,7 +87,11 @@ A manufacturer's repository holds more than people think: pricing logic, discoun
 
 Sources: [Anthropic data residency](https://platform.claude.com/docs/en/manage-claude/data-residency), [Anthropic pricing](https://platform.claude.com/docs/en/about-claude/pricing), [OpenAI data residency in Europe](https://openai.com/index/introducing-data-residency-in-europe/), [GitHub changelog, September 2026](https://github.blog/changelog/month/09-2026/).
 
-German labour law adds another step. According to [CMS](https://cms.law/de/deu/legal-updates/ki-transformation-und-betriebsrat-mitbestimmung-richtig-gestalten), AI systems are generally capable of evaluating performance or behaviour data, so introducing them usually requires a works agreement, and using them without one is not permitted. In my reading, coding agents with usage statistics fall under this; have your labour lawyer confirm for your set-up. How to bring in the works council and GDPR early is covered in [AI coding tools, works council and GDPR](../../../blog/ai-coding-tools-works-council-gdpr/).
+German labour law adds another step. According to [CMS](https://cms.law/de/deu/legal-updates/ki-transformation-und-betriebsrat-mitbestimmung-richtig-gestalten), AI systems are generally capable of evaluating performance or behaviour data, so introducing them usually requires a works agreement, and using them without one is not permitted. How to bring in the works council and GDPR early is covered in [AI coding tools, works council and GDPR](../../../blog/ai-coding-tools-works-council-gdpr/).
+
+```hinweis offen
+In my reading, coding agents with usage statistics fall under this co-determination. Have your labour lawyer confirm it for your set-up.
+```
 
 ## What do coding agents cost per developer?
 

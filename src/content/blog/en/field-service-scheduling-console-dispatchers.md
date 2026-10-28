@@ -38,7 +38,11 @@ The screen has three parts:
 - **Service appointment list.** Open and scheduled appointments in a standard Salesforce list view with custom columns and filters. Appointments are dragged from the list onto the Gantt.
 - **Map.** Resources and appointments in real time, with layers for planned routes, traffic and exact appointment locations, kept in sync with the Gantt and the list.
 
-The old console now has a new name. According to a [Salesforce knowledge article](https://help.salesforce.com/s/articleView?id=005389875&language=en_US&type=1), the managed package tab was renamed to Classic Dispatch Console with version 262 (Summer '26), to separate it from the new Scheduling Console. If Visualforce pages, custom tabs or navigation rules point to the old label, they can break. The article describes a workaround with a custom Visualforce tab.
+The old console now has a new name. According to a [Salesforce knowledge article](https://help.salesforce.com/s/articleView?id=005389875&language=en_US&type=1), the managed package tab was renamed to Classic Dispatch Console with version 262 (Summer '26), to separate it from the new Scheduling Console.
+
+```hinweis achtung
+If Visualforce pages, custom tabs or navigation rules point to the old label, they can break. The article describes a workaround with a custom Visualforce tab.
+```
 
 ## What does the new console do better?
 
@@ -73,10 +77,16 @@ For a manufacturer this is the important point. Dispatchers who plan annual main
 
 A typical scenario, as an assumption: a component maker with four dispatchers and three service territories already runs Enhanced Scheduling and Optimization. All numbers are assumptions to show the method.
 
-1. **Inventory, one week.** The admin lists every customisation of the Classic Dispatch Console: custom actions, Visualforce pages, filters, colour rules. Each dispatcher writes down which Gantt views they use every day.
-2. **Pilot, six weeks.** Two dispatchers get the permission set and plan one territory in the Scheduling Console. The other two stay on the Classic Dispatch Console for the remaining territories.
-3. **Weekly check.** The pilot dispatchers note what they could not do in the new console and had to do in the old one, and how often they used Why? to understand a proposal.
-4. **Decision.** If nothing on the list blocks daily work, the other two dispatchers follow. If long-range views are still missing, the planner for preventive maintenance keeps the Classic Dispatch Console for that task.
+```schritte
+Inventory | 1 week · admin and dispatchers
+  The admin lists every customisation of the Classic Dispatch Console: custom actions, Visualforce pages, filters, colour rules. Each dispatcher writes down which Gantt views they use every day.
+Pilot | 6 weeks · two dispatchers
+  Two dispatchers get the permission set and plan one territory in the Scheduling Console. The other two stay on the Classic Dispatch Console for the remaining territories.
+Weekly check | weekly · pilot dispatchers
+  The pilot dispatchers note what they could not do in the new console and had to do in the old one, and how often they used Why? to understand a proposal.
+Decision
+  If nothing on the list blocks daily work, the other two dispatchers follow. If long-range views are still missing, the planner for preventive maintenance keeps the Classic Dispatch Console for that task.
+```
 
 The note on Why? is worth collecting. If dispatchers use it often and then change the proposal anyway, the explanation points to missing data or a policy that does not fit, which is useful input long before any AI agent schedules on its own. Which agents work for dispatchers today is covered in [AI agents in Field Service: what works today?](../field-service-ai-agents-what-works-today/), and the wider picture in the AI masterclass chapter on [AI agents in manufacturing](../../masterclass/ai-salesforce/ai-agents-in-manufacturing/).
 

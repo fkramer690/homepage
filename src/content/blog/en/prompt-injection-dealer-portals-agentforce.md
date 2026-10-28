@@ -31,7 +31,23 @@ Prompt injection in dealer portals is the most likely way an Agentforce agent at
 
 ForcedLeak is a vulnerability chain that Noma Security reported to Salesforce on 28 July 2025, rated CVSS 9.4. According to [The Hacker News](https://thehackernews.com/2025/09/salesforce-patches-critical-forcedleak.html), it affected any org that used Agentforce with Web-to-Lead enabled. An attacker submitted a web form with hidden instructions in the Description field. Later an employee asked Agentforce an ordinary question about that lead. The agent carried out the hidden instructions along with the real question, read further lead data and sent it out, embedded in the address of an image. The target domain was on Salesforce's allowlist, but it had expired and could be bought for about $5.
 
-Salesforce acknowledged the report on 31 July and has enforced Trusted URLs for Agentforce and Einstein AI since 8 September 2025, according to [SalesforceBen](https://www.salesforceben.com/agentforce-web-to-lead-vulnerability-exposed-could-you-be-impacted/). Salesforce told The Hacker News that the allowlist ensures "no malicious links are called or generated" through prompt injection. According to Noma, the expired domain was re-secured. Noma published the details on 25 September.
+```ablauf
+ext: Attacker, Employee, Expired domain
+sf: Lead description, Agentforce
+Attacker --Web form--> Lead description
+Employee --Question on lead--> Agentforce
+Lead description --Hidden instruction--> Agentforce
+Agentforce --Image URL leak--> Expired domain
+```
+
+Salesforce acknowledged the report on 31 July and has enforced Trusted URLs for Agentforce and Einstein AI since 8 September 2025, according to [SalesforceBen](https://www.salesforceben.com/agentforce-web-to-lead-vulnerability-exposed-could-you-be-impacted/). Salesforce told The Hacker News that the allowlist ensures "no malicious links are called or generated" through prompt injection. According to Noma, the expired domain was re-secured.
+
+```zeitleiste
+2025-07-28 | Noma Security reports ForcedLeak to Salesforce, CVSS 9.4
+2025-07-31 | Salesforce acknowledges the report
+2025-09-08 | Salesforce enforces Trusted URLs for Agentforce and Einstein AI
+2025-09-25 | Noma publishes the details
+```
 
 Two points matter more to me than the patch. Noma wrote that the model "lacked the ability to distinguish" between data loaded into its context and instructions from trusted sources. That holds for every language model. And a Salesforce spokesperson told [SalesforceBen](https://www.salesforceben.com/agentforce-web-to-lead-vulnerability-exposed-could-you-be-impacted/) that prompt injection is "a complex and evolving area". The specific exit is closed. The pattern behind it stays.
 

@@ -54,7 +54,11 @@ Salesforce verkauft Field Service heute als Field Service and Operations, die Au
 
 Die Salesforce-Hilfe beschreibt [Field Service Intelligence](https://help.salesforce.com/s/articleView?id=service.ifs_intro.htm&language=en_US&type=5) als Paket aus Data 360, CRM Analytics und Agentforce Service. Ihr [Service Data Kit](https://help.salesforce.com/s/articleView?id=sf.ifs_install_data_kit.htm&language=en_US&type=5) richtet mehr als 20 Datenströme ein, und die Hilfe warnt davor, installierte Objekte, Felder oder Zuordnungen zu entfernen, weil die Dashboards darauf aufbauen. Tableau Next selbst braucht laut [Einrichtungsanleitung](https://help.tableau.com/current/tableau-next/en-us/tableau_next_setup_guide_configure_data_cloud.htm) zuerst eine konfigurierte Data Cloud.
 
-Die Lizenzfrage ist aus der [Preisliste](https://www.salesforce.com/de/products/field-service/pricing/) nicht eindeutig abzulesen. Die Vergleichstabelle führt Tableau Next bei Dispatcher, Technician und Field Service Plus als "Available for Purchase", Agentforce 1 Field Service enthält es zusammen mit 2,5 Millionen Data-Cloud-Credits pro Org und Jahr. Auch Operations Home und Field Service Intelligence stehen mit Einträgen "Available for Purchase" in der Tabelle. Lassen Sie sich schriftlich bestätigen, welche Positionen Ihre Edition braucht, bevor Sie jemandem ein Dashboard zusagen.
+Die Lizenzfrage ist aus der [Preisliste](https://www.salesforce.com/de/products/field-service/pricing/) nicht eindeutig abzulesen. Die Vergleichstabelle führt Tableau Next bei Dispatcher, Technician und Field Service Plus als "Available for Purchase", Agentforce 1 Field Service enthält es zusammen mit 2,5 Millionen Data-Cloud-Credits pro Org und Jahr. Auch Operations Home und Field Service Intelligence stehen mit Einträgen "Available for Purchase" in der Tabelle.
+
+```hinweis offen
+Welche Positionen Ihre Edition für Operations Home, Field Service Intelligence und Tableau Next braucht, lassen Sie sich vom Account-Team bestätigen, bevor Sie jemandem ein Dashboard zusagen.
+```
 
 Meine Einschätzung: Die fertigen Ansichten lohnen sich, sobald die Definitionen abgestimmt sind und Data 360 ohnehin im Haus ist. Für die erste Welle decken Standardberichte auf Terminen und Arbeitsaufträgen die Zahlen aus dem Business Case ab.
 
@@ -94,11 +98,18 @@ Kommen später Field-Service-Agenten dazu, messen Sie diese getrennt mit eigenen
 
 ## Wo fangen Sie an?
 
-1. **Wählen Sie die Kennzahlen** aus Ihrem Business Case, höchstens sechs.
-2. **Schreiben Sie die Definitionen auf**, vor allem für die Erstlösungsquote.
-3. **Messen Sie den Ausgangswert** drei Monate lang im Altsystem.
-4. **Starten Sie mit Standardberichten** in der ersten Welle und wechseln Sie zu Operations Home oder Field Service Intelligence, wenn Lizenzen und Definitionen geklärt sind.
-5. **Prüfen Sie monatlich pro Region** und ordnen Sie jeden Ausreißer einer Daten- oder Prozesskorrektur zu.
+```schritte
+Kennzahlen wählen
+  Nehmen Sie die Zahlen aus Ihrem Business Case, höchstens sechs.
+Definitionen aufschreiben
+  Vor allem für die Erstlösungsquote.
+Ausgangswert messen | drei Monate
+  Im Altsystem, mit denselben Definitionen wie nach dem Go-live.
+Mit Standardberichten starten
+  In der ersten Welle; zu Operations Home oder Field Service Intelligence wechseln Sie, wenn Lizenzen und Definitionen geklärt sind.
+Monatlich pro Region prüfen
+  Ordnen Sie jeden Ausreißer einer Daten- oder Prozesskorrektur zu.
+```
 
 Wie die Kennzahlen in Einführung und Betrieb passen, behandelt das [Kapitel KI-Agenten, Einführung und Betrieb der Field-Service-Masterclass](../../masterclass/field-service/field-service-ki-agenten-einfuehrung/).
 

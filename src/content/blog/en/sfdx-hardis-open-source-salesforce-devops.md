@@ -72,17 +72,23 @@ What matters most to me: no tool is right for every team. The choice should be m
 
 ## When is sfdx-hardis the right choice?
 
-From my project experience, sfdx-hardis fits well when:
+From my project experience, the answer depends on these points:
 
-- several teams or partners work on the same org and need one binding release process,
-- the client wants to own the process and avoid lock-in to a partner or a tool vendor,
-- the client already runs GitHub, GitLab or Azure DevOps and wants the pipeline there,
-- there is, or will be, at least one internal person who takes ownership of the setup,
-- licence budgets are tight, or better spent on people than on per-user fees.
+```pro-contra
+pro: sfdx-hardis fits well when
+- several teams or partners work on the same org and need one binding release process
+- the client wants to own the process and avoid lock-in to a partner or a tool vendor
+- the client already runs GitHub, GitLab or Azure DevOps and wants the pipeline there
+- there is, or will be, at least one internal person who takes ownership of the setup
+- licence budgets are tight, or better spent on people than on per-user fees
+contra: Less suitable when
+- nobody on the client side wants to touch Git at all
+- a team needs a fully managed tool with a contractual support line from day one
+```
 
-That last point is often underestimated. The saved licence costs are best invested in an internal role that maintains the setup, onboards new teams and owns the release calendar. Without that role, even the best tool loses its effect after a few months.
+In the second case a commercial platform can be the more honest answer.
 
-It is less suitable when nobody on the client side wants to touch Git at all, or when a team needs a fully managed tool with a contractual support line from day one. In those cases a commercial platform can be the more honest answer.
+The point about licence budgets is often underestimated. The saved licence costs are best invested in an internal role that maintains the setup, onboards new teams and owns the release calendar. Without that role, even the best tool loses its effect after a few months.
 
 ## How do you get started?
 
@@ -90,10 +96,17 @@ The fastest way to understand sfdx-hardis is to try it, not to read about it. Cl
 
 For a real programme I recommend this order:
 
-1. Put the production metadata into a repository on the client's Git platform.
-2. Set up the sfdx-hardis pipeline with validation on every pull request.
-3. Define the branch strategy and make pull request reviews mandatory.
-4. Move deployment steps from spreadsheets into deployment actions.
-5. Turn on monitoring, backups and generated documentation.
+```schritte
+Build the repository
+  Put the production metadata into a repository on the client's Git platform.
+Set up the pipeline
+  Set up the sfdx-hardis pipeline with validation on every pull request.
+Set the rules
+  Define the branch strategy and make pull request reviews mandatory.
+Deployment actions
+  Move deployment steps from spreadsheets into deployment actions.
+Switch on operations
+  Turn on monitoring, backups and generated documentation.
+```
 
 Choosing the toolchain is part of [architecture and partner governance](../../services/partner-governance/), not a side decision for developers. sfdx-hardis gives you a professional release process with no licence costs, as long as someone owns it. If you want to discuss whether it fits your programme, [send me a message](#contact).

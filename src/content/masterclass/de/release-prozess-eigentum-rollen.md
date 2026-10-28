@@ -56,7 +56,11 @@ In Programmen mit mehreren Partnern entsteht leicht dieselbe Lücke: Jeder Partn
 - **Technischer Lead pro Partner.** Sorgt dafür, dass die Pull Requests seines Teams vollständig, klein und geprüft ankommen, macht das erste Review im eigenen Stream und liefert die Angaben für die Release Notes. Er hat keine Freigaberechte für Stufen, die andere Partner betreffen.
 - **Product Owner im Fachbereich.** Etwa die Serviceleitung für Field Service oder die Vertriebsleitung für das Händlerportal. Nimmt Stories in UAT ab und entscheidet fachlich, ob eine Funktion mit dem nächsten Release für Anwender freigeschaltet wird.
 
-Die Release-Rolle ist die, an der am häufigsten gespart wird. Meine Position dazu steht in mehreren Artikeln: Wer mit einem Open-Source-Werkzeug wie sfdx-hardis Lizenzkosten spart, investiert das Geld am besten in eine interne Release-Rolle. Bei kommerziellen Plattformen wie Gearset, Copado oder Flosum gilt dasselbe. Ihr Vorteil ist, dass sich Rollen und Freigaben in einer Oberfläche einrichten lassen und der Hersteller Support leistet; verantworten muss die Freigaben trotzdem ein Mensch auf Ihrer Seite. In einem Programm, das ich begleitet habe, lief anfangs jeder Pull Request über meinen Schreibtisch. Als der Prozess stabil lief, habe ich ihn an einen internen Kollegen übergeben. Das ist der Weg, den ich empfehle: extern aufbauen, intern übergeben. Mehr dazu steht in [warum DevOps über Salesforce-Großprojekte entscheidet](../../../blog/warum-devops-salesforce-enterprise-projekte/).
+Die Release-Rolle ist die, an der am häufigsten gespart wird. Meine Position dazu steht in mehreren Artikeln: Wer mit einem Open-Source-Werkzeug wie sfdx-hardis Lizenzkosten spart, investiert das Geld am besten in eine interne Release-Rolle. Bei kommerziellen Plattformen wie Gearset, Copado oder Flosum gilt dasselbe. Ihr Vorteil ist, dass sich Rollen und Freigaben in einer Oberfläche einrichten lassen und der Hersteller Support leistet; verantworten muss die Freigaben trotzdem ein Mensch auf Ihrer Seite. Mehr dazu steht in [warum DevOps über Salesforce-Großprojekte entscheidet](../../../blog/warum-devops-salesforce-enterprise-projekte/).
+
+```praxis
+In einem Programm, das ich begleitet habe, lief anfangs jeder Pull Request über meinen Schreibtisch. Als der Prozess stabil lief, habe ich ihn an einen internen Kollegen übergeben. Das ist der Weg, den ich empfehle: extern aufbauen, intern übergeben.
+```
 
 ## Wer gibt was frei?
 
@@ -86,7 +90,13 @@ Die kommerziellen Plattformen bringen eigene Freigaben mit. Gearset erlaubt laut
 
 ### In der Salesforce-Org
 
-Die Pipeline nützt wenig, wenn jemand an ihr vorbei deployen kann. Für Deployments über die Metadata API braucht ein Benutzer laut [Metadata API Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_metadata_perm.htm) „Modify Metadata Through Metadata API Functions“ oder „Modify All Data“, und die erste Berechtigung wird automatisch aktiv, sobald jemand „Deploy Change Sets“ oder „Author Apex“ hat. Prüfen Sie also in Produktion, UAT und Staging, welche Partnerbenutzer eine dieser Berechtigungen tragen. Deployen sollte dort nur der technische Benutzer der Pipeline, wie [Kapitel 5](../pipeline-aufbauen/) beschreibt. Für befristete Rechte, etwa für eine Analyse in Produktion, können Permission-Set-Zuweisungen laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/platform-app-builder-certification-maintenance-winter-23/get-hands-on-with-permission-set-expiration) ein Ablaufdatum bekommen, nach dem die Rechte automatisch entfallen.
+Die Pipeline nützt wenig, wenn jemand an ihr vorbei deployen kann.
+
+```hinweis achtung
+Für Deployments über die Metadata API braucht ein Benutzer laut [Metadata API Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_metadata_perm.htm) „Modify Metadata Through Metadata API Functions“ oder „Modify All Data“. Die erste Berechtigung wird automatisch aktiv, sobald jemand „Deploy Change Sets“ oder „Author Apex“ hat.
+```
+
+Prüfen Sie also in Produktion, UAT und Staging, welche Partnerbenutzer eine dieser Berechtigungen tragen. Deployen sollte dort nur der technische Benutzer der Pipeline, wie [Kapitel 5](../pipeline-aufbauen/) beschreibt. Für befristete Rechte, etwa für eine Analyse in Produktion, können Permission-Set-Zuweisungen laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/platform-app-builder-certification-maintenance-winter-23/get-hands-on-with-permission-set-expiration) ein Ablaufdatum bekommen, nach dem die Rechte automatisch entfallen.
 
 ## Welche Regeln gehören in jeden Partnervertrag?
 

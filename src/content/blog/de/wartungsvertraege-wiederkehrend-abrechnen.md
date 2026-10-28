@@ -58,7 +58,9 @@ Jede Änderung am Vertrag ist ein Angebot und danach ein Auftrag. Die [Trailhead
 
 Für Verlängerungen gibt es laut der [Einheit zu Verlängerung und Kündigung](https://trailhead.salesforce.com/content/learn/modules/asset-lifecycle-management-with-revenue-cloud/manage-customer-asset-renewals-and-cancellations) zwei Wege: automatisch mit der hinterlegten Verlängerungslaufzeit oder mit eigenem Start- und Enddatum. Eine Verlängerung erzeugt einen neuen Zeitraum. Eine Kündigung setzt die Menge auf den negativen Gesamtwert, die Endmenge ist also null, und erzeugt keinen neuen Zeitraum. Negative Rechnungspositionen können zu Gutschriftspositionen werden, wenn die Einstellung dafür aktiv ist.
 
-Die Folge für die Praxis: Ein Serviceleiter, der am Telefon eine Maschine in den Vertrag aufnimmt, hat für Billing nichts geändert. Die Änderung zählt erst, wenn sie über ein Änderungsangebot läuft.
+```hinweis achtung
+Ein Serviceleiter, der am Telefon eine Maschine in den Vertrag aufnimmt, hat für Billing nichts geändert. Die Änderung zählt erst, wenn sie über ein Änderungsangebot läuft.
+```
 
 ## Was braucht Field Service aus dem Vertrag?
 
@@ -66,7 +68,19 @@ Field Service arbeitet mit eigenen Objekten. Wie ich in [Wartungsverträge in Fi
 
 Beide Clouds nutzen das Objekt Asset, aber für verschiedene Dinge. Das Asset in Revenue Cloud ist das verkaufte Abo mit Menge, Preis und Laufzeit. Das Asset in Field Service ist die physische Maschine mit Seriennummer, Standort und Historie. Ich würde beides als getrennte Datensätze führen und nicht versuchen, das Maschinen-Asset zusätzlich das Abo tragen zu lassen. Wie die beiden Sichten auf Assets zusammenkommen, steht in [Assets, Nachträge und Verlängerungen](../revenue-cloud-assets-nachtraege-verlaengerungen/).
 
-Eine dokumentierte Standardverbindung zwischen einem Abo in Revenue Cloud und dem Servicevertrag in Field Service habe ich nicht gefunden. Planen Sie sie also als eigene Automatisierung: Bei Aktivierung des Auftrags legt ein Flow den Servicevertrag an oder ändert ihn, nimmt die abgedeckten Maschinen als Vertragspositionen auf und vergibt das Entitlement für das verkaufte Servicelevel. Änderungen und Kündigungen gehen denselben Weg. Die Seite von Field Service, einschließlich Wartungsplänen nach Kalender oder Betriebsstunden, steht im [Kapitel zu Assets und Wartung](../../masterclass/field-service/field-service-assets-wartung-teile/).
+Eine dokumentierte Standardverbindung zwischen einem Abo in Revenue Cloud und dem Servicevertrag in Field Service habe ich nicht gefunden. Planen Sie sie also als eigene Automatisierung: Bei Aktivierung des Auftrags legt ein Flow den Servicevertrag an oder ändert ihn, nimmt die abgedeckten Maschinen als Vertragspositionen auf und vergibt das Entitlement für das verkaufte Servicelevel. Änderungen und Kündigungen gehen denselben Weg.
+
+```ablauf
+sf: Angebot, Auftrag, Asset, Billing Schedules, Rechnung
+ext: Servicevertrag
+Angebot --> Auftrag
+Auftrag --Aktivierung--> Asset
+Auftrag --Aktivierung--> Billing Schedules
+Billing Schedules --Invoice Scheduler--> Rechnung
+Auftrag --Flow--> Servicevertrag
+```
+
+Die Seite von Field Service, einschließlich Wartungsplänen nach Kalender oder Betriebsstunden, steht im [Kapitel zu Assets und Wartung](../../masterclass/field-service/field-service-assets-wartung-teile/).
 
 ## Welcher Datensatz beantwortet, was verkauft wurde?
 

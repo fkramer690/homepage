@@ -53,7 +53,14 @@ Salesforce distinguishes buyers and buyer managers. According to the [Trailhead 
 
 [Delegated External User Administration](https://help.salesforce.com/s/articleView?id=platform.networks_DPUA.htm&language=en-us&type=5) is what makes waves cheap to run. Users with this permission can create and edit members, reset passwords and activate or deactivate members for the account they manage. A dealer's purchasing lead can then onboard a new colleague without a ticket at your service desk. Plan one buyer manager per dealer before the wave starts and walk them through user admin in a short call.
 
-Licences belong in the plan too. The list price for Customer Community Plus on the [Experience Cloud for Manufacturing page](https://www.salesforce.com/manufacturing/cloud/experience-cloud/) is $35 per member or $15 per login per month, billed annually. Which one fits depends on how often dealers order, see [B2B Commerce buyer licences](../b2b-commerce-buyer-licences/). Large dealer groups with many locations need one more check: the Account Switcher, which lets a buyer order for several accounts, starts to degrade beyond 200 accounts per buyer, according to the [Salesforce limits](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-shopper-buyer-groups-accounts-limits.html).
+Licences belong in the plan too. According to the [Experience Cloud for Manufacturing page](https://www.salesforce.com/manufacturing/cloud/experience-cloud/), Customer Community Plus is sold per member or per login, billed annually. Which variant fits depends on how often dealers order, see [B2B Commerce buyer licences](../b2b-commerce-buyer-licences/). Large dealer groups with many locations need one more check on the Account Switcher, which lets a buyer order for several accounts; the limit is in the [Salesforce limits](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-shopper-buyer-groups-accounts-limits.html).
+
+```kennzahlen
+$35 | Customer Community Plus per member per month
+$15 | Customer Community Plus per login per month
+200 | Accounts per buyer beyond which the Account Switcher starts to degrade
+source: Salesforce, Experience Cloud for Manufacturing page (list prices, billed annually) and Salesforce limits for buyer groups and accounts
+```
 
 ## What has to be tested before each wave?
 
@@ -77,9 +84,14 @@ Inside sales does have a new job: when a pilot dealer calls with a reorder that 
 
 A typical scenario, as an assumption: a manufacturer of compressors sells spare parts to 250 dealers in Germany, Austria and Switzerland.
 
-- **Months 1 and 2, wave 1:** 15 pilot dealers in Germany with high reorder volume and standard dealer prices, one buyer group. Weekly feedback calls, fixes released every two weeks.
-- **Months 3 and 4, wave 2:** the remaining German dealers in three buyer groups by dealer tier. Inside sales actively points callers to the store.
-- **Months 5 and 6, wave 3:** Austria and Switzerland with their own price books and delivery terms, plus the large key accounts with special conditions.
+```schritte
+Wave 1 | Months 1 and 2
+  15 pilot dealers in Germany with high reorder volume and standard dealer prices, one buyer group. Weekly feedback calls, fixes released every two weeks.
+Wave 2 | Months 3 and 4
+  The remaining German dealers in three buyer groups by dealer tier. Inside sales actively points callers to the store.
+Wave 3 | Months 5 and 6
+  Austria and Switzerland with their own price books and delivery terms, plus the large key accounts with special conditions.
+```
 
 Between waves there are two weeks without a new group, reserved for fixes and the test of the next wave's data. If wave 1 shows that search does not find parts by old part numbers, wave 2 waits until that is solved.
 

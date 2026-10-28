@@ -51,7 +51,9 @@ Drei Fußnoten der Preisliste sind wichtiger als die Preise selbst.
 2. **Mindestens eine Dispatcher-Lizenz.** Techniker und Contractors brauchen mindestens einen Dispatcher in der Org, um das Planungswerkzeug zu nutzen. Ein reiner Techniker-Rollout ohne Dispatcher-Lizenz funktioniert nicht.
 3. **Kein Case Management mit Dispatcher oder Technician.** Laut Preisliste dürfen diese beiden Lizenzen nicht für Contact Center, Call Center oder Case Management genutzt werden. Field Service Plus darf das.
 
+```hinweis achtung
 Die dritte Regel ist für mich das größte Risiko. In kleineren Serviceteams nehmen oft dieselben drei Leute morgens die Störungshotline an und planen nachmittags die Techniker. Mit einer Dispatcher-Lizenz verstößt das gegen die Lizenzbedingungen, auch wenn das System technisch einen Case öffnen lässt.
+```
 
 ## Welche Rolle braucht welche Lizenz?
 
@@ -72,7 +74,11 @@ Das Backoffice prüfe ich am genauesten. Wer nur im ERP fakturiert, braucht gar 
 
 ## Wann lohnt sich Contractor Plus pro Login?
 
-Contractor Plus kostet 80 € pro Nutzer und Monat oder 32 € pro Login. Die Schwelle ist einfach: 80 geteilt durch 32 ergibt 2,5. Ein Partnertechniker, der sich mehr als zwei- bis dreimal im Monat anmeldet, ist mit einer Nutzerlizenz günstiger. Darunter gewinnt die Login-Lizenz. Die Preisseite schreibt, dass Contractor-Lizenzen auch auf Basis monatlicher Logins erhältlich sind, und verweist für Details an den Vertrieb. Die Zählregel würde ich deshalb im Bestellformular festhalten lassen.
+Contractor Plus kostet 80 € pro Nutzer und Monat oder 32 € pro Login. Die Schwelle ist einfach: 80 geteilt durch 32 ergibt 2,5. Ein Partnertechniker, der sich mehr als zwei- bis dreimal im Monat anmeldet, ist mit einer Nutzerlizenz günstiger. Darunter gewinnt die Login-Lizenz.
+
+```hinweis offen
+Die Preisseite schreibt, dass Contractor-Lizenzen auch auf Basis monatlicher Logins erhältlich sind, und verweist für Details an den Vertrieb. Die Zählregel würde ich deshalb im Bestellformular festhalten lassen.
+```
 
 Der [Architektur-Leitfaden von Salesforce zu Servicepartnern](https://architect.salesforce.com/docs/architect/fundamentals/guide/field-service-contractor-sharing-patterns.html) beschreibt eine Contractor-Firma als Drittunternehmen, das seine eigenen Leute steuert. Für sie sind diese Lizenzen gedacht, für Ihre Servicepartner, nicht für eigene Mitarbeitende zum kleineren Preis. Wie Partnertechniker eine eigene Ressource und ein eigenes Gebiet bekommen, steht in [Field Service: Servicepartner einbinden](../salesforce-field-service-servicepartner/).
 

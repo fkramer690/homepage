@@ -48,7 +48,13 @@ Stand 27. Oktober 2026 unterscheidet sich der Status je nach Weg. Ich würde nur
 - **SAP Joule: nur eingehend.** SAPs [Referenzarchitektur für eingehendes A2A](https://architecture.learning.sap.com/docs/ref-arch/fe0d1d), aktualisiert am 26. Oktober 2026, stellt Joule-Agenten über das Agent Gateway mit A2A 0.3.0 für Clients anderer Hersteller bereit, das Vertrauen läuft über SAP Cloud Identity Services. Laut Hinweis sind einige Komponenten noch nicht GA, und die bidirektionale Kommunikation mit Agenten anderer Hersteller über das Agent Gateway "is not yet supported".
 - **Microsoft Copilot Studio: Client-Seite dokumentiert.** Die Copilot-Studio-Seite kennzeichnet die A2A-Funktion weder als Preview noch als GA. Auf der Bridge-Liste von MuleSoft steht Copilot Studio als Quellagent auf "geplant", ein Copilot-Agent lässt sich über MuleSoft also noch nicht per A2A erreichbar machen.
 
-Die Grenzen der A2A Bridge entscheiden, welche Aufgaben passen. Für Agentforce unterstützt sie keine asynchronen Tasks, Aufgaben über dem Gateway-Timeout schlagen fehl. Es gibt keine Push-Benachrichtigungen und kein Task-Abonnement, und der Task-Status liegt im Gateway-Speicher und geht bei einem Neustart verloren. Die [Agent API](https://developer.salesforce.com/docs/ai/agentforce/guide/agent-api-considerations.html) dahinter hat ein Timeout von 120 Sekunden und unterstützt keine Agenten vom Typ "Agentforce (Default)". Herstellerübergreifendes A2A passt heute also zu einer Frage, die in Sekunden beantwortet ist. Eine Garantieprüfung, die tagelang auf den Bericht des Technikers wartet, passt nicht.
+Die Grenzen der A2A Bridge entscheiden, welche Aufgaben passen.
+
+```hinweis achtung
+Für Agentforce unterstützt die A2A Bridge keine asynchronen Tasks, Aufgaben über dem Gateway-Timeout schlagen fehl. Es gibt keine Push-Benachrichtigungen und kein Task-Abonnement, und der Task-Status liegt im Gateway-Speicher und geht bei einem Neustart verloren. Die [Agent API](https://developer.salesforce.com/docs/ai/agentforce/guide/agent-api-considerations.html) dahinter hat ein Timeout von 120 Sekunden und unterstützt keine Agenten vom Typ "Agentforce (Default)".
+```
+
+Herstellerübergreifendes A2A passt heute also zu einer Frage, die in Sekunden beantwortet ist. Eine Garantieprüfung, die tagelang auf den Bericht des Technikers wartet, passt nicht.
 
 ## Welcher Agent sollte das Gespräch mit Händlern und Servicekunden führen?
 
@@ -60,6 +66,16 @@ Das Gespräch führt der Agent des Systems, in dem sich die Person anmeldet und 
 4. **Wer übernimmt vom Agenten?** Die Eskalations-Queue des Serviceteams läuft in Salesforce Omni-Channel.
 
 Für einen Maschinenbauer ergibt das eine klare Aufteilung. Händler und Servicekunden sprechen mit Agentforce, SAP-Daten kommen über eine API-Aktion, wie in [Agentforce und SAP: Auftragsstatus über MuleSoft](../agentforce-sap-auftragsstatus/) beschrieben. Vertriebsmitarbeitende, die in Teams und Outlook arbeiten, können Copilot als Eingangstür haben, mit einem Agentforce-Agenten dahinter für CRM-Fragen. Wer im Kreditmanagement oder in der Fakturierung in SAP arbeitet, bekommt Joule.
+
+```ablauf
+sf: Portal-Agent, Agentforce-Spezialist
+erp: SAP S/4HANA
+ext: Händler, Copilot in Teams, MuleSoft A2A Bridge
+Händler --Portal-Chat--> Portal-Agent
+Portal-Agent --API-Aktion--> SAP S/4HANA
+Copilot in Teams --A2A--> MuleSoft A2A Bridge
+MuleSoft A2A Bridge --Agent API--> Agentforce-Spezialist
+```
 
 Ich würde das pro Zielgruppe schriftlich festlegen, so wie jedes Objekt genau einen Owner hat. Den Ausschlag sollte nie geben, welcher Hersteller an dem Tag die beste Demo gezeigt hat.
 
