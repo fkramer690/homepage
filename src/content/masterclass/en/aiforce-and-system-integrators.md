@@ -70,7 +70,6 @@ The trigger, on the other hand, can be read in the primary source. [Executive Or
 2026-09-29 | Executive Order 14434 for US executive agencies
 2026-10-09 | Marc Benioff on X: "AIForce is officially SIForce"
 2026-10-12 | Salesforce Ben finds no official announcement
-source: Salesforce announcement of 15 September 2026, Executive Order 14434, Salesforce Ben
 ```
 
 For your documents I recommend "AIforce (announced by the CEO as SIForce)" until Salesforce confirms the name in writing. Three names in about six months are also a good reason to structure architecture documents by capability rather than by product name.

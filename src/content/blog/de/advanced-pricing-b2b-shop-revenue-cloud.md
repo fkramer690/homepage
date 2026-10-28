@@ -47,7 +47,10 @@ Zwei Begriffe vorab, weil der Rest des Artikels sie nutzt. Eine Pricing Procedur
 
 Laut Salesforce-Hilfe sind die Revenue-Management-Funktionen für B2B Commerce in Orgs mit einer Lizenz Commerce Growth oder Commerce Advanced zusammen mit einer Lizenz Revenue Cloud Advanced verfügbar. Die Revenue Settings müssen aktiviert sein, und die Lizenzen kaufen Sie über Ihren Account Executive.
 
-Zwei Fakten aus den offiziellen Preisseiten für das Budget. Die [B2B-Commerce-Editionen](https://www.salesforce.com/editions-pricing/commerce-cloud/b2b/) stehen auf "Contact for Pricing" und werden als Anteil am Bruttowarenwert (GMV) über den Storefront abgerechnet; einen Prozentsatz veröffentlicht Salesforce nicht. Die [Preisseite von Revenue Cloud](https://www.salesforce.com/sales/revenue-lifecycle-management/pricing/) nennt für Revenue Cloud Advanced 200 US-Dollar pro Nutzer und Monat bei jährlicher Abrechnung und beschreibt es als eigenes Produkt, das zusätzlich zum Sales-Cloud-Abonnement gekauft wird. Wie viele Nutzer mit Revenue Cloud Advanced ein Store mit externen Käufern braucht, steht auf keiner der beiden Seiten. Stellen Sie diese Frage schriftlich, bevor Sie den Business Case rechnen, denn die Antwort kann die Zahl stark verschieben.
+Zwei Fakten aus den offiziellen Preisseiten für das Budget. Die [B2B-Commerce-Editionen](https://www.salesforce.com/editions-pricing/commerce-cloud/b2b/) stehen auf "Contact for Pricing" und werden als Anteil am Bruttowarenwert (GMV) über den Storefront abgerechnet; einen Prozentsatz veröffentlicht Salesforce nicht. Die [Preisseite von Revenue Cloud](https://www.salesforce.com/sales/revenue-lifecycle-management/pricing/) nennt für Revenue Cloud Advanced 200 US-Dollar pro Nutzer und Monat bei jährlicher Abrechnung und beschreibt es als eigenes Produkt, das zusätzlich zum Sales-Cloud-Abonnement gekauft wird. 
+```hinweis offen
+Wie viele Nutzer mit Revenue Cloud Advanced ein Store mit externen Käufern braucht, steht auf keiner der beiden Seiten. Stellen Sie diese Frage, bevor Sie den Business Case rechnen, denn die Antwort kann die Zahl stark verschieben.
+```
 
 ## Wie kommen Vertragspreise zum Käufer?
 
@@ -57,22 +60,30 @@ Die [Trailhead-Einheit zu vertragsbasierten Preisen](https://trailhead.salesforc
 
 Bei diesem Aktualisieren würde ich im Design zuerst hinsehen. Entstehen Vertragspreise in Salesforce, gehört das Aktualisieren zum Prozess. Kommen sie aus SAP, braucht jede SAP-Änderung einen Import plus ein Aktualisieren, bevor der Shop stimmt.
 
+```ablauf
+erp: Vertragspreis SAP
+sf: Contract Item Price, Entscheidungstabelle, Pricing Procedure, Warenkorb
+Vertragspreis SAP --Import--> Contract Item Price
+Contract Item Price --Aktualisieren--> Entscheidungstabelle
+Entscheidungstabelle --> Pricing Procedure
+Pricing Procedure --Vertragspreis--> Warenkorb
+```
+
 ## Wann lohnt sich Advanced Pricing?
 
 Das stärkste Argument ist Einheitlichkeit. Salesforce schreibt in seinem [Beitrag zu den B2B-Neuerungen für Spring '26](https://www.salesforce.com/blog/b2b-commerce-innovations-spring-26/), Käufer sollten über Website, Agent und Vertrieb hinweg "one price, one catalog, and one history" sehen. Mit Advanced Pricing berechnet dieselbe Procedure, die für den Innendienst ein Angebot kalkuliert, auch den Warenkorb des Händlers.
 
-Ich würde es empfehlen, wenn
-
-- der Vertrieb schon in Revenue Cloud Angebote rechnet, die Preislogik dort also existiert und gepflegt wird,
-- der Shop konfigurierte Bundles oder auftragsbezogene Varianten verkauft, die die Konfigurations-Engine brauchen,
-- Vertragspreise in Salesforce verhandelt und gespeichert werden, nicht in SAP,
-- Sie Request for Quote wollen, weil die Salesforce-Hilfe Advanced Pricing dafür voraussetzt.
-
-Vorsichtig wäre ich, wenn
-
-- SAP jeden Kundenpreis berechnet und das auch weiter tun soll. Dann bauen Sie die SAP-Logik in Entscheidungstabellen nach, also zwei Engines, die übereinstimmen müssen, oder Sie rufen SAP ohnehin auf,
-- der Vertrieb in SAP oder einem anderen CPQ-Werkzeug kalkuliert und keinen Wechsel plant,
-- der Shop vor allem Ersatzteile zu Stufenpreisen verkauft, die Preisbücher abdecken.
+```pro-contra
+pro: Ich würde es empfehlen, wenn
+- der Vertrieb schon in Revenue Cloud Angebote rechnet und die Preislogik dort pflegt
+- der Shop konfigurierte Bundles oder auftragsbezogene Varianten verkauft
+- Vertragspreise in Salesforce verhandelt und gespeichert werden, nicht in SAP
+- Sie Request for Quote wollen, das laut Salesforce-Hilfe Advanced Pricing voraussetzt
+contra: Vorsichtig wäre ich, wenn
+- SAP jeden Kundenpreis berechnet und das weiter tun soll; dann bauen Sie die SAP-Logik in Entscheidungstabellen nach (zwei Engines, die übereinstimmen müssen) oder rufen SAP ohnehin auf
+- der Vertrieb in SAP oder einem anderen CPQ-Werkzeug kalkuliert und keinen Wechsel plant
+- der Shop vor allem Ersatzteile zu Stufenpreisen verkauft, die Preisbücher abdecken
+```
 
 Wo Ihre Preis-Engine grundsätzlich liegen sollte, behandelt das Kapitel [Produktkatalog, Konfigurator und Preise](../../masterclass/revenue-cloud/produktkatalog-konfigurator-preise/) der Masterclass Revenue Cloud. Für den Shop folgt die Entscheidung dem Preis-Master: Das System, dem der Vertrieb bei einem Angebot vertraut, sollte auch den Warenkorb rechnen.
 
