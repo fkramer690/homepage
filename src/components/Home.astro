@@ -18,7 +18,7 @@ import { homeHref, partnersHref } from '../lib/paths';
 import { masterclassesIndex } from '../lib/masterclass';
 import { getMasterclasses } from '../lib/masterclasses';
 import { questions, questionPaths } from '../data/questions';
-import { clients } from '../data/clients';
+import { clients, logoHeight } from '../data/clients';
 import StepIcon from './StepIcon.astro';
 
 interface Props {
@@ -184,7 +184,8 @@ const [qOpen, qClose] = lang === 'de' ? ['„', '“'] : ['“', '”'];
               {[...clients, ...clients].map((c, i) => (
                 <li aria-hidden={i >= clients.length ? 'true' : undefined}>
                   <img
-                    class:list={{ light: c.light, square: c.square }}
+                    class:list={{ light: c.light }}
+                    style={`--h: ${logoHeight(c)}px`}
                     src={`${import.meta.env.BASE_URL}clients/${c.file}`}
                     alt={i >= clients.length ? '' : c.name}
                     loading="lazy"
