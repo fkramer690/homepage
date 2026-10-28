@@ -9,7 +9,7 @@ chapter: 3
 short: "Händler und Partnerkanal"
 summary: "Händlerboni, Ship and Debit, Partnerportal und Händlerbesuche: was Manufacturing Cloud für den Vertrieb über Händler bietet."
 takeaways:
-  - "Für den Vertrieb über Händler bringt Manufacturing Cloud Rebate Management, ein Partnerportal und Partner Visit Management; Ship and Debit und Preisschutz kommen mit Channel Revenue Management als Add-on."
+  - "Für den Händlerkanal gibt es rund um Manufacturing Cloud Rebate Management, ein Partnerportal und Partner Visit Management; Ship and Debit und Preisschutz kommen mit Channel Revenue Management als Add-on."
   - "Channel Revenue Management for Manufacturing steht mit 30.000 Dollar pro Org und Jahr in der Add-on-Liste; Partnerzugang wird laut Salesforce zusätzlich gekauft."
   - "Händler, die Boni sehen, Ansprüche einreichen oder Sales Agreements nutzen, brauchen Partner Community for Manufacturing: 20 Dollar pro Login oder 50 Dollar pro Mitglied und Monat."
   - "Partner Visit Management, Partner Lead Management und Partner Performance Management haben eigene Schalter seit API-Version 56.0 und sind standardmäßig aus."
@@ -17,7 +17,7 @@ takeaways:
 articles: [manufacturing-cloud-rebate-management, channel-revenue-ship-and-debit, manufacturing-cloud-customer-portal, manufacturing-cloud-partner-visit-management, partner-sales-assistant-dealer-quotes, distributor-replenishment-agent]
 faq:
   - q: "Welche Lizenz brauchen Händler im Partnerportal der Manufacturing Cloud?"
-    a: "Partner Community for Manufacturing, laut Add-on-Liste 20 Dollar pro Login oder 50 Dollar pro Mitglied und Monat. Customer Community Plus for Manufacturing kostet 15 oder 35 Dollar, ist aber für Kunden gedacht und deckt Bonusansprüche und Leads laut Salesforce Help nicht ab. Lassen Sie sich den Umfang im Angebot bestätigen."
+    a: "Partner Community for Manufacturing, laut Add-on-Liste 20 Dollar pro Login oder 50 Dollar pro Mitglied und Monat. Customer Community Plus for Manufacturing kostet 15 oder 35 Dollar, ist aber für Kunden gedacht; Bonusansprüche und Leads nennt Salesforce Help nur für die Partnerlizenz. Lassen Sie sich den Umfang im Angebot bestätigen."
   - q: "Was ist der Unterschied zwischen Rebate Management und Ship and Debit?"
     a: "Rebate Management belohnt Menge: Ein Händler erreicht über einen Zeitraum eine Staffel und bekommt nachträglich einen Bonus. Ship and Debit gleicht einen Sonderpreis für einen bestimmten Endkunden aus, Anspruch für Anspruch."
   - q: "Was kostet Channel Revenue Management for Manufacturing?"
@@ -27,7 +27,7 @@ faq:
 draft: false
 ---
 
-Für den Vertrieb über Händler bringt Manufacturing Cloud vier Bausteine: Rebate Management für Händlerboni, Channel Revenue Management für Ship and Debit und Preisschutz, ein Partnerportal auf Experience Cloud for Manufacturing und Partner Visit Management für Händlerbesuche. Welche Sie brauchen, hängt vom Kanalmodell ab. Händler, die weiterverkaufen, brauchen Boni, Portal und Besuche; Distributoren mit eigenem Lager und Projektgeschäft brauchen zusätzlich Ship and Debit. Salesforce rechnet und gibt frei, ausgezahlt wird im ERP. Teuer wird es an zwei Stellen: Channel Revenue Management steht mit 30.000 Dollar pro Org und Jahr in der Liste, und jeder Händler im Portal braucht eine Partnerlizenz.
+Für den Vertrieb über Händler gibt es rund um Manufacturing Cloud vier Bausteine: Rebate Management für Händlerboni, Channel Revenue Management für Ship and Debit und Preisschutz, ein Partnerportal auf Experience Cloud for Manufacturing und Partner Visit Management für Händlerbesuche. Welche Sie brauchen, hängt vom Kanalmodell ab. Händler, die weiterverkaufen, brauchen Boni, Portal und Besuche; Distributoren mit eigenem Lager und Projektgeschäft brauchen zusätzlich Ship and Debit. Salesforce rechnet und gibt frei, ausgezahlt wird im ERP. Teuer wird es an zwei Stellen: Channel Revenue Management steht mit 30.000 Dollar pro Org und Jahr in der Liste, und jeder Händler im Portal braucht eine Partnerlizenz.
 
 ## Welche Kanalmodelle gibt es bei Herstellern?
 
@@ -112,7 +112,7 @@ Jedes dieser Dashboards zeigt nur, was als Daten ankommt. Rechnungen als Transak
 
 ## Agenten im Kanal: erst lesen, dann schreiben
 
-Für den Kanal nennt Salesforce zwei Agentenfunktionen. Der AI Partner Sales Assistant aus Summer '26 soll laut Produktseite Produkte finden und Angebote bauen. Was er an Katalog, Preisen pro Händlerstufe und Rabattgrenzen voraussetzt, steht in [KI-Angebote für Händler: Partner Sales Assistant](../../../blog/ki-angebote-haendler-partner-sales-assistant/). Die Inventory-Vorlage von Agentforce for Manufacturing sucht Bestände, fasst sie zusammen und legt Nachschubanforderungen an; die Details stehen in [Händlerbestand und Nachschub mit Agentforce](../../../blog/haendlerbestand-nachschub-agentforce/).
+Für den Kanal nennt Salesforce zwei Agentenfunktionen. Der AI Partner Sales Assistant aus Summer '26 soll laut [Produktseite](https://www.salesforce.com/manufacturing/cloud/) Produkte finden und Angebote bauen; für dasselbe Release nennt die Seite die Automatisierung der Distributor-Beschaffung. Was er an Katalog, Preisen pro Händlerstufe und Rabattgrenzen voraussetzt, steht in [KI-Angebote für Händler: Partner Sales Assistant](../../../blog/ki-angebote-haendler-partner-sales-assistant/). Die Inventory-Vorlage von Agentforce for Manufacturing sucht Bestände, fasst sie zusammen und legt Nachschubanforderungen an; die Details stehen in [Händlerbestand und Nachschub mit Agentforce](../../../blog/haendlerbestand-nachschub-agentforce/).
 
 Das Agentforce for Manufacturing Cloud Add-on steht mit 150 Dollar pro Benutzer und Monat in der [Add-on-Liste](https://www.salesforce.com/manufacturing/cloud/pricing/add-ons/), verfügbar mit Core und Advanced. Welche Lizenz Händler im Portal für die Agenten brauchen, war in den Quellen nicht zu finden.
 

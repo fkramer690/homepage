@@ -1,6 +1,6 @@
 ---
 title: "Revenue Cloud Billing oder SAP: Wo entsteht die Rechnung?"
-description: "Wann Rechnungen aus Revenue Cloud Billing kommen sollten und wann aus SAP: was Billing kann, was ein Nebenbuch für Finance bedeutet und eine typische Aufteilung."
+description: "Wann Rechnungen aus Revenue Cloud Billing kommen sollten und wann aus SAP: was Billing kann, was ein Nebenbuch für Finance heißt und eine typische Aufteilung."
 pubDate: 2026-10-28
 lang: de
 slug: revenue-cloud-billing-oder-sap-rechnung
