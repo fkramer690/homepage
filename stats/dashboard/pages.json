@@ -1,7 +1,7 @@
 [
  {
   "page": "/",
-  "pageviews": 70,
+  "pageviews": 80,
   "visits": 30
  },
  {
@@ -25,6 +25,11 @@
   "visits": 0
  },
  {
+  "page": "/en/masterclass/devops-release-management/devops-tools-compared/",
+  "pageviews": 10,
+  "visits": 0
+ },
+ {
   "page": "/homepage/blog/",
   "pageviews": 10,
   "visits": 0
@@ -36,6 +41,11 @@
  },
  {
   "page": "/homepage/blog/salesforce-service-documents-document-builder/",
+  "pageviews": 10,
+  "visits": 0
+ },
+ {
+  "page": "/en/blog/copado-gearset-provar-ai-agents/",
   "pageviews": 10,
   "visits": 0
  },

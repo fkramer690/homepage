@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-28T04:48:03.962Z",
+  "generatedAt": "2026-10-28T11:19:04.052Z",
   "range": {
     "start": "2026-09-28",
     "end": "2026-10-28"
   },
   "browsers": [
     {
-      "count": 180,
+      "count": 210,
       "dimensions": {
         "userAgentBrowser": "Chrome"
       },
@@ -17,7 +17,7 @@
   ],
   "countries": [
     {
-      "count": 180,
+      "count": 210,
       "dimensions": {
         "countryName": "DE"
       },
@@ -53,11 +53,20 @@
       "sum": {
         "visits": 0
       }
+    },
+    {
+      "count": 30,
+      "dimensions": {
+        "date": "2026-10-28"
+      },
+      "sum": {
+        "visits": 0
+      }
     }
   ],
   "devices": [
     {
-      "count": 180,
+      "count": 210,
       "dimensions": {
         "deviceType": "desktop"
       },
@@ -68,7 +77,7 @@
   ],
   "pages": [
     {
-      "count": 70,
+      "count": 80,
       "dimensions": {
         "requestPath": "/"
       },
@@ -115,6 +124,15 @@
     {
       "count": 10,
       "dimensions": {
+        "requestPath": "/en/masterclass/devops-release-management/devops-tools-compared/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
         "requestPath": "/homepage/blog/"
       },
       "sum": {
@@ -142,6 +160,15 @@
     {
       "count": 10,
       "dimensions": {
+        "requestPath": "/en/blog/copado-gearset-provar-ai-agents/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
         "requestPath": "/homepage/speaking/"
       },
       "sum": {
@@ -151,7 +178,7 @@
   ],
   "referers": [
     {
-      "count": 80,
+      "count": 110,
       "dimensions": {
         "refererHost": "www.fk-sd.de"
       },
