@@ -38,7 +38,7 @@ Salesforce Field Service ist das Außendienstprodukt auf Basis von Service Cloud
 - **Assets und Wartung.** Maschinen sind Assets mit Seriennummer, Wartungspläne erzeugen Aufträge nach Kalender oder Nutzung.
 - **Dokumente.** Serviceberichte entstehen direkt aus der App.
 
-Service Cloud ist die Grundlage und keine Kür: Laut Preisliste braucht jede Org mit Field Service mindestens eine Service-Cloud-Nutzerlizenz. Die vier Bereiche sind die Ebenen dieser Masterclass. Terminplanung folgt in Kapitel 2, die App in Kapitel 3, Assets und Teile in Kapitel 4, KI-Agenten und Einführung in Kapitel 5.
+Service Cloud ist Pflicht: Laut Preisliste braucht jede Org mit Field Service mindestens eine Service-Cloud-Nutzerlizenz. Die vier Bereiche sind die Ebenen dieser Masterclass. Terminplanung folgt in Kapitel 2, die App in Kapitel 3, Assets und Teile in Kapitel 4, KI-Agenten und Einführung in Kapitel 5.
 
 ## Wann rechnet sich Field Service für Hersteller?
 
@@ -49,7 +49,7 @@ Optimierung hilft dort, wo es viel zu optimieren gibt. Ich frage vor jeder Produ
 3. **Zahl der Skills und Teile, die passen müssen.** Je mehr, desto schwerer wird die Planung von Hand.
 4. **Erstlösungsquote**, also wie oft ein Einsatz beim ersten Besuch erledigt ist. Ist sie niedrig, weil Teile oder Skills fehlen, hilft bessere Planung direkt.
 
-Wartung, Reparaturen und Inspektionen mit mehreren Kunden pro Tag sind der beste Fall. Ein Techniker, der zwei Wochen eine Anlage in Betrieb nimmt, braucht dagegen keine Routenoptimierung, sondern Zeichnungen, einen Projektplan und eine saubere Abnahme. Wer beides hat, plant die langen Einsätze in Field Service als mehrtägige Aufträge mit, verdient das Geld aber mit den kurzen.
+Wartung, Reparaturen und Inspektionen mit mehreren Kunden pro Tag sind der beste Fall. Ein Techniker, der zwei Wochen eine Anlage in Betrieb nimmt, braucht Zeichnungen, einen Projektplan und eine saubere Abnahme; Routenoptimierung hilft ihm wenig. Wer beides hat, plant die langen Einsätze in Field Service als mehrtägige Aufträge mit, verdient das Geld aber mit den kurzen.
 
 Kennt niemand die vier Zahlen, ist das bereits ein Befund: Dann fehlt die Grundlage für jeden Business Case, egal mit welchem Produkt. Die Kriterien im Detail und die Rechnung mit 40 Technikern stehen in [Salesforce Field Service: Wann lohnt es sich?](../../../blog/salesforce-field-service-lohnt-sich/).
 
@@ -88,15 +88,15 @@ In der Unlimited Edition kosten Dispatcher und Technician laut Fußnote 330 Doll
 2. Techniker und Contractors brauchen mindestens eine Dispatcher-Lizenz in der Org.
 3. Dispatcher und Technician dürfen nicht für Contact Center, Call Center oder Case Management genutzt werden. Field Service Plus darf das.
 
-Die Matrix baue ich aus dem, was jemand im System tut, nicht aus der Stellenbezeichnung. Die Hotline, die nur Cases bearbeitet, bekommt Service Cloud. Die [Service-Cloud-Preisseite](https://www.salesforce.com/service/pricing/) nennt Core für 195 Dollar und schreibt, dass Core die Enterprise Edition ersetzt. Disponenten bekommen Dispatcher, eigene Techniker Technician. Das Backoffice prüfe ich am genauesten: Wer nur im ERP fakturiert, braucht gar keine Salesforce-Lizenz, und wer Berichte liest, kommt vielleicht mit einer günstigeren aus. Wie Sie das prüfen, ohne Standardfunktionen nachzubauen, steht in [Braucht jeder eine volle Lizenz?](../../../blog/salesforce-lizenzen-volle-lizenz/).
+Die Matrix baue ich aus dem, was jemand im System tut, nicht aus der Stellenbezeichnung. Die Hotline, die nur Cases bearbeitet, bekommt Service Cloud. Die [Service-Cloud-Preisseite](https://www.salesforce.com/de/service/pricing/) nennt Core für 195 €, und die [US-Seite](https://www.salesforce.com/service/pricing/) schreibt, dass Core die Enterprise Edition ersetzt. Disponenten bekommen Dispatcher, eigene Techniker Technician. Das Backoffice prüfe ich am genauesten: Wer nur im ERP fakturiert, braucht gar keine Salesforce-Lizenz, und wer Berichte liest, kommt vielleicht mit einer günstigeren aus. Wie Sie das prüfen, ohne Standardfunktionen nachzubauen, steht in [Braucht jeder eine volle Lizenz?](../../../blog/salesforce-lizenzen-volle-lizenz/).
 
 ### Field Service Plus oder Service Cloud plus Dispatcher?
 
-Bei vielen Maschinenbauern nehmen dieselben Leute morgens die Störungshotline an und planen nachmittags die Techniker. Mit einer Dispatcher-Lizenz verstößt das gegen die Lizenzbedingungen, auch wenn das System den Case technisch öffnen lässt. Für diese Mischrolle nennt die Preisliste Field Service Plus. Gegenüber Service Cloud Core kostet sie 35 Dollar mehr pro Monat, und dieser Unterschied kauft das Recht zu disponieren. Trennen Sie Hotline und Disposition sauber, reichen Service Cloud für die einen und Dispatcher für die anderen. Das ist zuerst eine Prozessfrage und erst dann eine Lizenzfrage.
+Bei vielen Maschinenbauern nehmen dieselben Leute morgens die Störungshotline an und planen nachmittags die Techniker. Mit einer Dispatcher-Lizenz verstößt das gegen die Lizenzbedingungen, auch wenn das System den Case technisch öffnen lässt. Für diese Mischrolle nennt die Preisliste Field Service Plus. Gegenüber Service Cloud Core kostet sie 35 € mehr pro Monat, und dieser Unterschied kauft das Recht zu disponieren. Trennen Sie Hotline und Disposition sauber, reichen Service Cloud für die einen und Dispatcher für die anderen. Das ist zuerst eine Prozessfrage und erst dann eine Lizenzfrage.
 
 ### Contractor Plus pro Nutzer oder pro Login?
 
-80 € geteilt durch 32 € ergibt 2,5. Ein Partnertechniker, der sich dreimal oder öfter im Monat anmeldet, ist mit der Nutzerlizenz günstiger, darunter gewinnt die Abrechnung pro Login. Die Preisseite verweist für loginbasierte Contractor-Lizenzen an den Vertrieb, deshalb würde ich die Zählregel ins Bestellformular schreiben lassen. Contractor-Lizenzen sind für Fremdpersonal gedacht, nicht als günstiger Zugang für eigene Leute. Die ganze Rollenmatrix mit einer Jahresrechnung steht in [Field Service Lizenzen: Welche Rolle braucht welche?](../../../blog/field-service-lizenzen-rollen-dispatcher-techniker/).
+80 € geteilt durch 32 € ergibt 2,5. Ein Partnertechniker, der sich dreimal oder öfter im Monat anmeldet, ist mit der Nutzerlizenz günstiger, darunter gewinnt die Abrechnung pro Login. Die Preisseite verweist für loginbasierte Contractor-Lizenzen an den Vertrieb, deshalb würde ich die Zählregel ins Bestellformular schreiben lassen. Contractor-Lizenzen sind für das Personal Ihrer Servicepartner gedacht; eigene Leute darauf zu setzen, um zu sparen, würde ich nicht riskieren. Die ganze Rollenmatrix mit einer Jahresrechnung steht in [Field Service Lizenzen: Welche Rolle braucht welche?](../../../blog/field-service-lizenzen-rollen-dispatcher-techniker/).
 
 ## Welche Add-ons gibt es, und wann lohnt das Agentforce-1-Paket?
 
@@ -133,12 +133,12 @@ Ein Komponentenhersteller hat drei Mitarbeitende, die Hotline und Disposition ge
 | Hotline und Disposition | 3 | Field Service Plus zu 230 € | 690 € |
 | Disponenten | 2 | Dispatcher zu 175 € | 350 € |
 | Eigene Techniker | 25 | Technician zu 175 € | 4.375 € |
-| Backoffice | 1 | Service Cloud Core zu 195 Dollar | 195 Dollar |
+| Backoffice | 1 | Service Cloud Core zu 195 € | 195 € |
 | Partnertechniker | 4 | Contractor Plus pro Nutzer zu 80 € | 320 € |
 
-Das sind rund 5.930 im Monat und 71.160 im Jahr zum Listenpreis, Implementierung und ERP-Schnittstelle nicht eingerechnet. Die Partnertechniker melden sich je etwa dreimal im Monat an. Pro Login wären das 12 Logins zu 32 €, also 384 € statt 320 €. Bei dieser Nutzung gewinnt die Nutzerlizenz knapp, bei zwei Logins pro Kopf wäre es umgekehrt.
+Das sind 5.930 € im Monat und 71.160 € im Jahr zum Listenpreis, Implementierung und ERP-Schnittstelle nicht eingerechnet. Die Partnertechniker melden sich je etwa dreimal im Monat an. Pro Login wären das 12 Logins zu 32 €, also 384 € statt 320 €. Bei dieser Nutzung gewinnt die Nutzerlizenz knapp, bei zwei Logins pro Kopf wäre es umgekehrt.
 
-Soll die Hotline zusätzlich einen KI-Agenten bekommen, kosten die fünf Büroarbeitsplätze mit dem Agentforce-Add-on 625 Dollar mehr im Monat. Dieselben fünf Plätze auf Agentforce 1 Field Service kosten 3.250 € statt 1.665 im Monat aus Einzelteilen. Ohne geplanten Bedarf für Slack, Tableau Next und Data Cloud spricht hier nichts für das Paket.
+Soll die Hotline zusätzlich einen KI-Agenten bekommen, kosten die fünf Büroarbeitsplätze mit dem Agentforce-Add-on 625 Dollar mehr im Monat. Dieselben fünf Plätze auf Agentforce 1 Field Service kosten 3.250 € im Monat, aus Einzelteilen sind es 1.665 € (Field Service Plus und Dispatcher plus je 125 Dollar für das Add-on, das die deutsche Seite nur in Dollar nennt). Ohne geplanten Bedarf für Slack, Tableau Next und Data Cloud spricht hier nichts für das Paket.
 
 ## Was sollten Sie entscheiden, bevor ein Partner baut?
 
