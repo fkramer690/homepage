@@ -47,7 +47,7 @@ Inhalte (Claude entwirft, Fabian gibt frei):
 - ~~S5. Seite „Fragen, die ich in jedem Projekt stelle“~~ (umgesetzt 26.10.2026, PR #54, siehe Punkt 3 unten).
 
 Macht Fabian selbst (Quick Wins):
-- QA. Google-Unternehmensprofil anlegen (Unternehmen mit Einzugsgebiet, Adresse ausblenden).
+- QA. Google Business Profile (Google-Unternehmensprofil) anlegen: Unternehmen mit Einzugsgebiet, Adresse ausblenden. Anleitung als Video: https://www.youtube.com/watch?v=wYupOi4DIh8
 - QB. LinkedIn abstimmen, Anleitung mit fertigen Texten: https://claude.ai/artifact/7iboGaKLpFfe2wZZkSVeLU
   - ~~Website in Kontaktinfo~~ (erledigt 26.10.2026)
   - Headline, Info-Text und Top-Kenntnisse ersetzen (Schritt 2+3, ca. 15 Min.)
