@@ -12,7 +12,7 @@ takeaways:
   - "Salesforce CPQ and Salesforce Billing are managed packages from the SteelBrick acquisition with the namespaces SBQQ and blng. Revenue Cloud does not use these packages and works on standard objects."
   - "In CPQ, product rules and price rules plus an optional JavaScript quote calculator plugin decide configuration and price. In Revenue Cloud, a constraint engine and pricing procedures do that."
   - "CPQ amends contracts through subscription records and a new quote and opportunity. Revenue Cloud keeps sold products as assets with state periods, and every change runs through a quote and an order."
-  - "Salesforce Help states that the data models differ significantly and that Revenue Cloud is not just the next version of CPQ. Reports, dashboards and quote documents are rebuilt."
+  - "Salesforce Help states that the data models differ significantly and that Revenue Cloud is not just the next version of CPQ. Reports and dashboards are rebuilt on standard objects."
   - "A move from CPQ to Revenue Cloud is a redesign of rules, prices and data, so it should be planned and budgeted like a new implementation."
 faq:
   - q: "Is Revenue Cloud an upgrade of Salesforce CPQ?"
@@ -28,27 +28,27 @@ faq:
 draft: false
 ---
 
-Salesforce CPQ and Revenue Cloud solve the same task, configure, price, quote and bill, but they are different products. CPQ and Salesforce Billing are managed packages from SteelBrick with their own objects under the SBQQ and blng namespaces. Revenue Cloud runs on standard objects, configures with a constraint engine, calculates prices with pricing procedures and manages sold products as assets. Salesforce Help says the data models "differ significantly" and that Revenue Cloud is "not just the next version of Salesforce CPQ". For a CPQ customer that means: no upgrade button, but a redesign of rules, prices and data.
+Salesforce CPQ and Revenue Cloud solve the same task, configure, price, quote and bill, but they are different products. CPQ and Salesforce Billing are managed packages from SteelBrick with their own objects under the SBQQ and blng namespaces. Revenue Cloud runs on standard objects, configures with a constraint engine, calculates prices with pricing procedures and manages sold products as assets. Salesforce Help says the data models "differ significantly" and that Revenue Cloud is "not just the next version of Salesforce CPQ". For a CPQ customer that means a redesign of rules, prices and data, because there is no upgrade path.
 
 ## Where do both products come from?
 
 Salesforce bought SteelBrick in December 2015 for $360 million, according to [SiliconANGLE](https://siliconangle.com/2015/12/24/salesforce-confirms-360m-acquisition-of-quote-to-cash-startup-steelbrick/). SteelBrick's quote-to-cash software already ran natively on the Salesforce platform. It became Salesforce CPQ and Salesforce Billing, both installed as managed packages. CPQ objects carry the `SBQQ__` prefix, for example `SBQQ__Quote__c`, and the [Billing developer guide](https://developer.salesforce.com/docs/atlas.en-us.blng_dev.meta/blng_dev/blng_custom_objects_parent.htm) lists its objects under `blng__`.
 
-Revenue Cloud started in Spring '24 (API 60.0) as Revenue Lifecycle Management, was then sold as Revenue Cloud Advanced and appears in current documentation as Revenue Management. The [Winter '27 developer guide](https://developer.salesforce.com/docs/atlas.en-us.revenue_lifecycle_management_dev_guide.meta/pcm_parent.htm) is titled "Revenue Management Developer Guide" and describes standard objects and business APIs per area. Salesforce itself wrote in July 2025 that it "rebuilt its CPQ solution as the all-new Revenue Cloud". CPQ has been end of sale since then, without an end-of-life date; the details are in [Salesforce CPQ end of sale: what applies in October 2026](../salesforce-cpq-end-of-sale-status/).
+Revenue Cloud's developer documentation goes back to Spring '24 (API 60.0), when the product was called Revenue Lifecycle Management. It was then sold as Revenue Cloud Advanced and appears in current documentation as Revenue Management. The [Winter '27 developer guide](https://developer.salesforce.com/docs/atlas.en-us.revenue_lifecycle_management_dev_guide.meta/pcm_parent.htm) is titled "Revenue Management Developer Guide" and describes standard objects and business APIs per area. Salesforce itself wrote in July 2025 that it "rebuilt its CPQ solution as the all-new Revenue Cloud". CPQ is now end of sale, without an end-of-life date; the details are in [Salesforce CPQ end of sale: what applies in October 2026](../salesforce-cpq-end-of-sale-status/).
 
 ## The differences at a glance
 
 | Area | Salesforce CPQ and Billing | Revenue Cloud |
 |---|---|---|
 | Technical form | Managed packages, namespaces `SBQQ` and `blng` | Part of the platform, no CPQ package |
-| Data model | Package objects such as `SBQQ__Quote__c` and `SBQQ__Subscription__c` | Standard objects such as Product2, Quote, Order, Asset |
+| Data model | Package objects such as `SBQQ__Quote__c`, subscription records on the contract | Standard objects such as Product2, Quote, Order, Asset |
 | Product model | Products, bundles with features and options | Catalogs, categories, product classifications with attributes, bundles |
 | Configuration rules | Product rules: validation, selection, filter, alert | Constraint rules engine with CML, Visual Builder for simple rules |
 | Pricing | Price rules, optional JavaScript quote calculator plugin | Pricing procedures, context definitions, decision tables, price waterfall |
 | After the sale | Contract with subscription records | Assets with asset state periods and asset actions |
 | Amendment | New quote and opportunity on the contract | Amendment quote, then an order |
 | Approvals | Advanced Approvals package | Advanced Approvals as invocable actions and business APIs |
-| Order to fulfilment | Order from the quote, own logic | Dynamic Revenue Orchestrator as add-on |
+| Order to fulfilment | Order generated from the quote | Dynamic Revenue Orchestrator as add-on |
 | Billing | Salesforce Billing package | Revenue Cloud Billing add-on with usage rating, digital wallet, invoicing engine, accounting subledger |
 | Configuration storage | Mostly data records | Mostly data records |
 | Status October 2026 | End of sale, maintenance phase, no new features | Actively developed |
@@ -85,7 +85,7 @@ For manufacturers with service contracts and subscriptions this is the second bi
 
 The Salesforce Billing package and Revenue Cloud Billing are also separate products. According to [Salesforce](https://www.salesforce.com/sales/revenue-cloud-billing/), Revenue Cloud Billing includes usage rating with a digital wallet, an invoicing engine with document production, payments, collections, tax through external engines and an accounting subledger that syncs journal entries to the ERP. What a move means for open invoices and payment history is covered in [from Salesforce Billing to Revenue Cloud Billing](../from-salesforce-billing-to-revenue-cloud-billing/).
 
-Approvals have the same name in both worlds, which causes confusion. In CPQ, Advanced Approvals is a [package of its own](https://trailhead.salesforce.com/content/learn/modules/advanced-approvals-for-admins/discover-advanced-approvals). In Revenue Cloud, [Advanced Approvals](https://developer.salesforce.com/docs/atlas.en-us.revenue_lifecycle_management_dev_guide.meta/revenue_lifecycle_management_dev_guide/advanced_approvals_overview.htm) consists of invocable actions, business APIs and fields on standard objects. Approval chains are rebuilt, not carried over.
+Approvals have the same name in both worlds, which causes confusion. In CPQ, Advanced Approvals is a [package of its own](https://trailhead.salesforce.com/content/learn/modules/advanced-approvals-for-admins/discover-advanced-approvals). In Revenue Cloud, [Advanced Approvals](https://developer.salesforce.com/docs/atlas.en-us.revenue_lifecycle_management_dev_guide.meta/revenue_lifecycle_management_dev_guide/advanced_approvals_overview.htm) consists of invocable actions, business APIs and fields on standard objects. Approval chains have to be rebuilt.
 
 ## Why is the move no upgrade?
 
@@ -103,4 +103,4 @@ Whether the move pays off at all is a separate question, which I answer in [keep
 
 Count what you have: product rules, price rules, lines in the quote calculator plugin, quote templates, approval chains, open subscriptions and integrations that write to SBQQ objects. That list is the scope of the redesign. How the migration then runs in phases is described in [CPQ to Revenue Cloud migration](../cpq-to-revenue-cloud-migration-phases/) and in the masterclass chapter [from CPQ to Revenue Cloud](../../masterclass/revenue-cloud/from-cpq-to-revenue-cloud/).
 
-CPQ and Revenue Cloud share a purpose, not a data model, so treat the move as a new design. If you want help assessing your CPQ org before that decision, [send me a message](#contact).
+CPQ and Revenue Cloud share a purpose and differ in almost everything underneath, so treat the move as a new design. If you want help assessing your CPQ org before that decision, [send me a message](#contact).

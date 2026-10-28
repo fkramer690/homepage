@@ -1,6 +1,6 @@
 ---
 title: "Manufacturing Cloud for Service oder Service Cloud?"
-description: "Wann Manufacturing Cloud Service Core 80 bis 100 US-Dollar mehr pro Nutzer und Monat wert ist als Service Cloud, was der Aufpreis bringt und wer welche Lizenz braucht."
+description: "Wann Manufacturing Cloud Service Core 80 bis 100 US-Dollar mehr pro Nutzer und Monat wert ist als Service Cloud und wer im Service welche Lizenz braucht."
 pubDate: 2026-10-28
 lang: de
 slug: manufacturing-cloud-service-oder-service-cloud
@@ -89,6 +89,8 @@ Eine kurze Regel, die für die meisten Hersteller passt:
 - **Garantieanträge kommen von außen, und Rückrufe oder Upgrades gibt es regelmäßig:** Manufacturing Cloud for Service für die Menschen, die damit arbeiten.
 - **Service heißt Cases, Verträge und Antworten:** Service Cloud, bei Bedarf mit einem eigenen Feld für das Garantieende.
 - **Viele Techniker im Außendienst:** Field Service getrennt entscheiden, das hängt nicht an dieser Wahl.
+
+Die Alternative ist ein Eigenbau auf Service Cloud: eigene Objekte für Garantiebedingungen, Anträge und Kampagnen. Im Szenario oben beträgt der Aufpreis für die 15 Nutzer der Manufacturing Cloud gegenüber Service Cloud Core 14.400 US-Dollar im Jahr, über fünf Jahre 72.000 US-Dollar zum Listenpreis. Ein eigener Garantieprozess mit Händlerportal, Freigaben und Lieferantenregress ist in Bau und Pflege selten günstiger, und jede Änderung liegt dann bei Ihnen. Der Eigenbau gewinnt, wenn Ihr Garantieprozess einfach ist, etwa eine Bedingung pro Produkt und wenige Anträge.
 
 Das ist dieselbe Make-or-Buy-Frage wie bei der ganzen Branchen-Cloud, beschrieben in [Manufacturing Cloud: Wann lohnt sie sich?](../manufacturing-cloud-wann-lohnt-sie-sich/) und im [Kapitel Einordnung und Business Case](../../masterclass/manufacturing-cloud/einordnung-und-business-case/). Mein Vorgehen beschreibe ich unter [Make-or-Buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/).
 

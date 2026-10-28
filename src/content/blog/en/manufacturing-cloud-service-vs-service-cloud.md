@@ -90,6 +90,8 @@ A short rule that works for most manufacturers:
 - **Service means cases, contracts and answers:** Service Cloud, with a custom field for the warranty end date if needed.
 - **Many technicians in the field:** decide Field Service separately; it does not depend on this choice.
 
+The alternative is a custom build on Service Cloud: your own objects for warranty terms, claims and campaigns. In the scenario above the premium for the 15 Manufacturing Cloud users is $14,400 a year compared with Service Cloud Core, or $72,000 over five years at list price. A custom warranty process with dealer portal, approvals and supplier recovery rarely costs less to build and maintain, and you own every change yourself. The custom build wins when your warranty process is simple, such as one term per product and few claims.
+
 This is the same make-or-buy question as for the whole industry cloud, covered in [is Manufacturing Cloud worth it](../salesforce-manufacturing-cloud-is-it-worth-it/) and in the [scope and business case chapter](../../masterclass/manufacturing-cloud/scope-and-business-case/). I describe the approach under [make-or-buy and licence forecasts](../../services/make-or-buy-licences/).
 
 ## Where should you start?

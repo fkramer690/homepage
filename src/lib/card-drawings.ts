@@ -27,6 +27,43 @@ const pin = (x: number, y: number, color = G) =>
   `<g transform="translate(${x} ${y})"><path d="M0 0c-6-8-9-12-9-16a9 9 0 0 1 18 0c0 4-3 8-9 16z" fill="#fff" stroke="${color}" stroke-width="1.4"/><circle cx="0" cy="-16" r="3" fill="${color}"/></g>`;
 
 const drawings: Record<string, Drawing> = {
+  'field-service-multiday-crews-commissioning': (l) => `
+    ${t(18, 18, l('COMMISSIONING · CREW OF 3 (ASSUMED)', 'INBETRIEBNAHME · CREW AUS 3 (ANNAHME)'), { fill: D, size: 7 })}
+    ${box(18, 30, 54, 26)}${t(45, 46, l('survey', 'Besichtigung'), { size: 7, anchor: 'middle' })}
+    <path d="M72 43H104" stroke="${G}" stroke-width="1.2" stroke-dasharray="3 3"/>${cross(88, 43)}
+    ${t(88, 70, l('no dependency', 'keine Abhängigkeit'), { size: 6.8, anchor: 'middle' })}
+    <rect x="104" y="30" width="198" height="26" rx="4" fill="#fff" stroke="${C}" stroke-width="1.3"/>${t(203, 46, l('multiday appointment, 12 days', 'mehrtägiger Termin, 12 Tage'), { fill: C, size: 7, anchor: 'middle' })}
+    ${[0, 1, 2].map((i) => dot(172 + i * 18, 84, G, 5)).join('')}${t(222, 87, l('crew = 1 resource', 'Crew = 1 Ressource'), { size: 7 })}
+    <path d="M18 116H302" stroke="${G}" stroke-width="1"/><path d="M18 112V120M302 112V120" stroke="${G}" stroke-width="1"/>
+    <path d="M18 116H170" stroke="${C}" stroke-width="2.4"/>
+    ${t(18, 132, l('automatic: 30 days', 'automatisch: 30 Tage'), { fill: C, size: 7 })}${t(302, 132, l('max. 8 weeks', 'max. 8 Wochen'), { size: 7, anchor: 'end' })}
+    ${t(18, 152, l('ESO utilization ignores multiday jobs', 'Auslastung mit ESO ignoriert mehrtägige Termine'), { size: 7 })}`,
+
+  'field-service-on-call-shifts': (l) => `
+    ${t(18, 18, l('ONE REGION, ONE WEEK (ASSUMED)', 'EINE REGION, EINE WOCHE (ANNAHME)'), { fill: D, size: 7 })}
+    ${[l('Mon', 'Mo'), l('Tue', 'Di'), l('Wed', 'Mi'), l('Thu', 'Do'), l('Fri', 'Fr'), l('Sat', 'Sa'), l('Sun', 'So')].map((d, i) => t(38 + i * 40, 36, d, { size: 7, anchor: 'middle' })).join('')}
+    ${[0, 1, 2, 3, 4].map((i) => `<rect x="${22 + i * 40}" y="44" width="32" height="30" rx="3" fill="#fff" stroke="${G}" stroke-width="1.2"/>`).join('')}
+    ${t(118, 88, l('operating hours', 'Arbeitszeiten'), { size: 7, anchor: 'middle' })}
+    <rect x="222" y="44" width="72" height="30" rx="3" fill="#fff" stroke="${C}" stroke-width="1.3"/>${t(258, 57, l('on-call', 'Bereitschaft'), { fill: C, size: 7, anchor: 'middle' })}${t(258, 68, 'Extended', { fill: C, size: 7, anchor: 'middle' })}
+    ${t(258, 88, l('shift', 'Schicht'), { size: 7, anchor: 'middle' })}
+    ${check(22, 104, G)}${t(36, 110, l('only Confirmed counts', 'nur Confirmed zählt'), { size: 7 })}
+    ${check(22, 122, G)}${t(36, 128, l('filter: breakdowns only', 'Filter: nur Störungen'), { size: 7 })}
+    ${check(22, 140, G)}${t(36, 146, l('policy allows overtime', 'Policy erlaubt Overtime'), { size: 7 })}
+    ${tag(196, 122, 106, l('works council § 87', 'Betriebsrat § 87'))}`,
+
+  'manufacturing-cloud-program-based-business': (l) => `
+    ${[[l('PROGRAMME', 'PROGRAMM'), l('CSV import, market data', 'CSV-Import, Marktdaten')], ['VARIANT', l('CSV import, adjusted monthly', 'CSV-Import, monatlich angepasst')], [l('COMPONENT', 'KOMPONENTE'), '']]
+      .map(([h, s], i) => box(18, 18 + i * 34, 96, 24) + t(66, 33.5 + i * 34, String(h), { fill: D, size: 7.5, anchor: 'middle' })
+        + (i < 2 ? `<path d="M66 ${42 + i * 34}V${52 + i * 34}" stroke="${G}" stroke-width="1.2"/>` + t(124, 33.5 + i * 34, String(s), { size: 7 }) : '')).join('')}
+    ${arrow(114, 98, 150, C)}
+    ${box(150, 86, 72, 24)}${t(186, 101.5, 'Opportunity', { fill: D, size: 7.5, anchor: 'middle' })}
+    ${arrow(222, 98, 236, C)}
+    ${box(236, 86, 66, 24, C)}${t(269, 101.5, 'Sales Agreement', { fill: C, size: 7, anchor: 'middle' })}
+    ${t(186, 122, 'Transformation API', { size: 6.5, anchor: 'middle' })}${t(269, 122, 'Connect API', { size: 6.5, anchor: 'middle' })}
+    <path d="M18 130H302" stroke="${L}"/>
+    ${t(18, 142, l('DPE: generate, calculate, rollover, regenerate', 'DPE: Generate, Calculate, Rollover, Regenerate'), { size: 7 })}
+    ${t(18, 155, l('per component: quantity per unit, min. quantity, lead time', 'pro Komponente: Menge pro Einheit, Mindestmenge, Vorlaufzeit'), { size: 7 })}`,
+
   'channel-revenue-ship-and-debit': (l) => `
     ${box(14, 22, 78, 40)}${t(53, 38, l('MANUFACTURER', 'HERSTELLER'), { fill: D, size: 7, anchor: 'middle' })}${t(53, 51, l('sells at $100', 'verkauft für 100 $'), { size: 6.5, anchor: 'middle' })}
     ${arrow(92, 42, 120)}

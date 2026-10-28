@@ -87,6 +87,8 @@ I would use product service campaigns when several of these apply:
 - **Supplier recovery matters**, because the faulty part was bought in.
 - **Upgrades happen regularly**, for example retrofit kits for a whole series.
 
+The selection problem stays the same either way: without clean serial numbers and batches, the best list does not help.
+
 ## What should you decide before building?
 
 Four questions I would answer in writing:

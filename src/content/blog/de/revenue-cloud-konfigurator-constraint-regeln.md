@@ -82,10 +82,10 @@ Laut Trailhead verbindet sich ein Drittanbieter-Konfigurator über APIs mit Sale
 Ich schaue darauf, wo sie heute liegen:
 
 - **In Excel-Tabellen und in den Köpfen der Anwendungstechniker.** Das ist der beste Fall für Revenue Cloud. Die Regeln müssen ohnehin aufgeschrieben werden, und CML gibt ihnen ein Zuhause mit Tests.
-- **In der SAP-Variantenkonfiguration.** Prüft SAP die Konfiguration beim Auftragseingang noch einmal, gibt es nach einem Nachbau in CML zwei Regelwerke. Sie laufen bei der ersten Änderung auseinander, die nur an einer Stelle gepflegt wird. Hier lasse ich entweder SAP führen und rufe es auf, oder ich verlege die Führung nach Salesforce, und SAP übernimmt das Ergebnis. Beides funktioniert, zwei führende Systeme nicht. Dasselbe Argument gilt für Agenten: Geschäftsregeln gehören an eine deterministische Stelle, wie in [Agent Script: Warum Geschäftsregeln nicht ins LLM gehören](../agent-script-regeln-statt-llm/).
+- **In der SAP-Variantenkonfiguration.** Prüft SAP die Konfiguration beim Auftragseingang noch einmal, gibt es nach einem Nachbau in CML zwei Regelwerke. Sie laufen bei der ersten Änderung auseinander, die nur an einer Stelle gepflegt wird. Hier lasse ich entweder SAP führen und rufe es auf, oder ich verlege die Führung nach Salesforce, und SAP übernimmt das Ergebnis. Beides funktioniert, zwei führende Systeme nicht. Dasselbe Argument gilt für Agenten: Geschäftsregeln gehören an eine deterministische Stelle, wie in [Agent Script: Geschäftsregeln gehören nicht ins LLM](../agent-script-regeln-statt-llm/).
 - **Im PLM oder in einem Konstruktionskonfigurator**, der Zeichnungen oder Stücklisten erzeugt. Dann bleibt der externe Konfigurator, und Salesforce erhält das konfigurierte Produkt mit seinen preisrelevanten Attributen.
 
-Für Angebote mit KI hat das eine Nebenwirkung. Ein Agent kann nur Regeln einhalten, die er aufrufen kann. Liegen die Regeln außerhalb von Salesforce, lasse ich konfigurierte Maschinen beim Innendienst, wie in [KI-Angebote für Händler mit dem Partner Sales Assistant](../ki-angebote-haendler-partner-sales-assistant/) beschrieben.
+Für Angebote mit KI hat das eine Nebenwirkung. Ein Agent kann nur Regeln einhalten, die er aufrufen kann. Liegen die Regeln außerhalb von Salesforce, lasse ich konfigurierte Maschinen beim Innendienst, wie in [KI-Angebote für Händler: Partner Sales Assistant](../ki-angebote-haendler-partner-sales-assistant/) beschrieben.
 
 ## Ein typisches Szenario, als Annahme
 

@@ -40,7 +40,7 @@ Field Service kennt drei Arten von Maintenance Work Rules, beschrieben auf der H
 | Nutzungsbasiert | Ein Nutzungsfeld am Asset und ein Feld für das nächste Auftreten | Betriebsstunden, Zyklen, Hübe |
 | Kriterienbasiert | Recordset Filter Criteria auf Asset-Feldern | Schwellen, kombinierte Bedingungen, „was zuerst eintritt“ |
 
-Recordset Filter Criteria sind gespeicherte Bedingungen auf Asset-Feldern, etwa „Betriebsstunden seit letzter Wartung größer oder gleich 2.000“. Die Grundlagen zu Wartungsplänen, Serviceverträgen und Entitlements stehen in [Wartungsverträge in Field Service abbilden](../salesforce-field-service-wartungsvertraege/).
+Recordset Filter Criteria sind gespeicherte Bedingungen auf Asset-Feldern, etwa „Betriebsstunden seit letzter Wartung größer oder gleich 2.000“. Die Grundlagen zu Wartungsplänen, Serviceverträgen und Entitlements stehen in [Field Service: Wie bildet man Wartungsverträge ab?](../salesforce-field-service-wartungsvertraege/).
 
 ## Wie funktioniert eine nutzungsbasierte Regel?
 
@@ -72,7 +72,7 @@ Die Hilfe nennt drei Quellen: von Hand gepflegt, von einer IoT-Plattform aktuali
 - **Das ERP**, zum Beispiel SAP, schickt Zählerstände, die es ohnehin vom Kunden oder aus Serviceberichten bekommt.
 - **Der Techniker** liest den Zähler vor Ort ab und trägt ihn in der mobilen App ein. Für nicht vernetzte Maschinen ist das die einzige Quelle.
 
-Ein Wert pro Tag reicht. Ein Intervall von 2.000 Stunden braucht keine Minutenwerte, und 1.200 Zählerstände am Tag sind eine kleine Schnittstelle. Die Zeitreihen bleiben in der IoT-Plattform oder im Historian, wie in [Predictive Maintenance in Salesforce: Welche Daten Sie brauchen](../predictive-maintenance-salesforce-datenbasis/) beschrieben. Legen Sie fest, welche Quelle gewinnt, wenn zwei sich widersprechen, etwa wenn der Techniker 2.140 Stunden abliest und das ERP noch 1.980 zeigt. Wie bei allen Stammdaten braucht es pro Feld ein führendes System, siehe [welche Daten die Terminplanung braucht](../salesforce-field-service-stammdaten/). Die Schnittstelle selbst gehört auf die Liste der [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).
+Ein Wert pro Tag reicht. Ein Intervall von 2.000 Stunden braucht keine Minutenwerte, und 1.200 Zählerstände am Tag sind eine kleine Schnittstelle. Die Zeitreihen bleiben in der IoT-Plattform oder im Historian, wie in [Predictive Maintenance in Salesforce: die Datenbasis](../predictive-maintenance-salesforce-datenbasis/) beschrieben. Legen Sie fest, welche Quelle gewinnt, wenn zwei sich widersprechen, etwa wenn der Techniker 2.140 Stunden abliest und das ERP noch 1.980 zeigt. Wie bei allen Stammdaten braucht es pro Feld ein führendes System, siehe [welche Daten die Terminplanung braucht](../salesforce-field-service-stammdaten/). Die Schnittstelle selbst gehört auf die Liste der [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).
 
 ## Welche Limits zählen?
 
