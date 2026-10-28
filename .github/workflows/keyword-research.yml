@@ -1,0 +1,23 @@
+name: Keyword research
+
+# Manual long-tail research for the seeds in seo/research-seeds.json (DataForSEO
+# Labs keyword suggestions). The list is printed in the job log; nothing is stored.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Query DataForSEO
+        env:
+          DATAFORSEO_LOGIN: ${{ secrets.DATAFORSEO_LOGIN }}
+          DATAFORSEO_PASSWORD: ${{ secrets.DATAFORSEO_PASSWORD }}
+        run: node scripts/keyword-research.mjs
