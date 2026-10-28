@@ -71,7 +71,7 @@ Rebates reward volume. A dealer reaches a tier over a quarter or a year and gets
 
 That difference changes who works with the system. Rebates are calculated by programme managers at period end. Ship and debit claims arrive continuously, from claim clerks at distributors, and someone at the manufacturer has to process them within days. Trailhead promises reimbursements "within hours instead of weeks" for claims that pass automated validation. The claims that fail still need a person.
 
-Many manufacturers selling through dealers only need rebates. Ship and debit matters when distributors hold stock and quote projects for end customers you also know, typical for components, electronics or industrial supplies sold through a two-tier channel.
+In my view, many manufacturers selling through dealers only need rebates. Ship and debit matters when distributors hold stock and quote projects for end customers you also know, typical for components, electronics or industrial supplies sold through a two-tier channel.
 
 ## Which data does claim validation need?
 
@@ -79,7 +79,7 @@ Sell-through and stock. A claim says: I sold 1,200 units to customer X at $90. T
 
 - **That the sale happened.** Proof of sale documents or point-of-sale data from the distributor, ideally as a regular file, not as a PDF per claim.
 - **That the units came from your stock.** Channel inventory per distributor, so a claim for 1,200 units does not exceed what the distributor bought.
-- **That the end customer was eligible.** A clean customer master, so "Customer X Ltd" and "Customer X Limited" are one company.
+- **That the end customer was eligible.** A clean customer master, so "Customer X Ltd" and "Customer X Limited" count as one company when they are one.
 
 Without these, the validation checks whether the documents match the programme, not whether the sale was real. Overpayments in price protection come from the same gap: a distributor claims stock on hand at the old price that it no longer has. Channel inventory tracking is in the package; the data still has to come from the distributors. How distributor stock reaches Salesforce, and how old it is when it arrives, I describe in [Agentforce for distributor stock and replenishment](../distributor-inventory-replenishment-agentforce/).
 

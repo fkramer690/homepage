@@ -59,7 +59,7 @@ The [object reference](https://developer.salesforce.com/docs/industries/penny-pe
 
 Next to these come shared objects such as Account, Product2, account relations and internal organisation units, which carry business unit specific settings per account.
 
-The similarity is the point. Someone who knows SAP pricing will recognise the logic. It also means the same configuration effort: every condition type, every access and every condition record that SAP has would need a counterpart in Salesforce.
+The similarity cuts both ways. Someone who knows SAP pricing will recognise the logic. It also means the same configuration effort: every condition type, every access and every condition record that SAP has would need a counterpart in Salesforce.
 
 ## Where does Penny Perfect Pricing fit, and where not?
 
@@ -91,7 +91,7 @@ Because condition records change all the time. Pricing teams add customer discou
 - **Rounding.** "Penny perfect" depends on identical rounding per step. One difference in the calculation order and invoice and order differ by a few cents per line, which customers notice on large orders.
 - **Which price wins.** When the order reaches SAP, does SAP take the Salesforce price as given or determine its own? If both calculate, the customer can get an order confirmation with one price and an invoice with another.
 
-None of this is a reason against the engine. It is a reason to decide one price master and a rule for disagreements, before any rep relies on a Salesforce price.
+These gaps are manageable once one price master and a rule for disagreements are set, before any rep relies on a Salesforce price.
 
 ## A typical scenario: a telesales desk for spare parts
 

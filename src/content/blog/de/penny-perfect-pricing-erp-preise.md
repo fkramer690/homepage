@@ -1,6 +1,6 @@
 ---
 title: "Penny Perfect Pricing: ERP-Preise in Salesforce?"
-description: "Penny Perfect Pricing bringt eine Preisfindung nach SAP-Muster in die Manufacturing Cloud. Wann sie für Telesales passt und warum meist das ERP Preis-Master bleibt."
+description: "Penny Perfect Pricing bringt Preisfindung nach SAP-Muster in die Manufacturing Cloud. Wann sie zu Telesales passt und warum meist das ERP Preis-Master bleibt."
 pubDate: 2026-10-28
 lang: de
 slug: penny-perfect-pricing-erp-preise
@@ -59,7 +59,7 @@ Die [Objektreferenz](https://developer.salesforce.com/docs/industries/penny-perf
 
 Dazu kommen gemeinsame Objekte wie Account, Product2, Account-Beziehungen und interne Organisationseinheiten, die geschäftsbereichsspezifische Einstellungen pro Account tragen.
 
-Die Ähnlichkeit ist gewollt. Wer die SAP-Preisfindung kennt, erkennt die Logik wieder. Sie bedeutet aber auch denselben Konfigurationsaufwand: Jede Konditionsart, jeder Zugriff und jeder Konditionssatz aus SAP bräuchte ein Gegenstück in Salesforce.
+Die Ähnlichkeit hat zwei Seiten. Wer die SAP-Preisfindung kennt, erkennt die Logik wieder. Sie bedeutet aber auch denselben Konfigurationsaufwand: Jede Konditionsart, jeder Zugriff und jeder Konditionssatz aus SAP bräuchte ein Gegenstück in Salesforce.
 
 ## Wo passt Penny Perfect Pricing, und wo nicht?
 
@@ -91,7 +91,7 @@ Weil sich Konditionssätze ständig ändern. Die Preisabteilung legt in SAP jede
 - **Rundung.** "Penny perfect" setzt identische Rundung in jedem Schritt voraus. Eine Abweichung in der Rechenreihenfolge, und Auftrag und Rechnung unterscheiden sich um ein paar Cent pro Position, was Kunden bei großen Aufträgen bemerken.
 - **Welcher Preis gilt.** Übernimmt SAP den Salesforce-Preis, wenn der Auftrag ankommt, oder ermittelt es einen eigenen? Rechnen beide, bekommt der Kunde womöglich eine Auftragsbestätigung mit einem Preis und eine Rechnung mit einem anderen.
 
-Nichts davon spricht gegen die Engine. Es spricht dafür, einen Preis-Master und eine Regel für Abweichungen festzulegen, bevor sich ein Mitarbeiter auf einen Salesforce-Preis verlässt.
+Diese Lücken lassen sich beherrschen, wenn ein Preis-Master und eine Regel für Abweichungen feststehen, bevor sich ein Mitarbeiter auf einen Salesforce-Preis verlässt.
 
 ## Ein typisches Szenario: Telesales für Ersatzteile
 

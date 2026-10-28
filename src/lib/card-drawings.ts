@@ -27,6 +27,43 @@ const pin = (x: number, y: number, color = G) =>
   `<g transform="translate(${x} ${y})"><path d="M0 0c-6-8-9-12-9-16a9 9 0 0 1 18 0c0 4-3 8-9 16z" fill="#fff" stroke="${color}" stroke-width="1.4"/><circle cx="0" cy="-16" r="3" fill="${color}"/></g>`;
 
 const drawings: Record<string, Drawing> = {
+  'manufacturing-cloud-erp-integration': (l) => `
+    ${box(14, 30, 78, 92)}${t(53, 70, 'SAP', { fill: D, size: 8, anchor: 'middle' })}${t(53, 83, 'S/4HANA', { size: 7, anchor: 'middle' })}
+    ${box(228, 30, 78, 92)}${t(267, 70, 'MANUFACTURING', { fill: D, size: 7, anchor: 'middle' })}${t(267, 83, 'CLOUD', { fill: D, size: 7, anchor: 'middle' })}
+    ${arrow(92, 50, 228)}${t(160, 45, l('accounts · products', 'Accounts · Produkte'), { size: 7, anchor: 'middle' })}
+    ${arrow(92, 68, 228)}${t(160, 63, l('orders as actuals · daily', 'Aufträge als Ist · täglich'), { size: 7, anchor: 'middle' })}
+    ${arrow(92, 86, 228)}${t(160, 81, l('stock · daily', 'Lagerbestand · täglich'), { size: 7, anchor: 'middle' })}
+    <path d="M228 106H93" stroke="${C}" stroke-width="1.4"/><path d="M98 102.5l-5 3.5 5 3.5" fill="none" stroke="${C}" stroke-width="1.4"/>${t(160, 101, l('credit memos: rebates, warranty', 'Gutschriften: Boni, Garantie'), { fill: C, size: 7, anchor: 'middle' })}
+    <path d="M14 134H306" stroke="${L}"/>
+    ${t(14, 150, l('SOAP login() needs Use Any API Auth from 1 Dec 2026', 'SOAP login() braucht Use Any API Auth ab 01.12.2026'), { size: 7 })}`,
+
+  'manufacturing-cloud-feature-map': (l) => `
+    ${t(18, 18, l('ONE LICENCE, ONE SWITCH PER FEATURE', 'EINE LIZENZ, EIN SCHALTER PRO FUNKTION'), { fill: D, size: 7 })}
+    ${[
+      { h: l('SALES', 'VERTRIEB'), items: ['Sales Agreements', l('Adv. forecasting', 'Adv. Forecasting'), l('Programs', 'Programme'), 'Targets'] },
+      { h: 'SERVICE', items: [l('Warranty', 'Garantie'), l('Service campaigns', 'Servicekampagnen'), 'Asset console', 'Prework'] },
+      { h: l('CHANNEL', 'KANAL'), items: ['Rebates', 'Partner leads', l('Partner visits', 'Partnerbesuche'), 'Ship and debit'] },
+    ].map((col, c) => box(18 + c * 98, 28, 88, 92) + t(26 + c * 98, 42, col.h, { fill: D, size: 7 })
+      + col.items.map((s, r) => {
+        const x = 26 + c * 98;
+        const y = 58 + r * 16;
+        const extra = c === 2 && r === 3;
+        return (extra
+          ? `<rect x="${x - 4}" y="${y - 9}" width="80" height="13" rx="3" fill="none" stroke="${C}" stroke-width="1.1" stroke-dasharray="3 2"/>`
+          : `<rect x="${x}" y="${y - 6}" width="12" height="7" rx="3.5" fill="#fff" stroke="${G}" stroke-width="1"/><circle cx="${x + 8.5}" cy="${y - 2.5}" r="2" fill="${G}"/>`)
+          + t(x + (extra ? 0 : 16), y, s, { fill: extra ? C : G, size: 6.8 });
+      }).join('')).join('')}
+    ${t(18, 138, l('IndustriesManufacturingSettings: all false by default', 'IndustriesManufacturingSettings: alle standardmäßig false'), { size: 7 })}
+    ${t(18, 152, l('dashed: Channel Revenue Mgmt add-on, $30,000/org/yr', 'gestrichelt: Add-on Channel Revenue Mgmt, 30.000 $/Org/Jahr'), { fill: C, size: 7 })}`,
+
+  'penny-perfect-pricing-erp-prices': (l) => `
+    ${t(14, 22, l('SAP CONDITION TECHNIQUE', 'SAP-KONDITIONSTECHNIK'), { fill: D, size: 7 })}${t(182, 22, 'PENNY PERFECT PRICING', { fill: D, size: 7 })}
+    ${box(14, 30, 116, 84)}${box(182, 30, 124, 84, C)}
+    ${[[l('pricing procedure', 'Kalkulationsschema'), 'Calculation Schema'], [l('condition type', 'Konditionsart'), 'Pricing Specification'], [l('access sequence', 'Zugriffsfolge'), 'Search Strategy'], [l('condition record', 'Konditionssatz'), 'External Pricing Key Value']]
+      .map(([a, b], i) => t(22, 50 + i * 18, a, { size: 7 }) + `<path d="M126 ${47 + i * 18}H186" stroke="${G}" stroke-width="1" stroke-dasharray="3 3"/>` + t(190, 50 + i * 18, b, { size: 7 })).join('')}
+    ${t(14, 136, l('decide one price master first', 'zuerst einen Preis-Master festlegen'), { fill: C, size: 7.5 })}
+    ${t(14, 151, l("API 68.0 · Winter '27 · telesales orders", "API 68.0 · Winter '27 · Telesales-Aufträge"), { size: 7 })}`,
+
   'commerce-advanced-pricing-revenue-cloud': (l) => `
     ${t(18, 24, l('LICENCES', 'LIZENZEN'), { fill: D, size: 7 })}
     ${tag(18, 32, 112, 'Commerce Growth/Adv.')}${t(139, 46, '+', { fill: D, size: 10, anchor: 'middle' })}${tag(148, 32, 118, 'Revenue Cloud Adv.')}

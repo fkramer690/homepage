@@ -11,7 +11,7 @@ contactBrief: integration
 tags: [Manufacturing Cloud, SAP, ERP-Anbindung, MuleSoft, Sales Agreements, Boni]
 takeaways:
   - "In die Manufacturing Cloud fließen Accounts, Produkte, Aufträge oder Auftragssummen als Ist-Mengen und Lagerbestände; zurück fließen freigegebene Bonusauszahlungen und Garantiebeträge, die SAP als Gutschrift bucht."
-  - "Der MuleSoft Accelerator for Manufacturing deckt den Abgleich von Accounts, Produkten und Aufträgen aus SAP S/4HANA und Bonus-Gutschriften nach SAP ab; Sales Agreements legt er nicht an, einen Garantiefluss nennt er nicht."
+  - "Der MuleSoft Accelerator for Manufacturing deckt den Abgleich von Accounts, Produkten und Aufträgen aus SAP S/4HANA und Bonus-Gutschriften nach SAP ab; Sales Agreements und Garantie kommen darin nicht vor."
   - "Die Aktion Refresh Actuals Calculation berechnet die Ist-Mengen eines Sales Agreements für den aktuellen, vergangene oder künftige Zeiträume neu und ist seit API-Version 47.0 verfügbar."
   - "Ist-Mengen für Sales Agreements brauchen einen täglichen Lauf, der Auftragsstatus für Händler einen Live-Aufruf; ein Takt für alles kostet entweder API-Aufrufe oder Vertrauen."
   - "Ab 1. Dezember 2026 brauchen ERP-Schnittstellen, die sich per SOAP login() anmelden, die Berechtigung Use Any API Auth; SOAP login() in den API-Versionen 31.0 bis 64.0 entfällt mit Summer '27."
