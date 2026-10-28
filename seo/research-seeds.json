@@ -1,0 +1,30 @@
+{
+  "_comment": "Seed terms for scripts/keyword-research.mjs (manual workflow keyword-research.yml): long-tail suggestions per seed from DataForSEO Labs, Google Germany.",
+  "de": [
+    "salesforce field service",
+    "field service management",
+    "salesforce manufacturing cloud",
+    "salesforce revenue cloud",
+    "salesforce cpq",
+    "salesforce b2b commerce",
+    "agentforce",
+    "salesforce devops",
+    "salesforce release",
+    "salesforce lizenz",
+    "salesforce sap",
+    "salesforce berater",
+    "salesforce partner",
+    "salesforce einführung",
+    "salesforce architektur"
+  ],
+  "en": [
+    "salesforce field service",
+    "salesforce manufacturing cloud",
+    "salesforce revenue cloud",
+    "salesforce cpq",
+    "agentforce",
+    "salesforce devops",
+    "sfdx-hardis",
+    "salesforce document builder"
+  ]
+}
