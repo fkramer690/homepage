@@ -188,13 +188,15 @@ export function blockProse(block) {
 export const flowHash = (content) => createHash('sha1').update(content.trim()).digest('hex').slice(0, 12);
 
 // Mermaid source of a diagram block (rendered by scripts/render-diagrams.mjs).
-export function flowToMermaid(content) {
+// `direction` is LR (left to right) or TB (top to bottom); scripts/render-diagrams.mjs
+// switches to TB when a left-to-right layout would be too wide to read.
+export function flowToMermaid(content, direction = 'LR') {
   const { groups, edges, nodes } = parseFlow(content);
   const id = new Map(nodes.map((n, i) => [n, `n${i}`]));
   const esc = (s) => s.replace(/"/g, "'");
   const out = [
     '%%{init: {"theme": "base", "themeVariables": {"fontFamily": "Sora, system-ui, sans-serif", "fontSize": "15px", "lineColor": "#5a5a5e", "primaryTextColor": "#232325", "edgeLabelBackground": "#ffffff"}, "htmlLabels": false, "flowchart": {"curve": "basis", "nodeSpacing": 40, "rankSpacing": 56, "padding": 22, "htmlLabels": false}}}%%',
-    'flowchart LR',
+    `flowchart ${direction}`,
   ];
   for (const n of nodes) {
     const shape = [`["`, `"]`];

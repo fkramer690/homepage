@@ -1230,7 +1230,8 @@ p.post-series-note { margin: 0.6em 0 0; font-size: 0.95rem; }
   background-image: linear-gradient(rgba(35, 35, 37, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(35, 35, 37, 0.05) 1px, transparent 1px);
   background-size: 20px 20px;
 }
-.cb-flow-svg svg { width: 100%; min-width: 600px; height: auto; }
+.cb-flow-svg svg { width: calc(var(--w, 600) * 1px); max-width: 100%; height: auto; }
+@media (max-width: 640px) { .cb-flow-svg svg { max-width: none; width: calc(var(--w, 600) * 0.8px); } }
 .cb-legend { display: flex; flex-wrap: wrap; gap: 16px; font-family: var(--mono); font-size: 0.74rem; color: var(--text-2); margin-top: 10px; }
 .cb-legend span { display: inline-flex; align-items: center; gap: 6px; }
 .cb-legend i { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }

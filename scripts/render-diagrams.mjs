@@ -17,6 +17,7 @@ const out = join(root, 'src/assets/diagrams');
 mkdirSync(out, { recursive: true });
 const used = new Set();
 let rendered = 0;
+const maxWidth = 860;
 
 // Sora (the site font) so that Mermaid measures labels with the same font the page uses.
 const fontCss = join(tmpdir(), 'fk-diagram-fonts.css');
@@ -39,16 +40,25 @@ for (const collection of ['blog', 'masterclass']) {
         const target = join(out, `${hash}.svg`);
         if (existsSync(target)) continue;
         const src = join(tmpdir(), `fk-diagram-${hash}.mmd`);
-        writeFileSync(src, flowToMermaid(block.content));
-        execFileSync(mmdc[0], [...mmdc.slice(1), '-i', src, '-o', target, '-b', 'transparent', '-I', `fk-diagram-${hash}`, '-C', fontCss], { stdio: 'inherit' });
+        const render = (direction) => {
+          writeFileSync(src, flowToMermaid(block.content, direction));
+          execFileSync(mmdc[0], [...mmdc.slice(1), '-i', src, '-o', target, '-b', 'transparent', '-I', `fk-diagram-${hash}`, '-C', fontCss], { stdio: 'ignore' });
+          return +(readFileSync(target, 'utf8').match(/viewBox="[\d.-]+ [\d.-]+ ([\d.]+)/)?.[1] ?? 0);
+        };
+        // The article column is about 760 px wide; wider diagrams would shrink their
+        // text below a readable size, so those are laid out top to bottom.
+        if (render('LR') > maxWidth) render('TB');
         // Keep the SVG lean and responsive: no fixed width, no XML header.
         // Mermaid's class "label" would pick up the site's .label style, so rename it.
         const svg = readFileSync(target, 'utf8')
           .replace(/<\?xml[^>]*>\s*/, '')
           .replace(/ width="100%"/, '')
-          .replace(/ style="max-width: [\d.]+px;?"/, '')
+          .replace(/ style="max-width:[^"]*"/, '')
           .replace(/class="label"/g, 'class="fk-flow-label"')
-          .replace(/\.label(?![\w-])/g, '.fk-flow-label');
+          .replace(/\.label(?![\w-])/g, '.fk-flow-label')
+          // Natural width as a CSS variable, so the page never scales a diagram up and
+          // on phones scrolls it sideways instead of shrinking it (see global.css).
+          .replace(/<svg /, (m) => `${m}style="--w: ${Math.round(+(readFileSync(target, 'utf8').match(/viewBox="[\d.-]+ [\d.-]+ ([\d.]+)/)?.[1] ?? 600))}" `);
         writeFileSync(target, svg);
         rendered++;
         console.log(`rendered ${collection}/${lang}/${file} → src/assets/diagrams/${hash}.svg`);
