@@ -1,6 +1,6 @@
 ---
 title: "Account Manager Targets: Vertriebsziele pro Kunde"
-description: "Was Account Manager Targets in der Manufacturing Cloud leisten, wie Ziele auf Kunden und Produkte verteilt werden und welche Daten die Excel-Zielplanung ersetzen."
+description: "Was Account Manager Targets in der Manufacturing Cloud leisten, wie Ziele auf Kunden und Produkte fließen und welche Daten die Excel-Zielplanung ablösen."
 pubDate: 2026-10-28
 lang: de
 slug: account-manager-targets-vertriebsziele
@@ -81,7 +81,7 @@ Liegt das Ziel auf Produkten und die Prognose auf Produktkategorien, vergleicht 
 
 Für den Vergleich beschreibt Trailhead ein [Team-Performance-Dashboard](https://trailhead.salesforce.com/content/learn/modules/tableau-crm-administration-for-manufacturing-cloud/embed-dashboards-on-record-pages) für die Datensatzseite des Ziels. Es stellt Ziele den Istdaten des laufenden und des vergangenen Jahres gegenüber und zeigt den nicht verteilten Anteil. Es stammt aus der CRM-Analytics-App für die Manufacturing Cloud, und sein Inhalt hängt von den Objekten ab, die der Admin beim Anlegen der App auswählt. Eine Lizenz nennt die Unit nicht. Die aktuelle [Preisseite](https://www.salesforce.com/manufacturing/cloud/pricing/) führt Tableau Next pro Edition auf und erwähnt CRM Analytics nicht. Fragen Sie Salesforce deshalb, ob Ihre Edition das Dashboard enthält.
 
-## Ein typisches Szenario, als Annahme: 40 Account Manager und ein Datensatzlimit
+## Szenario: 40 Account Manager und ein Datensatzlimit
 
 Ein typisches Szenario, als Annahme: Ein Hersteller von Antriebskomponenten hat eine Vertriebsleitung, sechs Regionalleiter und 40 Account Manager. Jeder Account Manager betreut 150 Kunden, und die Ziele sollen pro Kunde, Produkt und Monat für 60 Produkte laufen.
 

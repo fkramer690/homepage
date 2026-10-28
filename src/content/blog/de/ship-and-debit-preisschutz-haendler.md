@@ -11,7 +11,7 @@ tags: [Manufacturing Cloud, Channel Revenue Management, Ship and Debit, Preissch
 takeaways:
   - "Ship and Debit gleicht einem Distributor aus, dass er an einen benannten Endkunden unter seinem eigenen Einkaufspreis verkauft, zu einem vereinbarten Sonderpreis. Die Differenz fordert er beim Hersteller ein."
   - "Channel Revenue Management prüft Ansprüche gegen Programmregeln, Sonderpreiskonditionen und Transaktionsdaten und markiert Dubletten, falsche Mengen und nicht berechtigte Verkäufe."
-  - "Channel Revenue Management for Manufacturing steht als Add-on mit 30.000 Dollar pro Org und Jahr in der Preisliste. Partnerzugang kostet extra, und eine andere Salesforce-Seite nennt Rebate Management ab 75 Dollar ohne Einheit."
+  - "Channel Revenue Management for Manufacturing steht als Add-on mit 30.000 Dollar pro Org und Jahr in der Liste. Partnerzugang kostet extra, eine andere Salesforce-Seite nennt Rebate Management ab 75 Dollar ohne Einheit."
   - "Boni belohnen Menge über einen Zeitraum. Ship and Debit und Preisschutz gleichen Preise aus, pro Geschäft oder bei sinkenden Listenpreisen."
   - "Ohne Abverkaufsdaten und Distributorbestand prüft die Validierung Belege, nicht Verkäufe. Genau dort entstehen Überzahlungen."
 faq:
@@ -26,7 +26,7 @@ faq:
 draft: false
 ---
 
-Channel Revenue Management lohnt sich für Ship and Debit, wenn ein Hersteller viele Sonderpreisansprüche von Distributoren bekommt und heute von Hand prüft. Ship and Debit heißt: Der Distributor verkauft an einen benannten Endkunden unter seinem eigenen Einkaufspreis und fordert die Differenz ein. Salesforce prüft solche Ansprüche gegen Programmregeln und Transaktionsdaten und ergänzt Preisschutz für sinkende Listenpreise. Das Add-on steht mit 30.000 Dollar pro Org und Jahr in der Liste, Partnerzugang extra. Es trägt nur, wenn Abverkaufs- und Bestandsdaten der Distributoren ankommen, denn ohne sie prüft die Validierung Papier statt Verkäufe.
+Channel Revenue Management lohnt sich für Ship and Debit, wenn ein Hersteller viele Sonderpreisansprüche von Distributoren bekommt und heute von Hand prüft. Ship and Debit heißt: Der Distributor verkauft an einen benannten Endkunden unter seinem eigenen Einkaufspreis und fordert die Differenz ein. Salesforce prüft solche Ansprüche gegen Programmregeln und Transaktionsdaten und ergänzt Preisschutz für sinkende Listenpreise. Das Add-on steht mit 30.000 Dollar pro Org und Jahr in der Liste, Partnerzugang extra. Es trägt nur, wenn Abverkaufs- und Bestandsdaten der Distributoren ankommen, denn ohne sie prüft die Validierung nur, ob die Belege zum Programm passen.
 
 ## Was ist Ship and Debit?
 
@@ -61,7 +61,7 @@ Salesforce veröffentlicht zwei unterschiedliche Sichten:
 | [Preisseite Channel Revenue Management](https://www.salesforce.com/sales/channel-revenue-management/pricing/) | Kein Preis, Angebot auf Anfrage. Setzt eine Sales-Cloud- oder CRM-Lizenz voraus. Enthält 10 Channel-Manager-Admin-Nutzer, Kanalbestandsverfolgung, Deal- und Design-Registrierung, Rebate-, Ship-and-Debit- und Preisschutz-Management. Partnerzugang, weitere Nutzer und Auszahlungen zukaufbar |
 | [Experience-Cloud-Add-on-Seite](https://salesforce.com/manufacturing/cloud/experience-cloud) | Rebate Management „ab 75 Dollar“, ohne Einheit |
 
-Die 30.000 Dollar sind also die Untergrenze, nicht die Summe. Partnerzugang für Distributoren kommt dazu. Die Add-on-Seite der Manufacturing Cloud nennt für Partner Community for Manufacturing 20 Dollar pro Login oder 50 Dollar pro Mitglied und Monat. Ob Auszahlungen gezählt werden und wie viele enthalten sind, sagen die Seiten nicht. Die 75 Dollar für Rebate Management passen nicht zu den 30.000 Dollar. Fragen Sie Salesforce, was davon für Ihren Vertrag gilt und ob Rebate Management allein schon in Ihrer Edition steckt.
+Die 30.000 Dollar decken also das Add-on für die Org, Partnerzugang für Distributoren kommt dazu. Die Add-on-Seite der Manufacturing Cloud nennt für Partner Community for Manufacturing 20 Dollar pro Login oder 50 Dollar pro Mitglied und Monat. Ob Auszahlungen gezählt werden und wie viele enthalten sind, sagen die Seiten nicht. Die 75 Dollar für Rebate Management passen nicht zu den 30.000 Dollar. Fragen Sie Salesforce, was davon für Ihren Vertrag gilt und ob Rebate Management allein schon in Ihrer Edition steckt.
 
 Wie ich daraus einen Vergleich über fünf Jahre gegen den heutigen Prozess mache, beschreibe ich unter [Make-or-Buy und Lizenzprognose](../../leistungen/make-or-buy-lizenzen/).
 
@@ -83,7 +83,7 @@ Abverkauf und Bestand. Ein Anspruch sagt: Ich habe 1.200 Stück zu 90 Dollar an 
 
 Fehlt das, prüft die Validierung, ob die Belege zum Programm passen, aber nicht, ob der Verkauf echt war. Überzahlungen beim Preisschutz entstehen aus derselben Lücke: Ein Distributor meldet Lagerbestand zum alten Preis, den er nicht mehr hat. Die Kanalbestandsverfolgung ist im Paket enthalten, die Daten müssen trotzdem von den Distributoren kommen. Wie Distributorbestand nach Salesforce kommt und wie alt er dann ist, beschreibe ich in [Händlerbestand und Nachschub mit Agentforce](../haendlerbestand-nachschub-agentforce/).
 
-## Ein typisches Szenario, als Annahme: 15 Distributoren und 600 Ansprüche im Monat
+## Szenario: 15 Distributoren und 600 Ansprüche im Monat
 
 Ein typisches Szenario, als Annahme: Ein Hersteller elektronischer Komponenten verkauft über 15 Distributoren in Europa. Pro Monat kommen 600 Ship-and-Debit-Ansprüche per E-Mail, mit Excel-Listen im Anhang. Zwei Personen im Vertriebsinnendienst prüfen sie gegen Sonderpreisfreigaben in einem gemeinsamen Ordner und geben freigegebene Beträge an die Buchhaltung.
 

@@ -1,6 +1,6 @@
 ---
 title: "Partner visit management: dealer visits with KPIs"
-description: "How partner visit management in Manufacturing Cloud turns dealer visits into tasks and KPIs, what reps capture on mobile and what to clarify with Salesforce first."
+description: "How partner visit management in Manufacturing Cloud turns dealer visits into tasks and KPIs, what reps capture on mobile and what to ask Salesforce first."
 pubDate: 2026-10-28
 lang: en
 slug: partner-visit-management-dealer-visits
@@ -64,7 +64,7 @@ Two points are not documented in the sources I checked:
 
 How I would treat both points in the licence plan is described in [Salesforce licences: does everyone need a full one?](../salesforce-licences-full-licence-needed/).
 
-## A typical scenario, as an assumption: 60 dealers, quarterly, five KPIs
+## Scenario: 60 dealers, quarterly, five KPIs
 
 A typical scenario, as an assumption: a manufacturer of agricultural machinery has 60 dealers and six area sales managers. Each dealer is visited once a quarter. The visit checks five KPIs: spare parts stock of the 20 fast movers, number of trained mechanics, demo machines on site, open warranty claims older than 30 days and the share of the quarterly target reached.
 
@@ -76,7 +76,9 @@ Three things decide whether it works:
 2. **Expected values per dealer.** A small dealer and a flagship dealer should not have the same target. Someone has to maintain the expected values, ideally once a year.
 3. **One action plan template.** All quarterly visits use the same template, so values are comparable. Special topics go in ad hoc visits.
 
-If the shared KPIs cannot be agreed, the feature collects data that nobody compares.
+Abandoned visits produce data too. Because the app asks for a reason when a rep ends a visit early, after a year you can see whether mandatory tasks fail for lack of time, a missing contact at the dealer or an unclear KPI. Set the reasons up as a picklist, not as free text, or you cannot report on them.
+
+If the shared KPIs cannot be agreed, the feature collects data that nobody compares. Then the problem is a management question in sales, and no software solves it.
 
 ## When is a simple visit report enough?
 

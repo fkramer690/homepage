@@ -27,6 +27,111 @@ const pin = (x: number, y: number, color = G) =>
   `<g transform="translate(${x} ${y})"><path d="M0 0c-6-8-9-12-9-16a9 9 0 0 1 18 0c0 4-3 8-9 16z" fill="#fff" stroke="${color}" stroke-width="1.4"/><circle cx="0" cy="-16" r="3" fill="${color}"/></g>`;
 
 const drawings: Record<string, Drawing> = {
+  'channel-revenue-ship-and-debit': (l) => `
+    ${box(14, 22, 78, 40)}${t(53, 38, l('MANUFACTURER', 'HERSTELLER'), { fill: D, size: 7, anchor: 'middle' })}${t(53, 51, l('sells at $100', 'verkauft für 100 $'), { size: 6.5, anchor: 'middle' })}
+    ${arrow(92, 42, 120)}
+    ${box(120, 22, 80, 40)}${t(160, 38, 'DISTRIBUTOR', { fill: D, size: 7, anchor: 'middle' })}${t(160, 51, l('sells at $90', 'verkauft für 90 $'), { size: 6.5, anchor: 'middle' })}
+    ${arrow(200, 42, 228)}
+    ${box(228, 22, 78, 40)}${t(267, 38, l('END CUSTOMER', 'ENDKUNDE'), { fill: D, size: 7, anchor: 'middle' })}${t(267, 51, l('> 1,000 units', '> 1.000 Stück'), { size: 6.5, anchor: 'middle' })}
+    <path d="M160 62V80" stroke="${C}" stroke-width="1.3" stroke-dasharray="3 2"/>${t(168, 76, l('claim: $10 per unit', 'Anspruch: 10 $ pro Stück'), { fill: C, size: 7 })}
+    ${box(96, 84, 128, 44, C)}${t(160, 98, l('VALIDATION', 'PRÜFUNG'), { fill: D, size: 7, anchor: 'middle' })}
+    ${check(106, 104)}${t(118, 110, l('rules, terms, stock', 'Regeln, Konditionen, Bestand'), { size: 6.5 })}${cross(110, 120)}${t(118, 124, l('duplicates, quantity', 'Dubletten, Menge'), { size: 6.5 })}
+    ${arrow(224, 106, 248)}${box(248, 92, 58, 28)}${t(277, 104, 'ERP', { fill: D, size: 7, anchor: 'middle' })}${t(277, 114, l('credit note', 'Gutschrift'), { size: 6.5, anchor: 'middle' })}
+    ${tag(14, 136, 150, l('add-on: $30,000 / org / year', 'Add-on: 30.000 $ / Org / Jahr'))}${t(172, 150, l('+ partner access', '+ Partnerzugang'), { size: 7 })}`,
+
+  'field-service-enhanced-scheduling-eso': (l) => `
+    ${box(18, 26, 112, 96)}${t(74, 42, l('OLDER ENGINE', 'ÄLTERE ENGINE'), { fill: D, size: 7.5, anchor: 'middle' })}
+    ${[l('100 skills per resource', '100 Skills pro Ressource'), l('scheduling recipes', 'Scheduling Recipes'), 'Optimization Insights', 'Classic Dispatch Console']
+      .map((s, i) => t(28, 60 + i * 16, s, { size: 7 })).join('')}
+    ${arrow(130, 74, 190, C)}${t(160, 66, l('per territory', 'pro Gebiet'), { fill: C, size: 7, anchor: 'middle' })}
+    ${box(190, 26, 112, 96, C)}${t(246, 42, l('ENHANCED (ESO)', 'ENHANCED (ESO)'), { fill: D, size: 7.5, anchor: 'middle' })}
+    ${[l('250 skills', '250 Skills'), 'Fix Schedule Overlaps', 'Optimization Hub', 'Scheduling Console']
+      .map((s, i) => check(200, 55 + i * 16, i === 3 ? C : G) + t(212, 60 + i * 16, s, { fill: i === 3 ? C : G, size: 7 })).join('')}
+    ${tag(18, 132, 112, l('pilot territory first', 'erst ein Pilotgebiet'))}${t(140, 145, l('new orgs: on by default', 'neue Orgs: Standard'), { size: 7 })}`,
+
+  'field-service-scheduling-console': (l) => `
+    ${box(18, 18, 284, 104)}${t(28, 32, 'SCHEDULING CONSOLE', { fill: D, size: 7.5 })}
+    ${box(26, 40, 66, 74)}${t(59, 54, l('LIST', 'LISTE'), { fill: D, size: 7, anchor: 'middle' })}
+    ${[0, 1, 2].map((i) => `<path d="M34 ${68 + i * 14}H84" stroke="${G}" stroke-width="1"/>`).join('')}
+    ${box(98, 40, 130, 74)}${t(163, 54, 'GANTT', { fill: D, size: 7, anchor: 'middle' })}
+    ${[0, 1, 2].map((i) => `<path d="M104 ${70 + i * 14}H222" stroke="${L}"/><rect x="${110 + i * 26}" y="${64 + i * 14}" width="${30 + (i % 2) * 14}" height="9" rx="2" fill="#fff" stroke="${i === 1 ? C : G}" stroke-width="1.2"/>`).join('')}
+    ${t(192, 87, 'Why?', { fill: C, size: 7 })}
+    ${box(234, 40, 60, 74)}${t(264, 54, l('MAP', 'KARTE'), { fill: D, size: 7, anchor: 'middle' })}${pin(254, 100)}${pin(278, 88)}
+    ${t(18, 138, l('only with Enhanced Scheduling and Optimization', 'nur mit Enhanced Scheduling and Optimization'), { size: 7 })}
+    ${t(18, 152, l('Classic Dispatch Console stays usable in parallel', 'Classic Dispatch Console parallel nutzbar'), { size: 7 })}`,
+
+  'manufacturing-cloud-account-manager-targets': (l) => `
+    ${box(14, 22, 92, 30)}${t(60, 36, l('HEAD OF SALES', 'VERTRIEBSLEITUNG'), { fill: D, size: 7, anchor: 'middle' })}${t(60, 46, l('yearly target', 'Jahresziel'), { size: 6.5, anchor: 'middle' })}
+    <path d="M60 52V62M28 62H92M28 62V72M60 62V72M92 62V72" fill="none" stroke="${G}" stroke-width="1.2"/>
+    ${[['35 %', 28], ['35 %', 60], ['30 %', 92]].map(([s, x]) => box(Number(x) - 14, 72, 28, 18) + t(Number(x), 84, String(s), { size: 7, anchor: 'middle' })).join('')}
+    ${arrow(110, 81, 140, C)}
+    ${box(140, 22, 164, 98)}${t(150, 36, l('DISTRIBUTION', 'VERTEILUNG'), { fill: D, size: 7 })}
+    ${[[l('by account', 'nach Kunde'), l('amount', 'Betrag'), false], [l('by product', 'nach Produkt'), l('amount / list price', 'Betrag / Listenpreis'), true], [l('by month', 'nach Monat'), l('12 equal shares', '12 gleiche Teile'), false]]
+      .map(([a, b, hit], i) => check(150, 46 + i * 22, hit ? C : G) + t(164, 52 + i * 22, String(a), { fill: hit ? C : G, size: 7 }) + t(296, 52 + i * 22, String(b), { size: 6.5, anchor: 'end' })).join('')}
+    ${t(14, 112, l('reorg:', 'Umorganisation:'), { fill: D, size: 7 })}${cross(22, 126)}${t(32, 130, l('invalid', 'ungültig'), { size: 7 })}
+    ${tag(14, 136, 290, l('target, forecast, actuals: one customer and product level', 'Ziel, Prognose, Ist: eine Kunden- und Produktebene'))}`,
+
+  'manufacturing-cloud-add-ons-costs': (l) => `
+    ${t(18, 18, l('SCENARIO: 150 USERS, 400 DEALERS, LIST USD / YEAR', 'SZENARIO: 150 NUTZER, 400 HÄNDLER, LISTE USD / JAHR'), { fill: D, size: 7 })}
+    <rect x="18" y="28" width="203" height="16" rx="2" fill="#fff" stroke="${G}" stroke-width="1.1"/>
+    <rect x="221" y="28" width="81" height="16" rx="2" fill="${C}" fill-opacity="0.18" stroke="${C}" stroke-width="1.1"/>
+    ${t(120, 39.5, l('Sales Core 495K', 'Sales Core 495K'), { size: 7, anchor: 'middle' })}${t(262, 39.5, '+198K', { fill: C, size: 7.5, anchor: 'middle' })}
+    ${[[l('Portal, 100 members + 300 logins', 'Portal, 100 Mitglieder + 300 Logins'), '132K'], [l('Agentforce add-on, 20 users', 'Agentforce-Add-on, 20 Nutzer'), '36K'], ['Channel Revenue Mgmt', '30K']]
+      .map(([s, v], i) => `<path d="M221 ${58 + i * 14}H302" stroke="${L}"/>` + dot(225, 54 + i * 14, C, 2.2) + t(232, 57 + i * 14, String(v), { fill: C, size: 7 }) + t(214, 57 + i * 14, String(s), { size: 6.8, anchor: 'end' })).join('')}
+    ${tag(18, 98, 112, l('+40 % on licences', '+40 % auf Lizenzen'))}
+    <path d="M18 128H302" stroke="${L}"/>
+    ${t(18, 140, l('optional: Connected Assets 180K, Omnistudio +2M calls 120K', 'optional: Connected Assets 180K, Omnistudio +2 Mio. Aufrufe 120K'), { size: 7 })}
+    ${cross(22, 150)}${t(32, 154, l('Manufacturing Intelligence: $220/login or "from $165"?', 'Manufacturing Intelligence: 220 $/Login oder „ab 165 $“?'), { size: 7 })}`,
+
+  'manufacturing-cloud-installed-base-assets': (l) => `
+    ${[['ERP', l('delivery', 'Lieferung')], [l('DEALER', 'HÄNDLER'), l('registration', 'Registrierung')], ['SERVICE', l('commissioning', 'Inbetriebnahme')]]
+      .map(([h, s], i) => box(18, 18 + i * 42, 80, 32) + t(58, 31 + i * 42, String(h), { fill: D, size: 7.5, anchor: 'middle' }) + t(58, 43 + i * 42, String(s), { size: 7, anchor: 'middle' }) + arrow(98, 34 + i * 42, 128, i === 1 ? C : G)).join('')}
+    ${box(128, 26, 76, 100, C)}${t(166, 44, 'ASSET', { fill: D, size: 8, anchor: 'middle' })}
+    ${[l('serial number', 'Seriennummer'), l('product', 'Produkt'), l('owner, location', 'Betreiber, Ort'), l('warranty start', 'Garantiebeginn')].map((s, i) => `<path d="M136 ${52 + i * 18}H196" stroke="${L}"/>` + t(138, 64 + i * 18, s, { size: 7 })).join('')}
+    ${t(216, 26, l('MILESTONES', 'MEILENSTEINE'), { fill: D, size: 7.5 })}
+    <path d="M222 40V100" stroke="${G}" stroke-width="1.2"/>${dot(222, 40, G, 3)}${dot(222, 70, C, 3.5)}${dot(222, 100, G, 3)}
+    ${t(232, 43, l('manufactured', 'Fertigung'), { size: 7 })}${t(232, 73, l('registered', 'Registrierung'), { fill: C, size: 7 })}${t(232, 84, 'Stage: Tentative', { fill: C, size: 6.5 })}${t(232, 103, l('installed', 'Installation'), { size: 7 })}
+    ${tag(212, 122, 94, l('since API 58.0', 'seit API 58.0'))}`,
+
+  'manufacturing-cloud-partner-visit-management': (l) => `
+    <path d="M30 120L64 92L96 104" fill="none" stroke="${G}" stroke-width="1.2" stroke-dasharray="4 3"/>
+    ${pin(64, 92)}${pin(96, 104, C)}${t(96, 120, l('dealer', 'Händler'), { size: 7, anchor: 'middle' })}
+    ${t(14, 30, l('60 dealers × 4 visits', '60 Händler × 4 Besuche'), { fill: D, size: 7 })}${t(14, 44, l('= 240 visits / year', '= 240 Besuche / Jahr'), { size: 7 })}
+    ${box(136, 14, 170, 122)}${t(146, 28, l('5 KPIs PER VISIT', '5 KENNZAHLEN PRO BESUCH'), { fill: D, size: 7 })}${t(296, 28, l('type', 'Typ'), { size: 6.5, anchor: 'end' })}
+    ${[[l('spare parts stock', 'Ersatzteilbestand'), l('integer', 'Ganzzahl')], [l('trained mechanics', 'geschulte Mechaniker'), l('integer', 'Ganzzahl')], [l('demo machines', 'Vorführmaschinen'), l('integer', 'Ganzzahl')], [l('open claims > 30 d', 'Ansprüche > 30 T.'), l('integer', 'Ganzzahl')], [l('target reached', 'Ziel erreicht'), l('percentage', 'Prozent')]]
+      .map(([a, b], r) => `<path d="M146 ${34 + r * 17}H296" stroke="${L}"/>` + t(146, 46 + r * 17, String(a), { size: 6.8 }) + t(296, 46 + r * 17, String(b), { size: 6.5, anchor: 'end' })).join('')}
+    ${t(221, 128, l('expected vs actual', 'Soll gegen Ist'), { fill: C, size: 7.5, anchor: 'middle' })}
+    ${t(14, 152, l('licence and offline use: ask Salesforce', 'Lizenz und Offline: Salesforce fragen'), { size: 7 })}`,
+
+  'manufacturing-cloud-product-service-campaigns': (l) => `
+    ${box(18, 50, 76, 42)}${t(56, 67, l('CAUSAL PART', 'VERURSACHER'), { fill: D, size: 7, anchor: 'middle' })}${t(56, 81, l('valve batch', 'Ventilcharge'), { size: 7, anchor: 'middle' })}
+    ${arrow(94, 71, 116, C)}
+    ${Array.from({ length: 54 }, (_, k) => { const c = k % 9, r = Math.floor(k / 9); const hit = c < 5 && r > 0 && r < 5; return hit ? `<circle cx="${124 + c * 10}" cy="${32 + r * 16}" r="3" fill="${C}"/>` : dot(124 + c * 10, 32 + r * 16, L, 2.5); }).join('')}
+    ${t(124, 130, l('one item per asset', 'ein Posten pro Asset'), { fill: C, size: 7 })}
+    ${t(220, 30, l('DATA MODEL', 'DATENMODELL'), { fill: D, size: 7.5 })}
+    ${[[l('Campaign', 'Kampagne'), 'API 51.0'], [l('Definitions', 'Definitionen'), 'API 65.0'], [l('Serial range', 'Seriennr.-Bereich'), l('batch', 'Charge')], [l('Partner stock', 'Händlerbestand'), l('unsold', 'unverkauft')]]
+      .map(([a, b], i) => `<path d="M220 ${38 + i * 18}H304" stroke="${L}"/>` + t(220, 50 + i * 18, String(a), { size: 7 }) + t(304, 50 + i * 18, String(b), { size: 6.5, anchor: 'end' })).join('')}
+    ${t(56, 108, 'Notation · Repair · Replace', { fill: C, size: 6.5, anchor: 'middle' })}`,
+
+  'manufacturing-cloud-service-vs-service-cloud': (l) => `
+    ${t(18, 20, l('LIST PRICE PER USER AND MONTH', 'LISTENPREIS PRO NUTZER UND MONAT'), { fill: D, size: 7.5 })}
+    ${[[l('Service Cloud Ent. (legacy)', 'Service Cloud Ent. (bisher)'), 175, false], ['Service Cloud Core', 195, false], ['Mfg Cloud Service Core', 275, true]]
+      .map(([n, p, a], i) => t(18, 44 + i * 22, String(n), { size: 7 }) + `<rect x="122" y="${35 + i * 22}" width="${Number(p) * 0.58}" height="12" rx="2" fill="${a ? C : L}" stroke="${a ? C : G}" stroke-width="1"/>` + t(128 + Number(p) * 0.58, 44 + i * 22, '$' + p, { fill: a ? C : G, size: 7.5 })).join('')}
+    ${tag(18, 112, 110, l('+$80 to $100', '+$80 bis $100'))}
+    ${t(146, 118, l('hotline: Service Cloud', 'Hotline: Service Cloud'), { size: 7 })}
+    ${t(146, 132, l('warranty, recalls: Mfg Cloud', 'Garantie, Rückrufe: Mfg Cloud'), { fill: C, size: 7 })}`,
+
+  'revenue-cloud-sap-system-boundaries': (l) => `
+    ${box(18, 26, 104, 96)}${t(70, 42, 'REVENUE CLOUD', { fill: D, size: 7.5, anchor: 'middle' })}
+    ${[l('catalog', 'Katalog'), l('configurator', 'Konfigurator'), l('quote', 'Angebot'), l('approval', 'Freigabe')].map((s, i) => t(30, 60 + i * 15, s, { size: 7 })).join('')}
+    ${box(206, 26, 96, 96)}${t(254, 42, 'SAP S/4HANA', { fill: D, size: 7.5, anchor: 'middle' })}
+    ${[l('material master', 'Materialstamm'), l('conditions', 'Konditionen'), l('sales order', 'Kundenauftrag'), l('machine invoice', 'Maschinenrechnung')].map((s, i) => t(216, 60 + i * 15, s, { size: 7 })).join('')}
+    <path d="M206 50H123" stroke="${G}" stroke-width="1.3" stroke-dasharray="4 3"/><path d="M128 46.5l-5 3.5 5 3.5" fill="none" stroke="${G}" stroke-width="1.3"/>${t(164, 45, l('list prices', 'Listenpreise'), { size: 7, anchor: 'middle' })}
+    <path d="M206 72H123" stroke="${G}" stroke-width="1.3"/><path d="M128 68.5l-5 3.5 5 3.5" fill="none" stroke="${G}" stroke-width="1.3"/>${t(164, 67, l('net price live', 'Nettopreis live'), { size: 7, anchor: 'middle' })}
+    ${arrow(122, 94, 206, C)}${t(164, 89, l('order', 'Auftrag'), { fill: C, size: 7, anchor: 'middle' })}
+    <path d="M206 114H123" stroke="${G}" stroke-width="1.3"/><path d="M128 110.5l-5 3.5 5 3.5" fill="none" stroke="${G}" stroke-width="1.3"/>${t(164, 109, l('order no. · status', 'Auftragsnr. · Status'), { size: 7, anchor: 'middle' })}
+    ${tag(18, 132, 92, l('3 cuts', '3 Schnitte'))}${t(120, 145, l('Billing: subledger, journals to SAP', 'Billing: Nebenbuch, Buchungen an SAP'), { size: 7 })}`,
+
   'manufacturing-cloud-erp-integration': (l) => `
     ${box(14, 30, 78, 92)}${t(53, 70, 'SAP', { fill: D, size: 8, anchor: 'middle' })}${t(53, 83, 'S/4HANA', { size: 7, anchor: 'middle' })}
     ${box(228, 30, 78, 92)}${t(267, 70, 'MANUFACTURING', { fill: D, size: 7, anchor: 'middle' })}${t(267, 83, 'CLOUD', { fill: D, size: 7, anchor: 'middle' })}

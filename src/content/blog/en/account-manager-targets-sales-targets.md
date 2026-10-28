@@ -81,7 +81,7 @@ If targets are set per product and the forecast runs per product category, the r
 
 For the comparison itself, Trailhead describes a [Team Performance dashboard](https://trailhead.salesforce.com/content/learn/modules/tableau-crm-administration-for-manufacturing-cloud/embed-dashboards-on-record-pages) for the account manager target record page. It compares targets with actual data for the current and the last year and shows the unassigned share. It comes from the CRM Analytics app for Manufacturing Cloud, and its content depends on the objects the admin selects when creating the app. The unit names no licence. The current [pricing page](https://www.salesforce.com/manufacturing/cloud/pricing/) lists Tableau Next per edition and does not mention CRM Analytics, so ask Salesforce whether your edition includes the dashboard.
 
-## A typical scenario, as an assumption: 40 account managers and a record limit
+## Scenario: 40 account managers and a record limit
 
 A typical scenario, as an assumption: a manufacturer of drive components with one head of sales, six regional managers and 40 account managers. Each account manager has 150 accounts, and targets should run per account, per product and per month for 60 products.
 

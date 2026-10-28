@@ -26,7 +26,7 @@ faq:
 draft: false
 ---
 
-Channel Revenue Management pays off for ship and debit when a manufacturer handles many special price claims from distributors and checks them by hand today. Ship and debit means the distributor sells to a named end customer below its own purchase cost and claims the difference. Salesforce validates such claims against programme rules and transaction data and adds price protection for falling list prices. The add-on is listed at $30,000 per org and year, partner access extra. It only holds up when sell-through and distributor stock data arrive, because without them the validation checks paperwork, not sales.
+Channel Revenue Management pays off for ship and debit when a manufacturer handles many special price claims from distributors and checks them by hand today. Ship and debit means the distributor sells to a named end customer below its own purchase cost and claims the difference. Salesforce validates such claims against programme rules and transaction data and adds price protection for falling list prices. The add-on is listed at $30,000 per org and year, partner access extra. It only holds up when sell-through and distributor stock data arrive, because without them the validation can only check whether the paperwork fits the programme.
 
 ## What is ship and debit?
 
@@ -61,7 +61,7 @@ Salesforce publishes two different views:
 | [Channel Revenue Management pricing](https://www.salesforce.com/sales/channel-revenue-management/pricing/) | No price, request a quote. Requires a Sales Cloud or CRM licence. Includes 10 channel manager admin users, channel inventory tracking, deal and design registration, rebate, ship and debit and price protection management. Partner access, additional users and payouts available for purchase |
 | [Experience Cloud add-on page](https://salesforce.com/manufacturing/cloud/experience-cloud) | Rebate Management "from $75", without a unit |
 
-So the $30,000 is the floor, not the total. Partner access for distributors comes on top. The Manufacturing Cloud add-ons page lists Partner Community for Manufacturing at $20 per login or $50 per member and month. Whether payouts are counted and how many are included, the pages do not say. The $75 rebate management listing does not fit the $30,000 figure. Ask Salesforce which of these applies to your contract, and whether rebate management alone is already part of your edition.
+So the $30,000 covers the add-on for the org, and partner access for distributors comes on top. The Manufacturing Cloud add-ons page lists Partner Community for Manufacturing at $20 per login or $50 per member and month. Whether payouts are counted and how many are included, the pages do not say. The $75 rebate management listing does not fit the $30,000 figure. Ask Salesforce which of these applies to your contract, and whether rebate management alone is already part of your edition.
 
 How I would turn that into a five-year comparison against the current process is described under [make-or-buy and licence forecasts](../../services/make-or-buy-licences/).
 
@@ -83,7 +83,7 @@ Sell-through and stock. A claim says: I sold 1,200 units to customer X at $90. T
 
 Without these, the validation checks whether the documents match the programme, not whether the sale was real. Overpayments in price protection come from the same gap: a distributor claims stock on hand at the old price that it no longer has. Channel inventory tracking is in the package; the data still has to come from the distributors. How distributor stock reaches Salesforce, and how old it is when it arrives, I describe in [Agentforce for distributor stock and replenishment](../distributor-inventory-replenishment-agentforce/).
 
-## A typical scenario, as an assumption: 15 distributors and 600 claims a month
+## Scenario: 15 distributors and 600 claims a month
 
 A typical scenario, as an assumption: a manufacturer of electronic components sells through 15 distributors in Europe. 600 ship and debit claims arrive per month by email, with Excel lists attached. Two people in sales operations check them against special price approvals in a shared folder and pass approved amounts to finance.
 
