@@ -47,7 +47,7 @@ Die [Limits für Preisbuchdaten](https://developer.salesforce.com/docs/commerce/
 
 | Limit | Wert | Art |
 |---|---|---|
-| Preisbücher je Store | 5 | weich |
+| Preisbücher je Store | 5 | hart |
 | Einträge je Preisbuch | 350.000 | weich |
 | Ausgewertete Preisbücher je Preisaufruf | 25 | hart |
 | Käufergruppen je Preisbuch | 100 | weich |

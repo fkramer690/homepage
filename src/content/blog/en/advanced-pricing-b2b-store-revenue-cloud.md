@@ -47,7 +47,7 @@ Two terms explained, because the rest of the article uses them. A pricing proced
 
 According to Salesforce Help, the Revenue Management features for B2B Commerce are available in orgs with a Commerce Growth or Commerce Advanced licence together with a Revenue Cloud Advanced licence. Revenue Settings must be enabled, and you buy the licences through your account executive.
 
-Two facts from the official pricing pages for budgeting. The [B2B Commerce editions](https://www.salesforce.com/editions-pricing/commerce-cloud/b2b/) show "Contact for Pricing" and are charged as a share of gross merchandise value through the storefront; Salesforce publishes no percentage. The [Revenue Cloud pricing page](https://www.salesforce.com/sales/revenue-lifecycle-management/pricing/) lists Revenue Cloud Advanced at $200 per user and month, billed annually, and notes that it requires a Sales Cloud, Service Cloud or CRM licence. How many Revenue Cloud Advanced users a store with external buyers needs is not stated on either page. Ask that question in writing before the business case, because the answer can move the number a lot.
+Two facts from the official pricing pages for budgeting. The [B2B Commerce editions](https://www.salesforce.com/editions-pricing/commerce-cloud/b2b/) show "Contact for Pricing" and are charged as a share of gross merchandise value through the storefront; Salesforce publishes no percentage. The [Revenue Cloud pricing page](https://www.salesforce.com/sales/revenue-lifecycle-management/pricing/) lists Revenue Cloud Advanced at $200 per user and month, billed annually, and describes it as a separate product bought in addition to a Sales Cloud subscription. How many Revenue Cloud Advanced users a store with external buyers needs is not stated on either page. Ask that question in writing before the business case, because the answer can move the number a lot.
 
 ## How do contract prices reach the buyer?
 
@@ -74,7 +74,7 @@ I would be cautious when:
 - sales quotes in SAP or another CPQ tool and has no plan to move;
 - the store sells mainly spare parts at tier prices, which price books handle.
 
-Where your pricing engine should live in general is a question for the Revenue Cloud masterclass. For the store, the decision follows the price master: the system that sales trusts for a quote should also price the cart.
+Where your pricing engine should live in general is covered in the chapter [catalog, configurator and pricing](../../masterclass/revenue-cloud/product-catalog-configurator-pricing/) of the Revenue Cloud masterclass. For the store, the decision follows the price master: the system that sales trusts for a quote should also price the cart.
 
 ## A typical scenario, as an assumption
 

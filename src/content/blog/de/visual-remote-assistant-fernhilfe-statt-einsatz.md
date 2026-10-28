@@ -10,7 +10,7 @@ categories: [field-service]
 tags: [Visual Remote Assistant, Field Service, Fernservice, Störungshotline, Betriebsrat]
 takeaways:
   - "Visual Remote Assistant schickt dem Kunden einen Link per SMS oder E-Mail. Das Video in beide Richtungen öffnet sich im mobilen Browser, ohne App, Login oder Passwort."
-  - "Das Add-on kostet laut Preisliste vom Oktober 2026 50 € oder 50 Dollar pro Nutzer und Monat und ist in Agentforce 1 Field Service enthalten. Der Kunde braucht keine Lizenz."
+  - "Das Add-on kostet laut Produktseite vom Oktober 2026 50 € oder 50 Dollar pro Nutzer und Monat und ist in Agentforce 1 Field Service enthalten. Der Kunde braucht keine Lizenz."
   - "Video ersetzt den Einsatz, wenn der Bediener den Fehler beheben kann: Parameter, Bedienfehler, Reset. Bei mechanischen Schäden verkürzt es den Einsatz, weil das richtige Teil mitkommt."
   - "Vor der ersten Sitzung klären Sie die Einwilligung zur Aufzeichnung beim Kunden, den Betriebsrat für eigene Mitarbeitende und welche Fehler ohne Einsatz geschlossen werden dürfen."
   - "Der Anfang liegt in Ihrer Störungshistorie: Zählen Sie, wie viele Einsätze weder Teil noch Werkzeug gebraucht haben. Dieser Anteil ist Ihr realistisches Potenzial."
@@ -26,7 +26,7 @@ faq:
 draft: false
 ---
 
-Visual Remote Assistant ersetzt einen Technikereinsatz, wenn der Bediener vor Ort den Fehler mit Anleitung selbst beheben kann: ein falscher Parameter, ein Bedienfehler, ein Reset, ein verschmutzter Sensor. Der Kunde bekommt einen Link per SMS oder E-Mail und öffnet ein Video in beide Richtungen im mobilen Browser, ohne App und ohne Login, und Ihr Mitarbeiter zeichnet direkt ins Bild. Das Add-on kostet laut Preisliste vom Oktober 2026 50 € pro Nutzer und Monat und ist in Agentforce 1 Field Service enthalten. Bei mechanischen Schäden spart das Video nicht den Einsatz, aber den zweiten, weil der Techniker gleich mit dem richtigen Teil kommt.
+Visual Remote Assistant ersetzt einen Technikereinsatz, wenn der Bediener vor Ort den Fehler mit Anleitung selbst beheben kann: ein falscher Parameter, ein Bedienfehler, ein Reset, ein verschmutzter Sensor. Der Kunde bekommt einen Link per SMS oder E-Mail und öffnet ein Video in beide Richtungen im mobilen Browser, ohne App und ohne Login, und Ihr Mitarbeiter zeichnet direkt ins Bild. Das Add-on kostet laut Produktseite vom Oktober 2026 50 € oder 50 Dollar pro Nutzer und Monat und ist in Agentforce 1 Field Service enthalten. Bei mechanischen Schäden spart das Video nicht den Einsatz, aber den zweiten, weil der Techniker gleich mit dem richtigen Teil kommt.
 
 ## Was kann Visual Remote Assistant?
 
@@ -46,7 +46,7 @@ Zwei technische Details aus dem [Installations- und Konfigurationshandbuch](http
 
 ## Was kostet das?
 
-Die Produktseite nennt 50 € oder 50 Dollar pro Nutzer und Monat bei jährlicher Abrechnung. Die [Preisseite für Field Service](https://www.salesforce.com/service/field-service-management/pricing/) führt dieselben 50 Dollar als Add-on und listet Visual Remote Assistant als Bestandteil von Agentforce 1 Field Service für 650 Dollar pro Nutzer und Monat. Trailhead nennt Service-Cloud- oder Field-Service-Lizenzen als Voraussetzung, die Lizenzen für Visual Remote Assistant kaufen Sie über den Account Executive.
+Die Produktseite nennt 50 € oder 50 Dollar pro Nutzer und Monat bei jährlicher Abrechnung. Die [Preisseite für Field Service](https://www.salesforce.com/service/field-service-management/pricing/) führt das Add-on nur in Dollar, mit denselben 50 Dollar, und listet Visual Remote Assistant als Bestandteil von Agentforce 1 Field Service für 650 € oder 650 Dollar pro Nutzer und Monat. Trailhead nennt Service-Cloud- oder Field-Service-Lizenzen als Voraussetzung, die Lizenzen für Visual Remote Assistant kaufen Sie über den Account Executive.
 
 Lizenziert werden die Personen, die Sitzungen starten: Hotline, Remote-Experten, vielleicht erfahrene Techniker. Der Kunde kommt über den Link dazu und braucht nichts. Acht Nutzer kosten zum Listenpreis 400 € im Monat oder 4.800 € im Jahr. Verglichen mit einer einzigen eingesparten Reise ins Ausland ist das wenig. Der eigentliche Aufwand liegt in der Einrichtung, in den Regeln für Ferndiagnosen und in der Schulung der Hotline.
 

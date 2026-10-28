@@ -1,6 +1,6 @@
 ---
 title: "Asset Service Lifecycle Management: Lohnt das Add-on?"
-description: "Was das Add-on Asset Service Lifecycle Management für 75 € und Connected Assets zu Field Service ergänzen, was die Basislizenz kann und wann es sich rechnet."
+description: "Was das Add-on Asset Service Lifecycle Management für 75 Dollar und Connected Assets zu Field Service ergänzen, was die Basislizenz kann und wann es sich rechnet."
 pubDate: 2026-10-28
 lang: de
 slug: asset-service-lifecycle-management-zusatz
@@ -10,7 +10,7 @@ categories: [field-service, manufacturing-cloud]
 contactBrief: licences
 tags: [Field Service, Asset Management, Lizenzen, Garantie, Connected Assets]
 takeaways:
-  - "Asset Service Lifecycle Management kostet 75 Euro pro Nutzer und Monat, Connected Assets 15.000 Euro pro Org und Monat (Preisliste Field Service, Oktober 2026)."
+  - "Asset Service Lifecycle Management kostet 75 Dollar pro Nutzer und Monat, Connected Assets 15.000 Dollar pro Org und Monat (Preisliste Field Service, Oktober 2026, Add-ons nur in Dollar)."
   - "Assets, Asset-Hierarchien, Wartungspläne, Serviceverträge und Entitlements gehören zum Field-Service-Kern. Das Add-on ergänzt Abläufe wie Deckungsauswahl, Reparaturangebote, Rückrufe und Depotreparatur."
   - "Die Preisliste führt Asset Coverage View und interaktive Hierarchie als zukaufbar, sogar bei Agentforce 1 Field Service."
   - "Mehrere Funktionen des Add-ons, etwa Inventur und Nachschub, überschneiden sich mit dem ERP. Führt SAP den Bestand, bringen sie wenig."
@@ -19,7 +19,7 @@ faq:
   - q: "Was ist Asset Service Lifecycle Management in Salesforce?"
     a: "Ein kostenpflichtiges Add-on für Field Service und mehrere Branchen-Clouds. Die Salesforce-Hilfe nennt unter anderem Asset Coverage View, interaktive Asset-Hierarchie, Work Order Estimation, Product Service Campaigns, Depotreparatur, Advanced Exchange, Lagerfunktionen und Stundenzettel."
   - q: "Was kostet Asset Service Lifecycle Management?"
-    a: "Laut Preisliste Field Service vom Oktober 2026 kostet es 75 Euro oder 75 Dollar pro Nutzer und Monat bei jährlicher Abrechnung. Connected Assets kostet separat 15.000 Euro pro Org und Monat."
+    a: "Laut Preisliste Field Service vom Oktober 2026 kostet es 75 Dollar pro Nutzer und Monat bei jährlicher Abrechnung; die deutsche Preisseite nennt die Add-ons nur in Dollar. Connected Assets kostet separat 15.000 Dollar pro Org und Monat."
   - q: "Ist Asset Service Lifecycle Management in Agentforce 1 Field Service enthalten?"
     a: "Laut Vergleichstabelle der Preisliste nicht. Dort steht für Asset Coverage View und Interactive Hierarchy bei Dispatcher, Technician, Field Service Plus und Agentforce 1 Field Service jeweils zukaufbar. Lassen Sie das im Angebot bestätigen."
   - q: "Brauche ich Connected Assets für Wartung nach Betriebsstunden?"
@@ -27,11 +27,11 @@ faq:
 draft: false
 ---
 
-Asset Service Lifecycle Management (ASLM) ist ein Add-on für Salesforce Field Service und kostet laut Preisliste vom Oktober 2026 75 Euro pro Nutzer und Monat. Es ergänzt Abläufe rund um die installierte Basis: eine Deckungsansicht pro Asset, eine interaktive Asset-Hierarchie, Reparaturangebote, Rückrufkampagnen, Depotreparatur, Lagerfunktionen und Stundenzettel. Assets, Wartungspläne, Serviceverträge und Entitlements stecken schon in der Basislizenz. Connected Assets ist ein eigenes Add-on für 15.000 Euro pro Org und Monat für Telemetrie. Ich würde ASLM kaufen, wenn Sie Reparaturen anbieten, Rückrufe fahren oder Teile im Depot reparieren. Für reine Wartungspläne reicht die Basislizenz.
+Asset Service Lifecycle Management (ASLM) ist ein Add-on für Salesforce Field Service und kostet laut Preisliste vom Oktober 2026 75 Dollar pro Nutzer und Monat. Es ergänzt Abläufe rund um die installierte Basis: eine Deckungsansicht pro Asset, eine interaktive Asset-Hierarchie, Reparaturangebote, Rückrufkampagnen, Depotreparatur, Lagerfunktionen und Stundenzettel. Assets, Wartungspläne, Serviceverträge und Entitlements stecken schon in der Basislizenz. Connected Assets ist ein eigenes Add-on für 15.000 Dollar pro Org und Monat für Telemetrie. Ich würde ASLM kaufen, wenn Sie Reparaturen anbieten, Rückrufe fahren oder Teile im Depot reparieren. Für reine Wartungspläne reicht die Basislizenz.
 
 ## Was steckt in Asset Service Lifecycle Management?
 
-Salesforce verkauft Field Service heute als Field Service and Operations. Die [Preisliste](https://www.salesforce.com/de/products/field-service/pricing/) zeigt zwei Asset-Add-ons: Asset Service Lifecycle Management für 75 Euro pro Nutzer und Monat und Connected Assets für 15.000 Euro pro Org und Monat. Beide wurden [im Juni 2024](https://www.salesforce.com/news/stories/field-service-asset-management-news/) als separate Add-ons angekündigt. Die [Produktseite zum Asset Management](https://www.salesforce.com/service/field-service-management/asset-management/) beschreibt ASLM in Marketingsprache, deshalb habe ich die Funktionsliste aus dem [ASLM-Bereich der Salesforce-Hilfe](https://help.salesforce.com/s/articleView?language=en_US&id=xcloud.aslm_asset_service_lifecycle_management.htm&type=5) genommen:
+Salesforce verkauft Field Service heute als Field Service and Operations. Die [Preisliste](https://www.salesforce.com/de/products/field-service/pricing/) zeigt zwei Asset-Add-ons: Asset Service Lifecycle Management für 75 Dollar pro Nutzer und Monat und Connected Assets für 15.000 Dollar pro Org und Monat. Die Lizenzen nennt die deutsche Seite in Euro, die Add-ons nur in Dollar. Beide wurden [im Juni 2024](https://www.salesforce.com/news/stories/field-service-asset-management-news/) als separate Add-ons angekündigt. Die [Produktseite zum Asset Management](https://www.salesforce.com/service/field-service-management/asset-management/) beschreibt ASLM in Marketingsprache, deshalb habe ich die Funktionsliste aus dem [ASLM-Bereich der Salesforce-Hilfe](https://help.salesforce.com/s/articleView?language=en_US&id=xcloud.aslm_asset_service_lifecycle_management.htm&type=5) genommen:
 
 | Funktion | Was sie laut Hilfe tut | Wer sie beim Maschinenbauer nutzt |
 |---|---|---|
@@ -57,7 +57,7 @@ Das Add-on kauft also Arbeit, die auf dem Datenmodell aufsetzt:
 - **Angebot vor dem Einsatz.** Eine Reparaturschätzung, die anhand von Entitlements und Garantien festlegt, was der Kunde zahlt.
 - **Kampagnen in großer Zahl.** Die Produktseite nennt Automatisierung und Durchführung von Servicekampagnen. Der Kern liefert die Objekte, ASLM das Werkzeug, um sie für Hunderte Assets zu füllen.
 
-Was mich in der [Vergleichstabelle der Preisliste](https://www.salesforce.com/service/field-service-management/pricing/) überrascht hat: Die Zeile "Asset Coverage View and Interactive Hierarchy" steht bei Dispatcher, Technician, Field Service Plus und sogar bei Agentforce 1 Field Service für 650 Euro auf "Available for Purchase". Auch die größte Edition enthält sie also nicht. Die Asset-Management-Seite schreibt dagegen, manche Editionen enthielten diese Funktionen bereits, ohne sie zu nennen. Lassen Sie beides im Angebot klären.
+Was mich in der [Vergleichstabelle der Preisliste](https://www.salesforce.com/service/field-service-management/pricing/) überrascht hat: Die Zeile "Asset Coverage View and Interactive Hierarchy" steht bei Dispatcher, Technician, Field Service Plus und sogar bei Agentforce 1 Field Service für 650 € auf "Available for Purchase". Auch die größte Edition enthält sie also nicht. Die Asset-Management-Seite schreibt dagegen, manche Editionen enthielten diese Funktionen bereits, ohne sie zu nennen. Lassen Sie beides im Angebot klären.
 
 ## Welche ASLM-Funktionen braucht ein Hersteller mit SAP wirklich?
 
@@ -65,11 +65,11 @@ Weniger, als die Liste nahelegt. Fünf der Funktionen betreffen den Bestand: Res
 
 Zum Maschinenbauer passen meist die Funktionen, die das ERP auf der Serviceseite schlecht abdeckt: die Deckungsansicht für die Hotline, die Hierarchie für Maschinen mit vielen Baugruppen, die Schätzung für Reparaturangebote und Kampagnen für Nachrüstungen. Depotreparatur lohnt sich für Unternehmen, die zurückgeschickte Baugruppen im eigenen Reparaturzentrum instand setzen.
 
-## Was bringt Connected Assets, und wann sind 15.000 Euro im Monat gerechtfertigt?
+## Was bringt Connected Assets, und wann sind 15.000 Dollar im Monat gerechtfertigt?
 
 Connected Assets ist das Telemetrie-Add-on. Die Asset-Management-Seite nennt vorgefertigte Konnektoren, Telemetrie in Echtzeit, einen Asset Health Score aus Alter, Nutzung, Telemetrie und Reparaturhistorie, 10.000 verbundene digitale Assets und ein "Actionable Telematics Framework". Die Ankündigung vom Juni 2024 beschreibt die Idee: Überschreitet der Health Score eine Schwelle, kann das System eine automatische Korrektur versuchen, etwa ein Firmware-Update, und bei Misserfolg einen Arbeitsauftrag anlegen.
 
-Zum Listenpreis sind das 180.000 Euro im Jahr pro Org. Aus meiner Sicht rechnet sich das nur, wenn eine große vernetzte Flotte Signale liefert, die Servicearbeit auslösen sollen, ohne dass jemand auf ein Dashboard schaut. Für die meisten Maschinenbauer ist der erste Schritt kleiner. Ein Betriebsstundenzähler, den ERP oder IoT-Plattform einmal am Tag schreibt, reicht für Wartungspläne nach Nutzung im Field-Service-Kern. Verdichtete Zustandssignale über Data 360 kosten einen Bruchteil des Add-ons, wie die Rechnung in [Predictive Maintenance: welche Datenbasis Sie brauchen](../predictive-maintenance-salesforce-datenbasis/) zeigt.
+Zum Listenpreis sind das 180.000 Dollar im Jahr pro Org. Aus meiner Sicht rechnet sich das nur, wenn eine große vernetzte Flotte Signale liefert, die Servicearbeit auslösen sollen, ohne dass jemand auf ein Dashboard schaut. Für die meisten Maschinenbauer ist der erste Schritt kleiner. Ein Betriebsstundenzähler, den ERP oder IoT-Plattform einmal am Tag schreibt, reicht für Wartungspläne nach Nutzung im Field-Service-Kern. Verdichtete Zustandssignale über Data 360 kosten einen Bruchteil des Add-ons, wie die Rechnung in [Predictive Maintenance: welche Datenbasis Sie brauchen](../predictive-maintenance-salesforce-datenbasis/) zeigt.
 
 ## Wer führt die Garantie: Field Service, ASLM oder Manufacturing Cloud?
 
@@ -85,11 +85,11 @@ Meine Faustregel:
 
 Ein typisches Szenario, als Annahme: Ein Hersteller von Hydraulikkomponenten arbeitet mit SAP als ERP und Field Service für 30 Nutzer, davon 8 in Hotline und Innendienst auf Field Service Plus, 4 Disponenten und 18 Techniker. Der Service verkauft Reparaturen zurückgeschickter Pumpen und fährt ein bis zwei Nachrüstkampagnen im Jahr. Alle Zahlen sind Annahmen.
 
-**Variante A, das Add-on für alle.** 30 × 75 Euro × 12 = 27.000 Euro im Jahr zum Listenpreis. Auf den Seiten, die ich öffnen konnte, sagt Salesforce nicht, ob jeder Field-Service-Nutzer das Add-on braucht, also ist das die Obergrenze. Die Einrichtung von Schätzung mit Preisprozeduren und Kampagnen dauert angenommen 20 Partnertage.
+**Variante A, das Add-on für alle.** 30 × 75 Dollar × 12 = 27.000 Dollar im Jahr zum Listenpreis. Auf den Seiten, die ich öffnen konnte, sagt Salesforce nicht, ob jeder Field-Service-Nutzer das Add-on braucht, also ist das die Obergrenze. Die Einrichtung von Schätzung mit Preisprozeduren und Kampagnen dauert angenommen 20 Partnertage.
 
 **Variante B, Kern plus Eigenbau.** Eine Lightning-Komponente, die Entitlements auf der Asset-Seite zeigt, ein Flow für Reparaturangebote mit Preisen aus dem ERP und Kampagnenpositionen per Tabellenimport. Angenommen 60 Partnertage Aufbau und 10 Tage Pflege pro Jahr, weil jedes Release und jede Vertragsänderung die Eigenentwicklung berührt.
 
-**Der Vergleich.** Bei angenommen 1.200 Euro Tagessatz kostet Variante A über zwei Jahre 24.000 Euro Einrichtung plus 54.000 Euro Lizenzen, zusammen 78.000 Euro. Variante B kostet 72.000 Euro plus 24.000 Euro Pflege, zusammen 96.000 Euro, und jeder Fehler gehört dem Unternehmen. Genutzt werden drei Funktionen: Deckungsansicht, Schätzung für Depotreparaturen und Kampagnen. Bei drei genutzten Funktionen gewinnt das Add-on. Bräuchte das Unternehmen nur die Deckungsansicht, würde ich Salesforce vor jedem Eigenbau um ein Angebot nur für die Hotline-Nutzer bitten. Wie ich solche Varianten vergleiche, beschreibe ich unter [Make-or-Buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/).
+**Der Vergleich.** Für die Rechnung setze ich Dollar und Euro gleich, so wie die Preisliste die Lizenzen in beiden Währungen gleich bepreist (175 € oder 175 Dollar). Bei angenommen 1.200 Euro Tagessatz kostet Variante A über zwei Jahre 24.000 Euro Einrichtung plus rund 54.000 Euro Lizenzen, zusammen 78.000 Euro. Variante B kostet 72.000 Euro plus 24.000 Euro Pflege, zusammen 96.000 Euro, und jeder Fehler gehört dem Unternehmen. Genutzt werden drei Funktionen: Deckungsansicht, Schätzung für Depotreparaturen und Kampagnen. Bei drei genutzten Funktionen gewinnt das Add-on. Bräuchte das Unternehmen nur die Deckungsansicht, würde ich Salesforce vor jedem Eigenbau um ein Angebot nur für die Hotline-Nutzer bitten. Wie ich solche Varianten vergleiche, beschreibe ich unter [Make-or-Buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/).
 
 ## Wo fangen Sie an?
 

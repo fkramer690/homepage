@@ -47,7 +47,7 @@ Zwei Begriffe vorab, weil der Rest des Artikels sie nutzt. Eine Pricing Procedur
 
 Laut Salesforce-Hilfe sind die Revenue-Management-Funktionen für B2B Commerce in Orgs mit einer Lizenz Commerce Growth oder Commerce Advanced zusammen mit einer Lizenz Revenue Cloud Advanced verfügbar. Die Revenue Settings müssen aktiviert sein, und die Lizenzen kaufen Sie über Ihren Account Executive.
 
-Zwei Fakten aus den offiziellen Preisseiten für das Budget. Die [B2B-Commerce-Editionen](https://www.salesforce.com/editions-pricing/commerce-cloud/b2b/) stehen auf "Contact for Pricing" und werden als Anteil am Bruttowarenwert (GMV) über den Storefront abgerechnet; einen Prozentsatz veröffentlicht Salesforce nicht. Die [Preisseite von Revenue Cloud](https://www.salesforce.com/sales/revenue-lifecycle-management/pricing/) nennt für Revenue Cloud Advanced 200 US-Dollar pro Nutzer und Monat bei jährlicher Abrechnung und setzt eine Lizenz für Sales Cloud, Service Cloud oder CRM voraus. Wie viele Nutzer mit Revenue Cloud Advanced ein Store mit externen Käufern braucht, steht auf keiner der beiden Seiten. Stellen Sie diese Frage schriftlich, bevor Sie den Business Case rechnen, denn die Antwort kann die Zahl stark verschieben.
+Zwei Fakten aus den offiziellen Preisseiten für das Budget. Die [B2B-Commerce-Editionen](https://www.salesforce.com/editions-pricing/commerce-cloud/b2b/) stehen auf "Contact for Pricing" und werden als Anteil am Bruttowarenwert (GMV) über den Storefront abgerechnet; einen Prozentsatz veröffentlicht Salesforce nicht. Die [Preisseite von Revenue Cloud](https://www.salesforce.com/sales/revenue-lifecycle-management/pricing/) nennt für Revenue Cloud Advanced 200 US-Dollar pro Nutzer und Monat bei jährlicher Abrechnung und beschreibt es als eigenes Produkt, das zusätzlich zum Sales-Cloud-Abonnement gekauft wird. Wie viele Nutzer mit Revenue Cloud Advanced ein Store mit externen Käufern braucht, steht auf keiner der beiden Seiten. Stellen Sie diese Frage schriftlich, bevor Sie den Business Case rechnen, denn die Antwort kann die Zahl stark verschieben.
 
 ## Wie kommen Vertragspreise zum Käufer?
 
@@ -74,7 +74,7 @@ Vorsichtig wäre ich, wenn
 - der Vertrieb in SAP oder einem anderen CPQ-Werkzeug kalkuliert und keinen Wechsel plant,
 - der Shop vor allem Ersatzteile zu Stufenpreisen verkauft, die Preisbücher abdecken.
 
-Wo Ihre Preis-Engine grundsätzlich liegen sollte, ist eine Frage für die Masterclass Revenue Cloud. Für den Shop folgt die Entscheidung dem Preis-Master: Das System, dem der Vertrieb bei einem Angebot vertraut, sollte auch den Warenkorb rechnen.
+Wo Ihre Preis-Engine grundsätzlich liegen sollte, behandelt das Kapitel [Produktkatalog, Konfigurator und Preise](../../masterclass/revenue-cloud/produktkatalog-konfigurator-preise/) der Masterclass Revenue Cloud. Für den Shop folgt die Entscheidung dem Preis-Master: Das System, dem der Vertrieb bei einem Angebot vertraut, sollte auch den Warenkorb rechnen.
 
 ## Ein typisches Szenario, als Annahme
 

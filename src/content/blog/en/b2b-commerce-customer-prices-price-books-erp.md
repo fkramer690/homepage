@@ -47,7 +47,7 @@ The [price book data limits](https://developer.salesforce.com/docs/commerce/sale
 
 | Limit | Value | Type |
 |---|---|---|
-| Price books assigned to a store | 5 | soft |
+| Price books assigned to a store | 5 | hard |
 | Entries per price book | 350,000 | soft |
 | Price books evaluated per pricing call | 25 | hard |
 | Buyer groups per price book | 100 | soft |
