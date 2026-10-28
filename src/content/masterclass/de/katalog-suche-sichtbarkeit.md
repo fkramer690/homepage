@@ -43,6 +43,7 @@ titel: Welche Standardobjekte bilden die Kette?
 - **WebStoreBuyerGroup:** verbindet eine Buyer Group mit einem Store.
 - **CommerceEntitlementPolicy:** verbindet Buyer Groups mit Produkten und legt fest, ob Produkt und Preis sichtbar sind.
 - **BuyerGroupPricebook:** hängt Preisbücher an die Buyer Group.
+```
 
 Sichtbarkeit und Preis hängen damit an denselben Gruppen. Wer Buyer Groups nur für das Sortiment schneidet, merkt in [Kapitel 3](../preise-warenkorb-checkout/), dass die Preise eine andere Einteilung bräuchten. Ich entwerfe beides deshalb zusammen. Was B2B Commerce überhaupt ist und was es kostet, steht in [Kapitel 1](../b2b-commerce-lohnt-sich-ueberblick/).
 
@@ -63,7 +64,13 @@ Salesforce dokumentiert die Grenzen auf eigenen Seiten für [Entitlements](https
 | Stores pro Org | 100 | hart |
 | Preisbücher pro Store | 5 | hart |
 
-Die Grenze von 2.000 Buyer Groups pro Produkt hat die unangenehmste Wirkung. Laut Salesforce nimmt die Suchindizierung nur die ersten 2.000 Buyer Groups eines Produkts auf, und der Datenimport prüft die Grenze nicht. Der Import läuft also durch, und einige Händler finden das Teil danach einfach nicht mehr. Auf der Seite zu Buyer Groups steht in einer Anmerkung außerdem ein anderer Wert als in der Tabelle; ich plane mit den 20 aus der Tabelle.
+Die Grenze von 2.000 Buyer Groups pro Produkt hat die unangenehmste Wirkung.
+
+```hinweis achtung
+Laut Salesforce nimmt die Suchindizierung nur die ersten 2.000 Buyer Groups eines Produkts auf, und der Datenimport prüft die Grenze nicht. Der Import läuft also durch, und einige Händler finden das Teil danach einfach nicht mehr.
+```
+
+Auf der Seite zu Buyer Groups steht in einer Anmerkung außerdem ein anderer Wert als in der Tabelle; ich plane mit den 20 aus der Tabelle.
 
 ## Warum nie eine Buyer Group pro Händler?
 

@@ -89,7 +89,17 @@ Ein Startdatum für die neuen Stufen nennt die Meldung nicht. Am 15. April 2026 
 
 ### Was die neuen Anreize für Sie als Kunde bedeuten
 
-Die Logik hat sich verschoben: früher „Lizenz verkauft, Projekt nach Stunden“, jetzt „Agent in Produktion, Verbrauch läuft“. Das ist in Teilen gut für Sie. Ein Partner, der erst am Go-live verdient, hat weniger Interesse an Piloten, die nie produktiv werden. Es gibt aber einen Konflikt. Jede Agentenaktion kostet Flex Credits, und an diesem Verbrauch hängt jetzt die Vergütung Ihres Partners durch Salesforce. Ein Agent, der drei Aktionen statt einer ausführt, ist für Sie teurer und für den Partner kein Nachteil.
+Die Logik hat sich verschoben: früher „Lizenz verkauft, Projekt nach Stunden“, jetzt „Agent in Produktion, Verbrauch läuft“. Das ist in Teilen gut für Sie, es gibt aber einen Konflikt.
+
+```pro-contra
+pro: Was für Sie spricht
+- Ein Partner, der erst am Go-live verdient, will produktive Agenten
+- Weniger Interesse an Piloten, die nie produktiv werden
+contra: Wo der Konflikt liegt
+- Jede Agentenaktion kostet Sie Flex Credits
+- An diesem Verbrauch hängt die Vergütung Ihres Partners durch Salesforce
+- Drei Aktionen statt einer sind für Sie teurer, für den Partner kein Nachteil
+```
 
 Dazu kommt, dass Partner selbst mit Coding-Agenten bauen. Das verkürzt Arbeit, die bisher nach Stunden abgerechnet wurde. Ob deshalb Festpreis oder ergebnisbasierte Verträge besser passen, untersuche ich in [Festpreis statt Aufwand](../../../blog/festpreis-statt-aufwand-ki-salesforce/). Was im Vertrag stehen muss, wenn ein Partner mit KI programmiert, also Offenlegung, Datenumgang, Rechte am Code, kein Zugriff auf Produktion und Review, steht in [Partner mit KI-Coding: Regeln für den Vertrag](../../../blog/partner-ki-coding-regeln-vertrag/).
 

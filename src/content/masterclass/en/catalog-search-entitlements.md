@@ -36,6 +36,8 @@ In Salesforce B2B Commerce, two separate mechanisms decide whether a dealer orde
 
 Salesforce B2B Commerce, which Salesforce now also markets as "Agentforce Commerce for B2B" ([Trailhead](https://trailhead.salesforce.com/content/learn/modules/agentforce-for-guided-shopping-for-b2b-and-d2c/increase-revenue-with-agentforce-for-guided-shopping)), controls access through a chain of standard objects. The [Trailhead unit on how buyers access a store](https://trailhead.salesforce.com/content/learn/modules/b2b-commerce-lightning-experience-data-model/organize-how-buyers-access-your-store) puts it briefly: "Buyers are connected to stores using buyer groups", and entitlement policies "define which products a buyer can see based on their buyer group memberships".
 
+```vertiefung For admins
+title: Which standard objects form the chain?
 - **BuyerAccount:** a normal account that is enabled for buying. Its contacts become buyers or buyer managers.
 - **BuyerGroup and BuyerGroupMember:** the group bundles buyer accounts with the same settings; each membership is its own record.
 - **WebStoreBuyerGroup:** connects a buyer group to a store.

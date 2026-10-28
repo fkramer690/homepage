@@ -64,6 +64,15 @@ All that is documented is one post. On 9 October 2026 Marc Benioff wrote on X: "
 
 The trigger, on the other hand, can be read in the primary source. [Executive Order 14434](https://www.whitehouse.gov/presidential-actions/2026/09/inaugurating-the-era-of-super-intelligence/) of 29 September 2026 tells US executive departments and agencies to write "Super Intelligence" instead of "Artificial Intelligence" in their own documents. Existing regulations stay as they are, no enforceable rights are created, and private companies are not mentioned. Salesforce did not have to rename anything; it was a voluntary choice. That US federal agencies are Salesforce customers and now have to say "SI" is a plausible motive, but it is my assumption.
 
+```zeitleiste
+2026-04 | Headless 360 at TDX, according to Salesforce Ben
+2026-09-15 | Salesforce launches AIforce at Dreamforce
+2026-09-29 | Executive Order 14434 for US executive agencies
+2026-10-09 | Marc Benioff on X: "AIForce is officially SIForce"
+2026-10-12 | Salesforce Ben finds no official announcement
+source: Salesforce announcement of 15 September 2026, Executive Order 14434, Salesforce Ben
+```
+
 For your documents I recommend "AIforce (announced by the CEO as SIForce)" until Salesforce confirms the name in writing. Three names in about six months are also a good reason to structure architecture documents by capability rather than by product name.
 
 ## SI as system integrator: what changes in the partner model

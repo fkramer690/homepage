@@ -71,7 +71,13 @@ None of this is a reproach to partners. Most good partners prefer working in the
 
 A lot. As an [architect on the client side](../../#about), one of my main goals is to keep implementation partners comparable and replaceable. That only works if the foundations belong to the client: the repository, the pipeline, the backlog and the documentation. Then a new partner can be onboarded into a known setup with written standards, and an exiting partner hands over nothing but their user accounts.
 
-It also makes it possible to build internal ownership. In the programme I described in my DevOps article, the release process was eventually handed over to an internal colleague. A handover like that is only realistic when the tools and rights are already on the client side. Otherwise, the internal person inherits a process that still depends on someone else's accounts. Ownership of tools is the basis of good [partner steering and governance](../../services/partner-governance/).
+It also makes it possible to build internal ownership.
+
+```praxis
+In a programme I supported and described in my DevOps article, every pull request went across my desk at first. Once the process was stable, I handed it over to an internal colleague.
+```
+
+A handover like that is only realistic when the tools and rights are already on the client side. Otherwise, the internal person inherits a process that still depends on someone else's accounts. Ownership of tools is the basis of good [partner steering and governance](../../services/partner-governance/).
 
 ## How do you set it up in practice?
 
@@ -85,7 +91,9 @@ Ideally, before the first partner starts. These rules have proven useful:
 6. **Secrets stay in the client's vault.** Integration users and certificates belong to the client and are rotated when a partner leaves.
 7. **Write it into the contract.** The statement of work says that all work products, including code, tickets and documentation, are created in the client's tools.
 
+```hinweis tipp
 If a partner already owns some of the tools, plan the move early and do it in a calm phase, not during an exit. A repository can be moved with its full history in a day. Jira and Miro take more planning, but are still far cheaper to move now than later.
+```
 
 ## Where should you start?
 

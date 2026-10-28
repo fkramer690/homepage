@@ -48,6 +48,7 @@ Offiziell noch nicht. Am 9. Oktober 2026 hat Marc Benioff auf X geschrieben: „
 Hintergrund ist eine US-Executive-Order vom 29. September 2026, [„Inaugurating The Era of Super Intelligence“](https://www.whitehouse.gov/presidential-actions/2026/09/inaugurating-the-era-of-super-intelligence/). Sie verpflichtet die Ministerien und Behörden der Exekutive, in eigenen Dokumenten „Super Intelligence“ statt „Artificial Intelligence“ zu schreiben. Private Unternehmen kommen darin nicht vor; Salesforce musste also nichts umbenennen. Salesforce Ben zählt SIForce als dritten Namen für diese Schicht in gut sechs Monaten, nach Headless 360 zur TDX im April und AIforce zur Dreamforce.
 
 In Ihren eigenen Unterlagen würde ich „AIforce“ schreiben und einmal „(vom CEO als SIForce angekündigt)“ ergänzen. In Bestellformularen und Verträgen steht der Name, den Salesforce dort druckt, und der zählt.
+
 ```zeitleiste
 2026-04-29 | Hosted MCP Server allgemein verfügbar
 2026-08-27 | Claudeforce: Claude wird Standardmodell für Coworker und Slackbot

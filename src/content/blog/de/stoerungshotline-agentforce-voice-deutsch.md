@@ -75,10 +75,21 @@ Die [Flex-Credits-Rate-Card](https://www.salesforce.com/en-us/wp-content/uploads
 
 Eine Fußnote der Rate Card sagt, dass für bestimmte Kunden stattdessen die Nutzungsart Agentforce Voice Minutes gilt. Die [ergänzende Rate Card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Agentforce-Voice-Minutes-Supplemental-Rate-Card-02.03.2026.pdf) setzt dafür 60 Credits pro Minute an, 48 in der Sandbox. Ein Störungsanruf von sechs Minuten kostet dann 360 Credits oder 1,80 €. Triage-Gespräche dauern, fragen Sie also, welches Modell Ihr Vertrag nutzt.
 
-Zwei Punkte sind offen oder kommen dazu:
+```kennzahlen
+30 Credits | pro Sprachaktion in Produktion, 24 in der Sandbox
+0,60 € | pro Anruf mit vier Sprachaktionen zum EU-Listenpreis
+60 Credits | pro Minute bei Agentforce Voice Minutes, 48 in der Sandbox
+quelle: Salesforce Flex Credits Rate Card vom 31.08.2026, ergänzende Rate Card Agentforce Voice Minutes,
+  EU-Preisseite von Agentforce
+```
 
-- **Sprachzähler.** Die Rate Card führt Speech to Text mit 150 Credits pro Stunde Transkription. Ob ein Anruf beim Sprachagenten das zusätzlich auslöst, steht dort nicht, und ich habe keine Salesforce-Seite gefunden, die es sagt. Klären Sie das vor der Unterschrift.
-- **Telefonie und Arbeitsplätze.** Ich habe keine Salesforce-Seite gefunden, die sagt, ob Disponenten, die weitergeleitete Anrufe annehmen, einen eigenen Salesforce-Voice-Arbeitsplatz brauchen. Ich würde damit planen und nachfragen. Die [Preisseite von Salesforce Voice](https://www.salesforce.com/eu/service/call-center-integration/voice-pricing/) nennt Contact Centre mit 125 € pro Nutzer und Monat inklusive unbegrenzter Plattform-Sprachminuten oder Partner Contact Centre mit 50 €, wenn Sie Ihren Telefonieanbieter behalten.
+```hinweis offen
+Die Rate Card führt Speech to Text mit 150 Credits pro Stunde Transkription. Ob ein Anruf beim Sprachagenten das zusätzlich auslöst, steht dort nicht, und ich habe keine Salesforce-Seite gefunden, die es sagt.
+
+Ebenso offen ist, ob Disponenten, die weitergeleitete Anrufe annehmen, einen eigenen Salesforce-Voice-Arbeitsplatz brauchen. Ich würde damit planen und mir beides vor der Unterschrift bestätigen lassen.
+```
+
+Für diese Arbeitsplätze nennt die [Preisseite von Salesforce Voice](https://www.salesforce.com/eu/service/call-center-integration/voice-pricing/) Contact Centre mit 125 € pro Nutzer und Monat inklusive unbegrenzter Plattform-Sprachminuten oder Partner Contact Centre mit 50 €, wenn Sie Ihren Telefonieanbieter behalten.
 
 Wie man Kosten pro Aktion grundsätzlich schätzt, steht in [Flex Credits: Agentforce-Kosten pro Aktion schätzen](../flex-credits-agentforce-kosten-pro-aktion/).
 
