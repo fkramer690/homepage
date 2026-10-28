@@ -102,7 +102,7 @@ Für eine Maschine lässt sich das direkt übertragen. Betriebsstunden werden zu
 - **Prüfungen vor der Bewertung.** Seriennummer zu Asset und Account, Zählerrücksprünge nach einem Steuerungstausch, Lücken, wenn eine Maschine offline war, Dubletten aus wiederholten Übertragungen.
 - **Ein Vertrag, der die Einheit festlegt.** Betriebsstunden, Laststunden oder Gutteile; welcher Zähler verbindlich ist; wie Lücken behandelt werden; das Mindestentgelt, das die Finanzierung der Maschine absichert.
 
-Derselbe Tageszähler steuert oft auch die Wartung nach Betriebsstunden in Field Service, ein Datenstrom kann also beides bedienen. Die Field-Service-Seite behandelt das [Kapitel zu Assets und Wartung](../../field-service/field-service-assets-wartung-teile/). Die Bewertung steckt als "Usage Rating & Digital Wallet" im Billing-Add-on; klären Sie im Order Form, welche Lizenz sie abdeckt. Szenario und Vertrags-Checkliste stehen in [Pay-per-Use für Maschinen](../../../blog/pay-per-use-maschinen-revenue-cloud/).
+Derselbe Tageszähler steuert oft auch die Wartung nach Betriebsstunden in Field Service, ein Datenstrom kann also beides bedienen. Die Field-Service-Sicht steht im [Kapitel zu Assets und Wartung](../../field-service/field-service-assets-wartung-teile/). Die Bewertung steckt als "Usage Rating & Digital Wallet" im Billing-Add-on; klären Sie im Order Form, welche Lizenz sie abdeckt. Szenario und Vertrags-Checkliste stehen in [Pay-per-Use für Maschinen](../../../blog/pay-per-use-maschinen-revenue-cloud/).
 
 Bleiben alle Rechnungen in SAP, würde ich zweimal überlegen, ob die Nutzung in Salesforce bewertet werden soll. Eine dokumentierte Standardübergabe bewerteter Nutzung an ein externes Abrechnungssystem habe ich nicht gefunden.
 

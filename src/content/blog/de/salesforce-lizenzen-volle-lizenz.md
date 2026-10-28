@@ -59,7 +59,7 @@ Gemeinsam ist ihnen: Sie nutzen die Hauptaktivitäten nicht oder übernehmen nur
 
 Ein Rechenbeispiel mit Listenpreisen: 100 Nutzer, die nur lesen und freigeben. Mit Sales Cloud Core sind das 195 € pro Nutzer und Monat, mit Platform Starter 25 €. Der Unterschied liegt bei 170 € pro Nutzer und Monat, also 204.000 € pro Jahr. Über eine Vertragslaufzeit von drei Jahren sind das mehr als 600.000 €.
 
-Bei externen Nutzern ist der Fehler noch teurer. Händler oder Kunden, die mit internen Lizenzen arbeiten, weil ein Portal „später“ kommen sollte, kosten ein Vielfaches einer Portallizenz.
+Bei externen Nutzern ist der Fehler noch teurer. Händler oder Kunden, die mit internen Lizenzen arbeiten, weil ein Portal „später“ kommen sollte, kosten ein Vielfaches einer Portallizenz. Käufer, die in einem B2B-Shop bestellen, brauchen einen eigenen Lizenztyp, siehe [B2B Commerce Lizenzen für Käufer: Wer braucht welche?](../b2b-commerce-lizenzen-kaeufer/).
 
 ## Was können Platform-Lizenzen nicht?
 

@@ -59,7 +59,7 @@ What they have in common: they do not use the main activities, or they only take
 
 An example with list prices: 100 users who only read and approve. With Sales Cloud Core that is $195 per user and month, with Platform Starter $25. The difference is $170 per user and month, or $204,000 per year. Over a three-year contract that is more than $600,000.
 
-With external users the mistake costs even more. Dealers or customers working on internal licences because a portal was supposed to come "later" cost many times a portal licence.
+With external users the mistake costs even more. Dealers or customers working on internal licences because a portal was supposed to come "later" cost many times a portal licence. Buyers who order in a B2B store need their own licence type, covered in [B2B Commerce buyer licences: who needs which one?](../b2b-commerce-buyer-licences/).
 
 ## What can't Platform licences do?
 
