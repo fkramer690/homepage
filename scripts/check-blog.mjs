@@ -4,6 +4,7 @@
 // Frontmatter fields and lengths are validated by src/content.config.ts.
 import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
 import { join } from 'node:path';
+import { blockProse, findBlocks, flowHash, validateBlock } from '../src/lib/content-blocks.mjs';
 
 // Branches and terms that must not appear publicly (see briefing).
 const banned = [/energieversorg/i, /\bversorger\b/i, /\butilit(y|ies)\b/i, /stadtwerke/i];
@@ -68,7 +69,31 @@ function check(collection, rules) {
         categoriesByKey.get(key).set(lang, cats.replace(/\s+/g, ''));
       }
 
-      const text = body.replace(/```[\s\S]*?```/g, '');
+      // Content blocks (```hinweis, ```zeitleiste, …) are prose and count like text;
+      // other fenced code is left out of word counts and wording checks.
+      const blocks = findBlocks(body);
+      let text = body;
+      for (const b of [...blocks].reverse()) text = `${text.slice(0, b.start)}${blockProse(b)}${text.slice(b.end)}`;
+      text = text.replace(/```[\s\S]*?```/g, '');
+      for (const b of blocks) {
+        for (const e of validateBlock(b)) fail(e);
+        if (b.name === 'ablauf' && !existsSync(new URL(`../src/assets/diagrams/${flowHash(b.content)}.svg`, import.meta.url))) {
+          fail('ablauf: diagram not rendered yet, run: node scripts/render-diagrams.mjs');
+        }
+      }
+      // Every article and chapter loosens up its text with content blocks or a table
+      // (see "Content blocks" in docs/blog-guidelines.md); service pages are exempt.
+      if (collection !== 'services') {
+        const tables = (body.match(/^\|.*\|\s*\n\|[\s:|-]+\|\s*$/gm) ?? []).length;
+        const kinds = new Set(blocks.map((b) => b.name));
+        if (tables) kinds.add('table');
+        const wordsNow = text.split(/\s+/).filter(Boolean).length;
+        if (kinds.size < 1) fail('add at least one content block or a table (see "Content blocks" in the guidelines)');
+        else if (wordsNow > 1300 && kinds.size < 2) fail('over 1,300 words: use at least two different content blocks or a block and a table');
+        if (blocks.length > 4) fail(`${blocks.length} content blocks, at most 4 per text`);
+        if (blocks.filter((b) => b.name === 'praxis').length > 1) fail('at most one praxis block per text');
+        if (blocks.filter((b) => b.name === 'hinweis').length > 2) fail('at most two hinweis blocks per text');
+      }
       const words = text.split(/\s+/).filter(Boolean).length;
       if (words < rules.minWords) fail(`${words} words, at least ${rules.minWords} needed`);
       if (words > rules.maxWords) fail(`${words} words, split it up (max ${rules.maxWords})`);

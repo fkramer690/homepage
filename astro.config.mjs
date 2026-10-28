@@ -4,6 +4,7 @@ import sitemap from '@astrojs/sitemap';
 import { satteri } from '@astrojs/markdown-satteri';
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { externalLinks } from './src/lib/external-links.mjs';
+import { contentBlocks } from './src/lib/content-blocks-plugin.mjs';
 
 // The site runs on the custom domain https://www.fk-sd.de (see public/CNAME).
 const site = process.env.SITE_URL ?? 'https://www.fk-sd.de';
@@ -93,7 +94,8 @@ export default defineConfig({
   trailingSlash: 'always',
   markdown: {
     // All external links open in a new tab (checked by scripts/check-links.mjs).
-    processor: satteri({ hastPlugins: [externalLinks({ site })] }),
+    // Content blocks (```hinweis, ```zeitleiste, …) become markup (docs/blog-guidelines.md).
+    processor: satteri({ mdastPlugins: [contentBlocks({ site })], hastPlugins: [externalLinks({ site })] }),
   },
   integrations: [
     sitemap({
