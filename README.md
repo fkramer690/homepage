@@ -35,6 +35,8 @@ The EN and DE versions of an article share the same `translationKey`, which link
 
 Rules for structure, SEO and AI search are in [docs/blog-guidelines.md](docs/blog-guidelines.md); start new articles from [docs/blog-template.md](docs/blog-template.md). `npm run build` runs `scripts/check-blog.mjs` first and fails if an article breaks a rule (`npm run check:blog` runs only the check).
 
+Open ideas and planned articles are in [docs/backlog.md](docs/backlog.md) (German, single source of truth; the repo is public, so no client names or internal notes there).
+
 ### Service pages
 
 Each service on the home page links to its own page under `/leistungen/` (DE) and `/en/services/` (EN), built from Markdown files in `src/content/services/<lang>/` by `src/components/ServicePage.astro`. Rules are in [docs/service-pages.md](docs/service-pages.md); the same build check applies.
