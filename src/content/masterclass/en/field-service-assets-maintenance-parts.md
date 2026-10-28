@@ -106,7 +106,7 @@ Many spare parts calls need no visit at all. If customers can find and order a k
 
 ## Where does warranty belong?
 
-Warranty touches three products, so decide the owner before you buy. Field Service has warranty objects in its data model, ASLM adds coverage views and campaigns, and Manufacturing Cloud brings [Warranty Lifecycle Management](https://trailhead.salesforce.com/content/learn/modules/warranty-administration-and-claims-management-in-manufacturing-cloud/get-started-with-warranty-lifecycle-management) with warranty terms at several product levels and claims that partners and distributors submit through a portal.
+Warranty touches three products, so decide the owner before you buy. Field Service has warranty terms and asset warranties in its [warranty management data model](https://developer.salesforce.com/docs/platform/data-models/guide/field-service-warranty-management.html), ASLM adds coverage views and campaigns, and Manufacturing Cloud brings [Warranty Lifecycle Management](https://trailhead.salesforce.com/content/learn/modules/warranty-administration-and-claims-management-in-manufacturing-cloud/get-started-with-warranty-lifecycle-management) with warranty terms at several product levels and claims that partners and distributors submit through a portal.
 
 My rule: if dealers submit warranty claims, Manufacturing Cloud owns warranty, as described in the Manufacturing Cloud chapter on [warranty and after-sales](../../manufacturing-cloud/warranty-and-after-sales/). If only your own technicians need to see coverage when a visit is booked, the entitlement on the asset is enough and claims stay in the ERP. Two warranty models on the same asset give two answers to the same customer.
 

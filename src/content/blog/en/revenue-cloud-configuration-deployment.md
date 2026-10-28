@@ -37,10 +37,9 @@ For teams coming from CPQ, the differences look like this:
 | Topic | Salesforce CPQ | Revenue Cloud |
 |---|---|---|
 | Where configuration lives | Package objects with the `SBQQ` prefix | Standard objects such as ProductClassification, ProductSellingModel, PriceBookEntry |
-| Metadata part | Small | Decision tables, pricing recipes, context definitions, flows |
-| Status of records | Mostly active flags | Draft, active and inactive states, some activated only through the UI or an API |
-| After the deployment | Usually nothing | Refresh decision tables, sync pricing data, rebuild product index |
-| Tool support | Mature, for example Gearset's external ID wizard | Data templates; Gearset's external ID wizard does not support Revenue Cloud yet |
+| Metadata part | Package plus your own customisation | In addition decision tables, pricing recipes, context definitions |
+| Record states | Active checkbox on price and product rules | Draft, active and inactive states; some activation is manual |
+| Gearset support | Compare and deploy with the external ID wizard | Data deployment templates; the external ID wizard does not support Revenue Cloud yet |
 
 The consequence: a Revenue Cloud release is always two deployments, metadata and data, plus a short list of manual steps. The detailed comparison of both products is in [Salesforce CPQ vs Revenue Cloud: the real differences](../salesforce-cpq-vs-revenue-cloud-differences/).
 

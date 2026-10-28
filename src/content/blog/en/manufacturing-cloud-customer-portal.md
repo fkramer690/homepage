@@ -38,7 +38,7 @@ In the project, the portal had two kinds of features. Customers could see:
 And customers could act:
 
 - **Request new products and prices.** The request goes into the quoting process I describe in [part 2: from quote to sales agreement](../quote-to-sales-agreement-product-configurator/).
-- **Place orders.**
+- **Place orders.** If customers should order from a catalogue with their own prices, that is a B2B store; when a portal is enough is covered in [chapter 1 of the B2B Commerce masterclass](../../masterclass/b2b-commerce/b2b-commerce-worth-it-overview/).
 - **Maintain certain master data themselves**, such as the billing address.
 
 For the manufacturer the benefit is simple: questions like "How much of my framework agreement have I called off?" or "Where is my order?" are answered by the customer without an email to inside sales. For that to hold, the numbers in the portal have to be right. Where the actuals in a sales agreement come from is covered in [part 3: sales agreements, spotting customers behind on volume](../sales-agreements-volume-shortfall-erp/).
@@ -56,7 +56,7 @@ Help also says that Customer Community Plus for Manufacturing does not share lea
 
 In my project, customers had Customer Community Plus for Manufacturing and saw their sales agreements in a reduced list view. So I read Help as describing typical use cases, not a complete list. I still would not rely on it. If customers should see sales agreements in the portal, put that into the quote as a requirement, with written confirmation from Salesforce that the chosen licence covers it.
 
-What portal licences cost and how they differ from internal licences is covered in [Salesforce licences: does everyone need a full one?](../salesforce-licences-full-licence-needed/).
+What portal licences cost and how they differ from internal licences is covered in [Salesforce licences: does everyone need a full one?](../salesforce-licences-full-licence-needed/). How the portal fits into the dealer channel next to rebates and partner visits is in [chapter 3 of the Manufacturing Cloud masterclass](../../masterclass/manufacturing-cloud/dealer-and-partner-channel/).
 
 ## How much of the sales agreement should customers see?
 

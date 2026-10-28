@@ -70,7 +70,7 @@ Trailhead describes an [Accounts Receivable Admin](https://trailhead.salesforce.
 
 ## What does Billing cost?
 
-Revenue Cloud itself has list prices. The [pricing page](https://www.salesforce.com/sales/cpq/pricing/) shows Revenue Cloud Growth at €150 and Revenue Cloud Advanced at €200 per user and month, billed annually, with "Consumption & Invoicing" in Advanced. Revenue Cloud Billing sits next to them as an add-on with "Request a Quote", containing Usage Rating & Digital Wallet, Invoicing Engine & Document Production and Accounting Subledger.
+Revenue Cloud itself has list prices. The [EU pricing page](https://www.salesforce.com/eu/sales/revenue-lifecycle-management/pricing/) shows Revenue Cloud Growth at €150 and Revenue Cloud Advanced at €200 per user and month, billed annually, with "Consumption & Invoicing" in Advanced. On the [US pricing page](https://www.salesforce.com/sales/cpq/pricing/), Revenue Cloud Billing sits next to them as an add-on with "Request a Quote", containing Usage Rating & Digital Wallet, Invoicing Engine & Document Production and Accounting Subledger.
 
 Billing is charged by invoice volume, not by user. The [rate sheet of February 2026](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/documents/pricing/revenue-cloud-billing-rate-sheet-feb-2026.pdf) sets 0.02 billing events per dollar of total invoice amount, so one event per $50. The amount is the subtotal of posted invoices, with shipping and without tax. Other currencies are converted to US dollars at the average rate of the day. Events must be used before the order end date, and nothing rolls over. Salesforce does not publish a price per event.
 

@@ -194,7 +194,7 @@ export const en = {
     linkedin: 'LinkedIn profile',
     speaking: 'Speaker & events',
     certifications: 'Certifications',
-    masterclass: 'AI masterclass: Salesforce in manufacturing',
+    masterclass: 'Masterclasses: Salesforce in manufacturing',
   },
   subpages: {
     speaking: {
@@ -599,6 +599,10 @@ export const en = {
     chapters: '{n} chapters',
     languages: 'English and German',
     open: 'Open the masterclass',
+    homeLabel: 'Masterclasses',
+    homeTitle: 'Knowledge to read up on, chapter by chapter',
+    homeText: 'Six masterclasses take decision makers at manufacturing companies through the Salesforce topics that shape programmes today: AI, DevOps, Manufacturing Cloud, Revenue Cloud, B2B Commerce and Field Service. Free to read, in German and English.',
+    homeAll: 'All masterclasses at a glance',
   },
   floating: {
     label: 'Contact',

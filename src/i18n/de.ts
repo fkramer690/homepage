@@ -196,7 +196,7 @@ export const de: Dict = {
     linkedin: 'LinkedIn-Profil',
     speaking: 'Vorträge & Events',
     certifications: 'Zertifizierungen',
-    masterclass: 'Masterclass KI: Salesforce in der Fertigung',
+    masterclass: 'Masterclasses: Salesforce in der Fertigung',
   },
   subpages: {
     speaking: {
@@ -601,6 +601,10 @@ export const de: Dict = {
     chapters: '{n} Kapitel',
     languages: 'Deutsch und Englisch',
     open: 'Zur Masterclass',
+    homeLabel: 'Masterclasses',
+    homeTitle: 'Wissen zum Nachlesen, Kapitel für Kapitel',
+    homeText: 'Sechs Masterclasses führen Entscheider in Fertigungsunternehmen durch die Salesforce-Themen, die Programme gerade bestimmen: KI, DevOps, Manufacturing Cloud, Revenue Cloud, B2B Commerce und Field Service. Frei lesbar, auf Deutsch und Englisch.',
+    homeAll: 'Alle Masterclasses im Überblick',
   },
   floating: {
     label: 'Kontakt',
