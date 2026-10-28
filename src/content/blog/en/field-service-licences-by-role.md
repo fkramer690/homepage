@@ -51,7 +51,7 @@ Three footnotes on the price list matter more than the prices themselves.
 2. **At least one Dispatcher licence.** Technicians and contractors need at least one Dispatcher in the org to use the scheduling tool. A pure technician rollout without a dispatcher licence does not work.
 3. **No case management on Dispatcher or Technician.** The price list says these two licences cannot be used for contact centre, call centre or customer case management. Field Service Plus can.
 
-The third rule is where I see the most risk. In many machine builders the same three people answer the breakdown line in the morning and plan technicians in the afternoon. On a Dispatcher licence, that is a breach of the licence terms, even if the system technically lets them open a case.
+The third rule is where I see the most risk. In smaller service teams the same three people often answer the breakdown line in the morning and plan technicians in the afternoon. On a Dispatcher licence, that is a breach of the licence terms, even if the system technically lets them open a case.
 
 ## Which role needs which licence?
 
