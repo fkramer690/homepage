@@ -112,11 +112,18 @@ Der Seed-Teil füllt laut Produktseite Developer-, Developer-Pro-, Partial- und 
 
 Meine Reihenfolge nach jedem Refresh einer Partial- oder Full-Sandbox:
 
-1. Maskierung starten und das Ausführungsprotokoll prüfen.
-2. Neue Felder seit dem letzten Lauf in die Maskierung aufnehmen; diese Prüfung steht in der Release-Checkliste.
-3. E-Mail-Felder in Kontakten auf die Maskierungsliste setzen, damit kein Händler eine Testbenachrichtigung bekommt.
-4. Konfigurationsdaten aus dem Repository einspielen, falls die Sandbox einen neueren Stand braucht als die Produktion.
-5. Erst danach Zugänge für Partner und Fachbereich freigeben.
+```schritte
+Maskierung starten
+  Den Lauf starten und das Ausführungsprotokoll prüfen.
+Neue Felder aufnehmen
+  Felder, die seit dem letzten Lauf entstanden sind, in die Maskierung aufnehmen; diese Prüfung steht in der Release-Checkliste.
+E-Mail-Felder maskieren
+  E-Mail-Felder in Kontakten auf die Maskierungsliste setzen, damit kein Händler eine Testbenachrichtigung bekommt.
+Konfiguration einspielen
+  Konfigurationsdaten aus dem Repository laden, falls die Sandbox einen neueren Stand braucht als die Produktion.
+Zugänge freigeben
+  Erst danach Zugänge für Partner und Fachbereich freigeben.
+```
 
 Für Coding-Agenten gilt eine strengere Regel, die [Kapitel 8 der KI-Masterclass](../../ki-salesforce/best-practices-ki-code/) beschreibt: Sie arbeiten in Scratch Orgs und Developer-Sandboxes mit Seed-Daten, nie in einer Full Copy.
 

@@ -73,7 +73,14 @@ Three things make a data step repeatable.
 
 [SFDMU](https://help.sfdmu.com/) is an open-source Salesforce CLI plugin for data migration, licensed under BSD-3 according to its [npm entry](https://www.npmjs.com/package/sfdmu). It copies records directly from org to org or from CSV files, supports insert, upsert, update and delete, handles several related objects in one run and is configured through a single `export.json` file. Field mapping, anonymisation and composite external ID keys come on top. Processing runs locally or on the pipeline runner, with no cloud service in between.
 
-sfdx-hardis runs SFDMU through [deployment actions](https://sfdx-hardis.cloudity.com/salesforce-devops-work-on-user-story-deployment-actions/). An action of type `data` loads records from one of the project's SFDMU workspaces into the target org. Actions are stored in `config/.sfdx-hardis.yml` or in a file per pull request, run once per org by default and are skipped when the metadata deployment failed. A failed action runs again with the next deployment that carries its pull request. How deployment actions fit into the pull request flow is covered in [chapter 5](../building-the-pipeline/). In the free sfdx-hardis training, deployment actions for reference data are part of level 2; my notes are in [what I learned from the free sfdx-hardis training](../../../blog/sfdx-hardis-free-devops-training/), and an introduction is in [sfdx-hardis: open-source Salesforce DevOps explained](../../../blog/sfdx-hardis-open-source-salesforce-devops/).
+sfdx-hardis runs SFDMU through [deployment actions](https://sfdx-hardis.cloudity.com/salesforce-devops-work-on-user-story-deployment-actions/). How deployment actions fit into the pull request flow is covered in [chapter 5](../building-the-pipeline/). In the free sfdx-hardis training, deployment actions for reference data are part of level 2; my notes are in [what I learned from the free sfdx-hardis training](../../../blog/sfdx-hardis-free-devops-training/), and an introduction is in [sfdx-hardis: open-source Salesforce DevOps explained](../../../blog/sfdx-hardis-open-source-salesforce-devops/).
+
+```vertiefung For developers
+title: How do deployment actions of type data run?
+An action of type `data` loads records from one of the project's SFDMU workspaces into the target org. Actions are stored in `config/.sfdx-hardis.yml` or in a file per pull request and run once per org by default.
+
+They are skipped when the metadata deployment failed. A failed action runs again with the next deployment that carries its pull request.
+```
 
 For small seed sets the Salesforce CLI itself is often enough. Salesforce recommends the [data tree commands](https://developer.salesforce.com/docs/platform/sfdx-dev/guide/sfdx-dev-test-data.html) for small sets, such as fewer than 3,000 records, and the data bulk commands for large volumes.
 
