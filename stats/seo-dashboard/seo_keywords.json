@@ -75,22 +75,22 @@
   "key": "de:salesforce devops beratung",
   "lang": "DE",
   "keyword": "salesforce devops beratung",
-  "position": 8,
+  "position": null,
   "previous": null,
   "volume": null,
-  "page": "/blog/warum-devops-salesforce-enterprise-projekte/",
+  "page": null,
   "aiOverview": "ja",
   "aiCited": "nein",
-  "questions": ""
+  "questions": "Was genau macht ein DevOps? | Was macht Salesforce? | Was ist besser, SAP oder Salesforce? | Wird Salesforce steigen?"
  },
  {
   "key": "de:salesforce release management",
   "lang": "DE",
   "keyword": "salesforce release management",
-  "position": 37,
+  "position": null,
   "previous": null,
   "volume": 10,
-  "page": "/en/services/devops-release-management/",
+  "page": null,
   "aiOverview": "ja",
   "aiCited": "nein",
   "questions": ""
@@ -117,7 +117,7 @@
   "page": null,
   "aiOverview": "ja",
   "aiCited": "nein",
-  "questions": ""
+  "questions": "What is DevOps and how does it apply to Salesforce? | Will AI replace Salesforce Developer? | What is a Salesforce developer's salary? | What are the four types of sandboxes in Salesforce?"
  },
  {
   "key": "de:salesforce nearshore",
@@ -141,13 +141,13 @@
   "page": null,
   "aiOverview": "ja",
   "aiCited": "nein",
-  "questions": "Was kostet ein CRM-System im Monat? | Auf welcher Cloud läuft Salesforce? | Was ist besser, SAP oder Salesforce? | Wie gut ist Salesforce?"
+  "questions": "Was kostet ein CRM-System im Monat? | Was ist besser, SAP oder Salesforce? | Ist Salesforce kostenlos? | Was macht Salesforce so besonders?"
  },
  {
   "key": "de:salesforce field service",
   "lang": "DE",
   "keyword": "salesforce field service",
-  "position": 33,
+  "position": 27,
   "previous": null,
   "volume": 170,
   "page": "/blog/salesforce-field-service-lohnt-sich/",
@@ -159,7 +159,19 @@
   "key": "de:salesforce field service einführung",
   "lang": "DE",
   "keyword": "salesforce field service einführung",
-  "position": 27,
+  "position": 29,
+  "previous": null,
+  "volume": null,
+  "page": "/blog/salesforce-field-service-lohnt-sich/",
+  "aiOverview": "ja",
+  "aiCited": "nein",
+  "questions": ""
+ },
+ {
+  "key": "de:field service lizenzen salesforce",
+  "lang": "DE",
+  "keyword": "field service lizenzen salesforce",
+  "position": 11,
   "previous": null,
   "volume": null,
   "page": "/blog/salesforce-field-service-lohnt-sich/",
@@ -225,7 +237,7 @@
   "page": null,
   "aiOverview": "ja",
   "aiCited": "nein",
-  "questions": "Is Salesforce phasing out CPQ? | Is CPQ being phased out? | Is CPQ end of life? | What will replace Salesforce CPQ?"
+  "questions": ""
  },
  {
   "key": "de:salesforce b2b commerce",
@@ -249,7 +261,7 @@
   "page": null,
   "aiOverview": "ja",
   "aiCited": "nein",
-  "questions": "Was ist besser, SAP oder Salesforce? | Was ist B2B-Commerce? | Was kostet Salesforce? | Was macht Salesforce so besonders?"
+  "questions": "Was ist besser, SAP oder Salesforce? | Was ist B2B-Commerce? | Was kostet Salesforce? | Wie hoch sind die Preise für CRM-Systeme?"
  },
  {
   "key": "de:agentforce hersteller",
@@ -261,7 +273,7 @@
   "page": null,
   "aiOverview": "ja",
   "aiCited": "nein",
-  "questions": "Was ist Agentforce? | Wie hoch sind die Kosten für Agentforce? | Was genau macht die Firma Salesforce? | Welche Unternehmen gehören zu Salesforce?"
+  "questions": "Was macht Salesforce? | Wer sind Konkurrenten von Salesforce? | Wie hoch ist der Umsatz von Salesforce? | Wo befindet sich der Hauptsitz von Salesforce in Deutschland?"
  },
  {
   "key": "de:agentforce kosten",
@@ -271,9 +283,9 @@
   "previous": null,
   "volume": null,
   "page": null,
-  "aiOverview": "ja",
+  "aiOverview": "nein",
   "aiCited": "nein",
-  "questions": "Ist Trailhead kostenlos? | Was macht Salesforce so besonders? | Was macht Agentforce? | Wie hoch sind die Lizenzkosten für Salesforce?"
+  "questions": "Was ist Agentforce? | Wie teuer ist eine Salesforce Lizenz? | Ist Trailhead kostenlos? | Ist Salesforce kostenlos?"
  },
  {
   "key": "de:flex credits agentforce",
@@ -303,7 +315,7 @@
   "key": "de:salesforce document builder",
   "lang": "DE",
   "keyword": "salesforce document builder",
-  "position": 17,
+  "position": 39,
   "previous": null,
   "volume": 10,
   "page": "/en/blog/salesforce-service-documents-document-builder/",
@@ -321,7 +333,139 @@
   "page": null,
   "aiOverview": "ja",
   "aiCited": "nein",
-  "questions": "What is Salesforce customer 360? | What are the five pillars of Azure? | Is Salesforce in AWS or Azure? | What is MVC architecture in Salesforce?"
+  "questions": ""
+ },
+ {
+  "key": "de:sap to salesforce",
+  "lang": "DE",
+  "keyword": "sap to salesforce",
+  "position": null,
+  "previous": null,
+  "volume": 170,
+  "page": null,
+  "aiOverview": "ja",
+  "aiCited": "nein",
+  "questions": "How to integrate Salesforce with Salesforce? | Is SAP the same thing as Salesforce? | Why is Salesforce falling? | Who is Salesforce's biggest competitor?"
+ },
+ {
+  "key": "de:salesforce implementation partner",
+  "lang": "DE",
+  "keyword": "salesforce implementation partner",
+  "position": null,
+  "previous": null,
+  "volume": 30,
+  "page": null,
+  "aiOverview": "ja",
+  "aiCited": "nein",
+  "questions": ""
+ },
+ {
+  "key": "de:salesforce partner deutschland",
+  "lang": "DE",
+  "keyword": "salesforce partner deutschland",
+  "position": null,
+  "previous": null,
+  "volume": 20,
+  "page": null,
+  "aiOverview": "ja",
+  "aiCited": "nein",
+  "questions": ""
+ },
+ {
+  "key": "de:salesforce lizenz kosten",
+  "lang": "DE",
+  "keyword": "salesforce lizenz kosten",
+  "position": null,
+  "previous": null,
+  "volume": 20,
+  "page": null,
+  "aiOverview": "ja",
+  "aiCited": "nein",
+  "questions": "Was kostet ein CRM-System im Monat? | Auf welcher Cloud läuft Salesforce? | Was ist besser, SAP oder Salesforce? | Wie hoch ist der Umsatz von Salesforce?"
+ },
+ {
+  "key": "de:was ist agentforce",
+  "lang": "DE",
+  "keyword": "was ist agentforce",
+  "position": null,
+  "previous": null,
+  "volume": 20,
+  "page": null,
+  "aiOverview": "ja",
+  "aiCited": "nein",
+  "questions": "Was macht Salesforce? | Welche KI-Agenten sind für Privatpersonen geeignet? | Was ist Agent Software? | Welche Beispiele gibt es für KI-Agenten?"
+ },
+ {
+  "key": "de:salesforce field service license",
+  "lang": "DE",
+  "keyword": "salesforce field service license",
+  "position": 38,
+  "previous": null,
+  "volume": 10,
+  "page": "/en/blog/salesforce-field-service-worth-it/",
+  "aiOverview": "ja",
+  "aiCited": "nein",
+  "questions": "How much does Salesforce Field Service cost? | What is Salesforce field service? | What are the types of Salesforce licenses? | How to enable field service in Salesforce?"
+ },
+ {
+  "key": "de:salesforce manufacturing cloud vs sales cloud",
+  "lang": "DE",
+  "keyword": "salesforce manufacturing cloud vs sales cloud",
+  "position": 30,
+  "previous": null,
+  "volume": 10,
+  "page": "/blog/manufacturing-cloud-wann-lohnt-sie-sich/",
+  "aiOverview": "ja",
+  "aiCited": "nein",
+  "questions": "What is Salesforce Manufacturing Cloud? | What is the difference between Salesforce service Cloud and sales Cloud? | What is the difference between Sfdc and SFCC? | What are the different types of Salesforce clouds?"
+ },
+ {
+  "key": "de:salesforce manufacturing cloud pricing",
+  "lang": "DE",
+  "keyword": "salesforce manufacturing cloud pricing",
+  "position": null,
+  "previous": null,
+  "volume": 10,
+  "page": null,
+  "aiOverview": "ja",
+  "aiCited": "nein",
+  "questions": "What is manufacturing cloud in Salesforce? | What is the annual cost of Salesforce Cloud? | Why is Salesforce so expensive? | How expensive is Salesforce data Cloud?"
+ },
+ {
+  "key": "de:salesforce cpq end of life",
+  "lang": "DE",
+  "keyword": "salesforce cpq end of life",
+  "position": null,
+  "previous": null,
+  "volume": 10,
+  "page": null,
+  "aiOverview": "ja",
+  "aiCited": "nein",
+  "questions": ""
+ },
+ {
+  "key": "de:salesforce field service implementation guide",
+  "lang": "DE",
+  "keyword": "salesforce field service implementation guide",
+  "position": null,
+  "previous": null,
+  "volume": 10,
+  "page": null,
+  "aiOverview": "ja",
+  "aiCited": "nein",
+  "questions": ""
+ },
+ {
+  "key": "en:salesforce solution architect freelance",
+  "lang": "EN",
+  "keyword": "salesforce solution architect freelance",
+  "position": null,
+  "previous": null,
+  "volume": null,
+  "page": null,
+  "aiOverview": "ja",
+  "aiCited": "nein",
+  "questions": ""
  },
  {
   "key": "en:salesforce consultant germany",
@@ -429,7 +573,7 @@
   "page": null,
   "aiOverview": "ja",
   "aiCited": "nein",
-  "questions": "Is Salesforce revenue Cloud the same as CPQ? | Is Salesforce discontinuing CPQ? | What is Salesforce revenue Cloud called now? | Is Salesforce CPQ hard?"
+  "questions": ""
  },
  {
   "key": "en:salesforce b2b commerce pricing",
@@ -459,10 +603,10 @@
   "key": "en:salesforce document builder limitations",
   "lang": "EN",
   "keyword": "salesforce document builder limitations",
-  "position": 4,
+  "position": 6,
   "previous": null,
   "volume": null,
-  "page": "/en/blog/salesforce-service-documents-document-builder/",
+  "page": "/en/blog/salesforce-document-builder-limits-workarounds/",
   "aiOverview": "ja",
   "aiCited": "nein",
   "questions": ""
