@@ -66,6 +66,8 @@ Three decisions determine whether the numbers are right:
 
 Which system leads for which data is part of my work on [Salesforce integration](../../../services/salesforce-integration/).
 
+This matches my own project experience: I have introduced sales agreements with actuals from the ERP in Manufacturing Cloud, and the ERP interface was one of the stumbling blocks. Settle early which orders and deliveries count as actuals and who owns the data.
+
 ## Account forecasting or advanced account forecasting?
 
 Account forecasting is the sales volume forecast of Manufacturing Cloud: quantities and revenue per customer, product and period, calculated from orders, opportunities and sales agreements and adjusted by people. It comes in two versions.

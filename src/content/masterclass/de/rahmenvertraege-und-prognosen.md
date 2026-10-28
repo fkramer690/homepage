@@ -66,6 +66,8 @@ Drei Entscheidungen bestimmen, ob die Zahlen stimmen:
 
 Welches System für welche Daten führend ist, kläre ich im Rahmen von [Salesforce-Schnittstellen](../../../leistungen/salesforce-schnittstellen/).
 
+Das ist auch meine eigene Projekterfahrung: Ich habe Rahmenverträge mit Ist-Mengen aus dem ERP in Manufacturing Cloud eingeführt, und die ERP-Schnittstelle war dabei einer der Stolpersteine. Klären Sie deshalb früh, welche Aufträge und Lieferungen als Ist zählen und wer die Daten verantwortet.
+
 ## Account Forecasting oder Advanced Account Forecasting?
 
 Account Forecasting ist die Absatzprognose der Manufacturing Cloud: Mengen und Umsätze pro Kunde, Produkt und Zeitraum, gerechnet aus Aufträgen, Opportunities und Sales Agreements und von Menschen angepasst. Es gibt sie in zwei Varianten.

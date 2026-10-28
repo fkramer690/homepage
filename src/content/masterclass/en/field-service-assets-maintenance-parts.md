@@ -48,6 +48,8 @@ Everything else stays in the PLM parts list. For most machines that leaves two o
 
 Two decisions come before the first ERP load. First, values that differ per series, such as a firmware version, go into asset attributes. The [AssetAttribute object](https://developer.salesforce.com/docs/atlas.en-us.field_service_dev.meta/field_service_dev/sforce_api_objects_assetattribute.htm), available since API version 57.0, stores a value per asset against an attribute definition, so a new machine series needs no new custom field. Counters that drive maintenance stay number fields on the asset. Second, someone owns the tree after delivery. The ERP delivers the installed base, but a year later a technician exchanges a gearbox. One system has to lead from then on, or nobody trusts the tree.
 
+From my own project experience: in my Field Service projects, spare parts and the installed base came from the ERP, and that is where two stumbling blocks were, the data quality of the assets and the ERP interfaces. Check serial numbers and locations before maintenance plans build on them.
+
 ## Service contract, maintenance plan, entitlement: which object does what?
 
 A maintenance contract does not live in one object. In Field Service it is split three ways:

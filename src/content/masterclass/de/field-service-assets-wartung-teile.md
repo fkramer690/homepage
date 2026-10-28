@@ -48,6 +48,8 @@ Alles andere bleibt in der Stückliste im PLM. Bei den meisten Maschinen bleiben
 
 Zwei Entscheidungen gehören vor den ersten Import aus dem ERP. Erstens: Werte, die sich je Baureihe unterscheiden, etwa eine Firmware-Version, kommen in Asset-Attribute. Das [Objekt AssetAttribute](https://developer.salesforce.com/docs/atlas.en-us.field_service_dev.meta/field_service_dev/sforce_api_objects_assetattribute.htm), verfügbar seit API-Version 57.0, speichert einen Wert pro Asset zu einer Attributdefinition, eine neue Baureihe braucht also kein neues Feld. Zähler, die Wartung auslösen, bleiben Zahlenfelder am Asset. Zweitens: Jemand verantwortet den Baum nach der Auslieferung. Das ERP liefert die installierte Basis, aber ein Jahr später tauscht ein Techniker ein Getriebe oder ein Händler rüstet einen Roboter nach. Ab dann muss ein System führen. Eine Mischung aus beiden ergibt eine Hierarchie, der niemand traut.
 
+Aus eigener Projekterfahrung: In meinen Field-Service-Projekten kamen Ersatzteile und installierte Basis aus dem ERP, und genau dort lagen zwei Stolpersteine, die Datenqualität der Assets und die ERP-Schnittstellen. Prüfen Sie Seriennummern und Standorte, bevor Wartungspläne darauf aufbauen.
+
 ## Servicevertrag, Wartungsplan, Entitlement: Welches Objekt macht was?
 
 Ein Wartungsvertrag steckt nicht in einem Objekt. In Field Service verteilt er sich auf drei:

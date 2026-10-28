@@ -49,6 +49,8 @@ Kaum etwas davon entsteht in Field Service. Assets kommen aus dem ERP, Skills au
 
 Mein Einstieg in die Datenprüfung ist immer derselbe: die gescheiterten Einsätze der letzten drei Monate, jeweils mit Ursache. Teile fehlten, kein Zugang zur Maschine, falscher Techniker, Techniker abwesend. Die häufigste Ursache zeigt, welche Daten zuerst sauber sein müssen.
 
+Aus eigener Projekterfahrung: Ich habe Field Service für Wartung, Störungseinsätze und Inbetriebnahmen eingeführt, mit automatischer Planung statt reiner Disposition per Hand. Ob die Engine gute Vorschläge macht, hing dort vor allem an den Stammdaten aus diesem Abschnitt.
+
 ## Wie entscheidet die Scheduling Engine?
 
 Die Engine vergibt Termine nach einer Scheduling Policy. Work Rules filtern Techniker heraus, die einen Einsatz nicht übernehmen können, etwa Match Skills oder die Regel für Besuchszeiten. Service Objectives bewerten die übrigen mit einem Gewicht: kurze Fahrt, früher Termin, bevorzugter Techniker. Field Service bringt vier Policies mit: Customer First, High Intensity, Soft Boundaries und Emergency. Ich starte mit Customer First und passe die Gewichte an, statt eine Policy von Grund auf zu bauen.
