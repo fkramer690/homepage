@@ -60,7 +60,7 @@ Weil jede Prüfung eine Frage an die Anlage ist. Ist diese Seriennummer noch in 
 Diese Fragen beantwortet die Asset Warranty nur, wenn die Anlage mit ihren Daten in Salesforce steht. Bei vielen Herstellern ist genau das die Lücke:
 
 - **Verkauf über Händler.** Der Hersteller liefert an den Händler, der Händler verkauft an den Endkunden. Ob und wann die Anlage installiert wurde, weiß nur der Händler. Ohne Registrierung beim Verkauf fehlt das Startdatum der Garantie.
-- **Installierte Basis im ERP.** Seriennummern stehen im ERP oder in der Fertigung, aber nicht als Anlagen in Salesforce. Dann braucht es eine Schnittstelle, bevor der erste Anspruch geprüft werden kann.
+- **Installierte Basis im ERP.** Seriennummern stehen im ERP oder in der Fertigung, aber nicht als Anlagen in Salesforce. Dann braucht es eine Schnittstelle, bevor der erste Anspruch geprüft werden kann. Wie die installierte Basis nach Salesforce kommt, steht in [Installierte Basis in Manufacturing Cloud](../installierte-basis-asset-meilensteine/).
 - **Nutzung.** Betriebsstunden oder Zyklen kommen von der Anlage selbst, vom Händler oder gar nicht. Ist die Nutzung Teil der Bedingung, braucht sie eine Quelle.
 
 Für den Agenten aus Winter '27 gilt das noch stärker. Ein Agent, der Deckung prüft, liest dieselben Felder wie ein Mensch, nur schneller und ohne nachzufragen. Fehlen die Daten, bewertet er auf Lücken. Warum ich bei Agenten zuerst auf die Datenqualität schaue, beschreibe ich in [Agentforce: Business Value und Datenqualität zuerst](../agentforce-business-value-datenqualitaet/).
@@ -77,7 +77,7 @@ Damit das funktioniert, muss das verursachende Teil im Anspruch sauber erfasst s
 
 An der Tür des Kunden. Die Manufacturing Cloud klärt, ob ein Schaden gedeckt ist, wer welchen Betrag bekommt und wer am Ende zahlt. Wer wann mit welchem Ersatzteil zum Kunden fährt, ist eine Frage für Field Service. Dasselbe gilt für Wartungsverträge und zugesagte Reaktionszeiten, die in Salesforce über Service-Verträge und Entitlements laufen. Wie das aussieht, beschreibt [Teil 5 der Field-Service-Serie](../salesforce-field-service-wartungsvertraege/).
 
-Beide Themen treffen sich an der Anlage. Dieselbe Anlage trägt die Garantie, die Wartungshistorie und die Arbeitsaufträge. Wer beides einführt, sollte das Anlagenmodell einmal entwerfen, nicht pro Projekt. Ob sich Field Service lohnt, beschreibt die [Field-Service-Serie](../salesforce-field-service-lohnt-sich/).
+Beide Themen treffen sich an der Anlage. Dieselbe Anlage trägt die Garantie, die Wartungshistorie und die Arbeitsaufträge. Wer beides einführt, sollte das Anlagenmodell einmal entwerfen, nicht pro Projekt. Wo die Grenze im Detail verläuft, steht in [Kapitel 4 der Masterclass Manufacturing Cloud](../../masterclass/manufacturing-cloud/garantie-und-after-sales/). Ob sich Field Service lohnt, beschreibt die [Field-Service-Serie](../salesforce-field-service-lohnt-sich/).
 
 ## Wann lohnt sich die Garantieabwicklung in Salesforce?
 

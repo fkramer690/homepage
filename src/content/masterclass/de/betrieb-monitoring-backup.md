@@ -6,6 +6,7 @@ slug: betrieb-monitoring-backup
 course: devops
 translationKey: devops-09
 chapter: 9
+pubDate: 2026-10-28
 short: "Betrieb und Monitoring"
 summary: "Was nach dem Go-live dazugehört: tägliches Org-Monitoring, getestete Backups, sichtbare technische Schulden, DORA-Kennzahlen und ein Hotfix-Weg."
 takeaways:

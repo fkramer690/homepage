@@ -93,7 +93,7 @@ In one manufacturing project I evaluated Manufacturing Cloud and decided against
 - **Errors in the spreadsheet.** The calculation is laborious today, error-prone or depends on one person.
 - **Dealers ask.** Inside sales regularly answers questions about rebate status.
 
-I would hold back with a simple annual bonus for a few customers. Many ERP systems can settle that through pricing conditions, without a second logic in Salesforce. Whether Manufacturing Cloud pays off as a whole is covered in [part 1 of this series](../salesforce-manufacturing-cloud-is-it-worth-it/).
+I would hold back with a simple annual bonus for a few customers. Many ERP systems can settle that through pricing conditions, without a second logic in Salesforce. Rebates reward volume; price claims from distributors are a different process, see [ship and debit](../ship-and-debit-price-protection-distributors/). Whether Manufacturing Cloud pays off as a whole is covered in [part 1 of this series](../salesforce-manufacturing-cloud-is-it-worth-it/).
 
 ## Where should you start?
 

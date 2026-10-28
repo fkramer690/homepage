@@ -6,6 +6,7 @@ slug: release-management-basics
 course: devops
 translationKey: devops-01
 chapter: 1
+pubDate: 2026-10-28
 short: "Why releases decide"
 summary: "The core terms, the cost of bad releases with several partners and five maturity stages from change sets to your own pipeline."
 takeaways:

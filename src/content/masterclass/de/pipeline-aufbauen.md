@@ -6,6 +6,7 @@ slug: pipeline-aufbauen
 course: devops
 translationKey: devops-05
 chapter: 5
+pubDate: 2026-10-28
 short: "Die Pipeline bauen"
 summary: "Welche Bausteine eine Salesforce-Pipeline braucht, vom Pull Request über Testlevel und Delta-Deployments bis zum Login ohne Passwort."
 takeaways:

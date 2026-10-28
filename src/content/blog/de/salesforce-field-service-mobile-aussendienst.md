@@ -74,7 +74,7 @@ Eine schnelle digitale Kopie ist aber nur so gut wie das Formular selbst. Typisc
 - **Fehlende Struktur**, zum Beispiel Fehlerbeschreibungen als Freitext statt als Codes, die das Qualitätsmanagement auswerten kann.
 - **Formulare, die sich je Region oder Team unterscheiden**, für denselben Einsatz.
 
-Bevor Formulare in großem Stil digitalisiert werden, lohnt sich eine Entscheidung über ein Zieldatenmodell für Serviceprotokolle: Welche Werte werden als Felder erfasst, welche Auswahllisten werden geteilt, wie hängen Ergebnisse an Anlage und Auftrag? Das ist klassische [Architekturarbeit](../../leistungen/salesforce-architektur/), und sie entscheidet, ob die Daten später für Reporting, KI-Agenten oder die Anbindung an das ERP nutzbar sind.
+Bevor Formulare in großem Stil digitalisiert werden, lohnt sich eine Entscheidung über ein Zieldatenmodell für Serviceprotokolle: Welche Werte werden als Felder erfasst, welche Auswahllisten werden geteilt, wie hängen Ergebnisse an Anlage und Auftrag? Das ist klassische [Architekturarbeit](../../leistungen/salesforce-architektur/), und sie entscheidet, ob die Daten später für Reporting, KI-Agenten oder die Anbindung an das ERP nutzbar sind. Wie Prüfprotokolle mit Data Capture aussehen, steht in [Field Service Data Capture: Prüfprotokolle ohne Papier](../field-service-data-capture-pruefprotokolle/).
 
 ## Was muss vor dem Einsatz von Spracheingabe geklärt sein?
 

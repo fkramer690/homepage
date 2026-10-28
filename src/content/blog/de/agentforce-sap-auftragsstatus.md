@@ -32,7 +32,7 @@ Ein Agentforce-Agent beantwortet Auftragsstatus und Verfügbarkeit aus SAP S/4HA
 
 ## Wie kommt ein Agentforce-Agent an den Auftragsstatus aus SAP?
 
-Über eine Kette aus fünf Gliedern, und jedes Glied braucht einen Verantwortlichen. Der [Salesforce Developers Blog](https://developer.salesforce.com/blogs/2025/06/explore-mulesoft-for-agentforce-with-topic-center-and-api-catalog) beschreibt die Reihenfolge: Topics, Aktionen und Instructions in Topic Center festlegen, während die API entworfen wird, die API bauen, in Anypoint Exchange veröffentlichen und mit dem API Catalog synchronisieren. Danach entstehen Named Credentials und External Services automatisch, und der Agent ruft die API als Aktion auf. Flow und Apex können dieselbe API nutzen.
+Über eine Kette aus fünf Gliedern, und jedes Glied braucht einen Verantwortlichen. Der [Salesforce Developers Blog](https://developer.salesforce.com/blogs/2025/06/explore-mulesoft-for-agentforce-with-topic-center-and-api-catalog) beschreibt die Reihenfolge: Topics, Aktionen und Instructions in Topic Center festlegen, während die API entworfen wird, die API bauen, in Anypoint Exchange veröffentlichen und mit dem API Catalog synchronisieren. Danach entstehen Named Credentials und External Services automatisch, und der Agent ruft die API als Aktion auf. Flow und Apex können dieselbe API nutzen. Die Gegenrichtung, ein Auftrag aus Revenue Cloud, der an SAP übergeben wird, steht in [Auftrag an SAP übergeben](../revenue-cloud-auftragsorchestrierung-sap/).
 
 Für einen Maschinenbauer sieht die Kette so aus:
 
@@ -68,7 +68,7 @@ Die Topic-Center-Dokumentation von MuleSoft sagt selbst, Instructions seien „n
 
 **Wer welchen Auftrag sehen darf.** Das ist das größte Risiko. Ein im Portal angemeldeter Händler ist ein Kontakt an einem Account, und der Account trägt die SAP-Auftraggebernummer. Diese Nummer muss aus der Sitzung an die API gehen, per Code gesetzt, nie aus dem Chat. Die API liefert einen Auftrag nur, wenn der Auftraggeber passt, und antwortet sonst „nicht gefunden“, genau wie bei einem Auftrag, den es nicht gibt. Übergibt das Modell Auftragsnummer und Kundennummer, liest Händler A den Auftrag von Händler B, indem er eine Nummer eintippt. Anfragen per E-Mail sind noch schwächer, weil eine Absenderadresse wenig beweist; mehr dazu in [Prompt Injection im Händlerportal](../prompt-injection-haendlerportal-agentforce/).
 
-**Verfügbarkeit und Termine.** SAP prüft die Verfügbarkeit. Der Agent gibt den bestätigten Termin weiter und schätzt nie selbst aus Bestand oder Wiederbeschaffungszeit. Hat SAP keinen bestätigten Termin, lautet die Antwort „noch nicht bestätigt“.
+**Verfügbarkeit und Termine.** SAP prüft die Verfügbarkeit. Der Agent gibt den bestätigten Termin weiter und schätzt nie selbst aus Bestand oder Wiederbeschaffungszeit. Hat SAP keinen bestätigten Termin, lautet die Antwort „noch nicht bestätigt“. Ein B2B-Shop braucht dieselbe Regel, siehe [Kapitel 4 der Masterclass B2B Commerce](../../masterclass/b2b-commerce/erp-integration-bestand-auftraege/).
 
 **Sperren.** Kredit- und Liefersperren sind SAP-Entscheidungen. Ob ein Händler von einer Kreditsperre erfährt oder „bitte wenden Sie sich an Ihren Vertriebsmitarbeiter“ hört, ist eine fachliche Entscheidung, die in die API-Antwort gehört, nicht in den Prompt.
 

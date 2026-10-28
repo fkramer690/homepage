@@ -44,7 +44,7 @@ Salesforce lists the details in its [developer guide to Winter '27](https://deve
 
 A small org has a handful of integrations, and the admin knows them. An enterprise org has grown over years. Typical sources of password-based logins are:
 
-- **ERP and order integrations** that were set up years ago by a partner who is no longer involved.
+- **ERP and order integrations** that were set up years ago by a partner who is no longer involved. If you run a B2B store on SAP, its data flows belong on the list too, see [B2B Commerce and SAP: which data flows where?](../b2b-commerce-sap-data-flows/).
 - **Middleware and integration platforms** where a technical user's password sits in a configuration screen.
 - **Data loaders and scheduled scripts** that run on a server under someone's desk.
 - **Backup, archiving and reporting tools** that pull data every night.

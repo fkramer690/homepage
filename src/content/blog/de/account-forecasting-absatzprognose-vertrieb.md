@@ -78,7 +78,7 @@ Das verlangt einen festen Rhythmus im Vertrieb. Eine Prognose, die nur angepasst
 
 ## Wo endet die Absatzprognose in Salesforce?
 
-Bei der Frage, was produziert wird. Account Forecasting liefert die Erwartung des Vertriebs: welcher Kunde welche Menge welchen Produkts in welchem Monat abnehmen wird. Ob diese Menge produziert werden kann, mit welchem Material und auf welcher Anlage, entscheidet die Planung im ERP oder in einem eigenen Planungssystem.
+Bei der Frage, was produziert wird. Account Forecasting liefert die Erwartung des Vertriebs: welcher Kunde welche Menge welchen Produkts in welchem Monat abnehmen wird. Ob diese Menge produziert werden kann, mit welchem Material und auf welcher Anlage, entscheidet die Planung im ERP oder in einem eigenen Planungssystem. Wie Prognosen, Sales Agreements und Ziele zusammenspielen, steht in [Kapitel 2 der Masterclass Manufacturing Cloud](../../masterclass/manufacturing-cloud/rahmenvertraege-und-prognosen/).
 
 Für die Architektur sind zwei Punkte wichtig:
 

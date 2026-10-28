@@ -57,7 +57,7 @@ Liegen die Aufträge im ERP, gibt es zwei Architekturen:
 - **Aufträge nach Salesforce replizieren.** Die Aufträge kommen als Order-Datensätze nach Salesforce und werden mit dem Sales Agreement verknüpft. Vorteil: Vertrieb und Service sehen die Aufträge selbst, nicht nur Summen. Nachteil: mehr Datenvolumen, und die Verknüpfung zum richtigen Agreement muss die Schnittstelle oder eine Automatisierung herstellen.
 - **Summen per API laden.** Das ERP oder die Middleware rechnet die Mengen pro Kunde, Produkt und Zeitraum und lädt nur diese Werte. Vorteil: schlank, und das ERP bleibt die einzige Stelle, an der Aufträge gezählt werden. Nachteil: Wer wissen will, welche Aufträge hinter einer Zahl stehen, muss ins ERP schauen.
 
-Welche Variante passt, hängt davon ab, was Salesforce sonst noch über Aufträge wissen muss. Die Grundregel ist dieselbe wie bei jeder Integration: ein führendes System pro Datenart. Wie ich das für Kunden, Produkte, Preise und Aufträge aufteile, beschreibe ich unter [Integration mit ERP, Middleware und Telefonie](../../leistungen/salesforce-schnittstellen/).
+Welche Variante passt, hängt davon ab, was Salesforce sonst noch über Aufträge wissen muss. Die Grundregel ist dieselbe wie bei jeder Integration: ein führendes System pro Datenart. Wie ich das für Kunden, Produkte, Preise und Aufträge aufteile, beschreibe ich unter [Integration mit ERP, Middleware und Telefonie](../../leistungen/salesforce-schnittstellen/). Welche Daten insgesamt zwischen SAP und der Manufacturing Cloud fließen, steht in [Manufacturing Cloud und SAP: welche Daten wohin](../manufacturing-cloud-sap-integration-datenfluesse/).
 
 ## Was ich im Projekt gesehen habe
 

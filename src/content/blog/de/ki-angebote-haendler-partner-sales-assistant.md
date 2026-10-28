@@ -47,7 +47,7 @@ Winter '27 bringt auch außerhalb der Manufacturing Cloud einen Angebotsagenten.
 | Was Salesforce sagt | Findet Produkte, baut Angebote | Findet Produkte, baut Angebote; Highlights: Angebot anfragen | Self-Service- und Partnerangebote |
 | Produkt | Manufacturing Cloud | Manufacturing Cloud | Revenue Cloud |
 
-Ich würde danach entscheiden, wo Ihr Angebot heute entsteht. Erstellen Sie Angebote bereits in Revenue Cloud, schauen Sie zuerst auf den Revenue Management Agent. Arbeiten Händler mit Standard-Angeboten und Preisbüchern in der Manufacturing Cloud, passen die Manufacturing-Agenten. Zwei Angebotsagenten auf zwei Angebotsmodellen würde ich vermeiden.
+Ich würde danach entscheiden, wo Ihr Angebot heute entsteht. Erstellen Sie Angebote bereits in Revenue Cloud, schauen Sie zuerst auf den Revenue Management Agent; was er heute kann, steht im Beitrag zum [Angebotsagenten in Revenue Cloud](../revenue-cloud-angebotsagent-agentforce/). Arbeiten Händler mit Standard-Angeboten und Preisbüchern in der Manufacturing Cloud, passen die Manufacturing-Agenten. Zwei Angebotsagenten auf zwei Angebotsmodellen würde ich vermeiden.
 
 Für Maschinenbauer mit Händlernetz stellt der Sales Concierge zuerst eine kaufmännische Frage. Findet ein Endkunde eine Maschine auf Ihrer Website und bekommt einen Preis: Welcher Händler erhält den Lead, und darf dieser Preis unter dem Angebot des Händlers liegen? Klären Sie Lead-Verteilung und Preissichtbarkeit mit der Vertriebsleitung vor dem Go-live.
 
@@ -61,7 +61,7 @@ Jede verkaufsfähige Variante und jedes Zubehörteil braucht einen eigenen Produ
 
 ### Preise je Markt und Händlerstufe
 
-Hält SAP Listenpreise, Händlerrabatte je Stufe und Zuschläge als Konditionen und Salesforce nur den Listenpreis, nennt der Agent den Listenpreis. Sie brauchen Preisbücher je Land, Währung und Händlerstufe mit Gültigkeitsdatum, synchronisiert aus dem ERP. Salesforce sieht die Lücke ebenfalls: Die Winter '27 Highlights nennen Penny Perfect Pricing mit Preisen für mehrere Märkte, mehreren Mengeneinheiten, Kalkulationsschema und ERP-Anbindung in der Manufacturing Cloud. Legen Sie einen Preis-Master fest: Entweder rechnet das ERP und Salesforce zeigt das Ergebnis über eine API an, wie bei [Auftragsstatus aus SAP über MuleSoft](../agentforce-sap-auftragsstatus/), oder Salesforce rechnet mit demselben Schema.
+Hält SAP Listenpreise, Händlerrabatte je Stufe und Zuschläge als Konditionen und Salesforce nur den Listenpreis, nennt der Agent den Listenpreis. Sie brauchen Preisbücher je Land, Währung und Händlerstufe mit Gültigkeitsdatum, synchronisiert aus dem ERP. Salesforce sieht die Lücke ebenfalls: Die Winter '27 Highlights nennen Penny Perfect Pricing mit Preisen für mehrere Märkte, mehreren Mengeneinheiten, Kalkulationsschema und ERP-Anbindung in der Manufacturing Cloud. Was dazu bisher bekannt ist, steht in [Penny Perfect Pricing: ERP-Preise in Salesforce?](../penny-perfect-pricing-erp-preise/). Legen Sie einen Preis-Master fest: Entweder rechnet das ERP und Salesforce zeigt das Ergebnis über eine API an, wie bei [Auftragsstatus aus SAP über MuleSoft](../agentforce-sap-auftragsstatus/), oder Salesforce rechnet mit demselben Schema.
 
 ### Regeln, was baubar ist
 

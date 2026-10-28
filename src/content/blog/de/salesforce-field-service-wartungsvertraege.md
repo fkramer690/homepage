@@ -43,7 +43,7 @@ Die Begriffe klingen ähnlich und werden in Projekten oft vermischt. Laut [Sales
 | Entitlement | Worauf der Kunde Anspruch hat | Techniker vor Ort innerhalb von 24 Stunden |
 | Entitlement-Prozess mit Milestones | Wie der Anspruch gemessen wird | Uhr läuft ab Anlage des Arbeitsauftrags |
 
-Der Service Contract ist die kaufmännische Seite. Der Maintenance Plan ist die planbare Arbeit. Das Entitlement ist die ungeplante Arbeit mit Zusage, also die Störung, bei der eine Reaktionszeit gilt. Ein Vertrag kann alle drei haben, muss aber nicht. Ein reiner Garantiefall hat oft nur ein Entitlement an der Anlage und keinen Wartungsplan.
+Der Service Contract ist die kaufmännische Seite; wie er wiederkehrend abgerechnet wird, steht in [Wartungsverträge wiederkehrend abrechnen mit Revenue Cloud](../wartungsvertraege-wiederkehrend-abrechnen/). Der Maintenance Plan ist die planbare Arbeit. Das Entitlement ist die ungeplante Arbeit mit Zusage, also die Störung, bei der eine Reaktionszeit gilt. Ein Vertrag kann alle drei haben, muss aber nicht. Ein reiner Garantiefall hat oft nur ein Entitlement an der Anlage und keinen Wartungsplan. Wie Garantieansprüche in der Manufacturing Cloud laufen, steht in [Kapitel 4 der Masterclass Manufacturing Cloud](../../masterclass/manufacturing-cloud/garantie-und-after-sales/).
 
 ## Wie entstehen die geplanten Wartungen?
 

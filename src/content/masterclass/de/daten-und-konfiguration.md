@@ -6,6 +6,7 @@ slug: daten-und-konfiguration
 course: devops
 translationKey: devops-07
 chapter: 7
+pubDate: 2026-10-28
 short: "Daten und Konfiguration"
 summary: "Welche Konfigurations- und Referenzdaten keine Metadaten sind, wie sie durch die Pipeline kommen und wie Sandboxes maskiert bleiben."
 takeaways:

@@ -44,7 +44,7 @@ Die Details stehen im [Entwickler-Leitfaden zu Winter '27](https://developer.sal
 
 Eine kleine Org hat eine Handvoll Integrationen, und der Admin kennt sie. Eine Enterprise-Org ist über Jahre gewachsen. Typische Quellen für Passwort-Logins sind:
 
-- **ERP- und Auftragsschnittstellen**, die vor Jahren von einem Partner gebaut wurden, der heute nicht mehr dabei ist.
+- **ERP- und Auftragsschnittstellen**, die vor Jahren von einem Partner gebaut wurden, der heute nicht mehr dabei ist. Betreiben Sie einen B2B-Shop mit SAP, gehören dessen Datenflüsse ebenfalls auf die Liste, siehe [B2B Commerce und SAP: Welche Daten fließen wohin?](../b2b-commerce-sap-datenfluesse/).
 - **Middleware und Integrationsplattformen**, in deren Konfiguration das Passwort eines technischen Benutzers hinterlegt ist.
 - **Data Loader und geplante Skripte**, die auf irgendeinem Server laufen.
 - **Backup-, Archiv- und Reporting-Tools**, die jede Nacht Daten abziehen.

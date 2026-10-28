@@ -26,7 +26,7 @@ faq:
 draft: false
 ---
 
-Ein Maschinenbauer hat genug Daten für Predictive Maintenance in Salesforce, wenn eine Baureihe Hunderte vergleichbarer Maschinen umfasst, jede Störungs-Work-Order an einer Seriennummer hängt und Ausfallursachen in codierten Feldern stehen. Asset Service Prediction lernt aus genau dieser Servicehistorie, Sensordaten kommen erst danach. Ist die Historie dünn, sind Wartungspläne mit nutzungs- und zustandsabhängigen Auslösern die ehrliche Alternative. Maschinendaten sind als Aggregate bezahlbar: Im Beispiel unten kosten Rohwerte im Sekundentakt von 300 Maschinen rund 65.900 € im Monat an Flex Credits, 15-Minuten-Aggregate rund 180 €.
+Ein Maschinenbauer hat genug Daten für Predictive Maintenance in Salesforce, wenn eine Baureihe Hunderte vergleichbarer Maschinen umfasst, jede Störungs-Work-Order an einer Seriennummer hängt und Ausfallursachen in codierten Feldern stehen. Asset Service Prediction lernt aus genau dieser Servicehistorie, Sensordaten kommen erst danach. Ist die Historie dünn, sind [Wartungspläne mit nutzungs- und zustandsabhängigen Auslösern](../field-service-wartung-nach-betriebsstunden/) die ehrliche Alternative. Maschinendaten sind als Aggregate bezahlbar: Im Beispiel unten kosten Rohwerte im Sekundentakt von 300 Maschinen rund 65.900 € im Monat an Flex Credits, 15-Minuten-Aggregate rund 180 €.
 
 ## Was bietet Salesforce heute für vorausschauende Wartung?
 
@@ -41,7 +41,7 @@ Salesforce verkauft unter dem Stichwort proaktiver Service mehrere Funktionen, u
 | Asset Health Score | Bewertet Anlagen nach Alter, Nutzung, Telemetrie und Reparaturhistorie über Data 360 | Teil von Connected Assets, 15.000 $ pro Org und Monat (US-Listenpreis) |
 | Asset Service Prediction | Sagt Zeitpunkt und Grund eines Ausfalls voraus | Open Beta im Juni 2024 angekündigt, Produktseite ohne Status |
 
-Die Manufacturing-Ankündigung vermeidet den Begriff Predictive Maintenance und spricht von Agenten, die Kunden und Serviceteams vor Problemen warnen, „before they happen“. Die [Seite zum Asset Management](https://www.salesforce.com/service/field-service-management/asset-management/) führt Connected Assets mit 10.000 vernetzten digitalen Anlagen, dem Asset Health Score und einem „Actionable Telematics Framework“. Den Überblick über die Agentenfunktionen gibt [KI-Agenten im Außendienst: was Field Service heute kann](../ki-agenten-aussendienst-field-service/). Hier geht es um eine engere Frage: Tragen Ihre Daten die letzten beiden Zeilen?
+Die Manufacturing-Ankündigung vermeidet den Begriff Predictive Maintenance und spricht von Agenten, die Kunden und Serviceteams vor Problemen warnen, „before they happen“. Die [Seite zum Asset Management](https://www.salesforce.com/service/field-service-management/asset-management/) führt Connected Assets mit 10.000 vernetzten digitalen Anlagen, dem Asset Health Score und einem „Actionable Telematics Framework“. Den Überblick über die Agentenfunktionen gibt [KI-Agenten im Außendienst: was Field Service heute kann](../ki-agenten-aussendienst-field-service/). Hier geht es um eine engere Frage: Tragen Ihre Daten die letzten beiden Zeilen? Beide Zeilen setzen auf den Maschinen als Assets auf, siehe [Installierte Basis in Manufacturing Cloud](../installierte-basis-asset-meilensteine/).
 
 ## Wann reicht die Servicehistorie für eine Ausfallprognose?
 

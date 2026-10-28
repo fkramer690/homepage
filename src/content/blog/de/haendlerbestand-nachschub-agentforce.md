@@ -46,7 +46,7 @@ Die Nachschubregeln liegen in [InventoryReplenishmentPolicy](https://developer.s
 
 Für Entscheider folgen daraus zwei Punkte:
 
-- **Ein Product Request ist ein Datensatz in Salesforce.** Er reserviert keinen Bestand in SAP und erzeugt keinen Kundenauftrag. Irgendetwas muss daraus einen ERP-Auftrag machen, und diese Schnittstelle ist Ihr Projekt, kein Teil der Vorlage.
+- **Ein Product Request ist ein Datensatz in Salesforce.** Er reserviert keinen Bestand in SAP und erzeugt keinen Kundenauftrag. Irgendetwas muss daraus einen ERP-Auftrag machen, und diese Schnittstelle ist Ihr Projekt, kein Teil der Vorlage. Sollen Händler stattdessen selbst in einem B2B-Shop nachbestellen, siehe [Nachbestellen im B2B-Shop](../nachbestellen-b2b-shop-vorlagen/).
 - **Der Bestand ist eine Kopie.** Händler melden ihren Bestand per Portal-Upload, EDI oder Schnittstelle. Melden sie wöchentlich, arbeitet der Agent mit Zahlen, die bis zu sieben Tage alt sind, und muss das sagen.
 
 ## Wo muss SAP oder proALPHA führendes System bleiben?

@@ -45,6 +45,8 @@ Simon Willison named the pattern the [lethal trifecta](https://simonwillison.net
 - **Service partner reports** in Field Service, written by external technicians.
 - **Distributor imports** such as order notes or claim lists.
 
+A buyer agent that takes orders by WhatsApp or SMS adds one more door, see [B2B Buyer Agent: ordering through WhatsApp and SMS](../b2b-buyer-agent-whatsapp-ordering/).
+
 The person who triggers the attack is your own employee doing their job. A warranty clerk asks the agent to summarise today's claims. A sales rep asks about a new lead. Nothing in their request is wrong. The instruction sits in a record they never opened.
 
 The leg that decides how bad it gets is private data. Internal agents often run with broad access to help across accounts. If such an agent reads one dealer's claim, it may also be able to read other dealers' prices, rebate terms or margin fields. In the [customer portal article](../manufacturing-cloud-customer-portal/) I argue that margin and cost fields must never go outside. An agent with the wrong permissions is one way they still can.

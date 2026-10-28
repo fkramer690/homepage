@@ -42,7 +42,7 @@ Because these are decisions with a right answer. A dealer is over the credit lim
 
 **Audit and disputes.** A dealer whose warranty claim was rejected will ask why. The guide calls non-deterministic execution an audit gap, and I agree. A rule in code gives the same answer on Tuesday as on Monday and can be traced. Agent versions are also stored as metadata: the [AiAuthoringBundle](https://developer.salesforce.com/blogs/2026/05/new-agentforce-metadata-and-development-lifecycle) keeps versioned folders, so you can show which rule version was active.
 
-**The rule already lives somewhere.** In manufacturing, the credit limit and the exposure sit in SAP or proALPHA. Warranty terms sit in Manufacturing Cloud or in the ERP. Price conditions sit in the ERP or in CPQ. An agent should read the result of that system, not rebuild the rule in a prompt. Two places with the same rule drift apart, and the prompt version is the one nobody tests.
+**The rule already lives somewhere.** In manufacturing, the credit limit and the exposure sit in SAP or proALPHA. Warranty terms sit in Manufacturing Cloud or in the ERP. Price conditions sit in the ERP or in CPQ, a choice covered in [customer prices: SAP conditions or Salesforce Pricing?](../customer-prices-sap-conditions-or-salesforce-pricing/). An agent should read the result of that system, not rebuild the rule in a prompt. Two places with the same rule drift apart, and the prompt version is the one nobody tests.
 
 **Cost and latency.** The guide states that "every unnecessary LLM call adds latency, cost, and variability" and that a simple conversation used to need at least three LLM cycles. Each calculation you move into logic is one less place where the model can go wrong.
 

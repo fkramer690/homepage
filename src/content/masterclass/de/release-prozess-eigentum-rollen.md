@@ -6,6 +6,7 @@ slug: release-prozess-eigentum-rollen
 course: devops
 translationKey: devops-02
 chapter: 2
+pubDate: 2026-10-28
 short: "Eigentum und Rollen"
 summary: "Wem Repository und Pipeline gehören, welche vier Rollen ein Release braucht, wer was freigibt und wie der Prozess einen Partnerwechsel übersteht."
 takeaways:

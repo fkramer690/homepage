@@ -37,6 +37,10 @@ const enSlugs = readEntries('blog').filter((e) => e.lang === 'en').map((e) => e.
 const masterclassSegments = {
   ai: { de: 'ki-salesforce', en: 'ai-salesforce' },
   devops: { de: 'devops-release-management', en: 'devops-release-management' },
+  'manufacturing-cloud': { de: 'manufacturing-cloud', en: 'manufacturing-cloud' },
+  'revenue-cloud': { de: 'revenue-cloud', en: 'revenue-cloud' },
+  'b2b-commerce': { de: 'b2b-commerce', en: 'b2b-commerce' },
+  'field-service': { de: 'field-service', en: 'field-service' },
 };
 const contentPaths = {
   blog: { de: (slug) => `/blog/${slug}/`, en: (slug) => `/en/blog/${slug}/` },
@@ -59,13 +63,18 @@ for (const collection of Object.keys(contentPaths)) {
 const servicesIndex = { de: '/leistungen/', en: '/en/services/' };
 sitemapInfo.set(servicesIndex.de, { pair: servicesIndex });
 sitemapInfo.set(servicesIndex.en, { pair: servicesIndex });
+// Hubs and the overview change whenever one of their chapters changes, so
+// their last change date is the newest chapter date (updatedDate or pubDate).
+const chapterEntries = readEntries('masterclass');
+const newest = (entries) => entries.map((e) => e.date).filter(Boolean).sort().at(-1);
 const masterclassesIndex = { de: '/masterclass/', en: '/en/masterclass/' };
-sitemapInfo.set(masterclassesIndex.de, { pair: masterclassesIndex });
-sitemapInfo.set(masterclassesIndex.en, { pair: masterclassesIndex });
-for (const segment of Object.values(masterclassSegments)) {
+sitemapInfo.set(masterclassesIndex.de, { pair: masterclassesIndex, date: newest(chapterEntries.filter((e) => e.lang === 'de')) });
+sitemapInfo.set(masterclassesIndex.en, { pair: masterclassesIndex, date: newest(chapterEntries.filter((e) => e.lang === 'en')) });
+for (const [course, segment] of Object.entries(masterclassSegments)) {
   const hub = { de: `/masterclass/${segment.de}/`, en: `/en/masterclass/${segment.en}/` };
-  sitemapInfo.set(hub.de, { pair: hub });
-  sitemapInfo.set(hub.en, { pair: hub });
+  for (const lang of ['de', 'en']) {
+    sitemapInfo.set(hub[lang], { pair: hub, date: newest(chapterEntries.filter((e) => e.lang === lang && e.course === course)) });
+  }
 }
 const questionsPage = { de: '/fragen/', en: '/en/questions/' };
 sitemapInfo.set(questionsPage.de, { pair: questionsPage });

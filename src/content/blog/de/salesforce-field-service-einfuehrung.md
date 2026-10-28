@@ -85,7 +85,7 @@ Jede Welle braucht Zahlen von vorher und nachher. Ich würde die nehmen, die in 
 - den Anteil der Vorschläge, die der Disponent vor der Freigabe ändert, aus Teil 3
 - die eingehaltenen Reaktionszeiten aus Teil 5
 
-Bessern sich die Zahlen in der ersten Welle nicht, liegt es meiner Einschätzung nach selten am Produkt. Meist fehlen Daten, oder die Planung wird noch nebenher gemacht.
+Bessern sich die Zahlen in der ersten Welle nicht, liegt es meiner Einschätzung nach selten am Produkt. Meist fehlen Daten, oder die Planung wird noch nebenher gemacht. Welche Zahlen Sie beobachten sollten, steht in [Field Service Kennzahlen nach dem Go-live](../field-service-kennzahlen-operations-home/).
 
 ## Wo sollten Sie anfangen?
 

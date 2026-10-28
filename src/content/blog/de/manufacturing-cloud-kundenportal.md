@@ -38,7 +38,7 @@ Im Projekt hatte das Portal zwei Arten von Funktionen. Kunden konnten sehen:
 Und Kunden konnten handeln:
 
 - **Neue Produkte und Preise anfragen.** Die Anfrage landet im Angebotsprozess, den ich in [Teil 2: Vom Angebot zum Sales Agreement](../angebot-zu-sales-agreement-produktkonfigurator/) beschreibe.
-- **Bestellungen aufgeben.**
+- **Bestellungen aufgeben.** Sollen Kunden aus einem Katalog mit ihren eigenen Preisen bestellen, ist das ein B2B-Shop; wann ein Portal reicht, steht in [Kapitel 1 der Masterclass B2B Commerce](../../masterclass/b2b-commerce/b2b-commerce-lohnt-sich-ueberblick/).
 - **Bestimmte Stammdaten selbst pflegen**, etwa die Rechnungsadresse.
 
 Für den Hersteller hat das einen einfachen Nutzen: Fragen wie „Wie viel habe ich von meinem Rahmenvertrag schon abgerufen?“ oder „Wo steht meine Bestellung?“ beantwortet der Kunde selbst, ohne E-Mail an den Innendienst. Damit das trägt, müssen die Zahlen im Portal stimmen. Woher die Ist-Mengen im Sales Agreement kommen, behandle ich in [Teil 3: Sales Agreements, fehlende Abnahmemengen erkennen](../sales-agreements-abnahmemengen-erp/).
@@ -56,7 +56,7 @@ In der Hilfe steht außerdem, dass Customer Community Plus for Manufacturing kei
 
 In meinem Projekt hatten die Kunden Customer Community Plus for Manufacturing und sahen ihre Sales Agreements in einer reduzierten Listenansicht. Ich lese die Hilfe deshalb so: Sie beschreibt die typischen Anwendungsfälle, keine vollständige Liste. Verlassen würde ich mich darauf trotzdem nicht. Wenn Kunden Sales Agreements im Portal sehen sollen, gehört das als Anforderung ins Angebot, mit schriftlicher Bestätigung von Salesforce, dass die gewählte Lizenz das abdeckt.
 
-Was Portallizenzen kosten und wie sie sich von internen Lizenzen unterscheiden, beschreibe ich in [Salesforce-Lizenzen: Braucht jeder eine volle Lizenz?](../salesforce-lizenzen-volle-lizenz/).
+Was Portallizenzen kosten und wie sie sich von internen Lizenzen unterscheiden, beschreibe ich in [Salesforce-Lizenzen: Braucht jeder eine volle Lizenz?](../salesforce-lizenzen-volle-lizenz/). Wie das Portal neben Händlerboni und Partnerbesuchen in den Händlerkanal passt, steht in [Kapitel 3 der Masterclass Manufacturing Cloud](../../masterclass/manufacturing-cloud/haendler-und-partnerkanal/).
 
 ## Wie viel vom Sales Agreement sollten Kunden sehen?
 

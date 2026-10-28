@@ -98,6 +98,8 @@ const masterclass = defineCollection({
     // Blog translationKeys covered by this chapter; unpublished ones are skipped.
     articles: z.array(z.string()).min(1).max(8),
     faq: z.array(z.object({ q: z.string().max(120), a: z.string().max(600) })).max(6).default([]),
+    // First publication; used for datePublished and the sitemap's lastmod.
+    pubDate: z.coerce.date().optional(),
     updatedDate: z.coerce.date().optional(),
     draft: z.boolean().default(false),
   }),

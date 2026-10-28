@@ -50,7 +50,7 @@ The engine assigns appointments by a scheduling policy. According to [Salesforce
 
 Salesforce ships four policies. Customer First balances customer preference and short travel. High Intensity puts technician productivity above customer preferences, meant for peak periods. Soft Boundaries lets technicians work across territory borders. Emergency is for urgent jobs. As a starting point I recommend Customer First with adjusted weights, instead of building a policy from scratch.
 
-On top comes optimization. According to [Salesforce Help](https://help.salesforce.com/s/articleView?id=pfs_optimization.htm&language=en_US&type=5) it can rearrange the plan for one or more territories over several days, for example every night. On the day of service, in-day optimization absorbs short-notice changes, and there is a separate optimization for a single technician when an appointment is cancelled or runs late.
+On top comes optimization. According to [Salesforce Help](https://help.salesforce.com/s/articleView?id=pfs_optimization.htm&language=en_US&type=5) it can rearrange the plan for one or more territories over several days, for example every night. On the day of service, in-day optimization absorbs short-notice changes, and there is a separate optimization for a single technician when an appointment is cancelled or runs late. Whether to switch to the newer engine is covered in [Enhanced Scheduling and Optimization: switch now?](../field-service-enhanced-scheduling-optimization-switch/), the full picture of engine, console and rules in [chapter 2 of the Field Service masterclass](../../masterclass/field-service/field-service-scheduling-dispatch/).
 
 ## Why does a dispatcher review before dispatch?
 

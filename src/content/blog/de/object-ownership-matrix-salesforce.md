@@ -71,7 +71,7 @@ Die Matrix sollte so klein bleiben, dass jeder sie in zwei Minuten lesen kann. I
 3. **Einstiegspunkt der Automatisierung**, also ob das Objekt über Flow oder über ein Apex-Trigger-Framework automatisiert wird.
 4. **Mitnutzende Streams**, damit der Verantwortliche weiß, wen eine Änderung betrifft.
 
-Schwierig sind die gemeinsam genutzten Objekte wie Account, Contact oder Product. Auch sie bekommen genau einen Verantwortlichen. Die anderen Streams melden ihre Anforderungen dort an, und der Verantwortliche baut sie in die gemeinsame Automatisierung ein. Das ist langsamer, als wenn jeder selbst baut. Es ist aber der einzige Weg, wie das Objekt in zwei Jahren noch wartbar ist.
+Schwierig sind die gemeinsam genutzten Objekte wie Account, Contact oder Product. Auch sie bekommen genau einen Verantwortlichen. Die anderen Streams melden ihre Anforderungen dort an, und der Verantwortliche baut sie in die gemeinsame Automatisierung ein. Das ist langsamer, als wenn jeder selbst baut. Es ist aber der einzige Weg, wie das Objekt in zwei Jahren noch wartbar ist. Mit einem B2B-Shop braucht der Auftrag dieselbe Klarheit zwischen Salesforce und ERP, siehe [Kapitel 4 der Masterclass B2B Commerce](../../masterclass/b2b-commerce/erp-integration-bestand-auftraege/).
 
 Was nicht in die Matrix gehört: Detailregeln für Namenskonventionen, Tests oder Code-Stil. Die stehen in den Entwicklungsstandards. Die Matrix beantwortet nur die Frage, wer entscheidet.
 

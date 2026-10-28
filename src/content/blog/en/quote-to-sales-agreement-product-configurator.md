@@ -43,7 +43,7 @@ This leads to a requirement that often surfaces late: the rules on which combina
 
 ## Custom approach or standard product?
 
-For quoting there are three routes today: Revenue Cloud Advanced from Salesforce, a partner product, or a custom approach on the platform. Salesforce CPQ is no longer an option for new customers. According to [Salesforce](https://www.salesforce.com/sales/cpq/end-of-life/), CPQ is no longer sold to new customers, while existing customers can still buy users, renew and get support. New features go into Revenue Cloud Advanced, and there is no forced migration.
+For quoting there are three routes today: Revenue Cloud Advanced from Salesforce, a partner product, or a custom approach on the platform. Salesforce CPQ is no longer an option for new customers. According to [Salesforce](https://www.salesforce.com/sales/cpq/end-of-life/), CPQ is no longer sold to new customers, while existing customers can still buy users, renew and get support. New features go into Revenue Cloud Advanced, and there is no forced migration. What applies today is in [Salesforce CPQ end of sale](../salesforce-cpq-end-of-sale-status/), how to plan the move in [chapter 5 of the Revenue Cloud masterclass](../../masterclass/revenue-cloud/from-cpq-to-revenue-cloud/).
 
 In the project we took a custom CPQ approach. Whether that would be the right choice again today depends on the same questions I ask in every make-or-buy decision:
 

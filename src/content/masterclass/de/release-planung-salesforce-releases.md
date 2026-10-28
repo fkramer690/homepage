@@ -6,6 +6,7 @@ slug: release-planung-salesforce-releases
 course: devops
 translationKey: devops-08
 chapter: 8
+pubDate: 2026-10-28
 short: "Release-Planung"
 summary: "Wie Sie Ihren Release-Kalender mit den drei Salesforce-Releases, Release Updates und Abschaltungen abstimmen."
 takeaways:
