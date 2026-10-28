@@ -1,7 +1,7 @@
 :root {
   --cyan: #1ba1e2;
   --cyan-light: #5bbdee;
-  --cyan-dark: #1580b5;
+  --cyan-dark: #1376a8;
   --anthracite: #232325;
   --text: #2a2a2c;
   --text-2: #5a5a5e;
@@ -625,7 +625,7 @@ a:hover { color: var(--anthracite); }
 .footer-nav { display: flex; flex-wrap: wrap; gap: 8px 22px; }
 .footer-nav a { color: rgba(255, 255, 255, 0.8); text-decoration: none; }
 .footer-nav a:hover { color: var(--cyan-light); }
-.footer-copy { margin: 0; width: 100%; font-size: 0.8rem; color: rgba(255, 255, 255, 0.45); }
+.footer-copy { margin: 0; width: 100%; font-size: 0.8rem; color: rgba(255, 255, 255, 0.55); }
 
 /* Legal pages */
 .legal-inner { max-width: 760px; }
@@ -864,7 +864,7 @@ p.post-series-note { margin: 0.6em 0 0; font-size: 0.95rem; }
   font-size: 0.85rem;
   color: rgba(255, 255, 255, 0.75);
 }
-.field em { font-style: normal; color: rgba(255, 255, 255, 0.45); }
+.field em { font-style: normal; color: rgba(255, 255, 255, 0.55); }
 .field input,
 .field textarea {
   width: 100%;
@@ -1060,7 +1060,7 @@ p.post-series-note { margin: 0.6em 0 0; font-size: 0.95rem; }
 }
 .filter-chip:hover { border-color: var(--cyan); color: var(--text); }
 .filter-chip[aria-pressed='true'] { background: var(--anthracite); border-color: var(--anthracite); color: var(--white); }
-.filter-count { font-size: 0.75rem; opacity: 0.6; }
+.filter-count { font-size: 0.75rem; opacity: 0.85; }
 .post-tile[hidden] { display: none; }
 .post-tile .post-category { font-size: 0.72rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--cyan-dark); }
 @media (max-width: 640px) {

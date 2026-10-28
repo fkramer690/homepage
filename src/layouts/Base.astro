@@ -3,6 +3,10 @@ import '@fontsource/sora/400.css';
 import '@fontsource/sora/600.css';
 import '@fontsource/ibm-plex-mono/400.css';
 import '../styles/global.css';
+// The two Sora weights render the first screen (headline and body text); preloading
+// them saves the round trip through the stylesheet before the fonts start loading.
+import soraRegular from '@fontsource/sora/files/sora-latin-400-normal.woff2?url';
+import soraSemibold from '@fontsource/sora/files/sora-latin-600-normal.woff2?url';
 import { site } from '../site';
 import { homeHref } from '../lib/paths';
 
@@ -27,6 +31,8 @@ const abs = (path: string) => new URL(path, Astro.site).href;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
+    <link rel="preload" href={soraRegular} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={soraSemibold} as="font" type="font/woff2" crossorigin />
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical.href} />
     {alternates && (
