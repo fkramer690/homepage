@@ -1,0 +1,5607 @@
+{
+  "generatedAt": "2026-10-28T21:04:57.039Z",
+  "domain": "fk-sd.de",
+  "cost": 0.225,
+  "crawl": {
+    "pages": 458,
+    "stopReason": "empty_queue"
+  },
+  "domainChecks": {
+    "sitemap": true,
+    "robots_txt": true,
+    "start_page_deny_flag": false,
+    "ssl": true,
+    "http2": true,
+    "test_canonicalization": false,
+    "test_www_redirect": true,
+    "test_hidden_server_signature": true,
+    "test_page_not_found": true,
+    "test_directory_browsing": true,
+    "test_https_redirect": true
+  },
+  "metrics": {
+    "links_external": 4540,
+    "links_internal": 10357,
+    "duplicate_title": 0,
+    "duplicate_description": 0,
+    "duplicate_content": 28,
+    "broken_links": 0,
+    "broken_resources": 0,
+    "links_relation_conflict": 0,
+    "redirect_loop": 0,
+    "onpage_score": 96.91,
+    "non_indexable": 2,
+    "checks": {
+      "canonical": 458,
+      "duplicate_meta_tags": 0,
+      "no_description": 0,
+      "frame": 0,
+      "large_page_size": 0,
+      "irrelevant_description": 0,
+      "irrelevant_meta_keywords": 0,
+      "is_https": 458,
+      "is_http": 0,
+      "title_too_long": 0,
+      "low_content_rate": 18,
+      "small_page_size": 0,
+      "no_h1_tag": 0,
+      "recursive_canonical": 0,
+      "no_favicon": 0,
+      "no_image_alt": 446,
+      "no_image_title": 452,
+      "seo_friendly_url": 451,
+      "seo_friendly_url_characters_check": 458,
+      "seo_friendly_url_dynamic_check": 458,
+      "seo_friendly_url_keywords_check": 451,
+      "seo_friendly_url_relative_length_check": 458,
+      "title_too_short": 0,
+      "no_content_encoding": 0,
+      "high_waiting_time": 0,
+      "high_loading_time": 0,
+      "is_redirect": 0,
+      "is_broken": 0,
+      "is_4xx_code": 0,
+      "is_5xx_code": 0,
+      "is_www": 458,
+      "no_doctype": 0,
+      "no_encoding_meta_tag": 0,
+      "high_content_rate": 0,
+      "low_character_count": 6,
+      "high_character_count": 0,
+      "low_readability_rate": 4,
+      "irrelevant_title": 0,
+      "deprecated_html_tags": 0,
+      "duplicate_title_tag": 0,
+      "no_title": 0,
+      "flash": 0,
+      "lorem_ipsum": 0,
+      "has_misspelling": null,
+      "canonical_to_broken": 0,
+      "canonical_to_redirect": 0,
+      "has_links_to_redirects": 0,
+      "is_orphan_page": 0,
+      "has_meta_refresh_redirect": 0,
+      "meta_charset_consistency": 0,
+      "size_greater_than_3mb": 0,
+      "has_html_doctype": 458,
+      "https_to_http_links": 0,
+      "has_render_blocking_resources": 458,
+      "redirect_chain": 0,
+      "canonical_chain": 0,
+      "is_link_relation_conflict": 0
+    }
+  },
+  "counts": {
+    "no_image_alt": 446,
+    "has_render_blocking_resources": 458,
+    "has_micromarkup_errors": 434,
+    "low_content_rate": 18,
+    "low_character_count": 6,
+    "low_readability_rate": 4
+  },
+  "duplicateTitles": [],
+  "duplicateDescriptions": [],
+  "duplicateContent": [],
+  "brokenLinks": [],
+  "redirectChains": [],
+  "nonIndexable": [
+    {
+      "page": "/datenschutz/",
+      "reason": "meta_tag"
+    },
+    {
+      "page": "/impressum/",
+      "reason": "meta_tag"
+    }
+  ],
+  "issues": [
+    {
+      "page": "/",
+      "status": 200,
+      "title": "Salesforce-Architekt für die Fertigung | FK Solution Design",
+      "words": 848,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/",
+      "status": 200,
+      "title": "Blog zur Salesforce-Architektur | FK Solution Design",
+      "words": 59,
+      "score": 97.8,
+      "checks": [
+        "low_content_rate",
+        "low_character_count",
+        "low_readability_rate",
+        "has_render_blocking_resources"
+      ]
+    },
+    {
+      "page": "/blog/account-forecasting-absatzprognose-vertrieb/",
+      "status": 200,
+      "title": "Account Forecasting: Absatzprognose im Vertrieb",
+      "words": 1722,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/account-manager-targets-vertriebsziele/",
+      "status": 200,
+      "title": "Account Manager Targets: Vertriebsziele pro Kunde",
+      "words": 1741,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/advanced-pricing-b2b-shop-revenue-cloud/",
+      "status": 200,
+      "title": "Advanced Pricing im B2B-Shop: Wann Revenue Cloud?",
+      "words": 1609,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/aela-agentforce-pauschale-oder-credits/",
+      "status": 200,
+      "title": "Salesforce AELA oder Flex Credits für Hersteller?",
+      "words": 2068,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/agent-script-regeln-statt-llm/",
+      "status": 200,
+      "title": "Agent Script: Geschäftsregeln gehören nicht ins LLM",
+      "words": 1937,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/agentforce-1-field-service-paket-rechnung/",
+      "status": 200,
+      "title": "Agentforce 1 Field Service: Wann rechnet sich das Paket?",
+      "words": 1635,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/agentforce-a2a-mehrere-agenten-sap/",
+      "status": 200,
+      "title": "Agentforce A2A: Welcher Agent führt das Händlergespräch?",
+      "words": 2046,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/agentforce-agent-api-eigene-apps/",
+      "status": 200,
+      "title": "Agentforce Agent API: Agenten in eigenen Händler-Apps",
+      "words": 2071,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/agentforce-agenten-release-pipeline/",
+      "status": 200,
+      "title": "Agentforce-Agenten in der Release-Pipeline: wer gibt frei?",
+      "words": 2065,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/agentforce-agenten-testen-freigeben/",
+      "status": 200,
+      "title": "Agentforce-Agenten testen: wann ist einer produktionsreif?",
+      "words": 1944,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/agentforce-business-value-datenqualitaet/",
+      "status": 200,
+      "title": "Agentforce: Business Value und Datenqualität zuerst",
+      "words": 1530,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/agentforce-eu-datenresidenz-modelle/",
+      "status": 200,
+      "title": "Agentforce Datenresidenz: Wo laufen die KI-Modelle?",
+      "words": 2059,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/agentforce-ja-oder-nein-hersteller/",
+      "status": 200,
+      "title": "Agentforce für Hersteller: jetzt starten oder warten?",
+      "words": 1858,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/agentforce-kennzahlen-nach-go-live/",
+      "status": 200,
+      "title": "Agentforce-Kennzahlen nach Go-live: lohnt sich der Agent?",
+      "words": 2051,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/agentforce-llm-auswahl-eigenes-modell/",
+      "status": 200,
+      "title": "Agentforce LLM-Auswahl: Default, Claude oder eigenes Modell",
+      "words": 2105,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/agentforce-sap-auftragsstatus/",
+      "status": 200,
+      "title": "Agentforce und SAP: Auftragsstatus über MuleSoft",
+      "words": 2094,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/agentforce-vertriebsplanung-rahmenvertraege/",
+      "status": 200,
+      "title": "Agentforce Vertriebsplanung: was der Agent wirklich kann",
+      "words": 1885,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/agentforce-vibes-claude-code-copilot-vergleich/",
+      "status": 200,
+      "title": "Agentforce Vibes, Claude Code, Codex oder Copilot?",
+      "words": 1882,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/aiforce-salesforce-in-claude-und-slack/",
+      "status": 200,
+      "title": "AIforce: Salesforce in Claude und Slack erklärt",
+      "words": 2012,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/altes-erp-ohne-api-ki-agenten/",
+      "status": 200,
+      "title": "Altes ERP ohne API: Helfen KI-Agenten trotzdem?",
+      "words": 1999,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/angebot-zu-sales-agreement-produktkonfigurator/",
+      "status": 200,
+      "title": "Vom Angebot zum Sales Agreement: der Konfigurator",
+      "words": 1569,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/api-67-apex-user-mode-weniger-datensaetze/",
+      "status": 200,
+      "title": "API 67.0: Warum Apex im User Mode weniger sieht",
+      "words": 2222,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/asset-service-lifecycle-management-zusatz/",
+      "status": 200,
+      "title": "Asset Service Lifecycle Management: Lohnt das Add-on?",
+      "words": 1949,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/audit-trail-ki-agenten-salesforce/",
+      "status": 200,
+      "title": "Audit-Trail für KI-Agenten in Salesforce: welche Logs?",
+      "words": 1980,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/b2b-buyer-agent-whatsapp-bestellen/",
+      "status": 200,
+      "title": "B2B Buyer Agent: Bestellen per WhatsApp und SMS",
+      "words": 1803,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/b2b-checkout-bestellnummer-rechnung/",
+      "status": 200,
+      "title": "B2B-Checkout: Bestellnummer, Karte oder Rechnung?",
+      "words": 1769,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/b2b-commerce-lizenzen-kaeufer/",
+      "status": 200,
+      "title": "B2B Commerce Lizenzen für Käufer: Wer braucht welche?",
+      "words": 1610,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/b2b-commerce-oder-haendlerportal/",
+      "status": 200,
+      "title": "B2B Commerce oder Händlerportal: Wann lohnt ein Shop?",
+      "words": 1593,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/b2b-commerce-preise-gmv-modell/",
+      "status": 200,
+      "title": "B2B Commerce Preise: Was das GMV-Modell kostet",
+      "words": 1604,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/b2b-commerce-sap-datenfluesse/",
+      "status": 200,
+      "title": "B2B Commerce und SAP: Welche Daten fließen wohin?",
+      "words": 1740,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/b2b-commerce-versionen-visualforce-aura-lwr/",
+      "status": 200,
+      "title": "B2B Commerce Versionen: Visualforce, Aura oder LWR?",
+      "words": 1650,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/b2b-shop-haendler-einfuehren/",
+      "status": 200,
+      "title": "B2B-Shop für Händler einführen: in welcher Reihenfolge?",
+      "words": 1729,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/b2b-shop-kennzahlen-nach-go-live/",
+      "status": 200,
+      "title": "B2B-Shop Kennzahlen: Was nach dem Go-live zählt",
+      "words": 1704,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/b2b-shop-suche-teilenummer/",
+      "status": 200,
+      "title": "B2B-Shop-Suche: Ersatzteile über die Teilenummer finden",
+      "words": 1800,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/b2b-store-aura-lwr-migrieren/",
+      "status": 200,
+      "title": "Von Aura zu LWR: einen B2B-Commerce-Store migrieren",
+      "words": 1847,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/b2b-store-laender-marken-haendler/",
+      "status": 200,
+      "title": "Ein B2B-Store oder mehrere: Länder, Marken, Händler",
+      "words": 1728,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/b2b-webshop-business-case-hersteller/",
+      "status": 200,
+      "title": "B2B-Webshop Business Case für Hersteller",
+      "words": 1666,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/bestand-b2b-shop-erp-live/",
+      "status": 200,
+      "title": "Bestand im B2B-Shop: live aus dem ERP oder kopiert?",
+      "words": 1538,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/buyer-groups-entitlements-sichtbarkeit/",
+      "status": 200,
+      "title": "Buyer Groups und Entitlements: Wer sieht welches Produkt?",
+      "words": 1657,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/commerce-extensions-eigenentwicklung/",
+      "status": 200,
+      "title": "Commerce Extensions: Eigenentwicklung, die Updates übersteht",
+      "words": 1734,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/community-mcp-server-salesforce-risiken/",
+      "status": 200,
+      "title": "Community-MCP-Server für Salesforce: was prüfen?",
+      "words": 1988,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/connected-apps-oauth-ki-integrationen/",
+      "status": 200,
+      "title": "Connected Apps und KI-Tools: Lehren aus Salesloft Drift",
+      "words": 2167,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/copado-gearset-provar-ki-agenten/",
+      "status": 200,
+      "title": "Copado, Gearset und Provar: KI-Agenten im Check",
+      "words": 2129,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/cpq-behalten-oder-revenue-cloud/",
+      "status": 200,
+      "title": "CPQ behalten oder zu Revenue Cloud wechseln?",
+      "words": 1599,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/cpq-migration-revenue-cloud-phasen/",
+      "status": 200,
+      "title": "CPQ zu Revenue Cloud migrieren: Phasen, Aufwand, Cutover",
+      "words": 1773,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/data-360-kosten-fuer-ki-agenten/",
+      "status": 200,
+      "title": "Data 360 Kosten für KI-Agenten: Kataloge und Handbücher",
+      "words": 2050,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/digital-wallet-agentforce-kostenkontrolle/",
+      "status": 200,
+      "title": "Digital Wallet: Agentforce-Kostenkontrolle für Werke",
+      "words": 2034,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/e-rechnung-pflicht-2027-revenue-cloud/",
+      "status": 200,
+      "title": "E-Rechnung ab 2027: Was heißt das für Revenue Cloud?",
+      "words": 1681,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/einstein-bots-agentforce-umstellen/",
+      "status": 200,
+      "title": "Einstein Bot auf Agentforce umstellen oder Menü behalten?",
+      "words": 2117,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/einstein-trust-layer-was-er-schuetzt/",
+      "status": 200,
+      "title": "Einstein Trust Layer: Was er in Agentforce schützt",
+      "words": 1876,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/ersatzteile-seriennummer-ki-agent/",
+      "status": 200,
+      "title": "Ersatzteile per Seriennummer: Kann ein KI-Agent das?",
+      "words": 1921,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/ersatzteilshop-teile-pro-maschine/",
+      "status": 200,
+      "title": "Ersatzteilshop: nur Teile zur eigenen Maschine zeigen",
+      "words": 1876,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/eu-ai-act-fristen-agentforce/",
+      "status": 200,
+      "title": "EU AI Act: Was die neuen Fristen für Agentforce bedeuten",
+      "words": 2176,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/festpreis-statt-aufwand-ki-salesforce/",
+      "status": 200,
+      "title": "Festpreis statt Aufwand: KI in Salesforce-Projekten",
+      "words": 1849,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/field-service-app-offline-briefcase/",
+      "status": 200,
+      "title": "Field Service App offline: Welche Daten aufs Gerät?",
+      "words": 1784,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/field-service-app-updates-testen/",
+      "status": 200,
+      "title": "Field Service App Updates: jede Version vorher testen",
+      "words": 1668,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/field-service-asset-hierarchie-maschinen/",
+      "status": 200,
+      "title": "Asset-Hierarchie im Field Service: Wie tief pro Maschine?",
+      "words": 1675,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/field-service-bereitschaft-schichten/",
+      "status": 200,
+      "title": "Bereitschaftsdienst im Field Service: Schichten planen",
+      "words": 1634,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/field-service-case-zu-arbeitsauftrag/",
+      "status": 200,
+      "title": "Field Service Arbeitsauftrag: vom Case zum Techniker",
+      "words": 1530,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/field-service-data-capture-pruefprotokolle/",
+      "status": 200,
+      "title": "Field Service Data Capture: Prüfprotokolle ohne Papier",
+      "words": 1572,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/field-service-einrichtung-ki-assistent/",
+      "status": 200,
+      "title": "Field Service per KI-Assistent einrichten: Was prüfen?",
+      "words": 1628,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/field-service-enhanced-scheduling-umstellen/",
+      "status": 200,
+      "title": "Enhanced Scheduling and Optimization: jetzt umstellen?",
+      "words": 1645,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/field-service-kennzahlen-operations-home/",
+      "status": 200,
+      "title": "Field Service Kennzahlen nach dem Go-live: Was messen?",
+      "words": 1707,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/field-service-lizenzen-rollen-dispatcher-techniker/",
+      "status": 200,
+      "title": "Field Service Lizenzen: Welche Rolle braucht welche?",
+      "words": 1634,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/field-service-mehrtaegige-einsaetze-inbetriebnahme/",
+      "status": 200,
+      "title": "Mehrtägige Einsätze im Field Service: Montage und Teams",
+      "words": 1830,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/field-service-scheduling-console-disponenten/",
+      "status": 200,
+      "title": "Scheduling Console im Field Service: Disponenten umstellen?",
+      "words": 1611,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/field-service-wartung-nach-betriebsstunden/",
+      "status": 200,
+      "title": "Wartung nach Betriebsstunden im Field Service einrichten",
+      "words": 1748,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/flex-credits-agentforce-kosten-pro-aktion/",
+      "status": 200,
+      "title": "Flex Credits: Agentforce-Kosten pro Aktion schätzen",
+      "words": 1966,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/garantie-pruefagent-winter-27/",
+      "status": 200,
+      "title": "Garantie-Prüfagent aus Winter '27: was vorher stehen muss",
+      "words": 1845,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/garantieansprueche-haendler-salesforce/",
+      "status": 200,
+      "title": "Garantieansprüche von Händlern in Salesforce prüfen",
+      "words": 1578,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/haendlerbestand-nachschub-agentforce/",
+      "status": 200,
+      "title": "Händlerbestand und Nachschub mit Agentforce",
+      "words": 1908,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/headless-b2b-commerce-eigenes-frontend/",
+      "status": 200,
+      "title": "Headless B2B Commerce: eigenes Frontend, Salesforce-Kern",
+      "words": 1741,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/installierte-basis-asset-meilensteine/",
+      "status": 200,
+      "title": "Installierte Basis in Manufacturing Cloud: Assets",
+      "words": 1623,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/ki-agenten-aussendienst-field-service/",
+      "status": 200,
+      "title": "KI-Agenten im Außendienst: Was Field Service heute kann",
+      "words": 1932,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/ki-angebote-haendler-partner-sales-assistant/",
+      "status": 200,
+      "title": "KI-Angebote für Händler: Partner Sales Assistant",
+      "words": 1913,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/ki-coding-betriebsrat-dsgvo/",
+      "status": 200,
+      "title": "KI-Coding-Tools im Unternehmen: Betriebsrat und DSGVO",
+      "words": 2072,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/ki-coding-kosten-salesforce-projekt/",
+      "status": 200,
+      "title": "KI-Coding-Kosten im Salesforce-Projekt: wer zahlt?",
+      "words": 2130,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/ki-fehlersuche-handbuecher-aussendienst/",
+      "status": 200,
+      "title": "KI-Fehlersuche im Außendienst: erst die Handbücher",
+      "words": 1954,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/ki-generierten-salesforce-code-pruefen/",
+      "status": 200,
+      "title": "KI-generierten Salesforce-Code als Kunde prüfen",
+      "words": 2069,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/ki-kleinere-salesforce-teams-delivery/",
+      "status": 200,
+      "title": "KI-native Delivery: kleinere Salesforce-Teams",
+      "words": 1886,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/ki-nutzen-salesforce-projekt-messen/",
+      "status": 200,
+      "title": "KI-Nutzen im Salesforce-Projekt messen | FK Solution Design",
+      "words": 1852,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/ki-org-analyse-technische-schulden/",
+      "status": 200,
+      "title": "KI-Org-Analyse: technische Schulden vor dem Partnerwechsel",
+      "words": 2146,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/ki-regeldatei-salesforce-repository/",
+      "status": 200,
+      "title": "KI-Regeldatei im Salesforce-Repository: wem gehört sie?",
+      "words": 2251,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/kundenpreise-b2b-commerce-preisbuecher-erp/",
+      "status": 200,
+      "title": "Kundenpreise in B2B Commerce: Preisbücher oder ERP?",
+      "words": 1708,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/kundenpreise-sap-konditionen-oder-salesforce-pricing/",
+      "status": 200,
+      "title": "Kundenpreise: SAP-Konditionen oder Salesforce Pricing?",
+      "words": 1718,
+      "score": 94.96,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/manufacturing-cloud-funktionen-ueberblick/",
+      "status": 200,
+      "title": "Manufacturing Cloud Funktionen: was enthalten ist",
+      "words": 1790,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/manufacturing-cloud-kundenportal/",
+      "status": 200,
+      "title": "Kundenportal in der Manufacturing Cloud: was Kunden sehen",
+      "words": 1471,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/manufacturing-cloud-sap-integration-datenfluesse/",
+      "status": 200,
+      "title": "Manufacturing Cloud und SAP: welche Daten wohin",
+      "words": 2001,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/manufacturing-cloud-service-oder-service-cloud/",
+      "status": 200,
+      "title": "Manufacturing Cloud for Service oder Service Cloud?",
+      "words": 1582,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/manufacturing-cloud-wann-lohnt-sie-sich/",
+      "status": 200,
+      "title": "Manufacturing Cloud: Wann lohnt sie sich?",
+      "words": 1835,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/manufacturing-cloud-weltweit-ausrollen/",
+      "status": 200,
+      "title": "Manufacturing Cloud weltweit ausrollen: die Reihenfolge",
+      "words": 1547,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/manufacturing-cloud-zusatzkosten-add-ons/",
+      "status": 200,
+      "title": "Manufacturing Cloud Add-ons: was extra kostet",
+      "words": 2003,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/mcp-salesforce-erklaert-it-leitung/",
+      "status": 200,
+      "title": "MCP und Salesforce, erklärt für die IT-Leitung",
+      "words": 2050,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/mcp-zugriffe-salesforce-budgetrisiko/",
+      "status": 200,
+      "title": "MCP-Zugriffe auf Salesforce: Budgetrisiko ohne Preis",
+      "words": 1901,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/mehrsprachige-agentforce-agenten-export/",
+      "status": 200,
+      "title": "Mehrsprachige Agentforce-Agenten für Händler im Export",
+      "words": 1972,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/merchandising-agent-teilekatalog/",
+      "status": 200,
+      "title": "Merchandising Agent: Was er im Teilekatalog leistet",
+      "words": 1708,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/nachbestellen-b2b-shop-vorlagen/",
+      "status": 200,
+      "title": "Nachbestellen im B2B-Shop: Vorlagen, CSV, Reorder",
+      "words": 1664,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/nearshore-salesforce-teams-ki-agenten/",
+      "status": 200,
+      "title": "Nearshore-Salesforce-Teams mit KI-Agenten: was sich ändert",
+      "words": 2014,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/nearshore-teams-salesforce-acht-entwickler/",
+      "status": 200,
+      "title": "Nearshore-Teams für Salesforce: Warum höchstens acht?",
+      "words": 1699,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/object-ownership-matrix-salesforce/",
+      "status": 200,
+      "title": "Object Ownership Matrix: Wer ändert welches Objekt?",
+      "words": 1525,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/partner-ki-coding-regeln-vertrag/",
+      "status": 200,
+      "title": "Partner codet mit KI: Was in den Vertrag gehört",
+      "words": 1759,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/partner-visit-management-haendlerbesuche/",
+      "status": 200,
+      "title": "Partner Visit Management: Händlerbesuche mit KPIs",
+      "words": 1572,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/pay-per-use-maschinen-revenue-cloud/",
+      "status": 200,
+      "title": "Pay-per-Use für Maschinen mit Revenue Cloud abrechnen",
+      "words": 1790,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/penny-perfect-pricing-erp-preise/",
+      "status": 200,
+      "title": "Penny Perfect Pricing: ERP-Preise in Salesforce?",
+      "words": 1726,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/predictive-maintenance-salesforce-datenbasis/",
+      "status": 200,
+      "title": "Predictive Maintenance in Salesforce: die Datenbasis",
+      "words": 1993,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/produktdaten-b2b-commerce-pim-erp/",
+      "status": 200,
+      "title": "Produktdaten für B2B Commerce: PIM, ERP oder Salesforce?",
+      "words": 1680,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/programmgeschaeft-zulieferer-prognose/",
+      "status": 200,
+      "title": "Programmgeschäft: Prognosen für Zulieferer",
+      "words": 1695,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/prompt-builder-oder-agentforce-agent/",
+      "status": 200,
+      "title": "Prompt Builder oder Agentforce-Agent: was wann passt",
+      "words": 1993,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/prompt-injection-haendlerportal-agentforce/",
+      "status": 200,
+      "title": "Prompt Injection im Händlerportal: Agentforce schützen",
+      "words": 2102,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/quality-gates-ki-code-salesforce-pipeline/",
+      "status": 200,
+      "title": "Quality Gates für KI-Code in der Salesforce-Pipeline",
+      "words": 2015,
+      "score": 94.96,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/rebate-management-haendlerboni/",
+      "status": 200,
+      "title": "Rebate Management: Händlerboni statt Excel",
+      "words": 1462,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/request-for-quote-b2b-shop-angebot/",
+      "status": 200,
+      "title": "Request for Quote im B2B-Shop: vom Warenkorb zum Angebot",
+      "words": 1706,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/revenue-cloud-angebotsagent-agentforce/",
+      "status": 200,
+      "title": "Angebotsagent in Revenue Cloud: Was er heute kann",
+      "words": 1635,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/revenue-cloud-assets-nachtraege-verlaengerungen/",
+      "status": 200,
+      "title": "Assets in Revenue Cloud: Nachträge und Verlängerungen",
+      "words": 1745,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/revenue-cloud-auftragsorchestrierung-sap/",
+      "status": 200,
+      "title": "Auftrag an SAP übergeben: Dynamic Revenue Orchestrator",
+      "words": 1901,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/revenue-cloud-billing-kosten/",
+      "status": 200,
+      "title": "Revenue Cloud Billing Kosten: Was Billing Events bedeuten",
+      "words": 1509,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/revenue-cloud-billing-oder-sap-rechnung/",
+      "status": 200,
+      "title": "Revenue Cloud Billing oder SAP: Wo entsteht die Rechnung?",
+      "words": 1587,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/revenue-cloud-editionen-preise/",
+      "status": 200,
+      "title": "Revenue Cloud Preise: Growth, Advanced und Add-ons",
+      "words": 1689,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/revenue-cloud-konfiguration-deployment/",
+      "status": 200,
+      "title": "Revenue Cloud Deployments: Konfiguration in der Pipeline",
+      "words": 1671,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/revenue-cloud-konfigurator-constraint-regeln/",
+      "status": 200,
+      "title": "Revenue Cloud Konfigurator: Wann lohnen Constraint-Regeln?",
+      "words": 1823,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/revenue-cloud-lohnt-sich-hersteller/",
+      "status": 200,
+      "title": "Revenue Cloud für Hersteller: Wann lohnt es sich?",
+      "words": 1517,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/revenue-cloud-manufacturing-cloud-commerce-abgrenzung/",
+      "status": 200,
+      "title": "Revenue Cloud, Manufacturing Cloud oder B2B Commerce?",
+      "words": 1561,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/revenue-cloud-preisprozeduren/",
+      "status": 200,
+      "title": "Salesforce Pricing: Wie Revenue Cloud Preise berechnet",
+      "words": 1867,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/revenue-cloud-produktkatalog-varianten/",
+      "status": 200,
+      "title": "Produktkatalog in Revenue Cloud: Varianten abbilden",
+      "words": 1774,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/revenue-cloud-produktnamen-rlm-rca/",
+      "status": 200,
+      "title": "Revenue Cloud, RLM, RCA: Welcher Name gilt jetzt?",
+      "words": 1512,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/revenue-cloud-rabattfreigaben/",
+      "status": 200,
+      "title": "Rabattfreigaben in Revenue Cloud: Advanced Approvals",
+      "words": 1645,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/revenue-cloud-sap-quote-to-cash-aufteilung/",
+      "status": 200,
+      "title": "Revenue Cloud und SAP: Wer führt was im Quote-to-Cash?",
+      "words": 1817,
+      "score": 94.96,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/rueckrufaktionen-service-kampagnen/",
+      "status": 200,
+      "title": "Rückrufaktionen in Salesforce: Servicekampagnen",
+      "words": 1502,
+      "score": 94.51,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/sales-agreements-abnahmemengen-erp/",
+      "status": 200,
+      "title": "Sales Agreements: Fehlende Abnahmemengen erkennen",
+      "words": 1958,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/salesforce-agent-context-engine-erklaert/",
+      "status": 200,
+      "title": "Salesforce Agent Context Engine: einfach erklärt",
+      "words": 1473,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/salesforce-contracts-vertragsmanagement/",
+      "status": 200,
+      "title": "Salesforce Contracts: Reicht das Vertragsmanagement?",
+      "words": 1592,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/salesforce-cpq-revenue-cloud-unterschiede/",
+      "status": 200,
+      "title": "Salesforce CPQ vs. Revenue Cloud: Die echten Unterschiede",
+      "words": 1950,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/salesforce-cpq-verkaufsende-status/",
+      "status": 200,
+      "title": "Salesforce CPQ Verkaufsende: Was gilt im Oktober 2026?",
+      "words": 1717,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/salesforce-document-builder-grenzen-workarounds/",
+      "status": 200,
+      "title": "Salesforce Document Builder: fünf Grenzen und Workarounds",
+      "words": 1661,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/salesforce-dx-mcp-server-ende/",
+      "status": 200,
+      "title": "Salesforce DX MCP Server: Ende am 2. November 2026",
+      "words": 2022,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/salesforce-editionen-core-advanced-max/",
+      "status": 200,
+      "title": "Salesforce-Editionen Core, Advanced, Max für Hersteller",
+      "words": 2086,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/salesforce-field-service-einfuehrung/",
+      "status": 200,
+      "title": "Field Service einführen: Warum in Wellen?",
+      "words": 1519,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/salesforce-field-service-ersatzteile-erp/",
+      "status": 200,
+      "title": "Ersatzteile im Außendienst: ERP oder Salesforce?",
+      "words": 1495,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/salesforce-field-service-lohnt-sich/",
+      "status": 200,
+      "title": "Salesforce Field Service: Wann lohnt es sich?",
+      "words": 1498,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/salesforce-field-service-mobile-aussendienst/",
+      "status": 200,
+      "title": "Salesforce Field Service Mobile: Führung und Sprache",
+      "words": 1540,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/salesforce-field-service-servicepartner/",
+      "status": 200,
+      "title": "Field Service: Wie bindet man Servicepartner ein?",
+      "words": 1464,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/salesforce-field-service-stammdaten/",
+      "status": 200,
+      "title": "Field Service: Welche Daten braucht die Planung?",
+      "words": 1629,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/salesforce-field-service-terminplanung-automatisieren/",
+      "status": 200,
+      "title": "Field Service: Wie viel Planung darf automatisch laufen?",
+      "words": 1586,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/salesforce-field-service-wartungsvertraege/",
+      "status": 200,
+      "title": "Field Service: Wie bildet man Wartungsverträge ab?",
+      "words": 1518,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/salesforce-hosted-mcp-server-datenzugriff/",
+      "status": 200,
+      "title": "Hosted MCP Server: Wer liest welche Salesforce-Daten?",
+      "words": 2082,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/salesforce-lizenzen-volle-lizenz/",
+      "status": 200,
+      "title": "Salesforce-Lizenzen: Braucht jeder eine volle Lizenz?",
+      "words": 1575,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/salesforce-passwort-integrationen-2027/",
+      "status": 200,
+      "title": "Salesforce: Passwort-Integrationen enden 2027",
+      "words": 1701,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/salesforce-service-documents-document-builder-servicebericht/",
+      "status": 200,
+      "title": "Salesforce Service Documents: reicht der Document Builder?",
+      "words": 1865,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/salesforce-well-architected-framework-neu/",
+      "status": 200,
+      "title": "Salesforce Well-Architected: Was das neue Framework ändert",
+      "words": 1801,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/salesforce-winter-27-aenderungen-pipeline/",
+      "status": 200,
+      "title": "Salesforce Winter '27: Was sich für Ihre Pipeline ändert",
+      "words": 1565,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/sandbox-kundendaten-ki-coding-agenten/",
+      "status": 200,
+      "title": "Sandbox-Kundendaten: Was KI-Coding-Agenten lesen dürfen",
+      "words": 1923,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/service-cloud-casey-und-service-rep-assistant/",
+      "status": 200,
+      "title": "Service Cloud: Casey und der Service Rep Assistant",
+      "words": 1455,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/serviceagent-haendleranfragen-kosten/",
+      "status": 200,
+      "title": "Agentforce-Serviceagent für Händler: Kosten pro Monat",
+      "words": 2094,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/setup-with-agentforce-admin-aenderungen/",
+      "status": 200,
+      "title": "Setup with Agentforce: Admin-KI in Produktion erlauben?",
+      "words": 1956,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/sfdx-hardis-einfuehrung-salesforce-devops/",
+      "status": 200,
+      "title": "sfdx-hardis: Salesforce DevOps als Open Source erklärt",
+      "words": 1602,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/sfdx-hardis-kostenloses-devops-training/",
+      "status": 200,
+      "title": "Was ich aus dem kostenlosen sfdx-hardis-Training lernte",
+      "words": 1478,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/sfdx-hardis-oder-devops-center-vergleich/",
+      "status": 200,
+      "title": "sfdx-hardis oder DevOps Center: der Vergleich 2026",
+      "words": 2010,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/ship-and-debit-preisschutz-haendler/",
+      "status": 200,
+      "title": "Ship and Debit: Händleransprüche in Salesforce",
+      "words": 1696,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/shop-bestellungen-erp-auftrag/",
+      "status": 200,
+      "title": "Shop-Bestellungen ins ERP: Wem gehört der Auftrag?",
+      "words": 1564,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/siemens-agentforce-lehren-mittelstand/",
+      "status": 200,
+      "title": "Siemens und Agentforce: Lehren für den Mittelstand",
+      "words": 1900,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/stoerungshotline-agentforce-voice-deutsch/",
+      "status": 200,
+      "title": "Störungshotline mit Agentforce Voice: erst die Triage",
+      "words": 2038,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/vibe-coding-salesforce-prototyp-produktion/",
+      "status": 200,
+      "title": "Vibe Coding in Salesforce: Prototyp oder Produktion?",
+      "words": 2007,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/visual-remote-assistant-fernhilfe-statt-einsatz/",
+      "status": 200,
+      "title": "Visual Remote Assistant: Videohilfe statt Einsatz?",
+      "words": 1736,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/von-salesforce-billing-zu-revenue-cloud-billing/",
+      "status": 200,
+      "title": "Von Salesforce Billing zu Revenue Cloud Billing",
+      "words": 1648,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/wartungsvertraege-wiederkehrend-abrechnen/",
+      "status": 200,
+      "title": "Wartungsverträge wiederkehrend abrechnen mit Revenue Cloud",
+      "words": 1722,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/warum-devops-salesforce-enterprise-projekte/",
+      "status": 200,
+      "title": "Warum DevOps über Salesforce-Großprojekte entscheidet",
+      "words": 1690,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/warum-kunden-devops-tools-selbst-besitzen-sollten/",
+      "status": 200,
+      "title": "Warum Kunden ihre DevOps-Tools selbst besitzen sollten",
+      "words": 1445,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/blog/warum-pull-request-reviews-pflicht-sind/",
+      "status": 200,
+      "title": "Warum Pull-Request-Reviews in Großprojekten Pflicht sind",
+      "words": 1651,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/certifications/",
+      "status": 200,
+      "title": "Salesforce-Zertifizierungen | FK Solution Design",
+      "words": 1702,
+      "score": 97.44,
+      "checks": [
+        "has_render_blocking_resources"
+      ]
+    },
+    {
+      "page": "/en/",
+      "status": 200,
+      "title": "Salesforce architect for manufacturers | FK Solution Design",
+      "words": 913,
+      "score": 94.51,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/",
+      "status": 200,
+      "title": "Salesforce architecture blog | FK Solution Design",
+      "words": 62,
+      "score": 97.8,
+      "checks": [
+        "low_content_rate",
+        "low_character_count",
+        "low_readability_rate",
+        "has_render_blocking_resources"
+      ]
+    },
+    {
+      "page": "/en/blog/account-forecasting-sales-volume-planning/",
+      "status": 200,
+      "title": "Account Forecasting: Sales Volume Planning",
+      "words": 1815,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/account-manager-targets-sales-targets/",
+      "status": 200,
+      "title": "Account manager targets: sales targets per customer",
+      "words": 1867,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/advanced-pricing-b2b-store-revenue-cloud/",
+      "status": 200,
+      "title": "Advanced Pricing in B2B stores: when Revenue Cloud?",
+      "words": 1727,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/aela-agentforce-flat-fee-vs-credits/",
+      "status": 200,
+      "title": "Salesforce AELA vs Flex Credits for manufacturers",
+      "words": 2163,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/agent-script-deterministic-rules/",
+      "status": 200,
+      "title": "Agent Script: why business rules don't belong in the LLM",
+      "words": 2141,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/agentforce-1-field-service-edition-worth-it/",
+      "status": 200,
+      "title": "Agentforce 1 Field Service: when does the bundle pay off?",
+      "words": 1680,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/agentforce-a2a-multi-agent-sap-microsoft/",
+      "status": 200,
+      "title": "Agentforce A2A: which agent owns the dealer conversation?",
+      "words": 2142,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/agentforce-agent-api-dealer-apps/",
+      "status": 200,
+      "title": "Agentforce Agent API: agents in your own dealer apps",
+      "words": 2159,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/agentforce-agents-release-pipeline/",
+      "status": 200,
+      "title": "Agentforce agents in the release pipeline: who releases?",
+      "words": 2118,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/agentforce-business-value-data-quality-first/",
+      "status": 200,
+      "title": "Agentforce pilots: business value and data quality first",
+      "words": 1658,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/agentforce-eu-data-residency-models/",
+      "status": 200,
+      "title": "Agentforce EU data residency: where do models run?",
+      "words": 2184,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/agentforce-kpis-after-go-live/",
+      "status": 200,
+      "title": "Agentforce KPIs after go-live: does the agent pay off?",
+      "words": 2170,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/agentforce-llm-choice-bring-your-own/",
+      "status": 200,
+      "title": "Agentforce LLM choice: default, Claude or your own model",
+      "words": 2208,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/agentforce-sales-planning-agreements-forecasts/",
+      "status": 200,
+      "title": "Agentforce Sales Planning: What the Agent Really Does",
+      "words": 2012,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/agentforce-sap-order-status-mulesoft/",
+      "status": 200,
+      "title": "Agentforce and SAP: order status through MuleSoft",
+      "words": 2180,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/agentforce-vibes-claude-code-copilot/",
+      "status": 200,
+      "title": "Agentforce Vibes, Claude Code, Codex or Copilot?",
+      "words": 1929,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/agentforce-yes-or-no-manufacturers/",
+      "status": 200,
+      "title": "Agentforce for manufacturers: start now or wait?",
+      "words": 1994,
+      "score": 94.96,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/ai-coding-costs-salesforce-project/",
+      "status": 200,
+      "title": "AI coding costs in a Salesforce project: who pays?",
+      "words": 2221,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/ai-coding-tools-works-council-gdpr/",
+      "status": 200,
+      "title": "AI coding tools in Germany: works council and GDPR",
+      "words": 2185,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/ai-native-delivery-smaller-salesforce-teams/",
+      "status": 200,
+      "title": "AI-native delivery: smaller Salesforce teams",
+      "words": 1996,
+      "score": 94.96,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/ai-org-assessment-technical-debt/",
+      "status": 200,
+      "title": "AI org assessment: technical debt before a partner change",
+      "words": 2195,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/ai-partner-sales-assistant-dealer-quotes/",
+      "status": 200,
+      "title": "AI Partner Sales Assistant: dealer quotes with AI",
+      "words": 2064,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/ai-rules-file-salesforce-repository/",
+      "status": 200,
+      "title": "AI rules file for Salesforce repos: who owns it?",
+      "words": 2311,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/aiforce-salesforce-in-claude-and-slack/",
+      "status": 200,
+      "title": "AIforce: Salesforce in Claude and Slack explained",
+      "words": 2110,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/api-67-apex-user-mode-fewer-records/",
+      "status": 200,
+      "title": "API 67.0 user mode: why Apex sees fewer records",
+      "words": 2267,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/asset-service-lifecycle-management-add-on/",
+      "status": 200,
+      "title": "Asset Service Lifecycle Management: worth the add-on?",
+      "words": 2074,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/audit-trail-ai-agents-salesforce/",
+      "status": 200,
+      "title": "Audit trail for AI agents in Salesforce: which logs?",
+      "words": 2125,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/b2b-buyer-agent-whatsapp-ordering/",
+      "status": 200,
+      "title": "B2B Buyer Agent: ordering through WhatsApp and SMS",
+      "words": 1890,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/b2b-checkout-purchase-order-card-invoice/",
+      "status": 200,
+      "title": "B2B checkout: purchase order, card or invoice?",
+      "words": 1968,
+      "score": 94.96,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/b2b-commerce-buyer-licences/",
+      "status": 200,
+      "title": "B2B Commerce buyer licences: who needs which one?",
+      "words": 1718,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/b2b-commerce-customer-prices-price-books-erp/",
+      "status": 200,
+      "title": "Customer prices in B2B Commerce: price books or ERP?",
+      "words": 1911,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/b2b-commerce-or-dealer-portal/",
+      "status": 200,
+      "title": "B2B Commerce or dealer portal: when a shop pays off",
+      "words": 1725,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/b2b-commerce-pricing-gmv-model/",
+      "status": 200,
+      "title": "B2B Commerce pricing: what the GMV model costs",
+      "words": 1736,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/b2b-commerce-product-data-pim-erp/",
+      "status": 200,
+      "title": "B2B Commerce product data: PIM, ERP or Salesforce?",
+      "words": 1841,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/b2b-commerce-reorder-order-templates/",
+      "status": 200,
+      "title": "Reorders in B2B Commerce: templates, CSV, reorder",
+      "words": 1750,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/b2b-commerce-sap-data-flows/",
+      "status": 200,
+      "title": "B2B Commerce and SAP: which data flows where?",
+      "words": 1880,
+      "score": 94.96,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/b2b-commerce-search-part-numbers/",
+      "status": 200,
+      "title": "B2B Commerce search: finding parts by part number",
+      "words": 1949,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/b2b-commerce-versions-visualforce-aura-lwr/",
+      "status": 200,
+      "title": "B2B Commerce versions: Visualforce, Aura or LWR?",
+      "words": 1708,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/b2b-shop-dealer-rollout/",
+      "status": 200,
+      "title": "B2B shop rollout to dealers: in which order?",
+      "words": 1817,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/b2b-shop-kpis-after-go-live/",
+      "status": 200,
+      "title": "B2B shop KPIs: what to measure after go-live",
+      "words": 1777,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/b2b-store-aura-to-lwr-migration/",
+      "status": 200,
+      "title": "Aura to LWR: migrating a B2B Commerce store",
+      "words": 1905,
+      "score": 94.96,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/b2b-store-orders-to-erp/",
+      "status": 200,
+      "title": "B2B store orders to the ERP: who owns the order?",
+      "words": 1674,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/b2b-store-stock-availability-erp/",
+      "status": 200,
+      "title": "Stock in the B2B store: live from the ERP or copied?",
+      "words": 1668,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/b2b-stores-countries-brands-dealers/",
+      "status": 200,
+      "title": "One B2B store or several: countries, brands, dealers",
+      "words": 1883,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/b2b-webshop-business-case-manufacturers/",
+      "status": 200,
+      "title": "B2B webshop business case for manufacturers",
+      "words": 1803,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/breakdown-hotline-agentforce-voice/",
+      "status": 200,
+      "title": "Breakdown hotline with Agentforce Voice: triage first",
+      "words": 2155,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/buyer-groups-entitlements-product-visibility/",
+      "status": 200,
+      "title": "Buyer groups and entitlements: who sees which product",
+      "words": 1787,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/commerce-extensions-custom-code/",
+      "status": 200,
+      "title": "Commerce extensions: custom code that survives updates",
+      "words": 1805,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/community-mcp-servers-salesforce-risks/",
+      "status": 200,
+      "title": "Community MCP servers for Salesforce: what to check",
+      "words": 2041,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/connected-apps-oauth-ai-integrations/",
+      "status": 200,
+      "title": "Connected apps and AI tools: lessons from Salesloft Drift",
+      "words": 2271,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/copado-gearset-provar-ai-agents/",
+      "status": 200,
+      "title": "Copado, Gearset and Provar AI agents: a client check",
+      "words": 2183,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/cpq-to-revenue-cloud-migration-phases/",
+      "status": 200,
+      "title": "CPQ to Revenue Cloud migration: phases, effort, cutover",
+      "words": 1870,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/customer-prices-sap-conditions-or-salesforce-pricing/",
+      "status": 200,
+      "title": "Customer prices: SAP conditions or Salesforce Pricing?",
+      "words": 1858,
+      "score": 94.96,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/data-360-costs-for-ai-agents/",
+      "status": 200,
+      "title": "Data 360 costs for AI agents: catalogues and manuals",
+      "words": 2134,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/dealer-service-agent-cost-calculation/",
+      "status": 200,
+      "title": "Agentforce dealer service agent: cost per month",
+      "words": 2151,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/digital-wallet-agentforce-cost-control/",
+      "status": 200,
+      "title": "Digital Wallet: Agentforce cost control across plants",
+      "words": 2153,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/distributor-inventory-replenishment-agentforce/",
+      "status": 200,
+      "title": "Agentforce for distributor stock and replenishment",
+      "words": 2023,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/e-invoicing-germany-2027-revenue-cloud/",
+      "status": 200,
+      "title": "E-invoicing in Germany 2027: impact on Revenue Cloud",
+      "words": 1750,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/einstein-bots-to-agentforce-upgrade/",
+      "status": 200,
+      "title": "Einstein Bot to Agentforce: convert or keep the menu?",
+      "words": 2243,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/einstein-trust-layer-what-it-protects/",
+      "status": 200,
+      "title": "Einstein Trust Layer: what it protects in Agentforce",
+      "words": 2008,
+      "score": 94.96,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/eu-ai-act-deadlines-agentforce/",
+      "status": 200,
+      "title": "EU AI Act deadlines: what they mean for Agentforce",
+      "words": 2332,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/field-service-ai-agents-what-works-today/",
+      "status": 200,
+      "title": "AI agents in Field Service: what works today?",
+      "words": 2083,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/field-service-ai-troubleshooting-manuals/",
+      "status": 200,
+      "title": "Field Service AI troubleshooting: fix the manuals first",
+      "words": 2110,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/field-service-asset-hierarchy-machines/",
+      "status": 200,
+      "title": "Field Service asset hierarchy: how deep for a machine?",
+      "words": 1822,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/field-service-case-to-work-order/",
+      "status": 200,
+      "title": "Field Service work orders: from case to technician",
+      "words": 1753,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/field-service-data-capture-inspection-forms/",
+      "status": 200,
+      "title": "Field Service Data Capture: inspection forms without paper",
+      "words": 1739,
+      "score": 94.96,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/field-service-enhanced-scheduling-optimization-switch/",
+      "status": 200,
+      "title": "Enhanced Scheduling and Optimization: switch now?",
+      "words": 1746,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/field-service-headless-setup-ai-assistant/",
+      "status": 200,
+      "title": "Field Service setup by AI assistant: what to check",
+      "words": 1770,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/field-service-kpis-after-go-live/",
+      "status": 200,
+      "title": "Field Service KPIs after go-live: what to measure",
+      "words": 1876,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/field-service-licences-by-role/",
+      "status": 200,
+      "title": "Field Service licences: which role needs which one?",
+      "words": 1767,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/field-service-mobile-app-offline-data/",
+      "status": 200,
+      "title": "Field Service mobile offline: which data goes on the device?",
+      "words": 1899,
+      "score": 94.96,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/field-service-mobile-app-updates-testing/",
+      "status": 200,
+      "title": "Field Service app updates: how to test each release",
+      "words": 1803,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/field-service-multiday-jobs-crews-commissioning/",
+      "status": 200,
+      "title": "Field Service multiday jobs: commissioning and crews",
+      "words": 1959,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/field-service-on-call-shifts/",
+      "status": 200,
+      "title": "Field Service on-call duty: shifts beyond operating hours",
+      "words": 1821,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/field-service-scheduling-console-dispatchers/",
+      "status": 200,
+      "title": "Field Service Scheduling Console: move dispatchers now?",
+      "words": 1728,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/field-service-usage-based-maintenance/",
+      "status": 200,
+      "title": "Usage-based maintenance in Field Service: hours, not dates",
+      "words": 1921,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/fixed-price-vs-time-and-materials-ai/",
+      "status": 200,
+      "title": "Fixed price vs time and materials: AI in Salesforce",
+      "words": 1949,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/flex-credits-agentforce-cost-per-action/",
+      "status": 200,
+      "title": "Flex Credits: estimating Agentforce cost per action",
+      "words": 2112,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/from-salesforce-billing-to-revenue-cloud-billing/",
+      "status": 200,
+      "title": "From Salesforce Billing to Revenue Cloud Billing",
+      "words": 1798,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/headless-b2b-commerce-own-frontend/",
+      "status": 200,
+      "title": "Headless B2B Commerce: own frontend, Salesforce core",
+      "words": 1846,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/installed-base-asset-milestones/",
+      "status": 200,
+      "title": "Installed base in Manufacturing Cloud: asset data",
+      "words": 1759,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/keep-salesforce-cpq-or-revenue-cloud/",
+      "status": 200,
+      "title": "Keep Salesforce CPQ or move to Revenue Cloud?",
+      "words": 1668,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/legacy-erp-without-api-ai-agents/",
+      "status": 200,
+      "title": "Legacy ERP without an API: can AI agents still help?",
+      "words": 2157,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/maintenance-contracts-recurring-billing/",
+      "status": 200,
+      "title": "Maintenance contracts: recurring billing in Revenue Cloud",
+      "words": 1852,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/manufacturing-cloud-add-ons-extra-costs/",
+      "status": 200,
+      "title": "Manufacturing Cloud add-ons: what costs extra",
+      "words": 2092,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/manufacturing-cloud-customer-portal/",
+      "status": 200,
+      "title": "Manufacturing Cloud Customer Portal: What to Show",
+      "words": 1567,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/manufacturing-cloud-features-overview/",
+      "status": 200,
+      "title": "Manufacturing Cloud features: what is in the box",
+      "words": 1929,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/manufacturing-cloud-global-rollout/",
+      "status": 200,
+      "title": "Rolling Out Manufacturing Cloud Globally: the Order",
+      "words": 1616,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/manufacturing-cloud-sap-integration-data-flows/",
+      "status": 200,
+      "title": "Manufacturing Cloud and SAP: which data flows where",
+      "words": 2046,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/manufacturing-cloud-service-vs-service-cloud/",
+      "status": 200,
+      "title": "Manufacturing Cloud for Service or Service Cloud?",
+      "words": 1623,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/mcp-api-calls-salesforce-budget-risk/",
+      "status": 200,
+      "title": "MCP calls to Salesforce: a budget risk without a price",
+      "words": 1978,
+      "score": 94.96,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/mcp-salesforce-explained-for-it-leads/",
+      "status": 200,
+      "title": "MCP and Salesforce explained for IT leads",
+      "words": 2114,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/measuring-ai-productivity-salesforce-projects/",
+      "status": 200,
+      "title": "Measuring AI productivity in Salesforce projects",
+      "words": 1960,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/merchandising-agent-parts-catalog/",
+      "status": 200,
+      "title": "Merchandising Agent: what it does for a parts catalog",
+      "words": 1803,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/multilingual-agentforce-agents-export-dealers/",
+      "status": 200,
+      "title": "Multilingual Agentforce agents for export dealers",
+      "words": 2062,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/nearshore-salesforce-teams-ai-agents/",
+      "status": 200,
+      "title": "Nearshore Salesforce teams with AI agents: what changes",
+      "words": 2081,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/partner-visit-management-dealer-visits/",
+      "status": 200,
+      "title": "Partner visit management: dealer visits with KPIs",
+      "words": 1712,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/partners-using-ai-coding-contract-rules/",
+      "status": 200,
+      "title": "Partners coding with AI: what belongs in the contract",
+      "words": 1903,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/pay-per-use-machines-revenue-cloud/",
+      "status": 200,
+      "title": "Pay-per-use for machines: billing with Revenue Cloud",
+      "words": 1952,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/penny-perfect-pricing-erp-prices/",
+      "status": 200,
+      "title": "Penny Perfect Pricing: ERP prices in Salesforce?",
+      "words": 1822,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/predictive-maintenance-salesforce-data-needed/",
+      "status": 200,
+      "title": "Predictive maintenance in Salesforce: what data you need",
+      "words": 2126,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/product-recalls-service-campaigns/",
+      "status": 200,
+      "title": "Product recalls in Salesforce: service campaigns",
+      "words": 1680,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/program-based-business-supplier-forecasts/",
+      "status": 200,
+      "title": "Program-based business: forecasts for suppliers",
+      "words": 1861,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/prompt-builder-or-agentforce-agent/",
+      "status": 200,
+      "title": "Prompt Builder or Agentforce agent: when to use which",
+      "words": 2119,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/prompt-injection-dealer-portals-agentforce/",
+      "status": 200,
+      "title": "Prompt injection in dealer portals: protect Agentforce",
+      "words": 2146,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/quality-gates-for-ai-code-salesforce-pipeline/",
+      "status": 200,
+      "title": "Quality gates for AI code in the Salesforce pipeline",
+      "words": 2124,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/quote-to-sales-agreement-product-configurator/",
+      "status": 200,
+      "title": "From Quote to Sales Agreement: the Configurator",
+      "words": 1705,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/rebate-management-dealer-rebates/",
+      "status": 200,
+      "title": "Rebate Management: Dealer Rebates Without Excel",
+      "words": 1550,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/request-for-quote-b2b-commerce-cart-to-quote/",
+      "status": 200,
+      "title": "Request for Quote in B2B Commerce: cart to quote",
+      "words": 1815,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/revenue-cloud-assets-amendments-renewals/",
+      "status": 200,
+      "title": "Assets in Revenue Cloud: amendments and renewals",
+      "words": 1874,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/revenue-cloud-billing-costs/",
+      "status": 200,
+      "title": "Revenue Cloud Billing costs: what billing events mean",
+      "words": 1598,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/revenue-cloud-billing-or-sap-invoicing/",
+      "status": 200,
+      "title": "Revenue Cloud Billing or SAP: where should invoices live?",
+      "words": 1744,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/revenue-cloud-configuration-deployment/",
+      "status": 200,
+      "title": "Revenue Cloud deployments: configuration in the pipeline",
+      "words": 1769,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/revenue-cloud-configurator-constraint-rules/",
+      "status": 200,
+      "title": "Revenue Cloud configurator: when constraint rules pay off",
+      "words": 1928,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/revenue-cloud-discount-approvals/",
+      "status": 200,
+      "title": "Discount approvals in Revenue Cloud: Advanced Approvals",
+      "words": 1756,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/revenue-cloud-editions-pricing/",
+      "status": 200,
+      "title": "Revenue Cloud pricing: Growth, Advanced and add-ons",
+      "words": 1811,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/revenue-cloud-order-orchestration-sap/",
+      "status": 200,
+      "title": "Handing orders to SAP: Dynamic Revenue Orchestrator",
+      "words": 2020,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/revenue-cloud-pricing-procedures-explained/",
+      "status": 200,
+      "title": "Salesforce Pricing: how Revenue Cloud calculates prices",
+      "words": 2053,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/revenue-cloud-product-catalog-variants/",
+      "status": 200,
+      "title": "Revenue Cloud product catalog: modelling machine variants",
+      "words": 1976,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/revenue-cloud-product-names-rlm-rca/",
+      "status": 200,
+      "title": "Revenue Cloud, RLM, RCA: which product name applies?",
+      "words": 1622,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/revenue-cloud-quoting-agent-agentforce/",
+      "status": 200,
+      "title": "Revenue Cloud quoting agent: what it can do today",
+      "words": 1730,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/revenue-cloud-sap-quote-to-cash-ownership/",
+      "status": 200,
+      "title": "Revenue Cloud and SAP: who owns what in quote to cash?",
+      "words": 1989,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/revenue-cloud-vs-manufacturing-cloud-b2b-commerce/",
+      "status": 200,
+      "title": "Revenue Cloud, Manufacturing Cloud or B2B Commerce?",
+      "words": 1645,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/revenue-cloud-worth-it-manufacturers/",
+      "status": 200,
+      "title": "Revenue Cloud for manufacturers: when is it worth it?",
+      "words": 1648,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/reviewing-ai-generated-salesforce-code/",
+      "status": 200,
+      "title": "Reviewing AI-generated Salesforce code as the client",
+      "words": 2149,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/sales-agreements-volume-shortfall-erp/",
+      "status": 200,
+      "title": "Sales Agreements: Spot Customers Behind on Volume",
+      "words": 2049,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/salesforce-agent-context-engine-explained/",
+      "status": 200,
+      "title": "Salesforce Agent Context Engine explained",
+      "words": 1581,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/salesforce-contracts-clm-revenue-cloud/",
+      "status": 200,
+      "title": "Salesforce Contracts: is the built-in CLM enough?",
+      "words": 1672,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/salesforce-cpq-end-of-sale-status/",
+      "status": 200,
+      "title": "Salesforce CPQ end of sale: what applies in October 2026",
+      "words": 1825,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/salesforce-cpq-vs-revenue-cloud-differences/",
+      "status": 200,
+      "title": "Salesforce CPQ vs Revenue Cloud: the real differences",
+      "words": 2059,
+      "score": 94.96,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/salesforce-document-builder-limits-workarounds/",
+      "status": 200,
+      "title": "Salesforce Document Builder: five limits and workarounds",
+      "words": 1797,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/salesforce-dx-mcp-server-end-of-life/",
+      "status": 200,
+      "title": "Salesforce DX MCP Server end of life: what to change",
+      "words": 2140,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/salesforce-editions-core-advanced-max/",
+      "status": 200,
+      "title": "Salesforce editions Core, Advanced, Max for manufacturers",
+      "words": 2179,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/salesforce-field-service-maintenance-contracts/",
+      "status": 200,
+      "title": "Field Service: How to Model Maintenance Contracts",
+      "words": 1627,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/salesforce-field-service-master-data/",
+      "status": 200,
+      "title": "Salesforce Field Service: What Data Does Scheduling Need?",
+      "words": 1761,
+      "score": 94.96,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/salesforce-field-service-mobile-guided-voice/",
+      "status": 200,
+      "title": "Salesforce Field Service mobile: guided work and voice",
+      "words": 1672,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/salesforce-field-service-rollout/",
+      "status": 200,
+      "title": "Rolling Out Salesforce Field Service: Why in Waves?",
+      "words": 1621,
+      "score": 94.96,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/salesforce-field-service-scheduling-automation/",
+      "status": 200,
+      "title": "Field Service Scheduling: How Much Should Be Automatic?",
+      "words": 1664,
+      "score": 94.96,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/salesforce-field-service-service-partners/",
+      "status": 200,
+      "title": "Field Service: How to Bring In Service Partners",
+      "words": 1602,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/salesforce-field-service-spare-parts-erp/",
+      "status": 200,
+      "title": "Field Service Spare Parts: ERP or Salesforce?",
+      "words": 1610,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/salesforce-field-service-worth-it/",
+      "status": 200,
+      "title": "Salesforce Field Service: When Is It Worth It?",
+      "words": 1582,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/salesforce-hosted-mcp-servers-data-access/",
+      "status": 200,
+      "title": "Salesforce hosted MCP servers: who reads which data?",
+      "words": 2186,
+      "score": 94.96,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/salesforce-licences-full-licence-needed/",
+      "status": 200,
+      "title": "Salesforce Licences: Does Everyone Need a Full One?",
+      "words": 1681,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/salesforce-manufacturing-cloud-is-it-worth-it/",
+      "status": 200,
+      "title": "Salesforce Manufacturing Cloud: Is It Worth It?",
+      "words": 1952,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/salesforce-nearshore-teams-eight-developers/",
+      "status": 200,
+      "title": "Salesforce Nearshore Teams: Why Eight Developers?",
+      "words": 1802,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/salesforce-object-ownership-matrix/",
+      "status": 200,
+      "title": "Salesforce Object Ownership Matrix: Who Owns What?",
+      "words": 1574,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/salesforce-password-integrations-end-2027/",
+      "status": 200,
+      "title": "Salesforce password integrations end in 2027: check now",
+      "words": 1784,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/salesforce-service-documents-document-builder/",
+      "status": 200,
+      "title": "Salesforce Service Documents: is Document Builder enough?",
+      "words": 2009,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/salesforce-well-architected-framework-2026/",
+      "status": 200,
+      "title": "Salesforce Well-Architected: What the new framework changes",
+      "words": 1929,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/salesforce-winter-27-what-changes-for-your-pipeline/",
+      "status": 200,
+      "title": "Salesforce Winter '27: what changes for your pipeline",
+      "words": 1572,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/sandbox-customer-data-ai-coding-agents/",
+      "status": 200,
+      "title": "Sandbox customer data: what AI coding agents may read",
+      "words": 2044,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/service-cloud-casey-service-rep-assistant/",
+      "status": 200,
+      "title": "Service Cloud: Casey and the Service Rep Assistant",
+      "words": 1544,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/setup-with-agentforce-admin-changes/",
+      "status": 200,
+      "title": "Setup with Agentforce: allow admin AI in production?",
+      "words": 2032,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/sfdx-hardis-free-devops-training/",
+      "status": 200,
+      "title": "What I learned from the free sfdx-hardis training",
+      "words": 1511,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/sfdx-hardis-open-source-salesforce-devops/",
+      "status": 200,
+      "title": "sfdx-hardis: open-source Salesforce DevOps explained",
+      "words": 1679,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/sfdx-hardis-vs-devops-center-comparison/",
+      "status": 200,
+      "title": "sfdx-hardis vs DevOps Center: which one fits in 2026",
+      "words": 2090,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/ship-and-debit-price-protection-distributors/",
+      "status": 200,
+      "title": "Ship and debit: distributor claims in Salesforce",
+      "words": 1814,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/siemens-agentforce-lessons-for-manufacturers/",
+      "status": 200,
+      "title": "Siemens and Agentforce: lessons for machine builders",
+      "words": 2006,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/spare-parts-by-serial-number-ai/",
+      "status": 200,
+      "title": "Spare parts by serial number: can an AI agent do it?",
+      "words": 2135,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/spare-parts-shop-parts-per-machine/",
+      "status": 200,
+      "title": "Spare parts shop: show only parts for each machine",
+      "words": 2032,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/testing-agentforce-agents-before-go-live/",
+      "status": 200,
+      "title": "Testing Agentforce agents: when is one ready to go live?",
+      "words": 2117,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/vibe-coding-salesforce-prototype-vs-production/",
+      "status": 200,
+      "title": "Vibe coding in Salesforce: prototype or production?",
+      "words": 2134,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/visual-remote-assistant-remote-help-instead-of-visit/",
+      "status": 200,
+      "title": "Visual Remote Assistant: video help instead of a visit?",
+      "words": 1877,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/warranty-claims-adjudication-agent/",
+      "status": 200,
+      "title": "Warranty Claims Adjudication Agent: what to prepare",
+      "words": 2024,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/warranty-claims-dealers-salesforce/",
+      "status": 200,
+      "title": "Warranty Claims from Dealers in Salesforce",
+      "words": 1679,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/why-clients-should-own-their-devops-tools/",
+      "status": 200,
+      "title": "Why clients should own their Salesforce DevOps tools",
+      "words": 1560,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/why-devops-matters-salesforce-enterprise/",
+      "status": 200,
+      "title": "Why DevOps decides Salesforce enterprise projects",
+      "words": 1769,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/blog/why-pull-request-reviews-are-a-must-in-enterprise-projects/",
+      "status": 200,
+      "title": "Why pull request reviews are a must in enterprise projects",
+      "words": 1748,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/certifications/",
+      "status": 200,
+      "title": "Salesforce certifications | FK Solution Design",
+      "words": 1787,
+      "score": 100,
+      "checks": [
+        "has_render_blocking_resources"
+      ]
+    },
+    {
+      "page": "/en/masterclass/",
+      "status": 200,
+      "title": "Masterclasses: Salesforce in manufacturing",
+      "words": 55,
+      "score": 96.34,
+      "checks": [
+        "low_content_rate",
+        "low_character_count",
+        "has_render_blocking_resources"
+      ]
+    },
+    {
+      "page": "/en/masterclass/ai-salesforce/",
+      "status": 200,
+      "title": "AI masterclass: Salesforce in manufacturing",
+      "words": 358,
+      "score": 97.07,
+      "checks": [
+        "low_content_rate",
+        "no_image_alt",
+        "has_render_blocking_resources"
+      ]
+    },
+    {
+      "page": "/en/masterclass/ai-salesforce/ai-agents-in-manufacturing/",
+      "status": 200,
+      "title": "AI agents in manufacturing: what works today",
+      "words": 2745,
+      "score": 94.96,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/masterclass/ai-salesforce/ai-code-best-practices/",
+      "status": 200,
+      "title": "AI code best practices for Salesforce programmes",
+      "words": 2387,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/masterclass/ai-salesforce/ai-tool-decision-matrix/",
+      "status": 200,
+      "title": "AI tool decision matrix: what to use when in Salesforce",
+      "words": 2177,
+      "score": 94.96,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/masterclass/ai-salesforce/aiforce-and-system-integrators/",
+      "status": 200,
+      "title": "AIforce and system integrators: what SI/AI Force means",
+      "words": 2144,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/masterclass/ai-salesforce/costs-and-tokens/",
+      "status": 200,
+      "title": "AI costs in Salesforce: tokens, Flex Credits, budget",
+      "words": 2917,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/masterclass/ai-salesforce/external-coding-agents/",
+      "status": 200,
+      "title": "Coding agents for Salesforce: Claude Code, Codex, Copilot",
+      "words": 2505,
+      "score": 94.96,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/masterclass/ai-salesforce/mcp-and-interfaces/",
+      "status": 200,
+      "title": "MCP and Salesforce interfaces for AI agents",
+      "words": 2330,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/masterclass/ai-salesforce/salesforce-ai-development-tools/",
+      "status": 200,
+      "title": "Salesforce AI development tools: what exists, what it costs",
+      "words": 2924,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/masterclass/ai-salesforce/teamwork-and-delivery/",
+      "status": 200,
+      "title": "Teamwork and delivery with AI in Salesforce programmes",
+      "words": 2730,
+      "score": 94.96,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/masterclass/ai-salesforce/terms-and-map/",
+      "status": 200,
+      "title": "AI in Salesforce programmes: terms and map",
+      "words": 2344,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/masterclass/b2b-commerce/",
+      "status": 200,
+      "title": "B2B Commerce masterclass: Salesforce shops in manufacturing",
+      "words": 285,
+      "score": 97.07,
+      "checks": [
+        "low_content_rate",
+        "no_image_alt",
+        "has_render_blocking_resources"
+      ]
+    },
+    {
+      "page": "/en/masterclass/b2b-commerce/agentforce-migration-rollout/",
+      "status": 200,
+      "title": "B2B Commerce: agents, migration and rollout",
+      "words": 2562,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/masterclass/b2b-commerce/b2b-commerce-worth-it-overview/",
+      "status": 200,
+      "title": "Is Salesforce B2B Commerce worth it for manufacturers?",
+      "words": 2093,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/masterclass/b2b-commerce/catalog-search-entitlements/",
+      "status": 200,
+      "title": "B2B Commerce: catalogue, search and entitlements",
+      "words": 2364,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/masterclass/b2b-commerce/erp-integration-stock-orders/",
+      "status": 200,
+      "title": "B2B Commerce and the ERP: stock, prices and orders",
+      "words": 2269,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/masterclass/b2b-commerce/prices-cart-checkout/",
+      "status": 200,
+      "title": "B2B Commerce: prices, cart and checkout | FK Solution Design",
+      "words": 2390,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/masterclass/devops-release-management/",
+      "status": 200,
+      "title": "DevOps masterclass: Salesforce releases in manufacturing",
+      "words": 314,
+      "score": 97.07,
+      "checks": [
+        "low_content_rate",
+        "no_image_alt",
+        "has_render_blocking_resources"
+      ]
+    },
+    {
+      "page": "/en/masterclass/devops-release-management/building-the-pipeline/",
+      "status": 200,
+      "title": "Building a Salesforce pipeline: from pull request to prod",
+      "words": 2581,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/masterclass/devops-release-management/data-and-configuration/",
+      "status": 200,
+      "title": "Data and configuration in the Salesforce pipeline",
+      "words": 2423,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/masterclass/devops-release-management/devops-tools-compared/",
+      "status": 200,
+      "title": "Salesforce DevOps tools compared for manufacturers",
+      "words": 2470,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/masterclass/devops-release-management/environments-and-branching/",
+      "status": 200,
+      "title": "Salesforce sandbox strategy and branching",
+      "words": 2369,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/masterclass/devops-release-management/operations-monitoring-backup/",
+      "status": 200,
+      "title": "Salesforce monitoring and backup after go-live",
+      "words": 2461,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/masterclass/devops-release-management/quality-tests-reviews/",
+      "status": 200,
+      "title": "Salesforce quality: tests, reviews and quality gates",
+      "words": 2560,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/masterclass/devops-release-management/release-management-basics/",
+      "status": 200,
+      "title": "Salesforce release management: the basics",
+      "words": 2417,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/masterclass/devops-release-management/release-planning-salesforce-releases/",
+      "status": 200,
+      "title": "Salesforce release planning: calendar and releases",
+      "words": 2467,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/masterclass/devops-release-management/release-process-ownership-roles/",
+      "status": 200,
+      "title": "Release process ownership, roles and approvals",
+      "words": 2466,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/masterclass/devops-release-management/rollout-roadmap/",
+      "status": 200,
+      "title": "Salesforce DevOps rollout: roadmap and metrics",
+      "words": 2464,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/masterclass/field-service/",
+      "status": 200,
+      "title": "Field Service masterclass: service teams in manufacturing",
+      "words": 323,
+      "score": 97.07,
+      "checks": [
+        "low_content_rate",
+        "no_image_alt",
+        "has_render_blocking_resources"
+      ]
+    },
+    {
+      "page": "/en/masterclass/field-service/field-service-ai-agents-rollout/",
+      "status": 200,
+      "title": "Salesforce Field Service: AI agents, rollout, KPIs",
+      "words": 2656,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/masterclass/field-service/field-service-assets-maintenance-parts/",
+      "status": 200,
+      "title": "Field Service assets: maintenance, parts and partners",
+      "words": 2644,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/masterclass/field-service/field-service-business-case-licences/",
+      "status": 200,
+      "title": "Salesforce Field Service: business case and licences",
+      "words": 2489,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/masterclass/field-service/field-service-mobile-app-documents/",
+      "status": 200,
+      "title": "Field Service mobile app: offline, forms and reports",
+      "words": 2489,
+      "score": 94.96,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/masterclass/field-service/field-service-scheduling-dispatch/",
+      "status": 200,
+      "title": "Field Service scheduling: engine, console and rules",
+      "words": 2553,
+      "score": 94.96,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/masterclass/manufacturing-cloud/",
+      "status": 200,
+      "title": "Manufacturing Cloud masterclass for manufacturers",
+      "words": 304,
+      "score": 97.07,
+      "checks": [
+        "low_content_rate",
+        "no_image_alt",
+        "has_render_blocking_resources"
+      ]
+    },
+    {
+      "page": "/en/masterclass/manufacturing-cloud/agreements-and-forecasting/",
+      "status": 200,
+      "title": "Sales agreements and forecasting in Manufacturing Cloud",
+      "words": 2423,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/masterclass/manufacturing-cloud/dealer-and-partner-channel/",
+      "status": 200,
+      "title": "Dealer and partner channel in Manufacturing Cloud",
+      "words": 2448,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/masterclass/manufacturing-cloud/erp-ai-and-rollout/",
+      "status": 200,
+      "title": "Manufacturing Cloud: ERP integration, AI and rollout",
+      "words": 2366,
+      "score": 94.96,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/masterclass/manufacturing-cloud/scope-and-business-case/",
+      "status": 200,
+      "title": "Manufacturing Cloud: features, costs and business case",
+      "words": 2546,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/masterclass/manufacturing-cloud/warranty-and-after-sales/",
+      "status": 200,
+      "title": "Warranty and after-sales in Manufacturing Cloud",
+      "words": 2327,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/masterclass/revenue-cloud/",
+      "status": 200,
+      "title": "Revenue Cloud masterclass: quote to cash in manufacturing",
+      "words": 326,
+      "score": 97.07,
+      "checks": [
+        "low_content_rate",
+        "no_image_alt",
+        "has_render_blocking_resources"
+      ]
+    },
+    {
+      "page": "/en/masterclass/revenue-cloud/billing-and-usage-based-pricing/",
+      "status": 200,
+      "title": "Revenue Cloud Billing and usage-based pricing",
+      "words": 2555,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/masterclass/revenue-cloud/from-cpq-to-revenue-cloud/",
+      "status": 200,
+      "title": "From Salesforce CPQ and Billing to Revenue Cloud",
+      "words": 2568,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/masterclass/revenue-cloud/product-catalog-configurator-pricing/",
+      "status": 200,
+      "title": "Revenue Cloud catalog, configurator and pricing",
+      "words": 2512,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/masterclass/revenue-cloud/quote-contract-order/",
+      "status": 200,
+      "title": "Quote, contract, order in Revenue Cloud | FK Solution Design",
+      "words": 2487,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/masterclass/revenue-cloud/revenue-cloud-overview/",
+      "status": 200,
+      "title": "Revenue Cloud overview: scope, names, cost, SAP",
+      "words": 2468,
+      "score": 94.96,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/partners/",
+      "status": 200,
+      "title": "Partners for Salesforce programmes | FK Solution Design",
+      "words": 172,
+      "score": 100,
+      "checks": [
+        "has_render_blocking_resources"
+      ]
+    },
+    {
+      "page": "/en/questions/",
+      "status": 200,
+      "title": "Questions I ask in every Salesforce project",
+      "words": 606,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/services/",
+      "status": 200,
+      "title": "Services: Salesforce architecture | FK Solution Design",
+      "words": 43,
+      "score": 98.9,
+      "checks": [
+        "low_content_rate",
+        "low_character_count",
+        "has_render_blocking_resources"
+      ]
+    },
+    {
+      "page": "/en/services/change-management-salesforce/",
+      "status": 200,
+      "title": "Change management for Salesforce programmes",
+      "words": 1597,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/services/devops-release-management/",
+      "status": 200,
+      "title": "Salesforce DevOps and release management consulting",
+      "words": 1363,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/services/make-or-buy-licences/",
+      "status": 200,
+      "title": "Salesforce make-or-buy and licence forecasts",
+      "words": 1245,
+      "score": 94.96,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/services/partner-governance/",
+      "status": 200,
+      "title": "Salesforce partner governance for multi-vendor programmes",
+      "words": 1262,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/services/program-management-nearshore/",
+      "status": 200,
+      "title": "Salesforce programme management and nearshore teams",
+      "words": 1075,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/services/salesforce-architecture/",
+      "status": 200,
+      "title": "Salesforce architecture and solution design",
+      "words": 1190,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/services/salesforce-integration/",
+      "status": 200,
+      "title": "Salesforce integration with ERP, middleware and telephony",
+      "words": 1168,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/en/speaking/",
+      "status": 200,
+      "title": "Salesforce speaker: talks and events | FK Solution Design",
+      "words": 598,
+      "score": 97.44,
+      "checks": [
+        "has_render_blocking_resources"
+      ]
+    },
+    {
+      "page": "/fragen/",
+      "status": 200,
+      "title": "Fragen, die ich in jedem Salesforce-Projekt stelle",
+      "words": 551,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/leistungen/",
+      "status": 200,
+      "title": "Leistungen: Salesforce-Architektur | FK Solution Design",
+      "words": 38,
+      "score": 97.8,
+      "checks": [
+        "low_content_rate",
+        "low_character_count",
+        "low_readability_rate",
+        "has_render_blocking_resources"
+      ]
+    },
+    {
+      "page": "/leistungen/change-management/",
+      "status": 200,
+      "title": "Change Management für Salesforce-Programme",
+      "words": 1484,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/leistungen/devops-und-release-management/",
+      "status": 200,
+      "title": "Salesforce DevOps und Release-Management Beratung",
+      "words": 1270,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/leistungen/make-or-buy-lizenzen/",
+      "status": 200,
+      "title": "Salesforce Make-or-buy und Lizenzprognosen",
+      "words": 1161,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/leistungen/partnersteuerung/",
+      "status": 200,
+      "title": "Salesforce-Partnersteuerung mit mehreren Dienstleistern",
+      "words": 1194,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/leistungen/projektsteuerung-nearshore/",
+      "status": 200,
+      "title": "Salesforce-Programmsteuerung und Nearshore-Teams",
+      "words": 1027,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/leistungen/salesforce-architektur/",
+      "status": 200,
+      "title": "Salesforce-Architektur und Solution Design",
+      "words": 1075,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/leistungen/salesforce-schnittstellen/",
+      "status": 200,
+      "title": "Salesforce-Integration mit ERP, Middleware und Telefonie",
+      "words": 1098,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/masterclass/",
+      "status": 200,
+      "title": "Masterclasses: Salesforce in der Fertigung",
+      "words": 53,
+      "score": 95.24,
+      "checks": [
+        "low_content_rate",
+        "low_character_count",
+        "low_readability_rate",
+        "has_render_blocking_resources"
+      ]
+    },
+    {
+      "page": "/masterclass/b2b-commerce/",
+      "status": 200,
+      "title": "Masterclass B2B Commerce: Salesforce-Shops für Hersteller",
+      "words": 280,
+      "score": 97.07,
+      "checks": [
+        "low_content_rate",
+        "no_image_alt",
+        "has_render_blocking_resources"
+      ]
+    },
+    {
+      "page": "/masterclass/b2b-commerce/agentforce-migration-einfuehrung/",
+      "status": 200,
+      "title": "B2B Commerce: Agenten, Migration und Einführung",
+      "words": 2367,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/masterclass/b2b-commerce/b2b-commerce-lohnt-sich-ueberblick/",
+      "status": 200,
+      "title": "Lohnt sich Salesforce B2B Commerce für Hersteller?",
+      "words": 1966,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/masterclass/b2b-commerce/erp-integration-bestand-auftraege/",
+      "status": 200,
+      "title": "B2B Commerce und ERP: Bestand, Preise und Aufträge",
+      "words": 2130,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/masterclass/b2b-commerce/katalog-suche-sichtbarkeit/",
+      "status": 200,
+      "title": "B2B Commerce: Katalog, Suche und Sichtbarkeit",
+      "words": 2167,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/masterclass/b2b-commerce/preise-warenkorb-checkout/",
+      "status": 200,
+      "title": "B2B Commerce: Preise, Warenkorb und Checkout",
+      "words": 2223,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/masterclass/devops-release-management/",
+      "status": 200,
+      "title": "Masterclass DevOps: Salesforce-Releases in der Fertigung",
+      "words": 310,
+      "score": 97.07,
+      "checks": [
+        "low_content_rate",
+        "no_image_alt",
+        "has_render_blocking_resources"
+      ]
+    },
+    {
+      "page": "/masterclass/devops-release-management/betrieb-monitoring-backup/",
+      "status": 200,
+      "title": "Salesforce Monitoring und Backup nach dem Go-live",
+      "words": 2345,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/masterclass/devops-release-management/daten-und-konfiguration/",
+      "status": 200,
+      "title": "Daten und Konfiguration in der Salesforce-Pipeline",
+      "words": 2219,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/masterclass/devops-release-management/devops-werkzeuge-vergleich/",
+      "status": 200,
+      "title": "DevOps-Werkzeuge für Salesforce im Vergleich",
+      "words": 2302,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/masterclass/devops-release-management/einfuehrung-fahrplan/",
+      "status": 200,
+      "title": "Salesforce DevOps einführen: Fahrplan und Messung",
+      "words": 2284,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/masterclass/devops-release-management/pipeline-aufbauen/",
+      "status": 200,
+      "title": "Salesforce-Pipeline aufbauen: vom Pull Request bis Prod",
+      "words": 2430,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/masterclass/devops-release-management/qualitaet-tests-reviews/",
+      "status": 200,
+      "title": "Salesforce-Qualität: Tests, Reviews und Quality Gates",
+      "words": 2386,
+      "score": 94.96,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/masterclass/devops-release-management/release-management-grundlagen/",
+      "status": 200,
+      "title": "Release-Management für Salesforce: die Grundlagen",
+      "words": 2255,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/masterclass/devops-release-management/release-planung-salesforce-releases/",
+      "status": 200,
+      "title": "Release-Planung für Salesforce: Kalender und Releases",
+      "words": 2392,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/masterclass/devops-release-management/release-prozess-eigentum-rollen/",
+      "status": 200,
+      "title": "Release-Prozess: Eigentum, Rollen und Freigaben",
+      "words": 2296,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/masterclass/devops-release-management/umgebungen-und-branching/",
+      "status": 200,
+      "title": "Sandbox-Strategie und Branching für Salesforce",
+      "words": 2190,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/masterclass/field-service/",
+      "status": 200,
+      "title": "Masterclass Field Service: Außendienst in der Fertigung",
+      "words": 309,
+      "score": 97.07,
+      "checks": [
+        "low_content_rate",
+        "no_image_alt",
+        "has_render_blocking_resources"
+      ]
+    },
+    {
+      "page": "/masterclass/field-service/field-service-assets-wartung-teile/",
+      "status": 200,
+      "title": "Field Service Assets: Wartung, Ersatzteile und Partner",
+      "words": 2599,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/masterclass/field-service/field-service-ki-agenten-einfuehrung/",
+      "status": 200,
+      "title": "Field Service: KI-Agenten, Einführung und Kennzahlen",
+      "words": 2506,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/masterclass/field-service/field-service-lohnt-sich-lizenzen/",
+      "status": 200,
+      "title": "Salesforce Field Service: Nutzen und Lizenzen",
+      "words": 2273,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/masterclass/field-service/field-service-mobile-app-dokumente/",
+      "status": 200,
+      "title": "Field Service App: offline, Formulare und Berichte",
+      "words": 2317,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/masterclass/field-service/field-service-terminplanung-disposition/",
+      "status": 200,
+      "title": "Terminplanung im Field Service: Engine, Konsole, Regeln",
+      "words": 2435,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/masterclass/ki-salesforce/",
+      "status": 200,
+      "title": "Masterclass KI: Salesforce in der Fertigung",
+      "words": 349,
+      "score": 97.07,
+      "checks": [
+        "low_content_rate",
+        "no_image_alt",
+        "has_render_blocking_resources"
+      ]
+    },
+    {
+      "page": "/masterclass/ki-salesforce/aiforce-und-systemintegratoren/",
+      "status": 200,
+      "title": "AIforce und Systemintegratoren: was SI/AI Force heißt",
+      "words": 1993,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/masterclass/ki-salesforce/begriffe-und-landkarte/",
+      "status": 200,
+      "title": "KI im Salesforce-Projekt: Begriffe und Landkarte",
+      "words": 2204,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/masterclass/ki-salesforce/best-practices-ki-code/",
+      "status": 200,
+      "title": "Best Practices für KI-Code in Salesforce-Projekten",
+      "words": 2253,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/masterclass/ki-salesforce/entscheidungsmatrix-ki-werkzeuge/",
+      "status": 200,
+      "title": "Entscheidungsmatrix KI-Werkzeuge: wann nutze ich was?",
+      "words": 2035,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/masterclass/ki-salesforce/externe-coding-agenten/",
+      "status": 200,
+      "title": "Coding-Agenten für Salesforce: Claude Code, Codex, Copilot",
+      "words": 2352,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/masterclass/ki-salesforce/ki-agenten-in-der-fertigung/",
+      "status": 200,
+      "title": "KI-Agenten in der Fertigung: was heute trägt",
+      "words": 2576,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/masterclass/ki-salesforce/kosten-und-token/",
+      "status": 200,
+      "title": "KI-Kosten in Salesforce: Token, Flex Credits, Budget",
+      "words": 2918,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/masterclass/ki-salesforce/mcp-und-schnittstellen/",
+      "status": 200,
+      "title": "MCP und Salesforce-Schnittstellen für KI-Agenten",
+      "words": 2254,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/masterclass/ki-salesforce/salesforce-werkzeuge-ki-entwicklung/",
+      "status": 200,
+      "title": "Salesforce-Werkzeuge für KI-Entwicklung im Überblick",
+      "words": 2766,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/masterclass/ki-salesforce/teamarbeit-und-delivery/",
+      "status": 200,
+      "title": "Teamarbeit und Delivery mit KI im Salesforce-Programm",
+      "words": 2496,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/masterclass/manufacturing-cloud/",
+      "status": 200,
+      "title": "Masterclass Manufacturing Cloud: Salesforce für Hersteller",
+      "words": 296,
+      "score": 97.07,
+      "checks": [
+        "low_content_rate",
+        "no_image_alt",
+        "has_render_blocking_resources"
+      ]
+    },
+    {
+      "page": "/masterclass/manufacturing-cloud/einordnung-und-business-case/",
+      "status": 200,
+      "title": "Manufacturing Cloud: Funktionen, Kosten, Business Case",
+      "words": 2398,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/masterclass/manufacturing-cloud/erp-ki-und-rollout/",
+      "status": 200,
+      "title": "Manufacturing Cloud: ERP-Anbindung, KI und Rollout",
+      "words": 2259,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/masterclass/manufacturing-cloud/garantie-und-after-sales/",
+      "status": 200,
+      "title": "Garantie und After-Sales in Manufacturing Cloud",
+      "words": 2159,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/masterclass/manufacturing-cloud/haendler-und-partnerkanal/",
+      "status": 200,
+      "title": "Händler und Partnerkanal in der Manufacturing Cloud",
+      "words": 2240,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/masterclass/manufacturing-cloud/rahmenvertraege-und-prognosen/",
+      "status": 200,
+      "title": "Rahmenverträge und Prognosen in der Manufacturing Cloud",
+      "words": 2251,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/masterclass/revenue-cloud/",
+      "status": 200,
+      "title": "Masterclass Revenue Cloud: Quote-to-Cash in der Fertigung",
+      "words": 311,
+      "score": 97.07,
+      "checks": [
+        "low_content_rate",
+        "no_image_alt",
+        "has_render_blocking_resources"
+      ]
+    },
+    {
+      "page": "/masterclass/revenue-cloud/abrechnung-und-nutzungsbasierte-preise/",
+      "status": 200,
+      "title": "Revenue Cloud Billing und nutzungsbasierte Preise",
+      "words": 2378,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/masterclass/revenue-cloud/angebot-vertrag-auftrag/",
+      "status": 200,
+      "title": "Angebot, Vertrag, Auftrag in Revenue Cloud",
+      "words": 2305,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/masterclass/revenue-cloud/produktkatalog-konfigurator-preise/",
+      "status": 200,
+      "title": "Revenue Cloud: Produktkatalog, Konfigurator und Preise",
+      "words": 2285,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/masterclass/revenue-cloud/revenue-cloud-ueberblick/",
+      "status": 200,
+      "title": "Revenue Cloud im Überblick: Umfang, Namen, Kosten, SAP",
+      "words": 2316,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/masterclass/revenue-cloud/von-cpq-zu-revenue-cloud/",
+      "status": 200,
+      "title": "Von Salesforce CPQ und Billing zu Revenue Cloud",
+      "words": 2467,
+      "score": 97.07,
+      "checks": [
+        "no_image_alt",
+        "has_render_blocking_resources",
+        "has_micromarkup_errors"
+      ]
+    },
+    {
+      "page": "/partner/",
+      "status": 200,
+      "title": "Partner für Salesforce-Programme | FK Solution Design",
+      "words": 160,
+      "score": 100,
+      "checks": [
+        "has_render_blocking_resources"
+      ]
+    },
+    {
+      "page": "/speaking/",
+      "status": 200,
+      "title": "Salesforce-Vorträge und Events | FK Solution Design",
+      "words": 579,
+      "score": 97.44,
+      "checks": [
+        "has_render_blocking_resources"
+      ]
+    }
+  ]
+}
