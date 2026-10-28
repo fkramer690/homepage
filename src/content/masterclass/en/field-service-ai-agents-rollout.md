@@ -33,7 +33,7 @@ AI agents in Salesforce Field Service work today for a handful of jobs: booking 
 
 ## Which Field Service agents work today, and what do they cost?
 
-Salesforce sells Field Service today as [Field Service and Operations](https://www.salesforce.com/service/field-service-management/pricing/), and its agents serve three groups. Customers book, reschedule and cancel appointments through an agent and get proactive maintenance offers based on maintenance plan dates. Dispatchers get an assistant that fills gaps after cancellations. Technicians get a Pre-Work Brief before the job, a drafted Post-Work Summary afterwards and step-by-step troubleshooting on site. Salesforce announced these functions in [April 2025](https://www.salesforce.com/news/stories/agentforce-for-field-service-announcement/). The table with status per function is in [AI agents in Field Service: what works today?](../../../blog/field-service-ai-agents-what-works-today/).
+Salesforce sells Field Service today as [Field Service and Operations](https://www.salesforce.com/service/field-service-management/pricing/). Its agents serve three groups. Customers book, reschedule and cancel appointments through an agent and get proactive maintenance offers based on maintenance plan dates. Dispatchers get an assistant that fills gaps after cancellations. Technicians get a Pre-Work Brief before the job, a drafted Post-Work Summary afterwards and step-by-step troubleshooting on site. Salesforce announced these functions in [April 2025](https://www.salesforce.com/news/stories/agentforce-for-field-service-announcement/). The table with status per function is in [AI agents in Field Service: what works today?](../../../blog/field-service-ai-agents-what-works-today/).
 
 The price follows the line between customers and employees:
 
@@ -51,17 +51,17 @@ My order for a machine builder: maintenance booking first, because maintenance p
 
 Salesforce lists German among six new Agentforce Voice languages with the status GA in its [Dreamforce 2026 announcements](https://www.salesforce.com/blog/dreamforce-2026-announcements/). The [Winter '27 highlights](https://trailhead.salesforce.com/content/learn/modules/winter-27-release-highlights/see-whats-new-service-field-service-it-hr-service-and-contact-center) add autonomous scheduling with Agentforce Voice, where voice agents check availability and find a technician in the right territory while the customer is on the call. The highlights carry no status label, so check availability in your org.
 
-A breakdown call is harder than a booking call. The caller stands next to a stopped line and wants help, and four facts decide the next step: which machine, whether it is down, what the contract promises and whether anyone is at risk. I would let the voice agent own intake and triage first. It identifies caller and machine through phone number, contact and installed assets, asks a closed question about the machine state and checks the entitlement. It books a technician itself only when the machine still runs, the entitlement covers the visit and the fault class is known. A stopped press with a four-hour commitment goes to a dispatcher, because pulling a technician off another job needs a person who can call the other customer.
+A breakdown call is harder than a booking call: four facts decide the next step, which machine, whether it is down, what the contract promises and whether anyone is at risk. I would let the voice agent own intake and triage first. It identifies caller and machine through phone number, contact and installed assets, asks a closed question about the machine state and checks the entitlement. It books a technician itself only when the machine still runs, the entitlement covers the visit and the fault class is known. A stopped press with a four-hour commitment goes to a dispatcher, because pulling a technician off another job needs a person who can call the other customer.
 
-These gates belong in deterministic logic, not in the prompt. The rule table, the Agent Script patterns and what a call costs in voice actions or voice minutes are in [Breakdown hotline with Agentforce Voice: triage first](../../../blog/breakdown-hotline-agentforce-voice/). My advice: start outside business hours with triage only, compare the agent's classification with the on-call engineer's for four weeks, then switch on booking for the clear cases.
+These gates belong in deterministic logic, not in the prompt. The rule table, the Agent Script patterns and what a call costs in voice actions or voice minutes are in [Breakdown hotline with Agentforce Voice: triage first](../../../blog/breakdown-hotline-agentforce-voice/). I would start outside business hours with triage only and switch on booking for the clear cases after four weeks of comparison with the on-call engineer.
 
 ## Why do troubleshooting and spare parts agents need your data first?
 
-Both agents look smart in a demo and fail on the machine builder's documents and parts lists. The agent is the smaller part of the work.
+Both agents depend on documents and parts lists that only the machine builder can fix.
 
 ### Manuals with the asset's keys
 
-According to the April 2025 announcement, the troubleshooting agent reads product manuals, similar repairs and sensor data and guides the technician step by step. It finds text that matches the question. Whether a passage describes variant A or variant B plays no role unless the document carries that as data. So every manual, service bulletin and knowledge article needs the product key the asset already carries, plus a serial number range where a bulletin covers some units only. The index holds one valid version per variant and build state. Which attributes I would set, and when a Data Library is enough, is in [Field Service AI troubleshooting: fix the manuals first](../../../blog/field-service-ai-troubleshooting-manuals/).
+According to the April 2025 announcement, the troubleshooting agent reads product manuals, similar repairs and sensor data and guides the technician step by step. It finds text that matches the question. Whether a passage describes variant A or variant B plays no role unless the document carries that as data. So every manual, service bulletin and knowledge article needs the product key the asset already carries, plus a serial number range where a bulletin covers some units only. The index holds one valid version per variant and build state. The attributes and when a Data Library is enough are in [Field Service AI troubleshooting: fix the manuals first](../../../blog/field-service-ai-troubleshooting-manuals/).
 
 ### Spare parts by serial number
 
@@ -77,7 +77,7 @@ Two rules I would not bend. First, review the plan section by section with the s
 
 ## Why roll out Field Service in waves?
 
-I always roll out Field Service in waves, region by region or country by country. Each wave brings its own master data, dispatchers, technicians and partners, and the first wave tests everything the later ones rely on. If skills or visiting hours are missing, it hits one territory and not the whole field service. A wave covers the cleaned master data of its region, territories and scheduling policy, the regional partners, training shortly before go-live, the agreements with works council and data protection, and KPIs measured before and after.
+I always roll out Field Service in waves, region by region or country by country. Each wave brings its own master data, dispatchers, technicians and partners, and the first wave tests everything the later ones rely on. If skills or visiting hours are missing, it hits one territory and not the whole field service.
 
 The works council belongs in the planning of the first wave. In Germany, [section 87 of the Works Constitution Act](https://www.gesetze-im-internet.de/betrvg/__87.html) gives it co-determination on technical systems that can monitor behaviour or performance. Field Service touches that with timesheets, with location tracking in the mobile app and with voice input. According to [Salesforce Help](https://help.salesforce.com/s/articleView?language=en_US&id=service.mfs_resource_tracking.htm&type=5), location tracking can be set by interval and accuracy, and single technicians can be excluded. Those settings are what you negotiate, per country if needed. The wave content and the settings table are in [Rolling out Salesforce Field Service: why in waves?](../../../blog/salesforce-field-service-rollout/), and how to plan waves across a whole Salesforce programme in the DevOps chapter [rollout roadmap](../../devops-release-management/rollout-roadmap/).
 
@@ -93,7 +93,7 @@ Before any dashboard, write down how each KPI is defined. First-time fix needs a
 
 ## Who owns Field Service after go-live?
 
-The project ends, the configuration keeps changing. Scheduling policies, territories, work types and operating hours are records that someone adjusts every month. The mobile app gets its own versions next to the three platform releases, as described in [chapter 3](../field-service-mobile-app-documents/). And agents need their prompts, actions and test cases maintained. I would name owners before the first wave:
+Scheduling policies, territories, work types and operating hours are records that someone adjusts every month. The mobile app gets its own versions next to the three platform releases, as described in [chapter 3](../field-service-mobile-app-documents/). And agents need their prompts, actions and test cases maintained. I would name owners before the first wave:
 
 - **Head of service:** KPI definitions and the monthly review per region, 30 minutes with six numbers and one decision.
 - **Dispatch lead:** scheduling policies, territories and the reasons why proposals get changed, as in [chapter 2](../field-service-scheduling-dispatch/).
@@ -110,16 +110,16 @@ A typical scenario, as an assumption: a component maker with 90 technicians in t
 3. **Months 4 to 6, region two.** Region one gets the maintenance booking agent. Assume 250 planned visits a month at five actions each: 25,000 credits, about $125 a month at list price. Shutdown windows exist for two thirds of the customers, the rest stay with the dispatcher.
 4. **Months 7 to 9, region three in another country.** Separate check of local co-determination rules before dates are fixed. Region one gets a voice agent on the hotline at night, triage only.
 
-Troubleshooting waits until manuals carry the asset's product key, and the spare parts agent until PLM delivers as-built lists through an API. After nine months the component maker runs Field Service in all regions, two agents in one, and a monthly KPI review that decides where the next agent goes.
+Troubleshooting waits until manuals carry the asset's product key, the spare parts agent until PLM delivers as-built lists through an API. A monthly KPI review decides where the next agent goes.
 
 ## What should you decide before the first wave?
 
-- **Which agent comes first,** with a measurable target such as the share of maintenance visits booked without a dispatcher.
+- **First agent,** with a measurable target such as the share of maintenance visits booked without a dispatcher.
 - **Add-on or Agentforce 1 Field Service,** a licence question I handle in [make-or-buy and licence planning](../../../services/make-or-buy-licences/).
-- **Wave order,** works council timing and the countries with their own rules.
-- **KPI definitions and baseline,** before go-live.
-- **Owners after go-live,** and the rule that AI-built configuration reaches production only through the pipeline, as in my [DevOps and release management](../../../services/devops-release-management/) work.
+- **Wave order** and works council timing per country.
+- **KPI definitions and baseline** before go-live.
+- **Owners,** and the rule that AI-built configuration reaches production only through the pipeline, as in my [DevOps and release management](../../../services/devops-release-management/) work.
 
-This chapter closes the masterclass. The decision and licences are in [chapter 1](../field-service-business-case-licences/), assets and parts in [chapter 4](../field-service-assets-maintenance-parts/), and all chapters on the [overview page](../).
+This chapter closes the masterclass; assets and parts are in [chapter 4](../field-service-assets-maintenance-parts/), all chapters on the [overview page](../).
 
 Field Service pays off when agents start where the data is clean, waves start with the works council and the numbers are defined before go-live. If you are planning a rollout or your first Field Service agent, [send me a message](#contact).
