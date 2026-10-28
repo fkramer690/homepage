@@ -46,7 +46,13 @@ Two technical details from the [installation and configuration manual](https://r
 
 ## What does it cost?
 
-The product page lists $50 or 50 € per user and month, billed annually. The [Field Service pricing page](https://www.salesforce.com/service/field-service-management/pricing/) shows the same $50 as an add-on and lists Visual Remote Assistant as part of Agentforce 1 Field Service at $650 per user and month. Trailhead names Service Cloud or Field Service licences as the prerequisite, and the Visual Remote Assistant licences are bought through the account executive.
+```kennzahlen
+$50 | per user and month for the add-on, billed annually
+$650 | per user and month for Agentforce 1 Field Service, add-on included
+source: Salesforce product page for Visual Remote Assistant and Field Service pricing page, October 2026
+```
+
+The product page lists the add-on in euros too, at 50 €. The [Field Service pricing page](https://www.salesforce.com/service/field-service-management/pricing/) shows the same $50 as an add-on and lists Visual Remote Assistant as part of Agentforce 1 Field Service. Trailhead names Service Cloud or Field Service licences as the prerequisite, and the Visual Remote Assistant licences are bought through the account executive.
 
 You license the people who start sessions: hotline agents, remote experts, perhaps senior technicians. The customer joins through a link and needs nothing. Eight users cost $400 a month or $4,800 a year at list price. Compared with the cost of one avoided trip abroad, that is small. The real effort lies in setup, the rules for remote fixes and training the hotline.
 

@@ -37,7 +37,7 @@ sf: Lead description, Agentforce
 Attacker --Web form--> Lead description
 Employee --Question on lead--> Agentforce
 Lead description --Hidden instruction--> Agentforce
-Agentforce --Data in image URL--> Expired domain
+Agentforce --Image URL leak--> Expired domain
 ```
 
 Salesforce acknowledged the report on 31 July and has enforced Trusted URLs for Agentforce and Einstein AI since 8 September 2025, according to [SalesforceBen](https://www.salesforceben.com/agentforce-web-to-lead-vulnerability-exposed-could-you-be-impacted/). Salesforce told The Hacker News that the allowlist ensures "no malicious links are called or generated" through prompt injection. According to Noma, the expired domain was re-secured. Noma published the details on 25 September.

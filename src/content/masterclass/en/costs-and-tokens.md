@@ -90,7 +90,16 @@ Three rules from the same page matter. The Batch API halves input and output. Th
 
 Sources: [claude.com/pricing](https://claude.com/pricing), [Copilot plans](https://docs.github.com/en/copilot/tutorials/roll-out-at-scale/assign-licenses/choose-enterprise-plan), [Codex rate card](https://help.openai.com/en/articles/20001106-codex-rate-card-2), [Vibes pricing](https://www.salesforce.com/agentforce/developers/vibe-coding/pricing/), [Vibes billing](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-admin-billing.html), [Gemini pricing](https://cloud.google.com/products/gemini/pricing). Cursor is missing because I could not open its official pricing page.
 
-For Claude Code in [enterprise deployments](https://code.claude.com/docs/en/costs), Anthropic gives around $13 per developer per active day and $150 to $250 a month, with 90 percent of users below $30 a day. At 20 active days that is $260 at API rates. A Team Premium seat can be cheaper for heavy users while the windows suffice, though their size in tokens is not published. I would measure one month at API rates first. Who should carry the cost, client or partner, is covered in [AI coding costs in a Salesforce project](../../../blog/ai-coding-costs-salesforce-project/). My default: if the agent works in your repository and your sandboxes, the accounts belong to you, for the same reasons as with [DevOps tools](../../../blog/why-clients-should-own-their-devops-tools/).
+For Claude Code in [enterprise deployments](https://code.claude.com/docs/en/costs), Anthropic gives these figures:
+
+```kennzahlen
+$13 | on average per developer per active day
+$150 to $250 | per developer per month
+below $30 | per active day for 90 percent of users
+source: Anthropic, Claude Code cost documentation for enterprise deployments
+```
+
+At 20 active days that is $260 at API rates. A Team Premium seat can be cheaper for heavy users while the windows suffice, though their size in tokens is not published. I would measure one month at API rates first. Who should carry the cost, client or partner, is covered in [AI coding costs in a Salesforce project](../../../blog/ai-coding-costs-salesforce-project/). My default: if the agent works in your repository and your sandboxes, the accounts belong to you, for the same reasons as with [DevOps tools](../../../blog/why-clients-should-own-their-devops-tools/).
 
 ### Worked example: one agentic session
 
@@ -153,6 +162,10 @@ With 2,000 MB of spare part catalogues processed in Data 360 (300,000 credits) a
 
 **Headless Platform Interactions.** When Claude, ChatGPT or other agents access Salesforce through MCP or API, every successful call by a registered agent is to count, according to [SalesforceBen](https://www.salesforceben.com/salesforce-will-charge-flex-credits-for-agentic-mcp-and-api-calls/), only in active production orgs and with 30 days' notice. Classic integrations keep their current pricing. Using Claude on Salesforce data then means paying twice: Anthropic for tokens, Salesforce for interactions. You can estimate the volume, as shown in [chapter 3](../mcp-and-interfaces/); the budget line is in [MCP and API calls to Salesforce as a budget risk](../../../blog/mcp-api-calls-salesforce-budget-risk/).
 
+```hinweis offen
+The rate for Headless Platform Interactions is still TBA on the rate card. Get your account executive to confirm how the pool, multiple orgs and Headless Platform Interactions are billed.
+```
+
 ## A typical scenario: a machine builder's first AI year
 
 Assume a machine builder with 80 Service Cloud users on Core Edition, SAP S/4 and a partner whose six developers use Claude Code at API rates. Planned are the dealer agent from above, an org assessment and Hosted MCP for 25 people in the service back office. All volumes are assumptions.
@@ -176,7 +189,7 @@ The 80 Core seats alone cost $187,200 a year at list price, so AI consumption is
 4. **Keep context small:** `/clear` between tasks, rules file under 200 lines, only the MCP servers you need. The rules for clean AI code are in [chapter 8](../ai-code-best-practices/).
 5. **Buy seats after measuring:** run one month at API rates or metered, then decide per person between flat fee and seat.
 6. **Estimate Agentforce per conversation type:** actions, prompts, sandbox tests and documents in MB; buy credits along the go-live plan, because unused credits do not roll over.
-7. **Hold a reserve for open meters** and get written confirmation from your account executive on how the pool, multiple orgs and Headless Platform Interactions are billed.
+7. **Hold a reserve for open meters** until the billing above is confirmed.
 8. **Measure monthly:** [Digital Wallet](https://www.salesforce.com/agentforce/digital-wallet/) shows Agentforce consumption by agent, action and channel and needs Data 360 turned on; for Claude use the spend report or Console.
 
 These questions are part of my [make-or-buy and licence planning](../../../services/make-or-buy-licences/). All chapters are on the [overview page](../).

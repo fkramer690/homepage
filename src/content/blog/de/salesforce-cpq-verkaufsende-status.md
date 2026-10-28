@@ -59,7 +59,9 @@ Praktisch bedeutet der Status:
 | Erzwungene Migration | Keine |
 | CPQ für eine neue Gesellschaft oder eine neue Org | Nicht als Neukunde; mit dem Account-Team klären |
 
+```hinweis offen
 Die letzte Zeile ist meine eigene Lesart. Ein Konzern, der CPQ bereits lizenziert und für eine Tochtergesellschaft eine neue Org aufsetzen will, sollte schriftlich klären lassen, ob das als Bestandskunde zählt. Ich würde es nicht voraussetzen.
+```
 
 Was "keine neuen Funktionen" über die Zeit bedeutet, wird leicht unterschätzt. Salesforce liefert drei Releases pro Jahr. Jedes erweitert Revenue Cloud, CPQ bleibt stehen. Die Agentforce-Funktionen für Angebote, die Salesforce im Juli 2025 angekündigt hat, gehören zum Beispiel zu Revenue Cloud. Eine CPQ-Org hört nicht auf zu funktionieren. Sie fällt nur jedes Jahr weiter hinter das Produkt zurück, das Salesforce aktiv weiterentwickelt.
 

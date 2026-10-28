@@ -58,6 +58,15 @@ According to [Salesforce Help](https://help.salesforce.com/apex/HTViewHelpDoc?id
 
 When orders live in the ERP, an interface writes Actual Quantity and Actual Amount into the schedules of the agreement products, according to the [Help page on importing actuals](https://help.salesforce.com/s/articleView?id=ind.mfg_sa_actuals_api_external.htm&language=en_US&type=5), using the Bulk API or Data Loader. A daily job at 1:00 in the org's time zone then updates the agreements. For a recalculation outside that run, the [Refresh Actuals Calculation](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/mfg_actions_refresh_actuals_calculation.htm) action has existed since API version 47.0. It recalculates the current period of one agreement, optionally past or future periods too, and requires the Manufacturing Sales Agreements permission set.
 
+```ablauf
+erp: ERP orders
+sf: Agreement schedules, Daily job, Refresh actuals, Sales agreement
+ERP orders --via Bulk API--> Agreement schedules
+Agreement schedules --> Daily job
+Daily job --at 1:00--> Sales agreement
+Refresh actuals ..on demand..> Sales agreement
+```
+
 Three decisions determine whether the numbers are right:
 
 - **Account level.** When the group negotiates and the plants order, the interface has to map orders from several sold-to parties in the ERP to one agreement. That mapping table needs an owner.
@@ -66,7 +75,9 @@ Three decisions determine whether the numbers are right:
 
 Which system leads for which data is part of my work on [Salesforce integration](../../../services/salesforce-integration/).
 
-This matches my own project experience: I have introduced sales agreements with actuals from the ERP in Manufacturing Cloud, and the ERP interface was one of the stumbling blocks. Settle early which orders and deliveries count as actuals and who owns the data.
+```praxis
+I have introduced sales agreements with actuals from the ERP in Manufacturing Cloud, and the ERP interface was one of the stumbling blocks. Settle early which orders and deliveries count as actuals and who owns the data.
+```
 
 ## Account forecasting or advanced account forecasting?
 
@@ -130,11 +141,18 @@ A maker of industrial valves with 30 account managers has 200 framework contract
 
 The order I would suggest:
 
-1. **Fix the levels.** Account level per large customer, product category or product, month as the period type.
-2. **Build the actuals feed.** Totals per customer, product and month from SAP, loaded daily, with the load date in the report.
-3. **Introduce sales agreements.** Actuals mode set before the first agreement, the 20 largest contracts reconciled against SAP.
-4. **Advanced account forecasting** with one forecast set and a fixed adjustment window in the first week of the month.
-5. **Targets** only in the next fiscal year, once actuals and forecast share one structure.
+```schritte
+Fix the levels
+  Account level per large customer, product category or product, month as the period type.
+Build the actuals feed
+  Totals per customer, product and month from SAP, loaded daily, with the load date in the report.
+Introduce sales agreements
+  Actuals mode set before the first agreement, the 20 largest contracts reconciled against SAP.
+Advanced account forecasting
+  One forecast set and a fixed adjustment window in the first week of the month.
+Targets
+  Only in the next fiscal year, once actuals and forecast share one structure.
+```
 
 This manufacturer does not need program-based business, because it does not supply OEM programmes. I would evaluate the agent only after the actuals feed has run stably for a quarter.
 

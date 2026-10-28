@@ -92,7 +92,7 @@ Ich würde drei Zahlen nebeneinanderstellen: die AELA-Pauschale, die ohnehin gep
 Ich würde eine AELA prüfen, wenn die meisten dieser Punkte zutreffen:
 
 ```pro-contra
-pro: AELA prüfen, wenn
+pro: Spricht für eine AELA
 - **Mehrere Agenten sind live oder freigegeben,** für die nächsten zwölf Monate und in mindestens zwei Bereichen, etwa Händlerservice und Außendienst.
 - **Die enthaltenen Produkte stehen auf Ihrer Roadmap,** auch Data 360 und MuleSoft für die SAP-Anbindung, die Forrester als abgedeckt nennt.
 - **Der Verbrauch ist schwer zu schätzen,** weil große Bestände an Ersatzteillisten und Handbüchern indexiert werden müssen oder der API-Satz noch offen ist.

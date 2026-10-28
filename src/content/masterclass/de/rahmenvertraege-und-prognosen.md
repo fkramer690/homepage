@@ -58,6 +58,15 @@ Wie die Ist-Mengen berechnet werden, legt laut [Salesforce-Hilfe](https://help.s
 
 Liegen die Aufträge im ERP, schreibt eine Schnittstelle laut [Hilfe zum Import](https://help.salesforce.com/s/articleView?id=ind.mfg_sa_actuals_api_external.htm&language=en_US&type=5) Actual Quantity und Actual Amount in die Zeitpläne der Agreement-Produkte, per Bulk API oder Data Loader. Ein täglicher Job um 1:00 Uhr in der Zeitzone der Org aktualisiert danach die Agreements. Für eine Neuberechnung außerhalb dieses Laufs gibt es seit API-Version 47.0 die Aktion [Refresh Actuals Calculation](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/mfg_actions_refresh_actuals_calculation.htm). Sie rechnet für ein Agreement den aktuellen Zeitraum, auf Wunsch auch vergangene oder künftige Zeiträume neu, und verlangt den Berechtigungssatz Manufacturing Sales Agreements.
 
+```ablauf
+erp: ERP-Aufträge
+sf: Agreement-Zeitpläne, Täglicher Job, Refresh Actuals, Sales Agreement
+ERP-Aufträge --per Bulk API--> Agreement-Zeitpläne
+Agreement-Zeitpläne --> Täglicher Job
+Täglicher Job --um 1:00 Uhr--> Sales Agreement
+Refresh Actuals ..bei Bedarf..> Sales Agreement
+```
+
 Drei Entscheidungen bestimmen, ob die Zahlen stimmen:
 
 - **Account-Ebene.** Verhandelt der Konzern und bestellen die Werke, muss die Schnittstelle Aufträge mehrerer Auftraggeber im ERP einem Agreement zuordnen. Diese Zuordnungstabelle braucht einen Verantwortlichen.
@@ -66,7 +75,9 @@ Drei Entscheidungen bestimmen, ob die Zahlen stimmen:
 
 Welches System für welche Daten führend ist, kläre ich im Rahmen von [Salesforce-Schnittstellen](../../../leistungen/salesforce-schnittstellen/).
 
-Das ist auch meine eigene Projekterfahrung: Ich habe Rahmenverträge mit Ist-Mengen aus dem ERP in Manufacturing Cloud eingeführt, und die ERP-Schnittstelle war dabei einer der Stolpersteine. Klären Sie deshalb früh, welche Aufträge und Lieferungen als Ist zählen und wer die Daten verantwortet.
+```praxis
+Ich habe Rahmenverträge mit Ist-Mengen aus dem ERP in Manufacturing Cloud eingeführt, und die ERP-Schnittstelle war dabei einer der Stolpersteine. Klären Sie deshalb früh, welche Aufträge und Lieferungen als Ist zählen und wer die Daten verantwortet.
+```
 
 ## Account Forecasting oder Advanced Account Forecasting?
 
@@ -130,11 +141,18 @@ Ein Hersteller von Industrieventilen mit 30 Account Managern hat 200 Rahmenvertr
 
 Die Reihenfolge, die ich vorschlagen würde:
 
-1. **Ebenen festlegen.** Account-Ebene pro großem Kunden, Produktkategorie oder Produkt, Monat als Periodentyp.
-2. **Ist-Datenfluss bauen.** Summen pro Kunde, Produkt und Monat aus SAP, täglich geladen, mit Ladedatum im Bericht.
-3. **Sales Agreements einführen.** Modus für die Ist-Mengen vor dem ersten Agreement, die 20 größten Verträge gegen SAP abgeglichen.
-4. **Advanced Account Forecasting** mit einem Forecast Set und einem festen Anpassungsfenster in der ersten Monatswoche.
-5. **Ziele** erst im nächsten Geschäftsjahr, wenn Ist und Prognose dieselbe Struktur haben.
+```schritte
+Ebenen festlegen
+  Account-Ebene pro großem Kunden, Produktkategorie oder Produkt, Monat als Periodentyp.
+Ist-Datenfluss bauen
+  Summen pro Kunde, Produkt und Monat aus SAP, täglich geladen, mit Ladedatum im Bericht.
+Sales Agreements einführen
+  Modus für die Ist-Mengen vor dem ersten Agreement, die 20 größten Verträge gegen SAP abgeglichen.
+Advanced Account Forecasting
+  Ein Forecast Set und ein festes Anpassungsfenster in der ersten Monatswoche.
+Ziele
+  Erst im nächsten Geschäftsjahr, wenn Ist und Prognose dieselbe Struktur haben.
+```
 
 Programmgeschäft braucht dieser Hersteller nicht, weil er nicht in OEM-Programme liefert. Den Agenten würde ich erst prüfen, wenn der Ist-Datenfluss ein Quartal lang stabil läuft.
 

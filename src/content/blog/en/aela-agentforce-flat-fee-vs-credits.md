@@ -92,7 +92,7 @@ I would compare three numbers side by side: the AELA fee, the licences you plan 
 I would consider an AELA when most of these points are true:
 
 ```pro-contra
-pro: Consider an AELA when
+pro: Points for an AELA
 - **Several agents are live or approved** for the next twelve months in at least two areas, for example dealer service and field service.
 - **The bundled products are on your roadmap,** including Data 360 and MuleSoft for the SAP integration, which Forrester names as covered.
 - **Consumption is hard to forecast,** because large document sets for spare parts and manuals have to be indexed or the API rate is still open.

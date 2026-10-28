@@ -38,7 +38,7 @@ For a purchasing decision that is thin.
 In the sources I could open, Salesforce has not published which fraud signals the agent uses, which licence it needs or a setup guide like the ones for its other manufacturing agents. Ask your account team before you put a number in the budget.
 ```
 
-What is documented are the [Agentforce for Manufacturing warranty actions](https://help.salesforce.com/s/articleView?id=ai.agent_ref_mfg_get_wrnty_claims_for_acct.htm&language=en_US&type=5): Check Asset For Warranty, Check Coverage for Parts, Get Asset Warranties and Get Warranty Claims for Account, which finds claims by asset ID, serial number or claim number. They require the Agentforce for Manufacturing add-on for each user, or Agentforce 1 Manufacturing Edition. I expect the adjudication agent to build on these actions, but that is my assumption, so ask your account team before you put a number in the budget.
+What is documented are the [Agentforce for Manufacturing warranty actions](https://help.salesforce.com/s/articleView?id=ai.agent_ref_mfg_get_wrnty_claims_for_acct.htm&language=en_US&type=5): Check Asset For Warranty, Check Coverage for Parts, Get Asset Warranties and Get Warranty Claims for Account, which finds claims by asset ID, serial number or claim number. They require the Agentforce for Manufacturing add-on for each user, or Agentforce 1 Manufacturing Edition. I expect the adjudication agent to build on these actions, but that is my assumption.
 
 The data model underneath, from warranty terms to supplier recovery, is described in [warranty claims from dealers in Salesforce](../warranty-claims-dealers-salesforce/). Here I look only at the agent and what it needs.
 
@@ -70,7 +70,16 @@ The agent reads text that dealers write. In 2025 the ForcedLeak vulnerability (r
 
 ### Licence and test budget
 
-According to the [Flex Credits rate card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf), a standard or custom action costs 20 credits in production and 16 in a sandbox. Flex Credits cost [$500 per 100,000](https://www.salesforce.com/news/press-releases/2025/05/15/agentforce-flexible-pricing-news/), so one action costs $0.10. Plan two separate lines: consumption, which you can estimate, and the licence, which only Salesforce can answer for now.
+Consumption has published prices:
+
+```kennzahlen
+20 credits | per standard or custom action in production
+16 credits | per action in a sandbox
+$0.10 | per action in production, at $500 per 100,000 Flex Credits
+source: [Flex Credits rate card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) and [Salesforce press release on flexible pricing](https://www.salesforce.com/news/press-releases/2025/05/15/agentforce-flexible-pricing-news/)
+```
+
+Plan two separate lines: consumption, which you can estimate, and the licence, which only Salesforce can answer for now.
 
 ## A typical scenario: agricultural machinery sold through 90 dealers
 

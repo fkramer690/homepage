@@ -60,13 +60,21 @@ Manufacturing Cloud bildet Garantien auf drei Ebenen ab. Laut [Trailhead](https:
 
 Der Anspruch selbst kommt meist von außen. Die [Serviceseite](https://salesforce.com/manufacturing/cloud/service) sagt, dass Partner und Kunden Ansprüche „via API or portals“ einreichen und Geschäftsregeln Freigaben automatisieren können. Der Ablauf in Kurzform:
 
-1. Der Händler reicht den Anspruch im Partnerportal ein, mit Maschine, Fehler, verursachendem Teil und Kosten pro Position.
-2. Regeln prüfen die Deckung: Garantiezeitraum, Nutzungsgrenze, gedecktes Teil.
-3. Routinefälle laufen durch, der Rest geht an einen Sachbearbeiter, der den genehmigten Betrag einträgt.
-4. Bei einem Zukaufteil geht ein Regressanspruch (Supplier Recovery Claim) an den Lieferanten.
-5. Eine Schnittstelle überträgt den genehmigten Betrag ins ERP, und die Buchhaltung bucht die Gutschrift.
+```ablauf
+sf: Anspruch im Portal, Regelprüfung, Sachbearbeiter, Genehmigter Anspruch
+erp: Gutschrift
+ext: Lieferant
+Anspruch im Portal --> Regelprüfung
+Regelprüfung --Routinefall--> Genehmigter Anspruch
+Regelprüfung --übrige Fälle--> Sachbearbeiter
+Sachbearbeiter --Betrag--> Genehmigter Anspruch
+Genehmigter Anspruch --Schnittstelle--> Gutschrift
+Genehmigter Anspruch ..Regressanspruch..> Lieferant
+```
 
-Schritt 5 fällt in Planungen leicht unter den Tisch. Ohne ihn sieht der Händler im Portal einen genehmigten Anspruch und wartet trotzdem auf sein Geld. Die Objekte, den Lieferantenregress und die Portallizenzen für Händler behandelt [Garantieansprüche von Händlern in Salesforce](../../../blog/garantieansprueche-haendler-salesforce/). Welche Portallizenz Händler brauchen, war Thema in [Kapitel 3](../haendler-und-partnerkanal/).
+Der Händler reicht den Anspruch im Partnerportal mit Maschine, Fehler, verursachendem Teil und Kosten pro Position ein. Die Regeln prüfen Garantiezeitraum, Nutzungsgrenze und gedecktes Teil. Bei einem Zukaufteil geht ein Regressanspruch (Supplier Recovery Claim) an den Lieferanten, und die Buchhaltung bucht die Gutschrift im ERP.
+
+Die Gutschrift fällt in Planungen leicht unter den Tisch. Ohne ihn sieht der Händler im Portal einen genehmigten Anspruch und wartet trotzdem auf sein Geld. Die Objekte, den Lieferantenregress und die Portallizenzen für Händler behandelt [Garantieansprüche von Händlern in Salesforce](../../../blog/garantieansprueche-haendler-salesforce/). Welche Portallizenz Händler brauchen, war Thema in [Kapitel 3](../haendler-und-partnerkanal/).
 
 ### Was bringt der Garantie-Prüfagent?
 
@@ -80,7 +88,11 @@ Eine Product Service Campaign steht laut [Objektreferenz](https://developer.sale
 
 Die Schwachstelle ist die Auswahl. Eine Kampagne trifft nur dann die richtigen Maschinen, wenn jede Maschine als Asset mit Seriennummer existiert und bekannt ist, welches Bauteillos in welcher Maschine steckt. Wählen Sie zu breit, zahlen Sie für Arbeit an Maschinen ohne Fehler; zu eng, und fehlerhafte Maschinen bleiben im Feld.
 
-Ein typisches Szenario, als Annahme: Ein Ventillos eines Lieferanten ist fehlerhaft und steckt in 1.800 Maschinen, verkauft über 70 Händler, 120 davon stehen noch unverkauft beim Händler. Die Kampagne führt die 1.680 Maschinen bei Endkunden als Einträge, die unverkauften als Partnerbestand und das Ventil als verursachendes Teil mit Rücksendung gegen Gutschrift vom Lieferanten. Händler melden jede Maschine einzeln als erledigt, nicht eine Zahl pro Händler. Den ganzen Ablauf, und wann eine Liste im Qualitätssystem reicht, beschreibt [Rückrufaktionen in Salesforce](../../../blog/rueckrufaktionen-service-kampagnen/). Weil die Preisseite Kampagnen nicht nennt, fragen Sie schriftlich, welche Edition sie enthält.
+Ein typisches Szenario, als Annahme: Ein Ventillos eines Lieferanten ist fehlerhaft und steckt in 1.800 Maschinen, verkauft über 70 Händler, 120 davon stehen noch unverkauft beim Händler. Die Kampagne führt die 1.680 Maschinen bei Endkunden als Einträge, die unverkauften als Partnerbestand und das Ventil als verursachendes Teil mit Rücksendung gegen Gutschrift vom Lieferanten. Händler melden jede Maschine einzeln als erledigt, nicht eine Zahl pro Händler. Den ganzen Ablauf, und wann eine Liste im Qualitätssystem reicht, beschreibt [Rückrufaktionen in Salesforce](../../../blog/rueckrufaktionen-service-kampagnen/).
+
+```hinweis offen
+Die Preisseite nennt Product Service Campaigns nicht. Lassen Sie sich bestätigen, welche Edition sie enthält, bevor Sie einen Rückrufprozess darauf planen.
+```
 
 ## Was sieht der Servicemitarbeiter auf einem Bildschirm?
 
