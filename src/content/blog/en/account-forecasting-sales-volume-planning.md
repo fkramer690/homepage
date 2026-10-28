@@ -78,7 +78,7 @@ That requires a fixed rhythm in sales. A forecast that is only adjusted when som
 
 ## Where does sales forecasting in Salesforce end?
 
-At the question of what gets produced. Account forecasting provides what sales expects: which customer will take which quantity of which product in which month. Whether that quantity can be produced, with which material and on which line, is decided by planning in the ERP or a dedicated planning system.
+At the question of what gets produced. Account forecasting provides what sales expects: which customer will take which quantity of which product in which month. Whether that quantity can be produced, with which material and on which line, is decided by planning in the ERP or a dedicated planning system. How forecasts, sales agreements and targets fit together is covered in [chapter 2 of the Manufacturing Cloud masterclass](../../masterclass/manufacturing-cloud/agreements-and-forecasting/).
 
 Two points matter for the architecture:
 
