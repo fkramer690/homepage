@@ -11,9 +11,9 @@ Stand 28.10.2026. Grundlage: Ranking-Lauf, KI-Check und OnPage-Crawl vom 28.10.2
 | D1 | Tracking: Ranking wöchentlich, KI-Check und OnPage-Crawl monatlich, Auswertung am 2. | Claude | erledigt (PR #91 bis #97, #100) |
 | D2 | Alt-Text Porträt (Autorenbox, Kontakt) | Claude | erledigt (PR #100) |
 | D3 | Strukturdaten: FAQ-Fragen mit answerCount und text (434 Seiten) | Claude | erledigt (PR #101) |
-| D4 | Field-Service-Artikel verlinken und schärfen: „lohnt sich“ verlinkt Lizenzen und Einführung, Titel beginnen mit „Salesforce Field Service“, EN parallel (= L9, L12) | Claude | PR #103 |
-| D5 | Manufacturing-Cloud-Artikel auf „Manufacturing Cloud vs. Sales Cloud“ geschärft, FAQ zum Unterschied (= L6, statt eigenem Artikel, damit zwei Seiten nicht um denselben Begriff konkurrieren) | Claude | PR #103 |
-| D6 | Übersichtsseiten Blog, Leistungen, Masterclasses mit zweitem Einleitungsabsatz (Crawl: zu wenig Text) | Claude | PR #103 |
+| D4 | Field-Service-Artikel verlinken und schärfen: „lohnt sich“ verlinkt Lizenzen und Einführung, Titel beginnen mit „Salesforce Field Service“, EN parallel (= L9, L12) | Claude | erledigt (PR #103) |
+| D5 | Manufacturing-Cloud-Artikel auf „Manufacturing Cloud vs. Sales Cloud“ geschärft, FAQ zum Unterschied (= L6, statt eigenem Artikel, damit zwei Seiten nicht um denselben Begriff konkurrieren) | Claude | erledigt (PR #103) |
+| D6 | Übersichtsseiten Blog, Leistungen, Masterclasses mit zweitem Einleitungsabsatz (Crawl: zu wenig Text) | Claude | erledigt (PR #103) |
 | D7 | Freelancer-Profile auf gulp.de, freelancermap.de, fratch.io, freelance.de mit Link auf www.fk-sd.de (KI-Assistenten zitieren diese Seiten bei „Empfiehl einen Salesforce Architect“) | Fabian | offen |
 | D8 | L1 Partnerauswahl: Antworten auf 4 Fragen (Warnsignal im Angebot, Standardfragen im Pitch, gescheiterte Partnerwahl, Referenzprüfung) | Fabian | offen |
 | D9 | Wirkung prüfen: Positionen von D4 und D5 nach 2 bis 3 Montagsläufen vergleichen | Claude | ab 16.11.2026 |
@@ -30,15 +30,15 @@ Neue Artikel:
 - L3. **SAP CRM oder Salesforce** (Wartungsende SAP CRM, Wechselgründe). Begriffe: „sap vs salesforce“ / „salesforce vs sap“ (110). (Ersetzt S2.)
 - L4. **Field Service Management Software: wann Salesforce, wann SAP, IFS oder ServiceNow?** Begriffe: „field service management software“ (590), „sap field service management“ (210), „field service management system“ (90). Größtes Volumen, Entscheidungsartikel für CIOs.
 - L5. **Was ist Agentforce? Erklärt für die IT-Leitung.** Begriffe: „was ist agentforce“ (20), „what is agentforce“ (20). Definition zuerst, dann Einordnung, Links auf die Agentforce-Artikel.
-- L6. **Manufacturing Cloud vs. Sales Cloud.** Begriff: „salesforce manufacturing cloud vs sales cloud“ (10). *Umgesetzt als Schärfung des bestehenden Artikels (D5).*
+- L6. **Manufacturing Cloud vs. Sales Cloud.** Begriff: „salesforce manufacturing cloud vs sales cloud“ (10). *Umgesetzt als Schärfung des bestehenden Artikels (D5, PR #103).*
 - L7. **Salesforce-Release-Kalender: was die IT-Leitung je Release prüfen muss.** Begriffe: „salesforce release notes“ (90), „salesforce release schedule/cycle/dates“ (je 20). Evergreen-Seite, je Release aktualisieren.
 
 Bestehende Artikel nachschärfen (Titel, Einstieg, FAQ um den Suchbegriff ergänzen):
 - L8. Salesforce-Lizenzen-Artikel auf „salesforce lizenz kosten“ (20).
-- L9. Field-Service-Lizenzen-Artikel auf „salesforce field service license / pricing / license comparison“ (je 10). *In Arbeit (D4).*
+- L9. Field-Service-Lizenzen-Artikel auf „salesforce field service license / pricing / license comparison“ (je 10). *Erledigt (D4, PR #103).*
 - L10. Manufacturing-Cloud-Add-ons-Artikel auf „salesforce manufacturing cloud pricing“ (10).
 - L11. CPQ-Verkaufsende-Artikel auf „salesforce cpq end of life / retirement / replacement“ (je 10).
-- L12. Field-Service-Einführung auf „salesforce field service implementation guide“ (10); laut Benchmark rankt für „field service einführung“ bisher der Artikel „lohnt sich“ statt des Einführungsartikels. *In Arbeit (D4).*
+- L12. Field-Service-Einführung auf „salesforce field service implementation guide“ (10); laut Benchmark rankt für „field service einführung“ bisher der Artikel „lohnt sich“ statt des Einführungsartikels. *Erledigt (D4, PR #103).*
 
 ## Blog: Themen aus dem täglichen Lauf (übernommen 28.10.2026)
 
