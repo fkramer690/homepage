@@ -46,14 +46,24 @@ Ein Detail ist jetzt wichtig. Die [Metadata-API-Referenz](https://developer.sale
 
 Der [Beitrag zum Agentic Development Lifecycle vom Juni 2026](https://developer.salesforce.com/blogs/2026/06/master-the-agentic-development-lifecycle-for-agentforce) beschreibt den Pro-Code-Weg. In einer Pipeline auf Kundenseite:
 
-1. **Pull Request.** Der Partner committet die geänderte `.agent`-Datei und geänderte Flows oder Apex auf einem Feature-Branch; der Reviewer liest den Diff im Agent Script wie Code.
-2. **Validieren.** `sf agent validate authoring-bundle` prüft, ob das Agent Script kompiliert. Laut Salesforce ist die Validierung Pflicht vor dem Publish, sie gehört also als Gate in die Pipeline.
-3. **Gezieltes Deployment.** Erst die Flows, dann das Authoring Bundle, jeweils mit `--metadata` benannt. Der Beitrag warnt, dass ein nacktes `sf project deploy start` alles Geänderte ausliefert, Agenten-Metadaten eingeschlossen.
-4. **Publish.** `sf agent publish authoring-bundle` kompiliert das Agent Script und legt einen neuen Agenten oder eine neue Version eines bestehenden an, mit den Metadaten Bot, BotVersion und GenAi, so die [CLI-Referenz](https://developer.salesforce.com/docs/platform/salesforce-cli-reference/guide/cli_reference_agent_publish_authoring-bundle.html). Laut ADLC-Beitrag kann man jetzt publishen und später aktivieren, die neue Version startet nach meiner Lesart also inaktiv.
-5. **Testen.** Die Testsuite läuft in der Sandbox gegen die gepublishte Version; Schwellen und Passraten behandle ich in [Agentforce-Agenten testen und freigeben](../agentforce-agenten-testen-freigeben/).
-6. **Aktivieren.** `sf agent activate` mit `--api-name` und `--version` schaltet die Version ein. Laut [Referenz zu activate](https://developer.salesforce.com/docs/platform/salesforce-cli-reference/guide/cli_reference_agent_activate.html) ist der Agent damit sofort für die Anwender verfügbar.
+```schritte
+Pull Request
+  Der Partner committet die geänderte `.agent`-Datei und geänderte Flows oder Apex auf einem Feature-Branch; der Reviewer liest den Diff im Agent Script wie Code.
+Validieren
+  `sf agent validate authoring-bundle` prüft, ob das Agent Script kompiliert. Laut Salesforce ist die Validierung Pflicht vor dem Publish, sie gehört also als Gate in die Pipeline.
+Gezielt deployen
+  Erst die Flows, dann das Authoring Bundle, jeweils mit `--metadata` benannt. Der Beitrag warnt, dass ein nacktes `sf project deploy start` alles Geänderte ausliefert, Agenten-Metadaten eingeschlossen.
+Publish
+  `sf agent publish authoring-bundle` legt einen neuen Agenten oder eine neue Version an, mit den Metadaten Bot, BotVersion und GenAi, so die [CLI-Referenz](https://developer.salesforce.com/docs/platform/salesforce-cli-reference/guide/cli_reference_agent_publish_authoring-bundle.html). Laut ADLC-Beitrag kann man jetzt publishen und später aktivieren, die Version startet nach meiner Lesart also inaktiv.
+Testen
+  Die Testsuite läuft in der Sandbox gegen die gepublishte Version; Schwellen und Passraten behandle ich in [Agentforce-Agenten testen und freigeben](../agentforce-agenten-testen-freigeben/).
+Aktivieren
+  `sf agent activate` mit `--api-name` und `--version` schaltet die Version ein. Laut [Referenz zu activate](https://developer.salesforce.com/docs/platform/salesforce-cli-reference/guide/cli_reference_agent_activate.html) ist der Agent damit sofort für die Anwender verfügbar.
+```
 
-Ein Flag verdient Aufmerksamkeit. Dieselbe Referenz sagt: Mit `--json` und ohne `--version` wird automatisch die neueste Version aktiviert. In einem unbeaufsichtigten Skript gebe ich die Versionsnummer deshalb immer mit. So aktiviert die Pipeline, was der Fachverantwortliche freigegeben hat, und nicht das, was zuletzt gepublished wurde.
+```hinweis achtung
+Mit `--json` und ohne `--version` aktiviert `sf agent activate` automatisch die neueste Version, so dieselbe Referenz. In einem unbeaufsichtigten Skript gebe ich die Versionsnummer deshalb immer mit, damit die Pipeline aktiviert, was der Fachverantwortliche freigegeben hat, und nicht das, was zuletzt gepublished wurde.
+```
 
 Der Mai-Beitrag nennt zwei Varianten. In der ersten Variante liegt nur das `AiAuthoringBundle` in Git, und jede Org publisht eine eigene neue Version. Voll automatisierte Pipelines deployen zusätzlich das erzeugte `GenAiPlannerBundle` und sparen sich den manuellen Commit-Schritt. Für einen Hersteller mit einer Produktiv-Org ziehe ich die erste vor: In Git liegt nur, was Menschen schreiben. Der Preis sind abweichende Versionsnummern zwischen den Orgs, denn die Nummern des Planners stimmen laut Salesforce nicht unbedingt mit denen des Bundles überein. Jede Release Note sollte deshalb festhalten, welche Produktivversion zu welchem Git-Commit gehört.
 

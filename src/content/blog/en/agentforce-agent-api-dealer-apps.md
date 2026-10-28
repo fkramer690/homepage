@@ -95,7 +95,13 @@ The test I would insist on before go-live: dealer A asks for an order number of 
 
 The considerations page says Agent API usage "impacts credit consumption" and links to a Salesforce Help article on generative AI usage and billing, which did not render for me. So I calculate with the action rate above, and sandbox actions cost 16 credits instead of 20.
 
-The open line is the Headless Platform Interaction meter. The rate card lists it as "TBA". According to [Salesforce Ben](https://www.salesforceben.com/salesforce-will-charge-flex-credits-for-agentic-mcp-and-api-calls/), every successful call by a registered agent through MCP or direct API traffic classed as agentic will count, with 30 days' notice before metering starts. Neither source says whether a call to the Agent API from your dealer app counts on top of the agent's actions. I would ask your account executive for that answer in writing. How to budget a meter without a price is in [MCP calls as a budget risk](../mcp-api-calls-salesforce-budget-risk/).
+The open line is the Headless Platform Interaction meter. The rate card lists it as "TBA". According to [Salesforce Ben](https://www.salesforceben.com/salesforce-will-charge-flex-credits-for-agentic-mcp-and-api-calls/), every successful call by a registered agent through MCP or direct API traffic classed as agentic will count, with 30 days' notice before metering starts.
+
+```hinweis offen
+Neither source says whether a call to the Agent API from your dealer app counts as a Headless Platform Interaction on top of the agent's actions. I would ask your account executive for that answer in writing.
+```
+
+How to budget a meter without a price is in [MCP calls as a budget risk](../mcp-api-calls-salesforce-budget-risk/).
 
 ## Where should you start?
 

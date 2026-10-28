@@ -39,7 +39,9 @@ So companies are experimenting and hiring, but production use lags behind. That 
 
 ## What did I learn from my first pilot?
 
+```praxis
 The first Agentforce pilot I was involved in was simply too early. The platform was young and not yet mature enough for what we wanted to do. That is a normal risk with new technology, and it taught me to look harder at the conditions around an agent than at the agent itself.
+```
 
 Three conditions have to be in place before a pilot starts:
 

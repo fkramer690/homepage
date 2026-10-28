@@ -76,7 +76,18 @@ reasoning:
             available when @variables.credit_ok == True
 ```
 
-Three details in the guide are worth asking your partner about. First, gate variables must be set by code; if the LLM sets them, "you've reintroduced the variability the gate was designed to prevent." Second, the guard in the sketch matters: without it the ERP lookup in `before_reasoning` runs on every parse, so several times per turn. Every run is an ERP call, and the [Flex Credits rate card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) bills actions at 20 credits without saying whether script-triggered calls count differently. Third, an action marked `is_displayable` ends the reasoning loop as soon as its output is shown, and `after_reasoning` is skipped. A check placed there then never runs.
+Three details in the guide are worth asking your partner about.
+
+```vertiefung For developers
+title: Gate variables, the guard and is_displayable
+- **Code sets the gate variables.** If the LLM sets them, "you've reintroduced the variability the gate was designed to prevent."
+- **The guard in the sketch matters.** Without it the ERP lookup in `before_reasoning` runs on every parse, so several times per turn, and every run is an ERP call.
+- **`is_displayable` ends the loop.** Such an action ends the reasoning loop as soon as its output is shown, and `after_reasoning` is skipped. A check placed there then never runs.
+```
+
+```hinweis offen
+The [Flex Credits rate card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) bills actions at 20 credits but does not say whether script-triggered calls count differently. With an ERP lookup in `before_reasoning`, I would have that confirmed in the quote.
+```
 
 ## A typical scenario: a dealer agent for spare parts and warranty
 

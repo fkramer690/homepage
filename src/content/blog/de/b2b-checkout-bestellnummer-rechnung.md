@@ -53,7 +53,10 @@ Das Entwicklerhandbuch nennt für B2B-Shops diese Optionen, verfügbar in Enterp
 
 Für das Gateway nennt die [Seite zu den Gateway-Optionen](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-payment-gateway-options.html) drei Wege: ein Anbieterpaket vom AppExchange, Salesforce Payments als native Stripe-Integration oder ein eigenes Gateway. Bei AppExchange-Paketen sollen Sie laut Salesforce prüfen, ob das Paket B2B-Shops unterstützt. Ein eigenes serverseitiges Gateway braucht einen Apex-Adapter.
 
-Eine Grenze ist wichtig für alle, die eigene Logik planen. Das Extension-Framework, das Preise, Bestand, Steuer, Versand und Auftragserzeugung abdeckt, gilt nicht für Zahlungen: "Currently, payments can't be customized with an extension" ([Salesforce Developers, Extensions](https://developer.salesforce.com/docs/commerce/extensions/guide/extensions.html)). Sonderregeln für Zahlungen landen deshalb im Apex-Adapter oder in einer eigenen Komponente, und beides ist Code, den Ihr Team über jedes Release hinweg verantwortet.
+```vertiefung Für Entwickler
+titel: Wo landet eigene Zahlungslogik?
+Das Extension-Framework, das Preise, Bestand, Steuer, Versand und Auftragserzeugung abdeckt, gilt nicht für Zahlungen: "Currently, payments can't be customized with an extension" ([Salesforce Developers, Extensions](https://developer.salesforce.com/docs/commerce/extensions/guide/extensions.html)). Sonderregeln für Zahlungen landen deshalb im Apex-Adapter oder in einer eigenen Komponente, und beides ist Code, den Ihr Team über jedes Release hinweg verantwortet.
+```
 
 Im Flow-basierten Checkout wählen Käufer auf der Bestellübersicht zwischen Bestellnummer und Karte. Wer die Bestellnummer wählt, gibt PO-Nummer und Rechnungsadresse ein ([Salesforce Developers, Purchase Order oder Kreditkarte](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-checkout-choose-po-or-cc.html)).
 
