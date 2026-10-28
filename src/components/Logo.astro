@@ -5,14 +5,17 @@ interface Props {
   size?: number;
   inverse?: boolean;
   class?: string;
+  // Hidden from screen readers when the company name is written right next to it.
+  decorative?: boolean;
 }
-const { size = 40, inverse = false, class: className } = Astro.props;
+const { size = 40, inverse = false, class: className, decorative = false } = Astro.props;
+const a11y = decorative ? { 'aria-hidden': 'true' } : { role: 'img', 'aria-label': 'FK Solution Design' };
 const tile = inverse ? '#1BA1E2' : '#232325';
 const fk = inverse ? '#FFFFFF' : '#1BA1E2';
 const angles = inverse ? '#232325' : '#FFFFFF';
 const clipId = `fk-clip-${inverse ? 'inv' : 'std'}`;
 ---
-<svg class={className} width={size} height={size} viewBox="0 0 100 100" role="img" aria-label="FK Solution Design">
+<svg class={className} width={size} height={size} viewBox="0 0 100 100" {...a11y}>
   <defs>
     <clipPath id={clipId}><rect x="36" y="22" width="44" height="56" /></clipPath>
   </defs>
