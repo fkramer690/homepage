@@ -50,7 +50,7 @@ The detailed comparison is in [Salesforce CPQ vs Revenue Cloud: the real differe
 
 The Help article [Migrate to Revenue Management](https://help.salesforce.com/s/articleView?language=en_US&id=ind.rev_data_migration.htm&type=5) sets out the frame. The work runs in phases, and Salesforce asks you to "complete all the tasks of each phase in the mentioned sequence before moving to the next phase":
 
-1. **Prepare.** Assess which Revenue Cloud capabilities you need, and settle operational planning. Help lists two topics here that are "not design decisions but practical requirements": retaining the CPQ licence and coexistence during the transition.
+1. **Prepare.** Assess which Revenue Cloud capabilities you need, and settle operational planning. Help lists two practical requirements here that apply "regardless of your migration strategy": retaining the CPQ licence and coexistence during the transition.
 2. **Choose a strategy.** Decide the migration strategy, how transactional data moves and how rollout and cutover work. Help says these rollout decisions belong early, because they affect scope, integrations, cutover and change management.
 3. **Execute.** Migrate product data, asset data and billing data, rebuild reporting and run change management as a parallel workstream from the start.
 

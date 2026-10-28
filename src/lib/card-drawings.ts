@@ -27,6 +27,18 @@ const pin = (x: number, y: number, color = G) =>
   `<g transform="translate(${x} ${y})"><path d="M0 0c-6-8-9-12-9-16a9 9 0 0 1 18 0c0 4-3 8-9 16z" fill="#fff" stroke="${color}" stroke-width="1.4"/><circle cx="0" cy="-16" r="3" fill="${color}"/></g>`;
 
 const drawings: Record<string, Drawing> = {
+  'field-service-kpis-after-go-live': (l) => `
+    ${t(20, 20, l('REGION 1: BASELINE VS MONTH 3 (ASSUMED)', 'REGION 1: AUSGANG VS. MONAT 3 (ANNAHME)'), { fill: D, size: 7.5 })}
+    <path d="M20 116H300" stroke="${G}" stroke-width="1"/>
+    ${[[l('jobs/day', 'Einsätze/Tag'), 2.1, 2.4, 28, ''], [l('travel', 'Fahrzeit'), 38, 33, 1.6, ' %'], [l('first-time fix', 'Erstlösung'), 71, 72, 0.9, ' %'], [l('response met', 'Reaktion ok'), 84, 88, 0.9, ' %']].map(([s, a, b, k, u], i) => {
+      const x = 34 + i * 70, ha = Number(a) * Number(k), hb = Number(b) * Number(k);
+      const fa = l(String(a), String(a).replace('.', ',')) + u, fb = l(String(b), String(b).replace('.', ',')) + u;
+      return `<rect x="${x}" y="${116 - ha}" width="18" height="${ha}" rx="2" fill="#fff" stroke="${G}" stroke-width="1.3"/><rect x="${x + 22}" y="${116 - hb}" width="18" height="${hb}" rx="2" fill="#fff" stroke="${C}" stroke-width="1.3"/>` + t(x + 9, 111 - ha, fa, { size: 6, anchor: 'middle' }) + t(x + 31, 111 - hb, fb, { fill: C, size: 6, anchor: 'middle' }) + t(x + 20, 128, String(s), { size: 7, anchor: 'middle' });
+    }).join('')}
+    <rect x="20" y="140" width="8" height="8" fill="#fff" stroke="${G}"/>${t(32, 147, l('baseline', 'Ausgangswert'), { size: 7 })}
+    <rect x="100" y="140" width="8" height="8" fill="#fff" stroke="${C}"/>${t(112, 147, l('month 3', 'Monat 3'), { fill: C, size: 7 })}
+    ${t(300, 147, l('FTF: 14 days, same asset', 'Erstlösung: 14 Tage, gleiches Asset'), { size: 6.5, anchor: 'end' })}`,
+
   'cpq-vs-revenue-cloud-differences': (l) => `
     ${box(18, 22, 118, 108)}${t(77, 38, 'CPQ · BILLING', { fill: D, size: 7.5, anchor: 'middle' })}
     ${[l('SBQQ · blng packages', 'Pakete SBQQ · blng'), l('product rules', 'Produktregeln'), l('price rules + QCP', 'Preisregeln + QCP'), l('subscriptions', 'Subscriptions'), l('end of sale', 'Verkaufsende')].map((s, i) => t(28, 56 + i * 16, s, { size: 7 })).join('')}
