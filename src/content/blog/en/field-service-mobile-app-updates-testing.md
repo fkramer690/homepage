@@ -90,8 +90,8 @@ Run the routine | weeks one and two of the beta · pilot technicians and develop
   The pilot technicians run the routine once a week, about two hours each time, on spare devices with the beta installed. Developers test the team's own components with debug builds in parallel.
 Fix the findings | two weeks before release · developer
   In this scenario one custom component in the service report shows an empty field on Android. The fix goes into the next deployment before the app version reaches production.
-Release | release week · pilot technicians and support
-  The update rolls out over several days. The pilot technicians are the first contact for colleagues, and support asks for the version number on every ticket.
+Release | release week · pilot technicians
+  The update rolls out over several days. The pilot technicians are the first contact for colleagues.
 ```
 
 The effort is about 32 hours of technician time per major version, plus the release manager's time. One failed login wave across 100 technicians on a Monday morning costs more.

@@ -60,7 +60,11 @@ Wartungen sind die Einsätze, bei denen die Automatik aus Teil 3 am ehesten ohne
 
 Ein Entitlement allein ändert an der Planung nichts. Es wird erst wirksam, wenn es zwei Dinge auslöst: eine Messung und eine Priorität.
 
-**Messung.** Laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?language=en_US&id=service.entitlements_supported_objects.htm&type=5) laufen Milestones auch an Arbeitsaufträgen. Dafür braucht es einen Entitlement-Prozess vom Typ Work Order. Ein Prozess vom Typ Case läuft auf einem Arbeitsauftrag nicht, auch wenn derselbe Anspruch dahintersteht. Der Milestone zeigt dann, ob der Techniker in der zugesagten Zeit vor Ort war, und macht die Zusage gegenüber dem Kunden nachweisbar.
+**Messung.** Laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?language=en_US&id=service.entitlements_supported_objects.htm&type=5) laufen Milestones auch an Arbeitsaufträgen. Der Milestone zeigt, ob der Techniker in der zugesagten Zeit vor Ort war, und macht die Zusage gegenüber dem Kunden nachweisbar.
+
+```hinweis achtung
+Milestones am Arbeitsauftrag brauchen einen Entitlement-Prozess vom Typ Work Order. Ein Prozess vom Typ Case läuft auf einem Arbeitsauftrag nicht, auch wenn derselbe Anspruch dahintersteht.
+```
 
 **Priorität.** Field Service plant nach einem Prioritätsfeld. Laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?id=sf.pfs_scheduling_priority_optimization.htm&language=en_US&type=5) liegt sie standardmäßig auf einer Skala von 1 bis 10, wobei 1 die höchste ist. Der Arbeitsauftrag bringt ein Feld Priority mit den Werten Low bis Critical mit, das eine Formel in Zahlen übersetzt. Sind Techniker knapp, plant die Optimierung Termine mit hoher Priorität zuerst und kann dafür Termine mit niedriger Priorität verdrängen.
 

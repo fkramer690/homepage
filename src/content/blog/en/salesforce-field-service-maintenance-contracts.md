@@ -60,7 +60,11 @@ Maintenance visits are the jobs where the automation from part 3 can most likely
 
 An entitlement on its own changes nothing about scheduling. It only takes effect when it triggers two things: a measurement and a priority.
 
-**Measurement.** According to [Salesforce Help](https://help.salesforce.com/s/articleView?language=en_US&id=service.entitlements_supported_objects.htm&type=5), milestones also run on work orders. That needs an entitlement process of type Work Order. A process of type Case does not run on a work order, even if the same entitlement is behind it. The milestone then shows whether the technician was on site within the committed time and makes the commitment provable to the customer.
+**Measurement.** According to [Salesforce Help](https://help.salesforce.com/s/articleView?language=en_US&id=service.entitlements_supported_objects.htm&type=5), milestones also run on work orders. The milestone shows whether the technician was on site within the committed time and makes the commitment provable to the customer.
+
+```hinweis achtung
+Milestones on work orders need an entitlement process of type Work Order. A process of type Case does not run on a work order, even if the same entitlement is behind it.
+```
 
 **Priority.** Field Service schedules by a priority field. According to [Salesforce Help](https://help.salesforce.com/s/articleView?id=sf.pfs_scheduling_priority_optimization.htm&language=en_US&type=5), it uses a scale from 1 to 10 by default, where 1 is the highest. The work order comes with a Priority field from Low to Critical, which a formula turns into numbers. When technicians are scarce, optimization schedules high-priority appointments first and can push out low-priority ones to do so.
 

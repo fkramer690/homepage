@@ -90,8 +90,8 @@ Routine durchspielen | Woche eins und zwei der Beta · Pilottechniker und Entwic
   Die Pilottechniker spielen die Routine einmal pro Woche durch, jeweils etwa zwei Stunden, auf Ersatzgeräten mit der Beta. Parallel testen Entwickler die eigenen Komponenten mit Debug-Builds.
 Fehler beheben | zwei Wochen vor der Veröffentlichung · Entwickler
   In diesem Szenario zeigt eine eigene Komponente im Servicebericht unter Android ein leeres Feld. Die Korrektur geht ins nächste Deployment, bevor die App-Version die Produktion erreicht.
-Veröffentlichung | Woche der Veröffentlichung · Pilottechniker und Support
-  Das Update verteilt sich über mehrere Tage. Die Pilottechniker sind die ersten Ansprechpartner für Kollegen, der Support fragt bei jedem Ticket nach der Versionsnummer.
+Veröffentlichung | Woche der Veröffentlichung · Pilottechniker
+  Das Update verteilt sich über mehrere Tage. Die Pilottechniker sind die ersten Ansprechpartner für Kollegen.
 ```
 
 Der Aufwand liegt bei etwa 32 Stunden Technikerzeit pro Hauptversion, dazu die Zeit des Release-Managers. Eine fehlgeschlagene Anmeldewelle bei 100 Technikern an einem Montagmorgen kostet mehr.
