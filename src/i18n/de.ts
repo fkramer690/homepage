@@ -301,7 +301,7 @@ export const de: Dict = {
       {
         area: 'Change Management',
         name: 'Juliane Winterscheid',
-        text: 'Juliane ist Expertin für Change Management, mit zahlreichen renommierten Referenzen und einem starken Management-Hintergrund. Sie kennt Unternehmen deshalb nicht nur aus der Außenperspektive der Beratung, sondern auch von innen: wie Entscheidungen fallen, wo Widerstand entsteht und was ein Team braucht, um neue Arbeitsweisen anzunehmen. Bei Change Management in Salesforce-Programmen arbeiten wir zusammen.',
+        text: 'Juliane ist Expertin für Change Management, mit zahlreichen renommierten Referenzen und einem starken Management-Hintergrund. Sie kennt Unternehmen deshalb nicht nur aus der Außenperspektive der Beratung, sondern auch von innen: wie Entscheidungen fallen, wo Widerstand entsteht und was ein Team braucht, um neue Arbeitsweisen anzunehmen. Sie ist Prosci-zertifiziert und arbeitet mit dem ADKAR-Modell. Bei Change Management in Salesforce-Programmen arbeiten wir zusammen.',
         linkedin: 'https://www.linkedin.com/in/juliane-winterscheid-4794b8115/',
         photo: 'juliane-winterscheid',
         photoAlt: 'Juliane Winterscheid präsentiert vor einem Team',

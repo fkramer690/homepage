@@ -7,7 +7,7 @@ slug: change-management
 translationKey: service-change
 contactBrief: change
 order: 7
-note: "Dieses Vorgehen habe ich gemeinsam mit Juliane Winterscheid erarbeitet, meiner Kooperationspartnerin für Change Management."
+note: "Dieses Vorgehen habe ich gemeinsam mit Juliane Winterscheid erarbeitet, meiner Kooperationspartnerin für Change Management. Juliane ist Prosci-zertifiziert."
 notePartner: "Juliane Winterscheid"
 lead: "Ein neues Salesforce-Release ist schnell ausgerollt. Ob Fachbereiche, Entwicklerteams und Partner danach anders arbeiten, ist eine andere Frage. Ich plane die Einführung neuer Prozesse und Standards auf Kundenseite nach dem Vorgehen von Prosci, damit sie im Alltag ankommen und dort bleiben."
 situations:
@@ -66,7 +66,7 @@ Ein Release ist technisch in Minuten ausgerollt. Danach entscheidet sich, ob jem
 
 Prosci ist für mich der Goldstandard im Change Management. Der Grund ist die Forschung dahinter: Prosci befragt seit 1998 Projekte nach ihren Erfahrungen mit Veränderungen. In der 12. Ausgabe der Studie [Best Practices in Change Management](https://www.prosci.com/hubfs/Website_English/2.downloads/research-executive-summaries/Best-Practices-in-Change-Management-12th-Edition-Executive-Summary.pdf) mit 2.668 Teilnehmenden erreichten Projekte mit sehr gutem Change Management ihre Ziele siebenmal so oft wie Projekte mit schlechtem, 88 gegenüber 13 Prozent. Als wichtigsten Erfolgsfaktor nennen die Teilnehmenden aktives und sichtbares Sponsoring durch das Management. Das deckt sich mit dem, was ich in Salesforce-Programmen erlebe.
 
-Zusammen mit Juliane Winterscheid habe ich zwei Bausteine von Prosci auf Salesforce-Programme übertragen:
+Zusammen mit Juliane Winterscheid, die Prosci-zertifiziert ist, habe ich zwei Bausteine von Prosci auf Salesforce-Programme übertragen:
 
 - **Das [ADKAR-Modell](https://www.prosci.com/blog/adkar-model)** beschreibt fünf Stufen, die jede Person bei einer Veränderung durchläuft: Awareness (Bewusstsein, warum sich etwas ändert), Desire (Bereitschaft, mitzumachen), Knowledge (Wissen, wie es geht), Ability (Fähigkeit, es im Alltag umzusetzen) und Reinforcement (Verankerung, damit niemand zurückfällt).
 - **Der [Prosci 3-Phase Process](https://www.prosci.com/methodology/3-phase-process)** gibt der Einführung auf Ebene der Organisation einen Rahmen: Vorgehen vorbereiten (Prepare Approach), Veränderung steuern (Manage Change) und Ergebnisse sichern (Sustain Outcomes). Die drei Schritte oben auf dieser Seite folgen diesen Phasen.
@@ -87,6 +87,6 @@ Die erste Version deckte rund 80 Prozent der Fälle ab. Die Randfälle kamen Sch
 
 Mit einem sauberen Release-Prozess werden Releases kleiner und häufiger. Für Fachbereiche heißt das: öfter kleine Änderungen statt einmal im Quartal ein großes Paket. Damit das funktioniert, brauchen sie einen festen Weg, auf dem sie vorher erfahren, was sich ändert, und einen Rückweg, auf dem sie melden, was im Alltag nicht passt. Vor jedem Release kläre ich mit den Verantwortlichen im Fachbereich, welche Teams betroffen sind, was sich in ihren Abläufen ändert und wer sie informiert. Das steht im Release-Plan, bevor die Entwicklung fertig ist. Nach dem Release prüfe ich, ob die neuen Prozesse genutzt werden, und bringe Rückmeldungen aus dem Alltag in den Backlog.
 
-Prosci und ADKAR sind eingetragene Marken von Prosci, Inc. Diese Seite beschreibt, wie wir Elemente des Vorgehens in Salesforce-Programmen anwenden.
+Prosci und ADKAR sind eingetragene Marken von Prosci, Inc. Die Prosci-Zertifizierung hat Juliane Winterscheid, nicht FK Solution Design, und FK Solution Design ist kein Partner von Prosci. Diese Seite beschreibt, wie wir Elemente des Vorgehens in Salesforce-Programmen anwenden.
 
 Wenn eine Einführung ansteht oder neue Prozesse nicht genutzt werden, [schreiben Sie mir](#contact) oder lesen Sie mehr [über mich](../../#about).
