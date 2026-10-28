@@ -29,7 +29,7 @@ faq:
 draft: false
 ---
 
-In Salesforce B2B Commerce, two separate mechanisms decide whether a dealer orders the right spare part. Visibility is set by buyer groups and entitlement policies: a buyer account belongs to buyer groups, and those groups get products and price books assigned. Findability is set by product data and search settings: what is not in the product record, no search will find. Both sides have hard limits worth knowing before design, such as 2,000 buyer groups per product in the search index, one catalogue per store and 1 million searchable products. My recommendation: few buyer groups by country, tier and brand, one owner for every product field, and the entitlement concept on one page before any data is loaded.
+In Salesforce B2B Commerce, two separate mechanisms decide whether a dealer orders the right spare part. Buyer groups and entitlement policies set visibility: a buyer account belongs to buyer groups, which get products and price books assigned. Product data and search settings set findability: what is not in the product record, no search will find. Both sides have hard limits worth knowing before design, such as 2,000 buyer groups per product in the search index, one catalogue per store and 1 million searchable products. My advice: few buyer groups by country, tier and brand, one owner per product field, and the entitlement concept on one page before any data load.
 
 ## How does B2B Commerce decide who sees which product?
 

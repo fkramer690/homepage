@@ -1,6 +1,6 @@
 ---
 title: "Manufacturing Cloud and SAP: which data flows where"
-description: "Which data flows between SAP and Manufacturing Cloud, in which direction and how often: actuals, orders, rebate credit memos and the login deadlines for ERP interfaces."
+description: "Which data flows between SAP and Manufacturing Cloud, in which direction and how often: actuals, orders, rebate credit memos and ERP login deadlines."
 pubDate: 2026-10-28
 lang: en
 slug: manufacturing-cloud-sap-integration-data-flows

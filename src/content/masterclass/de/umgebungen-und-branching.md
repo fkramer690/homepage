@@ -13,7 +13,7 @@ takeaways:
   - "Scratch Orgs leben höchstens 30 Tage und sind leer; in einer gewachsenen Kundenorg sind Developer-Sandboxes mit Source Tracking oft der pragmatischere Arbeitsplatz."
   - "Entwickler-Sandboxes veralten mit jedem Merge; sfdx-hardis backpromote, Gearset Developer Sandbox Updates und die Back Promotions von Copado und Flosum holen sie zurück."
   - "Ein Hotfix ist erst fertig, wenn er per Retrofit auch im Integrations-Branch steht; sonst überschreibt das nächste Release die Korrektur in Produktion."
-  - "Ein Refresh löscht und ersetzt die Sandbox, mit ihm verschwinden Source Tracking, Sandbox-Benutzer und nicht ausgelieferte Änderungen."
+  - "Ein Refresh ersetzt die Sandbox durch eine neue Kopie der Produktion; Source Tracking und nicht ausgelieferte Änderungen gehen dabei verloren."
 articles: [devops-salesforce-enterprise, sfdx-hardis-training, sandbox-data-ai-coding-agents]
 faq:
   - q: "Wie viele Sandboxes braucht ein Salesforce-Programm mit mehreren Partnern?"
@@ -99,7 +99,7 @@ Die kommerziellen Werkzeuge machen das bequem und mit wenig Git-Wissen bedienbar
 
 ## Sandbox-Refresh ohne Überraschungen
 
-Ein Refresh ersetzt die Sandbox durch eine neue Kopie der Produktion. Laut [Salesforce-Dokumentation zu Sandboxes](https://resources.docs.salesforce.com/latest/latest/en-us/sfdc/pdf/deploy_sandboxes.pdf) werden dabei Sandbox-eigene Benutzer entfernt, und E-Mail-Adressen der Benutzer bekommen die Endung `.invalid`. E-Mail-Adressen in Kontakten bleiben dagegen unverändert; bei einem Hersteller mit Tausenden Händlerkontakten in einer Full-Sandbox ist das ein echtes Risiko für versehentliche Mails. Source Tracking wird beim Refresh [gelöscht](https://developer.salesforce.com/docs/platform/sfdx-dev/guide/sfdx-setup-enable-source-tracking-sandboxes.html). Über die Salesforce CLI läuft ein Refresh mit [`sf org refresh sandbox`](https://developer.salesforce.com/docs/platform/salesforce-cli-reference/guide/cli_reference_org_refresh_sandbox.html), standardmäßig mit automatischer Aktivierung.
+Ein Refresh ersetzt die Sandbox durch eine neue Kopie der Produktion. Laut [Salesforce Help zu Benutzern und Kontakten in Sandboxes](https://help.salesforce.com/s/articleView?id=platform.data_sandbox_users_and_contacts.htm&language=en_US&type=5) bekommen E-Mail-Adressen der Benutzer beim Anlegen oder Refresh die Endung `.invalid`. Andere E-Mail-Adressen, etwa in Kontakten, ändert Salesforce nicht; bei einem Hersteller mit Tausenden Händlerkontakten in einer Full-Sandbox ist das ein echtes Risiko für versehentliche Mails. Source Tracking wird beim Refresh [gelöscht](https://developer.salesforce.com/docs/platform/sfdx-dev/guide/sfdx-setup-enable-source-tracking-sandboxes.html). Über die Salesforce CLI läuft ein Refresh mit [`sf org refresh sandbox`](https://developer.salesforce.com/docs/platform/salesforce-cli-reference/guide/cli_reference_org_refresh_sandbox.html), standardmäßig mit automatischer Aktivierung.
 
 Meine Checkliste für jeden Refresh einer Stufen-Sandbox:
 
