@@ -10,7 +10,7 @@ short: "KI-Agenten, Einführung, Betrieb"
 summary: "Welche Field-Service-Agenten heute tragen, wie Sie in Wellen einführen, was ein KI-Assistent einrichten darf und welche Kennzahlen danach zählen."
 takeaways:
   - "Für einen Maschinenbauer lohnen sich zuerst die proaktive Wartungsbuchung und der vorformulierte Einsatzbericht, weil beide häufig vorkommen und bekannten Regeln folgen."
-  - "Kundenseitige Agenten kosten 20 Flex Credits pro Aktion, Sprachaktionen 30; Funktionen für Mitarbeitende kosten 125 € pro Nutzer und Monat als Add-on oder stecken in Agentforce 1 Field Service für 650 €."
+  - "Kundenseitige Agenten kosten 20 Flex Credits pro Aktion, Sprachaktionen 30; Funktionen für Mitarbeitende kosten 125 Dollar pro Nutzer und Monat als Add-on oder stecken in Agentforce 1 Field Service für 650 €."
   - "Agenten für Fehlersuche und Ersatzteile hängen an Daten des Herstellers: Handbücher mit dem Produktschlüssel des Assets und eine As-built-Stückliste je Seriennummer."
   - "Ein KI-Assistent kann Field Service nach Freigabe seines Plans ohne Setup-Masken einrichten; lassen Sie ihn in einer Sandbox arbeiten und bringen Sie das Ergebnis über Git und die Pipeline in Produktion."
   - "Führen Sie in Wellen nach Region oder Land ein, holen Sie den Betriebsrat vor der ersten Welle dazu und messen Sie sechs Kennzahlen gegen eine Ausgangsbasis aus dem Altsystem."
@@ -40,10 +40,10 @@ Der Preis folgt der Linie zwischen Kunden und Mitarbeitenden:
 | Einsatz des Agenten | Preismodell | Listenpreis, Oktober 2026 |
 |---|---|---|
 | Kundenseitig, etwa der Scheduling Agent | Flex Credits pro Aktion | 20 Credits pro Aktion, 30 pro Sprachaktion |
-| Funktionen für Disponenten und Techniker | Add-on Agentforce for Field Service and Operations | 125 € pro Nutzer und Monat |
+| Funktionen für Disponenten und Techniker | Add-on Agentforce for Field Service and Operations | 125 Dollar pro Nutzer und Monat (die deutsche Preisseite nennt Add-ons nur in Dollar) |
 | Alles für Mitarbeitende plus Credits | Agentforce 1 Field Service | 650 € pro Nutzer und Monat, 1 Million Flex Credits und 2,5 Millionen Data-Cloud-Credits pro Org und Jahr |
 
-Die Credit-Sätze stammen aus der [Flex-Credits-Rate-Card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) vom 31. August 2026. Bei [500 € je 100.000 Credits](https://www.salesforce.com/eu/agentforce/pricing/) kostet eine Aktion 0,10 €. Ein Buchungsagent kostet also Cent pro Buchung, das Add-on für 60 Techniker dagegen 90.000 € im Jahr. Wann sich das Paket gegenüber einzelnen Add-ons rechnet, steht in [Kapitel 1](../field-service-lohnt-sich-lizenzen/), wie Sie Credits pro Prozess schätzen, im KI-Kapitel [KI-Kosten in Salesforce: Token, Flex Credits, Budget](../../ki-salesforce/kosten-und-token/).
+Die Credit-Sätze stammen aus der [Flex-Credits-Rate-Card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) vom 31. August 2026. Bei [500 € je 100.000 Credits](https://www.salesforce.com/eu/agentforce/pricing/) kostet eine Aktion 0,10 €. Ein Buchungsagent kostet also Cent pro Buchung, das Add-on für 60 Techniker dagegen 90.000 Dollar im Jahr. Wann sich das Paket gegenüber einzelnen Add-ons rechnet, steht in [Kapitel 1](../field-service-lohnt-sich-lizenzen/), wie Sie Credits pro Prozess schätzen, im KI-Kapitel [KI-Kosten in Salesforce: Token, Flex Credits, Budget](../../ki-salesforce/kosten-und-token/).
 
 Meine Reihenfolge für einen Maschinenbauer: zuerst die Wartungsbuchung, weil Wartungspläne die Arbeitsaufträge ohnehin erzeugen und der Agent nur noch einen Termin abstimmt. Die Schwachstelle ist das Stillstandsfenster beim Kunden. Ist keines gepflegt, schlägt der Agent Termine vor und übergibt an die Disposition. Danach kommt der vorformulierte Einsatzbericht, und zwar erst, wenn Teile, Arbeitszeit und Fehlercodes strukturierte Felder bleiben. Garantie, Abrechnung und ERP können keinen Fließtext lesen. Wo Field Service unter den übrigen Agenten in einem Fertigungsunternehmen steht, zeigt das KI-Kapitel [KI-Agenten in der Fertigung](../../ki-salesforce/ki-agenten-in-der-fertigung/).
 

@@ -35,7 +35,7 @@ Salesforce B2B Commerce, which Salesforce now also markets as "Agentforce Commer
 Salesforce uses three names here, and they appear on different pages:
 
 - **Merchant Agent** is the line item under Agentforce on the [B2B pricing page](https://www.salesforce.com/editions-pricing/commerce-cloud/b2b/), in both the Growth and the Advanced edition.
-- **Merchandising Agent (B2B)** is listed on the [Commerce innovations page](https://www.salesforce.com/commerce/innovations/) with "GA Aug '26". Salesforce calls it the back office agent that "comes to B2B" and says you can tell it to boost or bury products in search, spin up new products or manage buyer accounts, done in conversation instead of clicks.
+- **Merchandising Agent (B2B)** is listed on the [Commerce innovations page](https://www.salesforce.com/ca/commerce/innovations/) with "GA August '26". Salesforce calls it the back office agent that "comes to B2B" and says you can tell it to boost or bury products in search, spin up new products or manage buyer accounts, done in conversation instead of clicks.
 - **Agentforce Skills for Merchandising** is the title of the [Trailhead unit](https://trailhead.salesforce.com/content/learn/modules/agentforce-merchant-quick-look/get-to-know-your-merchant-agent) that explains KPI summaries and promotions.
 
 Salesforce does not explain on these pages how the three relate in licensing. I would ask the account team in writing which skills the included Merchant Agent covers in your contract.
