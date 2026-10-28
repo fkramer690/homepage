@@ -92,11 +92,19 @@ The third finding is the expensive one: a data leak between competing dealers th
 
 ## Where should you start?
 
-1. **Protect your main branches** and require approval from a person on your side for changes to the data model, sharing, integrations and portal access.
-2. **Put Code Analyzer, Apex tests and a validation deploy** in front of every merge, in a pipeline you own. This is the core of my [DevOps and release management](../../services/devops-release-management/) work.
-3. **Write a one-page review checklist** with the six defects above and give it to every partner.
-4. **Require evidence in the pull request**: test output, Code Analyzer result, the AI-generated parts marked.
-5. **Keep pull requests small.** One story per pull request; a 400-line agent diff is reviewable, a 4,000-line one gets waved through.
-6. **Count review findings by category.** After a few sprints you know which rules belong in the [AI rules file of your repository](../ai-rules-file-salesforce-repository/) and which gate is missing.
+```schritte
+Protect the main branches
+  Require approval from a person on your side for changes to the data model, sharing, integrations and portal access.
+Gates before every merge
+  Put Code Analyzer, Apex tests and a validation deploy in front of every merge, in a pipeline you own. This is the core of my [DevOps and release management](../../services/devops-release-management/) work.
+Write a review checklist
+  Write a one-page checklist with the six defects above and give it to every partner.
+Require evidence
+  Require test output, the Code Analyzer result and the AI-generated parts marked in the pull request.
+Keep pull requests small
+  One story per pull request; a 400-line agent diff is reviewable, a 4,000-line one gets waved through.
+Count findings
+  Count review findings by category. After a few sprints you know which rules belong in the [AI rules file of your repository](../ai-rules-file-salesforce-repository/) and which gate is missing.
+```
 
 AI-generated Salesforce code needs a review like any other code, with the human attention moved from syntax to tests, data access and business rules. If you want a second pair of eyes on how your partners' code gets reviewed, [send me a message](#contact).

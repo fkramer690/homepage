@@ -77,8 +77,11 @@ Gates only work if a red pipeline stops the merge. On GitHub, required status ch
 
 [sfdx-hardis](../sfdx-hardis-open-source-salesforce-devops/) runs two control jobs on every pull request, according to its [documentation on pull request results](https://sfdx-hardis.cloudity.com/salesforce-devops-handle-merge-request-results/):
 
+```vertiefung For developers
+title: What the two sfdx-hardis jobs do in the pull request
 - **Check deploy job.** It simulates the deployment in the target org, runs the Apex tests, calculates coverage and posts the result as a pull request comment, with a visual diff of changed flows. The [sfdx-hardis overview](https://sfdx-hardis.cloudity.com/salesforce-devops-home/) says quick deploy reuses the validated deployment after the merge.
 - **Code quality job.** It runs MegaLinter, which checks Apex with PMD and Lightning Web Components with ESLint and comments the result on the pull request. In the [documented configuration](https://sfdx-hardis.cloudity.com/salesforce-devops-solve-megalinter-errors/) the Apex error threshold carries the note that only the release manager can update it, and `// NOPMD` is meant "only for false positives, never to publish faster".
+```
 
 The default test level is `RunLocalTests` ([smart deployment](https://sfdx-hardis.cloudity.com/salesforce-devops-smart-deployment/)). sfdx-hardis also lists a [Coding Agent Auto-Fix (Beta)](https://sfdx-hardis.cloudity.com/salesforce-devops-home/) for failed deployments. I would let an agent propose such fixes only if they pass the same gates and a person reviews them.
 

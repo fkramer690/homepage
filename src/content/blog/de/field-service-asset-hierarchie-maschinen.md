@@ -77,6 +77,14 @@ Garantieansprüche auf die installierte Basis gehören zu Manufacturing Cloud un
 
 Jede Ebene wirkt billig, wenn die Daten einmal geladen werden. Teuer wird sie später, an drei Stellen:
 
+
+```kennzahlen
+2.600 | Assets pro Wartungsplan als praktische Grenze
+1.300 | Assets pro Plan bei zwei Maintenance Work Rules je Asset
+500 | Assets, ab denen die Baumansicht die Hierarchie nicht mehr zeigt
+quelle: Salesforce Hilfe, Grenzen von Field Service
+```
+
 - **Wartungspläne.** Die Hilfe nennt 2.600 Assets pro Plan als praktische Grenze, weniger als 1.300 bei zwei Maintenance Work Rules pro Asset. Ist jede Komponente ein Wartungs-Asset, laufen Pläne schnell voll.
 - **Die Baumansicht.** Über 500 Assets lässt sich die Hierarchie nicht mehr in der Baumansicht darstellen. Eine Linie mit 900 Teilen als Assets ist für den Innendienst dann nicht mehr lesbar.
 - **Die mobile App.** Das Gerät des Technikers lädt die Datensätze zu seinen Aufträgen. Aus meiner Sicht verlängert jeder zusätzliche Datensatz pro Maschine die Ladezeit und vergrößert die Datenmenge, die offline aktuell bleiben muss. Ich lasse ein Teil deshalb lieber im PLM, als es auf jedes Tablet zu tragen.

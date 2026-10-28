@@ -137,7 +137,6 @@ Am Ende des Jahres laufen drei Agenten, alle mit denselben Regeln: eigener Nutze
 ## Was kommt bis 2028?
 
 ```zeitleiste
-2026-11 | Long-Horizon-Agenten: GA von Salesforce angekündigt
 2026-12-02 | EU AI Act: Kennzeichnung für generative Systeme, die vor dem 2. August 2026 auf dem Markt waren
 2027-12-02 | EU AI Act: Hochrisiko-Pflichten nach Anhang III
 2028-08-02 | EU AI Act: Hochrisiko-Pflichten nach Anhang I, KI als Sicherheitsbauteil in Produkten

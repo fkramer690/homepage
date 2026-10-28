@@ -77,8 +77,11 @@ Prüfungen wirken nur, wenn eine rote Pipeline den Merge stoppt. Auf GitHub müs
 
 [sfdx-hardis](../sfdx-hardis-einfuehrung-salesforce-devops/) startet laut seiner [Dokumentation zu den Pull-Request-Ergebnissen](https://sfdx-hardis.cloudity.com/salesforce-devops-handle-merge-request-results/) bei jedem Pull Request zwei Kontrolljobs:
 
+```vertiefung Für Entwickler
+titel: Was die beiden Jobs von sfdx-hardis im Pull Request tun
 - **Check-Deploy-Job.** Er simuliert das Deployment in der Ziel-Org, führt die Apex-Tests aus, berechnet die Abdeckung und schreibt das Ergebnis als Kommentar in den Pull Request, mit einem visuellen Diff geänderter Flows. Laut [Übersicht von sfdx-hardis](https://sfdx-hardis.cloudity.com/salesforce-devops-home/) nutzt Quick Deploy die validierte Bereitstellung nach dem Merge erneut.
 - **Codequalitätsjob.** Er führt MegaLinter aus, der Apex mit PMD und Lightning Web Components mit ESLint prüft und das Ergebnis im Pull Request kommentiert. In der [dokumentierten Konfiguration](https://sfdx-hardis.cloudity.com/salesforce-devops-solve-megalinter-errors/) trägt der Schwellenwert für Apex-Fehler den Hinweis, dass nur der Release Manager ihn ändern darf, und `// NOPMD` ist „only for false positives, never to publish faster“ gedacht.
+```
 
 Standard-Testlevel ist `RunLocalTests` ([Smart Deployment](https://sfdx-hardis.cloudity.com/salesforce-devops-smart-deployment/)). sfdx-hardis führt außerdem ein [Coding Agent Auto-Fix (Beta)](https://sfdx-hardis.cloudity.com/salesforce-devops-home/) für gescheiterte Deployments. Ich würde solche Agentenvorschläge nur zulassen, wenn sie dieselben Prüfungen durchlaufen und eine Person sie prüft.
 

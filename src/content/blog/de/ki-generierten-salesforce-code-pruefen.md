@@ -92,11 +92,19 @@ Der dritte Fund ist der teure. In Produktion wäre das ein Datenabfluss zwischen
 
 ## Wo fangen Sie an?
 
-1. **Schützen Sie die Haupt-Branches** und verlangen Sie für Änderungen an Datenmodell, Sharing, Schnittstellen und Portalzugriff die Freigabe einer Person auf Ihrer Seite.
-2. **Setzen Sie Code Analyzer, Apex-Tests und ein Validierungsdeployment** vor jeden Merge, in einer Pipeline, die Ihnen gehört. Das ist der Kern meiner Arbeit in [DevOps und Release Management](../../leistungen/devops-und-release-management/).
-3. **Schreiben Sie eine einseitige Review-Checkliste** mit den sechs Fehlern oben und geben Sie sie jedem Partner.
-4. **Verlangen Sie Belege im Pull Request**: Testausgabe, Ergebnis von Code Analyzer, gekennzeichnete KI-Anteile.
-5. **Halten Sie Pull Requests klein.** Eine Story pro Pull Request; ein Agenten-Diff mit 400 Zeilen lässt sich prüfen, einer mit 4.000 Zeilen wird durchgewunken.
-6. **Zählen Sie Review-Funde nach Kategorie.** Nach einigen Sprints wissen Sie, welche Regeln in die [KI-Regeldatei Ihres Repositorys](../ki-regeldatei-salesforce-repository/) gehören und welche Prüfung in der Pipeline fehlt.
+```schritte
+Haupt-Branches schützen
+  Verlangen Sie für Änderungen an Datenmodell, Sharing, Schnittstellen und Portalzugriff die Freigabe einer Person auf Ihrer Seite.
+Prüfungen vor jeden Merge
+  Setzen Sie Code Analyzer, Apex-Tests und ein Validierungsdeployment vor jeden Merge, in einer Pipeline, die Ihnen gehört. Das ist der Kern meiner Arbeit in [DevOps und Release Management](../../leistungen/devops-und-release-management/).
+Review-Checkliste schreiben
+  Schreiben Sie eine einseitige Checkliste mit den sechs Fehlern oben und geben Sie sie jedem Partner.
+Belege verlangen
+  Verlangen Sie im Pull Request Testausgabe, Ergebnis von Code Analyzer und gekennzeichnete KI-Anteile.
+Pull Requests klein halten
+  Eine Story pro Pull Request; ein Agenten-Diff mit 400 Zeilen lässt sich prüfen, einer mit 4.000 Zeilen wird durchgewunken.
+Funde zählen
+  Zählen Sie Review-Funde nach Kategorie. Nach einigen Sprints wissen Sie, welche Regeln in die [KI-Regeldatei Ihres Repositorys](../ki-regeldatei-salesforce-repository/) gehören und welche Prüfung in der Pipeline fehlt.
+```
 
 KI-generierter Salesforce-Code braucht ein Review wie jeder andere Code, nur verschiebt sich die menschliche Aufmerksamkeit von der Syntax zu Tests, Datenzugriff und Geschäftsregeln. Wenn Sie eine zweite Meinung dazu möchten, wie der Code Ihrer Partner geprüft wird, [schreiben Sie mir](#contact).

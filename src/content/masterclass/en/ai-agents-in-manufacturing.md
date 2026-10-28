@@ -137,7 +137,6 @@ At year end three agents run, all under the same rules: own user, rules in logic
 ## What is coming until 2028?
 
 ```zeitleiste
-2026-11 | Long-horizon agents: GA announced by Salesforce
 2026-12-02 | EU AI Act: marking obligation for generative systems on the market before 2 August 2026
 2027-12-02 | EU AI Act: high-risk obligations under Annex III
 2028-08-02 | EU AI Act: high-risk obligations under Annex I, AI as a safety component in products
