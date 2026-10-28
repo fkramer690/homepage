@@ -299,7 +299,7 @@ export const en = {
       {
         area: 'Change management',
         name: 'Juliane Winterscheid',
-        text: 'Juliane is an expert in change management, with many renowned references and a strong management background. She therefore knows companies not only from the outside view of consulting but also from the inside: how decisions are made, where resistance comes from and what a team needs to adopt new ways of working. We work together on change management in Salesforce programmes.',
+        text: 'Juliane is an expert in change management, with many renowned references and a strong management background. She therefore knows companies not only from the outside view of consulting but also from the inside: how decisions are made, where resistance comes from and what a team needs to adopt new ways of working. She is Prosci certified and works with the ADKAR model. We work together on change management in Salesforce programmes.',
         linkedin: 'https://www.linkedin.com/in/juliane-winterscheid-4794b8115/',
         photo: 'juliane-winterscheid',
         photoAlt: 'Juliane Winterscheid presenting to a team',
