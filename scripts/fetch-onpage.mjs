@@ -61,7 +61,8 @@ const path = (url) => {
   }
 };
 
-const { id } = await call('on_page/task_post', [
+// ONPAGE_TASK_ID reuses an earlier crawl (DataForSEO keeps the results for 30 days).
+const id = process.env.ONPAGE_TASK_ID || (await call('on_page/task_post', [
   {
     target: DOMAIN,
     start_url: START,
@@ -70,8 +71,8 @@ const { id } = await call('on_page/task_post', [
     enable_www_redirect_check: true,
     validate_micromarkup: true,
   },
-]);
-console.error(`crawl task ${id} started`);
+])).id;
+console.error(`crawl task ${id}`);
 
 let summary;
 for (let i = 0; i < 120; i++) {
@@ -134,6 +135,30 @@ const redirectChains = (await list('on_page/redirect_chains', {})).map((c) => ({
 }));
 const nonIndexable = (await list('on_page/non_indexable', {})).map((n) => ({ page: path(n.url), reason: n.reason }));
 
+// Structured data messages for one sample page per page type (home, blog, services, ...).
+const microdata = [];
+const samples = new Map();
+for (const p of issues.filter((p) => p.checks.includes('has_micromarkup_errors'))) {
+  const type = p.page.replace(/^\/en\//, '/').split('/').slice(0, 2).join('/') + (p.page.startsWith('/en/') ? ' (en)' : '');
+  if (!samples.has(type)) samples.set(type, p.page);
+}
+for (const page of [...samples.values()].slice(0, 12)) {
+  const messages = new Set();
+  const walk = (o, at) => {
+    if (Array.isArray(o)) return o.forEach((x) => walk(x, at));
+    if (!o || typeof o !== 'object') return;
+    const here = o.name ?? o.type ?? at;
+    if (o.message) messages.add(`${o.level ?? ''} ${here}: ${o.message}`.trim());
+    for (const v of Object.values(o)) walk(v, here);
+  };
+  try {
+    walk((await call('on_page/microdata', [{ id, url: `https://www.${DOMAIN}${page}` }])).result, '');
+  } catch (err) {
+    messages.add(`request failed: ${err.message}`);
+  }
+  microdata.push({ page, messages: [...messages] });
+}
+
 const counts = {};
 for (const p of issues) for (const c of p.checks) counts[c] = (counts[c] ?? 0) + 1;
 
@@ -152,5 +177,6 @@ console.log(JSON.stringify({
   brokenLinks,
   redirectChains,
   nonIndexable,
+  microdata,
   issues,
 }, null, 2));
