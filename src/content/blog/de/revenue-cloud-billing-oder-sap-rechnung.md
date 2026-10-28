@@ -11,7 +11,7 @@ tags: [Revenue Cloud Billing, SAP, Rechnungsstellung, Nebenbuch, Finance, Fertig
 takeaways:
   - "Bei einmaligen Maschinenverkäufen bleibt die Rechnung meist in SAP, weil Lieferung, Abnahme und Anzahlungen dort abgewickelt werden."
   - "Revenue Cloud Billing lohnt sich für Abonnements, Serviceverträge und nutzungsbasierte Entgelte, die in Salesforce verkauft und geändert werden."
-  - "Billing macht Salesforce zum Nebenbuch mit eigenen Buchungskreisen als Legal Entities, Buchungsperioden und Sachkonten und überträgt Buchungssätze an das ERP."
+  - "Billing macht Salesforce zum Nebenbuch mit eigenen Legal Entities, Buchungsperioden und Sachkonten und überträgt Buchungssätze an das ERP."
   - "Billing wird nach Rechnungsbetrag abgerechnet. Maschinenrechnungen mit hohen Beträgen über Salesforce zu schicken, erhöht die Kosten ohne großen Nutzen."
   - "Die Entscheidung gehört Finance: welche Umsatzarten Salesforce fakturiert, wer Perioden schließt und wie Forderungen mit SAP abgestimmt werden."
 faq:

@@ -60,7 +60,7 @@ Meine Regel: Offline gehört, was der Techniker braucht, um den Einsatz abzuschl
 | Bestände aller Lager | Das ERP führt sie, der Innendienst schaut dort nach |
 | Abgeschlossene Aufträge, älter als einige Monate | Selten gebraucht, schwer zu synchronisieren |
 
-Das Fahrzeuglager wird am häufigsten unterschätzt. Eine Live-Abfrage im ERP funktioniert im Keller einer Werkshalle nicht, wie ich in [Field Service Ersatzteile: ERP oder Salesforce?](../salesforce-field-service-ersatzteile-erp/) beschrieben habe. Die Kopie des Fahrzeugbestands muss in Salesforce und auf dem Gerät liegen.
+Das Fahrzeuglager wird am häufigsten unterschätzt. Eine Live-Abfrage im ERP funktioniert im Keller einer Werkshalle nicht, wie ich in [Ersatzteile im Außendienst: ERP oder Salesforce?](../salesforce-field-service-ersatzteile-erp/) beschrieben habe. Die Kopie des Fahrzeugbestands muss in Salesforce und auf dem Gerät liegen.
 
 Handbücher brauchen einen zweiten Blick. Ein Agent zur Fehlersuche findet das richtige Handbuch nur, wenn jedes Dokument denselben Produktschlüssel trägt wie das Asset. Das steht in [KI-Fehlersuche im Außendienst: erst die Handbücher](../ki-fehlersuche-handbuecher-aussendienst/). Derselbe Schlüssel entscheidet, ob der Briefcase das richtige Handbuch für das Gerät filtern kann. Ob sich die Datei selbst ohne Netz öffnet, hängt davon ab, wie sie gespeichert ist. Testen Sie das mit einem großen PDF.
 
@@ -78,7 +78,7 @@ Punkt 5 betrifft auch jedes Release Ihrer eigenen Komponenten. Wer sagt 50 Techn
 
 ## Warum sollten Partnertechniker offline getrennt testen?
 
-Viele Hersteller holen Subunternehmer in dieselbe App. Partnertechniker arbeiten dann als Community-Nutzer mit Field-Service-Berechtigungen, wie in [Field Service: Servicepartner einbinden](../salesforce-field-service-servicepartner/) beschrieben. Punkt 3 der Liste oben trifft genau diese Nutzer.
+Viele Hersteller holen Subunternehmer in dieselbe App. Partnertechniker arbeiten dann als Community-Nutzer mit Field-Service-Berechtigungen, wie in [Field Service: Wie bindet man Servicepartner ein?](../salesforce-field-service-servicepartner/) beschrieben. Punkt 3 der Liste oben trifft genau diese Nutzer.
 
 Partner haben außerdem andere Freigaben. Sie sehen nur ihr eigenes Gebiet und ihre eigenen Termine. Ein Briefcase, der für interne Techniker funktioniert, liefert einem Partner deshalb unter Umständen weniger Datensätze oder keine der verknüpften. Mein Rat: Geben Sie Partnern einen eigenen Briefcase und testen Sie ihn mit einem echten Partnernutzer, nie mit einem Admin, der das Profil wechselt.
 
@@ -93,7 +93,7 @@ Ein Maschinenbauer schickt einen Techniker in die Produktionshalle eines Kunden.
 
 Das Szenario zeigt, was offline für die Planung bedeutet. Das Gerät arbeitet, aber der Plan bleibt auf dem Stand der letzten Synchronisation stehen. Disponenten müssen wissen, welche Techniker in Hallen ohne Netz arbeiten, und ein kurzer Anruf gehört zum Prozess.
 
-Der Servicebericht in diesem Szenario kommt aus dem Document Builder. Eigene Komponenten in der Vorlage müssen ihre Daten ebenfalls offline lesen. Wie das geht, steht in [Document Builder: fünf Grenzen und Workarounds](../salesforce-document-builder-grenzen-workarounds/).
+Der Servicebericht in diesem Szenario kommt aus dem Document Builder. Eigene Komponenten in der Vorlage müssen ihre Daten ebenfalls offline lesen. Wie das geht, steht in [Salesforce Document Builder: fünf Grenzen und Workarounds](../salesforce-document-builder-grenzen-workarounds/).
 
 ## Wo fangen Sie an?
 

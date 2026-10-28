@@ -63,7 +63,7 @@ Eine gute Routine ist kurz genug für einen halben Tag und deckt die Stellen ab,
 7. **Partnernutzer.** Schritte 1 bis 3 mit einem Nutzer mit Community-Lizenz wiederholen.
 8. **Innendienst und ERP.** Nach der Synchronisation prüfen, ob Verbrauch und Bericht angekommen sind, einschließlich der Schnittstelle ins ERP.
 
-Die Schritte 2 und 7 kommen aus den bekannten Offline-Lücken, beschrieben in [Field Service App offline: Welche Daten aufs Gerät?](../field-service-app-offline-briefcase/). Schritt 4 zählt, weil sich Data Capture mit fast jeder Version ändert, siehe [Field Service Data Capture: Prüfprotokolle ohne Papier](../field-service-data-capture-pruefprotokolle/). Schritt 5 testet die eigenen Komponenten in Ihren Berichtsvorlagen, die ich in [Document Builder: fünf Grenzen und Workarounds](../salesforce-document-builder-grenzen-workarounds/) beschrieben habe.
+Die Schritte 2 und 7 kommen aus den bekannten Offline-Lücken, beschrieben in [Field Service App offline: Welche Daten aufs Gerät?](../field-service-app-offline-briefcase/). Schritt 4 zählt, weil sich Data Capture mit fast jeder Version ändert, siehe [Field Service Data Capture: Prüfprotokolle ohne Papier](../field-service-data-capture-pruefprotokolle/). Schritt 5 testet die eigenen Komponenten in Ihren Berichtsvorlagen, die ich in [Salesforce Document Builder: fünf Grenzen und Workarounds](../salesforce-document-builder-grenzen-workarounds/) beschrieben habe.
 
 Schreiben Sie die Schritte als Skripte mit erwartetem Ergebnis, genauso wie Testfälle für ein Plattform-Release. Das [Kapitel zu Qualität und Tests in der DevOps-Masterclass](../../masterclass/devops-release-management/qualitaet-tests-reviews/) erklärt, wie solche Tests in Quality Gates passen.
 
