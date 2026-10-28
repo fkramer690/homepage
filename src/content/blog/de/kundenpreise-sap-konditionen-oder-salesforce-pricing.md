@@ -70,7 +70,7 @@ Das passt, wenn Listenpreise stabil sind und der Vertrieb Rabatte pro Geschäft 
 | Aufwand beim Aufbau | API, Middleware, Fehlerbehandlung | Migration der Konditionen, Ladeläufe, Syncs | Ladejob und Sync |
 | Laufender Aufwand | Betrieb der Schnittstelle | Doppelte Pflege oder geänderter Prozess in SAP | Regeln für Rabatte und Freigaben |
 
-Euro-Beträge setze ich an die Wege nicht, weil sie von Ihren Konditionen, Ihrer Middleware und der Größe Ihrer Angebote abhängen. Aus meiner Sicht ist der größte Kostenblock selten der Aufbau. Es ist die Abstimmungsarbeit, wenn zwei Engines unterschiedliche Preise liefern, und die vermeidet nur ein klar führendes System.
+Euro-Beträge setze ich an die Wege nicht, weil sie von Ihren Konditionen, Ihrer Middleware und der Größe Ihrer Angebote abhängen. Aus meiner Sicht kostet die Abstimmungsarbeit, wenn zwei Engines unterschiedliche Preise liefern, auf Dauer mehr als der Aufbau, und vermeiden lässt sie sich nur mit einem klar führenden System.
 
 ## Wo passen Vertragspreise und Sales Agreements hinein?
 

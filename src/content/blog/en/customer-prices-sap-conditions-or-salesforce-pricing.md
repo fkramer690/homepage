@@ -70,7 +70,7 @@ This fits when list prices are stable and discounts are negotiated per deal by s
 | Build effort | API, middleware, error handling | Migration of conditions, loads, syncs | Load job and sync |
 | Ongoing effort | Operation of the interface | Two places to maintain, or a process change in SAP | Rules for discounts and approvals |
 
-I do not put euro figures on the routes, because they depend on your conditions, your middleware and the size of your quotes. In my view the biggest cost item is rarely the build. It is the reconciliation work when two engines disagree, and that is avoided only by a clear master.
+I do not put euro figures on the routes, because they depend on your conditions, your middleware and the size of your quotes. In my view the biggest cost item is the reconciliation work when two engines disagree, more than the build, and only a clear master avoids it.
 
 ## Where do contract prices and sales agreements fit?
 
