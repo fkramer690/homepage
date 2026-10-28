@@ -29,7 +29,7 @@ faq:
 draft: false
 ---
 
-Scheduling in Salesforce Field Service rests on four things: clean master data, a scheduling policy that reflects how your dispatchers think, the right engine and a console your dispatchers trust. For manufacturers I start with automation up to the status Scheduled and a dispatcher who releases each job. Enhanced Scheduling and Optimization is the engine to use; older orgs switch territory by territory. The new Scheduling Console only runs with it and does not yet do everything the Classic Dispatch Console does. Commissioning over several days, crews and on-call duty each have their own model with clear limits. Engine, console and policy owner need to be decided before go-live.
+Scheduling in Salesforce Field Service rests on four things: clean master data, a scheduling policy that reflects how your dispatchers think, the right engine and a console your dispatchers trust. For manufacturers I start with automation up to the status Scheduled and a dispatcher who releases each job. Enhanced Scheduling and Optimization is the engine to use; older orgs switch territory by territory. The new Scheduling Console only runs with it and does not yet do everything the Classic Dispatch Console does. Long jobs, crews and on-call duty each have their own model with clear limits. Engine, console and policy owner need to be decided before go-live.
 
 ## What does scheduling need before the engine runs?
 
