@@ -31,15 +31,29 @@ const formatDate = (date: string) =>
     : new Date(date).toLocaleDateString(lang === 'de' ? 'de-DE' : 'en-GB', { month: 'long', year: 'numeric' });
 
 const person = { '@type': 'Person', '@id': `${new URL(base, Astro.site).href}#person`, name: site.person };
-const event = (talk: (typeof talks)[number], a: Appearance) => ({
-  '@type': 'Event',
-  name: a.event,
-  startDate: a.date,
-  eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
-  location: { '@type': 'Place', name: a.city.en, address: { '@type': 'PostalAddress', addressLocality: a.city.en, addressCountry: a.country } },
-  subEvent: { '@type': 'Event', name: talk.title, startDate: a.date, performer: person, inLanguage: 'en' },
-  ...(a.url ? { url: a.url } : {}),
-});
+const image = new URL(speaking.src, Astro.site).href;
+// Google's event report wants these on every Event, including the session inside the conference.
+// Ticket offers are left out: the conferences' prices are not known here.
+const event = (talk: (typeof talks)[number], a: Appearance) => {
+  const shared = {
+    startDate: a.date,
+    endDate: a.date,
+    eventStatus: 'https://schema.org/EventScheduled',
+    eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+    location: { '@type': 'Place', name: a.city.en, address: { '@type': 'PostalAddress', addressLocality: a.city.en, addressCountry: a.country } },
+    image,
+    description: talk.abstract[lang],
+    performer: person,
+    organizer: { '@type': 'Organization', name: a.event.replace(/\s*\d{4}$/, '') },
+  };
+  return {
+    '@type': 'Event',
+    name: a.event,
+    ...shared,
+    subEvent: { '@type': 'Event', name: talk.title, ...shared, inLanguage: 'en' },
+    ...(a.url ? { url: a.url } : {}),
+  };
+};
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'ProfilePage',
