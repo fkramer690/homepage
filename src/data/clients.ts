@@ -23,7 +23,7 @@ export const clients: Client[] = [
   { name: 'Bryt Energy', file: 'bryt-energy.webp', ratio: 4.40 },
   { name: 'GELITA', file: 'gelita.svg', ratio: 4.26 },
   { name: 'E.ON', file: 'eon.webp', ratio: 3.40, weight: 0.9 },
-  { name: 'COI Partners (Co-Investor)', file: 'coi-partners.svg', ratio: 1.00, weight: 0.85 },
+  { name: 'COI Partners (Co-Investor)', file: 'coi-partners.webp', ratio: 1.00, weight: 0.85 },
   { name: 'EWTN', file: 'ewtn.svg', ratio: 3.93, weight: 1.15 },
   { name: 'Techem', file: 'techem.webp', ratio: 2.93, weight: 0.9 },
   { name: 'SHG Ruhr', file: 'shg-ruhr.webp', ratio: 2.06, weight: 1.05 },
