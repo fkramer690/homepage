@@ -96,9 +96,6 @@ Welche automatischen Prüfungen in die Pipeline gehören, beschreibt [Kapitel 8]
 
 G2 ist bewusst nicht blockierend. Ein zweiter Agent findet Auffälligkeiten, die Verantwortung bleibt bei G3.
 
-```praxis
-In einem Programm, das ich begleitet habe, habe ich den Release-Prozess aufgebaut. Anfangs lief jeder Pull Request über meinen Schreibtisch. Als der Prozess stabil lief, habe ich ihn an einen internen Kollegen übergeben.
-```
  Warum jeder Pull Request ein menschliches Review braucht, unabhängig davon, wer den Code geschrieben hat, steht in [warum Pull-Request-Reviews Pflicht sind](../../../blog/warum-pull-request-reviews-pflicht-sind/). Für Agentforce-Agenten selbst kommt ein Testgate mit Testing Center hinzu, beschrieben in [Agentforce-Agenten testen und freigeben](../../../blog/agentforce-agenten-testen-freigeben/).
 
 ### Definition of Done als Empfehlung

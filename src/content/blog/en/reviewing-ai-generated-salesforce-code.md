@@ -74,10 +74,6 @@ You do not need to read every line. Once the pipeline is green, I would go throu
 4. **Scope.** Does the diff touch only what the story needs? An agent that "also tidied up" three other classes or raised their API version adds risk nobody asked for.
 5. **Business rule.** Does the logic match the acceptance criteria, including the exceptions? For anything around warranty, prices or credit limits I would pull in the domain lead.
 
-```praxis
-In one programme I supported, every pull request went across my desk at first. Once the process ran smoothly, I handed it over to an internal colleague.
-```
-
 Ask the partner for evidence: as Anthropic's guidance puts it, "All tests pass" on its own tells you very little. I want the test run and the Code Analyzer result in the pull request, plus a note which parts an agent generated. That belongs in the contract, as described in [rules for partners who code with AI](../partners-using-ai-coding-contract-rules/), and it is part of my [partner governance](../../services/partner-governance/) work.
 
 ## A typical scenario: a dealer portal story

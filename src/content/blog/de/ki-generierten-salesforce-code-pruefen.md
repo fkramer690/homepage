@@ -74,10 +74,6 @@ Sie müssen nicht jede Zeile lesen. Ist die Pipeline grün, würde ich einen Pul
 4. **Umfang.** Berührt der Diff nur, was die Story braucht? Ein Agent, der „nebenbei“ drei weitere Klassen aufgeräumt oder ihre API-Version angehoben hat, bringt Risiko, das niemand bestellt hat.
 5. **Geschäftsregel.** Passt die Logik zu den Akzeptanzkriterien, auch bei den Ausnahmen? Bei allem rund um Garantie, Preise oder Kreditlimits würde ich den fachlichen Lead dazuholen.
 
-```praxis
-In einem Programm, das ich begleitet habe, lief anfangs jeder Pull Request über meinen Schreibtisch. Als der Prozess stabil lief, habe ich ihn an einen internen Kollegen übergeben.
-```
-
 Verlangen Sie Belege vom Partner. Anthropic formuliert es in seinem Leitfaden treffend: „All tests pass“ allein sagt wenig, der ausgeführte Befehl und seine Ausgabe sagen mehr. Ich möchte den Testlauf und das Ergebnis von Code Analyzer im Pull Request sehen, dazu einen Hinweis, welche Teile ein Agent erzeugt hat. Das gehört in den Vertrag, wie in [Regeln für Partner, die mit KI programmieren](../partner-ki-coding-regeln-vertrag/) beschrieben, und ist Teil meiner Arbeit in der [Partnersteuerung](../../leistungen/partnersteuerung/).
 
 ## Ein typisches Szenario: eine Story im Händlerportal

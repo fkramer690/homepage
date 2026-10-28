@@ -99,10 +99,6 @@ Ihnen. Das ist die Grundannahme aller folgenden Kapitel. Repository, Pipeline, D
 
 Der zweite Grundsatz: Jede Änderung geht über einen Pull Request mit Review, auch Flows und Permission Sets. Das Review ist die günstigste Stelle, an der ein Programm mit vielen Teams sich auf eine Bauweise einigt. Was ein gutes Review prüft, steht in [warum Pull-Request-Reviews Pflicht sind](../../../blog/warum-pull-request-reviews-pflicht-sind/).
 
-```praxis
-In einem Programm, das ich begleitet habe, lief anfangs jeder Pull Request über meinen Schreibtisch. Als der Prozess stabil lief, habe ich ihn an einen internen Kollegen übergeben.
-```
-
 Beide Grundsätze sind eine Frage der Steuerung und gehören in die Verträge mit den Partnern. Genau dort setze ich in [DevOps und Release-Management](../../../leistungen/devops-und-release-management/) und in der [Partnersteuerung](../../../leistungen/partnersteuerung/) an.
 
 ## Der Weg durch die zehn Kapitel

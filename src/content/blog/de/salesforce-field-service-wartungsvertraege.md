@@ -66,7 +66,20 @@ Ein Entitlement allein ändert an der Planung nichts. Es wird erst wirksam, wenn
 
 Die Verbindung zwischen beiden baut man selbst, meist mit einem Flow: Ein Arbeitsauftrag mit einem Entitlement „Reaktion in 24 Stunden“ bekommt eine höhere Priorität als einer ohne Zusage. So landet die Zusage aus dem Vertrag direkt in der Entscheidung der Planungsengine, und der Disponent muss nicht bei jeder Störung im Vertrag nachsehen.
 
-Einmal durchgespielt sieht das so aus: Bei einem Kunden mit Premium-Vertrag fällt eine Presse aus. Der Innendienst legt einen Arbeitsauftrag zur Anlage an, und das Entitlement „Techniker vor Ort in 24 Stunden“ wird zugeordnet. Der Milestone startet. Ein Flow setzt die Priorität auf Critical, die Formel macht daraus eine 1. Die nächste Optimierung plant den Termin vor die halbjährliche Inspektion eines anderen Kunden, die aus einem Maintenance Plan stammt und einen Tag später auch noch passt. Der Disponent prüft den Vorschlag und gibt ihn frei. Wann der Milestone als erfüllt gilt, etwa mit dem Status In Progress vor Ort, legen Sie im Entitlement-Prozess selbst fest.
+Einmal durchgespielt: Bei einem Kunden mit Premium-Vertrag fällt eine Presse aus.
+
+```schritte
+Arbeitsauftrag anlegen | Innendienst
+  Der Innendienst legt einen Arbeitsauftrag zur Anlage an und ordnet das Entitlement „Techniker vor Ort in 24 Stunden“ zu. Der Milestone startet.
+Priorität setzen | Flow
+  Ein Flow setzt die Priorität auf Critical, die Formel macht daraus eine 1.
+Optimieren | Planungsengine
+  Die nächste Optimierung plant den Termin vor die halbjährliche Inspektion eines anderen Kunden, die aus einem Maintenance Plan stammt und einen Tag später auch noch passt.
+Freigeben | Disponent
+  Der Disponent prüft den Vorschlag und gibt ihn frei.
+```
+
+Wann der Milestone als erfüllt gilt, etwa mit dem Status In Progress vor Ort, legen Sie im Entitlement-Prozess selbst fest.
 
 ## Worauf sollten Sie achten?
 

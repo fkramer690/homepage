@@ -50,9 +50,14 @@ Den ausführlichen Vergleich finden Sie in [Salesforce CPQ und Revenue Cloud: di
 
 Der Hilfeartikel [Migrate to Revenue Management](https://help.salesforce.com/s/articleView?language=en_US&id=ind.rev_data_migration.htm&type=5) gibt den Rahmen vor. Die Arbeit läuft in Phasen, und Salesforce verlangt, alle Aufgaben einer Phase in der genannten Reihenfolge abzuschließen, bevor die nächste beginnt:
 
-1. **Vorbereiten.** Prüfen, welche Funktionen von Revenue Cloud Sie brauchen, und die operative Planung klären. Die Hilfe nennt hier zwei praktische Voraussetzungen, die für jede Strategie gelten: das Beibehalten der CPQ-Lizenz und die Koexistenz während des Übergangs.
-2. **Strategie wählen.** Migrationsstrategie, Umgang mit Bewegungsdaten sowie Rollout und Cutover festlegen. Laut Hilfe gehören diese Entscheidungen an den Anfang, weil sie Umfang, Schnittstellen, Cutover und Change Management bestimmen.
-3. **Umsetzen.** Produktdaten, Asset-Daten und Billing-Daten migrieren, Berichte neu bauen und Change Management von Beginn an als parallelen Strang führen.
+```schritte
+Vorbereiten
+  Prüfen, welche Funktionen von Revenue Cloud Sie brauchen, und die operative Planung klären. Die Hilfe nennt hier zwei praktische Voraussetzungen, die für jede Strategie gelten: das Beibehalten der CPQ-Lizenz und die Koexistenz während des Übergangs.
+Strategie wählen
+  Migrationsstrategie, Umgang mit Bewegungsdaten sowie Rollout und Cutover festlegen. Laut Hilfe gehören diese Entscheidungen an den Anfang, weil sie Umfang, Schnittstellen, Cutover und Change Management bestimmen.
+Umsetzen
+  Produktdaten, Asset-Daten und Billing-Daten migrieren, Berichte neu bauen und Change Management von Beginn an als parallelen Strang führen.
+```
 
 Einen festen Zeitrahmen setzt die Hilfe nicht. Die CPQ-Seite nennt 3 bis 6 Monate als typisch und ergänzt, dass komplexe Implementierungen länger dauern können. Meine Einschätzung: 3 Monate sind für eine aufgeräumte Org mit wenigen Preisregeln realistisch, eine über Jahre gewachsene Org mit vielen eigenen Skripten gehört an das obere Ende oder dahinter. Eine [Analyse der technischen Schulden](../ki-org-analyse-technische-schulden/) vor der Schätzung zeigt, welchen Fall Sie haben.
 
@@ -68,7 +73,11 @@ Die Hilfe nennt drei Gruppen: Produktdaten, Asset-Daten und Billing-Daten. Die R
 4. **Assets:** ein Asset für jedes offene CPQ-Abo, damit Nachträge und Verlängerungen in Revenue Cloud funktionieren. Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/asset-lifecycle-management-with-revenue-cloud/manage-customer-asset-amendments) beginnt jeder Nachtrag an einem Asset und läuft über ein Angebot und einen Auftrag.
 5. **Billing-Daten:** nur, wenn Sie heute Salesforce Billing nutzen. Dazu gibt es einen eigenen Beitrag: [von Salesforce Billing zu Revenue Cloud Billing](../von-salesforce-billing-zu-revenue-cloud-billing/).
 
-Zwei Regeln von meiner Seite. Erstens: Offene Abos vor ihrem nächsten Verlängerungstermin migrieren. Ein Vertrag, der zwei Wochen nach dem Go-live noch in CPQ verlängert wird, erzeugt genau die doppelte Arbeit, die Sie vermeiden wollen. Zweitens: Abgeschlossene Angebote nicht migrieren. Sie bleiben als lesbare Historie in CPQ oder gehen in ein Archiv. Niemand ändert ein Angebot aus 2021.
+```hinweis tipp
+Zwei Regeln von meiner Seite. Erstens: **Offene Abos vor ihrem nächsten Verlängerungstermin migrieren.** Ein Vertrag, der zwei Wochen nach dem Go-live noch in CPQ verlängert wird, erzeugt genau die doppelte Arbeit, die Sie vermeiden wollen.
+
+Zweitens: **Abgeschlossene Angebote nicht migrieren.** Sie bleiben als lesbare Historie in CPQ oder gehen in ein Archiv. Niemand ändert ein Angebot aus 2021.
+```
 
 Wie Katalog und Preise danach von der Sandbox in die Produktion kommen, ist ein eigenes Thema: [Revenue Cloud Deployments](../revenue-cloud-konfiguration-deployment/).
 

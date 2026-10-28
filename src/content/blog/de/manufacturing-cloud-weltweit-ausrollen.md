@@ -37,7 +37,11 @@ Aus diesem Ziel ergibt sich ein globales Template, also die gemeinsame Konfigura
 - **Die Regel, wann eine Konfiguration ein eigenes Produkt wird**, aus [Teil 2](../angebot-zu-sales-agreement-produktkonfigurator/).
 - **Was Kunden im Portal sehen**, aus [Teil 7](../manufacturing-cloud-kundenportal/).
 
-Diese Punkte lassen sich nach dem ersten Land kaum noch ändern, ohne alle bereits eingeführten Länder anzufassen. Jede davon gehört deshalb ins Entscheidungslog, bevor das erste Land live geht. Wie ich dieses Log führe, beschreibe ich unter [Salesforce-Architektur](../../leistungen/salesforce-architektur/).
+```hinweis achtung
+Diese Punkte lassen sich nach dem ersten Land kaum noch ändern, ohne alle bereits eingeführten Länder anzufassen. Jede davon gehört deshalb ins Entscheidungslog, bevor das erste Land live geht.
+```
+
+Wie ich dieses Log führe, beschreibe ich unter [Salesforce-Architektur](../../leistungen/salesforce-architektur/).
 
 ## Mit welchem Land fängt man an?
 
@@ -88,7 +92,11 @@ Bei mehreren Implementierungspartnern, etwa einem pro Region, gehört diese Ents
 
 Weil Harmonisierung heißt, dass Menschen anders arbeiten. In jedem Land, das dem Template folgt, ändern sich Abläufe, Berichte und Gewohnheiten. Ein Vertrieb, der seine Mengen bisher in einer eigenen Tabelle geführt hat, arbeitet nicht automatisch mit Sales Agreements, nur weil sie live sind.
 
-Viele Kunden meinen, sie bräuchten kein Change Management. Das Budget ist verteilt, die Schulungen sind geplant, und die Nutzer werden sich schon gewöhnen. Ich bringe es trotzdem immer wieder ins Gespräch, in der Planung, vor jedem Land und nach jedem Go-live. Mindestens drei Dinge gehören pro Land dazu:
+```praxis
+Viele Kunden meinen, sie bräuchten kein Change Management. Das Budget ist verteilt, die Schulungen sind geplant, und die Nutzer werden sich schon gewöhnen. Ich bringe es trotzdem immer wieder ins Gespräch, in der Planung, vor jedem Land und nach jedem Go-live.
+```
+
+Mindestens drei Dinge gehören pro Land dazu:
 
 - **Key User**, die das Template kennen und im Land die ersten Fragen beantworten.
 - **Kommunikation vor dem Go-live**, die erklärt, was sich ändert und warum, nicht nur, wo man klickt.

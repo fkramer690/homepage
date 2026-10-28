@@ -73,10 +73,6 @@ ApexGuru finds performance antipatterns such as SOQL in loops, unbounded queries
 
 Gates only work if a red pipeline stops the merge. On GitHub, required status checks must pass before anyone can change a protected branch, and code owners can be required to approve changes to their paths. Administrators can bypass both unless "Do not allow bypassing the above settings" is on ([GitHub Docs](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches)). With partner admins on the repository, I would switch it on and make a person on the client side the code owner for sharing, permission sets and integration classes.
 
-```praxis
-In one programme I supported, every pull request crossed my desk at first. Once the process was stable, I handed it over to an internal colleague.
-```
-
 ## What does sfdx-hardis cover out of the box?
 
 [sfdx-hardis](../sfdx-hardis-open-source-salesforce-devops/) runs two control jobs on every pull request, according to its [documentation on pull request results](https://sfdx-hardis.cloudity.com/salesforce-devops-handle-merge-request-results/):

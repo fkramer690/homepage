@@ -99,10 +99,6 @@ You do. That is the basic assumption of every chapter that follows. Repository, 
 
 The second principle: every change goes through a pull request with a review, flows and permission sets included. The review is the cheapest point at which a programme with many teams agrees on one way of building. What a good review checks is in [why pull request reviews are a must](../../../blog/why-pull-request-reviews-are-a-must-in-enterprise-projects/).
 
-```praxis
-In one programme I worked on, at first every pull request went across my desk. Once the process was stable, I handed it over to an internal colleague.
-```
-
 Both principles are governance questions and belong in the contracts with your partners. That is where I start in [DevOps and release management](../../../services/devops-release-management/) and in [partner governance](../../../services/partner-governance/).
 
 ## The path through the ten chapters

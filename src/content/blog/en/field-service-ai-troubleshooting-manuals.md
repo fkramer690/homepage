@@ -111,7 +111,7 @@ Indexing 1,100 MB instead of 3,000 MB with the default parser costs 165,000 cred
 Count documents
   Per product line: versions, languages, megabytes.
 Check product links
-  Check the asset to product links in the installed base.
+  For every asset in the installed base.
 Define document attributes
   With the keys the asset already carries.
 Remove superseded versions

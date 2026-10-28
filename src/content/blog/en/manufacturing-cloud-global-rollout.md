@@ -37,7 +37,11 @@ That goal leads to a global template, the shared configuration every country ado
 - **The rule for when a configuration becomes its own product**, from [part 2](../quote-to-sales-agreement-product-configurator/).
 - **What customers see in the portal**, from [part 7](../manufacturing-cloud-customer-portal/).
 
-After the first country, these points can hardly be changed without touching every country already live. So each of them goes into the decision log before the first country goes live. How I keep that log is described under [Salesforce architecture](../../services/salesforce-architecture/).
+```hinweis achtung
+After the first country, these points can hardly be changed without touching every country already live. So each of them goes into the decision log before the first country goes live.
+```
+
+How I keep that log is described under [Salesforce architecture](../../services/salesforce-architecture/).
 
 ## Which country do you start with?
 
@@ -88,7 +92,11 @@ With several implementation partners, for example one per region, that decision 
 
 Because harmonisation means people work differently. In every country that follows the template, processes, reports and habits change. A sales team that kept its volumes in its own spreadsheet does not automatically work with sales agreements just because they are live.
 
-Many clients think they do not need change management. The budget is allocated, the training is planned, and users will get used to it. I still keep bringing it up, during planning, before each country and after each go-live. At least three things belong to it per country:
+```praxis
+Many clients think they do not need change management. The budget is allocated, the training is planned, and users will get used to it. I still keep bringing it up, during planning, before each country and after each go-live.
+```
+
+At least three things belong to it per country:
 
 - **Key users** who know the template and answer the first questions in the country.
 - **Communication before go-live** that explains what changes and why, not just where to click.

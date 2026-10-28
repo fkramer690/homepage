@@ -96,9 +96,6 @@ Which automated checks belong in the pipeline is covered in [chapter 8](../ai-co
 
 G2 is deliberately non-blocking. A second agent spots anomalies; accountability stays with G3.
 
-```praxis
-In one programme I built the release process. At first every pull request went across my desk. Once the process ran smoothly, I handed it over to an internal colleague.
-```
  Why every pull request needs a human review no matter who wrote the code is explained in [why pull request reviews are a must](../../../blog/why-pull-request-reviews-are-a-must-in-enterprise-projects/). For Agentforce agents themselves a test gate with Testing Center comes on top, described in [testing Agentforce agents before go-live](../../../blog/testing-agentforce-agents-before-go-live/).
 
 ### Definition of Done: a recommendation

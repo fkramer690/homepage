@@ -73,10 +73,6 @@ A lot. As an [architect on the client side](../../#about), one of my main goals 
 
 It also makes it possible to build internal ownership.
 
-```praxis
-In a programme I supported and described in my DevOps article, every pull request went across my desk at first. Once the process was stable, I handed it over to an internal colleague.
-```
-
 A handover like that is only realistic when the tools and rights are already on the client side. Otherwise, the internal person inherits a process that still depends on someone else's accounts. Ownership of tools is the basis of good [partner steering and governance](../../services/partner-governance/).
 
 ## How do you set it up in practice?

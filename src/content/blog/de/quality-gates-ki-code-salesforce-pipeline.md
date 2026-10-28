@@ -73,10 +73,6 @@ ApexGuru findet Performance-Antipattern wie SOQL in Schleifen, unbegrenzte Abfra
 
 Prüfungen wirken nur, wenn eine rote Pipeline den Merge stoppt. Auf GitHub müssen Required Status Checks bestanden sein, bevor jemand einen geschützten Branch ändert, und Code Owner können als Pflichtfreigabe für ihre Pfade gesetzt werden. Administratoren können beides umgehen, solange „Do not allow bypassing the above settings“ nicht aktiv ist ([GitHub Docs](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches)). Haben Partner Admin-Rechte im Repository, würde ich die Option einschalten und eine Person auf Kundenseite zum Code Owner für Sharing, Permission Sets und Schnittstellenklassen machen.
 
-```praxis
-In einem Programm, das ich begleitet habe, lief anfangs jeder Pull Request über meinen Schreibtisch. Als der Prozess stabil lief, habe ich ihn an einen internen Kollegen übergeben.
-```
-
 ## Was deckt sfdx-hardis ab?
 
 [sfdx-hardis](../sfdx-hardis-einfuehrung-salesforce-devops/) startet laut seiner [Dokumentation zu den Pull-Request-Ergebnissen](https://sfdx-hardis.cloudity.com/salesforce-devops-handle-merge-request-results/) bei jedem Pull Request zwei Kontrolljobs:

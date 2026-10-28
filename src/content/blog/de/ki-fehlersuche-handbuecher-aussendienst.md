@@ -111,7 +111,7 @@ Die Reihenfolge: diese Anlagen den Produkten zuordnen, die 1.100 MB mit Variante
 Dokumente zählen
   Je Produktlinie: Stände, Sprachen, Megabyte.
 Produktzuordnung prüfen
-  Die Produktzuordnung der Anlagen in der installierten Basis prüfen.
+  Für jede Anlage in der installierten Basis.
 Dokumentmerkmale festlegen
   Mit den Schlüsseln, die die Anlage schon trägt.
 Überholte Stände entfernen

@@ -50,9 +50,14 @@ The detailed comparison is in [Salesforce CPQ vs Revenue Cloud: the real differe
 
 The Help article [Migrate to Revenue Management](https://help.salesforce.com/s/articleView?language=en_US&id=ind.rev_data_migration.htm&type=5) sets out the frame. The work runs in phases, and Salesforce asks you to "complete all the tasks of each phase in the mentioned sequence before moving to the next phase":
 
-1. **Prepare.** Assess which Revenue Cloud capabilities you need, and settle operational planning. Help lists two practical requirements here that apply "regardless of your migration strategy": retaining the CPQ licence and coexistence during the transition.
-2. **Choose a strategy.** Decide the migration strategy, how transactional data moves and how rollout and cutover work. Help says these rollout decisions belong early, because they affect scope, integrations, cutover and change management.
-3. **Execute.** Migrate product data, asset data and billing data, rebuild reporting and run change management as a parallel workstream from the start.
+```schritte
+Prepare
+  Assess which Revenue Cloud capabilities you need, and settle operational planning. Help lists two practical requirements here that apply "regardless of your migration strategy": retaining the CPQ licence and coexistence during the transition.
+Choose a strategy
+  Decide the migration strategy, how transactional data moves and how rollout and cutover work. Help says these rollout decisions belong early, because they affect scope, integrations, cutover and change management.
+Execute
+  Migrate product data, asset data and billing data, rebuild reporting and run change management as a parallel workstream from the start.
+```
 
 Help sets no fixed timeframe. The CPQ page names 3 to 6 months as typical and adds that complex implementations can take longer. My reading: 3 months is realistic for a clean org with few price rules, and a grown org with years of custom scripts belongs at the upper end or beyond. A [technical debt assessment](../ai-org-assessment-technical-debt/) before the estimate tells you which one you have.
 
@@ -68,7 +73,11 @@ Help names three groups: product data, asset data and billing data. The order in
 4. **Assets:** one asset for every open CPQ subscription, so that amendments and renewals work in Revenue Cloud. On [Trailhead](https://trailhead.salesforce.com/content/learn/modules/asset-lifecycle-management-with-revenue-cloud/manage-customer-asset-amendments), every amendment starts from an asset and runs through a quote and an order.
 5. **Billing data:** only if you use Salesforce Billing today. That part has its own article: [from Salesforce Billing to Revenue Cloud Billing](../from-salesforce-billing-to-revenue-cloud-billing/).
 
-Two rules from my side. First, migrate open subscriptions before their next renewal date. A contract that renews in CPQ two weeks after go-live creates exactly the double work you want to avoid. Second, do not migrate closed quotes. They stay in CPQ as read-only history, or go to an archive. Nobody amends a quote from 2021.
+```hinweis tipp
+Two rules from my side. First, **migrate open subscriptions before their next renewal date.** A contract that renews in CPQ two weeks after go-live creates exactly the double work you want to avoid.
+
+Second, **do not migrate closed quotes.** They stay in CPQ as read-only history, or go to an archive. Nobody amends a quote from 2021.
+```
 
 How catalog and prices then move from sandbox to production is a separate topic: [Revenue Cloud deployments](../revenue-cloud-configuration-deployment/).
 

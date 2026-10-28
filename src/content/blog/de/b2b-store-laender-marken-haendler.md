@@ -55,6 +55,10 @@ Diese Limits stammen von den Salesforce-Developers-Seiten zu [Store-Limits](http
 
 Weiche Limits hebt der Salesforce-Support auf Anfrage an, feste nicht. Die 100 Stores sind für jeden Hersteller, den ich mir vorstellen kann, weit weg. Früher greifen der eine Katalog und die fünf Store-Preisbücher. Eine Marke, die einen eigenen Kategoriebaum braucht, bekommt ihn in einem gemeinsamen Store nicht, und eine Preisstruktur mit vielen Listen gehört in Käufergruppen-Preisbücher statt in Store-Preisbücher. Woher die Preise selbst kommen sollten, behandelt [Kundenpreise: Preisbücher oder ERP](../kundenpreise-b2b-commerce-preisbuecher-erp/).
 
+```hinweis offen
+Für Preisbücher pro Käufergruppe nennt die Seite zu Preisbuch-Limits in der Tabelle 50, in einem Hinweis 25. Planen Sie viele Preislisten in Käufergruppen, lassen Sie sich die gültige Zahl von Salesforce bestätigen.
+```
+
 ## Wann reicht ein Store mit Käufergruppen?
 
 Für Länder in den meisten Fällen. Sprachen werden pro Store eingestellt, bis zu 25. Zu Währungen sagt der Developer Guide zu [Währungswechseln](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-cart-currency-change.html), dass der Warenkorb die Standardwährung des Kontos nutzt und Produkte und Preisbücher für jede Währung eingerichtet sein müssen, die der Store unterstützt. Ein Händler in der Schweiz und einer in Deutschland können also im selben Store in CHF und EUR kaufen. Ein Detail zählt fürs Design: Warenkörbe unterstützen keinen automatischen Währungswechsel, und Salesforce empfiehlt, die Währungsauswahl abzuschalten, sobald ein Artikel im Warenkorb liegt.

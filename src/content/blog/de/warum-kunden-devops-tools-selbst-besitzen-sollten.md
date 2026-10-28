@@ -73,10 +73,6 @@ Sehr viel. Als [Architekt auf Kundenseite](../../#about) ist eines meiner wichti
 
 Es ist auch die Voraussetzung, um internes Ownership aufzubauen.
 
-```praxis
-In einem Programm, das ich begleitet und in meinem DevOps-Artikel beschrieben habe, lief anfangs jeder Pull Request über meinen Schreibtisch. Als der Prozess stabil lief, habe ich ihn an einen internen Kollegen übergeben.
-```
-
 Eine solche Übergabe ist nur realistisch, wenn Tools und Rechte bereits auf Kundenseite liegen. Sonst erbt die interne Person einen Prozess, der weiter an fremden Accounts hängt. Der Besitz der Tools ist die Grundlage guter [Partnersteuerung und Governance](../../leistungen/partnersteuerung/).
 
 ## Wie setzen Sie das in der Praxis auf?

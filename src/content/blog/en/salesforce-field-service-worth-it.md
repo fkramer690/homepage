@@ -100,10 +100,6 @@ These numbers can usually be pulled from the ERP or the existing scheduling tool
 
 Then comes the data question. Field Service only schedules as well as assets, locations, skills and availability are maintained. A technician whose skills are recorded nowhere will be scheduled wrongly by the engine. Which data that is exactly is covered in [part 2 of this series](../salesforce-field-service-master-data/).
 
-```praxis
-In my Field Service projects with maintenance, breakdown jobs and commissioning, automatic scheduling, and spare parts and installed base from the ERP, the stumbling blocks sat in three places: asset data quality, technician acceptance and the ERP interfaces.
-```
-
 ## Where should you start?
 
 Collect the four numbers for one month and one region. If they show many short jobs with a lot of travel, build the business case for Field Service with licences, implementation and maintenance over several years. If they show few long jobs, first check whether Service Cloud, a portal or the ERP can close the gap. What the mobile app can do for technicians today is covered in [Field Service mobile: guidance and voice](../salesforce-field-service-mobile-guided-voice/).

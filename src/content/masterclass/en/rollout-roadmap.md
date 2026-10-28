@@ -58,10 +58,6 @@ The nine chapters before this one each describe one building block. For the roll
 
 The most important investment is a person: an internal release role that owns the pipeline, the calendar and the approvals. If you pick an open-source tool or a cheaper package, the licence savings are better spent there than on extra partner days. Without that role, the process effectively belongs to whichever partner knows it best again.
 
-```praxis
-In one programme I supported, every pull request went across my desk at first. Once the process ran smoothly, I handed it over to an internal colleague.
-```
-
 Training comes next, and it should be hands-on. I have used sfdx-hardis in client projects for about two years and completed all three levels of the [free sfdx-hardis training](https://sfdx-hardis.cloudity.com/salesforce-devops-training/) in October 2026. In 27 labs you build a complete pipeline on free Developer Edition orgs and a GitHub account, and you only get a badge once a job has checked the work in your own repository. Even with prior experience it took me almost a day. My notes are in [what I learned from the sfdx-hardis training](../../../blog/sfdx-hardis-free-devops-training/).
 
 The commercial vendors have their own offers, and I have taken courses from Gearset, Flosum and Copado. Gearset runs [DevOps Launchpad](https://docs.gearset.com/en/articles/4497508-what-is-devops-launchpad), a free platform with courses, quizzes and certificates whose content is mostly not tied to Gearset. According to its [training page](https://copado.com/training), Copado offers the Copado Academy and free workshops that include an exam voucher. Flosum has two courses, Professional and Expert, under [Flosum Certified Learning](https://flosum.com/certification). Use the training for the tool you chose; for Git and pull request basics, any of them will do.

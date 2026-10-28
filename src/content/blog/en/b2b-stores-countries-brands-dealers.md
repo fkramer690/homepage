@@ -55,6 +55,10 @@ These limits come from the Salesforce Developers pages on [store limits](https:/
 
 Soft limits can be raised through Salesforce support, hard limits cannot. The 100 stores are far away for any manufacturer I can think of. The limits that bite earlier are the single catalogue and the five store price books. A brand that needs its own category tree cannot get it inside a shared store, and a price structure with many lists has to live in buyer group price books instead of store price books. Where the prices themselves should come from is the subject of [customer prices: price books or ERP](../b2b-commerce-customer-prices-price-books-erp/).
 
+```hinweis offen
+For price books per buyer group, the price book limits page says 50 in the table and 25 in a note. If you plan many price lists in buyer groups, have Salesforce confirm the number that applies.
+```
+
 ## When is one store with buyer groups enough?
 
 For countries, in most cases. Languages are configured per store, up to 25. For currencies, the developer guide on [currency changes](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-cart-currency-change.html) says that the cart uses the account's default currency, and that products and price books must be set up in each currency the store supports. A dealer in Switzerland and one in Germany can therefore buy in the same store in CHF and EUR. One detail matters for the design: carts do not support currency changes automatically, and Salesforce recommends deactivating the currency picker once an item is in the cart.
@@ -94,10 +98,16 @@ This follows the same order as a [global Manufacturing Cloud rollout](../manufac
 
 ## Where should you start?
 
-1. **Put it on one page.** One row per brand, legal unit, ERP client, country, currency, language and dealer tier.
-2. **Mark the real differences.** Only rows that differ in look, catalogue structure, checkout or ERP get their own store. Everything else becomes a buyer group.
-3. **Check the limits.** Count languages per store, store price books and buyer groups per buyer account against the table above.
-4. **Settle the commercials.** Number of storefronts and price of additional ones in writing.
+```schritte
+Put it on one page
+  One row per brand, legal unit, ERP client, country, currency, language and dealer tier.
+Mark the real differences
+  Only rows that differ in look, catalogue structure, checkout or ERP get their own store. Everything else becomes a buyer group.
+Check the limits
+  Count languages per store, store price books and buyer groups per buyer account against the table above.
+Settle the commercials
+  Number of storefronts and price of additional ones in writing.
+```
 
 The chapter [catalogue, search and entitlements](../../masterclass/b2b-commerce/catalog-search-entitlements/) of the [B2B Commerce masterclass](../../masterclass/b2b-commerce/) puts this decision into the wider store design, and my approach to such cuts is described under [Salesforce architecture](../../services/salesforce-architecture/).
 

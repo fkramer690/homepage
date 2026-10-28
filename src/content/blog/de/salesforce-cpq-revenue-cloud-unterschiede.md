@@ -36,6 +36,13 @@ Salesforce hat SteelBrick laut [SiliconANGLE](https://siliconangle.com/2015/12/2
 
 Die Entwicklerdokumentation von Revenue Cloud reicht bis Spring '24 (API 60.0) zurück, damals hieß das Produkt Revenue Lifecycle Management. Danach wurde es als Revenue Cloud Advanced verkauft, und in der aktuellen Dokumentation heißt es Revenue Management. Der [Developer Guide zu Winter '27](https://developer.salesforce.com/docs/atlas.en-us.revenue_lifecycle_management_dev_guide.meta/pcm_parent.htm) trägt den Titel "Revenue Management Developer Guide" und beschreibt Standardobjekte und Business APIs je Bereich. Salesforce selbst schrieb im Juli 2025, man habe "rebuilt its CPQ solution as the all-new Revenue Cloud". CPQ ist inzwischen im Verkaufsende, ohne End-of-Life-Datum; die Einzelheiten stehen in [Salesforce CPQ Verkaufsende: Was gilt im Oktober 2026?](../salesforce-cpq-verkaufsende-status/).
 
+```zeitleiste
+2015-12 | Salesforce kauft SteelBrick, daraus werden Salesforce CPQ und Salesforce Billing
+Spring '24 | Revenue Lifecycle Management in der Entwicklerdokumentation (API 60.0)
+2025-07 | Salesforce: CPQ neu gebaut als "all-new Revenue Cloud"
+Winter '27 | Developer Guide heißt "Revenue Management Developer Guide"
+```
+
 ## Die Unterschiede auf einen Blick
 
 | Bereich | Salesforce CPQ und Billing (SteelBrick) | Revenue Cloud |

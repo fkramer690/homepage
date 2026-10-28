@@ -71,7 +71,14 @@ For AI code this matters twice over, in my view. Models have mostly seen older A
 
 ## Rules the agent reads, and rules it cannot get around
 
-Every coding agent reads a project file with standing instructions: `CLAUDE.md` for Claude Code, `AGENTS.md` for Codex, `.vibes/rules/` for Agentforce Vibes. According to [GitHub's docs](https://docs.github.com/en/copilot/how-tos/configure-custom-instructions/add-repository-instructions), Copilot reads `.github/copilot-instructions.md`, `AGENTS.md` or a single `CLAUDE.md` in the root. Whether Vibes reads `AGENTS.md` is not covered in the [Vibes rules docs](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-rules.html); for mixed teams I would keep one canonical `AGENTS.md` plus a short Vibes rule that points to it.
+Every coding agent reads a project file with standing instructions, but the name differs per tool.
+
+```vertiefung For developers
+title: Which file does which agent read?
+Claude Code reads `CLAUDE.md`, Codex `AGENTS.md`, Agentforce Vibes `.vibes/rules/`. According to [GitHub's docs](https://docs.github.com/en/copilot/how-tos/configure-custom-instructions/add-repository-instructions), Copilot reads `.github/copilot-instructions.md`, `AGENTS.md` or a single `CLAUDE.md` in the root.
+
+Whether Vibes reads `AGENTS.md` is not covered in the [Vibes rules docs](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-rules.html); for mixed teams I would keep one canonical `AGENTS.md` plus a short Vibes rule that points to it.
+```
 
 The vendors agree on length. Anthropic's [Claude Code best practices](https://code.claude.com/docs/en/best-practices) recommend staying under 200 lines and keeping only what the agent cannot work out from the code: test and check commands, misleading places in the code, decisions that are written down nowhere, and "anything you've had to correct twice already". OpenAI's [Codex best practices](https://developers.openai.com/codex/learn/best-practices) say: "A short, accurate AGENTS.md is more useful than a long file full of vague rules." An excerpt for a Salesforce repository:
 
