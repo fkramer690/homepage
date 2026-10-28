@@ -39,7 +39,9 @@ Unternehmen experimentieren und stellen ein, aber der produktive Einsatz hinkt h
 
 ## Was habe ich aus meinem ersten Piloten gelernt?
 
+```praxis
 Der erste Agentforce-Pilot, an dem ich beteiligt war, kam schlicht zu früh. Die Plattform war jung und für unser Vorhaben noch nicht reif genug. Das ist ein normales Risiko bei neuer Technik, und es hat mich gelehrt, genauer auf die Bedingungen rund um einen Agenten zu schauen als auf den Agenten selbst.
+```
 
 Drei Bedingungen müssen erfüllt sein, bevor ein Pilot startet:
 

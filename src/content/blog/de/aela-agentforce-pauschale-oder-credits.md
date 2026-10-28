@@ -35,7 +35,16 @@ Eine Salesforce AELA lohnt sich für einen Hersteller nur, wenn die Nutzung von 
 
 Das Agentic Enterprise License Agreement (AELA) ist ein Pauschalvertrag für die Nutzung von Agenten. Forrester-Analystin Lisa Singer [schrieb im Dezember 2025](https://www.forrester.com/blogs/ai-agents-become-economic-actors-salesforce-rewrites-the-rules-of-pricing), die AELA „gives customers unlimited use of consumption‑based products such as Agentforce, Data 360/Data Cloud, and MuleSoft for a fixed fee over two or three years“. Laut Forrester sagte Chief Revenue Officer Miguel Milano auf einer Konferenz, „that Salesforce is OK with losing money on some AI deals“.
 
-Die eigenen Aussagen von Salesforce stammen aus den Telefonkonferenzen zu den Quartalszahlen. Im [Transkript zum vierten Quartal FY26](https://s205.q4cdn.com/626266368/files/doc_financials/2026/q4/Transcript-Salesforce-Inc-Q4-FY26-Earnings-Conference-Call-2-25-26.pdf) vom 25. Februar 2026 sagt Milano, Salesforce habe in diesem Quartal mehr als 120 AELAs verkauft, erwartet habe man 50 bis 100. Acht der zehn größten Abschlüsse seien AELAs gewesen. Finanzchefin Robin Washington nennt die Forward Deployed Engineers den Schlüssel für das „converting it from AELAS to ultimately consuming“ (Schreibweise wie im Transkript). Im [Call zum ersten Quartal FY27](https://s205.q4cdn.com/626266368/files/doc_financials/2027/q1/Salesforce-Q1-FY27-Earnings-Transcript.pdf) vom 27. Mai 2026 beschreibt Milano sechs der zehn größten Abschlüsse als ELAs, „where we threw in a bunch of flex credits“. Das Q4-Transkript definiert AELA nirgends; das Q1-Transkript erklärt ELA als „a limited enterprise license agreement“.
+Die eigenen Aussagen von Salesforce stammen aus den Telefonkonferenzen zu den Quartalszahlen. Im [Transkript zum vierten Quartal FY26](https://s205.q4cdn.com/626266368/files/doc_financials/2026/q4/Transcript-Salesforce-Inc-Q4-FY26-Earnings-Conference-Call-2-25-26.pdf) vom 25. Februar 2026 nennt Milano diese Zahlen zum Absatz:
+
+```kennzahlen
+über 120 | AELAs im vierten Quartal FY26 verkauft
+50 bis 100 | AELAs, die Salesforce für das Quartal erwartet hatte
+8 von 10 | größten Abschlüssen des Quartals waren AELAs
+quelle: Salesforce, Transkript der Telefonkonferenz zum vierten Quartal FY26 vom 25. Februar 2026
+```
+
+Finanzchefin Robin Washington nennt die Forward Deployed Engineers den Schlüssel für das „converting it from AELAS to ultimately consuming“ (Schreibweise wie im Transkript). Im [Call zum ersten Quartal FY27](https://s205.q4cdn.com/626266368/files/doc_financials/2027/q1/Salesforce-Q1-FY27-Earnings-Transcript.pdf) vom 27. Mai 2026 beschreibt Milano sechs der zehn größten Abschlüsse als ELAs, „where we threw in a bunch of flex credits“. Das Q4-Transkript definiert AELA nirgends; das Q1-Transkript erklärt ELA als „a limited enterprise license agreement“.
 
 Zwei Abschlüsse sind öffentlich:
 
@@ -82,12 +91,19 @@ Ich würde drei Zahlen nebeneinanderstellen: die AELA-Pauschale, die ohnehin gep
 
 Ich würde eine AELA prüfen, wenn die meisten dieser Punkte zutreffen:
 
+```pro-contra
+pro: AELA prüfen, wenn
 - **Mehrere Agenten sind live oder freigegeben,** für die nächsten zwölf Monate und in mindestens zwei Bereichen, etwa Händlerservice und Außendienst.
 - **Die enthaltenen Produkte stehen auf Ihrer Roadmap,** auch Data 360 und MuleSoft für die SAP-Anbindung, die Forrester als abgedeckt nennt.
 - **Der Verbrauch ist schwer zu schätzen,** weil große Bestände an Ersatzteillisten und Handbüchern indexiert werden müssen oder der API-Satz noch offen ist.
-- **Sie haben die Kapazität für den Rollout.** Bei einer Pauschale ist ungenutzte Kapazität reiner Kostenblock, und die Finanzchefin von Salesforce verknüpft den späteren Wechsel in den Verbrauch mit den Forward Deployed Engineers vor Ort.
+- **Sie haben die Kapazität für den Rollout.** Ungenutzte Kapazität ist bei einer Pauschale reiner Kostenblock, und die Finanzchefin von Salesforce verknüpft den späteren Wechsel in den Verbrauch mit den Forward Deployed Engineers vor Ort.
+contra: Nicht unterschreiben
+- In der Pilotphase.
+- Für ein einzelnes Werk.
+- Solange Ersatzteil- und Anlagendaten unzuverlässig sind.
+```
 
-Nicht unterschreiben würde ich in der Pilotphase, für ein einzelnes Werk oder solange Ersatzteil- und Anlagendaten unzuverlässig sind. Dann erreichen Agenten kein Volumen, wie in [Agentforce: Business Value und Datenqualität zuerst](../agentforce-business-value-datenqualitaet/) beschrieben. Forrester erwartet, dass Finanzvorstände nach ROI, IRR und „the useful life of the agent“ fragen. Für einen Maschinenbauer heißt das: ein Business Case pro Agent mit einer Kennzahl, die Sie selbst messen, etwa First-Time-Fix-Rate oder Durchlaufzeit von Garantieanträgen.
+In diesen Fällen erreichen Agenten kein Volumen, wie in [Agentforce: Business Value und Datenqualität zuerst](../agentforce-business-value-datenqualitaet/) beschrieben. Forrester erwartet, dass Finanzvorstände nach ROI, IRR und „the useful life of the agent“ fragen. Für einen Maschinenbauer heißt das: ein Business Case pro Agent mit einer Kennzahl, die Sie selbst messen, etwa First-Time-Fix-Rate oder Durchlaufzeit von Garantieanträgen.
 
 ## Was müssen Sie für die Verlängerung verhandeln?
 

@@ -52,7 +52,15 @@ Ich würde das Modell auch dann festlegen, wenn der Standard funktioniert. Sales
 
 ## Was kostet die Modellstufe?
 
-Salesforce ordnet jedes verwaltete Modell auf seiner [Seite zur Modellunterstützung](https://help.salesforce.com/s/articleView?id=ai.generative_ai_large_language_model_support.htm&type=5) einer Abrechnungsstufe zu. Die [Rate Card mit Stand 31. August 2026](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) berechnet für einen Prompt 2 Flex Credits auf Basic, 4 auf Standard und 16 auf Advanced. Prompts an Ihr eigenes Modell heißen „Starter Prompts“ und kosten 2 Credits. Laut [Hilfeartikel zur abrechenbaren Nutzung](https://help.salesforce.com/s/articleView?language=en_US&id=ai.usage_flex_credits.htm&type=5) wird die Nutzung in Blöcken von 2.000 Tokens gezählt, aufgerundet. Beim [Listenpreis von 500 € pro 100.000 Credits](https://www.salesforce.com/eu/agentforce/pricing/) kostet ein Advanced-Prompt 0,08 €.
+Salesforce ordnet jedes verwaltete Modell auf seiner [Seite zur Modellunterstützung](https://help.salesforce.com/s/articleView?id=ai.generative_ai_large_language_model_support.htm&type=5) einer Abrechnungsstufe zu. Die [Rate Card mit Stand 31. August 2026](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) berechnet den Prompt je nach Stufe, Prompts an Ihr eigenes Modell heißen dort „Starter Prompts“. Laut [Hilfeartikel zur abrechenbaren Nutzung](https://help.salesforce.com/s/articleView?language=en_US&id=ai.usage_flex_credits.htm&type=5) wird die Nutzung in Blöcken von 2.000 Tokens gezählt, aufgerundet. Beim [Listenpreis von 500 € pro 100.000 Credits](https://www.salesforce.com/eu/agentforce/pricing/) kostet ein Advanced-Prompt 0,08 €.
+
+```kennzahlen
+2 | Flex Credits pro Prompt auf Basic
+4 | Flex Credits pro Prompt auf Standard
+16 | Flex Credits pro Prompt auf Advanced
+2 | Flex Credits pro Starter Prompt an das eigene Modell
+quelle: Flex Credits Rate Card, Stand 31. August 2026
+```
 
 Die getesteten Modelle liegen in verschiedenen Stufen: Gemini 3.5 Flash ist Basic, Claude Haiku 4.5 und GPT 4.1 sind Standard. Alle Claude-Opus-Modelle und GPT 5.6 Sol sind Advanced. Wer einen Subagenten von Haiku auf Opus umstellt, vervierfacht dessen Promptkosten.
 

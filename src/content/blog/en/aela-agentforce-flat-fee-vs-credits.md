@@ -35,7 +35,16 @@ A Salesforce AELA pays off for a manufacturer only when agent use across sales, 
 
 The Agentic Enterprise License Agreement (AELA) is a fixed-fee contract for agent use. Forrester analyst Lisa Singer [wrote in December 2025](https://www.forrester.com/blogs/ai-agents-become-economic-actors-salesforce-rewrites-the-rules-of-pricing) that it "gives customers unlimited use of consumption‑based products such as Agentforce, Data 360/Data Cloud, and MuleSoft for a fixed fee over two or three years". Forrester also reports that Chief Revenue Officer Miguel Milano said at a conference "that Salesforce is OK with losing money on some AI deals".
 
-Salesforce's own statements come from its earnings calls. In the [transcript of the Q4 FY26 call](https://s205.q4cdn.com/626266368/files/doc_financials/2026/q4/Transcript-Salesforce-Inc-Q4-FY26-Earnings-Conference-Call-2-25-26.pdf) of 25 February 2026, Milano said Salesforce sold more than 120 AELAs in that quarter, against an internal expectation of 50 to 100, and that eight of the ten largest deals were AELAs. CFO Robin Washington named the forward deployed engineers as the key to "converting it from AELAS to ultimately consuming" (spelling as in the transcript). In the [Q1 FY27 call](https://s205.q4cdn.com/626266368/files/doc_financials/2027/q1/Salesforce-Q1-FY27-Earnings-Transcript.pdf) of 27 May 2026, Milano described six of the ten largest deals as ELAs "where we threw in a bunch of flex credits". The Q4 transcript never defines AELA; the Q1 transcript glosses ELA as "a limited enterprise license agreement".
+Salesforce's own statements come from its earnings calls. In the [transcript of the Q4 FY26 call](https://s205.q4cdn.com/626266368/files/doc_financials/2026/q4/Transcript-Salesforce-Inc-Q4-FY26-Earnings-Conference-Call-2-25-26.pdf) of 25 February 2026, Milano gave these sales figures:
+
+```kennzahlen
+over 120 | AELAs sold in the fourth quarter of FY26
+50 to 100 | AELAs Salesforce had expected for the quarter
+8 of 10 | largest deals of the quarter were AELAs
+source: Salesforce, transcript of the Q4 FY26 earnings call of 25 February 2026
+```
+
+CFO Robin Washington named the forward deployed engineers as the key to "converting it from AELAS to ultimately consuming" (spelling as in the transcript). In the [Q1 FY27 call](https://s205.q4cdn.com/626266368/files/doc_financials/2027/q1/Salesforce-Q1-FY27-Earnings-Transcript.pdf) of 27 May 2026, Milano described six of the ten largest deals as ELAs "where we threw in a bunch of flex credits". The Q4 transcript never defines AELA; the Q1 transcript glosses ELA as "a limited enterprise license agreement".
 
 Two deals have been made public:
 

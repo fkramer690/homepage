@@ -64,7 +64,9 @@ Salesforce states that context assembly applies existing Salesforce and Data 360
 
 This is the right principle. It also means that agents inherit every weakness of the existing permission model. If sharing rules are too broad today, an agent will see too much tomorrow. If sensitive fields are not classified, they cannot be masked. Before an agent project, the permission model deserves the same attention as the agent design.
 
+```hinweis offen
 The memory function raises a further question for European companies: how are stored memories handled when a customer asks for deletion or information under GDPR? Salesforce states that every memory is traceable to its source. That is a good starting point, but the process for deletion and retention should be defined before memories are switched on.
+```
 
 ## What should companies prepare now?
 

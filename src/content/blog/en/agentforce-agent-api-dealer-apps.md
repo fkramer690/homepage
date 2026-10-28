@@ -35,11 +35,16 @@ The Agentforce Agent API lets your own dealer app, machine portal or service app
 
 Salesforce describes the [Agent API](https://developer.salesforce.com/docs/einstein/genai/guide/agent-api.html) as access to Agentforce agents "from anywhere that can call a REST API". The listed use cases include websites, headless agents and agents calling other agents. For a machine builder that means the dealer app, the machine portal or a service partner's app can use the agent your service team uses inside Salesforce.
 
-The [setup guide](https://developer.salesforce.com/docs/ai/agentforce/guide/agent-api-get-started.html) is short:
+The setup is short: an External Client App, a run-as user and a token, then start a session, send messages, end the session.
 
+```vertiefung For developers
+title: What the setup guide asks for in detail
 - An External Client App with OAuth scopes `api`, `refresh_token`, `offline_access`, `chatbot_api` and `sfap_api`, the client credentials flow and JWT-based access tokens.
 - A Run As user with at least API Only access.
 - A token from your My Domain, then calls to `api.salesforce.com/einstein/ai-agent/v1`: start a session for an agent ID, send messages, end the session with a `DELETE`.
+
+Source: [Agent API Get Started](https://developer.salesforce.com/docs/ai/agentforce/guide/agent-api-get-started.html)
+```
 
 Messages go either synchronously or as a [server-sent event stream](https://developer.salesforce.com/docs/ai/agentforce/guide/agent-api-examples.html) with text chunks. One event matters for your app team: on `ValidationFailureChunk` the client has to remove chunks it already displayed, so a dealer may see text appear and disappear.
 

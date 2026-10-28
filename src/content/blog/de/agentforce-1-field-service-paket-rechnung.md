@@ -37,7 +37,9 @@ Salesforce verkauft Field Service heute als Field Service and Operations. Die [d
 - Appointment Assistant, Visual Remote Assistant, Digital Channels, Slack und Tableau Next,
 - 1 Million Flex Credits und 2,5 Millionen Data-Cloud-Credits pro Org und Jahr.
 
+```hinweis offen
 In der Funktionstabelle steht in der Zeile für den Scheduling Agent bei diesem Paket "1M Flex Credits included per org", bei allen anderen Editionen "Requires Flex Credits". Ob das eine zweite Million ist oder derselbe Topf wie oben, sagt die Seite nicht. Ich würde es mir im Angebot bestätigen lassen.
+```
 
 Ein zweites Detail: Die allgemeine [Agentforce-Preisseite](https://www.salesforce.com/agentforce/pricing/) nennt Agentforce-1-Editionen "ab 550 Dollar" mit 2,5 Millionen Flex Credits pro Org und Jahr. Die Field-Service-Seite nennt 1 Million Flex Credits und 2,5 Millionen Data-Cloud-Credits. Für die Rechnung nehme ich die Field-Service-Seite und würde die genauen Zahlen im Bestellformular festhalten lassen.
 
@@ -81,18 +83,17 @@ In diesem Szenario rechnet sich das Paket also nur, wenn Slack, Tableau Next, Di
 
 ## Wann rechnet sich das Paket, und wann gewinnen Einzel-Add-ons?
 
-Das Paket passt, wenn
-
-- Slack und Tableau Next für die Serviceorganisation ohnehin geplant sind und sonst separat gekauft würden,
-- Data Cloud für den Anwendungsfall gebraucht wird, etwa um Agenten auf Handbücher und Servicehistorie zu stützen,
-- die Nutzergruppe klein ist und die Agenten für Kunden die enthaltenen Credits aufbrauchen,
-- die Nutzer ohnehin Field Service Plus brauchen, weil sie Cases bearbeiten und disponieren.
-
-Einzel-Add-ons gewinnen, wenn
-
-- die meisten Nutzer Techniker sind, die Technician plus das Add-on für 125 Dollar brauchen,
-- das Unternehmen Slack oder ein Reporting-Werkzeug schon hat,
-- Agenten für Kunden noch ein Pilot sind und der Credit-Bedarf unbekannt ist.
+```pro-contra
+pro: Das Paket passt, wenn
+- Slack und Tableau Next für die Serviceorganisation ohnehin geplant sind und sonst separat gekauft würden
+- Data Cloud für den Anwendungsfall gebraucht wird, etwa um Agenten auf Handbücher und Servicehistorie zu stützen
+- die Nutzergruppe klein ist und die Agenten für Kunden die enthaltenen Credits aufbrauchen
+- die Nutzer ohnehin Field Service Plus brauchen, weil sie Cases bearbeiten und disponieren
+contra: Einzel-Add-ons gewinnen, wenn
+- die meisten Nutzer Techniker sind, die Technician plus das Add-on für 125 Dollar brauchen
+- das Unternehmen Slack oder ein Reporting-Werkzeug schon hat
+- Agenten für Kunden noch ein Pilot sind und der Credit-Bedarf unbekannt ist
+```
 
 Ein dritter Weg liegt außerhalb beider Listen: ein Vertrag mit Pauschale für Agentforce, Data 360 und MuleSoft. Wann sich das lohnt, steht in [AELA: Agentforce-Pauschale oder Credits?](../aela-agentforce-pauschale-oder-credits/). Welche Agenten für Kunden, Disposition und Techniker heute tragen, steht in [KI-Agenten im Außendienst: Was funktioniert heute?](../ki-agenten-aussendienst-field-service/).
 

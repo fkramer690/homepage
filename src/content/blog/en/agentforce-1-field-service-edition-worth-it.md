@@ -37,7 +37,9 @@ Salesforce sells Field Service today as Field Service and Operations. The [Field
 - Appointment Assistant, Visual Remote Assistant, Digital Channels, Slack and Tableau Next,
 - 1 million Flex Credits and 2.5 million Data Cloud credits per org every year.
 
+```hinweis offen
 In the feature grid, the row for the Scheduling Agent says "1M Flex Credits included per org" for this edition and "Requires Flex Credits" for all others. Whether that is a second million or the same pool as above, the page does not say. I would have it confirmed in the quote.
+```
 
 A second detail: the general [Agentforce pricing page](https://www.salesforce.com/agentforce/pricing/) mentions Agentforce 1 editions "from $550" with 2.5 million Flex Credits per org and year. The Field Service page says 1 million Flex Credits and 2.5 million Data Cloud credits. For the calculation I use the Field Service page and would ask for the exact figures in the order form.
 
@@ -81,18 +83,17 @@ So the bundle pays off in this scenario only if Slack, Tableau Next, Digital Cha
 
 ## When does the bundle pay off, and when do single add-ons win?
 
-The bundle fits when:
-
-- Slack and Tableau Next are already planned for the service organisation and would be bought separately,
-- Data Cloud is needed for the use case, for example to ground agents on manuals and service history,
-- the user group is small and the customer-facing agents use up the included credits,
-- the users need Field Service Plus anyway, because they work cases and dispatch.
-
-Single add-ons win when:
-
-- most users are technicians who need Technician plus the $125 add-on,
-- the company already has Slack or a reporting tool,
-- customer-facing agents are still a pilot and the credit need is unknown.
+```pro-contra
+pro: The bundle fits when
+- Slack and Tableau Next are already planned for the service organisation and would be bought separately
+- Data Cloud is needed for the use case, for example to ground agents on manuals and service history
+- the user group is small and the customer-facing agents use up the included credits
+- the users need Field Service Plus anyway, because they work cases and dispatch
+contra: Single add-ons win when
+- most users are technicians who need Technician plus the $125 add-on
+- the company already has Slack or a reporting tool
+- customer-facing agents are still a pilot and the credit need is unknown
+```
 
 A third route sits outside both lists: an agreement with a fixed fee for Agentforce, Data 360 and MuleSoft. When that is worth it is covered in [Salesforce AELA vs Flex Credits](../aela-agentforce-flat-fee-vs-credits/). Which agents for customers, dispatchers and technicians are ready today is covered in [AI agents in Field Service: what works today?](../field-service-ai-agents-what-works-today/).
 
