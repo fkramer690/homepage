@@ -75,10 +75,21 @@ The [Flex Credits rate card](https://www.salesforce.com/en-us/wp-content/uploads
 
 A footnote on the rate card says that for certain customers the Agentforce Voice Minutes usage type applies instead. The [supplemental rate card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Agentforce-Voice-Minutes-Supplemental-Rate-Card-02.03.2026.pdf) sets it at 60 credits per minute, 48 in a sandbox. A six-minute breakdown call then costs 360 credits, or $1.80. Triage calls run long, so ask which model your contract uses.
 
-Two items are open or extra:
+```kennzahlen
+30 credits | per voice action in production, 24 in a sandbox
+$0.60 | per call with four voice actions at list price
+60 credits | per minute on Agentforce Voice Minutes, 48 in a sandbox
+source: Salesforce Flex Credits rate card of 31 August 2026, Agentforce Voice Minutes supplemental rate card,
+  Agentforce pricing page
+```
 
-- **Speech meters.** The rate card lists speech to text at 150 credits per hour of transcription. It does not say whether a voice agent call triggers it in addition, and I found no Salesforce page that does. Ask before you sign.
-- **Telephony and seats.** I found no Salesforce page that says whether dispatchers who take transferred calls need their own Salesforce Voice seat, so I would plan for it and ask. The [Salesforce Voice pricing page](https://www.salesforce.com/eu/service/call-center-integration/voice-pricing/) lists Contact Center at $125 per user and month with unlimited platform voice minutes, or Partner Contact Center at $50 if you keep your telephony provider.
+```hinweis offen
+The rate card lists speech to text at 150 credits per hour of transcription. It does not say whether a voice agent call triggers it in addition, and I found no Salesforce page that does.
+
+Also open is whether dispatchers who take transferred calls need their own Salesforce Voice seat. I would plan for it and have both points confirmed before you sign.
+```
+
+For those seats, the [Salesforce Voice pricing page](https://www.salesforce.com/eu/service/call-center-integration/voice-pricing/) lists Contact Center at $125 per user and month with unlimited platform voice minutes, or Partner Contact Center at $50 if you keep your telephony provider.
 
 For the method behind per-action estimates, see [Flex Credits and Agentforce cost per action](../flex-credits-agentforce-cost-per-action/).
 
@@ -105,6 +116,17 @@ The credits are small either way. The gain is at night: the on-call engineer get
 
 ## Where should you start?
 
-Run the voice agent on the hotline outside business hours first, with intake and triage only and no booking. Compare its classification with the on-call engineer's judgement for four weeks. Then switch on booking for the restricted-but-running row, and only after that for daytime calls. Where this sits among the other Field Service agents is in [AI agents in Field Service: what works today?](../field-service-ai-agents-what-works-today/), the licence side in [make-or-buy and licence planning](../../services/make-or-buy-licences/).
+I would introduce the voice agent in three stages:
+
+```schritte
+Nights, triage only | 4 weeks
+  The agent owns intake and triage outside business hours, with no booking. Compare its classification with the on-call engineer's judgement.
+Booking when restricted
+  Switch on booking for the restricted-but-running row.
+Booking in daytime
+  Only after that, switch on booking for calls during business hours too.
+```
+
+Where this sits among the other Field Service agents is in [AI agents in Field Service: what works today?](../field-service-ai-agents-what-works-today/), the licence side in [make-or-buy and licence planning](../../services/make-or-buy-licences/).
 
 A voice agent on the breakdown hotline pays off when it hands dispatchers a classified case and leaves the decision on machine-down calls with them. If you want to work through the triage rules for your hotline, [send me a message](#contact).

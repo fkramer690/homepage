@@ -60,6 +60,7 @@ The guide splits the work into preparation in the Aura store and the switch to a
 
 1. **Inventory.** In Setup, search for Lightning Components to list your Aura and Lightning web components.
 2. **Replace Aura components.** Lightning web components run in Aura and LWR stores, often without changes. Aura components can contain Lightning web components, but not the other way round, so migrate child components first. If one Aura component cannot be replaced yet, reduce it to a thin wrapper. All Aura components have to go eventually.
+
 ```vertiefung For developers
 title: How do I rework data access and events for LWR?
 - **Move data access to the top.** Keep data operations in the outermost component, so the data layer changes in one place and nested components stay reusable.

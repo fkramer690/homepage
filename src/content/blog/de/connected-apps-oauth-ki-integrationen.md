@@ -42,7 +42,6 @@ GTIG geht davon aus, dass es vor allem um Zugangsdaten ging: AWS-Schlüssel, Pas
 2025-08-20 | Salesloft und Salesforce widerrufen alle aktiven Drift-Tokens
 2025-08-28 | Salesforce schaltet alle Salesloft-Integrationen ab
 2025-09-07 | Integrationen wieder freigegeben, außer Drift
-quelle: Google Threat Intelligence und Sicherheitsmeldung von Salesforce
 ```
 
 Salesforce nahm die App außerdem aus dem AppExchange, laut seiner [Sicherheitsmeldung](https://help.salesforce.com/s/articleView?id=005134951&language=en_US&type=1). Das GTIG-Update vom 28. August ergänzte, dass auch Drift-Email-Tokens gegen Google Workspace eingesetzt wurden und Kunden jedes in Drift gespeicherte Token als kompromittiert behandeln sollten.

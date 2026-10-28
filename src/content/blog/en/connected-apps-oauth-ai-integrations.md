@@ -42,7 +42,6 @@ GTIG assesses that the main goal was harvesting credentials: AWS access keys, pa
 2025-08-20 | Salesloft and Salesforce revoke all active Drift tokens
 2025-08-28 | Salesforce disables all Salesloft integrations
 2025-09-07 | Integrations re-enabled, except Drift
-source: Google Threat Intelligence and Salesforce security response
 ```
 
 Salesforce also removed the app from AppExchange, according to its [security response](https://help.salesforce.com/s/articleView?id=005134951&language=en_US&type=1). GTIG's update of 28 August added that Drift Email tokens had been used against Google Workspace too, and that customers should treat every token stored in Drift as compromised.

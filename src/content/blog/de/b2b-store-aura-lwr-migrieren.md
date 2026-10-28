@@ -60,6 +60,7 @@ Der Leitfaden trennt die Vorbereitung im Aura-Store vom Wechsel auf einen neuen 
 
 1. **Bestand aufnehmen.** Suchen Sie im Setup nach Lightning Components, um alle Aura-Komponenten und Lightning Web Components zu sehen.
 2. **Aura-Komponenten ersetzen.** Lightning Web Components laufen in Aura- und LWR-Stores, oft ohne Änderung. Aura-Komponenten können Lightning Web Components enthalten, aber nicht umgekehrt, also stellen Sie zuerst die inneren Komponenten um. Lässt sich eine Aura-Komponente noch nicht ersetzen, reduzieren Sie sie auf eine dünne Hülle. Am Ende müssen alle Aura-Komponenten weg.
+
 ```vertiefung Für Entwickler
 titel: Wie baue ich Datenzugriff und Events für LWR um?
 - **Datenzugriffe nach oben ziehen.** Halten Sie Datenoperationen in der äußersten Komponente. Dann ändert sich die Datenschicht an einer Stelle, und innere Komponenten bleiben wiederverwendbar.

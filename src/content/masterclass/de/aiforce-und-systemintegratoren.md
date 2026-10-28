@@ -70,7 +70,6 @@ Der Anlass ist dagegen als Primärquelle nachlesbar. Die [Executive Order 14434]
 2026-09-29 | Executive Order 14434 für Behörden der US-Exekutive
 2026-10-09 | Marc Benioff auf X: „AIForce is officially SIForce“
 2026-10-12 | Salesforce Ben findet keine offizielle Ankündigung
-quelle: Salesforce-Ankündigung vom 15. September 2026, Executive Order 14434, Salesforce Ben
 ```
 
 Für Ihre Unterlagen empfehle ich „AIforce (vom CEO als SIForce angekündigt)“, bis Salesforce den Namen schriftlich bestätigt. Drei Namen in rund sechs Monaten sind auch ein Grund, Architekturdokumente nach Funktionen zu gliedern statt nach Produktnamen.
