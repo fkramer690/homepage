@@ -93,7 +93,7 @@ Beide. Die Preisseite verkauft „Manufacturing Cloud Sales Core“, ihre Fußno
 
 Der Name macht in der Praxis Ärger. Trailhead führt „Agent-powered sales agreements“, die Beschreibung handelt aber von langfristigen Vereinbarungen über Preise und Produkte, eine Agentenaktion wird nicht genannt. „Agentforce for sales planning“ ist dagegen eine echte Agentenvorlage mit drei dokumentierten Subagenten, wie in [was der Sales-Planning-Agent wirklich tut](../agentforce-vertriebsplanung-rahmenvertraege/) beschrieben. Und die automatische Prognose für neue Produkte, die Trailhead Agentforce Manufacturing zuschreibt, ist eine geplante Berechnung.
 
-Meine Frage in jedem Hersteller-Workshop ist deshalb dieselbe: welcher Subagent, welche Aktion, welche Lizenz? Für Core nennt die Preisseite Agentforce über Flex Credits, und Salesforce verkauft das Add-on Agentforce for Manufacturing Cloud; die volle Agentforce-for-Industries-Ausstattung gibt es nur in den Max-Editionen.
+In jedem Hersteller-Workshop würde ich deshalb dieselbe Frage stellen: welcher Subagent, welche Aktion, welche Lizenz? Für Core nennt die Preisseite Agentforce über Flex Credits, und Salesforce verkauft das Add-on Agentforce for Manufacturing Cloud; die volle Agentforce-for-Industries-Ausstattung gibt es nur in den Max-Editionen.
 
 ## Ein typisches Szenario, als Annahme
 

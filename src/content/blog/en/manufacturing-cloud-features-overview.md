@@ -93,7 +93,7 @@ Both. The pricing page sells "Manufacturing Cloud Sales Core", its footnotes spe
 
 The name causes a practical problem. Trailhead lists "Agent-powered sales agreements", but the description is about long-term agreements on prices and products, with no agent action named. "Agentforce for sales planning" is a real agent template with three documented subagents, as described in [what the Sales Planning agent really does](../agentforce-sales-planning-agreements-forecasts/). And the automatic forecast for new products, which Trailhead attributes to Agentforce Manufacturing, is a scheduled calculation.
 
-My question in every vendor workshop is the same: which subagent, which action, which licence? For Core, the pricing page lists Agentforce via Flex Credits and Salesforce sells the Agentforce for Manufacturing Cloud add-on; the full Agentforce for Industries suite is only in the Max editions.
+In every vendor workshop I would ask the same question: which subagent, which action, which licence? For Core, the pricing page lists Agentforce via Flex Credits and Salesforce sells the Agentforce for Manufacturing Cloud add-on; the full Agentforce for Industries suite is only in the Max editions.
 
 ## A typical scenario, as an assumption
 

@@ -43,7 +43,7 @@ Daraus folgt eine Anforderung, die oft spät auffällt: Die Regeln, welche Kombi
 
 ## Eigener Ansatz oder Standardprodukt?
 
-Für die Angebotserstellung gibt es heute drei Wege: Revenue Cloud Advanced von Salesforce, ein Produkt eines Partners oder ein eigener Ansatz auf der Plattform. Salesforce CPQ ist für Neukunden keine Option mehr. Laut [Salesforce](https://www.salesforce.com/sales/cpq/end-of-life/) wird CPQ an Neukunden nicht mehr verkauft, Bestandskunden können weiter Nutzer kaufen, verlängern und bekommen Support. Neue Funktionen entstehen in Revenue Cloud Advanced, eine erzwungene Migration gibt es nicht.
+Für die Angebotserstellung gibt es heute drei Wege: Revenue Cloud Advanced von Salesforce, ein Produkt eines Partners oder ein eigener Ansatz auf der Plattform. Salesforce CPQ ist für Neukunden keine Option mehr. Laut [Salesforce](https://www.salesforce.com/sales/cpq/end-of-life/) wird CPQ an Neukunden nicht mehr verkauft, Bestandskunden können weiter Nutzer kaufen, verlängern und bekommen Support. Neue Funktionen entstehen in Revenue Cloud Advanced, eine erzwungene Migration gibt es nicht. Was heute gilt, steht in [Salesforce CPQ Verkaufsende](../salesforce-cpq-verkaufsende-status/), wie Sie den Umstieg planen, in [Kapitel 5 der Masterclass Revenue Cloud](../../masterclass/revenue-cloud/von-cpq-zu-revenue-cloud/).
 
 Im Projekt haben wir einen eigenen CPQ-Ansatz verfolgt. Ob das heute wieder die richtige Wahl wäre, hängt von denselben Fragen ab, die ich bei jeder Make-or-buy-Entscheidung stelle:
 

@@ -84,7 +84,7 @@ Wie man Kosten pro Aktion grundsätzlich schätzt, steht in [Flex Credits: Agent
 
 ## Ein typisches Szenario: 400 Hotline-Anrufe im Monat
 
-Nehmen wir einen Maschinenbauer mit SAP, Service Cloud und Field Service im Betrieb, 1.200 Maschinen unter Vertrag und einer Hotline, die zwei Disponenten von 7 bis 17 Uhr besetzen. Außerhalb dieser Zeit nimmt ein Bereitschaftstechniker jeden Anruf an. Alle Zahlen sind Annahmen.
+Nehmen wir einen Maschinenbauer mit SAP, Service Cloud und Field Service im Betrieb, 1.200 Maschinen unter Vertrag und einer Hotline, die zwei Disponenten von 7 bis 17 Uhr besetzen. Außerhalb dieser Zeit nimmt ein Bereitschaftstechniker jeden Anruf an; wie Sie diese Schichten in Field Service planen, steht in [Bereitschaftsdienst im Field Service](../field-service-bereitschaft-schichten/). Alle Zahlen sind Annahmen.
 
 Angenommen sind 400 Anrufe im Monat: 120 Stillstände, 160 Maschinen mit Einschränkung, 120 Fragen. Jeder Anruf braucht etwa sechs Sprachaktionen: Anrufer erkennen, Anlage finden, Entitlement prüfen, Fall anlegen, Termine suchen oder weiterleiten, bestätigen.
 

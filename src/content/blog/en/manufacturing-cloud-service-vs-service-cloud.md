@@ -27,7 +27,7 @@ faq:
 draft: false
 ---
 
-Manufacturing Cloud Service Core lists at $275 per user and month. Service Cloud costs $195 in Core, the edition Salesforce now sells instead of Enterprise. The premium is therefore $80 per user and month. In my view it pays off for the users who handle warranty claims from dealers or customers and run recalls or upgrades across an installed base. For case handling, entitlements and knowledge, Service Cloud is enough. Most manufacturers end up with a mixed licence set, and the mix belongs in the contract.
+Manufacturing Cloud Service Core lists at $275 per user and month. Service Cloud costs $195 in Core, the edition Salesforce now sells instead of Enterprise. The premium is therefore $80 per user and month. In my view it pays off for the users who handle warranty claims from dealers or customers and run recalls or upgrades across an installed base. For case handling, entitlements and knowledge, Service Cloud is enough. A mixed licence set is usually the cheaper answer, and the mix belongs in the contract.
 
 ## What do the licences cost?
 

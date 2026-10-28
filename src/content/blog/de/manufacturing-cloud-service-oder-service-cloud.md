@@ -27,7 +27,7 @@ faq:
 draft: false
 ---
 
-Manufacturing Cloud Service Core kostet laut Preisliste 275 US-Dollar pro Nutzer und Monat. Service Cloud kostet 195 US-Dollar in Core, der Edition, die Salesforce heute anstelle von Enterprise verkauft. Der Aufpreis liegt also bei 80 US-Dollar pro Nutzer und Monat. Aus meiner Sicht lohnt er sich für die Nutzer, die Garantieanträge von Händlern oder Kunden bearbeiten und Rückrufe oder Upgrades über eine installierte Basis steuern. Für Case-Bearbeitung, Entitlements und Knowledge reicht Service Cloud. Die meisten Hersteller landen bei gemischten Lizenzen, und dieser Mix gehört in den Vertrag.
+Manufacturing Cloud Service Core kostet laut Preisliste 275 US-Dollar pro Nutzer und Monat. Service Cloud kostet 195 US-Dollar in Core, der Edition, die Salesforce heute anstelle von Enterprise verkauft. Der Aufpreis liegt also bei 80 US-Dollar pro Nutzer und Monat. Aus meiner Sicht lohnt er sich für die Nutzer, die Garantieanträge von Händlern oder Kunden bearbeiten und Rückrufe oder Upgrades über eine installierte Basis steuern. Für Case-Bearbeitung, Entitlements und Knowledge reicht Service Cloud. Ein gemischter Lizenzbestand ist meist die günstigere Antwort, und dieser Mix gehört in den Vertrag.
 
 ## Was kosten die Lizenzen?
 

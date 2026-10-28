@@ -105,9 +105,9 @@ A dealer has bought most spare parts and consumables before. If they have to sea
 | Route | Status October 2026 |
 |---|---|
 | Past order to cart ([Add Order to Cart](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-d2c-comm-order-summaries-apis.html)) | available |
-| Order templates for buyers and sales reps | "AV Sept. 26" on the [innovations page](https://www.salesforce.com/de/commerce/innovations/) |
+| Order templates for buyers and sales reps | "GA September '26" on the [innovations page](https://www.salesforce.com/ca/commerce/innovations/) |
 | Import and export the cart as CSV or JSON | [July 2026 release](https://www.salesforce.com/blog/b2b-commerce-innovations-july-26/) |
-| Several users edit one cart live | "AV Jan. 27" |
+| Several users edit one cart live | "GA January '27" |
 | Reorder portal for sales teams in Sales Cloud | available, needs an Agentforce Commerce licence |
 
 Add Order to Cart works with order summaries in Salesforce. A phone order that exists only in SAP therefore cannot be reordered from the store history unless you bring those orders into Salesforce.

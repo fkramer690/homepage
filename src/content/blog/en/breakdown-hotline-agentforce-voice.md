@@ -84,7 +84,7 @@ For the method behind per-action estimates, see [Flex Credits and Agentforce cos
 
 ## A typical scenario: 400 hotline calls a month
 
-Assume a machine builder with SAP, Service Cloud and Field Service live, 1,200 machines under contract and a hotline staffed by two dispatchers from 7:00 to 17:00. Outside these hours an on-call engineer takes every call. All numbers are assumptions.
+Assume a machine builder with SAP, Service Cloud and Field Service live, 1,200 machines under contract and a hotline staffed by two dispatchers from 7:00 to 17:00. Outside these hours an on-call engineer takes every call; how to plan those shifts in Field Service is covered in [Field Service on-call duty](../field-service-on-call-shifts/). All numbers are assumptions.
 
 Assume 400 calls a month: 120 machine down, 160 machine running with restrictions, 120 questions. Each call needs about six voice actions: identify caller, find asset, check entitlement, open the case, find slots or transfer, confirm.
 

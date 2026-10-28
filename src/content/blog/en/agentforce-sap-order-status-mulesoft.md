@@ -28,11 +28,11 @@ faq:
 draft: false
 ---
 
-An Agentforce agent answers order status and availability from SAP S/4HANA by calling an API at the moment the dealer asks. The documented route runs through MuleSoft: a Mule API reads S/4HANA, is enabled for agent topics and actions in Topic Center, published to Exchange and synced into API Catalog in Salesforce, where it becomes an agent action. Everything with a right answer stays deterministic: which dealer may see which order, the availability check, the confirmed date. Those live in SAP and in the API. The model understands the question and words the answer. The same split applies when Revenue Cloud hands an order to SAP, see [handing orders to SAP](../revenue-cloud-order-orchestration-sap/).
+An Agentforce agent answers order status and availability from SAP S/4HANA by calling an API at the moment the dealer asks. The documented route runs through MuleSoft: a Mule API reads S/4HANA, is enabled for agent topics and actions in Topic Center, published to Exchange and synced into API Catalog in Salesforce, where it becomes an agent action. Everything with a right answer stays deterministic: which dealer may see which order, the availability check, the confirmed date. Those live in SAP and in the API. The model understands the question and words the answer.
 
 ## How does an Agentforce agent get the order status from SAP?
 
-Through a chain of five links, and each link needs an owner. The [Salesforce Developers blog](https://developer.salesforce.com/blogs/2025/06/explore-mulesoft-for-agentforce-with-topic-center-and-api-catalog) describes the order: define topics, actions and instructions in Topic Center while you design the API, build it, publish it to Anypoint Exchange and sync it with API Catalog. Named Credentials and External Services are then created automatically, and the agent calls the API as an action. Flow and Apex can call the same API.
+Through a chain of five links, and each link needs an owner. The [Salesforce Developers blog](https://developer.salesforce.com/blogs/2025/06/explore-mulesoft-for-agentforce-with-topic-center-and-api-catalog) describes the order: define topics, actions and instructions in Topic Center while you design the API, build it, publish it to Anypoint Exchange and sync it with API Catalog. Named Credentials and External Services are then created automatically, and the agent calls the API as an action. Flow and Apex can call the same API. The opposite direction, an order from Revenue Cloud handed to SAP, is covered in [handing orders to SAP](../revenue-cloud-order-orchestration-sap/).
 
 For a machine builder the chain looks like this:
 
