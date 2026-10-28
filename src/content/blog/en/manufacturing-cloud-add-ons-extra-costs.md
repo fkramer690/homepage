@@ -62,7 +62,7 @@ The add-ons page prices the Agentforce for Manufacturing Cloud Add-on at "$150/u
 
 The add-on is available with Core and Advanced. The Max editions include the "full Agentforce for Industries suite", 2.75 million instead of 500,000 Flex Credits per org and year, and higher platform limits. In list prices, Core plus add-on is $425 per user and month, Max $650. If only 20 key account managers need agents, the add-on costs $36,000 per year. Moving the same 20 users from Core to Max would cost $90,000, and whether one org may mix Core and Max users is a question for the account team.
 
-Either way, the add-on is the right to use agents, and every action still costs Flex Credits. How to estimate that consumption is in [Flex Credits: Agentforce cost per action](../flex-credits-agentforce-cost-per-action/) and in the masterclass chapter [costs and tokens](../../masterclass/ai-salesforce/costs-and-tokens/).
+Either way, every agent action still costs Flex Credits; for Core the pricing page lists Agentforce "via Flex Credits". How to estimate that consumption is in [Flex Credits: Agentforce cost per action](../flex-credits-agentforce-cost-per-action/) and in the masterclass chapter [costs and tokens](../../masterclass/ai-salesforce/costs-and-tokens/).
 
 ## Which add-ons only matter for some manufacturers?
 

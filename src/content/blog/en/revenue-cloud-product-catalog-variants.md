@@ -61,7 +61,7 @@ Which combinations are allowed is decided by the configurator, not by the catalo
 
 ## Which data comes from the ERP and which lives only in Salesforce?
 
-Copying the material master is the most common mistake I see in catalog designs. Salesforce needs the sellable products, not the plant data, purchasing data or bills of materials. A bill of materials describes how a machine is built. The bundle describes how it is sold. The two look similar and are maintained by different people.
+The first mistake I would avoid in a catalog design is copying the material master. Salesforce needs the sellable products, not the plant data, purchasing data or bills of materials. A bill of materials describes how a machine is built. The bundle describes how it is sold. The two look similar and are maintained by different people.
 
 | Data | Master | Note |
 |---|---|---|
@@ -74,7 +74,7 @@ Copying the material master is the most common mistake I see in catalog designs.
 | Selling model | Salesforce | One-time, term-defined or evergreen |
 | Bill of materials | ERP or PLM | Not in Salesforce |
 
-The fifth row needs care. When the attribute "control" has the value "S2" in Salesforce, the same value must exist as a characteristic value in SAP, or the order fails at hand-over. I keep a mapping table per attribute and let the integration check it. Who owns each object in the org is set in an [object ownership matrix](../salesforce-object-ownership-matrix/). How prices then come from the price book is covered in [Salesforce Pricing: how Revenue Cloud calculates prices](../revenue-cloud-pricing-procedures-explained/).
+The fifth row needs care. When the attribute "control" has the value "S2" in Salesforce, the same value must exist as a characteristic value in SAP, or the order fails at hand-over. I would keep a mapping table per attribute and let the integration check it. Who owns each object in the org is set in an [object ownership matrix](../salesforce-object-ownership-matrix/). How prices then come from the price book is covered in [Salesforce Pricing: how Revenue Cloud calculates prices](../revenue-cloud-pricing-procedures-explained/).
 
 ## Should spare parts and services get their own catalog?
 

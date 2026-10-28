@@ -1,6 +1,6 @@
 ---
 title: "Revenue Cloud, Manufacturing Cloud oder B2B Commerce?"
-description: "Welches Salesforce-Produkt welchen Teil des Vertriebs eines Herstellers abdeckt: konfigurierte Angebote, Rahmenverträge und Boni oder Händlerbestellungen im Shop."
+description: "Welches Salesforce-Produkt welchen Teil des Herstellervertriebs abdeckt: konfigurierte Angebote, Rahmenverträge und Boni oder Händlerbestellungen im Shop."
 pubDate: 2026-10-28
 lang: de
 slug: revenue-cloud-manufacturing-cloud-commerce-abgrenzung

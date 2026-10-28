@@ -27,18 +27,174 @@ const pin = (x: number, y: number, color = G) =>
   `<g transform="translate(${x} ${y})"><path d="M0 0c-6-8-9-12-9-16a9 9 0 0 1 18 0c0 4-3 8-9 16z" fill="#fff" stroke="${color}" stroke-width="1.4"/><circle cx="0" cy="-16" r="3" fill="${color}"/></g>`;
 
 const drawings: Record<string, Drawing> = {
+  'asset-service-lifecycle-management-addon': (l) => `
+    ${t(18, 22, l('CORE FIELD SERVICE', 'FIELD-SERVICE-KERN'), { fill: D, size: 7.5 })}${t(176, 22, l('ASLM ADD-ON', 'ADD-ON ASLM'), { fill: D, size: 7.5 })}
+    ${box(18, 30, 126, 86)}
+    ${[l('assets, hierarchy', 'Assets, Hierarchie'), l('maintenance plans', 'Wartungspläne'), l('service contracts', 'Serviceverträge'), 'Entitlements'].map((s, i) => check(28, 43 + i * 18, G) + t(42, 49 + i * 18, s, { size: 7 })).join('')}
+    ${arrow(144, 73, 176, C)}${t(160, 64, l('+ $75', '+ 75 €'), { fill: C, size: 7.5, anchor: 'middle' })}${t(160, 88, l('per user', 'pro Nutzer'), { size: 6.5, anchor: 'middle' })}
+    ${box(176, 30, 126, 86, C)}
+    ${[l('coverage view', 'Deckungsansicht'), l('repair quotes', 'Reparaturangebote'), l('recall campaigns', 'Rückrufkampagnen'), l('depot repair', 'Depotreparatur')].map((s, i) => dot(188, 46 + i * 18, i === 0 ? C : G, 2.5) + t(196, 49 + i * 18, s, { size: 7 })).join('')}
+    ${tag(18, 128, 156, l('Connected Assets $15,000/org', 'Connected Assets 15.000 €/Org'))}${t(182, 141, l('per month, telemetry', 'pro Monat, Telemetrie'), { size: 7 })}`,
+
+  'customer-prices-sap-or-salesforce-pricing': (l) => `
+    ${box(18, 26, 72, 98)}${t(54, 44, 'SAP', { fill: D, size: 8, anchor: 'middle' })}${t(54, 58, l('conditions', 'Konditionen'), { size: 7, anchor: 'middle' })}
+    ${box(230, 26, 74, 98, C)}${t(267, 44, 'Revenue Cloud', { fill: D, size: 7.5, anchor: 'middle' })}${t(267, 58, 'Pricing Procedure', { size: 6.5, anchor: 'middle' })}
+    ${t(160, 66, l('A · net price via API', 'A · Nettopreis per API'), { fill: C, size: 7, anchor: 'middle' })}${arrow(90, 72, 230, C)}
+    ${t(160, 88, l('B · conditions rebuilt', 'B · Konditionen nachgebaut'), { size: 7, anchor: 'middle' })}${arrow(90, 94, 230, G, true)}
+    ${t(160, 110, l('C · list prices only', 'C · nur Listenpreise'), { size: 7, anchor: 'middle' })}${arrow(90, 116, 230)}
+    ${tag(18, 134, 168, l('one master per price type', 'ein Master je Preisart'))}
+    ${t(196, 148, l('EDI orders: price from SAP', 'EDI-Aufträge: Preis aus SAP'), { size: 7 })}`,
+
+  'field-service-asset-hierarchy': (l) => `
+    ${box(40, 14, 72, 22, C)}${t(76, 28, l('Line', 'Linie'), { fill: D, size: 7.5, anchor: 'middle' })}
+    <path d="M76 36V44M28 44H124M28 44V50M76 44V50M124 44V50" fill="none" stroke="${G}" stroke-width="1.2"/>
+    ${[0, 1, 2].map((i) => box(12 + i * 48, 50, 32, 18) + t(28 + i * 48, 62, 'M' + (i + 1), { size: 7, anchor: 'middle' })).join('')}
+    <path d="M76 68V76M52 76H100M52 76V82M100 76V82" fill="none" stroke="${G}" stroke-width="1.2"/>
+    ${box(36, 82, 32, 16)}${box(84, 82, 32, 16)}${t(76, 112, l('serialised assemblies', 'Baugruppen mit Seriennr.'), { size: 7, anchor: 'middle' })}
+    ${t(12, 130, l('6 machines · 40 assemblies', '6 Maschinen · 40 Baugruppen'), { size: 7 })}
+    ${t(12, 146, l('= 47 assets, 3 levels', '= 47 Assets, 3 Ebenen'), { fill: C, size: 7.5 })}
+    ${box(180, 14, 124, 64)}${t(242, 30, 'PLM', { fill: D, size: 7.5, anchor: 'middle' })}${t(242, 46, l('900 parts', '900 Teile'), { size: 7, anchor: 'middle' })}${t(242, 60, l('stay in parts list', 'bleiben in Stückliste'), { size: 7, anchor: 'middle' })}
+    <path d="M118 90L180 64" stroke="${G}" stroke-width="1.3" stroke-dasharray="4 3"/>${t(156, 86, 'live', { size: 6.5, anchor: 'middle' })}
+    ${t(180, 100, l('asset if own:', 'Asset bei eigener:'), { fill: D, size: 7 })}
+    ${[l('serial number', 'Seriennummer'), l('maintenance', 'Wartung'), l('warranty', 'Garantie')].map((s, i) => check(180, 108 + i * 14, i === 0 ? C : G) + t(194, 114 + i * 14, s, { size: 7 })).join('')}
+    ${t(304, 156, l('tree grid: max 500', 'Baumansicht: max. 500'), { size: 6.5, anchor: 'end' })}`,
+
+  'field-service-data-capture-forms': (l) => `
+    ${box(18, 30, 62, 84)}${t(49, 46, l('PAPER', 'PAPIER'), { fill: D, size: 7.5, anchor: 'middle' })}
+    ${[56, 64, 72, 80].map((y) => `<path d="M28 ${y}H70" stroke="${L}" stroke-width="1.2"/>`).join('')}
+    ${t(49, 96, l('80 points', '80 Punkte'), { size: 7, anchor: 'middle' })}${t(49, 107, l('12 pages', '12 Seiten'), { size: 7, anchor: 'middle' })}
+    ${[l('1 general · 30', '1 allgemein · 30'), l('2 variant · 35', '2 Variante · 35'), l('3 acceptance · 15', '3 Abnahme · 15')].map((s, i) => arrow(80, 38 + i * 36, 104) + box(104, 26 + i * 36, 92, 24) + t(150, 41 + i * 36, s, { size: 7, anchor: 'middle' })).join('')}
+    <path d="M196 38H206M196 74H206M196 110H206M206 38V110" fill="none" stroke="${G}" stroke-width="1.2"/>
+    ${arrow(206, 47, 220, C)}${arrow(206, 97, 220)}
+    ${box(220, 30, 88, 34, C)}${t(264, 44, l('FIELDS', 'FELDER'), { fill: C, size: 7, anchor: 'middle' })}${t(264, 57, l('asset · work order', 'Asset · Arbeitsauftrag'), { size: 6.5, anchor: 'middle' })}
+    ${box(220, 80, 88, 34)}${t(264, 94, l('FORM ANSWERS', 'FORMULARANTWORTEN'), { fill: D, size: 7, anchor: 'middle' })}${t(264, 107, l('checks, signature', 'Prüfpunkte, Unterschrift'), { size: 6.5, anchor: 'middle' })}
+    ${t(18, 140, l("Voice to Form: GA since 260.0, German since Winter '27", "Voice to Form: GA seit 260.0, Deutsch seit Winter '27"), { fill: C, size: 7 })}
+    ${t(18, 153, l('offline, auto-save, every submission logged', 'offline, automatisch gespeichert, jede Übermittlung protokolliert'), { size: 7 })}`,
+
+  'field-service-mobile-offline': (l) => `
+    ${t(18, 18, l('BRIEFCASE PER ROLE', 'BRIEFCASE PRO ROLLE'), { fill: D, size: 7 })}
+    ${box(18, 26, 118, 88)}
+    ${[l('appointment', 'Service-Termin'), l('work order', 'Arbeitsauftrag'), l('asset + history', 'Asset + Historie'), l('van stock', 'Fahrzeuglager'), l('manual', 'Handbuch')].map((s, i) => check(28, 36 + i * 15, G) + t(42, 42 + i * 15, s, { size: 7 })).join('')}
+    ${arrow(136, 62, 178, C)}${t(157, 54, l('every 5 min', 'alle 5 Min.'), { fill: C, size: 6.5, anchor: 'middle' })}
+    ${box(178, 26, 58, 88, C)}<rect x="186" y="36" width="42" height="56" rx="2" fill="#fff" stroke="${L}" stroke-width="1"/>
+    ${t(207, 60, 'OFFLINE', { fill: C, size: 7, anchor: 'middle' })}${t(207, 74, l('7:00 to 16:00', '7 bis 16 Uhr'), { size: 6.5, anchor: 'middle' })}${dot(207, 103, G, 2.5)}
+    ${t(246, 38, l('STAYS ONLINE', 'BLEIBT ONLINE'), { fill: D, size: 7 })}
+    ${[l('price lists', 'Preislisten'), l('all assets', 'alle Assets'), l('all stock', 'alle Lager')].map((s, i) => cross(252, 54 + i * 16) + t(262, 57 + i * 16, s, { size: 7 })).join('')}
+    <path d="M18 126H302" stroke="${L}"/>
+    ${t(18, 140, l('known gaps: tasks not primed, iOS loads LWC after cold start', 'bekannte Lücken: Tasks nicht geladen, iOS lädt LWC erst nach Kaltstart'), { size: 7 })}
+    ${t(18, 153, l('test offline with a partner user (community licence)', 'offline mit Partnernutzer testen (Community-Lizenz)'), { fill: C, size: 7 })}`,
+
+  'field-service-mobile-release-testing': (l) => `
+    ${t(18, 18, l('EACH APP VERSION', 'JEDE APP-VERSION'), { fill: D, size: 7 })}
+    <path d="M24 60H300" stroke="${G}" stroke-width="1.2"/>
+    ${dot(40, 60)}${t(40, 50, 'Beta', { fill: D, size: 7, anchor: 'middle' })}
+    <path d="M44 60H192" stroke="${C}" stroke-width="2"/>
+    ${dot(196, 60, C)}${t(196, 50, 'GA', { fill: C, size: 7, anchor: 'middle' })}
+    ${dot(290, 60)}${t(290, 50, l('all users', 'alle Nutzer'), { fill: D, size: 7, anchor: 'middle' })}
+    ${t(118, 76, l('pilot: 8 technicians, iOS + Android', 'Pilot: 8 Techniker, iOS + Android'), { fill: C, size: 7, anchor: 'middle' })}
+    ${t(243, 76, l('up to 7 days', 'bis zu 7 Tage'), { size: 7, anchor: 'middle' })}
+    ${box(18, 90, 138, 46)}${t(26, 104, 'BETA', { fill: D, size: 7 })}${t(26, 117, l('1 month before major', '1 Monat vor Hauptversion'), { size: 7 })}${t(26, 129, l('1 week before patch', '1 Woche vor Patch'), { size: 7 })}
+    ${box(166, 90, 138, 46)}${t(174, 104, 'PATCH 262.3', { fill: D, size: 7 })}${t(174, 117, l('beta 26 Aug 2026', 'Beta 26.08.2026'), { size: 7 })}${t(174, 129, l('release 4 Sep 2026', 'Release 04.09.2026'), { size: 7 })}
+    ${t(18, 152, l('8 test scripts: offline, form, report, partner user', '8 Testskripte: offline, Formular, Bericht, Partnernutzer'), { size: 7 })}`,
+
+  'field-service-usage-based-maintenance': (l) => `
+    ${box(18, 22, 74, 40)}${t(55, 38, l('IoT / ERP', 'IoT / ERP'), { fill: D, size: 7.5, anchor: 'middle' })}${t(55, 52, l('once a day', '1x pro Tag'), { size: 7, anchor: 'middle' })}
+    ${arrow(92, 42, 124)}
+    ${box(124, 18, 98, 48)}${t(173, 32, 'ASSET', { fill: D, size: 7.5, anchor: 'middle' })}${t(132, 46, l('hours since service', 'Std. seit Wartung'), { size: 7 })}${t(132, 58, l('months since service', 'Monate seit Wartung'), { size: 7 })}
+    ${arrow(222, 42, 248, C)}
+    ${box(248, 22, 56, 40, C)}${t(276, 38, l('WORK', 'ARBEITS-'), { fill: D, size: 7, anchor: 'middle' })}${t(276, 50, l('ORDER', 'AUFTRAG'), { fill: D, size: 7, anchor: 'middle' })}
+    ${tag(124, 76, 98, l('≥ 2,000 h OR ≥ 12 m', '≥ 2.000 h ODER ≥ 12 M'))}
+    <path d="M276 62V108H200" fill="none" stroke="${G}" stroke-width="1.2" stroke-dasharray="4 3"/>${t(238, 120, l('reset on completion', 'Reset bei Abschluss'), { size: 7, anchor: 'middle' })}
+    <path d="M18 132H302" stroke="${L}"/>
+    ${t(18, 148, l('max 2,600 work orders per run', 'max. 2.600 Arbeitsaufträge pro Lauf'), { fill: C, size: 7 })}${t(302, 148, l('≤ 5 rules', '≤ 5 Regeln'), { size: 7, anchor: 'end' })}`,
+
+  'revenue-cloud-configurator-constraint-rules': (l) => `
+    ${t(18, 18, l('CONFIGURATOR RULES', 'KONFIGURATORREGELN'), { fill: D, size: 7 })}
+    ${box(18, 30, 80, 40)}${t(58, 47, l('validation', 'Validierung'), { fill: D, size: 7.5, anchor: 'middle' })}${t(58, 60, l('blocks invalid', 'blockiert Ungültiges'), { size: 6.5, anchor: 'middle' })}
+    ${box(112, 30, 80, 40)}${t(152, 47, l('selection rules', 'Auswahlregeln'), { fill: D, size: 7.5, anchor: 'middle' })}${t(152, 60, l('if-then', 'Wenn-dann'), { size: 6.5, anchor: 'middle' })}
+    ${box(206, 30, 96, 40, C)}${t(254, 47, l('CONSTRAINT MODEL', 'CONSTRAINT-MODELL'), { fill: C, size: 7, anchor: 'middle' })}${t(254, 60, l('CML · all combinations', 'CML · alle Kombinationen'), { size: 6.5, anchor: 'middle' })}
+    ${arrow(98, 50, 112)}${arrow(192, 50, 206, C)}
+    <path d="M18 78H192M206 78H302" stroke="${L}"/>
+    ${t(105, 90, 'Business Rules Engine', { size: 6.8, anchor: 'middle' })}${t(254, 90, 'Constraint Rules Engine', { fill: C, size: 6.8, anchor: 'middle' })}
+    ${check(18, 106, G)}${t(32, 112, l('target < 100 ms per run', 'Ziel < 100 ms pro Lauf'), { size: 7 })}
+    ${check(18, 122, G)}${t(32, 128, l('< 1,000 backtracks', '< 1.000 Backtracks'), { size: 7 })}
+    ${box(206, 102, 96, 32)}${t(254, 116, l('external configurator', 'externer Konfigurator'), { size: 6.8, anchor: 'middle' })}${t(254, 127, l('result via API', 'Ergebnis per API'), { size: 6.5, anchor: 'middle' })}
+    ${t(18, 152, l('one rule master per product line, never two', 'ein führendes System pro Produktlinie, nie zwei'), { fill: D, size: 7 })}`,
+
+  'revenue-cloud-installed-base-assets': (l) => `
+    ${[l('Quote', 'Angebot'), l('Order', 'Auftrag'), 'Asset'].map((s, i) => box(18 + i * 104, 18, 76, 24, i === 2 ? C : G) + t(56 + i * 104, 33, s, { fill: i === 2 ? C : D, size: 7.5, anchor: 'middle' })).join('')}
+    ${arrow(94, 30, 122)}${arrow(198, 30, 226)}
+    ${t(18, 58, l('amend · renew · cancel: always a new quote', 'Nachtrag · Verlängerung · Kündigung: immer neues Angebot'), { size: 7 })}
+    ${box(18, 70, 120, 58)}${t(78, 86, l('SOLD ASSET', 'VERKAUFTES ASSET'), { fill: D, size: 7, anchor: 'middle' })}${t(78, 102, l('qty 5 + 8 = 13', 'Menge 5 + 8 = 13'), { fill: C, size: 7.5, anchor: 'middle' })}${t(78, 118, l('state periods · MRR', 'State Periods · MRR'), { size: 7, anchor: 'middle' })}
+    ${box(186, 70, 120, 58)}${t(246, 86, l('MACHINE ASSET', 'MASCHINEN-ASSET'), { fill: D, size: 7, anchor: 'middle' })}${t(246, 102, l('serial number', 'Seriennummer'), { size: 7, anchor: 'middle' })}${t(246, 118, 'Field Service', { size: 7, anchor: 'middle' })}
+    <path d="M138 99H186" stroke="${C}" stroke-width="1.3" stroke-dasharray="4 3"/>${t(162, 94, 'lookup', { fill: C, size: 6.5, anchor: 'middle' })}
+    ${t(18, 148, l('one Asset object, two meanings', 'ein Asset-Objekt, zwei Bedeutungen'), { size: 7 })}`,
+
+  'revenue-cloud-order-orchestration-erp': (l) => `
+    ${box(14, 40, 72, 66)}${t(50, 58, l('ORDER', 'AUFTRAG'), { fill: D, size: 7.5, anchor: 'middle' })}${t(50, 74, 'Activated', { size: 7, anchor: 'middle' })}${t(50, 92, l('record-triggered', 'per Flow'), { size: 7, anchor: 'middle' })}
+    ${arrow(86, 73, 106)}
+    ${box(106, 24, 112, 98)}${t(162, 40, 'DRO', { fill: D, size: 8, anchor: 'middle' })}${t(162, 52, l('decomposition', 'Dekomposition'), { size: 7, anchor: 'middle' })}
+    ${t(116, 70, l('SAP order item', 'SAP-Auftragsposition'), { fill: C, size: 7 })}${t(116, 86, l('installation', 'Inbetriebnahme'), { size: 7 })}${t(116, 102, l('monitoring', 'Überwachung'), { size: 7 })}
+    ${box(244, 40, 62, 66, C)}${t(275, 70, 'SAP', { fill: D, size: 9, anchor: 'middle' })}${t(275, 86, l('owns order', 'führt Auftrag'), { fill: C, size: 7, anchor: 'middle' })}
+    ${arrow(218, 58, 244, C)}${t(231, 52, 'callout', { fill: C, size: 6.5, anchor: 'middle' })}
+    <path d="M244 92H219" stroke="${G}" stroke-width="1.3"/><path d="M224 88.5l-5 3.5 5 3.5" fill="none" stroke="${G}" stroke-width="1.3"/>${t(231, 102, l('no.', 'Nr.'), { size: 6.5, anchor: 'middle' })}
+    ${tag(14, 132, 92, l('5 step types', '5 Schritttypen'))}${t(116, 145, l('fallout: retry, then queue', 'Fallout: Wiederholung, dann Queue'), { size: 7 })}`,
+
+  'revenue-cloud-pricing-procedures': (l) => `
+    ${t(18, 22, 'PRICING PROCEDURE', { fill: D, size: 7.5 })}
+    ${[l('List price', 'Listenpreis'), l('Volume', 'Menge'), l('Attribute', 'Attribut'), l('Manual', 'Manuell'), l('Aggregate', 'Aggregat')].map((s, i) => box(18 + i * 57, 32, 48, 26, i === 0 ? C : G) + t(42 + i * 57, 48, s, { fill: i === 0 ? C : G, size: 6.5, anchor: 'middle' })).join('')}
+    ${[0, 1, 2, 3].map((i) => arrow(66 + i * 57, 45, 75 + i * 57)).join('')}
+    <path d="M42 58V78" stroke="${C}" stroke-width="1.3" stroke-dasharray="3 2"/>
+    ${box(18, 78, 120, 34, C)}${t(78, 93, 'Decision Tables', { fill: D, size: 7.5, anchor: 'middle' })}${t(78, 105, l('sync after every change', 'Sync nach jeder Änderung'), { fill: C, size: 6.5, anchor: 'middle' })}
+    ${check(18, 128)}${t(32, 134, l('regression cases before go-live', 'Regressionsfälle vor dem Go-live'), { size: 7 })}
+    <path d="M168 140H304" stroke="${G}" stroke-width="1"/>
+    <rect x="174" y="80" width="18" height="60" fill="#fff" stroke="${G}" stroke-width="1.2"/>
+    <rect x="200" y="80" width="18" height="10" fill="#fff" stroke="${G}" stroke-width="1.2"/>
+    <rect x="226" y="90" width="18" height="8" fill="#fff" stroke="${G}" stroke-width="1.2"/>
+    <rect x="252" y="98" width="18" height="6" fill="#fff" stroke="${G}" stroke-width="1.2"/>
+    <rect x="278" y="104" width="18" height="36" fill="#fff" stroke="${C}" stroke-width="1.4"/>
+    ${t(183, 74, l('list', 'Liste'), { size: 6.5, anchor: 'middle' })}${t(287, 98, l('net', 'netto'), { fill: C, size: 6.5, anchor: 'middle' })}
+    ${t(236, 154, l('price waterfall', 'Preiswasserfall'), { size: 7, anchor: 'middle' })}`,
+
+  'revenue-cloud-product-catalog-variants': (l) => `
+    ${t(18, 18, l('PRODUCT CATALOG', 'PRODUKTKATALOG'), { fill: D, size: 7 })}
+    ${box(18, 30, 88, 80, C)}${t(62, 46, l('CLASSIFICATION', 'KLASSIFIZIERUNG'), { fill: C, size: 7.5, anchor: 'middle' })}
+    ${[l('press force', 'Presskraft'), l('bending length', 'Biegelänge'), l('control', 'Steuerung')].map((s, i) => dot(28, 62 + i * 15, G, 2) + t(36, 65 + i * 15, s, { size: 7 })).join('')}
+    ${box(136, 22, 80, 22)}${t(176, 36, l('CATALOG', 'KATALOG'), { fill: D, size: 7, anchor: 'middle' })}
+    <path d="M176 44V56M176 78V90" stroke="${G}" stroke-width="1.2"/>
+    ${box(136, 56, 80, 22)}${t(176, 70, l('category', 'Kategorie'), { size: 7, anchor: 'middle' })}
+    ${box(136, 90, 80, 30)}${t(176, 103, l('PRODUCT', 'PRODUKT'), { fill: D, size: 7, anchor: 'middle' })}${t(176, 114, l('40 base machines', '40 Grundmaschinen'), { size: 6.5, anchor: 'middle' })}
+    ${arrow(106, 105, 136, C)}${t(121, 100, l('inherits', 'erbt'), { fill: C, size: 6.5, anchor: 'middle' })}
+    ${box(226, 22, 80, 22)}${t(266, 36, l('spare parts catalog', 'Ersatzteilkatalog'), { size: 6.8, anchor: 'middle' })}
+    ${box(250, 82, 56, 46)}${t(278, 98, 'ERP', { fill: D, size: 7.5, anchor: 'middle' })}${t(278, 110, l('material no.', 'Material-Nr.'), { size: 6.5, anchor: 'middle' })}${t(278, 121, l('list price', 'Listenpreis'), { size: 6.5, anchor: 'middle' })}
+    <path d="M250 105H217" stroke="${G}" stroke-width="1.3" stroke-dasharray="4 3"/><path d="M222 101.5l-5 3.5 5 3.5" fill="none" stroke="${G}" stroke-width="1.3"/>
+    <path d="M18 136H302" stroke="${L}"/>
+    ${t(18, 152, l('variant = attribute, until the ERP has its own material no.', 'Variante = Attribut, bis das ERP eine eigene Material-Nr. hat'), { fill: D, size: 7 })}`,
+
+  'visual-remote-assistant-instead-of-visit': (l) => `
+    ${box(18, 22, 92, 92)}${t(64, 38, l('HOTLINE', 'HOTLINE'), { fill: D, size: 7.5, anchor: 'middle' })}
+    ${t(28, 56, l('annotate image', 'ins Bild zeichnen'), { size: 7 })}${t(28, 70, l('add expert', 'Experten dazuholen'), { size: 7 })}${t(28, 84, l('OCR: QR, barcode', 'OCR: QR, Barcode'), { size: 7 })}${t(28, 98, l('$50 / user / month', '50 € / Nutzer / Monat'), { fill: C, size: 7 })}
+    ${arrow(110, 50, 170, C)}${t(140, 42, l('SMS or email', 'SMS oder E-Mail'), { fill: C, size: 7, anchor: 'middle' })}
+    ${arrow(170, 80, 110)}${t(140, 94, l('two-way video', 'Video beidseitig'), { size: 7, anchor: 'middle' })}
+    ${box(170, 22, 56, 92, C)}<rect x="180" y="34" width="36" height="56" rx="3" fill="#fff" stroke="${G}" stroke-width="1"/>${t(198, 104, l('browser', 'Browser'), { size: 7, anchor: 'middle' })}
+    <circle cx="198" cy="62" r="9" fill="none" stroke="${C}" stroke-width="1.3"/>
+    ${t(238, 40, l('no app', 'keine App'), { size: 7 })}${t(238, 54, l('no login', 'kein Login'), { size: 7 })}${t(238, 68, l('customer', 'Kunde'), { fill: D, size: 7.5 })}
+    <path d="M18 128H302" stroke="${L}"/>
+    ${check(18, 138)}${t(32, 145, l('operator fixes it', 'Bediener behebt'), { fill: C, size: 7 })}
+    ${cross(170, 141)}${t(180, 145, l('tools, acceptance', 'Werkzeug, Abnahme'), { size: 7 })}`,
+
   'agentforce-1-field-service-bundle': (l) => `
     ${t(18, 18, l('PER USER AND MONTH, LIST PRICE', 'PRO NUTZER UND MONAT, LISTENPREIS'), { fill: D, size: 7 })}
     <path d="M18 130H302" stroke="${G}" stroke-width="1"/>
     ${[['FS Plus', 230], ['Agentforce', 125], ['VRA', 50], ['Appt. Assistant', 25]].reduce((acc, [n, v]) => {
       const h = Number(v) / 6.5, y = acc.y - h;
-      return { y, s: acc.s + `<rect x="60" y="${y}" width="56" height="${h}" fill="#fff" stroke="${G}" stroke-width="1.2"/>` + (Number(v) >= 50 ? t(88, y + h / 2 + 3, String(n), { size: 6.5, anchor: 'middle' }) : '') };
+      return { y, s: acc.s + `<rect x="60" y="${y}" width="56" height="${h}" fill="#fff" stroke="${G}" stroke-width="1.2"/>` + (Number(v) >= 100 ? t(88, y + h / 2 + 3, String(n), { size: 6.5, anchor: 'middle' }) : '') };
     }, { y: 130, s: '' }).s}
     ${t(88, 142, l('parts $430', 'Teile 430 $'), { size: 7, anchor: 'middle' })}
     <rect x="150" y="${130 - 650 / 6.5}" width="56" height="${650 / 6.5}" fill="#fff" stroke="${G}" stroke-width="1.2"/>
     ${t(178, 142, l('bundle $650', 'Paket 650 $'), { fill: D, size: 7, anchor: 'middle' })}
     <path d="M150 ${130 - 430 / 6.5}H206" stroke="${C}" stroke-width="1.3" stroke-dasharray="4 3"/>
-    ${t(178, 52, '+ $220', { fill: C, size: 8, anchor: 'middle' })}
+    ${t(178, 52, l('+ $220', '+ 220 $'), { fill: C, size: 8, anchor: 'middle' })}
     ${box(222, 44, 82, 50)}${t(263, 60, l('PER ORG / YEAR', 'PRO ORG / JAHR'), { fill: D, size: 6.5, anchor: 'middle' })}
     ${t(263, 74, l('1M Flex Credits', '1 Mio. Flex Credits'), { size: 7, anchor: 'middle' })}${t(263, 86, l('= $5,000', '= 5.000 $'), { fill: C, size: 7, anchor: 'middle' })}
     ${t(263, 112, l('covers ~2 users', 'deckt ~2 Nutzer'), { size: 7, anchor: 'middle' })}`,
@@ -47,10 +203,9 @@ const drawings: Record<string, Drawing> = {
     ${[['Case', l('hotline', 'Hotline'), G], [l('Work order', 'Arbeitsauftrag'), l('the job', 'der Job'), G], [l('Appointment', 'Servicetermin'), l('the visit', 'der Einsatz'), C], [l('Technician', 'Techniker'), 'Dispatched', G]]
       .map(([a, b, c], i) => box(14 + i * 76, 30, 64, 38, String(c)) + t(46 + i * 76, 46, String(a), { fill: String(c) === C ? C : D, size: 7, anchor: 'middle' }) + t(46 + i * 76, 59, String(b), { size: 6.5, anchor: 'middle' })).join('')}
     ${arrow(78, 49, 90)}${arrow(154, 49, 166, C)}${arrow(230, 49, 242)}
-    ${box(100, 92, 76, 30)}${t(138, 105, 'Work type', { fill: D, size: 7, anchor: 'middle' })}${t(138, 116, l('duration, skills', 'Dauer, Skills'), { size: 6.5, anchor: 'middle' })}
-    <path d="M138 92V72" stroke="${G}" stroke-width="1.2"/>${t(176, 84, 'auto-create', { fill: C, size: 6.5 })}
-    ${t(14, 146, l('Maintenance plan: work order without case, 3x a day', 'Wartungsplan: Arbeitsauftrag ohne Case, 3x am Tag'), { size: 7 })}
-    <path d="M14 134H120" stroke="${G}" stroke-width="1" stroke-dasharray="3 3"/>`,
+    ${box(84, 92, 92, 30)}${t(130, 105, 'Work type', { fill: D, size: 7, anchor: 'middle' })}${t(130, 116, l('duration, skills', 'Dauer, Skills'), { size: 6.5, anchor: 'middle' })}
+    <path d="M122 92V70" stroke="${G}" stroke-width="1.2"/><path d="M176 107H198V70" fill="none" stroke="${C}" stroke-width="1.3"/>${t(204, 100, 'auto-create', { fill: C, size: 7 })}
+    ${t(14, 146, l('Maintenance plan: work order without case, 3x a day', 'Wartungsplan: Arbeitsauftrag ohne Case, 3x am Tag'), { size: 7 })}`,
 
   'field-service-licences-by-role': (l) => `
     ${t(18, 20, l('ROLE → LICENCE (PER USER / MONTH)', 'ROLLE → LIZENZ (PRO NUTZER / MONAT)'), { fill: D, size: 7.5 })}
@@ -65,7 +220,7 @@ const drawings: Record<string, Drawing> = {
       ['B2B Commerce', [l('store', 'Shop'), l('reorder', 'Nachbestellung'), l('spare parts', 'Ersatzteile')]],
     ].map(([h, items], i) => {
       const x = 18 + i * 96;
-      return box(x, 22, 92, 78) + t(x + 46, 38, h as string, { fill: D, size: 7.5, anchor: 'middle' }) + (items as string[]).map((s, j) => t(x + 10, 54 + j * 14, s, { size: 7 })).join('') + `<path d="M${x + 46} 100V114" stroke="${G}" stroke-width="1.2"/>`;
+      return box(x, 22, 92, 78) + t(x + 46, 38, h as string, { fill: D, size: 7, anchor: 'middle' }) + (items as string[]).map((s, j) => t(x + 10, 54 + j * 14, s, { size: 7 })).join('') + `<path d="M${x + 46} 100V114" stroke="${G}" stroke-width="1.2"/>`;
     }).join('')}
     ${box(18, 114, 284, 20, C)}${t(160, 127, l('one catalog · one price master · one quote model', 'ein Katalog · ein Preismaster · ein Angebotsmodell'), { fill: C, size: 7, anchor: 'middle' })}
     ${cross(24, 148)}${t(34, 151, l('2 quote models = 2 prices for one machine', '2 Angebotsmodelle = 2 Preise für eine Maschine'), { size: 7 })}`,
@@ -77,12 +232,12 @@ const drawings: Record<string, Drawing> = {
     ${box(100, 30, 62, 34)}${t(131, 45, l('ORDER', 'AUFTRAG'), { fill: D, size: 7.5, anchor: 'middle' })}${t(131, 57, l('activated', 'aktiviert'), { size: 7, anchor: 'middle' })}
     ${arrow(162, 47, 182, C)}
     ${box(182, 26, 120, 42, C)}${t(242, 41, l('ASSET = WHAT WAS SOLD', 'ASSET = WAS VERKAUFT'), { fill: C, size: 7, anchor: 'middle' })}${t(242, 55, l('quantity · price · term', 'Menge · Preis · Laufzeit'), { size: 7, anchor: 'middle' })}
-    <path d="M220 68V88" stroke="${G}" stroke-width="1.2"/><path d="M270 68V88" stroke="${G}" stroke-dasharray="4 3" stroke-width="1.2"/>
-    ${box(150, 88, 92, 46)}${t(196, 102, 'BILLING', { fill: D, size: 7.5, anchor: 'middle' })}${t(196, 115, l('schedules', 'Schedules'), { size: 7, anchor: 'middle' })}${t(196, 127, l('quarterly, in advance', 'quartalsweise, voraus'), { size: 7, anchor: 'middle' })}
-    ${box(248, 88, 60, 46)}${t(278, 102, 'FIELD', { fill: D, size: 7.5, anchor: 'middle' })}${t(278, 115, l('service', 'Service-'), { size: 7, anchor: 'middle' })}${t(278, 127, l('contract', 'vertrag'), { size: 7, anchor: 'middle' })}
+    <path d="M190 68V88" stroke="${G}" stroke-width="1.2"/><path d="M274 68V88" stroke="${G}" stroke-dasharray="4 3" stroke-width="1.2"/>
+    ${box(146, 88, 88, 46)}${t(190, 102, 'BILLING', { fill: D, size: 7.5, anchor: 'middle' })}${t(190, 115, l('schedules', 'Schedules'), { size: 7, anchor: 'middle' })}${t(190, 127, l('quarterly, in advance', 'quartalsweise, voraus'), { size: 7, anchor: 'middle' })}
+    ${box(240, 88, 68, 46)}${t(274, 102, 'FIELD SERVICE', { fill: D, size: 7, anchor: 'middle' })}${t(274, 115, l('service contract', 'Servicevertrag'), { size: 7, anchor: 'middle' })}${t(274, 127, l('+ entitlement', '+ Entitlement'), { size: 7, anchor: 'middle' })}
     ${t(18, 92, l('every change:', 'jede Änderung:'), { size: 7 })}${t(18, 106, l('upsell, renewal,', 'Erweiterung,'), { size: 7 })}${t(18, 120, l('cancellation', 'Verlängerung, Kündigung'), { size: 7 })}
     ${check(18, 132)}${t(32, 139, l('= quote + order', '= Angebot + Auftrag'), { fill: C, size: 7 })}
-    ${t(278, 150, l('own flow', 'eigener Flow'), { size: 7, anchor: 'middle' })}`,
+    ${t(274, 150, l('own flow', 'eigener Flow'), { size: 7, anchor: 'middle' })}`,
 
   'usage-based-pricing-machines-revenue-cloud': (l) => `
     ${t(18, 18, l('PAY-PER-USE: 1 RECORD PER MACHINE AND DAY', 'PAY-PER-USE: 1 DATENSATZ JE MASCHINE UND TAG'), { fill: D, size: 7 })}
@@ -91,7 +246,7 @@ const drawings: Record<string, Drawing> = {
     ${box(106, 30, 70, 44)}${t(141, 48, l('IoT PLATFORM', 'IoT-PLATTFORM'), { fill: D, size: 7.5, anchor: 'middle' })}${t(141, 62, l('time series', 'Zeitreihen'), { size: 7, anchor: 'middle' })}
     ${arrow(176, 52, 198, C)}
     ${box(198, 30, 104, 44, C)}${t(250, 48, 'REVENUE CLOUD', { fill: C, size: 7.5, anchor: 'middle' })}${t(250, 62, 'Usage Management', { size: 7, anchor: 'middle' })}
-    ${[l('serial no.', 'Seriennr.'), l('counter reset', 'Zählertausch'), l('gaps', 'Lücken'), l('duplicates', 'Dubletten')].map((s, i) => check(110, 84 + i * 13, G) + t(122, 90 + i * 13, s, { size: 7 })).join('')}
+    ${[l('serial no.', 'Seriennr.'), l('counter reset', 'Zählertausch'), l('gaps', 'Lücken'), l('duplicates', 'Dubletten')].map((s, i) => check(110, 80 + i * 12, G) + t(122, 86 + i * 12, s, { size: 7 })).join('')}
     ${[l('grant 300 h', 'Kontingent 300 h'), l('rate card', 'Rate Card'), l('liable summary', 'Liable Summary')].map((s, i) => dot(206, 88 + i * 14, i === 2 ? C : G, 3) + t(214, 91 + i * 14, s, { fill: i === 2 ? C : G, size: 7 })).join('')}
     ${tag(18, 132, 140, l('1 Billing Event per $50', '1 Billing Event je 50 $'))}${t(168, 145, l('invoice subtotal', 'Rechnungszwischensumme'), { size: 7 })}`,
 
@@ -120,7 +275,7 @@ const drawings: Record<string, Drawing> = {
     ${tag(196, 122, 106, l('works council § 87', 'Betriebsrat § 87'))}`,
 
   'manufacturing-cloud-program-based-business': (l) => `
-    ${[[l('PROGRAMME', 'PROGRAMM'), l('CSV import, market data', 'CSV-Import, Marktdaten')], ['VARIANT', l('CSV import, adjusted monthly', 'CSV-Import, monatlich angepasst')], [l('COMPONENT', 'KOMPONENTE'), '']]
+    ${[[l('PROGRAMME', 'PROGRAMM'), l('CSV import, market data', 'CSV-Import, Marktdaten')], [l('VARIANT', 'VARIANTE'), l('CSV import, adjusted monthly', 'CSV-Import, monatlich angepasst')], [l('COMPONENT', 'KOMPONENTE'), '']]
       .map(([h, s], i) => box(18, 18 + i * 34, 96, 24) + t(66, 33.5 + i * 34, String(h), { fill: D, size: 7.5, anchor: 'middle' })
         + (i < 2 ? `<path d="M66 ${42 + i * 34}V${52 + i * 34}" stroke="${G}" stroke-width="1.2"/>` + t(124, 33.5 + i * 34, String(s), { size: 7 }) : '')).join('')}
     ${arrow(114, 98, 150, C)}
@@ -251,7 +406,7 @@ const drawings: Record<string, Drawing> = {
     ${t(18, 18, l('ONE LICENCE, ONE SWITCH PER FEATURE', 'EINE LIZENZ, EIN SCHALTER PRO FUNKTION'), { fill: D, size: 7 })}
     ${[
       { h: l('SALES', 'VERTRIEB'), items: ['Sales Agreements', l('Adv. forecasting', 'Adv. Forecasting'), l('Programs', 'Programme'), 'Targets'] },
-      { h: 'SERVICE', items: [l('Warranty', 'Garantie'), l('Service campaigns', 'Servicekampagnen'), 'Asset console', 'Prework'] },
+      { h: 'SERVICE', items: [l('Warranty', 'Garantie'), l('Service campaigns', 'Kampagnen'), 'Asset console', 'Prework'] },
       { h: l('CHANNEL', 'KANAL'), items: ['Rebates', 'Partner leads', l('Partner visits', 'Partnerbesuche'), 'Ship and debit'] },
     ].map((col, c) => box(18 + c * 98, 28, 88, 92) + t(26 + c * 98, 42, col.h, { fill: D, size: 7 })
       + col.items.map((s, r) => {

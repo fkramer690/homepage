@@ -9,7 +9,7 @@ topic: revenue
 categories: [revenue-cloud]
 tags: [Revenue Cloud, Pay-per-Use, Usage Management, Abrechnung, IoT, Maschinenbau]
 takeaways:
-  - "Revenue Cloud Usage Management kann Maschinenstunden oder Stückzahlen mit Kontingenten, Rate Cards und Wallets bewerten und übergibt eine Liable Summary an die Abrechnung; die Beispiele von Salesforce stammen aus Cloud-Speicher und Mobilfunk."
+  - "Revenue Cloud Usage Management bewertet Maschinenstunden oder Stückzahlen mit Kontingenten, Rate Cards und Wallets und übergibt eine Liable Summary an die Abrechnung."
   - "Die eigentliche Arbeit bei Pay-per-Use liegt außerhalb von Salesforce: ein verlässlicher Zähler je Maschine aus der IoT-Plattform, der Seriennummer zugeordnet und vor dem Rating geprüft."
   - "Schicken Sie einen Nutzungsdatensatz je Maschine und Tag nach Salesforce, nie Rohdaten der Sensoren; Zeitreihen bleiben in der IoT-Plattform oder im Historian."
   - "Der Vertrag muss festlegen, was als Nutzung zählt, welcher Zähler gilt, wie Datenlücken behandelt werden und wie hoch die Mindestgebühr ist, bevor jemand eine Rate Card anlegt."

@@ -61,7 +61,7 @@ Welche Kombinationen erlaubt sind, entscheidet der Konfigurator, nicht der Katal
 
 ## Welche Daten kommen aus dem ERP und welche gibt es nur in Salesforce?
 
-Den Materialstamm zu kopieren ist der häufigste Fehler, den ich in Katalogentwürfen sehe. Salesforce braucht die verkaufsfähigen Produkte, keine Werksdaten, Einkaufsdaten oder Stücklisten. Eine Stückliste beschreibt, wie eine Maschine gebaut wird. Das Bundle beschreibt, wie sie verkauft wird. Beides sieht ähnlich aus und wird von unterschiedlichen Leuten gepflegt.
+Den Materialstamm zu kopieren ist der erste Fehler, den ich in einem Katalogentwurf vermeiden würde. Salesforce braucht die verkaufsfähigen Produkte, keine Werksdaten, Einkaufsdaten oder Stücklisten. Eine Stückliste beschreibt, wie eine Maschine gebaut wird. Das Bundle beschreibt, wie sie verkauft wird. Beides sieht ähnlich aus und wird von unterschiedlichen Leuten gepflegt.
 
 | Daten | Führendes System | Hinweis |
 |---|---|---|
@@ -74,7 +74,7 @@ Den Materialstamm zu kopieren ist der häufigste Fehler, den ich in Katalogentw�
 | Verkaufsmodell | Salesforce | Einmalig, feste Laufzeit oder unbefristet |
 | Stückliste | ERP oder PLM | Nicht in Salesforce |
 
-Die fünfte Zeile braucht Sorgfalt. Hat das Attribut "Steuerung" in Salesforce den Wert "S2", muss derselbe Wert in SAP als Merkmalswert existieren, sonst scheitert der Auftrag bei der Übergabe. Ich führe pro Attribut eine Zuordnungstabelle und lasse die Schnittstelle sie prüfen. Wer welches Objekt in der Org verantwortet, legt eine [Object Ownership Matrix](../object-ownership-matrix-salesforce/) fest. Wie die Preise dann aus dem Preisbuch kommen, steht in [Salesforce Pricing: Wie Revenue Cloud Preise berechnet](../revenue-cloud-preisprozeduren/).
+Die fünfte Zeile braucht Sorgfalt. Hat das Attribut "Steuerung" in Salesforce den Wert "S2", muss derselbe Wert in SAP als Merkmalswert existieren, sonst scheitert der Auftrag bei der Übergabe. Ich würde pro Attribut eine Zuordnungstabelle führen und sie von der Schnittstelle prüfen lassen. Wer welches Objekt in der Org verantwortet, legt eine [Object Ownership Matrix](../object-ownership-matrix-salesforce/) fest. Wie die Preise dann aus dem Preisbuch kommen, steht in [Salesforce Pricing: Wie Revenue Cloud Preise berechnet](../revenue-cloud-preisprozeduren/).
 
 ## Brauchen Ersatzteile und Services eigene Kataloge?
 

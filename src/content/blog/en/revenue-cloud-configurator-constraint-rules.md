@@ -52,7 +52,7 @@ Trailhead compares the two approaches in a table, which I summarise:
 
 For a machine builder the line is fairly clear. A pump with five options and three exclusions works fine with configuration rules. A machine where frame size, drive power, voltage, control and safety category depend on each other quickly needs dozens of if-then rules that contradict each other after the next product change. That is where the constraint engine pays off.
 
-The Developer Guide shows a fitting example with a generator set: a table constraint lists the valid combinations of voltage and duty rating, and an invalid pair produces the message "Selected Voltage is not compatible with the required Duty Rating". Such compatibility tables are what application engineers in manufacturing keep in spreadsheets.
+The Developer Guide shows a fitting example with a generator set: a table constraint lists the valid combinations of voltage and duty rating, and an invalid pair produces the message "Selected Voltage is not compatible with the required Duty Rating". Application engineers in manufacturing often keep exactly such compatibility tables in spreadsheets.
 
 ## What is CML, and who writes it?
 

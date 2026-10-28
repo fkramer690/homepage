@@ -52,7 +52,7 @@ Trailhead vergleicht beide Ansätze in einer Tabelle, die ich hier zusammenfasse
 
 Für einen Maschinenbauer ist die Grenze recht klar. Eine Pumpe mit fünf Optionen und drei Ausschlüssen funktioniert gut mit Konfigurationsregeln. Eine Maschine, bei der Rahmengröße, Antriebsleistung, Spannung, Steuerung und Sicherheitskategorie voneinander abhängen, braucht schnell Dutzende Wenn-dann-Regeln, die sich nach der nächsten Produktänderung widersprechen. Dort lohnt sich die Constraint Engine.
 
-Der Developer Guide zeigt ein passendes Beispiel mit einem Stromaggregat: Ein Tabellen-Constraint listet die gültigen Kombinationen aus Spannung und Betriebsart, und ein ungültiges Paar erzeugt die Meldung "Selected Voltage is not compatible with the required Duty Rating". Genau solche Verträglichkeitstabellen pflegen Anwendungstechniker in der Fertigung in Excel.
+Der Developer Guide zeigt ein passendes Beispiel mit einem Stromaggregat: Ein Tabellen-Constraint listet die gültigen Kombinationen aus Spannung und Betriebsart, und ein ungültiges Paar erzeugt die Meldung "Selected Voltage is not compatible with the required Duty Rating". Genau solche Verträglichkeitstabellen pflegen Anwendungstechniker in der Fertigung oft in Excel.
 
 ## Was ist CML, und wer schreibt es?
 
