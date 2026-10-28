@@ -6,6 +6,7 @@ slug: angebot-vertrag-auftrag
 course: revenue-cloud
 translationKey: revenue-03
 chapter: 3
+pubDate: 2026-10-28
 short: "Angebot, Vertrag, Auftrag"
 summary: "Freigaben, Angebotsagent, Salesforce Contracts, Auftragsorchestrierung und Assets: der Weg vom Angebot bis zur Übergabe an SAP."
 takeaways:

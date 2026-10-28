@@ -30,7 +30,7 @@ From 1 January 2027, German companies with more than €800,000 turnover in 2026
 
 ## What does the German e-invoicing duty require?
 
-The rules come from the German VAT Act and three letters from the Federal Ministry of Finance, dated 15 October 2024, 2025 and 2026. The [IHK Köln](https://www.ihk.de/koeln/hauptnavigation/recht-steuern/recht/e-rechnungen-5943094) and the [IHK Stuttgart](https://www.ihk.de/stuttgart/fuer-unternehmen/recht-und-steuern/steuerrecht/steuermeldungen/e-rechnungen-5864496) summarise them. The timeline:
+The rules come from the German VAT Act and letters from the Federal Ministry of Finance. The [IHK Köln](https://www.ihk.de/koeln/hauptnavigation/recht-steuern/recht/e-rechnungen-5943094) and the [IHK Stuttgart](https://www.ihk.de/stuttgart/fuer-unternehmen/recht-und-steuern/steuerrecht/steuermeldungen/e-rechnungen-5864496) summarise them. The timeline:
 
 | From | What applies to domestic B2B invoices |
 |---|---|
@@ -74,7 +74,7 @@ I see three routes, and the right one depends on where your invoices come from t
 
 ## A typical scenario, as an assumption
 
-A typical scenario, as an assumption: a machine builder with €60 million turnover invoices machines and spare parts from SAP, which already issues e-invoices. From mid-2027 it plans to invoice remote monitoring subscriptions from Revenue Cloud Billing.
+A machine builder with €60 million turnover invoices machines and spare parts from SAP, which already issues e-invoices. From mid-2027 it plans to invoice remote monitoring subscriptions from Revenue Cloud Billing.
 
 The duty already applies when the first Billing invoice goes out, so there is no transition period for the new process. I would not start Billing invoices with PDFs and fix the format later. Either the subscription invoices run through SAP in the first year, or Billing is connected to the e-invoicing service that SAP's invoices already use. Which of the two depends on how often subscriptions change, as described in [who owns what in quote to cash](../revenue-cloud-sap-quote-to-cash-ownership/).
 

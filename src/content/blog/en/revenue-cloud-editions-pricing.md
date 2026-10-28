@@ -42,7 +42,7 @@ The [Revenue Cloud pricing page](https://www.salesforce.com/eu/sales/revenue-lif
 
 Three details from the same page matter for the budget:
 
-- **Sales Cloud is the prerequisite.** The FAQ says Revenue Cloud is a paid add-on bought in addition to a standard Sales Cloud subscription. With Sales Cloud Core at €195 per user and month according to the [Sales Cloud pricing page](https://www.salesforce.com/eu/sales/pricing/), a quoting user on Core and Advanced costs €395 a month at list price.
+- **Sales Cloud comes on top.** The FAQ says Revenue Cloud is a paid add-on bought in addition to a standard Sales Cloud subscription. With Sales Cloud Core at €195 per user and month according to the [Sales Cloud pricing page](https://www.salesforce.com/eu/sales/pricing/), a quoting user on Core and Advanced costs €395 a month at list price.
 - **Annual contract.** The page states that the edition requires an annual contract.
 - **Information only.** The prices are given "for information purposes only and subject to change". The quote decides.
 

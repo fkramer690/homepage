@@ -67,7 +67,7 @@ Some parts move only with care. From the Developer Guide and Gearset:
 - **Configurator rules.** Per the [configurator notes](https://developer.salesforce.com/docs/revenue/revenue-management/guide/deployment-product-configurator-additional-info.html), rules in active status cannot be updated, and the target constraint model must be deactivated before an update. The rule content references product IDs, so Salesforce points to an npm package, `rev-config-rule-migrator`, for migrating rules.
 - **After every deployment.** The [post-deployment steps](https://developer.salesforce.com/docs/revenue/revenue-management/guide/post-deployment-steps.html) are: refresh decision tables, sync pricing data, rebuild the product index, create manually what the API could not deploy, and set up test users.
 
-The release point is the one that catches teams out. During the Salesforce preview window, sandboxes run the new release weeks before production. A context definition built in a preview sandbox then cannot go to production until production has the same release. Which sandbox runs which release is part of the [environments and branching](../../masterclass/devops-release-management/environments-and-branching/) plan.
+The release point is the easiest one to miss. During the Salesforce preview window, sandboxes run the new release weeks before production. A context definition built in a preview sandbox then cannot go to production until production has the same release. Which sandbox runs which release is part of the [environments and branching](../../masterclass/devops-release-management/environments-and-branching/) plan.
 
 ## How do records find each other across orgs?
 

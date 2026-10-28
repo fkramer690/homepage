@@ -6,6 +6,7 @@ slug: abrechnung-und-nutzungsbasierte-preise
 course: revenue-cloud
 translationKey: revenue-04
 chapter: 4
+pubDate: 2026-10-28
 short: "Abrechnung und Nutzung"
 summary: "Wann Rechnungen aus Revenue Cloud Billing kommen sollten, was Billing kostet, was die E-Rechnung verlangt und wie Pay-per-Use funktioniert."
 takeaways:
@@ -74,7 +75,7 @@ Für Revenue Cloud selbst gibt es Listenpreise. Die [Preisseite](https://www.sal
 
 Billing wird nach Rechnungsvolumen abgerechnet, nicht nach Benutzern. Das [Rate Sheet vom Februar 2026](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/documents/pricing/revenue-cloud-billing-rate-sheet-feb-2026.pdf) setzt 0,02 Billing Events je Dollar Rechnungssumme an, also ein Event je 50 Dollar. Gezählt wird die Zwischensumme gebuchter Rechnungen, mit Versandkosten und ohne Steuern. Andere Währungen werden zum Tagesdurchschnittskurs in Dollar umgerechnet. Die Events müssen bis zum Vertragsende verbraucht sein, nichts wird übertragen. Einen Preis je Event veröffentlicht Salesforce nicht.
 
-Ein typisches Szenario, als Annahme: Ein Maschinenbauer fakturiert 12 Millionen Euro im Jahr an Abonnements und Wartungspauschalen aus Billing. Bei angenommenen 1,15 Dollar je Euro sind das 13,8 Millionen Dollar oder 276.000 Billing Events im Jahr. Laufen zusätzlich 120 Millionen Euro Maschinenrechnungen über Billing, steigt die Zahl auf das Elffache, für Rechnungen, die SAP ohnehin erstellt. Der Umfang bestimmt die Kosten stärker als jede Verhandlung.
+Ein typisches Szenario, als Annahme: Ein Maschinenbauer fakturiert 18 Millionen Euro im Jahr an Abonnements und Wartungspauschalen aus Billing, ohne Steuer. Bei angenommenen 1,15 Dollar je Euro sind das 20,7 Millionen Dollar oder 414.000 Billing Events im Jahr. Laufen zusätzlich 120 Millionen Euro Maschinenrechnungen über Billing, steigt die Zahl auf mehr als das Siebenfache, für Rechnungen, die SAP ohnehin erstellt. Der Umfang bestimmt die Kosten stärker als jede Verhandlung.
 
 Was ins Order Form gehört, wie Rundung und Gutschriften zählen könnten und wie Sie das Kontingent über die Laufzeit staffeln, steht in [Revenue Cloud Billing: Kosten](../../../blog/revenue-cloud-billing-kosten/). Solche Lizenzprognosen gehören zu meiner Arbeit an [Make-or-Buy und Lizenzen](../../../leistungen/make-or-buy-lizenzen/).
 

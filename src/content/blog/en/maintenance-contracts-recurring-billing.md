@@ -76,7 +76,7 @@ One record has to be the master for the commercial contract, otherwise sales, se
 - **Service contract in Field Service:** which machines are covered and which service level applies. Created and updated from the Revenue Cloud asset, never edited by hand for commercial changes.
 - **Machine asset:** serial number, location, installed base. Owned by service and usually fed from the ERP.
 
-Write this down per object, as in an [object ownership matrix](../salesforce-object-ownership-matrix/). The point that fails most often is the third case: a machine is replaced under contract, service swaps the asset on the contract line item, and nobody checks whether the price changes.
+Write this down per object, as in an [object ownership matrix](../salesforce-object-ownership-matrix/). The weak point is the third case: a machine is replaced under contract, service swaps the asset on the contract line item, and nobody checks whether the price changes.
 
 ## A typical scenario, as an assumption
 

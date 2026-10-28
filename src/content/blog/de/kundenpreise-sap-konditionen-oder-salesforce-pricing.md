@@ -82,7 +82,7 @@ Der B2B-Shop muss denselben Preis zeigen wie das Angebot. Wie Preisbücher und e
 
 ## Ein typisches Szenario, als Annahme
 
-Ein typisches Szenario, als Annahme: Ein Hersteller von Förderanlagen verkauft Maschinen über den Direktvertrieb und Ersatzteile über 200 Händler. SAP hält Listenpreise je Land, Händlerrabatte je Materialgruppe und Kundenpreise für 30 Großkunden. Maschinenangebote haben 20 bis 80 Positionen und werden in der Konfiguration oft neu berechnet. Händler bestellen Ersatzteile außerdem per EDI.
+Ein Hersteller von Förderanlagen verkauft Maschinen über den Direktvertrieb und Ersatzteile über 200 Händler. SAP hält Listenpreise je Land, Händlerrabatte je Materialgruppe und Kundenpreise für 30 Großkunden. Maschinenangebote haben 20 bis 80 Positionen und werden in der Konfiguration oft neu berechnet. Händler bestellen Ersatzteile außerdem per EDI.
 
 Ich würde nach Preisart trennen. Für Maschinen Weg C: Listenpreise jede Nacht aus SAP, Rabatte und Freigaben in Revenue Cloud, und SAP übernimmt den Auftragspreis als festen Preis. Für Ersatzteile Weg A: Händlerrabatte und Großkundenpreise bleiben in SAP, weil sie auch für EDI-Aufträge gelten, und Salesforce fragt SAP nach dem Nettopreis, wenn das Angebot vor dem Versand geprüft wird. Ein führendes System je Preisart, festgehalten in der [Object Ownership Matrix](../object-ownership-matrix-salesforce/).
 

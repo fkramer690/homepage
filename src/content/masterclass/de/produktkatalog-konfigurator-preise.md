@@ -6,6 +6,7 @@ slug: produktkatalog-konfigurator-preise
 course: revenue-cloud
 translationKey: revenue-02
 chapter: 2
+pubDate: 2026-10-28
 short: "Katalog, Konfigurator, Preise"
 summary: "Wie Produktkatalog, Constraint-Konfigurator und Salesforce Pricing zusammenspielen und welcher Preis aus SAP kommen sollte."
 takeaways:
@@ -88,7 +89,7 @@ Salesforce Pricing hat laut [Trailhead-Einheit zur Preisfindung](https://trailhe
 
 Eine typische Abfolge bei einem Hersteller: Listenpreis (oder Vertragspreis), Attributrabatt, Mengenrabatt, manueller Rabatt und ein Aggregat pro Produktfamilie. Die Reihenfolge ist Geschäftslogik. Ob der manuelle Rabatt vor oder nach dem Mengenrabatt greift, ändert den Nettopreis. Das entscheiden Vertriebsleitung und Controlling, nicht die Person, die die Prozedur baut. Das Ergebnis ist ein Preiswasserfall, der jeden Schritt vom Listenpreis zum Nettopreis zeigt, in der Simulation und an der Angebotsposition.
 
-Ein Detail überrascht die meisten Teams in den ersten Wochen. Ändert sich ein Preisbucheintrag oder eine Staffel, rechnet das Angebot weiter mit dem alten Wert, bis Sync Pricing Data die Decision Tables aktualisiert hat. Lädt SAP die Listenpreise jede Nacht, gehört der Sync in denselben Job. Die [Salesforce Pricing Business APIs](https://developer.salesforce.com/docs/atlas.en-us.revenue_lifecycle_management_dev_guide.meta/revenue_lifecycle_management_dev_guide/pricing_business_apis.htm) bieten außerdem Headless Pricing, das einen Kontext anlegt und in einem Aufruf bepreist. So fragen Portal, Shop oder Agent denselben Preis ab, ohne ein Angebot anzulegen. Wie der B2B-Shop das macht, steht im B2B-Commerce-Kapitel [Preise, Warenkorb und Checkout](../../b2b-commerce/preise-warenkorb-checkout/). Die Elemente, den Sync und die Tests erklärt [Salesforce Pricing: Wie Revenue Cloud Preise berechnet](../../../blog/revenue-cloud-preisprozeduren/).
+Ein Detail wird in den ersten Wochen leicht übersehen. Ändert sich ein Preisbucheintrag oder eine Staffel, rechnet das Angebot weiter mit dem alten Wert, bis Sync Pricing Data die Decision Tables aktualisiert hat. Lädt SAP die Listenpreise jede Nacht, gehört der Sync in denselben Job. Die [Salesforce Pricing Business APIs](https://developer.salesforce.com/docs/atlas.en-us.revenue_lifecycle_management_dev_guide.meta/revenue_lifecycle_management_dev_guide/pricing_business_apis.htm) bieten außerdem Headless Pricing, das einen Kontext anlegt und in einem Aufruf bepreist. So fragen Portal, Shop oder Agent denselben Preis ab, ohne ein Angebot anzulegen. Wie der B2B-Shop das macht, steht im B2B-Commerce-Kapitel [Preise, Warenkorb und Checkout](../../b2b-commerce/preise-warenkorb-checkout/). Die Elemente, den Sync und die Tests erklärt [Salesforce Pricing: Wie Revenue Cloud Preise berechnet](../../../blog/revenue-cloud-preisprozeduren/).
 
 ## Welche Preise sollten aus SAP kommen?
 
@@ -122,7 +123,7 @@ Wie Konfigurationsdaten durch eine Pipeline wandern, behandelt das DevOps-Kapite
 
 ## Ein typisches Szenario, als Annahme
 
-Ein typisches Szenario, als Annahme: Ein Hersteller von Verpackungsmaschinen verkauft 30 Grundmaschinen in drei Familien über den Direktvertrieb und Ersatzteile über Händler. Zwei Familien haben ihre Verträglichkeitsregeln in Tabellen der Anwendungstechnik, die dritte nutzt die SAP-Variantenkonfiguration.
+Ein Hersteller von Verpackungsmaschinen verkauft 30 Grundmaschinen in drei Familien über den Direktvertrieb und Ersatzteile über Händler. Zwei Familien haben ihre Verträglichkeitsregeln in Tabellen der Anwendungstechnik, die dritte nutzt die SAP-Variantenkonfiguration.
 
 Drei Klassifizierungen mit je etwa einem Dutzend Attributen, 30 Grundmaschinen, konfigurierbare Bundles für Werkzeuge und Sicherheitspakete, ein eigener Ersatzteilkatalog, der aus SAP geladen wird. Constraint-Modelle für die beiden Tabellenfamilien, mit Verträglichkeitstabellen aus einem eigenen Objekt und Regressionsfällen pro Familie. Die SAP-Familie behält vorerst ihren Konfigurator, Salesforce übernimmt das Ergebnis über eine Schnittstelle. Maschinenpreise laufen über Weg C, mit Listenpreisen aus SAP jede Nacht und dem Sync direkt nach dem Laden. Händlerpreise für Ersatzteile laufen über Weg A. Das Produktmanagement verantwortet Katalog und Constraint-Modelle, eine Pricing-Administration in Sales Operations die Prozeduren, und das Controlling gibt jede Preisänderung frei.
 

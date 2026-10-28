@@ -42,7 +42,7 @@ Die [Preisseite von Revenue Cloud](https://www.salesforce.com/eu/sales/revenue-l
 
 Drei Details derselben Seite sind für das Budget wichtig:
 
-- **Sales Cloud ist Voraussetzung.** Die FAQ sagt, dass Revenue Cloud ein kostenpflichtiges Zusatzprodukt ist, das zusätzlich zu einem Sales-Cloud-Abonnement gekauft wird. Mit Sales Cloud Core zu 195 Euro pro Nutzer und Monat laut [Sales-Cloud-Preisseite](https://www.salesforce.com/eu/sales/pricing/) kostet ein Angebotsnutzer mit Core und Advanced zum Listenpreis 395 Euro im Monat.
+- **Sales Cloud kommt hinzu.** Die FAQ sagt, dass Revenue Cloud ein kostenpflichtiges Zusatzprodukt ist, das zusätzlich zu einem Sales-Cloud-Abonnement gekauft wird. Mit Sales Cloud Core zu 195 Euro pro Nutzer und Monat laut [Sales-Cloud-Preisseite](https://www.salesforce.com/eu/sales/pricing/) kostet ein Angebotsnutzer mit Core und Advanced zum Listenpreis 395 Euro im Monat.
 - **Jahresvertrag.** Die Seite sagt, dass die Edition einen Jahresvertrag voraussetzt.
 - **Nur zur Information.** Die Preise gelten "for information purposes only and subject to change". Entscheidend ist das Angebot.
 

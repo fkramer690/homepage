@@ -82,7 +82,7 @@ The B2B store must show the same price as the quote. How price books and a live 
 
 ## A typical scenario, as an assumption
 
-A typical scenario, as an assumption: a manufacturer of conveyor systems sells machines through direct sales and spare parts through 200 dealers. SAP holds list prices per country, dealer discounts per material group and customer prices for 30 key accounts. Machine quotes have 20 to 80 lines and are recalculated often during configuration. Dealers also order spare parts by EDI.
+A manufacturer of conveyor systems sells machines through direct sales and spare parts through 200 dealers. SAP holds list prices per country, dealer discounts per material group and customer prices for 30 key accounts. Machine quotes have 20 to 80 lines and are recalculated often during configuration. Dealers also order spare parts by EDI.
 
 I would split by price type. For machines, route C: list prices from SAP every night, discounts and approvals in Revenue Cloud, and SAP takes the order price as fixed. For spare parts, route A: dealer discounts and key account prices stay in SAP because they also apply to EDI orders, and Salesforce asks SAP for the net price when the quote is checked before sending. One master per price type, written down in the [object ownership matrix](../salesforce-object-ownership-matrix/).
 

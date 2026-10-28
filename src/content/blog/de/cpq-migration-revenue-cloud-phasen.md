@@ -38,7 +38,7 @@ Was das für die Migration heißt, Baustein für Baustein:
 |---|---|---|---|
 | Datenmodell | Paketobjekte, etwa `SBQQ__Quote__c` | Standardobjekte wie Quote, Order, Asset | Jedes Feld, jeder Flow, jede Schnittstelle wird neu zugeordnet |
 | Produkte | Produkte mit Optionen und Features | Katalog, Klassifizierungen, Attribute, Bundles | Katalog neu entwerfen, nicht kopieren |
-| Konfigurationsregeln | Product Rules | Constraint- und Auswahlregeln | Regeln neu schreiben |
+| Konfigurationsregeln | Produktregeln | Konfigurationsregeln und Constraint Rules Engine mit CML | Regeln neu modellieren |
 | Preisfindung | Price Rules, [JavaScript Quote Calculator Plugin](https://developer.salesforce.com/docs/revenue/cpq-plugins/guide/cpq-dev-jsqcp-parent.html) | Pricing Procedures, Decision Tables | Logik neu bauen und mit echten Angeboten testen |
 | Vertragsgeschäft | CPQ-Subscriptions | Assets mit Zustandsperioden | Für jedes offene Abo ein Asset anlegen |
 | Abrechnung | Paket `blng` | Revenue Cloud Billing auf Standardobjekten | Eigener Cutover, siehe unten |

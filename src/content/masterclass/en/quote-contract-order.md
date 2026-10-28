@@ -6,6 +6,7 @@ slug: quote-contract-order
 course: revenue-cloud
 translationKey: revenue-03
 chapter: 3
+pubDate: 2026-10-28
 short: "Quote, contract, order"
 summary: "Approvals, the quoting agent, Salesforce Contracts, order orchestration and assets: the path from quote to the hand-over to SAP."
 takeaways:

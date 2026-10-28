@@ -6,6 +6,7 @@ slug: billing-and-usage-based-pricing
 course: revenue-cloud
 translationKey: revenue-04
 chapter: 4
+pubDate: 2026-10-28
 short: "Billing and usage"
 summary: "When invoices should come from Revenue Cloud Billing, what Billing costs, what e-invoicing requires and how pay-per-use works."
 takeaways:
@@ -74,7 +75,7 @@ Revenue Cloud itself has list prices. The [EU pricing page](https://www.salesfor
 
 Billing is charged by invoice volume, not by user. The [rate sheet of February 2026](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/documents/pricing/revenue-cloud-billing-rate-sheet-feb-2026.pdf) sets 0.02 billing events per dollar of total invoice amount, so one event per $50. The amount is the subtotal of posted invoices, with shipping and without tax. Other currencies are converted to US dollars at the average rate of the day. Events must be used before the order end date, and nothing rolls over. Salesforce does not publish a price per event.
 
-A typical scenario, as an assumption: a machine builder invoices €12 million a year of subscriptions and maintenance fees from Billing. At an assumed 1.15 dollars per euro that is $13.8 million, or 276,000 billing events a year. Put €120 million of machine invoices through Billing as well and the count grows elevenfold, for invoices SAP creates anyway. Scope drives the cost more than anything you negotiate.
+A typical scenario, as an assumption: a machine builder invoices €18 million a year of subscriptions and maintenance fees from Billing, without tax. At an assumed 1.15 dollars per euro that is $20.7 million, or 414,000 billing events a year. Put €120 million of machine invoices through Billing as well and the count grows more than sevenfold, for invoices SAP creates anyway. Scope drives the cost more than anything you negotiate.
 
 What to settle on the order form, how rounding and credit memos might count and how to ramp the entitlement over the term is in [Revenue Cloud Billing costs](../../../blog/revenue-cloud-billing-costs/). Licence forecasts like this are part of my [make-or-buy and licence](../../../services/make-or-buy-licences/) work.
 

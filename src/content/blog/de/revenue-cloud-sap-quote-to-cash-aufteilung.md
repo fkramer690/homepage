@@ -91,7 +91,7 @@ Saß die Finanzabteilung bei diesen vier Punkten nicht mit am Tisch, ist Schnitt
 
 ## Ein typisches Szenario, als Annahme
 
-Ein typisches Szenario, als Annahme: Ein Maschinenbauer mit SAP S/4HANA verkauft 40 Grundmaschinen mit Optionen, Ersatzteile und pro Maschine ein Abonnement für Fernüberwachung. Kundenpreise für Ersatzteile sind seit Jahren gepflegte SAP-Konditionen. Maschinenpreise folgen Listenpreisen plus Aufpreisen für Optionen.
+Ein Maschinenbauer mit SAP S/4HANA verkauft 40 Grundmaschinen mit Optionen, Ersatzteile und pro Maschine ein Abonnement für Fernüberwachung. Kundenpreise für Ersatzteile sind seit Jahren gepflegte SAP-Konditionen. Maschinenpreise folgen Listenpreisen plus Aufpreisen für Optionen.
 
 Ich würde Schnitt 2 wählen. Revenue Cloud führt Katalog, Konfiguration und Angebot für Maschinen und Abonnements. Maschinenpreise rechnet Revenue Cloud auf Listenpreisen, die aus SAP synchronisiert werden. Ersatzteile im selben Angebot bekommen ihren Nettopreis per API aus SAP, denn diese Konditionen sollte niemand nachbauen. Der aktivierte Auftrag geht per Callout an SAP, die SAP-Auftragsnummer kommt zurück. Das Abonnement bleibt ein Asset in Salesforce, Verlängerungen und Nachträge beginnen dort. Die Rechnung für Maschine und Abonnement kommt im ersten Jahr aus SAP. Billing in Salesforce wird erst ein Thema, wenn die Abonnements zu einem eigenen Geschäft wachsen.
 

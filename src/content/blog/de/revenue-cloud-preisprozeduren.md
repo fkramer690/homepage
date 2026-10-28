@@ -62,7 +62,7 @@ Eine neue Prozedur beginnt als leere Version V1, jedes hinzugefügte Element wir
 
 ## Warum müssen Decision Tables aktualisiert werden?
 
-Das überrascht Teams in den ersten Wochen am meisten. Ändern Sie einen Preisbucheintrag oder eine Mengenstaffel, rechnet das Angebot weiter mit dem alten Wert, bis die Decision Table aktualisiert ist. Trailhead zeigt zwei Wege: Sync Pricing Data im Salesforce Pricing Setup ausführen oder einzelne Decision Tables im Setup aktualisieren, etwa Volume Discount Entries oder für Vertragspreise Contract Pricing Entries und Contract Pricing Volume Tiers.
+Dieser Schritt wird in den ersten Wochen am leichtesten vergessen. Ändern Sie einen Preisbucheintrag oder eine Mengenstaffel, rechnet das Angebot weiter mit dem alten Wert, bis die Decision Table aktualisiert ist. Trailhead zeigt zwei Wege: Sync Pricing Data im Salesforce Pricing Setup ausführen oder einzelne Decision Tables im Setup aktualisieren, etwa Volume Discount Entries oder für Vertragspreise Contract Pricing Entries und Contract Pricing Volume Tiers.
 
 Kommen bei einem Hersteller die Listenpreise jede Nacht aus SAP, gehört die Aktualisierung in den Ladejob. Der Ladevorgang ist erst fertig, wenn die Decision Tables aktuell sind. Ich würde danach eine Prüfung einbauen, die eine Handvoll Referenzpreise vergleicht, denn eine vergessene Aktualisierung erzeugt keine Fehlermeldung, nur falsche Preise.
 
@@ -96,7 +96,7 @@ Wie Tests und Reviews allgemein in den Release-Prozess gehören, behandelt das K
 
 ## Ein typisches Szenario, als Annahme
 
-Ein typisches Szenario, als Annahme: Ein Pumpenhersteller verkauft 60 Produktfamilien über den eigenen Vertrieb und über Händler. Die Listenpreise kommen jede Nacht aus SAP ins Standardpreisbuch. Händler bekommen einen Mengenrabatt, 20 Großkunden haben Vertragspreise für zwei Jahre, und eine Variante mit einfacher Steuerung ist 8 Prozent günstiger.
+Ein Pumpenhersteller verkauft 60 Produktfamilien über den eigenen Vertrieb und über Händler. Die Listenpreise kommen jede Nacht aus SAP ins Standardpreisbuch. Händler bekommen einen Mengenrabatt, 20 Großkunden haben Vertragspreise für zwei Jahre, und eine Variante mit einfacher Steuerung ist 8 Prozent günstiger.
 
 Die Prozedur enthielte den Listenpreis mit vertragsbasierter Preisfindung, einen Attributrabatt für die Steuerung, den Mengenrabatt, den manuellen Rabatt und ein Aggregat je Produktfamilie. Der Nachtjob lädt die Preise und startet danach den Sync. Der Regressionssatz umfasst 25 Referenzangebote, die jede Produktgruppe, jede Mengenstaffel und mehrere Vertragskunden abdecken. Wünscht der Vertrieb eine Aktion, baut der Pricing-Admin eine neue Version in einer Sandbox, lässt die 25 Fälle laufen, das Controlling prüft die Abweichungen im Preiswasserfall, und erst dann wird die Version in der Produktion aktiviert.
 

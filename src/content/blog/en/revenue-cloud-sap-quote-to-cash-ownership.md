@@ -91,7 +91,7 @@ If finance has not been in the room for these four points, cut 3 is not ready.
 
 ## A typical scenario, as an assumption
 
-A typical scenario, as an assumption: a machine builder with SAP S/4HANA sells 40 base machines with options, spare parts and a remote monitoring subscription per machine. Customer prices for spare parts are SAP conditions maintained for years. Machine prices follow list prices plus option surcharges.
+A machine builder with SAP S/4HANA sells 40 base machines with options, spare parts and a remote monitoring subscription per machine. Customer prices for spare parts are SAP conditions maintained for years. Machine prices follow list prices plus option surcharges.
 
 I would choose cut 2. Revenue Cloud holds catalog, configuration and quote for machines and subscriptions. Machine prices are calculated in Revenue Cloud on list prices synced from SAP. Spare parts on the same quote get their net price from SAP through an API, because nobody should rebuild those conditions. The activated order goes to SAP with a callout, and the SAP order number comes back. The subscription stays an asset in Salesforce, so renewals and amendments start there. The invoice for machine and subscription comes from SAP in year one. Billing in Salesforce becomes a question only if subscriptions grow into a business of their own.
 

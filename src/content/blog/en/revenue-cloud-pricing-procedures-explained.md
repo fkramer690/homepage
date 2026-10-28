@@ -62,7 +62,7 @@ A new procedure starts as an empty version V1, and each element you add becomes 
 
 ## Why do decision tables need a refresh?
 
-This surprises teams most in the first weeks. Change a price book entry or a volume tier, and the quote still calculates with the old value until the decision table has been refreshed. Trailhead shows two ways: run Sync Pricing Data in Salesforce Pricing Setup, or refresh single decision tables in Setup, such as Volume Discount Entries or, for contract prices, Contract Pricing Entries and Contract Pricing Volume Tiers.
+This step is the easiest to forget in the first weeks. Change a price book entry or a volume tier, and the quote still calculates with the old value until the decision table has been refreshed. Trailhead shows two ways: run Sync Pricing Data in Salesforce Pricing Setup, or refresh single decision tables in Setup, such as Volume Discount Entries or, for contract prices, Contract Pricing Entries and Contract Pricing Volume Tiers.
 
 For a manufacturer whose list prices arrive from SAP every night, the refresh belongs into the load job. The load is finished only when the decision tables are current. I would add a check that compares a handful of reference prices after each load, because a forgotten refresh produces no error message, only wrong prices.
 
@@ -96,7 +96,7 @@ How tests and reviews belong in the release process in general is the subject of
 
 ## A typical scenario, as an assumption
 
-A typical scenario, as an assumption: a pump manufacturer sells 60 product families through its own sales force and through dealers. List prices come from SAP into the standard price book every night. Dealers get a volume discount, 20 key accounts have contract prices for two years, and a version with a simpler control unit is 8 percent cheaper.
+A pump manufacturer sells 60 product families through its own sales force and through dealers. List prices come from SAP into the standard price book every night. Dealers get a volume discount, 20 key accounts have contract prices for two years, and a version with a simpler control unit is 8 percent cheaper.
 
 The procedure would contain list price with contract-based pricing, an attribute discount for the control unit, the volume discount, the manual discount and an aggregate per product family. The nightly job loads the prices and then runs the sync. The regression set has 25 reference quotes, covering each product group, each volume tier and several contract customers. When sales asks for a promotion, the pricing admin builds a new version in a sandbox, runs the 25 cases, controlling checks the differences in the waterfall, and only then is the version activated in production.
 

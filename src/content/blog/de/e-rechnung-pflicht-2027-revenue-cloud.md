@@ -30,7 +30,7 @@ Ab 1. Januar 2027 müssen Unternehmen mit mehr als 800.000 Euro Umsatz in 2026 i
 
 ## Was verlangt die E-Rechnungspflicht?
 
-Die Regeln stehen im Umsatzsteuergesetz und in drei Schreiben des Bundesfinanzministeriums vom 15. Oktober 2024, 2025 und 2026. Die [IHK Köln](https://www.ihk.de/koeln/hauptnavigation/recht-steuern/recht/e-rechnungen-5943094) und die [IHK Stuttgart](https://www.ihk.de/stuttgart/fuer-unternehmen/recht-und-steuern/steuerrecht/steuermeldungen/e-rechnungen-5864496) fassen sie zusammen. Der Zeitplan:
+Die Regeln stehen im Umsatzsteuergesetz und in Schreiben des Bundesfinanzministeriums. Die [IHK Köln](https://www.ihk.de/koeln/hauptnavigation/recht-steuern/recht/e-rechnungen-5943094) und die [IHK Stuttgart](https://www.ihk.de/stuttgart/fuer-unternehmen/recht-und-steuern/steuerrecht/steuermeldungen/e-rechnungen-5864496) fassen sie zusammen. Der Zeitplan:
 
 | Ab | Was für inländische B2B-Rechnungen gilt |
 |---|---|
@@ -74,7 +74,7 @@ Ich sehe drei Wege, und welcher passt, hängt davon ab, woher Ihre Rechnungen he
 
 ## Ein typisches Szenario, als Annahme
 
-Ein typisches Szenario, als Annahme: Ein Maschinenbauer mit 60 Millionen Euro Umsatz fakturiert Maschinen und Ersatzteile aus SAP, das bereits E-Rechnungen ausstellt. Ab Mitte 2027 will er Fernüberwachungs-Abos aus Revenue Cloud Billing fakturieren.
+Ein Maschinenbauer mit 60 Millionen Euro Umsatz fakturiert Maschinen und Ersatzteile aus SAP, das bereits E-Rechnungen ausstellt. Ab Mitte 2027 will er Fernüberwachungs-Abos aus Revenue Cloud Billing fakturieren.
 
 Die Pflicht gilt schon, wenn die erste Billing-Rechnung rausgeht, für den neuen Prozess gibt es also keine Übergangszeit. Ich würde Billing-Rechnungen nicht als PDF starten und das Format später nachziehen. Entweder laufen die Abo-Rechnungen im ersten Jahr über SAP, oder Billing wird an den E-Rechnungsdienst angebunden, den die SAP-Rechnungen schon nutzen. Was davon passt, hängt davon ab, wie oft sich Abos ändern, beschrieben in [Wer führt was im Quote-to-Cash?](../revenue-cloud-sap-quote-to-cash-aufteilung/).
 

@@ -26,11 +26,11 @@ faq:
 draft: false
 ---
 
-Der Angebotsagent in Revenue Cloud macht aus einer Anfrage in normaler Sprache ein Angebot: Er wählt gültige Produkte aus dem Katalog, berechnet die Preise mit Salesforce Pricing, setzt Rabatte innerhalb der Leitplanken und kann Angebote ändern, zusammenfassen und per E-Mail versenden. Für einen Vertriebsinnendienst mit Standardprodukten und sauberen Preisdaten spart das echte Zeit. Vor dem Go-live brauchen Sie einen gepflegten Katalog, synchronisierte Preise, Konfigurationsregeln in Salesforce und Rabattgrenzen, die Freigaben durchsetzen. Bei konfigurierten Maschinen, deren Regeln außerhalb von Salesforce liegen, hilft der Agent noch nicht.
+Der Angebotsagent in Revenue Cloud macht aus einer Anfrage in normaler Sprache ein Angebot: Er wählt gültige Produkte aus dem Katalog, berechnet die Preise mit Salesforce Pricing, setzt Rabatte innerhalb der Leitplanken und kann Angebote ändern und zusammenfassen. Für einen Vertriebsinnendienst mit Standardprodukten und sauberen Preisdaten spart das echte Zeit. Vor dem Go-live brauchen Sie einen gepflegten Katalog, synchronisierte Preise, Konfigurationsregeln in Salesforce und Rabattgrenzen, die Freigaben durchsetzen. Bei konfigurierten Maschinen, deren Regeln außerhalb von Salesforce liegen, hilft der Agent noch nicht.
 
 ## Was kann der Angebotsagent in Revenue Cloud?
 
-Salesforce hat Angebote per Agent für Revenue Cloud im Juli 2025 vorgestellt. In der [Ankündigung](https://www.salesforce.com/news/stories/agentforce-for-revenue-announcement/) beschreibt der Vertrieb, was er braucht, und der Agent erzeugt das Angebot, "automatically pulling the correct products, pricing, and terms". Die Schlagzeilenzahlen stammen aus dem eigenen Vertrieb von Salesforce: 75 Prozent weniger Zeit für Angebote und 87 Prozent weniger Klicks. Das ist eine Herstellerangabe aus einem Unternehmen mit sehr standardisiertem Katalog. In den Business Case eines Maschinenbauers würde ich sie nicht schreiben.
+Salesforce hat Angebote per Agent für Revenue Cloud im Juli 2025 vorgestellt. In der [Ankündigung](https://www.salesforce.com/news/stories/agentforce-for-revenue-announcement/) beschreibt der Vertrieb, was er braucht, und der Agent erzeugt das Angebot, "automatically pulling the correct products, pricing, and terms". Die Schlagzeilenzahlen stammen aus dem eigenen Vertrieb von Salesforce: 75 Prozent weniger Zeit für Angebote und 87 Prozent weniger Klicks. Das ist eine Herstellerangabe aus einem einzigen Unternehmen und seinem eigenen Vertrieb. In den Business Case eines Maschinenbauers würde ich sie nicht schreiben.
 
 Der [Trailhead-Quick-Start zum Angebotsagenten](https://trailhead.salesforce.com/content/learn/projects/quick-start-build-an-agent-to-create-quotes-fast/build-your-first-agentforce-quoting-agent) beschreibt den Umfang genauer. Der Agent
 
@@ -39,7 +39,7 @@ Der [Trailhead-Quick-Start zum Angebotsagenten](https://trailhead.salesforce.com
 - hält Preise und Rabatte innerhalb der Leitplanken des Systems,
 - bearbeitet Neugeschäft, Nachträge zu Assets und Änderungen an Angeboten.
 
-Die Arbeit erledigt der Subagent Quote Management, dessen Aktionen auf Flows beruhen. In der Übung fragen Sie 15 Headsets mit 15 Prozent Rabatt für einen Account und eine Opportunity an, ändern den Rabatt dann auf 10 Prozent und versenden das Angebot mit einer E-Mail-Vorlage. Die Salesforce-Hilfe nennt einen zweiten Baustein, den Subagenten Product Selection für Produktsuche und Filter. Auf salesforce.com heißt das Produkt Revenue Cloud; Hilfe und Trailhead führen den Agenten unter Agentforce Revenue Management oder Revenue Management.
+Die Arbeit erledigt der Subagent Quote Management, dessen Aktionen auf Flows beruhen. In der Übung fragen Sie 15 Headsets mit 15 Prozent Rabatt für einen Account und eine Opportunity an, ändern den Rabatt dann auf 10 Prozent und versenden das Angebot anschließend selbst von der Opportunity aus mit einer E-Mail-Vorlage. Die Salesforce-Hilfe nennt einen zweiten Baustein, den Subagenten Product Selection für Produktsuche und Filter. Auf salesforce.com heißt das Produkt Revenue Cloud; Hilfe und Trailhead führen den Agenten unter Agentforce Revenue Management oder Revenue Management.
 
 ## Was muss stehen, bevor der Agent Angebote schreibt?
 

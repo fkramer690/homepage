@@ -89,7 +89,7 @@ Für Angebote mit KI hat das eine Nebenwirkung. Ein Agent kann nur Regeln einhal
 
 ## Ein typisches Szenario, als Annahme
 
-Ein typisches Szenario, als Annahme: Ein Maschinenbauer hat drei Produktlinien. Zwei pflegen Anwendungstechniker in Excel mit rund 150 Verträglichkeitsregeln. Die dritte nutzt die SAP-Variantenkonfiguration mit Beziehungswissen, das die Fertigung bei jedem Auftrag prüft.
+Ein Maschinenbauer hat drei Produktlinien. Zwei pflegen Anwendungstechniker in Excel mit rund 150 Verträglichkeitsregeln. Die dritte nutzt die SAP-Variantenkonfiguration mit Beziehungswissen, das die Fertigung bei jedem Auftrag prüft.
 
 Meine Empfehlung in diesem Fall: Die beiden Excel-Linien gehen in Constraint-Modelle, mit Tabellen-Constraints aus einem Custom-Objekt, Regressionsfällen pro Linie und einem benannten Verantwortlichen im Produktmanagement. Die SAP-Linie behält vorerst ihren Konfigurator. Salesforce erhält das konfigurierte Ergebnis über eine Schnittstelle, bepreist es und erstellt das Angebot. Nach einem Jahr kann der Hersteller entscheiden, ob die dritte Linie folgt, auf Basis des echten Pflegeaufwands statt Annahmen.
 

@@ -38,7 +38,7 @@ What that means for the migration, block by block:
 |---|---|---|---|
 | Data model | Package objects, such as `SBQQ__Quote__c` | Standard objects such as Quote, Order, Asset | Remap every field, flow and integration |
 | Products | Products with options and features | Catalog, classifications, attributes, bundles | Redesign the catalog, not just copy it |
-| Configuration rules | Product rules | Constraint rules and selection rules | Rewrite rules |
+| Configuration rules | Product rules | Configuration rules and the constraint rules engine with CML | Model the rules again |
 | Pricing | Price rules, [JavaScript Quote Calculator Plugin](https://developer.salesforce.com/docs/revenue/cpq-plugins/guide/cpq-dev-jsqcp-parent.html) | Pricing procedures, decision tables | Rebuild logic and test it with real quotes |
 | Contracted business | CPQ subscriptions | Assets with state periods | Create assets for every open subscription |
 | Billing | `blng` package | Revenue Cloud Billing on standard objects | Separate cutover, see below |

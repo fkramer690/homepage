@@ -30,7 +30,7 @@ In the Revenue Cloud product catalog, a machine builder models the sales view, n
 
 ## What does the Revenue Cloud product catalog consist of?
 
-Product Catalog Management is the part of Revenue Cloud that holds products and their structure. Trailhead calls it "a centralized product model that's the single source of truth for product data", and other clouds such as Manufacturing Cloud can use the same product and pricing information through APIs, according to the [Revenue Cloud foundations module](https://trailhead.salesforce.com/content/learn/modules/revenue-lifecycle-management-foundations/explore-revenue-lifecycle-management). A note on names: Trailhead currently says Agentforce Revenue Management, the Developer Guide says Revenue Management, salesforce.com says Revenue Cloud. The [overview of product names](../revenue-cloud-product-names-rlm-rca/) sorts this out.
+Product Catalog Management is the part of Revenue Cloud that holds products and their structure. Trailhead calls it "a centralized product model that's the single source of truth for product data", and other clouds such as Agentforce Manufacturing (Manufacturing Cloud) can use the same product and pricing information through APIs, according to the [Revenue Cloud foundations module](https://trailhead.salesforce.com/content/learn/modules/revenue-lifecycle-management-foundations/explore-revenue-lifecycle-management). A note on names: Trailhead currently says Agentforce Revenue Management, the Developer Guide says Revenue Management, salesforce.com says Revenue Cloud. The [overview of product names](../revenue-cloud-product-names-rlm-rca/) sorts this out.
 
 The building blocks, per the [Trailhead module on product catalog management](https://trailhead.salesforce.com/content/learn/modules/product-catalog-management-with-revenue-cloud/get-started-with-product-catalog-management):
 
@@ -84,7 +84,7 @@ Services such as maintenance contracts or remote monitoring need a term-defined 
 
 ## A typical scenario, as an assumption: 40 base machines with options
 
-A typical scenario, as an assumption: a machine builder sells 40 base machines in four families, each with around a dozen selling options, plus 60 accessories with their own material numbers and around 8,000 spare parts. Without a model, someone suggests creating every sold combination as a product, which quickly runs into the thousands.
+A machine builder sells 40 base machines in four families, each with around a dozen selling options, plus 60 accessories with their own material numbers and around 8,000 spare parts. Without a model, someone suggests creating every sold combination as a product, which quickly runs into the thousands.
 
 With the catalog model it looks like this:
 

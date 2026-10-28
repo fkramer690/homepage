@@ -6,6 +6,7 @@ slug: from-cpq-to-revenue-cloud
 course: revenue-cloud
 translationKey: revenue-05
 chapter: 5
+pubDate: 2026-10-28
 short: "From CPQ to Revenue Cloud"
 summary: "What Salesforce commits to for CPQ and Billing, how the products differ and how the migration runs in three phases."
 takeaways:

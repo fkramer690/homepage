@@ -76,7 +76,7 @@ Four setups I would not accept in a design review:
 
 ## A typical scenario, as an assumption
 
-A typical scenario, as an assumption: a maker of industrial compressors sells configured machines through a sales desk and 200 dealers. Dealers reorder filters and spare parts by email. Ten key accounts have annual volume agreements, and dealers earn a yearly rebate calculated in spreadsheets.
+A maker of industrial compressors sells configured machines through a sales desk and 200 dealers. Dealers reorder filters and spare parts by email. Ten key accounts have annual volume agreements, and dealers earn a yearly rebate calculated in spreadsheets.
 
 All three products could fit, and I would not introduce them at once. The biggest pain is the email ordering of spare parts, so B2B Commerce with price books comes first. Compressor quotes are the second candidate: if configuration errors cost money today, Revenue Cloud follows, and from then on the store uses its catalog and, once contract prices live in Salesforce, its pricing. Manufacturing Cloud only comes in when the volume agreements of ten key accounts justify the licence for the users who manage them; until then, a report on ERP actuals may do. The rebate spreadsheet can wait for that decision.
 

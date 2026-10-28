@@ -26,11 +26,11 @@ faq:
 draft: false
 ---
 
-The quoting agent in Revenue Cloud turns a request in plain language into a quote: it picks valid products from the catalog, prices them with Salesforce Pricing, applies discounts within the guardrails and can amend, summarise and email quotes. For an internal sales desk with standard products and clean pricing data, that saves real time. Before it goes live, you need a maintained catalog, synced prices, configuration rules in Salesforce and discount limits that approvals enforce. For configured machines whose rules live outside Salesforce, the agent cannot help yet.
+The quoting agent in Revenue Cloud turns a request in plain language into a quote: it picks valid products from the catalog, prices them with Salesforce Pricing, applies discounts within the guardrails and can amend and summarise quotes. For an internal sales desk with standard products and clean pricing data, that saves real time. Before it goes live, you need a maintained catalog, synced prices, configuration rules in Salesforce and discount limits that approvals enforce. For configured machines whose rules live outside Salesforce, the agent cannot help yet.
 
 ## What does the Revenue Cloud quoting agent do?
 
-Salesforce introduced agent quoting for Revenue Cloud in July 2025. In the [announcement](https://www.salesforce.com/news/stories/agentforce-for-revenue-announcement/), reps describe what they need, and the agent generates the quote, "automatically pulling the correct products, pricing, and terms". The headline numbers come from Salesforce's own sales team: 75 percent less quoting time and 87 percent fewer clicks. That is a vendor figure from one company with a very standardised catalog. I would not put it into a business case for a machine builder.
+Salesforce introduced agent quoting for Revenue Cloud in July 2025. In the [announcement](https://www.salesforce.com/news/stories/agentforce-for-revenue-announcement/), reps describe what they need, and the agent generates the quote, "automatically pulling the correct products, pricing, and terms". The headline numbers come from Salesforce's own sales team: 75 percent less quoting time and 87 percent fewer clicks. That is a vendor figure from one company and its own sales team. I would not put it into a business case for a machine builder.
 
 The [Trailhead quick start for a quoting agent](https://trailhead.salesforce.com/content/learn/projects/quick-start-build-an-agent-to-create-quotes-fast/build-your-first-agentforce-quoting-agent) is more precise about the scope. The agent:
 
@@ -39,7 +39,7 @@ The [Trailhead quick start for a quoting agent](https://trailhead.salesforce.com
 - keeps pricing and discounting within system guardrails,
 - handles new business quotes, amendments to assets and quote updates.
 
-The work is done by the Quote Management subagent, whose actions are based on flows. In the exercise you ask for 15 headsets with 15 percent discount for an account and opportunity, then change the discount to 10 percent and email the quote with a template. Salesforce Help lists a second building block, the Product Selection subagent, for searching and filtering products. The product is called Revenue Cloud on salesforce.com; Help and Trailhead file the agent under Agentforce Revenue Management or Revenue Management.
+The work is done by the Quote Management subagent, whose actions are based on flows. In the exercise you ask for 15 headsets with 15 percent discount for an account and opportunity, then change the discount to 10 percent; you then email the quote yourself from the opportunity with a template. Salesforce Help lists a second building block, the Product Selection subagent, for searching and filtering products. The product is called Revenue Cloud on salesforce.com; Help and Trailhead file the agent under Agentforce Revenue Management or Revenue Management.
 
 ## What has to be in place before the agent quotes?
 

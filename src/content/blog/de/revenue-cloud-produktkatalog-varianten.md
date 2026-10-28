@@ -30,7 +30,7 @@ Im Produktkatalog von Revenue Cloud bildet ein Maschinenbauer die Vertriebssicht
 
 ## Woraus besteht der Produktkatalog in Revenue Cloud?
 
-Product Catalog Management ist der Teil von Revenue Cloud, der Produkte und ihre Struktur hält. Trailhead nennt es "a centralized product model that's the single source of truth for product data", und andere Clouds wie Manufacturing Cloud können dieselben Produkt- und Preisinformationen über APIs nutzen, so das [Trailhead-Modul zu den Grundlagen](https://trailhead.salesforce.com/content/learn/modules/revenue-lifecycle-management-foundations/explore-revenue-lifecycle-management). Ein Hinweis zu den Namen: Trailhead sagt derzeit Agentforce Revenue Management, der Developer Guide Revenue Management, salesforce.com Revenue Cloud. Die [Übersicht der Produktnamen](../revenue-cloud-produktnamen-rlm-rca/) ordnet das.
+Product Catalog Management ist der Teil von Revenue Cloud, der Produkte und ihre Struktur hält. Trailhead nennt es "a centralized product model that's the single source of truth for product data", und andere Clouds wie Agentforce Manufacturing (Manufacturing Cloud) können dieselben Produkt- und Preisinformationen über APIs nutzen, so das [Trailhead-Modul zu den Grundlagen](https://trailhead.salesforce.com/content/learn/modules/revenue-lifecycle-management-foundations/explore-revenue-lifecycle-management). Ein Hinweis zu den Namen: Trailhead sagt derzeit Agentforce Revenue Management, der Developer Guide Revenue Management, salesforce.com Revenue Cloud. Die [Übersicht der Produktnamen](../revenue-cloud-produktnamen-rlm-rca/) ordnet das.
 
 Die Bausteine laut dem [Trailhead-Modul zu Product Catalog Management](https://trailhead.salesforce.com/content/learn/modules/product-catalog-management-with-revenue-cloud/get-started-with-product-catalog-management):
 
@@ -84,7 +84,7 @@ Services wie Wartungsverträge oder Fernüberwachung brauchen zusätzlich ein Ve
 
 ## Ein typisches Szenario, als Annahme: 40 Grundmaschinen mit Optionen
 
-Ein typisches Szenario, als Annahme: Ein Maschinenbauer verkauft 40 Grundmaschinen in vier Familien mit je etwa zwölf Vertriebsoptionen, dazu 60 Zubehörteile mit eigener Materialnummer und rund 8.000 Ersatzteile. Ohne Modell schlägt jemand vor, jede verkaufte Kombination als Produkt anzulegen, und schnell sind es tausende.
+Ein Maschinenbauer verkauft 40 Grundmaschinen in vier Familien mit je etwa zwölf Vertriebsoptionen, dazu 60 Zubehörteile mit eigener Materialnummer und rund 8.000 Ersatzteile. Ohne Modell schlägt jemand vor, jede verkaufte Kombination als Produkt anzulegen, und schnell sind es tausende.
 
 Mit dem Katalogmodell sieht es so aus:
 

@@ -6,6 +6,7 @@ slug: revenue-cloud-ueberblick
 course: revenue-cloud
 translationKey: revenue-01
 chapter: 1
+pubDate: 2026-10-28
 short: "Überblick und Entscheidung"
 summary: "Was Revenue Cloud umfasst, was es kostet, wie es heißt und wann ein Hersteller besser bei SAP oder Sales Cloud bleibt."
 takeaways:

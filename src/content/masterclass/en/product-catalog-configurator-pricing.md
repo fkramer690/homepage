@@ -6,6 +6,7 @@ slug: product-catalog-configurator-pricing
 course: revenue-cloud
 translationKey: revenue-02
 chapter: 2
+pubDate: 2026-10-28
 short: "Catalog, configurator, pricing"
 summary: "How the product catalog, constraint configurator and Salesforce Pricing work together, and which prices should come from SAP."
 takeaways:
@@ -88,7 +89,7 @@ Salesforce Pricing has four base parts, per the [Trailhead unit on pricing](http
 
 A typical sequence for a manufacturer is list price (or a contract price), attribute discount, volume discount, manual discount and an aggregate per product family. The order is business logic: whether the manual discount comes before or after the volume discount changes the net price. Sales management and controlling decide it, not the person who builds the procedure. The result is a price waterfall that shows every step from list price to net price, in the simulation and on the quote line.
 
-One detail catches most teams in the first weeks. After a price book entry or a volume tier changes, the quote still calculates with the old value until Sync Pricing Data has refreshed the decision tables. If SAP loads list prices every night, the sync belongs in the same job. The [Salesforce Pricing Business APIs](https://developer.salesforce.com/docs/atlas.en-us.revenue_lifecycle_management_dev_guide.meta/revenue_lifecycle_management_dev_guide/pricing_business_apis.htm) also offer headless pricing, which builds a context and prices it in one call, so a portal, a store or an agent can ask for the same price without creating a quote. How the B2B store does that is in the B2B Commerce chapter on [prices, cart and checkout](../../b2b-commerce/prices-cart-checkout/). The elements, the sync and the testing are explained in [Salesforce Pricing: how Revenue Cloud calculates prices](../../../blog/revenue-cloud-pricing-procedures-explained/).
+One detail is easy to miss in the first weeks. After a price book entry or a volume tier changes, the quote still calculates with the old value until Sync Pricing Data has refreshed the decision tables. If SAP loads list prices every night, the sync belongs in the same job. The [Salesforce Pricing Business APIs](https://developer.salesforce.com/docs/atlas.en-us.revenue_lifecycle_management_dev_guide.meta/revenue_lifecycle_management_dev_guide/pricing_business_apis.htm) also offer headless pricing, which builds a context and prices it in one call, so a portal, a store or an agent can ask for the same price without creating a quote. How the B2B store does that is in the B2B Commerce chapter on [prices, cart and checkout](../../b2b-commerce/prices-cart-checkout/). The elements, the sync and the testing are explained in [Salesforce Pricing: how Revenue Cloud calculates prices](../../../blog/revenue-cloud-pricing-procedures-explained/).
 
 ## Which prices should come from SAP?
 
@@ -122,7 +123,7 @@ How configuration data moves through a pipeline is the subject of the DevOps cha
 
 ## A typical scenario, as an assumption
 
-A typical scenario, as an assumption: a manufacturer of packaging machines sells 30 base machines in three families through direct sales, and spare parts through dealers. Two families have their compatibility rules in spreadsheets kept by application engineers, the third uses SAP variant configuration.
+A manufacturer of packaging machines sells 30 base machines in three families through direct sales, and spare parts through dealers. Two families have their compatibility rules in spreadsheets kept by application engineers, the third uses SAP variant configuration.
 
 Three classifications with about a dozen attributes each, 30 base machines, configurable bundles for tooling and safety packages, a separate spare parts catalog loaded from SAP. Constraint models for the two spreadsheet families, with compatibility tables loaded from a custom object and regression cases per family. The SAP family keeps its configurator for now, and Salesforce takes the result through an interface. Machine prices follow route C with list prices from SAP every night and the sync right after the load. Dealer prices for spare parts follow route A. Product management owns the catalog and the constraint models, a pricing admin in sales operations owns the procedures, and controlling signs off every pricing change.
 

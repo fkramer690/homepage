@@ -76,7 +76,7 @@ Ein Datensatz muss für den kaufmännischen Vertrag führend sein, sonst streite
 - **Servicevertrag in Field Service:** welche Maschinen abgedeckt sind und welches Servicelevel gilt. Wird aus dem Asset in Revenue Cloud angelegt und geändert, bei kaufmännischen Änderungen nie von Hand.
 - **Maschinen-Asset:** Seriennummer, Standort, installierte Basis. Gehört dem Service und kommt meist aus dem ERP.
 
-Schreiben Sie das je Objekt fest, wie in einer [Object Ownership Matrix](../object-ownership-matrix-salesforce/). Am häufigsten scheitert der dritte Fall: Eine Maschine wird im Vertrag getauscht, der Service ersetzt das Asset in der Vertragsposition, und niemand prüft, ob sich der Preis ändert.
+Schreiben Sie das je Objekt fest, wie in einer [Object Ownership Matrix](../object-ownership-matrix-salesforce/). Die Schwachstelle liegt beim dritten Fall: Eine Maschine wird im Vertrag getauscht, der Service ersetzt das Asset in der Vertragsposition, und niemand prüft, ob sich der Preis ändert.
 
 ## Ein typisches Szenario, als Annahme
 
