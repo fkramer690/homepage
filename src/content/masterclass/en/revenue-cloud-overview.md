@@ -50,7 +50,7 @@ Revenue Cloud is the route from product catalog to invoice, built on standard ob
 
 The [product page](https://www.salesforce.com/uk/products/revenue-cycle-management) sums it up as one product that "unifies pricing, quoting, contracting, and billing on a single data model", with "a single, attribute-based catalogue" across all channels. Trailhead adds that composable APIs let other clouds use the catalog and pricing, with Agentforce Manufacturing as the example. For Winter '27, the [release highlights](https://trailhead.salesforce.com/content/learn/modules/winter-27-release-highlights/see-whats-new-marketing-commerce-revenue-management) name up to 15,000 transaction lines per deal and agents for buyer self-service, partner quoting and renewal preparation.
 
-How each component works in detail is the subject of the next chapters. For the first decision, two points matter. Revenue Cloud is a different product from Salesforce CPQ, which the [CPQ end-of-sale page](https://www.salesforce.com/sales/cpq/end-of-life/) describes as a managed package around seller-led quoting, with Revenue Cloud Advanced as its successor "built natively on the Salesforce platform". And Salesforce no longer sells CPQ licences to new customers, so a new project chooses between Revenue Cloud, a partner product and a custom approach.
+For the first decision, two points matter. Revenue Cloud is a different product from Salesforce CPQ, which the [CPQ end-of-sale page](https://www.salesforce.com/sales/cpq/end-of-life/) describes as a managed package around seller-led quoting, with Revenue Cloud Advanced as its successor "built natively on the Salesforce platform". And Salesforce no longer sells CPQ licences to new customers, so a new project chooses between Revenue Cloud, a partner product and a custom approach.
 
 ## When does Revenue Cloud pay off for a manufacturer?
 
@@ -130,9 +130,9 @@ The overlaps are catalog, price and quote. One catalog, one price master and one
 
 ## When is Salesforce the wrong answer?
 
-Revenue Cloud is a large product, and for some manufacturers it is too much:
+For some manufacturers Revenue Cloud is too much:
 
-- **The quote is an SAP price lookup.** Sales picks material numbers, SAP calculates. Salesforce needs an interface, not its own pricing engine.
+- **The quote is an SAP price lookup.** Sales picks material numbers, SAP calculates. Salesforce then only needs an interface to SAP.
 - **Few products, few variants.** A range of 200 items without options does not need a constraint-based configurator.
 - **Rules live elsewhere and stay there.** If variant rules sit in SAP or in the heads of application engineers and nobody will maintain them twice, the configurator stays empty.
 - **No recurring revenue.** If every sale is a one-off machine and the invoice stays in SAP, the strongest parts go unused.

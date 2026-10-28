@@ -28,7 +28,7 @@ faq:
 draft: false
 ---
 
-An Agentforce agent answers order status and availability from SAP S/4HANA by calling an API at the moment the dealer asks. The documented route runs through MuleSoft: a Mule API reads S/4HANA, is enabled for agent topics and actions in Topic Center, published to Exchange and synced into API Catalog in Salesforce, where it becomes an agent action. Everything with a right answer stays deterministic: which dealer may see which order, the availability check, the confirmed date. Those live in SAP and in the API. The model understands the question and words the answer.
+An Agentforce agent answers order status and availability from SAP S/4HANA by calling an API at the moment the dealer asks. The documented route runs through MuleSoft: a Mule API reads S/4HANA, is enabled for agent topics and actions in Topic Center, published to Exchange and synced into API Catalog in Salesforce, where it becomes an agent action. Everything with a right answer stays deterministic: which dealer may see which order, the availability check, the confirmed date. Those live in SAP and in the API. The model understands the question and words the answer. The same split applies when Revenue Cloud hands an order to SAP, see [handing orders to SAP](../revenue-cloud-order-orchestration-sap/).
 
 ## How does an Agentforce agent get the order status from SAP?
 
@@ -68,7 +68,7 @@ MuleSoft's own Topic Center documentation says instructions "are nondeterministi
 
 **Who may see which order.** This is the biggest risk. A dealer logged into the portal is a contact on an account, and the account carries the SAP sold-to number. That number must reach the API from the session, set by code, never from the chat. The API returns an order only if the sold-to matches and otherwise answers "not found", exactly as for an order that does not exist. If the model passes order number and customer number, dealer A reads dealer B's order by typing a number. Email enquiries are weaker still, because a sender address proves little; more in [prompt injection through dealer portals](../prompt-injection-dealer-portals-agentforce/).
 
-**Availability and dates.** SAP runs the availability check. The agent passes on the confirmed date and never estimates one from stock or lead times. If SAP has no confirmed date, the answer is "not confirmed yet".
+**Availability and dates.** SAP runs the availability check. The agent passes on the confirmed date and never estimates one from stock or lead times. If SAP has no confirmed date, the answer is "not confirmed yet". A B2B store needs the same rule, see [chapter 4 of the B2B Commerce masterclass](../../masterclass/b2b-commerce/erp-integration-stock-orders/).
 
 **Blocks.** Credit and delivery blocks are SAP decisions. Whether a dealer hears about a credit block or gets "please contact your sales rep" is a business decision that belongs in the API response, not in the prompt.
 

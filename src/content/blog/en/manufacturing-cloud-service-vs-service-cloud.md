@@ -1,6 +1,6 @@
 ---
 title: "Manufacturing Cloud for Service or Service Cloud?"
-description: "When Manufacturing Cloud Service Core is worth $80 to $100 more per user and month than Service Cloud, what the premium buys and who needs which licence."
+description: "When Manufacturing Cloud Service Core is worth $80 more per user and month than Service Cloud Core, what the premium buys and who needs which licence."
 pubDate: 2026-10-28
 lang: en
 slug: manufacturing-cloud-service-vs-service-cloud
@@ -10,7 +10,7 @@ categories: [manufacturing-cloud, field-service]
 contactBrief: licences
 tags: [Manufacturing Cloud, Service Cloud, licences, warranty, make-or-buy]
 takeaways:
-  - "Manufacturing Cloud Service Core lists at $275 per user and month, Service Cloud Core at $195 and the legacy Service Cloud Enterprise at $175, so the premium is $80 to $100."
+  - "Manufacturing Cloud Service Core lists at $275 per user and month and Service Cloud Core at $195, so the premium is $80. Core is the edition that replaces Service Cloud Enterprise."
   - "The premium buys warranty lifecycle management, the Asset Service Console, the Service Console for Manufacturing, pre-work estimation and the manufacturing data model."
   - "Case management, the help centre, entitlements and knowledge are Service Cloud features. A hotline that only handles cases does not need Manufacturing Cloud."
   - "A mixed licence set is the normal answer: warranty adjudicators and campaign managers on Manufacturing Cloud, first-level agents on Service Cloud. Get the mix confirmed in writing."
@@ -27,7 +27,7 @@ faq:
 draft: false
 ---
 
-Manufacturing Cloud Service Core lists at $275 per user and month. Service Cloud costs $195 in Core, the edition Salesforce now sells instead of Enterprise, and $175 on the legacy Enterprise list price. The premium is therefore $80 to $100 per user and month. In my view it pays off for the users who handle warranty claims from dealers or customers and run recalls or upgrades across an installed base. For case handling, entitlements and knowledge, Service Cloud is enough. Most manufacturers end up with a mixed licence set, and the mix belongs in the contract.
+Manufacturing Cloud Service Core lists at $275 per user and month. Service Cloud costs $195 in Core, the edition Salesforce now sells instead of Enterprise. The premium is therefore $80 per user and month. In my view it pays off for the users who handle warranty claims from dealers or customers and run recalls or upgrades across an installed base. For case handling, entitlements and knowledge, Service Cloud is enough. Most manufacturers end up with a mixed licence set, and the mix belongs in the contract.
 
 ## What do the licences cost?
 
@@ -36,12 +36,11 @@ These are list prices per user and month, billed annually, as of October 2026:
 | Licence | List price | Flex Credits per org and year |
 |---|---|---|
 | Service Cloud Core | $195 | 500,000 |
-| Service Cloud Enterprise (legacy) | $175 | none listed |
 | Manufacturing Cloud Service Core | $275 | 500,000 |
 | Manufacturing Cloud Service Max | $650 | 2,750,000 |
 | Manufacturing Cloud Sales & Service Max | $700 | 2,750,000 |
 
-The [Service Cloud pricing page](https://www.salesforce.com/service/pricing/) answers in its FAQ that "Core replaces Enterprise Edition, Advanced replaces Unlimited Edition, and Max replaces Agentforce 1 Edition". Depending on which version of the page loads, it still shows Enterprise at $175. Salesforce [announced in September](https://www.salesforce.com/in/news/?p=14535) that "existing customer pricing on legacy editions remains unchanged". So existing Enterprise customers compare against $175, new buyers against $195. How the new editions differ is covered in [Salesforce editions Core, Advanced and Max](../salesforce-editions-core-advanced-max/).
+The [Service Cloud pricing page](https://www.salesforce.com/service/pricing/) lists Core at $195 and answers in its FAQ that "Core replaces Enterprise Edition, Advanced replaces Unlimited Edition, and Max replaces Agentforce 1 Edition". It no longer shows an Enterprise price. Salesforce [announced in September](https://www.salesforce.com/in/news/?p=14535) that "existing customer pricing on legacy editions remains unchanged". So new buyers compare against $195, existing Enterprise customers against the price in their current contract. How the new editions differ is covered in [Salesforce editions Core, Advanced and Max](../salesforce-editions-core-advanced-max/).
 
 The [Manufacturing Cloud pricing page](https://www.salesforce.com/manufacturing/cloud/pricing/) has two footnotes that contradict each other. One says the prices are for Enterprise Edition and Unlimited costs $425. The other says the prices are for Unlimited Edition. The same announcement says new pricing for the industry editions will follow "later this fall". Which price applies to you only shows in the quote.
 
@@ -53,7 +52,7 @@ What these features do:
 
 - **Warranty lifecycle management.** Warranty terms, claims from dealers, adjudication and supplier recovery, covered in [warranty claims from dealers](../warranty-claims-dealers-salesforce/).
 - **Asset Service Console.** Milestones, warranties, cases, work orders and claims per machine. The data behind it is the topic of [installed base in Manufacturing Cloud](../installed-base-asset-milestones/).
-- **Service Console for Manufacturing.** A redesigned contact page with assets, cases and orders of the caller's account. According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/service-console-for-manufacturing-cloud-admin-essentials/learn-about-the-service-console-for-manufacturing), its components need "an Industry Service Excellence add-on license". Ask whether Service Core includes it.
+- **Service Console for Manufacturing.** A redesigned contact page with assets, cases and orders of the caller's account. According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/service-console-for-manufacturing-cloud-admin-essentials/learn-about-the-service-console-for-manufacturing), its timeline, recommendations and record alerts components are "available with the Industries Service Excellence license". Ask whether Service Core includes it.
 - **Product service campaigns** for recalls and upgrades. Trailhead lists them as a Manufacturing Cloud capability, the pricing page does not. See [product recalls in Salesforce](../product-recalls-service-campaigns/).
 
 ## What does Service Cloud cover on its own?
@@ -96,6 +95,6 @@ This is the same make-or-buy question as for the whole industry cloud, covered i
 
 ## Where should you start?
 
-Count the users per role for one region: how many handle warranty claims, how many run campaigns, how many only take calls. Then ask for a quote with exactly that mix, including the Industry Service Excellence question and read access for Service Cloud users. The after-sales features themselves are in the [warranty and after-sales chapter](../../masterclass/manufacturing-cloud/warranty-and-after-sales/) of the Manufacturing Cloud masterclass.
+Count the users per role for one region: how many handle warranty claims, how many run campaigns, how many only take calls. Then ask for a quote with exactly that mix, including the Industries Service Excellence question and read access for Service Cloud users. The after-sales features themselves are in the [warranty and after-sales chapter](../../masterclass/manufacturing-cloud/warranty-and-after-sales/) of the Manufacturing Cloud masterclass.
 
 Manufacturing Cloud for Service is worth its premium for the people who work on warranty and recalls, and rarely for the whole service team. If you are weighing that licence mix, [send me a message](#contact).

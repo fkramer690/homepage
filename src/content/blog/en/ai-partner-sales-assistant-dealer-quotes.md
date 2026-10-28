@@ -47,7 +47,7 @@ Winter '27 also brings a quoting agent outside Manufacturing Cloud. According to
 | What Salesforce says | Finds products, builds quotes | Finds products, builds quotes; highlights say request quotes | Self-service and partner quoting |
 | Product | Manufacturing Cloud | Manufacturing Cloud | Revenue Cloud |
 
-I would choose by where your quote lives today. If you already quote in Revenue Cloud, look at the Revenue Management agent first. If dealers quote on standard quotes and price books in Manufacturing Cloud, the manufacturing agents fit. Two quoting agents on two quote models is the setup I would avoid.
+I would choose by where your quote lives today. If you already quote in Revenue Cloud, look at the Revenue Management agent first; what it can do today is covered in [the Revenue Cloud quoting agent](../revenue-cloud-quoting-agent-agentforce/). If dealers quote on standard quotes and price books in Manufacturing Cloud, the manufacturing agents fit. Two quoting agents on two quote models is the setup I would avoid.
 
 For machine builders with dealers, the Sales Concierge raises a commercial question before a technical one. If an end customer finds a machine on your site and gets a price, which dealer receives the lead, and may that price undercut what the dealer quotes? Settle routing and price visibility with the head of sales before go-live.
 
@@ -61,7 +61,7 @@ Every sellable variant and accessory needs its own product record with a correct
 
 ### Prices per market and dealer tier
 
-If SAP holds list prices, dealer discounts per tier and surcharges as conditions while Salesforce holds only the list price, the agent quotes the list price. You need price books per country, currency and dealer tier with validity dates, synced from the ERP. Salesforce sees the gap too: the Winter '27 highlights name Penny Perfect Pricing with multimarket pricing, multiple units of measure, calculation schema and ERP integration inside Manufacturing Cloud. Decide one price master: either the ERP calculates and Salesforce shows the result through an API, as in [order status from SAP via MuleSoft](../agentforce-sap-order-status-mulesoft/), or Salesforce calculates with the same schema.
+If SAP holds list prices, dealer discounts per tier and surcharges as conditions while Salesforce holds only the list price, the agent quotes the list price. You need price books per country, currency and dealer tier with validity dates, synced from the ERP. Salesforce sees the gap too: the Winter '27 highlights name Penny Perfect Pricing with multimarket pricing, multiple units of measure, calculation schema and ERP integration inside Manufacturing Cloud. What is known about it so far is in [Penny Perfect Pricing: ERP prices in Salesforce?](../penny-perfect-pricing-erp-prices/). Decide one price master: either the ERP calculates and Salesforce shows the result through an API, as in [order status from SAP via MuleSoft](../agentforce-sap-order-status-mulesoft/), or Salesforce calculates with the same schema.
 
 ### Rules for what can be built
 

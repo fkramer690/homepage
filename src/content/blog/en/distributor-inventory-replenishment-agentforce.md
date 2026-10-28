@@ -46,7 +46,7 @@ Replenishment rules sit in [InventoryReplenishmentPolicy](https://developer.sale
 
 Two consequences for a decision maker:
 
-- **A Product Request is a Salesforce record.** It does not reserve stock in SAP and does not create a sales order. Something has to turn it into an ERP order, and that integration is your project, not part of the template.
+- **A Product Request is a Salesforce record.** It does not reserve stock in SAP and does not create a sales order. Something has to turn it into an ERP order, and that integration is your project, not part of the template. If dealers should place reorders themselves in a B2B store instead, see [reorders in B2B Commerce](../b2b-commerce-reorder-order-templates/).
 - **The stock is a copy.** Distributors report their stock through a portal upload, EDI or an interface. If they report weekly, the agent works with figures up to seven days old and should say so.
 
 ## Where must SAP or proALPHA stay the system of record?

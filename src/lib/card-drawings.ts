@@ -27,6 +27,37 @@ const pin = (x: number, y: number, color = G) =>
   `<g transform="translate(${x} ${y})"><path d="M0 0c-6-8-9-12-9-16a9 9 0 0 1 18 0c0 4-3 8-9 16z" fill="#fff" stroke="${color}" stroke-width="1.4"/><circle cx="0" cy="-16" r="3" fill="${color}"/></g>`;
 
 const drawings: Record<string, Drawing> = {
+  'cpq-to-revenue-cloud-migration-plan': (l) => `
+    ${t(18, 20, l('3 PHASES · TYPICALLY 3 TO 6 MONTHS', '3 PHASEN · TYPISCH 3 BIS 6 MONATE'), { fill: D, size: 7 })}
+    ${[l('Prepare', 'Vorbereiten'), l('Strategy', 'Strategie'), l('Execute', 'Umsetzen')].map((s, i) => box(18 + i * 100, 30, 84, 30, i === 2 ? C : G) + t(60 + i * 100, 49, (i + 1) + ' · ' + s, { fill: i === 2 ? C : G, size: 7.5, anchor: 'middle' })).join('')}
+    ${arrow(102, 45, 118)}${arrow(202, 45, 218, C)}
+    <path d="M18 74H302" stroke="${L}"/>
+    ${t(18, 90, l('DATA ORDER', 'DATENREIHENFOLGE'), { fill: D, size: 7 })}
+    ${[l('Catalog', 'Katalog'), l('Prices', 'Preise'), 'Assets', 'Billing'].map((s, i) => box(18 + i * 76, 98, 60, 22) + t(48 + i * 76, 112, s, { size: 7, anchor: 'middle' })).join('')}
+    ${arrow(78, 109, 94)}${arrow(154, 109, 170)}${arrow(230, 109, 246)}
+    ${tag(18, 132, 150, l('CPQ keeps running in the org', 'CPQ läuft in der Org weiter'))}${t(178, 145, l('no end-of-life date', 'kein End-of-Life-Datum'), { size: 7 })}`,
+
+  'revenue-cloud-configuration-deployment': (l) => `
+    ${t(18, 20, l('NO BUILT-IN TOOL · ORDER PER AREA', 'KEIN EIGENES TOOL · REIHENFOLGE JE BEREICH'), { fill: D, size: 7 })}
+    ${[l('1 Metadata', '1 Metadaten'), l('2 Data', '2 Daten'), l('3 Manual', '3 Manuell')].map((s, i) => box(18 + i * 100, 30, 84, 28, i === 2 ? C : G) + t(60 + i * 100, 48, s, { fill: i === 2 ? C : G, size: 7.5, anchor: 'middle' })).join('')}
+    ${arrow(102, 44, 118)}${arrow(202, 44, 218, C)}
+    ${t(18, 76, 'decision tables', { size: 7 })}${t(18, 88, 'pricing recipes', { size: 7 })}${t(18, 100, l('custom context defs', 'eigene Context Defs'), { size: 7 })}
+    ${t(118, 76, l('attributes, classes', 'Attribute, Klassen'), { size: 7 })}${t(118, 88, l('selling models', 'Verkaufsmodelle'), { size: 7 })}${t(118, 100, l('price book entries', 'Preisbucheinträge'), { size: 7 })}
+    ${check(218, 70)}${t(230, 76, l('refresh tables', 'Tables aktualisieren'), { size: 7 })}${check(218, 82)}${t(230, 88, l('sync pricing', 'Preise synchron.'), { size: 7 })}${check(218, 94)}${t(230, 100, l('rebuild index', 'Index neu bauen'), { size: 7 })}
+    <path d="M18 114H302" stroke="${L}"/>
+    ${cross(24, 132)}${t(36, 135, l('SAP products and list prices: integration, no deployment', 'SAP-Produkte und Listenpreise: Schnittstelle, kein Deployment'), { size: 7 })}`,
+
+  'salesforce-billing-to-revenue-cloud-billing': (l) => `
+    ${box(18, 26, 110, 70)}${t(73, 42, 'SALESFORCE BILLING', { fill: D, size: 7.5, anchor: 'middle' })}
+    ${t(28, 58, l('package, namespace blng', 'Paket, Namespace blng'), { size: 7 })}${t(28, 72, l('59 custom objects', '59 eigene Objekte'), { size: 7 })}${t(28, 86, 'blng__Invoice__c', { size: 7 })}
+    ${arrow(128, 61, 192, C)}${t(160, 53, l('period end', 'Periodenende'), { fill: C, size: 7, anchor: 'middle' })}
+    ${box(192, 26, 110, 70, C)}${t(247, 42, 'REVENUE CLOUD BILLING', { fill: D, size: 7.5, anchor: 'middle' })}
+    ${t(202, 58, l('standard objects', 'Standardobjekte'), { size: 7 })}${t(202, 72, 'Invoice · CreditMemo', { size: 7 })}${t(202, 86, 'AccountingPeriod', { size: 7 })}
+    ${check(18, 108)}${t(32, 115, l('open invoices: finish in package', 'offene Rechnungen: im Paket abschließen'), { size: 7 })}
+    ${check(18, 122)}${t(32, 129, l('open balances: move', 'offene Salden: übernehmen'), { size: 7 })}
+    ${check(18, 136)}${t(32, 143, l('closed history: keep readable', 'abgeschlossene Historie: lesbar halten'), { size: 7 })}
+    ${tag(206, 124, 96, l('finance signs off', 'Finanzen geben frei'))}`,
+
   'field-service-kpis-after-go-live': (l) => `
     ${t(20, 20, l('REGION 1: BASELINE VS MONTH 3 (ASSUMED)', 'REGION 1: AUSGANG VS. MONAT 3 (ANNAHME)'), { fill: D, size: 7.5 })}
     <path d="M20 116H300" stroke="${G}" stroke-width="1"/>

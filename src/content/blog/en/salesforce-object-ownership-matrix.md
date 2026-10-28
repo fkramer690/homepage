@@ -71,7 +71,7 @@ The matrix should stay small enough that anyone can read it in two minutes. I re
 3. **Automation entry point**, meaning whether the object is automated through Flow or an Apex trigger framework.
 4. **Streams that use it**, so the owner knows who a change affects.
 
-The hard part is shared objects like Account, Contact or Product. They also get exactly one owner. The other streams submit their requirements there, and the owner builds them into the shared automation. That is slower than everyone building for themselves. It is also the only way the object will still be maintainable in two years.
+The hard part is shared objects like Account, Contact or Product. They also get exactly one owner. The other streams submit their requirements there, and the owner builds them into the shared automation. That is slower than everyone building for themselves. It is also the only way the object will still be maintainable in two years. With a B2B store, the order needs the same clarity across Salesforce and the ERP, see [chapter 4 of the B2B Commerce masterclass](../../masterclass/b2b-commerce/erp-integration-stock-orders/).
 
 What does not belong in the matrix: detailed rules for naming, tests or code style. Those live in the development standards. The matrix answers one question only: who decides.
 

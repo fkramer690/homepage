@@ -1,6 +1,6 @@
 ---
 title: "Field Service Assets: Wartung, Ersatzteile und Partner"
-description: "Wie Maschinenbauer Anlagen in Salesforce Field Service als Assets abbilden, Wartung nach Betriebsstunden auslösen, Ersatzteile im ERP lassen und Partner einbinden."
+description: "Wie Maschinenbauer Anlagen in Salesforce Field Service als Assets abbilden, Wartung nach Betriebsstunden auslösen, Teile im ERP lassen und Partner einbinden."
 lang: de
 slug: field-service-assets-wartung-teile
 course: field-service

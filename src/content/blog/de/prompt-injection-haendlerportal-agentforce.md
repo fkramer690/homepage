@@ -45,6 +45,8 @@ Simon Willison hat das Muster im Juni 2025 [Lethal Trifecta](https://simonwillis
 - **Berichte von Servicepartnern** in Field Service, geschrieben von externen Technikern im Außendienst.
 - **Importe von Distributoren**, etwa Bestellnotizen oder Antragslisten.
 
+Ein Buyer Agent, der Bestellungen per WhatsApp oder SMS annimmt, öffnet eine weitere Tür, siehe [B2B Buyer Agent: Bestellen per WhatsApp und SMS](../b2b-buyer-agent-whatsapp-bestellen/).
+
 Wer den Angriff auslöst, ist Ihre eigene Mitarbeiterin bei der normalen Arbeit. Die Sachbearbeitung Garantie lässt sich die Anträge des Tages zusammenfassen. Der Vertrieb fragt nach einem neuen Lead. An der Frage ist nichts falsch. Die Anweisung steht in einem Datensatz, den niemand geöffnet hat.
 
 Wie schlimm es wird, entscheidet das erste Merkmal: der Zugriff auf private Daten. Interne Agenten laufen oft mit breiten Rechten, weil sie über alle Accounts hinweg helfen sollen. Liest so ein Agent den Antrag eines Händlers, kann er womöglich auch Preise, Bonusvereinbarungen oder Margenfelder anderer Händler lesen. Im [Beitrag zum Kundenportal](../manufacturing-cloud-kundenportal/) begründe ich, warum Marge und Kosten nie nach außen gehen dürfen. Ein Agent mit falschen Rechten ist ein Weg, auf dem sie es trotzdem tun.
