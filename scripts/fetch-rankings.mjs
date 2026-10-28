@@ -72,14 +72,21 @@ for (const lang of ['de', 'en']) {
       const organic = items.filter((i) => i.type === 'organic');
       const hit = organic.find((i) => isOwn(i.domain));
       const aiOverview = items.find((i) => i.type === 'ai_overview');
+      const aiSources = [
+        ...new Set(
+          [...JSON.stringify(aiOverview ?? {}).matchAll(/"domain":"([^"]+)"/g)].map((m) => m[1].replace(/^www\./, '')),
+        ),
+      ];
       const questions = items.filter((i) => i.type === 'people_also_ask').flatMap((i) => i.items ?? []);
       rows.push({
         keyword,
         position: hit?.rank_group ?? null,
         url: hit?.url ?? null,
         ...(volumes[keyword.toLowerCase()] ?? volumes[keyword] ?? {}),
-        aiOverview: Boolean(aiOverview),
-        aiCited: aiOverview ? JSON.stringify(aiOverview).includes(DOMAIN) : false,
+        // The element can be present without content when no overview loaded.
+        aiOverview: aiSources.length > 0 || Boolean(aiOverview?.markdown),
+        aiCited: aiSources.some((d) => isOwn(d)),
+        aiSources: aiSources.slice(0, 5),
         questions: questions.map((q) => q.title).filter(Boolean).slice(0, 4),
         top3: organic.slice(0, 3).map((i) => i.domain),
       });
@@ -90,7 +97,8 @@ for (const lang of ['de', 'en']) {
   }
   languages[lang] = rows;
 
-  try {
+  // DataForSEO Labs only has German for location Germany.
+  if (lang === 'de') try {
     const [labs] = await call('dataforseo_labs/google/ranked_keywords/live', [
       { target: DOMAIN, location_code: LOCATION, language_code: lang, item_types: ['organic'], limit: 200 },
     ]);
