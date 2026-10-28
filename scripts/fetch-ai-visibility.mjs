@@ -75,7 +75,8 @@ for (const { lang, prompt } of config.prompts) {
           user_prompt: prompt,
           model_name: model.name,
           web_search: true,
-          web_search_country_iso_code: 'DE',
+          // Gemini rejects the country field.
+          ...(provider === 'gemini' ? {} : { web_search_country_iso_code: 'DE' }),
           max_output_tokens: model.reasoning ? 2048 : 1200,
         },
       ]);

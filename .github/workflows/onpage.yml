@@ -6,6 +6,10 @@ on:
   schedule:
     - cron: '10 2 1 * *'
   workflow_dispatch:
+    inputs:
+      task_id:
+        description: Reuse an earlier crawl (task id from the log) instead of crawling again
+        required: false
 
 permissions:
   contents: write
@@ -30,6 +34,7 @@ jobs:
         env:
           DATAFORSEO_LOGIN: ${{ secrets.DATAFORSEO_LOGIN }}
           DATAFORSEO_PASSWORD: ${{ secrets.DATAFORSEO_PASSWORD }}
+          ONPAGE_TASK_ID: ${{ inputs.task_id }}
         run: |
           node scripts/fetch-onpage.mjs > /tmp/onpage.json
       - name: Commit snapshot to stats branch

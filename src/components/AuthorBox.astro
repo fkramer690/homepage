@@ -16,7 +16,7 @@ const { lang } = Astro.props;
 const t = lang === 'de' ? de : en;
 ---
 <aside class="post-author" aria-label={t.blog.authorLabel}>
-  <Image src={portrait} alt="" width={112} height={112} densities={[1, 2]} class="post-author-img" />
+  <Image src={portrait} alt="Fabian Kramer" width={112} height={112} densities={[1, 2]} class="post-author-img" />
   <div class="post-author-body">
     <p class="label mono">{t.blog.authorLabel}</p>
     <p class="post-author-name">{site.person}</p>
