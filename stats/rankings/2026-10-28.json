@@ -1,0 +1,513 @@
+{
+  "generatedAt": "2026-10-28T20:24:20.090Z",
+  "domain": "fk-sd.de",
+  "location": "Germany",
+  "depth": 50,
+  "balanceBefore": 101,
+  "cost": 0.542,
+  "de": [
+    {
+      "keyword": "salesforce berater",
+      "position": null,
+      "url": null,
+      "volume": 90,
+      "cpc": 14.95,
+      "competition": "LOW",
+      "top3": [
+        "comselect.de",
+        "www.stepstone.de",
+        "infotip.de"
+      ]
+    },
+    {
+      "keyword": "salesforce freelancer",
+      "position": null,
+      "url": null,
+      "volume": 30,
+      "cpc": 3.63,
+      "competition": "MEDIUM",
+      "top3": [
+        "de.indeed.com",
+        "www.upwork.com",
+        "www.reddit.com"
+      ]
+    },
+    {
+      "keyword": "salesforce architekt freelancer",
+      "position": null,
+      "url": null,
+      "volume": null,
+      "cpc": null,
+      "competition": null,
+      "top3": [
+        "www.freelancermap.com",
+        "www.it-projekte.de",
+        "www.freelancermap.com"
+      ]
+    },
+    {
+      "keyword": "salesforce solution architect",
+      "position": null,
+      "url": null,
+      "volume": 20,
+      "cpc": null,
+      "competition": "LOW",
+      "top3": [
+        "www.reddit.com",
+        "www.apexhours.com",
+        "www.levels.fyi"
+      ]
+    },
+    {
+      "keyword": "salesforce beratung mittelstand",
+      "position": null,
+      "url": null,
+      "volume": null,
+      "cpc": null,
+      "competition": null,
+      "top3": [
+        "www.salesforce.com",
+        "www.salesforce.com",
+        "www.bc-advisory.de"
+      ]
+    },
+    {
+      "keyword": "salesforce partnersteuerung",
+      "position": null,
+      "url": null,
+      "volume": null,
+      "cpc": null,
+      "competition": null,
+      "top3": [
+        "www.dotsource.de",
+        "mind-force.de",
+        "help.salesforce.com"
+      ]
+    },
+    {
+      "keyword": "salesforce devops beratung",
+      "position": 5,
+      "url": "https://www.fk-sd.de/blog/warum-devops-salesforce-enterprise-projekte/",
+      "volume": null,
+      "cpc": null,
+      "competition": null,
+      "top3": [
+        "trailhead.salesforce.com",
+        "trailhead.salesforce.com",
+        "comselect.de"
+      ]
+    },
+    {
+      "keyword": "salesforce release management",
+      "position": null,
+      "url": null,
+      "volume": 10,
+      "cpc": null,
+      "competition": "HIGH",
+      "top3": [
+        "docs.gearset.com",
+        "www.wildnetedge.com",
+        "www.facebook.com"
+      ]
+    },
+    {
+      "keyword": "sfdx-hardis",
+      "position": null,
+      "url": null,
+      "volume": 40,
+      "cpc": 62.33,
+      "competition": "LOW",
+      "top3": [
+        "sfdx-hardis.cloudity.com",
+        "medium.com",
+        "sfdx-hardis.cloudity.com"
+      ]
+    },
+    {
+      "keyword": "salesforce devops center",
+      "position": null,
+      "url": null,
+      "volume": 30,
+      "cpc": 21.12,
+      "competition": "MEDIUM",
+      "top3": [
+        "help.salesforce.com",
+        "developer.salesforce.com",
+        "www.salesforce.com"
+      ]
+    },
+    {
+      "keyword": "salesforce nearshore",
+      "position": null,
+      "url": null,
+      "volume": null,
+      "cpc": null,
+      "competition": null,
+      "top3": [
+        "www.kinpoint.de",
+        "www.tecla.io",
+        "www.linkedin.com"
+      ]
+    },
+    {
+      "keyword": "salesforce lizenzen",
+      "position": 35,
+      "url": "https://www.fk-sd.de/blog/salesforce-lizenzen-volle-lizenz/",
+      "volume": 30,
+      "cpc": 6.78,
+      "competition": "MEDIUM",
+      "top3": [
+        "apracor.sunzinet.com",
+        "blog.factory42.com",
+        "mind-force.de"
+      ]
+    },
+    {
+      "keyword": "salesforce field service",
+      "position": 28,
+      "url": "https://www.fk-sd.de/blog/salesforce-field-service-lohnt-sich/",
+      "volume": 170,
+      "cpc": 15.75,
+      "competition": "MEDIUM",
+      "top3": [
+        "comselect.de",
+        "www.salesforce.com",
+        "www.getapp.de"
+      ]
+    },
+    {
+      "keyword": "salesforce field service einführung",
+      "position": 17,
+      "url": "https://www.fk-sd.de/blog/salesforce-field-service-lohnt-sich/",
+      "volume": null,
+      "cpc": null,
+      "competition": null,
+      "top3": [
+        "apracor.sunzinet.com",
+        "mind-force.de",
+        "www.salesforce.com"
+      ]
+    },
+    {
+      "keyword": "field service lizenzen salesforce",
+      "error": "serp/google/organic/live/regular: Internal SE Server Error."
+    },
+    {
+      "keyword": "salesforce manufacturing cloud",
+      "position": 47,
+      "url": "https://www.fk-sd.de/blog/manufacturing-cloud-wann-lohnt-sie-sich/",
+      "volume": 30,
+      "cpc": 91.6,
+      "competition": "MEDIUM",
+      "top3": [
+        "trailhead.salesforce.com",
+        "www.salesforce.com",
+        "routine-automation.com"
+      ]
+    },
+    {
+      "keyword": "manufacturing cloud funktionen",
+      "error": "serp/google/organic/live/regular: Internal SE Server Error."
+    },
+    {
+      "keyword": "salesforce revenue cloud",
+      "position": null,
+      "url": null,
+      "volume": 110,
+      "cpc": 11.58,
+      "competition": "MEDIUM",
+      "top3": [
+        "help.salesforce.com",
+        "www.salesforce.com",
+        "trailhead.salesforce.com"
+      ]
+    },
+    {
+      "keyword": "salesforce cpq revenue cloud",
+      "position": null,
+      "url": null,
+      "volume": 10,
+      "cpc": null,
+      "competition": null,
+      "top3": [
+        "www.salesforce.com",
+        "www.reddit.com",
+        "www.apexhours.com"
+      ]
+    },
+    {
+      "keyword": "salesforce cpq end of sale",
+      "position": null,
+      "url": null,
+      "volume": 10,
+      "cpc": null,
+      "competition": null,
+      "top3": [
+        "www.salesforce.com",
+        "www.salesforceben.com",
+        "www.reddit.com"
+      ]
+    },
+    {
+      "keyword": "salesforce b2b commerce",
+      "position": null,
+      "url": null,
+      "volume": 20,
+      "cpc": 11.61,
+      "competition": "MEDIUM",
+      "top3": [
+        "www.salesforce.com",
+        "developer.salesforce.com",
+        "www.salesforce.com"
+      ]
+    },
+    {
+      "keyword": "b2b commerce preise salesforce",
+      "position": null,
+      "url": null,
+      "volume": null,
+      "cpc": null,
+      "competition": null,
+      "top3": [
+        "www.salesforce.com",
+        "www.salesforce.com",
+        "omr.com"
+      ]
+    },
+    {
+      "keyword": "agentforce hersteller",
+      "position": null,
+      "url": null,
+      "volume": null,
+      "cpc": null,
+      "competition": null,
+      "top3": [
+        "topsoft.ch",
+        "ai-first.ai",
+        "www.increscotech.com"
+      ]
+    },
+    {
+      "keyword": "agentforce kosten",
+      "position": null,
+      "url": null,
+      "volume": null,
+      "cpc": null,
+      "competition": null,
+      "top3": [
+        "www.salesforce.com",
+        "www.salesfive.com",
+        "cloudconsultants.ch"
+      ]
+    },
+    {
+      "keyword": "flex credits agentforce",
+      "position": null,
+      "url": null,
+      "volume": 10,
+      "cpc": null,
+      "competition": null,
+      "top3": [
+        "www.saksoft.com",
+        "www.linkedin.com",
+        "ashapurasoftech.com"
+      ]
+    },
+    {
+      "keyword": "salesforce sap integration",
+      "position": null,
+      "url": null,
+      "volume": 40,
+      "cpc": 9.88,
+      "competition": "HIGH",
+      "top3": [
+        "erlebe-software.de",
+        "mind-force.de",
+        "erlebe-software.de"
+      ]
+    },
+    {
+      "keyword": "salesforce document builder",
+      "position": 25,
+      "url": "https://www.fk-sd.de/en/blog/salesforce-service-documents-document-builder/",
+      "volume": 10,
+      "cpc": null,
+      "competition": null,
+      "top3": [
+        "www.youtube.com",
+        "trailhead.salesforce.com",
+        "trailhead.salesforce.com"
+      ]
+    },
+    {
+      "keyword": "salesforce well-architected",
+      "position": null,
+      "url": null,
+      "volume": 10,
+      "cpc": null,
+      "competition": "LOW",
+      "top3": [
+        "www.linkedin.com",
+        "www.salesforce.com",
+        "architect.salesforce.com"
+      ]
+    }
+  ],
+  "en": [
+    {
+      "keyword": "salesforce solution architect freelance",
+      "error": "serp/google/organic/live/regular: Internal SE Server Error."
+    },
+    {
+      "keyword": "salesforce consultant germany",
+      "position": null,
+      "url": null,
+      "volume": null,
+      "cpc": null,
+      "competition": null,
+      "top3": [
+        "www.sunzinet.com",
+        "job.deloitte.com",
+        "www.sortlist.com"
+      ]
+    },
+    {
+      "keyword": "salesforce partner governance",
+      "error": "serp/google/organic/live/regular: Internal SE Server Error."
+    },
+    {
+      "keyword": "salesforce devops consulting",
+      "position": null,
+      "url": null,
+      "volume": null,
+      "cpc": null,
+      "competition": null,
+      "top3": [
+        "www.nbs-consulting.net",
+        "appexchange.salesforce.com",
+        "www.facebook.com"
+      ]
+    },
+    {
+      "keyword": "sfdx-hardis",
+      "position": 14,
+      "url": "https://www.fk-sd.de/en/blog/sfdx-hardis-open-source-salesforce-devops/",
+      "volume": 40,
+      "cpc": 62.33,
+      "competition": "LOW",
+      "top3": [
+        "sfdx-hardis.cloudity.com",
+        "sfdx-hardis.cloudity.com",
+        "www.youtube.com"
+      ]
+    },
+    {
+      "keyword": "sfdx-hardis vs devops center",
+      "error": "serp/google/organic/live/regular: Internal SE Server Error."
+    },
+    {
+      "keyword": "salesforce field service implementation",
+      "position": null,
+      "url": null,
+      "volume": null,
+      "cpc": null,
+      "competition": null,
+      "top3": [
+        "dazeworks.com",
+        "cyntexa.com",
+        "sptechusa.com"
+      ]
+    },
+    {
+      "keyword": "salesforce manufacturing cloud features",
+      "position": null,
+      "url": null,
+      "volume": 10,
+      "cpc": null,
+      "competition": null,
+      "top3": [
+        "www.salesforce.com",
+        "www.salesforce.com",
+        "help.salesforce.com"
+      ]
+    },
+    {
+      "keyword": "salesforce revenue cloud pricing",
+      "position": null,
+      "url": null,
+      "volume": 10,
+      "cpc": null,
+      "competition": "LOW",
+      "top3": [
+        "www.salesforce.com",
+        "developer.salesforce.com",
+        "thecloudupdate.co"
+      ]
+    },
+    {
+      "keyword": "salesforce cpq vs revenue cloud",
+      "position": null,
+      "url": null,
+      "volume": null,
+      "cpc": null,
+      "competition": null,
+      "top3": [
+        "www.apexhours.com",
+        "www.everstage.com",
+        "www.reddit.com"
+      ]
+    },
+    {
+      "keyword": "salesforce b2b commerce pricing",
+      "position": null,
+      "url": null,
+      "volume": 10,
+      "cpc": null,
+      "competition": null,
+      "top3": [
+        "www.salesforce.com",
+        "help.salesforce.com",
+        "litextension.com"
+      ]
+    },
+    {
+      "keyword": "agentforce flex credits",
+      "position": null,
+      "url": null,
+      "volume": null,
+      "cpc": null,
+      "competition": null,
+      "top3": [
+        "nebulaconsulting.co.uk",
+        "medium.com",
+        "www.salesfive.com"
+      ]
+    },
+    {
+      "keyword": "salesforce document builder limitations",
+      "position": 7,
+      "url": "https://www.fk-sd.de/en/blog/salesforce-service-documents-document-builder/",
+      "volume": null,
+      "cpc": null,
+      "competition": null,
+      "top3": [
+        "help.salesforce.com",
+        "trailhead.salesforce.com",
+        "www.salesforceben.com"
+      ]
+    },
+    {
+      "keyword": "salesforce well-architected framework",
+      "position": null,
+      "url": null,
+      "volume": 10,
+      "cpc": null,
+      "competition": "LOW",
+      "top3": [
+        "www.linkedin.com",
+        "ezprotect.io",
+        "architect.salesforce.com"
+      ]
+    }
+  ]
+}
