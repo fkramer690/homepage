@@ -115,11 +115,13 @@ The CPQ page names three partner offerings: Forsys RevRamp, IdeaHelix and Prodly
 
 The order follows the [object deployment reference](https://developer.salesforce.com/docs/atlas.en-us.revenue_lifecycle_management_dev_guide.meta/revenue_lifecycle_management_dev_guide/deployment_appendix_A.htm) of the Developer Guide, parents before children:
 
-1. Attribute definitions, product classifications, then products.
-2. Product selling models, price books, price book entries, price adjustments.
-3. Bundle components, catalogs and categories.
-4. Assets for every open subscription, built from historical orders.
-5. Billing data, if you use Salesforce Billing today.
+| Step | What moves |
+|---|---|
+| 1 | Attribute definitions, product classifications, then products. |
+| 2 | Product selling models, price books, price book entries, price adjustments. |
+| 3 | Bundle components, catalogs and categories. |
+| 4 | Assets for every open subscription, built from historical orders. |
+| 5 | Billing data, if you use Salesforce Billing today. |
 
 My rules: migrate each open subscription before its next renewal date, and leave closed quotes in CPQ as read-only history. The phases, the work packages and a sample plan are in [CPQ to Revenue Cloud migration: phases, effort, cutover](../../../blog/cpq-to-revenue-cloud-migration-phases/).
 
@@ -137,9 +139,11 @@ Catalog, selling models, price book entries and billing policies are records; de
 
 My rules, set before the first record exists:
 
-- **A stable unique ID on every configuration object**, because Salesforce record IDs differ between orgs.
-- **Products and list prices from SAP arrive through the integration**, never by deployment from a sandbox.
-- **Data templates and the data tool belong to the client**, for the reasons in [why clients should own their DevOps tools](../../../blog/why-clients-should-own-their-devops-tools/).
+| Rule | What it includes |
+|---|---|
+| A stable unique ID on every configuration object | Because Salesforce record IDs differ between orgs. |
+| Products and list prices from SAP arrive through the integration | Never by deployment from a sandbox. |
+| Data templates and the data tool belong to the client | For the reasons in [why clients should own their DevOps tools](../../../blog/why-clients-should-own-their-devops-tools/). |
 
 How configuration data moves through a pipeline is covered in the DevOps chapter on [data and configuration](../../devops-release-management/data-and-configuration/), which tool fits in [DevOps tools compared](../../devops-release-management/devops-tools-compared/), and the Revenue Cloud details, including context definitions and configurator rules, in [Revenue Cloud deployments](../../../blog/revenue-cloud-configuration-deployment/).
 

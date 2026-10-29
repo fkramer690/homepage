@@ -36,12 +36,14 @@ In Revenue Cloud every sale runs through a quote and an order on standard object
 
 Help and the developer guide currently call Revenue Cloud Revenue Management, Trailhead calls it Agentforce Revenue Management. Salesforce calls the part between quote and order Transaction Management. According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/efficient-sales-with-revenue-cloud/get-started-with-transaction-management), it supports quotes and order capture, "whether it's an initial sale, amendment, or renewal". The path looks like this:
 
-1. Sales creates a quote, picks products from the catalog, configures them and has them priced. Catalog, configurator and pricing procedures are covered in [chapter 2](../product-catalog-configurator-pricing/).
-2. If the price deviates from the approval matrix, an approval starts.
-3. The customer receives the quote, if needed together with a contract from Salesforce Contracts.
-4. Once the quote is accepted, sales creates an order from it. In the [Trailhead unit on orders](https://trailhead.salesforce.com/content/learn/modules/efficient-sales-with-revenue-cloud/create-and-fulfill-orders), the rep sets the quote to Accepted and clicks Create Order.
-5. On activation the order changes from Draft to Activated and can no longer be edited directly. A flow creates an asset on the customer account for each order line, or first hands the order to orchestration.
-6. SAP receives the order and owns delivery, confirmed dates and usually the invoice.
+| No. | Step | What happens |
+|---|---|---|
+| 1 | Quote | Sales creates a quote, picks products from the catalog, configures them and has them priced. Catalog, configurator and pricing procedures are covered in [chapter 2](../product-catalog-configurator-pricing/). |
+| 2 | Approval | If the price deviates from the approval matrix, an approval starts. |
+| 3 | Quote to the customer | The customer receives the quote, if needed together with a contract from Salesforce Contracts. |
+| 4 | Order | Once the quote is accepted, sales creates an order from it. In the [Trailhead unit on orders](https://trailhead.salesforce.com/content/learn/modules/efficient-sales-with-revenue-cloud/create-and-fulfill-orders), the rep sets the quote to Accepted and clicks Create Order. |
+| 5 | Activation | On activation the order changes from Draft to Activated and can no longer be edited directly. A flow creates an asset on the customer account for each order line, or first hands the order to orchestration. |
+| 6 | Handover to SAP | SAP receives the order and owns delivery, confirmed dates and usually the invoice. |
 
 For architects one point matters most: there is no side entrance. A change in quantity, a renewal or a cancellation is again a quote and again an order. That is more process than editing a field, and it keeps prices, approvals and history consistent.
 
@@ -59,7 +61,9 @@ Approvals in Revenue Cloud run on Advanced Approvals. The [developer guide](http
 
 I keep the approval matrix short: discount on list price, margin per quote, deal size, non-standard payment terms. Each trigger has exactly one owner for its threshold. A margin approval needs a cost per line from the ERP. Without it, approve on discount and deal size only, rather than on a margin field nobody trusts. Matrix, cost sources and the rebuild from CPQ are covered in [discount approvals in Revenue Cloud](../../../blog/revenue-cloud-discount-approvals/).
 
+```hinweis achtung
 One rule holds with agents too: the threshold and the approver come from the workflow. An agent may submit, search and summarise approvals, it does not decide them. Why business rules do not belong in the language model is explained in [Agent Script: deterministic rules](../../../blog/agent-script-deterministic-rules/). If you come from CPQ, plan approvals as a rebuild, because CPQ's Advanced Approvals package does not carry over; more in [chapter 5](../from-cpq-to-revenue-cloud/).
+```
 
 ## What can the quoting agent do today?
 
@@ -68,6 +72,17 @@ The quoting agent creates, modifies and summarises quotes. According to the [Tra
 With Winter '27, [generally available since 12 October 2026](https://www.salesforce.com/news/stories/winter-2027-product-release-announcement/), three groups are added: self-service quoting for customer buyers, integrated quoting for partners in their own workspace and drafted renewal quotes for account executives. For manufacturers I see renewals as the most useful part, because maintenance and remote monitoring subscriptions create routine work every year.
 
 What the agent cannot do is see rules that live in SAP variant configuration, in a PLM or in an application engineer's head. For configured machines with such rules I would not use it yet. What must be in place first and where it is the wrong tool is in [Revenue Cloud quoting agent](../../../blog/revenue-cloud-quoting-agent-agentforce/). Cost runs through Flex Credits: the [Agentforce pricing page](https://www.salesforce.com/agentforce/pricing/) lists $500 per 100,000 credits, and its examples use 20 credits per standard action. How to budget that is in the AI masterclass chapter [costs and tokens](../../ai-salesforce/costs-and-tokens/).
+
+```pro-contra
+pro: What the quote agent can do
+- Create, change and summarise quotes
+- Offer only valid products, keep prices and discounts within the system's guardrails
+- Amendments to assets and prepared renewal quotes
+contra: What it cannot do
+- See rules from SAP variant configuration
+- Know rules from a PLM or from an application engineer's head
+- Quote configured machines with such rules safely
+```
 
 If your dealers work in Manufacturing Cloud, there is a separate agent there, the [AI Partner Sales Assistant](../../../blog/ai-partner-sales-assistant-dealer-quotes/). Two quoting agents on two quote models is a setup I would avoid. Where agents help elsewhere in manufacturing is shown in the chapter [AI agents in manufacturing](../../ai-salesforce/ai-agents-in-manufacturing/). If customers order on their own anyway, the cart belongs in the store; the B2B Commerce masterclass covers that in [prices, cart, checkout](../../b2b-commerce/prices-cart-checkout/).
 
@@ -111,11 +126,13 @@ Field Service uses the same Asset object, there as the machine at the customer s
 
 A maker of packaging lines sells an existing customer two things on one quote: a wear parts package for three lines and a remote monitoring subscription for the same three machines, with a twelve-month term. All details are assumptions.
 
-- **Quote.** One group per line, each with parts package and subscription. The wear parts come with list prices from SAP, the subscription with a price from Salesforce Pricing. The 18 percent discount is above the 15 percent threshold and goes to the head of sales; the preview shows that before submission.
-- **Contract.** Salesforce Contracts generates a contract from the quote with standard clauses on data use, signed through DocuSign.
-- **Order.** DRO breaks the order into an SAP sales order for the parts through a callout and the activation of remote monitoring as an auto task. From there the parts run entirely in SAP.
-- **Assets.** The subscription is sold per machine as its own line with quantity one and linked to the Field Service machine asset. If a machine is taken out later, an amendment cancels exactly that line.
-- **Renewal.** Before the term ends, the agent drafts the renewal quote, and sales reviews and sends it.
+| Building block | In the scenario |
+|---|---|
+| Quote | One group per line, each with parts package and subscription. The wear parts come with list prices from SAP, the subscription with a price from Salesforce Pricing. The 18 percent discount is above the 15 percent threshold and goes to the head of sales; the preview shows that before submission. |
+| Contract | Salesforce Contracts generates a contract from the quote with standard clauses on data use, signed through DocuSign. |
+| Order | DRO breaks the order into an SAP sales order for the parts through a callout and the activation of remote monitoring as an auto task. From there the parts run entirely in SAP. |
+| Assets | The subscription is sold per machine as its own line with quantity one and linked to the Field Service machine asset. If a machine is taken out later, an amendment cancels exactly that line. |
+| Renewal | Before the term ends, the agent drafts the renewal quote, and sales reviews and sends it. |
 
 The invoice for the subscription can come from SAP or from Revenue Cloud Billing. That decision and recurring billing are covered in [chapter 4](../billing-and-usage-based-pricing/), for example in [maintenance contracts: recurring billing](../../../blog/maintenance-contracts-recurring-billing/).
 
@@ -123,10 +140,12 @@ The invoice for the subscription can come from SAP or from Revenue Cloud Billing
 
 Before a partner builds the first quote layout, I would settle these points in writing:
 
-- **Approval matrix:** triggers, thresholds, owners and the source of cost data.
-- **Agent:** which quote types it takes on and which stay with the sales desk, and whether dealers quote through Revenue Cloud or Manufacturing Cloud.
-- **Contract:** which contracts are created in Salesforce Contracts and which stay with legal.
-- **Order:** DRO or a plain integration, who works the fallout queue, which checks run before activation.
-- **Assets:** counted or tied to a serial number, and who owns the Asset object.
+| Topic | What you clarify |
+|---|---|
+| Approval matrix | Triggers, thresholds, owners and the source of cost data. |
+| Agent | Which quote types it takes on and which stay with the sales desk, and whether dealers quote through Revenue Cloud or Manufacturing Cloud. |
+| Contract | Which contracts are created in Salesforce Contracts and which stay with legal. |
+| Order | DRO or a plain integration, who works the fallout queue, which checks run before activation. |
+| Assets | Counted or tied to a serial number, and who owns the Asset object. |
 
 All chapters are on the [overview page](../). Revenue Cloud carries the path from quote to order well when every change runs through a quote and an order and the hand-over to SAP is fixed up front. If you want to work through these decisions for your company, [send me a message](#contact).

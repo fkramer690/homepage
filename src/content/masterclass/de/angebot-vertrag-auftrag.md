@@ -36,12 +36,14 @@ In Revenue Cloud läuft jeder Verkauf über ein Angebot und einen Auftrag auf St
 
 Revenue Cloud heißt in Help und Developer Guide derzeit Revenue Management, auf Trailhead Agentforce Revenue Management. Den Teil zwischen Angebot und Auftrag nennt Salesforce Transaction Management. Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/efficient-sales-with-revenue-cloud/get-started-with-transaction-management) unterstützt es Angebote und Auftragserfassung, „whether it's an initial sale, amendment, or renewal“. Der Weg sieht so aus:
 
-1. Der Vertrieb legt ein Angebot an, wählt Produkte aus dem Katalog, konfiguriert sie und lässt sie bepreisen. Katalog, Konfigurator und Preisprozeduren stehen in [Kapitel 2](../produktkatalog-konfigurator-preise/).
-2. Weicht der Preis von der Freigabematrix ab, startet eine Freigabe.
-3. Der Kunde bekommt das Angebot, auf Wunsch zusammen mit einem Vertrag aus Salesforce Contracts.
-4. Ist das Angebot angenommen, erzeugt der Vertrieb daraus einen Auftrag. Nach dem [Trailhead-Modul zu Aufträgen](https://trailhead.salesforce.com/content/learn/modules/efficient-sales-with-revenue-cloud/create-and-fulfill-orders) setzt er das Angebot auf Accepted und klickt Create Order.
-5. Mit der Aktivierung wechselt der Auftrag von Draft auf Activated und lässt sich nicht mehr direkt ändern. Ein Flow legt für jede Auftragsposition ein Asset am Kundenkonto an oder übergibt den Auftrag zuerst an die Orchestrierung.
-6. SAP bekommt den Auftrag und übernimmt Lieferung, bestätigte Termine und meist die Rechnung.
+| Nr. | Schritt | Was passiert |
+|---|---|---|
+| 1 | Angebot | Der Vertrieb legt ein Angebot an, wählt Produkte aus dem Katalog, konfiguriert sie und lässt sie bepreisen. Katalog, Konfigurator und Preisprozeduren stehen in [Kapitel 2](../produktkatalog-konfigurator-preise/). |
+| 2 | Freigabe | Weicht der Preis von der Freigabematrix ab, startet eine Freigabe. |
+| 3 | Angebot an den Kunden | Der Kunde bekommt das Angebot, auf Wunsch zusammen mit einem Vertrag aus Salesforce Contracts. |
+| 4 | Auftrag | Ist das Angebot angenommen, erzeugt der Vertrieb daraus einen Auftrag. Nach dem [Trailhead-Modul zu Aufträgen](https://trailhead.salesforce.com/content/learn/modules/efficient-sales-with-revenue-cloud/create-and-fulfill-orders) setzt er das Angebot auf Accepted und klickt Create Order. |
+| 5 | Aktivierung | Mit der Aktivierung wechselt der Auftrag von Draft auf Activated und lässt sich nicht mehr direkt ändern. Ein Flow legt für jede Auftragsposition ein Asset am Kundenkonto an oder übergibt den Auftrag zuerst an die Orchestrierung. |
+| 6 | Übergabe an SAP | SAP bekommt den Auftrag und übernimmt Lieferung, bestätigte Termine und meist die Rechnung. |
 
 Für Architekten ist ein Punkt entscheidend: Es gibt keinen Nebenweg. Eine Mengenänderung, eine Verlängerung oder eine Kündigung ist wieder ein Angebot und wieder ein Auftrag. Das ist mehr Prozess als ein geändertes Feld, hält aber Preise, Freigaben und Historie konsistent.
 
@@ -59,7 +61,9 @@ Freigaben laufen in Revenue Cloud über Advanced Approvals. Der [Developer Guide
 
 Die Freigabematrix halte ich kurz: Rabatt auf den Listenpreis, Marge pro Angebot, Auftragsgröße, abweichende Zahlungsbedingungen. Jeder Auslöser hat genau einen Verantwortlichen für die Schwelle. Für die Marge braucht jede Position Kosten aus dem ERP. Fehlen sie, geben Sie besser nur nach Rabatt und Auftragsgröße frei als nach einem Margenfeld, dem niemand traut. Matrix, Kostenquellen und den Umbau aus CPQ beschreibe ich in [Rabattfreigaben in Revenue Cloud](../../../blog/revenue-cloud-rabattfreigaben/).
 
+```hinweis achtung
 Eine Regel gilt auch mit Agenten: Schwelle und Freigebender kommen aus dem Workflow. Ein Agent darf Freigaben einreichen, suchen und zusammenfassen, er entscheidet sie nicht. Warum Geschäftsregeln nicht ins Sprachmodell gehören, steht in [Agent Script: Regeln statt LLM](../../../blog/agent-script-regeln-statt-llm/). Wer von CPQ kommt, plant Freigaben als Neubau, denn das Advanced-Approvals-Paket von CPQ wird nicht übernommen; mehr dazu in [Kapitel 5](../von-cpq-zu-revenue-cloud/).
+```
 
 ## Was kann der Angebotsagent heute?
 
@@ -68,6 +72,17 @@ Der Angebotsagent erstellt, ändert und fasst Angebote zusammen. Laut [Trailhead
 Mit Winter '27, laut [Salesforce](https://www.salesforce.com/news/stories/winter-2027-product-release-announcement/) allgemein verfügbar seit 12. Oktober 2026, kommen drei Gruppen dazu: Self-Service-Angebote für Kunden, Angebote für Partner in ihrem eigenen Arbeitsbereich und vorbereitete Verlängerungsangebote für Account Executives. Für Hersteller halte ich die Verlängerungen für den nützlichsten Teil, weil Wartungs- und Fernüberwachungsabos jedes Jahr Routinearbeit erzeugen.
 
 Was der Agent nicht kann: Regeln sehen, die in SAP-Variantenkonfiguration, im PLM oder im Kopf eines Anwendungstechnikers liegen. Für konfigurierte Maschinen mit solchen Regeln würde ich ihn noch nicht einsetzen. Was vorher stehen muss und wo er falsch ist, beschreibe ich in [Angebotsagent in Revenue Cloud](../../../blog/revenue-cloud-angebotsagent-agentforce/). Die Kosten laufen über Flex Credits: Die [Agentforce-Preisseite](https://www.salesforce.com/agentforce/pricing/) nennt 500 Dollar je 100.000 Credits und rechnet in ihren Beispielen mit 20 Credits pro Standardaktion. Wie Sie das budgetieren, steht im Kapitel [Kosten und Token](../../ki-salesforce/kosten-und-token/) der KI-Masterclass.
+
+```pro-contra
+pro: Was der Angebotsagent kann
+- Angebote erstellen, ändern und zusammenfassen
+- Nur gültige Produkte anbieten, Preise und Rabatte in den Leitplanken des Systems
+- Nachträge zu Assets und vorbereitete Verlängerungsangebote
+contra: Was er nicht kann
+- Regeln aus der SAP-Variantenkonfiguration sehen
+- Regeln aus dem PLM oder aus dem Kopf eines Anwendungstechnikers kennen
+- Konfigurierte Maschinen mit solchen Regeln sicher anbieten
+```
 
 Arbeiten Ihre Händler in Manufacturing Cloud, gibt es dort einen eigenen Agenten, den [AI Partner Sales Assistant](../../../blog/ki-angebote-haendler-partner-sales-assistant/). Zwei Angebotsagenten auf zwei Angebotsmodellen würde ich vermeiden. Wo Agenten in der Fertigung sonst helfen, zeigt das Kapitel [KI-Agenten in der Fertigung](../../ki-salesforce/ki-agenten-in-der-fertigung/). Bestellen Kunden ohnehin selbst, gehört der Warenkorb in den Shop; das behandelt die B2B-Commerce-Masterclass in [Preise, Warenkorb, Checkout](../../b2b-commerce/preise-warenkorb-checkout/).
 
@@ -111,11 +126,13 @@ Field Service nutzt dasselbe Asset-Objekt, dort als Maschine beim Kunden mit Ser
 
 Ein Hersteller von Verpackungsanlagen verkauft einem Bestandskunden auf einem Angebot zwei Dinge: ein Verschleißteilpaket für drei Linien und ein Fernüberwachungsabo für dieselben drei Maschinen, zwölf Monate Laufzeit. Alle Details sind Annahmen.
 
-- **Angebot.** Eine Gruppe pro Linie, darin Teilepaket und Abo. Die Verschleißteile kommen mit Listenpreis aus SAP, das Abo mit Preis aus Salesforce Pricing. Der Rabatt von 18 Prozent liegt über der Schwelle von 15 Prozent und geht an die Vertriebsleitung; die Vorschau zeigt das vor dem Absenden.
-- **Vertrag.** Salesforce Contracts erzeugt aus dem Angebot einen Vertrag mit Standardklauseln zur Datennutzung, unterschrieben per DocuSign.
-- **Auftrag.** DRO zerlegt den Auftrag in einen SAP-Kundenauftrag für die Teile per Callout und eine Aktivierung der Fernüberwachung als Auto Task. Die Teile laufen danach komplett in SAP.
-- **Assets.** Das Abo wird pro Maschine als eigene Position verkauft, mit Menge eins, und mit dem Maschinen-Asset aus Field Service verknüpft. Fällt später eine Maschine weg, kündigt ein Nachtrag genau diese Position.
-- **Verlängerung.** Vor Ablauf bereitet der Agent das Verlängerungsangebot vor, der Vertrieb prüft und sendet es.
+| Baustein | Im Szenario |
+|---|---|
+| Angebot | Eine Gruppe pro Linie, darin Teilepaket und Abo. Die Verschleißteile kommen mit Listenpreis aus SAP, das Abo mit Preis aus Salesforce Pricing. Der Rabatt von 18 Prozent liegt über der Schwelle von 15 Prozent und geht an die Vertriebsleitung; die Vorschau zeigt das vor dem Absenden. |
+| Vertrag | Salesforce Contracts erzeugt aus dem Angebot einen Vertrag mit Standardklauseln zur Datennutzung, unterschrieben per DocuSign. |
+| Auftrag | DRO zerlegt den Auftrag in einen SAP-Kundenauftrag für die Teile per Callout und eine Aktivierung der Fernüberwachung als Auto Task. Die Teile laufen danach komplett in SAP. |
+| Assets | Das Abo wird pro Maschine als eigene Position verkauft, mit Menge eins, und mit dem Maschinen-Asset aus Field Service verknüpft. Fällt später eine Maschine weg, kündigt ein Nachtrag genau diese Position. |
+| Verlängerung | Vor Ablauf bereitet der Agent das Verlängerungsangebot vor, der Vertrieb prüft und sendet es. |
 
 Die Rechnung für das Abo kann aus SAP oder aus Revenue Cloud Billing kommen. Diese Entscheidung und die wiederkehrende Abrechnung behandelt [Kapitel 4](../abrechnung-und-nutzungsbasierte-preise/), etwa in [Wartungsverträge wiederkehrend abrechnen](../../../blog/wartungsvertraege-wiederkehrend-abrechnen/).
 
@@ -123,10 +140,12 @@ Die Rechnung für das Abo kann aus SAP oder aus Revenue Cloud Billing kommen. Di
 
 Bevor ein Partner das erste Angebotslayout baut, würde ich diese Punkte schriftlich klären:
 
-- **Freigabematrix:** Auslöser, Schwellen, Verantwortliche und die Quelle der Kostendaten.
-- **Agent:** welche Angebotsarten er übernimmt und welche beim Innendienst bleiben, und ob Händler über Revenue Cloud oder Manufacturing Cloud anbieten.
-- **Vertrag:** welche Verträge in Salesforce Contracts entstehen und welche bei der Rechtsabteilung.
-- **Auftrag:** DRO oder einfache Schnittstelle, wer die Fallout-Queue abarbeitet, welche Prüfungen vor der Aktivierung laufen.
-- **Assets:** gezählt oder an eine Seriennummer gebunden, und wem das Asset-Objekt gehört.
+| Thema | Was Sie klären |
+|---|---|
+| Freigabematrix | Auslöser, Schwellen, Verantwortliche und die Quelle der Kostendaten. |
+| Agent | welche Angebotsarten er übernimmt und welche beim Innendienst bleiben, und ob Händler über Revenue Cloud oder Manufacturing Cloud anbieten. |
+| Vertrag | welche Verträge in Salesforce Contracts entstehen und welche bei der Rechtsabteilung. |
+| Auftrag | DRO oder einfache Schnittstelle, wer die Fallout-Queue abarbeitet, welche Prüfungen vor der Aktivierung laufen. |
+| Assets | gezählt oder an eine Seriennummer gebunden, und wem das Asset-Objekt gehört. |
 
 Alle Kapitel finden Sie auf der [Übersichtsseite](../). Revenue Cloud trägt den Weg vom Angebot zum Auftrag gut, wenn jede Änderung über Angebot und Auftrag läuft und die Übergabe an SAP vorher festgelegt ist. Wenn Sie diese Entscheidungen für Ihr Unternehmen durchgehen möchten, [schreiben Sie mir](#contact).
