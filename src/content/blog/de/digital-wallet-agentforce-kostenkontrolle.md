@@ -51,7 +51,7 @@ Drei Vertragsbedingungen entscheiden, wo das Geld landet:
 - **Ungenutzte Credits verfallen.** Die [Flex Credits Rate Card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) verlangt den Verbrauch vor dem Order End Date, "no rollover will be permitted".
 - **Ein Preismodell pro Org.** Flex Credits und die Abrechnung pro Konversation werden laut Preisseite nicht in derselben Org unterstützt. Eine US-Tochter kann also nicht pro Konversation zahlen, während die deutschen Werke Credits nutzen.
 
-Für einen Fertigungskonzern ist das deshalb eine Organisationsfrage. Ich würde eine Person in der Konzern-IT oder im Salesforce-CoE zur Budgetverantwortlichen machen: Sie unterschreibt, beobachtet den Pool und führt die Verrechnung. Werke und Töchter bekommen Budgets, keine Credits.
+Für einen Fertigungskonzern ist das deshalb eine Organisationsfrage. Ich würde eine Person in der Konzern-IT oder im [Salesforce Center of Excellence](../salesforce-center-of-excellence-format/) zur Budgetverantwortlichen machen: Sie unterschreibt, beobachtet den Pool und führt die Verrechnung. Werke und Töchter bekommen Budgets, keine Credits.
 
 ## Was zeigt Digital Wallet für die Leistungsverrechnung?
 
