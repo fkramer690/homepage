@@ -40,3 +40,13 @@ with icon and question count as jump links under the lead. Each group: icon and
 title in a sticky left column, the questions on the right as one white box with
 dashed dividers and a cyan number, instead of one card per question.
 Fits: long lists grouped by topic (FAQ-like pages, checklists).
+
+## Side column + compact row list (masterclass overview)
+
+Chosen 2026-10-29 for `/masterclass/` and `/en/masterclass/` (variant B of three).
+Left a sticky side column (`.mc-overview-side`): one-sentence intro, figures in
+a row between two lines (masterclasses, chapters, languages), then short ✓ points
+with a bold lead-in. Right one white box (`.mc-overview-list`) with one row per
+item: icon from `src/icons/`, short name in cyan mono, title, one-sentence
+summary, facts right-aligned, arrow; dashed dividers between rows.
+Fits: overview pages with a handful of equal items that each lead to their own page.

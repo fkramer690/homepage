@@ -1,8 +1,10 @@
 ---
 // Overview of all masterclasses (/masterclass/, /en/masterclass/), linked from the
-// main menu. Each card leads to the hub of one masterclass; the list comes from
+// main menu. Side column with intro, figures and points, then one row per
+// masterclass in a white box, each leading to its hub; the list comes from
 // src/lib/masterclasses.ts, the texts from `masterclasses` in src/i18n.
 import Page from '../layouts/Page.astro';
+import Icon from './Icon.astro';
 import { en } from '../i18n/en';
 import { de } from '../i18n/de';
 import { site } from '../site';
@@ -24,8 +26,13 @@ const url = abs(masterclassesIndex(lang));
 const suffix = ' | FK Solution Design';
 const pageTitle = o.metaTitle.length + suffix.length <= 60 ? o.metaTitle + suffix : o.metaTitle;
 const ogImage = `${base}og/${lang}/masterclasses.png`;
-const nn = (n: number) => String(n).padStart(2, '0');
-const articles = (n: number) => (n === 1 ? t.masterclass.articleCount.one : t.masterclass.articleCount.other).replace('{n}', String(n));
+const totalChapters = masterclasses.reduce((sum, mc) => sum + mc.chapters, 0);
+// Articles are not summed: many are linked from more than one masterclass.
+const stats = [
+  [masterclasses.length, o.stats.masterclasses],
+  [totalChapters, o.stats.chapters],
+  [2, o.stats.languages],
+] as const;
 
 const schema = {
   '@context': 'https://schema.org',
@@ -65,25 +72,36 @@ const schema = {
     <div class="container">
       <p class="eyebrow mono">{o.eyebrow}</p>
       <h1>{o.title}</h1>
-      <p class="blog-intro">{o.intro}</p>
-      <p class="blog-intro">{o.intro2}</p>
-      <ul class="cards mc-list">
-        {masterclasses.map((mc, i) => (
-          <li class="card card-link">
-            <a href={mc.href}>
-              <span class="card-index mono">{o.cardNo.replace('{nn}', nn(i + 1))} · {mc.name}</span>
-              <h2 class="card-title">{mc.title}</h2>
-              <p>{mc.summary}</p>
-              <p class="mc-list-facts mono">
-                {o.chapters.replace('{n}', String(mc.chapters))}
-                {mc.articles > 0 && <> · {articles(mc.articles)}</>}
-                {' · '}{o.languages}
-              </p>
-              <span class="card-more mono">{o.open} →</span>
-            </a>
-          </li>
-        ))}
-      </ul>
+      <div class="mc-overview">
+        <aside class="mc-overview-side">
+          <p class="mc-overview-lead">{o.intro}</p>
+          <ul class="mc-overview-stats">
+            {stats.map(([n, label]) => <li><strong>{n}</strong><span>{label}</span></li>)}
+          </ul>
+          <ul class="mc-overview-points">
+            {o.points.map((p) => <li><strong>{p.label}:</strong> {p.text}</li>)}
+          </ul>
+        </aside>
+        <ul class="mc-overview-list">
+          {masterclasses.map((mc) => (
+            <li>
+              <a href={mc.href}>
+                <Icon name={mc.icon} class="mc-overview-icon" />
+                <span class="mc-overview-body">
+                  <span class="mc-overview-name mono">{mc.shortName}</span>
+                  <h2 class="mc-overview-title">{mc.title}</h2>
+                  <span class="mc-overview-summary">{mc.summary}</span>
+                </span>
+                <span class="mc-overview-meta mono">
+                  {o.chapters.replace('{n}', String(mc.chapters))}
+                  {mc.articles > 0 && <><br />{o.articles.replace('{n}', String(mc.articles))}</>}
+                </span>
+                <span class="mc-overview-arrow" aria-hidden="true">→</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   </section>
 </Page>

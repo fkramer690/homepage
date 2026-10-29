@@ -20,7 +20,7 @@ All chapters of all masterclasses live in the one `masterclass` collection (`src
 
 ## Adding a masterclass
 
-1. Add an id to `courseIds` and an entry to `courses` in `src/lib/courses.ts` (URL segment per language, text key, preview image name).
+1. Add an id to `courseIds` and an entry to `courses` in `src/lib/courses.ts` (URL segment per language, text key, preview image name, icon from `src/icons/` for the overview page), and its short name to `masterclasses.homeNames` in both `src/i18n/` files.
 2. Add a text block with the same shape as `masterclass` to both `src/i18n/` files, and its clusters to `src/lib/masterclass.ts`.
 3. Add the hub and chapter routes below `src/pages/masterclass/<segment>/` and `src/pages/en/masterclass/<segment>/` (copy the DevOps ones), a preview image route in `src/pages/og/[lang]/`, the segment to `masterclassSegments` in `astro.config.mjs` and a section to `src/pages/llms.txt.ts`.
 4. Write the chapters with `course: <id>` and their own translationKeys.

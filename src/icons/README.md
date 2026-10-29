@@ -27,7 +27,7 @@ Never paste SVG markup for an icon into a component: add a file here instead.
 | `building` | 48 | Recruiter page: the end client; proof bar: enterprise projects |
 | `compass` | 48 | Recruiter page: role, phase, decision scope |
 | `sliders` | 48 | Recruiter page: duration, utilisation, start |
-| `budget` | 48 | Recruiter page: budget range |
+| `budget` | 48 | Recruiter page: budget range; masterclass overview: Revenue Cloud |
 | `feedback` | 48 | Recruiter page: feedback after submission |
 | `mail` | 48 | Recruiter page: process step "Request" |
 | `check` | 48 | Recruiter page: process step "Approval" (circle with tick) |
@@ -40,7 +40,7 @@ Never paste SVG markup for an icon into a component: add a file here instead.
 | `implement` | 48 | Start page, approach step 4 |
 | `architecture` | 48 | Start page: service card "Architecture & solution design" |
 | `partners` | 48 | Start page: service card "Partner governance" |
-| `pipeline` | 48 | Start page: service card "DevOps & release management" |
+| `pipeline` | 48 | Start page: service card "DevOps & release management"; masterclass overview: DevOps |
 | `integration` | 48 | Start page: service card "Integration"; questions page group "Data and interfaces" |
 | `team` | 48 | Start page: further services, "Project management & nearshore" |
 | `license` | 48 | Start page: further services, "Make-or-buy & licence forecasts" |
@@ -50,6 +50,10 @@ Never paste SVG markup for an icon into a component: add a file here instead.
 | `target` | 48 | Questions page group "Goal and deadline" |
 | `gear` | 48 | Questions page group "Operations" |
 | `lessons` | 48 | Questions page group "Finally" (flag with cross) |
+| `ai` | 48 | Masterclass overview: AI & Agentforce |
+| `factory` | 48 | Masterclass overview: Manufacturing Cloud |
+| `cart` | 48 | Masterclass overview: B2B Commerce |
+| `field-service` | 48 | Masterclass overview: Field Service (service van with wrench) |
 | `book-call` | 24 | Floating contact button "Book a call" |
 | `message` | 24 | Floating contact button "Send a message" |
 | `external` | 12 | Arrow after every external link (components, Markdown, content blocks) |
