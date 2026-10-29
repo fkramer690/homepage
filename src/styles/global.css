@@ -1580,4 +1580,4 @@ p.post-series-note { margin: 0.6em 0 0; font-size: 0.95rem; }
 .partner-box-photo { flex-shrink: 0; }
 .mc-partner .partner-box { margin-top: 0; }
 .post-takeaways + .partner-box { margin-top: 0; margin-bottom: 2em; }
-.jw-logo { display: block; height: 40px; width: auto; max-width: 160px; object-fit: contain; margin-bottom: 12px; }
+.jw-logo { display: block; box-sizing: content-box; height: 36px; width: auto; max-width: 160px; object-fit: contain; margin-bottom: 12px; padding: 6px 10px; background: var(--white); border-radius: 4px; }

@@ -27,9 +27,9 @@ const abs = (path: string) => new URL(path, Astro.site).href;
 const ctaAttrs = contactExternal ? { target: '_blank', rel: 'noopener' } : {};
 const ogImage = `${base}og/${lang}/juliane-winterscheid.png`;
 const partner = t.partnerPage.partners.find((p) => p.name === 'Juliane Winterscheid');
-// Client logos for the references: src/assets/partners/logos/<logo>.(svg|png|jpg), named by the
+// Client logos for the references: src/assets/partners/logos/<logo>.(svg|png|jpg|webp), named by the
 // `logo` id of a project. A project without a file shows its name only.
-const logoFiles = import.meta.glob<{ default: ImageMetadata }>('../assets/partners/logos/*.{svg,png,jpg}', { eager: true });
+const logoFiles = import.meta.glob<{ default: ImageMetadata }>('../assets/partners/logos/*.{svg,png,jpg,webp}', { eager: true });
 const logos = new Map(Object.entries(logoFiles).map(([path, mod]) => [path.split('/').pop()!.replace(/\.\w+$/, ''), mod.default]));
 
 const schema = [
