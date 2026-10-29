@@ -1534,3 +1534,41 @@ p.post-series-note { margin: 0.6em 0 0; font-size: 0.95rem; }
 .proof-icon { width: 30px; height: 30px; flex: none; }
 .sit-box { margin-top: 0; }
 .sit-box .rc-rules-list li { font-size: 0.97rem; }
+
+/* Freelance architect page (src/components/FreelanceArchitectPage.astro) */
+.fa-cards { list-style: none; margin: 1.6em 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.fa-cards li { display: flex; flex-direction: column; gap: 8px; padding: 24px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--white); }
+.fa-cards h3 { margin: 6px 0 0; font-size: 1.08rem; }
+.fa-cards p { margin: 0; color: var(--text-2); font-size: 0.95rem; }
+.fa-link { margin-top: auto; padding-top: 8px; font-size: 0.8rem; color: var(--cyan-dark); text-decoration: none; }
+.fa-link:hover { text-decoration: underline; }
+.fa-table-wrap { overflow-x: auto; margin-top: 1.6em; }
+.fa-table { width: 100%; min-width: 560px; border-collapse: separate; border-spacing: 0; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); }
+.fa-table th, .fa-table td { padding: 14px 18px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+.fa-table tbody tr:last-child th, .fa-table tbody tr:last-child td { border-bottom: 0; }
+.fa-table thead th { font-weight: 600; }
+.fa-table tbody th { font-size: 0.75rem; font-weight: 400; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-2); width: 22%; }
+.fa-table td { color: var(--text-2); }
+.fa-table .fa-me { background: rgba(27, 161, 226, 0.06); color: var(--text); font-weight: 500; }
+.fa-table thead .fa-me { color: var(--cyan-dark); box-shadow: inset 0 3px 0 var(--cyan); }
+.fa-more { margin: 1.2em 0 0; }
+.fa-results { list-style: none; margin: 1.6em 0 0; padding: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px 40px; }
+.fa-results li { display: grid; grid-template-columns: 40px 1fr; gap: 14px; align-items: start; }
+.fa-results strong { display: block; font-weight: 600; margin-bottom: 2px; }
+.fa-results span { color: var(--text-2); font-size: 0.95rem; }
+.fa-practice .container { position: relative; }
+.fa-practice-facts { list-style: none; margin: 1.4em 0 1.6em; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.fa-practice-facts li { display: flex; flex-direction: column; gap: 4px; padding: 16px 18px; border: 1px solid rgba(255, 255, 255, 0.14); border-radius: var(--radius); }
+.fa-practice-facts .proof-value { color: var(--cyan); }
+.fa-practice-facts .proof-label { color: rgba(255, 255, 255, 0.7); }
+.fa-practice-text { max-width: 70ch; color: rgba(255, 255, 255, 0.85); }
+.fa-terms-grid { grid-template-columns: repeat(3, 1fr); }
+.fa-faq { max-width: 820px; }
+@media (max-width: 960px) {
+  .fa-cards { grid-template-columns: repeat(2, 1fr); }
+  .fa-terms-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 760px) {
+  .fa-cards, .fa-results { grid-template-columns: 1fr; }
+  .fa-practice-facts { grid-template-columns: repeat(2, 1fr); }
+}
