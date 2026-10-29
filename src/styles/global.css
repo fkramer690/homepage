@@ -1432,3 +1432,18 @@ p.post-series-note { margin: 0.6em 0 0; font-size: 0.95rem; }
 .rc-rules-list li::before { content: '✕'; position: absolute; left: 0; top: 0; color: var(--cyan-dark); font-weight: 700; font-size: 0.85rem; }
 .rc-rules-list strong { color: var(--text); font-weight: 600; }
 @media (max-width: 760px) { .rc-rules-list { columns: 1; } }
+
+/* Icons on the home page (service cards, further services, proof bar), on the
+   service pages ("typical situation" as cross list) and on the questions page */
+.card-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.8em; }
+.card-top .card-index { margin: 0; }
+.card-icon { width: 40px; height: 40px; display: block; }
+.more-rows a, .more-rows li > div { grid-template-columns: 2.6em 1fr auto; align-items: center; }
+.more-icon { width: 30px; height: 30px; display: block; }
+.more-text { margin-top: -4px; }
+.proof-top { display: flex; align-items: center; gap: 10px; }
+.proof-icon { width: 30px; height: 30px; flex: none; }
+.sit-box { margin-top: 0; }
+.sit-box .rc-rules-list li { font-size: 0.97rem; }
+.group-head { display: flex; align-items: center; gap: 14px; }
+.group-icon { width: 36px; height: 36px; flex: none; }

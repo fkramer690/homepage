@@ -39,6 +39,9 @@ const mcTexts = t.masterclasses;
 const [qOpen, qClose] = lang === 'de' ? ['„', '“'] : ['“', '”'];
 // Icons of the four approach steps (analyse, design, steer, implement).
 const stepIcons = ['analyse', 'design', 'steer', 'implement'];
+// Icons of the services (by order) and of the key figures in the proof bar.
+const serviceIcons = ['architecture', 'partners', 'pipeline', 'integration', 'team', 'license', 'change'];
+const proofIcons = ['clock', 'building', 'interview', 'badge', 'unlinked'];
 ---
 <Base lang={lang} title={t.meta.title} description={t.meta.description} alternates={{ en: enHome, de: deHome }}>
   <StructuredData slot="head" t={t} url={new URL(home, Astro.site).href} />
@@ -65,9 +68,9 @@ const stepIcons = ['analyse', 'design', 'steer', 'implement'];
     <section class="proof" aria-label={lang === 'de' ? 'Kennzahlen' : 'Key figures'}>
       <div class="container">
         <ul class="proof-list">
-          {t.proof.map((p) => (
+          {t.proof.map((p, i) => (
             <li>
-              <span class="proof-value">{p.value}</span>
+              <span class="proof-top"><Icon name={proofIcons[i]} class="proof-icon" /><span class="proof-value">{p.value}</span></span>
               <span class="proof-label mono">{p.label}</span>
             </li>
           ))}
@@ -109,7 +112,7 @@ const stepIcons = ['analyse', 'design', 'steer', 'implement'];
             const href = serviceLinks.get(i + 1);
             const inner = (
               <>
-                <span class="card-index mono">{String(i + 1).padStart(2, '0')}</span>
+                <span class="card-top"><Icon name={serviceIcons[i]} class="card-icon" /><span class="card-index mono">{String(i + 1).padStart(2, '0')}</span></span>
                 <h3>{s.title}</h3>
                 <p>{s.text}</p>
                 {href && <span class="card-more mono">{t.services.more} →</span>}
@@ -126,12 +129,11 @@ const stepIcons = ['analyse', 'design', 'steer', 'implement'];
               </span>
             </div>
             <ul class="more-rows">
-              {t.services.moreItems.map((m, i) => {
-                const index = String(t.services.featured + i + 1).padStart(2, '0');
+              {t.services.moreItems.map((m) => {
                 const href = serviceLinks.get(m.order);
                 const inner = (
                   <>
-                    <span class="more-index mono">{index}</span>
+                    <span class="more-index mono"><Icon name={serviceIcons[m.order - 1]} class="more-icon" /></span>
                     <span class="more-title">{t.services.items[m.order - 1].title}</span>
                     {href && <span class="more-arrow mono" aria-hidden="true">→</span>}
                     <span class="more-text">{m.text}</span>
