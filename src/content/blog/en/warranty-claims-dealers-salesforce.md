@@ -25,7 +25,9 @@ faq:
 draft: false
 ---
 
-Manufacturing Cloud pays off for warranty processes when dealers and service partners submit warranty claims regularly and checking them takes a lot of manual work today. It models warranty terms, the warranty of each asset, dealer claims and supplier recovery in one data model. Whether a claim is covered is decided by the asset data: serial number, purchase or installation date and usage. Like parts 4 and 5, I am writing this part as an evaluation guide, not as a project report. I treat warranty as a commercial process; the on-site visit is covered by the Field Service series.
+Whether a dealer's warranty claim can be checked properly in Salesforce is decided by the asset data: serial number, purchase or installation date and usage. Manufacturing Cloud models warranty terms, the warranty of each asset, dealer claims and supplier recovery in one data model. That pays off when dealers and service partners submit warranty claims regularly and checking them takes a lot of manual work today. Without the asset data, neither a person nor an agent can check reliably.
+
+Like parts 4 and 5, I am writing this part as an evaluation guide, not as a project report. I treat warranty as a commercial process; the on-site visit is covered by the Field Service series.
 
 ## How does Manufacturing Cloud model a warranty?
 

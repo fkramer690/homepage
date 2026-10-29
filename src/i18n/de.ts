@@ -301,8 +301,8 @@ export const de: Dict = {
     title: 'Partner',
     metaTitle: 'Partner für Salesforce-Programme | FK Solution Design',
     description: 'Kooperationspartner von FK Solution Design für Themen neben der Salesforce-Architektur, zum Beispiel Change Management mit Juliane Winterscheid.',
-    lead: 'Niemand ist in jedem Bereich der beste Experte, ich auch nicht. Deshalb arbeite ich dort, wo andere mehr Erfahrung haben, mit Kooperationspartnern zusammen, die ich selbst kenne und denen ich vertraue.',
-    intro: 'Mein Schwerpunkt ist die Salesforce-Architektur auf Kundenseite. Ein Programm braucht aber mehr als eine gute Architektur: Die Menschen im Unternehmen müssen neue Prozesse auch annehmen. Für solche Themen hole ich Partner dazu, die genau darin stark sind. So bekommen Sie keinen Generalisten, der alles ein bisschen kann, sondern für jede Frage jemanden, der sie wirklich beherrscht.',
+    lead: 'Für Change Management in Salesforce-Programmen arbeite ich mit Juliane Winterscheid zusammen. Mein Schwerpunkt bleibt die Salesforce-Architektur auf Kundenseite; wo andere mehr Erfahrung haben, hole ich Kooperationspartner dazu, die ich selbst kenne und denen ich vertraue.',
+    intro: 'Ein Programm braucht mehr als eine gute Architektur: Die Menschen im Unternehmen müssen neue Prozesse auch annehmen. Dafür hole ich Partner dazu, die genau darin stark sind, denn niemand ist in jedem Bereich der beste Experte, ich auch nicht. Recruiter finden weiter unten, wie ich mit ihnen zusammenarbeite.',
     linkedIn: 'LinkedIn-Profil',
     partners: [
       {
