@@ -3,6 +3,10 @@
 
 export interface QuestionGroup {
   title: string;
+  // Short name for the topic tiles at the top of the page.
+  short: string;
+  // Icon from src/icons/.
+  icon: string;
   questions: { q: string; a: string }[];
 }
 
@@ -18,6 +22,8 @@ export const questions = {
     groups: [
       {
         title: 'Zu Ziel und Termin',
+        short: 'Ziel und Termin',
+        icon: 'target',
         questions: [
           {
             q: 'Welches Problem soll in einem Jahr nicht mehr existieren?',
@@ -39,6 +45,8 @@ export const questions = {
       },
       {
         title: 'Zu Verantwortung und Partnern',
+        short: 'Verantwortung und Partner',
+        icon: 'handshake',
         questions: [
           {
             q: 'Wer entscheidet, wenn zwei Partner unterschiedliche Lösungen vorschlagen?',
@@ -56,6 +64,8 @@ export const questions = {
       },
       {
         title: 'Zu Daten und Schnittstellen',
+        short: 'Daten und Schnittstellen',
+        icon: 'integration',
         questions: [
           {
             q: 'Welches System ist für Kunden, Produkte und Preise führend?',
@@ -73,6 +83,8 @@ export const questions = {
       },
       {
         title: 'Zum Betrieb',
+        short: 'Betrieb',
+        icon: 'gear',
         questions: [
           {
             q: 'Wer betreibt das in drei Jahren?',
@@ -90,6 +102,8 @@ export const questions = {
       },
       {
         title: 'Zum Schluss',
+        short: 'Zum Schluss',
+        icon: 'lessons',
         questions: [
           {
             q: 'Was wurde schon einmal versucht und hat nicht funktioniert?',
@@ -103,6 +117,8 @@ export const questions = {
     formSubject: 'Fragen aus dem Projekt',
     link: 'Fragen, die ich in jedem Projekt stelle',
     back: 'Zurück zur Startseite',
+    topics: 'Themen',
+    count: (n: number) => (n === 1 ? '1 Frage' : `${n} Fragen`),
   },
   en: {
     title: 'Questions I ask in every Salesforce project',
@@ -113,6 +129,8 @@ export const questions = {
     groups: [
       {
         title: 'Goal and deadline',
+        short: 'Goal and deadline',
+        icon: 'target',
         questions: [
           {
             q: 'Which problem should no longer exist a year from now?',
@@ -134,6 +152,8 @@ export const questions = {
       },
       {
         title: 'Ownership and partners',
+        short: 'Ownership and partners',
+        icon: 'handshake',
         questions: [
           {
             q: 'Who decides when two partners propose different solutions?',
@@ -151,6 +171,8 @@ export const questions = {
       },
       {
         title: 'Data and interfaces',
+        short: 'Data and interfaces',
+        icon: 'integration',
         questions: [
           {
             q: 'Which system is the master for customers, products and prices?',
@@ -168,6 +190,8 @@ export const questions = {
       },
       {
         title: 'Operations',
+        short: 'Operations',
+        icon: 'gear',
         questions: [
           {
             q: 'Who runs this in three years?',
@@ -185,6 +209,8 @@ export const questions = {
       },
       {
         title: 'One last question',
+        short: 'One last question',
+        icon: 'lessons',
         questions: [
           {
             q: 'What has been tried before and did not work?',
@@ -198,5 +224,7 @@ export const questions = {
     formSubject: 'Questions about the project',
     link: 'Questions I ask in every project',
     back: 'Back to the start page',
+    topics: 'Topics',
+    count: (n: number) => (n === 1 ? '1 question' : `${n} questions`),
   },
 };

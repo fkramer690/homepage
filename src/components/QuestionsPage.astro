@@ -3,6 +3,7 @@
 import Page from '../layouts/Page.astro';
 import ExternalMark from './ExternalMark.astro';
 import ContactForm from './ContactForm.astro';
+import Icon from './Icon.astro';
 import AuthorBox from './AuthorBox.astro';
 import Blueprint from './Blueprint.astro';
 import { en } from '../i18n/en';
@@ -54,8 +55,6 @@ const schema = {
     },
   ],
 };
-import Icon from './Icon.astro';
-const groupIcons = ['target', 'handshake', 'integration', 'gear', 'lessons'];
 ---
 <Page lang={lang} title={pageTitle} description={c.description} alternates={alternates} image={ogImage} hasContact>
   <Fragment slot="head">
@@ -68,9 +67,22 @@ const groupIcons = ['target', 'handshake', 'integration', 'gear', 'lessons'];
       <h1>{c.title}</h1>
       <p class="service-lead">{c.lead}</p>
 
+      <nav class="q-topics" aria-label={c.topics}>
+        {c.groups.map((group, gi) => (
+          <a class="q-topic" href={`#group-${gi + 1}`}>
+            <Icon name={group.icon} class="q-topic-icon" />
+            <span class="q-topic-title">{group.short}</span>
+            <span class="q-topic-count mono">{c.count(group.questions.length)}</span>
+          </a>
+        ))}
+      </nav>
+
       {c.groups.map((group, gi) => (
-        <section class="service-block" aria-labelledby={`group-${gi + 1}`}>
-          <h2 id={`group-${gi + 1}`} class="group-head"><Icon name={groupIcons[gi]} class="group-icon" />{group.title}</h2>
+        <section class="q-group" aria-labelledby={`group-${gi + 1}`}>
+          <div class="q-side">
+            <Icon name={group.icon} class="group-icon" />
+            <h2 id={`group-${gi + 1}`}>{group.title}</h2>
+          </div>
           <ol class="question-list">
             {group.questions.map(({ q, a }, qi) => (
               <li>
