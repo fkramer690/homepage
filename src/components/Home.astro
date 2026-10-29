@@ -19,7 +19,7 @@ import { masterclassesIndex } from '../lib/masterclass';
 import { getMasterclasses } from '../lib/masterclasses';
 import { questions, questionPaths } from '../data/questions';
 import { clients, logoHeight } from '../data/clients';
-import StepIcon from './StepIcon.astro';
+import Icon from './Icon.astro';
 
 interface Props {
   lang: 'en' | 'de';
@@ -37,6 +37,8 @@ const serviceLinks = new Map(services.map((s) => [s.data.order, serviceHref(s)])
 const masterclasses = await getMasterclasses(lang);
 const mcTexts = t.masterclasses;
 const [qOpen, qClose] = lang === 'de' ? ['„', '“'] : ['“', '”'];
+// Icons of the four approach steps (analyse, design, steer, implement).
+const stepIcons = ['analyse', 'design', 'steer', 'implement'];
 ---
 <Base lang={lang} title={t.meta.title} description={t.meta.description} alternates={{ en: enHome, de: deHome }}>
   <StructuredData slot="head" t={t} url={new URL(home, Astro.site).href} />
@@ -207,7 +209,7 @@ const [qOpen, qClose] = lang === 'de' ? ['„', '“'] : ['“', '”'];
         <ol class="steps">
           {t.approach.steps.map((s, i) => (
             <li>
-              <StepIcon index={i} />
+              <Icon name={stepIcons[i]} class="step-icon" />
               <span class="step-no mono">{String(i + 1).padStart(2, '0')}</span>
               <h3>{s.title}</h3>
               <p>{s.text}</p>

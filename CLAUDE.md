@@ -22,6 +22,10 @@ All masterclasses hang below one overview page (`/masterclass/`, `/en/masterclas
 
 Every external link opens in a new tab, on every page. Markdown links get this automatically from `src/lib/external-links.mjs`; in components use `target="_blank" rel="noopener"` plus `<ExternalMark>`. `scripts/check-links.mjs` runs after `astro build` and fails on violations; never weaken it.
 
+## Icons and layouts
+
+Every icon is one SVG file in `src/icons/` (catalogue and style rules in `src/icons/README.md`), used through `src/components/Icon.astro`; never inline icon SVG in a component. Layouts Fabian explicitly liked are collected in `docs/layouts.md`; reuse them before inventing new ones.
+
 ## Sitemap
 
 The sitemap must list exactly the indexable pages. `scripts/check-sitemap.mjs` runs after `astro build` and fails if a page without `noindex` is missing from it, a `noindex` page is in it, or a listed URL has no page. To keep a page out of the sitemap, give it `noindex` (and add it to the sitemap filter in `astro.config.mjs`); never weaken the check.

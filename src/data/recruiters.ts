@@ -1,5 +1,5 @@
 // "Working with recruiters": content of /partner/recruiter/ (DE) and /en/partners/recruiters/ (EN),
-// plus the teaser on the partner page. Icons are names from src/components/RecruiterIcon.astro.
+// plus the teaser on the partner page. Icons are file names from src/icons/.
 
 export type RecruiterIconName =
   | 'clock' | 'scale' | 'profile' | 'calendar' | 'handshake'
