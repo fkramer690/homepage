@@ -1128,6 +1128,21 @@ p.post-series-note { margin: 0.6em 0 0; font-size: 0.95rem; }
   .service-columns { grid-template-columns: 1fr; }
 }
 .service .eyebrow { color: var(--cyan-dark); margin-top: 1.2em; }
+/* Service pages: dark head, then alternating white and grey bands */
+.service-hero { padding: clamp(28px, 3.5vw, 44px) 0 clamp(36px, 4.2vw, 56px); }
+.service-hero .post-back { color: rgba(255, 255, 255, 0.7); }
+.service-hero .post-back:hover { color: var(--white); }
+.service-hero .eyebrow { color: var(--cyan-light); }
+.service-hero .service-lead { color: rgba(255, 255, 255, 0.78); }
+.service-hero .service-note { color: rgba(255, 255, 255, 0.78); background: rgba(255, 255, 255, 0.04); }
+.service-hero .service-note a, .service-hero .service-note-label { color: var(--cyan-light); }
+.service-hero .service-photo img { border: 1px solid rgba(255, 255, 255, 0.14); }
+.service-band .container > :first-child, .service-band .service-block:first-child { margin-top: 0; }
+.service-band:not(.alt) + .service-band:not(.alt) { padding-top: 0; }
+.service-band .page-grid { margin-top: 0; }
+.service-band .service-columns { row-gap: 2em; }
+.service-band .service-columns > .service-block { margin-top: 0; }
+.service-band.alt :is(.rc-rules, .card, .mc-overview-list) { background: var(--white); }
 
 /* Questions page */
 .questions .eyebrow { color: var(--cyan-dark); margin-top: 1.2em; }
