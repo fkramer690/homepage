@@ -78,3 +78,17 @@ with a bold lead-in. Right one white box (`.mc-overview-list`) with one row per
 item: icon from `src/icons/`, short name in cyan mono, title, one-sentence
 summary, facts right-aligned, arrow; dashed dividers between rows.
 Fits: overview pages with a handful of equal items that each lead to their own page.
+
+## Timeline, learning path and topic tabs (masterclass hubs)
+
+Chosen 2026-10-29 for every masterclass hub (variant C of three; Fabian found the
+old card grids "sehr erschlagend"). Built in `src/components/MasterclassHub.astro`.
+
+- Deadlines: a horizontal timeline (`.mc-timeline`), one dot per date, the next
+  date filled cyan; vertical on phones.
+- Chapters: a numbered path in two columns (`.mc-path`), cyan ring with the number,
+  bold title and one-sentence summary, a thin grey line connecting the steps.
+- Article clusters: topic chips as tabs (`.mc-tab-bar`), one white panel with the
+  topic text and the links in two columns; only the chosen topic is open.
+- Every section heading gets one or two sentences below it.
+- Fits: long, ordered content (courses, step plans) and many links grouped by topic.

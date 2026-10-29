@@ -1252,31 +1252,42 @@ p.post-series-note { margin: 0.6em 0 0; font-size: 0.95rem; }
   .mc-figure { max-width: 520px; }
 }
 .proof-list.mc-facts { grid-template-columns: repeat(3, 1fr); }
-.mc-deadlines { grid-template-columns: repeat(5, 1fr); }
-.mc-deadlines .card,
-.mc-deadlines .card-link a { padding: 22px 18px 18px; }
-.mc-deadlines .card-link { padding: 0; }
-.mc-deadlines .card::before { left: 18px; background: none; border-top-color: var(--line); }
-.mc-deadlines .card.mc-accent { border-color: var(--cyan); }
-.mc-deadlines .card.mc-accent::before { border-top-color: var(--cyan); }
-.mc-deadlines .card-index { font-size: 0.85rem; color: var(--anthracite); }
-.mc-deadlines .mc-accent .card-index { color: var(--cyan-dark); }
-.mc-deadlines p { font-size: 0.92rem; }
-@media (max-width: 1080px) {
-  .mc-deadlines { grid-template-columns: repeat(3, 1fr); }
+/* Hub sections (variant C, 2026-10-29): deadlines as a timeline, chapters as a numbered
+   path in two columns, article clusters as topic tabs (radio inputs, no script) */
+.mc-timeline { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(var(--n), 1fr); gap: 20px; position: relative; }
+.mc-timeline::before { content: ''; position: absolute; left: 0; right: 0; top: 6px; border-top: 2px solid var(--line); }
+.mc-timeline li { position: relative; padding-top: 26px; font-size: 0.92rem; color: var(--text-2); }
+.mc-timeline-dot { position: absolute; top: 0; left: 0; width: 14px; height: 14px; border-radius: 50%; background: var(--white); border: 2px solid #8a8a8e; }
+.mc-timeline .mc-accent .mc-timeline-dot { border-color: var(--cyan); background: var(--cyan); }
+.mc-timeline time { display: block; font-size: 0.85rem; color: var(--anthracite); margin-bottom: 4px; }
+.mc-timeline .mc-accent time { color: var(--cyan-dark); }
+.mc-timeline a { color: var(--text-2); }
+.mc-timeline a:hover { color: var(--cyan-dark); }
+.mc-path { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; grid-auto-flow: column; grid-template-rows: repeat(var(--rows), auto); column-gap: 40px; }
+.mc-path li { position: relative; }
+.mc-path li::before { content: ''; position: absolute; left: 17px; top: 0; bottom: 0; border-left: 2px solid var(--line); }
+.mc-path a { position: relative; display: grid; grid-template-columns: 36px 1fr; gap: 16px; padding: 10px 0 14px; color: inherit; text-decoration: none; }
+.mc-path a:hover .mc-path-title { color: var(--cyan-dark); }
+.mc-path-step { width: 36px; height: 36px; border-radius: 50%; background: var(--white); border: 2px solid var(--cyan); color: var(--cyan-dark); display: grid; place-items: center; font-size: 0.8rem; }
+.mc-path-title { font-size: 1.02rem; margin: 0 0 2px; }
+.mc-path-summary { display: block; color: var(--text-2); font-size: 0.92rem; line-height: 1.5; }
+.mc-tab-bar { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+.mc-tab-bar label { cursor: pointer; padding: 8px 14px; border: 1px solid var(--line); border-radius: 999px; background: var(--white); font-size: 0.88rem; transition: border-color 0.15s; }
+.mc-tab-bar label:hover { border-color: var(--cyan); }
+.mc-tab-bar label span { color: var(--text-2); font-size: 0.75rem; margin-left: 4px; }
+.mc-tab-panel { display: none; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 24px; }
+.mc-tab-panel h3 { font-size: 1.08rem; margin: 0 0 0.3em; }
+.mc-tab-panel h3 span { font-size: 0.72rem; font-weight: 400; color: var(--text-2); margin-left: 6px; }
+.mc-tab-panel > p { color: var(--text-2); font-size: 0.95rem; margin: 0; }
+.mc-tab-links { list-style: none; margin: 12px 0 0; padding: 0; columns: 2; column-gap: 32px; }
+.mc-tab-links li { break-inside: avoid; padding: 8px 0; border-top: 1px dashed var(--line); font-size: 0.95rem; }
+@media (max-width: 860px) {
+  .mc-timeline { grid-template-columns: 1fr; gap: 14px; }
+  .mc-timeline::before { left: 6px; right: auto; top: 0; bottom: 0; border-top: 0; border-left: 2px solid var(--line); }
+  .mc-timeline li { padding: 0 0 0 28px; }
+  .mc-path { grid-template-columns: 1fr; grid-auto-flow: row; grid-template-rows: none; }
+  .mc-tab-links { columns: 1; }
 }
-@media (max-width: 760px) {
-  .mc-deadlines { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 480px) {
-  .mc-deadlines { grid-template-columns: 1fr; }
-}
-.mc-chapters .card-link a { display: flex; flex-direction: column; }
-.mc-chapters .card-more { margin-top: auto; padding-top: 1em; }
-.mc-clusters .ref h3 { margin-bottom: 0.3em; }
-.mc-cluster-list { margin: 0.4em 0 0; padding-left: 1.2em; }
-.mc-cluster-list li { margin-bottom: 0.35em; font-size: 0.97rem; }
-.mc-cluster-list li::marker { color: var(--cyan-dark); }
 /* Masterclasses on the home page: heading left, one compact row per masterclass right */
 .mc-home { display: grid; grid-template-columns: 5fr 6fr; gap: clamp(24px, 5vw, 64px); align-items: start; }
 .mc-home h2 { margin-bottom: 0.5em; }

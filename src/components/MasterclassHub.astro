@@ -149,23 +149,18 @@ const schema = {
       <p class="label mono">{m.deadlinesLabel}</p>
       <h2 id="mc-deadlines">{m.deadlinesTitle}</h2>
       <p class="section-intro">{m.deadlinesText}</p>
-      <ul class="cards mc-deadlines">
+      <ol class="mc-timeline" style={`--n: ${m.deadlines.length}`}>
         {m.deadlines.map((d) => {
           const post = d.articleKey ? deadlinePosts.get(d.articleKey) : undefined;
-          const inner = (
-            <>
-              <time class="card-index mono" datetime={d.iso}>{d.date}</time>
-              <p>{d.text}</p>
-              {post && <span class="card-more mono">{t.blog.readMore} →</span>}
-            </>
-          );
           return (
-            <li class:list={['card', { 'card-link': post, 'mc-accent': d.accent }]}>
-              {post ? <a href={postHref(post)}>{inner}</a> : inner}
+            <li class:list={[{ 'mc-accent': d.accent }]}>
+              <span class="mc-timeline-dot" aria-hidden="true"></span>
+              <time class="mono" datetime={d.iso}>{d.date}</time>
+              {post ? <a href={postHref(post)}>{d.text} →</a> : <span>{d.text}</span>}
             </li>
           );
         })}
-      </ul>
+      </ol>
     </div>
   </section>
   )}
@@ -176,14 +171,16 @@ const schema = {
       <h2 id="mc-chapters">{m.chaptersTitle}</h2>
       <p class="section-intro">{m.chaptersText}</p>
       {chapters.length > 0 && (
-        <ol class="cards mc-chapters">
+        <ol class="mc-path" style={`--rows: ${Math.ceil(chapters.length / 2)}`}>
           {chapters.map((c) => (
-            <li class="card card-link">
+            <li>
               <a href={chapterHref(c)}>
-                <span class="card-index mono">{m.chapterNo.replace('{nn}', nn(c.data.chapter))}</span>
-                <h3 class="card-title">{c.data.short}</h3>
-                <p>{c.data.summary}</p>
-                <span class="card-more mono">{m.chapterRead} →</span>
+                <span class="mc-path-step mono" aria-hidden="true">{nn(c.data.chapter)}</span>
+                <span>
+                  <span class="visually-hidden">{m.chapterNo.replace('{nn}', nn(c.data.chapter))}: </span>
+                  <h3 class="mc-path-title">{c.data.short}</h3>
+                  <span class="mc-path-summary">{c.data.summary}</span>
+                </span>
               </a>
             </li>
           ))}
@@ -198,18 +195,23 @@ const schema = {
         <p class="label mono">{m.articlesLabel}</p>
         <h2 id="mc-articles">{m.articlesTitle}</h2>
         <p class="section-intro">{m.articlesText}</p>
-        <ul class="refs mc-clusters">
+        {/* Topic tabs without script: one radio per cluster, the rules below show the checked panel. */}
+        <div class="mc-tabs">
+          {clusters.map((_, i) => <input type="radio" name="mc-tab" id={`mc-tab-${i}`} class="visually-hidden" checked={i === 0} />)}
+          <div class="mc-tab-bar">
+            {clusters.map(({ cluster, posts }, i) => <label for={`mc-tab-${i}`}>{cluster[lang].title} <span class="mono">{posts.length}</span></label>)}
+          </div>
           {clusters.map(({ cluster, posts }) => (
-            <li class="ref">
-              <p class="ref-sector mono">{countLabel(posts.length)}</p>
-              <h3>{cluster[lang].title}</h3>
+            <div class="mc-tab-panel">
+              <h3>{cluster[lang].title} <span class="mono">{countLabel(posts.length)}</span></h3>
               <p>{cluster[lang].text}</p>
-              <ul class="mc-cluster-list">
+              <ul class="mc-tab-links">
                 {posts.map((p) => <li><a href={postHref(p)}>{p.data.title}</a></li>)}
               </ul>
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
+        <style is:inline set:html={clusters.map((_, i) => `#mc-tab-${i}:checked ~ .mc-tab-bar label[for="mc-tab-${i}"] { border-color: var(--cyan); color: var(--cyan-dark); } #mc-tab-${i}:focus-visible ~ .mc-tab-bar label[for="mc-tab-${i}"] { outline: 2px solid var(--cyan); outline-offset: 2px; } #mc-tab-${i}:checked ~ .mc-tab-panel:nth-of-type(${i + 2}) { display: block; }`).join('\n')} />
       </div>
     </section>
   )}
