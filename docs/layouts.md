@@ -17,6 +17,7 @@ Approved 2026-10-29 ("perfekt"), live on `/partner/recruiter/` and
 - Why it works: ten rules take little space, read like a checklist and do not
   shout. Fabian rejected the earlier version with ten numbered dark cards as too
   big and too harsh.
+- Also used for "Typische Ausgangslage" on every service page (2026-10-29).
 - Fits: rules, boundaries, "what I do not do", requirements, short criteria lists.
 
 ## Two cards with icon lists ("Der Deal")
