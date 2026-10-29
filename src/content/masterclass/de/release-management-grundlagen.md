@@ -32,8 +32,10 @@ Release-Management für Salesforce entscheidet, ob ein Programm mit mehreren Par
 
 ## Was bedeutet Release-Management für Salesforce?
 
-Release-Management ist die Disziplin, Änderungen an einer Salesforce-Org geplant, geprüft und nachvollziehbar von der Entwicklung bis zu den Anwendern zu bringen. DevOps beschreibt die Arbeitsweise und die Werkzeuge dahinter. In Gesprächen mit Fachbereichen und Partnern fallen immer dieselben Begriffe, und sie werden oft unterschiedlich verstanden. So verwende ich sie in dieser Masterclass:
+Release-Management ist die Disziplin, Änderungen an einer Salesforce-Org geplant, geprüft und nachvollziehbar von der Entwicklung bis zu den Anwendern zu bringen. DevOps beschreibt die Arbeitsweise und die Werkzeuge dahinter. In Gesprächen mit Fachbereichen und Partnern fallen immer dieselben Begriffe, und sie werden oft unterschiedlich verstanden. So verwende ich sie in dieser Masterclass, zum Aufklappen:
 
+```vertiefung Begriffe
+titel: Sieben Begriffe, wie ich sie in dieser Masterclass verwende
 - **Source-Driven Development** (quellgesteuerte Entwicklung) bedeutet, dass die Versionsverwaltung und nicht die Org die Quelle der Wahrheit ist. Der [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/platform/sfdx-dev/guide/sfdx-dev-intro.html) sagt es knapp: „Instead of the org, your version control system is the source of truth.“ Was nicht im Repository steht, gilt als nicht vorhanden.
 - **Versionsverwaltung** (Version Control) ist ein System wie Git, das jeden Stand jeder Datei mit Autor, Zeitpunkt und Begründung speichert. Damit lässt sich jede Änderung nachvollziehen, vergleichen und zurücknehmen. Bei Salesforce liegen dort Metadaten wie Objekte, Felder, Flows, Permission Sets und Apex-Klassen als Dateien.
 - **Continuous Integration (CI)** heißt, dass jede Änderung automatisch geprüft wird, bevor sie in einen gemeinsamen Stand übernommen wird. Bei Salesforce sind das ein Validierungs-Deployment, Apex-Tests und statische Code-Analyse.
@@ -41,10 +43,9 @@ Release-Management ist die Disziplin, Änderungen an einer Salesforce-Org geplan
 - **Pipeline** nennt man die feste Abfolge von Umgebungen und automatischen Prüfungen, die jede Änderung durchläuft, zum Beispiel Entwickler-Sandbox, Integration, UAT, Produktion. Jede Änderung nimmt denselben Weg, auch der Hotfix.
 - **Deployment** ist der technische Vorgang, Metadaten in eine Org zu übertragen. Bei einem Deployment nach Produktion mit Apex-Code laufen laut [Salesforce-CLI-Referenz](https://developer.salesforce.com/docs/platform/salesforce-cli-reference/guide/cli_reference_project_deploy_start.html) standardmäßig alle lokalen Tests, und laut [Apex Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/pages/apex_testing_intro.htm) müssen Tests mindestens 75 Prozent des Apex-Codes abdecken und erfolgreich durchlaufen.
 - **Release** ist ein geplantes Paket von Änderungen, das zu einem festen Termin für Anwender freigeschaltet wird. Dazu gehören Kommunikation, Schulung und die Abnahme durch den Fachbereich.
-
-```hinweis tipp
-Die Unterscheidung zwischen Deployment und Release ist für Entscheider die wichtigste. Deployments können täglich laufen, in Sandboxes sogar mehrmals am Tag. Ein Release ist eine fachliche Entscheidung: Der Leiter Service entscheidet, ab wann die Techniker im Außendienst (Field Service) die neue Rückmeldemaske nutzen. Wer beides verwechselt, plant entweder zu wenige Deployments und bekommt riesige, riskante Pakete, oder schaltet Funktionen frei, bevor der Fachbereich bereit ist.
 ```
+
+Die Unterscheidung zwischen Deployment und Release ist für Entscheider die wichtigste. Deployments können täglich laufen, in Sandboxes sogar mehrmals am Tag. Ein Release ist eine fachliche Entscheidung: Der Leiter Service entscheidet, ab wann die Techniker im Außendienst (Field Service) die neue Rückmeldemaske nutzen. Wer beides verwechselt, plant entweder zu wenige Deployments und bekommt riesige, riskante Pakete, oder schaltet Funktionen frei, bevor der Fachbereich bereit ist.
 
 Ein Termin liegt dabei nie bei Ihnen. Salesforce liefert laut [Release-Übersicht](https://www.salesforce.com/products/innovation/releases/) drei saisonale Releases pro Jahr, typischerweise Spring im Februar, Summer im Juni und Winter im Oktober, mit einer Sandbox Preview von vier bis sechs Wochen vorher. Ihr Release-Kalender muss um diese Termine herum funktionieren. Wie, beschreibt [Kapitel 8](../release-planung-salesforce-releases/).
 
@@ -52,23 +53,16 @@ Ein Termin liegt dabei nie bei Ihnen. Salesforce liefert laut [Release-Übersich
 
 Ich habe ein Programm mit acht Teams und 32 Entwicklern begleitet, Orgs betreut, auf denen mehrere Implementierungspartner gleichzeitig arbeiteten, und mit Nearshore-Teams in Osteuropa und Indien gearbeitet. Ohne gemeinsamen Release-Prozess entstehen immer dieselben Muster, die ich in [warum DevOps über Salesforce-Großprojekte entscheidet](../../../blog/warum-devops-salesforce-enterprise-projekte/) ausführlicher beschreibe. Für ein Budget lassen sie sich in fünf Kostenarten übersetzen:
 
-1. **Nacharbeit über Teamgrenzen.** Team A deployt ein Page Layout, Team B einen Tag später dasselbe Objekt mit einem älteren Stand. Die Korrektur bindet beide Teams, und bei verteilten Teams in mehreren Zeitzonen dauert jede Abstimmung länger.
-2. **Wiederholte Tests.** Jedes fehlerhafte Deployment nach UAT macht die Testergebnisse anderer Teams wertlos. Key User aus Vertrieb und Service testen dieselben Fälle zweimal und verlieren das Vertrauen in die Abnahme.
-3. **Stillstand im Fachbereich.** Ein Fehler in Produktion trifft in der Fertigung oft die Prozesse mit dem meisten Kundenkontakt: Serviceaufträge, Ersatzteilbestellungen im Händlerportal, die Auftragsübergabe an SAP.
-4. **Wachsende Pakete.** Wer schlechte Erfahrungen mit Releases macht, released seltener. Seltenere Releases werden größer, größere Releases riskanter. Messbar wird das mit den [fünf Kennzahlen von DORA](https://dora.dev/guides/dora-metrics/), etwa der Deployment-Frequenz und der Change Fail Rate, dem Anteil der Deployments, die sofortige Nacharbeit wie ein Rollback oder einen Notfall-Patch brauchen.
-5. **Abhängigkeit und Schuldfrage.** Ohne Historie im Repository kann niemand belegen, welcher Partner welche Änderung gemacht hat. Die Diskussion darüber kostet Steuerungszeit und belastet die Zusammenarbeit.
+| Kostenart | Was passiert |
+|---|---|
+| Nacharbeit über Teamgrenzen | Team A deployt ein Page Layout, Team B einen Tag später dasselbe Objekt mit einem älteren Stand. Die Korrektur bindet beide Teams, und bei verteilten Teams in mehreren Zeitzonen dauert jede Abstimmung länger. |
+| Wiederholte Tests | Jedes fehlerhafte Deployment nach UAT macht die Testergebnisse anderer Teams wertlos. Key User aus Vertrieb und Service testen dieselben Fälle zweimal und verlieren das Vertrauen in die Abnahme. |
+| Stillstand im Fachbereich | Ein Fehler in Produktion trifft in der Fertigung oft die Prozesse mit dem meisten Kundenkontakt: Serviceaufträge, Ersatzteilbestellungen im Händlerportal, die Auftragsübergabe an SAP. |
+| Wachsende Pakete | Wer schlechte Erfahrungen mit Releases macht, released seltener. Seltenere Releases werden größer, größere Releases riskanter. Messbar wird das mit den [fünf Kennzahlen von DORA](https://dora.dev/guides/dora-metrics/), etwa der Deployment-Frequenz und der Change Fail Rate, dem Anteil der Deployments, die sofortige Nacharbeit wie ein Rollback oder einen Notfall-Patch brauchen. |
+| Abhängigkeit und Schuldfrage | Ohne Historie im Repository kann niemand belegen, welcher Partner welche Änderung gemacht hat. Die Diskussion darüber kostet Steuerungszeit und belastet die Zusammenarbeit. |
 
 Ein typisches Szenario, als Annahme: Ein Maschinenbauer betreibt Service Cloud mit Field Service, ein Händlerportal auf Experience Cloud und eine Schnittstelle zu SAP. Drei Partner arbeiten auf derselben Org, je einer für Service, Vertrieb mit Portal und Integration. Am Freitagabend deployt der Vertriebspartner per Change Set eine neue Validierungsregel auf dem Auftragsobjekt. Sie ist in seiner Sandbox korrekt, kennt aber ein Feld nicht, das der Integrationspartner zwei Wochen zuvor eingeführt hat. Am Montag schlägt die nächtliche Auftragsübergabe aus SAP fehl, Händler sehen keine Liefertermine, und das Service-Team muss den eigenen UAT-Lauf verschieben, weil die Org nicht stabil ist. Keine dieser Kosten taucht als eigene Zeile im Projektbudget auf. Ein Validierungs-Deployment gegen den gemeinsamen Stand im Repository hätte den Konflikt vor dem Merge gezeigt.
 
-```ablauf
-sf: Validierungsregel Vertrieb, Auftragsobjekt, Händlerportal, UAT Service
-erp: Auftragsübergabe SAP
-Validierungsregel Vertrieb --Change Set Freitag--> Auftragsobjekt
-Auftragsübergabe SAP --nachts--> Auftragsobjekt
-Auftragsobjekt ..schlägt fehl..> Auftragsübergabe SAP
-Auftragsobjekt ..keine Liefertermine..> Händlerportal
-Auftragsobjekt ..Org instabil..> UAT Service
-```
 
 ## Warum reichen Change Sets nicht mehr?
 
