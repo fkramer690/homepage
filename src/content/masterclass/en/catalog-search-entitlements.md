@@ -34,7 +34,7 @@ In Salesforce B2B Commerce, two separate mechanisms decide whether a dealer orde
 
 ## How does B2B Commerce decide who sees which product?
 
-Salesforce B2B Commerce, which Salesforce now also markets as "Agentforce Commerce for B2B" ([Trailhead](https://trailhead.salesforce.com/content/learn/modules/agentforce-for-guided-shopping-for-b2b-and-d2c/increase-revenue-with-agentforce-for-guided-shopping)), controls access through a chain of standard objects. The [Trailhead unit on how buyers access a store](https://trailhead.salesforce.com/content/learn/modules/b2b-commerce-lightning-experience-data-model/organize-how-buyers-access-your-store) puts it briefly: "Buyers are connected to stores using buyer groups", and entitlement policies "define which products a buyer can see based on their buyer group memberships".
+Salesforce B2B Commerce, which Salesforce now also markets as "Agentforce Commerce for B2B" ([Trailhead](https://trailhead.salesforce.com/content/learn/modules/agentforce-for-guided-shopping-for-b2b-and-d2c/increase-revenue-with-agentforce-for-guided-shopping)), controls access through a chain of standard objects. The [Trailhead unit on how buyers access a store](https://trailhead.salesforce.com/content/learn/modules/b2b2c-commerce-basics/b2b2c-data-model) puts it briefly: "Buyers are connected to stores using buyer groups", and entitlement policies "define which products a buyer can see based on their buyer group memberships".
 
 ```vertiefung For admins
 title: Which standard objects form the chain?
@@ -88,7 +88,7 @@ Two limits from the table shape the product data. Nine images per product cover 
 
 ## How do dealers find spare parts by part number?
 
-Store search finds only what is in the data, and it is strict. According to [Trailhead on store search](https://trailhead.salesforce.com/content/learn/modules/b2b2c-commerce-for-merchandisers/b2b2c-make-store-searchable), product name, description and SKU are searchable by default, a result appears only when all search terms are present, and prefix and infix partial matches are not supported. The unit is written for D2C merchandisers; B2B uses the same platform search. A dealer who types "815" will not find "0815".
+Store search finds only what is in the data, and it is strict. According to Salesforce, product name, description and SKU are searchable by default, a result appears only when all search terms are present, and prefix and infix partial matches are not supported. The unit is written for D2C merchandisers; B2B uses the same platform search. A dealer who types "815" will not find "0815".
 
 The search limits per store: 25 searchable and 50 filterable attributes, 100 synonym rules, 100 boost and bury rules, 10 facets per query and 200 results per page. Three rules follow for parts catalogues:
 

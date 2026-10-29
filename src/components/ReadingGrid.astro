@@ -1,0 +1,59 @@
+---
+// Reading area of every text page (rules: docs/layouts.md, "Page width"):
+// text column on the left, sticky side column with contents and booking box
+// on the right. Below 960px the side column is hidden and the text uses the
+// full width.
+import ExternalMark from './ExternalMark.astro';
+import type { Dict } from '../i18n/en';
+import { contactHref, contactExternal } from '../site';
+
+interface Props {
+  t: Dict;
+  // Sections listed under "Contents"; ids must exist in the text column.
+  headings: { slug: string; text: string }[];
+  // Subject for the booking link; false hides the booking box (legal pages).
+  cta?: string | false;
+}
+const { t, headings, cta = t.hero.mailSubject } = Astro.props;
+const ext = contactExternal ? { target: '_blank', rel: 'noopener' } : {};
+---
+<div class="page-grid">
+  <div class="page-main">
+    <slot />
+  </div>
+  <aside class="page-side">
+    {headings.length > 1 && (
+      <nav class="page-toc" aria-label={t.side.toc}>
+        <p class="label mono">{t.side.toc}</p>
+        <ol>
+          {headings.map((h) => <li><a href={`#${h.slug}`}>{h.text}</a></li>)}
+        </ol>
+      </nav>
+    )}
+    {cta !== false && (
+      <div class="page-cta">
+        <p class="page-cta-title">{t.side.ctaTitle}</p>
+        <p>{t.side.ctaText}</p>
+        <a class="btn" href={contactHref(cta)} {...ext}>{t.nav.cta}{contactExternal && <ExternalMark label={t.nav.newTab} />}</a>
+      </div>
+    )}
+  </aside>
+</div>
+
+<script>
+  // Highlight the section currently in view in the contents list.
+  const links = [...document.querySelectorAll<HTMLAnchorElement>('.page-toc a')];
+  const targets = links.map((a) => document.getElementById(decodeURIComponent(a.hash.slice(1)))).filter((el): el is HTMLElement => !!el);
+  if (targets.length) {
+    const update = () => {
+      let current = targets[0];
+      for (const el of targets) if (el.getBoundingClientRect().top < 140) current = el;
+      links.forEach((a) => {
+        if (decodeURIComponent(a.hash.slice(1)) === current.id) a.setAttribute('aria-current', 'location');
+        else a.removeAttribute('aria-current');
+      });
+    };
+    addEventListener('scroll', update, { passive: true });
+    update();
+  }
+</script>

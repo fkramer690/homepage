@@ -1,5 +1,7 @@
 import type { Lang } from './paths';
-import { courseIds, type CourseId } from './courses';
+import { de } from '../i18n/de';
+import { en } from '../i18n/en';
+import { courseIds, courses, type CourseId } from './courses';
 import { courseTexts, getChapters, getClusters, masterclassIndex } from './masterclass';
 
 // Every masterclass shown on the overview page (/masterclass/, /en/masterclass/),
@@ -10,6 +12,8 @@ export interface MasterclassCard {
   id: CourseId;
   href: string;
   name: string;
+  shortName: string;
+  icon: string;
   title: string;
   summary: string;
   chapters: number;
@@ -23,6 +27,8 @@ async function card(lang: Lang, course: CourseId): Promise<MasterclassCard> {
     id: course,
     href: masterclassIndex(lang, course),
     name: m.name,
+    shortName: (lang === 'de' ? de : en).masterclasses.homeNames[course],
+    icon: courses[course].icon,
     title: m.title,
     summary: m.metaDescription,
     chapters: (await getChapters(lang, course)).length,

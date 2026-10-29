@@ -1,4 +1,4 @@
-# Homepage – Backlog (Stand 28.10.2026)
+# Homepage – Backlog (Stand 29.10.2026)
 
 Einzige gepflegte Fassung des Backlogs. Andere Projekte (z. B. der tägliche Blog-Artikel-Lauf) lesen diese Datei. Das Repo ist öffentlich: keine Kundennamen, NDA-Details, Preise oder internen Notizen hier eintragen.
 
@@ -18,10 +18,41 @@ Stand 28.10.2026. Grundlage: Ranking-Lauf, KI-Check und OnPage-Crawl vom 28.10.2
 | D8 | L1 Partnerauswahl: Antworten auf 4 Fragen (Warnsignal im Angebot, Standardfragen im Pitch, gescheiterte Partnerwahl, Referenzprüfung) | Fabian | offen |
 | D9 | Wirkung prüfen: Positionen von D4 und D5 nach 2 bis 3 Montagsläufen vergleichen | Claude | ab 16.11.2026 |
 | D10 | Profil-URLs mit Namen (LinkedIn, XING, Trailblazer, freelancermap, Malt) als sameAs ins Schema, sobald D7 steht | Claude | wartet auf D7 |
-| D11 | Seite „Freiberuflicher Salesforce Architect“ (DE + EN): KI-Assistenten nennen Personen namentlich nur über eine eigene Seite oder ein Profil mit Namen (Marktanalyse 28.10.2026) | Claude | offen, Freigabe Fabian |
-| D12 | Artikel „Wann ein unabhängiger Architekt besser passt als eine Agentur“: Gegenposition zu Seiten, die bei Salesforce-Freelancer-Suchen auf Platz 2 bis 3 von Freelancern abraten | Claude | offen, Freigabe Fabian |
+| D11 | Seite „Freiberuflicher Salesforce Architect“ (DE `/freiberuflicher-salesforce-architect/`, EN `/en/freelance-salesforce-architect/`): Anlässe, Abgrenzung zum Implementierungspartner, Ergebnisse, Praxisbeispiel, Konditionen, FAQ; im Footer verlinkt | Claude | erledigt (29.10.2026) |
+| D12 | Artikel „Salesforce-Freelancer oder Agentur: wann was passt“ (DE + EN, Kategorie Architektur & Partnersteuerung) | Claude | erledigt (29.10.2026) |
+| D13 | CV-Download auf der Recruiter-Seite (`/partner/recruiter/`, `/en/partners/recruiters/`) mit Hinweis: Hier liegt immer die aktuelle Version, ältere Versionen bitte nicht mehr bei Kunden einreichen. Lebenslauf gibt es nur in einer Version (Englisch) | Fabian (CV-PDF), dann Claude | offen |
 
 Ausgangswerte 28.10.2026: „document builder limitations“ (EN) Platz 6, „field service lizenzen salesforce“ 11 (rankt mit „lohnt sich“), „salesforce field service“ 27 (170 Suchen), „field service einführung“ 29 (rankt mit „lohnt sich“), „manufacturing cloud vs sales cloud“ 30, „salesforce field service license“ 38, „salesforce document builder“ 39. KI-Übersichten bei 51 von 52 Begriffen, fk-sd.de in keiner zitiert. KI-Assistenten (ChatGPT, Claude, Perplexity, Google AI Mode): 0 Nennungen.
+
+## Befunde Jev-Analyse und jev-seo-Audit (29.10.2026)
+
+Grundlage: Jev-Lauf (jev-1.14.0) über Start, EN, Leistungen, Freiberufler-Seite und 392 Blog-URLs sowie jev-seo-Audit (450 URLs), beide 29.10.2026. Bericht: https://claude.ai/artifact/4d9jFTDK2EbewV53cLymFN. Fehlalarme ohne Maßnahme: HTTPS-Weiterleitung, 110 kaputte Links und 37 Seiten mit 404 (jev-seo löst relative Links falsch auf), noindex auf Impressum und Datenschutz (gewollt). Reihenfolge nach Impact und Aufwand.
+
+| # | Maßnahme | Impact | Aufwand | Wer | Status |
+|---|---|---|---|---|---|
+| J1 | E-Mail-Adresse im Kontaktblock der Startseite neben LinkedIn (Jev: direkter Kontakt 0,04; Formular und Bookings decken die meisten Besucher ab, deshalb nur dort) | klein | klein | Claude | PR |
+| J2 | Vertrauensbelege auf Leistungs- und Masterclass-Übersicht: Kennzahlen und Zertifikate (Jev-Vertrauen Leistungen 1,36 von 4, jev-seo 0,45) | hoch | klein | Claude | PR |
+| J3 | Kennzahl „8 · 32“ als „32 Entwickler in 8 Teams“ ausschreiben | mittel | klein | Claude | PR |
+| J4 | Kundenlogos mit width und height gegen Layout-Sprünge (92 Bilder auf / und /en) | klein | klein | Claude | PR |
+| J5 | EN-Footer: Impressum und Datenschutz als deutschsprachig kennzeichnen | klein | klein | Claude | PR |
+| J6 | Faktencheck der 17 Artikel mit „unbelegten“ Preisen und Fristen: 108 Sätze mit Salesforce-Quelle gegen die Quellseiten geprüft, alle abrufbaren Zahlen und alle Rechnungen stimmen; Jev folgt keinen Links (Bericht `/mnt/project-files/typesafe/faktencheck-blog-2026-10-29.md`) | mittel | mittel | Claude | erledigt (29.10.2026) |
+| J7 | Review-Rhythmus für zeitkritische Artikel (82 % veralten laut Jev in 12 Monaten): `scripts/stale-articles.mjs` plus monatlicher Workflow, der ein Issue „Artikel prüfen“ pflegt (Preise älter als 6 Monate, verstrichene Fristen und Releases); geprüft = `updatedDate` setzen | hoch | mittel | Claude | PR |
+| J8 | Kundenstimmen und Ergebnisse je Referenz (= Weitere Ideen 4 und 11), stärkster Hebel für Vertrauen | hoch | mittel | Fabian liefert, Claude baut ein | Backlog, wartet auf Fabian |
+| J9 | Blog-Übersicht /blog und /en/blog (je ca. 690 KB HTML, gzip übertragen nur ca. 105 KB): Kartengrafiken außerhalb des Bildschirms nicht rendern (content-visibility) | klein | klein | Claude | PR |
+| J10 | Ein klarer nächster Schritt auf der Leistungsübersicht (Jev 0,35; bisher kein Button). Die Freiberufler-Seite hat bereits Buttons im Hero und Kontaktbereich | mittel | klein | Claude | PR |
+| J11 | Kernaussage nach vorn: /partner und vier Artikel (AELA, Buyer Agent WhatsApp, Account Forecasting, Garantieansprüche) | mittel | mittel | Claude | erledigt (PR #150) |
+| J12 | Masterclass und Blog abgrenzen: H1 der Hubs Manufacturing Cloud und B2B Commerce auf „vom Business Case bis zum Rollout“ statt der „lohnt sich“-Frage, die die Artikel besetzen (verlinkt sind sie schon) | mittel | klein | Claude | PR |
+| J13 | Einstiegsartikel für Leser ohne benanntes Problem (nur 4 von 196 Artikeln): [Themenliste mit 14 Vorschlägen](https://claude.ai/artifact/QLb9Ss97LuuwdBYvnn8VSm), Empfehlung Runde 1 mit Nr. 1, 2, 3, 6 und 14; pro Thema braucht es ein Praxisbeispiel von Fabian | mittel | groß | Fabian wählt aus, Claude schreibt | Backlog, wartet auf Fabians Themenauswahl |
+| J14 | Veröffentlichungsdaten: 174 von 196 DE-Artikeln tragen 27. bis 29.10.2026. Das sind die echten Daten (Website seit 23.10.2026 online), sie bleiben; nie rückdatieren. „Aktualisiert am“ nur nach echter Prüfung (J7) | mittel | klein | Fabian | entschieden, keine Änderung |
+| J15 | Logo-Band: Freigaben der Kunden liegen vor (Fabian, 29.10.2026) | mittel | klein | Fabian | erledigt |
+| J16 | /blog/change-management-modelle wirkt generisch (Spezifität 0,38): Praxisbeispiel ergänzen | klein | mittel | Juliane | Backlog, wartet auf Juliane |
+| J17 | Relative Links auf absolute Pfade umstellen: 496 Stellen in den Inhalten, im Browser alle korrekt, nur ein Crawler-Fehler | klein | mittel | später | zurückgestellt |
+| J18 | PageSpeed-Key (PAGESPEED_API_KEY) besorgen und jev-seo mit Core Web Vitals wiederholen | klein | klein | Fabian | Backlog, wartet auf Fabian |
+| J19 | HSTS und Sicherheits-Header: bei GitHub Pages nur über vorgeschaltetes CDN möglich | klein | mittel | später | zurückgestellt |
+| J20 | 21 tote Quellenlinks (404) in 50+ Artikeln und Kapiteln, meist entfernte Trailhead-Module: 16 durch geprüfte Quellen ersetzt, 5 ohne gleichwertige Quelle neutral formuliert („laut Salesforce“). Die monatliche Prüfliste (J7) meldet künftig tote Links mit | hoch | mittel | Claude | PR |
+| J21 | Fünf Aussagen ohne gleichwertige Quelle seit #151 gegenlesen (stehen jetzt als „laut Salesforce“): Visualforce-Store weiter unterstützt; Lizenzen und Rechte von Käufer und Buyer Manager; Store-Suche (Standardfelder, alle Begriffe, keine Teiltreffer); Flosum Salesforce-nativ; Beispiel 35/35/30 % und drei Schnitte bei Account Manager Targets | klein | klein | Fabian | Backlog |
+
+Kein Handlungsbedarf: ich/wir auf der Startseite (getrennt nach Fabian, Juliane und gemeinsamem Angebot; „wir“ im Gesprächsabschnitt meint Kunde und Fabian), doppelte Logos (zweite Kopie hat bereits aria-hidden), Antwortzeit über 0,8 s (Einzelwert).
 
 ## Priorität 1: Artikel aus der Long-Tail-Recherche (DataForSEO, 28.10.2026)
 
@@ -49,16 +80,20 @@ Der tägliche Lauf schreibt einen Artikel pro Tag (EN + DE) und ergänzt hier ne
 
 - B1. SAP-Thema (Leitsystem für Kunden, Preise, Aufträge) → aufgegangen in L2 und L3.
 - B2. Embedded Chat für 12 Sprachen: was ein Proof of Concept klären muss.
-- B3. Center of Excellence auf Kundenseite: Format und Rhythmus.
+- B3. Center of Excellence auf Kundenseite: Format und Rhythmus. *Erledigt (#125).*
 - B4. MuleSoft oder Jitterbit: welche Middleware für Salesforce und das ERP? *Braucht Beispiel von Fabian.*
 - B5. Salesforce an proALPHA anbinden: was anders ist als bei SAP. *Braucht Beispiel von Fabian.*
 - B6. Technische Benutzer mit zu vielen Rechten: Integrationen aufräumen.
 - B7. Teams Phone als Telefonie für den Service (Folgeartikel zu Open CTI). *Braucht Erfahrung aus dem CTI-Rollout.*
 - B8. Spring '27: was ändert sich für Hersteller? (News, sobald die Release Notes erscheinen, ca. Mitte Januar 2027; passt zu L7.)
-- B9. Salesforce Connect für SAP-Rechnungen und Lieferungen: wann Datenvirtualisierung statt Kopie reicht (Vertiefung zu L2).
-- B10. S/4HANA-Umstieg und Salesforce parallel: was in den gemeinsamen Programmplan gehört. *Braucht Beispiel von Fabian.*
+- B9. Führendes System pro Objekt: Welches System führt Kunden, Preise und Anlagen, wenn SAP und Salesforce beide Daten halten? (Begriff aus der Homepage-Suche 29.10.2026, kommt auf Schnittstellen- und Architekturseite und in ca. 20 Artikeln vor; Abgrenzung zu L2 klären.)
+- ~~B10. Key User~~ (umgesetzt 29.10.2026 als Spoke der Change-Management-Reihe B11). Key User: Was Key User leisten müssen und wie viel Zeit der Fachbereich freistellen muss. (Begriffssuche 29.10.2026; passt als Spoke in die Change-Management-Reihe B11.)
+- ~~B11. Change Management nach Prosci/ADKAR als Hub-and-Spoke-Reihe~~ (umgesetzt 29.10.2026, von Fabian freigegeben): Hub „Warum Salesforce-Einführungen scheitern“ plus sechs Spokes (Key User, weltweiter Rollout, Techniker-Akzeptanz Field Service, Release-Kommunikation, Reinforcement bei Partnern, Nutzung messen). Manufacturing-Cloud-Teil 8 und Leistungsseite verlinken den Hub.
+- ~~B12. Weitere Change-Management-Spokes (29.10.2026, Keyword-Liste `/mnt/project-files/seo/change-management-keywords.md`): Hypercare-Phase (1.000 + 720 Suchen), Schulungskonzept und Akzeptanz im Vertrieb als Spokes 7 bis 9 umgesetzt.~~ Change-Management-Prozess (320) als Spoke 10 umgesetzt, angewandt auf Salesforce-Projektphasen; Phasen und Modelle allgemein decken Julianes Grundlagenartikel ab (#136).
+- B13. Salesforce Connect für SAP-Rechnungen und Lieferungen: wann Datenvirtualisierung statt Kopie reicht (Vertiefung zu L2).
+- B14. S/4HANA-Umstieg und Salesforce parallel: was in den gemeinsamen Programmplan gehört. *Braucht Beispiel von Fabian.*
 
-Erledigt im täglichen Lauf: Manufacturing Cloud lohnt sich (#41), Object Ownership Matrix (#42), Salesforce-Lizenzen (#43), Field Service lohnt sich (#44), Nearshore-Teams (#55), Open CTI endet 2028 (#82, Entwurf), SAP an Salesforce anbinden (#113, Entwurf).
+Erledigt im täglichen Lauf: Manufacturing Cloud lohnt sich (#41), Object Ownership Matrix (#42), Salesforce-Lizenzen (#43), Field Service lohnt sich (#44), Nearshore-Teams (#55), Open CTI endet 2028 (#82, Entwurf), SAP an Salesforce anbinden (#113, Entwurf). Aus der Begriffssuche vom 29.10.2026: Sandbox-Strategie, Berechtigungskonzept, UAT, Entwicklungsstandards und Definition of Done, Entscheidungslog, globales Template, DORA-Metriken, Dubletten und Stammdaten (ein PR, Entwurf).
 
 ## Priorität: Sichtbarkeit und SEO (Audit 26.10.2026)
 
@@ -107,6 +142,8 @@ Ideen für mehr persönliche Note, von Fabian freigegeben, später abarbeiten:
 13. **Blog-Artikelserie Salesforce Revenue Cloud** (von Fabian gewünscht 27.10.2026) – Serie von Fachbeiträgen im Blog (EN/DE). *Entwurf: Claude, Freigabe: Fabian.*
 
 14. **Blog-Artikelserie Salesforce B2B Commerce** (von Fabian gewünscht 27.10.2026) – Serie von Fachbeiträgen im Blog (EN/DE). *Entwurf: Claude, Freigabe: Fabian.*
+
+15. **Eigener Kontakt für Julianes Artikel** (von Fabian gewünscht 29.10.2026) – Julianes Artikel (und ggf. ihr Profil) bekommen Julianes eigenen Buchungslink und/oder ihre E-Mail statt Fabians Bookings und Formular. Bis dahin läuft jeder Kontakt über Fabian. *Braucht: Buchungslink oder E-Mail von Juliane.*
 
 Weitere offene Punkte:
 - Fallstudien-Seiten (Ausgangslage, Architekturentscheidungen, Ergebnis, Grafik), sobald die Kundenfreigaben vorliegen. Status klärt Fabian.

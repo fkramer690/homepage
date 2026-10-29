@@ -31,7 +31,7 @@ Laut Trailhead brauchen Käufer und Buyer Manager in einem Salesforce-B2B-Commer
 
 ## Welche Lizenzen braucht B2B Commerce?
 
-Salesforce B2B Commerce, das Salesforce inzwischen auch als "Agentforce Commerce for B2B" vermarktet, betreibt den Shop als Site auf Experience Cloud. Jeder, der mit dem Store arbeitet, braucht eine Lizenz, welche, hängt an der Rolle. Die Trailhead-Einheit [zu Personas und Berechtigungen](https://trailhead.salesforce.com/content/learn/modules/b2b-commerce-lightning-roles-permissons-store-setup/define-personas-permissions) nennt diese Rollen:
+Salesforce B2B Commerce, das Salesforce inzwischen auch als "Agentforce Commerce for B2B" vermarktet, betreibt den Shop als Site auf Experience Cloud. Jeder, der mit dem Store arbeitet, braucht eine Lizenz, welche, hängt an der Rolle. Die Salesforce-Beschreibung der Personas und Berechtigungen nennt diese Rollen:
 
 | Rolle | Was die Rolle tut | Lizenz | Berechtigungen |
 |---|---|---|---|

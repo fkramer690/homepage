@@ -98,7 +98,7 @@ Even if you wait, I would take the first step: replace Aura components in the ru
 A B2B store shows every dealer its own catalogue and its own prices. A big bang therefore shows every data error to every dealer on the same day. The data model makes waves easy: buyers reach the store through buyer groups, so a wave is the set of buyer groups you connect to the store.
 
 - **Pilot first.** Dealers with many repeat orders of known parts, an honest contact person and few special conditions.
-- **Buyer managers at the dealer.** According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/b2b-commerce-lightning-roles-permissons-store-setup/define-personas-permissions) they get Customer Community Plus with B2B Commerce Super User and Delegated External User Administration. With that they create users for their own account, reset passwords and deactivate users without a ticket to your service desk.
+- **Buyer managers at the dealer.** According to Salesforce they get Customer Community Plus with B2B Commerce Super User and Delegated External User Administration. With that they create users for their own account, reset passwords and deactivate users without a ticket to your service desk.
 - **Test per wave.** Entitlements, prices, stock, checkout and order status with a real buyer account of that wave, never only with an admin user.
 - **Inside sales stays available.** Phone and email keep working. Dealers switch because the store is faster. When a pilot dealer phones in a reorder, the colleague walks them through the store once.
 - **Keep training short.** One session per buyer manager on user administration and one page on searching by part number and reordering are enough to start.

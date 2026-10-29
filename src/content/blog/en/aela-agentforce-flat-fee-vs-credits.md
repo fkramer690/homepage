@@ -29,7 +29,7 @@ faq:
 draft: false
 ---
 
-A Salesforce AELA pays off for a manufacturer only when agent use across sales, service, field service and dealers will grow beyond what Flex Credits cover at a known price, and when the renewal terms are fixed at signature. For one or two agents, Flex Credits are cheaper and easier to leave. Salesforce has published no AELA price and no standard terms. What it has said in public is that it wants AELA customers to move to consumption later. That makes the renewal clause the part of the deal I would negotiate hardest.
+As long as a manufacturer runs one or two agents, Flex Credits are cheaper than a Salesforce AELA and easier to leave. An AELA pays off only when agent use across sales, service, field service and dealers will grow beyond what Flex Credits cover at a known price, and when the renewal terms are fixed at signature. I would negotiate the renewal clause hardest, because Salesforce has said in public that it wants AELA customers to move to consumption later. Salesforce has published no AELA price and no standard terms.
 
 ## What is a Salesforce AELA, and what is public?
 

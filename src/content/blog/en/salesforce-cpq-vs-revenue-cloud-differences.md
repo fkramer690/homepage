@@ -61,7 +61,7 @@ Winter '27 | Developer guide titled "Revenue Management Developer Guide"
 | Configuration storage | Mostly records | Mostly records |
 | Status October 2026 | End of sale, maintenance phase, no new features | Actively developed, sold as Growth and Advanced |
 
-Sources for the table follow in the sections below. The row on configuration storage is the one similarity that matters for operations: according to [Gearset](https://docs.gearset.com/en/articles/10981375-understanding-the-difference-between-salesforce-cpq-and-revenue-lifecycle-management-rlm-revenue-cloud-advanced-rca), most configuration lives as data in both products, so deployments need data templates in both cases, just for different objects.
+Sources for the table follow in the sections below. The row on configuration storage is the one similarity that matters for operations: according to [Gearset](https://docs.gearset.com/en/articles/11169961-how-to-compare-and-deploy-revenue-cloud-advanced), most configuration lives as data in both products, so deployments need data templates in both cases, just for different objects.
 
 ## How do product model and configurator differ?
 

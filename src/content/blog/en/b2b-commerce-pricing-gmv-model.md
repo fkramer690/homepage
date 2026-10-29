@@ -66,7 +66,7 @@ One rule applies to existing customers: the pricing page says customers who alre
 
 This is where estimates go wrong most often. The GMV fee covers the store and the items above. These come on top:
 
-1. **Buyer licences.** According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/b2b-commerce-lightning-roles-permissons-store-setup/define-personas-permissions), buyers and buyer managers need Customer Community Plus. The [Experience Cloud for Manufacturing price list](https://www.salesforce.com/manufacturing/cloud/experience-cloud/) shows $35 per member or $15 per login per month, billed annually. Merchandisers need the "B2B and D2C Commerce" licence.
+1. **Buyer licences.** According to Salesforce, buyers and buyer managers need Customer Community Plus. The [Experience Cloud for Manufacturing price list](https://www.salesforce.com/manufacturing/cloud/experience-cloud/) shows $35 per member or $15 per login per month, billed annually. Merchandisers need the "B2B and D2C Commerce" licence.
 2. **Advanced pricing.** Contract prices, pricing procedures and Request for Quote come with Agentforce Revenue Management for B2B Commerce. According to [Salesforce Help](https://help.salesforce.com/s/articleView?id=commerce.comm_revenue_intro.htm&language=en_US&type=5) it needs a Commerce Growth or Advanced licence plus a Revenue Cloud Advanced licence.
 3. **Order Management for other channels.** Orders from other channels or third-party systems that should run through Salesforce Order Management need a standalone Order Management purchase, says the pricing page.
 4. **Implementation and ERP integration.** Catalogue, entitlements, price calls, stock and order transfer to SAP are project work, usually the largest one-off item.

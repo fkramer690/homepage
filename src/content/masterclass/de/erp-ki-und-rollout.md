@@ -122,7 +122,7 @@ Die ERP-Spalte hat das meiste Gewicht. Ein Land mit eigenem SAP-System oder eige
 Salesforce bringt drei Releases im Jahr, und Preview-Sandboxes bekommen jedes davon vor der Produktion. Wie Sie das mit dem eigenen Release-Kalender abstimmen, beschreibt das Kapitel [Release-Planung](../../devops-release-management/release-planung-salesforce-releases/) der DevOps-Masterclass. In einer Manufacturing-Cloud-Org gehören vor allem die Teile in den Regressionstest, die Zahlen erzeugen:
 
 - **Forecast Sets.** Sie sind Metadaten vom Typ [AdvAccountForecastSet](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/meta_advaccountforecastset.htm), seit API-Version 53.0, und legen die Prognosekonfiguration pro Geschäftsbereich fest.
-- **Definitionen der Data Processing Engine.** Sie rechnen Ist-Mengen, Prognosen und Boni zusammen; Salesforce führt sie als [BatchCalcJobDefinition](https://developer.salesforce.com/docs/atlas.en-us.264.0.loyalty.meta/loyalty/tooling_api_objects_batchcalcjobdefinition.htm).
+- **Definitionen der Data Processing Engine.** Sie rechnen Ist-Mengen, Prognosen und Boni zusammen; Salesforce führt sie als [BatchCalcJobDefinition](https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_batchcalcjobdefinition.htm).
 - **Expression Sets der Business Rules Engine.** Der Metadatentyp heißt [ExpressionSetDefinition](https://developer.salesforce.com/docs/atlas.en-us.264.0.api_meta.meta/api_meta/meta_expressionsetdefinition.htm); in vielen Orgs stecken darin Garantie- und Bonusregeln.
 - **ERP-Schnittstellen.** Jede neue API-Version ist ein Anlass, die API-Versionen Ihrer Schnittstellen gegen die Fristen oben zu prüfen.
 

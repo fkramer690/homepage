@@ -55,7 +55,7 @@ Wie ich solche Fälle rechne, beschreibe ich unter [Make-or-buy und Lizenzprogno
 
 ## Wann wird aus einer Konfiguration ein Produkt?
 
-Ein Sales Agreement plant Mengen pro Produkt. Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/sales-agreements-forecasting-manufacturing-cloud/create-sales-agreement) hängt es an einem Account und einem Preisbuch, und für jedes Produkt wird eine Gesamtmenge eingetragen, die Salesforce auf die Zeiträume verteilt. Die Ist-Mengen, die später aus dem ERP kommen, werden ebenfalls einem Produkt zugeordnet.
+Ein Sales Agreement plant Mengen pro Produkt. Laut [Objektreferenz](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_salesagreement.htm) hängt es an einem Account und einem Preisbuch, und für jedes Produkt wird eine Gesamtmenge eingetragen, die Salesforce auf die Zeiträume verteilt. Die Ist-Mengen, die später aus dem ERP kommen, werden ebenfalls einem Produkt zugeordnet.
 
 Daraus folgt: Jede konfigurierte Variante, die in einem Sales Agreement geplant und gemessen werden soll, braucht eine eigene Produktidentität. In Salesforce ist das ein Produktdatensatz, im ERP meist eine Materialnummer. Fehlt die Verbindung zwischen beiden, landen die Ist-Mengen beim falschen Produkt oder gar nicht im Agreement.
 

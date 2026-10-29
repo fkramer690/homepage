@@ -51,7 +51,7 @@ Three contract terms decide where the money goes:
 - **Unused credits expire.** The [Flex Credits rate card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) says credits must be used before the order end date and "no rollover will be permitted".
 - **One pricing model per org.** Flex Credits and the $2 per conversation model are not supported in the same org. A US subsidiary cannot pick conversation pricing while the German plants use credits.
 
-So the question for a manufacturing group is organisational. I would make one person in group IT or the Salesforce CoE the budget owner: they sign, they watch the pool, they run the chargeback. Plants and subsidiaries get budgets, not credits.
+So the question for a manufacturing group is organisational. I would make one person in group IT or the [Salesforce Center of Excellence](../salesforce-center-of-excellence-cadence/) the budget owner: they sign, they watch the pool, they run the chargeback. Plants and subsidiaries get budgets, not credits.
 
 ## What does Digital Wallet show for chargeback?
 

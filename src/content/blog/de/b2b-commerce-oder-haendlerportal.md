@@ -32,7 +32,7 @@ Ein Hersteller braucht Salesforce B2B Commerce statt eines Portals, wenn Händle
 
 Ein Portal ist eine Experience-Cloud-Site, auf der externe Nutzer ihre eigenen Datensätze sehen und bearbeiten. In [Kundenportal in der Manufacturing Cloud: was Kunden sehen](../manufacturing-cloud-kundenportal/) beschreibe ich ein Portal, in dem Kunden Sales Agreements, Bestellungen, Stammdaten und Cases sahen und Produkte, Preise oder Bestellungen anfragen konnten. Das deckt "zeig mir" und "erledige das bitte für mich" ab.
 
-Salesforce B2B Commerce deckt "ich kaufe das selbst" ab. Laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?id=commerce.comm_intro.htm&language=en_US&type=5) startet der Hersteller einen Store aus einer Vorlage im Experience Builder und legt Suche, Warenkorb und Checkout für Geschäftskunden fest. Das Datenmodell dahinter, wie [Trailhead](https://trailhead.salesforce.com/content/learn/modules/b2b-commerce-lightning-experience-data-model/organize-how-buyers-access-your-store) es beschreibt:
+Salesforce B2B Commerce deckt "ich kaufe das selbst" ab. Laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?id=commerce.comm_intro.htm&language=en_US&type=5) startet der Hersteller einen Store aus einer Vorlage im Experience Builder und legt Suche, Warenkorb und Checkout für Geschäftskunden fest. Das Datenmodell dahinter, wie [Trailhead](https://trailhead.salesforce.com/content/learn/modules/b2b2c-commerce-basics/b2b2c-data-model) es beschreibt:
 
 - **Buyer Accounts** sind normale Salesforce-Accounts, deren Kontakte als Käufer freigeschaltet werden.
 - **Buyer Groups** (Käufergruppen) bündeln ähnliche Buyer Accounts, zum Beispiel alle Premiumhändler eines Landes.
@@ -52,7 +52,7 @@ Dazu kommen Warenkorb, Checkout und die Order Summary, die der Käufer in seiner
 
 ## Welche Lizenz brauchen Käufer?
 
-Hier liegen beide Varianten näher beieinander, als viele erwarten. Trailhead nennt die [Personas und Berechtigungen](https://trailhead.salesforce.com/content/learn/modules/b2b-commerce-lightning-roles-permissons-store-setup/define-personas-permissions) für einen B2B-Store: Käufer und Buyer Manager nutzen eine Customer-Community-Plus-Lizenz. Käufer bekommen die Berechtigung B2B Commerce User, Buyer Manager B2B Commerce Super User plus Delegated External User Administration, damit sie die Käufer ihres eigenen Unternehmens betreuen können. Merchandiser, die den Store intern pflegen, brauchen die Lizenz "B2B and D2C Commerce".
+Hier liegen beide Varianten näher beieinander, als viele erwarten. Salesforce beschreibt die Personas und Berechtigungen für einen B2B-Store so: Käufer und Buyer Manager nutzen eine Customer-Community-Plus-Lizenz. Käufer bekommen die Berechtigung B2B Commerce User, Buyer Manager B2B Commerce Super User plus Delegated External User Administration, damit sie die Käufer ihres eigenen Unternehmens betreuen können. Merchandiser, die den Store intern pflegen, brauchen die Lizenz "B2B and D2C Commerce".
 
 Customer Community Plus ist auch die Lizenzfamilie für ein Kundenportal. Die Listenpreise laut [Preisliste für Experience Cloud for Manufacturing](https://www.salesforce.com/manufacturing/cloud/experience-cloud/), jährlich abgerechnet:
 

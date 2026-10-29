@@ -57,7 +57,7 @@ Die Freeze-Fenster stehen im Kalender, bevor die Partner ihre Sprints planen. Ei
 
 ## Wie laufen die drei Salesforce-Releases im Jahr ab?
 
-Salesforce liefert laut der [Release-Seite](https://www.salesforce.com/releases/) dreimal im Jahr ein großes Release: Spring üblicherweise im Februar, Summer im Juni, Winter im Oktober. Der Ablauf ist jedes Mal gleich. Für Winter '27 sah er laut dem [Admin-Countdown von Salesforce](https://admin.salesforce.com/blog/2026/admin-winter-27-release-countdown) und den [Sandbox Preview Instructions](https://help.salesforce.com/s/articleView?id=000391927&language=en_US&type=1) so aus:
+Salesforce liefert laut der [Release-Seite](https://www.salesforce.com/products/innovation/releases/) dreimal im Jahr ein großes Release: Spring üblicherweise im Februar, Summer im Juni, Winter im Oktober. Der Ablauf ist jedes Mal gleich. Für Winter '27 sah er laut dem [Admin-Countdown von Salesforce](https://admin.salesforce.com/blog/2026/admin-winter-27-release-countdown) und den [Sandbox Preview Instructions](https://help.salesforce.com/s/articleView?id=000391927&language=en_US&type=1) so aus:
 
 | Termin | Schritt |
 |---|---|

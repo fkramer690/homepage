@@ -96,6 +96,8 @@ Veröffentlichung | Woche der Veröffentlichung · Pilottechniker
 
 Der Aufwand liegt bei etwa 32 Stunden Technikerzeit pro Hauptversion, dazu die Zeit des Release-Managers. Eine fehlgeschlagene Anmeldewelle bei 100 Technikern an einem Montagmorgen kostet mehr.
 
+Die übrigen Techniker sollten vor dem Update wissen, was sich für sie ändert und an wen sie sich wenden. Das ist dieselbe Aufgabe wie bei jedem Release für den Innendienst, beschrieben in [Salesforce-Releases an den Fachbereich kommunizieren](../salesforce-releases-fachbereich-kommunizieren/).
+
 ## Wo fangen Sie an?
 
 1. **Für das Beta-Programm anmelden** und die Release-Beiträge der Gruppe Field Service Mobile abonnieren.

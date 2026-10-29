@@ -6,7 +6,7 @@ lang: de
 slug: partnersteuerung
 translationKey: service-partner-governance
 contactBrief: partner-governance
-order: 2
+order: 7
 lead: "Arbeiten mehrere Umsetzungspartner an einer Salesforce-Org, liefert jeder seinen Teil und niemand verantwortet das Ganze. Ich setze auf Kundenseite einen gemeinsamen Governance- und Release-Rahmen auf und prüfe, was Partner liefern, bevor es teuer wird."
 situations:
   - "Mehrere Partner und interne Teams arbeiten an derselben Org, und Änderungen überschreiben sich, weil niemand abstimmt, wer was wann deployt."
@@ -62,7 +62,7 @@ Der erste Schritt war einfach und wirksam: Jede Änderung ging über einen Pull 
 
 ![Vereinfachtes Beispiel einer Object Ownership Matrix: Der Stream Vertrieb verantwortet Account, Opportunity und Quote, der Stream Service verantwortet Case und Asset, der Stream Field Service verantwortet Work Order. Jeder andere Stream stimmt sich mit dem Verantwortlichen ab, bevor er eines dieser Objekte ändert.](../../../assets/blog/object-ownership-matrix-de.png)
 
-Bis die Standards stabil waren, hat es etwa drei Monate gedauert. Die erste Version deckte rund 80 Prozent der Fälle ab. In den Wochen danach kamen neue Randfälle hinzu. Wir haben sie in regelmäßigen Center-of-Excellence-Calls besprochen, in denen anstehende Änderungen mit genug Vorlauf für alle Streams auf den Tisch kamen. Irgendwann fielen die Randfälle ganz weg, weil Themen besprochen wurden, bevor sie zu Konflikten wurden. Als der Prozess rund lief, habe ich ihn an einen internen Kollegen übergeben, der ihn seitdem verantwortet.
+Bis die Standards stabil waren, hat es etwa drei Monate gedauert. Die erste Version deckte rund 80 Prozent der Fälle ab. In den Wochen danach kamen neue Randfälle hinzu. Wir haben sie in regelmäßigen [Center-of-Excellence-Calls](../../blog/salesforce-center-of-excellence-format/) besprochen, in denen anstehende Änderungen mit genug Vorlauf für alle Streams auf den Tisch kamen. Irgendwann fielen die Randfälle ganz weg, weil Themen besprochen wurden, bevor sie zu Konflikten wurden. Als der Prozess rund lief, habe ich ihn an einen internen Kollegen übergeben, der ihn seitdem verantwortet.
 
 ## Warum gehört die Governance auf die Kundenseite?
 

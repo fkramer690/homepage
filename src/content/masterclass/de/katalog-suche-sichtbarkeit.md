@@ -34,7 +34,7 @@ In Salesforce B2B Commerce entscheiden zwei getrennte Mechanismen, ob ein Händl
 
 ## Wie entscheidet B2B Commerce, wer welches Produkt sieht?
 
-Salesforce B2B Commerce, das Salesforce inzwischen auch als "Agentforce Commerce for B2B" vermarktet ([Trailhead](https://trailhead.salesforce.com/content/learn/modules/agentforce-for-guided-shopping-for-b2b-and-d2c/increase-revenue-with-agentforce-for-guided-shopping)), steuert den Zugang über eine Kette von Standardobjekten. Die [Trailhead-Einheit zum Zugang der Käufer](https://trailhead.salesforce.com/content/learn/modules/b2b-commerce-lightning-experience-data-model/organize-how-buyers-access-your-store) sagt es knapp: Käufer sind über Buyer Groups mit Stores verbunden, und Entitlement Policies legen fest, welche Produkte ein Käufer aufgrund seiner Gruppenmitgliedschaften sieht.
+Salesforce B2B Commerce, das Salesforce inzwischen auch als "Agentforce Commerce for B2B" vermarktet ([Trailhead](https://trailhead.salesforce.com/content/learn/modules/agentforce-for-guided-shopping-for-b2b-and-d2c/increase-revenue-with-agentforce-for-guided-shopping)), steuert den Zugang über eine Kette von Standardobjekten. Die [Trailhead-Einheit zum Zugang der Käufer](https://trailhead.salesforce.com/content/learn/modules/b2b2c-commerce-basics/b2b2c-data-model) sagt es knapp: Käufer sind über Buyer Groups mit Stores verbunden, und Entitlement Policies legen fest, welche Produkte ein Käufer aufgrund seiner Gruppenmitgliedschaften sieht.
 
 ```vertiefung Für Admins
 titel: Welche Standardobjekte bilden die Kette?
@@ -88,7 +88,7 @@ Zwei Grenzen aus der Tabelle prägen die Produktdaten. Neun Bilder pro Produkt r
 
 ## Wie finden Händler Ersatzteile über die Teilenummer?
 
-Die Store-Suche findet nur, was in den Daten steht, und sie ist streng. Laut [Trailhead zur Store-Suche](https://trailhead.salesforce.com/content/learn/modules/b2b2c-commerce-for-merchandisers/b2b2c-make-store-searchable) sind Produktname, Beschreibung und SKU standardmäßig durchsuchbar, ein Treffer erscheint nur, wenn alle Suchbegriffe vorkommen, und Teiltreffer am Wortanfang oder in der Wortmitte werden nicht unterstützt. Die Einheit ist für D2C-Merchandiser geschrieben, B2B nutzt dieselbe Suche auf der Plattform. Ein Händler, der "815" tippt, findet "0815" also nicht.
+Die Store-Suche findet nur, was in den Daten steht, und sie ist streng. Laut Salesforce sind Produktname, Beschreibung und SKU standardmäßig durchsuchbar, ein Treffer erscheint nur, wenn alle Suchbegriffe vorkommen, und Teiltreffer am Wortanfang oder in der Wortmitte werden nicht unterstützt. Die Einheit ist für D2C-Merchandiser geschrieben, B2B nutzt dieselbe Suche auf der Plattform. Ein Händler, der "815" tippt, findet "0815" also nicht.
 
 Die Grenzen der Suche pro Store: 25 durchsuchbare und 50 filterbare Merkmale, 100 Synonymregeln, 100 Boost-and-Bury-Regeln, 10 Facetten pro Suchanfrage und 200 Treffer pro Ergebnisseite. Daraus folgen drei Regeln für Teilekataloge:
 

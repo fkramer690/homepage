@@ -41,4 +41,5 @@ export const clients: Client[] = [
   { name: 'SCHOTTEL', file: 'schottel.svg', ratio: 0.96, weight: 0.95 },
   { name: 'KNF', file: 'knf.svg', ratio: 3.11, weight: 0.75 },
   { name: 'Schubert', file: 'schubert.svg', ratio: 6.00, weight: 1.1 },
+  { name: 'Reemtsma (Imperial Brands)', file: 'reemtsma.svg', ratio: 2.95, weight: 1.15 },
 ];

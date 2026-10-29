@@ -102,6 +102,8 @@ The plan could look like this:
 
 Since Billing is not in use, this scenario has no billing cutover. With Salesforce Billing it would add a period-end cutover and the sign-off from finance.
 
+Training per product line covers only part of the change management that Help asks for as a parallel workstream. 60 users who have quoted in CPQ for years also need to understand why their tool is changing. Why training alone rarely does it is described in [Salesforce change management: why rollouts fail](../change-management-salesforce-rollout/).
+
 ## What must the client decide itself?
 
 These decisions belong to you, not to the partner or the tool:

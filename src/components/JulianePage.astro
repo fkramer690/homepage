@@ -1,0 +1,213 @@
+---
+// Profile page of Juliane Winterscheid in either language; content lives in src/data/juliane-winterscheid.ts.
+// Reuses the layouts of the recruiter page (docs/layouts.md).
+import Page from '../layouts/Page.astro';
+import ExternalMark from './ExternalMark.astro';
+import ContactForm from './ContactForm.astro';
+import Blueprint from './Blueprint.astro';
+import Icon from './Icon.astro';
+import { Image } from 'astro:assets';
+import photo from '../assets/partners/juliane-winterscheid-portrait.jpg';
+import { en } from '../i18n/en';
+import { de } from '../i18n/de';
+import { site, contactHref, contactExternal } from '../site';
+import { juliane, julianePaths } from '../data/juliane-winterscheid';
+import { homeHref, localHref, partnersHref } from '../lib/paths';
+
+interface Props {
+  lang: 'en' | 'de';
+}
+const { lang } = Astro.props;
+const t = lang === 'de' ? de : en;
+const c = juliane[lang];
+const base = import.meta.env.BASE_URL;
+const alternates = { en: localHref('en', julianePaths.en), de: localHref('de', julianePaths.de) };
+const url = new URL(alternates[lang], Astro.site).href;
+const abs = (path: string) => new URL(path, Astro.site).href;
+const ctaAttrs = contactExternal ? { target: '_blank', rel: 'noopener' } : {};
+const ogImage = `${base}og/${lang}/juliane-winterscheid.png`;
+const partner = t.partnerPage.partners.find((p) => p.name === 'Juliane Winterscheid');
+// Client logos for the references: src/assets/partners/logos/<logo>.(svg|png|jpg|webp), named by the
+// `logo` id of a project. A project without a file shows its name only.
+const logoFiles = import.meta.glob<{ default: ImageMetadata }>('../assets/partners/logos/*.{svg,png,jpg,webp}', { eager: true });
+const logos = new Map(Object.entries(logoFiles).map(([path, mod]) => [path.split('/').pop()!.replace(/\.\w+$/, ''), mod.default]));
+
+const schema = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Juliane Winterscheid',
+    '@id': `${url}#person`,
+    jobTitle: 'Senior Human Centered Change Consultant',
+    description: c.description,
+    url,
+    image: abs(photo.src),
+    address: { '@type': 'PostalAddress', addressLocality: 'Köln', addressCountry: 'DE' },
+    knowsLanguage: ['de', 'en'],
+    sameAs: [...(partner ? [partner.linkedin] : []), 'https://www.freelancermap.de/profil/juliane-winterscheid-268133'],
+    knowsAbout: ['Change Management', 'Organizational Change Management', 'ADKAR', 'Prosci', 'Salesforce rollout', 'Key user', 'Sponsorship'],
+    hasCredential: c.credentials.tags.map((name) => ({ '@type': 'EducationalOccupationalCredential', name })),
+    affiliation: { '@type': 'CollegeOrUniversity', name: 'Hochschule Fresenius' },
+    colleague: { '@type': 'Person', '@id': `${abs(base)}#person`, name: site.person },
+    mainEntityOfPage: url,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'FK Solution Design', item: abs(homeHref(lang)) },
+      { '@type': 'ListItem', position: 2, name: t.partnerPage.title, item: abs(partnersHref(lang)) },
+      { '@type': 'ListItem', position: 3, name: 'Juliane Winterscheid', item: url },
+    ],
+  },
+];
+---
+<Page layout="wide" lang={lang} title={c.metaTitle} description={c.description} alternates={alternates} image={ogImage} hasContact>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </Fragment>
+
+  <section class="hero dark grid-bg rc-hero">
+    <Blueprint />
+    <div class="container hero-inner rc-hero-inner">
+      <div>
+        <a class="rc-back mono" href={partnersHref(lang)}>← {c.back}</a>
+        <p class="eyebrow mono">{c.eyebrow}</p>
+        <h1>{c.title}</h1>
+        <p class="hero-lead">{c.lead}</p>
+        <ul class="rc-promises mono">{c.promises.map((p) => <li>{p}</li>)}</ul>
+        <div class="hero-ctas">
+          <a class="btn" href="#contact">{c.ctaPrimary}</a>
+          <a class="btn btn-ghost" href="#projects">{c.ctaSecondary}</a>
+        </div>
+      </div>
+      <figure class="rc-portrait">
+        <Image src={photo} alt={c.portraitAlt} widths={[320, 640]} sizes="(max-width: 880px) 220px, 320px" />
+        <figcaption class="mono">{c.caption}</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="proof" aria-label={lang === 'de' ? 'Kennzahlen' : 'Key figures'}>
+    <div class="container">
+      <ul class="proof-list rc-facts">
+        {c.facts.map((f) => (
+          <li>
+            <span class="proof-value">{f.value}</span>
+            <span class="proof-label mono">{f.label}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="profile">
+    <div class="container">
+      <p class="label mono">{c.about.label}</p>
+      <h2>{c.about.title}</h2>
+      {c.about.paragraphs.map((p) => <p class="section-intro">{p}</p>)}
+      {partner && (
+        <p class="partner-links mono">
+          <a href={partner.linkedin} target="_blank" rel="noopener">{c.linkedIn}<ExternalMark label={t.nav.externalTab} /></a>
+        </p>
+      )}
+      <div class="focus">
+        <p class="label mono">{c.about.tagsLabel}</p>
+        <ul class="tags">{c.about.tags.map((tag) => <li>{tag}</li>)}</ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" id="together">
+    <div class="container">
+      <p class="label mono">{c.split.label}</p>
+      <h2>{c.split.title}</h2>
+      <p class="section-intro">{c.split.intro}</p>
+      <div class="rc-deal">
+        <div class="rc-deal-col rc-give">
+          <h3 class="compare-head mono">{c.split.leftTitle}</h3>
+          <ul>
+            {c.split.left.map((p) => (
+              <li><Icon name={p.icon} class="rc-icon" /><div><strong>{p.t}</strong><span>{p.d}</span></div></li>
+            ))}
+          </ul>
+        </div>
+        <div class="rc-deal-swap" aria-hidden="true">
+          <Icon name="swap" />
+        </div>
+        <div class="rc-deal-col">
+          <h3 class="compare-head mono">{c.split.rightTitle}</h3>
+          <ul>
+            {c.split.right.map((p) => (
+              <li><Icon name={p.icon} class="rc-icon" /><div><strong>{p.t}</strong><span>{p.d}</span></div></li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="projects">
+    <div class="container">
+      <p class="label mono">{c.projects.label}</p>
+      <h2>{c.projects.title}</h2>
+      <p class="section-intro">{c.projects.intro}</p>
+      <div class="rc-terms-grid">
+        {c.projects.items.map((p) => {
+          const logo = logos.get(p.logo);
+          return (
+            <div class="jw-project">
+              {logo && <Image src={logo} alt={`Logo ${p.t.split(':')[0]}`} height={40} class="jw-logo" />}
+              <h3>{p.t}</h3>
+              <p>{p.d}</p>
+            </div>
+          );
+        })}
+      </div>
+      <div class="focus">
+        <p class="label mono">{c.credentials.label}</p>
+        <ul class="tags">{c.credentials.tags.map((tag) => <li>{tag}</li>)}</ul>
+        <p class="rc-note">{c.credentials.note}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" id="approach">
+    <div class="container">
+      <p class="label mono">{c.steps.label}</p>
+      <h2>{c.steps.title}</h2>
+      <ol class="steps rc-steps">
+        {c.steps.items.map((s, i) => (
+          <li>
+            <Icon name={s.icon} class="rc-icon" />
+            <span class="step-no mono">{String(i + 1).padStart(2, '0')}</span>
+            <h3>{s.t}</h3>
+            <p>{s.d}</p>
+          </li>
+        ))}
+      </ol>
+      <div class="rc-terms">
+        <p class="label mono">{c.more.label}</p>
+        <div class="rc-terms-grid">
+          {c.more.links.map((l) => (
+            <div><h3><a href={localHref(lang, l.href)}>{l.t} →</a></h3><p>{l.d}</p></div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact dark grid-bg" id="contact">
+    <Blueprint />
+    <div class="container contact-inner">
+      <div class="contact-intro">
+        <p class="label mono">{t.contact.label}</p>
+        <h2>{c.ctaTitle}</h2>
+        <p class="contact-text">{c.ctaText}</p>
+        <a class="btn" href={contactHref(c.formSubject)} {...ctaAttrs}>{t.nav.cta}{contactExternal && <ExternalMark label={t.nav.newTab} />}</a>
+        {contactExternal && <p class="booking-note">{t.contact.bookingNote}</p>}
+      </div>
+      <ContactForm t={t} subject={c.formSubject} />
+    </div>
+  </section>
+</Page>

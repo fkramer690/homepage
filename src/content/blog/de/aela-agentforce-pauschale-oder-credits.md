@@ -29,7 +29,7 @@ faq:
 draft: false
 ---
 
-Eine Salesforce AELA lohnt sich für einen Hersteller nur, wenn die Nutzung von Agenten in Vertrieb, Service, Außendienst und Händlernetz stärker wächst, als Flex Credits zu einem bekannten Preis abdecken, und wenn die Verlängerung schon bei Unterschrift geregelt ist. Für ein oder zwei Agenten sind Flex Credits günstiger und leichter zu beenden. Einen Preis oder Standardkonditionen für die AELA hat Salesforce nicht veröffentlicht. Öffentlich gesagt hat Salesforce aber, dass AELA-Kunden später in die Verbrauchsabrechnung wechseln sollen. Deshalb würde ich die Verlängerungsklausel am härtesten verhandeln.
+Solange ein Hersteller ein oder zwei Agenten betreibt, sind Flex Credits günstiger als eine Salesforce AELA und leichter zu beenden. Eine AELA lohnt sich erst, wenn die Nutzung von Agenten in Vertrieb, Service, Außendienst und Händlernetz stärker wächst, als Flex Credits zu einem bekannten Preis abdecken, und wenn die Verlängerung schon bei Unterschrift geregelt ist. Die Verlängerungsklausel würde ich am härtesten verhandeln, denn Salesforce hat öffentlich gesagt, dass AELA-Kunden später in die Verbrauchsabrechnung wechseln sollen. Einen Preis oder Standardkonditionen für die AELA hat Salesforce nicht veröffentlicht.
 
 ## Was ist eine Salesforce AELA, und was ist öffentlich bekannt?
 

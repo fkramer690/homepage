@@ -101,7 +101,7 @@ Der Beitrag nennt keine Verfügbarkeit pro Funktion. Ich würde die Product Medi
 
 ## Warum entscheidet die Datenqualität über die Suche?
 
-Die Shopsuche findet nur, was in den Daten steht. Laut der [Trailhead-Einheit zur Shopsuche](https://trailhead.salesforce.com/content/learn/modules/b2b2c-commerce-for-merchandisers/b2b2c-make-store-searchable) sind Produktname, Beschreibung und SKU standardmäßig durchsuchbar, weitere Felder lassen sich ergänzen. Die Einheit ist für D2C-Stores auf derselben Plattformsuche geschrieben und beschreibt auch, wie der Abgleich funktioniert: Ergebnisse erscheinen nur, wenn alle Suchbegriffe vorkommen, und Teiltreffer am Wortanfang oder in der Wortmitte werden nicht unterstützt.
+Die Shopsuche findet nur, was in den Daten steht. Laut Salesforce sind Produktname, Beschreibung und SKU standardmäßig durchsuchbar, weitere Felder lassen sich ergänzen. Die Einheit ist für D2C-Stores auf derselben Plattformsuche geschrieben und beschreibt auch, wie der Abgleich funktioniert: Ergebnisse erscheinen nur, wenn alle Suchbegriffe vorkommen, und Teiltreffer am Wortanfang oder in der Wortmitte werden nicht unterstützt.
 
 Für einen Teilekatalog hat das direkte Folgen:
 

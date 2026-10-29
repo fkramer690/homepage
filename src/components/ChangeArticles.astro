@@ -1,0 +1,60 @@
+---
+// The change management articles on the change management service page, inside the
+// reading column (frontmatter section: change-management). Juliane's articles are the
+// basics, Fabian's articles of the category change-management the Salesforce practice.
+// Both lists come from the blog collection; never list articles here by hand.
+// Each group shows its newest four articles and links the rest in the filtered blog overview.
+// Reuses the compact row list of the masterclass overview (docs/layouts.md).
+import Icon from './Icon.astro';
+import { blogIndex, getPosts, postHref, readingMinutes } from '../lib/blog';
+import { getAuthor } from '../lib/authors';
+import { changeSection } from '../data/change-management';
+
+interface Props {
+  lang: 'en' | 'de';
+}
+const { lang } = Astro.props;
+const c = changeSection[lang].articles;
+const posts = await getPosts(lang);
+const rows = (list: typeof posts) =>
+  list.map((p) => ({
+    href: postHref(p),
+    name: [p.data.author, ...(p.data.coAuthor ? [p.data.coAuthor] : [])].map((id) => getAuthor(lang, id).name).join(' · '),
+    title: p.data.title,
+    text: p.data.description,
+    meta: c.minutes.replace('{n}', String(readingMinutes(p))),
+  }));
+const shown = 4;
+const groups = [
+  { ...c.basics, icon: 'change', filter: 'juliane', rows: rows(posts.filter((p) => p.data.author === 'juliane')) },
+  { ...c.programmes, icon: 'architecture', filter: 'fabian+change-management', rows: rows(posts.filter((p) => p.data.author !== 'juliane' && p.data.categories.includes('change-management'))) },
+].filter((g) => g.rows.length > 0);
+---
+{groups.length > 0 && (
+  <section class="cm-articles" aria-labelledby="articles">
+    <h2 id="articles">{c.title}</h2>
+    {groups.map((g) => (
+      <div class="cm-group">
+        <h3>{g.title}</h3>
+        <p class="cm-group-text">{g.text}</p>
+        <ul class="mc-overview-list">
+          {g.rows.slice(0, shown).map((r) => (
+            <li>
+              <a href={r.href}>
+                <Icon name={g.icon} class="mc-overview-icon" />
+                <span class="mc-overview-body">
+                  <span class="mc-overview-name mono">{r.name}</span>
+                  <span class="mc-overview-title">{r.title}</span>
+                  <span class="mc-overview-summary">{r.text}</span>
+                </span>
+                <span class="mc-overview-meta mono">{r.meta}</span>
+                <span class="mc-overview-arrow" aria-hidden="true">→</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+        {g.rows.length > shown && <p class="cm-group-more"><a class="text-link" href={`${blogIndex(lang)}#${g.filter}`}>{c.all.replace('{n}', String(g.rows.length))} →</a></p>}
+      </div>
+    ))}
+  </section>
+)}

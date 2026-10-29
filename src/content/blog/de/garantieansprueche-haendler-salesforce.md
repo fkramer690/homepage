@@ -25,7 +25,9 @@ faq:
 draft: false
 ---
 
-Die Manufacturing Cloud lohnt sich für Garantieprozesse, wenn Händler und Servicepartner regelmäßig Garantieansprüche einreichen und die Prüfung heute viel Handarbeit kostet. Sie bildet Garantiebedingungen, die Garantie jeder Anlage, die Ansprüche der Händler und den Regress beim Lieferanten in einem Datenmodell ab. Ob ein Anspruch gedeckt ist, entscheidet sich an den Daten der Anlage: Seriennummer, Kauf- oder Installationsdatum und Nutzung. Wie Teil 4 und 5 schreibe ich diesen Teil als Leitfaden für die Bewertung, nicht als Projektbericht. Die Garantie behandle ich als kaufmännischen Prozess, den Einsatz vor Ort deckt die Field-Service-Serie ab.
+Ob ein Garantieanspruch eines Händlers in Salesforce sauber geprüft werden kann, entscheiden die Daten der Anlage: Seriennummer, Kauf- oder Installationsdatum und Nutzung. Die Manufacturing Cloud bildet Garantiebedingungen, die Garantie jeder Anlage, die Ansprüche der Händler und den Regress beim Lieferanten in einem Datenmodell ab. Das lohnt sich, wenn Händler und Servicepartner regelmäßig Garantieansprüche einreichen und die Prüfung heute viel Handarbeit kostet. Fehlen die Anlagendaten, kann weder ein Mensch noch ein Agent verlässlich prüfen.
+
+Wie Teil 4 und 5 schreibe ich diesen Teil als Leitfaden für die Bewertung, nicht als Projektbericht. Die Garantie behandle ich als kaufmännischen Prozess, den Einsatz vor Ort deckt die Field-Service-Serie ab.
 
 ## Wie bildet die Manufacturing Cloud eine Garantie ab?
 

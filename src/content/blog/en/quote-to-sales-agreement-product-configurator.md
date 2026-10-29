@@ -55,7 +55,7 @@ How I calculate such cases is described under [make-or-buy and licence forecasts
 
 ## When does a configuration become a product?
 
-A sales agreement plans quantities per product. According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/sales-agreements-forecasting-manufacturing-cloud/create-sales-agreement), it belongs to an account and a price book, and for each product you enter a total quantity that Salesforce spreads across the periods. The actuals that later come from the ERP are matched to a product as well.
+A sales agreement plans quantities per product. According to the [object reference](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_salesagreement.htm), it belongs to an account and a price book, and for each product you enter a total quantity that Salesforce spreads across the periods. The actuals that later come from the ERP are matched to a product as well.
 
 So every configured variant that should be planned and measured in a sales agreement needs its own product identity. In Salesforce that is a product record, in the ERP usually a material number. Without a link between the two, actuals land on the wrong product or never reach the agreement.
 

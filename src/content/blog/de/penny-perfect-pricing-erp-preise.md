@@ -44,7 +44,7 @@ Der Guide beschreibt 19 Objekte, alle ab API-Version 68.0 verfügbar, und nennt 
 
 ## Wie nah ist sie an der SAP-Preisfindung?
 
-In der Struktur sehr nah. SAP berechnet Preise mit der Konditionstechnik: Laut [SAP Learning](https://learning.sap.com/courses/configuring-pricing-in-sap-s-4hana-sales/introducing-the-condition-technique) enthält ein Kalkulationsschema die Konditionsarten, jede Konditionsart hat eine Zugriffsfolge, und die Zugriffsfolge sucht in Konditionstabellen nach einem gültigen Konditionssatz, einschließlich Staffeln nach Menge.
+In der Struktur sehr nah. SAP berechnet Preise mit der Konditionstechnik: Laut [SAP Learning](https://learning.sap.com/courses/configuring-pricing-in-sap-s-4hana-sales) enthält ein Kalkulationsschema die Konditionsarten, jede Konditionsart hat eine Zugriffsfolge, und die Zugriffsfolge sucht in Konditionstabellen nach einem gültigen Konditionssatz, einschließlich Staffeln nach Menge.
 
 Die [Objektreferenz](https://developer.salesforce.com/docs/industries/penny-perfect-pricing/references/penny-perfect-pricing-objects) von Penny Perfect Pricing liest sich wie eine Übersetzung dieses Modells. Salesforce veröffentlicht die Zuordnung nicht; die rechte Spalte ist meine Lesart der Objektbeschreibungen:
 

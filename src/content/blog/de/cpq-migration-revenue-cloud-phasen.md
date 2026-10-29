@@ -102,6 +102,8 @@ Der Plan könnte so aussehen:
 
 Da Billing nicht im Einsatz ist, entfällt in diesem Szenario der Billing-Cutover. Mit Salesforce Billing käme ein Cutover zum Periodenende und die Freigabe durch die Finanzabteilung dazu.
 
+Die Schulung je Produktlinie deckt nur einen Teil des Change Managements ab, das die Hilfe als parallelen Strang verlangt. 60 Nutzer, die seit Jahren in CPQ anbieten, müssen auch verstehen, warum sich ihr Werkzeug ändert. Warum Schulungen allein selten reichen, beschreibe ich in [Salesforce Change Management: warum Einführungen scheitern](../change-management-salesforce-einfuehrung/).
+
 ## Was muss der Kunde selbst entscheiden?
 
 Diese Entscheidungen gehören Ihnen, nicht dem Partner und nicht dem Werkzeug:

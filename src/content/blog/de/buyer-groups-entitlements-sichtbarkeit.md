@@ -30,7 +30,7 @@ In Salesforce B2B Commerce sieht ein Händler ein Produkt, wenn sein Käuferacco
 
 ## Wie funktioniert die Sichtbarkeit in B2B Commerce?
 
-Salesforce B2B Commerce, das Salesforce inzwischen auch als "Agentforce Commerce for B2B" vermarktet ([Trailhead](https://trailhead.salesforce.com/content/learn/modules/agentforce-for-guided-shopping-for-b2b-and-d2c/increase-revenue-with-agentforce-for-guided-shopping)), steuert den Zugang über eine Kette von Standardobjekten. Die [Trailhead-Einheit zum Zugang von Käufern](https://trailhead.salesforce.com/content/learn/modules/b2b-commerce-lightning-experience-data-model/organize-how-buyers-access-your-store) fasst es in einem Satz zusammen: Käufer sind über Buyer Groups mit Stores verbunden.
+Salesforce B2B Commerce, das Salesforce inzwischen auch als "Agentforce Commerce for B2B" vermarktet ([Trailhead](https://trailhead.salesforce.com/content/learn/modules/agentforce-for-guided-shopping-for-b2b-and-d2c/increase-revenue-with-agentforce-for-guided-shopping)), steuert den Zugang über eine Kette von Standardobjekten. Die [Trailhead-Einheit zum Zugang von Käufern](https://trailhead.salesforce.com/content/learn/modules/b2b2c-commerce-basics/b2b2c-data-model) fasst es in einem Satz zusammen: Käufer sind über Buyer Groups mit Stores verbunden.
 
 - **Käuferaccount** (Buyer Account): ein normaler Account, der für den Einkauf freigeschaltet ist. Seine Kontakte werden Käufer oder Buyer Manager.
 - **Buyer Group** (BuyerGroup): bündelt Käuferaccounts mit gleichen Einstellungen. Jede Mitgliedschaft ist ein BuyerGroupMember-Datensatz.

@@ -6,6 +6,9 @@ import { getPosts, postHref, blogIndex } from '../lib/blog';
 import { getServices, serviceHref, servicesIndex } from '../lib/services';
 import { homeHref, localHref } from '../lib/paths';
 import { questionPaths } from '../data/questions';
+import { recruiterPaths } from '../data/recruiters';
+import { julianePaths } from '../data/juliane-winterscheid';
+import { freelanceArchitectPaths } from '../data/freelance-architect';
 import { getChapters, chapterHref, courseTexts, masterclassIndex, masterclassesIndex } from '../lib/masterclass';
 import { courseIds, type CourseId } from '../lib/courses';
 
@@ -49,6 +52,9 @@ The German version is the main site at the root; the English version lives under
 ${courseIds.map((c) => `- [${courseTexts('en', c).name}](${abs(masterclassIndex('en', c))}), German: [${courseTexts('de', c).name}](${abs(masterclassIndex('de', c))}): ${courseTexts('en', c).metaDescription}`).join('\n')}
 - [Speaker & events](${abs(localHref('en', 'speaking/'))}): talks at Salesforce community conferences (Flow performance, Flow vs OmniScript, Lightning Flow Scanner)
 - [Questions I ask in every Salesforce project](${abs(localHref('en', questionPaths.en))}), German: [Fragen, die ich in jedem Salesforce-Projekt stelle](${abs(localHref('de', questionPaths.de))}): goal and deadline, partner ownership, ERP interfaces, data volumes, operations, licences
+- [Freelance Salesforce Architect](${abs(localHref('en', freelanceArchitectPaths.en))}), German: [Freiberuflicher Salesforce Architect](${abs(localHref('de', freelanceArchitectPaths.de))}): independent architect on the client side for manufacturers, when it pays off compared with an implementation partner, deliverables, terms
+- [Juliane Winterscheid, change management](${abs(localHref('en', julianePaths.en))}), German: [Juliane Winterscheid, Change Management](${abs(localHref('de', julianePaths.de))}): cooperation partner for change management in Salesforce rollouts, Prosci certified, references and joint approach
+- [Freelance Salesforce Architect: working with recruiters](${abs(localHref('en', recruiterPaths.en))}), German: [Zusammenarbeit mit Recruitern](${abs(localHref('de', recruiterPaths.de))}): roles that fit, response time, submissions only with approval, no double submissions
 - [LinkedIn](${site.linkedin})
 
 ## Services
