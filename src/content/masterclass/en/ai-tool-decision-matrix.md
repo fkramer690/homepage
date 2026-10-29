@@ -100,15 +100,19 @@ Assume a machine builder with Sales Cloud and Service Cloud in an org that sits 
 
 **An agent for order status.** Dealers ask about delivery dates every day. A MuleSoft API to SAP S/4 exists, which is row 10. The agent calls it as an action, and the decision about which data a dealer may see sits in Agent Script. The details are in [Agentforce and SAP order status](../../../blog/agentforce-sap-order-status-mulesoft/). For the acquired plant without an API (row 11) I would not roll out the agent at first. RPA breaks when screens change, and I would test whether the Systems Integration Agent really copes with that on a copy of the system first. The options are in [legacy ERP without an API](../../../blog/legacy-erp-without-api-ai-agents/).
 
+```hinweis tipp
 In the end each initiative uses a different tool, and that is normal. What stays the same are the rules: no agent in production, data only read-only and under a named user, releases only through the pipeline.
+```
 
 ## Where does the matrix not help?
 
 Three questions no table answers.
 
-- **Model quality for Apex.** There is no public benchmark for Apex, flows and metadata, as described in [chapter 4](../external-coding-agents/). Only a comparison on your own backlog can decide, measured by review findings and rework.
-- **Ownership.** Who maintains the rules file in the repository, who approves Hosted MCP access and who pays for Flex Credits is a contract question between you and your partner. I covered that in [chapter 5](../aiforce-and-system-integrators/).
-- **Whether Salesforce is the right place.** Decisions SAP already makes do not belong in an agent in Salesforce. For routine work without language, a flow or an ERP job is often cheaper than any agent.
+| Question | Why the matrix does not answer it |
+|---|---|
+| Model quality for Apex | There is no public benchmark for Apex, flows and metadata, as described in [chapter 4](../external-coding-agents/). Only a comparison on your own backlog can decide, measured by review findings and rework. |
+| Ownership | Who maintains the rules file in the repository, who approves Hosted MCP access and who pays for Flex Credits is a contract question between you and your partner. I covered that in [chapter 5](../aiforce-and-system-integrators/). |
+| Whether Salesforce is the right place | Decisions SAP already makes do not belong in an agent in Salesforce. For routine work without language, a flow or an ERP job is often cheaper than any agent. |
 
 Sorting out these decisions for your org and your partners is part of my work in [Salesforce architecture](../../../services/salesforce-architecture/). Where agents carry weight in manufacturing today is the subject of [chapter 10](../ai-agents-in-manufacturing/); all chapters are listed on the [masterclass overview](../).
 

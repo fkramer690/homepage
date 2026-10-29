@@ -116,9 +116,11 @@ The open [Salesforce Skills](https://developer.salesforce.com/blogs/2026/06/buil
 
 Before the gate, the way of working decides how much fails. Three habits work, in my view:
 
-- **Plan before code.** In Vibes Plan Mode, according to Salesforce, nothing changes "until you click Approve Plan". That pays off for an extension spanning several metadata types. For a bug fix, a test that reproduces the bug is enough. Birgitta Böckeler watched a tool turn [a small bug into four user stories with 16 acceptance criteria](https://www.martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html).
-- **Evidence instead of claims.** The agent delivers the test command and its output, not "all tests pass".
-- **Small changes.** DORA lists [working in small batches](https://dora.dev/capabilities/) among the capabilities that carry the benefit of AI. A pull request with 40 changed files does not get reviewed; it gets waved through.
+| Habit | What it means |
+|---|---|
+| Plan before code | In Vibes Plan Mode, according to Salesforce, nothing changes "until you click Approve Plan". That pays off for an extension spanning several metadata types. For a bug fix, a test that reproduces the bug is enough. Birgitta Böckeler watched a tool turn [a small bug into four user stories with 16 acceptance criteria](https://www.martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html). |
+| Evidence instead of claims | The agent delivers the test command and its output, not "all tests pass". |
+| Small changes | DORA lists [working in small batches](https://dora.dev/capabilities/) among the capabilities that carry the benefit of AI. A pull request with 40 changed files does not get reviewed; it gets waved through. |
 
 ## Why does no agent get access to production?
 
@@ -140,11 +142,18 @@ Assume a machine builder with an Experience Cloud dealer portal, Service Cloud a
 
 In the requirements workshop, a clickable draft comes together in two hours in a Developer Edition org. That is vibe coding at its best, and the draft is thrown away afterwards; where the line runs is covered in [vibe coding in Salesforce: prototype or production](../../../blog/vibe-coding-salesforce-prototype-vs-production/). For the real build:
 
-- The rules file lives in the manufacturer's repository and names the SAP Named Credential, target version 67.0 and the scratch org commands.
-- The agent writes a plan first, and a developer approves it.
-- The plan includes raising an existing selector class from 62.0 to 67.0, so the rules file requires a `runAs` test. The test as a restricted dealer user shows that other dealers' assets disappear, which is intended, but so does the parts master data, which is not. Caught in the validation deployment instead of in the portal.
-- Code Analyzer reports a query inside a loop over 200 order lines, and the pull request goes back.
-- The reviewer checks the sharing model, not the formatting.
+```schritte
+Rules file
+  The rules file lives in the manufacturer's repository and names the SAP Named Credential, target version 67.0 and the scratch org commands.
+Plan
+  The agent writes a plan first, and a developer approves it.
+Test
+  The plan includes raising an existing selector class from 62.0 to 67.0, so the rules file requires a `runAs` test. The test as a restricted dealer user shows that other dealers' assets disappear, which is intended, but so does the parts master data, which is not. Caught in the validation deployment instead of in the portal.
+Code Analyzer
+  Code Analyzer reports a query inside a loop over 200 order lines, and the pull request goes back.
+Review
+  The reviewer checks the sharing model, not the formatting.
+```
 
 None of these steps is new. What is new is that without them, far more unreviewed code is produced in the same time. The cost of the AI tools themselves is covered in [chapter 7](../costs-and-tokens/), and all chapters are on the [overview page](../).
 

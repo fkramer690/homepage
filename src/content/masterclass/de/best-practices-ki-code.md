@@ -116,9 +116,11 @@ Die offenen [Salesforce Skills](https://developer.salesforce.com/blogs/2026/06/b
 
 Vor dem Gate entscheidet die Arbeitsweise, wie viel durchfällt. Drei Gewohnheiten halte ich für wirksam:
 
-- **Plan vor Code.** Im Plan Mode von Vibes ändert sich laut Salesforce nichts, „until you click Approve Plan“. Für eine Erweiterung mit mehreren Metadatentypen lohnt das. Für einen Bugfix reicht ein Test, der den Fehler zeigt. Birgitta Böckeler hat erlebt, wie ein Werkzeug [aus einem kleinen Bug vier User Stories mit 16 Akzeptanzkriterien](https://www.martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html) machte.
-- **Beweise statt Behauptungen.** Der Agent liefert den Testbefehl und die Ausgabe, nicht „alle Tests grün“.
-- **Kleine Änderungen.** DORA zählt [kleine Batches](https://dora.dev/capabilities/) zu den Fähigkeiten, die KI-Nutzen tragen. Ein Pull Request mit 40 geänderten Dateien wird nicht geprüft, er wird durchgewinkt.
+| Gewohnheit | Was sie bedeutet |
+|---|---|
+| Plan vor Code | Im Plan Mode von Vibes ändert sich laut Salesforce nichts, „until you click Approve Plan“. Für eine Erweiterung mit mehreren Metadatentypen lohnt das. Für einen Bugfix reicht ein Test, der den Fehler zeigt. Birgitta Böckeler hat erlebt, wie ein Werkzeug [aus einem kleinen Bug vier User Stories mit 16 Akzeptanzkriterien](https://www.martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html) machte. |
+| Beweise statt Behauptungen | Der Agent liefert den Testbefehl und die Ausgabe, nicht „alle Tests grün“. |
+| Kleine Änderungen | DORA zählt [kleine Batches](https://dora.dev/capabilities/) zu den Fähigkeiten, die KI-Nutzen tragen. Ein Pull Request mit 40 geänderten Dateien wird nicht geprüft, er wird durchgewinkt. |
 
 ## Warum bekommt kein Agent Zugriff auf Produktion?
 
@@ -140,11 +142,18 @@ Nehmen wir einen Maschinenbauer mit Experience-Cloud-Händlerportal, Service Clo
 
 Im Anforderungsworkshop entsteht in zwei Stunden ein klickbarer Entwurf in einer Developer Edition. Das ist Vibe Coding im besten Sinn, und der Entwurf wird danach verworfen; wo die Grenze liegt, steht in [Vibe Coding in Salesforce: Prototyp oder Produktion](../../../blog/vibe-coding-salesforce-prototyp-produktion/). Für die echte Umsetzung gilt:
 
-- Die Regeldatei liegt im Repository des Herstellers und nennt den Named Credential für SAP, die Zielversion 67.0 und die Scratch-Org-Befehle.
-- Der Agent schreibt zuerst einen Plan, den ein Entwickler freigibt.
-- Der Plan sieht vor, eine bestehende Selector-Klasse von 62.0 auf 67.0 anzuheben, also verlangt die Regeldatei einen `runAs`-Test. Der Test mit einem eingeschränkten Händlerbenutzer zeigt, dass danach Anlagen anderer Händler fehlen, was gewollt ist, aber auch die Teilestammdaten, was nicht gewollt ist. Gefunden im Validierungs-Deployment statt im Portal.
-- Code Analyzer meldet eine Abfrage in einer Schleife bei 200 Positionen, der Pull Request geht zurück.
-- Der Reviewer prüft das Sharing-Modell, nicht die Formatierung.
+```schritte
+Regeldatei
+  Die Regeldatei liegt im Repository des Herstellers und nennt den Named Credential für SAP, die Zielversion 67.0 und die Scratch-Org-Befehle.
+Plan
+  Der Agent schreibt zuerst einen Plan, den ein Entwickler freigibt.
+Test
+  Der Plan sieht vor, eine bestehende Selector-Klasse von 62.0 auf 67.0 anzuheben, also verlangt die Regeldatei einen `runAs`-Test. Der Test mit einem eingeschränkten Händlerbenutzer zeigt, dass danach Anlagen anderer Händler fehlen, was gewollt ist, aber auch die Teilestammdaten, was nicht gewollt ist. Gefunden im Validierungs-Deployment statt im Portal.
+Code Analyzer
+  Code Analyzer meldet eine Abfrage in einer Schleife bei 200 Positionen, der Pull Request geht zurück.
+Review
+  Der Reviewer prüft das Sharing-Modell, nicht die Formatierung.
+```
 
 Kein Schritt davon ist neu. Neu ist, dass ohne diese Schritte in derselben Zeit deutlich mehr ungeprüfter Code entsteht. Die Kosten der KI-Werkzeuge selbst behandelt [Kapitel 7](../kosten-und-token/), alle Kapitel finden Sie auf der [Übersichtsseite](../).
 

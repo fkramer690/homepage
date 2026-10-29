@@ -52,11 +52,13 @@ The tokenizer also shifts price comparisons: Sonnet 5.5 costs $2 per million inp
 
 The loop makes agentic work expensive. The [Claude Code cost documentation](https://code.claude.com/docs/en/costs) names the drivers:
 
-- **Context at every step:** Claude Code sends the full conversation with every request, and every tool call creates another request carrying the results.
-- **Thinking as output:** thinking tokens are billed as output, and thinking cannot be turned off on Opus 5.5, Sonnet 5.5 or Haiku 5.5. Output costs five times input on Claude 5.5.
-- **Cache misses after breaks:** the first message after a break longer than the cache lifetime reprocesses the full context.
-- **Agent teams:** in plan mode they use about seven times the tokens of a standard session.
-- **Rules files and MCP:** CLAUDE.md loads at every session start, and Anthropic recommends keeping it under 200 lines. CLI tools use less context than MCP servers.
+| Driver | What happens |
+|---|---|
+| Context at every step | Claude Code sends the full conversation with every request, and every tool call creates another request carrying the results. |
+| Thinking as output | Thinking tokens are billed as output, and thinking cannot be turned off on Opus 5.5, Sonnet 5.5 or Haiku 5.5. Output costs five times input on Claude 5.5. |
+| Cache misses after breaks | The first message after a break longer than the cache lifetime reprocesses the full context. |
+| Agent teams | In plan mode they use about seven times the tokens of a standard session. |
+| Rules files and MCP | CLAUDE.md loads at every session start, and Anthropic recommends keeping it under 200 lines. CLI tools use less context than MCP servers. |
 
 ## What does AI-assisted development cost?
 
@@ -105,10 +107,12 @@ At 20 active days that is $260 at API rates. A Team Premium seat can be cheaper 
 
 Assumptions: 40 model calls, context growing from 20,000 to 120,000 tokens, 70,000 on average. Each call adds 2,500 new tokens and produces 1,500 output tokens including thinking, with five-minute caching.
 
-1. Cache writes: 20,000 + 40 × 2,500 = 120,000 tokens × $5.00 per million = **$0.60**
-2. Cache reads: 40 × 67,500 = 2.7 million tokens × $0.20 per million = **$0.54**
-3. Output: 40 × 1,500 = 60,000 tokens × $20.00 per million = **$1.20**
-4. Total on Opus 5.5: **$2.34**
+| Item | Calculation |
+|---|---|
+| Cache writes | 20,000 + 40 × 2,500 = 120,000 tokens × $5.00 per million = **$0.60** |
+| Cache reads | 40 × 67,500 = 2.7 million tokens × $0.20 per million = **$0.54** |
+| Output | 40 × 1,500 = 60,000 tokens × $20.00 per million = **$1.20** |
+| Total on Opus 5.5 | **$2.34** |
 
 Without caching, 2.8 million input tokens at $4 cost $11.20 alone, **$12.40** with output, a good five times as much. On Sonnet 5.5 with caching: $0.30 + $0.27 + $0.60 = **$1.17**. Five Opus sessions a day come to $11.70, close to Anthropic's $13 per active day. Output is about 2 percent of the tokens and a good half of the cost, which is why Anthropic recommends Sonnet as default and Opus for architecture questions.
 
@@ -149,10 +153,12 @@ The [Sales Cloud pricing page](https://www.salesforce.com/sales-cloud/pricing/) 
 
 Assumption: 3,000 conversations a month about order status, delivery dates and spare parts, with three actions and two Standard prompts each.
 
-1. Actions: 3,000 × 3 × 20 = 180,000 credits
-2. Prompts: 3,000 × 2 × 4 = 24,000 credits
-3. Total: 204,000 credits = **$1,020 a month**, against $6,000 on the per-conversation model
-4. Twelve months: 2,448,000 credits, more than the Core and Advanced pools, just under Max
+| Item | Calculation |
+|---|---|
+| Actions | 3,000 × 3 × 20 = 180,000 credits |
+| Prompts | 3,000 × 2 × 4 = 24,000 credits |
+| Total | 204,000 credits = **$1,020 a month**, against $6,000 on the per-conversation model |
+| Twelve months | 2,448,000 credits, more than the Core and Advanced pools, just under Max |
 
 With 2,000 MB of spare part catalogues processed in Data 360 (300,000 credits) and sandbox tests, the first year comes to about 3 million credits or $15,000. The full calculation with test load and resolution pricing is in [Agentforce dealer service agent: cost per month](../../../blog/dealer-service-agent-cost-calculation/).
 

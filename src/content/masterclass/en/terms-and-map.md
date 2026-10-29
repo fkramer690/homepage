@@ -115,10 +115,12 @@ What AIforce contains and what an IT lead should do now is in [AIforce: Salesfor
 
 Assume a machine builder with Sales Cloud, Service Cloud, SAP and a dealer network with a portal. All numbers are assumptions for illustration. One morning, the steering committee has four AI requests on the agenda:
 
-1. **Head of sales:** key account managers should prepare dealer visits in Claude and update opportunities from there. That is layer D. Salesforce in Claude is a beta, and Salesforce says prices may still change. Before anything else, someone has to check whether sharing for warranty cases and price agreements is too open.
-2. **Head of service:** an agent should answer dealer enquiries about order status and delivery dates. That is layer C, with a dependency on layer B, because the answers live in SAP. Assume 1,500 enquiries a month with three actions each: 4,500 actions at 20 credits make 90,000 credits, about $450 a month, before testing and integration work.
-3. **Implementation partner:** it wants to build the new dealer portal with coding agents and promises shorter sprints. That is layer A. What counts here are review rules, the rules file and the pipeline, whatever the tool is called.
-4. **IT lead:** asks who actually reads which data when Claude, the partner's agent and the service agent all talk to the org at once. That is layer B, and it affects the other three.
+| Who | Request and layer |
+|---|---|
+| Head of sales | Key account managers should prepare dealer visits in Claude and update opportunities from there. That is layer D. Salesforce in Claude is a beta, and Salesforce says prices may still change. Before anything else, someone has to check whether sharing for warranty cases and price agreements is too open. |
+| Head of service | An agent should answer dealer enquiries about order status and delivery dates. That is layer C, with a dependency on layer B, because the answers live in SAP. Assume 1,500 enquiries a month with three actions each: 4,500 actions at 20 credits make 90,000 credits, about $450 a month, before testing and integration work. |
+| Implementation partner | It wants to build the new dealer portal with coding agents and promises shorter sprints. That is layer A. What counts here are review rules, the rules file and the pipeline, whatever the tool is called. |
+| IT lead | Asks who actually reads which data when Claude, the partner's agent and the service agent all talk to the org at once. That is layer B, and it affects the other three. |
 
 Without the layers, these four requests land in one pot called "AI initiative" with one budget and one owner. With the layers they become four projects with four owners: sales with IT and data protection, service, programme management with partner governance, integration architecture. Only the second needs an Agentforce decision. Whether the service agent starts now or the data gets fixed first is answered in [Agentforce for manufacturers: start now or wait?](../../../blog/agentforce-yes-or-no-manufacturers/).
 
