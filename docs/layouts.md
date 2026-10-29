@@ -142,3 +142,19 @@ a `coAuthor`. Fabian did not want two author boxes stacked.
 - Blog overview cards: author line with small round photos (28px, overlapping for
   two authors) before the names, for every card.
 - Fits: anything written or delivered by two people together.
+
+## Service pages: dark head and alternating bands
+
+Chosen 2026-10-29 (variant B of three; Fabian found the service pages "komplett
+weiß" compared with the other pages). Built in `src/components/ServicePage.astro`
+for every service page.
+
+- Page head (back link, note, eyebrow, h1, lead, button, photo) in the dark grid
+  area (`.service-hero dark grid-bg`), like the start page and recruiter page.
+- Below it full-width bands that alternate white and grey (`.section` /
+  `.section.alt`, class `service-band`): starting situation white, "Was ich
+  mache / Was Sie bekommen" grey, collaboration steps white; on the change
+  management page also the team grey, and the article list grey after the
+  reading area. Cards and boxes on grey bands are white.
+- The running text, FAQ and author box stay in one white band with the
+  ReadingGrid.
