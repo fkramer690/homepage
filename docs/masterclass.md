@@ -57,9 +57,11 @@ Chapters follow the content rules of the [blog guidelines](blog-guidelines.md): 
 
 1. Hero with eyebrow, H1, lead, "To the chapters" and "Book a call", plus the four-layer drawing
 2. Key facts: 10 chapters, number of published articles in the clusters, DE/EN
-3. Deadlines (`masterclass.deadlines` in i18n; `articleKey` links a card to a blog article)
-4. Chapter cards (`#kapitel` / `#chapters`) from the collection: number, `short`, `summary`
-5. Article clusters (`#artikel` / `#articles`), defined in `clusters` in `src/lib/masterclass.ts` as ordered blog translationKeys. Unpublished articles are skipped, a cluster without published articles is hidden
+3. Deadlines as a timeline (`masterclass.deadlines` in i18n; `articleKey` links an entry to a blog article)
+4. Chapters (`#kapitel` / `#chapters`) as a numbered path in two columns from the collection: number, `short`, `summary`
+5. Article clusters (`#artikel` / `#articles`) as topic tabs (radio inputs, no script; the first topic is open), defined in `clusters` in `src/lib/masterclass.ts` as ordered blog translationKeys. Unpublished articles are skipped, a cluster without published articles is hidden
+
+Each of the three sections has a heading plus one or two sentences below it (`deadlinesText`, `chaptersText`, `articlesText` per masterclass in i18n).
 6. Author box and the contact section
 
 ## Chapter page
