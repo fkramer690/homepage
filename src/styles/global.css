@@ -208,16 +208,18 @@ a:hover { color: var(--anthracite); }
   font-size: 0.78rem;
 }
 
-@media (max-width: 880px) {
+/* Below 1020px the seven menu items no longer fit next to the logo and the button */
+@media (max-width: 1020px) {
   .main-nav { display: none; }
 }
-.main-nav a { white-space: nowrap; }
-/* Between the mobile breakpoint and full width the nav gaps shrink so all items fit next to the brand */
-@media (min-width: 881px) and (max-width: 1160px) {
+.main-nav a,
+.header-actions .btn,
+.brand-name { white-space: nowrap; }
+/* Between the mobile breakpoint and full width the nav gaps shrink and only the logo
+   mark is shown, so all items fit next to it */
+@media (min-width: 1021px) and (max-width: 1240px) {
   .header-inner { gap: 16px; }
   .main-nav { gap: 16px; }
-}
-@media (min-width: 881px) and (max-width: 1099px) {
   .brand-text { display: none; }
 }
 @media (max-width: 480px) {
@@ -1606,3 +1608,17 @@ p.post-series-note { margin: 0.6em 0 0; font-size: 0.95rem; }
 .fa-practice-grid { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 56px; align-items: center; }
 .fa-practice-grid .fa-practice-facts { grid-template-columns: repeat(2, 1fr); }
 @media (max-width: 900px) { .fa-practice-grid { grid-template-columns: 1fr; } .fa-practice-grid .hero-photo { display: none; } }
+
+/* Start page: two pillars and the joint offer (Fabian, Juliane, together) */
+.pillar-people { display: flex; }
+.pillar-people img { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; border: 2px solid var(--white); }
+.pillar-people img + img { margin-left: -12px; }
+.pillar-who { display: block; font-size: 0.75rem; color: var(--cyan-dark); margin-bottom: 0.4em; }
+.pillars h3 { margin: 0 0 0.5em; }
+
+/* Change management area page: portraits in the side column, groups of rows */
+.cm-people { display: flex; gap: 12px; margin: 0 0 1.2em; }
+.cm-people img { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; display: block; }
+.cm-groups { display: flex; flex-direction: column; gap: 44px; }
+.cm-group h2 { margin-top: 0.2em; }
+.cm-group-text { color: var(--text-2); margin: 0 0 1.1em; max-width: 70ch; }

@@ -10,6 +10,10 @@ Every article page has the same fixed structure: takeaways, article body, collap
 
 Articles and masterclass chapters loosen up their text with content blocks from the library in `docs/content-blocks.md` (```hinweis, ```praxis, ```kennzahlen, ```zeitleiste, ```ablauf, ```pro-contra, ```vertiefung, ```schritte; rules under "Content blocks" in `docs/blog-guidelines.md`). They render through `src/lib/content-blocks-plugin.mjs`; the build check enforces their use. Flow diagrams are rendered once with `node scripts/render-diagrams.mjs`, which fails when a label does not fit its box.
 
+## Two pillars
+
+The site has two pillars under one brand: Fabian's Salesforce architecture for manufacturers (start page, services) and Juliane Winterscheid's change management, plus the joint offer, change management in Salesforce programmes. The start page introduces all three in its "Schwerpunkte" section; change management has its own area page and menu item (`/change-management/`, `/en/change-management/`, texts in `src/data/change-management.ts`), which lists the articles from the blog collection by author. Keep the start page written for the manufacturer audience; general change topics go to Juliane's pillar.
+
 ## Service pages
 
 Each service has its own page (`src/content/services/<lang>/`, built by `src/components/ServicePage.astro`). Follow `docs/service-pages.md`; the same content rules and build check as for blog articles apply.
