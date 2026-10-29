@@ -63,9 +63,9 @@ export const recruiters = {
       fair: 'Das Ziel ist eine Win-win-Situation mit voller Transparenz. Dazu gehört, dass die Vermittlungspauschale im Verhältnis zu meinem Tagessatz steht. Aufschläge von mehr als 30 Prozent sind branchenunüblich. Stelle ich fest, dass es trotzdem so ist, verlange ich bei einer Verlängerung oder einer weiteren Zusammenarbeit eine Open-Book-Policy.',
       giveTitle: 'Sie bekommen von mir',
       give: [
-        { icon: 'clock', t: 'Antwort innerhalb eines Werktags', d: 'Auch wenn sie Nein lautet. Ihr Kunde wartet nicht auf mich.' },
+        { icon: 'clock', t: 'Antwort innerhalb eines Werktags', d: 'Auch wenn sie Nein lautet. Ihr Kunde muss nicht auf mich warten.' },
         { icon: 'scale', t: 'Ehrliche Einschätzung vorab', d: 'Welche Anforderungen ich erfülle und welche nicht. Sie reichen mit Argumenten ein, nicht mit Hoffnung.' },
-        { icon: 'profile', t: 'Exklusiv über Sie', d: 'Eingereicht wird nur mit meiner schriftlichen Freigabe, pro Anfrage über genau einen Recruiter. Kommt dieselbe Stelle danach über andere, sage ich ab.' },
+        { icon: 'profile', t: 'Exklusiv über Sie', d: 'Eingereicht wird nur mit meiner schriftlichen Freigabe, pro Anfrage über genau einen Recruiter. Kommt dieselbe Stelle danach über andere, sage ich ab, natürlich auch dann, wenn die Konditionen dort besser sind.' },
         { icon: 'calendar', t: 'Verfügbarkeit, die stimmt', d: 'Start und Auslastung, wie ich sie halten kann. Ändert sich etwas, erfahren Sie es zuerst.' },
         { icon: 'handshake', t: 'Loyalität im Projekt', d: 'Verlängerungen laufen über Sie. Kein Direktvertrag hinter Ihrem Rücken.' },
       ] as Point[],
@@ -152,9 +152,9 @@ export const recruiters = {
       fair: 'The goal is a win-win situation with full transparency. That includes an agency fee in proportion to my daily rate. Mark-ups above 30 percent are unusual in this industry. If I find that it is the case anyway, I require an open-book policy for an extension or any further collaboration.',
       giveTitle: 'You get from me',
       give: [
-        { icon: 'clock', t: 'An answer within one working day', d: 'Even if it is no. Your client never waits for me.' },
+        { icon: 'clock', t: 'An answer within one working day', d: 'Even if it is no. Your client does not have to wait for me.' },
         { icon: 'scale', t: 'An honest assessment up front', d: 'Which requirements I meet and which I do not. You submit with arguments, not with hope.' },
-        { icon: 'profile', t: 'Exclusively through you', d: 'Submissions only with my written approval, through exactly one recruiter per request. If the same role reaches me through others later, I decline.' },
+        { icon: 'profile', t: 'Exclusively through you', d: 'Submissions only with my written approval, through exactly one recruiter per request. If the same role reaches me through others later, I decline, even if their terms are better.' },
         { icon: 'calendar', t: 'Availability you can rely on', d: 'Start and utilisation as I can deliver them. If anything changes, you hear it first.' },
         { icon: 'handshake', t: 'Loyalty in the project', d: 'Extensions go through you. No direct contract behind your back.' },
       ] as Point[],

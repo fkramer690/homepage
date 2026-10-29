@@ -1384,7 +1384,7 @@ p.post-series-note { margin: 0.6em 0 0; font-size: 0.95rem; }
 .rc-portrait figcaption { font-size: 0.72rem; color: rgba(255, 255, 255, 0.6); margin-top: 10px; text-align: center; }
 .proof-list.rc-facts { grid-template-columns: repeat(4, 1fr); }
 .rc-compare .compare-col:not(.compare-with) li { color: var(--text-2); }
-.rc-note { margin: 16px 0 0; padding-top: 14px; border-top: 1px dashed var(--line); font-size: 0.92rem; color: var(--text-2); }
+.rc-note { margin: 16px 0 0; padding-top: 14px; border-top: 1px dashed var(--line); font-size: 0.92rem; color: var(--cyan-dark); font-weight: 500; }
 .rc-deal { display: grid; grid-template-columns: 1fr 64px 1fr; align-items: stretch; }
 .rc-deal-col { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px 26px; }
 .rc-give { border-color: var(--cyan); box-shadow: inset 0 3px 0 var(--cyan); }
