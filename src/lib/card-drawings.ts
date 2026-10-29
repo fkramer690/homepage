@@ -875,6 +875,16 @@ const drawings: Record<string, Drawing> = {
     ${box(226, 30, 78, 46, C)}${t(265, 48, l('1 object =', '1 Objekt ='), { fill: C, size: 7, anchor: 'middle' })}${t(265, 62, l('1 owner', '1 Owner'), { fill: C, size: 7, anchor: 'middle' })}
     ${t(226, 100, l('8 streams', '8 Streams'), { size: 7 })}${t(226, 114, l('30+ developers', '30+ Entwickler'), { size: 7 })}${t(226, 128, l('~3 months', '~3 Monate'), { size: 7 })}${t(226, 142, l('80 % in v1', '80 % in V1'), { size: 7 })}`,
 
+  'salesforce-freelancer-or-consultancy': (l) => `
+    ${t(18, 20, l('WHO BUILDS, WHO DECIDES', 'WER BAUT, WER ENTSCHEIDET'), { fill: D, size: 7 })}
+    ${box(18, 30, 130, 72)}${t(28, 46, l('CONSULTANCY', 'AGENTUR · PARTNER'), { fill: D, size: 7 })}
+    ${[l('builds', 'baut'), l('tests', 'testet'), l('runs', 'betreibt')].map((s, i) => check(28, 58 + i * 14, G) + t(42, 63 + i * 14, s, { size: 7 })).join('')}
+    ${arrow(151, 66, 169, C, true)}
+    ${box(172, 30, 130, 72, C)}${t(182, 46, l('CLIENT-SIDE ARCHITECT', 'ARCHITEKT KUNDENSEITE'), { fill: C, size: 7 })}
+    ${[l('standards', 'Standards'), 'Reviews', l('decisions', 'Entscheidungen')].map((s, i) => check(182, 58 + i * 14) + t(196, 63 + i * 14, s, { size: 7 })).join('')}
+    ${tag(18, 116, 284, l('5 partners · 30+ developers · 8 streams', '5 Partner · 30+ Entwickler · 8 Streams'))}
+    ${t(160, 151, l('one person does not replace a team', 'eine Person ersetzt kein Team'), { size: 7, anchor: 'middle' })}`,
+
   'salesforce-center-of-excellence': (l) => `
     ${t(18, 20, 'CENTER OF EXCELLENCE', { fill: D, size: 7 })}
     ${[1, 2, 3, 4, 5].map((i) => dot(30, 30 + i * 18, i === 2 ? C : G) + t(42, 33 + i * 18, 'Stream ' + i, { size: 7 }) + `<path d="M84 ${30 + i * 18}L136 ${84}" stroke="${L}"/>`).join('')}
