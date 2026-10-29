@@ -368,6 +368,33 @@ const fieldServiceClusters: Cluster[] = [
   },
 ];
 
+const changeClusters: Cluster[] = [
+  {
+    id: 'diagnosis',
+    en: { title: 'Why rollouts fail', text: 'What change management means in a Salesforce programme and how ADKAR shows where it is stuck.' },
+    de: { title: 'Warum Einführungen scheitern', text: 'Was Change Management im Salesforce-Programm heißt und wie ADKAR zeigt, wo es hängt.' },
+    articles: ['change-management-hub', 'salesforce-center-of-excellence'],
+  },
+  {
+    id: 'people',
+    en: { title: 'Sponsor, communication and key users', text: 'Who explains why, how business teams learn about releases and who answers the first questions.' },
+    de: { title: 'Sponsor, Kommunikation und Key User', text: 'Wer erklärt, warum, wie Fachbereiche von Releases erfahren und wer die ersten Fragen beantwortet.' },
+    articles: ['change-release-communication', 'change-key-users', 'salesforce-uat-business-testing', 'ai-coding-works-council-gdpr'],
+  },
+  {
+    id: 'rollout',
+    en: { title: 'Rollout across countries and teams', text: 'Change management per country, technician adoption and dealers as a group of their own.' },
+    de: { title: 'Rollout über Länder und Teams', text: 'Change Management je Land, Akzeptanz der Techniker und Händler als eigene Gruppe.' },
+    articles: ['change-global-rollout', 'global-template-country-deviations', 'manufacturing-cloud-global-rollout', 'change-technician-adoption', 'field-service-rollout', 'commerce-dealer-rollout'],
+  },
+  {
+    id: 'reinforcement',
+    en: { title: 'Measure and reinforce', text: 'Which figures show adoption and how standards stay in place with partners.' },
+    de: { title: 'Messen und verankern', text: 'Welche Zahlen Nutzung zeigen und wie Standards bei Partnern bleiben.' },
+    articles: ['change-adoption-metrics', 'field-service-kpis-after-go-live', 'change-reinforcement-standards', 'development-standards-definition-of-done'],
+  },
+];
+
 // Kept for code that only knows the AI masterclass.
 export const clusters = aiClusters;
 const clustersByCourse: Record<CourseId, Cluster[]> = {
@@ -377,6 +404,7 @@ const clustersByCourse: Record<CourseId, Cluster[]> = {
   'revenue-cloud': revenueClusters,
   'b2b-commerce': commerceClusters,
   'field-service': fieldServiceClusters,
+  'change-management': changeClusters,
 };
 
 export interface ClusterWithPosts {

@@ -6,7 +6,7 @@ lang: en
 slug: change-management-salesforce-rollout
 translationKey: change-management-hub
 topic: governance
-categories: [architecture]
+categories: [change-management, architecture]
 contactBrief: change
 tags: [change management, ADKAR, Prosci, Salesforce rollout]
 takeaways:
@@ -92,5 +92,7 @@ Timing is what matters. Change management that starts two weeks before go-live c
 ## Where do you start?
 
 For your next release, answer three questions in writing: which groups are affected? What changes for each in their daily work? Who in management visibly backs it? If the third answer is missing, that is the first step. Then decide how you measure success, for example by usage numbers in Salesforce instead of the number of training sessions.
+
+If you want to go through the five stages in order, the [change management masterclass](../../masterclass/change-management/) has a chapter per stage with the matching articles.
 
 Salesforce is only introduced once people work with it. If a rollout is coming up or new processes are not being used, [send me a message](#contact) or read more about [change management for Salesforce programmes](../../services/change-management-salesforce/).

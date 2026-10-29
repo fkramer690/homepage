@@ -6,7 +6,7 @@ lang: en
 slug: partner-standards-reinforcement
 translationKey: change-reinforcement-standards
 topic: governance
-categories: [architecture, devops]
+categories: [architecture, devops, change-management]
 contactBrief: partner-governance
 tags: [reinforcement, change management, partner governance, development standards]
 takeaways:

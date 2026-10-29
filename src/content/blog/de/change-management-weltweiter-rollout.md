@@ -6,7 +6,7 @@ lang: de
 slug: change-management-weltweiter-rollout
 translationKey: change-global-rollout
 topic: governance
-categories: [architecture, manufacturing-cloud]
+categories: [change-management, architecture, manufacturing-cloud]
 contactBrief: change
 tags: [Change Management, Rollout, globales Template, Harmonisierung]
 takeaways:

@@ -6,7 +6,7 @@ lang: en
 slug: field-service-app-technician-adoption
 translationKey: change-technician-adoption
 topic: field-service
-categories: [field-service, architecture]
+categories: [field-service, change-management]
 contactBrief: field-service
 tags: [Field Service, adoption, change management, field technicians]
 takeaways:

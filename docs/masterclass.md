@@ -41,6 +41,10 @@ Four masterclasses with a hub and five chapters each, same frontmatter, body rul
 
 Each chapter links its articles (blog categories and the topics `commerce`, `revenue`, `field-service`), its neighbouring chapters and the matching chapters of the other masterclasses (`../../<segment>/<slug>/`). Boundaries: sales agreements, rebates and warranty belong to Manufacturing Cloud; quote, configurator, pricing, billing and the move from Salesforce CPQ and Billing to Revenue Cloud; storefront, cart and checkout to B2B Commerce; scheduling, mobile app and maintenance to Field Service. Examples are marked as assumptions until Fabian confirms them. Hub clusters are in `src/lib/masterclass.ts`.
 
+# Masterclass "Change management"
+
+Hub plus five chapters, `course: change-management`, translationKeys `cm-01` … `cm-05`, texts in `masterclassChange`, URL segment `change-management` (DE and EN). The chapters follow the ADKAR stages for Salesforce rollouts at manufacturers: diagnosis, sponsor and communication (awareness, desire), key users and training (knowledge, ability), rollout across countries and teams, measuring and reinforcement. Practice blocks use only experience from the confirmed list; Juliane Winterscheid (cooperation partner, profile page `/partner/juliane-winterscheid/`, content in `src/data/juliane-winterscheid.ts`) reviews the content. The hub articles of the blog category `change-management` are the clusters in `src/lib/masterclass.ts`.
+
 # Masterclass "DevOps and release management"
 
 Hub plus ten chapters, `course: devops`, translationKeys `devops-01` … `devops-10`: DE under `/masterclass/devops-release-management/`, EN under `/en/masterclass/devops-release-management/`. Same frontmatter, body rules and build check as the AI masterclass below. DevOps Center / Lifecycle Center is covered only in chapter 4 (tools); sfdx-hardis appears as an example next to Gearset, Copado and Flosum. Links to the AI masterclass go to `../../ki-salesforce/<slug>/` (DE) and `../../ai-salesforce/<slug>/` (EN).

@@ -6,7 +6,7 @@ lang: en
 slug: salesforce-adoption-metrics-after-go-live
 translationKey: change-adoption-metrics
 topic: data
-categories: [architecture]
+categories: [change-management, architecture]
 contactBrief: change
 tags: [adoption, usage, change management, KPIs]
 takeaways:

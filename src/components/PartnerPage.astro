@@ -36,10 +36,11 @@ const serviceLinks = new Map(services.map((s) => [s.data.order, serviceHref(s)])
             </figure>
             <div class="partner-body">
               <p class="partner-area mono">{p.area}</p>
-              <h2>{p.name}</h2>
+              <h2>{p.profile ? <a href={localHref(lang, p.profile)}>{p.name}</a> : p.name}</h2>
               <p>{p.text}</p>
               <p class="partner-links mono">
                 <a href={p.linkedin} target="_blank" rel="noopener">{t.partnerPage.linkedIn}<ExternalMark label={t.nav.externalTab} /></a>
+                {p.profile && <a href={localHref(lang, p.profile)}>{p.profileLink} →</a>}
                 {serviceLink && <a href={serviceLink}>{p.serviceLink} →</a>}
               </p>
             </div>

@@ -5,6 +5,7 @@
 export const categories = {
   devops: { en: 'DevOps & releases', de: 'DevOps & Releases' },
   architecture: { en: 'Architecture & partner governance', de: 'Architektur & Partnersteuerung' },
+  'change-management': { en: 'Change management', de: 'Change Management' },
   'field-service': { en: 'Field Service', de: 'Field Service' },
   'manufacturing-cloud': { en: 'Manufacturing Cloud', de: 'Manufacturing Cloud' },
   'b2b-commerce': { en: 'B2B Commerce', de: 'B2B Commerce' },

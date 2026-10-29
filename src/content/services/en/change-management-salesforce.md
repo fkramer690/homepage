@@ -48,7 +48,7 @@ faq:
     a: "Business teams, developer teams, partners and management. Without backing from management, decisions and attention are missing, and new rules become a recommendation that not everyone follows."
   - q: "What changes with smaller, more frequent releases?"
     a: "Business teams get small changes more often instead of rare large packages. That lowers the risk of each release but needs a fixed route on which the people affected learn in advance what is coming."
-blogTags: [Partner governance, Governance, DevOps training, Release management]
+blogTags: [change management, Partner governance, Governance, DevOps training, Release management]
 ---
 
 Change management in a Salesforce programme means introducing new processes, standards and releases so that the people who work with them actually use them. That applies to the business teams who do their daily work in Salesforce as much as to the developer teams and implementation partners who are meant to build by common rules. I take on this work on the client side, closely tied to architecture, partner governance and release management, and I follow the Prosci approach.
@@ -75,7 +75,7 @@ Together with Juliane Winterscheid, who is Prosci certified, I have applied two 
 
 A common picture: the training has taken place, yet usage stays low. Instead of scheduling another session, we ask per affected group at which stage it is stuck. If a sales team does not know what the maintained opportunities are needed for, Awareness is missing, and the head of sales has to explain that, not the trainer. If a partner's developers know the naming conventions but nobody checks them in the pipeline, Reinforcement is missing. Then an automatic check belongs in the [release process](../devops-release-management/).
 
-Salesforce helps with measuring. Whether a new process is used shows in reports on created and maintained records better than in any survey. We define these figures in the first phase and look at them regularly in the second. I describe the individual topics, from key users to measuring adoption, in [change management: why Salesforce rollouts fail](../../blog/change-management-salesforce-rollout/).
+Salesforce helps with measuring. Whether a new process is used shows in reports on created and maintained records better than in any survey. We define these figures in the first phase and look at them regularly in the second. I describe the individual topics, from key users to measuring adoption, in [change management: why Salesforce rollouts fail](../../blog/change-management-salesforce-rollout/). The [change management masterclass](../../masterclass/change-management/) goes through the five stages chapter by chapter.
 
 ## How did I introduce new standards in a large programme?
 
