@@ -12,7 +12,7 @@ Articles and masterclass chapters loosen up their text with content blocks from 
 
 ## Two pillars
 
-The site has two pillars under one brand: Fabian's Salesforce architecture for manufacturers (start page, services) and Juliane Winterscheid's change management, plus the joint offer, change management in Salesforce programmes. The start page introduces all three in its "Schwerpunkte" section; change management has its own area page and menu item (`/change-management/`, `/en/change-management/`, texts in `src/data/change-management.ts`), which lists the articles from the blog collection by author. Keep the start page written for the manufacturer audience; general change topics go to Juliane's pillar.
+Fabian's core positioning is Salesforce architecture for manufacturers. Change management, together with Juliane Winterscheid, is one building block of his Salesforce programmes, not a second business: it lives under Leistungen on the change management service page (`/leistungen/change-management/`, `/en/services/change-management-salesforce/`), never as its own menu item or start page section. That page (frontmatter `section: change-management`, texts in `src/data/change-management.ts`) shows who is behind it (Fabian, Juliane, the joint plan) and lists the change articles from the blog collection by author: Juliane's general basics and Fabian's practice from Salesforce programmes. The former area page `/change-management/` is a redirect to it. Keep the start page written for the manufacturer audience; general change topics are Juliane's articles in the blog.
 
 ## Service pages
 

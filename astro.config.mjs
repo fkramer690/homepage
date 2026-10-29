@@ -12,7 +12,8 @@ const base = process.env.BASE_PATH ?? '/';
 
 // German is the main version at the root, English lives under /en/. The old
 // URLs (/de/…, /services/…, English articles under /blog/…, the AI masterclass
-// under /masterclass-ki/ and /en/ai-masterclass/) are kept as
+// under /masterclass-ki/ and /en/ai-masterclass/, the change management area page
+// under /change-management/ and /en/change-management/) are kept as
 // redirect pages, which must not show up in the sitemap.
 const field = (text, name) => text.match(new RegExp(`^${name}:\\s*"?([^"\\n]+)"?`, 'm'))?.[1]?.trim();
 const readEntries = (collection) =>
@@ -95,8 +96,9 @@ for (const lang of ['de', 'en']) {
   const latest = readEntries('blog').filter((e) => e.lang === lang).map((e) => e.date).sort().at(-1);
   sitemapInfo.set(lang === 'de' ? '/blog/' : '/en/blog/', { date: latest });
 }
-// The AI masterclass moved from /masterclass-ki/ and /en/ai-masterclass/ on 2026-10-28.
-const redirectPaths = [/^\/de\//, /^\/services\//, /^\/masterclass-ki\//, /^\/en\/ai-masterclass\//, ...enSlugs.map((slug) => new RegExp(`^/blog/${slug}/$`))];
+// The AI masterclass moved from /masterclass-ki/ and /en/ai-masterclass/ on 2026-10-28,
+// the change management area page into its service page on 2026-10-29.
+const redirectPaths = [/^\/de\//, /^\/services\//, /^\/masterclass-ki\//, /^\/en\/ai-masterclass\//, /^\/(en\/)?change-management\/$/, ...enSlugs.map((slug) => new RegExp(`^/blog/${slug}/$`))];
 
 export default defineConfig({
   site,

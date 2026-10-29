@@ -4,7 +4,6 @@ import Logo from './Logo.astro';
 import type { Dict } from '../i18n/en';
 import { site } from '../site';
 import { homeHref, localHref } from '../lib/paths';
-import { changePaths } from '../data/change-management';
 import { masterclassesIndex } from '../lib/masterclass';
 import { freelanceArchitect, freelanceArchitectPaths } from '../data/freelance-architect';
 
@@ -26,7 +25,6 @@ const year = new Date().getFullYear();
     <nav class="footer-nav" aria-label="Footer">
       <a href={`${home}blog/`}>{t.footer.blog}</a>
       <a href={masterclassesIndex(t.lang)}>{t.nav.masterclass}</a>
-      <a href={localHref(t.lang, changePaths[t.lang])}>{t.nav.change}</a>
       <a href={localHref(t.lang, freelanceArchitectPaths[t.lang])}>{freelanceArchitect[t.lang].footerLink}</a>
       <a href={`${base}impressum/`}>{t.footer.imprint}</a>
       <a href={`${base}datenschutz/`}>{t.footer.privacy}</a>

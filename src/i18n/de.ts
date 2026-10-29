@@ -9,7 +9,6 @@ export const de: Dict = {
   },
   nav: {
     services: 'Leistungen',
-    change: 'Change Management',
     references: 'Referenzen',
     about: 'Über mich',
     blog: 'Blog',
@@ -36,16 +35,6 @@ export const de: Dict = {
     { value: '25', label: 'Salesforce-Zertifikate, 8 Architect' },
     { value: '0', label: 'Bindungen an Hersteller oder Partner' },
   ],
-  pillars: {
-    label: 'Schwerpunkte',
-    title: 'Zwei Spezialgebiete, ein gemeinsames Angebot',
-    intro: 'Ich verantworte die Salesforce-Architektur, Juliane Winterscheid die Veränderung bei den Menschen. Wo beides zusammenkommt, arbeiten wir gemeinsam.',
-    items: [
-      { who: 'Fabian Kramer', icon: 'architecture', title: 'Salesforce-Architektur für Hersteller', text: 'Zielarchitektur, Partnersteuerung, DevOps und Integration für Service, Field Service und B2B-Vertrieb, auf Kundenseite.', more: 'Zu den Leistungen' },
-      { who: 'Juliane Winterscheid', icon: 'change', title: 'Change Management', text: 'Grundlagen, Modelle und Begleitung von Veränderungen, damit Führungskräfte und Teams neue Arbeitsweisen annehmen.', more: 'Zum Bereich Change Management' },
-      { who: 'Gemeinsam', icon: 'handshake', title: 'Change Management in Salesforce-Programmen', text: 'Architektur und Akzeptanz aus einer Hand: Release-Plan, Key User, Schulung und Messung greifen ineinander.', more: 'Zur gemeinsamen Leistung' },
-    ],
-  },
   role: {
     label: 'Die Rolle',
     title: 'Einer muss das Gesamtbild verantworten.',

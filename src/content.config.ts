@@ -81,6 +81,9 @@ const services = defineCollection({
     blogTags: z.array(z.string()).min(1).max(8),
     // Closing call to action: what to bring to the first call (src/lib/contact-briefs.ts).
     contactBrief: z.enum(contactBriefIds),
+    // Optional extra block: change-management adds the team (Fabian and Juliane Winterscheid)
+    // and the change management articles (src/data/change-management.ts).
+    section: z.enum(['change-management']).optional(),
   }),
 });
 

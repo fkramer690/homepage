@@ -7,6 +7,9 @@ import Blueprint from './Blueprint.astro';
 import ContactBrief from './ContactBrief.astro';
 import ReadingGrid from './ReadingGrid.astro';
 import Photo from './Photo.astro';
+import ChangeTeam from './ChangeTeam.astro';
+import ChangeArticles from './ChangeArticles.astro';
+import { changeSection } from '../data/change-management';
 import { servicePhotos } from '../data/photos';
 import { getContactBrief } from '../lib/contact-briefs';
 import { render } from 'astro:content';
@@ -21,11 +24,14 @@ interface Props {
   service: Service;
 }
 const { service } = Astro.props;
-const { lang, title, headline, description, lead, situations, deliverables, results, phases, faq, order, note, notePartner } = service.data;
+const { lang, title, headline, description, lead, situations, deliverables, results, phases, faq, order, note, notePartner, section } = service.data;
+// section: change-management adds the team (Fabian and Juliane) above the reading grid and
+// the change management articles instead of the related articles (src/data/change-management.ts).
+const isChange = section === 'change-management';
 const t = lang === 'de' ? de : en;
 const { Content, headings } = await render(service);
 const photo = servicePhotos[service.data.translationKey];
-const toc = [...headings.filter((h) => h.depth === 2), { slug: 'faq', text: t.servicePage.faq }];
+const toc = [...headings.filter((h) => h.depth === 2), { slug: 'faq', text: t.servicePage.faq }, ...(isChange ? [{ slug: 'articles', text: changeSection[lang].articles.title }] : [])];
 const translation = await getServiceTranslation(service);
 const posts = await getServicePosts(service);
 const alternates = translation
@@ -132,6 +138,7 @@ const schema = {
           ))}
         </ol>
       </section>
+      {isChange && <ChangeTeam lang={lang} />}
 
       <ReadingGrid t={t} headings={toc} cta={name}>
         <div class="prose">
@@ -148,7 +155,8 @@ const schema = {
           ))}
         </section>
         <AuthorBox lang={lang} />
-        {posts.length > 0 && (
+        {isChange && <ChangeArticles lang={lang} />}
+        {!isChange && posts.length > 0 && (
           <nav class="post-related" aria-label={t.servicePage.posts}>
             <p class="label mono">{t.servicePage.posts}</p>
             <ul>

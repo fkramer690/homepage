@@ -6,6 +6,7 @@ lang: de
 slug: change-management
 translationKey: service-change
 contactBrief: change
+section: change-management
 order: 7
 note: "Dieses Vorgehen habe ich gemeinsam mit Juliane Winterscheid erarbeitet, meiner Kooperationspartnerin für Change Management. Juliane ist Prosci-zertifiziert."
 notePartner: "Juliane Winterscheid"
