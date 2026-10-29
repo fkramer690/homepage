@@ -24,7 +24,7 @@ faq:
     a: "Kotter beschreibt, was die Führung eines Unternehmens in einer Transformation tun muss, von der Dringlichkeit bis zur Verankerung in der Kultur. ADKAR beschreibt, welche fünf Stufen jede einzelne Person durchläuft, und hilft so bei der Diagnose je Gruppe."
   - q: "Kann man mehrere Change-Management-Modelle kombinieren?"
     a: "Ja, und in größeren Vorhaben ist das üblich. Ein Modell für die Organisation, etwa der Prosci 3-Phase Process oder Kotter, gibt den Rahmen. ADKAR zeigt innerhalb dieses Rahmens, welche Gruppe an welcher Stelle Unterstützung braucht."
-draft: true
+draft: false
 ---
 
 Die bekanntesten Change-Management-Modelle sind das Drei-Phasen-Modell von Kurt Lewin, die acht Stufen von John Kotter, das ADKAR-Modell und der 3-Phase Process von Prosci. Sie unterscheiden sich vor allem darin, wen sie betrachten: Lewin und Kotter beschreiben die Veränderung einer Organisation, ADKAR die Veränderung jeder einzelnen Person, und Prosci verbindet beides. Ich arbeite mit Prosci und ADKAR, weil sich damit je Gruppe zeigen lässt, woran eine Einführung hängt. Welches Modell passt, hängt von Größe und Art der Veränderung ab.

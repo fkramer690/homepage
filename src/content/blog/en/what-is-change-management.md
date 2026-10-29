@@ -27,7 +27,7 @@ faq:
     a: "A sponsor in management carries the change, and direct managers put it into practice in their teams. A change manager plans, advises and measures, but the responsibility for the outcome stays inside the company."
   - q: "When does a project need change management?"
     a: "Whenever the way people work changes: new software, new processes, a reorganisation or a merger. How much effort it takes depends on how many groups are affected and how much their daily work changes."
-draft: true
+draft: false
 ---
 
 Change management is the structured way of guiding people through a change, so that a new way of working reaches daily work and stays there. Prosci, whose method I rely on, defines it as [the application of a structured process and set of tools for leading the people side of change](https://prosci.com/blog/what-is-change-management-and-how-does-it-work) to achieve a desired outcome. Change management is therefore measured by whether the people affected actually work differently afterwards. New software, a new process or a new organisation has only been introduced once that is the case.

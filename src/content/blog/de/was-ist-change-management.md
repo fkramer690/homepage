@@ -27,7 +27,7 @@ faq:
     a: "Ein Sponsor im Management trägt die Veränderung, die direkten Führungskräfte setzen sie in ihren Teams um. Eine Change-Managerin plant, berät und misst, die Verantwortung für das Ergebnis bleibt aber im Unternehmen."
   - q: "Wann braucht ein Projekt Change Management?"
     a: "Immer dann, wenn sich für Menschen ändert, wie sie arbeiten: bei einer neuen Software, neuen Prozessen, einer Reorganisation oder einer Fusion. Wie viel Aufwand nötig ist, hängt davon ab, wie viele Gruppen betroffen sind und wie stark sich ihr Alltag ändert."
-draft: true
+draft: false
 ---
 
 Change Management ist die strukturierte Begleitung der Menschen durch eine Veränderung, damit eine neue Arbeitsweise im Alltag ankommt und dort bleibt. Prosci, auf dessen Methode ich mich stütze, definiert es als [Anwendung eines strukturierten Prozesses und passender Werkzeuge, um die menschliche Seite einer Veränderung zu führen](https://prosci.com/blog/what-is-change-management-and-how-does-it-work) und ein gewünschtes Ergebnis zu erreichen. Gemessen wird Change Management deshalb daran, ob die Betroffenen danach tatsächlich anders arbeiten. Eine neue Software, ein neuer Prozess oder eine neue Organisation ist erst dann eingeführt, wenn das der Fall ist.

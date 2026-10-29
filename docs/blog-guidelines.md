@@ -29,7 +29,7 @@ Start every new article from [`docs/blog-template.md`](blog-template.md).
 Juliane Winterscheid, Fabian's cooperation partner for change management, writes articles on change management in general (definition, phases, models), with frontmatter `author: juliane` and `contactBrief: change-basics`. They reach a wider audience than the Salesforce articles on purpose and lead readers to the change management hub and service page. All other rules apply, with these differences:
 
 - First person is Juliane. Only experience from her one-pager and profile (`src/data/juliane-winterscheid.ts`) or that she confirmed; no `praxis` block until she has confirmed an example.
-- An article goes live (`draft: false`) only after Juliane has approved it.
+- An article goes live (`draft: false`) only after Juliane or Fabian has approved it; Juliane reads every article, also after it is live.
 - The template shows her name, author box (`src/components/AuthorBox.astro`), structured data and preview image footer, and leaves out the partner box. Add a new author in `src/lib/authors.ts`, never per article.
 
 ## Fixed page structure
