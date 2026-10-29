@@ -26,12 +26,16 @@ results:
   - "Integrationsbenutzer mit minimalen Rechten und moderner Authentifizierung"
 phases:
   - title: "Systemlandkarte"
+    icon: "analyse"
     text: "Ich halte fest, welche Systeme es gibt, welche Daten sie halten, welche Schnittstellen schon laufen und wo sie Probleme machen."
   - title: "Integrationsarchitektur"
+    icon: "integration"
     text: "Wir legen das führende System pro Objekt fest, die Integrationsmuster und ob eine Middleware nötig ist. Der Ansatz hängt von der Größe des Unternehmens und der Zahl der Systeme ab."
   - title: "Spezifikation und Partner"
+    icon: "contract"
     text: "Ich schreibe die Schnittstellenspezifikationen und hole einen passenden Integrationspartner dazu, falls der Kunde keinen hat. Das Design prüfe ich, bevor gebaut wird."
   - title: "Umsetzung und Test"
+    icon: "check"
     text: "In der Umsetzung prüfe ich, ob Schnittstellen der Architektur folgen, ob Fehlerbehandlung und Monitoring existieren und ob End-to-End-Tests die echten Prozesse abdecken."
 faq:
   - q: "Mit welchen Systemen wird Salesforce bei Herstellern meist verbunden?"

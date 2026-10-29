@@ -26,12 +26,16 @@ results:
   - "Management that sees status and risks early and decides on facts"
 phases:
   - title: "Plan and team setup"
+    icon: "team"
     text: "I plan the programme with its streams and dependencies and define the team setup: how many developers, which roles and which mix of seniority."
   - title: "Partner selection"
+    icon: "partners"
     text: "Together with the client I select nearshore partners and agree on rules for staffing, rotation and communication before the first sprint starts."
   - title: "Onboarding"
+    icon: "profile"
     text: "New teams get access to the standards, the review process and the pipeline from day one, so they work the same way as everyone else."
   - title: "Steering"
+    icon: "steer"
     text: "During delivery I steer plan, risks and quality, keep dependencies between teams visible and report to management in a format that supports decisions."
 faq:
   - q: "How large should a nearshore Salesforce team be?"

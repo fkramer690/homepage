@@ -26,12 +26,16 @@ results:
   - "Integration users with minimal permissions and modern authentication"
 phases:
   - title: "System map"
+    icon: "analyse"
     text: "I record which systems exist, which data they hold, which interfaces already run and where they cause problems."
   - title: "Integration architecture"
+    icon: "integration"
     text: "We define the leading system for each object, the integration patterns and whether a middleware is needed. The approach depends on the size of the company and the number of systems."
   - title: "Specification and partners"
+    icon: "contract"
     text: "I write the interface specifications and bring in a suitable integration partner if the client does not have one, then review the design before it is built."
   - title: "Delivery and testing"
+    icon: "check"
     text: "During delivery I check that interfaces follow the architecture, that error handling and monitoring exist and that end-to-end tests cover the real processes."
 faq:
   - q: "Which systems does Salesforce usually connect to at manufacturers?"

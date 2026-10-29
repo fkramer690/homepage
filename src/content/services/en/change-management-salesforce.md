@@ -33,10 +33,13 @@ results:
   - "Fewer shadow solutions grow up next to Salesforce."
 phases:
   - title: "Prepare the approach"
+    icon: "compass"
     text: "We define how success is measured, which groups are affected and what changes for each of them in daily work. That includes the risks and who in management sponsors the rollout."
   - title: "Manage the change"
+    icon: "steer"
     text: "Each group gets a plan along the ADKAR stages, tied to the release plan. The most common cases come first. We measure usage in Salesforce and adjust where it gets stuck."
   - title: "Sustain the outcomes"
+    icon: "check"
     text: "We check where gaps remain, anchor new rules in the pipeline, reports and Center of Excellence calls, and hand ownership over to internal owners."
 faq:
   - q: "Why do you follow Prosci?"

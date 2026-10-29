@@ -1117,8 +1117,23 @@ p.post-series-note { margin: 0.6em 0 0; font-size: 0.95rem; }
 .service-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 0 36px; }
 .service-block.results { background: #e8f5fc; border-radius: var(--radius); padding: 4px 24px 12px; }
 .service-block.results h2 { margin-top: 0.8em; }
-.phase-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 18px; }
-.phase-list h3 { font-size: 1.02rem; margin: 0 0 0.4em; }
+/* Phases of the service pages as a timeline: icon ring per phase, dashed line between them
+   (approved 2026-10-29, docs/layouts.md); vertical below 860px. */
+.phase-flow { list-style: none; margin: 8px 0 0; padding: 0; display: grid; grid-template-columns: repeat(var(--n), minmax(0, 1fr)); gap: 32px; }
+.phase-flow li { position: relative; }
+.phase-flow li:not(:last-child)::after { content: ''; position: absolute; top: 28px; left: 68px; right: -20px; border-top: 2px dashed var(--line); }
+.phase-ring { width: 56px; height: 56px; border-radius: 50%; border: 2px solid var(--cyan); background: var(--white); display: grid; place-items: center; margin-bottom: 16px; }
+.phase-ring svg { width: 34px; height: 34px; }
+.phase-no { display: block; color: var(--cyan-dark); font-size: 0.78rem; margin-bottom: 4px; }
+.phase-flow h3 { font-size: 1.05rem; margin: 0 0 0.35em; }
+.phase-flow p { color: var(--text-2); font-size: 0.95rem; line-height: 1.55; margin: 0; }
+@media (max-width: 860px) {
+  .phase-flow { grid-template-columns: 1fr; gap: 0; }
+  .phase-flow li { display: grid; grid-template-columns: 56px minmax(0, 1fr); column-gap: 16px; padding-bottom: 24px; }
+  .phase-flow li > :not(.phase-ring) { grid-column: 2; }
+  .phase-ring { grid-row: span 3; margin: 0; }
+  .phase-flow li:not(:last-child)::after { top: 64px; bottom: 4px; left: 27px; right: auto; border-top: 0; border-left: 2px dashed var(--line); }
+}
 .service .prose { margin-top: 2.6em; }
 .post-service { display: block; margin-top: 2em; padding: 18px 22px; border: 1px solid var(--line); border-left: 4px solid var(--cyan); border-radius: var(--radius); background: var(--white); color: inherit; text-decoration: none; }
 .post-service:hover { border-color: var(--cyan); }

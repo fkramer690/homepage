@@ -75,7 +75,8 @@ const services = defineCollection({
     situations: z.array(z.string().max(220)).min(3).max(5),
     deliverables: z.array(z.string().max(220)).min(3).max(8),
     results: z.array(z.string().max(220)).min(3).max(6),
-    phases: z.array(z.object({ title: z.string().max(40), text: z.string().max(260) })).min(3).max(4),
+    // icon: file name in src/icons/ shown in the ring of the phase timeline.
+    phases: z.array(z.object({ title: z.string().max(40), icon: z.string(), text: z.string().max(260) })).min(3).max(4),
     faq: z.array(z.object({ q: z.string().max(120), a: z.string().max(600) })).min(2).max(6),
     // Blog tags whose articles are listed as further reading on this page.
     blogTags: z.array(z.string()).min(1).max(8),
