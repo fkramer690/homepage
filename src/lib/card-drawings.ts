@@ -1889,6 +1889,21 @@ const drawings: Record<string, Drawing> = {
     ${t(18, 124, l('goals met: 88 % vs. 13 %', 'Ziele erreicht: 88 % vs. 13 %'), { fill: D, size: 7.5 })}
     ${t(18, 138, l('Prosci study, 2,668 participants', 'Prosci-Studie, 2.668 Teilnehmende'), { size: 7 })}`,
 
+  'change-basics-definition': (l) => `
+    ${t(18, 20, l('3 PHASES BY PROSCI', '3 PHASEN NACH PROSCI'), { fill: D, size: 7 })}
+    ${[l('Prepare', 'Vorbereiten'), l('Manage', 'Steuern'), l('Sustain', 'Sichern')].map((s, i) => box(18 + i * 100, 30, 84, 30, i === 2 ? C : G) + t(60 + i * 100, 49, (i + 1) + ' · ' + s, { fill: i === 2 ? C : G, size: 7.5, anchor: 'middle' })).join('')}
+    ${arrow(102, 45, 118)}${arrow(202, 45, 218, C)}
+    <path d="M18 74H302" stroke="${L}"/>
+    ${t(18, 92, l('project management: solution delivered', 'Projektmanagement: Lösung geliefert'), { size: 7 })}
+    ${t(18, 108, l('change management: solution used', 'Change Management: Lösung genutzt'), { fill: C, size: 7 })}
+    ${tag(18, 124, 170, l('goals met: 88 % vs. 13 %', 'Ziele erreicht: 88 % vs. 13 %'))}`,
+
+  'change-basics-models': (l) => `
+    ${t(18, 20, l('MODEL', 'MODELL'), { fill: D, size: 7 })}${t(110, 20, l('STEPS', 'SCHRITTE'), { fill: D, size: 7 })}${t(190, 20, l('LOOKS AT', 'BLICK AUF'), { fill: D, size: 7 })}
+    ${[['Lewin', l('3 phases', '3 Phasen'), l('organisation', 'Organisation')], ['Kotter', l('8 steps', '8 Stufen'), l('leadership', 'Führung')], ['ADKAR', l('5 stages', '5 Stufen'), l('individual', 'Person')], ['Prosci', l('3 phases', '3 Phasen'), l('organisation', 'Organisation')]].map(([a, b, c], i) => t(18, 40 + i * 20, a, { fill: i === 2 ? C : D, size: 7.5 }) + t(110, 40 + i * 20, b, { fill: i === 2 ? C : G, size: 7 }) + t(190, 40 + i * 20, c, { fill: i === 2 ? C : G, size: 7 })).join('')}
+    <path d="M18 112H302" stroke="${L}"/>
+    ${tag(18, 124, 190, l('combine: frame plus diagnosis', 'kombinieren: Rahmen plus Diagnose'))}`,
+
   'change-key-users': (l) => `
     ${box(18, 36, 70, 34)}${t(53, 56, l('Project', 'Projekt'), { size: 7.5, anchor: 'middle' })}
     ${box(125, 36, 70, 34, C)}${t(160, 56, 'KEY USER', { fill: C, size: 7.5, anchor: 'middle' })}

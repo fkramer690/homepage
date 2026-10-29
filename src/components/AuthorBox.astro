@@ -1,30 +1,39 @@
 ---
 // Author box below every blog article. Rendered by BlogPost.astro for all
 // articles, so it looks the same everywhere; never add one in Markdown.
+// `author: juliane` shows Juliane Winterscheid with a link to her profile page.
 import { Image } from 'astro:assets';
 import ExternalMark from './ExternalMark.astro';
 import portrait from '../assets/portrait.png';
+import julianePortrait from '../assets/partners/juliane-winterscheid-portrait.jpg';
 import { en } from '../i18n/en';
 import { de } from '../i18n/de';
-import { site } from '../site';
-import { homeHref } from '../lib/paths';
+import { homeHref, localHref } from '../lib/paths';
+import { type AuthorId, getAuthor } from '../lib/authors';
+import { juliane } from '../data/juliane-winterscheid';
 
 interface Props {
   lang: 'en' | 'de';
+  author?: AuthorId;
 }
-const { lang } = Astro.props;
+const { lang, author = 'fabian' } = Astro.props;
 const t = lang === 'de' ? de : en;
+const a = getAuthor(lang, author);
+const box =
+  author === 'juliane'
+    ? { label: juliane[lang].author.label, img: julianePortrait, role: juliane[lang].box.role, bio: juliane[lang].author.bio, more: juliane[lang].author.more, moreHref: localHref(lang, a.profile!) }
+    : { label: t.blog.authorLabel, img: portrait, role: t.blog.authorRole, bio: t.blog.authorBio, more: t.blog.authorMore, moreHref: `${homeHref(lang)}#about` };
 ---
-<aside class="post-author" aria-label={t.blog.authorLabel}>
-  <Image src={portrait} alt="Fabian Kramer" width={112} height={112} densities={[1, 2]} class="post-author-img" />
+<aside class="post-author" aria-label={box.label}>
+  <Image src={box.img} alt={a.name} width={112} height={112} densities={[1, 2]} class="post-author-img" />
   <div class="post-author-body">
-    <p class="label mono">{t.blog.authorLabel}</p>
-    <p class="post-author-name">{site.person}</p>
-    <p class="post-author-role mono">{t.blog.authorRole}</p>
-    <p class="post-author-bio">{t.blog.authorBio}</p>
+    <p class="label mono">{box.label}</p>
+    <p class="post-author-name">{a.name}</p>
+    <p class="post-author-role mono">{box.role}</p>
+    <p class="post-author-bio">{box.bio}</p>
     <div class="post-author-links">
-      <a class="btn btn-small" href={site.linkedin} target="_blank" rel="noopener">{t.blog.authorLinkedIn}<ExternalMark label={t.nav.externalTab} /></a>
-      <a class="post-author-more" href={`${homeHref(lang)}#about`}>{t.blog.authorMore} →</a>
+      <a class="btn btn-small" href={a.linkedin} target="_blank" rel="noopener">{t.blog.authorLinkedIn}<ExternalMark label={t.nav.externalTab} /></a>
+      <a class="post-author-more" href={box.moreHref}>{box.more} →</a>
     </div>
   </div>
 </aside>

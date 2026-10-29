@@ -404,6 +404,37 @@ export const contactBriefs = {
       ],
     },
   },
+  // Articles by Juliane Winterscheid on change management in general (author: juliane).
+  'change-basics': {
+    de: {
+      title: 'Eine Veränderung steht an und soll im Alltag ankommen?',
+      text: 'In 30 Minuten klären Juliane Winterscheid und ich, wo Ihre Veränderung steht und welche Schritte als Nächstes zählen.',
+      bring: [
+        'Was sich ändern soll, für wen und bis wann',
+        'Wer im Management die Veränderung trägt',
+        'Was bisher geplant ist, zum Beispiel Kommunikation oder Schulungen',
+      ],
+      clarify: [
+        'An welcher Stufe die betroffenen Gruppen heute stehen',
+        'Was vor dem Start feststehen muss',
+        'Ob und in welchem Umfang Change Management von außen sinnvoll ist',
+      ],
+    },
+    en: {
+      title: 'A change is coming and has to stick in daily work?',
+      text: 'In 30 minutes Juliane Winterscheid and I clarify where your change stands and which steps matter next.',
+      bring: [
+        'What is supposed to change, for whom and by when',
+        'Who in management sponsors the change',
+        'What is planned so far, for example communication or training',
+      ],
+      clarify: [
+        'At which stage the groups affected stand today',
+        'What has to be settled before the start',
+        'Whether outside change management makes sense, and how much of it',
+      ],
+    },
+  },
 } satisfies Record<string, Record<'en' | 'de', Brief>>;
 
 export type ContactBrief = keyof typeof contactBriefs;

@@ -6,6 +6,7 @@ import { seriesIds } from './lib/series';
 import { categoryIds } from './lib/categories';
 import { contactBriefIds } from './lib/contact-briefs';
 import { courseIds } from './lib/courses';
+import { authorIds } from './lib/authors';
 
 // Blog articles live as Markdown in src/content/blog/<lang>/<slug>.md.
 // The EN and DE version of an article share the same translationKey.
@@ -40,6 +41,9 @@ const blog = defineCollection({
     takeaways: z.array(z.string().max(220)).min(3).max(5),
     // Questions a reader would type into Google or an AI assistant.
     faq: z.array(z.object({ q: z.string().max(120), a: z.string().max(600) })).min(2).max(6),
+    // Who wrote the article (src/lib/authors.ts). Juliane Winterscheid writes about change
+    // management in general; everything else is Fabian's (rules: docs/blog-guidelines.md).
+    author: z.enum(authorIds).default('fabian'),
     draft: z.boolean().default(false),
   }),
 });

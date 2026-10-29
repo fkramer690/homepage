@@ -39,6 +39,12 @@ export const juliane = {
       textBlog: 'Change Management in Salesforce-Programmen setze ich gemeinsam mit Juliane um. Sie begleitet Sponsoren, Führungskräfte und Key User durch die Veränderung, ich sorge dafür, dass Architektur und Releases dazu passen.',
       link: 'Profil und Referenzen',
     },
+    // Author box below her own blog articles (frontmatter author: juliane).
+    author: {
+      label: 'Über die Autorin',
+      bio: 'Juliane begleitet seit 2022 als freiberufliche Change-Managerin IT-Transformationen, darunter weltweite Salesforce-Rollouts. Davor war sie über zehn Jahre in Management und Führung tätig, zuletzt als Country Managerin DACH. An der Hochschule Fresenius lehrt sie „Managing Transformation & Change“.',
+      more: 'Profil und Referenzen',
+    },
     facts: [
       { value: '10+', label: 'Jahre Management, Führung, Beratung' },
       { value: '6', label: 'IT-Transformationen als Change-Managerin' },
@@ -108,7 +114,7 @@ export const juliane = {
       links: [
         { t: 'Masterclass Change Management', d: 'Fünf Kapitel entlang der ADKAR-Stufen für Salesforce-Einführungen.', href: 'masterclass/change-management/' },
         { t: 'Leistung Change Management', d: 'Wie wir Change Management in Ihrem Programm aufsetzen.', href: 'leistungen/change-management/' },
-        { t: 'Warum Salesforce-Einführungen scheitern', d: 'Der Einstieg mit ADKAR und den sechs Themen dahinter.', href: 'blog/change-management-salesforce-einfuehrung/' },
+        { t: 'Salesforce Change Management: warum Einführungen scheitern', d: 'Der Einstieg mit ADKAR und den sechs Themen dahinter.', href: 'blog/change-management-salesforce-einfuehrung/' },
       ],
     },
     linkedIn: 'LinkedIn-Profil von Juliane',
@@ -135,6 +141,11 @@ export const juliane = {
       text: 'I adapted the approach of this masterclass to Salesforce programmes together with Juliane, and we work together in programmes. She guides sponsors, managers and key users through the change; I make sure the architecture and the releases fit. Juliane has supported global Salesforce rollouts with more than 500 users as change manager.',
       textBlog: 'I deliver change management in Salesforce programmes together with Juliane. She guides sponsors, managers and key users through the change; I make sure the architecture and the releases fit.',
       link: 'Profile and references',
+    },
+    author: {
+      label: 'About the author',
+      bio: 'Since 2022 Juliane has supported IT transformations as a freelance change manager, including global Salesforce rollouts. Before that she spent more than ten years in management and leadership, most recently as country manager DACH. At Hochschule Fresenius she teaches "Managing Transformation & Change".',
+      more: 'Profile and references',
     },
     facts: [
       { value: '10+', label: 'years in management, leadership, consulting' },
@@ -205,7 +216,7 @@ export const juliane = {
       links: [
         { t: 'Change management masterclass', d: 'Five chapters along the ADKAR stages for Salesforce rollouts.', href: 'masterclass/change-management/' },
         { t: 'Change management service', d: 'How we set up change management in your programme.', href: 'services/change-management-salesforce/' },
-        { t: 'Why Salesforce rollouts fail', d: 'The starting point with ADKAR and the six topics behind it.', href: 'blog/change-management-salesforce-rollout/' },
+        { t: 'Salesforce change management: why rollouts fail', d: 'The starting point with ADKAR and the six topics behind it.', href: 'blog/change-management-salesforce-rollout/' },
       ],
     },
     linkedIn: 'Juliane on LinkedIn',
