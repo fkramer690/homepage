@@ -80,6 +80,9 @@ for (const [course, segment] of Object.entries(masterclassSegments)) {
 const questionsPage = { de: '/fragen/', en: '/en/questions/' };
 sitemapInfo.set(questionsPage.de, { pair: questionsPage });
 sitemapInfo.set(questionsPage.en, { pair: questionsPage });
+const recruitersPage = { de: '/partner/recruiter/', en: '/en/partners/recruiters/' };
+sitemapInfo.set(recruitersPage.de, { pair: recruitersPage });
+sitemapInfo.set(recruitersPage.en, { pair: recruitersPage });
 // The blog overviews change with every new article.
 for (const lang of ['de', 'en']) {
   const latest = readEntries('blog').filter((e) => e.lang === lang).map((e) => e.date).sort().at(-1);

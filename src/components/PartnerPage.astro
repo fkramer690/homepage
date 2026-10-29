@@ -6,7 +6,8 @@ import { Image } from 'astro:assets';
 import julianeWinterscheid from '../assets/partners/juliane-winterscheid.png';
 import { en } from '../i18n/en';
 import { de } from '../i18n/de';
-import { partnersHref } from '../lib/paths';
+import { localHref, partnersHref } from '../lib/paths';
+import { recruiters, recruiterPaths } from '../data/recruiters';
 import { getServices, serviceHref } from '../lib/services';
 
 interface Props {
@@ -16,6 +17,7 @@ const { lang } = Astro.props;
 const t = lang === 'de' ? de : en;
 const photos = { 'juliane-winterscheid': julianeWinterscheid };
 const services = await getServices(lang);
+const recruiterTeaser = recruiters[lang].teaser;
 const serviceLinks = new Map(services.map((s) => [s.data.order, serviceHref(s)]));
 ---
 <Page lang={lang} title={t.partnerPage.metaTitle} description={t.partnerPage.description} alternates={{ en: partnersHref('en'), de: partnersHref('de') }}>
@@ -44,6 +46,12 @@ const serviceLinks = new Map(services.map((s) => [s.data.order, serviceHref(s)])
           </article>
         );
       })}
+      <section class="partner-recruiters" aria-labelledby="recruiters">
+        <p class="partner-area mono">{recruiterTeaser.label}</p>
+        <h2 id="recruiters">{recruiterTeaser.title}</h2>
+        <p>{recruiterTeaser.text}</p>
+        <p class="partner-links mono"><a href={localHref(lang, recruiterPaths[lang])}>{recruiterTeaser.link} →</a></p>
+      </section>
     </div>
   </section>
 </Page>
