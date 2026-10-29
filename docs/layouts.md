@@ -159,6 +159,21 @@ for every service page.
 - The running text, FAQ and author box stay in one white band with the
   ReadingGrid.
 
+## Profile card ("Steckbrief", start page About)
+
+Chosen 2026-10-29 (variant C of three) for "Über mich" and "Warum zuerst 30
+Minuten?" on the start page; built in `src/components/Home.astro`, texts in
+`about.blocks` and `firstCall` of the i18n files.
+
+- About: left column (`--side`) with the portrait and the facts as small white
+  cards (mono label, one line). Right label, name, subtitle, then three short
+  blocks between dashed lines, each with a small mono caps heading ("Was ich
+  mache", "Projekte" as ✓ list, "Warum unabhängig"), then the links.
+- First call: two columns, text and button left, the questions right as
+  numbered grey cards with a cyan left border.
+- Below 860px everything stacks; the portrait keeps at most 360px.
+- Fits: person or company profiles, short "who and why" sections.
+
 ## Phase timeline (service pages, "So läuft die Zusammenarbeit")
 
 Chosen 2026-10-29 (variant A of three; Fabian found the service pages "Text an

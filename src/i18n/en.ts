@@ -206,10 +206,26 @@ export const en = {
     title: 'Fabian Kramer',
     portraitAlt: 'Portrait of Fabian Kramer',
     subtitle: 'Salesforce Enterprise Architect · Cologne/Bonn',
-    paragraphs: [
-      'I help manufacturing companies turn Salesforce into a reliable backbone for sales, service and after-sales – as the architect on the client side.',
-      'Most of my recent work is with German manufacturers operating globally: from the first worldwide Salesforce Manufacturing Cloud rollout to a global CTI rollout with Service Cloud Voice and Genesys, a subcontractor portal for after-sales in shipbuilding, and an embedded chat solution with a rollout plan for 12 locales.',
-      'I’m not tied to a vendor or an implementation partner. That’s why I regularly ask whether something should be built in Salesforce at all. When others ask that, it is often because they don’t know what the platform can do. I ask it because I know where its limits are and where it is the right tool. Make-or-buy evaluations, license forecasts and best-of-breed alternatives are part of the job, not an afterthought.',
+    // Three short blocks next to portrait and facts (layout "Steckbrief").
+    blocks: [
+      {
+        head: 'What I do',
+        text: 'I help manufacturing companies turn Salesforce into a reliable backbone for sales, service and after-sales – as the architect on the client side.',
+      },
+      {
+        head: 'Projects',
+        text: 'Most of my recent work is with German manufacturers operating globally:',
+        items: [
+          'The first worldwide Salesforce Manufacturing Cloud rollout.',
+          'A global CTI rollout with Service Cloud Voice and Genesys.',
+          'A subcontractor portal for after-sales in shipbuilding.',
+          'An embedded chat solution with a rollout plan for 12 locales.',
+        ],
+      },
+      {
+        head: 'Why independent',
+        text: 'I’m not tied to a vendor or an implementation partner. That’s why I regularly ask whether something should be built in Salesforce at all. When others ask that, it is often because they don’t know what the platform can do. I ask it because I know where its limits are and where it is the right tool. Make-or-buy evaluations, license forecasts and best-of-breed alternatives are part of the job, not an afterthought.',
+      },
     ],
     facts: [
       { label: 'Since 2020', text: 'Founder of FK Solution Design GmbH, Cologne' },
