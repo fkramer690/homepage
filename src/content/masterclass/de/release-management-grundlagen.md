@@ -42,7 +42,9 @@ Release-Management ist die Disziplin, Änderungen an einer Salesforce-Org geplan
 - **Deployment** ist der technische Vorgang, Metadaten in eine Org zu übertragen. Bei einem Deployment nach Produktion mit Apex-Code laufen laut [Salesforce-CLI-Referenz](https://developer.salesforce.com/docs/platform/salesforce-cli-reference/guide/cli_reference_project_deploy_start.html) standardmäßig alle lokalen Tests, und laut [Apex Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/pages/apex_testing_intro.htm) müssen Tests mindestens 75 Prozent des Apex-Codes abdecken und erfolgreich durchlaufen.
 - **Release** ist ein geplantes Paket von Änderungen, das zu einem festen Termin für Anwender freigeschaltet wird. Dazu gehören Kommunikation, Schulung und die Abnahme durch den Fachbereich.
 
+```hinweis tipp
 Die Unterscheidung zwischen Deployment und Release ist für Entscheider die wichtigste. Deployments können täglich laufen, in Sandboxes sogar mehrmals am Tag. Ein Release ist eine fachliche Entscheidung: Der Leiter Service entscheidet, ab wann die Techniker im Außendienst (Field Service) die neue Rückmeldemaske nutzen. Wer beides verwechselt, plant entweder zu wenige Deployments und bekommt riesige, riskante Pakete, oder schaltet Funktionen frei, bevor der Fachbereich bereit ist.
+```
 
 Ein Termin liegt dabei nie bei Ihnen. Salesforce liefert laut [Release-Übersicht](https://www.salesforce.com/products/innovation/releases/) drei saisonale Releases pro Jahr, typischerweise Spring im Februar, Summer im Juni und Winter im Oktober, mit einer Sandbox Preview von vier bis sechs Wochen vorher. Ihr Release-Kalender muss um diese Termine herum funktionieren. Wie, beschreibt [Kapitel 8](../release-planung-salesforce-releases/).
 
@@ -58,15 +60,34 @@ Ich habe ein Programm mit acht Teams und 32 Entwicklern begleitet, Orgs betreut,
 
 Ein typisches Szenario, als Annahme: Ein Maschinenbauer betreibt Service Cloud mit Field Service, ein Händlerportal auf Experience Cloud und eine Schnittstelle zu SAP. Drei Partner arbeiten auf derselben Org, je einer für Service, Vertrieb mit Portal und Integration. Am Freitagabend deployt der Vertriebspartner per Change Set eine neue Validierungsregel auf dem Auftragsobjekt. Sie ist in seiner Sandbox korrekt, kennt aber ein Feld nicht, das der Integrationspartner zwei Wochen zuvor eingeführt hat. Am Montag schlägt die nächtliche Auftragsübergabe aus SAP fehl, Händler sehen keine Liefertermine, und das Service-Team muss den eigenen UAT-Lauf verschieben, weil die Org nicht stabil ist. Keine dieser Kosten taucht als eigene Zeile im Projektbudget auf. Ein Validierungs-Deployment gegen den gemeinsamen Stand im Repository hätte den Konflikt vor dem Merge gezeigt.
 
+```ablauf
+sf: Validierungsregel Vertrieb, Auftragsobjekt, Händlerportal, UAT Service
+erp: Auftragsübergabe SAP
+Validierungsregel Vertrieb --Change Set Freitag--> Auftragsobjekt
+Auftragsübergabe SAP --nachts--> Auftragsobjekt
+Auftragsobjekt ..schlägt fehl..> Auftragsübergabe SAP
+Auftragsobjekt ..keine Liefertermine..> Händlerportal
+Auftragsobjekt ..Org instabil..> UAT Service
+```
+
 ## Warum reichen Change Sets nicht mehr?
 
 Change Sets sind das Standardwerkzeug, mit dem viele Orgs anfangen, und für einen einzelnen Admin sind sie in Ordnung. Laut [Salesforce Help](https://help.salesforce.com/apex/HTViewHelpDoc?id=changesets.htm) brauchen sie eine Deployment-Verbindung, die nur zwischen Orgs derselben Produktion besteht. Sie enthalten nur Änderungen, die über das Setup möglich sind, keine Datensätze, und werden als Ganzes deployt. Für ein Programm mit mehreren Partnern fehlen die entscheidenden Dinge:
 
-- keine Versionshistorie, also kein Vergleich und kein sauberes Zurückrollen
-- kein Review, bevor eine Änderung die nächste Umgebung erreicht
-- keine automatischen Prüfungen gegen den Stand anderer Teams
-- manuelles Zusammenklicken der Komponenten, bei dem leicht etwas fehlt
-- kein Nachweis, wer was wann und mit welcher Begründung geändert hat
+```vergleich
+ohne: Change Sets
+- Keine Versionshistorie, also kein Vergleich und kein sauberes Zurückrollen
+- Kein Review, bevor eine Änderung die nächste Umgebung erreicht
+- Keine automatischen Prüfungen gegen den Stand anderer Teams
+- Manuelles Zusammenklicken der Komponenten, bei dem leicht etwas fehlt
+- Kein Nachweis, wer was wann und mit welcher Begründung geändert hat
+mit: Repository und Pipeline
+- Jeder Stand liegt mit Autor und Begründung in Git und lässt sich zurückrollen
+- Jede Änderung geht über einen Pull Request mit Review
+- Ein Validierungs-Deployment prüft gegen den gemeinsamen Stand
+- Die Pipeline rollt immer dasselbe Paket aus, ohne Handarbeit
+- Die Historie belegt, welcher Partner was geändert hat
+```
 
 Das Problem liegt weniger im Werkzeug als in der Quelle der Wahrheit. Solange die Org die Wahrheit ist, entscheidet der letzte Deployer, welcher Stand gilt.
 

@@ -73,6 +73,13 @@ Was ich stattdessen in der Definition of Done sehen will, steht fast wörtlich i
 - **Tests mit `runAs`** in verschiedenen Benutzerkontexten, etwa als Servicetechniker oder Händler im Portal.
 - **Eigene Testdaten** statt Daten aus der Org, damit Tests nach einem Sandbox-Refresh noch laufen.
 
+```kennzahlen
+75 % | Apex-Abdeckung, die Salesforce für ein Deployment nach Produktion mindestens verlangt
+20 | Datensätze mindestens in jedem Bulk-Test
+80 bis 90 % | strengere Grenze, die sfdx-hardis für saubere Projekte empfiehlt
+quelle: Apex Developer Guide (Testing Best Practices), sfdx-hardis-Parameter apexTestsMinCoverageOrgWide
+```
+
 Den maschinell prüfbaren Teil davon erzwingen PMD-Regeln aus der Kategorie [Best Practices](https://docs.pmd-code.org/latest/pmd_rules_apex_bestpractices.html): `ApexUnitTestClassShouldHaveAsserts` verlangt mindestens einen Assert, `ApexUnitTestShouldNotUseSeeAllDataTrue` verbietet den Zugriff auf Org-Daten, `ApexUnitTestClassShouldHaveRunAs` verlangt mindestens ein `runAs`. Die erste Regel besteht auch ein Test, der nur auf „nicht null“ prüft. Ob ein Assert etwas beweist, bleibt Aufgabe des Reviews.
 
 Die Abdeckungsgrenze selbst können Sie anheben. In sfdx-hardis heißt der Parameter [`apexTestsMinCoverageOrgWide`](https://sfdx-hardis.cloudity.com/schema/sfdx-hardis-json-schema-parameters.html), Standard 75, und die Dokumentation empfiehlt für saubere Projekte strengere Werte wie 80 oder 90. In einer gewachsenen Org mit Jahren an Altcode würde ich die Grenze für neue und geänderte Klassen anheben und die Gesamtabdeckung schrittweise nachziehen. Ein Sonderfall ist API-Version 67.0: Apex läuft dort standardmäßig im User Mode, und ein Test ohne `runAs` sieht nicht, welche Datensätze ein eingeschränkter Benutzer verliert. Details in [API 67.0: warum Apex weniger Datensätze sieht](../../../blog/api-67-apex-user-mode-weniger-datensaetze/).
@@ -124,7 +131,9 @@ Alle Werkzeuge aus [Kapitel 4](../devops-werkzeuge-vergleich/) decken die Gates 
 
 **Flosum** bietet einen [Code-Scan-Schritt](https://docs.flosum.com/devops/pipeline/pipeline-operations/pipeline-operation-code-scan) in der Pipeline mit PMD oder einem eigenen, breiteren Regelsatz, der auch Flows prüft. Erreicht ein Fund die eingestellte Schwelle, scheitert der Schritt.
 
+```hinweis tipp
 Die kommerziellen Werkzeuge punkten bei Oberfläche, eigenen Regelsätzen und Support. sfdx-hardis punktet bei Transparenz, weil jede Regel und jeder Schwellenwert als Datei im Repository liegt, das Ihnen gehört. Wichtig ist bei allen dasselbe: Die Schwellen stehen in Ihrem Repository oder Ihrem Werkzeugkonto, nicht beim Partner.
+```
 
 ## KI-generierter Code: dieselben Gates, keine Ausnahmen
 

@@ -56,7 +56,9 @@ The nine chapters before this one each describe one building block. For the roll
 
 ## How do you enable your team and your partners?
 
+```hinweis tipp
 The most important investment is a person: an internal release role that owns the pipeline, the calendar and the approvals. If you pick an open-source tool or a cheaper package, the licence savings are better spent there than on extra partner days. Without that role, the process effectively belongs to whichever partner knows it best again.
+```
 
 Training comes next, and it should be hands-on. I have used sfdx-hardis in client projects for about two years and completed all three levels of the [free sfdx-hardis training](https://sfdx-hardis.cloudity.com/salesforce-devops-training/) in October 2026. In 27 labs you build a complete pipeline on free Developer Edition orgs and a GitHub account, and you only get a badge once a job has checked the work in your own repository. Even with prior experience it took me almost a day. My notes are in [what I learned from the sfdx-hardis training](../../../blog/sfdx-hardis-free-devops-training/).
 
@@ -83,7 +85,9 @@ These patterns follow from the structure of a programme with several partners, w
 - **Only developers get trained.** Admins keep building in Setup because nobody showed them pull requests.
 - **Nobody measures.** Without a baseline you cannot show the steering committee what the change achieved.
 
+```hinweis achtung
 Mandatory reviews belong in from the start, even while the pipeline is still simple. The reasons are in [why pull request reviews are a must](../../../blog/why-pull-request-reviews-are-a-must-in-enterprise-projects/).
+```
 
 ## How do you measure progress?
 

@@ -42,7 +42,9 @@ Release management is the discipline of moving changes to a Salesforce org from 
 - **Deployment** is the technical transfer of metadata into an org. For a production deployment that includes Apex, the [Salesforce CLI reference](https://developer.salesforce.com/docs/platform/salesforce-cli-reference/guide/cli_reference_project_deploy_start.html) runs all local tests by default, and according to the [Apex Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/pages/apex_testing_intro.htm) tests must cover at least 75 percent of the Apex code and all of them must pass.
 - **Release** is a planned set of changes that goes live for users on a fixed date. It includes communication, training and sign-off by the business.
 
+```hinweis tipp
 For decision makers the difference between deployment and release matters most. Deployments can run daily, in sandboxes even several times a day. A release is a business decision: the head of service decides from which day field technicians use the new job completion screen. If you mix the two up, you either plan too few deployments and get huge, risky packages, or you switch features on before the business is ready.
+```
 
 One set of dates is never yours. According to its [release overview](https://www.salesforce.com/products/innovation/releases/), Salesforce ships three seasonal releases a year, typically Spring in February, Summer in June and Winter in October, with a sandbox preview of four to six weeks beforehand. Your release calendar has to work around these dates. [Chapter 8](../release-planning-salesforce-releases/) covers how.
 
@@ -58,15 +60,34 @@ I have worked in a programme with eight teams and 32 developers, on orgs where s
 
 A typical scenario, as an assumption: a machinery manufacturer runs Service Cloud with Field Service, a dealer portal on Experience Cloud and an SAP interface. Three partners work on the same org, one each for service, sales with the portal, and integration. On Friday evening the sales partner deploys a new validation rule on the order object with a change set. It is correct in the partner's sandbox, but it does not know a field the integration partner introduced two weeks earlier. On Monday the nightly order handover from SAP fails, dealers see no delivery dates, and the service team has to postpone its own UAT run because the org is unstable. None of these costs shows up as its own line in the project budget. A validation deployment against the shared state in the repository would have shown the conflict before the merge.
 
+```ablauf
+sf: Sales validation rule, Order object, Dealer portal, Service UAT
+erp: SAP order handover
+Sales validation rule --Friday change set--> Order object
+SAP order handover --nightly--> Order object
+Order object ..fails..> SAP order handover
+Order object ..no delivery dates..> Dealer portal
+Order object ..org unstable..> Service UAT
+```
+
 ## Why are change sets no longer enough?
 
 Change sets are the standard tool many orgs start with, and for a single admin they are fine. According to [Salesforce Help](https://help.salesforce.com/apex/HTViewHelpDoc?id=changesets.htm), they need a deployment connection, which only exists between orgs affiliated with the same production org. They contain only changes you can make in Setup, no records, and they are deployed as a whole. For a programme with several partners the decisive things are missing:
 
-- no version history, so no comparison and no clean rollback
-- no review before a change reaches the next environment
-- no automated checks against other teams' work
-- components are clicked together by hand, and something is easily missed
-- no record of who changed what, when and why
+```vergleich
+without: Change sets
+- No version history, so no comparison and no clean rollback
+- No review before a change reaches the next environment
+- No automated checks against other teams' work
+- Components are clicked together by hand, and something is easily missed
+- No record of who changed what, when and why
+with: Repository and pipeline
+- Every version sits in Git with author and reason and can be rolled back
+- Every change goes through a pull request with review
+- A validation deployment checks against the shared state
+- The pipeline always deploys the same package, without manual work
+- The history shows which partner changed what
+```
 
 The core problem is the source of truth more than the tool. As long as the org is the truth, the last person to deploy decides which version counts.
 
