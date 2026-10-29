@@ -78,6 +78,7 @@ Change management is not a single work step. The same topics come up again and a
 7. **[Adoption in sales](../salesforce-adoption-sales-team/):** why sales works around Salesforce and what helps.
 8. **[Training plan](../salesforce-training-plan-rollout/):** how to plan training by role, on real cases and through key users.
 9. **[Hypercare after go-live](../salesforce-hypercare-after-go-live/):** who is on hand in the first weeks and when it ends.
+10. **[Change management process in the project](../change-management-process-salesforce/):** which change work belongs in which project phase, from planning to operations.
 
 ## How does change management run alongside delivery?
 
