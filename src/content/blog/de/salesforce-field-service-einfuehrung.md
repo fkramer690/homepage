@@ -50,7 +50,7 @@ Eine Welle sollte umfassen:
 - die geklärten Vereinbarungen mit Betriebsrat und Datenschutz für dieses Land
 - Kennzahlen, die vor und nach dem Start gemessen werden
 
-Zwischen zwei Wellen braucht es Luft. Die ersten Wochen nach dem Start einer Region sind die Zeit, in der Disponenten Vorschläge häufig ändern und Techniker Fragen zur App haben. Wer in dieser Phase schon die nächste Welle startet, verteilt die Aufmerksamkeit des Projektteams zu dünn. Hilfreich ist, wenn Disponenten der nächsten Welle vorher in der laufenden Region zuschauen. Sie lernen dort mehr als in jeder Schulung, weil sie echte Fälle aus ihrem eigenen Alltag sehen.
+Zwischen zwei Wellen braucht es Luft. Die ersten Wochen nach dem Start einer Region sind die Zeit, in der Disponenten Vorschläge häufig ändern und Techniker Fragen zur App haben. Wer in dieser Phase schon die nächste Welle startet, verteilt die Aufmerksamkeit des Projektteams zu dünn. Hilfreich ist, wenn Disponenten der nächsten Welle vorher in der laufenden Region zuschauen. Sie lernen dort mehr als in jeder Schulung, weil sie echte Fälle aus ihrem eigenen Alltag sehen. Warum Schulung allein nicht reicht, damit Techniker die App annehmen, beschreibe ich in [Field Service App: wie Techniker sie annehmen](../field-service-app-akzeptanz-techniker/).
 
 ## Welche Themen gehören früh zum Betriebsrat?
 
@@ -82,7 +82,7 @@ Aus Projektsicht zählt vor allem der Zeitpunkt. Wer erst mit dem Betriebsrat sp
 
 Ein internationaler Außendienst hat nicht eine Rechtslage, sondern viele. Mitbestimmung, Datenschutz und Arbeitszeitregeln unterscheiden sich je Land, manchmal auch je Region oder Standort mit eigener Arbeitnehmervertretung. Was in einem Land mit einer kurzen Abstimmung geht, braucht in einem anderen eine Betriebsvereinbarung.
 
-Das spricht für Wellen nach Ländern. Jede Welle prüft die Rahmenbedingungen ihres Landes, bevor sie startet. Die Konfiguration muss das mitmachen: Die Mobile-Einstellungen lassen sich je Profil unterschiedlich zuordnen, sodass etwa die Standortverfolgung in einem Land aktiv ist und in einem anderen nicht. Das sollte von Anfang an so angelegt sein, damit das zweite Land nicht die Einstellungen des ersten erbt.
+Das spricht für Wellen nach Ländern. Jede Welle prüft die Rahmenbedingungen ihres Landes, bevor sie startet. Die Konfiguration muss das mitmachen: Die Mobile-Einstellungen lassen sich je Profil unterschiedlich zuordnen, sodass etwa die Standortverfolgung in einem Land aktiv ist und in einem anderen nicht. Das sollte von Anfang an so angelegt sein, damit das zweite Land nicht die Einstellungen des ersten erbt. Was neben Recht und Technik pro Land dazugehört, vom Sponsor in der Landesleitung bis zu den Key Usern, behandelt [Kapitel 4 der Masterclass Change Management](../../masterclass/change-management/change-management-rollout-laender/).
 
 ## Woran messen Sie den Erfolg einer Welle?
 

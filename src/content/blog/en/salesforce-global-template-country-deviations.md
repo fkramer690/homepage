@@ -85,7 +85,7 @@ contra: What you give up
 
 A country requests a deviation in writing: what it needs, why, and what it costs to adopt the template instead. The decision is made by a global process owner together with the architect on the client side. It goes into the [decision log](../salesforce-architecture-decision-log/), so the next country does not ask the same question again.
 
-Two rules help. First, the country carries the follow-up cost of its deviation, including the tests in every future release. That makes many requests smaller. Second, every deviation is reviewed after a year: is it still needed, or can the country go back to the template?
+Two rules help. First, the country carries the follow-up cost of its deviation, including the tests in every future release. That makes many requests smaller. Second, every deviation is reviewed after a year: is it still needed, or can the country go back to the template? Many requests come from habit. If the sponsor in the country understands why the template is built the way it is, they can put these requests in context before they reach the architect, more on that in [Change management in a global Salesforce rollout](../change-management-global-salesforce-rollout/).
 
 ## How do you measure whether the template holds?
 

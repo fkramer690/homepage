@@ -72,7 +72,7 @@ Three points decide whether this works:
 
 1. **Test users per role.** If you test as an administrator, you will not find permission problems. Every role from the [permission concept](../salesforce-permission-concept-permission-sets/) needs a test user with exactly its permissions.
 2. **Real data volumes.** A report that loads in one second in an empty sandbox may take thirty with three million assets. That is why UAT runs in the Full Copy.
-3. **Testers who are freed up.** Business users who test next to their daily work test the simplest path and stop as soon as it works. So whoever plans UAT also plans who takes over their work in the business during that time.
+3. **Testers who are freed up.** Business users who test next to their daily work test the simplest path and stop as soon as it works. So whoever plans UAT also plans who takes over their work in the business during that time. Good testers are the key users who will be the first point of contact in their team after go-live. What else they do and how much time they need is in [Key users in Salesforce rollouts: what they do](../salesforce-key-user-network/).
 
 ## How much time does the business need to plan?
 

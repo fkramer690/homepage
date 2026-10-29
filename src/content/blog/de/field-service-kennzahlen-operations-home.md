@@ -92,7 +92,7 @@ Ein typisches Szenario, als Annahme: ein Komponentenhersteller mit 90 Technikern
 
 ## Wem gehören die Zahlen nach dem Go-live?
 
-Jemandem im Fachbereich und nicht dem Projekt. Ich würde die Definitionen der Serviceleitung geben, die Änderungsquote der Dispositionsleitung und die Datenstrecke der IT. Eine halbe Stunde pro Monat und Region reicht: sechs Zahlen, die Gründe hinter Ausreißern und eine Entscheidung. Die technische Seite des Betriebs, von Überwachung bis Backup, behandelt das DevOps-Kapitel [Betrieb, Monitoring und Backup](../../masterclass/devops-release-management/betrieb-monitoring-backup/).
+Jemandem im Fachbereich und nicht dem Projekt. Ich würde die Definitionen der Serviceleitung geben, die Änderungsquote der Dispositionsleitung und die Datenstrecke der IT. Eine halbe Stunde pro Monat und Region reicht: sechs Zahlen, die Gründe hinter Ausreißern und eine Entscheidung. Ob Disponenten und Techniker den neuen Prozess überhaupt nutzen, zeigen diese Zahlen nur indirekt. Welche Nutzungszahlen ich daneben stelle, steht in [Salesforce-Nutzung nach dem Go-live messen](../salesforce-nutzung-messen-nach-go-live/). Die technische Seite des Betriebs, von Überwachung bis Backup, behandelt das DevOps-Kapitel [Betrieb, Monitoring und Backup](../../masterclass/devops-release-management/betrieb-monitoring-backup/).
 
 Kommen später Field-Service-Agenten dazu, messen Sie diese getrennt mit eigenen Kennzahlen, wie in [Agentforce-Kennzahlen nach dem Go-live](../agentforce-kennzahlen-nach-go-live/) beschrieben. Ein Agent, der Wartungstermine bucht, verändert die Einsätze pro Tag nur mittelbar.
 

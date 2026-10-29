@@ -114,4 +114,6 @@ Wirkung messen
   Zeit für Dokumentation, Vollständigkeit der Berichte, Zeit bis zur Abrechnung.
 ```
 
+Ob die Techniker die neuen Funktionen dann auch nutzen, entscheidet sich daran, was sie selbst davon haben. Darum geht es in [Field Service App: wie Techniker sie annehmen](../field-service-app-akzeptanz-techniker/).
+
 Gute Außendienstdaten sind auch die Grundlage für KI-Agenten im Service, die verlässliche Informationen brauchen, wie ich in [Agentforce: Business Value und Datenqualität zuerst](../agentforce-business-value-datenqualitaet/) erkläre. Wenn Sie planen, Ihren Außendienst auf Salesforce zu modernisieren, [schreiben Sie mir](#contact).
