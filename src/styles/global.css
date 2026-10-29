@@ -1812,3 +1812,16 @@ p.post-series-note { margin: 0.6em 0 0; font-size: 0.95rem; }
 .prose .cb-lever .cb-lever-title { font-weight: 600; font-size: 1.1rem; color: var(--anthracite); margin-bottom: 8px; }
 .prose .cb-lever .cb-lever-text { font-size: 0.93rem; color: var(--text-2); margin-bottom: 14px; }
 .prose .cb-lever .cb-lever-effect { margin-top: auto; padding-top: 14px; border-top: 1px dashed var(--line); font-weight: 600; color: var(--anthracite); }
+/* ```eintrag: one log entry as a card, dark head, field rows on the grid, note at the bottom */
+.cb-entry { border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background-color: #fbfbfc; background-image: linear-gradient(rgba(0, 0, 0, 0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 0, 0, 0.035) 1px, transparent 1px); background-size: 24px 24px; }
+.prose .cb-entry .cb-entry-head { margin: 0; display: flex; justify-content: space-between; gap: 12px; background: var(--anthracite); color: var(--white); font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 10px 18px; }
+.cb-entry-head span:last-child { color: var(--cyan-light); }
+.prose .cb-entry dl { margin: 0; padding: 6px 18px; }
+.cb-entry dl > div { display: grid; grid-template-columns: 140px minmax(0, 1fr); gap: 14px; padding: 12px 0; border-bottom: 1px dashed var(--line); }
+.cb-entry dl > div:last-child { border-bottom: 0; }
+.prose .cb-entry dt { font-family: var(--mono); font-size: 0.74rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-2); padding-top: 3px; }
+.prose .cb-entry dd { margin: 0; font-weight: 500; color: var(--anthracite); }
+.prose .cb-entry .cb-entry-mark dt { color: var(--cyan-dark); }
+.cb-entry-mark dt::before { content: ''; display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--cyan); margin-right: 8px; vertical-align: 1px; }
+.prose .cb-entry .cb-entry-note { margin: 0; padding: 12px 18px; border-top: 1px solid var(--line); background: var(--white); font-size: 0.92rem; color: var(--cyan-dark); font-weight: 500; }
+@media (max-width: 720px) { .cb-entry dl > div { grid-template-columns: 1fr; gap: 4px; } }

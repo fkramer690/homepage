@@ -11,16 +11,16 @@
 import { createHash } from 'node:crypto';
 import { iconHtml } from './icons.mjs';
 
-export const blockNames = ['hinweis', 'praxis', 'kennzahlen', 'zeitleiste', 'ablauf', 'pro-contra', 'vertiefung', 'schritte', 'stufen', 'vergleich', 'hebel'];
+export const blockNames = ['hinweis', 'praxis', 'kennzahlen', 'zeitleiste', 'ablauf', 'pro-contra', 'vertiefung', 'schritte', 'stufen', 'vergleich', 'hebel', 'eintrag'];
 
 const labels = {
   de: {
-    tipp: 'Tipp', achtung: 'Achtung', offen: 'Schriftlich bestätigen lassen', praxis: 'Aus meiner Praxis',
+    tipp: 'Tipp', achtung: 'Achtung', offen: 'Schriftlich bestätigen lassen', praxis: 'Aus meiner Praxis', entry: 'Eintrag',
     quelle: 'Quelle', next: 'nächster Termin', risiko: 'Größtes Risiko', legend: { sf: 'Salesforce', erp: 'ERP', ext: 'angrenzender Prozess' },
     diagram: 'Ablaufdiagramm',
   },
   en: {
-    tipp: 'Tip', achtung: 'Warning', offen: 'Get it confirmed in writing', praxis: 'From my practice',
+    tipp: 'Tip', achtung: 'Warning', offen: 'Get it confirmed in writing', praxis: 'From my practice', entry: 'Entry',
     quelle: 'Source', next: 'next date', risiko: 'Biggest risk', legend: { sf: 'Salesforce', erp: 'ERP', ext: 'adjacent process' },
     diagram: 'Flow diagram',
   },
@@ -145,6 +145,22 @@ export function parseStages(content) {
   return { stages, cases, bands };
 }
 
+// Log entry: "Field | value" rows (trailing * marks one), optional "fazit:" / "note:" line.
+export function parseEntry(content) {
+  const rows = [];
+  let note = '';
+  for (const raw of lines(content)) {
+    const l = raw.trim();
+    if (!l) continue;
+    const k = keyLine(l, ['fazit', 'note']);
+    if (k) { note = k.value; continue; }
+    const mark = /\*$/.test(l);
+    const [field, value] = l.replace(/\s*\*$/, '').split('|').map((x) => x.trim());
+    rows.push({ field, value, mark });
+  }
+  return { rows, note };
+}
+
 // Comparison: "ohne: Title" / "without: Title" and "mit: Title" / "with: Title", each with "- points".
 export function parseCompare(content) {
   const cols = [];
@@ -236,6 +252,12 @@ export function validateBlock(block) {
     }
     between(cases.length, 0, 3, 'cases');
     if (cases.some((c) => !c.title || !c.situation || !c.consequence)) errs.push('stufen: every case needs "fall: Title | situation | consequence"');
+  } else if (name === 'eintrag') {
+    const { rows } = parseEntry(content);
+    if (!arg) errs.push('eintrag: add a title after the name (```eintrag Entscheidungslog)');
+    between(rows.length, 2, 6, 'rows');
+    if (rows.some((r) => !r.field || !r.value)) errs.push('eintrag: every row needs "Field | value"');
+    if (rows.filter((r) => r.mark).length > 1) errs.push('eintrag: mark at most one row with *');
   } else if (name === 'vergleich') {
     const cols = parseCompare(content);
     if (cols.length !== 2 || cols[0].kind !== 'without' || cols[1].kind !== 'with') errs.push('vergleich: needs an "ohne: Title" column followed by a "mit: Title" column');
@@ -251,7 +273,7 @@ export function validateBlock(block) {
 // Prose of a block, for word counts and the wording checks in check-blog.
 export function blockProse(block) {
   return block.content
-    .replace(/^\s*(quelle|source|titel|title|pro|contra|sf|erp|ext|fall|case|band|ohne|without|mit|with):\s*/gim, '')
+    .replace(/^\s*(quelle|source|titel|title|pro|contra|sf|erp|ext|fall|case|band|ohne|without|mit|with|fazit|note):\s*/gim, '')
     .replace(/\s\*$/gm, '')
     .replace(/(--|\.\.)>?/g, ' ')
     .replace(/\|/g, ' ');
@@ -380,6 +402,10 @@ export function renderBlock(block, { lang, isExternal, readDiagram, today = new 
   }
   if (name === 'hebel') {
     return `<div class="cb cb-levers">${parseSteps(content).map((s, i) => `<div class="cb-lever"><p class="cb-lever-no">${lang === 'de' ? 'Hebel' : 'Lever'} ${String(i + 1).padStart(2, '0')}</p><p class="cb-lever-title">${inline(s.title, o)}</p><p class="cb-lever-text">${inline(s.text, o)}</p>${s.meta ? `<p class="cb-lever-effect">${inline(s.meta, o)}</p>` : ''}</div>`).join('')}</div>`;
+  }
+  if (name === 'eintrag') {
+    const { rows, note } = parseEntry(content);
+    return `<div class="cb cb-entry"><p class="cb-entry-head"><span>${inline(arg, o)}</span><span>${t.entry}</span></p><dl>${rows.map((r) => `<div${r.mark ? ' class="cb-entry-mark"' : ''}><dt>${inline(r.field, o)}</dt><dd>${inline(r.value, o)}</dd></div>`).join('')}</dl>${note ? `<p class="cb-entry-note">${inline(note, o)}</p>` : ''}</div>`;
   }
   if (name === 'vergleich') {
     return `<div class="cb cb-compare">${parseCompare(content).map((c) => `<div class="cb-compare-col cb-compare-${c.kind}"><p class="cb-compare-title">${inline(c.title, o)}</p><ul>${c.items.map((i) => `<li>${c.kind === 'with' ? icon.check : icon.cross}<span>${inline(i, o)}</span></li>`).join('')}</ul></div>`).join('')}</div>`;
