@@ -25,6 +25,7 @@ export const recruiters = {
     lead: 'Viele meiner Projekte kommen über Personaldienstleister zustande, die besten über Recruiter, mit denen ich schon einmal gearbeitet habe. Hier steht, was Sie von mir bekommen, was ich von Ihnen brauche und wo meine Grenzen sind. So wissen wir beide früh, ob eine Zusammenarbeit passt.',
     ctaPrimary: 'Anfrage schicken',
     ctaSecondary: 'Wie ich arbeite',
+    ctaCv: 'Lebenslauf (PDF, Englisch)',
     promises: ['Antwort in 1 Werktag', '1 Recruiter pro Anfrage', 'Einreichung nur mit Freigabe'],
     portraitAlt: 'Porträt von Fabian Kramer',
     facts: [
@@ -133,6 +134,7 @@ export const recruiters = {
     lead: 'Many of my projects come through staffing agencies, the best ones through recruiters I have worked with before. This page says what you get from me, what I need from you and where my limits are. That way we both know early whether working together fits.',
     ctaPrimary: 'Send a request',
     ctaSecondary: 'How I work',
+    ctaCv: 'CV (PDF)',
     promises: ['Answer within 1 working day', '1 recruiter per request', 'Submission only with approval'],
     portraitAlt: 'Portrait of Fabian Kramer',
     facts: [
