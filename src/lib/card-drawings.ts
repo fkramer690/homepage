@@ -1050,6 +1050,19 @@ const drawings: Record<string, Drawing> = {
     ${t(18, 18, l('LIMIT', 'GRENZE'), { fill: D, size: 7 })}${t(186, 18, 'WORKAROUND', { fill: C, size: 7 })}
     ${[[l('template = text field', 'Vorlage = Textfeld'), 'screen flow'], [l('fixed file name', 'fester Dateiname'), l('async flow', 'asynchroner Flow')], [l('no email', 'keine E-Mail'), 'flow'], [l('no defaults', 'keine Vorbelegung'), 'flow'], [l('basic styling', 'einfaches Styling'), 'LWC + GraphQL']]
       .map(([a, b], i) => box(18, 26 + i * 26, 126, 20) + t(26, 39 + i * 26, a, { size: 7 }) + arrow(150, 36 + i * 26, 180, C) + box(186, 26 + i * 26, 116, 20, C) + t(194, 39 + i * 26, b, { size: 7 })).join('')}`,
+  'sap-salesforce-integration-overview': (l) => `
+    ${box(18, 30, 78, 100)}${t(57, 50, 'SAP', { fill: D, size: 8, anchor: 'middle' })}
+    ${t(57, 70, 'ECC', { size: 7, anchor: 'middle' })}${t(57, 82, l('2027 / 2030', '2027 / 2030'), { size: 6.5, anchor: 'middle' })}
+    ${t(57, 104, 'S/4HANA', { size: 7, anchor: 'middle' })}${t(57, 116, 'OData', { size: 6.5, anchor: 'middle' })}
+    ${box(224, 30, 80, 100, C)}${t(264, 50, 'SALESFORCE', { fill: C, size: 7.5, anchor: 'middle' })}
+    ${t(264, 76, l('1 leading', '1 führendes'), { size: 7, anchor: 'middle' })}${t(264, 88, l('system', 'System'), { size: 7, anchor: 'middle' })}${t(264, 100, l('per data type', 'pro Datenart'), { size: 7, anchor: 'middle' })}
+    ${box(118, 70, 84, 22, G)}${t(160, 85, 'Middleware', { fill: D, size: 7, anchor: 'middle' })}
+    ${arrow(98, 44, 222)}${t(160, 40, l('master data · batch', 'Stammdaten · Batch'), { size: 6.5, anchor: 'middle' })}
+    ${arrow(98, 81, 116, G)}${arrow(204, 81, 222, C)}
+    <path d="M222 118H99" stroke="${G}" stroke-width="1.3" stroke-dasharray="4 3"/><path d="M104 114.5l-5 3.5 5 3.5" fill="none" stroke="${G}" stroke-width="1.3"/>
+    ${t(160, 112, l('order out · status back', 'Auftrag raus · Status zurück'), { size: 6.5, anchor: 'middle' })}
+    ${t(160, 64, l('price · stock live', 'Preis · Bestand live'), { size: 6.5, anchor: 'middle' })}`,
+
   'manufacturing-cloud-worth-it': (l) => `
     ${t(18, 18, l('LIST PRICE / USER / MONTH', 'LISTENPREIS / NUTZER / MONAT'), { fill: D, size: 7 })}
     ${box(18, 26, 116, 22)}${t(26, 40, 'Sales Cloud Core', { size: 7 })}${t(126, 40, '195', { size: 7.5, anchor: 'end' })}
