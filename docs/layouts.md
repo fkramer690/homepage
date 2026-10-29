@@ -110,3 +110,21 @@ author box, contact, schema and the speaking page.
 - Masterclass overview: 3:2 photo at the top of the side column.
 - Masterclass hubs with a photo in `coursePhotos` show it in the hero instead of the layer drawing.
 - Freelance architect page: framed photo next to "Aus meiner Praxis".
+
+## Filter side column (blog overview)
+
+Chosen 2026-10-29 for `/blog/` and `/en/blog/` (variant B of three; Fabian wanted
+a second filter by author next to the topic). Built in `src/components/BlogIndex.astro`.
+
+- Left a sticky side column (`.blog-filter`, width `--side`): two lists with a
+  small mono heading, "Autor" (round photo, name, focus line, count) and "Thema"
+  (icon from `src/icons/` per category in `src/lib/categories.ts`, count);
+  dashed dividers, the chosen entry gets a cyan left border and grey background.
+  Below: number of articles shown and "Filter zurücksetzen".
+- Right the article cards in two columns, newest visible one as wide card.
+- The filters combine; each list counts within the other one's choice and greys
+  out empty entries. An article counts for its author and its `coAuthor`. The
+  choice sits in the hash (`#juliane+change-management`), old topic links
+  (`#field-service`) still work.
+- Below 960px the column becomes a folded "Filter" box above the grid.
+- Fits: overviews with many items and two or more filter dimensions.
