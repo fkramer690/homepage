@@ -51,14 +51,29 @@ Programme management on the client side means planning and steering a Salesforce
 
 ## Why do nearshore teams struggle?
 
-When a nearshore team delivers less than expected, the first reaction is often to blame skills. In my experience the reasons are elsewhere:
+When a nearshore team delivers less than expected, the first reaction is often to blame skills. In my experience the reasons are elsewhere, and each one has an answer in the setup:
 
-- **Rotating resources.** If developers are moved to other projects every few months, knowledge of the org leaves with them. Each new person needs weeks to become productive.
-- **High turnover.** The effect is the same, and it also creates unrest in the rest of the team.
-- **Teams that are too senior.** A team of experienced developers sounds like a safe choice. In practice, too many people want to design and too few want to build, which slows the team down.
-- **Missing management buy-in.** A nearshore team needs decisions, access and attention from the client. Without that, it waits.
+```vergleich
+without: Where nearshore teams get stuck
+- **Rotating resources:** If developers are moved every few months, knowledge of the org leaves with them.
+- **High turnover:** The effect is the same, and it creates unrest in the rest of the team.
+- **Teams that are too senior:** Too many people want to design and too few want to build.
+- **Missing management buy-in:** Without decisions, access and attention from the client, the team waits.
+with: A setup that delivers steadily
+- Rules for staffing and rotation are fixed before the first sprint starts.
+- New team members learn the conventions of the org in pull request reviews.
+- The team setup defines a seniority mix, with people who want to build.
+- Management gets status, risks and decisions presented regularly.
+```
 
 ## How do I set up nearshore teams?
+
+```kennzahlen
+8 | developers per team, at most
+2 | regions: Eastern Europe and India
+1 | pipeline with the same standards for all teams
+source: my nearshore teams in Salesforce programmes
+```
 
 I keep teams at up to around eight developers. Larger agile teams rarely work well, because coordination takes over. If the programme needs more capacity, it gets several teams with clear responsibilities.
 
@@ -70,6 +85,12 @@ From day one, a nearshore team works with the same standards, pull request revie
 
 ## What does steering look like across several teams?
 
-With several teams and partners, the plan only holds if dependencies and releases are coordinated. I keep a programme plan with streams and dependencies, align releases through one shared process and report status, risks and decisions to management. The rules that make several partners work together are described under [partner governance](../partner-governance/), and the shared release process under [DevOps and release management](../devops-release-management/).
+With several teams and partners, the plan only holds if dependencies and releases are coordinated. For that I keep three things:
 
-If you are planning a nearshore setup or want to get an existing team back on track, [send me a message](#contact) or read more [about me](../../#about).
+```stufen
+1 | Programme plan | streams and dependencies | Who delivers what, and when?
+2 | Release process | shared by all teams | When does what go live?
+3 | Reporting | status, risks, decisions | What does management need to decide?
+```
+
+The rules that make several partners work together are described under [partner governance](../partner-governance/), and the shared release process under [DevOps and release management](../devops-release-management/).
