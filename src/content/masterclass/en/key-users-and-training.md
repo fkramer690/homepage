@@ -49,10 +49,12 @@ In acceptance testing key users are the best testers, because they know which ca
 
 The most common choice is the worst: whoever has time becomes key user. I look at other criteria:
 
-- **Standing in the team.** Colleagues already ask this person for advice, whatever the system.
-- **Knowledge of the process.** They know how a quote, an order or a service job really runs in their team, including the exceptions.
-- **Curiosity over enthusiasm.** Critical key users find weaknesses earlier, and once convinced, they convince others.
-- **Staying a while.** Whoever changes jobs in three months takes the knowledge with them.
+| Criterion | How you recognise it |
+|---|---|
+| Standing in the team | Colleagues already ask this person for advice, whatever the system. |
+| Knowledge of the process | They know how a quote, an order or a service job really runs in their team, including the exceptions. |
+| Curiosity over enthusiasm | Critical key users find weaknesses earlier, and once convinced, they convince others. |
+| Staying a while | Whoever changes jobs in three months takes the knowledge with them. |
 
 A simple way to the candidates: ask in every team whom people ask today when they get stuck in the system. The names that come up more than once are your candidates. The limits of the role, tasks in operations and how the network holds together are in [Key users in Salesforce rollouts: what they do](../../../blog/salesforce-key-user-network/).
 
