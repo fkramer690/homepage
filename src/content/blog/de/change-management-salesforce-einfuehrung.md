@@ -80,6 +80,8 @@ Change Management ist kein einzelner Arbeitsschritt. In Salesforce-Programmen vo
 9. **[Hypercare-Phase nach dem Go-live](../hypercare-phase-salesforce-go-live/):** Wer in den ersten Wochen dabei ist und wann sie endet.
 10. **[Change-Management-Prozess im Projekt](../change-management-prozess-salesforce/):** Welche Change-Arbeit in welche Projektphase gehört, von der Planung bis zum Betrieb.
 
+Die allgemeinen Werkzeuge dahinter erklärt Juliane Winterscheid in eigenen Grundlagenartikeln: die [Stakeholder-Analyse](../stakeholder-analyse/) mit Vorlage, den [Kommunikationsplan](../kommunikationsplan-change-management/) und die [Change-Kurve](../change-kurve/).
+
 ## Wie läuft Change Management neben der Umsetzung?
 
 Prosci gliedert die Arbeit auf Ebene der Organisation in drei Phasen, den [Prosci 3-Phase Process](https://www.prosci.com/methodology/3-phase-process). In einem Salesforce-Programm laufen sie neben dem Release-Plan:

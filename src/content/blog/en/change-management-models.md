@@ -40,7 +40,7 @@ There are many models for change. Four of them come up in companies again and ag
 | ADKAR | Individual | 5 stages: awareness to reinforcement | Diagnosis of where it is stuck | No plan for the organisation |
 | Prosci 3-Phase Process | Organisation | 3 phases: prepare, manage, sustain | Connects the plan and ADKAR | Takes practice to apply |
 
-There are also phase models that describe how people react emotionally to a change, from the first shock to integration. They are often drawn as a change curve and help managers understand why a team that agreed at first suddenly pushes back. They do not provide a plan for the rollout.
+There are also phase models that describe how people react emotionally to a change, from the first shock to integration. They are often drawn as a [change curve](../change-curve/) and help managers understand why a team that agreed at first suddenly pushes back. They do not provide a plan for the rollout.
 
 ## What does Lewin's three-phase model say?
 

@@ -77,7 +77,7 @@ Sustain outcomes | after the start · managers and internal owners
   Measure whether the new way of working is used, close gaps, make successes visible and anchor ownership inside the company for good.
 ```
 
-The most common mistake happens in the first phase: change management starts too late. When communication begins two weeks before go-live, it can only inform. Who is affected and what changes for each group belongs at the beginning, because it also shapes the solution itself.
+The most common mistake happens in the first phase: change management starts too late. When communication begins two weeks before go-live, it can only inform. Who is affected and what changes for each group belongs at the beginning, because it also shapes the solution itself. The tool for this is the [stakeholder analysis](../stakeholder-analysis/), from which the [communication plan](../change-management-communication-plan/) follows.
 
 At the level of the individual, the ADKAR model helps with the diagnosis. When a rollout stalls, one of the five stages is usually missing, and each needs a different measure. Another training session only helps when knowledge or ability is missing. When nobody has understood what the change is good for, the manager has to explain it. How ADKAR differs from other well known models is described in [change management models compared](../change-management-models/).
 
