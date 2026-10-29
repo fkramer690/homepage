@@ -3,8 +3,10 @@
 import Page from '../layouts/Page.astro';
 import ExternalMark from './ExternalMark.astro';
 import ContactForm from './ContactForm.astro';
-import AuthorBox from './AuthorBox.astro';
 import Blueprint from './Blueprint.astro';
+import RecruiterIcon from './RecruiterIcon.astro';
+import { Image } from 'astro:assets';
+import portrait from '../assets/portrait.png';
 import { en } from '../i18n/en';
 import { de } from '../i18n/de';
 import { contactHref, contactExternal } from '../site';
@@ -23,6 +25,7 @@ const url = new URL(alternates[lang], Astro.site).href;
 const abs = (path: string) => new URL(path, Astro.site).href;
 const ctaAttrs = contactExternal ? { target: '_blank', rel: 'noopener' } : {};
 const ogImage = `${base}og/${lang}/recruiters.png`;
+const { double, single } = c.exclusive;
 
 const schema = {
   '@context': 'https://schema.org',
@@ -38,32 +41,157 @@ const schema = {
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
   </Fragment>
-  <article class="section post questions">
-    <div class="container post-inner">
-      <a class="post-back mono" href={partnersHref(lang)}>← {c.back}</a>
-      <p class="eyebrow mono">{c.eyebrow}</p>
-      <h1>{c.title}</h1>
-      <p class="service-lead">{c.lead}</p>
 
-      {c.sections.map((section, si) => (
-        <section class="service-block" aria-labelledby={`section-${si + 1}`}>
-          <h2 id={`section-${si + 1}`}>{section.title}</h2>
-          {section.intro && <p class="section-intro">{section.intro}</p>}
-          <ol class="question-list">
-            {section.items.map(({ t: title, d }, i) => (
-              <li>
-                <span class="card-index mono">{String(i + 1).padStart(2, '0')}</span>
-                <h3>{title}</h3>
-                <p>{d}</p>
-              </li>
-            ))}
-          </ol>
-        </section>
-      ))}
-
-      <AuthorBox lang={lang} />
+  <section class="hero dark grid-bg rc-hero">
+    <Blueprint />
+    <div class="container hero-inner rc-hero-inner">
+      <div>
+        <a class="rc-back mono" href={partnersHref(lang)}>← {c.back}</a>
+        <p class="eyebrow mono">{c.eyebrow}</p>
+        <h1>{c.title}</h1>
+        <p class="hero-lead">{c.lead}</p>
+        <ul class="rc-promises mono">{c.promises.map((p) => <li>{p}</li>)}</ul>
+        <div class="hero-ctas">
+          <a class="btn" href="#contact">{c.ctaPrimary}</a>
+          <a class="btn btn-ghost" href="#deal">{c.ctaSecondary}</a>
+        </div>
+      </div>
+      <figure class="rc-portrait">
+        <Image src={portrait} alt={c.portraitAlt} widths={[320, 640]} sizes="(max-width: 880px) 220px, 320px" />
+        <figcaption class="mono">Fabian Kramer · Salesforce Enterprise Architect</figcaption>
+      </figure>
     </div>
-  </article>
+  </section>
+
+  <section class="proof" aria-label={lang === 'de' ? 'Kennzahlen' : 'Key figures'}>
+    <div class="container">
+      <ul class="proof-list rc-facts">
+        {c.facts.map((f) => (
+          <li>
+            <span class="proof-value">{f.value}</span>
+            <span class="proof-label mono">{f.label}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="fit">
+    <div class="container">
+      <p class="label mono">{c.fit.label}</p>
+      <h2>{c.fit.title}</h2>
+      <p class="section-intro">{c.fit.intro}</p>
+      <div class="compare rc-compare">
+        <div class="compare-col compare-with">
+          <h3 class="compare-head mono">{c.fit.yesTitle}</h3>
+          <ul>{c.fit.yes.map((item) => <li>{item}</li>)}</ul>
+        </div>
+        <div class="compare-col">
+          <h3 class="compare-head mono">{c.fit.noTitle}</h3>
+          <ul>{c.fit.no.map((item) => <li>{item}</li>)}</ul>
+          <p class="rc-note">{c.fit.noNote}</p>
+        </div>
+      </div>
+      <div class="focus">
+        <p class="label mono">{c.fit.tagsLabel}</p>
+        <ul class="tags">{c.fit.tags.map((tag) => <li>{tag}</li>)}</ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" id="deal">
+    <div class="container">
+      <p class="label mono">{c.deal.label}</p>
+      <h2>{c.deal.title}</h2>
+      <p class="section-intro">{c.deal.intro}</p>
+      <div class="rc-deal">
+        <div class="rc-deal-col rc-give">
+          <h3 class="compare-head mono">{c.deal.giveTitle}</h3>
+          <ul>
+            {c.deal.give.map((p) => (
+              <li><RecruiterIcon name={p.icon} /><div><strong>{p.t}</strong><span>{p.d}</span></div></li>
+            ))}
+          </ul>
+        </div>
+        <div class="rc-deal-swap" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none" stroke="#1BA1E2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 18h28l-7-7M38 30H10l7 7" /></svg>
+        </div>
+        <div class="rc-deal-col">
+          <h3 class="compare-head mono">{c.deal.needTitle}</h3>
+          <ul>
+            {c.deal.need.map((p) => (
+              <li><RecruiterIcon name={p.icon} /><div><strong>{p.t}</strong><span>{p.d}</span></div></li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section dark grid-bg rc-exclusive" id="exclusive">
+    <div class="container">
+      <p class="label mono">{c.exclusive.label}</p>
+      <h2>{c.exclusive.title}</h2>
+      <p class="section-intro">{c.exclusive.intro}</p>
+      <div class="rc-flows">
+        <figure class="rc-flow rc-flow-bad">
+          <figcaption class="mono">{double.head}</figcaption>
+          <div class="rc-node">{double.me}</div>
+          <div class="rc-split" aria-hidden="true"></div>
+          <div class="rc-pair"><div class="rc-node">{double.a}</div><div class="rc-node">{double.b}</div></div>
+          <div class="rc-join" aria-hidden="true"></div>
+          <div class="rc-node rc-client">{double.client}</div>
+          <div class="rc-line" aria-hidden="true"></div>
+          <div class="rc-result">✕ {double.result}</div>
+        </figure>
+        <figure class="rc-flow rc-flow-good">
+          <figcaption class="mono">{single.head}</figcaption>
+          <div class="rc-node">{single.me}</div>
+          <div class="rc-line rc-line-long" aria-hidden="true"></div>
+          <div class="rc-node rc-node-accent">{single.a}</div>
+          <div class="rc-line rc-line-long" aria-hidden="true"></div>
+          <div class="rc-node rc-client">{single.client}</div>
+          <div class="rc-line" aria-hidden="true"></div>
+          <div class="rc-result">✓ {single.result}</div>
+        </figure>
+      </div>
+      <ol class="rc-rules">
+        {c.exclusive.rules.map((r, i) => (
+          <li>
+            <span class="card-index mono">{String(i + 1).padStart(2, '0')}</span>
+            <h3>{r.t}</h3>
+            <p>{r.d}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="section" id="process">
+    <div class="container">
+      <p class="label mono">{c.process.label}</p>
+      <h2>{c.process.title}</h2>
+      <ol class="steps rc-steps">
+        {c.process.steps.map((s, i) => (
+          <li>
+            <RecruiterIcon name={s.icon} />
+            <span class="step-no mono">{String(i + 1).padStart(2, '0')}</span>
+            <h3>{s.t}</h3>
+            <p>{s.d}</p>
+          </li>
+        ))}
+      </ol>
+      <div class="rc-terms">
+        <p class="label mono">{c.process.termsLabel}</p>
+        <div class="rc-terms-grid">
+          {c.process.terms.map((term) => (
+            <div><h3>{term.t}</h3><p>{term.d}</p></div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="contact dark grid-bg" id="contact">
     <Blueprint />
     <div class="container contact-inner">
