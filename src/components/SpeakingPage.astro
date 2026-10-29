@@ -10,7 +10,8 @@ import speaking from '../assets/speaking.jpg';
 import { en } from '../i18n/en';
 import { de } from '../i18n/de';
 import { site, contactHref, contactExternal } from '../site';
-import { talks, moreAppearances, copy, type Appearance } from '../data/speaking';
+import { talks, moreAppearances, topicIcons, copy, type Appearance } from '../data/speaking';
+import Icon from './Icon.astro';
 import { homeHref, localHref } from '../lib/paths';
 
 interface Props {
@@ -30,6 +31,15 @@ const formatDate = (date: string) =>
   date.length === 4
     ? date
     : new Date(date).toLocaleDateString(lang === 'de' ? 'de-DE' : 'en-GB', { month: 'long', year: 'numeric' });
+
+const appearances = talks.flatMap((talk) => talk.appearances.map((a) => ({ a, talk })));
+const cities = new Set(appearances.map(({ a }) => a.city.en));
+const stats = [
+  { value: talks.length, text: c.stats.talks },
+  { value: appearances.length, text: c.stats.stages },
+  { value: cities.size, text: c.stats.cities },
+  { value: talks.filter((talk) => talk.recording).length, text: c.stats.recordings },
+];
 
 const person = { '@type': 'Person', '@id': `${new URL(base, Astro.site).href}#person`, name: site.person };
 const image = new URL(speaking.src, Astro.site).href;
@@ -87,52 +97,71 @@ const schema = {
       </div>
 
       <ReadingGrid t={t} headings={[{ slug: 'talks', text: c.talksTitle }, { slug: 'more', text: c.moreTitle }, { slug: 'topics', text: c.topicsTitle }]} cta={c.formSubject}>
+        <div class="sp-stats" role="list">
+          {stats.map((s) => <div class="sp-stat" role="listitem"><span class="sp-stat-value">{s.value}</span><span class="sp-stat-text">{s.text}</span></div>)}
+        </div>
+
         <section class="service-block" aria-labelledby="talks">
           <h2 id="talks">{c.talksTitle}</h2>
-          <ol class="talk-list">
+          {/* One talk at a time: radio tabs without script, as on the masterclass hubs. */}
+          <div class="sp-tabs">
+            {talks.map((_, i) => <input type="radio" name="sp-tab" id={`sp-tab-${i}`} class="visually-hidden" checked={i === 0} />)}
+            <div class="mc-tab-bar">
+              {talks.map((talk, i) => <label for={`sp-tab-${i}`}>{talk.short} <span class="mono">{talk.appearances.length}×</span></label>)}
+            </div>
             {talks.map((talk) => (
-              <li class="talk">
+              <article class="mc-tab-panel sp-panel">
                 <h3>{talk.title}</h3>
                 {talk.coSpeaker && <p class="talk-with mono">{c.with} {talk.coSpeaker}</p>}
-                <p>{talk.abstract[lang]}</p>
-                <ul class="service-list check">{talk.points[lang].map((p) => <li>{p}</li>)}</ul>
-                <p class="label mono">{c.stagesLabel}</p>
-                <ul class="talk-stages">
-                  {talk.appearances.map((a) => (
-                    <li>
-                      {a.url ? <a href={a.url} {...ext}>{a.event}<ExternalMark label={t.nav.externalTab} /></a> : <strong>{a.event}</strong>}
-                      <span class="mono"> · {a.city[lang]} · {formatDate(a.date)}</span>
-                    </li>
-                  ))}
-                </ul>
-                {talk.recording && (
-                  <a class="text-link" href={talk.recording.url} {...ext}>{talk.recording.label[lang]}<ExternalMark label={t.nav.externalTab} /></a>
-                )}
-              </li>
+                <div class="sp-panel-grid">
+                  <p class="sp-abstract">{talk.abstract[lang]}</p>
+                  <div class="sp-panel-side">
+                    <p class="label mono">{c.stagesLabel}</p>
+                    <ol class="sp-stops">
+                      {talk.appearances.map((a) => (
+                        <li>
+                          {a.url ? <a href={a.url} {...ext}>{a.event}<ExternalMark label={t.nav.externalTab} /></a> : <strong>{a.event}</strong>}
+                          <span class="mono">{a.city[lang]} · {formatDate(a.date)}</span>
+                        </li>
+                      ))}
+                    </ol>
+                    {talk.recording && (
+                      <a class="sp-play" href={talk.recording.url} {...ext}><Icon name="play" class="sp-play-icon" /><span>{talk.recording.label[lang]}<ExternalMark label={t.nav.externalTab} /></span></a>
+                    )}
+                  </div>
+                </div>
+                <p class="label mono">{c.pointsLabel}</p>
+                <ol class="sp-points">{talk.points[lang].map((p, i) => <li><span class="mono">0{i + 1}</span>{p}</li>)}</ol>
+              </article>
             ))}
-          </ol>
+            <style is:inline set:html={talks.map((_, i) => `#sp-tab-${i}:checked ~ .mc-tab-bar label[for="sp-tab-${i}"] { border-color: var(--cyan); color: var(--cyan-dark); } #sp-tab-${i}:focus-visible ~ .mc-tab-bar label[for="sp-tab-${i}"] { outline: 2px solid var(--cyan); outline-offset: 2px; } #sp-tab-${i}:checked ~ .mc-tab-panel:nth-of-type(${i + 1}) { display: block; }`).join('\n')} />
+          </div>
         </section>
 
         <section class="service-block" aria-labelledby="more">
           <h2 id="more">{c.moreTitle}</h2>
-          <ul class="talk-more">
+          <ul class="sp-more">
             {moreAppearances.map((m) => (
-              <li class="card">
-                <h3>{m.title[lang]}</h3>
-                <p>{m.text[lang]}</p>
-                {m.url && m.linkLabel && (
-                  <a class="text-link" href={m.url} {...ext}>{m.linkLabel[lang]}<ExternalMark label={t.nav.externalTab} /></a>
-                )}
+              <li>
+                <Icon name={m.icon} class="sp-more-icon" />
+                <div>
+                  <h3>{m.title[lang]}</h3>
+                  <p>{m.text[lang]}</p>
+                  {m.url && m.linkLabel && (
+                    <a class="text-link" href={m.url} {...ext}>{m.linkLabel[lang]}<ExternalMark label={t.nav.externalTab} /></a>
+                  )}
+                </div>
               </li>
             ))}
           </ul>
         </section>
 
-        <section class="service-block results" aria-labelledby="topics">
+        <section class="service-block" aria-labelledby="topics">
           <h2 id="topics">{c.topicsTitle}</h2>
           <p>{c.topicsText}</p>
-          <ul class="service-list check">{c.topics.map((topic) => <li>{topic}</li>)}</ul>
+          <ul class="sp-topics">{c.topics.map((topic, i) => <li><Icon name={topicIcons[i]} class="sp-topic-icon" /><span>{topic}</span></li>)}</ul>
           <p>{c.formatsText}</p>
+          <ul class="sp-formats">{c.formats.map((f) => <li class="mono">{f}</li>)}</ul>
         </section>
       </ReadingGrid>
     </div>
