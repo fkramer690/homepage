@@ -1,0 +1,40 @@
+name: Stale articles
+
+# Monthly list of blog articles and masterclass chapters whose prices, Flex Credits,
+# deadlines or release dates are due for a check (scripts/stale-articles.mjs).
+# Keeps one open issue up to date instead of opening a new one each month.
+on:
+  schedule:
+    - cron: '0 6 3 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: List due articles
+        run: node scripts/stale-articles.mjs > /tmp/stale.md
+      - name: Create or update the issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          title="Artikel prüfen: Preise und Fristen"
+          if grep -q '^- \[ \]' /tmp/stale.md; then :; else
+            echo "Nothing due."
+            exit 0
+          fi
+          gh label create artikel-pruefen --color FBCA04 --description "Preise und Fristen in Artikeln prüfen" 2>/dev/null || true
+          number=$(gh issue list --label artikel-pruefen --state open --json number --jq '.[0].number')
+          if [ -n "$number" ]; then
+            gh issue edit "$number" --body-file /tmp/stale.md
+          else
+            gh issue create --title "$title" --label artikel-pruefen --assignee fkramer690 --body-file /tmp/stale.md
+          fi

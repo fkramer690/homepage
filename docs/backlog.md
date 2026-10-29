@@ -35,8 +35,8 @@ Grundlage: Jev-Lauf (jev-1.14.0) über Start, EN, Leistungen, Freiberufler-Seite
 | J3 | Kennzahl „8 · 32“ als „32 Entwickler in 8 Teams“ ausschreiben | mittel | klein | Claude | PR |
 | J4 | Kundenlogos mit width und height gegen Layout-Sprünge (92 Bilder auf / und /en) | klein | klein | Claude | PR |
 | J5 | EN-Footer: Impressum und Datenschutz als deutschsprachig kennzeichnen | klein | klein | Claude | PR |
-| J6 | Faktencheck der 17 Artikel mit unbelegten Preisen, Lizenzen oder Fristen: Quelle und „Stand“-Datum je Aussage | hoch | groß | Claude recherchiert, Fabian bestätigt | offen |
-| J7 | Review-Rhythmus für zeitkritische Artikel (82 % veralten laut Jev in 12 Monaten): Feld „geprüft am“ plus Erinnerung | hoch | mittel | Claude | offen |
+| J6 | Faktencheck der 17 Artikel mit „unbelegten“ Preisen und Fristen. Ergebnis der Vorprüfung: Quellen sind verlinkt, Beträge über alle Artikel konsistent (Salesforce nennt € und $ mit denselben Zahlen); Jev folgt keinen Links. Nur noch Stichproben, sobald salesforce.com im Netzwerk freigegeben ist | mittel | mittel | Claude | Stichprobe offen |
+| J7 | Review-Rhythmus für zeitkritische Artikel (82 % veralten laut Jev in 12 Monaten): `scripts/stale-articles.mjs` plus monatlicher Workflow, der ein Issue „Artikel prüfen“ pflegt (Preise älter als 6 Monate, verstrichene Fristen und Releases); geprüft = `updatedDate` setzen | hoch | mittel | Claude | PR |
 | J8 | Kundenstimmen und Ergebnisse je Referenz (= Weitere Ideen 4 und 11), stärkster Hebel für Vertrauen | hoch | mittel | Fabian liefert, Claude baut ein | wartet auf Fabian |
 | J9 | Blog-Übersicht /blog und /en/blog (je ca. 690 KB HTML, gzip übertragen nur ca. 105 KB): Kartengrafiken außerhalb des Bildschirms nicht rendern (content-visibility) | klein | klein | Claude | PR |
 | J10 | Ein klarer nächster Schritt auf der Leistungsübersicht (Jev 0,35; bisher kein Button). Die Freiberufler-Seite hat bereits Buttons im Hero und Kontaktbereich | mittel | klein | Claude | PR |
