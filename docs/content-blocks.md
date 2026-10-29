@@ -126,6 +126,19 @@ fall: Es fehlt Awareness | Ein Vertriebsteam weiß nicht, wofür die Daten gebra
 ```
 ````
 
+Variant `treppe` (staircase), approved by Fabian 2026-10-29 for the maturity stages in DevOps chapter 1: the tiles rise in equal steps, the risk sits in its own row below so the steps stay proportional. Each stage `Number | Name | Subtitle | Description | Risk` (the subtitle is a short mono line such as the chapters), a trailing `*` gives the tile a grey background. Optional zero to three bands `band: 1-2 | Text` below the risk row (a trailing `*` makes the band cyan), then the cases as above.
+
+````
+```stufen treppe
+1 | Klicks und Change Sets | Kapitel 1 | Im Setup oder per Change Set, von Hand | Überschreiben, keine Historie
+2 | Repository als Ablage | Kapitel 2, 3 | Weiter von Hand, Git ist eine Kopie | Repository und Org laufen auseinander
+3 | Pull Requests mit Prüfung | Kapitel 4, 5, 6 | Review und Validierungs-Deployment je Pull Request | Prüfungen werden umgangen *
+band: 1-2 | Quelle der Wahrheit: die Org
+band: 3-3 | Quelle der Wahrheit: das Repository *
+fall: Von Stufe 2 zu 3 | Die Quelle der Wahrheit wandert ins Repository. | Direkte Änderungen in der Org sind ab dann ein Fehler.
+```
+````
+
 ## 10. Vergleich (without / with)
 
 Two columns like the start page comparison: `ohne: Title` (EN `without:`) with grey crosses, then `mit: Title` (EN `with:`) with cyan ticks and a cyan frame, two to five `- points` each. Approved by Fabian 2026-10-29. Use it for before and after; for a decision use `pro-contra`.

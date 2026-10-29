@@ -87,17 +87,19 @@ Das Problem liegt weniger im Werkzeug als in der Quelle der Wahrheit. Solange di
 
 ## Fünf Reifestufen von Change Sets zur Pipeline
 
-Kaum ein Unternehmen springt von Change Sets direkt zu einer vollautomatischen Pipeline, und das ist auch nicht nötig. Ich ordne Programme in fünf Stufen ein. Jede Stufe hat einen klaren Nutzen, und jede bereitet die nächste vor.
+Kaum ein Unternehmen springt von Change Sets direkt zu einer vollautomatischen Pipeline, und das ist auch nicht nötig. Ich ordne Programme in fünf Stufen ein. Jede Stufe hat einen klaren Nutzen, und jede bereitet die nächste vor. Zwei Übergänge sind in der Praxis die schwierigsten.
 
-| Stufe | Wie Änderungen nach Produktion kommen | Quelle der Wahrheit | Größtes Risiko | Kapitel |
-|---|---|---|---|---|
-| 1. Klicks und Change Sets | im Setup oder per Change Set, von Hand | die Org | Überschreiben, keine Historie | 1 |
-| 2. Repository als Ablage | weiter von Hand, Metadaten werden zusätzlich in Git gesichert | die Org, Git ist eine Kopie | Repository und Org laufen auseinander | 2, 3 |
-| 3. Pull Requests mit Prüfung | Änderungen entstehen im Branch, jeder Pull Request bekommt Review und Validierungs-Deployment | das Repository | Prüfungen werden umgangen, wenn Produktion offen bleibt | 4, 5, 6 |
-| 4. Pipeline bis Produktion | jede Umgebung, auch Produktion, nur noch über die Pipeline, mit Delta-Deployments und Hotfix-Pfad | das Repository | Daten, Konfiguration und Salesforce-Releases bleiben Handarbeit | 7, 8 |
-| 5. Betrieb und Messung | wie Stufe 4, dazu Monitoring, Backups und Kennzahlen | das Repository | Prozess veraltet, wenn ihn niemand verantwortet | 9, 10 |
-
-Zwei Stellen in dieser Tabelle sind in der Praxis die schwierigsten. Der Schritt von Stufe 2 zu 3 verschiebt die Quelle der Wahrheit von der Org ins Repository. Ab dann ist jede Änderung, die direkt in einer gemeinsamen Org entsteht, ein Fehler im Prozess. Und der Schritt von 3 zu 4 schließt die Hintertür: Solange jemand mit Admin-Rechten in Produktion deployen darf, ist die Pipeline eine Empfehlung.
+```stufen treppe
+1 | Klicks und Change Sets | Kapitel 1 | Im Setup oder per Change Set, von Hand | Überschreiben, keine Historie
+2 | Repository als Ablage | Kapitel 2, 3 | Weiter von Hand, Metadaten werden zusätzlich in Git gesichert; Git ist eine Kopie | Repository und Org laufen auseinander
+3 | Pull Requests mit Prüfung | Kapitel 4, 5, 6 | Änderungen entstehen im Branch, jeder Pull Request bekommt Review und Validierungs-Deployment | Prüfungen werden umgangen, wenn Produktion offen bleibt *
+4 | Pipeline bis Produktion | Kapitel 7, 8 | Jede Umgebung, auch Produktion, nur noch über die Pipeline, mit Delta-Deployments und Hotfix-Pfad | Daten, Konfiguration und Salesforce-Releases bleiben Handarbeit *
+5 | Betrieb und Messung | Kapitel 9, 10 | Wie Stufe 4, dazu Monitoring, Backups und Kennzahlen | Prozess veraltet, wenn ihn niemand verantwortet *
+band: 1-2 | Quelle der Wahrheit: die Org
+band: 3-5 | Quelle der Wahrheit: das Repository *
+fall: Von Stufe 2 zu 3 | Der Schritt verschiebt die Quelle der Wahrheit von der Org ins Repository. | Ab dann ist jede Änderung, die direkt in einer gemeinsamen Org entsteht, ein Fehler im Prozess.
+fall: Von Stufe 3 zu 4 | Der Schritt schließt die Hintertür. | Solange jemand mit Admin-Rechten in Produktion deployen darf, ist die Pipeline eine Empfehlung.
+```
 
 Das Validierungs-Deployment ist das erste Werkzeug, das sich schon in Stufe 3 bezahlt macht.
 

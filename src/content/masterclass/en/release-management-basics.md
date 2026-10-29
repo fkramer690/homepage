@@ -87,17 +87,19 @@ The core problem is the source of truth more than the tool. As long as the org i
 
 ## Five maturity stages from change sets to a pipeline
 
-Hardly any company jumps straight from change sets to a fully automated pipeline, and it does not have to. I place programmes in five stages. Each stage has a clear benefit, and each one prepares the next.
+Hardly any company jumps straight from change sets to a fully automated pipeline, and it does not have to. I place programmes in five stages. Each stage has a clear benefit, and each one prepares the next. Two transitions are the hardest in practice.
 
-| Stage | How changes reach production | Source of truth | Biggest risk | Chapters |
-|---|---|---|---|---|
-| 1. Clicks and change sets | in Setup or by change set, by hand | the org | overwrites, no history | 1 |
-| 2. Repository as a backup | still by hand, metadata is also saved to Git | the org, Git is a copy | repository and org drift apart | 2, 3 |
-| 3. Pull requests with checks | changes are built in a branch, every pull request gets a review and a validation deployment | the repository | checks get bypassed while production stays open | 4, 5, 6 |
-| 4. Pipeline to production | every environment, production included, only through the pipeline, with delta deployments and a hotfix path | the repository | data, configuration and Salesforce releases stay manual | 7, 8 |
-| 5. Operations and measurement | as stage 4, plus monitoring, backups and metrics | the repository | the process ages when nobody owns it | 9, 10 |
-
-Two places in this table are the hardest in practice. The step from stage 2 to 3 moves the source of truth from the org into the repository. From then on, every change made directly in a shared org is a process failure. And the step from 3 to 4 closes the back door: as long as someone with admin rights may deploy to production, the pipeline is only a recommendation.
+```stufen treppe
+1 | Clicks and change sets | Chapter 1 | In Setup or by change set, by hand | Overwrites, no history
+2 | Repository as a backup | Chapters 2, 3 | Still by hand, metadata is also saved to Git; Git is a copy | Repository and org drift apart
+3 | Pull requests with checks | Chapters 4, 5, 6 | Changes are built in a branch, every pull request gets a review and a validation deployment | Checks get bypassed while production stays open *
+4 | Pipeline to production | Chapters 7, 8 | Every environment, production included, only through the pipeline, with delta deployments and a hotfix path | Data, configuration and Salesforce releases stay manual *
+5 | Operations and measurement | Chapters 9, 10 | As stage 4, plus monitoring, backups and metrics | The process ages when nobody owns it *
+band: 1-2 | Source of truth: the org
+band: 3-5 | Source of truth: the repository *
+case: From stage 2 to 3 | The step moves the source of truth from the org into the repository. | From then on, every change made directly in a shared org is a process failure.
+case: From stage 3 to 4 | The step closes the back door. | As long as someone with admin rights may deploy to production, the pipeline is only a recommendation.
+```
 
 The validation deployment is the first tool that pays off as early as stage 3.
 
