@@ -1684,4 +1684,5 @@ p.post-series-note { margin: 0.6em 0 0; font-size: 0.95rem; }
 .cm-group { margin-top: 1.6em; }
 .cm-group h3 { margin: 0 0 0.3em; }
 .cm-group-text { color: var(--text-2); margin: 0 0 1em; }
+.cm-group-more { margin: 0.8em 0 0; }
 .cm-articles .mc-overview-title { display: block; font-weight: 600; }
