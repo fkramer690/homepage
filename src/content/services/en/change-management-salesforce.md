@@ -6,10 +6,11 @@ lang: en
 slug: change-management-salesforce
 translationKey: service-change
 contactBrief: change
-order: 7
+section: change-management
+order: 2
 note: "I developed this approach together with Juliane Winterscheid, my cooperation partner for change management. Juliane is Prosci certified."
 notePartner: "Juliane Winterscheid"
-lead: "A new Salesforce release is rolled out quickly. Whether business teams, developers and partners work differently afterwards is another question. I plan the introduction of new processes and standards on the client side following the Prosci approach and the ADKAR model, so they reach daily work and stay there."
+lead: "A new Salesforce release is rolled out quickly. Whether business teams, developers and partners work differently afterwards is another question. Together with Juliane Winterscheid I plan the introduction of new processes and standards following Prosci and ADKAR, so they reach daily work and stay there."
 situations:
   - "Salesforce is live, but parts of the business still work with Excel, email and their own lists."
   - "Training has taken place, yet usage stays low, and nobody can say exactly where it gets stuck."
@@ -51,7 +52,7 @@ faq:
 blogTags: [change management, Partner governance, Governance, DevOps training, Release management]
 ---
 
-Change management in a Salesforce programme means introducing new processes, standards and releases so that the people who work with them actually use them. That applies to the business teams who do their daily work in Salesforce as much as to the developer teams and implementation partners who are meant to build by common rules. I take on this work on the client side, closely tied to architecture, partner governance and release management, and I follow the Prosci approach.
+Change management in a Salesforce programme means introducing new processes, standards and releases so that the people who work with them actually use them. That applies to the business teams who do their daily work in Salesforce as much as to the developer teams and implementation partners who are meant to build by common rules. Juliane Winterscheid and I take on this work on the client side: Juliane guides the people through the change, I make sure architecture, partner governance and releases fit with it. Wherever this page says "we", it means the two of us. We follow the Prosci approach.
 
 ## Why do new processes not reach daily work?
 
@@ -81,7 +82,7 @@ Salesforce helps with measuring. Whether a new process is used shows in reports 
 
 In my largest programme, more than 30 developers worked in eight streams with five implementation partners. Common standards for naming conventions, one automation per object, test coverage and an [object ownership matrix](../../blog/salesforce-object-ownership-matrix/) took about three months until people lived by them.
 
-The first version covered around 80 percent of the cases. The edge cases were added step by step as they came up in the project. Later we raised new topics with lead time in regular [Center of Excellence calls](../../blog/salesforce-center-of-excellence-cadence/), before they turned into problems. At some point hardly any new edge cases came up. I describe the rules for several partners under [partner governance](../partner-governance/).
+The first version covered around 80 percent of the cases. The edge cases were added step by step as they came up in the project. Later we raised new topics in the programme with lead time in regular [Center of Excellence calls](../../blog/salesforce-center-of-excellence-cadence/), before they turned into problems. At some point hardly any new edge cases came up. I describe the rules for several partners under [partner governance](../partner-governance/).
 
 ## What changes for business teams?
 
@@ -89,4 +90,4 @@ With a clean release process, releases become smaller and more frequent. For bus
 
 Prosci and ADKAR are registered trademarks of Prosci, Inc. The Prosci certification is held by Juliane Winterscheid, not by FK Solution Design, and FK Solution Design is not a Prosci partner. This page describes how we apply elements of the approach in Salesforce programmes.
 
-If a rollout is coming up or new processes are not being used, [write to me](#contact) or read more [about me](../../#about).
+If a rollout is coming up or new processes are not being used, [write to me](#contact), and I will bring Juliane into the first call. You can read more [about me](../../#about).

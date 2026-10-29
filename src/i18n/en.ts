@@ -7,7 +7,6 @@ export const en = {
   },
   nav: {
     services: 'Services',
-    change: 'Change management',
     references: 'References',
     about: 'About',
     blog: 'Blog',
@@ -34,17 +33,6 @@ export const en = {
     { value: '25', label: 'Salesforce certifications, 8 architect' },
     { value: '0', label: 'ties to vendors or partners' },
   ],
-  // Start page: the two pillars and the joint offer, directly below the key figures.
-  pillars: {
-    label: 'Focus areas',
-    title: 'Two specialisms, one joint offer',
-    intro: 'I am responsible for the Salesforce architecture, Juliane Winterscheid for the change in people. Where both meet, we work together.',
-    items: [
-      { who: 'Fabian Kramer', icon: 'architecture', title: 'Salesforce architecture for manufacturers', text: 'Target architecture, partner governance, DevOps and integration for service, Field Service and B2B sales, on the client side.', more: 'See services' },
-      { who: 'Juliane Winterscheid', icon: 'change', title: 'Change management', text: 'Basics, models and hands-on support for change, so that managers and teams adopt new ways of working.', more: 'Change management area' },
-      { who: 'Together', icon: 'handshake', title: 'Change management in Salesforce programmes', text: 'Architecture and adoption planned as one: release plan, key users, training and measurement fit together.', more: 'See the joint service' },
-    ],
-  },
   role: {
     label: 'The role',
     title: 'Somebody has to own the big picture.',
@@ -84,8 +72,8 @@ export const en = {
         text: 'Target architecture and solution design for complex Salesforce landscapes with several clouds, portals and integrations.',
       },
       {
-        title: 'Partner steering & governance',
-        text: 'One common governance and release framework across several implementation partners – and someone who actually reviews the deliveries.',
+        title: 'Change management',
+        text: 'Introduce new processes and releases so that business teams, developers and partners use them in daily work, based on Prosci and ADKAR.',
       },
       {
         title: 'DevOps & release management',
@@ -104,8 +92,8 @@ export const en = {
         text: 'Should this be built in Salesforce at all? Best-of-breed alternatives and license costs, assessed before the decision is made.',
       },
       {
-        title: 'Change management',
-        text: 'Embed new processes and Salesforce in the daily work of the business teams.',
+        title: 'Partner steering & governance',
+        text: 'One common governance and release framework across several implementation partners – and someone who actually reviews the deliveries.',
       },
     ],
     more: 'Learn more',
@@ -116,7 +104,7 @@ export const en = {
     moreItems: [
       { order: 5, text: 'Plan and steer programmes, coordinate nearshore teams.' },
       { order: 6, text: 'Does it belong in Salesforce? Alternatives and license costs assessed first.' },
-      { order: 7, text: 'Embed new processes and Salesforce in the daily work of the business teams.' },
+      { order: 7, text: 'Steer several implementation partners by common rules and review their deliveries.' },
     ],
     focusLabel: 'Focus areas',
     focus: [
@@ -323,7 +311,7 @@ export const en = {
         linkedin: 'https://www.linkedin.com/in/juliane-winterscheid-4794b8115/',
         photo: 'juliane-winterscheid',
         photoAlt: 'Juliane Winterscheid presenting to a team',
-        service: 7,
+        service: 2,
         serviceLink: 'Change management with me',
         profile: 'partners/juliane-winterscheid/',
         profileLink: 'Profile and references',

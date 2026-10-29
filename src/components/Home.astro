@@ -10,14 +10,12 @@ import FloatingContact from './FloatingContact.astro';
 import StructuredData from './StructuredData.astro';
 import { Image } from 'astro:assets';
 import portrait from '../assets/portrait.png';
-import julianePortrait from '../assets/partners/juliane-winterscheid-portrait.jpg';
 import speaking from '../assets/speaking.jpg';
 import { en } from '../i18n/en';
 import { de } from '../i18n/de';
 import { site, contactHref, contactExternal } from '../site';
 import { getServices, serviceHref, servicesIndex } from '../lib/services';
-import { homeHref, localHref, partnersHref } from '../lib/paths';
-import { changePaths } from '../data/change-management';
+import { homeHref, partnersHref } from '../lib/paths';
 import { masterclassesIndex } from '../lib/masterclass';
 import { getMasterclasses } from '../lib/masterclasses';
 import { questions, questionPaths } from '../data/questions';
@@ -47,11 +45,7 @@ const stepIcons = ['analyse', 'design', 'steer', 'implement'];
 // Photo per approach step; versions chosen so shirt and counterpart change from step to step.
 const stepPhotos: PhotoKey[] = ['07-rundgang-produktion-v02', '02-workshop-whiteboard-v03', '09-coaching-bildschirm-v01', '10-projektabschluss-v02'];
 // Icons of the services (by order).
-const serviceIcons = ['architecture', 'partners', 'pipeline', 'integration', 'team', 'license', 'change'];
-// The three entries of the pillars section: Fabian's architecture, Juliane's change
-// management and the joint service (order 7), each with the portraits of who is behind it.
-const pillarLinks = ['#services', localHref(lang, changePaths[lang]), serviceLinks.get(7) ?? servicesIndex(lang)];
-const pillarPeople = [[portrait], [julianePortrait], [julianePortrait, portrait]];
+const serviceIcons = ['architecture', 'change', 'pipeline', 'integration', 'team', 'license', 'partners'];
 ---
 <Base lang={lang} title={t.meta.title} description={t.meta.description} alternates={{ en: enHome, de: deHome }}>
   <StructuredData slot="head" t={t} url={new URL(home, Astro.site).href} />
@@ -86,31 +80,7 @@ const pillarPeople = [[portrait], [julianePortrait], [julianePortrait, portrait]
       </div>
     </section>
 
-    <section class="section" id="pillars">
-      <div class="container">
-        <p class="label mono">{t.pillars.label}</p>
-        <h2>{t.pillars.title}</h2>
-        <p class="section-intro">{t.pillars.intro}</p>
-        <ul class="cards pillars">
-          {t.pillars.items.map((p, i) => (
-            <li class="card card-link">
-              <a href={pillarLinks[i]}>
-                <span class="card-top">
-                  <Icon name={p.icon} class="card-icon" />
-                  <span class="pillar-people">{pillarPeople[i].map((img) => <Image src={img} alt="" width={44} height={44} densities={[1, 2]} />)}</span>
-                </span>
-                <span class="pillar-who mono">{p.who}</span>
-                <h3>{p.title}</h3>
-                <p>{p.text}</p>
-                <span class="card-more mono">{p.more} →</span>
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </section>
-
-    <section class="section alt" id="role">
+    <section class="section" id="role">
       <div class="container">
         <p class="label mono">{t.role.label}</p>
         <h2>{t.role.title}</h2>
@@ -135,7 +105,7 @@ const pillarPeople = [[portrait], [julianePortrait], [julianePortrait, portrait]
       </div>
     </section>
 
-    <section class="section" id="services">
+    <section class="section alt" id="services">
       <div class="container">
         <p class="label mono">{t.services.label}</p>
         <h2>{t.services.title}</h2>
@@ -185,7 +155,7 @@ const pillarPeople = [[portrait], [julianePortrait], [julianePortrait, portrait]
       </div>
     </section>
 
-    <section class="section alt" id="references">
+    <section class="section" id="references">
       <div class="container">
         <p class="label mono">{t.references.label}</p>
         <div class="slider-head">
@@ -238,7 +208,7 @@ const pillarPeople = [[portrait], [julianePortrait], [julianePortrait, portrait]
       </div>
     </section>
 
-    <section class="section" id="approach">
+    <section class="section alt" id="approach">
       <div class="container">
         <p class="label mono">{t.approach.label}</p>
         <h2>{t.approach.title}</h2>
@@ -257,7 +227,7 @@ const pillarPeople = [[portrait], [julianePortrait], [julianePortrait, portrait]
       </div>
     </section>
 
-    <section class="section alt" id="masterclasses">
+    <section class="section" id="masterclasses">
       <div class="container">
         <div class="mc-home">
           <div>
@@ -281,7 +251,7 @@ const pillarPeople = [[portrait], [julianePortrait], [julianePortrait, portrait]
       </div>
     </section>
 
-    <section class="section" id="about">
+    <section class="section alt" id="about">
       <div class="container about">
         <div class="about-main">
           <p class="label mono">{t.about.label}</p>
@@ -309,7 +279,7 @@ const pillarPeople = [[portrait], [julianePortrait], [julianePortrait, portrait]
       </div>
     </section>
 
-    <section class="section alt" id="first-call">
+    <section class="section" id="first-call">
       <div class="container">
         <p class="label mono">{t.firstCall.label}</p>
         <h2>{t.firstCall.title}</h2>

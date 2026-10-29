@@ -4,8 +4,6 @@ import type { Dict } from '../i18n/en';
 import ExternalMark from './ExternalMark.astro';
 import { contactHref, contactExternal } from '../site';
 import { masterclassesIndex } from '../lib/masterclass';
-import { localHref } from '../lib/paths';
-import { changePaths } from '../data/change-management';
 
 interface Props {
   t: Dict;
@@ -26,7 +24,6 @@ const anchor = (id: string) => `${home}#${id}`;
     </a>
     <nav class="main-nav" aria-label={t.lang === 'de' ? 'Hauptnavigation' : 'Main navigation'}>
       <a href={anchor('services')}>{t.nav.services}</a>
-      <a href={localHref(t.lang, changePaths[t.lang])}>{t.nav.change}</a>
       <a href={anchor('references')}>{t.nav.references}</a>
       <a href={anchor('about')}>{t.nav.about}</a>
       <a href={`${home}blog/`}>{t.nav.blog}</a>

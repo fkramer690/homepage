@@ -9,7 +9,6 @@ export const de: Dict = {
   },
   nav: {
     services: 'Leistungen',
-    change: 'Change Management',
     references: 'Referenzen',
     about: 'Über mich',
     blog: 'Blog',
@@ -36,16 +35,6 @@ export const de: Dict = {
     { value: '25', label: 'Salesforce-Zertifikate, 8 Architect' },
     { value: '0', label: 'Bindungen an Hersteller oder Partner' },
   ],
-  pillars: {
-    label: 'Schwerpunkte',
-    title: 'Zwei Spezialgebiete, ein gemeinsames Angebot',
-    intro: 'Ich verantworte die Salesforce-Architektur, Juliane Winterscheid die Veränderung bei den Menschen. Wo beides zusammenkommt, arbeiten wir gemeinsam.',
-    items: [
-      { who: 'Fabian Kramer', icon: 'architecture', title: 'Salesforce-Architektur für Hersteller', text: 'Zielarchitektur, Partnersteuerung, DevOps und Integration für Service, Field Service und B2B-Vertrieb, auf Kundenseite.', more: 'Zu den Leistungen' },
-      { who: 'Juliane Winterscheid', icon: 'change', title: 'Change Management', text: 'Grundlagen, Modelle und Begleitung von Veränderungen, damit Führungskräfte und Teams neue Arbeitsweisen annehmen.', more: 'Zum Bereich Change Management' },
-      { who: 'Gemeinsam', icon: 'handshake', title: 'Change Management in Salesforce-Programmen', text: 'Architektur und Akzeptanz aus einer Hand: Release-Plan, Key User, Schulung und Messung greifen ineinander.', more: 'Zur gemeinsamen Leistung' },
-    ],
-  },
   role: {
     label: 'Die Rolle',
     title: 'Einer muss das Gesamtbild verantworten.',
@@ -85,8 +74,8 @@ export const de: Dict = {
         text: 'Zielarchitektur und Lösungsdesign für komplexe Salesforce-Landschaften mit mehreren Clouds, Portalen und Schnittstellen.',
       },
       {
-        title: 'Partnersteuerung & Governance',
-        text: 'Ein gemeinsames Governance- und Release-Framework über mehrere Implementierungspartner – und jemand, der die Lieferungen tatsächlich prüft.',
+        title: 'Change Management',
+        text: 'Neue Prozesse und Releases so einführen, dass Fachbereiche, Teams und Partner sie im Alltag nutzen, nach Prosci und ADKAR.',
       },
       {
         title: 'DevOps & Release-Management',
@@ -105,8 +94,8 @@ export const de: Dict = {
         text: 'Gehört das überhaupt in Salesforce? Best-of-Breed-Alternativen und Lizenzkosten, bewertet bevor die Entscheidung fällt.',
       },
       {
-        title: 'Change Management',
-        text: 'Neue Prozesse und Salesforce im Alltag der Fachbereiche verankern.',
+        title: 'Partnersteuerung & Governance',
+        text: 'Ein gemeinsames Governance- und Release-Framework über mehrere Implementierungspartner – und jemand, der die Lieferungen tatsächlich prüft.',
       },
     ],
     more: 'Mehr erfahren',
@@ -117,7 +106,7 @@ export const de: Dict = {
     moreItems: [
       { order: 5, text: 'Programme planen und steuern, Nearshore-Teams koordinieren.' },
       { order: 6, text: 'Gehört das in Salesforce? Alternativen und Lizenzkosten vorher bewertet.' },
-      { order: 7, text: 'Neue Prozesse und Salesforce im Alltag der Fachbereiche verankern.' },
+      { order: 7, text: 'Mehrere Implementierungspartner nach gemeinsamen Regeln steuern und ihre Lieferungen prüfen.' },
     ],
     focusLabel: 'Schwerpunkte',
     focus: [
@@ -323,7 +312,7 @@ export const de: Dict = {
         linkedin: 'https://www.linkedin.com/in/juliane-winterscheid-4794b8115/',
         photo: 'juliane-winterscheid',
         photoAlt: 'Juliane Winterscheid präsentiert vor einem Team',
-        service: 7,
+        service: 2,
         serviceLink: 'Change Management bei mir',
         profile: 'partner/juliane-winterscheid/',
         profileLink: 'Profil und Referenzen',
