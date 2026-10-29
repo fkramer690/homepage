@@ -109,4 +109,4 @@ Platform changes are part of release management too. Each Salesforce release, su
 
 ## How does this fit with several partners?
 
-A shared release process is the base for steering several implementation partners. If every partner deploys in its own way, no governance framework will hold. That is why DevOps usually goes together with [partner governance](../partner-governance/). If your releases cost more time than they should, [send me a message](#contact).
+A shared release process is the base for steering several implementation partners. If every partner deploys in its own way, no governance framework will hold. That is why DevOps usually goes together with [partner governance](../partner-governance/).
