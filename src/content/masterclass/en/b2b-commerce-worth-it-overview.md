@@ -46,7 +46,10 @@ If you have one question, jump straight to the matching chapter. If you face the
 
 Salesforce B2B Commerce is the Salesforce shop for business customers. According to [Salesforce Help](https://help.salesforce.com/s/articleView?id=commerce.comm_intro.htm&language=en_US&type=5), you create the store from a template and design it in Experience Builder, while checkout and configuration use standard platform tools. Technically the store is an Experience Cloud site, and its data sits in the same objects as your CRM.
 
+```vertiefung For admins
+title: What does the data model look like?
 The data model in one paragraph, as [Trailhead](https://trailhead.salesforce.com/content/learn/modules/b2b2c-commerce-basics/b2b2c-data-model) describes it: a **buyer account** is a normal account whose contacts are enabled as buyers. **Buyer groups** bundle similar buyer accounts, for example all premium dealers in one country, and connect them to a store. **Entitlement policies** decide which products a buyer group sees, **price books** which prices it gets. The buyer puts products in the **cart**, completes the **checkout**, and the order appears as an **order summary** in the order history. According to the [developer docs](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-import-export-managed-unmanaged.html), an external system can own the lifecycle of that order summary; changes made there must then flow back into Salesforce. For manufacturers with SAP this is the normal case, more on it in chapter 4.
+```
 
 The advantage over a separate shop system is that accounts, contacts, cases and sales data are already in Salesforce. Inside sales sees the same orders as the dealer, and a service agent sees in the case what the customer bought last.
 
@@ -88,12 +91,16 @@ For most manufacturers the Order Management row matters less than expected, beca
 
 What the GMV fee does not cover:
 
-- **Buyer licences.** According to Salesforce, buyers and buyer managers need Customer Community Plus, merchandisers the "B2B and D2C Commerce" licence. The [Experience Cloud for Manufacturing price list](https://www.salesforce.com/manufacturing/cloud/experience-cloud/) shows $35 per member or $15 per login per month, billed annually. Whether member or login is cheaper depends on login days, see [B2B Commerce buyer licences](../../../blog/b2b-commerce-buyer-licences/). How external licences differ from internal ones is in [Salesforce licences: does everyone need a full licence?](../../../blog/salesforce-licences-full-licence-needed/).
-- **Advanced pricing logic** with Revenue Cloud, the topic of chapter 3.
-- **Implementation and ERP integration.** Catalogue, buyer groups, price and stock calls, order handover.
-- **Consumption beyond the included credits.** How Data Cloud and Flex Credits add up is explained in the [costs and tokens](../../ai-salesforce/costs-and-tokens/) chapter of the AI masterclass.
+| Item | What is behind it |
+|---|---|
+| Buyer licences | According to Salesforce, buyers and buyer managers need Customer Community Plus, merchandisers the "B2B and D2C Commerce" licence. The [Experience Cloud for Manufacturing price list](https://www.salesforce.com/manufacturing/cloud/experience-cloud/) shows $35 per member or $15 per login per month, billed annually. Whether member or login is cheaper depends on login days, see [B2B Commerce buyer licences](../../../blog/b2b-commerce-buyer-licences/). How external licences differ from internal ones is in [Salesforce licences: does everyone need a full licence?](../../../blog/salesforce-licences-full-licence-needed/). |
+| Advanced pricing logic | with Revenue Cloud, the topic of chapter 3. |
+| Implementation and ERP integration | Catalogue, buyer groups, price and stock calls, order handover. |
+| Consumption beyond the included credits | How Data Cloud and Flex Credits add up is explained in the [costs and tokens](../../ai-salesforce/costs-and-tokens/) chapter of the AI masterclass. |
 
+```hinweis tipp
 The GMV fee grows with the store's success. Every dealer you move from email into the shop raises the bill. So I always model three years with a rising digital share and the rate as a variable at 1, 2 and 3 percent. The detail is in [B2B Commerce pricing: what the GMV model costs](../../../blog/b2b-commerce-pricing-gmv-model/), and the full calculation with inside sales time and error costs in the [B2B webshop business case for manufacturers](../../../blog/b2b-webshop-business-case-manufacturers/). An assumed scenario there also shows that time savings alone rarely carry a shop. It usually pays off through additional revenue.
+```
 
 ## Portal or shop: what do your dealers need?
 
@@ -120,10 +127,12 @@ Three cases where I would advise against Salesforce B2B Commerce:
 
 Creating a store from the template is the smallest part of the project. The decisions that are expensive to change afterwards are yours:
 
-1. **Who owns prices and stock?** Do dealer prices come from price books in Salesforce or live from SAP conditions? Is stock copied or called live? Chapters 3 and 4 answer this; decide it in writing before the first sprint.
-2. **Which buyer groups exist?** Group by country, dealer tier and brand, never one group per account. The limits are in chapter 2.
-3. **Which store template?** LWR for new stores, a feature-based decision for existing Aura stores.
-4. **Which ERP calls run live?** Price, availability, credit check and order handover need an ERP that answers fast. Settle this with the SAP team before the store design is fixed.
+| Decision | What you clarify |
+|---|---|
+| Who owns prices and stock? | Do dealer prices come from price books in Salesforce or live from SAP conditions? Is stock copied or called live? Chapters 3 and 4 answer this; decide it in writing before the first sprint. |
+| Which buyer groups exist? | Group by country, dealer tier and brand, never one group per account. The limits are in chapter 2. |
+| Which store template? | LWR for new stores, a feature-based decision for existing Aura stores. |
+| Which ERP calls run live? | Price, availability, credit check and order handover need an ERP that answers fast. Settle this with the SAP team before the store design is fixed. |
 
 These four points belong in a short document that you own, not the partner. How I support architecture decisions of this kind on the client side is described under [Salesforce architecture](../../../services/salesforce-architecture/). An independent review of quote and licence plan is part of [make or buy and licences](../../../services/make-or-buy-licences/). Continue with [chapter 2 on catalogue, search and entitlements](../catalog-search-entitlements/); all chapters are on the [overview page](../).
 

@@ -81,7 +81,9 @@ Die dritte Option ist eine Preis-Engine in Salesforce. Die [Salesforce-Hilfe zu 
 
 Zum Budget: Die B2B-Editionen stehen auf "Contact for Pricing", die [Preisseite von Revenue Cloud](https://www.salesforce.com/sales/revenue-lifecycle-management/pricing/) nennt für Revenue Cloud Advanced 200 US-Dollar pro Nutzer und Monat bei jährlicher Abrechnung. Wie viele dieser Nutzerlizenzen ein Store mit externen Käufern braucht, steht auf keiner der beiden Seiten. Diese Frage gehört schriftlich an Salesforce, bevor Sie einen Business Case rechnen.
 
+```hinweis tipp
 Meine Regel: Advanced Pricing lohnt sich, wenn der Vertrieb seine Angebote schon in Revenue Cloud rechnet, wenn Vertragspreise in Salesforce verhandelt werden oder wenn Sie Request for Quote brauchen. Berechnet SAP jeden Kundenpreis und soll das so bleiben, bauen Sie mit Revenue Cloud eine zweite Preis-Engine, die mit SAP übereinstimmen muss. Dann ist der Live-Aufruf einfacher. Die Abwägung im Detail steht in [Advanced Pricing im B2B-Shop](../../../blog/advanced-pricing-b2b-shop-revenue-cloud/). Für Rahmenverträge mit Mengen und Laufzeit, die eher den Absatz planen als den Shoppreis setzen, ist Manufacturing Cloud zuständig; das behandelt das Kapitel [Rahmenverträge und Prognosen](../../manufacturing-cloud/rahmenvertraege-und-prognosen/).
+```
 
 ## Wie wird aus einer Anfrage ein Angebot und daraus eine Bestellung?
 
@@ -137,10 +139,12 @@ Ein Hersteller von Kompressoren verkauft Ersatzteile an 600 Händler in 9 Lände
 
 So würde ich entscheiden:
 
-1. **Preise:** 27 Preisbücher für 9 Länder und 3 Stufen, nachts aus SAP berechnet; jeder Händler sieht genau eines. Die 40 großen Händler bekommen ihren Preis über die Pricing Extension live aus SAP. Kein Advanced Pricing, weil die Preislogik in SAP bleibt.
-2. **Angebote:** RFQ erst in einer zweiten Stufe, wenn die Lizenzfrage geklärt ist; bis dahin geht Projektgeschäft wie heute an den Innendienst.
-3. **Checkout:** nur Purchase-Order-Komponente, Kreditprüfung in `validate` gegen SAP. Bei Zeitüberschreitung nimmt der Shop die Bestellung an, weil SAP den Kredit beim Anlegen des Kundenauftrags ohnehin prüft.
-4. **Nachbestellen:** Add Order to Cart und Bestellvorlagen für alle, CSV-Import für die großen Händler.
+| Thema | Entscheidung |
+|---|---|
+| Preise: | 27 Preisbücher für 9 Länder und 3 Stufen, nachts aus SAP berechnet; jeder Händler sieht genau eines. Die 40 großen Händler bekommen ihren Preis über die Pricing Extension live aus SAP. Kein Advanced Pricing, weil die Preislogik in SAP bleibt. |
+| Angebote: | RFQ erst in einer zweiten Stufe, wenn die Lizenzfrage geklärt ist; bis dahin geht Projektgeschäft wie heute an den Innendienst. |
+| Checkout: | nur Purchase-Order-Komponente, Kreditprüfung in `validate` gegen SAP. Bei Zeitüberschreitung nimmt der Shop die Bestellung an, weil SAP den Kredit beim Anlegen des Kundenauftrags ohnehin prüft. |
+| Nachbestellen: | Add Order to Cart und Bestellvorlagen für alle, CSV-Import für die großen Händler. |
 
 Die Zahlen sind erfunden, um die Methode zu zeigen. Ändern Sie eine Annahme, etwa einen Vertrieb, der schon in Revenue Cloud kalkuliert, kippt Punkt 1 zugunsten von Advanced Pricing.
 

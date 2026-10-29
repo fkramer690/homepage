@@ -46,7 +46,10 @@ Wer nur eine Frage hat, springt direkt in das passende Kapitel. Wer vor der Ents
 
 Salesforce B2B Commerce ist die Shoplösung von Salesforce für Geschäftskunden. Laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?id=commerce.comm_intro.htm&language=en_US&type=5) legen Sie den Store aus einer Vorlage an und gestalten ihn im Experience Builder, Checkout und Konfiguration laufen über Standardwerkzeuge der Plattform. Technisch ist der Store eine Experience-Cloud-Site, und die Daten liegen in denselben Objekten wie Ihr CRM.
 
+```vertiefung Für Admins
+titel: Wie sieht das Datenmodell aus?
 Das Datenmodell in einem Absatz, so wie [Trailhead](https://trailhead.salesforce.com/content/learn/modules/b2b2c-commerce-basics/b2b2c-data-model) es beschreibt: Ein **Buyer Account** ist ein normaler Account, dessen Kontakte als Käufer freigeschaltet werden. **Käufergruppen** (Buyer Groups) bündeln ähnliche Buyer Accounts, etwa alle Premiumhändler eines Landes, und verbinden sie mit einem Store. **Entitlement Policies** legen fest, welche Produkte eine Käufergruppe sieht, **Preisbücher**, welche Preise sie bekommt. Der Käufer legt Produkte in den **Warenkorb**, schließt im **Checkout** ab, und die Bestellung erscheint als **Order Summary** in seiner Historie. Laut [Entwicklerdoku](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-import-export-managed-unmanaged.html) kann ein externes System den Lebenszyklus dieser Order Summary führen, Änderungen dort müssen dann nach Salesforce zurückfließen. Für Hersteller mit SAP ist genau das der Normalfall, mehr dazu in Kapitel 4.
+```
 
 Der Vorteil gegenüber einem fremden Shopsystem liegt darin, dass Accounts, Kontakte, Cases und Vertriebsdaten schon in Salesforce sind. Der Innendienst sieht dieselben Bestellungen wie der Händler, und ein Service-Mitarbeiter sieht im Case, was der Kunde zuletzt gekauft hat.
 
@@ -88,12 +91,16 @@ Für die meisten Hersteller zählt die Zeile Order Management weniger als gedach
 
 Was nicht in der GMV-Gebühr steckt:
 
-- **Käuferlizenzen.** Laut Salesforce brauchen Käufer und Buyer Manager Customer Community Plus, Merchandiser die Lizenz "B2B and D2C Commerce". Die [Preisliste für Experience Cloud for Manufacturing](https://www.salesforce.com/manufacturing/cloud/experience-cloud/) nennt 35 € pro Mitglied oder 15 € pro Login im Monat, jährlich abgerechnet. Ob Member oder Login günstiger ist, hängt an den Login-Tagen, siehe [B2B Commerce Lizenzen für Käufer](../../../blog/b2b-commerce-lizenzen-kaeufer/). Wie sich externe von internen Lizenzen unterscheiden, steht in [Salesforce-Lizenzen: Braucht jeder eine volle Lizenz?](../../../blog/salesforce-lizenzen-volle-lizenz/).
-- **Erweiterte Preislogik** mit Revenue Cloud, Thema von Kapitel 3.
-- **Umsetzung und ERP-Anbindung.** Katalog, Käufergruppen, Preis- und Bestandsaufrufe, Auftragsübergabe.
-- **Verbrauch über die enthaltenen Credits hinaus.** Wie Data-Cloud- und Flex-Credits zusammenkommen, erklärt das Kapitel [Kosten und Token](../../ki-salesforce/kosten-und-token/) der KI-Masterclass.
+| Posten | Was dahinter steckt |
+|---|---|
+| Käuferlizenzen | Laut Salesforce brauchen Käufer und Buyer Manager Customer Community Plus, Merchandiser die Lizenz "B2B and D2C Commerce". Die [Preisliste für Experience Cloud for Manufacturing](https://www.salesforce.com/manufacturing/cloud/experience-cloud/) nennt 35 € pro Mitglied oder 15 € pro Login im Monat, jährlich abgerechnet. Ob Member oder Login günstiger ist, hängt an den Login-Tagen, siehe [B2B Commerce Lizenzen für Käufer](../../../blog/b2b-commerce-lizenzen-kaeufer/). Wie sich externe von internen Lizenzen unterscheiden, steht in [Salesforce-Lizenzen: Braucht jeder eine volle Lizenz?](../../../blog/salesforce-lizenzen-volle-lizenz/). |
+| Erweiterte Preislogik | mit Revenue Cloud, Thema von Kapitel 3. |
+| Umsetzung und ERP-Anbindung | Katalog, Käufergruppen, Preis- und Bestandsaufrufe, Auftragsübergabe. |
+| Verbrauch über die enthaltenen Credits hinaus | Wie Data-Cloud- und Flex-Credits zusammenkommen, erklärt das Kapitel [Kosten und Token](../../ki-salesforce/kosten-und-token/) der KI-Masterclass. |
 
+```hinweis tipp
 Die GMV-Gebühr wächst mit dem Erfolg des Stores. Jeder Händler, den Sie von der E-Mail in den Shop holen, erhöht die Rechnung. Ich rechne deshalb immer drei Jahre mit steigendem digitalem Anteil und dem Satz als Variable bei 1, 2 und 3 Prozent. Die Details stehen in [B2B Commerce Preise: Was das GMV-Modell kostet](../../../blog/b2b-commerce-preise-gmv-modell/), die vollständige Rechnung mit Innendienstzeit und Fehlerkosten im [Business Case für einen B2B-Webshop](../../../blog/b2b-webshop-business-case-hersteller/). Dort zeigt ein angenommenes Szenario auch, dass Zeitersparnis allein einen Shop selten trägt. Er rechnet sich meist über zusätzlichen Umsatz.
+```
 
 ## Portal oder Shop: Was brauchen Ihre Händler?
 
@@ -120,10 +127,12 @@ Drei Fälle, in denen ich von Salesforce B2B Commerce abraten würde:
 
 Einen Store aus der Vorlage anzulegen ist der kleinste Teil des Projekts. Die Entscheidungen, die danach teuer zu ändern sind, liegen bei Ihnen:
 
-1. **Wem gehören Preise und Bestand?** Kommen Händlerpreise aus Preisbüchern in Salesforce oder live aus den SAP-Konditionen? Wird der Bestand kopiert oder live abgefragt? Das beantworten Kapitel 3 und Kapitel 4, entschieden wird es schriftlich vor dem ersten Sprint.
-2. **Welche Käufergruppen gibt es?** Gruppieren Sie nach Land, Händlerstufe und Marke, nie eine Gruppe pro Account. Die Limits dafür stehen in Kapitel 2.
-3. **Welches Store-Template?** Für neue Stores LWR, für bestehende Aura-Stores eine Entscheidung nach Funktionen.
-4. **Welche ERP-Aufrufe laufen live?** Preis, Verfügbarkeit, Kreditprüfung und Auftragsübergabe brauchen ein ERP, das schnell antwortet. Das klären Sie mit dem SAP-Team, bevor das Store-Design steht.
+| Entscheidung | Was Sie klären |
+|---|---|
+| Wem gehören Preise und Bestand? | Kommen Händlerpreise aus Preisbüchern in Salesforce oder live aus den SAP-Konditionen? Wird der Bestand kopiert oder live abgefragt? Das beantworten Kapitel 3 und Kapitel 4, entschieden wird es schriftlich vor dem ersten Sprint. |
+| Welche Käufergruppen gibt es? | Gruppieren Sie nach Land, Händlerstufe und Marke, nie eine Gruppe pro Account. Die Limits dafür stehen in Kapitel 2. |
+| Welches Store-Template? | Für neue Stores LWR, für bestehende Aura-Stores eine Entscheidung nach Funktionen. |
+| Welche ERP-Aufrufe laufen live? | Preis, Verfügbarkeit, Kreditprüfung und Auftragsübergabe brauchen ein ERP, das schnell antwortet. Das klären Sie mit dem SAP-Team, bevor das Store-Design steht. |
 
 Diese vier Punkte gehören in ein kurzes Dokument, das Sie besitzen, nicht der Partner. Wie ich Architekturentscheidungen dieser Art auf Kundenseite begleite, steht unter [Salesforce-Architektur](../../../leistungen/salesforce-architektur/). Eine unabhängige Prüfung von Angebot und Lizenzplan gehört zu [Make-or-Buy und Lizenzen](../../../leistungen/make-or-buy-lizenzen/). Weiter geht es mit [Kapitel 2 zu Katalog, Suche und Sichtbarkeit](../katalog-suche-sichtbarkeit/), alle Kapitel finden Sie auf der [Übersichtsseite](../).
 

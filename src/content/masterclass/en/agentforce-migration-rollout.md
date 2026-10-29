@@ -62,7 +62,9 @@ In a spare parts catalogue, boost and bury is the useful part: superseded part n
 
 ## Why must the agent never make up a price?
 
+```hinweis achtung
 For a manufacturer, the contract price is the most sensitive number in the whole chat. It comes from the store's pricing, which reads price books or calls the ERP, as described in [chapter 3](../prices-cart-checkout/). The same goes for credit limits, blocked customers and confirmed delivery dates. The language model understands the question and words the answer; code supplies the number. If the store shows only list prices because dealer prices live in SAP conditions, the agent will quote list prices too.
+```
 
 The second rule is about input. Every dealer message is text, and text can carry instructions. So I plan as if a filter will one day miss an injected instruction:
 
