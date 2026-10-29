@@ -30,12 +30,16 @@ results:
   - "Ein interner Verantwortlicher, der den Prozess nach der Übergabe führt"
 phases:
   - title: "Bestandsaufnahme"
+    icon: "analyse"
     text: "Ich schaue mir an, wie die Teams heute tatsächlich bauen: Repository, Deployments, Pull Requests, Verantwortlichkeiten und die wichtigsten Konflikte zwischen Streams."
   - title: "Rahmen und Standards"
+    icon: "design"
     text: "Gemeinsam mit den Teams schreibe ich Standards, die Object Ownership Matrix und die Review-Regeln auf. Die erste Version deckt die meisten Fälle ab, Randfälle folgen."
   - title: "Reviews und Center of Excellence"
+    icon: "team"
     text: "Jede Änderung geht über einen Pull Request mit Review. Regelmäßige Center-of-Excellence-Calls bringen neue Themen früh auf den Tisch, mit genug Vorlauf für alle Streams."
   - title: "Übergabe"
+    icon: "handshake"
     text: "Läuft der Prozess, übergebe ich ihn an einen internen Kollegen und arbeite ihn ein, damit der Kunde die Governance langfristig selbst verantwortet."
 faq:
   - q: "Was ist Salesforce-Partnersteuerung?"

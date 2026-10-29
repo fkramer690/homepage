@@ -158,3 +158,16 @@ for every service page.
   reading area. Cards and boxes on grey bands are white.
 - The running text, FAQ and author box stay in one white band with the
   ReadingGrid.
+
+## Phase timeline (service pages, "So läuft die Zusammenarbeit")
+
+Chosen 2026-10-29 (variant A of three; Fabian found the service pages "Text an
+Text an Text"). Built in `src/components/ServicePage.astro` (`.phase-flow`).
+
+- No cards: each phase gets a cyan ring with a line icon from `src/icons/`
+  (frontmatter `phases[].icon`), the number in cyan mono, the title and its text
+  in grey below.
+- A dashed grey line connects the rings from left to right; below 860px the
+  timeline turns vertical with the ring on the left.
+- The whole text stays visible; the rings and the line break up the text.
+- Fits: three to five ordered steps with one or two sentences each.

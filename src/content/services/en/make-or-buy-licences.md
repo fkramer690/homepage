@@ -26,12 +26,16 @@ results:
   - "Fewer tools and products that were bought and never used"
 phases:
   - title: "Requirements and options"
+    icon: "analyse"
     text: "I write down what the business needs and which options exist: standard product, industry cloud, custom build on the platform or a separate tool."
   - title: "ROI case"
+    icon: "budget"
     text: "For each option I calculate costs and benefits over several years, including licences, implementation, maintenance, upgrades and the effort to change course later."
   - title: "Licence forecast"
+    icon: "license"
     text: "I group users by what they do in the system and map them to licence types. The result is a forecast that can be compared with the vendor's offer."
   - title: "Decision and negotiation"
+    icon: "contract"
     text: "The recommendation goes to the decision makers with the reasons behind it. If it leads to a Salesforce offer, I help prepare the negotiation."
 faq:
   - q: "When is a custom solution better than a Salesforce industry cloud?"

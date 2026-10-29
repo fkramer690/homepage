@@ -26,12 +26,16 @@ results:
   - "Ein Management, das Status und Risiken früh sieht und auf Basis von Fakten entscheidet"
 phases:
   - title: "Plan und Team-Setup"
+    icon: "team"
     text: "Ich plane das Programm mit seinen Streams und Abhängigkeiten und lege das Team-Setup fest: wie viele Entwickler, welche Rollen und welcher Senioritätsmix."
   - title: "Partnerauswahl"
+    icon: "partners"
     text: "Gemeinsam mit dem Kunden wähle ich Nearshore-Partner aus und vereinbare Regeln zu Besetzung, Rotation und Kommunikation, bevor der erste Sprint startet."
   - title: "Einarbeitung"
+    icon: "profile"
     text: "Neue Teams bekommen vom ersten Tag an Zugang zu Standards, Review-Prozess und Pipeline und arbeiten damit genauso wie alle anderen."
   - title: "Steuerung"
+    icon: "steer"
     text: "In der Umsetzung steuere ich Plan, Risiken und Qualität, halte Abhängigkeiten zwischen Teams sichtbar und berichte dem Management in einem Format, das Entscheidungen unterstützt."
 faq:
   - q: "Wie groß sollte ein Nearshore-Team für Salesforce sein?"

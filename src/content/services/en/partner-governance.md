@@ -30,12 +30,16 @@ results:
   - "An internal owner who runs the process after the handover"
 phases:
   - title: "Assessment"
+    icon: "analyse"
     text: "I look at how the teams actually build today: repository, deployments, pull requests, ownership and the main conflicts between streams."
   - title: "Framework and standards"
+    icon: "design"
     text: "Together with the teams I write down standards, the object ownership matrix and the review rules. The first version covers most cases, edge cases follow."
   - title: "Reviews and Center of Excellence"
+    icon: "team"
     text: "Every change goes through a pull request with review. Regular Center of Excellence calls raise new topics early, with enough lead time for all streams."
   - title: "Handover"
+    icon: "handshake"
     text: "Once the process runs, I hand it over to an internal colleague and train them, so the client owns governance long term."
 faq:
   - q: "What is Salesforce partner governance?"

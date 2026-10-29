@@ -7,6 +7,7 @@ import Blueprint from './Blueprint.astro';
 import ContactBrief from './ContactBrief.astro';
 import ReadingGrid from './ReadingGrid.astro';
 import Photo from './Photo.astro';
+import Icon from './Icon.astro';
 import ChangeTeam from './ChangeTeam.astro';
 import ChangeArticles from './ChangeArticles.astro';
 import { changeSection } from '../data/change-management';
@@ -143,10 +144,11 @@ const schema = {
       <div class="container">
         <section class="service-block" aria-labelledby="phases">
           <h2 id="phases">{t.servicePage.phases}</h2>
-          <ol class="phase-list">
+          <ol class="phase-flow" style={`--n:${phases.length}`}>
             {phases.map((phase, i) => (
-              <li class="card">
-                <span class="card-index mono">{String(i + 1).padStart(2, '0')}</span>
+              <li>
+                <span class="phase-ring"><Icon name={phase.icon} /></span>
+                <span class="phase-no mono">{String(i + 1).padStart(2, '0')}</span>
                 <h3>{phase.title}</h3>
                 <p>{phase.text}</p>
               </li>

@@ -34,7 +34,7 @@ Blog articles link back to the best matching service automatically (`getPostServ
 | `situations` | 3–5 items, each a situation the reader recognises |
 | `deliverables` | 3–8 items |
 | `results` | 3–6 items |
-| `phases` | 3–4 items with `title` (max. 40) and `text` (max. 260) |
+| `phases` | 3–4 items with `title` (max. 40), `icon` (file name in `src/icons/`, shown in the ring of the phase timeline) and `text` (max. 260) |
 | `faq` | 2–6 questions, answers up to 600 characters |
 | `note`, `notePartner` | optional, max. 240 characters: note shown at the very top, e.g. who the approach was developed with. `notePartner` is a name from `partnerPage.partners` in `src/i18n` and must appear in `note`; it is linked to the partner page and LinkedIn |
 | `blogTags` | 1–8 tags, matched case-insensitively against blog tags |

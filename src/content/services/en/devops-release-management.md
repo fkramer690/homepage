@@ -29,12 +29,16 @@ results:
   - "A process the client owns and can hand to any partner"
 phases:
   - title: "Assessment"
+    icon: "analyse"
     text: "I look at the current release process, environments, repository and the pain points of the teams: where do deployments fail, what is done by hand, who approves what."
   - title: "Target process"
+    icon: "target"
     text: "We agree on the branching model, the environments, the checks per stage and the review rules. The design depends on team size and how often the business wants to release."
   - title: "Pipeline setup"
+    icon: "pipeline"
     text: "I build the pipeline on the client's Git platform, usually with sfdx-hardis, and move the first team onto it. Further teams follow once the process is stable."
   - title: "Handover"
+    icon: "handshake"
     text: "Internal colleagues learn to run and extend the pipeline. The documentation stays in the client's repository, next to the code."
 faq:
   - q: "Which Git platforms can a Salesforce pipeline run on?"

@@ -33,10 +33,13 @@ results:
   - "Neben Salesforce entstehen weniger Schattenlösungen."
 phases:
   - title: "Vorgehen vorbereiten"
+    icon: "compass"
     text: "Wir legen fest, woran Erfolg gemessen wird, welche Gruppen betroffen sind und was sich für jede im Alltag ändert. Dazu gehören die Risiken und wer im Management die Einführung trägt."
   - title: "Veränderung steuern"
+    icon: "steer"
     text: "Je Gruppe entsteht ein Plan entlang der ADKAR-Stufen, verknüpft mit dem Release-Plan. Die häufigsten Fälle kommen zuerst. Wir messen die Nutzung in Salesforce und steuern nach, wo sie hängt."
   - title: "Ergebnisse sichern"
+    icon: "check"
     text: "Wir prüfen, wo Lücken bleiben, verankern neue Regeln in Pipeline, Berichten und Center-of-Excellence-Calls und übergeben die Verantwortung an interne Owner."
 faq:
   - q: "Warum orientieren Sie sich an Prosci?"

@@ -26,12 +26,16 @@ results:
   - "Weniger Tools und Produkte, die gekauft und nie genutzt wurden"
 phases:
   - title: "Anforderungen und Optionen"
+    icon: "analyse"
     text: "Ich halte fest, was der Fachbereich braucht und welche Optionen es gibt: Standardprodukt, Industry Cloud, Eigenentwicklung auf der Plattform oder ein separates Tool."
   - title: "ROI-Case"
+    icon: "budget"
     text: "Für jede Option rechne ich Kosten und Nutzen über mehrere Jahre, inklusive Lizenzen, Umsetzung, Wartung, Upgrades und dem Aufwand, später umzusteuern."
   - title: "Lizenzprognose"
+    icon: "license"
     text: "Ich gruppiere Nutzer danach, was sie im System tun, und ordne sie Lizenztypen zu. Das Ergebnis ist eine Prognose, die sich mit dem Angebot des Herstellers vergleichen lässt."
   - title: "Entscheidung und Verhandlung"
+    icon: "contract"
     text: "Die Empfehlung geht mit Begründung an die Entscheider. Führt sie zu einem Salesforce-Angebot, helfe ich bei der Vorbereitung der Verhandlung."
 faq:
   - q: "Wann ist eine eigene Lösung besser als eine Salesforce Industry Cloud?"
