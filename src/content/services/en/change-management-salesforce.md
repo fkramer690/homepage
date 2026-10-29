@@ -18,19 +18,19 @@ situations:
   - "Releases become smaller and more frequent, and business teams learn about changes only once they are in production."
   - "Management expects results from the programme but is rarely there when decisions about the rollout are due."
 deliverables:
-  - "A definition of how you measure success, for example usage figures in Salesforce instead of the number of training sessions"
-  - "Rollout plan per release: which groups are affected, what changes for them and when they hear about it"
-  - "An assessment per affected group based on the ADKAR model: at which of the five stages the rollout is stuck"
-  - "Sponsor plan: what management does visibly and when, so new rules become binding"
-  - "A format in which business teams, developers and partners see upcoming changes early and can have a say"
-  - "Introduction of new standards in stages, starting with the most common cases"
-  - "A feedback route from daily work back into the backlog, and handover to internal owners"
+  - "We agree with you how you measure success, for example by usage figures in Salesforce instead of the number of training sessions."
+  - "Each release gets a rollout plan. It shows which groups are affected, what changes for them and when they hear about it."
+  - "For each affected group we use the ADKAR model to assess at which of the five stages the rollout is stuck."
+  - "A sponsor plan sets out what management does visibly and when, so that new rules become binding."
+  - "We set up a fixed format in which business teams, developers and partners see upcoming changes early and can have a say."
+  - "We introduce new standards in stages and start with the most common cases."
+  - "Feedback from daily work reaches the backlog by a fixed route. At the end we hand responsibility over to your internal owners."
 results:
-  - "Processes and standards that are used in daily work, not only written down"
-  - "Business teams that know before a release what changes for them"
-  - "Management that visibly backs the rollout"
-  - "Teams and partners that work by the same rules"
-  - "Fewer shadow solutions next to Salesforce"
+  - "Your processes and standards are used in daily work and do not only exist on paper."
+  - "Business teams know before each release what changes for them."
+  - "Management visibly backs the rollout."
+  - "Teams and partners work by the same rules."
+  - "Fewer shadow solutions grow up next to Salesforce."
 phases:
   - title: "Prepare the approach"
     text: "We define how success is measured, which groups are affected and what changes for each of them in daily work. That includes the risks and who in management sponsors the rollout."
@@ -42,17 +42,17 @@ faq:
   - q: "Why do you follow Prosci?"
     a: "Because to me Prosci is the gold standard in change management. The approach rests on surveys since 1998 with more than 10,000 participants and is widely used in the industry. It gives structure to the part of a Salesforce programme that is often left to chance: whether people actually work differently."
   - q: "What is the ADKAR model?"
-    a: "A Prosci model with five stages each person goes through in a change: Awareness, Desire, Knowledge, Ability and Reinforcement. When a rollout stalls, one of these stages is usually missing. The model shows which one."
+    a: "ADKAR is a Prosci model with five stages each person goes through in a change: Awareness, Desire, Knowledge, Ability and Reinforcement. When a rollout stalls, one of these stages is usually missing. The model shows which one."
   - q: "How long does it take to introduce new standards in a large programme?"
-    a: "In my largest programme, with more than 30 developers and five implementation partners, about three months. The first version covered around 80 percent of the cases, and the edge cases were added over time."
+    a: "In my largest programme, with more than 30 developers and five implementation partners, it took about three months. The first version covered around 80 percent of the cases, and the edge cases were added over time."
   - q: "Who has to take part in change management?"
-    a: "Business teams, developer teams, partners and management. Without backing from management, decisions and attention are missing, and new rules become a recommendation that not everyone follows."
+    a: "Everyone the change affects or who carries it: business teams, developer teams, partners and management. Without backing from management, decisions and attention are missing, and new rules become a recommendation that not everyone follows."
   - q: "What changes with smaller, more frequent releases?"
     a: "Business teams get small changes more often instead of rare large packages. That lowers the risk of each release but needs a fixed route on which the people affected learn in advance what is coming."
 blogTags: [change management, Partner governance, Governance, DevOps training, Release management]
 ---
 
-Change management in a Salesforce programme means introducing new processes, standards and releases so that the people who work with them actually use them. That applies to the business teams who do their daily work in Salesforce as much as to the developer teams and implementation partners who are meant to build by common rules. Juliane Winterscheid and I take on this work on the client side: Juliane guides the people through the change, I make sure architecture, partner governance and releases fit with it. Wherever this page says "we", it means the two of us. We follow the Prosci approach.
+Change management in a Salesforce programme means introducing new processes, standards and releases so that the people who work with them actually use them. That applies to the business teams who do their daily work in Salesforce as much as to the developer teams and implementation partners who are meant to build by common rules. Juliane Winterscheid and I take on this work on the client side: Juliane guides the people through the change, I make sure architecture, partner governance and releases fit with it. Wherever this page says "we", it means the two of us. Our approach follows Prosci, and further down you can read why.
 
 ## Why do new processes not reach daily work?
 
@@ -67,7 +67,7 @@ A release is technically rolled out in minutes. What happens next decides whethe
 
 The [ADKAR model](https://www.prosci.com/blog/adkar-model) by Prosci describes five stages each person goes through in a change: Awareness of why something changes, Desire to take part, Knowledge of how it works, Ability to do it in daily work, and Reinforcement so nobody slips back.
 
-A common picture: the training has taken place, yet usage stays low. Instead of scheduling another session, we ask per affected group at which stage it is stuck. If a sales team does not know what the maintained opportunities are needed for, Awareness is missing, and the head of sales has to explain that, not the trainer. If a partner's developers know the naming conventions but nobody checks them in the pipeline, Reinforcement is missing. Then an automatic check belongs in the [release process](../devops-release-management/).
+We often see the following: the training has taken place, yet usage stays low. Instead of scheduling another session, we ask per affected group at which stage it is stuck. If a sales team does not know what the maintained opportunities are needed for, Awareness is missing, and the head of sales has to explain that, not the trainer. If a partner's developers know the naming conventions but nobody checks them in the pipeline, Reinforcement is missing. Then an automatic check belongs in the [release process](../devops-release-management/).
 
 Salesforce helps with measuring. Whether a new process is used shows in reports on created and maintained records better than in any survey. We define these figures in the first phase and look at them regularly in the second. I describe the individual topics, from key users to measuring adoption, in [Salesforce change management: why rollouts fail](../../blog/change-management-salesforce-rollout/). The [change management masterclass](../../masterclass/change-management/) goes through the five stages chapter by chapter.
 

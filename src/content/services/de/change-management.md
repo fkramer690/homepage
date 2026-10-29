@@ -18,19 +18,19 @@ situations:
   - "Releases werden kleiner und häufiger, und Fachbereiche erfahren von Änderungen erst, wenn sie schon in Produktion sind."
   - "Das Management erwartet Ergebnisse aus dem Programm, ist aber selten da, wenn Entscheidungen zur Einführung anstehen."
 deliverables:
-  - "Festlegung, woran Sie Erfolg messen, zum Beispiel an Nutzungszahlen in Salesforce statt an der Zahl der Schulungen"
-  - "Einführungsplan je Release: welche Gruppen betroffen sind, was sich für sie ändert und wann sie es erfahren"
-  - "Einschätzung je betroffener Gruppe nach dem ADKAR-Modell: an welcher der fünf Stufen die Einführung hängt"
-  - "Sponsor-Plan: was das Management wann sichtbar tut, damit neue Regeln verbindlich werden"
-  - "Format, in dem Fachbereiche, Teams und Partner anstehende Änderungen früh sehen und mitreden können"
-  - "Einführung neuer Standards in Etappen, beginnend mit den häufigsten Fällen"
-  - "Rückmeldeweg aus dem Alltag zurück in den Backlog und Übergabe an interne Verantwortliche"
+  - "Wir legen mit Ihnen fest, woran Sie Erfolg messen, zum Beispiel an den Nutzungszahlen in Salesforce statt an der Zahl der Schulungen."
+  - "Für jedes Release entsteht ein Einführungsplan. Er zeigt, welche Gruppen betroffen sind, was sich für sie ändert und wann sie davon erfahren."
+  - "Für jede betroffene Gruppe schätzen wir nach dem ADKAR-Modell ein, an welcher der fünf Stufen die Einführung hängt."
+  - "Ein Sponsor-Plan hält fest, was das Management wann sichtbar tut, damit neue Regeln verbindlich werden."
+  - "Wir richten ein festes Format ein, in dem Fachbereiche, Teams und Partner anstehende Änderungen früh sehen und mitreden können."
+  - "Neue Standards führen wir in Etappen ein und beginnen mit den häufigsten Fällen."
+  - "Rückmeldungen aus dem Alltag kommen auf einem festen Weg in den Backlog. Zum Schluss übergeben wir die Verantwortung an Ihre internen Verantwortlichen."
 results:
-  - "Prozesse und Standards, die im Alltag genutzt werden und nicht nur auf dem Papier stehen"
-  - "Fachbereiche, die vor einem Release wissen, was sich für sie ändert"
-  - "Ein Management, das sichtbar hinter der Einführung steht"
-  - "Teams und Partner, die nach denselben Regeln arbeiten"
-  - "Weniger Schattenlösungen neben Salesforce"
+  - "Ihre Prozesse und Standards werden im Alltag genutzt und stehen nicht nur auf dem Papier."
+  - "Fachbereiche wissen vor jedem Release, was sich für sie ändert."
+  - "Das Management steht sichtbar hinter der Einführung."
+  - "Teams und Partner arbeiten nach denselben Regeln."
+  - "Neben Salesforce entstehen weniger Schattenlösungen."
 phases:
   - title: "Vorgehen vorbereiten"
     text: "Wir legen fest, woran Erfolg gemessen wird, welche Gruppen betroffen sind und was sich für jede im Alltag ändert. Dazu gehören die Risiken und wer im Management die Einführung trägt."
@@ -42,17 +42,17 @@ faq:
   - q: "Warum orientieren Sie sich an Prosci?"
     a: "Weil Prosci für mich der Goldstandard im Change Management ist. Das Vorgehen beruht auf Befragungen seit 1998 mit über 10.000 Teilnehmenden und ist in der Branche weit verbreitet. Es gibt dem Teil eines Salesforce-Programms eine Struktur, der sonst oft dem Zufall überlassen bleibt: ob die Menschen anders arbeiten."
   - q: "Was ist das ADKAR-Modell?"
-    a: "Ein Modell von Prosci mit fünf Stufen, die jede Person bei einer Veränderung durchläuft: Awareness (Bewusstsein), Desire (Bereitschaft), Knowledge (Wissen), Ability (Fähigkeit) und Reinforcement (Verankerung). Hakt eine Einführung, fehlt meist eine dieser Stufen. Das Modell zeigt, welche."
+    a: "ADKAR ist ein Modell von Prosci mit fünf Stufen, die jede Person bei einer Veränderung durchläuft: Awareness (Bewusstsein), Desire (Bereitschaft), Knowledge (Wissen), Ability (Fähigkeit) und Reinforcement (Verankerung). Hakt eine Einführung, fehlt meist eine dieser Stufen. Das Modell zeigt, welche."
   - q: "Wie lange dauert es, neue Standards in einem großen Programm einzuführen?"
-    a: "In meinem größten Programm mit über 30 Entwicklern und fünf Implementierungspartnern etwa drei Monate. Die erste Version deckte rund 80 Prozent der Fälle ab, die Randfälle kamen nach und nach dazu."
+    a: "In meinem größten Programm mit über 30 Entwicklern und fünf Implementierungspartnern hat es etwa drei Monate gedauert. Die erste Version deckte rund 80 Prozent der Fälle ab, die Randfälle kamen nach und nach dazu."
   - q: "Wer muss beim Change Management mitmachen?"
-    a: "Fachbereiche, Entwicklerteams, Partner und das Management. Ohne Rückhalt im Management fehlen Entscheidungen und Aufmerksamkeit, und neue Regeln werden zur Empfehlung, an die sich nicht jeder hält."
+    a: "Alle, die die Veränderung betrifft oder die sie tragen: Fachbereiche, Entwicklerteams, Partner und das Management. Ohne Rückhalt im Management fehlen Entscheidungen und Aufmerksamkeit, und neue Regeln werden zur Empfehlung, an die sich nicht jeder hält."
   - q: "Was ändert sich durch kleinere, häufigere Releases?"
     a: "Fachbereiche bekommen öfter kleine Änderungen statt selten große Pakete. Das senkt das Risiko einzelner Releases, verlangt aber einen festen Weg, auf dem Betroffene vorher erfahren, was kommt."
 blogTags: [Change Management, Partnersteuerung, Governance, DevOps-Training, Release-Management]
 ---
 
-Change Management in einem Salesforce-Programm heißt, neue Prozesse, Standards und Releases so einzuführen, dass die Menschen, die damit arbeiten, sie auch nutzen. Das betrifft die Fachbereiche, die mit Salesforce ihren Alltag erledigen, genauso wie Entwicklerteams und Implementierungspartner, die nach gemeinsamen Regeln bauen sollen. Juliane Winterscheid und ich übernehmen diese Arbeit auf Kundenseite: Juliane begleitet die Menschen durch die Veränderung, ich sorge dafür, dass Architektur, Partnersteuerung und Releases dazu passen. Wenn auf dieser Seite „wir“ steht, sind wir beide gemeint. Wir orientieren uns an Prosci.
+Change Management in einem Salesforce-Programm heißt, neue Prozesse, Standards und Releases so einzuführen, dass die Menschen, die damit arbeiten, sie auch nutzen. Das betrifft die Fachbereiche, die mit Salesforce ihren Alltag erledigen, genauso wie Entwicklerteams und Implementierungspartner, die nach gemeinsamen Regeln bauen sollen. Juliane Winterscheid und ich übernehmen diese Arbeit auf Kundenseite: Juliane begleitet die Menschen durch die Veränderung, ich sorge dafür, dass Architektur, Partnersteuerung und Releases dazu passen. Wenn auf dieser Seite „wir“ steht, sind wir beide gemeint. Unser Vorgehen orientiert sich an Prosci, warum, steht weiter unten.
 
 ## Warum kommen neue Prozesse im Alltag nicht an?
 
@@ -67,7 +67,7 @@ Ein Release ist technisch in Minuten ausgerollt. Danach entscheidet sich, ob jem
 
 Das [ADKAR-Modell](https://www.prosci.com/blog/adkar-model) von Prosci beschreibt fünf Stufen, die jede Person bei einer Veränderung durchläuft: Awareness (Bewusstsein, warum sich etwas ändert), Desire (Bereitschaft, mitzumachen), Knowledge (Wissen, wie es geht), Ability (Fähigkeit, es im Alltag umzusetzen) und Reinforcement (Verankerung, damit niemand zurückfällt).
 
-Ein häufiges Bild: Die Schulungen sind gelaufen, die Nutzung bleibt trotzdem niedrig. Statt eine weitere Schulung anzusetzen, fragen wir je betroffener Gruppe, an welcher Stufe es hängt. Wenn ein Vertriebsteam nicht weiß, wofür die gepflegten Opportunities gebraucht werden, fehlt Awareness, und das muss der zuständige Vertriebsleiter erklären, nicht der Trainer. Wenn die Entwickler eines Partners die Namenskonventionen kennen, aber niemand sie in der Pipeline prüft, fehlt Reinforcement. Dann gehört eine automatische Prüfung in den [Release-Prozess](../devops-und-release-management/).
+Häufig sehen wir Folgendes: Die Schulungen sind gelaufen, die Nutzung bleibt trotzdem niedrig. Statt eine weitere Schulung anzusetzen, fragen wir je betroffener Gruppe, an welcher Stufe es hängt. Wenn ein Vertriebsteam nicht weiß, wofür die gepflegten Opportunities gebraucht werden, fehlt Awareness, und das muss der zuständige Vertriebsleiter erklären, nicht der Trainer. Wenn die Entwickler eines Partners die Namenskonventionen kennen, aber niemand sie in der Pipeline prüft, fehlt Reinforcement. Dann gehört eine automatische Prüfung in den [Release-Prozess](../devops-und-release-management/).
 
 Salesforce hilft beim Messen. Ob ein neuer Prozess genutzt wird, zeigen Berichte über angelegte und gepflegte Datensätze besser als jede Umfrage. Diese Zahlen legen wir in der ersten Phase fest und schauen in der zweiten regelmäßig darauf. Die einzelnen Themen, von Key Usern bis zur Messung der Nutzung, beschreibe ich in [Salesforce Change Management: warum Einführungen scheitern](../../blog/change-management-salesforce-einfuehrung/). Kapitel für Kapitel entlang der fünf Stufen führt die [Masterclass Change Management](../../masterclass/change-management/).
 
