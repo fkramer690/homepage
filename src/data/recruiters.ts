@@ -109,6 +109,8 @@ export const recruiters = {
       terms: [
         { t: 'Satz pro Anfrage', d: 'Stunden- oder Tagessatz je nach Rolle, Laufzeit und Vor-Ort-Anteil. Eine Preisliste für alle Fälle gibt es nicht.' },
         { t: 'Vertrag mit der GmbH', d: 'Vertragspartner ist die FK Solution Design GmbH. Abrechnung monatlich nach Aufwand mit Tätigkeitsnachweis.' },
+        { t: 'Remote und vor Ort', d: 'Da bin ich flexibel. Oft lohnt es sich, intensive Phasen und Workshops mit dem größeren Projektteam vor Ort zu machen und danach wieder mehrere Wochen remote zu arbeiten.' },
+        { t: 'Reisen', d: 'Basis ist Köln. In heißen Projektphasen reise ich auch weltweit, dann eher einmal im Quartal oder rund um einen Go-live. Reisezeit ist Arbeitszeit und wird zu 100 Prozent abgerechnet. Reisekosten am liebsten nach tatsächlichem Aufwand, auf Wunsch des Kunden auch pauschal.' },
       ],
     },
     ctaTitle: 'Eine Anfrage, die passt?',
@@ -215,6 +217,8 @@ export const recruiters = {
       terms: [
         { t: 'Rate per request', d: 'Hourly or daily rate depending on role, duration and on-site share. There is no one-size-fits-all price list.' },
         { t: 'Contract with the company', d: 'The contract partner is FK Solution Design GmbH. Invoicing monthly by effort with a timesheet.' },
+        { t: 'Remote and on site', d: 'I am flexible here. It often pays off to run intensive phases and workshops on site with the wider project team and then work remotely again for several weeks.' },
+        { t: 'Travel', d: 'My base is Cologne. In critical project phases I also travel worldwide, ideally about once a quarter or around a go-live. Travel time is working time and is billed at 100 percent. Travel expenses preferably at actual cost, or as a flat rate if the client prefers.' },
       ],
     },
     ctaTitle: 'A request that fits?',
