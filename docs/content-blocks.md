@@ -1,6 +1,6 @@
 # Content blocks (library)
 
-Eight building blocks that loosen up blog articles and masterclass chapters. They are written in Markdown as a fenced code block whose language is the block name, so articles stay free of HTML. `src/lib/content-blocks-plugin.mjs` turns them into markup at build time (logic in `src/lib/content-blocks.mjs`, styles under "Content blocks" in `src/styles/global.css`), and `scripts/check-blog.mjs` validates them. Rules for when to use them: "Content blocks" in [blog-guidelines.md](blog-guidelines.md).
+Ten building blocks that loosen up blog articles and masterclass chapters. They are written in Markdown as a fenced code block whose language is the block name, so articles stay free of HTML. `src/lib/content-blocks-plugin.mjs` turns them into markup at build time (logic in `src/lib/content-blocks.mjs`, styles under "Content blocks" in `src/styles/global.css`), and `scripts/check-blog.mjs` validates them. Rules for when to use them: "Content blocks" in [blog-guidelines.md](blog-guidelines.md).
 
 Design: only the site's own colours and forms (cyan, anthracite, greys, dashed mono labels, cards with a short bar on top, the technical grid). No other colours, no icons beyond the cyan tick and grey cross.
 
@@ -110,6 +110,34 @@ Strategie | 2 bis 4 Wochen · Kunde und Partner
   Parallelbetrieb, Reihenfolge der Daten und Cutover-Datum festlegen.
 Umsetzen | 3 bis 6 Monate · Partner
   Katalog, Regeln und Preise neu bauen, Daten migrieren, testen.
+```
+````
+
+## 9. Stufen (stage tiles)
+
+Three to seven stages of a model in one row, `Letter | Name | Subtitle | Question`. A trailing `*` marks the stages the cases below refer to (cyan frame). Optional zero to three cases `fall: Title | situation | consequence` (EN `case:`) as grey cards with a cyan left bar. Approved by Fabian 2026-10-29 for ADKAR on the change management page; fits models such as ADKAR or maturity levels.
+
+````
+```stufen
+A | Awareness | Bewusstsein | Warum ändert sich etwas? *
+D | Desire | Bereitschaft | Will ich mitmachen?
+K | Knowledge | Wissen | Wie geht es?
+fall: Es fehlt Awareness | Ein Vertriebsteam weiß nicht, wofür die Daten gebraucht werden. | Das erklärt der Vertriebsleiter, nicht der Trainer.
+```
+````
+
+## 10. Vergleich (without / with)
+
+Two columns like the start page comparison: `ohne: Title` (EN `without:`) with grey crosses, then `mit: Title` (EN `with:`) with cyan ticks and a cyan frame, two to five `- points` each. Approved by Fabian 2026-10-29. Use it for before and after; for a decision use `pro-contra`.
+
+````
+```vergleich
+ohne: Einmal im Quartal ein großes Paket
+- Fachbereiche sehen Änderungen erst in Produktion.
+- Probleme aus dem Alltag landen in E-Mails.
+mit: Kleine Releases mit festem Weg
+- Fachbereiche wissen vor dem Release, was sich ändert.
+- Rückmeldungen kommen auf festem Weg in den Backlog.
 ```
 ````
 
