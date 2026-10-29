@@ -56,26 +56,56 @@ Salesforce DevOps means every change goes through Git, a pull request and an aut
 
 ## Why do Salesforce releases cause so much trouble?
 
-Salesforce makes it easy to change things directly in an org. That is useful at the beginning and becomes a problem once several teams work in parallel. Without version control, nobody knows which version of a flow or a permission set is the correct one, and sandboxes drift apart. I describe the typical symptoms in more detail in [why DevOps matters in Salesforce enterprise projects](../../blog/why-devops-matters-salesforce-enterprise/).
+Salesforce makes it easy to change things directly in an org. That is useful at the beginning and becomes a problem once several teams work in parallel. I describe the typical symptoms in more detail in [why DevOps matters in Salesforce enterprise projects](../../blog/why-devops-matters-salesforce-enterprise/).
 
-The most expensive part is often invisible: manual steps before and after each deployment, such as activating flows, loading reference data or adjusting settings. They live in checklists or in the heads of a few people, and every release depends on them being available.
+```vergleich
+without: Changes made directly in the org
+- Nobody knows which version of a flow or a permission set is the correct one.
+- Sandboxes drift apart.
+- Manual steps before and after the deployment live in checklists or in the heads of a few people.
+- Every release depends on these people being available.
+with: Git, pull request and pipeline
+- Every change in production can be traced to a pull request and a reviewer.
+- Errors are caught at validation, before they reach UAT or production.
+- Activating flows, loading reference data and adjusting settings are part of the deployment.
+- Releases become smaller, more frequent and predictable.
+```
 
 ## What does a good Salesforce pipeline do?
 
 A pipeline that works for enterprise teams covers a few basics:
 
-- **Checks on every pull request.** A validation deployment against the target org, Apex tests and static code analysis run before anyone reviews the change.
-- **A clear path through the environments.** Changes move from development to integration, UAT and production through promotion branches, so it is always visible which change sits in which org.
-- **Automated post-deployment steps.** Steps that used to be manual are part of the deployment, and reference data can be deployed with SFDMU, an open-source data migration plugin.
-- **A review for every change.** Automation catches the repeatable errors, people review design and readability. More on this in [why pull request reviews are a must in enterprise projects](../../blog/why-pull-request-reviews-are-a-must-in-enterprise-projects/).
+```saeulen
+roof: A good Salesforce pipeline
+check | Checks | On every pull request | A validation deployment against the target org, Apex tests and static code analysis run before anyone reviews the change.
+pipeline | Environments | A clear path to production | Changes move from development to integration, UAT and production through promotion branches, so it is always visible which change sits in which org.
+gear | Automation | After the deployment | Steps that used to be manual are part of the deployment, and reference data can be deployed with SFDMU, an open-source data migration plugin.
+analyse | Review | For every change | Automation catches the repeatable errors, people review design and readability.
+base: On the client's Git platform
+```
+
+More on reviews in [why pull request reviews are a must in enterprise projects](../../blog/why-pull-request-reviews-are-a-must-in-enterprise-projects/).
+
+```praxis
+In one programme I built the release process myself. At first every pull request went across my desk; later I handed this task over to an internal colleague.
+```
 
 ## Which tools do I use?
+
+```kennzahlen
+4 | Git platforms: GitHub, GitLab, Azure DevOps and Bitbucket
+1 | YAML backbone, the same on every platform
+€0 | running licence costs for sfdx-hardis
+source: my pipelines in client projects
+```
 
 I build pipelines on the Git platform the company already uses. So far that has been GitHub, GitLab, Azure DevOps and Bitbucket. The pipelines are defined in YAML, so the backbone is the same on every platform, even though each one has its own details, for example how the validation status of a pull request is shown.
 
 For the Salesforce part I often use sfdx-hardis, an open-source DevOps tool that I use in my own projects. It has no running licence costs, and the repository, the pipeline and the access rights stay with the client. I explain what it does in [sfdx-hardis: open-source DevOps for Salesforce](../../blog/sfdx-hardis-open-source-salesforce-devops/). I support the project, but I have no financial ties to it. If a client already has a commercial tool that works, I build on it.
 
+```hinweis tipp
 Platform changes are part of release management too. Each Salesforce release, such as [Winter '27](../../blog/salesforce-winter-27-what-changes-for-your-pipeline/), can change API versions, CLI behaviour or security settings that a pipeline depends on.
+```
 
 ## How does this fit with several partners?
 

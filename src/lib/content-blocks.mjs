@@ -9,9 +9,10 @@
 // The diagram block (`ablauf`) is rendered to SVG once with
 // `node scripts/render-diagrams.mjs` and stored in src/assets/diagrams/.
 import { createHash } from 'node:crypto';
+import { existsSync } from 'node:fs';
 import { iconHtml } from './icons.mjs';
 
-export const blockNames = ['hinweis', 'praxis', 'kennzahlen', 'zeitleiste', 'ablauf', 'pro-contra', 'vertiefung', 'schritte', 'stufen', 'vergleich'];
+export const blockNames = ['hinweis', 'praxis', 'kennzahlen', 'zeitleiste', 'ablauf', 'pro-contra', 'vertiefung', 'schritte', 'stufen', 'vergleich', 'saeulen'];
 
 const labels = {
   de: {
@@ -134,6 +135,21 @@ export function parseStages(content) {
   return { stages, cases };
 }
 
+// Pillars: optional "dach: Title" (EN "roof:"), then "icon | Name | Subtitle | Text" per
+// pillar (icon = file name in src/icons/), optional "basis: Title" (EN "base:").
+export function parsePillars(content) {
+  const out = { roof: '', base: '', pillars: [] };
+  for (const raw of lines(content)) {
+    const l = raw.trim();
+    if (!l) continue;
+    const k = keyLine(l, ['dach', 'roof', 'basis', 'base']);
+    if (k) { out[['dach', 'roof'].includes(k.key) ? 'roof' : 'base'] = k.value; continue; }
+    const [icon, name, sub, text] = l.split('|').map((x) => x.trim());
+    out.pillars.push({ icon, name, sub, text });
+  }
+  return out;
+}
+
 // Comparison: "ohne: Title" / "without: Title" and "mit: Title" / "with: Title", each with "- points".
 export function parseCompare(content) {
   const cols = [];
@@ -213,6 +229,11 @@ export function validateBlock(block) {
     if (stages.some((x) => !x.letter || !x.name || !x.sub || !x.text)) errs.push('stufen: every stage needs "Letter | Name | Subtitle | Question"');
     between(cases.length, 0, 3, 'cases');
     if (cases.some((c) => !c.title || !c.situation || !c.consequence)) errs.push('stufen: every case needs "fall: Title | situation | consequence"');
+  } else if (name === 'saeulen') {
+    const { pillars } = parsePillars(content);
+    between(pillars.length, 3, 5, 'pillars');
+    if (pillars.some((x) => !x.icon || !x.name || !x.sub || !x.text)) errs.push('saeulen: every pillar needs "icon | Name | Subtitle | Text"');
+    for (const x of pillars) if (x.icon && !existsSync(new URL(`../icons/${x.icon}.svg`, import.meta.url))) errs.push(`saeulen: icon "${x.icon}" is not in src/icons/`);
   } else if (name === 'vergleich') {
     const cols = parseCompare(content);
     if (cols.length !== 2 || cols[0].kind !== 'without' || cols[1].kind !== 'with') errs.push('vergleich: needs an "ohne: Title" column followed by a "mit: Title" column');
@@ -224,7 +245,7 @@ export function validateBlock(block) {
 // Prose of a block, for word counts and the wording checks in check-blog.
 export function blockProse(block) {
   return block.content
-    .replace(/^\s*(quelle|source|titel|title|pro|contra|sf|erp|ext|fall|case|ohne|without|mit|with):\s*/gim, '')
+    .replace(/^\s*(quelle|source|titel|title|pro|contra|sf|erp|ext|fall|case|ohne|without|mit|with|dach|roof|basis|base):\s*/gim, '')
     .replace(/\s\*$/gm, '')
     .replace(/(--|\.\.)>?/g, ' ')
     .replace(/\|/g, ' ');
@@ -342,6 +363,11 @@ export function renderBlock(block, { lang, isExternal, readDiagram, today = new 
     const tiles = `<ol class="cb-stages" style="--n:${stages.length}">${stages.map((x) => `<li${x.mark ? ' class="cb-stage-mark"' : ''}><span class="cb-stage-letter">${escHtml(x.letter)}</span><span class="cb-stage-name">${inline(x.name, o)}</span><span class="cb-stage-sub">${inline(x.sub, o)}</span><span class="cb-stage-text">${inline(x.text, o)}</span></li>`).join('')}</ol>`;
     const list = cases.length ? `<div class="cb-cases">${cases.map((c) => `<div class="cb-case"><p class="cb-case-title">${inline(c.title, o)}</p><p>${inline(c.situation, o)}</p><p class="cb-case-then">${inline(c.consequence, o)}</p></div>`).join('')}</div>` : '';
     return `<div class="cb cb-stage-block">${tiles}${list}</div>`;
+  }
+  if (name === 'saeulen') {
+    const { roof, base, pillars } = parsePillars(content);
+    const cols = pillars.map((x, i) => `<li><span class="cb-pillar-head">${iconHtml(x.icon, 'cb-pillar-icon')}<span class="cb-pillar-no">${String(i + 1).padStart(2, '0')}</span></span><span class="cb-pillar-name">${inline(x.name, o)}</span><span class="cb-pillar-sub">${inline(x.sub, o)}</span><span class="cb-pillar-text">${inline(x.text, o)}</span></li>`).join('');
+    return `<div class="cb cb-pillars${roof ? ' cb-pillars-roofed' : ''}" style="--n:${pillars.length}">${roof ? `<p class="cb-pillar-roof">${inline(roof, o)}</p>` : ''}<ol>${cols}</ol>${base ? `<p class="cb-pillar-base">${inline(base, o)}</p>` : ''}</div>`;
   }
   if (name === 'vergleich') {
     return `<div class="cb cb-compare">${parseCompare(content).map((c) => `<div class="cb-compare-col cb-compare-${c.kind}"><p class="cb-compare-title">${inline(c.title, o)}</p><ul>${c.items.map((i) => `<li>${c.kind === 'with' ? icon.check : icon.cross}<span>${inline(i, o)}</span></li>`).join('')}</ul></div>`).join('')}</div>`;

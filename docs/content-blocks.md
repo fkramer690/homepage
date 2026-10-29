@@ -141,6 +141,20 @@ mit: Kleine Releases mit festem Weg
 ```
 ````
 
+## 11. Säulen (pillars)
+
+Three to five pillars in one row, each `icon | Name | Subtitle | Text`. The icon is a file name from `src/icons/`, numbers are added automatically. Keep the name to one word or two (it must fit one line in a quarter of the text column), the subtitle short and the text one full sentence. Optional `dach: Title` (EN `roof:`) as a dark bar above and `basis: Title` (EN `base:`) as a grey bar below. Title, subtitle and text start at the same height in every pillar and all pillars end together; on phones they stand below each other with the icon on the left. Approved by Fabian 2026-10-29 for the pipeline basics on the DevOps service page (with roof and base).
+
+````
+```saeulen
+dach: Eine gute Salesforce-Pipeline
+check | Prüfungen | Bei jedem Pull Request | Ein Validierungs-Deployment, Apex-Tests und Codeanalyse laufen vor dem Review.
+gear | Automatisierung | Nach dem Deployment | Was früher von Hand lief, ist Teil des Deployments.
+analyse | Review | Für jede Änderung | Menschen prüfen Design und Lesbarkeit.
+basis: Auf der Git-Plattform des Kunden
+```
+````
+
 ## Confirmed experience (for `praxis`)
 
 Only these, in Fabian's wording, without client names, industry or size:

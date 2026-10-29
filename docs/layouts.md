@@ -171,3 +171,19 @@ Text an Text"). Built in `src/components/ServicePage.astro` (`.phase-flow`).
   timeline turns vertical with the ring on the left.
 - The whole text stays visible; the rings and the line break up the text.
 - Fits: three to five ordered steps with one or two sentences each.
+
+## Pillars with roof and base (DevOps service page, "Eine gute Salesforce-Pipeline")
+
+Chosen 2026-10-29 after two rounds (four narrow tiles and a 2 × 2 grid were "not
+good enough"); Fabian: "merk dir die Grafik, die ist richtig gut geworden".
+Content block ```saeulen (see `docs/content-blocks.md`), CSS `.cb-pillars`.
+
+- Four pillars in one row, each with a cyan top line, a line icon from
+  `src/icons/` and the number in grey mono, then a one-word title, a cyan mono
+  line with the core ("Bei jedem Pull Request") and one full sentence.
+- Title, cyan line and text start at the same height in every pillar (subgrid),
+  all pillars end together.
+- A dark roof bar names the whole ("Eine gute Salesforce-Pipeline"), a grey base
+  bar what it stands on ("Auf der Git-Plattform des Kunden").
+- On phones the pillars stand below each other with the icon on the left.
+- Fits: three to five equal principles or building blocks of one thing, not a sequence.
