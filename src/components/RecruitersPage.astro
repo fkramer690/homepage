@@ -128,6 +128,13 @@ const schema = {
           </ul>
         </div>
       </div>
+      <div class="rc-rules" id="rules">
+        <h3>{c.rules.title}</h3>
+        <p>{c.rules.intro}</p>
+        <ul class="rc-rules-list">
+          {c.rules.items.map((r) => <li><strong>{r.t}:</strong> {r.d}</li>)}
+        </ul>
+      </div>
     </div>
   </section>
 
