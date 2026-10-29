@@ -30,6 +30,7 @@ Juliane Winterscheid, Fabian's cooperation partner for change management, writes
 
 - First person is Juliane. Only experience from her one-pager and profile (`src/data/juliane-winterscheid.ts`) or that she confirmed; no `praxis` block until she has confirmed an example.
 - An article goes live (`draft: false`) only after Juliane or Fabian has approved it; Juliane reads every article, also after it is live.
+- Her articles appear automatically under "Grundlagen" on the change management area page (`/change-management/`, `src/components/ChangeManagementPage.astro`); Fabian's articles of the category `change-management` appear there under "In Salesforce-Programmen". Never list articles on that page by hand.
 - The template shows her name, author box (`src/components/AuthorBox.astro`), structured data and preview image footer, and leaves out the partner box. Add a new author in `src/lib/authors.ts`, never per article.
 
 ## Fixed page structure
