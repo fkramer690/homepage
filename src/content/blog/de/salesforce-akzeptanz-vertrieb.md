@@ -7,6 +7,7 @@ slug: salesforce-akzeptanz-vertrieb
 translationKey: change-sales-adoption
 topic: governance
 categories: [change-management]
+coAuthor: juliane
 contactBrief: change
 tags: [CRM-Akzeptanz, Vertrieb, Change Management, ADKAR, Salesforce-Einführung]
 takeaways:

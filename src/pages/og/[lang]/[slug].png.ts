@@ -14,7 +14,9 @@ export const GET: APIRoute = async ({ props }) => {
   const png = await renderOgImage({
     title: post.data.title,
     eyebrow: 'FK Solution Design · Blog',
-    footer: (({ name, jobTitle }) => `${name} · ${jobTitle}`)(getAuthor(post.data.lang, post.data.author)),
+    footer: post.data.coAuthor
+      ? `${getAuthor(post.data.lang, post.data.author).name} · ${getAuthor(post.data.lang, post.data.coAuthor).name}`
+      : (({ name, jobTitle }) => `${name} · ${jobTitle}`)(getAuthor(post.data.lang, post.data.author)),
   });
   return new Response(new Uint8Array(png), { headers: { 'Content-Type': 'image/png' } });
 };

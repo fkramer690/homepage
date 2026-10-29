@@ -7,6 +7,7 @@ slug: salesforce-training-plan-rollout
 translationKey: change-training-plan
 topic: governance
 categories: [change-management]
+coAuthor: juliane
 contactBrief: change
 tags: [training plan, Salesforce training, change management, key users, train the trainer]
 takeaways:

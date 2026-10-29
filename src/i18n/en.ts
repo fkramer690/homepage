@@ -281,6 +281,8 @@ export const en = {
     intro2: 'Each article answers one concrete question from a programme, such as whether Field Service pays off for your field force, what Manufacturing Cloud costs compared to Sales Cloud or how to govern several implementation partners. List prices carry their date, Salesforce sources are linked, and where a feature is not available yet, the article says so. Use the filter to find the articles on one topic.',
     readingTime: 'min read',
     published: 'Published',
+    // Between author and co-author in the byline.
+    with: 'with',
     updated: 'Updated',
     back: 'All articles',
     filterLabel: 'Filter by topic',

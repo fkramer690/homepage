@@ -7,6 +7,7 @@ slug: salesforce-hypercare-after-go-live
 translationKey: change-hypercare
 topic: governance
 categories: [change-management, devops]
+coAuthor: juliane
 contactBrief: change
 tags: [hypercare, go-live, change management, Salesforce rollout, support]
 takeaways:

@@ -282,6 +282,7 @@ export const de: Dict = {
     intro2: 'Jeder Artikel beantwortet eine konkrete Frage aus einem Programm, etwa ob sich Field Service für den eigenen Außendienst lohnt, was die Manufacturing Cloud im Vergleich zu Sales Cloud kostet oder wie man mehrere Implementierungspartner steuert. Listenpreise stehen mit Datum, Quellen bei Salesforce sind verlinkt, und wo eine Funktion noch nicht verfügbar ist, steht das dabei. Mit dem Filter finden Sie die Artikel zu einem Thema.',
     readingTime: 'Min. Lesezeit',
     published: 'Veröffentlicht',
+    with: 'mit',
     updated: 'Aktualisiert',
     back: 'Alle Artikel',
     filterLabel: 'Nach Thema filtern',

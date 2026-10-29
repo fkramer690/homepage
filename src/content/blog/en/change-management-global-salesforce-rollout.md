@@ -7,6 +7,7 @@ slug: change-management-global-salesforce-rollout
 translationKey: change-global-rollout
 topic: governance
 categories: [change-management, architecture, manufacturing-cloud]
+coAuthor: juliane
 contactBrief: change
 tags: [change management, rollout, global template, harmonisation]
 takeaways:

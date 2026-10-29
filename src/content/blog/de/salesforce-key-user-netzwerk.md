@@ -7,6 +7,7 @@ slug: salesforce-key-user-netzwerk
 translationKey: change-key-users
 topic: governance
 categories: [change-management, architecture]
+coAuthor: juliane
 contactBrief: change
 tags: [Key User, Change Management, Salesforce-Einführung, Rollout]
 takeaways:

@@ -7,6 +7,7 @@ slug: hypercare-phase-salesforce-go-live
 translationKey: change-hypercare
 topic: governance
 categories: [change-management, devops]
+coAuthor: juliane
 contactBrief: change
 tags: [Hypercare, Hypercare-Phase, Go-live, Change Management, Salesforce-Einführung, Support]
 takeaways:

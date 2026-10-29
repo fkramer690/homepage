@@ -7,6 +7,7 @@ slug: change-management-salesforce-rollout
 translationKey: change-management-hub
 topic: governance
 categories: [change-management, architecture]
+coAuthor: juliane
 contactBrief: change
 tags: [change management, ADKAR, Prosci, Salesforce rollout]
 takeaways:

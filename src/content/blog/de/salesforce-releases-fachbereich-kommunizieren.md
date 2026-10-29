@@ -7,6 +7,7 @@ slug: salesforce-releases-fachbereich-kommunizieren
 translationKey: change-release-communication
 topic: release
 categories: [change-management, devops, architecture]
+coAuthor: juliane
 contactBrief: change
 tags: [Release-Management, Change Management, Release Notes, Fachbereich]
 takeaways:
