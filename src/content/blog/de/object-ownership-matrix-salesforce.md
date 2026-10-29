@@ -83,7 +83,7 @@ Eine Tabelle im Wiki ändert allein nichts. Die Matrix wirkt erst, wenn sie im t
 
 - **Im Pull-Request-Review.** Berührt eine Änderung ein fremdes Objekt, fragt der Reviewer, ob der Verantwortliche zugestimmt hat. Wie solche Reviews ablaufen, beschreibe ich in [warum Pull-Request-Reviews in Großprojekten Pflicht sind](../warum-pull-request-reviews-pflicht-sind/).
 - **Technisch im Repository.** Liegen die Metadaten in Git, lässt sich die Matrix teilweise abbilden, auf GitHub mit einer CODEOWNERS-Datei.
-- **Im Center of Excellence.** Regelmäßige Calls, in denen Streams anstehende Änderungen an gemeinsamen Objekten vorstellen, mit genug Vorlauf für alle anderen.
+- **Im Center of Excellence.** Regelmäßige Calls, in denen Streams anstehende Änderungen an gemeinsamen Objekten vorstellen, mit genug Vorlauf für alle anderen. Wie ein solches Gremium aufgebaut ist, beschreibe ich in [Salesforce Center of Excellence: Format und Rhythmus](../salesforce-center-of-excellence-format/).
 
 ```vertiefung Für Entwickler
 titel: Wie bildet CODEOWNERS die Matrix ab?

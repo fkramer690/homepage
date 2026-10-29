@@ -121,6 +121,7 @@ Only these, in Fabian's wording, without client names, industry or size:
 - Built the release process in one programme: at first every pull request went across his desk, then he handed it over to an internal colleague.
 - Introduced sales agreements with actuals from the ERP in Manufacturing Cloud; the ERP interface was a stumbling block.
 - Field Service projects with maintenance, breakdown jobs and commissioning, automatic scheduling, spare parts and installed base from the ERP; stumbling blocks: asset data quality, technician acceptance, ERP interfaces.
+- Center of Excellence in his largest programme: technical call every two weeks, 60 minutes, only the technical leads of the streams; topics submitted in advance, agenda sent beforehand, a backlog of reserve topics; Fabian chaired it, later an internal colleague.
 - Project stories that already stand in articles published before 28 October 2026 (written with Fabian), e.g. the global Manufacturing Cloud rollout with CPQ, configurator and customer portal.
 
 Add new items here only after Fabian confirms them.

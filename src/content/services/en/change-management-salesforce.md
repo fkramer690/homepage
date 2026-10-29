@@ -81,7 +81,7 @@ Salesforce helps with measuring. Whether a new process is used shows in reports 
 
 In my largest programme, more than 30 developers worked in eight streams with five implementation partners. Common standards for naming conventions, one automation per object, test coverage and an [object ownership matrix](../../blog/salesforce-object-ownership-matrix/) took about three months until people lived by them.
 
-The first version covered around 80 percent of the cases. The edge cases were added step by step as they came up in the project. Later we raised new topics with lead time in regular Center of Excellence calls, before they turned into problems. At some point hardly any new edge cases came up. I describe the rules for several partners under [partner governance](../partner-governance/).
+The first version covered around 80 percent of the cases. The edge cases were added step by step as they came up in the project. Later we raised new topics with lead time in regular [Center of Excellence calls](../../blog/salesforce-center-of-excellence-cadence/), before they turned into problems. At some point hardly any new edge cases came up. I describe the rules for several partners under [partner governance](../partner-governance/).
 
 ## What changes for business teams?
 
