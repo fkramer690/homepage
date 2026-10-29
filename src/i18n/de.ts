@@ -74,8 +74,8 @@ export const de: Dict = {
         text: 'Zielarchitektur und Lösungsdesign für komplexe Salesforce-Landschaften mit mehreren Clouds, Portalen und Schnittstellen.',
       },
       {
-        title: 'Partnersteuerung & Governance',
-        text: 'Ein gemeinsames Governance- und Release-Framework über mehrere Implementierungspartner – und jemand, der die Lieferungen tatsächlich prüft.',
+        title: 'Change Management',
+        text: 'Neue Prozesse und Releases so einführen, dass Fachbereiche, Teams und Partner sie im Alltag nutzen, nach Prosci und ADKAR.',
       },
       {
         title: 'DevOps & Release-Management',
@@ -94,8 +94,8 @@ export const de: Dict = {
         text: 'Gehört das überhaupt in Salesforce? Best-of-Breed-Alternativen und Lizenzkosten, bewertet bevor die Entscheidung fällt.',
       },
       {
-        title: 'Change Management',
-        text: 'Neue Prozesse und Salesforce im Alltag der Fachbereiche verankern.',
+        title: 'Partnersteuerung & Governance',
+        text: 'Ein gemeinsames Governance- und Release-Framework über mehrere Implementierungspartner – und jemand, der die Lieferungen tatsächlich prüft.',
       },
     ],
     more: 'Mehr erfahren',
@@ -106,7 +106,7 @@ export const de: Dict = {
     moreItems: [
       { order: 5, text: 'Programme planen und steuern, Nearshore-Teams koordinieren.' },
       { order: 6, text: 'Gehört das in Salesforce? Alternativen und Lizenzkosten vorher bewertet.' },
-      { order: 7, text: 'Neue Prozesse und Salesforce im Alltag der Fachbereiche verankern.' },
+      { order: 7, text: 'Mehrere Implementierungspartner nach gemeinsamen Regeln steuern und ihre Lieferungen prüfen.' },
     ],
     focusLabel: 'Schwerpunkte',
     focus: [
@@ -312,7 +312,7 @@ export const de: Dict = {
         linkedin: 'https://www.linkedin.com/in/juliane-winterscheid-4794b8115/',
         photo: 'juliane-winterscheid',
         photoAlt: 'Juliane Winterscheid präsentiert vor einem Team',
-        service: 7,
+        service: 2,
         serviceLink: 'Change Management bei mir',
         profile: 'partner/juliane-winterscheid/',
         profileLink: 'Profil und Referenzen',

@@ -386,7 +386,7 @@ export const contactBriefs = {
       clarify: [
         'Ob es an der Lösung selbst oder an der Einführung liegt',
         'Welche Gruppen Sie zuerst gewinnen müssen',
-        'Ob zusätzlich eine Change-Management-Expertin dazukommen sollte',
+        'Ob Juliane Winterscheid für Change Management von Anfang an dabei sein sollte',
       ],
     },
     en: {
@@ -400,7 +400,7 @@ export const contactBriefs = {
       clarify: [
         'Whether the cause is the solution itself or the way it was introduced',
         'Which groups you need to win over first',
-        'Whether a dedicated change management expert should join',
+        'Whether Juliane Winterscheid should join for change management from the start',
       ],
     },
   },
