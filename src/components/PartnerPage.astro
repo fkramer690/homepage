@@ -20,7 +20,7 @@ const services = await getServices(lang);
 const recruiterTeaser = recruiters[lang].teaser;
 const serviceLinks = new Map(services.map((s) => [s.data.order, serviceHref(s)]));
 ---
-<Page lang={lang} title={t.partnerPage.metaTitle} description={t.partnerPage.description} alternates={{ en: partnersHref('en'), de: partnersHref('de') }}>
+<Page layout="wide" lang={lang} title={t.partnerPage.metaTitle} description={t.partnerPage.description} alternates={{ en: partnersHref('en'), de: partnersHref('de') }}>
   <section class="section blog">
     <div class="container">
       <p class="eyebrow mono">FK Solution Design</p>
@@ -32,14 +32,17 @@ const serviceLinks = new Map(services.map((s) => [s.data.order, serviceHref(s)])
         return (
           <article class="partner-card">
             <figure>
-              <Image src={photos[p.photo as keyof typeof photos]} alt={p.photoAlt} widths={[480]} />
+              {p.profile
+                ? <a href={localHref(lang, p.profile)}><Image src={photos[p.photo as keyof typeof photos]} alt={p.photoAlt} widths={[480]} /></a>
+                : <Image src={photos[p.photo as keyof typeof photos]} alt={p.photoAlt} widths={[480]} />}
             </figure>
             <div class="partner-body">
               <p class="partner-area mono">{p.area}</p>
-              <h2>{p.name}</h2>
+              <h2>{p.profile ? <a href={localHref(lang, p.profile)}>{p.name}</a> : p.name}</h2>
               <p>{p.text}</p>
               <p class="partner-links mono">
                 <a href={p.linkedin} target="_blank" rel="noopener">{t.partnerPage.linkedIn}<ExternalMark label={t.nav.externalTab} /></a>
+                {p.profile && <a href={localHref(lang, p.profile)}>{p.profileLink} →</a>}
                 {serviceLink && <a href={serviceLink}>{p.serviceLink} →</a>}
               </p>
             </div>

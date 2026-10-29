@@ -92,7 +92,7 @@ A typical scenario, as an assumption: a component maker with 90 technicians in t
 
 ## Who owns the numbers after go-live?
 
-Someone in the business, not the project. I would give the definitions to the head of service, the dispatcher change rate to the dispatch lead and the data pipeline to IT. A 30-minute review per month and region is enough: six numbers, the reasons behind outliers and one decision. The technical side of operations, from monitoring to backup, is covered in the DevOps chapter on [operations, monitoring and backup](../../masterclass/devops-release-management/operations-monitoring-backup/).
+Someone in the business, not the project. I would give the definitions to the head of service, the dispatcher change rate to the dispatch lead and the data pipeline to IT. A 30-minute review per month and region is enough: six numbers, the reasons behind outliers and one decision. These numbers show only indirectly whether dispatchers and technicians use the new process at all. The adoption numbers I put next to them are in [Measuring Salesforce adoption after go-live](../salesforce-adoption-metrics-after-go-live/). The technical side of operations, from monitoring to backup, is covered in the DevOps chapter on [operations, monitoring and backup](../../masterclass/devops-release-management/operations-monitoring-backup/).
 
 If you add Field Service agents later, measure them separately with their own KPIs, as described in [Agentforce KPIs after go-live](../agentforce-kpis-after-go-live/). An agent that books maintenance visits changes jobs per day only indirectly.
 

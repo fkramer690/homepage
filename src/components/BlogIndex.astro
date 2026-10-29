@@ -2,9 +2,14 @@
 import Page from '../layouts/Page.astro';
 import { en } from '../i18n/en';
 import { de } from '../i18n/de';
+import { Image } from 'astro:assets';
 import CardDrawing from './CardDrawing.astro';
+import Icon from './Icon.astro';
 import { getPosts, postHref, readingMinutes, formatDate, blogIndex } from '../lib/blog';
 import { categories, categoryIds } from '../lib/categories';
+import { authorIds, getAuthor } from '../lib/authors';
+import portrait from '../assets/portrait.png';
+import julianePortrait from '../assets/partners/juliane-winterscheid-portrait.jpg';
 
 interface Props {
   lang: 'en' | 'de';
@@ -12,9 +17,20 @@ interface Props {
 const { lang } = Astro.props;
 const t = lang === 'de' ? de : en;
 const posts = await getPosts(lang);
-// Only categories that have articles in this language get a filter button.
-const filters = categoryIds
-  .map((id) => ({ id, label: categories[id][lang], count: posts.filter((p) => p.data.categories.includes(id)).length }))
+// An article counts for its author and its co-author.
+const authorsOf = (post: (typeof posts)[number]) => [post.data.author, ...(post.data.coAuthor ? [post.data.coAuthor] : [])];
+const authorImg = { fabian: portrait, juliane: julianePortrait };
+// Two filters that combine: author and topic. Only categories that have articles
+// in this language get an entry.
+const authorFilters = authorIds.map((id) => ({
+  id,
+  name: getAuthor(lang, id).name,
+  focus: t.blog.authorFocus[id],
+  img: authorImg[id],
+  count: posts.filter((p) => authorsOf(p).includes(id)).length,
+}));
+const topicFilters = categoryIds
+  .map((id) => ({ id, label: categories[id][lang], icon: categories[id].icon, count: posts.filter((p) => p.data.categories.includes(id)).length }))
   .filter((f) => f.count > 0);
 
 const abs = (path: string) => new URL(path, Astro.site).href;
@@ -39,7 +55,7 @@ const schema = {
   })),
 };
 ---
-<Page lang={lang} title={t.blog.metaTitle} description={t.blog.metaDescription} alternates={{ en: blogIndex('en'), de: blogIndex('de') }}>
+<Page layout="wide" lang={lang} title={t.blog.metaTitle} description={t.blog.metaDescription} alternates={{ en: blogIndex('en'), de: blogIndex('de') }}>
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
   </Fragment>
@@ -51,69 +67,109 @@ const schema = {
         <p class="blog-intro">{t.blog.intro}</p>
         <p class="blog-intro">{t.blog.intro2}</p>
       </div>
-      <nav class="blog-filter" aria-label={t.blog.filterLabel}>
-        <button type="button" class="filter-chip mono" data-filter="all" aria-pressed="true">
-          {t.blog.filterAll} <span class="filter-count">{posts.length}</span>
-        </button>
-        {filters.map((f) => (
-          <button type="button" class="filter-chip mono" data-filter={f.id} aria-pressed="false">
-            {f.label} <span class="filter-count">{f.count}</span>
-          </button>
-        ))}
-      </nav>
-      <ul class="post-grid">
-        {posts.map((post, i) => (
-          <li class:list={['post-tile', { featured: i === 0 }]} data-categories={post.data.categories.join(' ')}>
-            <a href={postHref(post)}>
-              <span class="post-tile-media">
-                <CardDrawing translationKey={post.data.translationKey} topic={post.data.topic} lang={lang} />
-              </span>
-              <span class="post-tile-body">
-                <span class="post-meta mono">
-                  <time datetime={post.data.pubDate.toISOString()}>{formatDate(post.data.pubDate, lang)}</time>
-                  {' · '}{readingMinutes(post)} {t.blog.readingTime}
+      <div class="blog-layout">
+        <aside class="blog-filter" aria-label={t.blog.filterLabel}>
+          <details class="blog-filter-box" open>
+            <summary class="blog-filter-toggle mono"><Icon name="sliders" class="blog-filter-toggle-icon" />{t.blog.filterButton} <span class="blog-filter-active" data-active></span></summary>
+            <p class="blog-filter-head mono">{t.blog.filterAuthor}</p>
+            <ul class="blog-filter-list">
+              <li><button type="button" class="filter-item" data-author="all" aria-pressed="true"><span class="filter-media filter-all"><Icon name="team" /></span><span class="filter-label">{t.blog.filterAuthorAll}</span><span class="filter-count">{posts.length}</span></button></li>
+              {authorFilters.map((a) => (
+                <li><button type="button" class="filter-item" data-author={a.id} aria-pressed="false"><Image src={a.img} alt="" width={32} height={32} densities={[1, 2]} class="filter-media filter-avatar" /><span class="filter-label">{a.name}<small>{a.focus}</small></span><span class="filter-count" data-count-author={a.id}>{a.count}</span></button></li>
+              ))}
+            </ul>
+            <p class="blog-filter-head mono">{t.blog.filterTopic}</p>
+            <ul class="blog-filter-list">
+              <li><button type="button" class="filter-item" data-topic="all" aria-pressed="true"><span class="filter-media"><Icon name="compass" /></span><span class="filter-label">{t.blog.filterTopicAll}</span></button></li>
+              {topicFilters.map((f) => (
+                <li><button type="button" class="filter-item" data-topic={f.id} aria-pressed="false"><span class="filter-media"><Icon name={f.icon} /></span><span class="filter-label">{f.label}</span><span class="filter-count" data-count-topic={f.id}>{f.count}</span></button></li>
+              ))}
+            </ul>
+            <p class="blog-filter-result mono" aria-live="polite"><span data-result>{posts.length}</span> {t.blog.filterResult} <button type="button" class="blog-filter-reset mono" data-reset hidden>× {t.blog.filterReset}</button></p>
+          </details>
+        </aside>
+        <ul class="post-grid">
+          {posts.map((post, i) => (
+            <li class:list={['post-tile', { featured: i === 0 }]} data-categories={post.data.categories.join(' ')} data-authors={authorsOf(post).join(' ')}>
+              <a href={postHref(post)}>
+                <span class="post-tile-media">
+                  <CardDrawing translationKey={post.data.translationKey} topic={post.data.topic} lang={lang} />
                 </span>
-                <span class="post-category mono">{post.data.categories.map((c) => categories[c][lang]).join(' · ')}</span>
-                <span class="post-title">{post.data.title}</span>
-                <span class="post-desc">{post.data.description}</span>
-                <span class="card-more mono">{t.blog.readMore} →</span>
-              </span>
-            </a>
-          </li>
-        ))}
-      </ul>
+                <span class="post-tile-body">
+                  <span class="post-meta mono">
+                    <time datetime={post.data.pubDate.toISOString()}>{formatDate(post.data.pubDate, lang)}</time>
+                    {' · '}{readingMinutes(post)} {t.blog.readingTime}
+                  </span>
+                  <span class="post-category mono">{post.data.categories.map((c) => categories[c][lang]).join(' · ')}</span>
+                  <span class="post-title">{post.data.title}</span>
+                  <span class="post-desc">{post.data.description}</span>
+                  <span class="post-byline"><span class="post-byline-faces">{authorsOf(post).map((a) => <Image src={authorImg[a]} alt="" width={28} height={28} densities={[1, 2]} />)}</span>{authorsOf(post).map((a) => getAuthor(lang, a).name).join(' & ')}</span>
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   </section>
 </Page>
 
 <script>
-  // Without JavaScript all articles stay visible. The chosen category is kept in
-  // the URL hash (#devops), so a filtered overview can be linked and shared.
+  // Without JavaScript all articles stay visible. The filters (author and topic)
+  // combine; the choice is kept in the URL hash (#juliane, #devops or
+  // #juliane+change-management), so a filtered overview can be linked and shared.
+  const box = document.querySelector<HTMLElement>('.blog-filter');
   const grid = document.querySelector<HTMLElement>('.post-grid');
-  const chips = [...document.querySelectorAll<HTMLButtonElement>('.filter-chip')];
-  const ids = chips.map((c) => c.dataset.filter);
-  function apply(id: string) {
-    if (!grid) return;
-    chips.forEach((c) => c.setAttribute('aria-pressed', String(c.dataset.filter === id)));
+  if (box && grid) {
     const tiles = [...grid.querySelectorAll<HTMLElement>('.post-tile')];
-    tiles.forEach((tile) => {
-      tile.hidden = id !== 'all' && !(tile.dataset.categories ?? '').split(' ').includes(id);
-    });
-    // The newest visible article gets the wide card, in every filtered view.
-    tiles.forEach((tile) => tile.classList.remove('featured'));
-    tiles.find((tile) => !tile.hidden)?.classList.add('featured');
-  }
-  chips.forEach((c) =>
-    c.addEventListener('click', () => {
-      const id = c.dataset.filter ?? 'all';
-      history.replaceState(null, '', id === 'all' ? location.pathname : `#${id}`);
-      apply(id);
-    }),
-  );
-  const fromHash = location.hash.slice(1);
-  if (ids.includes(fromHash)) {
-    apply(fromHash);
-    // On phones the buttons scroll sideways; bring the active one into view.
-    chips.find((c) => c.dataset.filter === fromHash)?.scrollIntoView({ block: 'nearest', inline: 'center' });
+    const authors = [...box.querySelectorAll<HTMLButtonElement>('[data-author]')];
+    const topics = [...box.querySelectorAll<HTMLButtonElement>('[data-topic]')];
+    const state = { author: 'all', topic: 'all' };
+    const has = (tile: HTMLElement, key: 'authors' | 'categories', id: string) =>
+      id === 'all' || (tile.dataset[key] ?? '').split(' ').includes(id);
+    const count = (author: string, topic: string) =>
+      tiles.filter((tile) => has(tile, 'authors', author) && has(tile, 'categories', topic)).length;
+
+    function apply() {
+      authors.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.author === state.author)));
+      topics.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.topic === state.topic)));
+      tiles.forEach((tile) => {
+        tile.hidden = !(has(tile, 'authors', state.author) && has(tile, 'categories', state.topic));
+        tile.classList.remove('featured');
+      });
+      // The newest visible article gets the wide card, in every filtered view.
+      tiles.find((tile) => !tile.hidden)?.classList.add('featured');
+      // Each list counts within the other filter's choice; empty topics are greyed out.
+      box!.querySelectorAll<HTMLElement>('[data-count-topic]').forEach((c) => {
+        const n = count(state.author, c.dataset.countTopic!);
+        c.textContent = String(n);
+        c.closest('button')?.classList.toggle('is-empty', n === 0);
+      });
+      box!.querySelectorAll<HTMLElement>('[data-count-author]').forEach((c) => {
+        const n = count(c.dataset.countAuthor!, state.topic);
+        c.textContent = String(n);
+        c.closest('button')?.classList.toggle('is-empty', n === 0);
+      });
+      const shown = count(state.author, state.topic);
+      const active = [state.author, state.topic].filter((id) => id !== 'all');
+      box!.querySelector('[data-result]')!.textContent = String(shown);
+      box!.querySelector<HTMLElement>('[data-reset]')!.hidden = active.length === 0;
+      box!.querySelector('[data-active]')!.textContent = active.length ? String(shown) : '';
+      history.replaceState(null, '', active.length ? `#${active.join('+')}` : location.pathname);
+    }
+
+    authors.forEach((b) => b.addEventListener('click', () => { state.author = b.dataset.author ?? 'all'; apply(); }));
+    topics.forEach((b) => b.addEventListener('click', () => { state.topic = b.dataset.topic ?? 'all'; apply(); }));
+    box.querySelector('[data-reset]')?.addEventListener('click', () => { state.author = 'all'; state.topic = 'all'; apply(); });
+
+    const authorIds = authors.map((b) => b.dataset.author);
+    const topicIds = topics.map((b) => b.dataset.topic);
+    for (const part of location.hash.slice(1).split('+')) {
+      if (authorIds.includes(part)) state.author = part;
+      else if (topicIds.includes(part)) state.topic = part;
+    }
+    // On phones the filter starts folded, so the articles come first.
+    if (window.matchMedia('(max-width: 960px)').matches) box.querySelector('details')?.removeAttribute('open');
+    if (state.author !== 'all' || state.topic !== 'all') apply();
   }
 </script>

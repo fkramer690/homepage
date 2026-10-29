@@ -80,7 +80,7 @@ None of these four findings would show up in a code review, because the code its
 
 Agents make changes cheap, including changes to objects another stream owns. An agent that "fixes" a validation rule on Account while working on a dealer portal story has no idea that the service stream depends on it. That makes the [object ownership matrix](../salesforce-object-ownership-matrix/) more important. A CODEOWNERS file in the repository requests the owning stream as reviewer automatically when a pull request touches its objects.
 
-The annex should be identical for all partners. If each partner brings its own AI rules, the strictest or the loudest one quietly becomes your standard, and comparing partners gets harder. Setting these rules on the client side is part of my work in [partner governance](../../services/partner-governance/).
+The annex should be identical for all partners. If each partner brings its own AI rules, the strictest or the loudest one quietly becomes your standard, and comparing partners gets harder. For the rules not to wear off after a few months, the contract is not enough: they need the pipeline, review and a fixed slot for new cases, described in [Reinforcement: making standards stick with partners](../partner-standards-reinforcement/). Setting these rules on the client side is part of my work in [partner governance](../../services/partner-governance/).
 
 ## Where should you start?
 

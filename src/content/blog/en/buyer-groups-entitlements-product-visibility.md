@@ -30,7 +30,7 @@ In Salesforce B2B Commerce, a dealer sees a product when the dealer's buyer acco
 
 ## How does product visibility work in B2B Commerce?
 
-Salesforce B2B Commerce, which Salesforce now also markets as "Agentforce Commerce for B2B" ([Trailhead](https://trailhead.salesforce.com/content/learn/modules/agentforce-for-guided-shopping-for-b2b-and-d2c/increase-revenue-with-agentforce-for-guided-shopping)), controls access through a chain of standard objects. The [Trailhead unit on how buyers access a store](https://trailhead.salesforce.com/content/learn/modules/b2b-commerce-lightning-experience-data-model/organize-how-buyers-access-your-store) sums it up in one sentence: "Buyers are connected to stores using buyer groups."
+Salesforce B2B Commerce, which Salesforce now also markets as "Agentforce Commerce for B2B" ([Trailhead](https://trailhead.salesforce.com/content/learn/modules/agentforce-for-guided-shopping-for-b2b-and-d2c/increase-revenue-with-agentforce-for-guided-shopping)), controls access through a chain of standard objects. The [Trailhead unit on how buyers access a store](https://trailhead.salesforce.com/content/learn/modules/b2b2c-commerce-basics/b2b2c-data-model) sums it up in one sentence: "Buyers are connected to stores using buyer groups."
 
 - **Buyer account:** a normal Account that is enabled for buying. Its contacts become buyers or buyer managers.
 - **Buyer group** (BuyerGroup): bundles buyer accounts that share settings. Each membership is a BuyerGroupMember record.

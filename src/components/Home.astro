@@ -5,6 +5,7 @@ import Footer from './Footer.astro';
 import Blueprint from './Blueprint.astro';
 import ExternalMark from './ExternalMark.astro';
 import ContactForm from './ContactForm.astro';
+import ProofBar from './ProofBar.astro';
 import FloatingContact from './FloatingContact.astro';
 import StructuredData from './StructuredData.astro';
 import { Image } from 'astro:assets';
@@ -19,7 +20,9 @@ import { masterclassesIndex } from '../lib/masterclass';
 import { getMasterclasses } from '../lib/masterclasses';
 import { questions, questionPaths } from '../data/questions';
 import { clients, logoHeight } from '../data/clients';
-import StepIcon from './StepIcon.astro';
+import Icon from './Icon.astro';
+import Photo from './Photo.astro';
+import type { PhotoKey } from '../data/photos';
 
 interface Props {
   lang: 'en' | 'de';
@@ -37,16 +40,23 @@ const serviceLinks = new Map(services.map((s) => [s.data.order, serviceHref(s)])
 const masterclasses = await getMasterclasses(lang);
 const mcTexts = t.masterclasses;
 const [qOpen, qClose] = lang === 'de' ? ['„', '“'] : ['“', '”'];
+// Icons of the four approach steps (analyse, design, steer, implement).
+const stepIcons = ['analyse', 'design', 'steer', 'implement'];
+// Photo per approach step; versions chosen so shirt and counterpart change from step to step.
+const stepPhotos: PhotoKey[] = ['07-rundgang-produktion-v02', '02-workshop-whiteboard-v03', '09-coaching-bildschirm-v01', '10-projektabschluss-v02'];
+// Icons of the services (by order).
+const serviceIcons = ['architecture', 'change', 'pipeline', 'integration', 'team', 'license', 'partners'];
 ---
 <Base lang={lang} title={t.meta.title} description={t.meta.description} alternates={{ en: enHome, de: deHome }}>
   <StructuredData slot="head" t={t} url={new URL(home, Astro.site).href} />
   <a class="skip-link" href="#main">{lang === 'de' ? 'Zum Inhalt springen' : 'Skip to content'}</a>
   <Header t={t} home={home} switchHref={switchHref} />
 
-  <main id="main">
+  <main id="main" data-layout="wide">
     <section class="hero dark grid-bg">
       <Blueprint />
-      <div class="container hero-inner">
+      <div class="container hero-inner hero-split">
+        <div class="hero-text">
         <p class="eyebrow mono">{t.hero.eyebrow}</p>
         <h1>{t.hero.title}</h1>
         <p class="hero-focus">
@@ -57,19 +67,16 @@ const [qOpen, qClose] = lang === 'de' ? ['„', '“'] : ['“', '”'];
           <a class="btn" href={cta} {...ctaAttrs}>{t.hero.ctaPrimary}{contactExternal && <ExternalMark label={t.nav.newTab} />}</a>
           <a class="btn btn-ghost" href="#references">{t.hero.ctaSecondary}</a>
         </div>
+        </div>
+        <figure class="hero-photo">
+          <Photo photo="06-portraet-halle-v02" lang={lang} widths={[360, 540, 720]} sizes="360px" />
+        </figure>
       </div>
     </section>
 
     <section class="proof" aria-label={lang === 'de' ? 'Kennzahlen' : 'Key figures'}>
       <div class="container">
-        <ul class="proof-list">
-          {t.proof.map((p) => (
-            <li>
-              <span class="proof-value">{p.value}</span>
-              <span class="proof-label mono">{p.label}</span>
-            </li>
-          ))}
-        </ul>
+        <ProofBar t={t} />
       </div>
     </section>
 
@@ -107,7 +114,7 @@ const [qOpen, qClose] = lang === 'de' ? ['„', '“'] : ['“', '”'];
             const href = serviceLinks.get(i + 1);
             const inner = (
               <>
-                <span class="card-index mono">{String(i + 1).padStart(2, '0')}</span>
+                <span class="card-top"><Icon name={serviceIcons[i]} class="card-icon" /><span class="card-index mono">{String(i + 1).padStart(2, '0')}</span></span>
                 <h3>{s.title}</h3>
                 <p>{s.text}</p>
                 {href && <span class="card-more mono">{t.services.more} →</span>}
@@ -124,12 +131,11 @@ const [qOpen, qClose] = lang === 'de' ? ['„', '“'] : ['“', '”'];
               </span>
             </div>
             <ul class="more-rows">
-              {t.services.moreItems.map((m, i) => {
-                const index = String(t.services.featured + i + 1).padStart(2, '0');
+              {t.services.moreItems.map((m) => {
                 const href = serviceLinks.get(m.order);
                 const inner = (
                   <>
-                    <span class="more-index mono">{index}</span>
+                    <span class="more-index mono"><Icon name={serviceIcons[m.order - 1]} class="more-icon" /></span>
                     <span class="more-title">{t.services.items[m.order - 1].title}</span>
                     {href && <span class="more-arrow mono" aria-hidden="true">→</span>}
                     <span class="more-text">{m.text}</span>
@@ -186,6 +192,8 @@ const [qOpen, qClose] = lang === 'de' ? ['„', '“'] : ['“', '”'];
                   <img
                     class:list={{ light: c.light }}
                     style={`--h: ${logoHeight(c)}px`}
+                    width={Math.round(logoHeight(c) * c.ratio)}
+                    height={logoHeight(c)}
                     src={`${import.meta.env.BASE_URL}clients/${c.file}`}
                     alt={i >= clients.length ? '' : c.name}
                     loading="lazy"
@@ -207,7 +215,8 @@ const [qOpen, qClose] = lang === 'de' ? ['„', '“'] : ['“', '”'];
         <ol class="steps">
           {t.approach.steps.map((s, i) => (
             <li>
-              <StepIcon index={i} />
+              <Photo photo={stepPhotos[i]} lang={lang} class="step-photo" widths={[320, 480, 640]} sizes="(max-width: 520px) calc(100vw - 32px), (max-width: 860px) 45vw, 280px" />
+              <Icon name={stepIcons[i]} class="step-icon" />
               <span class="step-no mono">{String(i + 1).padStart(2, '0')}</span>
               <h3>{s.title}</h3>
               <p>{s.text}</p>
@@ -303,6 +312,10 @@ const [qOpen, qClose] = lang === 'de' ? ['„', '“'] : ['“', '”'];
           <a class="btn" href={cta} {...ctaAttrs}>{t.contact.cta}{contactExternal && <ExternalMark label={t.nav.newTab} />}</a>
           {contactExternal && <p class="booking-note">{t.contact.bookingNote}</p>}
           <dl class="contact-list">
+            <div>
+              <dt class="mono">{t.contact.form.email}</dt>
+              <dd><a href={`mailto:${site.email}`}>{site.email}</a></dd>
+            </div>
             <div>
               <dt class="mono">{t.contact.linkedinLabel}</dt>
               <dd><a href={site.linkedin} target="_blank" rel="noopener">Fabian Kramer<ExternalMark label={t.nav.externalTab} /></a></dd>

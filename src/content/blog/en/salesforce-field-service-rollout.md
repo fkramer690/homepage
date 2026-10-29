@@ -50,7 +50,7 @@ A wave should cover:
 - the agreements with the works council and data protection for that country
 - metrics measured before and after go-live
 
-Leave room between two waves. The first weeks after a region goes live are when dispatchers change proposals often and technicians have questions about the app. Starting the next wave in that phase spreads the project team's attention too thin. It helps when dispatchers of the next wave watch the live region first. They learn more there than in any training.
+Leave room between two waves. The first weeks after a region goes live are when dispatchers change proposals often and technicians have questions about the app. Starting the next wave in that phase spreads the project team's attention too thin. It helps when dispatchers of the next wave watch the live region first. They learn more there than in any training. Why training alone does not get technicians to accept the app is covered in [Field Service app: getting technicians on board](../field-service-app-technician-adoption/).
 
 ## Which topics go to the works council early?
 
@@ -82,7 +82,7 @@ From a project point of view, timing matters most. Whoever talks to the works co
 
 An international field service does not have one legal situation but many. Co-determination, data protection and working time rules differ by country, sometimes also by region or site with its own employee representation. What takes a short alignment in one country needs a formal works agreement in another.
 
-That argues for waves by country. Each wave checks the conditions of its country before it starts. The configuration has to support that: mobile settings can be assigned per profile, so that location tracking is active in one country and not in another. Set it up that way from the start, so the second country does not inherit the settings of the first.
+That argues for waves by country. Each wave checks the conditions of its country before it starts. The configuration has to support that: mobile settings can be assigned per profile, so that location tracking is active in one country and not in another. Set it up that way from the start, so the second country does not inherit the settings of the first. What each country needs beyond law and technology, from a sponsor in the country management to key users, is covered in [chapter 4 of the change management masterclass](../../masterclass/change-management/change-management-rollout-countries/).
 
 ## How do you measure the success of a wave?
 

@@ -26,7 +26,7 @@ faq:
 draft: false
 ---
 
-Mit dem B2B Buyer Agent suchen Händler Produkte, fragen den Auftragsstatus ab und bestellen frühere Aufträge im Chat nach, Salesforce nennt dafür auch WhatsApp und SMS. Den kompletten Auftrag im Chat, mit Bestätigung und Zahlung zum Vertragspreis, datiert Salesforce unter dem Namen Carter für Käufer auf Januar 2027. Damit das hilft, müssen drei Dinge stehen: ein funktionierender B2B-Shop mit richtigen Käufergruppen und Preisen, die Lizenzen, die Trailhead nennt, und Systeme, die Vertragspreise und Kreditentscheidungen liefern. Ich würde mit Auftragsstatus und Nachbestellung für eine Pilotgruppe von Händlern beginnen und den Rest erst ergänzen, wenn die Antworten verlässlich sind.
+Mit dem B2B Buyer Agent suchen Händler heute im Chat Produkte, fragen den Auftragsstatus ab und bestellen frühere Aufträge nach. Den kompletten Auftrag per WhatsApp oder SMS, mit Bestätigung und Zahlung zum Vertragspreis, kündigt Salesforce unter dem Namen Carter für Käufer erst für Januar 2027 an. Ich würde deshalb mit Auftragsstatus und Nachbestellung für eine Pilotgruppe von Händlern beginnen und den Rest ergänzen, wenn die Antworten verlässlich sind. Voraussetzung sind ein funktionierender B2B-Shop mit richtigen Käufergruppen und Preisen, die Lizenzen, die Trailhead nennt, und Systeme, die Vertragspreise und Kreditentscheidungen liefern.
 
 ## Was kann der B2B Buyer Agent heute?
 

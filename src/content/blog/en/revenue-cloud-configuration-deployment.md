@@ -30,7 +30,7 @@ Most Revenue Cloud configuration is data: attribute definitions, product classif
 
 ## Why is Revenue Cloud configuration mostly data?
 
-In Salesforce CPQ, price rules, product rules and options are records in package objects. Revenue Cloud, also listed in Salesforce Help as Revenue Management and earlier as Revenue Lifecycle Management, keeps the same principle on standard objects. Gearset sums it up in its [comparison of CPQ and Revenue Cloud](https://docs.gearset.com/en/articles/10981375-understanding-the-difference-between-salesforce-cpq-and-revenue-lifecycle-management-rlm-revenue-cloud-advanced-rca): in both products "most configuration is stored as data, not metadata".
+In Salesforce CPQ, price rules, product rules and options are records in package objects. Revenue Cloud, also listed in Salesforce Help as Revenue Management and earlier as Revenue Lifecycle Management, keeps the same principle on standard objects. Gearset sums it up in its [comparison of CPQ and Revenue Cloud](https://docs.gearset.com/en/articles/11169961-how-to-compare-and-deploy-revenue-cloud-advanced): in both products "most configuration is stored as data, not metadata".
 
 For teams coming from CPQ, the differences look like this:
 

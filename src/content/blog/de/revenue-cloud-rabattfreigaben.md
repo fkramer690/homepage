@@ -34,7 +34,7 @@ Revenue Cloud ist die Quote-to-Cash-Suite von Salesforce auf Standardobjekten; H
 
 ```vertiefung Für Admins
 titel: Worauf baut Advanced Approvals technisch auf?
-Technisch steht es auf dem Freigabemodell von Flow. Salesforce dokumentiert [Flow Approval Process und Advanced Approvals](https://developer.salesforce.com/docs/platform/data-models/guide/flow-approval-process-and-advanced-approvals.html) in einem gemeinsamen Datenmodell: Stufen, Schritte und Entscheidungen werden im Flow Builder gebaut, jeder Durchlauf erzeugt Approval Submissions und Approval Work Items. Für Sie heißt das zweierlei. Ein Admin, der Flow kennt, kann die Freigabelogik lesen und ändern. Und jede Freigabe hinterlässt Datensätze, die Reporting und Prüfungen nutzen können.
+Technisch steht es auf dem Freigabemodell von Flow. Laut dem [Datenmodell des Flow Approval Process](https://developer.salesforce.com/docs/platform/data-models/guide/platform-flow-approval-process.html) werden Stufen, Schritte und Entscheidungen im Flow Builder gebaut, jeder Durchlauf erzeugt Approval Submissions und Approval Work Items. [Advanced Approvals](https://developer.salesforce.com/docs/atlas.en-us.revenue_lifecycle_management_dev_guide.meta/revenue_lifecycle_management_dev_guide/advanced_approvals_overview.htm) ergänzt das um Aktionen für parallele und sequenzielle Freigabeketten. Für Sie heißt das zweierlei. Ein Admin, der Flow kennt, kann die Freigabelogik lesen und ändern. Und jede Freigabe hinterlässt Datensätze, die Reporting und Prüfungen nutzen können.
 ```
 
 ## Wie läuft eine Freigabe am Angebot ab?

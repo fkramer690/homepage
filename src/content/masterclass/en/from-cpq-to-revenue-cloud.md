@@ -82,7 +82,7 @@ Three rows carry most of the effort.
 
 **Subscriptions.** Every open CPQ subscription becomes an asset with a correct history, so amendments and renewals work through quote and order as described in [chapter 3](../quote-contract-order/). For maintenance contracts and remote monitoring this is the riskiest data in the whole migration.
 
-One row is a similarity: according to [Gearset](https://docs.gearset.com/en/articles/10981375-understanding-the-difference-between-salesforce-cpq-and-revenue-lifecycle-management-rlm-revenue-cloud-advanced-rca), most configuration is stored as data in both products. The sources per row are in [Salesforce CPQ vs Revenue Cloud: the real differences](../../../blog/salesforce-cpq-vs-revenue-cloud-differences/).
+One row is a similarity: according to [Gearset](https://docs.gearset.com/en/articles/11169961-how-to-compare-and-deploy-revenue-cloud-advanced), most configuration is stored as data in both products. The sources per row are in [Salesforce CPQ vs Revenue Cloud: the real differences](../../../blog/salesforce-cpq-vs-revenue-cloud-differences/).
 
 ## Stay on CPQ, move, or take a third route?
 

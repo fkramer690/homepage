@@ -30,7 +30,7 @@ Dealers find spare parts in a Salesforce B2B Commerce store when the part number
 
 ## How does B2B Commerce search match a part number?
 
-Salesforce B2B Commerce, which Salesforce now also markets as "Agentforce Commerce for B2B", builds a search index per store. B2B and D2C stores on the core platform share this store search, as the [search data model](https://developer.salesforce.com/docs/platform/data-models/guide/b2b-commerce-d2c-commerce-search.html) shows. The [Trailhead unit on making a store searchable](https://trailhead.salesforce.com/content/learn/modules/b2b2c-commerce-for-merchandisers/b2b2c-make-store-searchable), written for D2C merchandisers, says that product name, product description and product SKU are searchable by default and that you can add more fields. It describes these matching rules:
+Salesforce B2B Commerce, which Salesforce now also markets as "Agentforce Commerce for B2B", builds a search index per store. B2B and D2C stores on the core platform share this store search, as the [search data model](https://developer.salesforce.com/docs/platform/data-models/guide/b2b-commerce-d2c-commerce-search.html) shows. Salesforce's training material for D2C merchandisers says that product name, product description and product SKU are searchable by default and that you can add more fields. It describes these matching rules:
 
 - Search matches word stems.
 - A result appears only when all search terms are present in it.

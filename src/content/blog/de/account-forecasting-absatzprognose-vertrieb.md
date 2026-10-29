@@ -27,7 +27,9 @@ faq:
 draft: false
 ---
 
-Account Forecasting lohnt sich für Hersteller, deren Vertrieb Mengen pro Kunde und Produkt über Monate planen soll und deren Geschäft zu großen Teilen aus wiederkehrenden Abnahmen besteht. Die Funktion der Manufacturing Cloud rechnet Aufträge, Opportunities und Sales Agreements zu einer Prognose zusammen, die Account Manager anpassen. Sie trägt aber nur, wenn die Auftragshistorie aus dem ERP verlässlich ankommt, wenn der Zuschnitt aus Kunden, Produkten und Zeiträumen ins Limit passt und wenn klar ist, wo die Planung im ERP übernimmt. Diesen Teil der Serie schreibe ich als Leitfaden für die Bewertung, nicht als Projektbericht.
+Account Forecasting lohnt sich für Hersteller mit wiederkehrenden Abnahmen, deren Vertrieb Mengen pro Kunde und Produkt über Monate planen soll. Die Funktion der Manufacturing Cloud rechnet Aufträge, Opportunities und Sales Agreements zu einer Absatzprognose zusammen, die Account Manager anpassen. Sie trägt nur unter drei Bedingungen: Die Auftragshistorie kommt verlässlich aus dem ERP, der Zuschnitt aus Kunden, Produkten und Zeiträumen passt ins Limit, und es ist klar, wo die Planung im ERP übernimmt.
+
+Diesen Teil der Serie schreibe ich als Leitfaden für die Bewertung, nicht als Projektbericht.
 
 ## Was ist Account Forecasting in der Manufacturing Cloud?
 

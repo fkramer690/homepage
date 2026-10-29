@@ -386,7 +386,7 @@ export const contactBriefs = {
       clarify: [
         'Ob es an der Lösung selbst oder an der Einführung liegt',
         'Welche Gruppen Sie zuerst gewinnen müssen',
-        'Ob zusätzlich eine Change-Management-Expertin dazukommen sollte',
+        'Ob Juliane Winterscheid für Change Management von Anfang an dabei sein sollte',
       ],
     },
     en: {
@@ -400,7 +400,38 @@ export const contactBriefs = {
       clarify: [
         'Whether the cause is the solution itself or the way it was introduced',
         'Which groups you need to win over first',
-        'Whether a dedicated change management expert should join',
+        'Whether Juliane Winterscheid should join for change management from the start',
+      ],
+    },
+  },
+  // Articles by Juliane Winterscheid on change management in general (author: juliane).
+  'change-basics': {
+    de: {
+      title: 'Eine Veränderung steht an und soll im Alltag ankommen?',
+      text: 'In 30 Minuten klären Juliane Winterscheid und ich, wo Ihre Veränderung steht und welche Schritte als Nächstes zählen.',
+      bring: [
+        'Was sich ändern soll, für wen und bis wann',
+        'Wer im Management die Veränderung trägt',
+        'Was bisher geplant ist, zum Beispiel Kommunikation oder Schulungen',
+      ],
+      clarify: [
+        'An welcher Stufe die betroffenen Gruppen heute stehen',
+        'Was vor dem Start feststehen muss',
+        'Ob und in welchem Umfang Change Management von außen sinnvoll ist',
+      ],
+    },
+    en: {
+      title: 'A change is coming and has to stick in daily work?',
+      text: 'In 30 minutes Juliane Winterscheid and I clarify where your change stands and which steps matter next.',
+      bring: [
+        'What is supposed to change, for whom and by when',
+        'Who in management sponsors the change',
+        'What is planned so far, for example communication or training',
+      ],
+      clarify: [
+        'At which stage the groups affected stand today',
+        'What has to be settled before the start',
+        'Whether outside change management makes sense, and how much of it',
       ],
     },
   },
@@ -413,6 +444,7 @@ export const contactBriefIds = Object.keys(contactBriefs) as [ContactBrief, ...C
 const categoryBriefs: Record<Category, ContactBrief> = {
   devops: 'devops',
   architecture: 'architecture',
+  'change-management': 'change',
   'field-service': 'field-service',
   'manufacturing-cloud': 'manufacturing-cloud',
   'b2b-commerce': 'b2b-commerce',

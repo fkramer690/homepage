@@ -3,8 +3,9 @@ import ExternalMark from './ExternalMark.astro';
 import Logo from './Logo.astro';
 import type { Dict } from '../i18n/en';
 import { site } from '../site';
-import { homeHref } from '../lib/paths';
+import { homeHref, localHref } from '../lib/paths';
 import { masterclassesIndex } from '../lib/masterclass';
+import { freelanceArchitect, freelanceArchitectPaths } from '../data/freelance-architect';
 
 interface Props {
   t: Dict;
@@ -24,6 +25,7 @@ const year = new Date().getFullYear();
     <nav class="footer-nav" aria-label="Footer">
       <a href={`${home}blog/`}>{t.footer.blog}</a>
       <a href={masterclassesIndex(t.lang)}>{t.nav.masterclass}</a>
+      <a href={localHref(t.lang, freelanceArchitectPaths[t.lang])}>{freelanceArchitect[t.lang].footerLink}</a>
       <a href={`${base}impressum/`}>{t.footer.imprint}</a>
       <a href={`${base}datenschutz/`}>{t.footer.privacy}</a>
       <a href={site.linkedin} target="_blank" rel="noopener">LinkedIn<ExternalMark label={t.nav.externalTab} /></a>

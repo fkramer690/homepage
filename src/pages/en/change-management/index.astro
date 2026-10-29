@@ -1,0 +1,8 @@
+---
+// The change management area page (2026-10-29) is now part of the service page.
+import Redirect from '../../../components/Redirect.astro';
+import { getServices, serviceHref } from '../../../lib/services';
+const service = (await getServices('en')).find((s) => s.data.translationKey === 'service-change');
+if (!service) throw new Error('change management service page (service-change) missing');
+---
+<Redirect to={serviceHref(service)} />

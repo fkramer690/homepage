@@ -80,7 +80,7 @@ Keiner dieser vier Befunde wäre im Code-Review aufgefallen, denn der Code selbs
 
 Agenten machen Änderungen billig, auch Änderungen an Objekten, die ein anderer Stream verantwortet. Ein Agent, der bei einer Story fürs Händlerportal eine Validierungsregel auf dem Account „repariert“, weiß nicht, dass der Service-Stream davon abhängt. Damit wird die [Object Ownership Matrix](../object-ownership-matrix-salesforce/) wichtiger. Eine CODEOWNERS-Datei im Repository fragt den verantwortlichen Stream automatisch als Reviewer an, wenn ein Pull Request seine Objekte berührt.
 
-Die Anlage sollte für alle Partner identisch sein. Bringt jeder Partner eigene KI-Regeln mit, wird stillschweigend die strengste oder die lauteste zu Ihrem Standard, und Partner lassen sich schwerer vergleichen. Diese Regeln auf Kundenseite festzulegen, gehört zu meiner Arbeit in der [Partnersteuerung](../../leistungen/partnersteuerung/).
+Die Anlage sollte für alle Partner identisch sein. Bringt jeder Partner eigene KI-Regeln mit, wird stillschweigend die strengste oder die lauteste zu Ihrem Standard, und Partner lassen sich schwerer vergleichen. Damit die Regeln nach einigen Monaten nicht verwässern, braucht es mehr als den Vertrag: Pipeline, Review und einen festen Termin für neue Fälle, beschrieben in [Reinforcement: Standards bei Partnern verankern](../standards-partner-verankern-reinforcement/). Diese Regeln auf Kundenseite festzulegen, gehört zu meiner Arbeit in der [Partnersteuerung](../../leistungen/partnersteuerung/).
 
 ## Wo sollten Sie anfangen?
 

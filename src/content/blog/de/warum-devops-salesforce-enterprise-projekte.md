@@ -99,7 +99,7 @@ Das DevOps Center von Salesforce selbst ist eine weitere kostenlose Option. Es b
 
 DevOps klingt nach einem Thema für Entwickler. In der Praxis profitiert oft der Fachbereich am meisten:
 
-- **Planbare Releases.** Ein fester Release-Kalender ersetzt „wir deployen, wenn es fertig ist“. Fachbereiche können Schulungen und Kommunikation darauf ausrichten.
+- **Planbare Releases.** Ein fester Release-Kalender ersetzt „wir deployen, wenn es fertig ist“. Fachbereiche können Schulungen und Kommunikation darauf ausrichten. Wie das pro Release aussieht, beschreibe ich in [Salesforce-Releases an den Fachbereich kommunizieren](../salesforce-releases-fachbereich-kommunizieren/).
 - **Schnellere Korrekturen.** Tritt ein Fehler in Produktion auf, läuft ein Hotfix in Stunden durch dieselbe getestete Pipeline, statt auf das nächste große Release zu warten.
 - **Weniger Überraschungen beim Go-live.** Jede Änderung wurde in Integration und UAT bereits genau so deployt und getestet, wie sie in Produktion ankommt.
 - **Nachvollziehbarkeit für Audits.** Für jedes Feld, jeden Flow und jede Berechtigung lässt sich zeigen, wer es wann und warum geändert und wer es freigegeben hat.

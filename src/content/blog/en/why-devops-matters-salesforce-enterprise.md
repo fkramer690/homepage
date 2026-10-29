@@ -99,7 +99,7 @@ Salesforce's own DevOps Center is another free option. It brings source control 
 
 DevOps sounds like a topic for developers. In practice the business side often benefits most:
 
-- **Predictable releases.** A fixed release calendar replaces "we'll deploy when it's ready". Departments can plan training and communication around it.
+- **Predictable releases.** A fixed release calendar replaces "we'll deploy when it's ready". Departments can plan training and communication around it. What that looks like per release is described in [Communicating Salesforce releases to the business](../salesforce-release-communication-business/).
 - **Faster fixes.** When a bug hits production, a hotfix moves through the same tested pipeline in hours instead of waiting for the next big release.
 - **Fewer surprises at go-live.** Every change has already been deployed and tested in integration and UAT exactly the way it will reach production.
 - **Traceability for audits.** For every field, flow or permission you can show who changed it, when, why and who approved it.

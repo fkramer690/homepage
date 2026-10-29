@@ -5,6 +5,12 @@ import ContactForm from './ContactForm.astro';
 import AuthorBox from './AuthorBox.astro';
 import Blueprint from './Blueprint.astro';
 import ContactBrief from './ContactBrief.astro';
+import ReadingGrid from './ReadingGrid.astro';
+import Photo from './Photo.astro';
+import ChangeTeam from './ChangeTeam.astro';
+import ChangeArticles from './ChangeArticles.astro';
+import { changeSection } from '../data/change-management';
+import { servicePhotos } from '../data/photos';
 import { getContactBrief } from '../lib/contact-briefs';
 import { render } from 'astro:content';
 import { en } from '../i18n/en';
@@ -12,15 +18,20 @@ import { de } from '../i18n/de';
 import { site, contactHref, contactExternal } from '../site';
 import { postHref } from '../lib/blog';
 import { type Service, servicesIndex, serviceHref, getServiceTranslation, getServicePosts } from '../lib/services';
-import { homeHref, partnersHref } from '../lib/paths';
+import { homeHref, localHref, partnersHref } from '../lib/paths';
 
 interface Props {
   service: Service;
 }
 const { service } = Astro.props;
-const { lang, title, headline, description, lead, situations, deliverables, results, phases, faq, order, note, notePartner } = service.data;
+const { lang, title, headline, description, lead, situations, deliverables, results, phases, faq, order, note, notePartner, section } = service.data;
+// section: change-management adds the team (Fabian and Juliane) above the reading grid and
+// the change management articles instead of the related articles (src/data/change-management.ts).
+const isChange = section === 'change-management';
 const t = lang === 'de' ? de : en;
-const { Content } = await render(service);
+const { Content, headings } = await render(service);
+const photo = servicePhotos[service.data.translationKey];
+const toc = [...headings.filter((h) => h.depth === 2), { slug: 'faq', text: t.servicePage.faq }, ...(isChange ? [{ slug: 'articles', text: changeSection[lang].articles.title }] : [])];
 const translation = await getServiceTranslation(service);
 const posts = await getServicePosts(service);
 const alternates = translation
@@ -75,30 +86,35 @@ const schema = {
   ],
 };
 ---
-<Page lang={lang} title={pageTitle} description={description} alternates={alternates} image={ogImage} hasContact>
+<Page layout="reading" lang={lang} title={pageTitle} description={description} alternates={alternates} image={ogImage} hasContact>
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
   </Fragment>
   <article class="section post service">
-    <div class="container post-inner">
+    <div class="container">
       <a class="post-back mono" href={servicesIndex(lang)}>← {t.servicePage.back}</a>
       {note && (
         <p class="service-note">
           <span class="service-note-label mono">{t.servicePage.note}</span>
           <span>
-            {noteBefore}{partner && <a href={partnersHref(lang)}>{partner.name}</a>}{noteAfter}
+            {noteBefore}{partner && <a href={partner.profile ? localHref(lang, partner.profile) : partnersHref(lang)}>{partner.name}</a>}{noteAfter}
             {partner && <> <a href={partner.linkedin} target="_blank" rel="noopener">{t.partnerPage.linkedIn}<ExternalMark label={t.nav.externalTab} /></a></>}
           </span>
         </p>
       )}
-      <p class="eyebrow mono">{String(order).padStart(2, '0')} · {name}</p>
-      <h1>{headline ?? title}</h1>
-      <p class="service-lead">{lead}</p>
-      <a class="btn" href={contactHref(name)} {...ctaAttrs}>{t.nav.cta}{contactExternal && <ExternalMark label={t.nav.newTab} />}</a>
+      <div class:list={['service-head', { 'has-photo': photo }]}>
+        <div>
+          <p class="eyebrow mono">{String(order).padStart(2, '0')} · {name}</p>
+          <h1>{headline ?? title}</h1>
+          <p class="service-lead">{lead}</p>
+          <a class="btn" href={contactHref(name)} {...ctaAttrs}>{t.nav.cta}{contactExternal && <ExternalMark label={t.nav.newTab} />}</a>
+        </div>
+        {photo && <figure class="service-photo"><Photo photo={photo} lang={lang} eager widths={[300, 450, 600]} sizes="300px" /></figure>}
+      </div>
 
       <section class="service-block" aria-labelledby="situations">
         <h2 id="situations">{t.servicePage.situations}</h2>
-        <ul class="service-list">{situations.map((item) => <li>{item}</li>)}</ul>
+        <div class="rc-rules sit-box"><ul class="rc-rules-list">{situations.map((item) => <li>{item}</li>)}</ul></div>
       </section>
       <div class="service-columns">
         <section class="service-block" aria-labelledby="deliverables">
@@ -122,29 +138,33 @@ const schema = {
           ))}
         </ol>
       </section>
+      {isChange && <ChangeTeam lang={lang} />}
 
-      <div class="prose">
-        <Content />
-      </div>
+      <ReadingGrid t={t} headings={toc} cta={name}>
+        <div class="prose">
+          <Content />
+        </div>
 
-      <section class="post-faq" aria-labelledby="faq">
-        <h2 id="faq">{t.servicePage.faq}</h2>
-        {faq.map(({ q, a }) => (
-          <details class="faq-item">
-            <summary><h3>{q}</h3></summary>
-            <p>{a}</p>
-          </details>
-        ))}
-      </section>
-      <AuthorBox lang={lang} />
-      {posts.length > 0 && (
-        <nav class="post-related" aria-label={t.servicePage.posts}>
-          <p class="label mono">{t.servicePage.posts}</p>
-          <ul>
-            {posts.map((p) => <li><a href={postHref(p)}>{p.data.title}</a></li>)}
-          </ul>
-        </nav>
-      )}
+        <section class="post-faq" aria-labelledby="faq">
+          <h2 id="faq">{t.servicePage.faq}</h2>
+          {faq.map(({ q, a }) => (
+            <details class="faq-item">
+              <summary><h3>{q}</h3></summary>
+              <p>{a}</p>
+            </details>
+          ))}
+        </section>
+        <AuthorBox lang={lang} />
+        {isChange && <ChangeArticles lang={lang} />}
+        {!isChange && posts.length > 0 && (
+          <nav class="post-related" aria-label={t.servicePage.posts}>
+            <p class="label mono">{t.servicePage.posts}</p>
+            <ul>
+              {posts.map((p) => <li><a href={postHref(p)}>{p.data.title}</a></li>)}
+            </ul>
+          </nav>
+        )}
+      </ReadingGrid>
     </div>
   </article>
   <section class="contact dark grid-bg" id="contact">

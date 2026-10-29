@@ -1,0 +1,36 @@
+---
+// Box with Juliane Winterscheid's photo and a link to her profile page. Shown on the
+// change management masterclass (hub and every chapter) and below the blog articles
+// of the category change-management, so it looks the same everywhere.
+import { Image } from 'astro:assets';
+import ExternalMark from './ExternalMark.astro';
+import portrait from '../assets/partners/juliane-winterscheid-portrait.jpg';
+import { en } from '../i18n/en';
+import { de } from '../i18n/de';
+import { localHref } from '../lib/paths';
+import { juliane, julianePaths } from '../data/juliane-winterscheid';
+
+interface Props {
+  lang: 'en' | 'de';
+  // 'blog' uses the shorter text that does not mention the masterclass.
+  variant?: 'masterclass' | 'blog';
+}
+const { lang, variant = 'masterclass' } = Astro.props;
+const t = lang === 'de' ? de : en;
+const box = juliane[lang].box;
+const href = localHref(lang, julianePaths[lang]);
+const partner = t.partnerPage.partners.find((p) => p.name === 'Juliane Winterscheid');
+---
+<aside class="post-author partner-box" aria-label={box.label}>
+  <a href={href} class="partner-box-photo"><Image src={portrait} alt={juliane[lang].portraitAlt} width={112} height={112} densities={[1, 2]} class="post-author-img" /></a>
+  <div class="post-author-body">
+    <p class="label mono">{box.label}</p>
+    <p class="post-author-name"><a href={href}>Juliane Winterscheid</a></p>
+    <p class="post-author-role mono">{box.role}</p>
+    <p class="post-author-bio">{variant === 'blog' ? box.textBlog : box.text}</p>
+    <div class="post-author-links">
+      <a class="btn btn-small" href={href}>{box.link} →</a>
+      {partner && <a class="post-author-more" href={partner.linkedin} target="_blank" rel="noopener">{t.partnerPage.linkedIn}<ExternalMark label={t.nav.externalTab} /></a>}
+    </div>
+  </div>
+</aside>

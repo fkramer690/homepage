@@ -2,6 +2,7 @@
 import Base from './Base.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import ReadingGrid from '../components/ReadingGrid.astro';
 import { de } from '../i18n/de';
 import { homeHref } from '../lib/paths';
 
@@ -10,14 +11,26 @@ interface Props {
 }
 const { title } = Astro.props;
 const base = import.meta.env.BASE_URL;
+// Give every h2 an id so the contents list in the side column can link to it.
+const headings: { slug: string; text: string }[] = [];
+const slugify = (text: string) =>
+  text.toLowerCase().replace(/ä/g, 'ae').replace(/ö/g, 'oe').replace(/ü/g, 'ue').replace(/ß/g, 'ss').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+const body = (await Astro.slots.render('default')).replace(/<h2>(.*?)<\/h2>/g, (_, inner: string) => {
+  const text = inner.replace(/<[^>]+>/g, '');
+  const slug = slugify(text);
+  headings.push({ slug, text });
+  return `<h2 id="${slug}">${inner}</h2>`;
+});
 ---
 <Base lang="de" title={`${title} – FK Solution Design`} description={title} noindex>
   <a class="skip-link" href="#main">Zum Inhalt springen</a>
   <Header t={de} home={base} switchHref={homeHref('en')} />
-  <main id="main" class="section legal">
-    <div class="container legal-inner">
+  <main id="main" class="section legal" data-layout="reading">
+    <div class="container">
       <h1>{title}</h1>
-      <slot />
+      <ReadingGrid t={de} headings={headings} cta={false}>
+        <Fragment set:html={body} />
+      </ReadingGrid>
     </div>
   </main>
   <Footer t={de} switchHref={homeHref('en')} />

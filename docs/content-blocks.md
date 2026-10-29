@@ -121,6 +121,10 @@ Only these, in Fabian's wording, without client names, industry or size:
 - Built the release process in one programme: at first every pull request went across his desk, then he handed it over to an internal colleague.
 - Introduced sales agreements with actuals from the ERP in Manufacturing Cloud; the ERP interface was a stumbling block.
 - Field Service projects with maintenance, breakdown jobs and commissioning, automatic scheduling, spare parts and installed base from the ERP; stumbling blocks: asset data quality, technician acceptance, ERP interfaces.
+- Center of Excellence in his largest programme: technical call every two weeks, 60 minutes, only the technical leads of the streams; topics submitted in advance, agenda sent beforehand, a backlog of reserve topics; Fabian chaired it, later an internal colleague.
+- Hypercare usually combined with implementing feedback and quick wins, at times up to three months with weekly status calls (confirmed 29 October 2026).
+- Training in all common forms, depending on the client: train the trainer via key users, separate training sandbox, training per role (confirmed 29 October 2026).
+- Principle: when new processes or systems are introduced, there must be no way back; as long as the old way remains an option, no change happens (Fabian, 29 October 2026).
 - Project stories that already stand in articles published before 28 October 2026 (written with Fabian), e.g. the global Manufacturing Cloud rollout with CPQ, configurator and customer portal.
 
 Add new items here only after Fabian confirms them.

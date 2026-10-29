@@ -3,8 +3,10 @@ import Page from '../layouts/Page.astro';
 import ExternalMark from './ExternalMark.astro';
 import ContactForm from './ContactForm.astro';
 import AuthorBox from './AuthorBox.astro';
+import PartnerBox from './PartnerBox.astro';
 import Blueprint from './Blueprint.astro';
 import ContactBrief from './ContactBrief.astro';
+import ReadingGrid from './ReadingGrid.astro';
 import { getContactBrief } from '../lib/contact-briefs';
 import { render } from 'astro:content';
 import { en } from '../i18n/en';
@@ -12,16 +14,19 @@ import { de } from '../i18n/de';
 import { site, contactHref, contactExternal } from '../site';
 import { getPostService, serviceHref } from '../lib/services';
 import { type Post, blogIndex, postHref, getTranslation, getRelated, getSeriesParts, readingMinutes, formatDate } from '../lib/blog';
-import { homeHref } from '../lib/paths';
+import { homeHref, localHref } from '../lib/paths';
+import { getAuthor } from '../lib/authors';
+import { juliane } from '../data/juliane-winterscheid';
 import { series as allSeries } from '../lib/series';
 
 interface Props {
   post: Post;
 }
 const { post } = Astro.props;
-const { lang, title, description, pubDate, updatedDate, takeaways, faq, tags } = post.data;
+const { lang, title, description, pubDate, updatedDate, takeaways, faq, tags, author: authorId } = post.data;
 const t = lang === 'de' ? de : en;
-const { Content } = await render(post);
+const { Content, headings } = await render(post);
+const toc = [...headings.filter((h) => h.depth === 2), { slug: 'faq', text: t.blog.faq }];
 const translation = await getTranslation(post);
 const related = await getRelated(post);
 const service = await getPostService(post);
@@ -45,6 +50,17 @@ const ctaAttrs = contactExternal ? { target: '_blank', rel: 'noopener' } : {};
 const suffix = ' | FK Solution Design';
 const pageTitle = title.length + suffix.length <= 60 ? title + suffix : title;
 const modified = (updatedDate ?? pubDate).toISOString();
+// Juliane's articles name her as author and send the contact form with her name in the subject.
+// A co-author (frontmatter coAuthor) is named in the byline, the structured data and in a shared author box.
+const author = getAuthor(lang, authorId);
+const coAuthorId = post.data.coAuthor && post.data.coAuthor !== authorId ? post.data.coAuthor : undefined;
+const coAuthor = coAuthorId ? getAuthor(lang, coAuthorId) : undefined;
+const personSchema = (a: typeof author) =>
+  a.profile
+    ? { '@type': 'Person', '@id': `${abs(localHref(lang, a.profile))}#person`, name: a.name, url: abs(localHref(lang, a.profile)), jobTitle: a.jobTitle }
+    : { '@type': 'Person', '@id': `${abs(base)}#person`, name: site.person, url: site.linkedin, jobTitle: a.jobTitle };
+const authorSchema = coAuthor ? [personSchema(author), personSchema(coAuthor)] : personSchema(author);
+const formSubject = authorId === 'juliane' ? `${juliane[lang].formSubject}: ${title}` : `${t.contact.form.subject}: ${title}`;
 const ogImage = `${base}og/${lang}/${post.data.slug}.png`;
 
 const schema = {
@@ -63,7 +79,7 @@ const schema = {
       image: abs(ogImage),
       keywords: tags.join(', '),
       wordCount: (post.body ?? '').split(/\s+/).filter(Boolean).length,
-      author: { '@type': 'Person', '@id': `${abs(base)}#person`, name: site.person, url: site.linkedin, jobTitle: 'Salesforce Enterprise Architect' },
+      author: authorSchema,
       publisher: { '@type': 'Organization', '@id': `${abs(base)}#organization`, name: site.company },
       ...(seriesInfo && { isPartOf: { '@type': 'CreativeWorkSeries', name: seriesInfo[lang] } }),
     },
@@ -84,77 +100,81 @@ const schema = {
   ],
 };
 ---
-<Page lang={lang} title={pageTitle} description={description} alternates={alternates} ogType="article" image={ogImage} hasContact>
+<Page layout="reading" lang={lang} title={pageTitle} description={description} alternates={alternates} ogType="article" image={ogImage} hasContact>
   <Fragment slot="head">
     <meta property="article:published_time" content={pubDate.toISOString()} />
     <meta property="article:modified_time" content={modified} />
-    <meta property="article:author" content={site.person} />
+    <meta property="article:author" content={author.name} />
+    {coAuthor && <meta property="article:author" content={coAuthor.name} />}
     {tags.map((tag) => <meta property="article:tag" content={tag} />)}
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
   </Fragment>
   <article class="section post">
-    <div class="container post-inner">
+    <div class="container">
       <a class="post-back mono" href={blogIndex(lang)}>← {t.blog.back}</a>
       <h1>{title}</h1>
       <p class="post-meta mono">
-        {site.person} · {t.blog.published} <time datetime={pubDate.toISOString()}>{formatDate(pubDate, lang)}</time>
+        {author.name}{coAuthor && <> {t.blog.with} {coAuthor.name}</>} · {t.blog.published} <time datetime={pubDate.toISOString()}>{formatDate(pubDate, lang)}</time>
         {updatedDate && <> · {t.blog.updated} <time datetime={updatedDate.toISOString()}>{formatDate(updatedDate, lang)}</time></>}
         {' · '}{readingMinutes(post)} {t.blog.readingTime}
       </p>
       {seriesInfo && seriesRef && (
         <p class="post-series-line mono"><a href="#series">{partLabel(seriesRef.part)} · {t.blog.series} {seriesInfo[lang]}</a></p>
       )}
-      <aside class="post-takeaways" aria-label={t.blog.takeaways}>
-        <p class="label mono">{t.blog.takeaways}</p>
-        <ul>
-          {takeaways.map((item) => <li>{item}</li>)}
-        </ul>
-      </aside>
-      <div class="prose">
-        <Content />
-      </div>
-      <section class="post-faq" aria-labelledby="faq">
-        <h2 id="faq">{t.blog.faq}</h2>
-        {faq.map(({ q, a }) => (
-          <details class="faq-item">
-            <summary><h3>{q}</h3></summary>
-            <p>{a}</p>
-          </details>
-        ))}
-      </section>
-      <AuthorBox lang={lang} />
-      {service && (
-        <a class="post-service" href={serviceHref(service)}>
-          <span class="label mono">{t.blog.relatedService}</span>
-          <span class="post-service-title">{t.services.items[service.data.order - 1]?.title ?? service.data.title} →</span>
-        </a>
-      )}
-      {seriesInfo && seriesRef && (
-        <nav class="post-series" id="series" aria-label={`${t.blog.series}: ${seriesInfo[lang]}`}>
-          <p class="label mono">{t.blog.series} · {partLabel(seriesRef.part)}</p>
-          <p class="post-series-title">{seriesInfo[lang]}</p>
-          <ol>
-            {seriesParts.filter(({ post: p }) => p).map(({ part, post: p }) => (
-              <li value={part} class:list={{ current: part === seriesRef.part }}>
-                {part === seriesRef.part ? (
-                  <span aria-current="page">{p!.data.title} <span class="post-series-note">· {t.blog.seriesCurrent}</span></span>
-                ) : (
-                  <a href={postHref(p!)}>{p!.data.title}</a>
-                )}
-              </li>
-            ))}
-          </ol>
-          {upcoming > 0 && <p class="post-series-note">{t.blog.seriesUpcoming.replace('{count}', String(upcoming))}</p>}
-        </nav>
-      )}
-      {related.length > 0 && (
-        <nav class="post-related" aria-label={t.blog.related}>
-          <p class="label mono">{t.blog.related}</p>
+      <ReadingGrid t={t} headings={toc} cta={title}>
+        <aside class="post-takeaways" aria-label={t.blog.takeaways}>
+          <p class="label mono">{t.blog.takeaways}</p>
           <ul>
-            {related.map((p) => <li><a href={postHref(p)}>{p.data.title}</a></li>)}
+            {takeaways.map((item) => <li>{item}</li>)}
           </ul>
-        </nav>
-      )}
+        </aside>
+        <div class="prose">
+          <Content />
+        </div>
+        <section class="post-faq" aria-labelledby="faq">
+          <h2 id="faq">{t.blog.faq}</h2>
+          {faq.map(({ q, a }) => (
+            <details class="faq-item">
+              <summary><h3>{q}</h3></summary>
+              <p>{a}</p>
+            </details>
+          ))}
+        </section>
+        <AuthorBox lang={lang} author={authorId} coAuthor={coAuthorId} />
+        {post.data.categories.includes('change-management') && authorId !== 'juliane' && coAuthorId !== 'juliane' && <PartnerBox lang={lang} variant="blog" />}
+        {service && (
+          <a class="post-service" href={serviceHref(service)}>
+            <span class="label mono">{t.blog.relatedService}</span>
+            <span class="post-service-title">{t.services.items[service.data.order - 1]?.title ?? service.data.title} →</span>
+          </a>
+        )}
+        {seriesInfo && seriesRef && (
+          <nav class="post-series" id="series" aria-label={`${t.blog.series}: ${seriesInfo[lang]}`}>
+            <p class="label mono">{t.blog.series} · {partLabel(seriesRef.part)}</p>
+            <p class="post-series-title">{seriesInfo[lang]}</p>
+            <ol>
+              {seriesParts.filter(({ post: p }) => p).map(({ part, post: p }) => (
+                <li value={part} class:list={{ current: part === seriesRef.part }}>
+                  {part === seriesRef.part ? (
+                    <span aria-current="page">{p!.data.title} <span class="post-series-note">· {t.blog.seriesCurrent}</span></span>
+                  ) : (
+                    <a href={postHref(p!)}>{p!.data.title}</a>
+                  )}
+                </li>
+              ))}
+            </ol>
+            {upcoming > 0 && <p class="post-series-note">{t.blog.seriesUpcoming.replace('{count}', String(upcoming))}</p>}
+          </nav>
+        )}
+        {related.length > 0 && (
+          <nav class="post-related" aria-label={t.blog.related}>
+            <p class="label mono">{t.blog.related}</p>
+            <ul>
+              {related.map((p) => <li><a href={postHref(p)}>{p.data.title}</a></li>)}
+            </ul>
+          </nav>
+        )}
+      </ReadingGrid>
     </div>
   </article>
   <section class="contact dark grid-bg" id="contact">
@@ -166,7 +186,7 @@ const schema = {
         <a class="btn" href={contactHref(title)} {...ctaAttrs}>{t.nav.cta}{contactExternal && <ExternalMark label={t.nav.newTab} />}</a>
         {contactExternal && <p class="booking-note">{t.contact.bookingNote}</p>}
       </div>
-      <ContactForm t={t} subject={`${t.contact.form.subject}: ${title}`} />
+      <ContactForm t={t} subject={formSubject} />
     </div>
   </section>
 </Page>

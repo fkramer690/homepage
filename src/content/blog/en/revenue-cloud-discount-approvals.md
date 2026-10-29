@@ -34,7 +34,7 @@ Revenue Cloud is Salesforce's quote-to-cash suite on standard objects; Help and 
 
 ```vertiefung For admins
 title: What is Advanced Approvals built on?
-Technically it sits on the Flow approval model. Salesforce documents [Flow Approval Process and Advanced Approvals](https://developer.salesforce.com/docs/platform/data-models/guide/flow-approval-process-and-advanced-approvals.html) in one data model: stages, steps and decisions are built in Flow Builder, and each run creates approval submissions and approval work items. For you that means two things. An admin who knows Flow can read and change the approval logic. And every approval leaves records that reporting and audits can use.
+Technically it sits on the Flow approval model. According to the [Flow Approval Process data model](https://developer.salesforce.com/docs/platform/data-models/guide/platform-flow-approval-process.html), stages, steps and decisions are built in Flow Builder, and each run creates approval submissions and approval work items. [Advanced Approvals](https://developer.salesforce.com/docs/atlas.en-us.revenue_lifecycle_management_dev_guide.meta/revenue_lifecycle_management_dev_guide/advanced_approvals_overview.htm) adds actions for parallel and sequential approval chains. For you that means two things. An admin who knows Flow can read and change the approval logic. And every approval leaves records that reporting and audits can use.
 ```
 
 ## How does an approval run on a quote?

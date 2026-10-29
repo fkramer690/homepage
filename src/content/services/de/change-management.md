@@ -1,15 +1,16 @@
 ---
-title: "Change Management für Salesforce-Programme"
-headline: "Salesforce ist live, aber kaum jemand nutzt es?"
-description: "Change Management für Salesforce-Programme nach Prosci und ADKAR: neue Prozesse und Releases so einführen, dass Fachbereiche und Partner sie nutzen."
+title: "Change Management Beratung für Salesforce"
+headline: "Change Management, wenn kaum jemand Salesforce nutzt"
+description: "Change Management Beratung für Salesforce-Einführungen nach Prosci und ADKAR: Prozesse und Releases so einführen, dass Fachbereiche und Partner sie nutzen."
 lang: de
 slug: change-management
 translationKey: service-change
 contactBrief: change
-order: 7
+section: change-management
+order: 2
 note: "Dieses Vorgehen habe ich gemeinsam mit Juliane Winterscheid erarbeitet, meiner Kooperationspartnerin für Change Management. Juliane ist Prosci-zertifiziert."
 notePartner: "Juliane Winterscheid"
-lead: "Ein neues Salesforce-Release ist schnell ausgerollt. Ob Fachbereiche, Entwicklerteams und Partner danach anders arbeiten, ist eine andere Frage. Ich plane die Einführung neuer Prozesse und Standards auf Kundenseite nach dem Vorgehen von Prosci, damit sie im Alltag ankommen und dort bleiben."
+lead: "Ein neues Salesforce-Release ist schnell ausgerollt. Ob Fachbereiche, Entwicklerteams und Partner danach anders arbeiten, ist eine andere Frage. Gemeinsam mit Juliane Winterscheid plane ich die Einführung neuer Prozesse und Standards nach Prosci und ADKAR, damit sie im Alltag ankommen und bleiben."
 situations:
   - "Salesforce ist live, aber Teile der Fachbereiche arbeiten weiter mit Excel, E-Mail und eigenen Listen."
   - "Schulungen sind gelaufen, die Nutzung bleibt trotzdem niedrig, und niemand weiß genau, woran es hängt."
@@ -48,10 +49,10 @@ faq:
     a: "Fachbereiche, Entwicklerteams, Partner und das Management. Ohne Rückhalt im Management fehlen Entscheidungen und Aufmerksamkeit, und neue Regeln werden zur Empfehlung, an die sich nicht jeder hält."
   - q: "Was ändert sich durch kleinere, häufigere Releases?"
     a: "Fachbereiche bekommen öfter kleine Änderungen statt selten große Pakete. Das senkt das Risiko einzelner Releases, verlangt aber einen festen Weg, auf dem Betroffene vorher erfahren, was kommt."
-blogTags: [Partnersteuerung, Governance, DevOps-Training, Release-Management]
+blogTags: [Change Management, Partnersteuerung, Governance, DevOps-Training, Release-Management]
 ---
 
-Change Management in einem Salesforce-Programm heißt, neue Prozesse, Standards und Releases so einzuführen, dass die Menschen, die damit arbeiten, sie auch nutzen. Das betrifft die Fachbereiche, die mit Salesforce ihren Alltag erledigen, genauso wie Entwicklerteams und Implementierungspartner, die nach gemeinsamen Regeln bauen sollen. Ich übernehme diese Arbeit auf Kundenseite, eng verbunden mit Architektur, Partnersteuerung und Release-Management, und orientiere mich dabei an Prosci.
+Change Management in einem Salesforce-Programm heißt, neue Prozesse, Standards und Releases so einzuführen, dass die Menschen, die damit arbeiten, sie auch nutzen. Das betrifft die Fachbereiche, die mit Salesforce ihren Alltag erledigen, genauso wie Entwicklerteams und Implementierungspartner, die nach gemeinsamen Regeln bauen sollen. Juliane Winterscheid und ich übernehmen diese Arbeit auf Kundenseite: Juliane begleitet die Menschen durch die Veränderung, ich sorge dafür, dass Architektur, Partnersteuerung und Releases dazu passen. Wenn auf dieser Seite „wir“ steht, sind wir beide gemeint. Wir orientieren uns an Prosci.
 
 ## Warum kommen neue Prozesse im Alltag nicht an?
 
@@ -66,7 +67,7 @@ Ein Release ist technisch in Minuten ausgerollt. Danach entscheidet sich, ob jem
 
 Prosci ist für mich der Goldstandard im Change Management. Der Grund ist die Forschung dahinter: Prosci befragt seit 1998 Projekte nach ihren Erfahrungen mit Veränderungen. In der 12. Ausgabe der Studie [Best Practices in Change Management](https://www.prosci.com/hubfs/Website_English/2.downloads/research-executive-summaries/Best-Practices-in-Change-Management-12th-Edition-Executive-Summary.pdf) mit 2.668 Teilnehmenden erreichten Projekte mit sehr gutem Change Management ihre Ziele siebenmal so oft wie Projekte mit schlechtem, 88 gegenüber 13 Prozent. Als wichtigsten Erfolgsfaktor nennen die Teilnehmenden aktives und sichtbares Sponsoring durch das Management. Das deckt sich mit dem, was ich in Salesforce-Programmen erlebe.
 
-Zusammen mit Juliane Winterscheid, die Prosci-zertifiziert ist, habe ich zwei Bausteine von Prosci auf Salesforce-Programme übertragen:
+Zusammen mit [Juliane Winterscheid](../../partner/juliane-winterscheid/), die Prosci-zertifiziert ist, habe ich zwei Bausteine von Prosci auf Salesforce-Programme übertragen:
 
 - **Das [ADKAR-Modell](https://www.prosci.com/blog/adkar-model)** beschreibt fünf Stufen, die jede Person bei einer Veränderung durchläuft: Awareness (Bewusstsein, warum sich etwas ändert), Desire (Bereitschaft, mitzumachen), Knowledge (Wissen, wie es geht), Ability (Fähigkeit, es im Alltag umzusetzen) und Reinforcement (Verankerung, damit niemand zurückfällt).
 - **Der [Prosci 3-Phase Process](https://www.prosci.com/methodology/3-phase-process)** gibt der Einführung auf Ebene der Organisation einen Rahmen: Vorgehen vorbereiten (Prepare Approach), Veränderung steuern (Manage Change) und Ergebnisse sichern (Sustain Outcomes). Die drei Schritte oben auf dieser Seite folgen diesen Phasen.
@@ -75,13 +76,13 @@ Zusammen mit Juliane Winterscheid, die Prosci-zertifiziert ist, habe ich zwei Ba
 
 Ein häufiges Bild: Die Schulungen sind gelaufen, die Nutzung bleibt trotzdem niedrig. Statt eine weitere Schulung anzusetzen, fragen wir je betroffener Gruppe, an welcher Stufe es hängt. Wenn ein Vertriebsteam nicht weiß, wofür die gepflegten Opportunities gebraucht werden, fehlt Awareness, und das muss der zuständige Vertriebsleiter erklären, nicht der Trainer. Wenn die Entwickler eines Partners die Namenskonventionen kennen, aber niemand sie in der Pipeline prüft, fehlt Reinforcement. Dann gehört eine automatische Prüfung in den [Release-Prozess](../devops-und-release-management/).
 
-Salesforce hilft beim Messen. Ob ein neuer Prozess genutzt wird, zeigen Berichte über angelegte und gepflegte Datensätze besser als jede Umfrage. Diese Zahlen legen wir in der ersten Phase fest und schauen in der zweiten regelmäßig darauf.
+Salesforce hilft beim Messen. Ob ein neuer Prozess genutzt wird, zeigen Berichte über angelegte und gepflegte Datensätze besser als jede Umfrage. Diese Zahlen legen wir in der ersten Phase fest und schauen in der zweiten regelmäßig darauf. Die einzelnen Themen, von Key Usern bis zur Messung der Nutzung, beschreibe ich in [Salesforce Change Management: warum Einführungen scheitern](../../blog/change-management-salesforce-einfuehrung/). Kapitel für Kapitel entlang der fünf Stufen führt die [Masterclass Change Management](../../masterclass/change-management/).
 
 ## Wie habe ich neue Standards in einem großen Programm eingeführt?
 
 In meinem größten Programm arbeiteten über 30 Entwickler in acht Streams mit fünf Implementierungspartnern. Gemeinsame Standards für Namenskonventionen, Automatisierung je Objekt, Testabdeckung und eine [Object Ownership Matrix](../../blog/object-ownership-matrix-salesforce/) brauchten etwa drei Monate, bis sie gelebt wurden.
 
-Die erste Version deckte rund 80 Prozent der Fälle ab. Die Randfälle kamen Schritt für Schritt dazu, wenn sie im Projekt auftauchten. Später brachten wir neue Themen mit Vorlauf in regelmäßigen Center-of-Excellence-Calls auf den Tisch, bevor sie zum Problem wurden. Irgendwann kamen kaum noch neue Randfälle hinzu. Wie die Regeln für mehrere Partner aussehen, beschreibe ich unter [Partnersteuerung](../partnersteuerung/).
+Die erste Version deckte rund 80 Prozent der Fälle ab. Die Randfälle kamen Schritt für Schritt dazu, wenn sie im Projekt auftauchten. Später brachten wir im Programm neue Themen mit Vorlauf in regelmäßigen [Center-of-Excellence-Calls](../../blog/salesforce-center-of-excellence-format/) auf den Tisch, bevor sie zum Problem wurden. Irgendwann kamen kaum noch neue Randfälle hinzu. Wie die Regeln für mehrere Partner aussehen, beschreibe ich unter [Partnersteuerung](../partnersteuerung/).
 
 ## Was ändert sich für Fachbereiche?
 
@@ -89,4 +90,4 @@ Mit einem sauberen Release-Prozess werden Releases kleiner und häufiger. Für F
 
 Prosci und ADKAR sind eingetragene Marken von Prosci, Inc. Die Prosci-Zertifizierung hat Juliane Winterscheid, nicht FK Solution Design, und FK Solution Design ist kein Partner von Prosci. Diese Seite beschreibt, wie wir Elemente des Vorgehens in Salesforce-Programmen anwenden.
 
-Wenn eine Einführung ansteht oder neue Prozesse nicht genutzt werden, [schreiben Sie mir](#contact) oder lesen Sie mehr [über mich](../../#about).
+Wenn eine Einführung ansteht oder neue Prozesse nicht genutzt werden, [schreiben Sie mir](#contact), und ich bringe Juliane in das erste Gespräch mit. Mehr zu meiner Person lesen Sie [über mich](../../#about).

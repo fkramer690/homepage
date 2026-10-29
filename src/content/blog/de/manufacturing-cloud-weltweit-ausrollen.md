@@ -102,7 +102,7 @@ Mindestens drei Dinge gehören pro Land dazu:
 - **Kommunikation vor dem Go-live**, die erklärt, was sich ändert und warum, nicht nur, wo man klickt.
 - **Ein Blick auf die Nutzung nach dem Go-live**, damit auffällt, wenn ein Land neben Salesforce weiter mit eigenen Listen arbeitet.
 
-Wie ich die Einführung neuer Prozesse auf Kundenseite plane, beschreibe ich unter [Change Management für Salesforce-Programme](../../leistungen/change-management/).
+Wie ich die Einführung neuer Prozesse auf Kundenseite plane, beschreibe ich unter [Change Management Beratung für Salesforce](../../leistungen/change-management/). Was pro Land dazugehört, steht in [Change Management im weltweiten Salesforce-Rollout](../change-management-weltweiter-rollout/), der Überblick in [Salesforce Change Management: warum Einführungen scheitern](../change-management-salesforce-einfuehrung/).
 
 ## Wo sollten Sie anfangen?
 

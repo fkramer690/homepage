@@ -2,6 +2,7 @@
 // in a new tab and adds the same arrow and screen-reader hint as ExternalMark.astro.
 // Rule: all external links open in a new tab; scripts/check-links.mjs enforces it.
 import { defineHastPlugin } from 'satteri';
+import { iconHast } from './icons.mjs';
 
 const labels = { en: '(opens in a new tab)', de: '(öffnet in einem neuen Tab)' };
 
@@ -21,12 +22,7 @@ export function externalLinks({ site }) {
         ctx.setProperty(node, 'target', '_blank');
         ctx.setProperty(node, 'rel', ['noopener']);
         ctx.appendChild(node, [
-          {
-            type: 'element',
-            tagName: 'svg',
-            properties: { className: ['ext-mark'], width: 12, height: 12, viewBox: '0 0 12 12', ariaHidden: 'true' },
-            children: [{ type: 'element', tagName: 'path', properties: { d: 'M4 2h6v6M10 2 2.5 9.5', fill: 'none', stroke: 'currentColor', strokeWidth: '1.6' }, children: [] }],
-          },
+          iconHast('external', 'ext-mark'),
           { type: 'element', tagName: 'span', properties: { className: ['visually-hidden'] }, children: [{ type: 'text', value: ` ${labels[lang]}` }] },
         ]);
       },
