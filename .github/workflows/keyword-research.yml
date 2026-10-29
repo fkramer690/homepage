@@ -17,6 +17,15 @@ on:
       volumes_en:
         description: English candidate phrases for exact search volumes, comma-separated
         required: false
+      serp_de:
+        description: German phrases whose top ten Google results are printed, comma-separated
+        required: false
+      serp_en:
+        description: English phrases whose top ten Google results are printed, comma-separated
+        required: false
+      location_en:
+        description: DataForSEO location code for English suggestions (default 2840, USA)
+        required: false
 
 permissions:
   contents: read
@@ -37,4 +46,7 @@ jobs:
           SEEDS_EN: ${{ inputs.seeds_en }}
           VOLUMES_DE: ${{ inputs.volumes_de }}
           VOLUMES_EN: ${{ inputs.volumes_en }}
+          SERP_DE: ${{ inputs.serp_de }}
+          SERP_EN: ${{ inputs.serp_en }}
+          LOCATION_EN: ${{ inputs.location_en }}
         run: node scripts/keyword-research.mjs

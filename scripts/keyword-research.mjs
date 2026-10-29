@@ -2,7 +2,9 @@
 // contain the seed) for the seeds in seo/research-seeds.json, Google Germany.
 // SEEDS_DE / SEEDS_EN (comma-separated) replace the file's seeds for one run;
 // VOLUMES_DE / VOLUMES_EN (comma-separated) add exact search volumes for candidate
-// phrases that suggestions do not cover. Prints a tab-separated list to stdout;
+// phrases that suggestions do not cover; SERP_DE / SERP_EN (comma-separated) print the
+// top ten organic results per phrase to check search intent. DataForSEO Labs has no
+// English data for Germany, so English suggestions use LOCATION_EN (default USA). Prints a tab-separated list to stdout;
 // used by .github/workflows/keyword-research.yml.
 import { readFile } from 'node:fs/promises';
 
@@ -14,6 +16,7 @@ if (!login || !password) {
 }
 
 const LOCATION = 2276; // Germany
+const LABS_LOCATION = { de: LOCATION, en: Number(process.env.LOCATION_EN) || 2840 };
 const auth = 'Basic ' + Buffer.from(`${login}:${password}`).toString('base64');
 let cost = 0;
 
@@ -46,7 +49,7 @@ for (const lang of ['de', 'en']) {
       const [r] = await call('dataforseo_labs/google/keyword_suggestions/live', [
         {
           keyword: seed,
-          location_code: LOCATION,
+          location_code: LABS_LOCATION[lang],
           language_code: lang,
           include_seed_keyword: true,
           limit: 300,
@@ -84,6 +87,21 @@ for (const lang of ['de', 'en']) {
     }
   } catch (err) {
     console.error(`search volume (${lang}) failed: ${err.message}`);
+  }
+}
+for (const lang of ['de', 'en']) {
+  for (const keyword of list(process.env[`SERP_${lang.toUpperCase()}`])) {
+    try {
+      const [serp] = await call('serp/google/organic/live/advanced', [
+        { keyword, location_code: LOCATION, language_code: lang, depth: 10 },
+      ]);
+      const organic = (serp?.items ?? []).filter((i) => i.type === 'organic');
+      for (const i of organic.slice(0, 10)) {
+        console.log([lang, '(serp)', keyword, i.rank_group, i.domain, (i.title ?? '').replace(/\t/g, ' ')].join('\t'));
+      }
+    } catch (err) {
+      console.error(`serp "${keyword}" (${lang}) failed: ${err.message}`);
+    }
   }
 }
 console.error(`cost of this run ${cost.toFixed(4)} USD, ${seen.size} keywords`);
