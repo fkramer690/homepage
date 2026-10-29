@@ -875,6 +875,13 @@ const drawings: Record<string, Drawing> = {
     ${box(226, 30, 78, 46, C)}${t(265, 48, l('1 object =', '1 Objekt ='), { fill: C, size: 7, anchor: 'middle' })}${t(265, 62, l('1 owner', '1 Owner'), { fill: C, size: 7, anchor: 'middle' })}
     ${t(226, 100, l('8 streams', '8 Streams'), { size: 7 })}${t(226, 114, l('30+ developers', '30+ Entwickler'), { size: 7 })}${t(226, 128, l('~3 months', '~3 Monate'), { size: 7 })}${t(226, 142, l('80 % in v1', '80 % in V1'), { size: 7 })}`,
 
+  'salesforce-center-of-excellence': (l) => `
+    ${t(18, 20, 'CENTER OF EXCELLENCE', { fill: D, size: 7 })}
+    ${[1, 2, 3, 4, 5].map((i) => dot(30, 30 + i * 18, i === 2 ? C : G) + t(42, 33 + i * 18, 'Stream ' + i, { size: 7 }) + `<path d="M84 ${30 + i * 18}L136 ${84}" stroke="${L}"/>`).join('')}
+    ${box(136, 56, 84, 56, C)}${t(178, 76, l('EVERY 2 WEEKS', 'ALLE 2 WOCHEN'), { fill: C, size: 7.5, anchor: 'middle' })}${t(178, 90, l('60 min, topics', '60 Min., Themen'), { size: 7, anchor: 'middle' })}${t(178, 102, l('in advance', 'vorab eingereicht'), { size: 7, anchor: 'middle' })}
+    ${box(236, 56, 70, 56)}${t(271, 76, l('MONTHLY', 'MONATLICH'), { fill: D, size: 7.5, anchor: 'middle' })}${t(271, 90, 'Roadmap', { size: 7, anchor: 'middle' })}${t(271, 102, l('priorities', 'Prioritäten'), { size: 7, anchor: 'middle' })}
+    ${tag(136, 126, 170, l('client chairs, not a partner', 'Kunde leitet, kein Partner'))}`,
+
   'field-service-mobile-guided-voice': (l) => `
     <path d="M34 128L72 98L116 110L150 64L190 76" fill="none" stroke="${G}" stroke-width="1.3" stroke-dasharray="4 3"/>
     ${pin(72, 98)}${pin(116, 110)}${pin(150, 64, C)}

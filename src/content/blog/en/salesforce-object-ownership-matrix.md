@@ -83,7 +83,7 @@ A table in the wiki changes nothing on its own. The matrix only works once it is
 
 - **In the pull request review.** If a change touches another stream's object, the reviewer asks whether the owner agreed. How such reviews work is described in [why pull request reviews are a must in enterprise projects](../why-pull-request-reviews-are-a-must-in-enterprise-projects/).
 - **Technically in the repository.** Once the metadata lives in Git, parts of the matrix can be mapped, on GitHub with a CODEOWNERS file.
-- **In the centre of excellence.** Regular calls where streams present upcoming changes to shared objects, with enough lead time for everyone else.
+- **In the centre of excellence.** Regular calls where streams present upcoming changes to shared objects, with enough lead time for everyone else. How to set one up is in [Salesforce Center of Excellence: format and cadence](../salesforce-center-of-excellence-cadence/).
 
 ```vertiefung For developers
 title: How does CODEOWNERS map the matrix?

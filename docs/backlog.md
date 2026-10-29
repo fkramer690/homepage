@@ -50,7 +50,7 @@ Der tägliche Lauf schreibt einen Artikel pro Tag (EN + DE) und ergänzt hier ne
 
 - B1. SAP-Thema (Leitsystem für Kunden, Preise, Aufträge) → aufgegangen in L2 und L3.
 - B2. Embedded Chat für 12 Sprachen: was ein Proof of Concept klären muss.
-- B3. Center of Excellence auf Kundenseite: Format und Rhythmus.
+- B3. Center of Excellence auf Kundenseite: Format und Rhythmus. *Erledigt (#125).*
 - B4. MuleSoft oder Jitterbit: welche Middleware für Salesforce und das ERP? *Braucht Beispiel von Fabian.*
 - B5. Salesforce an proALPHA anbinden: was anders ist als bei SAP. *Braucht Beispiel von Fabian.*
 - B6. Technische Benutzer mit zu vielen Rechten: Integrationen aufräumen.
