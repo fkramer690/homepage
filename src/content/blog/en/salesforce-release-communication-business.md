@@ -6,7 +6,7 @@ lang: en
 slug: salesforce-release-communication-business
 translationKey: change-release-communication
 topic: release
-categories: [devops, architecture]
+categories: [change-management, devops, architecture]
 contactBrief: change
 tags: [release management, change management, release notes, business users]
 takeaways:

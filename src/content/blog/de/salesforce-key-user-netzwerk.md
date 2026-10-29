@@ -6,7 +6,7 @@ lang: de
 slug: salesforce-key-user-netzwerk
 translationKey: change-key-users
 topic: governance
-categories: [architecture]
+categories: [change-management, architecture]
 contactBrief: change
 tags: [Key User, Change Management, Salesforce-Einführung, Rollout]
 takeaways:

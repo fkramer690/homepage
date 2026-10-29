@@ -13,7 +13,7 @@ import { de } from '../i18n/de';
 import { site, contactHref, contactExternal } from '../site';
 import { postHref } from '../lib/blog';
 import { type Service, servicesIndex, serviceHref, getServiceTranslation, getServicePosts } from '../lib/services';
-import { homeHref, partnersHref } from '../lib/paths';
+import { homeHref, localHref, partnersHref } from '../lib/paths';
 
 interface Props {
   service: Service;
@@ -88,7 +88,7 @@ const schema = {
         <p class="service-note">
           <span class="service-note-label mono">{t.servicePage.note}</span>
           <span>
-            {noteBefore}{partner && <a href={partnersHref(lang)}>{partner.name}</a>}{noteAfter}
+            {noteBefore}{partner && <a href={partner.profile ? localHref(lang, partner.profile) : partnersHref(lang)}>{partner.name}</a>}{noteAfter}
             {partner && <> <a href={partner.linkedin} target="_blank" rel="noopener">{t.partnerPage.linkedIn}<ExternalMark label={t.nav.externalTab} /></a></>}
           </span>
         </p>

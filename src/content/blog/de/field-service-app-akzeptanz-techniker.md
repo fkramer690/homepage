@@ -6,7 +6,7 @@ lang: de
 slug: field-service-app-akzeptanz-techniker
 translationKey: change-technician-adoption
 topic: field-service
-categories: [field-service, architecture]
+categories: [field-service, change-management]
 contactBrief: field-service
 tags: [Field Service, Akzeptanz, Change Management, Außendienst]
 takeaways:

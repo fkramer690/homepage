@@ -42,6 +42,7 @@ const masterclassSegments = {
   'revenue-cloud': { de: 'revenue-cloud', en: 'revenue-cloud' },
   'b2b-commerce': { de: 'b2b-commerce', en: 'b2b-commerce' },
   'field-service': { de: 'field-service', en: 'field-service' },
+  'change-management': { de: 'change-management', en: 'change-management' },
 };
 const contentPaths = {
   blog: { de: (slug) => `/blog/${slug}/`, en: (slug) => `/en/blog/${slug}/` },
@@ -83,6 +84,9 @@ sitemapInfo.set(questionsPage.en, { pair: questionsPage });
 const recruitersPage = { de: '/partner/recruiter/', en: '/en/partners/recruiters/' };
 sitemapInfo.set(recruitersPage.de, { pair: recruitersPage });
 sitemapInfo.set(recruitersPage.en, { pair: recruitersPage });
+const julianePage = { de: '/partner/juliane-winterscheid/', en: '/en/partners/juliane-winterscheid/' };
+sitemapInfo.set(julianePage.de, { pair: julianePage });
+sitemapInfo.set(julianePage.en, { pair: julianePage });
 const freelanceArchitectPage = { de: '/freiberuflicher-salesforce-architect/', en: '/en/freelance-salesforce-architect/' };
 sitemapInfo.set(freelanceArchitectPage.de, { pair: freelanceArchitectPage });
 sitemapInfo.set(freelanceArchitectPage.en, { pair: freelanceArchitectPage });

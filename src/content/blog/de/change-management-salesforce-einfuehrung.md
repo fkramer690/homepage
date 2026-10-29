@@ -6,7 +6,7 @@ lang: de
 slug: change-management-salesforce-einfuehrung
 translationKey: change-management-hub
 topic: governance
-categories: [architecture]
+categories: [change-management, architecture]
 contactBrief: change
 tags: [Change Management, ADKAR, Prosci, Salesforce-Einführung]
 takeaways:
@@ -92,5 +92,7 @@ Entscheidend ist der Zeitpunkt. Change Management, das zwei Wochen vor dem Go-li
 ## Wo fangen Sie an?
 
 Beantworten Sie für Ihr nächstes Release drei Fragen schriftlich: Welche Gruppen sind betroffen? Was ändert sich für jede im Alltag? Wer im Management steht sichtbar dahinter? Fehlt die dritte Antwort, ist das der erste Schritt. Danach legen Sie fest, woran Sie Erfolg messen, zum Beispiel an Nutzungszahlen in Salesforce statt an der Zahl der Schulungen.
+
+Wer die fünf Stufen der Reihe nach durchgehen möchte, findet sie in der [Masterclass Change Management](../../masterclass/change-management/), ein Kapitel pro Stufe mit den passenden Artikeln.
 
 Salesforce ist erst eingeführt, wenn die Menschen damit arbeiten. Wenn eine Einführung ansteht oder neue Prozesse nicht genutzt werden, [schreiben Sie mir](#contact) oder lesen Sie mehr über [Change Management für Salesforce-Programme](../../leistungen/change-management/).

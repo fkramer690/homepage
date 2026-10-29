@@ -413,6 +413,7 @@ export const contactBriefIds = Object.keys(contactBriefs) as [ContactBrief, ...C
 const categoryBriefs: Record<Category, ContactBrief> = {
   devops: 'devops',
   architecture: 'architecture',
+  'change-management': 'change',
   'field-service': 'field-service',
   'manufacturing-cloud': 'manufacturing-cloud',
   'b2b-commerce': 'b2b-commerce',

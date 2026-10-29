@@ -44,7 +44,7 @@ Never paste SVG markup for an icon into a component: add a file here instead.
 | `integration` | 48 | Start page: service card "Integration"; questions page group "Data and interfaces" |
 | `team` | 48 | Start page: further services, "Project management & nearshore" |
 | `license` | 48 | Start page: further services, "Make-or-buy & licence forecasts" |
-| `change` | 48 | Start page: further services, "Change management" |
+| `change` | 48 | Start page: further services, "Change management"; masterclass overview: Change management |
 | `badge` | 48 | Start page proof bar: certifications |
 | `unlinked` | 48 | Start page proof bar: no ties to vendors or partners |
 | `target` | 48 | Questions page group "Goal and deadline" |
