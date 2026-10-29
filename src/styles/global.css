@@ -380,17 +380,6 @@ a:hover { color: var(--anthracite); }
 }
 .dark .label { color: var(--cyan-light); }
 
-.two-col {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(24px, 5vw, 64px);
-  margin-top: 1.5em;
-}
-.two-col p { color: var(--text-2); }
-@media (max-width: 760px) {
-  .two-col { grid-template-columns: 1fr; }
-}
-
 .quote {
   margin: 1.8em 0 0;
   padding: 1em 0 1em 1.4em;
@@ -630,26 +619,30 @@ a:hover { color: var(--anthracite); }
   .marquee-track img { height: calc(var(--h, 32px) * 0.8); }
 }
 
-/* First call */
-.call-questions {
-  list-style: none;
-  margin: 0.8em 0 1.6em;
-  padding: 0;
+/* First call: text and button left, numbered question cards right */
+.first-call {
   display: grid;
-  gap: 0.8em;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(32px, 6vw, 80px);
 }
+.first-call-text { color: var(--text-2); max-width: 54ch; }
+.first-call .btn { margin-top: 0.6em; }
+.first-call h3 { margin-top: 0.4em; }
+.call-questions { list-style: none; margin: 0.8em 0 1.4em; padding: 0; display: grid; gap: 12px; }
 .call-questions li {
-  position: relative;
-  padding-left: 1.6em;
-  color: var(--text-2);
+  display: flex;
+  gap: 16px;
+  align-items: baseline;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--cyan);
+  border-radius: var(--radius);
+  padding: 16px 20px;
 }
-.call-questions li::before {
-  content: '?';
-  position: absolute;
-  left: 0;
-  top: 0;
-  font-family: var(--mono);
-  color: var(--cyan-dark);
+.call-questions p { margin: 0; font-weight: 500; }
+.call-no { font-size: 0.75rem; color: var(--cyan-dark); }
+@media (max-width: 860px) {
+  .first-call { grid-template-columns: 1fr; }
 }
 
 /* Approach steps */
@@ -687,23 +680,13 @@ a:hover { color: var(--anthracite); }
   .steps { grid-template-columns: 1fr; }
 }
 
-/* About */
+/* About ("Steckbrief"): portrait and fact cards left, three short blocks right */
 .about {
   display: grid;
-  grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
-  gap: clamp(32px, 6vw, 80px);
+  grid-template-columns: var(--side) minmax(0, 1fr);
+  gap: clamp(32px, 6vw, 72px);
 }
-.about-main p { max-width: 62ch; }
-.about-links { list-style: none; padding: 0; margin: 1.2em 0 0; display: grid; gap: 0.5em; }
-.subpage-tbd { display: inline-block; color: var(--cyan); border: 1px solid currentColor; border-radius: 4px; padding: 0.1em 0.6em; letter-spacing: 0.12em; }
-.about-sub { color: var(--text-2); margin-top: -0.4em; }
-.about-facts {
-  align-self: start;
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 28px;
-  background: var(--bg);
-}
+.about-side { align-self: start; }
 .about-portrait {
   display: block;
   width: 100%;
@@ -713,13 +696,23 @@ a:hover { color: var(--anthracite); }
   border-radius: 8px;
   margin-bottom: 24px;
 }
-.about-facts dl { margin: 0; }
-.about-facts div + div { margin-top: 18px; padding-top: 18px; border-top: 1px dashed var(--line); }
-.about-facts dt { font-size: 0.75rem; color: var(--cyan-dark); text-transform: uppercase; letter-spacing: 0.08em; }
-.about-facts dd { margin: 4px 0 0; font-size: 0.95rem; }
+.about-facts { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.about-facts li { background: var(--white); border: 1px solid var(--line); border-radius: 8px; padding: 10px 14px; font-size: 0.92rem; }
+.about-facts span { display: block; font-size: 0.72rem; color: var(--cyan-dark); text-transform: uppercase; letter-spacing: 0.08em; }
+.about-main > p, .about-block { max-width: 62ch; }
+.about-sub { color: var(--text-2); margin-top: -0.4em; }
+.about-block { padding: 18px 0; border-top: 1px dashed var(--line); }
+.about-block h3 { font-size: 0.75rem; font-weight: 400; color: var(--cyan-dark); text-transform: uppercase; letter-spacing: 0.1em; margin: 0 0 0.6em; }
+.about-block p { margin: 0 0 0.6em; color: var(--text-2); }
+.about-checks { list-style: none; margin: 0; padding: 0; }
+.about-checks li { position: relative; padding-left: 26px; margin: 6px 0; font-weight: 500; }
+.about-checks li::before { content: '✓'; position: absolute; left: 0; color: var(--cyan); font-weight: 700; }
+.about-links { list-style: none; padding: 0; margin: 1.2em 0 0; display: grid; gap: 0.5em; }
+.subpage-tbd { display: inline-block; color: var(--cyan); border: 1px solid currentColor; border-radius: 4px; padding: 0.1em 0.6em; letter-spacing: 0.12em; }
 .text-link { font-weight: 600; text-decoration: none; }
-@media (max-width: 820px) {
+@media (max-width: 860px) {
   .about { grid-template-columns: 1fr; }
+  .about-side { max-width: 360px; }
 }
 
 /* Contact */

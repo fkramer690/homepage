@@ -188,10 +188,26 @@ export const de: Dict = {
     title: 'Fabian Kramer',
     portraitAlt: 'Porträt von Fabian Kramer',
     subtitle: 'Salesforce Enterprise Architect · Köln/Bonn',
-    paragraphs: [
-      'Ich helfe Fertigungsunternehmen, Salesforce zu einem verlässlichen Rückgrat für Vertrieb, Service und After-Sales zu machen – als Architekt auf Kundenseite.',
-      'Zuletzt habe ich vor allem für deutsche Hersteller mit globalem Geschäft gearbeitet: vom ersten weltweiten Rollout der Salesforce Manufacturing Cloud über einen globalen CTI-Rollout mit Service Cloud Voice und Genesys bis zu einem Subunternehmer-Portal für den After-Sales im Schiffbau und einer Embedded-Chat-Lösung mit Rollout-Plan für 12 Locales.',
-      'Ich bin an keinen Hersteller und keinen Implementierungspartner gebunden. Deshalb frage ich regelmäßig, ob etwas überhaupt in Salesforce gebaut werden sollte. Wenn andere das fragen, kennen sie die Plattform oft nicht gut genug. Ich frage es, weil ich weiß, wo ihre Grenzen liegen und wo sie das richtige Werkzeug ist. Make-or-Buy-Bewertungen, Lizenzprognosen und Best-of-Breed-Alternativen gehören zum Job und sind kein Nachgedanke.',
+    // Three short blocks next to portrait and facts (layout "Steckbrief").
+    blocks: [
+      {
+        head: 'Was ich mache',
+        text: 'Ich helfe Fertigungsunternehmen, Salesforce zu einem verlässlichen Rückgrat für Vertrieb, Service und After-Sales zu machen – als Architekt auf Kundenseite.',
+      },
+      {
+        head: 'Projekte',
+        text: 'Zuletzt habe ich vor allem für deutsche Hersteller mit globalem Geschäft gearbeitet:',
+        items: [
+          'Der erste weltweite Rollout der Salesforce Manufacturing Cloud.',
+          'Ein globaler CTI-Rollout mit Service Cloud Voice und Genesys.',
+          'Ein Subunternehmer-Portal für den After-Sales im Schiffbau.',
+          'Eine Embedded-Chat-Lösung mit Rollout-Plan für 12 Locales.',
+        ],
+      },
+      {
+        head: 'Warum unabhängig',
+        text: 'Ich bin an keinen Hersteller und keinen Implementierungspartner gebunden. Deshalb frage ich regelmäßig, ob etwas überhaupt in Salesforce gebaut werden sollte. Wenn andere das fragen, kennen sie die Plattform oft nicht gut genug. Ich frage es, weil ich weiß, wo ihre Grenzen liegen und wo sie das richtige Werkzeug ist. Make-or-Buy-Bewertungen, Lizenzprognosen und Best-of-Breed-Alternativen gehören zum Job und sind kein Nachgedanke.',
+      },
     ],
     facts: [
       { label: 'Seit 2020', text: 'Gründer der FK Solution Design GmbH, Köln' },
