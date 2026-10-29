@@ -29,7 +29,7 @@ export const en = {
   proof: [
     { value: '8', label: 'years Salesforce' },
     { value: '20+', label: 'enterprise projects' },
-    { value: '8 · 32', label: 'teams · developers in one program' },
+    { value: '32', label: 'developers in 8 teams, one program' },
     { value: '25', label: 'Salesforce certifications, 8 architect' },
     { value: '0', label: 'ties to vendors or partners' },
   ],
@@ -325,6 +325,7 @@ export const en = {
     metaDescription: 'Salesforce architect on the client side: target architecture, partner governance, DevOps, integration, programme steering and make-or-buy for manufacturers.',
     indexIntro: 'What I take care of as the Salesforce architect on the client side: from target architecture and partner governance to DevOps, integration, programme steering and make-or-buy decisions.',
     indexIntro2: 'I work for the manufacturer, not for an implementation partner and not for Salesforce. I check proposals, architecture drafts and licence counts against your goals, set standards every partner follows, and stay available when a decision is stuck between business, IT and partners. Each service has its own page with typical starting points, the approach and what you have in hand at the end.',
+    certsLink: 'See all certifications',
     back: 'All services',
     situations: 'Typical situation',
     deliverables: 'What I do',
@@ -687,6 +688,7 @@ export const en = {
       { label: 'For decision makers', text: 'IT leaders, programme owners and product owners.' },
       { label: 'Answer first', text: 'each chapter starts with the answer to its question.' },
       { label: 'Dated', text: 'prices and limits always with their date, in English and German.' },
+      { label: 'From practice', text: 'written by Fabian Kramer (25 Salesforce certifications, 8 of them architect), change management together with Juliane Winterscheid.' },
     ],
     homeLabel: 'Masterclasses',
     homeTitle: 'Knowledge to read up on, chapter by chapter',
@@ -712,8 +714,8 @@ export const en = {
     contact: 'Get in touch',
   },
   footer: {
-    imprint: 'Legal notice',
-    privacy: 'Privacy',
+    imprint: 'Legal notice (German)',
+    privacy: 'Privacy (German)',
     blog: 'Blog',
   },
 };

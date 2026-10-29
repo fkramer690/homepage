@@ -1,0 +1,20 @@
+---
+// Key figures (t.proof) as a row with icons: start page below the hero,
+// service overview as trust evidence above the service cards.
+import Icon from './Icon.astro';
+import type { Dict } from '../i18n/en';
+
+interface Props {
+  t: Dict;
+}
+const { t } = Astro.props;
+const proofIcons = ['clock', 'building', 'interview', 'badge', 'unlinked'];
+---
+<ul class="proof-list">
+  {t.proof.map((p, i) => (
+    <li>
+      <span class="proof-top"><Icon name={proofIcons[i]} class="proof-icon" /><span class="proof-value">{p.value}</span></span>
+      <span class="proof-label mono">{p.label}</span>
+    </li>
+  ))}
+</ul>

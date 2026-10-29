@@ -326,6 +326,9 @@ a:hover { color: var(--anthracite); }
   border-left: 1px dashed var(--line);
 }
 .proof-list li:first-child { border-left: 0; padding-left: 0; }
+/* Key figures as trust evidence on the service overview */
+.service-proof { margin: 1.5em 0 2.5em; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.service-proof-links { display: flex; flex-wrap: wrap; gap: 8px 28px; margin: 0; padding: 0 0 18px; font-size: 0.8rem; }
 .proof-value {
   font-size: 1.8rem;
   font-weight: 600;

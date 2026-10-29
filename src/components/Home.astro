@@ -5,6 +5,7 @@ import Footer from './Footer.astro';
 import Blueprint from './Blueprint.astro';
 import ExternalMark from './ExternalMark.astro';
 import ContactForm from './ContactForm.astro';
+import ProofBar from './ProofBar.astro';
 import FloatingContact from './FloatingContact.astro';
 import StructuredData from './StructuredData.astro';
 import { Image } from 'astro:assets';
@@ -43,9 +44,8 @@ const [qOpen, qClose] = lang === 'de' ? ['„', '“'] : ['“', '”'];
 const stepIcons = ['analyse', 'design', 'steer', 'implement'];
 // Photo per approach step; versions chosen so shirt and counterpart change from step to step.
 const stepPhotos: PhotoKey[] = ['07-rundgang-produktion-v02', '02-workshop-whiteboard-v03', '09-coaching-bildschirm-v01', '10-projektabschluss-v02'];
-// Icons of the services (by order) and of the key figures in the proof bar.
+// Icons of the services (by order).
 const serviceIcons = ['architecture', 'change', 'pipeline', 'integration', 'team', 'license', 'partners'];
-const proofIcons = ['clock', 'building', 'interview', 'badge', 'unlinked'];
 ---
 <Base lang={lang} title={t.meta.title} description={t.meta.description} alternates={{ en: enHome, de: deHome }}>
   <StructuredData slot="head" t={t} url={new URL(home, Astro.site).href} />
@@ -76,14 +76,7 @@ const proofIcons = ['clock', 'building', 'interview', 'badge', 'unlinked'];
 
     <section class="proof" aria-label={lang === 'de' ? 'Kennzahlen' : 'Key figures'}>
       <div class="container">
-        <ul class="proof-list">
-          {t.proof.map((p, i) => (
-            <li>
-              <span class="proof-top"><Icon name={proofIcons[i]} class="proof-icon" /><span class="proof-value">{p.value}</span></span>
-              <span class="proof-label mono">{p.label}</span>
-            </li>
-          ))}
-        </ul>
+        <ProofBar t={t} />
       </div>
     </section>
 
@@ -199,6 +192,8 @@ const proofIcons = ['clock', 'building', 'interview', 'badge', 'unlinked'];
                   <img
                     class:list={{ light: c.light }}
                     style={`--h: ${logoHeight(c)}px`}
+                    width={Math.round(logoHeight(c) * c.ratio)}
+                    height={logoHeight(c)}
                     src={`${import.meta.env.BASE_URL}clients/${c.file}`}
                     alt={i >= clients.length ? '' : c.name}
                     loading="lazy"
@@ -317,6 +312,10 @@ const proofIcons = ['clock', 'building', 'interview', 'badge', 'unlinked'];
           <a class="btn" href={cta} {...ctaAttrs}>{t.contact.cta}{contactExternal && <ExternalMark label={t.nav.newTab} />}</a>
           {contactExternal && <p class="booking-note">{t.contact.bookingNote}</p>}
           <dl class="contact-list">
+            <div>
+              <dt class="mono">{t.contact.form.email}</dt>
+              <dd><a href={`mailto:${site.email}`}>{site.email}</a></dd>
+            </div>
             <div>
               <dt class="mono">{t.contact.linkedinLabel}</dt>
               <dd><a href={site.linkedin} target="_blank" rel="noopener">Fabian Kramer<ExternalMark label={t.nav.externalTab} /></a></dd>
