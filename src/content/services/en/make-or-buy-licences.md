@@ -80,6 +80,11 @@ Make-or-buy decisions shape the architecture, so this service often goes togethe
 
 ## What should you know about Salesforce licences?
 
-The list price is rarely the final offer. Timing matters: at the end of the vendor's fiscal year or during promotions, there is often room to include products the company will need in the next two to three years for little extra cost. That requires a roadmap that is clear enough to know what to ask for.
+The list price is rarely the final offer. Two levers make the difference:
 
-The second lever is the licence type. Full licences are often offered by default, even for users who only read data or approve records. Across a large user base, the difference between the right and the default licence mix can easily reach six figures per year.
+```hebel
+The licence type | Easily six figures per year across a large user base
+  Full licences are often offered by default, even for users who only read data or approve records. I map every user group to the licence type it needs for its work.
+The timing | Products for two to three years at little extra cost
+  At the end of the vendor's fiscal year or during promotions there is often room. That requires a roadmap that is clear enough to know what to ask for.
+```

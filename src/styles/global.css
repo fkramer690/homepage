@@ -1782,3 +1782,12 @@ p.post-series-note { margin: 0.6em 0 0; font-size: 0.95rem; }
   .cm-cols { grid-template-columns: 1fr; grid-template-rows: none; row-gap: 1.6em; }
   .cm-cols .cm-group { grid-template-rows: none; grid-row: auto; display: block; }
 }
+
+/* ```hebel: two or three lever cards of equal height, effect at the bottom */
+.cb-levers { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+.cb-lever { border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 22px; background: var(--white); box-shadow: inset 0 3px 0 var(--cyan); display: flex; flex-direction: column; }
+.prose .cb-lever p { margin: 0; }
+.prose .cb-lever .cb-lever-no { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--cyan-dark); margin-bottom: 8px; }
+.prose .cb-lever .cb-lever-title { font-weight: 600; font-size: 1.1rem; color: var(--anthracite); margin-bottom: 8px; }
+.prose .cb-lever .cb-lever-text { font-size: 0.93rem; color: var(--text-2); margin-bottom: 14px; }
+.prose .cb-lever .cb-lever-effect { margin-top: auto; padding-top: 14px; border-top: 1px dashed var(--line); font-weight: 600; color: var(--anthracite); }

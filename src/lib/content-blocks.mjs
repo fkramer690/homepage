@@ -11,7 +11,7 @@
 import { createHash } from 'node:crypto';
 import { iconHtml } from './icons.mjs';
 
-export const blockNames = ['hinweis', 'praxis', 'kennzahlen', 'zeitleiste', 'ablauf', 'pro-contra', 'vertiefung', 'schritte', 'stufen', 'vergleich'];
+export const blockNames = ['hinweis', 'praxis', 'kennzahlen', 'zeitleiste', 'ablauf', 'pro-contra', 'vertiefung', 'schritte', 'stufen', 'vergleich', 'hebel'];
 
 const labels = {
   de: {
@@ -198,6 +198,10 @@ export function validateBlock(block) {
     const cols = parseProContra(content);
     if (cols.length !== 2 || cols[0].kind !== 'pro' || cols[1].kind !== 'contra') errs.push('pro-contra: needs a "pro: Title" column followed by a "contra: Title" column');
     for (const c of cols) between(c.items.length, 2, 5, `points in "${c.title}"`);
+  } else if (name === 'hebel') {
+    const levers = parseSteps(content);
+    between(levers.length, 2, 3, 'levers');
+    if (levers.some((l) => !l.title || !l.meta || !l.text)) errs.push('hebel: every lever needs "Title | effect" and an indented description line');
   } else if (name === 'vertiefung') {
     const { title, body } = parseDeep(content);
     if (!arg) errs.push('vertiefung: add a label after the name (```vertiefung Für Entwickler)');
@@ -217,6 +221,10 @@ export function validateBlock(block) {
     const cols = parseCompare(content);
     if (cols.length !== 2 || cols[0].kind !== 'without' || cols[1].kind !== 'with') errs.push('vergleich: needs an "ohne: Title" column followed by a "mit: Title" column');
     for (const c of cols) between(c.items.length, 2, 5, `points in "${c.title}"`);
+  } else if (name === 'hebel') {
+    const levers = parseSteps(content);
+    between(levers.length, 2, 3, 'levers');
+    if (levers.some((l) => !l.title || !l.meta || !l.text)) errs.push('hebel: every lever needs "Title | effect" and an indented description line');
   }
   return errs;
 }
@@ -342,6 +350,9 @@ export function renderBlock(block, { lang, isExternal, readDiagram, today = new 
     const tiles = `<ol class="cb-stages" style="--n:${stages.length}">${stages.map((x) => `<li${x.mark ? ' class="cb-stage-mark"' : ''}><span class="cb-stage-letter">${escHtml(x.letter)}</span><span class="cb-stage-name">${inline(x.name, o)}</span><span class="cb-stage-sub">${inline(x.sub, o)}</span><span class="cb-stage-text">${inline(x.text, o)}</span></li>`).join('')}</ol>`;
     const list = cases.length ? `<div class="cb-cases">${cases.map((c) => `<div class="cb-case"><p class="cb-case-title">${inline(c.title, o)}</p><p>${inline(c.situation, o)}</p><p class="cb-case-then">${inline(c.consequence, o)}</p></div>`).join('')}</div>` : '';
     return `<div class="cb cb-stage-block">${tiles}${list}</div>`;
+  }
+  if (name === 'hebel') {
+    return `<div class="cb cb-levers">${parseSteps(content).map((s, i) => `<div class="cb-lever"><p class="cb-lever-no">${lang === 'de' ? 'Hebel' : 'Lever'} ${String(i + 1).padStart(2, '0')}</p><p class="cb-lever-title">${inline(s.title, o)}</p><p class="cb-lever-text">${inline(s.text, o)}</p>${s.meta ? `<p class="cb-lever-effect">${inline(s.meta, o)}</p>` : ''}</div>`).join('')}</div>`;
   }
   if (name === 'vergleich') {
     return `<div class="cb cb-compare">${parseCompare(content).map((c) => `<div class="cb-compare-col cb-compare-${c.kind}"><p class="cb-compare-title">${inline(c.title, o)}</p><ul>${c.items.map((i) => `<li>${c.kind === 'with' ? icon.check : icon.cross}<span>${inline(i, o)}</span></li>`).join('')}</ul></div>`).join('')}</div>`;

@@ -80,6 +80,11 @@ Make-or-buy-Entscheidungen prägen die Architektur, deshalb geht diese Leistung 
 
 ## Was sollten Sie über Salesforce-Lizenzen wissen?
 
-Der Listenpreis ist selten das endgültige Angebot. Der Zeitpunkt zählt: Zum Ende des Geschäftsjahres des Herstellers oder bei Aktionen gibt es oft Spielraum, Produkte, die das Unternehmen in den nächsten zwei bis drei Jahren braucht, für wenig Aufpreis aufzunehmen. Dafür braucht es eine Roadmap, die klar genug ist, um zu wissen, wonach man fragen sollte.
+Der Listenpreis ist selten das endgültige Angebot. Zwei Hebel machen den Unterschied:
 
-Der zweite Hebel ist der Lizenztyp. Volle Lizenzen werden oft standardmäßig angeboten, auch für Nutzer, die nur Daten lesen oder Datensätze freigeben. Über eine große Nutzerbasis kann der Unterschied zwischen dem passenden und dem Standard-Lizenzmix leicht sechsstellig pro Jahr sein.
+```hebel
+Der Lizenztyp | Leicht sechsstellig pro Jahr bei großer Nutzerbasis
+  Volle Lizenzen werden oft standardmäßig angeboten, auch für Nutzer, die nur Daten lesen oder Datensätze freigeben. Ich ordne jeder Nutzergruppe den Lizenztyp zu, den sie für ihre Arbeit braucht.
+Der Zeitpunkt | Produkte für zwei bis drei Jahre für wenig Aufpreis
+  Zum Ende des Geschäftsjahres des Herstellers oder bei Aktionen gibt es oft Spielraum. Dafür braucht es eine Roadmap, die klar genug ist, um zu wissen, wonach man fragen sollte.
+```
