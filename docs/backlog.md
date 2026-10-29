@@ -146,6 +146,8 @@ Ideen für mehr persönliche Note, von Fabian freigegeben, später abarbeiten:
 
 15. **Eigener Kontakt für Julianes Artikel** (von Fabian gewünscht 29.10.2026) – Julianes Artikel (und ggf. ihr Profil) bekommen Julianes eigenen Buchungslink und/oder ihre E-Mail statt Fabians Bookings und Formular. Bis dahin läuft jeder Kontakt über Fabian. *Braucht: Buchungslink oder E-Mail von Juliane.*
 
+16. **Alle Grafiken durchgehen und die besten nominieren** (von Fabian gewünscht 29.10.2026) – Irgendwann alle Grafiken und grafischen Bausteine der Website gemeinsam durchsehen (Content-Blöcke, Erklärgrafiken, Kartenskizzen, Seitenlayouts) und daraus wieder die besten nominieren. Die Gewinner kommen nach `docs/layouts.md` als bevorzugte Vorlagen, schwache Stellen bekommen einen eigenen Punkt. Bisher nominiert unter anderem: Säulen mit Dach (DevOps-Leistungsseite). *Übersicht mit Screenshots: Claude, Auswahl: Fabian.*
+
 Weitere offene Punkte:
 - Fallstudien-Seiten (Ausgangslage, Architekturentscheidungen, Ergebnis, Grafik), sobald die Kundenfreigaben vorliegen. Status klärt Fabian.
 - Logo-Paket (ZIP) hochladen
