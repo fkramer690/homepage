@@ -133,4 +133,4 @@ Die folgenden Kapitel gehen die Ebenen einzeln durch:
 
 Die Übersicht aller Kapitel finden Sie auf der [Startseite der Masterclass](../). Wenn Sie die Ebenen für Ihr eigenes Programm sortieren wollen, ist das ein typischer Einstieg in meine Arbeit zur [Salesforce-Architektur](../../../leistungen/salesforce-architektur/).
 
-Wer die vier Ebenen trennt und Produktnamen mit Datum verwendet, kann jedes KI-Angebot für Salesforce einordnen, bevor er über Werkzeuge spricht. Wenn Sie dabei eine unabhängige zweite Meinung möchten, [schreiben Sie mir](#contact).
+Wer die vier Ebenen trennt und Produktnamen mit Datum verwendet, kann jedes KI-Angebot für Salesforce einordnen, bevor er über Werkzeuge spricht.

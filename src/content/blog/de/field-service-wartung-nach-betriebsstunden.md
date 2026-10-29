@@ -108,4 +108,4 @@ Ein typisches Szenario, als Annahme: Ein Hersteller von Kompressoren betreut 1.2
 
 Nehmen Sie eine Baureihe und schreiben Sie das Intervall aus dem Vertrag in einem Satz auf. Prüfen Sie, wo der Zähler heute liegt und wie oft er aktualisiert wird. Dann bauen Sie Felder, eine kriterienbasierte Regel und den Flow zum Zurücksetzen in einer Sandbox und testen mit zehn echten Assets, bevor Sie die ganze Baureihe umstellen. Das [Masterclass-Kapitel zu Assets, Wartung und Teilen](../../masterclass/field-service/field-service-assets-wartung-teile/) zeigt, wo das neben Verträgen, Ersatzteilen und Servicepartnern steht.
 
-Wartung nach Betriebsstunden braucht einen Zähler am Asset, eine Regel mit ODER und ein Zurücksetzen beim Abschluss. Wenn Sie eine zweite Meinung zu Ihrem Wartungsmodell wollen, [schreiben Sie mir](#contact).
+Wartung nach Betriebsstunden braucht einen Zähler am Asset, eine Regel mit ODER und ein Zurücksetzen beim Abschluss.

@@ -86,4 +86,4 @@ Whether the app has landed shows in numbers: work orders closed in the app inste
 
 In the first region, find three to five experienced technicians who are willing to test the app on real jobs beforehand. In parallel, clarify location and hours with the works council and write the result down in plain words. Then decide which forms and data the technician really needs on site, and drop the rest, even if a department at headquarters would like to have it.
 
-Technicians accept the app when it makes their day easier and they know what happens with their data. If you are rolling out Field Service to your technicians, [send me a message](#contact).
+Technicians accept the app when it makes their day easier and they know what happens with their data.

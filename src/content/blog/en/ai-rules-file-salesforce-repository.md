@@ -158,4 +158,4 @@ Protect the files
   With CODEOWNERS and branch protection.
 ```
 
-Setting this up is part of my work in [DevOps and release management](../../services/devops-release-management/) and in [partner governance](../../services/partner-governance/). An AI rules file costs a few days and gives every agent in your repository the same rules, as long as you own the file and enforce the hard rules elsewhere. If you want a second opinion on your rules file or your partner setup, [send me a message](#contact).
+Setting this up is part of my work in [DevOps and release management](../../services/devops-release-management/) and in [partner governance](../../services/partner-governance/). An AI rules file costs a few days and gives every agent in your repository the same rules, as long as you own the file and enforce the hard rules elsewhere.

@@ -125,4 +125,4 @@ MuleSoft can also turn the same API into an MCP server: [Agent Fabric](https://d
 
 If your ERP has no API at all, see [legacy ERP without an API](../legacy-erp-without-api-ai-agents/); whether the process is ready for an agent at all, see [Agentforce for manufacturers: start now or wait](../agentforce-yes-or-no-manufacturers/).
 
-An agent that reads order status from SAP is mostly an integration project with a language model on top. If you want a second opinion on the API design or the access rules, [send me a message](#contact).
+An agent that reads order status from SAP is mostly an integration project with a language model on top.

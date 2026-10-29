@@ -99,4 +99,4 @@ Die 80 Prozent sind ein Richtwert, keine exakte Messung. Trotzdem lässt sich di
 
 Legen Sie vor dem ersten Land fest, was das Ziel ist, und schreiben Sie es auf. Ist es Harmonisierung, folgt daraus der Richtwert für die Übereinstimmung und der Antragsweg für Abweichungen. Führen Sie dann eine Liste der Abweichungen pro Land, mit Grund und Datum der Freigabe. Diese Liste zeigt im Lenkungsausschuss besser als jeder Statusbericht, ob das Template hält.
 
-Ein globales Template hält, wenn jede Abweichung einen Grund, einen Besitzer und einen Preis hat. Wenn Sie einen weltweiten Rollout planen, [schreiben Sie mir](#contact) oder lesen Sie mehr über [Change Management](../../leistungen/change-management/).
+Ein globales Template hält, wenn jede Abweichung einen Grund, einen Besitzer und einen Preis hat. Mehr dazu lesen Sie unter [Change Management](../../leistungen/change-management/).

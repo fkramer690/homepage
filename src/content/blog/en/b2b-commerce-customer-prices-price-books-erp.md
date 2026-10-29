@@ -113,4 +113,4 @@ Write a one-page price master decision before the store design:
 
 This decision belongs in the same document as your [object ownership matrix](../salesforce-object-ownership-matrix/), and it shapes the interface list for the ERP, as described in [B2B Commerce and SAP: which data flows where?](../b2b-commerce-sap-data-flows/). How prices, quotes, checkout and reorders fit together is the subject of the chapter [prices, cart and checkout](../../masterclass/b2b-commerce/prices-cart-checkout/) in the [B2B Commerce masterclass](../../masterclass/b2b-commerce/). Designing the interface itself is part of my work on [Salesforce integration](../../services/salesforce-integration/).
 
-Price books are enough for tier prices, and SAP condition logic needs a live call or a deliberate replication. If you want to talk through your price master decision, [send me a message](#contact).
+Price books are enough for tier prices, and SAP condition logic needs a live call or a deliberate replication.

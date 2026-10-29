@@ -120,4 +120,4 @@ Test | Week 4
 
 Setting these rules across several partners is part of my work in [partner governance](../../services/partner-governance/) and [DevOps and release management](../../services/devops-release-management/).
 
-Pick the coding agent by contract, residency and governance, and keep quality in the rules file and pipeline you own. If you want a second opinion on your approved list, [send me a message](#contact).
+Pick the coding agent by contract, residency and governance, and keep quality in the rules file and pipeline you own.

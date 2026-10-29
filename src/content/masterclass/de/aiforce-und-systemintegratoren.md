@@ -130,4 +130,4 @@ Danach lassen sich beide Angebote vergleichen, weil KI-Einsatz, Zugriffe und Ver
 
 Diese Punkte gehören zu meiner Arbeit in der [Partnersteuerung](../../../leistungen/partnersteuerung/). Welches Werkzeug für welchen Zweck passt, zeigt das nächste Kapitel, die [Entscheidungsmatrix](../entscheidungsmatrix-ki-werkzeuge/); wie sich Teams mit KI organisieren, behandelt [Kapitel 9](../teamarbeit-und-delivery/). Alle Kapitel finden Sie in der [Übersicht der Masterclass](../).
 
-AIforce ändert, wo Ihre Leute mit Salesforce arbeiten, das neue Partnermodell ändert, woran Ihr Partner verdient, und beides sollten Sie im Vertrag sichtbar machen. Wenn Sie ein Partnerangebot mit KI-Anteil einordnen möchten, [schreiben Sie mir](#contact).
+AIforce ändert, wo Ihre Leute mit Salesforce arbeiten, das neue Partnermodell ändert, woran Ihr Partner verdient, und beides sollten Sie im Vertrag sichtbar machen.

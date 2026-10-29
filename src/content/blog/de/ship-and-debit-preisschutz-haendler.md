@@ -112,4 +112,4 @@ Das Kapitel [Händler und Partnerkanal](../../masterclass/manufacturing-cloud/ha
 3. **Preis.** Add-on, Partnerzugang und Auszahlungsvolumen schriftlich im Angebot.
 4. **Prozess.** Wer Ausnahmen freigibt und wie freigegebene Beträge ins ERP kommen.
 
-Channel Revenue Management lohnt sich für Ship and Debit, wenn viele Ansprüche kommen und die Distributoren die Daten zur Prüfung liefern. Wenn Sie das für Ihren Vertriebskanal rechnen möchten, [schreiben Sie mir](#contact).
+Channel Revenue Management lohnt sich für Ship and Debit, wenn viele Ansprüche kommen und die Distributoren die Daten zur Prüfung liefern.

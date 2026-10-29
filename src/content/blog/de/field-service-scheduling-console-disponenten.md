@@ -94,4 +94,4 @@ Die Notiz zu Why? lohnt sich. Nutzen Disponenten die Erklärung oft und ändern 
 
 Prüfen Sie zuerst die Engine. Ist es noch die ältere, wartet die Frage nach der Konsole, bis Sie auf Enhanced Scheduling and Optimization umgestellt haben. Ist es schon die neue, geben Sie zwei Disponenten das Permission Set und lassen Sie sie einige Wochen ein Gebiet planen. Engine, Konsole und Verantwortlicher für die Policies sind die drei Entscheidungen im Masterclass-Kapitel [Terminplanung und Disposition](../../masterclass/field-service/field-service-terminplanung-disposition/).
 
-Stellen Sie Disponenten auf die Scheduling Console um, wenn die Ansichten da sind, die sie jeden Tag brauchen, und nicht, weil es einen neuen Bildschirm gibt. Wenn Sie einen unabhängigen Blick darauf möchten, wie Ihre Disposition damit arbeiten sollte, [schreiben Sie mir](#contact).
+Stellen Sie Disponenten auf die Scheduling Console um, wenn die Ansichten da sind, die sie jeden Tag brauchen, und nicht, weil es einen neuen Bildschirm gibt.

@@ -176,4 +176,4 @@ Partner fragen nach Funktionen. Die Entscheidungen, die Kosten und Zeitplan trei
 
 Schreiben Sie diese vier Antworten ins Entscheidungsprotokoll, bevor Sie Schätzungen anfragen. Sie gehören zu meiner Arbeit in der [Salesforce-Architektur](../../../leistungen/salesforce-architektur/). Sind sie geklärt, zeigt [Kapitel 2 zu Katalog, Konfigurator und Preisen](../produktkatalog-konfigurator-preise/), wie Produkte und Preise abgebildet werden; alle Kapitel stehen auf der [Übersichtsseite](../).
 
-Revenue Cloud lohnt sich, wenn Ihre Angebote komplex sind und Ihr Umsatz wiederkehrt, und die Entscheidungen zu Preis, Regeln und Rechnung kommen vor dem Partner. Wenn Sie dazu eine zweite Meinung möchten, [schreiben Sie mir](#contact).
+Revenue Cloud lohnt sich, wenn Ihre Angebote komplex sind und Ihr Umsatz wiederkehrt, und die Entscheidungen zu Preis, Regeln und Rechnung kommen vor dem Partner.

@@ -144,4 +144,4 @@ Troubleshooting waits until manuals carry the asset's product key, the spare par
 
 This chapter closes the masterclass; assets and parts are in [chapter 4](../field-service-assets-maintenance-parts/), all chapters on the [overview page](../).
 
-Field Service pays off when agents start where the data is clean, waves start with the works council and the numbers are defined before go-live. If you are planning a rollout or your first Field Service agent, [send me a message](#contact).
+Field Service pays off when agents start where the data is clean, waves start with the works council and the numbers are defined before go-live.

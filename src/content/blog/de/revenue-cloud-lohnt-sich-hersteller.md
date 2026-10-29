@@ -106,4 +106,4 @@ Partner fragen nach Funktionen. Die Entscheidungen, die Kosten und Zeitplan trei
 
 Wie die Schritte vom Angebot bis zur Rechnung zwischen Revenue Cloud und SAP aufgeteilt werden, behandelt [Revenue Cloud und SAP: Wer führt was im Quote-to-Cash?](../revenue-cloud-sap-quote-to-cash-aufteilung/). Das [Überblickskapitel der Masterclass Revenue Cloud](../../masterclass/revenue-cloud/revenue-cloud-ueberblick/) ordnet alles ein, und die Architekturseite gehört zu meiner Arbeit in der [Salesforce-Architektur](../../leistungen/salesforce-architektur/).
 
-Revenue Cloud lohnt sich, wenn Ihre Angebote komplex sind und Ihr Umsatz wiederkehrt, und selten, wenn SAP die Preisfrage schon beantwortet. Wenn Sie es gegen Sales Cloud und SAP abwägen, [schreiben Sie mir](#contact).
+Revenue Cloud lohnt sich, wenn Ihre Angebote komplex sind und Ihr Umsatz wiederkehrt, und selten, wenn SAP die Preisfrage schon beantwortet.

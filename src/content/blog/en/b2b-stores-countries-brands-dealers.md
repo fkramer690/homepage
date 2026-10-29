@@ -111,4 +111,4 @@ Settle the commercials
 
 The chapter [catalogue, search and entitlements](../../masterclass/b2b-commerce/catalog-search-entitlements/) of the [B2B Commerce masterclass](../../masterclass/b2b-commerce/) puts this decision into the wider store design, and my approach to such cuts is described under [Salesforce architecture](../../services/salesforce-architecture/).
 
-One store per brand or ERP and buyer groups for countries and tiers is the default I would argue against only with a concrete reason; if you want to check your cut, [send me a message](#contact).
+One store per brand or ERP and buyer groups for countries and tiers is the default I would argue against only with a concrete reason.

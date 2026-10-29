@@ -119,4 +119,4 @@ The agent goes to production like any other change: with a test set of real clai
 5. **Ask Salesforce three questions**: which licence, which fraud signals, which setup documentation.
 6. **Build a test set** from real claims, including rejected ones and known fraud cases.
 
-The Warranty Claims Adjudication Agent can speed up decisions, but only on top of clean asset data, rules that already work and a clear approval line. If you want a second opinion on whether your warranty process is ready for it, [send me a message](#contact).
+The Warranty Claims Adjudication Agent can speed up decisions, but only on top of clean asset data, rules that already work and a clear approval line.

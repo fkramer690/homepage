@@ -50,4 +50,4 @@ Link related topics, e.g. [partner steering](../../#services) or [references](..
 
 ## Where should you start?
 
-Concrete first steps. One-sentence conclusion and an invitation: [send me a message](#contact).
+Concrete first steps and a one-sentence conclusion. No invitation to get in touch: the contact section follows directly below the article.

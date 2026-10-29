@@ -104,5 +104,3 @@ Every integration has a technical user, and those users often have more permissi
 Summer '27 | SOAP login() in API versions 31.0 to 64.0 is retired
 Summer '28 | SOAP, REST and Bulk API in versions 31.0 to 40.0 stop working
 ```
-
-If you are planning a new integration or want to clean up existing interfaces, [send me a message](#contact).

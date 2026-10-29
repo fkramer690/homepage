@@ -109,4 +109,4 @@ Nichts davon verhindert, dass ein Anbieter Ihre Tokens verliert. Es entscheidet,
 
 Fangen Sie mit den KI-Tools an, weil sie die neuesten und am wenigsten geprüften sind: Markieren Sie jede App, die Salesforce-Daten an ein Modell schickt, und prüfen Sie für diese zuerst Benutzer, Scopes und Token-Richtlinie. Ihr zweites Risiko ist [Prompt Injection im Händlerportal](../prompt-injection-haendlerportal-agentforce/). Eine Liste aller Schnittstellen mit benannten Verantwortlichen gehört zu meiner Arbeit an [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).
 
-Jede Connected App ist ein Schlüssel zu Ihrer Org in fremder Hand, also geben Sie jeder einen Verantwortlichen, einen engen Benutzer und ein Ablaufdatum. Wenn Sie vor dem nächsten KI-Tool einen zweiten Blick auf Ihre Connected Apps möchten, [schreiben Sie mir](#contact).
+Jede Connected App ist ein Schlüssel zu Ihrer Org in fremder Hand, also geben Sie jeder einen Verantwortlichen, einen engen Benutzer und ein Ablaufdatum.

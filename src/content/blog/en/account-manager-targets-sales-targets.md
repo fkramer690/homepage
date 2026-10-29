@@ -111,4 +111,4 @@ The Sales Planning agent does not work on targets either. Which subagents Salesf
 3. **Records.** Expected period records against the limit in the quote.
 4. **Licence.** Feature and dashboard confirmed for your edition in writing.
 
-Account manager targets replace the target spreadsheet once targets, forecasts and actuals share one structure. If you want to check that for your sales team, [send me a message](#contact).
+Account manager targets replace the target spreadsheet once targets, forecasts and actuals share one structure.

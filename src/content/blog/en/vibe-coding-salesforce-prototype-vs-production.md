@@ -115,4 +115,4 @@ The production build therefore starts from the repository: three user stories, e
 4. **Make plans visible.** Ask your partner to attach the approved plan to the pull request.
 5. **Own the pipeline.** Setting it up for programmes with several partners is the core of my [DevOps and release management](../../services/devops-release-management/) work.
 
-Use vibe coding to get better requirements out of the workshop and agentic engineering to get code into your org. If you want to set up that hand-over for your programme, [send me a message](#contact).
+Use vibe coding to get better requirements out of the workshop and agentic engineering to get code into your org.

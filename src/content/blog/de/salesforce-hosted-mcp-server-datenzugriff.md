@@ -119,4 +119,4 @@ Zwei von drei Anfragen gehen durch, beide enger als beantragt. Nach meiner Einsc
 
 Das gehört zu meiner Arbeit an [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/): Ein MCP-Server ist eine Schnittstelle und braucht einen Verantwortlichen.
 
-Hosted MCP setzt die Salesforce-Rechte zuverlässig durch; die eigentliche Entscheidung ist, welchen Personen, welchen Feldern und welchem KI-Vertrag Sie Ihre Daten anvertrauen. Wenn Sie vor der ersten Verbindung eine zweite Meinung möchten, [schreiben Sie mir](#contact).
+Hosted MCP setzt die Salesforce-Rechte zuverlässig durch; die eigentliche Entscheidung ist, welchen Personen, welchen Feldern und welchem KI-Vertrag Sie Ihre Daten anvertrauen.

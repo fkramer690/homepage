@@ -123,4 +123,4 @@ Nächsten Pfad wählen
   Mit diesen Zahlen über den nächsten Pfad entscheiden.
 ```
 
-Ein Einstein Bot braucht keine Eins-zu-eins-Ablösung, sondern eine Aufteilung in Pfade, die vorhersehbar bleiben müssen, und Fragen, die ein Agent besser beantwortet; diese [Architekturentscheidung](../../leistungen/salesforce-architektur/) gehört vor den ersten Klick auf Upgrade, und wenn Sie eine zweite Meinung zu den Pfaden Ihres Bots möchten, [schreiben Sie mir](#contact).
+Ein Einstein Bot braucht keine Eins-zu-eins-Ablösung, sondern eine Aufteilung in Pfade, die vorhersehbar bleiben müssen, und Fragen, die ein Agent besser beantwortet; diese [Architekturentscheidung](../../leistungen/salesforce-architektur/) gehört vor den ersten Klick auf Upgrade.

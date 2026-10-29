@@ -117,4 +117,4 @@ How I set up interfaces between ERP, middleware and Salesforce is described unde
 4. **Plan the money flows back**: rebate payouts and warranty credits, each with a status that returns to Salesforce.
 5. **List every interface user** and its login method before 1 December 2026.
 
-Manufacturing Cloud is only as current as the SAP data it receives, so the integration design comes before the feature design. If you are planning this interface and want an independent review, [send me a message](#contact).
+Manufacturing Cloud is only as current as the SAP data it receives, so the integration design comes before the feature design.

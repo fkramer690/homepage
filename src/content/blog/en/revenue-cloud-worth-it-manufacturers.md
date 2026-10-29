@@ -106,4 +106,4 @@ Partners will ask about features. The decisions that drive cost and timeline are
 
 How the steps from quote to invoice are split between Revenue Cloud and SAP is the subject of [Revenue Cloud and SAP: who owns what in quote to cash?](../revenue-cloud-sap-quote-to-cash-ownership/). The [overview chapter of the Revenue Cloud masterclass](../../masterclass/revenue-cloud/revenue-cloud-overview/) puts all of this in context, and the architecture side is part of my work in [Salesforce architecture](../../services/salesforce-architecture/).
 
-Revenue Cloud is worth it when your quotes are complex and your revenue recurs, and rarely when SAP already answers the price question. If you are weighing it against Sales Cloud and SAP, [send me a message](#contact).
+Revenue Cloud is worth it when your quotes are complex and your revenue recurs, and rarely when SAP already answers the price question.

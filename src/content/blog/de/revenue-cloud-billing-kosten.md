@@ -104,4 +104,4 @@ Solche Lizenzentscheidungen gehören in eine Lizenzprognose mit echten Zahlen, n
 
 Finance kennt die Rechnungsvolumen je Umsatzart, der Vertrieb das geplante Wachstum der Abos, und der Einkauf verhandelt. Ich würde die Zahl bei Finance verankern, weil Finance später auch das Nebenbuch und die Rechnungen sieht. Das Masterclass-Kapitel [Abrechnung und nutzungsbasierte Preise](../../masterclass/revenue-cloud/abrechnung-und-nutzungsbasierte-preise/) zeigt, wo Billing im übrigen Quote-to-Cash-Prozess steht.
 
-Revenue Cloud Billing kostet ein Billing Event je 50 Dollar Rechnungsbetrag, also entscheiden Sie zuerst, was Sie in Salesforce fakturieren, und verhandeln Sie dann den Preis. Wenn Sie eine zweite Meinung zu Ihrer Prognose oder Ihrem Order Form möchten, [schreiben Sie mir](#contact).
+Revenue Cloud Billing kostet ein Billing Event je 50 Dollar Rechnungsbetrag, also entscheiden Sie zuerst, was Sie in Salesforce fakturieren, und verhandeln Sie dann den Preis.

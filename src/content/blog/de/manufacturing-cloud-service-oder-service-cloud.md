@@ -108,4 +108,4 @@ Das ist dieselbe Make-or-Buy-Frage wie bei der ganzen Branchen-Cloud, beschriebe
 
 Zählen Sie die Nutzer pro Rolle für eine Region: wie viele Garantieanträge bearbeiten, wie viele Kampagnen steuern, wie viele nur Anrufe annehmen. Fordern Sie dann ein Angebot mit genau diesem Mix an, einschließlich der Frage nach Industries Service Excellence und dem Lesezugriff für Service-Cloud-Nutzer. Die After-Sales-Funktionen selbst stehen im [Kapitel Garantie und After-Sales](../../masterclass/manufacturing-cloud/garantie-und-after-sales/) der Masterclass Manufacturing Cloud.
 
-Manufacturing Cloud for Service ist ihren Aufpreis für die Menschen wert, die an Garantie und Rückrufen arbeiten, selten für das ganze Serviceteam. Wenn Sie diesen Lizenzmix abwägen, [schreiben Sie mir](#contact).
+Manufacturing Cloud for Service ist ihren Aufpreis für die Menschen wert, die an Garantie und Rückrufen arbeiten, selten für das ganze Serviceteam.

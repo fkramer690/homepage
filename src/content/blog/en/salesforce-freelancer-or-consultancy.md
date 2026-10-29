@@ -109,4 +109,4 @@ If you are looking for an architect for your side of the table, other questions 
 
 First write down which role is missing: capacity that builds, or control that decides. If capacity is missing, look for a partner, and no freelancer portal solves that. If control is missing, because a partner checks its own work or several partners build by their own rules, get an architect on your side before the next tender goes out. How I fill this role is on the page [Freelance Salesforce Architect](../../freelance-salesforce-architect/) and under [partner governance](../../services/partner-governance/).
 
-An independent architect does not replace your partners, he makes sure they build by your rules. If you want to clarify which role is missing in your programme, [send me a message](#contact).
+An independent architect does not replace your partners, he makes sure they build by your rules.

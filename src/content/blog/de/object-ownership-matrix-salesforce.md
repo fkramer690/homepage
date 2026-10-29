@@ -104,4 +104,4 @@ Eine erste Matrix steht schneller, als die meisten erwarten:
 
 Nach meiner Erfahrung ist die erste Version nie vollständig, und das muss sie auch nicht sein. Mit 80 Prozent fängt man an, den Rest liefern die Reviews. Mehr dazu, wie ich Programme mit mehreren Partnern steuere, steht unter [Partnersteuerung](../../leistungen/partnersteuerung/).
 
-Eine Object Ownership Matrix ist schnell aufgeschrieben und erspart einem Programm mit mehreren Partnern viele Konflikte zwischen Teams. Wenn in Ihrem Programm mehrere Partner an einer Org arbeiten und Sie eine zweite Meinung möchten, [schreiben Sie mir](#contact).
+Eine Object Ownership Matrix ist schnell aufgeschrieben und erspart einem Programm mit mehreren Partnern viele Konflikte zwischen Teams.

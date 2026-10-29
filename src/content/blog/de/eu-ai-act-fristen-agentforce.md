@@ -108,4 +108,4 @@ Eine Idee ist überfällig, zwei werden so umgeplant, dass sie außerhalb von Ho
 
 Wo die Einstufung die Architektur prägt, etwa welche Entscheidung eine menschliche Freigabe braucht, unterstütze ich die Kundenseite im Rahmen der [Salesforce-Architektur](../../leistungen/salesforce-architektur/). Ob Agentforce überhaupt der richtige Einstieg ist, behandelt [Agentforce für Hersteller: jetzt starten oder warten?](../agentforce-ja-oder-nein-hersteller/), und Kapitel 9 der [KI-Masterclass](../../masterclass/ki-salesforce/teamarbeit-und-delivery/) stellt den AI Act neben Betriebsrat und DSGVO.
 
-Ergänzen Sie den KI-Hinweis jetzt in jedem Agenten mit Kundenkontakt und entscheiden Sie über HR- und Personalagenten deutlich vor dem 2. Dezember 2027. Wenn Sie eine zweite Meinung zu Ihrer Agentenliste möchten, [schreiben Sie mir](#contact).
+Ergänzen Sie den KI-Hinweis jetzt in jedem Agenten mit Kundenkontakt und entscheiden Sie über HR- und Personalagenten deutlich vor dem 2. Dezember 2027.

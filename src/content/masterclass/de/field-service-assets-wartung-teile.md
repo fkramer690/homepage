@@ -155,4 +155,4 @@ Ein typisches Szenario, als Annahme: Ein Hersteller von Bearbeitungszentren hat 
 
 Die meisten dieser Punkte sind Schnittstellenfragen, und daran arbeite ich im Bereich [Salesforce-Schnittstellen](../../../leistungen/salesforce-schnittstellen/). [Kapitel 5](../field-service-ki-agenten-einfuehrung/) baut auf diesem Datenmodell auf, mit KI-Agenten, Einführung in Wellen und Betrieb, und die [Übersichtsseite](../) listet alle Kapitel.
 
-Assets, Verträge und Teile tragen alles, was später in Field Service kommt, deshalb verdienen sie die ersten Entscheidungen. Wenn Sie eine zweite Meinung zu Ihrer installierten Basis oder Ihrem Wartungsmodell möchten, [schreiben Sie mir](#contact).
+Assets, Verträge und Teile tragen alles, was später in Field Service kommt, deshalb verdienen sie die ersten Entscheidungen.

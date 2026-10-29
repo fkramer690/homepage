@@ -109,6 +109,6 @@ Nicht jede Veränderung braucht eine externe Change-Managerin. Ändert sich für
 
 Unterstützung von außen lohnt sich, wenn mehrere Gruppen oder Länder betroffen sind, wenn intern niemand Zeit und Erfahrung für die Planung hat oder wenn der Sponsor noch unklar ist. Dann hilft ein Blick von außen, der die Rollen klärt, die Führungskräfte begleitet und die Arbeit am Ende an interne Verantwortliche übergibt. Für Salesforce-Programme gibt es dafür die [Change Management Beratung für Salesforce](../../leistungen/change-management/).
 
-Eine Veränderung ist erst geschafft, wenn im Alltag anders gearbeitet wird. Wenn bei Ihnen eine ansteht, [schreiben Sie uns](#contact).
+Eine Veränderung ist erst geschafft, wenn im Alltag anders gearbeitet wird.
 
 Prosci und ADKAR sind eingetragene Marken von Prosci, Inc.

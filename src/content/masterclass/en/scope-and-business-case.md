@@ -168,4 +168,4 @@ Before a quote is on the table, three questions to sales and service help: what 
 
 If the answer is volume agreements, [chapter 2 on agreements and forecasting](../agreements-and-forecasting/) continues with the data that has to come from the ERP for them. All chapters are on the [overview page](../).
 
-Manufacturing Cloud pays off when its core features match your business, and a five-year calculation shows that earlier than the first workshop. If you want a quote checked or the business case calculated, [send me a message](#contact).
+Manufacturing Cloud pays off when its core features match your business, and a five-year calculation shows that earlier than the first workshop.

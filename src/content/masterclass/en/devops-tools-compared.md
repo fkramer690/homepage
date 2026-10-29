@@ -144,4 +144,4 @@ Three rules are not negotiable for me:
 
 The sandboxes and branches each of these tools builds on are covered in [chapter 3](../environments-and-branching/). How they become a pipeline with pull requests, validations and delta deployments follows in [chapter 5](../building-the-pipeline/). I help with the selection and setup as part of [DevOps and release management](../../../services/devops-release-management/) and, when several partners are involved, in [partner governance](../../../services/partner-governance/).
 
-The right tool is the one that fits your Git platform and has a responsible person on the client side. If you would like your selection checked against these criteria, [send me a message](#contact).
+The right tool is the one that fits your Git platform and has a responsible person on the client side.

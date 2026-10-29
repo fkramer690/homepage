@@ -130,4 +130,4 @@ Das günstigste Megabyte ist das, das Sie nie verarbeiten.
 
 Wie Sie Credits über alle Zähler planen, beschreibe ich in [Flex Credits: Agentforce-Kosten pro Aktion](../flex-credits-agentforce-kosten-pro-aktion/). Ob dieses Budget überhaupt in Salesforce gehört, ist Teil meiner Arbeit in [Make-or-buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/).
 
-Grounding mit Data 360 ist pro Frage günstig und pro geändertem Megabyte teuer, entscheiden Sie Parser, Umfang und Ablageort deshalb vor der ersten Befüllung. Wenn Sie eine zweite Meinung zu Ihrer Dokumentenschätzung möchten, [schreiben Sie mir](#contact).
+Grounding mit Data 360 ist pro Frage günstig und pro geändertem Megabyte teuer, entscheiden Sie Parser, Umfang und Ablageort deshalb vor der ersten Befüllung.

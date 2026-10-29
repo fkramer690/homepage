@@ -108,5 +108,3 @@ Qualifikationen und Abwesenheiten sind Daten über Mitarbeitende. Klären Sie fr
 Nehmen Sie die Fehleinsätze der letzten drei Monate in einer Region. Ordnen Sie jeden einer Ursache zu: Teile, Zugang, Qualifikation, Verfügbarkeit oder etwas anderes. Die Ursache mit den meisten Fehleinsätzen zeigt, welche Daten Sie zuerst sauber brauchen. Gibt es keine Liste der Fehleinsätze, ist auch das ein Ergebnis, denn dann fehlt die Messgröße, an der sich Field Service später messen lassen muss.
 
 Danach prüfen Sie für jede der sechs Datenarten: Gibt es sie, wo liegt sie, wer pflegt sie? Erst wenn diese Fragen beantwortet sind, lohnt es sich, die Planung selbst einzurichten. Darum geht es im nächsten Teil der Serie.
-
-Wenn Sie vor dieser Bestandsaufnahme stehen und einen unabhängigen Blick auf Ihre Daten möchten, [schreiben Sie mir](#contact).

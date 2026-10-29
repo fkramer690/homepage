@@ -130,4 +130,4 @@ The cheapest megabyte is the one you never process.
 
 How to plan credits across all meters is covered in [Flex Credits and Agentforce cost per action](../flex-credits-agentforce-cost-per-action/). Whether this budget belongs in Salesforce at all is part of my [make-or-buy and licence planning](../../services/make-or-buy-licences/).
 
-Data 360 grounding is cheap per question and expensive per changed megabyte, so decide the parser, the scope and the file location before the first load. If you want a second opinion on your document estimate, [send me a message](#contact).
+Data 360 grounding is cheap per question and expensive per changed megabyte, so decide the parser, the scope and the file location before the first load.

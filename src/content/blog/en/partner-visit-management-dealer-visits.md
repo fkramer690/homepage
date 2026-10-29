@@ -113,4 +113,4 @@ The chapter on the [dealer and partner channel](../../masterclass/manufacturing-
 3. **Pilot.** One region, one quarter, one template.
 4. **Review.** After the quarter, check which KPIs were filled and which led to a decision.
 
-Partner visit management turns dealer visits into comparable data once the KPIs are agreed and the app works where your reps are. If you want to check that for your dealer network, [send me a message](#contact).
+Partner visit management turns dealer visits into comparable data once the KPIs are agreed and the app works where your reps are.

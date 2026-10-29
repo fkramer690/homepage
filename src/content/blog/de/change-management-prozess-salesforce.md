@@ -92,4 +92,4 @@ Der Prozess endet, wenn die neue Arbeitsweise gemessen genutzt wird und niemand 
 
 Nehmen Sie den Projektplan Ihres nächsten Salesforce-Vorhabens und tragen Sie für jede Phase ein, welches Change-Ergebnis am Ende vorliegen soll. Fehlen in der Planung die Impact-Analyse, der Sponsor-Plan oder die Kennzahlen, ist das Ihr erster Schritt. Der Hub-Artikel [Salesforce Change Management: warum Einführungen scheitern](../change-management-salesforce-einfuehrung/) zeigt, welche Themen dazugehören.
 
-Change Management ist ein Prozess, der mit dem Projektplan beginnt und nach dem Go-live endet. Wenn Sie ihn für Ihr Programm aufsetzen möchten, [schreiben Sie mir](#contact) oder lesen Sie mehr über [Change Management Beratung für Salesforce](../../leistungen/change-management/), die ich mit meiner Kooperationspartnerin [Juliane Winterscheid](../../partner/juliane-winterscheid/) anbiete.
+Change Management ist ein Prozess, der mit dem Projektplan beginnt und nach dem Go-live endet. Mehr dazu lesen Sie unter [Change Management Beratung für Salesforce](../../leistungen/change-management/).

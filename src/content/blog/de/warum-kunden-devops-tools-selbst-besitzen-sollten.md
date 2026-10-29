@@ -91,4 +91,4 @@ Besitzt ein Partner bereits einige der Tools, planen Sie den Umzug früh und in 
 
 ## Wo fangen Sie an?
 
-Machen Sie eine einfache Liste: jedes Tool im Projekt, wer den Vertrag hält, wer die Admins sind und welche Mitarbeitenden von Partnern Zugriff haben. In vielen Programmen zeigt schon diese Liste, wo die Risiken liegen. Die eigenen Tools zu besitzen kostet wenig und schützt den wertvollsten Teil eines Salesforce-Programms, sein Wissen. Wenn Sie eine zweite Meinung zu Ihrem Setup möchten, [schreiben Sie mir](#contact).
+Machen Sie eine einfache Liste: jedes Tool im Projekt, wer den Vertrag hält, wer die Admins sind und welche Mitarbeitenden von Partnern Zugriff haben. In vielen Programmen zeigt schon diese Liste, wo die Risiken liegen. Die eigenen Tools zu besitzen kostet wenig und schützt den wertvollsten Teil eines Salesforce-Programms, sein Wissen.

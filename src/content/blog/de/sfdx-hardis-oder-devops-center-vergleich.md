@@ -125,4 +125,4 @@ Für Teams, die Coding-Agenten einsetzen, wird diese Frage wichtiger. Lifecycle 
 
 Klären Sie zuerst drei Fragen: Welche Git-Plattform ist bei Ihnen gesetzt, wie viele Teams und Partner arbeiten an der Org, und wer übernimmt die Release-Rolle? Mit diesen drei Antworten ist die Wahl in den meisten Fällen getroffen. Wenn Sie neu im Thema sind, erklärt [warum DevOps über Salesforce-Großprojekte entscheidet](../warum-devops-salesforce-enterprise-projekte/) die Grundlagen, und die Einrichtung eines verbindlichen Prozesses gehört zu meiner Arbeit in [DevOps und Release-Management](../../leistungen/devops-und-release-management/).
 
-Beide Werkzeuge sind gut, sie passen nur zu unterschiedlichen Teams. Wenn Sie besprechen möchten, welches zu Ihrem Programm passt, [schreiben Sie mir](#contact).
+Beide Werkzeuge sind gut, sie passen nur zu unterschiedlichen Teams.

@@ -117,4 +117,4 @@ How I set up standards and reviews in such programmes is part of my [work on par
 
 ## Where should you start?
 
-Read the [overview in the Architecture Center](https://architect.salesforce.com/docs/architect/well-architected/guide/overview.html) and the legacy mapping if your teams still work with Trusted, Easy and Adaptable. Then check your existing development standards against the five pillars. Cost and operations are usually what is missing. The new Well-Architected Framework is a useful shared standard as long as you make the decisions yourself. If you want to check your org or your partner standards against it, [send me a message](#contact).
+Read the [overview in the Architecture Center](https://architect.salesforce.com/docs/architect/well-architected/guide/overview.html) and the legacy mapping if your teams still work with Trusted, Easy and Adaptable. Then check your existing development standards against the five pillars. Cost and operations are usually what is missing. The new Well-Architected Framework is a useful shared standard as long as you make the decisions yourself.

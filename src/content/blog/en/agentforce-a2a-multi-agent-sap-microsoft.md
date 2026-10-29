@@ -112,4 +112,4 @@ One of three requests goes through A2A. For a first year, I consider that ratio 
 
 Which integration pattern fits which system is part of [Salesforce integration](../../services/salesforce-integration/), and the masterclass chapter [MCP and interfaces](../../masterclass/ai-salesforce/mcp-and-interfaces/) maps the protocols.
 
-One agent per audience owns the conversation, and A2A is for the few hops where another agent owns real logic. If you are sorting out which agent should talk to your dealers, [send me a message](#contact).
+One agent per audience owns the conversation, and A2A is for the few hops where another agent owns real logic.

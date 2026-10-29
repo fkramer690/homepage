@@ -114,4 +114,4 @@ public without sharing class SapOrderSyncSelector {
 
 Einen solchen Umstieg über mehrere Partner hinweg zu planen, gehört zu meiner Arbeit in [DevOps und Release-Management](../../leistungen/devops-und-release-management/).
 
-API 67.0 macht Apex standardmäßig sicherer, der Preis ist, dass jeder Versionssprung zu einer Änderung des Datenzugriffs wird, die einen eigenen Test verdient. Wenn Sie eine zweite Meinung möchten, wie Sie den Umstieg für Ihre Org planen, [schreiben Sie mir](#contact).
+API 67.0 macht Apex standardmäßig sicherer, der Preis ist, dass jeder Versionssprung zu einer Änderung des Datenzugriffs wird, die einen eigenen Test verdient.

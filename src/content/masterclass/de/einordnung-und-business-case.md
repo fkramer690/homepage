@@ -170,4 +170,4 @@ Bevor ein Angebot auf dem Tisch liegt, helfen drei Fragen an Vertrieb und Servic
 
 Lautet die Antwort Rahmenverträge, geht es in [Kapitel 2 um Rahmenverträge und Prognosen](../rahmenvertraege-und-prognosen/) weiter, mit den Daten, die dafür aus dem ERP kommen müssen. Alle Kapitel finden Sie auf der [Übersichtsseite](../).
 
-Manufacturing Cloud lohnt sich, wenn seine Kernfunktionen zu Ihrem Geschäft passen, und eine Rechnung über fünf Jahre zeigt das früher als der erste Workshop. Wenn Sie ein Angebot prüfen oder den Business Case rechnen möchten, [schreiben Sie mir](#contact).
+Manufacturing Cloud lohnt sich, wenn seine Kernfunktionen zu Ihrem Geschäft passen, und eine Rechnung über fünf Jahre zeigt das früher als der erste Workshop.

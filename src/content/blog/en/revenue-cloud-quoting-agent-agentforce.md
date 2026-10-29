@@ -99,4 +99,4 @@ Here the agent fits well. A rep types "wear part kit for line 3 plus two service
 
 Pick one quote type with standard products and synced prices, write 30 test requests from real cases and define the expected quote for each. Run them in a sandbox before any customer or dealer sees an agent quote, as described in [testing Agentforce agents before go-live](../testing-agentforce-agents-before-go-live/). Where agents fit in manufacturing beyond quoting is covered in the chapter [AI agents in manufacturing](../../masterclass/ai-salesforce/ai-agents-in-manufacturing/), and the whole path from quote to order in [quote, contract, order](../../masterclass/revenue-cloud/quote-contract-order/).
 
-The quoting agent pays off where quotes are frequent, products are standard and the data is clean. If you want to check whether that applies to your sales desk, [send me a message](#contact).
+The quoting agent pays off where quotes are frequent, products are standard and the data is clean.

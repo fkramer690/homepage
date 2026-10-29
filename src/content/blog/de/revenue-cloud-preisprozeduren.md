@@ -111,4 +111,4 @@ Ob SAP oder Salesforce Händler- und Vertragspreise überhaupt berechnen sollte,
 
 Schreiben Sie Ihre Preislogik als Schritte auf, bevor jemand den Builder öffnet: Welcher Preis ist der Ausgangspunkt, welche Rabatte folgen in welcher Reihenfolge, welche brauchen eine Freigabe? Diese Liste wird zugleich die Prozedur und die ersten Regressionsfälle. Wie die Preisfindung mit Katalog und Konfigurator zusammenspielt, erklärt das Kapitel [Katalog, Konfigurator, Preise](../../masterclass/revenue-cloud/produktkatalog-konfigurator-preise/) der Masterclass Revenue Cloud, die Freigaben behandelt [Rabattfreigaben in Revenue Cloud](../revenue-cloud-rabattfreigaben/).
 
-Pricing Procedures machen jeden Preis nachvollziehbar, solange jemand die Logik verantwortet und jede Änderung testet. Wenn Sie das für Ihre Preisfindung prüfen möchten, [schreiben Sie mir](#contact).
+Pricing Procedures machen jeden Preis nachvollziehbar, solange jemand die Logik verantwortet und jede Änderung testet.

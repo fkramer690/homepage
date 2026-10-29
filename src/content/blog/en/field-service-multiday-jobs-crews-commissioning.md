@@ -110,4 +110,4 @@ Two decisions belong in the design before a partner builds anything. First, whic
 
 Take your last ten commissioning jobs and note duration, team size, preceding work and whether partners were involved. If most stay under 30 days and the teams are stable, multiday appointments with crews will carry the planning. If many run longer or have more than five linked steps, keep the project plan outside and use Field Service for the work on site.
 
-Field Service handles multiday jobs and crews well within 30 days and without dependencies, and beyond that a project plan has to carry the load. If you want to check your commissioning process against these limits, [send me a message](#contact).
+Field Service handles multiday jobs and crews well within 30 days and without dependencies, and beyond that a project plan has to carry the load.

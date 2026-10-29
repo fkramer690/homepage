@@ -113,4 +113,4 @@ Das Kapitel [Händler und Partnerkanal](../../masterclass/manufacturing-cloud/ha
 3. **Pilot.** Eine Region, ein Quartal, eine Vorlage.
 4. **Auswertung.** Nach dem Quartal prüfen, welche Kennzahlen erfasst wurden und welche zu einer Entscheidung geführt haben.
 
-Partner Visit Management macht Händlerbesuche vergleichbar, sobald die Kennzahlen vereinbart sind und die App dort funktioniert, wo Ihr Außendienst arbeitet. Wenn Sie das für Ihr Händlernetz prüfen möchten, [schreiben Sie mir](#contact).
+Partner Visit Management macht Händlerbesuche vergleichbar, sobald die Kennzahlen vereinbart sind und die App dort funktioniert, wo Ihr Außendienst arbeitet.

@@ -157,4 +157,4 @@ Fünf Regeln würde ich in jeden Vertrag schreiben:
 
 Wann Sie Datenschritte im Release-Kalender einplanen und wie die drei Salesforce-Releases pro Jahr hineinspielen, behandelt [Kapitel 8](../release-planung-salesforce-releases/). Datenschritte und Sandbox-Stufen gehören zu meiner Arbeit in [DevOps und Release-Management](../../../leistungen/devops-und-release-management/).
 
-Konfigurationsdaten verdienen denselben Weg wie Code: Repository, Review, Pipeline, und Kundendaten bleiben maskiert. Wenn Sie den manuellen Datenschritt aus Ihrem Release-Plan streichen möchten, [schreiben Sie mir](#contact).
+Konfigurationsdaten verdienen denselben Weg wie Code: Repository, Review, Pipeline, und Kundendaten bleiben maskiert.

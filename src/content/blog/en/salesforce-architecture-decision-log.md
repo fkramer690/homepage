@@ -99,4 +99,4 @@ A log nobody reads is paperwork. Three occasions make it useful:
 
 Do not start with a template in the wiki, start with the five decisions that are questioned most often in your programme. Write an entry for each, even after the fact. From then on the rule is that every new architecture decision needs an entry before anything is built. After six months you have twenty to thirty entries and documentation a new partner can read in an afternoon.
 
-A decision log is the cheapest insurance against a change of partner. If you want to sort out your architecture decisions, [send me a message](#contact) or read more about [Salesforce architecture on the client side](../../services/salesforce-architecture/).
+A decision log is the cheapest insurance against a change of partner. Read more about [Salesforce architecture on the client side](../../services/salesforce-architecture/).

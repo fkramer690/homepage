@@ -146,4 +146,4 @@ The monitoring repository, the backup product, the notification channels and the
 
 How monitoring and backup fit into the whole process is covered in [why DevOps decides Salesforce enterprise projects](../../../blog/why-devops-matters-salesforce-enterprise/) and the [introduction to sfdx-hardis](../../../blog/sfdx-hardis-open-source-salesforce-devops/). The order in which to introduce all of this is the topic of the last chapter, [rollout and roadmap](../rollout-roadmap/). My advice for the start: monitoring and data backup first, because you can switch on both before the pipeline is finished. How I support this is described under [DevOps and release management](../../../services/devops-release-management/).
 
-Stable operations mean you can see every change, get every record back and trace every hotfix; if you would like to set this up or have it reviewed for your org, [send me a message](#contact).
+Stable operations mean you can see every change, get every record back and trace every hotfix.

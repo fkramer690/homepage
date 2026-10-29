@@ -110,4 +110,4 @@ The [Manufacturing Cloud pricing page](https://www.salesforce.com/manufacturing/
 
 The full after-sales picture is in the [warranty and after-sales chapter](../../masterclass/manufacturing-cloud/warranty-and-after-sales/) of the Manufacturing Cloud masterclass.
 
-A recall in Salesforce works when the affected machines can be found by serial number and batch, and stalls when they cannot. If you are preparing a recall or upgrade process, [send me a message](#contact).
+A recall in Salesforce works when the affected machines can be found by serial number and batch, and stalls when they cannot.

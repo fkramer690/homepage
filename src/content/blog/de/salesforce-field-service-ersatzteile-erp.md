@@ -93,4 +93,4 @@ Ein einfacher Test: Lassen Sie drei Techniker ihr Fahrzeug zählen und vergleich
 
 Stimmt es, legen Sie fest, welche der Objekte oben Sie wirklich brauchen, und starten Sie mit Bestand, benötigten Teilen und Verbrauch.
 
-Im nächsten Teil der Serie geht es um Wartungsverträge und zugesagte Reaktionszeiten. Wenn Sie vorher Ihre Ersatzteilprozesse mit einem unabhängigen Blick prüfen möchten, [schreiben Sie mir](#contact).
+Im nächsten Teil der Serie geht es um Wartungsverträge und zugesagte Reaktionszeiten.

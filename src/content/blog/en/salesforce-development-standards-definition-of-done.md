@@ -85,4 +85,4 @@ The first version never covers everything. In the weeks after, cases come up tha
 
 Do not write standards at your desk. For two to three weeks, have every pull request reviewed and note what you keep commenting on. That becomes the first version, and it fits your org instead of a textbook. After that come the definition of done, the automatic checks and a fixed slot where new edge cases are discussed with all streams.
 
-Good standards are short, belong to the client and are checked with every pull request. If you want to set up standards for your partners, [send me a message](#contact).
+Good standards are short, belong to the client and are checked with every pull request.

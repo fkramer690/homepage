@@ -112,4 +112,4 @@ A typical scenario, as an assumption: a machine builder with 50 CPQ users, 200 p
 
 Assess your CPQ org first: number of product and price rules, size of the quote calculator plugin, integrations on SBQQ objects, open subscriptions and the renewal date. Then put the triggers above next to your roadmap for the next two years. The masterclass chapter [from CPQ to Revenue Cloud](../../masterclass/revenue-cloud/from-cpq-to-revenue-cloud/) walks through the whole path from status to migration.
 
-Stay, move or take a third route: each is right for some companies, as long as you choose it deliberately. If you want an independent assessment of your CPQ org, [send me a message](#contact).
+Stay, move or take a third route: each is right for some companies, as long as you choose it deliberately.

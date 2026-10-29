@@ -113,4 +113,4 @@ A typical scenario, as an assumption: a machine builder with 45 technicians in G
 
 Where the headless setup fits next to agents and rollout waves is part of the [Field Service masterclass chapter on AI agents and rollout](../../masterclass/field-service/field-service-ai-agents-rollout/).
 
-An AI assistant gets you a Field Service draft quickly, and your people still decide what goes into it. If you want an independent review of such a plan before it is approved, [send me a message](#contact).
+An AI assistant gets you a Field Service draft quickly, and your people still decide what goes into it.

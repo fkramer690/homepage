@@ -104,4 +104,4 @@ A first matrix is ready sooner than most people expect:
 
 In my experience the first version is never complete, and it does not need to be. You start with 80 percent, and the reviews deliver the rest. More on how I steer programmes with several partners is on the [partner governance](../../services/partner-governance/) page.
 
-An object ownership matrix is quick to write down and saves a programme with several partners a lot of conflict between teams. If several partners work on one org in your programme and you want a second opinion, [send me a message](#contact).
+An object ownership matrix is quick to write down and saves a programme with several partners a lot of conflict between teams.

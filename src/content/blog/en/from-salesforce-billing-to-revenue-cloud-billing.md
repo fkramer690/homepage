@@ -118,4 +118,4 @@ Before the cutover, finance checks one more topic: from 2027 German e-invoicing 
 
 Finance, not the CRM team. The decisions here are accounting decisions: opening balances, period close, tax treatment, journal entries to the ERP and invoice numbering. I would set up the cutover with a written checklist that finance signs, and plan the licence cost of Revenue Cloud Billing early; how it is charged is explained in [Revenue Cloud Billing costs](../revenue-cloud-billing-costs/). The overall migration order sits in [CPQ to Revenue Cloud migration](../cpq-to-revenue-cloud-migration-phases/) and in the masterclass chapter [from CPQ to Revenue Cloud](../../masterclass/revenue-cloud/from-cpq-to-revenue-cloud/). The interfaces between Salesforce and SAP are part of my work in [Salesforce integration](../../services/salesforce-integration/).
 
-A billing cutover goes well when it sits at a period end and finance owns the checklist. If you are planning the move from Salesforce Billing, [send me a message](#contact).
+A billing cutover goes well when it sits at a period end and finance owns the checklist.

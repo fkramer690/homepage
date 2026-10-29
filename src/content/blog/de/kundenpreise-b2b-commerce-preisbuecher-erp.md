@@ -113,4 +113,4 @@ Schreiben Sie vor dem Store-Design eine Seite zur Preis-Master-Entscheidung:
 
 Diese Entscheidung gehört in dasselbe Dokument wie Ihre [Object Ownership Matrix](../object-ownership-matrix-salesforce/) und bestimmt die Schnittstellenliste zum ERP, wie in [B2B Commerce und SAP: Welche Daten fließen wohin?](../b2b-commerce-sap-datenfluesse/) beschrieben. Wie Preise, Angebote, Checkout und Nachbestellung zusammenspielen, behandelt das Kapitel [Preise, Warenkorb, Checkout](../../masterclass/b2b-commerce/preise-warenkorb-checkout/) der [Masterclass B2B Commerce](../../masterclass/b2b-commerce/). Den Entwurf der Schnittstelle selbst übernehme ich im Rahmen der [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).
 
-Preisbücher reichen für Stufenpreise, SAP-Konditionen brauchen einen Live-Aufruf oder eine bewusste Replikation. Wenn Sie Ihre Preis-Master-Entscheidung besprechen möchten, [schreiben Sie mir](#contact).
+Preisbücher reichen für Stufenpreise, SAP-Konditionen brauchen einen Live-Aufruf oder eine bewusste Replikation.

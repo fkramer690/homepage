@@ -117,4 +117,4 @@ What I would expect to surface in such a pilot is data, not AI: distributors who
 
 The interface design between Salesforce and the ERP is the larger part of this work; it is what I cover under [Salesforce integration](../../services/salesforce-integration/). The wider picture of agents in manufacturing is in the masterclass chapter [AI agents in manufacturing](../../masterclass/ai-salesforce/ai-agents-in-manufacturing/).
 
-A replenishment agent pays off when Salesforce owns the proposal and the ERP owns every figure with a right answer. If you want a second opinion on that split for your distributor network, [send me a message](#contact).
+A replenishment agent pays off when Salesforce owns the proposal and the ERP owns every figure with a right answer.

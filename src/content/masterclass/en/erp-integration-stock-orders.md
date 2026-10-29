@@ -147,4 +147,4 @@ Six interfaces, three of them live, all through an integration user with a certi
 
 Write two documents before anyone designs store pages. First, an [object ownership matrix](../../../blog/salesforce-object-ownership-matrix/) with one extra column: copied or live. Second, an interface list with master system, maximum data age, fallback rule and login method per interface. With these two pages you can compare any partner proposal. [Chapter 5](../agentforce-migration-rollout/) then covers agents that build on the same interfaces and the rollout to dealers. An independent review of such designs is part of my work in [Salesforce integration](../../../services/salesforce-integration/) and [Salesforce architecture](../../../services/salesforce-architecture/).
 
-A B2B store is only as reliable as its data flows from the ERP, so decide them before the design; if you want a second opinion on your interface list, [send me a message](#contact).
+A B2B store is only as reliable as its data flows from the ERP, so decide them before the design.

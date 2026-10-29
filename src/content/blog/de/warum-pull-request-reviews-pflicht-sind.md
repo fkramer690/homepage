@@ -106,4 +106,4 @@ Zentral starten
   Prüfen Sie die ersten Wochen zentral und verteilen Sie die Verantwortung danach.
 ```
 
-Pull-Request-Reviews kosten Minuten pro Änderung und sparen Tage pro Release. Wenn Sie darüber sprechen möchten, wie Sie Reviews in Ihrem Programm einführen, [schreiben Sie mir](#contact).
+Pull-Request-Reviews kosten Minuten pro Änderung und sparen Tage pro Release.

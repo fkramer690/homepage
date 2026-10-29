@@ -105,4 +105,4 @@ Trifft keiner davon zu, würde ich zuerst ASLM bewerten, weil ein Hersteller wen
 3. **Fordern Sie Angebote für Asset 360 und ASLM an** und lassen Sie sich die Nutzer nennen, die jeweils eine Lizenz brauchen. Die Rollenlogik von Field Service steht in [Salesforce Field Service Lizenzen: Wer braucht welche?](../field-service-lizenzen-rollen-dispatcher-techniker/).
 4. **Rechnen Sie beide Varianten über drei Jahre** inklusive Releasetests. Wie ich solche Vergleiche aufsetze, steht unter [Make-or-Buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/).
 
-Asset 360 lohnt sich, wenn die automatische Anspruchsprüfung oder Ihr PTC-Portfolio den Ausschlag geben. Wenn Sie die Entscheidung unabhängig prüfen lassen möchten, [schreiben Sie mir](#contact).
+Asset 360 lohnt sich, wenn die automatische Anspruchsprüfung oder Ihr PTC-Portfolio den Ausschlag geben.

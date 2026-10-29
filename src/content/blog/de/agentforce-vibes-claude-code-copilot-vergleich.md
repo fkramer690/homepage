@@ -120,4 +120,4 @@ Testen | Woche 4
 
 Diese Regeln über mehrere Partner hinweg festzulegen, gehört zu meiner Arbeit in der [Partnersteuerung](../../leistungen/partnersteuerung/) und im [DevOps- und Release-Management](../../leistungen/devops-und-release-management/).
 
-Wählen Sie den Coding-Agenten nach Vertrag, Residenz und Governance, und halten Sie die Qualität in Regeldatei und Pipeline, die Ihnen gehören. Wenn Sie eine zweite Meinung zu Ihrer Freigabeliste möchten, [schreiben Sie mir](#contact).
+Wählen Sie den Coding-Agenten nach Vertrag, Residenz und Governance, und halten Sie die Qualität in Regeldatei und Pipeline, die Ihnen gehören.

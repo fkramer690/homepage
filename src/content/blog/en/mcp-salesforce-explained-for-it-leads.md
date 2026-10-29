@@ -115,4 +115,4 @@ Hosted MCP Servers are built for a person working with an AI tool. Three cases n
 
 Which interface fits which consumer, under which identity, is part of my work on [Salesforce integration](../../services/salesforce-integration/).
 
-MCP makes Salesforce reachable for every AI tool, and your decisions on servers, users, data and clients determine whether that helps your service teams or exposes your data. If you want a second opinion on your first MCP requests, [send me a message](#contact).
+MCP makes Salesforce reachable for every AI tool, and your decisions on servers, users, data and clients determine whether that helps your service teams or exposes your data.

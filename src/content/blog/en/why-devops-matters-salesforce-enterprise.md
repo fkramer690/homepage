@@ -124,4 +124,4 @@ Operations
   Add monitoring, backups and generated documentation.
 ```
 
-DevOps is not an extra layer for later. In enterprise projects it is part of the architecture, and it should be in place before the second partner starts working on the org. If you want a second opinion on your release process, [send me a message](#contact).
+DevOps is not an extra layer for later. In enterprise projects it is part of the architecture, and it should be in place before the second partner starts working on the org.

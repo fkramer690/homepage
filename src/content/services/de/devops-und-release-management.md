@@ -109,4 +109,4 @@ Auch Plattformänderungen gehören zum Release-Management. Jedes Salesforce-Rele
 
 ## Wie passt das zu mehreren Partnern?
 
-Ein gemeinsamer Release-Prozess ist die Grundlage, um mehrere Umsetzungspartner zu steuern. Deployt jeder Partner auf seine eigene Art, hält kein Governance-Rahmen. Deshalb geht DevOps meist mit [Partnersteuerung](../partnersteuerung/) zusammen. Kosten Ihre Releases mehr Zeit als nötig, [schreiben Sie mir](#contact).
+Ein gemeinsamer Release-Prozess ist die Grundlage, um mehrere Umsetzungspartner zu steuern. Deployt jeder Partner auf seine eigene Art, hält kein Governance-Rahmen. Deshalb geht DevOps meist mit [Partnersteuerung](../partnersteuerung/) zusammen.

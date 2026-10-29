@@ -109,4 +109,4 @@ The DevOps masterclass covers how store configuration travels with metadata in [
 
 List every piece of custom logic in your store and assign it to an extension point, an old integration or a custom component. Mark each domain provider that does not call `super()` and ask for the reason. Then check whether registration and mapping can be rebuilt from the repository in a fresh sandbox. If that fails, you have found your biggest dependency on the current partner. The ERP side of the same decisions is part of the chapter [ERP integration](../../masterclass/b2b-commerce/erp-integration-stock-orders/), and the same extensions also serve a [headless storefront](../headless-b2b-commerce-own-frontend/).
 
-Extensions that call the standard and live in your pipeline are the custom code you can still maintain after the next release and the next partner; if you want a second look at yours, [send me a message](#contact).
+Extensions that call the standard and live in your pipeline are the custom code you can still maintain after the next release and the next partner.

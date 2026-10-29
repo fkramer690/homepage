@@ -107,4 +107,4 @@ No. The status removes the urgency, and I would use that time. Whether staying, 
 
 Find the renewal date of your CPQ and Billing contracts, list how many users and which customisations you have, and decide before the account team calls whether you want a short or a long term. The whole path from status to migration is laid out in the masterclass chapter [from CPQ to Revenue Cloud](../../masterclass/revenue-cloud/from-cpq-to-revenue-cloud/).
 
-CPQ will keep running, so the question is whether your next contract supports the plan you actually have. If you want an independent view before your renewal, [send me a message](#contact).
+CPQ will keep running, so the question is whether your next contract supports the plan you actually have.

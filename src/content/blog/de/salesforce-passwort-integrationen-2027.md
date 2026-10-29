@@ -114,4 +114,4 @@ SOAP-Versionen | Frühjahr 2027
   Verbleibende SOAP-Logins vor Summer '27 von API-Versionen unter 65.0 wegbringen.
 ```
 
-Der Termin steht fest und die Arbeit ist planbar, solange sie mit einer vollständigen Liste beginnt. Wenn Sie Unterstützung bei der Bestandsaufnahme oder eine zweite Meinung zu Ihrer Integrationsarchitektur möchten, [schreiben Sie mir](#contact).
+Der Termin steht fest und die Arbeit ist planbar, solange sie mit einer vollständigen Liste beginnt.

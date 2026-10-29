@@ -112,4 +112,4 @@ Three questions no table answers.
 
 Sorting out these decisions for your org and your partners is part of my work in [Salesforce architecture](../../../services/salesforce-architecture/). Where agents carry weight in manufacturing today is the subject of [chapter 10](../ai-agents-in-manufacturing/); all chapters are listed on the [masterclass overview](../).
 
-Settle data residency and contracts first, then the job, and keep the rules the same for every tool. If you want a second opinion on the tool choice for your initiatives, [send me a message](#contact).
+Settle data residency and contracts first, then the job, and keep the rules the same for every tool.

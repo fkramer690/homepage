@@ -101,4 +101,4 @@ Ein dritter Weg liegt außerhalb beider Listen: ein Vertrag mit Pauschale für A
 
 Schreiben Sie pro Rolle auf, welche KI-Funktionen im ersten Jahr wirklich genutzt werden, und schätzen Sie die Aktionen der Kundenagenten pro Monat. Dann vergleichen Sie drei Spalten: Paket, Einzelteile und Einzelteile nach Rolle. Die Credit-Seite erklärt das [Kapitel Kosten und Token der KI-Masterclass](../../masterclass/ki-salesforce/kosten-und-token/), die Lizenzmatrix nach Rollen [Salesforce Field Service Lizenzen: Wer braucht welche?](../field-service-lizenzen-rollen-dispatcher-techniker/) und den Business Case insgesamt [Kapitel 1 der Masterclass Field Service](../../masterclass/field-service/field-service-lohnt-sich-lizenzen/).
 
-Das Paket lohnt sich, wenn Sie den Großteil seines Inhalts ohnehin kaufen würden, und selten wegen seiner Credits; wenn Sie vor der Unterschrift eine zweite Rechnung möchten, [schreiben Sie mir](#contact).
+Das Paket lohnt sich, wenn Sie den Großteil seines Inhalts ohnehin kaufen würden, und selten wegen seiner Credits.

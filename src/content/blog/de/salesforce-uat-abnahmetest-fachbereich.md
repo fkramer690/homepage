@@ -98,4 +98,4 @@ UAT selbst lässt sich nicht automatisieren, weil es um das Urteil der Fachanwen
 
 Trennen Sie im nächsten Release Systemtest und Abnahmetest. Verlangen Sie vom Partner einen dokumentierten Systemtest pro Feature, bevor es in die UAT-Sandbox geht, und legen Sie Testnutzer pro Rolle an. Für das Release danach schreibt der Fachbereich die Testfälle schon beim Verfeinern der User Stories.
 
-UAT wird kurz und aussagekräftig, wenn nur noch der Fachbereich testet, was nur der Fachbereich beurteilen kann. Wenn Sie Ihren Release-Prozess mit mehreren Partnern prüfen möchten, [schreiben Sie mir](#contact) oder lesen Sie mehr über [Partnersteuerung](../../leistungen/partnersteuerung/).
+UAT wird kurz und aussagekräftig, wenn nur noch der Fachbereich testet, was nur der Fachbereich beurteilen kann. Mehr dazu lesen Sie unter [Partnersteuerung](../../leistungen/partnersteuerung/).

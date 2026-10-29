@@ -133,4 +133,4 @@ The following chapters take the layers one at a time:
 
 All chapters are listed on the [masterclass overview](../). Sorting the layers for your own programme is a typical starting point for my work on [Salesforce architecture](../../../services/salesforce-architecture/).
 
-Once you separate the four layers and date every product name, you can place any AI offer for Salesforce before anyone talks about tools. If you would like an independent second opinion on that, [send me a message](#contact).
+Once you separate the four layers and date every product name, you can place any AI offer for Salesforce before anyone talks about tools.

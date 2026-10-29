@@ -117,4 +117,4 @@ Build a test set
 
 Where these agents fit among the other manufacturing agents is covered in the masterclass chapter [AI agents in manufacturing](../../masterclass/ai-salesforce/ai-agents-in-manufacturing/), and drawing the line between ERP, configurator and agent is part of my [architecture work](../../services/salesforce-architecture/).
 
-AI quotes for dealers pay off once catalogue, prices and rules are clean enough that your sales desk would sign the quote unchanged. If you want to check whether your quoting data is ready, [send me a message](#contact).
+AI quotes for dealers pay off once catalogue, prices and rules are clean enough that your sales desk would sign the quote unchanged.

@@ -126,4 +126,4 @@ Regeln wie Code testen
 
 Diesen Teil eines Agentendesigns prüfe ich auf Kundenseite im Rahmen der [Salesforce-Architektur](../../leistungen/salesforce-architektur/), weil er entscheidet, ob sich der Agent später prüfen lässt. Ob Ihr Prozess überhaupt reif für einen Agenten ist, steht in [Agentforce für Hersteller: jetzt starten oder warten](../agentforce-ja-oder-nein-hersteller/).
 
-Regeln in die Logik, Sprache ins Modell, dann gibt Ihr Agent demselben Händler zweimal dieselbe Antwort. Wenn Sie eine zweite Meinung möchten, wo die Regeln in Ihrem Agentendesign sitzen, [schreiben Sie mir](#contact).
+Regeln in die Logik, Sprache ins Modell, dann gibt Ihr Agent demselben Händler zweimal dieselbe Antwort.

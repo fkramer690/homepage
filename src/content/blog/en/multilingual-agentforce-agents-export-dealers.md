@@ -72,7 +72,6 @@ For human reps, [Real-Time Translations](https://help.salesforce.com/s/articleVi
 
 A token is the unit a language model reads and writes, often part of a word. OpenAI's [help center](https://help.openai.com/en/articles/4936856-understanding-and-counting-tokens) gives the rule of thumb "1 token is approximately 4 characters" and notes that "other languages can have different relationships between characters, words, and tokens".
 
-
 In Flex Credits the effect comes in steps. The help article counts prompts "in chunks of 2,000 tokens, rounded up", input and output together: "a prompt with a total of 6,500 input and output tokens will be metered as 4 prompts." Actions are metered per call, whatever the language. A grounded answer of 1,750 tokens in English fits one unit. If the same answer needs a quarter more tokens in another language, an assumed figure, it needs about 2,190 tokens and two units, 8 credits instead of 4 on a Standard model. The method is in [Flex Credits and Agentforce cost per action](../flex-credits-agentforce-cost-per-action/), the basics in the masterclass chapter [costs and tokens](../../masterclass/ai-salesforce/costs-and-tokens/).
 
 Quality is the second reason to test. The guide warns that "most major LLMs are predominantly trained using English". I would write the instructions once and test them in every allowed language.
@@ -122,4 +121,4 @@ Language adds about $112 a month to $1,200 for actions. Indexing manuals in all 
 
 In a country rollout, language becomes a column in the table from [rolling out Manufacturing Cloud globally](../manufacturing-cloud-global-rollout/). Language set and retriever design are part of my [Salesforce architecture](../../services/salesforce-architecture/) work.
 
-A multilingual dealer agent costs little in translation; the money goes into the knowledge and tests you run per language. If you want to plan the language set for your dealer network, [send me a message](#contact).
+A multilingual dealer agent costs little in translation; the money goes into the knowledge and tests you run per language.

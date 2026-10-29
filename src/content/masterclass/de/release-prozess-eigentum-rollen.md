@@ -145,4 +145,4 @@ Der Release-Kalender läuft in diesem Szenario ohne Pause weiter, denn Pipeline,
 
 Diese Steuerung über alle Partner hinweg ist der Kern meiner Arbeit in der [Partnersteuerung](../../../leistungen/partnersteuerung/). Welche Orgs und Branches die Rollen aus diesem Kapitel bespielen, folgt in [Kapitel 3 zu Umgebungen und Branches](../umgebungen-und-branching/).
 
-Ein Release-Prozess bleibt stabil, wenn er Ihnen gehört, jede Rolle benannt ist und jeder Partner dieselben Regeln unterschrieben hat. Wenn Sie Eigentum, Rollen und Partnerverträge in Ihrem Programm prüfen lassen möchten, [schreiben Sie mir](#contact).
+Ein Release-Prozess bleibt stabil, wenn er Ihnen gehört, jede Rolle benannt ist und jeder Partner dieselben Regeln unterschrieben hat.

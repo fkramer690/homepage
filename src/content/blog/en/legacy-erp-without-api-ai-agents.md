@@ -108,4 +108,4 @@ The second limit is the number of write processes. Every bot is software that so
 
 And thirty orders a month do not justify an RPA bot, no matter how old the ERP is.
 
-With an old ERP, start with the read route behind a stable API contract and automate writing only where documents and screens are stable and a person reviews the uncertain cases. If you want to check which route fits your ERP, [send me a message](#contact).
+With an old ERP, start with the read route behind a stable API contract and automate writing only where documents and screens are stable and a person reviews the uncertain cases.

@@ -113,4 +113,4 @@ Steps 3 and 4 are where the data model pays off. Without the work type, the agen
 
 Draw the path for your three most common call types, from the first call to the closed work order, and write down who creates which record. That drawing answers the licence question and shows which work types you need. How this fits into the business case is covered in [chapter 1 of the Field Service masterclass](../../masterclass/field-service/field-service-business-case-licences/).
 
-Case, work order and appointment are three records with three owners, and the work type connects them; if you want to check your process against this chain, [send me a message](#contact).
+Case, work order and appointment are three records with three owners, and the work type connects them.

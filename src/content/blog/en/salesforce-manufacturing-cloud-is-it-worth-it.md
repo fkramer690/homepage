@@ -110,4 +110,4 @@ Before a quote is on the table, three questions to your own sales and service te
 
 After that, the question belongs in your [Salesforce architecture](../../services/salesforce-architecture/), with an entry in the decision log so the reasons stay traceable after a partner change. The full picture of features, add-ons and licences is in [chapter 1 of the Manufacturing Cloud masterclass](../../masterclass/manufacturing-cloud/scope-and-business-case/).
 
-Manufacturing Cloud is worth it when its core features match your business, not because you are a manufacturer. If you have a Manufacturing Cloud quote on the table and want an independent second opinion, [send me a message](#contact).
+Manufacturing Cloud is worth it when its core features match your business, not because you are a manufacturer.

@@ -113,4 +113,4 @@ The same trade-off applies to industry clouds. When Manufacturing Cloud pays off
 
 If a renewal or a new quote is coming up, take one hour for three questions: how many users with a full licence edited an opportunity or a case last quarter? Which external users work on internal licences today? Which interfaces run through a user with a full licence?
 
-The answers show how much room the quote leaves. A full licence for everyone is the most convenient solution and rarely the cheapest. If a renewal or quote is coming up and you want an independent review, [send me a message](#contact) or read more [about me](../../#about).
+The answers show how much room the quote leaves. A full licence for everyone is the most convenient solution and rarely the cheapest.

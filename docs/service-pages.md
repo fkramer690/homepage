@@ -46,4 +46,4 @@ Blog articles link back to the best matching service automatically (`getPostServ
 - First paragraph answers "what is this service" in at most 110 words.
 - At least one concrete, anonymised example or number from real work.
 - At least 2 relative links: related blog articles (`../../blog/<slug>/`), other services (`../<slug>/`), `../../#about`.
-- End with an invitation to get in touch (`#contact`).
+- No closing invitation to get in touch: the contact section ("Book a call" plus form) follows directly below the text (Fabian, 2026-10-29).

@@ -148,4 +148,4 @@ In the requirements workshop, a clickable draft comes together in two hours in a
 
 None of these steps is new. What is new is that without them, far more unreviewed code is produced in the same time. The cost of the AI tools themselves is covered in [chapter 7](../costs-and-tokens/), and all chapters are on the [overview page](../).
 
-On Salesforce, AI code is as good as the rules, gates and org boundaries you set as the client. If you would like your pipeline and partner rules checked for this, [send me a message](#contact).
+On Salesforce, AI code is as good as the rules, gates and org boundaries you set as the client.

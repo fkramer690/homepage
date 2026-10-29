@@ -105,4 +105,4 @@ The data model is small. The effort lies in agreeing the rota and in keeping shi
 
 List your current on-call rules: who is on call when, for which customers and which kinds of jobs. Then check whether your scheduling policies distinguish between planned work and breakdowns. If they do not, fix that first, because Extended shifts only work through that distinction. Where shifts fit into scheduling as a whole is covered in [chapter 2 of the Field Service masterclass](../../masterclass/field-service/field-service-scheduling-dispatch/), and long jobs over several days in [Field Service multiday jobs](../field-service-multiday-jobs-crews-commissioning/).
 
-On-call duty in Field Service works when shifts, policies and entitlements fit together and the works council has agreed the rules before the first weekend. If you want to work through your on-call model, [send me a message](#contact).
+On-call duty in Field Service works when shifts, policies and entitlements fit together and the works council has agreed the rules before the first weekend.

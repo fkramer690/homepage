@@ -113,4 +113,4 @@ Wie das in den Business Case für Field Service passt, steht in [Teil 1 der Seri
 
 Listen Sie jede Person der Serviceorganisation mit dem auf, was sie jede Woche im System tut, und ordnen Sie dann die Lizenz nach den Regeln oben zu. Das mache ich im Rahmen von [Make-or-Buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/), bevor die Verhandlung beginnt.
 
-Die Lizenz folgt der Rolle und die Rolle dem Prozess, klären Sie also zuerst, wer Cases bearbeitet und wer disponiert; wenn Sie eine zweite Meinung zu Ihrer Matrix möchten, [schreiben Sie mir](#contact).
+Die Lizenz folgt der Rolle und die Rolle dem Prozess, klären Sie also zuerst, wer Cases bearbeitet und wer disponiert.

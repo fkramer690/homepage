@@ -145,4 +145,4 @@ Mein Test pro Release ist bewusst klein: eine Neugenerierung der Prognose, eine 
 
 Dieses Kapitel schließt die Masterclass ab. Es setzt die Entscheidungen aus Business Case, Rahmenverträgen, Händlerkanal und Garantie voraus und klärt, was sie im Betrieb und in vielen Ländern brauchen. Davor kam [Kapitel 4 zu Garantie und After-Sales](../garantie-und-after-sales/), alle fünf Kapitel finden Sie auf der [Übersichtsseite](../).
 
-Die Manufacturing Cloud ist nur so gut wie die SAP-Daten, die sie bekommt, und ein Rollout nur so gut wie das Template, das im ersten großen Land hält. Wenn Sie Schnittstellen, Agenten oder Rollout-Reihenfolge unabhängig prüfen lassen möchten, [schreiben Sie mir](#contact).
+Die Manufacturing Cloud ist nur so gut wie die SAP-Daten, die sie bekommt, und ein Rollout nur so gut wie das Template, das im ersten großen Land hält.

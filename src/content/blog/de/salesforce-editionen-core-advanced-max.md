@@ -125,4 +125,4 @@ Braucht nur eine kleine Gruppe von Power-Usern KI-Funktionen, fragen Sie, ob sic
 5. **Monitoring aufsetzen.** Das [Digital Wallet](https://www.salesforce.com/agentforce/digital-wallet/) zeigt den Verbrauch nach Agent, Aktion und Kanal und warnt bei Schwellenwerten; es setzt Data 360 voraus.
 6. **Bei der Manufacturing Cloud** auf die Industries-Preise warten oder sich das Recht zum Wechsel sichern.
 
-Wählen Sie die Edition nach den Funktionen, die Ihre Teams nutzen, und führen Sie Flex Credits als eigene, gemessene Budgetzeile. Wenn Ihre Verlängerung ansteht und Sie eine unabhängige Prüfung des Angebots möchten, [schreiben Sie mir](#contact).
+Wählen Sie die Edition nach den Funktionen, die Ihre Teams nutzen, und führen Sie Flex Credits als eigene, gemessene Budgetzeile.

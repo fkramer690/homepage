@@ -104,5 +104,3 @@ Jede Schnittstelle hat einen technischen Benutzer, und diese Benutzer haben oft 
 Summer '27 | SOAP login() in den API-Versionen 31.0 bis 64.0 entfällt
 Summer '28 | SOAP-, REST- und Bulk-API in den Versionen 31.0 bis 40.0 fallen aus
 ```
-
-Planen Sie eine neue Integration oder möchten Sie bestehende Schnittstellen aufräumen, [schreiben Sie mir](#contact).

@@ -118,4 +118,4 @@ Only when these answers are reliable would I add a messaging channel such as Wha
 
 The chapter [Agents, migration, rollout](../../masterclass/b2b-commerce/agentforce-migration-rollout/) of the [B2B Commerce masterclass](../../masterclass/b2b-commerce/) puts the Buyer Agent next to the store migration and the rollout to dealers. If the interfaces to your ERP are the open point, see [Salesforce integration](../../services/salesforce-integration/).
 
-The Buyer Agent pays off once your store already gives dealers correct prices and order data, and WhatsApp is the last step, not the first. If you are planning it and want an independent view, [send me a message](#contact).
+The Buyer Agent pays off once your store already gives dealers correct prices and order data, and WhatsApp is the last step, not the first.

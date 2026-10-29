@@ -85,4 +85,4 @@ Salesforce bietet den kostenlosen User Access and Permissions Assistant, der vor
 
 Fangen Sie mit einer Bestandsaufnahme an: Wie viele Profile gibt es, wie viele Nutzer hängen an jedem, und welche Integrationsnutzer haben Systemrechte wie „Alle Daten ändern“? Danach schreiben Sie die Rollenmatrix auf, bevor Sie in Salesforce etwas umbauen. Neue Funktionen bekommen ab sofort nur noch Permission Sets. Die Migration der alten Profile kann dann Rolle für Rolle folgen.
 
-Ein gutes Berechtigungskonzept ist eine Tabelle, die der Kunde besitzt, und eine Regel, dass jedes neue Recht durch ein Review geht. Wenn Sie Ihr Konzept prüfen lassen möchten, bevor der nächste Partner dazukommt, [schreiben Sie mir](#contact) oder lesen Sie mehr über [Salesforce-Architektur auf Kundenseite](../../leistungen/salesforce-architektur/).
+Ein gutes Berechtigungskonzept ist eine Tabelle, die der Kunde besitzt, und eine Regel, dass jedes neue Recht durch ein Review geht. Mehr dazu lesen Sie unter [Salesforce-Architektur auf Kundenseite](../../leistungen/salesforce-architektur/).

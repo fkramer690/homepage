@@ -160,4 +160,4 @@ Schreiben Sie eine Seite zur Preis-Master-Entscheidung, bevor jemand den Store g
 
 Diese Seite gehört neben Ihre [Object Ownership Matrix](../../../blog/object-ownership-matrix-salesforce/) und bestimmt die Schnittstellenliste für [Kapitel 4](../erp-integration-bestand-auftraege/). Den Entwurf der Preis- und Kreditaufrufe übernehme ich im Rahmen der [Salesforce-Schnittstellen](../../../leistungen/salesforce-schnittstellen/), die Lizenzfrage zu Revenue Cloud unter [Make-or-Buy und Lizenzen](../../../leistungen/make-or-buy-lizenzen/). Alle Kapitel finden Sie auf der [Übersichtsseite](../).
 
-Ein B2B-Shop verkauft nur dann, wenn der Händler seinen Preis sieht, auf Rechnung bestellt und in einer Minute nachbestellt. Wenn Sie diese Entscheidungen für Ihren Shop klären möchten, [schreiben Sie mir](#contact).
+Ein B2B-Shop verkauft nur dann, wenn der Händler seinen Preis sieht, auf Rechnung bestellt und in einer Minute nachbestellt.

@@ -82,4 +82,4 @@ At least six months, monthly. The first weeks after go-live are distorted: atten
 
 For your most important new process, choose one number on the level "use of the process", such as the share of quotes created in Salesforce. Set the baseline before go-live and build a report that shows the number per group and country. After go-live, this report goes to the sponsor every month.
 
-Salesforce is introduced when the work happens in it, not when everyone can log in. If you want to know whether your rollout has landed, [send me a message](#contact) or read more about [change management for Salesforce programmes](../../services/change-management-salesforce/).
+Salesforce is introduced when the work happens in it, not when everyone can log in. Read more about [change management for Salesforce programmes](../../services/change-management-salesforce/).

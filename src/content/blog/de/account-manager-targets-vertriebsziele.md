@@ -111,4 +111,4 @@ Auch der Sales-Planning-Agent arbeitet nicht mit Zielen. Welche Subagenten Sales
 3. **Datensätze.** Erwartete Periodendatensätze gegen das Limit im Angebot.
 4. **Lizenz.** Funktion und Dashboard für Ihre Edition schriftlich bestätigt.
 
-Account Manager Targets ersetzen die Excel-Zielplanung, sobald Ziel, Prognose und Ist dieselbe Struktur haben. Wenn Sie das für Ihren Vertrieb prüfen möchten, [schreiben Sie mir](#contact).
+Account Manager Targets ersetzen die Excel-Zielplanung, sobald Ziel, Prognose und Ist dieselbe Struktur haben.
