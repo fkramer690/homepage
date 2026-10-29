@@ -6,6 +6,7 @@ import ContactForm from './ContactForm.astro';
 import Icon from './Icon.astro';
 import AuthorBox from './AuthorBox.astro';
 import ReadingGrid from './ReadingGrid.astro';
+import Photo from './Photo.astro';
 import Blueprint from './Blueprint.astro';
 import { en } from '../i18n/en';
 import { de } from '../i18n/de';
@@ -64,9 +65,14 @@ const schema = {
   <article class="section post questions">
     <div class="container">
       <a class="post-back mono" href={`${home}#approach`}>← {c.back}</a>
-      <p class="eyebrow mono">{c.eyebrow}</p>
-      <h1>{c.title}</h1>
-      <p class="service-lead">{c.lead}</p>
+      <div class="service-head has-photo">
+        <div>
+          <p class="eyebrow mono">{c.eyebrow}</p>
+          <h1>{c.title}</h1>
+          <p class="service-lead">{c.lead}</p>
+        </div>
+        <figure class="service-photo"><Photo photo="03-besprechung-v02" lang={lang} eager widths={[300, 450, 600]} sizes="300px" /></figure>
+      </div>
 
       <nav class="q-topics" aria-label={c.topics}>
         {c.groups.map((group, gi) => (

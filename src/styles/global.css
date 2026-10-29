@@ -260,6 +260,14 @@ a:hover { color: var(--anthracite); }
   margin-bottom: 1em;
 }
 .hero h1 { max-width: 900px; }
+/* Start page hero with a photo on the right (hidden on narrow screens) */
+.hero-split { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: clamp(32px, 5vw, 64px); align-items: center; }
+.hero-photo { margin: 0; border: 1px solid rgba(255, 255, 255, 0.14); border-radius: var(--radius); padding: 10px; background: rgba(255, 255, 255, 0.03); }
+.hero-photo img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 6px; }
+@media (max-width: 900px) {
+  .hero-split { grid-template-columns: 1fr; }
+  .hero-photo { display: none; }
+}
 .hero-focus {
   display: flex;
   flex-wrap: wrap;
@@ -658,6 +666,7 @@ a:hover { color: var(--anthracite); }
   height: 14px;
   background: var(--cyan);
 }
+.step-photo { display: block; width: calc(100% - 4px); height: auto; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 8px; margin-bottom: 18px; }
 .step-icon { display: block; width: 44px; height: 44px; margin-bottom: 10px; }
 .step-no { font-size: 0.75rem; color: var(--cyan-dark); display: block; margin-bottom: 0.6em; }
 .steps p { color: var(--text-2); font-size: 0.97rem; }
@@ -1581,3 +1590,19 @@ p.post-series-note { margin: 0.6em 0 0; font-size: 0.95rem; }
 .mc-partner .partner-box { margin-top: 0; }
 .post-takeaways + .partner-box { margin-top: 0; margin-bottom: 2em; }
 .jw-logo { display: block; box-sizing: content-box; height: 36px; width: auto; max-width: 160px; object-fit: contain; margin-bottom: 12px; padding: 6px 10px; background: var(--white); border-radius: 4px; }
+
+/* Service page head with a photo; the photo column lines up with the side column below */
+.service-head.has-photo { display: grid; grid-template-columns: minmax(0, 1fr) var(--side); gap: 56px; align-items: center; }
+.service-photo { margin: 0; }
+.service-photo img { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; border-radius: var(--radius); }
+@media (max-width: 960px) {
+  .service-head.has-photo { grid-template-columns: 1fr; }
+  .service-photo img { aspect-ratio: 16 / 9; }
+}
+.mc-overview-photo { margin: 0 0 1.4em; }
+.mc-overview-photo img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; border-radius: var(--radius); }
+.mc-hero .hero-photo img { aspect-ratio: 3 / 2; }
+@media (max-width: 900px) { .mc-hero .hero-photo { display: block; max-width: 520px; } }
+.fa-practice-grid { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 56px; align-items: center; }
+.fa-practice-grid .fa-practice-facts { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 900px) { .fa-practice-grid { grid-template-columns: 1fr; } .fa-practice-grid .hero-photo { display: none; } }

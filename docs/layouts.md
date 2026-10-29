@@ -92,3 +92,21 @@ old card grids "sehr erschlagend"). Built in `src/components/MasterclassHub.astr
   topic text and the links in two columns; only the chosen topic is open.
 - Every section heading gets one or two sentences below it.
 - Fits: long, ordered content (courses, step plans) and many links grouped by topic.
+
+## Photos of Fabian
+
+Chosen 2026-10-29 (all seven placements of the mockups). 30 scene photos, 18 motifs,
+most in two versions (other shirt or other counterpart). All versions stay in
+`src/assets/photos/`; alt texts DE/EN and crop focus in `src/data/photos.ts`;
+always rendered through `src/components/Photo.astro` (AVIF/WebP, lazy unless the
+photo is above the fold). On one page, vary the versions so shirts and
+counterparts do not repeat. The studio portrait and the stage photo stay for
+author box, contact, schema and the speaking page.
+
+- Start page hero: portrait in the hall in a framed box right of the text, hidden below 900px.
+- Start page "Arbeitsweise": one 3:2 photo above each of the four steps.
+- Service pages and questions page: square photo right of the page head, as wide
+  as the side column (`.service-head.has-photo`, mapping `servicePhotos`); 16:9 full width below 960px.
+- Masterclass overview: 3:2 photo at the top of the side column.
+- Masterclass hubs with a photo in `coursePhotos` show it in the hero instead of the layer drawing.
+- Freelance architect page: framed photo next to "Aus meiner Praxis".
