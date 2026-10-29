@@ -1960,12 +1960,12 @@ const drawings: Record<string, Drawing> = {
     ${t(18, 148, l('3 walkthroughs without extra licence', '3 Walkthroughs ohne Zusatzlizenz'), { size: 7 })}`,
 
   'change-hypercare': (l) => `
-    ${t(18, 18, l('DAILY, 15 TO 30 MIN', 'TÄGLICH, 15 BIS 30 MIN'), { fill: D, size: 7 })}
-    ${[[l('defect', 'Fehler'), l('fix', 'beheben')], [l('how-to', 'Bedienfrage'), 'Key User'], [l('data', 'Daten'), 'Admin'], [l('change', 'Änderung'), 'Backlog']].map(([a, b], i) => box(18 + i * 72, 28, 68, 26, i === 3 ? C : G) + t(52 + i * 72, 45, a, { fill: i === 3 ? C : D, size: 7, anchor: 'middle' }) + t(52 + i * 72, 70, b, { size: 6.5, anchor: 'middle' })).join('')}
+    ${t(18, 18, l('FIRST DAILY, THEN WEEKLY', 'ERST TÄGLICH, DANN WÖCHENTLICH'), { fill: D, size: 7 })}
+    ${[[l('defect', 'Fehler'), l('fix', 'beheben')], [l('how-to', 'Bedienfrage'), 'Key User'], [l('data', 'Daten'), 'Admin'], [l('change', 'Änderung'), 'Quick Win']].map(([a, b], i) => box(18 + i * 72, 28, 68, 26, i === 3 ? C : G) + t(52 + i * 72, 45, a, { fill: i === 3 ? C : D, size: 7, anchor: 'middle' }) + t(52 + i * 72, 70, b, { size: 6.5, anchor: 'middle' })).join('')}
     <path d="M18 84H302" stroke="${L}"/>
     ${t(18, 102, l('ends on criteria, not on a date', 'Ende nach Kriterien, nicht nach Datum'), { size: 7 })}
     ${t(18, 118, l('a week without open priority 1 defect', 'eine Woche ohne offenen Prio-1-Fehler'), { size: 7 })}
-    ${tag(18, 130, 150, l('only fixes to production', 'nur Fixes in Produktion'))}`,
+    ${tag(18, 130, 180, l('up to 3 months', 'bis zu 3 Monate'))}`,
 };
 
 export const hasDrawing = (key: string) => key in drawings;

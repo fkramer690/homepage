@@ -57,7 +57,7 @@ Users prefer to learn from colleagues who know the same customers, machines and 
 The approach has prerequisites. Key users need the time freed up, finished training material and practice cases prepared by the project. Without that preparation every key user improvises differently, and teams learn different routes.
 
 ```praxis
-In Field Service rollouts it helps when dispatchers of the next wave first shadow colleagues in the region that is already live. Real cases from a colleague's day teach them more than any exercise in a training room.
+I have run training in all of these forms, depending on what the client wanted: train the trainer through key users, a separate training sandbox and training per role. In Field Service rollouts it also helps when dispatchers of the next wave first shadow colleagues in the region that is already live. Real cases from a colleague's day teach them more than any exercise in a training room.
 ```
 
 ## Where does training take place?

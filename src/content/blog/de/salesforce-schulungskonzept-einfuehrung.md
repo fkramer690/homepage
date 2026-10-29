@@ -57,7 +57,7 @@ Anwender lernen lieber von Kollegen, die dieselben Kunden, Maschinen und Ausnahm
 Der Ansatz hat Voraussetzungen. Key User brauchen die freigestellte Zeit, fertige Schulungsunterlagen und Übungsfälle, die das Projekt vorbereitet. Ohne diese Vorbereitung improvisiert jeder Key User anders, und die Teams lernen unterschiedliche Wege.
 
 ```praxis
-In Field-Service-Einführungen hilft es, wenn Disponenten der nächsten Welle vorher in der laufenden Region zuschauen. Echte Fälle aus dem Alltag einer Kollegin bringen ihnen mehr als jede Übung im Schulungsraum.
+Ich habe Schulungen in allen diesen Formen umgesetzt, je nach Wunsch des Kunden: Train the Trainer über Key User, eine eigene Schulungs-Sandbox und Schulungen je Rolle. In Field-Service-Einführungen hilft es außerdem, wenn Disponenten der nächsten Welle vorher in der laufenden Region zuschauen. Echte Fälle aus dem Alltag einer Kollegin bringen ihnen mehr als jede Übung im Schulungsraum.
 ```
 
 ## Wo wird geschult?

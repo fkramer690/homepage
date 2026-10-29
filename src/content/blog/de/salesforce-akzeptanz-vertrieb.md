@@ -13,7 +13,7 @@ takeaways:
   - "Der Vertrieb umgeht Salesforce, wenn die Pflege vor allem dem Management nützt und für den Vertriebler selbst nur Arbeit bedeutet."
   - "Die häufigste Ursache ist fehlende Bereitschaft (Desire im ADKAR-Modell), nicht fehlendes Wissen. Eine weitere Schulung ändert daran wenig."
   - "Akzeptanz entsteht, wenn der Vertriebler vor dem Kundentermin in Salesforce mehr findet als in seiner eigenen Liste, etwa Aufträge, Abnahmemengen und offene Servicefälle aus dem ERP."
-  - "Doppelpflege ist der schnellste Weg zur Schattenliste. Jede Information, die schon in Outlook oder im ERP steht, sollte niemand ein zweites Mal eintippen."
+  - "Es darf keinen Weg zurück geben. Solange der Vertrieb weiter nach der alten Weise arbeiten kann, tritt keine Veränderung ein, und Doppelpflege führt direkt zur Schattenliste."
   - "Das Pipeline-Meeting entscheidet: Bespricht der Vertriebsleiter nur, was in Salesforce steht, wird Salesforce gepflegt."
 faq:
   - q: "Warum nutzt der Vertrieb das CRM nicht?"
@@ -64,6 +64,8 @@ Doppelpflege ist der schnellste Weg zur Schattenliste. Jede Information, die sch
 - **E-Mail und Kalender.** Die [Outlook- und Gmail-Integration](https://trailhead.salesforce.com/content/learn/modules/email-and-calendar-integrations-quick-look/learn-about-email-and-calendar-integration-tools) zeigt passende Salesforce-Datensätze direkt neben der E-Mail und ordnet Mails und Termine zu. Einstein Activity Capture synchronisiert Kontakte und Termine automatisch. Wer Besuche ohnehin im Kalender plant, muss sie dann nicht noch einmal erfassen.
 - **Daten aus dem ERP.** Kundennummern, Adressen, Aufträge und Umsätze kommen per Schnittstelle. Der Vertrieb pflegt sie nicht von Hand nach.
 - **Alte Listen.** Die Excel-Prognose und die eigene Kundendatei bekommen ein Abschaltdatum, das der Vertriebsleiter ankündigt. Solange beide Wege offen sind, gewinnt der gewohnte.
+
+Der letzte Punkt ist für mich der wichtigste. Wenn neue Prozesse oder Systeme eingeführt werden, muss immer sichergestellt sein, dass es keinen Weg zurück gibt. Gibt es weiterhin die Option, nach der alten Weise zu arbeiten, tritt auch keine Veränderung ein. Das heißt konkret: Die alte Vorlage verschwindet aus dem Laufwerk, der alte Bericht wird nicht mehr verschickt, und Angebote, die nicht aus Salesforce kommen, gibt die Führungskraft nicht mehr frei.
 
 ## Wie viele Pflichtfelder verträgt eine Opportunity?
 

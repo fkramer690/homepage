@@ -13,7 +13,7 @@ takeaways:
   - "Sales works around Salesforce when data entry mainly helps management and only means work for the sales rep."
   - "The most common cause is missing desire in the ADKAR model, not missing knowledge. Another training session changes little."
   - "Adoption grows when a sales rep finds more in Salesforce before a customer meeting than in their own list, for example orders, call-off quantities and open service cases from the ERP."
-  - "Double entry is the fastest route to a shadow spreadsheet. Nobody should type in again what is already in Outlook or the ERP."
+  - "There must be no way back. As long as sales can keep working the old way, nothing changes, and double entry leads straight to a shadow spreadsheet."
   - "The pipeline meeting decides: when the head of sales only discusses what is in Salesforce, Salesforce gets maintained."
 faq:
   - q: "Why does the sales team not use the CRM?"
@@ -64,6 +64,8 @@ Double entry is the fastest route to a shadow spreadsheet. Nobody should have to
 - **Email and calendar.** The [Outlook and Gmail integration](https://trailhead.salesforce.com/content/learn/modules/email-and-calendar-integrations-quick-look/learn-about-email-and-calendar-integration-tools) shows matching Salesforce records next to the email and relates emails and events to them. Einstein Activity Capture syncs contacts and events automatically. A rep who plans visits in the calendar anyway does not have to record them a second time.
 - **Data from the ERP.** Customer numbers, addresses, orders and revenue come through the interface. Sales does not maintain them by hand.
 - **Old lists.** The Excel forecast and the private customer file get a switch-off date that the head of sales announces. As long as both routes are open, the familiar one wins.
+
+For me the last point matters most. When new processes or systems are introduced, you always have to make sure there is no way back. If the option to work the old way remains, no change will happen. In practice: the old template disappears from the shared drive, the old report is no longer sent out, and quotes that do not come from Salesforce no longer get approved by the manager.
 
 ## How many required fields can an opportunity take?
 
