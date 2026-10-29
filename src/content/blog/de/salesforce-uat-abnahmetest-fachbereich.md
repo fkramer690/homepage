@@ -72,7 +72,7 @@ Drei Punkte entscheiden darüber, ob das funktioniert:
 
 1. **Testnutzer pro Rolle.** Wer als Administrator testet, findet keine Rechteprobleme. Jede Rolle aus dem [Berechtigungskonzept](../salesforce-berechtigungskonzept-permission-sets/) braucht einen Testnutzer mit genau ihren Rechten.
 2. **Echte Datenmengen.** Ein Report, der in einer leeren Sandbox in einer Sekunde lädt, braucht mit drei Millionen Assets vielleicht dreißig. Deshalb läuft UAT in der Full Copy.
-3. **Freigestellte Tester.** Fachanwender, die neben dem Tagesgeschäft testen, testen den einfachsten Weg und hören auf, sobald er funktioniert. Wer UAT plant, plant deshalb auch, wer im Fachbereich in dieser Zeit die Arbeit übernimmt.
+3. **Freigestellte Tester.** Fachanwender, die neben dem Tagesgeschäft testen, testen den einfachsten Weg und hören auf, sobald er funktioniert. Wer UAT plant, plant deshalb auch, wer im Fachbereich in dieser Zeit die Arbeit übernimmt. Gute Tester sind die Key User, die nach dem Go-live die erste Anlaufstelle in ihrem Team sind. Was sie sonst leisten und wie viel Zeit sie brauchen, steht in [Key User in Salesforce-Einführungen: was sie leisten](../salesforce-key-user-netzwerk/).
 
 ## Wie viel Zeit muss der Fachbereich einplanen?
 

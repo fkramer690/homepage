@@ -96,6 +96,8 @@ Release | release week · pilot technicians
 
 The effort is about 32 hours of technician time per major version, plus the release manager's time. One failed login wave across 100 technicians on a Monday morning costs more.
 
+The other technicians should know before the update what changes for them and whom to ask. That is the same task as with every release for the back office, described in [Communicating Salesforce releases to the business](../salesforce-release-communication-business/).
+
 ## Where should you start?
 
 1. **Sign up for the beta programme** and subscribe to the release posts of the Field Service Mobile group.

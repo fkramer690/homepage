@@ -88,7 +88,7 @@ contra: Less suitable when
 
 In the second case a commercial platform can be the more honest answer.
 
-The point about licence budgets is often underestimated. The saved licence costs are best invested in an internal role that maintains the setup, onboards new teams and owns the release calendar. Without that role, even the best tool loses its effect after a few months.
+The point about licence budgets is often underestimated. The saved licence costs are best invested in an internal role that maintains the setup, onboards new teams and owns the release calendar. Without that role, even the best tool loses its effect after a few months. The same goes for development standards at partners, see [Reinforcement: making standards stick with partners](../partner-standards-reinforcement/).
 
 ## How do you get started?
 

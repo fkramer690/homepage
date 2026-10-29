@@ -85,7 +85,7 @@ contra: Was Sie dafür aufgeben
 
 Ein Land beantragt eine Abweichung schriftlich: was es braucht, warum, und was es kostet, wenn es das Template übernimmt. Entschieden wird von einem globalen Verantwortlichen für den Prozess zusammen mit dem Architekten auf Kundenseite. Die Entscheidung kommt ins [Entscheidungslog](../salesforce-architektur-entscheidungslog/), damit das nächste Land dieselbe Frage nicht noch einmal stellt.
 
-Zwei Regeln helfen dabei. Erstens trägt das Land die Folgekosten seiner Abweichung, auch die Tests bei jedem künftigen Release. Das macht viele Wünsche kleiner. Zweitens wird jede Abweichung nach einem Jahr geprüft: Wird sie noch gebraucht, oder kann das Land zum Template zurück?
+Zwei Regeln helfen dabei. Erstens trägt das Land die Folgekosten seiner Abweichung, auch die Tests bei jedem künftigen Release. Das macht viele Wünsche kleiner. Zweitens wird jede Abweichung nach einem Jahr geprüft: Wird sie noch gebraucht, oder kann das Land zum Template zurück? Viele Wünsche entstehen aus Gewohnheit. Versteht der Sponsor im Land, warum das Template so gebaut ist, ordnet er sie ein, bevor sie beim Architekten ankommen, mehr dazu in [Change Management im weltweiten Salesforce-Rollout](../change-management-weltweiter-rollout/).
 
 ## Wie messen Sie, ob das Template hält?
 
