@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-29T04:47:45.417Z",
+  "generatedAt": "2026-10-29T11:29:46.463Z",
   "range": {
     "start": "2026-09-29",
     "end": "2026-10-29"
   },
   "browsers": [
     {
-      "count": 230,
+      "count": 300,
       "dimensions": {
         "userAgentBrowser": "Chrome"
       },
@@ -17,7 +17,7 @@
   ],
   "countries": [
     {
-      "count": 230,
+      "count": 300,
       "dimensions": {
         "countryName": "DE"
       },
@@ -62,11 +62,20 @@
       "sum": {
         "visits": 0
       }
+    },
+    {
+      "count": 70,
+      "dimensions": {
+        "date": "2026-10-29"
+      },
+      "sum": {
+        "visits": 0
+      }
     }
   ],
   "devices": [
     {
-      "count": 230,
+      "count": 300,
       "dimensions": {
         "deviceType": "desktop"
       },
@@ -77,7 +86,7 @@
   ],
   "pages": [
     {
-      "count": 90,
+      "count": 110,
       "dimensions": {
         "requestPath": "/"
       },
@@ -104,9 +113,36 @@
       }
     },
     {
+      "count": 20,
+      "dimensions": {
+        "requestPath": "/leistungen/salesforce-architektur/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 20,
+      "dimensions": {
+        "requestPath": "/blog/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
       "count": 10,
       "dimensions": {
         "requestPath": "/fragen/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "requestPath": "/masterclass/revenue-cloud/"
       },
       "sum": {
         "visits": 0
@@ -151,15 +187,6 @@
     {
       "count": 10,
       "dimensions": {
-        "requestPath": "/leistungen/salesforce-architektur/"
-      },
-      "sum": {
-        "visits": 0
-      }
-    },
-    {
-      "count": 10,
-      "dimensions": {
         "requestPath": "/homepage/blog/salesforce-service-documents-document-builder/"
       },
       "sum": {
@@ -183,11 +210,20 @@
       "sum": {
         "visits": 0
       }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "requestPath": "/masterclass/"
+      },
+      "sum": {
+        "visits": 0
+      }
     }
   ],
   "referers": [
     {
-      "count": 130,
+      "count": 200,
       "dimensions": {
         "refererHost": "www.fk-sd.de"
       },
