@@ -877,7 +877,7 @@ const drawings: Record<string, Drawing> = {
   'salesforce-center-of-excellence': (l) => `
     ${t(18, 20, 'CENTER OF EXCELLENCE', { fill: D, size: 7 })}
     ${[1, 2, 3, 4, 5].map((i) => dot(30, 30 + i * 18, i === 2 ? C : G) + t(42, 33 + i * 18, 'Stream ' + i, { size: 7 }) + `<path d="M84 ${30 + i * 18}L136 ${84}" stroke="${L}"/>`).join('')}
-    ${box(136, 56, 84, 56, C)}${t(178, 76, l('WEEKLY', 'WÖCHENTLICH'), { fill: C, size: 7.5, anchor: 'middle' })}${t(178, 90, l('changes with', 'Änderungen mit'), { size: 7, anchor: 'middle' })}${t(178, 102, l('lead time', 'Vorlauf'), { size: 7, anchor: 'middle' })}
+    ${box(136, 56, 84, 56, C)}${t(178, 76, l('EVERY 2 WEEKS', 'ALLE 2 WOCHEN'), { fill: C, size: 7.5, anchor: 'middle' })}${t(178, 90, l('60 min, topics', '60 Min., Themen'), { size: 7, anchor: 'middle' })}${t(178, 102, l('in advance', 'vorab eingereicht'), { size: 7, anchor: 'middle' })}
     ${box(236, 56, 70, 56)}${t(271, 76, l('MONTHLY', 'MONATLICH'), { fill: D, size: 7.5, anchor: 'middle' })}${t(271, 90, 'Roadmap', { size: 7, anchor: 'middle' })}${t(271, 102, l('priorities', 'Prioritäten'), { size: 7, anchor: 'middle' })}
     ${tag(136, 126, 170, l('client chairs, not a partner', 'Kunde leitet, kein Partner'))}`,
 
