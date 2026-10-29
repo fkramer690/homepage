@@ -173,4 +173,4 @@ Write the entitlement concept on one page before anyone loads data:
 
 The ERP fields that feed memberships and search then go into the interface list from [chapter 4](../erp-integration-stock-orders/). I review such concepts before a partner builds as part of [Salesforce architecture](../../../services/salesforce-architecture/); which data comes from which system is part of [Salesforce integration](../../../services/salesforce-integration/). All chapters are on the [overview page](../).
 
-Few buyer groups and clean product data decide more about a B2B store than any search setting. If you would like your entitlement concept reviewed, [send me a message](#contact).
+Few buyer groups and clean product data decide more about a B2B store than any search setting.

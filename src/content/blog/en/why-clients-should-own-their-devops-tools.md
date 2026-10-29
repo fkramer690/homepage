@@ -91,4 +91,4 @@ If a partner already owns some of the tools, plan the move early and do it in a 
 
 ## Where should you start?
 
-Make a simple list: every tool in the project, who holds the contract, who the admins are, and which partner employees have access. In many programmes that list alone shows where the risks are. Owning your tools costs little and protects the most valuable part of a Salesforce programme, its knowledge. If you want a second opinion on your setup, [send me a message](#contact).
+Make a simple list: every tool in the project, who holds the contract, who the admins are, and which partner employees have access. In many programmes that list alone shows where the risks are. Owning your tools costs little and protects the most valuable part of a Salesforce programme, its knowledge.

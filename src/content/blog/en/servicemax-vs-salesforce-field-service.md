@@ -113,4 +113,4 @@ My rule of thumb: Salesforce Field Service is the default for manufacturers who 
 3. **Ask PTC four questions in writing**: data locations, availability, the language model behind ServiceMax AI and how it works with Salesforce features.
 4. **Have the comparison calculated independently.** How I compare such options is described under [make-or-buy and licence forecasts](../../services/make-or-buy-licences/).
 
-ServiceMax is a serious option for asset-heavy service, but always a second layer on Salesforce. If you want an independent view on your selection, [send me a message](#contact).
+ServiceMax is a serious option for asset-heavy service, but always a second layer on Salesforce.

@@ -114,4 +114,4 @@ Messen und ausweiten
   Erst wenn die Zahlen es tragen.
 ```
 
-Die Service Cloud entwickelt sich schnell, und die Wahl der richtigen Bausteine gehört zu [Architektur und Partnersteuerung](../../leistungen/salesforce-architektur/). Wenn Sie besprechen möchten, wie diese Neuerungen zu Ihrer Serviceorganisation passen, [schreiben Sie mir](#contact).
+Die Service Cloud entwickelt sich schnell, und die Wahl der richtigen Bausteine gehört zu [Architektur und Partnersteuerung](../../leistungen/salesforce-architektur/).

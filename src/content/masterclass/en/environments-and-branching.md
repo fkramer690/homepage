@@ -156,4 +156,4 @@ A machine builder runs Service Cloud, Field Service and a dealer portal on one o
 
 The rules for this are in the contract with every partner: backpromote before every story, no changes in Setup of a stage org, no feature branch older than two weeks. How the pipeline runs between these stages technically is described in [chapter 5](../building-the-pipeline/). I design such models as part of my work in [DevOps and release management](../../../services/devops-release-management/).
 
-Environments and branches work when each org belongs to exactly one branch and changes flow in both directions by fixed rules. If you would like your sandbox strategy or hotfix path reviewed, [send me a message](#contact).
+Environments and branches work when each org belongs to exactly one branch and changes flow in both directions by fixed rules.

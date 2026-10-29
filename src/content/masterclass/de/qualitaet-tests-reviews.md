@@ -151,4 +151,4 @@ Im Validierungs-Deployment scheitert danach ein Apex-Test des zweiten Partners: 
 
 Welche Konfigurationsdaten solche Flows in Sandboxes brauchen, damit Tests aussagekräftig sind, behandelt [Kapitel 7](../daten-und-konfiguration/). Wie ich Programme dabei unterstütze, steht unter [DevOps und Release-Management](../../../leistungen/devops-und-release-management/) und [Partnersteuerung](../../../leistungen/partnersteuerung/).
 
-Qualität entsteht in Salesforce-Programmen mit mehreren Partnern durch Gates, die sperren, und durch Schwellen, die der Kunde festlegt. Wenn Sie Ihre Tests, Reviews und Quality Gates prüfen lassen möchten, [schreiben Sie mir](#contact).
+Qualität entsteht in Salesforce-Programmen mit mehreren Partnern durch Gates, die sperren, und durch Schwellen, die der Kunde festlegt.

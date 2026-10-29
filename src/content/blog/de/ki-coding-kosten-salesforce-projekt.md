@@ -112,4 +112,4 @@ Bei Aufwand bevorzuge ich die erste Variante: Für 650 $ bis 1.500 $ im Monat be
 5. **Pilotieren Sie zwei Wochen mit zwei Entwicklern** und lesen Sie die echten Ausgaben ab.
 6. **Budgetieren Sie das Review.** Ein menschlicher Reviewer für generiertes Apex kostet mehr als die Tokens, siehe [KI-generierten Salesforce-Code prüfen](../ki-generierten-salesforce-code-pruefen/).
 
-KI-Coding kostet im Szenario etwa ein Prozent eines Salesforce-Partnerteams, also klären Sie Accounts und Limits, bevor Sie über den Preis verhandeln. Wenn Sie eine zweite Meinung zu Ihrem Setup oder zum Angebot Ihres Partners möchten, [schreiben Sie mir](#contact).
+KI-Coding kostet im Szenario etwa ein Prozent eines Salesforce-Partnerteams, also klären Sie Accounts und Limits, bevor Sie über den Preis verhandeln.

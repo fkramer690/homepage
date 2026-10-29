@@ -98,4 +98,4 @@ The decision I would expect to take longest is who approves hosted servers in pr
 
 This is ordinary dependency and access management applied to AI tools, and it belongs in [DevOps and release management](../../services/devops-release-management/) on the client side. The other interfaces are covered in [chapter 3 of the masterclass](../../masterclass/ai-salesforce/mcp-and-interfaces/).
 
-Use the deadline to find out which AI tools reach your orgs and with whose logins, and the server swap itself becomes a small task. If you want help running the inventory with your partners, [send me a message](#contact).
+Use the deadline to find out which AI tools reach your orgs and with whose logins, and the server swap itself becomes a small task.

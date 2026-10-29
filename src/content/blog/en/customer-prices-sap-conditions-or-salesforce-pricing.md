@@ -110,4 +110,4 @@ I would split by price type. For machines, route C: list prices from SAP every n
 
 List your price types: list price, dealer discount, customer price, contract price, promotion, freight surcharge. For each, note where it is maintained today, who changes it, how often, and whether it also applies to orders that do not come from Salesforce. The last question usually decides: prices that apply to EDI, phone or shop orders without Salesforce stay in SAP. The wider split of quote to cash between the systems is covered in [Revenue Cloud and SAP: who owns what?](../revenue-cloud-sap-quote-to-cash-ownership/), the context in the chapter [catalog, configurator, pricing](../../masterclass/revenue-cloud/product-catalog-configurator-pricing/) of the Revenue Cloud masterclass. Designing the interface itself is part of my work on [Salesforce integration](../../services/salesforce-integration/).
 
-Decide per price type which system calculates it, and let the other one ask. If you want to talk through your price master decision, [send me a message](#contact).
+Decide per price type which system calculates it, and let the other one ask.

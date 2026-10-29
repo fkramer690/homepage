@@ -123,4 +123,4 @@ The owner should be product management at the manufacturer, not the implementati
 
 The whole chapter is in the masterclass part [catalog, configurator, pricing](../../masterclass/revenue-cloud/product-catalog-configurator-pricing/), and drawing the line between SAP and Salesforce is part of my [Salesforce architecture](../../services/salesforce-architecture/) work.
 
-A good Revenue Cloud catalog describes every machine a customer can order with a few hundred records, as long as variants stay attributes until the ERP says otherwise. If you are planning your catalog, [send me a message](#contact).
+A good Revenue Cloud catalog describes every machine a customer can order with a few hundred records, as long as variants stay attributes until the ERP says otherwise.

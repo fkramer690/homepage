@@ -108,4 +108,4 @@ A typical scenario, as an assumption: a compressor manufacturer services 1,200 u
 
 Pick one series and write down the interval from the contract in one sentence. Check where the counter lives today and how often it is updated. Then model the fields, one criteria-based rule and the reset flow in a sandbox, and test with ten real assets before you move the whole series. The [masterclass chapter on assets, maintenance and parts](../../masterclass/field-service/field-service-assets-maintenance-parts/) shows where this fits next to contracts, spare parts and service partners.
 
-Maintenance by operating hours needs one counter on the asset, one rule with OR logic and a reset at completion. If you want a second opinion on your maintenance model, [send me a message](#contact).
+Maintenance by operating hours needs one counter on the asset, one rule with OR logic and a reset at completion.

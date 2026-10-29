@@ -119,4 +119,4 @@ Two of three go ahead, both narrower than asked. In my judgement that is the nor
 
 This is part of my work on [Salesforce integration](../../services/salesforce-integration/): an MCP server is an interface and needs an owner.
 
-Hosted MCP enforces Salesforce permissions reliably, so the real decision is which people, which fields and which AI contract you trust with your data. If you want a second opinion before the first department connects, [send me a message](#contact).
+Hosted MCP enforces Salesforce permissions reliably, so the real decision is which people, which fields and which AI contract you trust with your data.

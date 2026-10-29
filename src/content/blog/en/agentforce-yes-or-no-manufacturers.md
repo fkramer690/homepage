@@ -114,4 +114,4 @@ Agree a go or no-go date
   Before the pilot starts, for example after eight weeks against the target number.
 ```
 
-Start with Agentforce where volume, data and ERP access are in place, and use the time elsewhere to get them there. If you want a second opinion on which of your processes is ready, [send me a message](#contact).
+Start with Agentforce where volume, data and ERP access are in place, and use the time elsewhere to get them there.

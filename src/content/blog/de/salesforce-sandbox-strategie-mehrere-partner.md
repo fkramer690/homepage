@@ -109,4 +109,4 @@ contra: Was Sie dafür aufgeben
 
 Fangen Sie mit der Liste an. Schreiben Sie jede vorhandene Sandbox mit Zweck und Verantwortlichem auf und löschen Sie die, für die sich niemand meldet. Danach legen Sie die Kette fest und sperren direkte Änderungen in Integration und UAT. Der Refresh-Kalender kommt zuletzt, wenn die Post-Refresh-Schritte als Skript vorliegen.
 
-Eine Sandbox-Strategie ist eine Seite Papier, die viele Release-Wochenenden erspart. Wenn Sie in Ihrem Programm Ordnung in die Umgebungen bringen möchten, [schreiben Sie mir](#contact).
+Eine Sandbox-Strategie ist eine Seite Papier, die viele Release-Wochenenden erspart.

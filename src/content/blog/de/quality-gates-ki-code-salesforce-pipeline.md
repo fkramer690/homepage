@@ -107,4 +107,4 @@ Die Prüfung der API-Version stoppt den Pull Request. Der Partner setzt die Vers
 
 Diese Prüfungen für Programme mit mehreren Partnern aufzusetzen ist der Kern meiner Arbeit in [DevOps und Release Management](../../leistungen/devops-und-release-management/).
 
-Quality Gates machen KI-generierten Code genau so sicher wie die Regeln, die sie durchsetzen, und diese Regeln gehören in Ihre Pipeline, nicht in den Prompt eines Partners. Wenn Sie eine zweite Meinung zu Ihren Prüfungen möchten, [schreiben Sie mir](#contact).
+Quality Gates machen KI-generierten Code genau so sicher wie die Regeln, die sie durchsetzen, und diese Regeln gehören in Ihre Pipeline, nicht in den Prompt eines Partners.

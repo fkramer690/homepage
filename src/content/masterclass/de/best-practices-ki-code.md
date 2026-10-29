@@ -148,4 +148,4 @@ Im Anforderungsworkshop entsteht in zwei Stunden ein klickbarer Entwurf in einer
 
 Kein Schritt davon ist neu. Neu ist, dass ohne diese Schritte in derselben Zeit deutlich mehr ungeprüfter Code entsteht. Die Kosten der KI-Werkzeuge selbst behandelt [Kapitel 7](../kosten-und-token/), alle Kapitel finden Sie auf der [Übersichtsseite](../).
 
-KI-Code wird auf Salesforce so gut wie die Regeln, Gates und Org-Grenzen, die Sie als Auftraggeber festlegen. Wenn Sie Ihre Pipeline und Ihre Partnerregeln dafür prüfen lassen möchten, [schreiben Sie mir](#contact).
+KI-Code wird auf Salesforce so gut wie die Regeln, Gates und Org-Grenzen, die Sie als Auftraggeber festlegen.

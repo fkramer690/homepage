@@ -119,4 +119,4 @@ Der Agent geht wie jede andere Änderung in Produktion: mit einem Testsatz aus e
 5. **Salesforce drei Fragen stellen**: welche Lizenz, welche Betrugssignale, welche Einrichtungsdokumentation.
 6. **Einen Testsatz bauen** aus echten Ansprüchen, auch abgelehnten und bekannten Betrugsfällen.
 
-Der Garantie-Prüfagent kann Entscheidungen beschleunigen, aber nur auf sauberen Anlagendaten, funktionierenden Regeln und einer klaren Freigabegrenze. Wenn Sie eine zweite Meinung möchten, ob Ihr Garantieprozess dafür bereit ist, [schreiben Sie mir](#contact).
+Der Garantie-Prüfagent kann Entscheidungen beschleunigen, aber nur auf sauberen Anlagendaten, funktionierenden Regeln und einer klaren Freigabegrenze.

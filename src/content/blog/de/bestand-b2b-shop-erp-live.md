@@ -119,4 +119,4 @@ Die [Winter-'27-Highlights auf Trailhead](https://trailhead.salesforce.com/conte
 
 Legen Sie pro Ansicht fest, welche Bestandsquelle gilt: Produktliste, Produktseite, Warenkorb, Checkout. Definieren Sie dann die drei Zustände für Händler, den Update-Zyklus der Kopie und die Rückfallregel, wenn SAP nicht antwortet. Wie der Bestand in die gesamte Schnittstellenliste passt, steht in [B2B Commerce und SAP: Welche Daten fließen wohin](../b2b-commerce-sap-datenfluesse/), und das [Kapitel zur ERP-Anbindung der Masterclass](../../masterclass/b2b-commerce/erp-integration-bestand-auftraege/) ordnet es ein. Solche Schnittstellen unabhängig zu prüfen, gehört zu meiner Arbeit bei [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).
 
-Zeigen Sie die Kopie zum Stöbern und den SAP-Termin für das Versprechen; wenn Sie Ihr Bestandskonzept vor dem Bau prüfen lassen möchten, [schreiben Sie mir](#contact).
+Zeigen Sie die Kopie zum Stöbern und den SAP-Termin für das Versprechen.

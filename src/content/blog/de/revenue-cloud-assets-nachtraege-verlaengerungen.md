@@ -98,4 +98,4 @@ Es gibt zwei Auswege. Entweder Sie verkaufen die Überwachung pro Maschine, eine
 
 Listen Sie die Produkte auf, die nach dem Auftrag weiterleben: Abonnements, Serviceverträge, Softwarelizenzen, Überwachung. Entscheiden Sie für jedes, ob es gezählt oder an eine Seriennummer gebunden wird, wer Nachträge und Verlängerungen auslösen darf und welchen Datensatz Field Service nutzt. Halten Sie die Entscheidung in der Ownership-Matrix fest, bevor der erste Sprint in einer der beiden Clouds beginnt. Das Kapitel [Angebot, Vertrag, Auftrag](../../masterclass/revenue-cloud/angebot-vertrag-auftrag/) zeigt, wo Assets zwischen Angebot und SAP stehen.
 
-Assets in Revenue Cloud halten verlässlich fest, was verkauft wurde, solange jede Änderung über Angebot und Auftrag läuft und die Verknüpfung zur Maschine vorab entschieden ist. Wenn Sie Ihr Modell für die installierte Basis besprechen möchten, [schreiben Sie mir](#contact).
+Assets in Revenue Cloud halten verlässlich fest, was verkauft wurde, solange jede Änderung über Angebot und Auftrag läuft und die Verknüpfung zur Maschine vorab entschieden ist.

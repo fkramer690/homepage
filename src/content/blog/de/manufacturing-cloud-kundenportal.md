@@ -120,4 +120,4 @@ Bevor das Portal gebaut wird, klären Sie vier Punkte:
 3. **Welche Felder gehen nach außen?** Für das Sales Agreement und die Stammdaten, ohne Marge und Kosten.
 4. **Welche Daten fließen zurück ins ERP?** Pro Feld eine Richtung und eine Fehlerbehandlung.
 
-Ein Kundenportal entlastet den Innendienst nur, wenn die Zahlen darin stimmen und die Daten sauber zurück ins ERP fließen. Wenn Sie ein Portal auf der Manufacturing Cloud planen, [schreiben Sie mir](#contact).
+Ein Kundenportal entlastet den Innendienst nur, wenn die Zahlen darin stimmen und die Daten sauber zurück ins ERP fließen.

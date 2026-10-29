@@ -99,4 +99,4 @@ Not every question belongs on this path. If order status, stock and credit limit
 
 I would also keep bulk work away from external agents. A Claude session that checks 5,000 installed base records for missing warranty dates produces thousands of interactions; a report or a batch job does the same for free. MCP fits dialogue, not data cleansing. The basics of MCP and the decisions an IT lead has to make are in [MCP for IT leads](../mcp-salesforce-explained-for-it-leads/), and what AIforce brings on top is in [AIforce: Salesforce in Claude and Slack](../aiforce-salesforce-in-claude-and-slack/).
 
-External agents on Salesforce data will cost money per call, so measure the calls and negotiate the price while metering is still off. If you want a second opinion on your estimate, [send me a message](#contact).
+External agents on Salesforce data will cost money per call, so measure the calls and negotiate the price while metering is still off.

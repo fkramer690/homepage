@@ -107,4 +107,4 @@ Whether the stream got faster stays open until cycle time and rework are compare
 
 Planning team setups, reviewer capacity and rotation rules is part of my [programme management for nearshore teams](../../services/program-management-nearshore/).
 
-Nearshore Salesforce teams with AI agents deliver more only when review capacity, onboarding and access rules grow with the output. If you want to check your nearshore setup before the agents arrive, [send me a message](#contact).
+Nearshore Salesforce teams with AI agents deliver more only when review capacity, onboarding and access rules grow with the output.

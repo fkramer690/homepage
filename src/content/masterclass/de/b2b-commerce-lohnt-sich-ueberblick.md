@@ -136,4 +136,4 @@ Einen Store aus der Vorlage anzulegen ist der kleinste Teil des Projekts. Die En
 
 Diese vier Punkte gehören in ein kurzes Dokument, das Sie besitzen, nicht der Partner. Wie ich Architekturentscheidungen dieser Art auf Kundenseite begleite, steht unter [Salesforce-Architektur](../../../leistungen/salesforce-architektur/). Eine unabhängige Prüfung von Angebot und Lizenzplan gehört zu [Make-or-Buy und Lizenzen](../../../leistungen/make-or-buy-lizenzen/). Weiter geht es mit [Kapitel 2 zu Katalog, Suche und Sichtbarkeit](../katalog-suche-sichtbarkeit/), alle Kapitel finden Sie auf der [Übersichtsseite](../).
 
-Ein B2B-Shop auf Salesforce lohnt sich, wenn Händler bekannte Teile in Menge nachbestellen und Sie Preise, Bestand und ERP-Aufrufe vor dem Bau geklärt haben. Wenn Sie prüfen möchten, ob das auf Ihre Händler zutrifft, [schreiben Sie mir](#contact).
+Ein B2B-Shop auf Salesforce lohnt sich, wenn Händler bekannte Teile in Menge nachbestellen und Sie Preise, Bestand und ERP-Aufrufe vor dem Bau geklärt haben.

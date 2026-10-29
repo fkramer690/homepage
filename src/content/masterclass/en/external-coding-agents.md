@@ -133,4 +133,4 @@ This is how I would approach it:
 
 In my judgement, agreeing with the works council and data protection takes longer than choosing the tool in a setup like this, so plan that first. Steering several partners with different tools is part of my work in [partner governance](../../../services/partner-governance/), and the gates belong in [DevOps and release management](../../../services/devops-release-management/). How Salesforce is shifting its partner model towards agents is the topic of [chapter 5](../aiforce-and-system-integrators/).
 
-Choose the coding agent by contract, data residency and cost, and put the quality into a rules file, review and pipeline that you own. If you want a second opinion on your approved list or the rules for your partner, [send me a message](#contact).
+Choose the coding agent by contract, data residency and cost, and put the quality into a rules file, review and pipeline that you own.

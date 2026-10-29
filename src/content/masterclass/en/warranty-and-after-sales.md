@@ -135,4 +135,4 @@ The asset hierarchy, maintenance plans and service partners are the topic of the
 
 The data flows between SAP and Manufacturing Cloud, including credit notes, are the topic of [chapter 5](../erp-ai-and-rollout/).
 
-Warranty, recalls and agents in Manufacturing Cloud are only as good as the installed base underneath, so start there. If you are planning after-sales on Manufacturing Cloud, [send me a message](#contact).
+Warranty, recalls and agents in Manufacturing Cloud are only as good as the installed base underneath, so start there.

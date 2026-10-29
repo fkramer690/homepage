@@ -91,4 +91,4 @@ Wichtig ist auch, dass die Rolle sichtbar anerkannt wird. Wer zusätzliche Arbei
 
 Fragen Sie in jedem betroffenen Team: Wen fragen Sie heute, wenn Sie im System nicht weiterkommen? Die Namen, die mehrfach fallen, sind Ihre Kandidaten. Danach vereinbaren Sie mit den Führungskräften die Zeit und nehmen die Key User in die ersten Workshops mit, bevor gebaut wird.
 
-Key User sind der günstigste Weg, Wissen aus dem Projekt in den Alltag zu bringen und Rückmeldungen aus dem Alltag ins Projekt. Wenn Sie eine Einführung planen, [schreiben Sie mir](#contact) oder lesen Sie mehr über [Change Management für Salesforce-Programme](../../leistungen/change-management/).
+Key User sind der günstigste Weg, Wissen aus dem Projekt in den Alltag zu bringen und Rückmeldungen aus dem Alltag ins Projekt. Mehr dazu lesen Sie unter [Change Management für Salesforce-Programme](../../leistungen/change-management/).

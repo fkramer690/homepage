@@ -176,4 +176,4 @@ Auswertung | Woche 7 bis 8
 
 Der Garantiestrom kommt erst danach, weil Gutschriften in SAP gebucht werden und dort ein Ende-zu-Ende-Test vor jedem Release bleibt. Diese Reihenfolge ist Teil dessen, was ich in der [Projektsteuerung für Salesforce-Programme](../../../leistungen/projektsteuerung-nearshore/) aufsetze; die Freigabe der Fachbereiche und die Kommunikation ins Team gehören ins [Change Management](../../../leistungen/change-management/). Alle Kapitel finden Sie in der [Übersicht der Masterclass](../).
 
-KI beschleunigt ein Salesforce-Programm nur so weit, wie Review, Abnahme und Mitbestimmung mithalten, und das organisieren Sie als Auftraggeber. Wenn Sie Ihr Team und Ihre Partner darauf vorbereiten möchten, [schreiben Sie mir](#contact).
+KI beschleunigt ein Salesforce-Programm nur so weit, wie Review, Abnahme und Mitbestimmung mithalten, und das organisieren Sie als Auftraggeber.

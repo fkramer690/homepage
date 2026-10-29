@@ -135,4 +135,4 @@ Asset-Hierarchie, Wartungspläne und Servicepartner sind Thema des Kapitels [Ass
 
 Die Datenflüsse zwischen SAP und Manufacturing Cloud, Gutschriften eingeschlossen, sind Thema von [Kapitel 5](../erp-ki-und-rollout/).
 
-Garantie, Rückrufe und Agenten in Manufacturing Cloud sind nur so gut wie die installierte Basis darunter, also beginnen Sie dort. Wenn Sie After-Sales auf Manufacturing Cloud planen, [schreiben Sie mir](#contact).
+Garantie, Rückrufe und Agenten in Manufacturing Cloud sind nur so gut wie die installierte Basis darunter, also beginnen Sie dort.

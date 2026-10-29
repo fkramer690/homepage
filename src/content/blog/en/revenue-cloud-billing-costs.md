@@ -104,4 +104,4 @@ Licence decisions like this belong in a licence forecast with real numbers, not 
 
 Finance has the invoice volumes per revenue type, sales knows the planned growth of subscriptions, and procurement negotiates. I would have finance own the number, because finance will also see the subledger and the invoices. The masterclass chapter [billing and usage-based pricing](../../masterclass/revenue-cloud/billing-and-usage-based-pricing/) shows where Billing fits into the rest of quote to cash.
 
-Revenue Cloud Billing costs one billing event per $50 of invoice amount, so decide what you invoice in Salesforce before you negotiate the price. If you want a second view on your forecast or order form, [send me a message](#contact).
+Revenue Cloud Billing costs one billing event per $50 of invoice amount, so decide what you invoice in Salesforce before you negotiate the price.

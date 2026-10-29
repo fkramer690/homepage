@@ -102,4 +102,4 @@ Write down three things before you talk to Salesforce about licences: where your
 
 The wider picture of prices, quotes and checkout is in the chapter [prices, cart and checkout](../../masterclass/b2b-commerce/prices-cart-checkout/) of the [B2B Commerce masterclass](../../masterclass/b2b-commerce/). How buyers turn a cart into a quote is covered in [Request for Quote in B2B Commerce](../request-for-quote-b2b-commerce-cart-to-quote/), and the dealer side of AI-built quotes in [AI Partner Sales Assistant](../ai-partner-sales-assistant-dealer-quotes/).
 
-Advanced Pricing pays off when the store should price like sales already does in Revenue Cloud. If you want to check that for your pricing, [send me a message](#contact).
+Advanced Pricing pays off when the store should price like sales already does in Revenue Cloud.

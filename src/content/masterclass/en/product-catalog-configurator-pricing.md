@@ -160,4 +160,4 @@ Three classifications with about a dozen attributes each, 30 base machines, conf
 
 Setting these boundaries between SAP and Salesforce is part of my work on [Salesforce architecture](../../../services/salesforce-architecture/), and the price interface itself falls under [Salesforce integration](../../../services/salesforce-integration/). [Chapter 3](../quote-contract-order/) continues with approvals, contracts and the order hand-over to SAP, and all chapters are on the [overview page](../).
 
-Catalog, configurator and pricing work in Revenue Cloud when each has one master and one owner at the manufacturer. If you want to check that for your products and prices, [send me a message](#contact).
+Catalog, configurator and pricing work in Revenue Cloud when each has one master and one owner at the manufacturer.

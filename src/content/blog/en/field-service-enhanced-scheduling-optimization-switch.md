@@ -103,4 +103,4 @@ The configuration for this, the territory setting, scheduling policies and work 
 
 Start with three lists: appointments without a territory, work rules that read fields which are often empty, and recipes in use. They show how much work the switch is. Then pick the territory with the cleanest data as the pilot. How the engine fits into dispatching as a whole is covered in the masterclass chapter on [scheduling and dispatch](../../masterclass/field-service/field-service-scheduling-dispatch/).
 
-For an org on the older engine, the switch is due as soon as the data is clean, because the new console and the higher limits only come with it. If you want an independent view of your scheduling setup before the switch, [send me a message](#contact).
+For an org on the older engine, the switch is due as soon as the data is clean, because the new console and the higher limits only come with it.

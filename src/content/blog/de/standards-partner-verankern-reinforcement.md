@@ -88,4 +88,4 @@ Drei Zeichen zeigen es. Reviewer merken seltener dieselben Punkte an, weil die P
 
 Sehen Sie sich die Review-Kommentare der letzten zwei Monate an und zählen Sie, welche Anmerkungen sich wiederholen. Jede Anmerkung, die sich automatisch prüfen lässt, kommt in die Pipeline, mit einer klaren Fehlermeldung, die den Standard nennt. Für den Rest richten Sie einen festen Call mit den technischen Leads ein. Und planen Sie von Anfang an, wer auf Kundenseite die Standards übernimmt, wenn das Projekt endet.
 
-Standards sind verankert, wenn sie auch ohne die Person halten, die sie eingeführt hat. Wenn Sie mehrere Partner auf eine Linie bringen möchten, [schreiben Sie mir](#contact) oder lesen Sie mehr über [Partnersteuerung](../../leistungen/partnersteuerung/).
+Standards sind verankert, wenn sie auch ohne die Person halten, die sie eingeführt hat. Dafür gehören wiederkehrende Review-Anmerkungen in die Pipeline und alles andere in einen festen Call mit den technischen Leads. Mehr dazu lesen Sie unter [Partnersteuerung](../../leistungen/partnersteuerung/).

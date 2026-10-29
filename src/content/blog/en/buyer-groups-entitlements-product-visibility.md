@@ -105,4 +105,4 @@ Write the entitlement concept on one page before anyone loads data:
 
 The ERP fields that drive membership then go into the interface list. This page is the first deliverable of the [chapter on catalogue, search and entitlements](../../masterclass/b2b-commerce/catalog-search-entitlements/) in my [B2B Commerce masterclass](../../masterclass/b2b-commerce/). Whether dealers then actually find the parts they are entitled to depends on search, covered in [finding parts by part number](../b2b-commerce-search-part-numbers/). Reviewing such concepts before a partner builds is part of my work on [Salesforce architecture](../../services/salesforce-architecture/).
 
-Few buyer groups cut by country, tier and brand keep a B2B store manageable for years. If you want a second opinion on your entitlement concept, [send me a message](#contact).
+Few buyer groups cut by country, tier and brand keep a B2B store manageable for years.

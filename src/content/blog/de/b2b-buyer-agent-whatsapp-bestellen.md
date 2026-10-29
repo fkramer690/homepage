@@ -118,4 +118,4 @@ Erst wenn diese Antworten verlässlich sind, würde ich einen Messaging-Kanal wi
 
 Das Kapitel [Agenten, Migration, Einführung](../../masterclass/b2b-commerce/agentforce-migration-einfuehrung/) der [Masterclass B2B Commerce](../../masterclass/b2b-commerce/) stellt den Buyer Agent neben die Migration des Shops und die Einführung bei Händlern. Wenn die Schnittstellen zu Ihrem ERP der offene Punkt sind, lesen Sie weiter bei [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).
 
-Der Buyer Agent lohnt sich, sobald Ihr Shop Händlern schon richtige Preise und Auftragsdaten zeigt, und WhatsApp ist dabei der letzte Schritt, nicht der erste. Wenn Sie das planen und eine unabhängige Einschätzung möchten, [schreiben Sie mir](#contact).
+Der Buyer Agent lohnt sich, sobald Ihr Shop Händlern schon richtige Preise und Auftragsdaten zeigt, und WhatsApp ist dabei der letzte Schritt, nicht der erste.

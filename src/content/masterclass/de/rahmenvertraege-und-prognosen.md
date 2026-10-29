@@ -166,4 +166,4 @@ Programmgeschäft braucht dieser Hersteller nicht, weil er nicht in OEM-Programm
 
 Rahmenverträge und Prognosen betreffen den Direktvertrieb an große Kunden. Wer über Händler verkauft, braucht zusätzlich Boni, Portale und Händlerbesuche; das behandelt [Kapitel 3: Händler und Partnerkanal](../haendler-und-partnerkanal/). Alle Kapitel finden Sie auf der [Übersichtsseite](../).
 
-Die Vertriebsplanung der Manufacturing Cloud ist so gut wie der Ist-Datenfluss aus dem ERP und die gemeinsame Struktur von Ziel, Prognose und Ist. Wenn Sie Sales Agreements oder Prognosen einführen wollen und die Daten dafür prüfen möchten, [schreiben Sie mir](#contact).
+Die Vertriebsplanung der Manufacturing Cloud ist so gut wie der Ist-Datenfluss aus dem ERP und die gemeinsame Struktur von Ziel, Prognose und Ist.

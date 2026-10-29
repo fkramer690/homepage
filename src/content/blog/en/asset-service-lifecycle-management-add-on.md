@@ -111,4 +111,4 @@ Assume a maker of hydraulic components with SAP as ERP and Field Service for 30 
 
 How assets, maintenance and parts fit together is the topic of the [Field Service masterclass chapter on assets, maintenance and parts](../../masterclass/field-service/field-service-assets-maintenance-parts/).
 
-Asset Service Lifecycle Management pays off when you use at least a few of its workflows, and rarely for maintenance plans alone. If you want an independent look at your asset processes before the quote is signed, [send me a message](#contact).
+Asset Service Lifecycle Management pays off when you use at least a few of its workflows, and rarely for maintenance plans alone.

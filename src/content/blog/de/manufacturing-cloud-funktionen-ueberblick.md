@@ -125,4 +125,4 @@ Nur zwei der sechs Punkte sind mit der Edition im Angebot erledigt. Die anderen 
 
 Diese Liste ist die erste Hälfte von Kapitel 1 der [Masterclass Manufacturing Cloud](../../masterclass/manufacturing-cloud/einordnung-und-business-case/). Die Funktionen gegen eine Eigenentwicklung abzuwägen, gehört zu meiner Arbeit bei [Make-or-buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/).
 
-Die Manufacturing Cloud enthält viel, aber Ihrem Business Case hilft nur, was im Angebot steht und in der Org eingeschaltet ist. Wenn bei Ihnen ein Angebot liegt und Sie es Funktion für Funktion prüfen lassen möchten, [schreiben Sie mir](#contact).
+Die Manufacturing Cloud enthält viel, aber Ihrem Business Case hilft nur, was im Angebot steht und in der Org eingeschaltet ist.

@@ -101,4 +101,4 @@ A third route sits outside both lists: an agreement with a fixed fee for Agentfo
 
 Write down per role which AI functions are really used in the first year, and estimate the customer-facing actions per month. Then compare three columns: bundle, parts, and parts by role. The credit side is explained in the [AI masterclass chapter on costs and tokens](../../masterclass/ai-salesforce/costs-and-tokens/), the licence matrix by role in [Salesforce Field Service licences: who needs which?](../field-service-licences-by-role/), and the overall business case in [chapter 1 of the Field Service masterclass](../../masterclass/field-service/field-service-business-case-licences/).
 
-The bundle is worth it when you would buy most of its contents anyway, and rarely because of its credits; if you want a second calculation before you sign, [send me a message](#contact).
+The bundle is worth it when you would buy most of its contents anyway, and rarely because of its credits.

@@ -153,4 +153,4 @@ Write the regression list
 
 All five chapters are on the [masterclass overview page](../). If you need to decide which data between ERP, PIM and Salesforce belongs to whom, see how I help under [Salesforce architecture](../../../services/salesforce-architecture/).
 
-A B2B store carries its weight when the first dealers find their parts at their price on the first try, and agents, migration and KPIs all build on that foundation. If you are planning this for your dealers, [send me a message](#contact).
+A B2B store carries its weight when the first dealers find their parts at their price on the first try, and agents, migration and KPIs all build on that foundation.

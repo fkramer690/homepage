@@ -125,4 +125,4 @@ Before the first forecast set is configured, settle four points:
 3. **Rhythm.** Who adjusts when, aligned with planning in production and procurement.
 4. **Leading number.** Which forecast counts, and how does it reach the ERP?
 
-Account forecasting is a good sales forecast when the data from the ERP is right and it is clear where planning takes over. If you are evaluating whether the feature fits your sales team, [send me a message](#contact).
+Account forecasting is a good sales forecast when the data from the ERP is right and it is clear where planning takes over.

@@ -130,4 +130,4 @@ After that the two offers can be compared, because AI use, access and consumptio
 
 These points are part of my work in [partner governance](../../../services/partner-governance/). Which tool fits which purpose is the subject of the next chapter, the [decision matrix](../ai-tool-decision-matrix/); how teams organise themselves around AI is covered in [chapter 9](../teamwork-and-delivery/). All chapters are listed on the [masterclass overview](../).
 
-AIforce changes where your people work with Salesforce, the new partner model changes what your partner earns on, and both should be visible in your contract. If you want a second opinion on a partner offer with an AI component, [send me a message](#contact).
+AIforce changes where your people work with Salesforce, the new partner model changes what your partner earns on, and both should be visible in your contract.

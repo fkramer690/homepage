@@ -109,4 +109,4 @@ After go-live, the list of zero-result searches is the working list for the next
 
 The topic belongs to the [chapter on catalogue, search and entitlements](../../masterclass/b2b-commerce/catalog-search-entitlements/) of my B2B Commerce masterclass. Defining which ERP fields feed search is part of my work on [Salesforce integration](../../services/salesforce-integration/).
 
-Dealers find parts when the numbers they type are in the data, so start with their search terms, not with the search settings. If you want to test your part numbers against a store design, [send me a message](#contact).
+Dealers find parts when the numbers they type are in the data, so start with their search terms, not with the search settings.

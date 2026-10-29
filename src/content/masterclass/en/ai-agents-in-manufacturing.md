@@ -149,4 +149,4 @@ At year end three agents run, all under the same rules: own user, rules in logic
 
 Which rules belong in your agents and which stay in the ERP is something I sort out on the client side as part of [Salesforce architecture](../../../services/salesforce-architecture/), the ERP connection as part of [Salesforce integration](../../../services/salesforce-integration/). All chapters are listed on the [masterclass overview](../).
 
-Start with the agent whose rules and data are already in place, and treat it like code with tests and its own permissions from day one. If you would like a second opinion on your roadmap, [send me a message](#contact).
+Start with the agent whose rules and data are already in place, and treat it like code with tests and its own permissions from day one.

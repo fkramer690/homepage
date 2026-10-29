@@ -144,4 +144,4 @@ Policies, work rules, operating hours and territories are records, not metadata.
 
 Where the scheduling design touches ERP, project tools and partners, I help with the [Salesforce architecture](../../../services/salesforce-architecture/). The next step for technicians is the app: [chapter 3](../field-service-mobile-app-documents/) covers offline data, forms and service reports, and the [overview](../) lists all chapters.
 
-Good scheduling in Field Service starts with clean data and a named policy owner, and the engine, the console and the agents build on that. If you want an independent view of your scheduling setup, [send me a message](#contact).
+Good scheduling in Field Service starts with clean data and a named policy owner, and the engine, the console and the agents build on that.

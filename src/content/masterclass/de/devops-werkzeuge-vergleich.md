@@ -144,4 +144,4 @@ Drei Regeln halte ich für nicht verhandelbar:
 
 Die Sandboxes und Branches, auf denen jedes dieser Werkzeuge aufsetzt, beschreibt [Kapitel 3](../umgebungen-und-branching/). Wie daraus eine Pipeline mit Pull Requests, Validierungen und Delta-Deployments wird, folgt in [Kapitel 5](../pipeline-aufbauen/). Bei der Auswahl und dem Aufbau unterstütze ich im Rahmen von [DevOps und Release-Management](../../../leistungen/devops-und-release-management/) und, wenn mehrere Partner beteiligt sind, in der [Partnersteuerung](../../../leistungen/partnersteuerung/).
 
-Das richtige Werkzeug ist das, das zu Ihrer Git-Plattform passt und für das Sie eine verantwortliche Person beim Kunden haben. Wenn Sie Ihre Auswahl gegen diese Kriterien prüfen möchten, [schreiben Sie mir](#contact).
+Das richtige Werkzeug ist das, das zu Ihrer Git-Plattform passt und für das Sie eine verantwortliche Person beim Kunden haben.

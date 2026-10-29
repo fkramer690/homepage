@@ -22,7 +22,7 @@ Start every new article from [`docs/blog-template.md`](blog-template.md).
 | Questions | At least one H2 phrased as a question people would search for | script |
 | Experience | At least one anonymised example from a real project | review |
 | FAQ | 2–6 questions with direct answers of 1–3 sentences, shown as collapsible questions | schema |
-| Closing | One-sentence conclusion plus an invitation to get in touch (`#contact`) | review |
+| Closing | One-sentence conclusion, no invitation to get in touch: the contact section follows directly (Fabian, 2026-10-29) | review |
 
 ## Articles by Juliane Winterscheid
 
@@ -139,7 +139,7 @@ Before opening the pull request:
 - [ ] Title and description within limits, primary keyword included
 - [ ] Answer in the first paragraph, 3–5 takeaways, 2–6 FAQ entries
 - [ ] At least one question H2 and one anonymised project example
-- [ ] At least 2 relative internal links, closing invitation links to `#contact`
+- [ ] At least 2 relative internal links, no closing invitation to `#contact`
 - [ ] Nothing identifiable, no energy/utility reference, no certification focus
 - [ ] At least 1,000 words in the body, EN and DE
 - [ ] No AI slop: every paragraph has a concrete point, read-aloud test done

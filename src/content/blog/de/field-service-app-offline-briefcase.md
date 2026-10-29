@@ -114,4 +114,4 @@ Die Synchronisation messen
 
 Das Offline-Design entscheidet, ob Formulare und Dokumente später funktionieren. Der nächste Schritt ist das Formular selbst, beschrieben in [Field Service Data Capture: Prüfprotokolle ohne Papier](../field-service-data-capture-pruefprotokolle/). Das ganze Thema gehört zu [Kapitel 3 der Masterclass Field Service](../../masterclass/field-service/field-service-mobile-app-dokumente/).
 
-Wer aufs Gerät legt, was der Techniker heute braucht, und die bekannten Lücken mit einem Partnernutzer testet, hat eine App, die auch im Keller funktioniert. Wenn Sie eine zweite Meinung zu Ihrem Offline-Konzept möchten, [schreiben Sie mir](#contact).
+Wer aufs Gerät legt, was der Techniker heute braucht, und die bekannten Lücken mit einem Partnernutzer testet, hat eine App, die auch im Keller funktioniert.

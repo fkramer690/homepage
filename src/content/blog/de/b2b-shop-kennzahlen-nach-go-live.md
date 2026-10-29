@@ -103,4 +103,4 @@ Je Welle wiederholen
 
 Dieselbe Disziplin für Agenten beschreibe ich in [Agentforce Kennzahlen nach dem Go-live](../agentforce-kennzahlen-nach-go-live/), das ganze Kapitel steht in der Masterclass unter [Agenten, Migration, Einführung](../../masterclass/b2b-commerce/agentforce-migration-einfuehrung/).
 
-Ein B2B-Shop wirkt, wenn Händler mehr Positionen darüber bestellen und der Innendienst weniger tippt, und beweisen lässt sich das nur mit Ausgangswerten von vor dem Go-live. Wenn Sie diese Kennzahlen für Ihren Shop aufsetzen möchten, [schreiben Sie mir](#contact).
+Ein B2B-Shop wirkt, wenn Händler mehr Positionen darüber bestellen und der Innendienst weniger tippt, und beweisen lässt sich das nur mit Ausgangswerten von vor dem Go-live.

@@ -120,4 +120,4 @@ Before the portal is built, settle four points:
 3. **Which fields go outside?** For the sales agreement and the master data, without margin and cost.
 4. **Which data flows back to the ERP?** One direction and one error handling per field.
 
-A customer portal only takes load off inside sales when its numbers are right and the data flows back to the ERP cleanly. If you are planning a portal on Manufacturing Cloud, [send me a message](#contact).
+A customer portal only takes load off inside sales when its numbers are right and the data flows back to the ERP cleanly.

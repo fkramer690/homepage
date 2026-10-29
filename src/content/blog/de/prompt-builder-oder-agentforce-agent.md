@@ -124,4 +124,4 @@ Einen Agenten ergänzen
 
 Welches Werkzeug auf der Salesforce-Plattform zu welcher Aufgabe passt, steht im Masterclass-Kapitel zu [Salesforce-Werkzeugen für KI-Entwicklung](../../masterclass/ki-salesforce/salesforce-werkzeuge-ki-entwicklung/). Solche Entscheidungen sind Teil meiner [Salesforce-Architekturarbeit](../../leistungen/salesforce-architektur/).
 
-Für die vier Textaufgaben oben reicht ein Template, und ein Agent verdient seinen höheren Preis nur dort, wo er ohne Mensch dazwischen antwortet oder handelt. Wenn Sie eine zweite Meinung dazu möchten, welcher Ihrer Anwendungsfälle was braucht, [schreiben Sie mir](#contact).
+Für die vier Textaufgaben oben reicht ein Template, und ein Agent verdient seinen höheren Preis nur dort, wo er ohne Mensch dazwischen antwortet oder handelt.

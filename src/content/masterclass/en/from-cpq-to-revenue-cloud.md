@@ -166,4 +166,4 @@ A maker of dosing systems has used CPQ since 2019: 45 quoting users, about 150 p
 
 The left column belongs in the decision log before you ask for estimates. Steering several partners through such a move is part of my work in [partner governance](../../../services/partner-governance/), and an [object ownership matrix](../../../blog/salesforce-object-ownership-matrix/) keeps catalog, pricing and assets assigned after go-live. This is the last chapter; [chapter 4](../billing-and-usage-based-pricing/) covers billing and usage, and all chapters are on the [overview page](../).
 
-The move from CPQ and Billing to Revenue Cloud goes well when you decide it at the renewal and treat it as a redesign with your own decisions up front. If you want an independent view of your CPQ org before that decision, [send me a message](#contact).
+The move from CPQ and Billing to Revenue Cloud goes well when you decide it at the renewal and treat it as a redesign with your own decisions up front.

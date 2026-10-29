@@ -157,4 +157,4 @@ Ein Hersteller von Industrieanlagen nutzt Field Service und eine Schnittstelle z
 
 Nichts davon braucht ein teures Werkzeug, aber jemand muss es einrichten und pflegen. Ich setze sfdx-hardis seit rund zwei Jahren in Kundenprojekten ein; wie es aufgebaut ist, steht in der [Einführung in sfdx-hardis](../../../blog/sfdx-hardis-einfuehrung-salesforce-devops/), und wer die Strecke einmal selbst bauen will, findet im [kostenlosen sfdx-hardis-Training](../../../blog/sfdx-hardis-kostenloses-devops-training/) genau diese Schritte als Labs. Bei der Einrichtung unterstütze ich im Rahmen von [DevOps und Release-Management](../../../leistungen/devops-und-release-management/), alle Kapitel finden Sie auf der [Übersichtsseite](../).
 
-Eine gute Pipeline macht jedes Release gleich langweilig, egal welcher Partner die Änderung gebaut hat. Wenn Sie Ihre Pipeline prüfen oder neu aufsetzen möchten, [schreiben Sie mir](#contact).
+Eine gute Pipeline macht jedes Release gleich langweilig, egal welcher Partner die Änderung gebaut hat.

@@ -63,7 +63,6 @@ Ich habe ein Programm mit acht Teams und 32 Entwicklern begleitet, Orgs betreut,
 
 Ein typisches Szenario, als Annahme: Ein Maschinenbauer betreibt Service Cloud mit Field Service, ein Händlerportal auf Experience Cloud und eine Schnittstelle zu SAP. Drei Partner arbeiten auf derselben Org, je einer für Service, Vertrieb mit Portal und Integration. Am Freitagabend deployt der Vertriebspartner per Change Set eine neue Validierungsregel auf dem Auftragsobjekt. Sie ist in seiner Sandbox korrekt, kennt aber ein Feld nicht, das der Integrationspartner zwei Wochen zuvor eingeführt hat. Am Montag schlägt die nächtliche Auftragsübergabe aus SAP fehl, Händler sehen keine Liefertermine, und das Service-Team muss den eigenen UAT-Lauf verschieben, weil die Org nicht stabil ist. Keine dieser Kosten taucht als eigene Zeile im Projektbudget auf. Ein Validierungs-Deployment gegen den gemeinsamen Stand im Repository hätte den Konflikt vor dem Merge gezeigt.
 
-
 ## Warum reichen Change Sets nicht mehr?
 
 Change Sets sind das Standardwerkzeug, mit dem viele Orgs anfangen, und für einen einzelnen Admin sind sie in Ordnung. Laut [Salesforce Help](https://help.salesforce.com/apex/HTViewHelpDoc?id=changesets.htm) brauchen sie eine Deployment-Verbindung, die nur zwischen Orgs derselben Produktion besteht. Sie enthalten nur Änderungen, die über das Setup möglich sind, keine Datensätze, und werden als Ganzes deployt. Für ein Programm mit mehreren Partnern fehlen die entscheidenden Dinge:
@@ -150,4 +149,4 @@ Sechs Fragen genügen für eine erste Einordnung. Sie sollten jede in einem Satz
 
 Wenn Sie bei mehr als zwei Fragen zögern, liegt Ihr Programm in Stufe 1 oder 2. Dann klären Sie zuerst Eigentum und Rollen und erst danach das Werkzeug. Damit geht es weiter in [Kapitel 2: Eigentum und Rollen](../release-prozess-eigentum-rollen/).
 
-Ein Salesforce-Programm mit mehreren Partnern bleibt nur planbar, wenn Ihnen der Release-Prozess gehört und jede Änderung denselben Weg nimmt. Wenn Sie wissen möchten, auf welcher Stufe Ihr Programm steht, [schreiben Sie mir](#contact).
+Ein Salesforce-Programm mit mehreren Partnern bleibt nur planbar, wenn Ihnen der Release-Prozess gehört und jede Änderung denselben Weg nimmt.

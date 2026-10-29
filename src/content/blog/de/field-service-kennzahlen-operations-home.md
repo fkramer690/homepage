@@ -113,4 +113,4 @@ Monatlich pro Region prüfen
 
 Wie die Kennzahlen in Einführung und Betrieb passen, behandelt das [Kapitel KI-Agenten, Einführung und Betrieb der Field-Service-Masterclass](../../masterclass/field-service/field-service-ki-agenten-einfuehrung/).
 
-Field Service beweist sich an sechs Zahlen, die Sie vor dem Go-live definiert haben, ein Dashboard zeigt sie nur an. Wenn Sie Unterstützung bei Ausgangswert und Review möchten, [schreiben Sie mir](#contact).
+Field Service beweist sich an sechs Zahlen, die Sie vor dem Go-live definiert haben, ein Dashboard zeigt sie nur an.

@@ -112,4 +112,4 @@ Ein typisches Szenario, als Annahme: Ein Maschinenbauer hat 50 CPQ-Nutzer, 200 P
 
 Analysieren Sie zuerst Ihre CPQ-Org: Zahl der Produkt- und Preisregeln, Umfang des Quote Calculator Plugins, Schnittstellen auf SBQQ-Objekte, offene Subscriptions und das Verlängerungsdatum. Legen Sie dann die Auslöser oben neben Ihre Roadmap für die nächsten zwei Jahre. Das Masterclass-Kapitel [von CPQ zu Revenue Cloud](../../masterclass/revenue-cloud/von-cpq-zu-revenue-cloud/) führt durch den ganzen Weg vom Status bis zur Migration.
 
-Bleiben, wechseln oder ein dritter Weg: Jede Variante ist für manche Unternehmen richtig, solange Sie sie bewusst wählen. Wenn Sie eine unabhängige Bewertung Ihrer CPQ-Org möchten, [schreiben Sie mir](#contact).
+Bleiben, wechseln oder ein dritter Weg: Jede Variante ist für manche Unternehmen richtig, solange Sie sie bewusst wählen.

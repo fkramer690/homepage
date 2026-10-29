@@ -110,4 +110,4 @@ Alle drei Anliegen werden erfüllt, und kein Community-Server erreicht die Org.
 
 Partner bei solchen Werkzeugen zu steuern gehört zu meiner Arbeit in der [Partnersteuerung](../../leistungen/partnersteuerung/), die Übersicht der Schnittstellen steht in [Kapitel 3 der Masterclass](../../masterclass/ki-salesforce/mcp-und-schnittstellen/).
 
-Einen Community-MCP-Server gebe ich erst frei, wenn sich sein Benutzer, sein Geheimnis, sein Maintainer und seine Version benennen lassen. Wenn Sie eine zweite Meinung zu einer Anfrage Ihres Partners möchten, [schreiben Sie mir](#contact).
+Einen Community-MCP-Server gebe ich erst frei, wenn sich sein Benutzer, sein Geheimnis, sein Maintainer und seine Version benennen lassen.

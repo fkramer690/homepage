@@ -99,4 +99,4 @@ Zwischen den Wellen liegen jeweils zwei Wochen ohne neue Gruppe, reserviert für
 
 Beginnen Sie mit einer Liste aller Händler mit ihren jährlichen Auftragspositionen, ihrer Preislogik und der Qualität ihrer Daten, und wählen Sie daraus die Pilotgruppe. Benennen Sie für jeden Pilothändler einen Buyer Manager, richten Sie die Test-Käuferkonten ein und schreiben Sie die fünf Prüfungen oben auf. Den Rest des Themas, von Agenten bis zum Umstieg von Aura auf LWR, finden Sie im Masterclass-Kapitel [Agenten, Migration, Einführung](../../masterclass/b2b-commerce/agentforce-migration-einfuehrung/). Wenn Händler und Innendienst ihre Arbeitsweise ändern müssen, planen Sie [Change Management](../../leistungen/change-management/) ab der ersten Welle ein.
 
-Ein Händlershop gelingt, wenn die ersten Händler ihre Teile zu ihrem Preis beim ersten Versuch finden, also führen Sie ihn in Wellen ein und testen Sie jede einzelne. Wenn Sie eine solche Einführung planen, [schreiben Sie mir](#contact).
+Ein Händlershop gelingt, wenn die ersten Händler ihre Teile zu ihrem Preis beim ersten Versuch finden, also führen Sie ihn in Wellen ein und testen Sie jede einzelne.

@@ -110,4 +110,4 @@ Bevor ein Angebot auf dem Tisch liegt, helfen drei Fragen an den eigenen Vertrie
 
 Danach gehört die Frage in die [Salesforce-Architektur](../../leistungen/salesforce-architektur/), mit einem Eintrag im Entscheidungslog, damit die Gründe auch nach einem Partnerwechsel nachvollziehbar bleiben. Das vollständige Bild aus Funktionen, Add-ons und Lizenzen steht in [Kapitel 1 der Masterclass Manufacturing Cloud](../../masterclass/manufacturing-cloud/einordnung-und-business-case/).
 
-Die Manufacturing Cloud lohnt sich, wenn ihre Kernfunktionen Ihr Geschäft abbilden, und nicht, weil Sie Hersteller sind. Wenn bei Ihnen ein Angebot für die Manufacturing Cloud vorliegt und Sie eine unabhängige Zweitmeinung möchten, [schreiben Sie mir](#contact).
+Die Manufacturing Cloud lohnt sich, wenn ihre Kernfunktionen Ihr Geschäft abbilden, und nicht, weil Sie Hersteller sind.

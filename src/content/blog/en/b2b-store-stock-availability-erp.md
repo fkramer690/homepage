@@ -119,4 +119,4 @@ The [Winter '27 highlights on Trailhead](https://trailhead.salesforce.com/conten
 
 Decide per screen which stock source applies: product list, product page, cart, checkout. Then define the three states for dealers, the update cycle of the copy and the fallback when SAP does not answer. How stock fits into the full interface list is described in [B2B Commerce and SAP: which data flows where](../b2b-commerce-sap-data-flows/), and the [ERP integration chapter of the masterclass](../../masterclass/b2b-commerce/erp-integration-stock-orders/) puts it into context. Reviewing such interfaces independently is part of my work on [Salesforce integration](../../services/salesforce-integration/).
 
-Show the copy for browsing and the SAP date for the promise; if you want to check your stock design before the build starts, [send me a message](#contact).
+Show the copy for browsing and the SAP date for the promise.

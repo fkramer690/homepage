@@ -164,4 +164,4 @@ Soll die Hotline zusätzlich einen KI-Agenten bekommen, kosten die fünf Büroar
 
 Diese Liste ist Teil meiner Arbeit unter [Make-or-buy und Lizenzprognosen](../../../leistungen/make-or-buy-lizenzen/), vor der Verhandlung und unabhängig von Hersteller und Partner. Steht der Business Case, geht es um die Planung selbst: Stammdaten, Scheduling Policies und die neue Konsole behandelt [Kapitel 2: Terminplanung und Disposition](../field-service-terminplanung-disposition/). Alle Kapitel finden Sie auf der [Übersichtsseite](../).
 
-Field Service rechnet sich mit vielen kurzen Einsätzen und einer Lizenzmatrix, die aus den Rollen folgt; wenn Sie Ihre Zahlen oder Ihr Angebot unabhängig prüfen lassen möchten, [schreiben Sie mir](#contact).
+Field Service rechnet sich mit vielen kurzen Einsätzen und einer Lizenzmatrix, die aus den Rollen folgt.

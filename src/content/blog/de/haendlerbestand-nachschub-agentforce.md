@@ -117,4 +117,4 @@ In so einem Piloten würde ich vor allem Datenthemen erwarten, keine KI-Themen: 
 
 Den größeren Teil der Arbeit macht das Schnittstellendesign zwischen Salesforce und ERP aus, also das, was ich unter [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/) anbiete. Das Gesamtbild der Agenten in der Fertigung finden Sie im Masterclass-Kapitel [KI-Agenten in der Fertigung](../../masterclass/ki-salesforce/ki-agenten-in-der-fertigung/).
 
-Ein Nachschubagent lohnt sich, wenn Salesforce den Vorschlag verantwortet und das ERP jede Zahl mit einer richtigen Antwort. Wenn Sie diese Aufteilung für Ihr Händlernetz gegenprüfen möchten, [schreiben Sie mir](#contact).
+Ein Nachschubagent lohnt sich, wenn Salesforce den Vorschlag verantwortet und das ERP jede Zahl mit einer richtigen Antwort.

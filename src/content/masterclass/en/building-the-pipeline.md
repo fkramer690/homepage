@@ -157,4 +157,4 @@ A maker of industrial equipment uses Field Service and an SAP interface. All det
 
 None of this needs an expensive tool, but someone has to set it up and look after it. I have used sfdx-hardis in client projects for about two years; how it is built is explained in the [sfdx-hardis introduction](../../../blog/sfdx-hardis-open-source-salesforce-devops/), and if you want to build the route once yourself, the [free sfdx-hardis training](../../../blog/sfdx-hardis-free-devops-training/) covers exactly these steps as labs. I help with the setup as part of [DevOps and release management](../../../services/devops-release-management/), and all chapters are on the [overview page](../).
 
-A good pipeline makes every release equally boring, whichever partner built the change. If you would like your pipeline reviewed or set up from scratch, [send me a message](#contact).
+A good pipeline makes every release equally boring, whichever partner built the change.

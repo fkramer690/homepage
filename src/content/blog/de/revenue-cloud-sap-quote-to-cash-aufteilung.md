@@ -125,4 +125,4 @@ Diese Schnittstellen zu entwerfen ist ein großer Teil meiner Arbeit bei [Salesf
 
 Schreiben Sie Ihre Quote-to-Cash-Schritte in eine Spalte und daneben SAP oder Salesforce, so wie es heute läuft. Markieren Sie dann die drei Zeilen, bei denen die Antwort unklar ist: In den meisten Unternehmen sind das Preis, Auftrag und Rechnung. Klären Sie diese drei mit der Finanzabteilung, bevor Sie Partner um Schätzungen bitten, denn jede Antwort verändert den Umfang um Wochen.
 
-Die Aufteilung zwischen Revenue Cloud und SAP wird pro Objekt entschieden und von der Finanzabteilung unterschrieben, bevor der Bau beginnt. Wenn Sie eine zweite Meinung zu Ihrem Schnitt möchten, [schreiben Sie mir](#contact).
+Die Aufteilung zwischen Revenue Cloud und SAP wird pro Objekt entschieden und von der Finanzabteilung unterschrieben, bevor der Bau beginnt.

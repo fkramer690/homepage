@@ -139,4 +139,4 @@ Salesforce puts the setup at under 30 minutes. The real work is in five decision
 
 These questions are part of my work on [Salesforce integration](../../../services/salesforce-integration/). [Chapter 4](../external-coding-agents/) covers the external coding agents your partner can use, and the [masterclass overview](../) lists all chapters.
 
-MCP makes Salesforce reachable for every AI tool; whether that helps your service depends on permissions, data routes and budget. If you want your interfaces reviewed before 2 November or before the first rollout, [send me a message](#contact).
+MCP makes Salesforce reachable for every AI tool; whether that helps your service depends on permissions, data routes and budget.

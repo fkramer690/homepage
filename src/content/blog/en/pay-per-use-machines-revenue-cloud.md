@@ -121,4 +121,4 @@ In these cases I would look elsewhere first:
 
 How pay-per-use fits next to classic service contracts is covered in [maintenance contracts with recurring billing](../maintenance-contracts-recurring-billing/), and the whole chapter on [billing and usage-based pricing](../../masterclass/revenue-cloud/billing-and-usage-based-pricing/) puts both in context.
 
-Pay-per-use with Revenue Cloud works when the counter and the contract are clean, and Salesforce only rates what you send it. If you are designing a usage model for your machines, [send me a message](#contact).
+Pay-per-use with Revenue Cloud works when the counter and the contract are clean, and Salesforce only rates what you send it.

@@ -152,4 +152,4 @@ Share the calendar | with every partner
 
 None of these steps needs a new tool. It needs someone on the client side who owns the calendar, and partners who are contractually bound to plan into it. How such rules get into partner contracts is part of my [partner governance](../../../services/partner-governance/) work; the data side of a release is covered in [chapter 7](../data-and-configuration/), and all chapters are on the [overview page](../).
 
-A release calendar that shows your dates and Salesforce's in one place turns retirements and upgrades into plannable work; if you want your calendar or release process reviewed for that, [send me a message](#contact).
+A release calendar that shows your dates and Salesforce's in one place turns retirements and upgrades into plannable work.

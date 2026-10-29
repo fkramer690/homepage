@@ -112,4 +112,4 @@ Drei Fragen beantwortet keine Tabelle.
 
 Wenn Sie diese Entscheidungen für Ihre Org und Ihre Partner sortieren möchten, gehört das zu meiner Arbeit in der [Salesforce-Architektur](../../../leistungen/salesforce-architektur/). Wo Agenten in der Fertigung heute tragen, behandelt [Kapitel 10](../ki-agenten-in-der-fertigung/); alle Kapitel finden Sie in der [Übersicht der Masterclass](../).
 
-Klären Sie zuerst Datenresidenz und Verträge, dann die Aufgabe, und halten Sie die Regeln für alle Werkzeuge gleich. Wenn Sie für Ihre Vorhaben eine zweite Meinung zur Werkzeugwahl möchten, [schreiben Sie mir](#contact).
+Klären Sie zuerst Datenresidenz und Verträge, dann die Aufgabe, und halten Sie die Regeln für alle Werkzeuge gleich.

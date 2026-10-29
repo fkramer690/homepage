@@ -157,4 +157,4 @@ To get there, the client settles these points before the partner configures anyt
 
 If you run the old Salesforce Billing package today, open invoices, schedules and payment history have to move as well. That migration is part of [chapter 5, from CPQ to Revenue Cloud](../from-cpq-to-revenue-cloud/).
 
-Revenue Cloud Billing is worth it where contracts change faster than SAP can follow, and finance has to decide where that line runs. If you want to check that line for your company, [send me a message](#contact).
+Revenue Cloud Billing is worth it where contracts change faster than SAP can follow, and finance has to decide where that line runs.

@@ -152,4 +152,4 @@ Kalender verteilen | an alle Partner
 
 Keiner dieser Schritte braucht ein neues Werkzeug. Er braucht jemanden auf Kundenseite, der den Kalender besitzt, und Partner, die vertraglich in ihn hinein planen. Wie solche Regeln in die Partnerverträge kommen, beschreibe ich unter [Partnersteuerung](../../../leistungen/partnersteuerung/); die Datenseite eines Releases behandelt [Kapitel 7](../daten-und-konfiguration/), alle Kapitel finden Sie auf der [Übersichtsseite](../).
 
-Ein Release-Kalender, der Ihre Termine und die von Salesforce an einer Stelle zeigt, macht aus Abschaltungen und Upgrades planbare Arbeit; wenn Sie Ihren Kalender oder Ihren Release-Prozess dafür prüfen lassen möchten, [schreiben Sie mir](#contact).
+Ein Release-Kalender, der Ihre Termine und die von Salesforce an einer Stelle zeigt, macht aus Abschaltungen und Upgrades planbare Arbeit.

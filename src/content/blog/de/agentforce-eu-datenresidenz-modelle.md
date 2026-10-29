@@ -117,4 +117,4 @@ Fragen Sie Salesforce pro Agent und legen Sie die Antworten in der Architekturdo
 
 Diese Fragen pro Agent zu klären, gehört zu meiner Arbeit in der [Salesforce-Architektur](../../leistungen/salesforce-architektur/); den größeren Überblick über Agenten in der Fertigung gibt [Kapitel 10 der KI-Masterclass](../../masterclass/ki-salesforce/ki-agenten-in-der-fertigung/).
 
-Wo ein Agentforce-Agent Ihre Händlerdaten verarbeitet, hängt vom gewählten Modell ab, und nur eine schriftliche Bestätigung von Salesforce für Ihre Org klärt es. Wenn Sie vor der Freigabe durch Ihren Datenschutz eine zweite Meinung möchten, [schreiben Sie mir](#contact).
+Wo ein Agentforce-Agent Ihre Händlerdaten verarbeitet, hängt vom gewählten Modell ab, und nur eine schriftliche Bestätigung von Salesforce für Ihre Org klärt es.

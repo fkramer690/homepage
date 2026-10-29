@@ -111,4 +111,4 @@ Repository und Pipeline des Frontends sollten Ihnen gehören, nicht der Agentur,
 
 Schreiben Sie auf, welche Kanäle Käufer heute wirklich nutzen und welcher Bestellungen annehmen soll. Prüfen Sie dann, ob es in den nächsten drei Jahren ein Frontend-Team gibt. Zeigen beide Antworten auf headless, bauen Sie einen kurzen Test mit der Referenz-App gegen eine Sandbox mit Ihrem echten Katalog und Ihrer Preis-Extension und messen Sie, wie schnell Warenkorb und Checkout mit dem Live-Aufruf ins ERP antworten. Die Datenflüsse dahinter sind Teil des Kapitels [ERP-Anbindung](../../masterclass/b2b-commerce/erp-integration-bestand-auftraege/) meiner Masterclass B2B Commerce, und solche Entscheidungen begleite ich unter [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).
 
-Headless ist eine gute Option für Hersteller, die schon ein genutztes Frontend betreiben, und ein teurer Umweg für alle anderen; wenn Sie prüfen möchten, welcher Fall bei Ihnen vorliegt, [schreiben Sie mir](#contact).
+Headless ist eine gute Option für Hersteller, die schon ein genutztes Frontend betreiben, und ein teurer Umweg für alle anderen.

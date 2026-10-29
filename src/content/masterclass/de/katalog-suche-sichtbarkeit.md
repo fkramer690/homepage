@@ -173,4 +173,4 @@ Schreiben Sie das Entitlement-Konzept auf eine Seite, bevor jemand Daten lädt:
 
 Die ERP-Felder, die Mitgliedschaften und Suche speisen, wandern danach in die Schnittstellenliste aus [Kapitel 4](../erp-integration-bestand-auftraege/). Solche Konzepte prüfe ich, bevor ein Partner baut, im Rahmen von [Salesforce-Architektur](../../../leistungen/salesforce-architektur/); welche Daten aus welchem System kommen, ist Teil von [Salesforce-Schnittstellen](../../../leistungen/salesforce-schnittstellen/). Alle Kapitel finden Sie auf der [Übersichtsseite](../).
 
-Wenige Buyer Groups und saubere Produktdaten entscheiden mehr über einen B2B-Shop als jede Sucheinstellung. Wenn Sie Ihr Entitlement-Konzept prüfen lassen möchten, [schreiben Sie mir](#contact).
+Wenige Buyer Groups und saubere Produktdaten entscheiden mehr über einen B2B-Shop als jede Sucheinstellung.

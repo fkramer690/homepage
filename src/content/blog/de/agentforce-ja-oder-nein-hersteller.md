@@ -114,4 +114,4 @@ Entscheidungstermin vereinbaren
   Bevor der Pilot startet, zum Beispiel nach acht Wochen gegen die Zielzahl.
 ```
 
-Starten Sie mit Agentforce dort, wo Volumen, Daten und ERP-Zugriff stimmen, und nutzen Sie die Zeit anderswo, um dorthin zu kommen. Wenn Sie eine zweite Meinung möchten, welcher Ihrer Prozesse bereit ist, [schreiben Sie mir](#contact).
+Starten Sie mit Agentforce dort, wo Volumen, Daten und ERP-Zugriff stimmen, und nutzen Sie die Zeit anderswo, um dorthin zu kommen.

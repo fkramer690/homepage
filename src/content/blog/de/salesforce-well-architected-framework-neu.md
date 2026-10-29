@@ -117,4 +117,4 @@ Wie ich Standards und Reviews in solchen Programmen aufsetze, gehört zu meiner 
 
 ## Wo sollten Sie anfangen?
 
-Lesen Sie die [Übersicht im Architecture Center](https://architect.salesforce.com/docs/architect/well-architected/guide/overview.html) und das Legacy Mapping, wenn Ihre Teams noch mit Trusted, Easy und Adaptable arbeiten. Prüfen Sie dann Ihre bestehenden Entwicklungsstandards gegen die fünf Säulen. Meist fehlen Kosten und Betrieb. Das neue Well-Architected Framework ist ein brauchbarer gemeinsamer Maßstab, solange Sie die Entscheidungen selbst treffen. Wenn Sie Ihre Org oder Ihre Partnerstandards dagegen prüfen möchten, [schreiben Sie mir](#contact).
+Lesen Sie die [Übersicht im Architecture Center](https://architect.salesforce.com/docs/architect/well-architected/guide/overview.html) und das Legacy Mapping, wenn Ihre Teams noch mit Trusted, Easy und Adaptable arbeiten. Prüfen Sie dann Ihre bestehenden Entwicklungsstandards gegen die fünf Säulen. Meist fehlen Kosten und Betrieb. Das neue Well-Architected Framework ist ein brauchbarer gemeinsamer Maßstab, solange Sie die Entscheidungen selbst treffen.

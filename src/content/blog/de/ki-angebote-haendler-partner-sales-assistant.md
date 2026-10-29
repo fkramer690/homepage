@@ -117,4 +117,4 @@ Einen Testsatz bauen
 
 Wo diese Agenten zwischen den übrigen Fertigungsagenten stehen, zeigt das Masterclass-Kapitel [KI-Agenten in der Fertigung](../../masterclass/ki-salesforce/ki-agenten-in-der-fertigung/). Die Grenze zwischen ERP, Konfigurator und Agent zu ziehen, gehört zu meiner [Salesforce-Architekturarbeit](../../leistungen/salesforce-architektur/).
 
-KI-Angebote für Händler lohnen sich, sobald Katalog, Preise und Regeln so sauber sind, dass Ihr Innendienst das Angebot unverändert unterschreiben würde. Wenn Sie prüfen möchten, ob Ihre Angebotsdaten so weit sind, [schreiben Sie mir](#contact).
+KI-Angebote für Händler lohnen sich, sobald Katalog, Preise und Regeln so sauber sind, dass Ihr Innendienst das Angebot unverändert unterschreiben würde.

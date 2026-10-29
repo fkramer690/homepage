@@ -156,4 +156,4 @@ Ein Maschinenbauer betreibt Service Cloud, Field Service und ein Händlerportal 
 
 Die Regeln dazu stehen im Vertrag mit jedem Partner: Backpromote vor jeder Story, keine Änderung im Setup einer Stufen-Org, kein Feature-Branch älter als zwei Wochen. Wie die Pipeline zwischen diesen Stufen technisch läuft, beschreibt [Kapitel 5](../pipeline-aufbauen/). Solche Modelle entwerfe ich in meiner Arbeit zu [DevOps und Release-Management](../../../leistungen/devops-und-release-management/).
 
-Umgebungen und Branches funktionieren, wenn jede Org genau einem Branch gehört und Änderungen in beide Richtungen nach festen Regeln fließen. Wenn Sie Ihre Sandbox-Strategie oder Ihren Hotfix-Weg prüfen lassen möchten, [schreiben Sie mir](#contact).
+Umgebungen und Branches funktionieren, wenn jede Org genau einem Branch gehört und Änderungen in beide Richtungen nach festen Regeln fließen.

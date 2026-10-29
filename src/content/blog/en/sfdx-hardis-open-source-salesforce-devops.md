@@ -109,4 +109,4 @@ Switch on operations
   Turn on monitoring, backups and generated documentation.
 ```
 
-Choosing the toolchain is part of [architecture and partner governance](../../services/partner-governance/), not a side decision for developers. sfdx-hardis gives you a professional release process with no licence costs, as long as someone owns it. If you want to discuss whether it fits your programme, [send me a message](#contact).
+Choosing the toolchain is part of [architecture and partner governance](../../services/partner-governance/), not a side decision for developers. sfdx-hardis gives you a professional release process with no licence costs, as long as someone owns it.

@@ -111,4 +111,4 @@ Before the configurator is built or a product is chosen, settle four points:
 3. **Which fields move into the agreement?** The mapping from the table above, including term and account level.
 4. **Where is the price approved?** One place, documented in the decision log of the [Salesforce architecture](../../services/salesforce-architecture/).
 
-A sales agreement is only as clean as the products the configurator feeds into it. If you are weighing a custom configurator against a standard product, [send me a message](#contact).
+A sales agreement is only as clean as the products the configurator feeds into it.

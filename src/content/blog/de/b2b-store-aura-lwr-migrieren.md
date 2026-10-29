@@ -106,4 +106,4 @@ Ein typisches Szenario, als Annahme: Ein Maschinenbauer betreibt seit 2021 einen
 
 Beginnen Sie mit der Bestandsaufnahme: alle Aura-Komponenten, der Checkout-Flow mit seinen Subflows und jede Stelle, die auf den Warenkorb verlinkt. Entscheiden Sie dann, welche Komponenten Sie in den nächsten zwei Releases im Aura-Store ersetzen. Den Wechsel selbst planen Sie in Ihren [Release-Kalender](../../masterclass/devops-release-management/release-planung-salesforce-releases/) ein, mit Regressionstests für Suche, Warenkorb und Checkout, denn drei Salesforce-Releases im Jahr treffen den alten und den neuen Store. Die übrigen Themen dieses Kapitels, von Agenten bis zur Einführung, stehen im Masterclass-Kapitel [Agenten, Migration, Einführung](../../masterclass/b2b-commerce/agentforce-migration-einfuehrung/).
 
-Ein Aura-Store hat keine Frist, aber jede neue Aura-Komponente macht den späteren Umstieg teurer. Wenn Sie unabhängig einschätzen lassen möchten, ob und wann Ihr Store umziehen sollte, [schreiben Sie mir](#contact).
+Ein Aura-Store hat keine Frist, aber jede neue Aura-Komponente macht den späteren Umstieg teurer.

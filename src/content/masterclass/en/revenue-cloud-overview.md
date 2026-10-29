@@ -176,4 +176,4 @@ Partners ask about features. The decisions that drive cost and timeline belong t
 
 Write these four answers into the decision log before you ask for estimates. They are part of my work on [Salesforce architecture](../../../services/salesforce-architecture/). With them settled, [chapter 2 on catalog, configurator and pricing](../product-catalog-configurator-pricing/) covers how the products and prices are modelled; all chapters are on the [overview page](../).
 
-Revenue Cloud is worth it when your quotes are complex and your revenue recurs, and the decisions about price, rules and invoice come before the partner. If you want a second opinion on yours, [send me a message](#contact).
+Revenue Cloud is worth it when your quotes are complex and your revenue recurs, and the decisions about price, rules and invoice come before the partner.

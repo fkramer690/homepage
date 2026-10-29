@@ -93,4 +93,4 @@ Let key users of the next country work for a few days in the country of the curr
 
 Name a sponsor for every country before the country enters planning, and have them review the list of country deviations. Define key users per country and agree their time with their managers, as described in [key users in Salesforce rollouts](../salesforce-key-user-network/). After the first country, plan a review before the second one starts.
 
-A global template is introduced anew in every country, and every country needs its own people to carry it. If you are planning a worldwide rollout, [send me a message](#contact) or read more about [change management for Salesforce programmes](../../services/change-management-salesforce/).
+A global template is introduced anew in every country, and every country needs its own people to carry it. Read more about [change management for Salesforce programmes](../../services/change-management-salesforce/).

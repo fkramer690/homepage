@@ -194,4 +194,4 @@ The 80 Core seats alone cost $187,200 a year at list price, so AI consumption is
 
 These questions are part of my [make-or-buy and licence planning](../../../services/make-or-buy-licences/). All chapters are on the [overview page](../).
 
-AI costs in Salesforce are easy to plan once you price tokens and actions separately and name the open meters openly. If you want a second look at your estimate or a partner offer with an AI component, [send me a message](#contact).
+AI costs in Salesforce are easy to plan once you price tokens and actions separately and name the open meters openly.

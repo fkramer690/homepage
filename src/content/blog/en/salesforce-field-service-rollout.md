@@ -99,4 +99,4 @@ If the numbers do not improve in the first wave, in my view it is rarely the pro
 
 For the first wave, pick a region with clean data, an open-minded service manager and a manageable size. Bring the works council into planning that wave, not only into its acceptance. And check the conditions of each country before every further wave, before you commit to dates.
 
-That concludes the series. If you are planning a Field Service rollout and want an independent architect on your side, [get in touch](#contact).
+That concludes the series.
