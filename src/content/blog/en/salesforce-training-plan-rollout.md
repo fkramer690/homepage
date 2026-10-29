@@ -87,4 +87,4 @@ Not by the number of participants. That figure shows the project trained people,
 
 Write down the affected roles and, next to each, the three to five processes that role has to master from day one. That list is the core of your training plan. Then decide who trains which role, and plan the training sandbox early enough for practice cases to be ready before acceptance testing.
 
-Good training comes shortly before go-live, on real cases and from a colleague. If you are planning a rollout and the training plan is still missing, [send me a message](#contact) or read more about [Salesforce change management consulting](../../services/change-management-salesforce/). I plan training and change management together with my cooperation partner [Juliane Winterscheid](../../partners/juliane-winterscheid/).
+Good training comes shortly before go-live, on real cases and from a colleague. I plan training and change management together with my cooperation partner [Juliane Winterscheid](../../partners/juliane-winterscheid/). Read more about [Salesforce change management consulting](../../services/change-management-salesforce/).

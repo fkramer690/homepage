@@ -139,4 +139,4 @@ Für die Einrichtung nennt Salesforce weniger als 30 Minuten. Die eigentliche Ar
 
 Diese Fragen gehören zu meiner Arbeit an [Salesforce-Schnittstellen](../../../leistungen/salesforce-schnittstellen/). Welche externen Coding-Agenten Ihr Partner dafür einsetzen kann, beschreibt [Kapitel 4](../externe-coding-agenten/), und die Übersicht aller Kapitel finden Sie auf der [Startseite der Masterclass](../).
 
-MCP macht Salesforce für jedes KI-Werkzeug erreichbar; ob das Ihrem Service hilft, entscheiden Rechte, Datenwege und Budget. Wenn Sie Ihre Schnittstellen vor dem 2. November oder vor dem ersten Rollout prüfen lassen möchten, [schreiben Sie mir](#contact).
+MCP macht Salesforce für jedes KI-Werkzeug erreichbar; ob das Ihrem Service hilft, entscheiden Rechte, Datenwege und Budget. Wenn Sie Ihre Schnittstellen vor dem 2.

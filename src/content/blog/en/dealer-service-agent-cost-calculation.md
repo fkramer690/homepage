@@ -140,4 +140,4 @@ Run two test weeks
   Read Digital Wallet, recalculate and set alerts on the credit pool.
 ```
 
-A dealer service agent costs little per conversation, so the budget risk sits in documents, sandboxes and an oversized credit pool. If you want a second pair of eyes on your calculation, [send me a message](#contact).
+A dealer service agent costs little per conversation, so the budget risk sits in documents, sandboxes and an oversized credit pool.

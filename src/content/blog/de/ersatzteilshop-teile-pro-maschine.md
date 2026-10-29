@@ -111,4 +111,4 @@ Mit der Maschinenseite starten
 
 Das Kapitel [Katalog, Suche, Sichtbarkeit](../../masterclass/b2b-commerce/katalog-suche-sichtbarkeit/) der [Masterclass B2B Commerce](../../masterclass/b2b-commerce/) ordnet das in das Store-Design ein. Welches System welche Daten führt, ist Thema von [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).
 
-Ein Ersatzteilshop zeigt pro Maschine nur so zuverlässig die richtigen Teile, wie Ihre Seriennummern zu einer As-built-Stückliste führen. Wenn Sie das prüfen wollen, bevor ein Partner eine Komponente baut, [schreiben Sie mir](#contact).
+Ein Ersatzteilshop zeigt pro Maschine nur so zuverlässig die richtigen Teile, wie Ihre Seriennummern zu einer As-built-Stückliste führen.

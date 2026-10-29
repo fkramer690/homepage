@@ -119,6 +119,6 @@ Salesforce programmes with regular releases need a form of their own: every new 
 
 For a change affecting one team, the template is enough. When many groups and countries are affected, when sensitive messages are due or when managers are unsure themselves, an outside view helps to sharpen messages and prepare managers. In Salesforce programmes I work with Fabian Kramer on this, see [Salesforce change management consulting](../../services/change-management-salesforce/) and [Salesforce change management: why rollouts fail](../change-management-salesforce-rollout/).
 
-A change is not understood through the first announcement, but through the right person at the right time, more than once. If you would like your plan reviewed, [write to us](#contact).
+A change is not understood through the first announcement, but through the right person at the right time, more than once.
 
 Prosci and ADKAR are registered trademarks of Prosci, Inc.

@@ -99,4 +99,4 @@ Mein Rat: Schreiben Sie pro interner Gruppe auf, was sie im Store tut, etwa den 
 
 Legen Sie eine Liste mit vier Spalten an: Rolle, Anzahl Personen, Login-Tage pro Monat und Lizenz. Füllen Sie sie aus Ihren Auftragsdaten der letzten zwölf Monate: Wer hat wie oft per Telefon, E-Mail oder Portal bestellt? Prüfen Sie dann die Limits oben, vor allem Rollen und den Account Switcher bei Händlergruppen. Ob ein Shop oder ein Portal überhaupt zu Ihren Händlern passt, klärt [B2B Commerce oder Händlerportal](../b2b-commerce-oder-haendlerportal/), das ganze Kostenbild steht in [Kapitel 1 der Masterclass B2B Commerce](../../masterclass/b2b-commerce/b2b-commerce-lohnt-sich-ueberblick/). Lizenzprognosen wie diese gehören zu meiner Arbeit bei [Make-or-Buy und Lizenzen](../../leistungen/make-or-buy-lizenzen/).
 
-Zählen Sie die Login-Tage pro Käufer vor der Unterschrift, denn sie bestimmen die Lizenzrechnung stärker als die Zahl der Händler; wenn Sie einen zweiten Blick auf Ihre Zahlen möchten, [schreiben Sie mir](#contact).
+Zählen Sie die Login-Tage pro Käufer vor der Unterschrift, denn sie bestimmen die Lizenzrechnung stärker als die Zahl der Händler.

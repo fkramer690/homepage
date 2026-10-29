@@ -99,4 +99,4 @@ Between waves there are two weeks without a new group, reserved for fixes and th
 
 Start with a list of all dealers with their yearly order lines, their price logic and the quality of their data, and choose the pilot group from it. Name a buyer manager for each pilot dealer, set up the test buyer accounts and write down the five checks above. The rest of this topic, from agents to the move from Aura to LWR, is in the masterclass chapter on [agents, migration and rollout](../../masterclass/b2b-commerce/agentforce-migration-rollout/). If dealers and inside sales have to change how they work, plan [change management](../../services/change-management-salesforce/) from the first wave.
 
-A dealer store succeeds when the first dealers find their parts at their price on the first try, so roll out in waves and test each one. If you are planning such a rollout, [send me a message](#contact).
+A dealer store succeeds when the first dealers find their parts at their price on the first try, so roll out in waves and test each one.

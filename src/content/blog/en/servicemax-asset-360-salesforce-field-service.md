@@ -105,4 +105,4 @@ If none of these applies, I would evaluate ASLM first, because one vendor means 
 3. **Request quotes for Asset 360 and ASLM** and ask which users need a licence in each case. The role logic of Field Service is in [Salesforce Field Service licences by role](../field-service-licences-by-role/).
 4. **Calculate both options over three years** including release testing. How I set up such comparisons is described under [make-or-buy and licence forecasts](../../services/make-or-buy-licences/).
 
-Asset 360 is worth it when automatic entitlement checks or your PTC portfolio tip the balance. If you want the decision checked independently, [send me a message](#contact).
+Asset 360 is worth it when automatic entitlement checks or your PTC portfolio tip the balance.

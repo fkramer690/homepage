@@ -103,6 +103,6 @@ Do not show the change curve to the affected team and tell them they are now in 
 
 Plan for the valley. If you know that morale and productivity drop after go-live, you can provide contacts, adjust targets for the first weeks and explain to management why the first figures look worse. Ask each group where it stands instead of choosing the same action for everyone. And connect the curve with a model that derives actions; the basics are in [What is change management?](../what-is-change-management/).
 
-In Salesforce programmes I do this together with Fabian Kramer, see [Salesforce change management consulting](../../services/change-management-salesforce/). If a change is coming up and you want to keep the valley short, [write to us](#contact).
+In Salesforce programmes I do this together with Fabian Kramer, see [Salesforce change management consulting](../../services/change-management-salesforce/).
 
 Prosci and ADKAR are registered trademarks of Prosci, Inc.

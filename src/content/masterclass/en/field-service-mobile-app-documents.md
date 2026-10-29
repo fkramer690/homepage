@@ -147,4 +147,4 @@ Four decisions need a name next to them before a partner builds forms:
 
 The data model is [architecture work](../../../services/salesforce-architecture/) and decides whether forms, reports and later AI agents can use the data. [Chapter 4](../field-service-assets-maintenance-parts/) builds on it with assets, maintenance plans and spare parts, and the [overview](../) lists all chapters.
 
-The technician's app works when the data model comes before the first form and every app version is tested before it reaches the devices. If you want an independent view of your mobile and document setup, [send me a message](#contact).
+The technician's app works when the data model comes before the first form and every app version is tested before it reaches the devices.

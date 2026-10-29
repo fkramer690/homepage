@@ -162,4 +162,4 @@ Drei Klassifizierungen mit je etwa einem Dutzend Attributen, 30 Grundmaschinen, 
 
 Diese Grenzen zwischen SAP und Salesforce zu ziehen, ist Teil meiner Arbeit in der [Salesforce-Architektur](../../../leistungen/salesforce-architektur/), die Preisschnittstelle selbst gehört zu [Salesforce-Schnittstellen](../../../leistungen/salesforce-schnittstellen/). [Kapitel 3](../angebot-vertrag-auftrag/) geht weiter mit Freigaben, Verträgen und der Auftragsübergabe an SAP, alle Kapitel finden Sie auf der [Übersichtsseite](../).
 
-Katalog, Konfigurator und Preisfindung funktionieren in Revenue Cloud, wenn jedes ein führendes System und eine verantwortliche Person beim Hersteller hat. Wenn Sie das für Ihre Produkte und Preise prüfen möchten, [schreiben Sie mir](#contact).
+Katalog, Konfigurator und Preisfindung funktionieren in Revenue Cloud, wenn jedes ein führendes System und eine verantwortliche Person beim Hersteller hat.

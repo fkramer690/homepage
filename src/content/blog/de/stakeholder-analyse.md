@@ -125,6 +125,6 @@ Typisch sind diese:
 
 Für ein Vorhaben mit drei, vier Gruppen kann die Projektleitung die Analyse mit der Vorlage allein erstellen. Unterstützung lohnt sich, wenn viele Gruppen oder Länder betroffen sind, wenn die Haltung wichtiger Gruppen unklar ist oder wenn intern niemand die heiklen Gespräche führen kann, etwa mit dem Betriebsrat oder einer skeptischen Führungskraft. In Salesforce-Programmen arbeite ich dabei mit Fabian Kramer zusammen; wie wir das aufsetzen, steht in [Salesforce Change Management: warum Einführungen scheitern](../change-management-salesforce-einfuehrung/) und auf der Seite [Change Management Beratung für Salesforce](../../leistungen/change-management/).
 
-Eine Stakeholder-Analyse ist so gut wie die Maßnahmen, die daraus folgen. Wenn Sie bei Ihrer Veränderung einen zweiten Blick auf die Gruppen möchten, [schreiben Sie uns](#contact).
+Eine Stakeholder-Analyse ist so gut wie die Maßnahmen, die daraus folgen.
 
 Prosci und ADKAR sind eingetragene Marken von Prosci, Inc.

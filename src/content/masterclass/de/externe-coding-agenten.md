@@ -133,4 +133,4 @@ So würde ich vorgehen:
 
 Nach meiner Einschätzung dauert in so einem Setup die Abstimmung mit Betriebsrat und Datenschutz länger als die Werkzeugauswahl. Planen Sie sie deshalb zuerst ein. Die Steuerung mehrerer Partner mit unterschiedlichen Werkzeugen ist Teil meiner Arbeit in der [Partnersteuerung](../../../leistungen/partnersteuerung/), die Gates gehören ins [DevOps und Release Management](../../../leistungen/devops-und-release-management/). Wie Salesforce sein Partnermodell gerade auf Agenten umstellt, behandelt [Kapitel 5](../aiforce-und-systemintegratoren/).
 
-Wählen Sie den Coding-Agenten nach Vertrag, Datenresidenz und Kosten, und legen Sie die Qualität in Regeldatei, Review und Pipeline, die Ihnen gehören. Wenn Sie Ihre Freigabeliste oder die Regeln für Ihren Partner gegenprüfen lassen möchten, [schreiben Sie mir](#contact).
+Wählen Sie den Coding-Agenten nach Vertrag, Datenresidenz und Kosten, und legen Sie die Qualität in Regeldatei, Review und Pipeline, die Ihnen gehören.

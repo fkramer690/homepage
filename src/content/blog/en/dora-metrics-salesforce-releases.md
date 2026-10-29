@@ -101,4 +101,4 @@ As an assumption: a programme with twelve releases a year, four of which needed 
 
 Start with two numbers: deployment frequency and change fail rate. Both can be read from the pipeline and the number of hotfixes, even before a tool reports them automatically. Set today's value as the baseline and report the trend once a month. Lead time follows as soon as all changes run through pull requests.
 
-DORA metrics show whether a release process is improving, as long as nobody uses them as a report card. If you want to make your releases measurable, [send me a message](#contact).
+DORA metrics show whether a release process is improving, as long as nobody uses them as a report card.

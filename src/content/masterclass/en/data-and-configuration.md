@@ -157,4 +157,4 @@ I would write five rules into every contract:
 
 When to schedule data steps in the release calendar, and how the three Salesforce releases a year fit in, is covered in [chapter 8](../release-planning-salesforce-releases/). Data steps and sandbox levels are part of my work in [DevOps and release management](../../../services/devops-release-management/).
 
-Configuration data deserves the same route as code: repository, review, pipeline, with customer data kept masked. If you want to remove the manual data step from your release plan, [send me a message](#contact).
+Configuration data deserves the same route as code: repository, review, pipeline, with customer data kept masked.

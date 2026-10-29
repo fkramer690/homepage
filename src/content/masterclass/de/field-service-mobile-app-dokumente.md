@@ -147,4 +147,4 @@ Vier Entscheidungen brauchen einen Namen, bevor ein Partner Formulare baut:
 
 Das Datenmodell ist Arbeit an der [Salesforce-Architektur](../../../leistungen/salesforce-architektur/) und entscheidet, ob Formulare, Berichte und später KI-Agenten die Daten nutzen können. [Kapitel 4](../field-service-assets-wartung-teile/) baut darauf auf, mit Assets, Wartungsplänen und Ersatzteilen, und die [Übersicht](../) zeigt alle Kapitel.
 
-Die App des Technikers trägt, wenn das Datenmodell vor dem ersten Formular steht und jede App-Version getestet ist, bevor sie die Geräte erreicht. Wenn Sie einen unabhängigen Blick auf Ihre mobile Lösung und Ihre Dokumente möchten, [schreiben Sie mir](#contact).
+Die App des Technikers trägt, wenn das Datenmodell vor dem ersten Formular steht und jede App-Version getestet ist, bevor sie die Geräte erreicht.

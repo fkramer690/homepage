@@ -97,4 +97,4 @@ Einmal im Jahr prüfen
   Tools, Tarife und Nutzungsbedingungen ändern sich schneller als Verträge.
 ```
 
-KI-Coding durch Partner ist in Ordnung, wenn der Vertrag regelt, welche Tools, welche Daten und welches Review gelten, und Sie das prüfen können. Wenn Sie eine zweite Meinung zu Ihren Partnerverträgen aus technischer Sicht möchten, [schreiben Sie mir](#contact).
+KI-Coding durch Partner ist in Ordnung, wenn der Vertrag regelt, welche Tools, welche Daten und welches Review gelten, und Sie das prüfen können.

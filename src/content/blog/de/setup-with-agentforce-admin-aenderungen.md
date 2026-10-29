@@ -111,4 +111,4 @@ Den Verbrauch beobachten
   Verfolgen Sie die Nutzung gegen die 500 Aktionen und lassen Sie sich von Salesforce schriftlich bestätigen, wie Aktionen darüber abgerechnet werden.
 ```
 
-Wenn Release-Prozess und Rechtemodell die Admin-KI abdecken sollen, ist das Teil von [DevOps und Release-Management](../../leistungen/devops-und-release-management/). Der Setup-Agent ist ein schneller Weg, Metadaten zu bauen, und ein schlechter Weg, sie auszurollen; wenn Sie diese Grenze in Ihrer Org ziehen möchten, [schreiben Sie mir](#contact).
+Wenn Release-Prozess und Rechtemodell die Admin-KI abdecken sollen, ist das Teil von [DevOps und Release-Management](../../leistungen/devops-und-release-management/). Der Setup-Agent ist ein schneller Weg, Metadaten zu bauen, und ein schlechter Weg, sie auszurollen.

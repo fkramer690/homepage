@@ -113,4 +113,4 @@ Ein typisches Szenario, als Annahme: ein Maschinenbauer mit 45 Technikern in Deu
 
 Wo die Headless-Einrichtung neben Agenten und Einführungswellen steht, behandelt das [Kapitel KI-Agenten, Einführung und Betrieb der Field-Service-Masterclass](../../masterclass/field-service/field-service-ki-agenten-einfuehrung/).
 
-Ein KI-Assistent liefert schnell einen Entwurf für Field Service, was hineinkommt, entscheiden weiterhin Ihre Leute. Wenn Sie einen solchen Plan vor der Freigabe unabhängig prüfen lassen möchten, [schreiben Sie mir](#contact).
+Ein KI-Assistent liefert schnell einen Entwurf für Field Service, was hineinkommt, entscheiden weiterhin Ihre Leute.

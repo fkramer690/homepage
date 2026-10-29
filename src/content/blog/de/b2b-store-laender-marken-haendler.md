@@ -111,4 +111,4 @@ Das Kaufmännische klären
 
 Das Kapitel [Katalog, Suche, Sichtbarkeit](../../masterclass/b2b-commerce/katalog-suche-sichtbarkeit/) der [Masterclass B2B Commerce](../../masterclass/b2b-commerce/) ordnet diese Entscheidung in das gesamte Store-Design ein, und wie ich solche Schnitte angehe, beschreibe ich unter [Salesforce-Architektur](../../leistungen/salesforce-architektur/).
 
-Ein Store pro Marke oder ERP und Käufergruppen für Länder und Stufen ist der Standard, von dem ich nur mit konkretem Grund abweichen würde. Wenn Sie Ihren Schnitt prüfen wollen, [schreiben Sie mir](#contact).
+Ein Store pro Marke oder ERP und Käufergruppen für Länder und Stufen ist der Standard, von dem ich nur mit konkretem Grund abweichen würde.

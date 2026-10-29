@@ -127,4 +127,4 @@ Point five is a real limit. Showing all SAP orders in the store means bringing p
 
 Write down who owns the order at each step, from cart to invoice, and which status the buyer sees at each step. Then decide whether Order Management has a role at all. How the order fits into the other data flows is covered in [B2B Commerce and SAP: which data flows where](../b2b-commerce-sap-data-flows/), and the [ERP integration chapter of the masterclass](../../masterclass/b2b-commerce/erp-integration-stock-orders/) puts it into context. An independent review of such designs is part of my work on [Salesforce architecture](../../services/salesforce-architecture/).
 
-The store takes the order and SAP processes it, as long as the status comes back reliably; if you are deciding who owns your orders, [send me a message](#contact).
+The store takes the order and SAP processes it, as long as the status comes back reliably.

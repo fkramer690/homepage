@@ -116,4 +116,4 @@ Registrierung zur Pflicht machen
 
 Das ganze Bild zum After-Sales steht im [Kapitel Garantie und After-Sales](../../masterclass/manufacturing-cloud/garantie-und-after-sales/) der Masterclass Manufacturing Cloud.
 
-Garantie, Rückrufe und Agenten in der Manufacturing Cloud sind nur so gut wie die installierte Basis darunter. Wenn Sie dieses Datenmodell planen, [schreiben Sie mir](#contact).
+Garantie, Rückrufe und Agenten in der Manufacturing Cloud sind nur so gut wie die installierte Basis darunter.

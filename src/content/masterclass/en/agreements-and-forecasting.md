@@ -166,4 +166,4 @@ This manufacturer does not need program-based business, because it does not supp
 
 Framework contracts and forecasts concern direct sales to large customers. If you sell through dealers, you also need rebates, portals and dealer visits; that is [chapter 3: dealer and partner channel](../dealer-and-partner-channel/). All chapters are on the [overview page](../).
 
-Sales planning in Manufacturing Cloud is as good as the actuals feed from the ERP and the shared structure of target, forecast and actuals. If you plan to introduce sales agreements or forecasts and want the data checked first, [send me a message](#contact).
+Sales planning in Manufacturing Cloud is as good as the actuals feed from the ERP and the shared structure of target, forecast and actuals.

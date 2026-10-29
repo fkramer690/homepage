@@ -148,4 +148,4 @@ Bevor ein Partner das erste Angebotslayout baut, würde ich diese Punkte schrift
 | Auftrag | DRO oder einfache Schnittstelle, wer die Fallout-Queue abarbeitet, welche Prüfungen vor der Aktivierung laufen. |
 | Assets | gezählt oder an eine Seriennummer gebunden, und wem das Asset-Objekt gehört. |
 
-Alle Kapitel finden Sie auf der [Übersichtsseite](../). Revenue Cloud trägt den Weg vom Angebot zum Auftrag gut, wenn jede Änderung über Angebot und Auftrag läuft und die Übergabe an SAP vorher festgelegt ist. Wenn Sie diese Entscheidungen für Ihr Unternehmen durchgehen möchten, [schreiben Sie mir](#contact).
+Alle Kapitel finden Sie auf der [Übersichtsseite](../). Revenue Cloud trägt den Weg vom Angebot zum Auftrag gut, wenn jede Änderung über Angebot und Auftrag läuft und die Übergabe an SAP vorher festgelegt ist.

@@ -120,4 +120,4 @@ The total is about 34,000 credits, roughly $170 a month. Connected Assets at $15
 
 How machine data, ERP and Salesforce fit together is part of my [integration architecture work](../../services/salesforce-integration/).
 
-Predictive maintenance starts with a clean service history, and the sensors come second. If you want a second opinion on whether your data is ready, [send me a message](#contact).
+Predictive maintenance starts with a clean service history, and the sensors come second.

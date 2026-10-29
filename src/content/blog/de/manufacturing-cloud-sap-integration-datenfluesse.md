@@ -117,4 +117,4 @@ Wie ich Schnittstellen zwischen ERP, Middleware und Salesforce aufsetze, beschre
 4. **Planen Sie die Geldflüsse zurück**: Bonusauszahlungen und Garantiebeträge, jeweils mit einem Status, der nach Salesforce zurückkommt.
 5. **Listen Sie jeden Schnittstellennutzer** und seine Anmeldemethode vor dem 1. Dezember 2026 auf.
 
-Die Manufacturing Cloud ist nur so aktuell wie die SAP-Daten, die sie bekommt, deshalb kommt das Schnittstellendesign vor dem Funktionsdesign. Wenn Sie diese Anbindung planen und eine unabhängige Prüfung möchten, [schreiben Sie mir](#contact).
+Die Manufacturing Cloud ist nur so aktuell wie die SAP-Daten, die sie bekommt, deshalb kommt das Schnittstellendesign vor dem Funktionsdesign.

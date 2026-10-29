@@ -111,4 +111,4 @@ The frontend repository and pipeline should belong to you, not to the agency tha
 
 Write down which channels buyers really use today and which one should take orders. Then check whether a frontend team will exist for the next three years. If both answers point to headless, build a short proof with the reference app against a sandbox that holds your real catalogue and your pricing extension, and measure how fast cart and checkout answer with the live ERP call. The data flows behind it are part of the chapter [ERP integration](../../masterclass/b2b-commerce/erp-integration-stock-orders/) in my B2B Commerce masterclass, and I support this kind of decision under [Salesforce integration](../../services/salesforce-integration/).
 
-Headless is a good option for manufacturers who already run a frontend people use, and an expensive detour for everyone else; if you want to check which case you are, [send me a message](#contact).
+Headless is a good option for manufacturers who already run a frontend people use, and an expensive detour for everyone else.

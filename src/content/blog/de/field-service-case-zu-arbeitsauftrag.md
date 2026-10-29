@@ -113,4 +113,4 @@ Bei den Schritten 3 und 4 zahlt sich das Datenmodell aus. Ohne Work Type muss di
 
 Zeichnen Sie den Weg für Ihre drei häufigsten Anrufarten auf, vom ersten Anruf bis zum geschlossenen Arbeitsauftrag, und schreiben Sie dazu, wer welchen Datensatz anlegt. Diese Zeichnung beantwortet die Lizenzfrage und zeigt, welche Work Types Sie brauchen. Wie das in den Business Case passt, steht in [Kapitel 1 der Masterclass Field Service](../../masterclass/field-service/field-service-lohnt-sich-lizenzen/).
 
-Case, Arbeitsauftrag und Termin sind drei Datensätze mit drei Verantwortlichen, und der Work Type verbindet sie; wenn Sie Ihren Prozess gegen diese Kette prüfen möchten, [schreiben Sie mir](#contact).
+Case, Arbeitsauftrag und Termin sind drei Datensätze mit drei Verantwortlichen, und der Work Type verbindet sie.

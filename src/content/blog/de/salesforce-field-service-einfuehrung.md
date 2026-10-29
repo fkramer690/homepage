@@ -99,4 +99,4 @@ Bessern sich die Zahlen in der ersten Welle nicht, liegt es meiner Einschätzung
 
 Wählen Sie für die erste Welle eine Region mit sauberen Daten, einem offenen Serviceleiter und überschaubarer Größe. Nehmen Sie den Betriebsrat in die Planung dieser Welle auf, nicht erst in ihre Abnahme. Und prüfen Sie vor jeder weiteren Welle die Rahmenbedingungen des Landes, bevor Sie Termine zusagen.
 
-Damit endet die Serie. Wenn Sie eine Einführung von Field Service planen und einen unabhängigen Architekten auf Ihrer Seite möchten, [schreiben Sie mir](#contact).
+Damit endet die Serie.

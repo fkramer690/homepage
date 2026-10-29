@@ -155,4 +155,4 @@ A typical scenario, as an assumption: a builder of machining centres has 1,200 m
 
 Most of these are interface questions, which I work on in [Salesforce integration](../../../services/salesforce-integration/). [Chapter 5](../field-service-ai-agents-rollout/) adds AI agents, rollout and operations; the [overview page](../) lists all chapters.
 
-Assets, contracts and parts carry everything that comes later in Field Service, so they deserve the first decisions. If you want a second opinion on your installed base or maintenance model, [send me a message](#contact).
+Assets, contracts and parts carry everything that comes later in Field Service, so they deserve the first decisions.

@@ -114,4 +114,4 @@ Dann soll eine Preiserhöhung für eine Produktfamilie in 60 Verträge. Die Mass
 
 Ob Agenten überhaupt zu Ihrem Unternehmen passen, behandle ich in [Agentforce für Hersteller: jetzt starten oder warten?](../agentforce-ja-oder-nein-hersteller/), den Überblick über Agenten in der Fertigung im Masterclass-Kapitel [KI-Agenten in der Fertigung](../../masterclass/ki-salesforce/ki-agenten-in-der-fertigung/).
 
-Der Sales-Planning-Agent ist ein brauchbarer Assistent auf Sales Agreements, sobald die Ist-Mengen aus dem ERP stimmen, und er kann weniger, als die Ankündigung von 2025 nahelegt. Wenn Sie ihn für Ihren Vertrieb bewerten, [schreiben Sie mir](#contact).
+Der Sales-Planning-Agent ist ein brauchbarer Assistent auf Sales Agreements, sobald die Ist-Mengen aus dem ERP stimmen, und er kann weniger, als die Ankündigung von 2025 nahelegt.

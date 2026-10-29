@@ -160,4 +160,4 @@ Write one page on the price master decision before anyone designs the store:
 
 This page belongs next to your [object ownership matrix](../../../blog/salesforce-object-ownership-matrix/) and drives the interface list for [chapter 4](../erp-integration-stock-orders/). I design the price and credit calls as part of [Salesforce integration](../../../services/salesforce-integration/), and the Revenue Cloud licence question under [make or buy and licences](../../../services/make-or-buy-licences/). All chapters are on the [overview page](../).
 
-A B2B store only sells when the dealer sees their price, orders on account and reorders in a minute. If you want to settle these decisions for your store, [send me a message](#contact).
+A B2B store only sells when the dealer sees their price, orders on account and reorders in a minute.

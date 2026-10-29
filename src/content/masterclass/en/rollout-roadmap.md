@@ -138,4 +138,4 @@ Review capacity takes the biggest hit, especially with nearshore teams in other 
 
 From here, the AI masterclass takes over. Which coding agent suits your team or partner, and what the contract needs to say about it, is covered in [chapter 4 of the AI masterclass](../../ai-salesforce/external-coding-agents/). How roles, review gates and metrics change when teams deliver with agents is in [chapter 9 of the AI masterclass](../../ai-salesforce/teamwork-and-delivery/). The operations this phase builds on are described in the previous [chapter 9 on operations and monitoring](../operations-monitoring-backup/), and all chapters of this masterclass are on the [overview page](../). I support the rollout itself as part of [DevOps and release management](../../../services/devops-release-management/).
 
-A DevOps rollout is finished when your own team could run the release process without today's partner. If you would like to know which phase your programme is in and what comes next, [send me a message](#contact).
+A DevOps rollout is finished when your own team could run the release process without today's partner.

@@ -114,4 +114,4 @@ Wie man einen Zähler ohne Preis budgetiert, steht in [MCP-Zugriffe als Budgetri
 
 Schnittstellen- und Identitätsdesign ist der Kern meiner Arbeit an [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/); alle Schnittstellen im Vergleich zeigt das Masterclass-Kapitel [MCP und Schnittstellen](../../masterclass/ki-salesforce/mcp-und-schnittstellen/).
 
-Die Agent API bringt einen Agenten schnell in Ihre eigenen Apps, aber die Grenze zwischen Händlern liegt dann in Ihrem Code, also entwerfen Sie sie vor dem ersten Bildschirm. Wenn Sie eine zweite Meinung zu Ihrem Identitätskonzept möchten, [schreiben Sie mir](#contact).
+Die Agent API bringt einen Agenten schnell in Ihre eigenen Apps, aber die Grenze zwischen Händlern liegt dann in Ihrem Code, also entwerfen Sie sie vor dem ersten Bildschirm.

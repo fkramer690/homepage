@@ -106,4 +106,4 @@ Dann erzeugt Salesforce die kaufmännischen Daten und übergibt den unterschrieb
 
 Zählen Sie Ihre Kundenverträge pro Jahr und sortieren Sie sie in drei Gruppen: eigene Vorlage ohne Änderungen, eigene Vorlage mit verhandelten Klauseln, Papier des Kunden. Überwiegen die ersten beiden Gruppen, passt Salesforce Contracts. Bauen Sie dann mit der Rechtsabteilung die Klauselbibliothek, bevor die erste Vorlage entsteht. Wie Verträge in den Weg vom Angebot zum Auftrag passen, zeigt das Kapitel [Angebot, Vertrag, Auftrag](../../masterclass/revenue-cloud/angebot-vertrag-auftrag/).
 
-Salesforce Contracts reicht, wenn Verträge auf Ihrem eigenen Papier aus dem Vertriebsprozess entstehen. Wenn Sie klären möchten, auf welcher Seite dieser Linie Sie stehen, [schreiben Sie mir](#contact).
+Salesforce Contracts reicht, wenn Verträge auf Ihrem eigenen Papier aus dem Vertriebsprozess entstehen.

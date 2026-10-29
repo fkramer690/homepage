@@ -102,4 +102,4 @@ Salesforce publishes three releases a year: Spring, Summer and Winter. They can 
 
 For your next release, create a rollout plan with one row per affected group before development is finished. Write the release notes for users separately from the technical ones and have a key user read them: if they understand them without explanation, they work. After the release, ask the key users which questions came up and add the answers to the next release notes.
 
-A release has only landed once the people affected know what changes. If your business learns about changes too late, [send me a message](#contact) or read more about [DevOps and release management](../../services/devops-release-management/).
+A release has only landed once the people affected know what changes. Read more about [DevOps and release management](../../services/devops-release-management/).

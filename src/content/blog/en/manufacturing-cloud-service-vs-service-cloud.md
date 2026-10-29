@@ -108,4 +108,4 @@ This is the same make-or-buy question as for the whole industry cloud, covered i
 
 Count the users per role for one region: how many handle warranty claims, how many run campaigns, how many only take calls. Then ask for a quote with exactly that mix, including the Industries Service Excellence question and read access for Service Cloud users. The after-sales features themselves are in the [warranty and after-sales chapter](../../masterclass/manufacturing-cloud/warranty-and-after-sales/) of the Manufacturing Cloud masterclass.
 
-Manufacturing Cloud for Service is worth its premium for the people who work on warranty and recalls, and rarely for the whole service team. If you are weighing that licence mix, [send me a message](#contact).
+Manufacturing Cloud for Service is worth its premium for the people who work on warranty and recalls, and rarely for the whole service team.

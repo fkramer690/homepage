@@ -103,6 +103,6 @@ A rule of thumb by kind of change:
 
 I know both ends of this scale from my projects: a global Salesforce Sales Cloud rollout with more than 500 users and an IT transformation at an insurer with more than 20,000 people affected in 19 countries. The role the models play in a Salesforce programme is described with Fabian Kramer in the [change management masterclass](../../masterclass/change-management/); the basics are in [what is change management?](../what-is-change-management/).
 
-A model does not replace a decision in management; it only makes visible which one is missing. If you are facing a change and want to know which approach fits, [send us a message](#contact) or read more about [Salesforce change management consulting](../../services/change-management-salesforce/).
+A model does not replace a decision in management; it only makes visible which one is missing. Read more about [Salesforce change management consulting](../../services/change-management-salesforce/).
 
 Prosci and ADKAR are registered trademarks of Prosci, Inc.

@@ -77,7 +77,6 @@ Garantieansprüche auf die installierte Basis gehören zu Manufacturing Cloud un
 
 Jede Ebene wirkt billig, wenn die Daten einmal geladen werden. Teuer wird sie später, an drei Stellen:
 
-
 ```kennzahlen
 2.600 | Assets pro Wartungsplan als praktische Grenze
 1.300 | Assets pro Plan bei zwei Maintenance Work Rules je Asset
@@ -105,4 +104,4 @@ Bei 50 Linien im Feld sind das 2.350 Assets statt rund 47.000, und jedes davon t
 
 Nehmen Sie einen Maschinentyp und gehen Sie seine Stückliste mit den drei Fragen durch: Seriennummer, eigene Wartung, eigene Garantie. Schreiben Sie die Ebenen auf, die dabei herauskommen, und zählen Sie die Assets pro Maschine. Dann entscheiden Sie, wer eine getauschte Baugruppe erfasst und welches System nach der Auslieferung führt, und zwar vor dem ersten Import aus dem ERP. Das [Masterclass-Kapitel zu Assets, Wartung und Teilen](../../masterclass/field-service/field-service-assets-wartung-teile/) zeigt, wie die Hierarchie mit Wartungsplänen, Ersatzteilen und Servicepartnern zusammenhängt.
 
-Die richtige Tiefe ist die, die der Service tatsächlich nutzt, meist drei Ebenen und weit weniger Assets als die Stückliste. Wenn Sie Ihr Modell der installierten Basis vor dem ERP-Import prüfen wollen, [schreiben Sie mir](#contact).
+Die richtige Tiefe ist die, die der Service tatsächlich nutzt, meist drei Ebenen und weit weniger Assets als die Stückliste.

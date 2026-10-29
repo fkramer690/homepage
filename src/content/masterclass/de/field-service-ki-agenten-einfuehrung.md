@@ -144,4 +144,4 @@ Die Fehlersuche wartet, bis die Handbücher den Produktschlüssel des Assets tra
 
 Mit diesem Kapitel endet die Masterclass; Assets und Teile stehen in [Kapitel 4](../field-service-assets-wartung-teile/), alle Kapitel auf der [Übersichtsseite](../).
 
-Field Service rechnet sich, wenn Agenten dort starten, wo die Daten sauber sind, Wellen mit dem Betriebsrat beginnen und die Zahlen vor dem Go-live feststehen. Wenn Sie eine Einführung oder Ihren ersten Field-Service-Agenten planen, [schreiben Sie mir](#contact).
+Field Service rechnet sich, wenn Agenten dort starten, wo die Daten sauber sind, Wellen mit dem Betriebsrat beginnen und die Zahlen vor dem Go-live feststehen.

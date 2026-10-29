@@ -146,4 +146,4 @@ Monitoring-Repository, Backup-Lösung, Benachrichtigungskanäle und Kennzahlen g
 
 Wie Monitoring und Backup in den gesamten Prozess passen, zeigen [warum DevOps über Salesforce-Großprojekte entscheidet](../../../blog/warum-devops-salesforce-enterprise-projekte/) und die [Einführung in sfdx-hardis](../../../blog/sfdx-hardis-einfuehrung-salesforce-devops/). In welcher Reihenfolge Sie all das einführen, beschreibt das letzte Kapitel, [Einführung und Fahrplan](../einfuehrung-fahrplan/). Mein Rat für den Start: Monitoring und Daten-Backup zuerst, denn beides können Sie einschalten, bevor die Pipeline fertig ist. Wie ich Sie dabei unterstütze, steht unter [DevOps und Release-Management](../../../leistungen/devops-und-release-management/).
 
-Ein stabiler Betrieb heißt, dass Sie jede Änderung sehen, jeden Datensatz zurückholen und jeden Hotfix nachvollziehen können; wenn Sie das für Ihre Org aufsetzen oder prüfen lassen möchten, [schreiben Sie mir](#contact).
+Ein stabiler Betrieb heißt, dass Sie jede Änderung sehen, jeden Datensatz zurückholen und jeden Hotfix nachvollziehen können.

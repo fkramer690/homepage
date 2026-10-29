@@ -114,4 +114,4 @@ Die 40 Prozent sind meine Startwerte, keine Vorgaben von Salesforce. Abschalten 
 
 Die Kennzahlen brauchen einen Business Case aus der Zeit vor dem Go-live, deshalb stelle ich [Business Value und Datenqualität an den Anfang](../agentforce-business-value-datenqualitaet/). Welche Agenten ihre Kosten wert sind, kläre ich im Rahmen von [Make-or-Buy und Lizenzplanung](../../leistungen/make-or-buy-lizenzen/).
 
-Ein Agent lohnt sich, wenn seine Kosten pro gelöster Anfrage unter denen Ihres Innendienstes bleiben und die eskalierten Fälle nicht schwieriger werden; wenn Sie diese Kennzahlen und eine Abschaltregel für Ihren Agenten aufsetzen möchten, [schreiben Sie mir](#contact).
+Ein Agent lohnt sich, wenn seine Kosten pro gelöster Anfrage unter denen Ihres Innendienstes bleiben und die eskalierten Fälle nicht schwieriger werden.

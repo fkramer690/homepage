@@ -126,4 +126,4 @@ Test the rules like code
 
 This is the part of an agent design I review on the client side as part of [Salesforce architecture](../../services/salesforce-architecture/), because it decides whether the agent can be audited later. Whether your process is ready for an agent at all is covered in [Agentforce for manufacturers: start now or wait](../agentforce-yes-or-no-manufacturers/).
 
-Put the rules in logic and the language in the model, and your agent will give the same answer to the same dealer twice. If you want a second opinion on where the rules in your agent design sit, [send me a message](#contact).
+Put the rules in logic and the language in the model, and your agent will give the same answer to the same dealer twice.

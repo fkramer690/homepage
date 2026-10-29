@@ -110,4 +110,4 @@ The outcome is one small pilot in sales and a week of permission clean-up. In my
 
 Whether to build your own Agentforce agents is a separate decision, covered in [Agentforce for manufacturers: start now or wait?](../agentforce-yes-or-no-manufacturers/).
 
-AIforce moves Salesforce into the tools your people already use, and the work for IT stays the same: permissions, data and contracts first. If you want a second opinion on which part fits your organisation, [send me a message](#contact).
+AIforce moves Salesforce into the tools your people already use, and the work for IT stays the same: permissions, data and contracts first.

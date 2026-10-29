@@ -124,4 +124,4 @@ Die Schnittstellen für Buchungssätze und Rechnungsstatus gehören zu meiner Ar
 
 Listen Sie Ihre Umsatzarten auf und notieren Sie zu jeder, wer heute fakturiert und wie oft sich der Vertrag ändert. Zeilen mit wiederkehrenden Gebühren und häufigen Änderungen sind Kandidaten für Billing, alles andere bleibt in SAP. Das Masterclass-Kapitel [Abrechnung und nutzungsbasierte Preise](../../masterclass/revenue-cloud/abrechnung-und-nutzungsbasierte-preise/) ordnet diese Entscheidung in den gesamten Quote-to-Cash-Prozess ein.
 
-Maschinenrechnungen bleiben in SAP, wiederkehrende Umsätze mit häufigen Änderungen können in Revenue Cloud Billing wandern, und Finance legt fest, wo die Grenze verläuft. Wenn Sie diese Grenze für Ihr Unternehmen prüfen möchten, [schreiben Sie mir](#contact).
+Maschinenrechnungen bleiben in SAP, wiederkehrende Umsätze mit häufigen Änderungen können in Revenue Cloud Billing wandern, und Finance legt fest, wo die Grenze verläuft.

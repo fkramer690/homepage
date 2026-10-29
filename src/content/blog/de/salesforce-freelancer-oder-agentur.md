@@ -109,4 +109,4 @@ Wenn Sie einen Architekten für Ihre Seite des Tisches suchen, helfen andere Fra
 
 Schreiben Sie zuerst auf, welche Rolle fehlt: Kapazität, die baut, oder Kontrolle, die entscheidet. Fehlt Kapazität, suchen Sie einen Partner, und kein Freelancer-Portal löst das Problem. Fehlt Kontrolle, weil ein Partner seine eigene Arbeit prüft oder mehrere Partner nach eigenen Regeln bauen, holen Sie sich einen Architekten auf Ihre Seite, bevor die nächste Ausschreibung rausgeht. Wie ich diese Rolle ausfülle, steht auf der Seite [Freiberuflicher Salesforce Architect](../../freiberuflicher-salesforce-architect/) und unter [Partnersteuerung](../../leistungen/partnersteuerung/).
 
-Ein freiberuflicher Architekt ersetzt keinen Partner, er sorgt dafür, dass Ihre Partner nach Ihren Regeln bauen. Wenn Sie klären wollen, welche Rolle in Ihrem Programm fehlt, [schreiben Sie mir](#contact).
+Ein freiberuflicher Architekt ersetzt keinen Partner, er sorgt dafür, dass Ihre Partner nach Ihren Regeln bauen.

@@ -164,4 +164,4 @@ If the hotline is also to get an AI agent, the five office seats cost $625 more 
 
 This list is part of my work on [make-or-buy and licence forecasts](../../../services/make-or-buy-licences/), before the negotiation and independent of vendor and partner. Once the business case stands, the next topic is planning itself: master data, scheduling policies and the new console are covered in [chapter 2: scheduling and dispatch](../field-service-scheduling-dispatch/). All chapters are on the [overview page](../).
 
-Field Service pays off with many short jobs and a licence matrix that follows the roles; if you want your numbers or your quote checked independently, [send me a message](#contact).
+Field Service pays off with many short jobs and a licence matrix that follows the roles.

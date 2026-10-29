@@ -125,4 +125,4 @@ Sieben Schnittstellen, drei davon live. Das ist ein realistischer Umfang für ei
 
 Schreiben Sie Object Ownership Matrix und Schnittstellenliste, bevor jemand die Shopseiten entwirft. Notieren Sie für jedes Datum das führende System, Kopie oder live, das maximale Alter und was passiert, wenn SAP nicht erreichbar ist. Das [Kapitel zur ERP-Anbindung der Masterclass B2B Commerce](../../masterclass/b2b-commerce/erp-integration-bestand-auftraege/) bringt diese Entscheidungen in eine Reihenfolge, und eine unabhängige Prüfung von Schnittstellen gehört zu meiner Arbeit bei [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).
 
-Ein B2B-Shop ist nur so gut wie seine Datenflüsse aus SAP, also entscheiden Sie diese zuerst; wenn Sie eine zweite Meinung zu Ihrer Schnittstellenliste möchten, [schreiben Sie mir](#contact).
+Ein B2B-Shop ist nur so gut wie seine Datenflüsse aus SAP, also entscheiden Sie diese zuerst.

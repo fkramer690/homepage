@@ -117,4 +117,4 @@ Ask Salesforce per agent and file the answers in the architecture documentation:
 
 Settling these questions per agent is part of my work on [Salesforce architecture](../../services/salesforce-architecture/); the wider map of agents in manufacturing is in [chapter 10 of the AI masterclass](../../masterclass/ai-salesforce/ai-agents-in-manufacturing/).
 
-Where an Agentforce agent processes your dealer data depends on the model you choose, and only Salesforce's written confirmation for your org settles it. If you want a second opinion before your data protection officer signs off, [send me a message](#contact).
+Where an Agentforce agent processes your dealer data depends on the model you choose, and only Salesforce's written confirmation for your org settles it.

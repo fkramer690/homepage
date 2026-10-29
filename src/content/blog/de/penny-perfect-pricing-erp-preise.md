@@ -115,4 +115,4 @@ Ich würde A wählen, wenn SAP schnell antwortet und zuverlässig erreichbar ist
 
 Das ganze Kapitel zu ERP-Anbindung, Agenten und Rollout ist [ERP, KI und Rollout](../../masterclass/manufacturing-cloud/erp-ki-und-rollout/) in der Masterclass Manufacturing Cloud, und die Grenze zwischen ERP und Salesforce zu ziehen, gehört zu meiner [Arbeit als Salesforce-Architekt](../../leistungen/salesforce-architektur/).
 
-Penny Perfect Pricing bringt eine Preisfindung nach SAP-Muster nach Salesforce, aber ein System muss den Preis weiterhin führen. Wenn Sie das klären möchten, bevor Ihr Telesales live geht, [schreiben Sie mir](#contact).
+Penny Perfect Pricing bringt eine Preisfindung nach SAP-Muster nach Salesforce, aber ein System muss den Preis weiterhin führen.

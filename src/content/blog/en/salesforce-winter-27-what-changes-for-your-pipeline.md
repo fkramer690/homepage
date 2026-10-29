@@ -99,4 +99,4 @@ For a release team, these steps cover the essentials:
 6. Define who may build and activate agents, and put agent metadata under version control.
 7. Retest prompt templates and agents that depended on specific Gemini models.
 
-Three releases a year mean a checklist like this every few months. A pipeline that runs every change through validation and tests catches most of these issues early, which is one of the reasons [DevOps decides Salesforce enterprise projects](../why-devops-matters-salesforce-enterprise/). If you want a second opinion on your release process, [send me a message](#contact).
+Three releases a year mean a checklist like this every few months. A pipeline that runs every change through validation and tests catches most of these issues early, which is one of the reasons [DevOps decides Salesforce enterprise projects](../why-devops-matters-salesforce-enterprise/).

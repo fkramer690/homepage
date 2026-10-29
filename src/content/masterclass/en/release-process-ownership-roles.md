@@ -145,4 +145,4 @@ In this scenario the release calendar runs on without a break, because pipeline,
 
 Running this across all partners is the core of my work in [partner governance](../../../services/partner-governance/). Which orgs and branches the roles in this chapter work with follows in [chapter 3 on environments and branches](../environments-and-branching/).
 
-A release process stays stable when you own it, every role is named and every partner has signed the same rules. If you would like ownership, roles and partner contracts in your programme reviewed, [send me a message](#contact).
+A release process stays stable when you own it, every role is named and every partner has signed the same rules.

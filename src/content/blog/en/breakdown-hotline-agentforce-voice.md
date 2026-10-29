@@ -129,4 +129,4 @@ Booking in daytime
 
 Where this sits among the other Field Service agents is in [AI agents in Field Service: what works today?](../field-service-ai-agents-what-works-today/), the licence side in [make-or-buy and licence planning](../../services/make-or-buy-licences/).
 
-A voice agent on the breakdown hotline pays off when it hands dispatchers a classified case and leaves the decision on machine-down calls with them. If you want to work through the triage rules for your hotline, [send me a message](#contact).
+A voice agent on the breakdown hotline pays off when it hands dispatchers a classified case and leaves the decision on machine-down calls with them.

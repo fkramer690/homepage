@@ -151,4 +151,4 @@ In the validation deployment, an Apex test from the second partner then fails: t
 
 Which configuration data such flows need in sandboxes for tests to mean something is covered in [chapter 7](../data-and-configuration/). How I support programmes with this is described under [DevOps and release management](../../../services/devops-release-management/) and [partner governance](../../../services/partner-governance/).
 
-In Salesforce programmes with several partners, quality comes from gates that block and thresholds the client sets. If you would like your tests, reviews and quality gates checked, [send me a message](#contact).
+In Salesforce programmes with several partners, quality comes from gates that block and thresholds the client sets.

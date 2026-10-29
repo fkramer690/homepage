@@ -95,4 +95,4 @@ Prüftermin vereinbaren
 
 So setze ich [Projektsteuerung für Salesforce-Programme](../../leistungen/projektsteuerung-nearshore/) auf, und das Ganze steht auf einer funktionierenden Pipeline, wie in [warum DevOps über Salesforce-Großprojekte entscheidet](../warum-devops-salesforce-enterprise-projekte/) beschrieben.
 
-Messen Sie den KI-Nutzen wie jede andere Investition: erst die Basislinie, dann wenige Ergebniszahlen und ein fester Entscheidungstermin. Wenn Sie diese Zahlen für Ihr Programm aufsetzen möchten, [schreiben Sie mir](#contact).
+Messen Sie den KI-Nutzen wie jede andere Investition: erst die Basislinie, dann wenige Ergebniszahlen und ein fester Entscheidungstermin.

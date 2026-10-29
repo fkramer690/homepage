@@ -111,4 +111,4 @@ Whether SAP or Salesforce should calculate dealer and contract prices at all is 
 
 Write down your pricing logic as steps before anyone opens the builder: which price is the starting point, which discounts follow in which order, which ones need approval. That list becomes the procedure and the first regression cases at the same time. How pricing fits together with catalog and configurator is explained in the chapter [catalog, configurator, pricing](../../masterclass/revenue-cloud/product-catalog-configurator-pricing/) of the Revenue Cloud masterclass, and approvals in [discount approvals in Revenue Cloud](../revenue-cloud-discount-approvals/).
 
-Pricing procedures make every price explainable, as long as someone owns the logic and tests each change. If you want to check that for your pricing, [send me a message](#contact).
+Pricing procedures make every price explainable, as long as someone owns the logic and tests each change.

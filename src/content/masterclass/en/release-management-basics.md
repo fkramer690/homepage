@@ -63,7 +63,6 @@ I have worked in a programme with eight teams and 32 developers, on orgs where s
 
 A typical scenario, as an assumption: a machinery manufacturer runs Service Cloud with Field Service, a dealer portal on Experience Cloud and an SAP interface. Three partners work on the same org, one each for service, sales with the portal, and integration. On Friday evening the sales partner deploys a new validation rule on the order object with a change set. It is correct in the partner's sandbox, but it does not know a field the integration partner introduced two weeks earlier. On Monday the nightly order handover from SAP fails, dealers see no delivery dates, and the service team has to postpone its own UAT run because the org is unstable. None of these costs shows up as its own line in the project budget. A validation deployment against the shared state in the repository would have shown the conflict before the merge.
 
-
 ## Why are change sets no longer enough?
 
 Change sets are the standard tool many orgs start with, and for a single admin they are fine. According to [Salesforce Help](https://help.salesforce.com/apex/HTViewHelpDoc?id=changesets.htm), they need a deployment connection, which only exists between orgs affiliated with the same production org. They contain only changes you can make in Setup, no records, and they are deployed as a whole. For a programme with several partners the decisive things are missing:
@@ -150,4 +149,4 @@ Six questions are enough for a first assessment. You should be able to answer ea
 
 If you hesitate on more than two of them, your programme is at stage 1 or 2. Then settle ownership and roles first and the tool after that. The path continues in [chapter 2: ownership and roles](../release-process-ownership-roles/).
 
-A Salesforce programme with several partners stays predictable only when you own the release process and every change takes the same route. If you want to know which stage your programme is at, [send me a message](#contact).
+A Salesforce programme with several partners stays predictable only when you own the release process and every change takes the same route.

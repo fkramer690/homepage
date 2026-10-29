@@ -123,4 +123,4 @@ Hand over | internal owner
 
 How to anchor new rules in daily work is described under [Salesforce change management consulting](../../services/change-management-salesforce/), and how the call keeps standards in place with partners in [Reinforcement: making standards stick with partners](../partner-standards-reinforcement/). The overall frame for several partners is under [partner governance](../../services/partner-governance/).
 
-A Center of Excellence works when it starts small, belongs to the client and its decisions show up in reviews. If you are setting up a CoE right now or yours has turned into a talking shop, [send me a message](#contact).
+A Center of Excellence works when it starts small, belongs to the client and its decisions show up in reviews.

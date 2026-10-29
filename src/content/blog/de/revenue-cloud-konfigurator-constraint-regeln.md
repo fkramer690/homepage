@@ -117,4 +117,4 @@ Meine Empfehlung in diesem Fall: Die beiden Excel-Linien gehen in Constraint-Mod
 
 Das ganze Kapitel steht im Masterclass-Teil [Katalog, Konfigurator, Preise](../../masterclass/revenue-cloud/produktkatalog-konfigurator-preise/), und wie Hersteller konfigurierte Produkte in ein Sales Agreement übernehmen, beschreibt [vom Angebot zum Sales Agreement](../angebot-zu-sales-agreement-produktkonfigurator/). Das führende System für Regeln zwischen SAP und Salesforce festzulegen gehört zu meiner Arbeit in der [Salesforce-Architektur](../../leistungen/salesforce-architektur/).
 
-Constraint-Regeln lohnen sich, wenn die Regeln ein Zuhause und einen Verantwortlichen haben, ob dieses Zuhause Revenue Cloud ist oder nicht. Wenn Sie den Konfigurator gegen Ihre heutige Lösung abwägen, [schreiben Sie mir](#contact).
+Constraint-Regeln lohnen sich, wenn die Regeln ein Zuhause und einen Verantwortlichen haben, ob dieses Zuhause Revenue Cloud ist oder nicht.

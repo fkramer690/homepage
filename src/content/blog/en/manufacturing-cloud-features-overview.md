@@ -125,4 +125,4 @@ Only two of the six points are settled by the edition in the quote. The other fo
 
 This list is the first half of chapter 1 of the [Manufacturing Cloud masterclass](../../masterclass/manufacturing-cloud/scope-and-business-case/). Weighing the features against a custom build is part of my work on [make-or-buy and licence forecasts](../../services/make-or-buy-licences/).
 
-Manufacturing Cloud contains a lot, but only what is named in the quote and switched on in the org helps your business case. If you have a quote on the table and want it checked feature by feature, [send me a message](#contact).
+Manufacturing Cloud contains a lot, but only what is named in the quote and switched on in the org helps your business case.

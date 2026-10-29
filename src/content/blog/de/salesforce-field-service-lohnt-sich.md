@@ -104,4 +104,4 @@ Danach kommt die Frage nach den Daten. Field Service plant nur so gut, wie Anlag
 
 Erheben Sie die vier Zahlen für einen Monat und eine Region. Zeigen sie viele kurze Einsätze mit viel Fahrzeit, rechnen Sie den Business Case für Field Service mit Lizenzen, Umsetzung und Wartung über mehrere Jahre. Wie die Einführung danach Region für Region abläuft, beschreibe ich in [Salesforce Field Service Einführung: Warum in Wellen?](../salesforce-field-service-einfuehrung/). Zeigen sie wenige lange Einsätze, prüfen Sie zuerst, ob Service Cloud, ein Portal oder das ERP die Lücke schließen. Was die mobile App heute für Techniker kann, steht in [Field Service Mobile im Außendienst](../salesforce-field-service-mobile-aussendienst/).
 
-Field Service lohnt sich, wenn Ihr Außendienst viele kurze Termine fährt, und selten, wenn er lange Projekte betreut. Wenn Sie vor dieser Entscheidung stehen und eine unabhängige Einschätzung möchten, [schreiben Sie mir](#contact).
+Field Service lohnt sich, wenn Ihr Außendienst viele kurze Termine fährt, und selten, wenn er lange Projekte betreut.

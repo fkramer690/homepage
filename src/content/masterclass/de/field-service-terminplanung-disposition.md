@@ -144,4 +144,4 @@ Policies, Work Rules, Arbeitszeiten und Gebiete sind Datensätze und keine Metad
 
 Wo das Planungsdesign ERP, Projektwerkzeuge und Partner berührt, unterstütze ich bei der [Salesforce-Architektur](../../../leistungen/salesforce-architektur/). Der nächste Schritt für die Techniker ist die App: [Kapitel 3](../field-service-mobile-app-dokumente/) behandelt Offline-Daten, Formulare und Serviceberichte, die [Übersicht](../) zeigt alle Kapitel.
 
-Gute Terminplanung im Field Service beginnt mit sauberen Daten und einer verantwortlichen Person für die Policies, Engine, Konsole und Agenten bauen darauf auf. Wenn Sie Ihre Terminplanung unabhängig prüfen lassen möchten, [schreiben Sie mir](#contact).
+Gute Terminplanung im Field Service beginnt mit sauberen Daten und einer verantwortlichen Person für die Policies, Engine, Konsole und Agenten bauen darauf auf.

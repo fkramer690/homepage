@@ -88,4 +88,4 @@ Three signs show it. Reviewers comment on the same points less often, because th
 
 Look at the review comments of the last two months and count which remarks repeat. Every remark that can be checked automatically goes into the pipeline, with a clear error message that names the standard. For the rest, set up a fixed call with the technical leads. And plan from the start who on the client side takes over the standards when the project ends.
 
-Standards are anchored when they hold even without the person who introduced them. If you want to bring several partners onto one line, [send me a message](#contact) or read more about [partner governance](../../services/partner-governance/).
+Standards are anchored when they hold even without the person who introduced them. Read more about [partner governance](../../services/partner-governance/).

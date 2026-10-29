@@ -102,4 +102,4 @@ Schreiben Sie drei Dinge auf, bevor Sie mit Salesforce über Lizenzen sprechen: 
 
 Das Gesamtbild zu Preisen, Angeboten und Checkout steht im Kapitel [Preise, Warenkorb, Checkout](../../masterclass/b2b-commerce/preise-warenkorb-checkout/) der [Masterclass B2B Commerce](../../masterclass/b2b-commerce/). Wie Käufer aus dem Warenkorb ein Angebot machen, zeigt [Request for Quote im B2B-Shop](../request-for-quote-b2b-shop-angebot/), die Händlerseite von KI-Angeboten [KI-Angebote mit dem Partner Sales Assistant](../ki-angebote-haendler-partner-sales-assistant/).
 
-Advanced Pricing lohnt sich, wenn der Shop so rechnen soll, wie der Vertrieb es in Revenue Cloud schon tut. Wenn Sie das für Ihre Preisfindung prüfen möchten, [schreiben Sie mir](#contact).
+Advanced Pricing lohnt sich, wenn der Shop so rechnen soll, wie der Vertrieb es in Revenue Cloud schon tut.

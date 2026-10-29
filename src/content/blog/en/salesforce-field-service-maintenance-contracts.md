@@ -99,4 +99,4 @@ Fourth: settle the line to warranty. Whether a visit runs under warranty, under 
 
 Take your three most common contract types and write down for each what the customer bought, which maintenance is planned and which response time is committed. Service contracts, maintenance plans and entitlements follow almost by themselves. Then decide which priority each commitment gets in scheduling.
 
-The next part of the series covers service partners and subcontractors. If you want an independent look at translating your contracts into Field Service before then, [get in touch](#contact).
+The next part of the series covers service partners and subcontractors.

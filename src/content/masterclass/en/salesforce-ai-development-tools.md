@@ -160,4 +160,4 @@ In this scenario the question of which agent is answered quickly. The time goes 
 
 On its [product page](https://www.salesforce.com/agentforce/developers/vibe-coding/) Salesforce says teams can "innovate up to 95% faster" with Vibes. The page cites no study. Measure the effect in your own programme, as described in [chapter 9](../teamwork-and-delivery/), and look next at [chapter 3](../mcp-and-interfaces/) for the interfaces these tools use to reach your org.
 
-Choose the coding agent by org location and licence, and put quality into Agent Script, tests and a pipeline that you own. If you want a second opinion on your tool choice or your partner's licence calculation, [send me a message](#contact).
+Choose the coding agent by org location and licence, and put quality into Agent Script, tests and a pipeline that you own.

@@ -149,4 +149,4 @@ Am Ende des Jahres laufen drei Agenten, alle mit denselben Regeln: eigener Nutze
 
 Welche Regeln in Ihren Agenten gehören und welche im ERP bleiben, kläre ich auf Kundenseite in der [Salesforce-Architektur](../../../leistungen/salesforce-architektur/), die ERP-Anbindung in [Salesforce-Schnittstellen](../../../leistungen/salesforce-schnittstellen/). Alle Kapitel finden Sie in der [Übersicht der Masterclass](../).
 
-Starten Sie mit dem Agenten, dessen Regeln und Daten schon stehen, und behandeln Sie ihn vom ersten Tag an wie Code mit Tests und eigenen Rechten. Wenn Sie eine zweite Meinung zu Ihrem Fahrplan möchten, [schreiben Sie mir](#contact).
+Starten Sie mit dem Agenten, dessen Regeln und Daten schon stehen, und behandeln Sie ihn vom ersten Tag an wie Code mit Tests und eigenen Rechten.

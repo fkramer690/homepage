@@ -163,4 +163,4 @@ Damit das klappt, legt der Kunde diese Punkte selbst fest, bevor der Partner kon
 
 Wer heute noch das alte Salesforce-Billing-Paket nutzt, muss zusätzlich offene Rechnungen, Abrechnungspläne und Zahlungshistorie umziehen. Diese Migration gehört zu [Kapitel 5, von CPQ zu Revenue Cloud](../von-cpq-zu-revenue-cloud/).
 
-Revenue Cloud Billing lohnt sich dort, wo sich Verträge schneller ändern, als SAP folgen kann, und wo diese Grenze verläuft, entscheidet Finance. Wenn Sie diese Grenze für Ihr Unternehmen prüfen möchten, [schreiben Sie mir](#contact).
+Revenue Cloud Billing lohnt sich dort, wo sich Verträge schneller ändern, als SAP folgen kann, und wo diese Grenze verläuft, entscheidet Finance.

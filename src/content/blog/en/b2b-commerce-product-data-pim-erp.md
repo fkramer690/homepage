@@ -115,4 +115,4 @@ All of this gets fixed in the product data and in the search setup, which I cove
 
 Take a sample of 200 typical spare parts from the ERP and check each one against the list above: is there a usable name, a picture, the attributes a dealer would filter by, a clean sales status? The result shows how much data work comes before the store. Then write the ownership table for product fields and add it to the interface list. Which data flows from SAP to the store and how often is covered in [B2B Commerce and SAP data flows](../b2b-commerce-sap-data-flows/), and the whole topic sits in the [chapter on catalogue, search and entitlements](../../masterclass/b2b-commerce/catalog-search-entitlements/) of my B2B Commerce masterclass. Designing such interfaces is part of my work on [Salesforce integration](../../services/salesforce-integration/).
 
-A B2B store is only as good as the product data the ERP and PIM deliver to it. If you want to check your product data before a store project starts, [send me a message](#contact).
+A B2B store is only as good as the product data the ERP and PIM deliver to it.

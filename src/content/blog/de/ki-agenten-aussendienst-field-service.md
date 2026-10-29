@@ -112,4 +112,4 @@ Betriebsrat früh einbinden
 
 Ob das Add-on oder Agentforce 1 Field Service die bessere Wahl ist, ist eine Lizenzfrage, die ich in [Make-or-buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/) kläre. Zur grundsätzlichen Entscheidung über Agenten lesen Sie [Agentforce für Hersteller: jetzt starten oder warten?](../agentforce-ja-oder-nein-hersteller/). Wie Sie Agenten im Außendienst Schritt für Schritt einführen, steht in [Kapitel 5 der Masterclass Field Service](../../masterclass/field-service/field-service-ki-agenten-einfuehrung/).
 
-Starten Sie mit dem Agenten, der geplante Wartungen bucht, und lassen Sie den Einsatzbericht folgen, sobald die Felder dahinter sauber sind. Wenn Sie eine zweite Meinung möchten, welche Funktion zu Ihrem Außendienst passt, [schreiben Sie mir](#contact).
+Starten Sie mit dem Agenten, der geplante Wartungen bucht, und lassen Sie den Einsatzbericht folgen, sobald die Felder dahinter sauber sind.

@@ -160,4 +160,4 @@ In diesem Szenario ist die Frage nach dem Agenten schnell beantwortet. Zeit kost
 
 Salesforce wirbt auf der [Produktseite](https://www.salesforce.com/agentforce/developers/vibe-coding/) damit, Teams könnten mit Vibes „up to 95% faster“ innovieren. Eine Studie dazu nennt die Seite nicht. Messen Sie den Effekt in Ihrem eigenen Programm, wie in [Kapitel 9](../teamarbeit-und-delivery/) beschrieben, und sehen Sie sich als Nächstes in [Kapitel 3](../mcp-und-schnittstellen/) an, über welche Schnittstellen diese Werkzeuge auf Ihre Org zugreifen.
 
-Wählen Sie den Coding-Agenten nach Standort und Lizenz, und legen Sie die Qualität in Agent Script, Tests und Pipeline, die Ihnen gehören. Wenn Sie Ihre Werkzeugwahl oder die Lizenzrechnung Ihres Partners gegenprüfen lassen möchten, [schreiben Sie mir](#contact).
+Wählen Sie den Coding-Agenten nach Standort und Lizenz, und legen Sie die Qualität in Agent Script, Tests und Pipeline, die Ihnen gehören.

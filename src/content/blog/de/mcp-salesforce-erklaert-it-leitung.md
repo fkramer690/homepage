@@ -115,4 +115,4 @@ Hosted MCP Servers sind für eine Person gebaut, die mit einem KI-Werkzeug arbei
 
 Welche Schnittstelle zu welchem Konsumenten passt, unter welcher Identität, gehört zu meiner Arbeit an [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).
 
-MCP macht Salesforce für jedes KI-Werkzeug erreichbar, und Ihre Entscheidungen zu Servern, Benutzern, Daten und Clients bestimmen, ob das Ihrem Service hilft oder Ihre Daten offenlegt. Wenn Sie eine zweite Meinung zu Ihren ersten MCP-Anfragen möchten, [schreiben Sie mir](#contact).
+MCP macht Salesforce für jedes KI-Werkzeug erreichbar, und Ihre Entscheidungen zu Servern, Benutzern, Daten und Clients bestimmen, ob das Ihrem Service hilft oder Ihre Daten offenlegt.

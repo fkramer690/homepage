@@ -128,4 +128,4 @@ This list is a commercial checklist, not legal advice. Have the contract itself 
 
 Comparing licence models over several years is part of my [make-or-buy and licence planning](../../services/make-or-buy-licences/), on the client side and without a stake in the deal.
 
-An AELA buys a known price for two or three years, and the renewal clause decides what the year after costs. If you have an AELA offer on the table and want an independent view, [send me a message](#contact).
+An AELA buys a known price for two or three years, and the renewal clause decides what the year after costs.

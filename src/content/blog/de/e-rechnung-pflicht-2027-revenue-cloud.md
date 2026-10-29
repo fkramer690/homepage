@@ -93,4 +93,4 @@ Die Pflicht gilt schon, wenn die erste Billing-Rechnung rausgeht, für den neuen
 
 Die Kostenseite der Fakturierung aus Salesforce steht in [Revenue Cloud Billing: Kosten](../revenue-cloud-billing-kosten/), und das Masterclass-Kapitel [Abrechnung und nutzungsbasierte Preise](../../masterclass/revenue-cloud/abrechnung-und-nutzungsbasierte-preise/) ordnet die E-Rechnung in den gesamten Quote-to-Cash-Prozess ein.
 
-Verlassen ab 2027 Rechnungen Revenue Cloud Billing, brauchen sie vom ersten Tag an einen strukturierten Weg nach EN 16931, also klären Sie ihn vor dem Go-live. Wenn Sie Ihren Weg prüfen möchten, [schreiben Sie mir](#contact).
+Verlassen ab 2027 Rechnungen Revenue Cloud Billing, brauchen sie vom ersten Tag an einen strukturierten Weg nach EN 16931, also klären Sie ihn vor dem Go-live.

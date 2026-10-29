@@ -115,4 +115,4 @@ Nehmen wir einen Maschinenbauer mit 90 Händlern, einem Agentforce-Serviceagente
 
 Ein Log-Inventar mit Verantwortlichen gehört zu meiner Arbeit in der [Salesforce-Architektur](../../leistungen/salesforce-architektur/).
 
-Agenten treffen Entscheidungen in Ihrer Org, also brauchen die Logs, die diese Entscheidungen erklären, einen Verantwortlichen und eine Aufbewahrungsdauer, bevor die erste Prüferin fragt. Wenn Sie Ihr Log-Inventar vor dem Go-live eines Agenten durchgehen möchten, [schreiben Sie mir](#contact).
+Agenten treffen Entscheidungen in Ihrer Org, also brauchen die Logs, die diese Entscheidungen erklären, einen Verantwortlichen und eine Aufbewahrungsdauer, bevor die erste Prüferin fragt.

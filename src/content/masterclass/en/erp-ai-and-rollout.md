@@ -145,4 +145,4 @@ My test per release is deliberately small: one forecast regeneration, one actual
 
 This chapter closes the masterclass. It assumes the decisions from the business case, agreements, dealer channel and warranty, and settles what they need in operation and across many countries. Before it came [chapter 4 on warranty and after-sales](../warranty-and-after-sales/), and all five chapters are on the [overview page](../).
 
-Manufacturing Cloud is only as good as the SAP data it receives, and a rollout only as good as the template that holds in the first large country. If you want an independent review of your interfaces, agents or rollout order, [send me a message](#contact).
+Manufacturing Cloud is only as good as the SAP data it receives, and a rollout only as good as the template that holds in the first large country.

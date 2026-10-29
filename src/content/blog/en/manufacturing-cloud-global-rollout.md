@@ -114,4 +114,4 @@ Before the first country is planned, settle five points:
 4. **The order.** A table with processes, business units, IT systems and brands per country.
 5. **Change management.** Key users, communication and usage per country, planned from the start.
 
-A global rollout succeeds when the template is tested under real load early and every further country changes only a little. If you are planning a Manufacturing Cloud rollout across several countries, [send me a message](#contact).
+A global rollout succeeds when the template is tested under real load early and every further country changes only a little.

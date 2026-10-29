@@ -125,4 +125,4 @@ Bevor das erste Forecast Set konfiguriert wird, klären Sie vier Punkte:
 3. **Rhythmus.** Wer passt wann an, abgestimmt mit der Planung in Produktion und Einkauf.
 4. **Führende Zahl.** Welche Prognose gilt, und wie kommt sie ins ERP?
 
-Account Forecasting ist eine gute Absatzprognose, wenn die Daten aus dem ERP stimmen und klar ist, wo die Planung übernimmt. Wenn Sie gerade bewerten, ob die Funktion zu Ihrem Vertrieb passt, [schreiben Sie mir](#contact).
+Account Forecasting ist eine gute Absatzprognose, wenn die Daten aus dem ERP stimmen und klar ist, wo die Planung übernimmt.

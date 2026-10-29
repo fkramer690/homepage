@@ -109,4 +109,4 @@ None of this stops a vendor from losing your tokens. It decides what a stolen to
 
 Start with the AI tools, because they are the newest and least reviewed: mark every app that sends Salesforce data to a model and check user, scopes and token policy for those first. Their second risk is [prompt injection in dealer portals](../prompt-injection-dealer-portals-agentforce/). An inventory of interfaces with named owners is part of my [Salesforce integration work](../../services/salesforce-integration/).
 
-Every connected app is a key to your org held by someone else, so give each one an owner, a narrow user and an expiry date. If you want a second look at your connected apps before the next AI tool goes live, [send me a message](#contact).
+Every connected app is a key to your org held by someone else, so give each one an owner, a narrow user and an expiry date.

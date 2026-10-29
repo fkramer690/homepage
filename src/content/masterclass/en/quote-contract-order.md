@@ -148,4 +148,4 @@ Before a partner builds the first quote layout, I would settle these points in w
 | Order | DRO or a plain integration, who works the fallout queue, which checks run before activation. |
 | Assets | Counted or tied to a serial number, and who owns the Asset object. |
 
-All chapters are on the [overview page](../). Revenue Cloud carries the path from quote to order well when every change runs through a quote and an order and the hand-over to SAP is fixed up front. If you want to work through these decisions for your company, [send me a message](#contact).
+All chapters are on the [overview page](../). Revenue Cloud carries the path from quote to order well when every change runs through a quote and an order and the hand-over to SAP is fixed up front.

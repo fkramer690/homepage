@@ -194,4 +194,4 @@ Zum Vergleich: Die 80 Core-Lizenzen kosten zum Listenpreis 187.200 € im Jahr. 
 
 Diese Fragen gehören zu meiner Arbeit in [Make-or-buy und Lizenzprognosen](../../../leistungen/make-or-buy-lizenzen/). Alle Kapitel der Masterclass finden Sie auf der [Übersichtsseite](../).
 
-KI-Kosten in Salesforce lassen sich gut planen, wenn Sie Tokens und Aktionen getrennt rechnen und die offenen Zähler offen benennen. Wenn Sie Ihre Schätzung oder ein Partnerangebot mit KI-Anteil prüfen lassen möchten, [schreiben Sie mir](#contact).
+KI-Kosten in Salesforce lassen sich gut planen, wenn Sie Tokens und Aktionen getrennt rechnen und die offenen Zähler offen benennen.

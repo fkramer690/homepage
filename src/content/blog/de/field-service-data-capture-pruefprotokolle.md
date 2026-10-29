@@ -108,4 +108,4 @@ Voice to Form ergänzen
 
 Formulare, Offline-Daten und Servicebericht bilden zusammen [Kapitel 3 der Masterclass Field Service](../../masterclass/field-service/field-service-mobile-app-dokumente/).
 
-Ein Papierprotokoll wird zu nutzbaren Daten, wenn Sie zuerst festlegen, welche Antworten Felder werden, und erst dann das Formular bauen. Wenn Sie Prüfprotokolle im Außendienst ablösen wollen, [schreiben Sie mir](#contact).
+Ein Papierprotokoll wird zu nutzbaren Daten, wenn Sie zuerst festlegen, welche Antworten Felder werden, und erst dann das Formular bauen.

@@ -103,4 +103,4 @@ Die Konfiguration dafür, also die Einstellung pro Gebiet, Scheduling Policies u
 
 Fangen Sie mit drei Listen an: Termine ohne Servicegebiet, Work Rules, die häufig leere Felder lesen, und genutzte Recipes. Sie zeigen, wie viel Arbeit der Wechsel macht. Wählen Sie dann das Gebiet mit den saubersten Daten als Pilot. Wie die Engine in die gesamte Disposition passt, steht im Masterclass-Kapitel [Terminplanung und Disposition](../../masterclass/field-service/field-service-terminplanung-disposition/).
 
-Für eine Org mit der älteren Engine ist der Wechsel fällig, sobald die Daten sauber sind, weil die neue Konsole und die höheren Limits nur mit ihm kommen. Wenn Sie vor dem Wechsel einen unabhängigen Blick auf Ihre Terminplanung möchten, [schreiben Sie mir](#contact).
+Für eine Org mit der älteren Engine ist der Wechsel fällig, sobald die Daten sauber sind, weil die neue Konsole und die höheren Limits nur mit ihm kommen.

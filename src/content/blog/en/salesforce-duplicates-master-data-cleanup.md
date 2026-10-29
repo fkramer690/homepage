@@ -97,4 +97,4 @@ So I recommend one responsible person on the client side per country and per obj
 
 Create a matching rule for accounts and run the report. The number of possible pairs among your hundred most important customers says more about the state of your data than any audit. Then define the leading system and key per object and switch the interface to upsert before you start merging.
 
-Clean master data is the precondition for every agent, every report and every technician on site. If you want your data checked before the next AI project, [send me a message](#contact).
+Clean master data is the precondition for every agent, every report and every technician on site.

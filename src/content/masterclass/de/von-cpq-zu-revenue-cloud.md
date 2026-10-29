@@ -170,4 +170,4 @@ Ein Hersteller von Dosieranlagen nutzt CPQ seit 2019: 45 Nutzer, die Angebote er
 
 Die linke Spalte gehört ins Entscheidungslog, bevor Sie Schätzungen anfragen. Mehrere Partner durch einen solchen Wechsel zu steuern, gehört zu meiner Arbeit in der [Partnersteuerung](../../../leistungen/partnersteuerung/), und eine [Object Ownership Matrix](../../../blog/object-ownership-matrix-salesforce/) hält Katalog, Preise und Assets nach dem Go-live zugeordnet. Dies ist das letzte Kapitel; [Kapitel 4](../abrechnung-und-nutzungsbasierte-preise/) behandelt Abrechnung und Nutzung, und alle Kapitel finden Sie auf der [Übersichtsseite](../).
 
-Der Wechsel von CPQ und Billing zu Revenue Cloud gelingt, wenn Sie ihn zur Verlängerung entscheiden und als Neuentwurf mit Ihren eigenen Entscheidungen vorab behandeln. Wenn Sie vor dieser Entscheidung einen unabhängigen Blick auf Ihre CPQ-Org möchten, [schreiben Sie mir](#contact).
+Der Wechsel von CPQ und Billing zu Revenue Cloud gelingt, wenn Sie ihn zur Verlängerung entscheiden und als Neuentwurf mit Ihren eigenen Entscheidungen vorab behandeln.

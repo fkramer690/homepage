@@ -136,4 +136,4 @@ Creating a store from the template is the smallest part of the project. The deci
 
 These four points belong in a short document that you own, not the partner. How I support architecture decisions of this kind on the client side is described under [Salesforce architecture](../../../services/salesforce-architecture/). An independent review of quote and licence plan is part of [make or buy and licences](../../../services/make-or-buy-licences/). Continue with [chapter 2 on catalogue, search and entitlements](../catalog-search-entitlements/); all chapters are on the [overview page](../).
 
-A B2B store on Salesforce pays off when dealers reorder known parts in volume and you have settled prices, stock and ERP calls before the build. If you want to check whether that applies to your dealers, [send me a message](#contact).
+A B2B store on Salesforce pays off when dealers reorder known parts in volume and you have settled prices, stock and ERP calls before the build.

@@ -111,4 +111,4 @@ Start with the machine page
 
 The chapter [catalogue, search and entitlements](../../masterclass/b2b-commerce/catalog-search-entitlements/) of the [B2B Commerce masterclass](../../masterclass/b2b-commerce/) places this in the store design; which system leads for which data is the subject of [Salesforce integration](../../services/salesforce-integration/).
 
-A spare parts shop shows the right parts per machine only as reliably as your serial numbers lead to an as-built list, so if you want to check that before a partner builds a component, [send me a message](#contact).
+A spare parts shop shows the right parts per machine only as reliably as your serial numbers lead to an as-built list.

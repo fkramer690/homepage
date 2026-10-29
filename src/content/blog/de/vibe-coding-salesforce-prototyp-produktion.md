@@ -115,4 +115,4 @@ Die Produktivumsetzung startet deshalb im Repository: drei User Stories, jede mi
 4. **Pläne sichtbar machen.** Lassen Sie Ihren Partner den freigegebenen Plan an den Pull Request hängen.
 5. **Die Pipeline selbst besitzen.** Sie für Programme mit mehreren Partnern aufzusetzen, ist der Kern meiner Arbeit in [DevOps und Release-Management](../../leistungen/devops-und-release-management/).
 
-Nutzen Sie Vibe Coding für bessere Anforderungen aus dem Workshop und agentic engineering für Code in Ihrer Org. Wenn Sie diese Übergabe für Ihr Programm aufsetzen möchten, [schreiben Sie mir](#contact).
+Nutzen Sie Vibe Coding für bessere Anforderungen aus dem Workshop und agentic engineering für Code in Ihrer Org.

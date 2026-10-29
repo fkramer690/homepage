@@ -99,4 +99,4 @@ Viertens: Klären Sie die Grenze zur Garantie. Ob ein Einsatz unter Garantie, Ve
 
 Nehmen Sie Ihre drei häufigsten Vertragsarten und schreiben Sie für jede auf, was der Kunde gekauft hat, welche Wartungen geplant sind und welche Reaktionszeit zugesagt ist. Daraus ergeben sich Service Contracts, Maintenance Plans und Entitlements fast von selbst. Danach legen Sie fest, welche Priorität jede Zusage in der Planung bekommt.
 
-Im nächsten Teil der Serie geht es um Servicepartner und Subunternehmer. Wenn Sie Ihre Verträge vorher mit einem unabhängigen Blick in Field Service übersetzen möchten, [schreiben Sie mir](#contact).
+Im nächsten Teil der Serie geht es um Servicepartner und Subunternehmer.

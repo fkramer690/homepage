@@ -153,4 +153,4 @@ Regressionsliste schreiben
 
 Alle fünf Kapitel finden Sie auf der [Übersichtsseite der Masterclass](../). Wer entscheiden muss, welche Daten zwischen ERP, PIM und Salesforce wem gehören, findet meine Unterstützung unter [Salesforce-Architektur](../../../leistungen/salesforce-architektur/).
 
-Ein B2B-Shop trägt, wenn die ersten Händler ihre Teile zu ihrem Preis beim ersten Versuch finden, und Agenten, Migration und Kennzahlen bauen auf genau diesem Fundament auf. Wenn Sie das für Ihre Händler planen, [schreiben Sie mir](#contact).
+Ein B2B-Shop trägt, wenn die ersten Händler ihre Teile zu ihrem Preis beim ersten Versuch finden, und Agenten, Migration und Kennzahlen bauen auf genau diesem Fundament auf.

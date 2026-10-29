@@ -126,4 +126,4 @@ List prices are a starting point, and Salesforce is changing its edition model a
 
 Whether Revenue Cloud pays off at all is covered in [Revenue Cloud for manufacturers: when is it worth it?](../revenue-cloud-worth-it-manufacturers/), and the [overview chapter of the Revenue Cloud masterclass](../../masterclass/revenue-cloud/revenue-cloud-overview/) puts pricing next to the other decisions. Licence forecasts are part of my work in [make-or-buy and licence forecasts](../../services/make-or-buy-licences/).
 
-The list price per user matters less than the number of users and the add-ons you really need. If you have a Revenue Cloud quote on the table and want it checked independently, [send me a message](#contact).
+The list price per user matters less than the number of users and the add-ons you really need.

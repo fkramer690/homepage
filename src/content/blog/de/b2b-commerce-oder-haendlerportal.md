@@ -99,4 +99,4 @@ Und manchmal ist Salesforce gar nicht die Antwort. Hat das Unternehmen kein Sale
 
 Ziehen Sie die vier Zahlen für die letzten zwölf Monate: Bestellpositionen, Anteil mit Teilenummer, bestellende Händler, Anteil per Telefon und E-Mail. Sprechen sie für einen Store, folgen die Fragen, wem Preise und Bestand gehören, welche Käufergruppen Sie brauchen und welche ERP-Aufrufe live sein müssen. Sie stehen im [Masterclass-Kapitel zur Frage, ob sich B2B Commerce lohnt](../../masterclass/b2b-commerce/b2b-commerce-lohnt-sich-ueberblick/). Eine unabhängige Sicht auf Make or Buy gehört zu meiner Arbeit bei [Make-or-Buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/).
 
-Ein Shop lohnt sich, wenn Händler bekannte Teile in Menge nachbestellen, und ein Portal reicht, wenn sie vor allem Fragen haben. Wenn Sie prüfen möchten, was Ihre Händler brauchen, [schreiben Sie mir](#contact).
+Ein Shop lohnt sich, wenn Händler bekannte Teile in Menge nachbestellen, und ein Portal reicht, wenn sie vor allem Fragen haben.

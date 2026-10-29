@@ -113,4 +113,4 @@ Messen und entscheiden | 3 Monate
 
 Streams, Teamaufstellungen und die Fachbereichszeit dahinter zu planen, ist der Kern meiner [Programmsteuerung für Salesforce-Programme](../../leistungen/projektsteuerung-nearshore/).
 
-Kleinere Salesforce-Teams funktionieren, wenn der Hersteller seine eigenen Prozessexperten täglich in die Pods gibt. Wenn Sie prüfen möchten, ob Ihr Programm dafür bereit ist, [schreiben Sie mir](#contact).
+Kleinere Salesforce-Teams funktionieren, wenn der Hersteller seine eigenen Prozessexperten täglich in die Pods gibt.

@@ -96,4 +96,4 @@ After the handover one task remains for change management: the collected questio
 
 Before the next go-live, put three things in writing: who is on the hypercare team, how often it meets and on which criteria hypercare ends. Plan the person from support in from the start.
 
-A go-live is done when operations carries it without the project team. If a go-live is coming up and hypercare is not planned yet, [send me a message](#contact) or read more about [Salesforce change management consulting](../../services/change-management-salesforce/), which I offer with my cooperation partner [Juliane Winterscheid](../../partners/juliane-winterscheid/).
+A go-live is done when operations carries it without the project team. Read more about [Salesforce change management consulting](../../services/change-management-salesforce/).

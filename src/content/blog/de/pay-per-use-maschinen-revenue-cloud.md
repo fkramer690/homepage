@@ -121,4 +121,4 @@ In diesen Fällen schaue ich zuerst woanders hin:
 
 Wie Pay-per-Use neben klassischen Wartungsverträgen steht, beschreibe ich in [Wartungsverträge wiederkehrend abrechnen](../wartungsvertraege-wiederkehrend-abrechnen/), und das Kapitel [Abrechnung und nutzungsbasierte Preise](../../masterclass/revenue-cloud/abrechnung-und-nutzungsbasierte-preise/) ordnet beides ein.
 
-Pay-per-Use mit Revenue Cloud funktioniert, wenn Zähler und Vertrag sauber sind, denn Salesforce bewertet nur, was Sie liefern. Wenn Sie gerade ein Nutzungsmodell für Ihre Maschinen entwerfen, [schreiben Sie mir](#contact).
+Pay-per-Use mit Revenue Cloud funktioniert, wenn Zähler und Vertrag sauber sind, denn Salesforce bewertet nur, was Sie liefern.

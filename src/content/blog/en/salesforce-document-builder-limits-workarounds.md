@@ -91,5 +91,3 @@ The flows in limits 2 and 3 run on the server after the next sync. That is the r
 - **Keep the flows in one place.** One flow for defaults, one for renaming and email. Then an admin can find and change the rules.
 - **Build the LWCs as a small library.** Divider, related list, maybe a header with the logo. Reusable in every template.
 - **Test offline with real devices.** Including the preview, on iOS and Android, before the first technician goes live.
-
-If you are planning a Field Service rollout and want to get the service report right from the start, look at my [services](../../services/) or [send me a message](#contact).

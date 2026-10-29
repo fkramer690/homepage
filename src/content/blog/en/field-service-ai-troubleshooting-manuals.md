@@ -124,4 +124,4 @@ Test with real faults
 
 The document model outlives any agent version, so I treat it as part of [Salesforce architecture](../../services/salesforce-architecture/). The wider picture is in the masterclass chapter [AI agents in manufacturing](../../masterclass/ai-salesforce/ai-agents-in-manufacturing/).
 
-The troubleshooting agent is only as precise as the link between manual and serial number, so build that link before you switch the agent on. If you want a second opinion on your document model, [send me a message](#contact).
+The troubleshooting agent is only as precise as the link between manual and serial number, so build that link before you switch the agent on.

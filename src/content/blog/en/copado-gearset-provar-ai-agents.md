@@ -129,4 +129,4 @@ I would put these questions to any DevOps vendor selling an AI agent and get the
 
 The last two follow from two rules: the client should [own the DevOps tools](../why-clients-should-own-their-devops-tools/), and the same terms belong in [partner contracts for AI coding](../partners-using-ai-coding-contract-rules/). Setting this up is part of my [DevOps and release management](../../services/devops-release-management/) work; the wider tool choice is in [chapter 4 of the AI masterclass](../../masterclass/ai-salesforce/external-coding-agents/).
 
-A DevOps AI agent is worth paying for once the vendor answers the model, region and retention questions in writing and a pilot in your own org beats your current setup. If you want a second opinion before signing an Agentia or Cam order, [send me a message](#contact).
+A DevOps AI agent is worth paying for once the vendor answers the model, region and retention questions in writing and a pilot in your own org beats your current setup.

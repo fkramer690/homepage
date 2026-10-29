@@ -114,4 +114,4 @@ SOAP versions | spring 2027
   Move remaining SOAP logins away from API versions below 65.0 before Summer '27.
 ```
 
-The deadline is fixed and the work is predictable, as long as it starts with a complete list. If you want help with the inventory or a second opinion on your integration architecture, [send me a message](#contact).
+The deadline is fixed and the work is predictable, as long as it starts with a complete list.
