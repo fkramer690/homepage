@@ -6,7 +6,7 @@ lang: en
 slug: partner-governance
 translationKey: service-partner-governance
 contactBrief: partner-governance
-order: 2
+order: 7
 lead: "When several implementation partners work on one Salesforce org, every partner delivers its part and nobody owns the whole. I set up one common governance and release framework on the client side and review what partners deliver, before it gets expensive."
 situations:
   - "Several partners and internal teams work on the same org, and changes overwrite each other because nobody coordinates who deploys what and when."

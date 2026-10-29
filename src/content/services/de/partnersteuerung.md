@@ -6,7 +6,7 @@ lang: de
 slug: partnersteuerung
 translationKey: service-partner-governance
 contactBrief: partner-governance
-order: 2
+order: 7
 lead: "Arbeiten mehrere Umsetzungspartner an einer Salesforce-Org, liefert jeder seinen Teil und niemand verantwortet das Ganze. Ich setze auf Kundenseite einen gemeinsamen Governance- und Release-Rahmen auf und prüfe, was Partner liefern, bevor es teuer wird."
 situations:
   - "Mehrere Partner und interne Teams arbeiten an derselben Org, und Änderungen überschreiben sich, weil niemand abstimmt, wer was wann deployt."

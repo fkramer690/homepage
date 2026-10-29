@@ -72,8 +72,8 @@ export const en = {
         text: 'Target architecture and solution design for complex Salesforce landscapes with several clouds, portals and integrations.',
       },
       {
-        title: 'Partner steering & governance',
-        text: 'One common governance and release framework across several implementation partners – and someone who actually reviews the deliveries.',
+        title: 'Change management',
+        text: 'Introduce new processes and releases so that business teams, developers and partners use them in daily work, based on Prosci and ADKAR.',
       },
       {
         title: 'DevOps & release management',
@@ -92,8 +92,8 @@ export const en = {
         text: 'Should this be built in Salesforce at all? Best-of-breed alternatives and license costs, assessed before the decision is made.',
       },
       {
-        title: 'Change management',
-        text: 'Embed new processes and Salesforce in the daily work of the business teams.',
+        title: 'Partner steering & governance',
+        text: 'One common governance and release framework across several implementation partners – and someone who actually reviews the deliveries.',
       },
     ],
     more: 'Learn more',
@@ -104,7 +104,7 @@ export const en = {
     moreItems: [
       { order: 5, text: 'Plan and steer programmes, coordinate nearshore teams.' },
       { order: 6, text: 'Does it belong in Salesforce? Alternatives and license costs assessed first.' },
-      { order: 7, text: 'Embed new processes and Salesforce in the daily work of the business teams.' },
+      { order: 7, text: 'Steer several implementation partners by common rules and review their deliveries.' },
     ],
     focusLabel: 'Focus areas',
     focus: [
@@ -311,7 +311,7 @@ export const en = {
         linkedin: 'https://www.linkedin.com/in/juliane-winterscheid-4794b8115/',
         photo: 'juliane-winterscheid',
         photoAlt: 'Juliane Winterscheid presenting to a team',
-        service: 7,
+        service: 2,
         serviceLink: 'Change management with me',
         profile: 'partners/juliane-winterscheid/',
         profileLink: 'Profile and references',

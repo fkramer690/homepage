@@ -7,10 +7,10 @@ slug: change-management
 translationKey: service-change
 contactBrief: change
 section: change-management
-order: 7
+order: 2
 note: "Dieses Vorgehen habe ich gemeinsam mit Juliane Winterscheid erarbeitet, meiner Kooperationspartnerin für Change Management. Juliane ist Prosci-zertifiziert."
 notePartner: "Juliane Winterscheid"
-lead: "Ein neues Salesforce-Release ist schnell ausgerollt. Ob Fachbereiche, Entwicklerteams und Partner danach anders arbeiten, ist eine andere Frage. Ich plane die Einführung neuer Prozesse und Standards auf Kundenseite nach dem Vorgehen von Prosci und dem ADKAR-Modell, damit sie im Alltag ankommen und dort bleiben."
+lead: "Ein neues Salesforce-Release ist schnell ausgerollt. Ob Fachbereiche, Entwicklerteams und Partner danach anders arbeiten, ist eine andere Frage. Gemeinsam mit Juliane Winterscheid plane ich die Einführung neuer Prozesse und Standards nach Prosci und ADKAR, damit sie im Alltag ankommen und bleiben."
 situations:
   - "Salesforce ist live, aber Teile der Fachbereiche arbeiten weiter mit Excel, E-Mail und eigenen Listen."
   - "Schulungen sind gelaufen, die Nutzung bleibt trotzdem niedrig, und niemand weiß genau, woran es hängt."
@@ -52,7 +52,7 @@ faq:
 blogTags: [Change Management, Partnersteuerung, Governance, DevOps-Training, Release-Management]
 ---
 
-Change Management in einem Salesforce-Programm heißt, neue Prozesse, Standards und Releases so einzuführen, dass die Menschen, die damit arbeiten, sie auch nutzen. Das betrifft die Fachbereiche, die mit Salesforce ihren Alltag erledigen, genauso wie Entwicklerteams und Implementierungspartner, die nach gemeinsamen Regeln bauen sollen. Ich übernehme diese Arbeit auf Kundenseite, eng verbunden mit Architektur, Partnersteuerung und Release-Management, und orientiere mich dabei an Prosci.
+Change Management in einem Salesforce-Programm heißt, neue Prozesse, Standards und Releases so einzuführen, dass die Menschen, die damit arbeiten, sie auch nutzen. Das betrifft die Fachbereiche, die mit Salesforce ihren Alltag erledigen, genauso wie Entwicklerteams und Implementierungspartner, die nach gemeinsamen Regeln bauen sollen. Juliane Winterscheid und ich übernehmen diese Arbeit auf Kundenseite: Juliane begleitet die Menschen durch die Veränderung, ich sorge dafür, dass Architektur, Partnersteuerung und Releases dazu passen. Wenn auf dieser Seite „wir“ steht, sind wir beide gemeint. Wir orientieren uns an Prosci.
 
 ## Warum kommen neue Prozesse im Alltag nicht an?
 
@@ -82,7 +82,7 @@ Salesforce hilft beim Messen. Ob ein neuer Prozess genutzt wird, zeigen Berichte
 
 In meinem größten Programm arbeiteten über 30 Entwickler in acht Streams mit fünf Implementierungspartnern. Gemeinsame Standards für Namenskonventionen, Automatisierung je Objekt, Testabdeckung und eine [Object Ownership Matrix](../../blog/object-ownership-matrix-salesforce/) brauchten etwa drei Monate, bis sie gelebt wurden.
 
-Die erste Version deckte rund 80 Prozent der Fälle ab. Die Randfälle kamen Schritt für Schritt dazu, wenn sie im Projekt auftauchten. Später brachten wir neue Themen mit Vorlauf in regelmäßigen [Center-of-Excellence-Calls](../../blog/salesforce-center-of-excellence-format/) auf den Tisch, bevor sie zum Problem wurden. Irgendwann kamen kaum noch neue Randfälle hinzu. Wie die Regeln für mehrere Partner aussehen, beschreibe ich unter [Partnersteuerung](../partnersteuerung/).
+Die erste Version deckte rund 80 Prozent der Fälle ab. Die Randfälle kamen Schritt für Schritt dazu, wenn sie im Projekt auftauchten. Später brachten wir im Programm neue Themen mit Vorlauf in regelmäßigen [Center-of-Excellence-Calls](../../blog/salesforce-center-of-excellence-format/) auf den Tisch, bevor sie zum Problem wurden. Irgendwann kamen kaum noch neue Randfälle hinzu. Wie die Regeln für mehrere Partner aussehen, beschreibe ich unter [Partnersteuerung](../partnersteuerung/).
 
 ## Was ändert sich für Fachbereiche?
 
@@ -90,4 +90,4 @@ Mit einem sauberen Release-Prozess werden Releases kleiner und häufiger. Für F
 
 Prosci und ADKAR sind eingetragene Marken von Prosci, Inc. Die Prosci-Zertifizierung hat Juliane Winterscheid, nicht FK Solution Design, und FK Solution Design ist kein Partner von Prosci. Diese Seite beschreibt, wie wir Elemente des Vorgehens in Salesforce-Programmen anwenden.
 
-Wenn eine Einführung ansteht oder neue Prozesse nicht genutzt werden, [schreiben Sie mir](#contact) oder lesen Sie mehr [über mich](../../#about).
+Wenn eine Einführung ansteht oder neue Prozesse nicht genutzt werden, [schreiben Sie mir](#contact), und ich bringe Juliane in das erste Gespräch mit. Mehr zu meiner Person lesen Sie [über mich](../../#about).
