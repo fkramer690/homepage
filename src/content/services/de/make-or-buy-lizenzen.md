@@ -53,25 +53,33 @@ Make-or-buy bei Salesforce heißt, für jede Anforderung zu entscheiden, ob sie 
 
 ## Wann lohnt sich eine Industry Cloud?
 
-Industry Clouds bringen Datenmodelle und Prozesse für eine bestimmte Branche mit. Sie lohnen sich, wenn diese Prozesse dazu passen, wie das Unternehmen arbeitet. Passen sie nicht, zahlt das Unternehmen für Funktionen, die es nicht nutzt, und baut um die herum, die nicht passen. In einem Fertigungsprojekt waren Sales Agreements, eine Kernfunktion der Manufacturing Cloud, für das Geschäft nicht relevant. Eine eigene Lösung auf der Kernplattform war günstiger und einfacher zu warten.
+Industry Clouds bringen Datenmodelle und Prozesse für eine bestimmte Branche mit. Ob sich das rechnet, hängt davon ab, wie gut diese Prozesse dazu passen, wie das Unternehmen arbeitet:
+
+```pro-contra
+pro: Lohnt sich, wenn
+- Die Prozesse der Industry Cloud dazu passen, wie das Unternehmen arbeitet.
+- Das Unternehmen die mitgelieferten Datenmodelle und Prozesse nutzt.
+contra: Wird teuer, wenn
+- Das Unternehmen für Funktionen zahlt, die es nicht nutzt.
+- Um die Funktionen herumgebaut wird, die nicht passen.
+```
+
+```praxis
+In einem Fertigungsprojekt waren Sales Agreements, eine Kernfunktion der Manufacturing Cloud, für das Geschäft nicht relevant. Eine eigene Lösung auf der Kernplattform war günstiger und einfacher zu warten.
+```
 
 Dieselbe Logik gilt über Salesforce-Produkte hinaus. Dokumentenerstellung, E-Signatur, Telefonie und KI-Anwendungsfälle werfen alle die Frage auf, ob man kauft, baut oder es in einem anderen System lässt. Bei KI ist der wichtigste Faktor der Zustand der Daten, wie ich in [Agentforce: Business Value und Datenqualität zuerst](../../blog/agentforce-business-value-datenqualitaet/) erkläre. Auch Open-Source-Tools verändern die Rechnung, zum Beispiel bei DevOps, wie in [warum Kunden ihre DevOps-Tools selbst besitzen sollten](../../blog/warum-kunden-devops-tools-selbst-besitzen-sollten/) beschrieben.
 
 ## Wie rechne ich den ROI-Case?
 
-Der Preis im ersten Jahr ist die uninteressanteste Zahl. Ich betrachte mehrere Jahre und nehme auf:
-
-- **Lizenzen** für jede Nutzergruppe, mit dem erwarteten Wachstum.
-- **Umsetzung** durch interne Teams und Partner.
-- **Wartung und Upgrades**, inklusive des Aufwands, den eigener Code bei jedem Salesforce-Release verursacht.
-- **Folgekosten**, etwa Add-ons, die später nötig werden, oder der Aufwand für den Wechsel zu einer anderen Option.
+Der Preis im ersten Jahr ist die uninteressanteste Zahl. Ich betrachte mehrere Jahre und nehme Lizenzen, Umsetzung, Wartung und Upgrades sowie Folgekosten auf:
 
 ![Make-or-buy mit vier Optionen pro Anforderung: Standardprodukt, Industry Cloud, Eigenentwicklung auf der Kernplattform oder separates Tool. Der ROI-Case betrachtet mehrere Jahre und nicht den Preis im ersten Jahr und umfasst Lizenzen für jede Nutzergruppe mit dem erwarteten Wachstum, die Umsetzung durch interne Teams und Partner, Wartung und Upgrades inklusive des Aufwands, den eigener Code bei jedem Release verursacht, und Folgekosten wie später nötige Add-ons oder den Aufwand für den Wechsel zu einer anderen Option. Der zweite Hebel ist der Lizenztyp, denn volle Lizenzen werden oft standardmäßig angeboten, auch für Nutzer, die nur lesen oder freigeben.](../../../assets/blog/make-or-buy-roi-de.png)
+
+Make-or-buy-Entscheidungen prägen die Architektur, deshalb geht diese Leistung oft mit [Salesforce-Architektur und Solution Design](../salesforce-architektur/) zusammen.
 
 ## Was sollten Sie über Salesforce-Lizenzen wissen?
 
 Der Listenpreis ist selten das endgültige Angebot. Der Zeitpunkt zählt: Zum Ende des Geschäftsjahres des Herstellers oder bei Aktionen gibt es oft Spielraum, Produkte, die das Unternehmen in den nächsten zwei bis drei Jahren braucht, für wenig Aufpreis aufzunehmen. Dafür braucht es eine Roadmap, die klar genug ist, um zu wissen, wonach man fragen sollte.
 
 Der zweite Hebel ist der Lizenztyp. Volle Lizenzen werden oft standardmäßig angeboten, auch für Nutzer, die nur Daten lesen oder Datensätze freigeben. Über eine große Nutzerbasis kann der Unterschied zwischen dem passenden und dem Standard-Lizenzmix leicht sechsstellig pro Jahr sein.
-
-Make-or-buy-Entscheidungen prägen die Architektur, deshalb geht diese Leistung oft mit [Salesforce-Architektur und Solution Design](../salesforce-architektur/) zusammen. Liegt bei Ihnen ein Angebot oder eine Tool-Entscheidung auf dem Tisch, [schreiben Sie mir](#contact).
