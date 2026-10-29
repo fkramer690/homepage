@@ -1,97 +1,62 @@
-// Area page of the second pillar, change management: /change-management/ (DE) and
-// /en/change-management/ (EN), linked from the main menu and the start page.
-// Juliane Winterscheid owns the general topics, Fabian the Salesforce side, and the
-// joint offer is change management in Salesforce programmes. The article lists are
-// filled from the blog collection (ChangeManagementPage.astro), so new articles appear
-// without touching this file. Icons are file names from src/icons/.
+// Change management as one building block of Fabian's Salesforce programmes, shown on
+// the service page /leistungen/change-management/ and /en/services/change-management-salesforce/
+// (frontmatter `section: change-management`, rendered by ChangeTeam.astro and
+// ChangeArticles.astro inside ServicePage.astro). Juliane Winterscheid owns the change in
+// people, Fabian the architecture and releases. The article lists are filled from the blog
+// collection, so new articles appear without touching this file. Icons are file names
+// from src/icons/.
+//
+// The former area page /change-management/ (2026-10-29) is now a redirect to the service page.
 
-export const changePaths = { de: 'change-management/', en: 'change-management/' } as const;
-
-export const changeArea = {
+export const changeSection = {
   de: {
-    metaTitle: 'Change Management: Grundlagen und Praxis',
-    description:
-      'Change Management von Juliane Winterscheid und Fabian Kramer: Definition, Modelle und Phasen für alle, dazu Praxis aus Salesforce-Einführungen in der Fertigung.',
-    eyebrow: 'Change Management · Juliane Winterscheid und Fabian Kramer',
-    title: 'Change Management: damit Menschen die Veränderung mittragen',
-    intro:
-      'Neue Systeme und Prozesse wirken erst, wenn Menschen sie im Alltag nutzen. Hier finden Sie die Grundlagen von Juliane Winterscheid und unsere Praxis aus Salesforce-Programmen.',
-    stats: { basics: 'Grundlagen', programmes: 'Praxisartikel', chapters: 'Kapitel' },
-    points: [
-      { label: 'Juliane', text: 'Change-Managerin, Prosci-zertifiziert, lehrt an der Hochschule Fresenius.' },
-      { label: 'Fabian', text: 'Salesforce-Architekt, sorgt dafür, dass Architektur und Releases die Veränderung tragen.' },
-      { label: 'Gemeinsam', text: 'Change Management in Salesforce-Programmen, aus einer Hand geplant.' },
-    ],
-    profile: 'Profil von Juliane',
-    groups: {
+    team: {
+      label: 'Wer dahintersteht',
+      title: 'Zwei Spezialgebiete, ein gemeinsamer Plan',
+      intro:
+        'Ich verantworte die Salesforce-Architektur, Juliane Winterscheid die Veränderung bei den Menschen. In Ihrem Programm planen wir beides zusammen, damit Release-Plan und Change-Plan zueinander passen.',
+      items: [
+        { who: 'Fabian Kramer', icon: 'architecture', title: 'Architektur und Releases', text: 'Ich sorge dafür, dass Architektur, Release-Plan und Pipeline die Veränderung tragen, und messe die Nutzung direkt in Salesforce.', more: 'Über mich' },
+        { who: 'Juliane Winterscheid', icon: 'change', title: 'Change Management', text: 'Juliane begleitet Sponsoren, Führungskräfte und Key User durch die Veränderung. Sie ist Prosci-zertifiziert und lehrt an der Hochschule Fresenius.', more: 'Profil und Referenzen' },
+        { who: 'Gemeinsam', icon: 'handshake', title: 'Ein Plan für Release und Veränderung', text: 'Key User, Schulung, Kommunikation und Messung hängen am Release-Plan. Wie das entlang der ADKAR-Stufen aussieht, zeigt die Masterclass.', more: 'Zur Masterclass' },
+      ],
+    },
+    articles: {
+      title: 'Artikel zum Change Management',
       basics: {
-        label: 'Grundlagen',
-        title: 'Was Change Management ist und wie es funktioniert',
-        text: 'Für alle, die Veränderung verstehen oder selbst steuern wollen: Definition, Phasen und die bekannten Modelle im Vergleich. Geschrieben von Juliane Winterscheid.',
+        title: 'Grundlagen von Juliane Winterscheid',
+        text: 'Definition, Phasen, Modelle und Werkzeuge wie Stakeholder-Analyse und Kommunikationsplan.',
       },
       programmes: {
-        label: 'In Salesforce-Programmen',
-        title: 'Change Management bei Salesforce-Einführungen',
-        text: 'Für Projektverantwortliche in IT, Service und Vertrieb: wie Key User, Schulung, Hypercare und Messung in einem Salesforce-Programm zusammenspielen.',
+        title: 'Praxis aus Salesforce-Programmen',
+        text: 'Wie Key User, Schulung, Hypercare und Messung in einer Salesforce-Einführung zusammenspielen.',
       },
-      offer: {
-        label: 'Lernen und Begleitung',
-        title: 'Masterclass, Leistung und Ansprechpartner',
-        text: 'Wer tiefer einsteigen will, nimmt die Masterclass. Wer Begleitung für ein Programm sucht, findet hier unser Angebot.',
-      },
+      minutes: '{n} Min.',
     },
-    offer: {
-      masterclass: { name: 'Masterclass', title: 'Masterclass Change Management', text: 'Fünf Kapitel entlang der ADKAR-Stufen für Salesforce-Einführungen.' },
-      service: { name: 'Leistung', title: 'Change Management für Salesforce-Programme', text: 'Wie wir Change Management in Ihrem Programm aufsetzen, mit Ablauf und Ergebnissen.' },
-      profile: { name: 'Juliane Winterscheid', title: 'Profil und Referenzen', text: 'Projekte, Zertifikate und wie wir in einem Programm die Arbeit aufteilen.' },
-    },
-    minutes: '{n} Min.',
-    contactTitle: 'Eine Veränderung steht an?',
-    contactText:
-      'Schreiben Sie uns, worum es geht. Wir melden uns und klären im ersten Gespräch, ob Juliane allein oder wir beide die Richtigen für Ihr Vorhaben sind.',
-    formSubject: 'Change Management',
   },
   en: {
-    metaTitle: 'Change management: basics and practice',
-    description:
-      'Change management by Juliane Winterscheid and Fabian Kramer: definition, models and phases for everyone, plus practice from Salesforce rollouts in manufacturing.',
-    eyebrow: 'Change management · Juliane Winterscheid and Fabian Kramer',
-    title: 'Change management: so that people carry the change',
-    intro:
-      'New systems and processes only work once people use them in daily work. Here you find the basics by Juliane Winterscheid and our practice from Salesforce programmes.',
-    stats: { basics: 'basics', programmes: 'practice articles', chapters: 'chapters' },
-    points: [
-      { label: 'Juliane', text: 'Change manager, Prosci certified, teaches at Hochschule Fresenius.' },
-      { label: 'Fabian', text: 'Salesforce architect, makes sure architecture and releases support the change.' },
-      { label: 'Together', text: 'Change management in Salesforce programmes, planned as one.' },
-    ],
-    profile: 'Juliane\'s profile',
-    groups: {
+    team: {
+      label: 'Who is behind it',
+      title: 'Two specialisms, one joint plan',
+      intro:
+        'I am responsible for the Salesforce architecture, Juliane Winterscheid for the change in people. In your programme we plan both together, so that release plan and change plan fit.',
+      items: [
+        { who: 'Fabian Kramer', icon: 'architecture', title: 'Architecture and releases', text: 'I make sure architecture, release plan and pipeline support the change, and I measure adoption directly in Salesforce.', more: 'About me' },
+        { who: 'Juliane Winterscheid', icon: 'change', title: 'Change management', text: 'Juliane guides sponsors, managers and key users through the change. She is Prosci certified and teaches at Hochschule Fresenius.', more: 'Profile and references' },
+        { who: 'Together', icon: 'handshake', title: 'One plan for release and change', text: 'Key users, training, communication and measurement follow the release plan. The masterclass shows how that works along the ADKAR stages.', more: 'See the masterclass' },
+      ],
+    },
+    articles: {
+      title: 'Articles on change management',
       basics: {
-        label: 'Basics',
-        title: 'What change management is and how it works',
-        text: 'For everyone who wants to understand or steer change: definition, phases and the well-known models compared. Written by Juliane Winterscheid.',
+        title: 'Basics by Juliane Winterscheid',
+        text: 'Definition, phases, models and tools such as the stakeholder analysis and the communication plan.',
       },
       programmes: {
-        label: 'In Salesforce programmes',
-        title: 'Change management in Salesforce rollouts',
-        text: 'For project leads in IT, service and sales: how key users, training, hypercare and measurement work together in a Salesforce programme.',
+        title: 'Practice from Salesforce programmes',
+        text: 'How key users, training, hypercare and measurement work together in a Salesforce rollout.',
       },
-      offer: {
-        label: 'Learning and support',
-        title: 'Masterclass, service and contacts',
-        text: 'If you want to go deeper, take the masterclass. If you need support for a programme, this is our offer.',
-      },
+      minutes: '{n} min',
     },
-    offer: {
-      masterclass: { name: 'Masterclass', title: 'Change management masterclass', text: 'Five chapters along the ADKAR stages for Salesforce rollouts.' },
-      service: { name: 'Service', title: 'Change management for Salesforce programmes', text: 'How we set up change management in your programme, with phases and results.' },
-      profile: { name: 'Juliane Winterscheid', title: 'Profile and references', text: 'Projects, certifications and how we split the work in a programme.' },
-    },
-    minutes: '{n} min',
-    contactTitle: 'A change is coming up?',
-    contactText:
-      'Tell us what it is about. We will get back to you and clarify in the first call whether Juliane alone or both of us are the right fit for your plans.',
-    formSubject: 'Change management',
   },
 };
