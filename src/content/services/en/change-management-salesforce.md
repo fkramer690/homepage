@@ -61,7 +61,7 @@ A release is technically rolled out in minutes. What happens next decides whethe
 - **The people affected hear about it too late.** Anyone who first sees a change in production looks for a way around it.
 - **Everything is meant to be settled at once.** A first version that tries to cover every edge case arrives late and is rarely read.
 - **Backing from management is missing.** Without decisions from the top, new rules stay a recommendation.
-- **There is no way back.** Problems from daily work end up in emails, not in the backlog.
+- **The old way stays open.** As long as Excel lists and emails keep working next to Salesforce, many people slip back into old habits.
 
 ## What does ADKAR look like in a Salesforce programme?
 

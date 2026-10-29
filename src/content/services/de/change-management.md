@@ -61,7 +61,7 @@ Ein Release ist technisch in Minuten ausgerollt. Danach entscheidet sich, ob jem
 - **Betroffene erfahren zu spät davon.** Wer eine Änderung erst in Produktion sieht, sucht sich einen Weg drumherum.
 - **Alles soll auf einmal geregelt sein.** Eine erste Version, die jeden Randfall abdecken will, kommt spät und wird selten gelesen.
 - **Es fehlt der Rückhalt im Management.** Ohne Entscheidungen von oben bleiben neue Regeln eine Empfehlung.
-- **Es gibt keinen Rückweg.** Probleme aus dem Alltag landen in E-Mails und nicht im Backlog.
+- **Der alte Weg bleibt offen.** Solange Excel-Listen und E-Mails neben Salesforce weiter funktionieren, fallen viele zurück in den alten Trott.
 
 ## Wie sieht ADKAR in einem Salesforce-Programm aus?
 
