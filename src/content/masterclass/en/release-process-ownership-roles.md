@@ -112,17 +112,26 @@ I am an architect, not a lawyer. The points below describe what I want to see in
 8. **Rules for AI coding.** Which tools, which data, which review. The checklist for this is in [partners coding with AI: what belongs in the contract](../../../blog/partners-using-ai-coding-contract-rules/).
 9. **Exit.** Handover with no work outside the repository, confirmation that local copies of your code and credentials are deleted, and active support for the handover over an agreed period.
 
+```hinweis tipp
 I have worked with nearshore teams in Eastern Europe and India, and my view is that written rules are worth more than any alignment call. A team in another time zone cannot quickly ask whether a Setup click in UAT is fine. It needs the rule beforehand.
+```
 
 ## How does the release process survive a partner change?
 
 Once ownership, roles and contract rules are in place, a partner change is a procedure with a checklist. A typical scenario, as an assumption: a packaging machine manufacturer runs Service Cloud with Field Service, a dealer portal and an SAP integration. Three partners work on the org. After a tender, the partner for the service stream is replaced by a new one, with four weeks of overlap.
 
-1. **Take stock before the exit is announced.** A comparison between production and the repository shows what never reached the repository. The setup audit trail helps: according to the [Salesforce object reference](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_setupaudittrail.htm) it shows Setup changes for at least the last 180 days. Older drift only shows up in the comparison. What an assessment of technical debt before the change looks like is covered in [AI org assessment: technical debt before a partner change](../../../blog/ai-org-assessment-technical-debt/).
-2. **Onboard the new partner into the existing setup.** It gets users in the repository, the tool and the sandboxes, reads the standards and submits small pull requests in its first week, closely followed by the release manager.
-3. **Update CODEOWNERS.** The service stream's objects change owner without the process changing.
-4. **Revoke access.** On the last day, every user of the old partner loses access to the Git platform, the tool, the sandboxes and production.
-5. **Renew secrets.** Pipeline certificates, passwords of technical users, access to the SAP middleware. Anything the old partner has ever seen gets replaced.
+```schritte
+Take stock before the exit is announced
+  A comparison between production and the repository shows what never reached the repository. The setup audit trail helps: according to the [Salesforce object reference](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_setupaudittrail.htm) it shows Setup changes for at least the last 180 days. Older drift only shows up in the comparison. What an assessment of technical debt before the change looks like is covered in [AI org assessment: technical debt before a partner change](../../../blog/ai-org-assessment-technical-debt/).
+Onboard the new partner into the existing setup
+  It gets users in the repository, the tool and the sandboxes, reads the standards and submits small pull requests in its first week, closely followed by the release manager.
+Update CODEOWNERS
+  The service stream's objects change owner without the process changing.
+Revoke access
+  On the last day, every user of the old partner loses access to the Git platform, the tool, the sandboxes and production.
+Renew secrets
+  Pipeline certificates, passwords of technical users, access to the SAP middleware. Anything the old partner has ever seen gets replaced.
+```
 
 In this scenario the release calendar runs on without a break, because pipeline, history and standards belong to the manufacturer. From day one the new partner works by the same rules as the other two, and the partners stay comparable. The same situation with a pipeline in the old partner's account would have meant a migration in the middle of the change.
 

@@ -1591,6 +1591,27 @@ p.post-series-note { margin: 0.6em 0 0; font-size: 0.95rem; }
   .prose .cb-stages { grid-template-columns: 1fr; }
   .prose .cb-stages li:not(:last-child)::after { content: '↓'; right: auto; left: 50%; top: auto; bottom: -15px; }
 }
+/* ```stufen treppe: tiles rising in equal steps, the risk in its own row below, optional bands */
+.prose .cb-stairs { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(var(--n), minmax(0, 1fr)); grid-template-rows: auto auto; grid-auto-flow: column; column-gap: 10px; }
+.prose .cb-stairs li { margin: 0; }
+.prose .cb-stairs .cb-stair { margin-top: calc((var(--n) - 1 - var(--i)) * 36px); padding: 14px 12px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--white); display: flex; flex-direction: column; gap: 6px; }
+.prose .cb-stair.cb-stage-mark { background: var(--bg); }
+.prose .cb-stair .cb-stage-letter { margin-bottom: 2px; }
+.prose .cb-stair .cb-stage-sub { margin: auto 0 0; padding-top: 4px; }
+.prose .cb-stairs .cb-stair-risk { margin-top: 10px; padding: 10px 2px 0; border-top: 2px solid var(--line); font-size: 0.82rem; line-height: 1.4; color: var(--text-2); }
+.cb-stair-risk-label { display: block; font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-2); margin-bottom: 3px; }
+.prose .cb-stair-risk:not(:nth-child(2)) .cb-stair-risk-label { visibility: hidden; }
+.cb-bands { display: grid; grid-template-columns: repeat(var(--n), minmax(0, 1fr)); gap: 10px; margin: 14px 0; }
+.prose .cb-bands .cb-band { margin: 0; padding: 7px 10px; border: 1px dashed #c9ccd0; border-radius: 6px; background: var(--bg); font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-2); }
+.prose .cb-bands .cb-band.cb-band-mark { border: 1px solid var(--cyan); background: var(--cyan); color: var(--white); }
+@media (max-width: 720px) {
+  .prose .cb-stairs { grid-template-columns: 1fr; grid-template-rows: none; grid-auto-flow: row; }
+  .prose .cb-stairs .cb-stair { margin-top: 14px; margin-left: calc(var(--i) * 12px); }
+  .prose .cb-stairs .cb-stair-risk { margin: 0 0 0 calc(var(--i) * 12px); padding: 8px 12px 0; border-top: 0; }
+  .prose .cb-stair-risk:not(:nth-child(2)) .cb-stair-risk-label { visibility: visible; }
+  .cb-bands { grid-template-columns: 1fr; }
+  .prose .cb-band { grid-column: auto !important; }
+}
 /* ```vergleich: without (grey ✕) and with (cyan ✓), like the start page comparison */
 .cb-compare { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
 .cb-compare-col { border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 22px; background: var(--white); }

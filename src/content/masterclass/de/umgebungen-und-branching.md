@@ -79,6 +79,14 @@ Ein Branch ist ein eigener Entwicklungsstrang im Git-Repository. Für Salesforce
 - **Stufen-Branches** (Hauptbranches) gehören fest zu einer Org. sfdx-hardis nennt sie [„major branches“](https://sfdx-hardis.cloudity.com/salesforce-devops-deploy-major-branches/), definiert als „git branches that have an associated CI/CD org“, mit der Kette `integration`, `uat`, `preprod` und `main` für Produktion. Ein Merge in den Branch deployt in die zugehörige Org.
 - **Feature-Branches** (User-Story-Branches) haben keine eigene Org im Pipeline-Sinn. Ein Entwickler baut eine Story in seiner Sandbox, committet in den Feature-Branch und öffnet einen Pull Request nach `integration`.
 
+```ablauf
+sf: Feature-Branch, integration, uat, preprod, main Produktion
+Feature-Branch --Pull Request--> integration
+integration --Beförderung--> uat
+uat --Beförderung--> preprod
+preprod --Beförderung--> main Produktion
+```
+
 Von dort wandern Änderungen per Pull Request zwischen den Stufen-Branches nach oben. Ein solcher Pull Request befördert laut sfdx-hardis alles, was seit der letzten Beförderung in den Quell-Branch gemergt wurde. Gearset arbeitet in seinen Pipelines ebenfalls mit langlebigen Umgebungs-Branches. Die Werkzeuge vergleicht [Kapitel 4](../devops-werkzeuge-vergleich/).
 
 Eine ehrliche Einschränkung: DORA empfiehlt für leistungsstarke Teams [Trunk-Based Development](https://dora.dev/capabilities/trunk-based-development/) mit höchstens drei aktiven Branches und mindestens einem Merge pro Tag in den Hauptstrang. Ein Modell mit vier Stufen-Branches widerspricht dem. Ich halte es in Programmen mit Fachbereichsabnahme und mehreren Partnern trotzdem für richtig, weil jede Stufe eine andere Freigabe darstellt. Den Preis zahlen Sie über Feature-Branches, die lange leben. Meine Regel deshalb: Feature-Branches leben Tage, keine Wochen, und eine Story, die nicht in einen Sprint passt, wird geschnitten.
@@ -91,10 +99,13 @@ Mit jedem Merge in `integration` veraltet jede Entwickler-Sandbox ein Stück. We
 
 Der Vorgang heißt Back Promotion oder Backpromote: Änderungen aus einer höheren Stufe werden zurück in die Entwicklungsumgebungen gebracht. So lösen es die Werkzeuge:
 
+```vertiefung Werkzeuge
+titel: Back Promotion in sfdx-hardis, Gearset, Copado und Flosum
 - **sfdx-hardis.** Der [Backpromote](https://sfdx-hardis.cloudity.com/salesforce-devops-backpromote/) deployt in eine Entwickler-Sandbox oder Scratch Org, was seit dem letzten Lauf in den Eltern-Branch gemergt wurde, inklusive Löschungen und Deployment Actions. Vor dem Lauf zeigt er jedes Element mit seinem Vergleich zur Sandbox; bei Abweichungen entscheiden Sie zwischen Überschreiben, Behalten und Zusammenführen. Er verweigert Produktion und die Orgs der Hauptbranches, führt keine Deployment Action zweimal in derselben Sandbox aus und läuft über die VS-Code-Erweiterung oder `sf hardis:work:backpromote`. Die Funktion ist laut Cloudity in Beta.
 - **Gearset.** [Developer Sandbox Updates](https://docs.gearset.com/en/articles/9729558-getting-started-with-developer-sandbox-updates-in-pipelines) listen jede Beförderung in den Basis-Branch als Update, das Sie in die Sandbox deployen. Vorher sichert Gearset nicht committete Arbeit aus der Sandbox und führt sie mit den Updates zusammen.
 - **Copado.** Die [Back Promotions](https://docs.essentials.copado.com/en/articles/8098362-back-promotions-with-copado-essentials) zeigen, welche Deployments einer Umgebung fehlen, und deployen sie gesammelt zurück, auch ohne Refresh.
 - **Flosum.** Eine [Backpromotion-Pipeline](https://flosum.com/blog/keep-all-your-salesforce-sandboxes-in-sync-using-flosum-pipelines) bringt Änderungen aus Produktion in die Sandboxes.
+```
 
 Die kommerziellen Werkzeuge machen das bequem und mit wenig Git-Wissen bedienbar, das ist ihre Stärke. Welches Werkzeug Sie wählen, ist zweitrangig. Wichtig ist eine Regel im Partnervertrag: Vor jeder neuen Story und nach jedem Refresh wird die Entwickler-Sandbox auf den Stand des Eltern-Branches gebracht.
 

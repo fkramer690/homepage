@@ -40,7 +40,9 @@ Salesforce ships three tools at no extra licence cost. They build on each other,
 
 A change set sends customisations from one org to another, typically from a sandbox to production. According to the [Salesforce help on change sets](https://help.salesforce.com/apex/HTViewHelpDoc?id=changesets.htm), three limits apply: change sets contain only changes you can make through the Setup menu, they contain no data, and they work only between orgs that are affiliated with the same production org and linked by a deployment connection. An inbound change set is always deployed as a whole.
 
+```hinweis achtung
 For an admin who moves a field and a validation rule every few weeks, that is enough. For a programme with several teams, the essentials are missing: there is no history in Git, no pull request, no review and no comparison of which state sits where. When two partners touch the same page layout or the same flow version, whoever deploys last wins. [Chapter 1](../release-management-basics/) describes exactly this state as the starting point of the maturity path.
+```
 
 ### Salesforce CLI
 
@@ -54,10 +56,17 @@ Since October 2026, Next Generation DevOps Center has been called [Lifecycle Cen
 
 The [setup considerations](https://help.salesforce.com/s/articleView?id=platform.next_gen_devops_center_setup_considerations.htm&language=en_US&type=5) contain the points that often decide the matter in manufacturing:
 
+```pro-contra
+pro: What Lifecycle Center brings
+- Built into the platform, without a package
+- Work items move with a click, branches and pull requests are created in the background
+- Test suites and quality gates are included by default
+contra: What to check first
 - Only GitHub.com cloud plans, including GitHub Enterprise Cloud, and Bitbucket Cloud work as Git platforms. Salesforce has named GitLab and Azure as a priority in its [admin blog](https://admin.salesforce.com/blog/2026/the-future-of-salesforce-devops-is-here-whats-new-for-admins), with no date.
 - Lifecycle Center is not available in the EU Operating Zone or in Government Cloud Plus.
 - The hub org cannot be a sandbox, and only one of Lifecycle Center or the old DevOps Center managed package can be active.
 - Migrating projects from the managed package is a developer preview. I would not rely on it for production projects until it is generally available.
+```
 
 How Lifecycle Center compares with sfdx-hardis in detail is in my [comparison of sfdx-hardis and DevOps Center](../../../blog/sfdx-hardis-vs-devops-center-comparison/). In short: with Lifecycle Center, Salesforce is the control centre and Git is the storage.
 

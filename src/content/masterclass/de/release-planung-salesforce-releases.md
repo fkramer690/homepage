@@ -41,7 +41,9 @@ Vier Ebenen gehören hinein:
 3. **Abschaltungen und Release Updates:** Termine, an denen etwas aufhört zu funktionieren, wenn niemand handelt.
 4. **Termine aus dem Geschäft:** Quartalsabschluss im Vertrieb, Inventur, Werksferien, Releases im SAP, Messen mit neuen Produkten im Händlerportal.
 
+```hinweis tipp
 Die vierte Ebene wird am häufigsten vergessen. Ein Release am letzten Tag des Quartals trifft den Vertrieb genau dann, wenn Angebote und Aufträge durch Salesforce müssen. Ein Release, das die Schnittstelle zu SAP ändert, gehört nicht in die Woche, in der das SAP-Team selbst Transporte einspielt.
+```
 
 ## Welcher Rhythmus und welche Freeze-Fenster passen?
 
@@ -135,11 +137,18 @@ Was sich bewährt, ohne viel Aufwand:
 
 Ein typisches Szenario, als Annahme: Ein Maschinenbauer betreibt Service Cloud, Field Service und ein Händlerportal, angebunden an SAP S/4. Drei Partner arbeiten auf einer Org, Releases gehen alle zwei Wochen am Donnerstag live. Die Release-Managerin auf Kundenseite plant im November:
 
-1. Sie trägt den Termin für SOAP-Logins am 1. Dezember und das Ende des Passwort-Flows am 20. Februar ein und gibt beiden einen Verantwortlichen. Die Integrationsinventur läuft bis Ende November.
-2. Sobald Trust die Spring-'27-Termine zeigt, setzt sie den Stichtag für die Sandbox Preview, das Upgrade-Wochenende der Produktionsinstanz und ein Freeze-Fenster darum herum in den Kalender.
-3. Eine eigene Developer-Pro-Sandbox außerhalb der Deployment-Kette wird vor dem Stichtag aktualisiert und ist die Preview-Sandbox für SAP-Schnittstellentests und Release Updates. Integration, UAT und Staging bleiben auf dem Release von Produktion.
-4. Weil Spring '27 und das Ende des Passwort-Flows in denselben Wochen liegen könnten, schaltet sie den Passwort-Flow schon Ende Januar selbst ab, getrennt vom Salesforce-Upgrade.
-5. Die Partner bekommen den Kalender schriftlich. Wer im Freeze liefern will, braucht ihre Freigabe.
+```schritte
+Abschaltungen eintragen | November
+  Sie trägt den Termin für SOAP-Logins am 1. Dezember und das Ende des Passwort-Flows am 20. Februar ein und gibt beiden einen Verantwortlichen. Die Integrationsinventur läuft bis Ende November.
+Spring '27 einplanen | sobald Trust die Termine zeigt
+  Sobald Trust die Spring-'27-Termine zeigt, setzt sie den Stichtag für die Sandbox Preview, das Upgrade-Wochenende der Produktionsinstanz und ein Freeze-Fenster darum herum in den Kalender.
+Preview-Sandbox aktualisieren | vor dem Stichtag
+  Eine eigene Developer-Pro-Sandbox außerhalb der Deployment-Kette wird vor dem Stichtag aktualisiert und ist die Preview-Sandbox für SAP-Schnittstellentests und Release Updates. Integration, UAT und Staging bleiben auf dem Release von Produktion.
+Passwort-Flow früh abschalten | Ende Januar
+  Weil Spring '27 und das Ende des Passwort-Flows in denselben Wochen liegen könnten, schaltet sie den Passwort-Flow schon Ende Januar selbst ab, getrennt vom Salesforce-Upgrade.
+Kalender verteilen | an alle Partner
+  Die Partner bekommen den Kalender schriftlich. Wer im Freeze liefern will, braucht ihre Freigabe.
+```
 
 Keiner dieser Schritte braucht ein neues Werkzeug. Er braucht jemanden auf Kundenseite, der den Kalender besitzt, und Partner, die vertraglich in ihn hinein planen. Wie solche Regeln in die Partnerverträge kommen, beschreibe ich unter [Partnersteuerung](../../../leistungen/partnersteuerung/); die Datenseite eines Releases behandelt [Kapitel 7](../daten-und-konfiguration/), alle Kapitel finden Sie auf der [Übersichtsseite](../).
 
