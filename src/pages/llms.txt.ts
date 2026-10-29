@@ -6,6 +6,7 @@ import { getPosts, postHref, blogIndex } from '../lib/blog';
 import { getServices, serviceHref, servicesIndex } from '../lib/services';
 import { homeHref, localHref } from '../lib/paths';
 import { questionPaths } from '../data/questions';
+import { recruiterPaths } from '../data/recruiters';
 import { getChapters, chapterHref, courseTexts, masterclassIndex, masterclassesIndex } from '../lib/masterclass';
 import { courseIds, type CourseId } from '../lib/courses';
 
@@ -49,6 +50,7 @@ The German version is the main site at the root; the English version lives under
 ${courseIds.map((c) => `- [${courseTexts('en', c).name}](${abs(masterclassIndex('en', c))}), German: [${courseTexts('de', c).name}](${abs(masterclassIndex('de', c))}): ${courseTexts('en', c).metaDescription}`).join('\n')}
 - [Speaker & events](${abs(localHref('en', 'speaking/'))}): talks at Salesforce community conferences (Flow performance, Flow vs OmniScript, Lightning Flow Scanner)
 - [Questions I ask in every Salesforce project](${abs(localHref('en', questionPaths.en))}), German: [Fragen, die ich in jedem Salesforce-Projekt stelle](${abs(localHref('de', questionPaths.de))}): goal and deadline, partner ownership, ERP interfaces, data volumes, operations, licences
+- [Freelance Salesforce Architect: working with recruiters](${abs(localHref('en', recruiterPaths.en))}), German: [Zusammenarbeit mit Recruitern](${abs(localHref('de', recruiterPaths.de))}): roles that fit, response time, submissions only with approval, no double submissions
 - [LinkedIn](${site.linkedin})
 
 ## Services
