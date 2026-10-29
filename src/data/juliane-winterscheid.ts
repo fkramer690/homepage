@@ -44,6 +44,9 @@ export const juliane = {
       label: 'Über die Autorin',
       bio: 'Juliane begleitet seit 2022 als freiberufliche Change-Managerin IT-Transformationen, darunter weltweite Salesforce-Rollouts. Davor war sie mehr als zehn Jahre in Management, Führung und Beratung tätig, unter anderem als Country Managerin DACH. An der Hochschule Fresenius lehrt sie „Managing Transformation & Change“.',
       more: 'Profil und Referenzen',
+      // Her card in the shared author box of articles she co-wrote.
+      part: 'Menschen und Veränderung',
+      short: 'Begleitet als Change-Managerin weltweite Salesforce-Rollouts und lehrt an der Hochschule Fresenius.',
     },
     facts: [
       { value: '10+', label: 'Jahre Management, Führung, Beratung' },
@@ -146,6 +149,9 @@ export const juliane = {
       label: 'About the author',
       bio: 'Since 2022 Juliane has supported IT transformations as a freelance change manager, including global Salesforce rollouts. Before that she spent more than ten years in management, leadership and consulting, among other roles as country manager DACH. At Hochschule Fresenius she teaches "Managing Transformation & Change".',
       more: 'Profile and references',
+      // Her card in the shared author box of articles she co-wrote.
+      part: 'People and change',
+      short: 'Change manager for global Salesforce rollouts, lecturer at Hochschule Fresenius.',
     },
     facts: [
       { value: '10+', label: 'years in management, leadership, consulting' },

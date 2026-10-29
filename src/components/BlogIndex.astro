@@ -19,13 +19,14 @@ const t = lang === 'de' ? de : en;
 const posts = await getPosts(lang);
 // An article counts for its author and its co-author.
 const authorsOf = (post: (typeof posts)[number]) => [post.data.author, ...(post.data.coAuthor ? [post.data.coAuthor] : [])];
+const authorImg = { fabian: portrait, juliane: julianePortrait };
 // Two filters that combine: author and topic. Only categories that have articles
 // in this language get an entry.
 const authorFilters = authorIds.map((id) => ({
   id,
   name: getAuthor(lang, id).name,
   focus: t.blog.authorFocus[id],
-  img: id === 'juliane' ? julianePortrait : portrait,
+  img: authorImg[id],
   count: posts.filter((p) => authorsOf(p).includes(id)).length,
 }));
 const topicFilters = categoryIds
@@ -102,7 +103,7 @@ const schema = {
                   <span class="post-category mono">{post.data.categories.map((c) => categories[c][lang]).join(' · ')}</span>
                   <span class="post-title">{post.data.title}</span>
                   <span class="post-desc">{post.data.description}</span>
-                  <span class="post-byline mono">{authorsOf(post).map((a) => getAuthor(lang, a).name).join(' & ')}</span>
+                  <span class="post-byline"><span class="post-byline-faces">{authorsOf(post).map((a) => <Image src={authorImg[a]} alt="" width={28} height={28} densities={[1, 2]} />)}</span>{authorsOf(post).map((a) => getAuthor(lang, a).name).join(' & ')}</span>
                 </span>
               </a>
             </li>

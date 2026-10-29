@@ -296,6 +296,11 @@ export const de: Dict = {
     authorMore: 'Mehr über mich',
     relatedService: 'Passende Leistung',
     authorLinkedIn: 'LinkedIn-Profil',
+    // Shared author box for an article with a co-author (AuthorBox.astro with coAuthor).
+    authorsLabel: 'Über die Autoren',
+    authorsJoint: 'Gemeinsam geschrieben, so wie wir auch in Programmen zusammenarbeiten.',
+    authorPart: 'Architektur und Releases',
+    authorShort: 'Salesforce-Architekt auf Kundenseite für Fertigungsunternehmen, unabhängig von Herstellern und Partnern.',
   },
   partnerPage: {
     title: 'Partner',
