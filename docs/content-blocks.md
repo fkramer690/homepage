@@ -154,5 +154,6 @@ Only these, in Fabian's wording, without client names, industry or size:
 - Training in all common forms, depending on the client: train the trainer via key users, separate training sandbox, training per role (confirmed 29 October 2026).
 - Principle: when new processes or systems are introduced, there must be no way back; as long as the old way remains an option, no change happens (Fabian, 29 October 2026).
 - Project stories that already stand in articles published before 28 October 2026 (written with Fabian), e.g. the global Manufacturing Cloud rollout with CPQ, configurator and customer portal.
+- In one manufacturing project, sales agreements (a core feature of Manufacturing Cloud) were not relevant for the business, so a custom solution on the core platform was cheaper and simpler to maintain (confirmed 23 October 2026, make-or-buy service page).
 
 Add new items here only after Fabian confirms them.
