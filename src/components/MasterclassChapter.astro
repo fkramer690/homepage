@@ -8,6 +8,8 @@ import ContactForm from './ContactForm.astro';
 import AuthorBox from './AuthorBox.astro';
 import Blueprint from './Blueprint.astro';
 import ReadingGrid from './ReadingGrid.astro';
+import PartnerBox from './PartnerBox.astro';
+import { courses } from '../lib/courses';
 import { render } from 'astro:content';
 import { en } from '../i18n/en';
 import { de } from '../i18n/de';
@@ -129,6 +131,7 @@ const schema = {
             {takeaways.map((item) => <li>{item}</li>)}
           </ul>
         </aside>
+        {courses[course].partner && <PartnerBox lang={lang} />}
         <div class="prose">
           <Content />
         </div>

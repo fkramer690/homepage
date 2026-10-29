@@ -63,7 +63,7 @@ Kapitel 4 nimmt dieselben Stufen für einen Rollout über mehrere Länder und Te
 
 Der Nutzen liegt in der Diagnose. Bei niedriger Nutzung setzen viele Programme reflexhaft die nächste Schulung an. Mit ADKAR fragen wir stattdessen je Gruppe, an welcher Stufe es hängt. Weiß der Vertrieb nicht, wofür gepflegte Opportunities gebraucht werden, fehlt Awareness, und das muss der Vertriebsleiter erklären, nicht der Trainer. Kennen Techniker die App, kommen aber offline nicht weiter, fehlt Ability, und das löst eine technische Änderung.
 
-Prosci und ADKAR sind eingetragene Marken von Prosci, Inc. Das Vorgehen habe ich gemeinsam mit Juliane Winterscheid auf Salesforce-Programme übertragen, meiner Kooperationspartnerin für Change Management. Mehr dazu im Artikel [Change Management: Warum Salesforce-Einführungen scheitern](../../../blog/change-management-salesforce-einfuehrung/).
+Prosci und ADKAR sind eingetragene Marken von Prosci, Inc. Das Vorgehen habe ich gemeinsam mit [Juliane Winterscheid](../../../partner/juliane-winterscheid/) auf Salesforce-Programme übertragen, meiner Kooperationspartnerin für Change Management. Mehr dazu im Artikel [Change Management: Warum Salesforce-Einführungen scheitern](../../../blog/change-management-salesforce-einfuehrung/).
 
 ## Wie stellen Sie die Diagnose je Gruppe?
 

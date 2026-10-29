@@ -66,7 +66,7 @@ A release is technically rolled out in minutes. What happens next decides whethe
 
 To me, Prosci is the gold standard in change management. The reason is the research behind it: Prosci has surveyed projects about their experience with change since 1998. In the 12th edition of its study [Best Practices in Change Management](https://www.prosci.com/hubfs/Website_English/2.downloads/research-executive-summaries/Best-Practices-in-Change-Management-12th-Edition-Executive-Summary.pdf), with 2,668 participants, projects with excellent change management met their objectives seven times as often as projects with poor change management, 88 against 13 percent. Participants name active and visible sponsorship by management as the biggest contributor to success. That matches what I see in Salesforce programmes.
 
-Together with Juliane Winterscheid, who is Prosci certified, I have applied two building blocks from Prosci to Salesforce programmes:
+Together with [Juliane Winterscheid](../../partners/juliane-winterscheid/), who is Prosci certified, I have applied two building blocks from Prosci to Salesforce programmes:
 
 - **The [ADKAR model](https://www.prosci.com/blog/adkar-model)** describes five stages each person goes through in a change: Awareness of why something changes, Desire to take part, Knowledge of how it works, Ability to do it in daily work, and Reinforcement so nobody slips back.
 - **The [Prosci 3-Phase Process](https://www.prosci.com/methodology/3-phase-process)** gives the rollout a frame at the level of the organisation: Prepare Approach, Manage Change and Sustain Outcomes. The three steps further up this page follow these phases.

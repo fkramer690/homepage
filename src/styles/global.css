@@ -1572,3 +1572,12 @@ p.post-series-note { margin: 0.6em 0 0; font-size: 0.95rem; }
   .fa-cards, .fa-results { grid-template-columns: 1fr; }
   .fa-practice-facts { grid-template-columns: repeat(2, 1fr); }
 }
+
+/* Partner box (PartnerBox.astro): same shape as the author box, white with a cyan side line. */
+.partner-box { background: var(--white); border: 1px solid var(--line); border-left: 4px solid var(--cyan); border-top: 1px solid var(--line); }
+.partner-box .post-author-name a { color: inherit; text-decoration: none; }
+.partner-box .post-author-name a:hover { color: var(--cyan-dark); }
+.partner-box-photo { flex-shrink: 0; }
+.mc-partner .partner-box { margin-top: 0; }
+.post-takeaways + .partner-box { margin-top: 0; margin-bottom: 2em; }
+.jw-logo { display: block; height: 40px; width: auto; max-width: 160px; object-fit: contain; margin-bottom: 12px; }

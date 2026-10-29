@@ -32,7 +32,9 @@ const serviceLinks = new Map(services.map((s) => [s.data.order, serviceHref(s)])
         return (
           <article class="partner-card">
             <figure>
-              <Image src={photos[p.photo as keyof typeof photos]} alt={p.photoAlt} widths={[480]} />
+              {p.profile
+                ? <a href={localHref(lang, p.profile)}><Image src={photos[p.photo as keyof typeof photos]} alt={p.photoAlt} widths={[480]} /></a>
+                : <Image src={photos[p.photo as keyof typeof photos]} alt={p.photoAlt} widths={[480]} />}
             </figure>
             <div class="partner-body">
               <p class="partner-area mono">{p.area}</p>

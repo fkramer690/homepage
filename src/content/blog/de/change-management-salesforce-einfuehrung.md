@@ -61,7 +61,7 @@ Der Nutzen liegt in der Diagnose. Statt bei niedriger Nutzung die nächste Schul
 
 Der Sponsor verdient einen eigenen Satz, weil er in Salesforce-Programmen am häufigsten fehlt. Gemeint ist eine Person aus dem Management, die sichtbar hinter der Einführung steht: Sie erklärt im Vertriebsmeeting, warum Prognosen künftig aus Salesforce kommen, entscheidet, wenn zwei Bereiche sich nicht einigen, und fragt im Monatsbericht nach der Nutzung. Ich schreibe deshalb einen Sponsor-Plan, der festlegt, was das Management wann sichtbar tut. Ohne diesen Plan wird aus „das Management steht dahinter“ eine Zeile auf der ersten Folie.
 
-Prosci und ADKAR sind eingetragene Marken von Prosci, Inc. Das Vorgehen habe ich gemeinsam mit Juliane Winterscheid auf Salesforce-Programme übertragen, meiner Kooperationspartnerin für Change Management.
+Prosci und ADKAR sind eingetragene Marken von Prosci, Inc. Das Vorgehen habe ich gemeinsam mit [Juliane Winterscheid](../../partner/juliane-winterscheid/) auf Salesforce-Programme übertragen, meiner Kooperationspartnerin für Change Management.
 
 ## Welche Themen gehören zu Change Management in Salesforce-Programmen?
 
