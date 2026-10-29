@@ -86,7 +86,7 @@ Articles must read like Fabian talking to a client, not like generated content. 
 
 ## Content blocks
 
-Every article and every masterclass chapter loosens up its text with building blocks from the library in [content-blocks.md](content-blocks.md): note (`hinweis tipp|achtung|offen`), from my practice (`praxis`), key figures (`kennzahlen`), timeline (`zeitleiste`), flow diagram (`ablauf`), pro and contra (`pro-contra`), collapsible detail (`vertiefung`) and steps (`schritte`). They are fenced code blocks with the block name as language, so the article stays free of HTML. The build check enforces the counts.
+Every article and every masterclass chapter loosens up its text with building blocks from the library in [content-blocks.md](content-blocks.md): note (`hinweis tipp|achtung|offen`), from my practice (`praxis`), key figures (`kennzahlen`), timeline (`zeitleiste`), flow diagram (`ablauf`), pro and contra (`pro-contra`), collapsible detail (`vertiefung`), steps (`schritte`), stage tiles (`stufen`) and without/with comparison (`vergleich`). They are fenced code blocks with the block name as language, so the article stays free of HTML. The build check enforces the counts.
 
 - At least one block or a Markdown table per text; texts over 1,300 words need at least two different ones (a table counts as one kind).
 - At most four blocks per text, at most two notes and one practice block, so the text leads and not the boxes.

@@ -1530,6 +1530,35 @@ p.post-series-note { margin: 0.6em 0 0; font-size: 0.95rem; }
 .prose .cb-procon ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
 .prose .cb-procon li { display: grid; grid-template-columns: 18px minmax(0, 1fr); gap: 8px; margin: 0; font-size: 0.95rem; }
 .cb-procon svg { width: 18px; height: 18px; margin-top: 4px; }
+/* ```stufen: stage tiles in a row (marked ones cyan), optional case cards below */
+.prose .cb-stages { list-style: none; padding: 0; margin: 0 0 14px; display: grid; grid-template-columns: repeat(var(--n), minmax(0, 1fr)); gap: 10px; }
+.prose .cb-stages li { position: relative; margin: 0; padding: 14px 12px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--white); display: flex; flex-direction: column; }
+.prose .cb-stages li.cb-stage-mark { border-color: var(--cyan); box-shadow: inset 0 3px 0 var(--cyan); }
+.prose .cb-stages li:not(:last-child)::after { content: '→'; position: absolute; right: -10px; top: 16px; width: 10px; text-align: center; color: var(--cyan); font-size: 0.9rem; }
+.cb-stage-letter { font-family: var(--mono); font-size: 1.9rem; line-height: 1; color: var(--cyan-dark); margin-bottom: 8px; }
+.cb-stage-name { font-weight: 600; font-size: 0.92rem; color: var(--anthracite); }
+.cb-stage-sub { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-2); margin: 2px 0 8px; }
+.cb-stage-text { font-size: 0.84rem; line-height: 1.4; color: var(--text-2); }
+.cb-cases { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+.cb-case { border: 1px solid var(--line); border-left: 4px solid var(--cyan); border-radius: var(--radius); padding: 14px 16px; background: var(--bg); font-size: 0.93rem; }
+.prose .cb-case .cb-case-title { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--cyan-dark); margin-bottom: 0.5em; }
+.prose .cb-case p + p { margin-top: 0.5em; }
+.cb-case-then { color: var(--text-2); }
+@media (max-width: 720px) {
+  .prose .cb-stages { grid-template-columns: 1fr; }
+  .prose .cb-stages li:not(:last-child)::after { content: '↓'; right: auto; left: 50%; top: auto; bottom: -15px; }
+}
+/* ```vergleich: without (grey ✕) and with (cyan ✓), like the start page comparison */
+.cb-compare { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+.cb-compare-col { border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 22px; background: var(--white); }
+.cb-compare-with { border-color: var(--cyan); box-shadow: inset 0 3px 0 var(--cyan); }
+.prose .cb-compare .cb-compare-title { font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-2); margin-bottom: 12px; }
+.cb-compare-with .cb-compare-title { color: var(--cyan-dark) !important; }
+.prose .cb-compare ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.prose .cb-compare li { display: grid; grid-template-columns: 18px minmax(0, 1fr); gap: 10px; margin: 0; font-size: 0.95rem; font-weight: 500; }
+.cb-compare svg { width: 18px; height: 18px; margin-top: 4px; }
+.cb-compare-with svg { stroke: var(--cyan); }
+.cb-compare-without svg { stroke: var(--text-2); }
 .cb-pro svg { stroke: var(--cyan); }
 .cb-contra svg { stroke: var(--text-2); }
 .cb-deep { border: 1px solid var(--line); border-radius: var(--radius); background: var(--white); }
@@ -1701,3 +1730,12 @@ p.post-series-note { margin: 0.6em 0 0; font-size: 0.95rem; }
 .cm-group-text { color: var(--text-2); margin: 0 0 1em; }
 .cm-group-more { margin: 0.8em 0 0; }
 .cm-articles .mc-overview-title { display: block; font-weight: 600; }
+.cm-cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(4, auto); column-gap: 28px; margin-top: 1.2em; }
+.cm-cols .cm-group { display: grid; grid-template-rows: subgrid; grid-row: span 4; margin: 0; }
+.cm-cols .mc-overview-list { display: flex; flex-direction: column; }
+.cm-cols .mc-overview-list li { flex: 1; display: flex; }
+.cm-cols .mc-overview-list li a { flex: 1; }
+@media (max-width: 860px) {
+  .cm-cols { grid-template-columns: 1fr; grid-template-rows: none; row-gap: 1.6em; }
+  .cm-cols .cm-group { grid-template-rows: none; grid-row: auto; display: block; }
+}
