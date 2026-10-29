@@ -207,6 +207,24 @@ const drawings: Record<string, Drawing> = {
     ${[l('coverage view', 'Deckungsansicht'), l('repair quotes', 'Reparaturangebote'), l('recall campaigns', 'Rückrufkampagnen'), l('depot repair', 'Depotreparatur')].map((s, i) => dot(192, 46 + i * 18, i === 0 ? C : G, 2.5) + t(200, 49 + i * 18, s, { size: 7 })).join('')}
     ${tag(18, 128, 156, l('Connected Assets $15,000/org', 'Connected Assets 15.000 €/Org'))}${t(182, 141, l('per month, telemetry', 'pro Monat, Telemetrie'), { size: 7 })}`,
 
+  'servicemax-vs-salesforce-field-service': (l) => `
+    ${t(18, 18, l('ONE SALESFORCE ORG, TWO DATA MODELS', 'EINE SALESFORCE-ORG, ZWEI DATENMODELLE'), { fill: D, size: 7 })}
+    ${box(18, 26, 192, 90)}
+    ${box(28, 36, 82, 70)}${t(69, 52, 'ServiceMax Core', { fill: D, size: 7, anchor: 'middle' })}${t(33, 70, l('SVMXC objects', 'SVMXC-Objekte'), { size: 7 })}${t(33, 84, 'Installed Product', { size: 7 })}
+    ${box(118, 36, 82, 70, C)}${t(159, 52, 'Field Service', { fill: C, size: 7, anchor: 'middle' })}${t(123, 70, 'WorkOrder', { size: 7 })}${t(123, 84, 'Asset', { size: 7 })}
+    ${arrow(210, 71, 222, G, true)}
+    ${box(222, 36, 82, 70)}${t(263, 52, l('AWS IRELAND', 'AWS IRLAND'), { fill: D, size: 7, anchor: 'middle' })}${t(227, 70, 'Service Board', { size: 7 })}${t(227, 84, l('Optimization', 'Optimierung'), { size: 7 })}
+    ${tag(18, 128, 150, l('2 vendors · 2 calendars', '2 Hersteller · 2 Kalender'))}${t(178, 141, l('no PTC SLA for suites', 'keine PTC-SLA für Suiten'), { size: 7 })}`,
+
+  'servicemax-asset-360': (l) => `
+    ${t(18, 18, l('TWO ADD-ONS, SAME OBJECTS', 'ZWEI ERWEITERUNGEN, GLEICHE OBJEKTE'), { fill: D, size: 7 })}
+    ${box(18, 28, 130, 50, C)}${t(83, 42, 'ASSET 360 · PTC', { fill: C, size: 7.5, anchor: 'middle' })}${t(28, 57, l('entitlement engine', 'Entitlement-Engine'), { size: 7 })}${t(28, 70, l('Windchill link', 'Windchill-Anbindung'), { size: 7 })}
+    ${box(172, 28, 130, 50)}${t(237, 42, 'ASLM · SALESFORCE', { fill: D, size: 7.5, anchor: 'middle' })}${t(182, 57, l('$75 per user', '75 $ je Nutzer'), { size: 7 })}${t(182, 70, l('depot repair', 'Depotreparatur'), { size: 7 })}
+    <path d="M83 78V96M237 78V96" fill="none" stroke="${G}" stroke-width="1.2"/>
+    ${t(160, 90, l('overlap: coverage, campaigns', 'Überschneidung: Deckung, Kampagnen'), { size: 6.5, anchor: 'middle' })}
+    ${box(18, 96, 284, 26)}${t(160, 112, 'Field Service: WorkOrder · Asset', { fill: D, size: 7, anchor: 'middle' })}
+    ${tag(18, 132, 170, l('needs Service Cloud + FS', 'braucht Service Cloud + FS'))}${t(196, 145, l('26R2 · 9 Sep 2026', '26R2 · 9.9.2026'), { size: 7 })}`,
+
   'customer-prices-sap-or-salesforce-pricing': (l) => `
     ${box(18, 26, 72, 98)}${t(54, 44, 'SAP', { fill: D, size: 8, anchor: 'middle' })}${t(54, 58, l('conditions', 'Konditionen'), { size: 7, anchor: 'middle' })}
     ${box(230, 26, 74, 98, C)}${t(267, 44, 'Revenue Cloud', { fill: D, size: 7.5, anchor: 'middle' })}${t(267, 58, 'Pricing Procedure', { size: 6.5, anchor: 'middle' })}
