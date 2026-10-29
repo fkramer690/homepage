@@ -38,15 +38,15 @@ Grundlage: Jev-Lauf (jev-1.14.0) über Start, EN, Leistungen, Freiberufler-Seite
 | J6 | Faktencheck der 17 Artikel mit unbelegten Preisen, Lizenzen oder Fristen: Quelle und „Stand“-Datum je Aussage | hoch | groß | Claude recherchiert, Fabian bestätigt | offen |
 | J7 | Review-Rhythmus für zeitkritische Artikel (82 % veralten laut Jev in 12 Monaten): Feld „geprüft am“ plus Erinnerung | hoch | mittel | Claude | offen |
 | J8 | Kundenstimmen und Ergebnisse je Referenz (= Weitere Ideen 4 und 11), stärkster Hebel für Vertrauen | hoch | mittel | Fabian liefert, Claude baut ein | wartet auf Fabian |
-| J9 | Blog-Übersicht /blog und /en/blog (je ca. 690 KB HTML) verkleinern: Kartengrafiken nicht inline | mittel | mittel | Claude | offen |
-| J10 | Ein klarer nächster Schritt auf Leistungs- und Freiberufler-Seite (Jev 0,35) | mittel | klein | Claude | offen |
+| J9 | Blog-Übersicht /blog und /en/blog (je ca. 690 KB HTML, gzip übertragen nur ca. 105 KB): Kartengrafiken außerhalb des Bildschirms nicht rendern (content-visibility) | klein | klein | Claude | PR |
+| J10 | Ein klarer nächster Schritt auf der Leistungsübersicht (Jev 0,35; bisher kein Button). Die Freiberufler-Seite hat bereits Buttons im Hero und Kontaktbereich | mittel | klein | Claude | PR |
 | J11 | Kernaussage nach vorn: /partner und vier Artikel (AELA, Buyer Agent WhatsApp, Account Forecasting, Garantieansprüche) | mittel | mittel | Claude | offen |
-| J12 | Masterclass und Blog abgrenzen und verlinken: Manufacturing Cloud gegen „wann lohnt sie sich“, B2B Commerce gegen „B2B Commerce oder Händlerportal“ | mittel | klein | Claude | offen |
+| J12 | Masterclass und Blog abgrenzen: H1 der Hubs Manufacturing Cloud und B2B Commerce auf „vom Business Case bis zum Rollout“ statt der „lohnt sich“-Frage, die die Artikel besetzen (verlinkt sind sie schon) | mittel | klein | Claude | PR |
 | J13 | Einstiegsartikel für Leser ohne benanntes Problem (nur 4 von 196 Artikeln) | mittel | groß | Claude entwirft, Fabian gibt frei | offen |
 | J14 | Veröffentlichungsdaten: 174 von 196 DE-Artikeln tragen 27. bis 29.10.2026; echtes Datum oder „aktualisiert am“? | mittel | klein | Fabian entscheidet | offen |
 | J15 | Logo-Band: Freigaben der Kunden dokumentieren oder Überschrift präzisieren | mittel | klein | Fabian | offen |
 | J16 | /blog/change-management-modelle wirkt generisch (Spezifität 0,38): Praxisbeispiel ergänzen | klein | mittel | Juliane | offen |
-| J17 | Relative Links in Leistungsseiten auf absolute Pfade umstellen (robuster für Crawler) | klein | klein | Claude | offen |
+| J17 | Relative Links auf absolute Pfade umstellen: 496 Stellen in den Inhalten, im Browser alle korrekt, nur ein Crawler-Fehler | klein | mittel | später | zurückgestellt |
 | J18 | PageSpeed-Key (PAGESPEED_API_KEY) besorgen und jev-seo mit Core Web Vitals wiederholen | klein | klein | Fabian | offen |
 | J19 | HSTS und Sicherheits-Header: bei GitHub Pages nur über vorgeschaltetes CDN möglich | klein | mittel | später | zurückgestellt |
 
