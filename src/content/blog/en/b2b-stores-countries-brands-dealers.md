@@ -29,7 +29,7 @@ Most manufacturers need one Salesforce B2B Commerce store per brand, or per lega
 
 ## What decides the number of B2B stores?
 
-The store is the hub of Salesforce B2B Commerce, which Salesforce now also markets as "Agentforce Commerce for B2B", according to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/agentforce-for-guided-shopping-for-b2b-and-d2c/increase-revenue-with-agentforce-for-guided-shopping). Around the store sit the catalogue, the buyer groups, the entitlement policies and the price books. [Trailhead on the data model](https://trailhead.salesforce.com/content/learn/modules/b2b-commerce-lightning-experience-data-model/organize-your-store) describes it like spokes around a hub and says that a company can create several stores "to serve different business areas or regions".
+The store is the hub of Salesforce B2B Commerce, which Salesforce now also markets as "Agentforce Commerce for B2B", according to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/agentforce-for-guided-shopping-for-b2b-and-d2c/increase-revenue-with-agentforce-for-guided-shopping). Around the store sit the catalogue, the buyer groups, the entitlement policies and the price books. [Trailhead on the data model](https://trailhead.salesforce.com/content/learn/modules/b2b2c-commerce-basics/b2b2c-data-model) describes it like spokes around a hub and says that a company can create several stores "to serve different business areas or regions".
 
 Three objects decide whether one store is enough:
 

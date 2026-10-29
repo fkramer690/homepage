@@ -57,7 +57,7 @@ Everything else stays in the parts list: screws, seals, cables, standard parts. 
 
 Machine series differ. One has a firmware version and a counter for strokes, the next has a laser source with hours and a coolant type. If every series gets its own custom fields on the asset, the object grows with every new product line.
 
-The [AssetAttribute object](https://developer.salesforce.com/docs/atlas.en-us.field_service_dev.meta/field_service_dev/sforce_api_objects_assetattribute.htm), available since API version 57.0, "stores asset attributes to track and analyze asset conditions to improve their uptime". Each record links an asset to an attribute definition and stores a value, with picklist values where the attribute is a picklist. New attributes need a new definition, not a new field.
+The [AssetAttribute object](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_assetattribute.htm), available since API version 57.0, "stores asset attributes to track and analyze asset conditions to improve their uptime". Each record links an asset to an attribute definition and stores a value, with picklist values where the attribute is a picklist. New attributes need a new definition, not a new field.
 
 I use attributes for descriptive values that vary by series. For counters that drive maintenance plans and reports across all series, such as operating hours, I prefer a number field on the asset, because filter criteria for maintenance rules cannot use every field type. How that works in detail is in [usage-based maintenance in Field Service](../field-service-usage-based-maintenance/).
 

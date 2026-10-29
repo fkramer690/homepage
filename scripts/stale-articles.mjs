@@ -2,9 +2,13 @@
 // - prices or Flex Credits, last checked (updatedDate, else pubDate) more than MAX_AGE_MONTHS ago, or
 // - a deadline or Salesforce release named in the text that has passed since the last check,
 //   so the article probably still speaks of it in the future tense.
+// With --links it also requests every external link in blog, masterclass and service pages and
+// lists those that answer 404 or 410 (sources that were moved or retired). Other errors and bot
+// blocks (403, 429, timeouts) are not reported, and help.salesforce.com answers 200 even for
+// missing articles, so this catches most but not all dead sources.
 // Prints a Markdown report (German, for Fabian); .github/workflows/stale-articles.yml posts it
 // as an issue once a month. Mark a checked article with `updatedDate` (docs/blog-guidelines.md).
-// Usage: node scripts/stale-articles.mjs [--today YYYY-MM-DD]
+// Usage: node scripts/stale-articles.mjs [--today YYYY-MM-DD] [--links]
 import { readdirSync, readFileSync } from 'node:fs';
 
 const MAX_AGE_MONTHS = 6;
@@ -81,4 +85,41 @@ console.log('Nach der Prüfung `updatedDate` im Frontmatter setzen, dann verschw
 for (const a of due.sort((x, y) => x.file.localeCompare(y.file) || x.lang.localeCompare(y.lang))) {
   console.log(`- [ ] **${a.title}** (${a.lang.toUpperCase()}) ${url(a)}`);
   for (const r of a.reasons) console.log(`  - ${r}`);
+}
+
+if (process.argv.includes('--links')) {
+  const uses = new Map();
+  for (const collection of ['blog', 'masterclass', 'services']) {
+    for (const lang of ['de', 'en']) {
+      const dir = new URL(`../src/content/${collection}/${lang}/`, import.meta.url).pathname;
+      for (const file of readdirSync(dir).filter((f) => f.endsWith('.md'))) {
+        for (const m of readFileSync(dir + file, 'utf8').matchAll(/\]\((https?:\/\/[^)\s]+)\)/g)) {
+          if (!uses.has(m[1])) uses.set(m[1], new Set());
+          uses.get(m[1]).add(`src/content/${collection}/${lang}/${file}`);
+        }
+      }
+    }
+  }
+  const dead = [];
+  const queue = [...uses.keys()];
+  const check = async () => {
+    while (queue.length) {
+      const url = queue.shift();
+      try {
+        const res = await fetch(url, { redirect: 'follow', signal: AbortSignal.timeout(30000) });
+        if (res.status === 404 || res.status === 410) dead.push([url, res.status]);
+      } catch {
+        // Network errors and timeouts say nothing about the source; skip them.
+      }
+    }
+  };
+  await Promise.all(Array.from({ length: 12 }, check));
+  if (dead.length) {
+    console.log(`\n## Tote Links (${dead.length})\n`);
+    console.log('Neue Quelle suchen und Link in allen genannten Dateien ersetzen, sonst Aussage ohne Link neutral formulieren.\n');
+    for (const [url, status] of dead.sort()) {
+      console.log(`- [ ] ${url} (${status})`);
+      for (const file of [...uses.get(url)].sort()) console.log(`  - ${file}`);
+    }
+  }
 }

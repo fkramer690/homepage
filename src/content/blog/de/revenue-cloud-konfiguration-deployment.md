@@ -30,7 +30,7 @@ Die meiste Konfiguration in Revenue Cloud sind Daten: Attributdefinitionen, Prod
 
 ## Warum ist Revenue-Cloud-Konfiguration meist Daten?
 
-In Salesforce CPQ sind Preisregeln, Produktregeln und Optionen Datensätze in Paketobjekten. Revenue Cloud, in der Salesforce-Hilfe auch als Revenue Management und früher als Revenue Lifecycle Management geführt, folgt demselben Prinzip auf Standardobjekten. Gearset fasst es in seinem [Vergleich von CPQ und Revenue Cloud](https://docs.gearset.com/en/articles/10981375-understanding-the-difference-between-salesforce-cpq-and-revenue-lifecycle-management-rlm-revenue-cloud-advanced-rca) zusammen: In beiden Produkten liegt die meiste Konfiguration als Daten vor, für Revenue Cloud heißt es dort: "Most configuration is stored as data, not metadata."
+In Salesforce CPQ sind Preisregeln, Produktregeln und Optionen Datensätze in Paketobjekten. Revenue Cloud, in der Salesforce-Hilfe auch als Revenue Management und früher als Revenue Lifecycle Management geführt, folgt demselben Prinzip auf Standardobjekten. Gearset fasst es in seinem [Vergleich von CPQ und Revenue Cloud](https://docs.gearset.com/en/articles/11169961-how-to-compare-and-deploy-revenue-cloud-advanced) zusammen: In beiden Produkten liegt die meiste Konfiguration als Daten vor, für Revenue Cloud heißt es dort: "Most configuration is stored as data, not metadata."
 
 Für Teams, die von CPQ kommen, sehen die Unterschiede so aus:
 

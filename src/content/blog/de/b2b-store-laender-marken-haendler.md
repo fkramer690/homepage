@@ -29,7 +29,7 @@ Die meisten Hersteller brauchen in Salesforce B2B Commerce einen Store pro Marke
 
 ## Was entscheidet über die Zahl der B2B-Stores?
 
-Der Store ist die Nabe von Salesforce B2B Commerce, das Salesforce laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/agentforce-for-guided-shopping-for-b2b-and-d2c/increase-revenue-with-agentforce-for-guided-shopping) inzwischen auch als "Agentforce Commerce for B2B" vermarktet. Um den Store herum liegen Katalog, Käufergruppen (Buyer Groups), Entitlement Policies und Preisbücher. [Trailhead zum Datenmodell](https://trailhead.salesforce.com/content/learn/modules/b2b-commerce-lightning-experience-data-model/organize-your-store) beschreibt das als Speichen um eine Nabe und sagt, dass ein Unternehmen mehrere Stores für verschiedene Geschäftsbereiche oder Regionen anlegen kann.
+Der Store ist die Nabe von Salesforce B2B Commerce, das Salesforce laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/agentforce-for-guided-shopping-for-b2b-and-d2c/increase-revenue-with-agentforce-for-guided-shopping) inzwischen auch als "Agentforce Commerce for B2B" vermarktet. Um den Store herum liegen Katalog, Käufergruppen (Buyer Groups), Entitlement Policies und Preisbücher. [Trailhead zum Datenmodell](https://trailhead.salesforce.com/content/learn/modules/b2b2c-commerce-basics/b2b2c-data-model) beschreibt das als Speichen um eine Nabe und sagt, dass ein Unternehmen mehrere Stores für verschiedene Geschäftsbereiche oder Regionen anlegen kann.
 
 Drei Objekte entscheiden, ob ein Store reicht:
 

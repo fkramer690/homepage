@@ -44,7 +44,7 @@ The guide covers 19 objects, all available from API version 68.0, and names Manu
 
 ## How close is it to SAP pricing?
 
-Very close in its structure. SAP calculates prices with the condition technique: according to [SAP Learning](https://learning.sap.com/courses/configuring-pricing-in-sap-s-4hana-sales/introducing-the-condition-technique), a pricing procedure lists the condition types, each condition type has an access sequence, and the access sequence searches condition tables for a valid condition record, including scales by quantity.
+Very close in its structure. SAP calculates prices with the condition technique: according to [SAP Learning](https://learning.sap.com/courses/configuring-pricing-in-sap-s-4hana-sales), a pricing procedure lists the condition types, each condition type has an access sequence, and the access sequence searches condition tables for a valid condition record, including scales by quantity.
 
 The [object reference](https://developer.salesforce.com/docs/industries/penny-perfect-pricing/references/penny-perfect-pricing-objects) of Penny Perfect Pricing reads like a translation of that model. Salesforce does not publish the mapping; the right column is my reading of the object descriptions:
 

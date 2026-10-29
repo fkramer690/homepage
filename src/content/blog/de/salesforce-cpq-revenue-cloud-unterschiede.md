@@ -61,7 +61,7 @@ Winter '27 | Developer Guide heißt "Revenue Management Developer Guide"
 | Ablage der Konfiguration | Überwiegend Datensätze | Überwiegend Datensätze |
 | Status Oktober 2026 | Verkaufsende, Wartungsphase, keine neuen Funktionen | Aktiv weiterentwickelt, verkauft als Growth und Advanced |
 
-Die Quellen zur Tabelle folgen in den Abschnitten unten. Die Zeile zur Ablage der Konfiguration ist die eine Gemeinsamkeit, die im Betrieb zählt: Laut [Gearset](https://docs.gearset.com/en/articles/10981375-understanding-the-difference-between-salesforce-cpq-and-revenue-lifecycle-management-rlm-revenue-cloud-advanced-rca) liegt die Konfiguration in beiden Produkten überwiegend als Daten vor. Deployments brauchen also in beiden Fällen Daten-Templates, nur für andere Objekte.
+Die Quellen zur Tabelle folgen in den Abschnitten unten. Die Zeile zur Ablage der Konfiguration ist die eine Gemeinsamkeit, die im Betrieb zählt: Laut [Gearset](https://docs.gearset.com/en/articles/11169961-how-to-compare-and-deploy-revenue-cloud-advanced) liegt die Konfiguration in beiden Produkten überwiegend als Daten vor. Deployments brauchen also in beiden Fällen Daten-Templates, nur für andere Objekte.
 
 ## Wie unterscheiden sich Produktmodell und Konfigurator?
 

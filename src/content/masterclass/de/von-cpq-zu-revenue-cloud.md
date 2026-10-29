@@ -82,7 +82,7 @@ Drei Zeilen tragen den größten Teil des Aufwands.
 
 **Subscriptions.** Jede offene CPQ-Subscription wird zu einem Asset mit korrekter Historie, damit Nachträge und Verlängerungen über Angebot und Auftrag laufen, wie in [Kapitel 3](../angebot-vertrag-auftrag/) beschrieben. Bei Wartungsverträgen und Fernüberwachung sind das die heikelsten Daten der ganzen Migration.
 
-Eine Zeile ist eine Gemeinsamkeit: Laut [Gearset](https://docs.gearset.com/en/articles/10981375-understanding-the-difference-between-salesforce-cpq-and-revenue-lifecycle-management-rlm-revenue-cloud-advanced-rca) liegt in beiden Produkten der Großteil der Konfiguration als Daten vor. Die Quellen je Zeile stehen in [Salesforce CPQ vs. Revenue Cloud: Die echten Unterschiede](../../../blog/salesforce-cpq-revenue-cloud-unterschiede/).
+Eine Zeile ist eine Gemeinsamkeit: Laut [Gearset](https://docs.gearset.com/en/articles/11169961-how-to-compare-and-deploy-revenue-cloud-advanced) liegt in beiden Produkten der Großteil der Konfiguration als Daten vor. Die Quellen je Zeile stehen in [Salesforce CPQ vs. Revenue Cloud: Die echten Unterschiede](../../../blog/salesforce-cpq-revenue-cloud-unterschiede/).
 
 ## CPQ behalten, wechseln oder ein dritter Weg?
 

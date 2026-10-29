@@ -107,7 +107,7 @@ The flow from visit plan to KPI, and when a simple visit report object is enough
 
 ## Measuring dealer performance: dashboards and their data
 
-The [CRM Analytics app for Manufacturing Cloud](https://trailhead.salesforce.com/content/learn/modules/tableau-crm-administration-for-manufacturing-cloud/embed-dashboards-on-record-pages) comes with pre-configured dashboards that are embedded on record pages. These matter for the channel:
+The [CRM Analytics template for Manufacturing Cloud](https://trailhead.salesforce.com/content/learn/modules/crm-analytics-dashboards-for-account-manager-targets/explore-sales-targets) comes with pre-configured dashboards that the admin embeds on home and record pages. These matter for the channel:
 
 - **Rebate Program Embedded** on the rebate programme: programme performance, a leaderboard of members and products, upselling candidates.
 - **Order Rebates Embedded** on the order: associated rebate programmes and the purchases a member still needs for the next tier.

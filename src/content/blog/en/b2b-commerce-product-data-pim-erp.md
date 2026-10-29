@@ -101,7 +101,7 @@ The post does not give separate availability details per feature, so I would tes
 
 ## Why does data quality decide search quality?
 
-Store search can only find what is in the data. According to the [Trailhead unit on store search](https://trailhead.salesforce.com/content/learn/modules/b2b2c-commerce-for-merchandisers/b2b2c-make-store-searchable), product name, description and SKU are searchable by default, and further fields can be made searchable. The unit, written for D2C stores on the same core platform search, also describes how matching works: results appear only when all search terms are present, and prefix or infix partial matches are not supported.
+Store search can only find what is in the data. According to Salesforce, product name, description and SKU are searchable by default, and further fields can be made searchable. The unit, written for D2C stores on the same core platform search, also describes how matching works: results appear only when all search terms are present, and prefix or infix partial matches are not supported.
 
 For a parts catalogue, that has direct consequences:
 
