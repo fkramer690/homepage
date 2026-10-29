@@ -29,12 +29,16 @@ results:
   - "Ein Prozess, der dem Kunden gehört und den er jedem Partner geben kann"
 phases:
   - title: "Bestandsaufnahme"
+    icon: "analyse"
     text: "Ich schaue mir den aktuellen Release-Prozess an, die Umgebungen, das Repository und die Schmerzpunkte der Teams: wo Deployments scheitern, was von Hand passiert, wer was freigibt."
   - title: "Zielprozess"
+    icon: "target"
     text: "Wir einigen uns auf Branching-Modell, Umgebungen, Prüfungen pro Stufe und Review-Regeln. Das Design hängt von der Teamgröße ab und davon, wie oft das Business releasen möchte."
   - title: "Aufbau der Pipeline"
+    icon: "pipeline"
     text: "Ich baue die Pipeline auf der Git-Plattform des Kunden, meist mit sfdx-hardis, und bringe das erste Team darauf. Weitere Teams folgen, sobald der Prozess stabil läuft."
   - title: "Übergabe"
+    icon: "handshake"
     text: "Interne Kollegen lernen, die Pipeline zu betreiben und zu erweitern. Die Dokumentation liegt im Repository des Kunden, direkt neben dem Code."
 faq:
   - q: "Auf welchen Git-Plattformen kann eine Salesforce-Pipeline laufen?"

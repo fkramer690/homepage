@@ -11,17 +11,17 @@
 import { createHash } from 'node:crypto';
 import { iconHtml } from './icons.mjs';
 
-export const blockNames = ['hinweis', 'praxis', 'kennzahlen', 'zeitleiste', 'ablauf', 'pro-contra', 'vertiefung', 'schritte'];
+export const blockNames = ['hinweis', 'praxis', 'kennzahlen', 'zeitleiste', 'ablauf', 'pro-contra', 'vertiefung', 'schritte', 'stufen', 'vergleich', 'hebel'];
 
 const labels = {
   de: {
     tipp: 'Tipp', achtung: 'Achtung', offen: 'Schriftlich bestätigen lassen', praxis: 'Aus meiner Praxis',
-    quelle: 'Quelle', next: 'nächster Termin', legend: { sf: 'Salesforce', erp: 'ERP', ext: 'angrenzender Prozess' },
+    quelle: 'Quelle', next: 'nächster Termin', risiko: 'Größtes Risiko', legend: { sf: 'Salesforce', erp: 'ERP', ext: 'angrenzender Prozess' },
     diagram: 'Ablaufdiagramm',
   },
   en: {
     tipp: 'Tip', achtung: 'Warning', offen: 'Get it confirmed in writing', praxis: 'From my practice',
-    quelle: 'Source', next: 'next date', legend: { sf: 'Salesforce', erp: 'ERP', ext: 'adjacent process' },
+    quelle: 'Source', next: 'next date', risiko: 'Biggest risk', legend: { sf: 'Salesforce', erp: 'ERP', ext: 'adjacent process' },
     diagram: 'Flow diagram',
   },
 };
@@ -113,6 +113,51 @@ export function parseSteps(content) {
   return steps;
 }
 
+// Stages: "Letter | Name | Subtitle | Question", a trailing * marks a stage the cases
+// below refer to; optional cases "fall: Title | situation | consequence".
+// Variant `treppe` (staircase): a fifth field holds the risk, shown in its own row,
+// and optional bands "band: 1-2 | Text" (a trailing * makes the band cyan).
+export function parseStages(content) {
+  const stages = [];
+  const cases = [];
+  const bands = [];
+  for (const raw of lines(content)) {
+    const l = raw.trim();
+    if (!l) continue;
+    const k = keyLine(l, ['fall', 'case']);
+    if (k) {
+      const [title, situation, consequence] = k.value.split('|').map((x) => x.trim());
+      cases.push({ title, situation, consequence });
+      continue;
+    }
+    const b = keyLine(l, ['band']);
+    if (b) {
+      const mark = /\*$/.test(b.value);
+      const [range, text] = b.value.replace(/\s*\*$/, '').split('|').map((x) => x.trim());
+      const m = /^(\d+)\s*-\s*(\d+)$/.exec(range ?? '');
+      bands.push({ from: m ? +m[1] : 0, to: m ? +m[2] : 0, text, mark });
+      continue;
+    }
+    const mark = /\*$/.test(l);
+    const [letter, name, sub, text, risk] = l.replace(/\s*\*$/, '').split('|').map((x) => x.trim());
+    stages.push({ letter, name, sub, text, risk, mark });
+  }
+  return { stages, cases, bands };
+}
+
+// Comparison: "ohne: Title" / "without: Title" and "mit: Title" / "with: Title", each with "- points".
+export function parseCompare(content) {
+  const cols = [];
+  for (const l of lines(content)) {
+    if (!l.trim()) continue;
+    const k = keyLine(l.trim(), ['ohne', 'without', 'mit', 'with']);
+    if (k) { cols.push({ kind: ['ohne', 'without'].includes(k.key) ? 'without' : 'with', title: k.value, items: [] }); continue; }
+    const item = l.trim().match(/^[-*]\s+(.*)$/);
+    if (item && cols.length) cols[cols.length - 1].items.push(item[1]);
+  }
+  return cols;
+}
+
 // Diagram: "sf: A, B" / "erp: C" / "ext: D" assign nodes to systems; edges are
 // "A --> B", "A --Label--> B" (solid) and "A ..> B", "A ..Label..> B" (dashed).
 export function parseFlow(content) {
@@ -164,6 +209,10 @@ export function validateBlock(block) {
     const cols = parseProContra(content);
     if (cols.length !== 2 || cols[0].kind !== 'pro' || cols[1].kind !== 'contra') errs.push('pro-contra: needs a "pro: Title" column followed by a "contra: Title" column');
     for (const c of cols) between(c.items.length, 2, 5, `points in "${c.title}"`);
+  } else if (name === 'hebel') {
+    const levers = parseSteps(content);
+    between(levers.length, 2, 3, 'levers');
+    if (levers.some((l) => !l.title || !l.meta || !l.text)) errs.push('hebel: every lever needs "Title | effect" and an indented description line');
   } else if (name === 'vertiefung') {
     const { title, body } = parseDeep(content);
     if (!arg) errs.push('vertiefung: add a label after the name (```vertiefung Für Entwickler)');
@@ -173,6 +222,28 @@ export function validateBlock(block) {
     const steps = parseSteps(content);
     between(steps.length, 3, 6, 'steps');
     if (steps.some((s) => !s.text)) errs.push('schritte: every step needs an indented description line');
+  } else if (name === 'stufen') {
+    const { stages, cases, bands } = parseStages(content);
+    if (arg && arg !== 'treppe') errs.push('stufen: the only variant is treppe (```stufen treppe)');
+    between(stages.length, 3, 7, 'stages');
+    if (arg === 'treppe') {
+      if (stages.some((x) => !x.letter || !x.name || !x.sub || !x.text || !x.risk)) errs.push('stufen treppe: every stage needs "Number | Name | Subtitle | Description | Risk"');
+      between(bands.length, 0, 3, 'bands');
+      if (bands.some((x) => !x.text || x.from < 1 || x.to < x.from || x.to > stages.length)) errs.push('stufen treppe: every band needs "band: 1-2 | Text" within the stages');
+    } else {
+      if (stages.some((x) => !x.letter || !x.name || !x.sub || !x.text)) errs.push('stufen: every stage needs "Letter | Name | Subtitle | Question"');
+      if (bands.length) errs.push('stufen: bands only work in the variant treppe');
+    }
+    between(cases.length, 0, 3, 'cases');
+    if (cases.some((c) => !c.title || !c.situation || !c.consequence)) errs.push('stufen: every case needs "fall: Title | situation | consequence"');
+  } else if (name === 'vergleich') {
+    const cols = parseCompare(content);
+    if (cols.length !== 2 || cols[0].kind !== 'without' || cols[1].kind !== 'with') errs.push('vergleich: needs an "ohne: Title" column followed by a "mit: Title" column');
+    for (const c of cols) between(c.items.length, 2, 5, `points in "${c.title}"`);
+  } else if (name === 'hebel') {
+    const levers = parseSteps(content);
+    between(levers.length, 2, 3, 'levers');
+    if (levers.some((l) => !l.title || !l.meta || !l.text)) errs.push('hebel: every lever needs "Title | effect" and an indented description line');
   }
   return errs;
 }
@@ -180,7 +251,8 @@ export function validateBlock(block) {
 // Prose of a block, for word counts and the wording checks in check-blog.
 export function blockProse(block) {
   return block.content
-    .replace(/^\s*(quelle|source|titel|title|pro|contra|sf|erp|ext):\s*/gim, '')
+    .replace(/^\s*(quelle|source|titel|title|pro|contra|sf|erp|ext|fall|case|band|ohne|without|mit|with):\s*/gim, '')
+    .replace(/\s\*$/gm, '')
     .replace(/(--|\.\.)>?/g, ' ')
     .replace(/\|/g, ' ');
 }
@@ -291,6 +363,26 @@ export function renderBlock(block, { lang, isExternal, readDiagram, today = new 
   }
   if (name === 'schritte') {
     return `<ol class="cb cb-steps">${parseSteps(content).map((s, i) => `<li><span class="cb-step-no">${String(i + 1).padStart(2, '0')}</span><div><p class="cb-step-title">${inline(s.title, o)}</p>${s.meta ? `<p class="cb-step-meta">${inline(s.meta, o)}</p>` : ''}<p class="cb-step-text">${inline(s.text, o)}</p></div></li>`).join('')}</ol>`;
+  }
+  if (name === 'stufen' && arg === 'treppe') {
+    const { stages, cases, bands } = parseStages(content);
+    const n = stages.length;
+    const tiles = stages.map((x, i) => `<li class="cb-stair${x.mark ? ' cb-stage-mark' : ''}" style="--i:${i}"><span class="cb-stage-letter">${escHtml(x.letter)}</span><span class="cb-stage-name">${inline(x.name, o)}</span><span class="cb-stage-text">${inline(x.text, o)}</span><span class="cb-stage-sub">${inline(x.sub, o)}</span></li><li class="cb-stair-risk" style="--i:${i}"><span class="cb-stair-risk-label">${escHtml(t.risiko)}</span>${inline(x.risk, o)}</li>`).join('');
+    const bandRow = bands.length ? `<div class="cb-bands">${bands.map((b) => `<p class="cb-band${b.mark ? ' cb-band-mark' : ''}" style="grid-column:${b.from} / ${b.to + 1}">${inline(b.text, o)}</p>`).join('')}</div>` : '';
+    const list = cases.length ? `<div class="cb-cases">${cases.map((c) => `<div class="cb-case"><p class="cb-case-title">${inline(c.title, o)}</p><p>${inline(c.situation, o)}</p><p class="cb-case-then">${inline(c.consequence, o)}</p></div>`).join('')}</div>` : '';
+    return `<div class="cb cb-stage-block cb-stairs-block" style="--n:${n}"><ol class="cb-stairs">${tiles}</ol>${bandRow}${list}</div>`;
+  }
+  if (name === 'stufen') {
+    const { stages, cases } = parseStages(content);
+    const tiles = `<ol class="cb-stages" style="--n:${stages.length}">${stages.map((x) => `<li${x.mark ? ' class="cb-stage-mark"' : ''}><span class="cb-stage-letter">${escHtml(x.letter)}</span><span class="cb-stage-name">${inline(x.name, o)}</span><span class="cb-stage-sub">${inline(x.sub, o)}</span><span class="cb-stage-text">${inline(x.text, o)}</span></li>`).join('')}</ol>`;
+    const list = cases.length ? `<div class="cb-cases">${cases.map((c) => `<div class="cb-case"><p class="cb-case-title">${inline(c.title, o)}</p><p>${inline(c.situation, o)}</p><p class="cb-case-then">${inline(c.consequence, o)}</p></div>`).join('')}</div>` : '';
+    return `<div class="cb cb-stage-block">${tiles}${list}</div>`;
+  }
+  if (name === 'hebel') {
+    return `<div class="cb cb-levers">${parseSteps(content).map((s, i) => `<div class="cb-lever"><p class="cb-lever-no">${lang === 'de' ? 'Hebel' : 'Lever'} ${String(i + 1).padStart(2, '0')}</p><p class="cb-lever-title">${inline(s.title, o)}</p><p class="cb-lever-text">${inline(s.text, o)}</p>${s.meta ? `<p class="cb-lever-effect">${inline(s.meta, o)}</p>` : ''}</div>`).join('')}</div>`;
+  }
+  if (name === 'vergleich') {
+    return `<div class="cb cb-compare">${parseCompare(content).map((c) => `<div class="cb-compare-col cb-compare-${c.kind}"><p class="cb-compare-title">${inline(c.title, o)}</p><ul>${c.items.map((i) => `<li>${c.kind === 'with' ? icon.check : icon.cross}<span>${inline(i, o)}</span></li>`).join('')}</ul></div>`).join('')}</div>`;
   }
   return '';
 }

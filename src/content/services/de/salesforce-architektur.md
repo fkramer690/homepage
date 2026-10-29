@@ -27,12 +27,16 @@ results:
   - "Ein Datenmodell, das Reporting, Automatisierung und KI-Anwendungsfälle trägt"
 phases:
   - title: "Das Geschäft verstehen"
+    icon: "building"
     text: "Ich beginne mit Prozessen, Nutzern und bestehenden Systemen: wie das Unternehmen heute verkauft, liefert und seine Kunden betreut, und wohin es will."
   - title: "Zielbild"
+    icon: "target"
     text: "Mit Fachbereich und IT entwerfe ich Zielarchitektur und Datenmodell. Optionen und Abwägungen kommen ins Entscheidungslog, damit die Gründe sichtbar bleiben."
   - title: "Detailliertes Solution Design"
+    icon: "design"
     text: "Für die kritischen Bereiche schreibe ich Solution Designs, nach denen Umsetzungspartner bauen können, inklusive Schnittstellen, Sicherheit und Datenmigration."
   - title: "Architektur in der Umsetzung"
+    icon: "architecture"
     text: "Während der Umsetzung prüfe ich Partner-Designs, halte das Entscheidungslog aktuell und greife ein, wenn sich der Bau vom Zielbild entfernt."
 faq:
   - q: "Was macht ein Salesforce-Architekt auf Kundenseite?"

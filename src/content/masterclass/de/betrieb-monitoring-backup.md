@@ -105,11 +105,13 @@ Eine Liste allein ändert nichts. Ich empfehle einen eigenen Backlog für techni
 
 DORA (DevOps Research and Assessment) ist das Forschungsprogramm, aus dem die verbreitetsten Kennzahlen für Softwarelieferung stammen. Laut [dora.dev](https://dora.dev/guides/dora-metrics/) sind es heute fünf:
 
-- **Change Lead Time** ist die Zeit, die eine Änderung vom Commit in die Versionsverwaltung bis zum Deployment in Produktion braucht.
-- **Deployment-Häufigkeit** ist die Zahl der Deployments in einem Zeitraum oder die Zeit zwischen zwei Deployments.
-- **Failed Deployment Recovery Time** ist die Zeit, bis ein fehlgeschlagenes Deployment behoben ist, das sofortiges Eingreifen verlangt hat.
-- **Change Fail Rate** ist der Anteil der Deployments, die sofortiges Eingreifen erfordern, etwa einen Rollback oder einen Hotfix.
-- **Deployment Rework Rate** ist der Anteil ungeplanter Deployments, die wegen eines Incidents in Produktion nötig wurden.
+| Kennzahl | Was sie misst |
+|---|---|
+| Change Lead Time | Die Zeit, die eine Änderung vom Commit in die Versionsverwaltung bis zum Deployment in Produktion braucht. |
+| Deployment-Häufigkeit | Die Zahl der Deployments in einem Zeitraum oder die Zeit zwischen zwei Deployments. |
+| Failed Deployment Recovery Time | Die Zeit, bis ein fehlgeschlagenes Deployment behoben ist, das sofortiges Eingreifen verlangt hat. |
+| Change Fail Rate | Der Anteil der Deployments, die sofortiges Eingreifen erfordern, etwa einen Rollback oder einen Hotfix. |
+| Deployment Rework Rate | Der Anteil ungeplanter Deployments, die wegen eines Incidents in Produktion nötig wurden. |
 
 Die ersten drei messen den Durchsatz, die letzten zwei die Instabilität. Laut der [Geschichte der Kennzahlen](https://dora.dev/guides/dora-metrics/history/) wurde die frühere MTTR 2023 umbenannt und neu definiert, die Rework Rate kam 2024 dazu. Viele Werkzeuge zeigen noch die vier alten Kennzahlen.
 

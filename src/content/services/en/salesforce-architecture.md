@@ -27,12 +27,16 @@ results:
   - "A data model that supports reporting, automation and AI use cases"
 phases:
   - title: "Understanding the business"
+    icon: "building"
     text: "I start with the processes, the users and the existing systems: how does the company sell, deliver and serve its customers today, and where does it want to go."
   - title: "Target picture"
+    icon: "target"
     text: "Together with business and IT I design the target architecture and the data model. Options and trade-offs go into the decision log, so the reasons stay visible."
   - title: "Detailed solution design"
+    icon: "design"
     text: "For the critical areas I write solution designs that implementation partners can build from, including integrations, security and data migration."
   - title: "Architecture during delivery"
+    icon: "architecture"
     text: "During implementation I review partner designs, keep the decision log current and step in when the build drifts away from the target picture."
 faq:
   - q: "What does a Salesforce architect on the client side do?"

@@ -33,10 +33,13 @@ results:
   - "Neben Salesforce entstehen weniger Schattenlösungen."
 phases:
   - title: "Vorgehen vorbereiten"
+    icon: "compass"
     text: "Wir legen fest, woran Erfolg gemessen wird, welche Gruppen betroffen sind und was sich für jede im Alltag ändert. Dazu gehören die Risiken und wer im Management die Einführung trägt."
   - title: "Veränderung steuern"
+    icon: "steer"
     text: "Je Gruppe entsteht ein Plan entlang der ADKAR-Stufen, verknüpft mit dem Release-Plan. Die häufigsten Fälle kommen zuerst. Wir messen die Nutzung in Salesforce und steuern nach, wo sie hängt."
   - title: "Ergebnisse sichern"
+    icon: "check"
     text: "Wir prüfen, wo Lücken bleiben, verankern neue Regeln in Pipeline, Berichten und Center-of-Excellence-Calls und übergeben die Verantwortung an interne Owner."
 faq:
   - q: "Warum orientieren Sie sich an Prosci?"
@@ -73,9 +76,17 @@ contra: Woran es scheitert
 
 ## Wie sieht ADKAR in einem Salesforce-Programm aus?
 
-Das [ADKAR-Modell](https://www.prosci.com/blog/adkar-model) von Prosci beschreibt fünf Stufen, die jede Person bei einer Veränderung durchläuft: Awareness (Bewusstsein, warum sich etwas ändert), Desire (Bereitschaft, mitzumachen), Knowledge (Wissen, wie es geht), Ability (Fähigkeit, es im Alltag umzusetzen) und Reinforcement (Verankerung, damit niemand zurückfällt).
+Das [ADKAR-Modell](https://www.prosci.com/blog/adkar-model) von Prosci beschreibt fünf Stufen, die jede Person bei einer Veränderung durchläuft. Hakt eine Einführung, fehlt meist eine davon. Häufig sehen wir Folgendes: Die Schulungen sind gelaufen, die Nutzung bleibt trotzdem niedrig. Statt eine weitere Schulung anzusetzen, fragen wir je betroffener Gruppe, an welcher Stufe es hängt. Zwei typische Fälle:
 
-Häufig sehen wir Folgendes: Die Schulungen sind gelaufen, die Nutzung bleibt trotzdem niedrig. Statt eine weitere Schulung anzusetzen, fragen wir je betroffener Gruppe, an welcher Stufe es hängt. Wenn ein Vertriebsteam nicht weiß, wofür die gepflegten Opportunities gebraucht werden, fehlt Awareness, und das muss der zuständige Vertriebsleiter erklären, nicht der Trainer. Wenn die Entwickler eines Partners die Namenskonventionen kennen, aber niemand sie in der Pipeline prüft, fehlt Reinforcement. Dann gehört eine automatische Prüfung in den [Release-Prozess](../devops-und-release-management/).
+```stufen
+A | Awareness | Bewusstsein | Warum ändert sich etwas? *
+D | Desire | Bereitschaft | Will ich mitmachen?
+K | Knowledge | Wissen | Wie geht es?
+A | Ability | Fähigkeit | Kann ich es im Alltag?
+R | Reinforcement | Verankerung | Bleibt es, oder falle ich zurück? *
+fall: Es fehlt Awareness | Ein Vertriebsteam weiß nicht, wofür die gepflegten Opportunities gebraucht werden. | Das muss der zuständige Vertriebsleiter erklären, nicht der Trainer.
+fall: Es fehlt Reinforcement | Die Entwickler eines Partners kennen die Namenskonventionen, aber niemand prüft sie in der Pipeline. | Dann gehört eine automatische Prüfung in den [Release-Prozess](../devops-und-release-management/).
+```
 
 Salesforce hilft beim Messen. Ob ein neuer Prozess genutzt wird, zeigen Berichte über angelegte und gepflegte Datensätze besser als jede Umfrage. Diese Zahlen legen wir in der ersten Phase fest und schauen in der zweiten regelmäßig darauf. Die einzelnen Themen, von Key Usern bis zur Messung der Nutzung, beschreibe ich in [Salesforce Change Management: warum Einführungen scheitern](../../blog/change-management-salesforce-einfuehrung/). Kapitel für Kapitel entlang der fünf Stufen führt die [Masterclass Change Management](../../masterclass/change-management/).
 
@@ -96,6 +107,17 @@ Die erste Version deckte rund 80 Prozent der Fälle ab. Die Randfälle kamen Sch
 ## Was ändert sich für Fachbereiche?
 
 Mit einem sauberen Release-Prozess werden Releases kleiner und häufiger. Für Fachbereiche heißt das: öfter kleine Änderungen statt einmal im Quartal ein großes Paket. Damit das funktioniert, brauchen sie einen festen Weg, auf dem sie vorher erfahren, was sich ändert, und einen Rückweg, auf dem sie melden, was im Alltag nicht passt. Vor jedem Release kläre ich mit den Verantwortlichen im Fachbereich, welche Teams betroffen sind, was sich in ihren Abläufen ändert und wer sie informiert. Das steht im Release-Plan, bevor die Entwicklung fertig ist. Nach dem Release prüfe ich, ob die neuen Prozesse genutzt werden, und bringe Rückmeldungen aus dem Alltag in den Backlog.
+
+```vergleich
+ohne: Einmal im Quartal ein großes Paket
+- Fachbereiche sehen Änderungen erst in Produktion.
+- Viel Neues auf einmal, hohes Risiko je Release.
+- Probleme aus dem Alltag landen in E-Mails.
+mit: Kleine Releases mit festem Weg
+- Fachbereiche wissen vor dem Release, was sich ändert.
+- Öfter kleine Änderungen, weniger Risiko je Release.
+- Rückmeldungen kommen auf festem Weg in den Backlog.
+```
 
 ## Warum Prosci?
 

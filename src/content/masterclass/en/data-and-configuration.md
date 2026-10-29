@@ -57,7 +57,9 @@ For a manufacturer, that means:
 - **Custom settings** only where the business case needs them, for example values per user or profile. Their records then need a data step in the pipeline.
 - **Custom and standard objects used as configuration**, such as the Field Service objects or pricing rules in a configurator. Here you have no choice; they are data.
 
+```hinweis tipp
 In an existing org I would not rebuild every custom setting. I would write into the partner rules, though, that new configuration is built as a custom metadata type unless there is a business reason against it. Who sets and enforces these rules is covered in [chapter 2](../release-process-ownership-roles/).
+```
 
 ## How does configuration data move through the pipeline?
 

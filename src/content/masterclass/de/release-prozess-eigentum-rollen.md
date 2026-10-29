@@ -112,17 +112,26 @@ Ich bin Architekt, kein Anwalt. Die folgenden Punkte beschreiben, was ich aus te
 8. **Regeln für KI-Coding.** Welche Tools, welche Daten, welches Review. Die Prüfpunkte dafür stehen in [Partner codet mit KI: Was in den Vertrag gehört](../../../blog/partner-ki-coding-regeln-vertrag/).
 9. **Ausstieg.** Übergabe ohne Arbeit außerhalb des Repositorys, Bestätigung, dass lokale Kopien mit Ihrem Code und Ihren Zugangsdaten gelöscht sind, aktive Mitarbeit an der Übergabe für einen vereinbarten Zeitraum.
 
+```hinweis tipp
 Ich habe mit Nearshore-Teams in Osteuropa und Indien gearbeitet, und meine Einschätzung ist: Schriftliche Regeln sind mehr wert als jede Abstimmung im Call. Ein Team in einer anderen Zeitzone kann nicht kurz nachfragen, ob ein Setup-Klick in UAT in Ordnung ist. Es braucht die Regel vorher.
+```
 
 ## Wie übersteht der Release-Prozess einen Partnerwechsel?
 
 Wenn Eigentum, Rollen und Vertragsregeln stehen, ist ein Partnerwechsel ein Vorgang mit Checkliste. Ein typisches Szenario, als Annahme: Ein Hersteller von Verpackungsmaschinen betreibt Service Cloud mit Field Service, ein Händlerportal und eine SAP-Schnittstelle. Drei Partner arbeiten auf der Org. Der Partner für den Service-Stream wird nach einer Ausschreibung durch einen neuen ersetzt, mit vier Wochen Überlappung.
 
-1. **Bestand aufnehmen, bevor der Ausstieg verkündet wird.** Ein Abgleich zwischen Produktion und Repository zeigt, was nie im Repository angekommen ist. Das Setup Audit Trail hilft dabei, es zeigt laut [Salesforce-Objektreferenz](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_setupaudittrail.htm) Setup-Änderungen der mindestens letzten 180 Tage. Ältere Abweichungen findet nur der Abgleich. Wie eine Analyse technischer Schulden vor dem Wechsel aussieht, beschreibe ich in [KI-Org-Analyse: technische Schulden vor dem Partnerwechsel](../../../blog/ki-org-analyse-technische-schulden/).
-2. **Den neuen Partner im bestehenden Setup einarbeiten.** Er bekommt Benutzer im Repository, im Werkzeug und in den Sandboxes, liest die Standards und reicht in der ersten Woche kleine Pull Requests ein, die der Release Manager eng begleitet.
-3. **CODEOWNERS umstellen.** Die Objekte des Service-Streams wechseln den Verantwortlichen, ohne dass sich der Prozess ändert.
-4. **Zugriffe entziehen.** Am letzten Tag verlieren alle Benutzer des alten Partners ihren Zugriff auf Git-Plattform, Werkzeug, Sandboxes und Produktion.
-5. **Geheimnisse erneuern.** Zertifikate der Pipeline, Passwörter technischer Benutzer, Zugänge zur SAP-Middleware. Alles, was der alte Partner je gesehen hat, wird ersetzt.
+```schritte
+Bestand aufnehmen, bevor der Ausstieg verkündet wird
+  Ein Abgleich zwischen Produktion und Repository zeigt, was nie im Repository angekommen ist. Das Setup Audit Trail hilft dabei, es zeigt laut [Salesforce-Objektreferenz](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_setupaudittrail.htm) Setup-Änderungen der mindestens letzten 180 Tage. Ältere Abweichungen findet nur der Abgleich. Wie eine Analyse technischer Schulden vor dem Wechsel aussieht, beschreibe ich in [KI-Org-Analyse: technische Schulden vor dem Partnerwechsel](../../../blog/ki-org-analyse-technische-schulden/).
+Den neuen Partner im bestehenden Setup einarbeiten
+  Er bekommt Benutzer im Repository, im Werkzeug und in den Sandboxes, liest die Standards und reicht in der ersten Woche kleine Pull Requests ein, die der Release Manager eng begleitet.
+CODEOWNERS umstellen
+  Die Objekte des Service-Streams wechseln den Verantwortlichen, ohne dass sich der Prozess ändert.
+Zugriffe entziehen
+  Am letzten Tag verlieren alle Benutzer des alten Partners ihren Zugriff auf Git-Plattform, Werkzeug, Sandboxes und Produktion.
+Geheimnisse erneuern
+  Zertifikate der Pipeline, Passwörter technischer Benutzer, Zugänge zur SAP-Middleware. Alles, was der alte Partner je gesehen hat, wird ersetzt.
+```
 
 Der Release-Kalender läuft in diesem Szenario ohne Pause weiter, denn Pipeline, Historie und Standards gehören dem Hersteller. Der neue Partner arbeitet ab Tag eins nach denselben Regeln wie die beiden anderen, und die Partner bleiben vergleichbar. Dieselbe Situation mit einer Pipeline im Account des alten Partners hätte einen Umzug mitten im Wechsel bedeutet.
 

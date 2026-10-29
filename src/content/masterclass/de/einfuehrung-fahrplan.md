@@ -56,7 +56,9 @@ Die neun Kapitel davor beschreiben jeweils einen Baustein. Für die Einführung 
 
 ## Wie befähigen Sie Ihr Team und Ihre Partner?
 
+```hinweis tipp
 Die wichtigste Investition ist eine Person: eine interne Release-Rolle, die Pipeline, Kalender und Freigaben verantwortet. Wählen Sie ein Open-Source-Werkzeug oder ein günstigeres Paket, ist die Lizenzersparnis dort besser angelegt als in zusätzlichen Partnertagen. Ohne diese Rolle gehört der Prozess faktisch wieder dem Partner, der ihn am besten kennt.
+```
 
 Dazu kommt Training, und zwar praxisnah. Ich setze sfdx-hardis seit rund zwei Jahren in Kundenprojekten ein und habe im Oktober 2026 alle drei Level des [kostenlosen sfdx-hardis-Trainings](https://sfdx-hardis.cloudity.com/salesforce-devops-training/) abgeschlossen. In 27 Labs entsteht auf kostenlosen Developer Edition Orgs und einem GitHub-Account eine komplette Pipeline, und ein Badge gibt es erst, wenn ein Job die Arbeit im eigenen Repository geprüft hat. Trotz Vorerfahrung habe ich fast einen Tag gebraucht. Meine Eindrücke stehen in [was ich aus dem sfdx-hardis-Training lernte](../../../blog/sfdx-hardis-kostenloses-devops-training/).
 
@@ -83,7 +85,9 @@ Die folgenden Muster folgen aus der Struktur eines Programms mit mehreren Partne
 - **Nur Entwickler werden geschult.** Admins bauen weiter im Setup, weil ihnen niemand Pull Requests gezeigt hat.
 - **Niemand misst.** Ohne Basislinie lässt sich dem Lenkungsausschuss nicht zeigen, was die Umstellung gebracht hat.
 
+```hinweis achtung
 Pflicht-Reviews gehören von Anfang an dazu, auch wenn die Pipeline noch einfach ist. Warum, steht in [warum Pull-Request-Reviews Pflicht sind](../../../blog/warum-pull-request-reviews-pflicht-sind/).
+```
 
 ## Wie messen Sie den Fortschritt?
 

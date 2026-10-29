@@ -33,10 +33,13 @@ results:
   - "Fewer shadow solutions grow up next to Salesforce."
 phases:
   - title: "Prepare the approach"
+    icon: "compass"
     text: "We define how success is measured, which groups are affected and what changes for each of them in daily work. That includes the risks and who in management sponsors the rollout."
   - title: "Manage the change"
+    icon: "steer"
     text: "Each group gets a plan along the ADKAR stages, tied to the release plan. The most common cases come first. We measure usage in Salesforce and adjust where it gets stuck."
   - title: "Sustain the outcomes"
+    icon: "check"
     text: "We check where gaps remain, anchor new rules in the pipeline, reports and Center of Excellence calls, and hand ownership over to internal owners."
 faq:
   - q: "Why do you follow Prosci?"
@@ -73,9 +76,17 @@ contra: Where it fails
 
 ## What does ADKAR look like in a Salesforce programme?
 
-The [ADKAR model](https://www.prosci.com/blog/adkar-model) by Prosci describes five stages each person goes through in a change: Awareness of why something changes, Desire to take part, Knowledge of how it works, Ability to do it in daily work, and Reinforcement so nobody slips back.
+The [ADKAR model](https://www.prosci.com/blog/adkar-model) by Prosci describes five stages each person goes through in a change. When a rollout stalls, one of them is usually missing. We often see the following: the training has taken place, yet usage stays low. Instead of scheduling another session, we ask per affected group at which stage it is stuck. Two typical cases:
 
-We often see the following: the training has taken place, yet usage stays low. Instead of scheduling another session, we ask per affected group at which stage it is stuck. If a sales team does not know what the maintained opportunities are needed for, Awareness is missing, and the head of sales has to explain that, not the trainer. If a partner's developers know the naming conventions but nobody checks them in the pipeline, Reinforcement is missing. Then an automatic check belongs in the [release process](../devops-release-management/).
+```stufen
+A | Awareness | Why it changes | Why is something changing? *
+D | Desire | Taking part | Do I want to take part?
+K | Knowledge | Know-how | How does it work?
+A | Ability | Doing it | Can I do it in daily work?
+R | Reinforcement | Making it stick | Does it last, or do I slip back? *
+case: Awareness is missing | A sales team does not know what the maintained opportunities are needed for. | The head of sales has to explain that, not the trainer.
+case: Reinforcement is missing | A partner's developers know the naming conventions, but nobody checks them in the pipeline. | Then an automatic check belongs in the [release process](../devops-release-management/).
+```
 
 Salesforce helps with measuring. Whether a new process is used shows in reports on created and maintained records better than in any survey. We define these figures in the first phase and look at them regularly in the second. I describe the individual topics, from key users to measuring adoption, in [Salesforce change management: why rollouts fail](../../blog/change-management-salesforce-rollout/). The [change management masterclass](../../masterclass/change-management/) goes through the five stages chapter by chapter.
 
@@ -96,6 +107,17 @@ The first version covered around 80 percent of the cases. The edge cases were ad
 ## What changes for business teams?
 
 With a clean release process, releases become smaller and more frequent. For business teams this means small changes more often instead of one large package per quarter. For that to work, they need a fixed route on which they learn in advance what changes, and a route back on which they report what does not fit their daily work. Before each release I clarify with the owners in the business which teams are affected, what changes in their processes and who informs them. That goes into the release plan before development is finished. After the release I check whether the new processes are used and bring feedback from daily work into the backlog.
+
+```vergleich
+without: One large package per quarter
+- Business teams see changes only in production.
+- A lot of new things at once, high risk per release.
+- Problems from daily work end up in emails.
+with: Small releases with a fixed route
+- Business teams know before the release what changes.
+- Small changes more often, less risk per release.
+- Feedback reaches the backlog by a fixed route.
+```
 
 ## Why Prosci?
 
