@@ -73,6 +73,9 @@ Change management is not a single work step. The same topics come up again and a
 4. **[Communicating releases to the business](../salesforce-release-communication-business/):** how business users learn before a release what changes.
 5. **[Reinforcement: making standards stick with partners](../partner-standards-reinforcement/):** how new development rules stay part of the partners' daily work.
 6. **[Measuring adoption after go-live](../salesforce-adoption-metrics-after-go-live/):** which numbers show whether a process has landed.
+7. **[Adoption in sales](../salesforce-adoption-sales-team/):** why sales works around Salesforce and what helps.
+8. **[Training plan](../salesforce-training-plan-rollout/):** how to plan training by role, on real cases and through key users.
+9. **[Hypercare after go-live](../salesforce-hypercare-after-go-live/):** who is on hand in the first weeks and when it ends.
 
 ## How does change management run alongside delivery?
 

@@ -1940,6 +1940,32 @@ const drawings: Record<string, Drawing> = {
     <path d="M18 118H302" stroke="${L}"/>
     ${t(18, 134, l('baseline before go-live · monthly for 6 months', 'Ausgangswert vor Go-live · 6 Monate monatlich'), { size: 7 })}
     ${t(18, 148, l('per group and country', 'pro Gruppe und Land'), { size: 7 })}`,
+
+  'change-sales-adoption': (l) => `
+    ${t(18, 18, l('BEFORE THE CUSTOMER MEETING', 'VOR DEM KUNDENTERMIN'), { fill: D, size: 7 })}
+    ${box(18, 28, 110, 74)}${t(28, 44, l('own list', 'eigene Liste'), { fill: D, size: 7 })}
+    ${[l('contacts', 'Kontakte'), l('notes', 'Notizen')].map((s, i) => dot(31, 57 + i * 16, G, 2) + t(38, 60 + i * 16, s, { size: 7 })).join('')}
+    ${box(150, 28, 152, 74, C)}${t(160, 44, 'SALESFORCE', { fill: C, size: 7 })}
+    ${[l('orders from ERP', 'Aufträge aus ERP'), l('call-off quantities', 'Abrufmengen'), l('open service cases', 'offene Servicefälle')].map((s, i) => check(160, 57 + i * 15) + t(174, 60 + i * 15, s, { size: 7 })).join('')}
+    <path d="M18 116H302" stroke="${L}"/>
+    ${t(18, 132, l('28 % of working time spent selling', '28 % der Arbeitszeit fürs Verkaufen'), { size: 7 })}
+    ${t(18, 148, l('pipeline meeting only from Salesforce', 'Pipeline-Meeting nur aus Salesforce'), { fill: D, size: 7 })}`,
+
+  'change-training-plan': (l) => `
+    ${t(18, 18, l('BY ROLE, NOT BY FEATURE', 'NACH ROLLE, NICHT NACH FUNKTION'), { fill: D, size: 7 })}
+    ${[['Key User', l('before UAT', 'vor UAT')], [l('Sales', 'Vertrieb'), l('last week before go-live', 'letzte Woche vor Go-live')], [l('Dispatcher', 'Disponent'), l('before own wave', 'vor eigener Welle')], [l('Manager', 'Führungskraft'), l('before go-live', 'vor Go-live')]].map(([a, b], i) => dot(22, 35 + i * 16, i === 0 ? C : G, 2.5) + t(30, 38 + i * 16, a, { fill: i === 0 ? C : D, size: 7 }) + t(130, 38 + i * 16, b, { size: 7 })).join('')}
+    <path d="M18 100H302" stroke="${L}"/>
+    ${t(18, 118, l('Partial Copy sandbox · refresh every 5 days', 'Partial Copy Sandbox · alle 5 Tage neu'), { size: 7 })}
+    ${t(18, 134, l('train the trainer via key users', 'Train the Trainer über Key User'), { size: 7 })}
+    ${t(18, 148, l('3 walkthroughs without extra licence', '3 Walkthroughs ohne Zusatzlizenz'), { size: 7 })}`,
+
+  'change-hypercare': (l) => `
+    ${t(18, 18, l('DAILY, 15 TO 30 MIN', 'TÄGLICH, 15 BIS 30 MIN'), { fill: D, size: 7 })}
+    ${[[l('defect', 'Fehler'), l('fix', 'beheben')], [l('how-to', 'Bedienfrage'), 'Key User'], [l('data', 'Daten'), 'Admin'], [l('change', 'Änderung'), 'Backlog']].map(([a, b], i) => box(18 + i * 72, 28, 68, 26, i === 3 ? C : G) + t(52 + i * 72, 45, a, { fill: i === 3 ? C : D, size: 7, anchor: 'middle' }) + t(52 + i * 72, 70, b, { size: 6.5, anchor: 'middle' })).join('')}
+    <path d="M18 84H302" stroke="${L}"/>
+    ${t(18, 102, l('ends on criteria, not on a date', 'Ende nach Kriterien, nicht nach Datum'), { size: 7 })}
+    ${t(18, 118, l('a week without open priority 1 defect', 'eine Woche ohne offenen Prio-1-Fehler'), { size: 7 })}
+    ${tag(18, 130, 150, l('only fixes to production', 'nur Fixes in Produktion'))}`,
 };
 
 export const hasDrawing = (key: string) => key in drawings;

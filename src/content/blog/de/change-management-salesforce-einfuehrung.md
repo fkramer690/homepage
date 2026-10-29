@@ -73,6 +73,9 @@ Change Management ist kein einzelner Arbeitsschritt. In Salesforce-Programmen vo
 4. **[Releases an den Fachbereich kommunizieren](../salesforce-releases-fachbereich-kommunizieren/):** Wie Fachbereiche vor einem Release erfahren, was sich ändert.
 5. **[Reinforcement: Standards bei Partnern verankern](../standards-partner-verankern-reinforcement/):** Wie neue Regeln für Entwicklung im Alltag der Partner bleiben.
 6. **[Nutzung nach dem Go-live messen](../salesforce-nutzung-messen-nach-go-live/):** Welche Zahlen zeigen, ob ein Prozess angekommen ist.
+7. **[Akzeptanz im Vertrieb](../salesforce-akzeptanz-vertrieb/):** Warum der Vertrieb Salesforce umgeht und was dagegen hilft.
+8. **[Schulungskonzept](../salesforce-schulungskonzept-einfuehrung/):** Wie Schulungen nach Rollen, am eigenen Fall und durch Key User geplant werden.
+9. **[Hypercare-Phase nach dem Go-live](../hypercare-phase-salesforce-go-live/):** Wer in den ersten Wochen dabei ist und wann sie endet.
 
 ## Wie läuft Change Management neben der Umsetzung?
 
