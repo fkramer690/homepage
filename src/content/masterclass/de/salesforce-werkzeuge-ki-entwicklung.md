@@ -119,7 +119,10 @@ Salesforce zeigt im [Juni 2026](https://developer.salesforce.com/blogs/2026/06/m
 
 Code Analyzer bündelt laut [Doku](https://developer.salesforce.com/docs/platform/salesforce-code-analyzer/guide/engines.html) acht Engines: PMD, ESLint, RetireJS, Regex, Flow Scanner, CPD, Salesforce Graph Engine und ApexGuru. Er läuft über CLI, in VS Code und in CI/CD. Für Agenten gibt es [drei Skills](https://developer.salesforce.com/docs/platform/salesforce-code-analyzer/guide/skills.html), die eine Anfrage in CLI-Befehle übersetzen, die Konfiguration anlegen und eigene PMD-Regeln erstellen. Der MCP-Zugang zu Code Analyzer wird [seit Juni 2026 nicht mehr unterstützt](https://developer.salesforce.com/docs/platform/salesforce-code-analyzer/guide/mcp.html). Salesforce empfiehlt CLI oder VS Code, sofern kein Sprachmodell gebraucht wird, weil jeder Modellaufruf Geld und Umweltkosten verursacht.
 
+```vertiefung Für Entwickler
+titel: Was ApexGuru findet
 ApexGuru findet laut [Salesforce](https://developer.salesforce.com/blogs/2026/04/performance-first-apex-development-with-apexguru-in-salesforce-dx-mcp-server) SOQL in Schleifen, unbegrenzte Abfragen, teure Schema-Abfragen und Abfragen, die mehr Felder holen als genutzt werden. Schweregrade aus echten Laufzeitdaten gibt es nur mit ApexGuru in Produktion oder einer Full-Copy-Sandbox.
+```
 
 Regeln speziell für KI-generierten Code dokumentiert Salesforce nicht. Ich halte das für richtig, denn Code Analyzer prüft Qualität, egal woher der Code kommt. Die Konsequenz für Sie ist aber klar. Die Prüfung, die über den Weg in Produktion entscheidet, läuft in der Pipeline und ohne Sprachmodell, nicht im Chat des Agenten. Wie Review und Gates zusammenspielen, beschreibt [Kapitel 8](../best-practices-ki-code/), die Umsetzung gehört zu meiner Arbeit in [DevOps und Release Management](../../../leistungen/devops-und-release-management/).
 
@@ -127,9 +130,11 @@ Regeln speziell für KI-generierten Code dokumentiert Salesforce nicht. Ich halt
 
 Die Admin-KI ändert dieselbe Org, nur über die Oberfläche statt über Code.
 
-- **Einstein for Flow** erzeugt laut [SalesforceBen](https://www.salesforceben.com/einstein-for-flow-now-generally-available-tutorial-and-first-steps/) Flow-Entwürfe mit bis zu etwa sechs Elementen, Formeln und Flow-Beschreibungen. Jede Erzeugung verbraucht Einstein Requests, in Produktion und Sandbox.
-- **Setup with Agentforce** setzt Data Cloud voraus und zeigt nach Aktivierung einen Button „Ask Setup Agent“ auf den Setup-Seiten. Laut [SalesforceTime](https://salesforcetime.com/2026/09/01/setup-with-agentforce-everything-you-need-to-know/) legt der Agent Objekte, Felder, Benutzer, Berechtigungen, Freigabeeinstellungen, Flows, Berichtstypen und Lightning-Seiten an, schlägt Änderungen vor der Ausführung vor und verbraucht Data 360 Credits. Salesforce hat die allgemeine Verfügbarkeit am [26. Mai 2026 im Admin-Blog](https://admin.salesforce.com/blog/2026/setup-with-agentforce-is-generally-available) gemeldet, ohne ein Release zu nennen. Was der Agent in Produktion dürfen sollte, steht in [Setup with Agentforce: Admin-KI in Produktion erlauben?](../../../blog/setup-with-agentforce-admin-aenderungen/).
-- **Prompt Builder** ist [GA](https://developer.salesforce.com/blogs/2025/10/build-and-optimize-agents-with-new-agentforce-360-features) und kann seit Winter '26 Bilder und PDFs verarbeiten, Antworten als HTML oder JSON strukturieren und bis zu 1.000 Prompts als Batch ausführen.
+| Werkzeug | Was es kann |
+|---|---|
+| Einstein for Flow | Erzeugt laut [SalesforceBen](https://www.salesforceben.com/einstein-for-flow-now-generally-available-tutorial-and-first-steps/) Flow-Entwürfe mit bis zu etwa sechs Elementen, Formeln und Flow-Beschreibungen. Jede Erzeugung verbraucht Einstein Requests, in Produktion und Sandbox. |
+| Setup with Agentforce | Setzt Data Cloud voraus und zeigt nach Aktivierung einen Button „Ask Setup Agent“ auf den Setup-Seiten. Laut [SalesforceTime](https://salesforcetime.com/2026/09/01/setup-with-agentforce-everything-you-need-to-know/) legt der Agent Objekte, Felder, Benutzer, Berechtigungen, Freigabeeinstellungen, Flows, Berichtstypen und Lightning-Seiten an, schlägt Änderungen vor der Ausführung vor und verbraucht Data 360 Credits. Salesforce hat die allgemeine Verfügbarkeit am [26. Mai 2026 im Admin-Blog](https://admin.salesforce.com/blog/2026/setup-with-agentforce-is-generally-available) gemeldet, ohne ein Release zu nennen. Was der Agent in Produktion dürfen sollte, steht in [Setup with Agentforce: Admin-KI in Produktion erlauben?](../../../blog/setup-with-agentforce-admin-aenderungen/). |
+| Prompt Builder | Ist [GA](https://developer.salesforce.com/blogs/2025/10/build-and-optimize-agents-with-new-agentforce-360-features) und kann seit Winter '26 Bilder und PDFs verarbeiten, Antworten als HTML oder JSON strukturieren und bis zu 1.000 Prompts als Batch ausführen. |
 
 Damit verbraucht die Admin-KI drei Währungen: Einstein Requests, Data 360 Credits und Flex Credits. Das gehört in die Lizenzplanung. Meine Empfehlung: Setup-Agent und Einstein for Flow nur in Sandboxes einsetzen, und die Ergebnisse gehen über die Pipeline wie jede andere Metadatenänderung. Ein Agent, der in Produktion Freigabeeinstellungen ändert, macht das alte Problem direkter Änderungen nur schneller.
 
@@ -137,11 +142,13 @@ Damit verbraucht die Admin-KI drei Währungen: Einstein Requests, Data 360 Credi
 
 Nehmen wir einen Maschinenbauer mit Sales Cloud, Service Cloud, Händlerportal und SAP an. Ein Implementierungspartner arbeitet mit sechs Entwicklern, geplant ist ein erster Agentforce-Agent für Händleranfragen zum Auftragsstatus. Alle Zahlen sind Annahmen, die das Vorgehen zeigen sollen.
 
-1. **Org-Standort.** Liegt die Org in der EU Operating Zone, ist Vibes keine Option. Nehmen wir an, sie liegt in einer EU-Org außerhalb davon.
-2. **Coding-Lizenz.** Der Partner möchte die Unmetered-Lizenz mit Sonnet. Angenommen sind 25 agentische Requests pro Entwickler und Arbeitstag mit durchschnittlich 30.000 Token. Sechs Entwickler kommen auf 150 Requests und 4,5 Mio. Token am Tag. Die Grenze von 36 Mio. Token ist nach acht Arbeitstagen erreicht, die 2.500 Requests wären es nach knapp 17. Weil die Grenze pro Org gilt, arbeitet das Team ab dem neunten Arbeitstag mit GPT-5 weiter oder zahlt Flex Credits.
-3. **Metered mit Opus.** Dieselben 30.000 Token sind 15 Einheiten zu 16 Credits, also 240 Credits oder 1,20 € pro Request. 150 Requests am Tag kosten damit 180 €, rund 3.780 € in 21 Arbeitstagen.
-4. **Der Agent selbst.** Er entsteht als Agent Script in Git, Kreditprüfung und Auftragsabfrage laufen als Logik. Für den Test sind 60 Fälle mit je drei Aktionen in drei Durchläufen angenommen. Das sind 540 Aktionen zu je 16 Credits in der Sandbox, also 8.640 Credits oder 43,20 €.
-5. **Das Gate.** Code Analyzer läuft bei jedem Pull Request in der Pipeline, egal ob Vibes, Claude Code oder ein Mensch den Code geschrieben hat.
+| Schritt | Annahme und Ergebnis |
+|---|---|
+| Org-Standort | Liegt die Org in der EU Operating Zone, ist Vibes keine Option. Nehmen wir an, sie liegt in einer EU-Org außerhalb davon. |
+| Coding-Lizenz | Der Partner möchte die Unmetered-Lizenz mit Sonnet. Angenommen sind 25 agentische Requests pro Entwickler und Arbeitstag mit durchschnittlich 30.000 Token. Sechs Entwickler kommen auf 150 Requests und 4,5 Mio. Token am Tag. Die Grenze von 36 Mio. Token ist nach acht Arbeitstagen erreicht, die 2.500 Requests wären es nach knapp 17. Weil die Grenze pro Org gilt, arbeitet das Team ab dem neunten Arbeitstag mit GPT-5 weiter oder zahlt Flex Credits. |
+| Metered mit Opus | Dieselben 30.000 Token sind 15 Einheiten zu 16 Credits, also 240 Credits oder 1,20 € pro Request. 150 Requests am Tag kosten damit 180 €, rund 3.780 € in 21 Arbeitstagen. |
+| Der Agent selbst | Er entsteht als Agent Script in Git, Kreditprüfung und Auftragsabfrage laufen als Logik. Für den Test sind 60 Fälle mit je drei Aktionen in drei Durchläufen angenommen. Das sind 540 Aktionen zu je 16 Credits in der Sandbox, also 8.640 Credits oder 43,20 €. |
+| Das Gate | Code Analyzer läuft bei jedem Pull Request in der Pipeline, egal ob Vibes, Claude Code oder ein Mensch den Code geschrieben hat. |
 
 ```hinweis offen
 Ob Salesforce den Kontext jedes Agentenschritts voll zählt, habe ich nicht dokumentiert gefunden. Auch welche Stufe Sonnet und GPT haben, nennt die Billing-Seite nicht. Beides klären Sie vor der Unterschrift mit dem Account Team.

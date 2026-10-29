@@ -103,7 +103,9 @@ At manufacturers these fields are everywhere: Web-to-Lead, dealer portals on Exp
 5. **Monitor API logs**; MCP traffic can be filtered with `API_CLIENT_CATEGORY` = `SALESFORCE_HOSTED_MCP`.
 6. **Put decisions with monetary value behind `available when`**, so no free text can trigger a credit note.
 
+```hinweis achtung
 The Hosted MCP security page does not mention prompt injection or IP restrictions. Your architect has to close that gap. Details are in [prompt injection through dealer portals](../../../blog/prompt-injection-dealer-portals-agentforce/) and [connected apps and OAuth in AI integrations](../../../blog/connected-apps-oauth-ai-integrations/), the interfaces themselves in [chapter 3](../mcp-and-interfaces/).
+```
 
 ## What do the industry references show?
 
@@ -112,6 +114,13 @@ The Hosted MCP security page does not mention prompt injection or IP restriction
 **Brenntag**, a chemical distributor rather than a manufacturer in the strict sense, became the first Agentforce customer in Germany in [November 2024](https://corporate.brenntag.com/en/media/news/brenntag-implements-autonomous-ai-agents-on-its-salesforce-platform-as-first-customer-in-germany.html). Its agents answer order and product questions around the clock, initially as a pilot for selected customers and supply partners. Brenntag published no figures.
 
 **JPW Industries**, a US manufacturer, is quoted in the Agentforce for Manufacturing announcement: manual orders took 16 to 24 hours and now take less than one hour with Agentforce, and case resolution became almost 40 percent faster despite 15 percent more workload. That is a customer statement in a Salesforce release.
+
+```kennzahlen
+18,000 | sellers at Siemens who receive inbound leads routed by agents
+< 1 h | per order at JPW Industries, down from 16 to 24 hours by hand
+almost 40 % | faster case resolution at JPW despite 15 percent more workload
+source: Siemens announcement of 15 September 2026; Agentforce for Manufacturing announcement (customer statement)
+```
 
 I found no case study from the German-speaking market with hard figures on service, warranty or field service agents. Market figures need a footnote too: Salesforce reports more than $1.5bn Agentforce ARR for the quarter to July 2026, but [from that quarter on](https://investor.salesforce.com/news/news-details/2026/Salesforce-Delivers-Record-Second-Quarter-Fiscal-2027-Results/default.aspx) counts Slackbot, AI offerings and Headless 360 as well. And Gartner [expects](https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027) more than 40 percent of agentic AI projects to be cancelled by the end of 2027, due to cost, unclear value or weak risk controls.
 

@@ -103,7 +103,9 @@ Bei Herstellern sind diese Felder zahlreich: Web-to-Lead, Händlerportale auf Ex
 5. **API-Logs überwachen**; MCP-Zugriffe lassen sich über `API_CLIENT_CATEGORY` = `SALESFORCE_HOSTED_MCP` filtern.
 6. **Entscheidungen mit Geldwert hinter `available when`**, damit kein Freitext eine Gutschrift auslöst.
 
+```hinweis achtung
 Die Sicherheitsseite für Hosted MCP erwähnt Prompt Injection und IP-Restriktionen nicht. Diese Lücke muss Ihr Architekt schließen. Die Details stehen in [Prompt Injection im Händlerportal](../../../blog/prompt-injection-haendlerportal-agentforce/) und [Connected Apps und OAuth bei KI-Integrationen](../../../blog/connected-apps-oauth-ki-integrationen/), die Schnittstellen selbst in [Kapitel 3](../mcp-und-schnittstellen/).
+```
 
 ## Was zeigen die Referenzen aus der Industrie?
 
@@ -112,6 +114,13 @@ Die Sicherheitsseite für Hosted MCP erwähnt Prompt Injection und IP-Restriktio
 **Brenntag**, ein Chemiedistributor und kein Hersteller im engeren Sinn, war im [November 2024](https://corporate.brenntag.com/en/media/news/brenntag-implements-autonomous-ai-agents-on-its-salesforce-platform-as-first-customer-in-germany.html) der erste Agentforce-Kunde in Deutschland. Die Agenten beantworten Auftrags- und Produktfragen rund um die Uhr, zunächst als Pilot für ausgewählte Kunden und Lieferpartner. Kennzahlen hat Brenntag nicht veröffentlicht.
 
 **JPW Industries**, ein US-Hersteller, wird in der Ankündigung von Agentforce for Manufacturing zitiert: Manuelle Aufträge dauerten 16 bis 24 Stunden, mit Agentforce weniger als eine Stunde, und die Fallbearbeitung wurde trotz 15 Prozent mehr Arbeit um fast 40 Prozent schneller. Das ist eine Kundenaussage in einer Salesforce-Meldung.
+
+```kennzahlen
+18.000 | Vertriebsmitarbeitende bei Siemens, an die Agenten eingehende Leads weiterleiten
+< 1 Std. | für einen Auftrag bei JPW Industries, vorher 16 bis 24 Stunden von Hand
+fast 40 % | schnellere Fallbearbeitung bei JPW trotz 15 Prozent mehr Arbeit
+quelle: Siemens-Meldung vom 15. September 2026; Ankündigung Agentforce for Manufacturing (Kundenaussage)
+```
 
 Eine Fallstudie aus dem deutschsprachigen Raum mit harten Kennzahlen zu Service, Garantie oder Außendienst habe ich nicht gefunden. Auch die Marktzahlen brauchen eine Fußnote: Salesforce meldet für das Quartal bis Juli 2026 mehr als 1,5 Mrd. US-Dollar Agentforce-ARR, zählt dort aber [seit diesem Quartal](https://investor.salesforce.com/news/news-details/2026/Salesforce-Delivers-Record-Second-Quarter-Fiscal-2027-Results/default.aspx) auch Slackbot, KI-Angebote und Headless 360 mit. Und Gartner [erwartet](https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027), dass mehr als 40 Prozent der Projekte mit KI-Agenten bis Ende 2027 abgebrochen werden, wegen Kosten, unklarem Nutzen oder schwacher Risikokontrollen.
 
