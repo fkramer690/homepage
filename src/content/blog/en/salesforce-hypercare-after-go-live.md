@@ -49,7 +49,7 @@ With interfaces to the ERP, someone from the ERP team belongs there too. Many ti
 
 ## How do the hypercare meetings work?
 
-In the first days, a fixed slot in the morning, 15 to 30 minutes, with all tickets from the previous day. Once the number of tickets falls, a weekly status call is enough. Every ticket gets one of four categories:
+My recommendation for the first days after go-live: a fixed slot in the morning, 15 to 30 minutes, with all tickets from the previous day. Once the number of tickets falls, a weekly status call is enough. Every ticket gets one of four categories:
 
 | Category | Example | What happens |
 |---|---|---|

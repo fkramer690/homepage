@@ -49,7 +49,7 @@ Bei Schnittstellen zum ERP gehört außerdem jemand aus dem ERP-Team dazu. Viele
 
 ## Wie laufen die Termine in der Hypercare?
 
-In den ersten Tagen ein fester Termin am Morgen, 15 bis 30 Minuten, mit allen Meldungen des Vortags. Sobald die Zahl der Meldungen sinkt, reicht ein wöchentlicher Status-Call. Jede Meldung bekommt eine von vier Kategorien:
+Meine Empfehlung für die ersten Tage nach dem Go-live: ein fester Termin am Morgen, 15 bis 30 Minuten, mit allen Meldungen des Vortags. Sobald die Zahl der Meldungen sinkt, reicht ein wöchentlicher Status-Call. Jede Meldung bekommt eine von vier Kategorien:
 
 | Kategorie | Beispiel | Was passiert |
 |---|---|---|
