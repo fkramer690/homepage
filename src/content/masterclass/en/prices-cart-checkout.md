@@ -81,7 +81,9 @@ The third option is a pricing engine inside Salesforce. [Salesforce Help on Agen
 
 On budget: the B2B editions say "Contact for Pricing", and the [Revenue Cloud pricing page](https://www.salesforce.com/sales/revenue-lifecycle-management/pricing/) lists Revenue Cloud Advanced at $200 per user per month, billed annually. Neither page says how many of these user licences a store with external buyers needs. Ask Salesforce in writing before you build a business case.
 
+```hinweis tipp
 My rule: Advanced Pricing pays off when sales already calculates quotes in Revenue Cloud, when contract prices are negotiated in Salesforce or when you need Request for Quote. If SAP calculates every customer price and should keep doing so, Revenue Cloud gives you a second pricing engine that has to agree with SAP. Then the live call is simpler. The trade-offs in detail are in [Advanced Pricing in B2B stores](../../../blog/advanced-pricing-b2b-store-revenue-cloud/). Sales agreements with volumes and terms, which plan demand rather than set the store price, belong to Manufacturing Cloud; the chapter [agreements and forecasting](../../manufacturing-cloud/agreements-and-forecasting/) covers them.
+```
 
 ## How does a request become a quote and then an order?
 
@@ -137,10 +139,12 @@ A compressor manufacturer sells spare parts to 600 dealers in 9 countries. SAP h
 
 This is how I would decide:
 
-1. **Prices:** 27 price books for 9 countries and 3 tiers, calculated from SAP every night; each dealer sees exactly one. The 40 large dealers get their price live from SAP through the pricing extension. No Advanced Pricing, because the pricing logic stays in SAP.
-2. **Quotes:** RFQ in a second stage once the licence question is settled; until then project business goes to inside sales as today.
-3. **Checkout:** Purchase Order component only, credit check in `validate` against SAP. On a timeout the store accepts the order, because SAP checks credit again when it creates the sales order.
-4. **Reordering:** Add Order to Cart and order templates for everyone, CSV import for the large dealers.
+| Topic | Decision |
+|---|---|
+| Prices: | 27 price books for 9 countries and 3 tiers, calculated from SAP every night; each dealer sees exactly one. The 40 large dealers get their price live from SAP through the pricing extension. No Advanced Pricing, because the pricing logic stays in SAP. |
+| Quotes: | RFQ in a second stage once the licence question is settled; until then project business goes to inside sales as today. |
+| Checkout: | Purchase Order component only, credit check in `validate` against SAP. On a timeout the store accepts the order, because SAP checks credit again when it creates the sales order. |
+| Reordering: | Add Order to Cart and order templates for everyone, CSV import for the large dealers. |
 
 The numbers are made up to show the method. Change one assumption, such as a sales team that already quotes in Revenue Cloud, and point 1 tips towards Advanced Pricing.
 
