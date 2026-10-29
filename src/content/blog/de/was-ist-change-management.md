@@ -77,7 +77,7 @@ Ergebnisse sichern | nach dem Start · Führungskräfte und interne Verantwortli
   Messen, ob die neue Arbeitsweise genutzt wird, Lücken schließen, Erfolge sichtbar machen und die Verantwortung dauerhaft im Unternehmen verankern.
 ```
 
-Der häufigste Fehler liegt in der ersten Phase: Change Management beginnt zu spät. Wenn die Kommunikation zwei Wochen vor dem Start losgeht, kann sie nur noch informieren. Wer betroffen ist und was sich für jede Gruppe ändert, gehört an den Anfang, weil es auch die Lösung selbst beeinflusst.
+Der häufigste Fehler liegt in der ersten Phase: Change Management beginnt zu spät. Wenn die Kommunikation zwei Wochen vor dem Start losgeht, kann sie nur noch informieren. Wer betroffen ist und was sich für jede Gruppe ändert, gehört an den Anfang, weil es auch die Lösung selbst beeinflusst. Das Werkzeug dafür ist die [Stakeholder-Analyse](../stakeholder-analyse/), aus der dann der [Kommunikationsplan](../kommunikationsplan-change-management/) folgt.
 
 Auf Ebene der einzelnen Person hilft das ADKAR-Modell bei der Diagnose. Stockt eine Einführung, fehlt meist eine der fünf Stufen, und jede braucht eine andere Maßnahme. Eine weitere Schulung hilft nur, wenn Wissen oder Fähigkeit fehlt. Wenn niemand verstanden hat, wozu die Veränderung gut ist, muss das die Führungskraft erklären. Wie sich ADKAR von anderen bekannten Modellen unterscheidet, beschreibe ich in [Change-Management-Modelle im Vergleich](../change-management-modelle/).
 

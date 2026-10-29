@@ -79,6 +79,8 @@ Change management is not a single work step. The same topics come up again and a
 8. **[Training plan](../salesforce-training-plan-rollout/):** how to plan training by role, on real cases and through key users.
 9. **[Hypercare after go-live](../salesforce-hypercare-after-go-live/):** who is on hand in the first weeks and when it ends.
 
+The general tools behind this are explained by Juliane Winterscheid in her own articles on the basics: the [stakeholder analysis](../stakeholder-analysis/) with a template, the [communication plan](../change-management-communication-plan/) and the [change curve](../change-curve/).
+
 ## How does change management run alongside delivery?
 
 Prosci structures the work at the level of the organisation in three phases, the [Prosci 3-Phase Process](https://www.prosci.com/methodology/3-phase-process). In a Salesforce programme they run alongside the release plan:

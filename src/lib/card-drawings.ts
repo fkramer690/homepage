@@ -1904,6 +1904,31 @@ const drawings: Record<string, Drawing> = {
     <path d="M18 112H302" stroke="${L}"/>
     ${tag(18, 124, 190, l('combine: frame plus diagnosis', 'kombinieren: Rahmen plus Diagnose'))}`,
 
+  'change-basics-stakeholders': (l) => `
+    ${t(18, 18, l('MATRIX: INFLUENCE × IMPACT', 'MATRIX: EINFLUSS × BETROFFENHEIT'), { fill: D, size: 7 })}
+    ${box(18, 28, 96, 30)}${t(66, 46, l('keep satisfied', 'zufriedenstellen'), { size: 7, anchor: 'middle' })}
+    ${box(120, 28, 96, 30)}${t(168, 46, l('manage closely', 'eng einbinden'), { size: 7, anchor: 'middle' })}
+    ${box(18, 64, 96, 30)}${t(66, 82, l('monitor', 'beobachten'), { size: 7, anchor: 'middle' })}
+    ${box(120, 64, 96, 30, C)}${t(168, 82, l('own plan', 'eigener Plan'), { fill: C, size: 7, anchor: 'middle' })}
+    ${t(224, 46, l('high influence', 'hoher Einfluss'), { size: 7 })}${t(224, 82, l('low influence', 'geringer Einfluss'), { size: 7 })}
+    ${t(66, 110, l('low impact', 'wenig betroffen'), { size: 7, anchor: 'middle' })}${t(168, 110, l('high impact', 'stark betroffen'), { fill: C, size: 7, anchor: 'middle' })}
+    ${tag(18, 124, 190, l('action and owner per group', 'Maßnahme und Owner je Gruppe'))}`,
+
+  'change-basics-curve': (l) => `
+    ${t(18, 18, l('MORALE OVER TIME', 'STIMMUNG ÜBER DIE ZEIT'), { fill: D, size: 7 })}
+    <path d="M18 40C70 40 90 100 140 100S240 60 302 30" fill="none" stroke="${G}" stroke-width="1.4"/>
+    ${dot(140, 100, C)}
+    ${[[18, l('denial', 'Verneinung')], [82, l('anger', 'Ärger')], [128, l('valley', 'Tal')], [182, l('learning', 'Lernen')], [246, l('integration', 'Integration')]].map(([x, s]) => t(Number(x), 120, String(s), { fill: s === l('valley', 'Tal') ? C : G, size: 7 })).join('')}
+    ${tag(18, 132, 150, l('plan the valley: hypercare', 'Tal einplanen: Hypercare'))}`,
+
+  'change-basics-communication': (l) => `
+    ${t(18, 18, l('WEEKS TO GO-LIVE', 'WOCHEN BIS ZUM START'), { fill: D, size: 7 })}
+    <path d="M18 50H302" stroke="${L}" stroke-width="1.2"/>
+    ${[[40, '−12', l('leadership', 'Leitung')], [100, '−8', l('managers', 'Führung')], [160, '−4', l('project', 'Projekt')], [220, l('go-live', 'Start'), 'Key User'], [280, '+2', l('managers', 'Führung')]].map(([x, w, s], i) => t(Number(x), 38, String(w), { fill: i === 3 ? C : D, size: 7, anchor: 'middle' }) + dot(Number(x), 50, i === 3 ? C : G) + t(Number(x), 70, String(s), { size: 7, anchor: 'middle' })).join('')}
+    ${t(18, 96, l('reasons: leadership · impact: manager', 'Gründe: Leitung · Alltag: Führungskraft'), { size: 7 })}
+    ${t(18, 112, l('key messages 5 to 7 times', 'Kernbotschaften 5 bis 7 Mal'), { fill: C, size: 7 })}
+    ${tag(18, 124, 170, l('who · what · when · how', 'wer · was · wann · wie'))}`,
+
   'change-key-users': (l) => `
     ${box(18, 36, 70, 34)}${t(53, 56, l('Project', 'Projekt'), { size: 7.5, anchor: 'middle' })}
     ${box(125, 36, 70, 34, C)}${t(160, 56, 'KEY USER', { fill: C, size: 7.5, anchor: 'middle' })}

@@ -393,6 +393,12 @@ const changeClusters: Cluster[] = [
     de: { title: 'Messen und verankern', text: 'Welche Zahlen Nutzung zeigen und wie Standards bei Partnern bleiben.' },
     articles: ['change-hypercare', 'change-adoption-metrics', 'field-service-kpis-after-go-live', 'change-reinforcement-standards', 'development-standards-definition-of-done'],
   },
+  {
+    id: 'basics',
+    en: { title: 'Basics and templates', text: 'Change management in general, its models, stakeholder analysis, communication plan and the change curve.' },
+    de: { title: 'Grundlagen und Vorlagen', text: 'Change Management allgemein, Modelle, Stakeholder-Analyse, Kommunikationsplan und Change-Kurve.' },
+    articles: ['change-basics-definition', 'change-basics-models', 'change-basics-stakeholders', 'change-basics-communication', 'change-basics-curve'],
+  },
 ];
 
 // Kept for code that only knows the AI masterclass.

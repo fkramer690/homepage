@@ -40,7 +40,7 @@ Modelle für Veränderungen gibt es viele. Vier davon begegnen mir in Unternehme
 | ADKAR | Einzelne Person | 5 Stufen: Bewusstsein bis Verankerung | Diagnose, wo es hängt | Kein Plan für die Organisation |
 | Prosci 3-Phase Process | Organisation | 3 Phasen: vorbereiten, steuern, sichern | Verbindet Plan und ADKAR | Braucht Übung in der Anwendung |
 
-Daneben gibt es Phasenmodelle, die beschreiben, wie Menschen emotional auf eine Veränderung reagieren, vom ersten Schock bis zur Integration. Sie werden oft als Veränderungskurve gezeichnet und helfen Führungskräften zu verstehen, warum ein Team nach anfänglicher Zustimmung plötzlich bremst. Einen Plan für die Einführung liefern sie nicht.
+Daneben gibt es Phasenmodelle, die beschreiben, wie Menschen emotional auf eine Veränderung reagieren, vom ersten Schock bis zur Integration. Sie werden oft als [Veränderungskurve oder Change-Kurve](../change-kurve/) gezeichnet und helfen Führungskräften zu verstehen, warum ein Team nach anfänglicher Zustimmung plötzlich bremst. Einen Plan für die Einführung liefern sie nicht.
 
 ## Was besagt das Drei-Phasen-Modell von Lewin?
 
