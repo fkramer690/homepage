@@ -30,7 +30,7 @@ Account Manager Targets können den Verteilungsteil der Excel-Zielplanung ersetz
 
 ## Was sind Account Manager Targets?
 
-Account Manager Targets sind die Funktion der Manufacturing Cloud für Jahresziele im Vertrieb. Auf der [Produktseite](https://salesforce.com/manufacturing/cloud/sales) beschreibt Salesforce das Ziel so: Wachstumspläne der Organisation in messbare Ziele für die Teams mit Kundenkontakt übersetzen. Trailhead nennt das Modul inzwischen [Account Manager Targets in Agentforce Manufacturing](https://trailhead.salesforce.com/content/learn/modules/account-manager-targets-in-manufacturing-cloud/learn-about-account-manager-targets). Agentforce Manufacturing ist der neuere Produktname, den Trailhead verwendet. Ein Agent steckt in den Zielen nicht.
+Account Manager Targets sind die Funktion der Manufacturing Cloud für Jahresziele im Vertrieb. Auf der [Produktseite](https://salesforce.com/manufacturing/cloud/sales) beschreibt Salesforce das Ziel so: Wachstumspläne der Organisation in messbare Ziele für die Teams mit Kundenkontakt übersetzen. Die Objektreferenz führt das Ziel als [AcctMgrTarget](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/manufacturing_standard_object_account_manager_target.htm). Agentforce Manufacturing ist der neuere Produktname, den Trailhead verwendet. Ein Agent steckt in den Zielen nicht.
 
 Die Bausteine laut Trailhead-Modul:
 
@@ -44,9 +44,9 @@ Im Setup hat die Funktion einen eigenen Schalter, und Nutzer brauchen das Permis
 
 ## Wie kommt das Ziel von der Vertriebsleitung bis zum Produkt?
 
-Von oben nach unten. Die [Trailhead-Unit zum Anlegen von Zielen](https://trailhead.salesforce.com/content/learn/modules/account-manager-targets-in-manufacturing-cloud/create-and-assign-targets) zeigt den Ablauf: Die Vertriebsleitung legt ein Umsatzziel für das Jahr an und gibt den direkten Mitarbeitenden Prozentsätze, zum Beispiel 35, 35 und 30 Prozent. Wer einen Prozentsatz einträgt, bekommt den Wert berechnet, und umgekehrt. Jede Ebene kann einen Teil behalten und den Rest weitergeben.
+Von oben nach unten. Das Objekt [AcctMgrTarget](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/manufacturing_standard_object_account_manager_target.htm) speichert dafür Maßeinheit, Zielwert und den Prozentsatz vom übergeordneten Ziel: Die Vertriebsleitung legt ein Umsatzziel für das Jahr an und gibt den direkten Mitarbeitenden Prozentsätze, zum Beispiel 35, 35 und 30 Prozent. Wer einen Prozentsatz einträgt, bekommt den Wert berechnet, und umgekehrt. Jede Ebene kann einen Teil behalten und den Rest weitergeben.
 
-Unterhalb der Teamebene kommen laut [Unit zur Verteilung](https://trailhead.salesforce.com/content/learn/modules/account-manager-targets-in-manufacturing-cloud/distribute-targets-and-manage-invalid-targets) drei weitere Schnitte dazu:
+Unterhalb der Teamebene kommen drei weitere Schnitte dazu; die [Verteilung](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/manufacturing_standard_object_account_manager_target_distribution.htm) speichert dafür Kunde, Produkt und Preisbuch:
 
 1. **Nach Kunde.** Ein Anteil des Ziels geht an einen Schlüsselkunden, Salesforce füllt den Betrag aus.
 2. **Nach Produkt.** Ein Anteil geht an ein Produkt. Salesforce teilt den Betrag durch den Listenpreis aus dem Standardpreisbuch und erhält eine Stückzahl.
@@ -82,7 +82,7 @@ Dieselbe Struktur. Salesforce verspricht, die Leistung von der Zielerreichung bi
 
 Liegt das Ziel auf Produkten und die Prognose auf Produktkategorien, vergleicht das Review zwei Zahlen, die nicht zusammenpassen können. Dasselbe passiert, wenn das ERP den Umsatz auf den Auftraggeber bucht und das Ziel an einem übergeordneten Account hängt. Ich würde vor dem ersten Ziel eine Kundenebene, eine Produktebene und einen Periodentyp für alle drei festlegen. Wie der Istwert-Feed aus SAP aussehen sollte, gehört zu meiner Arbeit an [Schnittstellen zu ERP und Middleware](../../leistungen/salesforce-schnittstellen/).
 
-Für den Vergleich beschreibt Trailhead ein [Team-Performance-Dashboard](https://trailhead.salesforce.com/content/learn/modules/tableau-crm-administration-for-manufacturing-cloud/embed-dashboards-on-record-pages) für die Datensatzseite des Ziels. Es stellt Ziele den Istdaten des laufenden und des vergangenen Jahres gegenüber und zeigt den nicht verteilten Anteil. Es stammt aus der CRM-Analytics-App für die Manufacturing Cloud, und sein Inhalt hängt von den Objekten ab, die der Admin beim Anlegen der App auswählt. Eine Lizenz nennt die Unit nicht. Die aktuelle [Preisseite](https://www.salesforce.com/manufacturing/cloud/pricing/) führt Tableau Next pro Edition auf und erwähnt CRM Analytics nicht. Fragen Sie Salesforce deshalb, ob Ihre Edition das Dashboard enthält.
+Für den Vergleich beschreibt Trailhead [Dashboards der CRM-Analytics-Vorlage](https://trailhead.salesforce.com/content/learn/modules/crm-analytics-dashboards-for-account-manager-targets/explore-sales-targets) für Ziele, darunter ein Team-Performance-Dashboard für die Datensatzseite des Ziels. Es stellt Ziele den Istdaten des laufenden und des vergangenen Jahres gegenüber und zeigt den nicht verteilten Anteil. Es stammt aus der CRM-Analytics-App für die Manufacturing Cloud, und sein Inhalt hängt von den Objekten ab, die der Admin beim Anlegen der App auswählt. Eine Lizenz nennt die Unit nicht. Die aktuelle [Preisseite](https://www.salesforce.com/manufacturing/cloud/pricing/) führt Tableau Next pro Edition auf und erwähnt CRM Analytics nicht. Fragen Sie Salesforce deshalb, ob Ihre Edition das Dashboard enthält.
 
 ## Szenario: 40 Account Manager und ein Datensatzlimit
 

@@ -43,7 +43,7 @@ Laut Entwicklerleitfaden kann ein Arbeitsauftrag auf einen Case verweisen, um zu
 
 ## Was leisten Work Types?
 
-Ein Work Type ist eine Vorlage für eine Einsatzart, etwa Jahreswartung, Störungsbehebung oder Inbetriebnahme. Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/field_service_center/field_service_center_worktypes) trägt er die geschätzte Dauer und die benötigten Skills, und Wissensartikel am Work Type erscheinen auf jedem Arbeitsauftrag, der ihn nutzt. Work Types lassen sich auf Arbeitsaufträge und auf Positionen anwenden, eine Position kann also einen eigenen Work Type mit eigenen Skills haben.
+Ein Work Type ist eine Vorlage für eine Einsatzart, etwa Jahreswartung, Störungsbehebung oder Inbetriebnahme. Laut [Trailhead](https://trailhead.salesforce.com/content/learn/projects/modify-the-field-service-center/create-a-work-type) trägt er die geschätzte Dauer und die benötigten Skills, und Wissensartikel am Work Type erscheinen auf jedem Arbeitsauftrag, der ihn nutzt. Work Types lassen sich auf Arbeitsaufträge und auf Positionen anwenden, eine Position kann also einen eigenen Work Type mit eigenen Skills haben.
 
 Die wichtigste Einstellung heißt Auto-Create Service Appointment. Ist sie gesetzt, entsteht laut Trailhead bei jedem Arbeitsauftrag mit diesem Work Type ein Servicetermin. Der Termin übernimmt Dauer und Datumseinstellungen aus dem Work Type. Ohne diese Option muss jemand den Termin von Hand anlegen, und genau dieser Schritt wird vergessen.
 

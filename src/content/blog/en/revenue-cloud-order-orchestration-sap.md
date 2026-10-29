@@ -97,7 +97,7 @@ Which system owns which step from quote to invoice is the topic of [Revenue Clou
 
 ## What happens when SAP rejects the order?
 
-Then the step becomes fallout. Trailhead defines fallout as an order that failed because of inadequate inventory, wrong information, a system error or another reason. You set a retry count. If the retries fail, the step moves to a queue where an operator resolves the problem and retries. Where a retry makes no sense, the operator can mark the step complete manually. The [design-time data model](https://architect.salesforce.com/diagrams/data-models/revenue-cloud/dro-design) has separate objects for fallout rules, jeopardy rules and task assignment rules, so this is configuration rather than custom code.
+Then the step becomes fallout. Trailhead defines fallout as an order that failed because of inadequate inventory, wrong information, a system error or another reason. You set a retry count. If the retries fail, the step moves to a queue where an operator resolves the problem and retries. Where a retry makes no sense, the operator can mark the step complete manually. The [design-time data model](https://developer.salesforce.com/docs/platform/data-models/guide/dro-design-time.html) has separate objects for fallout rules, jeopardy rules and task assignment rules, so this is configuration rather than custom code.
 
 Typical rejections from SAP, as an assumption: the ship-to party does not exist in SAP yet, a material is blocked for sales, or the customer has a credit block. Retrying helps with none of them. The queue therefore needs an owner in order management, a target time and a short list of what to check. Without that, fallout becomes a list nobody reads while the customer waits.
 

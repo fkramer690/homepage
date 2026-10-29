@@ -58,7 +58,7 @@ Der Anker ist die Anlage (Asset). Laut [Trailhead](https://trailhead.salesforce.
 
 Der Schlüssel muss der sein, den die Anlage schon trägt. Steht an der Anlage „MC-800“ und heißt das PDF „Bearbeitungszentrum 800 Rev C“, verbindet nichts die beiden. Das ist die Stammdatenfrage aus [Stammdaten für die Einsatzplanung](../salesforce-field-service-stammdaten/): Fehlt vielen Anlagen die Produktzuordnung, rettet auch das beste Dokumentenmodell die Antworten nicht.
 
-Wartungsanleitungen mit festen Schritten brauchen gar keine Suche. Wissensartikel lassen sich an Work Types hängen, und laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/field_service_center/field_service_center_worktypes) erscheinen sie „on work orders and work order line items that use the work type“. Für die geplante 2.000-Stunden-Wartung würde ich die Anleitung dort anhängen und dem Agenten die ungeplante Störung überlassen.
+Wartungsanleitungen mit festen Schritten brauchen gar keine Suche. Wissensartikel lassen sich an Work Types hängen, und laut [Trailhead](https://trailhead.salesforce.com/content/learn/projects/modify-the-field-service-center/create-a-work-type) erscheinen sie „on work orders and work order line items that use the work type“. Für die geplante 2.000-Stunden-Wartung würde ich die Anleitung dort anhängen und dem Agenten die ungeplante Störung überlassen.
 
 ## Welche Handbuchstände darf der Agent sehen?
 

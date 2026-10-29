@@ -43,7 +43,7 @@ The developer guide states that a work order can reference a case "to indicate t
 
 ## What do work types do?
 
-A work type is a template for a kind of job, for example annual maintenance, breakdown repair or commissioning. According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/field_service_center/field_service_center_worktypes), it carries the estimated duration and the required skills, and knowledge articles attached to the work type show up on every work order that uses it. Work types can be applied to work orders and to line items, so a line item can carry its own work type with its own skills.
+A work type is a template for a kind of job, for example annual maintenance, breakdown repair or commissioning. According to [Trailhead](https://trailhead.salesforce.com/content/learn/projects/modify-the-field-service-center/create-a-work-type), it carries the estimated duration and the required skills, and knowledge articles attached to the work type show up on every work order that uses it. Work types can be applied to work orders and to line items, so a line item can carry its own work type with its own skills.
 
 The most important setting is Auto-Create Service Appointment. If it is set, Trailhead says, "every time a work order is created with this work type, a service appointment is created". The appointment takes duration and date settings from the work type. Without this option, someone has to create the appointment by hand, and that step gets forgotten.
 

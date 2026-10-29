@@ -57,7 +57,7 @@ Alles andere bleibt in der Stückliste: Schrauben, Dichtungen, Kabel, Normteile.
 
 Baureihen unterscheiden sich. Die eine hat eine Firmware-Version und einen Hubzähler, die nächste eine Laserquelle mit Stunden und eine Kühlmittelsorte. Bekommt jede Baureihe ihre eigenen Felder am Asset, wächst das Objekt mit jeder neuen Produktlinie.
 
-Das [Objekt AssetAttribute](https://developer.salesforce.com/docs/atlas.en-us.field_service_dev.meta/field_service_dev/sforce_api_objects_assetattribute.htm), verfügbar seit API-Version 57.0, speichert laut Dokumentation Asset-Attribute, um den Zustand von Assets zu verfolgen und auszuwerten. Jeder Datensatz verbindet ein Asset mit einer Attributdefinition und speichert einen Wert, bei Auswahllisten mit den zugehörigen Werten. Neue Attribute brauchen eine neue Definition, kein neues Feld.
+Das [Objekt AssetAttribute](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_assetattribute.htm), verfügbar seit API-Version 57.0, speichert laut Dokumentation Asset-Attribute, um den Zustand von Assets zu verfolgen und auszuwerten. Jeder Datensatz verbindet ein Asset mit einer Attributdefinition und speichert einen Wert, bei Auswahllisten mit den zugehörigen Werten. Neue Attribute brauchen eine neue Definition, kein neues Feld.
 
 Ich nutze Attribute für beschreibende Werte, die je Baureihe verschieden sind. Für Zähler, die über alle Baureihen Wartungspläne und Berichte steuern, etwa Betriebsstunden, nehme ich lieber ein Zahlenfeld am Asset, weil Filterkriterien für Wartungsregeln nicht jeden Feldtyp nutzen können. Wie das im Detail funktioniert, steht in [Wartung nach Betriebsstunden im Field Service einrichten](../field-service-wartung-nach-betriebsstunden/).
 

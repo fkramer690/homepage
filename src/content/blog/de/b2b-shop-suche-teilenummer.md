@@ -30,7 +30,7 @@ Händler finden Ersatzteile in einem Shop auf Salesforce B2B Commerce, wenn die 
 
 ## Wie findet die Suche in B2B Commerce eine Teilenummer?
 
-Salesforce B2B Commerce, das Salesforce inzwischen auch als "Agentforce Commerce for B2B" vermarktet, baut pro Store einen Suchindex auf. B2B- und D2C-Stores auf der Kernplattform nutzen dieselbe Shopsuche, wie das [Suchdatenmodell](https://developer.salesforce.com/docs/platform/data-models/guide/b2b-commerce-d2c-commerce-search.html) zeigt. Die [Trailhead-Einheit zur durchsuchbaren Shopseite](https://trailhead.salesforce.com/content/learn/modules/b2b2c-commerce-for-merchandisers/b2b2c-make-store-searchable), geschrieben für D2C-Merchandiser, sagt: Produktname, Produktbeschreibung und Produkt-SKU sind standardmäßig durchsuchbar, weitere Felder lassen sich ergänzen. Sie beschreibt diese Regeln für den Abgleich:
+Salesforce B2B Commerce, das Salesforce inzwischen auch als "Agentforce Commerce for B2B" vermarktet, baut pro Store einen Suchindex auf. B2B- und D2C-Stores auf der Kernplattform nutzen dieselbe Shopsuche, wie das [Suchdatenmodell](https://developer.salesforce.com/docs/platform/data-models/guide/b2b-commerce-d2c-commerce-search.html) zeigt. Salesforce schreibt in seinem Schulungsmaterial für D2C-Merchandiser: Produktname, Produktbeschreibung und Produkt-SKU sind standardmäßig durchsuchbar, weitere Felder lassen sich ergänzen. Sie beschreibt diese Regeln für den Abgleich:
 
 - Die Suche gleicht Wortstämme ab.
 - Ein Ergebnis erscheint nur, wenn alle Suchbegriffe darin vorkommen.

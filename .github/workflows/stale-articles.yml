@@ -1,7 +1,8 @@
 name: Stale articles
 
 # Monthly list of blog articles and masterclass chapters whose prices, Flex Credits,
-# deadlines or release dates are due for a check (scripts/stale-articles.mjs).
+# deadlines or release dates are due for a check, plus external links that answer 404
+# (scripts/stale-articles.mjs).
 # Keeps one open issue up to date instead of opening a new one each month.
 on:
   schedule:
@@ -21,12 +22,12 @@ jobs:
         with:
           node-version: 22
       - name: List due articles
-        run: node scripts/stale-articles.mjs > /tmp/stale.md
+        run: node scripts/stale-articles.mjs --links > /tmp/stale.md
       - name: Create or update the issue
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          title="Artikel prüfen: Preise und Fristen"
+          title="Artikel prüfen: Preise, Fristen und tote Links"
           if grep -q '^- \[ \]' /tmp/stale.md; then :; else
             echo "Nothing due."
             exit 0

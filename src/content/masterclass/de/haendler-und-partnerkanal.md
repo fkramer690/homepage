@@ -107,7 +107,7 @@ Den Ablauf vom Besuchsplan bis zur Kennzahl und die Frage, wann ein einfaches Be
 
 ## Händlerleistung messen: Dashboards und ihre Daten
 
-Die [CRM-Analytics-App für Manufacturing Cloud](https://trailhead.salesforce.com/content/learn/modules/tableau-crm-administration-for-manufacturing-cloud/embed-dashboards-on-record-pages) bringt vorkonfigurierte Dashboards mit, die auf Datensatzseiten eingebettet werden. Für den Kanal sind diese relevant:
+Die [CRM-Analytics-Vorlage für Manufacturing Cloud](https://trailhead.salesforce.com/content/learn/modules/crm-analytics-dashboards-for-account-manager-targets/explore-sales-targets) bringt vorkonfigurierte Dashboards mit, die der Admin auf Startseiten und Datensatzseiten einbettet. Für den Kanal sind diese relevant:
 
 - **Rebate Program Embedded** auf dem Bonusprogramm: Programmleistung, Rangliste der Teilnehmer und Produkte, Kandidaten für Zusatzverkauf.
 - **Order Rebates Embedded** auf dem Auftrag: zugehörige Bonusprogramme und die Käufe, die einem Teilnehmer bis zur nächsten Staffel fehlen.

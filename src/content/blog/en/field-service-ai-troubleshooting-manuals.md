@@ -58,7 +58,7 @@ The asset is the anchor. According to [Trailhead](https://trailhead.salesforce.c
 
 The key has to be the one the asset already carries. If the asset says "MC-800" and the PDF is called "Machining centre 800 Rev C", nothing links the two. That is the master data question from [master data for scheduling](../salesforce-field-service-master-data/): if many assets have no product link, no document model fixes the answers.
 
-Maintenance procedures with fixed steps need no search at all. Knowledge articles can be attached to work types, and according to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/field_service_center/field_service_center_worktypes) "a work type's attached articles show up on work orders and work order line items that use the work type." For a planned 2,000-hour service I would attach the procedure there and leave the unplanned fault to the agent.
+Maintenance procedures with fixed steps need no search at all. Knowledge articles can be attached to work types, and according to [Trailhead](https://trailhead.salesforce.com/content/learn/projects/modify-the-field-service-center/create-a-work-type) "a work type's attached articles show up on work orders and work order line items that use the work type." For a planned 2,000-hour service I would attach the procedure there and leave the unplanned fault to the agent.
 
 ## Which manual versions should the agent see?
 

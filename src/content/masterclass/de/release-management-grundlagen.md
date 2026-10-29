@@ -44,7 +44,7 @@ Release-Management ist die Disziplin, Änderungen an einer Salesforce-Org geplan
 
 Die Unterscheidung zwischen Deployment und Release ist für Entscheider die wichtigste. Deployments können täglich laufen, in Sandboxes sogar mehrmals am Tag. Ein Release ist eine fachliche Entscheidung: Der Leiter Service entscheidet, ab wann die Techniker im Außendienst (Field Service) die neue Rückmeldemaske nutzen. Wer beides verwechselt, plant entweder zu wenige Deployments und bekommt riesige, riskante Pakete, oder schaltet Funktionen frei, bevor der Fachbereich bereit ist.
 
-Ein Termin liegt dabei nie bei Ihnen. Salesforce liefert laut [Release-Übersicht](https://www.salesforce.com/releases/) drei saisonale Releases pro Jahr, typischerweise Spring im Februar, Summer im Juni und Winter im Oktober, mit einer Sandbox Preview von vier bis sechs Wochen vorher. Ihr Release-Kalender muss um diese Termine herum funktionieren. Wie, beschreibt [Kapitel 8](../release-planung-salesforce-releases/).
+Ein Termin liegt dabei nie bei Ihnen. Salesforce liefert laut [Release-Übersicht](https://www.salesforce.com/products/innovation/releases/) drei saisonale Releases pro Jahr, typischerweise Spring im Februar, Summer im Juni und Winter im Oktober, mit einer Sandbox Preview von vier bis sechs Wochen vorher. Ihr Release-Kalender muss um diese Termine herum funktionieren. Wie, beschreibt [Kapitel 8](../release-planung-salesforce-releases/).
 
 ## Was kosten schlechte Releases in einem Programm mit mehreren Partnern?
 

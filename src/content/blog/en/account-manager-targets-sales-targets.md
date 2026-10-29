@@ -30,7 +30,7 @@ Account manager targets can replace the distribution part of a sales target spre
 
 ## What are account manager targets?
 
-Account manager targets are the Manufacturing Cloud feature for yearly sales targets. On the [product page](https://salesforce.com/manufacturing/cloud/sales) Salesforce describes the goal as converting "your organization's growth plans into measurable targets for your customer-facing teams". Trailhead now calls the module [Account Manager Targets in Agentforce Manufacturing](https://trailhead.salesforce.com/content/learn/modules/account-manager-targets-in-manufacturing-cloud/learn-about-account-manager-targets). Agentforce Manufacturing is the newer name Trailhead uses for the product. Targets themselves involve no agent.
+Account manager targets are the Manufacturing Cloud feature for yearly sales targets. On the [product page](https://salesforce.com/manufacturing/cloud/sales) Salesforce describes the goal as converting "your organization's growth plans into measurable targets for your customer-facing teams". The object reference lists the target as [AcctMgrTarget](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/manufacturing_standard_object_account_manager_target.htm). Agentforce Manufacturing is the newer name Trailhead uses for the product. Targets themselves involve no agent.
 
 The building blocks, according to the Trailhead module:
 
@@ -44,9 +44,9 @@ In Setup the feature has its own switch, and users need the permission set Manuf
 
 ## How do targets flow from the sales head to a product?
 
-Top down. The [Trailhead unit on creating targets](https://trailhead.salesforce.com/content/learn/modules/account-manager-targets-in-manufacturing-cloud/create-and-assign-targets) walks through it: the head of sales creates a revenue target for the year and assigns percentages to direct reports, for example 35, 35 and 30 percent. Enter a percentage and Salesforce calculates the value, and the other way round. Each report can keep part of the target and pass the rest on.
+Top down. The [AcctMgrTarget](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/manufacturing_standard_object_account_manager_target.htm) object stores the measure, the target value and the percentage of the parent target: the head of sales creates a revenue target for the year and assigns percentages to direct reports, for example 35, 35 and 30 percent. Enter a percentage and Salesforce calculates the value, and the other way round. Each report can keep part of the target and pass the rest on.
 
-Below the team level, the [unit on distribution](https://trailhead.salesforce.com/content/learn/modules/account-manager-targets-in-manufacturing-cloud/distribute-targets-and-manage-invalid-targets) adds three more cuts:
+Below the team level there are three more cuts; the [distribution](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/manufacturing_standard_object_account_manager_target_distribution.htm) stores account, product and price book for them:
 
 1. **By account.** A share of a person's target goes to a key account, and Salesforce fills in the amount.
 2. **By product.** A share goes to a product. Salesforce divides the amount by the list price from the default price book and gets a volume.
@@ -82,7 +82,7 @@ The same structure. Salesforce promises to "track business performance from targ
 
 If targets are set per product and the forecast runs per product category, the review compares two numbers that cannot match. The same happens when the ERP books revenue on the sold-to party and the target sits on a parent account. I would fix one customer level, one product level and one period type for all three before anyone enters a target. How the actuals feed from SAP should look is part of my work on [integration with ERP and middleware](../../services/salesforce-integration/).
 
-For the comparison itself, Trailhead describes a [Team Performance dashboard](https://trailhead.salesforce.com/content/learn/modules/tableau-crm-administration-for-manufacturing-cloud/embed-dashboards-on-record-pages) for the account manager target record page. It compares targets with actual data for the current and the last year and shows the unassigned share. It comes from the CRM Analytics app for Manufacturing Cloud, and its content depends on the objects the admin selects when creating the app. The unit names no licence. The current [pricing page](https://www.salesforce.com/manufacturing/cloud/pricing/) lists Tableau Next per edition and does not mention CRM Analytics, so ask Salesforce whether your edition includes the dashboard.
+For the comparison itself, Trailhead describes the [dashboards of the CRM Analytics template](https://trailhead.salesforce.com/content/learn/modules/crm-analytics-dashboards-for-account-manager-targets/explore-sales-targets) for targets, including a Team Performance dashboard for the account manager target record page. It compares targets with actual data for the current and the last year and shows the unassigned share. It comes from the CRM Analytics app for Manufacturing Cloud, and its content depends on the objects the admin selects when creating the app. The unit names no licence. The current [pricing page](https://www.salesforce.com/manufacturing/cloud/pricing/) lists Tableau Next per edition and does not mention CRM Analytics, so ask Salesforce whether your edition includes the dashboard.
 
 ## Scenario: 40 account managers and a record limit
 
