@@ -300,8 +300,8 @@ export const en = {
     title: 'Partners',
     metaTitle: 'Partners for Salesforce programmes | FK Solution Design',
     description: 'Cooperation partners of FK Solution Design for topics next to Salesforce architecture, such as change management with Juliane Winterscheid.',
-    lead: 'Nobody is the best expert in every field, and neither am I. Where others have more experience, I work with cooperation partners I know personally and trust.',
-    intro: 'My focus is Salesforce architecture on the client side. A programme needs more than a good architecture, though: the people in the company also have to adopt new processes. For topics like this I bring in partners who are strong in exactly that area. So you do not get a generalist who knows a bit of everything, but someone for each question who really masters it.',
+    lead: 'For change management in Salesforce programmes I work with Juliane Winterscheid. My own focus stays on Salesforce architecture on the client side; where others have more experience, I bring in cooperation partners I know personally and trust.',
+    intro: 'A programme needs more than a good architecture: the people in the company also have to adopt new processes. For that I bring in partners who are strong in exactly that area, because nobody is the best expert in every field, and neither am I. Recruiters will find further down how I work with them.',
     linkedIn: 'LinkedIn profile',
     partners: [
       {

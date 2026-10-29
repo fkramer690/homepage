@@ -27,7 +27,9 @@ faq:
 draft: false
 ---
 
-Account forecasting pays off for manufacturers whose sales team should plan quantities per customer and product over months and whose business consists largely of recurring offtake. The Manufacturing Cloud feature combines orders, opportunities and sales agreements into a forecast that account managers adjust. It only holds up when order history arrives reliably from the ERP, when the scope of customers, products and periods fits within the limit, and when it is clear where planning in the ERP takes over. I am writing this part of the series as an evaluation guide, not as a project report.
+Account forecasting pays off for manufacturers with recurring offtake whose sales team should plan quantities per customer and product over months. The Manufacturing Cloud feature combines orders, opportunities and sales agreements into a forecast that account managers adjust. It only holds up under three conditions: order history arrives reliably from the ERP, the scope of customers, products and periods fits within the limit, and it is clear where planning in the ERP takes over.
+
+I am writing this part of the series as an evaluation guide, not as a project report.
 
 ## What is account forecasting in Manufacturing Cloud?
 

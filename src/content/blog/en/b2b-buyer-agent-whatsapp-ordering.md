@@ -26,7 +26,7 @@ faq:
 draft: false
 ---
 
-The B2B Buyer Agent lets dealers search products, check order status and reorder past orders in a chat, and Salesforce names WhatsApp and SMS as channels. Closing the whole order in the chat, including confirmation and payment at contract price, is dated January 2027 under the name Carter for Buyers. Before any of this helps, three things must be in place: a working B2B store with correct buyer groups and prices, the licences Trailhead lists, and systems that supply contract prices and credit decisions. I would start with order status and reorder for a pilot group of dealers and add the rest once the answers are reliable.
+With the B2B Buyer Agent, dealers can already search products, check order status and reorder past orders in a chat. Closing the whole order through WhatsApp or SMS, including confirmation and payment at contract price, is announced as Carter for Buyers for January 2027. So I would start with order status and reorder for a pilot group of dealers and add the rest once the answers are reliable. It needs a working B2B store with correct buyer groups and prices, the licences Trailhead lists, and systems that supply contract prices and credit decisions.
 
 ## What can the B2B Buyer Agent do today?
 
