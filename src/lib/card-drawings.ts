@@ -1871,6 +1871,65 @@ const drawings: Record<string, Drawing> = {
     ${[[l('Measure', 'Messen')], [l('Key', 'Schlüssel')], [l('Merge', 'Bereinigen')], [l('Prevent', 'Verhindern')]].map(([s], i) => box(18 + i * 74, 92, 62, 22, i === 1 ? C : G) + t(49 + i * 74, 106, s, { fill: i === 1 ? C : G, size: 7, anchor: 'middle' })).join('')}
     ${[0, 1, 2].map((i) => arrow(80 + i * 74, 103, 92 + i * 74)).join('')}
     ${t(18, 140, l('upsert with external ID', 'Upsert mit External ID'), { size: 7 })}${t(302, 140, l('agent picks 1st match', 'Agent nimmt 1. Treffer'), { size: 7, anchor: 'end' })}`,
+  'change-management-hub': (l) => `
+    ${t(18, 18, l('WHERE IS IT STUCK? ADKAR', 'WO HÄNGT ES? ADKAR'), { fill: D, size: 7 })}
+    ${[['A', l('awareness', 'Bewusstsein')], ['D', l('desire', 'Bereitschaft')], ['K', l('knowledge', 'Wissen')], ['A', l('ability', 'Fähigkeit')], ['R', l('reinforcement', 'Verankerung')]].map(([a, b], i) => box(18 + i * 58, 30, 52, 30, i === 4 ? C : G) + t(44 + i * 58, 49, a, { fill: i === 4 ? C : D, size: 9, anchor: 'middle' }) + t(44 + i * 58, 74, b, { size: 6.5, anchor: 'middle' })).join('')}
+    <path d="M134 84V88H244V84" fill="none" stroke="${G}" stroke-width="1.1"/>
+    ${t(189, 100, l('training helps here', 'Schulung hilft hier'), { size: 7, anchor: 'middle' })}
+    ${t(18, 124, l('goals met: 88 % vs. 13 %', 'Ziele erreicht: 88 % vs. 13 %'), { fill: D, size: 7.5 })}
+    ${t(18, 138, l('Prosci study, 2,668 participants', 'Prosci-Studie, 2.668 Teilnehmende'), { size: 7 })}`,
+
+  'change-key-users': (l) => `
+    ${box(18, 36, 70, 34)}${t(53, 56, l('Project', 'Projekt'), { size: 7.5, anchor: 'middle' })}
+    ${box(125, 36, 70, 34, C)}${t(160, 56, 'KEY USER', { fill: C, size: 7.5, anchor: 'middle' })}
+    ${box(232, 36, 70, 34)}${t(267, 56, 'Team', { size: 7.5, anchor: 'middle' })}
+    ${arrow(88, 46, 125)}${arrow(195, 46, 232)}
+    <path d="M124 62H90" stroke="${C}" stroke-width="1.3" stroke-dasharray="4 3"/><path d="M94 58.5l-5 3.5 5 3.5" fill="none" stroke="${C}" stroke-width="1.3"/>
+    <path d="M231 62H197" stroke="${C}" stroke-width="1.3" stroke-dasharray="4 3"/><path d="M201 58.5l-5 3.5 5 3.5" fill="none" stroke="${C}" stroke-width="1.3"/>
+    ${t(18, 92, l('solid: changes · dashed: feedback', 'durchgezogen: Änderungen · gestrichelt: Rückmeldung'), { size: 7 })}
+    ${t(18, 116, l('≈ 8 working days around go-live (assumption)', '≈ 8 Arbeitstage rund um Go-live (Annahme)'), { size: 7 })}
+    ${tag(18, 128, 140, l('chosen by standing', 'nach Ansehen gewählt'))}`,
+
+  'change-global-rollout': (l) => `
+    ${t(18, 18, l('PER COUNTRY, IN EVERY WAVE', 'PRO LAND, IN JEDER WELLE'), { fill: D, size: 7 })}
+    ${[1, 2, 3].map((w) => t(140 + w * 46, 34, l('wave ', 'Welle ') + w, { fill: w === 1 ? C : D, size: 7, anchor: 'middle' })).join('')}
+    ${[l('sponsor in country', 'Sponsor im Land'), 'Key User', l('communication', 'Kommunikation'), l('measure usage', 'Nutzung messen')].map((s, i) => t(18, 54 + i * 18, s, { size: 7 }) + [1, 2, 3].map((w) => check(136 + w * 46, 48 + i * 18, w === 1 ? C : G)).join('')).join('')}
+    <path d="M18 116H302" stroke="${L}"/>
+    ${t(18, 132, l('local sponsor, local language', 'Sponsor im Land, in Landessprache'), { size: 7 })}
+    ${t(18, 146, l('review after wave 1', 'Auswertung nach Welle 1'), { size: 7 })}`,
+
+  'change-technician-adoption': (l) => `
+    ${box(18, 18, 90, 104, C)}${t(28, 34, 'FIELD SERVICE APP', { fill: C, size: 6.5 })}
+    ${[l('asset history', 'Anlagenhistorie'), l('spare parts', 'Ersatzteile'), l('short forms', 'kurze Formulare'), l('works offline', 'offline nutzbar')].map((s, i) => check(28, 48 + i * 18) + t(40, 54 + i * 18, s, { size: 6.5 })).join('')}
+    ${t(124, 34, l('BEFORE ROLLOUT', 'VOR DEM ROLLOUT'), { fill: D, size: 7 })}
+    ${[l('3 to 5 pilot technicians', '3 bis 5 Pilot-Techniker'), l('location with works council', 'Standort mit Betriebsrat'), l('test in the basement', 'im Keller testen'), l('rollout in waves', 'Rollout in Wellen')].map((s, i) => dot(128, 51 + i * 16, G, 2) + t(136, 54 + i * 16, s, { size: 7 })).join('')}
+    ${tag(124, 112, 160, l('stumbling block: acceptance', 'Stolperstein: Akzeptanz'))}
+    ${t(124, 146, l('next to asset data and ERP', 'neben Anlagendaten und ERP'), { size: 7 })}`,
+
+  'change-release-communication': (l) => `
+    ${t(18, 18, l('BEFORE EVERY RELEASE', 'VOR JEDEM RELEASE'), { fill: D, size: 7 })}
+    <path d="M18 56H302" stroke="${G}" stroke-width="1"/>
+    ${[[l('planning', 'Planung'), l('rollout plan', 'Einführungsplan')], [l('before UAT', 'vor UAT'), 'Key User'], [l('days before', 'Tage vorher'), 'Release Notes'], [l('first week', 'erste Woche'), l('feedback', 'Rückmeldung')]].map(([a, b], i) => dot(50 + i * 74, 56, i === 2 ? C : G) + t(50 + i * 74, 44, a, { fill: i === 2 ? C : D, size: 7, anchor: 'middle' }) + t(50 + i * 74, 74, b, { size: 6.5, anchor: 'middle' })).join('')}
+    ${t(18, 102, l('RELEASE NOTES FOR USERS', 'RELEASE NOTES FÜR ANWENDER'), { fill: D, size: 7 })}
+    ${t(18, 116, l('what · why · when · what stays · whom to ask', 'was · warum · ab wann · was bleibt · wen fragen'), { size: 7 })}
+    ${tag(18, 128, 160, l('no change, no email', 'keine Änderung, keine Mail'))}`,
+
+  'change-reinforcement-standards': (l) => `
+    ${[[l('Pipeline check', 'Pipeline-Prüfung'), l('every PR', 'jeder PR')], ['Pull Request Review', l('client side', 'Kundenseite')], [l('Center of Excellence call', 'Center-of-Excellence-Call'), l('every 2 weeks', 'alle 2 Wochen')]].map(([a, b], i) => box(18, 22 + i * 30, 200, 24, i === 0 ? C : G) + t(28, 37 + i * 30, a, { fill: i === 0 ? C : D, size: 7 }) + t(210, 37 + i * 30, b, { size: 7, anchor: 'end' })).join('')}
+    ${t(234, 38, l('3 months', '3 Monate'), { fill: D, size: 7.5 })}${t(234, 52, l('until lived', 'bis gelebt'), { size: 7 })}
+    ${t(234, 80, '80 %', { fill: D, size: 7.5 })}${t(234, 94, l('first version', 'erste Version'), { size: 7 })}
+    <path d="M18 116H302" stroke="${L}"/>
+    ${arrow(18, 134, 60, C)}${t(66, 137, l('handover to an internal colleague', 'Übergabe an internen Kollegen'), { size: 7 })}`,
+
+  'change-adoption-metrics': (l) => `
+    ${[[l('Activity', 'Aktivität'), 200], [l('Use of the process', 'Nutzung des Prozesses'), 180], [l('Data quality', 'Datenqualität'), 160], [l('Outcome', 'Ergebnis'), 140]].map(([s, w], i) => box(18, 18 + i * 24, Number(w), 18, i === 1 ? C : G) + t(28, 30 + i * 24, String(s), { fill: i === 1 ? C : D, size: 7 })).join('')}
+    ${cross(232, 27)}${t(242, 30, l('logins alone', 'nur Logins'), { size: 7 })}
+    ${check(208, 48)}${t(220, 54, l('quotes in SF', 'Angebote in SF'), { size: 7 })}
+    ${t(188, 78, l('new duplicates', 'neue Dubletten'), { size: 7 })}
+    ${t(168, 102, l('forecast accuracy', 'Prognosegenauigkeit'), { size: 7 })}
+    <path d="M18 118H302" stroke="${L}"/>
+    ${t(18, 134, l('baseline before go-live · monthly for 6 months', 'Ausgangswert vor Go-live · 6 Monate monatlich'), { size: 7 })}
+    ${t(18, 148, l('per group and country', 'pro Gruppe und Land'), { size: 7 })}`,
 };
 
 export const hasDrawing = (key: string) => key in drawings;
