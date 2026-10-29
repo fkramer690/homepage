@@ -379,7 +379,7 @@ const changeClusters: Cluster[] = [
     id: 'people',
     en: { title: 'Sponsor, communication and key users', text: 'Who explains why, how business teams learn about releases and who answers the first questions.' },
     de: { title: 'Sponsor, Kommunikation und Key User', text: 'Wer erklärt, warum, wie Fachbereiche von Releases erfahren und wer die ersten Fragen beantwortet.' },
-    articles: ['change-release-communication', 'change-key-users', 'salesforce-uat-business-testing', 'ai-coding-works-council-gdpr'],
+    articles: ['change-release-communication', 'change-key-users', 'change-training-plan', 'change-sales-adoption', 'salesforce-uat-business-testing', 'ai-coding-works-council-gdpr'],
   },
   {
     id: 'rollout',
@@ -391,7 +391,7 @@ const changeClusters: Cluster[] = [
     id: 'reinforcement',
     en: { title: 'Measure and reinforce', text: 'Which figures show adoption and how standards stay in place with partners.' },
     de: { title: 'Messen und verankern', text: 'Welche Zahlen Nutzung zeigen und wie Standards bei Partnern bleiben.' },
-    articles: ['change-adoption-metrics', 'field-service-kpis-after-go-live', 'change-reinforcement-standards', 'development-standards-definition-of-done'],
+    articles: ['change-hypercare', 'change-adoption-metrics', 'field-service-kpis-after-go-live', 'change-reinforcement-standards', 'development-standards-definition-of-done'],
   },
 ];
 
