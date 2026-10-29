@@ -9,6 +9,7 @@
 // The diagram block (`ablauf`) is rendered to SVG once with
 // `node scripts/render-diagrams.mjs` and stored in src/assets/diagrams/.
 import { createHash } from 'node:crypto';
+import { iconHtml } from './icons.mjs';
 
 export const blockNames = ['hinweis', 'praxis', 'kennzahlen', 'zeitleiste', 'ablauf', 'pro-contra', 'vertiefung', 'schritte'];
 
@@ -227,7 +228,7 @@ export function inline(s, { lang, isExternal }) {
     .replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, (_, text, href) => {
       const url = href.replace(/&amp;/g, '&');
       if (isExternal(url)) {
-        return `<a href="${escHtml(url)}" target="_blank" rel="noopener">${text}<svg class="ext-mark" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2h6v6M10 2 2.5 9.5" fill="none" stroke="currentColor" stroke-width="1.6"></path></svg><span class="visually-hidden"> ${ext}</span></a>`;
+        return `<a href="${escHtml(url)}" target="_blank" rel="noopener">${text}${iconHtml('external', 'ext-mark')}<span class="visually-hidden"> ${ext}</span></a>`;
       }
       return `<a href="${escHtml(url)}">${text}</a>`;
     });
@@ -251,10 +252,7 @@ function sortKey(d) {
   return m[1] === 'Spring' ? `${year}-02-15` : m[1] === 'Summer' ? `${year}-06-15` : `${year - 1}-10-15`;
 }
 
-const icon = {
-  check: '<svg viewBox="0 0 18 18" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 9.5l3.5 3.5 7.5-8"></path></svg>',
-  cross: '<svg viewBox="0 0 18 18" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4.5 4.5l9 9M13.5 4.5l-9 9"></path></svg>',
-};
+const icon = { check: iconHtml('tick'), cross: iconHtml('cross') };
 
 // HTML of one block. `readDiagram(hash)` returns the stored SVG or undefined.
 export function renderBlock(block, { lang, isExternal, readDiagram, today = new Date().toISOString().slice(0, 10) }) {

@@ -4,7 +4,7 @@ import Page from '../layouts/Page.astro';
 import ExternalMark from './ExternalMark.astro';
 import ContactForm from './ContactForm.astro';
 import Blueprint from './Blueprint.astro';
-import RecruiterIcon from './RecruiterIcon.astro';
+import Icon from './Icon.astro';
 import { Image } from 'astro:assets';
 import portrait from '../assets/portrait.png';
 import { en } from '../i18n/en';
@@ -112,18 +112,18 @@ const schema = {
           <h3 class="compare-head mono">{c.deal.giveTitle}</h3>
           <ul>
             {c.deal.give.map((p) => (
-              <li><RecruiterIcon name={p.icon} /><div><strong>{p.t}</strong><span>{p.d}</span></div></li>
+              <li><Icon name={p.icon} class="rc-icon" /><div><strong>{p.t}</strong><span>{p.d}</span></div></li>
             ))}
           </ul>
         </div>
         <div class="rc-deal-swap" aria-hidden="true">
-          <svg viewBox="0 0 48 48" fill="none" stroke="#1BA1E2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 18h28l-7-7M38 30H10l7 7" /></svg>
+          <Icon name="swap" />
         </div>
         <div class="rc-deal-col">
           <h3 class="compare-head mono">{c.deal.needTitle}</h3>
           <ul>
             {c.deal.need.map((p) => (
-              <li><RecruiterIcon name={p.icon} /><div><strong>{p.t}</strong><span>{p.d}</span></div></li>
+              <li><Icon name={p.icon} class="rc-icon" /><div><strong>{p.t}</strong><span>{p.d}</span></div></li>
             ))}
           </ul>
         </div>
@@ -146,7 +146,7 @@ const schema = {
       <ol class="steps rc-steps">
         {c.process.steps.map((s, i) => (
           <li>
-            <RecruiterIcon name={s.icon} />
+            <Icon name={s.icon} class="rc-icon" />
             <span class="step-no mono">{String(i + 1).padStart(2, '0')}</span>
             <h3>{s.t}</h3>
             <p>{s.d}</p>
