@@ -56,12 +56,20 @@ Change Management in einem Salesforce-Programm heißt, neue Prozesse, Standards 
 
 ## Warum kommen neue Prozesse im Alltag nicht an?
 
-Ein Release ist technisch in Minuten ausgerollt. Danach entscheidet sich, ob jemand anders arbeitet. Die Gründe, warum das nicht passiert, sind meist dieselben:
+Ein Release ist technisch in Minuten ausgerollt. Danach entscheidet sich, ob jemand anders arbeitet. Die Gründe, warum das nicht passiert, sind meist dieselben, und für jeden gibt es eine Antwort:
 
-- **Betroffene erfahren zu spät davon.** Wer eine Änderung erst in Produktion sieht, sucht sich einen Weg drumherum.
-- **Alles soll auf einmal geregelt sein.** Eine erste Version, die jeden Randfall abdecken will, kommt spät und wird selten gelesen.
-- **Es fehlt der Rückhalt im Management.** Ohne Entscheidungen von oben bleiben neue Regeln eine Empfehlung.
-- **Der alte Weg bleibt offen.** Solange Excel-Listen und E-Mails neben Salesforce weiter funktionieren, fallen viele zurück in den alten Trott.
+```pro-contra
+pro: Was wir dagegen tun
+- Ein Einführungsplan je Release legt fest, wer wann davon erfährt.
+- Die erste Version deckt die häufigsten Fälle ab, Randfälle kommen später.
+- Ein Sponsor-Plan hält fest, was das Management wann sichtbar tut.
+- Der alte Weg wird geschlossen, sobald der neue trägt.
+contra: Woran es scheitert
+- **Betroffene erfahren zu spät davon** und suchen sich einen Weg drumherum.
+- **Alles soll auf einmal geregelt sein**, die erste Version kommt spät und wird selten gelesen.
+- **Der Rückhalt im Management fehlt**, neue Regeln bleiben eine Empfehlung.
+- **Der alte Weg bleibt offen**, Excel-Listen und E-Mails funktionieren weiter.
+```
 
 ## Wie sieht ADKAR in einem Salesforce-Programm aus?
 
@@ -73,6 +81,14 @@ Salesforce hilft beim Messen. Ob ein neuer Prozess genutzt wird, zeigen Berichte
 
 ## Wie habe ich neue Standards in einem großen Programm eingeführt?
 
+```kennzahlen
+30+ | Entwickler in acht Streams
+5 | Implementierungs­partner
+3 | Monate, bis die Standards gelebt wurden
+80 % | der Fälle deckte die erste Version ab
+quelle: mein größtes Programm als Architekt auf Kundenseite
+```
+
 In meinem größten Programm arbeiteten über 30 Entwickler in acht Streams mit fünf Implementierungspartnern. Gemeinsame Standards für Namenskonventionen, Automatisierung je Objekt, Testabdeckung und eine [Object Ownership Matrix](../../blog/object-ownership-matrix-salesforce/) brauchten etwa drei Monate, bis sie gelebt wurden.
 
 Die erste Version deckte rund 80 Prozent der Fälle ab. Die Randfälle kamen Schritt für Schritt dazu, wenn sie im Projekt auftauchten. Später brachten wir im Programm neue Themen mit Vorlauf in regelmäßigen [Center-of-Excellence-Calls](../../blog/salesforce-center-of-excellence-format/) auf den Tisch, bevor sie zum Problem wurden. Irgendwann kamen kaum noch neue Randfälle hinzu. Wie die Regeln für mehrere Partner aussehen, beschreibe ich unter [Partnersteuerung](../partnersteuerung/).
@@ -83,10 +99,17 @@ Mit einem sauberen Release-Prozess werden Releases kleiner und häufiger. Für F
 
 ## Warum Prosci?
 
-Prosci ist für mich der Goldstandard im Change Management. Der Grund ist die Forschung dahinter: Prosci befragt seit 1998 Projekte nach ihren Erfahrungen mit Veränderungen. In der 12. Ausgabe der Studie [Best Practices in Change Management](https://www.prosci.com/hubfs/Website_English/2.downloads/research-executive-summaries/Best-Practices-in-Change-Management-12th-Edition-Executive-Summary.pdf) mit 2.668 Teilnehmenden erreichten Projekte mit sehr gutem Change Management ihre Ziele siebenmal so oft wie Projekte mit schlechtem, 88 gegenüber 13 Prozent. Als wichtigsten Erfolgsfaktor nennen die Teilnehmenden aktives und sichtbares Sponsoring durch das Management. Das deckt sich mit dem, was ich in Salesforce-Programmen erlebe.
+Prosci ist für mich der Goldstandard im Change Management. Der Grund ist die Forschung dahinter: Prosci befragt seit 1998 Projekte nach ihren Erfahrungen mit Veränderungen.
+
+```kennzahlen
+88 % | der Projekte mit sehr gutem Change Management erreichten ihre Ziele
+13 % | waren es bei schlechtem Change Management
+7× | so oft erfolgreich
+quelle: Prosci, Best Practices in Change Management, 12. Ausgabe, 2.668 Teilnehmende
+```
+
+In der 12. Ausgabe der Studie [Best Practices in Change Management](https://www.prosci.com/hubfs/Website_English/2.downloads/research-executive-summaries/Best-Practices-in-Change-Management-12th-Edition-Executive-Summary.pdf) mit 2.668 Teilnehmenden erreichten Projekte mit sehr gutem Change Management ihre Ziele siebenmal so oft wie Projekte mit schlechtem, 88 gegenüber 13 Prozent. Als wichtigsten Erfolgsfaktor nennen die Teilnehmenden aktives und sichtbares Sponsoring durch das Management. Das deckt sich mit dem, was ich in Salesforce-Programmen erlebe.
 
 Zusammen mit [Juliane Winterscheid](../../partner/juliane-winterscheid/), die Prosci-zertifiziert ist, habe ich zwei Bausteine von Prosci auf Salesforce-Programme übertragen: das ADKAR-Modell von oben und den [Prosci 3-Phase Process](https://www.prosci.com/methodology/3-phase-process). Der 3-Phase Process gibt der Einführung auf Ebene der Organisation einen Rahmen: Vorgehen vorbereiten (Prepare Approach), Veränderung steuern (Manage Change) und Ergebnisse sichern (Sustain Outcomes). Die drei Schritte oben auf dieser Seite folgen diesen Phasen.
 
 Prosci und ADKAR sind eingetragene Marken von Prosci, Inc. Die Prosci-Zertifizierung hat Juliane Winterscheid, nicht FK Solution Design, und FK Solution Design ist kein Partner von Prosci. Diese Seite beschreibt, wie wir Elemente des Vorgehens in Salesforce-Programmen anwenden.
-
-Wenn eine Einführung ansteht oder neue Prozesse nicht genutzt werden, [schreiben Sie mir](#contact), und ich bringe Juliane in das erste Gespräch mit. Mehr zu meiner Person lesen Sie [über mich](../../#about).

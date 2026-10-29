@@ -41,7 +41,7 @@ Every article page is built by `src/components/BlogPost.astro` and looks the sam
 1. Title, date, reading time
 2. Key takeaways (from frontmatter)
 3. **Article body (the only part that comes from Markdown)**
-4. FAQ, collapsible (from frontmatter)
+4. FAQ, collapsible (from frontmatter), heading "Häufig gestellte Fragen" in German and "Frequently asked questions" in English
 5. Author box (`src/components/AuthorBox.astro`)
 6. Series box, only for articles in a series (see below)
 7. Related articles

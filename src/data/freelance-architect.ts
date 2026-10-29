@@ -109,7 +109,7 @@ export const freelanceArchitect = {
         { t: 'Auch über Recruiter', d: 'Viele Projekte laufen über Personaldienstleister.', link: 'partner/recruiter/', linkText: 'So arbeite ich mit Recruitern' },
       ] as { t: string; d: string; link?: string; linkText?: string }[],
     },
-    faqTitle: 'Häufige Fragen',
+    faqTitle: 'Häufig gestellte Fragen',
     faq: [
       { q: 'Was macht ein freiberuflicher Salesforce Architect?', a: 'Er arbeitet auf der Seite des Kunden: Er bereitet Architekturentscheidungen vor und dokumentiert sie, legt Standards für alle Implementierungspartner fest und prüft Entwürfe und Pull Requests. Die Umsetzung selbst liefern die Partner.' },
       { q: 'Was kostet ein freiberuflicher Salesforce Architect?', a: 'Ich nenne einen Stunden- oder Tagessatz pro Anfrage, abhängig von Rolle, Laufzeit und Vor-Ort-Anteil. Abgerechnet wird monatlich nach Aufwand über die FK Solution Design GmbH. Eine Preisliste für alle Fälle gibt es nicht.' },

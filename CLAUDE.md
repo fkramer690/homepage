@@ -45,3 +45,7 @@ No label in a drawing may run over the edge, out of its box, into another box or
 ## Page titles
 
 Every indexable page has a unique `<title>` of at most 60 characters, keyword first; the brand suffix ` | FK Solution Design` is added only where it fits. `scripts/check-titles.mjs` runs after `astro build` and enforces this; never weaken it.
+
+## FAQ heading
+
+On German pages the FAQ section is always called "Häufig gestellte Fragen" (English: "Frequently asked questions"), never "Häufige Fragen". `scripts/check-blog.mjs` fails on the old wording anywhere in `src/`.

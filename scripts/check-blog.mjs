@@ -151,6 +151,18 @@ for (const [, str] of briefs.matchAll(/'((?:[^'\\\n]|\\.)*)'/g)) {
   if (/[\u2013\u2014]/.test(str)) fail('no en or em dashes (– —), use a comma, a full stop or "to"');
 }
 
+// The German FAQ heading is always "Häufig gestellte Fragen" (Fabian, 2026-10-29), on every page.
+function scanFaqLabel(dir) {
+  for (const name of readdirSync(dir)) {
+    const path = join(dir, name);
+    if (statSync(path).isDirectory()) scanFaqLabel(path);
+    else if (/\.(ts|astro|md|mjs)$/.test(name) && /Häufige Fragen/.test(readFileSync(path, 'utf8'))) {
+      errors.push(`${path.slice(path.indexOf('src/'))}: name the FAQ "Häufig gestellte Fragen", not "Häufige Fragen"`);
+    }
+  }
+}
+scanFaqLabel(new URL('../src/', import.meta.url).pathname);
+
 const counts = Object.entries(collections).map(([name, rules]) => `${check(name, rules)} ${name}`);
 
 if (errors.length) {
