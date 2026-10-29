@@ -3,6 +3,7 @@ import Page from '../layouts/Page.astro';
 import ExternalMark from './ExternalMark.astro';
 import ContactForm from './ContactForm.astro';
 import AuthorBox from './AuthorBox.astro';
+import PartnerBox from './PartnerBox.astro';
 import Blueprint from './Blueprint.astro';
 import ContactBrief from './ContactBrief.astro';
 import ReadingGrid from './ReadingGrid.astro';
@@ -126,6 +127,7 @@ const schema = {
           ))}
         </section>
         <AuthorBox lang={lang} />
+        {post.data.categories.includes('change-management') && <PartnerBox lang={lang} variant="blog" />}
         {service && (
           <a class="post-service" href={serviceHref(service)}>
             <span class="label mono">{t.blog.relatedService}</span>

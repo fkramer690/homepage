@@ -61,7 +61,7 @@ The value lies in the diagnosis. Instead of scheduling the next training when us
 
 The sponsor deserves a sentence of its own, because it is the role most often missing in Salesforce programmes. It means a person from management who visibly backs the change: they explain in the sales meeting why forecasts will come from Salesforce from now on, decide when two departments cannot agree, and ask about usage in the monthly report. That is why I write a sponsor plan that defines what management does visibly and when. Without it, "management supports this" becomes a line on the first slide.
 
-Prosci and ADKAR are registered trademarks of Prosci, Inc. I adapted the approach to Salesforce programmes together with Juliane Winterscheid, my cooperation partner for change management.
+Prosci and ADKAR are registered trademarks of Prosci, Inc. I adapted the approach to Salesforce programmes together with [Juliane Winterscheid](../../partners/juliane-winterscheid/), my cooperation partner for change management.
 
 ## Which topics belong to change management in Salesforce programmes?
 

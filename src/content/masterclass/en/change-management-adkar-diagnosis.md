@@ -63,7 +63,7 @@ Chapter 4 applies the same stages to a rollout across several countries and team
 
 The value lies in the diagnosis. When usage is low, many programmes book the next training session by reflex. With ADKAR we ask per group at which stage it is stuck instead. If sales does not know what well maintained opportunities are needed for, awareness is missing, and the head of sales has to explain that, not the trainer. If technicians know the app but cannot continue offline, ability is missing, and a technical change solves that.
 
-Prosci and ADKAR are registered trademarks of Prosci, Inc. I adapted the approach to Salesforce programmes together with Juliane Winterscheid, my cooperation partner for change management. More in the article [Change management: why Salesforce rollouts fail](../../../blog/change-management-salesforce-rollout/).
+Prosci and ADKAR are registered trademarks of Prosci, Inc. I adapted the approach to Salesforce programmes together with [Juliane Winterscheid](../../../partners/juliane-winterscheid/), my cooperation partner for change management. More in the article [Change management: why Salesforce rollouts fail](../../../blog/change-management-salesforce-rollout/).
 
 ## How do you diagnose per group?
 
