@@ -33,7 +33,7 @@ Never paste SVG markup for an icon into a component: add a file here instead.
 | `check` | 48 | Recruiter page: process step "Approval" (circle with tick); service pages: phase "delivery and testing", "sustain outcomes" |
 | `interview` | 48 | Recruiter page: process step "Client interview"; proof bar: teams · developers |
 | `contract` | 48 | Recruiter page: process step "Contract and start"; service pages: phase "decision", "specification" |
-| `swap` | 48 | Recruiter page: arrows between "You get" and "I need" (cyan only) |
+| `swap` | 48 | Recruiter page: arrows between "You get" and "I need" (cyan only); speaking page topic "Flow or OmniStudio" |
 | `analyse` | 48 | Start page, approach step 1; service pages: phase "assessment" |
 | `design` | 48 | Start page, approach step 2; service pages: phase "standards", "solution design" |
 | `steer` | 48 | Start page, approach step 3; service pages: phase "steering" |
@@ -54,6 +54,8 @@ Never paste SVG markup for an icon into a component: add a file here instead.
 | `factory` | 48 | Masterclass overview: Manufacturing Cloud |
 | `cart` | 48 | Masterclass overview: B2B Commerce |
 | `field-service` | 48 | Masterclass overview: Field Service (service van with wrench) |
+| `play` | 48 | Speaking page: link to a talk recording (screen with cyan play triangle) |
+| `mic` | 48 | Speaking page: "Community events" in "More on stage" |
 | `book-call` | 24 | Floating contact button "Book a call" |
 | `message` | 24 | Floating contact button "Send a message" |
 | `external` | 12 | Arrow after every external link (components, Markdown, content blocks) |
