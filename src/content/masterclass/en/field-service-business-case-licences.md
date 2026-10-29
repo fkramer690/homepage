@@ -34,10 +34,12 @@ Salesforce Field Service pays off for manufacturers whose technicians run many s
 
 Salesforce Field Service is the field service product built on Service Cloud. Salesforce sells it today as Field Service and Operations, which is also the title of the [pricing page](https://www.salesforce.com/service/field-service-management/pricing/). The product covers four areas:
 
-- **Scheduling.** A scheduling engine picks a suitable technician and time slot for every service appointment. According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/field-service-lightning-scheduling-basics/examine-scheduling-policies), work rules filter out technicians who cannot take a job, for example because a skill is missing, and service objectives rate the rest, for example by least travel time. Together they form a scheduling policy.
-- **Mobile app.** Technicians see their jobs, assets and history, also offline, and record time, parts, photos and signatures.
-- **Assets and maintenance.** Machines are assets with serial numbers, and maintenance plans create jobs by calendar or usage.
-- **Documents.** Service reports are created directly from the app.
+| Area | What it does |
+|---|---|
+| Scheduling | A scheduling engine picks a suitable technician and time slot for every service appointment. According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/field-service-lightning-scheduling-basics/examine-scheduling-policies), work rules filter out technicians who cannot take a job, for example because a skill is missing, and service objectives rate the rest, for example by least travel time. Together they form a scheduling policy. |
+| Mobile app | Technicians see their jobs, assets and history, also offline, and record time, parts, photos and signatures. |
+| Assets and maintenance | Machines are assets with serial numbers, and maintenance plans create jobs by calendar or usage. |
+| Documents | Service reports are created directly from the app. |
 
 Service Cloud is mandatory: according to the price list, every org with Field Service needs at least one Service Cloud user licence. The four areas are the layers of this masterclass. Scheduling follows in chapter 2, the app in chapter 3, assets and parts in chapter 4, AI agents and rollout in chapter 5.
 
@@ -45,10 +47,12 @@ Service Cloud is mandatory: according to the price list, every org with Field Se
 
 Optimisation helps where there is a lot to optimise. Before any product discussion, I ask for four numbers from your own field service:
 
-1. **Jobs per technician and day.** If the average is clearly above one, there is something to plan.
-2. **Share of travel time in working time.** The higher it is, the more route optimisation helps.
-3. **Number of skills and parts that have to match.** The more there are, the harder manual planning gets.
-4. **First-time fix rate**, meaning how often a job is done on the first visit. If it is low because parts or skills are missing, better scheduling helps directly.
+| Metric | What it says about the benefit |
+|---|---|
+| Jobs per technician and day | If the average is clearly above one, there is something to plan. |
+| Share of travel time in working time | The higher it is, the more route optimisation helps. |
+| Number of skills and parts that have to match | The more there are, the harder manual planning gets. |
+| First-time fix rate, meaning how often a job is done on the first visit | If it is low because parts or skills are missing, better scheduling helps directly. |
 
 Maintenance, repairs and inspections with several customers a day are the best case. A technician who commissions a plant over two weeks needs drawings, a project plan and a clean acceptance; route optimisation does little for them.
 
@@ -155,12 +159,14 @@ If the hotline is also to get an AI agent, the five office seats cost $625 more 
 
 ## What should you decide before a partner builds?
 
-- **The four numbers** for one region and one month: jobs per day, travel share, skills, first-time fix rate.
-- **The path from case to technician** for your three most common call types, with triage and an owner for every record.
-- **Who works cases and who dispatches.** That decides who needs Field Service Plus.
-- **How partners work.** Regular partner technicians on user licences, occasional ones per login, with a written counting rule.
-- **Which add-ons are really used in the first year**, by role rather than for everyone.
-- **A licence forecast for three years** by role and rollout wave, so you do not buy 45 technician licences on day one when the first wave has 15.
+| Decision | What it covers |
+|---|---|
+| The four numbers | For one region and one month: jobs per day, travel share, skills, first-time fix rate. |
+| The path from case to technician | For your three most common call types, with triage and an owner for every record. |
+| Who works cases and who dispatches | That decides who needs Field Service Plus. |
+| How partners work | Regular partner technicians on user licences, occasional ones per login, with a written counting rule. |
+| Which add-ons are really used in the first year | By role rather than for everyone. |
+| A licence forecast for three years | By role and rollout wave, so you do not buy 45 technician licences on day one when the first wave has 15. |
 
 This list is part of my work on [make-or-buy and licence forecasts](../../../services/make-or-buy-licences/), before the negotiation and independent of vendor and partner. Once the business case stands, the next topic is planning itself: master data, scheduling policies and the new console are covered in [chapter 2: scheduling and dispatch](../field-service-scheduling-dispatch/). All chapters are on the [overview page](../).
 

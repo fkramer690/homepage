@@ -50,11 +50,20 @@ My order for a machine builder: maintenance booking first, because maintenance p
 
 ## How should a voice agent handle the breakdown hotline?
 
-Salesforce lists German among six new Agentforce Voice languages with the status GA in its [Dreamforce 2026 announcements](https://www.salesforce.com/blog/dreamforce-2026-announcements/). The [Winter '27 highlights](https://trailhead.salesforce.com/content/learn/modules/winter-27-release-highlights/see-whats-new-service-field-service-it-hr-service-and-contact-center) add autonomous scheduling with Agentforce Voice, where voice agents check availability and find a technician in the right territory while the customer is on the call. The highlights carry no status label, so check availability in your org.
+Two announcements matter for a German-language hotline:
+
+| Feature | What it does | Status, October 2026 |
+|---|---|---|
+| Agentforce Voice in German | German is one of six new languages | GA according to the [Dreamforce 2026 announcements](https://www.salesforce.com/blog/dreamforce-2026-announcements/) |
+| Autonomous scheduling with Agentforce Voice | Voice agents check availability and find a technician in the right territory while the customer is on the call | No status label in the [Winter '27 highlights](https://trailhead.salesforce.com/content/learn/modules/winter-27-release-highlights/see-whats-new-service-field-service-it-hr-service-and-contact-center), check availability in your org |
 
 A breakdown call is harder than a booking call: four facts decide the next step, which machine, whether it is down, what the contract promises and whether anyone is at risk. I would let the voice agent own intake and triage first. It identifies caller and machine through phone number, contact and installed assets, asks a closed question about the machine state and checks the entitlement. It books a technician itself only when the machine still runs, the entitlement covers the visit and the fault class is known. A stopped press with a four-hour commitment goes to a dispatcher, who can pull a technician off another job.
 
-These gates belong in deterministic logic, not in the prompt. The rule table, the Agent Script patterns and what a call costs in voice actions or voice minutes are in [Breakdown hotline with Agentforce Voice: triage first](../../../blog/breakdown-hotline-agentforce-voice/). I would start outside business hours with triage only and switch on booking for the clear cases after four weeks of comparison with the on-call engineer.
+```hinweis tipp
+These gates belong in deterministic logic, not in the prompt. I would start outside business hours with triage only and switch on booking for the clear cases after four weeks of comparison with the on-call engineer.
+```
+
+The rule table, the Agent Script patterns and what a call costs in voice actions or voice minutes are in [Breakdown hotline with Agentforce Voice: triage first](../../../blog/breakdown-hotline-agentforce-voice/).
 
 ## Why do troubleshooting and spare parts agents need your data first?
 
@@ -85,7 +94,14 @@ Salesforce now offers a headless setup of Field Service. According to the [Trail
 
 The assistant builds the frame well and the content poorly. It knows your public website. It does not know which technician holds which skill, which customer allows visits when or which depot serves which region. A territory proposal derived from the website follows sales offices, while the right cut follows depots and travel times. How the assistant reaches Salesforce through MCP and APIs is explained in [MCP and Salesforce interfaces](../../ai-salesforce/mcp-and-interfaces/).
 
-Two rules I would not bend. First, review the plan section by section with the service manager and the dispatch lead before anyone approves it. Second, run it in a sandbox. Most of what the assistant creates are configuration records, which a metadata deployment does not carry, as the DevOps chapter on [data and configuration](../../devops-release-management/data-and-configuration/) shows, and the setup loads sample service appointments. Flows go into a branch, records into a data workspace, and both reach production through the pipeline. The review table per plan section is in [Field Service setup by AI assistant: what to check](../../../blog/field-service-headless-setup-ai-assistant/).
+Two rules I would not bend:
+
+| Rule | Why |
+|---|---|
+| Review the plan section by section with the service manager and the dispatch lead before anyone approves it. | The assistant knows your website, not skills, visiting hours and warehouses. |
+| Run it in a sandbox. | Most of what the assistant creates are configuration records, which a metadata deployment does not carry, as the DevOps chapter on [data and configuration](../../devops-release-management/data-and-configuration/) shows, and the setup loads sample service appointments. Flows go into a branch, records into a data workspace, and both reach production through the pipeline. |
+
+The review table per plan section is in [Field Service setup by AI assistant: what to check](../../../blog/field-service-headless-setup-ai-assistant/).
 
 ## Why roll out Field Service in waves?
 
@@ -111,11 +127,13 @@ Before any dashboard, write down how each KPI is defined. First-time fix needs a
 
 Scheduling policies, territories, work types and operating hours are records that someone adjusts every month. The mobile app gets its own versions next to the three platform releases, as described in [chapter 3](../field-service-mobile-app-documents/). And agents need their prompts, actions and test cases maintained. I would name owners before the first wave:
 
-- **Head of service:** KPI definitions and the monthly review per region, 30 minutes with six numbers and one decision.
-- **Dispatch lead:** scheduling policies, territories and the reasons why proposals get changed, as in [chapter 2](../field-service-scheduling-dispatch/).
-- **Release manager:** platform releases, app versions and configuration records through the pipeline.
-- **Product owner for agents:** triage rules, booking gates and the test set of real calls and faults.
-- **IT:** interfaces to ERP and PLM, monitoring and backup, as covered in the DevOps chapter on [operations, monitoring and backup](../../devops-release-management/operations-monitoring-backup/).
+| Role | Owns |
+|---|---|
+| Head of service | KPI definitions and the monthly review per region, 30 minutes with six numbers and one decision. |
+| Dispatch lead | Scheduling policies, territories and the reasons why proposals get changed, as in [chapter 2](../field-service-scheduling-dispatch/). |
+| Release manager | Platform releases, app versions and configuration records through the pipeline. |
+| Product owner for agents | Triage rules, booking gates and the test set of real calls and faults. |
+| IT | Interfaces to ERP and PLM, monitoring and backup, as covered in the DevOps chapter on [operations, monitoring and backup](../../devops-release-management/operations-monitoring-backup/). |
 
 ## A typical scenario, as an assumption: three waves over nine months
 
@@ -136,11 +154,13 @@ Troubleshooting waits until manuals carry the asset's product key, the spare par
 
 ## What should you decide before the first wave?
 
-- **First agent,** with a measurable target such as the share of maintenance visits booked without a dispatcher.
-- **Add-on or Agentforce 1 Field Service,** a licence question I handle in [make-or-buy and licence planning](../../../services/make-or-buy-licences/).
-- **Wave order** and works council timing per country.
-- **KPI definitions and baseline** before go-live.
-- **Owners,** and the rule that AI-built configuration reaches production only through the pipeline, as in my [DevOps and release management](../../../services/devops-release-management/) work.
+| Decision | What it covers |
+|---|---|
+| First agent | With a measurable target such as the share of maintenance visits booked without a dispatcher. |
+| Add-on or Agentforce 1 Field Service | A licence question I handle in [make-or-buy and licence planning](../../../services/make-or-buy-licences/). |
+| Wave order | With works council timing per country. |
+| KPI definitions and baseline | Before go-live. |
+| Owners | Plus the rule that AI-built configuration reaches production only through the pipeline, as in my [DevOps and release management](../../../services/devops-release-management/) work. |
 
 This chapter closes the masterclass; assets and parts are in [chapter 4](../field-service-assets-maintenance-parts/), all chapters on the [overview page](../).
 

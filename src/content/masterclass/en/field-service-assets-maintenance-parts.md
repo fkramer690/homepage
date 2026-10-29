@@ -40,9 +40,11 @@ An asset is a product bought or installed at a customer, linked to an account, a
 
 Those limits rarely matter. Depth costs you earlier, in data upkeep, maintenance plans and on the tablets. My rule of thumb has three questions, and one yes makes a component an asset:
 
-- **Own serial number?** The technician has to record which gearbox or robot was installed or exchanged.
-- **Own maintenance?** Maintenance work rules hang on assets, so a spindle with its own interval needs one.
-- **Own warranty?** A bought-in part whose warranty starts on a different date than the machine's.
+| Question | Why it matters |
+|---|---|
+| Own serial number? | The technician has to record which gearbox or robot was installed or exchanged. |
+| Own maintenance? | Maintenance work rules hang on assets, so a spindle with its own interval needs one. |
+| Own warranty? | A bought-in part whose warranty starts on a different date than the machine's. |
 
 Everything else stays in the PLM parts list. For most machines that leaves two or three levels. The calculation for a packaging line with 6 machines, 40 serialised assemblies and 900 parts is in [asset hierarchy: how deep for a machine?](../../../blog/field-service-asset-hierarchy-machines/).
 
@@ -80,7 +82,16 @@ A six-month calendar fits badly when the same machine runs one shift at one cust
 
 Three details shape the design. A criteria-based rule creates no new work order while its last one is still open, according to the help page on [criteria-based maintenance](https://help.salesforce.com/s/articleView?id=sf.fs_rfc_create_any_criteria.htm&language=en_US&type=5). The same page shows that a criteria rule and a calendar rule generate work orders independently, even with the same suggested date, so "2,000 hours or 12 months" belongs in one rule with OR logic. And the condition has to reset after the visit, for example with a flow that stores the counter reading when the work order closes.
 
-The limits that matter: one generation run creates at most 2,600 work orders and line items per plan, a plan with a count-based rule takes at most 2,000 assets, and Salesforce recommends no more than five maintenance work rules per plan or asset. I split plans by series or region so each stays well below that and has an owner.
+The limits that matter: one generation run creates at most 2,600 work orders and line items per plan, a plan with a count-based rule takes at most 2,000 assets, and Salesforce recommends no more than five maintenance work rules per plan or asset.
+
+```kennzahlen
+2,600 | work orders and line items at most per plan and generation run
+2,000 | assets at most in a plan with a count-based rule
+5 | maintenance work rules at most per plan or asset, as Salesforce recommends
+source: Salesforce Help, Field Service limits and preventive maintenance
+```
+
+I split plans by series or region so each stays well below that and has an owner.
 
 The counter comes from the IoT platform, the ERP or the technician on site, and a daily value is enough. The setup step by step, including the reset flow, is in [usage-based maintenance in Field Service](../../../blog/field-service-usage-based-maintenance/).
 
@@ -96,8 +107,10 @@ Machine data costs money once it lands in Data 360. The [Flex Credits rate card 
 
 Usually not at the start. Assets with hierarchies, maintenance plans, service contracts and entitlements are part of core Field Service. The [price list](https://www.salesforce.com/service/field-service-management/pricing/) (October 2026) shows two asset add-ons:
 
-- **Asset Service Lifecycle Management** at $75 per user and month. The [ASLM section in Salesforce Help](https://help.salesforce.com/s/articleView?language=en_US&id=xcloud.aslm_asset_service_lifecycle_management.htm&type=5) lists, among others, the Asset Coverage View, the Asset Interactive Hierarchy, work order estimation, product service campaigns, depot repair, advanced exchange, inventory functions and timesheets.
-- **Connected Assets** at $15,000 per org and month, so $180,000 a year at list price, for telemetry, the Asset Health Score and 10,000 connected digital assets.
+| Add-on | List price | What it brings |
+|---|---|---|
+| Asset Service Lifecycle Management | $75 per user and month | The [ASLM section in Salesforce Help](https://help.salesforce.com/s/articleView?language=en_US&id=xcloud.aslm_asset_service_lifecycle_management.htm&type=5) lists, among others, the Asset Coverage View, the Asset Interactive Hierarchy, work order estimation, product service campaigns, depot repair, advanced exchange, inventory functions and timesheets. |
+| Connected Assets | $15,000 per org and month, so $180,000 a year at list price | Telemetry, the Asset Health Score and 10,000 connected digital assets. |
 
 ```hinweis offen
 The price list marks the Asset Coverage View as "Available for Purchase" even for Agentforce 1 Field Service. Confirm that in your quote.
@@ -124,7 +137,13 @@ Many spare parts calls need no visit. If customers order a known part for their 
 
 ## Where does warranty belong?
 
-Warranty touches three products, so decide the owner first. Field Service has warranty terms and asset warranties in its [warranty management data model](https://developer.salesforce.com/docs/platform/data-models/guide/field-service-warranty-management.html), ASLM adds coverage views and campaigns, and Manufacturing Cloud brings [Warranty Lifecycle Management](https://trailhead.salesforce.com/content/learn/modules/warranty-administration-and-claims-management-in-manufacturing-cloud/get-started-with-warranty-lifecycle-management) with warranty terms at several product levels and claims that partners and distributors submit through a portal.
+Warranty touches three products, so decide the owner first:
+
+| Product | What it brings for warranty |
+|---|---|
+| Field Service | Warranty terms and asset warranties in its [warranty management data model](https://developer.salesforce.com/docs/platform/data-models/guide/field-service-warranty-management.html) |
+| ASLM | Coverage views and campaigns |
+| Manufacturing Cloud | [Warranty Lifecycle Management](https://trailhead.salesforce.com/content/learn/modules/warranty-administration-and-claims-management-in-manufacturing-cloud/get-started-with-warranty-lifecycle-management) with warranty terms at several product levels and claims that partners and distributors submit through a portal |
 
 My rule: if dealers submit warranty claims, Manufacturing Cloud owns warranty, as described in the Manufacturing Cloud chapter on [warranty and after-sales](../../manufacturing-cloud/warranty-and-after-sales/). If only your own technicians need to see coverage when a visit is booked, the entitlement on the asset is enough and claims stay in the ERP. Two warranty models on the same asset give two answers to the same customer.
 
@@ -138,20 +157,24 @@ I prefer the first model for regular partners and the second for partners who st
 
 A typical scenario, as an assumption: a builder of machining centres has 1,200 machines in the field in three series. The service contract says: service every 2,000 operating hours or every 12 months, whichever comes first. 700 machines are connected, 500 are not. Two partner companies cover Scandinavia.
 
-- **Installed base.** Each machine has six serialised assemblies: 8,400 assets in two levels, loaded from SAP. Technicians record exchanges in the app, and SAP stays the master.
-- **Maintenance.** One criteria-based rule per machine with two conditions joined by OR. The IoT platform writes hours every night, technicians enter the reading for unconnected machines. Six plans, one per series and region, with at most 250 machines each.
-- **Effect.** Assume 300 machines run two shifts at about 4,000 hours a year and get two services, while 900 single-shift machines fall back to the 12-month condition. That is 1,500 visits a year instead of 2,400 with a fixed six-month calendar.
-- **Parts and partners.** 30 vans in Salesforce as locations, stock synced nightly from SAP. The two partners get a territory each, regular technicians on Contractor Plus per user.
-- **Add-ons.** None in the first year. Connected Assets would cost $180,000 a year without changing a single decision.
+| Area | Decision in the scenario |
+|---|---|
+| Installed base | Each machine has six serialised assemblies: 8,400 assets in two levels, loaded from SAP. Technicians record exchanges in the app, and SAP stays the master. |
+| Maintenance | One criteria-based rule per machine with two conditions joined by OR. The IoT platform writes hours every night, technicians enter the reading for unconnected machines. Six plans, one per series and region, with at most 250 machines each. |
+| Effect | Assume 300 machines run two shifts at about 4,000 hours a year and get two services, while 900 single-shift machines fall back to the 12-month condition. That is 1,500 visits a year instead of 2,400 with a fixed six-month calendar. |
+| Parts and partners | 30 vans in Salesforce as locations, stock synced nightly from SAP. The two partners get a territory each, regular technicians on Contractor Plus per user. |
+| Add-ons | None in the first year. Connected Assets would cost $180,000 a year without changing a single decision. |
 
 ## What should you decide before a partner builds?
 
-1. **Asset depth per machine type**, with the three questions above, and which system leads the installed base after delivery.
-2. **Contract types** with their objects: what was sold, which maintenance, which response time.
-3. **Counter source per series** and the rule that wins when the ERP and the technician disagree.
-4. **Stock ownership** and the list of locations that go into Salesforce.
-5. **Warranty owner**: Field Service, ASLM or Manufacturing Cloud.
-6. **Partner model** per partner company.
+| Decision | What it covers |
+|---|---|
+| Asset depth per machine type | Set with the three questions above, plus which system leads the installed base after delivery. |
+| Contract types | Each with its objects: what was sold, which maintenance, which response time. |
+| Counter source per series | Where the counter comes from and which rule wins when the ERP and the technician disagree. |
+| Stock ownership | Which system owns stock and which locations go into Salesforce. |
+| Warranty owner | Field Service, ASLM or Manufacturing Cloud. |
+| Partner model | One per partner company. |
 
 Most of these are interface questions, which I work on in [Salesforce integration](../../../services/salesforce-integration/). [Chapter 5](../field-service-ai-agents-rollout/) adds AI agents, rollout and operations; the [overview page](../) lists all chapters.
 

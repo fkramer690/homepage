@@ -34,10 +34,12 @@ Salesforce Field Service rechnet sich für Hersteller, deren Techniker viele kur
 
 Salesforce Field Service ist das Außendienstprodukt auf Basis von Service Cloud. Salesforce verkauft es heute als Field Service and Operations, so heißt auch die [Preisseite](https://www.salesforce.com/de/products/field-service/pricing). Das Produkt deckt vier Bereiche ab:
 
-- **Terminplanung.** Eine Scheduling Engine wählt für jeden Serviceauftrag einen passenden Techniker und ein Zeitfenster. Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/field-service-lightning-scheduling-basics/examine-scheduling-policies) filtern Work Rules ungeeignete Techniker heraus, etwa wegen eines fehlenden Skills, und Service Objectives bewerten die übrigen, etwa nach kürzester Fahrzeit. Zusammen bilden sie eine Scheduling Policy.
-- **Mobile App.** Techniker sehen ihre Einsätze, Assets und die Historie, auch offline, und erfassen Zeiten, Teile, Fotos und Unterschriften.
-- **Assets und Wartung.** Maschinen sind Assets mit Seriennummer, Wartungspläne erzeugen Aufträge nach Kalender oder Nutzung.
-- **Dokumente.** Serviceberichte entstehen direkt aus der App.
+| Bereich | Was er leistet |
+|---|---|
+| Terminplanung | Eine Scheduling Engine wählt für jeden Serviceauftrag einen passenden Techniker und ein Zeitfenster. Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/field-service-lightning-scheduling-basics/examine-scheduling-policies) filtern Work Rules ungeeignete Techniker heraus, etwa wegen eines fehlenden Skills, und Service Objectives bewerten die übrigen, etwa nach kürzester Fahrzeit. Zusammen bilden sie eine Scheduling Policy. |
+| Mobile App | Techniker sehen ihre Einsätze, Assets und die Historie, auch offline, und erfassen Zeiten, Teile, Fotos und Unterschriften. |
+| Assets und Wartung | Maschinen sind Assets mit Seriennummer, Wartungspläne erzeugen Aufträge nach Kalender oder Nutzung. |
+| Dokumente | Serviceberichte entstehen direkt aus der App. |
 
 Service Cloud ist Pflicht: Laut Preisliste braucht jede Org mit Field Service mindestens eine Service-Cloud-Nutzerlizenz. Die vier Bereiche sind die Ebenen dieser Masterclass. Terminplanung folgt in Kapitel 2, die App in Kapitel 3, Assets und Teile in Kapitel 4, KI-Agenten und Einführung in Kapitel 5.
 
@@ -45,10 +47,12 @@ Service Cloud ist Pflicht: Laut Preisliste braucht jede Org mit Field Service mi
 
 Optimierung hilft dort, wo es viel zu optimieren gibt. Ich frage vor jeder Produktdiskussion nach vier Zahlen aus dem eigenen Außendienst:
 
-1. **Einsätze pro Techniker und Tag.** Liegt der Schnitt deutlich über eins, gibt es etwas zu planen.
-2. **Anteil der Fahrzeit an der Arbeitszeit.** Je höher, desto mehr bringt die Routenoptimierung.
-3. **Zahl der Skills und Teile, die passen müssen.** Je mehr, desto schwerer wird die Planung von Hand.
-4. **Erstlösungsquote**, also wie oft ein Einsatz beim ersten Besuch erledigt ist. Ist sie niedrig, weil Teile oder Skills fehlen, hilft bessere Planung direkt.
+| Kennzahl | Was sie über den Nutzen sagt |
+|---|---|
+| Einsätze pro Techniker und Tag | Liegt der Schnitt deutlich über eins, gibt es etwas zu planen. |
+| Anteil der Fahrzeit an der Arbeitszeit | Je höher, desto mehr bringt die Routenoptimierung. |
+| Zahl der Skills und Teile, die passen müssen | Je mehr, desto schwerer wird die Planung von Hand. |
+| Erstlösungsquote, also wie oft ein Einsatz beim ersten Besuch erledigt ist | Ist sie niedrig, weil Teile oder Skills fehlen, hilft bessere Planung direkt. |
 
 Wartung, Reparaturen und Inspektionen mit mehreren Kunden pro Tag sind der beste Fall. Ein Techniker, der zwei Wochen eine Anlage in Betrieb nimmt, braucht Zeichnungen, einen Projektplan und eine saubere Abnahme; Routenoptimierung hilft ihm wenig.
 
@@ -155,12 +159,14 @@ Soll die Hotline zusätzlich einen KI-Agenten bekommen, kosten die fünf Büroar
 
 ## Was sollten Sie entscheiden, bevor ein Partner baut?
 
-- **Die vier Zahlen** für eine Region und einen Monat: Einsätze pro Tag, Fahrzeitanteil, Skills, Erstlösungsquote.
-- **Den Weg vom Case zum Techniker** für Ihre drei häufigsten Anrufarten, mit Triage und dem Eigentümer jedes Datensatzes.
-- **Wer Cases bearbeitet und wer disponiert.** Daraus folgt, wer Field Service Plus braucht.
-- **Wie Partner arbeiten.** Regelmäßige Partnertechniker mit Nutzerlizenz, gelegentliche pro Login, mit schriftlicher Zählregel.
-- **Welche Add-ons im ersten Jahr wirklich genutzt werden**, pro Rolle statt für alle.
-- **Eine Lizenzprognose über drei Jahre** nach Rollen und Einführungswellen, damit Sie nicht am ersten Tag 45 Technikerlizenzen kaufen, wenn die erste Welle 15 hat.
+| Entscheidung | Was dazugehört |
+|---|---|
+| Die vier Zahlen | Für eine Region und einen Monat: Einsätze pro Tag, Fahrzeitanteil, Skills, Erstlösungsquote. |
+| Den Weg vom Case zum Techniker | Für Ihre drei häufigsten Anrufarten, mit Triage und dem Eigentümer jedes Datensatzes. |
+| Wer Cases bearbeitet und wer disponiert | Daraus folgt, wer Field Service Plus braucht. |
+| Wie Partner arbeiten | Regelmäßige Partnertechniker mit Nutzerlizenz, gelegentliche pro Login, mit schriftlicher Zählregel. |
+| Welche Add-ons im ersten Jahr wirklich genutzt werden | Pro Rolle statt für alle. |
+| Eine Lizenzprognose über drei Jahre | Nach Rollen und Einführungswellen, damit Sie nicht am ersten Tag 45 Technikerlizenzen kaufen, wenn die erste Welle 15 hat. |
 
 Diese Liste ist Teil meiner Arbeit unter [Make-or-buy und Lizenzprognosen](../../../leistungen/make-or-buy-lizenzen/), vor der Verhandlung und unabhängig von Hersteller und Partner. Steht der Business Case, geht es um die Planung selbst: Stammdaten, Scheduling Policies und die neue Konsole behandelt [Kapitel 2: Terminplanung und Disposition](../field-service-terminplanung-disposition/). Alle Kapitel finden Sie auf der [Übersichtsseite](../).
 
