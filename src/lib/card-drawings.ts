@@ -1810,6 +1810,67 @@ const drawings: Record<string, Drawing> = {
     ${box(132, 66, 170, 36, C)}${t(142, 81, l('fields, flows, pages', 'Felder, Flows, Seiten'), { fill: D, size: 7 })}${t(142, 94, l('only via sandbox, PR, pipeline', 'nur über Sandbox, PR, Pipeline'), { fill: C, size: 7 })}
     <path d="M18 124H302" stroke="${G}" stroke-width="0.8"/>${dot(60, 124, G, 2.5)}${dot(160, 124, G, 2.5)}${dot(260, 124, G, 2.5)}
     ${t(60, 142, 'GA 05/2026', { size: 7, anchor: 'middle' })}${t(160, 142, l('500 free actions/month', '500 Aktionen frei/Monat'), { size: 7, anchor: 'middle' })}${t(260, 142, l('audit trail 180+ days', 'Audit Trail 180+ Tage'), { size: 7, anchor: 'middle' })}`,
+  'sandbox-strategy-multiple-partners': (l) => `
+    ${t(18, 20, l('ONE CHAIN · ONLY THE PIPELINE DEPLOYS', 'EINE KETTE · NUR DIE PIPELINE DEPLOYT'), { fill: D, size: 7 })}
+    ${[['Dev', l('daily', 'täglich')], ['Integr.', l('from Git', 'aus Git')], ['Partial', l('5 days', '5 Tage')], ['Full', l('29 days', '29 Tage')], ['Prod', '']].map(([s, r], i) => box(18 + i * 60, 34, 50, 28, i === 3 ? C : G) + t(43 + i * 60, 51, s, { fill: i === 3 ? C : G, size: 7, anchor: 'middle' }) + (r ? t(43 + i * 60, 76, r, { size: 6.5, anchor: 'middle' }) : '')).join('')}
+    ${[0, 1, 2, 3].map((i) => arrow(68 + i * 60, 48, 78 + i * 60, i === 2 ? C : G)).join('')}
+    <path d="M18 100H302" stroke="${L}"/>
+    ${t(18, 116, l('UAT and dress rehearsal in the Full Copy', 'UAT und Generalprobe in der Full Copy'), { size: 7 })}
+    ${tag(18, 128, 200, l('Refresh deletes what is not in Git', 'Refresh löscht, was nicht in Git ist'))}`,
+
+  'permission-concept-permission-sets': (l) => `
+    ${t(18, 18, l('PERMISSIONS AND VISIBILITY SEPARATE', 'RECHTE UND SICHTBARKEIT GETRENNT'), { fill: D, size: 7 })}
+    ${[[l('BASE PROFILE', 'BASISPROFIL'), l('per licence type', 'pro Lizenztyp')], ['PERMISSION SETS', l('per function', 'pro Funktion')], ['PERMISSION SET GROUPS', l('per role', 'pro Rolle')]].map(([a, b], i) => box(18, 28 + i * 34, 196, 26, i === 2 ? C : G) + t(28, 44 + i * 34, a, { fill: i === 2 ? C : D, size: 7 }) + t(206, 44 + i * 34, b, { size: 7, anchor: 'end' })).join('')}
+    ${check(226, 72, G)}${t(238, 78, l('stream delivers', 'Stream liefert'), { size: 7 })}
+    ${check(226, 106)}${t(238, 112, l('client decides', 'Kunde entscheidet'), { fill: C, size: 7 })}
+    ${cross(24, 140)}${t(36, 143, l('no new permissions in profiles', 'keine neuen Rechte im Profil'), { size: 7 })}`,
+
+  'salesforce-uat-business-testing': (l) => `
+    ${t(18, 20, l('SYSTEM TEST BEFORE UAT · BUSINESS DECIDES', 'SYSTEMTEST VOR UAT · FACHBEREICH ENTSCHEIDET'), { fill: D, size: 7 })}
+    ${[[l('Test cases', 'Testfälle'), l('business', 'Fachbereich')], [l('System test', 'Systemtest'), 'Partner'], ['UAT', l('business', 'Fachbereich')], ['Go/No-Go', l('business', 'Fachbereich')]].map(([s, o], i) => box(18 + i * 74, 32, 62, 28, i === 2 ? C : G) + t(49 + i * 74, 50, s, { fill: i === 2 ? C : G, size: 7, anchor: 'middle' }) + t(49 + i * 74, 74, o, { size: 6.5, anchor: 'middle' })).join('')}
+    ${[0, 1, 2].map((i) => arrow(80 + i * 74, 46, 92 + i * 74, i === 1 ? C : G)).join('')}
+    <path d="M18 88H302" stroke="${L}"/>
+    ${t(18, 104, l('40 cases × 20 min × 2 roles ≈ 27 h', '40 Fälle × 20 Min × 2 Rollen ≈ 27 h'), { size: 7 })}
+    ${tag(18, 120, 130, l('test users per role', 'Testnutzer pro Rolle'))}${t(158, 133, l('Full Copy, real volumes', 'Full Copy, echte Mengen'), { size: 7 })}`,
+
+  'development-standards-definition-of-done': (l) => `
+    ${box(18, 18, 136, 100)}${t(28, 34, l('STANDARDS', 'STANDARDS'), { fill: D, size: 7.5 })}
+    ${[l('naming conventions', 'Namenskonventionen'), l('1 automation/object', '1 Automation/Objekt'), l('values in metadata', 'Werte in Metadata'), l('tests check results', 'Tests prüfen Ergebnis')].map((s, i) => check(28, 46 + i * 16, G) + t(42, 52 + i * 16, s, { size: 7 })).join('')}
+    ${box(166, 18, 136, 100, C)}${t(176, 34, 'DEFINITION OF DONE', { fill: C, size: 7.5 })}
+    ${[l('review approved', 'Review freigegeben'), l('pipeline green', 'Pipeline grün'), l('permission set', 'Permission Set'), l('system test logged', 'Systemtest im Ticket')].map((s, i) => check(176, 46 + i * 16) + t(190, 52 + i * 16, s, { size: 7 })).join('')}
+    ${t(18, 140, l('first version: about 80 % of cases', 'erste Version: rund 80 % der Fälle'), { size: 7 })}${t(18, 152, l('5 partners · stable after about 3 months', '5 Partner · stabil nach etwa 3 Monaten'), { size: 7 })}`,
+
+  'architecture-decision-log': (l) => `
+    ${box(18, 18, 150, 124, C)}${t(28, 34, l('D-014 · DECIDED', 'E-014 · ENTSCHIEDEN'), { fill: C, size: 7.5 })}
+    ${[l('context', 'Kontext'), l('options', 'Optionen'), l('decision', 'Entscheidung'), l('reasons', 'Gründe'), l('consequences', 'Folgen'), l('who and when', 'Wer und wann')].map((s, i) => dot(32, 49 + i * 15, G, 2) + t(40, 52 + i * 15, s, { size: 7 })).join('')}
+    ${arrow(168, 38, 196, G, true)}
+    ${box(196, 18, 106, 40)}${t(249, 34, l('D-009 · SUPERSEDED', 'E-009 · ERSETZT'), { fill: D, size: 7, anchor: 'middle' })}${t(249, 48, l('by D-014', 'durch E-014'), { size: 7, anchor: 'middle' })}
+    ${[l('owned by client', 'gehört dem Kunden'), l('Markdown in Git', 'Markdown in Git'), l('never overwritten', 'nie überschrieben')].map((s, i) => check(196, 78 + i * 18, i === 0 ? C : G) + t(210, 84 + i * 18, s, { size: 7 })).join('')}`,
+
+  'global-template-country-deviations': (l) => `
+    ${t(18, 16, l('GLOBAL TEMPLATE · MIN. 80 % SHARED', 'GLOBALES TEMPLATE · MIND. 80 % GLEICH'), { fill: D, size: 7 })}
+    ${[['DE', 184, l('tax', 'Steuern')], ['FR', 176, l('language', 'Sprache')], ['IT', 168, l('dealers', 'Händler')], ['US', 150, l('habit', 'Gewohnheit')]].map(([c, w, r], i) => t(18, 45 + i * 24, String(c), { size: 7 }) + `<rect x="40" y="${36 + i * 24}" width="${w}" height="12" rx="2" fill="#fff" stroke="${G}" stroke-width="1.2"/>` + `<rect x="${40 + Number(w)}" y="${36 + i * 24}" width="${200 - Number(w)}" height="12" rx="2" fill="#fff" stroke="${i === 3 ? G : C}" stroke-width="1.2"${i === 3 ? ' stroke-dasharray="3 2"' : ''}/>` + t(250, 45 + i * 24, String(r), { size: 7, fill: i === 3 ? G : C })).join('')}
+    <path d="M200 28V126" stroke="${D}" stroke-width="1" stroke-dasharray="2 2"/>
+    ${cross(306, 114)}
+    ${t(18, 146, l('country values in custom metadata', 'Landeswerte in Custom Metadata'), { size: 7 })}`,
+
+  'dora-metrics-salesforce-releases': (l) => `
+    ${box(18, 18, 150, 82)}${t(28, 34, l('THROUGHPUT', 'DURCHSATZ'), { fill: D, size: 7.5 })}
+    ${[l('change lead time', 'Durchlaufzeit'), l('deployment frequency', 'Deployment-Häufigkeit'), l('recovery time', 'Wiederherstellung')].map((s, i) => dot(32, 49 + i * 16, G, 2) + t(40, 52 + i * 16, s, { size: 7 })).join('')}
+    ${box(180, 18, 122, 82, C)}${t(190, 34, l('INSTABILITY', 'STABILITÄT'), { fill: C, size: 7.5 })}
+    ${[l('change fail rate', 'Fehlerquote'), l('rework rate', 'Nacharbeitsquote')].map((s, i) => dot(194, 49 + i * 16, C, 2) + t(202, 52 + i * 16, s, { size: 7 })).join('')}
+    ${t(202, 86, l('new since 2024', 'neu seit 2024'), { size: 6.5 })}
+    ${t(18, 120, l('12 releases · 4 hotfixes = 33 % fail rate', '12 Releases · 4 Hotfixes = 33 % Fehlerquote'), { size: 7 })}
+    ${tag(18, 130, 150, l('trend, not a ranking', 'Trend, keine Rangliste'))}`,
+
+  'duplicates-master-data-cleanup': (l) => `
+    ${box(18, 18, 110, 26)}${t(28, 35, 'Muster GmbH', { size: 7 })}
+    ${box(18, 52, 110, 26)}${t(28, 69, 'Muster AG', { size: 7 })}
+    ${arrow(128, 48, 186, C)}
+    ${box(186, 26, 116, 44, C)}${t(196, 43, l('1 ACCOUNT', '1 ACCOUNT'), { fill: C, size: 7.5 })}${t(196, 58, l('key: ERP number', 'Schlüssel: ERP-Nr.'), { size: 7 })}
+    ${[[l('Measure', 'Messen')], [l('Key', 'Schlüssel')], [l('Merge', 'Bereinigen')], [l('Prevent', 'Verhindern')]].map(([s], i) => box(18 + i * 74, 92, 62, 22, i === 1 ? C : G) + t(49 + i * 74, 106, s, { fill: i === 1 ? C : G, size: 7, anchor: 'middle' })).join('')}
+    ${[0, 1, 2].map((i) => arrow(80 + i * 74, 103, 92 + i * 74)).join('')}
+    ${t(18, 140, l('upsert with external ID', 'Upsert mit External ID'), { size: 7 })}${t(302, 140, l('agent picks 1st match', 'Agent nimmt 1. Treffer'), { size: 7, anchor: 'end' })}`,
 };
 
 export const hasDrawing = (key: string) => key in drawings;
