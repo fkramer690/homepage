@@ -34,6 +34,8 @@ Salesforce release management decides whether a programme with several partners 
 
 Release management is the discipline of moving changes to a Salesforce org from development to users in a planned, checked and traceable way. DevOps describes the way of working and the tools behind it. In conversations with business units and partners the same terms come up again and again, and people often mean different things by them. This is how I use them in this masterclass:
 
+```vertiefung Terms
+title: Seven terms as I use them in this masterclass
 - **Source-driven development** means the version control system, not the org, is the source of truth. The [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/platform/sfdx-dev/guide/sfdx-dev-intro.html) puts it briefly: "Instead of the org, your version control system is the source of truth." Whatever is not in the repository does not count.
 - **Version control** is a system such as Git that stores every version of every file with author, time and reason. Every change can be traced, compared and reverted. For Salesforce it holds metadata such as objects, fields, flows, permission sets and Apex classes as files.
 - **Continuous integration (CI)** means every change is checked automatically before it is merged into a shared state. For Salesforce that is a validation deployment, Apex tests and static code analysis.
@@ -41,6 +43,7 @@ Release management is the discipline of moving changes to a Salesforce org from 
 - **Pipeline** is the fixed sequence of environments and automated checks every change passes through, for example developer sandbox, integration, UAT, production. Every change takes the same route, hotfixes included.
 - **Deployment** is the technical transfer of metadata into an org. For a production deployment that includes Apex, the [Salesforce CLI reference](https://developer.salesforce.com/docs/platform/salesforce-cli-reference/guide/cli_reference_project_deploy_start.html) runs all local tests by default, and according to the [Apex Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/pages/apex_testing_intro.htm) tests must cover at least 75 percent of the Apex code and all of them must pass.
 - **Release** is a planned set of changes that goes live for users on a fixed date. It includes communication, training and sign-off by the business.
+```
 
 For decision makers the difference between deployment and release matters most. Deployments can run daily, in sandboxes even several times a day. A release is a business decision: the head of service decides from which day field technicians use the new job completion screen. If you mix the two up, you either plan too few deployments and get huge, risky packages, or you switch features on before the business is ready.
 
@@ -50,39 +53,53 @@ One set of dates is never yours. According to its [release overview](https://www
 
 I have worked in a programme with eight teams and 32 developers, on orgs where several implementation partners worked at the same time, and with nearshore teams in Eastern Europe and India. Without a shared release process, the same patterns appear every time; I describe them in more detail in [why DevOps decides Salesforce enterprise projects](../../../blog/why-devops-matters-salesforce-enterprise/). For a budget they translate into five kinds of cost:
 
-1. **Rework across team boundaries.** Team A deploys a page layout, team B deploys the same object with an older version a day later. The fix ties up both teams, and with distributed teams across time zones every alignment takes longer.
-2. **Repeated testing.** Every faulty deployment to UAT invalidates other teams' test results. Key users from sales and service test the same cases twice and lose trust in the sign-off.
-3. **Downtime for the business.** In manufacturing, a production defect often hits the processes with the most customer contact: service orders, spare parts orders in the dealer portal, the order handover to SAP.
-4. **Growing packages.** Teams with bad release experiences release less often. Less frequent releases get bigger, bigger releases get riskier. The [five DORA metrics](https://dora.dev/guides/dora-metrics/) make this measurable, for example deployment frequency and change fail rate, the share of deployments that need immediate rework such as a rollback or an emergency patch.
-5. **Dependency and blame.** Without history in the repository nobody can show which partner made which change. Arguing about it costs steering time and strains the collaboration.
+| Cost type | What happens |
+|---|---|
+| Rework across team boundaries | Team A deploys a page layout, team B deploys the same object with an older version a day later. The fix ties up both teams, and with distributed teams across time zones every alignment takes longer. |
+| Repeated testing | Every faulty deployment to UAT invalidates other teams' test results. Key users from sales and service test the same cases twice and lose trust in the sign-off. |
+| Downtime for the business | In manufacturing, a production defect often hits the processes with the most customer contact: service orders, spare parts orders in the dealer portal, the order handover to SAP. |
+| Growing packages | Teams with bad release experiences release less often. Less frequent releases get bigger, bigger releases get riskier. The [five DORA metrics](https://dora.dev/guides/dora-metrics/) make this measurable, for example deployment frequency and change fail rate, the share of deployments that need immediate rework such as a rollback or an emergency patch. |
+| Dependency and blame | Without history in the repository nobody can show which partner made which change. Arguing about it costs steering time and strains the collaboration. |
 
 A typical scenario, as an assumption: a machinery manufacturer runs Service Cloud with Field Service, a dealer portal on Experience Cloud and an SAP interface. Three partners work on the same org, one each for service, sales with the portal, and integration. On Friday evening the sales partner deploys a new validation rule on the order object with a change set. It is correct in the partner's sandbox, but it does not know a field the integration partner introduced two weeks earlier. On Monday the nightly order handover from SAP fails, dealers see no delivery dates, and the service team has to postpone its own UAT run because the org is unstable. None of these costs shows up as its own line in the project budget. A validation deployment against the shared state in the repository would have shown the conflict before the merge.
+
 
 ## Why are change sets no longer enough?
 
 Change sets are the standard tool many orgs start with, and for a single admin they are fine. According to [Salesforce Help](https://help.salesforce.com/apex/HTViewHelpDoc?id=changesets.htm), they need a deployment connection, which only exists between orgs affiliated with the same production org. They contain only changes you can make in Setup, no records, and they are deployed as a whole. For a programme with several partners the decisive things are missing:
 
-- no version history, so no comparison and no clean rollback
-- no review before a change reaches the next environment
-- no automated checks against other teams' work
-- components are clicked together by hand, and something is easily missed
-- no record of who changed what, when and why
+```vergleich
+without: Change sets
+- No version history, so no comparison and no clean rollback
+- No review before a change reaches the next environment
+- No automated checks against other teams' work
+- Components are clicked together by hand, and something is easily missed
+- No record of who changed what, when and why
+with: Repository and pipeline
+- Every version sits in Git with author and reason and can be rolled back
+- Every change goes through a pull request with review
+- A validation deployment checks against the shared state
+- The pipeline always deploys the same package, without manual work
+- The history shows which partner changed what
+```
 
 The core problem is the source of truth more than the tool. As long as the org is the truth, the last person to deploy decides which version counts.
 
 ## Five maturity stages from change sets to a pipeline
 
-Hardly any company jumps straight from change sets to a fully automated pipeline, and it does not have to. I place programmes in five stages. Each stage has a clear benefit, and each one prepares the next.
+Hardly any company jumps straight from change sets to a fully automated pipeline, and it does not have to. I place programmes in five stages. Each stage has a clear benefit, and each one prepares the next. Two transitions are the hardest in practice.
 
-| Stage | How changes reach production | Source of truth | Biggest risk | Chapters |
-|---|---|---|---|---|
-| 1. Clicks and change sets | in Setup or by change set, by hand | the org | overwrites, no history | 1 |
-| 2. Repository as a backup | still by hand, metadata is also saved to Git | the org, Git is a copy | repository and org drift apart | 2, 3 |
-| 3. Pull requests with checks | changes are built in a branch, every pull request gets a review and a validation deployment | the repository | checks get bypassed while production stays open | 4, 5, 6 |
-| 4. Pipeline to production | every environment, production included, only through the pipeline, with delta deployments and a hotfix path | the repository | data, configuration and Salesforce releases stay manual | 7, 8 |
-| 5. Operations and measurement | as stage 4, plus monitoring, backups and metrics | the repository | the process ages when nobody owns it | 9, 10 |
-
-Two places in this table are the hardest in practice. The step from stage 2 to 3 moves the source of truth from the org into the repository. From then on, every change made directly in a shared org is a process failure. And the step from 3 to 4 closes the back door: as long as someone with admin rights may deploy to production, the pipeline is only a recommendation.
+```stufen treppe
+1 | Clicks and change sets | Chapter 1 | In Setup or by change set, by hand | Overwrites, no history
+2 | Repository as a backup | Chapters 2, 3 | Still by hand, metadata is also saved to Git; Git is a copy | Repository and org drift apart
+3 | Pull requests with checks | Chapters 4, 5, 6 | Changes are built in a branch, every pull request gets a review and a validation deployment | Checks get bypassed while production stays open *
+4 | Pipeline to production | Chapters 7, 8 | Every environment, production included, only through the pipeline, with delta deployments and a hotfix path | Data, configuration and Salesforce releases stay manual *
+5 | Operations and measurement | Chapters 9, 10 | As stage 4, plus monitoring, backups and metrics | The process ages when nobody owns it *
+band: 1-2 | Source of truth: the org
+band: 3-5 | Source of truth: the repository *
+case: From stage 2 to 3 | The step moves the source of truth from the org into the repository. | From then on, every change made directly in a shared org is a process failure.
+case: From stage 3 to 4 | The step closes the back door. | As long as someone with admin rights may deploy to production, the pipeline is only a recommendation.
+```
 
 The validation deployment is the first tool that pays off as early as stage 3.
 

@@ -159,6 +159,21 @@ for every service page.
 - The running text, FAQ and author box stay in one white band with the
   ReadingGrid.
 
+## Profile card ("Steckbrief", start page About)
+
+Chosen 2026-10-29 (variant C of three) for "Über mich" and "Warum zuerst 30
+Minuten?" on the start page; built in `src/components/Home.astro`, texts in
+`about.blocks` and `firstCall` of the i18n files.
+
+- About: left column (`--side`) with the portrait and the facts as small white
+  cards (mono label, one line). Right label, name, subtitle, then three short
+  blocks between dashed lines, each with a small mono caps heading ("Was ich
+  mache", "Projekte" as ✓ list, "Warum unabhängig"), then the links.
+- First call: two columns, text and button left, the questions right as
+  numbered grey cards with a cyan left border.
+- Below 860px everything stacks; the portrait keeps at most 360px.
+- Fits: person or company profiles, short "who and why" sections.
+
 ## Phase timeline (service pages, "So läuft die Zusammenarbeit")
 
 Chosen 2026-10-29 (variant A of three; Fabian found the service pages "Text an
@@ -171,6 +186,30 @@ Text an Text"). Built in `src/components/ServicePage.astro` (`.phase-flow`).
   timeline turns vertical with the ring on the left.
 - The whole text stays visible; the rings and the line break up the text.
 - Fits: three to five ordered steps with one or two sentences each.
+
+## Compact and visual: tabs, figures, tiles (speaking page)
+
+Chosen 2026-10-29 for `/speaking/` and `/en/speaking/` (variant C of three;
+Fabian: "kompakt und anschaulich", take it as the example for other pages that
+read as list after list). Built in `src/components/SpeakingPage.astro`, content
+in `src/data/speaking.ts`.
+
+- **Figures strip** (`.sp-stats`) at the top of the reading column: four figures
+  between two lines, dashed dividers, 2 × 2 on phones. Compute the numbers from
+  the data, never type them by hand.
+- **Tabs, one item open** (`.sp-tabs` with `.mc-tab-bar` / `.mc-tab-panel`, radio
+  inputs, no script): the chips carry a short name and a count. Inside the panel:
+  title, running text left and a narrow column right with the stations as a small
+  vertical timeline (`.sp-stops`) and the video link with the `play` icon
+  (`.sp-play`); below, the key points as three numbered grey tiles (`.sp-points`).
+  All panels stay in the HTML for search engines.
+- **Icon row box** (`.sp-more`): one white box, one row per item with a 40px icon,
+  bold title, one or two sentences and an optional link; dashed dividers.
+- **Topic tiles** (`.sp-topics`): three white tiles with icon and short bold text,
+  one column on phones; below them the formats as cyan outline chips
+  (`.sp-formats`), each with a full sentence above.
+- Fits: any page that stacks several equal items (talks, offers, references) with
+  a few facts each, and short lists that read better as tiles or chips.
 
 ## Pillars with roof and base (DevOps service page, "Eine gute Salesforce-Pipeline")
 

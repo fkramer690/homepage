@@ -64,16 +64,45 @@ The details differ in every company, which is why this map is part of the [Sales
 
 ## Do you need a middleware?
 
-The approach depends on the size of the company and the number of systems. With a few stable interfaces, a direct integration can be the simplest solution. With many systems, several teams and frequent changes, a middleware such as MuleSoft or another integration platform pays off, because interfaces become reusable and errors are visible in one place.
+The approach depends on the size of the company and the number of systems. With a few stable interfaces, a direct integration can be the simplest solution. With many systems, several teams and frequent changes, a middleware such as MuleSoft or another integration platform pays off.
+
+```pro-contra
+pro: What a middleware gives you
+- Interfaces become reusable.
+- Errors are visible in one place.
+- Interfaces are easier to change and monitor.
+contra: When it does not pay off
+- There are only a few systems.
+- The interfaces are stable and rarely change.
+```
 
 For the build I work with selected partners who have integration experience from large international programmes. That gives the client a partner that fits the size of the task, while the architecture and the specifications stay on the client side.
 
 ## How does telephony fit into Service Cloud?
 
-In most service organisations, phone and email are still the main channels. A CTI integration brings calls into Service Cloud, so agents see the customer, the installed products and the open cases when the phone rings. I have worked with the CTI providers Genesys and Mirage, and Microsoft Teams is becoming more relevant as a telephony platform, because many companies already use it internally.
+In most service organisations, phone and email are still the main channels. A CTI integration brings calls into Service Cloud, so agents see the customer, the installed products and the open cases when the phone rings.
+
+```ablauf
+ext: Call, Telephony platform
+sf: Service Cloud, Customer, Installed products, Open cases
+Call --> Telephony platform
+Telephony platform --CTI integration--> Service Cloud
+Service Cloud --> Customer
+Service Cloud --> Installed products
+Service Cloud --> Open cases
+```
+
+I have worked with the CTI providers Genesys and Mirage, and Microsoft Teams is becoming more relevant as a telephony platform, because many companies already use it internally.
 
 ## What about security?
 
-Every integration has a technical user, and those users often have more permissions than they need. Authentication is changing as well: integrations that log in with username and password need to move to modern methods, as described in [Salesforce password integrations end in 2027](../../blog/salesforce-password-integrations-end-2027/). I review integration users, their permissions and their authentication as part of the architecture.
+Every integration has a technical user, and those users often have more permissions than they need. Authentication is changing as well: integrations that log in with username and password need to move to modern methods, as described in [Salesforce password integrations end in 2027](../../blog/salesforce-password-integrations-end-2027/). I review integration users, their permissions and their authentication as part of the architecture. The dates for how integrations log in:
+
+```zeitleiste
+2026-12-01 | SOAP login() requires the Use Any API Auth permission
+2027-02-20 | OAuth username-password flow for connected apps ends
+Summer '27 | SOAP login() in API versions 31.0 to 64.0 is retired
+Summer '28 | SOAP, REST and Bulk API in versions 31.0 to 40.0 stop working
+```
 
 If you are planning a new integration or want to clean up existing interfaces, [send me a message](#contact).

@@ -78,6 +78,17 @@ The idea is tempting because it mirrors the ERP: every customer has its own cond
 
 I cut buyer groups by attributes that change rarely and that the ERP already holds in the customer master: country or sales organisation, dealer tier such as service partner or sales partner, and brand where dealers carry only one brand. Entitlement policies then follow assortments, not customers: "spare parts general", "spare parts for service partners", "consumables". How to set memberships from the ERP, and when assignment by Apex or by rule pays off, is covered in [buyer groups and entitlements](../../../blog/buyer-groups-entitlements-product-visibility/).
 
+```vergleich
+without: One buyer group per dealer
+- A part all 2,500 dealers may buy sits in 2,500 groups and is over the index limit
+- One policy serves at most 200 groups and has to be copied and kept in sync
+- Every new dealer becomes a data project
+with: Buyer groups by attribute
+- Country or sales organisation, dealer tier and brand
+- Attributes that change rarely and that the ERP already holds in the customer master
+- Entitlement policies follow assortments, not customers
+```
+
 ## Who owns the product data?
 
 Product data for the store should not be maintained in Salesforce. The ERP owns what it already owns today: material number, unit of measure, sales status. A PIM, if you have one, owns texts, technical attributes, images and translations. Salesforce holds a copy and maintains only what belongs to the store, such as categories and search settings. If a merchandiser fixes a typo in Salesforce and the nightly ERP load overwrites it, the dealer sees the typo again the next day, and the merchandiser stops trusting the store. The principle applies to every object in the org and is explained in the [object ownership matrix](../../../blog/salesforce-object-ownership-matrix/).
@@ -90,7 +101,18 @@ Two limits from the table shape the product data. Nine images per product cover 
 
 Store search finds only what is in the data, and it is strict. According to Salesforce, product name, description and SKU are searchable by default, a result appears only when all search terms are present, and prefix and infix partial matches are not supported. The unit is written for D2C merchandisers; B2B uses the same platform search. A dealer who types "815" will not find "0815".
 
-The search limits per store: 25 searchable and 50 filterable attributes, 100 synonym rules, 100 boost and bury rules, 10 facets per query and 200 results per page. Three rules follow for parts catalogues:
+The search limits per store:
+
+| Limit per store | Value |
+|---|---|
+| Searchable attributes | 25 |
+| Filterable attributes | 50 |
+| Synonym rules | 100 |
+| Boost and bury rules | 100 |
+| Facets per query | 10 |
+| Results per page | 200 |
+
+Three rules follow for parts catalogues:
 
 1. **Old numbers go into a field.** Predecessor, supplier and cross-reference numbers sit in one searchable text field on the current product. The field counts as one of the 25 attributes, however many numbers it holds.
 2. **Synonyms are for words.** 100 rules cover "O-ring" and "seal ring", not 8,000 predecessor numbers.
@@ -104,10 +126,12 @@ Most manufacturers need one store per brand, or per legal unit with its own chec
 
 I plan a second store in four cases:
 
-- **Another brand with its own look.** A dealer of brand B should not log into a shop that looks like brand A.
-- **Another category tree.** One catalogue per store means one category tree. The other way round, according to Salesforce one catalogue can serve several stores, so two brands with the same parts can share product data.
-- **Another checkout or another ERP.** Extensions for pricing, inventory or order creation are mapped per store.
-- **Different buyers.** End customers next to dealers get their own D2C store with shared product data.
+| Case | Why it needs its own store |
+|---|---|
+| Another brand with its own look | A dealer of brand B should not log into a shop that looks like brand A. |
+| Another category tree | One catalogue per store means one category tree. The other way round, according to Salesforce one catalogue can serve several stores, so two brands with the same parts can share product data. |
+| Another checkout or another ERP | Extensions for pricing, inventory or order creation are mapped per store. |
+| Different buyers | End customers next to dealers get their own D2C store with shared product data. |
 
 The licence sets an earlier limit than the 100 stores per org. According to the [pricing page](https://www.salesforce.com/editions-pricing/commerce-cloud/b2b/), Growth Edition includes six storefronts and Advanced Edition ten. And every extra store brings its own pages, translations and its own regression test after each of the three Salesforce releases a year. The decision with an example is in [one B2B store or several](../../../blog/b2b-stores-countries-brands-dealers/).
 
@@ -116,6 +140,15 @@ The licence sets an earlier limit than the 100 stores per org. According to the 
 "May this dealer buy this part?" is what entitlements answer. "Does this part fit this machine?" they cannot answer, because a serial number does not appear anywhere in the chain. One buyer group per machine fails on the limits: a standard screw in 6,000 machines would sit far above 2,000 groups, and a dealer with 40 machines would need more than 20 groups.
 
 The robust route is a machine page. A custom Lightning web component shows the machines registered to the dealer's account and, for each one, the spare-relevant positions, from Salesforce assets or live from PLM. Price and the right to buy still come from entitlements and price books. Filtering the normal search per machine is possible through endpoint extensions such as `Commerce_Endpoint_Search_ProductSearch` from the [list of available extensions](https://developer.salesforce.com/docs/commerce/extensions/guide/available-extensions.html), but the [Apex reference](https://developer.salesforce.com/docs/commerce/salesforce-commerce/references/comm-apex-reference/BaseEndpointExtension.html) still labels the base class as beta. I would wait with that.
+
+```ablauf
+sf: Dealer account, Machine as asset, Machine page, Entitlements and prices
+ext: PLM
+Dealer account --registered--> Machine as asset
+Machine as asset --Positions--> Machine page
+PLM ..live..> Machine page
+Entitlements and prices --Right to buy and price--> Machine page
+```
 
 The data matters more than the component: without an as-built parts list per serial number, meaning the parts built into exactly this machine, no store can answer the question. The options are in [spare parts shop: show only parts for each machine](../../../blog/spare-parts-shop-parts-per-machine/), and the same data from an agent's point of view in [spare parts by serial number](../../../blog/spare-parts-by-serial-number-ai/). How the installed base is kept as assets is covered in the Manufacturing Cloud masterclass chapter [warranty and after-sales](../../manufacturing-cloud/warranty-and-after-sales/). One rule I never relax: the dealer sees only machines registered to their own account, read from the asset, never from a free text field.
 

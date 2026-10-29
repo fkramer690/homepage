@@ -64,16 +64,45 @@ Die Details unterscheiden sich in jedem Unternehmen. Deshalb gehört diese Landk
 
 ## Braucht es eine Middleware?
 
-Der Ansatz hängt von der Größe des Unternehmens und der Zahl der Systeme ab. Bei wenigen stabilen Schnittstellen kann eine direkte Anbindung die einfachste Lösung sein. Bei vielen Systemen, mehreren Teams und häufigen Änderungen lohnt sich eine Middleware wie MuleSoft oder eine andere Integrationsplattform, weil Schnittstellen wiederverwendbar werden und Fehler an einer Stelle sichtbar sind.
+Der Ansatz hängt von der Größe des Unternehmens und der Zahl der Systeme ab. Bei wenigen stabilen Schnittstellen kann eine direkte Anbindung die einfachste Lösung sein. Bei vielen Systemen, mehreren Teams und häufigen Änderungen lohnt sich eine Middleware wie MuleSoft oder eine andere Integrationsplattform.
+
+```pro-contra
+pro: Was eine Middleware bringt
+- Schnittstellen werden wiederverwendbar.
+- Fehler sind an einer Stelle sichtbar.
+- Schnittstellen lassen sich leichter ändern und überwachen.
+contra: Wann sie sich nicht lohnt
+- Es gibt nur wenige Systeme.
+- Die Schnittstellen sind stabil und ändern sich selten.
+```
 
 Für die Umsetzung arbeite ich mit ausgewählten Partnern, die Integrationserfahrung aus großen internationalen Programmen haben. So bekommt der Kunde einen Partner, der zur Größe der Aufgabe passt, während Architektur und Spezifikationen auf Kundenseite bleiben.
 
 ## Wie passt Telefonie in die Service Cloud?
 
-In den meisten Serviceorganisationen sind Telefon und E-Mail noch die wichtigsten Kanäle. Eine CTI-Integration bringt Anrufe in die Service Cloud, sodass Agenten beim Klingeln den Kunden, die installierten Produkte und die offenen Fälle sehen. Ich habe mit den CTI-Anbietern Genesys und Mirage gearbeitet, und Microsoft Teams wird als Telefonieplattform wichtiger, weil viele Unternehmen es intern schon nutzen.
+In den meisten Serviceorganisationen sind Telefon und E-Mail noch die wichtigsten Kanäle. Eine CTI-Integration bringt Anrufe in die Service Cloud, sodass Agenten beim Klingeln den Kunden, die installierten Produkte und die offenen Fälle sehen.
+
+```ablauf
+ext: Anruf, Telefonieplattform
+sf: Service Cloud, Kunde, Installierte Produkte, Offene Fälle
+Anruf --> Telefonieplattform
+Telefonieplattform --CTI-Integration--> Service Cloud
+Service Cloud --> Kunde
+Service Cloud --> Installierte Produkte
+Service Cloud --> Offene Fälle
+```
+
+Ich habe mit den CTI-Anbietern Genesys und Mirage gearbeitet, und Microsoft Teams wird als Telefonieplattform wichtiger, weil viele Unternehmen es intern schon nutzen.
 
 ## Und die Sicherheit?
 
-Jede Schnittstelle hat einen technischen Benutzer, und diese Benutzer haben oft mehr Rechte als nötig. Auch die Authentifizierung ändert sich: Schnittstellen, die sich mit Benutzername und Passwort anmelden, müssen auf moderne Verfahren umsteigen, wie in [Salesforce-Passwort-Integrationen enden 2027](../../blog/salesforce-passwort-integrationen-2027/) beschrieben. Integrationsbenutzer, ihre Rechte und ihre Authentifizierung prüfe ich als Teil der Architektur.
+Jede Schnittstelle hat einen technischen Benutzer, und diese Benutzer haben oft mehr Rechte als nötig. Auch die Authentifizierung ändert sich: Schnittstellen, die sich mit Benutzername und Passwort anmelden, müssen auf moderne Verfahren umsteigen, wie in [Salesforce-Passwort-Integrationen enden 2027](../../blog/salesforce-passwort-integrationen-2027/) beschrieben. Integrationsbenutzer, ihre Rechte und ihre Authentifizierung prüfe ich als Teil der Architektur. Die Termine für die Anmeldung von Integrationen:
+
+```zeitleiste
+2026-12-01 | SOAP login() braucht die Berechtigung Use Any API Auth
+2027-02-20 | OAuth Username-Password Flow für Connected Apps endet
+Summer '27 | SOAP login() in den API-Versionen 31.0 bis 64.0 entfällt
+Summer '28 | SOAP-, REST- und Bulk-API in den Versionen 31.0 bis 40.0 fallen aus
+```
 
 Planen Sie eine neue Integration oder möchten Sie bestehende Schnittstellen aufräumen, [schreiben Sie mir](#contact).

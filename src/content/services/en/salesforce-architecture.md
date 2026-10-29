@@ -48,7 +48,11 @@ faq:
 blogTags: [architecture, architektur, data 360, data governance, agentforce, field service]
 ---
 
-Salesforce architecture on the client side means designing the overall picture in the interest of the company: which clouds and products it needs, how the data model looks, how Salesforce works with ERP and other systems, and how decisions are documented. I have done this for global manufacturers, including the first worldwide Manufacturing Cloud rollout with CPQ, a product configurator and a customer portal. My role is independent from vendors and partners, which matters most when a partner proposes the next product.
+Salesforce architecture on the client side means designing the overall picture in the interest of the company: which clouds and products it needs, how the data model looks, how Salesforce works with ERP and other systems, and how decisions are documented. My role is independent from vendors and partners, which matters most when a partner proposes the next product.
+
+```praxis
+I have had this role at global manufacturers, including the first worldwide Manufacturing Cloud rollout with CPQ, a product configurator and a customer portal.
+```
 
 ## Which clouds does the company really need?
 
@@ -62,12 +66,29 @@ Sales Cloud and Service Cloud are a given in almost every enterprise project. Th
 
 ## Why does the data model decide so much?
 
-Every report, every automation and every AI use case depends on the data model. If accounts, products and contracts are modelled differently in each project, the problems show up years later in reports nobody trusts and in agents that give wrong answers. That is why I treat the data model as part of the architecture, including its relationships to ERP. My view on AI is the same: business value and data quality come first, as described in [Agentforce: business value and data quality first](../../blog/agentforce-business-value-data-quality-first/).
+Every report, every automation and every AI use case depends on the data model. That is why I treat the data model as part of the architecture, including its relationships to ERP. My view on AI is the same: business value and data quality come first, as described in [Agentforce: business value and data quality first](../../blog/agentforce-business-value-data-quality-first/).
+
+```vergleich
+without: Every project models differently
+- Accounts, products and contracts are modelled differently in each project.
+- Years later, nobody trusts the reports.
+- Agents give wrong answers.
+with: Data model as part of the architecture
+- The core objects and their relationships are designed once.
+- The relationships to ERP are defined.
+- Reporting, automation and AI use cases build on it.
+```
 
 ## What do I deliver?
 
-The scope ranges from the target picture to the decision log to the data model. Each architecture decision gets a short entry with the options, the reasons and the consequences. That sounds like paperwork, but it is what lets a company change partners or people without losing the reasoning behind its system. Integration architecture is part of it, because Salesforce is never the only system; more on that under [integration with ERP, middleware and telephony](../salesforce-integration/).
+The scope ranges from the target picture to the decision log to the data model. Each architecture decision gets a short entry with the options, the reasons and the consequences. That sounds like paperwork, but it is what lets a company change partners or people without losing the reasoning behind its system.
 
-During implementation I stay on board as the architect. I review partner designs before they are built and keep the decision log current. When the build drifts away from the target picture, for example because a partner takes a shortcut that will be expensive later, I raise it early.
+```eintrag Decision log
+Decision | What was decided?
+Options | Which paths were on the table?
+Reasons | Why was this one chosen?
+Consequences | What does the decision mean later? *
+note: If someone asks two years later why a process was built that way, the answer is here, even when the people involved have long moved on.
+```
 
-If you are planning a new Salesforce programme or want an independent view on an existing architecture, [send me a message](#contact) or read more [about me](../../#about).
+Integration architecture is part of it, because Salesforce is never the only system. More on that under [integration with ERP, middleware and telephony](../salesforce-integration/).

@@ -120,7 +120,9 @@ Für einen Shop mit zwei oder drei Live-Abfragen und einem Auftragsexport reiche
 
 Der [MuleSoft Accelerator for SAP](https://anypoint.mulesoft.com/exchange/org.mule.examples/mulesoft-accelerator-for-sap/) enthält einen Quote-to-Cash-Fall, der Auftrags-, Bestands- und Kundendaten zwischen Sales Cloud und S/4HANA synchronisiert, und einen Fall für B2B-EDI. Das sind API-Vorlagen als Startpunkt. Eine fertige Anbindung für einen B2B-Commerce-Store ist es nicht.
 
+```hinweis achtung
 Eine Frist gilt für jede Batch-Schnittstelle. Salesforce schaltet den [OAuth Username-Password Flow](https://help.salesforce.com/s/articleView?id=release-notes.rn_security_unpw_flow_retirement.htm&language=en_US&release=262&type=5) für Connected Apps am 20. Februar 2027 ab. Ein nächtlicher Produktimport, der sich mit Passwort anmeldet, läuft dann nicht mehr, oft ohne dass es jemand sofort merkt. Wie Sie diese Schnittstellen finden und umstellen, steht in [Passwort-Integrationen enden 2027](../../../blog/salesforce-passwort-integrationen-2027/).
+```
 
 ## Wann lohnt sich ein headless Shop?
 

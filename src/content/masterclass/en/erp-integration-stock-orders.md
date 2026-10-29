@@ -120,7 +120,9 @@ For a store with two or three live calls and one order export, direct Apex callo
 
 The [MuleSoft Accelerator for SAP](https://anypoint.mulesoft.com/exchange/org.mule.examples/mulesoft-accelerator-for-sap/) contains a quote-to-cash use case that syncs order, inventory and customer data between Sales Cloud and S/4HANA, and one for B2B EDI. These are API templates to start from. A finished integration for a B2B Commerce store they are not.
 
+```hinweis achtung
 One deadline applies to every batch integration. Salesforce retires the [OAuth username-password flow](https://help.salesforce.com/s/articleView?id=release-notes.rn_security_unpw_flow_retirement.htm&language=en_US&release=262&type=5) for connected apps on 20 February 2027. A nightly product import that logs in with a password stops working, often without anyone noticing right away. How to find and switch these integrations is in [Password integrations end in 2027](../../../blog/salesforce-password-integrations-end-2027/).
+```
 
 ## When does a headless store pay off?
 

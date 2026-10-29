@@ -62,7 +62,9 @@ Im Ersatzteilkatalog ist Boost und Bury der nützliche Teil: ersetzte Teilenumme
 
 ## Warum darf der Agent keinen Preis erfinden?
 
+```hinweis achtung
 Für einen Hersteller ist der Vertragspreis die heikelste Zahl im ganzen Chat. Er kommt aus der Preisfindung des Shops, die Preisbücher liest oder das ERP aufruft, wie in [Kapitel 3](../preise-warenkorb-checkout/) beschrieben. Dasselbe gilt für Kreditlimit, gesperrte Kunden und bestätigte Liefertermine. Das Sprachmodell versteht die Frage und formuliert die Antwort, die Zahl liefert Code. Zeigt der Shop nur Listenpreise, weil Händlerpreise in SAP-Konditionen stehen, nennt auch der Agent Listenpreise.
+```
 
 Die zweite Regel betrifft die Eingabe. Jede Nachricht eines Händlers ist Text, und Text kann Anweisungen enthalten. Ich plane deshalb so, als ob ein Filter eines Tages eine eingeschleuste Anweisung übersieht:
 
