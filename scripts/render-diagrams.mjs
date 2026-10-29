@@ -1,4 +1,4 @@
-// Renders every ```ablauf block in blog articles and masterclass chapters to
+// Renders every ```ablauf block in blog articles, masterclass chapters and service pages to
 // src/assets/diagrams/<hash>.svg (rules: "Content blocks" in docs/blog-guidelines.md).
 // Run locally after writing or changing a diagram: node scripts/render-diagrams.mjs
 // Needs the Mermaid CLI (npx -y @mermaid-js/mermaid-cli, or `mmdc` on the PATH) and
@@ -29,7 +29,7 @@ const mmdc = (() => {
   try { execFileSync('mmdc', ['--version'], { stdio: 'ignore' }); return ['mmdc']; } catch { return ['npx', '-y', '@mermaid-js/mermaid-cli']; }
 })();
 
-for (const collection of ['blog', 'masterclass']) {
+for (const collection of ['blog', 'masterclass', 'services']) {
   for (const lang of ['de', 'en']) {
     const dir = join(root, 'src/content', collection, lang);
     if (!existsSync(dir)) continue;
