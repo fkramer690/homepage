@@ -1,7 +1,7 @@
 ---
-title: "Change management for Salesforce programmes"
-headline: "Salesforce is live, but hardly anyone uses it?"
-description: "Change management for Salesforce programmes based on Prosci and ADKAR: introduce processes and releases so business teams and partners use them."
+title: "Salesforce change management consulting"
+headline: "Change management when hardly anyone uses Salesforce"
+description: "Salesforce change management consulting based on Prosci and ADKAR: introduce processes and releases so that business teams and partners use them."
 lang: en
 slug: change-management-salesforce
 translationKey: service-change
@@ -9,7 +9,7 @@ contactBrief: change
 order: 7
 note: "I developed this approach together with Juliane Winterscheid, my cooperation partner for change management. Juliane is Prosci certified."
 notePartner: "Juliane Winterscheid"
-lead: "A new Salesforce release is rolled out quickly. Whether business teams, developers and partners work differently afterwards is another question. I plan the introduction of new processes and standards on the client side following the Prosci approach, so they reach daily work and stay there."
+lead: "A new Salesforce release is rolled out quickly. Whether business teams, developers and partners work differently afterwards is another question. I plan the introduction of new processes and standards on the client side following the Prosci approach and the ADKAR model, so they reach daily work and stay there."
 situations:
   - "Salesforce is live, but parts of the business still work with Excel, email and their own lists."
   - "Training has taken place, yet usage stays low, and nobody can say exactly where it gets stuck."
@@ -75,7 +75,7 @@ Together with Juliane Winterscheid, who is Prosci certified, I have applied two 
 
 A common picture: the training has taken place, yet usage stays low. Instead of scheduling another session, we ask per affected group at which stage it is stuck. If a sales team does not know what the maintained opportunities are needed for, Awareness is missing, and the head of sales has to explain that, not the trainer. If a partner's developers know the naming conventions but nobody checks them in the pipeline, Reinforcement is missing. Then an automatic check belongs in the [release process](../devops-release-management/).
 
-Salesforce helps with measuring. Whether a new process is used shows in reports on created and maintained records better than in any survey. We define these figures in the first phase and look at them regularly in the second. I describe the individual topics, from key users to measuring adoption, in [change management: why Salesforce rollouts fail](../../blog/change-management-salesforce-rollout/). The [change management masterclass](../../masterclass/change-management/) goes through the five stages chapter by chapter.
+Salesforce helps with measuring. Whether a new process is used shows in reports on created and maintained records better than in any survey. We define these figures in the first phase and look at them regularly in the second. I describe the individual topics, from key users to measuring adoption, in [Salesforce change management: why rollouts fail](../../blog/change-management-salesforce-rollout/). The [change management masterclass](../../masterclass/change-management/) goes through the five stages chapter by chapter.
 
 ## How did I introduce new standards in a large programme?
 

@@ -619,7 +619,7 @@ export const de: Dict = {
   },
   masterclassChange: {
     name: 'Masterclass Change Management',
-    metaTitle: 'Masterclass Change Management für Salesforce',
+    metaTitle: 'Change Management Masterclass: ADKAR für Salesforce',
     metaDescription: 'Fünf Kapitel zu Change Management in Salesforce-Einführungen bei Herstellern: ADKAR als Diagnose, Sponsor, Key User, weltweiter Rollout und Verankerung.',
     eyebrow: 'Masterclass · Stand Oktober 2026',
     title: 'Wie Salesforce im Alltag ankommt: Change Management mit ADKAR',

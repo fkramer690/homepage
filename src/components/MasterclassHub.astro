@@ -77,6 +77,21 @@ const schema = {
         })),
       },
     },
+    // The masterclass as a free online course; its chapters are the course parts.
+    {
+      '@type': 'Course',
+      '@id': `${url}#course`,
+      url,
+      name: m.name,
+      description: m.metaDescription,
+      inLanguage: lang,
+      isAccessibleForFree: true,
+      provider: { '@type': 'Organization', '@id': `${abs(base)}#organization`, name: site.company, sameAs: abs(base) },
+      author: { '@type': 'Person', '@id': `${abs(base)}#person`, name: site.person },
+      offers: { '@type': 'Offer', category: 'Free', price: 0, priceCurrency: 'EUR' },
+      hasCourseInstance: { '@type': 'CourseInstance', courseMode: 'Online', inLanguage: lang },
+      hasPart: chapters.map((c) => ({ '@type': 'LearningResource', name: c.data.title, url: abs(chapterHref(c)) })),
+    },
     {
       '@type': 'BreadcrumbList',
       itemListElement: [

@@ -1,6 +1,6 @@
 ---
-title: "Change Management: ADKAR als Diagnose für Salesforce"
-description: "Warum Salesforce-Einführungen bei Herstellern im Alltag hängen bleiben, wie das ADKAR-Modell die Ursache je Gruppe zeigt und was Sie vor dem Bau festlegen."
+title: "ADKAR-Modell: Diagnose für Salesforce-Einführungen"
+description: "Das ADKAR-Modell als Diagnose: warum Salesforce-Einführungen bei Herstellern im Alltag hängen, welche Stufe je Gruppe fehlt und was Sie vorher festlegen."
 lang: de
 slug: change-management-adkar-diagnose
 course: change-management
@@ -47,7 +47,7 @@ quelle: Prosci, Best Practices in Change Management, 12. Ausgabe, Executive Summ
 
 Betroffen sind nicht nur Fachbereiche. Wenn ein Programm neue Standards für Entwicklung und Release einführt, sind Entwicklerteams und Umsetzungspartner genauso Betroffene. Darum geht es in [Kapitel 5](../nutzung-messen-und-verankern/).
 
-## Was zeigt ADKAR für ein Salesforce-Programm?
+## Was zeigt das ADKAR-Modell für ein Salesforce-Programm?
 
 Das [ADKAR-Modell](https://www.prosci.com/blog/adkar-model) beschreibt fünf Stufen, die jede Person bei einer Veränderung durchläuft. Die Stufen bauen aufeinander auf: Wer nicht versteht, warum sich etwas ändert, will auch nicht mitmachen, und wer nicht mitmachen will, lernt die neue Funktion nur halb. Für ein Salesforce-Programm übersetze ich sie so:
 
