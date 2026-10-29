@@ -40,7 +40,9 @@ Two footnotes on the Manufacturing Cloud pricing page contradict each other: one
 
 The premium buys, according to the pricing page, Warranty Lifecycle Management, the Asset Service Console, the Service Console for Manufacturing and Pre-Work Estimation. The [Trailhead overview](https://trailhead.salesforce.com/content/learn/modules/agentforce-manufacturing-quick-look/explore-agentforce-manufacturing-capabilities) adds product service campaigns, which the pricing page does not name. Service Cloud alone already covers cases, entitlements, knowledge and standard assets with serial numbers.
 
+```hinweis tipp
 My rule: license by role. Warranty adjudicators and the quality team that runs recalls work on Manufacturing Cloud, a first-level hotline that opens cases and answers from knowledge stays on Service Cloud. One point belongs in the contract: which warranty records a Service Cloud user may read. How I frame the licence mix as a make-or-buy question is described under [make-or-buy and licence forecasts](../../../services/make-or-buy-licences/), and the scope of the whole industry cloud is in [chapter 1](../scope-and-business-case/).
+```
 
 ## Why does after-sales start with the installed base?
 
@@ -48,9 +50,11 @@ Because every after-sales question is a question about one machine. Is this seri
 
 The minimum per machine: serial number, product, owning account, location and the date that starts the warranty. Manufacturing Cloud adds three things on top:
 
-- **Asset milestones.** The [AssetMilestone object](https://developer.salesforce.com/docs/atlas.en-us.264.0.mfg_api_devguide.meta/mfg_api_devguide/sforce_api_objects_assetmilestone.htm), available from API 58.0, records "the key events in the lifecycle of an asset, such as manufacturing, registration, or resale", with a date, the stage Active, Expired or Tentative, and the source system that reported it.
-- **Account and contact participants.** They link several companies and people to one machine: dealer, operator, service partner.
-- **Fleets.** They group the machines of a customer with many sites, with usage per machine.
+| Addition | What it does |
+|---|---|
+| Asset milestones | The [AssetMilestone object](https://developer.salesforce.com/docs/atlas.en-us.264.0.mfg_api_devguide.meta/mfg_api_devguide/sforce_api_objects_assetmilestone.htm), available from API 58.0, records "the key events in the lifecycle of an asset, such as manufacturing, registration, or resale", with a date, the stage Active, Expired or Tentative, and the source system that reported it. |
+| Account and contact participants | They link several companies and people to one machine: dealer, operator, service partner. |
+| Fleets | They group the machines of a customer with many sites, with usage per machine. |
 
 The data model is the easy part. The hard part is the source. The ERP knows the serial number and the dealer it shipped to, but not the end customer. The dealer knows the handover date, commissioning knows the installation date. Each field needs exactly one owner, written down before the first claim is checked. The full field list, the source table and the rule for the warranty start date are in [installed base in Manufacturing Cloud](../../../blog/installed-base-asset-milestones/). Planning the ERP interface for it is part of my work on [Salesforce integration](../../../services/salesforce-integration/).
 

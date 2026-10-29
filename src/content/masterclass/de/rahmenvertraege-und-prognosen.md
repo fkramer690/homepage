@@ -40,6 +40,12 @@ Das Sales Agreement beantwortet sie. Laut [Objektreferenz](https://developer.sal
 
 Die [Hinweise in der Salesforce-Hilfe](https://help.salesforce.com/s/articleView?id=sf.mfg_sa_considerations.htm&language=en_US&type=5) setzen Grenzen: höchstens 1.500 Produkte oder Produktkategorien und 72 Zeitpläne pro Agreement. Für einen Ersatzteilvertrag mit tausenden Positionen ist das eine Designfrage, bevor es eine technische wird.
 
+```kennzahlen
+1.500 | Produkte oder Produktkategorien höchstens pro Sales Agreement
+72 | Zeitpläne höchstens pro Sales Agreement
+quelle: Salesforce-Hilfe, Hinweise zu Sales Agreements
+```
+
 Warum ich das Sales Agreement für den wichtigsten Grund halte, über die Manufacturing Cloud nachzudenken, steht in [Kapitel 1](../einordnung-und-business-case/). Wie es im Alltag arbeitet, beschreibt [Sales Agreements: fehlende Abnahmemengen erkennen](../../../blog/sales-agreements-abnahmemengen-erp/).
 
 ## Vom Angebot zum Sales Agreement

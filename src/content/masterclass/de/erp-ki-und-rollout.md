@@ -87,7 +87,9 @@ Ein Ist-Mengen-Lauf, der still ausfällt, ist das Risiko dabei: Der Vertrieb sie
 
 Mit Winter '27, [allgemein verfügbar seit 12. Oktober 2026](https://www.salesforce.com/news/stories/winter-2027-product-release-announcement/), bietet Salesforce eine eigene Preisfindung für Aufträge an. Penny Perfect Pricing berechnet laut [Developer Guide](https://developer.salesforce.com/docs/industries/penny-perfect-pricing/guide/overview.html) Preise für Positionen von Advanced Orders, also für den Telesales-Bestellablauf, und beschreibt 19 Objekte ab API-Version 68.0. Kalkulationsschema, Suchstrategien und Konditionssätze mit Staffeln erinnern stark an die SAP-Konditionstechnik.
 
+```hinweis tipp
 Ich würde bei den meisten Herstellern trotzdem SAP als Preis-Master behalten. Zwei Preisfindungen laufen auseinander, sobald die Preisabteilung in SAP eine Kondition ändert und die Kopie erst nachts ankommt. Dazu kommen zwei offene Punkte: Die Entwicklerdokumentation nennt keine Lizenz und keinen Standardweg, SAP-Konditionssätze zu laden. Beides sollten Sie schriftlich klären, bevor ein Projektplan davon abhängt. Die Abwägung mit einem Szenario für Ersatzteil-Telesales steht in [Penny Perfect Pricing: ERP-Preise in Salesforce?](../../../blog/penny-perfect-pricing-erp-preise/).
+```
 
 Die Grenzen bleiben wie in den anderen Kapiteln: Angebote mit Konfigurator gehören zu Revenue Cloud, siehe [Katalog, Konfigurator, Preise](../../revenue-cloud/produktkatalog-konfigurator-preise/), und Shoppreise zu B2B Commerce, siehe [Preise, Warenkorb, Checkout](../../b2b-commerce/preise-warenkorb-checkout/).
 
@@ -96,6 +98,13 @@ Die Grenzen bleiben wie in den anderen Kapiteln: Angebote mit Konfigurator gehö
 Wenn ein Prozess fünf Kriterien erfüllt, die ich in [Agentforce für Hersteller: jetzt starten oder warten?](../../../blog/agentforce-ja-oder-nein-hersteller/) beschreibe: genug Volumen, tragfähige Daten, Zugriff auf das ERP per API, ein passendes Kostenmodell und eine Edition, die dazu passt. Händleranfragen zu Auftragsstatus und Lieferterminen erfüllen sie oft. Eine Garantie-Vorprüfung, bei der in der installierten Basis der Garantiebeginn fehlt, erfüllt sie nicht.
 
 Für die Kosten zählen zwei Zahlen. Eine Standard- oder Custom-Aktion kostet laut [Flex Credits Rate Card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) 20 Flex Credits, bei [500 € je 100.000 Credits](https://www.salesforce.com/eu/agentforce/pricing/) also 0,10 €. Und die Edition bestimmt den Pool: Laut [Preisseite der Manufacturing Cloud](https://www.salesforce.com/manufacturing/cloud/pricing/) enthalten die Core-Editionen 500.000 Flex Credits pro Org und Jahr, die Max-Editionen 2,75 Millionen und als einzige die volle Agentforce-for-Industries-Ausstattung. Zu Core gibt es das Agentforce for Manufacturing Cloud Add-on: Die Add-on-Seite nennt 150 $ pro Nutzer und Monat, die Preisseite "from $ 150 login/month". Lassen Sie sich die Einheit schriftlich bestätigen. Wie Sie Credits pro Aktion schätzen, steht im Kapitel [Kosten und Token](../../ki-salesforce/kosten-und-token/) der KI-Masterclass.
+
+```kennzahlen
+20 | Flex Credits kostet eine Standard- oder Custom-Aktion, also 0,10 €
+500.000 | Flex Credits pro Org und Jahr in den Core-Editionen
+2,75 Mio. | Flex Credits pro Org und Jahr in den Max-Editionen
+quelle: Salesforce Flex Credits Rate Card, Agentforce-Preisseite und Preisseite der Manufacturing Cloud
+```
 
 Die sichtbarste Industriereferenz zeigt, wo man anfängt. In der [Meldung von Siemens und Salesforce](https://www.salesforce.com/news/press-releases/2026/09/15/siemens-agentforce-redefine-industrial-sales-service/) vom 15. September 2026 sind zwei Agenten für eingehende Leads live, für 18.000 Vertriebsmitarbeitende in 132 Ländern. Teamcenter-Antworten für den Service und das Lieferanten-Onboarding in SAP stehen im Futur. In [Siemens und Agentforce: Lehren für den Mittelstand](../../../blog/siemens-agentforce-lehren-mittelstand/) leite ich daraus eine Reihenfolge ab: erst nur lesen bei hohem Volumen, dann aus dem ERP lesen, dann Antworten aus PLM und Seriennummern, schreibende Schritte ins ERP zuletzt. Welche Agenten es für Vertrieb, Service und Garantie heute gibt, zeigt das Kapitel [KI-Agenten in der Fertigung](../../ki-salesforce/ki-agenten-in-der-fertigung/).
 
@@ -109,11 +118,13 @@ Teurer ist das Wissen. Laut demselben Leitfaden filtert der Retriever Wissensart
 
 Zuerst steht das Ziel fest, meistens die Harmonisierung von Prozessen. Daraus folgt ein globales Template mit den Entscheidungen, die sich nach dem ersten Land kaum noch ändern lassen: die Account-Ebene der Sales Agreements, die Regel, wann eine Konfiguration ein eigenes Produkt wird, und was Kunden und Händler im Portal sehen. In [Manufacturing Cloud weltweit ausrollen](../../../blog/manufacturing-cloud-weltweit-ausrollen/) beschreibe ich die Regeln, die ich daraus ableite:
 
-- **Erstes Land:** groß, mit angemessener Komplexität. Ein kleines Pilotland bestätigt ein Template, das später am ersten großen Land scheitert.
-- **Große Region früh:** Eine der größten Regionen kommt in die ersten zwei Phasen, damit das Template unter echter Last steht, solange Änderungen noch günstig sind.
-- **Reihenfolge danach:** eine Tabelle mit einer Zeile pro Land und Spalten für Prozesse, Business Units, IT-Landschaft und Marken. Für die Manufacturing Cloud ergänze ich zwei Spalten: eigenes ERP oder gemeinsames, und Händlersprachen.
-- **80 Prozent gleich:** Rechtliche Vorgaben sind gesetzt, jede andere lokale Anforderung wird begründet und von einer Stelle auf Kundenseite entschieden.
-- **Change Management:** Key User, Kommunikation vor dem Go-live und ein Blick auf die Nutzung danach, in jedem Land.
+| Regel | Was sie bedeutet |
+|---|---|
+| Erstes Land | groß, mit angemessener Komplexität. Ein kleines Pilotland bestätigt ein Template, das später am ersten großen Land scheitert. |
+| Große Region früh | Eine der größten Regionen kommt in die ersten zwei Phasen, damit das Template unter echter Last steht, solange Änderungen noch günstig sind. |
+| Reihenfolge danach | eine Tabelle mit einer Zeile pro Land und Spalten für Prozesse, Business Units, IT-Landschaft und Marken. Für die Manufacturing Cloud ergänze ich zwei Spalten: eigenes ERP oder gemeinsames, und Händlersprachen. |
+| 80 Prozent gleich | Rechtliche Vorgaben sind gesetzt, jede andere lokale Anforderung wird begründet und von einer Stelle auf Kundenseite entschieden. |
+| Change Management | Key User, Kommunikation vor dem Go-live und ein Blick auf die Nutzung danach, in jedem Land. |
 
 Die ERP-Spalte hat das meiste Gewicht. Ein Land mit eigenem SAP-System oder eigener Middleware braucht neue Schnittstellen für Ist-Mengen, Boni und Garantie. Teilt es das ERP mit einem schon eingeführten Land, ist der Weg kürzer. Wie ich einen Fahrplan mit Phasen und Freigaben aufbaue, steht im Kapitel [Einführung und Fahrplan](../../devops-release-management/einfuehrung-fahrplan/) der DevOps-Masterclass, die Arbeit mit den Menschen in den Ländern unter [Change Management für Salesforce-Programme](../../../leistungen/change-management/).
 
@@ -121,10 +132,12 @@ Die ERP-Spalte hat das meiste Gewicht. Ein Land mit eigenem SAP-System oder eige
 
 Salesforce bringt drei Releases im Jahr, und Preview-Sandboxes bekommen jedes davon vor der Produktion. Wie Sie das mit dem eigenen Release-Kalender abstimmen, beschreibt das Kapitel [Release-Planung](../../devops-release-management/release-planung-salesforce-releases/) der DevOps-Masterclass. In einer Manufacturing-Cloud-Org gehören vor allem die Teile in den Regressionstest, die Zahlen erzeugen:
 
-- **Forecast Sets.** Sie sind Metadaten vom Typ [AdvAccountForecastSet](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/meta_advaccountforecastset.htm), seit API-Version 53.0, und legen die Prognosekonfiguration pro Geschäftsbereich fest.
-- **Definitionen der Data Processing Engine.** Sie rechnen Ist-Mengen, Prognosen und Boni zusammen; Salesforce führt sie als [BatchCalcJobDefinition](https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_batchcalcjobdefinition.htm).
-- **Expression Sets der Business Rules Engine.** Der Metadatentyp heißt [ExpressionSetDefinition](https://developer.salesforce.com/docs/atlas.en-us.264.0.api_meta.meta/api_meta/meta_expressionsetdefinition.htm); in vielen Orgs stecken darin Garantie- und Bonusregeln.
-- **ERP-Schnittstellen.** Jede neue API-Version ist ein Anlass, die API-Versionen Ihrer Schnittstellen gegen die Fristen oben zu prüfen.
+| Was | Warum es nach jedem Release getestet wird |
+|---|---|
+| Forecast Sets | Sie sind Metadaten vom Typ [AdvAccountForecastSet](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/meta_advaccountforecastset.htm), seit API-Version 53.0, und legen die Prognosekonfiguration pro Geschäftsbereich fest. |
+| Definitionen der Data Processing Engine | Sie rechnen Ist-Mengen, Prognosen und Boni zusammen; Salesforce führt sie als [BatchCalcJobDefinition](https://developer.salesforce.com/docs/atlas.en-us.api_meta.meta/api_meta/meta_batchcalcjobdefinition.htm). |
+| Expression Sets der Business Rules Engine | Der Metadatentyp heißt [ExpressionSetDefinition](https://developer.salesforce.com/docs/atlas.en-us.264.0.api_meta.meta/api_meta/meta_expressionsetdefinition.htm); in vielen Orgs stecken darin Garantie- und Bonusregeln. |
+| ERP-Schnittstellen | Jede neue API-Version ist ein Anlass, die API-Versionen Ihrer Schnittstellen gegen die Fristen oben zu prüfen. |
 
 Mein Test pro Release ist bewusst klein: eine Neugenerierung der Prognose, eine Neuberechnung der Ist-Mengen für drei Sales Agreements, ein Garantieanspruch durch das Expression Set und ein Bonuslauf für einen Zeitraum, jeweils in der Preview-Sandbox und verglichen mit Produktion. Weicht eine Zahl ab, wissen Sie es vor Ihren Account Managern. Damit diese Definitionen zwischen Orgs wandern wie jede andere Konfiguration, gehören sie ins Repository, wie im Kapitel [Daten und Konfiguration](../../devops-release-management/daten-und-konfiguration/) beschrieben.
 
