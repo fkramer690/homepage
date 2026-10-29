@@ -36,7 +36,7 @@ const schema = {
   ],
 };
 ---
-<Page lang={lang} title={c.metaTitle} description={c.description} alternates={alternates} image={ogImage} hasContact>
+<Page layout="wide" lang={lang} title={c.metaTitle} description={c.description} alternates={alternates} image={ogImage} hasContact>
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
   </Fragment>

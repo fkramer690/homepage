@@ -88,7 +88,7 @@ const schema = {
   ],
 };
 ---
-<Page lang={lang} title={pageTitle} description={m.metaDescription} alternates={alternates} image={ogImage} hasContact>
+<Page layout="wide" lang={lang} title={pageTitle} description={m.metaDescription} alternates={alternates} image={ogImage} hasContact>
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
   </Fragment>
@@ -212,7 +212,7 @@ const schema = {
   )}
 
   <section class="section mc-author">
-    <div class="container post-inner">
+    <div class="container">
       <AuthorBox lang={lang} />
     </div>
   </section>

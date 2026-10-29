@@ -5,6 +5,7 @@ import { de } from '../i18n/de';
 import { site } from '../site';
 import ExternalMark from './ExternalMark.astro';
 import CertItem from './CertItem.astro';
+import ReadingGrid from './ReadingGrid.astro';
 import coverageWideEn from '../assets/certifications/coverage-wide-en.png';
 import coverageWideDe from '../assets/certifications/coverage-wide-de.png';
 import coverageNarrowEn from '../assets/certifications/coverage-narrow-en.png';
@@ -55,52 +56,60 @@ const schema = {
     ],
   },
 };
+const toc = [
+  { slug: 'why', text: c.whyTitle },
+  { slug: 'architect', text: c.architectTitle },
+  { slug: 'salesforce', text: c.salesforceTitle },
+  { slug: 'other', text: c.otherTitle },
+];
 ---
-<Page lang={lang} title={c.metaTitle} description={c.metaDescription} alternates={{ en: localHref('en', 'certifications/'), de: localHref('de', 'certifications/') }}>
+<Page layout="reading" lang={lang} title={c.metaTitle} description={c.metaDescription} alternates={{ en: localHref('en', 'certifications/'), de: localHref('de', 'certifications/') }}>
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
   </Fragment>
   <section class="section blog">
-    <div class="container blog-inner">
+    <div class="container">
       <p class="eyebrow mono">{t.about.title}</p>
       <h1>{c.title}</h1>
       <p class="blog-intro">{c.intro}</p>
-      <picture class="cert-graphic">
-        <source media="(max-width: 640px)" srcset={coverage.narrow.src} />
-        <img src={coverage.wide.src} width={coverage.wide.width / 2} height={coverage.wide.height / 2} alt={c.coverageAlt} decoding="async" />
-      </picture>
+      <ReadingGrid t={t} headings={toc} cta={c.title}>
+        <picture class="cert-graphic">
+          <source media="(max-width: 640px)" srcset={coverage.narrow.src} />
+          <img src={coverage.wide.src} width={coverage.wide.width / 2} height={coverage.wide.height / 2} alt={c.coverageAlt} decoding="async" />
+        </picture>
 
-      <h2>{c.whyTitle}</h2>
-      {c.why.map((p) => <p>{p}</p>)}
-      <picture class="cert-graphic">
-        <source media="(max-width: 640px)" srcset={basics.narrow.src} />
-        <img src={basics.wide.src} width={basics.wide.width / 2} height={basics.wide.height / 2} alt={c.basicsAlt} loading="lazy" decoding="async" />
-      </picture>
+        <h2 id="why">{c.whyTitle}</h2>
+        {c.why.map((p) => <p>{p}</p>)}
+        <picture class="cert-graphic">
+          <source media="(max-width: 640px)" srcset={basics.narrow.src} />
+          <img src={basics.wide.src} width={basics.wide.width / 2} height={basics.wide.height / 2} alt={c.basicsAlt} loading="lazy" decoding="async" />
+        </picture>
 
-      <p class="cert-hint">{c.hint}</p>
+        <p class="cert-hint">{c.hint}</p>
 
-      <h2>{c.architectTitle} <span class="cert-count mono">{architectCerts.length}</span></h2>
-      <div class="cert-list">
-        {architectCerts.map((cert) => <CertItem cert={cert} lang={lang} />)}
-      </div>
+        <h2 id="architect">{c.architectTitle} <span class="cert-count mono">{architectCerts.length}</span></h2>
+        <div class="cert-list">
+          {architectCerts.map((cert) => <CertItem cert={cert} lang={lang} />)}
+        </div>
 
-      <h2>{c.salesforceTitle} <span class="cert-count mono">{salesforceCerts.length}</span></h2>
-      <div class="cert-list">
-        {salesforceCerts.map((cert) => <CertItem cert={cert} lang={lang} />)}
-      </div>
+        <h2 id="salesforce">{c.salesforceTitle} <span class="cert-count mono">{salesforceCerts.length}</span></h2>
+        <div class="cert-list">
+          {salesforceCerts.map((cert) => <CertItem cert={cert} lang={lang} />)}
+        </div>
 
-      <h2>{c.otherTitle}</h2>
-      {groups.map(([key, certs]) => (
-        <>
-          <h3>{c.groups[key]}</h3>
-          <div class="cert-list">
-            {certs.map((cert) => <CertItem cert={cert} lang={lang} />)}
-          </div>
-        </>
-      ))}
+        <h2 id="other">{c.otherTitle}</h2>
+        {groups.map(([key, certs]) => (
+          <>
+            <h3>{c.groups[key]}</h3>
+            <div class="cert-list">
+              {certs.map((cert) => <CertItem cert={cert} lang={lang} />)}
+            </div>
+          </>
+        ))}
 
-      <p class="cert-links"><a class="text-link" href={site.linkedin} target="_blank" rel="noopener">{t.about.linkedin}<ExternalMark label={t.nav.externalTab} /></a></p>
-      <p><a class="text-link" href={`${home}#about`}>← {t.subpages.back}</a></p>
+        <p class="cert-links"><a class="text-link" href={site.linkedin} target="_blank" rel="noopener">{t.about.linkedin}<ExternalMark label={t.nav.externalTab} /></a></p>
+        <p><a class="text-link" href={`${home}#about`}>← {t.subpages.back}</a></p>
+      </ReadingGrid>
     </div>
   </section>
 </Page>

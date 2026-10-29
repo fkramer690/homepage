@@ -20,7 +20,7 @@ const services = await getServices(lang);
 const recruiterTeaser = recruiters[lang].teaser;
 const serviceLinks = new Map(services.map((s) => [s.data.order, serviceHref(s)]));
 ---
-<Page lang={lang} title={t.partnerPage.metaTitle} description={t.partnerPage.description} alternates={{ en: partnersHref('en'), de: partnersHref('de') }}>
+<Page layout="wide" lang={lang} title={t.partnerPage.metaTitle} description={t.partnerPage.description} alternates={{ en: partnersHref('en'), de: partnersHref('de') }}>
   <section class="section blog">
     <div class="container">
       <p class="eyebrow mono">FK Solution Design</p>

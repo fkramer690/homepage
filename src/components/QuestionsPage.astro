@@ -5,6 +5,7 @@ import ExternalMark from './ExternalMark.astro';
 import ContactForm from './ContactForm.astro';
 import Icon from './Icon.astro';
 import AuthorBox from './AuthorBox.astro';
+import ReadingGrid from './ReadingGrid.astro';
 import Blueprint from './Blueprint.astro';
 import { en } from '../i18n/en';
 import { de } from '../i18n/de';
@@ -56,12 +57,12 @@ const schema = {
   ],
 };
 ---
-<Page lang={lang} title={pageTitle} description={c.description} alternates={alternates} image={ogImage} hasContact>
+<Page layout="reading" lang={lang} title={pageTitle} description={c.description} alternates={alternates} image={ogImage} hasContact>
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
   </Fragment>
   <article class="section post questions">
-    <div class="container post-inner">
+    <div class="container">
       <a class="post-back mono" href={`${home}#approach`}>← {c.back}</a>
       <p class="eyebrow mono">{c.eyebrow}</p>
       <h1>{c.title}</h1>
@@ -77,25 +78,27 @@ const schema = {
         ))}
       </nav>
 
-      {c.groups.map((group, gi) => (
-        <section class="q-group" aria-labelledby={`group-${gi + 1}`}>
-          <div class="q-side">
-            <Icon name={group.icon} class="group-icon" />
-            <h2 id={`group-${gi + 1}`}>{group.title}</h2>
-          </div>
-          <ol class="question-list">
-            {group.questions.map(({ q, a }, qi) => (
-              <li>
-                <span class="card-index mono">{String(offsets[gi] + qi + 1).padStart(2, '0')}</span>
-                <h3>{q}</h3>
-                <p>{a}</p>
-              </li>
-            ))}
-          </ol>
-        </section>
-      ))}
+      <ReadingGrid t={t} headings={c.groups.map((group, gi) => ({ slug: `group-${gi + 1}`, text: group.title }))} cta={c.formSubject}>
+        {c.groups.map((group, gi) => (
+          <section class="q-group" aria-labelledby={`group-${gi + 1}`}>
+            <div class="q-side">
+              <Icon name={group.icon} class="group-icon" />
+              <h2 id={`group-${gi + 1}`}>{group.title}</h2>
+            </div>
+            <ol class="question-list">
+              {group.questions.map(({ q, a }, qi) => (
+                <li>
+                  <span class="card-index mono">{String(offsets[gi] + qi + 1).padStart(2, '0')}</span>
+                  <h3>{q}</h3>
+                  <p>{a}</p>
+                </li>
+              ))}
+            </ol>
+          </section>
+        ))}
 
-      <AuthorBox lang={lang} />
+        <AuthorBox lang={lang} />
+      </ReadingGrid>
     </div>
   </article>
   <section class="contact dark grid-bg" id="contact">

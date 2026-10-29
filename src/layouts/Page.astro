@@ -18,8 +18,11 @@ interface Props {
   // True when the page has its own #contact section (blog articles).
   hasContact?: boolean;
   noindex?: boolean;
+  // Width system (docs/layouts.md): 'reading' pages put their text into
+  // ReadingGrid, 'wide' pages (overviews, start page) use the full frame.
+  layout: 'reading' | 'wide';
 }
-const { lang, title, description, alternates, ogType, image, hasContact = false, noindex = false } = Astro.props;
+const { lang, title, description, alternates, ogType, image, hasContact = false, noindex = false, layout } = Astro.props;
 const t = lang === 'de' ? de : en;
 const home = homeHref(lang);
 const switchHref = alternates ? (lang === 'de' ? alternates.en : alternates.de) : homeHref(lang === 'de' ? 'en' : 'de');
@@ -28,7 +31,7 @@ const switchHref = alternates ? (lang === 'de' ? alternates.en : alternates.de) 
   <slot name="head" slot="head" />
   <a class="skip-link" href="#main">{lang === 'de' ? 'Zum Inhalt springen' : 'Skip to content'}</a>
   <Header t={t} home={home} switchHref={switchHref} />
-  <main id="main">
+  <main id="main" data-layout={layout}>
     <slot />
   </main>
   <FloatingContact t={t} messageHref={hasContact ? '#contact' : `${home}#contact`} />
