@@ -7,6 +7,8 @@ import ExternalMark from './ExternalMark.astro';
 import ContactForm from './ContactForm.astro';
 import AuthorBox from './AuthorBox.astro';
 import Blueprint from './Blueprint.astro';
+import Photo from './Photo.astro';
+import { coursePhotos } from '../data/photos';
 import PartnerBox from './PartnerBox.astro';
 import { en } from '../i18n/en';
 import { de } from '../i18n/de';
@@ -23,6 +25,7 @@ interface Props {
 const { lang, course = 'ai' } = Astro.props;
 const t = lang === 'de' ? de : en;
 const m = courseTexts(lang, course);
+const photo = coursePhotos[course];
 const chapters = await getChapters(lang, course);
 const clusters = await getClusters(lang, course);
 const articleCount = new Set(clusters.flatMap(({ posts }) => posts.map((p) => p.id))).size;
@@ -121,6 +124,9 @@ const schema = {
           <a class="btn btn-ghost" href={contactHref(m.name)} {...ctaAttrs}>{t.nav.cta}{contactExternal && <ExternalMark label={t.nav.newTab} />}</a>
         </div>
       </div>
+      {photo ? (
+      <figure class="mc-figure hero-photo"><Photo photo={photo} lang={lang} eager widths={[480, 720, 960]} sizes="(max-width: 900px) calc(100vw - 32px), 500px" /></figure>
+      ) : (
       <figure class="mc-figure">
         <svg class="mc-drawing" viewBox={`0 0 ${W} ${H}`} role="img" aria-label={figureLabel}>
           <rect width={W} height={H} fill="#f5f6f7" />
@@ -146,6 +152,7 @@ const schema = {
           <path d={`M386 ${layerY(2)}V${layerY(1) + 24}H321`} fill="none" stroke="#5a5a5e" stroke-width="1.2" stroke-dasharray="4 3" />
         </svg>
       </figure>
+      )}
     </div>
   </section>
 

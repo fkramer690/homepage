@@ -6,6 +6,7 @@ import ContactForm from './ContactForm.astro';
 import Blueprint from './Blueprint.astro';
 import Icon from './Icon.astro';
 import { Image } from 'astro:assets';
+import Photo from './Photo.astro';
 import portrait from '../assets/portrait.png';
 import { en } from '../i18n/en';
 import { de } from '../i18n/de';
@@ -138,14 +139,19 @@ const schema = {
   <section class="section dark grid-bg fa-practice">
     <Blueprint />
     <div class="container">
-      <p class="label mono">{c.practice.label}</p>
-      <h2>{c.practice.title}</h2>
-      <ul class="fa-practice-facts">
-        {c.practice.facts.map((f) => (
-          <li><span class="proof-value">{f.value}</span><span class="proof-label mono">{f.label}</span></li>
-        ))}
-      </ul>
-      <p class="fa-practice-text">{c.practice.text}</p>
+      <div class="fa-practice-grid">
+        <div>
+          <p class="label mono">{c.practice.label}</p>
+          <h2>{c.practice.title}</h2>
+          <ul class="fa-practice-facts">
+            {c.practice.facts.map((f) => (
+              <li><span class="proof-value">{f.value}</span><span class="proof-label mono">{f.label}</span></li>
+            ))}
+          </ul>
+          <p class="fa-practice-text">{c.practice.text}</p>
+        </div>
+        <figure class="hero-photo"><Photo photo="07-rundgang-produktion-v01" lang={lang} widths={[360, 540, 720]} sizes="360px" /></figure>
+      </div>
     </div>
   </section>
 
