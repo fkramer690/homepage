@@ -34,6 +34,10 @@ Every page uses one frame (`--max`, 1216px content) and is either a `reading` or
 
 The sitemap must list exactly the indexable pages. `scripts/check-sitemap.mjs` runs after `astro build` and fails if a page without `noindex` is missing from it, a `noindex` page is in it, or a listed URL has no page. To keep a page out of the sitemap, give it `noindex` (and add it to the sitemap filter in `astro.config.mjs`); never weaken the check.
 
+## Graphics stay inside their frame
+
+No label in a drawing may run over the edge, out of its box, into another box or under a line or icon. `scripts/check-graphics.mjs` runs after `astro build` and checks every card drawing (`src/lib/card-drawings.ts`, EN and DE) and every other inline SVG with text; a new kind of drawing must be added to it. `src/lib/og.ts` refuses preview image titles over three lines. Rules under "Card image" in `docs/blog-guidelines.md`; never weaken the check.
+
 ## Page titles
 
 Every indexable page has a unique `<title>` of at most 60 characters, keyword first; the brand suffix ` | FK Solution Design` is added only where it fits. `scripts/check-titles.mjs` runs after `astro build` and enforces this; never weaken it.
