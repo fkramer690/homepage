@@ -1,6 +1,6 @@
 # Content blocks (library)
 
-Ten building blocks that loosen up blog articles and masterclass chapters. They are written in Markdown as a fenced code block whose language is the block name, so articles stay free of HTML. `src/lib/content-blocks-plugin.mjs` turns them into markup at build time (logic in `src/lib/content-blocks.mjs`, styles under "Content blocks" in `src/styles/global.css`), and `scripts/check-blog.mjs` validates them. Rules for when to use them: "Content blocks" in [blog-guidelines.md](blog-guidelines.md).
+Eleven building blocks that loosen up blog articles and masterclass chapters. They are written in Markdown as a fenced code block whose language is the block name, so articles stay free of HTML. `src/lib/content-blocks-plugin.mjs` turns them into markup at build time (logic in `src/lib/content-blocks.mjs`, styles under "Content blocks" in `src/styles/global.css`), and `scripts/check-blog.mjs` validates them. Rules for when to use them: "Content blocks" in [blog-guidelines.md](blog-guidelines.md).
 
 Design: only the site's own colours and forms (cyan, anthracite, greys, dashed mono labels, cards with a short bar on top, the technical grid). No other colours, no icons beyond the cyan tick and grey cross.
 
@@ -138,6 +138,19 @@ ohne: Einmal im Quartal ein großes Paket
 mit: Kleine Releases mit festem Weg
 - Fachbereiche wissen vor dem Release, was sich ändert.
 - Rückmeldungen kommen auf festem Weg in den Backlog.
+```
+````
+
+## 11. Hebel (lever cards)
+
+Two or three levers side by side as cards of equal height: `Title | effect`, then the description on an indented line. The label "Hebel 01" / "Lever 01" is added automatically, the effect stands at the bottom of the card behind a dashed line. Only effects that the description or the page states. Approved by Fabian 2026-10-29 for the licence levers on the make-or-buy service page.
+
+````
+```hebel
+Der Lizenztyp | Leicht sechsstellig pro Jahr bei großer Nutzerbasis
+  Volle Lizenzen werden oft standardmäßig angeboten, auch für Nutzer, die nur Daten lesen oder Datensätze freigeben.
+Der Zeitpunkt | Produkte für zwei bis drei Jahre für wenig Aufpreis
+  Zum Ende des Geschäftsjahres des Herstellers oder bei Aktionen gibt es oft Spielraum.
 ```
 ````
 
