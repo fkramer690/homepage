@@ -40,9 +40,9 @@ Grundlage: Jev-Lauf (jev-1.14.0) über Start, EN, Leistungen, Freiberufler-Seite
 | J8 | Kundenstimmen und Ergebnisse je Referenz (= Weitere Ideen 4 und 11), stärkster Hebel für Vertrauen | hoch | mittel | Fabian liefert, Claude baut ein | Backlog, wartet auf Fabian |
 | J9 | Blog-Übersicht /blog und /en/blog (je ca. 690 KB HTML, gzip übertragen nur ca. 105 KB): Kartengrafiken außerhalb des Bildschirms nicht rendern (content-visibility) | klein | klein | Claude | PR |
 | J10 | Ein klarer nächster Schritt auf der Leistungsübersicht (Jev 0,35; bisher kein Button). Die Freiberufler-Seite hat bereits Buttons im Hero und Kontaktbereich | mittel | klein | Claude | PR |
-| J11 | Kernaussage nach vorn: /partner und vier Artikel (AELA, Buyer Agent WhatsApp, Account Forecasting, Garantieansprüche) | mittel | mittel | Claude | offen |
+| J11 | Kernaussage nach vorn: /partner und vier Artikel (AELA, Buyer Agent WhatsApp, Account Forecasting, Garantieansprüche) | mittel | mittel | Claude | erledigt (PR #150) |
 | J12 | Masterclass und Blog abgrenzen: H1 der Hubs Manufacturing Cloud und B2B Commerce auf „vom Business Case bis zum Rollout“ statt der „lohnt sich“-Frage, die die Artikel besetzen (verlinkt sind sie schon) | mittel | klein | Claude | PR |
-| J13 | Einstiegsartikel für Leser ohne benanntes Problem (nur 4 von 196 Artikeln) | mittel | groß | Claude entwirft, Fabian gibt frei | offen |
+| J13 | Einstiegsartikel für Leser ohne benanntes Problem (nur 4 von 196 Artikeln): [Themenliste mit 14 Vorschlägen](https://claude.ai/artifact/QLb9Ss97LuuwdBYvnn8VSm), Empfehlung Runde 1 mit Nr. 1, 2, 3, 6 und 14; pro Thema braucht es ein Praxisbeispiel von Fabian | mittel | groß | Fabian wählt aus, Claude schreibt | Backlog, wartet auf Fabians Themenauswahl |
 | J14 | Veröffentlichungsdaten: 174 von 196 DE-Artikeln tragen 27. bis 29.10.2026. Das sind die echten Daten (Website seit 23.10.2026 online), sie bleiben; nie rückdatieren. „Aktualisiert am“ nur nach echter Prüfung (J7) | mittel | klein | Fabian | entschieden, keine Änderung |
 | J15 | Logo-Band: Freigaben der Kunden liegen vor (Fabian, 29.10.2026) | mittel | klein | Fabian | erledigt |
 | J16 | /blog/change-management-modelle wirkt generisch (Spezifität 0,38): Praxisbeispiel ergänzen | klein | mittel | Juliane | Backlog, wartet auf Juliane |
