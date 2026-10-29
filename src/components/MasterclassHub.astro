@@ -53,7 +53,15 @@ const grid =
   Array.from({ length: W / 16 - 1 }, (_, i) => `M${16 * (i + 1)} 0V${H}`).join('') +
   Array.from({ length: H / 16 - 1 }, (_, i) => `M0 ${16 * (i + 1)}H${W}`).join('');
 const layerY = (i: number) => 40 + i * 60;
-const figureLabel = `${m.figureLabel}: ${m.layers.map((l) => `${l.title}: ${l.tools}`).join('; ')}; ${m.erp.join(', ')}`;
+// A masterclass with `stages` (change management) draws them as a rising staircase instead of the layers.
+type Stage = { term: string; question: string; help: string; chapter: string };
+const stages = (m as { stages?: Stage[] }).stages;
+const stagesNote = (m as { stagesNote?: string }).stagesNote;
+const stepX = (i: number) => 12 + i * 84;
+const stepY = (i: number) => 150 - i * 24;
+const figureLabel = stages
+  ? `${m.figureLabel}: ${stages.map((s) => `${s.term} (${s.question}, ${s.help}, ${s.chapter})`).join('; ')}`
+  : `${m.figureLabel}: ${m.layers.map((l) => `${l.title}: ${l.tools}`).join('; ')}; ${m.erp.join(', ')}`;
 
 const schema = {
   '@context': 'https://schema.org',
@@ -132,7 +140,27 @@ const schema = {
           <rect width={W} height={H} fill="#f5f6f7" />
           <path d={grid} stroke="#e3e5e7" stroke-width="1" />
           <text x="20" y="24" font-size="9" fill="#232325" letter-spacing="0.08em">{m.figureLabel.toUpperCase()}</text>
-          {m.layers.map((layer, i) => {
+          {stages ? (
+            <g>
+              {stages.map((s, i) => {
+                const x = stepX(i);
+                const y = stepY(i);
+                const cx = x + 40;
+                const last = i === stages.length - 1;
+                return (
+                  <g>
+                    <rect x={x} y={y} width="80" height={244 - y} rx="5" fill="#fff" stroke={last ? '#1BA1E2' : '#5a5a5e'} stroke-width={last ? 1.6 : 1.2} />
+                    <text x={cx} y={y + 28} font-size="20" fill="#1376a8" text-anchor="middle">{s.term[0]}</text>
+                    <text x={cx} y={y + 46} font-size="9" fill="#232325" text-anchor="middle">{s.term}</text>
+                    <text x={cx} y={y + 62} font-size="8.5" fill="#5a5a5e" text-anchor="middle">{s.question}</text>
+                    <text x={cx} y={y + 76} font-size="8.5" fill="#5a5a5e" text-anchor="middle">{s.help}</text>
+                    <text x={cx} y="260" font-size="8.5" fill="#5a5a5e" text-anchor="middle">{s.chapter}</text>
+                  </g>
+                );
+              })}
+              {stagesNote && <text x="12" y="279" font-size="8.5" fill="#232325">{stagesNote}</text>}
+            </g>
+          ) : m.layers.map((layer, i) => {
             const y = layerY(i);
             const accent = i === 1;
             return (
@@ -144,12 +172,16 @@ const schema = {
               </g>
             );
           })}
-          <rect x="352" y={layerY(2)} width="68" height="48" rx="5" fill="#fff" stroke="#5a5a5e" stroke-width="1.2" />
-          <text x="386" y={layerY(2) + 21} font-size="11" fill="#232325" text-anchor="middle">{m.erp[0]}</text>
-          <text x="386" y={layerY(2) + 36} font-size="9.5" fill="#5a5a5e" text-anchor="middle">{m.erp[1]}</text>
-          <path d={`M321 ${layerY(2) + 24}H351`} stroke="#5a5a5e" stroke-width="1.3" />
-          <path d={`M326 ${layerY(2) + 20.5}l-5 3.5 5 3.5M346 ${layerY(2) + 20.5}l5 3.5-5 3.5`} fill="none" stroke="#5a5a5e" stroke-width="1.3" />
-          <path d={`M386 ${layerY(2)}V${layerY(1) + 24}H321`} fill="none" stroke="#5a5a5e" stroke-width="1.2" stroke-dasharray="4 3" />
+          {!stages && (
+            <g>
+              <rect x="352" y={layerY(2)} width="68" height="48" rx="5" fill="#fff" stroke="#5a5a5e" stroke-width="1.2" />
+              <text x="386" y={layerY(2) + 21} font-size="11" fill="#232325" text-anchor="middle">{m.erp[0]}</text>
+              <text x="386" y={layerY(2) + 36} font-size="9.5" fill="#5a5a5e" text-anchor="middle">{m.erp[1]}</text>
+              <path d={`M321 ${layerY(2) + 24}H351`} stroke="#5a5a5e" stroke-width="1.3" />
+              <path d={`M326 ${layerY(2) + 20.5}l-5 3.5 5 3.5M346 ${layerY(2) + 20.5}l5 3.5-5 3.5`} fill="none" stroke="#5a5a5e" stroke-width="1.3" />
+              <path d={`M386 ${layerY(2)}V${layerY(1) + 24}H321`} fill="none" stroke="#5a5a5e" stroke-width="1.2" stroke-dasharray="4 3" />
+            </g>
+          )}
         </svg>
       </figure>
       )}
