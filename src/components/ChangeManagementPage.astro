@@ -45,7 +45,7 @@ const chapters = (await getChapters(lang, 'change-management')).length;
 const service = (await getServices(lang)).find((s) => s.data.translationKey === 'service-change');
 
 const rows = (list: typeof posts, icon: string) =>
-  list.map((p) => ({ href: postHref(p), icon, name: getAuthor(lang, p.data.author).name, title: p.data.title, text: p.data.description, meta: c.minutes.replace('{n}', String(readingMinutes(p))) }));
+  list.map((p) => ({ href: postHref(p), icon, name: [p.data.author, ...(p.data.coAuthor ? [p.data.coAuthor] : [])].map((id) => getAuthor(lang, id).name).join(' · '), title: p.data.title, text: p.data.description, meta: c.minutes.replace('{n}', String(readingMinutes(p))) }));
 const groups = [
   { id: 'basics', ...c.groups.basics, rows: rows(basics, 'change') },
   { id: 'programmes', ...c.groups.programmes, rows: rows(programmes, 'architecture') },

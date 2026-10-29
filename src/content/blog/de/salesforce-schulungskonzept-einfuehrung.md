@@ -7,6 +7,7 @@ slug: salesforce-schulungskonzept-einfuehrung
 translationKey: change-training-plan
 topic: governance
 categories: [change-management]
+coAuthor: juliane
 contactBrief: change
 tags: [Schulungskonzept, Salesforce-Schulung, Change Management, Key User, Train the Trainer]
 takeaways:

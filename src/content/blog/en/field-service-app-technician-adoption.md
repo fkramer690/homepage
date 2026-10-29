@@ -7,6 +7,7 @@ slug: field-service-app-technician-adoption
 translationKey: change-technician-adoption
 topic: field-service
 categories: [field-service, change-management]
+coAuthor: juliane
 contactBrief: field-service
 tags: [Field Service, adoption, change management, field technicians]
 takeaways:

@@ -7,6 +7,7 @@ slug: salesforce-adoption-sales-team
 translationKey: change-sales-adoption
 topic: governance
 categories: [change-management]
+coAuthor: juliane
 contactBrief: change
 tags: [CRM adoption, sales, change management, ADKAR, Salesforce rollout]
 takeaways:

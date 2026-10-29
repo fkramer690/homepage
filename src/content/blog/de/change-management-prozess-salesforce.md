@@ -7,6 +7,7 @@ slug: change-management-prozess-salesforce
 translationKey: change-process-salesforce
 topic: governance
 categories: [change-management]
+coAuthor: juliane
 contactBrief: change
 tags: [Change-Management-Prozess, Prosci, ADKAR, Salesforce-Einführung, Projektphasen]
 takeaways:

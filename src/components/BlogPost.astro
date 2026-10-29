@@ -51,10 +51,15 @@ const suffix = ' | FK Solution Design';
 const pageTitle = title.length + suffix.length <= 60 ? title + suffix : title;
 const modified = (updatedDate ?? pubDate).toISOString();
 // Juliane's articles name her as author and send the contact form with her name in the subject.
+// A co-author (frontmatter coAuthor) is named in the byline, the structured data and with an author box of their own.
 const author = getAuthor(lang, authorId);
-const authorSchema = author.profile
-  ? { '@type': 'Person', '@id': `${abs(localHref(lang, author.profile))}#person`, name: author.name, url: abs(localHref(lang, author.profile)), jobTitle: author.jobTitle }
-  : { '@type': 'Person', '@id': `${abs(base)}#person`, name: site.person, url: site.linkedin, jobTitle: author.jobTitle };
+const coAuthorId = post.data.coAuthor && post.data.coAuthor !== authorId ? post.data.coAuthor : undefined;
+const coAuthor = coAuthorId ? getAuthor(lang, coAuthorId) : undefined;
+const personSchema = (a: typeof author) =>
+  a.profile
+    ? { '@type': 'Person', '@id': `${abs(localHref(lang, a.profile))}#person`, name: a.name, url: abs(localHref(lang, a.profile)), jobTitle: a.jobTitle }
+    : { '@type': 'Person', '@id': `${abs(base)}#person`, name: site.person, url: site.linkedin, jobTitle: a.jobTitle };
+const authorSchema = coAuthor ? [personSchema(author), personSchema(coAuthor)] : personSchema(author);
 const formSubject = authorId === 'juliane' ? `${juliane[lang].formSubject}: ${title}` : `${t.contact.form.subject}: ${title}`;
 const ogImage = `${base}og/${lang}/${post.data.slug}.png`;
 
@@ -100,6 +105,7 @@ const schema = {
     <meta property="article:published_time" content={pubDate.toISOString()} />
     <meta property="article:modified_time" content={modified} />
     <meta property="article:author" content={author.name} />
+    {coAuthor && <meta property="article:author" content={coAuthor.name} />}
     {tags.map((tag) => <meta property="article:tag" content={tag} />)}
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
   </Fragment>
@@ -108,7 +114,7 @@ const schema = {
       <a class="post-back mono" href={blogIndex(lang)}>← {t.blog.back}</a>
       <h1>{title}</h1>
       <p class="post-meta mono">
-        {author.name} · {t.blog.published} <time datetime={pubDate.toISOString()}>{formatDate(pubDate, lang)}</time>
+        {author.name}{coAuthor && <> {t.blog.with} {coAuthor.name}</>} · {t.blog.published} <time datetime={pubDate.toISOString()}>{formatDate(pubDate, lang)}</time>
         {updatedDate && <> · {t.blog.updated} <time datetime={updatedDate.toISOString()}>{formatDate(updatedDate, lang)}</time></>}
         {' · '}{readingMinutes(post)} {t.blog.readingTime}
       </p>
@@ -135,7 +141,8 @@ const schema = {
           ))}
         </section>
         <AuthorBox lang={lang} author={authorId} />
-        {post.data.categories.includes('change-management') && authorId !== 'juliane' && <PartnerBox lang={lang} variant="blog" />}
+        {coAuthorId && <AuthorBox lang={lang} author={coAuthorId} />}
+        {post.data.categories.includes('change-management') && authorId !== 'juliane' && coAuthorId !== 'juliane' && <PartnerBox lang={lang} variant="blog" />}
         {service && (
           <a class="post-service" href={serviceHref(service)}>
             <span class="label mono">{t.blog.relatedService}</span>

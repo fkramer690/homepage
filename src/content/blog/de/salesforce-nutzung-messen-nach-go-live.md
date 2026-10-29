@@ -7,6 +7,7 @@ slug: salesforce-nutzung-messen-nach-go-live
 translationKey: change-adoption-metrics
 topic: data
 categories: [change-management, architecture]
+coAuthor: juliane
 contactBrief: change
 tags: [Nutzung, Adoption, Change Management, Kennzahlen]
 takeaways:

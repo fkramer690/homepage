@@ -44,6 +44,9 @@ const blog = defineCollection({
     // Who wrote the article (src/lib/authors.ts). Juliane Winterscheid writes about change
     // management in general; everything else is Fabian's (rules: docs/blog-guidelines.md).
     author: z.enum(authorIds).default('fabian'),
+    // Optional second author who wrote or reviewed the article with the first one. Fabian's
+    // articles on change management in Salesforce programmes name Juliane (reviewed by her).
+    coAuthor: z.enum(authorIds).optional(),
     draft: z.boolean().default(false),
   }),
 });

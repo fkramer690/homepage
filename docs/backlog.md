@@ -111,6 +111,8 @@ Ideen für mehr persönliche Note, von Fabian freigegeben, später abarbeiten:
 
 14. **Blog-Artikelserie Salesforce B2B Commerce** (von Fabian gewünscht 27.10.2026) – Serie von Fachbeiträgen im Blog (EN/DE). *Entwurf: Claude, Freigabe: Fabian.*
 
+15. **Eigener Kontakt für Julianes Säule** (von Fabian gewünscht 29.10.2026) – Bereichsseite Change Management und Julianes Artikel bekommen Julianes eigenen Buchungslink und/oder ihre E-Mail statt Fabians Bookings und Formular. Bis dahin läuft jeder Kontakt über Fabian. *Braucht: Buchungslink oder E-Mail von Juliane.*
+
 Weitere offene Punkte:
 - Fallstudien-Seiten (Ausgangslage, Architekturentscheidungen, Ergebnis, Grafik), sobald die Kundenfreigaben vorliegen. Status klärt Fabian.
 - Logo-Paket (ZIP) hochladen
