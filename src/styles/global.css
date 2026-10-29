@@ -1424,11 +1424,11 @@ p.post-series-note { margin: 0.6em 0 0; font-size: 0.95rem; }
   .steps.rc-steps { grid-template-columns: 1fr; }
 }
 
-.rc-rules h2 { color: var(--white); }
-.rc-rules .section-intro { color: rgba(255, 255, 255, 0.72); }
-.rc-rules-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
-.rc-rules-list li { padding: 20px 22px; border: 1px solid rgba(255, 255, 255, 0.14); border-radius: var(--radius); background: rgba(255, 255, 255, 0.03); }
-.rc-rules-list .card-index { color: var(--cyan-light); }
-.rc-rules-list h3 { color: var(--white); font-size: 1.05rem; line-height: 1.3; margin: 0.4em 0 0.4em; }
-.rc-rules-list p { color: rgba(255, 255, 255, 0.72); font-size: 0.93rem; margin: 0; }
-@media (max-width: 560px) { .rc-rules-list { grid-template-columns: 1fr; } }
+.rc-rules { margin-top: 24px; padding: 22px 26px; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); }
+.rc-rules h3 { margin: 0 0 0.3em; font-size: 1.1rem; }
+.rc-rules > p { color: var(--text-2); font-size: 0.95rem; margin: 0 0 1em; }
+.rc-rules-list { list-style: none; margin: 0; padding: 0; columns: 2; column-gap: 40px; }
+.rc-rules-list li { position: relative; padding-left: 24px; margin-bottom: 8px; font-size: 0.93rem; color: var(--text-2); line-height: 1.5; break-inside: avoid; }
+.rc-rules-list li::before { content: '✕'; position: absolute; left: 0; top: 0; color: var(--cyan-dark); font-weight: 700; font-size: 0.85rem; }
+.rc-rules-list strong { color: var(--text); font-weight: 600; }
+@media (max-width: 760px) { .rc-rules-list { columns: 1; } }

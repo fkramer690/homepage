@@ -128,26 +128,16 @@ const schema = {
           </ul>
         </div>
       </div>
+      <div class="rc-rules" id="rules">
+        <h3>{c.rules.title}</h3>
+        <p>{c.rules.intro}</p>
+        <ul class="rc-rules-list">
+          {c.rules.items.map((r) => <li><strong>{r.t}:</strong> {r.d}</li>)}
+        </ul>
+      </div>
     </div>
   </section>
 
-
-  <section class="section dark grid-bg rc-rules" id="rules">
-    <div class="container">
-      <p class="label mono">{c.rules.label}</p>
-      <h2>{c.rules.title}</h2>
-      <p class="section-intro">{c.rules.intro}</p>
-      <ol class="rc-rules-list">
-        {c.rules.items.map((r, i) => (
-          <li>
-            <span class="card-index mono">{String(i + 1).padStart(2, '0')}</span>
-            <h3>{r.t}</h3>
-            <p>{r.d}</p>
-          </li>
-        ))}
-      </ol>
-    </div>
-  </section>
 
   <section class="section" id="process">
     <div class="container">
