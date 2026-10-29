@@ -42,8 +42,27 @@ const blueprint = `
     <g opacity="0.55"><path d="M760 40v16M1150 40v16M1142 300h16M940 582v16M1160 582v16"/></g>
   </g>`;
 
+// Text must stay clear of the frame: the eyebrow ends before the crosshair at x 1060,
+// the title takes at most 3 lines. Anything longer fails the build instead of
+// overflowing the image (scripts/check-graphics.mjs checks the inline drawings).
+const EYEBROW_MAX = 1040 - 80 - 92 - 24; // crosshair minus left edge, logo indent and a gap
+const TITLE_LINES = 3;
+
+async function checkFit(title: string, eyebrow: string, size: number) {
+  const chars = [...eyebrow].length;
+  const eyebrowWidth = chars * 22 * 0.6 + (chars - 1) * 4; // IBM Plex Mono, 22px, letter spacing 4
+  if (eyebrowWidth > EYEBROW_MAX) throw new Error(`Preview image: eyebrow "${eyebrow}" is ${Math.round(eyebrowWidth)}px wide, max ${EYEBROW_MAX}px. Shorten it.`);
+  const svg = await satori(
+    { type: 'div', props: { style: { width: 960, display: 'flex', fontFamily: 'Sora', fontWeight: 600, fontSize: size, lineHeight: 1.15, letterSpacing: -1 }, children: title } } as never,
+    { width: 960, fonts },
+  );
+  const height = Number(svg.match(/height="([\d.]+)"/)?.[1] ?? 0);
+  if (height > TITLE_LINES * size * 1.15 + 1) throw new Error(`Preview image: title "${title}" needs more than ${TITLE_LINES} lines. Shorten it.`);
+}
+
 export async function renderOgImage({ title, eyebrow, footer }: { title: string; eyebrow: string; footer: string }) {
   const size = title.length > 48 ? 56 : 64;
+  await checkFit(title, eyebrow, size);
   const text = await satori(
     {
       type: 'div',

@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "astro dev",
     "check:blog": "node scripts/check-blog.mjs",
-    "build": "node scripts/check-blog.mjs && astro build && node scripts/check-links.mjs && node scripts/check-sitemap.mjs && node scripts/check-titles.mjs && node scripts/check-layout.mjs",
+    "build": "node scripts/check-blog.mjs && astro build && node scripts/check-links.mjs && node scripts/check-sitemap.mjs && node scripts/check-titles.mjs && node scripts/check-layout.mjs && node scripts/check-graphics.mjs",
+    "check:graphics": "node scripts/check-graphics.mjs",
     "check:layout": "node scripts/check-layout.mjs",
     "check:links": "node scripts/check-links.mjs",
     "check:sitemap": "node scripts/check-sitemap.mjs",
