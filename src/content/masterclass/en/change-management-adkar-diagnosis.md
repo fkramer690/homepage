@@ -98,11 +98,13 @@ Timing decides. Change management that starts two weeks before go-live can only 
 
 The client. An implementation partner builds the system, but cannot own the change inside your company, because it cannot tell a head of sales how their team will work in future. In the programmes I support, the roles split like this:
 
-- **Sponsor in management:** visibly backs the rollout, decides conflicts between departments and asks about usage. More in [chapter 2](../sponsor-and-communication/).
-- **Product owner and programme lead:** keep the rollout plan per release together with the release plan.
-- **Key users:** carry knowledge into the team and feedback into the project, see [chapter 3](../key-users-and-training/).
-- **Change manager:** plans the measures per group and stage and advises the sponsor and managers. In large programmes a dedicated person with method experience pays off.
-- **Architect:** makes sure decisions on template, required fields and releases take the people affected into account.
+| Role | Task |
+|---|---|
+| Sponsor in management | Visibly backs the rollout, decides conflicts between departments and asks about usage. More in [chapter 2](../sponsor-and-communication/). |
+| Product owner and programme lead | Keep the rollout plan per release together with the release plan. |
+| Key users | Carry knowledge into the team and feedback into the project, see [chapter 3](../key-users-and-training/). |
+| Change manager | Plans the measures per group and stage and advises the sponsor and managers. In large programmes a dedicated person with method experience pays off. |
+| Architect | Makes sure decisions on template, required fields and releases take the people affected into account. |
 
 ## What do you settle before the first release?
 
