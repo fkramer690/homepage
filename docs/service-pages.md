@@ -15,7 +15,7 @@ Service pages follow the content rules of the [blog guidelines](blog-guidelines.
 5. **Body (the only part that comes from Markdown)**
 6. FAQ, collapsible (`faq`)
 7. Author box
-8. Related blog articles (blog posts that share a tag with `blogTags`). With `section: change-management` the page shows the team cards (Fabian, Juliane Winterscheid, the joint plan) between "How I work" and the body, and instead of the related articles the change management articles grouped by author (`src/components/ChangeTeam.astro`, `ChangeArticles.astro`, texts in `src/data/change-management.ts`)
+8. Related blog articles (blog posts that share a tag with `blogTags`). With `section: change-management` the page shows the team cards (Fabian, Juliane Winterscheid, the joint plan) between "How I work" and the body, instead of the related articles the change management articles grouped by author (newest four per group, the rest linked in the filtered blog), the heading "Was wir machen" and the shared author box of Fabian and Juliane (`src/components/ChangeTeam.astro`, `ChangeArticles.astro`, texts in `src/data/change-management.ts`). On that page "ich" is Fabian and "wir" are Fabian and Juliane; the first paragraph says so
 9. Contact section with "Book a call" and the contact form, subject set to the service. Heading, text and the lists "What to bring" / "What we clarify" come from the brief named in the required frontmatter field `contactBrief` (`src/lib/contact-briefs.ts`)
 
 Blog articles link back to the best matching service automatically (`getPostService` in `src/lib/services.ts`).

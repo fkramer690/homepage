@@ -18,8 +18,11 @@ interface Props {
   lang: 'en' | 'de';
   author?: AuthorId;
   coAuthor?: AuthorId;
+  // Two authors only: label and joint line instead of the article texts (service page).
+  label?: string;
+  joint?: string;
 }
-const { lang, author = 'fabian', coAuthor } = Astro.props;
+const { lang, author = 'fabian', coAuthor, label, joint } = Astro.props;
 const t = lang === 'de' ? de : en;
 const boxOf = (id: AuthorId) => {
   const a = getAuthor(lang, id);
@@ -31,15 +34,15 @@ const box = boxOf(author);
 const duo = coAuthor && coAuthor !== author ? [box, boxOf(coAuthor)] : undefined;
 ---
 {duo ? (
-  <aside class="post-author post-authors" aria-label={t.blog.authorsLabel}>
+  <aside class="post-author post-authors" aria-label={label ?? t.blog.authorsLabel}>
     <div class="post-authors-head">
       <div class="post-authors-photos">
         {duo.map((d) => <Image src={d.img} alt={d.a.name} width={96} height={96} densities={[1, 2]} class="post-author-img" />)}
       </div>
       <div>
-        <p class="label mono">{t.blog.authorsLabel}</p>
+        <p class="label mono">{label ?? t.blog.authorsLabel}</p>
         <p class="post-author-name">{duo.map((d) => d.a.name).join(' & ')}</p>
-        <p class="post-authors-joint">{t.blog.authorsJoint}</p>
+        <p class="post-authors-joint">{joint ?? t.blog.authorsJoint}</p>
       </div>
     </div>
     <div class="post-authors-cards">

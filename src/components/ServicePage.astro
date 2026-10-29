@@ -26,7 +26,8 @@ interface Props {
 const { service } = Astro.props;
 const { lang, title, headline, description, lead, situations, deliverables, results, phases, faq, order, note, notePartner, section } = service.data;
 // section: change-management adds the team (Fabian and Juliane) above the reading grid and
-// the change management articles instead of the related articles (src/data/change-management.ts).
+// the change management articles instead of the related articles; "wir" there are Fabian and
+// Juliane, so the deliverables heading and the author box name both (src/data/change-management.ts).
 const isChange = section === 'change-management';
 const t = lang === 'de' ? de : en;
 const { Content, headings } = await render(service);
@@ -118,7 +119,7 @@ const schema = {
       </section>
       <div class="service-columns">
         <section class="service-block" aria-labelledby="deliverables">
-          <h2 id="deliverables">{t.servicePage.deliverables}</h2>
+          <h2 id="deliverables">{isChange ? changeSection[lang].deliverables : t.servicePage.deliverables}</h2>
           <ul class="service-list check">{deliverables.map((item) => <li>{item}</li>)}</ul>
         </section>
         <section class="service-block results" aria-labelledby="results">
@@ -154,7 +155,7 @@ const schema = {
             </details>
           ))}
         </section>
-        <AuthorBox lang={lang} />
+        {isChange ? <AuthorBox lang={lang} coAuthor="juliane" {...changeSection[lang].authors} /> : <AuthorBox lang={lang} />}
         {isChange && <ChangeArticles lang={lang} />}
         {!isChange && posts.length > 0 && (
           <nav class="post-related" aria-label={t.servicePage.posts}>
