@@ -1423,3 +1423,12 @@ p.post-series-note { margin: 0.6em 0 0; font-size: 0.95rem; }
 @media (max-width: 520px) {
   .steps.rc-steps { grid-template-columns: 1fr; }
 }
+
+.rc-rules h2 { color: var(--white); }
+.rc-rules .section-intro { color: rgba(255, 255, 255, 0.72); }
+.rc-rules-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.rc-rules-list li { padding: 20px 22px; border: 1px solid rgba(255, 255, 255, 0.14); border-radius: var(--radius); background: rgba(255, 255, 255, 0.03); }
+.rc-rules-list .card-index { color: var(--cyan-light); }
+.rc-rules-list h3 { color: var(--white); font-size: 1.05rem; line-height: 1.3; margin: 0.4em 0 0.4em; }
+.rc-rules-list p { color: rgba(255, 255, 255, 0.72); font-size: 0.93rem; margin: 0; }
+@media (max-width: 560px) { .rc-rules-list { grid-template-columns: 1fr; } }
