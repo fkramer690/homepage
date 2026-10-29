@@ -284,7 +284,7 @@ export const de: Dict = {
     filterReset: 'Filter zurücksetzen',
     authorFocus: { fabian: 'Salesforce-Architektur für Hersteller', juliane: 'Change Management' },
     takeaways: 'Das Wichtigste in Kürze',
-    faq: 'Häufige Fragen',
+    faq: 'Häufig gestellte Fragen',
     related: 'Weitere Artikel',
     series: 'Serie',
     seriesPart: 'Teil {part} von {total}',
@@ -338,7 +338,7 @@ export const de: Dict = {
     deliverables: 'Was ich mache',
     results: 'Was Sie bekommen',
     phases: 'So läuft die Zusammenarbeit',
-    faq: 'Häufige Fragen',
+    faq: 'Häufig gestellte Fragen',
     posts: 'Weiterlesen im Blog',
   },
   masterclass: {
