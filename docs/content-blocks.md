@@ -1,6 +1,6 @@
 # Content blocks (library)
 
-Eleven building blocks that loosen up blog articles and masterclass chapters. They are written in Markdown as a fenced code block whose language is the block name, so articles stay free of HTML. `src/lib/content-blocks-plugin.mjs` turns them into markup at build time (logic in `src/lib/content-blocks.mjs`, styles under "Content blocks" in `src/styles/global.css`), and `scripts/check-blog.mjs` validates them. Rules for when to use them: "Content blocks" in [blog-guidelines.md](blog-guidelines.md).
+Twelve building blocks that loosen up blog articles and masterclass chapters. They are written in Markdown as a fenced code block whose language is the block name, so articles stay free of HTML. `src/lib/content-blocks-plugin.mjs` turns them into markup at build time (logic in `src/lib/content-blocks.mjs`, styles under "Content blocks" in `src/styles/global.css`), and `scripts/check-blog.mjs` validates them. Rules for when to use them: "Content blocks" in [blog-guidelines.md](blog-guidelines.md).
 
 Design: only the site's own colours and forms (cyan, anthracite, greys, dashed mono labels, cards with a short bar on top, the technical grid). No other colours, no icons beyond the cyan tick and grey cross.
 
@@ -164,6 +164,19 @@ Der Lizenztyp | Leicht sechsstellig pro Jahr bei großer Nutzerbasis
   Volle Lizenzen werden oft standardmäßig angeboten, auch für Nutzer, die nur Daten lesen oder Datensätze freigeben.
 Der Zeitpunkt | Produkte für zwei bis drei Jahre für wenig Aufpreis
   Zum Ende des Geschäftsjahres des Herstellers oder bei Aktionen gibt es oft Spielraum.
+```
+````
+
+## 12. Eintrag (log entry)
+
+One entry of a log or register as a card: dark head with the title after the block name and the label "Eintrag" / "Entry", then two to six `Field | value` rows on the grid. A trailing `*` marks at most one row (cyan dot). Optional last line `fazit:` (EN `note:`) at the bottom in cyan. Approved by Fabian 2026-10-29 for the decision log on the architecture service page; use it to show what a deliverable looks like, not for invented example data.
+
+````
+```eintrag Entscheidungslog
+Entscheidung | Was wurde entschieden?
+Optionen | Welche Wege standen zur Wahl?
+Folgen | Was bedeutet die Entscheidung später? *
+fazit: Fragt zwei Jahre später jemand, warum ein Prozess so gebaut wurde, steht die Antwort hier.
 ```
 ````
 
