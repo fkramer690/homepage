@@ -1981,6 +1981,17 @@ const drawings: Record<string, Drawing> = {
     ${t(18, 102, l('ends on criteria, not on a date', 'Ende nach Kriterien, nicht nach Datum'), { size: 7 })}
     ${t(18, 118, l('a week without open priority 1 defect', 'eine Woche ohne offenen Prio-1-Fehler'), { size: 7 })}
     ${tag(18, 130, 180, l('up to 3 months', 'bis zu 3 Monate'))}`,
+
+  'change-process-salesforce': (l) => `
+    ${t(18, 18, l('CHANGE WORK PER PROJECT PHASE', 'CHANGE-ARBEIT JE PROJEKTPHASE'), { fill: D, size: 7 })}
+    <path d="M40 52H280" stroke="${G}" stroke-width="1.1"/>
+    ${[l('Planning', 'Planung'), l('Build', 'Bau'), 'UAT', 'Go-live', l('Operations', 'Betrieb')].map((s, i) => dot(40 + i * 60, 52, i === 0 ? C : G) + t(40 + i * 60, 40, s, { fill: i === 0 ? C : D, size: 6.5, anchor: 'middle' })).join('')}
+    <path d="M100 64V68H220V64" fill="none" stroke="${G}" stroke-width="1.1"/>
+    ${t(40, 82, l('prepare', 'vorbereiten'), { size: 6.5, anchor: 'middle' })}${t(160, 82, l('manage', 'steuern'), { size: 6.5, anchor: 'middle' })}${t(280, 82, l('sustain', 'sichern'), { size: 6.5, anchor: 'middle' })}
+    <path d="M18 96H302" stroke="${L}"/>
+    ${t(18, 114, l('planning: impact, sponsor, metrics', 'Planung: Impact, Sponsor, Kennzahlen'), { size: 7 })}
+    ${t(18, 130, l('go-live: switch-off date for old lists', 'Go-live: Abschaltdatum alter Listen'), { size: 7 })}
+    ${t(18, 146, l('Prosci 3-phase process', 'Prosci-Prozess in 3 Phasen'), { size: 7 })}`,
 };
 
 export const hasDrawing = (key: string) => key in drawings;

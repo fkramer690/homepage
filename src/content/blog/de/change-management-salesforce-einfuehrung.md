@@ -78,6 +78,7 @@ Change Management ist kein einzelner Arbeitsschritt. In Salesforce-Programmen vo
 7. **[Akzeptanz im Vertrieb](../salesforce-akzeptanz-vertrieb/):** Warum der Vertrieb Salesforce umgeht und was dagegen hilft.
 8. **[Schulungskonzept](../salesforce-schulungskonzept-einfuehrung/):** Wie Schulungen nach Rollen, am eigenen Fall und durch Key User geplant werden.
 9. **[Hypercare-Phase nach dem Go-live](../hypercare-phase-salesforce-go-live/):** Wer in den ersten Wochen dabei ist und wann sie endet.
+10. **[Change-Management-Prozess im Projekt](../change-management-prozess-salesforce/):** Welche Change-Arbeit in welche Projektphase gehört, von der Planung bis zum Betrieb.
 
 ## Wie läuft Change Management neben der Umsetzung?
 

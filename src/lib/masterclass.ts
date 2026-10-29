@@ -373,7 +373,7 @@ const changeClusters: Cluster[] = [
     id: 'diagnosis',
     en: { title: 'Why rollouts fail', text: 'What change management means in a Salesforce programme and how ADKAR shows where it is stuck.' },
     de: { title: 'Warum Einführungen scheitern', text: 'Was Change Management im Salesforce-Programm heißt und wie ADKAR zeigt, wo es hängt.' },
-    articles: ['change-management-hub', 'salesforce-center-of-excellence'],
+    articles: ['change-management-hub', 'change-process-salesforce', 'salesforce-center-of-excellence'],
   },
   {
     id: 'people',
