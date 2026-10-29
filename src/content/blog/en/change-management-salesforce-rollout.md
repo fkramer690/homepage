@@ -1,6 +1,6 @@
 ---
-title: "Change management: why Salesforce rollouts fail"
-description: "Why Salesforce rollouts fail in daily work without change management, how the ADKAR model shows the cause and where manufacturers should start."
+title: "Salesforce change management: why rollouts fail"
+description: "Salesforce change management: why CRM rollouts fail in daily work, how the ADKAR model shows the cause and where manufacturers should start."
 pubDate: 2026-10-29
 lang: en
 slug: change-management-salesforce-rollout
@@ -23,10 +23,12 @@ faq:
     a: "Every project that changes how people work. Many clients think they do not need it because training is planned. Training only covers knowledge and ability, not awareness, desire and reinforcement."
   - q: "Who is responsible for change management in a Salesforce programme?"
     a: "The client, with a sponsor in management who visibly backs the change. Partners build the system; they cannot own the change inside the company."
+  - q: "Is change management the same as IT change management?"
+    a: "No. IT change management in the ITIL sense controls changes to systems: who requests, reviews and approves a change. In Salesforce that is the job of release management and deployment. Change management in the sense of this article makes sure people adopt the change. A CRM rollout needs both."
 draft: false
 ---
 
-Salesforce rollouts rarely fail because of the technology. They fail when sales, service and field service keep working the way they did before go-live, with Excel, email and their own lists next to the new system. Change management is the work that prevents this: introducing new processes, standards and releases so that people use them. I follow Prosci and the ADKAR model, because it shows where an adoption is stuck. Another training session only helps when knowledge is missing, not when nobody understands what the whole thing is for.
+Salesforce rollouts rarely fail because of the technology. They fail when sales, service and field service keep working the way they did before go-live, with Excel, email and their own lists next to the new system. Salesforce change management is the work that prevents this: introducing new processes, standards and releases so that people use them. I follow Prosci and the ADKAR model, because it shows where an adoption is stuck. Another training session only helps when knowledge is missing, not when nobody understands what the whole thing is for.
 
 ## Why does Salesforce not take hold in daily work?
 
@@ -95,4 +97,4 @@ For your next release, answer three questions in writing: which groups are affec
 
 If you want to go through the five stages in order, the [change management masterclass](../../masterclass/change-management/) has a chapter per stage with the matching articles.
 
-Salesforce is only introduced once people work with it. If a rollout is coming up or new processes are not being used, [send me a message](#contact) or read more about [change management for Salesforce programmes](../../services/change-management-salesforce/).
+Salesforce is only introduced once people work with it. If a rollout is coming up or new processes are not being used, [send me a message](#contact) or read more about my [Salesforce change management consulting](../../services/change-management-salesforce/).

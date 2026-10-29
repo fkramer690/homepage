@@ -10,7 +10,7 @@ import { Image } from 'astro:assets';
 import photo from '../assets/partners/juliane-winterscheid-portrait.jpg';
 import { en } from '../i18n/en';
 import { de } from '../i18n/de';
-import { contactHref, contactExternal } from '../site';
+import { site, contactHref, contactExternal } from '../site';
 import { juliane, julianePaths } from '../data/juliane-winterscheid';
 import { homeHref, localHref, partnersHref } from '../lib/paths';
 
@@ -37,10 +37,19 @@ const schema = [
     '@context': 'https://schema.org',
     '@type': 'Person',
     name: 'Juliane Winterscheid',
+    '@id': `${url}#person`,
     jobTitle: 'Senior Human Centered Change Consultant',
+    description: c.description,
     url,
-    sameAs: partner ? [partner.linkedin] : [],
-    knowsAbout: ['Change management', 'ADKAR', 'Salesforce rollout'],
+    image: abs(photo.src),
+    address: { '@type': 'PostalAddress', addressLocality: 'Köln', addressCountry: 'DE' },
+    knowsLanguage: ['de', 'en'],
+    sameAs: [...(partner ? [partner.linkedin] : []), 'https://www.freelancermap.de/profil/juliane-winterscheid-268133'],
+    knowsAbout: ['Change Management', 'Organizational Change Management', 'ADKAR', 'Prosci', 'Salesforce rollout', 'Key user', 'Sponsorship'],
+    hasCredential: c.credentials.tags.map((name) => ({ '@type': 'EducationalOccupationalCredential', name })),
+    affiliation: { '@type': 'CollegeOrUniversity', name: 'Hochschule Fresenius' },
+    colleague: { '@type': 'Person', '@id': `${abs(base)}#person`, name: site.person },
+    mainEntityOfPage: url,
   },
   {
     '@context': 'https://schema.org',

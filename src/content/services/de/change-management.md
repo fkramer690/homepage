@@ -1,7 +1,7 @@
 ---
-title: "Change Management für Salesforce-Programme"
-headline: "Salesforce ist live, aber kaum jemand nutzt es?"
-description: "Change Management für Salesforce-Programme nach Prosci und ADKAR: neue Prozesse und Releases so einführen, dass Fachbereiche und Partner sie nutzen."
+title: "Change Management Beratung für Salesforce"
+headline: "Change Management, wenn kaum jemand Salesforce nutzt"
+description: "Change Management Beratung für Salesforce-Einführungen nach Prosci und ADKAR: Prozesse und Releases so einführen, dass Fachbereiche und Partner sie nutzen."
 lang: de
 slug: change-management
 translationKey: service-change
@@ -9,7 +9,7 @@ contactBrief: change
 order: 7
 note: "Dieses Vorgehen habe ich gemeinsam mit Juliane Winterscheid erarbeitet, meiner Kooperationspartnerin für Change Management. Juliane ist Prosci-zertifiziert."
 notePartner: "Juliane Winterscheid"
-lead: "Ein neues Salesforce-Release ist schnell ausgerollt. Ob Fachbereiche, Entwicklerteams und Partner danach anders arbeiten, ist eine andere Frage. Ich plane die Einführung neuer Prozesse und Standards auf Kundenseite nach dem Vorgehen von Prosci, damit sie im Alltag ankommen und dort bleiben."
+lead: "Ein neues Salesforce-Release ist schnell ausgerollt. Ob Fachbereiche, Entwicklerteams und Partner danach anders arbeiten, ist eine andere Frage. Ich plane die Einführung neuer Prozesse und Standards auf Kundenseite nach dem Vorgehen von Prosci und dem ADKAR-Modell, damit sie im Alltag ankommen und dort bleiben."
 situations:
   - "Salesforce ist live, aber Teile der Fachbereiche arbeiten weiter mit Excel, E-Mail und eigenen Listen."
   - "Schulungen sind gelaufen, die Nutzung bleibt trotzdem niedrig, und niemand weiß genau, woran es hängt."
@@ -75,7 +75,7 @@ Zusammen mit [Juliane Winterscheid](../../partner/juliane-winterscheid/), die Pr
 
 Ein häufiges Bild: Die Schulungen sind gelaufen, die Nutzung bleibt trotzdem niedrig. Statt eine weitere Schulung anzusetzen, fragen wir je betroffener Gruppe, an welcher Stufe es hängt. Wenn ein Vertriebsteam nicht weiß, wofür die gepflegten Opportunities gebraucht werden, fehlt Awareness, und das muss der zuständige Vertriebsleiter erklären, nicht der Trainer. Wenn die Entwickler eines Partners die Namenskonventionen kennen, aber niemand sie in der Pipeline prüft, fehlt Reinforcement. Dann gehört eine automatische Prüfung in den [Release-Prozess](../devops-und-release-management/).
 
-Salesforce hilft beim Messen. Ob ein neuer Prozess genutzt wird, zeigen Berichte über angelegte und gepflegte Datensätze besser als jede Umfrage. Diese Zahlen legen wir in der ersten Phase fest und schauen in der zweiten regelmäßig darauf. Die einzelnen Themen, von Key Usern bis zur Messung der Nutzung, beschreibe ich in [Change Management: Warum Salesforce-Einführungen scheitern](../../blog/change-management-salesforce-einfuehrung/). Kapitel für Kapitel entlang der fünf Stufen führt die [Masterclass Change Management](../../masterclass/change-management/).
+Salesforce hilft beim Messen. Ob ein neuer Prozess genutzt wird, zeigen Berichte über angelegte und gepflegte Datensätze besser als jede Umfrage. Diese Zahlen legen wir in der ersten Phase fest und schauen in der zweiten regelmäßig darauf. Die einzelnen Themen, von Key Usern bis zur Messung der Nutzung, beschreibe ich in [Salesforce Change Management: warum Einführungen scheitern](../../blog/change-management-salesforce-einfuehrung/). Kapitel für Kapitel entlang der fünf Stufen führt die [Masterclass Change Management](../../masterclass/change-management/).
 
 ## Wie habe ich neue Standards in einem großen Programm eingeführt?
 

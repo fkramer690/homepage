@@ -617,7 +617,7 @@ export const en = {
   },
   masterclassChange: {
     name: 'Change management masterclass',
-    metaTitle: 'Change management masterclass for Salesforce',
+    metaTitle: 'Change management masterclass: ADKAR for Salesforce',
     metaDescription: 'Five chapters on change management in Salesforce rollouts at manufacturers: ADKAR as a diagnosis, sponsor, key users, global rollout and reinforcement.',
     eyebrow: 'Masterclass with Juliane Winterscheid · October 2026',
     title: 'How Salesforce sticks in daily work: change management with ADKAR',

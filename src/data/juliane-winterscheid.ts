@@ -19,7 +19,7 @@ export const julianePaths = { de: 'partner/juliane-winterscheid/', en: 'partners
 export const juliane = {
   de: {
     title: 'Juliane Winterscheid: Change Management für Salesforce',
-    metaTitle: 'Juliane Winterscheid: Change Management Salesforce',
+    metaTitle: 'Juliane Winterscheid: Change-Managerin für Salesforce',
     description:
       'Juliane Winterscheid, Prosci-zertifizierte Change-Managerin aus Köln, begleitet mit Fabian Kramer Salesforce-Einführungen: ADKAR, Sponsoren, Key User und Verankerung.',
     eyebrow: 'Partner · Change Management',
@@ -118,7 +118,7 @@ export const juliane = {
   },
   en: {
     title: 'Juliane Winterscheid: change management for Salesforce',
-    metaTitle: 'Juliane Winterscheid: Salesforce change management',
+    metaTitle: 'Juliane Winterscheid: change management consultant',
     description:
       'Juliane Winterscheid, Prosci certified change manager from Cologne, supports Salesforce rollouts with Fabian Kramer: ADKAR, sponsors, key users and reinforcement.',
     eyebrow: 'Partner · Change management',

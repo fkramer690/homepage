@@ -1,6 +1,6 @@
 ---
-title: "Change Management: Warum Salesforce-Einführungen scheitern"
-description: "Warum Salesforce-Einführungen ohne Change Management im Alltag scheitern, wie das ADKAR-Modell die Ursache zeigt und wo Hersteller anfangen sollten."
+title: "Salesforce Change Management: warum Einführungen scheitern"
+description: "Salesforce Change Management: warum CRM-Einführungen im Alltag scheitern, wie das ADKAR-Modell die Ursache zeigt und wo Hersteller anfangen sollten."
 pubDate: 2026-10-29
 lang: de
 slug: change-management-salesforce-einfuehrung
@@ -23,10 +23,12 @@ faq:
     a: "Jedes Projekt, das ändert, wie Menschen arbeiten. Viele Kunden meinen, sie bräuchten keins, weil Schulungen geplant sind. Schulungen decken aber nur Wissen und Fähigkeit ab, nicht Bewusstsein, Bereitschaft und Verankerung."
   - q: "Wer ist im Salesforce-Programm für Change Management verantwortlich?"
     a: "Der Kunde, mit einem Sponsor im Management, der sichtbar hinter der Einführung steht. Partner bauen das System, die Veränderung im Unternehmen können sie nicht verantworten."
+  - q: "Ist Change Management dasselbe wie IT-Change-Management?"
+    a: "Nein. IT-Change-Management nach ITIL steuert Änderungen an Systemen: wer eine Änderung beantragt, prüft und freigibt. In Salesforce ist das Aufgabe von Release-Management und Deployment. Change Management im Sinne dieses Artikels sorgt dafür, dass die Menschen die Änderung annehmen. Eine CRM-Einführung braucht beides."
 draft: false
 ---
 
-Salesforce-Einführungen scheitern selten an der Technik. Sie scheitern, wenn Vertrieb, Service und Außendienst nach dem Go-live weiter so arbeiten wie vorher, mit Excel, E-Mail und eigenen Listen neben dem neuen System. Change Management ist die Arbeit, die das verhindert: neue Prozesse, Standards und Releases so einführen, dass die Menschen sie nutzen. Ich orientiere mich dabei an Prosci und dem ADKAR-Modell, weil es zeigt, an welcher Stelle eine Einführung hängt. Eine weitere Schulung hilft nämlich nur, wenn Wissen fehlt, nicht wenn niemand versteht, wozu das Ganze gut ist.
+Salesforce-Einführungen scheitern selten an der Technik. Sie scheitern, wenn Vertrieb, Service und Außendienst nach dem Go-live weiter so arbeiten wie vorher, mit Excel, E-Mail und eigenen Listen neben dem neuen System. Salesforce Change Management ist die Arbeit, die das verhindert: neue Prozesse, Standards und Releases so einführen, dass die Menschen sie nutzen. Ich orientiere mich dabei an Prosci und dem ADKAR-Modell, weil es zeigt, an welcher Stelle eine Einführung hängt. Eine weitere Schulung hilft nämlich nur, wenn Wissen fehlt, nicht wenn niemand versteht, wozu das Ganze gut ist.
 
 ## Warum kommt Salesforce im Alltag nicht an?
 
@@ -95,4 +97,4 @@ Beantworten Sie für Ihr nächstes Release drei Fragen schriftlich: Welche Grupp
 
 Wer die fünf Stufen der Reihe nach durchgehen möchte, findet sie in der [Masterclass Change Management](../../masterclass/change-management/), ein Kapitel pro Stufe mit den passenden Artikeln.
 
-Salesforce ist erst eingeführt, wenn die Menschen damit arbeiten. Wenn eine Einführung ansteht oder neue Prozesse nicht genutzt werden, [schreiben Sie mir](#contact) oder lesen Sie mehr über [Change Management für Salesforce-Programme](../../leistungen/change-management/).
+Salesforce ist erst eingeführt, wenn die Menschen damit arbeiten. Wenn eine Einführung ansteht oder neue Prozesse nicht genutzt werden, [schreiben Sie mir](#contact) oder lesen Sie mehr über meine [Change Management Beratung für Salesforce](../../leistungen/change-management/).

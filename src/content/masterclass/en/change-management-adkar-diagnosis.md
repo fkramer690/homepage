@@ -1,6 +1,6 @@
 ---
-title: "Change management: ADKAR as a diagnosis for Salesforce"
-description: "Why Salesforce rollouts at manufacturers get stuck in daily work, how the ADKAR model shows the cause per group and what to settle before you build."
+title: "ADKAR model: a diagnosis for Salesforce rollouts"
+description: "The ADKAR model as a diagnosis: why Salesforce rollouts at manufacturers get stuck in daily work, which stage is missing per group and what to settle first."
 lang: en
 slug: change-management-adkar-diagnosis
 course: change-management
@@ -47,7 +47,7 @@ source: Prosci, Best Practices in Change Management, 12th edition, executive sum
 
 Business teams are not the only ones affected. When a programme introduces new standards for development and release, developer teams and implementation partners are affected just as much. [Chapter 5](../measure-adoption-and-reinforce/) covers that.
 
-## What does ADKAR show for a Salesforce programme?
+## What does the ADKAR model show for a Salesforce programme?
 
 The [ADKAR model](https://www.prosci.com/blog/adkar-model) describes five stages every person goes through in a change. The stages build on each other: whoever does not understand why something changes will not want to take part, and whoever does not want to take part only half learns the new function. For a Salesforce programme I translate them like this:
 
