@@ -295,6 +295,11 @@ export const en = {
     authorMore: 'More about me',
     relatedService: 'Related service',
     authorLinkedIn: 'LinkedIn profile',
+    // Shared author box for an article with a co-author (AuthorBox.astro with coAuthor).
+    authorsLabel: 'About the authors',
+    authorsJoint: 'Written together, the same way we work together in programmes.',
+    authorPart: 'Architecture and releases',
+    authorShort: 'Client-side Salesforce architect for manufacturers, independent of vendors and partners.',
   },
   partnerPage: {
     title: 'Partners',

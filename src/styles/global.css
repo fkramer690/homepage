@@ -906,9 +906,25 @@ p.post-series-note { margin: 0.6em 0 0; font-size: 0.95rem; }
 .post-author-bio { color: var(--text); margin: 0 0 1.2em; max-width: 60ch; }
 .post-author-links { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; }
 .post-author-more { font-weight: 600; font-size: 0.9rem; text-decoration: none; }
+/* Two authors share one box: photos and joint line on top, one card per author below */
+.post-authors { display: block; }
+.post-authors-head { display: flex; gap: 24px; align-items: center; }
+.post-authors-photos { display: flex; flex-shrink: 0; }
+.post-authors .post-author-img { width: 96px; height: 96px; }
+.post-authors .post-author-img + .post-author-img { margin-left: -24px; }
+.post-authors .post-author-name { font-size: 1.3rem; }
+.post-authors-joint { color: var(--text); margin: 0.4em 0 0; }
+.post-authors-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 1.6em; }
+.post-authors-card { background: var(--white); border: 1px solid #cfe9f7; border-radius: 8px; padding: 18px 20px; }
+.post-authors-part { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--cyan-dark); margin: 0 0 0.4em; }
+.post-authors-card-name { font-weight: 600; color: var(--anthracite); margin: 0; }
+.post-authors-short { font-size: 0.92rem; color: var(--text); margin: 0.3em 0 0.8em; }
 @media (max-width: 560px) {
   .post-author { flex-direction: column; }
   .post-author-img { width: 88px; height: 88px; }
+  .post-authors-head { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .post-authors .post-author-img { width: 80px; height: 80px; }
+  .post-authors-cards { grid-template-columns: 1fr; gap: 12px; }
 }
 
 /* Floating contact shortcuts */
@@ -1215,7 +1231,10 @@ p.post-series-note { margin: 0.6em 0 0; font-size: 0.95rem; }
 }
 .post-tile[hidden] { display: none; }
 .post-tile .post-category { font-size: 0.72rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--cyan-dark); }
-.post-tile .post-byline { margin-top: auto; padding-top: 6px; font-size: 0.75rem; color: var(--text-2); }
+.post-tile .post-byline { margin-top: auto; padding-top: 10px; display: flex; align-items: center; gap: 10px; font-size: 0.85rem; font-weight: 500; color: var(--anthracite); }
+.post-byline-faces { display: flex; flex-shrink: 0; }
+.post-byline-faces img { display: block; width: 28px; height: 28px; border-radius: 50%; object-fit: cover; border: 2px solid var(--white); box-shadow: 0 0 0 1px #cfe9f7; }
+.post-byline-faces img + img { margin-left: -9px; }
 /* Blog overview: sticky filter column (author + topic) left of a two-column grid,
    a folded "Filter" box above the grid below 960px (docs/layouts.md). */
 .blog-layout { display: grid; grid-template-columns: var(--side) 1fr; gap: 40px; align-items: start; margin-top: 2em; }

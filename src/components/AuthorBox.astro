@@ -2,6 +2,8 @@
 // Author box below every blog article. Rendered by BlogPost.astro for all
 // articles, so it looks the same everywhere; never add one in Markdown.
 // `author: juliane` shows Juliane Winterscheid with a link to her profile page.
+// With a `coAuthor` both authors share one box: both photos and a joint line on top,
+// below one card per author with their part, a short line and links (docs/layouts.md).
 import { Image } from 'astro:assets';
 import ExternalMark from './ExternalMark.astro';
 import portrait from '../assets/portrait.png';
@@ -15,25 +17,57 @@ import { juliane } from '../data/juliane-winterscheid';
 interface Props {
   lang: 'en' | 'de';
   author?: AuthorId;
+  coAuthor?: AuthorId;
 }
-const { lang, author = 'fabian' } = Astro.props;
+const { lang, author = 'fabian', coAuthor } = Astro.props;
 const t = lang === 'de' ? de : en;
-const a = getAuthor(lang, author);
-const box =
-  author === 'juliane'
-    ? { label: juliane[lang].author.label, img: julianePortrait, role: juliane[lang].box.role, bio: juliane[lang].author.bio, more: juliane[lang].author.more, moreHref: localHref(lang, a.profile!) }
-    : { label: t.blog.authorLabel, img: portrait, role: t.blog.authorRole, bio: t.blog.authorBio, more: t.blog.authorMore, moreHref: `${homeHref(lang)}#about` };
+const boxOf = (id: AuthorId) => {
+  const a = getAuthor(lang, id);
+  return id === 'juliane'
+    ? { a, label: juliane[lang].author.label, img: julianePortrait, role: juliane[lang].box.role, bio: juliane[lang].author.bio, part: juliane[lang].author.part, short: juliane[lang].author.short, more: juliane[lang].author.more, moreHref: localHref(lang, a.profile!) }
+    : { a, label: t.blog.authorLabel, img: portrait, role: t.blog.authorRole, bio: t.blog.authorBio, part: t.blog.authorPart, short: t.blog.authorShort, more: t.blog.authorMore, moreHref: `${homeHref(lang)}#about` };
+};
+const box = boxOf(author);
+const duo = coAuthor && coAuthor !== author ? [box, boxOf(coAuthor)] : undefined;
 ---
-<aside class="post-author" aria-label={box.label}>
-  <Image src={box.img} alt={a.name} width={112} height={112} densities={[1, 2]} class="post-author-img" />
-  <div class="post-author-body">
-    <p class="label mono">{box.label}</p>
-    <p class="post-author-name">{a.name}</p>
-    <p class="post-author-role mono">{box.role}</p>
-    <p class="post-author-bio">{box.bio}</p>
-    <div class="post-author-links">
-      <a class="btn btn-small" href={a.linkedin} target="_blank" rel="noopener">{t.blog.authorLinkedIn}<ExternalMark label={t.nav.externalTab} /></a>
-      <a class="post-author-more" href={box.moreHref}>{box.more} →</a>
+{duo ? (
+  <aside class="post-author post-authors" aria-label={t.blog.authorsLabel}>
+    <div class="post-authors-head">
+      <div class="post-authors-photos">
+        {duo.map((d) => <Image src={d.img} alt={d.a.name} width={96} height={96} densities={[1, 2]} class="post-author-img" />)}
+      </div>
+      <div>
+        <p class="label mono">{t.blog.authorsLabel}</p>
+        <p class="post-author-name">{duo.map((d) => d.a.name).join(' & ')}</p>
+        <p class="post-authors-joint">{t.blog.authorsJoint}</p>
+      </div>
     </div>
-  </div>
-</aside>
+    <div class="post-authors-cards">
+      {duo.map((d) => (
+        <div class="post-authors-card">
+          <p class="post-authors-part mono">{d.part}</p>
+          <p class="post-authors-card-name">{d.a.name}</p>
+          <p class="post-authors-short">{d.short}</p>
+          <div class="post-author-links">
+            <a class="post-author-more" href={d.a.linkedin} target="_blank" rel="noopener">LinkedIn<ExternalMark label={t.nav.externalTab} /></a>
+            <a class="post-author-more" href={d.moreHref}>{d.more} →</a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </aside>
+) : (
+  <aside class="post-author" aria-label={box.label}>
+    <Image src={box.img} alt={box.a.name} width={112} height={112} densities={[1, 2]} class="post-author-img" />
+    <div class="post-author-body">
+      <p class="label mono">{box.label}</p>
+      <p class="post-author-name">{box.a.name}</p>
+      <p class="post-author-role mono">{box.role}</p>
+      <p class="post-author-bio">{box.bio}</p>
+      <div class="post-author-links">
+        <a class="btn btn-small" href={box.a.linkedin} target="_blank" rel="noopener">{t.blog.authorLinkedIn}<ExternalMark label={t.nav.externalTab} /></a>
+        <a class="post-author-more" href={box.moreHref}>{box.more} →</a>
+      </div>
+    </div>
+  </aside>
+)}

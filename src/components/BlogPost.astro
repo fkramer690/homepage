@@ -51,7 +51,7 @@ const suffix = ' | FK Solution Design';
 const pageTitle = title.length + suffix.length <= 60 ? title + suffix : title;
 const modified = (updatedDate ?? pubDate).toISOString();
 // Juliane's articles name her as author and send the contact form with her name in the subject.
-// A co-author (frontmatter coAuthor) is named in the byline, the structured data and with an author box of their own.
+// A co-author (frontmatter coAuthor) is named in the byline, the structured data and in a shared author box.
 const author = getAuthor(lang, authorId);
 const coAuthorId = post.data.coAuthor && post.data.coAuthor !== authorId ? post.data.coAuthor : undefined;
 const coAuthor = coAuthorId ? getAuthor(lang, coAuthorId) : undefined;
@@ -140,8 +140,7 @@ const schema = {
             </details>
           ))}
         </section>
-        <AuthorBox lang={lang} author={authorId} />
-        {coAuthorId && <AuthorBox lang={lang} author={coAuthorId} />}
+        <AuthorBox lang={lang} author={authorId} coAuthor={coAuthorId} />
         {post.data.categories.includes('change-management') && authorId !== 'juliane' && coAuthorId !== 'juliane' && <PartnerBox lang={lang} variant="blog" />}
         {service && (
           <a class="post-service" href={serviceHref(service)}>

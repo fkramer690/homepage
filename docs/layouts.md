@@ -128,3 +128,17 @@ a second filter by author next to the topic). Built in `src/components/BlogIndex
   (`#field-service`) still work.
 - Below 960px the column becomes a folded "Filter" box above the grid.
 - Fits: overviews with many items and two or more filter dimensions.
+
+## Two authors
+
+Chosen 2026-10-29 (box variant C, card variant 1 of three each) for articles with
+a `coAuthor`. Fabian did not want two author boxes stacked.
+
+- Author box at the article end (`src/components/AuthorBox.astro` with `coAuthor`):
+  one box; on top both round photos overlapping, "Über die Autoren", both names and
+  one joint line; below two white cards side by side, one per author, with their
+  part in mono caps ("Architektur und Releases", "Menschen und Veränderung"), name,
+  one short line, LinkedIn and profile link. Below 560px head and cards stack.
+- Blog overview cards: author line with small round photos (28px, overlapping for
+  two authors) before the names, for every card.
+- Fits: anything written or delivered by two people together.
