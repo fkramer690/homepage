@@ -1,6 +1,9 @@
 // One-off long-tail research: DataForSEO Labs keyword suggestions (phrases that
 // contain the seed) for the seeds in seo/research-seeds.json, Google Germany.
-// Prints a tab-separated list to stdout; used by .github/workflows/keyword-research.yml.
+// SEEDS_DE / SEEDS_EN (comma-separated) replace the file's seeds for one run;
+// VOLUMES_DE / VOLUMES_EN (comma-separated) add exact search volumes for candidate
+// phrases that suggestions do not cover. Prints a tab-separated list to stdout;
+// used by .github/workflows/keyword-research.yml.
 import { readFile } from 'node:fs/promises';
 
 const login = process.env.DATAFORSEO_LOGIN;
@@ -29,7 +32,12 @@ async function call(path, body) {
   return task.result ?? [];
 }
 
+const list = (value) => (value ?? '').split(',').map((s) => s.trim().toLowerCase()).filter(Boolean);
 const seeds = JSON.parse(await readFile(new URL('../seo/research-seeds.json', import.meta.url), 'utf8'));
+for (const lang of ['de', 'en']) {
+  const override = list(process.env[`SEEDS_${lang.toUpperCase()}`]);
+  if (override.length) seeds[lang] = override;
+}
 const seen = new Set();
 console.log(['lang', 'seed', 'keyword', 'volume', 'difficulty', 'intent', 'cpc'].join('\t'));
 for (const lang of ['de', 'en']) {
@@ -62,6 +70,20 @@ for (const lang of ['de', 'en']) {
     } catch (err) {
       console.error(`suggestions "${seed}" (${lang}) failed: ${err.message}`);
     }
+  }
+}
+for (const lang of ['de', 'en']) {
+  const candidates = list(process.env[`VOLUMES_${lang.toUpperCase()}`]);
+  if (!candidates.length) continue;
+  try {
+    const rows = await call('keywords_data/google_ads/search_volume/live', [
+      { keywords: candidates, location_code: LOCATION, language_code: lang },
+    ]);
+    for (const r of rows) {
+      console.log([lang, '(volume)', r.keyword, r.search_volume ?? '', '', '', r.cpc ?? ''].join('\t'));
+    }
+  } catch (err) {
+    console.error(`search volume (${lang}) failed: ${err.message}`);
   }
 }
 console.error(`cost of this run ${cost.toFixed(4)} USD, ${seen.size} keywords`);

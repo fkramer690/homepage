@@ -4,6 +4,19 @@ name: Keyword research
 # Labs keyword suggestions). The list is printed in the job log; nothing is stored.
 on:
   workflow_dispatch:
+    inputs:
+      seeds_de:
+        description: German seeds, comma-separated (replaces seo/research-seeds.json for this run)
+        required: false
+      seeds_en:
+        description: English seeds, comma-separated
+        required: false
+      volumes_de:
+        description: German candidate phrases for exact search volumes, comma-separated
+        required: false
+      volumes_en:
+        description: English candidate phrases for exact search volumes, comma-separated
+        required: false
 
 permissions:
   contents: read
@@ -20,4 +33,8 @@ jobs:
         env:
           DATAFORSEO_LOGIN: ${{ secrets.DATAFORSEO_LOGIN }}
           DATAFORSEO_PASSWORD: ${{ secrets.DATAFORSEO_PASSWORD }}
+          SEEDS_DE: ${{ inputs.seeds_de }}
+          SEEDS_EN: ${{ inputs.seeds_en }}
+          VOLUMES_DE: ${{ inputs.volumes_de }}
+          VOLUMES_EN: ${{ inputs.volumes_en }}
         run: node scripts/keyword-research.mjs
