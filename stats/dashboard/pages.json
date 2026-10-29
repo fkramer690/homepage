@@ -1,7 +1,7 @@
 [
  {
   "page": "/",
-  "pageviews": 80,
+  "pageviews": 90,
   "visits": 30
  },
  {
@@ -36,6 +36,11 @@
  },
  {
   "page": "/leistungen/",
+  "pageviews": 10,
+  "visits": 0
+ },
+ {
+  "page": "/leistungen/salesforce-architektur/",
   "pageviews": 10,
   "visits": 0
  },

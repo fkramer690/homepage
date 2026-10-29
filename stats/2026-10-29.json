@@ -1,0 +1,217 @@
+{
+  "generatedAt": "2026-10-29T04:47:45.417Z",
+  "range": {
+    "start": "2026-09-29",
+    "end": "2026-10-29"
+  },
+  "browsers": [
+    {
+      "count": 230,
+      "dimensions": {
+        "userAgentBrowser": "Chrome"
+      },
+      "sum": {
+        "visits": 40
+      }
+    }
+  ],
+  "countries": [
+    {
+      "count": 230,
+      "dimensions": {
+        "countryName": "DE"
+      },
+      "sum": {
+        "visits": 40
+      }
+    }
+  ],
+  "daily": [
+    {
+      "count": 70,
+      "dimensions": {
+        "date": "2026-10-23"
+      },
+      "sum": {
+        "visits": 10
+      }
+    },
+    {
+      "count": 50,
+      "dimensions": {
+        "date": "2026-10-26"
+      },
+      "sum": {
+        "visits": 30
+      }
+    },
+    {
+      "count": 60,
+      "dimensions": {
+        "date": "2026-10-27"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 50,
+      "dimensions": {
+        "date": "2026-10-28"
+      },
+      "sum": {
+        "visits": 0
+      }
+    }
+  ],
+  "devices": [
+    {
+      "count": 230,
+      "dimensions": {
+        "deviceType": "desktop"
+      },
+      "sum": {
+        "visits": 40
+      }
+    }
+  ],
+  "pages": [
+    {
+      "count": 90,
+      "dimensions": {
+        "requestPath": "/"
+      },
+      "sum": {
+        "visits": 30
+      }
+    },
+    {
+      "count": 30,
+      "dimensions": {
+        "requestPath": "/homepage/"
+      },
+      "sum": {
+        "visits": 10
+      }
+    },
+    {
+      "count": 20,
+      "dimensions": {
+        "requestPath": "/masterclass-ki/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "requestPath": "/fragen/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "requestPath": "/homepage/blog/salesforce-field-service-mobile-guided-voice/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "requestPath": "/en/masterclass/devops-release-management/devops-tools-compared/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "requestPath": "/homepage/blog/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "requestPath": "/leistungen/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "requestPath": "/leistungen/salesforce-architektur/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "requestPath": "/homepage/blog/salesforce-service-documents-document-builder/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "requestPath": "/en/blog/copado-gearset-provar-ai-agents/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "requestPath": "/homepage/speaking/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    }
+  ],
+  "referers": [
+    {
+      "count": 130,
+      "dimensions": {
+        "refererHost": "www.fk-sd.de"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 60,
+      "dimensions": {
+        "refererHost": "fkramer690.github.io"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 40,
+      "dimensions": {
+        "refererHost": ""
+      },
+      "sum": {
+        "visits": 40
+      }
+    }
+  ]
+}
