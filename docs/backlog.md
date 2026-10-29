@@ -37,7 +37,7 @@ Grundlage: Jev-Lauf (jev-1.14.0) über Start, EN, Leistungen, Freiberufler-Seite
 | J5 | EN-Footer: Impressum und Datenschutz als deutschsprachig kennzeichnen | klein | klein | Claude | PR |
 | J6 | Faktencheck der 17 Artikel mit „unbelegten“ Preisen und Fristen: 108 Sätze mit Salesforce-Quelle gegen die Quellseiten geprüft, alle abrufbaren Zahlen und alle Rechnungen stimmen; Jev folgt keinen Links (Bericht `/mnt/project-files/typesafe/faktencheck-blog-2026-10-29.md`) | mittel | mittel | Claude | erledigt (29.10.2026) |
 | J7 | Review-Rhythmus für zeitkritische Artikel (82 % veralten laut Jev in 12 Monaten): `scripts/stale-articles.mjs` plus monatlicher Workflow, der ein Issue „Artikel prüfen“ pflegt (Preise älter als 6 Monate, verstrichene Fristen und Releases); geprüft = `updatedDate` setzen | hoch | mittel | Claude | PR |
-| J8 | Kundenstimmen und Ergebnisse je Referenz (= Weitere Ideen 4 und 11), stärkster Hebel für Vertrauen | hoch | mittel | Fabian liefert, Claude baut ein | wartet auf Fabian |
+| J8 | Kundenstimmen und Ergebnisse je Referenz (= Weitere Ideen 4 und 11), stärkster Hebel für Vertrauen | hoch | mittel | Fabian liefert, Claude baut ein | Backlog, wartet auf Fabian |
 | J9 | Blog-Übersicht /blog und /en/blog (je ca. 690 KB HTML, gzip übertragen nur ca. 105 KB): Kartengrafiken außerhalb des Bildschirms nicht rendern (content-visibility) | klein | klein | Claude | PR |
 | J10 | Ein klarer nächster Schritt auf der Leistungsübersicht (Jev 0,35; bisher kein Button). Die Freiberufler-Seite hat bereits Buttons im Hero und Kontaktbereich | mittel | klein | Claude | PR |
 | J11 | Kernaussage nach vorn: /partner und vier Artikel (AELA, Buyer Agent WhatsApp, Account Forecasting, Garantieansprüche) | mittel | mittel | Claude | offen |
@@ -45,11 +45,12 @@ Grundlage: Jev-Lauf (jev-1.14.0) über Start, EN, Leistungen, Freiberufler-Seite
 | J13 | Einstiegsartikel für Leser ohne benanntes Problem (nur 4 von 196 Artikeln) | mittel | groß | Claude entwirft, Fabian gibt frei | offen |
 | J14 | Veröffentlichungsdaten: 174 von 196 DE-Artikeln tragen 27. bis 29.10.2026. Das sind die echten Daten (Website seit 23.10.2026 online), sie bleiben; nie rückdatieren. „Aktualisiert am“ nur nach echter Prüfung (J7) | mittel | klein | Fabian | entschieden, keine Änderung |
 | J15 | Logo-Band: Freigaben der Kunden liegen vor (Fabian, 29.10.2026) | mittel | klein | Fabian | erledigt |
-| J16 | /blog/change-management-modelle wirkt generisch (Spezifität 0,38): Praxisbeispiel ergänzen | klein | mittel | Juliane | offen |
+| J16 | /blog/change-management-modelle wirkt generisch (Spezifität 0,38): Praxisbeispiel ergänzen | klein | mittel | Juliane | Backlog, wartet auf Juliane |
 | J17 | Relative Links auf absolute Pfade umstellen: 496 Stellen in den Inhalten, im Browser alle korrekt, nur ein Crawler-Fehler | klein | mittel | später | zurückgestellt |
-| J18 | PageSpeed-Key (PAGESPEED_API_KEY) besorgen und jev-seo mit Core Web Vitals wiederholen | klein | klein | Fabian | offen |
+| J18 | PageSpeed-Key (PAGESPEED_API_KEY) besorgen und jev-seo mit Core Web Vitals wiederholen | klein | klein | Fabian | Backlog, wartet auf Fabian |
 | J19 | HSTS und Sicherheits-Header: bei GitHub Pages nur über vorgeschaltetes CDN möglich | klein | mittel | später | zurückgestellt |
 | J20 | 21 tote Quellenlinks (404) in 50+ Artikeln und Kapiteln, meist entfernte Trailhead-Module: 16 durch geprüfte Quellen ersetzt, 5 ohne gleichwertige Quelle neutral formuliert („laut Salesforce“). Die monatliche Prüfliste (J7) meldet künftig tote Links mit | hoch | mittel | Claude | PR |
+| J21 | Fünf Aussagen ohne gleichwertige Quelle seit #151 gegenlesen (stehen jetzt als „laut Salesforce“): Visualforce-Store weiter unterstützt; Lizenzen und Rechte von Käufer und Buyer Manager; Store-Suche (Standardfelder, alle Begriffe, keine Teiltreffer); Flosum Salesforce-nativ; Beispiel 35/35/30 % und drei Schnitte bei Account Manager Targets | klein | klein | Fabian | Backlog |
 
 Kein Handlungsbedarf: ich/wir auf der Startseite (getrennt nach Fabian, Juliane und gemeinsamem Angebot; „wir“ im Gesprächsabschnitt meint Kunde und Fabian), doppelte Logos (zweite Kopie hat bereits aria-hidden), Antwortzeit über 0,8 s (Einzelwert).
 
