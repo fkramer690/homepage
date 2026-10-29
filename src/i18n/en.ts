@@ -619,6 +619,11 @@ export const en = {
     homeNames: { ai: 'AI & Agentforce', devops: 'DevOps & release management', 'manufacturing-cloud': 'Manufacturing Cloud', 'revenue-cloud': 'Revenue Cloud', 'b2b-commerce': 'B2B Commerce', 'field-service': 'Field Service' },
     homeAll: 'All masterclasses at a glance',
   },
+  side: {
+    toc: 'Contents',
+    ctaTitle: '30 minutes, no pitch',
+    ctaText: 'You describe your situation, I tell you honestly whether and how I can help.',
+  },
   floating: {
     label: 'Contact',
     call: 'Book a 30-minute call',

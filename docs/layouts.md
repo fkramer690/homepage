@@ -3,6 +3,33 @@
 Layouts Fabian explicitly approved. Reuse them for similar content before
 designing something new, and add new entries here when he approves another one.
 
+## Page width (binding for every page)
+
+Chosen 2026-10-29 (variant B of three; Fabian: "wirklich jetzt überall ohne
+Lücken umsetzen und auch als Regel festlegen"). Every new page and component
+follows it; `scripts/check-layout.mjs` runs in `npm run build` and fails on
+violations.
+
+- **One frame for all pages:** `--max: 1280px` minus the gutter, so 1216px of
+  content on desktop. Header, footer and every `.container` use it. Never give
+  a `.container` (or a class used with it) its own `width`/`max-width`; never
+  centre a narrower box inside the frame. Content starts at the logo edge.
+- **Two page types,** declared on `<main data-layout>` (prop `layout` of
+  `src/layouts/Page.astro`):
+  - `reading`: blog articles, service pages, masterclass chapters, questions,
+    speaking, certifications, legal pages. Page head (back link, eyebrow, h1,
+    lead/meta) spans the frame. All running text sits in
+    `src/components/ReadingGrid.astro`: text column `--measure` (740px, about
+    70 characters per line) on the left, sticky side column `--side` (300px) on
+    the right with "Inhalt" (links to the h2 sections) and the booking box
+    "30 Minuten, kein Pitch". Structured blocks (cards, grids, comparisons) may
+    span the frame above the grid, as on the service pages.
+  - `wide`: start page, overviews (blog, services, masterclasses), partner and
+    recruiter pages, 404. Grids and cards use the full frame; running text in
+    them keeps its own `ch` limit; no `.prose` on wide pages.
+- **Below 960px** the side column disappears and the text uses the full width
+  (max. `--measure`); phones look as before.
+
 ## Compact cross list in a white box ("Damit es für beide fair bleibt")
 
 Approved 2026-10-29 ("perfekt"), live on `/partner/recruiter/` and
@@ -38,7 +65,8 @@ Chosen 2026-10-29 for `/fragen/` and `/en/questions/` (variant A of three; Fabia
 found the 14 stacked cards "zu viel untereinander geklatscht"). Five topic tiles
 with icon and question count as jump links under the lead. Each group: icon and
 title in a sticky left column, the questions on the right as one white box with
-dashed dividers and a cyan number, instead of one card per question.
+dashed dividers and a cyan number, instead of one card per question. Since the
+page width rule the groups sit inside the reading column of `ReadingGrid`.
 Fits: long lists grouped by topic (FAQ-like pages, checklists).
 
 ## Side column + compact row list (masterclass overview)

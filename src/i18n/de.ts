@@ -621,6 +621,11 @@ export const de: Dict = {
     homeNames: { ai: 'KI & Agentforce', devops: 'DevOps & Release-Management', 'manufacturing-cloud': 'Manufacturing Cloud', 'revenue-cloud': 'Revenue Cloud', 'b2b-commerce': 'B2B Commerce', 'field-service': 'Field Service' },
     homeAll: 'Alle Masterclasses im Überblick',
   },
+  side: {
+    toc: 'Inhalt',
+    ctaTitle: '30 Minuten, kein Pitch',
+    ctaText: 'Sie schildern Ihre Lage, ich sage ehrlich, ob und wie ich helfen kann.',
+  },
   floating: {
     label: 'Kontakt',
     call: '30-Minuten-Termin buchen',

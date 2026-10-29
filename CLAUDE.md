@@ -26,6 +26,10 @@ Every external link opens in a new tab, on every page. Markdown links get this a
 
 Every icon is one SVG file in `src/icons/` (catalogue and style rules in `src/icons/README.md`), used through `src/components/Icon.astro`; never inline icon SVG in a component. Layouts Fabian explicitly liked are collected in `docs/layouts.md`; reuse them before inventing new ones.
 
+## Page width
+
+Every page uses one frame (`--max`, 1216px content) and is either a `reading` or a `wide` page (`layout` prop of `src/layouts/Page.astro`). Reading pages put all running text into `src/components/ReadingGrid.astro` (740px text column plus sticky side column with contents and booking box); wide pages (start, overviews, partner) use the full frame for cards and grids. Rules under "Page width" in `docs/layouts.md`. `scripts/check-layout.mjs` runs after `astro build` and fails on violations; never give a container its own width and never weaken the check.
+
 ## Sitemap
 
 The sitemap must list exactly the indexable pages. `scripts/check-sitemap.mjs` runs after `astro build` and fails if a page without `noindex` is missing from it, a `noindex` page is in it, or a listed URL has no page. To keep a page out of the sitemap, give it `noindex` (and add it to the sitemap filter in `astro.config.mjs`); never weaken the check.

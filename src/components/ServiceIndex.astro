@@ -11,7 +11,7 @@ const { lang } = Astro.props;
 const t = lang === 'de' ? de : en;
 const services = await getServices(lang);
 ---
-<Page lang={lang} title={t.servicePage.metaTitle} description={t.servicePage.metaDescription} alternates={{ en: servicesIndex('en'), de: servicesIndex('de') }}>
+<Page layout="wide" lang={lang} title={t.servicePage.metaTitle} description={t.servicePage.metaDescription} alternates={{ en: servicesIndex('en'), de: servicesIndex('de') }}>
   <section class="section blog">
     <div class="container">
       <p class="eyebrow mono">FK Solution Design</p>

@@ -39,7 +39,7 @@ const schema = {
   })),
 };
 ---
-<Page lang={lang} title={t.blog.metaTitle} description={t.blog.metaDescription} alternates={{ en: blogIndex('en'), de: blogIndex('de') }}>
+<Page layout="wide" lang={lang} title={t.blog.metaTitle} description={t.blog.metaDescription} alternates={{ en: blogIndex('en'), de: blogIndex('de') }}>
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
   </Fragment>

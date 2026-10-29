@@ -5,6 +5,7 @@ import ContactForm from './ContactForm.astro';
 import AuthorBox from './AuthorBox.astro';
 import Blueprint from './Blueprint.astro';
 import ContactBrief from './ContactBrief.astro';
+import ReadingGrid from './ReadingGrid.astro';
 import { getContactBrief } from '../lib/contact-briefs';
 import { render } from 'astro:content';
 import { en } from '../i18n/en';
@@ -20,7 +21,8 @@ interface Props {
 const { service } = Astro.props;
 const { lang, title, headline, description, lead, situations, deliverables, results, phases, faq, order, note, notePartner } = service.data;
 const t = lang === 'de' ? de : en;
-const { Content } = await render(service);
+const { Content, headings } = await render(service);
+const toc = [...headings.filter((h) => h.depth === 2), { slug: 'faq', text: t.servicePage.faq }];
 const translation = await getServiceTranslation(service);
 const posts = await getServicePosts(service);
 const alternates = translation
@@ -75,12 +77,12 @@ const schema = {
   ],
 };
 ---
-<Page lang={lang} title={pageTitle} description={description} alternates={alternates} image={ogImage} hasContact>
+<Page layout="reading" lang={lang} title={pageTitle} description={description} alternates={alternates} image={ogImage} hasContact>
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
   </Fragment>
   <article class="section post service">
-    <div class="container post-inner">
+    <div class="container">
       <a class="post-back mono" href={servicesIndex(lang)}>← {t.servicePage.back}</a>
       {note && (
         <p class="service-note">
@@ -123,28 +125,30 @@ const schema = {
         </ol>
       </section>
 
-      <div class="prose">
-        <Content />
-      </div>
+      <ReadingGrid t={t} headings={toc} cta={name}>
+        <div class="prose">
+          <Content />
+        </div>
 
-      <section class="post-faq" aria-labelledby="faq">
-        <h2 id="faq">{t.servicePage.faq}</h2>
-        {faq.map(({ q, a }) => (
-          <details class="faq-item">
-            <summary><h3>{q}</h3></summary>
-            <p>{a}</p>
-          </details>
-        ))}
-      </section>
-      <AuthorBox lang={lang} />
-      {posts.length > 0 && (
-        <nav class="post-related" aria-label={t.servicePage.posts}>
-          <p class="label mono">{t.servicePage.posts}</p>
-          <ul>
-            {posts.map((p) => <li><a href={postHref(p)}>{p.data.title}</a></li>)}
-          </ul>
-        </nav>
-      )}
+        <section class="post-faq" aria-labelledby="faq">
+          <h2 id="faq">{t.servicePage.faq}</h2>
+          {faq.map(({ q, a }) => (
+            <details class="faq-item">
+              <summary><h3>{q}</h3></summary>
+              <p>{a}</p>
+            </details>
+          ))}
+        </section>
+        <AuthorBox lang={lang} />
+        {posts.length > 0 && (
+          <nav class="post-related" aria-label={t.servicePage.posts}>
+            <p class="label mono">{t.servicePage.posts}</p>
+            <ul>
+              {posts.map((p) => <li><a href={postHref(p)}>{p.data.title}</a></li>)}
+            </ul>
+          </nav>
+        )}
+      </ReadingGrid>
     </div>
   </article>
   <section class="contact dark grid-bg" id="contact">

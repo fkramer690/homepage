@@ -64,7 +64,7 @@ const schema = {
   ],
 };
 ---
-<Page lang={lang} title={pageTitle} description={o.metaDescription} alternates={{ en: masterclassesIndex('en'), de: masterclassesIndex('de') }} image={ogImage}>
+<Page layout="wide" lang={lang} title={pageTitle} description={o.metaDescription} alternates={{ en: masterclassesIndex('en'), de: masterclassesIndex('de') }} image={ogImage}>
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
   </Fragment>
