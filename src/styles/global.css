@@ -1065,10 +1065,31 @@ p.post-series-note { margin: 0.6em 0 0; font-size: 0.95rem; }
 
 /* Questions page */
 .questions .eyebrow { color: var(--cyan-dark); margin-top: 1.2em; }
-.question-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
-.question-list li { padding: 20px 24px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--white); }
-.question-list h3 { font-size: 1.08rem; line-height: 1.35; margin: 0.3em 0 0.4em; }
+.questions .post-inner { max-width: 1100px; }
+.questions .service-lead { max-width: 760px; }
+/* Topic tiles as jump links, then per group: topic on the left, questions as one compact list */
+.q-topics { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin: 1.6em 0 2.4em; }
+.q-topic { display: flex; flex-direction: column; gap: 4px; padding: 14px 14px 12px; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); text-decoration: none; color: inherit; transition: border-color 0.15s; }
+.q-topic:hover { border-color: var(--cyan); }
+.q-topic-icon { width: 30px; height: 30px; margin-bottom: 4px; }
+.q-topic-title { font-weight: 600; font-size: 0.95rem; line-height: 1.3; }
+.q-topic-count { font-size: 0.72rem; color: var(--text-2); }
+.q-group { display: grid; grid-template-columns: 220px 1fr; gap: 32px; padding: 28px 0; border-top: 1px dashed var(--line); scroll-margin-top: 80px; }
+.q-side { position: sticky; top: 90px; align-self: start; }
+.q-side .group-icon { width: 40px; height: 40px; display: block; margin-bottom: 10px; }
+.q-side h2 { font-size: 1.25rem; margin: 0; }
+.question-list { list-style: none; margin: 0; padding: 0; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); }
+.question-list li { display: grid; grid-template-columns: 2.4em 1fr; column-gap: 8px; padding: 18px 24px; border-top: 1px dashed var(--line); }
+.question-list li:first-child { border-top: 0; }
+.question-list .card-index { grid-row: span 2; color: var(--cyan-dark); font-size: 0.85rem; margin: 0; padding-top: 0.25em; }
+.question-list h3 { font-size: 1.08rem; line-height: 1.35; margin: 0 0 0.3em; }
 .question-list p { color: var(--text-2); margin: 0; }
+@media (max-width: 860px) {
+  .q-topics { grid-template-columns: 1fr 1fr; }
+  .q-group { grid-template-columns: 1fr; gap: 14px; }
+  .q-side { position: static; display: flex; align-items: center; gap: 12px; }
+  .q-side .group-icon { margin: 0; }
+}
 .approach-more { margin-top: 2em; }
 .section-intro { max-width: 70ch; color: var(--text-2); margin: -0.4em 0 1.8em; }
 
@@ -1434,7 +1455,7 @@ p.post-series-note { margin: 0.6em 0 0; font-size: 0.95rem; }
 @media (max-width: 760px) { .rc-rules-list { columns: 1; } }
 
 /* Icons on the home page (service cards, further services, proof bar), on the
-   service pages ("typical situation" as cross list) and on the questions page */
+   service pages ("typical situation" as cross list) */
 .card-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.8em; }
 .card-top .card-index { margin: 0; }
 .card-icon { width: 40px; height: 40px; display: block; }
@@ -1445,5 +1466,3 @@ p.post-series-note { margin: 0.6em 0 0; font-size: 0.95rem; }
 .proof-icon { width: 30px; height: 30px; flex: none; }
 .sit-box { margin-top: 0; }
 .sit-box .rc-rules-list li { font-size: 0.97rem; }
-.group-head { display: flex; align-items: center; gap: 14px; }
-.group-icon { width: 36px; height: 36px; flex: none; }

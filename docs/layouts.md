@@ -31,3 +31,12 @@ from `src/icons/` on the left, bold title, one or two sentences below.
 
 Chosen 2026-10-27: two columns, grey ✕ list "without" and cyan ✓ list "with"
 (`.compare`).
+
+## Topic tiles + side column + compact list (questions page)
+
+Chosen 2026-10-29 for `/fragen/` and `/en/questions/` (variant A of three; Fabian
+found the 14 stacked cards "zu viel untereinander geklatscht"). Five topic tiles
+with icon and question count as jump links under the lead. Each group: icon and
+title in a sticky left column, the questions on the right as one white box with
+dashed dividers and a cyan number, instead of one card per question.
+Fits: long lists grouped by topic (FAQ-like pages, checklists).
