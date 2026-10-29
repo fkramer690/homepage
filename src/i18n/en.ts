@@ -643,13 +643,17 @@ export const en = {
     factsLabel: 'Masterclass in figures',
     facts: { chapters: 'chapters', articles: 'articles', languages: 'German and English' },
     figureLabel: 'ADKAR in a Salesforce programme',
-    layers: [
-      { title: 'D · Reinforce', tools: 'Reports, pipeline, CoE call' },
-      { title: 'C · Enable', tools: 'Key users, training on real cases' },
-      { title: 'B · Win over', tools: 'Sponsor, communication, works council' },
-      { title: 'A · Prepare', tools: 'Groups, goals, baselines' },
+    // The hub draws the five ADKAR stages as a staircase.
+    layers: [],
+    erp: [],
+    stages: [
+      { term: 'Awareness', question: 'Why change?', help: 'Sponsor', chapter: 'Ch. 2' },
+      { term: 'Desire', question: 'Want to join', help: 'Manager', chapter: 'Ch. 2' },
+      { term: 'Knowledge', question: 'Know how', help: 'Training', chapter: 'Ch. 3' },
+      { term: 'Ability', question: 'Do it daily', help: 'Key users', chapter: 'Ch. 3' },
+      { term: 'Reinforcement', question: 'Stick with it', help: 'Reports', chapter: 'Ch. 5' },
     ],
-    erp: ['Sponsor', 'Leadership'],
+    stagesNote: 'Ch. 1 diagnosis per group · Ch. 4 repeat per country',
     deadlinesLabel: 'Deadlines',
     deadlinesTitle: 'Deadlines',
     deadlinesText: '',

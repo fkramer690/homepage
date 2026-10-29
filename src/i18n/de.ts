@@ -643,13 +643,17 @@ export const de: Dict = {
     factsLabel: 'Masterclass in Zahlen',
     facts: { chapters: 'Kapitel', articles: 'Fachartikel', languages: 'Deutsch und Englisch' },
     figureLabel: 'ADKAR im Salesforce-Programm',
-    layers: [
-      { title: 'D · Verankern', tools: 'Berichte, Pipeline, CoE-Call' },
-      { title: 'C · Befähigen', tools: 'Key User, Schulung am echten Fall' },
-      { title: 'B · Gewinnen', tools: 'Sponsor, Kommunikation, Betriebsrat' },
-      { title: 'A · Vorbereiten', tools: 'Gruppen, Ziele, Ausgangswerte' },
+    // The hub draws the five ADKAR stages as a staircase (English terms, as used in the method).
+    layers: [],
+    erp: [],
+    stages: [
+      { term: 'Awareness', question: 'Warum?', help: 'Sponsor', chapter: 'Kap. 2' },
+      { term: 'Desire', question: 'Wollen', help: 'Führung', chapter: 'Kap. 2' },
+      { term: 'Knowledge', question: 'Wissen', help: 'Schulung', chapter: 'Kap. 3' },
+      { term: 'Ability', question: 'Können', help: 'Key User', chapter: 'Kap. 3' },
+      { term: 'Reinforcement', question: 'Dabeibleiben', help: 'Berichte', chapter: 'Kap. 5' },
     ],
-    erp: ['Sponsor', 'Management'],
+    stagesNote: 'Kap. 1 Diagnose je Gruppe · Kap. 4 je Land wiederholen',
     deadlinesLabel: 'Termine',
     deadlinesTitle: 'Termine',
     deadlinesText: '',
