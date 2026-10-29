@@ -63,16 +63,9 @@ A release is technically rolled out in minutes. What happens next decides whethe
 - **Backing from management is missing.** Without decisions from the top, new rules stay a recommendation.
 - **There is no way back.** Problems from daily work end up in emails, not in the backlog.
 
-## Why Prosci?
-
-To me, Prosci is the gold standard in change management. The reason is the research behind it: Prosci has surveyed projects about their experience with change since 1998. In the 12th edition of its study [Best Practices in Change Management](https://www.prosci.com/hubfs/Website_English/2.downloads/research-executive-summaries/Best-Practices-in-Change-Management-12th-Edition-Executive-Summary.pdf), with 2,668 participants, projects with excellent change management met their objectives seven times as often as projects with poor change management, 88 against 13 percent. Participants name active and visible sponsorship by management as the biggest contributor to success. That matches what I see in Salesforce programmes.
-
-Together with [Juliane Winterscheid](../../partners/juliane-winterscheid/), who is Prosci certified, I have applied two building blocks from Prosci to Salesforce programmes:
-
-- **The [ADKAR model](https://www.prosci.com/blog/adkar-model)** describes five stages each person goes through in a change: Awareness of why something changes, Desire to take part, Knowledge of how it works, Ability to do it in daily work, and Reinforcement so nobody slips back.
-- **The [Prosci 3-Phase Process](https://www.prosci.com/methodology/3-phase-process)** gives the rollout a frame at the level of the organisation: Prepare Approach, Manage Change and Sustain Outcomes. The three steps further up this page follow these phases.
-
 ## What does ADKAR look like in a Salesforce programme?
+
+The [ADKAR model](https://www.prosci.com/blog/adkar-model) by Prosci describes five stages each person goes through in a change: Awareness of why something changes, Desire to take part, Knowledge of how it works, Ability to do it in daily work, and Reinforcement so nobody slips back.
 
 A common picture: the training has taken place, yet usage stays low. Instead of scheduling another session, we ask per affected group at which stage it is stuck. If a sales team does not know what the maintained opportunities are needed for, Awareness is missing, and the head of sales has to explain that, not the trainer. If a partner's developers know the naming conventions but nobody checks them in the pipeline, Reinforcement is missing. Then an automatic check belongs in the [release process](../devops-release-management/).
 
@@ -87,6 +80,12 @@ The first version covered around 80 percent of the cases. The edge cases were ad
 ## What changes for business teams?
 
 With a clean release process, releases become smaller and more frequent. For business teams this means small changes more often instead of one large package per quarter. For that to work, they need a fixed route on which they learn in advance what changes, and a route back on which they report what does not fit their daily work. Before each release I clarify with the owners in the business which teams are affected, what changes in their processes and who informs them. That goes into the release plan before development is finished. After the release I check whether the new processes are used and bring feedback from daily work into the backlog.
+
+## Why Prosci?
+
+To me, Prosci is the gold standard in change management. The reason is the research behind it: Prosci has surveyed projects about their experience with change since 1998. In the 12th edition of its study [Best Practices in Change Management](https://www.prosci.com/hubfs/Website_English/2.downloads/research-executive-summaries/Best-Practices-in-Change-Management-12th-Edition-Executive-Summary.pdf), with 2,668 participants, projects with excellent change management met their objectives seven times as often as projects with poor change management, 88 against 13 percent. Participants name active and visible sponsorship by management as the biggest contributor to success. That matches what I see in Salesforce programmes.
+
+Together with [Juliane Winterscheid](../../partners/juliane-winterscheid/), who is Prosci certified, I have applied two building blocks from Prosci to Salesforce programmes: the ADKAR model described above and the [Prosci 3-Phase Process](https://www.prosci.com/methodology/3-phase-process). The 3-Phase Process gives the rollout a frame at the level of the organisation: Prepare Approach, Manage Change and Sustain Outcomes. The three steps further up this page follow these phases.
 
 Prosci and ADKAR are registered trademarks of Prosci, Inc. The Prosci certification is held by Juliane Winterscheid, not by FK Solution Design, and FK Solution Design is not a Prosci partner. This page describes how we apply elements of the approach in Salesforce programmes.
 

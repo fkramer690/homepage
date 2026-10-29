@@ -3,13 +3,18 @@
 // (frontmatter `section: change-management`, rendered by ChangeTeam.astro and
 // ChangeArticles.astro inside ServicePage.astro). Juliane Winterscheid owns the change in
 // people, Fabian the architecture and releases. The article lists are filled from the blog
-// collection, so new articles appear without touching this file. Icons are file names
+// collection (the newest four per group, the rest in the filtered blog), so new
+// articles appear without touching this file. Icons are file names
 // from src/icons/.
 //
 // The former area page /change-management/ (2026-10-29) is now a redirect to the service page.
 
 export const changeSection = {
   de: {
+    // Replaces "Was ich mache": on this page "wir" are Fabian and Juliane.
+    deliverables: 'Was wir machen',
+    // Shared author box (AuthorBox.astro) at the end of the page.
+    authors: { label: 'Ihre Ansprechpartner', joint: 'Das Vorgehen haben wir gemeinsam erarbeitet, und so arbeiten wir auch in Ihrem Programm zusammen.' },
     team: {
       label: 'Wer dahintersteht',
       title: 'Zwei Spezialgebiete, ein gemeinsamer Plan',
@@ -32,9 +37,12 @@ export const changeSection = {
         text: 'Wie Key User, Schulung, Hypercare und Messung in einer Salesforce-Einführung zusammenspielen.',
       },
       minutes: '{n} Min.',
+      all: 'Alle {n} Artikel im Blog',
     },
   },
   en: {
+    deliverables: 'What we do',
+    authors: { label: 'Your contacts', joint: 'We developed the approach together, and that is how we work together in your programme.' },
     team: {
       label: 'Who is behind it',
       title: 'Two specialisms, one joint plan',
@@ -57,6 +65,7 @@ export const changeSection = {
         text: 'How key users, training, hypercare and measurement work together in a Salesforce rollout.',
       },
       minutes: '{n} min',
+      all: 'All {n} articles in the blog',
     },
   },
 };
