@@ -24,6 +24,34 @@ Stand 28.10.2026. Grundlage: Ranking-Lauf, KI-Check und OnPage-Crawl vom 28.10.2
 
 Ausgangswerte 28.10.2026: „document builder limitations“ (EN) Platz 6, „field service lizenzen salesforce“ 11 (rankt mit „lohnt sich“), „salesforce field service“ 27 (170 Suchen), „field service einführung“ 29 (rankt mit „lohnt sich“), „manufacturing cloud vs sales cloud“ 30, „salesforce field service license“ 38, „salesforce document builder“ 39. KI-Übersichten bei 51 von 52 Begriffen, fk-sd.de in keiner zitiert. KI-Assistenten (ChatGPT, Claude, Perplexity, Google AI Mode): 0 Nennungen.
 
+## Befunde Jev-Analyse und jev-seo-Audit (29.10.2026)
+
+Grundlage: Jev-Lauf (jev-1.14.0) über Start, EN, Leistungen, Freiberufler-Seite und 392 Blog-URLs sowie jev-seo-Audit (450 URLs), beide 29.10.2026. Bericht: https://claude.ai/artifact/4d9jFTDK2EbewV53cLymFN. Fehlalarme ohne Maßnahme: HTTPS-Weiterleitung, 110 kaputte Links und 37 Seiten mit 404 (jev-seo löst relative Links falsch auf), noindex auf Impressum und Datenschutz (gewollt). Reihenfolge nach Impact und Aufwand.
+
+| # | Maßnahme | Impact | Aufwand | Wer | Status |
+|---|---|---|---|---|---|
+| J1 | E-Mail-Adresse im Kontaktblock der Startseite neben LinkedIn (Jev: direkter Kontakt 0,04; Formular und Bookings decken die meisten Besucher ab, deshalb nur dort) | klein | klein | Claude | PR |
+| J2 | Vertrauensbelege auf Leistungs- und Masterclass-Übersicht: Kennzahlen und Zertifikate (Jev-Vertrauen Leistungen 1,36 von 4, jev-seo 0,45) | hoch | klein | Claude | PR |
+| J3 | Kennzahl „8 · 32“ als „32 Entwickler in 8 Teams“ ausschreiben | mittel | klein | Claude | PR |
+| J4 | Kundenlogos mit width und height gegen Layout-Sprünge (92 Bilder auf / und /en) | klein | klein | Claude | PR |
+| J5 | EN-Footer: Impressum und Datenschutz als deutschsprachig kennzeichnen | klein | klein | Claude | PR |
+| J6 | Faktencheck der 17 Artikel mit unbelegten Preisen, Lizenzen oder Fristen: Quelle und „Stand“-Datum je Aussage | hoch | groß | Claude recherchiert, Fabian bestätigt | offen |
+| J7 | Review-Rhythmus für zeitkritische Artikel (82 % veralten laut Jev in 12 Monaten): Feld „geprüft am“ plus Erinnerung | hoch | mittel | Claude | offen |
+| J8 | Kundenstimmen und Ergebnisse je Referenz (= Weitere Ideen 4 und 11), stärkster Hebel für Vertrauen | hoch | mittel | Fabian liefert, Claude baut ein | wartet auf Fabian |
+| J9 | Blog-Übersicht /blog und /en/blog (je ca. 690 KB HTML) verkleinern: Kartengrafiken nicht inline | mittel | mittel | Claude | offen |
+| J10 | Ein klarer nächster Schritt auf Leistungs- und Freiberufler-Seite (Jev 0,35) | mittel | klein | Claude | offen |
+| J11 | Kernaussage nach vorn: /partner und vier Artikel (AELA, Buyer Agent WhatsApp, Account Forecasting, Garantieansprüche) | mittel | mittel | Claude | offen |
+| J12 | Masterclass und Blog abgrenzen und verlinken: Manufacturing Cloud gegen „wann lohnt sie sich“, B2B Commerce gegen „B2B Commerce oder Händlerportal“ | mittel | klein | Claude | offen |
+| J13 | Einstiegsartikel für Leser ohne benanntes Problem (nur 4 von 196 Artikeln) | mittel | groß | Claude entwirft, Fabian gibt frei | offen |
+| J14 | Veröffentlichungsdaten: 174 von 196 DE-Artikeln tragen 27. bis 29.10.2026; echtes Datum oder „aktualisiert am“? | mittel | klein | Fabian entscheidet | offen |
+| J15 | Logo-Band: Freigaben der Kunden dokumentieren oder Überschrift präzisieren | mittel | klein | Fabian | offen |
+| J16 | /blog/change-management-modelle wirkt generisch (Spezifität 0,38): Praxisbeispiel ergänzen | klein | mittel | Juliane | offen |
+| J17 | Relative Links in Leistungsseiten auf absolute Pfade umstellen (robuster für Crawler) | klein | klein | Claude | offen |
+| J18 | PageSpeed-Key (PAGESPEED_API_KEY) besorgen und jev-seo mit Core Web Vitals wiederholen | klein | klein | Fabian | offen |
+| J19 | HSTS und Sicherheits-Header: bei GitHub Pages nur über vorgeschaltetes CDN möglich | klein | mittel | später | zurückgestellt |
+
+Kein Handlungsbedarf: ich/wir auf der Startseite (getrennt nach Fabian, Juliane und gemeinsamem Angebot; „wir“ im Gesprächsabschnitt meint Kunde und Fabian), doppelte Logos (zweite Kopie hat bereits aria-hidden), Antwortzeit über 0,8 s (Einzelwert).
+
 ## Priorität 1: Artikel aus der Long-Tail-Recherche (DataForSEO, 28.10.2026)
 
 Grundlage: DataForSEO-Recherche vom 28.10.2026 (Google Deutschland, Suchen pro Monat). Auch in Deutschland wird überwiegend mit englischen Produktbegriffen gesucht, deshalb die englischen Begriffe in Titel und Einstieg der DE-Artikel aufnehmen. Alle Begriffe werden ab 2.11.2026 wöchentlich getrackt (seo/keywords.json). Claude entwirft, Fabian gibt frei.
