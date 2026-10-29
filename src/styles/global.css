@@ -1604,6 +1604,7 @@ p.post-series-note { margin: 0.6em 0 0; font-size: 0.95rem; }
   .prose .cb-stair-risk:not(:nth-child(2)) .cb-stair-risk-label { visibility: visible; }
   .cb-bands { grid-template-columns: 1fr; }
   .prose .cb-band { grid-column: auto !important; }
+}
 /* ```saeulen: three to five pillars in one row; rows aligned across columns (subgrid),
    optional roof and base bar */
 .prose .cb-pillars ol { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(var(--n), minmax(0, 1fr)); grid-template-rows: repeat(4, auto); gap: 0 12px; }
