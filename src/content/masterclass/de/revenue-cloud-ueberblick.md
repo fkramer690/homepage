@@ -57,11 +57,13 @@ Wie die Bestandteile im Einzelnen funktionieren, steht in den folgenden Kapiteln
 
 Ich suche im heutigen Angebotsprozess nach diesen Signalen:
 
-- **Varianten mit Regeln.** Maschinen mit Dutzenden Optionen, die sich gegenseitig bedingen oder ausschließen. Ein Konfigurator, der Kombinationen prüft, spart Nacharbeit in der Auftragsabwicklung.
-- **Service auf demselben Angebot.** Ersatzteilpaket, Wartungsvertrag und ein Abonnement für Fernüberwachung zusammen mit der Maschine.
-- **Änderungen nach dem Verkauf.** Upgrades, Verlängerungen und Kündigungen, die wieder über Angebot und Auftrag laufen, ausgehend von dem, was der Kunde schon hat.
-- **Große Angebote.** Anlagenprojekte mit Hunderten Positionen, gruppiert nach Anlagenteilen.
-- **Mehrere Kanäle auf einem Katalog.** Innendienst, Händler und ein Shop verkaufen dieselben Produkte.
+| Signal | Woran Sie es erkennen |
+|---|---|
+| Varianten mit Regeln | Maschinen mit Dutzenden Optionen, die sich gegenseitig bedingen oder ausschließen. Ein Konfigurator, der Kombinationen prüft, spart Nacharbeit in der Auftragsabwicklung. |
+| Service auf demselben Angebot | Ersatzteilpaket, Wartungsvertrag und ein Abonnement für Fernüberwachung zusammen mit der Maschine. |
+| Änderungen nach dem Verkauf | Upgrades, Verlängerungen und Kündigungen, die wieder über Angebot und Auftrag laufen, ausgehend von dem, was der Kunde schon hat. |
+| Große Angebote | Anlagenprojekte mit Hunderten Positionen, gruppiert nach Anlagenteilen. |
+| Mehrere Kanäle auf einem Katalog | Innendienst, Händler und ein Shop verkaufen dieselben Produkte. |
 
 Zwei oder drei dieser Signale zusammen rechtfertigen einen genaueren Blick, eines allein selten. Die vollständige Liste der Signale dafür und dagegen samt Kostenrahmen steht in [Revenue Cloud für Hersteller: Wann lohnt es sich?](../../../blog/revenue-cloud-lohnt-sich-hersteller/).
 
@@ -69,10 +71,12 @@ Zwei oder drei dieser Signale zusammen rechtfertigen einen genaueren Blick, eine
 
 Alle meinen dasselbe Produkt, die Quellen wurden nur zu unterschiedlichen Zeitpunkten aktualisiert. Stand Ende Oktober 2026:
 
-- **salesforce.com** zeigt „Revenue Cloud“ als Überschrift der Produktseite, zuletzt geändert am 22. Oktober 2026, und der Preisseite, mit den Editionen Revenue Cloud Growth und Revenue Cloud Advanced (RCA).
-- **Der Developer Guide** zu Winter '27 heißt [Revenue Management Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.revenue_lifecycle_management_dev_guide.meta/pcm_parent.htm) und schreibt: „Revenue Cloud is now Revenue Management. You may see references to Revenue Cloud in our application and documentation.“
-- **Trailhead** nennt sein Grundlagenmodul Agentforce Revenue Management Foundations.
-- **Die CPQ-Seite** nennt Revenue Lifecycle Management (RLM) „an earlier product name“ und ordnet RCA in „the Agentforce Revenue Management suite“ ein.
+| Quelle | Wie sie das Produkt nennt |
+|---|---|
+| salesforce.com | Zeigt „Revenue Cloud“ als Überschrift der Produktseite, zuletzt geändert am 22. Oktober 2026, und der Preisseite, mit den Editionen Revenue Cloud Growth und Revenue Cloud Advanced (RCA). |
+| Der Developer Guide | Zu Winter '27 heißt [Revenue Management Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.revenue_lifecycle_management_dev_guide.meta/pcm_parent.htm) und schreibt: „Revenue Cloud is now Revenue Management. You may see references to Revenue Cloud in our application and documentation.“ |
+| Trailhead | Nennt sein Grundlagenmodul Agentforce Revenue Management Foundations. |
+| Die CPQ-Seite | Nennt Revenue Lifecycle Management (RLM) „an earlier product name“ und ordnet RCA in „the Agentforce Revenue Management suite“ ein. |
 
 Partnerblogs berichten, der Agentforce-Name sei mit der Dreamforce 2025 gekommen und Salesforce sei um September 2026 still zu Revenue Cloud zurückgekehrt. Eine offizielle Ankündigung habe ich für keinen der beiden Schritte gefunden, ich behandle das deshalb als Bericht. Das Agentforce-Etikett zieht sich durch das ganze Portfolio; das [Kapitel zu Begriffen und Landkarte](../../ki-salesforce/begriffe-und-landkarte/) meiner KI-Masterclass ordnet diese Namen.
 
@@ -169,10 +173,12 @@ Die Rechnungen bleiben im ersten Jahr in SAP; Billing wird erst zum Thema, wenn 
 
 Partner fragen nach Funktionen. Die Entscheidungen, die Kosten und Zeitplan treiben, gehören dem Unternehmen:
 
-1. **Preis-Master.** SAP-Konditionen oder Salesforce Pricing, je Preisart, nie beides für denselben Preis.
-2. **Konfigurator-Owner.** Wer pflegt die Variantenregeln nach dem Go-live, und in welchem System?
-3. **Rechnungs-Owner.** SAP oder Revenue Cloud Billing. Das entscheidet die Finanzabteilung, nicht das CRM-Team.
-4. **Parallelbetrieb mit CPQ.** Bestandskunden von CPQ stehen nicht unter Zeitdruck: Die CPQ-Seite sagt „There is no forced migration“, aber auch, dass CPQ „will not receive new features“. Eine typische Migration dauert laut derselben Seite drei bis sechs Monate. Die Einzelheiten stehen in Kapitel 5, [von CPQ zu Revenue Cloud](../von-cpq-zu-revenue-cloud/).
+| Entscheidung | Was dazu gehört |
+|---|---|
+| Preis-Master | SAP-Konditionen oder Salesforce Pricing, je Preisart, nie beides für denselben Preis. |
+| Konfigurator-Owner | Wer pflegt die Variantenregeln nach dem Go-live, und in welchem System? |
+| Rechnungs-Owner | SAP oder Revenue Cloud Billing. Das entscheidet die Finanzabteilung, nicht das CRM-Team. |
+| Parallelbetrieb mit CPQ | Bestandskunden von CPQ stehen nicht unter Zeitdruck: Die CPQ-Seite sagt „There is no forced migration“, aber auch, dass CPQ „will not receive new features“. Eine typische Migration dauert laut derselben Seite drei bis sechs Monate. Die Einzelheiten stehen in Kapitel 5, [von CPQ zu Revenue Cloud](../von-cpq-zu-revenue-cloud/). |
 
 Schreiben Sie diese vier Antworten ins Entscheidungsprotokoll, bevor Sie Schätzungen anfragen. Sie gehören zu meiner Arbeit in der [Salesforce-Architektur](../../../leistungen/salesforce-architektur/). Sind sie geklärt, zeigt [Kapitel 2 zu Katalog, Konfigurator und Preisen](../produktkatalog-konfigurator-preise/), wie Produkte und Preise abgebildet werden; alle Kapitel stehen auf der [Übersichtsseite](../).
 
