@@ -75,7 +75,7 @@ Together with Juliane Winterscheid, who is Prosci certified, I have applied two 
 
 A common picture: the training has taken place, yet usage stays low. Instead of scheduling another session, we ask per affected group at which stage it is stuck. If a sales team does not know what the maintained opportunities are needed for, Awareness is missing, and the head of sales has to explain that, not the trainer. If a partner's developers know the naming conventions but nobody checks them in the pipeline, Reinforcement is missing. Then an automatic check belongs in the [release process](../devops-release-management/).
 
-Salesforce helps with measuring. Whether a new process is used shows in reports on created and maintained records better than in any survey. We define these figures in the first phase and look at them regularly in the second.
+Salesforce helps with measuring. Whether a new process is used shows in reports on created and maintained records better than in any survey. We define these figures in the first phase and look at them regularly in the second. I describe the individual topics, from key users to measuring adoption, in [change management: why Salesforce rollouts fail](../../blog/change-management-salesforce-rollout/).
 
 ## How did I introduce new standards in a large programme?
 

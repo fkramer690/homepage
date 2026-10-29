@@ -102,7 +102,7 @@ At least three things belong to it per country:
 - **Communication before go-live** that explains what changes and why, not just where to click.
 - **A look at usage after go-live**, so it shows when a country keeps working with its own lists next to Salesforce.
 
-How I plan the introduction of new processes on the client side is described under [change management for Salesforce programmes](../../services/change-management-salesforce/).
+How I plan the introduction of new processes on the client side is described under [change management for Salesforce programmes](../../services/change-management-salesforce/). What each country needs is in [change management in a global Salesforce rollout](../change-management-global-salesforce-rollout/), the overview in [change management: why Salesforce rollouts fail](../change-management-salesforce-rollout/).
 
 ## Where should you start?
 
