@@ -1418,6 +1418,30 @@ p.post-series-note { margin: 0.6em 0 0; font-size: 0.95rem; }
   .blog-filter-result { margin-bottom: 14px; }
 }
 @media (max-width: 640px) { .blog-layout .post-grid { grid-template-columns: 1fr; } }
+/* Search bar above the articles (blog overview); it filters together with the side column. */
+.blog-main { min-width: 0; }
+.blog-search { display: block; margin-bottom: 24px; }
+.blog-search-field { display: flex; align-items: center; gap: 12px; height: 54px; padding: 0 16px; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); transition: border-color 0.15s, box-shadow 0.15s; }
+.blog-search-field:focus-within { border-color: var(--cyan); box-shadow: 0 0 0 3px rgba(27, 161, 226, 0.15); }
+.blog-search-field input { flex: 1; min-width: 0; border: 0; outline: 0; background: none; font: inherit; font-size: 1.05rem; color: var(--text); }
+.blog-search-field input::-webkit-search-cancel-button { cursor: pointer; }
+.blog-search-icon { width: 20px; height: 20px; flex: none; color: var(--cyan-dark); }
+.blog-search-field kbd { font-size: 0.72rem; color: var(--text-2); border: 1px solid var(--line); border-radius: 4px; padding: 1px 6px; }
+.blog-search-popular { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 12px 0 0; font-size: 0.8rem; color: var(--text-2); }
+.blog-search-chip { font: inherit; font-size: 0.8rem; padding: 4px 12px; color: var(--text); background: var(--white); border: 1px solid var(--line); border-radius: 999px; cursor: pointer; }
+.blog-search-chip:hover { border-color: var(--cyan); color: var(--cyan-dark); }
+.blog-search-status { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; margin: 14px 0 0; font-size: 0.85rem; color: var(--text-2); }
+.blog-search-status strong { color: var(--text); }
+.blog-search-status[hidden], .blog-search-none[hidden] { display: none; }
+.post-tile mark { background: rgba(27, 161, 226, 0.18); color: inherit; border-radius: 2px; padding: 0 1px; }
+.blog-search-none { padding: 32px; text-align: center; color: var(--text-2); background: var(--white); border: 1px dashed var(--line); border-radius: var(--radius); }
+/* On phones the search comes first, then the folded filter box, then the articles. */
+@media (max-width: 960px) {
+  .blog-layout { display: flex; flex-direction: column; align-items: stretch; }
+  .blog-main { display: contents; }
+  .blog-search { order: -1; margin-bottom: 0; }
+  .blog-search-field kbd { display: none; }
+}
 /* Certifications subpage */
 .blog .page-main > h2 { margin-top: 1.6em; }
 .blog .page-main > h3 { margin-top: 1.4em; font-size: 1rem; }
