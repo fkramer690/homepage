@@ -52,35 +52,35 @@ mit: KI-nativ: das Ticket als ausführbare Spezifikation
 
 ## Wie läuft der Prozess vom Workshop bis zur Produktion?
 
-Die Grafik zeigt alle 14 Schritte in drei Spuren: was Personen im Gespräch tun, was der Agent erledigt und was die Pipeline prüft. Die blauen Balken sind die Tore, an denen eine Person verbindlich entscheidet.
+Die Grafik zeigt alle 14 Schritte in drei Spuren: was Personen im Gespräch tun, was der Agent erledigt und was die Pipeline prüft. Die blauen Balken sind die Tore, an denen eine Person verbindlich entscheidet. Die Spalte rechts zeigt den Status des Jira-Tickets und wer ihn setzt: Der Agent legt Stories direkt in Jira an, die Pipeline schaltet den Status nach Validierung und Deployment selbst weiter.
 
 ```prozess
 titel: KI-nativer Delivery-Prozess für Salesforce
 spuren: Personen | Agent | Pipeline
-kette: Satz im Transkript, Anforderung, Story, Commit, Test, Release Note
+ticket: Jira
 phase: Discovery
 Agent | Workshop vorbereiten | Org-Analyse, Agenda, Hypothesen
 Personen | Discovery-Workshop | Kunde, BA, Architekt; Transkript läuft
-Agent | Auswertung | Protokoll, Story-Entwürfe mit Zeitstempel
+Agent | Auswertung | Protokoll, Story-Entwürfe mit Zeitstempel | Stories angelegt · Agent
 tor: Kunde bestätigt das Protokoll
 Agent | Prototyp | In einer Scratch Org, in Stunden
 Personen | Refinement am Prototyp | Kunde klickt durch, Transkript läuft
-Agent | Story-Diff und Impact | Änderungen, Testfälle, Metadaten
-tor: BA und Architekt geben frei: Ready for Agent
+Agent | Story-Diff und Impact | Änderungen, Testfälle, Metadaten | Stories aktualisiert · Agent
+tor: BA und Architekt geben frei: Ready for Agent | Ready for Agent · BA
 phase: Bauen
-Agent | Implementierung | Plan, Freigabe, Code und Tests
-Agent | Pull Request | Beschreibung, Jira-Link, KI-Review
+Agent | Implementierung | Plan, Freigabe, Code und Tests | In Arbeit · Agent
+Agent | Pull Request | Beschreibung, Jira-Link, KI-Review | In Review · Agent
 tor: Entwickler reviewt und merged
-Pipeline | CI-Validierung | Delta als Check-Deploy, Tests, Analyzer
+Pipeline | CI-Validierung | Delta als Check-Deploy, Tests, Analyzer | Validiert · Pipeline
 zurueck: Fehler: Agent liest das Log und fixt, höchstens 2 Versuche
 phase: Release
-Pipeline | Deploy nach UAT | Agent schreibt Testskripte ins Ticket
+Pipeline | Deploy nach UAT | Agent schreibt Testskripte ins Ticket | In UAT · Pipeline
 Personen | Abnahmetest | Kunde testet, BA begleitet
-Agent | Feedback-Triage | Bug, Change Request oder Klärung
+Agent | Feedback-Triage | Bug, Change Request oder Klärung | Bug oder CR angelegt · Agent
 tor: BA und Kunde entscheiden über Bugs und Change Requests
 zurueck: Bugs zurück an 07, Change Requests als neue Story an 06
-tor: Kunde gibt das Release frei
-Pipeline | Release nach Produktion | Quick Deploy der validierten ID
+tor: Kunde gibt das Release frei | Freigegeben · Kunde
+Pipeline | Release nach Produktion | Quick Deploy der validierten ID | Erledigt · Pipeline
 Agent | Release Notes und Handbuch | BA liest gegen
 fazit: **Regel:** Der Agent hat keinen Zugang zur Produktion. Dorthin deployt nur die Pipeline.
 ```
@@ -138,11 +138,22 @@ Ein Szenario als Annahme, um die Kette zu zeigen. Ein Maschinenbauer will Garant
 
 Fragt ein Jahr später jemand, warum die Grenze bei 5.000 Euro liegt, führt die Kette in zwei Klicks zur Aussage im Workshop.
 
+```kette
+titel: Rückverfolgung: vom Satz im Workshop zur Release Note
+Satz im Transkript | 00:23:14: „Anträge über 5.000 Euro will ich selbst sehen.“
+Anforderung | Freigabe durch die Leitung After-Sales ab 5.000 Euro
+Story | Akzeptanzkriterium mit Vertretungsregel aus dem Refinement
+Commit | Freigabeprozess, Ticket im Commit verlinkt
+Test | Grenzfälle 4.999 und 5.001 Euro
+Release Note | Freigabe ab 5.000 Euro mit Vertretungsregel
+fazit: Jedes Glied verweist auf das vorige. So bleibt jede Zeile Code belegbar.
+```
+
 ## Welche Werkzeuge brauchen Sie dafür?
 
 Der Prozess hängt an keinem bestimmten Coding-Agenten. Er braucht vier Verbindungen, Stand Oktober 2026:
 
-- **Jira für Agenten.** Über den Atlassian Rovo MCP Server können Coding-Agenten Jira lesen und schreiben und laut [Atlassian](https://www.atlassian.com/blog/jira/mcp-enhancements) auch das Development-Panel mit verknüpften Branches, Pull Requests und Commits lesen. Jira erlaubt außerdem, Work Items direkt an [Claude, Cursor, Codex, GitHub Copilot oder den Jira Coding Agent](https://www.atlassian.com/software/jira/dev) zuzuweisen.
+- **Jira für Agent und Pipeline.** Die Pipeline setzt den Ticketstatus nach jedem Lauf selbst, damit niemand ihn von Hand pflegt. Über den Atlassian Rovo MCP Server können Coding-Agenten Jira lesen und schreiben und laut [Atlassian](https://www.atlassian.com/blog/jira/mcp-enhancements) auch das Development-Panel mit verknüpften Branches, Pull Requests und Commits lesen. Jira erlaubt außerdem, Work Items direkt an [Claude, Cursor, Codex, GitHub Copilot oder den Jira Coding Agent](https://www.atlassian.com/software/jira/dev) zuzuweisen.
 - **Zugriff auf die Org.** Über die Salesforce CLI oder einen MCP-Server, nur auf ausdrücklich freigegebene Orgs. Der lokale Salesforce DX MCP Server greift laut [Salesforce-Dokumentation](https://developer.salesforce.com/docs/platform/sfdx-dev/guide/sfdx-dev-mcp.html) nur auf Orgs zu, die beim Start freigegeben werden; er erreicht aber laut README am 2. November 2026 sein End of Life. Was das für Ihre Partner heißt, steht in [Salesforce DX MCP Server: Ende am 2. November 2026](../salesforce-dx-mcp-server-ende/). Die Produktion geben Sie nie frei.
 - **Eine Git-Pipeline**, die ohne KI validiert und deployt, mit Produktionszugang nur für die Pipeline. Wie ich sie aufsetze, beschreibe ich unter [DevOps und Release Management](../../leistungen/devops-und-release-management/).
 - **Transkription im Tenant des Kunden**, etwa über die Aufzeichnung in Teams. Einwilligung und Betriebsrat behandle ich in [KI-Coding, Betriebsrat und DSGVO](../ki-coding-betriebsrat-dsgvo/).

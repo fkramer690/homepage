@@ -12,7 +12,7 @@ import { createHash } from 'node:crypto';
 import { existsSync } from 'node:fs';
 import { iconHtml } from './icons.mjs';
 
-export const blockNames = ['hinweis', 'praxis', 'kennzahlen', 'zeitleiste', 'ablauf', 'pro-contra', 'vertiefung', 'schritte', 'stufen', 'vergleich', 'hebel', 'eintrag', 'saeulen', 'partnerfluss', 'tabelle', 'staerken-grenzen', 'pipeline', 'saeulenwechsel', 'basis-addons', 'level', 'prozess'];
+export const blockNames = ['hinweis', 'praxis', 'kennzahlen', 'zeitleiste', 'ablauf', 'pro-contra', 'vertiefung', 'schritte', 'stufen', 'vergleich', 'hebel', 'eintrag', 'saeulen', 'partnerfluss', 'tabelle', 'staerken-grenzen', 'pipeline', 'saeulenwechsel', 'basis-addons', 'level', 'prozess', 'kette'];
 
 const labels = {
   de: {
@@ -348,28 +348,48 @@ export function parseLevels(content) {
   return out;
 }
 
-// Process in lanes: "spuren: A | B | C" (EN "lanes:", two or three lanes), optional
-// "kette: X, Y, Z" (EN "chain:") for the traceability chain at the top, then in order
+// Process in lanes: "spuren: A | B | C" (EN "lanes:", two or three lanes), then in order
 // "phase: Name", steps "Lane | Title | text" (the lane by its name), "tor: text"
 // (EN "gate:") for a decision across all lanes and "zurueck: text" (EN "loop:") for a
-// way back, attached to the step or gate before it.
+// way back, attached to the step or gate before it. Optional "ticket: Jira" adds a
+// status column: a step's fourth field ("Lane | Title | text | status") or a gate's
+// second ("tor: text | status") stands there on the same row.
 export function parseProcess(content) {
-  const out = { title: '', lanes: [], chain: [], items: [], notes: [], unknown: '' };
+  const out = { title: '', lanes: [], ticket: '', items: [], notes: [], unknown: '' };
   for (const raw of lines(content)) {
     const l = raw.trim();
     if (!l) continue;
-    const k = explainerKey(l, ['spuren', 'lanes', 'kette', 'chain', 'phase', 'tor', 'gate', 'zurueck', 'loop']);
+    const k = explainerKey(l, ['spuren', 'lanes', 'ticket', 'phase', 'tor', 'gate', 'zurueck', 'loop']);
     if (k && isTitle(k.key)) out.title = k.value;
     else if (k && isNote(k.key)) out.notes.push(k.value);
     else if (k?.key === 'spuren' || k?.key === 'lanes') out.lanes = k.value.split('|').map((x) => x.trim()).filter(Boolean);
-    else if (k?.key === 'kette' || k?.key === 'chain') out.chain = k.value.split(',').map((x) => x.trim()).filter(Boolean);
+    else if (k?.key === 'ticket') out.ticket = k.value;
     else if (k?.key === 'phase') out.items.push({ kind: 'phase', text: k.value });
-    else if (k?.key === 'tor' || k?.key === 'gate') out.items.push({ kind: 'gate', text: k.value, loops: [] });
+    else if (k?.key === 'tor' || k?.key === 'gate') {
+      const [text, status = ''] = k.value.split('|').map((x) => x.trim());
+      out.items.push({ kind: 'gate', text, status, loops: [] });
+    }
     else if (k) { const last = out.items[out.items.length - 1]; if (last?.loops) last.loops.push(k.value); else out.unknown ||= l; }
     else {
-      const [lane, title, text = ''] = l.split('|').map((x) => x.trim());
-      out.items.push({ kind: 'step', lane, title, text, loops: [] });
+      const [lane, title, text = '', status = ''] = l.split('|').map((x) => x.trim());
+      out.items.push({ kind: 'step', lane, title, text, status, loops: [] });
     }
+  }
+  return out;
+}
+
+// Chain: "Link | example" per line (three to seven links), shown top to bottom with a
+// line between the links, e.g. from a sentence in a workshop to the release note.
+export function parseChain(content) {
+  const out = { title: '', links: [], notes: [] };
+  for (const raw of lines(content)) {
+    const l = raw.trim();
+    if (!l) continue;
+    const k = explainerKey(l, []);
+    if (k && isTitle(k.key)) { out.title = k.value; continue; }
+    if (k && isNote(k.key)) { out.notes.push(k.value); continue; }
+    const [name, text = ''] = l.split('|').map((x) => x.trim());
+    out.links.push({ name, text });
   }
   return out;
 }
@@ -523,6 +543,26 @@ export function validateBlock(block) {
     if (!done) errs.push('level: add an "abschluss:" (EN "done:") line for the badge');
     between(levels.length, 2, 4, 'levels');
     for (const x of levels) if (!x.name || !x.meta || x.items.length < 2 || x.items.length > 5) errs.push(`level: "${x.name}" needs "Name | meta" and 2 to 5 indented lines`);
+  } else if (name === 'prozess') {
+    const { title, lanes, ticket, items, unknown } = parseProcess(content);
+    const steps = items.filter((x) => x.kind === 'step');
+    if (!title) errs.push('prozess: add a "titel:" (DE) or "title:" (EN) line');
+    between(lanes.length, 2, 3, 'lanes ("spuren: A | B | C", EN "lanes:")');
+    between(steps.length, 3, 16, 'steps');
+    between(items.filter((x) => x.kind === 'gate').length, 0, 6, 'gates');
+    between(items.filter((x) => x.kind === 'phase').length, 0, 4, 'phases');
+    if (unknown) errs.push(`prozess: "${unknown}" has no step or gate before it`);
+    for (const x of steps) {
+      if (!x.title || !x.text) errs.push(`prozess: step "${x.title || x.lane}" needs "Lane | Title | text"`);
+      if (!lanes.includes(x.lane)) errs.push(`prozess: lane "${x.lane}" is not in the "spuren:" line`);
+    }
+    if (items[0]?.kind === 'gate') errs.push('prozess: start with a phase or a step, not a gate');
+    if (!ticket && items.some((x) => x.status)) errs.push('prozess: a status needs a "ticket:" line naming the status column');
+  } else if (name === 'kette') {
+    const { title, links } = parseChain(content);
+    if (!title) errs.push('kette: add a "titel:" (DE) or "title:" (EN) line');
+    between(links.length, 3, 7, 'links');
+    if (links.some((x) => !x.name || !x.text)) errs.push('kette: every link needs "Link | example"');
   }
   return errs;
 }
@@ -530,7 +570,7 @@ export function validateBlock(block) {
 // Prose of a block, for word counts and the wording checks in check-blog.
 export function blockProse(block) {
   return block.content
-    .replace(/^\s*(quelle|source|titel|title|pro|contra|sf|erp|ext|fall|case|band|ohne|without|mit|with|fazit|note|dach|roof|basis|base|spalten|columns|marke|mark|besser|better|schranke|gate|hotfix|bisher|before|alt|old|abschluss|done|spuren|lanes|kette|chain|phase|tor|zurueck|loop):\s*/gim, '')
+    .replace(/^\s*(quelle|source|titel|title|pro|contra|sf|erp|ext|fall|case|band|ohne|without|mit|with|fazit|note|dach|roof|basis|base|spalten|columns|marke|mark|besser|better|schranke|gate|hotfix|bisher|before|alt|old|abschluss|done|spuren|lanes|phase|tor|zurueck|loop):\s*/gim, '')
     .replace(/\s\*(?=\s*(\||$))/gm, '')
     .replace(/(--|\.\.)>?/g, ' ')
     .replace(/\s<\s/g, ' ')
@@ -771,26 +811,35 @@ export function renderBlock(block, { lang, isExternal, readDiagram, today = new 
   if (name === 'prozess') {
     // Steps sit in the column of their lane; a link in the gap above each item runs from
     // the lane of the previous step to its own (CSS under "Process in lanes" in global.css).
-    const { title, lanes, chain, items, notes } = parseProcess(content);
+    const { title, lanes, ticket, items, notes } = parseProcess(content);
     let no = 0;
     let gate = 0;
     let from = 0;
     const loops = (x) => x.loops.map((lp) => `<span class="cx-loop">${inline(lp, o)}</span>`).join('');
+    // The status stands in its own column on the item's row and, for phones, inside the item.
+    // "In UAT · Pipeline": the part after the dot names who sets the status, on its own line.
+    const statusHtml = (st) => st.split(' · ').map((part, j) => `<span${j ? ' class="cx-who"' : ''}>${inline(part, o)}</span>`).join('');
+    const status = (x, i) => (ticket && x.status ? `<li class="cx-status" style="--row:${i + 1}" aria-hidden="true">${statusHtml(x.status)}</li>` : '');
+    const statusIn = (x) => (ticket && x.status ? `<span class="cx-status-in">${inline(ticket, o)}: ${inline(x.status, o)}</span>` : '');
     // Every item gets its own row (--row), so two steps in different lanes never share one.
     const rows = items.map((x, i) => {
       const at = from || 1;
       const pos = `--row:${i + 1};--from:${at}`;
       const start = from ? '' : ' cx-start';
       if (x.kind === 'phase') return `<li class="cx-phase${start}" style="${pos}"><span>${inline(x.text, o)}</span></li>`;
-      if (x.kind === 'gate') return `<li class="cx-pgate${start}" style="${pos}"><span class="cx-no">${escHtml(t.tor)} ${++gate}</span><span class="cx-t">${inline(x.text, o)}</span>${loops(x)}</li>`;
+      if (x.kind === 'gate') return `<li class="cx-pgate${start}" style="${pos}"><span class="cx-no">${escHtml(t.tor)} ${++gate}</span><span class="cx-t">${inline(x.text, o)}</span>${statusIn(x)}${loops(x)}</li>${status(x, i)}`;
       const lane = lanes.indexOf(x.lane) + 1;
-      const row = `<li class="cx-card cx-pstep cx-lane-${lane}${start}" style="--row:${i + 1};--lane:${lane};--from:${from || lane}"><span class="cx-no">${String(++no).padStart(2, '0')}<span class="cx-plane"> · ${inline(x.lane, o)}</span></span><span class="cx-t">${inline(x.title, o)}</span><span class="cx-d">${inline(x.text, o)}</span>${loops(x)}</li>`;
+      const row = `<li class="cx-card cx-pstep cx-lane-${lane}${start}" style="--row:${i + 1};--lane:${lane};--from:${from || lane}"><span class="cx-no">${String(++no).padStart(2, '0')}<span class="cx-plane"> · ${inline(x.lane, o)}</span></span><span class="cx-t">${inline(x.title, o)}</span><span class="cx-d">${inline(x.text, o)}</span>${statusIn(x)}${loops(x)}</li>${status(x, i)}`;
       from = lane;
       return row;
     }).join('');
-    const chainHtml = chain.length ? `<ol class="cx-chain">${chain.map((c) => `<li>${inline(c, o)}</li>`).join('')}</ol>` : '';
-    const heads = `<ol class="cx-lanes" aria-hidden="true">${lanes.map((x, i) => `<li class="cx-lane-${i + 1}">${inline(x, o)}</li>`).join('')}</ol>`;
-    return `<figure class="cb cb-explain cb-process" style="--lanes:${lanes.length}"><span class="cx-eye">${inline(title, o)}</span>${chainHtml}${heads}<ol class="cx-flow">${rows}</ol>${explainerNotes(notes, o)}</figure>`;
+    const heads = `<ol class="cx-lanes" aria-hidden="true">${lanes.map((x, i) => `<li class="cx-lane-${i + 1}">${inline(x, o)}</li>`).join('')}${ticket ? `<li class="cx-lane-ticket">${inline(ticket, o)}</li>` : ''}</ol>`;
+    return `<figure class="cb cb-explain cb-light cb-process${ticket ? ' cb-process-ticket' : ''}" style="--lanes:${lanes.length}"><span class="cx-eye">${inline(title, o)}</span>${heads}<ol class="cx-flow">${rows}</ol>${explainerNotes(notes, o)}</figure>`;
+  }
+  if (name === 'kette') {
+    const { title, links, notes } = parseChain(content);
+    const rows = links.map((x, i) => `<li class="cx-link"><span class="cx-link-name"><span class="cx-no">${String(i + 1).padStart(2, '0')}</span>${inline(x.name, o)}</span><span class="cx-link-text">${inline(x.text, o)}</span></li>`).join('');
+    return `<figure class="cb cb-explain cb-light cb-chain"><span class="cx-eye">${inline(title, o)}</span><ol class="cx-links">${rows}</ol>${explainerNotes(notes, o)}</figure>`;
   }
   return '';
 }

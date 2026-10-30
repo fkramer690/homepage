@@ -52,35 +52,35 @@ with: AI-native: the ticket as executable specification
 
 ## How does the process run from workshop to production?
 
-The graphic shows all 14 steps in three lanes: what people do in conversation, what the agent does and what the pipeline checks. The blue bars are the gates where a person makes a binding decision.
+The graphic shows all 14 steps in three lanes: what people do in conversation, what the agent does and what the pipeline checks. The blue bars are the gates where a person makes a binding decision. The column on the right shows the status of the Jira ticket and who sets it: the agent creates stories directly in Jira, the pipeline moves the status on by itself after validation and deployment.
 
 ```prozess
 title: AI-native delivery process for Salesforce
 lanes: People | Agent | Pipeline
-chain: Sentence in transcript, Requirement, Story, Commit, Test, Release note
+ticket: Jira
 phase: Discovery
 Agent | Prepare the workshop | Org analysis, agenda, hypotheses
 People | Discovery workshop | Client, BA, architect; transcript runs
-Agent | Evaluation | Minutes, story drafts with timestamps
+Agent | Evaluation | Minutes, story drafts with timestamps | Stories created · agent
 gate: Client confirms the minutes
 Agent | Prototype | In a scratch org, in hours
 People | Refinement on the prototype | Client clicks through, transcript runs
-Agent | Story diff and impact | Changes, test cases, metadata
-gate: BA and architect approve: Ready for Agent
+Agent | Story diff and impact | Changes, test cases, metadata | Stories updated · agent
+gate: BA and architect approve: Ready for Agent | Ready for Agent · BA
 phase: Build
-Agent | Implementation | Plan, approval, code and tests
-Agent | Pull request | Description, Jira link, AI review
+Agent | Implementation | Plan, approval, code and tests | In progress · agent
+Agent | Pull request | Description, Jira link, AI review | In review · agent
 gate: Developer reviews and merges
-Pipeline | CI validation | Delta as check deploy, tests, analyzer
+Pipeline | CI validation | Delta as check deploy, tests, analyzer | Validated · pipeline
 loop: Failure: agent reads the log and fixes, at most 2 attempts
 phase: Release
-Pipeline | Deploy to UAT | Agent writes test scripts into the ticket
+Pipeline | Deploy to UAT | Agent writes test scripts into the ticket | In UAT · pipeline
 People | Acceptance test | Client tests, BA supports
-Agent | Feedback triage | Bug, change request or question
+Agent | Feedback triage | Bug, change request or question | Bug or CR created · agent
 gate: BA and client decide on bugs and change requests
 loop: Bugs back to 07, change requests as a new story to 06
-gate: Client approves the release
-Pipeline | Release to production | Quick deploy of the validated ID
+gate: Client approves the release | Approved · client
+Pipeline | Release to production | Quick deploy of the validated ID | Done · pipeline
 Agent | Release notes and guide | BA proofreads
 note: **Rule:** The agent has no access to production. Only the pipeline deploys there.
 ```
@@ -138,11 +138,22 @@ A scenario as an assumption, to show the chain. A machine builder wants to check
 
 If someone asks a year later why the limit is 5,000 euros, the chain leads back to the statement in the workshop in two clicks.
 
+```kette
+title: Traceability: from a sentence in the workshop to the release note
+Sentence in transcript | 00:23:14: "I want to see claims over 5,000 euros myself."
+Requirement | Approval by the head of after-sales from 5,000 euros
+Story | Acceptance criterion with the deputy rule from the refinement
+Commit | Approval process, ticket linked in the commit
+Test | Edge cases 4,999 and 5,001 euros
+Release note | Approval from 5,000 euros with deputy rule
+note: Every link points to the one before. That keeps every line of code traceable.
+```
+
 ## Which tools do you need for it?
 
 The process does not depend on a particular coding agent. It needs four connections, as of October 2026:
 
-- **Jira for agents.** Through the Atlassian Rovo MCP Server coding agents can read and write Jira and, according to [Atlassian](https://www.atlassian.com/blog/jira/mcp-enhancements), also read the development panel with linked branches, pull requests and commits. Jira also lets you assign work items directly to [Claude, Cursor, Codex, GitHub Copilot or the Jira Coding Agent](https://www.atlassian.com/software/jira/dev).
+- **Jira for agent and pipeline.** The pipeline sets the ticket status itself after every run, so nobody maintains it by hand. Through the Atlassian Rovo MCP Server coding agents can read and write Jira and, according to [Atlassian](https://www.atlassian.com/blog/jira/mcp-enhancements), also read the development panel with linked branches, pull requests and commits. Jira also lets you assign work items directly to [Claude, Cursor, Codex, GitHub Copilot or the Jira Coding Agent](https://www.atlassian.com/software/jira/dev).
 - **Access to the org.** Through the Salesforce CLI or an MCP server, only to explicitly allowed orgs. According to the [Salesforce documentation](https://developer.salesforce.com/docs/platform/sfdx-dev/guide/sfdx-dev-mcp.html) the local Salesforce DX MCP Server only reaches orgs that are allowed when it starts; according to its README it reaches end of life on 2 November 2026. What that means for your partners is in [Salesforce DX MCP Server: end of life on 2 November 2026](../salesforce-dx-mcp-server-end-of-life/). Never allow production.
 - **A Git pipeline** that validates and deploys without AI, with production access for the pipeline only. How I set it up is described under [DevOps and release management](../../services/devops-release-management/).
 - **Transcription in the client's tenant**, for example through the recording in Teams. Consent and the works council I cover in [AI coding tools, works council and GDPR](../ai-coding-tools-works-council-gdpr/).

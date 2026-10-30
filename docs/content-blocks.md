@@ -250,7 +250,7 @@ besser: Für Prüfprotokolle und Massenläufe: Salesforce Document Generation od
 
 ## 17. Animated explainers (dark panel)
 
-Four blocks that replaced the dark explainer PNGs, plus the process in lanes (`prozess`) (Fabian 2026-10-30, G6, look A): the anthracite panel with grey cards, the highlighted card white on cyan-dark (contrast 5:1). Text stays real HTML, the cards stack on phones. They build up once when they scroll into view (`src/components/BlockMotion.astro`, styles under "Animated explainers" in `global.css`); the pipeline repeats while it stays in view. Reduced motion or no script: the finished picture. All four take `titel:` (EN `title:`) and one or more `fazit:` lines (EN `note:`) for the dashed note; `**Label:**` in a note turns cyan.
+Four blocks that replaced the dark explainer PNGs, plus the process in lanes (`prozess`) and the traceability chain (`kette`), both on a light panel (Fabian 2026-10-30, G6, look A): the anthracite panel with grey cards, the highlighted card white on cyan-dark (contrast 5:1). Text stays real HTML, the cards stack on phones. They build up once when they scroll into view (`src/components/BlockMotion.astro`, styles under "Animated explainers" in `global.css`); the pipeline repeats while it stays in view. Reduced motion or no script: the finished picture. All four take `titel:` (EN `title:`) and one or more `fazit:` lines (EN `note:`) for the dashed note; `**Label:**` in a note turns cyan.
 
 **`pipeline`**: three to six stages `Stage | text`, a trailing `*` puts the green check on the gate stage, the last stage is the target and is highlighted. `schranke:` (EN `gate:`) and `hotfix:` give the two legend lines. Motion: a change runs through stage by stage, then the hotfix runs the same way faster in amber.
 
@@ -308,22 +308,33 @@ abschluss: Badge erreicht
 ```
 ````
 
-**`prozess`** (process in lanes): a whole delivery or approval process on one panel. `spuren:` (EN `lanes:`) names two or three lanes (for example people, agent, pipeline), optional `kette:` (EN `chain:`) lists three to seven links of a traceability chain shown as chips at the top. Then in order: `phase: Name` (up to four), steps `Lane | Title | text` (three to sixteen, the lane by its name; numbered automatically), `tor: text` (EN `gate:`, up to six) for a binding decision across all lanes, and `zurueck: text` (EN `loop:`) for a way back, attached to the step or gate before it. Steps stand in the column of their lane, a line runs from step to step; gates are cyan-dark bars, ways back amber dashed chips. Motion: the chain lights up, then the steps and gates one by one, then the ways back and the note. On phones one column with the lane name next to the number. Built 2026-10-30 for the article on the AI-native delivery process; rating open.
+**`prozess`** (process in lanes, light panel): a whole delivery or approval process on one panel. `spuren:` (EN `lanes:`) names two or three lanes (for example people, agent, pipeline). Then in order: `phase: Name` (up to four), steps `Lane | Title | text` (three to sixteen, the lane by its name; numbered automatically), `tor: text` (EN `gate:`, up to six) for a binding decision across all lanes, and `zurueck: text` (EN `loop:`) for a way back, attached to the step or gate before it. Optional `ticket: Jira` adds a narrower status column on the right (dark header): a step's fourth field `Lane | Title | text | status` or a gate's `tor: text | status` stands there as a pill on the same row, for example who moves the ticket ("In UAT · Pipeline"); on phones it moves into the step. Steps stand in the column of their lane, a line runs from step to step; gates are cyan-dark bars, ways back grey dashed chips. Motion: the steps and gates light up one by one, then the ways back and the note. On phones one column with the lane name next to the number. Built 2026-10-30 for the article on the AI-native delivery process, light on Fabian's request (2026-10-30); rating open.
 
 ````
 ```prozess
 titel: KI-nativer Delivery-Prozess für Salesforce
 spuren: Personen | Agent | Pipeline
-kette: Satz im Transkript, Story, Commit, Test, Release Note
+ticket: Jira
 phase: Discovery
 Personen | Discovery-Workshop | Kunde, BA, Architekt; Transkript läuft
 Agent | Auswertung | Protokoll, Story-Entwürfe mit Zeitstempel
 tor: Kunde bestätigt das Protokoll
 phase: Bauen
 Agent | Implementierung | Plan, Freigabe, Code und Tests
-Pipeline | CI-Validierung | Check-Deploy, Tests, Analyzer
+Pipeline | CI-Validierung | Check-Deploy, Tests, Analyzer | Validiert · Pipeline
 zurueck: Fehler: Agent fixt, höchstens 2 Versuche
 fazit: **Regel:** Nur die Pipeline deployt in die Produktion.
+```
+````
+
+**`kette`** (traceability chain, light panel): three to seven links top to bottom, `Link | example` per line, plus `titel:` and optional `fazit:`. The link names stand as pills joined by a cyan line, the example next to them; the last link is highlighted. Use it to show how one item can be traced through several artefacts (sentence in a workshop, story, commit, test, release note). Motion: the links light up one after another. Built 2026-10-30, separate from `prozess` on Fabian's request; rating open.
+
+````
+```kette
+titel: Rückverfolgung: vom Satz im Workshop zur Release Note
+Satz im Transkript | 00:23:14: „Anträge über 5.000 Euro will ich selbst sehen.“
+Story | Akzeptanzkriterium mit Vertretungsregel
+Release Note | Freigabe ab 5.000 Euro mit Vertretungsregel
 ```
 ````
 
