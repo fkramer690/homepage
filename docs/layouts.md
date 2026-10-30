@@ -104,7 +104,9 @@ counterparts do not repeat. The studio portrait and the stage photo stay for
 author box, contact, schema and the speaking page.
 
 - Start page hero: portrait in the hall in a framed box right of the text, hidden below 900px.
-- Start page "Arbeitsweise": one 3:2 photo above each of the four steps.
+- Start page "Ausgewählte Projekte": one wide photo per project panel. The
+  "Arbeitsweise" steps have no photos any more (Fabian 2026-10-30: otherwise too
+  many photos of him on one page).
 - Service pages and questions page: square photo right of the page head, as wide
   as the side column (`.service-head.has-photo`, mapping `servicePhotos`); 16:9 full width below 960px.
 - Masterclass overview: 3:2 photo at the top of the side column.
@@ -261,5 +263,5 @@ speaking page pattern, which he rated 2 (still fine to reuse, no longer the firs
   any wide graphic.
 - **Blog card drawings** as a series, the **icon library**, and the **article preview
   images** (`src/lib/og.ts`; logo line to be aligned with the standard image, backlog G4).
-- **Start page:** hero with measure lines on the photo, "Arbeitsweise" with photos and
+- **Start page:** hero with measure lines on the photo, "Arbeitsweise" with icons and
   progress line, service tiles with "Weitere Leistungen" box.

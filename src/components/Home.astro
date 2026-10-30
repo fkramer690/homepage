@@ -42,8 +42,6 @@ const mcTexts = t.masterclasses;
 const [qOpen, qClose] = lang === 'de' ? ['„', '“'] : ['“', '”'];
 // Icons of the four approach steps (analyse, design, steer, implement).
 const stepIcons = ['analyse', 'design', 'steer', 'implement'];
-// Photo per approach step; versions chosen so shirt and counterpart change from step to step.
-const stepPhotos: PhotoKey[] = ['07-rundgang-produktion-v02', '02-workshop-whiteboard-v03', '09-coaching-bildschirm-v01', '10-projektabschluss-v02'];
 // Photo per reference project (by order), with its own crop for the wide panel image.
 const refPhotos: { photo: PhotoKey; focus: string }[] = [
   { photo: '01-werkhalle-v02', focus: '55% 30%' },
@@ -242,7 +240,6 @@ const serviceIcons = ['architecture', 'change', 'pipeline', 'integration', 'team
         <ol class="steps">
           {t.approach.steps.map((s, i) => (
             <li>
-              <Photo photo={stepPhotos[i]} lang={lang} class="step-photo" widths={[320, 480, 640]} sizes="(max-width: 520px) calc(100vw - 32px), (max-width: 860px) 45vw, 280px" />
               <Icon name={stepIcons[i]} class="step-icon" />
               <span class="step-no mono">{String(i + 1).padStart(2, '0')}</span>
               <h3>{s.title}</h3>

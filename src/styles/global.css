@@ -709,7 +709,6 @@ a:hover { color: var(--anthracite); }
 .steps.js-progress.is-visible li:nth-child(3)::after { transition-delay: 1.2s; }
 .steps.js-progress.is-visible li:nth-child(4),
 .steps.js-progress.is-visible li:nth-child(4)::after { transition-delay: 1.8s; }
-.step-photo { display: block; width: calc(100% - 4px); height: auto; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 8px; margin-bottom: 18px; }
 .step-icon { display: block; width: 44px; height: 44px; margin-bottom: 10px; }
 .step-no { font-size: 0.75rem; color: var(--cyan-dark); display: block; margin-bottom: 0.6em; }
 .steps p { color: var(--text-2); font-size: 0.97rem; }
