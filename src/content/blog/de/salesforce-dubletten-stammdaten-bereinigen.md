@@ -97,4 +97,4 @@ Ich empfehle deshalb pro Land und pro Objekt eine verantwortliche Person auf Kun
 
 Legen Sie eine Matching Rule für Accounts an und lassen Sie den Bericht laufen. Die Zahl der möglichen Paare unter Ihren hundert wichtigsten Kunden sagt mehr über den Zustand Ihrer Daten als jedes Audit. Danach legen Sie pro Objekt das führende System und den Schlüssel fest und stellen die Schnittstelle auf Upsert um, bevor Sie mit dem Zusammenführen beginnen.
 
-Saubere Stammdaten sind die Voraussetzung für jeden Agenten, jeden Bericht und jeden Techniker vor Ort. Wenn Sie Ihre Daten vor dem nächsten KI-Projekt prüfen möchten, [schreiben Sie mir](#contact).
+Saubere Stammdaten sind die Voraussetzung für jeden Agenten, jeden Bericht und jeden Techniker vor Ort.

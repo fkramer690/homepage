@@ -96,4 +96,4 @@ Jede Quelle hat ihren eigenen Namen. Wer nur unter einem sucht, findet die Hälf
 
 Was das Produkt unter welchem Namen auch immer abdeckt, steht in [Revenue Cloud für Hersteller: Wann lohnt es sich?](../revenue-cloud-lohnt-sich-hersteller/), was es kostet in [Revenue Cloud Preise: Growth, Advanced und Add-ons](../revenue-cloud-editionen-preise/). Das [Überblickskapitel der Masterclass Revenue Cloud](../../masterclass/revenue-cloud/revenue-cloud-ueberblick/) führt diese Themen zusammen.
 
-Der Name auf der Website wird sich wahrscheinlich wieder ändern, deshalb zählen Edition und SKU in Ihrem Vertrag. Wenn Sie unsicher sind, welches Produkt ein Angebot oder ein Partnervorschlag tatsächlich beschreibt, [schreiben Sie mir](#contact).
+Der Name auf der Website wird sich wahrscheinlich wieder ändern, deshalb zählen Edition und SKU in Ihrem Vertrag.

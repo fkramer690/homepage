@@ -21,6 +21,9 @@ Stand 28.10.2026. Grundlage: Ranking-Lauf, KI-Check und OnPage-Crawl vom 28.10.2
 | D11 | Seite „Freiberuflicher Salesforce Architect“ (DE `/freiberuflicher-salesforce-architect/`, EN `/en/freelance-salesforce-architect/`): Anlässe, Abgrenzung zum Implementierungspartner, Ergebnisse, Praxisbeispiel, Konditionen, FAQ; im Footer verlinkt | Claude | erledigt (29.10.2026) |
 | D12 | Artikel „Salesforce-Freelancer oder Agentur: wann was passt“ (DE + EN, Kategorie Architektur & Partnersteuerung) | Claude | erledigt (29.10.2026) |
 | D13 | CV-Download auf der Recruiter-Seite (`/partner/recruiter/`, `/en/partners/recruiters/`) mit Hinweis: Hier liegt immer die aktuelle Version, ältere Versionen bitte nicht mehr bei Kunden einreichen. Lebenslauf gibt es nur in einer Version (Englisch) | Fabian (CV-PDF), dann Claude | offen |
+| D14 | Open CTI (PR #82): Antworten auf 3 Fragen (meister Aufwand im globalen CTI-Rollout und Rolle von MuleSoft und Teams, lief Mirage über Open CTI mit Swyx, Lehre aus dem Rollout als Praxisbeispiel) | Fabian | offen |
+| D15 | SAP-Überblick (PR #113, L2): Antworten auf 2 Fragen (war das ERP bei den Sales Agreements mit Ist-Mengen ein SAP, Erfahrung mit SAP Integration Suite statt MuleSoft) | Fabian | offen |
+| D16 | Ranking-Auswertung Change-Management-Reihe (Hub und Spokes): Zwischenstand ca. 26.11.2026, Auswertung ca. 24.12.2026 | Claude | ab 26.11.2026 |
 
 Ausgangswerte 28.10.2026: „document builder limitations“ (EN) Platz 6, „field service lizenzen salesforce“ 11 (rankt mit „lohnt sich“), „salesforce field service“ 27 (170 Suchen), „field service einführung“ 29 (rankt mit „lohnt sich“), „manufacturing cloud vs sales cloud“ 30, „salesforce field service license“ 38, „salesforce document builder“ 39. KI-Übersichten bei 51 von 52 Begriffen, fk-sd.de in keiner zitiert. KI-Assistenten (ChatGPT, Claude, Perplexity, Google AI Mode): 0 Nennungen.
 
@@ -144,6 +147,8 @@ Ideen für mehr persönliche Note, von Fabian freigegeben, später abarbeiten:
 14. **Blog-Artikelserie Salesforce B2B Commerce** (von Fabian gewünscht 27.10.2026) – Serie von Fachbeiträgen im Blog (EN/DE). *Entwurf: Claude, Freigabe: Fabian.*
 
 15. **Eigener Kontakt für Julianes Artikel** (von Fabian gewünscht 29.10.2026) – Julianes Artikel (und ggf. ihr Profil) bekommen Julianes eigenen Buchungslink und/oder ihre E-Mail statt Fabians Bookings und Formular. Bis dahin läuft jeder Kontakt über Fabian. *Braucht: Buchungslink oder E-Mail von Juliane.*
+
+16. **Alle Grafiken durchgehen und die besten nominieren** (von Fabian gewünscht 29.10.2026) – Irgendwann alle Grafiken und grafischen Bausteine der Website gemeinsam durchsehen (Content-Blöcke, Erklärgrafiken, Kartenskizzen, Seitenlayouts) und daraus wieder die besten nominieren. Die Gewinner kommen nach `docs/layouts.md` als bevorzugte Vorlagen, schwache Stellen bekommen einen eigenen Punkt. Bisher nominiert unter anderem: Säulen mit Dach (DevOps-Leistungsseite). *Übersicht mit Screenshots: Claude, Auswahl: Fabian.*
 
 Weitere offene Punkte:
 - Fallstudien-Seiten (Ausgangslage, Architekturentscheidungen, Ergebnis, Grafik), sobald die Kundenfreigaben vorliegen. Status klärt Fabian.

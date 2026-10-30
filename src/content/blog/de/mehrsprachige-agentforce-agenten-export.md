@@ -72,7 +72,6 @@ Für Servicemitarbeitende gibt es eine eigene Funktion. [Real-Time Translations]
 
 Ein Token ist die Einheit, die ein Sprachmodell liest und schreibt, oft ein Wortteil. Das [Help Center von OpenAI](https://help.openai.com/en/articles/4936856-understanding-and-counting-tokens) nennt als Faustregel ein Token pro etwa vier Zeichen und merkt an, dass andere Sprachen ein anderes Verhältnis zwischen Zeichen, Wörtern und Tokens haben können.
 
-
 Bei Flex Credits wirkt das in Stufen. Laut Hilfeartikel zählen Prompts in Einheiten von 2.000 Tokens, aufgerundet, Eingabe und Ausgabe zusammen. Das Beispiel dort: Ein Prompt mit 6.500 Tokens zählt als vier Prompts. Aktionen kosten pro Aufruf, egal in welcher Sprache. Eine Antwort mit Wissensbezug, die auf Englisch 1.750 Tokens braucht, passt in eine Einheit. Braucht dieselbe Antwort in einer anderen Sprache ein Viertel mehr Tokens, eine angenommene Größe, sind es rund 2.190 Tokens und zwei Einheiten, also 8 statt 4 Credits auf einem Standard-Modell. Die Methode steht in [Flex Credits und Agentforce-Kosten pro Aktion](../flex-credits-agentforce-kosten-pro-aktion/), die Grundlagen im Masterclass-Kapitel [Kosten und Token](../../masterclass/ki-salesforce/kosten-und-token/).
 
 Die Qualität ist der zweite Grund, pro Sprache zu testen. Der Leitfaden warnt, dass die meisten großen Sprachmodelle überwiegend mit Englisch trainiert sind. Ich würde die Anweisungen einmal schreiben und in jeder erlaubten Sprache testen.
@@ -122,4 +121,4 @@ Die Sprache kostet im Szenario rund 112 € im Monat zusätzlich zu 1.200 € f�
 
 Bei einem Rollout über mehrere Länder wird die Sprache eine Spalte in der Tabelle aus [Manufacturing Cloud weltweit ausrollen](../manufacturing-cloud-weltweit-ausrollen/). Sprachauswahl und Retriever-Design gehören zu meiner Arbeit in der [Salesforce-Architektur](../../leistungen/salesforce-architektur/).
 
-Ein mehrsprachiger Händleragent kostet bei der Übersetzung wenig, das Geld steckt im Wissen und in den Tests, die Sie pro Sprache betreiben. Wenn Sie die Sprachen für Ihr Händlernetz planen möchten, [schreiben Sie mir](#contact).
+Ein mehrsprachiger Händleragent kostet bei der Übersetzung wenig, das Geld steckt im Wissen und in den Tests, die Sie pro Sprache betreiben.

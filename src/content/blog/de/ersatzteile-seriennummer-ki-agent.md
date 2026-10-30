@@ -121,4 +121,4 @@ Mit Technikern starten
 
 Welches System welche Daten führt, ist Thema der [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/); das größere Bild zu Agenten in der Fertigung zeigt das Masterclass-Kapitel [KI-Agenten in der Fertigung](../../masterclass/ki-salesforce/ki-agenten-in-der-fertigung/).
 
-Ein Agent findet das richtige Ersatzteil nur so zuverlässig, wie Ihre Seriennummern zu einer As-built-Stückliste führen; wenn Sie das prüfen möchten, bevor jemand einen Agenten baut, [schreiben Sie mir](#contact).
+Ein Agent findet das richtige Ersatzteil nur so zuverlässig, wie Ihre Seriennummern zu einer As-built-Stückliste führen.

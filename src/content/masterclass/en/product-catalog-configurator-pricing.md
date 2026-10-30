@@ -87,9 +87,11 @@ Constraint models are written in CML, the Constraint Modeling Language. Visual B
 
 That question decides the route more than any feature list:
 
-- **Spreadsheets and the heads of application engineers.** The best case for Revenue Cloud. The rules have to be written down anyway, and CML gives them a home with tests.
-- **SAP variant configuration.** If SAP checks every order again, a rebuild in CML creates a second rule set that drifts away from the first. Either SAP stays the master and Salesforce takes the result, or the master moves to Salesforce and SAP accepts the configuration.
-- **PLM or an engineering configurator** that produces drawings or bills of materials. Then that tool stays, and Salesforce receives the configured product with its price-relevant attributes.
+| Where the rules live | What follows |
+|---|---|
+| Spreadsheets and the heads of application engineers | The best case for Revenue Cloud. The rules have to be written down anyway, and CML gives them a home with tests. |
+| SAP variant configuration | If SAP checks every order again, a rebuild in CML creates a second rule set that drifts away from the first. Either SAP stays the master and Salesforce takes the result, or the master moves to Salesforce and SAP accepts the configuration. |
+| PLM or an engineering configurator | That produces drawings or bills of materials. Then that tool stays, and Salesforce receives the configured product with its price-relevant attributes. |
 
 Whichever route you take, name the person who maintains the rules after go-live before the build starts.
 
@@ -160,4 +162,4 @@ Three classifications with about a dozen attributes each, 30 base machines, conf
 
 Setting these boundaries between SAP and Salesforce is part of my work on [Salesforce architecture](../../../services/salesforce-architecture/), and the price interface itself falls under [Salesforce integration](../../../services/salesforce-integration/). [Chapter 3](../quote-contract-order/) continues with approvals, contracts and the order hand-over to SAP, and all chapters are on the [overview page](../).
 
-Catalog, configurator and pricing work in Revenue Cloud when each has one master and one owner at the manufacturer. If you want to check that for your products and prices, [send me a message](#contact).
+Catalog, configurator and pricing work in Revenue Cloud when each has one master and one owner at the manufacturer.

@@ -113,4 +113,4 @@ Six weeks sounds long. A pilot stopped after four weeks costs more.
 
 Getting teams and partners to adopt new rules in daily work is part of my [change management](../../services/change-management-salesforce/) work; the framework for roles and review is in [chapter 9 of the masterclass](../../masterclass/ai-salesforce/teamwork-and-delivery/).
 
-At a German site with a works council, AI coding tools go live only once the works council and data protection have agreed, and with good preparation that takes weeks, not months, in my judgement. If you want a second opinion on your annex or your model routes, [send me a message](#contact).
+At a German site with a works council, AI coding tools go live only once the works council and data protection have agreed, and with good preparation that takes weeks, not months, in my judgement.

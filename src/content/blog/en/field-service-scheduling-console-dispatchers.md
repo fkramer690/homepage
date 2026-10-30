@@ -94,4 +94,4 @@ The note on Why? is worth collecting. If dispatchers use it often and then chang
 
 Check the engine first. If it is still the older one, the console question waits until the switch to Enhanced Scheduling and Optimization. If it already is the enhanced engine, give two dispatchers the permission set and let them plan one territory for a few weeks. Engine, console and policy owner are the three decisions of the masterclass chapter on [scheduling and dispatch](../../masterclass/field-service/field-service-scheduling-dispatch/).
 
-Move dispatchers to the Scheduling Console when the views they use every day are there, and not because a new screen is available. If you want an independent view on how your dispatch team should work with it, [send me a message](#contact).
+Move dispatchers to the Scheduling Console when the views they use every day are there, and not because a new screen is available.

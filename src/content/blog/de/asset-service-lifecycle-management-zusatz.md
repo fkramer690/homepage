@@ -111,4 +111,4 @@ Ein typisches Szenario, als Annahme: Ein Hersteller von Hydraulikkomponenten arb
 
 Wie Assets, Wartung und Teile zusammenhängen, behandelt das [Kapitel Assets, Wartung, Teile und Partner der Field-Service-Masterclass](../../masterclass/field-service/field-service-assets-wartung-teile/).
 
-Asset Service Lifecycle Management lohnt sich, wenn Sie mehrere seiner Abläufe nutzen, und selten für reine Wartungspläne. Wenn Sie Ihre Asset-Prozesse vor der Unterschrift unabhängig prüfen lassen möchten, [schreiben Sie mir](#contact).
+Asset Service Lifecycle Management lohnt sich, wenn Sie mehrere seiner Abläufe nutzen, und selten für reine Wartungspläne.

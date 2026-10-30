@@ -108,4 +108,4 @@ For a first pass I would sit with the Salesforce admin and the head of service f
 
 The same questions apply to external AI tools that read Salesforce data through MCP, because the trifecta does not care which client reads the field. I cover that in [hosted MCP servers and data access](../salesforce-hosted-mcp-servers-data-access/), and the OAuth side in [connected apps and AI integrations](../connected-apps-oauth-ai-integrations/). Mapping data flows and permissions like this is part of my [Salesforce architecture work](../../services/salesforce-architecture/).
 
-An agent that reads text from dealers or the web needs narrow read rights and no way out, and with both in place prompt injection becomes a quality issue instead of a data leak. If you want a second look at your portal and agent setup, [send me a message](#contact).
+An agent that reads text from dealers or the web needs narrow read rights and no way out, and with both in place prompt injection becomes a quality issue instead of a data leak.

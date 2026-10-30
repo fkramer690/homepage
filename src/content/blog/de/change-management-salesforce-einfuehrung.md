@@ -104,4 +104,4 @@ Beantworten Sie für Ihr nächstes Release drei Fragen schriftlich: Welche Grupp
 
 Wer die fünf Stufen der Reihe nach durchgehen möchte, findet sie in der [Masterclass Change Management](../../masterclass/change-management/), ein Kapitel pro Stufe mit den passenden Artikeln.
 
-Salesforce ist erst eingeführt, wenn die Menschen damit arbeiten. Wenn eine Einführung ansteht oder neue Prozesse nicht genutzt werden, [schreiben Sie mir](#contact) oder lesen Sie mehr über meine [Change Management Beratung für Salesforce](../../leistungen/change-management/).
+Salesforce ist erst eingeführt, wenn die Menschen damit arbeiten. Mehr dazu lesen Sie unter [Change Management Beratung für Salesforce](../../leistungen/change-management/).

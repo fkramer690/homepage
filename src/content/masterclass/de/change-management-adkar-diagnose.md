@@ -98,11 +98,13 @@ Entscheidend ist der Zeitpunkt. Change Management, das zwei Wochen vor dem Go-li
 
 Der Kunde. Ein Umsetzungspartner baut das System, die Veränderung im eigenen Unternehmen kann er nicht verantworten, weil er keinem Vertriebsleiter sagen kann, wie dessen Team künftig arbeitet. In den Programmen, die ich begleite, verteilen sich die Rollen so:
 
-- **Sponsor im Management:** steht sichtbar hinter der Einführung, entscheidet bei Konflikten zwischen Bereichen und fragt nach der Nutzung. Mehr in [Kapitel 2](../sponsor-und-kommunikation/).
-- **Product Owner und Programmleitung:** halten den Einführungsplan je Release mit dem Release-Plan zusammen.
-- **Key User:** tragen Wissen ins Team und Rückmeldungen ins Projekt, siehe [Kapitel 3](../key-user-und-schulung/).
-- **Change-Managerin oder Change-Manager:** plant die Maßnahmen je Gruppe und Stufe und berät Sponsor und Führungskräfte. In großen Programmen lohnt dafür eine eigene Person mit Methodenerfahrung.
-- **Architekt:** achtet darauf, dass Entscheidungen zu Template, Pflichtfeldern und Releases die Betroffenen mitdenken.
+| Rolle | Aufgabe |
+|---|---|
+| Sponsor im Management | Steht sichtbar hinter der Einführung, entscheidet bei Konflikten zwischen Bereichen und fragt nach der Nutzung. Mehr in [Kapitel 2](../sponsor-und-kommunikation/). |
+| Product Owner und Programmleitung | Halten den Einführungsplan je Release mit dem Release-Plan zusammen. |
+| Key User | Tragen Wissen ins Team und Rückmeldungen ins Projekt, siehe [Kapitel 3](../key-user-und-schulung/). |
+| Change-Managerin oder Change-Manager | Plant die Maßnahmen je Gruppe und Stufe und berät Sponsor und Führungskräfte. In großen Programmen lohnt dafür eine eigene Person mit Methodenerfahrung. |
+| Architekt | Achtet darauf, dass Entscheidungen zu Template, Pflichtfeldern und Releases die Betroffenen mitdenken. |
 
 ## Was legen Sie vor dem ersten Release fest?
 

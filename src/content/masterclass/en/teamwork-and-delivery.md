@@ -176,4 +176,4 @@ Evaluation | weeks 7 to 8
 
 The warranty stream comes later, because credit notes are posted in SAP and an end-to-end test before each release stays there. This sequencing is part of what I set up in [programme management for Salesforce programmes](../../../services/program-management-nearshore/); getting business time released and communicating with the team belong to [change management](../../../services/change-management-salesforce/). All chapters are on the [masterclass overview](../).
 
-AI speeds up a Salesforce programme only as far as review, acceptance and co-determination keep pace, and organising that is your job as the client. If you want to prepare your team and partners for it, [send me a message](#contact).
+AI speeds up a Salesforce programme only as far as review, acceptance and co-determination keep pace, and organising that is your job as the client.

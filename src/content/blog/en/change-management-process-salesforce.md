@@ -92,4 +92,4 @@ The process ends when the new way of working is measurably in use and nobody fro
 
 Take the project plan of your next Salesforce initiative and write down for every phase which change output should exist at its end. If planning is missing the impact assessment, the sponsor plan or the metrics, that is your first step. The hub article [Salesforce change management: why rollouts fail](../change-management-salesforce-rollout/) shows which topics belong to it.
 
-Change management is a process that starts with the project plan and ends after go-live. If you want to set it up for your programme, [send me a message](#contact) or read more about [Salesforce change management consulting](../../services/change-management-salesforce/), which I offer with my cooperation partner [Juliane Winterscheid](../../partners/juliane-winterscheid/).
+Change management is a process that starts with the project plan and ends after go-live. Read more about [Salesforce change management consulting](../../services/change-management-salesforce/).

@@ -60,12 +60,14 @@ Die [Produktseite](https://www.salesforce.com/sales/revenue-cloud-billing/) nenn
 
 Ein Nebenbuch führt die Einzelheiten der Forderungen, also jede Rechnung, Gutschrift und Zahlung, und übergibt Buchungssätze an das Hauptbuch. Das Hauptbuch bleibt in SAP. Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/billing-management-with-revenue-cloud/set-up-billing-basics) ordnen Legal Entities jede Abrechnungsbuchung der richtigen Buchungsperiode und dem richtigen Sachkonto zu. All das gibt es in SAP schon, als Buchungskreise, Geschäftsjahresperioden und Sachkonten.
 
+```hinweis offen
 Bevor ein Partner etwas konfiguriert, beantwortet Finance deshalb vier Fragen:
 
-1. Welche Buchungskreise fakturieren aus Salesforce, und welche Legal Entities entsprechen ihnen?
-2. Wer schließt eine Buchungsperiode in Salesforce, und in welcher Reihenfolge zum Periodenabschluss in SAP?
-3. Wer pflegt die Zuordnung der Sachkonten, wenn sich der Kontenplan ändert?
-4. Wie werden die Forderungen in Salesforce und SAP zum Monatsende abgestimmt, und wer klärt Differenzen?
+- Welche Buchungskreise fakturieren aus Salesforce, und welche Legal Entities entsprechen ihnen?
+- Wer schließt eine Buchungsperiode in Salesforce, und in welcher Reihenfolge zum Periodenabschluss in SAP?
+- Wer pflegt die Zuordnung der Sachkonten, wenn sich der Kontenplan ändert?
+- Wie werden die Forderungen in Salesforce und SAP zum Monatsende abgestimmt, und wer klärt Differenzen?
+```
 
 Trailhead beschreibt eine Rolle [Accounts Receivable Admin](https://trailhead.salesforce.com/content/learn/modules/billing-basics-in-revenue-cloud/explore-billing-features-and-roles), die Buchungsperioden, Buchungssätze und Finanzberichte verwaltet. In einem Fertigungsunternehmen sitzt diese Person in der Buchhaltung. Übernimmt dort niemand die Rolle, würde ich Billing nicht live nehmen. Die Schnittstellen für Buchungssätze und Rechnungsstatus gehören zu meiner Arbeit an [Salesforce-Schnittstellen](../../../leistungen/salesforce-schnittstellen/).
 
@@ -122,9 +124,11 @@ Liable Summary --> Billing-Rechnung
 
 Für eine Maschine lässt sich das direkt übertragen. Betriebsstunden werden zur Nutzungsressource, das verkaufte Produkt trägt ein Kontingent von zum Beispiel 300 Stunden im Monat, und eine Rate Card bepreist die Stunden darüber in Staffeln. Jeder Kunde bekommt mit der Auftragsaktivierung ein Wallet je Ressource. Die Beispiele von Salesforce sind allerdings Cloud-Speicher und Mobilfunktarife, und der schwierige Teil liegt bei Maschinen außerhalb von Salesforce:
 
-- **Ein verlässlicher Zähler je Maschine.** Die Steuerung meldet an eine IoT-Plattform oder einen Historian, der die Zeitreihen hält. Salesforce bekommt einen Datensatz je Maschine und Tag, nie Rohwerte.
-- **Prüfungen vor der Bewertung.** Seriennummer zu Asset und Account, Zählerrücksprünge nach einem Steuerungstausch, Lücken, wenn eine Maschine offline war, Dubletten aus wiederholten Übertragungen.
-- **Ein Vertrag, der die Einheit festlegt.** Betriebsstunden, Laststunden oder Gutteile; welcher Zähler verbindlich ist; wie Lücken behandelt werden; das Mindestentgelt, das die Finanzierung der Maschine absichert.
+| Voraussetzung | Was dazu gehört |
+|---|---|
+| Ein verlässlicher Zähler je Maschine | Die Steuerung meldet an eine IoT-Plattform oder einen Historian, der die Zeitreihen hält. Salesforce bekommt einen Datensatz je Maschine und Tag, nie Rohwerte. |
+| Prüfungen vor der Bewertung | Seriennummer zu Asset und Account, Zählerrücksprünge nach einem Steuerungstausch, Lücken, wenn eine Maschine offline war, Dubletten aus wiederholten Übertragungen. |
+| Ein Vertrag, der die Einheit festlegt | Betriebsstunden, Laststunden oder Gutteile; welcher Zähler verbindlich ist; wie Lücken behandelt werden; das Mindestentgelt, das die Finanzierung der Maschine absichert. |
 
 Derselbe Tageszähler steuert oft auch die Wartung nach Betriebsstunden in Field Service, ein Datenstrom kann also beides bedienen. Die Field-Service-Sicht steht im [Kapitel zu Assets und Wartung](../../field-service/field-service-assets-wartung-teile/). Die Bewertung steckt als "Usage Rating & Digital Wallet" im Billing-Add-on; klären Sie im Order Form, welche Lizenz sie abdeckt. Szenario und Vertrags-Checkliste stehen in [Pay-per-Use für Maschinen](../../../blog/pay-per-use-maschinen-revenue-cloud/).
 
@@ -148,13 +152,15 @@ Ein typisches Szenario, als Annahme: Ein Maschinenbauer mit SAP S/4HANA erstellt
 
 Damit das klappt, legt der Kunde diese Punkte selbst fest, bevor der Partner konfiguriert:
 
-1. **Den Rechnungssteller je Umsatzart**, schriftlich und von Finance unterschrieben.
-2. **Den Accounts Receivable Admin** in der Buchhaltung, dazu die Reihenfolge des Periodenabschlusses in Salesforce und SAP.
-3. **Den E-Rechnungsweg** für jede deutsche Legal Entity, vor der ersten Billing-Rechnung.
-4. **Eine Prognose der Billing Events** je Vertragsjahr, verantwortet von Finance, mit dem Preis je Event aus dem Angebot.
-5. **Den Nutzungsdatenstrom und die Vertragsbedingungen** für Pay-per-Use, bevor es eine Rate Card gibt.
-6. **Die Verbindung zu Field Service** für Wartungsverträge, als Automatisierung mit Verantwortlichem.
+| Festlegung | Was dazu gehört |
+|---|---|
+| Den Rechnungssteller je Umsatzart | Schriftlich und von Finance unterschrieben. |
+| Den Accounts Receivable Admin | In der Buchhaltung, dazu die Reihenfolge des Periodenabschlusses in Salesforce und SAP. |
+| Den E-Rechnungsweg | Für jede deutsche Legal Entity, vor der ersten Billing-Rechnung. |
+| Eine Prognose der Billing Events | Je Vertragsjahr, verantwortet von Finance, mit dem Preis je Event aus dem Angebot. |
+| Den Nutzungsdatenstrom und die Vertragsbedingungen | Für Pay-per-Use, bevor es eine Rate Card gibt. |
+| Die Verbindung zu Field Service | Für Wartungsverträge, als Automatisierung mit Verantwortlichem. |
 
 Wer heute noch das alte Salesforce-Billing-Paket nutzt, muss zusätzlich offene Rechnungen, Abrechnungspläne und Zahlungshistorie umziehen. Diese Migration gehört zu [Kapitel 5, von CPQ zu Revenue Cloud](../von-cpq-zu-revenue-cloud/).
 
-Revenue Cloud Billing lohnt sich dort, wo sich Verträge schneller ändern, als SAP folgen kann, und wo diese Grenze verläuft, entscheidet Finance. Wenn Sie diese Grenze für Ihr Unternehmen prüfen möchten, [schreiben Sie mir](#contact).
+Revenue Cloud Billing lohnt sich dort, wo sich Verträge schneller ändern, als SAP folgen kann, und wo diese Grenze verläuft, entscheidet Finance.

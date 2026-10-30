@@ -106,4 +106,4 @@ I would use the migration to clean up. CPQ orgs tend to collect approval rules t
 
 Write the approval matrix on one page before anyone builds a workflow: triggers, thresholds, owners and the source of the cost data. Then build the workflows with preview, parallel approvers and delegation, and test each rule with a quote that should and one that should not trigger it. How approvals fit into the path from quote to order is in the chapter [quote, contract, order](../../masterclass/revenue-cloud/quote-contract-order/), and I help with this as part of [Salesforce architecture](../../services/salesforce-architecture/).
 
-A short approval matrix with clear owners keeps sales fast and gives finance control. If you want a second opinion on yours, [send me a message](#contact).
+A short approval matrix with clear owners keeps sales fast and gives finance control.

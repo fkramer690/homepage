@@ -129,4 +129,4 @@ Die Add-ons erhöhen die Lizenzzeile um 40 Prozent. Will dasselbe Unternehmen au
 
 Auch intern braucht nicht jeder die Branchenlizenz, wie in [braucht jeder eine volle Lizenz](../salesforce-lizenzen-volle-lizenz/) beschrieben. Der ganze Business Case steht in Kapitel 1 der [Masterclass Manufacturing Cloud](../../masterclass/manufacturing-cloud/einordnung-und-business-case/), die Funktionsliste dahinter in [Manufacturing Cloud Funktionen: was enthalten ist](../manufacturing-cloud-funktionen-ueberblick/). Lizenzprognosen gehören zu meiner Arbeit bei [Make-or-buy und Lizenzen](../../leistungen/make-or-buy-lizenzen/).
 
-Der Editionspreis ist nur die erste Zeile eines Angebots für die Manufacturing Cloud, über die Summe entscheiden die Add-ons. Wenn Sie ein Angebot Zeile für Zeile prüfen lassen möchten, [schreiben Sie mir](#contact).
+Der Editionspreis ist nur die erste Zeile eines Angebots für die Manufacturing Cloud, über die Summe entscheiden die Add-ons.

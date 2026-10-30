@@ -87,9 +87,11 @@ Constraint-Modelle werden in CML geschrieben, der Constraint Modeling Language. 
 
 Diese Frage entscheidet den Weg mehr als jede Funktionsliste:
 
-- **In Tabellen und in den Köpfen der Anwendungstechnik.** Der beste Fall für Revenue Cloud. Die Regeln müssen ohnehin aufgeschrieben werden, und CML gibt ihnen ein Zuhause mit Tests.
-- **In der SAP-Variantenkonfiguration.** Prüft SAP jeden Auftrag erneut, entsteht mit einem Nachbau in CML ein zweites Regelwerk, das sich vom ersten entfernt. Entweder bleibt SAP führend und Salesforce übernimmt das Ergebnis, oder die Führung wandert nach Salesforce und SAP übernimmt die Konfiguration.
-- **Im PLM oder in einem technischen Konfigurator**, der Zeichnungen oder Stücklisten erzeugt. Dann bleibt dieses Werkzeug, und Salesforce bekommt das konfigurierte Produkt mit seinen preisrelevanten Attributen.
+| Wo die Regeln liegen | Was daraus folgt |
+|---|---|
+| In Tabellen und in den Köpfen der Anwendungstechnik | Der beste Fall für Revenue Cloud. Die Regeln müssen ohnehin aufgeschrieben werden, und CML gibt ihnen ein Zuhause mit Tests. |
+| In der SAP-Variantenkonfiguration | Prüft SAP jeden Auftrag erneut, entsteht mit einem Nachbau in CML ein zweites Regelwerk, das sich vom ersten entfernt. Entweder bleibt SAP führend und Salesforce übernimmt das Ergebnis, oder die Führung wandert nach Salesforce und SAP übernimmt die Konfiguration. |
+| Im PLM oder in einem technischen Konfigurator | Der Zeichnungen oder Stücklisten erzeugt. Dann bleibt dieses Werkzeug, und Salesforce bekommt das konfigurierte Produkt mit seinen preisrelevanten Attributen. |
 
 Welchen Weg Sie auch wählen: Benennen Sie vor dem Projektstart, wer die Regeln nach dem Go-live pflegt.
 
@@ -160,4 +162,4 @@ Drei Klassifizierungen mit je etwa einem Dutzend Attributen, 30 Grundmaschinen, 
 
 Diese Grenzen zwischen SAP und Salesforce zu ziehen, ist Teil meiner Arbeit in der [Salesforce-Architektur](../../../leistungen/salesforce-architektur/), die Preisschnittstelle selbst gehört zu [Salesforce-Schnittstellen](../../../leistungen/salesforce-schnittstellen/). [Kapitel 3](../angebot-vertrag-auftrag/) geht weiter mit Freigaben, Verträgen und der Auftragsübergabe an SAP, alle Kapitel finden Sie auf der [Übersichtsseite](../).
 
-Katalog, Konfigurator und Preisfindung funktionieren in Revenue Cloud, wenn jedes ein führendes System und eine verantwortliche Person beim Hersteller hat. Wenn Sie das für Ihre Produkte und Preise prüfen möchten, [schreiben Sie mir](#contact).
+Katalog, Konfigurator und Preisfindung funktionieren in Revenue Cloud, wenn jedes ein führendes System und eine verantwortliche Person beim Hersteller hat.

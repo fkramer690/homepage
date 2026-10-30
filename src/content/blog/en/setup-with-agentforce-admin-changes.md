@@ -111,4 +111,4 @@ Watch consumption
   Track Setup agent usage against the 500 actions and ask Salesforce in writing how actions beyond that are billed.
 ```
 
-If you want the release process and the rights model to cover admin AI, that is part of [DevOps and release management](../../services/devops-release-management/). The Setup agent is a fast way to build metadata and a poor way to deploy it; if you want to set that boundary in your org, [send me a message](#contact).
+If you want the release process and the rights model to cover admin AI, that is part of [DevOps and release management](../../services/devops-release-management/). The Setup agent is a fast way to build metadata and a poor way to deploy it.

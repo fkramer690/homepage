@@ -110,4 +110,4 @@ Monitoring einschalten
   Und die Rollout-Gruppe festlegen, bevor Sie den Agenten aktivieren.
 ```
 
-Ein Agentforce-Agent ist bereit, wenn er vorab festgelegte Schwellen Lauf für Lauf erreicht und Sie ab dem ersten Tag sehen, was er in Produktion tut. Wenn Sie eine zweite Meinung zu Ihrem Testsatz oder Ihren Go-live-Kriterien möchten, [schreiben Sie mir](#contact).
+Ein Agentforce-Agent ist bereit, wenn er vorab festgelegte Schwellen Lauf für Lauf erreicht und Sie ab dem ersten Tag sehen, was er in Produktion tut.

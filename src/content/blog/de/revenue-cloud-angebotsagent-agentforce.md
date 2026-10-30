@@ -99,4 +99,4 @@ Hier passt der Agent gut. Eine Mitarbeiterin tippt "Verschleißteilsatz für Lin
 
 Wählen Sie eine Angebotsart mit Standardprodukten und synchronisierten Preisen, schreiben Sie 30 Testanfragen aus echten Fällen und legen Sie für jede das erwartete Angebot fest. Lassen Sie diese in einer Sandbox laufen, bevor ein Kunde oder Händler ein Agentenangebot sieht, wie in [Agentforce-Agenten testen und freigeben](../agentforce-agenten-testen-freigeben/) beschrieben. Wo Agenten in der Fertigung über Angebote hinaus passen, zeigt das Kapitel [KI-Agenten in der Fertigung](../../masterclass/ki-salesforce/ki-agenten-in-der-fertigung/), den ganzen Weg vom Angebot zum Auftrag das Kapitel [Angebot, Vertrag, Auftrag](../../masterclass/revenue-cloud/angebot-vertrag-auftrag/).
 
-Der Angebotsagent lohnt sich, wo Angebote häufig, Produkte standardisiert und Daten sauber sind. Wenn Sie prüfen möchten, ob das für Ihren Innendienst gilt, [schreiben Sie mir](#contact).
+Der Angebotsagent lohnt sich, wo Angebote häufig, Produkte standardisiert und Daten sauber sind.

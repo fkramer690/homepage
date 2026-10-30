@@ -113,4 +113,4 @@ Meine Faustregel: Salesforce Field Service ist der Standard für Hersteller, die
 3. **Stellen Sie PTC vier Fragen schriftlich**: Datenorte, Verfügbarkeit, Sprachmodell von ServiceMax AI und Zusammenspiel mit Salesforce-Funktionen.
 4. **Lassen Sie die Bewertung unabhängig rechnen.** Wie ich solche Varianten vergleiche, steht unter [Make-or-Buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/).
 
-ServiceMax ist eine ernsthafte Option für anlagenlastigen Service, aber immer eine zweite Schicht auf Salesforce. Wenn Sie eine Auswahl unabhängig begleiten lassen möchten, [schreiben Sie mir](#contact).
+ServiceMax ist eine ernsthafte Option für anlagenlastigen Service, aber immer eine zweite Schicht auf Salesforce.

@@ -85,4 +85,4 @@ Salesforce offers the free User Access and Permissions Assistant, which analyses
 
 Start with an inventory: how many profiles exist, how many users hang on each one, and which integration users have system permissions such as "Modify All Data"? Then write down the role matrix before you rebuild anything in Salesforce. From now on new features only get permission sets. The migration of the old profiles can follow role by role.
 
-A good permission concept is a table the client owns plus a rule that every new permission goes through a review. If you want your concept checked before the next partner joins, [send me a message](#contact) or read more about [Salesforce architecture on the client side](../../services/salesforce-architecture/).
+A good permission concept is a table the client owns plus a rule that every new permission goes through a review. Read more about [Salesforce architecture on the client side](../../services/salesforce-architecture/).

@@ -97,4 +97,4 @@ Review it once a year
   Tools, plans and terms change faster than contracts.
 ```
 
-AI coding by partners is fine when the contract says which tools, which data and which review apply, and when you can check it. If you want a second opinion on your partner contracts from the technical side, [send me a message](#contact).
+AI coding by partners is fine when the contract says which tools, which data and which review apply, and when you can check it.

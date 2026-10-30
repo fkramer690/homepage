@@ -119,4 +119,4 @@ Groups with one production org per subsidiary face a gap. The [agent command ref
 5. Write a rollback runbook: which version to reactivate, which Flows to revert, where dealers go when the agent is off.
 6. Check that both orgs are on API v68 before deploying agents with the new metadata types.
 
-An agent is ready for an enterprise release process when every version, activation and rollback is as traceable as any other change. If your partner is about to deliver an agent and the release path is still open, [send me a message](#contact).
+An agent is ready for an enterprise release process when every version, activation and rollback is as traceable as any other change.

@@ -103,6 +103,6 @@ Zeigen Sie die Change-Kurve nicht dem betroffenen Team mit dem Hinweis, es sei j
 
 Planen Sie das Tal ein. Wer weiß, dass Stimmung und Produktivität nach dem Start sinken, kann Ansprechpersonen bereitstellen, Ziele für die ersten Wochen anpassen und dem Management erklären, warum die ersten Zahlen schlechter aussehen. Fragen Sie je Gruppe, wo sie steht, statt für alle dieselbe Maßnahme zu wählen. Und verbinden Sie die Kurve mit einem Modell, das Maßnahmen ableitet; die Grundlagen dazu stehen in [Was ist Change Management?](../was-ist-change-management/).
 
-In Salesforce-Programmen begleite ich das gemeinsam mit Fabian Kramer, siehe [Change Management Beratung für Salesforce](../../leistungen/change-management/). Wenn bei Ihnen eine Veränderung ansteht und Sie das Tal kürzer halten wollen, [schreiben Sie uns](#contact).
+In Salesforce-Programmen begleite ich das gemeinsam mit Fabian Kramer, siehe [Change Management Beratung für Salesforce](../../leistungen/change-management/).
 
 Prosci und ADKAR sind eingetragene Marken von Prosci, Inc.

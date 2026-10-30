@@ -108,4 +108,4 @@ Die übrigen Techniker sollten vor dem Update wissen, was sich für sie ändert 
 
 App-Tests gehören zu [Kapitel 3 der Masterclass Field Service](../../masterclass/field-service/field-service-mobile-app-dokumente/), und einen Release-Prozess aufzusetzen, der sie abdeckt, gehört zu meiner Arbeit in [DevOps und Release-Management](../../leistungen/devops-und-release-management/).
 
-Jede App-Version, die eine Pilotgruppe getestet hat, bevor sie auf 100 Geräten landet, erspart einen Vormittag voller Supportanrufe. Wenn Sie eine solche Routine für Ihren Außendienst aufsetzen möchten, [schreiben Sie mir](#contact).
+Jede App-Version, die eine Pilotgruppe getestet hat, bevor sie auf 100 Geräten landet, erspart einen Vormittag voller Supportanrufe.

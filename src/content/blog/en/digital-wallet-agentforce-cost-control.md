@@ -118,4 +118,4 @@ One meter has no price yet: the rate card lists Headless Platform Interactions w
 
 How to estimate the consumption itself is in [Flex Credits cost per action](../flex-credits-agentforce-cost-per-action/), and licence planning across several companies is part of my [make-or-buy and licence planning](../../services/make-or-buy-licences/).
 
-Digital Wallet gives you the numbers per agent and cost center, but the ownership and the rules for leftovers have to come from you. If you want to set up Agentforce cost control for several plants or subsidiaries, [send me a message](#contact).
+Digital Wallet gives you the numbers per agent and cost center, but the ownership and the rules for leftovers have to come from you.

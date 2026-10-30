@@ -108,4 +108,4 @@ The other technicians should know before the update what changes for them and wh
 
 App testing is part of [chapter 3 of the Field Service masterclass](../../masterclass/field-service/field-service-mobile-app-documents/), and setting up a release process that covers it belongs to my work in [DevOps and release management](../../services/devops-release-management/).
 
-Every app version that a pilot group has tested before it reaches 100 devices saves a morning of support calls. If you want to set up such a routine for your field service, [send me a message](#contact).
+Every app version that a pilot group has tested before it reaches 100 devices saves a morning of support calls.

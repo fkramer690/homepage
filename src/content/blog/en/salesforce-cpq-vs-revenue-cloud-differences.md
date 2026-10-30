@@ -111,4 +111,4 @@ Whether the move pays off at all is a separate question, which I answer in [keep
 
 Count what you have: product rules, price rules, lines in the quote calculator plugin, quote templates, approval chains, open subscriptions and integrations that write to SBQQ objects. That list is the scope of the redesign. How the migration then runs in phases is described in [CPQ to Revenue Cloud migration](../cpq-to-revenue-cloud-migration-phases/) and in the masterclass chapter [from CPQ to Revenue Cloud](../../masterclass/revenue-cloud/from-cpq-to-revenue-cloud/).
 
-CPQ and Revenue Cloud share a purpose and differ in almost everything underneath, so treat the move as a new design. If you want help assessing your CPQ org before that decision, [send me a message](#contact).
+CPQ and Revenue Cloud share a purpose and differ in almost everything underneath, so treat the move as a new design.

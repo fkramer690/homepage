@@ -119,4 +119,4 @@ Unternehmensgruppen mit einer Produktiv-Org je Tochtergesellschaft stehen vor ei
 5. Schreiben Sie ein Rollback-Runbook: welche Version wieder aktiviert wird, welche Flows zurückgedreht werden, wohin Händler gehen, wenn der Agent aus ist.
 6. Prüfen Sie, ob beide Orgs auf API v68 sind, bevor Sie Agenten mit den neuen Metadatentypen deployen.
 
-Ein Agent ist reif für einen Enterprise-Release-Prozess, wenn jede Version, jede Aktivierung und jedes Rollback so nachvollziehbar ist wie jede andere Änderung. Wenn Ihr Partner bald einen Agenten liefert und der Release-Weg noch offen ist, [schreiben Sie mir](#contact).
+Ein Agent ist reif für einen Enterprise-Release-Prozess, wenn jede Version, jede Aktivierung und jedes Rollback so nachvollziehbar ist wie jede andere Änderung.

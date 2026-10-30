@@ -40,9 +40,11 @@ Ein Asset ist ein Produkt, das ein Kunde gekauft oder installiert hat, verknüpf
 
 Diese Limits greifen selten zuerst. Tiefe kostet bei der Datenpflege, bei Wartungsplänen und auf den Tablets der Techniker. Meine Faustregel hat drei Fragen, und ein Ja macht eine Komponente zum Asset:
 
-- **Eigene Seriennummer?** Der Techniker muss festhalten, welches Getriebe oder welcher Roboter eingebaut oder getauscht wurde.
-- **Eigene Wartung?** Maintenance Work Rules hängen an Assets, eine Spindel mit eigenem Intervall braucht also eines.
-- **Eigene Garantie?** Ein Zukaufteil, dessen Garantie an einem anderen Tag beginnt als die der Maschine.
+| Frage | Warum sie zählt |
+|---|---|
+| Eigene Seriennummer? | Der Techniker muss festhalten, welches Getriebe oder welcher Roboter eingebaut oder getauscht wurde. |
+| Eigene Wartung? | Maintenance Work Rules hängen an Assets, eine Spindel mit eigenem Intervall braucht also eines. |
+| Eigene Garantie? | Ein Zukaufteil, dessen Garantie an einem anderen Tag beginnt als die der Maschine. |
 
 Alles andere bleibt in der Stückliste im PLM. Bei den meisten Maschinen bleiben so zwei oder drei Ebenen. Die Rechnung für eine Verpackungslinie mit 6 Maschinen, 40 Baugruppen mit Seriennummer und 900 Teilen steht in [Asset-Hierarchie: Wie tief pro Maschine?](../../../blog/field-service-asset-hierarchie-maschinen/).
 
@@ -80,7 +82,16 @@ Ein Halbjahreskalender ist für Maschinen, die beim einen Kunden einschichtig un
 
 Drei Details prägen das Design. Eine kriterienbasierte Regel erzeugt keinen neuen Arbeitsauftrag, solange ihr letzter noch offen ist, so die Hilfeseite zur [kriterienbasierten Wartung](https://help.salesforce.com/s/articleView?id=sf.fs_rfc_create_any_criteria.htm&language=en_US&type=5). Dieselbe Seite zeigt, dass eine Kriterienregel und eine Kalenderregel unabhängig voneinander Arbeitsaufträge erzeugen, auch mit demselben vorgeschlagenen Datum. „2.000 Stunden oder 12 Monate“ gehört deshalb in eine Regel mit ODER-Verknüpfung. Und die Bedingung muss nach dem Einsatz zurückgesetzt werden, etwa mit einem Flow, der beim Abschluss des Arbeitsauftrags den Zählerstand speichert.
 
-Die Limits, die zählen: Ein Generierungslauf erzeugt höchstens 2.600 Arbeitsaufträge und Positionen pro Plan, ein Plan mit zählbasierter Regel nimmt höchstens 2.000 Assets auf, und Salesforce empfiehlt höchstens fünf Maintenance Work Rules pro Plan oder Asset. Ich teile Pläne nach Baureihe oder Region, damit jeder deutlich darunter bleibt und einen Verantwortlichen hat.
+Die Limits, die zählen: Ein Generierungslauf erzeugt höchstens 2.600 Arbeitsaufträge und Positionen pro Plan, ein Plan mit zählbasierter Regel nimmt höchstens 2.000 Assets auf, und Salesforce empfiehlt höchstens fünf Maintenance Work Rules pro Plan oder Asset.
+
+```kennzahlen
+2.600 | Arbeitsaufträge und Positionen höchstens pro Plan und Generierungslauf
+2.000 | Assets höchstens in einem Plan mit zählbasierter Regel
+5 | Maintenance Work Rules empfiehlt Salesforce höchstens pro Plan oder Asset
+quelle: Salesforce-Hilfe, Field-Service-Limits und vorbeugende Wartung
+```
+
+Ich teile Pläne nach Baureihe oder Region, damit jeder deutlich darunter bleibt und einen Verantwortlichen hat.
 
 Der Zähler kommt aus drei Quellen: von der IoT-Plattform für vernetzte Maschinen, aus dem ERP, wenn es Zählerstände ohnehin bekommt, oder vom Techniker, der ihn vor Ort abliest. Für Intervalle in Hunderten von Stunden reicht ein Wert pro Tag. Die Einrichtung Schritt für Schritt, mit dem Flow zum Zurücksetzen, steht in [Wartung nach Betriebsstunden einrichten](../../../blog/field-service-wartung-nach-betriebsstunden/).
 
@@ -96,8 +107,10 @@ Maschinendaten kosten Geld, sobald sie in Data 360 landen. Die [Flex-Credits-Pre
 
 Zu Beginn meist nicht. Assets mit Hierarchien, Wartungspläne, Serviceverträge und Entitlements gehören zum Kern von Field Service. Die [Preisliste](https://www.salesforce.com/service/field-service-management/pricing/) (Oktober 2026) zeigt zwei Asset-Add-ons:
 
-- **Asset Service Lifecycle Management** für 75 US-Dollar pro Nutzer und Monat. Der [ASLM-Bereich der Salesforce-Hilfe](https://help.salesforce.com/s/articleView?language=en_US&id=xcloud.aslm_asset_service_lifecycle_management.htm&type=5) nennt unter anderem Asset Coverage View, Asset Interactive Hierarchy, Work Order Estimation, Product Service Campaigns, Depotreparatur, Advanced Exchange, Lagerfunktionen und Stundenzettel.
-- **Connected Assets** für 15.000 US-Dollar pro Org und Monat, zum Listenpreis also 180.000 US-Dollar im Jahr, für Telemetrie, den Asset Health Score und 10.000 vernetzte digitale Assets.
+| Add-on | Listenpreis | Was es bringt |
+|---|---|---|
+| Asset Service Lifecycle Management | 75 US-Dollar pro Nutzer und Monat | Der [ASLM-Bereich der Salesforce-Hilfe](https://help.salesforce.com/s/articleView?language=en_US&id=xcloud.aslm_asset_service_lifecycle_management.htm&type=5) nennt unter anderem Asset Coverage View, Asset Interactive Hierarchy, Work Order Estimation, Product Service Campaigns, Depotreparatur, Advanced Exchange, Lagerfunktionen und Stundenzettel. |
+| Connected Assets | 15.000 US-Dollar pro Org und Monat, zum Listenpreis also 180.000 US-Dollar im Jahr | Telemetrie, den Asset Health Score und 10.000 vernetzte digitale Assets. |
 
 ```hinweis offen
 Die Vergleichstabelle der Preisliste markiert Asset Coverage View und Interactive Hierarchy sogar bei Agentforce 1 Field Service als „Available for Purchase“. Lassen Sie sich das im Angebot bestätigen.
@@ -124,7 +137,13 @@ Viele Ersatzteilanfragen brauchen gar keinen Einsatz. Wenn Kunden ein bekanntes 
 
 ## Wohin gehört die Garantie?
 
-Garantie berührt drei Produkte, deshalb legen Sie den Verantwortlichen vor dem Kauf fest. Field Service hat Garantiebedingungen und Asset-Garantien im [Datenmodell für Garantien](https://developer.salesforce.com/docs/platform/data-models/guide/field-service-warranty-management.html), ASLM ergänzt Deckungsansicht und Kampagnen, und Manufacturing Cloud bringt [Warranty Lifecycle Management](https://trailhead.salesforce.com/content/learn/modules/warranty-administration-and-claims-management-in-manufacturing-cloud/get-started-with-warranty-lifecycle-management) mit Garantiebedingungen auf mehreren Produktebenen und Ansprüchen, die Partner und Distributoren über ein Portal einreichen.
+Garantie berührt drei Produkte, deshalb legen Sie den Verantwortlichen vor dem Kauf fest:
+
+| Produkt | Was es für die Garantie mitbringt |
+|---|---|
+| Field Service | Garantiebedingungen und Asset-Garantien im [Datenmodell für Garantien](https://developer.salesforce.com/docs/platform/data-models/guide/field-service-warranty-management.html) |
+| ASLM | Deckungsansicht und Kampagnen |
+| Manufacturing Cloud | [Warranty Lifecycle Management](https://trailhead.salesforce.com/content/learn/modules/warranty-administration-and-claims-management-in-manufacturing-cloud/get-started-with-warranty-lifecycle-management) mit Garantiebedingungen auf mehreren Produktebenen und Ansprüchen, die Partner und Distributoren über ein Portal einreichen |
 
 Meine Regel: Reichen Händler Garantieansprüche ein, gehört die Garantie in die Manufacturing Cloud, wie im Manufacturing-Cloud-Kapitel zu [Garantie und After-Sales](../../manufacturing-cloud/garantie-und-after-sales/) beschrieben. Müssen nur Ihre eigenen Techniker bei der Terminbuchung die Deckung sehen, reicht das Entitlement am Asset, und die Ansprüche bleiben im ERP. Zwei Garantiemodelle am selben Asset geben demselben Kunden zwei Antworten.
 
@@ -138,21 +157,25 @@ Für gleiche Arbeitsweise bevorzuge ich das erste Modell für regelmäßige Part
 
 Ein typisches Szenario, als Annahme: Ein Hersteller von Bearbeitungszentren hat 1.200 Maschinen in drei Baureihen im Feld. Der Servicevertrag sagt: Service alle 2.000 Betriebsstunden oder alle 12 Monate, was zuerst eintritt. 700 Maschinen sind vernetzt, 500 nicht. Zwei Partnerfirmen decken Skandinavien ab.
 
-- **Installierte Basis.** Jede Maschine hat sechs Baugruppen mit Seriennummer und eigener Garantie oder eigenem Intervall: 8.400 Assets in zwei Ebenen, bei Auslieferung aus SAP geladen. Techniker erfassen getauschte Baugruppen in der App, die Änderung geht an SAP zurück, SAP bleibt führend.
-- **Wartung.** Eine kriterienbasierte Regel pro Maschine mit zwei ODER-verknüpften Bedingungen. Die IoT-Plattform schreibt die Stunden jede Nacht, bei nicht vernetzten Maschinen trägt der Techniker den Stand ein. Sechs Pläne, einer pro Baureihe und Region, mit höchstens 250 Maschinen.
-- **Wirkung.** Angenommen, 300 Maschinen laufen zweischichtig mit rund 4.000 Stunden im Jahr und bekommen zwei Services, die 900 einschichtigen Maschinen fallen auf die 12-Monats-Bedingung zurück. Das sind 1.500 Einsätze im Jahr statt 2.400 mit festem Halbjahresrhythmus.
-- **Teile und Partner.** 30 Fahrzeuge als Locations in Salesforce, Bestand nächtlich aus SAP. Die zwei Partner bekommen je ein Gebiet, regelmäßige Techniker Contractor Plus pro Nutzer.
-- **Add-ons.** Im ersten Jahr keine. Connected Assets würde 180.000 US-Dollar im Jahr kosten und keine Entscheidung ändern, die ein täglicher Zähler nicht auch trifft.
+| Bereich | Entscheidung im Szenario |
+|---|---|
+| Installierte Basis | Jede Maschine hat sechs Baugruppen mit Seriennummer und eigener Garantie oder eigenem Intervall: 8.400 Assets in zwei Ebenen, bei Auslieferung aus SAP geladen. Techniker erfassen getauschte Baugruppen in der App, die Änderung geht an SAP zurück, SAP bleibt führend. |
+| Wartung | Eine kriterienbasierte Regel pro Maschine mit zwei ODER-verknüpften Bedingungen. Die IoT-Plattform schreibt die Stunden jede Nacht, bei nicht vernetzten Maschinen trägt der Techniker den Stand ein. Sechs Pläne, einer pro Baureihe und Region, mit höchstens 250 Maschinen. |
+| Wirkung | Angenommen, 300 Maschinen laufen zweischichtig mit rund 4.000 Stunden im Jahr und bekommen zwei Services, die 900 einschichtigen Maschinen fallen auf die 12-Monats-Bedingung zurück. Das sind 1.500 Einsätze im Jahr statt 2.400 mit festem Halbjahresrhythmus. |
+| Teile und Partner | 30 Fahrzeuge als Locations in Salesforce, Bestand nächtlich aus SAP. Die zwei Partner bekommen je ein Gebiet, regelmäßige Techniker Contractor Plus pro Nutzer. |
+| Add-ons | Im ersten Jahr keine. Connected Assets würde 180.000 US-Dollar im Jahr kosten und keine Entscheidung ändern, die ein täglicher Zähler nicht auch trifft. |
 
 ## Was sollten Sie entscheiden, bevor ein Partner baut?
 
-1. **Asset-Tiefe pro Maschinentyp**, mit den drei Fragen oben, und welches System die installierte Basis nach Auslieferung führt.
-2. **Vertragstypen** mit ihren Objekten: was verkauft wurde, welche Wartung, welche Reaktionszeit.
-3. **Zählerquelle pro Baureihe** und die Regel, die gilt, wenn ERP und Techniker abweichen.
-4. **Bestandsführung** und die Liste der Standorte, die nach Salesforce kommen.
-5. **Verantwortung für Garantie**: Field Service, ASLM oder Manufacturing Cloud.
-6. **Partnermodell** pro Partnerfirma.
+| Entscheidung | Was dazugehört |
+|---|---|
+| Asset-Tiefe pro Maschinentyp | Mit den drei Fragen oben bestimmt, dazu welches System die installierte Basis nach Auslieferung führt. |
+| Vertragstypen | Jeder mit seinen Objekten: was verkauft wurde, welche Wartung, welche Reaktionszeit. |
+| Zählerquelle pro Baureihe | Woher der Zähler kommt und welche Regel gilt, wenn ERP und Techniker abweichen. |
+| Bestandsführung | Welches System den Bestand führt und welche Standorte nach Salesforce kommen. |
+| Verantwortung für Garantie | Field Service, ASLM oder Manufacturing Cloud. |
+| Partnermodell | Eines pro Partnerfirma. |
 
 Die meisten dieser Punkte sind Schnittstellenfragen, und daran arbeite ich im Bereich [Salesforce-Schnittstellen](../../../leistungen/salesforce-schnittstellen/). [Kapitel 5](../field-service-ki-agenten-einfuehrung/) baut auf diesem Datenmodell auf, mit KI-Agenten, Einführung in Wellen und Betrieb, und die [Übersichtsseite](../) listet alle Kapitel.
 
-Assets, Verträge und Teile tragen alles, was später in Field Service kommt, deshalb verdienen sie die ersten Entscheidungen. Wenn Sie eine zweite Meinung zu Ihrer installierten Basis oder Ihrem Wartungsmodell möchten, [schreiben Sie mir](#contact).
+Assets, Verträge und Teile tragen alles, was später in Field Service kommt, deshalb verdienen sie die ersten Entscheidungen.

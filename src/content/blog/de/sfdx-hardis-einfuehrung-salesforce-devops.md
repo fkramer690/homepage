@@ -109,4 +109,4 @@ Betrieb einschalten
   Monitoring, Backups und generierte Dokumentation einschalten.
 ```
 
-Die Wahl der Werkzeuge gehört zu [Architektur und Partnersteuerung](../../leistungen/partnersteuerung/) und ist keine Nebenentscheidung der Entwickler. sfdx-hardis liefert einen professionellen Release-Prozess ohne Lizenzkosten, solange jemand ihn verantwortet. Wenn Sie besprechen möchten, ob es zu Ihrem Programm passt, [schreiben Sie mir](#contact).
+Die Wahl der Werkzeuge gehört zu [Architektur und Partnersteuerung](../../leistungen/partnersteuerung/) und ist keine Nebenentscheidung der Entwickler. sfdx-hardis liefert einen professionellen Release-Prozess ohne Lizenzkosten, solange jemand ihn verantwortet.

@@ -109,4 +109,4 @@ With the agent, the merchandiser asks after each ERP update: "bury every part wh
 
 The chapter [Agents, migration, rollout](../../masterclass/b2b-commerce/agentforce-migration-rollout/) of the [B2B Commerce masterclass](../../masterclass/b2b-commerce/) places the Merchandising Agent next to the Buyer Agent and the rollout. For the question of who owns which data between ERP, PIM and Salesforce, see [Salesforce architecture](../../services/salesforce-architecture/).
 
-The Merchandising Agent saves clicks in search and campaigns, as long as product master data stays where it is maintained today. If you want an independent view on your parts store, [send me a message](#contact).
+The Merchandising Agent saves clicks in search and campaigns, as long as product master data stays where it is maintained today.

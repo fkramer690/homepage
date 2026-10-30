@@ -99,4 +99,4 @@ Nicht jede Frage gehört auf diesen Weg. Stehen Auftragsstatus, Bestand und Kred
 
 Massenarbeit würde ich von externen Agenten fernhalten. Eine Claude-Sitzung, die 5.000 Datensätze der installierten Basis auf fehlenden Garantiebeginn prüft, erzeugt Tausende Interaktionen; ein Bericht oder ein Batch-Job erledigt dasselbe kostenlos. MCP passt zum Dialog, nicht zur Datenbereinigung. Die Grundlagen von MCP und die Entscheidungen der IT-Leitung stehen in [MCP für die IT-Leitung](../mcp-salesforce-erklaert-it-leitung/), was AIforce zusätzlich bringt, in [AIforce: Salesforce in Claude und Slack](../aiforce-salesforce-in-claude-und-slack/).
 
-Externe Agenten auf Salesforce-Daten werden pro Aufruf Geld kosten, also messen Sie die Aufrufe und verhandeln Sie den Preis, solange der Zähler noch steht. Wenn Sie eine zweite Meinung zu Ihrer Schätzung möchten, [schreiben Sie mir](#contact).
+Externe Agenten auf Salesforce-Daten werden pro Aufruf Geld kosten, also messen Sie die Aufrufe und verhandeln Sie den Preis, solange der Zähler noch steht.

@@ -97,5 +97,3 @@ Automate dispatch
 ```
 
 The list from the second step is the basis for every further step of automation and shows which data is still missing.
-
-If you are about to introduce scheduling and want an independent view on how much automation fits your field service, [get in touch](#contact).

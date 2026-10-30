@@ -108,5 +108,3 @@ Skills and absences are data about employees. Agree early with data protection a
 Take the failed visits of the last three months in one region. Assign each one a cause: parts, access, skills, availability or something else. The cause with the most failed visits shows which data you need clean first. If there is no list of failed visits, that is a result too: then the metric that Field Service will later have to be measured against is missing.
 
 Then check each of the six kinds of data: does it exist, where does it live, who maintains it? Once those questions are answered, it makes sense to set up scheduling itself. That is the topic of the next part of this series.
-
-If you are about to take stock of your data and want an independent view, [get in touch](#contact).

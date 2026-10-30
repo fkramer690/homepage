@@ -118,4 +118,4 @@ BYOLLM spart höchstens 90 € im Monat, rund 1.080 € im Jahr, vor der Token-R
 
 Ich behandle diese Entscheidungen als Teil der [Salesforce-Architektur](../../leistungen/salesforce-architektur/), neben Datenmodell und Berechtigungen.
 
-Die Modellwahl in Agentforce hat Folgen für Kosten, Verträge und Tests, entscheiden und dokumentieren Sie sie deshalb pro Subagent. Wenn Sie eine zweite Meinung zum Modell-Setup Ihres Agenten möchten, [schreiben Sie mir](#contact).
+Die Modellwahl in Agentforce hat Folgen für Kosten, Verträge und Tests, entscheiden und dokumentieren Sie sie deshalb pro Subagent.

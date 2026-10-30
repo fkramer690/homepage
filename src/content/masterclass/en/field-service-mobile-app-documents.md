@@ -52,9 +52,11 @@ For a machine builder I put on the device what the technician needs to finish an
 
 The [considerations for LWC Offline](https://developer.salesforce.com/docs/atlas.en-us.field_service_dev.meta/field_service_dev/sfs_gs_lwc_considerations.htm) name five known issues. Three of them shape the test plan:
 
-- **Tasks are not primed.** A Task object in a briefcase triggers an error during priming.
-- **Partner users.** A community licence user who opens a service appointment can get a missing record error. Partner technicians therefore need their own briefcase and their own test.
-- **iOS cold start.** Changed Lightning web components load only after the app is fully closed and started again.
+| Issue | What happens |
+|---|---|
+| Tasks are not primed | A Task object in a briefcase triggers an error during priming. |
+| Partner users | A community licence user who opens a service appointment can get a missing record error. Partner technicians therefore need their own briefcase and their own test. |
+| iOS cold start | Changed Lightning web components load only after the app is fully closed and started again. |
 
 The briefcase per role, the full list of gaps and a day in a basement without network are in [Field Service mobile offline: which data goes on the device?](../../../blog/field-service-mobile-app-offline-data/).
 
@@ -81,11 +83,20 @@ German voice input makes the feature relevant for service teams in the DACH regi
 
 Document Builder creates the service report as a PDF from a work order, a work order line item or a service appointment. According to the [Field Service limits](https://help.salesforce.com/s/articleView?id=service.fs_limits.htm&language=en_US&type=5), each user with a Field Service Dispatcher or Field Service Mobile licence brings 250 documents per month, and the org gets a one-time allowance of 10,000 extra documents for peak months. A technician with five jobs a day creates about 105 reports a month, well below the limit.
 
+```kennzahlen
+250 | documents per user and month with a Field Service Dispatcher or Field Service Mobile licence
+10,000 | extra documents per org, once, for peak months
+50 | pages and 100 MB at most per document
+source: Salesforce Help, Field Service limits
+```
+
 For the classic report at the machine, with working time, parts, photos and the customer's signature, created offline, it is the right choice. The limits from the same page matter for planning:
 
-- **Three objects only.** No document on the asset or on a custom object.
-- **Android is behind.** On iOS documents come from work order and service appointment, on Android only from the service appointment.
-- **Size.** At most 50 pages and 100 MB per document.
+| Limit | What it means |
+|---|---|
+| Three objects only | No document on the asset or on a custom object. |
+| Android is behind | On iOS documents come from work order and service appointment, on Android only from the service appointment. |
+| Size | At most 50 pages and 100 MB per document. |
 
 Plan for five smaller gaps in the standard report: template choice, file name, email, default values and styling. Flows and small components close them without another licence, as I describe in [Document Builder: five limits and workarounds](../../../blog/salesforce-document-builder-limits-workarounds/).
 
@@ -99,7 +110,13 @@ Quotes are a separate case. When technicians spot extra work or a worn part and 
 
 Visual Remote Assistant is a video tool for Service Cloud and Field Service. According to the [product page](https://salesforce.com/products/visual-remote-assistant), the customer taps a link sent by SMS or email, and a two-way video opens in the mobile browser, without app download, login or password. Sessions can be recorded. The add-on costs $50 per user and month on the [price list, October 2026](https://www.salesforce.com/service/field-service-management/pricing/), and it is included in Agentforce 1 Field Service. The customer needs no licence.
 
-In my view video replaces a visit when the operator can fix the fault with guidance: a changed parameter, an operating error, a reset. For mechanical repairs it saves the second visit instead, because the technician arrives with the right part. Before the first session, settle recording consent with the customer, the works council for your own staff and which faults may be closed remotely. How to estimate the potential from last year's breakdown visits is in [Visual Remote Assistant: video help instead of a visit?](../../../blog/visual-remote-assistant-remote-help-instead-of-visit/).
+In my view video replaces a visit when the operator can fix the fault with guidance: a changed parameter, an operating error, a reset. For mechanical repairs it saves the second visit instead, because the technician arrives with the right part.
+
+```hinweis achtung
+Before the first session, settle recording consent with the customer, the works council for your own staff and which faults may be closed remotely.
+```
+
+How to estimate the potential from last year's breakdown visits is in [Visual Remote Assistant: video help instead of a visit?](../../../blog/visual-remote-assistant-remote-help-instead-of-visit/).
 
 ## How do you test every app version?
 
@@ -107,13 +124,15 @@ Next to the three platform releases a year, the app has its own major and patch 
 
 My routine per version, on iOS and Android, fits into half a day:
 
-1. Login and resume after an hour in the background.
-2. Priming with a real technician profile, then a full job in airplane mode with parts consumed.
-3. A real Data Capture form, closed halfway and resumed.
-4. The service report with signature, offline.
-5. Your own components after a cold start.
-6. The same with a partner user.
-7. After sync, consumption and report in the back office and the ERP.
+| No. | Test case |
+|---|---|
+| 1 | Login and resume after an hour in the background. |
+| 2 | Priming with a real technician profile, then a full job in airplane mode with parts consumed. |
+| 3 | A real Data Capture form, closed halfway and resumed. |
+| 4 | The service report with signature, offline. |
+| 5 | Your own components after a cold start. |
+| 6 | The same with a partner user. |
+| 7 | After sync, consumption and report in the back office and the ERP. |
 
 The pilot group, the calendar and who owns app versions are in [Field Service app updates: how to test each release](../../../blog/field-service-mobile-app-updates-testing/). App versions belong in the same calendar as the platform releases, described in the DevOps masterclass chapter on [release planning](../../devops-release-management/release-planning-salesforce-releases/). How such scripted tests fit into quality gates is in the chapter on [quality, tests and reviews](../../devops-release-management/quality-tests-reviews/).
 
@@ -140,11 +159,13 @@ Voice to Form waits until data protection and the works council have agreed. Aft
 
 Four decisions need a name next to them before a partner builds forms:
 
-- **Target data model for service data.** Which values become fields on asset and work order, which picklists are shared, how defects become follow-up work.
-- **Briefcase per role.** Internal technician, partner technician, supervisor.
-- **Document split.** Service report in Document Builder, documents with logic in a second tool, quotes in the sales process.
-- **Owner of app versions.** Usually the release manager, together with device management.
+| Decision | What it covers |
+|---|---|
+| Target data model for service data | Which values become fields on asset and work order, which picklists are shared, how defects become follow-up work. |
+| Briefcase per role | Internal technician, partner technician, supervisor. |
+| Document split | Service report in Document Builder, documents with logic in a second tool, quotes in the sales process. |
+| Owner of app versions | Usually the release manager, together with device management. |
 
 The data model is [architecture work](../../../services/salesforce-architecture/) and decides whether forms, reports and later AI agents can use the data. [Chapter 4](../field-service-assets-maintenance-parts/) builds on it with assets, maintenance plans and spare parts, and the [overview](../) lists all chapters.
 
-The technician's app works when the data model comes before the first form and every app version is tested before it reaches the devices. If you want an independent view of your mobile and document setup, [send me a message](#contact).
+The technician's app works when the data model comes before the first form and every app version is tested before it reaches the devices.

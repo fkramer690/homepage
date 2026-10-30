@@ -57,7 +57,9 @@ For a manufacturer, that means:
 - **Custom settings** only where the business case needs them, for example values per user or profile. Their records then need a data step in the pipeline.
 - **Custom and standard objects used as configuration**, such as the Field Service objects or pricing rules in a configurator. Here you have no choice; they are data.
 
+```hinweis tipp
 In an existing org I would not rebuild every custom setting. I would write into the partner rules, though, that new configuration is built as a custom metadata type unless there is a business reason against it. Who sets and enforces these rules is covered in [chapter 2](../release-process-ownership-roles/).
+```
 
 ## How does configuration data move through the pipeline?
 
@@ -155,4 +157,4 @@ I would write five rules into every contract:
 
 When to schedule data steps in the release calendar, and how the three Salesforce releases a year fit in, is covered in [chapter 8](../release-planning-salesforce-releases/). Data steps and sandbox levels are part of my work in [DevOps and release management](../../../services/devops-release-management/).
 
-Configuration data deserves the same route as code: repository, review, pipeline, with customer data kept masked. If you want to remove the manual data step from your release plan, [send me a message](#contact).
+Configuration data deserves the same route as code: repository, review, pipeline, with customer data kept masked.

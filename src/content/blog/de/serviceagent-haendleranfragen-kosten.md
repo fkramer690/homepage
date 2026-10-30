@@ -140,4 +140,4 @@ Zwei Testwochen fahren
   Das Digital Wallet auswerten, neu rechnen und Warnschwellen auf den Credit-Pool setzen.
 ```
 
-Ein Serviceagent für Händler kostet pro Gespräch wenig, das Budgetrisiko liegt in Dokumenten, Sandboxes und einem zu großen Credit-Pool. Wenn Sie einen zweiten Blick auf Ihre Rechnung möchten, [schreiben Sie mir](#contact).
+Ein Serviceagent für Händler kostet pro Gespräch wenig, das Budgetrisiko liegt in Dokumenten, Sandboxes und einem zu großen Credit-Pool.

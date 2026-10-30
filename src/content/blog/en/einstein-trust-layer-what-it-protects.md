@@ -101,4 +101,4 @@ In my judgement this is the normal division of labour: the Trust Layer handles t
 
 This configuration is part of my work on [Salesforce architecture](../../services/salesforce-architecture/), because the decisions sit in the data model and permissions, not in the agent prompt.
 
-The Einstein Trust Layer keeps your data away from the model provider's storage, and everything else depends on permissions and action design you control. If you want a second view on an agent before it reads dealer prices, [send me a message](#contact).
+The Einstein Trust Layer keeps your data away from the model provider's storage, and everything else depends on permissions and action design you control.

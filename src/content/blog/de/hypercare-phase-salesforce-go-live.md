@@ -96,4 +96,4 @@ Nach der Übergabe bleibt eine Aufgabe für das Change Management: Die gesammelt
 
 Legen Sie vor dem nächsten Go-live drei Dinge schriftlich fest: wer im Hypercare-Team sitzt, wie oft es sich trifft und nach welchen Kriterien die Hypercare endet. Planen Sie die Person aus dem Support von Anfang an ein.
 
-Ein Go-live ist erst geschafft, wenn der Betrieb ihn ohne Projektteam trägt. Wenn ein Go-live ansteht und Hypercare noch nicht geplant ist, [schreiben Sie mir](#contact) oder lesen Sie mehr über [Change Management Beratung für Salesforce](../../leistungen/change-management/), die ich mit meiner Kooperationspartnerin [Juliane Winterscheid](../../partner/juliane-winterscheid/) anbiete.
+Ein Go-live ist erst geschafft, wenn der Betrieb ihn ohne Projektteam trägt. Mehr dazu lesen Sie unter [Change Management Beratung für Salesforce](../../leistungen/change-management/).

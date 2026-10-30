@@ -116,4 +116,4 @@ Make registration required
 
 The full after-sales picture is in the [warranty and after-sales chapter](../../masterclass/manufacturing-cloud/warranty-and-after-sales/) of the Manufacturing Cloud masterclass.
 
-Warranty, recalls and agents in Manufacturing Cloud are only as good as the installed base underneath. If you are planning that data model, [send me a message](#contact).
+Warranty, recalls and agents in Manufacturing Cloud are only as good as the installed base underneath.

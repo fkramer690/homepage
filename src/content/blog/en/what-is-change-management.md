@@ -109,6 +109,6 @@ Not every change needs an external change manager. If a single process changes f
 
 Outside support pays off when several groups or countries are affected, when nobody inside has the time and experience to plan it, or when the sponsor is still unclear. Then an outside view helps to clarify roles, coach the managers and hand the work over to internal owners at the end. For Salesforce programmes there is [Salesforce change management consulting](../../services/change-management-salesforce/).
 
-A change is only done when daily work has changed. If one is coming up for you, [send us a message](#contact).
+A change is only done when daily work has changed.
 
 Prosci and ADKAR are registered trademarks of Prosci, Inc.

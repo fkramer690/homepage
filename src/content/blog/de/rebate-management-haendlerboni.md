@@ -116,4 +116,4 @@ Bevor das erste Programm angelegt wird, klären Sie vier Punkte:
 3. **Transaktionen.** Welches System liefert sie, auf welcher Ebene und wie oft?
 4. **Abrechnung.** Wann kommen Freigaben und Rückstellungen ins ERP, abgestimmt mit dem Monatsabschluss?
 
-Rebate Management ersetzt die Tabelle, wenn die Regeln darin vorher sauber aufgeschrieben sind und das ERP weiter auszahlt. Wenn Sie Ihre Händlerboni aus Excel holen wollen, [schreiben Sie mir](#contact).
+Rebate Management ersetzt die Tabelle, wenn die Regeln darin vorher sauber aufgeschrieben sind und das ERP weiter auszahlt.

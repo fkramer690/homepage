@@ -129,4 +129,4 @@ The add-ons raise the licence line by 40 percent. If the same company also wants
 
 Not every internal user needs the industry licence either, as described in [does everyone need a full licence?](../salesforce-licences-full-licence-needed/). The full business case is in chapter 1 of the [Manufacturing Cloud masterclass](../../masterclass/manufacturing-cloud/scope-and-business-case/), and the feature list behind it in [Manufacturing Cloud features: what is in the box](../manufacturing-cloud-features-overview/). Licence forecasts are part of my work on [make-or-buy and licences](../../services/make-or-buy-licences/).
 
-The edition price is only the first line of a Manufacturing Cloud quote, and the add-ons decide the total. If you want a quote checked line by line, [send me a message](#contact).
+The edition price is only the first line of a Manufacturing Cloud quote, and the add-ons decide the total.

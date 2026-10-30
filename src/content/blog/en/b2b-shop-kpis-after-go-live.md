@@ -103,4 +103,4 @@ Repeat per wave
 
 The same discipline for agents is described in [Agentforce KPIs after go-live](../agentforce-kpis-after-go-live/), and the whole chapter is in the masterclass on [agents, migration and rollout](../../masterclass/b2b-commerce/agentforce-migration-rollout/).
 
-A B2B store works when dealers order more lines through it and inside sales types fewer, and only a baseline from before go-live proves that. If you want to set up these KPIs for your store, [send me a message](#contact).
+A B2B store works when dealers order more lines through it and inside sales types fewer, and only a baseline from before go-live proves that.

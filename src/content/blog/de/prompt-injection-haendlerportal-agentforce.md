@@ -108,4 +108,4 @@ Für einen ersten Durchgang würde ich mich einen halben Tag mit der Salesforce-
 
 Dieselben Fragen gelten für externe KI-Werkzeuge, die Salesforce-Daten über MCP lesen, denn für die Lethal Trifecta spielt es keine Rolle, welcher Client das Feld liest. Das behandle ich in [Hosted MCP Server und Datenzugriff](../salesforce-hosted-mcp-server-datenzugriff/), die OAuth-Seite in [Connected Apps und KI-Integrationen](../connected-apps-oauth-ki-integrationen/). Datenflüsse und Berechtigungen so aufzunehmen, gehört zu meiner Arbeit in der [Salesforce-Architektur](../../leistungen/salesforce-architektur/).
 
-Ein Agent, der Text von Händlern oder aus dem Web liest, braucht enge Leserechte und keinen Weg nach draußen, und mit beidem wird Prompt Injection vom Datenleck zum Qualitätsthema. Wenn Sie Ihr Portal und Ihre Agenten einmal von außen ansehen lassen möchten, [schreiben Sie mir](#contact).
+Ein Agent, der Text von Händlern oder aus dem Web liest, braucht enge Leserechte und keinen Weg nach draußen, und mit beidem wird Prompt Injection vom Datenleck zum Qualitätsthema.

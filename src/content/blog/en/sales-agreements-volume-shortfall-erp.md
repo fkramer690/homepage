@@ -129,4 +129,4 @@ Before the first sales agreement goes live, settle four points:
 3. **Inventory as a metric.** Which system provides it, how often and at what level?
 4. **The view for sales.** Which list does an account manager see on Monday morning, and what do they do with it?
 
-A sales agreement shows the gap between commitment and offtake as well as the integration and the account hierarchy allow. If you are introducing sales agreements or your numbers do not add up, [send me a message](#contact).
+A sales agreement shows the gap between commitment and offtake as well as the integration and the account hierarchy allow.

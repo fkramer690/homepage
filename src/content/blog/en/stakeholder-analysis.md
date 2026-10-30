@@ -125,6 +125,6 @@ These are the typical ones:
 
 For an initiative with three or four groups, the project manager can build the analysis alone with the template. Support pays off when many groups or countries are affected, when the attitude of important groups is unclear, or when nobody inside can hold the difficult conversations, for example with the works council or a sceptical manager. In Salesforce programmes I work together with Fabian Kramer; how we set this up is described in [Salesforce change management: why rollouts fail](../change-management-salesforce-rollout/) and on the page [Salesforce change management consulting](../../services/change-management-salesforce/).
 
-A stakeholder analysis is only as good as the actions that follow from it. If you would like a second look at the groups in your change, [write to us](#contact).
+A stakeholder analysis is only as good as the actions that follow from it.
 
 Prosci and ADKAR are registered trademarks of Prosci, Inc.

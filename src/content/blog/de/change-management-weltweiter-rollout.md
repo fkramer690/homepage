@@ -93,4 +93,4 @@ Lassen Sie Key User des nächsten Landes einige Tage im Land der laufenden Welle
 
 Benennen Sie für jedes Land einen Sponsor, bevor das Land in die Planung kommt, und lassen Sie ihn die Liste der Landesabweichungen mit prüfen. Legen Sie pro Land Key User fest und vereinbaren Sie ihre Zeit mit den Führungskräften, wie in [Key User in Salesforce-Einführungen](../salesforce-key-user-netzwerk/) beschrieben. Nach dem ersten Land planen Sie eine Auswertung ein, bevor das zweite startet.
 
-Ein globales Template wird in jedem Land neu eingeführt, und jedes Land braucht dafür eigene Menschen, die es tragen. Wenn Sie einen weltweiten Rollout planen, [schreiben Sie mir](#contact) oder lesen Sie mehr über [Change Management für Salesforce-Programme](../../leistungen/change-management/).
+Ein globales Template wird in jedem Land neu eingeführt, und jedes Land braucht dafür eigene Menschen, die es tragen. Mehr dazu lesen Sie unter [Change Management für Salesforce-Programme](../../leistungen/change-management/).

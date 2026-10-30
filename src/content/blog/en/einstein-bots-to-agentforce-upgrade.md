@@ -123,4 +123,4 @@ Pick the next path
   Decide on the next path with those numbers.
 ```
 
-An Einstein Bot needs a split between paths that must stay predictable and questions an agent answers better, and that split is an [architecture decision](../../services/salesforce-architecture/) worth making before the first upgrade click; if you want a second view on your bot's paths, [send me a message](#contact).
+An Einstein Bot needs a split between paths that must stay predictable and questions an agent answers better, and that split is an [architecture decision](../../services/salesforce-architecture/) worth making before the first upgrade click.

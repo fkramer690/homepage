@@ -156,4 +156,4 @@ The largest line here is the portal and not the rebate logic. Dealer users are e
 
 Warranty claims submitted by dealers and recalls across the dealer network are covered in [chapter 4](../warranty-and-after-sales/). All chapters are on the [overview page](../).
 
-The dealer channel in Manufacturing Cloud pays off when you pick the features by channel model and plan portal licences and ERP data before the first programme. If you want to work through your dealer channel this way, [send me a message](#contact).
+The dealer channel in Manufacturing Cloud pays off when you pick the features by channel model and plan portal licences and ERP data before the first programme.

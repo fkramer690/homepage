@@ -115,4 +115,4 @@ Who owns the order from that point on is covered in [B2B store orders to the ERP
 
 Start with finance, before the store design. Ask how each group of buyers pays today, which system holds credit limits and order blocks, and how fast that system can answer a live call. Then choose the component, and write down the validate logic with its timeout behaviour. The chapter [prices, cart and checkout](../../masterclass/b2b-commerce/prices-cart-checkout/) of the [B2B Commerce masterclass](../../masterclass/b2b-commerce/) puts the checkout next to price and reorder decisions, and the interface work behind the credit check is part of [Salesforce integration](../../services/salesforce-integration/).
 
-Most dealers should finish the checkout with a PO number and a credit check from the ERP, and only a defined group should need a card. If you are designing that checkout, [send me a message](#contact).
+Most dealers should finish the checkout with a PO number and a credit check from the ERP, and only a defined group should need a card.

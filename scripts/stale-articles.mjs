@@ -6,8 +6,8 @@
 // lists those that answer 404 or 410 (sources that were moved or retired). Other errors and bot
 // blocks (403, 429, timeouts) are not reported, and help.salesforce.com answers 200 even for
 // missing articles, so this catches most but not all dead sources.
-// Prints a Markdown report (German, for Fabian); .github/workflows/stale-articles.yml posts it
-// as an issue once a month. Mark a checked article with `updatedDate` (docs/blog-guidelines.md).
+// Prints a Markdown report (German, for Fabian); the Claude scheduled task "Monatliche Artikelprüfung"
+// posts it as an issue once a month (.github/workflows/stale-articles.yml does the same when started by hand). Mark a checked article with `updatedDate` (docs/blog-guidelines.md).
 // Usage: node scripts/stale-articles.mjs [--today YYYY-MM-DD] [--links]
 import { readdirSync, readFileSync } from 'node:fs';
 

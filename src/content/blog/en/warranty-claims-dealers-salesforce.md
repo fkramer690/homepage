@@ -118,4 +118,4 @@ Before the first warranty term is created, settle four points:
 3. **Submission.** Which fields does the dealer fill in the portal, and which are required, including for recovery?
 4. **Credit note.** How does the approved amount reach the ERP, and when does the dealer see that it has been paid?
 
-Warranty management in Manufacturing Cloud is as good as the asset data it checks against. If you are evaluating warranty processes with dealers in Salesforce, [send me a message](#contact).
+Warranty management in Manufacturing Cloud is as good as the asset data it checks against.

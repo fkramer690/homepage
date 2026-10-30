@@ -86,6 +86,4 @@ Planen Sie mit Erfahrung einen vollen Tag ein, ohne Erfahrung mehr. Die Zeit ist
 Arbeiten Sie die Labs am besten am Stück durch und nicht verteilt über Wochen, denn die Level bauen direkt aufeinander auf und die Zusammenhänge zwischen Branch, Pull Request, Pipeline und Org werden so am deutlichsten.
 ```
 
-Der Kurs ist kostenlos, praxisnah und nah an echter Projektarbeit, und das Badge hat Aussagekraft, weil es geprüft wird. Großes Lob und Dank an Nicolas Vuillamy und das Cloudity-Team.
-
-Wenn Sie besprechen möchten, wie sfdx-hardis oder ein DevOps-Setup in Ihrem Salesforce-Programm funktionieren könnte, [schreiben Sie mir](#contact).
+Der Kurs ist kostenlos, praxisnah und nah an echter Projektarbeit, und das Badge hat Aussagekraft, weil es geprüft wird. Wer in seinem Team Salesforce DevOps aufbauen will, findet hier einen guten Einstieg. Großes Lob und Dank an Nicolas Vuillamy und das Cloudity-Team.

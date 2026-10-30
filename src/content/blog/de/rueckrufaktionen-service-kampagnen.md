@@ -110,4 +110,4 @@ Die [Preisseite der Manufacturing Cloud](https://www.salesforce.com/manufacturin
 
 Das ganze Bild zum After-Sales steht im [Kapitel Garantie und After-Sales](../../masterclass/manufacturing-cloud/garantie-und-after-sales/) der Masterclass Manufacturing Cloud.
 
-Eine Rückrufaktion in Salesforce funktioniert, wenn sich die betroffenen Maschinen über Seriennummer und Charge finden lassen, und stockt, wenn nicht. Wenn Sie einen Rückruf- oder Upgrade-Prozess vorbereiten, [schreiben Sie mir](#contact).
+Eine Rückrufaktion in Salesforce funktioniert, wenn sich die betroffenen Maschinen über Seriennummer und Charge finden lassen, und stockt, wenn nicht.

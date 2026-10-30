@@ -114,4 +114,4 @@ Measure the sync
 
 Offline design decides whether forms and documents work later. The next step is the form itself, covered in [Field Service Data Capture: inspection forms without paper](../field-service-data-capture-inspection-forms/), and the whole topic is part of [chapter 3 of the Field Service masterclass](../../masterclass/field-service/field-service-mobile-app-documents/).
 
-Put on the device what the technician needs for today, test the known gaps with a partner user, and the app holds up in the basement. If you want a second opinion on your offline design, [send me a message](#contact).
+Put on the device what the technician needs for today, test the known gaps with a partner user, and the app holds up in the basement.

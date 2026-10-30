@@ -102,4 +102,4 @@ Measure and decide
 
 How this fits with the mobile app and service documents is part of the [masterclass chapter on the mobile app](../../masterclass/field-service/field-service-mobile-app-documents/). Whether Field Service pays off at all is covered in [Salesforce Field Service: when is it worth it?](../salesforce-field-service-worth-it/), and the licence question as a whole under [make-or-buy and licences](../../services/make-or-buy-licences/).
 
-Visual Remote Assistant saves visits where the operator can fix the fault and saves second visits where the technician has to come anyway. If you want to check that potential with your own breakdown data, [send me a message](#contact).
+Visual Remote Assistant saves visits where the operator can fix the fault and saves second visits where the technician has to come anyway.

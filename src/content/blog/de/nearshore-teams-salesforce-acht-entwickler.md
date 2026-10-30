@@ -108,4 +108,4 @@ Haben Sie bereits ein Nearshore-Team, beantworten Sie drei Fragen:
 
 Planen Sie ein neues Setup, legen Sie Teamgröße, Rollen und Rotationsregeln fest, bevor Sie Angebote vergleichen. Dann vergleichen Sie Partner auf derselben Grundlage, und nicht nur über den Tagessatz. Wie ich Programme mit Nearshore-Teams plane und steuere, beschreibe ich unter [Programmsteuerung und Nearshore-Teams](../../leistungen/projektsteuerung-nearshore/).
 
-Acht Entwickler pro Team sind keine starre Zahl, aber eine gute Obergrenze, die viel Abstimmung erspart. Wenn Sie ein Nearshore-Team aufsetzen oder ein bestehendes wieder auf Kurs bringen möchten, [schreiben Sie mir](#contact).
+Acht Entwickler pro Team sind keine starre Zahl, aber eine gute Obergrenze, die viel Abstimmung erspart.

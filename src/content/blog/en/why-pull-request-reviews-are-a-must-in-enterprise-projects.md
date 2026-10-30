@@ -106,4 +106,4 @@ Start centrally
   Review the first weeks centrally, then spread the responsibility.
 ```
 
-Pull request reviews cost minutes per change and save days per release. If you want to talk about how to introduce them in your programme, [send me a message](#contact).
+Pull request reviews cost minutes per change and save days per release.

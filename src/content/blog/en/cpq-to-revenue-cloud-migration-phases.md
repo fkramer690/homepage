@@ -116,4 +116,4 @@ These decisions belong to you, not to the partner or the tool:
 
 Whether you should move at all, or stay on CPQ for now, is the question of [keep Salesforce CPQ or move to Revenue Cloud](../keep-salesforce-cpq-or-revenue-cloud/). The whole topic is covered in the masterclass chapter [from CPQ to Revenue Cloud](../../masterclass/revenue-cloud/from-cpq-to-revenue-cloud/), and steering several partners through such a move is part of my work in [partner governance](../../services/partner-governance/).
 
-A CPQ migration succeeds when price master, cutover and history are decided before the first partner starts building. If you are planning this move, [send me a message](#contact).
+A CPQ migration succeeds when price master, cutover and history are decided before the first partner starts building.

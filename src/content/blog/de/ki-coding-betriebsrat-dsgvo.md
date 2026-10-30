@@ -113,4 +113,4 @@ Sechs Wochen klingen lang. Ein Pilot, den der Betriebsrat nach vier Wochen stopp
 
 Wie Teams und Partner neue Regeln im Alltag übernehmen, gehört zu meiner Arbeit im [Change Management](../../leistungen/change-management/); den Rahmen für Rollen und Review beschreibt [Kapitel 9 der Masterclass](../../masterclass/ki-salesforce/teamarbeit-und-delivery/).
 
-KI-Coding-Tools gehen an einem deutschen Standort mit Betriebsrat erst live, wenn Betriebsrat und Datenschutz zugestimmt haben, und mit guter Vorbereitung dauert das nach meiner Einschätzung Wochen statt Monate. Wenn Sie eine zweite Meinung zu Ihrer Anlage oder Ihren Modellwegen möchten, [schreiben Sie mir](#contact).
+KI-Coding-Tools gehen an einem deutschen Standort mit Betriebsrat erst live, wenn Betriebsrat und Datenschutz zugestimmt haben, und mit guter Vorbereitung dauert das nach meiner Einschätzung Wochen statt Monate.

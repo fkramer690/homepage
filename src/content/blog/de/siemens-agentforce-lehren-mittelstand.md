@@ -99,4 +99,4 @@ Bevor einer dieser Fälle live geht, vereinbaren Sie eine Ergebniskennzahl jense
 
 Wenn in Ihrem Haus jemand sagt "Siemens macht das schon", stellen Sie vier Fragen: In welcher Zeitform spricht die Quelle, ist die Zahl ein Ausgangswert oder ein Ergebnis, wessen Zahl ist es, und nennt sie eine Quelle. Das vor einer Budgetentscheidung zu klären, gehört zu meiner Arbeit in [Architektur und Partnersteuerung](../../leistungen/salesforce-architektur/).
 
-Siemens zeigt eher eine vernünftige Reihenfolge als eine fertige Lösung, und diese Reihenfolge passt auch zu einem mittelständischen Maschinenbauer. Wenn Sie prüfen möchten, welcher Ihrer Prozesse oben auf diese Liste gehört, [schreiben Sie mir](#contact).
+Siemens zeigt eher eine vernünftige Reihenfolge als eine fertige Lösung, und diese Reihenfolge passt auch zu einem mittelständischen Maschinenbauer.

@@ -99,4 +99,4 @@ And sometimes Salesforce is not the answer at all. If the company has no Salesfo
 
 Pull the four numbers for the last twelve months: order lines, share referring to a part number, ordering dealers, share by phone and email. If they point to a store, the next questions are who owns prices and stock, which buyer groups you need and which ERP calls must be live. They are in the [masterclass chapter on whether B2B Commerce is worth it](../../masterclass/b2b-commerce/b2b-commerce-worth-it-overview/). An independent view of make or buy is part of my work on [make-or-buy and licence forecasts](../../services/make-or-buy-licences/).
 
-A store pays off when dealers reorder known parts in volume, and a portal is enough when they mainly ask questions. If you want to check which one your dealers need, [send me a message](#contact).
+A store pays off when dealers reorder known parts in volume, and a portal is enough when they mainly ask questions.

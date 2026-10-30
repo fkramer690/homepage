@@ -116,4 +116,4 @@ With 24 monthly periods, that is about 12 x 4 x 10 x 2 x 24 = 23,040 component f
 
 If you do go ahead, the integration with planning in the ERP needs one leading number, which is part of my work on [Salesforce integration](../../services/salesforce-integration/).
 
-Program-based business pays off for suppliers with many programmes and a clear owner for component data. If you want to check whether it fits your OEM business, [send me a message](#contact).
+Program-based business pays off for suppliers with many programmes and a clear owner for component data.

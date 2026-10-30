@@ -110,4 +110,4 @@ All three needs get met, and no community server reaches the org.
 
 Steering partners on tools like this is part of my [partner governance](../../services/partner-governance/) work, and the interface overview is in [chapter 3 of the masterclass](../../masterclass/ai-salesforce/mcp-and-interfaces/).
 
-A community MCP server earns approval only when you can name its user, its secret, its maintainer and its version. If you want a second opinion on a request from your partner, [send me a message](#contact).
+A community MCP server earns approval only when you can name its user, its secret, its maintainer and its version.

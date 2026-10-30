@@ -115,4 +115,4 @@ Assume a machine builder with 90 dealers, an Agentforce service agent in the dea
 
 A log inventory with owners is part of my work on [Salesforce architecture](../../services/salesforce-architecture/).
 
-Agents make decisions in your org, so the logs that explain those decisions need an owner and a retention period before the first auditor asks. If you want to go through your log inventory before an agent goes live, [send me a message](#contact).
+Agents make decisions in your org, so the logs that explain those decisions need an owner and a retention period before the first auditor asks.

@@ -87,4 +87,4 @@ Gleiche Arbeitsweise heißt nicht gleiche Rechte. Drei Dinge würde ich bewusst 
 
 Nehmen Sie Ihren wichtigsten Partner und schreiben Sie auf, wie ein Einsatz heute zu ihm kommt und wie die Rückmeldung zurückkommt. Jeder Schritt, der anders läuft als bei internen Technikern, ist ein Kandidat für die Angleichung. Starten Sie mit einem Partner und einem Servicegebiet, bevor Sie alle anbinden. Mischformen sind erlaubt: Ein großer Stammpartner arbeitet im ersten Modell, ein kleiner Partner für Spitzenzeiten im zweiten. Wichtig ist, dass die Entscheidung je Partner bewusst fällt und dokumentiert ist.
 
-Im letzten Teil der Serie geht es um die Einführung selbst. Wenn Sie vorher prüfen möchten, wie Ihre Partner in Field Service passen, [schreiben Sie mir](#contact).
+Im letzten Teil der Serie geht es um die Einführung selbst.

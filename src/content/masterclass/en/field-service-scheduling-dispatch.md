@@ -38,12 +38,14 @@ Field Service, which Salesforce sells today as [Field Service and Operations](ht
 
 The engine needs six kinds of master data, described in detail in [what data Field Service scheduling needs](../../../blog/salesforce-field-service-master-data/):
 
-- **Service territories with operating hours.** Salesforce recommends up to 50 technicians per territory.
-- **Technicians with skills.** Skill levels run from 0 to 99.99; the company decides what each level means.
-- **Work types.** Templates for annual maintenance, breakdown repair or commissioning, with duration and required skills.
-- **Assets.** The machines at the customer site, usually from the ERP.
-- **Customer visiting hours.** Operating hours on the account, which only count when the visiting hours work rule is active.
-- **Absences.** Vacation and training from time tracking.
+| Master data | What the engine needs from it |
+|---|---|
+| Service territories with operating hours | Salesforce recommends up to 50 technicians per territory. |
+| Technicians with skills | Skill levels run from 0 to 99.99; the company decides what each level means. |
+| Work types | Templates for annual maintenance, breakdown repair or commissioning, with duration and required skills. |
+| Assets | The machines at the customer site, usually from the ERP. |
+| Customer visiting hours | Operating hours on the account, which only count when the visiting hours work rule is active. |
+| Absences | Vacation and training from time tracking. |
 
 Hardly any of this is created in Field Service. Assets come from the ERP, skills from HR or the training system, absences from time tracking. So for each kind I set a leading system and an owner before the first interface is built. Which system leads between ERP and Salesforce is the subject of [Salesforce integration](../../../services/salesforce-integration/).
 
@@ -67,9 +69,11 @@ Enhanced Scheduling and Optimization, ESO for short, is the newer scheduling eng
 
 Three points decide the effort:
 
-- **Higher limits.** According to the [ESO limits](https://help.salesforce.com/s/articleView?id=sf.pfs_enhanced_available_limits.htm&language=en_US&type=5), a technician can carry 250 skills instead of 100, and optimization handles 50,000 appointments per rolling 24 hours or 500 per scheduling licence. Machine builders with skills per series, control system and safety training need the room.
-- **What disappears.** Scheduling recipes are not available; Salesforce Help names the Fix Schedule Overlaps flow as the replacement. Optimization Insights becomes the Optimization Hub.
-- **What behaves differently.** According to the [ESO considerations](https://help.salesforce.com/s/articleView?id=sf.pfs_enhanced_available_considerations.htm&language=en_US&type=5), several work rules treat empty fields differently, and an appointment without a territory gets candidates from all territories. Data gaps that were harmless before now change results.
+| Point | What it means |
+|---|---|
+| Higher limits | According to the [ESO limits](https://help.salesforce.com/s/articleView?id=sf.pfs_enhanced_available_limits.htm&language=en_US&type=5), a technician can carry 250 skills instead of 100, and optimization handles 50,000 appointments per rolling 24 hours or 500 per scheduling licence. Machine builders with skills per series, control system and safety training need the room. |
+| What disappears | Scheduling recipes are not available; Salesforce Help names the Fix Schedule Overlaps flow as the replacement. Optimization Insights becomes the Optimization Hub. |
+| What behaves differently | According to the [ESO considerations](https://help.salesforce.com/s/articleView?id=sf.pfs_enhanced_available_considerations.htm&language=en_US&type=5), several work rules treat empty fields differently, and an appointment without a territory gets candidates from all territories. Data gaps that were harmless before now change results. |
 
 ### Global, in-day or single-resource optimization?
 
@@ -93,9 +97,11 @@ The two are not at parity yet. In a [Trailblazer Community thread](https://trail
 
 Field Service was built for many short jobs per day. Commissioning, overhauls and retrofits keep a team on site for days. For those, Field Service has three tools, each with a limit that shapes the design:
 
-- **Multiday appointments** span up to eight calendar weeks according to [Salesforce Help](https://help.salesforce.com/s/articleView?id=service.pfs_multiday.htm&language=en_US&type=5). Booking, Schedule and optimization only handle jobs that fit into 30 days. Under ESO a multiday appointment is never reshuffled or dropped, and utilization ignores it.
-- **Crews** are a service resource of type Crew. Absences and efficiency count only on the crew, not on its members, and members get no assignment notification.
-- **Complex work** links appointments in a fixed order. With ESO, a dependency group of up to five appointments is scheduled all or none. Multiday appointments cannot be part of it.
+| Tool | What it does and where the limit is |
+|---|---|
+| Multiday appointments | Span up to eight calendar weeks according to [Salesforce Help](https://help.salesforce.com/s/articleView?id=service.pfs_multiday.htm&language=en_US&type=5). Booking, Schedule and optimization only handle jobs that fit into 30 days. Under ESO a multiday appointment is never reshuffled or dropped, and utilization ignores it. |
+| Crews | A service resource of type Crew. Absences and efficiency count only on the crew, not on its members, and members get no assignment notification. |
+| Complex work | Links appointments in a fixed order. With ESO, a dependency group of up to five appointments is scheduled all or none. Multiday appointments cannot be part of it. |
 
 The last limit hits commissioning hardest: a site survey cannot be linked to the two-week installation that follows it. Capacity-based resources cannot take multiday jobs either, so a partner company modelled only as capacity drops out. My rule: the project plan with phases and milestones stays in the ERP or a project tool, and Field Service carries the work on site, the time and the documentation. The setup is in [Field Service multiday jobs: commissioning and crews](../../../blog/field-service-multiday-jobs-crews-commissioning/).
 
@@ -103,7 +109,11 @@ The last limit hits commissioning hardest: a site survey cannot be linked to the
 
 Operating hours describe the regular working time of a territory, usually Monday to Friday. The Shift object adds working time outside it: weekend call, nights, overtime. Only confirmed shifts count for scheduling. An Extended shift takes appointments only when the Service Resource Availability work rule in the policy allows overtime, and filter criteria limit a shift to certain jobs, for example breakdowns with high priority.
 
-A typical surprise after go-live: a contract promises a technician within 24 hours, a machine stops on Saturday, and the appointment stays at None because no confirmed shift exists. Entitlement, shift and policy have to fit together. In Germany the works council has a say on on-call rotas and overtime under [section 87 of the Works Constitution Act](https://www.gesetze-im-internet.de/betrvg/__87.html). Setup and the points to agree are in [Field Service on-call duty](../../../blog/field-service-on-call-shifts/).
+```hinweis achtung
+A typical surprise after go-live: a contract promises a technician within 24 hours, a machine stops on Saturday, and the appointment stays at None because no confirmed shift exists. Entitlement, shift and policy have to fit together.
+```
+
+In Germany the works council has a say on on-call rotas and overtime under [section 87 of the Works Constitution Act](https://www.gesetze-im-internet.de/betrvg/__87.html). Setup and the points to agree are in [Field Service on-call duty](../../../blog/field-service-on-call-shifts/).
 
 ## Where does the human dispatcher stay when AI agents schedule?
 
@@ -134,9 +144,11 @@ The Excel list is gone after week 10. The dispatchers still decide, but from a p
 
 Three decisions need a name next to them before a partner configures scheduling:
 
-- **Engine.** ESO for every territory, with a date for older orgs. Without a date, the switch gets postponed.
-- **Console.** Which dispatchers move to the Scheduling Console and which views they need every day.
-- **Policy owner.** One person in service management owns scheduling policies, work rules and weights, and approves every change.
+| Decision | What it covers |
+|---|---|
+| Engine | ESO for every territory, with a date for older orgs. Without a date, the switch gets postponed. |
+| Console | Which dispatchers move to the Scheduling Console and which views they need every day. |
+| Policy owner | One person in service management owns scheduling policies, work rules and weights, and approves every change. |
 
 ```hinweis achtung
 Policies, work rules, operating hours and territories are records, not metadata. A metadata deployment does not carry them, so they belong in the pipeline as described in the DevOps masterclass chapter on [data and configuration](../../devops-release-management/data-and-configuration/). Otherwise the tested sandbox and production drift apart after the first change.
@@ -144,4 +156,4 @@ Policies, work rules, operating hours and territories are records, not metadata.
 
 Where the scheduling design touches ERP, project tools and partners, I help with the [Salesforce architecture](../../../services/salesforce-architecture/). The next step for technicians is the app: [chapter 3](../field-service-mobile-app-documents/) covers offline data, forms and service reports, and the [overview](../) lists all chapters.
 
-Good scheduling in Field Service starts with clean data and a named policy owner, and the engine, the console and the agents build on that. If you want an independent view of your scheduling setup, [send me a message](#contact).
+Good scheduling in Field Service starts with clean data and a named policy owner, and the engine, the console and the agents build on that.

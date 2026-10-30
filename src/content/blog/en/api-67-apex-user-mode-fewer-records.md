@@ -112,4 +112,4 @@ public without sharing class SapOrderSyncSelector {
 
 Planning such a move across several partners is part of my [DevOps and release management](../../services/devops-release-management/) work.
 
-API 67.0 makes Apex safer by default, and the price is that every version bump becomes a change in data access that deserves its own test. If you want a second opinion on how to plan the move for your org, [send me a message](#contact).
+API 67.0 makes Apex safer by default, and the price is that every version bump becomes a change in data access that deserves its own test.

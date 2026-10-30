@@ -125,4 +125,4 @@ Seven interfaces, three of them live. That is a realistic scope for a first rele
 
 Write the object ownership matrix and the interface list before anyone designs the store pages. For every data item, note the master system, copy or live, maximum age and what happens when SAP is down. The [ERP integration chapter of the B2B Commerce masterclass](../../masterclass/b2b-commerce/erp-integration-stock-orders/) puts these decisions in order, and an independent review of interfaces is part of my work on [Salesforce integration](../../services/salesforce-integration/).
 
-A B2B store is only as good as its data flows from SAP, so decide them first; if you want a second opinion on your interface list, [send me a message](#contact).
+A B2B store is only as good as its data flows from SAP, so decide them first.

@@ -115,4 +115,4 @@ I would choose A when SAP answers fast and is reliably available, which is the m
 
 The full chapter on ERP integration, agents and rollout is [ERP, AI and rollout](../../masterclass/manufacturing-cloud/erp-ai-and-rollout/) in the Manufacturing Cloud masterclass, and drawing the line between ERP and Salesforce is part of my [architecture work](../../services/salesforce-architecture/).
 
-Penny Perfect Pricing brings SAP-style pricing into Salesforce, but one system still has to own the price. If you want to settle that before telesales goes live, [send me a message](#contact).
+Penny Perfect Pricing brings SAP-style pricing into Salesforce, but one system still has to own the price.

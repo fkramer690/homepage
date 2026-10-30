@@ -101,4 +101,4 @@ Aus Architektensicht ist das die normale Arbeitsteilung: Der Trust Layer kümmer
 
 Diese Konfiguration ist Teil meiner Arbeit an der [Salesforce-Architektur](../../leistungen/salesforce-architektur/), weil die Entscheidungen im Datenmodell und in den Berechtigungen fallen und nicht im Prompt des Agenten.
 
-Der Einstein Trust Layer hält Ihre Daten aus dem Speicher des Modellanbieters heraus, alles Weitere hängt an Berechtigungen und Aktionen, die Sie selbst steuern. Wenn Sie einen Agenten prüfen lassen möchten, bevor er Händlerpreise liest, [schreiben Sie mir](#contact).
+Der Einstein Trust Layer hält Ihre Daten aus dem Speicher des Modellanbieters heraus, alles Weitere hängt an Berechtigungen und Aktionen, die Sie selbst steuern.

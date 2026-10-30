@@ -91,4 +91,4 @@ It also matters that the role is visibly recognised. Whoever takes on extra work
 
 Ask every affected team: whom do you ask today when you get stuck in the system? The names that come up several times are your candidates. Then agree the time with the managers and bring the key users into the first workshops, before anything is built.
 
-Key users are the cheapest way to bring knowledge from the project into daily work and feedback from daily work into the project. If you are planning a rollout, [send me a message](#contact) or read more about [change management for Salesforce programmes](../../services/change-management-salesforce/).
+Key users are the cheapest way to bring knowledge from the project into daily work and feedback from daily work into the project. Read more about [change management for Salesforce programmes](../../services/change-management-salesforce/).

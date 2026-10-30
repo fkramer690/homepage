@@ -112,4 +112,4 @@ Involve the works council early
 
 Whether the add-on or Agentforce 1 Field Service is the better buy is a licence question I handle in [make-or-buy and licence planning](../../services/make-or-buy-licences/). For the general go or no-go on agents, see [Agentforce for manufacturers: start now or wait?](../agentforce-yes-or-no-manufacturers/). How to roll out agents in field service step by step is in [chapter 5 of the Field Service masterclass](../../masterclass/field-service/field-service-ai-agents-rollout/).
 
-Start with the agent that books planned maintenance, and let the job report follow once the fields behind it are clean. If you want a second opinion on which function fits your field service, [send me a message](#contact).
+Start with the agent that books planned maintenance, and let the job report follow once the fields behind it are clean.

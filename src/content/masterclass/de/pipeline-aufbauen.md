@@ -43,6 +43,16 @@ Eine Pipeline ist eine feste Folge automatischer Schritte, die eine Änderung au
 7. Nach dem Merge deployt die Pipeline in die Org, wenn möglich als Quick Deploy, und führt die Schritte vor und nach dem Deployment aus.
 8. Team und Ticket erfahren das Ergebnis.
 
+```ablauf
+sf: Feature-Branch, Validierung, Review, Merge, Deployment
+ext: Team und Ticket
+Feature-Branch --Pull Request--> Validierung
+Validierung --Kommentar im PR--> Review
+Review --Freigabe--> Merge
+Merge --Quick Deploy--> Deployment
+Deployment ..Ergebnis..> Team und Ticket
+```
+
 Von Integration nach UAT und von dort nach Produktion wiederholt sich dasselbe Muster. Gearset Pipelines arbeitet im Kern genauso: Laut [Gearset-Dokumentation](https://docs.gearset.com/en/articles/6166062-promoting-your-first-features-in-gearset-pipelines) prüft Gearset jeden Pull Request auf Merge-Konflikte und validiert seine Metadaten gegen die Zielorg; „Promote changes“ startet dann einen Job, der mergt und deployt. Der Unterschied liegt in der Bedienung über eine Weboberfläche.
 
 ## Validierung und Quick Deploy
@@ -86,6 +96,8 @@ sfdx-hardis nutzt dafür das Open-Source-Plugin sfdx-git-delta und schaltet es m
 
 Fast jedes Release hat Schritte, die keine Metadaten sind: einen Flow aktivieren, Referenzdaten laden, einen Batch-Job einplanen, Benutzer vor dem Release einfrieren. In vielen Programmen stehen sie in einer Tabelle, die jemand um 22 Uhr von Hand abarbeitet. Gehören sie zur Pipeline, laufen sie in jeder Umgebung gleich und sind im Repository nachvollziehbar.
 
+```vertiefung Für Entwickler
+titel: Wie funktionieren Deployment Actions in sfdx-hardis?
 In sfdx-hardis heißen sie [Deployment Actions](https://sfdx-hardis.cloudity.com/hardis/project/action/create/). Die wichtigsten Regeln aus der Dokumentation:
 
 - **Typen:** Shell-Befehl, Datenimport mit SFDMU, Apex-Skript, Community veröffentlichen, manuelle Anweisung, Batch einplanen oder sofort starten, Einträge aus der `package.xml` entfernen, User Access Policies aktivieren.
@@ -93,6 +105,7 @@ In sfdx-hardis heißen sie [Deployment Actions](https://sfdx-hardis.cloudity.com
 - **Zeitpunkt:** vor oder nach dem Deployment. Standard ist der Kontext `process-deployment-only`, also nur beim echten Deployment, nicht bei der Validierung.
 - **Sicherheit:** Aktionen nach dem Deployment laufen laut [Befehlsreferenz](https://sfdx-hardis.cloudity.com/hardis/project/deploy/sources/dx/) nie, wenn das Metadaten-Deployment fehlgeschlagen ist, und standardmäßig nur einmal pro Ziel-Org.
 - **Nachweis:** Die Ergebnisse stehen in einem eigenen Kommentar „Deployment Actions“ im Pull Request.
+```
 
 Die kommerziellen Werkzeuge lösen dasselbe Problem mit eigener Oberfläche. Gearset hängt laut [Dokumentation](https://docs.gearset.com/en/articles/9859659-pre-and-post-deployment-steps-in-gearset-pipelines) manuelle Schritte vor und nach dem Deployment sowie automatische Schritte nach dem Deployment an den Pull Request, darunter Flows, Agenten und Bots aktivieren. Gut gelöst finde ich, dass ein Pull Request erst weitergeht, wenn die Vorab-Schritte erledigt sind. Die Funktion hängt an den Stufen Automation Starter, Teams und Enterprise Add-on. Copado führt in seiner [Dokumentation](https://docs.copado.com/article/7y7p18g4ef-deployment-steps) eigene Deployment Steps, die an der User Story hängen, darunter Schritte mit Apex. Wie sie in Ihrer Edition aussehen, klären Sie am besten in einer Demo mit Ihrer eigenen Org. Wie Sie Referenz- und Konfigurationsdaten sauber bewegen, behandelt [Kapitel 7](../daten-und-konfiguration/).
 
@@ -144,4 +157,4 @@ Ein Hersteller von Industrieanlagen nutzt Field Service und eine Schnittstelle z
 
 Nichts davon braucht ein teures Werkzeug, aber jemand muss es einrichten und pflegen. Ich setze sfdx-hardis seit rund zwei Jahren in Kundenprojekten ein; wie es aufgebaut ist, steht in der [Einführung in sfdx-hardis](../../../blog/sfdx-hardis-einfuehrung-salesforce-devops/), und wer die Strecke einmal selbst bauen will, findet im [kostenlosen sfdx-hardis-Training](../../../blog/sfdx-hardis-kostenloses-devops-training/) genau diese Schritte als Labs. Bei der Einrichtung unterstütze ich im Rahmen von [DevOps und Release-Management](../../../leistungen/devops-und-release-management/), alle Kapitel finden Sie auf der [Übersichtsseite](../).
 
-Eine gute Pipeline macht jedes Release gleich langweilig, egal welcher Partner die Änderung gebaut hat. Wenn Sie Ihre Pipeline prüfen oder neu aufsetzen möchten, [schreiben Sie mir](#contact).
+Eine gute Pipeline macht jedes Release gleich langweilig, egal welcher Partner die Änderung gebaut hat.

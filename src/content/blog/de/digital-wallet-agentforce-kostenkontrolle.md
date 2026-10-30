@@ -118,4 +118,4 @@ Ein Zähler hat noch keinen Preis: Die Rate Card führt Headless Platform Intera
 
 Wie Sie den Verbrauch selbst schätzen, steht in [Flex Credits: Kosten pro Aktion](../flex-credits-agentforce-kosten-pro-aktion/); die Lizenzplanung über mehrere Gesellschaften gehört zu meiner [Make-or-buy- und Lizenzplanung](../../leistungen/make-or-buy-lizenzen/).
 
-Digital Wallet liefert die Zahlen pro Agent und Kostenstelle, die Verantwortung und die Regeln für Restmengen müssen von Ihnen kommen. Wenn Sie Agentforce-Kostenkontrolle für mehrere Werke oder Töchter aufsetzen möchten, [schreiben Sie mir](#contact).
+Digital Wallet liefert die Zahlen pro Agent und Kostenstelle, die Verantwortung und die Regeln für Restmengen müssen von Ihnen kommen.

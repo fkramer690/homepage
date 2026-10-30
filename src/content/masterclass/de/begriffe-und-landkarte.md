@@ -115,10 +115,12 @@ Was hinter AIforce steckt und was eine IT-Leitung jetzt tun sollte, steht in [AI
 
 Nehmen wir einen Maschinenbauer mit Sales Cloud, Service Cloud, SAP und einem Händlernetz mit Portal. Alle Zahlen sind Annahmen zur Veranschaulichung. Im Lenkungskreis stehen an einem Vormittag vier KI-Wünsche auf der Agenda:
 
-1. **Vertriebsleitung:** Die Key Account Manager sollen Händlerbesuche in Claude vorbereiten und Opportunities von dort pflegen. Das ist Ebene D. Salesforce in Claude ist eine Beta, Preise sind laut Salesforce noch veränderlich. Vorher muss geklärt sein, ob das Sharing für Garantiefälle und Preisvereinbarungen zu weit offen ist.
-2. **Serviceleitung:** Ein Agent soll Händleranfragen zu Auftragsstatus und Lieferterminen beantworten. Das ist Ebene C, mit einer Abhängigkeit zu Ebene B, denn die Antworten stehen in SAP. Angenommen sind 1.500 Anfragen im Monat mit je drei Aktionen: 4.500 Aktionen zu 20 Credits ergeben 90.000 Credits, rund 450 € im Monat, ohne Tests und Integrationsaufwand.
-3. **Implementierungspartner:** Er will das neue Händlerportal mit Coding-Agenten bauen und verspricht kürzere Sprints. Das ist Ebene A. Hier zählen Review-Regeln, Regeldatei und Pipeline, nicht der Name des Werkzeugs.
-4. **IT-Leitung:** Sie fragt, wer eigentlich auf welche Daten zugreift, wenn Claude, der Partner-Agent und der Serviceagent gleichzeitig mit der Org sprechen. Das ist Ebene B, und sie betrifft alle drei anderen Punkte.
+| Wer | Wunsch und Einordnung |
+|---|---|
+| Vertriebsleitung | Die Key Account Manager sollen Händlerbesuche in Claude vorbereiten und Opportunities von dort pflegen. Das ist Ebene D. Salesforce in Claude ist eine Beta, Preise sind laut Salesforce noch veränderlich. Vorher muss geklärt sein, ob das Sharing für Garantiefälle und Preisvereinbarungen zu weit offen ist. |
+| Serviceleitung | Ein Agent soll Händleranfragen zu Auftragsstatus und Lieferterminen beantworten. Das ist Ebene C, mit einer Abhängigkeit zu Ebene B, denn die Antworten stehen in SAP. Angenommen sind 1.500 Anfragen im Monat mit je drei Aktionen: 4.500 Aktionen zu 20 Credits ergeben 90.000 Credits, rund 450 € im Monat, ohne Tests und Integrationsaufwand. |
+| Implementierungspartner | Er will das neue Händlerportal mit Coding-Agenten bauen und verspricht kürzere Sprints. Das ist Ebene A. Hier zählen Review-Regeln, Regeldatei und Pipeline, nicht der Name des Werkzeugs. |
+| IT-Leitung | Sie fragt, wer eigentlich auf welche Daten zugreift, wenn Claude, der Partner-Agent und der Serviceagent gleichzeitig mit der Org sprechen. Das ist Ebene B, und sie betrifft alle drei anderen Punkte. |
 
 Ohne die Ebenen landen diese vier Wünsche in einem Topf namens „KI-Initiative“ mit einem Budget und einem Verantwortlichen. Mit den Ebenen werden es vier Vorhaben mit vier Verantwortlichen: Vertrieb mit IT und Datenschutz, Service, Programmleitung mit Partnersteuerung, Integrationsarchitektur. Nur das zweite Vorhaben braucht eine Agentforce-Entscheidung. Ob der Serviceagent jetzt startet oder erst die Daten in Ordnung kommen, beantworte ich in [Agentforce für Hersteller: jetzt starten oder warten?](../../../blog/agentforce-ja-oder-nein-hersteller/).
 
@@ -133,4 +135,4 @@ Die folgenden Kapitel gehen die Ebenen einzeln durch:
 
 Die Übersicht aller Kapitel finden Sie auf der [Startseite der Masterclass](../). Wenn Sie die Ebenen für Ihr eigenes Programm sortieren wollen, ist das ein typischer Einstieg in meine Arbeit zur [Salesforce-Architektur](../../../leistungen/salesforce-architektur/).
 
-Wer die vier Ebenen trennt und Produktnamen mit Datum verwendet, kann jedes KI-Angebot für Salesforce einordnen, bevor er über Werkzeuge spricht. Wenn Sie dabei eine unabhängige zweite Meinung möchten, [schreiben Sie mir](#contact).
+Wer die vier Ebenen trennt und Produktnamen mit Datum verwendet, kann jedes KI-Angebot für Salesforce einordnen, bevor er über Werkzeuge spricht.

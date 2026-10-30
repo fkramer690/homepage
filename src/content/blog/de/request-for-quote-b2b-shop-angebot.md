@@ -103,4 +103,4 @@ Starten Sie beim Innendienst, nicht bei der Komponente. Legen Sie Antwortzeit, V
 
 Das Kapitel [Preise, Warenkorb, Checkout](../../masterclass/b2b-commerce/preise-warenkorb-checkout/) der [Masterclass B2B Commerce](../../masterclass/b2b-commerce/) zeigt, wie RFQ neben Kundenpreisen, Checkout und Nachbestellung steht. Wie aus dem Angebot in Revenue Cloud Vertrag und Auftrag werden, behandelt das Kapitel [Angebot, Vertrag, Auftrag](../../masterclass/revenue-cloud/angebot-vertrag-auftrag/) der Masterclass Revenue Cloud. Wo RFQ mehrere Partner und Teams berührt, gehört die Steuerung zu meiner Arbeit in der [Partnersteuerung](../../leistungen/partnersteuerung/).
 
-Request for Quote holt Angebotsanfragen aus dem Postfach in den Shop, vorausgesetzt, jemand beantwortet sie rechtzeitig. Wenn Sie diesen Prozess gestalten möchten, [schreiben Sie mir](#contact).
+Request for Quote holt Angebotsanfragen aus dem Postfach in den Shop, vorausgesetzt, jemand beantwortet sie rechtzeitig.

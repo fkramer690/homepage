@@ -41,7 +41,9 @@ Four layers go into it:
 3. **Retirements and release updates:** dates on which something stops working if nobody acts.
 4. **Business dates:** quarter end in sales, stocktaking, plant shutdowns, SAP releases, trade fairs with new products in the dealer portal.
 
+```hinweis tipp
 The fourth layer is the one people forget. A release on the last day of the quarter hits sales exactly when quotes and orders have to go through Salesforce. A release that changes the SAP interface does not belong in the week the SAP team imports its own transports.
+```
 
 ## Which cadence and freeze windows fit?
 
@@ -135,12 +137,19 @@ What works without much effort:
 
 A typical scenario, as an assumption: a machine builder runs Service Cloud, Field Service and a dealer portal connected to SAP S/4. Three partners work on one org, and releases go live every second Thursday. The release manager on the client side plans in November:
 
-1. She adds the SOAP login date of 1 December and the end of the password flow on 20 February, and gives both an owner. The integration inventory runs until the end of November.
-2. As soon as Trust shows the Spring '27 dates, she enters the sandbox preview cutoff, the upgrade weekend of the production instance and a freeze window around it.
-3. A separate Developer Pro sandbox outside the deployment path is refreshed before the cutoff and becomes the preview sandbox for SAP interface tests and release updates. Integration, UAT and staging stay on the production release.
-4. Because Spring '27 and the end of the password flow may fall into the same weeks, she switches the password flow off herself at the end of January, separate from the Salesforce upgrade.
-5. The partners get the calendar in writing. Anyone who wants to deliver during a freeze needs her approval.
+```schritte
+Enter the retirements | November
+  She adds the SOAP login date of 1 December and the end of the password flow on 20 February, and gives both an owner. The integration inventory runs until the end of November.
+Plan Spring '27 | as soon as Trust shows the dates
+  As soon as Trust shows the Spring '27 dates, she enters the sandbox preview cutoff, the upgrade weekend of the production instance and a freeze window around it.
+Refresh the preview sandbox | before the cutoff
+  A separate Developer Pro sandbox outside the deployment path is refreshed before the cutoff and becomes the preview sandbox for SAP interface tests and release updates. Integration, UAT and staging stay on the production release.
+Switch off the password flow early | end of January
+  Because Spring '27 and the end of the password flow may fall into the same weeks, she switches the password flow off herself at the end of January, separate from the Salesforce upgrade.
+Share the calendar | with every partner
+  The partners get the calendar in writing. Anyone who wants to deliver during a freeze needs her approval.
+```
 
 None of these steps needs a new tool. It needs someone on the client side who owns the calendar, and partners who are contractually bound to plan into it. How such rules get into partner contracts is part of my [partner governance](../../../services/partner-governance/) work; the data side of a release is covered in [chapter 7](../data-and-configuration/), and all chapters are on the [overview page](../).
 
-A release calendar that shows your dates and Salesforce's in one place turns retirements and upgrades into plannable work; if you want your calendar or release process reviewed for that, [send me a message](#contact).
+A release calendar that shows your dates and Salesforce's in one place turns retirements and upgrades into plannable work.

@@ -100,4 +100,4 @@ Der Tagessatz bleibt gleich. Neu ist, dass der Partner mehr verdient, wenn er sc
 
 Solche kommerziellen Regeln aufzusetzen gehört zu meiner Arbeit in der [Partnersteuerung](../../leistungen/partnersteuerung/), auf Kundenseite und ohne Anteil am Umsatz eines Partners.
 
-Festpreis für das, was sich prüfen lässt, Stunden für das, was niemand schätzen kann, und ein gemessener Anteil für Ergebnisse: Diese Mischung würde ich in den nächsten Rahmenvertrag schreiben. Wenn Sie eine zweite Meinung zu einem Partnerangebot möchten, [schreiben Sie mir](#contact).
+Festpreis für das, was sich prüfen lässt, Stunden für das, was niemand schätzen kann, und ein gemessener Anteil für Ergebnisse: Diese Mischung würde ich in den nächsten Rahmenvertrag schreiben.

@@ -156,4 +156,4 @@ Die größte Position ist hier das Portal und nicht die Bonuslogik. Händlerbenu
 
 Garantieansprüche, die Händler einreichen, und Rückrufaktionen über das Händlernetz behandelt [Kapitel 4](../garantie-und-after-sales/). Alle Kapitel finden Sie auf der [Übersichtsseite](../).
 
-Der Händlerkanal in der Manufacturing Cloud lohnt sich, wenn Sie die Funktionen nach Ihrem Kanalmodell auswählen und Portallizenzen und ERP-Daten vor dem ersten Programm einplanen. Wenn Sie Ihren Händlerkanal so durchrechnen möchten, [schreiben Sie mir](#contact).
+Der Händlerkanal in der Manufacturing Cloud lohnt sich, wenn Sie die Funktionen nach Ihrem Kanalmodell auswählen und Portallizenzen und ERP-Daten vor dem ersten Programm einplanen.

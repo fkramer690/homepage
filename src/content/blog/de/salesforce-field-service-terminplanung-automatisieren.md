@@ -97,5 +97,3 @@ Dispatch automatisieren
 ```
 
 Die Liste aus dem zweiten Schritt ist die Grundlage für jede weitere Automatisierung und zeigt, welche Daten noch fehlen.
-
-Wenn Sie vor der Einführung der Planung stehen und eine unabhängige Einschätzung möchten, wie viel Automatik zu Ihrem Außendienst passt, [schreiben Sie mir](#contact).

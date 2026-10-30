@@ -114,4 +114,4 @@ Bevor das erste Land geplant wird, klären Sie fünf Punkte:
 4. **Die Reihenfolge.** Eine Tabelle mit Prozessen, Business Units, IT-Landschaft und Marken pro Land.
 5. **Change Management.** Key User, Kommunikation und Nutzung pro Land, eingeplant von Anfang an.
 
-Ein weltweiter Rollout gelingt, wenn das Template früh unter echter Last steht und jedes weitere Land nur noch wenig ändert. Wenn Sie einen Rollout der Manufacturing Cloud in mehreren Ländern planen, [schreiben Sie mir](#contact).
+Ein weltweiter Rollout gelingt, wenn das Template früh unter echter Last steht und jedes weitere Land nur noch wenig ändert.

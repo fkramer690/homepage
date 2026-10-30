@@ -38,12 +38,14 @@ Field Service, das Salesforce heute als [Field Service and Operations](https://w
 
 Die Engine braucht sechs Arten von Stammdaten, ausführlich beschrieben in [welche Daten die Planung im Field Service braucht](../../../blog/salesforce-field-service-stammdaten/):
 
-- **Servicegebiete mit Arbeitszeiten.** Salesforce empfiehlt bis zu 50 Techniker pro Gebiet.
-- **Techniker mit Skills.** Die Stufen reichen von 0 bis 99,99; was eine Stufe bedeutet, legt das Unternehmen fest.
-- **Arbeitstypen.** Vorlagen für Jahreswartung, Störungsbehebung oder Inbetriebnahme, mit Dauer und benötigten Skills.
-- **Assets.** Die Maschinen beim Kunden, meist aus dem ERP.
-- **Besuchszeiten der Kunden.** Arbeitszeiten am Account, die nur zählen, wenn die Work Rule für Besuchszeiten aktiv ist.
-- **Abwesenheiten.** Urlaub und Schulungen aus der Zeiterfassung.
+| Stammdaten | Was die Engine daraus braucht |
+|---|---|
+| Servicegebiete mit Arbeitszeiten | Salesforce empfiehlt bis zu 50 Techniker pro Gebiet. |
+| Techniker mit Skills | Die Stufen reichen von 0 bis 99,99; was eine Stufe bedeutet, legt das Unternehmen fest. |
+| Arbeitstypen | Vorlagen für Jahreswartung, Störungsbehebung oder Inbetriebnahme, mit Dauer und benötigten Skills. |
+| Assets | Die Maschinen beim Kunden, meist aus dem ERP. |
+| Besuchszeiten der Kunden | Arbeitszeiten am Account, die nur zählen, wenn die Work Rule für Besuchszeiten aktiv ist. |
+| Abwesenheiten | Urlaub und Schulungen aus der Zeiterfassung. |
 
 Kaum etwas davon entsteht in Field Service. Assets kommen aus dem ERP, Skills aus HR oder dem Schulungssystem, Abwesenheiten aus der Zeiterfassung. Deshalb lege ich für jede Art ein führendes System und einen Verantwortlichen fest, bevor die erste Schnittstelle gebaut wird. Welches System zwischen ERP und Salesforce führt, behandle ich unter [Salesforce-Schnittstellen](../../../leistungen/salesforce-schnittstellen/).
 
@@ -67,9 +69,11 @@ Enhanced Scheduling and Optimization, kurz ESO, ist die neuere Engine der Termin
 
 Drei Punkte bestimmen den Aufwand:
 
-- **Höhere Limits.** Laut den [ESO-Limits](https://help.salesforce.com/s/articleView?id=sf.pfs_enhanced_available_limits.htm&language=en_US&type=5) kann ein Techniker 250 Skills tragen statt 100, und die Optimierung schafft 50.000 Termine pro rollierenden 24 Stunden oder 500 pro Scheduling-Lizenz. Maschinenbauer mit Skills pro Baureihe, Steuerung und Sicherheitsschulung brauchen diesen Platz.
-- **Was wegfällt.** Scheduling Recipes gibt es nicht mehr; Salesforce Help nennt den Flow Fix Schedule Overlaps als Ersatz. Aus Optimization Insights wird der Optimization Hub.
-- **Was sich anders verhält.** Laut den [ESO-Hinweisen](https://help.salesforce.com/s/articleView?id=sf.pfs_enhanced_available_considerations.htm&language=en_US&type=5) behandeln mehrere Work Rules leere Felder anders, und ein Termin ohne Gebiet bekommt Kandidaten aus allen Gebieten. Datenlücken, die bisher folgenlos blieben, ändern jetzt Ergebnisse.
+| Punkt | Was er bedeutet |
+|---|---|
+| Höhere Limits | Laut den [ESO-Limits](https://help.salesforce.com/s/articleView?id=sf.pfs_enhanced_available_limits.htm&language=en_US&type=5) kann ein Techniker 250 Skills tragen statt 100, und die Optimierung schafft 50.000 Termine pro rollierenden 24 Stunden oder 500 pro Scheduling-Lizenz. Maschinenbauer mit Skills pro Baureihe, Steuerung und Sicherheitsschulung brauchen diesen Platz. |
+| Was wegfällt | Scheduling Recipes gibt es nicht mehr; Salesforce Help nennt den Flow Fix Schedule Overlaps als Ersatz. Aus Optimization Insights wird der Optimization Hub. |
+| Was sich anders verhält | Laut den [ESO-Hinweisen](https://help.salesforce.com/s/articleView?id=sf.pfs_enhanced_available_considerations.htm&language=en_US&type=5) behandeln mehrere Work Rules leere Felder anders, und ein Termin ohne Gebiet bekommt Kandidaten aus allen Gebieten. Datenlücken, die bisher folgenlos blieben, ändern jetzt Ergebnisse. |
 
 ### Globale, untertägige oder Einzel-Optimierung?
 
@@ -93,9 +97,11 @@ Gleichwertig sind beide noch nicht. In einem [Thread der Trailblazer Community](
 
 Field Service ist für viele kurze Einsätze pro Tag gebaut. Inbetriebnahmen, Generalüberholungen und Umbauten binden ein Team tagelang beim Kunden. Dafür hat Field Service drei Werkzeuge, und jedes hat eine Grenze, die das Design bestimmt:
 
-- **Mehrtägige Termine** dürfen laut [Salesforce Help](https://help.salesforce.com/s/articleView?id=service.pfs_multiday.htm&language=en_US&type=5) bis zu acht Kalenderwochen dauern. Buchung, Schedule und Optimierung schaffen nur Einsätze, die in 30 Tage passen. Unter ESO wird ein mehrtägiger Termin nie umgeplant oder aus dem Plan genommen, und die Auslastung ignoriert ihn.
-- **Crews** sind eine Serviceressource vom Typ Crew. Abwesenheiten und Effizienz zählen nur an der Crew, nicht an den Mitgliedern, und die Mitglieder bekommen keine Benachrichtigung über die Zuweisung.
-- **Complex Work** verknüpft Termine in fester Reihenfolge. Mit ESO plant die Engine eine Gruppe von bis zu fünf abhängigen Terminen ganz oder gar nicht. Mehrtägige Termine können nicht dazugehören.
+| Werkzeug | Was es kann und wo die Grenze liegt |
+|---|---|
+| Mehrtägige Termine | Dürfen laut [Salesforce Help](https://help.salesforce.com/s/articleView?id=service.pfs_multiday.htm&language=en_US&type=5) bis zu acht Kalenderwochen dauern. Buchung, Schedule und Optimierung schaffen nur Einsätze, die in 30 Tage passen. Unter ESO wird ein mehrtägiger Termin nie umgeplant oder aus dem Plan genommen, und die Auslastung ignoriert ihn. |
+| Crews | Eine Serviceressource vom Typ Crew. Abwesenheiten und Effizienz zählen nur an der Crew, nicht an den Mitgliedern, und die Mitglieder bekommen keine Benachrichtigung über die Zuweisung. |
+| Complex Work | Verknüpft Termine in fester Reihenfolge. Mit ESO plant die Engine eine Gruppe von bis zu fünf abhängigen Terminen ganz oder gar nicht. Mehrtägige Termine können nicht dazugehören. |
 
 Die letzte Grenze trifft Inbetriebnahmen am härtesten: Eine Baustellenbegehung lässt sich nicht mit der zweiwöchigen Montage verknüpfen, die auf sie folgt. Kapazitätsbasierte Ressourcen können keine mehrtägigen Einsätze übernehmen, ein Partnerunternehmen, das nur als Kapazität abgebildet ist, fällt also heraus. Meine Regel: Der Projektplan mit Phasen und Meilensteinen bleibt im ERP oder einem Projektwerkzeug, Field Service trägt die Arbeit vor Ort, die Zeiten und die Dokumentation. Den Aufbau beschreibe ich in [mehrtägige Einsätze im Field Service](../../../blog/field-service-mehrtaegige-einsaetze-inbetriebnahme/).
 
@@ -103,7 +109,11 @@ Die letzte Grenze trifft Inbetriebnahmen am härtesten: Eine Baustellenbegehung 
 
 Arbeitszeiten beschreiben die reguläre Arbeitszeit eines Gebiets, meist Montag bis Freitag. Das Objekt Shift ergänzt Arbeitszeit außerhalb davon: Wochenendbereitschaft, Nächte, Überstunden. Für die Planung zählen nur bestätigte Schichten. Eine Schicht vom Typ Extended nimmt nur Termine an, wenn die Work Rule Service Resource Availability in der Policy Überstunden erlaubt, und Filterkriterien beschränken eine Schicht auf bestimmte Einsätze, etwa Störungen mit hoher Priorität.
 
-Eine typische Überraschung nach dem Go-live: Ein Vertrag verspricht einen Techniker binnen 24 Stunden, am Samstag steht eine Maschine, und der Termin bleibt auf None, weil keine bestätigte Schicht existiert. Entitlement, Schicht und Policy müssen zusammenpassen. In Deutschland bestimmt der Betriebsrat bei Bereitschaftsplänen und Überstunden nach [§ 87 BetrVG](https://www.gesetze-im-internet.de/betrvg/__87.html) mit. Einrichtung und Abstimmungspunkte stehen in [Bereitschaftsdienst im Field Service](../../../blog/field-service-bereitschaft-schichten/).
+```hinweis achtung
+Eine typische Überraschung nach dem Go-live: Ein Vertrag verspricht einen Techniker binnen 24 Stunden, am Samstag steht eine Maschine, und der Termin bleibt auf None, weil keine bestätigte Schicht existiert. Entitlement, Schicht und Policy müssen zusammenpassen.
+```
+
+In Deutschland bestimmt der Betriebsrat bei Bereitschaftsplänen und Überstunden nach [§ 87 BetrVG](https://www.gesetze-im-internet.de/betrvg/__87.html) mit. Einrichtung und Abstimmungspunkte stehen in [Bereitschaftsdienst im Field Service](../../../blog/field-service-bereitschaft-schichten/).
 
 ## Wo bleibt der Disponent, wenn KI-Agenten planen?
 
@@ -134,9 +144,11 @@ Nach Woche 10 ist die Excel-Liste weg. Die Disponenten entscheiden weiter, aber 
 
 Drei Entscheidungen brauchen einen Namen, bevor ein Partner die Terminplanung konfiguriert:
 
-- **Engine.** ESO für jedes Gebiet, bei älteren Orgs mit einem Datum. Ohne Datum wird der Wechsel verschoben.
-- **Konsole.** Welche Disponenten auf die Scheduling Console wechseln und welche Ansichten sie täglich brauchen.
-- **Policy-Verantwortung.** Eine Person im Servicemanagement verantwortet Scheduling Policies, Work Rules und Gewichte und gibt jede Änderung frei.
+| Entscheidung | Was dazugehört |
+|---|---|
+| Engine | ESO für jedes Gebiet, bei älteren Orgs mit einem Datum. Ohne Datum wird der Wechsel verschoben. |
+| Konsole | Welche Disponenten auf die Scheduling Console wechseln und welche Ansichten sie täglich brauchen. |
+| Policy-Verantwortung | Eine Person im Servicemanagement verantwortet Scheduling Policies, Work Rules und Gewichte und gibt jede Änderung frei. |
 
 ```hinweis achtung
 Policies, Work Rules, Arbeitszeiten und Gebiete sind Datensätze und keine Metadaten. Ein Metadaten-Deployment nimmt sie nicht mit, sie gehören deshalb in die Pipeline, wie im Kapitel [Daten und Konfiguration](../../devops-release-management/daten-und-konfiguration/) der DevOps-Masterclass beschrieben. Sonst laufen getestete Sandbox und Produktion nach der ersten Änderung auseinander.
@@ -144,4 +156,4 @@ Policies, Work Rules, Arbeitszeiten und Gebiete sind Datensätze und keine Metad
 
 Wo das Planungsdesign ERP, Projektwerkzeuge und Partner berührt, unterstütze ich bei der [Salesforce-Architektur](../../../leistungen/salesforce-architektur/). Der nächste Schritt für die Techniker ist die App: [Kapitel 3](../field-service-mobile-app-dokumente/) behandelt Offline-Daten, Formulare und Serviceberichte, die [Übersicht](../) zeigt alle Kapitel.
 
-Gute Terminplanung im Field Service beginnt mit sauberen Daten und einer verantwortlichen Person für die Policies, Engine, Konsole und Agenten bauen darauf auf. Wenn Sie Ihre Terminplanung unabhängig prüfen lassen möchten, [schreiben Sie mir](#contact).
+Gute Terminplanung im Field Service beginnt mit sauberen Daten und einer verantwortlichen Person für die Policies, Engine, Konsole und Agenten bauen darauf auf.

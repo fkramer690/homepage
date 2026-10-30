@@ -122,4 +122,4 @@ What the freemium access includes is not stated on the pricing page. Get it in w
 
 Take your five most common order types and sketch for each what happens after the signature: which system, which team, in which order. If every sketch ends in "SAP does the rest", start with a plain integration. If you see several systems and dependencies, model one order type in DRO first, including the callout to SAP and the fallout queue, and test the rejections before the happy path. The chapter [quote, contract, order](../../masterclass/revenue-cloud/quote-contract-order/) shows where this step sits in the whole process, and the integration design is part of my work in [Salesforce integration](../../services/salesforce-integration/).
 
-DRO is worth it when one order sets several systems in motion, and for a single hand-over to SAP a plain integration does the job. If you want a second opinion on your order flow, [send me a message](#contact).
+DRO is worth it when one order sets several systems in motion, and for a single hand-over to SAP a plain integration does the job.

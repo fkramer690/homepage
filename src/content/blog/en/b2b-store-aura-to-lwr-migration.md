@@ -106,4 +106,4 @@ A typical scenario, as an assumption: a machine builder has run an Aura store si
 
 Start with the inventory: list all Aura components, the checkout flow with its subflows and every place that links to the cart. Then decide which components you replace inside the Aura store in the next two releases. Plan the switch itself into your [Salesforce release calendar](../../masterclass/devops-release-management/release-planning-salesforce-releases/), with regression tests for search, cart and checkout, because three Salesforce releases a year hit both the old and the new store. The other topics of this chapter, from agents to rollout, are in the B2B Commerce masterclass chapter on [agents, migration and rollout](../../masterclass/b2b-commerce/agentforce-migration-rollout/).
 
-An Aura store has no deadline, but every new Aura component makes the later switch more expensive. If you want an independent view on whether and when your store should move, [send me a message](#contact).
+An Aura store has no deadline, but every new Aura component makes the later switch more expensive.

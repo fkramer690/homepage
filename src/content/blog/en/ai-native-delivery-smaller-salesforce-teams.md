@@ -113,4 +113,4 @@ Measure and decide | 3 months
 
 Planning streams, team setups and the business time behind them is the core of my [programme management for Salesforce programmes](../../services/program-management-nearshore/).
 
-Smaller Salesforce teams work when the manufacturer puts its own process experts into the pods every day. If you want to check whether your programme is ready for that, [send me a message](#contact).
+Smaller Salesforce teams work when the manufacturer puts its own process experts into the pods every day.

@@ -102,4 +102,4 @@ Messen und entscheiden
 
 Wie das zu mobiler App und Servicedokumenten passt, steht im [Masterclass-Kapitel zur mobilen App](../../masterclass/field-service/field-service-mobile-app-dokumente/). Ob sich Field Service überhaupt rechnet, beschreibe ich in [Salesforce Field Service: Wann lohnt es sich?](../salesforce-field-service-lohnt-sich/), und die Lizenzfrage im Ganzen unter [Make-or-Buy und Lizenzen](../../leistungen/make-or-buy-lizenzen/).
 
-Visual Remote Assistant spart Einsätze, wo der Bediener den Fehler selbst beheben kann, und zweite Einsätze, wo der Techniker ohnehin kommen muss. Wenn Sie dieses Potenzial mit Ihren eigenen Störungsdaten prüfen wollen, [schreiben Sie mir](#contact).
+Visual Remote Assistant spart Einsätze, wo der Bediener den Fehler selbst beheben kann, und zweite Einsätze, wo der Techniker ohnehin kommen muss.

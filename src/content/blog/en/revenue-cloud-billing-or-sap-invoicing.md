@@ -124,4 +124,4 @@ The interfaces for journal entries and invoice status are part of my work on [Sa
 
 List your revenue types and note for each who invoices today and how often the contract changes. Rows with recurring fees and frequent changes are candidates for Billing, everything else stays in SAP. The masterclass chapter [billing and usage-based pricing](../../masterclass/revenue-cloud/billing-and-usage-based-pricing/) puts this decision into the whole quote-to-cash process.
 
-Machine invoices stay in SAP, recurring revenue that sales changes often can move to Revenue Cloud Billing, and finance decides where the line runs. If you want to check that line for your company, [send me a message](#contact).
+Machine invoices stay in SAP, recurring revenue that sales changes often can move to Revenue Cloud Billing, and finance decides where the line runs.

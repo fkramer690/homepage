@@ -60,12 +60,14 @@ The [product page](https://www.salesforce.com/sales/revenue-cloud-billing/) adds
 
 A subledger records the detail of receivables, every invoice, credit memo and payment, and passes journal entries to the general ledger. The general ledger stays in SAP. According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/billing-management-with-revenue-cloud/set-up-billing-basics), legal entity records tie every billing transaction to the right accounting periods and general ledger accounts. Each of these already exists in SAP as company codes, fiscal periods and G/L accounts.
 
+```hinweis offen
 So before a partner configures anything, finance answers four questions:
 
-1. Which company codes invoice from Salesforce, and which legal entity records match them?
-2. Who closes a Salesforce accounting period, and in which order relative to the SAP period close?
-3. Who maintains the mapping of general ledger accounts when the chart of accounts changes?
-4. How are receivables in Salesforce and SAP reconciled at month end, and who looks into differences?
+- Which company codes invoice from Salesforce, and which legal entity records match them?
+- Who closes a Salesforce accounting period, and in which order relative to the SAP period close?
+- Who maintains the mapping of general ledger accounts when the chart of accounts changes?
+- How are receivables in Salesforce and SAP reconciled at month end, and who looks into differences?
+```
 
 Trailhead describes an [Accounts Receivable Admin](https://trailhead.salesforce.com/content/learn/modules/billing-basics-in-revenue-cloud/explore-billing-features-and-roles) who manages accounting periods, journal entries and financial reporting. In a manufacturing company that person sits in accounting. If nobody there takes the role, I would not take Billing live. The interfaces for journal entries and invoice status are part of my work on [Salesforce integration](../../../services/salesforce-integration/).
 
@@ -122,9 +124,11 @@ Liable summary --> Billing invoice
 
 For a machine that translates directly. Operating hours become a usage resource, the sold product carries a grant of, say, 300 hours per month, and a rate card prices the hours above the grant in tiers. Each customer gets a wallet per resource when the order is activated. Salesforce's own examples are cloud storage and mobile plans, though, and the hard part for machines lies outside Salesforce:
 
-- **One trusted counter per machine.** The controller reports to an IoT platform or historian, which keeps the time series. Salesforce receives one record per machine and day, never raw readings.
-- **Checks before rating.** Serial number to asset and account, counter resets after a controller swap, gaps when a machine was offline, duplicates from retried transfers.
-- **A contract that defines the unit.** Operating hours, load hours or good parts; which counter is binding; how gaps are handled; the minimum fee that protects the financing of the machine.
+| Prerequisite | What it includes |
+|---|---|
+| One trusted counter per machine | The controller reports to an IoT platform or historian, which keeps the time series. Salesforce receives one record per machine and day, never raw readings. |
+| Checks before rating | Serial number to asset and account, counter resets after a controller swap, gaps when a machine was offline, duplicates from retried transfers. |
+| A contract that defines the unit | Operating hours, load hours or good parts; which counter is binding; how gaps are handled; the minimum fee that protects the financing of the machine. |
 
 The same daily counter often drives maintenance by operating hours in Field Service, so one feed can serve both; the [Field Service chapter on assets and maintenance](../../field-service/field-service-assets-maintenance-parts/) covers that side. Rating sits in the Billing add-on as "Usage Rating & Digital Wallet", so confirm in the order form which licence covers it. The scenario and the contract checklist are in [pay-per-use for machines](../../../blog/pay-per-use-machines-revenue-cloud/).
 
@@ -148,13 +152,15 @@ A typical scenario, as an assumption: a machine builder with SAP S/4HANA quotes 
 
 To get there, the client settles these points before the partner configures anything:
 
-1. **Invoice owner per revenue type**, written down, with finance's signature.
-2. **The Accounts Receivable Admin** in accounting, plus the order of the period close in Salesforce and SAP.
-3. **The e-invoicing route** for each German legal entity, before the first Billing invoice.
-4. **A billing event forecast** per contract year, owned by finance, with the price per event from the quote.
-5. **The usage feed and the contract terms** for pay-per-use, before any rate card exists.
-6. **The link to Field Service** for maintenance contracts, as automation with an owner.
+| Decision | What it includes |
+|---|---|
+| Invoice owner per revenue type | Written down, with finance's signature. |
+| The Accounts Receivable Admin | In accounting, plus the order of the period close in Salesforce and SAP. |
+| The e-invoicing route | For each German legal entity, before the first Billing invoice. |
+| A billing event forecast | Per contract year, owned by finance, with the price per event from the quote. |
+| The usage feed and the contract terms | For pay-per-use, before any rate card exists. |
+| The link to Field Service | For maintenance contracts, as automation with an owner. |
 
 If you run the old Salesforce Billing package today, open invoices, schedules and payment history have to move as well. That migration is part of [chapter 5, from CPQ to Revenue Cloud](../from-cpq-to-revenue-cloud/).
 
-Revenue Cloud Billing is worth it where contracts change faster than SAP can follow, and finance has to decide where that line runs. If you want to check that line for your company, [send me a message](#contact).
+Revenue Cloud Billing is worth it where contracts change faster than SAP can follow, and finance has to decide where that line runs.

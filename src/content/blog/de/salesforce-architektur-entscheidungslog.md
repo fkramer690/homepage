@@ -99,4 +99,4 @@ Ein Log, das niemand liest, ist Papierkram. Drei Gelegenheiten machen es nützli
 
 Fangen Sie nicht mit einer Vorlage im Wiki an, sondern mit den fünf Entscheidungen, die in Ihrem Programm am häufigsten angezweifelt werden. Schreiben Sie für jede einen Eintrag, auch rückwirkend. Danach gilt die Regel, dass jede neue Architekturentscheidung einen Eintrag braucht, bevor gebaut wird. Nach einem halben Jahr haben Sie zwanzig bis dreißig Einträge und eine Dokumentation, die ein neuer Partner in einem Nachmittag liest.
 
-Ein Entscheidungslog ist die günstigste Versicherung gegen Partnerwechsel. Wenn Sie Ihre Architekturentscheidungen sortieren möchten, [schreiben Sie mir](#contact) oder lesen Sie mehr über [Salesforce-Architektur auf Kundenseite](../../leistungen/salesforce-architektur/).
+Ein Entscheidungslog ist die günstigste Versicherung gegen Partnerwechsel. Mehr dazu lesen Sie unter [Salesforce-Architektur auf Kundenseite](../../leistungen/salesforce-architektur/).

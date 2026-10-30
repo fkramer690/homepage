@@ -98,4 +98,4 @@ Am längsten dürfte die Frage dauern, wer Hosted Server in der Produktion freig
 
 Das ist normales Abhängigkeits- und Zugriffsmanagement, angewendet auf KI-Werkzeuge, und es gehört auf Kundenseite zu [DevOps und Release-Management](../../leistungen/devops-und-release-management/). Die übrigen Schnittstellen beschreibt [Kapitel 3 der Masterclass](../../masterclass/ki-salesforce/mcp-und-schnittstellen/).
 
-Nutzen Sie den Stichtag, um herauszufinden, welche KI-Werkzeuge mit wessen Anmeldung Ihre Orgs erreichen, dann wird der Wechsel des Servers selbst zur kleinen Aufgabe. Wenn Sie die Inventur mit Ihren Partnern gemeinsam angehen möchten, [schreiben Sie mir](#contact).
+Nutzen Sie den Stichtag, um herauszufinden, welche KI-Werkzeuge mit wessen Anmeldung Ihre Orgs erreichen, dann wird der Wechsel des Servers selbst zur kleinen Aufgabe.

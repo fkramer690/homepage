@@ -106,4 +106,4 @@ Ich würde die Migration zum Aufräumen nutzen. In CPQ-Orgs sammeln sich gern Fr
 
 Schreiben Sie die Freigabematrix auf eine Seite, bevor jemand einen Workflow baut: Auslöser, Schwellen, Verantwortliche und die Quelle der Kostendaten. Bauen Sie dann die Workflows mit Vorschau, parallelen Freigebenden und Vertretung, und testen Sie jede Regel mit einem Angebot, das sie auslösen soll, und einem, das sie nicht auslösen soll. Wie Freigaben in den Weg vom Angebot zum Auftrag passen, zeigt das Kapitel [Angebot, Vertrag, Auftrag](../../masterclass/revenue-cloud/angebot-vertrag-auftrag/), und ich unterstütze dabei im Rahmen der [Salesforce-Architektur](../../leistungen/salesforce-architektur/).
 
-Eine kurze Freigabematrix mit klaren Verantwortlichen hält den Vertrieb schnell und gibt dem Controlling Kontrolle. Wenn Sie eine zweite Meinung zu Ihrer Matrix möchten, [schreiben Sie mir](#contact).
+Eine kurze Freigabematrix mit klaren Verantwortlichen hält den Vertrieb schnell und gibt dem Controlling Kontrolle.

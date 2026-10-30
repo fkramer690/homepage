@@ -129,4 +129,4 @@ Buchung tagsüber
 
 Wo das zwischen den anderen Außendienst-Agenten steht, beschreibe ich in [KI-Agenten im Außendienst: Was Field Service heute kann](../ki-agenten-aussendienst-field-service/), die Lizenzseite gehört zu [Make-or-buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/).
 
-Ein Sprachagent an der Störungshotline lohnt sich, wenn er der Disposition einen klassifizierten Fall übergibt und die Entscheidung über Stillstände bei ihr lässt. Wenn Sie die Triage-Regeln für Ihre Hotline durchgehen möchten, [schreiben Sie mir](#contact).
+Ein Sprachagent an der Störungshotline lohnt sich, wenn er der Disposition einen klassifizierten Fall übergibt und die Entscheidung über Stillstände bei ihr lässt.

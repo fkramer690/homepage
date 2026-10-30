@@ -112,4 +112,4 @@ The chapter on the [dealer and partner channel](../../masterclass/manufacturing-
 3. **Price.** Add-on, partner access and payout volume quoted in writing.
 4. **Process.** Who approves exceptions, and how approved amounts reach the ERP.
 
-Channel Revenue Management pays off for ship and debit when claim volume is high and distributors deliver the data to check it. If you want to calculate that for your channel, [send me a message](#contact).
+Channel Revenue Management pays off for ship and debit when claim volume is high and distributors deliver the data to check it.
