@@ -282,7 +282,7 @@
     "page:arbeitsweise": {"title": "Arbeitsweise mit Fotos und Fortschrittslinie", "proposal": 1, "rating": 1, "ratedOn": "2026-10-30"},
     "page:hero": {"title": "Hero mit Maßlinien am Foto", "proposal": 2, "rating": 1, "ratedOn": "2026-10-30"},
     "page:leistungen": {"title": "Leistungskacheln", "proposal": 2, "rating": 1, "ratedOn": "2026-10-30"},
-    "page:logos": {"title": "Logo-Band", "proposal": 2, "rating": 2, "ratedOn": "2026-10-30", "note": "macht es sinn das bissche ngrößer zu machen? so zirka 20 Prozent?", "todo": "docs/backlog.md G9"},
+    "page:logos": {"title": "Logo-Band", "proposal": 2, "rating": 2, "ratedOn": "2026-10-30", "note": "macht es sinn das bissche ngrößer zu machen? so zirka 20 Prozent?", "todo": "docs/backlog.md G9 erledigt 2026-10-30 (+30 %)"},
     "page:mc-liste": {"title": "Masterclass-Liste", "proposal": 3, "rating": 2, "ratedOn": "2026-10-30", "note": "bitte vorschlag machen", "todo": "docs/backlog.md G10"},
     "page:proof": {"title": "Zahlenleiste", "proposal": 1, "rating": 2, "ratedOn": "2026-10-30", "note": "geht. aber mir fällt gerade auch nix besseres ein"},
     "page:referenzen": {"title": "Referenz-Karten (Slider)", "proposal": 2, "rating": 2, "ratedOn": "2026-10-30", "note": "bitte vorschlag machen", "todo": "docs/backlog.md G11"},
