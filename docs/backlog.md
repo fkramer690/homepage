@@ -126,6 +126,7 @@ Macht Fabian selbst (Quick Wins):
   - Ergänzung 30.10.2026: webwiki.de (Webkatalog, auch für Blogs) sowie die B2B-Plattformen europages.de und wlw.de (Wer liefert was); beide eher für Hersteller, aber in 10 Minuten erledigt.
   - Ohne Backlink, wichtig für lokale Sichtbarkeit: Google-Unternehmensprofil (siehe QA), Bing Places (Import aus Google), Apple Maps (Apple Business Connect).
 - QH. Gastartikel bei Salesforce Break nachhaken: https://salesforcebreak.com/2025/09/04/measure-salesforce-flow-performance/ . Fabian ist Autor, aber die Seite zeigt nur einen Benutzernamen statt seines Namens und hat keinen Link auf www.fk-sd.de (nur die Mailadresse). Redaktion bitten: Autorname „Fabian Kramer“, kurze Autoren-Bio mit Link auf www.fk-sd.de (oder die Vorträge-Seite). URL der Autorenseite danach an Claude (kommt ggf. ins Schema als sameAs).
+- QI. Salesforce-Partnerprogramm und AppExchange: Mitgliedschaft der FK Solution Design GmbH im Salesforce Partner Program prüfen (Bedingungen und Kosten für eine Ein-Personen-GmbH, Navigator-Zertifizierungen) und danach ein Consultant-Listing auf AppExchange („Consultants“) mit Expertise, Branchen und Link auf www.fk-sd.de anlegen. Hoher Aufwand, aber starke Quelle für Google und KI-Suche. Listing-URL danach an Claude (kommt ins Schema als sameAs der Organisation).
 
 ## Grafiken verbessern (Grafik-Ranking 30.10.2026)
 
