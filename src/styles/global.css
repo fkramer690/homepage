@@ -2259,6 +2259,70 @@ p.post-series-note { margin: 0.6em 0 0; font-size: 0.95rem; }
 @container (max-width: 560px) {
   .cb-explain .cx-lv-row { grid-template-columns: 1fr; }
 }
+/* Process in lanes (```prozess): steps stand in the column of their lane (people, agent,
+   pipeline), gates run across all lanes. Each item draws the link in the gap above it,
+   from the centre of the previous step's lane to its own: a vertical stub, a horizontal
+   run, a vertical stub. Column centre k of n: (k - 0.5) * (100% + gap) / n - gap / 2 of the
+   row; from a step's own box: (from - lane) * (100% + gap). Motion: the steps light up
+   one by one, then the ways back and the note. On phones one column with the lane name. */
+.cb-process { --pg: 14px; --pr: 16px; --cols: var(--lanes); }
+.cb-process .cx-chain { display: flex; flex-wrap: wrap; gap: 8px 22px; margin: 0 0 18px; }
+.cb-process .cx-chain li { position: relative; padding: 3px 9px; border: 1px solid var(--x-line); border-radius: 999px; font-family: var(--mono); font-size: 0.74rem; color: var(--x-text-2); transition: border-color 0.35s, color 0.35s; }
+.cb-process .cx-chain li + li::before { content: ''; position: absolute; left: -18px; top: 50%; width: 14px; height: 2px; background: var(--x-eye); }
+.cb-process .cx-lanes, .cb-process .cx-flow { display: grid; grid-template-columns: repeat(var(--cols), minmax(0, 1fr)); column-gap: var(--pg); }
+.cb-process .cx-lanes { margin-bottom: var(--pr); }
+.cb-process .cx-lanes li { padding: 6px 8px; border-radius: 6px; text-align: center; font-family: var(--mono); font-size: 0.74rem; letter-spacing: 0.12em; text-transform: uppercase; }
+.cb-process .cx-flow { row-gap: var(--pr); }
+.cb-process .cx-flow > li { grid-row: var(--row); }
+.cb-process .cx-lane-1 { --lc: var(--x-text); }
+.cb-process .cx-lane-2 { --lc: var(--x-eye); }
+.cb-process .cx-lane-3 { --lc: var(--x-dim); }
+.cb-process .cx-lanes li { color: var(--lc); border: 1px solid var(--lc); }
+.cb-process .cx-lanes .cx-lane-3 { border-style: dashed; }
+.cb-process .cx-pstep { grid-column: var(--lane); padding: 9px 11px; border-color: var(--lc); --dd: calc(var(--from) - var(--lane)); }
+.cb-process .cx-pstep.cx-lane-1 { background: #3a3a3e; }
+.cb-process .cx-pstep.cx-lane-2 { background: var(--x-chip); }
+.cb-process .cx-pstep.cx-lane-3 { background: transparent; border-style: dashed; }
+.cb-process .cx-pstep .cx-no { color: var(--lc); }
+.cb-process .cx-plane { display: none; }
+.cb-process .cx-pstep .cx-t { font-size: 0.9rem; }
+.cb-process .cx-pstep .cx-d { margin-top: 3px; font-size: 0.76rem; line-height: 1.4; }
+.cb-process .cx-pgate { grid-column: 1 / -1; position: relative; display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 12px; padding: 8px 12px; border-radius: 8px; background: var(--x-hi); color: var(--white); transition: opacity 0.35s, box-shadow 0.35s; }
+.cb-process .cx-pgate .cx-no { margin: 0; color: var(--x-hi-dim); }
+.cb-process .cx-pgate .cx-t { font-size: 0.9rem; }
+.cb-process .cx-phase { grid-column: 1 / -1; position: relative; border-top: 1px dashed var(--x-line); margin-top: 4px; }
+.cb-process .cx-phase span { position: relative; z-index: 1; display: inline-block; margin-top: -0.75em; padding: 0 8px 0 0; background: var(--x-bg); font-family: var(--mono); font-size: 0.74rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--x-eye); }
+.cb-process .cx-loop { display: block; margin-top: 7px; padding: 3px 8px; border: 1px dashed currentColor; border-radius: 6px; font-family: var(--mono); font-size: 0.7rem; line-height: 1.4; color: var(--x-amber); transition: opacity 0.35s; }
+.cb-process .cx-pgate .cx-loop { flex-basis: 100%; margin-top: 4px; border-color: rgba(255, 255, 255, 0.55); color: var(--white); }
+/* the link above an item */
+.cb-process .cx-pstep::before, .cb-process .cx-pstep::after { content: ''; position: absolute; width: 2px; height: calc(var(--pr) / 2 + 1px); background: var(--x-line); transition: background-color 0.35s; }
+.cb-process .cx-pstep::before { top: calc(-1 * var(--pr) - 1px); left: calc(50% - 1px + var(--dd) * (100% + var(--pg))); }
+.cb-process .cx-pstep::after { top: calc(-1 * var(--pr) / 2 - 1px); left: calc(50% - 1px); }
+.cb-process .cx-pstep { --run: max(var(--dd), calc(-1 * var(--dd))); }
+.cb-process .cx-pstep > .cx-no::after { content: ''; position: absolute; top: calc(-1 * var(--pr) / 2 - 1px); height: 2px; left: calc(50% - 1px + min(var(--dd), 0) * (100% + var(--pg))); width: calc(var(--run) * (100% + var(--pg)) + 2px); background: var(--x-line); transition: background-color 0.35s; }
+.cb-process :is(.cx-pgate, .cx-phase)::before { content: ''; position: absolute; top: calc(-1 * var(--pr) - 1px); left: calc((var(--from) - 0.5) * (100% + var(--pg)) / var(--cols) - var(--pg) / 2 - 1px); width: 2px; height: calc(var(--pr) + 2px); background: var(--x-line); transition: background-color 0.35s; }
+.cb-process .cx-phase::before { height: calc(var(--pr) + 100% + 2px); }
+.cb-process .cx-start::before, .cb-process .cx-start::after, .cb-process .cx-start > .cx-no::after { display: none; }
+.cb-process .cx-flow > .cx-phase:first-child { margin-top: 0; }
+.cx-armed.cb-process .cx-flow > li { opacity: 0.35; }
+.cx-armed.cb-process .cx-flow > li:is(.cx-on, .cx-phase) { opacity: 1; }
+.cx-armed.cb-process .cx-flow > li.cx-now { box-shadow: 0 0 0 2px var(--x-eye); }
+.cx-armed.cb-process .cx-flow > li.cx-on:is(.cx-pstep, .cx-pgate)::before,
+.cx-armed.cb-process .cx-flow > li.cx-on.cx-pstep::after,
+.cx-armed.cb-process .cx-flow > li.cx-on > .cx-no::after { background: var(--x-eye); }
+.cx-armed.cb-process .cx-loop { opacity: 0; }
+.cx-armed.cb-process .cx-loop.cx-in { opacity: 1; }
+.cx-armed.cb-process .cx-chain li { color: var(--x-dim); }
+.cx-armed.cb-process .cx-chain li.cx-in { color: var(--x-text); border-color: var(--x-eye); }
+.prose .cb-process.cx-armed .cx-foot { opacity: 0.3; }
+.prose .cb-process.cx-armed .cx-foot.cx-in { opacity: 1; border-color: var(--x-eye); }
+@container (max-width: 560px) {
+  .cb-process :is(.cx-flow, .cx-lanes) { --cols: 1; }
+  .cb-process .cx-lanes { display: flex; flex-wrap: wrap; gap: 6px; }
+  .cb-process .cx-pstep { grid-column: 1; --dd: 0; }
+  .cb-process :is(.cx-pgate, .cx-phase) { --from: 1 !important; }
+  .cb-process .cx-plane { display: inline; }
+}
 @media (prefers-reduced-motion: reduce) {
   .cb-explain * { transition: none !important; }
 }

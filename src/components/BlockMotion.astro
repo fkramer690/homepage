@@ -1,7 +1,7 @@
 ---
 // Builds the staircase (```stufen treppe) and pillars (```saeulen) blocks once when they
 // scroll into view; the motion itself is CSS in global.css. The animated explainers
-// (```pipeline, ```saeulenwechsel, ```basis-addons, ```level) play a short sequence of
+// (```pipeline, ```saeulenwechsel, ```basis-addons, ```level, ```prozess) play a short sequence of
 // class changes instead; the pipeline repeats while it stays in view. No script or
 // reduced motion: the blocks stay a still picture.
 ---
@@ -85,8 +85,23 @@
       at(t, () => fig.querySelector('.cx-foot')?.classList.add('cx-in'));
       at(t + 1200, () => { if (rail) rail.style.transform = ''; fig.classList.remove('cx-armed'); });
     },
+    // Process in lanes: the chain lights up, then step by step through the lanes and
+    // gates; the ways back and the note come last.
+    process(at, fig) {
+      const chain = all(fig, '.cx-chain li');
+      const items = all(fig, '.cx-flow > li:not(.cx-phase)');
+      chain.forEach((c, i) => at(200 + i * 250, () => c.classList.add('cx-in')));
+      let t = 400 + chain.length * 250;
+      items.forEach((item) => {
+        at(t, () => { items.forEach((x) => x.classList.remove('cx-now')); item.classList.add('cx-on', 'cx-now'); });
+        t += item.classList.contains('cx-pgate') ? 900 : 520;
+      });
+      at(t, () => { items.forEach((x) => x.classList.remove('cx-now')); all(fig, '.cx-loop').forEach((x) => x.classList.add('cx-in')); });
+      at(t + 900, () => fig.querySelector('.cx-foot')?.classList.add('cx-in'));
+      at(t + 1600, () => fig.classList.remove('cx-armed'));
+    },
   };
-  const kind = (fig: Element) => (['pipeline', 'shift', 'addons', 'levels'] as const).find((k) => fig.classList.contains(`cb-${k}`));
+  const kind = (fig: Element) => (['pipeline', 'shift', 'addons', 'levels', 'process'] as const).find((k) => fig.classList.contains(`cb-${k}`));
 
   function play(fig: HTMLElement) {
     const k = kind(fig);
