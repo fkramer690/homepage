@@ -542,7 +542,7 @@ export function renderBlock(block, { lang, isExternal, readDiagram, today = new 
   }
   if (name === 'saeulen') {
     const { roof, base, pillars } = parsePillars(content);
-    const cols = pillars.map((x, i) => `<li><span class="cb-pillar-head">${iconHtml(x.icon, 'cb-pillar-icon')}<span class="cb-pillar-no">${String(i + 1).padStart(2, '0')}</span></span><span class="cb-pillar-name">${inline(x.name, o)}</span><span class="cb-pillar-sub">${inline(x.sub, o)}</span><span class="cb-pillar-text">${inline(x.text, o)}</span></li>`).join('');
+    const cols = pillars.map((x, i) => `<li style="--i:${i}"><span class="cb-pillar-head">${iconHtml(x.icon, 'cb-pillar-icon')}<span class="cb-pillar-no">${String(i + 1).padStart(2, '0')}</span></span><span class="cb-pillar-name">${inline(x.name, o)}</span><span class="cb-pillar-sub">${inline(x.sub, o)}</span><span class="cb-pillar-text">${inline(x.text, o)}</span></li>`).join('');
     return `<div class="cb cb-pillars${roof ? ' cb-pillars-roofed' : ''}" style="--n:${pillars.length}">${roof ? `<p class="cb-pillar-roof">${inline(roof, o)}</p>` : ''}<ol>${cols}</ol>${base ? `<p class="cb-pillar-base">${inline(base, o)}</p>` : ''}</div>`;
   }
   if (name === 'hebel') {

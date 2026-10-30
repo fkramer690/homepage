@@ -4,6 +4,7 @@ import Base from './Base.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import FloatingContact from '../components/FloatingContact.astro';
+import BlockMotion from '../components/BlockMotion.astro';
 import { en } from '../i18n/en';
 import { de } from '../i18n/de';
 import { homeHref } from '../lib/paths';
@@ -36,4 +37,5 @@ const switchHref = alternates ? (lang === 'de' ? alternates.en : alternates.de) 
   </main>
   <FloatingContact t={t} messageHref={hasContact ? '#contact' : `${home}#contact`} />
   <Footer t={t} switchHref={switchHref} />
+  <BlockMotion />
 </Base>

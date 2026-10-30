@@ -47,6 +47,7 @@ const nn = (n: number) => String(n).padStart(2, '0');
 const countLabel = (n: number) => (n === 1 ? m.articleCount.one : m.articleCount.other).replace('{n}', String(n));
 
 // Header drawing in the style of the blog card drawings: light grid, grey lines, one cyan accent.
+// It builds itself once on load, step by step (`mc-step` with `--i`, "Hub drawing" in global.css).
 const W = 440;
 const H = 288;
 const grid =
@@ -60,6 +61,7 @@ const stepX = (i: number) => 12 + i * 84;
 const stepY = (i: number) => 150 - i * 24;
 // All others draw `figure` (type HubFigure in src/i18n/en.ts): five rows of 36 px from y 34.
 const figure = m.figure;
+const stepCount = stages?.length ?? (figure?.kind === 'flow' ? figure.steps.length : (figure?.rows.length ?? 0));
 const rowY = (i: number) => 34 + i * 46;
 const side = figure?.kind === 'flow' ? figure.side : undefined;
 const sideTop = side ? rowY(side.links[0]) : 0;
@@ -145,7 +147,7 @@ const schema = {
       <figure class="mc-figure hero-photo"><Photo photo={photo} lang={lang} eager widths={[480, 720, 960]} sizes="(max-width: 900px) calc(100vw - 32px), 500px" /></figure>
       ) : (
       <figure class="mc-figure">
-        <svg class="mc-drawing" viewBox={`0 0 ${W} ${H}`} role="img" aria-label={figureLabel}>
+        <svg class="mc-drawing" viewBox={`0 0 ${W} ${H}`} role="img" aria-label={figureLabel} style={`--n: ${stepCount}`}>
           <rect width={W} height={H} fill="#f5f6f7" />
           <path d={grid} stroke="#e3e5e7" stroke-width="1" />
           <text x="20" y={stages ? 24 : 22} font-size="9" fill="#232325" letter-spacing="0.08em">{m.figureLabel.toUpperCase()}</text>
@@ -157,8 +159,8 @@ const schema = {
                 const cx = x + 40;
                 const last = i === stages.length - 1;
                 return (
-                  <g>
-                    <rect x={x} y={y} width="80" height={244 - y} rx="5" fill="#fff" stroke={last ? '#1BA1E2' : '#5a5a5e'} stroke-width={last ? 1.6 : 1.2} />
+                  <g class="mc-step mc-rise" style={`--i: ${i}`}>
+                    <rect class:list={[{ 'mc-accent': last }]} x={x} y={y} width="80" height={244 - y} rx="5" fill="#fff" stroke={last ? '#1BA1E2' : '#5a5a5e'} stroke-width={last ? 1.6 : 1.2} />
                     <text x={cx} y={y + 28} font-size="20" fill="#1376a8" text-anchor="middle">{s.term[0]}</text>
                     <text x={cx} y={y + 46} font-size="9" fill="#232325" text-anchor="middle">{s.term}</text>
                     <text x={cx} y={y + 62} font-size="8.5" fill="#5a5a5e" text-anchor="middle">{s.question}</text>
@@ -167,7 +169,7 @@ const schema = {
                   </g>
                 );
               })}
-              {stagesNote && <text x="12" y="279" font-size="8.5" fill="#232325">{stagesNote}</text>}
+              {stagesNote && <text class="mc-note" x="12" y="279" font-size="8.5" fill="#232325">{stagesNote}</text>}
             </g>
           ) : figure?.kind === 'flow' ? (
             <g>
@@ -175,8 +177,8 @@ const schema = {
                 const y = rowY(i);
                 const accent = i === figure.accent;
                 return (
-                  <g>
-                    <rect x="20" y={y} width="272" height="36" rx="5" fill="#fff" stroke={accent ? '#1BA1E2' : '#5a5a5e'} stroke-width={accent ? 1.6 : 1.2} />
+                  <g class="mc-step" style={`--i: ${i}`}>
+                    <rect class:list={[{ 'mc-accent': accent }]} x="20" y={y} width="272" height="36" rx="5" fill="#fff" stroke={accent ? '#1BA1E2' : '#5a5a5e'} stroke-width={accent ? 1.6 : 1.2} />
                     <text x="32" y={y + 15} font-size="10" fill={accent ? '#1376a8' : '#232325'}>{s.title}</text>
                     <text x="32" y={y + 28} font-size="8.5" fill="#5a5a5e">{s.sub}</text>
                     <text x="282" y={y + 15} font-size="8.5" fill="#1376a8" text-anchor="end">{s.chapter}</text>
@@ -185,7 +187,7 @@ const schema = {
                 );
               })}
               {side && (
-                <g>
+                <g class="mc-side">
                   <rect x="324" y={sideTop} width="96" height={sideBottom - sideTop} rx="5" fill="#fff" stroke="#5a5a5e" stroke-width="1.2" />
                   <text x="372" y={(sideTop + sideBottom) / 2 - 3} font-size="10" fill="#232325" text-anchor="middle">{side.title}</text>
                   <text x="372" y={(sideTop + sideBottom) / 2 + 11} font-size="8.5" fill="#5a5a5e" text-anchor="middle">{side.sub}</text>
@@ -195,7 +197,7 @@ const schema = {
                   })}
                 </g>
               )}
-              <text x="20" y="278" font-size="8.5" fill="#232325">{figure.note}</text>
+              <text class="mc-note" x="20" y="278" font-size="8.5" fill="#232325">{figure.note}</text>
             </g>
           ) : figure && (
             <g>
@@ -203,18 +205,18 @@ const schema = {
                 const y = rowY(i);
                 const accent = i === figure.accent;
                 return (
-                  <g>
+                  <g class="mc-step" style={`--i: ${i}`}>
                     <rect x="20" y={y} width="176" height="36" rx="5" fill="#fff" stroke="#5a5a5e" stroke-width="1.2" />
                     <text x="30" y={y + 15} font-size="9.5" fill="#232325">{r.task[0]}</text>
                     <text x="30" y={y + 28} font-size="9.5" fill="#232325">{r.task[1]}</text>
                     <path d={`M197 ${y + 18}H227M222 ${y + 14.5}l5 3.5-5 3.5`} fill="none" stroke="#5a5a5e" stroke-width="1.2" />
-                    <rect x="228" y={y} width="192" height="36" rx="5" fill="#fff" stroke={accent ? '#1BA1E2' : '#5a5a5e'} stroke-width={accent ? 1.6 : 1.2} />
+                    <rect class:list={[{ 'mc-accent': accent }]} x="228" y={y} width="192" height="36" rx="5" fill="#fff" stroke={accent ? '#1BA1E2' : '#5a5a5e'} stroke-width={accent ? 1.6 : 1.2} />
                     <text x="240" y={y + 15} font-size="9.5" fill={accent ? '#1376a8' : '#232325'}>{r.tool}</text>
                     <text x="240" y={y + 28} font-size="8.5" fill="#5a5a5e">{r.chapter}</text>
                   </g>
                 );
               })}
-              <text x="20" y="278" font-size="8.5" fill="#232325">{figure.note}</text>
+              <text class="mc-note" x="20" y="278" font-size="8.5" fill="#232325">{figure.note}</text>
             </g>
           )}
         </svg>
