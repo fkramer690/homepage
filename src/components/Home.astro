@@ -54,7 +54,7 @@ const serviceIcons = ['architecture', 'change', 'pipeline', 'integration', 'team
 
   <main id="main" data-layout="wide">
     <section class="hero dark grid-bg">
-      <Blueprint />
+      <Blueprint animate />
       <div class="container hero-inner hero-split">
         <div class="hero-text">
         <p class="eyebrow mono">{t.hero.eyebrow}</p>
@@ -359,6 +359,24 @@ const serviceIcons = ['architecture', 'change', 'pipeline', 'integration', 'team
       track.addEventListener('scroll', update, { passive: true });
       window.addEventListener('resize', update);
       update();
+    }
+
+    // Approach steps: progress line from 01 to 04 once the steps scroll into view
+    // (styles under "Progress line" in global.css). Without JavaScript or with
+    // reduced motion the steps simply stay visible.
+    const steps = document.querySelector<HTMLElement>('#approach .steps');
+    const calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (steps && !calm && 'IntersectionObserver' in window) {
+      steps.classList.add('js-progress');
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (!entry.isIntersecting) return;
+          steps.classList.add('is-visible');
+          observer.disconnect();
+        },
+        { threshold: 0.3 },
+      );
+      observer.observe(steps);
     }
   </script>
 
