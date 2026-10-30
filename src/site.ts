@@ -31,6 +31,8 @@ export const site = {
     'https://www.freelance.de/freelancer/261653-Independent-Salesforce-Enterprise-Architect-for-Manufacturers',
     'https://www.freelancermap.de/profil/fabian-kramer',
     'https://www.xing.com/profile/Fabian_Kramer13',
+    'https://app.fratch.io/de/profile/fabian-kramer-j',
+    'https://www.salesforce.com/trailblazer/fkramer',
   ],
   legal: {
     street: 'Hans-Keul-Weg 27',
