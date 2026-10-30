@@ -30,13 +30,25 @@ Nearshore-Teams für Salesforce, die mit KI-Agenten arbeiten, erzeugen mehr Code
 
 ## Was ändert sich für Nearshore-Teams in Salesforce mit KI-Agenten?
 
-In [meinem Artikel zur Größe von Nearshore-Teams](../nearshore-teams-salesforce-acht-entwickler/) beschreibe ich, was Nearshore-Teams öfter bremst als fehlende Skills: Rotation, Fluktuation, zu senior besetzte Teams und fehlender Rückhalt beim Kunden. Ich habe mit Nearshore-Teams in Osteuropa und Indien gearbeitet, und diese Faktoren waren in beiden Regionen dieselben. Coding-Agenten wie Claude Code, Codex, Copilot oder Agentforce Vibes beseitigen keinen davon. Sie verschieben den Druck: ins Review, in die Rollenmischung, in die Einarbeitung und auf die Zugriffe.
+In [meinem Artikel zur Größe von Nearshore-Teams](../nearshore-teams-salesforce-acht-entwickler/) beschreibe ich, was Nearshore-Teams öfter bremst als fehlende Skills: Rotation, Fluktuation, zu senior besetzte Teams und fehlender Rückhalt beim Kunden. Coding-Agenten wie Claude Code, Codex, Copilot oder Agentforce Vibes beseitigen keinen davon. Sie verschieben den Druck: ins Review, in die Rollenmischung, in die Einarbeitung und auf die Zugriffe.
+
+```praxis
+Ich habe mit Nearshore-Teams in Osteuropa und Indien gearbeitet, und Rotation, Fluktuation, zu senior besetzte Teams und fehlender Rückhalt beim Kunden waren in beiden Regionen dieselben Bremsen.
+```
 
 Die Obergrenze von etwa acht Entwicklern pro Team und eine Mindestverweildauer, vereinbart vor dem ersten Sprint, bleiben, wie sie sind. Das Pod-Modell mit Architekt, Builder-Reviewer und Fachexperte beschreibe ich in [KI-native Delivery: kleinere Salesforce-Teams](../ki-kleinere-salesforce-teams-delivery/). Hier geht es um ein Team, das in einem anderen Land und einem anderen Unternehmen sitzt.
 
 ## Warum wird das Review zum Engpass?
 
-In McKinseys Umfrage unter 334 Produkt- und Engineering-Verantwortlichen sparten die Befragten im Schnitt 11,8 Prozent Zeit, die Nacharbeit sank aber nur um 6,2 Prozent: „Speed is improving faster than quality“ ([Beyond the copilot](https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/beyond-the-copilot-scaling-the-agentic-product-development-life-cycle)). Der [DORA-Report 2025](https://cloud.google.com/blog/products/ai-machine-learning/announcing-the-2025-dora-report) warnt, dass ohne starke Tests, Versionskontrolle und schnelles Feedback „an increase in change volume leads to instability“. Veracode hat im Juli 2026 für rohen KI-generierten Code eine [Sicherheits-Bestehensquote von 56 Prozent](https://www.veracode.com/news/llms-are-getting-smarter-but-not-safer-veracode-2026-genai-code-security-report-finds-ai-generated-code-security-has-stalled-at-56%25-pass-rate/) gemessen, für Java, den nächsten Verwandten von Apex, 30 Prozent.
+McKinsey hat 334 Produkt- und Engineering-Verantwortliche befragt und fasst zusammen: „Speed is improving faster than quality“ ([Beyond the copilot](https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/beyond-the-copilot-scaling-the-agentic-product-development-life-cycle)). Der [DORA-Report 2025](https://cloud.google.com/blog/products/ai-machine-learning/announcing-the-2025-dora-report) warnt, dass ohne starke Tests, Versionskontrolle und schnelles Feedback „an increase in change volume leads to instability“. Veracode hat im Juli 2026 die [Sicherheits-Bestehensquote](https://www.veracode.com/news/llms-are-getting-smarter-but-not-safer-veracode-2026-genai-code-security-report-finds-ai-generated-code-security-has-stalled-at-56%25-pass-rate/) von rohem KI-generiertem Code gemessen, auch für Java, den nächsten Verwandten von Apex.
+
+```kennzahlen
+11,8 % | Zeitersparnis im Schnitt
+6,2 % | weniger Nacharbeit
+56 % | Sicherheits-Bestehensquote für rohen KI-generierten Code
+30 % | Sicherheits-Bestehensquote für Java
+quelle: McKinsey, Beyond the copilot, August 2026; Veracode GenAI Code Security Report, Juli 2026
+```
 
 Im Nearshore-Team landet das bei sehr wenigen Personen. Die Mischung, die ich empfehle, wenige Seniors für Architektur und Reviews plus Entwickler, die gern umsetzen, funktioniert bei menschlichem Schreibtempo. Mit Agenten bekommen dieselben wenigen Seniors mehr und größere Pull Requests. Winken sie durch, landen die Fehler in Ihrer Integrations-Sandbox. Prüfen sie gründlich, wird der Zeitgewinn zur Wartezeit. Bei einem Team in Indien beginnt der Arbeitstag zudem Stunden vor Ihrem, ein Pull Request für Ihren Architekten wartet also, bis Deutschland online ist. Das würde ich aufsetzen:
 
@@ -95,4 +107,4 @@ Ob der Stream schneller geworden ist, bleibt offen, bis Durchlaufzeit und Nachar
 
 Teamaufstellungen, Review-Kapazität und Rotationsregeln zu planen, gehört zu meiner [Programmsteuerung mit Nearshore-Teams](../../leistungen/projektsteuerung-nearshore/).
 
-Nearshore-Teams für Salesforce liefern mit KI-Agenten nur dann mehr, wenn Review-Kapazität, Einarbeitung und Zugriffsregeln mit dem Output wachsen. Wenn Sie Ihr Nearshore-Setup prüfen möchten, bevor die Agenten kommen, [schreiben Sie mir](#contact).
+Nearshore-Teams für Salesforce liefern mit KI-Agenten nur dann mehr, wenn Review-Kapazität, Einarbeitung und Zugriffsregeln mit dem Output wachsen.

@@ -33,15 +33,27 @@ A Service Document is a PDF that Salesforce Field Service generates for one of t
 
 Document Builder is the editor for the templates. It runs inside the Lightning App Builder and works with drag and drop: standard components for fields, tables of related records, image galleries and signature blocks. When a standard component is not enough, developers can build their own Lightning Web Components. Salesforce points out that these need their own print styling, so components from the mobile app cannot simply be reused.
 
-Salesforce introduced Service Documents in the Spring '24 release. The matching action `createServiceDocument` is available from API version 60.0, which means you can also trigger documents from a flow or through the REST API. The [developer documentation for the action](https://developer.salesforce.com/docs/atlas.en-us.api_action.meta/api_action/actions_obj_create_service_document.htm) also lists quote document types. The reason is that Salesforce uses the same technology for quote PDFs in Revenue Cloud.
+Salesforce introduced Service Documents in the Spring '24 release. The matching action `createServiceDocument` is available from API version 60.0, which means you can also trigger documents from a flow or through the REST API. The [developer documentation for the action](https://developer.salesforce.com/docs/atlas.en-us.api_action.meta/api_action/actions_obj_create_service_document.htm) also lists quote document types. The reason is that Salesforce uses the same technology for quote PDFs in Revenue Cloud. How quotes work there is covered in [chapter 3 of the Revenue Cloud masterclass](../../masterclass/revenue-cloud/quote-contract-order/).
 
 Do not confuse the name with S-Docs. S-Docs is a separate product on the AppExchange and has nothing to do with this feature.
 
 ## What does Document Builder cost?
 
-Nothing extra, as long as Field Service is licensed. According to the [Salesforce Help on permissions](https://help.salesforce.com/s/articleView?id=fs_document_builder_perm_sets.htm&language=en_US&type=5), users need either the Field Service Dispatcher or the Field Service Mobile permission set licence. Contractor and Contractor+ licences are excluded, which matters if you plan to give documents to subcontractors.
+Nothing extra, as long as Field Service is licensed. According to the [Salesforce Help on permissions](https://help.salesforce.com/s/articleView?id=fs_document_builder_perm_sets.htm&language=en_US&type=5), users need either the Field Service Dispatcher or the Field Service Mobile permission set licence.
 
-The volume is limited. Each user with a Dispatcher, Dispatcher Plus or Mobile licence gets 250 documents per month. If the org needs more, there is a one-time extra allowance of 10,000 documents. A quick calculation: a technician with five jobs a day and 21 working days creates about 105 reports a month. That is well below the limit. It gets tight when every job produces several documents, for example a service report plus a checklist plus a corrected version after the customer complained.
+```hinweis achtung
+Contractor and Contractor+ licences are excluded, which matters if you plan to give documents to subcontractors.
+```
+
+The volume is limited:
+
+```kennzahlen
+250 | documents per user per month with a Dispatcher, Dispatcher Plus or Mobile licence
+10,000 | documents as a one-time extra allowance if the org needs more
+source: Salesforce Help on Document Builder and on Field Service limits
+```
+
+A quick calculation: a technician with five jobs a day and 21 working days creates about 105 reports a month. That is well below the limit. It gets tight when every job produces several documents, for example a service report plus a checklist plus a corrected version after the customer complained.
 
 Setup takes about an hour. You create a permission set without a licence, activate the system permissions "Document Builder" and "Lightning SDK for Field Service Mobile", and assign it to dispatchers and technicians. The template field also has to be on the page layouts of work order and service appointment, otherwise nobody can pick a template.
 
@@ -96,4 +108,4 @@ The combination that often makes sense: Document Builder for everything the tech
 4. **Build one template in Document Builder**, usually the standard service report, and test it with two technicians in a real job, including offline.
 5. **Only then plan a second tool**, for the documents that failed in step 2, and calculate it over several years instead of the first-year price.
 
-In most Field Service projects the standard covers the service report, and the extra tool is justified for a short list of documents with logic. If you want a second opinion on your document mix or on [Field Service architecture](../../services/salesforce-architecture/), [send me a message](#contact). More on what the new mobile features mean for technicians is in [my article on guided work and voice in Field Service](../salesforce-field-service-mobile-guided-voice/).
+In most Field Service projects the standard covers the service report, and the extra tool is justified for a short list of documents with logic. More on what the new mobile features mean for technicians is in [my article on guided work and voice in Field Service](../salesforce-field-service-mobile-guided-voice/).

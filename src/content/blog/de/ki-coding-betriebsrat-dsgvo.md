@@ -88,13 +88,18 @@ Den vollständigen Vergleich der Tools nach Vertrag, Kosten und Governance finde
 
 Nehmen wir einen Maschinenbauer mit Betriebsrat, SAP, Sales Cloud, Service Cloud und Field Service, fünf internen Salesforce-Entwicklern, zwei Admins und einem Nearshore-Partner. Alle Angaben sind Annahmen, die das Vorgehen zeigen sollen. Die IT möchte Copilot für alle und Claude Code für zwei Entwickler, die mit dem Salesforce-Plugin arbeiten wollen.
 
-**Woche 1, Bestandsaufnahme.** Angenommen, drei Entwickler nutzen bereits private Pro-Konten. Das ist die Hamburger Konstellation, aber Code mit Rabattlogik läuft dort unter Verbraucherbedingungen. Die IT stoppt das und kündigt Firmenkonten an.
+```schritte
+Bestandsaufnahme | Woche 1 · IT
+  Angenommen, drei Entwickler nutzen bereits private Pro-Konten. Das ist die Hamburger Konstellation, aber Code mit Rabattlogik läuft dort unter Verbraucherbedingungen. Die IT stoppt das und kündigt Firmenkonten an.
+Information des Betriebsrats | Woche 2 · IT
+  Die IT legt für jedes Tool die Tabelle oben vor. Die Hauptsorge des Betriebsrats ist die Zeilenstatistik pro Person.
+Anlage zur IT-Rahmenvereinbarung | Wochen 3 bis 6
+  Copilot-Metriken nur auf Teamebene, GitHub-Beitragsmetriken bleiben aus, keine Leistungsbewertung aus Tooldaten, lokale Protokolle werden nach 14 Tagen gelöscht. Parallel entscheidet der Datenschutz: EU-Residenz in Copilot an, Claude Code über Bedrock in einer EU-Region.
+Pilot | ab Woche 7
+  Copilot und Claude Code starten mit den Regeln aus der Anlage, auch die Entwickler des Partners arbeiten auf Lizenzen des Kunden.
+```
 
-**Woche 2, Information des Betriebsrats.** Die IT legt für jedes Tool die Tabelle oben vor. Die Hauptsorge des Betriebsrats ist die Zeilenstatistik pro Person.
-
-**Wochen 3 bis 6, Anlage zur IT-Rahmenvereinbarung.** Die Lösung in diesem Szenario: Copilot-Metriken nur auf Teamebene, GitHub-Beitragsmetriken bleiben aus, keine Leistungsbewertung aus Tooldaten, lokale Protokolle werden nach 14 Tagen gelöscht. Parallel entscheidet der Datenschutz: EU-Residenz in Copilot an, Claude Code über Bedrock in einer EU-Region. Die Supportseite nennt die Nutzungsanalyse nur für Team, Enterprise und die Console, Bedrock gehört nicht dazu. Die Kostendaten liegen dann im AWS-Konto des Kunden, und die Anlage regelt, wer sie sieht.
-
-**Ab Woche 7, Pilot.** Copilot und Claude Code starten mit den Regeln aus der Anlage, auch die Entwickler des Partners arbeiten auf Lizenzen des Kunden.
+Die Supportseite nennt die Nutzungsanalyse nur für Team, Enterprise und die Console, Bedrock gehört nicht dazu. Die Kostendaten liegen dann im AWS-Konto des Kunden, und die Anlage regelt, wer sie sieht.
 
 Sechs Wochen klingen lang. Ein Pilot, den der Betriebsrat nach vier Wochen stoppt, kostet mehr.
 
@@ -108,4 +113,4 @@ Sechs Wochen klingen lang. Ein Pilot, den der Betriebsrat nach vier Wochen stopp
 
 Wie Teams und Partner neue Regeln im Alltag übernehmen, gehört zu meiner Arbeit im [Change Management](../../leistungen/change-management/); den Rahmen für Rollen und Review beschreibt [Kapitel 9 der Masterclass](../../masterclass/ki-salesforce/teamarbeit-und-delivery/).
 
-KI-Coding-Tools gehen an einem deutschen Standort mit Betriebsrat erst live, wenn Betriebsrat und Datenschutz zugestimmt haben, und mit guter Vorbereitung dauert das nach meiner Einschätzung Wochen statt Monate. Wenn Sie eine zweite Meinung zu Ihrer Anlage oder Ihren Modellwegen möchten, [schreiben Sie mir](#contact).
+KI-Coding-Tools gehen an einem deutschen Standort mit Betriebsrat erst live, wenn Betriebsrat und Datenschutz zugestimmt haben, und mit guter Vorbereitung dauert das nach meiner Einschätzung Wochen statt Monate.

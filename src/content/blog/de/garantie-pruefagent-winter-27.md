@@ -32,7 +32,13 @@ Der Garantie-Prüfagent der Manufacturing Cloud, offiziell Warranty Claims Adjud
 
 Salesforce führt ihn auf der [Produktseite der Manufacturing Cloud](https://www.salesforce.com/manufacturing/cloud/) unter Winter '27 mit einem Satz: Er soll Entscheidungen über Ansprüche beschleunigen, indem er die Deckung prüft und mögliche Betrugsfälle markiert. Dasselbe Release bringt eine geführte Rücksendung von Garantieteilen für Händler. Mit Summer '26 kam bereits der AI Warranty Concierge, der Kunden durch einen Anspruch führt. Winter '27 ist seit dem [12. Oktober 2026 allgemein verfügbar](https://www.salesforce.com/news/stories/winter-2027-product-release-announcement/).
 
-Für eine Kaufentscheidung ist das dünn. In den Quellen, die ich öffnen konnte, hat Salesforce weder die Betrugssignale noch die nötige Lizenz noch eine Einrichtungsanleitung veröffentlicht, wie es sie für die anderen Fertigungsagenten gibt. Dokumentiert sind die [Garantie-Aktionen von Agentforce for Manufacturing](https://help.salesforce.com/s/articleView?id=ai.agent_ref_mfg_get_wrnty_claims_for_acct.htm&language=en_US&type=5): Check Asset For Warranty, Check Coverage for Parts, Get Asset Warranties und Get Warranty Claims for Account, die Ansprüche über Anlagen-ID, Seriennummer oder Anspruchsnummer findet. Sie setzen pro Nutzer das Add-on Agentforce for Manufacturing voraus oder die Agentforce 1 Manufacturing Edition. Ich erwarte, dass der Prüfagent auf diesen Aktionen aufsetzt, das ist aber meine Annahme. Fragen Sie Ihr Account-Team, bevor eine Zahl ins Budget geht.
+Für eine Kaufentscheidung ist das dünn.
+
+```hinweis offen
+In den Quellen, die ich öffnen konnte, hat Salesforce weder die Betrugssignale noch die nötige Lizenz noch eine Einrichtungsanleitung veröffentlicht, wie es sie für die anderen Fertigungsagenten gibt. Fragen Sie Ihr Account-Team, bevor eine Zahl ins Budget geht.
+```
+
+Dokumentiert sind die [Garantie-Aktionen von Agentforce for Manufacturing](https://help.salesforce.com/s/articleView?id=ai.agent_ref_mfg_get_wrnty_claims_for_acct.htm&language=en_US&type=5): Check Asset For Warranty, Check Coverage for Parts, Get Asset Warranties und Get Warranty Claims for Account, die Ansprüche über Anlagen-ID, Seriennummer oder Anspruchsnummer findet. Sie setzen pro Nutzer das Add-on Agentforce for Manufacturing voraus oder die Agentforce 1 Manufacturing Edition. Ich erwarte, dass der Prüfagent auf diesen Aktionen aufsetzt, das ist aber meine Annahme.
 
 Das Datenmodell darunter, von der Garantiebedingung bis zum Lieferantenregress, beschreibe ich in [Garantieansprüche von Händlern in Salesforce prüfen](../garantieansprueche-haendler-salesforce/). Hier geht es nur um den Agenten und was er braucht.
 
@@ -48,7 +54,7 @@ Die Frage „Ist das gedeckt?“ hat also schon eine deterministische Antwort. E
 
 ### Anlagendaten mit Seriennummer und Garantiebeginn
 
-Jede Deckungsprüfung ist eine Frage an eine Maschine. Fehlt die Anlage in Salesforce oder hat sie keinen Garantiebeginn, hat der Agent nichts, wogegen er prüfen kann, und entscheidet auf Lücken. Bei Herstellern mit Händlervertrieb liegt die Lücke meist in der Registrierung: Der Händler weiß, wann die Maschine übergeben wurde, der Hersteller nicht. Nehmen Sie die Ansprüche der letzten zwölf Monate und zählen Sie, wie viele Seriennummern als Anlage mit Startdatum existieren. Unter etwa 95 Prozent würde ich zuerst die Registrierung reparieren.
+Jede Deckungsprüfung ist eine Frage an eine Maschine. Fehlt die Anlage in Salesforce oder hat sie keinen Garantiebeginn, hat der Agent nichts, wogegen er prüfen kann, und entscheidet auf Lücken. Bei Herstellern mit Händlervertrieb liegt die Lücke meist in der Registrierung: Der Händler weiß, wann die Maschine übergeben wurde, der Hersteller nicht. Nehmen Sie die Ansprüche der letzten zwölf Monate und zählen Sie, wie viele Seriennummern als Anlage mit Startdatum existieren. Unter etwa 95 Prozent würde ich zuerst die Registrierung reparieren. Wie diese Anlagendaten entstehen, steht in [Installierte Basis in Manufacturing Cloud](../installierte-basis-asset-meilensteine/).
 
 ### Garantiebedingungen als Regeln, nicht als PDF
 
@@ -64,7 +70,16 @@ Der Agent liest Text, den Händler schreiben. 2025 hat die Schwachstelle ForcedL
 
 ### Lizenz und Testbudget
 
-Laut [Flex Credits Rate Card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) kostet eine Standard- oder Custom-Aktion in Produktion 20 Credits, in der Sandbox 16. Flex Credits kosten [500 € je 100.000](https://www.salesforce.com/eu/agentforce/pricing/), eine Aktion also 0,10 €. Planen Sie zwei getrennte Posten: den Verbrauch, den Sie schätzen können, und die Lizenz, die vorerst nur Salesforce beantworten kann.
+Für den Verbrauch gibt es veröffentlichte Preise:
+
+```kennzahlen
+20 Credits | pro Standard- oder Custom-Aktion in Produktion
+16 Credits | pro Aktion in der Sandbox
+0,10 € | pro Aktion in Produktion, bei 500 € je 100.000 Flex Credits
+quelle: [Flex Credits Rate Card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) und [Agentforce-Preisseite](https://www.salesforce.com/eu/agentforce/pricing/)
+```
+
+Planen Sie zwei getrennte Posten: den Verbrauch, den Sie schätzen können, und die Lizenz, die vorerst nur Salesforce beantworten kann.
 
 ## Ein typisches Szenario: Landmaschinen über 90 Händler
 
@@ -104,4 +119,4 @@ Der Agent geht wie jede andere Änderung in Produktion: mit einem Testsatz aus e
 5. **Salesforce drei Fragen stellen**: welche Lizenz, welche Betrugssignale, welche Einrichtungsdokumentation.
 6. **Einen Testsatz bauen** aus echten Ansprüchen, auch abgelehnten und bekannten Betrugsfällen.
 
-Der Garantie-Prüfagent kann Entscheidungen beschleunigen, aber nur auf sauberen Anlagendaten, funktionierenden Regeln und einer klaren Freigabegrenze. Wenn Sie eine zweite Meinung möchten, ob Ihr Garantieprozess dafür bereit ist, [schreiben Sie mir](#contact).
+Der Garantie-Prüfagent kann Entscheidungen beschleunigen, aber nur auf sauberen Anlagendaten, funktionierenden Regeln und einer klaren Freigabegrenze.

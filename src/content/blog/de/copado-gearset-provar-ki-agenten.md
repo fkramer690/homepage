@@ -53,7 +53,15 @@ Für einen Industriebetrieb zählt der Produktstatus, weil ein Pilot selten mit 
 
 Quellen: Copado-Pressemitteilung, [Copados Dreamforce-2026-Seite](https://www.copado.com/dreamforce-2026-copado), Gearset-Ankündigung und [Gearsets Agentenseite](https://gearset.com/solutions/gearset-agent/), [Dokumentation zu Provar MCP](https://documentation.provar.com/documentation/v3/provar-mcp/).
 
-Die einzige harte Zahl liefert Gearset: Innerhalb einer Woche erstellte Cam bei einem Kunden 44 Prozent der Pull Requests des Teams, 75 Prozent davon wurden erfolgreich gemergt. Das ist ein Kunde, gemessen vom Hersteller, nach einer Woche. Es zeigt, dass Cam in einer echten Org mergefähige Pull Requests erzeugen kann, mehr nicht. Jeder vierte wurde nicht gemergt, und jeder lief durch das Review des Teams.
+Die einzige harte Zahl liefert Gearset:
+
+```kennzahlen
+44 % | der Pull Requests eines Teams erstellte Cam bei einem Kunden innerhalb einer Woche
+75 % | dieser Pull Requests wurden erfolgreich gemergt
+quelle: Gearset-Ankündigung vom 2. September 2026
+```
+
+Das ist ein Kunde, gemessen vom Hersteller, nach einer Woche. Es zeigt, dass Cam in einer echten Org mergefähige Pull Requests erzeugen kann, mehr nicht. Jeder vierte wurde nicht gemergt, und jeder lief durch das Review des Teams.
 
 ## Welches Modell, welche Region, welche Aufbewahrung?
 
@@ -67,7 +75,9 @@ Hier unterscheiden sich die drei Produkte am stärksten, und hier sollte ein Her
 - Der Verbrauch wird in Credits gemessen, mit einer monatlichen Obergrenze aus dem Bestellformular. Ist sie erreicht, sperrt Gearset die KI-Funktionen bis zum Monatsende.
 - Der Kunde darf die KI-Funktionen nicht nutzen, um menschliche Entscheidungen ganz oder im Wesentlichen zu ersetzen.
 
+```hinweis achtung
 Rechenzentren in den USA bedeuten eine Übermittlung in ein Drittland. Die muss Ihr Datenschutzbeauftragter bewerten, bevor produktive Metadaten hineingehen.
+```
 
 **Copado** nennt für Agentia auf den Seiten, die ich geöffnet habe, weder Modell noch Region. Das öffentliche Datenblatt "Copado AI and your data" stammt vom Juni 2024 und behandelt CopadoGPT und Test Copilot, nicht Agentia; ich konnte nur die Zusammenfassungsseite lesen. Über die Qualität der Antworten sagt das nichts. Sie brauchen sie aber schriftlich, bevor Sie unterschreiben.
 
@@ -89,11 +99,21 @@ Mit Gearset bleiben die Schritte gleich; Schritt 2 startet bei Gearsets veröffe
 
 ## Wann reichen Open Source und ein allgemeiner Coding-Agent?
 
-Bezahlte DevOps-Agenten bringen eine aufbereitete Sicht auf Org und Pipeline und eine Governance-Schicht mit, die der Hersteller pflegt. Für Teams ohne eigenes Git- und Pipeline-Wissen ist das echtes Geld wert.
+Ein Team, das bereits [sfdx-hardis](../sfdx-hardis-einfuehrung-salesforce-devops/) nutzt, bekommt vieles, was bezahlte DevOps-Agenten bieten, ohne zweiten KI-Vertrag. Laut der [KI-Einrichtungsanleitung von sfdx-hardis](https://sfdx-hardis.cloudity.com/salesforce-ai-setup/) erklärt es Deployment-Fehler, beschreibt Flows und Apex-Klassen und verbessert die erzeugte Dokumentation. Als Anbieter kommen Agentforce, OpenAI, Anthropic, Google oder ein lokales Ollama-Modell in Frage, eingestellt über Umgebungsvariablen oder über ein firmeneigenes Gateway geleitet. Sie wählen das Modell und damit die Region. Die automatische Fehlerkorrektur per Coding-Agent ist in Beta, und die Anleitung verlangt, dass ein Experte diese Änderungen vor dem Merge prüft.
 
-Ein Team, das bereits [sfdx-hardis](../sfdx-hardis-einfuehrung-salesforce-devops/) nutzt, bekommt vieles davon ohne zweiten KI-Vertrag. Laut der [KI-Einrichtungsanleitung von sfdx-hardis](https://sfdx-hardis.cloudity.com/salesforce-ai-setup/) erklärt es Deployment-Fehler, beschreibt Flows und Apex-Klassen und verbessert die erzeugte Dokumentation. Als Anbieter kommen Agentforce, OpenAI, Anthropic, Google oder ein lokales Ollama-Modell in Frage, eingestellt über Umgebungsvariablen oder über ein firmeneigenes Gateway geleitet. Sie wählen das Modell und damit die Region. Die automatische Fehlerkorrektur per Coding-Agent ist in Beta, und die Anleitung verlangt, dass ein Experte diese Änderungen vor dem Merge prüft.
+Kombinieren Sie das mit Claude Code, Codex oder Copilot für die Entwicklung, verglichen in [Agentforce Vibes, Claude Code, Codex oder Copilot](../agentforce-vibes-claude-code-copilot-vergleich/), und eine Pipeline in Ihrem Besitz entscheidet, was in Produktion geht. Der Preis dafür ist der Support.
 
-Kombinieren Sie das mit Claude Code, Codex oder Copilot für die Entwicklung, verglichen in [Agentforce Vibes, Claude Code, Codex oder Copilot](../agentforce-vibes-claude-code-copilot-vergleich/), und eine Pipeline in Ihrem Besitz entscheidet, was in Produktion geht. Der Preis dafür ist der Support. Bei Open Source verantworten Sie oder Ihr Architekt das Setup. Bei Copado oder Gearset bezahlen Sie jemanden dafür und übernehmen dessen Modellwahl.
+```pro-contra
+pro: Ein bezahlter DevOps-Agent passt, wenn
+- Ihrem Team eigenes Git- und Pipeline-Wissen fehlt
+- Sie eine aufbereitete Sicht auf Org und Pipeline wollen
+- der Hersteller die Governance-Schicht pflegen soll
+- Sie für Setup und Support jemanden bezahlen wollen
+contra: Open Source und Coding-Agent reichen, wenn
+- Ihr Team bereits sfdx-hardis nutzt
+- Sie Modell und damit Region selbst wählen wollen
+- Sie oder Ihr Architekt das Setup verantworten
+```
 
 ## Was sollten Sie vor dem Kauf fragen?
 
@@ -109,4 +129,4 @@ Diese Fragen würde ich jedem DevOps-Anbieter stellen, der einen KI-Agenten verk
 
 Die letzten beiden Fragen hängen mit Punkten zusammen, die ich an anderer Stelle beschreibe: Der Kunde sollte [seine DevOps-Tools selbst besitzen](../warum-kunden-devops-tools-selbst-besitzen-sollten/), und dieselben Regeln gehören in die [Verträge mit Partnern, die mit KI programmieren](../partner-ki-coding-regeln-vertrag/). Das Aufsetzen gehört zu meiner Arbeit im [DevOps- und Release-Management](../../leistungen/devops-und-release-management/), die breitere Werkzeugwahl steht in [Kapitel 4 der KI-Masterclass](../../masterclass/ki-salesforce/externe-coding-agenten/).
 
-Ein DevOps-KI-Agent ist sein Geld wert, sobald der Anbieter Modell, Region und Aufbewahrung schriftlich beantwortet und ein Pilot in Ihrer eigenen Org Ihr heutiges Setup schlägt. Wenn Sie vor einer Bestellung von Agentia oder Cam eine zweite Meinung möchten, [schreiben Sie mir](#contact).
+Ein DevOps-KI-Agent ist sein Geld wert, sobald der Anbieter Modell, Region und Aufbewahrung schriftlich beantwortet und ein Pilot in Ihrer eigenen Org Ihr heutiges Setup schlägt.

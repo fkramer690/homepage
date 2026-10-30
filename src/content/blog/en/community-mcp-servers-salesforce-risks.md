@@ -63,13 +63,20 @@ I would ask the partner or developer for written answers to six questions before
 
 **Credentials.** A server that logs in with username, password and security token has two problems. The secret sits on a laptop, and according to [Salesforce Time](https://salesforcetime.com/2026/10/15/salesforce-oauth-username-password-flow-retirement/) Salesforce enforces the retirement of the OAuth username-password flow on 20 February 2027. More on that deadline in [password-based integrations end in 2027](../salesforce-password-integrations-end-2027/). A gateway that stores refresh tokens for your org is a third party holding long-lived access, the pattern behind the Salesloft Drift breach covered in [connected apps and OAuth lessons](../connected-apps-oauth-ai-integrations/).
 
-**Maintainer and version.** Pin an exact version and review the change before every update. The postmark case shows why: the harmful code came with one specific version. In Claude Code, an allowlist entry for a local server must match the [exact command and arguments](https://code.claude.com/docs/en/managed-mcp), so an entry with `pkg@1.4.2` blocks any other version. That is my reading of the matching rule, and it turns pinning into something you can enforce.
+**Maintainer and version.** Pin an exact version and review the change before every update. The postmark case shows why: the harmful code came with one specific version.
 
 **Tools.** Get the full tool list with descriptions. A server that offers one read tool for open cases is a different decision from one that runs arbitrary SOQL or anonymous Apex.
 
 **Combination.** Willison's [lethal trifecta](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/) is private data, untrusted content and a way to send data out. He writes that MCP "encourages users to mix and match tools from different sources". At a machine builder, case descriptions from the dealer portal or warranty forms are untrusted content, see [prompt injection in dealer portals](../prompt-injection-dealer-portals-agentforce/).
 
-**Target org.** Coding agents work in sandboxes. Production changes go through the pipeline, which belongs in the contract, see [partners using AI coding: contract rules](../partners-using-ai-coding-contract-rules/). One more detail: Claude Code asks for trust verification when a new MCP server appears, but its security page notes this is disabled in non-interactive runs with `-p`, so a server added to a CI job gets no prompt.
+**Target org.** Coding agents work in sandboxes. Production changes go through the pipeline, which belongs in the contract, see [partners using AI coding: contract rules](../partners-using-ai-coding-contract-rules/).
+
+```vertiefung For developers
+title: How does Claude Code help with pinning and new servers?
+In Claude Code, an allowlist entry for a local server must match the [exact command and arguments](https://code.claude.com/docs/en/managed-mcp), so an entry with `pkg@1.4.2` blocks any other version. That is my reading of the matching rule, and it turns pinning into something you can enforce.
+
+Claude Code asks for trust verification when a new MCP server appears, but its security page notes this is disabled in non-interactive runs with `-p`, so a server added to a CI job gets no prompt.
+```
 
 ## When is Salesforce Hosted MCP the safer route?
 
@@ -103,4 +110,4 @@ All three needs get met, and no community server reaches the org.
 
 Steering partners on tools like this is part of my [partner governance](../../services/partner-governance/) work, and the interface overview is in [chapter 3 of the masterclass](../../masterclass/ai-salesforce/mcp-and-interfaces/).
 
-A community MCP server earns approval only when you can name its user, its secret, its maintainer and its version. If you want a second opinion on a request from your partner, [send me a message](#contact).
+A community MCP server earns approval only when you can name its user, its secret, its maintainer and its version.

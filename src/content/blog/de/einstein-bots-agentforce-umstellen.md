@@ -71,7 +71,18 @@ Nehmen wir einen Maschinenbauer mit 300 Händlern und Servicepartnern auf einem 
 
 **Variante 1, alles umstellen.** Bei durchschnittlich drei Aktionen pro Gespräch brauchen 4.000 Gespräche 240.000 Credits im Monat, 1.200 € zum Listenpreis, oder 2,88 Millionen Credits im Jahr nur für Aktionen. Das ist mehr als die 2,75 Millionen einer Service-Cloud-Max-Org, und noch ist kein Prompt, kein Grounding und kein Testlauf bezahlt. Bei 2 € pro Gespräch kostet dasselbe Volumen 8.000 € im Monat.
 
-**Variante 2, hybrid.** Der Bot behält die ersten vier Pfade, also 2.600 Gespräche. Die 1.400 Freitextgespräche gehen an den Agenten. Freitext braucht meist mehr Schritte, nehmen wir vier Aktionen an: 112.000 Credits, 560 € im Monat, rund 1,34 Millionen im Jahr. Ich nehme an, dass die Bot-Pfade im bestehenden Lizenzkontingent bleiben. Klären Sie das mit Ihrem Account Executive, denn ein Wechsel auf die neuen Editionen kann daran etwas ändern.
+**Variante 2, hybrid.** Der Bot behält die ersten vier Pfade, also 2.600 Gespräche. Die 1.400 Freitextgespräche gehen an den Agenten. Freitext braucht meist mehr Schritte, nehmen wir vier Aktionen an: 112.000 Credits, 560 € im Monat, rund 1,34 Millionen im Jahr.
+
+```kennzahlen
+2,88 Mio. | Credits pro Jahr für Aktionen, wenn alles umgestellt wird
+1,34 Mio. | Credits pro Jahr für Aktionen in der hybriden Variante
+2,75 Mio. | Flex Credits pro Org und Jahr in Service Cloud Max
+quelle: Szenario mit angenommenen Werten; 20 Credits pro Aktion laut Salesforce-Ankündigung vom Mai 2025, Kontingent laut Service-Cloud-Preisseite
+```
+
+```hinweis offen
+Ich nehme an, dass die Bot-Pfade im bestehenden Lizenzkontingent bleiben. Klären Sie das mit Ihrem Account Executive, denn ein Wechsel auf die neuen Editionen kann daran etwas ändern.
+```
 
 Die Kosten sind das kleinere Argument für Variante 2: Im Freitext scheitert der Bot heute, die Menüpfade funktionieren bereits. Ein Beitrag im Salesforce Developers Blog vom Dezember 2025 zur Übergabe von Einstein Enhanced Bots an Agentforce-Agenten, geschrieben von zwei Salesforce-Mitarbeitenden, beschreibt dieses Muster mit Einstein Enhanced Bots: Der Bot "triages transactions (Log/Status) and routes complex knowledge to an Agentforce Service agent", über ein Feld auf der Messaging Session, einen ausgehenden Omni-Channel-Flow und eine Ausweich-Queue. Der Beitrag behandelt nur die Übergabe vom Bot an den Agenten, nicht den Rückweg.
 
@@ -97,11 +108,19 @@ Der Bot verschafft Ihnen einen Vorsprung. Die Beispielsätze, mit denen jeder In
 
 Meine Reihenfolge:
 
-1. Jeden Bot-Pfad mit Volumen und Abbruchquote der letzten drei Monate auswerten.
-2. Jeden Pfad nach den Kriterien oben markieren: behalten, umstellen oder an Menschen übergeben.
-3. Upgrade Agent in einer Sandbox laufen lassen und den Entwurf auf die umgestellten Pfade kürzen.
-4. Tests aus Intent-Sätzen und Protokollen bauen und die Bestehensquote mit der Serviceleitung vereinbaren.
-5. Nur den Freitextpfad über Omni-Channel mit Ausweich-Queue an den Agenten leiten und Digital Wallet vier Wochen beobachten.
-6. Mit diesen Zahlen über den nächsten Pfad entscheiden.
+```schritte
+Pfade auswerten
+  Jeden Bot-Pfad mit Volumen und Abbruchquote der letzten drei Monate auswerten.
+Pfade markieren
+  Jeden Pfad nach den Kriterien oben einordnen: behalten, umstellen oder an Menschen übergeben.
+Entwurf erzeugen
+  Upgrade Agent in einer Sandbox laufen lassen und den Entwurf auf die umgestellten Pfade kürzen.
+Tests bauen
+  Tests aus Intent-Sätzen und Protokollen bauen und die Bestehensquote mit der Serviceleitung vereinbaren.
+Freitextpfad starten | 4 Wochen
+  Nur den Freitextpfad über Omni-Channel mit Ausweich-Queue an den Agenten leiten und Digital Wallet beobachten.
+Nächsten Pfad wählen
+  Mit diesen Zahlen über den nächsten Pfad entscheiden.
+```
 
-Ein Einstein Bot braucht keine Eins-zu-eins-Ablösung, sondern eine Aufteilung in Pfade, die vorhersehbar bleiben müssen, und Fragen, die ein Agent besser beantwortet; diese [Architekturentscheidung](../../leistungen/salesforce-architektur/) gehört vor den ersten Klick auf Upgrade, und wenn Sie eine zweite Meinung zu den Pfaden Ihres Bots möchten, [schreiben Sie mir](#contact).
+Ein Einstein Bot braucht keine Eins-zu-eins-Ablösung, sondern eine Aufteilung in Pfade, die vorhersehbar bleiben müssen, und Fragen, die ein Agent besser beantwortet; diese [Architekturentscheidung](../../leistungen/salesforce-architektur/) gehört vor den ersten Klick auf Upgrade.

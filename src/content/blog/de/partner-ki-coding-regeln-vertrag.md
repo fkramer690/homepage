@@ -29,7 +29,9 @@ draft: false
 
 Programmiert Ihr Salesforce-Umsetzungspartner mit KI-Agenten, braucht der Vertrag Regeln für KI-Coding, die eine klassische Leistungsbeschreibung nicht abdeckt: welche Tools und Modellwege genutzt werden, welche Daten ins Modell dürfen, kein Produktionszugriff für Agenten, dasselbe Review für jede Zeile und wem Code gehört, den eine Maschine geschrieben hat. Verbieten würde ich KI-Coding nicht. Ich würde den Partner offenlegen lassen, wie er arbeitet, und das prüfbar machen. Heikel ist für Hersteller vor allem, was ein Agent lesen kann: Servicefälle, Händlerpreise und SAP-Zugangsdaten.
 
-Eine Anmerkung vorweg: Ich bin Architekt, kein Anwalt. Die Punkte unten beschreiben, was ich aus technischer Sicht prüfe und schriftlich sehen möchte. Sie sind keine Rechtsberatung. Ihre Rechtsabteilung oder ein Anwalt macht daraus Klauseln, die zu Ihrem Rahmenvertrag passen.
+```hinweis achtung
+Ich bin Architekt, kein Anwalt. Die Punkte unten beschreiben, was ich aus technischer Sicht prüfe und schriftlich sehen möchte. Sie sind keine Rechtsberatung. Ihre Rechtsabteilung oder ein Anwalt macht daraus Klauseln, die zu Ihrem Rahmenvertrag passen.
+```
 
 ## Warum braucht KI-Coding durch Partner eigene Klauseln?
 
@@ -37,7 +39,13 @@ Ein klassisches SOW (Statement of Work, die Leistungsbeschreibung) regelt Liefer
 
 **Daten verlassen das Haus über einen neuen Kanal.** Was der Agent liest, geht als Prompt an einen Modellanbieter. Ob der damit trainiert, hängt am Vertragstyp, nicht am Tool. Anthropic schreibt, dass es [nicht mit Code oder Prompts trainiert, die unter kommerziellen Bedingungen an Claude Code gehen](https://code.claude.com/docs/en/data-usage) (Team, Enterprise, API); bei den Verbraucherplänen Free, Pro und Max hängt das Training an einer Nutzereinstellung. Kommerzielle Konten haben eine Standard-Aufbewahrung von 30 Tagen. Dazu speichert Claude Code Sitzungsprotokolle standardmäßig 30 Tage lokal im Klartext. Auf dem Laptop eines Entwicklers liegt also eine Kopie dessen, was der Agent gelesen hat.
 
-**Die Codemenge wächst schneller als die Review-Kapazität.** Veracode misst im Bericht von 2026 eine [durchschnittliche Sicherheits-Passrate von 56 Prozent für KI-generierten Code](https://www.veracode.com/news/llms-are-getting-smarter-but-not-safer-veracode-2026-genai-code-security-report-finds-ai-generated-code-security-has-stalled-at-56%25-pass-rate/) gemessen, für Java, den nächsten Verwandten von Apex, 30 Prozent. Getestet wurden reine Modelle ohne Tooling und ohne menschliches Review. Das Review ist die Kontrolle, also gehört es in den Vertrag.
+**Die Codemenge wächst schneller als die Review-Kapazität.** Veracode hat im Bericht von 2026 die [Sicherheits-Passrate von KI-generiertem Code](https://www.veracode.com/news/llms-are-getting-smarter-but-not-safer-veracode-2026-genai-code-security-report-finds-ai-generated-code-security-has-stalled-at-56%25-pass-rate/) gemessen. Getestet wurden reine Modelle ohne Tooling und ohne menschliches Review. Das Review ist die Kontrolle, also gehört es in den Vertrag.
+
+```kennzahlen
+56 % | durchschnittliche Sicherheits-Passrate für KI-generierten Code
+30 % | Passrate für Java, den nächsten Verwandten von Apex
+quelle: Veracode, GenAI Code Security Report 2026
+```
 
 **Die Rechtelage wird unscharf.** Laut [CMS](https://cms.law/de/deu/legal-updates/ki-generierter-softwarecode-in-der-due-diligence) ist vollständig von KI erzeugter Code nach deutschem Recht gemeinfrei, weil nur ein Mensch Urheber sein kann, und die AGB des Anbieters ändern daran nichts. Und die Zusagen des Anbieters gelten seinem eigenen Kunden. Als Anthropic im Dezember 2023 seine [Urheberrechts-Freistellung](https://www.anthropic.com/news/expanded-legal-protections-api-improvements) einführte, versprach es, „our customers“ zu verteidigen. Im Partnerprojekt ist dieser Kunde der Partner, nicht Sie.
 
@@ -72,14 +80,21 @@ Keiner dieser vier Befunde wäre im Code-Review aufgefallen, denn der Code selbs
 
 Agenten machen Änderungen billig, auch Änderungen an Objekten, die ein anderer Stream verantwortet. Ein Agent, der bei einer Story fürs Händlerportal eine Validierungsregel auf dem Account „repariert“, weiß nicht, dass der Service-Stream davon abhängt. Damit wird die [Object Ownership Matrix](../object-ownership-matrix-salesforce/) wichtiger. Eine CODEOWNERS-Datei im Repository fragt den verantwortlichen Stream automatisch als Reviewer an, wenn ein Pull Request seine Objekte berührt.
 
-Die Anlage sollte für alle Partner identisch sein. Bringt jeder Partner eigene KI-Regeln mit, wird stillschweigend die strengste oder die lauteste zu Ihrem Standard, und Partner lassen sich schwerer vergleichen. Diese Regeln auf Kundenseite festzulegen, gehört zu meiner Arbeit in der [Partnersteuerung](../../leistungen/partnersteuerung/).
+Die Anlage sollte für alle Partner identisch sein. Bringt jeder Partner eigene KI-Regeln mit, wird stillschweigend die strengste oder die lauteste zu Ihrem Standard, und Partner lassen sich schwerer vergleichen. Damit die Regeln nach einigen Monaten nicht verwässern, braucht es mehr als den Vertrag: Pipeline, Review und einen festen Termin für neue Fälle, beschrieben in [Reinforcement: Standards bei Partnern verankern](../standards-partner-verankern-reinforcement/). Diese Regeln auf Kundenseite festzulegen, gehört zu meiner Arbeit in der [Partnersteuerung](../../leistungen/partnersteuerung/).
 
 ## Wo sollten Sie anfangen?
 
-1. **Den Fragebogen verschicken**, an jeden Partner, auch an kleine, die nur eine Schnittstelle liefern.
-2. **Ihre Daten einteilen** in das, was ein Agent sehen darf, und das, was nicht, gemeinsam mit Ihrem Datenschutzbeauftragten.
-3. **Die Anlage mit Ihrer Rechtsabteilung entwerfen** und an den Rahmenvertrag hängen, damit sie für jede Leistungsbeschreibung gilt.
-4. **Technisch durchsetzen**: Vibes für Produktion abgeschaltet, Deployments nur über die Pipeline, CODEOWNERS für gemeinsame Objekte.
-5. **Einmal im Jahr prüfen**, denn Tools, Tarife und Nutzungsbedingungen ändern sich schneller als Verträge.
+```schritte
+Fragebogen verschicken
+  An jeden Partner, auch an kleine, die nur eine Schnittstelle liefern.
+Daten einteilen
+  In das, was ein Agent sehen darf, und das, was nicht, gemeinsam mit Ihrem Datenschutzbeauftragten.
+Anlage entwerfen
+  Mit Ihrer Rechtsabteilung, angehängt an den Rahmenvertrag, damit sie für jede Leistungsbeschreibung gilt.
+Technisch durchsetzen
+  Vibes für Produktion abgeschaltet, Deployments nur über die Pipeline, CODEOWNERS für gemeinsame Objekte.
+Einmal im Jahr prüfen
+  Tools, Tarife und Nutzungsbedingungen ändern sich schneller als Verträge.
+```
 
-KI-Coding durch Partner ist in Ordnung, wenn der Vertrag regelt, welche Tools, welche Daten und welches Review gelten, und Sie das prüfen können. Wenn Sie eine zweite Meinung zu Ihren Partnerverträgen aus technischer Sicht möchten, [schreiben Sie mir](#contact).
+KI-Coding durch Partner ist in Ordnung, wenn der Vertrag regelt, welche Tools, welche Daten und welches Review gelten, und Sie das prüfen können.

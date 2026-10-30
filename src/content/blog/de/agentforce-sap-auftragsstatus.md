@@ -32,7 +32,7 @@ Ein Agentforce-Agent beantwortet Auftragsstatus und Verfügbarkeit aus SAP S/4HA
 
 ## Wie kommt ein Agentforce-Agent an den Auftragsstatus aus SAP?
 
-Über eine Kette aus fünf Gliedern, und jedes Glied braucht einen Verantwortlichen. Der [Salesforce Developers Blog](https://developer.salesforce.com/blogs/2025/06/explore-mulesoft-for-agentforce-with-topic-center-and-api-catalog) beschreibt die Reihenfolge: Topics, Aktionen und Instructions in Topic Center festlegen, während die API entworfen wird, die API bauen, in Anypoint Exchange veröffentlichen und mit dem API Catalog synchronisieren. Danach entstehen Named Credentials und External Services automatisch, und der Agent ruft die API als Aktion auf. Flow und Apex können dieselbe API nutzen.
+Über eine Kette aus fünf Gliedern, und jedes Glied braucht einen Verantwortlichen. Der [Salesforce Developers Blog](https://developer.salesforce.com/blogs/2025/06/explore-mulesoft-for-agentforce-with-topic-center-and-api-catalog) beschreibt die Reihenfolge: Topics, Aktionen und Instructions in Topic Center festlegen, während die API entworfen wird, die API bauen, in Anypoint Exchange veröffentlichen und mit dem API Catalog synchronisieren. Danach entstehen Named Credentials und External Services automatisch, und der Agent ruft die API als Aktion auf. Flow und Apex können dieselbe API nutzen. Die Gegenrichtung, ein Auftrag aus Revenue Cloud, der an SAP übergeben wird, steht in [Auftrag an SAP übergeben](../revenue-cloud-auftragsorchestrierung-sap/).
 
 Für einen Maschinenbauer sieht die Kette so aus:
 
@@ -42,7 +42,9 @@ Für einen Maschinenbauer sieht die Kette so aus:
 4. **Der API Catalog** in Salesforce kann laut [MuleSoft](https://docs.mulesoft.com/access-management/enabling-api-catalog) nur APIs aus Exchange synchronisieren, die verwaltete Instanzen haben. Im [Agentforce-Workshop](https://developer.salesforce.com/workshops/agentforce-workshop/mulesoft/3-explore-api-catalog) von Salesforce aktivieren Sie dann die Aktionen und vergeben sie per Permission Set an Benutzer.
 5. **Der Agent** bekommt Topic und Aktionen im Agent Builder.
 
+```hinweis achtung
 Zwei Voraussetzungen übersieht man leicht: eine vertrauenswürdige Verbindung zwischen der Anypoint-Organisation und einer Salesforce-Org, bei der Agentforce für die Anypoint Platform aktiviert ist, sowie ein aktivierter API Catalog in dieser Org. Liegen MuleSoft- und Salesforce-Vertrag in verschiedenen Abteilungen, klären Sie das vor dem ersten Sprint.
+```
 
 Eine offizielle Referenzarchitektur von Salesforce für Agentforce mit S/4HANA habe ich nicht gefunden, nur dieses allgemeine MuleSoft-Muster. Das Design Ihres Partners ist also die Architektur, und jemand auf Ihrer Seite sollte es prüfen.
 
@@ -58,7 +60,15 @@ Für einen Händleragenten würde ich drei Operationen entwerfen:
 - **Liefertermine** pro Position, nur mit bestätigtem Termin und Teillieferungen einzeln aufgeführt.
 - **Verfügbarkeit** für Material, Menge und Wunschtermin: ja oder nein plus frühester bestätigter Termin aus der Verfügbarkeitsprüfung in SAP. Keine Bestandszahl, denn Lagerbestände sind kaufmännische Information, die Händler nicht brauchen.
 
-Die MuleSoft-Kennzeichen legen fest, was der Agent mit jedem Feld tun darf. `x-sfdc/agent/action/publishAsAgentAction` macht eine Operation zur Aktion, `isUserInput` markiert, was der Agent beim Händler erfragt, `isDisplayable`, was er anzeigen darf, und `x-sfdc/privacy/isPii` schaltet für eine Operation den PII-Service ein. Der Blog zu External Services ergänzt, dass Beschreibungen von Aktionen und Parametern aus der Spezifikation übernommen werden. Gute Beschreibungen im OpenAPI-Dokument sind Prompt Engineering, einmal erledigt, in einer geprüften Datei.
+Die MuleSoft-Kennzeichen in der OpenAPI-Spezifikation legen fest, was der Agent mit jedem Feld tun darf. Der Blog zu External Services ergänzt, dass Beschreibungen von Aktionen und Parametern aus der Spezifikation übernommen werden. Gute Beschreibungen im OpenAPI-Dokument sind Prompt Engineering, einmal erledigt, in einer geprüften Datei.
+
+```vertiefung Für Entwickler
+titel: Welche Kennzeichen steuern den Agenten?
+- `x-sfdc/agent/action/publishAsAgentAction` macht eine Operation zur Aktion.
+- `isUserInput` markiert, was der Agent beim Händler erfragt.
+- `isDisplayable` markiert, was er anzeigen darf.
+- `x-sfdc/privacy/isPii` schaltet für eine Operation den PII-Service ein.
+```
 
 Berechnen Sie vor, was Händler am häufigsten fragen. „Gesamtstatus“ und „nächster bestätigter Termin“ sollten Felder sein, die die API berechnet, keine Schlüsse, die das Modell aus zehn Einteilungen zieht.
 
@@ -68,7 +78,7 @@ Die Topic-Center-Dokumentation von MuleSoft sagt selbst, Instructions seien „n
 
 **Wer welchen Auftrag sehen darf.** Das ist das größte Risiko. Ein im Portal angemeldeter Händler ist ein Kontakt an einem Account, und der Account trägt die SAP-Auftraggebernummer. Diese Nummer muss aus der Sitzung an die API gehen, per Code gesetzt, nie aus dem Chat. Die API liefert einen Auftrag nur, wenn der Auftraggeber passt, und antwortet sonst „nicht gefunden“, genau wie bei einem Auftrag, den es nicht gibt. Übergibt das Modell Auftragsnummer und Kundennummer, liest Händler A den Auftrag von Händler B, indem er eine Nummer eintippt. Anfragen per E-Mail sind noch schwächer, weil eine Absenderadresse wenig beweist; mehr dazu in [Prompt Injection im Händlerportal](../prompt-injection-haendlerportal-agentforce/).
 
-**Verfügbarkeit und Termine.** SAP prüft die Verfügbarkeit. Der Agent gibt den bestätigten Termin weiter und schätzt nie selbst aus Bestand oder Wiederbeschaffungszeit. Hat SAP keinen bestätigten Termin, lautet die Antwort „noch nicht bestätigt“.
+**Verfügbarkeit und Termine.** SAP prüft die Verfügbarkeit. Der Agent gibt den bestätigten Termin weiter und schätzt nie selbst aus Bestand oder Wiederbeschaffungszeit. Hat SAP keinen bestätigten Termin, lautet die Antwort „noch nicht bestätigt“. Ein B2B-Shop braucht dieselbe Regel, siehe [Kapitel 4 der Masterclass B2B Commerce](../../masterclass/b2b-commerce/erp-integration-bestand-auftraege/).
 
 **Sperren.** Kredit- und Liefersperren sind SAP-Entscheidungen. Ob ein Händler von einer Kreditsperre erfährt oder „bitte wenden Sie sich an Ihren Vertriebsmitarbeiter“ hört, ist eine fachliche Entscheidung, die in die API-Antwort gehört, nicht in den Prompt.
 
@@ -86,7 +96,20 @@ Was ein Gespräch in Flex Credits kostet, rechne ich in [was ein Serviceagent f�
 
 ## Live-Aufruf oder Kopie in Salesforce?
 
-Der Agent sollte SAP live aufrufen. Der Händler fragt nach heute, und eine nächtliche Kopie zeigt gestern. Der Preis ist eine Abhängigkeit: Während eines SAP-Wartungsfensters schlägt die Aktion fehl. Der Agent muss das dann sagen und einen Rückruf oder eine Übergabe anbieten, und dieser Fall gehört in die Testfälle, wie in [Agentforce-Agenten testen und freigeben](../agentforce-agenten-testen-freigeben/) beschrieben.
+Der Agent sollte SAP live aufrufen. Der Händler fragt nach heute, und eine nächtliche Kopie zeigt gestern.
+
+```ablauf
+ext: Händler, Mule-API
+sf: Agentforce-Agent
+erp: SAP S/4HANA
+Händler --Frage im Portal--> Agentforce-Agent
+Agentforce-Agent --Aktion--> Mule-API
+Mule-API --OData--> SAP S/4HANA
+SAP S/4HANA ..Bestätigter Termin..> Mule-API
+Mule-API ..Antwortfelder..> Agentforce-Agent
+```
+
+Der Preis ist eine Abhängigkeit: Während eines SAP-Wartungsfensters schlägt die Aktion fehl. Der Agent muss das dann sagen und einen Rückruf oder eine Übergabe anbieten, und dieser Fall gehört in die Testfälle, wie in [Agentforce-Agenten testen und freigeben](../agentforce-agenten-testen-freigeben/) beschrieben.
 
 Eine Kopie hat trotzdem ihren Platz, etwa der Fahrzeugbestand, den Techniker im Außendienst offline brauchen, wie in [Ersatzteile zwischen ERP und Field Service](../salesforce-field-service-ersatzteile-erp/). Termine aus einer solchen Kopie würde ich den Agenten nicht als aktuell ausgeben lassen.
 
@@ -102,4 +125,4 @@ MuleSoft kann dieselbe API auch zu einem MCP-Server machen: [Agent Fabric](https
 
 Hat Ihr ERP gar keine API, lesen Sie [altes ERP ohne API](../altes-erp-ohne-api-ki-agenten/); ob der Prozess überhaupt reif für einen Agenten ist, steht in [Agentforce für Hersteller: jetzt starten oder warten](../agentforce-ja-oder-nein-hersteller/).
 
-Ein Agent, der den Auftragsstatus aus SAP liest, ist vor allem ein Schnittstellenprojekt mit einem Sprachmodell obendrauf. Wenn Sie eine zweite Meinung zum API-Design oder zu den Zugriffsregeln möchten, [schreiben Sie mir](#contact).
+Ein Agent, der den Auftragsstatus aus SAP liest, ist vor allem ein Schnittstellenprojekt mit einem Sprachmodell obendrauf.

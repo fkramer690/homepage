@@ -31,7 +31,23 @@ Prompt injection in dealer portals is the most likely way an Agentforce agent at
 
 ForcedLeak is a vulnerability chain that Noma Security reported to Salesforce on 28 July 2025, rated CVSS 9.4. According to [The Hacker News](https://thehackernews.com/2025/09/salesforce-patches-critical-forcedleak.html), it affected any org that used Agentforce with Web-to-Lead enabled. An attacker submitted a web form with hidden instructions in the Description field. Later an employee asked Agentforce an ordinary question about that lead. The agent carried out the hidden instructions along with the real question, read further lead data and sent it out, embedded in the address of an image. The target domain was on Salesforce's allowlist, but it had expired and could be bought for about $5.
 
-Salesforce acknowledged the report on 31 July and has enforced Trusted URLs for Agentforce and Einstein AI since 8 September 2025, according to [SalesforceBen](https://www.salesforceben.com/agentforce-web-to-lead-vulnerability-exposed-could-you-be-impacted/). Salesforce told The Hacker News that the allowlist ensures "no malicious links are called or generated" through prompt injection. According to Noma, the expired domain was re-secured. Noma published the details on 25 September.
+```ablauf
+ext: Attacker, Employee, Expired domain
+sf: Lead description, Agentforce
+Attacker --Web form--> Lead description
+Employee --Question on lead--> Agentforce
+Lead description --Hidden instruction--> Agentforce
+Agentforce --Image URL leak--> Expired domain
+```
+
+Salesforce acknowledged the report on 31 July and has enforced Trusted URLs for Agentforce and Einstein AI since 8 September 2025, according to [SalesforceBen](https://www.salesforceben.com/agentforce-web-to-lead-vulnerability-exposed-could-you-be-impacted/). Salesforce told The Hacker News that the allowlist ensures "no malicious links are called or generated" through prompt injection. According to Noma, the expired domain was re-secured.
+
+```zeitleiste
+2025-07-28 | Noma Security reports ForcedLeak to Salesforce, CVSS 9.4
+2025-07-31 | Salesforce acknowledges the report
+2025-09-08 | Salesforce enforces Trusted URLs for Agentforce and Einstein AI
+2025-09-25 | Noma publishes the details
+```
 
 Two points matter more to me than the patch. Noma wrote that the model "lacked the ability to distinguish" between data loaded into its context and instructions from trusted sources. That holds for every language model. And a Salesforce spokesperson told [SalesforceBen](https://www.salesforceben.com/agentforce-web-to-lead-vulnerability-exposed-could-you-be-impacted/) that prompt injection is "a complex and evolving area". The specific exit is closed. The pattern behind it stays.
 
@@ -44,6 +60,8 @@ Simon Willison named the pattern the [lethal trifecta](https://simonwillison.net
 - **The dealer portal** on Experience Cloud: case descriptions, comments, warranty claims with a free-text fault description. These need a login, but a hundred dealer organisations each bring their own staff turnover and password habits.
 - **Service partner reports** in Field Service, written by external technicians.
 - **Distributor imports** such as order notes or claim lists.
+
+A buyer agent that takes orders by WhatsApp or SMS adds one more door, see [B2B Buyer Agent: ordering through WhatsApp and SMS](../b2b-buyer-agent-whatsapp-ordering/).
 
 The person who triggers the attack is your own employee doing their job. A warranty clerk asks the agent to summarise today's claims. A sales rep asks about a new lead. Nothing in their request is wrong. The instruction sits in a record they never opened.
 
@@ -62,7 +80,7 @@ So I treat detection as one layer and plan as if it will miss.
 The goal is that a successful injection does little harm. For every agent that reads external text, break at least one leg of the trifecta, ideally two.
 
 1. **Mark the external fields.** List every field that someone outside the company can write, per object and channel. A business analyst can keep that list current.
-2. **Close the exits.** Check that Trusted URLs enforcement is active in your org. Then review the [Trusted URLs](https://developer.salesforce.com/docs/atlas.en-us.254.0.lightning.meta/lightning/security_trusted_urls_manage.htm) list itself: each entry needs an owner and a reason, and an entry for a campaign microsite from years ago is exactly the kind of expired domain ForcedLeak used. A new entry allows images by default. Exits also include agent actions that send emails, post to Slack or call webhooks. An agent that summarises external text should have none of them.
+2. **Close the exits.** Check that Trusted URLs enforcement is active in your org. Then review the [Trusted URLs](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_csptrustedsite.htm) list itself: each entry needs an owner and a reason, and an entry for a campaign microsite from years ago is exactly the kind of expired domain ForcedLeak used. A new entry allows images by default. Exits also include agent actions that send emails, post to Slack or call webhooks. An agent that summarises external text should have none of them.
 3. **Shrink the running user.** Every agent has a running user that determines what it can read and do. Salesforce [states](https://www.salesforce.com/blog/best-practices-for-secure-agentforce-implementation-2/) that new agents have no permissions by default and recommends granting only what is essential, plus regular reviews of role hierarchies and organisation-wide defaults. An agent that handles one dealer's claim should see that claim, the asset and that dealer's account, not the whole installed base.
 4. **Keep decisions and writes out of the model.** Warranty approval, credit notes and price exceptions belong behind deterministic gates, as described in [Agent Script: rules instead of the LLM](../agent-script-deterministic-rules/). An action hidden behind an `available when` condition cannot be triggered by text in a claim. Anything that moves money or sends data to a third party gets a human approval step.
 5. **Separate reading from acting.** A paper on design patterns that Willison [summarised](https://simonwillison.net/2025/Jun/13/prompt-injection-design-patterns/) puts the principle in one line: "once an LLM agent has ingested untrusted input, it must be constrained". In Salesforce I build that as a summarising step without actions, whose output a person or a deterministic step then uses.
@@ -90,4 +108,4 @@ For a first pass I would sit with the Salesforce admin and the head of service f
 
 The same questions apply to external AI tools that read Salesforce data through MCP, because the trifecta does not care which client reads the field. I cover that in [hosted MCP servers and data access](../salesforce-hosted-mcp-servers-data-access/), and the OAuth side in [connected apps and AI integrations](../connected-apps-oauth-ai-integrations/). Mapping data flows and permissions like this is part of my [Salesforce architecture work](../../services/salesforce-architecture/).
 
-An agent that reads text from dealers or the web needs narrow read rights and no way out, and with both in place prompt injection becomes a quality issue instead of a data leak. If you want a second look at your portal and agent setup, [send me a message](#contact).
+An agent that reads text from dealers or the web needs narrow read rights and no way out, and with both in place prompt injection becomes a quality issue instead of a data leak.

@@ -59,7 +59,10 @@ Jede Frage führt zu einem anderen Log, mit eigener Lizenz und eigener Aufbewahr
 
 **Agent Platform Tracing.** Ein [Beitrag im Developer-Blog vom Mai 2026](https://developer.salesforce.com/blogs/2026/05/agent-platform-tracing-debug-agentforce-with-trace-trees-soql-and-slack) beschreibt Spans für LLM-Aufrufe, Flows und Apex in Data 360, über dieselbe Trace-ID mit Session Tracing verknüpft, und warnt: "There's no backfill of historical data." Was vor dem Einschalten passiert, ist nicht protokolliert.
 
+```vertiefung Für Entwickler
+titel: Wie kommen Agenten-Traces ins SIEM?
 Für ein SIEM (das zentrale Log-System der Security) ist die [Session Trace OTel API](https://developer.salesforce.com/docs/ai/agentforce/guide/otel-api.md) in der Beta. Sie liefert Sessions, die in den letzten 72 Stunden begonnen haben, eine Session pro Abfrage; ein natives Push ist "planned".
+```
 
 Diese Logs sind selbst ein Speicher personenbezogener Daten: Die Eingabe einer Aktion "Garantie prüfen" enthält Seriennummern, Händlernamen und manchmal den Endkunden. Was die Speicherung an Data-360-Verbrauch kostet, steht auf keiner der Seiten, die ich geöffnet habe.
 
@@ -69,7 +72,11 @@ Liest Claude, ChatGPT oder Cursor Salesforce-Daten über Hosted MCP, erscheinen 
 
 Der Haken ist die Aufbewahrung. Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/event_monitoring/event_monitoring_intro) erhalten Orgs der Enterprise, Unlimited und Performance Edition einige Ereignistypen kostenlos, darunter Login, Logout und API Total Usage, mit einem Tag Aufbewahrung. Nach meiner Lesart hat eine Org ohne Add-on, die diese Dateien nicht täglich herunterlädt, gar keine MCP-Historie.
 
-Mit Shield oder dem Event-Monitoring-Add-on bleiben Logs laut [Event-Monitoring-FAQ](https://help.salesforce.com/s/articleView?id=000396295&language=en_US&type=1) standardmäßig 30 Tage und bis zu ein Jahr. Bezahlte Logs "cannot be retrieved retroactively for periods before the contract start date". Die Angreifer im Fall Salesloft Drift waren [laut The Hacker News](https://thehackernews.com/2025/08/salesloft-oauth-breach-via-drift-ai.html) vom 8. August bis mindestens 18. August 2025 aktiv. Eine Frage an Tag zehn braucht also Logs ab Tag eins. Die Token-Seite dieses Vorfalls beschreibe ich in [Connected Apps und OAuth: Lehren aus Drift](../connected-apps-oauth-ki-integrationen/).
+Mit Shield oder dem Event-Monitoring-Add-on bleiben Logs laut [Event-Monitoring-FAQ](https://help.salesforce.com/s/articleView?id=000396295&language=en_US&type=1) standardmäßig 30 Tage und bis zu ein Jahr. Die Angreifer im Fall Salesloft Drift waren [laut The Hacker News](https://thehackernews.com/2025/08/salesloft-oauth-breach-via-drift-ai.html) vom 8. August bis mindestens 18. August 2025 aktiv. Eine Frage an Tag zehn braucht also Logs ab Tag eins. Die Token-Seite dieses Vorfalls beschreibe ich in [Connected Apps und OAuth: Lehren aus Drift](../connected-apps-oauth-ki-integrationen/).
+
+```hinweis achtung
+Bezahlte Logs "cannot be retrieved retroactively for periods before the contract start date". Event Monitoring, das Sie erst nach einem Vorfall kaufen, zeigt diesen Vorfall nicht.
+```
 
 Die bezahlte Stufe bringt Ereignistypen wie [Unique Query](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_eventlogfile_unique_query_event_elf.htm), das verarbeitete SOQL-Abfragen, Filter-IDs und Report-IDs erfasst. Daran sehen Sie, ob ein KI-Client die Preisvereinbarung eines Händlers abgefragt hat oder die aller Händler.
 
@@ -108,4 +115,4 @@ Nehmen wir einen Maschinenbauer mit 90 Händlern, einem Agentforce-Serviceagente
 
 Ein Log-Inventar mit Verantwortlichen gehört zu meiner Arbeit in der [Salesforce-Architektur](../../leistungen/salesforce-architektur/).
 
-Agenten treffen Entscheidungen in Ihrer Org, also brauchen die Logs, die diese Entscheidungen erklären, einen Verantwortlichen und eine Aufbewahrungsdauer, bevor die erste Prüferin fragt. Wenn Sie Ihr Log-Inventar vor dem Go-live eines Agenten durchgehen möchten, [schreiben Sie mir](#contact).
+Agenten treffen Entscheidungen in Ihrer Org, also brauchen die Logs, die diese Entscheidungen erklären, einen Verantwortlichen und eine Aufbewahrungsdauer, bevor die erste Prüferin fragt.

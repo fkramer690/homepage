@@ -35,9 +35,18 @@ Am 20. Oktober 2026 hat Salesforce die neuen Funktionen in einem [Blogbeitrag zu
 - **Headless-Setup.** Digitale Formulare lassen sich aus bestehenden Papierformularen oder vorhandenen Mobile Flows erzeugen, mit denselben Datenfeldern. Salesforce beschreibt es als so einfach wie ein Foto aufzunehmen. Ziel ist, lange Projekte nur für die Digitalisierung eines Formulars zu vermeiden.
 - **Voice to Form.** Techniker beschreiben, was sie sehen oder tun, und das System interpretiert die Sprache und füllt die passenden Felder. Die Formulare passen sich dynamisch an das Gesagte an. Laut Salesforce werden mehrere Sprachen unterstützt.
 
-Salesforce stützt das mit eigener Forschung: Außendienstmitarbeitende schätzen, dass rund 18 Prozent ihrer Arbeitszeit, mehr als sieben Stunden pro Woche, in Verwaltungsaufgaben fließen. 43 Prozent der befragten Organisationen nutzen im Außendienst noch Papierprotokolle, und nur 16 Prozent sagen, dass ihre Technik im Außen- und Innendienst auf einer Plattform zusammenarbeitet.
+Salesforce stützt das mit eigener Forschung:
 
-Eine Einschränkung: Die Ankündigung zeigt Demos, nennt aber weder Verfügbarkeit noch Editionen oder Lizenzen. Bevor Sie einen Rollout planen, prüfen Sie die Release Notes und sprechen Sie mit Ihrem Account-Team.
+```kennzahlen
+18 % | der Arbeitszeit im Außendienst fließen laut Schätzung der Befragten in Verwaltung, mehr als sieben Stunden pro Woche
+43 % | der befragten Organisationen nutzen im Außendienst noch Papierprotokolle
+16 % | sagen, dass Technik im Außen- und Innendienst auf einer Plattform zusammenarbeitet
+quelle: Salesforce-Forschung, zitiert im Blogbeitrag zu geführter mobiler Arbeit vom 20. Oktober 2026
+```
+
+```hinweis offen
+Die Ankündigung zeigt Demos, nennt aber weder Verfügbarkeit noch Editionen oder Lizenzen. Bevor Sie einen Rollout planen, prüfen Sie die Release Notes und sprechen Sie mit Ihrem Account-Team.
+```
 
 ## Warum ist das für Hersteller wichtig?
 
@@ -74,7 +83,7 @@ Eine schnelle digitale Kopie ist aber nur so gut wie das Formular selbst. Typisc
 - **Fehlende Struktur**, zum Beispiel Fehlerbeschreibungen als Freitext statt als Codes, die das Qualitätsmanagement auswerten kann.
 - **Formulare, die sich je Region oder Team unterscheiden**, für denselben Einsatz.
 
-Bevor Formulare in großem Stil digitalisiert werden, lohnt sich eine Entscheidung über ein Zieldatenmodell für Serviceprotokolle: Welche Werte werden als Felder erfasst, welche Auswahllisten werden geteilt, wie hängen Ergebnisse an Anlage und Auftrag? Das ist klassische [Architekturarbeit](../../leistungen/salesforce-architektur/), und sie entscheidet, ob die Daten später für Reporting, KI-Agenten oder die Anbindung an das ERP nutzbar sind.
+Bevor Formulare in großem Stil digitalisiert werden, lohnt sich eine Entscheidung über ein Zieldatenmodell für Serviceprotokolle: Welche Werte werden als Felder erfasst, welche Auswahllisten werden geteilt, wie hängen Ergebnisse an Anlage und Auftrag? Das ist klassische [Architekturarbeit](../../leistungen/salesforce-architektur/), und sie entscheidet, ob die Daten später für Reporting, KI-Agenten oder die Anbindung an das ERP nutzbar sind. Wie Prüfprotokolle mit Data Capture aussehen, steht in [Field Service Data Capture: Prüfprotokolle ohne Papier](../field-service-data-capture-pruefprotokolle/).
 
 ## Was muss vor dem Einsatz von Spracheingabe geklärt sein?
 
@@ -90,11 +99,21 @@ Außerdem ist es sinnvoll festzulegen, welche Felder per Sprache gefüllt werden
 
 Eine pragmatische Reihenfolge für einen Hersteller mit eigenem Außendienst:
 
-1. **Verfügbarkeit und Lizenzen bestätigen** für Ihre Org und Editionen.
-2. **Eine Einsatzart wählen** mit hohem Volumen und klarem Protokoll, zum Beispiel die jährliche Wartung eines verbreiteten Maschinentyps.
-3. **Das Datenmodell aufräumen** für diese Einsatzart: Anlagendaten, Pflichtwerte, Fehlercodes, Bezug zu Ersatzteilen.
-4. **Den geführten Ablauf bauen** gemeinsam mit der Serviceorganisation und mit Technikern unterschiedlicher Erfahrung testen.
-5. **Spracheingabe separat pilotieren**, nachdem Datenschutz und Betriebsrat zugestimmt haben.
-6. **Die Wirkung messen**: Zeit für Dokumentation, Vollständigkeit der Berichte, Zeit bis zur Abrechnung.
+```schritte
+Verfügbarkeit bestätigen
+  Verfügbarkeit und Lizenzen für Ihre Org und Editionen klären.
+Eine Einsatzart wählen
+  Hohes Volumen und klares Protokoll, zum Beispiel die jährliche Wartung eines verbreiteten Maschinentyps.
+Datenmodell aufräumen
+  Für diese Einsatzart: Anlagendaten, Pflichtwerte, Fehlercodes, Bezug zu Ersatzteilen.
+Geführten Ablauf bauen
+  Gemeinsam mit der Serviceorganisation bauen und mit Technikern unterschiedlicher Erfahrung testen.
+Spracheingabe separat pilotieren
+  Erst nachdem Datenschutz und Betriebsrat zugestimmt haben.
+Wirkung messen
+  Zeit für Dokumentation, Vollständigkeit der Berichte, Zeit bis zur Abrechnung.
+```
 
-Gute Außendienstdaten sind auch die Grundlage für KI-Agenten im Service, die verlässliche Informationen brauchen, wie ich in [Agentforce: Business Value und Datenqualität zuerst](../agentforce-business-value-datenqualitaet/) erkläre. Wenn Sie planen, Ihren Außendienst auf Salesforce zu modernisieren, [schreiben Sie mir](#contact).
+Ob die Techniker die neuen Funktionen dann auch nutzen, entscheidet sich daran, was sie selbst davon haben. Darum geht es in [Field Service App: wie Techniker sie annehmen](../field-service-app-akzeptanz-techniker/).
+
+Gute Außendienstdaten sind auch die Grundlage für KI-Agenten im Service, die verlässliche Informationen brauchen, wie ich in [Agentforce: Business Value und Datenqualität zuerst](../agentforce-business-value-datenqualitaet/) erkläre.

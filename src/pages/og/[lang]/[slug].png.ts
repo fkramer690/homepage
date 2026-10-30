@@ -1,7 +1,7 @@
 import type { APIRoute, GetStaticPaths } from 'astro';
 import { getPosts, type Post } from '../../../lib/blog';
 import { renderOgImage } from '../../../lib/og';
-import { site } from '../../../site';
+import { getAuthor } from '../../../lib/authors';
 
 // One preview image per article: /og/<lang>/<slug>.png
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -14,7 +14,9 @@ export const GET: APIRoute = async ({ props }) => {
   const png = await renderOgImage({
     title: post.data.title,
     eyebrow: 'FK Solution Design · Blog',
-    footer: `${site.person} · Salesforce Enterprise Architect`,
+    footer: post.data.coAuthor
+      ? `${getAuthor(post.data.lang, post.data.author).name} · ${getAuthor(post.data.lang, post.data.coAuthor).name}`
+      : (({ name, jobTitle }) => `${name} · ${jobTitle}`)(getAuthor(post.data.lang, post.data.author)),
   });
   return new Response(new Uint8Array(png), { headers: { 'Content-Type': 'image/png' } });
 };

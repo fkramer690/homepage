@@ -44,7 +44,16 @@ I treat ApexHours as a well-argued practice framework. It gives no team sizes an
 
 ## Why do Salesforce teams get smaller?
 
-McKinsey surveyed 334 product and engineering leaders in May 2026 and published the results in [Beyond the copilot](https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/beyond-the-copilot-scaling-the-agentic-product-development-life-cycle) in August. Among respondents at top-accelerating organisations, 79 percent said their squads had shrunk, with the median falling from about ten people to seven. One global technology company moved from product pods of 8 to 10 people to agentic teams of 4 to 6 and reported roughly twice the capacity and 50 to 80 percent shorter development cycles. McKinsey sees two role families emerging: "definers who fuse product and design, and builders who fuse development, testing, and operations".
+McKinsey surveyed 334 product and engineering leaders in May 2026 and published the results in [Beyond the copilot](https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/beyond-the-copilot-scaling-the-agentic-product-development-life-cycle) in August.
+
+```kennzahlen
+79% | of respondents at top-accelerating organisations report smaller squads
+7 | people per squad there at the median, down from about ten
+50 to 80% | shorter development cycles, reported by one global technology company
+source: McKinsey, Beyond the copilot, August 2026
+```
+
+That technology company moved from product pods of 8 to 10 people to agentic teams of 4 to 6 and reported roughly twice the capacity. McKinsey sees two role families emerging: "definers who fuse product and design, and builders who fuse development, testing, and operations".
 
 Two caveats from the same source. The figures are self-reported by leaders, and 30 percent of respondents said team productivity fell. McKinsey also writes that "Speed is improving faster than quality". DORA's 2025 report found that AI adoption still has a [negative relationship with delivery stability](https://cloud.google.com/blog/products/ai-machine-learning/announcing-the-2025-dora-report), and DORA lists [working in small batches and a user-centric focus](https://dora.dev/capabilities/) among the seven capabilities that amplify AI's benefit. Small pods with daily feedback are a direct answer to both points. How to check whether your own programme gets faster is the topic of [measuring AI productivity in Salesforce projects](../measuring-ai-productivity-salesforce-projects/).
 
@@ -89,12 +98,19 @@ Whether seven people deliver what twelve did is an open question until cycle tim
 
 ## Where should you start?
 
-1. **Pick one stream** with a clear process, a decision maker in the business and few ERP dependencies. Dealer portal stories are often a good fit.
-2. **Name the domain lead first** and get the time approved by their manager before the partner restructures.
-3. **Write intents** for the first ten stories with testable acceptance criteria, and keep precise specifications for interfaces and rules with financial effect.
-4. **Agree the guardrails** with the partner: named owner per artifact, agents only in sandboxes and scratch orgs, the same gates for all code. The contract side is in [partners coding with AI: contract rules](../partners-using-ai-coding-contract-rules/).
-5. **Measure cycle time and rework** for three months and only then decide on the other streams.
+```schritte
+Pick one stream
+  With a clear process, a decision maker in the business and few ERP dependencies. Dealer portal stories are often a good fit.
+Name the domain lead first
+  Get the time approved by their manager before the partner restructures.
+Write intents
+  For the first ten stories with testable acceptance criteria; keep precise specifications for interfaces and rules with financial effect.
+Agree the guardrails
+  With the partner: named owner per artifact, agents only in sandboxes and scratch orgs, the same gates for all code. The contract side is in [partners coding with AI: contract rules](../partners-using-ai-coding-contract-rules/).
+Measure and decide | 3 months
+  Measure cycle time and rework, and only then decide on the other streams.
+```
 
 Planning streams, team setups and the business time behind them is the core of my [programme management for Salesforce programmes](../../services/program-management-nearshore/).
 
-Smaller Salesforce teams work when the manufacturer puts its own process experts into the pods every day. If you want to check whether your programme is ready for that, [send me a message](#contact).
+Smaller Salesforce teams work when the manufacturer puts its own process experts into the pods every day.

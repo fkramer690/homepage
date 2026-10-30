@@ -64,7 +64,9 @@ Salesforce gibt an, dass beim Zusammenstellen des Kontexts die bestehenden Berec
 
 Das ist das richtige Prinzip. Es bedeutet aber auch, dass Agenten jede Schwäche des bestehenden Berechtigungsmodells erben. Sind Freigaberegeln heute zu großzügig, sieht ein Agent morgen zu viel. Sind sensible Felder nicht klassifiziert, können sie nicht maskiert werden. Vor einem Agentenprojekt verdient das Berechtigungsmodell dieselbe Aufmerksamkeit wie das Agentendesign.
 
+```hinweis offen
 Die Erinnerungsfunktion wirft für europäische Unternehmen eine weitere Frage auf: Wie werden gespeicherte Erinnerungen behandelt, wenn ein Kunde nach DSGVO Löschung oder Auskunft verlangt? Salesforce gibt an, dass jede Erinnerung auf ihre Quelle zurückführbar ist. Das ist ein guter Ausgangspunkt, aber der Prozess für Löschung und Aufbewahrung sollte stehen, bevor Erinnerungen eingeschaltet werden.
+```
 
 ## Was sollten Unternehmen jetzt vorbereiten?
 
@@ -82,4 +84,4 @@ Warum diese Grundlagen wichtiger sind als der Agent selbst, beschreibe ich in [A
 
 Die Agent Context Engine zeigt, wohin Salesforce steuert: Data 360 als gemeinsame Grundlage für Daten, Kontext und Governance, mit Agenten verschiedener Plattformen darüber. Für einen Architekten auf Kundenseite stellen sich die üblichen Fragen: Wie viel hängt an einem Hersteller, welche Daten müssen wirklich nach Data 360, was kostet es im großen Maßstab, und wer verantwortet Definitionen und Berechtigungen?
 
-Das sind Entscheidungen des Kunden und nicht eines einzelnen Umsetzungspartners, und sie gehören in die Zielarchitektur, bevor der erste Agent produktiv geht. Das ist ein Kernteil meiner [Arbeit an Architektur und Governance](../../leistungen/salesforce-architektur/). Wenn Sie besprechen möchten, was die Agent Context Engine für Ihre KI-Pläne bedeutet, [schreiben Sie mir](#contact).
+Das sind Entscheidungen des Kunden und nicht eines einzelnen Umsetzungspartners, und sie gehören in die Zielarchitektur, bevor der erste Agent produktiv geht. Das ist ein Kernteil meiner [Arbeit an Architektur und Governance](../../leistungen/salesforce-architektur/).

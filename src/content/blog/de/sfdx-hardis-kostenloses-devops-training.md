@@ -39,9 +39,14 @@ Wenn Sie das Tool noch nicht kennen, starten Sie mit meiner [Einführung in sfdx
 
 Das [Training](https://sfdx-hardis.cloudity.com/salesforce-devops-training/) stammt von Cloudity und läuft komplett auf kostenlosen Ressourcen: einem GitHub-Account, VS Code und kostenlosen Salesforce Developer Edition Orgs. Wer auf dem eigenen Rechner keine Software installieren darf, kann ein browserbasiertes VS Code nutzen. Jedes Lab enthält Screenshots der echten Oberflächen. Der Kurs ist in zwei Rollen und drei Level aufgeteilt:
 
-- **Level 1, Contributor Basics** (7 Labs, etwa 2 h 15): VS Code, Git und sfdx-hardis installieren, Dev Hub, Scratch Orgs und Pipeline einrichten, auf einem Branch arbeiten, ein eigenes Feld bauen, die Änderung veröffentlichen, den Deployment-Check bestehen und mergen.
-- **Level 2, Contributor Advanced** (9 Labs, etwa 4 h): eine fehlende Abhängigkeit beheben, Deployment Actions für Datenkorrekturen und Referenzdaten, Quality Gate und Apex-Testabdeckung, Permission Sets und Profile, einen Merge-Konflikt lösen und einen Commit mit falschen Metadaten korrigieren.
-- **Level 3, Release Manager** (11 Labs, etwa 6 h 55): Pipeline konfigurieren, Pull Requests reviewen, Deployment-Logs lesen, kollidierende Pull Requests mergen, mit Release Notes nach UAT promoten, mit DORA-Metriken in die Produktion releasen, Hotfixes und Retrofits, Produktions-Monitoring, generierte Dokumentation und Promotion Branches.
+```schritte
+Level 1, Contributor Basics | 7 Labs · etwa 2 h 15
+  VS Code, Git und sfdx-hardis installieren, Dev Hub, Scratch Orgs und Pipeline einrichten, auf einem Branch arbeiten, ein eigenes Feld bauen, die Änderung veröffentlichen, den Deployment-Check bestehen und mergen.
+Level 2, Contributor Advanced | 9 Labs · etwa 4 h
+  Eine fehlende Abhängigkeit beheben, Deployment Actions für Datenkorrekturen und Referenzdaten, Quality Gate und Apex-Testabdeckung, Permission Sets und Profile, einen Merge-Konflikt lösen und einen Commit mit falschen Metadaten korrigieren.
+Level 3, Release Manager | 11 Labs · etwa 6 h 55
+  Pipeline konfigurieren, Pull Requests reviewen, Deployment-Logs lesen, kollidierende Pull Requests mergen, mit Release Notes nach UAT promoten, mit DORA-Metriken in die Produktion releasen, Hotfixes und Retrofits, Produktions-Monitoring, generierte Dokumentation und Promotion Branches.
+```
 
 ![Die drei Level des sfdx-hardis-DevOps-Trainings: Level 1 Contributor Basics mit 7 Labs und etwa 2 Stunden 15 Minuten, Level 2 Contributor Advanced mit 9 Labs und etwa 4 Stunden, Level 3 Release Manager mit 11 Labs und etwa 6 Stunden 55 Minuten. Jedes Badge prüft ein Job, der alle Checks am eigenen Repository erneut ausführt.](../../../assets/blog/sfdx-hardis-training-levels-de.png)
 
@@ -75,6 +80,10 @@ Für Kunden ist das Training außerdem ein günstiger Weg, internes DevOps-Wisse
 
 ## Wie fällt mein Fazit aus?
 
-Planen Sie mit Erfahrung einen vollen Tag ein, ohne Erfahrung mehr. Die Zeit ist gut investiert. Arbeiten Sie die Labs am besten am Stück durch und nicht verteilt über Wochen, denn die Level bauen direkt aufeinander auf und die Zusammenhänge zwischen Branch, Pull Request, Pipeline und Org werden so am deutlichsten. Der Kurs ist kostenlos, praxisnah und nah an echter Projektarbeit, und das Badge hat Aussagekraft, weil es geprüft wird. Großes Lob und Dank an Nicolas Vuillamy und das Cloudity-Team.
+Planen Sie mit Erfahrung einen vollen Tag ein, ohne Erfahrung mehr. Die Zeit ist gut investiert.
 
-Wenn Sie besprechen möchten, wie sfdx-hardis oder ein DevOps-Setup in Ihrem Salesforce-Programm funktionieren könnte, [schreiben Sie mir](#contact).
+```hinweis tipp
+Arbeiten Sie die Labs am besten am Stück durch und nicht verteilt über Wochen, denn die Level bauen direkt aufeinander auf und die Zusammenhänge zwischen Branch, Pull Request, Pipeline und Org werden so am deutlichsten.
+```
+
+Der Kurs ist kostenlos, praxisnah und nah an echter Projektarbeit, und das Badge hat Aussagekraft, weil es geprüft wird. Wer in seinem Team Salesforce DevOps aufbauen will, findet hier einen guten Einstieg. Großes Lob und Dank an Nicolas Vuillamy und das Cloudity-Team.

@@ -52,12 +52,19 @@ The real benefit is architectural. The API contract, for example "order status b
 
 ### Route 2: document extraction plus RPA for writing
 
-Salesforce describes a pattern for exactly this case in the [Salesforce Admins blog](https://admin.salesforce.com/blog/2025/automate-order-entry-with-flow-mulesoft-agentforce-automate-with-agentforce) from August 2025, using a fictional supplier with scanned PDF orders and an ERP without an API:
+Salesforce describes a pattern for exactly this case in the [Salesforce Admins blog](https://admin.salesforce.com/blog/2025/automate-order-entry-with-flow-mulesoft-agentforce-automate-with-agentforce) from August 2025, using a fictional supplier with scanned PDF orders and an ERP without an API. MuleSoft Intelligent Document Processing (IDP) extracts order number, items, net value and tax, and sends documents with a confidence below 80 percent to manual review. A MuleSoft RPA bot watches a shared folder and simulates mouse clicks and keystrokes in the ERP. Two autolaunched Flows start it and poll its status by execution ID, and an Agentforce topic called "Order Upload" lets users start the upload and ask for its status in chat.
 
-- MuleSoft Intelligent Document Processing (IDP) extracts order number, items, net value and tax. If the model's confidence drops below 80 percent, the document goes to manual review.
-- A MuleSoft RPA bot watches a shared folder and enters the order into the ERP by simulating mouse clicks and keystrokes.
-- Two autolaunched Flows start the bot and poll its status by execution ID.
-- An Agentforce topic called "Order Upload" lets users start the upload and ask for its status in chat.
+```ablauf
+sf: Order Upload topic, Autolaunched Flow
+ext: MuleSoft IDP, Manual review, RPA bot
+erp: ERP screen
+Order Upload topic --> Autolaunched Flow
+Autolaunched Flow --starts--> RPA bot
+MuleSoft IDP --from 80 percent--> RPA bot
+MuleSoft IDP ..below 80 percent..> Manual review
+RPA bot --enters order--> ERP screen
+RPA bot ..status..> Autolaunched Flow
+```
 
 For a manufacturer the obvious candidates are dealer spare part orders and supplier order confirmations that arrive as PDF. Two cost points belong in the plan. According to the [IDP documentation](https://docs.mulesoft.com/idp/), IDP charges Automation Credits per execution based on the number of pages, and resubmitting or reprocessing a document consumes credits in full, without deduplication. And [RPA bots](https://docs.mulesoft.com/rpa-bot/1.6/) need a computer where the target applications are installed, so somebody runs these machines and keeps them patched.
 
@@ -67,7 +74,11 @@ I like one detail of this pattern: the agent decides nothing. It is a chat front
 
 At Dreamforce 2026 Salesforce presented the Systems Integration Agent as part of Agentforce Operations, in the same section as the back-office agent Marshall, marked [GA](https://www.salesforce.com/blog/dreamforce-2026-announcements/). According to the [product blog](https://www.salesforce.com/blog/regrello/) it learns a browser-based application "the way a new employee would, in about 90 minutes", without code, APIs or RPA, including "customized SAP, Oracle, and homegrown systems". When a screen changes, it relearns that part "typically in about 20 minutes, with the repair logged for an administrator to review". The [Agentforce Operations page](https://www.salesforce.com/agentforce/operations/) adds an audit trail and preserved permissions and approval controls, and says the product is priced by blueprint packages, from a starter pack with 5 blueprints to Large with more than 50, "not priced based on consumption". I found no list prices.
 
-The catch for manufacturers is the word "browser-based". If your ERP or MES runs as a desktop client, check whether a web client exists before anyone plans with this agent. The product blog also states GA explicitly only for Marshall, so confirm availability for your org with your account team. These are launch-month vendor claims, and I would test them on your own screens, including one ERP update in a test system, before relying on them.
+The catch for manufacturers is the word "browser-based". If your ERP or MES runs as a desktop client, check whether a web client exists before anyone plans with this agent. These are launch-month vendor claims, and I would test them on your own screens, including one ERP update in a test system, before relying on them.
+
+```hinweis offen
+The product blog states GA explicitly only for Marshall. Confirm availability of the Systems Integration Agent for your org with your account team.
+```
 
 ## A typical scenario: spare part orders at a machine builder with an old ERP
 
@@ -97,4 +108,4 @@ The second limit is the number of write processes. Every bot is software that so
 
 And thirty orders a month do not justify an RPA bot, no matter how old the ERP is.
 
-With an old ERP, start with the read route behind a stable API contract and automate writing only where documents and screens are stable and a person reviews the uncertain cases. If you want to check which route fits your ERP, [send me a message](#contact).
+With an old ERP, start with the read route behind a stable API contract and automate writing only where documents and screens are stable and a person reviews the uncertain cases.

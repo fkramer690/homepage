@@ -33,7 +33,17 @@ Agentforce cost control across plants starts with one decision: who owns the Fle
 
 ## Who owns the Flex Credit pool when plants share one org?
 
-The commercial unit is the org. The [EU pricing page for Sales Cloud](https://www.salesforce.com/eu/products/sales-pricing/) lists "500K Flex Credits/org/year" for Core, 1 million for Advanced and 2.75 million for Max. Extra credits cost $500 per 100,000 on the [Agentforce pricing page](https://www.salesforce.com/agentforce/pricing/), half a cent per credit. Every plant, subsidiary and service region working in that org draws from the same pool. How large the pools are and when Max pays off is covered in [the editions Core, Advanced and Max](../salesforce-editions-core-advanced-max/).
+The commercial unit is the org. The [EU pricing page for Sales Cloud](https://www.salesforce.com/eu/products/sales-pricing/) lists the included pools as "500K Flex Credits/org/year" for Core, and the [Agentforce pricing page](https://www.salesforce.com/agentforce/pricing/) gives the price of extra credits, half a cent per credit:
+
+```kennzahlen
+500,000 | Flex Credits per org per year in Core
+1 million | Flex Credits per org per year in Advanced
+2.75 million | Flex Credits per org per year in Max
+$500 | per 100,000 extra credits
+source: Salesforce EU pricing page for Sales Cloud and Agentforce pricing page
+```
+
+Every plant, subsidiary and service region working in that org draws from the same pool. How large the pools are and when Max pays off is covered in [the editions Core, Advanced and Max](../salesforce-editions-core-advanced-max/).
 
 Three contract terms decide where the money goes:
 
@@ -41,7 +51,7 @@ Three contract terms decide where the money goes:
 - **Unused credits expire.** The [Flex Credits rate card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) says credits must be used before the order end date and "no rollover will be permitted".
 - **One pricing model per org.** Flex Credits and the $2 per conversation model are not supported in the same org. A US subsidiary cannot pick conversation pricing while the German plants use credits.
 
-So the question for a manufacturing group is organisational. I would make one person in group IT or the Salesforce CoE the budget owner: they sign, they watch the pool, they run the chargeback. Plants and subsidiaries get budgets, not credits.
+So the question for a manufacturing group is organisational. I would make one person in group IT or the [Salesforce Center of Excellence](../salesforce-center-of-excellence-cadence/) the budget owner: they sign, they watch the pool, they run the chargeback. Plants and subsidiaries get budgets, not credits.
 
 ## What does Digital Wallet show for chargeback?
 
@@ -54,7 +64,9 @@ So the question for a manufacturing group is organisational. I would make one pe
 
 The limits matter as much as the functions. Salesforce Help says you need a Data 360 license, "not a Customer Data Platform (CDP) license", and lists Digital Wallet as not available in sandboxes. Sandbox consumption still costs credits; the Flex Credits card in production has a filter for the environment type. The [Trailhead quick look](https://trailhead.salesforce.com/content/learn/modules/salesforce-digital-wallet-quick-look/get-to-know-salesforce-digital-wallet) says data is updated multiple times a day and that "your monthly statement is the definitive source of truth". The internal invoice therefore follows the monthly statement, not a dashboard screenshot.
 
+```hinweis achtung
 What I did not find: an automatic stop. The pages I opened describe alerts only. [Salesforce Ben noted in May 2025](https://www.salesforceben.com/understanding-common-agentforce-pain-points-and-how-salesforce-addresses-them/) that there was no kill switch to freeze agents at a threshold, and I found nothing newer that says otherwise. A plant budget is therefore a number in controlling. If you need a hard stop, you deactivate the agent yourself.
+```
 
 ## A typical scenario: three regions in one org
 
@@ -106,4 +118,4 @@ One meter has no price yet: the rate card lists Headless Platform Interactions w
 
 How to estimate the consumption itself is in [Flex Credits cost per action](../flex-credits-agentforce-cost-per-action/), and licence planning across several companies is part of my [make-or-buy and licence planning](../../services/make-or-buy-licences/).
 
-Digital Wallet gives you the numbers per agent and cost center, but the ownership and the rules for leftovers have to come from you. If you want to set up Agentforce cost control for several plants or subsidiaries, [send me a message](#contact).
+Digital Wallet gives you the numbers per agent and cost center, but the ownership and the rules for leftovers have to come from you.

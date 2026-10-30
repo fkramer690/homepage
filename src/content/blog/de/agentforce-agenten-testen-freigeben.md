@@ -40,15 +40,22 @@ Die Frage lautet also: Wie oft besteht er, und mit welchen Fehlern können wir l
 
 Salesforce hat das [Agentforce Testing Center](https://www.salesforce.com/news/?p=83400) im November 2024 vorgestellt. Es erzeugt Hunderte synthetische Anfragen aus einer Beschreibung in normaler Sprache und führt sie parallel in einer Sandbox aus. Für Teams mit Versionsverwaltung bietet [Agentforce DX](https://developer.salesforce.com/docs/ai/agentforce/guide/agent-dx.html) dasselbe über VS Code, CLI-Befehle und eine Test-API.
 
-Im Pro-Code-Weg ist ein Test eine YAML-Datei. Laut [Salesforce Developers Blog vom Juni 2026](https://developer.salesforce.com/blogs/2026/06/master-the-agentic-development-lifecycle-for-agentforce) enthält jeder Testfall eine Nutzeranfrage und bis zu drei Erwartungen: den Subagenten, an den das Gespräch gehen soll, die Aktionen, die laufen sollen, und eine Beschreibung des richtigen Ergebnisses in normaler Sprache. Dieses Ergebnis bewertet ein Sprachmodell als Prüfer, im Englischen „LLM as a judge“. `sf agent test create` lädt die Spezifikation in die Org, `sf agent test run` führt sie aus. Dazu kommen:
+Im Pro-Code-Weg ist ein Test eine YAML-Datei. Laut [Salesforce Developers Blog vom Juni 2026](https://developer.salesforce.com/blogs/2026/06/master-the-agentic-development-lifecycle-for-agentforce) enthält jeder Testfall eine Nutzeranfrage und bis zu drei Erwartungen: den Subagenten, an den das Gespräch gehen soll, die Aktionen, die laufen sollen, und eine Beschreibung des richtigen Ergebnisses in normaler Sprache. Dieses Ergebnis bewertet ein Sprachmodell als Prüfer, im Englischen „LLM as a judge“. `sf agent test create` lädt die Spezifikation in die Org, `sf agent test run` führt sie aus.
 
+```vertiefung Für Entwickler
+titel: Was eine Testspezifikation außerdem prüft
 - **Qualitätsmetriken.** Kohärenz, Vollständigkeit und Prägnanz, jeweils als bestanden oder nicht bestanden, dazu die Latenz in Millisekunden, laut [Dokumentation zur Testspezifikation](https://developer.salesforce.com/docs/ai/agentforce/guide/agent-dx-test-customize.html).
 - **Eigene Prüfungen.** Exakte Text- oder Zahlenvergleiche auf Daten, die eine Aktion erzeugt hat, ausgewählt per JSONPath. Salesforce [zeigt](https://developer.salesforce.com/blogs/2025/10/test-your-agentforce-agents-with-custom-evaluation-criteria) `string_comparison` und `numeric_comparison`. Das ist der deterministische Teil des Agententests, und ich würde ihn für jede Regel nutzen, die ausnahmslos gelten muss.
 - **Ausgabe für CI.** Ergebnisse kommen als JSON, TAP oder JUnit, laut [Dokumentation zu Testläufen](https://developer.salesforce.com/docs/ai/agentforce/guide/agent-dx-test-run.html). Eine Pipeline liest sie wie Apex-Testergebnisse.
+```
 
 Die Werkzeuge ändern sich schnell. Erweiterungen des Testing Center mit eigenen Bewertungen und mehrstufigen Gesprächstests sind laut [TDX-2026-Rückblick](https://www.salesforce.com/blog/tdx-2026-roundup-agentforce-edition/) seit Mai 2026 GA. Zur [Dreamforce 2026](https://www.salesforce.com/blog/dreamforce-2026-announcements/) kamen Gesprächstests mit einer Metrik für die Aufgabenerledigung (Beta) und Custom Scorers (API GA, Oberfläche in Beta) dazu. Die Entwicklerdokumentation, die ich zitiere, beschreibt noch den bisherigen Testprozess und nicht das neuere Testing Center in Agentforce Studio; prüfen Sie das aktuelle Verhalten daher in Ihrer Org. Halten Sie Ihre Testfälle als einfache Dateien in Git, dann überstehen sie den nächsten Werkzeugwechsel.
 
-Zwei praktische Punkte gehen leicht unter. Agententests sind [nur in Sandboxes verfügbar](https://developer.salesforce.com/docs/ai/agentforce/guide/testing-api-get-started.html), und Salesforce weist darauf hin, dass Testläufe Requests und Credits verbrauchen und Daten ändern können. Laut [Flex Credits Rate Card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) kostet eine Aktion in einer Sandbox oder Scratch Org 16 Credits statt 20 in Produktion. Und reserviert eine Aktion ein Teil in einem angebundenen Test-ERP, tut sie das bei jedem Testlauf.
+```hinweis achtung
+Agententests sind [nur in Sandboxes verfügbar](https://developer.salesforce.com/docs/ai/agentforce/guide/testing-api-get-started.html), und Salesforce weist darauf hin, dass Testläufe Requests und Credits verbrauchen und Daten ändern können. Laut [Flex Credits Rate Card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) kostet eine Aktion in einer Sandbox oder Scratch Org 16 Credits statt 20 in Produktion.
+
+Und reserviert eine Aktion ein Teil in einem angebundenen Test-ERP, tut sie das bei jedem Testlauf.
+```
 
 ## Wie legen Sie Passraten-Schwellen für den Go-live fest?
 
@@ -88,11 +95,19 @@ Testen Sie neu, sobald sich etwas unter dem Agenten ändert: ein Subagent, ein F
 
 Dem Kunden. Der Partner schreibt die Tests und führt sie aus, aber Testsatz, Schwellen und Go-live-Entscheidung gehören dem Unternehmen, das gegenüber seinen Händlern geradesteht. Das ist das Prinzip aus [DevOps in Enterprise-Projekten](../warum-devops-salesforce-enterprise-projekte/): Agententests liegen im selben Repository und laufen in derselben Pipeline, mit JUnit-Ausgabe und einer Schranke, die das Deployment unter der Schwelle stoppt. Das aufzusetzen gehört zu meiner Arbeit in [DevOps und Release-Management](../../leistungen/devops-und-release-management/).
 
-1. **Die inakzeptablen Fehler benennen**, gemeinsam mit der Fachseite, etwa eine falsche Garantieaussage oder Daten eines anderen Händlers.
-2. **20 bis 50 echte Fragen sammeln** aus Händler-E-Mails und Servicetickets, dann Grenz- und Schutzfälle ergänzen.
-3. **Die Regeln markieren**, die exakte Prüfungen statt des LLM-Prüfers brauchen.
-4. **Schwellen und Anzahl der Läufe vereinbaren**, vor dem ersten Test, nicht nach dem ersten Ergebnis.
-5. **Sandbox-Credits budgetieren** für jeden Regressionslauf bis zum Ende des Piloten.
-6. **Monitoring einschalten und die Rollout-Gruppe festlegen**, bevor Sie den Agenten aktivieren.
+```schritte
+Inakzeptable Fehler benennen
+  Gemeinsam mit der Fachseite, etwa eine falsche Garantieaussage oder Daten eines anderen Händlers.
+20 bis 50 echte Fragen sammeln
+  Aus Händler-E-Mails und Servicetickets, dann Grenz- und Schutzfälle ergänzen.
+Regeln markieren
+  Welche Regeln brauchen exakte Prüfungen statt des LLM-Prüfers?
+Schwellen vereinbaren
+  Schwellen und Anzahl der Läufe, vor dem ersten Test, nicht nach dem ersten Ergebnis.
+Sandbox-Credits budgetieren
+  Für jeden Regressionslauf bis zum Ende des Piloten.
+Monitoring einschalten
+  Und die Rollout-Gruppe festlegen, bevor Sie den Agenten aktivieren.
+```
 
-Ein Agentforce-Agent ist bereit, wenn er vorab festgelegte Schwellen Lauf für Lauf erreicht und Sie ab dem ersten Tag sehen, was er in Produktion tut. Wenn Sie eine zweite Meinung zu Ihrem Testsatz oder Ihren Go-live-Kriterien möchten, [schreiben Sie mir](#contact).
+Ein Agentforce-Agent ist bereit, wenn er vorab festgelegte Schwellen Lauf für Lauf erreicht und Sie ab dem ersten Tag sehen, was er in Produktion tut.

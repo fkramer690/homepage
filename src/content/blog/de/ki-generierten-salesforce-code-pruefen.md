@@ -41,11 +41,18 @@ Salesforce schreibt es in der Dokumentation des eigenen Coding-Agenten Agentforc
 Die meisten dieser Fehler nennt Salesforce selbst in seinen Checklisten für Agenten-Code. Einen Teil findet die Pipeline, den Rest nur jemand, der Ihre Org kennt.
 
 1. **SOQL und DML in Schleifen.** Der Code funktioniert mit einem Datensatz und bricht bei einer Datenladung oder einem Massenupdate aus dem ERP. Die Salesforce-Checkliste fragt, ob Abfragen in Triggern bei Massenoperationen „the 100 SOQL limit“ erreichen könnten. Die PMD-Regel `OperationWithLimitsInLoop` meldet Abfragen, DML und andere limitierte Operationen in Schleifen ([PMD Performance-Regeln](https://docs.pmd-code.org/latest/pmd_rules_apex_performance.html)). Pipeline.
-2. **Fehlendes Sharing und fehlende Feldberechtigungen.** PMD meldet Klassen mit DML ohne Sharing-Deklaration (`ApexSharingViolations`) und Datenzugriffe ohne Berechtigungsprüfung (`ApexCRUDViolation`); eine Abfrage `WITH USER_MODE` besteht diese Regel ([PMD Security-Regeln](https://docs.pmd-code.org/latest/pmd_rules_apex_security.html)). Seit API-Version 67.0 läuft Apex standardmäßig im User Mode, Klassen ohne Deklaration laufen im Sharing-Kontext des aktuellen Benutzers, und `WITH SECURITY_ENFORCED` kompiliert nicht mehr ([Apex Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apex/versioned_behavior_changes.htm)). Nach meiner Einschätzung werden Modelle, die überwiegend mit älterem Apex trainiert sind, die alten Muster noch eine Weile erzeugen, und ein Agent hebt die API-Version einer Klasse womöglich nebenbei an, wenn Ihre Regeln das nicht verbieten. Warum Abfragen danach weniger Datensätze liefern können, beschreibe ich in [API 67.0 und User Mode](../api-67-apex-user-mode-weniger-datensaetze/). Pipeline für die Deklaration, Mensch für die Absicht.
+2. **Fehlendes Sharing und fehlende Feldberechtigungen.** PMD meldet Klassen mit DML ohne Sharing-Deklaration und Datenzugriffe ohne Berechtigungsprüfung. Seit API-Version 67.0 läuft Apex standardmäßig im User Mode. Nach meiner Einschätzung werden Modelle, die überwiegend mit älterem Apex trainiert sind, die alten Muster noch eine Weile erzeugen, und ein Agent hebt die API-Version einer Klasse womöglich nebenbei an, wenn Ihre Regeln das nicht verbieten. Warum Abfragen danach weniger Datensätze liefern können, beschreibe ich in [API 67.0 und User Mode](../api-67-apex-user-mode-weniger-datensaetze/). Pipeline für die Deklaration, Mensch für die Absicht.
 3. **Tests ohne Aussagekraft.** Salesforce verlangt 75 Prozent Testabdeckung für ein Deployment und schreibt im selben Leitfaden „don't focus on the percentage“ ([Apex Testing Best Practices](https://developer.salesforce.com/docs/atlas.en-us.264.0.apexcode.meta/pages/apex_testing_best_practices.htm)). Ein Agent, dem man 75 Prozent als Ziel gibt, erreicht 75 Prozent. Die Salesforce-Checkliste für Agenten-Code nennt `System.assertNotEquals(null, result)` als Beispiel für eine Assertion ohne Aussage. Mensch.
 4. **Erfundene oder falsche Felder.** Salesforce fragt, ob der Code „real fields and objects from your org (not placeholder names)“ verwendet ([Workflow Patterns](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-workflow-patterns.html)). Ein Feld, das es nicht gibt, scheitert meist schon am Validierungsdeployment. Teuer wird ein Feld, das existiert, aber das falsche ist, etwa ein altes Garantieende aus einer Datenmigration neben dem Feld, das Ihre SAP-Schnittstelle pflegt. Das sieht nur, wer Ihr Datenmodell kennt. Mensch.
 5. **Unvollständige Metadaten.** Neue Felder fehlen in den Permission Sets, oder referenzierte Objekte sind nicht Teil des Deployments. Fehlende Referenzen findet das Validierungsdeployment; fehlende Berechtigungen fallen erst auf, wenn der Innendienst leere Felder meldet. Pipeline plus Checkliste.
 6. **Geschäftslogik, die richtig aussieht.** Garantieberechtigung, Rabattgrenzen, Lieferterminregeln für Ersatzteile. Der Agent baut, was in der User Story steht, und User Stories im Maschinenbau nennen selten jede Ausnahme. Mensch, am besten der fachliche Lead.
+
+```vertiefung Für Entwickler
+titel: Welche PMD-Regeln greifen bei Sharing, und was ändert API-Version 67.0?
+`ApexSharingViolations` meldet Klassen mit DML ohne Sharing-Deklaration, `ApexCRUDViolation` Datenzugriffe ohne Berechtigungsprüfung; eine Abfrage `WITH USER_MODE` besteht diese Regel ([PMD Security-Regeln](https://docs.pmd-code.org/latest/pmd_rules_apex_security.html)).
+
+Seit API-Version 67.0 laufen Klassen ohne Deklaration im Sharing-Kontext des aktuellen Benutzers, und `WITH SECURITY_ENFORCED` kompiliert nicht mehr ([Apex Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apex/versioned_behavior_changes.htm)).
+```
 
 ## Was sollte die Pipeline automatisch prüfen?
 
@@ -85,11 +92,19 @@ Der dritte Fund ist der teure. In Produktion wäre das ein Datenabfluss zwischen
 
 ## Wo fangen Sie an?
 
-1. **Schützen Sie die Haupt-Branches** und verlangen Sie für Änderungen an Datenmodell, Sharing, Schnittstellen und Portalzugriff die Freigabe einer Person auf Ihrer Seite.
-2. **Setzen Sie Code Analyzer, Apex-Tests und ein Validierungsdeployment** vor jeden Merge, in einer Pipeline, die Ihnen gehört. Das ist der Kern meiner Arbeit in [DevOps und Release Management](../../leistungen/devops-und-release-management/).
-3. **Schreiben Sie eine einseitige Review-Checkliste** mit den sechs Fehlern oben und geben Sie sie jedem Partner.
-4. **Verlangen Sie Belege im Pull Request**: Testausgabe, Ergebnis von Code Analyzer, gekennzeichnete KI-Anteile.
-5. **Halten Sie Pull Requests klein.** Eine Story pro Pull Request; ein Agenten-Diff mit 400 Zeilen lässt sich prüfen, einer mit 4.000 Zeilen wird durchgewunken.
-6. **Zählen Sie Review-Funde nach Kategorie.** Nach einigen Sprints wissen Sie, welche Regeln in die [KI-Regeldatei Ihres Repositorys](../ki-regeldatei-salesforce-repository/) gehören und welche Prüfung in der Pipeline fehlt.
+```schritte
+Haupt-Branches schützen
+  Verlangen Sie für Änderungen an Datenmodell, Sharing, Schnittstellen und Portalzugriff die Freigabe einer Person auf Ihrer Seite.
+Prüfungen vor jeden Merge
+  Setzen Sie Code Analyzer, Apex-Tests und ein Validierungsdeployment vor jeden Merge, in einer Pipeline, die Ihnen gehört. Das ist der Kern meiner Arbeit in [DevOps und Release Management](../../leistungen/devops-und-release-management/).
+Review-Checkliste schreiben
+  Schreiben Sie eine einseitige Checkliste mit den sechs Fehlern oben und geben Sie sie jedem Partner.
+Belege verlangen
+  Verlangen Sie im Pull Request Testausgabe, Ergebnis von Code Analyzer und gekennzeichnete KI-Anteile.
+Pull Requests klein halten
+  Eine Story pro Pull Request; ein Agenten-Diff mit 400 Zeilen lässt sich prüfen, einer mit 4.000 Zeilen wird durchgewunken.
+Funde zählen
+  Zählen Sie Review-Funde nach Kategorie. Nach einigen Sprints wissen Sie, welche Regeln in die [KI-Regeldatei Ihres Repositorys](../ki-regeldatei-salesforce-repository/) gehören und welche Prüfung in der Pipeline fehlt.
+```
 
-KI-generierter Salesforce-Code braucht ein Review wie jeder andere Code, nur verschiebt sich die menschliche Aufmerksamkeit von der Syntax zu Tests, Datenzugriff und Geschäftsregeln. Wenn Sie eine zweite Meinung dazu möchten, wie der Code Ihrer Partner geprüft wird, [schreiben Sie mir](#contact).
+KI-generierter Salesforce-Code braucht ein Review wie jeder andere Code, nur verschiebt sich die menschliche Aufmerksamkeit von der Syntax zu Tests, Datenzugriff und Geschäftsregeln.

@@ -48,7 +48,7 @@ Salesforce offers three groups of building blocks for manufacturing: templates f
 
 On licensing: according to the [Manufacturing Cloud page](https://www.salesforce.com/manufacturing/cloud/), only the Max editions include the full Agentforce for Industries suite, at $650 (Sales Max or Service Max) or $700 (Sales & Service Max) per user per month on an annual contract. Core editions include Flex Credits for AI. On 3 September 2026 Salesforce said new pricing for the Industries editions would come ["later this fall"](https://www.salesforce.com/news/stories/salesforce-simplifies-editions-2026/). I found no separate licence statement for the warranty adjudication agent in the sources I could open.
 
-For a machine builder I sort this list by three questions: how many similar cases are there per month, where does the rule live, and is the data behind it maintained? That usually gives this order: dealer order status and planned maintenance first, then the job report, then warranty. Which field service features pay off is covered in [AI agents in field service](../../../blog/field-service-ai-agents-what-works-today/), what has to be in place before the warranty agent in [Warranty Claims Adjudication Agent: what to prepare](../../../blog/warranty-claims-adjudication-agent/). Whether an agent is the right next step at all, I check with the criteria in [Agentforce for manufacturers: start now or wait?](../../../blog/agentforce-yes-or-no-manufacturers/).
+For a machine builder I sort this list by three questions: how many similar cases are there per month, where does the rule live, and is the data behind it maintained? That usually gives this order: dealer order status and planned maintenance first, then the job report, then warranty. Which field service features pay off is covered in [AI agents in field service](../../../blog/field-service-ai-agents-what-works-today/), what has to be in place before the warranty agent in [Warranty Claims Adjudication Agent: what to prepare](../../../blog/warranty-claims-adjudication-agent/). Whether an agent is the right next step at all, I check with the criteria in [Agentforce for manufacturers: start now or wait?](../../../blog/agentforce-yes-or-no-manufacturers/). How to introduce agents in field service step by step is in [chapter 5 of the Field Service masterclass](../../field-service/field-service-ai-agents-rollout/).
 
 ## How do you build an agent that answers the same way twice?
 
@@ -103,7 +103,9 @@ At manufacturers these fields are everywhere: Web-to-Lead, dealer portals on Exp
 5. **Monitor API logs**; MCP traffic can be filtered with `API_CLIENT_CATEGORY` = `SALESFORCE_HOSTED_MCP`.
 6. **Put decisions with monetary value behind `available when`**, so no free text can trigger a credit note.
 
+```hinweis achtung
 The Hosted MCP security page does not mention prompt injection or IP restrictions. Your architect has to close that gap. Details are in [prompt injection through dealer portals](../../../blog/prompt-injection-dealer-portals-agentforce/) and [connected apps and OAuth in AI integrations](../../../blog/connected-apps-oauth-ai-integrations/), the interfaces themselves in [chapter 3](../mcp-and-interfaces/).
+```
 
 ## What do the industry references show?
 
@@ -113,19 +115,29 @@ The Hosted MCP security page does not mention prompt injection or IP restriction
 
 **JPW Industries**, a US manufacturer, is quoted in the Agentforce for Manufacturing announcement: manual orders took 16 to 24 hours and now take less than one hour with Agentforce, and case resolution became almost 40 percent faster despite 15 percent more workload. That is a customer statement in a Salesforce release.
 
+```kennzahlen
+18,000 | sellers at Siemens who receive inbound leads routed by agents
+< 1 h | per order at JPW Industries, down from 16 to 24 hours by hand
+almost 40 % | faster case resolution at JPW despite 15 percent more workload
+source: Siemens announcement of 15 September 2026; Agentforce for Manufacturing announcement (customer statement)
+```
+
 I found no case study from the German-speaking market with hard figures on service, warranty or field service agents. Market figures need a footnote too: Salesforce reports more than $1.5bn Agentforce ARR for the quarter to July 2026, but [from that quarter on](https://investor.salesforce.com/news/news-details/2026/Salesforce-Delivers-Record-Second-Quarter-Fiscal-2027-Results/default.aspx) counts Slackbot, AI offerings and Headless 360 as well. And Gartner [expects](https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027) more than 40 percent of agentic AI projects to be cancelled by the end of 2027, due to cost, unclear value or weak risk controls.
 
 ## A typical scenario: a roadmap for a machine builder
 
 Assume a machine builder with SAP S/4 and an existing MuleSoft API, Service Cloud, Field Service with 45 technicians and around 200 dealers who order through a portal. Manufacturing Cloud is being introduced. All circumstances and numbers are assumptions meant to show the approach.
 
-**Quarter 1: dealer agent for order status.** The agent reads order and delivery date through the MuleSoft API. `before_reasoning` makes sure a dealer only sees their own orders. Before go-live, 150 test cases from real, anonymised enquiries run, including questions about other dealers' orders and free text with hidden instructions. The decision date after eight weeks is agreed in advance.
-
-**In parallel: data work and inventory.** IT reconciles the installed base with SAP until every machine has a serial number and warranty start, and lists all connected apps with their scopes.
-
-**Quarter 2: maintenance booking.** The agent books maintenance for customers with maintained downtime windows. For everyone else it proposes slots and hands over to dispatch.
-
-**Quarters 3 and 4: warranty pre-check.** Only once the asset data is right does the agent check coverage. The rule stays in the expression set; amounts above the agreed limit and every fraud flag go to a claims handler.
+```schritte
+Dealer agent for order status | Quarter 1
+  The agent reads order and delivery date through the MuleSoft API. `before_reasoning` makes sure a dealer only sees their own orders. Before go-live, 150 test cases from real, anonymised enquiries run, including questions about other dealers' orders and free text with hidden instructions. The decision date after eight weeks is agreed in advance.
+Data work and inventory | in parallel · IT
+  IT reconciles the installed base with SAP until every machine has a serial number and warranty start, and lists all connected apps with their scopes.
+Maintenance booking | Quarter 2
+  The agent books maintenance for customers with maintained downtime windows. For everyone else it proposes slots and hands over to dispatch.
+Warranty pre-check | Quarters 3 and 4
+  Only once the asset data is right does the agent check coverage. The rule stays in the expression set; amounts above the agreed limit and every fraud flag go to a claims handler.
+```
 
 **Deliberately not in the plan:** troubleshooting for special-purpose machines while manuals are not mapped to serial numbers, and agents in SAP processes that the ERP decides itself today.
 
@@ -133,11 +145,17 @@ At year end three agents run, all under the same rules: own user, rules in logic
 
 ## What is coming until 2028?
 
-- **Long-horizon agents** that pursue a goal over days or weeks are in pilot; Salesforce announced GA for November 2026.
+```zeitleiste
+2026-12-02 | EU AI Act: marking obligation for generative systems on the market before 2 August 2026
+2027-12-02 | EU AI Act: high-risk obligations under Annex III
+2028-08-02 | EU AI Act: high-risk obligations under Annex I, AI as a safety component in products
+```
+
+- **Long-horizon agents** that pursue a goal over days or weeks are still in pilot.
 - **Koa**, Salesforce's first CRM reasoning model built on NVIDIA Nemotron, is expected to reach GA in Winter 2026, [in US regions first](https://investor.salesforce.com/news/news-details/2026/Announcing-Koa-Salesforces-First-CRM-Reasoning-Model-Built-on-NVIDIA-Nemotron/default.aspx). For orgs in the EU it is not relevant for now.
 - **Headless Platform Interactions**, the meter for agentic API and MCP access, is still listed as "TBA" on the rate card. When external agents access Salesforce, that becomes a budget line, described in [MCP access as a budget risk](../../../blog/mcp-api-calls-salesforce-budget-risk/).
-- **EU AI Act:** according to [White & Case](https://www.whitecase.com/insight-alert/eu-ai-omnibus-enters-force-amending-ai-act), Regulation (EU) 2026/1744 moves high-risk obligations under Annex III to 2 December 2027 and under Annex I, AI as a safety component in products, to 2 August 2028. Generative systems on the market before 2 August 2026 have until 2 December 2026 to meet the marking obligation. For machine builders, Annex I concerns the machine more than the CRM agent. What this means for Agentforce projects is in [EU AI Act deadlines for Agentforce](../../../blog/eu-ai-act-deadlines-agentforce/) and [chapter 9](../teamwork-and-delivery/).
+- **EU AI Act:** according to [White & Case](https://www.whitecase.com/insight-alert/eu-ai-omnibus-enters-force-amending-ai-act), the deadlines in the timeline follow from Regulation (EU) 2026/1744. For machine builders, Annex I concerns the machine more than the CRM agent. What this means for Agentforce projects is in [EU AI Act deadlines for Agentforce](../../../blog/eu-ai-act-deadlines-agentforce/) and [chapter 9](../teamwork-and-delivery/).
 
 Which rules belong in your agents and which stay in the ERP is something I sort out on the client side as part of [Salesforce architecture](../../../services/salesforce-architecture/), the ERP connection as part of [Salesforce integration](../../../services/salesforce-integration/). All chapters are listed on the [masterclass overview](../).
 
-Start with the agent whose rules and data are already in place, and treat it like code with tests and its own permissions from day one. If you would like a second opinion on your roadmap, [send me a message](#contact).
+Start with the agent whose rules and data are already in place, and treat it like code with tests and its own permissions from day one.

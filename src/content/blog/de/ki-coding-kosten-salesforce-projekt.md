@@ -57,9 +57,15 @@ Angenommen, ein Entwickler lässt den Agenten einen Trigger-Handler für Garanti
 - Cache-Writes: 115.000 Tokens zu 5 $ pro Million = 0,58 $
 - Cache-Reads: 30 Aufrufe mit je rund 68.000 Tokens, 2,04 Mio. zu 0,20 $ pro Million = 0,41 $
 - Output: 60.000 Tokens zu 20 $ pro Million = 1,20 $
-- **Summe mit Opus 5.5: rund 2,20 $.** Mit Sonnet 5.5: rund 1,10 $.
 
-Ohne Caching kosten die 2,16 Mio. Input-Tokens 8,62 $ und die Session rund 9,80 $. Der Output macht unter 3 Prozent der Tokens und mehr als die Hälfte der Kosten aus. Sechs solcher Sessions pro Arbeitstag ergeben rund 13 $, Anthropics Durchschnitt.
+```kennzahlen
+2,20 $ | Session mit Opus 5.5 und Caching
+1,10 $ | dieselbe Session mit Sonnet 5.5
+9,80 $ | dieselbe Session mit Opus 5.5 ohne Caching
+quelle: eigene Rechnung mit den Listenpreisen der Preisseite von Anthropic, Stand 27.10.2026
+```
+
+Ohne Caching kosten allein die 2,16 Mio. Input-Tokens 8,62 $. Der Output macht unter 3 Prozent der Tokens und mehr als die Hälfte der Kosten aus. Sechs solcher Sessions pro Arbeitstag ergeben rund 13 $, Anthropics Durchschnitt.
 
 Zwei Effekte treiben das nach oben: Claude ab 4.7 erzeugt für denselben Text rund 30 Prozent mehr Tokens, und Agent Teams verbrauchen im Plan-Modus etwa siebenmal so viele Tokens wie eine normale Session.
 
@@ -79,7 +85,11 @@ Bei einem in USD angenommenen Mischsatz von 800 $ pro Person und Tag kostet das 
 Agentforce Vibes ist der Coding-Agent von Salesforce. Zwei Punkte sind wichtig:
 
 1. **Vibes im Verbrauchsmodell nutzt die Flex Credits Ihrer Agenten.** Laut [Preisseite von Vibes](https://www.salesforce.com/agentforce/developers/vibe-coding/pricing/) verbraucht es „the same credits used by Agentforce“. Ein Partnerteam auf Verbrauchsbasis zieht also aus dem Pool, den Sie für einen Serviceagenten für Händleranfragen eingeplant haben, siehe [Flex Credits: Agentforce-Kosten pro Aktion](../flex-credits-agentforce-kosten-pro-aktion/).
-2. **Die Einheit sind 2.000 Tokens.** Die [Abrechnungsdokumentation](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-admin-billing.html) zählt Input und Output in Einheiten zu 2.000 Tokens, aufgerundet. Opus-Modelle laufen als Advanced Prompts, laut [Rate Card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) 16 Credits pro Einheit, also 0,08 €. Ob erneut gesendeter Kontext voll zählt, sagt Salesforce nicht. Wenn ja, kostet ein einzelner Opus-Request mit 70.000 Tokens Kontext 560 Credits oder 2,80 €, mehr als die ganze Session oben. Ich würde das eine Woche im Digital Wallet messen, bevor jemand auf Verbrauch arbeitet.
+2. **Die Einheit sind 2.000 Tokens.** Die [Abrechnungsdokumentation](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-admin-billing.html) zählt Input und Output in Einheiten zu 2.000 Tokens, aufgerundet. Opus-Modelle laufen als Advanced Prompts, laut [Rate Card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) 16 Credits pro Einheit, also 0,08 €.
+
+```hinweis offen
+Ob erneut gesendeter Kontext voll zählt, sagt Salesforce nicht. Wenn ja, kostet ein einzelner Opus-Request mit 70.000 Tokens Kontext 560 Credits oder 2,80 €, mehr als die ganze Session oben. Ich würde das eine Woche im Digital Wallet messen, bevor jemand auf Verbrauch arbeitet.
+```
 
 Die Flat Fee begrenzt Premium-Modelle auf 2.500 Requests oder 36 Mio. Tokens pro 30 Tage, und Opus gibt es nur im Verbrauchsmodell. In der EU Operating Zone ist Vibes nicht verfügbar. Dafür spricht: Die Lizenz liegt in der Org des Kunden, und laut [FAQ](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-faqs.html) bleiben die Daten innerhalb der Vertrauensgrenze von Salesforce. Die Werkzeugwahl selbst behandle ich in [Agentforce Vibes, Claude Code oder Copilot](../agentforce-vibes-claude-code-copilot-vergleich/).
 
@@ -102,4 +112,4 @@ Bei Aufwand bevorzuge ich die erste Variante: Für 650 $ bis 1.500 $ im Monat be
 5. **Pilotieren Sie zwei Wochen mit zwei Entwicklern** und lesen Sie die echten Ausgaben ab.
 6. **Budgetieren Sie das Review.** Ein menschlicher Reviewer für generiertes Apex kostet mehr als die Tokens, siehe [KI-generierten Salesforce-Code prüfen](../ki-generierten-salesforce-code-pruefen/).
 
-KI-Coding kostet im Szenario etwa ein Prozent eines Salesforce-Partnerteams, also klären Sie Accounts und Limits, bevor Sie über den Preis verhandeln. Wenn Sie eine zweite Meinung zu Ihrem Setup oder zum Angebot Ihres Partners möchten, [schreiben Sie mir](#contact).
+KI-Coding kostet im Szenario etwa ein Prozent eines Salesforce-Partnerteams, also klären Sie Accounts und Limits, bevor Sie über den Preis verhandeln.

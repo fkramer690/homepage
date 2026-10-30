@@ -40,7 +40,12 @@ Summer '26 reached production orgs between 15 May and 13 June 2026, depending on
 
 The word "versioned" carries the risk. Each class and trigger stores its own API version in its metadata, and the new behaviour applies only to code saved at 67.0 or later. A class at 62.0 keeps running in system mode until somebody raises the version. One side effect is easy to miss: according to the [sharing documentation](https://developer.salesforce.com/docs/atlas.en-us.264.0.apexcode.meta/pages/apex_classes_keywords_sharing.htm), an older class without a declaration runs with sharing as soon as any class in its inheritance chain is saved at 67.0. Bumping a base class can change classes nobody touched.
 
-Triggers are the deliberate exception, described in different words. The [Summer '26 architect highlights](https://www.salesforce.com/blog/summer-26-release-architect-highlights/) say triggers "always run in system mode and always will", while the handler classes they call are affected if they lack a declaration. The current guide says the trigger runs without sharing, but in its 67.0 example a query in the trigger body without an access mode runs in user mode. Both give the same advice, and I follow it: set the access mode explicitly in triggers and handlers, and keep the logic in the handlers.
+```vertiefung For developers
+title: Do triggers run in user mode from API 67.0?
+Triggers are the deliberate exception, described in different words. The [Summer '26 architect highlights](https://www.salesforce.com/blog/summer-26-release-architect-highlights/) say triggers "always run in system mode and always will", while the handler classes they call are affected if they lack a declaration. The current guide says the trigger runs without sharing, but in its 67.0 example a query in the trigger body without an access mode runs in user mode.
+
+Both give the same advice, and I follow it: set the access mode explicitly in triggers and handlers, and keep the logic in the handlers.
+```
 
 ## Why does Apex see fewer records after the bump?
 
@@ -50,7 +55,9 @@ Two mechanisms are at work, and they show up very differently.
 
 **Permissions fail loudly.** In user mode, a query that selects a field the user cannot read fails. The [access mode documentation](https://developer.salesforce.com/docs/atlas.en-us.264.0.apexcode.meta/apexref/apex_classes_enforce_usermode.htm) describes `getInaccessibleFields()` on the `QueryException`, which lists every field concerned, and `getDmlFieldNames()` for DML. That hurts in UAT, but someone notices.
 
-The same page settles a detail that matters for every migration: a database operation in user mode "always respects the user's sharing rules". At 67.0, `without sharing` on the class is therefore not enough for a query without an access mode. Keeping the old behaviour deliberately takes both, the class keyword and `WITH SYSTEM_MODE`.
+```hinweis achtung
+A database operation in user mode "always respects the user's sharing rules", says the same page. At 67.0, `without sharing` on the class is therefore not enough for a query without an access mode. Keeping the old behaviour deliberately takes both, the class keyword and `WITH SYSTEM_MODE`.
+```
 
 For a manufacturer, who runs the code matters more than the code itself:
 
@@ -105,4 +112,4 @@ public without sharing class SapOrderSyncSelector {
 
 Planning such a move across several partners is part of my [DevOps and release management](../../services/devops-release-management/) work.
 
-API 67.0 makes Apex safer by default, and the price is that every version bump becomes a change in data access that deserves its own test. If you want a second opinion on how to plan the move for your org, [send me a message](#contact).
+API 67.0 makes Apex safer by default, and the price is that every version bump becomes a change in data access that deserves its own test.

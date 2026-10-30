@@ -1,5 +1,5 @@
 ---
-title: "Salesforce Manufacturing Cloud: Is It Worth It?"
+title: "Manufacturing Cloud vs Sales Cloud: Is It Worth It?"
 description: "Manufacturing Cloud costs $80 more per user and month than Sales Cloud. How manufacturers tell whether sales agreements, rebates and warranty justify that."
 pubDate: 2026-10-26
 lang: en
@@ -16,6 +16,8 @@ takeaways:
   - "Rebate management, warranty processes and dealer portals can carry the case even when sales agreements play no role."
   - "The decision belongs in a multi-year ROI case that compares licences, implementation and the maintenance of a custom build."
 faq:
+  - q: "What is the difference between Manufacturing Cloud and Sales Cloud?"
+    a: "Manufacturing Cloud is built on Sales Cloud and includes its features. On top it adds sales agreements for framework contracts with planned quantities, rebate management, warranty claims and a data model for manufacturers. At list price, Manufacturing Cloud Sales Core costs $275 per user and month and Sales Cloud Core $195."
   - q: "What is Salesforce Manufacturing Cloud?"
     a: "Manufacturing Cloud is Salesforce's industry product for manufacturers. It sits on top of Sales Cloud and Service Cloud and adds features such as sales agreements, rebate management, warranty claims and a data model for manufacturing companies."
   - q: "How much does Manufacturing Cloud cost?"
@@ -52,7 +54,9 @@ The list prices on the [Manufacturing Cloud pricing page](https://salesforce.com
 | Max | $550 | $650 (Sales Max or Service Max) |
 | Sales and Service Max | | $700 |
 
-One thing is unclear and I will say so: the Manufacturing Cloud pricing page has two footnotes that contradict each other. One says the prices apply to Enterprise Edition and Unlimited Edition costs $425. The other says the prices apply to Unlimited Edition. Which price applies to your edition only shows up in the quote.
+```hinweis offen
+The Manufacturing Cloud pricing page has two footnotes that contradict each other. One says the prices apply to Enterprise Edition and Unlimited Edition costs $425. The other says the prices apply to Unlimited Edition. Which price applies to your edition only shows up in the quote.
+```
 
 Let's use the Core prices. The premium is $80 per user and month, or $960 per user and year. For 200 sales users that is $192,000 per year at list price, close to one million over five years. List prices are rarely where negotiations end, but the order of magnitude shows why this deserves its own decision.
 
@@ -66,7 +70,9 @@ The feature is built for run-rate business. A customer buys the same products re
 
 ## When is Manufacturing Cloud the wrong choice?
 
+```praxis
 In one manufacturing project I evaluated Manufacturing Cloud and decided against it. Sales agreements, the central sales feature, were not relevant to the business. The company did not sell through long-term volume agreements, so the main reason for the licence was gone. A custom solution on the core platform was cheaper and easier to maintain.
+```
 
 I took one rule from that: an industry cloud is bought for its features, not for the industry name. "We are a manufacturer, so Manufacturing Cloud" is not a business case. If the core feature does not fit, the company pays for features it does not use and still builds around the ones that do not fit.
 
@@ -74,7 +80,7 @@ There is a second situation where I am careful. If framework contracts and call-
 
 ## When does it pay off?
 
-I have also seen the other side: a global Manufacturing Cloud rollout at a global manufacturer, together with CPQ, a product configurator and a customer portal. The main reason for Manufacturing Cloud there was sales agreements. Sales needed to see which customers had not yet taken the agreed quantities, and to plan how the open volumes could still be realised, taking current warehouse capacity into account. That is exactly the question the plan versus actuals view in a sales agreement is built for, and according to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/manufacturing-cloud-admin-essentials/configure-sales-agreements-to-negotiate-better) a figure like inventory level can be carried along as its own metric per period.
+I have also seen the other side: a global Manufacturing Cloud rollout at a global manufacturer, together with CPQ, a product configurator and a customer portal. The main reason for Manufacturing Cloud there was sales agreements. Sales needed to see which customers had not yet taken the agreed quantities, and to plan how the open volumes could still be realised, taking current warehouse capacity into account. That is exactly the question the plan versus actuals view in a sales agreement is built for, and according to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/manufacturing-cloud-admin-essentials/configure-sales-agreements-to-negotiate-better) a figure like inventory level can be carried along as its own metric per period. What became of CPQ and how Revenue Cloud fits next to Manufacturing Cloud is covered in [chapter 1 of the Revenue Cloud masterclass](../../masterclass/revenue-cloud/revenue-cloud-overview/).
 
 In my experience Manufacturing Cloud pays off when at least one of these points clearly applies:
 
@@ -102,6 +108,6 @@ One more point: anyone buying Manufacturing Cloud for the agents should check th
 
 Before a quote is on the table, three questions to your own sales and service teams help: what share of revenue runs through volume agreements? How are dealer bonuses calculated today? Who checks warranty claims, and how long does it take? The answers show faster than any demo whether Manufacturing Cloud fits your business.
 
-After that, the question belongs in your [Salesforce architecture](../../services/salesforce-architecture/), with an entry in the decision log so the reasons stay traceable after a partner change.
+After that, the question belongs in your [Salesforce architecture](../../services/salesforce-architecture/), with an entry in the decision log so the reasons stay traceable after a partner change. The full picture of features, add-ons and licences is in [chapter 1 of the Manufacturing Cloud masterclass](../../masterclass/manufacturing-cloud/scope-and-business-case/).
 
-Manufacturing Cloud is worth it when its core features match your business, not because you are a manufacturer. If you have a Manufacturing Cloud quote on the table and want an independent second opinion, [send me a message](#contact).
+Manufacturing Cloud is worth it when its core features match your business, not because you are a manufacturer.

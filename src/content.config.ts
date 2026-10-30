@@ -5,6 +5,8 @@ import { topicIds } from './lib/topics';
 import { seriesIds } from './lib/series';
 import { categoryIds } from './lib/categories';
 import { contactBriefIds } from './lib/contact-briefs';
+import { courseIds } from './lib/courses';
+import { authorIds } from './lib/authors';
 
 // Blog articles live as Markdown in src/content/blog/<lang>/<slug>.md.
 // The EN and DE version of an article share the same translationKey.
@@ -39,6 +41,12 @@ const blog = defineCollection({
     takeaways: z.array(z.string().max(220)).min(3).max(5),
     // Questions a reader would type into Google or an AI assistant.
     faq: z.array(z.object({ q: z.string().max(120), a: z.string().max(600) })).min(2).max(6),
+    // Who wrote the article (src/lib/authors.ts). Juliane Winterscheid writes about change
+    // management in general; everything else is Fabian's (rules: docs/blog-guidelines.md).
+    author: z.enum(authorIds).default('fabian'),
+    // Optional second author who wrote or reviewed the article with the first one. Fabian's
+    // articles on change management in Salesforce programmes name Juliane (reviewed by her).
+    coAuthor: z.enum(authorIds).optional(),
     draft: z.boolean().default(false),
   }),
 });
@@ -51,6 +59,8 @@ const services = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/services' }),
   schema: z.object({
     title: z.string().min(20).max(60),
+    // Optional H1 written for the reader's problem; title stays the SEO title.
+    headline: z.string().min(20).max(60).optional(),
     description: z.string().min(120).max(160),
     lang: z.enum(['en', 'de']),
     slug: z.string().regex(/^[a-z0-9]+(-[a-z0-9]+)*$/),
@@ -65,12 +75,16 @@ const services = defineCollection({
     situations: z.array(z.string().max(220)).min(3).max(5),
     deliverables: z.array(z.string().max(220)).min(3).max(8),
     results: z.array(z.string().max(220)).min(3).max(6),
-    phases: z.array(z.object({ title: z.string().max(40), text: z.string().max(260) })).min(3).max(4),
+    // icon: file name in src/icons/ shown in the ring of the phase timeline.
+    phases: z.array(z.object({ title: z.string().max(40), icon: z.string(), text: z.string().max(260) })).min(3).max(4),
     faq: z.array(z.object({ q: z.string().max(120), a: z.string().max(600) })).min(2).max(6),
     // Blog tags whose articles are listed as further reading on this page.
     blogTags: z.array(z.string()).min(1).max(8),
     // Closing call to action: what to bring to the first call (src/lib/contact-briefs.ts).
     contactBrief: z.enum(contactBriefIds),
+    // Optional extra block: change-management adds the team (Fabian and Juliane Winterscheid)
+    // and the change management articles (src/data/change-management.ts).
+    section: z.enum(['change-management']).optional(),
   }),
 });
 
@@ -84,7 +98,9 @@ const masterclass = defineCollection({
     description: z.string().min(120).max(160),
     lang: z.enum(['en', 'de']),
     slug: z.string().regex(/^[a-z0-9]+(-[a-z0-9]+)*$/),
-    // masterclass-01 … masterclass-10, the same for EN and DE.
+    // Which masterclass the chapter belongs to (src/lib/courses.ts); AI if not set.
+    course: z.enum(courseIds).default('ai'),
+    // masterclass-01 … masterclass-10 (AI) or devops-01 … devops-10, the same for EN and DE.
     translationKey: z.string(),
     chapter: z.number().int().min(1).max(10),
     // Short title on the chapter card of the hub page.
@@ -95,6 +111,8 @@ const masterclass = defineCollection({
     // Blog translationKeys covered by this chapter; unpublished ones are skipped.
     articles: z.array(z.string()).min(1).max(8),
     faq: z.array(z.object({ q: z.string().max(120), a: z.string().max(600) })).max(6).default([]),
+    // First publication; used for datePublished and the sitemap's lastmod.
+    pubDate: z.coerce.date().optional(),
     updatedDate: z.coerce.date().optional(),
     draft: z.boolean().default(false),
   }),

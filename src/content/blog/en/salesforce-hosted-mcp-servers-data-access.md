@@ -41,7 +41,12 @@ The access model is set out in the [security best practices](https://developer.s
 - **OAuth with PKCE.** Login runs through the authorisation code flow in the browser. PKCE (Proof Key for Code Exchange) is mandatory and stops an intercepted authorisation code from being redeemed by someone else.
 - **No self-registration.** An admin creates an External Client App for each AI client and can restrict it to profiles and permission sets.
 
-Two details belong in your review. The [official Claude setup](https://developer.salesforce.com/blogs/2026/05/connect-claude-with-salesforce-hosted-mcp-servers) requests the scopes `refresh_token, offline_access`, labelled "Perform requests at any time". After one login the client keeps working until the token is revoked or expires, so the refresh token policy matters. On the positive side, the `mcp_api` scope gives access to MCP "but not our existing REST APIs", according to the GA post. A token stolen from an MCP client opens less than a classic API token.
+```vertiefung For admins
+title: Which scopes does the AI client request?
+The [official Claude setup](https://developer.salesforce.com/blogs/2026/05/connect-claude-with-salesforce-hosted-mcp-servers) requests the scopes `refresh_token, offline_access`, labelled "Perform requests at any time". After one login the client keeps working until the token is revoked or expires, so the refresh token policy matters.
+
+On the positive side, the `mcp_api` scope gives access to MCP "but not our existing REST APIs", according to the GA post. A token stolen from an MCP client opens less than a classic API token.
+```
 
 ## Why do permissions per person not protect per channel?
 
@@ -73,7 +78,20 @@ The [Trust Layer documentation](https://developer.salesforce.com/docs/ai/agentfo
 
 Hosted MCP reverses the direction. Claude, ChatGPT or Cursor is the client and brings its own model. Salesforce checks token and permissions, runs the query and returns records, which the client then puts into a prompt for its model. Salesforce makes no LLM call on this path, so no gateway step exists where masking could act, and its zero data retention agreements bind Salesforce's LLM partners for Salesforce's calls, not a model you license yourself. The documents fit this reading: the hosted MCP overview, the security guide, the GA post and the Claude setup post cover authentication, permissions and logging, and none mentions the Trust Layer.
 
-Two statements need care. The [Claudeforce release](https://www.salesforce.com/ap/news/press-releases/2026/08/27/sg-salesforce-and-anthropic-announce-claudeforce-the-1-ai-meets-the-1-ai-crm/) says that through Amazon Bedrock, Claude is available within the Salesforce Trust Boundary. That is Claude as a model inside Salesforce, not the Claude app on a sales rep's laptop. The [AIforce announcement](https://www.salesforce.com/news/stories/aiforce-announcement/) says business data "is not retained by the model provider", while Anthropic's setup guide says nothing about retention. I would ask both vendors in writing which contract backs that sentence for your org.
+```ablauf
+ext: AI client, External model
+sf: Token and permissions, sObject query
+AI client --Tool call--> Token and permissions
+Token and permissions --> sObject query
+sObject query ..Records..> AI client
+AI client --Prompt--> External model
+```
+
+Two statements need care. The [Claudeforce release](https://www.salesforce.com/ap/news/press-releases/2026/08/27/sg-salesforce-and-anthropic-announce-claudeforce-the-1-ai-meets-the-1-ai-crm/) says that through Amazon Bedrock, Claude is available within the Salesforce Trust Boundary. That is Claude as a model inside Salesforce, not the Claude app on a sales rep's laptop. The [AIforce announcement](https://www.salesforce.com/news/stories/aiforce-announcement/) says business data "is not retained by the model provider", while Anthropic's setup guide says nothing about retention.
+
+```hinweis offen
+Ask Salesforce and Anthropic which contract backs the sentence "not retained by the model provider" from the AIforce announcement for your org.
+```
 
 Until then your AI contract governs the data. For Claude Code, Anthropic's [data usage page](https://code.claude.com/docs/en/data-usage) says commercial prompts are not used for training, standard retention is 30 days, and zero data retention is enabled per organisation for eligible Enterprise accounts. These terms go to your data protection officer, and to the works council where employee data is involved, see [AI coding tools, works council and GDPR](../ai-coding-tools-works-council-gdpr/).
 
@@ -101,4 +119,4 @@ Two of three go ahead, both narrower than asked. In my judgement that is the nor
 
 This is part of my work on [Salesforce integration](../../services/salesforce-integration/): an MCP server is an interface and needs an owner.
 
-Hosted MCP enforces Salesforce permissions reliably, so the real decision is which people, which fields and which AI contract you trust with your data. If you want a second opinion before the first department connects, [send me a message](#contact).
+Hosted MCP enforces Salesforce permissions reliably, so the real decision is which people, which fields and which AI contract you trust with your data.

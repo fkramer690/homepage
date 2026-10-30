@@ -32,7 +32,13 @@ The Warranty Claims Adjudication Agent in Manufacturing Cloud, part of Winter '2
 
 Salesforce lists it on the [Manufacturing Cloud product page](https://www.salesforce.com/manufacturing/cloud/) under Winter '27 with one sentence: it should "speed up claim decisions" by validating coverage and flagging potential fraud. The same release adds guided warranty parts returns for dealers. Summer '26 had already brought the AI Warranty Concierge, which guides customers through a claim. Winter '27 became [generally available on 12 October 2026](https://www.salesforce.com/news/stories/winter-2027-product-release-announcement/).
 
-For a purchasing decision that is thin. In the sources I could open, Salesforce has not published which fraud signals the agent uses, which licence it needs or a setup guide like the ones for its other manufacturing agents. What is documented are the [Agentforce for Manufacturing warranty actions](https://help.salesforce.com/s/articleView?id=ai.agent_ref_mfg_get_wrnty_claims_for_acct.htm&language=en_US&type=5): Check Asset For Warranty, Check Coverage for Parts, Get Asset Warranties and Get Warranty Claims for Account, which finds claims by asset ID, serial number or claim number. They require the Agentforce for Manufacturing add-on for each user, or Agentforce 1 Manufacturing Edition. I expect the adjudication agent to build on these actions, but that is my assumption, so ask your account team before you put a number in the budget.
+For a purchasing decision that is thin.
+
+```hinweis offen
+In the sources I could open, Salesforce has not published which fraud signals the agent uses, which licence it needs or a setup guide like the ones for its other manufacturing agents. Ask your account team before you put a number in the budget.
+```
+
+What is documented are the [Agentforce for Manufacturing warranty actions](https://help.salesforce.com/s/articleView?id=ai.agent_ref_mfg_get_wrnty_claims_for_acct.htm&language=en_US&type=5): Check Asset For Warranty, Check Coverage for Parts, Get Asset Warranties and Get Warranty Claims for Account, which finds claims by asset ID, serial number or claim number. They require the Agentforce for Manufacturing add-on for each user, or Agentforce 1 Manufacturing Edition. I expect the adjudication agent to build on these actions, but that is my assumption.
 
 The data model underneath, from warranty terms to supplier recovery, is described in [warranty claims from dealers in Salesforce](../warranty-claims-dealers-salesforce/). Here I look only at the agent and what it needs.
 
@@ -48,7 +54,7 @@ So the question "is this covered?" already has a deterministic answer. An agent 
 
 ### Asset data with serial numbers and start dates
 
-Every coverage check is a question about one machine. If the asset is missing in Salesforce or has no warranty start date, the agent has nothing to check against and will judge on gaps. For manufacturers selling through dealers, the gap usually sits in registration: the dealer knows when the machine was handed over, the manufacturer does not. Take the claims of the last twelve months and count how many serial numbers exist as assets with a start date. Below about 95 percent I would fix registration first.
+Every coverage check is a question about one machine. If the asset is missing in Salesforce or has no warranty start date, the agent has nothing to check against and will judge on gaps. For manufacturers selling through dealers, the gap usually sits in registration: the dealer knows when the machine was handed over, the manufacturer does not. Take the claims of the last twelve months and count how many serial numbers exist as assets with a start date. Below about 95 percent I would fix registration first. How to build that asset data is covered in [installed base in Manufacturing Cloud](../installed-base-asset-milestones/).
 
 ### Warranty terms as rules, not as PDFs
 
@@ -64,7 +70,16 @@ The agent reads text that dealers write. In 2025 the ForcedLeak vulnerability (r
 
 ### Licence and test budget
 
-According to the [Flex Credits rate card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf), a standard or custom action costs 20 credits in production and 16 in a sandbox. Flex Credits cost [$500 per 100,000](https://www.salesforce.com/news/press-releases/2025/05/15/agentforce-flexible-pricing-news/), so one action costs $0.10. Plan two separate lines: consumption, which you can estimate, and the licence, which only Salesforce can answer for now.
+Consumption has published prices:
+
+```kennzahlen
+20 credits | per standard or custom action in production
+16 credits | per action in a sandbox
+$0.10 | per action in production, at $500 per 100,000 Flex Credits
+source: [Flex Credits rate card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) and [Salesforce press release on flexible pricing](https://www.salesforce.com/news/press-releases/2025/05/15/agentforce-flexible-pricing-news/)
+```
+
+Plan two separate lines: consumption, which you can estimate, and the licence, which only Salesforce can answer for now.
 
 ## A typical scenario: agricultural machinery sold through 90 dealers
 
@@ -104,4 +119,4 @@ The agent goes to production like any other change: with a test set of real clai
 5. **Ask Salesforce three questions**: which licence, which fraud signals, which setup documentation.
 6. **Build a test set** from real claims, including rejected ones and known fraud cases.
 
-The Warranty Claims Adjudication Agent can speed up decisions, but only on top of clean asset data, rules that already work and a clear approval line. If you want a second opinion on whether your warranty process is ready for it, [send me a message](#contact).
+The Warranty Claims Adjudication Agent can speed up decisions, but only on top of clean asset data, rules that already work and a clear approval line.

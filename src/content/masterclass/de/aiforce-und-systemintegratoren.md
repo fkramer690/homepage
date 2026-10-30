@@ -64,6 +64,14 @@ Belegt ist nur ein Post. Am 9. Oktober 2026 schrieb Marc Benioff auf X: „The e
 
 Der Anlass ist dagegen als Primärquelle nachlesbar. Die [Executive Order 14434](https://www.whitehouse.gov/presidential-actions/2026/09/inaugurating-the-era-of-super-intelligence/) vom 29. September 2026 weist die Ministerien und Behörden der US-Exekutive an, in eigenen Dokumenten „Super Intelligence“ statt „Artificial Intelligence“ zu schreiben. Bestehende Verordnungen bleiben unverändert, einklagbare Rechte entstehen nicht, private Unternehmen kommen nicht vor. Salesforce musste also nichts umbenennen, die Entscheidung war freiwillig. Dass US-Bundesbehörden Salesforce-Kunden sind und künftig „SI“ schreiben müssen, ist ein naheliegendes Motiv, aber meine Vermutung.
 
+```zeitleiste
+2026-04 | Headless 360 zur TDX, laut Salesforce Ben
+2026-09-15 | Salesforce stellt AIforce zur Dreamforce vor
+2026-09-29 | Executive Order 14434 für Behörden der US-Exekutive
+2026-10-09 | Marc Benioff auf X: „AIForce is officially SIForce“
+2026-10-12 | Salesforce Ben findet keine offizielle Ankündigung
+```
+
 Für Ihre Unterlagen empfehle ich „AIforce (vom CEO als SIForce angekündigt)“, bis Salesforce den Namen schriftlich bestätigt. Drei Namen in rund sechs Monaten sind auch ein Grund, Architekturdokumente nach Funktionen zu gliedern statt nach Produktnamen.
 
 ## SI als Systemintegrator: was sich im Partnermodell ändert
@@ -80,7 +88,17 @@ Ein Startdatum für die neuen Stufen nennt die Meldung nicht. Am 15. April 2026 
 
 ### Was die neuen Anreize für Sie als Kunde bedeuten
 
-Die Logik hat sich verschoben: früher „Lizenz verkauft, Projekt nach Stunden“, jetzt „Agent in Produktion, Verbrauch läuft“. Das ist in Teilen gut für Sie. Ein Partner, der erst am Go-live verdient, hat weniger Interesse an Piloten, die nie produktiv werden. Es gibt aber einen Konflikt. Jede Agentenaktion kostet Flex Credits, und an diesem Verbrauch hängt jetzt die Vergütung Ihres Partners durch Salesforce. Ein Agent, der drei Aktionen statt einer ausführt, ist für Sie teurer und für den Partner kein Nachteil.
+Die Logik hat sich verschoben: früher „Lizenz verkauft, Projekt nach Stunden“, jetzt „Agent in Produktion, Verbrauch läuft“. Das ist in Teilen gut für Sie, es gibt aber einen Konflikt.
+
+```pro-contra
+pro: Was für Sie spricht
+- Ein Partner, der erst am Go-live verdient, will produktive Agenten
+- Weniger Interesse an Piloten, die nie produktiv werden
+contra: Wo der Konflikt liegt
+- Jede Agentenaktion kostet Sie Flex Credits
+- An diesem Verbrauch hängt die Vergütung Ihres Partners durch Salesforce
+- Drei Aktionen statt einer sind für Sie teurer, für den Partner kein Nachteil
+```
 
 Dazu kommt, dass Partner selbst mit Coding-Agenten bauen. Das verkürzt Arbeit, die bisher nach Stunden abgerechnet wurde. Ob deshalb Festpreis oder ergebnisbasierte Verträge besser passen, untersuche ich in [Festpreis statt Aufwand](../../../blog/festpreis-statt-aufwand-ki-salesforce/). Was im Vertrag stehen muss, wenn ein Partner mit KI programmiert, also Offenlegung, Datenumgang, Rechte am Code, kein Zugriff auf Produktion und Review, steht in [Partner mit KI-Coding: Regeln für den Vertrag](../../../blog/partner-ki-coding-regeln-vertrag/).
 
@@ -88,17 +106,27 @@ Dazu kommt, dass Partner selbst mit Coding-Agenten bauen. Das verkürzt Arbeit, 
 
 Nehmen wir einen Maschinenbauer mit Service Cloud, SAP und einem Händlerportal. Er möchte einen Agenten, der Händleranfragen zu Auftragsstatus und Lieferterminen beantwortet, und holt zwei Angebote ein. Alle Zahlen und Umstände sind Annahmen.
 
-**Angebot A** kommt von einem langjährigen Partner: nach Aufwand, geschätzt 60 Personentage. Zum Einsatz von KI-Werkzeugen sagt das Angebot nichts.
-
-**Angebot B** kommt von einem Partner, der Agentforce-Projekte in Produktion vorweisen kann: Festpreis für dieselbe Lieferung plus Bonus, wenn nach drei Monaten 30 Prozent der Händleranfragen ohne Sachbearbeitung beantwortet werden. Das Team arbeitet mit Claude Code und dem Salesforce-Plugin und möchte für Tests einen Hosted-MCP-Zugang zur Produktivorg.
+| | Angebot A | Angebot B |
+|---|---|---|
+| Partner | langjähriger Partner | kann Agentforce-Projekte in Produktion vorweisen |
+| Abrechnung | nach Aufwand, geschätzt 60 Personentage | Festpreis für dieselbe Lieferung plus Bonus, wenn nach drei Monaten 30 Prozent der Händleranfragen ohne Sachbearbeitung beantwortet werden |
+| KI-Werkzeuge | Das Angebot sagt dazu nichts. | Das Team arbeitet mit Claude Code und dem Salesforce-Plugin. |
+| Zugang | keine Angabe | Hosted-MCP-Zugang zur Produktivorg für Tests |
 
 Aus Architektensicht würde ich so vorgehen:
 
-1. **Partner A fragen**, ob und welche Coding-Agenten das Team nutzt. Dass ein Partner 2026 gar keine KI einsetzt, halte ich für unwahrscheinlich; dann gehört es offen in den Vertrag.
-2. **Den Festpreis von B annehmen, den Produktivzugang ablehnen.** Agenten arbeiten in Sandboxes und Scratch-Orgs, Releases laufen über die Pipeline.
-3. **Die Erfolgsmessung von B schärfen.** Die Quote zählt nur, wenn falsche Auskünfte stichprobenartig geprüft werden und die Kosten pro beantworteter Anfrage unter einer vereinbarten Grenze bleiben.
-4. **Festlegen, wer Flex Credits bezahlt**, in Sandbox und Produktion, und eine monatliche Obergrenze mit Warnung vereinbaren.
-5. **Die Ownership klären**: Wer betreibt den Agenten nach dem Go-live, wer pflegt Prompts, Tests und die SAP-Schnittstelle? Bei mehreren Partnern hilft eine [Object Ownership Matrix](../../../blog/object-ownership-matrix-salesforce/).
+```schritte
+Partner A fragen
+  Ob und welche Coding-Agenten das Team nutzt. Dass ein Partner 2026 gar keine KI einsetzt, halte ich für unwahrscheinlich; dann gehört es offen in den Vertrag.
+Festpreis ja, Produktivzugang nein
+  Den Festpreis von B annehmen, den Produktivzugang ablehnen. Agenten arbeiten in Sandboxes und Scratch-Orgs, Releases laufen über die Pipeline.
+Erfolgsmessung schärfen
+  Die Quote von B zählt nur, wenn falsche Auskünfte stichprobenartig geprüft werden und die Kosten pro beantworteter Anfrage unter einer vereinbarten Grenze bleiben.
+Flex Credits regeln
+  Festlegen, wer Flex Credits bezahlt, in Sandbox und Produktion, und eine monatliche Obergrenze mit Warnung vereinbaren.
+Ownership klären
+  Wer betreibt den Agenten nach dem Go-live, wer pflegt Prompts, Tests und die SAP-Schnittstelle? Bei mehreren Partnern hilft eine [Object Ownership Matrix](../../../blog/object-ownership-matrix-salesforce/).
+```
 
 Danach lassen sich beide Angebote vergleichen, weil KI-Einsatz, Zugriffe und Verbrauch offen auf dem Tisch liegen. Welcher Partner besser passt, entscheiden dann Preis, Referenzen und Team.
 
@@ -112,4 +140,4 @@ Danach lassen sich beide Angebote vergleichen, weil KI-Einsatz, Zugriffe und Ver
 
 Diese Punkte gehören zu meiner Arbeit in der [Partnersteuerung](../../../leistungen/partnersteuerung/). Welches Werkzeug für welchen Zweck passt, zeigt das nächste Kapitel, die [Entscheidungsmatrix](../entscheidungsmatrix-ki-werkzeuge/); wie sich Teams mit KI organisieren, behandelt [Kapitel 9](../teamarbeit-und-delivery/). Alle Kapitel finden Sie in der [Übersicht der Masterclass](../).
 
-AIforce ändert, wo Ihre Leute mit Salesforce arbeiten, das neue Partnermodell ändert, woran Ihr Partner verdient, und beides sollten Sie im Vertrag sichtbar machen. Wenn Sie ein Partnerangebot mit KI-Anteil einordnen möchten, [schreiben Sie mir](#contact).
+AIforce ändert, wo Ihre Leute mit Salesforce arbeiten, das neue Partnermodell ändert, woran Ihr Partner verdient, und beides sollten Sie im Vertrag sichtbar machen.

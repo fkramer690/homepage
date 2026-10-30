@@ -61,6 +61,18 @@ The row I would check first is the third. The as-built list shows the machine on
 
 **My recommendation: split by use.** Salesforce holds the machine and its service-relevant main assemblies as an asset hierarchy, which warranty, service contracts and the dealer portal need anyway. The full parts list stays in PLM and comes live. For the factory basement without network, the agent runs before the visit and writes its proposal to the work order as products required. The technician then has the list offline.
 
+```ablauf
+sf: Asset, Agent, Work order
+erp: Availability
+ext: As-built list
+Asset --Serial number--> Agent
+Agent --Serial number--> As-built list
+As-built list ..Part numbers..> Agent
+Agent --Part numbers--> Availability
+Availability ..Price..> Agent
+Agent --Proposal--> Work order
+```
+
 If your PLM has no API or no as-built data per serial number, the agent has nothing to call; for older systems see [legacy ERP without an API](../legacy-erp-without-api-ai-agents/).
 
 ## What should the agent decide, and what not?
@@ -77,7 +89,7 @@ What stays rule-based: the parts list itself, successor materials (resolved in E
 
 The technician is the easier start: internal user, known machine, work order as context. A dealer in the portal needs stricter rules:
 
-- **Serial numbers from the dealer's own assets.** The agent takes the serial number from asset records shared with the dealer's account, never from free text. Otherwise one dealer reads the configuration of a machine sold by another.
+- **Serial numbers from the dealer's own assets.** The agent takes the serial number from asset records shared with the dealer's account, never from free text. Otherwise one dealer reads the configuration of a machine sold by another. A spare parts store can use the same rule, see [show only parts for each machine](../spare-parts-shop-parts-per-machine/).
 - **Dealer prices and availability from the ERP.** Show whether and when a part is available, as in the SAP article, and keep stock levels internal.
 - **Only spare-relevant positions.** The full as-built structure is design knowledge and has no place in a dealer chat.
 - **Free text is untrusted.** Portal fields are entry points for manipulated instructions, see [prompt injection through dealer portals](../prompt-injection-dealer-portals-agentforce/).
@@ -96,11 +108,17 @@ In the scenario, a pilot with ten technicians brings two findings. For machines 
 
 ## Where should you start?
 
-1. **Test by hand first.** Take 20 recent spare part orders from the service desk and check whether serial number, asset and as-built list lead to the part that was actually ordered.
-2. **Agree on the serial number as the key.** Same format on the nameplate, in ERP, PLM and Salesforce, including leading zeros and plant prefixes.
-3. **Build the API before the agent.** Give the parts desk a screen on it first. If it does not help people, an agent will not help either.
-4. **Start with technicians,** then open it to dealers with the portal rules above.
+```schritte
+Test by hand first
+  Take 20 recent spare part orders from the service desk and check whether serial number, asset and as-built list lead to the part that was actually ordered.
+Agree on the serial number as the key
+  Same format on the nameplate, in ERP, PLM and Salesforce, including leading zeros and plant prefixes.
+Build the API before the agent
+  Give the parts desk a screen on it first. If it does not help people, an agent will not help either.
+Start with technicians
+  Then open it to dealers with the portal rules above.
+```
 
 Which system leads for which data is the subject of [Salesforce integration](../../services/salesforce-integration/); the wider agent picture is in the masterclass chapter [AI agents in manufacturing](../../masterclass/ai-salesforce/ai-agents-in-manufacturing/).
 
-An agent finds the right spare part only as reliably as your serial numbers lead to an as-built list, so if you want to check that before anyone builds an agent, [send me a message](#contact).
+An agent finds the right spare part only as reliably as your serial numbers lead to an as-built list.

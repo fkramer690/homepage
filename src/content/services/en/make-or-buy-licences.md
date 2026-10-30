@@ -1,5 +1,6 @@
 ---
 title: "Salesforce make-or-buy and licence forecasts"
+headline: "Check your Salesforce licences before you sign"
 description: "Industry cloud, custom build or another tool? Make-or-buy decisions and Salesforce licence forecasts, calculated on long-term ROI including maintenance."
 lang: en
 slug: make-or-buy-licences
@@ -25,12 +26,16 @@ results:
   - "Fewer tools and products that were bought and never used"
 phases:
   - title: "Requirements and options"
+    icon: "analyse"
     text: "I write down what the business needs and which options exist: standard product, industry cloud, custom build on the platform or a separate tool."
   - title: "ROI case"
+    icon: "budget"
     text: "For each option I calculate costs and benefits over several years, including licences, implementation, maintenance, upgrades and the effort to change course later."
   - title: "Licence forecast"
+    icon: "license"
     text: "I group users by what they do in the system and map them to licence types. The result is a forecast that can be compared with the vendor's offer."
   - title: "Decision and negotiation"
+    icon: "contract"
     text: "The recommendation goes to the decision makers with the reasons behind it. If it leads to a Salesforce offer, I help prepare the negotiation."
 faq:
   - q: "When is a custom solution better than a Salesforce industry cloud?"
@@ -48,25 +53,38 @@ Make-or-buy on Salesforce means deciding, for each requirement, whether it is co
 
 ## When does an industry cloud pay off?
 
-Industry clouds bring data models and processes for a specific sector. They pay off when those processes match how the company works. If they do not, the company pays for features it does not use and builds around the ones that do not fit. In one manufacturing project, sales agreements, a core feature of Manufacturing Cloud, were not relevant for the business. A custom solution on the core platform was cheaper and simpler to maintain.
+Industry clouds bring data models and processes for a specific sector. Whether that pays off depends on how well those processes match the way the company works:
+
+```pro-contra
+pro: Pays off when
+- The industry cloud's processes match how the company works.
+- The company uses the data models and processes that come with it.
+contra: Gets expensive when
+- The company pays for features it does not use.
+- The team builds around the features that do not fit.
+```
+
+```praxis
+In one manufacturing project, sales agreements, a core feature of Manufacturing Cloud, were not relevant for the business. A custom solution on the core platform was cheaper and simpler to maintain.
+```
 
 The same logic applies beyond Salesforce products. Document generation, e-signatures, telephony and AI use cases all raise the question whether to buy, build or leave it in another system. For AI the most important input is the state of the data, as I explain in [Agentforce: business value and data quality first](../../blog/agentforce-business-value-data-quality-first/). Open-source tools can change the math too, for example in DevOps, as described in [why clients should own their DevOps tools](../../blog/why-clients-should-own-their-devops-tools/).
 
 ## How do I calculate the ROI case?
 
-The first-year price is the least interesting number. I look at several years and include:
-
-- **Licences** for every user group, with the expected growth.
-- **Implementation** by internal teams and partners.
-- **Maintenance and upgrades**, including the effort that custom code causes with every Salesforce release.
-- **Follow-up costs**, such as add-ons that become necessary later or the effort to switch to another option.
+The first-year price is the least interesting number. I look at several years and include licences, implementation, maintenance and upgrades, and follow-up costs:
 
 ![Make-or-buy with four options per requirement: standard product, industry cloud, custom build on the core platform or separate tool. The ROI case looks at several years, not the first-year price, and includes licences for every user group with the expected growth, implementation by internal teams and partners, maintenance and upgrades including the effort custom code causes with every release, and follow-up costs such as add-ons needed later or the effort to switch to another option. The second lever is the licence type, because full licences are often offered by default, even for users who only read or approve.](../../../assets/blog/make-or-buy-roi-en.png)
 
+Make-or-buy decisions shape the architecture, so this service often goes together with [Salesforce architecture and solution design](../salesforce-architecture/).
+
 ## What should you know about Salesforce licences?
 
-The list price is rarely the final offer. Timing matters: at the end of the vendor's fiscal year or during promotions, there is often room to include products the company will need in the next two to three years for little extra cost. That requires a roadmap that is clear enough to know what to ask for.
+The list price is rarely the final offer. Two levers make the difference:
 
-The second lever is the licence type. Full licences are often offered by default, even for users who only read data or approve records. Across a large user base, the difference between the right and the default licence mix can easily reach six figures per year.
-
-Make-or-buy decisions shape the architecture, so this service often goes together with [Salesforce architecture and solution design](../salesforce-architecture/). If you have an offer or a tool decision on the table, [send me a message](#contact).
+```hebel
+The licence type | Easily six figures per year across a large user base
+  Full licences are often offered by default, even for users who only read data or approve records. I map every user group to the licence type it needs for its work.
+The timing | Products for two to three years at little extra cost
+  At the end of the vendor's fiscal year or during promotions there is often room. That requires a roadmap that is clear enough to know what to ask for.
+```

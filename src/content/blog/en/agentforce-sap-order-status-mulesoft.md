@@ -32,7 +32,7 @@ An Agentforce agent answers order status and availability from SAP S/4HANA by ca
 
 ## How does an Agentforce agent get the order status from SAP?
 
-Through a chain of five links, and each link needs an owner. The [Salesforce Developers blog](https://developer.salesforce.com/blogs/2025/06/explore-mulesoft-for-agentforce-with-topic-center-and-api-catalog) describes the order: define topics, actions and instructions in Topic Center while you design the API, build it, publish it to Anypoint Exchange and sync it with API Catalog. Named Credentials and External Services are then created automatically, and the agent calls the API as an action. Flow and Apex can call the same API.
+Through a chain of five links, and each link needs an owner. The [Salesforce Developers blog](https://developer.salesforce.com/blogs/2025/06/explore-mulesoft-for-agentforce-with-topic-center-and-api-catalog) describes the order: define topics, actions and instructions in Topic Center while you design the API, build it, publish it to Anypoint Exchange and sync it with API Catalog. Named Credentials and External Services are then created automatically, and the agent calls the API as an action. Flow and Apex can call the same API. The opposite direction, an order from Revenue Cloud handed to SAP, is covered in [handing orders to SAP](../revenue-cloud-order-orchestration-sap/).
 
 For a machine builder the chain looks like this:
 
@@ -42,7 +42,9 @@ For a machine builder the chain looks like this:
 4. **API Catalog** in Salesforce can sync only APIs from Exchange that have managed instances, according to [MuleSoft](https://docs.mulesoft.com/access-management/enabling-api-catalog). In Salesforce's [Agentforce workshop](https://developer.salesforce.com/workshops/agentforce-workshop/mulesoft/3-explore-api-catalog) you then activate the actions and grant them to users through a permission set.
 5. **The agent** gets the topic and its actions in Agent Builder.
 
+```hinweis achtung
 Two prerequisites are easy to miss: a trusted connection between the Anypoint organisation and a Salesforce org, with Agentforce enabled for Anypoint Platform, and API Catalog enabled in that org. If MuleSoft and Salesforce contracts sit with different departments, sort this out before the first sprint.
+```
 
 I have not found an official Salesforce reference architecture for Agentforce with S/4HANA, only this generic MuleSoft pattern. So your partner's design is the architecture, and someone on your side should review it.
 
@@ -58,7 +60,15 @@ I would design three operations for a dealer agent:
 - **Delivery dates** per item, with only the confirmed date and partial deliveries listed separately.
 - **Availability** for material, quantity and desired date: yes or no plus the earliest confirmed date from the SAP availability check. No stock figure, because stock levels are commercial information dealers do not need.
 
-The MuleSoft flags decide what the agent may do with each field. `x-sfdc/agent/action/publishAsAgentAction` makes an operation an action, `isUserInput` marks what the agent asks the dealer for, `isDisplayable` marks what it may show, and `x-sfdc/privacy/isPii` switches on the PII service for an operation. The External Services blog adds that action and parameter descriptions are taken from the spec. Good descriptions in the OpenAPI document are prompt engineering done once, in a reviewed file.
+The MuleSoft flags in the OpenAPI spec decide what the agent may do with each field. The External Services blog adds that action and parameter descriptions are taken from the spec. Good descriptions in the OpenAPI document are prompt engineering done once, in a reviewed file.
+
+```vertiefung For developers
+title: Which flags steer the agent?
+- `x-sfdc/agent/action/publishAsAgentAction` makes an operation an action.
+- `isUserInput` marks what the agent asks the dealer for.
+- `isDisplayable` marks what it may show.
+- `x-sfdc/privacy/isPii` switches on the PII service for an operation.
+```
 
 Precompute what dealers ask most. "Overall status" and "next confirmed date" should be fields the API calculates, not conclusions the model draws from ten schedule lines.
 
@@ -68,7 +78,7 @@ MuleSoft's own Topic Center documentation says instructions "are nondeterministi
 
 **Who may see which order.** This is the biggest risk. A dealer logged into the portal is a contact on an account, and the account carries the SAP sold-to number. That number must reach the API from the session, set by code, never from the chat. The API returns an order only if the sold-to matches and otherwise answers "not found", exactly as for an order that does not exist. If the model passes order number and customer number, dealer A reads dealer B's order by typing a number. Email enquiries are weaker still, because a sender address proves little; more in [prompt injection through dealer portals](../prompt-injection-dealer-portals-agentforce/).
 
-**Availability and dates.** SAP runs the availability check. The agent passes on the confirmed date and never estimates one from stock or lead times. If SAP has no confirmed date, the answer is "not confirmed yet".
+**Availability and dates.** SAP runs the availability check. The agent passes on the confirmed date and never estimates one from stock or lead times. If SAP has no confirmed date, the answer is "not confirmed yet". A B2B store needs the same rule, see [chapter 4 of the B2B Commerce masterclass](../../masterclass/b2b-commerce/erp-integration-stock-orders/).
 
 **Blocks.** Credit and delivery blocks are SAP decisions. Whether a dealer hears about a credit block or gets "please contact your sales rep" is a business decision that belongs in the API response, not in the prompt.
 
@@ -86,7 +96,20 @@ What a conversation costs in Flex Credits is calculated in [the dealer service a
 
 ## Live call or a copy in Salesforce?
 
-The agent should call SAP live. The dealer asks about today, and a nightly copy shows yesterday. The price is a dependency: during an SAP maintenance window the action fails. The agent must then say so and offer a callback or a handover, and that case belongs in the test set, as described in [testing Agentforce agents before go-live](../testing-agentforce-agents-before-go-live/).
+The agent should call SAP live. The dealer asks about today, and a nightly copy shows yesterday.
+
+```ablauf
+ext: Dealer, Mule API
+sf: Agentforce agent
+erp: SAP S/4HANA
+Dealer --Portal question--> Agentforce agent
+Agentforce agent --Action--> Mule API
+Mule API --OData--> SAP S/4HANA
+SAP S/4HANA ..Confirmed date..> Mule API
+Mule API ..Response fields..> Agentforce agent
+```
+
+The price is a dependency: during an SAP maintenance window the action fails. The agent must then say so and offer a callback or a handover, and that case belongs in the test set, as described in [testing Agentforce agents before go-live](../testing-agentforce-agents-before-go-live/).
 
 A copy still has its place, for example van stock that technicians need offline, as in [spare parts between ERP and Field Service](../salesforce-field-service-spare-parts-erp/). I would not let the agent present dates from such a copy as current.
 
@@ -102,4 +125,4 @@ MuleSoft can also turn the same API into an MCP server: [Agent Fabric](https://d
 
 If your ERP has no API at all, see [legacy ERP without an API](../legacy-erp-without-api-ai-agents/); whether the process is ready for an agent at all, see [Agentforce for manufacturers: start now or wait](../agentforce-yes-or-no-manufacturers/).
 
-An agent that reads order status from SAP is mostly an integration project with a language model on top. If you want a second opinion on the API design or the access rules, [send me a message](#contact).
+An agent that reads order status from SAP is mostly an integration project with a language model on top.

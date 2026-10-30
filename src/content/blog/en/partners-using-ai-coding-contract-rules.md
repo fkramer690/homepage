@@ -29,7 +29,9 @@ draft: false
 
 If your Salesforce implementation partner codes with AI agents, the contract needs AI coding rules that a classic SOW does not cover: which tools and model routes are used, which data may reach the model, no production access for agents, the same review for every line, and who holds the rights to code a machine wrote. I would not ban AI coding. I would make the partner disclose how it works and make that checkable. For a manufacturer the sensitive part is what an agent can read: service cases, dealer prices and SAP credentials.
 
-One note before the checklist: I am an architect, not a lawyer. The points below describe what I check from the technical side and want to see in writing. They are not legal advice. Your legal department or a lawyer turns them into clauses that fit your framework agreement.
+```hinweis achtung
+I am an architect, not a lawyer. The points below describe what I check from the technical side and want to see in writing. They are not legal advice. Your legal department or a lawyer turns them into clauses that fit your framework agreement.
+```
 
 ## Why does AI coding by partners need its own clauses?
 
@@ -37,7 +39,13 @@ A classic SOW covers deliverables, acceptance, rights and confidentiality. It qu
 
 **Data leaves through a new channel.** Everything the agent reads goes to a model provider as a prompt. Whether that provider trains on it depends on the contract type, not on the tool. Anthropic states that it [does not train on code or prompts sent to Claude Code under commercial terms](https://code.claude.com/docs/en/data-usage) (Team, Enterprise, API), while on the consumer plans Free, Pro and Max training depends on a user setting. Commercial accounts have a standard retention of 30 days. On top of that, Claude Code keeps session transcripts locally in plaintext for 30 days by default. A developer laptop therefore holds a copy of whatever the agent read.
 
-**Code volume grows faster than review capacity.** Veracode's 2026 report found an [average security pass rate of 56 percent for AI-generated code](https://www.veracode.com/news/llms-are-getting-smarter-but-not-safer-veracode-2026-genai-code-security-report-finds-ai-generated-code-security-has-stalled-at-56%25-pass-rate/), with Java, the closest relative of Apex, at 30 percent. The tests ran against raw models, without tooling or human review. The review step is the control, so it belongs in the contract.
+**Code volume grows faster than review capacity.** Veracode's 2026 report measured the [security pass rate of AI-generated code](https://www.veracode.com/news/llms-are-getting-smarter-but-not-safer-veracode-2026-genai-code-security-report-finds-ai-generated-code-security-has-stalled-at-56%25-pass-rate/). The tests ran against raw models, without tooling or human review. The review step is the control, so it belongs in the contract.
+
+```kennzahlen
+56 % | Average security pass rate for AI-generated code
+30 % | Pass rate for Java, the closest relative of Apex
+source: Veracode, GenAI Code Security Report 2026
+```
 
 **Rights get blurry.** According to [CMS](https://cms.law/de/deu/legal-updates/ki-generierter-softwarecode-in-der-due-diligence), code generated entirely by AI is public domain under German law, because only a human can be an author, and a provider's terms cannot change that. And the provider's promises go to its own customer. When Anthropic introduced its [copyright indemnity](https://www.anthropic.com/news/expanded-legal-protections-api-improvements) in December 2023, it promised to defend "our customers". In a partner project, that customer is the partner, not you.
 
@@ -72,14 +80,21 @@ None of these four findings would show up in a code review, because the code its
 
 Agents make changes cheap, including changes to objects another stream owns. An agent that "fixes" a validation rule on Account while working on a dealer portal story has no idea that the service stream depends on it. That makes the [object ownership matrix](../salesforce-object-ownership-matrix/) more important. A CODEOWNERS file in the repository requests the owning stream as reviewer automatically when a pull request touches its objects.
 
-The annex should be identical for all partners. If each partner brings its own AI rules, the strictest or the loudest one quietly becomes your standard, and comparing partners gets harder. Setting these rules on the client side is part of my work in [partner governance](../../services/partner-governance/).
+The annex should be identical for all partners. If each partner brings its own AI rules, the strictest or the loudest one quietly becomes your standard, and comparing partners gets harder. For the rules not to wear off after a few months, the contract is not enough: they need the pipeline, review and a fixed slot for new cases, described in [Reinforcement: making standards stick with partners](../partner-standards-reinforcement/). Setting these rules on the client side is part of my work in [partner governance](../../services/partner-governance/).
 
 ## Where should you start?
 
-1. **Send the questionnaire** to every partner, including small ones that only deliver a single integration.
-2. **Classify your data** into what an agent may see and what it may not, with your data protection officer.
-3. **Draft the annex with your legal department** and attach it to the framework agreement, so it applies to every SOW.
-4. **Enforce it technically**: Vibes disabled for production, deployments only through the pipeline, CODEOWNERS for shared objects.
-5. **Review it once a year**, because tools, plans and terms change faster than contracts.
+```schritte
+Send the questionnaire
+  To every partner, including small ones that only deliver a single integration.
+Classify your data
+  Into what an agent may see and what it may not, with your data protection officer.
+Draft the annex
+  With your legal department, attached to the framework agreement so it applies to every SOW.
+Enforce it technically
+  Vibes disabled for production, deployments only through the pipeline, CODEOWNERS for shared objects.
+Review it once a year
+  Tools, plans and terms change faster than contracts.
+```
 
-AI coding by partners is fine when the contract says which tools, which data and which review apply, and when you can check it. If you want a second opinion on your partner contracts from the technical side, [send me a message](#contact).
+AI coding by partners is fine when the contract says which tools, which data and which review apply, and when you can check it.

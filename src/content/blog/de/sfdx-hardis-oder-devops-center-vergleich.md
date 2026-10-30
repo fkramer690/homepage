@@ -65,7 +65,14 @@ Wer auf Azure DevOps arbeitet, wie viele Industrieunternehmen mit Microsoft-Land
 
 ## Wo liegt der Release-Prozess, und wem gehört er?
 
-Bei Lifecycle Center liegen Projekte, Pipelines und Work Items als Daten in der Hub-Org. Das Repository bleibt beim Kunden, der Prozess drumherum lebt in Salesforce. Zwei Details sollte die IT vorher kennen: Die GitHub-Anbindung läuft über eine OAuth-App von Salesforce, die Zugriff auf alle Repositories des Accounts anfragt, und Repositories einer GitHub-Organisation erscheinen erst, wenn ein Owner der Organisation die App freigibt. Hat die Git-Plattform IP-Beschränkungen, müssen die Adressen von Lifecycle Center in die Allowlist.
+Bei Lifecycle Center liegen Projekte, Pipelines und Work Items als Daten in der Hub-Org. Das Repository bleibt beim Kunden, der Prozess drumherum lebt in Salesforce.
+
+```vertiefung Für die IT
+titel: Was die IT vor der Anbindung von Lifecycle Center wissen sollte
+- Die GitHub-Anbindung läuft über eine OAuth-App von Salesforce, die Zugriff auf alle Repositories des Accounts anfragt.
+- Repositories einer GitHub-Organisation erscheinen erst, wenn ein Owner der Organisation die App freigibt.
+- Hat die Git-Plattform IP-Beschränkungen, müssen die Adressen von Lifecycle Center in die Allowlist.
+```
 
 Bei sfdx-hardis liegt alles in Dateien im Repository und in der Pipeline-Konfiguration. Mit Branch-Schutz ändert ein Partner sie nur per Pull Request, den der Kunde freigibt. Das passt zu meiner Grundregel, dass [Kunden ihre DevOps-Tools selbst besitzen sollten](../warum-kunden-devops-tools-selbst-besitzen-sollten/): Wer Repository und Pipeline kontrolliert, kontrolliert den Release-Prozess.
 
@@ -106,7 +113,11 @@ Brauchen Sie dagegen einen vollständig verwalteten Dienst mit Org-Vergleichen u
 
 ## Kann man beides kombinieren?
 
-Technisch können beide auf dieselbe Org und sogar dasselbe Repository zeigen. Lifecycle Center kennt Merges, die außerhalb der App passieren, und sfdx-hardis validiert jeden Pull Request, egal woher er kommt. Ich würde es trotzdem nicht tun. Wenn zwei Werkzeuge über dieselben Stage-Branches entscheiden, gibt es zwei Release-Prozesse, und am Ende weiß niemand, welcher Stand in der Produktion gilt. Entscheiden Sie pro Repository, welches Werkzeug Merges und Promotions verantwortet. Wechseln Sie später, dann als geplanter Schnitt, nicht als schleichender Übergang.
+Technisch können beide auf dieselbe Org und sogar dasselbe Repository zeigen. Lifecycle Center kennt Merges, die außerhalb der App passieren, und sfdx-hardis validiert jeden Pull Request, egal woher er kommt. Ich würde es trotzdem nicht tun. Wenn zwei Werkzeuge über dieselben Stage-Branches entscheiden, gibt es zwei Release-Prozesse, und am Ende weiß niemand, welcher Stand in der Produktion gilt.
+
+```hinweis tipp
+Entscheiden Sie pro Repository, welches Werkzeug Merges und Promotions verantwortet. Wechseln Sie später, dann als geplanter Schnitt, nicht als schleichender Übergang.
+```
 
 Für Teams, die Coding-Agenten einsetzen, wird diese Frage wichtiger. Lifecycle Center baut eine Governance-Schicht für Agenten in der Hub-Org, sfdx-hardis setzt auf die Prüfungen in der Pipeline. Welche [Quality Gates KI-generierten Code aufhalten sollten](../quality-gates-ki-code-salesforce-pipeline/), gilt für beide Werkzeuge gleich.
 
@@ -114,4 +125,4 @@ Für Teams, die Coding-Agenten einsetzen, wird diese Frage wichtiger. Lifecycle 
 
 Klären Sie zuerst drei Fragen: Welche Git-Plattform ist bei Ihnen gesetzt, wie viele Teams und Partner arbeiten an der Org, und wer übernimmt die Release-Rolle? Mit diesen drei Antworten ist die Wahl in den meisten Fällen getroffen. Wenn Sie neu im Thema sind, erklärt [warum DevOps über Salesforce-Großprojekte entscheidet](../warum-devops-salesforce-enterprise-projekte/) die Grundlagen, und die Einrichtung eines verbindlichen Prozesses gehört zu meiner Arbeit in [DevOps und Release-Management](../../leistungen/devops-und-release-management/).
 
-Beide Werkzeuge sind gut, sie passen nur zu unterschiedlichen Teams. Wenn Sie besprechen möchten, welches zu Ihrem Programm passt, [schreiben Sie mir](#contact).
+Beide Werkzeuge sind gut, sie passen nur zu unterschiedlichen Teams.

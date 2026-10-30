@@ -43,7 +43,7 @@ Die Begriffe klingen ähnlich und werden in Projekten oft vermischt. Laut [Sales
 | Entitlement | Worauf der Kunde Anspruch hat | Techniker vor Ort innerhalb von 24 Stunden |
 | Entitlement-Prozess mit Milestones | Wie der Anspruch gemessen wird | Uhr läuft ab Anlage des Arbeitsauftrags |
 
-Der Service Contract ist die kaufmännische Seite. Der Maintenance Plan ist die planbare Arbeit. Das Entitlement ist die ungeplante Arbeit mit Zusage, also die Störung, bei der eine Reaktionszeit gilt. Ein Vertrag kann alle drei haben, muss aber nicht. Ein reiner Garantiefall hat oft nur ein Entitlement an der Anlage und keinen Wartungsplan.
+Der Service Contract ist die kaufmännische Seite; wie er wiederkehrend abgerechnet wird, steht in [Wartungsverträge wiederkehrend abrechnen mit Revenue Cloud](../wartungsvertraege-wiederkehrend-abrechnen/). Der Maintenance Plan ist die planbare Arbeit. Das Entitlement ist die ungeplante Arbeit mit Zusage, also die Störung, bei der eine Reaktionszeit gilt. Ein Vertrag kann alle drei haben, muss aber nicht. Ein reiner Garantiefall hat oft nur ein Entitlement an der Anlage und keinen Wartungsplan. Wie Garantieansprüche in der Manufacturing Cloud laufen, steht in [Kapitel 4 der Masterclass Manufacturing Cloud](../../masterclass/manufacturing-cloud/garantie-und-after-sales/).
 
 ## Wie entstehen die geplanten Wartungen?
 
@@ -60,13 +60,30 @@ Wartungen sind die Einsätze, bei denen die Automatik aus Teil 3 am ehesten ohne
 
 Ein Entitlement allein ändert an der Planung nichts. Es wird erst wirksam, wenn es zwei Dinge auslöst: eine Messung und eine Priorität.
 
-**Messung.** Laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?language=en_US&id=service.entitlements_supported_objects.htm&type=5) laufen Milestones auch an Arbeitsaufträgen. Dafür braucht es einen Entitlement-Prozess vom Typ Work Order. Ein Prozess vom Typ Case läuft auf einem Arbeitsauftrag nicht, auch wenn derselbe Anspruch dahintersteht. Der Milestone zeigt dann, ob der Techniker in der zugesagten Zeit vor Ort war, und macht die Zusage gegenüber dem Kunden nachweisbar.
+**Messung.** Laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?language=en_US&id=service.entitlements_supported_objects.htm&type=5) laufen Milestones auch an Arbeitsaufträgen. Der Milestone zeigt, ob der Techniker in der zugesagten Zeit vor Ort war, und macht die Zusage gegenüber dem Kunden nachweisbar.
+
+```hinweis achtung
+Milestones am Arbeitsauftrag brauchen einen Entitlement-Prozess vom Typ Work Order. Ein Prozess vom Typ Case läuft auf einem Arbeitsauftrag nicht, auch wenn derselbe Anspruch dahintersteht.
+```
 
 **Priorität.** Field Service plant nach einem Prioritätsfeld. Laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?id=sf.pfs_scheduling_priority_optimization.htm&language=en_US&type=5) liegt sie standardmäßig auf einer Skala von 1 bis 10, wobei 1 die höchste ist. Der Arbeitsauftrag bringt ein Feld Priority mit den Werten Low bis Critical mit, das eine Formel in Zahlen übersetzt. Sind Techniker knapp, plant die Optimierung Termine mit hoher Priorität zuerst und kann dafür Termine mit niedriger Priorität verdrängen.
 
 Die Verbindung zwischen beiden baut man selbst, meist mit einem Flow: Ein Arbeitsauftrag mit einem Entitlement „Reaktion in 24 Stunden“ bekommt eine höhere Priorität als einer ohne Zusage. So landet die Zusage aus dem Vertrag direkt in der Entscheidung der Planungsengine, und der Disponent muss nicht bei jeder Störung im Vertrag nachsehen.
 
-Einmal durchgespielt sieht das so aus: Bei einem Kunden mit Premium-Vertrag fällt eine Presse aus. Der Innendienst legt einen Arbeitsauftrag zur Anlage an, und das Entitlement „Techniker vor Ort in 24 Stunden“ wird zugeordnet. Der Milestone startet. Ein Flow setzt die Priorität auf Critical, die Formel macht daraus eine 1. Die nächste Optimierung plant den Termin vor die halbjährliche Inspektion eines anderen Kunden, die aus einem Maintenance Plan stammt und einen Tag später auch noch passt. Der Disponent prüft den Vorschlag und gibt ihn frei. Wann der Milestone als erfüllt gilt, etwa mit dem Status In Progress vor Ort, legen Sie im Entitlement-Prozess selbst fest.
+Einmal durchgespielt: Bei einem Kunden mit Premium-Vertrag fällt eine Presse aus.
+
+```schritte
+Arbeitsauftrag anlegen | Innendienst
+  Der Innendienst legt einen Arbeitsauftrag zur Anlage an und ordnet das Entitlement „Techniker vor Ort in 24 Stunden“ zu. Der Milestone startet.
+Priorität setzen | Flow
+  Ein Flow setzt die Priorität auf Critical, die Formel macht daraus eine 1.
+Optimieren | Planungsengine
+  Die nächste Optimierung plant den Termin vor die halbjährliche Inspektion eines anderen Kunden, die aus einem Maintenance Plan stammt und einen Tag später auch noch passt.
+Freigeben | Disponent
+  Der Disponent prüft den Vorschlag und gibt ihn frei.
+```
+
+Wann der Milestone als erfüllt gilt, etwa mit dem Status In Progress vor Ort, legen Sie im Entitlement-Prozess selbst fest.
 
 ## Worauf sollten Sie achten?
 
@@ -82,4 +99,4 @@ Viertens: Klären Sie die Grenze zur Garantie. Ob ein Einsatz unter Garantie, Ve
 
 Nehmen Sie Ihre drei häufigsten Vertragsarten und schreiben Sie für jede auf, was der Kunde gekauft hat, welche Wartungen geplant sind und welche Reaktionszeit zugesagt ist. Daraus ergeben sich Service Contracts, Maintenance Plans und Entitlements fast von selbst. Danach legen Sie fest, welche Priorität jede Zusage in der Planung bekommt.
 
-Im nächsten Teil der Serie geht es um Servicepartner und Subunternehmer. Wenn Sie Ihre Verträge vorher mit einem unabhängigen Blick in Field Service übersetzen möchten, [schreiben Sie mir](#contact).
+Im nächsten Teil der Serie geht es um Servicepartner und Subunternehmer.

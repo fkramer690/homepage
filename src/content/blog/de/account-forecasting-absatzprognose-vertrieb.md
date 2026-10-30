@@ -27,7 +27,9 @@ faq:
 draft: false
 ---
 
-Account Forecasting lohnt sich für Hersteller, deren Vertrieb Mengen pro Kunde und Produkt über Monate planen soll und deren Geschäft zu großen Teilen aus wiederkehrenden Abnahmen besteht. Die Funktion der Manufacturing Cloud rechnet Aufträge, Opportunities und Sales Agreements zu einer Prognose zusammen, die Account Manager anpassen. Sie trägt aber nur, wenn die Auftragshistorie aus dem ERP verlässlich ankommt, wenn der Zuschnitt aus Kunden, Produkten und Zeiträumen ins Limit passt und wenn klar ist, wo die Planung im ERP übernimmt. Diesen Teil der Serie schreibe ich als Leitfaden für die Bewertung, nicht als Projektbericht.
+Account Forecasting lohnt sich für Hersteller mit wiederkehrenden Abnahmen, deren Vertrieb Mengen pro Kunde und Produkt über Monate planen soll. Die Funktion der Manufacturing Cloud rechnet Aufträge, Opportunities und Sales Agreements zu einer Absatzprognose zusammen, die Account Manager anpassen. Sie trägt nur unter drei Bedingungen: Die Auftragshistorie kommt verlässlich aus dem ERP, der Zuschnitt aus Kunden, Produkten und Zeiträumen passt ins Limit, und es ist klar, wo die Planung im ERP übernimmt.
+
+Diesen Teil der Serie schreibe ich als Leitfaden für die Bewertung, nicht als Projektbericht.
 
 ## Was ist Account Forecasting in der Manufacturing Cloud?
 
@@ -49,6 +51,15 @@ Drei Quellen tragen die Prognose, und zwei davon liegen bei Herstellern selten i
 1. **Auftragshistorie.** Was ein Kunde in den letzten Monaten abgenommen hat, ist der beste Ausgangspunkt für die nächsten. Diese Historie liegt im ERP. Trailhead beschreibt genau dieses Problem in seinem Beispiel: Die Prognosen waren ungenau, weil der Vertrieb keinen Zugriff auf die Historie aus dem ERP hatte.
 2. **Sales Agreements.** Vereinbarte Mengen sind eine feste Größe in der Prognose. Wie die Ist-Mengen dafür aus dem ERP kommen, beschreibe ich in [Teil 3: Sales Agreements, fehlende Abnahmemengen erkennen](../sales-agreements-abnahmemengen-erp/).
 3. **Opportunities.** Neugeschäft, das noch nicht abgeschlossen ist. Das ist die einzige Quelle, die ohnehin in Salesforce entsteht.
+
+```ablauf
+sf: Sales Agreements, Opportunities, Absatzprognose
+erp: Auftragshistorie, Planung im ERP
+Auftragshistorie --Schnittstelle--> Absatzprognose
+Sales Agreements --> Absatzprognose
+Opportunities --> Absatzprognose
+Absatzprognose ..Übergabe..> Planung im ERP
+```
 
 Für die Architektur heißt das: Account Forecasting ist zuerst ein Integrationsprojekt. In dem weltweiten Rollout, den ich in Teil 3 beschreibe, kamen Aufträge und Lagerbestände aus dem ERP. Genau diese Daten braucht auch eine Prognose. Wer Account Forecasting einführen will, plant die Schnittstelle für die Auftragshistorie deshalb vor der Konfiguration des Forecast Sets. Wie ich führende Systeme für Aufträge und Preise festlege, steht unter [Integration mit ERP, Middleware und Telefonie](../../leistungen/salesforce-schnittstellen/).
 
@@ -78,7 +89,7 @@ Das verlangt einen festen Rhythmus im Vertrieb. Eine Prognose, die nur angepasst
 
 ## Wo endet die Absatzprognose in Salesforce?
 
-Bei der Frage, was produziert wird. Account Forecasting liefert die Erwartung des Vertriebs: welcher Kunde welche Menge welchen Produkts in welchem Monat abnehmen wird. Ob diese Menge produziert werden kann, mit welchem Material und auf welcher Anlage, entscheidet die Planung im ERP oder in einem eigenen Planungssystem.
+Bei der Frage, was produziert wird. Account Forecasting liefert die Erwartung des Vertriebs: welcher Kunde welche Menge welchen Produkts in welchem Monat abnehmen wird. Ob diese Menge produziert werden kann, mit welchem Material und auf welcher Anlage, entscheidet die Planung im ERP oder in einem eigenen Planungssystem. Wie Prognosen, Sales Agreements und Ziele zusammenspielen, steht in [Kapitel 2 der Masterclass Manufacturing Cloud](../../masterclass/manufacturing-cloud/rahmenvertraege-und-prognosen/).
 
 Für die Architektur sind zwei Punkte wichtig:
 
@@ -89,14 +100,21 @@ Ein Hinweis zu Agentforce: Laut Trailhead erzeugt „Agentforce Manufacturing“
 
 ## Wann lohnt sich Account Forecasting?
 
-Ich würde Account Forecasting empfehlen, wenn mehrere dieser Punkte zutreffen:
+Ich würde Account Forecasting empfehlen, wenn mehrere der ersten vier Punkte zutreffen:
 
-- **Viel wiederkehrendes Geschäft.** Ein großer Teil des Umsatzes kommt aus regelmäßigen Abnahmen von Bestandskunden.
-- **Sales Agreements sind schon geplant.** Dann liegen die vereinbarten Mengen ohnehin in Salesforce, und die Prognose baut darauf auf.
-- **Die Vertriebsprognose wird heute in Tabellen gepflegt.** Pro Account Manager eine Datei, die jemand monatlich zusammenführt.
-- **Produktion oder Einkauf warten auf die Zahl.** Es gibt einen festen Termin, an dem die Vertriebssicht gebraucht wird.
+```pro-contra
+pro: Account Forecasting lohnt sich
+- **Viel wiederkehrendes Geschäft:** Ein großer Teil des Umsatzes kommt aus regelmäßigen Abnahmen von Bestandskunden.
+- **Sales Agreements sind schon geplant:** Die vereinbarten Mengen liegen ohnehin in Salesforce, und die Prognose baut darauf auf.
+- **Die Vertriebsprognose liegt heute in Tabellen:** Pro Account Manager eine Datei, die jemand monatlich zusammenführt.
+- **Produktion oder Einkauf warten auf die Zahl:** Es gibt einen festen Termin, an dem die Vertriebssicht gebraucht wird.
+contra: Zurückhaltend wäre ich
+- Bei wenigen, großen Projekten statt laufender Abnahmen.
+- Bei einer Absatzplanung, die im ERP gut funktioniert und nur Lesezugriff im CRM braucht.
+- Wenn die Auftragshistorie nicht nach Salesforce kommen kann.
+```
 
-Zurückhaltend wäre ich bei wenigen, großen Projekten statt laufender Abnahmen, bei einer Absatzplanung, die im ERP gut funktioniert und nur Lesezugriff im CRM braucht, und wenn die Auftragshistorie nicht nach Salesforce kommen kann. Dann zahlt das Unternehmen für eine Funktion, die mit den eigenen Daten nicht arbeiten kann. Ob sich die Manufacturing Cloud insgesamt lohnt, behandelt [Teil 1 der Serie](../manufacturing-cloud-wann-lohnt-sie-sich/).
+Im letzten Fall zahlt das Unternehmen für eine Funktion, die mit den eigenen Daten nicht arbeiten kann. Ob sich die Manufacturing Cloud insgesamt lohnt, behandelt [Teil 1 der Serie](../manufacturing-cloud-wann-lohnt-sie-sich/).
 
 ## Wo sollten Sie anfangen?
 
@@ -107,4 +125,4 @@ Bevor das erste Forecast Set konfiguriert wird, klären Sie vier Punkte:
 3. **Rhythmus.** Wer passt wann an, abgestimmt mit der Planung in Produktion und Einkauf.
 4. **Führende Zahl.** Welche Prognose gilt, und wie kommt sie ins ERP?
 
-Account Forecasting ist eine gute Absatzprognose, wenn die Daten aus dem ERP stimmen und klar ist, wo die Planung übernimmt. Wenn Sie gerade bewerten, ob die Funktion zu Ihrem Vertrieb passt, [schreiben Sie mir](#contact).
+Account Forecasting ist eine gute Absatzprognose, wenn die Daten aus dem ERP stimmen und klar ist, wo die Planung übernimmt.

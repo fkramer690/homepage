@@ -41,7 +41,11 @@ Eine Regeldatei enthält dauerhafte Projektanweisungen in einfachem Markdown: Be
 
 Quellen: [Claude-Code-Doku zu Memory](https://code.claude.com/docs/en/memory), [OpenAI Codex Best Practices](https://developers.openai.com/codex/learn/best-practices), [GitHub Docs](https://docs.github.com/en/copilot/how-tos/configure-custom-instructions/add-repository-instructions), [Agentforce Vibes Rules](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-rules.html).
 
-Arbeitet Ihr Team mit mehreren Werkzeugen, entscheiden zwei Details, ob eine Datei reicht. Laut [GitHub-Changelog vom 28. August 2025](https://github.blog/changelog/2025-08-28-copilot-coding-agent-now-supports-agents-md-custom-instructions) liest der Copilot Coding Agent `AGENTS.md` neben GitHubs eigenen Formaten, außerdem `CLAUDE.md` und `GEMINI.md`. Claude Code liest `AGENTS.md` ab Version 2.1.277, aber nur, wenn im Arbeitsverzeichnis oder darüber keine `CLAUDE.md` oder `CLAUDE.local.md` liegt. Legt sich ein Entwickler eine persönliche `CLAUDE.local.md` an, liest Claude die gemeinsame `AGENTS.md` nicht mehr, ohne dass es jemand merkt. Anthropic empfiehlt dafür eine `CLAUDE.md`, die die gemeinsame Datei mit `@AGENTS.md` importiert. Die Vibes-Dokumentation erwähnt `AGENTS.md` gar nicht, Vibes braucht also eine eigene kurze Regel in `.vibes/rules/`.
+Arbeitet Ihr Team mit mehreren Werkzeugen, entscheiden zwei Details, ob eine Datei reicht. Laut [GitHub-Changelog vom 28. August 2025](https://github.blog/changelog/2025-08-28-copilot-coding-agent-now-supports-agents-md-custom-instructions) liest der Copilot Coding Agent `AGENTS.md` neben GitHubs eigenen Formaten, außerdem `CLAUDE.md` und `GEMINI.md`. Claude Code liest `AGENTS.md` ab Version 2.1.277, aber nur, wenn im Arbeitsverzeichnis oder darüber keine `CLAUDE.md` oder `CLAUDE.local.md` liegt. Die Vibes-Dokumentation erwähnt `AGENTS.md` gar nicht, Vibes braucht also eine eigene kurze Regel in `.vibes/rules/`.
+
+```hinweis achtung
+Legt sich ein Entwickler eine persönliche `CLAUDE.local.md` an, liest Claude die gemeinsame `AGENTS.md` nicht mehr, ohne dass es jemand merkt. Anthropic empfiehlt dafür eine `CLAUDE.md`, die die gemeinsame Datei mit `@AGENTS.md` importiert.
+```
 
 ## Warum gehört die Regeldatei dem Kunden?
 
@@ -139,11 +143,19 @@ Die Datei wächst aus Belegen, nicht aus Wunschlisten. OpenAI empfiehlt, Regeln 
 
 ## Wo sollten Sie anfangen?
 
-1. **Bestand aufnehmen.** Suchen Sie im Repository nach `CLAUDE.md`, `AGENTS.md`, `.github/copilot-instructions.md` und `.vibes/rules/`, und fragen Sie jeden Partner, welche Werkzeuge er nutzt.
-2. **Verantwortliche benennen**, mit Vertretung auf Ihrer Seite.
-3. **Die erste Fassung schreiben**, unter 200 Zeilen, aus Ihrem Coding-Standard und den letzten Review-Funden.
-4. **Die Verweise anlegen**: eine `CLAUDE.md` mit `@AGENTS.md` und eine Vibes-Regel.
-5. **Harte Regeln auslagern**: Deny-Regeln, ein `Stop`-Hook und die Gates aus [Quality Gates für KI-Code](../quality-gates-ki-code-salesforce-pipeline/), Vibes in Produktion deaktiviert.
-6. **Die Dateien schützen** mit CODEOWNERS und Branch Protection.
+```schritte
+Bestand aufnehmen
+  Suchen Sie im Repository nach `CLAUDE.md`, `AGENTS.md`, `.github/copilot-instructions.md` und `.vibes/rules/`, und fragen Sie jeden Partner, welche Werkzeuge er nutzt.
+Verantwortliche benennen
+  Eine Person mit Vertretung auf Ihrer Seite.
+Erste Fassung schreiben
+  Unter 200 Zeilen, aus Ihrem Coding-Standard und den letzten Review-Funden.
+Verweise anlegen
+  Eine `CLAUDE.md` mit `@AGENTS.md` und eine Vibes-Regel.
+Harte Regeln auslagern
+  Deny-Regeln, ein `Stop`-Hook und die Gates aus [Quality Gates für KI-Code](../quality-gates-ki-code-salesforce-pipeline/), Vibes in Produktion deaktiviert.
+Dateien schützen
+  Mit CODEOWNERS und Branch Protection.
+```
 
-Das Einrichten gehört zu meiner Arbeit in [DevOps und Release-Management](../../leistungen/devops-und-release-management/) und in der [Partnersteuerung](../../leistungen/partnersteuerung/). Eine KI-Regeldatei kostet wenige Tage und gibt jedem Agenten in Ihrem Repository dieselben Regeln, solange die Datei Ihnen gehört und die harten Regeln anderswo erzwungen werden. Wenn Sie eine zweite Meinung zu Ihrer Regeldatei oder Ihrem Partner-Setup möchten, [schreiben Sie mir](#contact).
+Das Einrichten gehört zu meiner Arbeit in [DevOps und Release-Management](../../leistungen/devops-und-release-management/) und in der [Partnersteuerung](../../leistungen/partnersteuerung/). Eine KI-Regeldatei kostet wenige Tage und gibt jedem Agenten in Ihrem Repository dieselben Regeln, solange die Datei Ihnen gehört und die harten Regeln anderswo erzwungen werden.

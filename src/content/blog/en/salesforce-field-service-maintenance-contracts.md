@@ -43,7 +43,7 @@ The terms sound alike and often get mixed up in projects. According to [Salesfor
 | Entitlement | What the customer is entitled to | Technician on site within 24 hours |
 | Entitlement process with milestones | How the entitlement is measured | Clock starts when the work order is created |
 
-The service contract is the commercial side. The maintenance plan is the plannable work. The entitlement is the unplanned work with a commitment, the breakdown where a response time applies. A contract can have all three, but does not have to. A pure warranty case often has only an entitlement on the asset and no maintenance plan.
+The service contract is the commercial side; how it is billed on a recurring basis is covered in [maintenance contracts: recurring billing in Revenue Cloud](../maintenance-contracts-recurring-billing/). The maintenance plan is the plannable work. The entitlement is the unplanned work with a commitment, the breakdown where a response time applies. A contract can have all three, but does not have to. A pure warranty case often has only an entitlement on the asset and no maintenance plan. How warranty claims run in Manufacturing Cloud is in [chapter 4 of the Manufacturing Cloud masterclass](../../masterclass/manufacturing-cloud/warranty-and-after-sales/).
 
 ## How is planned maintenance created?
 
@@ -60,13 +60,30 @@ Maintenance visits are the jobs where the automation from part 3 can most likely
 
 An entitlement on its own changes nothing about scheduling. It only takes effect when it triggers two things: a measurement and a priority.
 
-**Measurement.** According to [Salesforce Help](https://help.salesforce.com/s/articleView?language=en_US&id=service.entitlements_supported_objects.htm&type=5), milestones also run on work orders. That needs an entitlement process of type Work Order. A process of type Case does not run on a work order, even if the same entitlement is behind it. The milestone then shows whether the technician was on site within the committed time and makes the commitment provable to the customer.
+**Measurement.** According to [Salesforce Help](https://help.salesforce.com/s/articleView?language=en_US&id=service.entitlements_supported_objects.htm&type=5), milestones also run on work orders. The milestone shows whether the technician was on site within the committed time and makes the commitment provable to the customer.
+
+```hinweis achtung
+Milestones on work orders need an entitlement process of type Work Order. A process of type Case does not run on a work order, even if the same entitlement is behind it.
+```
 
 **Priority.** Field Service schedules by a priority field. According to [Salesforce Help](https://help.salesforce.com/s/articleView?id=sf.pfs_scheduling_priority_optimization.htm&language=en_US&type=5), it uses a scale from 1 to 10 by default, where 1 is the highest. The work order comes with a Priority field from Low to Critical, which a formula turns into numbers. When technicians are scarce, optimization schedules high-priority appointments first and can push out low-priority ones to do so.
 
 You build the link between the two yourself, usually with a flow: a work order with a "response within 24 hours" entitlement gets a higher priority than one without a commitment. That way the commitment from the contract goes straight into the scheduling engine's decision, and the dispatcher does not have to look up the contract for every breakdown.
 
-Played through once, it looks like this: a press fails at a customer with a premium contract. The back office creates a work order for the asset, and the entitlement "technician on site within 24 hours" is assigned. The milestone starts. A flow sets the priority to Critical, which the formula turns into a 1. The next optimization run schedules the appointment ahead of another customer's half-yearly inspection, which comes from a maintenance plan and still fits a day later. The dispatcher reviews the proposal and releases it. When the milestone counts as met, for example with the status In Progress on site, you define yourself in the entitlement process.
+Played through once: a press fails at a customer with a premium contract.
+
+```schritte
+Create the work order | Back office
+  The back office creates a work order for the asset and assigns the entitlement "technician on site within 24 hours". The milestone starts.
+Set the priority | Flow
+  A flow sets the priority to Critical, which the formula turns into a 1.
+Optimize | Scheduling engine
+  The next optimization run schedules the appointment ahead of another customer's half-yearly inspection, which comes from a maintenance plan and still fits a day later.
+Release | Dispatcher
+  The dispatcher reviews the proposal and releases it.
+```
+
+When the milestone counts as met, for example with the status In Progress on site, you define yourself in the entitlement process.
 
 ## What should you watch out for?
 
@@ -82,4 +99,4 @@ Fourth: settle the line to warranty. Whether a visit runs under warranty, under 
 
 Take your three most common contract types and write down for each what the customer bought, which maintenance is planned and which response time is committed. Service contracts, maintenance plans and entitlements follow almost by themselves. Then decide which priority each commitment gets in scheduling.
 
-The next part of the series covers service partners and subcontractors. If you want an independent look at translating your contracts into Field Service before then, [get in touch](#contact).
+The next part of the series covers service partners and subcontractors.

@@ -27,7 +27,9 @@ faq:
 draft: false
 ---
 
-Account forecasting pays off for manufacturers whose sales team should plan quantities per customer and product over months and whose business consists largely of recurring offtake. The Manufacturing Cloud feature combines orders, opportunities and sales agreements into a forecast that account managers adjust. It only holds up when order history arrives reliably from the ERP, when the scope of customers, products and periods fits within the limit, and when it is clear where planning in the ERP takes over. I am writing this part of the series as an evaluation guide, not as a project report.
+Account forecasting pays off for manufacturers with recurring offtake whose sales team should plan quantities per customer and product over months. The Manufacturing Cloud feature combines orders, opportunities and sales agreements into a forecast that account managers adjust. It only holds up under three conditions: order history arrives reliably from the ERP, the scope of customers, products and periods fits within the limit, and it is clear where planning in the ERP takes over.
+
+I am writing this part of the series as an evaluation guide, not as a project report.
 
 ## What is account forecasting in Manufacturing Cloud?
 
@@ -49,6 +51,15 @@ Three sources carry the forecast, and at manufacturers two of them rarely live i
 1. **Order history.** What a customer took in recent months is the best starting point for the next ones. That history lives in the ERP. Trailhead describes exactly this problem in its example: forecasts were inaccurate because sales had no access to the history in the ERP.
 2. **Sales agreements.** Agreed volumes are a fixed input to the forecast. How actuals for them come from the ERP is covered in [part 3: sales agreements, spotting customers behind on volume](../sales-agreements-volume-shortfall-erp/).
 3. **Opportunities.** New business that has not closed yet. This is the only source that is created in Salesforce anyway.
+
+```ablauf
+sf: Sales agreements, Opportunities, Account forecast
+erp: Order history, ERP planning
+Order history --integration--> Account forecast
+Sales agreements --> Account forecast
+Opportunities --> Account forecast
+Account forecast ..handover..> ERP planning
+```
 
 For the architecture, that means account forecasting is an integration project first. In the global rollout I describe in part 3, orders and inventory came from the ERP. A forecast needs exactly that data too. Anyone introducing account forecasting should therefore plan the order history integration before configuring the forecast set. How I decide leading systems for orders and prices is described under [integration with ERP, middleware and telephony](../../services/salesforce-integration/).
 
@@ -78,7 +89,7 @@ That requires a fixed rhythm in sales. A forecast that is only adjusted when som
 
 ## Where does sales forecasting in Salesforce end?
 
-At the question of what gets produced. Account forecasting provides what sales expects: which customer will take which quantity of which product in which month. Whether that quantity can be produced, with which material and on which line, is decided by planning in the ERP or a dedicated planning system.
+At the question of what gets produced. Account forecasting provides what sales expects: which customer will take which quantity of which product in which month. Whether that quantity can be produced, with which material and on which line, is decided by planning in the ERP or a dedicated planning system. How forecasts, sales agreements and targets fit together is covered in [chapter 2 of the Manufacturing Cloud masterclass](../../masterclass/manufacturing-cloud/agreements-and-forecasting/).
 
 Two points matter for the architecture:
 
@@ -89,14 +100,21 @@ A note on Agentforce: Trailhead says that "Agentforce Manufacturing" generates f
 
 ## When does account forecasting pay off?
 
-I would recommend account forecasting when several of these points apply:
+I would recommend account forecasting when several of the first four points apply:
 
-- **A lot of recurring business.** A large share of revenue comes from regular offtake by existing customers.
-- **Sales agreements are already planned.** Then agreed volumes live in Salesforce anyway, and the forecast builds on them.
-- **The sales forecast lives in spreadsheets today.** One file per account manager that someone merges every month.
-- **Production or procurement is waiting for the number.** There is a fixed date when the sales view is needed.
+```pro-contra
+pro: Account forecasting pays off
+- **A lot of recurring business:** a large share of revenue comes from regular offtake by existing customers.
+- **Sales agreements are already planned:** agreed volumes live in Salesforce anyway, and the forecast builds on them.
+- **The sales forecast lives in spreadsheets today:** one file per account manager that someone merges every month.
+- **Production or procurement is waiting for the number:** there is a fixed date when the sales view is needed.
+contra: I would hold back
+- With a few large projects instead of running offtake.
+- With demand planning that works well in the ERP and only needs read access in the CRM.
+- When the order history cannot reach Salesforce.
+```
 
-I would hold back with a few large projects instead of running offtake, with demand planning that works well in the ERP and only needs read access in the CRM, and when the order history cannot reach Salesforce. Then the company pays for a feature that cannot work with its own data. Whether Manufacturing Cloud pays off as a whole is covered in [part 1 of this series](../salesforce-manufacturing-cloud-is-it-worth-it/).
+In the last case the company pays for a feature that cannot work with its own data. Whether Manufacturing Cloud pays off as a whole is covered in [part 1 of this series](../salesforce-manufacturing-cloud-is-it-worth-it/).
 
 ## Where should you start?
 
@@ -107,4 +125,4 @@ Before the first forecast set is configured, settle four points:
 3. **Rhythm.** Who adjusts when, aligned with planning in production and procurement.
 4. **Leading number.** Which forecast counts, and how does it reach the ERP?
 
-Account forecasting is a good sales forecast when the data from the ERP is right and it is clear where planning takes over. If you are evaluating whether the feature fits your sales team, [send me a message](#contact).
+Account forecasting is a good sales forecast when the data from the ERP is right and it is clear where planning takes over.

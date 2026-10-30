@@ -64,9 +64,11 @@ The repeatable part should be automated: static code analysis, naming convention
 
 In one programme I joined, several implementation partners and internal teams worked on the same Salesforce org. Nobody had clearly defined who led which processes, objects and metadata. Changes overwrote each other because nobody coordinated who deployed what and when, and the technical approaches of the teams had drifted far apart.
 
+```praxis
 The first and most effective step was a simple rule: every change goes through a pull request with a review. For a while, every single pull request crossed my desk. That sounds like a bottleneck, and for a few weeks it was a lot of work. But it gave us something no workshop could: a concrete view of how each team actually built things. From those reviews we wrote down development and architecture standards, and from then on the reviews enforced them.
 
 After a few weeks the number of review comments dropped noticeably, because the teams knew the standards. Releases became predictable, and the pipeline's validation runs caught missing dependencies before users ever saw them. Once the process was stable, I handed it over to an internal colleague and trained them, so the client now owns the review process themselves.
+```
 
 > Reviews are how a programme with many teams agrees on one way of building things.
 
@@ -91,10 +93,17 @@ This does not mean the client has to review every line personally. Partners can 
 
 If your programme still merges or deploys without reviews, start small:
 
-1. Protect the main branches so that nobody can merge without an approved pull request.
-2. Add the automated checks to every pull request: validation deployment, Apex tests, code analysis.
-3. Write down the ten most important development standards. That is enough for a start.
-4. Define who approves what, and agree on a response time.
-5. Review the first weeks centrally, then spread the responsibility.
+```schritte
+Protect the branches
+  Protect the main branches so that nobody can merge without an approved pull request.
+Attach the checks
+  Add the automated checks to every pull request: validation deployment, Apex tests, code analysis.
+Write down standards
+  Write down the ten most important development standards. That is enough for a start.
+Settle approvals
+  Define who approves what, and agree on a response time.
+Start centrally
+  Review the first weeks centrally, then spread the responsibility.
+```
 
-Pull request reviews cost minutes per change and save days per release. If you want to talk about how to introduce them in your programme, [send me a message](#contact).
+Pull request reviews cost minutes per change and save days per release.

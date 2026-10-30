@@ -72,7 +72,9 @@ Die Teams müssen nicht gleich groß sein. Ein Stream mit vielen Schnittstellen 
 
 In der Praxis ist die Grenze selten ein Problem, wenn die Teams entlang der Streams geschnitten sind. Ein Stream ist selten so groß, dass mehr als acht Personen zum Beispiel an der Sales Cloud arbeiten. Wird ein Team größer, liegen die Aufgaben meist schon so weit auseinander, dass zwei Teams mehr Sinn ergeben. Häufig sehe ich das Gegenteil: Sales und Service landen in einem Topf, weil beide auf Account und Contact arbeiten. Das ergibt nur bedingt Sinn, denn die Prozesse, Fachbereiche und Releases der beiden unterscheiden sich stark.
 
+```praxis
 In meinem größten Programm waren auch Nearshore-Teams dabei. Meist haben sie einzelne Streams komplett gestemmt, vom Backlog bis zum Release. Das funktioniert gut, weil ein Team dann einen klaren Bereich hat und nicht für mehrere Streams gleichzeitig arbeitet.
+```
 
 ## Was bremst Nearshore-Teams außer der Größe?
 
@@ -106,4 +108,4 @@ Haben Sie bereits ein Nearshore-Team, beantworten Sie drei Fragen:
 
 Planen Sie ein neues Setup, legen Sie Teamgröße, Rollen und Rotationsregeln fest, bevor Sie Angebote vergleichen. Dann vergleichen Sie Partner auf derselben Grundlage, und nicht nur über den Tagessatz. Wie ich Programme mit Nearshore-Teams plane und steuere, beschreibe ich unter [Programmsteuerung und Nearshore-Teams](../../leistungen/projektsteuerung-nearshore/).
 
-Acht Entwickler pro Team sind keine starre Zahl, aber eine gute Obergrenze, die viel Abstimmung erspart. Wenn Sie ein Nearshore-Team aufsetzen oder ein bestehendes wieder auf Kurs bringen möchten, [schreiben Sie mir](#contact).
+Acht Entwickler pro Team sind keine starre Zahl, aber eine gute Obergrenze, die viel Abstimmung erspart.

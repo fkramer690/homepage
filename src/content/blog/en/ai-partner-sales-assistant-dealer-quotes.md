@@ -32,9 +32,18 @@ The AI Partner Sales Assistant (Summer '26) helps dealers find products and buil
 
 Both appear on the [Manufacturing Cloud product page](https://www.salesforce.com/manufacturing/cloud/). Under Summer '26 Salesforce promises to "accelerate channel sales with an AI Partner Sales Assistant that finds products and builds quotes in seconds". Under Winter '27 it promises to "turn self-service visits into qualified pipeline with an AI Sales Concierge that finds products and builds quotes in seconds". Winter '27 has been [generally available since 12 October 2026](https://www.salesforce.com/news/stories/winter-2027-product-release-announcement/).
 
-The release material adds a little. The [Winter '27 highlights on Trailhead](https://trailhead.salesforce.com/content/learn/modules/winter-27-release-highlights/see-whats-new-manfacturing-media-netzero-nonprofit) describe Sales Concierge for Customers as an AI buying experience on your Experience Cloud site, where customers "search assets, locate dealers, and request quotes". A Sales Concierge for Manufacturing with product and accessory search, dealer search and quick quote creation was already listed in the [Spring '26 highlights](https://trailhead.salesforce.com/it/content/learn/modules/spring-26-release-highlights/see-whats-new-agentforce-manufacturing-media-public-sector-nonprofit). For the Partner Sales Assistant I found no entry in the [Summer '26 Manufacturing highlights](https://trailhead.salesforce.com/content/learn/modules/summer-26-release-highlights/see-whats-new-manufacturing-media-nonprofit-and-agentforce-net-zero), which name warranty claims assistance, sample management and purchase orders. Setup guides, licence terms and prices for both agents were not in the sources I could open on 27 October 2026.
+The release material adds a little. The [Winter '27 highlights on Trailhead](https://trailhead.salesforce.com/content/learn/modules/winter-27-release-highlights/see-whats-new-manfacturing-media-netzero-nonprofit) describe Sales Concierge for Customers as an AI buying experience on your Experience Cloud site, where customers "search assets, locate dealers, and request quotes". A Sales Concierge for Manufacturing with product and accessory search, dealer search and quick quote creation was already listed in the [Spring '26 highlights](https://trailhead.salesforce.com/it/content/learn/modules/spring-26-release-highlights/see-whats-new-agentforce-manufacturing-media-public-sector-nonprofit). For the Partner Sales Assistant I found no entry in the [Summer '26 Manufacturing highlights](https://trailhead.salesforce.com/content/learn/modules/summer-26-release-highlights/see-whats-new-manufacturing-media-nonprofit-and-agentforce-net-zero), which name warranty claims assistance, sample management and purchase orders.
 
-Two details matter for a decision. "Request quotes" and "builds quotes" are different things: a request lands with your sales desk, a built quote carries a price the dealer will hold you to. And the building blocks are documented. The Manufacturing section in the navigation of the Standard Agent Action Reference in Salesforce Help lists Agentforce for Manufacturing actions such as Search Product And Parts, Get Product Price Details, Get Price Books, Search Dealers for Products, Create Opportunity with Products and Preferred Seller and Create Quote from Opportunity. I found no Help page that describes these actions in detail. The one action page I opened, [Get Warranty Claims for Account](https://help.salesforce.com/s/articleView?id=ai.agent_ref_mfg_get_wrnty_claims_for_acct.htm&language=en_US&type=5), requires the Agentforce for Manufacturing add-on for each user or Agentforce 1 Manufacturing Edition. I expect both agents to use actions like these, but Salesforce does not say so, so treat that as my assumption.
+```hinweis offen
+Setup guides, licence terms and prices for both agents were not in the sources I could open on 27 October 2026. Ask Salesforce before you budget.
+```
+
+One difference matters for a decision. "Request quotes" and "builds quotes" are different things: a request lands with your sales desk, a built quote carries a price the dealer will hold you to.
+
+```vertiefung For admins
+title: Which agent actions sit underneath?
+The Manufacturing section in the navigation of the Standard Agent Action Reference in Salesforce Help lists Agentforce for Manufacturing actions such as Search Product And Parts, Get Product Price Details, Get Price Books, Search Dealers for Products, Create Opportunity with Products and Preferred Seller and Create Quote from Opportunity. I found no Help page that describes these actions in detail. The one action page I opened, [Get Warranty Claims for Account](https://help.salesforce.com/s/articleView?id=ai.agent_ref_mfg_get_wrnty_claims_for_acct.htm&language=en_US&type=5), requires the Agentforce for Manufacturing add-on for each user or Agentforce 1 Manufacturing Edition. I expect both agents to use actions like these, but Salesforce does not say so, so treat that as my assumption.
+```
 
 ## Which quoting agent fits which channel?
 
@@ -47,7 +56,7 @@ Winter '27 also brings a quoting agent outside Manufacturing Cloud. According to
 | What Salesforce says | Finds products, builds quotes | Finds products, builds quotes; highlights say request quotes | Self-service and partner quoting |
 | Product | Manufacturing Cloud | Manufacturing Cloud | Revenue Cloud |
 
-I would choose by where your quote lives today. If you already quote in Revenue Cloud, look at the Revenue Management agent first. If dealers quote on standard quotes and price books in Manufacturing Cloud, the manufacturing agents fit. Two quoting agents on two quote models is the setup I would avoid.
+I would choose by where your quote lives today. If you already quote in Revenue Cloud, look at the Revenue Management agent first; what it can do today is covered in [the Revenue Cloud quoting agent](../revenue-cloud-quoting-agent-agentforce/). If dealers quote on standard quotes and price books in Manufacturing Cloud, the manufacturing agents fit. Two quoting agents on two quote models is the setup I would avoid.
 
 For machine builders with dealers, the Sales Concierge raises a commercial question before a technical one. If an end customer finds a machine on your site and gets a price, which dealer receives the lead, and may that price undercut what the dealer quotes? Settle routing and price visibility with the head of sales before go-live.
 
@@ -61,7 +70,7 @@ Every sellable variant and accessory needs its own product record with a correct
 
 ### Prices per market and dealer tier
 
-If SAP holds list prices, dealer discounts per tier and surcharges as conditions while Salesforce holds only the list price, the agent quotes the list price. You need price books per country, currency and dealer tier with validity dates, synced from the ERP. Salesforce sees the gap too: the Winter '27 highlights name Penny Perfect Pricing with multimarket pricing, multiple units of measure, calculation schema and ERP integration inside Manufacturing Cloud. Decide one price master: either the ERP calculates and Salesforce shows the result through an API, as in [order status from SAP via MuleSoft](../agentforce-sap-order-status-mulesoft/), or Salesforce calculates with the same schema.
+If SAP holds list prices, dealer discounts per tier and surcharges as conditions while Salesforce holds only the list price, the agent quotes the list price. You need price books per country, currency and dealer tier with validity dates, synced from the ERP. Salesforce sees the gap too: the Winter '27 highlights name Penny Perfect Pricing with multimarket pricing, multiple units of measure, calculation schema and ERP integration inside Manufacturing Cloud. What is known about it so far is in [Penny Perfect Pricing: ERP prices in Salesforce?](../penny-perfect-pricing-erp-prices/). Decide one price master: either the ERP calculates and Salesforce shows the result through an API, as in [order status from SAP via MuleSoft](../agentforce-sap-order-status-mulesoft/), or Salesforce calculates with the same schema.
 
 ### Rules for what can be built
 
@@ -91,13 +100,21 @@ The consumption is small next to six people on a desk. The work sits in four mon
 
 ## Where should you start?
 
-1. **Pick one channel first**: dealers through the Partner Sales Assistant or end customers through the Sales Concierge.
-2. **Measure the catalogue**: share of accessories linked to machine models, share of products with a description a dealer would search for.
-3. **Decide the price master** and get tier prices into price books with validity dates.
-4. **Write discount limits as rules** with an owner in sales and finance.
-5. **Ask Salesforce in writing**: licence per partner user, which actions the agent calls, consumption model, and how it relates to the Revenue Management agent.
-6. **Build a test set** from real dealer requests, including wrong part numbers and unbuildable combinations, as in [testing Agentforce agents before go-live](../testing-agentforce-agents-before-go-live/).
+```schritte
+Pick one channel first
+  Dealers through the Partner Sales Assistant or end customers through the Sales Concierge.
+Measure the catalogue
+  Share of accessories linked to machine models, share of products with a description a dealer would search for.
+Decide the price master
+  Get tier prices into price books with validity dates.
+Write discount limits as rules
+  With an owner in sales and finance.
+Ask Salesforce in writing
+  Licence per partner user, which actions the agent calls, consumption model, and how it relates to the Revenue Management agent.
+Build a test set
+  From real dealer requests, including wrong part numbers and unbuildable combinations, as in [testing Agentforce agents before go-live](../testing-agentforce-agents-before-go-live/).
+```
 
 Where these agents fit among the other manufacturing agents is covered in the masterclass chapter [AI agents in manufacturing](../../masterclass/ai-salesforce/ai-agents-in-manufacturing/), and drawing the line between ERP, configurator and agent is part of my [architecture work](../../services/salesforce-architecture/).
 
-AI quotes for dealers pay off once catalogue, prices and rules are clean enough that your sales desk would sign the quote unchanged. If you want to check whether your quoting data is ready, [send me a message](#contact).
+AI quotes for dealers pay off once catalogue, prices and rules are clean enough that your sales desk would sign the quote unchanged.

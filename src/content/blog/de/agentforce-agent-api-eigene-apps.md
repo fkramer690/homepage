@@ -35,11 +35,16 @@ draft: false
 
 Salesforce beschreibt die [Agent API](https://developer.salesforce.com/docs/einstein/genai/guide/agent-api.html) als Zugang zu Agentforce-Agenten „from anywhere that can call a REST API“. Als Einsatzfälle nennt Salesforce Websites, Headless-Agenten ohne Oberfläche und Agenten, die andere Agenten aufrufen. Für einen Maschinenbauer heißt das: Händler-App, Maschinenportal oder die App eines Servicepartners können denselben Agenten nutzen wie Ihr Service-Team in Salesforce.
 
-Die [Einrichtung](https://developer.salesforce.com/docs/ai/agentforce/guide/agent-api-get-started.html) ist kurz:
+Die Einrichtung ist kurz: eine External Client App, ein Run-As-User und ein Token, danach Session starten, Nachrichten senden, Session beenden.
 
+```vertiefung Für Entwickler
+titel: Was die Einrichtungsanleitung im Detail verlangt
 - Eine External Client App mit den OAuth-Scopes `api`, `refresh_token`, `offline_access`, `chatbot_api` und `sfap_api`, dem Client Credentials Flow und JWT-basierten Access Tokens.
 - Ein Run-As-User mit mindestens API-Only-Zugriff.
 - Ein Token von Ihrer My Domain, danach Aufrufe an `api.salesforce.com/einstein/ai-agent/v1`: Session für eine Agenten-ID starten, Nachrichten senden, Session mit `DELETE` beenden.
+
+Quelle: [Agent API Get Started](https://developer.salesforce.com/docs/ai/agentforce/guide/agent-api-get-started.html)
+```
 
 Nachrichten laufen synchron oder als [Server-Sent-Event-Stream](https://developer.salesforce.com/docs/ai/agentforce/guide/agent-api-examples.html) in Textstücken. Ein Ereignis betrifft Ihr App-Team direkt: Bei `ValidationFailureChunk` muss der Client bereits angezeigte Textstücke wieder entfernen. Ein Händler sieht also unter Umständen Text erscheinen und verschwinden, die Oberfläche braucht dafür eine Lösung.
 
@@ -90,7 +95,13 @@ Den Test, auf dem ich vor dem Go-live bestehen würde: Händler A fragt in zwanz
 
 Die Considerations-Seite sagt, dass Agent-API-Nutzung den Credit-Verbrauch beeinflusst, und verweist auf einen Salesforce-Hilfeartikel zu Nutzung und Abrechnung generativer KI, der sich bei mir nicht laden ließ. Ich rechne deshalb mit dem Aktionssatz oben; in der Sandbox kostet eine Aktion 16 statt 20 Credits.
 
-Offen ist der Zähler für Headless Platform Interactions. Die Rate Card führt ihn mit „TBA“. Laut [Salesforce Ben](https://www.salesforceben.com/salesforce-will-charge-flex-credits-for-agentic-mcp-and-api-calls/) zählt künftig jeder erfolgreiche Aufruf eines registrierten Agenten über MCP oder als agentisch eingestuften API-Verkehr, mit 30 Tagen Vorlauf vor Beginn der Abrechnung. Keine der beiden Quellen sagt, ob ein Agent-API-Aufruf aus Ihrer Händler-App zusätzlich zu den Aktionen des Agenten zählt. Diese Antwort würde ich mir vom Account Executive schriftlich geben lassen. Wie man einen Zähler ohne Preis budgetiert, steht in [MCP-Zugriffe als Budgetrisiko](../mcp-zugriffe-salesforce-budgetrisiko/).
+Offen ist der Zähler für Headless Platform Interactions. Die Rate Card führt ihn mit „TBA“. Laut [Salesforce Ben](https://www.salesforceben.com/salesforce-will-charge-flex-credits-for-agentic-mcp-and-api-calls/) zählt künftig jeder erfolgreiche Aufruf eines registrierten Agenten über MCP oder als agentisch eingestuften API-Verkehr, mit 30 Tagen Vorlauf vor Beginn der Abrechnung.
+
+```hinweis offen
+Keine der beiden Quellen sagt, ob ein Agent-API-Aufruf aus Ihrer Händler-App zusätzlich zu den Aktionen des Agenten als Headless Platform Interaction zählt. Diese Antwort würde ich mir vom Account Executive schriftlich geben lassen.
+```
+
+Wie man einen Zähler ohne Preis budgetiert, steht in [MCP-Zugriffe als Budgetrisiko](../mcp-zugriffe-salesforce-budgetrisiko/).
 
 ## Wo sollten Sie anfangen?
 
@@ -103,4 +114,4 @@ Offen ist der Zähler für Headless Platform Interactions. Die Rate Card führt 
 
 Schnittstellen- und Identitätsdesign ist der Kern meiner Arbeit an [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/); alle Schnittstellen im Vergleich zeigt das Masterclass-Kapitel [MCP und Schnittstellen](../../masterclass/ki-salesforce/mcp-und-schnittstellen/).
 
-Die Agent API bringt einen Agenten schnell in Ihre eigenen Apps, aber die Grenze zwischen Händlern liegt dann in Ihrem Code, also entwerfen Sie sie vor dem ersten Bildschirm. Wenn Sie eine zweite Meinung zu Ihrem Identitätskonzept möchten, [schreiben Sie mir](#contact).
+Die Agent API bringt einen Agenten schnell in Ihre eigenen Apps, aber die Grenze zwischen Händlern liegt dann in Ihrem Code, also entwerfen Sie sie vor dem ersten Bildschirm.

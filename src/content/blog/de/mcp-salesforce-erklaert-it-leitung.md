@@ -52,6 +52,14 @@ Für die IT-Leitung reichen drei Richtungen:
 2. **Agentforce zu fremden Tools.** Agentforce arbeitet als MCP-Client. Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/mcp-for-agentforce-quick-look/discover-mcp-for-agentforce) werden externe Server in der Agentforce Registry registriert, MuleSoft- und Salesforce-Server im API Catalog, und der Admin wählt die Tools, die ein Agent nutzen darf. Salesforce hat den Client [als Pilot für Juli 2025 angekündigt](https://developer.salesforce.com/blogs/2025/06/introducing-mcp-support-across-salesforce); eine aktuelle Statusangabe habe ich nicht gefunden, prüfen Sie die Verfügbarkeit in Ihrer Org.
 3. **Coding-Agenten zu Ihrem Projekt.** Die Entwickler Ihres Partners verbinden Claude Code, Cursor oder Agentforce Vibes über lokale Server wie den Salesforce DX MCP Server mit Sandboxes. Was sich dort ändert, steht in [Salesforce DX MCP Server: das Ende](../salesforce-dx-mcp-server-ende/).
 
+```ablauf
+sf: Salesforce-Org, Agentforce, Sandbox
+ext: Externe KI-Clients, Fremde MCP-Server, Coding-Agenten
+Externe KI-Clients --Hosted MCP--> Salesforce-Org
+Agentforce --als MCP-Client--> Fremde MCP-Server
+Coding-Agenten --lokaler Server--> Sandbox
+```
+
 Die vollständige Schnittstellenübersicht mit Agent API, Models API und dem ERP-Weg über MuleSoft finden Sie in [Kapitel 3 meiner KI-Masterclass](../../masterclass/ki-salesforce/mcp-und-schnittstellen/).
 
 ## Was überlässt das Protokoll Ihnen?
@@ -60,7 +68,9 @@ Die MCP-Spezifikation ist ehrlich, was ihre Grenzen angeht. Im Abschnitt Securit
 
 Die Kontrollen liegen also außerhalb des Protokolls: in der KI-Anwendung (fragt sie vor dem Schreiben nach?), im Server (welche Tools bietet er an?) und in Salesforce (welche Datensätze darf dieser Benutzer sehen?). Den letzten Teil hat Salesforce streng gelöst. Laut [Security Best Practices für Hosted MCP](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/security-best-practices.html) sind die Server standardmäßig deaktiviert, jeder Tool-Aufruf läuft mit den Rechten des Benutzers, der die Verbindung autorisiert hat, und steht unter seinem Namen in den Audit-Daten. Service Accounts und Machine-to-Machine-Flows gibt es nicht.
 
+```hinweis achtung
 Ein Detail ist für Prüfungen wichtig. Laut den [Designprinzipien der Spezifikation](https://modelcontextprotocol.io/specification/2026-07-28/architecture) erhalten Server nur den nötigen Kontext, das vollständige Gespräch bleibt beim Host. Meine Lesart: Salesforce protokolliert, welche Datensätze Claude gelesen hat, nicht die Frage, die der Benutzer eingegeben hat. Wollen Sie nachvollziehen, warum ein Garantiefall geändert wurde, brauchen Sie auch die Logs der KI-Anwendung.
+```
 
 ## Vier Entscheidungen für die IT-Leitung
 
@@ -105,4 +115,4 @@ Hosted MCP Servers sind für eine Person gebaut, die mit einem KI-Werkzeug arbei
 
 Welche Schnittstelle zu welchem Konsumenten passt, unter welcher Identität, gehört zu meiner Arbeit an [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).
 
-MCP macht Salesforce für jedes KI-Werkzeug erreichbar, und Ihre Entscheidungen zu Servern, Benutzern, Daten und Clients bestimmen, ob das Ihrem Service hilft oder Ihre Daten offenlegt. Wenn Sie eine zweite Meinung zu Ihren ersten MCP-Anfragen möchten, [schreiben Sie mir](#contact).
+MCP macht Salesforce für jedes KI-Werkzeug erreichbar, und Ihre Entscheidungen zu Servern, Benutzern, Daten und Clients bestimmen, ob das Ihrem Service hilft oder Ihre Daten offenlegt.

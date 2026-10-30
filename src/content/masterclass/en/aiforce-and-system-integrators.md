@@ -64,6 +64,14 @@ All that is documented is one post. On 9 October 2026 Marc Benioff wrote on X: "
 
 The trigger, on the other hand, can be read in the primary source. [Executive Order 14434](https://www.whitehouse.gov/presidential-actions/2026/09/inaugurating-the-era-of-super-intelligence/) of 29 September 2026 tells US executive departments and agencies to write "Super Intelligence" instead of "Artificial Intelligence" in their own documents. Existing regulations stay as they are, no enforceable rights are created, and private companies are not mentioned. Salesforce did not have to rename anything; it was a voluntary choice. That US federal agencies are Salesforce customers and now have to say "SI" is a plausible motive, but it is my assumption.
 
+```zeitleiste
+2026-04 | Headless 360 at TDX, according to Salesforce Ben
+2026-09-15 | Salesforce launches AIforce at Dreamforce
+2026-09-29 | Executive Order 14434 for US executive agencies
+2026-10-09 | Marc Benioff on X: "AIForce is officially SIForce"
+2026-10-12 | Salesforce Ben finds no official announcement
+```
+
 For your documents I recommend "AIforce (announced by the CEO as SIForce)" until Salesforce confirms the name in writing. Three names in about six months are also a good reason to structure architecture documents by capability rather than by product name.
 
 ## SI as system integrator: what changes in the partner model
@@ -80,7 +88,17 @@ The announcement gives no start date for the new tiers. On 15 April 2026 Salesfo
 
 ### What the new incentives mean for you as a client
 
-The logic has shifted from "licence sold, project billed by the hour" to "agent in production, consumption running". Partly that is good for you. A partner who earns at go-live has less interest in pilots that never reach production. But there is a conflict. Every agent action costs Flex Credits, and Salesforce now rewards your partner for that consumption. An agent that runs three actions instead of one costs you more and costs the partner nothing.
+The logic has shifted from "licence sold, project billed by the hour" to "agent in production, consumption running". Partly that is good for you, but there is a conflict.
+
+```pro-contra
+pro: What works for you
+- A partner who earns at go-live wants agents in production
+- Less interest in pilots that never reach production
+contra: Where the conflict lies
+- Every agent action costs you Flex Credits
+- Salesforce now rewards your partner for that consumption
+- Three actions instead of one cost you more and the partner nothing
+```
 
 On top of that, partners now build with coding agents themselves. That shortens work that used to be billed by the hour. Whether fixed price or outcome-based contracts fit better as a result is the subject of [fixed price vs. time and materials with AI](../../../blog/fixed-price-vs-time-and-materials-ai/). What belongs in the contract when a partner codes with AI, meaning disclosure, data handling, IP, no production access and review, is in [partners using AI coding: contract rules](../../../blog/partners-using-ai-coding-contract-rules/).
 
@@ -88,17 +106,27 @@ On top of that, partners now build with coding agents themselves. That shortens 
 
 Assume a machine builder with Service Cloud, SAP and a dealer portal. It wants an agent that answers dealer questions on order status and delivery dates and asks two partners for offers. All numbers and circumstances are assumptions.
 
-**Offer A** comes from a long-standing partner: time and materials, estimated at 60 person-days. It says nothing about the use of AI tools.
-
-**Offer B** comes from a partner with Agentforce projects in production: a fixed price for the same scope plus a bonus if, after three months, 30 percent of dealer enquiries are answered without a service agent. The team works with Claude Code and the Salesforce plug-in and asks for Hosted MCP access to the production org for testing.
+| | Offer A | Offer B |
+|---|---|---|
+| Partner | long-standing partner | has Agentforce projects in production |
+| Pricing | time and materials, estimated at 60 person-days | fixed price for the same scope plus a bonus if, after three months, 30 percent of dealer enquiries are answered without a service agent |
+| AI tools | The offer says nothing about them. | The team works with Claude Code and the Salesforce plug-in. |
+| Access | not stated | Hosted MCP access to the production org for testing |
 
 From an architect's point of view I would proceed like this:
 
-1. **Ask partner A** whether and which coding agents the team uses. I find it unlikely that a partner uses no AI at all in 2026; either way it belongs openly in the contract.
-2. **Accept B's fixed price, refuse the production access.** Agents work in sandboxes and scratch orgs; releases go through the pipeline.
-3. **Sharpen B's success measure.** The rate only counts if wrong answers are sampled and checked and the cost per answered enquiry stays below an agreed limit.
-4. **Decide who pays for Flex Credits**, in sandbox and production, and agree a monthly cap with an alert.
-5. **Settle ownership**: who runs the agent after go-live, who maintains prompts, tests and the SAP interface? With several partners an [object ownership matrix](../../../blog/salesforce-object-ownership-matrix/) helps.
+```schritte
+Ask partner A
+  Whether and which coding agents the team uses. I find it unlikely that a partner uses no AI at all in 2026; either way it belongs openly in the contract.
+Fixed price yes, production access no
+  Accept B's fixed price, refuse the production access. Agents work in sandboxes and scratch orgs; releases go through the pipeline.
+Sharpen the success measure
+  B's rate only counts if wrong answers are sampled and checked and the cost per answered enquiry stays below an agreed limit.
+Settle Flex Credits
+  Decide who pays for Flex Credits, in sandbox and production, and agree a monthly cap with an alert.
+Settle ownership
+  Who runs the agent after go-live, who maintains prompts, tests and the SAP interface? With several partners an [object ownership matrix](../../../blog/salesforce-object-ownership-matrix/) helps.
+```
 
 After that the two offers can be compared, because AI use, access and consumption are on the table. Price, references and team then decide which partner fits better.
 
@@ -112,4 +140,4 @@ After that the two offers can be compared, because AI use, access and consumptio
 
 These points are part of my work in [partner governance](../../../services/partner-governance/). Which tool fits which purpose is the subject of the next chapter, the [decision matrix](../ai-tool-decision-matrix/); how teams organise themselves around AI is covered in [chapter 9](../teamwork-and-delivery/). All chapters are listed on the [masterclass overview](../).
 
-AIforce changes where your people work with Salesforce, the new partner model changes what your partner earns on, and both should be visible in your contract. If you want a second opinion on a partner offer with an AI component, [send me a message](#contact).
+AIforce changes where your people work with Salesforce, the new partner model changes what your partner earns on, and both should be visible in your contract.

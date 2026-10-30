@@ -35,8 +35,19 @@ An anonymised example ("a global manufacturer of heating systems …"). This is 
 ## How to decide
 
 Criteria, questions or a short checklist. Headings as statements or questions, so skimming shows the argument.
+
+```pro-contra
+pro: Option A
+- First argument for it
+- Second argument for it
+contra: What you give up
+- First argument against it
+- Second argument against it
+```
+
+Use at least one content block or table (two kinds over 1,300 words), chosen by content: see docs/content-blocks.md for all eight (hinweis, praxis, kennzahlen, zeitleiste, ablauf, pro-contra, vertiefung, schritte).
 Link related topics, e.g. [partner steering](../../#services) or [references](../../#references).
 
 ## Where should you start?
 
-Concrete first steps. One-sentence conclusion and an invitation: [send me a message](#contact).
+Concrete first steps and a one-sentence conclusion. No invitation to get in touch: the contact section follows directly below the article.

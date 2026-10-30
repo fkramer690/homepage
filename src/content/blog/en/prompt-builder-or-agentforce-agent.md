@@ -77,7 +77,11 @@ The dollar values use the $500 per 100,000 credits from the [Flex Credits announ
 
 A 5,000-token case summary on a Standard model is three prompts, 12 credits. On an Advanced model the same summary costs 48 credits, more than two agent actions. What makes a template cheap is the model tier you choose.
 
-The help article says nothing about whether a prompt template called as an agent action counts as one action plus its prompts. I budget both until the pilot shows the actual consumption. All other meters are in [Flex Credits per action](../flex-credits-agentforce-cost-per-action/).
+```hinweis offen
+The help article says nothing about whether a prompt template called as an agent action counts as one action plus its prompts. I budget both until the pilot shows the actual consumption.
+```
+
+All other meters are in [Flex Credits per action](../flex-credits-agentforce-cost-per-action/).
 
 ## A typical scenario: templates first, then the dealer agent
 
@@ -107,11 +111,17 @@ A Flex template also works outside Salesforce. [Hosted MCP servers](https://deve
 
 ## Where should you start?
 
-1. **List the text tasks** in service and sales with volume and reader.
-2. **Build templates** for the tasks where a person reads the text. Start on a Standard model and switch only if tests show a quality gap.
-3. **Measure how much people edit.** If the reps send most drafts unchanged, that is the argument for the next step.
-4. **Add an agent** only where nobody should have to read first, where the path varies or where something must be written. Reuse the tested template as the agent's reference action.
+```schritte
+List the text tasks
+  In service and sales, with volume and reader.
+Build templates
+  For the tasks where a person reads the text. Start on a Standard model and switch only if tests show a quality gap.
+Measure the editing
+  If the reps send most drafts unchanged, that is the argument for the next step.
+Add an agent
+  Only where nobody should have to read first, where the path varies or where something must be written. Reuse the tested template as the agent's reference action.
+```
 
 Which tool fits which job across the Salesforce platform is in the masterclass chapter on [Salesforce AI development tools](../../masterclass/ai-salesforce/salesforce-ai-development-tools/), and this kind of decision is part of my [Salesforce architecture work](../../services/salesforce-architecture/).
 
-For the four text tasks above a template does the job, and an agent earns its higher price only where it answers or acts without a person in between. If you want a second opinion on which of your use cases needs which, [send me a message](#contact).
+For the four text tasks above a template does the job, and an agent earns its higher price only where it answers or acts without a person in between.

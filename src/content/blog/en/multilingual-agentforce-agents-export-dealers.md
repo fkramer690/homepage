@@ -36,7 +36,11 @@ The [considerations page for Agentforce Service Agent](https://help.salesforce.c
 
 The label matters. Salesforce's [guide to multi-language support](https://www.salesforce.com/blog/multi-language-guide/) says that for beta languages customers "are responsible for quality assurance", while GA "means Salesforce has verified the quality of responses across Agentforce". For an exporter: dealers in Czechia are covered, dealers next door in Slovakia are a beta case you test yourself.
 
-Voice has a shorter list. The [Agentforce Voice product page](https://www.salesforce.com/agentforce/voice/) names English, French, Spanish, Italian, German, Portuguese and Japanese, "and many others" without saying which. The [Dreamforce 2026 announcements](https://www.salesforce.com/blog/dreamforce-2026-announcements/) call the French variant "Canadian French", and a [help article](https://help.salesforce.com/s/articleView?language=en_US&id=ai.agentforce_voice.htm&type=5) still says "supported only in English". Get French for France confirmed in writing before you plan a voice line for French dealers, and do the same for Polish or Czech, which the page does not name. The hotline design is in [breakdown hotline with Agentforce Voice](../breakdown-hotline-agentforce-voice/).
+Voice has a shorter list. The [Agentforce Voice product page](https://www.salesforce.com/agentforce/voice/) names English, French, Spanish, Italian, German, Portuguese and Japanese, "and many others" without saying which. The [Dreamforce 2026 announcements](https://www.salesforce.com/blog/dreamforce-2026-announcements/) call the French variant "Canadian French", and a [help article](https://help.salesforce.com/s/articleView?language=en_US&id=ai.agentforce_voice.htm&type=5) still says "supported only in English". The hotline design is in [breakdown hotline with Agentforce Voice](../breakdown-hotline-agentforce-voice/).
+
+```hinweis offen
+Get French for France confirmed before you plan a voice line for French dealers, and do the same for Polish or Czech, which the product page does not name.
+```
 
 ## How does the agent pick its language?
 
@@ -48,11 +52,15 @@ Two consequences for a dealer portal. First, the session language filters knowle
 
 ## What does runtime translation cost?
 
-The [Flex Credits rate card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) of 31 August 2026 lists three language meters. At the [list price of $500 per 100,000 credits](https://www.salesforce.com/agentforce/pricing/):
+The [Flex Credits rate card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) of 31 August 2026 lists three language meters, here converted at the [list price of $500 per 100,000 credits](https://www.salesforce.com/agentforce/pricing/). The Translation meter also runs in a sandbox.
 
-- **Translation:** 4,000 credits per million characters, also in a sandbox: $20.
-- **Text to Speech:** 6,000 credits per million characters: $30.
-- **Speech to Text:** 150 credits per hour of transcription: $0.75.
+```kennzahlen
+4,000 credits | Translation per million characters, about $20
+6,000 credits | Text to Speech per million characters, about $30
+150 credits | Speech to Text per hour of transcription, about $0.75
+source: Salesforce Flex Credits rate card of 31 August 2026,
+  list price from the Agentforce pricing page
+```
 
 A chat of 2,500 translated characters costs 10 credits, $0.05. Three actions cost 60.
 
@@ -63,7 +71,6 @@ For human reps, [Real-Time Translations](https://help.salesforce.com/s/articleVi
 ## Why do prompts in other languages use more tokens?
 
 A token is the unit a language model reads and writes, often part of a word. OpenAI's [help center](https://help.openai.com/en/articles/4936856-understanding-and-counting-tokens) gives the rule of thumb "1 token is approximately 4 characters" and notes that "other languages can have different relationships between characters, words, and tokens".
-
 
 In Flex Credits the effect comes in steps. The help article counts prompts "in chunks of 2,000 tokens, rounded up", input and output together: "a prompt with a total of 6,500 input and output tokens will be metered as 4 prompts." Actions are metered per call, whatever the language. A grounded answer of 1,750 tokens in English fits one unit. If the same answer needs a quarter more tokens in another language, an assumed figure, it needs about 2,190 tokens and two units, 8 credits instead of 4 on a Standard model. The method is in [Flex Credits and Agentforce cost per action](../flex-credits-agentforce-cost-per-action/), the basics in the masterclass chapter [costs and tokens](../../masterclass/ai-salesforce/costs-and-tokens/).
 
@@ -114,4 +121,4 @@ Language adds about $112 a month to $1,200 for actions. Indexing manuals in all 
 
 In a country rollout, language becomes a column in the table from [rolling out Manufacturing Cloud globally](../manufacturing-cloud-global-rollout/). Language set and retriever design are part of my [Salesforce architecture](../../services/salesforce-architecture/) work.
 
-A multilingual dealer agent costs little in translation; the money goes into the knowledge and tests you run per language. If you want to plan the language set for your dealer network, [send me a message](#contact).
+A multilingual dealer agent costs little in translation; the money goes into the knowledge and tests you run per language.

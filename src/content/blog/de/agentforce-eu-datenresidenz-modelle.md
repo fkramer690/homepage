@@ -61,8 +61,13 @@ Laut Supported Models leiten geo-aware Modelle die LLM-Anfrage an ein nahes Rech
 Drei Punkte bleiben offen:
 
 - **Welche Modelle geo-aware sind.** Supported Models nennt weder Modelle noch Regionen.
-- **Was bei einem Ausfall passiert.** Für Agentforce Vibes, den Coding-Assistenten, [dokumentiert Salesforce](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-geo-aware-routing.html), dass Anfragen standardmäßig in die USA ausweichen, wenn der regionale Endpunkt nicht erreichbar ist. Die Einstellung „Enable In-Region Model Request Only“ im Einstein Setup setzt Data 360 voraus und liefert stattdessen einen Fehler. Laut derselben Seite wirkt sie derzeit nicht für Modelle von Anthropic und Gemini. Fragen Sie Salesforce, ob sie auch für Ihre Serviceagenten gilt.
+- **Was bei einem Ausfall passiert.** Für Agentforce Vibes, den Coding-Assistenten, [dokumentiert Salesforce](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-geo-aware-routing.html), dass Anfragen standardmäßig in die USA ausweichen, wenn der regionale Endpunkt nicht erreichbar ist. Eine Einstellung im Einstein Setup unterbindet das; fragen Sie Salesforce, ob sie auch für Ihre Serviceagenten gilt.
 - **Schweiz.** Für Schweizer Daten nennt das Unterauftragsverarbeiter-Dokument einen Ausfallpfad über AWS in den USA, relevant für Schweizer Standorte und Händler.
+
+```vertiefung Für Admins
+titel: Was die Einstellung „Enable In-Region Model Request Only“ tut
+Sie liegt im Einstein Setup und setzt Data 360 voraus. Ist der regionale Endpunkt nicht erreichbar, liefert sie einen Fehler, statt die Anfrage in die USA umzuleiten. Laut der Salesforce-Seite zu Agentforce Vibes wirkt sie derzeit nicht für Modelle von Anthropic und Gemini.
+```
 
 In-Region-only hat einen Preis: Bei einem Ausfall liefert der Agent einen Fehler. Beim Auftragsstatus ist das mit Übergabe an einen Menschen vertretbar. Für eine [Störungshotline](../stoerungshotline-agentforce-voice-deutsch/) würde ich es ohne getesteten Fallback zur Disposition nicht akzeptieren.
 
@@ -70,7 +75,11 @@ In-Region-only hat einen Preis: Bei einem Ausfall liefert der Agent einen Fehler
 
 Salesforce hat die Hyperforce EU Operating Zone am 2. März 2023 [gestartet](https://www.salesforce.com/news/press-releases/2023/03/02/hyperforce-eu-operating-zone-news/), damit Kunden ihre Daten in der EU speichern und verarbeiten können, mit Support durch Personal in der EU. Die [Produktseite](https://salesforce.com/platform/data-residence-eu-oz) spricht von Verarbeitung und Speicherung „strictly within the region (EU and Switzerland)“ und von einer ausgewählten, geprüften Menge an Produkten und Funktionen aus Sales Cloud, Service Cloud, Plattform und Industries. Agentforce, Einstein oder Data 360 erwähnen beide Seiten nicht.
 
-Die einzige ausdrückliche Aussage zu KI habe ich in der [FAQ zu Agentforce Vibes](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-faqs.html) gefunden: „Agentforce Vibes isn’t available in the EU Operating Zone.“ Läuft Ihre Org in der EU Operating Zone, würde ich Agentforce-Agenten dort als unbestätigt behandeln, bis Salesforce den Umfang schriftlich nennt.
+Die einzige ausdrückliche Aussage zu KI habe ich in der [FAQ zu Agentforce Vibes](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-faqs.html) gefunden: „Agentforce Vibes isn’t available in the EU Operating Zone.“
+
+```hinweis offen
+Läuft Ihre Org in der EU Operating Zone, würde ich Agentforce-Agenten dort als unbestätigt behandeln, bis Salesforce den Umfang schriftlich nennt.
+```
 
 Koa, das eigene CRM-Reasoning-Modell von Salesforce, kommt zuerst in die USA. Laut [Investor-Meldung](https://investor.salesforce.com/news/news-details/2026/Announcing-Koa-Salesforces-First-CRM-Reasoning-Model-Built-on-NVIDIA-Nemotron/default.aspx) vom 15. September 2026 steht es ausgewählten Pilotkunden zur Verfügung, die allgemeine Verfügbarkeit wird für Winter 2026 in US-Regionen erwartet. Die Inferenz läuft laut Salesforce vollständig in der eigenen Trust Boundary. Einen EU-Termin gibt es noch nicht.
 
@@ -108,4 +117,4 @@ Fragen Sie Salesforce pro Agent und legen Sie die Antworten in der Architekturdo
 
 Diese Fragen pro Agent zu klären, gehört zu meiner Arbeit in der [Salesforce-Architektur](../../leistungen/salesforce-architektur/); den größeren Überblick über Agenten in der Fertigung gibt [Kapitel 10 der KI-Masterclass](../../masterclass/ki-salesforce/ki-agenten-in-der-fertigung/).
 
-Wo ein Agentforce-Agent Ihre Händlerdaten verarbeitet, hängt vom gewählten Modell ab, und nur eine schriftliche Bestätigung von Salesforce für Ihre Org klärt es. Wenn Sie vor der Freigabe durch Ihren Datenschutz eine zweite Meinung möchten, [schreiben Sie mir](#contact).
+Wo ein Agentforce-Agent Ihre Händlerdaten verarbeitet, hängt vom gewählten Modell ab, und nur eine schriftliche Bestätigung von Salesforce für Ihre Org klärt es.

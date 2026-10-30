@@ -45,7 +45,14 @@ Fowler nennt Wegwerfsoftware und Prototypen als passende Einsätze: „Experienc
 
 Der Nutzen liegt im Gespräch: Fachbereiche korrigieren eine lauffähige Maske schneller als ein Fachkonzept.
 
-Die Umgebungen kosten wenig. Mit der [Ankündigung vom April 2026](https://developer.salesforce.com/blogs/2026/04/new-developer-edition-agentforce-vibes-claude-mcp) hat Salesforce Agentforce Vibes, ein VS Code im Browser und gehostete MCP-Server kostenlos in jede Developer Edition gebracht. Die [Vibes-FAQ](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-faqs.html) begrenzt das auf 110 Anfragen oder 1,5 Mio. Tokens pro Org, für einen Monat ab erster Nutzung, ohne Auffrischung. Teams mit Dev Hub nutzen stattdessen Scratch Orgs: Laut [Salesforce-DX-Handbuch](https://developer.salesforce.com/docs/platform/sfdx-dev/guide/sfdx-dev-scratch-orgs.html) sind sie „source-driven and disposable“, leben standardmäßig 7 und höchstens 30 Tage und starten ohne Daten.
+Die Umgebungen kosten wenig. Mit der [Ankündigung vom April 2026](https://developer.salesforce.com/blogs/2026/04/new-developer-edition-agentforce-vibes-claude-mcp) hat Salesforce Agentforce Vibes, ein VS Code im Browser und gehostete MCP-Server kostenlos in jede Developer Edition gebracht. Die [Vibes-FAQ](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-faqs.html) begrenzt das pro Org, für einen Monat ab erster Nutzung, ohne Auffrischung. Teams mit Dev Hub nutzen stattdessen Scratch Orgs: Laut [Salesforce-DX-Handbuch](https://developer.salesforce.com/docs/platform/sfdx-dev/guide/sfdx-dev-scratch-orgs.html) sind sie „source-driven and disposable“ und starten ohne Daten.
+
+```kennzahlen
+110 | Anfragen an Agentforce Vibes pro Developer Edition, oder 1,5 Mio. Tokens
+7 Tage | Standardlaufzeit einer Scratch Org
+30 Tage | höchste Laufzeit einer Scratch Org
+quelle: Agentforce-Vibes-FAQ und Salesforce-DX-Handbuch, Stand Oktober 2026
+```
 
 ## Regeln für die Prototyp-Org
 
@@ -77,11 +84,18 @@ Fowler ergänzt die Wartbarkeit: Ungeprüfter Code wächst zu Code, der sich sch
 
 Ich behandle den Prototyp als Spezifikation. Aus dem Workshop überleben Masken, Entscheidungen und Abnahmekriterien. Die Produktivumsetzung folgt dann agentic engineering:
 
-1. **Das Ergebnis einfrieren.** Screenshots oder eine kurze Aufzeichnung, die Feldliste, offene Fragen und mit dem Fachbereich formulierte Abnahmekriterien, etwa „ein Händler sieht nur Aufträge zu Maschinen, die über ihn verkauft wurden“.
-2. **Im eigenen Repository starten.** Der Entwickler arbeitet in einer Scratch Org oder Developer Sandbox aus dem Repository des Kunden, mit einer Regeldatei, die Ihre Named Credentials, die API-Version und die Testregeln nennt. Warum diese Datei Ihnen gehört, steht in [die KI-Regeldatei im Salesforce-Repository](../ki-regeldatei-salesforce-repository/).
-3. **Erst planen, dann coden.** Der [Plan Mode](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-workflow-patterns.html) von Agentforce Vibes erstellt Ziele, Nicht-Ziele, Vorgehen und nummerierte Aufgaben, und „No files change until you click Approve Plan.“ Der Entwickler prüft den Plan gegen die Abnahmekriterien, Sharing und Berechtigungen zuerst.
-4. **Sicherheit von Hand konfigurieren.** Dieselbe Salesforce-Anleitung empfiehlt, Permission Sets, Profile, Sharing-Regeln und organisationsweite Standards manuell im Setup anzulegen und jede erzeugte Sicherheitsänderung vor der Übernahme zu prüfen.
-5. **Review und Gates.** Pull Request, menschliches Review, Code Analyzer, Validierungsdeployment mit Apex-Tests. Die Gates beschreibe ich in [Quality Gates für KI-Code](../quality-gates-ki-code-salesforce-pipeline/).
+```schritte
+Das Ergebnis einfrieren
+  Screenshots oder eine kurze Aufzeichnung, die Feldliste, offene Fragen und mit dem Fachbereich formulierte Abnahmekriterien, etwa „ein Händler sieht nur Aufträge zu Maschinen, die über ihn verkauft wurden“.
+Im eigenen Repository starten
+  Der Entwickler arbeitet in einer Scratch Org oder Developer Sandbox aus dem Repository des Kunden, mit einer Regeldatei, die Ihre Named Credentials, die API-Version und die Testregeln nennt. Warum diese Datei Ihnen gehört, steht in [die KI-Regeldatei im Salesforce-Repository](../ki-regeldatei-salesforce-repository/).
+Erst planen, dann coden
+  Der [Plan Mode](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-workflow-patterns.html) von Agentforce Vibes erstellt Ziele, Nicht-Ziele, Vorgehen und nummerierte Aufgaben, und „No files change until you click Approve Plan.“ Der Entwickler prüft den Plan gegen die Abnahmekriterien, Sharing und Berechtigungen zuerst.
+Sicherheit von Hand konfigurieren
+  Dieselbe Salesforce-Anleitung empfiehlt, Permission Sets, Profile, Sharing-Regeln und organisationsweite Standards manuell im Setup anzulegen und jede erzeugte Sicherheitsänderung vor der Übernahme zu prüfen.
+Review und Gates
+  Pull Request, menschliches Review, Code Analyzer, Validierungsdeployment mit Apex-Tests. Die Gates beschreibe ich in [Quality Gates für KI-Code](../quality-gates-ki-code-salesforce-pipeline/).
+```
 
 Eine Ausnahme akzeptiere ich: HTML-Template und CSS einer Mock-up-LWC dürfen mit, wenn sie dasselbe Review bestehen. Apex und Datenzugriff werden immer neu gebaut.
 
@@ -101,4 +115,4 @@ Die Produktivumsetzung startet deshalb im Repository: drei User Stories, jede mi
 4. **Pläne sichtbar machen.** Lassen Sie Ihren Partner den freigegebenen Plan an den Pull Request hängen.
 5. **Die Pipeline selbst besitzen.** Sie für Programme mit mehreren Partnern aufzusetzen, ist der Kern meiner Arbeit in [DevOps und Release-Management](../../leistungen/devops-und-release-management/).
 
-Nutzen Sie Vibe Coding für bessere Anforderungen aus dem Workshop und agentic engineering für Code in Ihrer Org. Wenn Sie diese Übergabe für Ihr Programm aufsetzen möchten, [schreiben Sie mir](#contact).
+Nutzen Sie Vibe Coding für bessere Anforderungen aus dem Workshop und agentic engineering für Code in Ihrer Org.

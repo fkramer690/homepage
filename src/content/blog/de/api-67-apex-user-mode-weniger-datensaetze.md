@@ -40,7 +40,12 @@ Summer '26 kam je nach Instanz zwischen dem 15. Mai und dem 13. Juni 2026 in die
 
 Das Risiko steckt im Wort „versioniert“. Jede Klasse und jeder Trigger speichert seine API-Version in den Metadaten, und das neue Verhalten gilt nur für Code mit 67.0 oder neuer. Eine Klasse mit 62.0 läuft im System Mode weiter, bis jemand die Version anhebt. Eine Nebenwirkung übersieht man leicht: Laut [Sharing-Dokumentation](https://developer.salesforce.com/docs/atlas.en-us.264.0.apexcode.meta/pages/apex_classes_keywords_sharing.htm) läuft eine ältere Klasse ohne Deklaration mit Sharing, sobald irgendeine Klasse in ihrer Vererbungskette mit 67.0 gespeichert ist. Wer eine Basisklasse anhebt, ändert Klassen, die niemand angefasst hat.
 
-Trigger sind die bewusste Ausnahme, und die Quellen von Salesforce beschreiben sie unterschiedlich. Die [Summer-'26-Highlights für Architekten](https://www.salesforce.com/blog/summer-26-release-architect-highlights/) sagen, Trigger „always run in system mode and always will“. Die aufgerufenen Handler-Klassen sind aber betroffen, wenn ihnen eine Deklaration fehlt. Der aktuelle Guide sagt, der Trigger läuft ohne Sharing, im Beispiel für 67.0 läuft eine Abfrage im Trigger-Body ohne Zugriffsmodus aber im User Mode. Einig sind sich beide in der Empfehlung, und der folge ich: Zugriffsmodus in Triggern und Handlern explizit setzen und die Logik in die Handler legen.
+```vertiefung Für Entwickler
+titel: Laufen Trigger ab API 67.0 im User Mode?
+Trigger sind die bewusste Ausnahme, und die Quellen von Salesforce beschreiben sie unterschiedlich. Die [Summer-'26-Highlights für Architekten](https://www.salesforce.com/blog/summer-26-release-architect-highlights/) sagen, Trigger „always run in system mode and always will“. Die aufgerufenen Handler-Klassen sind aber betroffen, wenn ihnen eine Deklaration fehlt. Der aktuelle Guide sagt, der Trigger läuft ohne Sharing, im Beispiel für 67.0 läuft eine Abfrage im Trigger-Body ohne Zugriffsmodus aber im User Mode.
+
+Einig sind sich beide in der Empfehlung, und der folge ich: Zugriffsmodus in Triggern und Handlern explizit setzen und die Logik in die Handler legen.
+```
 
 ## Warum sieht Apex nach dem Versionssprung weniger Datensätze?
 
@@ -50,7 +55,9 @@ Hier wirken zwei Mechanismen, und sie zeigen sich sehr unterschiedlich.
 
 **Berechtigungen scheitern laut.** Im User Mode schlägt eine Abfrage fehl, die ein Feld auswählt, das der Benutzer nicht lesen darf. Die [Dokumentation zum Zugriffsmodus](https://developer.salesforce.com/docs/atlas.en-us.264.0.apexcode.meta/apexref/apex_classes_enforce_usermode.htm) beschreibt `getInaccessibleFields()` an der `QueryException`, die alle betroffenen Felder auflistet, und `getDmlFieldNames()` für DML. Das tut im Abnahmetest weh, aber wenigstens merkt es jemand.
 
-Dieselbe Seite klärt ein Detail, das für jede Migration zählt: Eine Datenbankoperation im User Mode „always respects the user's sharing rules“. Mit 67.0 reicht `without sharing` an der Klasse für eine Abfrage ohne Zugriffsmodus also nicht mehr. Wer das alte Verhalten bewusst behalten will, braucht beides, das Schlüsselwort an der Klasse und `WITH SYSTEM_MODE`.
+```hinweis achtung
+Eine Datenbankoperation im User Mode „always respects the user's sharing rules“, so dieselbe Seite. Mit 67.0 reicht `without sharing` an der Klasse für eine Abfrage ohne Zugriffsmodus also nicht mehr. Wer das alte Verhalten bewusst behalten will, braucht beides, das Schlüsselwort an der Klasse und `WITH SYSTEM_MODE`.
+```
 
 Für einen Hersteller zählt weniger der Code als die Frage, wer ihn ausführt:
 
@@ -107,4 +114,4 @@ public without sharing class SapOrderSyncSelector {
 
 Einen solchen Umstieg über mehrere Partner hinweg zu planen, gehört zu meiner Arbeit in [DevOps und Release-Management](../../leistungen/devops-und-release-management/).
 
-API 67.0 macht Apex standardmäßig sicherer, der Preis ist, dass jeder Versionssprung zu einer Änderung des Datenzugriffs wird, die einen eigenen Test verdient. Wenn Sie eine zweite Meinung möchten, wie Sie den Umstieg für Ihre Org planen, [schreiben Sie mir](#contact).
+API 67.0 macht Apex standardmäßig sicherer, der Preis ist, dass jeder Versionssprung zu einer Änderung des Datenzugriffs wird, die einen eigenen Test verdient.

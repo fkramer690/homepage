@@ -43,7 +43,7 @@ This leads to a requirement that often surfaces late: the rules on which combina
 
 ## Custom approach or standard product?
 
-For quoting there are three routes today: Revenue Cloud Advanced from Salesforce, a partner product, or a custom approach on the platform. Salesforce CPQ is no longer an option for new customers. According to [Salesforce](https://www.salesforce.com/sales/cpq/end-of-life/), CPQ is no longer sold to new customers, while existing customers can still buy users, renew and get support. New features go into Revenue Cloud Advanced, and there is no forced migration.
+For quoting there are three routes today: Revenue Cloud Advanced from Salesforce, a partner product, or a custom approach on the platform. Salesforce CPQ is no longer an option for new customers. According to [Salesforce](https://www.salesforce.com/sales/cpq/end-of-life/), CPQ is no longer sold to new customers, while existing customers can still buy users, renew and get support. New features go into Revenue Cloud Advanced, and there is no forced migration. What applies today is in [Salesforce CPQ end of sale](../salesforce-cpq-end-of-sale-status/), how to plan the move in [chapter 5 of the Revenue Cloud masterclass](../../masterclass/revenue-cloud/from-cpq-to-revenue-cloud/).
 
 In the project we took a custom CPQ approach. Whether that would be the right choice again today depends on the same questions I ask in every make-or-buy decision:
 
@@ -55,7 +55,7 @@ How I calculate such cases is described under [make-or-buy and licence forecasts
 
 ## When does a configuration become a product?
 
-A sales agreement plans quantities per product. According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/sales-agreements-forecasting-manufacturing-cloud/create-sales-agreement), it belongs to an account and a price book, and for each product you enter a total quantity that Salesforce spreads across the periods. The actuals that later come from the ERP are matched to a product as well.
+A sales agreement plans quantities per product. According to the [object reference](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_salesagreement.htm), it belongs to an account and a price book, and for each product you enter a total quantity that Salesforce spreads across the periods. The actuals that later come from the ERP are matched to a product as well.
 
 So every configured variant that should be planned and measured in a sales agreement needs its own product identity. In Salesforce that is a product record, in the ERP usually a material number. Without a link between the two, actuals land on the wrong product or never reach the agreement.
 
@@ -70,6 +70,15 @@ How actuals then get from the ERP into the sales agreement is covered in [part 3
 ## How does the quote get into the sales agreement?
 
 Salesforce provides a standard route. The [Manufacturing Cloud Connect API](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/connect_resources_sales_agreement.htm) creates a sales agreement from a quote, an opportunity or a custom object. A mapping of type ConvertToSalesAgreement defines which fields carry over. Fields the mapping does not cover can be filled with default values in the call. That also works with a custom CPQ approach, because the quote may be a custom object.
+
+```ablauf
+sf: Configurator, Quote, Sales agreement
+erp: Material number, Actuals
+Configurator --> Quote
+Configurator ..new variant..> Material number
+Quote --Connect API--> Sales agreement
+Actuals --per product--> Sales agreement
+```
 
 In terms of content, the mapping has to cover these points:
 
@@ -102,4 +111,4 @@ Before the configurator is built or a product is chosen, settle four points:
 3. **Which fields move into the agreement?** The mapping from the table above, including term and account level.
 4. **Where is the price approved?** One place, documented in the decision log of the [Salesforce architecture](../../services/salesforce-architecture/).
 
-A sales agreement is only as clean as the products the configurator feeds into it. If you are weighing a custom configurator against a standard product, [send me a message](#contact).
+A sales agreement is only as clean as the products the configurator feeds into it.

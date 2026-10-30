@@ -64,7 +64,9 @@ Salesforce states that context assembly applies existing Salesforce and Data 360
 
 This is the right principle. It also means that agents inherit every weakness of the existing permission model. If sharing rules are too broad today, an agent will see too much tomorrow. If sensitive fields are not classified, they cannot be masked. Before an agent project, the permission model deserves the same attention as the agent design.
 
+```hinweis offen
 The memory function raises a further question for European companies: how are stored memories handled when a customer asks for deletion or information under GDPR? Salesforce states that every memory is traceable to its source. That is a good starting point, but the process for deletion and retention should be defined before memories are switched on.
+```
 
 ## What should companies prepare now?
 
@@ -82,4 +84,4 @@ I describe why these foundations matter more than the agent itself in [Agentforc
 
 The Agent Context Engine is a sign of where Salesforce is heading: Data 360 as the shared foundation for data, context and governance, with agents from different platforms on top. For a client-side architect, that raises the usual questions: how much depends on one vendor, which data really needs to flow into Data 360, what it costs at scale, and who owns definitions and permissions.
 
-These are decisions for the client, not for a single implementation partner, and they belong in the target architecture before the first productive agent. That is a core part of my [architecture and governance work](../../services/salesforce-architecture/). If you want to discuss what the Agent Context Engine means for your AI plans, [send me a message](#contact).
+These are decisions for the client, not for a single implementation partner, and they belong in the target architecture before the first productive agent. That is a core part of my [architecture and governance work](../../services/salesforce-architecture/).

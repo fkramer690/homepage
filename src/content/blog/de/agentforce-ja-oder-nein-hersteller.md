@@ -52,7 +52,20 @@ In der Fertigung stehen die Antworten meist im ERP: Auftragsstatus, Bestand, Pre
 
 ### 4. Passt das Kostenmodell?
 
-Agentforce wird pro Aktion abgerechnet. Laut [Flex Credits Rate Card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) kostet eine Standard- oder Custom-Aktion in Produktion 20 Credits, in einer Sandbox 16, eine Sprachaktion 30. Flex Credits kosten [500 € je 100.000](https://www.salesforce.com/eu/agentforce/pricing/), eine Aktion also 0,10 €. Nicht genutzte Credits verfallen zum Ende der Bestellung. Zwei Posten sind noch offen. Der Satz für Headless Platform Interactions, den Zähler für agentische API- und MCP-Aufrufe, steht dort als „TBA“. Und Data 360 berechnet 150 Credits pro MB für unstrukturierte Dokumente wie Handbücher und Ersatzteilkataloge. Wie Sie das pro Aktion schätzen, beschreibe ich in [Flex Credits: Agentforce-Kosten pro Aktion](../flex-credits-agentforce-kosten-pro-aktion/).
+Agentforce wird pro Aktion abgerechnet. Die Sätze stehen in der [Flex Credits Rate Card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf), Flex Credits kosten [500 € je 100.000](https://www.salesforce.com/eu/agentforce/pricing/). Eine Sprachaktion kostet 30 Credits. Nicht genutzte Credits verfallen zum Ende der Bestellung.
+
+```kennzahlen
+20 | Flex Credits pro Standard- oder Custom-Aktion in Produktion
+16 | Flex Credits pro Aktion in einer Sandbox
+0,10 € | pro Aktion zum Listenpreis
+quelle: Salesforce Flex Credits Rate Card (Stand 31.08.2026) und Agentforce-Preisseite
+```
+
+```hinweis offen
+Der Satz für Headless Platform Interactions, den Zähler für agentische API- und MCP-Aufrufe, steht in der Rate Card noch als „TBA“.
+```
+
+Data 360 berechnet außerdem 150 Credits pro MB für unstrukturierte Dokumente wie Handbücher und Ersatzteilkataloge. Wie Sie das pro Aktion schätzen, beschreibe ich in [Flex Credits: Agentforce-Kosten pro Aktion](../flex-credits-agentforce-kosten-pro-aktion/).
 
 ### 5. Auf welcher Edition sind Sie?
 
@@ -86,11 +99,19 @@ Diese Fragen gehören zu meiner Arbeit in [Make-or-buy und Lizenzprognosen](../.
 
 Gartner [erwartet](https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027), dass mehr als 40 Prozent der Projekte mit KI-Agenten bis Ende 2027 abgebrochen werden, wegen steigender Kosten, unklarem Nutzen und unzureichender Risikokontrollen. Diese Schritte setzen an allen drei Punkten an:
 
-1. **Einen Prozess wählen**, der die fünf Kriterien besteht, und eine Zielzahl festhalten, etwa den Anteil der Händleranfragen, die ohne Servicemitarbeitende beantwortet werden.
-2. **Den Ist-Zustand messen**: Volumen, Bearbeitungszeit, Fehlerquote.
-3. **Den Vertrag prüfen**: Edition, enthaltene Flex Credits pro Org und Jahr, wie viele davon schon andere Agenten verbrauchen und wann die Bestellung endet.
-4. **Die vollen Kosten budgetieren**: Aktionen in Produktion, Sandbox-Tests mit 16 Credits pro Aktion, Prompts, Data 360 für Dokumente und die Integrationsarbeit.
-5. **Regeln in Logik gießen** und dem Modell nur Sprache und Absicht überlassen.
-6. **Einen Entscheidungstermin vereinbaren**, bevor der Pilot startet, zum Beispiel nach acht Wochen gegen die Zielzahl.
+```schritte
+Prozess wählen
+  Einen Prozess, der die fünf Kriterien besteht, und eine Zielzahl, etwa den Anteil der Händleranfragen, die ohne Servicemitarbeitende beantwortet werden.
+Ist-Zustand messen
+  Volumen, Bearbeitungszeit, Fehlerquote.
+Vertrag prüfen
+  Edition, enthaltene Flex Credits pro Org und Jahr, wie viele davon schon andere Agenten verbrauchen und wann die Bestellung endet.
+Volle Kosten budgetieren
+  Aktionen in Produktion, Sandbox-Tests mit 16 Credits pro Aktion, Prompts, Data 360 für Dokumente und die Integrationsarbeit.
+Regeln in Logik gießen
+  Dem Modell nur Sprache und Absicht überlassen.
+Entscheidungstermin vereinbaren
+  Bevor der Pilot startet, zum Beispiel nach acht Wochen gegen die Zielzahl.
+```
 
-Starten Sie mit Agentforce dort, wo Volumen, Daten und ERP-Zugriff stimmen, und nutzen Sie die Zeit anderswo, um dorthin zu kommen. Wenn Sie eine zweite Meinung möchten, welcher Ihrer Prozesse bereit ist, [schreiben Sie mir](#contact).
+Starten Sie mit Agentforce dort, wo Volumen, Daten und ERP-Zugriff stimmen, und nutzen Sie die Zeit anderswo, um dorthin zu kommen.

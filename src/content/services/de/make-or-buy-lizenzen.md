@@ -1,5 +1,6 @@
 ---
 title: "Salesforce Make-or-buy und Lizenzprognosen"
+headline: "Salesforce-Lizenzen prüfen, bevor Sie unterschreiben"
 description: "Industry Cloud, Eigenentwicklung oder anderes Tool? Make-or-buy-Entscheidungen und Salesforce-Lizenzprognosen auf Basis eines langfristigen ROI mit Wartung."
 lang: de
 slug: make-or-buy-lizenzen
@@ -25,12 +26,16 @@ results:
   - "Weniger Tools und Produkte, die gekauft und nie genutzt wurden"
 phases:
   - title: "Anforderungen und Optionen"
+    icon: "analyse"
     text: "Ich halte fest, was der Fachbereich braucht und welche Optionen es gibt: Standardprodukt, Industry Cloud, Eigenentwicklung auf der Plattform oder ein separates Tool."
   - title: "ROI-Case"
+    icon: "budget"
     text: "Für jede Option rechne ich Kosten und Nutzen über mehrere Jahre, inklusive Lizenzen, Umsetzung, Wartung, Upgrades und dem Aufwand, später umzusteuern."
   - title: "Lizenzprognose"
+    icon: "license"
     text: "Ich gruppiere Nutzer danach, was sie im System tun, und ordne sie Lizenztypen zu. Das Ergebnis ist eine Prognose, die sich mit dem Angebot des Herstellers vergleichen lässt."
   - title: "Entscheidung und Verhandlung"
+    icon: "contract"
     text: "Die Empfehlung geht mit Begründung an die Entscheider. Führt sie zu einem Salesforce-Angebot, helfe ich bei der Vorbereitung der Verhandlung."
 faq:
   - q: "Wann ist eine eigene Lösung besser als eine Salesforce Industry Cloud?"
@@ -48,25 +53,38 @@ Make-or-buy bei Salesforce heißt, für jede Anforderung zu entscheiden, ob sie 
 
 ## Wann lohnt sich eine Industry Cloud?
 
-Industry Clouds bringen Datenmodelle und Prozesse für eine bestimmte Branche mit. Sie lohnen sich, wenn diese Prozesse dazu passen, wie das Unternehmen arbeitet. Passen sie nicht, zahlt das Unternehmen für Funktionen, die es nicht nutzt, und baut um die herum, die nicht passen. In einem Fertigungsprojekt waren Sales Agreements, eine Kernfunktion der Manufacturing Cloud, für das Geschäft nicht relevant. Eine eigene Lösung auf der Kernplattform war günstiger und einfacher zu warten.
+Industry Clouds bringen Datenmodelle und Prozesse für eine bestimmte Branche mit. Ob sich das rechnet, hängt davon ab, wie gut diese Prozesse dazu passen, wie das Unternehmen arbeitet:
+
+```pro-contra
+pro: Lohnt sich, wenn
+- Die Prozesse der Industry Cloud dazu passen, wie das Unternehmen arbeitet.
+- Das Unternehmen die mitgelieferten Datenmodelle und Prozesse nutzt.
+contra: Wird teuer, wenn
+- Das Unternehmen für Funktionen zahlt, die es nicht nutzt.
+- Um die Funktionen herumgebaut wird, die nicht passen.
+```
+
+```praxis
+In einem Fertigungsprojekt waren Sales Agreements, eine Kernfunktion der Manufacturing Cloud, für das Geschäft nicht relevant. Eine eigene Lösung auf der Kernplattform war günstiger und einfacher zu warten.
+```
 
 Dieselbe Logik gilt über Salesforce-Produkte hinaus. Dokumentenerstellung, E-Signatur, Telefonie und KI-Anwendungsfälle werfen alle die Frage auf, ob man kauft, baut oder es in einem anderen System lässt. Bei KI ist der wichtigste Faktor der Zustand der Daten, wie ich in [Agentforce: Business Value und Datenqualität zuerst](../../blog/agentforce-business-value-datenqualitaet/) erkläre. Auch Open-Source-Tools verändern die Rechnung, zum Beispiel bei DevOps, wie in [warum Kunden ihre DevOps-Tools selbst besitzen sollten](../../blog/warum-kunden-devops-tools-selbst-besitzen-sollten/) beschrieben.
 
 ## Wie rechne ich den ROI-Case?
 
-Der Preis im ersten Jahr ist die uninteressanteste Zahl. Ich betrachte mehrere Jahre und nehme auf:
-
-- **Lizenzen** für jede Nutzergruppe, mit dem erwarteten Wachstum.
-- **Umsetzung** durch interne Teams und Partner.
-- **Wartung und Upgrades**, inklusive des Aufwands, den eigener Code bei jedem Salesforce-Release verursacht.
-- **Folgekosten**, etwa Add-ons, die später nötig werden, oder der Aufwand für den Wechsel zu einer anderen Option.
+Der Preis im ersten Jahr ist die uninteressanteste Zahl. Ich betrachte mehrere Jahre und nehme Lizenzen, Umsetzung, Wartung und Upgrades sowie Folgekosten auf:
 
 ![Make-or-buy mit vier Optionen pro Anforderung: Standardprodukt, Industry Cloud, Eigenentwicklung auf der Kernplattform oder separates Tool. Der ROI-Case betrachtet mehrere Jahre und nicht den Preis im ersten Jahr und umfasst Lizenzen für jede Nutzergruppe mit dem erwarteten Wachstum, die Umsetzung durch interne Teams und Partner, Wartung und Upgrades inklusive des Aufwands, den eigener Code bei jedem Release verursacht, und Folgekosten wie später nötige Add-ons oder den Aufwand für den Wechsel zu einer anderen Option. Der zweite Hebel ist der Lizenztyp, denn volle Lizenzen werden oft standardmäßig angeboten, auch für Nutzer, die nur lesen oder freigeben.](../../../assets/blog/make-or-buy-roi-de.png)
 
+Make-or-buy-Entscheidungen prägen die Architektur, deshalb geht diese Leistung oft mit [Salesforce-Architektur und Solution Design](../salesforce-architektur/) zusammen.
+
 ## Was sollten Sie über Salesforce-Lizenzen wissen?
 
-Der Listenpreis ist selten das endgültige Angebot. Der Zeitpunkt zählt: Zum Ende des Geschäftsjahres des Herstellers oder bei Aktionen gibt es oft Spielraum, Produkte, die das Unternehmen in den nächsten zwei bis drei Jahren braucht, für wenig Aufpreis aufzunehmen. Dafür braucht es eine Roadmap, die klar genug ist, um zu wissen, wonach man fragen sollte.
+Der Listenpreis ist selten das endgültige Angebot. Zwei Hebel machen den Unterschied:
 
-Der zweite Hebel ist der Lizenztyp. Volle Lizenzen werden oft standardmäßig angeboten, auch für Nutzer, die nur Daten lesen oder Datensätze freigeben. Über eine große Nutzerbasis kann der Unterschied zwischen dem passenden und dem Standard-Lizenzmix leicht sechsstellig pro Jahr sein.
-
-Make-or-buy-Entscheidungen prägen die Architektur, deshalb geht diese Leistung oft mit [Salesforce-Architektur und Solution Design](../salesforce-architektur/) zusammen. Liegt bei Ihnen ein Angebot oder eine Tool-Entscheidung auf dem Tisch, [schreiben Sie mir](#contact).
+```hebel
+Der Lizenztyp | Leicht sechsstellig pro Jahr bei großer Nutzerbasis
+  Volle Lizenzen werden oft standardmäßig angeboten, auch für Nutzer, die nur Daten lesen oder Datensätze freigeben. Ich ordne jeder Nutzergruppe den Lizenztyp zu, den sie für ihre Arbeit braucht.
+Der Zeitpunkt | Produkte für zwei bis drei Jahre für wenig Aufpreis
+  Zum Ende des Geschäftsjahres des Herstellers oder bei Aktionen gibt es oft Spielraum. Dafür braucht es eine Roadmap, die klar genug ist, um zu wissen, wonach man fragen sollte.
+```

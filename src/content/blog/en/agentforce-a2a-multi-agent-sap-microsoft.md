@@ -48,7 +48,13 @@ As of 27 October 2026, the status differs by path, and I would plan with the doc
 - **SAP Joule: inbound only.** SAP's [reference architecture for inbound A2A](https://architecture.learning.sap.com/docs/ref-arch/fe0d1d), updated 26 October 2026, exposes Joule agents to third-party clients through Agent Gateway using A2A 0.3.0, with trust via SAP Cloud Identity Services. Its disclaimer says some components are not yet GA and bidirectional communication with third-party agents through Agent Gateway "is not yet supported".
 - **Microsoft Copilot Studio: client side documented.** The Copilot Studio page does not label the A2A feature as preview or GA. On MuleSoft's bridge list, Copilot Studio as a source agent is "planned", so a Copilot agent cannot yet be made A2A-callable through MuleSoft.
 
-The limits of the A2A Bridge decide which tasks fit. For Agentforce it supports no async tasks, so tasks that exceed the gateway timeout fail. It offers no push notifications and no task subscription, and task state lives in gateway memory, lost on a restart. The [Agent API](https://developer.salesforce.com/docs/ai/agentforce/guide/agent-api-considerations.html) behind it has a 120-second timeout and does not support agents of type "Agentforce (Default)". So cross-vendor A2A today fits a question that gets an answer within seconds. A warranty review that waits days for a technician's report does not fit.
+The limits of the A2A Bridge decide which tasks fit.
+
+```hinweis achtung
+For Agentforce the A2A Bridge supports no async tasks, so tasks that exceed the gateway timeout fail. It offers no push notifications and no task subscription, and task state lives in gateway memory, lost on a restart. The [Agent API](https://developer.salesforce.com/docs/ai/agentforce/guide/agent-api-considerations.html) behind it has a 120-second timeout and does not support agents of type "Agentforce (Default)".
+```
+
+So cross-vendor A2A today fits a question that gets an answer within seconds. A warranty review that waits days for a technician's report does not fit.
 
 ## Which agent should own the dealer or service conversation?
 
@@ -60,6 +66,16 @@ The owner is the agent of the system where the person authenticates and where th
 4. **Who takes over from the agent?** The escalation queue of the service team runs in Salesforce Omni-Channel.
 
 For a manufacturer this gives a clear split. Dealers and service customers talk to Agentforce, and SAP data comes in through an API action, as described in [Agentforce and SAP: order status through MuleSoft](../agentforce-sap-order-status-mulesoft/). Sales reps who work in Teams and Outlook can have Copilot as their front door, with an Agentforce agent behind it for CRM questions. Clerks in credit management or billing work in SAP, and Joule is theirs.
+
+```ablauf
+sf: Portal agent, Agentforce specialist
+erp: SAP S/4HANA
+ext: Dealer, Copilot in Teams, MuleSoft A2A Bridge
+Dealer --Portal chat--> Portal agent
+Portal agent --API action--> SAP S/4HANA
+Copilot in Teams --A2A--> MuleSoft A2A Bridge
+MuleSoft A2A Bridge --Agent API--> Agentforce specialist
+```
 
 I would write this down per audience, the same way an object has one owner. The owner should never be the vendor whose demo was best on the day.
 
@@ -96,4 +112,4 @@ One of three requests goes through A2A. For a first year, I consider that ratio 
 
 Which integration pattern fits which system is part of [Salesforce integration](../../services/salesforce-integration/), and the masterclass chapter [MCP and interfaces](../../masterclass/ai-salesforce/mcp-and-interfaces/) maps the protocols.
 
-One agent per audience owns the conversation, and A2A is for the few hops where another agent owns real logic. If you are sorting out which agent should talk to your dealers, [send me a message](#contact).
+One agent per audience owns the conversation, and A2A is for the few hops where another agent owns real logic.

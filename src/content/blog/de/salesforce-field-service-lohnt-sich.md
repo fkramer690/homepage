@@ -54,7 +54,7 @@ Salesforce selbst stützt diese Richtung mit eigener Forschung. In einem [Beitra
 
 Bei wenigen langen Einsätzen ist der Nutzen viel kleiner. Ein Techniker, der eine Anlage über zwei Wochen in Betrieb nimmt, braucht keine Routenoptimierung. Er braucht einen Projektplan, Zugang zu Zeichnungen und eine saubere Dokumentation am Ende.
 
-Typisch dafür sind Inbetriebnahmen, Umbauten oder Revisionen, bei denen ein Team tagelang an einem Ort arbeitet. Der Unterschied zu 16 Terminen am Tag ist groß: Dort zählen Zugang zu Unterlagen, Abstimmung mit dem Kunden und eine vollständige Abnahme mehr als die Frage, welcher Techniker am Nachmittag wo ist.
+Typisch dafür sind Inbetriebnahmen, Umbauten oder Revisionen, bei denen ein Team tagelang an einem Ort arbeitet. Der Unterschied zu 16 Terminen am Tag ist groß: Dort zählen Zugang zu Unterlagen, Abstimmung mit dem Kunden und eine vollständige Abnahme mehr als die Frage, welcher Techniker am Nachmittag wo ist. Wenn Sie solche Einsätze trotzdem in Field Service planen, siehe [mehrtägige Einsätze und Teams](../field-service-mehrtaegige-einsaetze-inbetriebnahme/).
 
 Für solche Fälle gibt es Alternativen, die ich vor einer Field-Service-Lizenz prüfe:
 
@@ -79,7 +79,13 @@ In der Unlimited Edition kosten Dispatcher und Technician laut Fußnote 330 US-D
 
 Ein Rechenbeispiel mit Listenpreisen: 40 Techniker und 4 Disponenten in der Enterprise Edition sind 44 Lizenzen zu 175 €, also 7.700 € pro Monat oder 92.400 € pro Jahr. Dazu kommen Umsetzung, Integration mit dem ERP und Wartung.
 
-Zwei Bedingungen aus dem Kleingedruckten zählen für die Lizenzplanung. Field Service setzt mindestens eine Service-Cloud-Lizenz voraus, und Techniker brauchen mindestens einen Dispatcher, damit die Planung funktioniert. Außerdem dürfen Dispatcher- und Technician-Lizenzen nicht für Contact Center oder Fallbearbeitung genutzt werden. Wer im Innendienst Fälle bearbeitet und zugleich Einsätze plant, braucht Field Service Plus.
+Zwei Bedingungen aus dem Kleingedruckten zählen für die Lizenzplanung. Field Service setzt mindestens eine Service-Cloud-Lizenz voraus, und Techniker brauchen mindestens einen Dispatcher, damit die Planung funktioniert. Die zweite betrifft den Innendienst:
+
+```hinweis achtung
+Dispatcher- und Technician-Lizenzen dürfen nicht für Contact Center oder Fallbearbeitung genutzt werden. Wer im Innendienst Fälle bearbeitet und zugleich Einsätze plant, braucht Field Service Plus.
+```
+
+Welche Rolle welche Lizenz braucht, Subunternehmer eingeschlossen, steht in [Salesforce Field Service Lizenzen: Wer braucht welche?](../field-service-lizenzen-rollen-dispatcher-techniker/) und in [Kapitel 1 der Masterclass Field Service](../../masterclass/field-service/field-service-lohnt-sich-lizenzen/).
 
 ## Woran entscheide ich?
 
@@ -96,6 +102,6 @@ Danach kommt die Frage nach den Daten. Field Service plant nur so gut, wie Anlag
 
 ## Wo sollten Sie anfangen?
 
-Erheben Sie die vier Zahlen für einen Monat und eine Region. Zeigen sie viele kurze Einsätze mit viel Fahrzeit, rechnen Sie den Business Case für Field Service mit Lizenzen, Umsetzung und Wartung über mehrere Jahre. Zeigen sie wenige lange Einsätze, prüfen Sie zuerst, ob Service Cloud, ein Portal oder das ERP die Lücke schließen. Was die mobile App heute für Techniker kann, steht in [Field Service Mobile im Außendienst](../salesforce-field-service-mobile-aussendienst/).
+Erheben Sie die vier Zahlen für einen Monat und eine Region. Zeigen sie viele kurze Einsätze mit viel Fahrzeit, rechnen Sie den Business Case für Field Service mit Lizenzen, Umsetzung und Wartung über mehrere Jahre. Wie die Einführung danach Region für Region abläuft, beschreibe ich in [Salesforce Field Service Einführung: Warum in Wellen?](../salesforce-field-service-einfuehrung/). Zeigen sie wenige lange Einsätze, prüfen Sie zuerst, ob Service Cloud, ein Portal oder das ERP die Lücke schließen. Was die mobile App heute für Techniker kann, steht in [Field Service Mobile im Außendienst](../salesforce-field-service-mobile-aussendienst/).
 
-Field Service lohnt sich, wenn Ihr Außendienst viele kurze Termine fährt, und selten, wenn er lange Projekte betreut. Wenn Sie vor dieser Entscheidung stehen und eine unabhängige Einschätzung möchten, [schreiben Sie mir](#contact).
+Field Service lohnt sich, wenn Ihr Außendienst viele kurze Termine fährt, und selten, wenn er lange Projekte betreut.

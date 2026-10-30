@@ -39,7 +39,9 @@ Unternehmen experimentieren und stellen ein, aber der produktive Einsatz hinkt h
 
 ## Was habe ich aus meinem ersten Piloten gelernt?
 
+```praxis
 Der erste Agentforce-Pilot, an dem ich beteiligt war, kam schlicht zu früh. Die Plattform war jung und für unser Vorhaben noch nicht reif genug. Das ist ein normales Risiko bei neuer Technik, und es hat mich gelehrt, genauer auf die Bedingungen rund um einen Agenten zu schauen als auf den Agenten selbst.
+```
 
 Drei Bedingungen müssen erfüllt sein, bevor ein Pilot startet:
 
@@ -82,12 +84,20 @@ Daten aufräumen ist keine glanzvolle Arbeit, und man schiebt sie leicht auf „
 
 Aus dem, was ich gelernt habe, funktioniert diese Reihenfolge:
 
-1. **Einen engen, häufigen Prozess wählen** mit klaren Regeln und guter Dokumentation. Servicefragen aus gepflegten Wissensartikeln oder Fallzusammenfassungen für Servicemitarbeitende sind typische Kandidaten.
-2. **Den Ist-Zustand messen**, bevor irgendetwas gebaut wird.
-3. **Die Daten für genau diesen Prozess aufräumen**, inklusive Wissen, Stammdaten und Berechtigungen.
-4. **Den Agenten mit einem Menschen in der Schleife bauen** für jede folgenreiche Entscheidung, etwa Rabatte, Gutschriften oder Vertragsänderungen. Salesforce bietet inzwischen Freigabeschritte, mit denen ein Agent solche Entscheidungen an eine Person übergibt.
-5. **Mit echten Fällen testen**, auch den unangenehmen, und festlegen, was der Agent nicht tun darf.
-6. **In einem begrenzten Kanal oder einer Region live gehen**, gegen das Ziel messen und erst dann ausweiten.
+```schritte
+Engen Prozess wählen
+  Häufig, mit klaren Regeln und guter Dokumentation. Servicefragen aus gepflegten Wissensartikeln oder Fallzusammenfassungen für Servicemitarbeitende sind typische Kandidaten.
+Ist-Zustand messen
+  Bevor irgendetwas gebaut wird.
+Daten aufräumen
+  Für genau diesen Prozess, inklusive Wissen, Stammdaten und Berechtigungen.
+Mit Mensch in der Schleife bauen
+  Für jede folgenreiche Entscheidung, etwa Rabatte, Gutschriften oder Vertragsänderungen. Salesforce bietet inzwischen Freigabeschritte, mit denen ein Agent solche Entscheidungen an eine Person übergibt.
+Mit echten Fällen testen
+  Auch mit den unangenehmen, und festlegen, was der Agent nicht tun darf.
+Begrenzt live gehen
+  In einem Kanal oder einer Region, gegen das Ziel messen und erst dann ausweiten.
+```
 
 Das ist ganz normale Projektdisziplin, angewendet auf eine neue Art von System. Agenten sollten durch denselben Release-Prozess laufen wie jede andere Änderung, mit Konfiguration im Repository und Deployment über eine Pipeline, wie ich es in [warum DevOps über Salesforce-Großprojekte entscheidet](../warum-devops-salesforce-enterprise-projekte/) beschreibe.
 
@@ -95,4 +105,4 @@ Das ist ganz normale Projektdisziplin, angewendet auf eine neue Art von System. 
 
 Auf Kundenseite ist meine Aufgabe in Agentforce-Projekten, den Fokus auf dem Nutzen zu halten und dafür zu sorgen, dass die Grundlagen tragen: Datenmodell, Schnittstellen, Berechtigungen und Release-Prozess. Partner und Hersteller möchten verständlicherweise zeigen, was die Technik kann. Jemand muss fragen, ob ein bestimmter Agent seine Kosten wert ist und ob die Daten ihn tragen. Das ist ein Kernteil von [Architektur und Partnersteuerung](../../leistungen/salesforce-architektur/).
 
-Agentforce kann echten Nutzen bringen, aber nur dort, wo ein klares fachliches Ziel auf Daten trifft, denen der Agent trauen kann. Wenn Sie ein Agentforce-Projekt planen oder eines aus der Pilotphase holen möchten, [schreiben Sie mir](#contact).
+Agentforce kann echten Nutzen bringen, aber nur dort, wo ein klares fachliches Ziel auf Daten trifft, denen der Agent trauen kann.

@@ -1,0 +1,181 @@
+---
+// "Working with recruiters" in either language; content lives in src/data/recruiters.ts.
+import Page from '../layouts/Page.astro';
+import ExternalMark from './ExternalMark.astro';
+import ContactForm from './ContactForm.astro';
+import Blueprint from './Blueprint.astro';
+import Icon from './Icon.astro';
+import { Image } from 'astro:assets';
+import portrait from '../assets/portrait.png';
+import { en } from '../i18n/en';
+import { de } from '../i18n/de';
+import { contactHref, contactExternal } from '../site';
+import { recruiters, recruiterPaths } from '../data/recruiters';
+import { homeHref, localHref, partnersHref } from '../lib/paths';
+
+interface Props {
+  lang: 'en' | 'de';
+}
+const { lang } = Astro.props;
+const t = lang === 'de' ? de : en;
+const c = recruiters[lang];
+const base = import.meta.env.BASE_URL;
+const alternates = { en: localHref('en', recruiterPaths.en), de: localHref('de', recruiterPaths.de) };
+const url = new URL(alternates[lang], Astro.site).href;
+const abs = (path: string) => new URL(path, Astro.site).href;
+const ctaAttrs = contactExternal ? { target: '_blank', rel: 'noopener' } : {};
+const ogImage = `${base}og/${lang}/recruiters.png`;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'FK Solution Design', item: abs(homeHref(lang)) },
+    { '@type': 'ListItem', position: 2, name: t.partnerPage.title, item: abs(partnersHref(lang)) },
+    { '@type': 'ListItem', position: 3, name: c.title, item: url },
+  ],
+};
+---
+<Page layout="wide" lang={lang} title={c.metaTitle} description={c.description} alternates={alternates} image={ogImage} hasContact>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </Fragment>
+
+  <section class="hero dark grid-bg rc-hero">
+    <Blueprint />
+    <div class="container hero-inner rc-hero-inner">
+      <div>
+        <a class="rc-back mono" href={partnersHref(lang)}>← {c.back}</a>
+        <p class="eyebrow mono">{c.eyebrow}</p>
+        <h1>{c.title}</h1>
+        <p class="hero-lead">{c.lead}</p>
+        <ul class="rc-promises mono">{c.promises.map((p) => <li>{p}</li>)}</ul>
+        <div class="hero-ctas">
+          <a class="btn" href="#contact">{c.ctaPrimary}</a>
+          <a class="btn btn-ghost" href="#deal">{c.ctaSecondary}</a>
+          <a class="btn btn-ghost" href={`${import.meta.env.BASE_URL}downloads/fabian-kramer-cv.pdf`} download>{c.ctaCv}</a>
+        </div>
+      </div>
+      <figure class="rc-portrait">
+        <Image src={portrait} alt={c.portraitAlt} widths={[320, 640]} sizes="(max-width: 880px) 220px, 320px" />
+        <figcaption class="mono">Fabian Kramer · Salesforce Enterprise Architect</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="proof" aria-label={lang === 'de' ? 'Kennzahlen' : 'Key figures'}>
+    <div class="container">
+      <ul class="proof-list rc-facts">
+        {c.facts.map((f) => (
+          <li>
+            <span class="proof-value">{f.value}</span>
+            <span class="proof-label mono">{f.label}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="fit">
+    <div class="container">
+      <p class="label mono">{c.fit.label}</p>
+      <h2>{c.fit.title}</h2>
+      <p class="section-intro">{c.fit.intro}</p>
+      <div class="compare rc-compare">
+        <div class="compare-col compare-with">
+          <h3 class="compare-head mono">{c.fit.yesTitle}</h3>
+          <ul>{c.fit.yes.map((item) => <li>{item}</li>)}</ul>
+        </div>
+        <div class="compare-col">
+          <h3 class="compare-head mono">{c.fit.noTitle}</h3>
+          <ul>{c.fit.no.map((item) => <li>{item}</li>)}</ul>
+          <p class="rc-note">{c.fit.noNote}</p>
+        </div>
+      </div>
+      <div class="focus">
+        <p class="label mono">{c.fit.tagsLabel}</p>
+        <ul class="tags">{c.fit.tags.map((tag) => <li>{tag}</li>)}</ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" id="deal">
+    <div class="container">
+      <p class="label mono">{c.deal.label}</p>
+      <h2>{c.deal.title}</h2>
+      <p class="section-intro">{c.deal.intro}</p>
+      <aside class="rc-fair">
+        <h3>{c.deal.fairTitle}</h3>
+        <p>{c.deal.fair}</p>
+      </aside>
+      <div class="rc-deal">
+        <div class="rc-deal-col rc-give">
+          <h3 class="compare-head mono">{c.deal.giveTitle}</h3>
+          <ul>
+            {c.deal.give.map((p) => (
+              <li><Icon name={p.icon} class="rc-icon" /><div><strong>{p.t}</strong><span>{p.d}</span></div></li>
+            ))}
+          </ul>
+        </div>
+        <div class="rc-deal-swap" aria-hidden="true">
+          <Icon name="swap" />
+        </div>
+        <div class="rc-deal-col">
+          <h3 class="compare-head mono">{c.deal.needTitle}</h3>
+          <ul>
+            {c.deal.need.map((p) => (
+              <li><Icon name={p.icon} class="rc-icon" /><div><strong>{p.t}</strong><span>{p.d}</span></div></li>
+            ))}
+          </ul>
+        </div>
+      </div>
+      <div class="rc-rules" id="rules">
+        <h3>{c.rules.title}</h3>
+        <p>{c.rules.intro}</p>
+        <ul class="rc-rules-list">
+          {c.rules.items.map((r) => <li><strong>{r.t}:</strong> {r.d}</li>)}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section" id="process">
+    <div class="container">
+      <p class="label mono">{c.process.label}</p>
+      <h2>{c.process.title}</h2>
+      <ol class="steps rc-steps">
+        {c.process.steps.map((s, i) => (
+          <li>
+            <Icon name={s.icon} class="rc-icon" />
+            <span class="step-no mono">{String(i + 1).padStart(2, '0')}</span>
+            <h3>{s.t}</h3>
+            <p>{s.d}</p>
+          </li>
+        ))}
+      </ol>
+      <div class="rc-terms">
+        <p class="label mono">{c.process.termsLabel}</p>
+        <div class="rc-terms-grid">
+          {c.process.terms.map((term) => (
+            <div><h3>{term.t}</h3><p>{term.d}</p></div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact dark grid-bg" id="contact">
+    <Blueprint />
+    <div class="container contact-inner">
+      <div class="contact-intro">
+        <p class="label mono">{t.contact.label}</p>
+        <h2>{c.ctaTitle}</h2>
+        <p class="contact-text">{c.ctaText}</p>
+        <a class="btn" href={contactHref(c.formSubject)} {...ctaAttrs}>{t.nav.cta}{contactExternal && <ExternalMark label={t.nav.newTab} />}</a>
+        {contactExternal && <p class="booking-note">{t.contact.bookingNote}</p>}
+      </div>
+      <ContactForm t={t} subject={c.formSubject} />
+    </div>
+  </section>
+</Page>

@@ -29,7 +29,7 @@ Ein weltweiter Rollout der Manufacturing Cloud beginnt mit einer Entscheidung, d
 
 ## Was muss vor dem ersten Land feststehen?
 
-Das Ziel. Ein Rollout, der Prozesse harmonisieren soll, wird anders geplant als einer, der jedem Land ein eigenes CRM geben soll. Bei Herstellern mit Gesellschaften in vielen Ländern geht es meistens um Harmonisierung: gleiche Abläufe im Vertrieb, gleiche Sales Agreements, gleiche Berichte für die Zentrale.
+Das Ziel. Ein Rollout, der Prozesse harmonisieren soll, wird anders geplant als einer, der jedem Land ein eigenes CRM geben soll. Bei Herstellern mit Gesellschaften in vielen Ländern geht es meistens um Harmonisierung: gleiche Abläufe im Vertrieb, gleiche Sales Agreements, gleiche Berichte für die Zentrale. Wie der Rollout mit ERP-Anbindung und KI zusammenhängt, steht in [Kapitel 5 der Masterclass Manufacturing Cloud](../../masterclass/manufacturing-cloud/erp-ki-und-rollout/).
 
 Aus diesem Ziel ergibt sich ein globales Template, also die gemeinsame Konfiguration, die jedes Land übernimmt. Für die Manufacturing Cloud gehören dazu mindestens die Entscheidungen aus den früheren Teilen dieser Serie:
 
@@ -37,7 +37,11 @@ Aus diesem Ziel ergibt sich ein globales Template, also die gemeinsame Konfigura
 - **Die Regel, wann eine Konfiguration ein eigenes Produkt wird**, aus [Teil 2](../angebot-zu-sales-agreement-produktkonfigurator/).
 - **Was Kunden im Portal sehen**, aus [Teil 7](../manufacturing-cloud-kundenportal/).
 
-Diese Punkte lassen sich nach dem ersten Land kaum noch ändern, ohne alle bereits eingeführten Länder anzufassen. Jede davon gehört deshalb ins Entscheidungslog, bevor das erste Land live geht. Wie ich dieses Log führe, beschreibe ich unter [Salesforce-Architektur](../../leistungen/salesforce-architektur/).
+```hinweis achtung
+Diese Punkte lassen sich nach dem ersten Land kaum noch ändern, ohne alle bereits eingeführten Länder anzufassen. Jede davon gehört deshalb ins Entscheidungslog, bevor das erste Land live geht.
+```
+
+Wie ich dieses Log führe, beschreibe ich unter [Salesforce-Architektur](../../leistungen/salesforce-architektur/).
 
 ## Mit welchem Land fängt man an?
 
@@ -88,13 +92,17 @@ Bei mehreren Implementierungspartnern, etwa einem pro Region, gehört diese Ents
 
 Weil Harmonisierung heißt, dass Menschen anders arbeiten. In jedem Land, das dem Template folgt, ändern sich Abläufe, Berichte und Gewohnheiten. Ein Vertrieb, der seine Mengen bisher in einer eigenen Tabelle geführt hat, arbeitet nicht automatisch mit Sales Agreements, nur weil sie live sind.
 
-Viele Kunden meinen, sie bräuchten kein Change Management. Das Budget ist verteilt, die Schulungen sind geplant, und die Nutzer werden sich schon gewöhnen. Ich bringe es trotzdem immer wieder ins Gespräch, in der Planung, vor jedem Land und nach jedem Go-live. Mindestens drei Dinge gehören pro Land dazu:
+```praxis
+Viele Kunden meinen, sie bräuchten kein Change Management. Das Budget ist verteilt, die Schulungen sind geplant, und die Nutzer werden sich schon gewöhnen. Ich bringe es trotzdem immer wieder ins Gespräch, in der Planung, vor jedem Land und nach jedem Go-live.
+```
+
+Mindestens drei Dinge gehören pro Land dazu:
 
 - **Key User**, die das Template kennen und im Land die ersten Fragen beantworten.
 - **Kommunikation vor dem Go-live**, die erklärt, was sich ändert und warum, nicht nur, wo man klickt.
 - **Ein Blick auf die Nutzung nach dem Go-live**, damit auffällt, wenn ein Land neben Salesforce weiter mit eigenen Listen arbeitet.
 
-Wie ich die Einführung neuer Prozesse auf Kundenseite plane, beschreibe ich unter [Change Management für Salesforce-Programme](../../leistungen/change-management/).
+Wie ich die Einführung neuer Prozesse auf Kundenseite plane, beschreibe ich unter [Change Management Beratung für Salesforce](../../leistungen/change-management/). Was pro Land dazugehört, steht in [Change Management im weltweiten Salesforce-Rollout](../change-management-weltweiter-rollout/), der Überblick in [Salesforce Change Management: warum Einführungen scheitern](../change-management-salesforce-einfuehrung/).
 
 ## Wo sollten Sie anfangen?
 
@@ -106,4 +114,4 @@ Bevor das erste Land geplant wird, klären Sie fünf Punkte:
 4. **Die Reihenfolge.** Eine Tabelle mit Prozessen, Business Units, IT-Landschaft und Marken pro Land.
 5. **Change Management.** Key User, Kommunikation und Nutzung pro Land, eingeplant von Anfang an.
 
-Ein weltweiter Rollout gelingt, wenn das Template früh unter echter Last steht und jedes weitere Land nur noch wenig ändert. Wenn Sie einen Rollout der Manufacturing Cloud in mehreren Ländern planen, [schreiben Sie mir](#contact).
+Ein weltweiter Rollout gelingt, wenn das Template früh unter echter Last steht und jedes weitere Land nur noch wenig ändert.

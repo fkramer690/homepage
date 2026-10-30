@@ -55,11 +55,22 @@ I have worked in pre-sales together with Salesforce and know quotes from both si
 - **Approvers.** Someone who only approves discounts, quotes or orders spends a few minutes a week in the system.
 - **Users of one narrow process.** A team that only uses a custom app, for example for complaints or internal requests, needs neither sales nor service features.
 
-What they have in common: they do not use the main activities, or they only take on related work at the edges. An example from a field service project: at one client we created travel requests based on service appointments, as a custom object, and made them available to the technicians from there. The colleagues who handled the travel requests did not need a Field Service licence for that. They worked at a fraction of the cost of a full licence.
+What they have in common: they do not use the main activities, or they only take on related work at the edges.
 
-An example with list prices: 100 users who only read and approve. With Sales Cloud Core that is $195 per user and month, with Platform Starter $25. The difference is $170 per user and month, or $204,000 per year. Over a three-year contract that is more than $600,000.
+```praxis
+In a field service project, at one client we created travel requests based on service appointments, as a custom object, and made them available to the technicians from there. The colleagues who handled the travel requests did not need a Field Service licence for that. They worked at a fraction of the cost of a full licence.
+```
 
-With external users the mistake costs even more. Dealers or customers working on internal licences because a portal was supposed to come "later" cost many times a portal licence.
+An example with list prices: 100 users who only read and approve. The difference is $170 per user and month, and more than $600,000 over a three-year contract.
+
+```kennzahlen
+$195 | Sales Cloud Core per user and month
+$25 | Platform Starter per user and month
+$204,000 | Difference per year for 100 users who only read and approve
+source: Salesforce pricing pages for Sales Cloud and Platform, list prices October 2026
+```
+
+With external users the mistake costs even more. Dealers or customers working on internal licences because a portal was supposed to come "later" cost many times a portal licence. Buyers who order in a B2B store need their own licence type, covered in [B2B Commerce buyer licences: who needs which one?](../b2b-commerce-buyer-licences/).
 
 ## What can't Platform licences do?
 
@@ -77,10 +88,16 @@ That is why the licence question belongs in the architecture. Whether an approva
 
 A licence forecast answers which licence types a company needs and how many, today and in the coming years. This is how I approach it:
 
-1. **Group users by activity**, not by department. An inside sales team that enters orders is a different group from a key account manager.
-2. **Record which objects each group reads and edits.** That gives you the smallest licence that fits.
-3. **Estimate growth**, such as new countries, new business units or a portal planned in two years.
-4. **Put it next to the quote.** Where the quote differs, there is either a reason or a negotiation point.
+```schritte
+Group users by activity
+  Not by department. An inside sales team that enters orders is a different group from a key account manager.
+Record the objects per group
+  Which objects does each group read and edit? That gives you the smallest licence that fits.
+Estimate growth
+  Such as new countries, new business units or a portal planned in two years.
+Put it next to the quote
+  Where the quote differs, there is either a reason or a negotiation point.
+```
 
 In existing orgs the login history and recently edited records help. Users with a full licence who log in once a month are candidates for a different licence, or for none.
 
@@ -96,4 +113,4 @@ The same trade-off applies to industry clouds. When Manufacturing Cloud pays off
 
 If a renewal or a new quote is coming up, take one hour for three questions: how many users with a full licence edited an opportunity or a case last quarter? Which external users work on internal licences today? Which interfaces run through a user with a full licence?
 
-The answers show how much room the quote leaves. A full licence for everyone is the most convenient solution and rarely the cheapest. If a renewal or quote is coming up and you want an independent review, [send me a message](#contact) or read more [about me](../../#about).
+The answers show how much room the quote leaves. A full licence for everyone is the most convenient solution and rarely the cheapest.

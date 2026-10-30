@@ -52,6 +52,16 @@ export const topics = {
     de: 'Daten & Kontext',
     icon: '<ellipse cx="32" cy="14" rx="20" ry="7"/><path d="M12 14v36c0 4 9 7 20 7s20-3 20-7V14M12 26c0 4 9 7 20 7s20-3 20-7M12 38c0 4 9 7 20 7s20-3 20-7"/>',
   },
+  commerce: {
+    en: 'B2B Commerce',
+    de: 'B2B Commerce',
+    icon: '<path d="M6 10h8l6 30h30l6-20H18"/><circle cx="24" cy="50" r="4"/><circle cx="46" cy="50" r="4"/>',
+  },
+  revenue: {
+    en: 'Revenue Cloud',
+    de: 'Revenue Cloud',
+    icon: '<rect x="12" y="6" width="40" height="52" rx="4"/><path d="M20 18h24M20 28h24M20 38h12M38 46h8"/>',
+  },
   service: {
     en: 'Service Cloud',
     de: 'Service Cloud',

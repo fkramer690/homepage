@@ -63,7 +63,11 @@ Die Schritte stehen in der [Salesforce-Hilfe für Contractor-Zugänge](https://h
 - **Eigenes Profil und eigene Mobile-Einstellungen.** So lässt sich die App für Partner anders konfigurieren, ohne die interne Version zu ändern.
 - **Ein Servicegebiet pro Partnerfirma.** Damit sieht der Partner-Manager nur seine eigenen Leute und Termine. Soll er selbst disponieren, lässt sich die Dispatch Console in die Experience Cloud Site einbauen.
 
-Bei den Lizenzen gibt es zwei Varianten. Partner, die regelmäßig arbeiten, bekommen Lizenzen pro Nutzer. Für saisonale oder seltene Einsätze gibt es Lizenzen pro Login, laut Salesforce bis zu 20 Benutzer je gekauftem Login. Contractor-Lizenzen sind nur für externe Dienstleister, nicht für eigene Mitarbeitende. Wie man Lizenzen über alle Rollen hinweg sinnvoll verteilt, beschreibe ich in [Salesforce-Lizenzen: Braucht jeder eine volle Lizenz?](../salesforce-lizenzen-volle-lizenz/).
+Bei den Lizenzen gibt es zwei Varianten. Partner, die regelmäßig arbeiten, bekommen Lizenzen pro Nutzer. Für saisonale oder seltene Einsätze gibt es Lizenzen pro Login, laut Salesforce bis zu 20 Benutzer je gekauftem Login. Wie man Lizenzen über alle Rollen hinweg sinnvoll verteilt, beschreibe ich in [Salesforce-Lizenzen: Braucht jeder eine volle Lizenz?](../salesforce-lizenzen-volle-lizenz/), die Rollen in Field Service im Detail in [Salesforce Field Service Lizenzen: Wer braucht welche?](../field-service-lizenzen-rollen-dispatcher-techniker/).
+
+```hinweis achtung
+Contractor-Lizenzen sind nur für externe Dienstleister, nicht für eigene Mitarbeitende.
+```
 
 ## Wie sieht ein Partnereinsatz von Anfang bis Ende aus?
 
@@ -83,4 +87,4 @@ Gleiche Arbeitsweise heißt nicht gleiche Rechte. Drei Dinge würde ich bewusst 
 
 Nehmen Sie Ihren wichtigsten Partner und schreiben Sie auf, wie ein Einsatz heute zu ihm kommt und wie die Rückmeldung zurückkommt. Jeder Schritt, der anders läuft als bei internen Technikern, ist ein Kandidat für die Angleichung. Starten Sie mit einem Partner und einem Servicegebiet, bevor Sie alle anbinden. Mischformen sind erlaubt: Ein großer Stammpartner arbeitet im ersten Modell, ein kleiner Partner für Spitzenzeiten im zweiten. Wichtig ist, dass die Entscheidung je Partner bewusst fällt und dokumentiert ist.
 
-Im letzten Teil der Serie geht es um die Einführung selbst. Wenn Sie vorher prüfen möchten, wie Ihre Partner in Field Service passen, [schreiben Sie mir](#contact).
+Im letzten Teil der Serie geht es um die Einführung selbst.

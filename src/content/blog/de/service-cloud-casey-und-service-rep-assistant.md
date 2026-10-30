@@ -38,7 +38,11 @@ Am 13. Oktober 2026 hat Salesforce [zehn Neuerungen in der Service Cloud](https:
 - **Kundensignale und Themen-Clustering.** Live-Stimmung und Auswertungen über Fälle, Telefon und Chat sowie eine automatische Rangfolge der häufigsten Kontaktgründe.
 - **Neue Kanäle.** WhatsApp mit Verkauf und Zahlung im Gespräch sowie RCS für Rich Media in nativen Nachrichtenverläufen.
 
-Salesforce hat zudem neue Service-Cloud-Editionen vorgestellt, Core, Advanced und Max, die Service Cloud, Contact Center, Workforce Management, Slack und Tableau Next mit einem festen Kontingent an Verbrauchs-Credits bündeln. Welche Edition welche KI-Funktionen enthält, sagt die Ankündigung nicht, das muss vor der Planung mit Salesforce geklärt werden.
+Salesforce hat zudem neue Service-Cloud-Editionen vorgestellt, Core, Advanced und Max, die Service Cloud, Contact Center, Workforce Management, Slack und Tableau Next mit einem festen Kontingent an Verbrauchs-Credits bündeln.
+
+```hinweis offen
+Welche Edition welche KI-Funktionen enthält, sagt die Ankündigung nicht. Klären Sie das vor der Planung mit Salesforce.
+```
 
 ## Wer ist Casey?
 
@@ -97,10 +101,17 @@ Diese Punkte gelten für jeden KI-Agenten, und deshalb plädiere ich dafür, [Bu
 
 Ein pragmatischer Weg:
 
-1. **Mit dem Service Rep Assistant starten** in einem Team, damit Menschen die Kontrolle behalten, während die Organisation lernt.
-2. **Das Wissen für die häufigsten Kontaktgründe aufräumen**, die das Themen-Clustering sichtbar macht.
-3. **Casey für einen engen Kanal und ein Thema einführen**, etwa Dokumentationsanfragen im Kundenportal.
-4. **Freigaben einrichten** für jede Entscheidung mit finanzieller Wirkung.
-5. **Messen und ausweiten**, erst wenn die Zahlen es tragen.
+```schritte
+Mit dem Service Rep Assistant starten
+  In einem Team, damit Menschen die Kontrolle behalten, während die Organisation lernt.
+Wissen aufräumen
+  Für die häufigsten Kontaktgründe, die das Themen-Clustering sichtbar macht.
+Casey eng einführen
+  Für einen Kanal und ein Thema, etwa Dokumentationsanfragen im Kundenportal.
+Freigaben einrichten
+  Für jede Entscheidung mit finanzieller Wirkung.
+Messen und ausweiten
+  Erst wenn die Zahlen es tragen.
+```
 
-Die Service Cloud entwickelt sich schnell, und die Wahl der richtigen Bausteine gehört zu [Architektur und Partnersteuerung](../../leistungen/salesforce-architektur/). Wenn Sie besprechen möchten, wie diese Neuerungen zu Ihrer Serviceorganisation passen, [schreiben Sie mir](#contact).
+Die Service Cloud entwickelt sich schnell, und die Wahl der richtigen Bausteine gehört zu [Architektur und Partnersteuerung](../../leistungen/salesforce-architektur/).

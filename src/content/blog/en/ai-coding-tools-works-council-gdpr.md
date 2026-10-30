@@ -88,13 +88,18 @@ The full comparison of the tools by contract, cost and governance is in [Agentfo
 
 Assume a machine builder with its main plant in Germany, a works council, SAP, Sales Cloud, Service Cloud and Field Service, five internal Salesforce developers, two admins and a nearshore partner. All details are assumptions. IT wants Copilot for everyone and Claude Code for two developers who want to use the Salesforce plugin.
 
-**Week 1, inventory.** Assume three developers already use private Pro accounts. That is the Hamburg constellation, but code with discount logic is running under consumer terms. IT stops it and announces company accounts.
+```schritte
+Inventory | week 1 · IT
+  Assume three developers already use private Pro accounts. That is the Hamburg constellation, but code with discount logic is running under consumer terms. IT stops it and announces company accounts.
+Works council | week 2 · IT
+  IT presents the table above for each tool. The main concern is the per-person lines statistic.
+Annex to the IT framework agreement | weeks 3 to 6
+  Copilot metrics on team level only, GitHub contribution metrics off, no performance assessment from tool data, local transcripts deleted after 14 days. Data protection decides in parallel: EU residency on in Copilot, Claude Code through Bedrock in an EU region.
+Pilot | from week 7
+  Copilot and Claude Code start under the rules in the annex, and the partner's developers also work on client licences.
+```
 
-**Week 2, works council.** IT presents the table above for each tool. The main concern is the per-person lines statistic.
-
-**Weeks 3 to 6, annex to the IT framework agreement.** The outcome: Copilot metrics on team level only, GitHub contribution metrics off, no performance assessment from tool data, local transcripts deleted after 14 days. Data protection decides in parallel: EU residency on in Copilot, Claude Code through Bedrock in an EU region. The support page lists usage analytics only for Team, Enterprise and Console, so Bedrock is not covered. Cost data then sits in the client's AWS account, and the annex says who sees it.
-
-**From week 7, pilot.** Copilot and Claude Code start under the rules in the annex, and the partner's developers also work on client licences.
+The support page lists usage analytics only for Team, Enterprise and Console, so Bedrock is not covered. Cost data then sits in the client's AWS account, and the annex says who sees it.
 
 Six weeks sounds long. A pilot stopped after four weeks costs more.
 
@@ -108,4 +113,4 @@ Six weeks sounds long. A pilot stopped after four weeks costs more.
 
 Getting teams and partners to adopt new rules in daily work is part of my [change management](../../services/change-management-salesforce/) work; the framework for roles and review is in [chapter 9 of the masterclass](../../masterclass/ai-salesforce/teamwork-and-delivery/).
 
-At a German site with a works council, AI coding tools go live only once the works council and data protection have agreed, and with good preparation that takes weeks, not months, in my judgement. If you want a second opinion on your annex or your model routes, [send me a message](#contact).
+At a German site with a works council, AI coding tools go live only once the works council and data protection have agreed, and with good preparation that takes weeks, not months, in my judgement.

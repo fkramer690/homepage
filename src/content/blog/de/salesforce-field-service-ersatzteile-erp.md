@@ -62,7 +62,7 @@ Die Aufteilung folgt einer einfachen Regel: Das ERP liefert Stammdaten und Best�
 | Teileanforderungen der Techniker | Salesforce nach ERP | sofort, dort Umlagerung oder Bestellung |
 | Rücksendungen | je nach Prozess | mit dem Wareneingang im ERP |
 
-Zwei Entscheidungen sollten früh fallen. Erstens: Wie aktuell muss der Bestand in Salesforce sein? Für die Planung des nächsten Tages reicht oft ein nächtlicher Abgleich. Wer am Einsatztag umplant, braucht kürzere Abstände. Zweitens: Was passiert offline? Die mobile App arbeitet auch ohne Netz. Damit der Techniker dort seinen Fahrzeugbestand sieht, muss er als Kopie in Salesforce liegen. Ein reiner Live-Abruf aus dem ERP funktioniert im Keller einer Fabrikhalle nicht.
+Zwei Entscheidungen sollten früh fallen. Erstens: Wie aktuell muss der Bestand in Salesforce sein? Für die Planung des nächsten Tages reicht oft ein nächtlicher Abgleich. Wer am Einsatztag umplant, braucht kürzere Abstände. Ein B2B-Shop steht vor derselben Frage, nur mit anderen Nutzern, siehe [Bestand im B2B-Shop](../bestand-b2b-shop-erp-live/). Zweitens: Was passiert offline? Die mobile App arbeitet auch ohne Netz. Damit der Techniker dort seinen Fahrzeugbestand sieht, muss er als Kopie in Salesforce liegen. Ein reiner Live-Abruf aus dem ERP funktioniert im Keller einer Fabrikhalle nicht. Welche Daten die App offline vorhält, beschreibe ich in [Field Service App offline](../field-service-app-offline-briefcase/).
 
 Eine dritte Frage betrifft die Menge. Jedes Teil an jedem Standort ist ein eigener Datensatz. 40 Fahrzeuge mit je 300 Teilen sind schon 12.000 Product Items, dazu die Lager. Das ist für Salesforce kein Problem, aber jeder Datensatz muss abgeglichen werden und landet offline auf dem Gerät des Technikers. Ich würde deshalb nur die Standorte nach Salesforce holen, die für den Außendienst zählen: die Fahrzeuge und die Lager, aus denen sie nachgefüllt werden. Der übrige Bestand des Unternehmens bleibt im ERP, und bei Bedarf fragt der Innendienst ihn dort ab.
 
@@ -70,7 +70,11 @@ Wie man solche Schnittstellen und die Frage nach dem führenden System sauber kl
 
 ## Wo entstehen die Probleme?
 
-Die Aufteilung selbst hat in meinen Projekten selten Ärger gemacht. Wenn es Probleme gab, lagen sie an der Pflegequalität. Daran würde ich vor dem Start arbeiten:
+```praxis
+In meinen Field-Service-Projekten kamen Ersatzteile und installierte Basis aus dem ERP. Die Aufteilung selbst hat dabei selten Ärger gemacht. Wenn es Probleme gab, lagen sie an der Pflegequalität der Daten.
+```
+
+Daran würde ich vor dem Start arbeiten:
 
 - **Materialnummern:** Ein Teil, das im ERP doppelt oder mit veralteter Nummer existiert, landet auch doppelt in Salesforce. Der Techniker bucht dann auf das falsche.
 - **Nicht gebuchte Entnahmen:** Nimmt ein Techniker ein Teil aus dem Lager, ohne dass es gebucht wird, stimmt der Fahrzeugbestand nicht mehr. Field Service zeigt dann ein Teil, das nicht da ist.
@@ -81,6 +85,12 @@ Keines dieser Probleme löst eine Software. Jedes braucht einen Verantwortlichen
 
 ## Wo sollten Sie anfangen?
 
-Prüfen Sie, wie genau der Fahrzeugbestand im ERP heute ist. Ein einfacher Test: Lassen Sie drei Techniker ihr Fahrzeug zählen und vergleichen Sie das Ergebnis mit dem ERP. Weicht es stark ab, ist das die erste Baustelle, vor jeder Schnittstelle. Stimmt es, legen Sie fest, welche der Objekte oben Sie wirklich brauchen, und starten Sie mit Bestand, benötigten Teilen und Verbrauch.
+Prüfen Sie, wie genau der Fahrzeugbestand im ERP heute ist.
 
-Im nächsten Teil der Serie geht es um Wartungsverträge und zugesagte Reaktionszeiten. Wenn Sie vorher Ihre Ersatzteilprozesse mit einem unabhängigen Blick prüfen möchten, [schreiben Sie mir](#contact).
+```hinweis tipp
+Ein einfacher Test: Lassen Sie drei Techniker ihr Fahrzeug zählen und vergleichen Sie das Ergebnis mit dem ERP. Weicht es stark ab, ist das die erste Baustelle, vor jeder Schnittstelle.
+```
+
+Stimmt es, legen Sie fest, welche der Objekte oben Sie wirklich brauchen, und starten Sie mit Bestand, benötigten Teilen und Verbrauch.
+
+Im nächsten Teil der Serie geht es um Wartungsverträge und zugesagte Reaktionszeiten.

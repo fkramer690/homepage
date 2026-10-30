@@ -1,0 +1,11 @@
+---
+import MasterclassChapter from '../../../components/MasterclassChapter.astro';
+import { getChapters } from '../../../lib/masterclass';
+
+export async function getStaticPaths() {
+  const chapters = await getChapters('de', 'revenue-cloud');
+  return chapters.map((chapter) => ({ params: { slug: chapter.data.slug }, props: { chapter } }));
+}
+const { chapter } = Astro.props;
+---
+<MasterclassChapter chapter={chapter} />

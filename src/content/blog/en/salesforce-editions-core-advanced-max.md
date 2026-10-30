@@ -89,20 +89,30 @@ The step from Core to Advanced costs $480,000 a year and brings 500,000 credits 
 
 ## What about Manufacturing Cloud and Field Service?
 
-**Manufacturing Cloud.** Salesforce announced new pricing for the Industries editions for "later this fall". On 27 October 2026 I found none. The [Manufacturing Cloud pricing page](https://www.salesforce.com/manufacturing/cloud/pricing/) already shows Sales Core and Service Core at $275 and the Max editions at $650, or $700 for Sales and Service Max, billed annually, with 500K Flex Credits per org and year in Core and 2.75 million in Max. It prices no Advanced edition and lists the full Agentforce for Industries suite only in Max. Its footnotes on Enterprise and Unlimited contradict each other, which I covered in [when Manufacturing Cloud pays off](../salesforce-manufacturing-cloud-is-it-worth-it/). If your renewal falls in the coming months, I would not sign three years of Manufacturing Cloud seats before the Industries prices are out, unless the order lets you switch editions once they are.
+**Manufacturing Cloud.** Salesforce announced new pricing for the Industries editions for "later this fall". On 27 October 2026 I found none. The [Manufacturing Cloud pricing page](https://www.salesforce.com/manufacturing/cloud/pricing/) already shows Sales Core and Service Core at $275 and the Max editions at $650, or $700 for Sales and Service Max, billed annually, with 500K Flex Credits per org and year in Core and 2.75 million in Max. It prices no Advanced edition and lists the full Agentforce for Industries suite only in Max. What comes on top as add-ons is in [Manufacturing Cloud add-ons: what costs extra](../manufacturing-cloud-add-ons-extra-costs/). Its footnotes on Enterprise and Unlimited contradict each other, which I covered in [when Manufacturing Cloud pays off](../salesforce-manufacturing-cloud-is-it-worth-it/).
+
+```hinweis achtung
+If your renewal falls in the coming months, I would not sign three years of Manufacturing Cloud seats before the Industries prices are out, unless the order lets you switch editions once they are.
+```
 
 **Field Service.** The [Field Service pricing page](https://www.salesforce.com/service/field-service-management/pricing/) shows no Core, Advanced or Max. Dispatcher and Technician cost $175, Field Service Plus $230 and Agentforce 1 Field Service $650 per user and month. Only the last includes credits: "1M Flex Credits & 2.5M Data Cloud Credits per org every year". On the other licences the Scheduling Agent "requires Flex Credits". A machine builder with field technicians therefore plans two models side by side: editions for the office, classic licences plus purchased credits for the field. Whether Field Service pays off at all is in [is Salesforce Field Service worth it](../salesforce-field-service-worth-it/).
 
+**Revenue Cloud.** For quoting and billing, Revenue Cloud has its own editions, covered in [Revenue Cloud pricing: Growth, Advanced and add-ons](../revenue-cloud-editions-pricing/).
+
 ## When is Max worth it for a manufacturer?
 
-Max is worth it for its features, never for its credits. Compared with Core it includes 2.25 million more credits, worth about $11,250 at list price. The price difference for 200 users is $852,000 a year.
+Max is worth it for its features, never for its credits.
 
-Max can make sense when:
-
-- **Service needs Service Rep Assistant and contact centre functions** anyway.
-- **Manufacturing Cloud users need the full Agentforce for Industries suite,** which the pricing page lists only in Max.
-- **You are on Agentforce 1 Edition today.** The move to Max costs nothing extra.
-- **Many employees use Agentforce Coworker,** which the Service Cloud page lists as unmetered in Max.
+```pro-contra
+pro: Max can make sense when
+- Service needs **Service Rep Assistant and contact centre functions** anyway
+- Manufacturing Cloud users need the **full Agentforce for Industries suite**, which the pricing page lists only in Max
+- You are on **Agentforce 1 Edition** today; the move to Max costs nothing extra
+- Many employees use **Agentforce Coworker**, which the Service Cloud page lists as unmetered in Max
+contra: What the credits do not make up for
+- Compared with Core, Max includes 2.25 million more credits, worth about $11,250 at list price
+- The price difference for 200 users is $852,000 a year
+```
 
 If only a small group of power users needs AI features, ask whether that group can be licensed on its own instead of lifting all 200 users. These trade-offs are the core of my [make-or-buy and licence planning](../../services/make-or-buy-licences/).
 
@@ -115,4 +125,4 @@ If only a small group of power users needs AI features, ask whether that group c
 5. **Set up monitoring.** [Digital Wallet](https://www.salesforce.com/agentforce/digital-wallet/) shows consumption by agent, action and channel and sends alerts at thresholds; it requires Data 360.
 6. **For Manufacturing Cloud,** wait for the Industries pricing or secure the right to switch.
 
-Choose the edition by the features your teams use and treat Flex Credits as a separate, measured budget line. If your renewal is coming up and you want an independent look at the quote, [send me a message](#contact).
+Choose the edition by the features your teams use and treat Flex Credits as a separate, measured budget line.

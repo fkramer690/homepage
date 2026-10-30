@@ -35,9 +35,18 @@ On 20 October 2026 Salesforce described the new capabilities in a [blog post on 
 - **Headless setup.** Digital forms can be created from existing paper forms or from existing mobile flows, with the same data fields. Salesforce describes it as being as easy as taking a picture. The goal is to avoid long projects just to digitise a form.
 - **Voice to Form.** Technicians describe what they see or do, and the system interprets the speech and fills the right fields. Forms adjust dynamically to what is said. According to Salesforce, several languages are supported.
 
-Salesforce backs this with its own research: field workers estimate that about 18 percent of their working time, more than seven hours a week, goes into administrative tasks. 43 percent of the organisations surveyed still use paper logs in the field, and only 16 percent say their field and back-office technology work together on one platform.
+Salesforce backs this with its own research:
 
-One limitation: the announcement shows demos, but does not state availability, editions or licences. Before planning a rollout, check the release notes and talk to your account team.
+```kennzahlen
+18% | of field workers' time goes into admin by their own estimate, more than seven hours a week
+43% | of the organisations surveyed still use paper logs in the field
+16% | say their field and back-office technology work together on one platform
+source: Salesforce research, cited in the blog post on guided mobile work of 20 October 2026
+```
+
+```hinweis offen
+The announcement shows demos, but does not state availability, editions or licences. Before planning a rollout, check the release notes and talk to your account team.
+```
 
 ## Why does this matter for manufacturers?
 
@@ -74,7 +83,7 @@ But a fast digital copy of a form is only as good as the form itself. Typical pr
 - **Missing structure**, for example fault descriptions as free text instead of codes that quality management can evaluate.
 - **Forms that differ by region or team** for the same job.
 
-Before forms are digitised at scale, it is worth deciding on a target data model for service protocols: which values are captured as fields, which picklists are shared, how results link to the asset and the work order. This is classic [architecture work](../../services/salesforce-architecture/), and it decides whether the data can be used later for reporting, AI agents or integration with the ERP.
+Before forms are digitised at scale, it is worth deciding on a target data model for service protocols: which values are captured as fields, which picklists are shared, how results link to the asset and the work order. This is classic [architecture work](../../services/salesforce-architecture/), and it decides whether the data can be used later for reporting, AI agents or integration with the ERP. How inspection forms look in Data Capture is covered in [Field Service Data Capture: inspection forms without paper](../field-service-data-capture-inspection-forms/).
 
 ## What needs to be clarified before using voice input?
 
@@ -90,11 +99,21 @@ It also makes sense to define which fields may be filled by voice and which valu
 
 A pragmatic order for a manufacturer with field service:
 
-1. **Confirm availability and licences** for your org and editions.
-2. **Pick one job type** with high volume and a clear protocol, for example annual maintenance of a common machine type.
-3. **Clean up the data model** for this job type: asset data, mandatory values, fault codes, link to spare parts.
-4. **Build the guided workflow** with the service organisation and test it with technicians from different experience levels.
-5. **Pilot voice input separately**, after data protection and works council have agreed.
-6. **Measure the effect**: time spent on documentation, completeness of reports, time until invoicing.
+```schritte
+Confirm availability
+  Confirm availability and licences for your org and editions.
+Pick one job type
+  High volume and a clear protocol, for example annual maintenance of a common machine type.
+Clean up the data model
+  For this job type: asset data, mandatory values, fault codes, link to spare parts.
+Build the guided workflow
+  Build it with the service organisation and test it with technicians from different experience levels.
+Pilot voice input separately
+  Only after data protection and the works council have agreed.
+Measure the effect
+  Time spent on documentation, completeness of reports, time until invoicing.
+```
 
-Good field service data is also the foundation for AI agents in service, which need reliable information to work with, as I explain in [why Agentforce needs business value and data quality first](../agentforce-business-value-data-quality-first/). If you are planning to modernise your field service on Salesforce, [send me a message](#contact).
+Whether technicians then actually use the new features depends on what they get out of them. That is the subject of [Field Service app: getting technicians on board](../field-service-app-technician-adoption/).
+
+Good field service data is also the foundation for AI agents in service, which need reliable information to work with, as I explain in [why Agentforce needs business value and data quality first](../agentforce-business-value-data-quality-first/).

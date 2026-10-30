@@ -42,7 +42,11 @@ The [help page for the template](https://help.salesforce.com/s/articleView?id=in
 | Account forecasts | not named | not named in the body |
 | Program forecasts | not named | convert to opportunities |
 
-The help page lists three subagents: Sales Agreement Management, Sales Agreement Bulk Update and Program Forecasts to Opportunities. Licensing is stated as Enterprise, Performance or Unlimited Edition with the Agentforce for Manufacturing add-on, or Agentforce 1 Manufacturing Edition, and "each user" needs the add-on. The [Manufacturing Cloud product page](https://www.salesforce.com/manufacturing/cloud/) lists the "full suite of Agentforce for Industries" in the Max editions. How the two fit together for your contract is a question for the account team before the pilot, not after.
+The help page lists three subagents: Sales Agreement Management, Sales Agreement Bulk Update and Program Forecasts to Opportunities.
+
+```hinweis offen
+Licensing is stated as Enterprise, Performance or Unlimited Edition with the Agentforce for Manufacturing add-on, or Agentforce 1 Manufacturing Edition, and "each user" needs the add-on. The [Manufacturing Cloud product page](https://www.salesforce.com/manufacturing/cloud/) lists the "full suite of Agentforce for Industries" in the Max editions. How the two fit together for your contract is a question for the account team before the pilot, not after.
+```
 
 ## Why is "Agentforce Manufacturing" not always an agent?
 
@@ -62,7 +66,7 @@ On sales agreements, the documentation is concrete. The agent reads them, summar
 
 The help does not say whether the agent's bulk update runs into the same cap or whether its performance summary uses the same cut. I would test both with the largest agreement in the org before anyone relies on them.
 
-On account forecasts, the documentation is silent. The template page does not name them in its body, and none of the three subagents works on them. What exists are [Flow actions](https://help.salesforce.com/s/articleView?id=sf.admin_manufacturing_standard_invocable_actions.htm&language=en_US&type=5) such as Calculate Advanced Account Forecasts, Recalculate Forecasts Actions and Refresh Actuals Calculation. A custom agent action that calls one of these flows is technically plausible. It is then your build, with your tests and your support, not the template.
+On account forecasts, the documentation is silent. The template page does not name them in its body, and none of the three subagents works on them. What exists are [Flow actions](https://help.salesforce.com/s/articleView?id=sf.admin_manufacturing_standard_invocable_actions.htm&language=en_US&type=5) such as Calculate Advanced Account Forecasts, Recalculate Forecasts Actions and Refresh Actuals Calculation. A custom agent action that calls one of these flows is technically plausible. It is then your build, with your tests and your support, not the template. Sales targets per customer are a separate feature again, see [account manager targets](../account-manager-targets-sales-targets/).
 
 The build plan comparison from the announcement is the biggest gap. I found no description of where the build plan comes from, which object holds it or what triggers an alert. As I read the help page, the agent answers when someone asks. Salesforce's [AI page for manufacturing](https://www.salesforce.com/manufacturing/artificial-intelligence/) speaks of "surfacing run-rate agreements, demand forecasts, and opportunity data conversationally" and adds that capabilities "may not reflect actual product details". I take that disclaimer literally.
 
@@ -70,12 +74,20 @@ The build plan comparison from the announcement is the biggest gap. I found no d
 
 When an account manager asks which agreements are behind, the agent compares planned and actual quantities on the sales agreement product schedules. At a manufacturer, the actual quantities live in the ERP. If they are missing or late, the agent reports a shortfall with full confidence.
 
-According to [Salesforce Help on importing actuals](https://help.salesforce.com/s/articleView?id=ind.mfg_sa_actuals_api_external.htm&language=en_US&type=5), external actuals arrive like this:
+```praxis
+I have introduced sales agreements with actuals from the ERP in Manufacturing Cloud. The stumbling block was the ERP interface.
+```
 
-1. The admin sets the actuals calculation to "Manually using API upload".
-2. An integration writes Actual Quantity and Actual Amount on Sales Agreement Product Schedule records, through Bulk API or Data Loader.
-3. A daily job at 1:00 AM in the org's time zone refreshes the related agreements.
-4. Users who correct values by hand need the permission "Edit Actual Quantity of Sales Agreements Products".
+According to [Salesforce Help on importing actuals](https://help.salesforce.com/s/articleView?id=ind.mfg_sa_actuals_api_external.htm&language=en_US&type=5), the admin first sets the actuals calculation to "Manually using API upload". An integration writes Actual Quantity and Actual Amount on Sales Agreement Product Schedule records through Bulk API or Data Loader, and the daily job runs in the org's time zone. Users who correct values by hand need the permission "Edit Actual Quantity of Sales Agreements Products".
+
+```ablauf
+erp: ERP orders
+sf: Product Schedules, Daily job, Sales Agreements, Sales Planning agent
+ERP orders --actual quantities--> Product Schedules
+Product Schedules --at 1:00 AM--> Daily job
+Daily job --refreshes--> Sales Agreements
+Sales Agreements --plan and actuals--> Sales Planning agent
+```
 
 Which calculation mode fits and why it is hard to change later is covered in [sales agreements: spot customers behind on volume](../sales-agreements-volume-shortfall-erp/). For the agent, three extra points matter. The feed has to cover every ERP that books orders for a customer, including the subsidiary on a second system. The mapping from sold-to party to agreement account needs an owner. And the agent's answer should show the date of the last load, so a gap from a missing night run is visible as such.
 
@@ -102,4 +114,4 @@ Then a price increase for one product family has to go into 60 agreements. The b
 
 Whether agents fit your company at all is covered in [Agentforce for manufacturers: start now or wait?](../agentforce-yes-or-no-manufacturers/), and the overview of manufacturing agents in the masterclass chapter [AI agents in manufacturing](../../masterclass/ai-salesforce/ai-agents-in-manufacturing/).
 
-The Sales Planning agent is a useful assistant on top of sales agreements once the ERP actuals are right, and less than the 2025 announcement suggests. If you are evaluating it for your sales team, [send me a message](#contact).
+The Sales Planning agent is a useful assistant on top of sales agreements once the ERP actuals are right, and less than the 2025 announcement suggests.

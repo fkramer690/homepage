@@ -1,5 +1,5 @@
 ---
-// Hub page of the masterclass "AI in the Salesforce ecosystem" in either language.
+// Hub page of one masterclass (`course`, default the AI masterclass) in either language.
 // Chapters come from src/content/masterclass/<lang>/, article clusters from
 // src/lib/masterclass.ts, all texts from src/i18n (rules: docs/masterclass.md).
 import Page from '../layouts/Page.astro';
@@ -7,21 +7,27 @@ import ExternalMark from './ExternalMark.astro';
 import ContactForm from './ContactForm.astro';
 import AuthorBox from './AuthorBox.astro';
 import Blueprint from './Blueprint.astro';
+import Photo from './Photo.astro';
+import { coursePhotos } from '../data/photos';
+import PartnerBox from './PartnerBox.astro';
 import { en } from '../i18n/en';
 import { de } from '../i18n/de';
 import { site, contactHref, contactExternal } from '../site';
 import { postHref } from '../lib/blog';
 import { homeHref } from '../lib/paths';
-import { chapterHref, chapterTotal, getChapters, getClusters, masterclassIndex, masterclassesIndex, postsForKeys } from '../lib/masterclass';
+import { chapterHref, chapterTotal, courseTexts, getChapters, getClusters, masterclassIndex, masterclassesIndex, postsForKeys } from '../lib/masterclass';
+import { courses, type CourseId } from '../lib/courses';
 
 interface Props {
   lang: 'en' | 'de';
+  course?: CourseId;
 }
-const { lang } = Astro.props;
+const { lang, course = 'ai' } = Astro.props;
 const t = lang === 'de' ? de : en;
-const m = t.masterclass;
-const chapters = await getChapters(lang);
-const clusters = await getClusters(lang);
+const m = courseTexts(lang, course);
+const photo = coursePhotos[course];
+const chapters = await getChapters(lang, course);
+const clusters = await getClusters(lang, course);
 const articleCount = new Set(clusters.flatMap(({ posts }) => posts.map((p) => p.id))).size;
 const deadlinePosts = new Map(
   await Promise.all(
@@ -31,23 +37,40 @@ const deadlinePosts = new Map(
 
 const base = import.meta.env.BASE_URL;
 const abs = (path: string) => new URL(path, Astro.site).href;
-const alternates = { en: masterclassIndex('en'), de: masterclassIndex('de') };
-const url = abs(masterclassIndex(lang));
+const alternates = { en: masterclassIndex('en', course), de: masterclassIndex('de', course) };
+const url = abs(masterclassIndex(lang, course));
 const ctaAttrs = contactExternal ? { target: '_blank', rel: 'noopener' } : {};
 const suffix = ' | FK Solution Design';
 const pageTitle = m.metaTitle.length + suffix.length <= 60 ? m.metaTitle + suffix : m.metaTitle;
-const ogImage = `${base}og/${lang}/masterclass.png`;
+const ogImage = `${base}og/${lang}/${courses[course].og}.png`;
 const nn = (n: number) => String(n).padStart(2, '0');
 const countLabel = (n: number) => (n === 1 ? m.articleCount.one : m.articleCount.other).replace('{n}', String(n));
 
-// Technical drawing in the style of the blog card drawings: light grid, grey lines, one cyan accent.
+// Header drawing in the style of the blog card drawings: light grid, grey lines, one cyan accent.
 const W = 440;
 const H = 288;
 const grid =
   Array.from({ length: W / 16 - 1 }, (_, i) => `M${16 * (i + 1)} 0V${H}`).join('') +
   Array.from({ length: H / 16 - 1 }, (_, i) => `M0 ${16 * (i + 1)}H${W}`).join('');
-const layerY = (i: number) => 40 + i * 60;
-const figureLabel = `${m.figureLabel}: ${m.layers.map((l) => `${l.title}: ${l.tools}`).join('; ')}; ${m.erp.join(', ')}`;
+// A masterclass with `stages` (change management) draws them as a rising staircase.
+type Stage = { term: string; question: string; help: string; chapter: string };
+const stages = (m as { stages?: Stage[] }).stages;
+const stagesNote = (m as { stagesNote?: string }).stagesNote;
+const stepX = (i: number) => 12 + i * 84;
+const stepY = (i: number) => 150 - i * 24;
+// All others draw `figure` (type HubFigure in src/i18n/en.ts): five rows of 36 px from y 34.
+const figure = m.figure;
+const rowY = (i: number) => 34 + i * 46;
+const side = figure?.kind === 'flow' ? figure.side : undefined;
+const sideTop = side ? rowY(side.links[0]) : 0;
+const sideBottom = side ? rowY(side.links[side.links.length - 1]) + 36 : 0;
+const figureLabel = stages
+  ? `${m.figureLabel}: ${stages.map((s) => `${s.term} (${s.question}, ${s.help}, ${s.chapter})`).join('; ')}`
+  : figure?.kind === 'flow'
+    ? `${m.figureLabel}: ${figure.steps.map((s) => `${s.title} (${s.sub}, ${s.chapter})`).join('; ')}${side ? `; ${side.title} ${side.sub}` : ''}; ${figure.note}`
+    : figure
+      ? `${m.figureLabel}: ${figure.rows.map((r) => `${r.task.join(' ')}: ${r.tool} (${r.chapter})`).join('; ')}; ${figure.note}`
+      : m.figureLabel;
 
 const schema = {
   '@context': 'https://schema.org',
@@ -75,6 +98,21 @@ const schema = {
         })),
       },
     },
+    // The masterclass as a free online course; its chapters are the course parts.
+    {
+      '@type': 'Course',
+      '@id': `${url}#course`,
+      url,
+      name: m.name,
+      description: m.metaDescription,
+      inLanguage: lang,
+      isAccessibleForFree: true,
+      provider: { '@type': 'Organization', '@id': `${abs(base)}#organization`, name: site.company, sameAs: abs(base) },
+      author: { '@type': 'Person', '@id': `${abs(base)}#person`, name: site.person },
+      offers: { '@type': 'Offer', category: 'Free', price: 0, priceCurrency: 'EUR' },
+      hasCourseInstance: { '@type': 'CourseInstance', courseMode: 'Online', inLanguage: lang },
+      hasPart: chapters.map((c) => ({ '@type': 'LearningResource', name: c.data.title, url: abs(chapterHref(c)) })),
+    },
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
@@ -86,7 +124,7 @@ const schema = {
   ],
 };
 ---
-<Page lang={lang} title={pageTitle} description={m.metaDescription} alternates={alternates} image={ogImage} hasContact>
+<Page layout="wide" lang={lang} title={pageTitle} description={m.metaDescription} alternates={alternates} image={ogImage} hasContact>
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
   </Fragment>
@@ -103,81 +141,144 @@ const schema = {
           <a class="btn btn-ghost" href={contactHref(m.name)} {...ctaAttrs}>{t.nav.cta}{contactExternal && <ExternalMark label={t.nav.newTab} />}</a>
         </div>
       </div>
+      {photo ? (
+      <figure class="mc-figure hero-photo"><Photo photo={photo} lang={lang} eager widths={[480, 720, 960]} sizes="(max-width: 900px) calc(100vw - 32px), 500px" /></figure>
+      ) : (
       <figure class="mc-figure">
         <svg class="mc-drawing" viewBox={`0 0 ${W} ${H}`} role="img" aria-label={figureLabel}>
           <rect width={W} height={H} fill="#f5f6f7" />
           <path d={grid} stroke="#e3e5e7" stroke-width="1" />
-          <text x="20" y="24" font-size="9" fill="#232325" letter-spacing="0.08em">{m.figureLabel.toUpperCase()}</text>
-          {m.layers.map((layer, i) => {
-            const y = layerY(i);
-            const accent = i === 1;
-            return (
-              <g>
-                <rect x="20" y={y} width="300" height="48" rx="5" fill="#fff" stroke={accent ? '#1BA1E2' : '#5a5a5e'} stroke-width={accent ? 1.6 : 1.2} />
-                <text x="34" y={y + 20} font-size="11" fill={accent ? '#1580b5' : '#232325'}>{layer.title}</text>
-                <text x="34" y={y + 36} font-size="9.5" fill="#5a5a5e">{layer.tools}</text>
-                {i < m.layers.length - 1 && <path d={`M170 ${y + 48}V${y + 60}`} stroke="#5a5a5e" stroke-width="1.2" stroke-dasharray="3 3" />}
-              </g>
-            );
-          })}
-          <rect x="352" y={layerY(2)} width="68" height="48" rx="5" fill="#fff" stroke="#5a5a5e" stroke-width="1.2" />
-          <text x="386" y={layerY(2) + 21} font-size="11" fill="#232325" text-anchor="middle">{m.erp[0]}</text>
-          <text x="386" y={layerY(2) + 36} font-size="9.5" fill="#5a5a5e" text-anchor="middle">{m.erp[1]}</text>
-          <path d={`M321 ${layerY(2) + 24}H351`} stroke="#5a5a5e" stroke-width="1.3" />
-          <path d={`M326 ${layerY(2) + 20.5}l-5 3.5 5 3.5M346 ${layerY(2) + 20.5}l5 3.5-5 3.5`} fill="none" stroke="#5a5a5e" stroke-width="1.3" />
-          <path d={`M386 ${layerY(2)}V${layerY(1) + 24}H321`} fill="none" stroke="#5a5a5e" stroke-width="1.2" stroke-dasharray="4 3" />
+          <text x="20" y={stages ? 24 : 22} font-size="9" fill="#232325" letter-spacing="0.08em">{m.figureLabel.toUpperCase()}</text>
+          {stages ? (
+            <g>
+              {stages.map((s, i) => {
+                const x = stepX(i);
+                const y = stepY(i);
+                const cx = x + 40;
+                const last = i === stages.length - 1;
+                return (
+                  <g>
+                    <rect x={x} y={y} width="80" height={244 - y} rx="5" fill="#fff" stroke={last ? '#1BA1E2' : '#5a5a5e'} stroke-width={last ? 1.6 : 1.2} />
+                    <text x={cx} y={y + 28} font-size="20" fill="#1376a8" text-anchor="middle">{s.term[0]}</text>
+                    <text x={cx} y={y + 46} font-size="9" fill="#232325" text-anchor="middle">{s.term}</text>
+                    <text x={cx} y={y + 62} font-size="8.5" fill="#5a5a5e" text-anchor="middle">{s.question}</text>
+                    <text x={cx} y={y + 76} font-size="8.5" fill="#5a5a5e" text-anchor="middle">{s.help}</text>
+                    <text x={cx} y="260" font-size="8.5" fill="#5a5a5e" text-anchor="middle">{s.chapter}</text>
+                  </g>
+                );
+              })}
+              {stagesNote && <text x="12" y="279" font-size="8.5" fill="#232325">{stagesNote}</text>}
+            </g>
+          ) : figure?.kind === 'flow' ? (
+            <g>
+              {figure.steps.map((s, i) => {
+                const y = rowY(i);
+                const accent = i === figure.accent;
+                return (
+                  <g>
+                    <rect x="20" y={y} width="272" height="36" rx="5" fill="#fff" stroke={accent ? '#1BA1E2' : '#5a5a5e'} stroke-width={accent ? 1.6 : 1.2} />
+                    <text x="32" y={y + 15} font-size="10" fill={accent ? '#1376a8' : '#232325'}>{s.title}</text>
+                    <text x="32" y={y + 28} font-size="8.5" fill="#5a5a5e">{s.sub}</text>
+                    <text x="282" y={y + 15} font-size="8.5" fill="#1376a8" text-anchor="end">{s.chapter}</text>
+                    {i < figure.steps.length - 1 && <path d={`M156 ${y + 36}V${y + 46}M152.5 ${y + 41}l3.5 5 3.5-5`} fill="none" stroke="#5a5a5e" stroke-width="1.2" />}
+                  </g>
+                );
+              })}
+              {side && (
+                <g>
+                  <rect x="324" y={sideTop} width="96" height={sideBottom - sideTop} rx="5" fill="#fff" stroke="#5a5a5e" stroke-width="1.2" />
+                  <text x="372" y={(sideTop + sideBottom) / 2 - 3} font-size="10" fill="#232325" text-anchor="middle">{side.title}</text>
+                  <text x="372" y={(sideTop + sideBottom) / 2 + 11} font-size="8.5" fill="#5a5a5e" text-anchor="middle">{side.sub}</text>
+                  {side.links.map((i) => {
+                    const y = rowY(i) + 18;
+                    return <path d={`M293 ${y}H323M298 ${y - 3.5}l-5 3.5 5 3.5M318 ${y - 3.5}l5 3.5-5 3.5`} fill="none" stroke="#5a5a5e" stroke-width="1.2" />;
+                  })}
+                </g>
+              )}
+              <text x="20" y="278" font-size="8.5" fill="#232325">{figure.note}</text>
+            </g>
+          ) : figure && (
+            <g>
+              {figure.rows.map((r, i) => {
+                const y = rowY(i);
+                const accent = i === figure.accent;
+                return (
+                  <g>
+                    <rect x="20" y={y} width="176" height="36" rx="5" fill="#fff" stroke="#5a5a5e" stroke-width="1.2" />
+                    <text x="30" y={y + 15} font-size="9.5" fill="#232325">{r.task[0]}</text>
+                    <text x="30" y={y + 28} font-size="9.5" fill="#232325">{r.task[1]}</text>
+                    <path d={`M197 ${y + 18}H227M222 ${y + 14.5}l5 3.5-5 3.5`} fill="none" stroke="#5a5a5e" stroke-width="1.2" />
+                    <rect x="228" y={y} width="192" height="36" rx="5" fill="#fff" stroke={accent ? '#1BA1E2' : '#5a5a5e'} stroke-width={accent ? 1.6 : 1.2} />
+                    <text x="240" y={y + 15} font-size="9.5" fill={accent ? '#1376a8' : '#232325'}>{r.tool}</text>
+                    <text x="240" y={y + 28} font-size="8.5" fill="#5a5a5e">{r.chapter}</text>
+                  </g>
+                );
+              })}
+              <text x="20" y="278" font-size="8.5" fill="#232325">{figure.note}</text>
+            </g>
+          )}
         </svg>
       </figure>
+      )}
     </div>
   </section>
 
   <section class="proof" aria-label={m.factsLabel}>
     <div class="container">
       <ul class="proof-list mc-facts">
-        <li><span class="proof-value">{chapterTotal}</span><span class="proof-label mono">{m.facts.chapters}</span></li>
+        <li><span class="proof-value">{chapterTotal(course)}</span><span class="proof-label mono">{m.facts.chapters}</span></li>
         <li><span class="proof-value">{articleCount}</span><span class="proof-label mono">{m.facts.articles}</span></li>
         <li><span class="proof-value">DE · EN</span><span class="proof-label mono">{m.facts.languages}</span></li>
       </ul>
     </div>
   </section>
 
+  {courses[course].partner && (
+  <section class="section mc-partner">
+    <div class="container">
+      <PartnerBox lang={lang} />
+    </div>
+  </section>
+  )}
+
+  {m.deadlines.length > 0 && (
   <section class="section" id={m.deadlinesAnchor} aria-labelledby="mc-deadlines">
     <div class="container">
       <p class="label mono">{m.deadlinesLabel}</p>
       <h2 id="mc-deadlines">{m.deadlinesTitle}</h2>
-      <ul class="cards mc-deadlines">
+      <p class="section-intro">{m.deadlinesText}</p>
+      <ol class="mc-timeline" style={`--n: ${m.deadlines.length}`}>
         {m.deadlines.map((d) => {
           const post = d.articleKey ? deadlinePosts.get(d.articleKey) : undefined;
-          const inner = (
-            <>
-              <time class="card-index mono" datetime={d.iso}>{d.date}</time>
-              <p>{d.text}</p>
-              {post && <span class="card-more mono">{t.blog.readMore} →</span>}
-            </>
-          );
           return (
-            <li class:list={['card', { 'card-link': post, 'mc-accent': d.accent }]}>
-              {post ? <a href={postHref(post)}>{inner}</a> : inner}
+            <li class:list={[{ 'mc-accent': d.accent }]}>
+              <span class="mc-timeline-dot" aria-hidden="true"></span>
+              <time class="mono" datetime={d.iso}>{d.date}</time>
+              {post ? <a href={postHref(post)}>{d.text} →</a> : <span>{d.text}</span>}
             </li>
           );
         })}
-      </ul>
+      </ol>
     </div>
   </section>
+  )}
 
   <section class="section alt" id={m.chaptersAnchor} aria-labelledby="mc-chapters">
     <div class="container">
       <p class="label mono">{m.chaptersLabel}</p>
       <h2 id="mc-chapters">{m.chaptersTitle}</h2>
+      <p class="section-intro">{m.chaptersText}</p>
       {chapters.length > 0 && (
-        <ol class="cards mc-chapters">
+        <ol class="mc-path" style={`--rows: ${Math.ceil(chapters.length / 2)}`}>
           {chapters.map((c) => (
-            <li class="card card-link">
+            <li>
               <a href={chapterHref(c)}>
-                <span class="card-index mono">{m.chapterNo.replace('{nn}', nn(c.data.chapter))}</span>
-                <h3 class="card-title">{c.data.short}</h3>
-                <p>{c.data.summary}</p>
-                <span class="card-more mono">{m.chapterRead} →</span>
+                <span class="mc-path-step mono" aria-hidden="true">{nn(c.data.chapter)}</span>
+                <span>
+                  <span class="visually-hidden">{m.chapterNo.replace('{nn}', nn(c.data.chapter))}: </span>
+                  <h3 class="mc-path-title">{c.data.short}</h3>
+                  <span class="mc-path-summary">{c.data.summary}</span>
+                </span>
               </a>
             </li>
           ))}
@@ -191,24 +292,30 @@ const schema = {
       <div class="container">
         <p class="label mono">{m.articlesLabel}</p>
         <h2 id="mc-articles">{m.articlesTitle}</h2>
-        <ul class="refs mc-clusters">
+        <p class="section-intro">{m.articlesText}</p>
+        {/* Topic tabs without script: one radio per cluster, the rules below show the checked panel. */}
+        <div class="mc-tabs">
+          {clusters.map((_, i) => <input type="radio" name="mc-tab" id={`mc-tab-${i}`} class="visually-hidden" checked={i === 0} />)}
+          <div class="mc-tab-bar">
+            {clusters.map(({ cluster, posts }, i) => <label for={`mc-tab-${i}`}>{cluster[lang].title} <span class="mono">{posts.length}</span></label>)}
+          </div>
           {clusters.map(({ cluster, posts }) => (
-            <li class="ref">
-              <p class="ref-sector mono">{countLabel(posts.length)}</p>
-              <h3>{cluster[lang].title}</h3>
+            <div class="mc-tab-panel">
+              <h3>{cluster[lang].title} <span class="mono">{countLabel(posts.length)}</span></h3>
               <p>{cluster[lang].text}</p>
-              <ul class="mc-cluster-list">
+              <ul class="mc-tab-links">
                 {posts.map((p) => <li><a href={postHref(p)}>{p.data.title}</a></li>)}
               </ul>
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
+        <style is:inline set:html={clusters.map((_, i) => `#mc-tab-${i}:checked ~ .mc-tab-bar label[for="mc-tab-${i}"] { border-color: var(--cyan); color: var(--cyan-dark); } #mc-tab-${i}:focus-visible ~ .mc-tab-bar label[for="mc-tab-${i}"] { outline: 2px solid var(--cyan); outline-offset: 2px; } #mc-tab-${i}:checked ~ .mc-tab-panel:nth-of-type(${i + 2}) { display: block; }`).join('\n')} />
       </div>
     </section>
   )}
 
   <section class="section mc-author">
-    <div class="container post-inner">
+    <div class="container">
       <AuthorBox lang={lang} />
     </div>
   </section>

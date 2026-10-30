@@ -68,11 +68,18 @@ Nehmen wir einen Maschinenbauer mit Sales Cloud, Service Cloud, Field Service, e
 
 Die Reihenfolge:
 
-1. Alle Metadaten in ein Repository abrufen, das dem Kunden gehört.
-2. Code Analyzer, das sfdx-hardis-Monitoring und einen vollständigen Apex-Testlauf ausführen.
-3. Fest codierte personenbezogene Daten per Mustersuche aus Testklassen entfernen.
-4. Jede Komponente mit dem Fragenkatalog und den Tool-Befunden zu genau dieser Komponente an das Modell schicken.
-5. Die Antworten nach Objekt gruppieren und pro Objekt einen zweiten Durchlauf starten, denn ein Trigger, zwei Flows und eine Validierungsregel auf dem Arbeitsauftrag ergeben nur zusammen Sinn.
+```schritte
+Metadaten abrufen
+  Alle Metadaten in ein Repository abrufen, das dem Kunden gehört.
+Tools ausführen
+  Code Analyzer, das sfdx-hardis-Monitoring und einen vollständigen Apex-Testlauf ausführen.
+Daten bereinigen
+  Fest codierte personenbezogene Daten per Mustersuche aus Testklassen entfernen.
+Komponenten lesen lassen
+  Jede Komponente mit dem Fragenkatalog und den Tool-Befunden zu genau dieser Komponente an das Modell schicken.
+Pro Objekt verdichten
+  Die Antworten nach Objekt gruppieren und pro Objekt einen zweiten Durchlauf starten, denn ein Trigger, zwei Flows und eine Validierungsregel auf dem Arbeitsauftrag ergeben nur zusammen Sinn.
+```
 
 ### Was der Batch-Lauf kostet
 
@@ -81,9 +88,13 @@ Die [Claude Batch API](https://platform.claude.com/docs/en/build-with-claude/bat
 - Code und Metadaten: 1.400 Klassen zu 6.000 Tokens, 600 Flows zu 10.000 Tokens Flow-XML, 250 Permission Sets zu 4.000 Tokens = 15,4 Mio. Tokens.
 - Fragenkatalog und Tool-Befunde: 12.000 Tokens pro Anfrage × 2.250 Anfragen = 27 Mio. Tokens.
 - Output: 1.500 Tokens pro Komponente = 3,4 Mio. Tokens.
-- **Sonnet 5.5:** 42,4 Mio. × 1 $ + 3,4 Mio. × 5 $ = **rund 59 $**.
-- **Opus 5.5:** 42,4 Mio. × 2 $ + 3,4 Mio. × 10 $ = **rund 119 $**.
-- **Zweiter Durchlauf** für 40 Objekte mit je 100.000 Tokens Input und 5.000 Output auf Opus 5.5: **rund 10 $**.
+
+```kennzahlen
+59 $ | Sonnet 5.5, erster Durchlauf: 42,4 Mio. × 1 $ + 3,4 Mio. × 5 $, gerundet
+119 $ | Opus 5.5, erster Durchlauf: 42,4 Mio. × 2 $ + 3,4 Mio. × 10 $, gerundet
+10 $ | Zweiter Durchlauf für 40 Objekte mit je 100.000 Tokens Input und 5.000 Output auf Opus 5.5
+quelle: Claude Preisseite (Batch-Preise, US-Listenpreise), Token-Mengen als Annahmen im Szenario
+```
 
 Prompt-Caching lässt sich mit dem Batch-Rabatt kombinieren, im Batch sind Cache-Treffer aber nicht garantiert; Anthropic nennt Trefferquoten von 30 bis 98 Prozent. Ich rechne ohne Caching und betrachte jede Ersparnis als Zugabe. Thinking-Tokens werden [als Output abgerechnet](https://code.claude.com/docs/en/costs) und lassen sich bei den 5.5-Modellen nicht abschalten; verdreifachen sie den Output, steigt der Opus-Lauf auf rund 187 $. Die Grundlagen der Token-Rechnung stehen im [Masterclass-Kapitel zu Kosten und Token](../../masterclass/ki-salesforce/kosten-und-token/).
 
@@ -112,4 +123,4 @@ Die Analyse ist der Startpunkt für die Übergabe: welche Objekte an welchen Par
 5. Starten Sie den Batch und danach den zweiten Durchlauf pro Objekt.
 6. Prüfen Sie Stichproben und jeden Befund mit hohem Risiko, bevor etwas in den Übergabeplan geht.
 
-Eine KI-Org-Analyse kostet an Tokens weniger als ein Workshop-Tag, solange die Tools die Fakten liefern und das Modell sie nur erklärt; wenn Sie einen Partnerwechsel oder Relaunch planen, [schreiben Sie mir](#contact).
+Eine KI-Org-Analyse kostet an Tokens weniger als ein Workshop-Tag, solange die Tools die Fakten liefern und das Modell sie nur erklärt.

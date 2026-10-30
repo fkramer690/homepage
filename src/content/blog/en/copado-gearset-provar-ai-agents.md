@@ -53,7 +53,15 @@ A pilot rarely comes with a service level or a fixed price, so status matters. A
 
 Sources: Copado press release, [Copado Dreamforce 2026 page](https://www.copado.com/dreamforce-2026-copado), Gearset announcement and [Gearset agent page](https://gearset.com/solutions/gearset-agent/), [Provar MCP documentation](https://documentation.provar.com/documentation/v3/provar-mcp/).
 
-The one hard number comes from Gearset: "Within a week, one customer had Cam creating 44% of their team's pull requests, with 75% of these successfully merged." That is one customer, measured by the vendor, after one week. It shows that Cam can produce mergeable pull requests in a real org, nothing more. One in four was not merged, and every one went through the team's review.
+The one hard number comes from Gearset:
+
+```kennzahlen
+44% | of a team's pull requests were created by Cam at one customer within a week
+75% | of these pull requests were successfully merged
+source: Gearset announcement of 2 September 2026
+```
+
+That is one customer, measured by the vendor, after one week. It shows that Cam can produce mergeable pull requests in a real org, nothing more. One in four was not merged, and every one went through the team's review.
 
 ## Which model, which region, which retention?
 
@@ -67,7 +75,9 @@ Here the three products differ most, and this is where a manufacturer with GDPR 
 - Usage is measured in credits with a monthly cap from the order form. At the cap, Gearset suspends the AI functionality until the end of the month.
 - The customer "may not use the AI functionality to replace or substantially replace human decision making".
 
+```hinweis achtung
 US data centres mean a third-country transfer your data protection officer must assess before production metadata goes in.
+```
 
 **Copado** names no model and no region for Agentia on the pages I opened. Its public data sheet "Copado AI and your data" dates from June 2024 and covers CopadoGPT and Test Copilot, not Agentia; I could read only its summary page. That says nothing about the quality of the answers; it means you need them in writing before you sign.
 
@@ -89,11 +99,21 @@ With Gearset the steps are the same; step 2 starts from Gearset's published term
 
 ## When is open source plus a general coding agent enough?
 
-Paid DevOps agents bring a prepared view of your org and pipeline and a governance layer the vendor maintains. For teams without Git and pipeline know-how in house, that is worth real money.
+A team that already runs [sfdx-hardis](../sfdx-hardis-open-source-salesforce-devops/) gets much of what paid DevOps agents offer without a second AI contract. According to the [sfdx-hardis AI setup guide](https://sfdx-hardis.cloudity.com/salesforce-ai-setup/), it explains deployment errors and describes Flows and Apex classes. The provider can be Agentforce, OpenAI, Anthropic, Google or a local Ollama model, set by environment variables or routed through a corporate gateway. You choose the model and therefore the region. Its coding agent auto-fix is in beta, and the guide says an expert must review those changes before merging.
 
-A team that already runs [sfdx-hardis](../sfdx-hardis-open-source-salesforce-devops/) gets much of it without a second AI contract. According to the [sfdx-hardis AI setup guide](https://sfdx-hardis.cloudity.com/salesforce-ai-setup/), it explains deployment errors and describes Flows and Apex classes. The provider can be Agentforce, OpenAI, Anthropic, Google or a local Ollama model, set by environment variables or routed through a corporate gateway. You choose the model and therefore the region. Its coding agent auto-fix is in beta, and the guide says an expert must review those changes before merging.
+Pair that with Claude Code, Codex or Copilot, compared in [Agentforce Vibes, Claude Code, Codex or Copilot](../agentforce-vibes-claude-code-copilot/), and a pipeline you own decides what reaches production. The trade-off is support.
 
-Pair that with Claude Code, Codex or Copilot, compared in [Agentforce Vibes, Claude Code, Codex or Copilot](../agentforce-vibes-claude-code-copilot/), and a pipeline you own decides what reaches production. The trade-off is support: with open source, you or your architect own the setup. With Copado or Gearset you pay someone else to own it, and you inherit their model choice.
+```pro-contra
+pro: A paid DevOps agent fits when
+- your team lacks Git and pipeline know-how in house
+- you want a prepared view of org and pipeline
+- the vendor should maintain the governance layer
+- you want to pay someone else for setup and support
+contra: Open source and a coding agent are enough when
+- your team already runs sfdx-hardis
+- you want to choose the model, and so the region, yourself
+- you or your architect own the setup
+```
 
 ## What should you ask before you pay?
 
@@ -109,4 +129,4 @@ I would put these questions to any DevOps vendor selling an AI agent and get the
 
 The last two follow from two rules: the client should [own the DevOps tools](../why-clients-should-own-their-devops-tools/), and the same terms belong in [partner contracts for AI coding](../partners-using-ai-coding-contract-rules/). Setting this up is part of my [DevOps and release management](../../services/devops-release-management/) work; the wider tool choice is in [chapter 4 of the AI masterclass](../../masterclass/ai-salesforce/external-coding-agents/).
 
-A DevOps AI agent is worth paying for once the vendor answers the model, region and retention questions in writing and a pilot in your own org beats your current setup. If you want a second opinion before signing an Agentia or Cam order, [send me a message](#contact).
+A DevOps AI agent is worth paying for once the vendor answers the model, region and retention questions in writing and a pilot in your own org beats your current setup.

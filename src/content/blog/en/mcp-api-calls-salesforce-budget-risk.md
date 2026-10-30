@@ -32,7 +32,14 @@ MCP calls to Salesforce become a budget risk because every successful call by an
 
 ## What are Headless Platform Interactions?
 
-Headless Platform Interactions are a new usage type on the [Flex Credits rate card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf), updated as of 31 August 2026. The row sits under Customer 360 Platform, the multiplier reads "TBA", and a footnote says these usage types apply to Headless 360 usage only and come in addition to the other usage types on the card. Headless 360 is Salesforce's name for exposing the platform to outside agents: [4,000+ APIs, 60+ MCP tools and 220+ CLI commands](https://developer.salesforce.com/blogs/2026/05/headless-360-what-it-means-for-developers), according to the developer blog.
+Headless Platform Interactions are a new usage type on the [Flex Credits rate card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf), updated as of 31 August 2026. The row sits under Customer 360 Platform, the multiplier reads "TBA", and a footnote says these usage types apply to Headless 360 usage only and come in addition to the other usage types on the card. Headless 360 is Salesforce's name for exposing the platform to outside agents, with this scope according to the developer blog:
+
+```kennzahlen
+4,000+ | APIs
+60+ | MCP tools
+220+ | CLI commands
+source: Salesforce Developers blog, [Headless 360: what it means for developers](https://developer.salesforce.com/blogs/2026/05/headless-360-what-it-means-for-developers)
+```
 
 The details come from a Salesforce Help article (005360285) that I could only read through [Salesforce Ben's report of 24 September 2026](https://www.salesforceben.com/salesforce-will-charge-flex-credits-for-agentic-mcp-and-api-calls/):
 
@@ -54,7 +61,11 @@ Three effects make this a budget question for a manufacturer:
 - **The pool is shared.** Flex Credits for interactions come from the same pool as Agentforce actions, prompts and Data 360. Unused credits [do not roll over](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) past the order end date, so overbuying costs money as well.
 - **Volume grows without a project.** Once a few key account managers use Salesforce in Claude, colleagues follow. Nobody files a change request for that, and the first sign is the Digital Wallet.
 
-There is a second ceiling that has nothing to do with Flex Credits. Agents that call the REST API directly draw on the org's [daily API request allocation](https://developer.salesforce.com/docs/platform/salesforce-app-limits-cheatsheet/guide/salesforce-app-limits-platform-api.html): in Enterprise Edition 100,000 plus 1,000 per Salesforce licence per 24 hours, shared by all callers. Your SAP integration and your middleware use the same allocation. The limit is soft, but past the system protection limit calls fail with [REQUEST_LIMIT_EXCEEDED](https://developer.salesforce.com/blogs/2024/11/api-limits-and-monitoring-your-api-usage). Whether hosted MCP calls count against it, the documentation I read does not say. I would ask before a busy month end shows you.
+There is a second ceiling that has nothing to do with Flex Credits. Agents that call the REST API directly draw on the org's [daily API request allocation](https://developer.salesforce.com/docs/platform/salesforce-app-limits-cheatsheet/guide/salesforce-app-limits-platform-api.html): in Enterprise Edition 100,000 plus 1,000 per Salesforce licence per 24 hours, shared by all callers. Your SAP integration and your middleware use the same allocation. The limit is soft, but past the system protection limit calls fail with [REQUEST_LIMIT_EXCEEDED](https://developer.salesforce.com/blogs/2024/11/api-limits-and-monitoring-your-api-usage).
+
+```hinweis offen
+Whether hosted MCP calls count against the daily API allocation, the documentation I read does not say. I would ask before a busy month end shows you.
+```
 
 ## A typical scenario: key account managers with Claude
 
@@ -88,4 +99,4 @@ Not every question belongs on this path. If order status, stock and credit limit
 
 I would also keep bulk work away from external agents. A Claude session that checks 5,000 installed base records for missing warranty dates produces thousands of interactions; a report or a batch job does the same for free. MCP fits dialogue, not data cleansing. The basics of MCP and the decisions an IT lead has to make are in [MCP for IT leads](../mcp-salesforce-explained-for-it-leads/), and what AIforce brings on top is in [AIforce: Salesforce in Claude and Slack](../aiforce-salesforce-in-claude-and-slack/).
 
-External agents on Salesforce data will cost money per call, so measure the calls and negotiate the price while metering is still off. If you want a second opinion on your estimate, [send me a message](#contact).
+External agents on Salesforce data will cost money per call, so measure the calls and negotiate the price while metering is still off.

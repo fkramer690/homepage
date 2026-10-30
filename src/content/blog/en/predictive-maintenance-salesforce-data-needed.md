@@ -26,7 +26,7 @@ faq:
 draft: false
 ---
 
-A machine builder has enough data for predictive maintenance in Salesforce when one model series has hundreds of comparable units, every corrective work order is linked to a serial number and failure causes sit in coded fields. Asset Service Prediction learns from that service history, and sensor data comes second. If the history is thin, maintenance plans with usage and condition triggers are the honest alternative. Telemetry is affordable as aggregates: in my example below, raw one-second readings from 300 machines cost about $65,900 a month in Flex Credits, 15-minute aggregates about $180.
+A machine builder has enough data for predictive maintenance in Salesforce when one model series has hundreds of comparable units, every corrective work order is linked to a serial number and failure causes sit in coded fields. Asset Service Prediction learns from that service history, and sensor data comes second. If the history is thin, [maintenance plans with usage and condition triggers](../field-service-usage-based-maintenance/) are the honest alternative. Telemetry is affordable as aggregates: in my example below, raw one-second readings from 300 machines cost about $65,900 a month in Flex Credits, 15-minute aggregates about $180.
 
 ## What does Salesforce offer for predictive maintenance today?
 
@@ -41,7 +41,7 @@ Salesforce sells several functions under the heading of proactive service, and o
 | Asset Health Score | Scores assets by age, usage, telemetry and repair history via Data 360 | Part of Connected Assets, $15,000 per org per month |
 | Asset Service Prediction | Predicts the time of and reason for a failure | Open beta announced in June 2024, product page without a status |
 
-The manufacturing announcement avoids the term predictive maintenance and speaks of agents that "warn customers and service teams of issues before they happen". The [asset management page](https://www.salesforce.com/service/field-service-management/asset-management/) lists Connected Assets with 10,000 connected digital assets, the Asset Health Score and an "Actionable Telematics Framework". The function overview is in [AI agents in Field Service: what works today?](../field-service-ai-agents-what-works-today/). Here the question is narrower: is your data ready for the last two rows?
+The manufacturing announcement avoids the term predictive maintenance and speaks of agents that "warn customers and service teams of issues before they happen". The [asset management page](https://www.salesforce.com/service/field-service-management/asset-management/) lists Connected Assets with 10,000 connected digital assets, the Asset Health Score and an "Actionable Telematics Framework". The function overview is in [AI agents in Field Service: what works today?](../field-service-ai-agents-what-works-today/). Here the question is narrower: is your data ready for the last two rows? Both rows start from the machines as asset records, see [installed base in Manufacturing Cloud](../installed-base-asset-milestones/).
 
 ## When is the service history enough for failure prediction?
 
@@ -63,14 +63,23 @@ The [Flex Credits rate card of 31 August 2026](https://www.salesforce.com/en-us/
 - **Streaming Pipeline:** 3,500 credits per million rows in the base tier, falling to 2,800, 1,400 and 700 at higher monthly volumes. According to [Salesforce Help](https://help.salesforce.com/s/articleView?id=data.c360_a_data_usage_types.htm&language=en_US&type=5), the streaming Ingestion API counts here.
 - **Real-Time Pipeline:** 250,000 credits per million events, about 71 times the streaming rate per unit. It counts events only when they belong to a real-time data graph.
 
-Tiers apply per usage type and reset on the first day of each month. Flex Credits cost [$500 per 100,000](https://www.salesforce.com/news/press-releases/2025/05/15/agentforce-flexible-pricing-news/). The [streaming Ingestion API](https://developer.salesforce.com/docs/data/data-cloud-ref/guide/c360a-api-streaming-ingestion.htm) processes data "approximately every 3 minutes". For maintenance, where a work order is created hours or days before the visit, that is fast enough, and I see no reason to pay the real-time rate. [Bulk ingestion](https://developer.salesforce.com/docs/data/data-cloud-ref/guide/c360a-api-salesforce-cdp-ingestion.htm) suits daily or weekly loads. The help page books it as Batch Data Pipeline, a name the August rate card does not show, so ask your account executive which line applies.
+Tiers apply per usage type and reset on the first day of each month. Flex Credits cost [$500 per 100,000](https://www.salesforce.com/news/press-releases/2025/05/15/agentforce-flexible-pricing-news/). The [streaming Ingestion API](https://developer.salesforce.com/docs/data/data-cloud-ref/guide/c360a-api-streaming-ingestion.htm) processes data "approximately every 3 minutes". For maintenance, where a work order is created hours or days before the visit, that is fast enough, and I see no reason to pay the real-time rate. [Bulk ingestion](https://developer.salesforce.com/docs/data/data-cloud-ref/guide/c360a-api-salesforce-cdp-ingestion.htm) suits daily or weekly loads. The help page books it as Batch Data Pipeline, a name the August rate card does not show.
 
 Take 300 connected machines with 12 signals each:
 
-- **Raw readings, one per second:** 9.3 billion rows a month. Even with the volume tiers that is about 13.2 million credits, roughly $65,900 a month.
-- **15-minute aggregates**, one row per signal with minimum, maximum and mean: 10.4 million rows, 36,288 credits, about $181 a month.
+```kennzahlen
+$65,900 | a month for raw readings, one per second: 9.3 billion rows, about 13.2 million credits even with the volume tiers
+$181 | a month for 15-minute aggregates with minimum, maximum and mean per signal: 10.4 million rows, 36,288 credits
+source: Flex Credits rate card of 31 August 2026 and Salesforce pricing news ($500 per 100,000 credits), volumes as assumptions
+```
 
-For time series already in a data lake, Salesforce advertises zero copy access. Help bills federation by records retrieved from the source, and I found no matching rate card line, so get that rate in writing too. Grounding agents on manuals is a separate cost block, described in [Data 360 costs for AI agents](../data-360-costs-for-ai-agents/).
+For time series already in a data lake, Salesforce advertises zero copy access. Help bills federation by records retrieved from the source, and I found no matching rate card line.
+
+```hinweis offen
+The rate card shows no line of its own for bulk ingestion (Batch Data Pipeline) or for federation. Ask your account executive which line applies to each, and get both rates in writing.
+```
+
+Grounding agents on manuals is a separate cost block, described in [Data 360 costs for AI agents](../data-360-costs-for-ai-agents/).
 
 Raw time series belong in the IoT platform or historian the machine builder already runs. Salesforce needs counters, aggregates and threshold events, because those are what create a work order.
 
@@ -78,7 +87,7 @@ Raw time series belong in the IoT platform or historian the machine builder alre
 
 Much of the value promised under "predictive" comes from two simpler things: no planned maintenance gets missed, and intervals follow real usage instead of the calendar. Field Service covers both without a prediction model.
 
-Maintenance plans generate the work orders, and maintenance work rules on the asset handle different intervals, as described in [modelling maintenance contracts](../salesforce-field-service-maintenance-contracts/). The product page adds plans around asset use and condition, with service scheduled when "an asset's temperature exceeds a set threshold". The data model has an [AssetAttribute object](https://developer.salesforce.com/docs/atlas.en-us.field_service_dev.meta/field_service_dev/sforce_api_objects_assetattribute.htm) that "stores asset attributes to track and analyze asset conditions", available since API version 57.0. An operating hours counter written once a day from SAP, proALPHA or the IoT platform is enough for usage-based intervals.
+Maintenance plans generate the work orders, and maintenance work rules on the asset handle different intervals, as described in [modelling maintenance contracts](../salesforce-field-service-maintenance-contracts/). The product page adds plans around asset use and condition, with service scheduled when "an asset's temperature exceeds a set threshold". The data model has an [AssetAttribute object](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_assetattribute.htm) that "stores asset attributes to track and analyze asset conditions", available since API version 57.0. An operating hours counter written once a day from SAP, proALPHA or the IoT platform is enough for usage-based intervals.
 
 The proactive maintenance agent then books the visit. If one booking takes five actions, that is 100 credits or $0.50.
 
@@ -111,4 +120,4 @@ The total is about 34,000 credits, roughly $170 a month. Connected Assets at $15
 
 How machine data, ERP and Salesforce fit together is part of my [integration architecture work](../../services/salesforce-integration/).
 
-Predictive maintenance starts with a clean service history, and the sensors come second. If you want a second opinion on whether your data is ready, [send me a message](#contact).
+Predictive maintenance starts with a clean service history, and the sensors come second.

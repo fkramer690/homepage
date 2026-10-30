@@ -1,0 +1,32 @@
+---
+// One photo of Fabian from src/data/photos.ts, as AVIF/WebP with a JPEG fallback
+// in responsive widths. `sizes` must match the rendered width; `eager` only for a
+// photo above the fold (it then also gets fetchpriority high).
+import { Picture } from 'astro:assets';
+import { photos, type PhotoKey } from '../data/photos';
+
+interface Props {
+  photo: PhotoKey;
+  lang: 'en' | 'de';
+  sizes: string;
+  widths?: number[];
+  eager?: boolean;
+  class?: string;
+}
+const { photo, lang, sizes, widths = [400, 640, 960, 1280], eager = false, class: className } = Astro.props;
+const p = photos[photo];
+---
+<Picture
+  src={p.src}
+  alt={p.alt[lang]}
+  formats={['avif', 'webp']}
+  fallbackFormat="jpg"
+  widths={widths}
+  sizes={sizes}
+  quality={70}
+  loading={eager ? 'eager' : 'lazy'}
+  fetchpriority={eager ? 'high' : 'auto'}
+  decoding="async"
+  class={className}
+  style={`object-position: ${p.focus}`}
+/>

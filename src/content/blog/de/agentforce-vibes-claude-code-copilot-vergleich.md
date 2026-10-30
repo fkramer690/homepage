@@ -59,7 +59,11 @@ Diese Frage streicht Optionen. Was die Anbieter auf ihren eigenen Seiten sagen:
 | GitHub Copilot | [EU-Datenresidenz seit 13. April 2026](https://github.blog/changelog/2026-04-13-copilot-data-residency-in-us-eu-and-fedramp-compliance-now-available) für alle allgemein verfügbaren Funktionen inklusive Cloud Agent und CLI, standardmäßig aus, 10 Prozent mehr AI Credits |
 | Codex | Datenresidenz nur mit ChatGPT Enterprise; [Codex-App und CLI unterstützt, Codex Web ausgenommen](https://help.openai.com/en/articles/9903489) |
 
-Zwei Details zählen für Salesforce-Teams. Die [EU-Modellliste für Copilot](https://docs.github.com/en/enterprise-cloud@latest/admin/data-residency/github-copilot-with-data-residency) enthält Claude Opus 5.5 und Sonnet 5.5; ein Team kann also ohne AWS-Konto mit Claude-Modellen unter EU-Verarbeitung arbeiten. Und bei Vibes würde ich mir die Verarbeitungsregion von Salesforce schriftlich geben lassen, bevor Ihr Datenschutzbeauftragter zustimmt. Ob der Betriebsrat mitbestimmt, ist eine eigene Frage, beschrieben in [KI-Coding, Betriebsrat und DSGVO](../ki-coding-betriebsrat-dsgvo/).
+Zwei Details zählen für Salesforce-Teams. Die [EU-Modellliste für Copilot](https://docs.github.com/en/enterprise-cloud@latest/admin/data-residency/github-copilot-with-data-residency) enthält Claude Opus 5.5 und Sonnet 5.5; ein Team kann also ohne AWS-Konto mit Claude-Modellen unter EU-Verarbeitung arbeiten. Ob der Betriebsrat mitbestimmt, ist eine eigene Frage, beschrieben in [KI-Coding, Betriebsrat und DSGVO](../ki-coding-betriebsrat-dsgvo/).
+
+```hinweis offen
+Bei Vibes nennt Salesforce keine Verarbeitungsregion. Ich würde sie mir von Salesforce schriftlich geben lassen, bevor Ihr Datenschutzbeauftragter zustimmt.
+```
 
 ### 3. Welches Kostenmodell können Sie steuern?
 
@@ -103,11 +107,17 @@ Am Ende stehen zwei Werkzeuge und eine `AGENTS.md`, die der interne Architekt ve
 
 ## Wie entscheiden Sie in vier Wochen?
 
-1. **Woche 1:** Prüfen Sie, ob die Org in der EU Operating Zone liegt, und listen Sie Ihre Verträge mit Salesforce, GitHub, Anthropic, OpenAI und AWS.
-2. **Woche 2:** Klären Sie die Residenzregel mit dem Datenschutz und starten Sie das Verfahren mit dem Betriebsrat.
-3. **Woche 3:** Geben Sie höchstens zwei Werkzeuge frei, alle Konten auf den Kunden, und schreiben Sie die Regeldatei.
-4. **Woche 4:** Lassen Sie 10 bis 15 Backlog-Aufgaben durch die freigegebenen Werkzeuge und dieselben Pipeline-Prüfungen laufen, wie in [Quality Gates für KI-Code](../quality-gates-ki-code-salesforce-pipeline/) beschrieben.
+```schritte
+Bestand aufnehmen | Woche 1
+  Prüfen Sie, ob die Org in der EU Operating Zone liegt, und listen Sie Ihre Verträge mit Salesforce, GitHub, Anthropic, OpenAI und AWS.
+Regeln klären | Woche 2
+  Klären Sie die Residenzregel mit dem Datenschutz und starten Sie das Verfahren mit dem Betriebsrat.
+Freigeben | Woche 3
+  Geben Sie höchstens zwei Werkzeuge frei, alle Konten auf den Kunden, und schreiben Sie die Regeldatei.
+Testen | Woche 4
+  Lassen Sie 10 bis 15 Backlog-Aufgaben durch die freigegebenen Werkzeuge und dieselben Pipeline-Prüfungen laufen, wie in [Quality Gates für KI-Code](../quality-gates-ki-code-salesforce-pipeline/) beschrieben.
+```
 
 Diese Regeln über mehrere Partner hinweg festzulegen, gehört zu meiner Arbeit in der [Partnersteuerung](../../leistungen/partnersteuerung/) und im [DevOps- und Release-Management](../../leistungen/devops-und-release-management/).
 
-Wählen Sie den Coding-Agenten nach Vertrag, Residenz und Governance, und halten Sie die Qualität in Regeldatei und Pipeline, die Ihnen gehören. Wenn Sie eine zweite Meinung zu Ihrer Freigabeliste möchten, [schreiben Sie mir](#contact).
+Wählen Sie den Coding-Agenten nach Vertrag, Residenz und Governance, und halten Sie die Qualität in Regeldatei und Pipeline, die Ihnen gehören.

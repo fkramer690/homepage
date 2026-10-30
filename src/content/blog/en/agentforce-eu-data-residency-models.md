@@ -61,8 +61,13 @@ According to the Supported Models page, geo-aware models route "your LLM request
 Three points remain open:
 
 - **Which models are geo-aware.** The Supported Models page names no models and no regions.
-- **What happens on an outage.** For Agentforce Vibes, the coding assistant, Salesforce [documents](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-geo-aware-routing.html) that requests fall back to the United States by default when the regional endpoint is unavailable. A setting in Einstein Setup, "Enable In-Region Model Request Only", requires Data 360 and returns an error instead. The same page says: "This setting currently has no effect for Anthropic and Gemini models." Ask Salesforce whether it governs your service agents too.
+- **What happens on an outage.** For Agentforce Vibes, the coding assistant, Salesforce [documents](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-geo-aware-routing.html) that requests fall back to the United States by default when the regional endpoint is unavailable. A setting in Einstein Setup prevents that; ask Salesforce whether it governs your service agents too.
 - **Switzerland.** For Swiss data, the sub-processor document names a failover through AWS in the US, relevant for Swiss sites and dealers.
+
+```vertiefung For admins
+title: What "Enable In-Region Model Request Only" does
+The setting sits in Einstein Setup and requires Data 360. When the regional endpoint is unavailable, it returns an error instead of routing the request to the United States. The Salesforce page on Agentforce Vibes says: "This setting currently has no effect for Anthropic and Gemini models."
+```
 
 In-region only has a price: during an outage the agent returns an error. For order status that is acceptable with a handover to a person. For a [breakdown hotline](../breakdown-hotline-agentforce-voice/) I would not accept it without a tested fallback to a dispatcher.
 
@@ -70,7 +75,11 @@ In-region only has a price: during an outage the agent returns an error. For ord
 
 Salesforce [launched](https://www.salesforce.com/news/press-releases/2023/03/02/hyperforce-eu-operating-zone-news/) the Hyperforce EU Operating Zone on 2 March 2023, so customers can store and process their data in the EU, with support by EU-based personnel. The [product page](https://salesforce.com/platform/data-residence-eu-oz) speaks of processing and storing customer data "strictly within the region (EU and Switzerland)" and of "a select set of products and features that have been vetted", spanning Sales Cloud, Service Cloud, the platform and industries. Neither page mentions Agentforce, Einstein or Data 360.
 
-The only explicit AI statement I found is in the [Agentforce Vibes FAQ](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-faqs.html): "Agentforce Vibes isn't available in the EU Operating Zone." If your org runs in the EU Operating Zone, I would treat Agentforce agents as unconfirmed there until Salesforce states the scope in writing.
+The only explicit AI statement I found is in the [Agentforce Vibes FAQ](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-faqs.html): "Agentforce Vibes isn't available in the EU Operating Zone."
+
+```hinweis offen
+If your org runs in the EU Operating Zone, I would treat Agentforce agents as unconfirmed there until Salesforce states the scope in writing.
+```
 
 Koa, Salesforce's own CRM reasoning model, comes to the US first. According to the [investor release](https://investor.salesforce.com/news/news-details/2026/Announcing-Koa-Salesforces-First-CRM-Reasoning-Model-Built-on-NVIDIA-Nemotron/default.aspx) of 15 September 2026, it is "Available to select pilot customers now", with general availability "expected Winter 2026 in U.S. regions", and Salesforce runs inference "entirely within its own trust boundary". There is no EU date yet.
 
@@ -108,4 +117,4 @@ Ask Salesforce per agent and file the answers in the architecture documentation:
 
 Settling these questions per agent is part of my work on [Salesforce architecture](../../services/salesforce-architecture/); the wider map of agents in manufacturing is in [chapter 10 of the AI masterclass](../../masterclass/ai-salesforce/ai-agents-in-manufacturing/).
 
-Where an Agentforce agent processes your dealer data depends on the model you choose, and only Salesforce's written confirmation for your org settles it. If you want a second opinion before your data protection officer signs off, [send me a message](#contact).
+Where an Agentforce agent processes your dealer data depends on the model you choose, and only Salesforce's written confirmation for your org settles it.

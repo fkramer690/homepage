@@ -29,13 +29,22 @@ faq:
 draft: false
 ---
 
-A Salesforce AELA pays off for a manufacturer only when agent use across sales, service, field service and dealers will grow beyond what Flex Credits cover at a known price, and when the renewal terms are fixed at signature. For one or two agents, Flex Credits are cheaper and easier to leave. Salesforce has published no AELA price and no standard terms. What it has said in public is that it wants AELA customers to move to consumption later. That makes the renewal clause the part of the deal I would negotiate hardest.
+As long as a manufacturer runs one or two agents, Flex Credits are cheaper than a Salesforce AELA and easier to leave. An AELA pays off only when agent use across sales, service, field service and dealers will grow beyond what Flex Credits cover at a known price, and when the renewal terms are fixed at signature. I would negotiate the renewal clause hardest, because Salesforce has said in public that it wants AELA customers to move to consumption later. Salesforce has published no AELA price and no standard terms.
 
 ## What is a Salesforce AELA, and what is public?
 
 The Agentic Enterprise License Agreement (AELA) is a fixed-fee contract for agent use. Forrester analyst Lisa Singer [wrote in December 2025](https://www.forrester.com/blogs/ai-agents-become-economic-actors-salesforce-rewrites-the-rules-of-pricing) that it "gives customers unlimited use of consumption‑based products such as Agentforce, Data 360/Data Cloud, and MuleSoft for a fixed fee over two or three years". Forrester also reports that Chief Revenue Officer Miguel Milano said at a conference "that Salesforce is OK with losing money on some AI deals".
 
-Salesforce's own statements come from its earnings calls. In the [transcript of the Q4 FY26 call](https://s205.q4cdn.com/626266368/files/doc_financials/2026/q4/Transcript-Salesforce-Inc-Q4-FY26-Earnings-Conference-Call-2-25-26.pdf) of 25 February 2026, Milano said Salesforce sold more than 120 AELAs in that quarter, against an internal expectation of 50 to 100, and that eight of the ten largest deals were AELAs. CFO Robin Washington named the forward deployed engineers as the key to "converting it from AELAS to ultimately consuming" (spelling as in the transcript). In the [Q1 FY27 call](https://s205.q4cdn.com/626266368/files/doc_financials/2027/q1/Salesforce-Q1-FY27-Earnings-Transcript.pdf) of 27 May 2026, Milano described six of the ten largest deals as ELAs "where we threw in a bunch of flex credits". The Q4 transcript never defines AELA; the Q1 transcript glosses ELA as "a limited enterprise license agreement".
+Salesforce's own statements come from its earnings calls. In the [transcript of the Q4 FY26 call](https://s205.q4cdn.com/626266368/files/doc_financials/2026/q4/Transcript-Salesforce-Inc-Q4-FY26-Earnings-Conference-Call-2-25-26.pdf) of 25 February 2026, Milano gave these sales figures:
+
+```kennzahlen
+over 120 | AELAs sold in the fourth quarter of FY26
+50 to 100 | AELAs Salesforce had expected for the quarter
+8 of 10 | largest deals of the quarter were AELAs
+source: Salesforce, transcript of the Q4 FY26 earnings call of 25 February 2026
+```
+
+CFO Robin Washington named the forward deployed engineers as the key to "converting it from AELAS to ultimately consuming" (spelling as in the transcript). In the [Q1 FY27 call](https://s205.q4cdn.com/626266368/files/doc_financials/2027/q1/Salesforce-Q1-FY27-Earnings-Transcript.pdf) of 27 May 2026, Milano described six of the ten largest deals as ELAs "where we threw in a bunch of flex credits". The Q4 transcript never defines AELA; the Q1 transcript glosses ELA as "a limited enterprise license agreement".
 
 Two deals have been made public:
 
@@ -82,12 +91,19 @@ I would compare three numbers side by side: the AELA fee, the licences you plan 
 
 I would consider an AELA when most of these points are true:
 
+```pro-contra
+pro: Points for an AELA
 - **Several agents are live or approved** for the next twelve months in at least two areas, for example dealer service and field service.
 - **The bundled products are on your roadmap,** including Data 360 and MuleSoft for the SAP integration, which Forrester names as covered.
 - **Consumption is hard to forecast,** because large document sets for spare parts and manuals have to be indexed or the API rate is still open.
 - **You have the capacity to roll out.** Under a flat fee, capacity you do not use is pure cost, and Salesforce's CFO ties the later conversion to consumption to its engineers on site.
+contra: Do not sign
+- In a pilot.
+- For a single plant.
+- While spare part and asset data are still unreliable.
+```
 
-I would not sign one in a pilot, for a single plant or while spare part and asset data are still unreliable. In that state agents do not reach volume, as described in [Agentforce pilots: business value and data quality first](../agentforce-business-value-data-quality-first/). Forrester expects CFOs to ask about ROI, IRR and "the useful life of the agent". For a machine builder that means one business case per agent with a metric you measure yourself, such as first-time fix rate or warranty claim throughput.
+In these cases agents do not reach volume, as described in [Agentforce pilots: business value and data quality first](../agentforce-business-value-data-quality-first/). Forrester expects CFOs to ask about ROI, IRR and "the useful life of the agent". For a machine builder that means one business case per agent with a metric you measure yourself, such as first-time fix rate or warranty claim throughput.
 
 ## What must you negotiate for the renewal?
 
@@ -112,4 +128,4 @@ This list is a commercial checklist, not legal advice. Have the contract itself 
 
 Comparing licence models over several years is part of my [make-or-buy and licence planning](../../services/make-or-buy-licences/), on the client side and without a stake in the deal.
 
-An AELA buys a known price for two or three years, and the renewal clause decides what the year after costs. If you have an AELA offer on the table and want an independent view, [send me a message](#contact).
+An AELA buys a known price for two or three years, and the renewal clause decides what the year after costs.

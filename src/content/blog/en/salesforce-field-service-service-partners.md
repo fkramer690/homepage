@@ -63,7 +63,11 @@ The steps are in [Salesforce Help on contractor access](https://help.salesforce.
 - **Own profile and own mobile settings.** That way the app can be configured differently for partners without changing the internal version.
 - **One service territory per partner company.** The partner manager then sees only their own people and appointments. If they should dispatch themselves, the dispatch console can be added to the Experience Cloud site.
 
-There are two kinds of licences. Partners who work regularly get licences per user. For seasonal or rare work there are licences per login, according to Salesforce up to 20 users per login bought. Contractor licences are only for third-party contractors, not for your own employees. How to spread licences sensibly across all roles is covered in [Salesforce licences: does everyone need a full licence?](../salesforce-licences-full-licence-needed/).
+There are two kinds of licences. Partners who work regularly get licences per user. For seasonal or rare work there are licences per login, according to Salesforce up to 20 users per login bought. How to spread licences sensibly across all roles is covered in [Salesforce licences: does everyone need a full licence?](../salesforce-licences-full-licence-needed/), and the Field Service roles in detail in [Salesforce Field Service licences: who needs which?](../field-service-licences-by-role/).
+
+```hinweis achtung
+Contractor licences are only for third-party contractors, not for your own employees.
+```
 
 ## What does a partner job look like from start to finish?
 
@@ -83,4 +87,4 @@ The same way of working does not mean the same rights. I would separate three th
 
 Take your most important partner and write down how a job reaches them today and how the feedback comes back. Every step that runs differently from internal technicians is a candidate for alignment. Start with one partner and one territory before connecting all of them. Mixed setups are fine: a large core partner works in the first model, a small partner for peaks in the second. What matters is that the decision is made deliberately per partner and documented.
 
-The last part of the series is about the rollout itself. If you want to check how your partners fit into Field Service before then, [get in touch](#contact).
+The last part of the series is about the rollout itself.

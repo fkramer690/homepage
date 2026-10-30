@@ -42,7 +42,7 @@ Weil es Entscheidungen mit einer richtigen Antwort sind. Ein Händler liegt übe
 
 **Audit und Streitfälle.** Ein Händler, dessen Garantieantrag abgelehnt wurde, fragt nach dem Grund. Der Leitfaden nennt nicht deterministische Ausführung eine Lücke im Audit, und ich sehe das genauso. Eine Regel im Code gibt am Dienstag dieselbe Antwort wie am Montag und ist nachvollziehbar. Agentenversionen liegen außerdem als Metadaten vor: Das [AiAuthoringBundle](https://developer.salesforce.com/blogs/2026/05/new-agentforce-metadata-and-development-lifecycle) hält versionierte Ordner, Sie können also zeigen, welche Regelversion aktiv war.
 
-**Die Regel hat schon ein Zuhause.** In der Fertigung stehen Kreditlimit und Obligo in SAP oder proALPHA. Garantiebedingungen stehen in der Manufacturing Cloud oder im ERP. Preiskonditionen stehen im ERP oder im CPQ. Ein Agent sollte das Ergebnis dieses Systems lesen, nicht die Regel im Prompt nachbauen. Zwei Orte mit derselben Regel laufen auseinander, und die Prompt-Fassung ist die, die niemand testet.
+**Die Regel hat schon ein Zuhause.** In der Fertigung stehen Kreditlimit und Obligo in SAP oder proALPHA. Garantiebedingungen stehen in der Manufacturing Cloud oder im ERP. Preiskonditionen stehen im ERP oder im CPQ, eine Entscheidung, die ich in [Kundenpreise: SAP-Konditionen oder Salesforce Pricing?](../kundenpreise-sap-konditionen-oder-salesforce-pricing/) beschreibe. Ein Agent sollte das Ergebnis dieses Systems lesen, nicht die Regel im Prompt nachbauen. Zwei Orte mit derselben Regel laufen auseinander, und die Prompt-Fassung ist die, die niemand testet.
 
 **Kosten und Antwortzeit.** Der Leitfaden schreibt: „Every unnecessary LLM call adds latency, cost, and variability“, und ein einfaches Gespräch brauchte früher mindestens drei LLM-Zyklen. Jede Berechnung, die Sie in Logik verlagern, ist eine Stelle weniger, an der das Modell danebenliegen kann.
 
@@ -76,7 +76,18 @@ reasoning:
             available when @variables.credit_ok == True
 ```
 
-Drei Details aus dem Leitfaden sollten Sie bei Ihrem Partner erfragen. Erstens muss Code die Gate-Variablen setzen; setzt sie das LLM, „you've reintroduced the variability the gate was designed to prevent.“ Zweitens zählt die Schutzbedingung in der Skizze: Ohne sie läuft die ERP-Abfrage in `before_reasoning` bei jedem Parse, also mehrmals pro Eingabe. Jeder Lauf ist ein ERP-Aufruf, und die [Flex Credits Rate Card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) berechnet Aktionen mit 20 Credits, ohne zu sagen, ob vom Script ausgelöste Aufrufe anders zählen. Drittens beendet eine Aktion mit `is_displayable` die Reasoning-Schleife, sobald ihr Ergebnis angezeigt wird, und `after_reasoning` entfällt. Eine Prüfung dort läuft dann nie.
+Drei Details aus dem Leitfaden sollten Sie bei Ihrem Partner erfragen.
+
+```vertiefung Für Entwickler
+titel: Gate-Variablen, Schutzbedingung und is_displayable
+- **Code setzt die Gate-Variablen.** Setzt sie das LLM, „you've reintroduced the variability the gate was designed to prevent.“
+- **Die Schutzbedingung in der Skizze zählt.** Ohne sie läuft die ERP-Abfrage in `before_reasoning` bei jedem Parse, also mehrmals pro Eingabe, und jeder Lauf ist ein ERP-Aufruf.
+- **`is_displayable` beendet die Schleife.** Eine solche Aktion beendet die Reasoning-Schleife, sobald ihr Ergebnis angezeigt wird, und `after_reasoning` entfällt. Eine Prüfung dort läuft dann nie.
+```
+
+```hinweis offen
+Die [Flex Credits Rate Card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) berechnet Aktionen mit 20 Credits, sagt aber nicht, ob vom Script ausgelöste Aufrufe anders zählen. Bei einer ERP-Abfrage in `before_reasoning` würde ich mir das im Angebot bestätigen lassen.
+```
 
 ## Ein typisches Szenario: Händleragent für Ersatzteile und Garantie
 
@@ -100,12 +111,19 @@ Agent Script ist auch nicht immer der richtige Ort für die Regel selbst. Hat di
 
 Bevor Ihr Partner mit dem Bau beginnt, würde ich diese Schritte durchgehen:
 
-1. **Alle Entscheidungen auflisten**, die der Agent berührt, und die mit einer richtigen Antwort markieren.
-2. **Für jede Regel das führende System benennen**: ERP, Manufacturing Cloud, Business Rules Engine oder Flow.
-3. **Die Gates festlegen**: welche Aktion unter welcher Bedingung verfügbar ist und welcher Code die Variable setzt.
-4. **„Daten fehlen“ als eigenes Ergebnis definieren**, das an einen Menschen geht.
-5. **Die Regeln wie Code testen**, mit Fällen auf beiden Seiten jeder Schwelle, wie in [Agentforce-Agenten testen und freigeben](../agentforce-agenten-testen-freigeben/) beschrieben.
+```schritte
+Entscheidungen auflisten
+  Alle Entscheidungen, die der Agent berührt, sammeln und die mit einer richtigen Antwort markieren.
+Führendes System benennen
+  Für jede Regel festhalten, wo sie lebt: ERP, Manufacturing Cloud, Business Rules Engine oder Flow.
+Gates festlegen
+  Welche Aktion ist unter welcher Bedingung verfügbar, und welcher Code setzt die Variable?
+„Daten fehlen“ definieren
+  Ein eigenes Ergebnis, das an einen Menschen geht.
+Regeln wie Code testen
+  Mit Fällen auf beiden Seiten jeder Schwelle, wie in [Agentforce-Agenten testen und freigeben](../agentforce-agenten-testen-freigeben/) beschrieben.
+```
 
 Diesen Teil eines Agentendesigns prüfe ich auf Kundenseite im Rahmen der [Salesforce-Architektur](../../leistungen/salesforce-architektur/), weil er entscheidet, ob sich der Agent später prüfen lässt. Ob Ihr Prozess überhaupt reif für einen Agenten ist, steht in [Agentforce für Hersteller: jetzt starten oder warten](../agentforce-ja-oder-nein-hersteller/).
 
-Regeln in die Logik, Sprache ins Modell, dann gibt Ihr Agent demselben Händler zweimal dieselbe Antwort. Wenn Sie eine zweite Meinung möchten, wo die Regeln in Ihrem Agentendesign sitzen, [schreiben Sie mir](#contact).
+Regeln in die Logik, Sprache ins Modell, dann gibt Ihr Agent demselben Händler zweimal dieselbe Antwort.

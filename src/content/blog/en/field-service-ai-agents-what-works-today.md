@@ -43,7 +43,17 @@ Salesforce announced Agentforce for Field Service in [April 2025](https://www.sa
 | Technicians | Step-by-step troubleshooting from manuals, past repairs and photos | GA since June 2025 |
 | Assets | Asset Service Prediction: when and why an asset fails | [Open beta announced in 2024](https://www.salesforce.com/news/stories/field-service-asset-management-news/), listed on the product page without a GA date |
 
-Salesforce backs the booking agent with its own numbers: an on-site appointment takes 17 minutes to schedule, 15 to change and 12 to cancel, and the agent should get it done in under five. The [Winter '27 announcement](https://salesforce.com/news/stories/winter-2027-product-release-announcement) promises voice booking in seconds instead of 15 minutes. These are vendor figures from mixed industries, not results from machine builders.
+Salesforce backs the booking agent with its own numbers:
+
+```kennzahlen
+17 min | to schedule an on-site appointment
+15 min | to change it
+12 min | to cancel it
+under 5 min | is the target for the agent
+source: Salesforce vendor figures for the booking agent in Agentforce for Field Service
+```
+
+The [Winter '27 announcement](https://salesforce.com/news/stories/winter-2027-product-release-announcement) promises voice booking in seconds instead of 15 minutes. These are vendor figures from mixed industries, not results from machine builders.
 
 The industrial references are thinner. In the [Siemens release](https://investor.salesforce.com/news/news-details/2026/Siemens-and-Salesforce-Deepen-AI-Partnership-to-Redefine-Industrial-Sales-and-Service/default.aspx) of September 2026, a technician "can identify the right spare parts for a specific serial number before the first site visit", but the Teamcenter link behind it is phrased as "will work with". The live, quantified part concerns inbound leads. For service at a machine builder, I would plan with the functions in the table and treat everything else as announced.
 
@@ -53,7 +63,7 @@ Field Service agents have two price models, and they follow the line between cus
 
 **Customer-facing agents run on Flex Credits.** The [Field Service pricing page](https://www.salesforce.com/service/field-service-management/pricing/) states for Dispatcher, Technician, Field Service Plus and Contractor Plus that the Scheduling Agent requires Flex Credits. According to the [rate card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf), an action costs 20 credits in production and 16 in a sandbox, a voice action 30 and 24. At [$500 per 100,000 credits](https://www.salesforce.com/news/press-releases/2025/05/15/agentforce-flexible-pricing-news/) that is $0.10 per action and $0.15 per voice action.
 
-**Employee functions are priced per user.** The [Agentforce for Field Service](https://www.salesforce.com/service/field-service-management/ai/pricing/) add-on costs $125 or €125 per user and month on an annual contract and includes assistive AI for dispatchers and technicians with unmetered employee agent usage. The alternative is Agentforce 1 Field Service at $650 per user and month, with unlimited employee usage plus 1 million Flex Credits and 2.5 million Data Cloud credits per org every year. The add-on comes on top of the $175 Technician licence from [part 1 of the Field Service series](../salesforce-field-service-worth-it/), while Agentforce 1 Field Service already includes everything in Field Service Plus.
+**Employee functions are priced per user.** The [Agentforce for Field Service](https://www.salesforce.com/service/field-service-management/ai/pricing/) add-on costs $125 or €125 per user and month on an annual contract and includes assistive AI for dispatchers and technicians with unmetered employee agent usage. The alternative is Agentforce 1 Field Service at $650 per user and month, with unlimited employee usage plus 1 million Flex Credits and 2.5 million Data Cloud credits per org every year. The add-on comes on top of the $175 Technician licence from [part 1 of the Field Service series](../salesforce-field-service-worth-it/), while Agentforce 1 Field Service already includes everything in Field Service Plus. When the bundle pays off is calculated in [Agentforce 1 Field Service: when does the bundle pay off?](../agentforce-1-field-service-edition-worth-it/).
 
 The consequence for budgeting: a booking agent costs cents per booking, while the employee add-on for 60 technicians costs $90,000 a year at list price. If troubleshooting is grounded on manuals in Data 360, processing adds 150 credits per MB. How to estimate credits per process is covered in [Flex Credits and Agentforce cost per action](../flex-credits-agentforce-cost-per-action/), and what grounding on documents costs in [Data 360 costs for AI agents](../data-360-costs-for-ai-agents/).
 
@@ -87,12 +97,19 @@ The pattern behind it: the agent with the lowest price per transaction is the ea
 
 ## Where should you start?
 
-1. **Pick one function** from the table above with high volume. For most machine builders that is maintenance booking.
-2. **Check the data behind it**: maintenance plans, shutdown windows, asset links of past work orders.
-3. **Put rules into logic**: entitlements, response times and warranty status stay out of the prompt.
-4. **Budget test runs** at 16 credits per action in the sandbox and agree a measurable target, such as the share of maintenance visits booked without a dispatcher.
-5. **Involve the works council early.** Agents that read job reports or process technicians' speech touch co-determination in Germany, alongside location tracking from the [Field Service rollout](../salesforce-field-service-rollout/).
+```schritte
+Pick one function
+  One from the table above with high volume. For most machine builders that is maintenance booking.
+Check the data behind it
+  Maintenance plans, shutdown windows, asset links of past work orders.
+Put rules into logic
+  Entitlements, response times and warranty status stay out of the prompt.
+Budget test runs
+  At 16 credits per action in the sandbox, plus a measurable target such as the share of maintenance visits booked without a dispatcher.
+Involve the works council early
+  Agents that read job reports or process technicians' speech touch co-determination in Germany, alongside location tracking from the [Field Service rollout](../salesforce-field-service-rollout/).
+```
 
-Whether the add-on or Agentforce 1 Field Service is the better buy is a licence question I handle in [make-or-buy and licence planning](../../services/make-or-buy-licences/). For the general go or no-go on agents, see [Agentforce for manufacturers: start now or wait?](../agentforce-yes-or-no-manufacturers/).
+Whether the add-on or Agentforce 1 Field Service is the better buy is a licence question I handle in [make-or-buy and licence planning](../../services/make-or-buy-licences/). For the general go or no-go on agents, see [Agentforce for manufacturers: start now or wait?](../agentforce-yes-or-no-manufacturers/). How to roll out agents in field service step by step is in [chapter 5 of the Field Service masterclass](../../masterclass/field-service/field-service-ai-agents-rollout/).
 
-Start with the agent that books planned maintenance, and let the job report follow once the fields behind it are clean. If you want a second opinion on which function fits your field service, [send me a message](#contact).
+Start with the agent that books planned maintenance, and let the job report follow once the fields behind it are clean.

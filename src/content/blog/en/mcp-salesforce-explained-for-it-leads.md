@@ -52,6 +52,14 @@ For an IT lead three directions are enough:
 2. **Agentforce to external tools.** Agentforce acts as MCP client. According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/mcp-for-agentforce-quick-look/discover-mcp-for-agentforce), external servers are registered in Agentforce Registry, MuleSoft and Salesforce servers in API Catalog, and the admin picks the tools an agent may use. Salesforce [announced the client as a pilot](https://developer.salesforce.com/blogs/2025/06/introducing-mcp-support-across-salesforce) for July 2025; I found no current status statement, so check availability in your org.
 3. **Coding agents to your project.** Your partner's developers connect Claude Code, Cursor or Agentforce Vibes to sandboxes through local servers such as the Salesforce DX MCP Server. What changes there is in [the end of the Salesforce DX MCP Server](../salesforce-dx-mcp-server-end-of-life/).
 
+```ablauf
+sf: Salesforce org, Agentforce, Sandbox
+ext: External AI clients, External MCP servers, Coding agents
+External AI clients --Hosted MCP--> Salesforce org
+Agentforce --as MCP client--> External MCP servers
+Coding agents --local server--> Sandbox
+```
+
 The full interface overview with Agent API, Models API and the ERP path through MuleSoft is in [chapter 3 of my AI masterclass](../../masterclass/ai-salesforce/mcp-and-interfaces/).
 
 ## What does the protocol leave to you?
@@ -60,7 +68,9 @@ The MCP specification is honest about its limits. Under Security and Trust & Saf
 
 So the controls sit outside the protocol: in the AI application (does it ask before writing?), in the server (which tools does it offer?) and in Salesforce (which records may this user see?). Salesforce made the last part strict. According to the [Hosted MCP security best practices](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/security-best-practices.html), servers are disabled by default, every tool call runs with the permissions of the user who authorised the connection and appears under that user's name in the audit trail, and there are no service accounts or machine-to-machine flows.
 
+```hinweis achtung
 One detail matters for audits. By design, servers receive only the context they need and the full conversation stays with the host, according to the [specification's design principles](https://modelcontextprotocol.io/specification/2026-07-28/architecture). My reading: Salesforce logs which records Claude read, not the question the user typed. To reconstruct why a warranty case was changed, you need the AI application's logs too.
+```
 
 ## Four decisions for the IT lead
 
@@ -105,4 +115,4 @@ Hosted MCP Servers are built for a person working with an AI tool. Three cases n
 
 Which interface fits which consumer, under which identity, is part of my work on [Salesforce integration](../../services/salesforce-integration/).
 
-MCP makes Salesforce reachable for every AI tool, and your decisions on servers, users, data and clients determine whether that helps your service teams or exposes your data. If you want a second opinion on your first MCP requests, [send me a message](#contact).
+MCP makes Salesforce reachable for every AI tool, and your decisions on servers, users, data and clients determine whether that helps your service teams or exposes your data.

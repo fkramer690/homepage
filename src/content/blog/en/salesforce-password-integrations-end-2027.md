@@ -44,7 +44,7 @@ Salesforce lists the details in its [developer guide to Winter '27](https://deve
 
 A small org has a handful of integrations, and the admin knows them. An enterprise org has grown over years. Typical sources of password-based logins are:
 
-- **ERP and order integrations** that were set up years ago by a partner who is no longer involved.
+- **ERP and order integrations** that were set up years ago by a partner who is no longer involved. If you run a B2B store on SAP, its data flows belong on the list too, see [B2B Commerce and SAP: which data flows where?](../b2b-commerce-sap-data-flows/).
 - **Middleware and integration platforms** where a technical user's password sits in a configuration screen.
 - **Data loaders and scheduled scripts** that run on a server under someone's desk.
 - **Backup, archiving and reporting tools** that pull data every night.
@@ -74,7 +74,13 @@ Salesforce offers several OAuth flows. For most enterprise integrations the choi
 - **JWT bearer flow.** For integrations where a certificate is preferred over a shared secret, for example critical ERP connections. The integration signs a token with its private key, and Salesforce verifies it with the uploaded certificate. CI/CD pipelines that deploy to Salesforce typically use this flow too.
 - **Web server flow with PKCE.** For applications where real users log in and act in their own name.
 
-Salesforce recommends External Client Apps for new integrations instead of classic connected apps. One trap: simply moving a connected app to an External Client App does not solve the problem, because External Client Apps don't support the username-password flow at all. The external system itself has to change the way it requests tokens. Salesforce Time has a good [step-by-step summary](https://salesforcetime.com/2026/10/15/salesforce-oauth-username-password-flow-retirement/) of the migration.
+Salesforce recommends External Client Apps for new integrations instead of classic connected apps.
+
+```hinweis achtung
+Simply moving a connected app to an External Client App does not solve the problem, because External Client Apps don't support the username-password flow at all. The external system itself has to change the way it requests tokens.
+```
+
+Salesforce Time has a good [step-by-step summary](https://salesforcetime.com/2026/10/15/salesforce-oauth-username-password-flow-retirement/) of the migration.
 
 ## What about MFA?
 
@@ -95,10 +101,17 @@ The client. Integrations connect the client's systems, and the credentials belon
 
 A realistic order for the coming months:
 
-1. **By end of November 2026:** inventory complete, owners named, vendors asked.
-2. **December 2026:** check the SOAP login permission for all integration users before 1 December takes effect.
-3. **December to January:** migrate integrations to client credentials or JWT bearer, starting with the most critical ones. Test in a sandbox with the password flow disabled.
-4. **Early February 2027:** turn off the password flow in production yourself, a few days before Salesforce does, with the team on standby.
-5. **Spring 2027:** move remaining SOAP logins away from API versions below 65.0 before Summer '27.
+```schritte
+Inventory | by end of November 2026
+  List complete, owners named, vendors asked.
+SOAP permission | December 2026
+  Check the SOAP login permission for all integration users before 1 December takes effect.
+Migrate | December to January
+  Move integrations to client credentials or JWT bearer, starting with the most critical ones. Test in a sandbox with the password flow disabled.
+Switch off yourself | early February 2027
+  Turn off the password flow in production yourself, a few days before Salesforce does, with the team on standby.
+SOAP versions | spring 2027
+  Move remaining SOAP logins away from API versions below 65.0 before Summer '27.
+```
 
-The deadline is fixed and the work is predictable, as long as it starts with a complete list. If you want help with the inventory or a second opinion on your integration architecture, [send me a message](#contact).
+The deadline is fixed and the work is predictable, as long as it starts with a complete list.

@@ -7,6 +7,9 @@ import ExternalMark from './ExternalMark.astro';
 import ContactForm from './ContactForm.astro';
 import AuthorBox from './AuthorBox.astro';
 import Blueprint from './Blueprint.astro';
+import ReadingGrid from './ReadingGrid.astro';
+import PartnerBox from './PartnerBox.astro';
+import { courses } from '../lib/courses';
 import { render } from 'astro:content';
 import { en } from '../i18n/en';
 import { de } from '../i18n/de';
@@ -18,6 +21,7 @@ import {
   chapterHref,
   chapterTotal,
   chapterReadingMinutes,
+  courseTexts,
   getChapters,
   getChapterTranslation,
   masterclassIndex,
@@ -29,14 +33,15 @@ interface Props {
   chapter: Chapter;
 }
 const { chapter } = Astro.props;
-const { lang, title, description, takeaways, faq, articles, updatedDate } = chapter.data;
+const { lang, course, title, description, takeaways, faq, articles, pubDate, updatedDate } = chapter.data;
 const no = chapter.data.chapter;
 const t = lang === 'de' ? de : en;
-const m = t.masterclass;
-const { Content } = await render(chapter);
+const m = courseTexts(lang, course);
+const { Content, headings } = await render(chapter);
+const toc = [...headings.filter((h) => h.depth === 2), ...(faq.length > 0 ? [{ slug: 'faq', text: t.blog.faq }] : [])];
 const translation = await getChapterTranslation(chapter);
 const posts = await postsForKeys(lang, articles);
-const chapters = await getChapters(lang);
+const chapters = await getChapters(lang, course);
 const index = chapters.findIndex((c) => c.id === chapter.id);
 const prev = index > 0 ? chapters[index - 1] : undefined;
 const next = index >= 0 && index < chapters.length - 1 ? chapters[index + 1] : undefined;
@@ -47,7 +52,7 @@ const alternates = translation
     : { en: chapterHref(chapter), de: chapterHref(translation) }
   : undefined;
 const url = new URL(chapterHref(chapter), Astro.site).href;
-const hub = new URL(masterclassIndex(lang), Astro.site).href;
+const hub = new URL(masterclassIndex(lang, course), Astro.site).href;
 const base = import.meta.env.BASE_URL;
 const abs = (path: string) => new URL(path, Astro.site).href;
 const ctaAttrs = contactExternal ? { target: '_blank', rel: 'noopener' } : {};
@@ -55,7 +60,7 @@ const suffix = ' | FK Solution Design';
 const pageTitle = title.length + suffix.length <= 60 ? title + suffix : title;
 const ogImage = `${base}og/${lang}/masterclass/${chapter.data.slug}.png`;
 const nn = (n: number) => String(n).padStart(2, '0');
-const eyebrow = m.chapterEyebrow.replace('{nn}', nn(no)).replace('{n}', String(no)).replace('{total}', String(chapterTotal));
+const eyebrow = m.chapterEyebrow.replace('{nn}', nn(no)).replace('{n}', String(no)).replace('{total}', String(chapterTotal(course)));
 const chapterLabel = (c: Chapter) => m.chapterNo.replace('{nn}', nn(c.data.chapter));
 
 const schema = {
@@ -68,7 +73,8 @@ const schema = {
       name: title,
       description,
       abstract: takeaways.join(' '),
-      ...(updatedDate && { dateModified: updatedDate.toISOString() }),
+      ...(pubDate && { datePublished: pubDate.toISOString() }),
+      ...((updatedDate ?? pubDate) && { dateModified: (updatedDate ?? pubDate)!.toISOString() }),
       inLanguage: lang,
       mainEntityOfPage: url,
       image: abs(ogImage),
@@ -86,7 +92,7 @@ const schema = {
             '@type': 'FAQPage',
             '@id': `${url}#faq`,
             inLanguage: lang,
-            mainEntity: faq.map(({ q, a }) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })),
+            mainEntity: faq.map(({ q, a }) => ({ '@type': 'Question', name: q, text: q, answerCount: 1, acceptedAnswer: { '@type': 'Answer', text: a } })),
           },
         ]
       : []),
@@ -102,15 +108,15 @@ const schema = {
   ],
 };
 ---
-<Page lang={lang} title={pageTitle} description={description} alternates={alternates} ogType="article" image={ogImage} hasContact>
+<Page layout="reading" lang={lang} title={pageTitle} description={description} alternates={alternates} ogType="article" image={ogImage} hasContact>
   <Fragment slot="head">
     <meta property="article:author" content={site.person} />
     {updatedDate && <meta property="article:modified_time" content={updatedDate.toISOString()} />}
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
   </Fragment>
   <article class="section post mc-chapter">
-    <div class="container post-inner">
-      <a class="post-back mono" href={masterclassIndex(lang)}>← {m.back}</a>
+    <div class="container">
+      <a class="post-back mono" href={masterclassIndex(lang, course)}>← {m.back}</a>
       <p class="eyebrow mono">{eyebrow}</p>
       <h1>{title}</h1>
       <p class="post-meta mono">
@@ -118,51 +124,54 @@ const schema = {
         {updatedDate && <> · {t.blog.updated} <time datetime={updatedDate.toISOString()}>{formatDate(updatedDate, lang)}</time></>}
         {' · '}{chapterReadingMinutes(chapter)} {t.blog.readingTime}
       </p>
-      <aside class="post-takeaways" aria-label={t.blog.takeaways}>
-        <p class="label mono">{t.blog.takeaways}</p>
-        <ul>
-          {takeaways.map((item) => <li>{item}</li>)}
-        </ul>
-      </aside>
-      <div class="prose">
-        <Content />
-      </div>
-      {faq.length > 0 && (
-        <section class="post-faq" aria-labelledby="faq">
-          <h2 id="faq">{t.blog.faq}</h2>
-          {faq.map(({ q, a }) => (
-            <details class="faq-item">
-              <summary><h3>{q}</h3></summary>
-              <p>{a}</p>
-            </details>
-          ))}
-        </section>
-      )}
-      {posts.length > 0 && (
-        <nav class="post-related" aria-label={m.chapterArticles}>
-          <p class="label mono">{m.chapterArticles}</p>
+      <ReadingGrid t={t} headings={toc} cta={`${m.name}: ${title}`}>
+        <aside class="post-takeaways" aria-label={t.blog.takeaways}>
+          <p class="label mono">{t.blog.takeaways}</p>
           <ul>
-            {posts.map((p) => <li><a href={postHref(p)}>{p.data.title}</a></li>)}
+            {takeaways.map((item) => <li>{item}</li>)}
           </ul>
-        </nav>
-      )}
-      {(prev || next) && (
-        <nav class="mc-pager" aria-label={m.pagerLabel}>
-          {prev ? (
-            <a class="post-service mc-pager-prev" href={chapterHref(prev)} rel="prev">
-              <span class="label mono">← {m.prev} · {chapterLabel(prev)}</span>
-              <span class="post-service-title">{prev.data.short}</span>
-            </a>
-          ) : <span />}
-          {next && (
-            <a class="post-service mc-pager-next" href={chapterHref(next)} rel="next">
-              <span class="label mono">{m.next} · {chapterLabel(next)} →</span>
-              <span class="post-service-title">{next.data.short}</span>
-            </a>
-          )}
-        </nav>
-      )}
-      <AuthorBox lang={lang} />
+        </aside>
+        {courses[course].partner && <PartnerBox lang={lang} />}
+        <div class="prose">
+          <Content />
+        </div>
+        {faq.length > 0 && (
+          <section class="post-faq" aria-labelledby="faq">
+            <h2 id="faq">{t.blog.faq}</h2>
+            {faq.map(({ q, a }) => (
+              <details class="faq-item">
+                <summary><h3>{q}</h3></summary>
+                <p>{a}</p>
+              </details>
+            ))}
+          </section>
+        )}
+        {posts.length > 0 && (
+          <nav class="post-related" aria-label={m.chapterArticles}>
+            <p class="label mono">{m.chapterArticles}</p>
+            <ul>
+              {posts.map((p) => <li><a href={postHref(p)}>{p.data.title}</a></li>)}
+            </ul>
+          </nav>
+        )}
+        {(prev || next) && (
+          <nav class="mc-pager" aria-label={m.pagerLabel}>
+            {prev ? (
+              <a class="post-service mc-pager-prev" href={chapterHref(prev)} rel="prev">
+                <span class="label mono">← {m.prev} · {chapterLabel(prev)}</span>
+                <span class="post-service-title">{prev.data.short}</span>
+              </a>
+            ) : <span />}
+            {next && (
+              <a class="post-service mc-pager-next" href={chapterHref(next)} rel="next">
+                <span class="label mono">{m.next} · {chapterLabel(next)} →</span>
+                <span class="post-service-title">{next.data.short}</span>
+              </a>
+            )}
+          </nav>
+        )}
+        <AuthorBox lang={lang} />
+      </ReadingGrid>
     </div>
   </article>
   <section class="contact dark grid-bg" id="contact">

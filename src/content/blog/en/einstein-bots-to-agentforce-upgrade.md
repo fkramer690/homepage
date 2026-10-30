@@ -71,7 +71,18 @@ Assume a machine builder with 300 dealers and service partners on an Experience 
 
 **Option 1, convert everything.** At an average of three actions per conversation, 4,000 conversations need 240,000 credits a month, $1,200 at list price, or 2.88 million credits a year for actions alone. That exceeds the 2.75 million in a Service Cloud Max org before a single prompt, grounding job or test run. At $2 per conversation the same volume costs $8,000 a month.
 
-**Option 2, hybrid.** The bot keeps the first four paths, 2,600 conversations. The 1,400 free-text conversations go to the agent. Free text tends to need more steps, so assume four actions: 112,000 credits, $560 a month, about 1.34 million a year. I assume the bot paths stay inside the existing licence allowance; confirm that with your account executive, because a move to the new editions may change it.
+**Option 2, hybrid.** The bot keeps the first four paths, 2,600 conversations. The 1,400 free-text conversations go to the agent. Free text tends to need more steps, so assume four actions: 112,000 credits, $560 a month, about 1.34 million a year.
+
+```kennzahlen
+2.88M | credits a year for actions if everything is converted
+1.34M | credits a year for actions in the hybrid option
+2.75M | Flex Credits per org and year in Service Cloud Max
+source: scenario with assumed values; 20 credits per action from Salesforce's May 2025 announcement, pool from the Service Cloud pricing page
+```
+
+```hinweis offen
+I assume the bot paths stay inside the existing licence allowance. Confirm that with your account executive, because a move to the new editions may change it.
+```
 
 Cost is the smaller argument for option 2: the free-text bucket is where the bot fails today, while the menu paths already work. A December 2025 post on the Salesforce Developers blog about handing off from Einstein Enhanced Bots to Agentforce agents, written by two Salesforce employees, describes this pattern with Einstein Enhanced Bots: the bot "triages transactions (Log/Status) and routes complex knowledge to an Agentforce Service agent", using a field on the Messaging Session, an outbound Omni-Channel flow and a fallback queue. The post covers only the handoff from bot to agent, not the way back.
 
@@ -97,11 +108,19 @@ The bot gives you a head start. The example phrases each intent was trained with
 
 The order I would follow:
 
-1. Export each bot path with volume and drop-out rate for the last three months.
-2. Mark every path as keep, convert or hand to a human, using the criteria above.
-3. Run Upgrade Agent in a sandbox and cut the draft down to the converted paths.
-4. Build tests from intent phrases and transcripts and agree the pass rate with the head of service.
-5. Route only the free-text path to the agent through Omni-Channel with a fallback queue, and watch Digital Wallet for four weeks.
-6. Decide on the next path with those numbers.
+```schritte
+Review the paths
+  Export each bot path with volume and drop-out rate for the last three months.
+Mark the paths
+  Mark every path as keep, convert or hand to a human, using the criteria above.
+Generate the draft
+  Run Upgrade Agent in a sandbox and cut the draft down to the converted paths.
+Build the tests
+  Build tests from intent phrases and transcripts and agree the pass rate with the head of service.
+Go live with free text | 4 weeks
+  Route only the free-text path to the agent through Omni-Channel with a fallback queue, and watch Digital Wallet.
+Pick the next path
+  Decide on the next path with those numbers.
+```
 
-An Einstein Bot needs a split between paths that must stay predictable and questions an agent answers better, and that split is an [architecture decision](../../services/salesforce-architecture/) worth making before the first upgrade click; if you want a second view on your bot's paths, [send me a message](#contact).
+An Einstein Bot needs a split between paths that must stay predictable and questions an agent answers better, and that split is an [architecture decision](../../services/salesforce-architecture/) worth making before the first upgrade click.

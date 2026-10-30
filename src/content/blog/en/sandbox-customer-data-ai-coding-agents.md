@@ -70,9 +70,16 @@ I would give each environment a data level and an agent rule:
 | Partial Copy, masked | template sample after the mask ran | read only, once the mask job is checked | integration tests with SAP QA |
 | Full | everything | no | UAT, end to end and load tests |
 
-For the masked partial copy Salesforce sells [Data Mask & Seed](https://www.salesforce.com/eu/platform/data-masking/). According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/salesforce-data-mask/install-and-configure-salesforce-data-mask), Data Mask is a managed package installed in production; a mask configured there appears in a sandbox when it is created or refreshed, and you run it from the Data Mask tab in the sandbox each time. Per field you choose random characters or numbers between a minimum and maximum, a library replacement such as last name, company name or street, or deletion. You can also mask case comments and delete all emails and Chatter feeds. Checkbox, lookup and picklist fields are not supported. The product page lists no price.
+For the masked partial copy Salesforce sells [Data Mask & Seed](https://www.salesforce.com/eu/platform/data-masking/). The product page lists no price.
 
+```vertiefung For admins
+title: How does Data Mask work?
+According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/salesforce-data-mask/install-and-configure-salesforce-data-mask), Data Mask is a managed package installed in production; a mask configured there appears in a sandbox when it is created or refreshed, and you run it from the Data Mask tab in the sandbox each time. Per field you choose random characters or numbers between a minimum and maximum, a library replacement such as last name, company name or street, or deletion. You can also mask case comments and delete all emails and Chatter feeds. Checkbox, lookup and picklist fields are not supported.
+```
+
+```hinweis achtung
 I treat a sandbox as unmasked until the mask job has run after a refresh, and allow agent logins only once the execution log shows it complete.
+```
 
 Scratch orgs are empty by default. For small sets Salesforce recommends the [data tree commands](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_test_data.htm), which suit fewer than 3,000 records. Kept in the repository, such a seed set gives every developer and agent the same start.
 
@@ -116,4 +123,4 @@ Where I would start:
 
 Sandbox levels and pipelines are part of my [DevOps and release management](../../services/devops-release-management/) work.
 
-A full copy sandbox is production data, so a coding agent should only see data you would accept on a partner laptop for a month. If you want to sort out your sandbox levels before the next partner starts with AI agents, [send me a message](#contact).
+A full copy sandbox is production data, so a coding agent should only see data you would accept on a partner laptop for a month.

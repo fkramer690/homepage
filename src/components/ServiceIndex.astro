@@ -2,7 +2,11 @@
 import Page from '../layouts/Page.astro';
 import { en } from '../i18n/en';
 import { de } from '../i18n/de';
+import ProofBar from './ProofBar.astro';
 import { getServices, serviceHref, servicesIndex } from '../lib/services';
+import { homeHref, localHref } from '../lib/paths';
+import ExternalMark from './ExternalMark.astro';
+import { contactHref, contactExternal } from '../site';
 
 interface Props {
   lang: 'en' | 'de';
@@ -10,13 +14,22 @@ interface Props {
 const { lang } = Astro.props;
 const t = lang === 'de' ? de : en;
 const services = await getServices(lang);
+const ctaAttrs = contactExternal ? { target: '_blank', rel: 'noopener' } : {};
 ---
-<Page lang={lang} title={t.servicePage.metaTitle} description={t.servicePage.metaDescription} alternates={{ en: servicesIndex('en'), de: servicesIndex('de') }}>
+<Page layout="wide" lang={lang} title={t.servicePage.metaTitle} description={t.servicePage.metaDescription} alternates={{ en: servicesIndex('en'), de: servicesIndex('de') }}>
   <section class="section blog">
     <div class="container">
       <p class="eyebrow mono">FK Solution Design</p>
       <h1>{t.servicePage.indexTitle}</h1>
       <p class="blog-intro">{t.servicePage.indexIntro}</p>
+      <p class="blog-intro">{t.servicePage.indexIntro2}</p>
+      <div class="service-proof">
+        <ProofBar t={t} />
+        <p class="service-proof-links mono">
+          <a href={`${homeHref(lang)}#references`}>{t.hero.ctaSecondary} →</a>
+          <a href={localHref(lang, 'certifications/')}>{t.servicePage.certsLink} →</a>
+        </p>
+      </div>
       <ul class="cards">
         {services.map((s) => (
           <li class="card card-link">
@@ -29,6 +42,10 @@ const services = await getServices(lang);
           </li>
         ))}
       </ul>
+      <div class="service-index-cta">
+        <p>{t.servicePage.indexCta}</p>
+        <a class="btn" href={contactHref(t.hero.mailSubject)} {...ctaAttrs}>{t.hero.ctaPrimary}{contactExternal && <ExternalMark label={t.nav.newTab} />}</a>
+      </div>
     </div>
   </section>
 </Page>

@@ -52,11 +52,13 @@ Der Tokenizer verschiebt auch Preisvergleiche. Sonnet 4.6 kostet 3 $ pro Million
 
 Teuer wird agentisches Arbeiten durch die Schleife, nicht durch die Frage des Entwicklers. Die [Kostendokumentation von Claude Code](https://code.claude.com/docs/en/costs) nennt die Treiber:
 
-- **Kontext bei jedem Schritt:** Claude Code sendet bei jeder Anfrage die ganze Unterhaltung, und jeder Tool-Aufruf erzeugt eine weitere Anfrage mit den Ergebnissen.
-- **Thinking als Output:** Thinking-Tokens werden als Output abgerechnet, bei Opus 5.5, Sonnet 5.5 und Haiku 5.5 lässt sich Thinking nicht abschalten. Output kostet bei Claude 5.5 das Fünffache des Inputs.
-- **Cache-Miss nach Pausen:** Die erste Nachricht nach einer Pause, die länger dauert als die Cache-Lebensdauer, verarbeitet den vollen Kontext neu.
-- **Agent Teams:** Im Plan-Modus verbrauchen sie rund das Siebenfache einer normalen Session.
-- **Regeldateien und MCP:** Die CLAUDE.md wird bei jedem Start geladen, Anthropic empfiehlt unter 200 Zeilen. CLI-Werkzeuge sind sparsamer im Kontext als MCP-Server.
+| Treiber | Was passiert |
+|---|---|
+| Kontext bei jedem Schritt | Claude Code sendet bei jeder Anfrage die ganze Unterhaltung, und jeder Tool-Aufruf erzeugt eine weitere Anfrage mit den Ergebnissen. |
+| Thinking als Output | Thinking-Tokens werden als Output abgerechnet, bei Opus 5.5, Sonnet 5.5 und Haiku 5.5 lässt sich Thinking nicht abschalten. Output kostet bei Claude 5.5 das Fünffache des Inputs. |
+| Cache-Miss nach Pausen | Die erste Nachricht nach einer Pause, die länger dauert als die Cache-Lebensdauer, verarbeitet den vollen Kontext neu. |
+| Agent Teams | Im Plan-Modus verbrauchen sie rund das Siebenfache einer normalen Session. |
+| Regeldateien und MCP | Die CLAUDE.md wird bei jedem Start geladen, Anthropic empfiehlt unter 200 Zeilen. CLI-Werkzeuge sind sparsamer im Kontext als MCP-Server. |
 
 ## Was kostet KI-gestützte Entwicklung?
 
@@ -90,16 +92,27 @@ Drei Regeln von derselben Seite zählen für die Planung. Die Batch API halbiert
 
 Quellen: [claude.com/pricing](https://claude.com/pricing), [Copilot-Pläne](https://docs.github.com/en/copilot/tutorials/roll-out-at-scale/assign-licenses/choose-enterprise-plan), [Codex Rate Card](https://help.openai.com/en/articles/20001106-codex-rate-card-2), [Vibes-Preise](https://www.salesforce.com/agentforce/developers/vibe-coding/pricing/), [Vibes-Abrechnung](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-admin-billing.html), [Gemini-Preise](https://cloud.google.com/products/gemini/pricing). Cursor fehlt, weil ich die offizielle Preisseite nicht öffnen konnte.
 
-Für Claude Code nennt Anthropic im [Unternehmenseinsatz](https://code.claude.com/docs/en/costs) rund 13 $ pro Entwickler und aktivem Tag und 150 bis 250 $ im Monat, für 90 Prozent der Nutzer unter 30 $ am Tag. Bei 20 aktiven Tagen sind das 260 $ zu API-Preisen. Ein Team-Premium-Seat kann für intensive Nutzer günstiger sein, solange die Fenster reichen; wie viele Tokens das sind, nennt die Preisseite nicht. Ich würde einen Monat zu API-Preisen messen und erst dann Seats kaufen. Wer die Kosten trägt, Auftraggeber oder Partner, behandle ich in [KI-Coding-Kosten im Salesforce-Projekt](../../../blog/ki-coding-kosten-salesforce-projekt/). Meine Grundhaltung: Arbeitet der Agent in Ihrem Repository und Ihren Sandboxes, gehören die Konten Ihnen, aus denselben Gründen wie bei den [DevOps-Werkzeugen](../../../blog/warum-kunden-devops-tools-selbst-besitzen-sollten/).
+Für Claude Code nennt Anthropic im [Unternehmenseinsatz](https://code.claude.com/docs/en/costs) diese Werte:
+
+```kennzahlen
+13 $ | im Schnitt pro Entwickler und aktivem Tag
+150 bis 250 $ | pro Entwickler und Monat
+unter 30 $ | pro aktivem Tag bei 90 Prozent der Nutzer
+quelle: Anthropic, Kostendokumentation von Claude Code für Unternehmenseinsätze
+```
+
+Bei 20 aktiven Tagen sind das 260 $ zu API-Preisen. Ein Team-Premium-Seat kann für intensive Nutzer günstiger sein, solange die Fenster reichen; wie viele Tokens das sind, nennt die Preisseite nicht. Ich würde einen Monat zu API-Preisen messen und erst dann Seats kaufen. Wer die Kosten trägt, Auftraggeber oder Partner, behandle ich in [KI-Coding-Kosten im Salesforce-Projekt](../../../blog/ki-coding-kosten-salesforce-projekt/). Meine Grundhaltung: Arbeitet der Agent in Ihrem Repository und Ihren Sandboxes, gehören die Konten Ihnen, aus denselben Gründen wie bei den [DevOps-Werkzeugen](../../../blog/warum-kunden-devops-tools-selbst-besitzen-sollten/).
 
 ### Rechenbeispiel: eine agentische Session
 
 Annahmen: 40 Modellaufrufe, der Kontext wächst von 20.000 auf 120.000 Tokens, im Schnitt 70.000. Pro Aufruf kommen 2.500 neue Tokens dazu, 1.500 Tokens Output inklusive Thinking, Caching mit fünf Minuten.
 
-1. Cache-Writes: 20.000 + 40 × 2.500 = 120.000 Tokens × 5,00 $ pro Mio. = **0,60 $**
-2. Cache-Reads: 40 × 67.500 = 2,7 Mio. Tokens × 0,20 $ pro Mio. = **0,54 $**
-3. Output: 40 × 1.500 = 60.000 Tokens × 20,00 $ pro Mio. = **1,20 $**
-4. Summe mit Opus 5.5: **2,34 $**
+| Posten | Rechnung |
+|---|---|
+| Cache-Writes | 20.000 + 40 × 2.500 = 120.000 Tokens × 5,00 $ pro Mio. = **0,60 $** |
+| Cache-Reads | 40 × 67.500 = 2,7 Mio. Tokens × 0,20 $ pro Mio. = **0,54 $** |
+| Output | 40 × 1.500 = 60.000 Tokens × 20,00 $ pro Mio. = **1,20 $** |
+| Summe mit Opus 5.5 | **2,34 $** |
 
 Ohne Caching kosten 2,8 Mio. Input-Tokens zu 4 $ allein 11,20 $, mit Output **12,40 $**, gut das Fünffache. Mit Sonnet 5.5 und Caching: 0,30 + 0,27 + 0,60 = **1,17 $**. Fünf Opus-Sessions am Tag ergeben 11,70 $, nahe an Anthropics 13 $ pro aktivem Tag. Output macht rund 2 Prozent der Tokens und gut die Hälfte der Kosten aus. Deshalb ist Sonnet als Standard und Opus für Architekturfragen auch Anthropics eigene Empfehlung.
 
@@ -140,10 +153,12 @@ Die [Preisseite der Sales Cloud](https://www.salesforce.com/eu/products/sales-pr
 
 Annahme: 3.000 Gespräche im Monat zu Auftragsstatus, Lieferterminen und Ersatzteilen, je drei Aktionen und zwei Standard-Prompts.
 
-1. Aktionen: 3.000 × 3 × 20 = 180.000 Credits
-2. Prompts: 3.000 × 2 × 4 = 24.000 Credits
-3. Summe: 204.000 Credits = **1.020 € im Monat**, im Modell pro Gespräch wären es 6.000 €
-4. Zwölf Monate: 2.448.000 Credits, mehr als die Pools von Core und Advanced, knapp unter Max
+| Posten | Rechnung |
+|---|---|
+| Aktionen | 3.000 × 3 × 20 = 180.000 Credits |
+| Prompts | 3.000 × 2 × 4 = 24.000 Credits |
+| Summe | 204.000 Credits = **1.020 € im Monat**, im Modell pro Gespräch wären es 6.000 € |
+| Zwölf Monate | 2.448.000 Credits, mehr als die Pools von Core und Advanced, knapp unter Max |
 
 Mit der Aufbereitung von 2.000 MB Ersatzteilkatalogen in Data 360 (300.000 Credits) und den Sandbox-Tests kommt das erste Jahr auf rund 3 Mio. Credits oder 15.000 €. Die vollständige Rechnung mit Testlast und Lösungspreis steht in [Agentforce-Serviceagent für Händler](../../../blog/serviceagent-haendleranfragen-kosten/).
 
@@ -152,6 +167,10 @@ Mit der Aufbereitung von 2.000 MB Ersatzteilkatalogen in Data 360 (300.000 Credi
 **Data 360.** Stützt sich ein Agent auf Handbücher, Explosionszeichnungen oder Ersatzteilkataloge, kostet 1 GB unstrukturierter Dokumente in der Basisstufe rund 150.000 Credits, etwa 750 €, und das Vierfache, wenn Explosionszeichnungen LLM-basiertes Intelligent Processing zu 600 Credits pro MB brauchen. In der Sandbox gibt es keine Mengenstaffel. Testen Sie mit einem Ausschnitt und sortieren Sie veraltete Katalogstände vorher aus. Mehr in [Data-360-Kosten für KI-Agenten](../../../blog/data-360-kosten-fuer-ki-agenten/).
 
 **Headless Platform Interactions.** Greifen Claude, ChatGPT oder andere Agenten über MCP oder API auf Salesforce zu, soll laut [SalesforceBen](https://www.salesforceben.com/salesforce-will-charge-flex-credits-for-agentic-mcp-and-api-calls/) jeder erfolgreiche Aufruf eines registrierten Agenten zählen, nur in aktiven Produktions-Orgs und mit 30 Tagen Vorlauf. Klassische Integrationen bleiben bei ihrer heutigen Preislogik. Wer Claude auf Salesforce-Daten nutzt, zahlt dann doppelt: Anthropic für Tokens, Salesforce für Interaktionen. Die Menge können Sie schätzen, wie in [Kapitel 3](../mcp-und-schnittstellen/) gezeigt; den Budgetposten beschreibe ich in [MCP-Zugriffe auf Salesforce als Budgetrisiko](../../../blog/mcp-zugriffe-salesforce-budgetrisiko/).
+
+```hinweis offen
+Der Satz für Headless Platform Interactions steht auf der Rate Card noch als TBA. Lassen Sie sich vom Account Executive bestätigen, wie Pool, mehrere Orgs und Headless Platform Interactions abgerechnet werden.
+```
 
 ## Ein typisches Szenario: das erste KI-Jahr eines Maschinenbauers
 
@@ -176,9 +195,9 @@ Zum Vergleich: Die 80 Core-Lizenzen kosten zum Listenpreis 187.200 € im Jahr. 
 4. **Kontext klein halten:** `/clear` zwischen Aufgaben, Regeldatei unter 200 Zeilen, nur benötigte MCP-Server. Die Regeln für sauberen KI-Code stehen in [Kapitel 8](../best-practices-ki-code/).
 5. **Seats nach Messung kaufen:** einen Monat zu API-Preisen oder nach Verbrauch laufen lassen, dann pro Person über Flat Fee oder Seat entscheiden.
 6. **Agentforce pro Gesprächstyp schätzen:** Aktionen, Prompts, Sandbox-Tests und Dokumente in MB, Credits entlang des Go-live-Plans kaufen, weil nicht genutzte Credits nicht übertragen werden.
-7. **Reserve für offene Zähler einplanen** und vom Account Executive schriftlich bestätigen lassen, wie Pool, Orgs und Headless Platform Interactions abgerechnet werden.
+7. **Reserve für offene Zähler einplanen**, bis die Abrechnung oben bestätigt ist.
 8. **Monatlich messen:** Das [Digital Wallet](https://www.salesforce.com/agentforce/digital-wallet/) zeigt den Agentforce-Verbrauch nach Agent, Aktion und Kanal und setzt ein aktiviertes Data 360 voraus; für Claude dienen Spend-Report oder Console.
 
 Diese Fragen gehören zu meiner Arbeit in [Make-or-buy und Lizenzprognosen](../../../leistungen/make-or-buy-lizenzen/). Alle Kapitel der Masterclass finden Sie auf der [Übersichtsseite](../).
 
-KI-Kosten in Salesforce lassen sich gut planen, wenn Sie Tokens und Aktionen getrennt rechnen und die offenen Zähler offen benennen. Wenn Sie Ihre Schätzung oder ein Partnerangebot mit KI-Anteil prüfen lassen möchten, [schreiben Sie mir](#contact).
+KI-Kosten in Salesforce lassen sich gut planen, wenn Sie Tokens und Aktionen getrennt rechnen und die offenen Zähler offen benennen.

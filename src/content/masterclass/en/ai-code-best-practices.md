@@ -61,13 +61,24 @@ On coverage: Salesforce requires 75 percent for a deployment, but its testing gu
 
 With Summer '26, Salesforce changed Apex's default behaviour. According to the [Apex Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apex/versioned_behavior_changes.htm), code saved at API 67.0 runs in user context, classes without a sharing declaration run with the current user's sharing, and `WITH SECURITY_ENFORCED` is no longer allowed in SOQL. The [Summer '26 architect blog](https://www.salesforce.com/blog/summer-26-release-architect-highlights/) adds two points: triggers always run in system mode, but the handler classes they call are affected if they lack a declaration. And classes still using the old clause will not compile on 67.0.
 
-The change is tied to each class's own API version. Code on 66.0 behaves as before until someone raises the version. That is where the risk sits: a query silently returns fewer records, with no error. Think of the batch job that writes order status from SAP into Salesforce every night, or the class that calculates warranty periods across all of a dealer's installed assets. Both have quietly seen everything until now.
+```hinweis achtung
+The change is tied to each class's own API version. Code on 66.0 behaves as before until someone raises the version. That is where the risk sits: a query silently returns fewer records, with no error.
+```
+
+Think of the batch job that writes order status from SAP into Salesforce every night, or the class that calculates warranty periods across all of a dealer's installed assets. Both have quietly seen everything until now.
 
 For AI code this matters twice over, in my view. Models have mostly seen older Apex, so they suggest patterns that no longer compile on 67.0 or behave differently. And agents like to raise API versions in passing when they touch a file anyway. The rules file should therefore fix three things: the target version for new classes, an explicit sharing declaration, and no raising of existing classes without a task and without a test as a restricted user. Where system mode is intended, the code says `WITH SYSTEM_MODE` on purpose, as the [LWC guide on secure Apex](https://developer.salesforce.com/docs/platform/lwc/guide/apex-security) describes. Details are in [API 67.0: why Apex sees fewer records](../../../blog/api-67-apex-user-mode-fewer-records/), and the pipeline impact in [Winter '27: what changes for your pipeline](../../../blog/salesforce-winter-27-what-changes-for-your-pipeline/).
 
 ## Rules the agent reads, and rules it cannot get around
 
-Every coding agent reads a project file with standing instructions: `CLAUDE.md` for Claude Code, `AGENTS.md` for Codex, `.vibes/rules/` for Agentforce Vibes. According to [GitHub's docs](https://docs.github.com/en/copilot/how-tos/configure-custom-instructions/add-repository-instructions), Copilot reads `.github/copilot-instructions.md`, `AGENTS.md` or a single `CLAUDE.md` in the root. Whether Vibes reads `AGENTS.md` is not covered in the [Vibes rules docs](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-rules.html); for mixed teams I would keep one canonical `AGENTS.md` plus a short Vibes rule that points to it.
+Every coding agent reads a project file with standing instructions, but the name differs per tool.
+
+```vertiefung For developers
+title: Which file does which agent read?
+Claude Code reads `CLAUDE.md`, Codex `AGENTS.md`, Agentforce Vibes `.vibes/rules/`. According to [GitHub's docs](https://docs.github.com/en/copilot/how-tos/configure-custom-instructions/add-repository-instructions), Copilot reads `.github/copilot-instructions.md`, `AGENTS.md` or a single `CLAUDE.md` in the root.
+
+Whether Vibes reads `AGENTS.md` is not covered in the [Vibes rules docs](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-rules.html); for mixed teams I would keep one canonical `AGENTS.md` plus a short Vibes rule that points to it.
+```
 
 The vendors agree on length. Anthropic's [Claude Code best practices](https://code.claude.com/docs/en/best-practices) recommend staying under 200 lines and keeping only what the agent cannot work out from the code: test and check commands, misleading places in the code, decisions that are written down nowhere, and "anything you've had to correct twice already". OpenAI's [Codex best practices](https://developers.openai.com/codex/learn/best-practices) say: "A short, accurate AGENTS.md is more useful than a long file full of vague rules." An excerpt for a Salesforce repository:
 
@@ -105,9 +116,11 @@ The open [Salesforce Skills](https://developer.salesforce.com/blogs/2026/06/buil
 
 Before the gate, the way of working decides how much fails. Three habits work, in my view:
 
-- **Plan before code.** In Vibes Plan Mode, according to Salesforce, nothing changes "until you click Approve Plan". That pays off for an extension spanning several metadata types. For a bug fix, a test that reproduces the bug is enough. Birgitta Böckeler watched a tool turn [a small bug into four user stories with 16 acceptance criteria](https://www.martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html).
-- **Evidence instead of claims.** The agent delivers the test command and its output, not "all tests pass".
-- **Small changes.** DORA lists [working in small batches](https://dora.dev/capabilities/) among the capabilities that carry the benefit of AI. A pull request with 40 changed files does not get reviewed; it gets waved through.
+| Habit | What it means |
+|---|---|
+| Plan before code | In Vibes Plan Mode, according to Salesforce, nothing changes "until you click Approve Plan". That pays off for an extension spanning several metadata types. For a bug fix, a test that reproduces the bug is enough. Birgitta Böckeler watched a tool turn [a small bug into four user stories with 16 acceptance criteria](https://www.martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html). |
+| Evidence instead of claims | The agent delivers the test command and its output, not "all tests pass". |
+| Small changes | DORA lists [working in small batches](https://dora.dev/capabilities/) among the capabilities that carry the benefit of AI. A pull request with 40 changed files does not get reviewed; it gets waved through. |
 
 ## Why does no agent get access to production?
 
@@ -129,12 +142,19 @@ Assume a machine builder with an Experience Cloud dealer portal, Service Cloud a
 
 In the requirements workshop, a clickable draft comes together in two hours in a Developer Edition org. That is vibe coding at its best, and the draft is thrown away afterwards; where the line runs is covered in [vibe coding in Salesforce: prototype or production](../../../blog/vibe-coding-salesforce-prototype-vs-production/). For the real build:
 
-- The rules file lives in the manufacturer's repository and names the SAP Named Credential, target version 67.0 and the scratch org commands.
-- The agent writes a plan first, and a developer approves it.
-- The plan includes raising an existing selector class from 62.0 to 67.0, so the rules file requires a `runAs` test. The test as a restricted dealer user shows that other dealers' assets disappear, which is intended, but so does the parts master data, which is not. Caught in the validation deployment instead of in the portal.
-- Code Analyzer reports a query inside a loop over 200 order lines, and the pull request goes back.
-- The reviewer checks the sharing model, not the formatting.
+```schritte
+Rules file
+  The rules file lives in the manufacturer's repository and names the SAP Named Credential, target version 67.0 and the scratch org commands.
+Plan
+  The agent writes a plan first, and a developer approves it.
+Test
+  The plan includes raising an existing selector class from 62.0 to 67.0, so the rules file requires a `runAs` test. The test as a restricted dealer user shows that other dealers' assets disappear, which is intended, but so does the parts master data, which is not. Caught in the validation deployment instead of in the portal.
+Code Analyzer
+  Code Analyzer reports a query inside a loop over 200 order lines, and the pull request goes back.
+Review
+  The reviewer checks the sharing model, not the formatting.
+```
 
 None of these steps is new. What is new is that without them, far more unreviewed code is produced in the same time. The cost of the AI tools themselves is covered in [chapter 7](../costs-and-tokens/), and all chapters are on the [overview page](../).
 
-On Salesforce, AI code is as good as the rules, gates and org boundaries you set as the client. If you would like your pipeline and partner rules checked for this, [send me a message](#contact).
+On Salesforce, AI code is as good as the rules, gates and org boundaries you set as the client.

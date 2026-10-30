@@ -50,13 +50,17 @@ Die Engine vergibt Termine nach einer Scheduling Policy. Laut [Salesforce-Hilfe]
 
 Salesforce liefert vier Policies mit. Customer First wägt Kundenwunsch und kurze Fahrzeit ab. High Intensity stellt die Produktivität der Techniker über Kundenwünsche, gedacht für Spitzenzeiten. Soft Boundaries erlaubt, Techniker über Gebietsgrenzen hinweg einzusetzen. Emergency ist für Notfälle. Als Ausgangspunkt empfehle ich Customer First und danach angepasste Gewichte, statt eine Policy von null aufzubauen.
 
-Dazu kommt die Optimierung. Laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?id=pfs_optimization.htm&language=en_US&type=5) kann sie den Plan für ein oder mehrere Gebiete über mehrere Tage neu ordnen, etwa jede Nacht. Am Einsatztag fängt eine In-Day-Optimierung kurzfristige Änderungen auf, und für einzelne Techniker gibt es eine eigene Optimierung, wenn ein Termin ausfällt oder sich verspätet.
+Dazu kommt die Optimierung. Laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?id=pfs_optimization.htm&language=en_US&type=5) kann sie den Plan für ein oder mehrere Gebiete über mehrere Tage neu ordnen, etwa jede Nacht. Am Einsatztag fängt eine In-Day-Optimierung kurzfristige Änderungen auf, und für einzelne Techniker gibt es eine eigene Optimierung, wenn ein Termin ausfällt oder sich verspätet. Ob sich der Umstieg auf die neuere Engine lohnt, steht in [Enhanced Scheduling and Optimization: jetzt umstellen?](../field-service-enhanced-scheduling-umstellen/), das Gesamtbild aus Engine, Konsole und Regeln in [Kapitel 2 der Masterclass Field Service](../../masterclass/field-service/field-service-terminplanung-disposition/).
 
 ## Warum prüft ein Disponent vor dem Dispatch?
 
 Die Engine kennt nur, was in den Daten steht. Ein erfahrener Disponent weiß mehr. Er weiß, dass ein Kunde die Maschine für die Wartung erst abschalten muss und das nur an bestimmten Tagen geht. Er weiß, dass ein Ersatzteil zwar im Lager gebucht, aber noch nicht im Fahrzeug ist. Er weiß, welcher Techniker bei einem Kunden schon einmal Ärger hatte, auch wenn das nirgends steht.
 
-Nach meiner Erfahrung entscheidet am Ende das Vertrauen des Kunden in die Technik, wie viel er der Automatik überlässt. Wer die Planung über Jahre in erfahrenen Händen hatte, gibt sie nicht am ersten Tag an eine Software ab. Ein Modell, bei dem die Automatik bis Scheduled plant und der Disponent mit Dispatched freigibt, nimmt das ernst. Der Disponent bleibt verantwortlich, beginnt aber mit einem fertigen Vorschlag statt mit einem leeren Kalender.
+```praxis
+In meinen Field-Service-Projekten mit automatischer Terminplanung hat am Ende das Vertrauen des Kunden in die Technik entschieden, wie viel er der Automatik überlässt. Wer die Planung über Jahre in erfahrenen Händen hatte, gibt sie nicht am ersten Tag an eine Software ab.
+```
+
+Ein Modell, bei dem die Automatik bis Scheduled plant und der Disponent mit Dispatched freigibt, nimmt das ernst. Der Disponent bleibt verantwortlich, beginnt aber mit einem fertigen Vorschlag statt mit einem leeren Kalender.
 
 Für die Prüfung hilft ein fester Rhythmus. Trailhead empfiehlt, morgens die Vormittagstermine freizugeben und den Plan vor Mittag noch einmal zu prüfen, bevor die Nachmittagstermine rausgehen. So bleibt der Nachmittag beweglich, wenn am Vormittag etwas schiefgeht.
 
@@ -81,6 +85,15 @@ So wächst die Automatik mit dem Vertrauen und nicht nach einem Plan, den jemand
 
 ## Wo sollten Sie anfangen?
 
-Starten Sie mit Customer First, den Work Rules für Qualifikationen und Besuchszeiten und der Regel, dass jeder Termin vom Disponenten freigegeben wird. Lassen Sie die Disponenten vier Wochen lang notieren, warum sie einen Vorschlag ändern. Diese Liste ist die Grundlage für jede weitere Automatisierung und zeigt, welche Daten noch fehlen.
+```schritte
+Mit Freigabe starten
+  Customer First, die Work Rules für Qualifikationen und Besuchszeiten und die Regel, dass der Disponent jeden Termin freigibt.
+Änderungen notieren | 4 Wochen · Disponenten
+  Die Disponenten schreiben auf, warum sie einen Vorschlag der Engine ändern.
+Gründe in Daten übersetzen
+  Aus der Liste werden Arbeitszeiten, Skills, Abwesenheiten, Resource Preferences oder Work Rules.
+Dispatch automatisieren
+  Ändert der Disponent die Vorschläge kaum noch, laufen einfache Arbeitstypen wie planbare Wartungen ohne ihn.
+```
 
-Wenn Sie vor der Einführung der Planung stehen und eine unabhängige Einschätzung möchten, wie viel Automatik zu Ihrem Außendienst passt, [schreiben Sie mir](#contact).
+Die Liste aus dem zweiten Schritt ist die Grundlage für jede weitere Automatisierung und zeigt, welche Daten noch fehlen.

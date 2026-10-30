@@ -25,7 +25,9 @@ faq:
 draft: false
 ---
 
-Manufacturing Cloud pays off for warranty processes when dealers and service partners submit warranty claims regularly and checking them takes a lot of manual work today. It models warranty terms, the warranty of each asset, dealer claims and supplier recovery in one data model. Whether a claim is covered is decided by the asset data: serial number, purchase or installation date and usage. Like parts 4 and 5, I am writing this part as an evaluation guide, not as a project report. I treat warranty as a commercial process; the on-site visit is covered by the Field Service series.
+Whether a dealer's warranty claim can be checked properly in Salesforce is decided by the asset data: serial number, purchase or installation date and usage. Manufacturing Cloud models warranty terms, the warranty of each asset, dealer claims and supplier recovery in one data model. That pays off when dealers and service partners submit warranty claims regularly and checking them takes a lot of manual work today. Without the asset data, neither a person nor an agent can check reliably.
+
+Like parts 4 and 5, I am writing this part as an evaluation guide, not as a project report. I treat warranty as a commercial process; the on-site visit is covered by the Field Service series.
 
 ## How does Manufacturing Cloud model a warranty?
 
@@ -53,6 +55,17 @@ The partner enters the claimed amount per item and sets the claim to submitted. 
 
 I would book the credit note to the dealer in the ERP, as with rebates in [part 5](../rebate-management-dealer-rebates/). Salesforce checks and approves, an integration transfers the approved amount, and finance books it. That integration belongs in the plan from the start, or the dealer sees an approved claim in the portal and is still waiting for the money.
 
+```ablauf
+sf: Dealer portal, Warranty claim, Adjudication, Recovery claim
+erp: Credit note
+ext: Supplier
+Dealer portal --submitted--> Warranty claim
+Warranty claim --> Adjudication
+Adjudication --approved amount--> Credit note
+Warranty claim --per causal part--> Recovery claim
+Recovery claim --submitted--> Supplier
+```
+
 ## Why does everything depend on the asset data?
 
 Because every check is a question about the asset. Is this serial number still under warranty? When did it start, at purchase or at installation? Is usage below the limit? Is the defective part covered?
@@ -60,7 +73,7 @@ Because every check is a question about the asset. Is this serial number still u
 The asset warranty only answers these questions when the asset and its data are in Salesforce. For many manufacturers that is exactly the gap:
 
 - **Sales through dealers.** The manufacturer ships to the dealer, the dealer sells to the end customer. Only the dealer knows whether and when the asset was installed. Without registration at sale, the warranty start date is missing.
-- **Installed base in the ERP.** Serial numbers live in the ERP or in production, but not as assets in Salesforce. Then an integration is needed before the first claim can be checked.
+- **Installed base in the ERP.** Serial numbers live in the ERP or in production, but not as assets in Salesforce. Then an integration is needed before the first claim can be checked. How to get the installed base into Salesforce is covered in [installed base in Manufacturing Cloud](../installed-base-asset-milestones/).
 - **Usage.** Operating hours or cycles come from the asset itself, from the dealer or not at all. If usage is part of the term, it needs a source.
 
 For the Winter '27 agent this matters even more. An agent that checks coverage reads the same fields as a person, just faster and without asking. If the data is missing, it judges on gaps. Why I look at data quality first with agents is described in [Agentforce: business value and data quality first](../agentforce-business-value-data-quality-first/).
@@ -77,18 +90,24 @@ For that to work, the causal part has to be captured cleanly in the claim, with 
 
 At the customer's door. Manufacturing Cloud settles whether damage is covered, who gets which amount and who pays in the end. Who drives to the customer when, with which spare part, is a question for Field Service. The same goes for maintenance contracts and committed response times, which run through service contracts and entitlements in Salesforce. How that works is covered in [part 5 of the Field Service series](../salesforce-field-service-maintenance-contracts/).
 
-Both topics meet at the asset. The same asset carries the warranty, the maintenance history and the work orders. If you introduce both, design the asset model once, not per project. Whether Field Service pays off is covered in the [Field Service series](../salesforce-field-service-worth-it/).
+Both topics meet at the asset. The same asset carries the warranty, the maintenance history and the work orders. If you introduce both, design the asset model once, not per project. Where the line runs in detail is in [chapter 4 of the Manufacturing Cloud masterclass](../../masterclass/manufacturing-cloud/warranty-and-after-sales/). Whether Field Service pays off is covered in the [Field Service series](../salesforce-field-service-worth-it/).
 
 ## When does warranty management in Salesforce pay off?
 
-I would recommend it when several of these points apply:
+I would recommend it when several of the points on the pro side apply:
 
-- **Claims come from outside.** Dealers and service partners submit warranty claims regularly, today by email or form.
-- **Terms are varied.** Several product families, parts with their own rules, goodwill for individual assets.
-- **Recovery is worth it.** A relevant share of warranty costs goes back to purchased parts.
-- **Asset data exists or is coming.** Serial numbers and start dates are in Salesforce or can arrive through an integration.
+```pro-contra
+pro: Salesforce pays off when
+- dealers and service partners submit claims regularly, today by email or form
+- terms are varied: several product families, parts with their own rules, goodwill for individual assets
+- a relevant share of warranty costs goes back to purchased parts
+- serial numbers and start dates are in Salesforce or can arrive through an integration
+contra: I would hold back when
+- there are few warranty cases a year that a quality department handles well in the ERP
+- asset data is missing and nobody wants to collect it
+```
 
-I would hold back with few warranty cases a year that a quality department handles well in the ERP, and when asset data is missing and nobody wants to collect it. Then the data model adds little. Whether Manufacturing Cloud pays off as a whole is covered in [part 1 of this series](../salesforce-manufacturing-cloud-is-it-worth-it/).
+In the second case the data model adds little. Whether Manufacturing Cloud pays off as a whole is covered in [part 1 of this series](../salesforce-manufacturing-cloud-is-it-worth-it/).
 
 ## Where should you start?
 
@@ -99,4 +118,4 @@ Before the first warranty term is created, settle four points:
 3. **Submission.** Which fields does the dealer fill in the portal, and which are required, including for recovery?
 4. **Credit note.** How does the approved amount reach the ERP, and when does the dealer see that it has been paid?
 
-Warranty management in Manufacturing Cloud is as good as the asset data it checks against. If you are evaluating warranty processes with dealers in Salesforce, [send me a message](#contact).
+Warranty management in Manufacturing Cloud is as good as the asset data it checks against.

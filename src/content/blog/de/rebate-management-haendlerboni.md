@@ -69,10 +69,16 @@ Diese Regeln stehen heute meist in der Tabelle, mit der jemand im Vertrieb oder 
 
 Die Auszahlung. Laut Hilfe holt eine Schnittstelle die freigegebenen Beträge und Rückstellungen ins ERP, und die Finanzabteilung rechnet sie dort ab, per Scheck, Gutschrift oder anders.
 
-Für die Architektur ergibt sich daraus eine klare Aufteilung:
+Für die Architektur ergibt sich daraus eine klare Aufteilung. **Salesforce führt** Programme, Teilnehmer, Staffeln, die Berechnung und die Freigabe, **das ERP führt** Rechnungen, Gutschriften, Rückstellungen und die Buchung:
 
-- **Salesforce führt** Programme, Teilnehmer, Staffeln, die Berechnung und die Freigabe.
-- **Das ERP führt** Rechnungen, Gutschriften, Rückstellungen und die Buchung.
+```ablauf
+erp: Rechnungen, Auszahlung
+sf: Transaction Journal, Berechnung, Freigabe
+Rechnungen --Schnittstelle--> Transaction Journal
+Transaction Journal --> Berechnung
+Berechnung --> Freigabe
+Freigabe --Beträge--> Auszahlung
+```
 
 Die Rückstellungen verdienen einen eigenen Termin mit der Finanzabteilung. Wer einen Jahresbonus monatlich zurückstellt, braucht jeden Monat eine Zahl. Kommt sie aus Salesforce, muss sie pünktlich zum Monatsabschluss im ERP sein. Wie ich führende Systeme pro Datenart festlege, beschreibe ich unter [Integration mit ERP, Middleware und Telefonie](../../leistungen/salesforce-schnittstellen/).
 
@@ -82,18 +88,24 @@ Optional ihre Beträge. Laut Hilfe können Partner ihre Auszahlungen über Exper
 
 Laut der Übersicht der Portallizenzen, die ich in [Teil 7: Kundenportal in der Manufacturing Cloud](../manufacturing-cloud-kundenportal/) beschreibe, nennt Salesforce Bonusansprüche bei der Lizenz Partner Community for Manufacturing. Wer Händlern Boni im Portal zeigen will, plant also Partnerlizenzen ein, nicht die günstigere Kundenlizenz.
 
-Ein Punkt zur Vorsicht: Ein Händler, der seinen Zwischenstand sieht, richtet sein Verhalten danach aus. Fehlen dort Retouren oder sind Zahlen eine Woche alt, entsteht Ärger am Ende des Zeitraums. Ich würde den Zwischenstand erst freischalten, wenn die Berechnung ein paar Zeiträume lang intern gestimmt hat.
+```hinweis achtung
+Ein Händler, der seinen Zwischenstand sieht, richtet sein Verhalten danach aus. Fehlen dort Retouren oder sind Zahlen eine Woche alt, entsteht Ärger am Ende des Zeitraums. Ich würde den Zwischenstand erst freischalten, wenn die Berechnung ein paar Zeiträume lang intern gestimmt hat.
+```
 
 ## Wann lohnt sich Rebate Management?
 
-In einem Fertigungsprojekt habe ich die Manufacturing Cloud bewertet und mich dagegen entschieden, weil die Kernfunktion nicht zum Geschäft passte. Die Regel daraus gilt hier genauso: Eine Funktion wird gekauft, wenn sie zum Geschäft passt. Für Rebate Management heißt das, ich würde es empfehlen, wenn mehrere dieser Punkte zutreffen:
+```praxis
+In einem Fertigungsprojekt habe ich die Manufacturing Cloud bewertet und mich dagegen entschieden, weil die Kernfunktion nicht zum Geschäft passte.
+```
+
+Die Regel daraus gilt hier genauso: Eine Funktion wird gekauft, wenn sie zum Geschäft passt. Für Rebate Management heißt das, ich würde es empfehlen, wenn mehrere dieser Punkte zutreffen:
 
 - **Viele Teilnehmer.** Dutzende oder Hunderte Händler, keine Handvoll Kunden.
 - **Gestaffelte Programme.** Mehrere Stufen, Produktgruppen oder Zeiträume, die sich jedes Jahr ändern.
 - **Fehler in der Tabelle.** Die Berechnung ist heute aufwendig, fehleranfällig oder hängt an einer Person.
 - **Händler fragen nach.** Der Innendienst beantwortet regelmäßig Anfragen zum Bonusstand.
 
-Zurückhaltend wäre ich bei einem einfachen Jahresbonus für wenige Kunden. Den können viele ERP-Systeme über Konditionen abrechnen, ohne eine zweite Logik in Salesforce. Ob sich die Manufacturing Cloud insgesamt lohnt, behandelt [Teil 1 der Serie](../manufacturing-cloud-wann-lohnt-sie-sich/).
+Zurückhaltend wäre ich bei einem einfachen Jahresbonus für wenige Kunden. Den können viele ERP-Systeme über Konditionen abrechnen, ohne eine zweite Logik in Salesforce. Boni belohnen Menge; Preisansprüche von Distributoren sind ein anderer Prozess, siehe [Ship and Debit](../ship-and-debit-preisschutz-haendler/). Ob sich die Manufacturing Cloud insgesamt lohnt, behandelt [Teil 1 der Serie](../manufacturing-cloud-wann-lohnt-sie-sich/).
 
 ## Wo sollten Sie anfangen?
 
@@ -104,4 +116,4 @@ Bevor das erste Programm angelegt wird, klären Sie vier Punkte:
 3. **Transaktionen.** Welches System liefert sie, auf welcher Ebene und wie oft?
 4. **Abrechnung.** Wann kommen Freigaben und Rückstellungen ins ERP, abgestimmt mit dem Monatsabschluss?
 
-Rebate Management ersetzt die Tabelle, wenn die Regeln darin vorher sauber aufgeschrieben sind und das ERP weiter auszahlt. Wenn Sie Ihre Händlerboni aus Excel holen wollen, [schreiben Sie mir](#contact).
+Rebate Management ersetzt die Tabelle, wenn die Regeln darin vorher sauber aufgeschrieben sind und das ERP weiter auszahlt.

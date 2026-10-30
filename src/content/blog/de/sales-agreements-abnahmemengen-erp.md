@@ -31,7 +31,7 @@ Mit Sales Agreements sieht der Vertrieb, welche Kunden hinter ihren vereinbarten
 
 ## Welche Frage beantwortet ein Sales Agreement im Alltag?
 
-Was ein Sales Agreement ist und wann sich die Manufacturing Cloud dafür lohnt, beschreibe ich in [Manufacturing Cloud: Wann lohnt sie sich?](../manufacturing-cloud-wann-lohnt-sie-sich/). Hier geht es um den Betrieb danach.
+Was ein Sales Agreement ist und wann sich die Manufacturing Cloud dafür lohnt, beschreibe ich in [Manufacturing Cloud vs. Sales Cloud: Wann lohnt sie sich?](../manufacturing-cloud-wann-lohnt-sie-sich/). Hier geht es um den Betrieb danach.
 
 Im Alltag stellt der Vertrieb eine einfache Frage: Wer liegt hinter seiner Zusage? Ein Kunde hat für das Jahr eine Menge zugesagt, aufgeteilt in Monate oder Quartale. Pro Zeitraum und Produkt stehen im Sales Agreement geplante Menge, tatsächliche Menge und Prognose nebeneinander. Die Abweichung ist die Zahl, mit der Account Manager arbeiten.
 
@@ -50,18 +50,36 @@ Salesforce bietet laut [Hilfe](https://help.salesforce.com/apex/HTViewHelpDoc?id
 
 Laut [Salesforce-Hilfe zu den Actuals](https://help.salesforce.com/s/articleView?id=sf.mfg_sa_actuals_parent.htm&language=en_US&type=5) berechnet ein täglicher Lauf die Werte, und für ein aktiviertes Sales Agreement lässt sich die Berechnung zusätzlich von Hand anstoßen. Wer morgens eine Liste der Kunden mit Rückstand erwartet, bekommt also den Stand des letzten Laufs. Für Abnahmemengen über Monate reicht das in der Regel.
 
-Ein Detail aus der Hilfe hat Folgen für die Planung: Jedes Sales Agreement übernimmt den Modus bei seiner Anlage. Ändert der Admin den Standard später, gilt das nur für neue Agreements. Wer mit einem Modus startet und nach einem Jahr umstellt, hat zwei Sorten von Agreements in der Org. Ich lege den Modus deshalb fest, bevor das erste produktive Sales Agreement angelegt wird, und schreibe die Entscheidung ins Entscheidungslog.
+Ein Detail aus der Hilfe hat Folgen für die Planung:
+
+```hinweis achtung
+Jedes Sales Agreement übernimmt den Modus bei seiner Anlage. Ändert der Admin den Standard später, gilt das nur für neue Agreements.
+```
+
+Wer mit einem Modus startet und nach einem Jahr umstellt, hat zwei Sorten von Agreements in der Org. Ich lege den Modus deshalb fest, bevor das erste produktive Sales Agreement angelegt wird, und schreibe die Entscheidung ins Entscheidungslog.
 
 Liegen die Aufträge im ERP, gibt es zwei Architekturen:
 
 - **Aufträge nach Salesforce replizieren.** Die Aufträge kommen als Order-Datensätze nach Salesforce und werden mit dem Sales Agreement verknüpft. Vorteil: Vertrieb und Service sehen die Aufträge selbst, nicht nur Summen. Nachteil: mehr Datenvolumen, und die Verknüpfung zum richtigen Agreement muss die Schnittstelle oder eine Automatisierung herstellen.
 - **Summen per API laden.** Das ERP oder die Middleware rechnet die Mengen pro Kunde, Produkt und Zeitraum und lädt nur diese Werte. Vorteil: schlank, und das ERP bleibt die einzige Stelle, an der Aufträge gezählt werden. Nachteil: Wer wissen will, welche Aufträge hinter einer Zahl stehen, muss ins ERP schauen.
 
-Welche Variante passt, hängt davon ab, was Salesforce sonst noch über Aufträge wissen muss. Die Grundregel ist dieselbe wie bei jeder Integration: ein führendes System pro Datenart. Wie ich das für Kunden, Produkte, Preise und Aufträge aufteile, beschreibe ich unter [Integration mit ERP, Middleware und Telefonie](../../leistungen/salesforce-schnittstellen/).
+```ablauf
+sf: Order-Datensätze, Sales Agreement
+erp: ERP-Aufträge
+ext: Middleware
+ERP-Aufträge --Replikation--> Order-Datensätze
+Order-Datensätze --verknüpft--> Sales Agreement
+ERP-Aufträge --> Middleware
+Middleware --Summen per API--> Sales Agreement
+```
+
+Welche Variante passt, hängt davon ab, was Salesforce sonst noch über Aufträge wissen muss. Die Grundregel ist dieselbe wie bei jeder Integration: ein führendes System pro Datenart. Wie ich das für Kunden, Produkte, Preise und Aufträge aufteile, beschreibe ich unter [Integration mit ERP, Middleware und Telefonie](../../leistungen/salesforce-schnittstellen/). Welche Daten insgesamt zwischen SAP und der Manufacturing Cloud fließen, steht in [Manufacturing Cloud und SAP: welche Daten wohin](../manufacturing-cloud-sap-integration-datenfluesse/).
 
 ## Was ich im Projekt gesehen habe
 
+```praxis
 Bei einem globalen Hersteller habe ich einen weltweiten Rollout der Manufacturing Cloud begleitet. Der wichtigste Grund für die Lizenz waren die Sales Agreements. Der Vertrieb sollte erkennen, welche Kunden ihre vereinbarten Mengen noch nicht abgenommen hatten, und planen, wie sich die offenen Mengen noch realisieren lassen. Sowohl die Aufträge als auch die Lagerbestände kamen aus dem ERP.
+```
 
 Drei Dinge haben sich dabei als schwieriger herausgestellt, als die Funktion vermuten lässt.
 
@@ -111,4 +129,4 @@ Bevor das erste Sales Agreement produktiv angelegt wird, klären Sie vier Punkte
 3. **Lagerbestand als Kennzahl.** Welches System liefert ihn, wie oft und auf welcher Ebene?
 4. **Die Ansicht für den Vertrieb.** Welche Liste sieht ein Account Manager am Montagmorgen, und was tut er damit?
 
-Ein Sales Agreement zeigt die Lücke zwischen Zusage und Abnahme so gut, wie Schnittstelle und Account-Struktur es zulassen. Wenn Sie Sales Agreements einführen oder Ihre Zahlen nicht stimmen, [schreiben Sie mir](#contact).
+Ein Sales Agreement zeigt die Lücke zwischen Zusage und Abnahme so gut, wie Schnittstelle und Account-Struktur es zulassen.

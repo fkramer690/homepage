@@ -44,7 +44,7 @@ Die Details stehen im [Entwickler-Leitfaden zu Winter '27](https://developer.sal
 
 Eine kleine Org hat eine Handvoll Integrationen, und der Admin kennt sie. Eine Enterprise-Org ist über Jahre gewachsen. Typische Quellen für Passwort-Logins sind:
 
-- **ERP- und Auftragsschnittstellen**, die vor Jahren von einem Partner gebaut wurden, der heute nicht mehr dabei ist.
+- **ERP- und Auftragsschnittstellen**, die vor Jahren von einem Partner gebaut wurden, der heute nicht mehr dabei ist. Betreiben Sie einen B2B-Shop mit SAP, gehören dessen Datenflüsse ebenfalls auf die Liste, siehe [B2B Commerce und SAP: Welche Daten fließen wohin?](../b2b-commerce-sap-datenfluesse/).
 - **Middleware und Integrationsplattformen**, in deren Konfiguration das Passwort eines technischen Benutzers hinterlegt ist.
 - **Data Loader und geplante Skripte**, die auf irgendeinem Server laufen.
 - **Backup-, Archiv- und Reporting-Tools**, die jede Nacht Daten abziehen.
@@ -74,7 +74,13 @@ Salesforce bietet mehrere OAuth-Flows an. Für die meisten Enterprise-Integratio
 - **JWT Bearer Flow.** Für Integrationen, bei denen ein Zertifikat einem geteilten Secret vorgezogen wird, etwa kritische ERP-Anbindungen. Die Integration signiert ein Token mit ihrem privaten Schlüssel, Salesforce prüft es mit dem hinterlegten Zertifikat. CI/CD-Pipelines, die nach Salesforce deployen, nutzen in der Regel ebenfalls diesen Flow.
 - **Web Server Flow mit PKCE.** Für Anwendungen, in denen sich echte Benutzer anmelden und in eigenem Namen handeln.
 
-Salesforce empfiehlt für neue Integrationen External Client Apps statt klassischer Connected Apps. Eine Falle: Eine Connected App einfach in eine External Client App umzuziehen, löst das Problem nicht, weil External Client Apps den Username-Password Flow gar nicht unterstützen. Das externe System selbst muss die Art ändern, wie es Tokens anfordert. Salesforce Time hat eine gute [Schritt-für-Schritt-Übersicht](https://salesforcetime.com/2026/10/15/salesforce-oauth-username-password-flow-retirement/) zur Umstellung.
+Salesforce empfiehlt für neue Integrationen External Client Apps statt klassischer Connected Apps.
+
+```hinweis achtung
+Eine Connected App einfach in eine External Client App umzuziehen, löst das Problem nicht, weil External Client Apps den Username-Password Flow gar nicht unterstützen. Das externe System selbst muss die Art ändern, wie es Tokens anfordert.
+```
+
+Salesforce Time hat eine gute [Schritt-für-Schritt-Übersicht](https://salesforcetime.com/2026/10/15/salesforce-oauth-username-password-flow-retirement/) zur Umstellung.
 
 ## Was ist mit MFA?
 
@@ -95,10 +101,17 @@ Der Kunde. Integrationen verbinden die Systeme des Kunden, und die Zugangsdaten 
 
 Eine realistische Reihenfolge für die kommenden Monate:
 
-1. **Bis Ende November 2026:** Bestandsaufnahme fertig, Verantwortliche benannt, Hersteller angefragt.
-2. **Dezember 2026:** Die SOAP-Login-Berechtigung für alle Integrationsuser prüfen, bevor der 1. Dezember greift.
-3. **Dezember bis Januar:** Integrationen auf Client Credentials oder JWT Bearer umstellen, die kritischsten zuerst. In einer Sandbox mit abgeschaltetem Passwort-Flow testen.
-4. **Anfang Februar 2027:** Den Passwort-Flow in der Produktion selbst abschalten, einige Tage vor Salesforce, mit dem Team in Bereitschaft.
-5. **Frühjahr 2027:** Verbleibende SOAP-Logins vor Summer '27 von API-Versionen unter 65.0 wegbringen.
+```schritte
+Bestandsaufnahme | bis Ende November 2026
+  Liste fertig, Verantwortliche benannt, Hersteller angefragt.
+SOAP-Berechtigung | Dezember 2026
+  Die SOAP-Login-Berechtigung für alle Integrationsuser prüfen, bevor der 1. Dezember greift.
+Umstellen | Dezember bis Januar
+  Integrationen auf Client Credentials oder JWT Bearer umstellen, die kritischsten zuerst. In einer Sandbox mit abgeschaltetem Passwort-Flow testen.
+Selbst abschalten | Anfang Februar 2027
+  Den Passwort-Flow in der Produktion selbst abschalten, einige Tage vor Salesforce, mit dem Team in Bereitschaft.
+SOAP-Versionen | Frühjahr 2027
+  Verbleibende SOAP-Logins vor Summer '27 von API-Versionen unter 65.0 wegbringen.
+```
 
-Der Termin steht fest und die Arbeit ist planbar, solange sie mit einer vollständigen Liste beginnt. Wenn Sie Unterstützung bei der Bestandsaufnahme oder eine zweite Meinung zu Ihrer Integrationsarchitektur möchten, [schreiben Sie mir](#contact).
+Der Termin steht fest und die Arbeit ist planbar, solange sie mit einer vollständigen Liste beginnt.

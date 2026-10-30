@@ -73,11 +73,15 @@ The docs do not say whether Vibes also reads `CLAUDE.md` or `AGENTS.md`. Accordi
 
 Sources: [Vibes usage and billing](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-admin-billing.html), [Vibes FAQ](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-faqs.html).
 
-The figure I would check first: according to the FAQ the unmetered cap applies per org, not per user. Once it is reached, the team carries on with GPT-5 or pays Flex Credits. Opus runs as an "Advanced prompt", which the [Flex Credits rate card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) prices at 16 credits; at $500 per 100,000 credits that is $0.08 per started block of 2,000 tokens. The [Vibes pricing page](https://www.salesforce.com/agentforce/developers/vibe-coding/pricing/) lists the unmetered licence as a flat fee of $125 per user and month. The billing page does not say which tier Sonnet and GPT fall into; ask your account team.
+The figure I would check first: according to the FAQ the unmetered cap applies per org, not per user. Once it is reached, the team carries on with GPT-5 or pays Flex Credits. Opus runs as an "Advanced prompt", which the [Flex Credits rate card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) prices at 16 credits; at $500 per 100,000 credits that is $0.08 per started block of 2,000 tokens. The [Vibes pricing page](https://www.salesforce.com/agentforce/developers/vibe-coding/pricing/) lists the unmetered licence as a flat fee of $125 per user and month.
 
 Since 1 June 2026, Vibes outside Developer Edition has required [Flex Credits or a paid licence](https://www.salesforceben.com/agentforce-vibes-no-longer-free-for-use/). At Dreamforce 2026, SalesforceBen reported a restored Developer Edition allowance of [50 requests or 1 million tokens with a daily reset](https://www.salesforceben.com/developer-features-and-announcements-from-dreamforce-26/). The official FAQ still says 110 requests for one month without refresh. I plan with the FAQ.
 
-For European manufacturers one FAQ sentence weighs most: "Agentforce Vibes isn't available in the EU Operating Zone." In EU orgs outside the Operating Zone, Vibes is supported under standard terms. Group, Professional, Essentials and Government Cloud are excluded as well. If you chose the EU Operating Zone for data protection reasons, you end up with external agents and their own data residency questions. The comparison by contract, data residency and cost model is in [Agentforce Vibes, Claude Code or Copilot](../../../blog/agentforce-vibes-claude-code-copilot/), and the external agents themselves are in [chapter 4](../external-coding-agents/).
+```hinweis achtung
+For European manufacturers one FAQ sentence weighs most: "Agentforce Vibes isn't available in the EU Operating Zone." In EU orgs outside the Operating Zone, Vibes is supported under standard terms. Group, Professional, Essentials and Government Cloud are excluded as well.
+```
+
+If you chose the EU Operating Zone for data protection reasons, you end up with external agents and their own data residency questions. The comparison by contract, data residency and cost model is in [Agentforce Vibes, Claude Code or Copilot](../../../blog/agentforce-vibes-claude-code-copilot/), and the external agents themselves are in [chapter 4](../external-coding-agents/).
 
 ## Skills, the plugin and Headless 360: Salesforce knowledge for other agents
 
@@ -87,7 +91,15 @@ The Claude Code plugin from the same announcement bundles about 40 of these skil
 
 Salesforce itself points out that plugins are vendor-specific, while skills and MCP are standards. Skills are essentially instructions and scripts the model loads when needed. They make an agent better at Salesforce, but they enforce nothing. Enforcement comes from hooks, Code Analyzer and the pipeline.
 
-Three dates belong here. According to the maintainers' [end-of-life notice](https://github.com/forcedotcom/mcp/issues/46), the local Salesforce DX MCP Server reaches end of life on 2 November 2026; what that means for your partner is in [chapter 3](../mcp-and-interfaces/). According to [SalesforceBen](https://www.salesforceben.com/developer-features-and-announcements-from-dreamforce-26/), an MCP plugin for Claude Code is due in Winter '27, while Salesforce is only projecting Spring '27 for a Codex plugin and hopes for governance of tools and skills in Vibes by then. Treat these as roadmap, not commitments. DevOps Center MCP was [announced at TDX 2026](https://www.salesforceben.com/salesforce-headless-360-and-agentforce-vibes-2-0-revealed-at-tdx-2026/) without an availability date.
+Three dates belong here:
+
+```zeitleiste
+2026-11-02 | End of life of the local Salesforce DX MCP Server
+Winter '27 | MCP plugin for Claude Code due
+Spring '27 | Codex plugin, only projected by Salesforce; governance of tools and skills in Vibes hoped for by then
+```
+
+The end of life comes from the maintainers' [end-of-life notice](https://github.com/forcedotcom/mcp/issues/46); what it means for your partner is in [chapter 3](../mcp-and-interfaces/). Both plugin dates were reported by [SalesforceBen](https://www.salesforceben.com/developer-features-and-announcements-from-dreamforce-26/). Treat them as roadmap, not commitments. DevOps Center MCP was [announced at TDX 2026](https://www.salesforceben.com/salesforce-headless-360-and-agentforce-vibes-2-0-revealed-at-tdx-2026/) without an availability date.
 
 ## Agentforce DX and Agent Script: agents as metadata
 
@@ -107,7 +119,10 @@ In [June 2026](https://developer.salesforce.com/blogs/2026/06/master-the-agentic
 
 According to the [docs](https://developer.salesforce.com/docs/platform/salesforce-code-analyzer/guide/engines.html), Code Analyzer bundles eight engines: PMD, ESLint, RetireJS, Regex, Flow Scanner, CPD, Salesforce Graph Engine and ApexGuru. It runs from the CLI, in VS Code and in CI/CD. For agents there are [three skills](https://developer.salesforce.com/docs/platform/salesforce-code-analyzer/guide/skills.html) that turn a request into CLI commands, set up the configuration and create custom PMD rules. MCP access to Code Analyzer has been [unsupported since June 2026](https://developer.salesforce.com/docs/platform/salesforce-code-analyzer/guide/mcp.html). Salesforce recommends the CLI or VS Code unless you need a language model, because every model call has financial and ecological costs.
 
+```vertiefung For developers
+title: What ApexGuru finds
 According to [Salesforce](https://developer.salesforce.com/blogs/2026/04/performance-first-apex-development-with-apexguru-in-salesforce-dx-mcp-server), ApexGuru finds SOQL in loops, unbounded queries, expensive schema lookups and queries that fetch more fields than the code uses. Severity based on real runtime data requires ApexGuru in production or a full copy sandbox.
+```
 
 Salesforce documents no rules specific to AI-generated code. I think that is right, because Code Analyzer checks quality whatever the source of the code. The consequence for you is clear, though: the check that decides the route to production runs in the pipeline without a language model, not in the agent's chat. How review and gates fit together is in [chapter 8](../ai-code-best-practices/), and setting them up is part of my work in [DevOps and release management](../../../services/devops-release-management/).
 
@@ -115,9 +130,11 @@ Salesforce documents no rules specific to AI-generated code. I think that is rig
 
 Admin AI changes the same org, just through the UI instead of code.
 
-- **Einstein for Flow**, according to [SalesforceBen](https://www.salesforceben.com/einstein-for-flow-now-generally-available-tutorial-and-first-steps/), generates flow drafts of up to about six elements, formulas and flow descriptions. Each generation consumes Einstein Requests, in production and sandbox.
-- **Setup with Agentforce** requires Data Cloud and, once enabled, shows an "Ask Setup Agent" button on Setup pages. According to [SalesforceTime](https://salesforcetime.com/2026/09/01/setup-with-agentforce-everything-you-need-to-know/), the agent creates objects, fields, users, permissions, sharing settings, flows, report types and Lightning pages, proposes changes before applying them and consumes Data 360 credits. Salesforce announced general availability on the [Admin blog on 26 May 2026](https://admin.salesforce.com/blog/2026/setup-with-agentforce-is-generally-available), without naming a release. What the agent should be allowed to do in production is covered in [Setup with Agentforce: allow admin AI in production?](../../../blog/setup-with-agentforce-admin-changes/).
-- **Prompt Builder** is [GA](https://developer.salesforce.com/blogs/2025/10/build-and-optimize-agents-with-new-agentforce-360-features) and since Winter '26 handles images and PDFs, returns structured HTML or JSON and runs up to 1,000 prompts in a batch.
+| Tool | What it does |
+|---|---|
+| Einstein for Flow | According to [SalesforceBen](https://www.salesforceben.com/einstein-for-flow-now-generally-available-tutorial-and-first-steps/), it generates flow drafts of up to about six elements, formulas and flow descriptions. Each generation consumes Einstein Requests, in production and sandbox. |
+| Setup with Agentforce | Requires Data Cloud and, once enabled, shows an "Ask Setup Agent" button on Setup pages. According to [SalesforceTime](https://salesforcetime.com/2026/09/01/setup-with-agentforce-everything-you-need-to-know/), the agent creates objects, fields, users, permissions, sharing settings, flows, report types and Lightning pages, proposes changes before applying them and consumes Data 360 credits. Salesforce announced general availability on the [Admin blog on 26 May 2026](https://admin.salesforce.com/blog/2026/setup-with-agentforce-is-generally-available), without naming a release. What the agent should be allowed to do in production is covered in [Setup with Agentforce: allow admin AI in production?](../../../blog/setup-with-agentforce-admin-changes/). |
+| Prompt Builder | Is [GA](https://developer.salesforce.com/blogs/2025/10/build-and-optimize-agents-with-new-agentforce-360-features) and since Winter '26 handles images and PDFs, returns structured HTML or JSON and runs up to 1,000 prompts in a batch. |
 
 Admin AI therefore draws on three currencies: Einstein Requests, Data 360 credits and Flex Credits. That belongs in licence planning. My recommendation: use the Setup agent and Einstein for Flow in sandboxes only, and move the results through the pipeline like any other metadata change. An agent that changes sharing settings in production only makes the old problem of direct changes faster.
 
@@ -125,11 +142,17 @@ Admin AI therefore draws on three currencies: Einstein Requests, Data 360 credit
 
 Assume a machine builder with Sales Cloud, Service Cloud, a dealer portal and SAP. An implementation partner works with six developers, and a first Agentforce agent for dealer order status enquiries is planned. All numbers are assumptions to show the method.
 
-1. **Org location.** If the org sits in the EU Operating Zone, Vibes is not an option. Assume it is an EU org outside it.
-2. **Coding licence.** The partner wants the unmetered licence with Sonnet. Assume 25 agentic requests per developer per working day at an average of 30,000 tokens. Six developers make 150 requests and 4.5 million tokens a day. The 36 million token cap is reached after eight working days; the 2,500 requests would last just under 17. Because the cap applies per org, the team works with GPT-5 from day nine or pays Flex Credits. I found no documentation on whether Salesforce counts the full context of each agent step, so clarify that before signing.
-3. **Metered with Opus.** The same 30,000 tokens are 15 units of 16 credits, so 240 credits or $1.20 per request. 150 requests a day cost $180, about $3,780 over 21 working days.
-4. **The agent itself.** It is built as Agent Script in Git, with the credit check and the order lookup as logic. Assume 60 test cases with three actions each, run three times. That is 540 actions at 16 credits in the sandbox, so 8,640 credits or $43.20.
-5. **The gate.** Code Analyzer runs on every pull request in the pipeline, whether Vibes, Claude Code or a person wrote the code.
+| Step | Assumption and result |
+|---|---|
+| Org location | If the org sits in the EU Operating Zone, Vibes is not an option. Assume it is an EU org outside it. |
+| Coding licence | The partner wants the unmetered licence with Sonnet. Assume 25 agentic requests per developer per working day at an average of 30,000 tokens. Six developers make 150 requests and 4.5 million tokens a day. The 36 million token cap is reached after eight working days; the 2,500 requests would last just under 17. Because the cap applies per org, the team works with GPT-5 from day nine or pays Flex Credits. |
+| Metered with Opus | The same 30,000 tokens are 15 units of 16 credits, so 240 credits or $1.20 per request. 150 requests a day cost $180, about $3,780 over 21 working days. |
+| The agent itself | It is built as Agent Script in Git, with the credit check and the order lookup as logic. Assume 60 test cases with three actions each, run three times. That is 540 actions at 16 credits in the sandbox, so 8,640 credits or $43.20. |
+| The gate | Code Analyzer runs on every pull request in the pipeline, whether Vibes, Claude Code or a person wrote the code. |
+
+```hinweis offen
+I found no documentation on whether Salesforce counts the full context of each agent step. Nor does the billing page say which tier Sonnet and GPT fall into. Clarify both with your account team before signing.
+```
 
 In this scenario the question of which agent is answered quickly. The time goes into the licence cap, the open counting question and the gates.
 
@@ -144,4 +167,4 @@ In this scenario the question of which agent is answered quickly. The time goes 
 
 On its [product page](https://www.salesforce.com/agentforce/developers/vibe-coding/) Salesforce says teams can "innovate up to 95% faster" with Vibes. The page cites no study. Measure the effect in your own programme, as described in [chapter 9](../teamwork-and-delivery/), and look next at [chapter 3](../mcp-and-interfaces/) for the interfaces these tools use to reach your org.
 
-Choose the coding agent by org location and licence, and put quality into Agent Script, tests and a pipeline that you own. If you want a second opinion on your tool choice or your partner's licence calculation, [send me a message](#contact).
+Choose the coding agent by org location and licence, and put quality into Agent Script, tests and a pipeline that you own.

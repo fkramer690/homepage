@@ -42,7 +42,11 @@ Die [Hilfeseite zur Vorlage](https://help.salesforce.com/s/articleView?id=ind.mf
 | Account Forecasts | nicht genannt | im Text nicht genannt |
 | Programmprognosen | nicht genannt | in Opportunities umwandeln |
 
-Die Hilfeseite nennt drei Subagents: Sales Agreement Management, Sales Agreement Bulk Update und Program Forecasts to Opportunities. Als Lizenz nennt sie Enterprise, Performance oder Unlimited Edition mit dem Add-on Agentforce for Manufacturing oder die Agentforce 1 Manufacturing Edition, und „each user“ braucht das Add-on. Die [Produktseite der Manufacturing Cloud](https://www.salesforce.com/manufacturing/cloud/) führt die „full suite of Agentforce for Industries“ in den Max-Editionen. Wie beides für Ihren Vertrag zusammenpasst, gehört vor den Piloten auf den Tisch des Account-Teams.
+Die Hilfeseite nennt drei Subagents: Sales Agreement Management, Sales Agreement Bulk Update und Program Forecasts to Opportunities.
+
+```hinweis offen
+Als Lizenz nennt die Hilfeseite Enterprise, Performance oder Unlimited Edition mit dem Add-on Agentforce for Manufacturing oder die Agentforce 1 Manufacturing Edition, und „each user“ braucht das Add-on. Die [Produktseite der Manufacturing Cloud](https://www.salesforce.com/manufacturing/cloud/) führt die „full suite of Agentforce for Industries“ in den Max-Editionen. Wie beides für Ihren Vertrag zusammenpasst, gehört vor den Piloten auf den Tisch des Account-Teams.
+```
 
 ## Warum ist „Agentforce Manufacturing“ nicht immer ein Agent?
 
@@ -62,7 +66,7 @@ Bei Sales Agreements ist die Dokumentation konkret. Der Agent liest sie, fasst s
 
 Ob die Massenänderung des Agenten an dieselbe Grenze stößt und ob seine Zusammenfassung denselben Ausschnitt nutzt, sagt die Hilfe nicht. Beides würde ich mit dem größten Vertrag in der Org testen, bevor sich jemand darauf verlässt.
 
-Zu Account Forecasts schweigt die Dokumentation. Die Seite zur Vorlage nennt sie im Text nicht, und keiner der drei Subagents arbeitet damit. Es gibt [Flow-Aktionen](https://help.salesforce.com/s/articleView?id=sf.admin_manufacturing_standard_invocable_actions.htm&language=en_US&type=5) wie Calculate Advanced Account Forecasts, Recalculate Forecasts Actions und Refresh Actuals Calculation. Eine eigene Agenten-Aktion, die einen dieser Flows aufruft, ist technisch denkbar. Dann ist das aber Ihre Entwicklung, mit Ihren Tests und Ihrem Support, und keine Funktion der Vorlage.
+Zu Account Forecasts schweigt die Dokumentation. Die Seite zur Vorlage nennt sie im Text nicht, und keiner der drei Subagents arbeitet damit. Es gibt [Flow-Aktionen](https://help.salesforce.com/s/articleView?id=sf.admin_manufacturing_standard_invocable_actions.htm&language=en_US&type=5) wie Calculate Advanced Account Forecasts, Recalculate Forecasts Actions und Refresh Actuals Calculation. Eine eigene Agenten-Aktion, die einen dieser Flows aufruft, ist technisch denkbar. Dann ist das aber Ihre Entwicklung, mit Ihren Tests und Ihrem Support, und keine Funktion der Vorlage. Vertriebsziele pro Kunde sind noch einmal eine eigene Funktion, siehe [Account Manager Targets](../account-manager-targets-vertriebsziele/).
 
 Die größte Lücke ist der Abgleich mit dem Produktionsplan aus der Ankündigung. Ich habe keine Beschreibung gefunden, woher der Produktionsplan kommt, in welchem Objekt er liegt oder was einen Hinweis auslöst. So wie ich die Hilfeseite lese, antwortet der Agent, wenn jemand fragt. Die [KI-Seite für die Fertigung](https://www.salesforce.com/manufacturing/artificial-intelligence/) spricht davon, Rahmenverträge, Absatzprognosen und Opportunities „conversationally“ bereitzustellen, und ergänzt, die Funktionen könnten „not reflect actual product details“. Diesen Hinweis nehme ich wörtlich.
 
@@ -70,12 +74,20 @@ Die größte Lücke ist der Abgleich mit dem Produktionsplan aus der Ankündigun
 
 Fragt ein Account Manager, welche Verträge im Rückstand sind, vergleicht der Agent Plan- und Ist-Mengen in den Zeitplänen der Sales-Agreement-Produkte. Beim Hersteller liegen die Ist-Mengen im ERP. Fehlen sie oder kommen sie spät, meldet der Agent einen Rückstand mit voller Überzeugung.
 
-Laut [Salesforce-Hilfe zum Import von Ist-Werten](https://help.salesforce.com/s/articleView?id=ind.mfg_sa_actuals_api_external.htm&language=en_US&type=5) kommen externe Ist-Werte so ins System:
+```praxis
+Ich habe Sales Agreements mit Ist-Mengen aus dem ERP in der Manufacturing Cloud eingeführt. Der Stolperstein war die ERP-Schnittstelle.
+```
 
-1. Der Admin stellt die Ist-Berechnung auf „Manually using API upload“.
-2. Eine Schnittstelle schreibt Actual Quantity und Actual Amount in die Datensätze Sales Agreement Product Schedule, per Bulk API oder Data Loader.
-3. Ein täglicher Job um 1:00 Uhr in der Zeitzone der Org aktualisiert die zugehörigen Verträge.
-4. Wer Werte von Hand korrigiert, braucht die Berechtigung „Edit Actual Quantity of Sales Agreements Products“.
+Laut [Salesforce-Hilfe zum Import von Ist-Werten](https://help.salesforce.com/s/articleView?id=ind.mfg_sa_actuals_api_external.htm&language=en_US&type=5) stellt der Admin dafür die Ist-Berechnung auf „Manually using API upload“. Eine Schnittstelle schreibt Actual Quantity und Actual Amount per Bulk API oder Data Loader in die Datensätze Sales Agreement Product Schedule, der tägliche Job läuft in der Zeitzone der Org. Wer Werte von Hand korrigiert, braucht die Berechtigung „Edit Actual Quantity of Sales Agreements Products“.
+
+```ablauf
+erp: Aufträge im ERP
+sf: Product Schedules, Tagesjob, Sales Agreements, Sales-Planning-Agent
+Aufträge im ERP --Ist-Mengen--> Product Schedules
+Product Schedules --um 1:00 Uhr--> Tagesjob
+Tagesjob --aktualisiert--> Sales Agreements
+Sales Agreements --Plan und Ist--> Sales-Planning-Agent
+```
 
 Welcher Berechnungsmodus passt und warum er sich später schwer ändern lässt, beschreibe ich in [Sales Agreements: fehlende Abnahmemengen erkennen](../sales-agreements-abnahmemengen-erp/). Für den Agenten kommen drei Punkte dazu. Der Datenfluss muss jedes ERP abdecken, das Aufträge für einen Kunden bucht, auch die Tochtergesellschaft auf dem zweiten System. Die Zuordnung von Auftraggeber zu Vertrags-Account braucht einen Verantwortlichen. Und die Antwort des Agenten sollte das Datum des letzten Ladelaufs zeigen, damit ein Rückstand aus einem ausgefallenen Nachtlauf als solcher erkennbar ist.
 
@@ -102,4 +114,4 @@ Dann soll eine Preiserhöhung für eine Produktfamilie in 60 Verträge. Die Mass
 
 Ob Agenten überhaupt zu Ihrem Unternehmen passen, behandle ich in [Agentforce für Hersteller: jetzt starten oder warten?](../agentforce-ja-oder-nein-hersteller/), den Überblick über Agenten in der Fertigung im Masterclass-Kapitel [KI-Agenten in der Fertigung](../../masterclass/ki-salesforce/ki-agenten-in-der-fertigung/).
 
-Der Sales-Planning-Agent ist ein brauchbarer Assistent auf Sales Agreements, sobald die Ist-Mengen aus dem ERP stimmen, und er kann weniger, als die Ankündigung von 2025 nahelegt. Wenn Sie ihn für Ihren Vertrieb bewerten, [schreiben Sie mir](#contact).
+Der Sales-Planning-Agent ist ein brauchbarer Assistent auf Sales Agreements, sobald die Ist-Mengen aus dem ERP stimmen, und er kann weniger, als die Ankündigung von 2025 nahelegt.

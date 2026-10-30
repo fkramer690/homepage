@@ -70,7 +70,9 @@ Indexing the catalogue once costs as much as six weeks of dealer conversations. 
 
 Salesforce's [testing documentation](https://developer.salesforce.com/docs/ai/agentforce/guide/testing-api-get-started.html) says that running tests "consumes requests and credits". Assume 500 test conversations before go-live: 500 × (3 × 16 + 2 × 4) = 28,000 credits, $140. Assume four regression runs of 200 conversations a year: 44,800 credits, $224.
 
+```hinweis achtung
 The expensive trap is Data 360 in the sandbox: 120 credits per MB, without tiers. Indexing the full 2,000 MB catalogue there costs 240,000 credits, $1,200, almost as much as in production. A representative subset of 200 MB costs 24,000 credits, $120.
+```
 
 ### The first year in total
 
@@ -104,7 +106,14 @@ For narrow dealer enquiries I would therefore plan with Flex Credits. Resolution
 
 ## Do the credits in your edition cover it?
 
-The [Core, Advanced and Max editions](https://www.salesforce.com/news/stories/salesforce-simplifies-editions-2026/) include 500,000, 1 million and 2.75 million Flex Credits. The Salesforce pricing pages list the pools per org and year (for Max literally "2.75M Flex Credits per org per year"). The editions release lists Help Agent in Advanced and Max.
+The Salesforce pricing pages list the Flex Credit pools of the [Core, Advanced and Max editions](https://www.salesforce.com/news/stories/salesforce-simplifies-editions-2026/) per org and year (for Max literally "2.75M Flex Credits per org per year"). The editions release lists Help Agent in Advanced and Max.
+
+```kennzahlen
+500,000 | Flex Credits per org and year in Core
+1 million | Flex Credits per org and year in Advanced
+2.75 million | Flex Credits per org and year in Max
+source: Salesforce editions release 2026 and pricing pages
+```
 
 The scenario needs about 3 million credits in the first year, more than even the Max pool, and that pool also covers every other metered agent in the org. Additional credits are sold as PayGo or Pre-Commit. Plan the ramp-up: a dealer agent rarely reaches full volume in its first month, and credits committed for a year but used only from month four partly expire. How to estimate this per action is the topic of [Flex Credits and Agentforce cost per action](../flex-credits-agentforce-cost-per-action/), and the editions themselves are covered in [Core, Advanced and Max](../salesforce-editions-core-advanced-max/). Whether you buy credits, change edition at renewal or build nothing in Salesforce is a question for [make-or-buy and licence planning](../../services/make-or-buy-licences/).
 
@@ -116,11 +125,19 @@ The scenario needs about 3 million credits in the first year, more than even the
 
 ## How do you budget a dealer service agent?
 
-1. **Count enquiries by type** from cases and emails of the last three months.
-2. **Define actions and prompts per conversation** for each type.
-3. **Measure the document volume** in MB after removing superseded catalogues.
-4. **Plan the sandbox** with a document subset and a fixed number of test conversations.
-5. **Check the contract:** edition pool, order end date and whether the org already runs on conversation pricing.
-6. **Run two test weeks**, read Digital Wallet, recalculate and set alerts on the credit pool.
+```schritte
+Count enquiries by type
+  From cases and emails of the last three months.
+Define actions and prompts
+  Per conversation, for each enquiry type.
+Measure the document volume
+  In MB, after removing superseded catalogues.
+Plan the sandbox
+  With a document subset and a fixed number of test conversations.
+Check the contract
+  Edition pool, order end date and whether the org already runs on conversation pricing.
+Run two test weeks
+  Read Digital Wallet, recalculate and set alerts on the credit pool.
+```
 
-A dealer service agent costs little per conversation, so the budget risk sits in documents, sandboxes and an oversized credit pool. If you want a second pair of eyes on your calculation, [send me a message](#contact).
+A dealer service agent costs little per conversation, so the budget risk sits in documents, sandboxes and an oversized credit pool.

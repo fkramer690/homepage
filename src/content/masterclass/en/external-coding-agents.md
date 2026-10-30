@@ -40,7 +40,10 @@ A coding agent is an AI tool that reads files, runs commands, starts tests and p
 | Cursor | Anysphere | named compatible by Salesforce for sf-skills and hosted MCP | check prices with the vendor before use |
 | Agentforce Vibes (for comparison) | Salesforce | native, skills preinstalled | Flex Credits or unmetered licence |
 
+```vertiefung For developers
+title: What the Claude Code plugin brings
 Salesforce calls the Claude Code plugin ["our first official plugin, built for Claude Code"](https://developer.salesforce.com/blogs/2026/08/headless-development-with-skills-and-a-claude-code-plugin). It bundles about 40 of the more than 100 skills in the open sf-skills library and sets up the MCP servers salesforce-api-context, salesforce-metadata-experts and salesforce-lsp. For OpenCode, Codex and Cursor, Salesforce names the same skills library as installable; I found no official plugin for those agents in the Salesforce documentation. According to the [Summer '26 guide](https://developer.salesforce.com/blogs/2026/06/the-salesforce-developers-guide-to-the-summer-26-release), the hosted MCP servers connect to "any MCP-compatible AI client, such as Claude, ChatGPT, Cursor". GitHub moves Copilot one level up with [Agent HQ](https://github.blog/news-insights/company-news/pick-your-agent-use-claude-and-codex-on-agent-hq/): since February 2026, Claude and Codex agents run there next to GitHub's own agent, at launch as a public preview for Copilot Pro+ and Enterprise.
+```
 
 In practice, Claude Code ships the most ready-made Salesforce setup today. With the other agents, your team configures skills and MCP servers itself. The full comparison by contract, EU data residency, cost model and governance is in [Agentforce Vibes, Claude Code or Copilot](../../../blog/agentforce-vibes-claude-code-copilot/). If anyone still runs the local Salesforce DX MCP Server, the required switch is in [chapter 3](../mcp-and-interfaces/).
 
@@ -53,6 +56,13 @@ The rules live in a rules file in the repository, such as `CLAUDE.md` or `AGENTS
 ### No benchmark for Apex
 
 I found no independent, public benchmark that measures Claude, GPT and Gemini on Apex, LWC or Flow. Salesforce [claimed better accuracy](https://www.salesforce.com/blog/agentforce-developers-llms/) for its earlier code model xGen-Code but published no scores, only an internal survey with about 125 minutes saved per week. What does exist is security data: Veracode's [2026 GenAI Code Security Report](https://www.veracode.com/news/llms-are-getting-smarter-but-not-safer-veracode-2026-genai-code-security-report-finds-ai-generated-code-security-has-stalled-at-56%25-pass-rate/) measures a 56 percent security pass rate for AI-generated code, and only 30 percent for Java. Apex is syntactically close to Java, so I would take that number seriously.
+
+```kennzahlen
+56 % | security pass rate for AI-generated code
+30 % | security pass rate for Java
+125 min | saved per week according to an internal Salesforce survey, without scores
+source: Veracode 2026 GenAI Code Security Report; Salesforce on xGen-Code
+```
 
 Salesforce's own choice is a signal. According to the [GA announcement](https://developer.salesforce.com/developer-centers/agentforce-vibes/announcements/agentforce-vibes-4-1-0), Agentforce Vibes is "powered by Claude and the Mastra agent orchestration engines", and according to the [Claudeforce press release](https://www.salesforce.com/ap/news/press-releases/2026/08/27/sg-salesforce-and-anthropic-announce-claudeforce-the-1-ai-meets-the-1-ai-crm/) Salesforce plans to make Claude Code and Claude Enterprise available to all of its own developers and knowledge workers. A signal does not replace a measurement on your code. I recommend a small test suite of your own: 10 to 20 tasks from your backlog, for example a trigger handler with a bulk test, an LWC for the dealer portal and a flow change in the warranty process. Measure deployment success, test results and the number of review findings. The checks every piece of AI code must pass are in [chapter 8](../ai-code-best-practices/).
 
@@ -68,7 +78,9 @@ Separate two decisions: which model your Agentforce agents use at runtime, for e
 
 Sources: [Supported Models](https://developer.salesforce.com/docs/ai/agentforce/guide/supported-models.html), [Anthropic, October 2025](https://www.anthropic.com/news/salesforce-anthropic-expanded-partnership), [Claudeforce](https://www.salesforce.com/ap/news/press-releases/2026/08/27/sg-salesforce-and-anthropic-announce-claudeforce-the-1-ai-meets-the-1-ai-crm/), [SalesforceBen on Dreamforce 2026](https://www.salesforceben.com/biggest-dreamforce-26-announcements-everything-in-a-nutshell/).
 
-One detail for your architecture: the Supported Models page currently lists Claude up to Sonnet 5 and Opus 4.8, and describes the "Salesforce Default" model as a "managed mix of trusted models (currently including GPT-4o)". Press release and documentation are not in step. Check in Setup which model your agent actually uses instead of relying on the announcement.
+```hinweis achtung
+The Supported Models page currently lists Claude up to Sonnet 5 and Opus 4.8, and describes the "Salesforce Default" model as a "managed mix of trusted models (currently including GPT-4o)". Press release and documentation are not in step. Check in Setup which model your agent actually uses instead of relying on the announcement.
+```
 
 ## Where are code, metadata and test data processed?
 
@@ -85,7 +97,11 @@ A manufacturer's repository holds more than people think: pricing logic, discoun
 
 Sources: [Anthropic data residency](https://platform.claude.com/docs/en/manage-claude/data-residency), [Anthropic pricing](https://platform.claude.com/docs/en/about-claude/pricing), [OpenAI data residency in Europe](https://openai.com/index/introducing-data-residency-in-europe/), [GitHub changelog, September 2026](https://github.blog/changelog/month/09-2026/).
 
-German labour law adds another step. According to [CMS](https://cms.law/de/deu/legal-updates/ki-transformation-und-betriebsrat-mitbestimmung-richtig-gestalten), AI systems are generally capable of evaluating performance or behaviour data, so introducing them usually requires a works agreement, and using them without one is not permitted. In my reading, coding agents with usage statistics fall under this; have your labour lawyer confirm for your set-up. How to bring in the works council and GDPR early is covered in [AI coding tools, works council and GDPR](../../../blog/ai-coding-tools-works-council-gdpr/).
+German labour law adds another step. According to [CMS](https://cms.law/de/deu/legal-updates/ki-transformation-und-betriebsrat-mitbestimmung-richtig-gestalten), AI systems are generally capable of evaluating performance or behaviour data, so introducing them usually requires a works agreement, and using them without one is not permitted. How to bring in the works council and GDPR early is covered in [AI coding tools, works council and GDPR](../../../blog/ai-coding-tools-works-council-gdpr/).
+
+```hinweis offen
+In my reading, coding agents with usage statistics fall under this co-determination. Have your labour lawyer confirm it for your set-up.
+```
 
 ## What do coding agents cost per developer?
 
@@ -106,9 +122,11 @@ If you only look at Copilot's seat price, you underestimate agentic use. 1,900 c
 
 The DevOps vendors shipped their own agents in 2026. They do not replace the coding agent; they govern what reaches production.
 
-- **Gearset Cam** takes a ticket through to a pull request and checks beforehand that the change is deployable, according to the [announcement of 2 September 2026](https://assets.gearset.com/2026/09/01112431/Gearset-2026-Cam-Announcement.pdf). In pilots, Cam delivered up to 44 percent of a team's pull requests, and at one customer 75 percent of those were merged. These are vendor figures.
-- **Copado Agentia Headless** brings Copado's agents into the IDE and is generally available according to [Copado](https://www.copado.com/dreamforce-2026-copado).
-- **Provar MCP** is an open-source Salesforce CLI plugin that generates tests and validates them against more than 240 rules, according to [Provar](https://provar.com/blog/product/provar-mcp-bringing-ai-to-salesforce-test-automation/). It runs with Claude, Copilot and Cursor and costs nothing extra with a Provar Automation licence.
+| Agent | What it does |
+|---|---|
+| Gearset Cam | Takes a ticket through to a pull request and checks beforehand that the change is deployable, according to the [announcement of 2 September 2026](https://assets.gearset.com/2026/09/01112431/Gearset-2026-Cam-Announcement.pdf). In pilots, Cam delivered up to 44 percent of a team's pull requests, and at one customer 75 percent of those were merged. These are vendor figures. |
+| Copado Agentia Headless | Brings Copado's agents into the IDE and is generally available according to [Copado](https://www.copado.com/dreamforce-2026-copado). |
+| Provar MCP | Is an open-source Salesforce CLI plugin that generates tests and validates them against more than 240 rules, according to [Provar](https://provar.com/blog/product/provar-mcp-bringing-ai-to-salesforce-test-automation/). It runs with Claude, Copilot and Cursor and costs nothing extra with a Provar Automation licence. |
 
 Neither Gearset nor Copado names the underlying model in these sources. For a manufacturer with data protection requirements that is a due diligence question: which model, which region, which retention.
 
@@ -118,13 +136,15 @@ Assume a machine builder with SAP S/4HANA, Service Cloud and a dealer portal on 
 
 This is how I would approach it:
 
-1. **Set the approved list.** Copilot stays, Claude Code is added, but through an account the client owns, either Enterprise seats or Bedrock with a regional endpoint. I rule out the partner's own accounts, because then nobody knows where code and logs end up.
-2. **Rules file in the client's repository.** An `AGENTS.md` as the shared base that Copilot reads, plus a short `CLAUDE.md` that points to it. The internal architect owns it, not the partner.
-3. **Limit where agents work.** Agents work only in developer sandboxes without production data. Dealer data from the full-copy sandbox does not go into prompts.
-4. **Estimate cost realistically.** Eight developers with an assumed 15 active days cost about $1,560 a month at Anthropic's $13 average. If all eight had Copilot Business, the seat price would be $152, but the pooled 15,200 credits cover only $152 of model usage. With similarly intensive agentic work, both tools end up in the same range.
-5. **Adjust the contract.** The partner discloses which tools and models it uses, and the cost is either priced into the day rate or passed through. What belongs in the SOW is in [partners using AI coding: contract rules](../../../blog/partners-using-ai-coding-contract-rules/).
-6. **Start with the test suite.** 15 tasks from the backlog, both tools, the same gates. The result decides, not individual developers' preferences.
+| Step | Approach |
+|---|---|
+| Set the approved list | Copilot stays, Claude Code is added, but through an account the client owns, either Enterprise seats or Bedrock with a regional endpoint. I rule out the partner's own accounts, because then nobody knows where code and logs end up. |
+| Rules file in the client's repository | An `AGENTS.md` as the shared base that Copilot reads, plus a short `CLAUDE.md` that points to it. The internal architect owns it, not the partner. |
+| Limit where agents work | Agents work only in developer sandboxes without production data. Dealer data from the full-copy sandbox does not go into prompts. |
+| Estimate cost realistically | Eight developers with an assumed 15 active days cost about $1,560 a month at Anthropic's $13 average. If all eight had Copilot Business, the seat price would be $152, but the pooled 15,200 credits cover only $152 of model usage. With similarly intensive agentic work, both tools end up in the same range. |
+| Adjust the contract | The partner discloses which tools and models it uses, and the cost is either priced into the day rate or passed through. What belongs in the SOW is in [partners using AI coding: contract rules](../../../blog/partners-using-ai-coding-contract-rules/). |
+| Start with the test suite | 15 tasks from the backlog, both tools, the same gates. The result decides, not individual developers' preferences. |
 
 In my judgement, agreeing with the works council and data protection takes longer than choosing the tool in a setup like this, so plan that first. Steering several partners with different tools is part of my work in [partner governance](../../../services/partner-governance/), and the gates belong in [DevOps and release management](../../../services/devops-release-management/). How Salesforce is shifting its partner model towards agents is the topic of [chapter 5](../aiforce-and-system-integrators/).
 
-Choose the coding agent by contract, data residency and cost, and put the quality into a rules file, review and pipeline that you own. If you want a second opinion on your approved list or the rules for your partner, [send me a message](#contact).
+Choose the coding agent by contract, data residency and cost, and put the quality into a rules file, review and pipeline that you own.

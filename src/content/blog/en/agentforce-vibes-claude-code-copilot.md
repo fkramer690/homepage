@@ -59,7 +59,11 @@ This is the question that removes options. What the vendors state on their own p
 | GitHub Copilot | [EU data residency since 13 April 2026](https://github.blog/changelog/2026-04-13-copilot-data-residency-in-us-eu-and-fedramp-compliance-now-available) for all generally available features including cloud agent and CLI, off by default, 10 percent more AI credits |
 | Codex | data residency on ChatGPT Enterprise only; [Codex app and CLI supported, Codex Web excluded](https://help.openai.com/en/articles/9903489) |
 
-Two details matter for Salesforce teams. The [EU model list for Copilot](https://docs.github.com/en/enterprise-cloud@latest/admin/data-residency/github-copilot-with-data-residency) includes Claude Opus 5.5 and Sonnet 5.5, so a team can work with Claude models under EU processing without an AWS account. And for Vibes, I would get the processing region from Salesforce in writing before your data protection officer signs off. Whether the works council has to agree is a separate question, covered in [AI coding tools, works council and GDPR](../ai-coding-tools-works-council-gdpr/).
+Two details matter for Salesforce teams. The [EU model list for Copilot](https://docs.github.com/en/enterprise-cloud@latest/admin/data-residency/github-copilot-with-data-residency) includes Claude Opus 5.5 and Sonnet 5.5, so a team can work with Claude models under EU processing without an AWS account. Whether the works council has to agree is a separate question, covered in [AI coding tools, works council and GDPR](../ai-coding-tools-works-council-gdpr/).
+
+```hinweis offen
+For Vibes, Salesforce states no processing region. I would get it from Salesforce in writing before your data protection officer signs off.
+```
 
 ### 3. Which cost model can you control?
 
@@ -103,11 +107,17 @@ The result is two tools and one `AGENTS.md`, owned by the internal architect. Ho
 
 ## How do you decide in four weeks?
 
-1. **Week 1:** check whether the org sits in the EU Operating Zone and list the contracts you hold with Salesforce, GitHub, Anthropic, OpenAI and AWS.
-2. **Week 2:** settle the residency rule with data protection and start the works council process.
-3. **Week 3:** approve at most two tools, all accounts in the client's name, and write the rules file.
-4. **Week 4:** run 10 to 15 backlog tasks through the approved tools and the same pipeline gates, as described in [quality gates for AI code](../quality-gates-for-ai-code-salesforce-pipeline/).
+```schritte
+Take stock | Week 1
+  Check whether the org sits in the EU Operating Zone and list the contracts you hold with Salesforce, GitHub, Anthropic, OpenAI and AWS.
+Settle the rules | Week 2
+  Settle the residency rule with data protection and start the works council process.
+Approve | Week 3
+  Approve at most two tools, all accounts in the client's name, and write the rules file.
+Test | Week 4
+  Run 10 to 15 backlog tasks through the approved tools and the same pipeline gates, as described in [quality gates for AI code](../quality-gates-for-ai-code-salesforce-pipeline/).
+```
 
 Setting these rules across several partners is part of my work in [partner governance](../../services/partner-governance/) and [DevOps and release management](../../services/devops-release-management/).
 
-Pick the coding agent by contract, residency and governance, and keep quality in the rules file and pipeline you own. If you want a second opinion on your approved list, [send me a message](#contact).
+Pick the coding agent by contract, residency and governance, and keep quality in the rules file and pipeline you own.

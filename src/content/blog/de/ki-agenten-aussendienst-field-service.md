@@ -43,7 +43,17 @@ Salesforce hat Agentforce for Field Service im [April 2025](https://www.salesfor
 | Techniker | Schrittweise Fehlersuche aus Handbüchern, früheren Reparaturen und Fotos | GA seit Juni 2025 |
 | Anlagen | Asset Service Prediction: wann und warum eine Anlage ausfällt | [Open Beta 2024 angekündigt](https://www.salesforce.com/news/stories/field-service-asset-management-news/), auf der Produktseite ohne GA-Datum |
 
-Salesforce untermauert den Buchungsagenten mit eigenen Zahlen: Ein Vor-Ort-Termin dauert 17 Minuten zu planen, 15 zu ändern und 12 abzusagen, der Agent soll es in unter fünf schaffen. Die [Winter-'27-Ankündigung](https://salesforce.com/news/stories/winter-2027-product-release-announcement) verspricht die Buchung per Sprache in Sekunden statt 15 Minuten. Das sind Herstellerangaben aus gemischten Branchen, keine Ergebnisse von Maschinenbauern.
+Salesforce untermauert den Buchungsagenten mit eigenen Zahlen:
+
+```kennzahlen
+17 Min. | dauert es, einen Vor-Ort-Termin zu planen
+15 Min. | ihn zu ändern
+12 Min. | ihn abzusagen
+unter 5 Min. | soll der Agent dafür brauchen
+quelle: Herstellerangaben von Salesforce zum Buchungsagenten in Agentforce for Field Service
+```
+
+Die [Winter-'27-Ankündigung](https://salesforce.com/news/stories/winter-2027-product-release-announcement) verspricht die Buchung per Sprache in Sekunden statt 15 Minuten. Das sind Herstellerangaben aus gemischten Branchen, keine Ergebnisse von Maschinenbauern.
 
 Die Industriereferenzen sind dünner. In der [Siemens-Meldung](https://investor.salesforce.com/news/news-details/2026/Siemens-and-Salesforce-Deepen-AI-Partnership-to-Redefine-Industrial-Sales-and-Service/default.aspx) vom September 2026 „kann“ ein Techniker die passenden Ersatzteile für eine Seriennummer vor dem ersten Einsatz bestimmen, die Anbindung von Teamcenter dahinter ist aber mit „will work with“ formuliert. Live und beziffert ist der Teil zu eingehenden Leads. Für den Service eines Maschinenbauers würde ich mit den Funktionen aus der Tabelle planen und alles andere als angekündigt behandeln.
 
@@ -53,7 +63,7 @@ Für Field-Service-Agenten gibt es zwei Preismodelle, und sie folgen der Grenze 
 
 **Kundenseitige Agenten laufen über Flex Credits.** Die [Preisseite von Field Service](https://www.salesforce.com/eu/service/field-service-management/pricing/) nennt für Dispatcher, Technician, Field Service Plus und Contractor Plus, dass der Scheduling Agent Flex Credits braucht. Laut [Rate Card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) kostet eine Aktion in Produktion 20 Credits, in der Sandbox 16, eine Sprachaktion 30 und 24. Bei [500 € je 100.000 Credits](https://www.salesforce.com/eu/agentforce/pricing/) sind das 0,10 € pro Aktion und 0,15 € pro Sprachaktion.
 
-**Funktionen für Mitarbeitende kosten pro Nutzer.** Das Add-on [Agentforce for Field Service](https://www.salesforce.com/eu/service/field-service-management/ai/pricing/) kostet 125 € pro Nutzer und Monat bei Jahresvertrag und enthält unterstützende KI für Disponenten und Techniker mit nicht gemessener Nutzung durch Mitarbeitende. Die Alternative ist Agentforce 1 Field Service für 650 € pro Nutzer und Monat, mit unbegrenzter Nutzung durch Mitarbeitende sowie 1 Mio. Flex Credits und 2,5 Mio. Data Cloud Credits pro Org und Jahr. Das Add-on kommt zur Technician-Lizenz für 175 € aus [Teil 1 der Field-Service-Serie](../salesforce-field-service-lohnt-sich/) hinzu, Agentforce 1 Field Service enthält bereits alles aus Field Service Plus.
+**Funktionen für Mitarbeitende kosten pro Nutzer.** Das Add-on [Agentforce for Field Service](https://www.salesforce.com/eu/service/field-service-management/ai/pricing/) kostet 125 € pro Nutzer und Monat bei Jahresvertrag und enthält unterstützende KI für Disponenten und Techniker mit nicht gemessener Nutzung durch Mitarbeitende. Die Alternative ist Agentforce 1 Field Service für 650 € pro Nutzer und Monat, mit unbegrenzter Nutzung durch Mitarbeitende sowie 1 Mio. Flex Credits und 2,5 Mio. Data Cloud Credits pro Org und Jahr. Das Add-on kommt zur Technician-Lizenz für 175 € aus [Teil 1 der Field-Service-Serie](../salesforce-field-service-lohnt-sich/) hinzu, Agentforce 1 Field Service enthält bereits alles aus Field Service Plus. Wann sich das Paket rechnet, steht in [Agentforce 1 Field Service: Wann rechnet sich das Paket?](../agentforce-1-field-service-paket-rechnung/).
 
 Für die Budgetplanung heißt das: Ein Buchungsagent kostet Cent pro Buchung, das Add-on für 60 Techniker dagegen 90.000 € im Jahr zum Listenpreis. Stützt sich die Fehlersuche auf Handbücher in Data 360, kommen 150 Credits pro MB Verarbeitung dazu. Wie Sie Credits pro Prozess schätzen, steht in [Flex Credits: Agentforce-Kosten pro Aktion](../flex-credits-agentforce-kosten-pro-aktion/), was die Anbindung von Dokumenten kostet, in [Data-360-Kosten für KI-Agenten](../data-360-kosten-fuer-ki-agenten/).
 
@@ -87,12 +97,19 @@ Das Muster dahinter: Der Agent mit dem niedrigsten Preis pro Vorgang ist am leic
 
 ## Wo sollten Sie anfangen?
 
-1. **Eine Funktion wählen** aus der Tabelle oben, mit hohem Volumen. Für die meisten Maschinenbauer ist das die Wartungsbuchung.
-2. **Die Daten dahinter prüfen**: Maintenance Plans, Stillstandsfenster, Anlagenbezug der alten Work Orders.
-3. **Regeln in Logik gießen**: Entitlements, Reaktionszeiten und Garantiestatus bleiben aus dem Prompt heraus.
-4. **Testläufe budgetieren** mit 16 Credits pro Aktion in der Sandbox und eine messbare Zielzahl vereinbaren, etwa den Anteil der Wartungen, die ohne Disponenten gebucht werden.
-5. **Den Betriebsrat früh einbinden.** Agenten, die Einsatzberichte lesen oder Sprache von Technikern verarbeiten, berühren in Deutschland die Mitbestimmung, neben der Standortverfolgung aus der [Einführung von Field Service](../salesforce-field-service-einfuehrung/).
+```schritte
+Eine Funktion wählen
+  Eine aus der Tabelle oben, mit hohem Volumen. Für die meisten Maschinenbauer ist das die Wartungsbuchung.
+Daten dahinter prüfen
+  Maintenance Plans, Stillstandsfenster, Anlagenbezug der alten Work Orders.
+Regeln in Logik gießen
+  Entitlements, Reaktionszeiten und Garantiestatus bleiben aus dem Prompt heraus.
+Testläufe budgetieren
+  Mit 16 Credits pro Aktion in der Sandbox, dazu eine messbare Zielzahl, etwa den Anteil der Wartungen, die ohne Disponenten gebucht werden.
+Betriebsrat früh einbinden
+  Agenten, die Einsatzberichte lesen oder Sprache von Technikern verarbeiten, berühren in Deutschland die Mitbestimmung, neben der Standortverfolgung aus der [Einführung von Field Service](../salesforce-field-service-einfuehrung/).
+```
 
-Ob das Add-on oder Agentforce 1 Field Service die bessere Wahl ist, ist eine Lizenzfrage, die ich in [Make-or-buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/) kläre. Zur grundsätzlichen Entscheidung über Agenten lesen Sie [Agentforce für Hersteller: jetzt starten oder warten?](../agentforce-ja-oder-nein-hersteller/).
+Ob das Add-on oder Agentforce 1 Field Service die bessere Wahl ist, ist eine Lizenzfrage, die ich in [Make-or-buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/) kläre. Zur grundsätzlichen Entscheidung über Agenten lesen Sie [Agentforce für Hersteller: jetzt starten oder warten?](../agentforce-ja-oder-nein-hersteller/). Wie Sie Agenten im Außendienst Schritt für Schritt einführen, steht in [Kapitel 5 der Masterclass Field Service](../../masterclass/field-service/field-service-ki-agenten-einfuehrung/).
 
-Starten Sie mit dem Agenten, der geplante Wartungen bucht, und lassen Sie den Einsatzbericht folgen, sobald die Felder dahinter sauber sind. Wenn Sie eine zweite Meinung möchten, welche Funktion zu Ihrem Außendienst passt, [schreiben Sie mir](#contact).
+Starten Sie mit dem Agenten, der geplante Wartungen bucht, und lassen Sie den Einsatzbericht folgen, sobald die Felder dahinter sauber sind.

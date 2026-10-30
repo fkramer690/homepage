@@ -26,7 +26,7 @@ faq:
 draft: false
 ---
 
-Ein Maschinenbauer hat genug Daten für Predictive Maintenance in Salesforce, wenn eine Baureihe Hunderte vergleichbarer Maschinen umfasst, jede Störungs-Work-Order an einer Seriennummer hängt und Ausfallursachen in codierten Feldern stehen. Asset Service Prediction lernt aus genau dieser Servicehistorie, Sensordaten kommen erst danach. Ist die Historie dünn, sind Wartungspläne mit nutzungs- und zustandsabhängigen Auslösern die ehrliche Alternative. Maschinendaten sind als Aggregate bezahlbar: Im Beispiel unten kosten Rohwerte im Sekundentakt von 300 Maschinen rund 65.900 € im Monat an Flex Credits, 15-Minuten-Aggregate rund 180 €.
+Ein Maschinenbauer hat genug Daten für Predictive Maintenance in Salesforce, wenn eine Baureihe Hunderte vergleichbarer Maschinen umfasst, jede Störungs-Work-Order an einer Seriennummer hängt und Ausfallursachen in codierten Feldern stehen. Asset Service Prediction lernt aus genau dieser Servicehistorie, Sensordaten kommen erst danach. Ist die Historie dünn, sind [Wartungspläne mit nutzungs- und zustandsabhängigen Auslösern](../field-service-wartung-nach-betriebsstunden/) die ehrliche Alternative. Maschinendaten sind als Aggregate bezahlbar: Im Beispiel unten kosten Rohwerte im Sekundentakt von 300 Maschinen rund 65.900 € im Monat an Flex Credits, 15-Minuten-Aggregate rund 180 €.
 
 ## Was bietet Salesforce heute für vorausschauende Wartung?
 
@@ -41,7 +41,7 @@ Salesforce verkauft unter dem Stichwort proaktiver Service mehrere Funktionen, u
 | Asset Health Score | Bewertet Anlagen nach Alter, Nutzung, Telemetrie und Reparaturhistorie über Data 360 | Teil von Connected Assets, 15.000 $ pro Org und Monat (US-Listenpreis) |
 | Asset Service Prediction | Sagt Zeitpunkt und Grund eines Ausfalls voraus | Open Beta im Juni 2024 angekündigt, Produktseite ohne Status |
 
-Die Manufacturing-Ankündigung vermeidet den Begriff Predictive Maintenance und spricht von Agenten, die Kunden und Serviceteams vor Problemen warnen, „before they happen“. Die [Seite zum Asset Management](https://www.salesforce.com/service/field-service-management/asset-management/) führt Connected Assets mit 10.000 vernetzten digitalen Anlagen, dem Asset Health Score und einem „Actionable Telematics Framework“. Den Überblick über die Agentenfunktionen gibt [KI-Agenten im Außendienst: was Field Service heute kann](../ki-agenten-aussendienst-field-service/). Hier geht es um eine engere Frage: Tragen Ihre Daten die letzten beiden Zeilen?
+Die Manufacturing-Ankündigung vermeidet den Begriff Predictive Maintenance und spricht von Agenten, die Kunden und Serviceteams vor Problemen warnen, „before they happen“. Die [Seite zum Asset Management](https://www.salesforce.com/service/field-service-management/asset-management/) führt Connected Assets mit 10.000 vernetzten digitalen Anlagen, dem Asset Health Score und einem „Actionable Telematics Framework“. Den Überblick über die Agentenfunktionen gibt [KI-Agenten im Außendienst: was Field Service heute kann](../ki-agenten-aussendienst-field-service/). Hier geht es um eine engere Frage: Tragen Ihre Daten die letzten beiden Zeilen? Beide Zeilen setzen auf den Maschinen als Assets auf, siehe [Installierte Basis in Manufacturing Cloud](../installierte-basis-asset-meilensteine/).
 
 ## Wann reicht die Servicehistorie für eine Ausfallprognose?
 
@@ -63,14 +63,23 @@ Die [Flex Credits Rate Card vom 31. August 2026](https://www.salesforce.com/en-u
 - **Streaming Pipeline:** 3.500 Credits pro Million Zeilen in der Basisstaffel, bei höheren Monatsmengen 2.800, 1.400 und 700. Laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?id=data.c360_a_data_usage_types.htm&language=en_US&type=5) zählt die Streaming-Variante der Ingestion API hierzu.
 - **Real-Time Pipeline:** 250.000 Credits pro Million Ereignisse, pro Einheit rund 71 Mal der Streaming-Satz. Gezählt werden Ereignisse nur, wenn sie zu einem Real-Time Data Graph gehören.
 
-Die Staffeln gelten je Nutzungsart und beginnen am Monatsersten neu. Flex Credits kosten [500 € je 100.000](https://www.salesforce.com/eu/agentforce/pricing/). Die [Streaming Ingestion API](https://developer.salesforce.com/docs/data/data-cloud-ref/guide/c360a-api-streaming-ingestion.htm) verarbeitet Daten „approximately every 3 minutes“. Für die Wartung, bei der eine Work Order Stunden oder Tage vor dem Einsatz entsteht, ist das schnell genug, und ich sehe keinen Grund, den Real-Time-Satz zu bezahlen. Die [Bulk-Variante](https://developer.salesforce.com/docs/data/data-cloud-ref/guide/c360a-api-salesforce-cdp-ingestion.htm) passt für tägliche oder wöchentliche Ladungen. Die Hilfe verbucht sie als Batch Data Pipeline, ein Name, den die Rate Card vom August nicht zeigt. Fragen Sie Ihren Account Executive, welche Position gilt.
+Die Staffeln gelten je Nutzungsart und beginnen am Monatsersten neu. Flex Credits kosten [500 € je 100.000](https://www.salesforce.com/eu/agentforce/pricing/). Die [Streaming Ingestion API](https://developer.salesforce.com/docs/data/data-cloud-ref/guide/c360a-api-streaming-ingestion.htm) verarbeitet Daten „approximately every 3 minutes“. Für die Wartung, bei der eine Work Order Stunden oder Tage vor dem Einsatz entsteht, ist das schnell genug, und ich sehe keinen Grund, den Real-Time-Satz zu bezahlen. Die [Bulk-Variante](https://developer.salesforce.com/docs/data/data-cloud-ref/guide/c360a-api-salesforce-cdp-ingestion.htm) passt für tägliche oder wöchentliche Ladungen. Die Hilfe verbucht sie als Batch Data Pipeline, ein Name, den die Rate Card vom August nicht zeigt.
 
 Rechnen wir mit 300 vernetzten Maschinen und je 12 Signalen:
 
-- **Rohwerte im Sekundentakt:** 9,3 Milliarden Zeilen im Monat. Selbst mit Mengenstaffeln sind das rund 13,2 Mio. Credits, also etwa 65.900 € im Monat.
-- **15-Minuten-Aggregate**, eine Zeile pro Signal mit Minimum, Maximum und Mittelwert: 10,4 Mio. Zeilen, 36.288 Credits, etwa 181 € im Monat.
+```kennzahlen
+65.900 € | im Monat für Rohwerte im Sekundentakt: 9,3 Milliarden Zeilen, selbst mit Mengenstaffeln rund 13,2 Mio. Credits
+181 € | im Monat für 15-Minuten-Aggregate mit Minimum, Maximum und Mittelwert pro Signal: 10,4 Mio. Zeilen, 36.288 Credits
+quelle: Flex Credits Rate Card vom 31. August 2026 und Agentforce-Preisseite (500 € je 100.000 Credits), Mengen als Annahme
+```
 
-Für Zeitreihen, die schon in einem Data Lake liegen, wirbt Salesforce mit Zero-Copy-Zugriff. Die Hilfe rechnet Federation nach Datensätzen ab, die aus der Quelle gelesen werden, und ich habe keine passende Position in der Rate Card gefunden. Lassen Sie sich auch diesen Satz schriftlich geben. Das Grounding von Agenten auf Betriebsanleitungen ist ein eigener Kostenblock, beschrieben in [Data 360 Kosten für KI-Agenten](../data-360-kosten-fuer-ki-agenten/).
+Für Zeitreihen, die schon in einem Data Lake liegen, wirbt Salesforce mit Zero-Copy-Zugriff. Die Hilfe rechnet Federation nach Datensätzen ab, die aus der Quelle gelesen werden, und ich habe keine passende Position in der Rate Card gefunden.
+
+```hinweis offen
+Für die Bulk-Variante (Batch Data Pipeline) und für Federation zeigt die Rate Card keine eigene Position. Fragen Sie Ihren Account Executive, welche Position jeweils gilt, und lassen Sie sich beide Sätze schriftlich geben.
+```
+
+Das Grounding von Agenten auf Betriebsanleitungen ist ein eigener Kostenblock, beschrieben in [Data 360 Kosten für KI-Agenten](../data-360-kosten-fuer-ki-agenten/).
 
 Rohe Zeitreihen gehören in die IoT-Plattform oder den Historian, den der Maschinenbauer ohnehin betreibt. Salesforce braucht Zähler, Aggregate und Schwellwertereignisse, denn genau die lösen eine Work Order aus.
 
@@ -78,7 +87,7 @@ Rohe Zeitreihen gehören in die IoT-Plattform oder den Historian, den der Maschi
 
 Ein großer Teil des Nutzens, der unter „predictive“ versprochen wird, kommt aus zwei einfacheren Dingen: Keine geplante Wartung geht verloren, und die Intervalle folgen der echten Nutzung statt dem Kalender. Beides deckt Field Service ohne Prognosemodell ab.
 
-Wartungspläne erzeugen die Work Orders, und Maintenance Work Rules an der Anlage steuern abweichende Intervalle, wie in [Wartungsverträge in Field Service abbilden](../salesforce-field-service-wartungsvertraege/) beschrieben. Die Produktseite ergänzt Pläne nach Nutzung und Zustand, mit einem Einsatz, sobald „an asset's temperature exceeds a set threshold“. Das Datenmodell hat dafür das [Objekt AssetAttribute](https://developer.salesforce.com/docs/atlas.en-us.field_service_dev.meta/field_service_dev/sforce_api_objects_assetattribute.htm), das Anlagenattribute speichert, „to track and analyze asset conditions“, verfügbar ab API-Version 57.0. Ein Betriebsstundenzähler, den SAP, proALPHA oder die IoT-Plattform einmal am Tag schreibt, reicht für nutzungsabhängige Intervalle.
+Wartungspläne erzeugen die Work Orders, und Maintenance Work Rules an der Anlage steuern abweichende Intervalle, wie in [Wartungsverträge in Field Service abbilden](../salesforce-field-service-wartungsvertraege/) beschrieben. Die Produktseite ergänzt Pläne nach Nutzung und Zustand, mit einem Einsatz, sobald „an asset's temperature exceeds a set threshold“. Das Datenmodell hat dafür das [Objekt AssetAttribute](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_assetattribute.htm), das Anlagenattribute speichert, „to track and analyze asset conditions“, verfügbar ab API-Version 57.0. Ein Betriebsstundenzähler, den SAP, proALPHA oder die IoT-Plattform einmal am Tag schreibt, reicht für nutzungsabhängige Intervalle.
 
 Den Termin bucht dann der Agent für proaktive Wartung. Braucht eine Buchung fünf Aktionen, sind das 100 Credits oder 0,50 €.
 
@@ -111,4 +120,4 @@ Zusammen sind das rund 34.000 Credits, etwa 170 € im Monat. Connected Assets f
 
 Wie Maschinendaten, ERP und Salesforce zusammenpassen, ist Teil meiner Arbeit an der [Schnittstellenarchitektur](../../leistungen/salesforce-schnittstellen/).
 
-Vorausschauende Wartung beginnt mit einer sauberen Servicehistorie, die Sensoren kommen danach. Wenn Sie eine zweite Meinung wollen, ob Ihre Daten so weit sind, [schreiben Sie mir](#contact).
+Vorausschauende Wartung beginnt mit einer sauberen Servicehistorie, die Sensoren kommen danach.

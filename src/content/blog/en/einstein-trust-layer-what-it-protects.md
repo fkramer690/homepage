@@ -37,7 +37,12 @@ Salesforce's [developer documentation](https://developer.salesforce.com/docs/ai/
 - **Audit trail.** According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/data-cloud-powered-agentforce/enable-trusted-agents-with-data-cloud), it holds prompt ID and user, "Prompt text and PII-masked prompt", safety and toxicity scores and user feedback. "This data is stored and analyzed in Data 360." Pre-built dashboards cover masking, toxicity, user trends and acceptance rates.
 - **Grounding.** Answers are built from CRM records and Data 360 content instead of the model's general knowledge.
 
-Notice what is missing from that list: anything that decides which records an agent may read. That comes from the agent's user. A service agent runs as its own agent user; the [Trailhead example](https://trailhead.salesforce.com/content/learn/modules/programmatic-instructions-in-agentforce/give-your-agent-more-information-with-flows-actions-and-permissions) has to grant read access to a custom field explicitly in the "Service Agent Permissions" permission set. Employee agents, according to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/agentforce-for-employees-quick-look/get-started-with-agentforce-for-employees), are "logged in as the person they're helping" and follow that user's permissions.
+Notice what is missing from that list: anything that decides which records an agent may read. That comes from the agent's user.
+
+```vertiefung For admins
+title: Which user does an agent read data as?
+A service agent runs as its own agent user; the [Trailhead example](https://trailhead.salesforce.com/content/learn/modules/programmatic-instructions-in-agentforce/give-your-agent-more-information-with-flows-actions-and-permissions) has to grant read access to a custom field explicitly in the "Service Agent Permissions" permission set. Employee agents, according to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/agentforce-for-employees-quick-look/get-started-with-agentforce-for-employees), are "logged in as the person they're helping" and follow that user's permissions.
+```
 
 ## Why is data masking switched off for agents?
 
@@ -45,7 +50,11 @@ Masking replaces sensitive values with placeholders before the prompt leaves Sal
 
 The documentation is not consistent. A Trailhead unit for [Marketing Cloud Next agents](https://trailhead.salesforce.com/content/learn/modules/conversational-marketing-fundamentals-for-marketing-cloud-next/secure-agents-with-the-einstein-trust-layer) describes masking before the prompt is sent. I would not rely on either statement and would compare prompt text and masked prompt in the audit trail of your own org.
 
-Outside Agentforce masking works "the same as it always has", according to the blog post. The [masking module](https://trailhead.salesforce.com/content/learn/modules/llm-data-masking-in-the-einstein-trust-layer/configure-llm-data-masking-policies) shows how it decides: name, email address, phone number, credit card and US social security number are masked by default, company name can be switched on, and formats are validated: "If an item isn't a valid value, it won't be masked." For a manufacturer the important point follows from that list. A dealer net price, a 3 percent rebate or "payment 60 days net" matches none of these patterns. Even where masking is on, it never protects commercial data.
+Outside Agentforce masking works "the same as it always has", according to the blog post. The [masking module](https://trailhead.salesforce.com/content/learn/modules/llm-data-masking-in-the-einstein-trust-layer/configure-llm-data-masking-policies) shows how it decides: name, email address, phone number, credit card and US social security number are masked by default, company name can be switched on, and formats are validated: "If an item isn't a valid value, it won't be masked." For a manufacturer the important point follows from that list.
+
+```hinweis achtung
+A dealer net price, a 3 percent rebate or "payment 60 days net" matches none of these patterns. Even where masking is on, it never protects commercial data.
+```
 
 ## Where does the Trust Layer stop?
 
@@ -59,7 +68,9 @@ Four limits matter for an architecture decision.
 
 **External models are outside.** When Claude or ChatGPT reads CRM data through hosted MCP, Salesforce makes no LLM call, so the Trust Layer has no step where it could act. I explain that path in [hosted MCP servers and data access](../salesforce-hosted-mcp-servers-data-access/).
 
-One more point is easy to miss: the audit trail itself stores the prompt text. Whatever an agent puts into a prompt, including prices and personal data, ends up in Data 360 objects. The Trailhead units I read state no retention period, so that decision is yours, and it touches the logging duties described in [EU AI Act deadlines for Agentforce](../eu-ai-act-deadlines-agentforce/).
+```hinweis achtung
+The audit trail itself stores the prompt text. Whatever an agent puts into a prompt, including prices and personal data, ends up in Data 360 objects. The Trailhead units I read state no retention period, so that decision is yours, and it touches the logging duties described in [EU AI Act deadlines for Agentforce](../eu-ai-act-deadlines-agentforce/).
+```
 
 ## A typical scenario: a dealer agent with net prices
 
@@ -90,4 +101,4 @@ In my judgement this is the normal division of labour: the Trust Layer handles t
 
 This configuration is part of my work on [Salesforce architecture](../../services/salesforce-architecture/), because the decisions sit in the data model and permissions, not in the agent prompt.
 
-The Einstein Trust Layer keeps your data away from the model provider's storage, and everything else depends on permissions and action design you control. If you want a second view on an agent before it reads dealer prices, [send me a message](#contact).
+The Einstein Trust Layer keeps your data away from the model provider's storage, and everything else depends on permissions and action design you control.

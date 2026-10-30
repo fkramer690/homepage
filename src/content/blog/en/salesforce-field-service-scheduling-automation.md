@@ -50,13 +50,17 @@ The engine assigns appointments by a scheduling policy. According to [Salesforce
 
 Salesforce ships four policies. Customer First balances customer preference and short travel. High Intensity puts technician productivity above customer preferences, meant for peak periods. Soft Boundaries lets technicians work across territory borders. Emergency is for urgent jobs. As a starting point I recommend Customer First with adjusted weights, instead of building a policy from scratch.
 
-On top comes optimization. According to [Salesforce Help](https://help.salesforce.com/s/articleView?id=pfs_optimization.htm&language=en_US&type=5) it can rearrange the plan for one or more territories over several days, for example every night. On the day of service, in-day optimization absorbs short-notice changes, and there is a separate optimization for a single technician when an appointment is cancelled or runs late.
+On top comes optimization. According to [Salesforce Help](https://help.salesforce.com/s/articleView?id=pfs_optimization.htm&language=en_US&type=5) it can rearrange the plan for one or more territories over several days, for example every night. On the day of service, in-day optimization absorbs short-notice changes, and there is a separate optimization for a single technician when an appointment is cancelled or runs late. Whether to switch to the newer engine is covered in [Enhanced Scheduling and Optimization: switch now?](../field-service-enhanced-scheduling-optimization-switch/), the full picture of engine, console and rules in [chapter 2 of the Field Service masterclass](../../masterclass/field-service/field-service-scheduling-dispatch/).
 
 ## Why does a dispatcher review before dispatch?
 
 The engine only knows what is in the data. An experienced dispatcher knows more. They know that a customer has to shut down the machine for maintenance first and can only do that on certain days. They know that a spare part is booked in the warehouse but not yet in the van. They know which technician once had trouble with a customer, even if that is written down nowhere.
 
-In my experience it is the customer's trust in the technology that decides how much they leave to automation. A company that had scheduling in experienced hands for years does not hand it to software on day one. A model in which automation schedules up to Scheduled and the dispatcher releases with Dispatched takes that seriously. The dispatcher stays responsible, but starts from a finished proposal instead of an empty calendar.
+```praxis
+In my Field Service projects with automatic scheduling, it was the customer's trust in the technology that decided how much they left to automation. A company that had scheduling in experienced hands for years does not hand it to software on day one.
+```
+
+A model in which automation schedules up to Scheduled and the dispatcher releases with Dispatched takes that seriously. The dispatcher stays responsible, but starts from a finished proposal instead of an empty calendar.
 
 A fixed rhythm helps with the review. Trailhead suggests releasing the morning appointments first and checking the plan again before midday, before the afternoon appointments go out. That keeps the afternoon flexible if something goes wrong in the morning.
 
@@ -81,6 +85,15 @@ That way automation grows with trust, and not by a plan someone fixed before the
 
 ## Where should you start?
 
-Start with Customer First, the work rules for skills and visiting hours and the rule that the dispatcher releases every appointment. Have the dispatchers note for four weeks why they change a proposal. That list is the basis for every further step of automation and shows which data is still missing.
+```schritte
+Start with release
+  Customer First, the work rules for skills and visiting hours and the rule that the dispatcher releases every appointment.
+Note the changes | 4 weeks · dispatchers
+  The dispatchers write down why they change a proposal from the engine.
+Turn reasons into data
+  The list becomes operating hours, skills, absences, resource preferences or work rules.
+Automate dispatch
+  Once the dispatcher hardly changes the proposals, simple work types such as planned maintenance run without them.
+```
 
-If you are about to introduce scheduling and want an independent view on how much automation fits your field service, [get in touch](#contact).
+The list from the second step is the basis for every further step of automation and shows which data is still missing.

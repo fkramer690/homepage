@@ -58,7 +58,7 @@ Der Anker ist die Anlage (Asset). Laut [Trailhead](https://trailhead.salesforce.
 
 Der Schlüssel muss der sein, den die Anlage schon trägt. Steht an der Anlage „MC-800“ und heißt das PDF „Bearbeitungszentrum 800 Rev C“, verbindet nichts die beiden. Das ist die Stammdatenfrage aus [Stammdaten für die Einsatzplanung](../salesforce-field-service-stammdaten/): Fehlt vielen Anlagen die Produktzuordnung, rettet auch das beste Dokumentenmodell die Antworten nicht.
 
-Wartungsanleitungen mit festen Schritten brauchen gar keine Suche. Wissensartikel lassen sich an Work Types hängen, und laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/field_service_center/field_service_center_worktypes) erscheinen sie „on work orders and work order line items that use the work type“. Für die geplante 2.000-Stunden-Wartung würde ich die Anleitung dort anhängen und dem Agenten die ungeplante Störung überlassen.
+Wartungsanleitungen mit festen Schritten brauchen gar keine Suche. Wissensartikel lassen sich an Work Types hängen, und laut [Trailhead](https://trailhead.salesforce.com/content/learn/projects/modify-the-field-service-center/create-a-work-type) erscheinen sie „on work orders and work order line items that use the work type“. Für die geplante 2.000-Stunden-Wartung würde ich die Anleitung dort anhängen und dem Agenten die ungeplante Störung überlassen.
 
 ## Welche Handbuchstände darf der Agent sehen?
 
@@ -74,12 +74,18 @@ Die Regeln, die ich festlegen würde:
 
 Trailhead beschreibt zwei Wege. Die Agentforce Data Library nimmt Wissensartikel, Dateien oder Websuche, unterstützt nur unstrukturierte Daten, und „each library can only contain one data source“. Das erweiterte Setup in Data 360 kombiniert strukturierte und unstrukturierte Quellen und „takes more time, but gives you more control“. Für Handbücher entscheiden diese Punkte:
 
-- Die Quelle einer Bibliothek lässt sich später nicht mehr ändern, so die [Trailhead-Einheit zu dateibasierten Bibliotheken](https://trailhead.salesforce.com/content/learn/modules/agentforce-data-library-basics/build-a-file-based-data-library-for-an-agent).
-- Dateien sind auf 100 MB pro PDF und 4 MB pro Text- oder HTML-Datei begrenzt, PDFs mit eingebetteten Inhalten werden laut Hilfeartikel nicht unterstützt.
-- Eine Knowledge-Bibliothek kann die Suche auf ausgewählte Datenkategorien beschränken. Dieser Filter gilt für die ganze Bibliothek, nicht pro Frage.
-- Ein Data-360-Retriever kann Filter auf Teilmengen setzen, aber [nur wenn der Suchindex Filterfelder definiert](https://trailhead.salesforce.com/content/learn/modules/agentforce-specialist-certification-maintenance-summer-25/learn-whats-new-with-agentforce-and-data-cloud), mit bis zu 10 Bedingungen auf Text- oder Zahlenfeldern.
+```pro-contra
+pro: Data Library
+- Schneller aufgesetzt als das erweiterte Setup
+- Passt für einen Piloten mit einer Produktlinie und einem aktuellen Handbuchstand
+contra: Was Sie dafür aufgeben
+- Die Quelle einer Bibliothek lässt sich später nicht mehr ändern, so die [Trailhead-Einheit zu dateibasierten Bibliotheken](https://trailhead.salesforce.com/content/learn/modules/agentforce-data-library-basics/build-a-file-based-data-library-for-an-agent)
+- Höchstens 100 MB pro PDF und 4 MB pro Text- oder HTML-Datei, PDFs mit eingebetteten Inhalten laut Hilfeartikel nicht unterstützt
+- Eine Knowledge-Bibliothek filtert nach Datenkategorien nur für die ganze Bibliothek, nicht pro Frage
+- Filter auf Teilmengen setzt nur ein Data-360-Retriever, und [nur wenn der Suchindex Filterfelder definiert](https://trailhead.salesforce.com/content/learn/modules/agentforce-specialist-certification-maintenance-summer-25/learn-whats-new-with-agentforce-and-data-cloud), mit bis zu 10 Bedingungen auf Text- oder Zahlenfeldern
+```
 
-So lese ich das: Eine Data Library passt für einen Piloten mit einer Produktlinie und einem aktuellen Handbuchstand. Teilen sich mehrere Varianten einen Index, werden Variantenschlüssel und Seriennummernbereich zu Filterfeldern im erweiterten Setup. Ob der Filterwert zur Laufzeit aus der Anlage am Arbeitsauftrag kommen kann, beschreiben die Seiten nicht, die ich geöffnet habe. Das würde ich in einer Sandbox testen, bevor ich mich festlege. Wie Data 360 über Dokumente hinaus Kontext zusammenstellt, steht in [die Agent Context Engine erklärt](../salesforce-agent-context-engine-erklaert/).
+So lese ich das: Teilen sich mehrere Varianten einen Index, werden Variantenschlüssel und Seriennummernbereich zu Filterfeldern im erweiterten Setup. Ob der Filterwert zur Laufzeit aus der Anlage am Arbeitsauftrag kommen kann, beschreiben die Seiten nicht, die ich geöffnet habe. Das würde ich in einer Sandbox testen, bevor ich mich festlege. Wie Data 360 über Dokumente hinaus Kontext zusammenstellt, steht in [die Agent Context Engine erklärt](../salesforce-agent-context-engine-erklaert/).
 
 ## Was gehört nicht in den Index?
 
@@ -101,13 +107,21 @@ Die Reihenfolge: diese Anlagen den Produkten zuordnen, die 1.100 MB mit Variante
 
 ## Wo fangen Sie an?
 
-1. **Dokumente zählen** je Produktlinie: Stände, Sprachen, Megabyte.
-2. **Produktzuordnung der Anlagen prüfen** in der installierten Basis.
-3. **Dokumentmerkmale festlegen** mit den Schlüsseln der Anlage.
-4. **Überholte Stände entfernen** und eine verantwortliche Person je Produktlinie benennen.
-5. **Den Weg wählen**: Data Library für eine Produktlinie, Filterfelder für mehrere.
-6. **Mit echten Störfällen testen**, bevor ein Techniker den Agenten sieht.
+```schritte
+Dokumente zählen
+  Je Produktlinie: Stände, Sprachen, Megabyte.
+Produktzuordnung prüfen
+  Für jede Anlage in der installierten Basis.
+Dokumentmerkmale festlegen
+  Mit den Schlüsseln, die die Anlage schon trägt.
+Überholte Stände entfernen
+  Und eine verantwortliche Person je Produktlinie benennen.
+Den Weg wählen
+  Data Library für eine Produktlinie, Filterfelder für mehrere.
+Mit echten Störfällen testen
+  Bevor ein Techniker den Agenten sieht.
+```
 
 Das Dokumentenmodell überlebt jede Agentenversion, deshalb gehört es für mich zur [Salesforce-Architektur](../../leistungen/salesforce-architektur/). Das größere Bild steht im Masterclass-Kapitel [KI-Agenten in der Fertigung](../../masterclass/ki-salesforce/ki-agenten-in-der-fertigung/).
 
-Der Agent für die Fehlersuche ist nur so genau wie die Verbindung zwischen Handbuch und Seriennummer, also bauen Sie diese Verbindung, bevor Sie ihn einschalten. Wenn Sie eine zweite Meinung zu Ihrem Dokumentenmodell möchten, [schreiben Sie mir](#contact).
+Der Agent für die Fehlersuche ist nur so genau wie die Verbindung zwischen Handbuch und Seriennummer, also bauen Sie diese Verbindung, bevor Sie ihn einschalten.

@@ -39,7 +39,9 @@ So companies are experimenting and hiring, but production use lags behind. That 
 
 ## What did I learn from my first pilot?
 
+```praxis
 The first Agentforce pilot I was involved in was simply too early. The platform was young and not yet mature enough for what we wanted to do. That is a normal risk with new technology, and it taught me to look harder at the conditions around an agent than at the agent itself.
+```
 
 Three conditions have to be in place before a pilot starts:
 
@@ -82,12 +84,20 @@ Cleaning up data is not glamorous work, and it is easy to push it to "later" or 
 
 From what I have learned, this order works:
 
-1. **Pick one narrow, frequent process** with clear rules and good documentation. Service questions answered from maintained knowledge articles or case summaries for service reps are typical candidates.
-2. **Measure the current state** before you build anything.
-3. **Fix the data for this one process**, including knowledge, master data and permissions.
-4. **Build the agent with a human in the loop** for every decision with consequences, such as discounts, refunds or contract changes. Salesforce now offers approval steps where an agent hands such decisions to a person.
-5. **Test with real cases**, including the awkward ones, and agree on what the agent must not do.
-6. **Go live in a limited channel or region**, measure against the target and only then expand.
+```schritte
+Pick one narrow process
+  Frequent, with clear rules and good documentation. Service questions answered from maintained knowledge articles or case summaries for service reps are typical candidates.
+Measure the current state
+  Before you build anything.
+Fix the data
+  For this one process, including knowledge, master data and permissions.
+Build with a human in the loop
+  For every decision with consequences, such as discounts, refunds or contract changes. Salesforce now offers approval steps where an agent hands such decisions to a person.
+Test with real cases
+  Including the awkward ones, and agree on what the agent must not do.
+Go live in a limited scope
+  In one channel or region, measure against the target and only then expand.
+```
 
 This is ordinary project discipline, applied to a new kind of system. Agents should go through the same release process as every other change, with configuration in the repository and deployment through a pipeline, as I describe in [why DevOps decides Salesforce enterprise projects](../why-devops-matters-salesforce-enterprise/).
 
@@ -95,4 +105,4 @@ This is ordinary project discipline, applied to a new kind of system. Agents sho
 
 On the client side, my job in Agentforce projects is to keep the focus on value and to make sure the foundations hold: data model, integrations, permissions and the release process. Partners and vendors understandably want to show what the technology can do. Someone has to ask whether a specific agent is worth its cost and whether the data supports it. That is a core part of [architecture and partner governance](../../services/salesforce-architecture/).
 
-Agentforce can deliver real value, but only where a clear business goal meets data the agent can trust. If you are planning an Agentforce project or want to rescue one that is stuck in pilot, [send me a message](#contact).
+Agentforce can deliver real value, but only where a clear business goal meets data the agent can trust.

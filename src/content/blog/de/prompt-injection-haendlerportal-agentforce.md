@@ -31,7 +31,23 @@ Prompt Injection im Händlerportal ist der wahrscheinlichste Weg, auf dem ein Ag
 
 ForcedLeak ist eine Kette von Schwachstellen, die Noma Security am 28. Juli 2025 an Salesforce gemeldet hat, bewertet mit CVSS 9,4. Laut [The Hacker News](https://thehackernews.com/2025/09/salesforce-patches-critical-forcedleak.html) betraf sie jede Org, die Agentforce mit aktiviertem Web-to-Lead nutzte. Ein Angreifer schickte ein Webformular ab, im Feld Description standen versteckte Anweisungen. Später stellte eine Mitarbeiterin Agentforce eine gewöhnliche Frage zu diesem Lead. Der Agent führte die versteckten Anweisungen zusammen mit der echten Frage aus, las weitere Lead-Daten und schickte sie nach außen, eingebettet in die Adresse eines Bildes. Die Zieldomain stand auf der Allowlist von Salesforce, war aber abgelaufen und für etwa 5 US-Dollar zu kaufen.
 
-Salesforce hat die Meldung am 31. Juli bestätigt und erzwingt laut [SalesforceBen](https://www.salesforceben.com/agentforce-web-to-lead-vulnerability-exposed-could-you-be-impacted/) seit 8. September 2025 Trusted URLs für Agentforce und Einstein AI. Gegenüber The Hacker News erklärte Salesforce, die Allowlist stelle sicher, dass über Prompt Injection „no malicious links are called or generated“. Laut Noma wurde die abgelaufene Domain wieder gesichert. Noma hat die Details am 25. September veröffentlicht.
+```ablauf
+ext: Angreifer, Mitarbeiterin, Abgelaufene Domain
+sf: Lead-Beschreibung, Agentforce
+Angreifer --Webformular--> Lead-Beschreibung
+Mitarbeiterin --Frage zum Lead--> Agentforce
+Lead-Beschreibung --liest Anweisung--> Agentforce
+Agentforce --Daten in Bild-URL--> Abgelaufene Domain
+```
+
+Salesforce hat die Meldung am 31. Juli bestätigt und erzwingt laut [SalesforceBen](https://www.salesforceben.com/agentforce-web-to-lead-vulnerability-exposed-could-you-be-impacted/) seit 8. September 2025 Trusted URLs für Agentforce und Einstein AI. Gegenüber The Hacker News erklärte Salesforce, die Allowlist stelle sicher, dass über Prompt Injection „no malicious links are called or generated“. Laut Noma wurde die abgelaufene Domain wieder gesichert.
+
+```zeitleiste
+2025-07-28 | Noma Security meldet ForcedLeak an Salesforce, CVSS 9,4
+2025-07-31 | Salesforce bestätigt die Meldung
+2025-09-08 | Salesforce erzwingt Trusted URLs für Agentforce und Einstein AI
+2025-09-25 | Noma veröffentlicht die Details
+```
 
 Zwei Punkte sind mir wichtiger als der Patch. Noma schreibt, dem Modell habe die Fähigkeit gefehlt („lacked the ability to distinguish“), zwischen Daten in seinem Kontext und Anweisungen aus vertrauenswürdigen Quellen zu unterscheiden. Das gilt für jedes Sprachmodell. Und ein Sprecher von Salesforce nannte Prompt Injection gegenüber [SalesforceBen](https://www.salesforceben.com/agentforce-web-to-lead-vulnerability-exposed-could-you-be-impacted/) „a complex and evolving area“. Der konkrete Ausgang ist zu. Das Muster bleibt.
 
@@ -44,6 +60,8 @@ Simon Willison hat das Muster im Juni 2025 [Lethal Trifecta](https://simonwillis
 - **Das Händlerportal** auf Experience Cloud: Case-Beschreibungen, Kommentare, Garantieanträge mit freier Fehlerbeschreibung. Hier ist eine Anmeldung nötig. Bei hundert Händlerbetrieben bringt aber jeder Betrieb seine eigene Fluktuation und eigene Passwortgewohnheiten mit.
 - **Berichte von Servicepartnern** in Field Service, geschrieben von externen Technikern im Außendienst.
 - **Importe von Distributoren**, etwa Bestellnotizen oder Antragslisten.
+
+Ein Buyer Agent, der Bestellungen per WhatsApp oder SMS annimmt, öffnet eine weitere Tür, siehe [B2B Buyer Agent: Bestellen per WhatsApp und SMS](../b2b-buyer-agent-whatsapp-bestellen/).
 
 Wer den Angriff auslöst, ist Ihre eigene Mitarbeiterin bei der normalen Arbeit. Die Sachbearbeitung Garantie lässt sich die Anträge des Tages zusammenfassen. Der Vertrieb fragt nach einem neuen Lead. An der Frage ist nichts falsch. Die Anweisung steht in einem Datensatz, den niemand geöffnet hat.
 
@@ -62,7 +80,7 @@ Ich behandle die Erkennung deshalb als eine Schicht und plane so, als würde sie
 Ziel ist, dass eine erfolgreiche Injection wenig anrichtet. Brechen Sie bei jedem Agenten, der fremden Text liest, mindestens eines der drei Merkmale, besser zwei.
 
 1. **Externe Felder markieren.** Listen Sie pro Objekt und Kanal jedes Feld auf, das jemand außerhalb des Unternehmens beschreiben kann. Diese Liste kann ein Business Analyst aktuell halten.
-2. **Ausgänge schließen.** Prüfen Sie, dass die Durchsetzung der Trusted URLs in Ihrer Org aktiv ist. Dann sehen Sie sich die Liste der [Trusted URLs](https://developer.salesforce.com/docs/atlas.en-us.254.0.lightning.meta/lightning/security_trusted_urls_manage.htm) selbst an: Jeder Eintrag braucht einen Verantwortlichen und einen Grund, und ein Eintrag für eine Kampagnenseite von vor Jahren ist genau die Art abgelaufener Domain, die ForcedLeak genutzt hat. Ein neuer Eintrag erlaubt Bilder standardmäßig. Zu den Ausgängen gehören auch Agenten-Aktionen, die E-Mails senden, in Slack posten oder Webhooks aufrufen. Ein Agent, der fremden Text zusammenfasst, sollte keine davon haben.
+2. **Ausgänge schließen.** Prüfen Sie, dass die Durchsetzung der Trusted URLs in Ihrer Org aktiv ist. Dann sehen Sie sich die Liste der [Trusted URLs](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_csptrustedsite.htm) selbst an: Jeder Eintrag braucht einen Verantwortlichen und einen Grund, und ein Eintrag für eine Kampagnenseite von vor Jahren ist genau die Art abgelaufener Domain, die ForcedLeak genutzt hat. Ein neuer Eintrag erlaubt Bilder standardmäßig. Zu den Ausgängen gehören auch Agenten-Aktionen, die E-Mails senden, in Slack posten oder Webhooks aufrufen. Ein Agent, der fremden Text zusammenfasst, sollte keine davon haben.
 3. **Den Running User verkleinern.** Jeder Agent hat einen Running User, der festlegt, was er lesen und tun darf. Laut [Salesforce](https://www.salesforce.com/blog/best-practices-for-secure-agentforce-implementation-2/) haben neue Agenten standardmäßig keine Rechte, und Sie sollen nur das Nötigste vergeben und Rollenhierarchie und organisationsweite Standardeinstellungen regelmäßig prüfen. Ein Agent, der den Antrag eines Händlers bearbeitet, sieht diesen Antrag, das Asset und den Account dieses Händlers, nicht die ganze installierte Basis.
 4. **Entscheidungen und Schreibzugriffe aus dem Modell halten.** Garantiefreigaben, Gutschriften und Preisausnahmen gehören hinter deterministische Schranken, wie in [Agent Script: Regeln statt LLM](../agent-script-regeln-statt-llm/) beschrieben. Eine Aktion hinter einer `available when`-Bedingung lässt sich durch Text in einem Antrag nicht auslösen. Alles, was Geld bewegt oder Daten an Dritte schickt, bekommt eine Freigabe durch einen Menschen.
 5. **Lesen und Handeln trennen.** Ein Paper zu Entwurfsmustern, das Willison [zusammengefasst](https://simonwillison.net/2025/Jun/13/prompt-injection-design-patterns/) hat, bringt das Prinzip auf eine Zeile: Hat ein Agent nicht vertrauenswürdige Eingaben gelesen, muss er eingeschränkt werden. In Salesforce heißt das für mich: ein Zusammenfassungsschritt ohne Aktionen, dessen Ergebnis ein Mensch oder ein deterministischer Schritt weiterverwendet.
@@ -90,4 +108,4 @@ Für einen ersten Durchgang würde ich mich einen halben Tag mit der Salesforce-
 
 Dieselben Fragen gelten für externe KI-Werkzeuge, die Salesforce-Daten über MCP lesen, denn für die Lethal Trifecta spielt es keine Rolle, welcher Client das Feld liest. Das behandle ich in [Hosted MCP Server und Datenzugriff](../salesforce-hosted-mcp-server-datenzugriff/), die OAuth-Seite in [Connected Apps und KI-Integrationen](../connected-apps-oauth-ki-integrationen/). Datenflüsse und Berechtigungen so aufzunehmen, gehört zu meiner Arbeit in der [Salesforce-Architektur](../../leistungen/salesforce-architektur/).
 
-Ein Agent, der Text von Händlern oder aus dem Web liest, braucht enge Leserechte und keinen Weg nach draußen, und mit beidem wird Prompt Injection vom Datenleck zum Qualitätsthema. Wenn Sie Ihr Portal und Ihre Agenten einmal von außen ansehen lassen möchten, [schreiben Sie mir](#contact).
+Ein Agent, der Text von Händlern oder aus dem Web liest, braucht enge Leserechte und keinen Weg nach draußen, und mit beidem wird Prompt Injection vom Datenleck zum Qualitätsthema.

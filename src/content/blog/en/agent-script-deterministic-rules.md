@@ -42,7 +42,7 @@ Because these are decisions with a right answer. A dealer is over the credit lim
 
 **Audit and disputes.** A dealer whose warranty claim was rejected will ask why. The guide calls non-deterministic execution an audit gap, and I agree. A rule in code gives the same answer on Tuesday as on Monday and can be traced. Agent versions are also stored as metadata: the [AiAuthoringBundle](https://developer.salesforce.com/blogs/2026/05/new-agentforce-metadata-and-development-lifecycle) keeps versioned folders, so you can show which rule version was active.
 
-**The rule already lives somewhere.** In manufacturing, the credit limit and the exposure sit in SAP or proALPHA. Warranty terms sit in Manufacturing Cloud or in the ERP. Price conditions sit in the ERP or in CPQ. An agent should read the result of that system, not rebuild the rule in a prompt. Two places with the same rule drift apart, and the prompt version is the one nobody tests.
+**The rule already lives somewhere.** In manufacturing, the credit limit and the exposure sit in SAP or proALPHA. Warranty terms sit in Manufacturing Cloud or in the ERP. Price conditions sit in the ERP or in CPQ, a choice covered in [customer prices: SAP conditions or Salesforce Pricing?](../customer-prices-sap-conditions-or-salesforce-pricing/). An agent should read the result of that system, not rebuild the rule in a prompt. Two places with the same rule drift apart, and the prompt version is the one nobody tests.
 
 **Cost and latency.** The guide states that "every unnecessary LLM call adds latency, cost, and variability" and that a simple conversation used to need at least three LLM cycles. Each calculation you move into logic is one less place where the model can go wrong.
 
@@ -76,7 +76,18 @@ reasoning:
             available when @variables.credit_ok == True
 ```
 
-Three details in the guide are worth asking your partner about. First, gate variables must be set by code; if the LLM sets them, "you've reintroduced the variability the gate was designed to prevent." Second, the guard in the sketch matters: without it the ERP lookup in `before_reasoning` runs on every parse, so several times per turn. Every run is an ERP call, and the [Flex Credits rate card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) bills actions at 20 credits without saying whether script-triggered calls count differently. Third, an action marked `is_displayable` ends the reasoning loop as soon as its output is shown, and `after_reasoning` is skipped. A check placed there then never runs.
+Three details in the guide are worth asking your partner about.
+
+```vertiefung For developers
+title: Gate variables, the guard and is_displayable
+- **Code sets the gate variables.** If the LLM sets them, "you've reintroduced the variability the gate was designed to prevent."
+- **The guard in the sketch matters.** Without it the ERP lookup in `before_reasoning` runs on every parse, so several times per turn, and every run is an ERP call.
+- **`is_displayable` ends the loop.** Such an action ends the reasoning loop as soon as its output is shown, and `after_reasoning` is skipped. A check placed there then never runs.
+```
+
+```hinweis offen
+The [Flex Credits rate card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) bills actions at 20 credits but does not say whether script-triggered calls count differently. With an ERP lookup in `before_reasoning`, I would have that confirmed in the quote.
+```
 
 ## A typical scenario: a dealer agent for spare parts and warranty
 
@@ -100,12 +111,19 @@ Agent Script is also not always the right place for the rule itself. If the rule
 
 Before your partner starts building, I would go through these steps:
 
-1. **List every decision** the agent touches and mark the ones with a right answer.
-2. **Name the system that owns each rule**: ERP, Manufacturing Cloud, Business Rules Engine or Flow.
-3. **Define the gates**: which action is available under which condition, and which code sets the variable.
-4. **Define "data missing"** as its own result that goes to a person.
-5. **Test the rules like code**, with cases on both sides of every threshold, as described in [testing Agentforce agents before go-live](../testing-agentforce-agents-before-go-live/).
+```schritte
+List every decision
+  Collect every decision the agent touches and mark the ones with a right answer.
+Name the owning system
+  Record for each rule where it lives: ERP, Manufacturing Cloud, Business Rules Engine or Flow.
+Define the gates
+  Which action is available under which condition, and which code sets the variable?
+Define "data missing"
+  Its own result that goes to a person.
+Test the rules like code
+  With cases on both sides of every threshold, as described in [testing Agentforce agents before go-live](../testing-agentforce-agents-before-go-live/).
+```
 
 This is the part of an agent design I review on the client side as part of [Salesforce architecture](../../services/salesforce-architecture/), because it decides whether the agent can be audited later. Whether your process is ready for an agent at all is covered in [Agentforce for manufacturers: start now or wait](../agentforce-yes-or-no-manufacturers/).
 
-Put the rules in logic and the language in the model, and your agent will give the same answer to the same dealer twice. If you want a second opinion on where the rules in your agent design sit, [send me a message](#contact).
+Put the rules in logic and the language in the model, and your agent will give the same answer to the same dealer twice.

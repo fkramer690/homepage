@@ -43,7 +43,7 @@ Daraus folgt eine Anforderung, die oft spät auffällt: Die Regeln, welche Kombi
 
 ## Eigener Ansatz oder Standardprodukt?
 
-Für die Angebotserstellung gibt es heute drei Wege: Revenue Cloud Advanced von Salesforce, ein Produkt eines Partners oder ein eigener Ansatz auf der Plattform. Salesforce CPQ ist für Neukunden keine Option mehr. Laut [Salesforce](https://www.salesforce.com/sales/cpq/end-of-life/) wird CPQ an Neukunden nicht mehr verkauft, Bestandskunden können weiter Nutzer kaufen, verlängern und bekommen Support. Neue Funktionen entstehen in Revenue Cloud Advanced, eine erzwungene Migration gibt es nicht.
+Für die Angebotserstellung gibt es heute drei Wege: Revenue Cloud Advanced von Salesforce, ein Produkt eines Partners oder ein eigener Ansatz auf der Plattform. Salesforce CPQ ist für Neukunden keine Option mehr. Laut [Salesforce](https://www.salesforce.com/sales/cpq/end-of-life/) wird CPQ an Neukunden nicht mehr verkauft, Bestandskunden können weiter Nutzer kaufen, verlängern und bekommen Support. Neue Funktionen entstehen in Revenue Cloud Advanced, eine erzwungene Migration gibt es nicht. Was heute gilt, steht in [Salesforce CPQ Verkaufsende](../salesforce-cpq-verkaufsende-status/), wie Sie den Umstieg planen, in [Kapitel 5 der Masterclass Revenue Cloud](../../masterclass/revenue-cloud/von-cpq-zu-revenue-cloud/).
 
 Im Projekt haben wir einen eigenen CPQ-Ansatz verfolgt. Ob das heute wieder die richtige Wahl wäre, hängt von denselben Fragen ab, die ich bei jeder Make-or-buy-Entscheidung stelle:
 
@@ -55,7 +55,7 @@ Wie ich solche Fälle rechne, beschreibe ich unter [Make-or-buy und Lizenzprogno
 
 ## Wann wird aus einer Konfiguration ein Produkt?
 
-Ein Sales Agreement plant Mengen pro Produkt. Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/sales-agreements-forecasting-manufacturing-cloud/create-sales-agreement) hängt es an einem Account und einem Preisbuch, und für jedes Produkt wird eine Gesamtmenge eingetragen, die Salesforce auf die Zeiträume verteilt. Die Ist-Mengen, die später aus dem ERP kommen, werden ebenfalls einem Produkt zugeordnet.
+Ein Sales Agreement plant Mengen pro Produkt. Laut [Objektreferenz](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_salesagreement.htm) hängt es an einem Account und einem Preisbuch, und für jedes Produkt wird eine Gesamtmenge eingetragen, die Salesforce auf die Zeiträume verteilt. Die Ist-Mengen, die später aus dem ERP kommen, werden ebenfalls einem Produkt zugeordnet.
 
 Daraus folgt: Jede konfigurierte Variante, die in einem Sales Agreement geplant und gemessen werden soll, braucht eine eigene Produktidentität. In Salesforce ist das ein Produktdatensatz, im ERP meist eine Materialnummer. Fehlt die Verbindung zwischen beiden, landen die Ist-Mengen beim falschen Produkt oder gar nicht im Agreement.
 
@@ -70,6 +70,15 @@ Wie die Ist-Mengen danach aus dem ERP ins Sales Agreement kommen, beschreibe ich
 ## Wie kommt das Angebot ins Sales Agreement?
 
 Salesforce bietet dafür einen Standardweg. Die [Connect API der Manufacturing Cloud](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/connect_resources_sales_agreement.htm) erzeugt ein Sales Agreement aus einem Angebot, einer Opportunity oder einem eigenen Objekt. Welche Felder übernommen werden, steht in einem Mapping vom Typ ConvertToSalesAgreement. Felder, die das Mapping nicht abdeckt, lassen sich beim Aufruf mit Standardwerten füllen. Das passt auch zu einem eigenen CPQ-Ansatz, weil das Angebot ein eigenes Objekt sein darf.
+
+```ablauf
+sf: Konfigurator, Angebot, Sales Agreement
+erp: Materialnummer, Ist-Mengen
+Konfigurator --> Angebot
+Konfigurator ..neue Variante..> Materialnummer
+Angebot --Connect API--> Sales Agreement
+Ist-Mengen --pro Produkt--> Sales Agreement
+```
 
 Inhaltlich muss das Mapping diese Punkte abdecken:
 
@@ -102,4 +111,4 @@ Bevor der Konfigurator gebaut oder ein Produkt ausgewählt wird, klären Sie vie
 3. **Welche Felder wandern ins Agreement?** Das Mapping aus der Tabelle oben, inklusive Laufzeit und Account-Ebene.
 4. **Wo wird freigegeben?** Eine Stelle für den Preis, dokumentiert im Entscheidungslog der [Salesforce-Architektur](../../leistungen/salesforce-architektur/).
 
-Ein Sales Agreement ist nur so sauber wie die Produkte, die aus dem Konfigurator hineinkommen. Wenn Sie gerade zwischen eigenem Konfigurator und Standardprodukt abwägen, [schreiben Sie mir](#contact).
+Ein Sales Agreement ist nur so sauber wie die Produkte, die aus dem Konfigurator hineinkommen.

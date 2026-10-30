@@ -72,7 +72,9 @@ The teams do not have to be the same size. A stream with many interfaces may nee
 
 In practice the limit is rarely a problem when teams are cut along streams. A stream is rarely so large that more than eight people work on, say, Sales Cloud. When a team grows bigger, the tasks are usually far enough apart that two teams make more sense. I often see the opposite: sales and service end up in one pot because both work on Account and Contact. That only makes limited sense, because their processes, business owners and releases differ a lot.
 
+```praxis
 My largest programme included nearshore teams as well. Mostly they carried individual streams completely, from backlog to release. That works well, because the team then has a clear area and does not work for several streams at once.
+```
 
 ## What slows nearshore teams down besides size?
 
@@ -106,4 +108,4 @@ If you already have a nearshore team, answer three questions:
 
 If you are planning a new setup, define team size, roles and rotation rules before you compare quotes. Then you compare partners on the same basis, not just on the daily rate. How I plan and steer programmes with nearshore teams is described under [programme management and nearshore teams](../../services/program-management-nearshore/).
 
-Eight developers per team is not a rigid number, but it is a good upper limit that saves a lot of coordination. If you are setting up a nearshore team or want to get an existing one back on track, [send me a message](#contact).
+Eight developers per team is not a rigid number, but it is a good upper limit that saves a lot of coordination.

@@ -63,13 +63,20 @@ Ich würde vom Partner oder Entwickler schriftliche Antworten auf sechs Fragen v
 
 **Zugangsdaten.** Ein Server, der sich mit Benutzername, Passwort und Security Token anmeldet, hat zwei Probleme. Das Geheimnis liegt auf einem Laptop, und laut [Salesforce Time](https://salesforcetime.com/2026/10/15/salesforce-oauth-username-password-flow-retirement/) setzt Salesforce das Ende des OAuth Username-Password Flow am 20. Februar 2027 durch. Mehr zu dieser Frist steht in [Passwort-Integrationen enden 2027](../salesforce-passwort-integrationen-2027/). Ein Gateway, das Refresh Tokens für Ihre Org speichert, ist ein Dritter mit langlebigem Zugriff. Das war das Muster hinter dem Salesloft-Drift-Vorfall, beschrieben in [Connected Apps und OAuth: Lehren für KI-Integrationen](../connected-apps-oauth-ki-integrationen/).
 
-**Maintainer und Version.** Pinnen Sie eine exakte Version und prüfen Sie die Änderungen vor jedem Update. Der Postmark-Fall zeigt den Grund: Der Schadcode kam mit einer bestimmten Version. In Claude Code muss ein Allowlist-Eintrag für einen lokalen Server [exakt mit Befehl und Argumenten übereinstimmen](https://code.claude.com/docs/en/managed-mcp). Ein Eintrag mit `pkg@1.4.2` sperrt also jede andere Version. So lese ich die Abgleichregel, und damit wird das Pinnen durchsetzbar.
+**Maintainer und Version.** Pinnen Sie eine exakte Version und prüfen Sie die Änderungen vor jedem Update. Der Postmark-Fall zeigt den Grund: Der Schadcode kam mit einer bestimmten Version.
 
 **Werkzeuge.** Lassen Sie sich die vollständige Werkzeugliste mit Beschreibungen geben. Ein Server mit einem Lesewerkzeug für offene Fälle ist eine andere Entscheidung als einer, der beliebiges SOQL oder anonymes Apex ausführt.
 
 **Kombination.** Willisons [Lethal Trifecta](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/) besteht aus privaten Daten, nicht vertrauenswürdigen Inhalten und einem Weg, Daten nach außen zu senden. Er schreibt, MCP "encourages users to mix and match tools from different sources". Bei einem Maschinenbauer sind Fallbeschreibungen aus dem Händlerportal oder aus Garantieformularen solche fremden Inhalte, siehe [Prompt Injection im Händlerportal](../prompt-injection-haendlerportal-agentforce/).
 
-**Ziel-Org.** Coding-Agenten arbeiten in Sandboxes. Änderungen an der Produktion laufen über die Pipeline, und das gehört in den Vertrag, siehe [Partner mit KI-Coding: Regeln für den Vertrag](../partner-ki-coding-regeln-vertrag/). Ein Detail noch: Claude Code verlangt eine Vertrauensbestätigung, wenn ein neuer MCP-Server auftaucht. Laut Sicherheitsseite entfällt sie bei nicht interaktiven Läufen mit `-p`, ein Server in einem CI-Job bekommt also keine Rückfrage.
+**Ziel-Org.** Coding-Agenten arbeiten in Sandboxes. Änderungen an der Produktion laufen über die Pipeline, und das gehört in den Vertrag, siehe [Partner mit KI-Coding: Regeln für den Vertrag](../partner-ki-coding-regeln-vertrag/).
+
+```vertiefung Für Entwickler
+titel: Wie hilft Claude Code beim Pinnen und bei neuen Servern?
+In Claude Code muss ein Allowlist-Eintrag für einen lokalen Server [exakt mit Befehl und Argumenten übereinstimmen](https://code.claude.com/docs/en/managed-mcp). Ein Eintrag mit `pkg@1.4.2` sperrt also jede andere Version. So lese ich die Abgleichregel, und damit wird das Pinnen durchsetzbar.
+
+Claude Code verlangt eine Vertrauensbestätigung, wenn ein neuer MCP-Server auftaucht. Laut Sicherheitsseite entfällt sie bei nicht interaktiven Läufen mit `-p`, ein Server in einem CI-Job bekommt also keine Rückfrage.
+```
 
 ## Wann ist Salesforce Hosted MCP der sicherere Weg?
 
@@ -103,4 +110,4 @@ Alle drei Anliegen werden erfüllt, und kein Community-Server erreicht die Org.
 
 Partner bei solchen Werkzeugen zu steuern gehört zu meiner Arbeit in der [Partnersteuerung](../../leistungen/partnersteuerung/), die Übersicht der Schnittstellen steht in [Kapitel 3 der Masterclass](../../masterclass/ki-salesforce/mcp-und-schnittstellen/).
 
-Einen Community-MCP-Server gebe ich erst frei, wenn sich sein Benutzer, sein Geheimnis, sein Maintainer und seine Version benennen lassen. Wenn Sie eine zweite Meinung zu einer Anfrage Ihres Partners möchten, [schreiben Sie mir](#contact).
+Einen Community-MCP-Server gebe ich erst frei, wenn sich sein Benutzer, sein Geheimnis, sein Maintainer und seine Version benennen lassen.

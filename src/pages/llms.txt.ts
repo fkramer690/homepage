@@ -6,7 +6,11 @@ import { getPosts, postHref, blogIndex } from '../lib/blog';
 import { getServices, serviceHref, servicesIndex } from '../lib/services';
 import { homeHref, localHref } from '../lib/paths';
 import { questionPaths } from '../data/questions';
-import { getChapters, chapterHref, masterclassIndex, masterclassesIndex } from '../lib/masterclass';
+import { recruiterPaths } from '../data/recruiters';
+import { julianePaths } from '../data/juliane-winterscheid';
+import { freelanceArchitectPaths } from '../data/freelance-architect';
+import { getChapters, chapterHref, courseTexts, masterclassIndex, masterclassesIndex } from '../lib/masterclass';
+import { courseIds, type CourseId } from '../lib/courses';
 
 // Plain-text overview for AI assistants and crawlers (llmstxt.org).
 export const GET: APIRoute = async ({ site: origin }) => {
@@ -17,8 +21,20 @@ export const GET: APIRoute = async ({ site: origin }) => {
   const services = async (lang: 'en' | 'de') =>
     (await getServices(lang)).map((s) => `- [${s.data.title}](${abs(serviceHref(s))}): ${s.data.description}`).join('\n');
 
-  const chapters = async (lang: 'en' | 'de') =>
-    (await getChapters(lang)).map((c) => `- [${c.data.title}](${abs(chapterHref(c))}): ${c.data.description}`).join('\n');
+  const chapters = async (lang: 'en' | 'de', course: CourseId = 'ai') =>
+    (await getChapters(lang, course)).map((c) => `- [${c.data.title}](${abs(chapterHref(c))}): ${c.data.description}`).join('\n');
+
+  const masterclassSections = async () =>
+    (
+      await Promise.all(
+        courseIds.flatMap((c) =>
+          (['en', 'de'] as const).map(async (lang) => {
+            const m = courseTexts(lang, c);
+            return `## ${m.name}${lang === 'de' ? ' (German)' : ''}\n\n- [${m.title}](${abs(masterclassIndex(lang, c))}): ${m.metaDescription}\n${await chapters(lang, c)}`;
+          }),
+        ),
+      )
+    ).join('\n\n');
 
   const body = `# ${site.company}
 
@@ -33,9 +49,12 @@ The German version is the main site at the root; the English version lives under
 - [Services](${abs(servicesIndex('en'))}), German: [Leistungen](${abs(servicesIndex('de'))})
 - [Blog](${abs(blogIndex('en'))}), German: [Blog](${abs(blogIndex('de'))})
 - [Masterclasses](${abs(masterclassesIndex('en'))}), German: [Masterclasses](${abs(masterclassesIndex('de'))}): overview of all masterclasses
-- [AI masterclass](${abs(masterclassIndex('en'))}), German: [Masterclass KI](${abs(masterclassIndex('de'))}): ten chapters on AI in Salesforce programmes at manufacturing companies (coding agents, Agentforce, MCP, costs, delivery)
+${courseIds.map((c) => `- [${courseTexts('en', c).name}](${abs(masterclassIndex('en', c))}), German: [${courseTexts('de', c).name}](${abs(masterclassIndex('de', c))}): ${courseTexts('en', c).metaDescription}`).join('\n')}
 - [Speaker & events](${abs(localHref('en', 'speaking/'))}): talks at Salesforce community conferences (Flow performance, Flow vs OmniScript, Lightning Flow Scanner)
 - [Questions I ask in every Salesforce project](${abs(localHref('en', questionPaths.en))}), German: [Fragen, die ich in jedem Salesforce-Projekt stelle](${abs(localHref('de', questionPaths.de))}): goal and deadline, partner ownership, ERP interfaces, data volumes, operations, licences
+- [Freelance Salesforce Architect](${abs(localHref('en', freelanceArchitectPaths.en))}), German: [Freiberuflicher Salesforce Architect](${abs(localHref('de', freelanceArchitectPaths.de))}): independent architect on the client side for manufacturers, when it pays off compared with an implementation partner, deliverables, terms
+- [Juliane Winterscheid, change management](${abs(localHref('en', julianePaths.en))}), German: [Juliane Winterscheid, Change Management](${abs(localHref('de', julianePaths.de))}): cooperation partner for change management in Salesforce rollouts, Prosci certified, references and joint approach
+- [Freelance Salesforce Architect: working with recruiters](${abs(localHref('en', recruiterPaths.en))}), German: [Zusammenarbeit mit Recruitern](${abs(localHref('de', recruiterPaths.de))}): roles that fit, response time, submissions only with approval, no double submissions
 - [LinkedIn](${site.linkedin})
 
 ## Services
@@ -46,15 +65,7 @@ ${await services('en')}
 
 ${await services('de')}
 
-## AI masterclass
-
-- [${en.masterclass.title}](${abs(masterclassIndex('en'))}): ${en.masterclass.metaDescription}
-${await chapters('en')}
-
-## AI masterclass (German)
-
-- [${de.masterclass.title}](${abs(masterclassIndex('de'))}): ${de.masterclass.metaDescription}
-${await chapters('de')}
+${await masterclassSections()}
 
 ## Articles
 

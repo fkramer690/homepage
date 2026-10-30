@@ -34,12 +34,12 @@ Für die meisten Agentforce-Projekte in der Fertigungsindustrie zählt bei den F
 
 Laut [White & Case](https://www.whitecase.com/insight-alert/eu-ai-omnibus-enters-force-amending-ai-act) ist die Verordnung, bekannt als Digital Omnibus on AI, am 24. Juli 2026 im Amtsblatt erschienen und am 27. Juli in Kraft getreten. Sie verschiebt die Hochrisiko-Pflichten aus Kapitel III, wo die meiste Arbeit liegt. Der konsolidierte [Art. 113](https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-113) im AI Act Service Desk der Kommission nennt die Termine unten; der 2. Dezember 2026 für die maschinenlesbare Kennzeichnung stammt aus dem [FAQ der Kommission zu Art. 50](https://digital-strategy.ec.europa.eu/en/faqs/transparency-obligations-under-article-50-ai-act):
 
-| Pflicht | Gilt ab |
-|---|---|
-| Transparenz nach Art. 50: Chatbots, Deepfakes, veröffentlichte Texte | 2. August 2026 |
-| Maschinenlesbare Kennzeichnung nach Art. 50 Abs. 2 für generative Systeme, die vor dem 2. August 2026 am Markt waren | 2. Dezember 2026 |
-| Hochrisiko nach Anhang III, eigenständige Einsätze wie Personalauswahl und Personalsteuerung | 2. Dezember 2027 |
-| Hochrisiko nach Anhang I, KI in regulierten Produkten | 2. August 2028 |
+```zeitleiste
+2026-08-02 | Transparenz nach Art. 50: Chatbots, Deepfakes, veröffentlichte Texte
+2026-12-02 | Maschinenlesbare Kennzeichnung nach Art. 50 Abs. 2 für generative Systeme, die vor dem 2. August 2026 am Markt waren
+2027-12-02 | Hochrisiko nach Anhang III, eigenständige Einsätze wie Personalauswahl und Personalsteuerung
+2028-08-02 | Hochrisiko nach Anhang I, KI in regulierten Produkten
+```
 
 White & Case betont, dass die Verschiebung nur Kapitel III betrifft und nicht die Transparenzpflichten. Die Pflicht zur KI-Kompetenz in Art. 4 wurde weicher: Anbieter und Betreiber ergreifen jetzt Maßnahmen, die die KI-Kompetenz ihrer Beschäftigten fördern, statt ein ausreichendes Niveau sicherzustellen.
 
@@ -57,7 +57,11 @@ Laut FAQ der Kommission greift die Pflicht, wenn das System eine KI ist, für ei
 
 Formal ist Art. 50 Abs. 1 eine Pflicht des Anbieters. Ob das Salesforce ist oder Sie, klärt das FAQ für diese Konstellation nicht; praktisch liegt die Welcome Message des Agenten in Ihrer Org. Meine Empfehlung: Setzen Sie den Hinweis dorthin, in jeder Portalsprache. Das [Trailhead-Modul zu Guardrails und Trust Patterns](https://trailhead.salesforce.com/content/learn/modules/trusted-agentic-ai/explore-agentforce-guardrails-and-trust-patterns) ergänzt klare Regeln für die Übergabe an einen Menschen und führt den Audit Trail im Einstein Trust Layer unter den Best Practices für die Umsetzung.
 
-Die maschinenlesbare Kennzeichnung nach Abs. 2 ist eine Anbieterpflicht für generierte Inhalte; fragen Sie Salesforce schriftlich, wie es sie für seine Funktionen erfüllt. Die Kennzeichnung veröffentlichter Texte nach Abs. 4 betrifft Informationen an die Öffentlichkeit zu Angelegenheiten von öffentlichem Interesse, nicht den Liefertermin für einen Händler.
+```hinweis offen
+Die maschinenlesbare Kennzeichnung nach Abs. 2 ist eine Anbieterpflicht für generierte Inhalte; fragen Sie Salesforce schriftlich, wie es sie für seine Funktionen erfüllt.
+```
+
+Die Kennzeichnung veröffentlichter Texte nach Abs. 4 betrifft Informationen an die Öffentlichkeit zu Angelegenheiten von öffentlichem Interesse, nicht den Liefertermin für einen Händler.
 
 ## Wann wird ein Agentforce-Agent zum Hochrisiko-System?
 
@@ -104,4 +108,4 @@ Eine Idee ist überfällig, zwei werden so umgeplant, dass sie außerhalb von Ho
 
 Wo die Einstufung die Architektur prägt, etwa welche Entscheidung eine menschliche Freigabe braucht, unterstütze ich die Kundenseite im Rahmen der [Salesforce-Architektur](../../leistungen/salesforce-architektur/). Ob Agentforce überhaupt der richtige Einstieg ist, behandelt [Agentforce für Hersteller: jetzt starten oder warten?](../agentforce-ja-oder-nein-hersteller/), und Kapitel 9 der [KI-Masterclass](../../masterclass/ki-salesforce/teamarbeit-und-delivery/) stellt den AI Act neben Betriebsrat und DSGVO.
 
-Ergänzen Sie den KI-Hinweis jetzt in jedem Agenten mit Kundenkontakt und entscheiden Sie über HR- und Personalagenten deutlich vor dem 2. Dezember 2027. Wenn Sie eine zweite Meinung zu Ihrer Agentenliste möchten, [schreiben Sie mir](#contact).
+Ergänzen Sie den KI-Hinweis jetzt in jedem Agenten mit Kundenkontakt und entscheiden Sie über HR- und Personalagenten deutlich vor dem 2. Dezember 2027.

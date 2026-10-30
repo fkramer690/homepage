@@ -33,7 +33,9 @@ Ob sich Field Service für Ihren Außendienst überhaupt lohnt, beschreibe ich i
 
 ## Warum scheitern Einsätze an fehlenden Daten?
 
+```praxis
 In Serviceprojekten habe ich immer wieder dasselbe Muster gesehen. Techniker waren vor Ort und konnten ihren Job nicht ausführen. Mal waren die Ersatzteile nicht da. Mal war die Maschine nicht zugänglich. Mal stand der falsche Techniker vor der Anlage, oder der richtige war nicht arbeitsfähig. Teils lag es am Kunden, teils an der Planung der Techniker.
+```
 
 Jeder dieser Fehleinsätze kostet eine Anfahrt, einen Technikertag und meist einen zweiten Termin. Und fast jeder lässt sich auf eine Information zurückführen, die bei der Planung gefehlt hat:
 
@@ -62,7 +64,7 @@ Wichtig ist der Unterschied zwischen Hinterlegen und Durchsetzen. Erst die Work 
 
 ### Arbeitstypen
 
-Ein Arbeitstyp (Work Type) ist die Vorlage für eine Art von Einsatz, etwa Jahreswartung, Störungsbehebung oder Inbetriebnahme. Er legt die geschätzte Dauer und die benötigten Skills fest. Arbeitsaufträge erben die Skills ihres Arbeitstyps. Wer zehn sauber gepflegte Arbeitstypen hat, muss nicht bei jedem Auftrag von Hand eintragen, wer ihn übernehmen darf.
+Ein Arbeitstyp (Work Type) ist die Vorlage für eine Art von Einsatz, etwa Jahreswartung, Störungsbehebung oder Inbetriebnahme. Er legt die geschätzte Dauer und die benötigten Skills fest. Arbeitsaufträge erben die Skills ihres Arbeitstyps. Wer zehn sauber gepflegte Arbeitstypen hat, muss nicht bei jedem Auftrag von Hand eintragen, wer ihn übernehmen darf. Wie aus einem Case ein Arbeitsauftrag mit dem passenden Arbeitstyp wird, steht in [vom Case zum Techniker](../field-service-case-zu-arbeitsauftrag/).
 
 ### Anlagen und Standorte
 
@@ -72,7 +74,11 @@ Standorte (Locations) sind Orte wie Lager, Fahrzeuge oder Kundenstandorte. Ein S
 
 ### Öffnungszeiten der Kunden
 
-Kunden haben eigene Zeiten, zu denen ein Techniker an die Maschine kommt. In Field Service hinterlegen Sie sie als Arbeitszeiten am Account. Laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?language=en_US&id=sf.pfs_optimization_theory_work_rules_visiting_hours.htm&type=5) übernimmt jeder neue Arbeitsauftrag sie als Besuchszeiten (Visiting Hours). Die Planung beachtet sie aber nur, wenn die Work Rule für Besuchszeiten in der Scheduling Policy aktiv ist. Ein Disponent kann sie übersteuern, sieht dann aber einen Regelverstoß.
+Kunden haben eigene Zeiten, zu denen ein Techniker an die Maschine kommt. In Field Service hinterlegen Sie sie als Arbeitszeiten am Account. Laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?language=en_US&id=sf.pfs_optimization_theory_work_rules_visiting_hours.htm&type=5) übernimmt jeder neue Arbeitsauftrag sie als Besuchszeiten (Visiting Hours).
+
+```hinweis achtung
+Die Planung beachtet Besuchszeiten nur, wenn die Work Rule für Besuchszeiten in der Scheduling Policy aktiv ist. Ein Disponent kann sie übersteuern, sieht dann aber einen Regelverstoß.
+```
 
 Öffnungszeiten lösen nicht jeden Zugangsfall. Wenn eine Maschine für die Wartung abgeschaltet werden muss, braucht es eine Abstimmung mit dem Kunden. Wie man das in der Planung abbildet, gehört in den nächsten Teil der Serie.
 
@@ -102,5 +108,3 @@ Qualifikationen und Abwesenheiten sind Daten über Mitarbeitende. Klären Sie fr
 Nehmen Sie die Fehleinsätze der letzten drei Monate in einer Region. Ordnen Sie jeden einer Ursache zu: Teile, Zugang, Qualifikation, Verfügbarkeit oder etwas anderes. Die Ursache mit den meisten Fehleinsätzen zeigt, welche Daten Sie zuerst sauber brauchen. Gibt es keine Liste der Fehleinsätze, ist auch das ein Ergebnis, denn dann fehlt die Messgröße, an der sich Field Service später messen lassen muss.
 
 Danach prüfen Sie für jede der sechs Datenarten: Gibt es sie, wo liegt sie, wer pflegt sie? Erst wenn diese Fragen beantwortet sind, lohnt es sich, die Planung selbst einzurichten. Darum geht es im nächsten Teil der Serie.
-
-Wenn Sie vor dieser Bestandsaufnahme stehen und einen unabhängigen Blick auf Ihre Daten möchten, [schreiben Sie mir](#contact).

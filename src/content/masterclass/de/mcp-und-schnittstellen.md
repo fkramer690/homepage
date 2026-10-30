@@ -61,14 +61,28 @@ Der [End-of-Life-Hinweis](https://github.com/forcedotcom/mcp/issues/46) der Main
 
 Der Hinweis nennt die offene Skills-Bibliothek `forcedotcom/sf-skills` als Ersatz. Daneben hat Salesforce das [Claude-Code-Plugin](https://developer.salesforce.com/blogs/2026/08/headless-development-with-skills-and-a-claude-code-plugin) mit rund 40 dieser Skills und drei MCP-Servern (salesforce-api-context, salesforce-metadata-experts, salesforce-lsp) sowie Hosted MCP für den Datenzugriff veröffentlicht. Die Plugin-Ankündigung erwähnt das Ende des DX MCP Servers nicht. Alle drei als Nachfolger zu sehen, ist meine Lesart, keine Salesforce-Aussage.
 
-Für Sie als Auftraggeber ist vor allem die Frage wichtig, mit welchen Rechten der alte Server bei Ihrem Partner läuft. Laut [Salesforce-Dokumentation](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_mcp.htm) liest er vorhandene verschlüsselte Anmeldedaten und erreicht nur Orgs, die beim Start freigegeben wurden. Laut [README](https://github.com/salesforcecli/mcp) gibt `ALLOW_ALL_ORGS` Zugriff auf alle autorisierten Orgs, auch eine Produktion, und Salesforce rät zur Vorsicht. `DEFAULT_TARGET_ORG` wird bei jedem Tool-Aufruf neu aufgelöst: Wechselt der Entwickler seine Standard-Org, arbeitet der Agent ohne Warnung in der anderen. Ich würde für Agenten nur feste Sandbox-Aliase zulassen.
+Für Sie als Auftraggeber ist vor allem die Frage wichtig, mit welchen Rechten der alte Server bei Ihrem Partner läuft. Ich würde für Agenten nur feste Sandbox-Aliase zulassen, weil zwei Einstellungen den Zugriff sonst still ausweiten.
+
+```vertiefung Für Entwickler
+titel: Wie der lokale DX MCP Server Orgs erreicht
+Laut [Salesforce-Dokumentation](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_mcp.htm) liest er vorhandene verschlüsselte Anmeldedaten und erreicht nur Orgs, die beim Start freigegeben wurden.
+
+- Laut [README](https://github.com/salesforcecli/mcp) gibt `ALLOW_ALL_ORGS` Zugriff auf alle autorisierten Orgs, auch eine Produktion, und Salesforce rät zur Vorsicht.
+- `DEFAULT_TARGET_ORG` wird bei jedem Tool-Aufruf neu aufgelöst: Wechselt der Entwickler seine Standard-Org, arbeitet der Agent ohne Warnung in der anderen.
+```
 
 Mein Vorgehen bis zum Stichtag:
 
-1. **Inventur:** Lassen Sie sich vom Partner auflisten, in welchen MCP-Konfigurationen, auf welchen Rechnern und in welchen Repositories der Server eingetragen ist.
-2. **Pinnen:** Version 0.30.15 fest eintragen statt `latest`, damit der Übergang planbar bleibt.
-3. **Abbilden:** Deploy und Tests über sf CLI und Skills, Metadatenwissen über das Plugin, Datenzugriff über Hosted MCP.
-4. **Parallel testen** in einer Sandbox, dann den alten Eintrag entfernen und die KI-Regeldatei im Repository anpassen.
+```schritte
+Inventur
+  Lassen Sie sich vom Partner auflisten, in welchen MCP-Konfigurationen, auf welchen Rechnern und in welchen Repositories der Server eingetragen ist.
+Pinnen
+  Version 0.30.15 fest eintragen statt `latest`, damit der Übergang planbar bleibt.
+Abbilden
+  Deploy und Tests über sf CLI und Skills, Metadatenwissen über das Plugin, Datenzugriff über Hosted MCP.
+Parallel testen
+  In einer Sandbox beide Wege prüfen, dann den alten Eintrag entfernen und die KI-Regeldatei im Repository anpassen.
+```
 
 Die Details stehen in [Salesforce DX MCP Server: Ende am 2. November](../../../blog/salesforce-dx-mcp-server-ende/). Welche Werkzeuge Salesforce sonst für KI-gestützte Entwicklung anbietet, beschreibt [Kapitel 2](../salesforce-werkzeuge-ki-entwicklung/).
 
@@ -78,12 +92,14 @@ Salesforce hat die Hosted MCP Servers am [29. April 2026 für jede Org ab Enterp
 
 Das Sicherheitsmodell ist streng, und das ist für Hersteller die gute Nachricht. Laut [Security Best Practices](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/security-best-practices.html):
 
-- Server sind standardmäßig aus und müssen bewusst aktiviert werden.
-- Jeder Tool-Aufruf läuft mit Objektrechten, Feldrechten und Freigaberegeln des Benutzers, der die Verbindung autorisiert hat, und steht in den Audit-Daten unter seinem Namen.
-- Es gibt keine Service Accounts, keine Machine-to-Machine-Flows und keinen Betrieb außerhalb eines Benutzerkontexts.
-- External Client Apps lassen sich auf Profile und Permission Sets beschränken.
-- MCP-Verkehr lässt sich in den API-Logs über `API_CLIENT_CATEGORY = SALESFORCE_HOSTED_MCP` herausfiltern.
-- Named Queries geben nur vordefinierte SOQL-Abfragen frei statt freier Abfragen.
+| Thema | Regel |
+|---|---|
+| Aktivierung | Server sind standardmäßig aus und müssen bewusst aktiviert werden. |
+| Rechte | Jeder Tool-Aufruf läuft mit Objektrechten, Feldrechten und Freigaberegeln des Benutzers, der die Verbindung autorisiert hat, und steht in den Audit-Daten unter seinem Namen. |
+| Benutzerkontext | Es gibt keine Service Accounts, keine Machine-to-Machine-Flows und keinen Betrieb außerhalb eines Benutzerkontexts. |
+| Zugriff | External Client Apps lassen sich auf Profile und Permission Sets beschränken. |
+| Protokoll | MCP-Verkehr lässt sich in den API-Logs über `API_CLIENT_CATEGORY = SALESFORCE_HOSTED_MCP` herausfiltern. |
+| Abfragen | Named Queries geben nur vordefinierte SOQL-Abfragen frei statt freier Abfragen. |
 
 Salesforce selbst schlägt vor, mit `sobject-reads` in einer Sandbox zu beginnen, und nennt ihn [„read-only, risk-free, and immediately useful“](https://developer.salesforce.com/blogs/2026/04/salesforce-hosted-mcp-servers-are-now-generally-available). Dem schließe ich mich an: lesend starten, Mutations erst nach einem Test mit Freigabe, Deletes nur mit gutem Grund. Für den [Headless-360-MCP-Server](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/headless-360-mcp.html) empfiehlt Salesforce, dass der Client vor jedem Tool nachfragt, das Org-Konfiguration ändert oder Daten bearbeitet oder löscht.
 
@@ -91,7 +107,9 @@ Daraus folgt eine Architekturgrenze. Ein nächtlicher Agent, der ohne Menschen G
 
 ### Die Lücke beim Einstein Trust Layer
 
+```hinweis achtung
 Für die Models API schreibt Salesforce, dass alle Aufrufe durch den [Einstein Trust Layer](https://developer.salesforce.com/docs/ai/agentforce/guide/models-api.html) laufen. In der Hosted-MCP-Dokumentation, die ich gelesen habe, finde ich keine entsprechende Zusage für den Fall, dass ein externes Modell die Antworten verarbeitet. Meine Lesart: Liest Claude oder ChatGPT Fälle und Anlagendaten über Hosted MCP, gelten für diese Daten der Vertrag und die Datenverarbeitung des KI-Anbieters. Salesforce prüft die Berechtigung, nicht, was danach mit den Daten passiert. Das gehört in die Datenschutzprüfung, bevor der erste Fachbereich startet.
+```
 
 Dazu kommt Prompt Injection. Bei [ForcedLeak](https://thehackernews.com/2025/09/salesforce-patches-critical-forcedleak.html) (CVSS 9.4, veröffentlicht im September 2025) versteckten Angreifer Anweisungen im Beschreibungsfeld eines Web-to-Lead-Formulars, und Agentforce schickte CRM-Daten an eine fremde Domain. Simon Willison nennt die Kombination aus privaten Daten, fremden Inhalten und einem Weg nach außen die [„lethal trifecta“](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/) und weist darauf hin, dass MCP genau dieses Kombinieren von Tools fördert. Bei Herstellern landen fremde Texte über Händlerportale, Garantieanträge und Email-to-Case im CRM. Mehr dazu in [Hosted MCP Server: wer darf welche Daten lesen](../../../blog/salesforce-hosted-mcp-server-datenzugriff/) und [Prompt Injection im Händlerportal](../../../blog/prompt-injection-haendlerportal-agentforce/).
 
@@ -107,22 +125,26 @@ Nehmen wir einen Maschinenbauer mit Service Cloud, SAP S/4 und einem Implementie
 
 So würde ich vorgehen:
 
-- **Partner zuerst.** Bis zum 2. November die DX-MCP-Einträge inventarisieren, auf 0.30.15 pinnen, in den Sandboxes auf Plugin und Skills umstellen. Kein Agent bekommt eine Produktions-Org.
-- **Lesend starten.** Nur `sobject-reads` aktivieren, die External Client App auf ein eigenes Permission Set beschränken, erst in einer Sandbox testen. Für die Suche nach Seriennummern eine Named Query statt freier SOQL.
-- **ERP bleibt deterministisch.** Auftragsstatus und Liefertermine aus SAP kommen über eine MuleSoft-API im API Catalog, nicht über ein Modell, das Tabellen interpretiert. Der Weg steht in [Agentforce und SAP-Auftragsstatus](../../../blog/agentforce-sap-auftragsstatus/).
-- **Menge schätzen.** Angenommen 25 Personen, 20 Fragen am Tag, vier Tool-Aufrufe pro Frage und 21 Arbeitstage: das sind 42.000 Aufrufe im Monat. Wenn jeder erfolgreiche Aufruf zählt, wovon ich nach heutigem Stand ausgehe, ist das die Zahl, die Sie mit dem Satz multiplizieren, sobald Salesforce ihn nennt.
-- **Datenschutz klären.** Der Vertrag mit Anthropic und die Freigabe durch Datenschutz und Betriebsrat stehen vor dem Start, weil der Trust Layer hier nach meiner Lesart nicht greift.
+| Schritt | Was ich tun würde |
+|---|---|
+| Partner zuerst | Bis zum 2. November die DX-MCP-Einträge inventarisieren, auf 0.30.15 pinnen, in den Sandboxes auf Plugin und Skills umstellen. Kein Agent bekommt eine Produktions-Org. |
+| Lesend starten | Nur `sobject-reads` aktivieren, die External Client App auf ein eigenes Permission Set beschränken, erst in einer Sandbox testen. Für die Suche nach Seriennummern eine Named Query statt freier SOQL. |
+| ERP bleibt deterministisch | Auftragsstatus und Liefertermine aus SAP kommen über eine MuleSoft-API im API Catalog, nicht über ein Modell, das Tabellen interpretiert. Der Weg steht in [Agentforce und SAP-Auftragsstatus](../../../blog/agentforce-sap-auftragsstatus/). |
+| Menge schätzen | Angenommen 25 Personen, 20 Fragen am Tag, vier Tool-Aufrufe pro Frage und 21 Arbeitstage: das sind 42.000 Aufrufe im Monat. Wenn jeder erfolgreiche Aufruf zählt, wovon ich nach heutigem Stand ausgehe, ist das die Zahl, die Sie mit dem Satz multiplizieren, sobald Salesforce ihn nennt. |
+| Datenschutz klären | Der Vertrag mit Anthropic und die Freigabe durch Datenschutz und Betriebsrat stehen vor dem Start, weil der Trust Layer hier nach meiner Lesart nicht greift. |
 
 ## Welche Entscheidungen liegen bei der IT-Leitung?
 
 Für die Einrichtung nennt Salesforce weniger als 30 Minuten. Die eigentliche Arbeit liegt in fünf Entscheidungen:
 
-1. **Welche Server** werden aktiviert, und wer darf neue freischalten?
-2. **Welche Benutzer** bekommen Zugriff, über welches Permission Set?
-3. **Welche Daten** sind lesbar, welche änderbar, und wo reicht eine Named Query?
-4. **Welche Modelle und Verträge** sind zugelassen: Claude, ChatGPT, ein Modell über einen Cloud-Anbieter in der EU?
-5. **Wer zahlt** die Headless Platform Interactions, Fachbereich oder IT?
+| Entscheidung | Frage |
+|---|---|
+| Server | Welche Server werden aktiviert, und wer darf neue freischalten? |
+| Benutzer | Welche Benutzer bekommen Zugriff, über welches Permission Set? |
+| Daten | Welche Daten sind lesbar, welche änderbar, und wo reicht eine Named Query? |
+| Modelle und Verträge | Welche sind zugelassen: Claude, ChatGPT, ein Modell über einen Cloud-Anbieter in der EU? |
+| Budget | Wer zahlt die Headless Platform Interactions, Fachbereich oder IT? |
 
 Diese Fragen gehören zu meiner Arbeit an [Salesforce-Schnittstellen](../../../leistungen/salesforce-schnittstellen/). Welche externen Coding-Agenten Ihr Partner dafür einsetzen kann, beschreibt [Kapitel 4](../externe-coding-agenten/), und die Übersicht aller Kapitel finden Sie auf der [Startseite der Masterclass](../).
 
-MCP macht Salesforce für jedes KI-Werkzeug erreichbar; ob das Ihrem Service hilft, entscheiden Rechte, Datenwege und Budget. Wenn Sie Ihre Schnittstellen vor dem 2. November oder vor dem ersten Rollout prüfen lassen möchten, [schreiben Sie mir](#contact).
+MCP macht Salesforce für jedes KI-Werkzeug erreichbar; ob das Ihrem Service hilft, entscheiden Rechte, Datenwege und Budget.

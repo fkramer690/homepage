@@ -31,7 +31,11 @@ Winter '27 ist seit dem 9. Oktober 2026 vollständig ausgerollt, und für Entwic
 
 Zwei CLI-Änderungen brauchen vor allem anderen Aufmerksamkeit.
 
-**Der Befehl org display gibt keine Secrets mehr aus.** Viele Pipelines und Hilfsskripte rufen `sf org display` auf und lesen das Access Token aus der Ausgabe, etwa um die REST-API direkt aufzurufen oder die Session an ein anderes Tool weiterzugeben. Mit Winter '27 zeigt der Befehl keine Secrets mehr. Salesforce hat eine Übergangslösung über die Umgebungsvariable `SF_TEMP_SHOW_SECRETS` angeboten, und diese endet am 28. Oktober 2026. Danach schlagen Skripte fehl, die sich auf das Token in der Ausgabe verlassen.
+**Der Befehl org display gibt keine Secrets mehr aus.** Viele Pipelines und Hilfsskripte rufen `sf org display` auf und lesen das Access Token aus der Ausgabe, etwa um die REST-API direkt aufzurufen oder die Session an ein anderes Tool weiterzugeben. Mit Winter '27 zeigt der Befehl keine Secrets mehr. Salesforce hat eine Übergangslösung über die Umgebungsvariable `SF_TEMP_SHOW_SECRETS` angeboten.
+
+```hinweis achtung
+Die Übergangslösung endet am 28. Oktober 2026. Danach schlagen Skripte fehl, die sich auf das Token in der Ausgabe von `org display` verlassen.
+```
 
 Was zu tun ist:
 
@@ -65,11 +69,15 @@ Mehrere Änderungen helfen Entwicklern, einige davon automatisch:
 
 Winter '27 bringt die API-Version 68.0 und startet eine Reihe von Abschaltungen, die Integrationen stärker betreffen als die Pipeline selbst:
 
-- **1. Dezember 2026:** Der SOAP-Aufruf login() braucht die Berechtigung „Use Any API Auth“.
-- **Summer '27:** SOAP login() in den API-Versionen 31.0 bis 64.0 entfällt.
-- **Summer '27 und '28:** SOAP-, REST- und Bulk-API in den Versionen 31.0 bis 40.0 bekommen ab Summer '27 keine Updates mehr und fallen mit Summer '28 aus.
+```zeitleiste
+2026-12-01 | Der SOAP-Aufruf login() braucht die Berechtigung „Use Any API Auth“
+2027-02-20 | Der OAuth Username-Password Flow endet
+Summer '27 | SOAP login() in den API-Versionen 31.0 bis 64.0 entfällt
+Summer '27 | SOAP-, REST- und Bulk-API in den Versionen 31.0 bis 40.0 bekommen keine Updates mehr
+Summer '28 | SOAP-, REST- und Bulk-API in den Versionen 31.0 bis 40.0 fallen aus
+```
 
-Zusammen mit dem Ende des OAuth Username-Password Flow am 20. Februar 2027 ist das echte Arbeit für Integrationsteams. Die Bestandsaufnahme und Umstellung beschreibe ich in [Salesforce: Passwort-Integrationen enden 2027](../salesforce-passwort-integrationen-2027/).
+Zusammen mit dem Ende des Username-Password Flow ist das echte Arbeit für Integrationsteams. Die Bestandsaufnahme und Umstellung beschreibe ich in [Salesforce: Passwort-Integrationen enden 2027](../salesforce-passwort-integrationen-2027/).
 
 ## Was sollten Release Manager außerdem wissen?
 
@@ -91,4 +99,4 @@ Für ein Release-Team decken diese Schritte das Wesentliche ab:
 6. Festlegen, wer Agenten bauen und aktivieren darf, und Agenten-Metadaten versionieren.
 7. Prompt Templates und Agenten erneut testen, die von bestimmten Gemini-Modellen abhingen.
 
-Drei Releases pro Jahr bedeuten alle paar Monate eine solche Liste. Eine Pipeline, die jede Änderung durch Validierung und Tests schickt, fängt die meisten dieser Probleme früh ab, und das ist einer der Gründe, [warum DevOps über Salesforce-Großprojekte entscheidet](../warum-devops-salesforce-enterprise-projekte/). Wenn Sie eine zweite Meinung zu Ihrem Release-Prozess möchten, [schreiben Sie mir](#contact).
+Drei Releases pro Jahr bedeuten alle paar Monate eine solche Liste. Eine Pipeline, die jede Änderung durch Validierung und Tests schickt, fängt die meisten dieser Probleme früh ab, und das ist einer der Gründe, [warum DevOps über Salesforce-Großprojekte entscheidet](../warum-devops-salesforce-enterprise-projekte/).

@@ -37,9 +37,16 @@ Ein Agent liest kein PDF direkt. Laut [Trailhead](https://trailhead.salesforce.c
 
 Daraus ergeben sich drei Zähler:
 
-- **Verarbeitung pro MB**, sobald ein Dokument indexiert oder neu indexiert wird. Die [Flex Credits Rate Card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) berechnet in der Basisstaffel 150 Credits pro MB für Unstructured Processing und 600 für Intelligent Processing. Laut [Hilfeartikel zur Abrechnung unstrukturierter Daten](https://help.salesforce.com/s/articleView?id=data.c360_a_unstructured_data_billing_considerations.htm&language=en_US&type=5) zählen Chunking und Vektorisierung nur einmal, ein PDF mit 100 MB wird also als 100 MB berechnet.
-- **Abfragen pro Million Zeilen** bei jeder Suche des Agenten: 3 Credits in der Basisstaffel.
+- **Verarbeitung pro MB**, sobald ein Dokument indexiert oder neu indexiert wird, getrennt nach Unstructured Processing und Intelligent Processing. Laut [Hilfeartikel zur Abrechnung unstrukturierter Daten](https://help.salesforce.com/s/articleView?id=data.c360_a_unstructured_data_billing_considerations.htm&language=en_US&type=5) zählen Chunking und Vektorisierung nur einmal, ein PDF mit 100 MB wird also als 100 MB berechnet.
+- **Abfragen pro Million Zeilen** bei jeder Suche des Agenten.
 - **Speicher.** Jede aufgenommene Datei zählt zum Data-360-Speicher, ebenso die Chunk- und Indexobjekte, die für den Suchindex entstehen.
+
+```kennzahlen
+150 | Credits pro MB Unstructured Processing, Basisstaffel
+600 | Credits pro MB Intelligent Processing, Basisstaffel
+3 | Credits pro Million Zeilen bei Abfragen, Basisstaffel
+quelle: [Flex Credits Rate Card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf), Stand 31.08.2026
+```
 
 Die Sätze sinken mit der Menge. Bis 300.000 Credits im Monat gilt der Basissatz, danach fällt er in drei Stufen auf ein Fünftel, bei Unstructured Processing auf 30 Credits pro MB oberhalb von 12,5 Mio. Credits. Die Staffeln gelten je Nutzungsart und beginnen am ersten Tag jedes Kalendermonats neu. Flex Credits kosten [500 € je 100.000](https://www.salesforce.com/eu/agentforce/pricing/), und dieselbe Seite vermerkt bei ihren Agentforce-Beispielen, dass Data-360-Credits nicht enthalten sind. Deshalb fehlen diese Zahlen in der ersten Schätzung so oft.
 
@@ -80,7 +87,11 @@ Drei Ergebnisse fallen auf. Die Suchen machen 7 Prozent der laufenden Kosten aus
 
 ### Neuindexierung ganzer Datensätze
 
-Der Hilfeartikel behandelt einen Quelldatensatz und alle seine Dateianhänge als eine Einheit. Ändert sich ein Feld an diesem Datensatz oder ein einziger Anhang, werden alle Anhänge neu indexiert. Stellen Sie sich Kataloge vor, die an Produktdatensätzen hängen, deren Preise oder Bestände die SAP-Schnittstelle jede Nacht aktualisiert. Würde das alle Kataloge auch nur einmal pro Woche neu verarbeiten, stünden im Monat 24.000 MB Intelligent Processing auf der Rechnung: rund 6,5 Mio. Credits oder 32.700 € statt der geplanten 195.000 Credits. Ich würde Dokumente an Objekten oder in einer Data Library ablegen, die keine Schnittstelle anfasst, und das Verhalten vor dem Go-live mit einer kleinen Stichprobe in der Sandbox prüfen.
+```hinweis achtung
+Der Hilfeartikel behandelt einen Quelldatensatz und alle seine Dateianhänge als eine Einheit. Ändert sich ein Feld an diesem Datensatz oder ein einziger Anhang, werden alle Anhänge neu indexiert.
+```
+
+Stellen Sie sich Kataloge vor, die an Produktdatensätzen hängen, deren Preise oder Bestände die SAP-Schnittstelle jede Nacht aktualisiert. Würde das alle Kataloge auch nur einmal pro Woche neu verarbeiten, stünden im Monat 24.000 MB Intelligent Processing auf der Rechnung: rund 6,5 Mio. Credits oder 32.700 € statt der geplanten 195.000 Credits. Ich würde Dokumente an Objekten oder in einer Data Library ablegen, die keine Schnittstelle anfasst, und das Verhalten vor dem Go-live mit einer kleinen Stichprobe in der Sandbox prüfen.
 
 ### Staffeln beginnen jeden Monat neu
 
@@ -119,4 +130,4 @@ Das günstigste Megabyte ist das, das Sie nie verarbeiten.
 
 Wie Sie Credits über alle Zähler planen, beschreibe ich in [Flex Credits: Agentforce-Kosten pro Aktion](../flex-credits-agentforce-kosten-pro-aktion/). Ob dieses Budget überhaupt in Salesforce gehört, ist Teil meiner Arbeit in [Make-or-buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/).
 
-Grounding mit Data 360 ist pro Frage günstig und pro geändertem Megabyte teuer, entscheiden Sie Parser, Umfang und Ablageort deshalb vor der ersten Befüllung. Wenn Sie eine zweite Meinung zu Ihrer Dokumentenschätzung möchten, [schreiben Sie mir](#contact).
+Grounding mit Data 360 ist pro Frage günstig und pro geändertem Megabyte teuer, entscheiden Sie Parser, Umfang und Ablageort deshalb vor der ersten Befüllung.

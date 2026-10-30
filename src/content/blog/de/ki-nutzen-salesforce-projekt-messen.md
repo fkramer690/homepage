@@ -38,6 +38,14 @@ Fünf Quellen tauchen in jeder Diskussion auf, und sie messen sehr Unterschiedli
 - **DORA, 2025.** Für den [State of AI-assisted Software Development](https://cloud.google.com/blog/products/ai-machine-learning/announcing-the-2025-dora-report) wurden fast 5.000 Fachleute befragt. 90 Prozent nutzen KI im Job, mehr als 80 Prozent glauben, dass sie produktiver geworden sind. Mehr KI-Nutzung geht inzwischen mit höherem Durchsatz einher, aber weiterhin mit geringerer Stabilität der Auslieferung. DORA fasst es so zusammen: „AI doesn't fix a team; it amplifies what's already there.“
 - **McKinsey, August 2026.** Eine [Umfrage unter 334 Produkt- und Engineering-Verantwortlichen](https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/beyond-the-copilot-scaling-the-agentic-product-development-life-cycle) ergab im Schnitt 11,8 Prozent Zeitersparnis über den Entwicklungszyklus, aber nur 6,2 Prozent weniger Nacharbeit. 30 Prozent meldeten sinkende Produktivität im Team. Rund 80 Prozent der Entwickler gewannen etwa 3 Prozent, die besten 20 Prozent etwa 55 Prozent.
 
+```kennzahlen
+55 % | weniger Zeit mit Copilot bei einer kleinen, neuen JavaScript-Aufgabe (GitHub 2022)
+19 % | mehr Zeit mit KI für erfahrene Entwickler in ihrer eigenen großen Codebasis (METR 2025)
+20 % | Zeitgewinn, den dieselben Entwickler hinterher trotzdem vermuteten (METR 2025)
+11,8 % | durchschnittliche Zeitersparnis über den Entwicklungszyklus (McKinsey 2026)
+quelle: GitHub, kontrolliertes Experiment 2022; METR, randomisierte Studie Juli 2025; McKinsey, Umfrage unter 334 Verantwortlichen, August 2026
+```
+
 Meine Lesart: Die Beschleunigung ist für manche Personen und manche Aufgaben echt, der Durchschnitt aber deutlich kleiner als auf den Folien der Anbieter. Die Wahrnehmungslücke aus der METR-Studie würde ich jedem Lenkungsausschuss zeigen. Wenn sich die Leute, die die Arbeit machen, bei der eigenen Geschwindigkeit um fast 40 Punkte verschätzen, ist das „wir sind 30 Prozent schneller“ eines Partners eine Meinung.
 
 ## Warum ähnelt eine Salesforce-Org eher METR als GitHub?
@@ -72,12 +80,19 @@ Beide Zahlen stimmen. Das Programmieren ist schneller, das Programm kaum. Nützl
 
 Fangen Sie an, bevor die Werkzeuge kommen, denn eine Basislinie lässt sich nicht aus dem Gedächtnis rekonstruieren.
 
-1. **Den Status-Workflow aufräumen** in Jira oder Azure DevOps, sodass „bereit“, „im Review“, „in UAT“ und „fertig“ Zeitstempel haben. Die meisten Programme haben schon drei Monate brauchbare Historie.
-2. **Die Definitionen mit allen Partnern festlegen**: wann die Durchlaufzeit beginnt, was als durchgerutschter Fehler zählt, was als Nacharbeit. Das gehört ins Governance-Modell, nicht in den Bericht jedes einzelnen Partners.
-3. **KI-gestützte Pull Requests kennzeichnen**, damit Sie Gleiches mit Gleichem vergleichen. Die Offenlegung von KI-Nutzung ist ein Vertragsthema, siehe [Regeln für Partner mit KI-Coding](../partner-ki-coding-regeln-vertrag/).
-4. **Monatlich als Trend berichten**, nie als Rangliste von Teams oder Partnern. Wer gerankt wird, optimiert die Zahl.
-5. **Einen Prüftermin vereinbaren**, etwa nach drei Monaten, und dann entscheiden, ob sich Setup, Prozess oder Vertragsmodell ändern. Liefert ein Partner wirklich schneller, sollte sich das im Preis zeigen. Das ist die Frage hinter [Festpreis statt Aufwand](../festpreis-statt-aufwand-ki-salesforce/).
+```schritte
+Status-Workflow aufräumen
+  In Jira oder Azure DevOps, sodass „bereit“, „im Review“, „in UAT“ und „fertig“ Zeitstempel haben. Die meisten Programme haben schon drei Monate brauchbare Historie.
+Definitionen festlegen
+  Mit allen Partnern: wann die Durchlaufzeit beginnt, was als durchgerutschter Fehler zählt, was als Nacharbeit. Das gehört ins Governance-Modell, nicht in den Bericht jedes einzelnen Partners.
+KI-Pull-Requests kennzeichnen
+  Damit Sie Gleiches mit Gleichem vergleichen. Die Offenlegung von KI-Nutzung ist ein Vertragsthema, siehe [Regeln für Partner mit KI-Coding](../partner-ki-coding-regeln-vertrag/).
+Monatlich als Trend berichten
+  Nie als Rangliste von Teams oder Partnern. Wer gerankt wird, optimiert die Zahl.
+Prüftermin vereinbaren
+  Etwa nach drei Monaten, und dann entscheiden, ob sich Setup, Prozess oder Vertragsmodell ändern. Liefert ein Partner wirklich schneller, sollte sich das im Preis zeigen. Das ist die Frage hinter [Festpreis statt Aufwand](../festpreis-statt-aufwand-ki-salesforce/).
+```
 
 So setze ich [Projektsteuerung für Salesforce-Programme](../../leistungen/projektsteuerung-nearshore/) auf, und das Ganze steht auf einer funktionierenden Pipeline, wie in [warum DevOps über Salesforce-Großprojekte entscheidet](../warum-devops-salesforce-enterprise-projekte/) beschrieben.
 
-Messen Sie den KI-Nutzen wie jede andere Investition: erst die Basislinie, dann wenige Ergebniszahlen und ein fester Entscheidungstermin. Wenn Sie diese Zahlen für Ihr Programm aufsetzen möchten, [schreiben Sie mir](#contact).
+Messen Sie den KI-Nutzen wie jede andere Investition: erst die Basislinie, dann wenige Ergebniszahlen und ein fester Entscheidungstermin.

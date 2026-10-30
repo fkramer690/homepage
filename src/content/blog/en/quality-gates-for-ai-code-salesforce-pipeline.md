@@ -42,7 +42,11 @@ I would run five gates, in this order, so the cheap ones fail first.
 
 ### 1. Code Analyzer with a severity threshold
 
-[Salesforce Code Analyzer](https://developer.salesforce.com/docs/platform/salesforce-code-analyzer/guide/engines.html) v5 bundles eight engines, among them PMD for Apex, ESLint for JavaScript in Lightning Web Components and a Flow Scanner that reports security issues in flows. In CI you call `sf code-analyzer run` or the official GitHub Action in version 2; version 1 still uses the retired Code Analyzer v4 ([CI/CD integration](https://developer.salesforce.com/docs/platform/salesforce-code-analyzer/guide/ci-cd.html)). The flag that turns a report into a gate is `--severity-threshold`: a violation that meets or exceeds it makes the command fail with a non-zero exit code ([command reference](https://developer.salesforce.com/docs/platform/salesforce-cli-reference/guide/cli_reference_code-analyzer_run.html)). Without it, the pipeline stays green whatever the report says.
+[Salesforce Code Analyzer](https://developer.salesforce.com/docs/platform/salesforce-code-analyzer/guide/engines.html) v5 bundles eight engines, among them PMD for Apex, ESLint for JavaScript in Lightning Web Components and a Flow Scanner that reports security issues in flows. In CI you call `sf code-analyzer run` or the official GitHub Action in version 2; version 1 still uses the retired Code Analyzer v4 ([CI/CD integration](https://developer.salesforce.com/docs/platform/salesforce-code-analyzer/guide/ci-cd.html)). The flag that turns a report into a gate is `--severity-threshold`: a violation that meets or exceeds it makes the command fail with a non-zero exit code ([command reference](https://developer.salesforce.com/docs/platform/salesforce-cli-reference/guide/cli_reference_code-analyzer_run.html)).
+
+```hinweis achtung
+Without `--severity-threshold`, the pipeline stays green whatever the Code Analyzer report says.
+```
 
 My recommendation: block at High from day one and report the rest. Blocking everything on an org with ten years of Apex produces hundreds of legacy findings, and partners start suppressing rules instead of fixing them.
 
@@ -73,8 +77,11 @@ Gates only work if a red pipeline stops the merge. On GitHub, required status ch
 
 [sfdx-hardis](../sfdx-hardis-open-source-salesforce-devops/) runs two control jobs on every pull request, according to its [documentation on pull request results](https://sfdx-hardis.cloudity.com/salesforce-devops-handle-merge-request-results/):
 
+```vertiefung For developers
+title: What the two sfdx-hardis jobs do in the pull request
 - **Check deploy job.** It simulates the deployment in the target org, runs the Apex tests, calculates coverage and posts the result as a pull request comment, with a visual diff of changed flows. The [sfdx-hardis overview](https://sfdx-hardis.cloudity.com/salesforce-devops-home/) says quick deploy reuses the validated deployment after the merge.
 - **Code quality job.** It runs MegaLinter, which checks Apex with PMD and Lightning Web Components with ESLint and comments the result on the pull request. In the [documented configuration](https://sfdx-hardis.cloudity.com/salesforce-devops-solve-megalinter-errors/) the Apex error threshold carries the note that only the release manager can update it, and `// NOPMD` is meant "only for false positives, never to publish faster".
+```
 
 The default test level is `RunLocalTests` ([smart deployment](https://sfdx-hardis.cloudity.com/salesforce-devops-smart-deployment/)). sfdx-hardis also lists a [Coding Agent Auto-Fix (Beta)](https://sfdx-hardis.cloudity.com/salesforce-devops-home/) for failed deployments. I would let an agent propose such fixes only if they pass the same gates and a person reviews them.
 
@@ -100,4 +107,4 @@ The API version check stops the pull request. The partner either reverts the ver
 
 Setting up these gates for programmes with several partners is the core of my [DevOps and release management](../../services/devops-release-management/) work.
 
-Quality gates make AI-generated code exactly as safe as the rules they enforce, and those rules belong in your pipeline, not in a partner's prompt. If you want a second opinion on your gates, [send me a message](#contact).
+Quality gates make AI-generated code exactly as safe as the rules they enforce, and those rules belong in your pipeline, not in a partner's prompt.

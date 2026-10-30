@@ -62,7 +62,7 @@ The split follows a simple rule: the ERP delivers master data and stock, Salesfo
 | Part requests from technicians | Salesforce to ERP | immediately, becomes a transfer or purchase order there |
 | Returns | depends on the process | with goods receipt in the ERP |
 
-Two decisions should come early. First: how current does stock in Salesforce need to be? For planning the next day, a nightly sync is often enough. Anyone who reschedules on the day of service needs shorter intervals. Second: what happens offline? The mobile app works without a network. For the technician to see their van stock there, it has to sit in Salesforce as a copy. A pure live lookup from the ERP does not work in the basement of a factory hall.
+Two decisions should come early. First: how current does stock in Salesforce need to be? For planning the next day, a nightly sync is often enough. Anyone who reschedules on the day of service needs shorter intervals. A B2B store faces the same question with a different consumer, see [stock in the B2B store](../b2b-store-stock-availability-erp/). Second: what happens offline? The mobile app works without a network. For the technician to see their van stock there, it has to sit in Salesforce as a copy. A pure live lookup from the ERP does not work in the basement of a factory hall. Which data the app keeps offline is covered in [Field Service mobile offline](../field-service-mobile-app-offline-data/).
 
 A third question is volume. Every part at every location is its own record. 40 vans with 300 parts each are already 12,000 product items, plus the warehouses. That is no problem for Salesforce, but every record has to be synced and ends up offline on the technician's device. So I would only bring the locations into Salesforce that matter for field service: the vans and the warehouses that restock them. The rest of the company's stock stays in the ERP, and the back office looks it up there when needed.
 
@@ -70,7 +70,11 @@ How to settle such interfaces and the question of which system leads is describe
 
 ## Where do the problems come from?
 
-In my projects the split itself rarely caused trouble. When there were problems, they came from data maintenance quality. This is what I would work on before go-live:
+```praxis
+In my Field Service projects, spare parts and the installed base came from the ERP. The split itself rarely caused trouble. When there were problems, they came from data maintenance quality.
+```
+
+This is what I would work on before go-live:
 
 - **Material numbers:** a part that exists twice in the ERP, or with an outdated number, also lands twice in Salesforce. The technician then books against the wrong one.
 - **Unbooked withdrawals:** if a technician takes a part from the warehouse without a posting, the van stock no longer matches. Field Service then shows a part that is not there.
@@ -81,6 +85,12 @@ None of these problems is solved by software. Each needs an owner who maintains 
 
 ## Where should you start?
 
-Check how accurate van stock in the ERP is today. A simple test: have three technicians count their van and compare the result with the ERP. If it differs a lot, that is the first thing to fix, before any interface. If it matches, decide which of the objects above you really need, and start with stock, required parts and consumption.
+Check how accurate van stock in the ERP is today.
 
-The next part of the series covers maintenance contracts and committed response times. If you want an independent look at your spare parts processes before then, [get in touch](#contact).
+```hinweis tipp
+A simple test: have three technicians count their van and compare the result with the ERP. If it differs a lot, that is the first thing to fix, before any interface.
+```
+
+If it matches, decide which of the objects above you really need, and start with stock, required parts and consumption.
+
+The next part of the series covers maintenance contracts and committed response times.

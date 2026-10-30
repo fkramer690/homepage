@@ -52,12 +52,19 @@ Der eigentliche Nutzen liegt in der Architektur. Der API-Vertrag, etwa „Auftra
 
 ### Weg 2: Dokumentenerkennung plus RPA zum Schreiben
 
-Salesforce beschreibt genau diesen Fall im [Salesforce Admins Blog](https://admin.salesforce.com/blog/2025/automate-order-entry-with-flow-mulesoft-agentforce-automate-with-agentforce) vom August 2025, am Beispiel eines fiktiven Lieferanten mit eingescannten PDF-Bestellungen und einem ERP ohne API:
+Salesforce beschreibt genau diesen Fall im [Salesforce Admins Blog](https://admin.salesforce.com/blog/2025/automate-order-entry-with-flow-mulesoft-agentforce-automate-with-agentforce) vom August 2025, am Beispiel eines fiktiven Lieferanten mit eingescannten PDF-Bestellungen und einem ERP ohne API. MuleSoft Intelligent Document Processing (IDP) liest Auftragsnummer, Positionen, Nettowert und Steuer aus und schickt Belege mit einer Konfidenz unter 80 Prozent in die manuelle Prüfung. Ein MuleSoft-RPA-Bot überwacht einen freigegebenen Ordner und simuliert im ERP Mausklicks und Tastatureingaben. Zwei autolaunched Flows starten ihn und fragen seinen Status über eine Ausführungs-ID ab, und über das Agentforce-Topic „Order Upload“ starten Anwender den Upload im Chat und fragen nach dem Stand.
 
-- MuleSoft Intelligent Document Processing (IDP) liest Auftragsnummer, Positionen, Nettowert und Steuer aus. Liegt die Konfidenz des Modells unter 80 Prozent, geht der Beleg in die manuelle Prüfung.
-- Ein MuleSoft-RPA-Bot überwacht einen freigegebenen Ordner und erfasst den Auftrag im ERP, indem er Mausklicks und Tastatureingaben simuliert.
-- Zwei autolaunched Flows starten den Bot und fragen seinen Status über eine Ausführungs-ID ab.
-- Ein Agentforce-Topic „Order Upload“ lässt Anwender den Upload im Chat starten und nach dem Stand fragen.
+```ablauf
+sf: Topic Order Upload, Autolaunched Flow
+ext: MuleSoft IDP, Manuelle Prüfung, RPA-Bot
+erp: ERP-Maske
+Topic Order Upload --> Autolaunched Flow
+Autolaunched Flow --startet--> RPA-Bot
+MuleSoft IDP --ab 80 Prozent--> RPA-Bot
+MuleSoft IDP ..unter 80 Prozent..> Manuelle Prüfung
+RPA-Bot --erfasst Auftrag--> ERP-Maske
+RPA-Bot ..Status..> Autolaunched Flow
+```
 
 Für einen Hersteller liegen Ersatzteilbestellungen von Händlern und Auftragsbestätigungen von Lieferanten als PDF nahe. Zwei Kostenpunkte gehören in den Plan. Laut [IDP-Dokumentation](https://docs.mulesoft.com/idp/) berechnet IDP Automation Credits pro Ausführung nach Seitenzahl, und jede erneute Einreichung oder Verarbeitung kostet voll, ohne Dublettenerkennung. Und [RPA-Bots](https://docs.mulesoft.com/rpa-bot/1.6/) brauchen einen Rechner, auf dem die Zielanwendungen installiert sind; jemand betreibt und patcht diese Maschinen.
 
@@ -67,7 +74,11 @@ Ein Detail dieses Musters gefällt mir: Der Agent entscheidet nichts. Er ist ein
 
 Zur Dreamforce 2026 hat Salesforce den Systems Integration Agent als Teil von Agentforce Operations vorgestellt, im selben Abschnitt wie den Back-Office-Agenten Marshall, gekennzeichnet als [GA](https://www.salesforce.com/blog/dreamforce-2026-announcements/). Laut [Produktblog](https://www.salesforce.com/blog/regrello/) lernt er eine browserbasierte Anwendung wie ein neuer Mitarbeiter in etwa 90 Minuten, ohne Code, APIs oder RPA, auch „customized SAP, Oracle, and homegrown systems“. Ändert sich eine Maske, lernt er diesen Teil laut Salesforce typischerweise in etwa 20 Minuten neu und protokolliert die Reparatur zur Prüfung durch einen Administrator. Die [Seite zu Agentforce Operations](https://www.salesforce.com/agentforce/operations/) nennt zusätzlich Audit Trail und erhaltene Berechtigungen und Freigaben und sagt, abgerechnet werde nach Blueprint-Paketen, vom Starter Pack mit 5 Blueprints bis Large mit mehr als 50, „not priced based on consumption“. Listenpreise habe ich keine gefunden.
 
-Der Haken für Hersteller ist das Wort „browserbasiert“. Läuft Ihr ERP oder MES als Desktop-Client, prüfen Sie, ob es einen Web-Client gibt, bevor jemand mit diesem Agenten plant. Der Produktblog nennt GA zudem ausdrücklich nur für Marshall; klären Sie die Verfügbarkeit für Ihre Org mit Ihrem Account-Team. Das sind Herstellerangaben aus dem Startmonat. Ich würde sie an Ihren eigenen Masken testen, inklusive eines ERP-Updates im Testsystem, bevor ich mich darauf verlasse.
+Der Haken für Hersteller ist das Wort „browserbasiert“. Läuft Ihr ERP oder MES als Desktop-Client, prüfen Sie, ob es einen Web-Client gibt, bevor jemand mit diesem Agenten plant. Das sind Herstellerangaben aus dem Startmonat. Ich würde sie an Ihren eigenen Masken testen, inklusive eines ERP-Updates im Testsystem, bevor ich mich darauf verlasse.
+
+```hinweis offen
+Der Produktblog nennt GA ausdrücklich nur für Marshall. Klären Sie die Verfügbarkeit des Systems Integration Agent für Ihre Org mit Ihrem Account-Team.
+```
 
 ## Ein typisches Szenario: Ersatzteilaufträge bei einem Maschinenbauer mit altem ERP
 
@@ -97,4 +108,4 @@ Die zweite Grenze ist die Zahl der schreibenden Prozesse. Jeder Bot ist Software
 
 Und wenig Volumen bleibt wenig Volumen. Dreißig Bestellungen im Monat rechtfertigen keinen RPA-Bot, egal wie alt das ERP ist.
 
-Starten Sie bei einem alten ERP mit dem Leseweg hinter einem stabilen API-Vertrag und automatisieren Sie das Schreiben nur dort, wo Belege und Masken stabil sind und ein Mensch die unsicheren Fälle prüft. Wenn Sie prüfen möchten, welcher Weg zu Ihrem ERP passt, [schreiben Sie mir](#contact).
+Starten Sie bei einem alten ERP mit dem Leseweg hinter einem stabilen API-Vertrag und automatisieren Sie das Schreiben nur dort, wo Belege und Masken stabil sind und ein Mensch die unsicheren Fälle prüft.

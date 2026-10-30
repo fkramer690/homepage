@@ -29,7 +29,7 @@ A global Manufacturing Cloud rollout starts with a decision that comes before an
 
 ## What has to be settled before the first country?
 
-The goal. A rollout meant to harmonise processes is planned differently from one meant to give every country its own CRM. For manufacturers with entities in many countries it is usually about harmonisation: the same sales processes, the same sales agreements, the same reports for headquarters.
+The goal. A rollout meant to harmonise processes is planned differently from one meant to give every country its own CRM. For manufacturers with entities in many countries it is usually about harmonisation: the same sales processes, the same sales agreements, the same reports for headquarters. How the rollout fits with ERP integration and AI is covered in [chapter 5 of the Manufacturing Cloud masterclass](../../masterclass/manufacturing-cloud/erp-ai-and-rollout/).
 
 That goal leads to a global template, the shared configuration every country adopts. For Manufacturing Cloud it includes at least the decisions from the earlier parts of this series:
 
@@ -37,7 +37,11 @@ That goal leads to a global template, the shared configuration every country ado
 - **The rule for when a configuration becomes its own product**, from [part 2](../quote-to-sales-agreement-product-configurator/).
 - **What customers see in the portal**, from [part 7](../manufacturing-cloud-customer-portal/).
 
-After the first country, these points can hardly be changed without touching every country already live. So each of them goes into the decision log before the first country goes live. How I keep that log is described under [Salesforce architecture](../../services/salesforce-architecture/).
+```hinweis achtung
+After the first country, these points can hardly be changed without touching every country already live. So each of them goes into the decision log before the first country goes live.
+```
+
+How I keep that log is described under [Salesforce architecture](../../services/salesforce-architecture/).
 
 ## Which country do you start with?
 
@@ -88,13 +92,17 @@ With several implementation partners, for example one per region, that decision 
 
 Because harmonisation means people work differently. In every country that follows the template, processes, reports and habits change. A sales team that kept its volumes in its own spreadsheet does not automatically work with sales agreements just because they are live.
 
-Many clients think they do not need change management. The budget is allocated, the training is planned, and users will get used to it. I still keep bringing it up, during planning, before each country and after each go-live. At least three things belong to it per country:
+```praxis
+Many clients think they do not need change management. The budget is allocated, the training is planned, and users will get used to it. I still keep bringing it up, during planning, before each country and after each go-live.
+```
+
+At least three things belong to it per country:
 
 - **Key users** who know the template and answer the first questions in the country.
 - **Communication before go-live** that explains what changes and why, not just where to click.
 - **A look at usage after go-live**, so it shows when a country keeps working with its own lists next to Salesforce.
 
-How I plan the introduction of new processes on the client side is described under [change management for Salesforce programmes](../../services/change-management-salesforce/).
+How I plan the introduction of new processes on the client side is described under [Salesforce change management consulting](../../services/change-management-salesforce/). What each country needs is in [change management in a global Salesforce rollout](../change-management-global-salesforce-rollout/), the overview in [Salesforce change management: why rollouts fail](../change-management-salesforce-rollout/).
 
 ## Where should you start?
 
@@ -106,4 +114,4 @@ Before the first country is planned, settle five points:
 4. **The order.** A table with processes, business units, IT systems and brands per country.
 5. **Change management.** Key users, communication and usage per country, planned from the start.
 
-A global rollout succeeds when the template is tested under real load early and every further country changes only a little. If you are planning a Manufacturing Cloud rollout across several countries, [send me a message](#contact).
+A global rollout succeeds when the template is tested under real load early and every further country changes only a little.

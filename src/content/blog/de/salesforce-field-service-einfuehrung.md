@@ -1,5 +1,5 @@
 ---
-title: "Field Service einführen: Warum in Wellen?"
+title: "Salesforce Field Service Einführung: Warum in Wellen?"
 description: "Salesforce Field Service in Wellen einführen: was eine Welle enthält, welche Themen früh zum Betriebsrat gehören und warum jedes Land eigene Regeln hat."
 pubDate: 2026-10-27
 lang: de
@@ -37,6 +37,10 @@ Field Service verändert den Arbeitstag von Disponenten und Technikern. Ein Disp
 
 Eine Welle begrenzt das Risiko. Fehlen in der ersten Region Qualifikationen oder Öffnungszeiten, betrifft das ein Servicegebiet und nicht den ganzen Außendienst. Die Fehler der ersten Welle werden zu Prüfpunkten für die nächste. Dazu kommt ein praktischer Grund: Die Stammdaten aus Teil 2 lassen sich Region für Region bereinigen. Wer alles auf einmal startet, muss alles auf einmal sauber haben.
 
+```praxis
+In meinen Field-Service-Projekten mit Wartung, Störungseinsätzen und Inbetriebnahmen lagen die Stolpersteine an drei Stellen: Datenqualität der Anlagen, Akzeptanz bei den Technikern und Schnittstellen zum ERP. Alle drei bekommt man in einer Region leichter in den Griff als im ganzen Außendienst auf einmal.
+```
+
 Eine Welle sollte umfassen:
 
 - die bereinigten Stammdaten der Region: Anlagen, Qualifikationen, Öffnungszeiten, Abwesenheiten
@@ -46,7 +50,7 @@ Eine Welle sollte umfassen:
 - die geklärten Vereinbarungen mit Betriebsrat und Datenschutz für dieses Land
 - Kennzahlen, die vor und nach dem Start gemessen werden
 
-Zwischen zwei Wellen braucht es Luft. Die ersten Wochen nach dem Start einer Region sind die Zeit, in der Disponenten Vorschläge häufig ändern und Techniker Fragen zur App haben. Wer in dieser Phase schon die nächste Welle startet, verteilt die Aufmerksamkeit des Projektteams zu dünn. Hilfreich ist, wenn Disponenten der nächsten Welle vorher in der laufenden Region zuschauen. Sie lernen dort mehr als in jeder Schulung, weil sie echte Fälle aus ihrem eigenen Alltag sehen.
+Zwischen zwei Wellen braucht es Luft. Die ersten Wochen nach dem Start einer Region sind die Zeit, in der Disponenten Vorschläge häufig ändern und Techniker Fragen zur App haben. Wer in dieser Phase schon die nächste Welle startet, verteilt die Aufmerksamkeit des Projektteams zu dünn. Hilfreich ist, wenn Disponenten der nächsten Welle vorher in der laufenden Region zuschauen. Sie lernen dort mehr als in jeder Schulung, weil sie echte Fälle aus ihrem eigenen Alltag sehen. Warum Schulung allein nicht reicht, damit Techniker die App annehmen, beschreibe ich in [Field Service App: wie Techniker sie annehmen](../field-service-app-akzeptanz-techniker/).
 
 ## Welche Themen gehören früh zum Betriebsrat?
 
@@ -68,13 +72,17 @@ Die gute Nachricht: Die Technik lässt sich einstellen. Darüber würde ich mit 
 
 Dazu kommen die Qualifikationen und Abwesenheiten aus Teil 2 und die Spracheingabe, die ich in [Field Service Mobile im Außendienst](../salesforce-field-service-mobile-aussendienst/) beschreibe. Auch das sind Daten über Mitarbeitende.
 
-In Deutschland hat der Betriebsrat nach [§ 87 BetrVG](https://www.gesetze-im-internet.de/betrvg/__87.html) ein Mitbestimmungsrecht bei technischen Einrichtungen, die Verhalten oder Leistung der Arbeitnehmer überwachen. Wie das im Einzelfall auszulegen ist, klärt die Rechtsabteilung. Aus Projektsicht zählt vor allem der Zeitpunkt. Wer erst mit dem Betriebsrat spricht, wenn die App fertig konfiguriert ist, riskiert Wochen Verzug und eine Konfiguration, die noch einmal umgebaut werden muss.
+In Deutschland hat der Betriebsrat nach [§ 87 BetrVG](https://www.gesetze-im-internet.de/betrvg/__87.html) ein Mitbestimmungsrecht bei technischen Einrichtungen, die Verhalten oder Leistung der Arbeitnehmer überwachen. Wie das im Einzelfall auszulegen ist, klärt die Rechtsabteilung.
+
+```hinweis achtung
+Aus Projektsicht zählt vor allem der Zeitpunkt. Wer erst mit dem Betriebsrat spricht, wenn die App fertig konfiguriert ist, riskiert Wochen Verzug und eine Konfiguration, die noch einmal umgebaut werden muss.
+```
 
 ## Warum unterscheiden sich Regionen und Länder?
 
 Ein internationaler Außendienst hat nicht eine Rechtslage, sondern viele. Mitbestimmung, Datenschutz und Arbeitszeitregeln unterscheiden sich je Land, manchmal auch je Region oder Standort mit eigener Arbeitnehmervertretung. Was in einem Land mit einer kurzen Abstimmung geht, braucht in einem anderen eine Betriebsvereinbarung.
 
-Das spricht für Wellen nach Ländern. Jede Welle prüft die Rahmenbedingungen ihres Landes, bevor sie startet. Die Konfiguration muss das mitmachen: Die Mobile-Einstellungen lassen sich je Profil unterschiedlich zuordnen, sodass etwa die Standortverfolgung in einem Land aktiv ist und in einem anderen nicht. Das sollte von Anfang an so angelegt sein, damit das zweite Land nicht die Einstellungen des ersten erbt.
+Das spricht für Wellen nach Ländern. Jede Welle prüft die Rahmenbedingungen ihres Landes, bevor sie startet. Die Konfiguration muss das mitmachen: Die Mobile-Einstellungen lassen sich je Profil unterschiedlich zuordnen, sodass etwa die Standortverfolgung in einem Land aktiv ist und in einem anderen nicht. Das sollte von Anfang an so angelegt sein, damit das zweite Land nicht die Einstellungen des ersten erbt. Was neben Recht und Technik pro Land dazugehört, vom Sponsor in der Landesleitung bis zu den Key Usern, behandelt [Kapitel 4 der Masterclass Change Management](../../masterclass/change-management/change-management-rollout-laender/).
 
 ## Woran messen Sie den Erfolg einer Welle?
 
@@ -85,10 +93,10 @@ Jede Welle braucht Zahlen von vorher und nachher. Ich würde die nehmen, die in 
 - den Anteil der Vorschläge, die der Disponent vor der Freigabe ändert, aus Teil 3
 - die eingehaltenen Reaktionszeiten aus Teil 5
 
-Bessern sich die Zahlen in der ersten Welle nicht, liegt es meiner Einschätzung nach selten am Produkt. Meist fehlen Daten, oder die Planung wird noch nebenher gemacht.
+Bessern sich die Zahlen in der ersten Welle nicht, liegt es meiner Einschätzung nach selten am Produkt. Meist fehlen Daten, oder die Planung wird noch nebenher gemacht. Welche Zahlen Sie beobachten sollten, steht in [Field Service Kennzahlen nach dem Go-live](../field-service-kennzahlen-operations-home/).
 
 ## Wo sollten Sie anfangen?
 
 Wählen Sie für die erste Welle eine Region mit sauberen Daten, einem offenen Serviceleiter und überschaubarer Größe. Nehmen Sie den Betriebsrat in die Planung dieser Welle auf, nicht erst in ihre Abnahme. Und prüfen Sie vor jeder weiteren Welle die Rahmenbedingungen des Landes, bevor Sie Termine zusagen.
 
-Damit endet die Serie. Wenn Sie eine Einführung von Field Service planen und einen unabhängigen Architekten auf Ihrer Seite möchten, [schreiben Sie mir](#contact).
+Damit endet die Serie.

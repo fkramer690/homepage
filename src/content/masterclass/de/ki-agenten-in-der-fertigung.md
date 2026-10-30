@@ -48,7 +48,7 @@ Salesforce liefert für die Fertigung drei Gruppen von Bausteinen: Vorlagen aus 
 
 Zur Lizenz: Laut [Seite der Manufacturing Cloud](https://www.salesforce.com/eu/manufacturing/cloud/), die Euro-Listenpreise ausweist, enthalten nur die Max-Editionen den vollen Umfang von Agentforce for Industries, zu 650 € (Sales Max oder Service Max) oder 700 € (Sales & Service Max) pro Nutzer und Monat bei Jahresvertrag. Die Core-Editionen bringen Flex Credits für KI mit. Neue Preise für die Industries-Editionen hat Salesforce am 3. September 2026 für [„later this fall“](https://www.salesforce.com/news/stories/salesforce-simplifies-editions-2026/) angekündigt. Eine eigene Lizenzangabe für den Garantie-Prüfagenten habe ich in den Quellen, die ich öffnen konnte, nicht gefunden.
 
-Ich sortiere diese Liste für einen Maschinenbauer nach drei Fragen: Wie viele gleichartige Vorgänge gibt es im Monat, wo steht die Regel, und sind die Daten dahinter gepflegt? Daraus ergibt sich meist diese Reihenfolge: zuerst Auftragsstatus für Händler und geplante Wartungen, dann der Einsatzbericht, dann die Garantie. Welche Field-Service-Funktionen sich lohnen, steht in [KI-Agenten im Außendienst](../../../blog/ki-agenten-aussendienst-field-service/), was vor dem Garantieagenten stehen muss, in [Garantie-Prüfagent aus Winter '27](../../../blog/garantie-pruefagent-winter-27/). Ob ein Agent überhaupt der nächste Schritt ist, prüfe ich mit den Kriterien aus [Agentforce für Hersteller: jetzt starten oder warten?](../../../blog/agentforce-ja-oder-nein-hersteller/).
+Ich sortiere diese Liste für einen Maschinenbauer nach drei Fragen: Wie viele gleichartige Vorgänge gibt es im Monat, wo steht die Regel, und sind die Daten dahinter gepflegt? Daraus ergibt sich meist diese Reihenfolge: zuerst Auftragsstatus für Händler und geplante Wartungen, dann der Einsatzbericht, dann die Garantie. Welche Field-Service-Funktionen sich lohnen, steht in [KI-Agenten im Außendienst](../../../blog/ki-agenten-aussendienst-field-service/), was vor dem Garantieagenten stehen muss, in [Garantie-Prüfagent aus Winter '27](../../../blog/garantie-pruefagent-winter-27/). Ob ein Agent überhaupt der nächste Schritt ist, prüfe ich mit den Kriterien aus [Agentforce für Hersteller: jetzt starten oder warten?](../../../blog/agentforce-ja-oder-nein-hersteller/). Wie Sie Agenten im Außendienst Schritt für Schritt einführen, steht in [Kapitel 5 der Masterclass Field Service](../../field-service/field-service-ki-agenten-einfuehrung/).
 
 ## Wie baut man einen Agenten, der gleich antwortet?
 
@@ -103,7 +103,9 @@ Bei Herstellern sind diese Felder zahlreich: Web-to-Lead, Händlerportale auf Ex
 5. **API-Logs überwachen**; MCP-Zugriffe lassen sich über `API_CLIENT_CATEGORY` = `SALESFORCE_HOSTED_MCP` filtern.
 6. **Entscheidungen mit Geldwert hinter `available when`**, damit kein Freitext eine Gutschrift auslöst.
 
+```hinweis achtung
 Die Sicherheitsseite für Hosted MCP erwähnt Prompt Injection und IP-Restriktionen nicht. Diese Lücke muss Ihr Architekt schließen. Die Details stehen in [Prompt Injection im Händlerportal](../../../blog/prompt-injection-haendlerportal-agentforce/) und [Connected Apps und OAuth bei KI-Integrationen](../../../blog/connected-apps-oauth-ki-integrationen/), die Schnittstellen selbst in [Kapitel 3](../mcp-und-schnittstellen/).
+```
 
 ## Was zeigen die Referenzen aus der Industrie?
 
@@ -113,19 +115,29 @@ Die Sicherheitsseite für Hosted MCP erwähnt Prompt Injection und IP-Restriktio
 
 **JPW Industries**, ein US-Hersteller, wird in der Ankündigung von Agentforce for Manufacturing zitiert: Manuelle Aufträge dauerten 16 bis 24 Stunden, mit Agentforce weniger als eine Stunde, und die Fallbearbeitung wurde trotz 15 Prozent mehr Arbeit um fast 40 Prozent schneller. Das ist eine Kundenaussage in einer Salesforce-Meldung.
 
+```kennzahlen
+18.000 | Vertriebsmitarbeitende bei Siemens, an die Agenten eingehende Leads weiterleiten
+< 1 Std. | für einen Auftrag bei JPW Industries, vorher 16 bis 24 Stunden von Hand
+fast 40 % | schnellere Fallbearbeitung bei JPW trotz 15 Prozent mehr Arbeit
+quelle: Siemens-Meldung vom 15. September 2026; Ankündigung Agentforce for Manufacturing (Kundenaussage)
+```
+
 Eine Fallstudie aus dem deutschsprachigen Raum mit harten Kennzahlen zu Service, Garantie oder Außendienst habe ich nicht gefunden. Auch die Marktzahlen brauchen eine Fußnote: Salesforce meldet für das Quartal bis Juli 2026 mehr als 1,5 Mrd. US-Dollar Agentforce-ARR, zählt dort aber [seit diesem Quartal](https://investor.salesforce.com/news/news-details/2026/Salesforce-Delivers-Record-Second-Quarter-Fiscal-2027-Results/default.aspx) auch Slackbot, KI-Angebote und Headless 360 mit. Und Gartner [erwartet](https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027), dass mehr als 40 Prozent der Projekte mit KI-Agenten bis Ende 2027 abgebrochen werden, wegen Kosten, unklarem Nutzen oder schwacher Risikokontrollen.
 
 ## Ein typisches Szenario: Fahrplan für einen Maschinenbauer
 
 Nehmen wir einen Maschinenbauer mit SAP S/4 und vorhandener MuleSoft-API, Service Cloud, Field Service mit 45 Technikern und rund 200 Händlern, die über ein Portal bestellen. Die Manufacturing Cloud wird gerade eingeführt. Alle Umstände und Zahlen sind Annahmen, die das Vorgehen zeigen sollen.
 
-**Quartal 1: Händleragent für Auftragsstatus.** Der Agent liest Auftrag und Liefertermin über die MuleSoft-API. In `before_reasoning` steht fest, dass ein Händler nur die eigenen Aufträge sieht. Vor dem Go-live laufen 150 Testfälle aus echten, anonymisierten Anfragen, darunter Fragen nach fremden Aufträgen und Freitext mit versteckten Anweisungen. Der Entscheidungstermin nach acht Wochen ist vorab vereinbart.
-
-**Parallel: Datenarbeit und Inventur.** Die IT gleicht die installierte Basis mit SAP ab, bis Seriennummer und Garantiebeginn pro Maschine stehen, und listet alle verbundenen Apps mit ihren Scopes.
-
-**Quartal 2: Wartungsbuchung.** Der Agent bucht Wartungen für Kunden mit gepflegten Stillstandsfenstern. Für alle anderen schlägt er Termine vor und übergibt an die Disposition.
-
-**Quartal 3 und 4: Garantie-Vorprüfung.** Erst wenn die Anlagendaten stimmen, prüft der Agent die Deckung. Die Regel bleibt im Expression Set, Beträge über der vereinbarten Grenze und jeder Betrugsverdacht gehen an einen Sachbearbeiter.
+```schritte
+Händleragent für Auftragsstatus | Quartal 1
+  Der Agent liest Auftrag und Liefertermin über die MuleSoft-API. In `before_reasoning` steht fest, dass ein Händler nur die eigenen Aufträge sieht. Vor dem Go-live laufen 150 Testfälle aus echten, anonymisierten Anfragen, darunter Fragen nach fremden Aufträgen und Freitext mit versteckten Anweisungen. Der Entscheidungstermin nach acht Wochen ist vorab vereinbart.
+Datenarbeit und Inventur | parallel · IT
+  Die IT gleicht die installierte Basis mit SAP ab, bis Seriennummer und Garantiebeginn pro Maschine stehen, und listet alle verbundenen Apps mit ihren Scopes.
+Wartungsbuchung | Quartal 2
+  Der Agent bucht Wartungen für Kunden mit gepflegten Stillstandsfenstern. Für alle anderen schlägt er Termine vor und übergibt an die Disposition.
+Garantie-Vorprüfung | Quartal 3 und 4
+  Erst wenn die Anlagendaten stimmen, prüft der Agent die Deckung. Die Regel bleibt im Expression Set, Beträge über der vereinbarten Grenze und jeder Betrugsverdacht gehen an einen Sachbearbeiter.
+```
 
 **Bewusst nicht im Plan:** Fehlersuche bei Sondermaschinen, solange Handbücher keiner Seriennummer zugeordnet sind, und Agenten in SAP-Prozessen, die das ERP heute selbst entscheidet.
 
@@ -133,11 +145,17 @@ Am Ende des Jahres laufen drei Agenten, alle mit denselben Regeln: eigener Nutze
 
 ## Was kommt bis 2028?
 
-- **Long-Horizon-Agenten**, die ein Ziel über Tage oder Wochen verfolgen, sind im Pilot; Salesforce hat die GA für November 2026 angekündigt.
+```zeitleiste
+2026-12-02 | EU AI Act: Kennzeichnung für generative Systeme, die vor dem 2. August 2026 auf dem Markt waren
+2027-12-02 | EU AI Act: Hochrisiko-Pflichten nach Anhang III
+2028-08-02 | EU AI Act: Hochrisiko-Pflichten nach Anhang I, KI als Sicherheitsbauteil in Produkten
+```
+
+- **Long-Horizon-Agenten**, die ein Ziel über Tage oder Wochen verfolgen, sind noch im Pilot.
 - **Koa**, Salesforces erstes CRM-Reasoning-Modell auf NVIDIA Nemotron, soll im Winter 2026 GA werden, [zuerst in US-Regionen](https://investor.salesforce.com/news/news-details/2026/Announcing-Koa-Salesforces-First-CRM-Reasoning-Model-Built-on-NVIDIA-Nemotron/default.aspx). Für Orgs in der EU ist es vorerst kein Thema.
 - **Headless Platform Interactions**, der Zähler für agentische API- und MCP-Zugriffe, steht auf der Rate Card noch als „TBA“. Greifen externe Agenten auf Salesforce zu, wird das ein Budgetposten, beschrieben in [MCP-Zugriffe als Budgetrisiko](../../../blog/mcp-zugriffe-salesforce-budgetrisiko/).
-- **EU AI Act:** Laut [White & Case](https://www.whitecase.com/insight-alert/eu-ai-omnibus-enters-force-amending-ai-act) gelten mit der Verordnung (EU) 2026/1744 die Hochrisiko-Pflichten nach Anhang III ab 2. Dezember 2027 und nach Anhang I, also für KI als Sicherheitsbauteil in Produkten, ab 2. August 2028. Generative Systeme, die vor dem 2. August 2026 auf dem Markt waren, müssen die Kennzeichnung bis 2. Dezember 2026 erfüllen. Für Maschinenbauer betrifft Anhang I eher die Maschine als den CRM-Agenten. Was das für Agentforce-Projekte heißt, steht in [EU AI Act: Fristen für Agentforce](../../../blog/eu-ai-act-fristen-agentforce/) und in [Kapitel 9](../teamarbeit-und-delivery/).
+- **EU AI Act:** Die Fristen in der Zeitleiste folgen laut [White & Case](https://www.whitecase.com/insight-alert/eu-ai-omnibus-enters-force-amending-ai-act) aus der Verordnung (EU) 2026/1744. Für Maschinenbauer betrifft Anhang I eher die Maschine als den CRM-Agenten. Was das für Agentforce-Projekte heißt, steht in [EU AI Act: Fristen für Agentforce](../../../blog/eu-ai-act-fristen-agentforce/) und in [Kapitel 9](../teamarbeit-und-delivery/).
 
 Welche Regeln in Ihren Agenten gehören und welche im ERP bleiben, kläre ich auf Kundenseite in der [Salesforce-Architektur](../../../leistungen/salesforce-architektur/), die ERP-Anbindung in [Salesforce-Schnittstellen](../../../leistungen/salesforce-schnittstellen/). Alle Kapitel finden Sie in der [Übersicht der Masterclass](../).
 
-Starten Sie mit dem Agenten, dessen Regeln und Daten schon stehen, und behandeln Sie ihn vom ersten Tag an wie Code mit Tests und eigenen Rechten. Wenn Sie eine zweite Meinung zu Ihrem Fahrplan möchten, [schreiben Sie mir](#contact).
+Starten Sie mit dem Agenten, dessen Regeln und Daten schon stehen, und behandeln Sie ihn vom ersten Tag an wie Code mit Tests und eigenen Rechten.

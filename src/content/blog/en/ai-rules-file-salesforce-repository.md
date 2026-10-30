@@ -41,7 +41,11 @@ A rules file holds standing project instructions in plain Markdown: commands, co
 
 Sources: [Claude Code memory docs](https://code.claude.com/docs/en/memory), [OpenAI Codex best practices](https://developers.openai.com/codex/learn/best-practices), [GitHub Docs](https://docs.github.com/en/copilot/how-tos/configure-custom-instructions/add-repository-instructions), [Agentforce Vibes rules](https://developer.salesforce.com/docs/platform/agentforcevibes/guide/afv-rules.html).
 
-For a team with several tools, two details decide whether one file is enough. According to the [GitHub changelog of 28 August 2025](https://github.blog/changelog/2025-08-28-copilot-coding-agent-now-supports-agents-md-custom-instructions), the Copilot coding agent reads `AGENTS.md` next to GitHub's own formats, plus `CLAUDE.md` and `GEMINI.md`. Claude Code reads `AGENTS.md` from version 2.1.277, but only if no `CLAUDE.md` or `CLAUDE.local.md` exists in the working directory or above. A developer who creates a personal `CLAUDE.local.md` therefore stops Claude from reading the shared `AGENTS.md` without noticing. Anthropic's remedy is a `CLAUDE.md` that imports the shared file with `@AGENTS.md`. The Vibes documentation does not mention `AGENTS.md` at all, so Vibes needs its own short rule in `.vibes/rules/`.
+For a team with several tools, two details decide whether one file is enough. According to the [GitHub changelog of 28 August 2025](https://github.blog/changelog/2025-08-28-copilot-coding-agent-now-supports-agents-md-custom-instructions), the Copilot coding agent reads `AGENTS.md` next to GitHub's own formats, plus `CLAUDE.md` and `GEMINI.md`. Claude Code reads `AGENTS.md` from version 2.1.277, but only if no `CLAUDE.md` or `CLAUDE.local.md` exists in the working directory or above. The Vibes documentation does not mention `AGENTS.md` at all, so Vibes needs its own short rule in `.vibes/rules/`.
+
+```hinweis achtung
+A developer who creates a personal `CLAUDE.local.md` stops Claude from reading the shared `AGENTS.md` without anyone noticing. Anthropic's remedy is a `CLAUDE.md` that imports the shared file with `@AGENTS.md`.
+```
 
 ## Why does the rules file belong to the client?
 
@@ -139,11 +143,19 @@ The file grows from evidence, not from wish lists. OpenAI recommends adding rule
 
 ## Where should you start?
 
-1. **Take stock.** Search the repository for `CLAUDE.md`, `AGENTS.md`, `.github/copilot-instructions.md` and `.vibes/rules/`, and ask every partner which tools it uses.
-2. **Name the owner** and a deputy on your side.
-3. **Write the first version** in under 200 lines from your coding standard and the last review findings.
-4. **Add the pointers**: a `CLAUDE.md` with `@AGENTS.md` and one Vibes rule.
-5. **Move the hard rules out**: deny rules, a `Stop` hook and the gates from [quality gates for AI code](../quality-gates-for-ai-code-salesforce-pipeline/), with Vibes disabled in production.
-6. **Protect the files** with CODEOWNERS and branch protection.
+```schritte
+Take stock
+  Search the repository for `CLAUDE.md`, `AGENTS.md`, `.github/copilot-instructions.md` and `.vibes/rules/`, and ask every partner which tools it uses.
+Name the owner
+  One person and a deputy on your side.
+Write the first version
+  Under 200 lines, from your coding standard and the last review findings.
+Add the pointers
+  A `CLAUDE.md` with `@AGENTS.md` and one Vibes rule.
+Move the hard rules out
+  Deny rules, a `Stop` hook and the gates from [quality gates for AI code](../quality-gates-for-ai-code-salesforce-pipeline/), with Vibes disabled in production.
+Protect the files
+  With CODEOWNERS and branch protection.
+```
 
-Setting this up is part of my work in [DevOps and release management](../../services/devops-release-management/) and in [partner governance](../../services/partner-governance/). An AI rules file costs a few days and gives every agent in your repository the same rules, as long as you own the file and enforce the hard rules elsewhere. If you want a second opinion on your rules file or your partner setup, [send me a message](#contact).
+Setting this up is part of my work in [DevOps and release management](../../services/devops-release-management/) and in [partner governance](../../services/partner-governance/). An AI rules file costs a few days and gives every agent in your repository the same rules, as long as you own the file and enforce the hard rules elsewhere.

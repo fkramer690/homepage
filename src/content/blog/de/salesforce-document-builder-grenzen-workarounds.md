@@ -45,7 +45,11 @@ Die Vorlage auf Arbeitsauftrag und Servicetermin ist nur ein Textfeld. Es verwei
 
 Der Document Builder benennt die erzeugte Datei selbst. Ein Muster wie Auftragsnummer, Kunde und Datum lässt sich nicht hinterlegen. Für den Innendienst ist das lästig, denn das PDF landet im Postfach des Kunden, im ERP oder in einem Dokumentenarchiv, und niemand erkennt am Dateinamen, zu welchem Einsatz es gehört.
 
-**Workaround:** Ein datensatzgesteuerter Flow mit asynchronem Pfad. Er startet, wenn das Dokument erstellt wurde, und benennt die Datei kurz danach um. Er muss asynchron laufen, also kurz nach der Erstellung, damit die Datei schon existiert, wenn der Flow sie umbenennt. Die Namensregel liegt dann an einer Stelle, und ein Admin kann sie ohne Code ändern.
+**Workaround:** Ein datensatzgesteuerter Flow mit asynchronem Pfad. Er startet, wenn das Dokument erstellt wurde, und benennt die Datei kurz danach um. Die Namensregel liegt dann an einer Stelle, und ein Admin kann sie ohne Code ändern.
+
+```hinweis achtung
+Der Flow muss asynchron laufen, also kurz nach der Erstellung. Nur dann existiert die Datei schon, wenn der Flow sie umbenennt.
+```
 
 ## Grenze 3: Wie verschicke ich den Servicebericht per E-Mail?
 
@@ -68,7 +72,10 @@ Die Standardkomponenten decken Felder, Tabellen, Bilder und Unterschriften ab. A
 - **Grafische Elemente.** Eine horizontale Trennlinie oder ähnliche Zwischenelemente zwischen Abschnitten. Klein, aber der Bericht wirkt wie ein gestaltetes Dokument statt wie ein Datenexport.
 - **Eigene verknüpfte Liste.** Eine Komponente, die auch Felder mit mehr als 255 Zeichen anzeigt, etwa die Arbeitsbeschreibung des Technikers, und Feldbezeichnungen nur für den Bericht überschreibt. Das Standardfeld "Erstellt von" erscheint im Dokument dann als "Techniker", ohne dass sich die Bezeichnung in der ganzen Org ändert.
 
-Salesforce weist darauf hin, dass LWCs für Service Documents ein eigenes Druck-Styling brauchen, beschrieben im [Entwicklerleitfaden für eigene Komponenten in Service Documents](https://developer.salesforce.com/docs/atlas.en-us.field_service_dev.meta/field_service_dev/fsl_dev_mobile_document_builder.htm). Komponenten aus der mobilen App lassen sich nicht einfach wiederverwenden. Planen Sie sie als eigene kleine Bibliothek.
+```vertiefung Für Entwickler
+titel: Kann ich LWCs aus der mobilen App wiederverwenden?
+Nicht einfach so. Salesforce weist darauf hin, dass LWCs für Service Documents ein eigenes Druck-Styling brauchen, beschrieben im [Entwicklerleitfaden für eigene Komponenten in Service Documents](https://developer.salesforce.com/docs/atlas.en-us.field_service_dev.meta/field_service_dev/fsl_dev_mobile_document_builder.htm). Planen Sie die Komponenten für den Bericht deshalb als eigene kleine Bibliothek.
+```
 
 ![Fünf Grenzen des Salesforce Document Builder und wie man sie schließt. Vorlagenwahl: Die Vorlage ist nur ein Textfeld, das auf eine Lightning-Seite verweist, gelöst mit Screen Flow oder Quick Action. Dateiname: nicht festlegbar, ein asynchroner Flow benennt die Datei kurz nach der Erstellung um. E-Mail: kein Versand im Standard, per Flow nachgebaut. Vorbelegung: Sprache und Vorlage per Flow auf Servicetermin und Arbeitsauftrag. Styling: eigene LWCs als Bausteine, zum Beispiel Trennlinie oder verknüpfte Liste mit langen Textfeldern und Berichtsbezeichnungen wie Techniker statt Erstellt von. Eigene Komponenten lesen Daten über GraphQL, funktionieren offline und erscheinen korrekt in der mobilen Vorschau.](../../../assets/blog/document-builder-workarounds-de.png)
 
@@ -84,5 +91,3 @@ Die Flows aus Grenze 2 und 3 laufen nach der nächsten Synchronisierung auf dem 
 - **Halten Sie die Flows an einer Stelle.** Ein Flow für die Vorbelegung, einer für Umbenennung und E-Mail. Dann findet ein Admin die Regeln und kann sie ändern.
 - **Bauen Sie die LWCs als kleine Bibliothek.** Trennlinie, verknüpfte Liste, eventuell ein Kopf mit Logo. Wiederverwendbar in jeder Vorlage.
 - **Testen Sie offline mit echten Geräten.** Einschließlich der Vorschau, auf iOS und Android, bevor der erste Techniker live geht.
-
-Wenn Sie einen Field-Service-Rollout planen und den Servicebericht von Anfang an richtig aufsetzen wollen, sehen Sie sich meine [Leistungen](../../leistungen/) an oder [schreiben Sie mir](#contact).

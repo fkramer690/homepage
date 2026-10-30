@@ -194,6 +194,66 @@ export const contactBriefs = {
       ],
     },
   },
+  'b2b-commerce': {
+    de: {
+      title: 'Planen Sie einen B2B-Shop für Händler oder Kunden?',
+      text: 'Ob B2B Commerce auf Salesforce zu Ihrem Bestellprozess passt, zeigt sich an wenigen Punkten. In 30 Minuten gehen wir sie gemeinsam durch.',
+      bring: [
+        'Wer heute wie bestellt: per Mail, Telefon, EDI oder über ein bestehendes Portal',
+        'Wie viele Artikel, Preislisten und kundenspezifische Preise es gibt',
+        'Welches ERP Aufträge, Bestände und Preise führt',
+      ],
+      clarify: [
+        'Ob ein Salesforce-Shop, ein anderes Shopsystem oder ein schlankes Portal besser passt',
+        'Welche Daten aus dem ERP der Shop wirklich braucht und in welchem Takt',
+        'Welcher erste Schritt sich lohnt, zum Beispiel ein Ersatzteilshop',
+      ],
+    },
+    en: {
+      title: 'Planning a B2B shop for dealers or customers?',
+      text: 'Whether B2B Commerce on Salesforce fits your ordering process shows in a few points. In 30 minutes we go through them together.',
+      bring: [
+        'Who orders how today: by email, phone, EDI or through an existing portal',
+        'How many products, price lists and customer-specific prices there are',
+        'Which ERP holds orders, stock and prices',
+      ],
+      clarify: [
+        'Whether a Salesforce store, another shop system or a lean portal fits better',
+        'Which ERP data the store really needs and how often',
+        'Which first step pays off, for example a spare parts shop',
+      ],
+    },
+  },
+  'revenue-cloud': {
+    de: {
+      title: 'Revenue Cloud einführen oder von CPQ umsteigen?',
+      text: 'Ob sich der Wechsel lohnt und in welcher Reihenfolge, hängt an Ihrem Angebots- und Abrechnungsprozess. In 30 Minuten prüfen wir die wichtigsten Punkte.',
+      bring: [
+        'Wie Sie heute Angebote erstellen: mit Salesforce CPQ, einem anderen Werkzeug oder Excel',
+        'Wie viele Produkte, Optionen und Preisregeln es gibt und wer sie pflegt',
+        'Wo heute Verträge, Aufträge und Rechnungen entstehen, in Salesforce oder im ERP',
+      ],
+      clarify: [
+        'Ob Revenue Cloud zu Ihrem Prozess passt oder CPQ vorerst bleibt',
+        'Welche Teile von Konfiguration, Preisfindung und Abrechnung wohin gehören',
+        'Wie ein Migrationspfad ohne Stillstand im Vertrieb aussieht',
+      ],
+    },
+    en: {
+      title: 'Introducing Revenue Cloud or moving off CPQ?',
+      text: 'Whether the move pays off and in which order depends on your quoting and billing process. In 30 minutes we check the key points.',
+      bring: [
+        'How you quote today: with Salesforce CPQ, another tool or spreadsheets',
+        'How many products, options and pricing rules there are and who maintains them',
+        'Where contracts, orders and invoices are created today, in Salesforce or the ERP',
+      ],
+      clarify: [
+        'Whether Revenue Cloud fits your process or CPQ stays for now',
+        'Which parts of configuration, pricing and billing belong where',
+        'What a migration path looks like without stopping sales',
+      ],
+    },
+  },
   ai: {
     de: {
       title: 'Planen Sie einen KI-Agenten auf Salesforce?',
@@ -326,7 +386,7 @@ export const contactBriefs = {
       clarify: [
         'Ob es an der Lösung selbst oder an der Einführung liegt',
         'Welche Gruppen Sie zuerst gewinnen müssen',
-        'Ob zusätzlich eine Change-Management-Expertin dazukommen sollte',
+        'Ob Juliane Winterscheid für Change Management von Anfang an dabei sein sollte',
       ],
     },
     en: {
@@ -340,7 +400,38 @@ export const contactBriefs = {
       clarify: [
         'Whether the cause is the solution itself or the way it was introduced',
         'Which groups you need to win over first',
-        'Whether a dedicated change management expert should join',
+        'Whether Juliane Winterscheid should join for change management from the start',
+      ],
+    },
+  },
+  // Articles by Juliane Winterscheid on change management in general (author: juliane).
+  'change-basics': {
+    de: {
+      title: 'Eine Veränderung steht an und soll im Alltag ankommen?',
+      text: 'In 30 Minuten klären Juliane Winterscheid und ich, wo Ihre Veränderung steht und welche Schritte als Nächstes zählen.',
+      bring: [
+        'Was sich ändern soll, für wen und bis wann',
+        'Wer im Management die Veränderung trägt',
+        'Was bisher geplant ist, zum Beispiel Kommunikation oder Schulungen',
+      ],
+      clarify: [
+        'An welcher Stufe die betroffenen Gruppen heute stehen',
+        'Was vor dem Start feststehen muss',
+        'Ob und in welchem Umfang Change Management von außen sinnvoll ist',
+      ],
+    },
+    en: {
+      title: 'A change is coming and has to stick in daily work?',
+      text: 'In 30 minutes Juliane Winterscheid and I clarify where your change stands and which steps matter next.',
+      bring: [
+        'What is supposed to change, for whom and by when',
+        'Who in management sponsors the change',
+        'What is planned so far, for example communication or training',
+      ],
+      clarify: [
+        'At which stage the groups affected stand today',
+        'What has to be settled before the start',
+        'Whether outside change management makes sense, and how much of it',
       ],
     },
   },
@@ -353,8 +444,11 @@ export const contactBriefIds = Object.keys(contactBriefs) as [ContactBrief, ...C
 const categoryBriefs: Record<Category, ContactBrief> = {
   devops: 'devops',
   architecture: 'architecture',
+  'change-management': 'change',
   'field-service': 'field-service',
   'manufacturing-cloud': 'manufacturing-cloud',
+  'b2b-commerce': 'b2b-commerce',
+  'revenue-cloud': 'revenue-cloud',
   ai: 'ai',
 };
 

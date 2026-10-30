@@ -33,15 +33,27 @@ Ein Service Document ist ein PDF, das Salesforce Field Service zu einem von drei
 
 Der Document Builder ist der Editor für die Vorlagen. Er läuft im Lightning App Builder und funktioniert per Drag-and-drop: Standardkomponenten für Felder, Tabellen mit verknüpften Datensätzen, Bildergalerien und Unterschriftsfelder. Reicht eine Standardkomponente nicht, können Entwickler eigene Lightning Web Components bauen. Salesforce weist darauf hin, dass diese ein eigenes Druck-Styling brauchen. Komponenten aus der mobilen App lassen sich also nicht einfach wiederverwenden.
 
-Eingeführt hat Salesforce Service Documents mit dem Release Spring '24. Die passende Aktion `createServiceDocument` gibt es ab API-Version 60.0. Damit lassen sich Dokumente auch aus einem Flow oder über die REST-API erzeugen. Die [Entwicklerdokumentation zur Aktion](https://developer.salesforce.com/docs/atlas.en-us.api_action.meta/api_action/actions_obj_create_service_document.htm) nennt zusätzlich Dokumenttypen für Angebote. Der Grund: Salesforce nutzt dieselbe Technik für Angebots-PDFs in Revenue Cloud.
+Eingeführt hat Salesforce Service Documents mit dem Release Spring '24. Die passende Aktion `createServiceDocument` gibt es ab API-Version 60.0. Damit lassen sich Dokumente auch aus einem Flow oder über die REST-API erzeugen. Die [Entwicklerdokumentation zur Aktion](https://developer.salesforce.com/docs/atlas.en-us.api_action.meta/api_action/actions_obj_create_service_document.htm) nennt zusätzlich Dokumenttypen für Angebote. Der Grund: Salesforce nutzt dieselbe Technik für Angebots-PDFs in Revenue Cloud. Wie Angebote dort funktionieren, steht in [Kapitel 3 der Masterclass Revenue Cloud](../../masterclass/revenue-cloud/angebot-vertrag-auftrag/).
 
 Nicht verwechseln sollten Sie den Namen mit S-Docs. S-Docs ist ein eigenständiges Produkt im AppExchange und hat mit dieser Funktion nichts zu tun.
 
 ## Was kostet der Document Builder?
 
-Nichts extra, solange Field Service lizenziert ist. Laut [Salesforce-Hilfe zu den Berechtigungen](https://help.salesforce.com/s/articleView?id=fs_document_builder_perm_sets.htm&language=en_US&type=5) brauchen Nutzer entweder die Permission Set License Field Service Dispatcher oder Field Service Mobile. Contractor- und Contractor+-Lizenzen sind ausgeschlossen. Das ist wichtig, wenn Subunternehmer Dokumente erstellen sollen.
+Nichts extra, solange Field Service lizenziert ist. Laut [Salesforce-Hilfe zu den Berechtigungen](https://help.salesforce.com/s/articleView?id=fs_document_builder_perm_sets.htm&language=en_US&type=5) brauchen Nutzer entweder die Permission Set License Field Service Dispatcher oder Field Service Mobile.
 
-Das Volumen ist begrenzt. Jeder Nutzer mit Dispatcher-, Dispatcher-Plus- oder Mobile-Lizenz bekommt 250 Dokumente pro Monat. Braucht die Org mehr, gibt es ein einmaliges Zusatzkontingent von 10.000 Dokumenten. Eine schnelle Rechnung: Ein Techniker mit fünf Einsätzen am Tag und 21 Arbeitstagen erstellt rund 105 Berichte im Monat. Das liegt deutlich unter der Grenze. Eng wird es, wenn pro Einsatz mehrere Dokumente entstehen, etwa Servicebericht, Checkliste und eine korrigierte Fassung nach einer Reklamation.
+```hinweis achtung
+Contractor- und Contractor+-Lizenzen sind ausgeschlossen. Das ist wichtig, wenn Subunternehmer Dokumente erstellen sollen.
+```
+
+Das Volumen ist begrenzt:
+
+```kennzahlen
+250 | Dokumente pro Nutzer und Monat mit Dispatcher-, Dispatcher-Plus- oder Mobile-Lizenz
+10.000 | Dokumente als einmaliges Zusatzkontingent, wenn die Org mehr braucht
+quelle: Salesforce-Hilfe zu Document Builder und zu den Field-Service-Limits
+```
+
+Eine schnelle Rechnung: Ein Techniker mit fünf Einsätzen am Tag und 21 Arbeitstagen erstellt rund 105 Berichte im Monat. Das liegt deutlich unter der Grenze. Eng wird es, wenn pro Einsatz mehrere Dokumente entstehen, etwa Servicebericht, Checkliste und eine korrigierte Fassung nach einer Reklamation.
 
 Die Einrichtung dauert etwa eine Stunde. Sie legen ein Permission Set ohne Lizenz an, aktivieren die Systemberechtigungen "Document Builder" und "Lightning SDK for Field Service Mobile" und weisen es Disponenten und Technikern zu. Außerdem muss das Vorlagenfeld auf die Seitenlayouts von Arbeitsauftrag und Servicetermin, sonst kann niemand eine Vorlage wählen.
 
@@ -96,4 +108,4 @@ Die Kombination, die oft sinnvoll ist: Document Builder für alles, was der Tech
 4. **Bauen Sie eine Vorlage im Document Builder**, meist den Standard-Servicebericht, und testen Sie sie mit zwei Technikern in einem echten Einsatz, auch offline.
 5. **Planen Sie erst dann ein zweites Tool**, für die Dokumente, die in Schritt 2 durchgefallen sind, und rechnen Sie über mehrere Jahre statt mit dem Preis im ersten Jahr.
 
-In den meisten Field-Service-Projekten deckt der Standard den Servicebericht ab, und das Zusatztool lohnt sich für eine kurze Liste von Dokumenten mit Logik. Wenn Sie eine zweite Meinung zu Ihren Dokumenten oder zur [Architektur im Field Service](../../leistungen/salesforce-architektur/) möchten, [schreiben Sie mir](#contact). Was die neuen mobilen Funktionen für Techniker bedeuten, steht in [meinem Artikel zu geführten Abläufen und Spracheingabe im Außendienst](../salesforce-field-service-mobile-aussendienst/).
+In den meisten Field-Service-Projekten deckt der Standard den Servicebericht ab, und das Zusatztool lohnt sich für eine kurze Liste von Dokumenten mit Logik. Was die neuen mobilen Funktionen für Techniker bedeuten, steht in [meinem Artikel zu geführten Abläufen und Spracheingabe im Außendienst](../salesforce-field-service-mobile-aussendienst/).

@@ -40,7 +40,10 @@ Ein Coding-Agent ist ein KI-Werkzeug, das selbst Dateien liest, Befehle ausführ
 | Cursor | Anysphere | von Salesforce für sf-skills und Hosted MCP als kompatibel genannt | Preise vor Einsatz beim Anbieter prüfen |
 | Agentforce Vibes (zum Vergleich) | Salesforce | nativ, Skills vorinstalliert | Flex Credits oder Unmetered-Lizenz |
 
+```vertiefung Für Entwickler
+titel: Was das Claude-Code-Plugin mitbringt
 Das Plugin für Claude Code nennt Salesforce [„our first official plugin, built for Claude Code“](https://developer.salesforce.com/blogs/2026/08/headless-development-with-skills-and-a-claude-code-plugin). Es bündelt etwa 40 der über 100 Skills aus der offenen Bibliothek sf-skills und richtet die MCP-Server salesforce-api-context, salesforce-metadata-experts und salesforce-lsp ein. Für OpenCode, Codex und Cursor nennt Salesforce dieselbe Skills-Bibliothek als installierbar, ein offizielles Plugin für diese Agenten habe ich in der Salesforce-Dokumentation nicht gefunden. Die gehosteten MCP-Server lassen sich laut [Summer-'26-Guide](https://developer.salesforce.com/blogs/2026/06/the-salesforce-developers-guide-to-the-summer-26-release) mit „any MCP-compatible AI client, such as Claude, ChatGPT, Cursor“ verbinden. GitHub hebt Copilot mit [Agent HQ](https://github.blog/news-insights/company-news/pick-your-agent-use-claude-and-codex-on-agent-hq/) sogar eine Ebene höher: Seit Februar 2026 laufen dort Claude- und Codex-Agenten neben dem eigenen Agenten, damals als Public Preview für Copilot Pro+ und Enterprise.
+```
 
 Praktisch heißt das: Claude Code bringt heute das meiste fertig verpackte Salesforce-Setup mit. Bei den anderen Agenten richtet Ihr Team Skills und MCP-Server selbst ein. Den ausführlichen Vergleich nach Vertrag, EU-Datenresidenz, Kostenmodell und Governance finden Sie in [Agentforce Vibes, Claude Code oder Copilot](../../../blog/agentforce-vibes-claude-code-copilot-vergleich/). Wer noch den lokalen Salesforce DX MCP Server nutzt, findet die nötige Umstellung in [Kapitel 3](../mcp-und-schnittstellen/).
 
@@ -53,6 +56,13 @@ Die Regeln stehen in einer Regeldatei im Repository, etwa `CLAUDE.md` oder `AGEN
 ### Kein Benchmark für Apex
 
 Einen unabhängigen, öffentlichen Benchmark, der Claude, GPT und Gemini an Apex, LWC oder Flow misst, habe ich nicht gefunden. Salesforce selbst hat für sein früheres Code-Modell xGen-Code [bessere Genauigkeit behauptet](https://www.salesforce.com/blog/agentforce-developers-llms/), aber keine Messwerte veröffentlicht, nur eine interne Umfrage mit rund 125 eingesparten Minuten pro Woche. Was es gibt, sind Sicherheitsdaten: Veracode misst im [GenAI Code Security Report 2026](https://www.veracode.com/news/llms-are-getting-smarter-but-not-safer-veracode-2026-genai-code-security-report-finds-ai-generated-code-security-has-stalled-at-56%25-pass-rate/) eine Sicherheits-Passrate von 56 Prozent für KI-generierten Code, bei Java nur 30 Prozent. Apex ist Java syntaktisch nah, ich würde diese Zahl ernst nehmen.
+
+```kennzahlen
+56 % | Sicherheits-Passrate für KI-generierten Code
+30 % | Sicherheits-Passrate bei Java
+125 Min. | eingespart pro Woche laut interner Salesforce-Umfrage, ohne Messwerte
+quelle: Veracode GenAI Code Security Report 2026; Salesforce zu xGen-Code
+```
 
 Ein Signal ist die Wahl von Salesforce selbst. Agentforce Vibes ist laut [GA-Ankündigung](https://developer.salesforce.com/developer-centers/agentforce-vibes/announcements/agentforce-vibes-4-1-0) „powered by Claude and the Mastra agent orchestration engines“, und Salesforce will laut [Claudeforce-Pressemitteilung](https://www.salesforce.com/ap/news/press-releases/2026/08/27/sg-salesforce-and-anthropic-announce-claudeforce-the-1-ai-meets-the-1-ai-crm/) Claude Code und Claude Enterprise allen eigenen Entwicklern und Wissensarbeitern zur Verfügung stellen. Ein Signal ersetzt aber keine Messung an Ihrem Code. Ich empfehle eine kleine eigene Testsuite: 10 bis 20 Aufgaben aus Ihrem Backlog, etwa ein Trigger-Handler mit Bulk-Test, eine LWC für das Händlerportal und eine Flow-Änderung im Garantieprozess. Gemessen werden Deploy-Erfolg, Testergebnis und die Zahl der Review-Befunde. Welche Prüfungen jeder KI-Code bestehen muss, beschreibt [Kapitel 8](../best-practices-ki-code/).
 
@@ -68,7 +78,9 @@ Trennen Sie zwei Entscheidungen: welches Modell Ihre Agentforce-Agenten zur Lauf
 
 Quellen: [Supported Models](https://developer.salesforce.com/docs/ai/agentforce/guide/supported-models.html), [Anthropic, Oktober 2025](https://www.anthropic.com/news/salesforce-anthropic-expanded-partnership), [Claudeforce](https://www.salesforce.com/ap/news/press-releases/2026/08/27/sg-salesforce-and-anthropic-announce-claudeforce-the-1-ai-meets-the-1-ai-crm/), [SalesforceBen zur Dreamforce 2026](https://www.salesforceben.com/biggest-dreamforce-26-announcements-everything-in-a-nutshell/).
 
-Ein Detail für Ihre Architektur: Die Seite Supported Models listet Claude derzeit bis Sonnet 5 und Opus 4.8 und beschreibt das Modell „Salesforce Default“ als „managed mix of trusted models (currently including GPT-4o)“. Pressemitteilung und Dokumentation laufen also nicht im Gleichschritt. Prüfen Sie im Setup, welches Modell Ihr Agent tatsächlich nutzt, statt sich auf die Ankündigung zu verlassen.
+```hinweis achtung
+Die Seite Supported Models listet Claude derzeit bis Sonnet 5 und Opus 4.8 und beschreibt das Modell „Salesforce Default“ als „managed mix of trusted models (currently including GPT-4o)“. Pressemitteilung und Dokumentation laufen also nicht im Gleichschritt. Prüfen Sie im Setup, welches Modell Ihr Agent tatsächlich nutzt, statt sich auf die Ankündigung zu verlassen.
+```
 
 ## Wo werden Code, Metadaten und Testdaten verarbeitet?
 
@@ -85,7 +97,11 @@ Bei Herstellern steckt im Repository mehr, als man denkt: Preisfindung, Rabattfr
 
 Quellen: [Anthropic Data Residency](https://platform.claude.com/docs/en/manage-claude/data-residency), [Anthropic Pricing](https://platform.claude.com/docs/en/about-claude/pricing), [OpenAI Data Residency in Europe](https://openai.com/index/introducing-data-residency-in-europe/), [GitHub Changelog September 2026](https://github.blog/changelog/month/09-2026/).
 
-Dazu kommt das Arbeitsrecht. Laut [CMS](https://cms.law/de/deu/legal-updates/ki-transformation-und-betriebsrat-mitbestimmung-richtig-gestalten) sind KI-Systeme grundsätzlich geeignet, Leistungs- oder Verhaltensdaten auszuwerten, weshalb für ihre Einführung in aller Regel eine Betriebsvereinbarung nötig ist und ihre Nutzung ohne sie unzulässig bleibt. Coding-Agenten mit Nutzungsstatistiken fallen nach meiner Lesart darunter; lassen Sie das für Ihr Setup von Ihrem Fachanwalt bestätigen. Wie Sie Betriebsrat und DSGVO früh einbinden, beschreibe ich in [KI-Coding, Betriebsrat und DSGVO](../../../blog/ki-coding-betriebsrat-dsgvo/).
+Dazu kommt das Arbeitsrecht. Laut [CMS](https://cms.law/de/deu/legal-updates/ki-transformation-und-betriebsrat-mitbestimmung-richtig-gestalten) sind KI-Systeme grundsätzlich geeignet, Leistungs- oder Verhaltensdaten auszuwerten, weshalb für ihre Einführung in aller Regel eine Betriebsvereinbarung nötig ist und ihre Nutzung ohne sie unzulässig bleibt. Wie Sie Betriebsrat und DSGVO früh einbinden, beschreibe ich in [KI-Coding, Betriebsrat und DSGVO](../../../blog/ki-coding-betriebsrat-dsgvo/).
+
+```hinweis offen
+Coding-Agenten mit Nutzungsstatistiken fallen nach meiner Lesart unter diese Mitbestimmung. Lassen Sie das für Ihr Setup von Ihrem Fachanwalt bestätigen.
+```
 
 ## Was kosten Coding-Agenten pro Entwickler?
 
@@ -106,9 +122,11 @@ Wer bei Copilot nur den Seatpreis sieht, unterschätzt den agentischen Einsatz. 
 
 Die DevOps-Anbieter haben 2026 eigene Agenten gebracht. Sie ersetzen den Coding-Agenten nicht, sie steuern, was davon in Produktion kommt.
 
-- **Gearset Cam** übernimmt laut [Ankündigung vom 2. September 2026](https://assets.gearset.com/2026/09/01112431/Gearset-2026-Cam-Announcement.pdf) ein Ticket bis zum Pull Request und prüft vorher, ob die Änderung deploybar ist. In Piloten lieferte Cam bis zu 44 Prozent der Pull Requests eines Teams, bei einem Kunden wurden 75 Prozent davon gemergt. Das sind Herstellerzahlen.
-- **Copado Agentia Headless** bringt Copados Agenten in die IDE und ist laut [Copado](https://www.copado.com/dreamforce-2026-copado) allgemein verfügbar.
-- **Provar MCP** ist laut [Provar](https://provar.com/blog/product/provar-mcp-bringing-ai-to-salesforce-test-automation/) ein Open-Source-Plugin für die Salesforce CLI, das Tests erzeugt und gegen über 240 Regeln prüft. Es läuft mit Claude, Copilot und Cursor und kostet mit einer Provar-Automation-Lizenz nichts extra.
+| Agent | Was er tut |
+|---|---|
+| Gearset Cam | Übernimmt laut [Ankündigung vom 2. September 2026](https://assets.gearset.com/2026/09/01112431/Gearset-2026-Cam-Announcement.pdf) ein Ticket bis zum Pull Request und prüft vorher, ob die Änderung deploybar ist. In Piloten lieferte Cam bis zu 44 Prozent der Pull Requests eines Teams, bei einem Kunden wurden 75 Prozent davon gemergt. Das sind Herstellerzahlen. |
+| Copado Agentia Headless | Bringt Copados Agenten in die IDE und ist laut [Copado](https://www.copado.com/dreamforce-2026-copado) allgemein verfügbar. |
+| Provar MCP | Ist laut [Provar](https://provar.com/blog/product/provar-mcp-bringing-ai-to-salesforce-test-automation/) ein Open-Source-Plugin für die Salesforce CLI, das Tests erzeugt und gegen über 240 Regeln prüft. Es läuft mit Claude, Copilot und Cursor und kostet mit einer Provar-Automation-Lizenz nichts extra. |
 
 Weder Gearset noch Copado nennen in diesen Quellen das zugrunde liegende Modell. Für einen Hersteller mit Datenschutzvorgaben ist das eine Due-Diligence-Frage: welches Modell, welche Region, welche Aufbewahrung.
 
@@ -118,13 +136,15 @@ Nehmen wir einen Maschinenbauer mit SAP S/4HANA, Service Cloud und einem Händle
 
 So würde ich vorgehen:
 
-1. **Freigabeliste festlegen.** Copilot bleibt, Claude Code kommt dazu, aber über ein Konto des Kunden, entweder Enterprise-Seats oder Bedrock mit regionalem Endpunkt. Private Konten des Partners schließe ich aus, weil dann niemand weiß, wo Code und Logs landen.
-2. **Regeldatei im Kunden-Repository.** Eine `AGENTS.md` als gemeinsame Basis, die Copilot liest, plus eine kurze `CLAUDE.md`, die darauf verweist. Verantwortlich ist der interne Architekt, nicht der Partner.
-3. **Arbeitsorte begrenzen.** Agenten arbeiten nur in Developer-Sandboxes ohne Produktivdaten. Händlerdaten aus der Full-Copy-Sandbox gehören nicht in Prompts.
-4. **Kosten realistisch schätzen.** Acht Entwickler mit angenommen 15 aktiven Tagen kosten beim Anthropic-Durchschnitt von 13 $ rund 1.560 $ im Monat. Hätten alle acht Copilot Business, wären es 152 $ Seatpreis, der gepoolte Rahmen von 15.200 Credits deckt aber nur 152 $ Modellnutzung ab. Bei ähnlich intensiver agentischer Arbeit landen beide Werkzeuge in derselben Größenordnung.
-5. **Vertrag anpassen.** Der Partner legt offen, welche Werkzeuge und Modelle er nutzt, und die Kosten werden entweder in den Tagessatz eingepreist oder durchgereicht. Was in den SOW gehört, steht in [Partner, KI-Coding und Vertrag](../../../blog/partner-ki-coding-regeln-vertrag/).
-6. **Mit der Testsuite starten.** 15 Aufgaben aus dem Backlog, beide Werkzeuge, gleiche Gates. Danach entscheidet das Ergebnis, nicht die Vorliebe einzelner Entwickler.
+| Schritt | Vorgehen |
+|---|---|
+| Freigabeliste festlegen | Copilot bleibt, Claude Code kommt dazu, aber über ein Konto des Kunden, entweder Enterprise-Seats oder Bedrock mit regionalem Endpunkt. Private Konten des Partners schließe ich aus, weil dann niemand weiß, wo Code und Logs landen. |
+| Regeldatei im Kunden-Repository | Eine `AGENTS.md` als gemeinsame Basis, die Copilot liest, plus eine kurze `CLAUDE.md`, die darauf verweist. Verantwortlich ist der interne Architekt, nicht der Partner. |
+| Arbeitsorte begrenzen | Agenten arbeiten nur in Developer-Sandboxes ohne Produktivdaten. Händlerdaten aus der Full-Copy-Sandbox gehören nicht in Prompts. |
+| Kosten realistisch schätzen | Acht Entwickler mit angenommen 15 aktiven Tagen kosten beim Anthropic-Durchschnitt von 13 $ rund 1.560 $ im Monat. Hätten alle acht Copilot Business, wären es 152 $ Seatpreis, der gepoolte Rahmen von 15.200 Credits deckt aber nur 152 $ Modellnutzung ab. Bei ähnlich intensiver agentischer Arbeit landen beide Werkzeuge in derselben Größenordnung. |
+| Vertrag anpassen | Der Partner legt offen, welche Werkzeuge und Modelle er nutzt, und die Kosten werden entweder in den Tagessatz eingepreist oder durchgereicht. Was in den SOW gehört, steht in [Partner, KI-Coding und Vertrag](../../../blog/partner-ki-coding-regeln-vertrag/). |
+| Mit der Testsuite starten | 15 Aufgaben aus dem Backlog, beide Werkzeuge, gleiche Gates. Danach entscheidet das Ergebnis, nicht die Vorliebe einzelner Entwickler. |
 
 Nach meiner Einschätzung dauert in so einem Setup die Abstimmung mit Betriebsrat und Datenschutz länger als die Werkzeugauswahl. Planen Sie sie deshalb zuerst ein. Die Steuerung mehrerer Partner mit unterschiedlichen Werkzeugen ist Teil meiner Arbeit in der [Partnersteuerung](../../../leistungen/partnersteuerung/), die Gates gehören ins [DevOps und Release Management](../../../leistungen/devops-und-release-management/). Wie Salesforce sein Partnermodell gerade auf Agenten umstellt, behandelt [Kapitel 5](../aiforce-und-systemintegratoren/).
 
-Wählen Sie den Coding-Agenten nach Vertrag, Datenresidenz und Kosten, und legen Sie die Qualität in Regeldatei, Review und Pipeline, die Ihnen gehören. Wenn Sie Ihre Freigabeliste oder die Regeln für Ihren Partner gegenprüfen lassen möchten, [schreiben Sie mir](#contact).
+Wählen Sie den Coding-Agenten nach Vertrag, Datenresidenz und Kosten, und legen Sie die Qualität in Regeldatei, Review und Pipeline, die Ihnen gehören.

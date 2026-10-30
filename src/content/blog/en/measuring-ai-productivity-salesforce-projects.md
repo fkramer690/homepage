@@ -38,6 +38,14 @@ Five sources come up in every discussion, and they measure very different things
 - **DORA, 2025.** The [State of AI-assisted Software Development](https://cloud.google.com/blog/products/ai-machine-learning/announcing-the-2025-dora-report) surveyed nearly 5,000 professionals. 90 percent use AI at work and more than 80 percent believe it raised their productivity. AI adoption now goes with higher delivery throughput, but still with lower delivery stability. DORA's summary: "AI doesn't fix a team; it amplifies what's already there."
 - **McKinsey, August 2026.** A [survey of 334 product and engineering leaders](https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/beyond-the-copilot-scaling-the-agentic-product-development-life-cycle) found 11.8 percent average time savings across the development life cycle, but only 6.2 percent less rework. 30 percent reported that team productivity fell. About 80 percent of engineers gained roughly 3 percent, the top 20 percent about 55 percent.
 
+```kennzahlen
+55% | less time with Copilot on a small, new JavaScript task (GitHub 2022)
+19% | more time with AI for experienced developers in their own large codebases (METR 2025)
+20% | speed-up the same developers still believed in afterwards (METR 2025)
+11.8% | average time savings across the development life cycle (McKinsey 2026)
+source: GitHub, controlled experiment 2022; METR, randomised study July 2025; McKinsey, survey of 334 leaders, August 2026
+```
+
 My reading: the speed-up is real for some people and some tasks, and the average is far smaller than the vendor slides. The METR perception gap is the finding I would put in front of every steering committee. If the people doing the work misjudge their own speed by almost 40 points, a partner's "we are 30 percent faster" is an opinion.
 
 ## Why is a Salesforce org closer to METR than to GitHub?
@@ -72,12 +80,19 @@ Both numbers are true. The coding is faster; the programme barely is. The useful
 
 Start before the tools arrive, because a baseline cannot be reconstructed from memory.
 
-1. **Clean up the status workflow** in Jira or Azure DevOps so that "ready", "in review", "in UAT" and "done" carry timestamps. Most programmes already have three months of usable history.
-2. **Write down the definitions** with all partners: when cycle time starts, what counts as an escaped defect, what counts as rework. This belongs in the governance model, not in each partner's report.
-3. **Label AI-assisted pull requests**, so you can compare like with like. Disclosure of AI use is a contract topic, see [rules for partners using AI coding](../partners-using-ai-coding-contract-rules/).
-4. **Report monthly as trends**, never as a ranking of teams or partners. Teams that are ranked start optimising the number.
-5. **Agree a review date**, for example after three months, and decide then whether the setup, the process or the commercial model changes. If a partner really delivers faster, that should show up in the price, which is the question behind [fixed price instead of time and materials](../fixed-price-vs-time-and-materials-ai/).
+```schritte
+Clean up the status workflow
+  In Jira or Azure DevOps, so that "ready", "in review", "in UAT" and "done" carry timestamps. Most programmes already have three months of usable history.
+Write down the definitions
+  With all partners: when cycle time starts, what counts as an escaped defect, what counts as rework. This belongs in the governance model, not in each partner's report.
+Label AI-assisted pull requests
+  So you can compare like with like. Disclosure of AI use is a contract topic, see [rules for partners using AI coding](../partners-using-ai-coding-contract-rules/).
+Report monthly as trends
+  Never as a ranking of teams or partners. Teams that are ranked start optimising the number.
+Agree a review date
+  For example after three months, and decide then whether the setup, the process or the commercial model changes. If a partner really delivers faster, that should show up in the price, which is the question behind [fixed price instead of time and materials](../fixed-price-vs-time-and-materials-ai/).
+```
 
 This is the core of how I set up [programme management for Salesforce programmes](../../services/program-management-nearshore/), and it rests on a working pipeline, as described in [why DevOps decides Salesforce enterprise projects](../why-devops-matters-salesforce-enterprise/).
 
-Measure AI benefit like any other investment: baseline first, a few outcome numbers, and a date to decide. If you want help setting up those numbers for your programme, [send me a message](#contact).
+Measure AI benefit like any other investment: baseline first, a few outcome numbers, and a date to decide.
