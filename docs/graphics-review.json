@@ -13,7 +13,7 @@
     "block:pro-contra": {"title": "Pro-Contra", "proposal": 2, "rating": 2, "ratedOn": "2026-10-30"},
     "block:staerken-grenzen": {"title": "Stärken und Grenzen (ersetzt PNG service-documents-limits)", "proposal": 1, "rating": null, "note": "G5 erledigt: Fabian wählte am 2026-10-30 Mockup 4B. Alte PNG war mit 2 bewertet, Notiz „bitte auch neuen vorschlag liefern“", "todo": "docs/backlog.md G5 erledigt"},
     "block:saeulen": {"title": "Säulen mit Dach", "proposal": 1, "rating": 1, "ratedOn": "2026-10-30", "todo": "docs/backlog.md G7 erledigt 2026-10-30 (animiert)"},
-    "block:schritte": {"title": "Schritte", "proposal": 2, "rating": 3, "ratedOn": "2026-10-30", "todo": "docs/backlog.md G2"},
+    "block:schritte": {"title": "Schritte", "proposal": 2, "rating": 3, "ratedOn": "2026-10-30", "todo": "docs/backlog.md G2 erledigt 2026-10-30 (Pfeilband mit Ringen)"},
     "block:stufen": {"title": "Stufen (Kacheln)", "proposal": 2, "rating": 3, "ratedOn": "2026-10-30", "todo": "docs/backlog.md G3 erledigt 2026-10-30 (Pfeilkette)"},
     "block:stufen-treppe": {"title": "Stufen als Treppe", "proposal": 2, "rating": 1, "ratedOn": "2026-10-30", "note": "super aber säulen per se könnte man auch gut animieren", "todo": "docs/backlog.md G7 erledigt 2026-10-30 (animiert)"},
     "block:tabelle": {"title": "Tabelle hell, auch Variante matrix (ersetzt PNGs integration-leading-system, object-ownership-matrix, sfdx-hardis-vs-commercial)", "proposal": 1, "rating": null, "note": "G5 erledigt: Fabian wählte am 2026-10-30 die Mockups 1A, 2A, 3A. Alte PNGs waren mit 3 bewertet, Notizen „kontrast komisch“, „bitte neuen vorschlag“", "todo": "docs/backlog.md G5 erledigt"},
@@ -216,7 +216,7 @@
     "card:vibes-claude-code-copilot-comparison": {"title": "Kartenskizzen der Blog-Übersicht (196)", "proposal": 1, "rating": 1, "ratedOn": "2026-10-30", "note": "nicht alle richtig geil aber das würde den rahmen sprengen"},
     "card:visual-remote-assistant-instead-of-visit": {"title": "Kartenskizzen der Blog-Übersicht (196)", "proposal": 1, "rating": 1, "ratedOn": "2026-10-30", "note": "nicht alle richtig geil aber das würde den rahmen sprengen"},
     "card:warranty-adjudication-agent-winter-27": {"title": "Kartenskizzen der Blog-Übersicht (196)", "proposal": 1, "rating": 1, "ratedOn": "2026-10-30", "note": "nicht alle richtig geil aber das würde den rahmen sprengen"},
-    "cert:basics": {"title": "Zertifikate: Was eine Zertifizierung zeigt", "proposal": 2, "rating": 2, "ratedOn": "2026-10-30", "note": "Schnittstellen steht etwas aus der rechten Box hinaus. please fix", "todo": "docs/backlog.md G8"},
+    "cert:basics": {"title": "Zertifikate: Was eine Zertifizierung zeigt", "proposal": 2, "rating": 2, "ratedOn": "2026-10-30", "note": "Schnittstellen steht etwas aus der rechten Box hinaus. please fix", "todo": "docs/backlog.md G8 erledigt 2026-10-30"},
     "cert:coverage": {"title": "Zertifikate: Abdeckung", "proposal": 1, "rating": 1, "ratedOn": "2026-10-30"},
     "hub:ai": {"title": "Masterclass-Kopfzeichnungen", "proposal": 1, "rating": 2, "ratedOn": "2026-10-30", "note": "bitte auch animieren", "todo": "docs/backlog.md G7 erledigt 2026-10-30 (animiert)"},
     "hub:b2b-commerce": {"title": "Masterclass-Kopfzeichnungen", "proposal": 1, "rating": 2, "ratedOn": "2026-10-30", "note": "bitte auch animieren", "todo": "docs/backlog.md G7 erledigt 2026-10-30 (animiert)"},
@@ -282,7 +282,7 @@
     "page:arbeitsweise": {"title": "Arbeitsweise mit Fotos und Fortschrittslinie", "proposal": 1, "rating": 1, "ratedOn": "2026-10-30"},
     "page:hero": {"title": "Hero mit Maßlinien am Foto", "proposal": 2, "rating": 1, "ratedOn": "2026-10-30"},
     "page:leistungen": {"title": "Leistungskacheln", "proposal": 2, "rating": 1, "ratedOn": "2026-10-30"},
-    "page:logos": {"title": "Logo-Band", "proposal": 2, "rating": 2, "ratedOn": "2026-10-30", "note": "macht es sinn das bissche ngrößer zu machen? so zirka 20 Prozent?", "todo": "docs/backlog.md G9"},
+    "page:logos": {"title": "Logo-Band", "proposal": 2, "rating": 2, "ratedOn": "2026-10-30", "note": "macht es sinn das bissche ngrößer zu machen? so zirka 20 Prozent?", "todo": "docs/backlog.md G9 erledigt 2026-10-30 (+30 %)"},
     "page:mc-liste": {"title": "Masterclass-Liste", "proposal": 3, "rating": 2, "ratedOn": "2026-10-30", "note": "bitte vorschlag machen", "todo": "docs/backlog.md G10 erledigt 2026-10-30 (Variante B: Icon-Kacheln)"},
     "page:proof": {"title": "Zahlenleiste", "proposal": 1, "rating": 2, "ratedOn": "2026-10-30", "note": "geht. aber mir fällt gerade auch nix besseres ein"},
     "page:referenzen": {"title": "Referenz-Karten (Slider)", "proposal": 2, "rating": 2, "ratedOn": "2026-10-30", "note": "bitte vorschlag machen", "todo": "docs/backlog.md G11"},
@@ -290,7 +290,7 @@
     "png:agentforce-adoption": {"title": "agentforce-adoption", "proposal": 1, "rating": 1, "ratedOn": "2026-10-30"},
     "png:casey-or-service-rep": {"title": "casey-or-service-rep", "proposal": 2, "rating": 1, "ratedOn": "2026-10-30"},
     "png:devops-pipeline": {"title": "devops-pipeline", "proposal": 1, "rating": 1, "ratedOn": "2026-10-30", "note": "super. kann man aber auch gut animieren", "todo": "docs/backlog.md G6"},
-    "png:document-builder-workarounds": {"title": "document-builder-workarounds", "proposal": 2, "rating": 2, "ratedOn": "2026-10-30", "note": "die höhe der grauen box kann man bisschen reduzieren. sit ein quick win", "todo": "docs/backlog.md G8"},
+    "png:document-builder-workarounds": {"title": "document-builder-workarounds", "proposal": 2, "rating": 2, "ratedOn": "2026-10-30", "note": "die höhe der grauen box kann man bisschen reduzieren. sit ein quick win", "todo": "docs/backlog.md G8 erledigt 2026-10-30"},
     "png:field-service-report": {"title": "field-service-report", "proposal": 1, "rating": 1, "ratedOn": "2026-10-30"},
     "png:make-or-buy-roi": {"title": "make-or-buy-roi", "proposal": 2, "rating": 2, "ratedOn": "2026-10-30"},
     "png:nearshore-team-setup": {"title": "nearshore-team-setup", "proposal": 2, "rating": 2, "ratedOn": "2026-10-30"},
@@ -300,6 +300,6 @@
     "png:tool-ownership": {"title": "tool-ownership", "proposal": 2, "rating": 2, "ratedOn": "2026-10-30"},
     "png:well-architected-mapping": {"title": "well-architected-mapping", "proposal": 2, "rating": 3, "ratedOn": "2026-10-30", "note": "an sich gut aber bitte animieren", "todo": "docs/backlog.md G6"},
     "png:which-clouds": {"title": "which-clouds", "proposal": 2, "rating": 2, "ratedOn": "2026-10-30", "note": "auch gerne animieren", "todo": "docs/backlog.md G6"},
-    "png:winter-27-org-display": {"title": "winter-27-org-display", "proposal": 2, "rating": 2, "ratedOn": "2026-10-30", "note": "ist orange in dem stylesheet?", "todo": "docs/backlog.md G8"}
+    "png:winter-27-org-display": {"title": "winter-27-org-display", "proposal": 2, "rating": 2, "ratedOn": "2026-10-30", "note": "ist orange in dem stylesheet?", "todo": "docs/backlog.md G8 erledigt 2026-10-30"}
   }
 }
