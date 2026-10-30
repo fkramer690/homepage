@@ -256,6 +256,7 @@
     "icon:license": {"title": "Icon-Bibliothek (42)", "proposal": 1, "rating": 1, "ratedOn": "2026-10-30"},
     "icon:mail": {"title": "Icon-Bibliothek (42)", "proposal": 1, "rating": 1, "ratedOn": "2026-10-30"},
     "icon:message": {"title": "Icon-Bibliothek (42)", "proposal": 1, "rating": 1, "ratedOn": "2026-10-30"},
+    "icon:phone": {"title": "Icon Telefon (Anruf-Button, Rufnummer im Kontakt)", "proposal": 1, "rating": null},
     "icon:mic": {"title": "Icon-Bibliothek (42)", "proposal": 1, "rating": 1, "ratedOn": "2026-10-30"},
     "icon:partners": {"title": "Icon-Bibliothek (42)", "proposal": 1, "rating": 1, "ratedOn": "2026-10-30"},
     "icon:pipeline": {"title": "Icon-Bibliothek (42)", "proposal": 1, "rating": 1, "ratedOn": "2026-10-30"},
