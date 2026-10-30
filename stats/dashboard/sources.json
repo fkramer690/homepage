@@ -1,7 +1,7 @@
 [
  {
   "source": "www.fk-sd.de",
-  "pageviews": 340,
+  "pageviews": 350,
   "visits": 0
  },
  {
@@ -13,5 +13,10 @@
   "source": "Direct",
   "pageviews": 50,
   "visits": 50
+ },
+ {
+  "source": "teams.public.onecdn.static.microsoft",
+  "pageviews": 10,
+  "visits": 10
  }
 ]

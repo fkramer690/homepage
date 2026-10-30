@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-30T04:47:52.516Z",
+  "generatedAt": "2026-10-30T11:23:10.824Z",
   "range": {
     "start": "2026-09-30",
     "end": "2026-10-30"
   },
   "browsers": [
     {
-      "count": 440,
+      "count": 450,
       "dimensions": {
         "userAgentBrowser": "Chrome"
       },
@@ -22,16 +22,25 @@
       "sum": {
         "visits": 10
       }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "userAgentBrowser": "Edge"
+      },
+      "sum": {
+        "visits": 10
+      }
     }
   ],
   "countries": [
     {
-      "count": 440,
+      "count": 460,
       "dimensions": {
         "countryName": "DE"
       },
       "sum": {
-        "visits": 40
+        "visits": 50
       }
     },
     {
@@ -89,22 +98,31 @@
       "sum": {
         "visits": 10
       }
+    },
+    {
+      "count": 20,
+      "dimensions": {
+        "date": "2026-10-30"
+      },
+      "sum": {
+        "visits": 10
+      }
     }
   ],
   "devices": [
     {
-      "count": 450,
+      "count": 470,
       "dimensions": {
         "deviceType": "desktop"
       },
       "sum": {
-        "visits": 50
+        "visits": 60
       }
     }
   ],
   "pages": [
     {
-      "count": 130,
+      "count": 140,
       "dimensions": {
         "requestPath": "/"
       },
@@ -134,6 +152,15 @@
       "count": 30,
       "dimensions": {
         "requestPath": "/homepage/"
+      },
+      "sum": {
+        "visits": 10
+      }
+    },
+    {
+      "count": 30,
+      "dimensions": {
+        "requestPath": "/en/"
       },
       "sum": {
         "visits": 10
@@ -170,15 +197,6 @@
       "count": 20,
       "dimensions": {
         "requestPath": "/leistungen/salesforce-architektur/"
-      },
-      "sum": {
-        "visits": 0
-      }
-    },
-    {
-      "count": 20,
-      "dimensions": {
-        "requestPath": "/en/"
       },
       "sum": {
         "visits": 0
@@ -286,7 +304,7 @@
   ],
   "referers": [
     {
-      "count": 340,
+      "count": 350,
       "dimensions": {
         "refererHost": "www.fk-sd.de"
       },
@@ -310,6 +328,15 @@
       },
       "sum": {
         "visits": 50
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "refererHost": "teams.public.onecdn.static.microsoft"
+      },
+      "sum": {
+        "visits": 10
       }
     }
   ]

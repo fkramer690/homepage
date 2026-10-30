@@ -1,11 +1,16 @@
 [
  {
   "browser": "Chrome",
-  "pageviews": 440,
+  "pageviews": 450,
   "visits": 40
  },
  {
   "browser": "Unknown",
+  "pageviews": 10,
+  "visits": 10
+ },
+ {
+  "browser": "Edge",
   "pageviews": 10,
   "visits": 10
  }
