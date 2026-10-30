@@ -61,7 +61,7 @@ const data = {
       worksFor: { '@id': `${abs(base)}#organization` },
       workLocation: { '@type': 'Place', name: 'Köln/Bonn' },
       knowsAbout: ['Salesforce Architecture', 'Salesforce DevOps', 'Salesforce Field Service', 'Service Cloud', 'Manufacturing Cloud', 'B2B Commerce', 'Salesforce Integration', 'Partner Governance'],
-      sameAs: [site.linkedin],
+      sameAs: [site.linkedin, ...site.profiles],
     },
   ],
 };
