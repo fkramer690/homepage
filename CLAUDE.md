@@ -49,3 +49,7 @@ Every indexable page has a unique `<title>` of at most 60 characters, keyword fi
 ## FAQ heading
 
 On German pages the FAQ section is always called "Häufig gestellte Fragen" (English: "Frequently asked questions"), never "Häufige Fragen". `scripts/check-blog.mjs` fails on the old wording anywhere in `src/`.
+
+## Repository root
+
+Only project files live in the repository root; `scripts/check-root.mjs` fails the build on anything else. Card drawing previews go to `previews/` (git-ignored) via `npm run cards:export`; where every other kind of file belongs is listed under "Where files go" in README.md.
