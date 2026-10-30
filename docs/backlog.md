@@ -137,7 +137,7 @@ Aus Fabians Bewertung: alle Grafiken mit 3 und alle mit einer Notiz, die einen A
 | G8 | Quick Wins: Zertifikatsgrafik „Schnittstellen“ läuft aus der Box, graue Boxen der Document-Builder-Grafik niedriger, Orange in winter-27-org-display ersetzen (gehört nicht zur Palette) | 2 | Erledigt 30.10.2026: Text in zwei Zeilen, graue Boxen auf Texthöhe gekürzt, Orange durch Hellgrau ersetzt |
 | G9 | Logo-Band auf der Startseite ca. 20 % größer | 2 | Erledigt 30.10.2026: Variante B, Logos und Abstände 30 % größer, auch auf dem Handy |
 | G10 | Vorschlag Masterclass-Liste auf der Startseite | 2 | Erledigt 30.10.2026: Variante A, Liste in weißer Box mit Icon und Themenzeile je Masterclass |
-| G11 | Vorschlag Referenz-Karten auf der Startseite | 2 | Thread |
+| G11 | Vorschlag Referenz-Karten auf der Startseite | 2 | Erledigt 30.10.2026: Projekt im Fokus, nummerierte Liste plus Panel mit Foto, Ausgangslage, Rolle und Ergebnis; Projektliste unter „Über mich“ durch Verweis ersetzt |
 
 ## Weitere Ideen
 

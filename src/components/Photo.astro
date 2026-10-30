@@ -12,8 +12,10 @@ interface Props {
   widths?: number[];
   eager?: boolean;
   class?: string;
+  /** Crop override (CSS object-position) where the default focus cuts off a head. */
+  focus?: string;
 }
-const { photo, lang, sizes, widths = [400, 640, 960, 1280], eager = false, class: className } = Astro.props;
+const { photo, lang, sizes, widths = [400, 640, 960, 1280], eager = false, class: className, focus } = Astro.props;
 const p = photos[photo];
 ---
 <Picture
@@ -28,5 +30,5 @@ const p = photos[photo];
   fetchpriority={eager ? 'high' : 'auto'}
   decoding="async"
   class={className}
-  style={`object-position: ${p.focus}`}
+  style={`object-position: ${focus ?? p.focus}`}
 />

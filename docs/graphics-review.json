@@ -289,7 +289,7 @@
     "page:logos": {"title": "Logo-Band", "proposal": 2, "rating": 2, "ratedOn": "2026-10-30", "note": "macht es sinn das bissche ngrößer zu machen? so zirka 20 Prozent?", "todo": "docs/backlog.md G9 erledigt 2026-10-30 (+30 %)"},
     "page:mc-liste": {"title": "Masterclass-Liste", "proposal": 3, "rating": 2, "ratedOn": "2026-10-30", "note": "bitte vorschlag machen", "todo": "docs/backlog.md G10 erledigt 2026-10-30 (Variante A: Liste mit Icons und Themenzeile)"},
     "page:proof": {"title": "Zahlenleiste", "proposal": 1, "rating": 2, "ratedOn": "2026-10-30", "note": "geht. aber mir fällt gerade auch nix besseres ein"},
-    "page:referenzen": {"title": "Referenz-Karten (Slider)", "proposal": 2, "rating": 2, "ratedOn": "2026-10-30", "note": "bitte vorschlag machen", "todo": "docs/backlog.md G11"},
+    "page:referenzen": {"title": "Referenz-Karten (Projekt im Fokus)", "proposal": 2, "rating": 2, "ratedOn": "2026-10-30", "note": "bitte vorschlag machen", "todo": "docs/backlog.md G11 erledigt 2026-10-30 (Projekt im Fokus: Liste plus Panel mit Foto, Ausgangslage, Rolle, Ergebnis)"},
     "png:agent-context-engine": {"title": "agent-context-engine", "proposal": 3, "rating": 1, "ratedOn": "2026-10-30"},
     "png:agentforce-adoption": {"title": "agentforce-adoption", "proposal": 1, "rating": 1, "ratedOn": "2026-10-30"},
     "png:casey-or-service-rep": {"title": "casey-or-service-rep", "proposal": 2, "rating": 1, "ratedOn": "2026-10-30"},
