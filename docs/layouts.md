@@ -123,7 +123,9 @@ counterparts do not repeat. The studio portrait and the stage photo stay for
 author box, contact, schema and the speaking page.
 
 - Start page hero: portrait in the hall in a framed box right of the text, hidden below 900px.
-- Start page "Arbeitsweise": one 3:2 photo above each of the four steps.
+- Start page "Ausgewählte Projekte": one wide photo per project panel. The
+  "Arbeitsweise" steps have no photos any more (Fabian 2026-10-30: otherwise too
+  many photos of him on one page).
 - Service pages and questions page: square photo right of the page head, as wide
   as the side column (`.service-head.has-photo`, mapping `servicePhotos`); 16:9 full width below 960px.
 - Masterclass overview: 3:2 photo at the top of the side column.
@@ -246,6 +248,22 @@ Content block ```saeulen (see `docs/content-blocks.md`), CSS `.cb-pillars`.
 - On phones the pillars stand below each other with the icon on the left.
 - Fits: three to five equal principles or building blocks of one thing, not a sequence.
 
+## Project in focus (start page, "Ausgewählte Projekte")
+
+Chosen 2026-10-30 (graphics review G11) instead of the card slider: no new icons and
+no square tiles, because the services section already uses them. Built in
+`src/components/Home.astro` (`.rf`), texts in `references.items` of the i18n files,
+photo and crop per project in `refPhotos`.
+
+- **Numbered list left, one panel right** (radio tabs, no script): the list shows
+  number, sector and title; the active row gets a white background and a cyan left bar.
+  On phones the list becomes swipeable chips with short names (`short`).
+- **Panel:** wide photo of Fabian (own `focus` per project so heads stay whole), then
+  number and sector, title, a definition list *Ausgangslage / Meine Rolle / Ergebnis*
+  (outcome line darker) and the stack tags. All panels stay in the HTML.
+- The About section no longer repeats the projects; it links up to them.
+- Fits: any section with a few cases that each need context, role and result.
+
 ## References from the graphics review (30.10.2026)
 
 Rated 1 by Fabian in the first graphics review (register `docs/graphics-review.json`,
@@ -264,5 +282,5 @@ speaking page pattern, which he rated 2 (still fine to reuse, no longer the firs
   any wide graphic.
 - **Blog card drawings** as a series, the **icon library**, and the **article preview
   images** (`src/lib/og.ts`; logo line to be aligned with the standard image, backlog G4).
-- **Start page:** hero with measure lines on the photo, "Arbeitsweise" with photos and
+- **Start page:** hero with measure lines on the photo, "Arbeitsweise" with icons and
   progress line, service tiles with "Weitere Leistungen" box.
