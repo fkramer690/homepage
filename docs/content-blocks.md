@@ -205,6 +205,45 @@ mit: Mit Pull-Request-Review | Jede Änderung geht durch ein Review, bevor sie i
 ```
 ````
 
+## 15. Tabelle (light table)
+
+A comparison or assignment as a light HTML table instead of a table image, so the text stays readable on phones and for search engines. First line `titel:` (EN `title:`), then `spalten: Corner | Column | Column` (EN `columns:`, two to four columns, the corner may stay empty), then one row per line `Row label | cell | cell` (two to eight rows). A trailing `*` marks a cell (light cyan with a cyan bar) or, in the `spalten:` line, a whole column. `Name ~ short name` gives a long column a shorter label for phones. Optional `marke: Word` (EN `mark:`) puts that word as a tag in front of every marked cell, optional `fazit:` (EN `note:`) adds the dashed note below. On phones every row becomes a card with the column names as small labels. Variant `matrix`: marked cells show their text as a solid cyan tag, the others as quiet grey text that phones leave out, for responsibility matrices. Approved by Fabian 2026-10-30 (G5) for the system map on the integration service page, the object ownership matrix and the sfdx-hardis comparison.
+
+````
+```tabelle
+titel: Systemlandkarte: welches System bei welchen Daten führt
+spalten: | Salesforce | ERP
+Kunden und Kontakte | Interessenten und Kontakte * | Kunden mit Aufträgen und Rechnungen *
+Produkte und Preise | Liest, was der Vertrieb braucht | Meist das führende System *
+marke: führt
+fazit: Typische Aufteilung. Die Details unterscheiden sich in jedem Unternehmen.
+```
+````
+
+````
+```tabelle matrix
+titel: Object Ownership Matrix, vereinfachtes Beispiel
+spalten: Objekt | Stream Vertrieb | Stream Service
+Account | Verantwortlich * | stimmt sich ab
+Case | stimmt sich ab | Verantwortlich *
+```
+````
+
+## 16. Stärken und Grenzen (strengths and limits)
+
+What a tool does well and where it stops: `titel:` (EN `title:`), two to four strengths `+ Title | text` as tiles with a cyan tick (a trailing `*` highlights one, e.g. the licence), two to six limits `- Title | text` as a compact ✕ list in a white box (headed "Grenzen" / "Limits"), optional `besser: Text` (EN `better:`) as a line "Dafür besser" / "Better suited" below. Approved by Fabian 2026-10-30 (G5) for the Document Builder article.
+
+````
+```staerken-grenzen
+titel: Document Builder: stark für den Servicebericht vor Ort
++ Unterschrift | Kunde und Techniker, auch offline in der mobilen App
++ Enthalten | in der Field-Service-Lizenz, 250 Dokumente pro Nutzer und Monat *
+- Format | nur PDF und nur synchron
+- Android | nur Servicetermin
+besser: Für Prüfprotokolle und Massenläufe: Salesforce Document Generation oder ein AppExchange-Tool.
+```
+````
+
 ## Confirmed experience (for `praxis`)
 
 Only these, in Fabian's wording, without client names, industry or size:

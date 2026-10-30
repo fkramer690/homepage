@@ -56,8 +56,17 @@ When I joined the programme, nobody had clearly defined which team led on which 
 
 The first step was to route every change through a pull request with a review. For a while, every single one went across my desk. From those reviews we wrote down standards, including naming conventions, one automation per object and context, and test coverage. Two elements made the biggest difference: the object ownership matrix, and rules for configuration, such as which values belong in custom metadata types or custom labels instead of being hard-coded.
 
-![Simplified example of an object ownership matrix: the sales stream owns Account, Opportunity and Quote, the service stream owns Case and Asset, the field service stream owns Work Order. Every other stream coordinates with the owner before it changes one of these objects.](../../../assets/blog/object-ownership-matrix-en.png)
-
+```tabelle matrix
+title: Object ownership matrix, simplified example
+columns: Object | Sales stream | Service stream | Field service stream
+Account | Owner * | coordinates | coordinates
+Opportunity | Owner * | coordinates | coordinates
+Quote | Owner * | coordinates | coordinates
+Case | coordinates | Owner * | coordinates
+Asset | coordinates | Owner * | coordinates
+Work Order | coordinates | coordinates | Owner *
+note: Before a team changes another team's object, it coordinates with the owner.
+```
 The rule was simple: before a team changed another stream's object, it had to agree the change with the owner. In the simplified example above, sales owns Account, Opportunity and Quote, service owns Case and Asset, and field service owns Work Order.
 
 ```praxis

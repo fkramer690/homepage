@@ -12,18 +12,18 @@ import { createHash } from 'node:crypto';
 import { existsSync } from 'node:fs';
 import { iconHtml } from './icons.mjs';
 
-export const blockNames = ['hinweis', 'praxis', 'kennzahlen', 'zeitleiste', 'ablauf', 'pro-contra', 'vertiefung', 'schritte', 'stufen', 'vergleich', 'hebel', 'eintrag', 'saeulen', 'partnerfluss'];
+export const blockNames = ['hinweis', 'praxis', 'kennzahlen', 'zeitleiste', 'ablauf', 'pro-contra', 'vertiefung', 'schritte', 'stufen', 'vergleich', 'hebel', 'eintrag', 'saeulen', 'partnerfluss', 'tabelle', 'staerken-grenzen'];
 
 const labels = {
   de: {
     tipp: 'Tipp', achtung: 'Achtung', offen: 'Schriftlich bestätigen lassen', praxis: 'Aus meiner Praxis', entry: 'Eintrag',
     quelle: 'Quelle', next: 'nächster Termin', risiko: 'Größtes Risiko', legend: { sf: 'Salesforce', erp: 'ERP', ext: 'angrenzender Prozess' },
-    diagram: 'Ablaufdiagramm',
+    diagram: 'Ablaufdiagramm', grenzen: 'Grenzen', besser: 'Dafür besser',
   },
   en: {
     tipp: 'Tip', achtung: 'Warning', offen: 'Get it confirmed in writing', praxis: 'From my practice', entry: 'Entry',
     quelle: 'Source', next: 'next date', risiko: 'Biggest risk', legend: { sf: 'Salesforce', erp: 'ERP', ext: 'adjacent process' },
-    diagram: 'Flow diagram',
+    diagram: 'Flow diagram', grenzen: 'Limits', besser: 'Better suited',
   },
 };
 const variants = ['tipp', 'achtung', 'offen'];
@@ -190,6 +190,51 @@ export function parseCompare(content) {
   return cols;
 }
 
+// Table: "titel:" (EN "title:"), "spalten: Corner | Column | Column" (EN "columns:"; a
+// trailing * marks a whole column, "Name ~ short name" gives phones a shorter label),
+// then "Row label | cell | cell" per row (a trailing * marks a cell), optional
+// "marke: Word" (EN "mark:") as a tag in every marked cell and "fazit:" (EN "note:").
+export function parseTable(content) {
+  const out = { title: '', cols: [], rows: [], mark: '', note: '' };
+  const cell = (c) => ({ text: c.trim().replace(/\s*\*$/, ''), mark: /\*$/.test(c.trim()) });
+  for (const raw of lines(content)) {
+    const l = raw.trim();
+    if (!l) continue;
+    const k = keyLine(l, ['titel', 'title', 'spalten', 'columns', 'marke', 'mark', 'fazit', 'note']);
+    if (k?.key === 'titel' || k?.key === 'title') { out.title = k.value; continue; }
+    if (k?.key === 'marke' || k?.key === 'mark') { out.mark = k.value; continue; }
+    if (k?.key === 'fazit' || k?.key === 'note') { out.note = k.value; continue; }
+    if (k) {
+      out.cols = k.value.split('|').map((c) => {
+        const { text, mark } = cell(c);
+        const [name, short] = text.split('~').map((x) => x.trim());
+        return { name, short: short || name, mark };
+      });
+      continue;
+    }
+    const [label, ...cells] = l.split('|');
+    out.rows.push({ label: label.trim(), cells: cells.map(cell) });
+  }
+  return out;
+}
+
+// Strengths and limits: "titel:" (EN "title:"), "+ Title | text" per strength (a trailing
+// * highlights one), "- Title | text" per limit, optional "besser: Text" (EN "better:").
+export function parseStrengths(content) {
+  const out = { title: '', strengths: [], limits: [], better: '' };
+  for (const raw of lines(content)) {
+    const l = raw.trim();
+    if (!l) continue;
+    const k = keyLine(l, ['titel', 'title', 'besser', 'better']);
+    if (k) { out[['titel', 'title'].includes(k.key) ? 'title' : 'better'] = k.value; continue; }
+    const m = l.match(/^([+-])\s+(.*)$/);
+    if (!m) { out.unknown = l; continue; }
+    const [title, text] = m[2].replace(/\s*\*$/, '').split('|').map((x) => x.trim());
+    out[m[1] === '+' ? 'strengths' : 'limits'].push({ title, text, mark: /\*$/.test(m[2]) });
+  }
+  return out;
+}
+
 // Partner flow: "ohne: Title | caption" and "mit: Title | caption" (EN "without:", "with:").
 export function parsePartnerFlow(content) {
   const out = {};
@@ -304,6 +349,22 @@ export function validateBlock(block) {
     const levers = parseSteps(content);
     between(levers.length, 2, 3, 'levers');
     if (levers.some((l) => !l.title || !l.meta || !l.text)) errs.push('hebel: every lever needs "Title | effect" and an indented description line');
+  } else if (name === 'tabelle') {
+    const { title, cols, rows } = parseTable(content);
+    if (arg && arg !== 'matrix') errs.push('tabelle: the only variant is matrix (```tabelle matrix)');
+    if (!title) errs.push('tabelle: add a "titel:" (DE) or "title:" (EN) line');
+    between(cols.length - 1, 2, 4, 'columns');
+    between(rows.length, 2, 8, 'rows');
+    for (const r of rows) if (r.cells.length !== cols.length - 1 || !r.label || r.cells.some((c) => !c.text)) errs.push(`tabelle: row "${r.label}" needs a label and one filled cell per column`);
+    if (arg === 'matrix' && rows.some((r) => !r.cells.some((c) => c.mark))) errs.push('tabelle matrix: mark the responsible cell of every row with *');
+  } else if (name === 'staerken-grenzen') {
+    const { title, strengths, limits, unknown } = parseStrengths(content);
+    if (!title) errs.push('staerken-grenzen: add a "titel:" (DE) or "title:" (EN) line');
+    if (unknown) errs.push(`staerken-grenzen: cannot read "${unknown}", use "+ Title | text" or "- Title | text"`);
+    between(strengths.length, 2, 4, 'strengths');
+    between(limits.length, 2, 6, 'limits');
+    if ([...strengths, ...limits].some((x) => !x.title || !x.text)) errs.push('staerken-grenzen: every line needs "Title | text"');
+    if (strengths.filter((x) => x.mark).length > 1 || limits.some((x) => x.mark)) errs.push('staerken-grenzen: mark at most one strength with *');
   }
   return errs;
 }
@@ -311,8 +372,8 @@ export function validateBlock(block) {
 // Prose of a block, for word counts and the wording checks in check-blog.
 export function blockProse(block) {
   return block.content
-    .replace(/^\s*(quelle|source|titel|title|pro|contra|sf|erp|ext|fall|case|band|ohne|without|mit|with|fazit|note|dach|roof|basis|base):\s*/gim, '')
-    .replace(/\s\*$/gm, '')
+    .replace(/^\s*(quelle|source|titel|title|pro|contra|sf|erp|ext|fall|case|band|ohne|without|mit|with|fazit|note|dach|roof|basis|base|spalten|columns|marke|mark|besser|better):\s*/gim, '')
+    .replace(/\s\*(?=\s*(\||$))/gm, '')
     .replace(/(--|\.\.)>?/g, ' ')
     .replace(/\|/g, ' ');
 }
@@ -494,6 +555,24 @@ export function renderBlock(block, { lang, isExternal, readDiagram, today = new 
   if (name === 'partnerfluss') {
     const { without, with: withArch } = parsePartnerFlow(content);
     return `<figure class="cb cb-partnerflow"><div class="cb-pf-col cb-pf-without"><p class="cb-pf-title">${inline(without.title, o)}</p>${partnerFlowSvg('without', arg, lang)}<p class="cb-pf-caption">${inline(without.caption, o)}</p></div><div class="cb-pf-col cb-pf-with"><p class="cb-pf-title">${inline(withArch.title, o)}</p>${partnerFlowSvg('with', arg, lang)}<p class="cb-pf-caption">${inline(withArch.caption, o)}</p></div></figure>`;
+  }
+  if (name === 'tabelle') {
+    const { title, cols, rows, mark, note } = parseTable(content);
+    const matrix = arg === 'matrix';
+    const head = `<div class="cb-tb-row cb-tb-head" role="row"><span role="columnheader">${inline(cols[0].name, o)}</span>${cols.slice(1).map((c) => `<span role="columnheader"${c.mark ? ' class="cb-tb-hl"' : ''}>${inline(c.name, o)}</span>`).join('')}</div>`;
+    const cellHtml = (c, col) => {
+      const cls = ['cb-tb-cell', c.mark && 'cb-tb-mark', col.mark && 'cb-tb-hl', matrix && !c.mark && 'cb-tb-quiet'].filter(Boolean).join(' ');
+      const body = matrix && c.mark ? `<b class="cb-tb-tag cb-tb-tag-solid">${inline(c.text, o)}</b>` : `${c.mark && mark ? `<b class="cb-tb-tag">${escHtml(mark)}</b>` : ''}${inline(c.text, o)}`;
+      return `<span role="cell" class="${cls}" data-col="${escHtml(col.short)}">${body}</span>`;
+    };
+    const body = rows.map((r) => `<div class="cb-tb-row" role="row"><span role="rowheader" class="cb-tb-label">${inline(r.label, o)}</span>${r.cells.map((c, i) => cellHtml(c, cols[i + 1])).join('')}</div>`).join('');
+    return `<figure class="cb cb-table${matrix ? ' cb-table-matrix' : ''}" style="--cols:${cols.length - 1}">${label(title)}<div class="cb-tb" role="table" aria-label="${escHtml(title)}">${head}${body}</div>${note ? `<figcaption class="cb-tb-note">${inline(note, o)}</figcaption>` : ''}</figure>`;
+  }
+  if (name === 'staerken-grenzen') {
+    const { title, strengths, limits, better } = parseStrengths(content);
+    const tiles = strengths.map((x) => `<li${x.mark ? ' class="cb-sg-mark"' : ''}>${icon.check}<span class="cb-sg-title">${inline(x.title, o)}</span><span class="cb-sg-text">${inline(x.text, o)}</span></li>`).join('');
+    const crosses = limits.map((x) => `<li>${icon.cross}<span><strong>${inline(x.title, o)}:</strong> ${inline(x.text, o)}</span></li>`).join('');
+    return `<figure class="cb cb-strengths" style="--n:${strengths.length}">${label(title)}<ul class="cb-sg-tiles">${tiles}</ul><div class="cb-sg-limits"><p class="cb-sg-head">${escHtml(t.grenzen)}</p><ul>${crosses}</ul></div>${better ? `<p class="cb-sg-better"><span>${escHtml(t.besser)}</span>${inline(better, o)}</p>` : ''}</figure>`;
   }
   if (name === 'vergleich') {
     return `<div class="cb cb-compare">${parseCompare(content).map((c) => `<div class="cb-compare-col cb-compare-${c.kind}"><p class="cb-compare-title">${inline(c.title, o)}</p><ul>${c.items.map((i) => `<li>${c.kind === 'with' ? icon.check : icon.cross}<span>${inline(i, o)}</span></li>`).join('')}</ul></div>`).join('')}</div>`;

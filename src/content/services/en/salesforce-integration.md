@@ -58,8 +58,16 @@ Most integration problems start with an unclear answer to this question. If both
 - **Orders and invoices:** created or confirmed in the ERP and visible in Salesforce.
 - **Cases and service history:** Salesforce, with links to orders and installed products from the ERP.
 
-![System map of which system leads for which data: for customers and contacts, Salesforce leads for prospects and contacts and the ERP for customers with orders and invoices; for products and prices the ERP is usually the leading system and Salesforce reads what sales needs; orders and invoices are created or confirmed in the ERP and visible in Salesforce; Salesforce leads for cases and service history, with links to orders and installed products from the ERP. This is a typical split, the details differ in every company.](../../../assets/blog/integration-leading-system-en.png)
-
+```tabelle
+title: System map: which system leads for which data
+columns: | Salesforce | ERP
+Customers and contacts | Prospects and contacts * | Customers with orders and invoices *
+Products and prices | Reads what sales needs | Usually the leading system *
+Orders and invoices | Visible to sales and service | Created or confirmed here *
+Cases and service history | Cases and service history * | Orders and installed products to link to
+mark: leads
+note: Typical split. The details differ in every company, so the map belongs to the architecture.
+```
 The details differ in every company, which is why this map is part of the [Salesforce architecture](../salesforce-architecture/) and not a decision left to the individual interface.
 
 ## Do you need a middleware?
