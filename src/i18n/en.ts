@@ -82,6 +82,8 @@ export const en = {
     photoAlt: 'Fabian Kramer giving a live demo on stage',
     photoCaption: 'On stage: live demos instead of slideware.',
     quote: 'Not everything that can be built in Salesforce should be built in Salesforce.',
+    quoteLead: 'In one sentence:',
+    quoteItem: 4,
   },
   services: {
     label: 'Services',

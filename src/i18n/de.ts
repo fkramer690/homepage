@@ -64,6 +64,8 @@ export const de: Dict = {
     photoAlt: 'Fabian Kramer bei einer Live-Demo auf der Bühne',
     photoCaption: 'Auf der Bühne: Live-Demo statt Foliensatz.',
     quote: 'Nicht alles, was man in Salesforce bauen kann, sollte man in Salesforce bauen.',
+    quoteLead: 'Auf einen Satz gebracht:',
+    quoteItem: 4,
   },
   services: {
     label: 'Leistungen',

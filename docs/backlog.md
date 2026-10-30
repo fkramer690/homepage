@@ -166,6 +166,8 @@ Ideen für mehr persönliche Note, von Fabian freigegeben, später abarbeiten:
 
 16. ~~**Alle Grafiken durchgehen und die besten nominieren**~~ (erledigt 30.10.2026) – Fabian hat alle 302 Grafiken bewertet (Übersicht https://claude.ai/artifact/KusEFgFZ7i7THrd8Lz2FeC, Register `docs/graphics-review.json`, Ablauf `docs/graphics-review.md`). Die 1er stehen in `docs/layouts.md`, die Todos unter „Grafiken verbessern“ oben. Neue Grafiken laufen über das Register automatisch in die nächste Runde.
 
+17. **Zitat nach einem Vergleich in Blogartikeln** (von Fabian gewünscht 30.10.2026) – die beiden Muster aus der Startseite (Rolle → Zitat) auch in Blogartikeln einsetzen: „Bühnenband“ (Foto rechts, Zitat kursiv auf dunklem Verlauf, gebaut auf der Startseite) und „Grundsatz-Karte“ (gestrichelte Linie aus der Vergleichsspalte in eine dunkle Karte mit rundem Foto). Beschreibung in `docs/layouts.md` („Quote after a comparison“). Dafür als Content-Block in die Bibliothek aufnehmen und passende Artikel mit einem Vergleich plus Kernsatz auswählen. *Entwurf: Claude, Freigabe: Fabian.*
+
 Weitere offene Punkte:
 - Fallstudien-Seiten (Ausgangslage, Architekturentscheidungen, Ergebnis, Grafik), sobald die Kundenfreigaben vorliegen. Status klärt Fabian.
 - Logo-Paket (ZIP) hochladen

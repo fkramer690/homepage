@@ -98,20 +98,21 @@ const serviceIcons = ['architecture', 'change', 'pipeline', 'integration', 'team
         <div class="compare">
           <div class="compare-col">
             <h3 class="compare-head mono">{t.role.withoutTitle}</h3>
-            <ul>{t.role.without.map((item) => <li>{item}</li>)}</ul>
+            <ul>{t.role.without.map((item, i) => <li class:list={{ 'compare-hit': i === t.role.quoteItem }}>{item}</li>)}</ul>
           </div>
           <div class="compare-col compare-with">
             <h3 class="compare-head mono">{t.role.withTitle}</h3>
-            <ul>{t.role.with.map((item) => <li>{item}</li>)}</ul>
+            <ul>{t.role.with.map((item, i) => <li class:list={{ 'compare-hit': i === t.role.quoteItem }}>{item}</li>)}</ul>
           </div>
         </div>
-        <div class="quote-row">
-          <blockquote class="quote"><p>{qOpen}{t.role.quote}{qClose}</p></blockquote>
-          <figure class="stage-photo">
-            <Image src={speaking} alt={t.role.photoAlt} widths={[320, 480, 614]} sizes="300px" />
-            <figcaption class="mono">{t.role.photoCaption}</figcaption>
-          </figure>
-        </div>
+        <p class="role-quote-lead">{t.role.quoteLead}</p>
+        <figure class="role-quote">
+          <Image src={speaking} alt={t.role.photoAlt} widths={[400, 614]} sizes="(max-width: 760px) 100vw, 614px" />
+          <div class="role-quote-text">
+            <blockquote><p>{qOpen}{t.role.quote}{qClose}</p></blockquote>
+            <figcaption class="mono">Fabian Kramer · {t.role.photoCaption}</figcaption>
+          </div>
+        </figure>
       </div>
     </section>
 
