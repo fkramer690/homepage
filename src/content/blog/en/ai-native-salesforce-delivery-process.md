@@ -37,28 +37,18 @@ AI-native delivery means building the delivery process around the agent instead 
 - **The pipeline is a deterministic quality fence.** It validates and deploys without a model deciding anything.
 - **People sit at clearly defined gates** and hold every conversation with the client themselves. The agent takes part in no meeting.
 
-```vergleich
-without: AI-assisted: the old process, typed faster
-- The business analyst writes the minutes and types up stories.
-- The client sees something that runs only in acceptance testing.
-- Developers use a coding assistant, the flow stays the same.
-- Gut feeling decides whether feedback is a bug or a change request.
-with: AI-native: the ticket as executable specification
-- The agent delivers minutes and story drafts, the business analyst curates.
-- The client clicks through a prototype in the second meeting.
-- The agent builds approved stories, people check at fixed gates.
-- Every piece of feedback is classified against the confirmed minutes.
-```
+The difference to AI-assisted: there the old process gets a coding assistant, the business analyst keeps typing up stories, and the client sees something that runs only in acceptance testing. Here the agent delivers minutes, stories and a prototype, and every piece of feedback is classified against the confirmed minutes.
 
 ## How does the process run from workshop to production?
 
-The graphic shows all 14 steps in three lanes: what people do in conversation, what the agent does and what the pipeline checks. The blue bars are the gates where a person makes a binding decision. The column on the right shows the status of the Jira ticket and who sets it: the agent creates stories directly in Jira, the pipeline moves the status on by itself after validation and deployment.
+The process has three phases with 14 steps in total. Each graphic shows one phase in three lanes: what people do in conversation, what the agent does and what the pipeline checks. The dark bars are the gates where a person makes a binding decision. The blue column on the right shows the status of the Jira ticket and who sets it: the agent creates stories directly in Jira, the pipeline moves the status on by itself after validation and deployment.
+
+### Discovery: the agent prepares, people hold the conversation
 
 ```prozess
-title: AI-native delivery process for Salesforce
+title: Phase 1 of 3 · Discovery
 lanes: People | Agent | Pipeline
 ticket: Jira
-phase: Discovery
 Agent | Prepare the workshop | Org analysis, agenda, hypotheses
 People | Discovery workshop | Client, BA, architect; transcript runs
 Agent | Evaluation | Minutes, story drafts with timestamps | Stories created · agent
@@ -66,34 +56,28 @@ gate: Client confirms the minutes
 Agent | Prototype | In a scratch org, in hours
 People | Refinement on the prototype | Client clicks through, transcript runs
 Agent | Story diff and impact | Changes, test cases, metadata | Stories updated · agent
-gate: BA and architect approve: Ready for Agent | Ready for Agent · BA
-phase: Build
-Agent | Implementation | Plan, approval, code and tests | In progress · agent
-Agent | Pull request | Description, Jira link, AI review | In review · agent
-gate: Developer reviews and merges
-Pipeline | CI validation | Delta as check deploy, tests, analyzer | Validated · pipeline
-loop: Failure: agent reads the log and fixes, at most 2 attempts
-phase: Release
-Pipeline | Deploy to UAT | Agent writes test scripts into the ticket | In UAT · pipeline
-People | Acceptance test | Client tests, BA supports
-Agent | Feedback triage | Bug, change request or question | Bug or CR created · agent
-gate: BA and client decide on bugs and change requests
-loop: Bugs back to 07, change requests as a new story to 06
-gate: Client approves the release | Approved · client
-Pipeline | Release to production | Quick deploy of the validated ID | Done · pipeline
-Agent | Release notes and guide | BA proofreads
-note: **Rule:** The agent has no access to production. Only the pipeline deploys there.
+gate: BA and architect approve the story | Ready for Agent · BA
 ```
-
-### Discovery: the agent prepares, people hold the conversation
 
 Before the workshop the agent analyses the existing org: objects, flows, validation rules, permissions. From that it drafts the agenda, hypotheses and targeted questions, for example: "Three flows on Opportunity overlap. Who owns them on the business side?" The business analyst sharpens the agenda and strikes hypotheses that are politically sensitive. What such an org analysis looks like is in [AI org assessment: finding technical debt](../ai-org-assessment-technical-debt/).
 
 In the workshop the business analyst moderates and does not have to take notes. From the transcript the agent produces minutes with decisions, open questions and owners, plus drafts of epics and stories in Jira, each with a timestamp. It keeps "the client said" strictly apart from "the agent interprets". The business analyst curates: strikes, sharpens, adds the fit-gap (standard, configuration or code), corrects misheard terms and mixed-up speakers.
 
-Once the client confirms the minutes, the scope baseline stands. The agent then builds a prototype in a scratch org, a short-lived test org, within hours: objects, fields, layouts and a simple flow. In the refinement the client reacts to something real instead of paper. Afterwards the agent writes no new set of stories but a diff against the existing ones: "Acceptance criterion 3 changed because the client said at 00:23:14 …", with the affected metadata, test cases and impact against the state of the repository.
+Once the client confirms the minutes, the scope baseline stands. The agent then builds a prototype in a scratch org, a short-lived test org, within hours: objects, fields, layouts and a simple flow. In the refinement the client reacts to something real instead of paper. Afterwards the agent writes no new set of stories but a diff against the existing ones: "Acceptance criterion 2 changed because the client said at 00:41:07 …", with the affected metadata, test cases and impact against the state of the repository.
 
 ### Build: the agent codes, the developer reviews
+
+```prozess
+title: Phase 2 of 3 · Build
+lanes: People | Agent | Pipeline
+ticket: Jira
+start: 7 | 3
+Agent | Implementation | Plan, approval, code and tests | In progress · agent
+Agent | Pull request | Description, Jira link, AI review | In review · agent
+gate: Developer reviews and merges
+Pipeline | CI validation | Delta as check deploy, tests, analyzer | Validated · pipeline
+loop: Failure: agent reads the log and fixes, at most 2 attempts
+```
 
 Only when business analyst and architect set a story to "Ready for Agent" does the build start. The agent reads the ticket, creates a feature branch, writes an implementation plan and carries it out only after the developer approves it: Apex, Lightning Web Components or flow, each with tests. When a requirement is unclear it reads the linked passage of the transcript instead of guessing. It writes the pull request description with ticket link and component list, and an AI reviewer comments first.
 
@@ -103,6 +87,22 @@ Then the pipeline runs: a delta package built with `sfdx-git-delta`, a check-onl
 
 ### Release: the client tests, the agent classifies
 
+```prozess
+title: Phase 3 of 3 · Release
+lanes: People | Agent | Pipeline
+ticket: Jira
+start: 10 | 4
+Pipeline | Deploy to UAT | Agent writes test scripts into the ticket | In UAT · pipeline
+People | Acceptance test | Client tests, BA supports
+Agent | Feedback triage | Bug, change request or question | Bug or CR created · agent
+gate: BA and client decide on bugs and CRs
+loop: Bugs back to 07, change requests as a new story to 06
+gate: Client approves the release | Approved · client
+Pipeline | Release to production | Quick deploy of the validated ID | Done · pipeline
+Agent | Release notes and guide | BA proofreads
+note: **Rule:** The agent has no access to production. Only the pipeline deploys there.
+```
+
 After the merge the pipeline deploys to the UAT sandbox, and the agent writes test scripts straight from the acceptance criteria into the ticket. The client tests, the business analyst supports the sessions. The agent classifies every piece of feedback: **bug** when it contradicts a confirmed criterion, **change request** when it is new, **open question** when the evidence is missing. Business analyst and client confirm the classification. Bugs go back to implementation, change requests are assessed as a new story, commercially as well. Scope creep becomes visible, with evidence instead of gut feeling. How an acceptance test with the business is set up is in [Salesforce UAT with the business](../salesforce-uat-business-acceptance-testing/).
 
 After approval the pipeline rolls out the already validated deployment ID by quick deploy. The agent writes release notes and a user guide in the language of the business, and the business analyst proofreads.
@@ -111,41 +111,39 @@ After approval the pipeline rolls out the already validated deployment ID by qui
 
 Agent and pipeline decide nothing binding. Every decision that affects scope, quality or production is made by a named person.
 
-```tabelle
-title: Roles in the AI-native delivery process
-columns: | Discovery | Build | Release
-Client | Explains, confirms the minutes * | Answers questions | Tests, approves the release *
-Business analyst | Moderates, curates, approves the spec * | Clarifies business questions | Supports the test, decides on CRs *
-Architect | Sets guardrails, approves the spec * | Maintains the rules file | Watches data model and sharing
-Developer | Checks the prototype | Approves plans, reviews, merges * | Takes over on escalation
-Agent | Analyses, takes minutes, drafts | Builds code and tests | Test scripts, triage, release notes
-Pipeline | Not involved yet | Validates deterministically | Deploys to UAT and production
-mark: decides
-note: Marked are the decisions at the five gates. Everything else is groundwork for them.
-```
+| | Discovery | Build | Release |
+|---|---|---|---|
+| Client | Explains, **confirms the minutes** | Answers questions | Tests, **approves the release** |
+| Business analyst | Moderates, curates, **approves the spec** | Clarifies business questions | Supports the test, **decides on CRs** |
+| Architect | Sets guardrails, **approves the spec** | Maintains the rules file | Watches data model and sharing |
+| Developer | Checks the prototype | Approves plans, **reviews and merges** | Takes over on escalation |
+| Agent | Analyses, takes minutes, drafts | Builds code and tests | Test scripts, triage, release notes |
+| Pipeline | Not involved yet | Validates, sets the Jira status | Deploys, sets the Jira status |
+
+In bold are the decisions at the five gates. Everything else is groundwork for them.
 
 The roles change more than the tools do. The business analyst writes less and decides more; the core skill becomes spotting contradictions between what was said and what was meant. The architect becomes the keeper of the rules file, the Markdown file in the repository with trigger framework, naming conventions, sharing rules and prohibitions that the agent reads at the start of every session. It is the biggest lever on the quality of everything the agent produces, see [AI rules file in the Salesforce repository](../ai-rules-file-salesforce-repository/). The client needs more discipline with confirmations, otherwise speed turns into chaos.
 
 ## An example: from a sentence in the workshop to the release note
 
-A scenario as an assumption, to show the chain. A machine builder wants to check warranty claims from its dealers in Salesforce. In the discovery workshop the head of after-sales says at minute 23: "I want to see claims over 5,000 euros myself."
+A scenario as an assumption, to show the chain. In the discovery workshop of a machine builder the head of sales says at minute 14: "We do not close an opportunity under 10,000 euros."
 
-- The agent turns this into the requirement "approval by the head of after-sales from 5,000 euros" in the minutes, with a reference to 00:23:14, and into a story with this acceptance criterion.
-- In the refinement on the prototype she adds that her deputy's approval is enough while she is on holiday. The agent shows this as a diff to the existing story, business analyst and architect approve.
-- The agent builds the approval process, writes the test for 4,999 and 5,001 euros and links the ticket in the commit. The developer reviews, the pipeline validates.
-- In the acceptance test a clerk reports that he also wants to send claims over 10,000 euros to the managing director. The agent classifies this as a change request, because no confirmed criterion asks for it.
-- The release note names the approval from 5,000 euros with the deputy rule.
+- The agent turns this into the requirement "close opportunities only from 10,000 euros" in the minutes, with a reference to 00:14:52, and into a story with this acceptance criterion.
+- In the refinement on the prototype the head of sales notices that lost opportunities must still be closable under 10,000 euros. The agent shows this as a diff to the story: the rule only applies to "Closed Won". Business analyst and architect approve.
+- The agent builds a validation rule on the opportunity, writes the test for 9,999 and 10,000 euros and links the ticket in the commit. The developer reviews, the pipeline validates and sets the ticket to "In UAT".
+- In the acceptance test a sales rep reports that small spare parts orders should still count as won. The agent classifies this as a change request, because no confirmed criterion provides an exception.
+- The release note names the new minimum amount for won opportunities.
 
-If someone asks a year later why the limit is 5,000 euros, the chain leads back to the statement in the workshop in two clicks.
+If someone asks a year later why the rule applies at 10,000 euros, the chain leads back to the statement in the workshop in two clicks.
 
 ```kette
 title: Traceability: from a sentence in the workshop to the release note
-Sentence in transcript | 00:23:14: "I want to see claims over 5,000 euros myself."
-Requirement | Approval by the head of after-sales from 5,000 euros
-Story | Acceptance criterion with the deputy rule from the refinement
-Commit | Approval process, ticket linked in the commit
-Test | Edge cases 4,999 and 5,001 euros
-Release note | Approval from 5,000 euros with deputy rule
+Sentence in transcript | 00:14:52: "We do not close an opportunity under 10,000 euros."
+Requirement | Close opportunities only from 10,000 euros
+Story | Applies to Closed Won only, added in the refinement on the prototype
+Commit | Validation rule: Closed Won with `Amount < 10000` is rejected
+Test | 9,999 euros is rejected, 10,000 euros goes through
+Release note | Won opportunities need at least 10,000 euros
 note: Every link points to the one before. That keeps every line of code traceable.
 ```
 

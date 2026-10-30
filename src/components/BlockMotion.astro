@@ -95,13 +95,12 @@
         t += item.classList.contains('cx-pgate') ? 900 : 520;
       });
       at(t, () => { items.forEach((x) => x.classList.remove('cx-now')); all(fig, '.cx-loop').forEach((x) => x.classList.add('cx-in')); });
-      at(t + 900, () => fig.querySelector('.cx-foot')?.classList.add('cx-in'));
-      at(t + 1600, () => fig.classList.remove('cx-armed'));
+      at(t + 900, () => fig.classList.remove('cx-armed'));
     },
     chain(at, fig) {
       const links = all(fig, '.cx-link');
       links.forEach((x, i) => at(300 + i * 650, () => x.classList.add('cx-in')));
-      at(300 + links.length * 650, () => fig.querySelector('.cx-foot')?.classList.add('cx-in'));
+      at(300 + links.length * 650, () => fig.querySelector('.cx-note')?.classList.add('cx-in'));
       at(1000 + links.length * 650, () => fig.classList.remove('cx-armed'));
     },
   };
@@ -114,7 +113,7 @@
     sequences[k]((ms, fn) => setTimeout(fn, ms), fig);
   }
 
-  const explainers = document.querySelectorAll<HTMLElement>('.cb-explain');
+  const explainers = document.querySelectorAll<HTMLElement>('.cb-explain, .cb-process, .cb-chain');
   if (explainers.length && motion) {
     const observer = new IntersectionObserver(
       (entries) => entries.forEach((entry) => {

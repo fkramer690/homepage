@@ -37,28 +37,18 @@ KI-native Delivery bedeutet, den Lieferprozess um den Agenten herum zu bauen, st
 - **Die Pipeline ist ein deterministischer Qualitätszaun.** Sie validiert und deployt, ohne dass irgendwo ein Modell entscheidet.
 - **Personen sitzen an klar definierten Toren** und führen jedes Gespräch mit dem Kunden selbst. Der Agent nimmt an keinem Termin teil.
 
-```vergleich
-ohne: KI-gestützt: der alte Prozess, schneller getippt
-- Der Business Analyst schreibt das Protokoll selbst und tippt Stories ab.
-- Der Kunde sieht erst im Abnahmetest etwas Lauffähiges.
-- Entwickler nutzen einen Coding-Assistenten, der Ablauf bleibt gleich.
-- Ob eine Rückmeldung Bug oder Change Request ist, entscheidet das Bauchgefühl.
-mit: KI-nativ: das Ticket als ausführbare Spezifikation
-- Der Agent liefert Protokoll und Story-Entwürfe, der Business Analyst kuratiert.
-- Der Kunde klickt im zweiten Termin durch einen Prototyp.
-- Der Agent setzt freigegebene Stories um, Personen prüfen an festen Toren.
-- Jede Rückmeldung wird gegen das bestätigte Protokoll eingeordnet.
-```
+Der Unterschied zu KI-gestützt: Dort bekommt der alte Prozess einen Coding-Assistenten, der Business Analyst tippt weiter Stories ab, und der Kunde sieht erst im Abnahmetest etwas Lauffähiges. Hier liefert der Agent Protokoll, Stories und einen Prototyp, und jede Rückmeldung wird gegen das bestätigte Protokoll eingeordnet.
 
 ## Wie läuft der Prozess vom Workshop bis zur Produktion?
 
-Die Grafik zeigt alle 14 Schritte in drei Spuren: was Personen im Gespräch tun, was der Agent erledigt und was die Pipeline prüft. Die blauen Balken sind die Tore, an denen eine Person verbindlich entscheidet. Die Spalte rechts zeigt den Status des Jira-Tickets und wer ihn setzt: Der Agent legt Stories direkt in Jira an, die Pipeline schaltet den Status nach Validierung und Deployment selbst weiter.
+Der Prozess hat drei Phasen mit zusammen 14 Schritten. Jede Grafik zeigt eine Phase in drei Spuren: was Personen im Gespräch tun, was der Agent erledigt und was die Pipeline prüft. Die dunklen Balken sind die Tore, an denen eine Person verbindlich entscheidet. Die blaue Spalte rechts zeigt den Status des Jira-Tickets und wer ihn setzt: Der Agent legt Stories direkt in Jira an, die Pipeline schaltet den Status nach Validierung und Deployment selbst weiter.
+
+### Discovery: der Agent bereitet vor, Personen führen das Gespräch
 
 ```prozess
-titel: KI-nativer Delivery-Prozess für Salesforce
+titel: Phase 1 von 3 · Discovery
 spuren: Personen | Agent | Pipeline
 ticket: Jira
-phase: Discovery
 Agent | Workshop vorbereiten | Org-Analyse, Agenda, Hypothesen
 Personen | Discovery-Workshop | Kunde, BA, Architekt; Transkript läuft
 Agent | Auswertung | Protokoll, Story-Entwürfe mit Zeitstempel | Stories angelegt · Agent
@@ -66,34 +56,28 @@ tor: Kunde bestätigt das Protokoll
 Agent | Prototyp | In einer Scratch Org, in Stunden
 Personen | Refinement am Prototyp | Kunde klickt durch, Transkript läuft
 Agent | Story-Diff und Impact | Änderungen, Testfälle, Metadaten | Stories aktualisiert · Agent
-tor: BA und Architekt geben frei: Ready for Agent | Ready for Agent · BA
-phase: Bauen
-Agent | Implementierung | Plan, Freigabe, Code und Tests | In Arbeit · Agent
-Agent | Pull Request | Beschreibung, Jira-Link, KI-Review | In Review · Agent
-tor: Entwickler reviewt und merged
-Pipeline | CI-Validierung | Delta als Check-Deploy, Tests, Analyzer | Validiert · Pipeline
-zurueck: Fehler: Agent liest das Log und fixt, höchstens 2 Versuche
-phase: Release
-Pipeline | Deploy nach UAT | Agent schreibt Testskripte ins Ticket | In UAT · Pipeline
-Personen | Abnahmetest | Kunde testet, BA begleitet
-Agent | Feedback-Triage | Bug, Change Request oder Klärung | Bug oder CR angelegt · Agent
-tor: BA und Kunde entscheiden über Bugs und Change Requests
-zurueck: Bugs zurück an 07, Change Requests als neue Story an 06
-tor: Kunde gibt das Release frei | Freigegeben · Kunde
-Pipeline | Release nach Produktion | Quick Deploy der validierten ID | Erledigt · Pipeline
-Agent | Release Notes und Handbuch | BA liest gegen
-fazit: **Regel:** Der Agent hat keinen Zugang zur Produktion. Dorthin deployt nur die Pipeline.
+tor: BA und Architekt geben die Story frei | Ready for Agent · BA
 ```
-
-### Discovery: der Agent bereitet vor, Personen führen das Gespräch
 
 Vor dem Workshop analysiert der Agent die bestehende Org: Objekte, Flows, Validierungsregeln, Berechtigungen. Daraus entwirft er Agenda, Hypothesen und gezielte Fragen, etwa: „Auf Opportunity laufen drei Flows, die sich überschneiden. Wer ist dafür fachlich zuständig?“ Der Business Analyst schärft die Agenda und streicht Hypothesen, die politisch heikel sind. Wie eine solche Org-Analyse aussieht, steht in [KI-Org-Analyse: technische Schulden finden](../ki-org-analyse-technische-schulden/).
 
 Im Workshop moderiert der Business Analyst und muss nicht mitschreiben. Aus dem Transkript erzeugt der Agent ein Protokoll mit Entscheidungen, offenen Fragen und Verantwortlichen sowie Entwürfe für Epics und Stories in Jira, jeweils mit Zeitstempel. Er trennt hart zwischen „Kunde hat gesagt“ und „Agent interpretiert“. Der Business Analyst kuratiert: streichen, schärfen, Fit-Gap ergänzen (Standard, Konfiguration oder Code), falsch erkannte Fachbegriffe und verwechselte Sprecher korrigieren.
 
-Bestätigt der Kunde das Protokoll, steht die Scope-Baseline. Danach baut der Agent in Stunden einen Prototyp in einer Scratch Org, einer kurzlebigen Test-Org, mit Objekten, Feldern, Layouts und einem einfachen Flow. Im Refinement reagiert der Kunde auf etwas Echtes statt auf Papier. Der Agent schreibt danach keinen neuen Story-Satz, sondern einen Diff gegen die bestehenden Stories: „Akzeptanzkriterium 3 geändert, weil der Kunde bei 00:23:14 sagte …“, ergänzt um betroffene Metadaten, Testfälle und Impact gegen den Stand im Repository.
+Bestätigt der Kunde das Protokoll, steht die Scope-Baseline. Danach baut der Agent in Stunden einen Prototyp in einer Scratch Org, einer kurzlebigen Test-Org, mit Objekten, Feldern, Layouts und einem einfachen Flow. Im Refinement reagiert der Kunde auf etwas Echtes statt auf Papier. Der Agent schreibt danach keinen neuen Story-Satz, sondern einen Diff gegen die bestehenden Stories: „Akzeptanzkriterium 2 geändert, weil der Kunde bei 00:41:07 sagte …“, ergänzt um betroffene Metadaten, Testfälle und Impact gegen den Stand im Repository.
 
 ### Bauen: der Agent programmiert, der Entwickler reviewt
+
+```prozess
+titel: Phase 2 von 3 · Bauen
+spuren: Personen | Agent | Pipeline
+ticket: Jira
+start: 7 | 3
+Agent | Implementierung | Plan, Freigabe, Code und Tests | In Arbeit · Agent
+Agent | Pull Request | Beschreibung, Jira-Link, KI-Review | In Review · Agent
+tor: Entwickler reviewt und merged
+Pipeline | CI-Validierung | Delta als Check-Deploy, Tests, Analyzer | Validiert · Pipeline
+zurueck: Fehler: Agent liest das Log und fixt, höchstens 2 Versuche
+```
 
 Erst wenn Business Analyst und Architekt eine Story auf „Ready for Agent“ setzen, beginnt die Umsetzung. Der Agent liest das Ticket, legt einen Feature-Branch an, schreibt einen Umsetzungsplan und setzt ihn erst nach Freigabe durch den Entwickler um: Apex, Lightning Web Components oder Flow, jeweils mit Tests. Bei unklaren Anforderungen liest er die verlinkte Stelle im Transkript, statt zu raten. Er schreibt die Beschreibung des Pull Requests mit Ticket-Link und Komponentenliste, ein KI-Reviewer kommentiert vorab.
 
@@ -103,6 +87,22 @@ Danach läuft die Pipeline: ein Delta-Paket mit `sfdx-git-delta`, ein Check-only
 
 ### Release: der Kunde testet, der Agent ordnet ein
 
+```prozess
+titel: Phase 3 von 3 · Release
+spuren: Personen | Agent | Pipeline
+ticket: Jira
+start: 10 | 4
+Pipeline | Deploy nach UAT | Agent schreibt Testskripte ins Ticket | In UAT · Pipeline
+Personen | Abnahmetest | Kunde testet, BA begleitet
+Agent | Feedback-Triage | Bug, Change Request oder Klärung | Bug oder CR angelegt · Agent
+tor: BA und Kunde entscheiden über Bugs und CRs
+zurueck: Bugs zurück an 07, Change Requests als neue Story an 06
+tor: Kunde gibt das Release frei | Freigegeben · Kunde
+Pipeline | Release nach Produktion | Quick Deploy der validierten ID | Erledigt · Pipeline
+Agent | Release Notes und Handbuch | BA liest gegen
+fazit: **Regel:** Der Agent hat keinen Zugang zur Produktion. Dorthin deployt nur die Pipeline.
+```
+
 Nach dem Merge deployt die Pipeline in die UAT-Sandbox, und der Agent schreibt Testskripte direkt aus den Akzeptanzkriterien ins Ticket. Der Kunde testet, der Business Analyst begleitet die Sessions. Jede Rückmeldung ordnet der Agent ein: **Bug**, wenn sie einem bestätigten Kriterium widerspricht, **Change Request**, wenn sie neu ist, **Klärungsbedarf**, wenn der Beleg fehlt. Business Analyst und Kunde bestätigen die Einordnung. Bugs gehen zurück in die Implementierung, Change Requests werden als neue Story bewertet, auch kommerziell. Scope Creep wird damit sichtbar, mit Beleg statt Bauchgefühl. Wie ein Abnahmetest mit dem Fachbereich aufgebaut ist, steht in [Salesforce-UAT mit dem Fachbereich](../salesforce-uat-abnahmetest-fachbereich/).
 
 Nach der Freigabe rollt die Pipeline die bereits validierte Deployment-ID per Quick Deploy aus. Der Agent schreibt Release Notes und eine Anwenderhilfe in der Sprache des Fachbereichs, der Business Analyst liest gegen.
@@ -111,41 +111,39 @@ Nach der Freigabe rollt die Pipeline die bereits validierte Deployment-ID per Qu
 
 Agent und Pipeline entscheiden nichts Verbindliches. Jede Entscheidung, die Scope, Qualität oder Produktion betrifft, trifft eine Person mit Namen.
 
-```tabelle
-titel: Rollen im KI-nativen Delivery-Prozess
-spalten: | Discovery | Bauen | Release
-Kunde | Erzählt, bestätigt das Protokoll * | Beantwortet Rückfragen | Testet, gibt das Release frei *
-Business Analyst | Moderiert, kuratiert, gibt die Spec frei * | Klärt Fachfragen | Begleitet den Test, entscheidet über CRs *
-Architekt | Setzt Leitplanken, gibt die Spec frei * | Pflegt die Regeldatei | Achtet auf Datenmodell und Sharing
-Entwickler | Prüft den Prototyp | Gibt Pläne frei, reviewt, merged * | Übernimmt bei Eskalation
-Agent | Analysiert, protokolliert, entwirft | Baut Code und Tests | Testskripte, Triage, Release Notes
-Pipeline | Noch nicht beteiligt | Validiert deterministisch | Deployt nach UAT und Produktion
-marke: entscheidet
-fazit: Markiert sind die Entscheidungen an den fünf Toren. Alles andere ist Vorarbeit dafür.
-```
+| | Discovery | Bauen | Release |
+|---|---|---|---|
+| Kunde | Erzählt, **bestätigt das Protokoll** | Beantwortet Rückfragen | Testet, **gibt das Release frei** |
+| Business Analyst | Moderiert, kuratiert, **gibt die Spec frei** | Klärt Fachfragen | Begleitet den Test, **entscheidet über CRs** |
+| Architekt | Setzt Leitplanken, **gibt die Spec frei** | Pflegt die Regeldatei | Achtet auf Datenmodell und Sharing |
+| Entwickler | Prüft den Prototyp | Gibt Pläne frei, **reviewt und merged** | Übernimmt bei Eskalation |
+| Agent | Analysiert, protokolliert, entwirft | Baut Code und Tests | Testskripte, Triage, Release Notes |
+| Pipeline | Noch nicht beteiligt | Validiert, setzt den Jira-Status | Deployt, setzt den Jira-Status |
+
+Fett sind die Entscheidungen an den fünf Toren. Alles andere ist Vorarbeit dafür.
 
 Für die Rollen ändert sich mehr als die Werkzeuge. Der Business Analyst schreibt weniger und entscheidet mehr; seine Kernkompetenz wird, Widersprüche zwischen Gesagtem und Gemeintem zu erkennen. Der Architekt wird zum Hüter der Regeldatei, der Markdown-Datei im Repository mit Trigger-Framework, Namenskonventionen, Sharing-Regeln und Verboten, die der Agent zu Beginn jeder Sitzung liest. Sie ist der größte Hebel für die Qualität aller Agenten-Ergebnisse, siehe [KI-Regeldatei im Salesforce-Repository](../ki-regeldatei-salesforce-repository/). Der Kunde braucht mehr Disziplin bei Bestätigungen, sonst kippt die Geschwindigkeit in Chaos.
 
 ## Ein Beispiel: vom Satz im Workshop zur Release Note
 
-Ein Szenario als Annahme, um die Kette zu zeigen. Ein Maschinenbauer will Garantieanträge seiner Händler in Salesforce prüfen. Im Discovery-Workshop sagt die Leiterin After-Sales bei Minute 23: „Anträge über 5.000 Euro will ich selbst sehen.“
+Ein Szenario als Annahme, um die Kette zu zeigen. Im Discovery-Workshop eines Maschinenbauers sagt der Vertriebsleiter bei Minute 14: „Eine Opportunity unter 10.000 Euro schließen wir nicht ab.“
 
-- Der Agent macht daraus im Protokoll die Anforderung „Freigabe durch die Leitung After-Sales ab 5.000 Euro“, mit Verweis auf 00:23:14, und eine Story mit diesem Akzeptanzkriterium.
-- Im Refinement am Prototyp ergänzt die Leiterin, dass Anträge ihrer Vertretung genügen, wenn sie im Urlaub ist. Der Agent zeigt das als Diff zur bestehenden Story, Business Analyst und Architekt geben frei.
-- Der Agent setzt den Freigabeprozess um, schreibt den Test für 4.999 und 5.001 Euro und verlinkt im Commit das Ticket. Der Entwickler reviewt, die Pipeline validiert.
-- Im Abnahmetest meldet ein Sachbearbeiter, dass er auch Anträge über 10.000 Euro an die Geschäftsführung schicken möchte. Der Agent ordnet das als Change Request ein, weil kein bestätigtes Kriterium es verlangt.
-- Die Release Note nennt die Freigabe ab 5.000 Euro mit Vertretungsregel.
+- Der Agent macht daraus im Protokoll die Anforderung „Opportunity erst ab 10.000 Euro schließen“, mit Verweis auf 00:14:52, und eine Story mit diesem Akzeptanzkriterium.
+- Im Refinement am Prototyp fällt dem Vertriebsleiter auf, dass verlorene Opportunities auch unter 10.000 Euro geschlossen werden müssen. Der Agent zeigt das als Diff zur Story: Die Regel gilt nur für „Closed Won“. Business Analyst und Architekt geben frei.
+- Der Agent baut eine Validierungsregel auf der Opportunity, schreibt den Test für 9.999 und 10.000 Euro und verlinkt das Ticket im Commit. Der Entwickler reviewt, die Pipeline validiert und setzt das Ticket auf „In UAT“.
+- Im Abnahmetest meldet eine Vertriebsmitarbeiterin, dass kleine Ersatzteilaufträge trotzdem als gewonnen gelten sollen. Der Agent ordnet das als Change Request ein, weil kein bestätigtes Kriterium eine Ausnahme vorsieht.
+- Die Release Note nennt die neue Mindestsumme für gewonnene Opportunities.
 
-Fragt ein Jahr später jemand, warum die Grenze bei 5.000 Euro liegt, führt die Kette in zwei Klicks zur Aussage im Workshop.
+Fragt ein Jahr später jemand, warum die Regel bei 10.000 Euro greift, führt die Kette in zwei Klicks zur Aussage im Workshop.
 
 ```kette
 titel: Rückverfolgung: vom Satz im Workshop zur Release Note
-Satz im Transkript | 00:23:14: „Anträge über 5.000 Euro will ich selbst sehen.“
-Anforderung | Freigabe durch die Leitung After-Sales ab 5.000 Euro
-Story | Akzeptanzkriterium mit Vertretungsregel aus dem Refinement
-Commit | Freigabeprozess, Ticket im Commit verlinkt
-Test | Grenzfälle 4.999 und 5.001 Euro
-Release Note | Freigabe ab 5.000 Euro mit Vertretungsregel
+Satz im Transkript | 00:14:52: „Eine Opportunity unter 10.000 Euro schließen wir nicht ab.“
+Anforderung | Opportunity erst ab 10.000 Euro schließen
+Story | Gilt nur für Closed Won, ergänzt im Refinement am Prototyp
+Commit | Validierungsregel: Closed Won mit `Amount < 10000` wird abgelehnt
+Test | 9.999 Euro wird abgelehnt, 10.000 Euro geht durch
+Release Note | Gewonnene Opportunities brauchen mindestens 10.000 Euro
 fazit: Jedes Glied verweist auf das vorige. So bleibt jede Zeile Code belegbar.
 ```
 
