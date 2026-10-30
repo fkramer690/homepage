@@ -53,8 +53,8 @@ const serviceIcons = ['architecture', 'change', 'pipeline', 'integration', 'team
   <Header t={t} home={home} switchHref={switchHref} />
 
   <main id="main" data-layout="wide">
-    <section class="hero dark grid-bg">
-      <Blueprint animate />
+    <section class="hero dark grid-bg has-measure">
+      <Blueprint />
       <div class="container hero-inner hero-split">
         <div class="hero-text">
         <p class="eyebrow mono">{t.hero.eyebrow}</p>
@@ -68,8 +68,11 @@ const serviceIcons = ['architecture', 'change', 'pipeline', 'integration', 'team
           <a class="btn btn-ghost" href="#references">{t.hero.ctaSecondary}</a>
         </div>
         </div>
-        <figure class="hero-photo">
+        <figure class="hero-photo is-measured">
           <Photo photo="06-portraet-halle-v02" lang={lang} widths={[360, 540, 720]} sizes="360px" />
+          <span class="hm-line hm-top" aria-hidden="true"><span class="hm-dot"></span></span>
+          <span class="hm-line hm-side" aria-hidden="true"></span>
+          <span class="hm-cross" aria-hidden="true"></span>
         </figure>
       </div>
     </section>

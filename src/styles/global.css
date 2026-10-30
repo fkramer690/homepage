@@ -250,33 +250,53 @@ a:hover { color: var(--anthracite); }
   pointer-events: none;
 }
 
-/* Blueprint animation (start page hero, <Blueprint animate />): the dimension
-   lines draw themselves once, then the crosshairs pulse softly and a dot runs
-   along the top line. Without motion the finished drawing stays. */
-.blueprint.is-animated .bp-reveal-x { transform-box: fill-box; transform-origin: left center; animation: bp-reveal-x 1.1s cubic-bezier(.4, 0, .2, 1) backwards; }
-.blueprint.is-animated .bp-reveal-y { transform-box: fill-box; transform-origin: center top; animation: bp-reveal-y 0.9s cubic-bezier(.4, 0, .2, 1) backwards; }
-.blueprint.is-animated .bp-fade { animation: bp-fade 0.6s ease backwards; }
-.blueprint.is-animated .bp-d1 { animation-delay: 0.3s; }
-.blueprint.is-animated .bp-d2 { animation-delay: 1.2s; }
-.blueprint.is-animated .bp-d3 { animation-delay: 1.9s; }
-.blueprint.is-animated .bp-t1 { animation-delay: 1.3s; }
-.blueprint.is-animated .bp-t2 { animation-delay: 2s; }
-.blueprint.is-animated .bp-t3 { animation-delay: 2.8s; }
-.blueprint.is-animated .bp-ping { transform-box: fill-box; transform-origin: center; opacity: 0; animation: bp-ping 3.2s ease-out 2.6s infinite; }
-.blueprint.is-animated .bp-ping-late { animation-delay: 4.2s; }
-.blueprint.is-animated .bp-scan { opacity: 0; animation: bp-scan 7s linear 3s infinite; }
-@keyframes bp-reveal-x { from { transform: scaleX(0); } }
-@keyframes bp-reveal-y { from { transform: scaleY(0); } }
-@keyframes bp-fade { from { opacity: 0; } }
-@keyframes bp-ping { 0% { transform: scale(1); opacity: 0.7; } 60%, 100% { transform: scale(2.6); opacity: 0; } }
-@keyframes bp-scan {
-  0% { transform: translate(700px, 60px); opacity: 0; }
-  8%, 52% { opacity: 1; }
-  60%, 100% { transform: translate(1140px, 60px); opacity: 0; }
+/* Measured portrait (start page hero): dashed dimension lines above and beside the
+   photo frame draw themselves once on load, a crosshair turns in at the lower left
+   corner and a dot runs along the top line now and then. Reduced motion: the
+   finished drawing without movement. Hidden together with the photo below 900px. */
+.hero-photo.is-measured { position: relative; }
+/* The measured photo replaces the background drawing; without the photo (narrow
+   screens) the background drawing stays. */
+@media (min-width: 901px) { .hero.has-measure > .blueprint { display: none; } }
+.hm-line { position: absolute; pointer-events: none; opacity: 0.65; }
+.hm-line::before,
+.hm-line::after { content: ''; position: absolute; background: var(--cyan); }
+.hm-top { left: 0; right: 0; top: -24px; height: 1.2px; background: repeating-linear-gradient(90deg, var(--cyan) 0 6px, transparent 6px 12px); transform-origin: left center; animation: hm-draw-x 1.1s cubic-bezier(.4, 0, .2, 1) 0.4s backwards; }
+.hm-top::before,
+.hm-top::after { top: -7.4px; width: 1.2px; height: 16px; }
+.hm-top::before { left: 0; }
+.hm-top::after { right: 0; }
+.hm-side { top: 0; bottom: 0; right: -24px; width: 1.2px; background: repeating-linear-gradient(180deg, var(--cyan) 0 6px, transparent 6px 12px); transform-origin: center top; animation: hm-draw-y 1.1s cubic-bezier(.4, 0, .2, 1) 1.3s backwards; }
+.hm-side::before,
+.hm-side::after { right: -7.4px; width: 16px; height: 1.2px; }
+.hm-side::before { top: 0; }
+.hm-side::after { bottom: 0; }
+.hm-dot { position: absolute; top: -2.4px; left: 0; width: 6px; height: 6px; margin-left: -3px; border-radius: 50%; background: var(--cyan-light); opacity: 0; animation: hm-dot 8s linear 3s infinite; }
+.hm-cross {
+  position: absolute;
+  left: -44px;
+  bottom: -44px;
+  width: 40px;
+  height: 40px;
+  pointer-events: none;
+  opacity: 0.9;
+  background:
+    radial-gradient(circle, transparent 8.4px, var(--cyan) 8.6px 9.8px, transparent 10px),
+    linear-gradient(var(--cyan), var(--cyan)) center / 100% 1.2px no-repeat,
+    linear-gradient(var(--cyan), var(--cyan)) center / 1.2px 100% no-repeat;
+  animation: hm-cross 0.8s ease-out 2.2s backwards;
+}
+@keyframes hm-draw-x { from { transform: scaleX(0); } }
+@keyframes hm-draw-y { from { transform: scaleY(0); } }
+@keyframes hm-cross { from { opacity: 0; transform: rotate(-90deg) scale(0.6); } }
+@keyframes hm-dot {
+  0% { left: 0; opacity: 0; }
+  5%, 40% { opacity: 1; }
+  45%, 100% { left: 100%; opacity: 0; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .blueprint.is-animated * { animation: none !important; }
-  .blueprint.is-animated :is(.bp-ping, .bp-scan) { display: none; }
+  .hm-line, .hm-cross { animation: none; }
+  .hm-dot { display: none; }
 }
 
 /* Hero */
@@ -1682,6 +1702,70 @@ p.post-series-note { margin: 0.6em 0 0; font-size: 0.95rem; }
 .cb-compare-with { border-color: var(--cyan); box-shadow: inset 0 3px 0 var(--cyan); }
 .prose .cb-compare .cb-compare-title { font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-2); margin-bottom: 12px; }
 .cb-compare-with .cb-compare-title { color: var(--cyan-dark) !important; }
+
+/* Partner flow (```partnerfluss): two animated panels, without and with a central owner
+   (src/lib/content-blocks.mjs). Grey crossing paths with conflict marks on the left,
+   one cyan stream through the architect or review on the right. Labels in mono so
+   scripts/check-graphics.mjs can measure them. Reduced motion: the still picture. */
+.cb-partnerflow { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-left: 0; margin-right: 0; }
+.cb-pf-col { border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 16px 14px; background: var(--bg); display: grid; gap: 10px; align-content: start; }
+.cb-pf-with { border-color: var(--cyan); box-shadow: inset 0 3px 0 var(--cyan); background: var(--white); }
+.prose .cb-pf-title { font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-2); margin: 0; }
+.prose .cb-pf-with .cb-pf-title { color: var(--cyan-dark); }
+.prose .cb-pf-caption { font-size: 0.92rem; color: var(--text-2); margin: 0; }
+.pf-drawing { display: block; width: 100%; height: auto; background: var(--white); border-radius: 8px; }
+.pf-drawing text { font-family: var(--mono); fill: var(--text); }
+.pf-node { fill: var(--bg); stroke: #c8cacd; }
+.pf-org { fill: var(--white); stroke-width: 2; }
+.pf-org-warn { stroke: #9a9ca0; animation: pf-org-warn 2.8s ease-in-out infinite; }
+.pf-org-ok { stroke: var(--cyan); }
+.pf-path { fill: none; stroke: #a4a6aa; stroke-width: 1.5; stroke-dasharray: 6 4; }
+.pf-march { animation: pf-march 1.6s linear infinite; }
+.pf-m2 { animation-duration: 2.3s; animation-direction: reverse; }
+.pf-m3 { animation-duration: 1.1s; }
+.pf-m4 { animation-duration: 3s; animation-direction: reverse; }
+.pf-warn circle { fill: var(--white); stroke: var(--anthracite); stroke-width: 1.8; }
+.pf-warn path { fill: none; stroke: var(--anthracite); stroke-width: 2; stroke-linecap: round; }
+.pf-warn { opacity: 0; animation: pf-blink 2.8s ease-in-out infinite; }
+.pf-w2 { animation-delay: 0.9s; }
+.pf-w3 { animation-delay: 1.7s; }
+.pf-path-on { fill: none; stroke: var(--cyan); stroke-width: 1.5; opacity: 0.55; }
+.pf-main { fill: none; stroke: var(--cyan); stroke-width: 2.5; }
+.pf-hub { fill: #eef8fd; stroke: var(--cyan); stroke-width: 2; }
+.pf-hub-ping { fill: none; stroke: var(--cyan); stroke-width: 2; transform-box: fill-box; transform-origin: center; opacity: 0; animation: pf-ping 1s ease-out 1.4s infinite; }
+.pf-drawing .pf-hub-label { fill: var(--cyan-dark); }
+.pf-drawing .pf-sub { fill: var(--text-2); }
+.pf-ok circle { fill: var(--cyan); }
+.pf-ok path { fill: none; stroke: var(--white); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+.pf-ok { transform-box: fill-box; transform-origin: center; animation: pf-ok 1s ease-out 2.15s infinite; }
+.pf-dot { fill: var(--cyan); opacity: 0; }
+.pf-dot-grey { fill: #7a7c80; }
+.pf-out { fill: var(--cyan-dark); animation: pf-out 1s ease-in-out 1.4s infinite; }
+.pf-cA { animation: pf-cA 3.6s ease-in-out infinite; }
+.pf-cC { animation: pf-cC 3.6s ease-in-out 0.8s infinite; }
+.pf-cD { animation: pf-cD 3.6s ease-in-out 1.9s infinite; }
+.pf-pA { animation: pf-pA 4s ease-in-out infinite; }
+.pf-pB { animation: pf-pB 4s ease-in-out 1s infinite; }
+.pf-pC { animation: pf-pC 4s ease-in-out 2s infinite; }
+.pf-pD { animation: pf-pD 4s ease-in-out 3s infinite; }
+@keyframes pf-march { to { stroke-dashoffset: -20; } }
+@keyframes pf-blink { 0%, 100% { opacity: 0; } 20%, 45% { opacity: 1; } 65% { opacity: 0; } }
+@keyframes pf-org-warn { 0%, 100% { stroke: #9a9ca0; } 30%, 50% { stroke: var(--anthracite); } }
+@keyframes pf-ping { 0% { transform: scale(1); opacity: 0.6; } 100% { transform: scale(1.35); opacity: 0; } }
+@keyframes pf-ok { 0% { transform: scale(1); } 20% { transform: scale(1.18); } 45%, 100% { transform: scale(1); } }
+@keyframes pf-cA { 0% { transform: translate(102px, 38px); opacity: 0; } 5% { opacity: 1; } 45% { transform: translate(215px, 210px); } 80% { transform: translate(286px, 162px); opacity: 1; } 86%, 100% { transform: translate(286px, 162px); opacity: 0; } }
+@keyframes pf-cC { 0% { transform: translate(102px, 174px); opacity: 0; } 6% { opacity: 1; } 50% { transform: translate(240px, 92px); opacity: 1; } 62%, 100% { transform: translate(240px, 92px); opacity: 0; } }
+@keyframes pf-cD { 0% { transform: translate(102px, 242px); opacity: 0; } 6% { opacity: 1; } 55% { transform: translate(200px, 150px); opacity: 1; } 70%, 100% { transform: translate(232px, 146px); opacity: 0; } }
+@keyframes pf-pA { 0% { transform: translate(102px, 38px); opacity: 0; } 5% { opacity: 1; } 35% { transform: translate(150px, 134px); opacity: 1; } 38%, 100% { transform: translate(150px, 134px); opacity: 0; } }
+@keyframes pf-pB { 0% { transform: translate(102px, 106px); opacity: 0; } 5% { opacity: 1; } 35% { transform: translate(150px, 140px); opacity: 1; } 38%, 100% { transform: translate(150px, 140px); opacity: 0; } }
+@keyframes pf-pC { 0% { transform: translate(102px, 174px); opacity: 0; } 5% { opacity: 1; } 35% { transform: translate(150px, 152px); opacity: 1; } 38%, 100% { transform: translate(150px, 152px); opacity: 0; } }
+@keyframes pf-pD { 0% { transform: translate(102px, 242px); opacity: 0; } 5% { opacity: 1; } 35% { transform: translate(150px, 158px); opacity: 1; } 38%, 100% { transform: translate(150px, 158px); opacity: 0; } }
+@keyframes pf-out { 0% { transform: translate(234px, 146px); opacity: 0; } 10% { opacity: 1; } 75% { transform: translate(286px, 146px); opacity: 1; } 85%, 100% { transform: translate(286px, 146px); opacity: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .cb-partnerflow * { animation: none !important; }
+  .cb-partnerflow .pf-warn { opacity: 1; }
+  .cb-partnerflow :is(.pf-dot, .pf-hub-ping) { display: none; }
+}
 .prose .cb-compare ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
 .prose .cb-compare li { display: grid; grid-template-columns: 18px minmax(0, 1fr); gap: 10px; margin: 0; font-size: 0.95rem; font-weight: 500; }
 .cb-compare svg { width: 18px; height: 18px; margin-top: 4px; }

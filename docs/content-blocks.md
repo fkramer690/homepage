@@ -1,6 +1,6 @@
 # Content blocks (library)
 
-Twelve building blocks that loosen up blog articles and masterclass chapters. They are written in Markdown as a fenced code block whose language is the block name, so articles stay free of HTML. `src/lib/content-blocks-plugin.mjs` turns them into markup at build time (logic in `src/lib/content-blocks.mjs`, styles under "Content blocks" in `src/styles/global.css`), and `scripts/check-blog.mjs` validates them. Rules for when to use them: "Content blocks" in [blog-guidelines.md](blog-guidelines.md).
+Fourteen building blocks that loosen up blog articles and masterclass chapters. They are written in Markdown as a fenced code block whose language is the block name, so articles stay free of HTML. `src/lib/content-blocks-plugin.mjs` turns them into markup at build time (logic in `src/lib/content-blocks.mjs`, styles under "Content blocks" in `src/styles/global.css`), and `scripts/check-blog.mjs` validates them. Rules for when to use them: "Content blocks" in [blog-guidelines.md](blog-guidelines.md).
 
 Design: only the site's own colours and forms (cyan, anthracite, greys, dashed mono labels, cards with a short bar on top, the technical grid). No other colours, no icons beyond the cyan tick and grey cross.
 
@@ -191,6 +191,17 @@ check | Prüfungen | Bei jedem Pull Request | Ein Validierungs-Deployment, Apex-
 gear | Automatisierung | Nach dem Deployment | Was früher von Hand lief, ist Teil des Deployments.
 analyse | Review | Für jede Änderung | Menschen prüfen Design und Lesbarkeit.
 basis: Auf der Git-Plattform des Kunden
+```
+````
+
+## 14. Partnerfluss (partner flow, animated)
+
+Two animated panels side by side: without a central owner, Partner A, B, C and the internal IT deliver on their own crossing paths into the Salesforce org and conflicts flash where they cross; with one, everything runs through a hub and arrives as one checked stream. Variant after the name: `architekt` (EN `architect`, hub "Architekt" / "Architect") or `review` (hub "Review"). The node labels are fixed per language; the file gives each panel a title and a one-line caption as `ohne: Title | caption` and `mit: Title | caption` (EN `without:`, `with:`). Drawing and labels in `src/lib/content-blocks.mjs`, animation under "Partner flow" in `global.css` (still picture with reduced motion), labels checked by `scripts/check-graphics.mjs` (class `pf-drawing`). Approved by Fabian 2026-10-30 for the partner governance service page and the pull request review article; use it only where the text is about several partners or teams delivering into one org.
+
+````
+```partnerfluss review
+ohne: Ohne Review | Jedes Team deployt auf eigenem Weg, Konflikte fallen erst in UAT oder Produktion auf.
+mit: Mit Pull-Request-Review | Jede Änderung geht durch ein Review, bevor sie in die Org kommt.
 ```
 ````
 

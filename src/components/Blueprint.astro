@@ -1,73 +1,29 @@
 ---
 // Technical-drawing decoration: crosshairs and dashed dimension lines.
 // Purely decorative, hidden from assistive technology.
-// With `animate` the dimension lines draw themselves once on load, the
-// crosshairs pulse softly and a dot runs along the top line (start page hero).
-// Styles under "Blueprint animation" in global.css; prefers-reduced-motion
-// shows the finished drawing without any movement.
-interface Props {
-  animate?: boolean;
-}
-const { animate = false } = Astro.props;
 ---
-{animate ? (
-  <svg class="blueprint is-animated" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-    <defs>
-      <mask id="bp-reveal-top"><rect class="bp-reveal-x bp-d1" x="696" y="44" width="452" height="32" fill="#fff" /></mask>
-      <mask id="bp-reveal-side"><rect class="bp-reveal-y bp-d2" x="1128" y="60" width="24" height="248" fill="#fff" /></mask>
-      <mask id="bp-reveal-bottom"><rect class="bp-reveal-x bp-d3" x="976" y="544" width="208" height="32" fill="#fff" /></mask>
-    </defs>
-    <g stroke="#1BA1E2" fill="none" stroke-width="1.2">
-      <g class="bp-fade bp-d1" opacity="0.9">
-        <path d="M 1040 120 h 40 M 1060 100 v 40" />
-        <circle cx="1060" cy="120" r="9" />
-      </g>
-      <circle class="bp-ping" cx="1060" cy="120" r="9" stroke-width="1" />
-      <g class="bp-fade bp-d2" opacity="0.7">
-        <path d="M 120 520 h 32 M 136 504 v 32" />
-        <circle cx="136" cy="520" r="7" />
-      </g>
-      <circle class="bp-ping bp-ping-late" cx="136" cy="520" r="7" stroke-width="1" />
-      <g class="bp-fade bp-d3" opacity="0.55">
-        <path d="M 860 470 h 24 M 872 458 v 24" />
-      </g>
-      <g stroke-dasharray="6 6" opacity="0.6">
-        <path mask="url(#bp-reveal-top)" d="M 700 60 H 1140" />
-        <path mask="url(#bp-reveal-side)" d="M 1140 60 V 300" />
-        <path mask="url(#bp-reveal-bottom)" d="M 980 560 H 1180" />
-      </g>
-      <g opacity="0.6">
-        <path class="bp-fade bp-t1" d="M 700 52 v 16 M 1140 52 v 16" />
-        <path class="bp-fade bp-t2" d="M 1132 300 h 16" />
-        <path class="bp-fade bp-t3" d="M 980 552 v 16 M 1180 552 v 16" />
-      </g>
+<svg class="blueprint" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <g stroke="#1BA1E2" fill="none" stroke-width="1.2">
+    <g opacity="0.9">
+      <path d="M 1040 120 h 40 M 1060 100 v 40" />
+      <circle cx="1060" cy="120" r="9" />
     </g>
-    <circle class="bp-scan" cx="0" cy="0" r="3" fill="#5BBDEE" />
-  </svg>
-) : (
-  <svg class="blueprint" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-    <g stroke="#1BA1E2" fill="none" stroke-width="1.2">
-      <g opacity="0.9">
-        <path d="M 1040 120 h 40 M 1060 100 v 40" />
-        <circle cx="1060" cy="120" r="9" />
-      </g>
-      <g opacity="0.7">
-        <path d="M 120 520 h 32 M 136 504 v 32" />
-        <circle cx="136" cy="520" r="7" />
-      </g>
-      <g opacity="0.55">
-        <path d="M 860 470 h 24 M 872 458 v 24" />
-      </g>
-      <g stroke-dasharray="6 6" opacity="0.6">
-        <path d="M 700 60 H 1140" />
-        <path d="M 1140 60 V 300" />
-        <path d="M 980 560 H 1180" />
-      </g>
-      <g opacity="0.6">
-        <path d="M 700 52 v 16 M 1140 52 v 16" />
-        <path d="M 1132 300 h 16" />
-        <path d="M 980 552 v 16 M 1180 552 v 16" />
-      </g>
+    <g opacity="0.7">
+      <path d="M 120 520 h 32 M 136 504 v 32" />
+      <circle cx="136" cy="520" r="7" />
     </g>
-  </svg>
-)}
+    <g opacity="0.55">
+      <path d="M 860 470 h 24 M 872 458 v 24" />
+    </g>
+    <g stroke-dasharray="6 6" opacity="0.6">
+      <path d="M 700 60 H 1140" />
+      <path d="M 1140 60 V 300" />
+      <path d="M 980 560 H 1180" />
+    </g>
+    <g opacity="0.6">
+      <path d="M 700 52 v 16 M 1140 52 v 16" />
+      <path d="M 1132 300 h 16" />
+      <path d="M 980 552 v 16 M 1180 552 v 16" />
+    </g>
+  </g>
+</svg>
