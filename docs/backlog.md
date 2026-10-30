@@ -124,6 +124,7 @@ Macht Fabian selbst (Quick Wins):
   - Webkataloge (wenig Aufwand, alte Domains, kaum Traffic, Freischaltung dauert Wochen bis Monate): onlinestreet.de, suchnase.de, webspider24.de (strenge Regeln vorher lesen), bunte-suche.de, go-findyou.de.
   - Firmenverzeichnisse (gehen schnell online, teils viel Traffic): dasoertliche.de, werkenntdenbesten.de, gelbeseiten.de, stadtbranchenbuch.com, provenexpert.com (eher Bewertungsplattform).
   - Ohne Backlink, wichtig für lokale Sichtbarkeit: Google-Unternehmensprofil (siehe QA), Bing Places (Import aus Google), Apple Maps (Apple Business Connect).
+- QH. Gastartikel bei Salesforce Break nachhaken: https://salesforcebreak.com/2025/09/04/measure-salesforce-flow-performance/ . Fabian ist Autor, aber die Seite zeigt nur einen Benutzernamen statt seines Namens und hat keinen Link auf www.fk-sd.de (nur die Mailadresse). Redaktion bitten: Autorname „Fabian Kramer“, kurze Autoren-Bio mit Link auf www.fk-sd.de (oder die Vorträge-Seite). URL der Autorenseite danach an Claude (kommt ggf. ins Schema als sameAs).
 
 ## Grafiken verbessern (Grafik-Ranking 30.10.2026)
 
