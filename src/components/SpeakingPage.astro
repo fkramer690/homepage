@@ -43,28 +43,25 @@ const stats = [
 
 const person = { '@type': 'Person', '@id': `${new URL(base, Astro.site).href}#person`, name: site.person };
 const image = new URL(speaking.src, Astro.site).href;
-// Google's event report wants these on every Event, including the session inside the conference.
-// Ticket offers are left out: the conferences' prices are not known here.
-const event = (talk: (typeof talks)[number], a: Appearance) => {
-  const shared = {
-    startDate: a.date,
-    endDate: a.date,
-    eventStatus: 'https://schema.org/EventScheduled',
-    eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
-    location: { '@type': 'Place', name: a.city.en, address: { '@type': 'PostalAddress', addressLocality: a.city.en, addressCountry: a.country } },
-    image,
-    description: talk.abstract[lang],
-    performer: person,
-    organizer: { '@type': 'Organization', name: a.event.replace(/\s*\d{4}$/, '') },
-  };
-  return {
-    '@type': 'Event',
-    name: a.event,
-    ...shared,
-    subEvent: { '@type': 'Event', name: talk.title, ...shared, inLanguage: 'en' },
-    ...(a.url ? { url: a.url } : {}),
-  };
-};
+// The talks are marked up as CreativeWork, not Event: every appearance is in the past,
+// Google shows event results only for upcoming events and then asks for ticket offers and
+// organizer URLs that are not known here.
+const place = (a: Appearance) => ({
+  '@type': 'Place',
+  name: a.city.en,
+  address: { '@type': 'PostalAddress', addressLocality: a.city.en, addressCountry: a.country },
+});
+const talkSchema = (talk: (typeof talks)[number]) => ({
+  '@type': 'CreativeWork',
+  name: talk.title,
+  abstract: talk.abstract[lang],
+  author: person,
+  inLanguage: 'en',
+  image,
+  dateCreated: [...talk.appearances].map((a) => a.date).sort()[0],
+  locationCreated: talk.appearances.map(place),
+  ...(talk.recording ? { associatedMedia: { '@type': 'MediaObject', contentUrl: talk.recording.url } } : {}),
+});
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'ProfilePage',
@@ -75,8 +72,8 @@ const schema = {
   mainEntity: {
     ...person,
     jobTitle: 'Salesforce Enterprise Architect',
-    performerIn: talks.flatMap((talk) => talk.appearances.map((a) => event(talk, a))),
   },
+  hasPart: talks.map(talkSchema),
 };
 ---
 <Page layout="reading" lang={lang} title={c.metaTitle} description={c.description} alternates={alternates} hasContact>
