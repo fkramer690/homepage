@@ -1,7 +1,7 @@
 ---
 // Builds the staircase (```stufen treppe) and pillars (```saeulen) blocks once when they
 // scroll into view; the motion itself is CSS in global.css. The animated explainers
-// (```pipeline, ```saeulenwechsel, ```basis-addons, ```level) play a short sequence of
+// (```pipeline, ```saeulenwechsel, ```basis-addons, ```level, ```prozess, ```kette) play a short sequence of
 // class changes instead; the pipeline repeats while it stays in view. No script or
 // reduced motion: the blocks stay a still picture.
 ---
@@ -85,8 +85,26 @@
       at(t, () => fig.querySelector('.cx-foot')?.classList.add('cx-in'));
       at(t + 1200, () => { if (rail) rail.style.transform = ''; fig.classList.remove('cx-armed'); });
     },
+    // Process in lanes: step by step through the lanes and
+    // gates; the ways back and the note come last.
+    process(at, fig) {
+      const items = all(fig, '.cx-flow > li:not(.cx-phase, .cx-status)');
+      let t = 400;
+      items.forEach((item) => {
+        at(t, () => { items.forEach((x) => x.classList.remove('cx-now')); item.classList.add('cx-on', 'cx-now'); const st = item.nextElementSibling; if (st?.classList.contains('cx-status')) st.classList.add('cx-on'); });
+        t += item.classList.contains('cx-pgate') ? 900 : 520;
+      });
+      at(t, () => { items.forEach((x) => x.classList.remove('cx-now')); all(fig, '.cx-loop').forEach((x) => x.classList.add('cx-in')); });
+      at(t + 900, () => fig.classList.remove('cx-armed'));
+    },
+    chain(at, fig) {
+      const links = all(fig, '.cx-link');
+      links.forEach((x, i) => at(300 + i * 650, () => x.classList.add('cx-in')));
+      at(300 + links.length * 650, () => fig.querySelector('.cx-note')?.classList.add('cx-in'));
+      at(1000 + links.length * 650, () => fig.classList.remove('cx-armed'));
+    },
   };
-  const kind = (fig: Element) => (['pipeline', 'shift', 'addons', 'levels'] as const).find((k) => fig.classList.contains(`cb-${k}`));
+  const kind = (fig: Element) => (['pipeline', 'shift', 'addons', 'levels', 'process', 'chain'] as const).find((k) => fig.classList.contains(`cb-${k}`));
 
   function play(fig: HTMLElement) {
     const k = kind(fig);
@@ -95,7 +113,7 @@
     sequences[k]((ms, fn) => setTimeout(fn, ms), fig);
   }
 
-  const explainers = document.querySelectorAll<HTMLElement>('.cb-explain');
+  const explainers = document.querySelectorAll<HTMLElement>('.cb-explain, .cb-process, .cb-chain');
   if (explainers.length && motion) {
     const observer = new IntersectionObserver(
       (entries) => entries.forEach((entry) => {
