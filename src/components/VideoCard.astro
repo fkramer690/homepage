@@ -20,7 +20,7 @@ const label = `${t.side.video} · ${video.duration} ${t.side.videoSeconds}`;
 ---
 {part === 'card' ? (
   <button type="button" class:list={['video-card', className]} data-video-open aria-haspopup="dialog">
-    <span class="video-card-thumb"><img src={poster} alt="" width="72" height="128" loading="lazy" decoding="async" /></span>
+    <span class="video-card-thumb" aria-hidden="true"><img src={poster} alt={video.title} width="72" height="128" loading="lazy" decoding="async" /></span>
     <span class="video-card-text">
       <span class="video-card-label mono">{label}</span>
       <span class="video-card-title">{video.title}</span>
