@@ -536,7 +536,7 @@ export function renderBlock(block, { lang, isExternal, readDiagram, today = new 
   }
   if (name === 'stufen') {
     const { stages, cases } = parseStages(content);
-    const tiles = `<ol class="cb-stages" style="--n:${stages.length}">${stages.map((x) => `<li${x.mark ? ' class="cb-stage-mark"' : ''}><span class="cb-stage-letter">${escHtml(x.letter)}</span><span class="cb-stage-name">${inline(x.name, o)}</span><span class="cb-stage-sub">${inline(x.sub, o)}</span><span class="cb-stage-text">${inline(x.text, o)}</span></li>`).join('')}</ol>`;
+    const tiles = `<ol class="cb-stages" style="--n:${stages.length}">${stages.map((x) => `<li${x.mark ? ' class="cb-stage-mark"' : ''}><span class="cb-stage-head"><span class="cb-stage-letter">${escHtml(x.letter)}</span><span class="cb-stage-name">${inline(x.name, o)}</span></span><span class="cb-stage-body"><span class="cb-stage-sub">${inline(x.sub, o)}</span><span class="cb-stage-text">${inline(x.text, o)}</span></span></li>`).join('')}</ol>`;
     const list = cases.length ? `<div class="cb-cases">${cases.map((c) => `<div class="cb-case"><p class="cb-case-title">${inline(c.title, o)}</p><p>${inline(c.situation, o)}</p><p class="cb-case-then">${inline(c.consequence, o)}</p></div>`).join('')}</div>` : '';
     return `<div class="cb cb-stage-block">${tiles}${list}</div>`;
   }

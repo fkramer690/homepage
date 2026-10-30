@@ -1,4 +1,5 @@
-// Renders the 1200x630 preview image (Open Graph / LinkedIn) for an article.
+// Renders the 1200x630 preview images (Open Graph / LinkedIn): one per article and page,
+// plus the site-wide default per language (src/pages/og/[lang]/site.png.ts).
 // Satori turns the text into SVG paths with the site fonts; the background,
 // grid and logo are plain SVG; sharp rasterizes the result to PNG.
 import { readFileSync } from 'node:fs';
@@ -35,22 +36,39 @@ const logo = (x: number, y: number, size: number) => `
     <rect x="24" y="22" width="26" height="12" fill="#1BA1E2"/>
   </g>`;
 
+// Frame shared by all preview images: crosshair bottom right, dashed measure line bottom left.
 const blueprint = `
   <g stroke="#1BA1E2" fill="none" stroke-width="1.4">
-    <g opacity="0.9"><path d="M1060 96h40M1080 76v40"/><circle cx="1080" cy="96" r="9"/></g>
-    <g stroke-dasharray="6 6" opacity="0.55"><path d="M760 48H1150M1150 48V300M940 590H1160"/></g>
-    <g opacity="0.55"><path d="M760 40v16M1150 40v16M1142 300h16M940 582v16M1160 582v16"/></g>
+    <g opacity="0.9"><path d="M1060 520h40M1080 500v40"/><circle cx="1080" cy="520" r="9"/></g>
+    <g opacity="0.6"><path d="M80 560H700" stroke-dasharray="6 6"/><path d="M80 552v16M700 552v16"/></g>
   </g>`;
 
-// Text must stay clear of the frame: the eyebrow ends before the crosshair at x 1060,
-// the title takes at most 3 lines. Anything longer fails the build instead of
-// overflowing the image (scripts/check-graphics.mjs checks the inline drawings).
-const EYEBROW_MAX = 1040 - 80 - 92 - 24; // crosshair minus left edge, logo indent and a gap
+type Node = { type: 'div'; props: { style: Record<string, unknown>; children: unknown } };
+const div = (style: Record<string, unknown>, children: unknown = []): Node => ({ type: 'div', props: { style: { display: 'flex', ...style }, children } });
+
+// Brand block top left: logo, "FK Solution Design" in white, "SALESFORCE ARCHITECTURE" below.
+// The logo itself is plain SVG (drawn at 80/72), the block keeps its place.
+const BRAND_WIDTH = 56 + 20 + 310; // logo, gap, width of the mono line
+const brand = div({ alignItems: 'center' }, [
+  div({ width: 56, height: 56 }),
+  div({ flexDirection: 'column', marginLeft: 20 }, [
+    div({ fontFamily: 'Sora', fontWeight: 600, fontSize: 30, letterSpacing: -0.5, color: '#ffffff' }, 'FK Solution Design'),
+    div({ fontFamily: 'Plex', fontSize: 15, letterSpacing: 4.5, color: 'rgba(255,255,255,0.55)', marginTop: 4 }, 'SALESFORCE ARCHITECTURE'),
+  ]),
+]);
+
+// Text must stay clear of the frame: the eyebrow sits top right and ends before the
+// brand block, the title takes at most 3 lines, the footer ends before the crosshair.
+// Anything longer fails the build instead of overflowing the image
+// (scripts/check-graphics.mjs checks the inline drawings).
+const EYEBROW_SIZE = 16;
+const EYEBROW_SPACING = 3;
+const EYEBROW_MAX = 1040 - BRAND_WIDTH - 40; // text width minus brand block and a gap
 const TITLE_LINES = 3;
 
 async function checkFit(title: string, eyebrow: string, size: number) {
   const chars = [...eyebrow].length;
-  const eyebrowWidth = chars * 22 * 0.6 + (chars - 1) * 4; // IBM Plex Mono, 22px, letter spacing 4
+  const eyebrowWidth = chars * EYEBROW_SIZE * 0.6 + (chars - 1) * EYEBROW_SPACING; // IBM Plex Mono
   if (eyebrowWidth > EYEBROW_MAX) throw new Error(`Preview image: eyebrow "${eyebrow}" is ${Math.round(eyebrowWidth)}px wide, max ${EYEBROW_MAX}px. Shorten it.`);
   const svg = await satori(
     { type: 'div', props: { style: { width: 960, display: 'flex', fontFamily: 'Sora', fontWeight: 600, fontSize: size, lineHeight: 1.15, letterSpacing: -1 }, children: title } } as never,
@@ -60,32 +78,33 @@ async function checkFit(title: string, eyebrow: string, size: number) {
   if (height > TITLE_LINES * size * 1.15 + 1) throw new Error(`Preview image: title "${title}" needs more than ${TITLE_LINES} lines. Shorten it.`);
 }
 
-export async function renderOgImage({ title, eyebrow, footer }: { title: string; eyebrow: string; footer: string }) {
+// eyebrow: section shown top right (Blog, Leistungen, masterclass and chapter, Köln).
+// footer: author line, or a list of topics (site-wide image) joined with dots.
+export async function renderOgImage({ title, eyebrow, footer }: { title: string; eyebrow: string; footer: string | string[] }) {
   const size = title.length > 48 ? 56 : 64;
   await checkFit(title, eyebrow, size);
   const text = await satori(
-    {
-      type: 'div',
-      props: {
-        style: { width: 1040, height: 470, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' },
-        children: [
-          { type: 'div', props: { style: { fontFamily: 'Plex', fontSize: 22, letterSpacing: 4, color: '#5bbdee', marginLeft: 92, marginTop: 14 }, children: eyebrow.toUpperCase() } },
-          { type: 'div', props: { style: { fontFamily: 'Sora', fontWeight: 600, fontSize: size, lineHeight: 1.15, letterSpacing: -1, color: '#ffffff', maxWidth: 960 }, children: title } },
-          { type: 'div', props: { style: { display: 'flex', alignItems: 'center', fontFamily: 'Sora', fontSize: 24, color: 'rgba(255,255,255,0.7)' }, children: [
-            { type: 'div', props: { style: { width: 40, height: 4, background: '#1BA1E2', marginRight: 18 } } },
-            footer,
-          ] } },
-        ],
-      },
-    } as never,
-    { width: 1040, height: 470, fonts },
+    div({ width: 1040, height: 440, flexDirection: 'column', justifyContent: 'space-between' }, [
+      div({ justifyContent: 'space-between', alignItems: 'flex-start' }, [
+        brand,
+        div({ marginTop: 6, fontFamily: 'Plex', fontSize: EYEBROW_SIZE, letterSpacing: EYEBROW_SPACING, color: '#5bbdee' }, eyebrow.toUpperCase()),
+      ]),
+      div({ fontFamily: 'Sora', fontWeight: 600, fontSize: size, lineHeight: 1.15, letterSpacing: -1, color: '#ffffff', maxWidth: 960 }, title),
+      Array.isArray(footer)
+        ? div({ fontFamily: 'Sora', fontSize: 26, color: 'rgba(255,255,255,0.85)', maxWidth: 940 }, footer.join('  ·  '))
+        : div({ alignItems: 'center', fontFamily: 'Sora', fontSize: 24, color: 'rgba(255,255,255,0.7)', maxWidth: 940 }, [
+          div({ width: 40, height: 4, background: '#1BA1E2', marginRight: 18 }),
+          footer,
+        ]),
+    ]) as never,
+    { width: 1040, height: 440, fonts },
   );
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">
   <rect width="${W}" height="${H}" fill="#232325"/>
   ${grid()}
   ${blueprint}
-  ${logo(80, 72, 72)}
-  <svg x="80" y="80" width="1040" height="470">${text.replace(/^<svg[^>]*>/, '').replace(/<\/svg>\s*$/, '')}</svg>
+  ${logo(80, 72, 56)}
+  <svg x="80" y="72" width="1040" height="440">${text.replace(/^<svg[^>]*>/, '').replace(/<\/svg>\s*$/, '')}</svg>
 </svg>`;
   return sharp(Buffer.from(svg)).png().toBuffer();
 }

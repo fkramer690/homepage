@@ -115,7 +115,7 @@ Umsetzen | 3 bis 6 Monate · Partner
 
 ## 9. Stufen (stage tiles)
 
-Three to seven stages of a model in one row, `Letter | Name | Subtitle | Question`. A trailing `*` marks the stages the cases below refer to (cyan frame). Optional zero to three cases `fall: Title | situation | consequence` (EN `case:`) as grey cards with a cyan left bar. Approved by Fabian 2026-10-29 for ADKAR on the change management page; fits models such as ADKAR or maturity levels.
+Three to seven stages of a model in one row, `Letter | Name | Subtitle | Question`. A trailing `*` marks the stages the cases below refer to (cyan frame). Optional zero to three cases `fall: Title | situation | consequence` (EN `case:`) as grey cards with a cyan left bar. Approved by Fabian 2026-10-29 for ADKAR on the change management page; fits models such as ADKAR or maturity levels. Look (Fabian chose the "Pfeilkette" 2026-10-30): letter and name sit in one continuous chain of arrow heads (light cyan, marked stages full cyan with white text), subtitle and question stand below without a frame, separated by thin lines; on mobile the chain runs downwards.
 
 ````
 ```stufen
