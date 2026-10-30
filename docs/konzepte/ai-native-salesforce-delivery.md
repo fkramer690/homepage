@@ -1,156 +1,198 @@
 # AI-nativer Delivery-Prozess für Salesforce
 
-Arbeitsnotiz, Stand 30.10.2026. Konzept für einen durchgängig agentengestützten Prozess von der ersten Kundenanforderung bis zum Produktiv-Deployment, mit Jira, VS Code, Git-Pipeline und Salesforce. Gedacht als Baustein zur Wiederverwendung in anderen Projekten (Kundenprojekte, Masterclass "AI im Salesforce-Ökosystem", Vorträge).
+Arbeitsnotiz, Stand 30.10.2026. Ein durchgängiger Prozess von der ersten Kundenanforderung bis zum Produktiv-Deployment, mit Jira, VS Code, Git-Pipeline und Salesforce. Gedacht als Baustein zur Wiederverwendung in anderen Projekten (Kundenprojekte, Masterclass "AI im Salesforce-Ökosystem", Vorträge).
 
 ## Kernidee
 
 AI-native statt nur AI-assisted heißt:
 
 - Das Jira-Ticket wird zur ausführbaren Spezifikation.
-- Ein Agent übernimmt die komplette Schleife von Ticket bis Pull Request.
-- Die Pipeline ist der Qualitätszaun.
-- Menschen sitzen an wenigen, klar definierten Toren statt an jedem Schritt.
+- Ein Agent übernimmt die Fleißarbeit von der Workshop-Vorbereitung bis zum Pull Request.
+- Die Pipeline ist der deterministische Qualitätszaun, ohne KI-Entscheidungen.
+- Echte Personen sitzen an klar definierten Toren und in den Gesprächen mit dem Kunden.
 
 Der rote Faden ist eine lückenlose Kette: **Aussage im Transkript → Anforderung → Story → Commit → Test → Release Note.** Jede Zeile Code lässt sich auf einen Satz zurückführen, den jemand beim Kunden gesagt hat, und umgekehrt.
 
+## Wer ist wer
+
+| Akteur | Art | Rolle im Prozess |
+|---|---|---|
+| Kunde (Fachbereich, Key User) | Person | bringt Anforderungen ein, bestätigt, testet, gibt frei |
+| Business Analyst (BA) | Person | moderiert, kuratiert Agenten-Ergebnisse, verantwortet fachliche Qualität |
+| Architekt | Person | setzt technische Leitplanken, pflegt die Regeldatei im Repo, gibt Specs frei |
+| Entwickler | Person | gibt Agenten-Pläne frei, reviewt Code, übernimmt bei Eskalation |
+| Agent | KI | analysiert, schreibt Entwürfe, Code, Tests, Doku; entscheidet nichts Verbindliches |
+| Pipeline | Automation | validiert und deployt deterministisch, keine KI |
+
 ---
 
-## Teil 1: Gesamtprozess mit Kunde, Business Analyst und Entwicklung
+## Der Prozess
 
 ```mermaid
 flowchart TD
-    A["1. Workshop vorbereiten<br/><i>BA + Agent: Org & Doku analysieren</i>"]
-    B["2. Discovery-Workshop<br/><i>Kunde + BA: Teams-Aufzeichnung, Transkript</i>"]
-    C["3. Auswertung<br/><i>BA + Agent: Protokoll, Story-Entwürfe</i>"]
-    D["4. Protokoll bestätigen<br/><i>Kunde: Entscheidungen fixieren</i>"]
-    E["5. Prototyp<br/><i>Entwicklung + Agent: Scratch Org</i>"]
-    F["6. Refinement mit Prototyp<br/><i>Alle: Transkript aktualisiert Stories → Ready for Agent</i>"]
-    G["7. Build & Pipeline<br/><i>Entwicklung + Agent: Spec, PR, Deploy (Teil 2)</i>"]
-    H["8. UAT mit Kunde<br/><i>Alle: Feedback als Bug oder Change Request</i>"]
-    I["9. Release & Doku<br/><i>BA + Agent: Release Notes, Handbuch</i>"]
-    A --> B --> C --> D --> E --> F --> G --> H --> I
+    S1["1. Workshop vorbereiten<br/><i>Agent: Org-Analyse, Agenda, Hypothesen</i>"]
+    S2["2. Discovery-Workshop<br/><i>Kunde, BA, Architekt im Gespräch · Transkript</i>"]
+    S3["3. Auswertung<br/><i>Agent: Protokoll, Story-Entwürfe mit Zeitstempel</i>"]
+    G1{{"Tor 1: Kunde bestätigt Protokoll"}}
+    S4["4. Prototyp<br/><i>Agent baut in Scratch Org</i>"]
+    S5["5. Refinement mit Prototyp<br/><i>Kunde, BA, Architekt, Entwickler · Transkript</i>"]
+    S6["6. Story-Diff & Impact-Analyse<br/><i>Agent: Änderungen, Testfälle, betroffene Metadaten</i>"]
+    G2{{"Tor 2: BA + Architekt geben Spec frei · Ready for Agent"}}
+    S7["7. Implementierung<br/><i>Agent: Branch, Plan → Act, Code + Tests</i>"]
+    S8["8. Pull Request<br/><i>Agent: Beschreibung, Jira-Link, AI-Review</i>"]
+    G3{{"Tor 3: Entwickler reviewt und merged"}}
+    S9["9. CI-Validierung<br/><i>Pipeline: Delta-Validate, Tests, Code Analyzer</i>"]
+    S10["10. Deploy nach UAT<br/><i>Pipeline · Agent schreibt Testskripte in Jira</i>"]
+    S11["11. UAT<br/><i>Kunde testet, BA begleitet · Transkript</i>"]
+    S12["12. Feedback-Triage<br/><i>Agent: Bug, Change Request oder Klärung</i>"]
+    G4{{"Tor 4: BA + Kunde entscheiden über CRs"}}
+    G5{{"Tor 5: Kunde gibt Release frei"}}
+    S13["13. Release nach Produktion<br/><i>Pipeline: Quick Deploy</i>"]
+    S14["14. Release Notes & Handbuch<br/><i>Agent schreibt, BA liest gegen</i>"]
+
+    S1 --> S2 --> S3 --> G1 --> S4 --> S5 --> S6 --> G2 --> S7 --> S8 --> G3 --> S9
+    S9 -- "Fehler: Agent liest Log, fixt, max. 2 Versuche" --> S7
+    S9 --> S10 --> S11 --> S12 --> G4 --> G5 --> S13 --> S14
+    G4 -- "Bugs" --> S7
+    G4 -. "CRs: neue Story" .-> S6
 
     classDef agent fill:#EEEDFE,stroke:#534AB7,color:#3C3489
-    classDef kunde fill:#E1F5EE,stroke:#0F6E56,color:#085041
-    class A,C,E,G,I agent
-    class B,D,F,H kunde
+    classDef meeting fill:#E1F5EE,stroke:#0F6E56,color:#085041
+    classDef gate fill:#FAEEDA,stroke:#854F0B,color:#633806
+    classDef pipe fill:#F1EFE8,stroke:#5F5E5A,color:#444441
+    class S1,S3,S4,S6,S7,S8,S12,S14 agent
+    class S2,S5,S11 meeting
+    class G1,G2,G3,G4,G5 gate
+    class S9,S10,S13 pipe
 ```
 
-Lila: Agent entwirft, Mensch kuratiert. Grün: gemeinsam mit dem Kunden.
+Legende: **Lila** = Agent arbeitet, eine Person kuratiert. **Grün** = Gespräch mit dem Kunden, nur Personen. **Orange** = Tor, eine Person entscheidet. **Grau** = Pipeline, deterministisch.
 
-### 1. Workshop vorbereiten (BA)
+---
 
-Bevor der Kunde im Raum ist, lässt der BA den Agenten die bestehende Org analysieren (über den Salesforce DX MCP Server: Objekte, Flows, Validierungsregeln, Berechtigungen) und vorhandene Doku in Confluence oder SharePoint lesen. Ergebnis ist eine Agenda mit Hypothesen und gezielten Fragen, z. B. "Ihr habt drei Flows auf Opportunity, die sich überschneiden – wer ist dafür fachlich zuständig?". Der Workshop startet damit auf einem anderen Niveau als mit einem leeren Whiteboard.
+## Die Schritte im Detail
 
-### 2. Discovery-Workshop mit Transkription (Kunde + BA)
+Jeder Schritt trennt, was eine echte Person tut und was der Agent oder die Pipeline macht.
 
-Das Meeting läuft wie gewohnt, wird aber aufgezeichnet und transkribiert. Der BA moderiert und muss nicht parallel mitschreiben, was die Gesprächsqualität spürbar verbessert.
+### 1. Workshop vorbereiten
 
-Vorher klären:
+- **Person (BA):** legt Ziel und Teilnehmende fest, schärft die vom Agenten vorgeschlagene Agenda, streicht Hypothesen, die politisch heikel sind.
+- **Agent:** analysiert die bestehende Org über den Salesforce DX MCP Server (Objekte, Flows, Validierungsregeln, Berechtigungen), liest vorhandene Doku in Confluence oder SharePoint, entwirft Agenda, Hypothesen und gezielte Fragen, z. B. "Ihr habt drei Flows auf Opportunity, die sich überschneiden – wer ist dafür fachlich zuständig?".
 
-- Einwilligung aller Teilnehmenden zur Aufzeichnung (DSGVO, bei Konzernkunden oft auch Betriebsrat).
-- In wessen Tenant das Transkript liegt. Bei Manufacturing-Kunden ist der Kunden-Tenant meist Pflicht; das bestimmt auch, wo der Agent arbeiten darf.
+### 2. Discovery-Workshop
 
-### 3. Auswertung (BA + Agent)
+- **Personen (Kunde, BA, Architekt):** das eigentliche Gespräch. Der BA moderiert und muss nicht mitschreiben. Vorab: Einwilligung aller Teilnehmenden zur Aufzeichnung (DSGVO, bei Konzernkunden oft Betriebsrat) und Klärung, in wessen Tenant das Transkript liegt.
+- **Agent / Tool:** nur Aufzeichnung und Transkription (z. B. Teams). Der Agent nimmt nicht am Gespräch teil.
 
-Aus dem Transkript erzeugt der Agent ein strukturiertes Protokoll (Entscheidungen, offene Fragen, Verantwortliche) und daraus Entwürfe für Epics und Stories in Jira, jeweils mit Zeitstempel-Verweis auf die Transkript-Stelle.
+### 3. Auswertung
 
-- Harte Trennung im Output zwischen "Kunde hat gesagt" und "Agent interpretiert".
-- Die Rolle des BA verschiebt sich vom Schreiber zum Kurator: streichen, schärfen, Fit-Gap ergänzen (Standard vs. Konfiguration vs. Code).
-- Der BA erkennt, wo das Transkript etwas Missverstandenes enthält, etwa falsch erkannte Fachbegriffe oder verwechselte Sprecher.
+- **Agent:** erzeugt aus dem Transkript ein Protokoll (Entscheidungen, offene Fragen, Verantwortliche) und Entwürfe für Epics und Stories in Jira, jeweils mit Zeitstempel-Verweis. Trennt hart zwischen "Kunde hat gesagt" und "Agent interpretiert".
+- **Person (BA):** kuratiert statt schreibt: streicht, schärft, ergänzt Fit-Gap (Standard vs. Konfiguration vs. Code), korrigiert falsch erkannte Fachbegriffe und verwechselte Sprecher.
 
-### 4. Protokoll bestätigen (Kunde)
+### Tor 1: Protokoll-Freigabe
 
-Das kuratierte Protokoll geht an den Kunden zur Bestätigung. Erstes formales Tor und kommerziell wichtig, weil es die Scope-Baseline festhält.
+- **Person (Kunde):** bestätigt das Protokoll. Damit steht die Scope-Baseline, kommerziell wichtig für spätere Change Requests.
 
-### 5. Prototyp (Entwicklung + Agent)
+### 4. Prototyp
 
-Größter Unterschied zum klassischen Vorgehen: Zwischen Discovery und Refinement baut der Agent aus den Story-Entwürfen einen Prototyp in einer Scratch Org (Objekte, Felder, Layouts, ein einfacher Flow). Das kostet Stunden statt Wochen, und der Kunde reagiert im nächsten Termin auf etwas Echtes statt auf Papier.
+- **Agent:** baut aus den Story-Entwürfen einen Prototyp in einer Scratch Org (Objekte, Felder, Layouts, ein einfacher Flow). Stunden statt Wochen.
+- **Person (Entwickler):** gibt den Rahmen vor (welche Stories, welche Org) und prüft kurz, dass der Prototyp für das Meeting vorzeigbar ist.
 
-### 6. Refinement mit Prototyp (alle)
+### 5. Refinement mit Prototyp
 
-Kunde, BA, Architekt und idealerweise ein Entwickler klicken gemeinsam durch den Prototyp. Auch dieses Meeting wird transkribiert. Der Agent erzeugt danach keinen neuen Story-Satz, sondern einen **Diff gegen die bestehenden Stories**: "Akzeptanzkriterium 3 von PROJ-42 geändert, weil Kunde bei 00:23:14 sagte …". Der BA prüft den Diff, der Architekt ergänzt technische Leitplanken, die Stories gehen auf "Ready for Agent".
+- **Personen (Kunde, BA, Architekt, Entwickler):** klicken gemeinsam durch den Prototyp. Der Kunde reagiert auf etwas Echtes statt auf Papier.
+- **Tool:** Aufzeichnung und Transkription.
 
-### 7. Build & Pipeline (Entwicklung)
+### 6. Story-Diff und Impact-Analyse
 
-Siehe Teil 2. Zusätzlich hat der Agent über die Verweise Zugriff auf den fachlichen Kontext aus den Transkripten, wenn eine Anforderung unklar ist.
+- **Agent:** erzeugt keinen neuen Story-Satz, sondern einen Diff gegen die bestehenden Stories ("Akzeptanzkriterium 3 von PROJ-42 geändert, weil Kunde bei 00:23:14 sagte …"). Ergänzt pro Story betroffene Metadaten, Testfälle und Impact gegen den Repo-Stand.
+- **Person (BA):** prüft den Diff fachlich.
+- **Person (Architekt):** ergänzt technische Leitplanken (Trigger-Framework, Datenmodell, Sharing).
 
-### 8. UAT mit dem Kunden (alle)
+### Tor 2: Spec-Freigabe "Ready for Agent"
 
-Der Agent generiert Testskripte direkt aus den Akzeptanzkriterien. UAT-Sessions und Feedback-Calls werden ebenfalls transkribiert, und der Agent klassifiziert jede Rückmeldung:
+- **Personen (BA + Architekt):** setzen die Story auf "Ready for Agent". Wichtigstes Tor, weil Fehler hier am billigsten sind.
 
-- **Bug**: widerspricht einem bestätigten Kriterium
-- **Change Request**: neue Anforderung
-- **Klärungsbedarf**
+### 7. Implementierung
 
-Für ein Beratungshaus wertvoll, weil Scope Creep sichtbar wird, mit Beleg aus dem bestätigten Protokoll statt Bauchgefühl.
+- **Agent:** liest das Ticket über den Atlassian Rovo MCP Server, legt `feature/PROJ-123` an, zieht eine Scratch Org oder Dev-Sandbox hoch, schreibt im Plan-Modus einen Umsetzungsplan, setzt ihn im Act-Modus um (Apex, LWC, Flow inklusive Tests), lässt lokal Tests und Code Analyzer laufen. Bei unklaren Anforderungen liest er die verlinkte Transkript-Stelle, statt zu raten.
+- **Person (Entwickler):** gibt den Plan frei, bevor der Agent Code schreibt, und beantwortet Rückfragen.
+- **Person (Architekt):** pflegt die Regeldatei im Repo (`CLAUDE.md` oder `AGENTS.md`) mit Trigger-Framework, Namenskonventionen, Sharing-Regeln und Verboten. Sie ist der Hebel für die Qualität aller Agenten-Ergebnisse.
 
-### 9. Release & Doku
+### 8. Pull Request
 
-Release Notes für die Fix-Version und eine Anwenderhilfe in der Sprache des Fachbereichs, generiert aus Stories und Testskripten, vom BA gegengelesen.
+- **Agent:** schreibt die PR-Beschreibung mit Ticket-Link und Komponentenliste, setzt Jira auf "In Review". Ein AI-Reviewer kommentiert vorab.
 
-### Was sich für die Rollen ändert
+### Tor 3: Code-Review
 
-- **BA**: schreibt weniger, entscheidet mehr. Kernkompetenz wird, Widersprüche zwischen Gesagtem und Gemeintem zu erkennen.
-- **Kunde**: sieht viel früher etwas Lauffähiges, braucht aber mehr Disziplin bei Bestätigungen, weil die Geschwindigkeit sonst in Chaos kippt.
-- **Entwicklung**: reviewt mehr, als sie schreibt.
-- **Architekt**: wird zum Hüter der Regeldatei im Repo.
+- **Person (Entwickler):** reviewt und merged. Der Entwickler reviewt mehr, als er schreibt.
 
-### Stolpersteine im Discovery-Teil
+### 9. CI-Validierung
+
+- **Pipeline:** Delta-Paket per `sfdx-git-delta`, Check-only-Deploy gegen die Integrations-Sandbox, definierte Tests, Code-Analyzer-Gate. Rein deterministisch.
+- **Agent:** bekommt bei Fehlern das Log und darf einen Fix-Commit liefern, mit Obergrenze von zwei Versuchen.
+- **Person (Entwickler):** übernimmt, wenn der Agent nach zwei Versuchen nicht durchkommt.
+
+### 10. Deploy nach UAT
+
+- **Pipeline:** deployt nach dem Merge in die UAT-Sandbox.
+- **Agent:** kommentiert im Ticket, was deployt wurde, und generiert Testskripte direkt aus den Akzeptanzkriterien.
+
+### 11. UAT
+
+- **Personen (Kunde, BA):** der Kunde testet, der BA begleitet Testsessions und Feedback-Calls.
+- **Tool:** Aufzeichnung und Transkription der Feedback-Calls.
+
+### 12. Feedback-Triage
+
+- **Agent:** klassifiziert jede Rückmeldung als **Bug** (widerspricht einem bestätigten Kriterium), **Change Request** (neue Anforderung) oder **Klärungsbedarf**, jeweils mit Beleg aus dem bestätigten Protokoll.
+
+### Tor 4: Bug- und CR-Entscheidung
+
+- **Personen (BA + Kunde):** bestätigen die Einordnung. Bugs gehen zurück in Schritt 7, Change Requests werden als neue Story in Schritt 6 aufgenommen und kommerziell bewertet. Scope Creep wird damit sichtbar, mit Beleg statt Bauchgefühl.
+
+### Tor 5: Release-Freigabe
+
+- **Person (Kunde bzw. Release Manager):** gibt das Release frei.
+
+### 13. Release nach Produktion
+
+- **Pipeline:** rollt die validierte Deployment-ID per Quick Deploy aus. Produktions-Zugänge liegen ausschließlich bei der Pipeline, nie beim Agenten.
+
+### 14. Release Notes und Handbuch
+
+- **Agent:** schreibt Release Notes für die Fix-Version und eine Anwenderhilfe in der Sprache des Fachbereichs, aus Stories und Testskripten.
+- **Person (BA):** liest gegen und gibt an den Kunden.
+
+---
+
+## Was sich für die Rollen ändert
+
+- **BA:** schreibt weniger, entscheidet mehr. Kernkompetenz wird, Widersprüche zwischen Gesagtem und Gemeintem zu erkennen.
+- **Kunde:** sieht viel früher etwas Lauffähiges, braucht aber mehr Disziplin bei Bestätigungen, weil die Geschwindigkeit sonst in Chaos kippt.
+- **Entwickler:** gibt Pläne frei und reviewt, statt jede Zeile selbst zu schreiben.
+- **Architekt:** wird zum Hüter der Regeldatei und damit der Qualität aller Agenten-Ergebnisse.
+
+## Werkzeugkette (Stand Herbst 2026)
+
+- **Salesforce DX MCP Server:** in Agentforce Vibes vorkonfiguriert, nutzbar direkt nach Installation der VS-Code-Extension; Agentforce Vibes 2.0 ist seit Juni 2026 GA. Der DX MCP Server lässt sich auch an Claude Code, Cursor & Co. anschließen.
+- **Org-Allowlisting:** Der DX MCP Server greift nur auf explizit freigegebene Orgs zu, die beim Start festgelegt werden. Produktion nie freigeben.
+- **Atlassian Rovo MCP Server:** Coding Agents können Jira lesen und schreiben und das Development-Panel lesen (verknüpfte Branches, PRs, Commits). Jira erlaubt, Work Items direkt an Claude, Cursor, Codex, GitHub Copilot oder den Jira Coding Agent zuzuweisen.
+- **Transkription:** Teams-Aufzeichnung oder vergleichbar, im Tenant des Kunden.
+
+## Stolpersteine
+
+**Im Discovery-Teil**
 
 - Transkripte sind keine Wahrheit: Ein Satz im Meeting ist keine Entscheidung. Der Agent darf daraus nie direkt verbindliche Stories ohne BA-Prüfung erzeugen.
 - Kunden, die keine Aufzeichnung wollen: Der BA diktiert unmittelbar nach dem Termin eine Zusammenfassung, die denselben Weg geht.
 - Aufbewahrung: Transkripte nach Abnahme löschen oder auf die bestätigten Protokolle reduzieren.
 
----
+**In der Salesforce-Strecke**
 
-## Teil 2: Entwicklungs- und Deployment-Strecke
-
-```mermaid
-flowchart TD
-    J["Jira: Story wird zur Spec<br/><i>Agent verfeinert Akzeptanzkriterien</i>"]
-    V["VS Code: Implementierung<br/><i>Agent, DX MCP, Scratch Org</i>"]
-    P["Git: Pull Request<br/><i>Beschreibung, Jira-Link, AI-Review</i>"]
-    C["CI: Validierung<br/><i>Delta-Validate, Tests, Code Analyzer</i>"]
-    U["Merge: Deploy nach UAT<br/><i>Testanleitung als Jira-Kommentar</i>"]
-    R["Release: Produktion<br/><i>Quick Deploy, Release Notes</i>"]
-    G1{{"Spec-Freigabe"}}
-    G2{{"Code-Review"}}
-    G3{{"Release-Freigabe"}}
-
-    J --> V --> P --> C --> U --> R
-    J -.- G1
-    P -.- G2
-    R -.- G3
-    C -- "Fehler: Agent liest Log, fixt (max. 2 Versuche)" --> V
-
-    classDef agent fill:#EEEDFE,stroke:#534AB7,color:#3C3489
-    classDef mensch fill:#E1F5EE,stroke:#0F6E56,color:#085041
-    class J,V,P,C,U,R agent
-    class G1,G2,G3 mensch
-```
-
-### Werkzeugkette (Stand Herbst 2026)
-
-- **Salesforce DX MCP Server**: in Agentforce Vibes vorkonfiguriert, nutzbar direkt nach Installation der VS-Code-Extension; Agentforce Vibes 2.0 ist seit Juni 2026 GA. Der DX MCP Server lässt sich auch an Claude Code, Cursor & Co. anschließen.
-- **Org-Allowlisting**: Der DX MCP Server greift nur auf explizit freigegebene Orgs zu, die beim Start festgelegt werden. Produktion nie freigeben.
-- **Atlassian Rovo MCP Server**: Coding Agents können Jira lesen und schreiben und auch das Development-Panel lesen (verknüpfte Branches, PRs, Commits). Jira erlaubt, Work Items direkt an Claude, Cursor, Codex, GitHub Copilot oder den Jira Coding Agent zuzuweisen.
-
-### Die sechs Schritte
-
-1. **Spec in Jira**: Agent liest die Story, prüft gegen den Repo-Stand, welche Objekte, Flows und Klassen betroffen sind, schreibt Akzeptanzkriterien, Testfälle und Impact zurück ins Ticket. Architekt oder PO setzt "Ready for Agent". Wichtigstes Tor, weil Fehler hier am billigsten sind.
-2. **Implementierung**: Agent legt `feature/PROJ-123` an, zieht eine Scratch Org oder Dev-Sandbox hoch, arbeitet erst im Plan-, dann im Act-Modus, schreibt Apex/LWC/Flow inklusive Tests, lässt lokal Tests und Code Analyzer laufen. Entscheidend ist eine Regeldatei im Repo (`CLAUDE.md` oder `AGENTS.md`) mit Trigger-Framework, Namenskonventionen, Sharing-Regeln und Verboten.
-3. **Pull Request**: Agent schreibt PR-Beschreibung mit Ticket-Link und Komponentenliste, setzt Jira auf "In Review". AI-Reviewer kommentiert vorab, ein Mensch entscheidet.
-4. **CI-Validierung**: Delta-Paket per `sfdx-git-delta`, Check-only-Deploy gegen die Integrations-Sandbox, definierte Tests, Code-Analyzer-Gate. Bei Fehlern bekommt der Agent das Log und darf einen Fix-Commit liefern, mit Obergrenze (z. B. zwei Versuche), danach zurück an einen Menschen.
-5. **UAT**: Nach Merge Deploy in UAT; der Agent kommentiert im Ticket, was deployt wurde und wie der Fachbereich testen soll.
-6. **Produktion**: Validierte Deployment-ID per Quick Deploy, nach menschlicher Freigabe. Release Notes generiert der Agent aus den Tickets der Fix-Version.
-
-### Salesforce-spezifische Stolpersteine
-
-- **Klickentwicklung**: Admins bauen Flows und Layouts weiter in Sandboxes. Der Prozess braucht einen Schritt "Agent retrieved und committet die Änderung", sonst driftet Git von der Org weg.
-- **Profile, Permission Sets, Destructive Changes**: klassische Deploy-Fallen, explizite Regeln in die Agent-Datei.
-- **Konfigurationsdaten** (CPQ, Field-Service-Setups, Custom Metadata vs. Custom Settings) sind kein Metadata-Deploy und brauchen eine eigene Strecke.
-- **Credentials**: Produktions-Zugänge gehören ausschließlich der Pipeline, nie dem Agenten im IDE.
+- Klickentwicklung: Admins bauen Flows und Layouts weiter in Sandboxes. Der Prozess braucht einen Schritt "Agent retrieved und committet die Änderung", sonst driftet Git von der Org weg.
+- Profile, Permission Sets, Destructive Changes: klassische Deploy-Fallen, explizite Regeln in die Regeldatei.
+- Konfigurationsdaten (CPQ, Field-Service-Setups, Custom Metadata vs. Custom Settings) sind kein Metadata-Deploy und brauchen eine eigene Strecke.
 
 ---
 
