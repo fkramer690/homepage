@@ -88,7 +88,7 @@ mit: Mit Pull-Request-Review | Jede Änderung geht durch ein Review, bevor sie i
 - **#191 mergen.** Danach live auf `/leistungen/partnersteuerung/`, `/en/services/partner-governance/` und in beiden Fassungen des PR-Review-Artikels prüfen.
 - **Kennzahlen-Leiste:** Zahlen beim Reinscrollen hochzählen lassen. Noch nicht gebaut.
 - **Karte „04 Integration“:** Datenfluss zwischen SAP, MuleSoft, Genesys und Teams. Noch nicht gebaut.
-- **Weitere Kandidaten für `partnerfluss`:** Artikel zur Sandbox-Strategie für mehrere Partner und zu Center-of-Excellence-Calls, DevOps-Leistungsseite („Wie passt das zu mehreren Partnern?“). Dabei die Regel „höchstens vier Bausteine pro Text“ beachten.
+- **Weitere Kandidaten für `partnerfluss`:** Artikel zur Sandbox-Strategie für mehrere Partner und zu Center-of-Excellence-Calls, DevOps-Leistungsseite („Wie passt das zu mehreren Partnern?“). Dabei die Regel „höchstens ein Baustein je 250 Wörter, vier immer erlaubt“ beachten.
 - **Alter Rollen-Mockup auf dem Canvas:** Er ist inhaltlich ersetzt, kann aber als Vorlage für Social-Media-Loops (LinkedIn) oder Vortragsfolien dienen.
 
 ## Hinweise zum Weiterarbeiten

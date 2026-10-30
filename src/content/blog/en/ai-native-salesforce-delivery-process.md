@@ -32,10 +32,14 @@ An AI-native delivery process for Salesforce turns the Jira ticket into an execu
 
 AI-native delivery means building the delivery process around the agent instead of adding a coding assistant to the old process. How this changes the team set-up I described in [AI-native delivery: smaller Salesforce teams](../ai-native-delivery-smaller-salesforce-teams/). This article is about the flow itself. It is my target picture: I already use individual steps, I will set it up end to end from workshop to production in my next project, and a few gaps are still to close. It rests on four ideas:
 
-- **The ticket is the specification.** An agent can only build a story as well as its acceptance criteria are written. That is why the spec approval is the most important gate.
-- **The agent does the legwork.** Org analysis, minutes, story drafts, prototype, code, tests, test scripts, release notes.
-- **The pipeline is a deterministic quality fence.** It validates and deploys without a model deciding anything.
-- **People sit at clearly defined gates** and hold every conversation with the client themselves. The agent takes part in no meeting.
+```saeulen
+roof: AI-native delivery
+contract | Ticket | is the specification | An agent builds a story only as well as its acceptance criteria are written.
+ai | Agent | does the legwork | Org analysis, minutes, stories, prototype, code, tests and release notes are drafted by the agent.
+pipeline | Pipeline | checks deterministically | It validates and deploys without a model deciding anything.
+team | People | decide at gates | They hold every conversation with the client themselves, the agent sits in no meeting.
+base: One process, built around the agent
+```
 
 The difference to AI-assisted: there the old process gets a coding assistant, the business analyst keeps typing up stories, and the client sees something that runs only in acceptance testing. Here the agent delivers minutes, stories and a prototype, and every piece of feedback is classified against the confirmed minutes.
 
@@ -111,16 +115,18 @@ After approval the pipeline rolls out the already validated deployment ID by qui
 
 Agent and pipeline decide nothing binding. Every decision that affects scope, quality or production is made by a named person.
 
-| | Discovery | Build | Release |
-|---|---|---|---|
-| Client | Explains, **confirms the minutes** | Answers questions | Tests, **approves the release** |
-| Business analyst | Moderates, curates, **approves the spec** | Clarifies business questions | Supports the test, **decides on CRs** |
-| Architect | Sets guardrails, **approves the spec** | Maintains the rules file | Watches data model and sharing |
-| Developer | Checks the prototype | Approves plans, **reviews and merges** | Takes over on escalation |
-| Agent | Analyses, takes minutes, drafts | Builds code and tests | Test scripts, triage, release notes |
-| Pipeline | Not involved yet | Validates, sets the Jira status | Deploys, sets the Jira status |
-
-In bold are the decisions at the five gates. Everything else is groundwork for them.
+```tabelle
+title: Who decides in which phase
+columns: | Discovery | Build | Release
+Client | Explains and confirms the minutes * | Answers questions | Tests and approves the release *
+Business analyst | Moderates, curates and approves the spec * | Clarifies business questions | Supports the test, decides on CRs *
+Architect | Sets guardrails and approves the spec * | Maintains the rules file | Watches data model and sharing
+Developer | Checks the prototype | Approves plans, reviews and merges * | Takes over on escalation
+Agent | Analyses, takes minutes, drafts | Builds code and tests | Test scripts, triage, release notes
+Pipeline | Not involved yet | Validates, sets the Jira status | Deploys, sets the Jira status
+mark: Gate
+note: Marked are the decisions at the five gates. Everything else is groundwork for them.
+```
 
 The roles change more than the tools do. The business analyst writes less and decides more; the core skill becomes spotting contradictions between what was said and what was meant. The architect becomes the keeper of the rules file, the Markdown file in the repository with trigger framework, naming conventions, sharing rules and prohibitions that the agent reads at the start of every session. It is the biggest lever on the quality of everything the agent produces, see [AI rules file in the Salesforce repository](../ai-rules-file-salesforce-repository/). The client needs more discipline with confirmations, otherwise speed turns into chaos.
 
@@ -172,6 +178,17 @@ The process does not depend on a particular coding agent. It needs four connecti
 
 ## Where should you start?
 
-Start with the gate that saves the most: the spec approval. For one stream, have the stories written so that an agent can build them without asking back, and measure how often the developer still has to ask in the review. In parallel, settle recording and tenant for the workshops and lock every production access except the pipeline's. Only when this track runs reliably is it worth adding the prototype and the feedback triage.
+Start with the gate that saves the most: the spec approval. Only when this track runs reliably is the rest worth it.
+
+```schritte
+Spec approval | one stream · BA and architect
+  Write the stories so that an agent can build them without asking back.
+Measure | in code review · developer
+  Count how often the developer still has to ask.
+Secure | in parallel
+  Settle recording and tenant, lock every production access except the pipeline's.
+Expand | once it runs reliably
+  Add the prototype and the feedback triage.
+```
 
 An AI-native delivery process gets fast because people decide at a few gates and everything in between stays traceable.
