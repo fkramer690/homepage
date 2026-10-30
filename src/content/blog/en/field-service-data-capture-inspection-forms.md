@@ -108,4 +108,4 @@ Add Voice to Form
 
 Forms, offline data and the service report together make up [chapter 3 of the Field Service masterclass](../../masterclass/field-service/field-service-mobile-app-documents/).
 
-A paper protocol becomes useful data when you decide first which answers become fields, and only then build the form. If you are planning to replace paper protocols in your field service, [send me a message](#contact).
+A paper protocol becomes useful data when you decide first which answers become fields, and only then build the form.

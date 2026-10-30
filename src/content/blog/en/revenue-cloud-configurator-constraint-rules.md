@@ -117,4 +117,4 @@ My recommendation in that case: the two spreadsheet lines go into constraint mod
 
 The full chapter is the masterclass part [catalog, configurator, pricing](../../masterclass/revenue-cloud/product-catalog-configurator-pricing/), and how manufacturers carry configured products into a sales agreement is in [from quote to sales agreement](../quote-to-sales-agreement-product-configurator/). Setting the rule master between SAP and Salesforce is part of my [Salesforce architecture](../../services/salesforce-architecture/) work.
 
-Constraint rules pay off when the rules have one home and one owner, whether that home is Revenue Cloud or not. If you are weighing the configurator against your current one, [send me a message](#contact).
+Constraint rules pay off when the rules have one home and one owner, whether that home is Revenue Cloud or not.

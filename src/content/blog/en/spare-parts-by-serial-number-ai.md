@@ -121,4 +121,4 @@ Start with technicians
 
 Which system leads for which data is the subject of [Salesforce integration](../../services/salesforce-integration/); the wider agent picture is in the masterclass chapter [AI agents in manufacturing](../../masterclass/ai-salesforce/ai-agents-in-manufacturing/).
 
-An agent finds the right spare part only as reliably as your serial numbers lead to an as-built list, so if you want to check that before anyone builds an agent, [send me a message](#contact).
+An agent finds the right spare part only as reliably as your serial numbers lead to an as-built list.

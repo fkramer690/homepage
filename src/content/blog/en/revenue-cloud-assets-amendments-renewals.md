@@ -98,4 +98,4 @@ There are two ways out. Either you sell monitoring per machine, one line per ser
 
 List the products you sell that live on after the order: subscriptions, service contracts, software licences, monitoring. For each one decide whether it is counted or tied to a serial number, who may amend and renew it, and which record Field Service uses. Write the decision into the ownership matrix before the first sprint on either cloud. The chapter [quote, contract, order](../../masterclass/revenue-cloud/quote-contract-order/) shows where assets sit between quote and SAP.
 
-Assets in Revenue Cloud keep a reliable history of what was sold, as long as every change goes through a quote and an order and the link to the machine is decided up front. If you want to talk through your installed base model, [send me a message](#contact).
+Assets in Revenue Cloud keep a reliable history of what was sold, as long as every change goes through a quote and an order and the link to the machine is decided up front.

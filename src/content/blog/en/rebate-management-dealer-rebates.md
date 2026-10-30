@@ -116,4 +116,4 @@ Before the first programme is created, settle four points:
 3. **Transactions.** Which system delivers them, at which level and how often?
 4. **Settlement.** When do approvals and accruals reach the ERP, aligned with month-end close?
 
-Rebate management replaces the spreadsheet when its rules are written down cleanly first and the ERP keeps paying out. If you want to get your dealer rebates out of Excel, [send me a message](#contact).
+Rebate management replaces the spreadsheet when its rules are written down cleanly first and the ERP keeps paying out.

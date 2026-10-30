@@ -93,4 +93,4 @@ A simple test: have three technicians count their van and compare the result wit
 
 If it matches, decide which of the objects above you really need, and start with stock, required parts and consumption.
 
-The next part of the series covers maintenance contracts and committed response times. If you want an independent look at your spare parts processes before then, [get in touch](#contact).
+The next part of the series covers maintenance contracts and committed response times.

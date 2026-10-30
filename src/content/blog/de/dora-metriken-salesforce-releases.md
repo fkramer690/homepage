@@ -101,4 +101,4 @@ Als Annahme: Ein Programm mit zwölf Releases im Jahr, von denen vier einen Hotf
 
 Fangen Sie mit zwei Zahlen an: Deployment-Häufigkeit und Fehlerquote. Beide lassen sich aus der Pipeline und aus der Zahl der Hotfixes ablesen, auch wenn noch kein Tool sie automatisch berichtet. Legen Sie den heutigen Wert als Ausgangspunkt fest und berichten Sie den Trend einmal im Monat. Die Durchlaufzeit kommt dazu, sobald alle Änderungen über Pull Requests laufen.
 
-DORA-Metriken machen sichtbar, ob ein Release-Prozess besser wird, solange niemand sie als Zeugnis benutzt. Wenn Sie Ihre Releases messbar machen möchten, [schreiben Sie mir](#contact).
+DORA-Metriken machen sichtbar, ob ein Release-Prozess besser wird, solange niemand sie als Zeugnis benutzt. Zwei Zahlen aus der Pipeline reichen für den Anfang.

@@ -111,4 +111,4 @@ Bevor der Konfigurator gebaut oder ein Produkt ausgewählt wird, klären Sie vie
 3. **Welche Felder wandern ins Agreement?** Das Mapping aus der Tabelle oben, inklusive Laufzeit und Account-Ebene.
 4. **Wo wird freigegeben?** Eine Stelle für den Preis, dokumentiert im Entscheidungslog der [Salesforce-Architektur](../../leistungen/salesforce-architektur/).
 
-Ein Sales Agreement ist nur so sauber wie die Produkte, die aus dem Konfigurator hineinkommen. Wenn Sie gerade zwischen eigenem Konfigurator und Standardprodukt abwägen, [schreiben Sie mir](#contact).
+Ein Sales Agreement ist nur so sauber wie die Produkte, die aus dem Konfigurator hineinkommen.

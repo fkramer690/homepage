@@ -107,4 +107,4 @@ Count findings
   Count review findings by category. After a few sprints you know which rules belong in the [AI rules file of your repository](../ai-rules-file-salesforce-repository/) and which gate is missing.
 ```
 
-AI-generated Salesforce code needs a review like any other code, with the human attention moved from syntax to tests, data access and business rules. If you want a second pair of eyes on how your partners' code gets reviewed, [send me a message](#contact).
+AI-generated Salesforce code needs a review like any other code, with the human attention moved from syntax to tests, data access and business rules.

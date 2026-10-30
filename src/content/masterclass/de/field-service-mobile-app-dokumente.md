@@ -52,9 +52,11 @@ Bei einem Maschinenbauer kommt aufs Gerät, was der Techniker braucht, um die Ei
 
 Die [Hinweise zu LWC Offline](https://developer.salesforce.com/docs/atlas.en-us.field_service_dev.meta/field_service_dev/sfs_gs_lwc_considerations.htm) nennen fünf bekannte Probleme. Drei davon bestimmen den Testplan:
 
-- **Aufgaben werden nicht geladen.** Ein Task-Objekt im Briefcase löst beim Priming einen Fehler aus.
-- **Partner-Benutzer.** Ein Benutzer mit Community-Lizenz kann beim Öffnen eines Service-Termins einen Fehler wegen eines fehlenden Datensatzes bekommen. Partnertechniker brauchen deshalb einen eigenen Briefcase und einen eigenen Test.
-- **Kaltstart unter iOS.** Geänderte Lightning Web Components lädt die App erst, wenn sie ganz beendet und neu gestartet wurde.
+| Problem | Was passiert |
+|---|---|
+| Aufgaben werden nicht geladen | Ein Task-Objekt im Briefcase löst beim Priming einen Fehler aus. |
+| Partner-Benutzer | Ein Benutzer mit Community-Lizenz kann beim Öffnen eines Service-Termins einen Fehler wegen eines fehlenden Datensatzes bekommen. Partnertechniker brauchen deshalb einen eigenen Briefcase und einen eigenen Test. |
+| Kaltstart unter iOS | Geänderte Lightning Web Components lädt die App erst, wenn sie ganz beendet und neu gestartet wurde. |
 
 Den Briefcase pro Rolle, die vollständige Liste und einen Tag im Keller ohne Netz beschreibe ich in [Field Service App offline: Welche Daten aufs Gerät?](../../../blog/field-service-app-offline-briefcase/).
 
@@ -81,11 +83,20 @@ Spracheingabe auf Deutsch macht die Funktion für Serviceteams in der DACH-Regio
 
 Document Builder erzeugt den Servicebericht als PDF aus einem Arbeitsauftrag, einer Auftragsposition oder einem Service-Termin. Laut den [Field-Service-Limits](https://help.salesforce.com/s/articleView?id=service.fs_limits.htm&language=en_US&type=5) bringt jeder Nutzer mit einer Lizenz Field Service Dispatcher oder Field Service Mobile 250 Dokumente pro Monat mit, für Spitzenmonate gibt es einmalig 10.000 zusätzliche Dokumente. Ein Techniker mit fünf Einsätzen am Tag erstellt etwa 105 Berichte im Monat, deutlich unter der Grenze.
 
+```kennzahlen
+250 | Dokumente pro Nutzer und Monat mit Lizenz Field Service Dispatcher oder Field Service Mobile
+10.000 | zusätzliche Dokumente einmalig pro Org für Spitzenmonate
+50 | Seiten und 100 MB höchstens pro Dokument
+quelle: Salesforce-Hilfe, Field-Service-Limits
+```
+
 Für den klassischen Bericht an der Maschine, mit Arbeitszeit, Teilen, Fotos und Unterschrift des Kunden, offline erstellt, ist Document Builder die richtige Wahl. Die Grenzen auf derselben Seite sind für die Planung wichtig:
 
-- **Nur drei Objekte.** Kein Dokument am Asset oder an einem eigenen Objekt.
-- **Android hinkt hinterher.** Unter iOS entstehen Dokumente aus Arbeitsauftrag und Service-Termin, unter Android nur aus dem Service-Termin.
-- **Umfang.** Höchstens 50 Seiten und 100 MB pro Dokument.
+| Grenze | Was sie bedeutet |
+|---|---|
+| Nur drei Objekte | Kein Dokument am Asset oder an einem eigenen Objekt. |
+| Android hinkt hinterher | Unter iOS entstehen Dokumente aus Arbeitsauftrag und Service-Termin, unter Android nur aus dem Service-Termin. |
+| Umfang | Höchstens 50 Seiten und 100 MB pro Dokument. |
 
 Fünf kleinere Lücken sollten Sie beim Standardbericht einplanen: Vorlagenwahl, Dateiname, E-Mail, Vorbelegung und Gestaltung. Flows und kleine Komponenten schließen sie ohne weitere Lizenz, wie ich in [Document Builder: fünf Grenzen und Workarounds](../../../blog/salesforce-document-builder-grenzen-workarounds/) zeige.
 
@@ -99,7 +110,13 @@ Angebote sind ein eigener Fall. Sieht der Techniker Zusatzarbeit oder ein versch
 
 Visual Remote Assistant ist ein Videowerkzeug für Service Cloud und Field Service. Laut [Produktseite](https://salesforce.com/products/visual-remote-assistant) tippt der Kunde auf einen Link per SMS oder E-Mail, und ein Video in beide Richtungen öffnet sich im mobilen Browser, ohne App, Login oder Passwort. Sitzungen lassen sich aufzeichnen. Das Add-on kostet laut [Preisliste, Oktober 2026](https://www.salesforce.com/service/field-service-management/pricing/) 50 US-Dollar pro Nutzer und Monat und ist in Agentforce 1 Field Service enthalten. Der Kunde braucht keine Lizenz.
 
-Aus meiner Sicht ersetzt Video einen Einsatz, wenn der Bediener die Störung mit Anleitung selbst beheben kann: ein verstellter Parameter, ein Bedienfehler, ein Reset. Bei mechanischen Reparaturen spart es den zweiten Einsatz, weil der Techniker mit dem richtigen Teil anreist. Klären Sie vor der ersten Sitzung die Einwilligung des Kunden zur Aufzeichnung, den Betriebsrat für Ihre eigenen Beschäftigten und welche Störungen ohne Einsatz abgeschlossen werden dürfen. Wie Sie das Potenzial aus den Störungseinsätzen des letzten Jahres schätzen, steht in [Visual Remote Assistant: Videohilfe statt Einsatz?](../../../blog/visual-remote-assistant-fernhilfe-statt-einsatz/).
+Aus meiner Sicht ersetzt Video einen Einsatz, wenn der Bediener die Störung mit Anleitung selbst beheben kann: ein verstellter Parameter, ein Bedienfehler, ein Reset. Bei mechanischen Reparaturen spart es den zweiten Einsatz, weil der Techniker mit dem richtigen Teil anreist.
+
+```hinweis achtung
+Klären Sie vor der ersten Sitzung die Einwilligung des Kunden zur Aufzeichnung, den Betriebsrat für Ihre eigenen Beschäftigten und welche Störungen ohne Einsatz abgeschlossen werden dürfen.
+```
+
+Wie Sie das Potenzial aus den Störungseinsätzen des letzten Jahres schätzen, steht in [Visual Remote Assistant: Videohilfe statt Einsatz?](../../../blog/visual-remote-assistant-fernhilfe-statt-einsatz/).
 
 ## Wie testen Sie jede App-Version?
 
@@ -107,13 +124,15 @@ Neben den drei Plattform-Releases im Jahr hat die App eigene Haupt- und Patch-Ve
 
 Meine Routine pro Version, auf iOS und Android, passt in einen halben Tag:
 
-1. Anmeldung und Rückkehr nach einer Stunde im Hintergrund.
-2. Priming mit einem echten Technikerprofil, dann ein vollständiger Einsatz im Flugmodus mit verbrauchten Teilen.
-3. Ein echtes Data-Capture-Formular, zur Hälfte geschlossen und wieder aufgenommen.
-4. Der Servicebericht mit Unterschrift, offline.
-5. Eigene Komponenten nach einem Kaltstart.
-6. Dasselbe mit einem Partner-Benutzer.
-7. Nach der Synchronisation: Verbrauch und Bericht im Innendienst und im ERP.
+| Nr. | Testfall |
+|---|---|
+| 1 | Anmeldung und Rückkehr nach einer Stunde im Hintergrund. |
+| 2 | Priming mit einem echten Technikerprofil, dann ein vollständiger Einsatz im Flugmodus mit verbrauchten Teilen. |
+| 3 | Ein echtes Data-Capture-Formular, zur Hälfte geschlossen und wieder aufgenommen. |
+| 4 | Der Servicebericht mit Unterschrift, offline. |
+| 5 | Eigene Komponenten nach einem Kaltstart. |
+| 6 | Dasselbe mit einem Partner-Benutzer. |
+| 7 | Nach der Synchronisation: Verbrauch und Bericht im Innendienst und im ERP. |
 
 Pilotgruppe, Kalender und wer für App-Versionen verantwortlich ist, beschreibe ich in [Field Service App Updates: jede Version vorher testen](../../../blog/field-service-app-updates-testen/). App-Versionen gehören in denselben Kalender wie die Plattform-Releases, beschrieben im Kapitel [Release-Planung](../../devops-release-management/release-planung-salesforce-releases/) der DevOps-Masterclass. Wie solche Testskripte in Qualitätsprüfungen passen, steht im Kapitel [Qualität, Tests und Reviews](../../devops-release-management/qualitaet-tests-reviews/).
 
@@ -140,11 +159,13 @@ Voice to Form wartet, bis Datenschutz und Betriebsrat zugestimmt haben. Nach dem
 
 Vier Entscheidungen brauchen einen Namen, bevor ein Partner Formulare baut:
 
-- **Zieldatenmodell für Servicedaten.** Welche Werte werden Felder an Asset und Arbeitsauftrag, welche Auswahllisten werden geteilt, wie werden Mängel zu Folgearbeit?
-- **Briefcase pro Rolle.** Eigener Techniker, Partnertechniker, Teamleiter.
-- **Aufteilung der Dokumente.** Servicebericht im Document Builder, Dokumente mit Logik in einem zweiten Werkzeug, Angebote im Vertriebsprozess.
-- **Verantwortung für App-Versionen.** Meist der Release Manager, gemeinsam mit dem Gerätemanagement.
+| Entscheidung | Was dazugehört |
+|---|---|
+| Zieldatenmodell für Servicedaten | Welche Werte werden Felder an Asset und Arbeitsauftrag, welche Auswahllisten werden geteilt, wie werden Mängel zu Folgearbeit? |
+| Briefcase pro Rolle | Eigener Techniker, Partnertechniker, Teamleiter. |
+| Aufteilung der Dokumente | Servicebericht im Document Builder, Dokumente mit Logik in einem zweiten Werkzeug, Angebote im Vertriebsprozess. |
+| Verantwortung für App-Versionen | Meist der Release Manager, gemeinsam mit dem Gerätemanagement. |
 
 Das Datenmodell ist Arbeit an der [Salesforce-Architektur](../../../leistungen/salesforce-architektur/) und entscheidet, ob Formulare, Berichte und später KI-Agenten die Daten nutzen können. [Kapitel 4](../field-service-assets-wartung-teile/) baut darauf auf, mit Assets, Wartungsplänen und Ersatzteilen, und die [Übersicht](../) zeigt alle Kapitel.
 
-Die App des Technikers trägt, wenn das Datenmodell vor dem ersten Formular steht und jede App-Version getestet ist, bevor sie die Geräte erreicht. Wenn Sie einen unabhängigen Blick auf Ihre mobile Lösung und Ihre Dokumente möchten, [schreiben Sie mir](#contact).
+Die App des Technikers trägt, wenn das Datenmodell vor dem ersten Formular steht und jede App-Version getestet ist, bevor sie die Geräte erreicht.

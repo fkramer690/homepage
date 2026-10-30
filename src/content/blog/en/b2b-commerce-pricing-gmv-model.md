@@ -100,4 +100,4 @@ How the editions of the core platform affect a licence plan is described in [Sal
 
 Estimate store GMV for three years with a rising digital share, then calculate the fee at 1, 2 and 3 percent next to buyer licences and implementation. If the business case only works at the lowest rate, you know your negotiating position before the first call. The full calculation is in the [B2B webshop business case for manufacturers](../b2b-webshop-business-case-manufacturers/), and the place of pricing in the overall decision is in the [masterclass chapter on whether B2B Commerce is worth it](../../masterclass/b2b-commerce/b2b-commerce-worth-it-overview/). An independent check of quotes is part of my work on [make-or-buy and licence forecasts](../../services/make-or-buy-licences/).
 
-The GMV fee is fair when the store sells, but only if you know the rate and the definition before you sign. If a B2B Commerce quote is on your desk, [send me a message](#contact).
+The GMV fee is fair when the store sells, but only if you know the rate and the definition before you sign.

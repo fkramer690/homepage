@@ -124,4 +124,4 @@ Add an agent
 
 Which tool fits which job across the Salesforce platform is in the masterclass chapter on [Salesforce AI development tools](../../masterclass/ai-salesforce/salesforce-ai-development-tools/), and this kind of decision is part of my [Salesforce architecture work](../../services/salesforce-architecture/).
 
-For the four text tasks above a template does the job, and an agent earns its higher price only where it answers or acts without a person in between. If you want a second opinion on which of your use cases needs which, [send me a message](#contact).
+For the four text tasks above a template does the job, and an agent earns its higher price only where it answers or acts without a person in between.

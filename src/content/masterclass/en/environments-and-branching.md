@@ -79,6 +79,14 @@ A branch is a separate line of development in the Git repository. For Salesforce
 - **Stage branches** (major branches) belong to one org each. sfdx-hardis calls them ["major branches"](https://sfdx-hardis.cloudity.com/salesforce-devops-deploy-major-branches/), defined as "git branches that have an associated CI/CD org", with the chain `integration`, `uat`, `preprod` and `main` for production. A merge into the branch deploys to its org.
 - **Feature branches** (user story branches) have no org of their own in the pipeline sense. A developer builds a story in their sandbox, commits to the feature branch and opens a pull request to `integration`.
 
+```ablauf
+sf: Feature branch, integration, uat, preprod, main production
+Feature branch --Pull request--> integration
+integration --Promotion--> uat
+uat --Promotion--> preprod
+preprod --Promotion--> main production
+```
+
 From there, changes move up between stage branches by pull request. According to sfdx-hardis, such a pull request promotes everything merged into the source branch since its last promotion. Gearset also works with long-lived environment branches in its pipelines. The tools are compared in [chapter 4](../devops-tools-compared/).
 
 One honest caveat: DORA recommends [trunk-based development](https://dora.dev/capabilities/trunk-based-development/) for high-performing teams, with three or fewer active branches and merging to trunk at least once a day. A model with four stage branches goes against that. I still consider it right for programmes with business acceptance and several partners, because each stage stands for a different approval. You pay the price through long-lived feature branches. So my rule is: feature branches live for days, not weeks, and a story that does not fit into a sprint gets split.
@@ -91,10 +99,13 @@ Every merge into `integration` leaves every developer sandbox a little further b
 
 The process is called back promotion or backpromote: changes from a higher stage are brought back into the development environments. This is how the tools handle it:
 
+```vertiefung Tools
+title: Back promotion in sfdx-hardis, Gearset, Copado and Flosum
 - **sfdx-hardis.** The [backpromote](https://sfdx-hardis.cloudity.com/salesforce-devops-backpromote/) deploys into a developer sandbox or scratch org what has been merged into the parent branch since the last run, including deletions and deployment actions. Before it runs, it shows each item compared with the sandbox; where they differ, you choose between overwriting, keeping and merging. It refuses production and the orgs of major branches, never runs a deployment action twice in the same sandbox, and runs from the VS Code extension or as `sf hardis:work:backpromote`. According to Cloudity the feature is in beta.
 - **Gearset.** [Developer sandbox updates](https://docs.gearset.com/en/articles/9729558-getting-started-with-developer-sandbox-updates-in-pipelines) list each promotion to the base branch as an update you deploy to the sandbox. Before that, Gearset captures uncommitted work in the sandbox and merges it with the updates.
 - **Copado.** [Back promotions](https://docs.essentials.copado.com/en/articles/8098362-back-promotions-with-copado-essentials) show which deployments an environment is missing and deploy them back together, without a refresh.
 - **Flosum.** A [backpromotion pipeline](https://flosum.com/blog/keep-all-your-salesforce-sandboxes-in-sync-using-flosum-pipelines) brings production changes into the sandboxes.
+```
 
 The commercial tools make this convenient and usable with little Git knowledge; that is their strength. Which tool you pick matters less than one rule in the partner contract: before every new story and after every refresh, the developer sandbox is brought up to the state of its parent branch.
 
@@ -145,4 +156,4 @@ A machine builder runs Service Cloud, Field Service and a dealer portal on one o
 
 The rules for this are in the contract with every partner: backpromote before every story, no changes in Setup of a stage org, no feature branch older than two weeks. How the pipeline runs between these stages technically is described in [chapter 5](../building-the-pipeline/). I design such models as part of my work in [DevOps and release management](../../../services/devops-release-management/).
 
-Environments and branches work when each org belongs to exactly one branch and changes flow in both directions by fixed rules. If you would like your sandbox strategy or hotfix path reviewed, [send me a message](#contact).
+Environments and branches work when each org belongs to exactly one branch and changes flow in both directions by fixed rules.

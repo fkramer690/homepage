@@ -123,4 +123,4 @@ Where I would start:
 
 Sandbox levels and pipelines are part of my [DevOps and release management](../../services/devops-release-management/) work.
 
-A full copy sandbox is production data, so a coding agent should only see data you would accept on a partner laptop for a month. If you want to sort out your sandbox levels before the next partner starts with AI agents, [send me a message](#contact).
+A full copy sandbox is production data, so a coding agent should only see data you would accept on a partner laptop for a month.

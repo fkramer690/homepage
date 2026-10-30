@@ -110,4 +110,4 @@ Heraus kommen ein kleiner Pilot im Vertrieb und eine Woche Aufräumen bei den Be
 
 Ob Sie eigene Agentforce-Agenten bauen, ist eine eigene Entscheidung; dazu mehr in [Agentforce für Hersteller: jetzt starten oder warten?](../agentforce-ja-oder-nein-hersteller/).
 
-AIforce bringt Salesforce in die Werkzeuge, die Ihre Leute ohnehin nutzen, und die Arbeit der IT bleibt dieselbe: erst Berechtigungen, Daten und Verträge. Wenn Sie eine zweite Meinung möchten, welcher Teil zu Ihrer Organisation passt, [schreiben Sie mir](#contact).
+AIforce bringt Salesforce in die Werkzeuge, die Ihre Leute ohnehin nutzen, und die Arbeit der IT bleibt dieselbe: erst Berechtigungen, Daten und Verträge.

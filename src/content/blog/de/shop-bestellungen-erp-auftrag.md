@@ -127,4 +127,4 @@ Punkt fünf ist eine echte Grenze. Sollen alle SAP-Aufträge im Shop erscheinen,
 
 Schreiben Sie auf, wem der Auftrag in jedem Schritt gehört, vom Warenkorb bis zur Rechnung, und welchen Status der Käufer in jedem Schritt sieht. Entscheiden Sie dann, ob Order Management überhaupt eine Rolle hat. Wie der Auftrag in die übrigen Datenflüsse passt, steht in [B2B Commerce und SAP: Welche Daten fließen wohin](../b2b-commerce-sap-datenfluesse/), und das [Kapitel zur ERP-Anbindung der Masterclass](../../masterclass/b2b-commerce/erp-integration-bestand-auftraege/) ordnet es ein. Eine unabhängige Prüfung solcher Designs gehört zu meiner Arbeit in der [Salesforce-Architektur](../../leistungen/salesforce-architektur/).
 
-Der Shop nimmt den Auftrag an und SAP wickelt ihn ab, solange der Status zuverlässig zurückkommt; wenn Sie gerade entscheiden, wem Ihre Aufträge gehören, [schreiben Sie mir](#contact).
+Der Shop nimmt den Auftrag an und SAP wickelt ihn ab, solange der Status zuverlässig zurückkommt.

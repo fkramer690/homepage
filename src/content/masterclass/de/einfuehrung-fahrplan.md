@@ -56,7 +56,9 @@ Die neun Kapitel davor beschreiben jeweils einen Baustein. Für die Einführung 
 
 ## Wie befähigen Sie Ihr Team und Ihre Partner?
 
+```hinweis tipp
 Die wichtigste Investition ist eine Person: eine interne Release-Rolle, die Pipeline, Kalender und Freigaben verantwortet. Wählen Sie ein Open-Source-Werkzeug oder ein günstigeres Paket, ist die Lizenzersparnis dort besser angelegt als in zusätzlichen Partnertagen. Ohne diese Rolle gehört der Prozess faktisch wieder dem Partner, der ihn am besten kennt.
+```
 
 Dazu kommt Training, und zwar praxisnah. Ich setze sfdx-hardis seit rund zwei Jahren in Kundenprojekten ein und habe im Oktober 2026 alle drei Level des [kostenlosen sfdx-hardis-Trainings](https://sfdx-hardis.cloudity.com/salesforce-devops-training/) abgeschlossen. In 27 Labs entsteht auf kostenlosen Developer Edition Orgs und einem GitHub-Account eine komplette Pipeline, und ein Badge gibt es erst, wenn ein Job die Arbeit im eigenen Repository geprüft hat. Trotz Vorerfahrung habe ich fast einen Tag gebraucht. Meine Eindrücke stehen in [was ich aus dem sfdx-hardis-Training lernte](../../../blog/sfdx-hardis-kostenloses-devops-training/).
 
@@ -83,7 +85,9 @@ Die folgenden Muster folgen aus der Struktur eines Programms mit mehreren Partne
 - **Nur Entwickler werden geschult.** Admins bauen weiter im Setup, weil ihnen niemand Pull Requests gezeigt hat.
 - **Niemand misst.** Ohne Basislinie lässt sich dem Lenkungsausschuss nicht zeigen, was die Umstellung gebracht hat.
 
+```hinweis achtung
 Pflicht-Reviews gehören von Anfang an dazu, auch wenn die Pipeline noch einfach ist. Warum, steht in [warum Pull-Request-Reviews Pflicht sind](../../../blog/warum-pull-request-reviews-pflicht-sind/).
+```
 
 ## Wie messen Sie den Fortschritt?
 
@@ -134,4 +138,4 @@ Am stärksten trifft das die Review-Kapazität, besonders bei Nearshore-Teams in
 
 Ab hier übernimmt die KI-Masterclass. Welcher Coding-Agent zu Ihrem Team oder Partner passt und was dafür im Vertrag stehen muss, behandelt [Kapitel 4 der KI-Masterclass](../../ki-salesforce/externe-coding-agenten/). Wie sich Rollen, Review-Gates und Kennzahlen ändern, wenn Teams mit Agenten liefern, steht in [Kapitel 9 der KI-Masterclass](../../ki-salesforce/teamarbeit-und-delivery/). Den Betrieb, auf dem diese Phase aufsetzt, beschreibt das vorige [Kapitel 9 zu Betrieb und Monitoring](../betrieb-monitoring-backup/), alle Kapitel dieser Masterclass finden Sie auf der [Übersichtsseite](../). Die Einführung selbst begleite ich im [DevOps- und Release-Management](../../../leistungen/devops-und-release-management/).
 
-Eine DevOps-Einführung ist dann fertig, wenn Ihr eigenes Team den Release-Prozess auch ohne den heutigen Partner betreiben könnte. Wenn Sie wissen möchten, in welcher Phase Ihr Programm steht und was als Nächstes kommt, [schreiben Sie mir](#contact).
+Eine DevOps-Einführung ist dann fertig, wenn Ihr eigenes Team den Release-Prozess auch ohne den heutigen Partner betreiben könnte.

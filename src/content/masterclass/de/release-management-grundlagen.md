@@ -32,8 +32,10 @@ Release-Management für Salesforce entscheidet, ob ein Programm mit mehreren Par
 
 ## Was bedeutet Release-Management für Salesforce?
 
-Release-Management ist die Disziplin, Änderungen an einer Salesforce-Org geplant, geprüft und nachvollziehbar von der Entwicklung bis zu den Anwendern zu bringen. DevOps beschreibt die Arbeitsweise und die Werkzeuge dahinter. In Gesprächen mit Fachbereichen und Partnern fallen immer dieselben Begriffe, und sie werden oft unterschiedlich verstanden. So verwende ich sie in dieser Masterclass:
+Release-Management ist die Disziplin, Änderungen an einer Salesforce-Org geplant, geprüft und nachvollziehbar von der Entwicklung bis zu den Anwendern zu bringen. DevOps beschreibt die Arbeitsweise und die Werkzeuge dahinter. In Gesprächen mit Fachbereichen und Partnern fallen immer dieselben Begriffe, und sie werden oft unterschiedlich verstanden. So verwende ich sie in dieser Masterclass, zum Aufklappen:
 
+```vertiefung Begriffe
+titel: Sieben Begriffe, wie ich sie in dieser Masterclass verwende
 - **Source-Driven Development** (quellgesteuerte Entwicklung) bedeutet, dass die Versionsverwaltung und nicht die Org die Quelle der Wahrheit ist. Der [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/platform/sfdx-dev/guide/sfdx-dev-intro.html) sagt es knapp: „Instead of the org, your version control system is the source of truth.“ Was nicht im Repository steht, gilt als nicht vorhanden.
 - **Versionsverwaltung** (Version Control) ist ein System wie Git, das jeden Stand jeder Datei mit Autor, Zeitpunkt und Begründung speichert. Damit lässt sich jede Änderung nachvollziehen, vergleichen und zurücknehmen. Bei Salesforce liegen dort Metadaten wie Objekte, Felder, Flows, Permission Sets und Apex-Klassen als Dateien.
 - **Continuous Integration (CI)** heißt, dass jede Änderung automatisch geprüft wird, bevor sie in einen gemeinsamen Stand übernommen wird. Bei Salesforce sind das ein Validierungs-Deployment, Apex-Tests und statische Code-Analyse.
@@ -41,6 +43,7 @@ Release-Management ist die Disziplin, Änderungen an einer Salesforce-Org geplan
 - **Pipeline** nennt man die feste Abfolge von Umgebungen und automatischen Prüfungen, die jede Änderung durchläuft, zum Beispiel Entwickler-Sandbox, Integration, UAT, Produktion. Jede Änderung nimmt denselben Weg, auch der Hotfix.
 - **Deployment** ist der technische Vorgang, Metadaten in eine Org zu übertragen. Bei einem Deployment nach Produktion mit Apex-Code laufen laut [Salesforce-CLI-Referenz](https://developer.salesforce.com/docs/platform/salesforce-cli-reference/guide/cli_reference_project_deploy_start.html) standardmäßig alle lokalen Tests, und laut [Apex Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/pages/apex_testing_intro.htm) müssen Tests mindestens 75 Prozent des Apex-Codes abdecken und erfolgreich durchlaufen.
 - **Release** ist ein geplantes Paket von Änderungen, das zu einem festen Termin für Anwender freigeschaltet wird. Dazu gehören Kommunikation, Schulung und die Abnahme durch den Fachbereich.
+```
 
 Die Unterscheidung zwischen Deployment und Release ist für Entscheider die wichtigste. Deployments können täglich laufen, in Sandboxes sogar mehrmals am Tag. Ein Release ist eine fachliche Entscheidung: Der Leiter Service entscheidet, ab wann die Techniker im Außendienst (Field Service) die neue Rückmeldemaske nutzen. Wer beides verwechselt, plant entweder zu wenige Deployments und bekommt riesige, riskante Pakete, oder schaltet Funktionen frei, bevor der Fachbereich bereit ist.
 
@@ -50,11 +53,13 @@ Ein Termin liegt dabei nie bei Ihnen. Salesforce liefert laut [Release-Übersich
 
 Ich habe ein Programm mit acht Teams und 32 Entwicklern begleitet, Orgs betreut, auf denen mehrere Implementierungspartner gleichzeitig arbeiteten, und mit Nearshore-Teams in Osteuropa und Indien gearbeitet. Ohne gemeinsamen Release-Prozess entstehen immer dieselben Muster, die ich in [warum DevOps über Salesforce-Großprojekte entscheidet](../../../blog/warum-devops-salesforce-enterprise-projekte/) ausführlicher beschreibe. Für ein Budget lassen sie sich in fünf Kostenarten übersetzen:
 
-1. **Nacharbeit über Teamgrenzen.** Team A deployt ein Page Layout, Team B einen Tag später dasselbe Objekt mit einem älteren Stand. Die Korrektur bindet beide Teams, und bei verteilten Teams in mehreren Zeitzonen dauert jede Abstimmung länger.
-2. **Wiederholte Tests.** Jedes fehlerhafte Deployment nach UAT macht die Testergebnisse anderer Teams wertlos. Key User aus Vertrieb und Service testen dieselben Fälle zweimal und verlieren das Vertrauen in die Abnahme.
-3. **Stillstand im Fachbereich.** Ein Fehler in Produktion trifft in der Fertigung oft die Prozesse mit dem meisten Kundenkontakt: Serviceaufträge, Ersatzteilbestellungen im Händlerportal, die Auftragsübergabe an SAP.
-4. **Wachsende Pakete.** Wer schlechte Erfahrungen mit Releases macht, released seltener. Seltenere Releases werden größer, größere Releases riskanter. Messbar wird das mit den [fünf Kennzahlen von DORA](https://dora.dev/guides/dora-metrics/), etwa der Deployment-Frequenz und der Change Fail Rate, dem Anteil der Deployments, die sofortige Nacharbeit wie ein Rollback oder einen Notfall-Patch brauchen.
-5. **Abhängigkeit und Schuldfrage.** Ohne Historie im Repository kann niemand belegen, welcher Partner welche Änderung gemacht hat. Die Diskussion darüber kostet Steuerungszeit und belastet die Zusammenarbeit.
+| Kostenart | Was passiert |
+|---|---|
+| Nacharbeit über Teamgrenzen | Team A deployt ein Page Layout, Team B einen Tag später dasselbe Objekt mit einem älteren Stand. Die Korrektur bindet beide Teams, und bei verteilten Teams in mehreren Zeitzonen dauert jede Abstimmung länger. |
+| Wiederholte Tests | Jedes fehlerhafte Deployment nach UAT macht die Testergebnisse anderer Teams wertlos. Key User aus Vertrieb und Service testen dieselben Fälle zweimal und verlieren das Vertrauen in die Abnahme. |
+| Stillstand im Fachbereich | Ein Fehler in Produktion trifft in der Fertigung oft die Prozesse mit dem meisten Kundenkontakt: Serviceaufträge, Ersatzteilbestellungen im Händlerportal, die Auftragsübergabe an SAP. |
+| Wachsende Pakete | Wer schlechte Erfahrungen mit Releases macht, released seltener. Seltenere Releases werden größer, größere Releases riskanter. Messbar wird das mit den [fünf Kennzahlen von DORA](https://dora.dev/guides/dora-metrics/), etwa der Deployment-Frequenz und der Change Fail Rate, dem Anteil der Deployments, die sofortige Nacharbeit wie ein Rollback oder einen Notfall-Patch brauchen. |
+| Abhängigkeit und Schuldfrage | Ohne Historie im Repository kann niemand belegen, welcher Partner welche Änderung gemacht hat. Die Diskussion darüber kostet Steuerungszeit und belastet die Zusammenarbeit. |
 
 Ein typisches Szenario, als Annahme: Ein Maschinenbauer betreibt Service Cloud mit Field Service, ein Händlerportal auf Experience Cloud und eine Schnittstelle zu SAP. Drei Partner arbeiten auf derselben Org, je einer für Service, Vertrieb mit Portal und Integration. Am Freitagabend deployt der Vertriebspartner per Change Set eine neue Validierungsregel auf dem Auftragsobjekt. Sie ist in seiner Sandbox korrekt, kennt aber ein Feld nicht, das der Integrationspartner zwei Wochen zuvor eingeführt hat. Am Montag schlägt die nächtliche Auftragsübergabe aus SAP fehl, Händler sehen keine Liefertermine, und das Service-Team muss den eigenen UAT-Lauf verschieben, weil die Org nicht stabil ist. Keine dieser Kosten taucht als eigene Zeile im Projektbudget auf. Ein Validierungs-Deployment gegen den gemeinsamen Stand im Repository hätte den Konflikt vor dem Merge gezeigt.
 
@@ -62,27 +67,38 @@ Ein typisches Szenario, als Annahme: Ein Maschinenbauer betreibt Service Cloud m
 
 Change Sets sind das Standardwerkzeug, mit dem viele Orgs anfangen, und für einen einzelnen Admin sind sie in Ordnung. Laut [Salesforce Help](https://help.salesforce.com/apex/HTViewHelpDoc?id=changesets.htm) brauchen sie eine Deployment-Verbindung, die nur zwischen Orgs derselben Produktion besteht. Sie enthalten nur Änderungen, die über das Setup möglich sind, keine Datensätze, und werden als Ganzes deployt. Für ein Programm mit mehreren Partnern fehlen die entscheidenden Dinge:
 
-- keine Versionshistorie, also kein Vergleich und kein sauberes Zurückrollen
-- kein Review, bevor eine Änderung die nächste Umgebung erreicht
-- keine automatischen Prüfungen gegen den Stand anderer Teams
-- manuelles Zusammenklicken der Komponenten, bei dem leicht etwas fehlt
-- kein Nachweis, wer was wann und mit welcher Begründung geändert hat
+```vergleich
+ohne: Change Sets
+- Keine Versionshistorie, also kein Vergleich und kein sauberes Zurückrollen
+- Kein Review, bevor eine Änderung die nächste Umgebung erreicht
+- Keine automatischen Prüfungen gegen den Stand anderer Teams
+- Manuelles Zusammenklicken der Komponenten, bei dem leicht etwas fehlt
+- Kein Nachweis, wer was wann und mit welcher Begründung geändert hat
+mit: Repository und Pipeline
+- Jeder Stand liegt mit Autor und Begründung in Git und lässt sich zurückrollen
+- Jede Änderung geht über einen Pull Request mit Review
+- Ein Validierungs-Deployment prüft gegen den gemeinsamen Stand
+- Die Pipeline rollt immer dasselbe Paket aus, ohne Handarbeit
+- Die Historie belegt, welcher Partner was geändert hat
+```
 
 Das Problem liegt weniger im Werkzeug als in der Quelle der Wahrheit. Solange die Org die Wahrheit ist, entscheidet der letzte Deployer, welcher Stand gilt.
 
 ## Fünf Reifestufen von Change Sets zur Pipeline
 
-Kaum ein Unternehmen springt von Change Sets direkt zu einer vollautomatischen Pipeline, und das ist auch nicht nötig. Ich ordne Programme in fünf Stufen ein. Jede Stufe hat einen klaren Nutzen, und jede bereitet die nächste vor.
+Kaum ein Unternehmen springt von Change Sets direkt zu einer vollautomatischen Pipeline, und das ist auch nicht nötig. Ich ordne Programme in fünf Stufen ein. Jede Stufe hat einen klaren Nutzen, und jede bereitet die nächste vor. Zwei Übergänge sind in der Praxis die schwierigsten.
 
-| Stufe | Wie Änderungen nach Produktion kommen | Quelle der Wahrheit | Größtes Risiko | Kapitel |
-|---|---|---|---|---|
-| 1. Klicks und Change Sets | im Setup oder per Change Set, von Hand | die Org | Überschreiben, keine Historie | 1 |
-| 2. Repository als Ablage | weiter von Hand, Metadaten werden zusätzlich in Git gesichert | die Org, Git ist eine Kopie | Repository und Org laufen auseinander | 2, 3 |
-| 3. Pull Requests mit Prüfung | Änderungen entstehen im Branch, jeder Pull Request bekommt Review und Validierungs-Deployment | das Repository | Prüfungen werden umgangen, wenn Produktion offen bleibt | 4, 5, 6 |
-| 4. Pipeline bis Produktion | jede Umgebung, auch Produktion, nur noch über die Pipeline, mit Delta-Deployments und Hotfix-Pfad | das Repository | Daten, Konfiguration und Salesforce-Releases bleiben Handarbeit | 7, 8 |
-| 5. Betrieb und Messung | wie Stufe 4, dazu Monitoring, Backups und Kennzahlen | das Repository | Prozess veraltet, wenn ihn niemand verantwortet | 9, 10 |
-
-Zwei Stellen in dieser Tabelle sind in der Praxis die schwierigsten. Der Schritt von Stufe 2 zu 3 verschiebt die Quelle der Wahrheit von der Org ins Repository. Ab dann ist jede Änderung, die direkt in einer gemeinsamen Org entsteht, ein Fehler im Prozess. Und der Schritt von 3 zu 4 schließt die Hintertür: Solange jemand mit Admin-Rechten in Produktion deployen darf, ist die Pipeline eine Empfehlung.
+```stufen treppe
+1 | Klicks und Change Sets | Kapitel 1 | Im Setup oder per Change Set, von Hand | Überschreiben, keine Historie
+2 | Repository als Ablage | Kapitel 2, 3 | Weiter von Hand, Metadaten werden zusätzlich in Git gesichert; Git ist eine Kopie | Repository und Org laufen auseinander
+3 | Pull Requests mit Prüfung | Kapitel 4, 5, 6 | Änderungen entstehen im Branch, jeder Pull Request bekommt Review und Validierungs-Deployment | Prüfungen werden umgangen, wenn Produktion offen bleibt *
+4 | Pipeline bis Produktion | Kapitel 7, 8 | Jede Umgebung, auch Produktion, nur noch über die Pipeline, mit Delta-Deployments und Hotfix-Pfad | Daten, Konfiguration und Salesforce-Releases bleiben Handarbeit *
+5 | Betrieb und Messung | Kapitel 9, 10 | Wie Stufe 4, dazu Monitoring, Backups und Kennzahlen | Prozess veraltet, wenn ihn niemand verantwortet *
+band: 1-2 | Quelle der Wahrheit: die Org
+band: 3-5 | Quelle der Wahrheit: das Repository *
+fall: Von Stufe 2 zu 3 | Der Schritt verschiebt die Quelle der Wahrheit von der Org ins Repository. | Ab dann ist jede Änderung, die direkt in einer gemeinsamen Org entsteht, ein Fehler im Prozess.
+fall: Von Stufe 3 zu 4 | Der Schritt schließt die Hintertür. | Solange jemand mit Admin-Rechten in Produktion deployen darf, ist die Pipeline eine Empfehlung.
+```
 
 Das Validierungs-Deployment ist das erste Werkzeug, das sich schon in Stufe 3 bezahlt macht.
 
@@ -133,4 +149,4 @@ Sechs Fragen genügen für eine erste Einordnung. Sie sollten jede in einem Satz
 
 Wenn Sie bei mehr als zwei Fragen zögern, liegt Ihr Programm in Stufe 1 oder 2. Dann klären Sie zuerst Eigentum und Rollen und erst danach das Werkzeug. Damit geht es weiter in [Kapitel 2: Eigentum und Rollen](../release-prozess-eigentum-rollen/).
 
-Ein Salesforce-Programm mit mehreren Partnern bleibt nur planbar, wenn Ihnen der Release-Prozess gehört und jede Änderung denselben Weg nimmt. Wenn Sie wissen möchten, auf welcher Stufe Ihr Programm steht, [schreiben Sie mir](#contact).
+Ein Salesforce-Programm mit mehreren Partnern bleibt nur planbar, wenn Ihnen der Release-Prozess gehört und jede Änderung denselben Weg nimmt.

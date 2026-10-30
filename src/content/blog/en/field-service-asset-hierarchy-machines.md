@@ -77,7 +77,6 @@ Warranty claims on the installed base belong to Manufacturing Cloud and are cove
 
 Each level looks cheap when the data is loaded once. It costs later, in three places:
 
-
 ```kennzahlen
 2,600 | Assets per maintenance plan as a practical limit
 1,300 | Assets per plan with two maintenance work rules per asset
@@ -105,4 +104,4 @@ With 50 lines in the field that is 2,350 assets instead of about 47,000, and eve
 
 Take one machine type and go through its bill of materials with the three questions: serial number, own maintenance, own warranty. Write down the resulting levels and count the assets per machine. Then decide who records an exchanged assembly and which system leads after delivery, before the first load from the ERP. The [masterclass chapter on assets, maintenance and parts](../../masterclass/field-service/field-service-assets-maintenance-parts/) shows how the hierarchy connects to maintenance plans, spare parts and service partners.
 
-The right depth is the one service actually uses, usually three levels and far fewer assets than the parts list. If you want to check your installed base model before the ERP load, [send me a message](#contact).
+The right depth is the one service actually uses, usually three levels and far fewer assets than the parts list.

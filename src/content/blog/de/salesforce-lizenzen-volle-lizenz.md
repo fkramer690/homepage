@@ -113,4 +113,4 @@ Dieselbe Abwägung gilt bei Industry Clouds. Wann sich zum Beispiel die Manufact
 
 Liegt eine Verlängerung oder ein neues Angebot an, nehmen Sie sich eine Stunde für drei Fragen: Wie viele Nutzer mit voller Lizenz haben im letzten Quartal eine Opportunity oder einen Fall bearbeitet? Welche externen Nutzer arbeiten heute mit internen Lizenzen? Welche Schnittstellen laufen über einen Benutzer mit voller Lizenz?
 
-Die Antworten zeigen, wie viel Spielraum im Angebot steckt. Die volle Lizenz für alle ist die bequemste Lösung, selten die günstigste. Wenn bei Ihnen eine Verlängerung oder ein Angebot ansteht und Sie eine unabhängige Prüfung möchten, [schreiben Sie mir](#contact) oder lesen Sie mehr [über mich](../../#about).
+Die Antworten zeigen, wie viel Spielraum im Angebot steckt. Die volle Lizenz für alle ist die bequemste Lösung, selten die günstigste.

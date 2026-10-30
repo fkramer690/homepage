@@ -57,7 +57,9 @@ Für einen Hersteller heißt das:
 - **Custom Settings** nur dort, wo es fachlich nötig ist, etwa für Werte pro Benutzer oder Profil. Ihre Datensätze brauchen dann einen Datenschritt in der Pipeline.
 - **Eigene Objekte und Standardobjekte als Konfiguration**, etwa die Field-Service-Objekte oder Preisregeln in einem Konfigurator. Hier haben Sie keine Wahl, sie sind Daten.
 
+```hinweis tipp
 Bei bestehenden Orgs würde ich Custom Settings nicht pauschal umbauen. Ich würde aber in die Partnerregeln schreiben, dass neue Konfiguration als Custom Metadata Type entsteht, sofern es keinen fachlichen Grund dagegen gibt. Wer diese Regeln festlegt und durchsetzt, beschreibt [Kapitel 2](../release-prozess-eigentum-rollen/).
+```
 
 ## Wie kommen Konfigurationsdaten durch die Pipeline?
 
@@ -155,4 +157,4 @@ Fünf Regeln würde ich in jeden Vertrag schreiben:
 
 Wann Sie Datenschritte im Release-Kalender einplanen und wie die drei Salesforce-Releases pro Jahr hineinspielen, behandelt [Kapitel 8](../release-planung-salesforce-releases/). Datenschritte und Sandbox-Stufen gehören zu meiner Arbeit in [DevOps und Release-Management](../../../leistungen/devops-und-release-management/).
 
-Konfigurationsdaten verdienen denselben Weg wie Code: Repository, Review, Pipeline, und Kundendaten bleiben maskiert. Wenn Sie den manuellen Datenschritt aus Ihrem Release-Plan streichen möchten, [schreiben Sie mir](#contact).
+Konfigurationsdaten verdienen denselben Weg wie Code: Repository, Review, Pipeline, und Kundendaten bleiben maskiert.

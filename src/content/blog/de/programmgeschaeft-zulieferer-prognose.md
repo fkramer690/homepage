@@ -116,4 +116,4 @@ Bei 24 Monatsperioden sind das etwa 12 x 4 x 10 x 2 x 24 = 23.040 Komponentenpro
 
 Wenn Sie es einführen, braucht die Anbindung an die Planung im ERP eine führende Zahl. Das gehört zu meiner Arbeit bei [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).
 
-Das Programmgeschäft lohnt sich für Zulieferer mit vielen Programmen und einem klaren Verantwortlichen für die Komponentendaten. Wenn Sie prüfen möchten, ob es zu Ihrem OEM-Geschäft passt, [schreiben Sie mir](#contact).
+Das Programmgeschäft lohnt sich für Zulieferer mit vielen Programmen und einem klaren Verantwortlichen für die Komponentendaten.

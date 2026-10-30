@@ -125,4 +125,4 @@ MuleSoft kann dieselbe API auch zu einem MCP-Server machen: [Agent Fabric](https
 
 Hat Ihr ERP gar keine API, lesen Sie [altes ERP ohne API](../altes-erp-ohne-api-ki-agenten/); ob der Prozess überhaupt reif für einen Agenten ist, steht in [Agentforce für Hersteller: jetzt starten oder warten](../agentforce-ja-oder-nein-hersteller/).
 
-Ein Agent, der den Auftragsstatus aus SAP liest, ist vor allem ein Schnittstellenprojekt mit einem Sprachmodell obendrauf. Wenn Sie eine zweite Meinung zum API-Design oder zu den Zugriffsregeln möchten, [schreiben Sie mir](#contact).
+Ein Agent, der den Auftragsstatus aus SAP liest, ist vor allem ein Schnittstellenprojekt mit einem Sprachmodell obendrauf.

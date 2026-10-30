@@ -58,11 +58,13 @@ Am häufigsten unterschätzt werden der Sponsor im Land und die Mitbestimmung. E
 
 Kommunikation vor dem Go-live erklärt, was sich ändert und warum, nicht nur, wo man klickt. Ich gebe dem Sponsor jedes Landes fünf Fragen mit, die seine Botschaft beantworten sollte:
 
-- **Warum ändert sich etwas?** Der Grund in einem Satz, etwa eine weltweite Sicht auf Konzernkunden, die in mehreren Ländern kaufen.
-- **Was hat das Land davon?** Ein konkreter Nutzen für die Mitarbeitenden vor Ort, nicht nur für die Zentrale.
-- **Was ändert sich für wen?** Getrennt nach Gruppen, weil der Innendienst andere Fragen hat als der Außendienst.
-- **Was bleibt, wie es ist?** Das wird fast immer vergessen und nimmt viel Unsicherheit.
-- **Wo gibt es Hilfe?** Namen der Key User, nicht eine Adresse des Supports.
+| Frage | Was die Botschaft sagt |
+|---|---|
+| Warum ändert sich etwas? | Der Grund in einem Satz, etwa eine weltweite Sicht auf Konzernkunden, die in mehreren Ländern kaufen. |
+| Was hat das Land davon? | Ein konkreter Nutzen für die Mitarbeitenden vor Ort, nicht nur für die Zentrale. |
+| Was ändert sich für wen? | Getrennt nach Gruppen, weil der Innendienst andere Fragen hat als der Außendienst. |
+| Was bleibt, wie es ist? | Das wird fast immer vergessen und nimmt viel Unsicherheit. |
+| Wo gibt es Hilfe? | Namen der Key User, nicht eine Adresse des Supports. |
 
 ## Wie hängen Abweichungen vom Template mit Change Management zusammen?
 

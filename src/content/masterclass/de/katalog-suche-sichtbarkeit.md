@@ -78,6 +78,17 @@ Die Idee liegt nahe, weil sie das ERP spiegelt: Jeder Kunde hat eigene Kondition
 
 Ich schneide Buyer Groups nach Merkmalen, die sich selten ändern und die das ERP im Kundenstamm schon hat: Land oder Verkaufsorganisation, Händlerstufe wie Servicepartner oder Vertriebspartner, und Marke, wenn Händler nur eine Marke führen. Entitlement Policies folgen dann Sortimenten, nicht Kunden: "Ersatzteile allgemein", "Ersatzteile für Servicepartner", "Verbrauchsmaterial". Wie Sie die Mitgliedschaften aus dem ERP setzen und wann eine Zuordnung per Apex oder Regel lohnt, steht in [Buyer Groups und Entitlements](../../../blog/buyer-groups-entitlements-sichtbarkeit/).
 
+```vergleich
+ohne: Eine Buyer Group pro Händler
+- Ein Teil, das alle 2.500 Händler kaufen dürfen, hängt an 2.500 Gruppen und liegt über der Indexgrenze
+- Eine Policy bedient höchstens 200 Gruppen und muss kopiert und gleich gehalten werden
+- Jeder neue Händler wird zum Datenprojekt
+mit: Buyer Groups nach Merkmalen
+- Land oder Verkaufsorganisation, Händlerstufe und Marke
+- Merkmale, die sich selten ändern und die das ERP im Kundenstamm schon hat
+- Entitlement Policies folgen Sortimenten, nicht Kunden
+```
+
 ## Wem gehören die Produktdaten?
 
 Produktdaten für den Shop sollten nicht in Salesforce gepflegt werden. Das ERP besitzt, was es heute schon besitzt: Materialnummer, Mengeneinheit, Vertriebsstatus. Ein PIM, falls vorhanden, besitzt Texte, technische Merkmale, Bilder und Übersetzungen. Salesforce hält eine Kopie und pflegt nur, was zum Store gehört, etwa Kategorien und Sucheinstellungen. Korrigiert ein Merchandiser einen Tippfehler in Salesforce und überschreibt ihn der nächtliche ERP-Import, sieht der Händler den Fehler am nächsten Tag wieder. Danach vertraut der Merchandiser dem Shop nicht mehr. Das Prinzip gilt für jedes Objekt der Org und steht ausführlich in der [Object Ownership Matrix](../../../blog/object-ownership-matrix-salesforce/).
@@ -90,7 +101,18 @@ Zwei Grenzen aus der Tabelle prägen die Produktdaten. Neun Bilder pro Produkt r
 
 Die Store-Suche findet nur, was in den Daten steht, und sie ist streng. Laut Salesforce sind Produktname, Beschreibung und SKU standardmäßig durchsuchbar, ein Treffer erscheint nur, wenn alle Suchbegriffe vorkommen, und Teiltreffer am Wortanfang oder in der Wortmitte werden nicht unterstützt. Die Einheit ist für D2C-Merchandiser geschrieben, B2B nutzt dieselbe Suche auf der Plattform. Ein Händler, der "815" tippt, findet "0815" also nicht.
 
-Die Grenzen der Suche pro Store: 25 durchsuchbare und 50 filterbare Merkmale, 100 Synonymregeln, 100 Boost-and-Bury-Regeln, 10 Facetten pro Suchanfrage und 200 Treffer pro Ergebnisseite. Daraus folgen drei Regeln für Teilekataloge:
+Die Grenzen der Suche pro Store:
+
+| Grenze pro Store | Wert |
+|---|---|
+| Durchsuchbare Merkmale | 25 |
+| Filterbare Merkmale | 50 |
+| Synonymregeln | 100 |
+| Boost-and-Bury-Regeln | 100 |
+| Facetten pro Suchanfrage | 10 |
+| Treffer pro Ergebnisseite | 200 |
+
+Daraus folgen drei Regeln für Teilekataloge:
 
 1. **Alte Nummern gehören in ein Feld.** Vorgänger-, Lieferanten- und Fremdnummern stehen in einem durchsuchbaren Textfeld am aktuellen Produkt. Das Feld zählt als eines der 25 Merkmale, egal wie viele Nummern es enthält.
 2. **Synonyme sind für Wörter.** 100 Regeln reichen für "O-Ring" und "Dichtring", nicht für 8.000 Vorgängernummern.
@@ -104,10 +126,12 @@ Die meisten Hersteller brauchen einen Store pro Marke, oder pro rechtlicher Einh
 
 Einen zweiten Store plane ich in vier Fällen:
 
-- **Eigene Marke mit eigenem Auftritt.** Ein Händler von Marke B soll sich nicht in einem Shop anmelden, der wie Marke A aussieht.
-- **Eigener Kategoriebaum.** Ein Katalog pro Store heißt ein Kategoriebaum. Umgekehrt kann laut Salesforce ein Katalog mehreren Stores dienen, zwei Marken mit gleichen Teilen teilen sich dann die Produktdaten.
-- **Anderer Checkout oder anderes ERP.** Erweiterungen für Preise, Bestand oder Auftragsanlage werden pro Store zugeordnet.
-- **Andere Käufer.** Endkunden neben Händlern bekommen einen eigenen D2C-Store mit gemeinsamen Produktdaten.
+| Fall | Warum ein eigener Store |
+|---|---|
+| Eigene Marke mit eigenem Auftritt | Ein Händler von Marke B soll sich nicht in einem Shop anmelden, der wie Marke A aussieht. |
+| Eigener Kategoriebaum | Ein Katalog pro Store heißt ein Kategoriebaum. Umgekehrt kann laut Salesforce ein Katalog mehreren Stores dienen, zwei Marken mit gleichen Teilen teilen sich dann die Produktdaten. |
+| Anderer Checkout oder anderes ERP | Erweiterungen für Preise, Bestand oder Auftragsanlage werden pro Store zugeordnet. |
+| Andere Käufer | Endkunden neben Händlern bekommen einen eigenen D2C-Store mit gemeinsamen Produktdaten. |
 
 Die Lizenzseite setzt eine frühere Grenze als die 100 Stores pro Org. Laut [Preisseite](https://www.salesforce.com/editions-pricing/commerce-cloud/b2b/) enthält die Growth Edition sechs Storefronts, die Advanced Edition zehn. Und jeder weitere Store bringt eigene Seiten, Übersetzungen und einen eigenen Regressionstest nach jedem der drei Salesforce-Releases im Jahr. Die Entscheidung mit Beispiel steht in [Ein B2B-Store oder mehrere](../../../blog/b2b-store-laender-marken-haendler/).
 
@@ -116,6 +140,15 @@ Die Lizenzseite setzt eine frühere Grenze als die 100 Stores pro Org. Laut [Pre
 "Darf dieser Händler dieses Teil kaufen?" beantworten Entitlements. "Passt dieses Teil in diese Maschine?" beantworten sie nicht, denn eine Seriennummer kommt in der Kette nicht vor. Eine Buyer Group pro Maschine scheitert an den Grenzen: Eine Normschraube in 6.000 Maschinen läge weit über 2.000 Gruppen, und ein Händler mit 40 Maschinen hätte mehr als 20 Gruppen.
 
 Der robuste Weg ist eine Maschinenseite. Eine eigene Lightning-Web-Komponente zeigt die Maschinen, die auf den Account des Händlers registriert sind, und für jede die ersatzteilrelevanten Positionen, aus Salesforce-Assets oder live aus dem PLM. Preis und Kaufrecht kommen weiter aus Entitlements und Preisbüchern. Die normale Suche pro Maschine zu filtern geht über Endpoint-Erweiterungen wie `Commerce_Endpoint_Search_ProductSearch` aus der [Liste der verfügbaren Erweiterungen](https://developer.salesforce.com/docs/commerce/extensions/guide/available-extensions.html), aber die Basisklasse führt Salesforce in der [Apex-Referenz](https://developer.salesforce.com/docs/commerce/salesforce-commerce/references/comm-apex-reference/BaseEndpointExtension.html) noch als Beta. Damit würde ich warten.
+
+```ablauf
+sf: Händler-Account, Maschine als Asset, Maschinenseite, Entitlements und Preise
+ext: PLM
+Händler-Account --registriert--> Maschine als Asset
+Maschine als Asset --Positionen--> Maschinenseite
+PLM ..live..> Maschinenseite
+Entitlements und Preise --Kaufrecht und Preis--> Maschinenseite
+```
 
 Die Daten entscheiden mehr als die Komponente: Ohne Stückliste pro Seriennummer, also die Teile, die in genau dieser Maschine verbaut sind, kann kein Shop die Frage beantworten. Die Optionen stehen in [Ersatzteilshop: nur Teile zur eigenen Maschine](../../../blog/ersatzteilshop-teile-pro-maschine/), dieselbe Datenlage aus Sicht eines Agenten in [Ersatzteile per Seriennummer finden](../../../blog/ersatzteile-seriennummer-ki-agent/). Wie die installierte Basis als Asset gepflegt wird, behandelt die Masterclass Manufacturing Cloud im Kapitel [Garantie und After-Sales](../../manufacturing-cloud/garantie-und-after-sales/). Eine Regel lockere ich nie: Der Händler sieht nur Maschinen, die auf seinen eigenen Account registriert sind, gelesen aus dem Asset, nie aus einem Freitextfeld.
 
@@ -140,4 +173,4 @@ Schreiben Sie das Entitlement-Konzept auf eine Seite, bevor jemand Daten lädt:
 
 Die ERP-Felder, die Mitgliedschaften und Suche speisen, wandern danach in die Schnittstellenliste aus [Kapitel 4](../erp-integration-bestand-auftraege/). Solche Konzepte prüfe ich, bevor ein Partner baut, im Rahmen von [Salesforce-Architektur](../../../leistungen/salesforce-architektur/); welche Daten aus welchem System kommen, ist Teil von [Salesforce-Schnittstellen](../../../leistungen/salesforce-schnittstellen/). Alle Kapitel finden Sie auf der [Übersichtsseite](../).
 
-Wenige Buyer Groups und saubere Produktdaten entscheiden mehr über einen B2B-Shop als jede Sucheinstellung. Wenn Sie Ihr Entitlement-Konzept prüfen lassen möchten, [schreiben Sie mir](#contact).
+Wenige Buyer Groups und saubere Produktdaten entscheiden mehr über einen B2B-Shop als jede Sucheinstellung.

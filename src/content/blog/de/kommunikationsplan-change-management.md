@@ -119,6 +119,6 @@ Für Salesforce-Programme mit regelmäßigen Releases gibt es eine eigene Form: 
 
 Bei einer Veränderung für ein Team reicht die Vorlage. Wenn viele Gruppen und Länder betroffen sind, wenn heikle Botschaften anstehen oder wenn Führungskräfte selbst noch unsicher sind, hilft ein Blick von außen, der Botschaften schärft und Führungskräfte vorbereitet. In Salesforce-Programmen arbeite ich dafür mit Fabian Kramer zusammen, siehe [Change Management Beratung für Salesforce](../../leistungen/change-management/) und [Salesforce Change Management: warum Einführungen scheitern](../change-management-salesforce-einfuehrung/).
 
-Eine Veränderung wird nicht durch die erste Ankündigung verstanden, sondern durch die richtige Person zur richtigen Zeit, mehrfach. Wenn Sie Ihren Plan prüfen lassen möchten, [schreiben Sie uns](#contact).
+Eine Veränderung wird nicht durch die erste Ankündigung verstanden, sondern durch die richtige Person zur richtigen Zeit, mehrfach.
 
 Prosci und ADKAR sind eingetragene Marken von Prosci, Inc.

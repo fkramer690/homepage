@@ -107,4 +107,4 @@ Funde zählen
   Zählen Sie Review-Funde nach Kategorie. Nach einigen Sprints wissen Sie, welche Regeln in die [KI-Regeldatei Ihres Repositorys](../ki-regeldatei-salesforce-repository/) gehören und welche Prüfung in der Pipeline fehlt.
 ```
 
-KI-generierter Salesforce-Code braucht ein Review wie jeder andere Code, nur verschiebt sich die menschliche Aufmerksamkeit von der Syntax zu Tests, Datenzugriff und Geschäftsregeln. Wenn Sie eine zweite Meinung dazu möchten, wie der Code Ihrer Partner geprüft wird, [schreiben Sie mir](#contact).
+KI-generierter Salesforce-Code braucht ein Review wie jeder andere Code, nur verschiebt sich die menschliche Aufmerksamkeit von der Syntax zu Tests, Datenzugriff und Geschäftsregeln.

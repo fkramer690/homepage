@@ -103,6 +103,6 @@ Eine Faustregel nach Art der Veränderung:
 
 Aus meinen Projekten kenne ich beide Enden dieser Skala: einen weltweiten Rollout der Salesforce Sales Cloud mit mehr als 500 Anwenderinnen und Anwendern und eine IT-Transformation bei einem Versicherer mit mehr als 20.000 Betroffenen in 19 Ländern. Welche Rolle die Modelle in einem Salesforce-Programm spielen, beschreibe ich mit Fabian Kramer in der [Masterclass Change Management](../../masterclass/change-management/), die Grundlagen stehen in [Was ist Change Management?](../was-ist-change-management/).
 
-Ein Modell ersetzt keine Entscheidung im Management, es macht nur sichtbar, welche fehlt. Wenn Sie vor einer Veränderung stehen und wissen wollen, welches Vorgehen passt, [schreiben Sie uns](#contact) oder lesen Sie mehr über die [Change Management Beratung für Salesforce](../../leistungen/change-management/).
+Ein Modell ersetzt keine Entscheidung im Management, es macht nur sichtbar, welche fehlt. Mehr dazu lesen Sie unter [Change Management Beratung für Salesforce](../../leistungen/change-management/).
 
 Prosci und ADKAR sind eingetragene Marken von Prosci, Inc.

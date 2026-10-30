@@ -115,11 +115,13 @@ Die CPQ-Seite nennt drei Partnerangebote: Forsys RevRamp, IdeaHelix und Prodly. 
 
 Die Reihenfolge folgt der [Object Deployment Reference](https://developer.salesforce.com/docs/atlas.en-us.revenue_lifecycle_management_dev_guide.meta/revenue_lifecycle_management_dev_guide/deployment_appendix_A.htm) im Developer Guide, Eltern vor Kindern:
 
-1. Attributdefinitionen, Produktklassifizierungen, dann die Produkte.
-2. Product Selling Models, Preisbücher, Preisbucheinträge, Preisanpassungen.
-3. Bundle-Komponenten, Kataloge und Kategorien.
-4. Assets für jede offene Subscription, aufgebaut aus historischen Aufträgen.
-5. Abrechnungsdaten, wenn Sie heute Salesforce Billing nutzen.
+| Schritt | Was umzieht |
+|---|---|
+| 1 | Attributdefinitionen, Produktklassifizierungen, dann die Produkte. |
+| 2 | Product Selling Models, Preisbücher, Preisbucheinträge, Preisanpassungen. |
+| 3 | Bundle-Komponenten, Kataloge und Kategorien. |
+| 4 | Assets für jede offene Subscription, aufgebaut aus historischen Aufträgen. |
+| 5 | Abrechnungsdaten, wenn Sie heute Salesforce Billing nutzen. |
 
 Meine Regeln: Jede offene Subscription zieht vor ihrem nächsten Verlängerungstermin um, und abgeschlossene Angebote bleiben als lesbare Historie in CPQ. Phasen, Arbeitspakete und einen Beispielplan finden Sie in [CPQ zu Revenue Cloud migrieren: Phasen, Aufwand, Cutover](../../../blog/cpq-migration-revenue-cloud-phasen/).
 
@@ -137,9 +139,11 @@ Katalog, Selling Models, Preisbucheinträge und Billing Policies sind Datensätz
 
 Meine Regeln, festgelegt vor dem ersten Datensatz:
 
-- **Eine stabile eindeutige ID auf jedem Konfigurationsobjekt**, weil sich Salesforce-Datensatz-IDs zwischen Orgs unterscheiden.
-- **Produkte und Listenpreise aus SAP kommen über die Schnittstelle**, nie per Deployment aus einer Sandbox.
-- **Datenvorlagen und Datenwerkzeug gehören dem Kunden**, aus den Gründen in [Warum Kunden ihre DevOps-Tools selbst besitzen sollten](../../../blog/warum-kunden-devops-tools-selbst-besitzen-sollten/).
+| Regel | Was dazu gehört |
+|---|---|
+| Eine stabile eindeutige ID auf jedem Konfigurationsobjekt | Weil sich Salesforce-Datensatz-IDs zwischen Orgs unterscheiden. |
+| Produkte und Listenpreise aus SAP kommen über die Schnittstelle | Nie per Deployment aus einer Sandbox. |
+| Datenvorlagen und Datenwerkzeug gehören dem Kunden | Aus den Gründen in [Warum Kunden ihre DevOps-Tools selbst besitzen sollten](../../../blog/warum-kunden-devops-tools-selbst-besitzen-sollten/). |
 
 Wie Konfigurationsdaten durch eine Pipeline laufen, steht im DevOps-Kapitel [Daten und Konfiguration](../../devops-release-management/daten-und-konfiguration/), welches Werkzeug passt, im [Vergleich der DevOps-Werkzeuge](../../devops-release-management/devops-werkzeuge-vergleich/), und die Details für Revenue Cloud, einschließlich Context Definitions und Konfiguratorregeln, in [Revenue Cloud Deployments](../../../blog/revenue-cloud-konfiguration-deployment/).
 
@@ -166,4 +170,4 @@ Ein Hersteller von Dosieranlagen nutzt CPQ seit 2019: 45 Nutzer, die Angebote er
 
 Die linke Spalte gehört ins Entscheidungslog, bevor Sie Schätzungen anfragen. Mehrere Partner durch einen solchen Wechsel zu steuern, gehört zu meiner Arbeit in der [Partnersteuerung](../../../leistungen/partnersteuerung/), und eine [Object Ownership Matrix](../../../blog/object-ownership-matrix-salesforce/) hält Katalog, Preise und Assets nach dem Go-live zugeordnet. Dies ist das letzte Kapitel; [Kapitel 4](../abrechnung-und-nutzungsbasierte-preise/) behandelt Abrechnung und Nutzung, und alle Kapitel finden Sie auf der [Übersichtsseite](../).
 
-Der Wechsel von CPQ und Billing zu Revenue Cloud gelingt, wenn Sie ihn zur Verlängerung entscheiden und als Neuentwurf mit Ihren eigenen Entscheidungen vorab behandeln. Wenn Sie vor dieser Entscheidung einen unabhängigen Blick auf Ihre CPQ-Org möchten, [schreiben Sie mir](#contact).
+Der Wechsel von CPQ und Billing zu Revenue Cloud gelingt, wenn Sie ihn zur Verlängerung entscheiden und als Neuentwurf mit Ihren eigenen Entscheidungen vorab behandeln.

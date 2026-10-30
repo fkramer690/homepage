@@ -123,4 +123,4 @@ Die Analyse ist der Startpunkt für die Übergabe: welche Objekte an welchen Par
 5. Starten Sie den Batch und danach den zweiten Durchlauf pro Objekt.
 6. Prüfen Sie Stichproben und jeden Befund mit hohem Risiko, bevor etwas in den Übergabeplan geht.
 
-Eine KI-Org-Analyse kostet an Tokens weniger als ein Workshop-Tag, solange die Tools die Fakten liefern und das Modell sie nur erklärt; wenn Sie einen Partnerwechsel oder Relaunch planen, [schreiben Sie mir](#contact).
+Eine KI-Org-Analyse kostet an Tokens weniger als ein Workshop-Tag, solange die Tools die Fakten liefern und das Modell sie nur erklärt.

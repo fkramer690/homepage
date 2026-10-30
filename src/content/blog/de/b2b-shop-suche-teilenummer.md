@@ -109,4 +109,4 @@ Nach dem Go-live ist die Liste der Suchen ohne Treffer die Arbeitsliste für die
 
 Das Thema gehört zum [Kapitel zu Katalog, Suche und Sichtbarkeit](../../masterclass/b2b-commerce/katalog-suche-sichtbarkeit/) meiner Masterclass B2B Commerce. Festzulegen, welche ERP-Felder die Suche füttern, gehört zu meiner Arbeit bei [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).
 
-Händler finden Teile, wenn die Nummern, die sie tippen, in den Daten stehen, also beginnen Sie mit ihren Suchbegriffen statt mit den Sucheinstellungen. Wenn Sie Ihre Teilenummern gegen ein Store-Design testen möchten, [schreiben Sie mir](#contact).
+Händler finden Teile, wenn die Nummern, die sie tippen, in den Daten stehen, also beginnen Sie mit ihren Suchbegriffen statt mit den Sucheinstellungen.

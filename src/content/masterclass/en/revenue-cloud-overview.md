@@ -57,11 +57,13 @@ For the first decision, two points matter. Revenue Cloud is a different product 
 
 I look for these signals in the current quoting process:
 
-- **Variants with rules.** Machines with dozens of options that require or exclude each other. A configurator that checks combinations saves rework in order processing.
-- **Service on the same quote.** A spare parts package, a maintenance contract and a remote monitoring subscription sold together with the machine.
-- **Changes after the sale.** Upgrades, renewals and cancellations that run through quote and order again, based on what the customer already has.
-- **Large quotes.** Plant projects with hundreds of lines, grouped by section of the plant.
-- **Several channels on one catalog.** Sales desk, dealers and a store selling the same products.
+| Signal | How you recognise it |
+|---|---|
+| Variants with rules | Machines with dozens of options that require or exclude each other. A configurator that checks combinations saves rework in order processing. |
+| Service on the same quote | A spare parts package, a maintenance contract and a remote monitoring subscription sold together with the machine. |
+| Changes after the sale | Upgrades, renewals and cancellations that run through quote and order again, based on what the customer already has. |
+| Large quotes | Plant projects with hundreds of lines, grouped by section of the plant. |
+| Several channels on one catalog | Sales desk, dealers and a store selling the same products. |
 
 Two or three of these together justify a closer look. One alone rarely does. The full list of signals for and against, with a cost frame, is in [Revenue Cloud for manufacturers: when is it worth it?](../../../blog/revenue-cloud-worth-it-manufacturers/).
 
@@ -69,10 +71,12 @@ Two or three of these together justify a closer look. One alone rarely does. The
 
 All of them mean the same product, and the sources were updated at different times. As of late October 2026:
 
-- **salesforce.com** shows "Revenue Cloud" as the heading of the product page, last modified on 22 October 2026, and of the pricing page, with the editions Revenue Cloud Growth and Revenue Cloud Advanced (RCA).
-- **The Developer Guide** for Winter '27 is titled [Revenue Management Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.revenue_lifecycle_management_dev_guide.meta/pcm_parent.htm) and says: "Revenue Cloud is now Revenue Management. You may see references to Revenue Cloud in our application and documentation."
-- **Trailhead** titles its basic module Agentforce Revenue Management Foundations.
-- **The CPQ end-of-sale page** calls Revenue Lifecycle Management (RLM) "an earlier product name" and places RCA in "the Agentforce Revenue Management suite".
+| Source | What it calls the product |
+|---|---|
+| salesforce.com | Shows "Revenue Cloud" as the heading of the product page, last modified on 22 October 2026, and of the pricing page, with the editions Revenue Cloud Growth and Revenue Cloud Advanced (RCA). |
+| The Developer Guide | For Winter '27 is titled [Revenue Management Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.revenue_lifecycle_management_dev_guide.meta/pcm_parent.htm) and says: "Revenue Cloud is now Revenue Management. You may see references to Revenue Cloud in our application and documentation." |
+| Trailhead | Titles its basic module Agentforce Revenue Management Foundations. |
+| The CPQ end-of-sale page | Calls Revenue Lifecycle Management (RLM) "an earlier product name" and places RCA in "the Agentforce Revenue Management suite". |
 
 Partner blogs report that the Agentforce name came with Dreamforce 2025 and that Salesforce quietly went back to Revenue Cloud around September 2026. I have found no formal announcement for either step, so I treat it as reported. The Agentforce label runs through the whole portfolio; the [chapter on terms and the map](../../ai-salesforce/terms-and-map/) of my AI masterclass sorts those names.
 
@@ -169,11 +173,13 @@ Invoices stay in SAP in year one; Billing becomes a question once subscriptions 
 
 Partners ask about features. The decisions that drive cost and timeline belong to the company:
 
-1. **Price master.** SAP conditions or Salesforce Pricing, per price type, never both for the same price.
-2. **Configurator owner.** Who maintains variant rules after go-live, and in which system.
-3. **Invoice owner.** SAP or Revenue Cloud Billing. Finance decides, not the CRM team.
-4. **CPQ coexistence.** Existing CPQ customers are under no time pressure: the CPQ page says "There is no forced migration", but also that CPQ "will not receive new features". A typical migration runs three to six months according to the same page. The details are in chapter 5, [from CPQ to Revenue Cloud](../from-cpq-to-revenue-cloud/).
+| Decision | What it includes |
+|---|---|
+| Price master | SAP conditions or Salesforce Pricing, per price type, never both for the same price. |
+| Configurator owner | Who maintains variant rules after go-live, and in which system. |
+| Invoice owner | SAP or Revenue Cloud Billing. Finance decides, not the CRM team. |
+| CPQ coexistence | Existing CPQ customers are under no time pressure: the CPQ page says "There is no forced migration", but also that CPQ "will not receive new features". A typical migration runs three to six months according to the same page. The details are in chapter 5, [from CPQ to Revenue Cloud](../from-cpq-to-revenue-cloud/). |
 
 Write these four answers into the decision log before you ask for estimates. They are part of my work on [Salesforce architecture](../../../services/salesforce-architecture/). With them settled, [chapter 2 on catalog, configurator and pricing](../product-catalog-configurator-pricing/) covers how the products and prices are modelled; all chapters are on the [overview page](../).
 
-Revenue Cloud is worth it when your quotes are complex and your revenue recurs, and the decisions about price, rules and invoice come before the partner. If you want a second opinion on yours, [send me a message](#contact).
+Revenue Cloud is worth it when your quotes are complex and your revenue recurs, and the decisions about price, rules and invoice come before the partner.

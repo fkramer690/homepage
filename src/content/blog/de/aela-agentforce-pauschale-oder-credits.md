@@ -128,4 +128,4 @@ Diese Liste ist eine kaufmännische Checkliste und keine Rechtsberatung. Den Ver
 
 Lizenzmodelle über mehrere Jahre zu vergleichen gehört zu meiner Arbeit in [Make-or-buy und Lizenzplanung](../../leistungen/make-or-buy-lizenzen/), auf Kundenseite und ohne eigenes Interesse am Abschluss.
 
-Eine AELA kauft einen bekannten Preis für zwei oder drei Jahre, und die Verlängerungsklausel entscheidet, was das Jahr danach kostet. Wenn bei Ihnen ein AELA-Angebot auf dem Tisch liegt und Sie eine unabhängige Einschätzung möchten, [schreiben Sie mir](#contact).
+Eine AELA kauft einen bekannten Preis für zwei oder drei Jahre, und die Verlängerungsklausel entscheidet, was das Jahr danach kostet.

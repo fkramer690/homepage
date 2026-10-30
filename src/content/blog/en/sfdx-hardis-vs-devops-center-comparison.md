@@ -125,4 +125,4 @@ For teams using coding agents this question matters more. Lifecycle Center is bu
 
 Answer three questions first: which Git platform is set at your company, how many teams and partners work on the org, and who takes on the release role? With these three answers the choice is made in most cases. If you are new to the topic, [why DevOps matters in Salesforce enterprise projects](../why-devops-matters-salesforce-enterprise/) explains the basics, and setting up a binding process is part of my work in [DevOps and release management](../../services/devops-release-management/).
 
-Both tools are good, they just fit different teams. If you would like to discuss which one fits your programme, [send me a message](#contact).
+Both tools are good, they just fit different teams.

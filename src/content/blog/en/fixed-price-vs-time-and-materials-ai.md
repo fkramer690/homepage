@@ -100,4 +100,4 @@ The day rate stays the same. What changes is that the partner earns more by work
 
 Setting up these commercial rules is part of my work in [partner governance](../../services/partner-governance/), on the client side and without a stake in any partner's revenue.
 
-Fixed price for what you can test, hours for what nobody can estimate and a measured share for outcomes is the mix I would put into the next framework contract. If you want a second opinion on a partner proposal, [send me a message](#contact).
+Fixed price for what you can test, hours for what nobody can estimate and a measured share for outcomes is the mix I would put into the next framework contract.

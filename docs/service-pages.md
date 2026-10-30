@@ -34,7 +34,7 @@ Blog articles link back to the best matching service automatically (`getPostServ
 | `situations` | 3–5 items, each a situation the reader recognises |
 | `deliverables` | 3–8 items |
 | `results` | 3–6 items |
-| `phases` | 3–4 items with `title` (max. 40) and `text` (max. 260) |
+| `phases` | 3–4 items with `title` (max. 40), `icon` (file name in `src/icons/`, shown in the ring of the phase timeline) and `text` (max. 260) |
 | `faq` | 2–6 questions, answers up to 600 characters |
 | `note`, `notePartner` | optional, max. 240 characters: note shown at the very top, e.g. who the approach was developed with. `notePartner` is a name from `partnerPage.partners` in `src/i18n` and must appear in `note`; it is linked to the partner page and LinkedIn |
 | `blogTags` | 1–8 tags, matched case-insensitively against blog tags |
@@ -46,4 +46,4 @@ Blog articles link back to the best matching service automatically (`getPostServ
 - First paragraph answers "what is this service" in at most 110 words.
 - At least one concrete, anonymised example or number from real work.
 - At least 2 relative links: related blog articles (`../../blog/<slug>/`), other services (`../<slug>/`), `../../#about`.
-- End with an invitation to get in touch (`#contact`).
+- No closing invitation to get in touch: the contact section ("Book a call" plus form) follows directly below the text (Fabian, 2026-10-29).

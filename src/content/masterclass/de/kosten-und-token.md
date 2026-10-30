@@ -52,11 +52,13 @@ Der Tokenizer verschiebt auch Preisvergleiche. Sonnet 4.6 kostet 3 $ pro Million
 
 Teuer wird agentisches Arbeiten durch die Schleife, nicht durch die Frage des Entwicklers. Die [Kostendokumentation von Claude Code](https://code.claude.com/docs/en/costs) nennt die Treiber:
 
-- **Kontext bei jedem Schritt:** Claude Code sendet bei jeder Anfrage die ganze Unterhaltung, und jeder Tool-Aufruf erzeugt eine weitere Anfrage mit den Ergebnissen.
-- **Thinking als Output:** Thinking-Tokens werden als Output abgerechnet, bei Opus 5.5, Sonnet 5.5 und Haiku 5.5 lässt sich Thinking nicht abschalten. Output kostet bei Claude 5.5 das Fünffache des Inputs.
-- **Cache-Miss nach Pausen:** Die erste Nachricht nach einer Pause, die länger dauert als die Cache-Lebensdauer, verarbeitet den vollen Kontext neu.
-- **Agent Teams:** Im Plan-Modus verbrauchen sie rund das Siebenfache einer normalen Session.
-- **Regeldateien und MCP:** Die CLAUDE.md wird bei jedem Start geladen, Anthropic empfiehlt unter 200 Zeilen. CLI-Werkzeuge sind sparsamer im Kontext als MCP-Server.
+| Treiber | Was passiert |
+|---|---|
+| Kontext bei jedem Schritt | Claude Code sendet bei jeder Anfrage die ganze Unterhaltung, und jeder Tool-Aufruf erzeugt eine weitere Anfrage mit den Ergebnissen. |
+| Thinking als Output | Thinking-Tokens werden als Output abgerechnet, bei Opus 5.5, Sonnet 5.5 und Haiku 5.5 lässt sich Thinking nicht abschalten. Output kostet bei Claude 5.5 das Fünffache des Inputs. |
+| Cache-Miss nach Pausen | Die erste Nachricht nach einer Pause, die länger dauert als die Cache-Lebensdauer, verarbeitet den vollen Kontext neu. |
+| Agent Teams | Im Plan-Modus verbrauchen sie rund das Siebenfache einer normalen Session. |
+| Regeldateien und MCP | Die CLAUDE.md wird bei jedem Start geladen, Anthropic empfiehlt unter 200 Zeilen. CLI-Werkzeuge sind sparsamer im Kontext als MCP-Server. |
 
 ## Was kostet KI-gestützte Entwicklung?
 
@@ -105,10 +107,12 @@ Bei 20 aktiven Tagen sind das 260 $ zu API-Preisen. Ein Team-Premium-Seat kann f
 
 Annahmen: 40 Modellaufrufe, der Kontext wächst von 20.000 auf 120.000 Tokens, im Schnitt 70.000. Pro Aufruf kommen 2.500 neue Tokens dazu, 1.500 Tokens Output inklusive Thinking, Caching mit fünf Minuten.
 
-1. Cache-Writes: 20.000 + 40 × 2.500 = 120.000 Tokens × 5,00 $ pro Mio. = **0,60 $**
-2. Cache-Reads: 40 × 67.500 = 2,7 Mio. Tokens × 0,20 $ pro Mio. = **0,54 $**
-3. Output: 40 × 1.500 = 60.000 Tokens × 20,00 $ pro Mio. = **1,20 $**
-4. Summe mit Opus 5.5: **2,34 $**
+| Posten | Rechnung |
+|---|---|
+| Cache-Writes | 20.000 + 40 × 2.500 = 120.000 Tokens × 5,00 $ pro Mio. = **0,60 $** |
+| Cache-Reads | 40 × 67.500 = 2,7 Mio. Tokens × 0,20 $ pro Mio. = **0,54 $** |
+| Output | 40 × 1.500 = 60.000 Tokens × 20,00 $ pro Mio. = **1,20 $** |
+| Summe mit Opus 5.5 | **2,34 $** |
 
 Ohne Caching kosten 2,8 Mio. Input-Tokens zu 4 $ allein 11,20 $, mit Output **12,40 $**, gut das Fünffache. Mit Sonnet 5.5 und Caching: 0,30 + 0,27 + 0,60 = **1,17 $**. Fünf Opus-Sessions am Tag ergeben 11,70 $, nahe an Anthropics 13 $ pro aktivem Tag. Output macht rund 2 Prozent der Tokens und gut die Hälfte der Kosten aus. Deshalb ist Sonnet als Standard und Opus für Architekturfragen auch Anthropics eigene Empfehlung.
 
@@ -149,10 +153,12 @@ Die [Preisseite der Sales Cloud](https://www.salesforce.com/eu/products/sales-pr
 
 Annahme: 3.000 Gespräche im Monat zu Auftragsstatus, Lieferterminen und Ersatzteilen, je drei Aktionen und zwei Standard-Prompts.
 
-1. Aktionen: 3.000 × 3 × 20 = 180.000 Credits
-2. Prompts: 3.000 × 2 × 4 = 24.000 Credits
-3. Summe: 204.000 Credits = **1.020 € im Monat**, im Modell pro Gespräch wären es 6.000 €
-4. Zwölf Monate: 2.448.000 Credits, mehr als die Pools von Core und Advanced, knapp unter Max
+| Posten | Rechnung |
+|---|---|
+| Aktionen | 3.000 × 3 × 20 = 180.000 Credits |
+| Prompts | 3.000 × 2 × 4 = 24.000 Credits |
+| Summe | 204.000 Credits = **1.020 € im Monat**, im Modell pro Gespräch wären es 6.000 € |
+| Zwölf Monate | 2.448.000 Credits, mehr als die Pools von Core und Advanced, knapp unter Max |
 
 Mit der Aufbereitung von 2.000 MB Ersatzteilkatalogen in Data 360 (300.000 Credits) und den Sandbox-Tests kommt das erste Jahr auf rund 3 Mio. Credits oder 15.000 €. Die vollständige Rechnung mit Testlast und Lösungspreis steht in [Agentforce-Serviceagent für Händler](../../../blog/serviceagent-haendleranfragen-kosten/).
 
@@ -194,4 +200,4 @@ Zum Vergleich: Die 80 Core-Lizenzen kosten zum Listenpreis 187.200 € im Jahr. 
 
 Diese Fragen gehören zu meiner Arbeit in [Make-or-buy und Lizenzprognosen](../../../leistungen/make-or-buy-lizenzen/). Alle Kapitel der Masterclass finden Sie auf der [Übersichtsseite](../).
 
-KI-Kosten in Salesforce lassen sich gut planen, wenn Sie Tokens und Aktionen getrennt rechnen und die offenen Zähler offen benennen. Wenn Sie Ihre Schätzung oder ein Partnerangebot mit KI-Anteil prüfen lassen möchten, [schreiben Sie mir](#contact).
+KI-Kosten in Salesforce lassen sich gut planen, wenn Sie Tokens und Aktionen getrennt rechnen und die offenen Zähler offen benennen.

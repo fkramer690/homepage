@@ -58,11 +58,13 @@ The two most underestimated are the sponsor in the country and co-determination.
 
 Communication before go-live explains what changes and why, not just where to click. I give each country's sponsor five questions their message should answer:
 
-- **Why is anything changing?** The reason in one sentence, for example a global view of group customers who buy in several countries.
-- **What does the country gain?** A concrete benefit for the employees on site, not only for headquarters.
-- **What changes for whom?** Split by group, because inside sales has different questions from field sales.
-- **What stays as it is?** Almost always forgotten, and it removes a lot of uncertainty.
-- **Where is help?** Names of the key users, not a support address.
+| Question | What the message says |
+|---|---|
+| Why is anything changing? | The reason in one sentence, for example a global view of group customers who buy in several countries. |
+| What does the country gain? | A concrete benefit for the employees on site, not only for headquarters. |
+| What changes for whom? | Split by group, because inside sales has different questions from field sales. |
+| What stays as it is? | Almost always forgotten, and it removes a lot of uncertainty. |
+| Where is help? | Names of the key users, not a support address. |
 
 ## How do template deviations relate to change management?
 

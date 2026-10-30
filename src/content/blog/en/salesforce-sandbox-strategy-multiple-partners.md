@@ -109,4 +109,4 @@ contra: What you give up
 
 Start with the list. Write down every existing sandbox with its purpose and owner, and delete the ones nobody claims. Then define the chain and block direct changes in integration and UAT. The refresh calendar comes last, once the post-refresh steps exist as a script.
 
-A sandbox strategy is one page of paper that saves a lot of release weekends. If you want to bring order into the environments of your programme, [send me a message](#contact).
+A sandbox strategy is one page of paper that saves a lot of release weekends.

@@ -40,6 +40,12 @@ The sales agreement answers it. According to the [object reference](https://deve
 
 The [considerations in Salesforce Help](https://help.salesforce.com/s/articleView?id=sf.mfg_sa_considerations.htm&language=en_US&type=5) set limits: at most 1,500 products or product categories and 72 schedules per agreement. For a spare parts contract with thousands of items, that is a design question before it becomes a technical one.
 
+```kennzahlen
+1,500 | products or product categories at most per sales agreement
+72 | schedules at most per sales agreement
+source: Salesforce Help, considerations for sales agreements
+```
+
 Why I consider the sales agreement the main reason to look at Manufacturing Cloud at all is in [chapter 1](../scope-and-business-case/). How it works day to day is described in [sales agreements: spotting volume shortfalls](../../../blog/sales-agreements-volume-shortfall-erp/).
 
 ## From quote to sales agreement
@@ -160,4 +166,4 @@ This manufacturer does not need program-based business, because it does not supp
 
 Framework contracts and forecasts concern direct sales to large customers. If you sell through dealers, you also need rebates, portals and dealer visits; that is [chapter 3: dealer and partner channel](../dealer-and-partner-channel/). All chapters are on the [overview page](../).
 
-Sales planning in Manufacturing Cloud is as good as the actuals feed from the ERP and the shared structure of target, forecast and actuals. If you plan to introduce sales agreements or forecasts and want the data checked first, [send me a message](#contact).
+Sales planning in Manufacturing Cloud is as good as the actuals feed from the ERP and the shared structure of target, forecast and actuals.

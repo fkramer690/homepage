@@ -105,11 +105,13 @@ A list alone changes nothing. I recommend a separate backlog for technical debt,
 
 DORA (DevOps Research and Assessment) is the research programme behind the most widely used software delivery metrics. According to [dora.dev](https://dora.dev/guides/dora-metrics/), there are five today:
 
-- **Change lead time** is the time a change takes from being committed to version control to being deployed in production.
-- **Deployment frequency** is the number of deployments in a given period, or the time between deployments.
-- **Failed deployment recovery time** is the time it takes to recover from a deployment that fails and requires immediate intervention.
-- **Change fail rate** is the share of deployments that require immediate intervention, such as a rollback or a hotfix.
-- **Deployment rework rate** is the share of deployments that are unplanned and happen because of an incident in production.
+| Metric | What it measures |
+|---|---|
+| Change lead time | The time a change takes from being committed to version control to being deployed in production. |
+| Deployment frequency | The number of deployments in a given period, or the time between deployments. |
+| Failed deployment recovery time | The time it takes to recover from a deployment that fails and requires immediate intervention. |
+| Change fail rate | The share of deployments that require immediate intervention, such as a rollback or a hotfix. |
+| Deployment rework rate | The share of deployments that are unplanned and happen because of an incident in production. |
 
 The first three measure throughput, the last two instability. According to the [history of the metrics](https://dora.dev/guides/dora-metrics/history/), the former MTTR was renamed and redefined in 2023, and rework rate was added in 2024. Many tools still show the four older metrics.
 
@@ -144,4 +146,4 @@ The monitoring repository, the backup product, the notification channels and the
 
 How monitoring and backup fit into the whole process is covered in [why DevOps decides Salesforce enterprise projects](../../../blog/why-devops-matters-salesforce-enterprise/) and the [introduction to sfdx-hardis](../../../blog/sfdx-hardis-open-source-salesforce-devops/). The order in which to introduce all of this is the topic of the last chapter, [rollout and roadmap](../rollout-roadmap/). My advice for the start: monitoring and data backup first, because you can switch on both before the pipeline is finished. How I support this is described under [DevOps and release management](../../../services/devops-release-management/).
 
-Stable operations mean you can see every change, get every record back and trace every hotfix; if you would like to set this up or have it reviewed for your org, [send me a message](#contact).
+Stable operations mean you can see every change, get every record back and trace every hotfix.

@@ -123,4 +123,4 @@ So würde ich anfangen:
 
 Sandbox-Stufen und Pipelines gehören zu meiner Arbeit in [DevOps und Release-Management](../../leistungen/devops-und-release-management/).
 
-Eine Full-Copy-Sandbox ist Produktion, also sollte ein Coding-Agent nur Daten sehen, die Sie auch einen Monat lang auf einem Partner-Laptop akzeptieren würden. Wenn Sie Ihre Sandbox-Stufen ordnen möchten, bevor der nächste Partner mit KI-Agenten startet, [schreiben Sie mir](#contact).
+Eine Full-Copy-Sandbox ist Produktion, also sollte ein Coding-Agent nur Daten sehen, die Sie auch einen Monat lang auf einem Partner-Laptop akzeptieren würden.

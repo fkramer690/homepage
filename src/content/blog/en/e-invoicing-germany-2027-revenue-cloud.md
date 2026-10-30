@@ -93,4 +93,4 @@ The duty already applies when the first Billing invoice goes out, so there is no
 
 The cost side of invoicing from Salesforce is in [Revenue Cloud Billing costs](../revenue-cloud-billing-costs/), and the masterclass chapter [billing and usage-based pricing](../../masterclass/revenue-cloud/billing-and-usage-based-pricing/) puts e-invoicing into the whole quote-to-cash process.
 
-If invoices leave Revenue Cloud Billing from 2027, they need a structured EN 16931 route from day one, so settle it before go-live. If you want to check your route, [send me a message](#contact).
+If invoices leave Revenue Cloud Billing from 2027, they need a structured EN 16931 route from day one, so settle it before go-live.

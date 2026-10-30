@@ -1,3 +1,23 @@
+// Header drawing of a masterclass hub (src/components/MasterclassHub.astro): a flow of steps
+// with an optional system beside it (`links`: the steps it exchanges data with), or a table of
+// tasks and tools. Every entry names the chapter that covers it. null: the hub shows a photo,
+// or for change management the ADKAR stages.
+export type HubFigure =
+  | {
+      kind: 'flow';
+      accent: number;
+      steps: { title: string; sub: string; chapter: string }[];
+      side?: { title: string; sub: string; links: number[] };
+      note: string;
+    }
+  | {
+      kind: 'table';
+      accent: number;
+      rows: { task: [string, string]; tool: string; chapter: string }[];
+      note: string;
+    };
+const hubFigure = (figure: HubFigure | null) => figure;
+
 export const en = {
   lang: 'en',
   meta: {
@@ -186,10 +206,26 @@ export const en = {
     title: 'Fabian Kramer',
     portraitAlt: 'Portrait of Fabian Kramer',
     subtitle: 'Salesforce Enterprise Architect · Cologne/Bonn',
-    paragraphs: [
-      'I help manufacturing companies turn Salesforce into a reliable backbone for sales, service and after-sales – as the architect on the client side.',
-      'Most of my recent work is with German manufacturers operating globally: from the first worldwide Salesforce Manufacturing Cloud rollout to a global CTI rollout with Service Cloud Voice and Genesys, a subcontractor portal for after-sales in shipbuilding, and an embedded chat solution with a rollout plan for 12 locales.',
-      'I’m not tied to a vendor or an implementation partner. That’s why I regularly ask whether something should be built in Salesforce at all. When others ask that, it is often because they don’t know what the platform can do. I ask it because I know where its limits are and where it is the right tool. Make-or-buy evaluations, license forecasts and best-of-breed alternatives are part of the job, not an afterthought.',
+    // Three short blocks next to portrait and facts (layout "Steckbrief").
+    blocks: [
+      {
+        head: 'What I do',
+        text: 'I help manufacturing companies turn Salesforce into a reliable backbone for sales, service and after-sales – as the architect on the client side.',
+      },
+      {
+        head: 'Projects',
+        text: 'Most of my recent work is with German manufacturers operating globally:',
+        items: [
+          'The first worldwide Salesforce Manufacturing Cloud rollout.',
+          'A global CTI rollout with Service Cloud Voice and Genesys.',
+          'A subcontractor portal for after-sales in shipbuilding.',
+          'An embedded chat solution with a rollout plan for 12 locales.',
+        ],
+      },
+      {
+        head: 'Why independent',
+        text: 'I’m not tied to a vendor or an implementation partner. That’s why I regularly ask whether something should be built in Salesforce at all. When others ask that, it is often because they don’t know what the platform can do. I ask it because I know where its limits are and where it is the right tool. Make-or-buy evaluations, license forecasts and best-of-breed alternatives are part of the job, not an afterthought.',
+      },
     ],
     facts: [
       { label: 'Since 2020', text: 'Founder of FK Solution Design GmbH, Cologne' },
@@ -353,14 +389,19 @@ export const en = {
     articlesAnchor: 'articles',
     factsLabel: 'Masterclass in figures',
     facts: { chapters: 'chapters', articles: 'articles', languages: 'German and English' },
-    figureLabel: 'Four layers of AI around Salesforce',
-    layers: [
-      { title: 'D · AI as the interface', tools: 'Salesforce in Claude, Slack' },
-      { title: 'C · AI in the product', tools: 'Agentforce, Agent Script, Data 360' },
-      { title: 'B · Interfaces', tools: 'Hosted MCP, Agent API, MuleSoft' },
-      { title: 'A · AI for building', tools: 'Vibes, Claude Code, Codex, Copilot' },
-    ],
-    erp: ['ERP', 'SAP'],
+    figureLabel: 'Which AI tool for which task',
+    figure: hubFigure({
+      kind: 'table',
+      accent: 0,
+      rows: [
+        { task: ['Have Salesforce', 'code written'], tool: 'Claude Code, Codex', chapter: 'Ch. 4 and 8' },
+        { task: ['Connect AI to', 'data in the org'], tool: 'Hosted MCP, Agent API', chapter: 'Ch. 3' },
+        { task: ['Take load off', 'customer service'], tool: 'Agentforce', chapter: 'Ch. 10' },
+        { task: ['Work with CRM in', 'Claude or Slack'], tool: 'Salesforce in Claude', chapter: 'Ch. 2' },
+        { task: ['Partners deliver', 'with AI'], tool: 'Rules for AI code', chapter: 'Ch. 5 and 9' },
+      ],
+      note: 'Ch. 6 decision matrix · Ch. 7 costs',
+    }),
     deadlinesLabel: 'Deadlines',
     deadlinesTitle: 'Deadlines that matter now',
     deadlinesText: 'These deadlines arrive whether your AI project is ready or not. Knowing them lets you plan interfaces and AI labelling in time.',
@@ -403,14 +444,20 @@ export const en = {
     articlesAnchor: 'articles',
     factsLabel: 'Masterclass in figures',
     facts: { chapters: 'chapters', articles: 'articles', languages: 'German and English' },
-    figureLabel: 'Four layers of a Salesforce release process',
-    layers: [
-      { title: 'D · Operations', tools: 'Monitoring, backup, DORA metrics' },
-      { title: 'C · Quality', tools: 'Reviews, tests, quality gates' },
-      { title: 'B · Pipeline', tools: 'Pull request, validation, deployment' },
-      { title: 'A · Foundations', tools: 'Ownership, environments, branches' },
-    ],
-    erp: ['Git', 'Repo'],
+    figureLabel: 'Path of a change to production',
+    figure: hubFigure({
+      kind: 'flow',
+      accent: 1,
+      steps: [
+        { title: 'Developer sandbox', sub: 'one branch per change', chapter: 'Ch. 3' },
+        { title: 'Pull request', sub: 'review, tests, quality gate', chapter: 'Ch. 6' },
+        { title: 'Validation', sub: 'test deployment in integration', chapter: 'Ch. 5' },
+        { title: 'Acceptance (UAT)', sub: 'business signs off', chapter: 'Ch. 2' },
+        { title: 'Production', sub: 'deployment, monitoring, backup', chapter: 'Ch. 9' },
+      ],
+      side: { title: 'Git', sub: 'source', links: [0, 1, 2] },
+      note: 'Ch. 1 basics · Ch. 8 release calendar',
+    }),
     deadlinesLabel: 'Deadlines',
     deadlinesTitle: 'Deadlines that affect your pipeline',
     deadlinesText: 'These changes hit your pipeline and your integration users. Notice them too late and you find out from a failed deployment.',
@@ -453,14 +500,20 @@ export const en = {
     articlesAnchor: 'articles',
     factsLabel: 'Masterclass in figures',
     facts: { chapters: 'chapters', articles: 'articles', languages: 'German and English' },
-    figureLabel: 'Four layers of a B2B store on Salesforce',
-    layers: [
-      { title: 'D · Agents', tools: 'Buyer Agent, Merchandising Agent' },
-      { title: 'C · Storefront', tools: 'LWR store, headless, search, checkout' },
-      { title: 'B · Integration', tools: 'Extensions, MuleSoft, order summaries' },
-      { title: 'A · Commerce data', tools: 'Buyer groups, entitlements, prices' },
-    ],
-    erp: ['ERP', 'SAP'],
+    figureLabel: 'Path of a B2B order',
+    figure: hubFigure({
+      kind: 'flow',
+      accent: 2,
+      steps: [
+        { title: 'Buyer logs in', sub: 'buyer group, permissions', chapter: 'Ch. 2' },
+        { title: 'Catalogue and search', sub: 'assortment per customer', chapter: 'Ch. 2' },
+        { title: 'Price and cart', sub: 'customer prices, tiers, reorder', chapter: 'Ch. 3' },
+        { title: 'Checkout', sub: 'pay on invoice, credit limit', chapter: 'Ch. 3' },
+        { title: 'Order', sub: 'order summary, stock in the ERP', chapter: 'Ch. 4' },
+      ],
+      side: { title: 'ERP', sub: 'SAP', links: [2, 3, 4] },
+      note: 'Ch. 1 business case · Ch. 5 agents, rollout',
+    }),
     deadlinesLabel: 'Deadlines',
     deadlinesTitle: 'Deadlines that affect your store',
     deadlinesText: 'Two new features and a hard deadline for your ERP interfaces. All three belong in the release plan of your store.',
@@ -501,14 +554,20 @@ export const en = {
     articlesAnchor: 'articles',
     factsLabel: 'Masterclass in figures',
     facts: { chapters: 'chapters', articles: 'articles', languages: 'German and English' },
-    figureLabel: 'Four layers of quote to cash in Revenue Cloud',
-    layers: [
-      { title: 'D · Billing', tools: 'Invoices, payments, usage' },
-      { title: 'C · Order', tools: 'Contracts, orders, assets, DRO' },
-      { title: 'B · Quote', tools: 'Configurator, pricing, approvals' },
-      { title: 'A · Product catalog', tools: 'Classes, attributes, bundles' },
-    ],
-    erp: ['ERP', 'SAP'],
+    figureLabel: 'Quote to cash in Revenue Cloud',
+    figure: hubFigure({
+      kind: 'flow',
+      accent: 1,
+      steps: [
+        { title: 'Product catalogue', sub: 'classes, attributes, bundles', chapter: 'Ch. 2' },
+        { title: 'Quote', sub: 'configurator, prices, approvals', chapter: 'Ch. 2' },
+        { title: 'Contract', sub: 'term, amendment, renewal', chapter: 'Ch. 3' },
+        { title: 'Order', sub: 'decomposition (DRO), assets', chapter: 'Ch. 3' },
+        { title: 'Invoice', sub: 'billing, usage-based prices', chapter: 'Ch. 4' },
+      ],
+      side: { title: 'ERP', sub: 'SAP', links: [3, 4] },
+      note: 'Ch. 1 overview · Ch. 5 moving from CPQ',
+    }),
     deadlinesLabel: 'Deadlines',
     deadlinesTitle: 'Deadlines that affect your invoicing',
     deadlinesText: 'E-invoicing becomes mandatory in two stages. Your quote-to-invoice process has to be ready by then, with or without Revenue Cloud.',
@@ -549,13 +608,8 @@ export const en = {
     factsLabel: 'Masterclass in figures',
     facts: { chapters: 'chapters', articles: 'articles', languages: 'German and English' },
     figureLabel: 'Four layers of Manufacturing Cloud',
-    layers: [
-      { title: 'D · Agents', tools: 'Sales planning, warranty, quoting' },
-      { title: 'C · Channel and after-sales', tools: 'Rebates, portals, warranty, recalls' },
-      { title: 'B · Sales planning', tools: 'Sales agreements, forecasts, targets' },
-      { title: 'A · Platform', tools: 'Sales/Service Cloud, data model, BRE' },
-    ],
-    erp: ['ERP', 'SAP'],
+    // The hub shows a photo (coursePhotos in src/data/photos.ts) instead of a drawing.
+    figure: hubFigure(null),
     deadlinesLabel: 'Deadlines',
     deadlinesTitle: 'Deadlines that affect your ERP interfaces',
     deadlinesText: 'These deadlines affect the ERP integration that Manufacturing Cloud needs for reliable numbers. Check your interfaces now.',
@@ -597,13 +651,8 @@ export const en = {
     factsLabel: 'Masterclass in figures',
     facts: { chapters: 'chapters', articles: 'articles', languages: 'German and English' },
     figureLabel: 'Four layers of Salesforce Field Service',
-    layers: [
-      { title: 'D · Field and customer', tools: 'Mobile app, agents, service reports' },
-      { title: 'C · Scheduling', tools: 'ESO, Scheduling Console, policies' },
-      { title: 'B · Assets and parts', tools: 'Assets, maintenance plans, van stock' },
-      { title: 'A · Basics', tools: 'Territories, skills, work types' },
-    ],
-    erp: ['ERP', 'SAP'],
+    // The hub shows a photo (coursePhotos in src/data/photos.ts) instead of a drawing.
+    figure: hubFigure(null),
     deadlinesLabel: 'Deadlines',
     deadlinesTitle: 'Deadlines that affect your interfaces',
     deadlinesText: 'Your inventory and order interfaces depend on these deadlines. Miss them and technicians go out without current spare parts stock.',
@@ -645,8 +694,7 @@ export const en = {
     facts: { chapters: 'chapters', articles: 'articles', languages: 'German and English' },
     figureLabel: 'ADKAR in a Salesforce programme',
     // The hub draws the five ADKAR stages as a staircase.
-    layers: [],
-    erp: [],
+    figure: hubFigure(null),
     stages: [
       { term: 'Awareness', question: 'Why change?', help: 'Sponsor', chapter: 'Ch. 2' },
       { term: 'Desire', question: 'Want to join', help: 'Manager', chapter: 'Ch. 2' },

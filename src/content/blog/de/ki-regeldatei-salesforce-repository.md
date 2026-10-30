@@ -158,4 +158,4 @@ Dateien schützen
   Mit CODEOWNERS und Branch Protection.
 ```
 
-Das Einrichten gehört zu meiner Arbeit in [DevOps und Release-Management](../../leistungen/devops-und-release-management/) und in der [Partnersteuerung](../../leistungen/partnersteuerung/). Eine KI-Regeldatei kostet wenige Tage und gibt jedem Agenten in Ihrem Repository dieselben Regeln, solange die Datei Ihnen gehört und die harten Regeln anderswo erzwungen werden. Wenn Sie eine zweite Meinung zu Ihrer Regeldatei oder Ihrem Partner-Setup möchten, [schreiben Sie mir](#contact).
+Das Einrichten gehört zu meiner Arbeit in [DevOps und Release-Management](../../leistungen/devops-und-release-management/) und in der [Partnersteuerung](../../leistungen/partnersteuerung/). Eine KI-Regeldatei kostet wenige Tage und gibt jedem Agenten in Ihrem Repository dieselben Regeln, solange die Datei Ihnen gehört und die harten Regeln anderswo erzwungen werden.

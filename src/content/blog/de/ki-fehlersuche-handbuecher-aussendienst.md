@@ -124,4 +124,4 @@ Mit echten Störfällen testen
 
 Das Dokumentenmodell überlebt jede Agentenversion, deshalb gehört es für mich zur [Salesforce-Architektur](../../leistungen/salesforce-architektur/). Das größere Bild steht im Masterclass-Kapitel [KI-Agenten in der Fertigung](../../masterclass/ki-salesforce/ki-agenten-in-der-fertigung/).
 
-Der Agent für die Fehlersuche ist nur so genau wie die Verbindung zwischen Handbuch und Seriennummer, also bauen Sie diese Verbindung, bevor Sie ihn einschalten. Wenn Sie eine zweite Meinung zu Ihrem Dokumentenmodell möchten, [schreiben Sie mir](#contact).
+Der Agent für die Fehlersuche ist nur so genau wie die Verbindung zwischen Handbuch und Seriennummer, also bauen Sie diese Verbindung, bevor Sie ihn einschalten.

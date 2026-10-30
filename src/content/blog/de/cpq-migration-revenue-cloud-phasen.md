@@ -116,4 +116,4 @@ Diese Entscheidungen gehören Ihnen, nicht dem Partner und nicht dem Werkzeug:
 
 Ob Sie überhaupt umsteigen oder vorerst bei CPQ bleiben, behandelt [CPQ behalten oder zu Revenue Cloud wechseln?](../cpq-behalten-oder-revenue-cloud/). Das ganze Thema finden Sie im Masterclass-Kapitel [Von CPQ zu Revenue Cloud](../../masterclass/revenue-cloud/von-cpq-zu-revenue-cloud/), und mehrere Partner durch einen solchen Umstieg zu steuern, gehört zu meiner Arbeit in der [Partnersteuerung](../../leistungen/partnersteuerung/).
 
-Eine CPQ-Migration gelingt, wenn Preisführung, Cutover und Historie entschieden sind, bevor der erste Partner baut. Wenn Sie diesen Umstieg planen, [schreiben Sie mir](#contact).
+Eine CPQ-Migration gelingt, wenn Preisführung, Cutover und Historie entschieden sind, bevor der erste Partner baut.

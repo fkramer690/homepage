@@ -34,9 +34,13 @@ In der Prosci-Studie [Best Practices in Change Management](https://www.prosci.co
 
 Drei Dinge machen einen Sponsor wirksam:
 
-- **Erklären.** Im Vertriebsmeeting sagt der Vertriebsleiter, warum Prognosen künftig aus Salesforce kommen. Dieselbe Botschaft vom Projektteam hat weniger Gewicht.
-- **Entscheiden.** Wenn Innendienst und Absatzplanung sich über ein Pflichtfeld nicht einigen, fällt die Entscheidung bei ihm und nicht im Sprint.
-- **Nachfragen.** Er fragt im Monatsbericht nach der Nutzung seiner Teams. Damit merken die Teams, dass es zählt.
+```saeulen
+dach: Ein wirksamer Sponsor
+mic | Erklären | Im eigenen Bereich | Im Vertriebsmeeting sagt der Vertriebsleiter, warum Prognosen künftig aus Salesforce kommen. Dieselbe Botschaft vom Projektteam hat weniger Gewicht.
+steer | Entscheiden | Bei Konflikten | Wenn Innendienst und Absatzplanung sich über ein Pflichtfeld nicht einigen, fällt die Entscheidung bei ihm und nicht im Sprint.
+analyse | Nachfragen | Im Monatsbericht | Er fragt nach der Nutzung seiner Teams. Damit merken die Teams, dass es zählt.
+basis: Festgehalten im Sponsor-Plan
+```
 
 Ich schreibe deshalb einen Sponsor-Plan: eine kurze Liste mit Terminen, an denen der Sponsor auftritt, Entscheidungen, die bei ihm liegen, und den Zahlen, die er monatlich bekommt. Ohne diesen Plan wird aus „das Management steht dahinter“ eine Zeile auf der ersten Folie.
 

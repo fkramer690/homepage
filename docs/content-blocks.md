@@ -1,6 +1,6 @@
 # Content blocks (library)
 
-Eight building blocks that loosen up blog articles and masterclass chapters. They are written in Markdown as a fenced code block whose language is the block name, so articles stay free of HTML. `src/lib/content-blocks-plugin.mjs` turns them into markup at build time (logic in `src/lib/content-blocks.mjs`, styles under "Content blocks" in `src/styles/global.css`), and `scripts/check-blog.mjs` validates them. Rules for when to use them: "Content blocks" in [blog-guidelines.md](blog-guidelines.md).
+Twelve building blocks that loosen up blog articles and masterclass chapters. They are written in Markdown as a fenced code block whose language is the block name, so articles stay free of HTML. `src/lib/content-blocks-plugin.mjs` turns them into markup at build time (logic in `src/lib/content-blocks.mjs`, styles under "Content blocks" in `src/styles/global.css`), and `scripts/check-blog.mjs` validates them. Rules for when to use them: "Content blocks" in [blog-guidelines.md](blog-guidelines.md).
 
 Design: only the site's own colours and forms (cyan, anthracite, greys, dashed mono labels, cards with a short bar on top, the technical grid). No other colours, no icons beyond the cyan tick and grey cross.
 
@@ -113,6 +113,87 @@ Umsetzen | 3 bis 6 Monate · Partner
 ```
 ````
 
+## 9. Stufen (stage tiles)
+
+Three to seven stages of a model in one row, `Letter | Name | Subtitle | Question`. A trailing `*` marks the stages the cases below refer to (cyan frame). Optional zero to three cases `fall: Title | situation | consequence` (EN `case:`) as grey cards with a cyan left bar. Approved by Fabian 2026-10-29 for ADKAR on the change management page; fits models such as ADKAR or maturity levels.
+
+````
+```stufen
+A | Awareness | Bewusstsein | Warum ändert sich etwas? *
+D | Desire | Bereitschaft | Will ich mitmachen?
+K | Knowledge | Wissen | Wie geht es?
+fall: Es fehlt Awareness | Ein Vertriebsteam weiß nicht, wofür die Daten gebraucht werden. | Das erklärt der Vertriebsleiter, nicht der Trainer.
+```
+````
+
+Variant `treppe` (staircase), approved by Fabian 2026-10-29 for the maturity stages in DevOps chapter 1: the tiles rise in equal steps, the risk sits in its own row below so the steps stay proportional. Each stage `Number | Name | Subtitle | Description | Risk` (the subtitle is a short mono line such as the chapters), a trailing `*` gives the tile a grey background. Optional zero to three bands `band: 1-2 | Text` below the risk row (a trailing `*` makes the band cyan), then the cases as above.
+
+````
+```stufen treppe
+1 | Klicks und Change Sets | Kapitel 1 | Im Setup oder per Change Set, von Hand | Überschreiben, keine Historie
+2 | Repository als Ablage | Kapitel 2, 3 | Weiter von Hand, Git ist eine Kopie | Repository und Org laufen auseinander
+3 | Pull Requests mit Prüfung | Kapitel 4, 5, 6 | Review und Validierungs-Deployment je Pull Request | Prüfungen werden umgangen *
+band: 1-2 | Quelle der Wahrheit: die Org
+band: 3-3 | Quelle der Wahrheit: das Repository *
+fall: Von Stufe 2 zu 3 | Die Quelle der Wahrheit wandert ins Repository. | Direkte Änderungen in der Org sind ab dann ein Fehler.
+```
+````
+
+## 10. Vergleich (without / with)
+
+Two columns like the start page comparison: `ohne: Title` (EN `without:`) with grey crosses, then `mit: Title` (EN `with:`) with cyan ticks and a cyan frame, two to five `- points` each. Approved by Fabian 2026-10-29. Use it for before and after; for a decision use `pro-contra`.
+
+````
+```vergleich
+ohne: Einmal im Quartal ein großes Paket
+- Fachbereiche sehen Änderungen erst in Produktion.
+- Probleme aus dem Alltag landen in E-Mails.
+mit: Kleine Releases mit festem Weg
+- Fachbereiche wissen vor dem Release, was sich ändert.
+- Rückmeldungen kommen auf festem Weg in den Backlog.
+```
+````
+
+## 11. Hebel (lever cards)
+
+Two or three levers side by side as cards of equal height: `Title | effect`, then the description on an indented line. The label "Hebel 01" / "Lever 01" is added automatically, the effect stands at the bottom of the card behind a dashed line. Only effects that the description or the page states. Approved by Fabian 2026-10-29 for the licence levers on the make-or-buy service page.
+
+````
+```hebel
+Der Lizenztyp | Leicht sechsstellig pro Jahr bei großer Nutzerbasis
+  Volle Lizenzen werden oft standardmäßig angeboten, auch für Nutzer, die nur Daten lesen oder Datensätze freigeben.
+Der Zeitpunkt | Produkte für zwei bis drei Jahre für wenig Aufpreis
+  Zum Ende des Geschäftsjahres des Herstellers oder bei Aktionen gibt es oft Spielraum.
+```
+````
+
+## 12. Eintrag (log entry)
+
+One entry of a log or register as a card: dark head with the title after the block name and the label "Eintrag" / "Entry", then two to six `Field | value` rows on the grid. A trailing `*` marks at most one row (cyan dot). Optional last line `fazit:` (EN `note:`) at the bottom in cyan. Approved by Fabian 2026-10-29 for the decision log on the architecture service page; use it to show what a deliverable looks like, not for invented example data.
+
+````
+```eintrag Entscheidungslog
+Entscheidung | Was wurde entschieden?
+Optionen | Welche Wege standen zur Wahl?
+Folgen | Was bedeutet die Entscheidung später? *
+fazit: Fragt zwei Jahre später jemand, warum ein Prozess so gebaut wurde, steht die Antwort hier.
+```
+````
+
+## 13. Säulen (pillars)
+
+Three to five pillars in one row, each `icon | Name | Subtitle | Text`. The icon is a file name from `src/icons/`, numbers are added automatically. Keep the name to one word or two (it must fit one line in a quarter of the text column), the subtitle short and the text one full sentence. Optional `dach: Title` (EN `roof:`) as a dark bar above and `basis: Title` (EN `base:`) as a grey bar below. Title, subtitle and text start at the same height in every pillar and all pillars end together; on phones they stand below each other with the icon on the left. Approved by Fabian 2026-10-29 for the pipeline basics on the DevOps service page (with roof and base).
+
+````
+```saeulen
+dach: Eine gute Salesforce-Pipeline
+check | Prüfungen | Bei jedem Pull Request | Ein Validierungs-Deployment, Apex-Tests und Codeanalyse laufen vor dem Review.
+gear | Automatisierung | Nach dem Deployment | Was früher von Hand lief, ist Teil des Deployments.
+analyse | Review | Für jede Änderung | Menschen prüfen Design und Lesbarkeit.
+basis: Auf der Git-Plattform des Kunden
+```
+````
+
 ## Confirmed experience (for `praxis`)
 
 Only these, in Fabian's wording, without client names, industry or size:
@@ -126,5 +207,6 @@ Only these, in Fabian's wording, without client names, industry or size:
 - Training in all common forms, depending on the client: train the trainer via key users, separate training sandbox, training per role (confirmed 29 October 2026).
 - Principle: when new processes or systems are introduced, there must be no way back; as long as the old way remains an option, no change happens (Fabian, 29 October 2026).
 - Project stories that already stand in articles published before 28 October 2026 (written with Fabian), e.g. the global Manufacturing Cloud rollout with CPQ, configurator and customer portal.
+- In one manufacturing project, sales agreements (a core feature of Manufacturing Cloud) were not relevant for the business, so a custom solution on the core platform was cheaper and simpler to maintain (confirmed 23 October 2026, make-or-buy service page).
 
 Add new items here only after Fabian confirms them.

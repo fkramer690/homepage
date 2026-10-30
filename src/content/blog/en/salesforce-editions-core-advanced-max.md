@@ -125,4 +125,4 @@ If only a small group of power users needs AI features, ask whether that group c
 5. **Set up monitoring.** [Digital Wallet](https://www.salesforce.com/agentforce/digital-wallet/) shows consumption by agent, action and channel and sends alerts at thresholds; it requires Data 360.
 6. **For Manufacturing Cloud,** wait for the Industries pricing or secure the right to switch.
 
-Choose the edition by the features your teams use and treat Flex Credits as a separate, measured budget line. If your renewal is coming up and you want an independent look at the quote, [send me a message](#contact).
+Choose the edition by the features your teams use and treat Flex Credits as a separate, measured budget line.

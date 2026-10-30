@@ -120,7 +120,9 @@ For a store with two or three live calls and one order export, direct Apex callo
 
 The [MuleSoft Accelerator for SAP](https://anypoint.mulesoft.com/exchange/org.mule.examples/mulesoft-accelerator-for-sap/) contains a quote-to-cash use case that syncs order, inventory and customer data between Sales Cloud and S/4HANA, and one for B2B EDI. These are API templates to start from. A finished integration for a B2B Commerce store they are not.
 
+```hinweis achtung
 One deadline applies to every batch integration. Salesforce retires the [OAuth username-password flow](https://help.salesforce.com/s/articleView?id=release-notes.rn_security_unpw_flow_retirement.htm&language=en_US&release=262&type=5) for connected apps on 20 February 2027. A nightly product import that logs in with a password stops working, often without anyone noticing right away. How to find and switch these integrations is in [Password integrations end in 2027](../../../blog/salesforce-password-integrations-end-2027/).
+```
 
 ## When does a headless store pay off?
 
@@ -145,4 +147,4 @@ Six interfaces, three of them live, all through an integration user with a certi
 
 Write two documents before anyone designs store pages. First, an [object ownership matrix](../../../blog/salesforce-object-ownership-matrix/) with one extra column: copied or live. Second, an interface list with master system, maximum data age, fallback rule and login method per interface. With these two pages you can compare any partner proposal. [Chapter 5](../agentforce-migration-rollout/) then covers agents that build on the same interfaces and the rollout to dealers. An independent review of such designs is part of my work in [Salesforce integration](../../../services/salesforce-integration/) and [Salesforce architecture](../../../services/salesforce-architecture/).
 
-A B2B store is only as reliable as its data flows from the ERP, so decide them before the design; if you want a second opinion on your interface list, [send me a message](#contact).
+A B2B store is only as reliable as its data flows from the ERP, so decide them before the design.

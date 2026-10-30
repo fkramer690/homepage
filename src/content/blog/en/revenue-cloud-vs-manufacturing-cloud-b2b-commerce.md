@@ -95,4 +95,4 @@ The order matters less than the rule behind it: the second product reuses the ca
 
 Write down your selling process in steps, from enquiry to reorder, and mark the step that costs most time or money today. Then check the overlaps for that step: which catalog, which price master, which quote model. The masterclass chapter [Revenue Cloud overview and decision](../../masterclass/revenue-cloud/revenue-cloud-overview/) helps with the first product decision, and the product boundaries belong in your [Salesforce architecture](../../services/salesforce-architecture/) decision log.
 
-Revenue Cloud sells, Manufacturing Cloud measures and B2B Commerce lets dealers order, and each step needs exactly one of them in charge. If you want to check where your boundaries should sit, [send me a message](#contact).
+Revenue Cloud sells, Manufacturing Cloud measures and B2B Commerce lets dealers order, and each step needs exactly one of them in charge.

@@ -95,4 +95,4 @@ Agree a review date
 
 This is the core of how I set up [programme management for Salesforce programmes](../../services/program-management-nearshore/), and it rests on a working pipeline, as described in [why DevOps decides Salesforce enterprise projects](../why-devops-matters-salesforce-enterprise/).
 
-Measure AI benefit like any other investment: baseline first, a few outcome numbers, and a date to decide. If you want help setting up those numbers for your programme, [send me a message](#contact).
+Measure AI benefit like any other investment: baseline first, a few outcome numbers, and a date to decide.

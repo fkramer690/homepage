@@ -104,4 +104,4 @@ For your next release, answer three questions in writing: which groups are affec
 
 If you want to go through the five stages in order, the [change management masterclass](../../masterclass/change-management/) has a chapter per stage with the matching articles.
 
-Salesforce is only introduced once people work with it. If a rollout is coming up or new processes are not being used, [send me a message](#contact) or read more about my [Salesforce change management consulting](../../services/change-management-salesforce/).
+Salesforce is only introduced once people work with it. Read more about [Salesforce change management consulting](../../services/change-management-salesforce/).

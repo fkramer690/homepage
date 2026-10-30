@@ -40,7 +40,9 @@ Zwei Fußnoten auf der Preisseite von Manufacturing Cloud widersprechen sich: Di
 
 Für den Aufpreis bekommen Sie laut Preisseite Warranty Lifecycle Management, die Asset Service Console, die Service Console for Manufacturing und Pre-Work Estimation. Die [Trailhead-Übersicht](https://trailhead.salesforce.com/content/learn/modules/agentforce-manufacturing-quick-look/explore-agentforce-manufacturing-capabilities) nennt zusätzlich Product Service Campaigns, die auf der Preisseite fehlen. Die Service Cloud allein deckt bereits Cases, Entitlements, Knowledge und Standard-Assets mit Seriennummer ab.
 
+```hinweis tipp
 Meine Regel: nach Rolle lizenzieren. Garantiesachbearbeiter und das Qualitätsteam, das Rückrufe steuert, arbeiten auf Manufacturing Cloud; ein First Level, der Cases anlegt und aus Knowledge antwortet, bleibt auf Service Cloud. Ein Punkt gehört in den Vertrag: welche Garantiedaten ein Service-Cloud-Nutzer lesen darf. Wie ich den Lizenzmix als Make-or-buy-Frage aufbereite, steht unter [Make-or-buy und Lizenzprognose](../../../leistungen/make-or-buy-lizenzen/), den Umfang der ganzen Branchenlösung behandelt [Kapitel 1](../einordnung-und-business-case/).
+```
 
 ## Warum beginnt After-Sales bei der installierten Basis?
 
@@ -48,9 +50,11 @@ Weil jede After-Sales-Frage eine Frage zu einer Maschine ist. Ist diese Seriennu
 
 Das Minimum pro Maschine: Seriennummer, Produkt, Eigentümer, Standort und das Datum, ab dem die Garantie läuft. Manufacturing Cloud ergänzt drei Dinge:
 
-- **Asset Milestones.** Das [Objekt AssetMilestone](https://developer.salesforce.com/docs/atlas.en-us.264.0.mfg_api_devguide.meta/mfg_api_devguide/sforce_api_objects_assetmilestone.htm), verfügbar ab API 58.0, hält laut Referenz „the key events in the lifecycle of an asset, such as manufacturing, registration, or resale“ fest, mit Datum, dem Status Active, Expired oder Tentative und dem Quellsystem, das das Ereignis gemeldet hat.
-- **Account- und Contact-Teilnehmer.** Sie verbinden mehrere Firmen und Personen mit einer Maschine: Händler, Betreiber, Servicepartner.
-- **Flotten.** Sie fassen die Maschinen eines Kunden mit vielen Standorten zusammen, mit Nutzung pro Maschine.
+| Ergänzung | Was sie leistet |
+|---|---|
+| Asset Milestones | Das [Objekt AssetMilestone](https://developer.salesforce.com/docs/atlas.en-us.264.0.mfg_api_devguide.meta/mfg_api_devguide/sforce_api_objects_assetmilestone.htm), verfügbar ab API 58.0, hält laut Referenz „the key events in the lifecycle of an asset, such as manufacturing, registration, or resale“ fest, mit Datum, dem Status Active, Expired oder Tentative und dem Quellsystem, das das Ereignis gemeldet hat. |
+| Account- und Contact-Teilnehmer | Sie verbinden mehrere Firmen und Personen mit einer Maschine: Händler, Betreiber, Servicepartner. |
+| Flotten | Sie fassen die Maschinen eines Kunden mit vielen Standorten zusammen, mit Nutzung pro Maschine. |
 
 Das Datenmodell ist der leichte Teil. Schwer ist die Quelle. Das ERP kennt Seriennummer und den Händler, an den geliefert wurde, aber nicht den Endkunden. Der Händler kennt das Übergabedatum, die Inbetriebnahme das Installationsdatum. Jedes Feld braucht genau einen Verantwortlichen, schriftlich festgelegt, bevor der erste Anspruch geprüft wird. Die vollständige Feldliste, die Quellentabelle und die Regel für den Garantiebeginn stehen in [Installierte Basis in Manufacturing Cloud](../../../blog/installierte-basis-asset-meilensteine/). Die passende ERP-Schnittstelle zu planen, gehört zu meiner Arbeit an [Salesforce-Schnittstellen](../../../leistungen/salesforce-schnittstellen/).
 
@@ -131,4 +135,4 @@ Asset-Hierarchie, Wartungspläne und Servicepartner sind Thema des Kapitels [Ass
 
 Die Datenflüsse zwischen SAP und Manufacturing Cloud, Gutschriften eingeschlossen, sind Thema von [Kapitel 5](../erp-ki-und-rollout/).
 
-Garantie, Rückrufe und Agenten in Manufacturing Cloud sind nur so gut wie die installierte Basis darunter, also beginnen Sie dort. Wenn Sie After-Sales auf Manufacturing Cloud planen, [schreiben Sie mir](#contact).
+Garantie, Rückrufe und Agenten in Manufacturing Cloud sind nur so gut wie die installierte Basis darunter, also beginnen Sie dort.

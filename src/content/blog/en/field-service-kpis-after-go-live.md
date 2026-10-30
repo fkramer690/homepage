@@ -113,4 +113,4 @@ Review monthly per region
 
 How the KPIs fit into rollout and operations is covered in the [Field Service masterclass chapter on AI agents, rollout and operations](../../masterclass/field-service/field-service-ai-agents-rollout/).
 
-Field Service proves itself in six numbers you defined before go-live, and a dashboard only shows them. If you want help setting up the baseline and the review, [send me a message](#contact).
+Field Service proves itself in six numbers you defined before go-live, and a dashboard only shows them.

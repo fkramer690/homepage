@@ -116,4 +116,4 @@ Measure the effect
 
 Whether technicians then actually use the new features depends on what they get out of them. That is the subject of [Field Service app: getting technicians on board](../field-service-app-technician-adoption/).
 
-Good field service data is also the foundation for AI agents in service, which need reliable information to work with, as I explain in [why Agentforce needs business value and data quality first](../agentforce-business-value-data-quality-first/). If you are planning to modernise your field service on Salesforce, [send me a message](#contact).
+Good field service data is also the foundation for AI agents in service, which need reliable information to work with, as I explain in [why Agentforce needs business value and data quality first](../agentforce-business-value-data-quality-first/).

@@ -110,4 +110,4 @@ Switch on monitoring
   And define the rollout group, before you activate the agent.
 ```
 
-An Agentforce agent is ready when it meets thresholds you set in advance, run after run, and when you can see what it does in production from the first day. If you want a second pair of eyes on your test set or your go-live gates, [send me a message](#contact).
+An Agentforce agent is ready when it meets thresholds you set in advance, run after run, and when you can see what it does in production from the first day.

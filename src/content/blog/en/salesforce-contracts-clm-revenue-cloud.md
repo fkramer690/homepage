@@ -106,4 +106,4 @@ In these cases Salesforce creates the commercial data and hands the signed contr
 
 Count your customer contracts per year and sort them into three groups: own template without changes, own template with negotiated clauses, customer's paper. If the first two groups dominate, Salesforce Contracts fits. Then build the clause library with legal before the first template. How contracts fit into the path from quote to order is in the chapter [quote, contract, order](../../masterclass/revenue-cloud/quote-contract-order/).
 
-Salesforce Contracts is enough when contracts come out of the sales process on your own paper. If you want to work out which side of that line you are on, [send me a message](#contact).
+Salesforce Contracts is enough when contracts come out of the sales process on your own paper.

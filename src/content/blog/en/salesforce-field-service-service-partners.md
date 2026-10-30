@@ -87,4 +87,4 @@ The same way of working does not mean the same rights. I would separate three th
 
 Take your most important partner and write down how a job reaches them today and how the feedback comes back. Every step that runs differently from internal technicians is a candidate for alignment. Start with one partner and one territory before connecting all of them. Mixed setups are fine: a large core partner works in the first model, a small partner for peaks in the second. What matters is that the decision is made deliberately per partner and documented.
 
-The last part of the series is about the rollout itself. If you want to check how your partners fit into Field Service before then, [get in touch](#contact).
+The last part of the series is about the rollout itself.

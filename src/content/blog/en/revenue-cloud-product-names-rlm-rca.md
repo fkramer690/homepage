@@ -96,4 +96,4 @@ Each source has its own name, so searches miss half of the material when they us
 
 What the product covers, under whatever name, is in [Revenue Cloud for manufacturers: when is it worth it?](../revenue-cloud-worth-it-manufacturers/), and what it costs is in [Revenue Cloud pricing: Growth, Advanced and add-ons](../revenue-cloud-editions-pricing/). The [overview chapter of the Revenue Cloud masterclass](../../masterclass/revenue-cloud/revenue-cloud-overview/) brings these topics together.
 
-The name on the website will probably change again, so what counts is the edition and SKU in your contract. If you are unsure which product a quote or a partner proposal actually describes, [send me a message](#contact).
+The name on the website will probably change again, so what counts is the edition and SKU in your contract.

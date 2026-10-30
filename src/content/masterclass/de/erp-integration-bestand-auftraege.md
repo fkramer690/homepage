@@ -120,7 +120,9 @@ Für einen Shop mit zwei oder drei Live-Abfragen und einem Auftragsexport reiche
 
 Der [MuleSoft Accelerator for SAP](https://anypoint.mulesoft.com/exchange/org.mule.examples/mulesoft-accelerator-for-sap/) enthält einen Quote-to-Cash-Fall, der Auftrags-, Bestands- und Kundendaten zwischen Sales Cloud und S/4HANA synchronisiert, und einen Fall für B2B-EDI. Das sind API-Vorlagen als Startpunkt. Eine fertige Anbindung für einen B2B-Commerce-Store ist es nicht.
 
+```hinweis achtung
 Eine Frist gilt für jede Batch-Schnittstelle. Salesforce schaltet den [OAuth Username-Password Flow](https://help.salesforce.com/s/articleView?id=release-notes.rn_security_unpw_flow_retirement.htm&language=en_US&release=262&type=5) für Connected Apps am 20. Februar 2027 ab. Ein nächtlicher Produktimport, der sich mit Passwort anmeldet, läuft dann nicht mehr, oft ohne dass es jemand sofort merkt. Wie Sie diese Schnittstellen finden und umstellen, steht in [Passwort-Integrationen enden 2027](../../../blog/salesforce-passwort-integrationen-2027/).
+```
 
 ## Wann lohnt sich ein headless Shop?
 
@@ -145,4 +147,4 @@ Sechs Schnittstellen, drei davon live, alle über einen Integrationsnutzer mit Z
 
 Schreiben Sie zwei Dokumente, bevor jemand die Shopseiten entwirft. Erstens eine [Object Ownership Matrix](../../../blog/object-ownership-matrix-salesforce/) mit einer zusätzlichen Spalte: kopiert oder live. Zweitens eine Schnittstellenliste mit führendem System, maximalem Alter der Daten, Rückfallregel und Anmeldeverfahren pro Schnittstelle. Mit diesen beiden Seiten lässt sich jedes Partnerangebot vergleichen. Danach geht es in [Kapitel 5](../agentforce-migration-einfuehrung/) um Agenten, die auf denselben Schnittstellen aufsetzen, und um die Einführung bei den Händlern. Eine unabhängige Prüfung solcher Designs gehört zu meiner Arbeit bei [Salesforce-Schnittstellen](../../../leistungen/salesforce-schnittstellen/) und in der [Salesforce-Architektur](../../../leistungen/salesforce-architektur/).
 
-Ein B2B-Shop ist nur so verlässlich wie seine Datenflüsse aus dem ERP, also entscheiden Sie diese vor dem Design; wenn Sie eine zweite Meinung zu Ihrer Schnittstellenliste möchten, [schreiben Sie mir](#contact).
+Ein B2B-Shop ist nur so verlässlich wie seine Datenflüsse aus dem ERP, also entscheiden Sie diese vor dem Design.

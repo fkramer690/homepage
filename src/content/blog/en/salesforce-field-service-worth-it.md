@@ -104,4 +104,4 @@ Then comes the data question. Field Service only schedules as well as assets, lo
 
 Collect the four numbers for one month and one region. If they show many short jobs with a lot of travel, build the business case for Field Service with licences, implementation and maintenance over several years. How the rollout then works region by region is covered in [Salesforce Field Service implementation: why in waves?](../salesforce-field-service-rollout/). If they show few long jobs, first check whether Service Cloud, a portal or the ERP can close the gap. What the mobile app can do for technicians today is covered in [Field Service mobile: guidance and voice](../salesforce-field-service-mobile-guided-voice/).
 
-Field Service is worth it when your field team runs many short appointments, and rarely when it handles long projects. If you are facing this decision and want an independent assessment, [send me a message](#contact).
+Field Service is worth it when your field team runs many short appointments, and rarely when it handles long projects.

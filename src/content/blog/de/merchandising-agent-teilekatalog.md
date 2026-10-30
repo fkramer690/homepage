@@ -109,4 +109,4 @@ Mit dem Agenten fragt sie nach jeder ERP-Aktualisierung: "Stufe jedes Teil mit V
 
 Das Kapitel [Agenten, Migration, Einführung](../../masterclass/b2b-commerce/agentforce-migration-einfuehrung/) der [Masterclass B2B Commerce](../../masterclass/b2b-commerce/) stellt den Merchandising Agent neben den Buyer Agent und die Einführung. Für die Frage, wem welche Daten zwischen ERP, PIM und Salesforce gehören, lesen Sie weiter bei [Salesforce-Architektur](../../leistungen/salesforce-architektur/).
 
-Der Merchandising Agent spart Klicks bei Suche und Aktionen, solange die Produktstammdaten dort bleiben, wo sie heute gepflegt werden. Wenn Sie eine unabhängige Einschätzung zu Ihrem Teileshop möchten, [schreiben Sie mir](#contact).
+Der Merchandising Agent spart Klicks bei Suche und Aktionen, solange die Produktstammdaten dort bleiben, wo sie heute gepflegt werden.

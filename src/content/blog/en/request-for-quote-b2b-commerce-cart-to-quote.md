@@ -103,4 +103,4 @@ Start with the sales desk, not the component. Write down the response time, the 
 
 The chapter [prices, cart and checkout](../../masterclass/b2b-commerce/prices-cart-checkout/) of the [B2B Commerce masterclass](../../masterclass/b2b-commerce/) shows how RFQ fits next to customer prices, checkout and reorders. How a quote in Revenue Cloud continues to contract and order is covered in the chapter [quote, contract, order](../../masterclass/revenue-cloud/quote-contract-order/) of the Revenue Cloud masterclass. Where RFQ touches several partners and teams, steering it is part of my work on [partner governance](../../services/partner-governance/).
 
-Request for Quote moves quote requests from email into the store, provided someone answers them on time. If you want to design that process, [send me a message](#contact).
+Request for Quote moves quote requests from email into the store, provided someone answers them on time.

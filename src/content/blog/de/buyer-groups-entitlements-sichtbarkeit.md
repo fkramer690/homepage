@@ -105,4 +105,4 @@ Schreiben Sie das Berechtigungskonzept auf eine Seite, bevor jemand Daten lädt:
 
 Die ERP-Felder, die über die Mitgliedschaft entscheiden, kommen dann in die Schnittstellenliste. Diese Seite ist das erste Ergebnis im [Kapitel zu Katalog, Suche und Sichtbarkeit](../../masterclass/b2b-commerce/katalog-suche-sichtbarkeit/) meiner [Masterclass B2B Commerce](../../masterclass/b2b-commerce/). Ob Händler die Teile, die sie sehen dürfen, dann auch finden, entscheidet die Suche, beschrieben in [Ersatzteile über die Teilenummer finden](../b2b-shop-suche-teilenummer/). Solche Konzepte zu prüfen, bevor ein Partner baut, gehört zu meiner Arbeit in der [Salesforce-Architektur](../../leistungen/salesforce-architektur/).
 
-Wenige Buyer Groups nach Land, Stufe und Marke halten einen B2B-Shop über Jahre beherrschbar. Wenn Sie eine zweite Meinung zu Ihrem Berechtigungskonzept möchten, [schreiben Sie mir](#contact).
+Wenige Buyer Groups nach Land, Stufe und Marke halten einen B2B-Shop über Jahre beherrschbar.

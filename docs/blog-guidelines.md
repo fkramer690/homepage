@@ -22,7 +22,7 @@ Start every new article from [`docs/blog-template.md`](blog-template.md).
 | Questions | At least one H2 phrased as a question people would search for | script |
 | Experience | At least one anonymised example from a real project | review |
 | FAQ | 2–6 questions with direct answers of 1–3 sentences, shown as collapsible questions | schema |
-| Closing | One-sentence conclusion plus an invitation to get in touch (`#contact`) | review |
+| Closing | One-sentence conclusion, no invitation to get in touch: the contact section follows directly (Fabian, 2026-10-29) | review |
 
 ## Articles by Juliane Winterscheid
 
@@ -41,7 +41,7 @@ Every article page is built by `src/components/BlogPost.astro` and looks the sam
 1. Title, date, reading time
 2. Key takeaways (from frontmatter)
 3. **Article body (the only part that comes from Markdown)**
-4. FAQ, collapsible (from frontmatter)
+4. FAQ, collapsible (from frontmatter), heading "Häufig gestellte Fragen" in German and "Frequently asked questions" in English
 5. Author box (`src/components/AuthorBox.astro`)
 6. Series box, only for articles in a series (see below)
 7. Related articles
@@ -86,11 +86,11 @@ Articles must read like Fabian talking to a client, not like generated content. 
 
 ## Content blocks
 
-Every article and every masterclass chapter loosens up its text with building blocks from the library in [content-blocks.md](content-blocks.md): note (`hinweis tipp|achtung|offen`), from my practice (`praxis`), key figures (`kennzahlen`), timeline (`zeitleiste`), flow diagram (`ablauf`), pro and contra (`pro-contra`), collapsible detail (`vertiefung`) and steps (`schritte`). They are fenced code blocks with the block name as language, so the article stays free of HTML. The build check enforces the counts.
+Every article and every masterclass chapter loosens up its text with building blocks from the library in [content-blocks.md](content-blocks.md): note (`hinweis tipp|achtung|offen`), from my practice (`praxis`), key figures (`kennzahlen`), timeline (`zeitleiste`), flow diagram (`ablauf`), pro and contra (`pro-contra`), collapsible detail (`vertiefung`), steps (`schritte`), stage tiles (`stufen`), without/with comparison (`vergleich`), lever cards (`hebel`), log entry (`eintrag`) and pillars (`saeulen`). They are fenced code blocks with the block name as language, so the article stays free of HTML. The build check enforces the counts.
 
 - At least one block or a Markdown table per text; texts over 1,300 words need at least two different ones (a table counts as one kind).
 - At most four blocks per text, at most two notes and one practice block, so the text leads and not the boxes.
-- Pick the block by content, never for decoration: dates in a sequence → timeline; a decision with arguments on both sides → pro-contra; data flows between Salesforce and the ERP → flow diagram; phases with duration and owner → steps; figures the section explains → key figures; detail only specialists need → collapsible detail; a fact readers must not miss, an open point to confirm in writing → note.
+- Pick the block by content, never for decoration: dates in a sequence → timeline; a decision with arguments on both sides → pro-contra; data flows between Salesforce and the ERP → flow diagram; phases with duration and owner → steps; two or three levers that each have an effect → lever cards; figures the section explains → key figures; detail only specialists need → collapsible detail; a fact readers must not miss, an open point to confirm in writing → note.
 - `praxis` only with experience Fabian has confirmed (list in content-blocks.md); assumption scenarios stay in the running text, marked "as an assumption".
 - Key figures and timelines only with values that are sourced in the text.
 - A block repeats nothing the paragraph around it says word for word; it condenses or adds structure. Same blocks in EN and DE.
@@ -113,7 +113,7 @@ Every article and every masterclass chapter loosens up its text with building bl
 - Slug: lowercase words with hyphens, in the article's language, unique across EN and DE (checked). Never change it after publishing.
 - At least 2 internal links, written relative so they survive the domain move: `../other-slug/`, the matching service page (`../../leistungen/<slug>/` in German, `../../services/<slug>/` in English), `../../#references`, `../../#about`. Prefer a specific service page over the generic `../../#services`. Never hardcode the domain or start a link with `/`.
 - External links only to sources that back a statement. They open in a new tab automatically (`src/lib/external-links.mjs`); write them as normal Markdown links.
-- Set `updatedDate` whenever an article changes in substance, and also after checking its prices, Flex Credits, deadlines and release dates against the sources, even if nothing changed. `scripts/stale-articles.mjs` lists articles whose prices are older than six months or whose deadlines have passed since `updatedDate`; a monthly workflow keeps the issue "Artikel prüfen: Preise, Fristen und tote Links" up to date, including external links that answer 404.
+- Set `updatedDate` whenever an article changes in substance, and also after checking its prices, Flex Credits, deadlines and release dates against the sources, even if nothing changed. `scripts/stale-articles.mjs` lists articles whose prices are older than six months or whose deadlines have passed since `updatedDate`; a monthly Claude scheduled task (or the manually started workflow `stale-articles.yml`) keeps the issue "Artikel prüfen: Preise, Fristen und tote Links" up to date, including external links that answer 404.
 - Handled automatically by the template: `<title>` (adds the site name only within 60 characters), canonical, hreflang EN/DE, Open Graph as `article`, BlogPosting, FAQPage and BreadcrumbList structured data, sitemap, RSS feed (`/blog/rss.xml`) and `llms.txt`.
 
 ## AI search
@@ -139,7 +139,7 @@ Before opening the pull request:
 - [ ] Title and description within limits, primary keyword included
 - [ ] Answer in the first paragraph, 3–5 takeaways, 2–6 FAQ entries
 - [ ] At least one question H2 and one anonymised project example
-- [ ] At least 2 relative internal links, closing invitation links to `#contact`
+- [ ] At least 2 relative internal links, no closing invitation to `#contact`
 - [ ] Nothing identifiable, no energy/utility reference, no certification focus
 - [ ] At least 1,000 words in the body, EN and DE
 - [ ] No AI slop: every paragraph has a concrete point, read-aloud test done

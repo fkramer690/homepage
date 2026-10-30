@@ -98,4 +98,4 @@ UAT itself cannot be automated, because it is about the judgement of business us
 
 In your next release, separate system test and acceptance test. Ask the partner for a documented system test per feature before it goes into the UAT sandbox, and create test users per role. For the release after that, the business writes the test cases while the user stories are being refined.
 
-UAT becomes short and meaningful when the business only tests what only the business can judge. If you want your release process with several partners reviewed, [send me a message](#contact) or read more about [partner governance](../../services/partner-governance/).
+UAT becomes short and meaningful when the business only tests what only the business can judge. Read more about [partner governance](../../services/partner-governance/).

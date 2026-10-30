@@ -112,4 +112,4 @@ In time and materials I prefer the first setup: for $650 to $1,500 a month, the 
 5. **Pilot with two developers for two weeks** and read the real spend.
 6. **Budget the review.** A human reviewer for generated Apex costs more than the tokens, see [reviewing AI-generated Salesforce code](../reviewing-ai-generated-salesforce-code/).
 
-AI coding costs about one percent of a Salesforce partner team in the scenario, so settle accounts and limits before you negotiate the price. If you want a second opinion on your setup or your partner's offer, [send me a message](#contact).
+AI coding costs about one percent of a Salesforce partner team in the scenario, so settle accounts and limits before you negotiate the price.

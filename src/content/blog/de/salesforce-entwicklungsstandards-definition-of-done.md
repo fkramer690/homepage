@@ -85,4 +85,4 @@ Die erste Version deckt nie alles ab. In den Wochen danach tauchen Fälle auf, d
 
 Schreiben Sie keine Standards am Schreibtisch. Lassen Sie zwei bis drei Wochen lang jeden Pull Request reviewen und notieren Sie, was Sie wiederholt anmerken. Daraus entsteht die erste Version, und sie passt zu Ihrer Org statt zu einem Lehrbuch. Danach kommen die Definition of Done, die automatischen Prüfungen und ein fester Termin, an dem neue Randfälle mit allen Streams besprochen werden.
 
-Gute Standards sind kurz, gehören dem Kunden und werden bei jedem Pull Request geprüft. Wenn Sie Standards für Ihre Partner aufsetzen möchten, [schreiben Sie mir](#contact).
+Gute Standards sind kurz, gehören dem Kunden und werden bei jedem Pull Request geprüft.

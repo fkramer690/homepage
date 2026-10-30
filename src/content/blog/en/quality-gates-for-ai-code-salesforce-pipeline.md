@@ -107,4 +107,4 @@ The API version check stops the pull request. The partner either reverts the ver
 
 Setting up these gates for programmes with several partners is the core of my [DevOps and release management](../../services/devops-release-management/) work.
 
-Quality gates make AI-generated code exactly as safe as the rules they enforce, and those rules belong in your pipeline, not in a partner's prompt. If you want a second opinion on your gates, [send me a message](#contact).
+Quality gates make AI-generated code exactly as safe as the rules they enforce, and those rules belong in your pipeline, not in a partner's prompt.

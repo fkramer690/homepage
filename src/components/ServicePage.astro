@@ -7,6 +7,7 @@ import Blueprint from './Blueprint.astro';
 import ContactBrief from './ContactBrief.astro';
 import ReadingGrid from './ReadingGrid.astro';
 import Photo from './Photo.astro';
+import Icon from './Icon.astro';
 import ChangeTeam from './ChangeTeam.astro';
 import ChangeArticles from './ChangeArticles.astro';
 import { changeSection } from '../data/change-management';
@@ -29,6 +30,8 @@ const { lang, title, headline, description, lead, situations, deliverables, resu
 // the change management articles instead of the related articles; "wir" there are Fabian and
 // Juliane, so the deliverables heading and the author box name both (src/data/change-management.ts).
 const isChange = section === 'change-management';
+// The page alternates like the start page: dark head with grid, then white and grey bands
+// (.section / .section.alt); running text stays in the ReadingGrid of one white band.
 const t = lang === 'de' ? de : en;
 const { Content, headings } = await render(service);
 const photo = servicePhotos[service.data.translationKey];
@@ -91,82 +94,99 @@ const schema = {
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
   </Fragment>
-  <article class="section post service">
-    <div class="container">
-      <a class="post-back mono" href={servicesIndex(lang)}>← {t.servicePage.back}</a>
-      {note && (
-        <p class="service-note">
-          <span class="service-note-label mono">{t.servicePage.note}</span>
-          <span>
-            {noteBefore}{partner && <a href={partner.profile ? localHref(lang, partner.profile) : partnersHref(lang)}>{partner.name}</a>}{noteAfter}
-            {partner && <> <a href={partner.linkedin} target="_blank" rel="noopener">{t.partnerPage.linkedIn}<ExternalMark label={t.nav.externalTab} /></a></>}
-          </span>
-        </p>
-      )}
-      <div class:list={['service-head', { 'has-photo': photo }]}>
-        <div>
-          <p class="eyebrow mono">{String(order).padStart(2, '0')} · {name}</p>
-          <h1>{headline ?? title}</h1>
-          <p class="service-lead">{lead}</p>
-          <a class="btn" href={contactHref(name)} {...ctaAttrs}>{t.nav.cta}{contactExternal && <ExternalMark label={t.nav.newTab} />}</a>
-        </div>
-        {photo && <figure class="service-photo"><Photo photo={photo} lang={lang} eager widths={[300, 450, 600]} sizes="300px" /></figure>}
-      </div>
-
-      <section class="service-block" aria-labelledby="situations">
-        <h2 id="situations">{t.servicePage.situations}</h2>
-        <div class="rc-rules sit-box"><ul class="rc-rules-list">{situations.map((item) => <li>{item}</li>)}</ul></div>
-      </section>
-      <div class="service-columns">
-        <section class="service-block" aria-labelledby="deliverables">
-          <h2 id="deliverables">{isChange ? changeSection[lang].deliverables : t.servicePage.deliverables}</h2>
-          <ul class="service-list check">{deliverables.map((item) => <li>{item}</li>)}</ul>
-        </section>
-        <section class="service-block results" aria-labelledby="results">
-          <h2 id="results">{t.servicePage.results}</h2>
-          <ul class="service-list check">{results.map((item) => <li>{item}</li>)}</ul>
-        </section>
-      </div>
-      <section class="service-block" aria-labelledby="phases">
-        <h2 id="phases">{t.servicePage.phases}</h2>
-        <ol class="phase-list">
-          {phases.map((phase, i) => (
-            <li class="card">
-              <span class="card-index mono">{String(i + 1).padStart(2, '0')}</span>
-              <h3>{phase.title}</h3>
-              <p>{phase.text}</p>
-            </li>
-          ))}
-        </ol>
-      </section>
-      {isChange && <ChangeTeam lang={lang} />}
-
-      <ReadingGrid t={t} headings={toc} cta={name}>
-        <div class="prose">
-          <Content />
-        </div>
-
-        <section class="post-faq" aria-labelledby="faq">
-          <h2 id="faq">{t.servicePage.faq}</h2>
-          {faq.map(({ q, a }) => (
-            <details class="faq-item">
-              <summary><h3>{q}</h3></summary>
-              <p>{a}</p>
-            </details>
-          ))}
-        </section>
-        {isChange ? <AuthorBox lang={lang} coAuthor="juliane" {...changeSection[lang].authors} /> : <AuthorBox lang={lang} />}
-        {isChange && <ChangeArticles lang={lang} />}
-        {!isChange && posts.length > 0 && (
-          <nav class="post-related" aria-label={t.servicePage.posts}>
-            <p class="label mono">{t.servicePage.posts}</p>
-            <ul>
-              {posts.map((p) => <li><a href={postHref(p)}>{p.data.title}</a></li>)}
-            </ul>
-          </nav>
+  <article class="post service">
+    <header class="service-hero dark grid-bg">
+      <div class="container">
+        <a class="post-back mono" href={servicesIndex(lang)}>← {t.servicePage.back}</a>
+        {note && (
+          <p class="service-note">
+            <span class="service-note-label mono">{t.servicePage.note}</span>
+            <span>
+              {noteBefore}{partner && <a href={partner.profile ? localHref(lang, partner.profile) : partnersHref(lang)}>{partner.name}</a>}{noteAfter}
+              {partner && <> <a href={partner.linkedin} target="_blank" rel="noopener">{t.partnerPage.linkedIn}<ExternalMark label={t.nav.externalTab} /></a></>}
+            </span>
+          </p>
         )}
-      </ReadingGrid>
+        <div class:list={['service-head', { 'has-photo': photo }]}>
+          <div>
+            <p class="eyebrow mono">{String(order).padStart(2, '0')} · {name}</p>
+            <h1>{headline ?? title}</h1>
+            <p class="service-lead">{lead}</p>
+            <a class="btn" href={contactHref(name)} {...ctaAttrs}>{t.nav.cta}{contactExternal && <ExternalMark label={t.nav.newTab} />}</a>
+          </div>
+          {photo && <figure class="service-photo"><Photo photo={photo} lang={lang} eager widths={[300, 450, 600]} sizes="300px" /></figure>}
+        </div>
+      </div>
+    </header>
+    <div class="section service-band">
+      <div class="container">
+        <section class="service-block" aria-labelledby="situations">
+          <h2 id="situations">{t.servicePage.situations}</h2>
+          <div class="rc-rules sit-box"><ul class="rc-rules-list">{situations.map((item) => <li>{item}</li>)}</ul></div>
+        </section>
+      </div>
     </div>
+    <div class="section alt service-band">
+      <div class="container">
+        <div class="service-columns">
+          <section class="service-block" aria-labelledby="deliverables">
+            <h2 id="deliverables">{isChange ? changeSection[lang].deliverables : t.servicePage.deliverables}</h2>
+            <ul class="service-list check">{deliverables.map((item) => <li>{item}</li>)}</ul>
+          </section>
+          <section class="service-block results" aria-labelledby="results">
+            <h2 id="results">{t.servicePage.results}</h2>
+            <ul class="service-list check">{results.map((item) => <li>{item}</li>)}</ul>
+          </section>
+        </div>
+      </div>
+    </div>
+    <div class="section service-band">
+      <div class="container">
+        <section class="service-block" aria-labelledby="phases">
+          <h2 id="phases">{t.servicePage.phases}</h2>
+          <ol class="phase-flow" style={`--n:${phases.length}`}>
+            {phases.map((phase, i) => (
+              <li>
+                <span class="phase-ring"><Icon name={phase.icon} /></span>
+                <span class="phase-no mono">{String(i + 1).padStart(2, '0')}</span>
+                <h3>{phase.title}</h3>
+                <p>{phase.text}</p>
+              </li>
+            ))}
+          </ol>
+        </section>
+      </div>
+    </div>
+    {isChange && <div class="section alt service-band"><div class="container"><ChangeTeam lang={lang} /></div></div>}
+    <div class="section service-band">
+      <div class="container">
+        <ReadingGrid t={t} headings={toc} cta={name}>
+          <div class="prose">
+            <Content />
+          </div>
+
+          <section class="post-faq" aria-labelledby="faq">
+            <h2 id="faq">{t.servicePage.faq}</h2>
+            {faq.map(({ q, a }) => (
+              <details class="faq-item">
+                <summary><h3>{q}</h3></summary>
+                <p>{a}</p>
+              </details>
+            ))}
+          </section>
+          {isChange ? <AuthorBox lang={lang} coAuthor="juliane" {...changeSection[lang].authors} /> : <AuthorBox lang={lang} />}
+          {!isChange && posts.length > 0 && (
+            <nav class="post-related" aria-label={t.servicePage.posts}>
+              <p class="label mono">{t.servicePage.posts}</p>
+              <ul>
+                {posts.map((p) => <li><a href={postHref(p)}>{p.data.title}</a></li>)}
+              </ul>
+            </nav>
+          )}
+        </ReadingGrid>
+      </div>
+    </div>
+    {isChange && <div class="section alt service-band"><div class="container"><ChangeArticles lang={lang} /></div></div>}
   </article>
   <section class="contact dark grid-bg" id="contact">
     <Blueprint />

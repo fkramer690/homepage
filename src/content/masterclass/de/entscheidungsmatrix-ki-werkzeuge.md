@@ -100,16 +100,20 @@ Nehmen wir einen Maschinenbauer mit Sales Cloud und Service Cloud, deren Org in 
 
 **Ein Agent für Auftragsstatus.** Händler fragen täglich nach Lieferterminen. Für SAP S/4 gibt es eine MuleSoft-API, das ist Zeile 10. Der Agent ruft sie als Aktion auf, die Entscheidung, welche Daten ein Händler sehen darf, liegt in Agent Script. Wie das im Detail aussieht, beschreibe ich in [Agentforce und SAP-Auftragsstatus](../../../blog/agentforce-sap-auftragsstatus/). Für das zugekaufte Werk ohne API (Zeile 11) würde ich den Agenten zunächst nicht ausrollen. RPA bricht, wenn sich Masken ändern, und ob der Systems Integration Agent das wirklich abfängt, würde ich erst an einer Kopie des Systems testen. Die Optionen dafür stehen in [altes ERP ohne API](../../../blog/altes-erp-ohne-api-ki-agenten/).
 
+```hinweis tipp
 Am Ende hat jedes Vorhaben ein anderes Werkzeug, und das ist normal. Einheitlich sind die Regeln: kein Agent in Produktion, Daten nur lesend und benannt, Release nur über die Pipeline.
+```
 
 ## Wo hilft die Matrix nicht weiter?
 
 Drei Fragen beantwortet keine Tabelle.
 
-- **Modellqualität für Apex.** Einen öffentlichen Benchmark für Apex, Flows und Metadaten gibt es nicht, wie in [Kapitel 4](../externe-coding-agenten/) beschrieben. Entscheiden kann nur ein Vergleich an Ihrem eigenen Backlog, gemessen an Befunden im Review und Nacharbeit.
-- **Verantwortung.** Wer die Regeldatei im Repository pflegt, wer Hosted-MCP-Zugänge freigibt und wer Flex Credits bezahlt, ist eine Vertragsfrage zwischen Ihnen und Ihrem Partner. Das habe ich in [Kapitel 5](../aiforce-und-systemintegratoren/) behandelt.
-- **Ob Salesforce der richtige Ort ist.** Entscheidungen, die SAP schon trifft, gehören nicht in einen Agenten in Salesforce. Ein Flow oder ein ERP-Job ist für Routine ohne Sprache oft günstiger als jeder Agent.
+| Frage | Warum die Matrix sie nicht beantwortet |
+|---|---|
+| Modellqualität für Apex | Einen öffentlichen Benchmark für Apex, Flows und Metadaten gibt es nicht, wie in [Kapitel 4](../externe-coding-agenten/) beschrieben. Entscheiden kann nur ein Vergleich an Ihrem eigenen Backlog, gemessen an Befunden im Review und Nacharbeit. |
+| Verantwortung | Wer die Regeldatei im Repository pflegt, wer Hosted-MCP-Zugänge freigibt und wer Flex Credits bezahlt, ist eine Vertragsfrage zwischen Ihnen und Ihrem Partner. Das habe ich in [Kapitel 5](../aiforce-und-systemintegratoren/) behandelt. |
+| Ob Salesforce der richtige Ort ist | Entscheidungen, die SAP schon trifft, gehören nicht in einen Agenten in Salesforce. Ein Flow oder ein ERP-Job ist für Routine ohne Sprache oft günstiger als jeder Agent. |
 
 Wenn Sie diese Entscheidungen für Ihre Org und Ihre Partner sortieren möchten, gehört das zu meiner Arbeit in der [Salesforce-Architektur](../../../leistungen/salesforce-architektur/). Wo Agenten in der Fertigung heute tragen, behandelt [Kapitel 10](../ki-agenten-in-der-fertigung/); alle Kapitel finden Sie in der [Übersicht der Masterclass](../).
 
-Klären Sie zuerst Datenresidenz und Verträge, dann die Aufgabe, und halten Sie die Regeln für alle Werkzeuge gleich. Wenn Sie für Ihre Vorhaben eine zweite Meinung zur Werkzeugwahl möchten, [schreiben Sie mir](#contact).
+Klären Sie zuerst Datenresidenz und Verträge, dann die Aufgabe, und halten Sie die Regeln für alle Werkzeuge gleich.

@@ -108,4 +108,4 @@ Die zweite Grenze ist die Zahl der schreibenden Prozesse. Jeder Bot ist Software
 
 Und wenig Volumen bleibt wenig Volumen. Dreißig Bestellungen im Monat rechtfertigen keinen RPA-Bot, egal wie alt das ERP ist.
 
-Starten Sie bei einem alten ERP mit dem Leseweg hinter einem stabilen API-Vertrag und automatisieren Sie das Schreiben nur dort, wo Belege und Masken stabil sind und ein Mensch die unsicheren Fälle prüft. Wenn Sie prüfen möchten, welcher Weg zu Ihrem ERP passt, [schreiben Sie mir](#contact).
+Starten Sie bei einem alten ERP mit dem Leseweg hinter einem stabilen API-Vertrag und automatisieren Sie das Schreiben nur dort, wo Belege und Masken stabil sind und ein Mensch die unsicheren Fälle prüft.

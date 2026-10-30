@@ -82,4 +82,4 @@ Mindestens ein halbes Jahr, monatlich. Die ersten Wochen nach dem Go-live sind v
 
 Wählen Sie für Ihren wichtigsten neuen Prozess eine Zahl auf der Ebene „Nutzung des Prozesses“, etwa den Anteil der Angebote, die in Salesforce erstellt werden. Legen Sie den Ausgangswert vor dem Go-live fest und bauen Sie einen Bericht, der die Zahl pro Gruppe und Land zeigt. Nach dem Go-live geht dieser Bericht jeden Monat an den Sponsor.
 
-Salesforce ist eingeführt, wenn die Arbeit darin stattfindet, nicht wenn sich alle anmelden können. Wenn Sie wissen möchten, ob Ihre Einführung angekommen ist, [schreiben Sie mir](#contact) oder lesen Sie mehr über [Change Management für Salesforce-Programme](../../leistungen/change-management/).
+Salesforce ist eingeführt, wenn die Arbeit darin stattfindet, nicht wenn sich alle anmelden können. Eine Zahl pro Prozess, gemessen vor und nach dem Go-live, zeigt den Unterschied. Mehr dazu lesen Sie unter [Change Management für Salesforce-Programme](../../leistungen/change-management/).

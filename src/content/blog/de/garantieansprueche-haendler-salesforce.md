@@ -118,4 +118,4 @@ Bevor die erste Garantiebedingung angelegt wird, klären Sie vier Punkte:
 3. **Einreichung.** Welche Felder füllt der Händler im Portal, und welche sind Pflicht, auch für den Regress?
 4. **Gutschrift.** Wie kommt der genehmigte Betrag ins ERP, und wann sieht der Händler, dass gezahlt wurde?
 
-Die Garantieabwicklung in der Manufacturing Cloud ist so gut wie die Anlagendaten, auf denen sie prüft. Wenn Sie Garantieprozesse mit Händlern in Salesforce bewerten, [schreiben Sie mir](#contact).
+Die Garantieabwicklung in der Manufacturing Cloud ist so gut wie die Anlagendaten, auf denen sie prüft.

@@ -86,4 +86,4 @@ Ob die App angekommen ist, zeigt sich in Zahlen: Arbeitsaufträge, die in der Ap
 
 Suchen Sie in der ersten Region drei bis fünf erfahrene Techniker, die bereit sind, die App vorher im echten Einsatz zu testen. Klären Sie parallel mit dem Betriebsrat Standort und Zeiten und schreiben Sie das Ergebnis in einfachen Worten auf. Danach legen Sie fest, welche Formulare und Daten der Techniker vor Ort wirklich braucht, und streichen den Rest, auch wenn ein Bereich in der Zentrale es gern hätte.
 
-Techniker nehmen die App an, wenn sie ihnen den Tag leichter macht und sie wissen, was mit ihren Daten passiert. Wenn Sie Field Service im Außendienst einführen, [schreiben Sie mir](#contact).
+Techniker nehmen die App an, wenn sie ihnen den Tag leichter macht und sie wissen, was mit ihren Daten passiert. Beides lässt sich vor dem Rollout klären, mit Testtechnikern und dem Betriebsrat.

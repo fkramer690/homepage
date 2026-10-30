@@ -102,4 +102,4 @@ Salesforce veröffentlicht drei Releases im Jahr: Spring, Summer und Winter. Sie
 
 Legen Sie für Ihr nächstes Release einen Einführungsplan mit einer Zeile pro betroffener Gruppe an, bevor die Entwicklung fertig ist. Schreiben Sie die Release Notes für Anwender getrennt von den technischen und lassen Sie sie von einem Key User gegenlesen: Versteht er sie ohne Erklärung, passen sie. Nach dem Release fragen Sie die Key User, welche Fragen gekommen sind, und übernehmen die Antworten in die nächsten Release Notes.
 
-Ein Release ist erst angekommen, wenn die Betroffenen wissen, was sich ändert. Wenn Ihre Fachbereiche von Änderungen zu spät erfahren, [schreiben Sie mir](#contact) oder lesen Sie mehr über [DevOps und Release-Management](../../leistungen/devops-und-release-management/).
+Ein Release ist erst angekommen, wenn die Betroffenen wissen, was sich ändert. Dafür braucht es einen Einführungsplan und Release Notes, die Anwender ohne Erklärung verstehen. Mehr dazu lesen Sie unter [DevOps und Release-Management](../../leistungen/devops-und-release-management/).

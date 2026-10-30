@@ -27,12 +27,16 @@ results:
   - "Ein Datenmodell, das Reporting, Automatisierung und KI-Anwendungsfälle trägt"
 phases:
   - title: "Das Geschäft verstehen"
+    icon: "building"
     text: "Ich beginne mit Prozessen, Nutzern und bestehenden Systemen: wie das Unternehmen heute verkauft, liefert und seine Kunden betreut, und wohin es will."
   - title: "Zielbild"
+    icon: "target"
     text: "Mit Fachbereich und IT entwerfe ich Zielarchitektur und Datenmodell. Optionen und Abwägungen kommen ins Entscheidungslog, damit die Gründe sichtbar bleiben."
   - title: "Detailliertes Solution Design"
+    icon: "design"
     text: "Für die kritischen Bereiche schreibe ich Solution Designs, nach denen Umsetzungspartner bauen können, inklusive Schnittstellen, Sicherheit und Datenmigration."
   - title: "Architektur in der Umsetzung"
+    icon: "architecture"
     text: "Während der Umsetzung prüfe ich Partner-Designs, halte das Entscheidungslog aktuell und greife ein, wenn sich der Bau vom Zielbild entfernt."
 faq:
   - q: "Was macht ein Salesforce-Architekt auf Kundenseite?"
@@ -44,7 +48,11 @@ faq:
 blogTags: [architecture, architektur, data 360, data governance, agentforce, field service]
 ---
 
-Salesforce-Architektur auf Kundenseite bedeutet, das Gesamtbild im Interesse des Unternehmens zu entwerfen: welche Clouds und Produkte es braucht, wie das Datenmodell aussieht, wie Salesforce mit ERP und anderen Systemen zusammenarbeitet und wie Entscheidungen dokumentiert werden. Das habe ich für globale Fertigungsunternehmen gemacht, darunter den ersten weltweiten Manufacturing-Cloud-Rollout mit CPQ, Produktkonfigurator und Kundenportal. Meine Rolle ist unabhängig von Herstellern und Partnern, und das zählt vor allem dann, wenn ein Partner das nächste Produkt vorschlägt.
+Salesforce-Architektur auf Kundenseite bedeutet, das Gesamtbild im Interesse des Unternehmens zu entwerfen: welche Clouds und Produkte es braucht, wie das Datenmodell aussieht, wie Salesforce mit ERP und anderen Systemen zusammenarbeitet und wie Entscheidungen dokumentiert werden. Meine Rolle ist unabhängig von Herstellern und Partnern, und das zählt vor allem dann, wenn ein Partner das nächste Produkt vorschlägt.
+
+```praxis
+Diese Rolle hatte ich bei globalen Fertigungsunternehmen, darunter beim ersten weltweiten Manufacturing-Cloud-Rollout mit CPQ, Produktkonfigurator und Kundenportal.
+```
 
 ## Welche Clouds braucht das Unternehmen wirklich?
 
@@ -58,12 +66,29 @@ Sales Cloud und Service Cloud sind in fast jedem Enterprise-Projekt gesetzt. Die
 
 ## Warum entscheidet das Datenmodell so viel?
 
-Jeder Report, jede Automatisierung und jeder KI-Anwendungsfall hängt vom Datenmodell ab. Werden Accounts, Produkte und Verträge in jedem Projekt anders modelliert, zeigen sich die Probleme Jahre später in Reports, denen niemand traut, und in Agenten, die falsche Antworten geben. Deshalb behandle ich das Datenmodell als Teil der Architektur, inklusive seiner Beziehungen zum ERP. Bei KI sehe ich das genauso: Business Value und Datenqualität stehen an erster Stelle, wie in [Agentforce: Business Value und Datenqualität zuerst](../../blog/agentforce-business-value-datenqualitaet/) beschrieben.
+Jeder Report, jede Automatisierung und jeder KI-Anwendungsfall hängt vom Datenmodell ab. Deshalb behandle ich das Datenmodell als Teil der Architektur, inklusive seiner Beziehungen zum ERP. Bei KI sehe ich das genauso: Business Value und Datenqualität stehen an erster Stelle, wie in [Agentforce: Business Value und Datenqualität zuerst](../../blog/agentforce-business-value-datenqualitaet/) beschrieben.
+
+```vergleich
+ohne: Jedes Projekt modelliert anders
+- Accounts, Produkte und Verträge werden in jedem Projekt anders modelliert.
+- Jahre später traut niemand den Reports.
+- Agenten geben falsche Antworten.
+mit: Datenmodell als Teil der Architektur
+- Die Kernobjekte und ihre Beziehungen werden einmal entworfen.
+- Die Beziehungen zum ERP sind festgelegt.
+- Reporting, Automatisierung und KI-Anwendungsfälle bauen darauf auf.
+```
 
 ## Was liefere ich?
 
-Der Umfang reicht vom Zielbild über das Entscheidungslog bis zum Datenmodell. Jede Architekturentscheidung bekommt einen kurzen Eintrag mit Optionen, Gründen und Folgen. Das klingt nach Papierkram, aber genau damit kann ein Unternehmen Partner oder Personen wechseln, ohne die Begründungen hinter seinem System zu verlieren. Die Integrationsarchitektur gehört dazu, weil Salesforce nie das einzige System ist. Mehr dazu unter [Integration mit ERP, Middleware und Telefonie](../salesforce-schnittstellen/).
+Der Umfang reicht vom Zielbild über das Entscheidungslog bis zum Datenmodell. Jede Architekturentscheidung bekommt einen kurzen Eintrag mit Optionen, Gründen und Folgen. Das klingt nach Papierkram, aber genau damit kann ein Unternehmen Partner oder Personen wechseln, ohne die Begründungen hinter seinem System zu verlieren.
 
-Während der Umsetzung bleibe ich als Architekt an Bord. Ich prüfe die Designs der Partner, bevor sie gebaut werden, und halte das Entscheidungslog aktuell. Entfernt sich der Bau vom Zielbild, etwa weil ein Partner eine Abkürzung nimmt, die später teuer wird, spreche ich das früh an.
+```eintrag Entscheidungslog
+Entscheidung | Was wurde entschieden?
+Optionen | Welche Wege standen zur Wahl?
+Gründe | Warum fiel die Wahl so aus?
+Folgen | Was bedeutet die Entscheidung später? *
+fazit: Fragt zwei Jahre später jemand, warum ein Prozess so gebaut wurde, steht die Antwort hier, auch wenn die Beteiligten längst weitergezogen sind.
+```
 
-Planen Sie ein neues Salesforce-Programm oder möchten Sie einen unabhängigen Blick auf eine bestehende Architektur, [schreiben Sie mir](#contact) oder lesen Sie mehr [über mich](../../#about).
+Die Integrationsarchitektur gehört dazu, weil Salesforce nie das einzige System ist. Mehr dazu unter [Integration mit ERP, Middleware und Telefonie](../salesforce-schnittstellen/).

@@ -126,4 +126,4 @@ Listenpreise sind ein Ausgangspunkt, und Salesforce stellt sein Editionsmodell g
 
 Ob sich Revenue Cloud überhaupt lohnt, steht in [Revenue Cloud für Hersteller: Wann lohnt es sich?](../revenue-cloud-lohnt-sich-hersteller/), und das [Überblickskapitel der Masterclass Revenue Cloud](../../masterclass/revenue-cloud/revenue-cloud-ueberblick/) stellt die Preise neben die anderen Entscheidungen. Lizenzprognosen gehören zu meiner Arbeit in [Make-or-Buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/).
 
-Der Listenpreis pro Nutzer zählt weniger als die Zahl der Nutzer und die Add-ons, die Sie wirklich brauchen. Wenn Sie ein Revenue-Cloud-Angebot vorliegen haben und es unabhängig prüfen lassen möchten, [schreiben Sie mir](#contact).
+Der Listenpreis pro Nutzer zählt weniger als die Zahl der Nutzer und die Add-ons, die Sie wirklich brauchen.

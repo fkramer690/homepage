@@ -4,9 +4,9 @@ name: Stale articles
 # deadlines or release dates are due for a check, plus external links that answer 404
 # (scripts/stale-articles.mjs).
 # Keeps one open issue up to date instead of opening a new one each month.
+# The monthly run is the Claude scheduled task "Monatliche Artikelprüfung" (3rd of each month);
+# this workflow only runs when started by hand, so the two never report twice.
 on:
-  schedule:
-    - cron: '0 6 3 * *'
   workflow_dispatch:
 
 permissions:

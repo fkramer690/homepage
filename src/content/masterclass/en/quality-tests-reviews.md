@@ -73,6 +73,13 @@ What I want to see in the definition of done instead is almost word for word in 
 - **Tests with `runAs`** in different user contexts, for example as a service technician or as a dealer in the portal.
 - **Their own test data** instead of org data, so tests still run after a sandbox refresh.
 
+```kennzahlen
+75 % | Apex coverage Salesforce requires at least for a production deployment
+20 | records at least in every bulk test
+80 to 90 % | stricter threshold sfdx-hardis recommends for clean projects
+source: Apex Developer Guide (testing best practices), sfdx-hardis parameter apexTestsMinCoverageOrgWide
+```
+
 PMD rules from the [best practices category](https://docs.pmd-code.org/latest/pmd_rules_apex_bestpractices.html) enforce the machine-checkable part: `ApexUnitTestClassShouldHaveAsserts` requires at least one assert, `ApexUnitTestShouldNotUseSeeAllDataTrue` forbids access to org data, `ApexUnitTestClassShouldHaveRunAs` requires at least one `runAs`. A test that only checks for "not null" still passes the first rule. Whether an assert proves anything remains a job for the review.
 
 You can raise the coverage threshold itself. In sfdx-hardis the parameter is [`apexTestsMinCoverageOrgWide`](https://sfdx-hardis.cloudity.com/schema/sfdx-hardis-json-schema-parameters.html), default 75, and the documentation recommends stricter values such as 80 or 90 for clean projects. In a mature org with years of legacy code, I would raise the bar for new and changed classes and bring overall coverage up step by step. API version 67.0 is a special case: Apex runs in user mode by default there, and a test without `runAs` cannot see which records a restricted user loses. Details in [API 67.0: why Apex sees fewer records](../../../blog/api-67-apex-user-mode-fewer-records/).
@@ -124,7 +131,9 @@ All tools from [chapter 4](../devops-tools-compared/) cover the gates, with diff
 
 **Flosum** offers a [code scan step](https://docs.flosum.com/devops/pipeline/pipeline-operations/pipeline-operation-code-scan) in the pipeline, using PMD or its own broader rule set that also covers flows. If a finding reaches the configured threshold, the step fails.
 
+```hinweis tipp
 The commercial tools score on interface, rule sets and support, sfdx-hardis on transparency, because every rule and threshold is a file in your repository. With all of them, thresholds belong in your repository or tool account, not with the partner.
+```
 
 ## AI-generated code: the same gates, no exceptions
 
@@ -142,4 +151,4 @@ In the validation deployment, an Apex test from the second partner then fails: t
 
 Which configuration data such flows need in sandboxes for tests to mean something is covered in [chapter 7](../data-and-configuration/). How I support programmes with this is described under [DevOps and release management](../../../services/devops-release-management/) and [partner governance](../../../services/partner-governance/).
 
-In Salesforce programmes with several partners, quality comes from gates that block and thresholds the client sets. If you would like your tests, reviews and quality gates checked, [send me a message](#contact).
+In Salesforce programmes with several partners, quality comes from gates that block and thresholds the client sets.

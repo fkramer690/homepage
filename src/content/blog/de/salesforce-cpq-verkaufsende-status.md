@@ -107,4 +107,4 @@ Nein. Der Status nimmt den Zeitdruck heraus, und diese Zeit würde ich nutzen. O
 
 Suchen Sie das Verlängerungsdatum Ihrer CPQ- und Billing-Verträge heraus, notieren Sie die Zahl der Nutzer und Ihre Anpassungen, und legen Sie fest, ob Sie eine kurze oder lange Laufzeit wollen, bevor das Account-Team anruft. Den ganzen Weg vom Status bis zur Migration beschreibt das Masterclass-Kapitel [von CPQ zu Revenue Cloud](../../masterclass/revenue-cloud/von-cpq-zu-revenue-cloud/).
 
-CPQ läuft weiter, die Frage ist nur, ob Ihr nächster Vertrag zu dem Plan passt, den Sie wirklich haben. Wenn Sie vor der Verlängerung eine unabhängige Einschätzung möchten, [schreiben Sie mir](#contact).
+CPQ läuft weiter, die Frage ist nur, ob Ihr nächster Vertrag zu dem Plan passt, den Sie wirklich haben.

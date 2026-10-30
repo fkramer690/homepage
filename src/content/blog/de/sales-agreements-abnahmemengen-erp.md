@@ -129,4 +129,4 @@ Bevor das erste Sales Agreement produktiv angelegt wird, klären Sie vier Punkte
 3. **Lagerbestand als Kennzahl.** Welches System liefert ihn, wie oft und auf welcher Ebene?
 4. **Die Ansicht für den Vertrieb.** Welche Liste sieht ein Account Manager am Montagmorgen, und was tut er damit?
 
-Ein Sales Agreement zeigt die Lücke zwischen Zusage und Abnahme so gut, wie Schnittstelle und Account-Struktur es zulassen. Wenn Sie Sales Agreements einführen oder Ihre Zahlen nicht stimmen, [schreiben Sie mir](#contact).
+Ein Sales Agreement zeigt die Lücke zwischen Zusage und Abnahme so gut, wie Schnittstelle und Account-Struktur es zulassen.

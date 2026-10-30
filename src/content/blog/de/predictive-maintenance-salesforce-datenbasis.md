@@ -120,4 +120,4 @@ Zusammen sind das rund 34.000 Credits, etwa 170 € im Monat. Connected Assets f
 
 Wie Maschinendaten, ERP und Salesforce zusammenpassen, ist Teil meiner Arbeit an der [Schnittstellenarchitektur](../../leistungen/salesforce-schnittstellen/).
 
-Vorausschauende Wartung beginnt mit einer sauberen Servicehistorie, die Sensoren kommen danach. Wenn Sie eine zweite Meinung wollen, ob Ihre Daten so weit sind, [schreiben Sie mir](#contact).
+Vorausschauende Wartung beginnt mit einer sauberen Servicehistorie, die Sensoren kommen danach.

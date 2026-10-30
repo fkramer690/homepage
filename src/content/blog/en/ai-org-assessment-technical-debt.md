@@ -123,4 +123,4 @@ The assessment is the starting point for the handover: which objects move to whi
 5. Run the batch, then the second pass per object.
 6. Check samples and every high-risk finding before anything goes into the handover plan.
 
-An AI org assessment costs less in tokens than one workshop day, as long as the tools deliver the facts and the model only explains them; if you are planning a partner change or relaunch, [send me a message](#contact).
+An AI org assessment costs less in tokens than one workshop day, as long as the tools deliver the facts and the model only explains them.

@@ -49,10 +49,12 @@ Im Abnahmetest sind Key User die besten Tester, weil sie wissen, welche Fälle i
 
 Die häufigste Auswahl ist die schlechteste: Wer gerade Zeit hat, wird Key User. Ich achte auf andere Kriterien:
 
-- **Ansehen im Team.** Kollegen fragen diese Person schon heute um Rat, egal zu welchem System.
-- **Kenntnis des Prozesses.** Sie weiß, wie ein Angebot, ein Auftrag oder ein Serviceeinsatz im eigenen Team wirklich läuft, inklusive der Ausnahmen.
-- **Neugier statt Begeisterung.** Kritische Key User finden Schwächen früher, und wenn sie überzeugt sind, überzeugen sie andere.
-- **Bleibt eine Weile.** Wer in drei Monaten die Stelle wechselt, nimmt das Wissen mit.
+| Kriterium | Woran Sie es erkennen |
+|---|---|
+| Ansehen im Team | Kollegen fragen diese Person schon heute um Rat, egal zu welchem System. |
+| Kenntnis des Prozesses | Sie weiß, wie ein Angebot, ein Auftrag oder ein Serviceeinsatz im eigenen Team wirklich läuft, inklusive der Ausnahmen. |
+| Neugier statt Begeisterung | Kritische Key User finden Schwächen früher, und wenn sie überzeugt sind, überzeugen sie andere. |
+| Bleibt eine Weile | Wer in drei Monaten die Stelle wechselt, nimmt das Wissen mit. |
 
 Ein einfacher Weg zu den Kandidaten: Fragen Sie in jedem Team, wen die Leute heute fragen, wenn sie im System nicht weiterkommen. Die Namen, die mehrfach fallen, sind Ihre Kandidaten. Die Grenzen der Rolle, Aufgaben im Betrieb und wie das Netzwerk zusammenhält, beschreibe ich in [Key User in Salesforce-Einführungen: was sie leisten](../../../blog/salesforce-key-user-netzwerk/).
 

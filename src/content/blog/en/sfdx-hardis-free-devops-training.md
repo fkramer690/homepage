@@ -87,5 +87,3 @@ Work through the labs in one go rather than spread over weeks, because the level
 ```
 
 The course is free, hands-on and close to real project work, and the badge means something because it is verified. Huge credit and thanks to Nicolas Vuillamy and the Cloudity team.
-
-If you want to talk about how sfdx-hardis or a DevOps setup could work in your Salesforce programme, [send me a message](#contact).

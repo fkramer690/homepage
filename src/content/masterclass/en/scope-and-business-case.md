@@ -97,12 +97,14 @@ For manufacturers the call limits often matter more than the credits. Omnistudio
 
 The edition is the first line of a quote. The following add-ons are on the add-ons page and belong in the calculation from the start, not in the last round of negotiation:
 
-- **Portal licences.** Experience Cloud for Manufacturing costs $15 per login or $35 per member and month for customers, $20 or $50 for partners. Anyone who connects dealers almost always needs them.
-- **Agentforce for Manufacturing Cloud Add-on.** The add-ons page says $150 per user and month, the pricing page "from $150" per login. Get the unit in writing.
-- **Channel Revenue Management for Manufacturing.** $30,000 per org and year; this is where ship and debit and price protection for distributors live.
-- **Connected Assets.** $15,000 per org and month, billed annually, for machine data in Salesforce.
-- **Additional Omnistudio calls.** 2 million calls for $10,000 per month, with no smaller unit.
-- **Manufacturing Intelligence.** Its [own page](https://salesforce.com/manufacturing/cloud/manufacturing-intelligence) says $220 per login and month, the [Experience Cloud page](https://salesforce.com/manufacturing/cloud/experience-cloud) "from $165" without a unit. The same page lists rebate management "from $75", also without a unit.
+| Add-on | Price and scope |
+|---|---|
+| Portal licences | Experience Cloud for Manufacturing costs $15 per login or $35 per member and month for customers, $20 or $50 for partners. Anyone who connects dealers almost always needs them. |
+| Agentforce for Manufacturing Cloud Add-on | The add-ons page says $150 per user and month, the pricing page "from $150" per login. Get the unit in writing. |
+| Channel Revenue Management for Manufacturing | $30,000 per org and year; this is where ship and debit and price protection for distributors live. |
+| Connected Assets | $15,000 per org and month, billed annually, for machine data in Salesforce. |
+| Additional Omnistudio calls | 2 million calls for $10,000 per month, with no smaller unit. |
+| Manufacturing Intelligence | Its [own page](https://salesforce.com/manufacturing/cloud/manufacturing-intelligence) says $220 per login and month, the [Experience Cloud page](https://salesforce.com/manufacturing/cloud/experience-cloud) "from $165" without a unit. The same page lists rebate management "from $75", also without a unit. |
 
 What this adds up to in an assumed scenario with 150 users and 400 dealers is calculated in [Manufacturing Cloud add-ons: what costs extra](../../../blog/manufacturing-cloud-add-ons-extra-costs/). There the typical add-ons raise the licence line by about 40 percent.
 
@@ -166,4 +168,4 @@ Before a quote is on the table, three questions to sales and service help: what 
 
 If the answer is volume agreements, [chapter 2 on agreements and forecasting](../agreements-and-forecasting/) continues with the data that has to come from the ERP for them. All chapters are on the [overview page](../).
 
-Manufacturing Cloud pays off when its core features match your business, and a five-year calculation shows that earlier than the first workshop. If you want a quote checked or the business case calculated, [send me a message](#contact).
+Manufacturing Cloud pays off when its core features match your business, and a five-year calculation shows that earlier than the first workshop.

@@ -50,11 +50,20 @@ Meine Reihenfolge für einen Maschinenbauer: zuerst die Wartungsbuchung, weil Wa
 
 ## Wie sollte ein Sprachagent die Störungshotline bedienen?
 
-In seinen [Dreamforce-Ankündigungen 2026](https://www.salesforce.com/blog/dreamforce-2026-announcements/) führt Salesforce Deutsch unter sechs neuen Sprachen von Agentforce Voice mit dem Status GA. Die [Winter-'27-Highlights](https://trailhead.salesforce.com/content/learn/modules/winter-27-release-highlights/see-whats-new-service-field-service-it-hr-service-and-contact-center) ergänzen Autonomous Scheduling mit Agentforce Voice: Sprachagenten prüfen die Verfügbarkeit und finden einen Techniker im richtigen Gebiet, während der Kunde am Telefon ist. Die Highlights nennen keinen Status, prüfen Sie die Verfügbarkeit also in Ihrer Org.
+Für eine Hotline auf Deutsch zählen zwei Ankündigungen:
+
+| Funktion | Was sie tut | Stand Oktober 2026 |
+|---|---|---|
+| Agentforce Voice auf Deutsch | Deutsch ist eine von sechs neuen Sprachen | GA laut [Dreamforce-Ankündigungen 2026](https://www.salesforce.com/blog/dreamforce-2026-announcements/) |
+| Autonomous Scheduling mit Agentforce Voice | Sprachagenten prüfen die Verfügbarkeit und finden einen Techniker im richtigen Gebiet, während der Kunde am Telefon ist | in den [Winter-'27-Highlights](https://trailhead.salesforce.com/content/learn/modules/winter-27-release-highlights/see-whats-new-service-field-service-it-hr-service-and-contact-center) ohne Status, Verfügbarkeit in Ihrer Org prüfen |
 
 Ein Störungsanruf ist schwerer als ein Buchungsanruf: Vier Fakten entscheiden über den nächsten Schritt, welche Maschine, ob sie steht, was der Vertrag zusagt und ob jemand gefährdet ist. Ich würde dem Sprachagenten zuerst Annahme und Triage übertragen. Er erkennt Anrufer und Maschine über Rufnummer, Kontakt und installierte Assets, stellt eine geschlossene Frage zum Maschinenzustand und prüft das Entitlement. Einen Techniker bucht er nur selbst, wenn die Maschine noch läuft, das Entitlement den Einsatz deckt und die Fehlerklasse bekannt ist. Eine stehende Presse mit vier Stunden Reaktionszeit geht an die Disposition, die einen Techniker von einem anderen Einsatz abziehen kann.
 
-Diese Schranken gehören in deterministische Logik, nicht in den Prompt. Die Regeltabelle, die Muster in Agent Script und die Kosten eines Anrufs in Sprachaktionen oder Sprachminuten stehen in [Störungshotline mit Agentforce Voice: erst die Triage](../../../blog/stoerungshotline-agentforce-voice-deutsch/). Ich würde außerhalb der Geschäftszeiten nur mit Triage starten und die Buchung für die eindeutigen Fälle erst nach vier Wochen Vergleich mit dem Bereitschaftstechniker einschalten.
+```hinweis tipp
+Diese Schranken gehören in deterministische Logik, nicht in den Prompt. Ich würde außerhalb der Geschäftszeiten nur mit Triage starten und die Buchung für die eindeutigen Fälle erst nach vier Wochen Vergleich mit dem Bereitschaftstechniker einschalten.
+```
+
+Die Regeltabelle, die Muster in Agent Script und die Kosten eines Anrufs in Sprachaktionen oder Sprachminuten stehen in [Störungshotline mit Agentforce Voice: erst die Triage](../../../blog/stoerungshotline-agentforce-voice-deutsch/).
 
 ## Warum brauchen Agenten für Fehlersuche und Ersatzteile zuerst Ihre Daten?
 
@@ -85,7 +94,14 @@ Salesforce bietet inzwischen eine Einrichtung von Field Service ohne Setup-Maske
 
 Der Assistent baut den Rahmen gut und den Inhalt schlecht. Er kennt Ihre öffentliche Website. Er weiß nicht, welcher Techniker welchen Skill hat, wann welcher Kunde Besuche zulässt und welches Lager welche Region versorgt. Ein Gebietsvorschlag aus der Website folgt den Vertriebsbüros, der richtige Zuschnitt folgt Lagern und Fahrzeiten. Wie der Assistent über MCP und APIs auf Salesforce zugreift, erklärt das KI-Kapitel [MCP und Salesforce-Schnittstellen für KI-Agenten](../../ki-salesforce/mcp-und-schnittstellen/).
 
-Zwei Regeln würde ich nicht aufweichen. Erstens: Prüfen Sie den Plan Abschnitt für Abschnitt mit Serviceleitung und Leitung der Disposition, bevor jemand ihn freigibt. Zweitens: Lassen Sie ihn in einer Sandbox laufen. Das meiste, was der Assistent anlegt, sind Konfigurationsdatensätze, die ein Metadaten-Deployment nicht mitnimmt, wie das DevOps-Kapitel [Daten und Konfiguration in der Pipeline](../../devops-release-management/daten-und-konfiguration/) zeigt, und die Einrichtung lädt Beispieltermine. Flows kommen in einen Branch, Datensätze in einen Daten-Workspace, beides geht über die Pipeline in Produktion. Die Prüftabelle je Planabschnitt steht in [Field Service per KI-Assistent einrichten: Was prüfen?](../../../blog/field-service-einrichtung-ki-assistent/).
+Zwei Regeln würde ich nicht aufweichen:
+
+| Regel | Warum |
+|---|---|
+| Prüfen Sie den Plan Abschnitt für Abschnitt mit Serviceleitung und Leitung der Disposition, bevor jemand ihn freigibt. | Der Assistent kennt Ihre Website, aber nicht Skills, Besuchszeiten und Lager. |
+| Lassen Sie ihn in einer Sandbox laufen. | Das meiste, was der Assistent anlegt, sind Konfigurationsdatensätze, die ein Metadaten-Deployment nicht mitnimmt, wie das DevOps-Kapitel [Daten und Konfiguration in der Pipeline](../../devops-release-management/daten-und-konfiguration/) zeigt, und die Einrichtung lädt Beispieltermine. Flows kommen in einen Branch, Datensätze in einen Daten-Workspace, beides geht über die Pipeline in Produktion. |
+
+Die Prüftabelle je Planabschnitt steht in [Field Service per KI-Assistent einrichten: Was prüfen?](../../../blog/field-service-einrichtung-ki-assistent/).
 
 ## Warum Field Service in Wellen einführen?
 
@@ -111,11 +127,13 @@ Legen Sie vor jedem Dashboard schriftlich fest, wie jede Kennzahl definiert ist.
 
 Scheduling Policies, Gebiete, Arbeitstypen und Betriebszeiten sind Datensätze, die jeden Monat jemand anpasst. Die App bekommt neben den drei Plattform-Releases eigene Versionen, wie in [Kapitel 3](../field-service-mobile-app-dokumente/) beschrieben. Und Agenten brauchen gepflegte Prompts, Aktionen und Testfälle. Ich würde die Verantwortlichen vor der ersten Welle benennen:
 
-- **Serviceleitung:** Definitionen der Kennzahlen und der monatliche Termin pro Region, 30 Minuten mit sechs Zahlen und einer Entscheidung.
-- **Leitung der Disposition:** Scheduling Policies, Gebiete und die Gründe, warum Vorschläge geändert werden, wie in [Kapitel 2](../field-service-terminplanung-disposition/).
-- **Release-Manager:** Plattform-Releases, App-Versionen und Konfigurationsdatensätze über die Pipeline.
-- **Product Owner für Agenten:** Triage-Regeln, Buchungsschranken und der Testbestand aus echten Anrufen und Fehlern.
-- **IT:** Schnittstellen zu ERP und PLM, Monitoring und Backup, wie im DevOps-Kapitel [Monitoring und Backup nach dem Go-live](../../devops-release-management/betrieb-monitoring-backup/) beschrieben.
+| Rolle | Verantwortet |
+|---|---|
+| Serviceleitung | Definitionen der Kennzahlen und der monatliche Termin pro Region, 30 Minuten mit sechs Zahlen und einer Entscheidung. |
+| Leitung der Disposition | Scheduling Policies, Gebiete und die Gründe, warum Vorschläge geändert werden, wie in [Kapitel 2](../field-service-terminplanung-disposition/). |
+| Release-Manager | Plattform-Releases, App-Versionen und Konfigurationsdatensätze über die Pipeline. |
+| Product Owner für Agenten | Triage-Regeln, Buchungsschranken und der Testbestand aus echten Anrufen und Fehlern. |
+| IT | Schnittstellen zu ERP und PLM, Monitoring und Backup, wie im DevOps-Kapitel [Monitoring und Backup nach dem Go-live](../../devops-release-management/betrieb-monitoring-backup/) beschrieben. |
 
 ## Ein typisches Szenario, als Annahme: drei Wellen in neun Monaten
 
@@ -136,12 +154,14 @@ Die Fehlersuche wartet, bis die Handbücher den Produktschlüssel des Assets tra
 
 ## Was sollten Sie vor der ersten Welle entscheiden?
 
-- **Erster Agent,** mit einem messbaren Ziel wie dem Anteil der Wartungseinsätze, die ohne Disposition gebucht werden.
-- **Add-on oder Agentforce 1 Field Service,** eine Lizenzfrage, die ich in [Make-or-Buy und Lizenzplanung](../../../leistungen/make-or-buy-lizenzen/) kläre.
-- **Reihenfolge der Wellen** und Zeitpunkt für den Betriebsrat je Land.
-- **Definitionen der Kennzahlen und Ausgangsbasis** vor dem Go-live.
-- **Verantwortliche,** und die Regel, dass KI-gebaute Konfiguration nur über die Pipeline in Produktion kommt, wie in meiner Arbeit zu [DevOps und Release-Management](../../../leistungen/devops-und-release-management/).
+| Entscheidung | Was dazugehört |
+|---|---|
+| Erster Agent | Mit einem messbaren Ziel wie dem Anteil der Wartungseinsätze, die ohne Disposition gebucht werden. |
+| Add-on oder Agentforce 1 Field Service | Eine Lizenzfrage, die ich in [Make-or-Buy und Lizenzplanung](../../../leistungen/make-or-buy-lizenzen/) kläre. |
+| Reihenfolge der Wellen | Mit dem Zeitpunkt für den Betriebsrat je Land. |
+| Definitionen der Kennzahlen und Ausgangsbasis | Vor dem Go-live. |
+| Verantwortliche | Dazu die Regel, dass KI-gebaute Konfiguration nur über die Pipeline in Produktion kommt, wie in meiner Arbeit zu [DevOps und Release-Management](../../../leistungen/devops-und-release-management/). |
 
 Mit diesem Kapitel endet die Masterclass; Assets und Teile stehen in [Kapitel 4](../field-service-assets-wartung-teile/), alle Kapitel auf der [Übersichtsseite](../).
 
-Field Service rechnet sich, wenn Agenten dort starten, wo die Daten sauber sind, Wellen mit dem Betriebsrat beginnen und die Zahlen vor dem Go-live feststehen. Wenn Sie eine Einführung oder Ihren ersten Field-Service-Agenten planen, [schreiben Sie mir](#contact).
+Field Service rechnet sich, wenn Agenten dort starten, wo die Daten sauber sind, Wellen mit dem Betriebsrat beginnen und die Zahlen vor dem Go-live feststehen.

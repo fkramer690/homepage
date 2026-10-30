@@ -105,11 +105,13 @@ Eine Liste allein ändert nichts. Ich empfehle einen eigenen Backlog für techni
 
 DORA (DevOps Research and Assessment) ist das Forschungsprogramm, aus dem die verbreitetsten Kennzahlen für Softwarelieferung stammen. Laut [dora.dev](https://dora.dev/guides/dora-metrics/) sind es heute fünf:
 
-- **Change Lead Time** ist die Zeit, die eine Änderung vom Commit in die Versionsverwaltung bis zum Deployment in Produktion braucht.
-- **Deployment-Häufigkeit** ist die Zahl der Deployments in einem Zeitraum oder die Zeit zwischen zwei Deployments.
-- **Failed Deployment Recovery Time** ist die Zeit, bis ein fehlgeschlagenes Deployment behoben ist, das sofortiges Eingreifen verlangt hat.
-- **Change Fail Rate** ist der Anteil der Deployments, die sofortiges Eingreifen erfordern, etwa einen Rollback oder einen Hotfix.
-- **Deployment Rework Rate** ist der Anteil ungeplanter Deployments, die wegen eines Incidents in Produktion nötig wurden.
+| Kennzahl | Was sie misst |
+|---|---|
+| Change Lead Time | Die Zeit, die eine Änderung vom Commit in die Versionsverwaltung bis zum Deployment in Produktion braucht. |
+| Deployment-Häufigkeit | Die Zahl der Deployments in einem Zeitraum oder die Zeit zwischen zwei Deployments. |
+| Failed Deployment Recovery Time | Die Zeit, bis ein fehlgeschlagenes Deployment behoben ist, das sofortiges Eingreifen verlangt hat. |
+| Change Fail Rate | Der Anteil der Deployments, die sofortiges Eingreifen erfordern, etwa einen Rollback oder einen Hotfix. |
+| Deployment Rework Rate | Der Anteil ungeplanter Deployments, die wegen eines Incidents in Produktion nötig wurden. |
 
 Die ersten drei messen den Durchsatz, die letzten zwei die Instabilität. Laut der [Geschichte der Kennzahlen](https://dora.dev/guides/dora-metrics/history/) wurde die frühere MTTR 2023 umbenannt und neu definiert, die Rework Rate kam 2024 dazu. Viele Werkzeuge zeigen noch die vier alten Kennzahlen.
 
@@ -144,4 +146,4 @@ Monitoring-Repository, Backup-Lösung, Benachrichtigungskanäle und Kennzahlen g
 
 Wie Monitoring und Backup in den gesamten Prozess passen, zeigen [warum DevOps über Salesforce-Großprojekte entscheidet](../../../blog/warum-devops-salesforce-enterprise-projekte/) und die [Einführung in sfdx-hardis](../../../blog/sfdx-hardis-einfuehrung-salesforce-devops/). In welcher Reihenfolge Sie all das einführen, beschreibt das letzte Kapitel, [Einführung und Fahrplan](../einfuehrung-fahrplan/). Mein Rat für den Start: Monitoring und Daten-Backup zuerst, denn beides können Sie einschalten, bevor die Pipeline fertig ist. Wie ich Sie dabei unterstütze, steht unter [DevOps und Release-Management](../../../leistungen/devops-und-release-management/).
 
-Ein stabiler Betrieb heißt, dass Sie jede Änderung sehen, jeden Datensatz zurückholen und jeden Hotfix nachvollziehen können; wenn Sie das für Ihre Org aufsetzen oder prüfen lassen möchten, [schreiben Sie mir](#contact).
+Ein stabiler Betrieb heißt, dass Sie jede Änderung sehen, jeden Datensatz zurückholen und jeden Hotfix nachvollziehen können.

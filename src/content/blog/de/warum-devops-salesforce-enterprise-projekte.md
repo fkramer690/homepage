@@ -124,4 +124,4 @@ Betrieb
   Monitoring, Backups und generierte Dokumentation ergänzen.
 ```
 
-DevOps ist keine zusätzliche Schicht für später. In Enterprise-Projekten ist es Teil der Architektur, und es sollte stehen, bevor der zweite Partner an der Org arbeitet. Wenn Sie eine zweite Meinung zu Ihrem Release-Prozess möchten, [schreiben Sie mir](#contact).
+DevOps ist keine zusätzliche Schicht für später. In Enterprise-Projekten ist es Teil der Architektur, und es sollte stehen, bevor der zweite Partner an der Org arbeitet.

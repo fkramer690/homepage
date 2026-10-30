@@ -123,4 +123,4 @@ Monatlichen Roadmap-Termin ergänzen | CoE-Lead und Fachbereiche
 
 Wie sich neue Regeln im Alltag verankern lassen, beschreibe ich unter [Change Management Beratung für Salesforce](../../leistungen/change-management/), und wie der Call Standards bei Partnern hält, in [Reinforcement: Standards bei Partnern verankern](../standards-partner-verankern-reinforcement/). Den Rahmen für mehrere Partner insgesamt finden Sie unter [Partnersteuerung](../../leistungen/partnersteuerung/).
 
-Ein Center of Excellence wirkt, wenn es klein anfängt, dem Kunden gehört und seine Entscheidungen im Review ankommen. Wenn Sie gerade ein CoE aufsetzen oder Ihres zur Gesprächsrunde geworden ist, [schreiben Sie mir](#contact).
+Ein Center of Excellence wirkt, wenn es klein anfängt, dem Kunden gehört und seine Entscheidungen im Review ankommen.

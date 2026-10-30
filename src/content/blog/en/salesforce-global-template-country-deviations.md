@@ -99,4 +99,4 @@ The 80 percent is a guideline, not an exact measurement. Still, the direction is
 
 Before the first country, decide what the goal is and write it down. If it is harmonisation, the guideline for the match and the request path for deviations follow from it. Then keep a list of deviations per country, with reason and approval date. In the steering committee this list shows better than any status report whether the template holds.
 
-A global template holds when every deviation has a reason, an owner and a price. If you are planning a worldwide rollout, [send me a message](#contact) or read more about [change management](../../services/change-management-salesforce/).
+A global template holds when every deviation has a reason, an owner and a price. Read more about [change management](../../services/change-management-salesforce/).

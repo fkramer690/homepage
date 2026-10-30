@@ -123,4 +123,4 @@ Verantwortlich sollte das Produktmanagement des Herstellers sein, nicht der Impl
 
 Das ganze Kapitel steht im Masterclass-Teil [Katalog, Konfigurator, Preise](../../masterclass/revenue-cloud/produktkatalog-konfigurator-preise/), und die Grenze zwischen SAP und Salesforce zu ziehen gehört zu meiner Arbeit in der [Salesforce-Architektur](../../leistungen/salesforce-architektur/).
 
-Ein guter Revenue-Cloud-Katalog beschreibt jede bestellbare Maschine mit einigen hundert Datensätzen, solange Varianten Attribute bleiben, bis das ERP etwas anderes sagt. Wenn Sie Ihren Katalog planen, [schreiben Sie mir](#contact).
+Ein guter Revenue-Cloud-Katalog beschreibt jede bestellbare Maschine mit einigen hundert Datensätzen, solange Varianten Attribute bleiben, bis das ERP etwas anderes sagt.

@@ -99,12 +99,14 @@ Für Hersteller zählen die Aufrufgrenzen oft mehr als die Credits. Omnistudio b
 
 Die Edition ist die erste Zeile eines Angebots. Die folgenden Add-ons stehen auf der Add-on-Seite und gehören von Anfang an in die Kalkulation, nicht erst in die letzte Angebotsrunde:
 
-- **Portallizenzen.** Experience Cloud for Manufacturing kostet für Kunden 15 Dollar pro Login oder 35 Dollar pro Mitglied und Monat, für Partner 20 oder 50 Dollar. Wer Händler anbindet, braucht sie fast immer.
-- **Agentforce for Manufacturing Cloud Add-on.** Die Add-on-Seite nennt 150 Dollar pro Nutzer und Monat, die Preisseite „ab 150 Dollar“ pro Login. Die Einheit gehört schriftlich ins Angebot.
-- **Channel Revenue Management for Manufacturing.** 30.000 Dollar pro Org und Jahr, hier liegen Ship and Debit und Price Protection für Distributoren.
-- **Connected Assets.** 15.000 Dollar pro Org und Monat, jährlich abgerechnet, für Maschinendaten in Salesforce.
-- **Omnistudio-Zusatzaufrufe.** 2 Millionen Aufrufe für 10.000 Dollar pro Monat, eine kleinere Einheit gibt es nicht.
-- **Manufacturing Intelligence.** Die [eigene Seite](https://salesforce.com/manufacturing/cloud/manufacturing-intelligence) nennt 220 Dollar pro Login und Monat, die [Experience-Cloud-Seite](https://salesforce.com/manufacturing/cloud/experience-cloud) „ab 165 Dollar“ ohne Einheit. Dieselbe Seite listet Rebate Management „ab 75 Dollar“, ebenfalls ohne Einheit.
+| Add-on | Preis und Umfang |
+|---|---|
+| Portallizenzen | Experience Cloud for Manufacturing kostet für Kunden 15 Dollar pro Login oder 35 Dollar pro Mitglied und Monat, für Partner 20 oder 50 Dollar. Wer Händler anbindet, braucht sie fast immer. |
+| Agentforce for Manufacturing Cloud Add-on | Die Add-on-Seite nennt 150 Dollar pro Nutzer und Monat, die Preisseite „ab 150 Dollar“ pro Login. Die Einheit gehört schriftlich ins Angebot. |
+| Channel Revenue Management for Manufacturing | 30.000 Dollar pro Org und Jahr, hier liegen Ship and Debit und Price Protection für Distributoren. |
+| Connected Assets | 15.000 Dollar pro Org und Monat, jährlich abgerechnet, für Maschinendaten in Salesforce. |
+| Omnistudio-Zusatzaufrufe | 2 Millionen Aufrufe für 10.000 Dollar pro Monat, eine kleinere Einheit gibt es nicht. |
+| Manufacturing Intelligence | Die [eigene Seite](https://salesforce.com/manufacturing/cloud/manufacturing-intelligence) nennt 220 Dollar pro Login und Monat, die [Experience-Cloud-Seite](https://salesforce.com/manufacturing/cloud/experience-cloud) „ab 165 Dollar“ ohne Einheit. Dieselbe Seite listet Rebate Management „ab 75 Dollar“, ebenfalls ohne Einheit. |
 
 Wie viel das in einem angenommenen Szenario mit 150 Nutzern und 400 Händlern ausmacht, rechnet [Manufacturing Cloud Add-ons: was extra kostet](../../../blog/manufacturing-cloud-zusatzkosten-add-ons/) vor. Dort erhöhen die typischen Add-ons die Lizenzzeile um etwa 40 Prozent.
 
@@ -168,4 +170,4 @@ Bevor ein Angebot auf dem Tisch liegt, helfen drei Fragen an Vertrieb und Servic
 
 Lautet die Antwort Rahmenverträge, geht es in [Kapitel 2 um Rahmenverträge und Prognosen](../rahmenvertraege-und-prognosen/) weiter, mit den Daten, die dafür aus dem ERP kommen müssen. Alle Kapitel finden Sie auf der [Übersichtsseite](../).
 
-Manufacturing Cloud lohnt sich, wenn seine Kernfunktionen zu Ihrem Geschäft passen, und eine Rechnung über fünf Jahre zeigt das früher als der erste Workshop. Wenn Sie ein Angebot prüfen oder den Business Case rechnen möchten, [schreiben Sie mir](#contact).
+Manufacturing Cloud lohnt sich, wenn seine Kernfunktionen zu Ihrem Geschäft passen, und eine Rechnung über fünf Jahre zeigt das früher als der erste Workshop.

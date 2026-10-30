@@ -114,4 +114,4 @@ The 40 percent values are my starting points, not Salesforce figures. Switching 
 
 The KPIs need a business case from before go-live, which is why I put [business value and data quality first](../agentforce-business-value-data-quality-first/). Deciding which agents are worth their costs is part of my [make-or-buy and licence planning](../../services/make-or-buy-licences/) work.
 
-An agent pays off when its cost per resolved enquiry stays below your service desk's and the escalated cases do not get harder to handle; if you want to set up these KPIs and a stop rule for your agent, [send me a message](#contact).
+An agent pays off when its cost per resolved enquiry stays below your service desk's and the escalated cases do not get harder to handle.

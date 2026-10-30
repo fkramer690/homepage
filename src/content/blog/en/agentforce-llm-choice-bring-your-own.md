@@ -118,4 +118,4 @@ BYOLLM saves at most $90 a month, about $1,080 a year, before the Azure token bi
 
 I treat these decisions as [Salesforce architecture](../../services/salesforce-architecture/) work, next to data model and permissions.
 
-The model choice in Agentforce has cost, contract and test consequences, so make it per subagent and write it down. If you want a second opinion on the model setup of your agent, [send me a message](#contact).
+The model choice in Agentforce has cost, contract and test consequences, so make it per subagent and write it down.

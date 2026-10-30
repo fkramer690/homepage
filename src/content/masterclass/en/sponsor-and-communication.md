@@ -34,9 +34,13 @@ In the Prosci study [Best Practices in Change Management](https://www.prosci.com
 
 Three things make a sponsor effective:
 
-- **Explaining.** In the sales meeting, the head of sales says why forecasts will come from Salesforce. The same message from the project team carries less weight.
-- **Deciding.** When inside sales and sales planning cannot agree on a required field, the decision is theirs and not the sprint's.
-- **Asking.** They ask about their teams' usage in the monthly report. That way the teams notice that it counts.
+```saeulen
+dach: An effective sponsor
+mic | Explaining | In their own department | In the sales meeting, the head of sales says why forecasts will come from Salesforce. The same message from the project team carries less weight.
+steer | Deciding | When departments disagree | When inside sales and sales planning cannot agree on a required field, the decision is theirs and not the sprint's.
+analyse | Asking | In the monthly report | They ask about their teams' usage. That way the teams notice that it counts.
+basis: Written down in the sponsor plan
+```
 
 So I write a sponsor plan: a short list of dates when the sponsor appears, decisions that sit with them and the figures they receive each month. Without this plan, "management is behind it" turns into a line on the first slide.
 

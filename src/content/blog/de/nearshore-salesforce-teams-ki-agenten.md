@@ -107,4 +107,4 @@ Ob der Stream schneller geworden ist, bleibt offen, bis Durchlaufzeit und Nachar
 
 Teamaufstellungen, Review-Kapazität und Rotationsregeln zu planen, gehört zu meiner [Programmsteuerung mit Nearshore-Teams](../../leistungen/projektsteuerung-nearshore/).
 
-Nearshore-Teams für Salesforce liefern mit KI-Agenten nur dann mehr, wenn Review-Kapazität, Einarbeitung und Zugriffsregeln mit dem Output wachsen. Wenn Sie Ihr Nearshore-Setup prüfen möchten, bevor die Agenten kommen, [schreiben Sie mir](#contact).
+Nearshore-Teams für Salesforce liefern mit KI-Agenten nur dann mehr, wenn Review-Kapazität, Einarbeitung und Zugriffsregeln mit dem Output wachsen.

@@ -59,7 +59,7 @@ Chapters follow the content rules of the [blog guidelines](blog-guidelines.md): 
 
 `src/components/MasterclassHub.astro` builds both language versions. Texts (hero, deadlines, headings) live in `masterclass` in `src/i18n/{de,en}.ts`; links come from `src/lib/masterclass.ts`.
 
-1. Hero with eyebrow, H1, lead, "To the chapters" and "Book a call", plus the four-layer drawing
+1. Hero with eyebrow, H1, lead, "To the chapters" and "Book a call", plus the header drawing: `figure` per masterclass in i18n (type `HubFigure` in `src/i18n/en.ts`), either a flow of five steps with an optional system beside it (`kind: 'flow'`) or a table of tasks and tools (`kind: 'table'`). Every step or row names the chapter that covers it, so the drawing works as a map of the masterclass; never label boxes with letters or numbers that point to nothing. `figure: null` shows the photo from `coursePhotos` in `src/data/photos.ts`; change management draws its ADKAR `stages`.
 2. Key facts: 10 chapters, number of published articles in the clusters, DE/EN
 3. Deadlines as a timeline (`masterclass.deadlines` in i18n; `articleKey` links an entry to a blog article)
 4. Chapters (`#kapitel` / `#chapters`) as a numbered path in two columns from the collection: number, `short`, `summary`

@@ -99,4 +99,4 @@ Before any of these goes live, agree one result metric beyond activity, for exam
 
 When someone in your company says "Siemens already does this", ask four questions: which tense does the source use, is the number a baseline or a result, whose number is it, and does it name a source. Sorting that out before a budget decision is part of my work in [architecture and partner governance](../../services/salesforce-architecture/).
 
-Siemens shows a sound order more than a finished solution, and that order fits a mid-sized machine builder too. If you want to check which of your processes belongs at the top of that list, [send me a message](#contact).
+Siemens shows a sound order more than a finished solution, and that order fits a mid-sized machine builder too.

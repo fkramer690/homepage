@@ -113,4 +113,4 @@ How all this fits into the overall business case for Field Service is covered in
 
 List every person in the service organisation with what they do in the system each week, then assign the licence by the rules above. I do this as part of [make-or-buy and licence forecasts](../../services/make-or-buy-licences/), before the negotiation starts.
 
-The licence follows the role, and the role follows the process, so settle who works cases and who dispatches first; if you want a second opinion on your matrix, [send me a message](#contact).
+The licence follows the role, and the role follows the process, so settle who works cases and who dispatches first.

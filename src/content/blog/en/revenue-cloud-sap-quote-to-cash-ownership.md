@@ -125,4 +125,4 @@ Designing these interfaces is a large part of my work on [Salesforce integration
 
 List your quote-to-cash steps in one column and write SAP or Salesforce next to each, as things work today. Then mark the three rows where the answer is unclear: in most companies that is the price, the order and the invoice. Settle those three with finance before you ask partners for estimates, because each answer changes the scope by weeks.
 
-The split between Revenue Cloud and SAP is decided per object and signed by finance before the build starts. If you want a second opinion on your cut, [send me a message](#contact).
+The split between Revenue Cloud and SAP is decided per object and signed by finance before the build starts.
