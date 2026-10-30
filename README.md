@@ -57,6 +57,19 @@ Rule: every external link opens in a new tab. Links in Markdown get `target="_bl
 
 Page titles: `scripts/check-titles.mjs` runs after the sitemap check and fails if an indexable page has no `<title>`, a title longer than 60 characters, or the same title as another page (`npm run check:titles`). Articles, chapters and most pages add ` | FK Solution Design` only when it still fits in 60 characters, so the keyword stays at the front.
 
+## Where files go
+
+The repository root holds only project files (`package.json`, configs, `README.md`, `CLAUDE.md`). `scripts/check-root.mjs` runs first in `npm run build` and fails on anything else there, such as an exported SVG (`npm run check:root`).
+
+| File | Place |
+|---|---|
+| Card drawings of the blog overview (one per article, EN + DE) | code in `src/lib/card-drawings.ts`, keyed by `translationKey`; drawn into the page at build time, no image files |
+| Card drawings as standalone SVG, to look at or share | `npm run cards:export` (or `npm run cards:export -- <translationKey>`) writes `previews/card-drawings/<translationKey>-<lang>.svg`; the folder is git-ignored and regenerated on every export |
+| Flow diagrams in articles | `src/assets/diagrams/`, rendered by `node scripts/render-diagrams.mjs` |
+| Explanatory graphics, photos, certification badges | `src/assets/blog/`, `src/assets/photos/`, `src/assets/certifications/` |
+| Icons | `src/icons/` |
+| Files served as they are (favicon, client logos, downloads) | `public/` |
+
 ## Local development
 
 ```sh
