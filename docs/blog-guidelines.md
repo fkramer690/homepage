@@ -105,6 +105,7 @@ Every article and every masterclass chapter loosens up its text with building bl
   - Store files in `src/assets/blog/` and reference them relative from the article: `![Release pipeline from sandbox to production](../../../assets/blog/devops-pipeline.png)`. Astro then optimises size and format.
   - Alt text is required and describes what the graphic shows. Text in the graphic must also appear in the article, so search engines and AI assistants can read it.
   - Provide a German version of the graphic when it contains text.
+- **Video (optional):** a short video (up to about 90 seconds) that sums up the article. Self-hosted, never YouTube or another third party: `public/videos/<file>.mp4` (H.264/AAC, `-movflags +faststart`, a few MB) plus poster `public/videos/<file>.jpg` (540 px wide frame from the video). Set it in the frontmatter `video` (`file`, `title`, `duration` in seconds, `uploadDate`, `transcript` word for word). `BlogPost.astro` shows a small card in the side column (below the takeaways on narrow screens) that opens the video in an overlay with the transcript; the video loads only on play, no autoplay, no cookies, and the page gets a `VideoObject` in its structured data. Captions are burned into the video. A video only for the language it is spoken in; the other version of the article simply has none.
 - **No stock photos** and no decorative images. They add nothing for readers or rankings.
 
 ## SEO

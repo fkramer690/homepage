@@ -2,7 +2,8 @@
 // Reading area of every text page (rules: docs/layouts.md, "Page width"):
 // text column on the left, sticky side column with contents and booking box
 // on the right. Below 960px the side column is hidden and the text uses the
-// full width.
+// full width. The optional slot "side" adds an element between contents and
+// booking box (the video card of a blog article).
 import ExternalMark from './ExternalMark.astro';
 import PhoneLine from './PhoneLine.astro';
 import type { Dict } from '../i18n/en';
@@ -31,6 +32,7 @@ const ext = contactExternal ? { target: '_blank', rel: 'noopener' } : {};
         </ol>
       </nav>
     )}
+    <slot name="side" />
     {cta !== false && (
       <div class="page-cta">
         <p class="page-cta-title">{t.side.ctaTitle}</p>

@@ -104,6 +104,41 @@ a:hover { color: var(--anthracite); }
   .page-side { display: none; }
 }
 
+/* Video card of a blog article (src/components/VideoCard.astro): in the side column on
+   wide screens, below the takeaways on narrow ones; opens the video in an overlay. */
+.video-card { display: flex; gap: 14px; align-items: center; padding: 12px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--white); font: inherit; color: var(--text); text-align: left; cursor: pointer; transition: border-color 0.15s, box-shadow 0.15s; }
+.video-card:hover { border-color: var(--cyan); box-shadow: 0 4px 16px rgba(35, 35, 37, 0.08); }
+.video-card:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
+.video-card-thumb { position: relative; flex: none; }
+.video-card-thumb img { display: block; width: 72px; height: 128px; object-fit: cover; border-radius: 6px; }
+.video-card-thumb::after { content: ''; position: absolute; left: 50%; top: 50%; width: 36px; height: 36px; margin: -18px 0 0 -18px; border-radius: 50%; background: var(--cyan); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35); }
+.video-card-thumb::before { content: ''; position: absolute; left: 50%; top: 50%; z-index: 1; margin: -7px 0 0 -4px; border-style: solid; border-width: 7px 0 7px 12px; border-color: transparent transparent transparent var(--white); }
+.video-card-text { display: grid; gap: 4px; }
+.video-card-label { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--cyan-dark); margin: 0; }
+.video-card-title { font-size: 0.95rem; font-weight: 600; line-height: 1.35; color: var(--anthracite); }
+.video-card-more { font-size: 0.78rem; color: var(--text-2); }
+.video-card-inline { display: none; }
+@media (max-width: 960px) {
+  .video-card-inline { display: flex; margin: 0 0 32px; }
+}
+.video-dialog { padding: 0; border: 0; border-radius: var(--radius); background: var(--anthracite); color: var(--white); max-width: calc(100vw - 32px); max-height: calc(100dvh - 32px); overflow: visible; }
+.video-dialog::backdrop { background: rgba(20, 20, 22, 0.82); }
+.video-dialog-body { --video-w: min(340px, calc((100dvh - 80px) * 9 / 16)); display: grid; grid-template-columns: var(--video-w) 300px; align-items: start; }
+.video-dialog video { display: block; width: 100%; height: auto; aspect-ratio: 9 / 16; background: #000; border-radius: var(--radius) 0 0 var(--radius); }
+.video-dialog-text { box-sizing: border-box; height: calc(var(--video-w) * 16 / 9); padding: 28px 24px; overflow-y: auto; }
+.video-dialog .video-card-label { color: var(--cyan-light); }
+.video-dialog-title { margin: 6px 0 16px; font-size: 1.15rem; font-weight: 600; line-height: 1.3; }
+.video-dialog-transcript summary { cursor: pointer; font-size: 0.88rem; font-weight: 600; color: var(--cyan-light); }
+.video-dialog-transcript p { margin: 10px 0 0; font-size: 0.88rem; line-height: 1.6; color: rgba(255, 255, 255, 0.8); }
+.video-dialog-close { position: absolute; top: -40px; right: 0; width: 32px; height: 32px; border: 0; background: none; color: var(--white); font-size: 1.4rem; cursor: pointer; }
+@media (max-width: 700px) {
+  .video-dialog { overflow-y: auto; }
+  .video-dialog-body { grid-template-columns: min(calc(100vw - 32px), calc((100dvh - 140px) * 9 / 16)); }
+  .video-dialog video { border-radius: var(--radius) var(--radius) 0 0; }
+  .video-dialog-text { height: auto; padding: 16px 18px 20px; }
+  .video-dialog-close { top: 6px; right: 6px; z-index: 1; background: rgba(0, 0, 0, 0.5); border-radius: 50%; font-size: 1.1rem; }
+}
+
 .mono {
   font-family: var(--mono);
   font-weight: 400;

@@ -47,6 +47,18 @@ const blog = defineCollection({
     // Optional second author who wrote or reviewed the article with the first one. Fabian's
     // articles on change management in Salesforce programmes name Juliane (reviewed by her).
     coAuthor: z.enum(authorIds).optional(),
+    // Optional short video (rules: docs/blog-guidelines.md, "Video"): files in
+    // public/videos/<file>.mp4 plus poster <file>.jpg, shown as a card in the side
+    // column that opens the video in an overlay. The transcript is on the page.
+    video: z
+      .object({
+        file: z.string().regex(/^[a-z0-9]+(-[a-z0-9]+)*$/),
+        title: z.string().max(60),
+        duration: z.number().int().positive(),
+        uploadDate: z.coerce.date(),
+        transcript: z.string().min(50),
+      })
+      .optional(),
     draft: z.boolean().default(false),
   }),
 });

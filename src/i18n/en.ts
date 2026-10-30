@@ -773,6 +773,11 @@ export const en = {
     ctaTitle: '30 minutes, no pitch',
     ctaText: 'You describe your situation, I tell you honestly whether and how I can help.',
     phone: 'Or call directly',
+    video: 'Video',
+    videoSeconds: 'sec',
+    videoWatch: 'Watch the short version',
+    videoTranscript: 'Read the transcript',
+    videoClose: 'Close video',
   },
   floating: {
     label: 'Contact',
