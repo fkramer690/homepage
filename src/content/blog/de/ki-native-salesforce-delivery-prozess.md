@@ -30,7 +30,7 @@ Ein KI-nativer Delivery-Prozess für Salesforce macht das Jira-Ticket zur ausfü
 
 ## Was heißt KI-nativ in einem Salesforce-Projekt?
 
-KI-native Delivery bedeutet, den Lieferprozess um den Agenten herum zu bauen, statt dem alten Prozess einen Coding-Assistenten hinzuzufügen. Wie sich dadurch die Teamaufstellung ändert, habe ich in [KI-native Delivery: kleinere Salesforce-Teams](../ki-kleinere-salesforce-teams-delivery/) beschrieben. Hier geht es um den Ablauf selbst. Er ruht auf vier Ideen:
+KI-native Delivery bedeutet, den Lieferprozess um den Agenten herum zu bauen, statt dem alten Prozess einen Coding-Assistenten hinzuzufügen. Wie sich dadurch die Teamaufstellung ändert, habe ich in [KI-native Delivery: kleinere Salesforce-Teams](../ki-kleinere-salesforce-teams-delivery/) beschrieben. Hier geht es um den Ablauf selbst. Er ist mein Zielbild: Einzelne Schritte nutze ich schon, durchgängig vom Workshop bis zur Produktion setze ich ihn im nächsten Projekt auf, und ein paar Lücken sind noch zu schließen. Er ruht auf vier Ideen:
 
 - **Das Ticket ist die Spezifikation.** Ein Agent kann eine Story nur so gut umsetzen, wie ihre Akzeptanzkriterien geschrieben sind. Deshalb ist die Spec-Freigabe das wichtigste Tor.
 - **Der Agent macht die Fleißarbeit.** Org-Analyse, Protokoll, Story-Entwürfe, Prototyp, Code, Tests, Testskripte, Release Notes.
@@ -98,10 +98,6 @@ Bestätigt der Kunde das Protokoll, steht die Scope-Baseline. Danach baut der Ag
 Erst wenn Business Analyst und Architekt eine Story auf „Ready for Agent“ setzen, beginnt die Umsetzung. Der Agent liest das Ticket, legt einen Feature-Branch an, schreibt einen Umsetzungsplan und setzt ihn erst nach Freigabe durch den Entwickler um: Apex, Lightning Web Components oder Flow, jeweils mit Tests. Bei unklaren Anforderungen liest er die verlinkte Stelle im Transkript, statt zu raten. Er schreibt die Beschreibung des Pull Requests mit Ticket-Link und Komponentenliste, ein KI-Reviewer kommentiert vorab.
 
 Gemergt wird nur nach dem Review durch einen Entwickler. Der Entwickler reviewt in diesem Prozess mehr, als er schreibt. Warum ich auf dieses Tor nie verzichte, steht in [Warum Pull-Request-Reviews Pflicht sind](../warum-pull-request-reviews-pflicht-sind/).
-
-```praxis
-In einem Programm, das ich begleitet habe, lief anfangs jeder Pull Request über meinen Schreibtisch. Als der Prozess stabil lief, habe ich ihn an einen internen Kollegen übergeben.
-```
 
 Danach läuft die Pipeline: ein Delta-Paket mit `sfdx-git-delta`, ein Check-only-Deploy gegen die Integrations-Sandbox, definierte Tests und ein Code-Analyzer-Gate. Schlägt sie fehl, bekommt der Agent das Log und darf einen Fix-Commit liefern, höchstens zwei Versuche. Danach übernimmt der Entwickler. Welche Prüfungen ich für KI-Code in die Pipeline setze, beschreibe ich in [Quality Gates für KI-Code](../quality-gates-ki-code-salesforce-pipeline/).
 

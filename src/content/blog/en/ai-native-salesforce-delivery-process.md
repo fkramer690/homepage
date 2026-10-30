@@ -30,7 +30,7 @@ An AI-native delivery process for Salesforce turns the Jira ticket into an execu
 
 ## What does AI-native mean in a Salesforce project?
 
-AI-native delivery means building the delivery process around the agent instead of adding a coding assistant to the old process. How this changes the team set-up I described in [AI-native delivery: smaller Salesforce teams](../ai-native-delivery-smaller-salesforce-teams/). This article is about the flow itself. It rests on four ideas:
+AI-native delivery means building the delivery process around the agent instead of adding a coding assistant to the old process. How this changes the team set-up I described in [AI-native delivery: smaller Salesforce teams](../ai-native-delivery-smaller-salesforce-teams/). This article is about the flow itself. It is my target picture: I already use individual steps, I will set it up end to end from workshop to production in my next project, and a few gaps are still to close. It rests on four ideas:
 
 - **The ticket is the specification.** An agent can only build a story as well as its acceptance criteria are written. That is why the spec approval is the most important gate.
 - **The agent does the legwork.** Org analysis, minutes, story drafts, prototype, code, tests, test scripts, release notes.
@@ -98,10 +98,6 @@ Once the client confirms the minutes, the scope baseline stands. The agent then 
 Only when business analyst and architect set a story to "Ready for Agent" does the build start. The agent reads the ticket, creates a feature branch, writes an implementation plan and carries it out only after the developer approves it: Apex, Lightning Web Components or flow, each with tests. When a requirement is unclear it reads the linked passage of the transcript instead of guessing. It writes the pull request description with ticket link and component list, and an AI reviewer comments first.
 
 Nothing is merged without a developer's review. In this process the developer reviews more than they write. Why I never give up this gate is in [Why pull request reviews are a must](../why-pull-request-reviews-are-a-must-in-enterprise-projects/).
-
-```praxis
-In one programme I supported, every pull request went across my desk at first. Once the process ran smoothly, I handed it over to an internal colleague.
-```
 
 Then the pipeline runs: a delta package built with `sfdx-git-delta`, a check-only deploy against the integration sandbox, defined tests and a Code Analyzer gate. If it fails, the agent gets the log and may deliver a fix commit, at most two attempts. After that the developer takes over. Which checks I put into the pipeline for AI code I describe in [Quality gates for AI code](../quality-gates-for-ai-code-salesforce-pipeline/).
 
