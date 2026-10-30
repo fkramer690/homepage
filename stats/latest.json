@@ -1,28 +1,46 @@
 {
-  "generatedAt": "2026-10-29T11:29:46.463Z",
+  "generatedAt": "2026-10-30T04:47:52.516Z",
   "range": {
-    "start": "2026-09-29",
-    "end": "2026-10-29"
+    "start": "2026-09-30",
+    "end": "2026-10-30"
   },
   "browsers": [
     {
-      "count": 300,
+      "count": 440,
       "dimensions": {
         "userAgentBrowser": "Chrome"
       },
       "sum": {
         "visits": 40
       }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "userAgentBrowser": "Unknown"
+      },
+      "sum": {
+        "visits": 10
+      }
     }
   ],
   "countries": [
     {
-      "count": 300,
+      "count": 440,
       "dimensions": {
         "countryName": "DE"
       },
       "sum": {
         "visits": 40
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "countryName": "US"
+      },
+      "sum": {
+        "visits": 10
       }
     }
   ],
@@ -64,29 +82,29 @@
       }
     },
     {
-      "count": 70,
+      "count": 220,
       "dimensions": {
         "date": "2026-10-29"
       },
       "sum": {
-        "visits": 0
+        "visits": 10
       }
     }
   ],
   "devices": [
     {
-      "count": 300,
+      "count": 450,
       "dimensions": {
         "deviceType": "desktop"
       },
       "sum": {
-        "visits": 40
+        "visits": 50
       }
     }
   ],
   "pages": [
     {
-      "count": 110,
+      "count": 130,
       "dimensions": {
         "requestPath": "/"
       },
@@ -97,10 +115,46 @@
     {
       "count": 30,
       "dimensions": {
+        "requestPath": "/blog/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 30,
+      "dimensions": {
+        "requestPath": "/leistungen/change-management/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 30,
+      "dimensions": {
         "requestPath": "/homepage/"
       },
       "sum": {
         "visits": 10
+      }
+    },
+    {
+      "count": 20,
+      "dimensions": {
+        "requestPath": "/partner/juliane-winterscheid/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 20,
+      "dimensions": {
+        "requestPath": "/masterclass/"
+      },
+      "sum": {
+        "visits": 0
       }
     },
     {
@@ -124,7 +178,7 @@
     {
       "count": 20,
       "dimensions": {
-        "requestPath": "/blog/"
+        "requestPath": "/en/"
       },
       "sum": {
         "visits": 0
@@ -142,7 +196,7 @@
     {
       "count": 10,
       "dimensions": {
-        "requestPath": "/masterclass/revenue-cloud/"
+        "requestPath": "/homepage/speaking/"
       },
       "sum": {
         "visits": 0
@@ -151,43 +205,7 @@
     {
       "count": 10,
       "dimensions": {
-        "requestPath": "/homepage/blog/salesforce-field-service-mobile-guided-voice/"
-      },
-      "sum": {
-        "visits": 0
-      }
-    },
-    {
-      "count": 10,
-      "dimensions": {
-        "requestPath": "/en/masterclass/devops-release-management/devops-tools-compared/"
-      },
-      "sum": {
-        "visits": 0
-      }
-    },
-    {
-      "count": 10,
-      "dimensions": {
-        "requestPath": "/homepage/blog/"
-      },
-      "sum": {
-        "visits": 0
-      }
-    },
-    {
-      "count": 10,
-      "dimensions": {
-        "requestPath": "/leistungen/"
-      },
-      "sum": {
-        "visits": 0
-      }
-    },
-    {
-      "count": 10,
-      "dimensions": {
-        "requestPath": "/homepage/blog/salesforce-service-documents-document-builder/"
+        "requestPath": "/blog/change-management-prozess-salesforce/"
       },
       "sum": {
         "visits": 0
@@ -205,7 +223,7 @@
     {
       "count": 10,
       "dimensions": {
-        "requestPath": "/homepage/speaking/"
+        "requestPath": "/masterclass/manufacturing-cloud/"
       },
       "sum": {
         "visits": 0
@@ -214,7 +232,52 @@
     {
       "count": 10,
       "dimensions": {
-        "requestPath": "/masterclass/"
+        "requestPath": "/homepage/blog/salesforce-service-documents-document-builder/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "requestPath": "/masterclass/revenue-cloud/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "requestPath": "/leistungen/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "requestPath": "/en/services/change-management-salesforce/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "requestPath": "/homepage/blog/salesforce-field-service-mobile-guided-voice/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "requestPath": "/homepage/blog/"
       },
       "sum": {
         "visits": 0
@@ -223,7 +286,7 @@
   ],
   "referers": [
     {
-      "count": 200,
+      "count": 340,
       "dimensions": {
         "refererHost": "www.fk-sd.de"
       },
@@ -241,12 +304,12 @@
       }
     },
     {
-      "count": 40,
+      "count": 50,
       "dimensions": {
         "refererHost": ""
       },
       "sum": {
-        "visits": 40
+        "visits": 50
       }
     }
   ]

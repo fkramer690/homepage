@@ -1,13 +1,33 @@
 [
  {
   "page": "/",
-  "pageviews": 110,
+  "pageviews": 130,
   "visits": 30
+ },
+ {
+  "page": "/blog/",
+  "pageviews": 30,
+  "visits": 0
+ },
+ {
+  "page": "/leistungen/change-management/",
+  "pageviews": 30,
+  "visits": 0
  },
  {
   "page": "/homepage/",
   "pageviews": 30,
   "visits": 10
+ },
+ {
+  "page": "/partner/juliane-winterscheid/",
+  "pageviews": 20,
+  "visits": 0
+ },
+ {
+  "page": "/masterclass/",
+  "pageviews": 20,
+  "visits": 0
  },
  {
   "page": "/masterclass-ki/",
@@ -20,7 +40,7 @@
   "visits": 0
  },
  {
-  "page": "/blog/",
+  "page": "/en/",
   "pageviews": 20,
   "visits": 0
  },
@@ -30,32 +50,12 @@
   "visits": 0
  },
  {
-  "page": "/masterclass/revenue-cloud/",
+  "page": "/homepage/speaking/",
   "pageviews": 10,
   "visits": 0
  },
  {
-  "page": "/homepage/blog/salesforce-field-service-mobile-guided-voice/",
-  "pageviews": 10,
-  "visits": 0
- },
- {
-  "page": "/en/masterclass/devops-release-management/devops-tools-compared/",
-  "pageviews": 10,
-  "visits": 0
- },
- {
-  "page": "/homepage/blog/",
-  "pageviews": 10,
-  "visits": 0
- },
- {
-  "page": "/leistungen/",
-  "pageviews": 10,
-  "visits": 0
- },
- {
-  "page": "/homepage/blog/salesforce-service-documents-document-builder/",
+  "page": "/blog/change-management-prozess-salesforce/",
   "pageviews": 10,
   "visits": 0
  },
@@ -65,12 +65,37 @@
   "visits": 0
  },
  {
-  "page": "/homepage/speaking/",
+  "page": "/masterclass/manufacturing-cloud/",
   "pageviews": 10,
   "visits": 0
  },
  {
-  "page": "/masterclass/",
+  "page": "/homepage/blog/salesforce-service-documents-document-builder/",
+  "pageviews": 10,
+  "visits": 0
+ },
+ {
+  "page": "/masterclass/revenue-cloud/",
+  "pageviews": 10,
+  "visits": 0
+ },
+ {
+  "page": "/leistungen/",
+  "pageviews": 10,
+  "visits": 0
+ },
+ {
+  "page": "/en/services/change-management-salesforce/",
+  "pageviews": 10,
+  "visits": 0
+ },
+ {
+  "page": "/homepage/blog/salesforce-field-service-mobile-guided-voice/",
+  "pageviews": 10,
+  "visits": 0
+ },
+ {
+  "page": "/homepage/blog/",
   "pageviews": 10,
   "visits": 0
  }

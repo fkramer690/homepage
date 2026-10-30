@@ -1,10 +1,5 @@
 [
  {
-  "day": "2026-09-29",
-  "pageviews": 0,
-  "visits": 0
- },
- {
   "day": "2026-09-30",
   "pageviews": 0,
   "visits": 0
@@ -151,7 +146,12 @@
  },
  {
   "day": "2026-10-29",
-  "pageviews": 70,
+  "pageviews": 220,
+  "visits": 10
+ },
+ {
+  "day": "2026-10-30",
+  "pageviews": 0,
   "visits": 0
  }
 ]

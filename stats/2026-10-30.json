@@ -1,0 +1,316 @@
+{
+  "generatedAt": "2026-10-30T04:47:52.516Z",
+  "range": {
+    "start": "2026-09-30",
+    "end": "2026-10-30"
+  },
+  "browsers": [
+    {
+      "count": 440,
+      "dimensions": {
+        "userAgentBrowser": "Chrome"
+      },
+      "sum": {
+        "visits": 40
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "userAgentBrowser": "Unknown"
+      },
+      "sum": {
+        "visits": 10
+      }
+    }
+  ],
+  "countries": [
+    {
+      "count": 440,
+      "dimensions": {
+        "countryName": "DE"
+      },
+      "sum": {
+        "visits": 40
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "countryName": "US"
+      },
+      "sum": {
+        "visits": 10
+      }
+    }
+  ],
+  "daily": [
+    {
+      "count": 70,
+      "dimensions": {
+        "date": "2026-10-23"
+      },
+      "sum": {
+        "visits": 10
+      }
+    },
+    {
+      "count": 50,
+      "dimensions": {
+        "date": "2026-10-26"
+      },
+      "sum": {
+        "visits": 30
+      }
+    },
+    {
+      "count": 60,
+      "dimensions": {
+        "date": "2026-10-27"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 50,
+      "dimensions": {
+        "date": "2026-10-28"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 220,
+      "dimensions": {
+        "date": "2026-10-29"
+      },
+      "sum": {
+        "visits": 10
+      }
+    }
+  ],
+  "devices": [
+    {
+      "count": 450,
+      "dimensions": {
+        "deviceType": "desktop"
+      },
+      "sum": {
+        "visits": 50
+      }
+    }
+  ],
+  "pages": [
+    {
+      "count": 130,
+      "dimensions": {
+        "requestPath": "/"
+      },
+      "sum": {
+        "visits": 30
+      }
+    },
+    {
+      "count": 30,
+      "dimensions": {
+        "requestPath": "/blog/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 30,
+      "dimensions": {
+        "requestPath": "/leistungen/change-management/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 30,
+      "dimensions": {
+        "requestPath": "/homepage/"
+      },
+      "sum": {
+        "visits": 10
+      }
+    },
+    {
+      "count": 20,
+      "dimensions": {
+        "requestPath": "/partner/juliane-winterscheid/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 20,
+      "dimensions": {
+        "requestPath": "/masterclass/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 20,
+      "dimensions": {
+        "requestPath": "/masterclass-ki/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 20,
+      "dimensions": {
+        "requestPath": "/leistungen/salesforce-architektur/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 20,
+      "dimensions": {
+        "requestPath": "/en/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "requestPath": "/fragen/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "requestPath": "/homepage/speaking/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "requestPath": "/blog/change-management-prozess-salesforce/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "requestPath": "/en/blog/copado-gearset-provar-ai-agents/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "requestPath": "/masterclass/manufacturing-cloud/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "requestPath": "/homepage/blog/salesforce-service-documents-document-builder/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "requestPath": "/masterclass/revenue-cloud/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "requestPath": "/leistungen/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "requestPath": "/en/services/change-management-salesforce/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "requestPath": "/homepage/blog/salesforce-field-service-mobile-guided-voice/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "requestPath": "/homepage/blog/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    }
+  ],
+  "referers": [
+    {
+      "count": 340,
+      "dimensions": {
+        "refererHost": "www.fk-sd.de"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 60,
+      "dimensions": {
+        "refererHost": "fkramer690.github.io"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 50,
+      "dimensions": {
+        "refererHost": ""
+      },
+      "sum": {
+        "visits": 50
+      }
+    }
+  ]
+}
