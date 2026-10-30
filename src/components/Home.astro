@@ -76,7 +76,7 @@ const serviceIcons = ['architecture', 'change', 'pipeline', 'integration', 'team
         </div>
         </div>
         <figure class="hero-photo is-measured">
-          <Photo photo="06-portraet-halle-v02" lang={lang} widths={[360, 540, 720]} sizes="360px" />
+          <Photo photo="06-portraet-halle-v02" lang={lang} sizes="640px" />
           <span class="hm-line hm-top" aria-hidden="true"><span class="hm-dot"></span></span>
           <span class="hm-line hm-side" aria-hidden="true"></span>
           <span class="hm-cross" aria-hidden="true"></span>
@@ -190,7 +190,7 @@ const serviceIcons = ['architecture', 'change', 'pipeline', 'integration', 'team
           </ol>
           {t.references.items.map((r, i) => (
             <article class="rf-panel">
-              <Photo photo={refPhotos[i].photo} lang={lang} focus={refPhotos[i].focus} class="rf-photo" widths={[480, 860, 1200]} sizes="(max-width: 760px) calc(100vw - 32px), 860px" />
+              <Photo photo={refPhotos[i].photo} lang={lang} focus={refPhotos[i].focus} class="rf-photo" sizes="(max-width: 760px) calc(100vw - 32px), 860px" />
               <div class="rf-body">
                 <p class="ref-sector mono">{pad(i + 1)} · {r.sector}</p>
                 <h3>{r.title}</h3>
