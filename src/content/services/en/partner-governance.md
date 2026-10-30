@@ -55,6 +55,11 @@ blogTags: [partner governance, partnersteuerung, pull request review, vendor loc
 
 Partner governance on the client side is what keeps a Salesforce programme with several implementation partners in control. It means one set of standards, clear ownership for every object and process, one release process and someone who technically reviews each delivery before it moves on. Without it, every partner optimises its own scope, and the client pays for the conflicts between them. I take on this role as an independent architect, without ties to any vendor or partner.
 
+```partnerfluss architect
+without: Without an owner on the client side | Every partner delivers its part, conflicts only show in the org.
+with: With an architect on the client side | Every delivery runs through standards and review, one checked stream reaches the org.
+```
+
 ## What does this look like in a real programme?
 
 ```kennzahlen

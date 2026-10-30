@@ -55,6 +55,11 @@ blogTags: [partner governance, partnersteuerung, pull request review, vendor loc
 
 Partnersteuerung auf Kundenseite hält ein Salesforce-Programm mit mehreren Umsetzungspartnern unter Kontrolle. Dazu gehören gemeinsame Standards, klare Verantwortung für jedes Objekt und jeden Prozess, ein Release-Prozess und jemand, der jede Lieferung technisch prüft, bevor sie weitergeht. Ohne das optimiert jeder Partner seinen eigenen Bereich, und der Kunde bezahlt die Konflikte dazwischen. Diese Rolle übernehme ich als unabhängiger Architekt, ohne Bindung an Hersteller oder Partner.
 
+```partnerfluss architekt
+ohne: Ohne Verantwortung beim Kunden | Jeder Partner liefert seinen Teil, Konflikte zeigen sich erst in der Org.
+mit: Mit Architekt auf Kundenseite | Jede Lieferung läuft über Standards und Review, in der Org kommt ein geprüfter Strom an.
+```
+
 ## Wie sieht das in einem echten Programm aus?
 
 ```kennzahlen

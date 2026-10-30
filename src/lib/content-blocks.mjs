@@ -12,7 +12,7 @@ import { createHash } from 'node:crypto';
 import { existsSync } from 'node:fs';
 import { iconHtml } from './icons.mjs';
 
-export const blockNames = ['hinweis', 'praxis', 'kennzahlen', 'zeitleiste', 'ablauf', 'pro-contra', 'vertiefung', 'schritte', 'stufen', 'vergleich', 'hebel', 'eintrag', 'saeulen'];
+export const blockNames = ['hinweis', 'praxis', 'kennzahlen', 'zeitleiste', 'ablauf', 'pro-contra', 'vertiefung', 'schritte', 'stufen', 'vergleich', 'hebel', 'eintrag', 'saeulen', 'partnerfluss'];
 
 const labels = {
   de: {
@@ -190,6 +190,18 @@ export function parseCompare(content) {
   return cols;
 }
 
+// Partner flow: "ohne: Title | caption" and "mit: Title | caption" (EN "without:", "with:").
+export function parsePartnerFlow(content) {
+  const out = {};
+  for (const l of lines(content)) {
+    const k = keyLine(l.trim(), ['ohne', 'without', 'mit', 'with']);
+    if (!k) continue;
+    const [title, caption = ''] = k.value.split('|').map((x) => x.trim());
+    out[['ohne', 'without'].includes(k.key) ? 'without' : 'with'] = { title, caption };
+  }
+  return out;
+}
+
 // Diagram: "sf: A, B" / "erp: C" / "ext: D" assign nodes to systems; edges are
 // "A --> B", "A --Label--> B" (solid) and "A ..> B", "A ..Label..> B" (dashed).
 export function parseFlow(content) {
@@ -279,6 +291,11 @@ export function validateBlock(block) {
     between(rows.length, 2, 6, 'rows');
     if (rows.some((r) => !r.field || !r.value)) errs.push('eintrag: every row needs "Field | value"');
     if (rows.filter((r) => r.mark).length > 1) errs.push('eintrag: mark at most one row with *');
+  } else if (name === 'partnerfluss') {
+    const { without, with: withArch } = parsePartnerFlow(content);
+    if (!['architekt', 'architect', 'review'].includes(arg)) errs.push('partnerfluss: variant must be architekt (EN architect) or review (```partnerfluss review)');
+    if (!without?.title || !without?.caption) errs.push('partnerfluss: needs "ohne: Title | caption" (EN "without:")');
+    if (!withArch?.title || !withArch?.caption) errs.push('partnerfluss: needs "mit: Title | caption" (EN "with:")');
   } else if (name === 'vergleich') {
     const cols = parseCompare(content);
     if (cols.length !== 2 || cols[0].kind !== 'without' || cols[1].kind !== 'with') errs.push('vergleich: needs an "ohne: Title" column followed by a "mit: Title" column');
@@ -369,6 +386,47 @@ function sortKey(d) {
 
 const icon = { check: iconHtml('tick'), cross: iconHtml('cross') };
 
+// ---------- partner flow drawing (```partnerfluss) ----------
+// Two animated panels: without a central owner every partner delivers on its own,
+// crossing path into the org; with one, everything runs through the architect (or the
+// review) and arrives as one checked stream. Labels in IBM Plex Mono, checked by
+// scripts/check-graphics.mjs (class pf-drawing). Animation under "Partner flow" in
+// global.css; prefers-reduced-motion shows the still picture.
+const pfText = {
+  de: {
+    partners: ['Partner A', 'Partner B', 'Partner C', 'Interne IT'], org: ['Salesforce', 'Org'],
+    hub: { architekt: ['Architekt', 'Review · Standards'], review: ['Review', 'Tests · Standards'] },
+    without: 'Drei Partner und die interne IT liefern auf eigenen, sich kreuzenden Wegen in die Salesforce-Org. An den Kreuzungen entstehen Konflikte.',
+    with: { architekt: 'Alle Partner und die interne IT liefern über den Architekten. Von dort geht ein geprüfter Strom in die Salesforce-Org.', review: 'Alle Partner und die interne IT liefern über ein Review. Von dort geht ein geprüfter Strom in die Salesforce-Org.' },
+  },
+  en: {
+    partners: ['Partner A', 'Partner B', 'Partner C', 'Internal IT'], org: ['Salesforce', 'org'],
+    hub: { architekt: ['Architect', 'Review · standards'], review: ['Review', 'Tests · standards'] },
+    without: 'Three partners and the internal IT deliver into the Salesforce org on their own, crossing paths. Conflicts arise where they cross.',
+    with: { architekt: 'All partners and the internal IT deliver through the architect. From there one checked stream reaches the Salesforce org.', review: 'All partners and the internal IT deliver through a review. From there one checked stream reaches the Salesforce org.' },
+  },
+};
+
+function partnerFlowSvg(kind, arg, lang) {
+  const t = pfText[lang];
+  const variant = arg === 'review' ? 'review' : 'architekt';
+  const txt = (x, y, s, size = 13, extra = '') => `<text x="${x}" y="${y}" font-size="${size}" text-anchor="middle"${extra}>${escHtml(s)}</text>`;
+  const nodes = t.partners.map((p, i) => `<rect class="pf-node" x="6" y="${20 + 68 * i}" width="96" height="36" rx="6" />${txt(54, 42 + 68 * i, p)}`).join('');
+  const org = (cls) => `<rect class="${cls}" x="286" y="116" width="88" height="60" rx="8" />${txt(330, 142, t.org[0], 13, ' font-weight="600"')}${txt(330, 160, t.org[1], 13, ' font-weight="600"')}`;
+  if (kind === 'without') {
+    const paths = ['M102 38 L215 210 L286 162', 'M102 106 L185 50 L286 130', 'M102 174 L240 92 L286 150', 'M102 242 L200 150 L286 140']
+      .map((d, i) => `<path class="pf-path pf-march pf-m${i + 1}" d="${d}" />`).join('');
+    const warns = [[166, 136], [185, 164], [238, 93]]
+      .map(([x, y], i) => `<g class="pf-warn pf-w${i + 1}"><circle cx="${x}" cy="${y}" r="8" /><path d="M${x} ${y - 4} v4.5 M${x} ${y + 3.2} v0.3" /></g>`).join('');
+    const dots = ['pf-cA', 'pf-cC', 'pf-cD'].map((c) => `<circle class="pf-dot pf-dot-grey ${c}" cx="0" cy="0" r="4" />`).join('');
+    return `<svg class="pf-drawing" viewBox="0 0 380 290" role="img" aria-label="${escHtml(t.without)}">${paths}${nodes}${org('pf-org pf-org-warn')}${warns}${dots}</svg>`;
+  }
+  const [hub, sub] = t.hub[variant];
+  const lines = [[38, 134], [106, 140], [174, 152], [242, 158]].map(([y1, y2]) => `<path class="pf-path-on" d="M102 ${y1} L150 ${y2}" />`).join('');
+  const dots = ['pf-pA', 'pf-pB', 'pf-pC', 'pf-pD', 'pf-out'].map((c) => `<circle class="pf-dot ${c}" cx="0" cy="0" r="${c === 'pf-out' ? 5 : 4}" />`).join('');
+  return `<svg class="pf-drawing" viewBox="0 0 380 290" role="img" aria-label="${escHtml(t.with[variant])}">${lines}<path class="pf-main" d="M234 146 H286" />${nodes}<rect class="pf-hub-ping" x="150" y="122" width="84" height="48" rx="24" /><rect class="pf-hub" x="150" y="122" width="84" height="48" rx="24" />${txt(192, 150, hub, 13, ' font-weight="600" class="pf-hub-label"')}${txt(192, 210, sub, 11, ' class="pf-sub"')}${org('pf-org pf-org-ok')}<g class="pf-ok"><circle cx="366" cy="116" r="10" /><path d="M361 116 l3.5 3.5 l7 -7" /></g>${dots}</svg>`;
+}
+
 // HTML of one block. `readDiagram(hash)` returns the stored SVG or undefined.
 export function renderBlock(block, { lang, isExternal, readDiagram, today = new Date().toISOString().slice(0, 10) }) {
   const t = labels[lang];
@@ -432,6 +490,10 @@ export function renderBlock(block, { lang, isExternal, readDiagram, today = new 
   if (name === 'eintrag') {
     const { rows, note } = parseEntry(content);
     return `<div class="cb cb-entry"><p class="cb-entry-head"><span>${inline(arg, o)}</span><span>${t.entry}</span></p><dl>${rows.map((r) => `<div${r.mark ? ' class="cb-entry-mark"' : ''}><dt>${inline(r.field, o)}</dt><dd>${inline(r.value, o)}</dd></div>`).join('')}</dl>${note ? `<p class="cb-entry-note">${inline(note, o)}</p>` : ''}</div>`;
+  }
+  if (name === 'partnerfluss') {
+    const { without, with: withArch } = parsePartnerFlow(content);
+    return `<figure class="cb cb-partnerflow"><div class="cb-pf-col cb-pf-without"><p class="cb-pf-title">${inline(without.title, o)}</p>${partnerFlowSvg('without', arg, lang)}<p class="cb-pf-caption">${inline(without.caption, o)}</p></div><div class="cb-pf-col cb-pf-with"><p class="cb-pf-title">${inline(withArch.title, o)}</p>${partnerFlowSvg('with', arg, lang)}<p class="cb-pf-caption">${inline(withArch.caption, o)}</p></div></figure>`;
   }
   if (name === 'vergleich') {
     return `<div class="cb cb-compare">${parseCompare(content).map((c) => `<div class="cb-compare-col cb-compare-${c.kind}"><p class="cb-compare-title">${inline(c.title, o)}</p><ul>${c.items.map((i) => `<li>${c.kind === 'with' ? icon.check : icon.cross}<span>${inline(i, o)}</span></li>`).join('')}</ul></div>`).join('')}</div>`;
