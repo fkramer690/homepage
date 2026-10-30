@@ -754,6 +754,11 @@ export const de: Dict = {
     ctaTitle: '30 Minuten, kein Pitch',
     ctaText: 'Sie schildern Ihre Lage, ich sage ehrlich, ob und wie ich helfen kann.',
     phone: 'Oder direkt anrufen',
+    video: 'Video',
+    videoSeconds: 'Sek.',
+    videoWatch: 'Kurzfassung ansehen',
+    videoTranscript: 'Transkript lesen',
+    videoClose: 'Video schließen',
   },
   floating: {
     label: 'Kontakt',

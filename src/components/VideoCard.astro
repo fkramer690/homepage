@@ -1,0 +1,68 @@
+---
+// Short video of a blog article (frontmatter `video`, rules: docs/blog-guidelines.md, "Video").
+// part="card": small card with poster that opens the overlay; it sits in the side column
+// on wide screens (class video-card-side) and below the takeaways on narrow ones
+// (class video-card-inline). part="dialog": the overlay itself, once per page, with the
+// video (loaded only on play, no third party, no cookies) and its transcript.
+import type { Dict } from '../i18n/en';
+
+interface Props {
+  t: Dict;
+  part: 'card' | 'dialog';
+  video: { file: string; title: string; duration: number; transcript: string };
+  class?: string;
+}
+const { t, part, video, class: className } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const src = `${base}videos/${video.file}.mp4`;
+const poster = `${base}videos/${video.file}.jpg`;
+const label = `${t.side.video} · ${video.duration} ${t.side.videoSeconds}`;
+---
+{part === 'card' ? (
+  <button type="button" class:list={['video-card', className]} data-video-open aria-haspopup="dialog">
+    <span class="video-card-thumb"><img src={poster} alt="" width="72" height="128" loading="lazy" decoding="async" /></span>
+    <span class="video-card-text">
+      <span class="video-card-label mono">{label}</span>
+      <span class="video-card-title">{video.title}</span>
+      <span class="video-card-more mono">{t.side.videoWatch}</span>
+    </span>
+  </button>
+) : (
+  <dialog class="video-dialog" aria-label={video.title}>
+    <button type="button" class="video-dialog-close" data-video-close aria-label={t.side.videoClose}>✕</button>
+    <div class="video-dialog-body">
+      <video controls preload="none" playsinline poster={poster} width="1080" height="1920">
+        <source src={src} type="video/mp4" />
+      </video>
+      <div class="video-dialog-text">
+        <p class="video-card-label mono">{label}</p>
+        <p class="video-dialog-title">{video.title}</p>
+        <details class="video-dialog-transcript" open>
+          <summary>{t.side.videoTranscript}</summary>
+          <p>{video.transcript}</p>
+        </details>
+      </div>
+    </div>
+  </dialog>
+)}
+
+{part === 'dialog' && (
+  <script>
+    const dialog = document.querySelector<HTMLDialogElement>('.video-dialog');
+    const player = dialog?.querySelector('video');
+    if (dialog && player) {
+      document.querySelectorAll('[data-video-open]').forEach((btn) =>
+        btn.addEventListener('click', () => {
+          dialog.showModal();
+          player.play().catch(() => {});
+        }),
+      );
+      dialog.querySelector('[data-video-close]')?.addEventListener('click', () => dialog.close());
+      // A click on the dark backdrop closes the overlay.
+      dialog.addEventListener('click', (e) => { if (e.target === dialog) dialog.close(); });
+      dialog.addEventListener('close', () => player.pause());
+      // On narrow screens the transcript starts folded so the video fits.
+      if (matchMedia('(max-width: 700px)').matches) dialog.querySelector('details')?.removeAttribute('open');
+    }
+  </script>
+)}

@@ -23,6 +23,12 @@ faq:
     a: "Nein. Laut Salesforce bleiben die Preise für Bestandskunden auf bisherigen Editionen unverändert, und Flex Credits lassen sich separat kaufen. Die neuen Editionen bündeln Credits; das ändert die Rechnung bei der Vertragsverlängerung, nicht die technische Voraussetzung."
   - q: "Funktioniert Agentforce mit SAP oder proALPHA?"
     a: "Ja, wenn das ERP eine API anbietet. Salesforce dokumentiert einen Weg, bei dem eine MuleSoft-API in den API Catalog synchronisiert und zur Agenten-Aktion wird. Ohne API sind Dokumentenerkennung mit RPA oder der Systems Integration Agent Optionen, RPA bricht aber, wenn sich ERP-Masken ändern."
+video:
+  file: agentforce-ja-oder-nein-hersteller
+  title: "Die drei Fragen in 52 Sekunden"
+  duration: 52
+  uploadDate: 2026-10-30
+  transcript: "Lohnt sich Agentforce für Hersteller schon jetzt? Das entscheiden drei Fragen. Erstens: Gibt es genug Volumen? Ein Agent rechnet sich erst bei Tausenden ähnlichen Anfragen im Monat, zum Beispiel Händlerfragen zum Liefertermin. Zweitens: Sind die Daten sauber? Der Agent glaubt jedem Feld. Fehlt der Garantiebeginn, entscheidet er auf Lücken. Drittens: Kommt der Agent an das ERP-System? Auftragsstatus, Bestand und Preise stehen in SAP oder proALPHA. Ohne Schnittstelle kommt er nicht dran. Und was kostet das? Eine Aktion kostet 20 Flex Credits. Zum Listenpreis sind das rund 10 Cent. Sind alle drei Punkte erfüllt, dann starten Sie jetzt. Sonst schließen Sie zuerst die Lücken. Den ganzen Artikel finden Sie über den Link in der Beschreibung."
 draft: false
 ---
 
