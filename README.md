@@ -69,6 +69,7 @@ The repository root holds only project files (`package.json`, configs, `README.m
 | Explanatory graphics, photos, certification badges | `src/assets/blog/`, `src/assets/photos/`, `src/assets/certifications/` |
 | Icons | `src/icons/` |
 | Files served as they are (favicon, client logos, downloads) | `public/` |
+| Concept notes for reuse in other projects (not published) | `docs/konzepte/` |
 
 ## Local development
 
