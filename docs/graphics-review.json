@@ -1,7 +1,7 @@
 {
   "_doc": "Bewertung aller Grafiken, siehe docs/graphics-review.md. rating: 1 super/Vorlage, 2 okay, 3 Todo, null offen.",
   "entries": {
-    "block:ablauf": {"title": "Ablauf-Diagramm (Mermaid)", "proposal": 3, "rating": 3, "ratedOn": "2026-10-30", "todo": "docs/backlog.md G1"},
+    "block:ablauf": {"title": "Ablauf-Diagramm (Mermaid)", "proposal": 3, "rating": 3, "ratedOn": "2026-10-30", "todo": "docs/backlog.md G1 (erledigt 30.10.2026)"},
     "block:eintrag": {"title": "Eintrag (Entscheidungslog)", "proposal": 1, "rating": 1, "ratedOn": "2026-10-30"},
     "block:hebel": {"title": "Hebel-Karten", "proposal": 2, "rating": 1, "ratedOn": "2026-10-30"},
     "block:hinweis-achtung": {"title": "Hinweis: Achtung", "proposal": 2, "rating": 2, "ratedOn": "2026-10-30"},
