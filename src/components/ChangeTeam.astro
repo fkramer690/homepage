@@ -11,6 +11,7 @@ import { homeHref, localHref } from '../lib/paths';
 import { masterclassIndex } from '../lib/masterclass';
 import { julianePaths } from '../data/juliane-winterscheid';
 import { changeSection } from '../data/change-management';
+import { getAuthor } from '../lib/authors';
 
 interface Props {
   lang: 'en' | 'de';
@@ -18,7 +19,9 @@ interface Props {
 const { lang } = Astro.props;
 const c = changeSection[lang].team;
 const links = [`${homeHref(lang)}#about`, localHref(lang, julianePaths[lang]), masterclassIndex(lang, 'change-management')];
-const people = [[portrait], [julianePortrait], [julianePortrait, portrait]];
+const fabian = { src: portrait, name: getAuthor(lang, 'fabian').name };
+const juliane = { src: julianePortrait, name: getAuthor(lang, 'juliane').name };
+const people = [[fabian], [juliane], [juliane, fabian]];
 ---
 <section class="service-block" aria-labelledby="team">
   <p class="label mono">{c.label}</p>
@@ -30,7 +33,7 @@ const people = [[portrait], [julianePortrait], [julianePortrait, portrait]];
         <a href={links[i]}>
           <span class="card-top">
             <Icon name={p.icon} class="card-icon" />
-            <span class="pillar-people">{people[i].map((img) => <Image src={img} alt="" width={44} height={44} densities={[1, 2]} />)}</span>
+            <span class="pillar-people" aria-hidden="true">{people[i].map((img) => <Image src={img.src} alt={img.name} width={44} height={44} densities={[1, 2]} />)}</span>
           </span>
           <span class="pillar-who mono">{p.who}</span>
           <h3>{p.title}</h3>

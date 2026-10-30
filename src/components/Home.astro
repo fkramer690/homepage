@@ -221,7 +221,7 @@ const serviceIcons = ['architecture', 'change', 'pipeline', 'integration', 'team
                     width={Math.round(logoHeight(c) * c.ratio)}
                     height={logoHeight(c)}
                     src={`${import.meta.env.BASE_URL}clients/${c.file}`}
-                    alt={i >= clients.length ? '' : c.name}
+                    alt={c.name}
                     loading="lazy"
                     decoding="async"
                   />

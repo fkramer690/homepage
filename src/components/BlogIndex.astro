@@ -79,7 +79,7 @@ const schema = {
             <ul class="blog-filter-list">
               <li><button type="button" class="filter-item" data-author="all" aria-pressed="true"><span class="filter-media filter-all"><Icon name="team" /></span><span class="filter-label">{t.blog.filterAuthorAll}</span><span class="filter-count">{posts.length}</span></button></li>
               {authorFilters.map((a) => (
-                <li><button type="button" class="filter-item" data-author={a.id} aria-pressed="false"><Image src={a.img} alt="" width={32} height={32} densities={[1, 2]} class="filter-media filter-avatar" /><span class="filter-label">{a.name}<small>{a.focus}</small></span><span class="filter-count" data-count-author={a.id}>{a.count}</span></button></li>
+                <li><button type="button" class="filter-item" data-author={a.id} aria-pressed="false"><Image src={a.img} alt={a.name} aria-hidden="true" width={32} height={32} densities={[1, 2]} class="filter-media filter-avatar" /><span class="filter-label">{a.name}<small>{a.focus}</small></span><span class="filter-count" data-count-author={a.id}>{a.count}</span></button></li>
               ))}
             </ul>
             <p class="blog-filter-head mono">{t.blog.filterTopic}</p>
@@ -117,7 +117,7 @@ const schema = {
                   <span class="post-category mono">{post.data.categories.map((c) => categories[c][lang]).join(' · ')}</span>
                   <span class="post-title">{post.data.title}</span>
                   <span class="post-desc">{post.data.description}</span>
-                  <span class="post-byline"><span class="post-byline-faces">{authorsOf(post).map((a) => <Image src={authorImg[a]} alt="" width={28} height={28} densities={[1, 2]} />)}</span>{authorsOf(post).map((a) => getAuthor(lang, a).name).join(' & ')}</span>
+                  <span class="post-byline"><span class="post-byline-faces" aria-hidden="true">{authorsOf(post).map((a) => <Image src={authorImg[a]} alt={getAuthor(lang, a).name} width={28} height={28} densities={[1, 2]} />)}</span>{authorsOf(post).map((a) => getAuthor(lang, a).name).join(' & ')}</span>
                 </span>
               </a>
             </li>

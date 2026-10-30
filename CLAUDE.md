@@ -57,3 +57,7 @@ On German pages the FAQ section is always called "Häufig gestellte Fragen" (Eng
 ## Repository root
 
 Only project files live in the repository root; `scripts/check-root.mjs` fails the build on anything else. Card drawing previews go to `previews/` (git-ignored) via `npm run cards:export`; where every other kind of file belongs is listed under "Where files go" in README.md.
+
+## Image alt texts
+
+Every `<img>` has a real, non-empty alt text in the page language; Bing reports empty ones as missing. For decorative images put `aria-hidden="true"` on the wrapper instead of `alt=""`. `scripts/check-images.mjs` runs after `astro build` and enforces this; never weaken it.

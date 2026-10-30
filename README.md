@@ -57,6 +57,8 @@ Rule: every external link opens in a new tab. Links in Markdown get `target="_bl
 
 Page titles: `scripts/check-titles.mjs` runs after the sitemap check and fails if an indexable page has no `<title>`, a title longer than 60 characters, or the same title as another page (`npm run check:titles`). Articles, chapters and most pages add ` | FK Solution Design` only when it still fits in 60 characters, so the keyword stays at the front.
 
+Image alt texts: `scripts/check-images.mjs` runs after the title check and fails if any `<img>` has no or an empty alt text (`npm run check:images`). Bing Site Scan reports empty alt texts as missing, and Astro's HTML compression turns `alt=""` into a bare `alt`, so decorative images (logo duplicates, small portraits next to a name) also get a real alt text and are hidden from screen readers with `aria-hidden` on their wrapper.
+
 ## Where files go
 
 The repository root holds only project files (`package.json`, configs, `README.md`, `CLAUDE.md`). `scripts/check-root.mjs` runs first in `npm run build` and fails on anything else there, such as an exported SVG (`npm run check:root`).
