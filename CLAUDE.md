@@ -8,7 +8,7 @@ Every blog article must follow `docs/blog-guidelines.md`: best-practice structur
 
 Every article page has the same fixed structure: takeaways, article body, collapsible FAQ, author box (`src/components/AuthorBox.astro`), related articles and the contact section ("Book a call" plus the contact form). All of it comes from `src/components/BlogPost.astro`; a Markdown file only provides the body and frontmatter. Change shared parts in the components, never per article.
 
-Articles and masterclass chapters loosen up their text with content blocks from the library in `docs/content-blocks.md` (```hinweis, ```praxis, ```kennzahlen, ```zeitleiste, ```ablauf, ```pro-contra, ```vertiefung, ```schritte, ```stufen, ```vergleich, ```hebel, ```eintrag, ```saeulen; rules under "Content blocks" in `docs/blog-guidelines.md`). They render through `src/lib/content-blocks-plugin.mjs`; the build check enforces their use. Flow diagrams are rendered once with `node scripts/render-diagrams.mjs`, which fails when a label does not fit its box.
+Articles and masterclass chapters loosen up their text with content blocks from the library in `docs/content-blocks.md` (```hinweis, ```praxis, ```kennzahlen, ```zeitleiste, ```ablauf, ```pro-contra, ```vertiefung, ```schritte, ```stufen, ```vergleich, ```hebel, ```eintrag, ```saeulen, ```partnerfluss, ```tabelle, ```staerken-grenzen; rules under "Content blocks" in `docs/blog-guidelines.md`). They render through `src/lib/content-blocks-plugin.mjs`; the build check enforces their use. Flow diagrams are rendered once with `node scripts/render-diagrams.mjs`, which fails when a label does not fit its box.
 
 ## Two pillars
 

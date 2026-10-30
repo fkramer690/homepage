@@ -67,8 +67,19 @@ The strength of Document Builder is the moment at the customer's machine:
 - **Related records.** Tables show up to 1,000 related records, for example the spare parts used or the work steps.
 - **Translations.** Templates can be translated into many languages, German included. For manufacturers with service teams in several countries that saves separate templates per language.
 
-![Document Builder in Salesforce Field Service: strong for the service report on site with signature, photos, offline creation in the mobile app and German translation, included in the Field Service licence with 250 documents per user per month. Limits: PDF only and synchronous only, only work order, work order line item and service appointment, Android only service appointment, maximum 50 pages and 100 MB, no documented conditional logic. For inspection reports, machine files, quotes and batch runs use Salesforce Document Generation or an AppExchange tool.](../../../assets/blog/service-documents-limits-en.png)
-
+```staerken-grenzen
+title: Document Builder: strong for the service report on site
++ Signature | customer and technician, also offline in the mobile app
++ Photos | image galleries, e.g. before and after the repair
++ German translation | one template for several countries
++ Included | in the Field Service licence, 250 documents per user per month *
+- Format | PDF only and synchronous only
+- Objects | only work order, work order line item and service appointment
+- Android | only service appointment
+- Size | maximum 50 pages and 100 MB
+- Logic | no documented conditional logic
+better: For inspection reports, machine files, quotes and batch runs: Salesforce Document Generation or an AppExchange tool.
+```
 ## Where are the limits of Document Builder?
 
 The [Field Service limits page](https://help.salesforce.com/s/articleView?id=service.fs_limits.htm&language=en_US&type=5) lists them. The ones that matter in manufacturing projects:

@@ -67,8 +67,19 @@ Die Stärke des Document Builder ist der Moment an der Maschine des Kunden:
 - **Verknüpfte Datensätze.** Tabellen zeigen bis zu 1.000 verknüpfte Datensätze, etwa verbaute Ersatzteile oder Arbeitsschritte.
 - **Übersetzungen.** Vorlagen lassen sich in viele Sprachen übersetzen, Deutsch inklusive. Für Hersteller mit Serviceteams in mehreren Ländern spart das eigene Vorlagen pro Sprache.
 
-![Document Builder in Salesforce Field Service: stark für den Servicebericht vor Ort mit Unterschrift, Fotos, Offline-Erstellung in der mobilen App und deutscher Übersetzung, enthalten in der Field-Service-Lizenz mit 250 Dokumenten pro Nutzer und Monat. Grenzen: nur PDF und nur synchron, nur Arbeitsauftrag, Auftragsposition und Servicetermin, unter Android nur Servicetermin, maximal 50 Seiten und 100 MB, keine dokumentierte Bedingungslogik. Für Prüfprotokolle, Maschinenakten, Angebote und Massenläufe Salesforce Document Generation oder ein AppExchange-Tool.](../../../assets/blog/service-documents-limits-de.png)
-
+```staerken-grenzen
+titel: Document Builder: stark für den Servicebericht vor Ort
++ Unterschrift | Kunde und Techniker, auch offline in der mobilen App
++ Fotos | Bildergalerien, z. B. vor und nach der Reparatur
++ Deutsche Übersetzung | eine Vorlage für mehrere Länder
++ Enthalten | in der Field-Service-Lizenz, 250 Dokumente pro Nutzer und Monat *
+- Format | nur PDF und nur synchron
+- Objekte | nur Arbeitsauftrag, Auftragsposition und Servicetermin
+- Android | nur Servicetermin
+- Umfang | maximal 50 Seiten und 100 MB
+- Logik | keine dokumentierte Bedingungslogik
+besser: Für Prüfprotokolle, Maschinenakten, Angebote und Massenläufe: Salesforce Document Generation oder ein AppExchange-Tool.
+```
 ## Wo liegen die Grenzen des Document Builder?
 
 Die [Übersicht der Field-Service-Limits](https://help.salesforce.com/s/articleView?id=service.fs_limits.htm&language=en_US&type=5) listet sie auf. Diese zählen in Projekten bei Herstellern:

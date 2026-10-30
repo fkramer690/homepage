@@ -131,7 +131,7 @@ Aus Fabians Bewertung: alle Grafiken mit 3 und alle mit einer Notiz, die einen A
 | G2 | Content-Block Schritte neu gestalten | 3 | Thread |
 | G3 | Content-Block Stufen (Kacheln) neu gestalten | 3 | Thread |
 | G4 | Vorschaubilder: Standardbild auf Deutsch und Englisch, Artikelbilder mit Logo-Zeile „FK Solution Design / Salesforce Architecture“ | 3 und 1 | Thread |
-| G5 | Erklärgrafiken neu: integration-leading-system, object-ownership-matrix, sfdx-hardis-vs-commercial, service-documents-limits | 3 und 2 | Thread |
+| G5 | Erklärgrafiken neu: integration-leading-system, object-ownership-matrix, sfdx-hardis-vs-commercial, service-documents-limits | 3 und 2 | Erledigt 30.10.2026: helle HTML-Bausteine `tabelle` (1A, 2A, 3A) und `staerken-grenzen` (4B), PNGs entfernt |
 | G6 | Erklärgrafiken animieren: well-architected-mapping, devops-pipeline, which-clouds, sfdx-hardis-training-levels (dort auch Kontrast, Level 3) | 3, 1 und 2 | Thread |
 | G7 | Masterclass-Kopfzeichnungen und Treppe (Säulen) animieren | 2 und 1 | Thread |
 | G8 | Quick Wins: Zertifikatsgrafik „Schnittstellen“ läuft aus der Box, graue Boxen der Document-Builder-Grafik niedriger, Orange in winter-27-org-display ersetzen (gehört nicht zur Palette) | 2 | Thread |

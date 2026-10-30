@@ -64,8 +64,15 @@ Kommerzielle Tools wie Gearset oder Copado haben ihre Berechtigung. Sie bieten e
 - **Wissen.** sfdx-hardis setzt voraus, dass das Team Git, Branches und Pipelines zumindest grundlegend versteht. Eine kommerzielle Plattform versteckt mehr davon. Die VS-Code-Erweiterung schließt für Admins einen großen Teil dieser Lücke, aber nicht alles.
 - **Support.** Open Source heißt Community-Support oder bezahlte Beratung, keine Hersteller-Hotline. Für die meisten Enterprise-Teams, mit denen ich arbeite, ist das in Ordnung, solange mindestens eine interne Person das Setup verantwortet.
 
-![Vergleich von sfdx-hardis mit kommerziellen Plattformen wie Gearset oder Copado: sfdx-hardis hat keine Lizenzgebühren, hält den Prozess im Repository und in der Pipeline-Konfiguration des Kunden in einfachen Dateien, setzt Git-Grundlagen voraus, wobei die VS-Code-Erweiterung für Admins einen großen Teil der Lücke schließt, und setzt auf Community-Support oder bezahlte Beratung. Kommerzielle Plattformen werden meist pro Nutzer und Jahr abgerechnet, halten einen Teil des Prozesses im Produkt des Herstellers, verstecken mehr von Git hinter einer verwalteten Weboberfläche und bieten Herstellersupport. Kein Tool passt für jedes Team: früh wählen, sauber begründen und für jeden Partner verbindlich machen.](../../../assets/blog/sfdx-hardis-vs-commercial-de.png)
-
+```tabelle
+titel: sfdx-hardis im Vergleich mit kommerziellen Plattformen
+spalten: | sfdx-hardis * | Kommerzielle Plattformen wie Gearset oder Copado ~ Gearset, Copado und Co.
+Lizenzkosten | Keine Lizenzgebühren | Meist pro Nutzer und Jahr abgerechnet
+Wo der Prozess liegt | Im Repository und in der Pipeline-Konfiguration des Kunden, in einfachen Dateien | Teilweise im Produkt des Herstellers
+Wissen | Git-Grundlagen nötig. Die VS-Code-Erweiterung schließt für Admins einen großen Teil der Lücke | Versteckt mehr von Git hinter einer verwalteten Weboberfläche
+Support | Community-Support oder bezahlte Beratung | Herstellersupport
+fazit: Kein Tool passt für jedes Team. Früh wählen, sauber begründen, für jeden Partner verbindlich machen.
+```
 Das DevOps Center von Salesforce ist eine weitere kostenlose Option. Es ist ein guter Einstieg für Teams, die vor allem klicken, deckt aber weniger von Pipeline, Monitoring und Dokumentation ab. Den ausführlichen Vergleich, inklusive der unterstützten Git-Plattformen, finden Sie in [sfdx-hardis oder DevOps Center](../sfdx-hardis-oder-devops-center-vergleich/).
 
 Wichtig ist mir dabei: Es gibt kein Tool, das für jedes Team richtig ist. Entscheidend ist, dass die Wahl früh getroffen, sauber begründet und dann für alle Beteiligten verbindlich wird, auch für jeden Partner. Ein Programm, in dem jeder Partner sein eigenes Werkzeug mitbringt, hat am Ende mehrere Release-Prozesse und damit keinen.
