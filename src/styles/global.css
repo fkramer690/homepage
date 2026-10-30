@@ -2386,4 +2386,71 @@ p.post-series-note { margin: 0.6em 0 0; font-size: 0.95rem; }
 @media (prefers-reduced-motion: reduce) {
   .cb-explain * { transition: none !important; }
 }
+/* Control centre (```steuerzentrale), light like the chain: two sides, each with its control
+   centre (cyan frame, stages as pills) and the two boxes it serves below. Motion (loops like
+   the partner flow): the stages light up one after another, then a dot runs down each link
+   and the box it reaches lights up. Reduced motion: the still picture. */
+.cz-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+.cz-col { display: grid; align-content: start; padding: 16px; border: 1px solid var(--line); border-radius: var(--radius); background-color: #fbfbfc; background-image: linear-gradient(rgba(0, 0, 0, 0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 0, 0, 0.035) 1px, transparent 1px); background-size: 24px 24px; hyphens: auto; overflow-wrap: break-word; }
+.prose .cz-name { margin: 0 0 10px; font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--anthracite); }
+.cz-role { display: block; font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-2); }
+.cb-control strong, .cb-iceberg strong { display: block; font-weight: 600; line-height: 1.3; color: var(--anthracite); }
+.cb-control small, .cb-iceberg small { display: block; margin-top: 3px; font-size: 0.78rem; line-height: 1.4; color: var(--text-2); }
+.cz-ctrl { padding: 12px 14px 14px; border: 1.5px solid var(--cyan); border-radius: 8px; background: var(--white); box-shadow: inset 0 3px 0 var(--cyan); }
+.cz-ctrl .cz-role { color: var(--cyan-dark); }
+.cz-ctrl strong, .cz-box strong { margin-top: 2px; font-size: 0.95rem; }
+.prose .cz-stages { list-style: none; margin: 10px 0 0; padding: 0; display: grid; grid-template-columns: repeat(var(--n), minmax(0, 1fr)); gap: 6px; }
+.prose .cz-stages li { position: relative; margin: 0; padding: 5px 4px; border: 1px solid var(--cyan); border-radius: 999px; background: #eef8fd; text-align: center; font-family: var(--mono); font-size: 0.68rem; line-height: 1.3; color: var(--cyan-dark); hyphens: none; }
+.cz-stages li + li::before { content: ''; position: absolute; left: -7px; top: 50%; width: 6px; border-top: 1.5px solid var(--cyan); }
+.cz-links, .cz-boxes { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.cz-links { height: 46px; }
+.cz-links span { position: relative; display: flex; align-items: center; justify-content: center; }
+.cz-links span::before { content: ''; position: absolute; top: 0; bottom: 0; left: 50%; border-left: 1.5px dashed #a4a6aa; }
+.cz-links b { position: relative; z-index: 1; padding: 2px 8px; border: 1px solid var(--line); border-radius: 999px; background: var(--white); font-family: var(--mono); font-size: 0.66rem; font-weight: 400; color: var(--text-2); white-space: nowrap; }
+.cz-links i { position: absolute; z-index: 2; left: calc(50% - 4px); top: 0; width: 9px; height: 9px; border-radius: 50%; background: var(--cyan); opacity: 0; }
+.cz-box { padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--white); box-shadow: inset 0 3px 0 var(--anthracite); }
+.prose .cz-cap { margin-top: 12px; font-size: 0.88rem; line-height: 1.5; color: var(--text-2); }
+.cz-stages li { animation: cz-stage 6s ease-in-out infinite; }
+.cz-stages li:nth-child(2) { animation-delay: 0.7s; }
+.cz-stages li:nth-child(3) { animation-delay: 1.4s; }
+.cz-stages li:nth-child(4) { animation-delay: 2.1s; }
+.cz-links i { animation: cz-drop 6s ease-in infinite 2.2s; }
+.cz-links span:nth-child(2) i { animation-delay: 2.6s; }
+.cz-box { animation: cz-hit 6s ease-out infinite 2.7s; }
+.cz-box + .cz-box { animation-delay: 3.1s; }
+@keyframes cz-stage { 0%, 100% { background: #eef8fd; color: var(--cyan-dark); } 6%, 40% { background: var(--cyan); color: var(--white); } 55% { background: #eef8fd; color: var(--cyan-dark); } }
+@keyframes cz-drop { 0% { top: 0; opacity: 1; } 12% { top: calc(100% - 9px); opacity: 1; } 14%, 100% { top: calc(100% - 9px); opacity: 0; } }
+@keyframes cz-hit { 0%, 100% { border-color: var(--line); box-shadow: inset 0 3px 0 var(--anthracite); } 4%, 22% { border-color: var(--cyan); box-shadow: inset 0 3px 0 var(--cyan), 0 0 0 3px #d6eefa; } }
+/* Iceberg (```eisberg): the visible item above a dashed waterline, below it the items grow
+   wider down to the biggest one (anthracite). Builds once when it scrolls into view
+   (src/components/BlockMotion.astro sets js-motion and is-visible); otherwise the still picture. */
+.cz-sea { display: grid; justify-items: center; padding-top: 22px; overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius); background-color: #fbfbfc; background-image: linear-gradient(rgba(0, 0, 0, 0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 0, 0, 0.035) 1px, transparent 1px); background-size: 24px 24px; hyphens: auto; overflow-wrap: break-word; }
+.cz-tip { width: min(260px, 70%); padding: 10px 14px; border: 1.5px solid var(--cyan); border-radius: 8px; background: var(--white); text-align: center; }
+.cz-tip .cz-role { color: var(--cyan-dark); }
+.cz-tip strong { font-size: 1.15rem; }
+.cz-under { width: 100%; margin-top: 18px; padding: 0 18px 18px; background: rgba(27, 161, 226, 0.07); border-top: 1.5px dashed var(--cyan); }
+.cz-water { display: block; width: fit-content; margin: -0.8em 0 12px; padding: 0 8px; border-radius: 4px; background: #f3f9fd; font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--cyan-dark); }
+.prose .cz-ice { list-style: none; margin: 0; padding: 0; display: grid; justify-items: center; gap: 8px; }
+.prose .cz-ice li { margin: 0; width: var(--w); display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 10px; align-items: center; padding: 10px 14px; border: 1px solid var(--line); border-radius: 8px; background: var(--white); box-shadow: inset 0 3px 0 var(--anthracite); }
+.cz-ice strong { font-size: 0.92rem; }
+.cz-ice small { grid-column: 1; }
+.cz-ice b { grid-column: 2; grid-row: 1 / span 2; padding: 3px 9px; border: 1px solid var(--line); border-radius: 999px; font-family: var(--mono); font-size: 0.64rem; font-weight: 400; color: var(--text-2); white-space: nowrap; }
+.prose .cz-ice li.cz-big { padding: 16px; border-color: var(--anthracite); background: var(--anthracite); box-shadow: inset 0 3px 0 var(--cyan); }
+.cz-ice .cz-big strong { font-size: 1rem; color: var(--white); }
+.cz-ice .cz-big small { color: #c9ccd0; }
+.cz-ice .cz-big b { border-color: var(--cyan); background: var(--cyan); color: var(--white); }
+.cb-iceberg .cx-note { margin-top: 12px; padding: 10px 14px; border: 1px dashed #c9ccd0; border-radius: 8px; font-family: var(--mono); font-size: 0.78rem; line-height: 1.5; color: var(--text-2); }
+.cb-iceberg .cx-note strong { display: inline; font-weight: 500; color: var(--cyan-dark); }
+.cb-iceberg.js-motion:not(.is-visible) :is(.cz-tip, .cz-under, .cz-ice li) { opacity: 0; }
+.cb-iceberg.is-visible .cz-tip { animation: cb-rise 0.7s ease-out 0.2s backwards; }
+.cb-iceberg.is-visible .cz-under { animation: cb-fade 1s ease-out 0.9s backwards; }
+.cb-iceberg.is-visible .cz-ice li { animation: cz-sink 0.8s ease-out backwards; animation-delay: calc(2s + var(--i) * 0.9s); }
+@keyframes cz-sink { from { opacity: 0; transform: translateY(-18px) scaleX(0.6); } }
+@media (max-width: 640px) {
+  .prose .cz-ice li { width: 100%; grid-template-columns: minmax(0, 1fr); }
+  .cz-ice b { grid-column: 1; grid-row: auto; justify-self: start; margin-top: 6px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cb-control *, .cb-iceberg * { animation: none !important; }
+}
 .rc-cv-note { margin: 0.9em 0 0; font-size: 0.85rem; color: rgba(255, 255, 255, 0.65); max-width: 60ch; }

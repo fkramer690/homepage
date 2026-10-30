@@ -13,6 +13,8 @@
     "block:partnerfluss": {"title": "Partnerfluss (animiert): ohne / mit Architekt", "proposal": 1, "rating": 1, "ratedOn": "2026-10-30"},
     "block:pipeline": {"title": "Release-Pipeline mit Hotfix-Lauf, animiert (ersetzt PNG devops-pipeline)", "proposal": 1, "rating": null, "note": "G6 erledigt: Fabian 2026-10-30 zum Entwurf „sehr geil“, Look A. Alte PNG war mit 1 bewertet, Notiz „super. kann man aber auch gut animieren“", "todo": "docs/backlog.md G6 erledigt"},
     "block:prozess": {"title": "Prozess in Spuren (Personen, Agent, Pipeline) mit Toren und Jira-Spalte, eine Grafik pro Phase, animiert, hell", "proposal": 1, "rating": null, "note": "Artikel KI-nativer Delivery-Prozess (30.10.2026). Runde 3 nach Fabians Feedback: Light Mode im Stil von Tabelle und Entscheidungslog, Jira-Spalte als eigene Spalte, drei Phasenbilder"},
+    "block:steuerzentrale": {"title": "Steuerzentrale: zwei Seiten mit Steuerzentrale und Zielen, animiert, hell", "proposal": 1, "rating": null, "note": "Fabian wählte am 2026-10-30 die Mockups 1 bis 4 und 6 für den sfdx-hardis-Vergleich"},
+    "block:eisberg": {"title": "Eisberg: sichtbare Lizenz, darunter die echten Kosten, animiert, hell", "proposal": 1, "rating": null, "note": "Fabian wählte am 2026-10-30 Mockup 6 statt Entscheidungspfad"},
     "block:kette": {"title": "Rückverfolgungskette, animiert, hell", "proposal": 1, "rating": null, "note": "aus dem Prozess-Block herausgelöst auf Fabians Wunsch (30.10.2026)"},
     "block:praxis": {"title": "Aus meiner Praxis", "proposal": 2, "rating": 2, "ratedOn": "2026-10-30"},
     "block:pro-contra": {"title": "Pro-Contra", "proposal": 2, "rating": 2, "ratedOn": "2026-10-30"},
