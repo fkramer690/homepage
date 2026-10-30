@@ -243,7 +243,11 @@ const serviceIcons = ['architecture', 'change', 'pipeline', 'integration', 'team
             {masterclasses.map((mc) => (
               <li>
                 <a href={mc.href}>
-                  <span class="mc-home-name">{mcTexts.homeNames[mc.id]}</span>
+                  <Icon name={mc.icon} class="mc-home-icon" />
+                  <span class="mc-home-text">
+                    <span class="mc-home-name">{mc.shortName}</span>
+                    <span class="mc-home-topics">{mcTexts.homeTopics[mc.id]}</span>
+                  </span>
                   <span class="mc-home-meta mono">{mcTexts.chapters.replace('{n}', String(mc.chapters))}</span>
                   <span class="mc-home-arrow" aria-hidden="true">→</span>
                 </a>

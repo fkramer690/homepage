@@ -16,7 +16,7 @@ export interface Client {
 }
 
 // Height in px on desktop for a logo of this shape; mobile scales it down in CSS.
-export const logoHeight = (c: Client) => Math.round(Math.min(52, 66 / Math.sqrt(c.ratio)) * (c.weight ?? 1));
+export const logoHeight = (c: Client) => Math.round(Math.min(68, 86 / Math.sqrt(c.ratio)) * (c.weight ?? 1));
 
 export const clients: Client[] = [
   { name: 'Statkraft', file: 'statkraft.svg', ratio: 4.16 },

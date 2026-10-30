@@ -747,7 +747,8 @@ export const en = {
     homeLabel: 'Masterclasses',
     homeTitle: 'Knowledge to read up on, chapter by chapter',
     homeText: 'Seven masterclasses for decision makers at manufacturing companies, free to read in English and German.',
-    // Short names for the compact list on the start page, keyed by course id.
+    // Short names and topic lines for the list on the start page, keyed by course id.
+    homeTopics: { ai: 'Agentforce, Data Cloud, licences', devops: 'Pipelines, releases, sfdx-hardis', 'manufacturing-cloud': 'Run-rate, forecasts, agreements', 'revenue-cloud': 'Quotes, pricing, contracts', 'b2b-commerce': 'Dealer portal, orders, ERP', 'field-service': 'Scheduling, mobile app, reports', 'change-management': 'Adoption, key users, roll-out' },
     homeNames: { ai: 'AI & Agentforce', devops: 'DevOps & release management', 'manufacturing-cloud': 'Manufacturing Cloud', 'revenue-cloud': 'Revenue Cloud', 'b2b-commerce': 'B2B Commerce', 'field-service': 'Field Service', 'change-management': 'Change management' },
     homeAll: 'All masterclasses at a glance',
   },

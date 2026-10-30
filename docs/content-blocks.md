@@ -100,7 +100,7 @@ Produktkatalog, Preisprozeduren und Konfiguratorregeln liegen in Revenue Cloud z
 
 ## 8. Schritte (steps)
 
-Three to six phases of a real sequence: `Title | duration · owner` (the part after `|` is optional), then the description on an indented line.
+Three to six phases of a real sequence: `Title | duration · owner` (the part after `|` is optional), then the description on an indented line. Look (Fabian chose it 2026-10-30): the titles sit in one band of arrow heads whose cyan gets stronger towards the last step; below each arrow a cyan ring with the number, the duration line in mono and the text, centred, with clear space between the columns and German hyphenation. On mobile the arrows point downwards with ring and text below. Keep each description short (one or two sentences), because on desktop it stands in a narrow column.
 
 ````
 ```schritte
