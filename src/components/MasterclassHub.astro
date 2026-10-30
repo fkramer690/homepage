@@ -144,7 +144,7 @@ const schema = {
         </div>
       </div>
       {photo ? (
-      <figure class="mc-figure hero-photo"><Photo photo={photo} lang={lang} eager widths={[480, 720, 960]} sizes="(max-width: 900px) calc(100vw - 32px), 500px" /></figure>
+      <figure class="mc-figure hero-photo"><Photo photo={photo} lang={lang} eager sizes="(max-width: 900px) calc(100vw - 32px), 500px" /></figure>
       ) : (
       <figure class="mc-figure">
         <svg class="mc-drawing" viewBox={`0 0 ${W} ${H}`} role="img" aria-label={figureLabel} style={`--n: ${stepCount}`}>
