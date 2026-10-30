@@ -26,6 +26,7 @@ export const recruiters = {
     ctaPrimary: 'Anfrage schicken',
     ctaSecondary: 'Wie ich arbeite',
     ctaCv: 'Lebenslauf (PDF, Englisch)',
+    cvNote: 'Hier liegt immer die aktuelle Fassung meines Lebenslaufs. Bitte reichen Sie ältere Versionen nicht mehr bei Kunden ein.',
     promises: ['Antwort in 1 Werktag', '1 Recruiter pro Anfrage', 'Einreichung nur mit Freigabe'],
     portraitAlt: 'Porträt von Fabian Kramer',
     facts: [
@@ -135,6 +136,7 @@ export const recruiters = {
     ctaPrimary: 'Send a request',
     ctaSecondary: 'How I work',
     ctaCv: 'CV (PDF)',
+    cvNote: 'This is always the current version of my CV. Please do not submit older versions to clients.',
     promises: ['Answer within 1 working day', '1 recruiter per request', 'Submission only with approval'],
     portraitAlt: 'Portrait of Fabian Kramer',
     facts: [
