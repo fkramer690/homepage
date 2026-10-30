@@ -157,6 +157,22 @@ a second filter by author next to the topic). Built in `src/components/BlogIndex
 - Below 960px the column becomes a folded "Filter" box above the grid.
 - Fits: overviews with many items and two or more filter dimensions.
 
+## Search bar above the articles (blog overview)
+
+Chosen 2026-10-30 for `/blog/` and `/en/blog/` (variant B of three: side-column
+field, bar above the articles, full-text result list). Built in
+`src/components/BlogIndex.astro`, next to the filter side column.
+
+- Above the article column a 54px search field (`search` icon, "/" shortcut hint),
+  below it "Oft gesucht" chips with fixed terms from `t.blog.searchPopularTerms`
+  and, while searching, "N Treffer für „…“ × Suche leeren".
+- Searches title, description, tags and topic names, every word must match. Hits
+  are marked in the card title and description; no wide card while searching.
+- Combines with author and topic: the side-column counts follow the search. The
+  query sits in `?q=`, the filters stay in the hash.
+- Below 960px the bar sits above the folded "Filter" box.
+- Fits: overviews with enough items that people look for a term, not a category.
+
 ## Two authors
 
 Chosen 2026-10-29 (box variant C, card variant 1 of three each) for articles with
