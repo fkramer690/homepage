@@ -127,7 +127,7 @@ Aus Fabians Bewertung: alle Grafiken mit 3 und alle mit einer Notiz, die einen A
 
 | # | Thema | Bewertung | Status |
 |---|---|---|---|
-| G1 | Ablauf-Diagramme: Kantenbeschriftung liegt auf der Linie, viel Leerraum | 3 | Thread |
+| G1 | Ablauf-Diagramme: Kantenbeschriftung liegt auf der Linie, viel Leerraum | 3 | erledigt 30.10.2026 (Variante A: Beschriftung als Schild, kompakter, Handy von oben nach unten) |
 | G2 | Content-Block Schritte neu gestalten | 3 | Thread |
 | G3 | Content-Block Stufen (Kacheln) neu gestalten | 3 | Erledigt 30.10.2026: Variante A Pfeilkette |
 | G4 | Vorschaubilder: Standardbild auf Deutsch und Englisch, Artikelbilder mit Logo-Zeile „FK Solution Design / Salesforce Architecture“ | 3 und 1 | Erledigt: Logo-Zeile auf allen Vorschaubildern, Rubrik oben rechts, Standardbild je Sprache aus dem Hero-Text |

@@ -389,7 +389,7 @@ export function flowToMermaid(content, direction = 'LR') {
   const id = new Map(nodes.map((n, i) => [n, `n${i}`]));
   const esc = (s) => s.replace(/"/g, "'");
   const out = [
-    '%%{init: {"theme": "base", "themeVariables": {"fontFamily": "Sora, system-ui, sans-serif", "fontSize": "15px", "lineColor": "#5a5a5e", "primaryTextColor": "#232325", "edgeLabelBackground": "#ffffff"}, "htmlLabels": false, "flowchart": {"curve": "basis", "nodeSpacing": 40, "rankSpacing": 56, "padding": 22, "htmlLabels": false}}}%%',
+    '%%{init: {"theme": "base", "themeVariables": {"fontFamily": "Sora, system-ui, sans-serif", "fontSize": "14px", "lineColor": "#5a5a5e", "primaryTextColor": "#232325", "edgeLabelBackground": "#ffffff"}, "htmlLabels": false, "flowchart": {"curve": "basis", "nodeSpacing": 30, "rankSpacing": 40, "padding": 14, "htmlLabels": false, "wrappingWidth": 400}}}%%',
     `flowchart ${direction}`,
   ];
   for (const n of nodes) {
@@ -398,7 +398,10 @@ export function flowToMermaid(content, direction = 'LR') {
   }
   for (const e of edges) {
     if (e.error) continue;
-    const arrow = e.dashed ? (e.label ? `-. "${esc(e.label)}" .->` : '-.->') : (e.label ? `-- "${esc(e.label)}" -->` : '-->');
+    // Edge labels are set in the mono font later (scripts/render-diagrams.mjs), which runs
+    // wider than Sora; the no-break spaces make Mermaid reserve room for that.
+    const text = e.label && `${'\u00a0'.repeat(3)}${esc(e.label)}${'\u00a0'.repeat(3)}`;
+    const arrow = e.dashed ? (e.label ? `-. "${text}" .->` : '-.->') : (e.label ? `-- "${text}" -->` : '-->');
     out.push(`  ${id.get(e.from)} ${arrow} ${id.get(e.to)}`);
   }
   out.push('  classDef sf fill:#eaf6fc,stroke:#1ba1e2,stroke-width:2px,color:#232325');
@@ -511,10 +514,13 @@ export function renderBlock(block, { lang, isExternal, readDiagram, today = new 
   if (name === 'ablauf') {
     const svg = readDiagram(flowHash(content));
     if (!svg) throw new Error(`Diagram ${flowHash(content)} is not rendered yet, run: node scripts/render-diagrams.mjs`);
+    // A left-to-right diagram comes with a top-to-bottom twin for phones (see global.css).
+    const tb = readDiagram(`${flowHash(content)}-tb`);
+    const drawing = tb ? `<div class="cb-flow-lr">${svg}</div><div class="cb-flow-tb">${tb}</div>` : svg;
     const { groups } = parseFlow(content);
     const legend = ['sf', 'erp', 'ext'].filter((g) => groups[g].length).map((g) => `<span><i class="cb-lg-${g}"></i>${escHtml(t.legend[g])}</span>`).join('');
     const summary = parseFlow(content).edges.filter((e) => !e.error).map((e) => `${e.from} → ${e.to}${e.label ? ` (${e.label})` : ''}`).join('; ');
-    return `<figure class="cb cb-flow"><div class="cb-flow-svg" role="img" aria-label="${escHtml(`${t.diagram}: ${summary}`)}">${svg}</div><figcaption class="cb-legend">${legend}</figcaption></figure>`;
+    return `<figure class="cb cb-flow"><div class="cb-flow-svg" role="img" aria-label="${escHtml(`${t.diagram}: ${summary}`)}">${drawing}</div><figcaption class="cb-legend">${legend}</figcaption></figure>`;
   }
   if (name === 'pro-contra') {
     return `<div class="cb cb-procon">${parseProContra(content).map((c) => `<div class="cb-card cb-${c.kind}"><p class="cb-procon-title">${inline(c.title, o)}</p><ul>${c.items.map((i) => `<li>${c.kind === 'pro' ? icon.check : icon.cross}<span>${inline(i, o)}</span></li>`).join('')}</ul></div>`).join('')}</div>`;

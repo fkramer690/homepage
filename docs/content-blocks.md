@@ -70,7 +70,7 @@ Asset ..> Wartung Field Service
 ```
 ````
 
-After adding or changing a diagram run `node scripts/render-diagrams.mjs` (needs the Mermaid CLI and Playwright with Chromium, plus the Sora font installed locally: copy `node_modules/@fontsource/sora/files/sora-latin-{400,600}-normal.woff` to `~/.fonts/` and run `fc-cache`). It writes `src/assets/diagrams/<hash>.svg`, deletes unused ones and **fails if any label does not fit its box with at least 8 px room**; then shorten the label. Commit the SVGs: the build only reads them. If a page still shows an old diagram locally, delete `.astro/data-store.json` (content cache).
+After adding or changing a diagram run `node scripts/render-diagrams.mjs` (needs the Mermaid CLI and Playwright with Chromium, plus the Sora font installed locally: copy `node_modules/@fontsource/sora/files/sora-latin-{400,600}-normal.woff` to `~/.fonts/` and run `fc-cache`). It writes `src/assets/diagrams/<hash>.svg` (left to right where that fits 700 px, plus a top-to-bottom twin `<hash>-tb.svg` for phones; top to bottom everywhere otherwise), sets edge labels as white mono chips on the line, deletes unused files and **fails if any box label does not fit its box with at least 8 px room or an edge label touches a box or another edge label**; then shorten the label. To point the Mermaid CLI at an installed Chromium, set `MMDC_PUPPETEER_CONFIG` to a Puppeteer config file. After a style change delete `src/assets/diagrams/*.svg` and render again. Commit the SVGs: the build only reads them. If a page still shows an old diagram locally, delete `node_modules/.astro/data-store.json` (content cache).
 
 ## 6. Pro-Contra
 
