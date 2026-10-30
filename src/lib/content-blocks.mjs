@@ -12,18 +12,20 @@ import { createHash } from 'node:crypto';
 import { existsSync } from 'node:fs';
 import { iconHtml } from './icons.mjs';
 
-export const blockNames = ['hinweis', 'praxis', 'kennzahlen', 'zeitleiste', 'ablauf', 'pro-contra', 'vertiefung', 'schritte', 'stufen', 'vergleich', 'hebel', 'eintrag', 'saeulen', 'partnerfluss', 'tabelle', 'staerken-grenzen', 'pipeline', 'saeulenwechsel', 'basis-addons', 'level', 'prozess', 'kette'];
+export const blockNames = ['hinweis', 'praxis', 'kennzahlen', 'zeitleiste', 'ablauf', 'pro-contra', 'vertiefung', 'schritte', 'stufen', 'vergleich', 'hebel', 'eintrag', 'saeulen', 'partnerfluss', 'tabelle', 'staerken-grenzen', 'pipeline', 'saeulenwechsel', 'basis-addons', 'level', 'prozess', 'kette', 'steuerzentrale', 'eisberg'];
 
 const labels = {
   de: {
     tipp: 'Tipp', achtung: 'Achtung', offen: 'Schriftlich bestätigen lassen', praxis: 'Aus meiner Praxis', entry: 'Eintrag',
     quelle: 'Quelle', next: 'nächster Termin', risiko: 'Größtes Risiko', legend: { sf: 'Salesforce', erp: 'ERP', ext: 'angrenzender Prozess' },
     diagram: 'Ablaufdiagramm', grenzen: 'Grenzen', besser: 'Dafür besser', aus: 'aus', gesetzt: 'gesetzt', addon: 'Add-on', level: 'Level', tor: 'Tor',
+    ctrl: 'Steuerzentrale', sichtbar: 'Sichtbar', darunter: 'Darunter: die echten Kosten',
   },
   en: {
     tipp: 'Tip', achtung: 'Warning', offen: 'Get it confirmed in writing', praxis: 'From my practice', entry: 'Entry',
     quelle: 'Source', next: 'next date', risiko: 'Biggest risk', legend: { sf: 'Salesforce', erp: 'ERP', ext: 'adjacent process' },
     diagram: 'Flow diagram', grenzen: 'Limits', besser: 'Better suited', aus: 'from', gesetzt: 'given', addon: 'add-on', level: 'Level', tor: 'Gate',
+    ctrl: 'Control centre', sichtbar: 'Visible', darunter: 'Below: the real costs',
   },
 };
 const variants = ['tipp', 'achtung', 'offen'];
@@ -397,6 +399,51 @@ export function parseChain(content) {
   return out;
 }
 
+// Control centre: two sides "seite: Name | control centre | Stage, Stage, Stage" (EN "side:"),
+// each followed by two "- Role | Name | detail | link label" boxes below it and an optional
+// "fazit:" (EN "note:") as the caption of that side.
+export function parseControl(content) {
+  const out = { title: '', sides: [] };
+  for (const raw of lines(content)) {
+    const l = raw.trim();
+    if (!l) continue;
+    const k = explainerKey(l, ['seite', 'side']);
+    const side = out.sides[out.sides.length - 1];
+    if (k && isTitle(k.key)) { out.title = k.value; continue; }
+    if (k && isNote(k.key)) { if (side) side.note = k.value; else out.unknown = l; continue; }
+    if (k) {
+      const [name, ctrl = '', stages = ''] = k.value.split('|').map((x) => x.trim());
+      out.sides.push({ name, ctrl, stages: stages.split(',').map((x) => x.trim()).filter(Boolean), boxes: [], note: '' });
+      continue;
+    }
+    const m = l.match(/^-\s+(.*)$/);
+    if (!m || !side) { out.unknown = l; continue; }
+    const [role, name, detail = '', link = ''] = m[1].split('|').map((x) => x.trim());
+    side.boxes.push({ role, name, detail, link });
+  }
+  return out;
+}
+
+// Iceberg: "sichtbar: Title | text" (EN "visible:") above the waterline, two to five
+// "- Title | text | tag" below it, each wider than the one before; a trailing * marks the
+// biggest item (anthracite). "fazit:" (EN "note:") for the dashed note.
+export function parseIceberg(content) {
+  const out = { title: '', tip: null, items: [], notes: [] };
+  for (const raw of lines(content)) {
+    const l = raw.trim();
+    if (!l) continue;
+    const k = explainerKey(l, ['sichtbar', 'visible']);
+    if (k && isTitle(k.key)) { out.title = k.value; continue; }
+    if (k && isNote(k.key)) { out.notes.push(k.value); continue; }
+    if (k) { const [title, text = ''] = k.value.split('|').map((x) => x.trim()); out.tip = { title, text }; continue; }
+    const m = l.match(/^-\s+(.*?)(\s\*)?$/);
+    if (!m) { out.unknown = l; continue; }
+    const [title, text = '', tag = ''] = m[1].split('|').map((x) => x.trim());
+    out.items.push({ title, text, tag, mark: Boolean(m[2]) });
+  }
+  return out;
+}
+
 // Diagram: "sf: A, B" / "erp: C" / "ext: D" assign nodes to systems; edges are
 // "A --> B", "A --Label--> B" (solid) and "A ..> B", "A ..Label..> B" (dashed).
 export function parseFlow(content) {
@@ -567,6 +614,25 @@ export function validateBlock(block) {
     if (!title) errs.push('kette: add a "titel:" (DE) or "title:" (EN) line');
     between(links.length, 3, 7, 'links');
     if (links.some((x) => !x.name || !x.text)) errs.push('kette: every link needs "Link | example"');
+  } else if (name === 'steuerzentrale') {
+    const { title, sides, unknown } = parseControl(content);
+    if (!title) errs.push('steuerzentrale: add a "titel:" (DE) or "title:" (EN) line');
+    if (unknown) errs.push(`steuerzentrale: cannot read "${unknown}"`);
+    between(sides.length, 2, 2, 'sides ("seite:" / "side:")');
+    for (const x of sides) {
+      if (!x.name || !x.ctrl) errs.push('steuerzentrale: every side needs "Name | control centre | Stage, Stage"');
+      if (x.stages.length < 2 || x.stages.length > 4) errs.push(`steuerzentrale: "${x.name}" needs 2 to 4 stages`);
+      if (x.boxes.length !== 2) errs.push(`steuerzentrale: "${x.name}" needs exactly two "- Role | Name | detail | link" boxes`);
+      if (x.boxes.some((b) => !b.role || !b.name || !b.link)) errs.push(`steuerzentrale: every box of "${x.name}" needs role, name and link label`);
+    }
+  } else if (name === 'eisberg') {
+    const { title, tip, items, unknown } = parseIceberg(content);
+    if (!title) errs.push('eisberg: add a "titel:" (DE) or "title:" (EN) line');
+    if (!tip?.title) errs.push('eisberg: add a "sichtbar:" (DE) or "visible:" (EN) line');
+    if (unknown) errs.push(`eisberg: cannot read "${unknown}"`);
+    between(items.length, 2, 5, 'items below the waterline');
+    if (items.some((x) => !x.title || !x.text)) errs.push('eisberg: every item needs "- Title | text | tag"');
+    if (items.filter((x) => x.mark).length > 1) errs.push('eisberg: mark at most one item with *');
   }
   return errs;
 }
@@ -574,7 +640,7 @@ export function validateBlock(block) {
 // Prose of a block, for word counts and the wording checks in check-blog.
 export function blockProse(block) {
   return block.content
-    .replace(/^\s*(quelle|source|titel|title|pro|contra|sf|erp|ext|fall|case|band|ohne|without|mit|with|fazit|note|dach|roof|basis|base|spalten|columns|marke|mark|besser|better|schranke|gate|hotfix|bisher|before|alt|old|abschluss|done|spuren|lanes|ticket|start|phase|tor|zurueck|loop):\s*/gim, '')
+    .replace(/^\s*(quelle|source|titel|title|pro|contra|sf|erp|ext|fall|case|band|ohne|without|mit|with|fazit|note|dach|roof|basis|base|spalten|columns|marke|mark|besser|better|schranke|gate|hotfix|bisher|before|alt|old|abschluss|done|spuren|lanes|ticket|start|phase|tor|zurueck|loop|seite|side|sichtbar|visible):\s*/gim, '')
     .replace(/\s\*(?=\s*(\||$))/gm, '')
     .replace(/(--|\.\.)>?/g, ' ')
     .replace(/\s<\s/g, ' ')
@@ -846,6 +912,19 @@ export function renderBlock(block, { lang, isExternal, readDiagram, today = new 
     const rows = links.map((x, i) => `<li class="cx-link"><span class="cx-link-name"><span class="cx-no">${String(i + 1).padStart(2, '0')}</span>${inline(x.name, o)}</span><span class="cx-link-text">${inline(x.text, o)}</span></li>`).join('');
     const note = notes.length ? `<figcaption class="cx-note">${notes.map((n) => inline(n, o)).join(' ')}</figcaption>` : '';
     return `<figure class="cb cb-chain">${label(title)}<ol class="cx-links">${rows}</ol>${note}</figure>`;
+  }
+  if (name === 'steuerzentrale') {
+    const { title, sides } = parseControl(content);
+    const box = (b) => `<div class="cz-box"><span class="cz-role">${inline(b.role, o)}</span><strong>${inline(b.name, o)}</strong>${b.detail ? `<small>${inline(b.detail, o)}</small>` : ''}</div>`;
+    const col = (x) => `<div class="cz-col"><p class="cz-name">${inline(x.name, o)}</p><div class="cz-ctrl"><span class="cz-role">${escHtml(t.ctrl)}</span><strong>${inline(x.ctrl, o)}</strong><ol class="cz-stages" style="--n:${x.stages.length}">${x.stages.map((st) => `<li>${inline(st, o)}</li>`).join('')}</ol></div><div class="cz-links" aria-hidden="true">${x.boxes.map((b) => `<span><i></i><b>${inline(b.link, o)}</b></span>`).join('')}</div><div class="cz-boxes">${x.boxes.map(box).join('')}</div>${x.note ? `<p class="cz-cap">${inline(x.note, o)}</p>` : ''}</div>`;
+    return `<figure class="cb cb-control">${label(title)}<div class="cz-grid">${sides.map(col).join('')}</div></figure>`;
+  }
+  if (name === 'eisberg') {
+    const { title, tip, items, notes } = parseIceberg(content);
+    const step = items.length > 1 ? 42 / (items.length - 1) : 0;
+    const rows = items.map((x, i) => `<li class="${x.mark ? 'cz-big' : ''}" style="--w:${Math.round(58 + i * step)}%;--i:${i}"><strong>${inline(x.title, o)}</strong><small>${inline(x.text, o)}</small>${x.tag ? `<b>${inline(x.tag, o)}</b>` : ''}</li>`).join('');
+    const note = notes.length ? `<figcaption class="cx-note">${notes.map((n) => inline(n, o)).join(' ')}</figcaption>` : '';
+    return `<figure class="cb cb-iceberg" style="--n:${items.length}">${label(title)}<div class="cz-sea"><div class="cz-tip"><span class="cz-role">${escHtml(t.sichtbar)}</span><strong>${inline(tip.title, o)}</strong>${tip.text ? `<small>${inline(tip.text, o)}</small>` : ''}</div><div class="cz-under"><span class="cz-water">${escHtml(t.darunter)}</span><ol class="cz-ice">${rows}</ol></div></div>${note}</figure>`;
   }
   return '';
 }
