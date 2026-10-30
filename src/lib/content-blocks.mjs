@@ -12,18 +12,18 @@ import { createHash } from 'node:crypto';
 import { existsSync } from 'node:fs';
 import { iconHtml } from './icons.mjs';
 
-export const blockNames = ['hinweis', 'praxis', 'kennzahlen', 'zeitleiste', 'ablauf', 'pro-contra', 'vertiefung', 'schritte', 'stufen', 'vergleich', 'hebel', 'eintrag', 'saeulen', 'partnerfluss', 'tabelle', 'staerken-grenzen'];
+export const blockNames = ['hinweis', 'praxis', 'kennzahlen', 'zeitleiste', 'ablauf', 'pro-contra', 'vertiefung', 'schritte', 'stufen', 'vergleich', 'hebel', 'eintrag', 'saeulen', 'partnerfluss', 'tabelle', 'staerken-grenzen', 'pipeline', 'saeulenwechsel', 'basis-addons', 'level'];
 
 const labels = {
   de: {
     tipp: 'Tipp', achtung: 'Achtung', offen: 'Schriftlich bestätigen lassen', praxis: 'Aus meiner Praxis', entry: 'Eintrag',
     quelle: 'Quelle', next: 'nächster Termin', risiko: 'Größtes Risiko', legend: { sf: 'Salesforce', erp: 'ERP', ext: 'angrenzender Prozess' },
-    diagram: 'Ablaufdiagramm', grenzen: 'Grenzen', besser: 'Dafür besser',
+    diagram: 'Ablaufdiagramm', grenzen: 'Grenzen', besser: 'Dafür besser', aus: 'aus', gesetzt: 'gesetzt', addon: 'Add-on', level: 'Level',
   },
   en: {
     tipp: 'Tip', achtung: 'Warning', offen: 'Get it confirmed in writing', praxis: 'From my practice', entry: 'Entry',
     quelle: 'Source', next: 'next date', risiko: 'Biggest risk', legend: { sf: 'Salesforce', erp: 'ERP', ext: 'adjacent process' },
-    diagram: 'Flow diagram', grenzen: 'Limits', besser: 'Better suited',
+    diagram: 'Flow diagram', grenzen: 'Limits', besser: 'Better suited', aus: 'from', gesetzt: 'given', addon: 'add-on', level: 'Level',
   },
 };
 const variants = ['tipp', 'achtung', 'offen'];
@@ -247,6 +247,107 @@ export function parsePartnerFlow(content) {
   return out;
 }
 
+// The four animated explainers (pipeline, saeulenwechsel, basis-addons, level) share
+// "titel:" (EN "title:") and "fazit:" (EN "note:"); fazit may appear more than once.
+const explainerKey = (l, extra) => keyLine(l, ['titel', 'title', 'fazit', 'note', ...extra]);
+const isTitle = (k) => k === 'titel' || k === 'title';
+const isNote = (k) => k === 'fazit' || k === 'note';
+
+// Pipeline: "Stage | text" per stage (a trailing * puts the green check on the gate stage;
+// the last stage is the target and always highlighted), "schranke:" (EN "gate:") and
+// "hotfix:" for the two legend lines.
+export function parsePipeline(content) {
+  const out = { title: '', stages: [], gate: '', hotfix: '', notes: [] };
+  for (const raw of lines(content)) {
+    const l = raw.trim();
+    if (!l) continue;
+    const k = explainerKey(l, ['schranke', 'gate', 'hotfix']);
+    if (k) {
+      if (isTitle(k.key)) out.title = k.value;
+      else if (isNote(k.key)) out.notes.push(k.value);
+      else out[k.key === 'hotfix' ? 'hotfix' : 'gate'] = k.value;
+      continue;
+    }
+    const [title, text] = l.replace(/\s*\*$/, '').split('|').map((x) => x.trim());
+    out.stages.push({ title, text, mark: /\*$/.test(l) });
+  }
+  return out;
+}
+
+// Pillar shift: "bisher:" (EN "before:") heads the old pillars "alt: Name | term, term"
+// (EN "old:"); "titel:" heads the new pillars "Name | Item < Source | Item < Source"
+// (a * after the name highlights one pillar). A source made of old terms reads "aus Secure",
+// anything else ("Framework 2026") stands as it is.
+export function parseShift(content) {
+  const out = { before: '', title: '', old: [], pillars: [], notes: [] };
+  for (const raw of lines(content)) {
+    const l = raw.trim();
+    if (!l) continue;
+    const k = explainerKey(l, ['bisher', 'before', 'alt', 'old']);
+    if (k && isTitle(k.key)) { out.title = k.value; continue; }
+    if (k && isNote(k.key)) { out.notes.push(k.value); continue; }
+    if (k?.key === 'bisher' || k?.key === 'before') { out.before = k.value; continue; }
+    if (k) {
+      const [name, terms = ''] = k.value.split('|').map((x) => x.trim());
+      out.old.push({ name, terms: terms.split(',').map((x) => x.trim()).filter(Boolean) });
+      continue;
+    }
+    const [head, ...items] = l.split('|').map((x) => x.trim());
+    out.pillars.push({ name: head.replace(/\s*\*$/, ''), mark: /\*$/.test(head), items: items.map((it) => {
+      const [text, source = ''] = it.split('<').map((x) => x.trim());
+      return { text, source };
+    }) });
+  }
+  const terms = new Map(out.old.flatMap((o) => o.terms.map((t) => [t.toLowerCase(), t])));
+  for (const p of out.pillars) for (const it of p.items) {
+    const parts = it.source.split(',').map((x) => x.trim().toLowerCase()).filter(Boolean);
+    it.keys = parts.length && parts.every((x) => terms.has(x)) ? parts : [];
+  }
+  return out;
+}
+
+// Base and add-ons: "basis: Part, Part | text" (EN "base:") for what is set anyway, then
+// "+ Name | text" per add-on.
+export function parseAddons(content) {
+  const out = { title: '', base: null, addons: [], notes: [] };
+  for (const raw of lines(content)) {
+    const l = raw.trim();
+    if (!l) continue;
+    const k = explainerKey(l, ['basis', 'base']);
+    if (k && isTitle(k.key)) { out.title = k.value; continue; }
+    if (k && isNote(k.key)) { out.notes.push(k.value); continue; }
+    if (k) {
+      const [parts, text] = k.value.split('|').map((x) => x.trim());
+      out.base = { parts: parts.split(',').map((x) => x.trim()).filter(Boolean), text };
+      continue;
+    }
+    const m = l.match(/^\+\s+(.*)$/);
+    if (!m) { out.unknown = l; continue; }
+    const [name, text] = m[1].split('|').map((x) => x.trim());
+    out.addons.push({ name, text });
+  }
+  return out;
+}
+
+// Levels: "Name | meta" per level with indented lines as its checklist, "abschluss:"
+// (EN "done:") for the badge line under every level. The last level is the highlight.
+export function parseLevels(content) {
+  const out = { title: '', levels: [], done: '', notes: [] };
+  for (const raw of lines(content)) {
+    if (!raw.trim()) continue;
+    const l = raw.trim();
+    const k = /^\S/.test(raw) ? explainerKey(l, ['abschluss', 'done']) : null;
+    if (k && isTitle(k.key)) { out.title = k.value; continue; }
+    if (k && isNote(k.key)) { out.notes.push(k.value); continue; }
+    if (k) { out.done = k.value; continue; }
+    if (/^\S/.test(raw)) {
+      const [name, meta = ''] = l.split('|').map((x) => x.trim());
+      out.levels.push({ name, meta, items: [] });
+    } else if (out.levels.length) out.levels[out.levels.length - 1].items.push(l);
+  }
+  return out;
+}
+
 // Diagram: "sf: A, B" / "erp: C" / "ext: D" assign nodes to systems; edges are
 // "A --> B", "A --Label--> B" (solid) and "A ..> B", "A ..Label..> B" (dashed).
 export function parseFlow(content) {
@@ -365,6 +466,37 @@ export function validateBlock(block) {
     between(limits.length, 2, 6, 'limits');
     if ([...strengths, ...limits].some((x) => !x.title || !x.text)) errs.push('staerken-grenzen: every line needs "Title | text"');
     if (strengths.filter((x) => x.mark).length > 1 || limits.some((x) => x.mark)) errs.push('staerken-grenzen: mark at most one strength with *');
+  } else if (name === 'pipeline') {
+    const { title, stages, gate, hotfix } = parsePipeline(content);
+    if (!title) errs.push('pipeline: add a "titel:" (DE) or "title:" (EN) line');
+    between(stages.length, 3, 6, 'stages');
+    if (stages.some((x) => !x.title || !x.text)) errs.push('pipeline: every stage needs "Stage | text"');
+    if (stages.filter((x) => x.mark).length > 1) errs.push('pipeline: mark at most one stage (the gate) with *');
+    if (!gate || !hotfix) errs.push('pipeline: needs a "schranke:" (EN "gate:") and a "hotfix:" line');
+  } else if (name === 'saeulenwechsel') {
+    const { before, title, old, pillars } = parseShift(content);
+    if (!before || !title) errs.push('saeulenwechsel: needs a "bisher:" (EN "before:") and a "titel:" (EN "title:") line');
+    between(old.length, 2, 4, 'old pillars');
+    between(pillars.length, 3, 6, 'new pillars');
+    if (old.some((o) => !o.name || !o.terms.length)) errs.push('saeulenwechsel: every old pillar needs "alt: Name | term, term"');
+    for (const p of pillars) {
+      if (!p.name || p.items.length < 1 || p.items.length > 5) errs.push(`saeulenwechsel: pillar "${p.name}" needs a name and 1 to 5 items`);
+      if (p.items.some((it) => !it.text || !it.source)) errs.push(`saeulenwechsel: every item of "${p.name}" needs "Item < Source"`);
+    }
+    if (pillars.filter((p) => p.mark).length > 1) errs.push('saeulenwechsel: mark at most one pillar with *');
+  } else if (name === 'basis-addons') {
+    const { title, base, addons, unknown } = parseAddons(content);
+    if (!title) errs.push('basis-addons: add a "titel:" (DE) or "title:" (EN) line');
+    if (!base?.parts.length || !base?.text) errs.push('basis-addons: needs "basis: Part, Part | text" (EN "base:")');
+    if (unknown) errs.push(`basis-addons: cannot read "${unknown}", use "+ Name | text"`);
+    between(addons.length, 2, 4, 'add-ons');
+    if (addons.some((a) => !a.name || !a.text)) errs.push('basis-addons: every add-on needs "+ Name | text"');
+  } else if (name === 'level') {
+    const { title, levels, done } = parseLevels(content);
+    if (!title) errs.push('level: add a "titel:" (DE) or "title:" (EN) line');
+    if (!done) errs.push('level: add an "abschluss:" (EN "done:") line for the badge');
+    between(levels.length, 2, 4, 'levels');
+    for (const x of levels) if (!x.name || !x.meta || x.items.length < 2 || x.items.length > 5) errs.push(`level: "${x.name}" needs "Name | meta" and 2 to 5 indented lines`);
   }
   return errs;
 }
@@ -372,9 +504,10 @@ export function validateBlock(block) {
 // Prose of a block, for word counts and the wording checks in check-blog.
 export function blockProse(block) {
   return block.content
-    .replace(/^\s*(quelle|source|titel|title|pro|contra|sf|erp|ext|fall|case|band|ohne|without|mit|with|fazit|note|dach|roof|basis|base|spalten|columns|marke|mark|besser|better):\s*/gim, '')
+    .replace(/^\s*(quelle|source|titel|title|pro|contra|sf|erp|ext|fall|case|band|ohne|without|mit|with|fazit|note|dach|roof|basis|base|spalten|columns|marke|mark|besser|better|schranke|gate|hotfix|bisher|before|alt|old|abschluss|done):\s*/gim, '')
     .replace(/\s\*(?=\s*(\||$))/gm, '')
     .replace(/(--|\.\.)>?/g, ' ')
+    .replace(/\s<\s/g, ' ')
     .replace(/\|/g, ' ');
 }
 
@@ -449,6 +582,9 @@ function sortKey(d) {
 }
 
 const icon = { check: iconHtml('tick'), cross: iconHtml('cross') };
+
+// Dashed closing line of the animated explainers; **Label:** turns cyan.
+const explainerNotes = (notes, o) => (notes.length ? `<p class="cx-foot">${notes.map((n) => `<span>${inline(n, o)}</span>`).join(' ')}</p>` : '');
 
 // ---------- partner flow drawing (```partnerfluss) ----------
 // Two animated panels: without a central owner every partner delivers on its own,
@@ -582,6 +718,29 @@ export function renderBlock(block, { lang, isExternal, readDiagram, today = new 
   }
   if (name === 'vergleich') {
     return `<div class="cb cb-compare">${parseCompare(content).map((c) => `<div class="cb-compare-col cb-compare-${c.kind}"><p class="cb-compare-title">${inline(c.title, o)}</p><ul>${c.items.map((i) => `<li>${c.kind === 'with' ? icon.check : icon.cross}<span>${inline(i, o)}</span></li>`).join('')}</ul></div>`).join('')}</div>`;
+  }
+  if (name === 'pipeline') {
+    const { title, stages, gate, hotfix, notes } = parsePipeline(content);
+    const cards = stages.map((x, i) => `<li class="cx-card${i === stages.length - 1 ? ' cx-hi' : ''}"><span class="cx-no">${String(i + 1).padStart(2, '0')}</span><span class="cx-t">${inline(x.title, o)}</span><span class="cx-d">${inline(x.text, o)}</span>${x.mark ? `<span class="cx-check">${iconHtml('tick')}</span>` : ''}</li>`).join('');
+    return `<figure class="cb cb-explain cb-pipeline" style="--n:${stages.length}"><span class="cx-eye">${inline(title, o)}</span><ol class="cx-pp-row">${cards}</ol><ul class="cx-pp-legend"><li class="cx-gate"><i></i><span>${inline(gate, o)}</span></li><li class="cx-hot"><i></i><span>${inline(hotfix, o)}</span></li></ul>${explainerNotes(notes, o)}</figure>`;
+  }
+  if (name === 'saeulenwechsel') {
+    const { before, title, old, pillars, notes } = parseShift(content);
+    const used = new Set(pillars.flatMap((p) => p.items.flatMap((it) => it.keys)));
+    const oldHtml = old.map((x) => `<li><span class="cx-t">${inline(x.name, o)}</span> ${x.terms.map((term) => `<span class="cx-term" data-term="${escHtml(term.toLowerCase())}"${used.has(term.toLowerCase()) ? '' : ' data-rest'}>${escHtml(term)}</span>`).join('<span class="cx-comma">, </span>')}</li>`).join('');
+    const item = (it) => `<li data-terms="${escHtml(it.keys.join(' '))}">${inline(it.text, o)}<span class="cx-src">${it.keys.length ? `${t.aus} ` : ''}${inline(it.source, o)}</span></li>`;
+    const cards = pillars.map((x, i) => `<li class="cx-card${x.mark ? ' cx-hi' : ''}"><span class="cx-no">${String(i + 1).padStart(2, '0')}</span><span class="cx-t">${inline(x.name, o)}</span><ul class="cx-items">${x.items.map(item).join('')}</ul></li>`).join('');
+    return `<figure class="cb cb-explain cb-shift" style="--n:${pillars.length}"><span class="cx-eye">${inline(before, o)}</span><ul class="cx-old">${oldHtml}</ul><span class="cx-eye">${inline(title, o)}</span><ol class="cx-new">${cards}</ol>${explainerNotes(notes, o)}</figure>`;
+  }
+  if (name === 'basis-addons') {
+    const { title, base, addons, notes } = parseAddons(content);
+    const adds = addons.map((a) => `<li class="cx-card cx-add"><span><span class="cx-no">${escHtml(t.addon)}</span><span class="cx-t">${inline(a.name, o)}</span></span><span class="cx-d">${inline(a.text, o)}</span></li>`).join('');
+    return `<figure class="cb cb-explain cb-addons"><span class="cx-eye">${inline(title, o)}</span><div class="cx-ad"><div class="cx-card cx-hi cx-base"><span class="cx-no">${escHtml(t.gesetzt)}</span><span class="cx-t">${base.parts.map((x) => inline(x, o)).join('<br>')}</span><span class="cx-d">${inline(base.text, o)}</span></div><ul class="cx-adds">${adds}</ul></div>${explainerNotes(notes, o)}</figure>`;
+  }
+  if (name === 'level') {
+    const { title, levels, done, notes } = parseLevels(content);
+    const cards = levels.map((x, i) => `<li class="cx-card${i === levels.length - 1 ? ' cx-hi' : ''}"><span class="cx-no">${escHtml(t.level)} ${i + 1}</span><span class="cx-t">${inline(x.name, o)}</span><span class="cx-meta">${inline(x.meta, o)}</span><ul class="cx-ticks">${x.items.map((it) => `<li>${iconHtml('tick', 'cx-tick')}<span>${inline(it, o)}</span></li>`).join('')}</ul><span class="cx-badge">${iconHtml('badge')}${inline(done, o)}</span></li>`).join('');
+    return `<figure class="cb cb-explain cb-levels" style="--n:${levels.length}"><span class="cx-eye">${inline(title, o)}</span><span class="cx-rail"><span></span></span><ol class="cx-lv-row">${cards}</ol>${explainerNotes(notes, o)}</figure>`;
   }
   return '';
 }

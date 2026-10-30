@@ -63,7 +63,6 @@ From the first round (30.10.2026); they stay as they are unless a backlog item s
 - Layout: speaking page pattern (tabs, figures strip, tiles)
 - Content blocks: `hinweis achtung`, `hinweis offen`, `praxis`, `zeitleiste`, `pro-contra`, `vertiefung`
 - Explanatory PNGs: make-or-buy-roi, nearshore-team-setup, tool-ownership; with a todo:
-  document-builder-workarounds (G8), sfdx-hardis-training-levels (G6),
-  which-clouds (G6), winter-27-org-display (G8)
+  document-builder-workarounds (G8), winter-27-org-display (G8)
 - Certification graphic "basics" (G8), masterclass hub drawings (G7)
 - Start page: figures strip, logo band (G9), masterclass list (G10), reference cards (G11)

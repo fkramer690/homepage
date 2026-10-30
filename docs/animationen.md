@@ -96,3 +96,7 @@ mit: Mit Pull-Request-Review | Jede Änderung geht durch ein Review, bevor sie i
 - Repo-Regeln stehen in `CLAUDE.md`, `README.md` („Where files go“), `docs/layouts.md`, `docs/content-blocks.md` und `docs/blog-guidelines.md`.
 - Der Build (`npm run build`) prüft Inhalte, Links, Sitemap, Titel, Layout, Grafiken und den Hauptordner und bricht bei Verstößen ab. Diese Prüfungen nie aufweichen.
 - Arbeitsweise in dieser Sitzung: ein Branch pro Thema, Pull Request mit deutscher Beschreibung, Fabian mergt. #190 wurde per Squash gemergt.
+
+## Erklärgrafiken (G6, 30.10.2026)
+
+Die PNGs devops-pipeline, well-architected-mapping, which-clouds und sfdx-hardis-training-levels sind jetzt Inhaltsbausteine (`pipeline`, `saeulenwechsel`, `basis-addons`, `level`, Nr. 17 in `docs/content-blocks.md`) im dunklen Look der alten PNGs (Fabians Wahl A). Die Abläufe laufen per Script in `src/components/BlockMotion.astro` (Klassen `cx-armed`, `cx-on`, `cx-in`), die Übergänge sind CSS unter „Animated explainers“ in `global.css`. Die Pipeline läuft in Schleife, solange sie sichtbar ist; die anderen einmal. Well-Architected baut sich Säule für Säule auf (Fabians Wahl 1). Entwurf: https://claude.ai/artifact/TnUsJxcnSaBhti3kj1qBu1
