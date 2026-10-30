@@ -42,6 +42,10 @@ The sitemap must list exactly the indexable pages. `scripts/check-sitemap.mjs` r
 
 No label in a drawing may run over the edge, out of its box, into another box or under a line or icon. `scripts/check-graphics.mjs` runs after `astro build` and checks every card drawing (`src/lib/card-drawings.ts`, EN and DE) and every other inline SVG with text; a new kind of drawing must be added to it. `src/lib/og.ts` refuses preview image titles over three lines. Rules under "Card image" in `docs/blog-guidelines.md`; never weaken the check.
 
+## Graphics review
+
+Every graphic (content blocks, explanatory graphics, card drawings, hub drawings, icons, layouts, page elements, animations, preview images) has an entry in `docs/graphics-review.json` with Fabian's rating (1 reference, 2 okay, 3 todo) or `null` while it is open. A new graphic gets its entry with `"rating": null` in the same pull request; never set a rating Fabian did not give. `scripts/check-graphics-review.mjs` runs in `npm run build` and fails on graphics missing from the register; never weaken it. Process in `docs/graphics-review.md`.
+
 ## Page titles
 
 Every indexable page has a unique `<title>` of at most 60 characters, keyword first; the brand suffix ` | FK Solution Design` is added only where it fits. `scripts/check-titles.mjs` runs after `astro build` and enforces this; never weaken it.
