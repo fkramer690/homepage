@@ -2,6 +2,7 @@
 import Page from '../layouts/Page.astro';
 import ExternalMark from './ExternalMark.astro';
 import ContactForm from './ContactForm.astro';
+import PhoneLine from './PhoneLine.astro';
 import AuthorBox from './AuthorBox.astro';
 import PartnerBox from './PartnerBox.astro';
 import Blueprint from './Blueprint.astro';
@@ -185,6 +186,7 @@ const schema = {
         <ContactBrief brief={brief} t={t} />
         <a class="btn" href={contactHref(title)} {...ctaAttrs}>{t.nav.cta}{contactExternal && <ExternalMark label={t.nav.newTab} />}</a>
         {contactExternal && <p class="booking-note">{t.contact.bookingNote}</p>}
+        <PhoneLine t={t} />
       </div>
       <ContactForm t={t} subject={formSubject} />
     </div>

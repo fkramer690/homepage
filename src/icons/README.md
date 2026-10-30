@@ -58,6 +58,7 @@ Never paste SVG markup for an icon into a component: add a file here instead.
 | `mic` | 48 | Speaking page: "Community events" in "More on stage" |
 | `book-call` | 24 | Floating contact button "Book a call" |
 | `message` | 24 | Floating contact button "Send a message" |
+| `phone` | 24 | Floating call button (phones only), phone line in contact sections and side booking box |
 | `external` | 12 | Arrow after every external link (components, Markdown, content blocks) |
 | `tick` | 18 | Content block `pro-contra`, pro items |
 | `cross` | 18 | Content block `pro-contra`, contra items |

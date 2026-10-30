@@ -292,6 +292,8 @@ export const en = {
     cta: 'Book a 30-minute call',
     bookingNote: 'Pick a slot in my calendar via Microsoft Bookings. Prefer to write? Use the form and I’ll get back to you.',
     linkedinLabel: 'LinkedIn',
+    phoneLabel: 'Phone',
+    phoneLine: 'Rather talk right away?',
     briefBring: 'What to bring',
     briefClarify: 'What we clarify',
     form: {
@@ -770,11 +772,13 @@ export const en = {
     toc: 'Contents',
     ctaTitle: '30 minutes, no pitch',
     ctaText: 'You describe your situation, I tell you honestly whether and how I can help.',
+    phone: 'Or call directly',
   },
   floating: {
     label: 'Contact',
     call: 'Book a 30-minute call',
     message: 'Send a message',
+    phone: 'Call',
   },
   notFound: {
     title: 'This page doesn’t exist.',

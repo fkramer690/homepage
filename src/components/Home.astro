@@ -344,6 +344,10 @@ const serviceIcons = ['architecture', 'change', 'pipeline', 'integration', 'team
           {contactExternal && <p class="booking-note">{t.contact.bookingNote}</p>}
           <dl class="contact-list">
             <div>
+              <dt class="mono">{t.contact.phoneLabel}</dt>
+              <dd><a href={site.phone.href}>{t.lang === 'de' ? site.phone.de : site.phone.en}</a></dd>
+            </div>
+            <div>
               <dt class="mono">{t.contact.form.email}</dt>
               <dd><a href={`mailto:${site.email}`}>{site.email}</a></dd>
             </div>

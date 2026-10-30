@@ -16,11 +16,18 @@ export const site = {
   // Cloudflare Web Analytics (cookieless). The site token comes from the
   // CF_ANALYTICS_TOKEN repository secret at build time; empty = no tracking.
   analyticsToken: import.meta.env.PUBLIC_CF_ANALYTICS_TOKEN ?? '',
+  // Business phone: German pages show the national format, English pages the
+  // international one; links always dial the international number.
+  phone: {
+    de: '0221 98656758',
+    en: '+49 221 98656758',
+    href: 'tel:+4922198656758',
+  },
   linkedin: 'https://www.linkedin.com/in/fabian-kramer-400500127',
   legal: {
     street: 'Hans-Keul-Weg 27',
     city: '51105 Köln',
-    phone: '', // optional
+    phone: '0221 98656758',
     managingDirector: 'Fabian Kramer',
     register: 'HRB 103579',
     registerCourt: 'Amtsgericht Köln',

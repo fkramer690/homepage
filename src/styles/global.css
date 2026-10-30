@@ -95,6 +95,10 @@ a:hover { color: var(--anthracite); }
 .page-cta p { margin: 0 0 0.9em; font-size: 0.92rem; color: rgba(255, 255, 255, 0.75); }
 .page-cta .page-cta-title { margin-bottom: 0.3em; font-size: 1.05rem; font-weight: 600; color: var(--white); }
 .page-cta .btn { font-size: 0.9rem; padding: 10px 16px; }
+.page-cta .page-cta-phone { margin: 14px 0 0; padding-top: 12px; border-top: 1px solid rgba(255, 255, 255, 0.12); font-size: 0.88rem; }
+.page-cta-phone a { display: flex; align-items: center; gap: 8px; margin-top: 2px; color: var(--white); font-weight: 600; text-decoration: none; }
+.page-cta-phone a:hover { color: var(--cyan-light); }
+.page-cta-phone svg { width: 18px; height: 18px; color: var(--cyan-light); flex: none; }
 @media (max-width: 960px) {
   .page-grid { grid-template-columns: minmax(0, var(--measure)); }
   .page-side { display: none; }
@@ -1006,6 +1010,9 @@ p.post-series-note { margin: 0.6em 0 0; font-size: 0.95rem; }
   pointer-events: none;
   transition: opacity 0.15s, transform 0.15s;
 }
+/* The call button only shows on phones, where a tap dials. */
+.float-phone { display: none; }
+@media (min-width: 721px) { .float-btn:has(+ .float-phone) { border-bottom-left-radius: var(--radius); } }
 .float-btn:hover .float-label,
 .float-btn:focus-visible .float-label { opacity: 1; transform: none; }
 @media (max-width: 720px) {
@@ -1015,6 +1022,7 @@ p.post-series-note { margin: 0.6em 0 0; font-size: 0.95rem; }
   .float-btn:first-child,
   .float-btn:last-child { border-radius: 50%; }
   .float-label { display: none; }
+  .float-phone { display: flex; }
 }
 @media (prefers-reduced-motion: reduce) {
   .float-contact, .float-btn, .float-label { transition: none; }
@@ -1028,6 +1036,11 @@ p.post-series-note { margin: 0.6em 0 0; font-size: 0.95rem; }
 .contact-brief li { position: relative; padding-left: 1.4em; margin: 0 0 0.45em; color: rgba(255, 255, 255, 0.85); font-size: 0.95rem; }
 .contact-brief li::before { content: ''; position: absolute; left: 0.1em; top: 0.5em; width: 0.6em; height: 0.32em; border-left: 2px solid var(--cyan-light); border-bottom: 2px solid var(--cyan-light); transform: rotate(-45deg); }
 .booking-note { margin: 1em 0 0; font-size: 0.85rem; color: rgba(255, 255, 255, 0.55); }
+/* Phone number as the second way, under the booking button (PhoneLine.astro) */
+.phone-line { margin: 1.2em 0 0; font-size: 0.95rem; color: rgba(255, 255, 255, 0.75); }
+.phone-line a { display: inline-flex; align-items: center; gap: 8px; margin-left: 0.3em; color: var(--white); font-weight: 600; text-decoration: none; white-space: nowrap; }
+.phone-line a:hover { color: var(--cyan-light); }
+.phone-line svg { width: 18px; height: 18px; color: var(--cyan-light); }
 
 /* Contact form */
 .contact-form {

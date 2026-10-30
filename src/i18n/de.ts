@@ -274,6 +274,8 @@ export const de: Dict = {
     cta: '30-Minuten-Gespräch vereinbaren',
     bookingNote: 'Wählen Sie einen Termin in meinem Kalender über Microsoft Bookings. Lieber schreiben? Nutzen Sie das Formular, ich melde mich bei Ihnen.',
     linkedinLabel: 'LinkedIn',
+    phoneLabel: 'Telefon',
+    phoneLine: 'Lieber gleich sprechen?',
     briefBring: 'Bitte mitbringen',
     briefClarify: 'Das klären wir',
     form: {
@@ -751,11 +753,13 @@ export const de: Dict = {
     toc: 'Inhalt',
     ctaTitle: '30 Minuten, kein Pitch',
     ctaText: 'Sie schildern Ihre Lage, ich sage ehrlich, ob und wie ich helfen kann.',
+    phone: 'Oder direkt anrufen',
   },
   floating: {
     label: 'Kontakt',
     call: '30-Minuten-Termin buchen',
     message: 'Nachricht senden',
+    phone: 'Anrufen',
   },
   notFound: {
     title: 'Diese Seite gibt es nicht.',

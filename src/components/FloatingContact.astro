@@ -3,7 +3,7 @@
 // They hide while the contact section itself is on screen.
 import Icon from './Icon.astro';
 import type { Dict } from '../i18n/en';
-import { contactHref, contactExternal } from '../site';
+import { contactHref, contactExternal, site } from '../site';
 
 interface Props {
   t: Dict;
@@ -21,6 +21,10 @@ const ext = contactExternal ? { target: '_blank', rel: 'noopener' } : {};
   <a class="float-btn" href={messageHref} aria-label={t.floating.message}>
     <Icon name="message" />
     <span class="float-label" aria-hidden="true">{t.floating.message}</span>
+  </a>
+  {/* Phones only: a tap dials the number. */}
+  <a class="float-btn float-phone" href={site.phone.href} aria-label={t.floating.phone}>
+    <Icon name="phone" />
   </a>
 </nav>
 
