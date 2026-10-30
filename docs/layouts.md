@@ -226,3 +226,24 @@ Content block ```saeulen (see `docs/content-blocks.md`), CSS `.cb-pillars`.
   bar what it stands on ("Auf der Git-Plattform des Kunden").
 - On phones the pillars stand below each other with the icon on the left.
 - Fits: three to five equal principles or building blocks of one thing, not a sequence.
+
+## References from the graphics review (30.10.2026)
+
+Rated 1 by Fabian in the first graphics review (register `docs/graphics-review.json`,
+process `docs/graphics-review.md`). All layouts above were confirmed as 1 except the
+speaking page pattern, which he rated 2 (still fine to reuse, no longer the first choice).
+
+- **Content blocks:** `kennzahlen` (big figure, one line, source below: the model for
+  every figure), `vergleich` (cyan "with" column), `hebel` (lever cards with result line),
+  `eintrag` (decision log with dark head row), `hinweis tipp`, `stufen treppe` (staircase
+  with "source of truth" band; Fabian would like the pillars animated, backlog G7).
+- **Explanatory graphics (PNG):** `agentforce-adoption` (four figures, one message),
+  `devops-pipeline`, `pull-request-review-split` (machine checks vs. human checks),
+  `password-flow-timeline` (deadline highlighted), `field-service-report` (one source fanning
+  out to five processes), `casey-or-service-rep`, `agent-context-engine`.
+- **Certification coverage graphic** with its own narrow version for phones: the model for
+  any wide graphic.
+- **Blog card drawings** as a series, the **icon library**, and the **article preview
+  images** (`src/lib/og.ts`; logo line to be aligned with the standard image, backlog G4).
+- **Start page:** hero with measure lines on the photo, "Arbeitsweise" with photos and
+  progress line, service tiles with "Weitere Leistungen" box.

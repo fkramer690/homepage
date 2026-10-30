@@ -121,6 +121,24 @@ Macht Fabian selbst (Quick Wins):
 - QE. Ab ca. 9.11.2026: Search Console Bericht „Seiten“ und PageSpeed Insights prüfen.
 - QF. Unternehmensverzeichnisse: Einträge mit überall gleichem Namen, gleicher Adresse und Telefonnummer wie im Google-Profil anlegen, jeweils mit Link auf www.fk-sd.de. Vorschläge: Bing Places (Import aus dem Google-Profil möglich), Apple Business Connect, Gelbe Seiten, Das Örtliche, Cylex, 11880. North Data und Firmenwissen ziehen Daten aus dem Handelsregister, dort nur prüfen und ggf. Website ergänzen. Fertige Eintrags-URLs an Claude geben (kommen ggf. ins Schema als sameAs).
 
+## Grafiken verbessern (Grafik-Ranking 30.10.2026)
+
+Aus Fabians Bewertung: alle Grafiken mit 3 und alle mit einer Notiz, die einen Auftrag enthält. Je Punkt ein eigener Thread im Projekt, der klärt, was genau geändert wird, und Mockups liefert. Notizen wörtlich im Register (`docs/graphics-review.json`, Feld `note`).
+
+| # | Thema | Bewertung | Status |
+|---|---|---|---|
+| G1 | Ablauf-Diagramme: Kantenbeschriftung liegt auf der Linie, viel Leerraum | 3 | Thread |
+| G2 | Content-Block Schritte neu gestalten | 3 | Thread |
+| G3 | Content-Block Stufen (Kacheln) neu gestalten | 3 | Thread |
+| G4 | Vorschaubilder: Standardbild auf Deutsch und Englisch, Artikelbilder mit Logo-Zeile „FK Solution Design / Salesforce Architecture“ | 3 und 1 | Thread |
+| G5 | Erklärgrafiken neu: integration-leading-system, object-ownership-matrix, sfdx-hardis-vs-commercial, service-documents-limits | 3 und 2 | Thread |
+| G6 | Erklärgrafiken animieren: well-architected-mapping, devops-pipeline, which-clouds, sfdx-hardis-training-levels (dort auch Kontrast, Level 3) | 3, 1 und 2 | Thread |
+| G7 | Masterclass-Kopfzeichnungen und Treppe (Säulen) animieren | 2 und 1 | Thread |
+| G8 | Quick Wins: Zertifikatsgrafik „Schnittstellen“ läuft aus der Box, graue Boxen der Document-Builder-Grafik niedriger, Orange in winter-27-org-display ersetzen (gehört nicht zur Palette) | 2 | Thread |
+| G9 | Logo-Band auf der Startseite ca. 20 % größer | 2 | Thread |
+| G10 | Vorschlag Masterclass-Liste auf der Startseite | 2 | Thread |
+| G11 | Vorschlag Referenz-Karten auf der Startseite | 2 | Thread |
+
 ## Weitere Ideen
 
 Ideen für mehr persönliche Note, von Fabian freigegeben, später abarbeiten:
@@ -146,7 +164,7 @@ Ideen für mehr persönliche Note, von Fabian freigegeben, später abarbeiten:
 
 15. **Eigener Kontakt für Julianes Artikel** (von Fabian gewünscht 29.10.2026) – Julianes Artikel (und ggf. ihr Profil) bekommen Julianes eigenen Buchungslink und/oder ihre E-Mail statt Fabians Bookings und Formular. Bis dahin läuft jeder Kontakt über Fabian. *Braucht: Buchungslink oder E-Mail von Juliane.*
 
-16. **Alle Grafiken durchgehen und die besten nominieren** (von Fabian gewünscht 29.10.2026) – Irgendwann alle Grafiken und grafischen Bausteine der Website gemeinsam durchsehen (Content-Blöcke, Erklärgrafiken, Kartenskizzen, Seitenlayouts) und daraus wieder die besten nominieren. Die Gewinner kommen nach `docs/layouts.md` als bevorzugte Vorlagen, schwache Stellen bekommen einen eigenen Punkt. Bisher nominiert unter anderem: Säulen mit Dach (DevOps-Leistungsseite). *Übersicht mit Screenshots: Claude, Auswahl: Fabian.*
+16. ~~**Alle Grafiken durchgehen und die besten nominieren**~~ (erledigt 30.10.2026) – Fabian hat alle 302 Grafiken bewertet (Übersicht https://claude.ai/artifact/KusEFgFZ7i7THrd8Lz2FeC, Register `docs/graphics-review.json`, Ablauf `docs/graphics-review.md`). Die 1er stehen in `docs/layouts.md`, die Todos unter „Grafiken verbessern“ oben. Neue Grafiken laufen über das Register automatisch in die nächste Runde.
 
 Weitere offene Punkte:
 - Fallstudien-Seiten (Ausgangslage, Architekturentscheidungen, Ergebnis, Grafik), sobald die Kundenfreigaben vorliegen. Status klärt Fabian.
