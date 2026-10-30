@@ -95,4 +95,4 @@ Telefon und E-Mail bleiben in den meisten Serviceorganisationen die wichtigsten 
 
 Erfassen Sie in diesem Quartal, was Open CTI bei Ihnen heute tut: wie viele Nutzer am Call Center hängen, welche Rufnummern und Warteschlangen es gibt, welche Berichte Anrufdaten nutzen und welche eigene Logik existiert. Fragen Sie parallel Ihren Telefonieanbieter schriftlich, wie sein Weg zu Salesforce Voice aussieht und ab wann er verfügbar ist. Planen Sie dann die Umstellung so, dass sie nicht mit einem großen Release oder der Hochsaison im Service zusammenfällt.
 
-Bis Februar 2028 klingt nach viel Zeit. Mit Auswahl, Vertrag, Umbau und Tests über mehrere Länder ist sie schnell aufgebraucht. Wenn Sie vor dieser Entscheidung stehen und eine unabhängige Einschätzung möchten, [schreiben Sie mir](#contact).
+Bis Februar 2028 klingt nach viel Zeit. Mit Auswahl, Vertrag, Umbau und Tests über mehrere Länder ist sie schnell aufgebraucht.

@@ -1064,12 +1064,12 @@ const drawings: Record<string, Drawing> = {
 
   'open-cti-retirement-telephony': (l) => `
     ${t(18, 22, 'OPEN CTI', { fill: D, size: 7.5 })}
-    <path d="M24 60H150" stroke="${G}" stroke-width="1.3"/>
-    ${dot(24, 60)}${dot(84, 60)}${cross(150, 60)}
-    ${t(24, 80, '2020', { size: 7, anchor: 'middle' })}${t(24, 91, l('maintenance', 'Wartung'), { size: 6.5, anchor: 'middle' })}
-    ${t(84, 80, '02/2026', { size: 7, anchor: 'middle' })}${t(84, 91, l('no new orgs', 'keine neuen Orgs'), { size: 6.5, anchor: 'middle' })}
-    ${t(150, 80, '28.02.2028', { fill: C, size: 7, anchor: 'middle' })}${t(150, 91, l('retired', 'abgeschaltet'), { fill: C, size: 6.5, anchor: 'middle' })}
-    ${arrow(166, 60, 196, C)}
+    <path d="M36 60H160" stroke="${G}" stroke-width="1.3"/>
+    ${dot(36, 60)}${dot(98, 60)}${cross(160, 60)}
+    ${t(36, 80, '2020', { size: 7, anchor: 'middle' })}${t(36, 91, l('maintenance', 'Wartung'), { size: 6.5, anchor: 'middle' })}
+    ${t(98, 80, '02/2026', { size: 7, anchor: 'middle' })}${t(98, 91, l('no new orgs', 'keine neuen Orgs'), { size: 6.5, anchor: 'middle' })}
+    ${t(160, 80, '28.02.2028', { fill: C, size: 7, anchor: 'middle' })}${t(160, 91, l('retired', 'abgeschaltet'), { fill: C, size: 6.5, anchor: 'middle' })}
+    ${arrow(174, 60, 196, C)}
     ${box(200, 18, 104, 124, C)}${t(252, 34, 'SALESFORCE VOICE', { fill: C, size: 7, anchor: 'middle' })}
     ${[['Partner', '50 €'], ['Amazon', '75-200 €'], [l('own AWS', 'eigenes AWS'), ''], [l('native', 'nativ'), '125 €']]
       .map(([a, b], i) => `<path d="M208 ${46 + i * 24}H296" stroke="${L}"/>` + t(210, 60 + i * 24, String(a), { size: 6.8 }) + t(296, 60 + i * 24, String(b), { fill: D, size: 6.8, anchor: 'end' })).join('')}

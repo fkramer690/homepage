@@ -95,4 +95,4 @@ Phone and email remain the most important channels in most service organisations
 
 This quarter, take stock of what Open CTI does for you today: how many users are assigned to the call center, which phone numbers and queues exist, which reports use call data and which custom logic exists. At the same time, ask your telephony vendor in writing what its path to Salesforce Voice looks like and from when it is available. Then plan the switch so it does not coincide with a major release or the peak season in service.
 
-February 2028 sounds like plenty of time. With selection, contract, rebuild and tests across several countries, it is used up quickly. If you are facing this decision and want an independent assessment, [send me a message](#contact).
+February 2028 sounds like plenty of time. With selection, contract, rebuild and tests across several countries, it is used up quickly.
