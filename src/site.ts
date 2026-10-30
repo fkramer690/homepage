@@ -24,6 +24,11 @@ export const site = {
     href: 'tel:+4922198656758',
   },
   linkedin: 'https://www.linkedin.com/in/fabian-kramer-400500127',
+  // Further profiles of Fabian, only listed as sameAs in the structured data.
+  profiles: [
+    'https://github.com/fkramer690',
+    'https://www.gulp.de/gulp2/g/experten/selbststaendige/profile/6ae5021d8751e904955971b5/homepage',
+  ],
   legal: {
     street: 'Hans-Keul-Weg 27',
     city: '51105 Köln',
