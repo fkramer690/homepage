@@ -109,4 +109,4 @@ Zeichnen Sie die Landkarte, bevor Sie über Werkzeuge sprechen: eine Zeile pro D
 
 Legen Sie außerdem für jede Schnittstelle einen Verantwortlichen auf Kundenseite fest und prüfen Sie, mit welchem technischen Benutzer sie sich anmeldet. Integrationsbenutzer haben oft mehr Rechte als nötig, und Anmeldungen mit Benutzername und Passwort laufen aus, wie in [Salesforce-Passwort-Integrationen enden 2027](../salesforce-passwort-integrationen-2027/) beschrieben.
 
-Die Landkarte ist in wenigen Workshops erstellt und spart später viele Diskussionen zwischen Salesforce- und SAP-Team. Wenn Sie SAP und Salesforce verbinden wollen und eine unabhängige Einschätzung möchten, [schreiben Sie mir](#contact).
+Die Landkarte ist in wenigen Workshops erstellt und spart später viele Diskussionen zwischen Salesforce- und SAP-Team.

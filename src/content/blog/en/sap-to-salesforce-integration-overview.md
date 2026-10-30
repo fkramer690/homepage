@@ -109,4 +109,4 @@ Draw the map before you talk about tools: one row per kind of data, one column f
 
 Also name an owner on the client side for each interface and check which technical user it logs in with. Integration users often have more rights than they need, and logins with username and password are being phased out, as described in [Salesforce password integrations end in 2027](../salesforce-password-integrations-end-2027/).
 
-The map takes a few workshops and saves many discussions between the Salesforce and SAP teams later. If you want to connect SAP and Salesforce and would like an independent assessment, [send me a message](#contact).
+The map takes a few workshops and saves many discussions between the Salesforce and SAP teams later.
