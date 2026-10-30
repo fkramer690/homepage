@@ -248,6 +248,66 @@ besser: Für Prüfprotokolle und Massenläufe: Salesforce Document Generation od
 ```
 ````
 
+## 17. Animated explainers (dark panel)
+
+Four blocks that replaced the dark explainer PNGs (Fabian 2026-10-30, G6, look A): the anthracite panel with grey cards, the highlighted card white on cyan-dark (contrast 5:1). Text stays real HTML, the cards stack on phones. They build up once when they scroll into view (`src/components/BlockMotion.astro`, styles under "Animated explainers" in `global.css`); the pipeline repeats while it stays in view. Reduced motion or no script: the finished picture. All four take `titel:` (EN `title:`) and one or more `fazit:` lines (EN `note:`) for the dashed note; `**Label:**` in a note turns cyan.
+
+**`pipeline`**: three to six stages `Stage | text`, a trailing `*` puts the green check on the gate stage, the last stage is the target and is highlighted. `schranke:` (EN `gate:`) and `hotfix:` give the two legend lines. Motion: a change runs through stage by stage, then the hotfix runs the same way faster in amber.
+
+````
+```pipeline
+titel: Salesforce-Release-Pipeline
+Entwickler-Sandbox | Bauen und auf Feature-Branch committen
+Validierung | Deploy-Check, Apex-Tests, Code-Analyse *
+Produktion | Release nur über die Pipeline
+schranke: Qualitätsschranke: Merge nur bei grüner Pipeline
+hotfix: Hotfix: eigener Branch, gleiche Pipeline, Stunden statt Wochen
+fazit: Git-Repository: einzige Quelle der Wahrheit für alle Metadaten
+```
+````
+
+**`saeulenwechsel`** (pillar shift): `bisher:` (EN `before:`) heads two to four old pillars `alt: Name | term, term` (EN `old:`); `titel:` heads three to six new pillars `Name | Item < Source | Item < Source` (one to five items, a `*` after the name highlights one pillar). A source made of old terms reads "aus Secure" / "from Secure", anything else stands as it is. Motion (Fabian's choice): the new pillars fill one by one, the old terms each pillar comes from light up above; terms no pillar took light up with the notes at the end.
+
+````
+```saeulenwechsel
+bisher: Bisher: drei Säulen
+alt: Trusted | secure, compliant, reliable
+alt: Adaptable | resilient, composable
+titel: Well-Architected: von drei auf fünf Säulen
+Trust | Sicherheit < Secure | Recht, Data Residency < Compliant
+Reliability | Disaster Recovery < Resilient
+Resource and Cost Optimization * | Performance < Reliable | Lizenzen, Sandboxes < Framework 2026
+fazit: **Ausgelagert:** Messaging, Eventing und APIs in die Integration Patterns.
+```
+````
+
+**`basis-addons`**: `basis: Part, Part | text` (EN `base:`) is what is set anyway (label "gesetzt" / "given"), two to four add-ons `+ Name | text` (label "Add-on"). Motion: the base stands, the add-ons dock on one by one.
+
+````
+```basis-addons
+titel: Welche Clouds das Unternehmen wirklich braucht
+basis: Sales Cloud, Service Cloud | In fast jedem Enterprise-Projekt gesetzt
++ Field Service | Passt bei vielen kurzen Einsätzen mit Routen- und Terminoptimierung.
++ Experience Cloud | Passt zu kundennahen Prozessen.
+fazit: Die spannenden Fragen beginnen bei den Add-ons.
+```
+````
+
+**`level`**: two to four levels `Name | meta` with two to five indented lines each (label "Level 1" …; the last level is highlighted), `abschluss:` (EN `done:`) is the badge line under every level. Motion: a rail runs across, the lines tick off, then the badge appears.
+
+````
+```level
+titel: sfdx-hardis-DevOps-Training · drei Level
+Contributor Basics | 7 Labs · ca. 2 h 15
+  Setup: VS Code, Git, sfdx-hardis
+  Deployment-Check und Merge
+Release Manager | 11 Labs · ca. 6 h 55
+  Pull Requests reviewen
+  Hotfixes, Monitoring, Doku
+abschluss: Badge erreicht
+```
+````
+
 ## Confirmed experience (for `praxis`)
 
 Only these, in Fabian's wording, without client names, industry or size:

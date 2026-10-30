@@ -48,7 +48,23 @@ Level 3, Release Manager | 11 labs · about 6 h 55
   Configuring the pipeline, reviewing pull requests, reading deployment logs, merging colliding pull requests, promoting to UAT with release notes, releasing to production with DORA metrics, hotfixes and retrofits, production monitoring, generated documentation and promotion branches.
 ```
 
-![The three levels of the sfdx-hardis DevOps training: Level 1 Contributor Basics with 7 labs and about 2 hours 15 minutes, Level 2 Contributor Advanced with 9 labs and about 4 hours, Level 3 Release Manager with 11 labs and about 6 hours 55 minutes. Each badge is verified by a job that re-runs every check against your own repository.](../../../assets/blog/sfdx-hardis-training-levels-en.png)
+```level
+title: sfdx-hardis DevOps training · three levels
+Contributor Basics | 7 labs · about 2 h 15
+  Setup: VS Code, Git, sfdx-hardis
+  First user story on a branch
+  Deployment check and merge
+Contributor Advanced | 9 labs · about 4 h
+  Missing dependencies
+  Deployment actions, quality gate
+  Merge conflicts and recovery
+Release Manager | 11 labs · about 6 h 55
+  Review pull requests
+  UAT, production, DORA metrics
+  Hotfixes, monitoring, docs
+done: Badge earned
+note: Each badge is verified by a job that re-runs every check against your own repository.
+```
 
 ## How are the badges earned?
 
