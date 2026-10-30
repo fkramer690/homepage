@@ -346,6 +346,37 @@ Release Note | Freigabe ab 5.000 Euro mit Vertretungsregel
 ```
 ````
 
+## 18. Steuerzentrale and Eisberg (light, animated)
+
+Two light blocks in the style of the chain (dashed label above, white frames on the technical grid), built 2026-10-30 for the sfdx-hardis and DevOps Center comparison after Fabian picked them from mockups; rating open. Text stays real HTML, no SVG.
+
+**`steuerzentrale`** (control centre): where a process is controlled, for two tools or approaches side by side. `titel:` (EN `title:`), then exactly two sides `seite: Name | control centre | Stage, Stage, Stage` (EN `side:`, two to four stages), each followed by exactly two boxes `- Role | Name | detail | link label` that hang below the control centre, and an optional `fazit:` (EN `note:`) as the caption of that side. The label "Steuerzentrale" / "Control centre" is added automatically. Motion (loops like the partner flow): the stages light up one after another, then a dot runs down each link and the box it reaches lights up. Reduced motion: the still picture. On phones the sides stack.
+
+````
+```steuerzentrale
+titel: Wo der Release-Prozess gesteuert wird
+seite: Lifecycle Center | Hub-Org in Salesforce | Entwicklung, UAT, Produktion
+- Speicher | Git | GitHub.com, Bitbucket Cloud | Branch, PR
+- Ziel | Salesforce-Orgs | UAT, Produktion | Deployment
+fazit: Ein Salesforce-Dienst ruft die Git-Plattform von außen auf.
+seite: sfdx-hardis | Git-Plattform mit CI | Pull Request, Prüfungen, Merge
+- Ziel | Salesforce-Orgs | UAT, Produktion | Deployment
+- Dazu | Monitoring | Backup, Dokumentation | geplant
+```
+````
+
+**`eisberg`** (iceberg): what is visible (often the licence) and the costs or efforts below it. `titel:`, `sichtbar: Title | text` (EN `visible:`) above the dashed waterline, then two to five items `- Title | text | tag`, each wider than the one before; a trailing `*` marks the biggest item (anthracite, tag in cyan). Optional `fazit:` (EN `note:`) for the dashed note. The waterline reads "Darunter: die echten Kosten" / "Below: the real costs". Use only with items the text names; no invented amounts. Motion: builds once when it scrolls into view (tip, waterline, then the items sink in one by one; `src/components/BlockMotion.astro`). Reduced motion or no script: the still picture. On phones every item takes the full width.
+
+````
+```eisberg
+titel: Was beide Werkzeuge wirklich kosten
+sichtbar: Lizenz: 0 € | bei beiden Werkzeugen
+- Git-Plattform | Kosten pro Nutzer | beide
+- Einrichtung | schnell bei Lifecycle Center, Pipeline-Aufbau bei sfdx-hardis | beide
+- Release-Rolle | ein Admin, der klickt, oder jemand, der die Pipeline pflegt | größter Posten *
+```
+````
+
 ## Confirmed experience (for `praxis`)
 
 Only these, in Fabian's wording, without client names, industry or size:

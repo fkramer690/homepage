@@ -1,5 +1,5 @@
 ---
-// Builds the staircase (```stufen treppe) and pillars (```saeulen) blocks once when they
+// Builds the staircase (```stufen treppe), pillars (```saeulen) and iceberg (```eisberg) blocks once when they
 // scroll into view; the motion itself is CSS in global.css. The animated explainers
 // (```pipeline, ```saeulenwechsel, ```basis-addons, ```level, ```prozess, ```kette) play a short sequence of
 // class changes instead; the pipeline repeats while it stays in view. No script or
@@ -8,7 +8,7 @@
 <script>
   const motion = 'IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  const blocks = document.querySelectorAll<HTMLElement>('.cb-stairs-block, .cb-pillars');
+  const blocks = document.querySelectorAll<HTMLElement>('.cb-stairs-block, .cb-pillars, .cb-iceberg');
   if (blocks.length && motion) {
     const observer = new IntersectionObserver(
       (entries) => entries.forEach((entry) => {
