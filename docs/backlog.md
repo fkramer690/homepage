@@ -135,7 +135,7 @@ Aus Fabians Bewertung: alle Grafiken mit 3 und alle mit einer Notiz, die einen A
 | G6 | Erklärgrafiken animieren: well-architected-mapping, devops-pipeline, which-clouds, sfdx-hardis-training-levels (dort auch Kontrast, Level 3) | 3, 1 und 2 | Thread |
 | G7 | Masterclass-Kopfzeichnungen und Treppe (Säulen) animieren | 2 und 1 | Erledigt 30.10.2026: Kopfzeichnungen bauen sich einmal auf (Variante A, ohne Punkt), Treppe und Säulen bauen sich langsam beim Reinscrollen auf |
 | G8 | Quick Wins: Zertifikatsgrafik „Schnittstellen“ läuft aus der Box, graue Boxen der Document-Builder-Grafik niedriger, Orange in winter-27-org-display ersetzen (gehört nicht zur Palette) | 2 | Erledigt 30.10.2026: Text in zwei Zeilen, graue Boxen auf Texthöhe gekürzt, Orange durch Hellgrau ersetzt |
-| G9 | Logo-Band auf der Startseite ca. 20 % größer | 2 | Thread |
+| G9 | Logo-Band auf der Startseite ca. 20 % größer | 2 | Erledigt 30.10.2026: Variante B, Logos und Abstände 30 % größer, auch auf dem Handy |
 | G10 | Vorschlag Masterclass-Liste auf der Startseite | 2 | Thread |
 | G11 | Vorschlag Referenz-Karten auf der Startseite | 2 | Thread |
 
