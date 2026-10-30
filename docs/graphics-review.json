@@ -271,7 +271,7 @@
     "icon:unlinked": {"title": "Icon-Bibliothek (42)", "proposal": 1, "rating": 1, "ratedOn": "2026-10-30"},
     "layout:blog-filter": {"title": "Filter-Seitenspalte mit Autor und Thema", "proposal": 1, "rating": 1, "ratedOn": "2026-10-30"},
     "layout:deal": {"title": "Zwei Karten mit Icon-Listen („Der Deal“)", "proposal": 1, "rating": 1, "ratedOn": "2026-10-30"},
-    "layout:fragen": {"title": "Themenkacheln plus kompakte Fragenliste", "proposal": 1, "rating": 1, "ratedOn": "2026-10-30"},
+    "layout:fragen": {"title": "Themenkacheln plus kompakte Fragenliste", "proposal": 1, "rating": 1, "ratedOn": "2026-10-30", "note": "Am 2026-10-30 um Variante B ergänzt: dunkler Kopf, Zahlenleiste, aufklappbare Antworten, Zitatband"},
     "layout:hub": {"title": "Zeitleiste, Lernpfad und Themen-Tabs", "proposal": 1, "rating": 1, "ratedOn": "2026-10-30"},
     "layout:kreuzliste": {"title": "Kompakte ✕-Liste in weißer Box", "proposal": 1, "rating": 1, "ratedOn": "2026-10-30"},
     "layout:mc-overview": {"title": "Seitenspalte plus kompakte Zeilenliste", "proposal": 1, "rating": 1, "ratedOn": "2026-10-30"},
