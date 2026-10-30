@@ -139,6 +139,8 @@ fall: Von Stufe 2 zu 3 | Die Quelle der Wahrheit wandert ins Repository. | Direk
 ```
 ````
 
+Animation of the variant `treppe` (Fabian 2026-10-30, kept slow on purpose): when the staircase scrolls into view the steps rise one after another, then the risk row and the bands appear; once per page view (`src/components/BlockMotion.astro`, CSS in `global.css`). Reduced motion or no script: the still picture.
+
 ## 10. Vergleich (without / with)
 
 Two columns like the start page comparison: `ohne: Title` (EN `without:`) with grey crosses, then `mit: Title` (EN `with:`) with cyan ticks and a cyan frame, two to five `- points` each. Approved by Fabian 2026-10-29. Use it for before and after; for a decision use `pro-contra`.
@@ -193,6 +195,8 @@ analyse | Review | Für jede Änderung | Menschen prüfen Design und Lesbarkeit.
 basis: Auf der Git-Plattform des Kunden
 ```
 ````
+
+Animation (Fabian 2026-10-30, slow): when the block scrolls into view the base appears, the pillars grow from it one after another and the roof lands last; once per page view, same script and fallback as the staircase.
 
 ## 14. Partnerfluss (partner flow, animated)
 

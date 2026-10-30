@@ -77,6 +77,12 @@ mit: Mit Pull-Request-Review | Jede Änderung geht durch ein Review, bevor sie i
 - Bei `prefers-reduced-motion` gibt es keine Bewegung, nur das fertige Bild.
 - Ohne JavaScript bleibt die Arbeitsweise einfach sichtbar.
 
+### Masterclass-Kopfzeichnungen, Treppe und Säulen (G7, 30.10.2026)
+
+- **Kopfzeichnungen** (`MasterclassHub.astro`, `global.css` Abschnitt „Hub drawing“): bauen sich einmal beim Laden auf, Schritt für Schritt (`mc-step`, `--i`), ADKAR-Stufen wachsen aus dem Boden, der Akzent wird zuletzt cyan. Fabian wählte Variante A; ein umlaufender Punkt sah ihm zu billig aus.
+- **Treppe und Säulen** (`src/components/BlockMotion.astro` in `Page.astro`): bauen sich beim Reinscrollen einmal langsam auf. Fabian wollte beide ruhiger als im ersten Entwurf.
+- Mockups: `/mnt/project-files/homepage/masterclass-animation/` im Projektordner.
+
 ## Offene Punkte und Ideen
 
 - **#191 mergen.** Danach live auf `/leistungen/partnersteuerung/`, `/en/services/partner-governance/` und in beiden Fassungen des PR-Review-Artikels prüfen.
