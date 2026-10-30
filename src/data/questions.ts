@@ -119,6 +119,18 @@ export const questions = {
     back: 'Zurück zur Startseite',
     topics: 'Themen',
     count: (n: number) => (n === 1 ? '1 Frage' : `${n} Fragen`),
+    // Figures strip under the page head; question and topic counts come from the groups.
+    stats: {
+      questions: 'Fragen vor jeder Architektur',
+      topics: 'Themen von Ziel bis Lizenz',
+      more: [
+        { value: '3', text: 'Fragen ohne schnelle Antwort: Zeit für ein Gespräch' },
+        { value: '30', text: 'Minuten Erstgespräch, kein Pitch' },
+      ],
+    },
+    quoteLead: 'Und die Frage, die ich am Ende immer stelle:',
+    quote: 'Was schon einmal gescheitert ist, ist die ehrlichste Antwort im ganzen Projekt. Sie spart oft Monate.',
+    quoteCaption: 'Frage 14',
   },
   en: {
     title: 'Questions I ask in every Salesforce project',
@@ -226,5 +238,16 @@ export const questions = {
     back: 'Back to the start page',
     topics: 'Topics',
     count: (n: number) => (n === 1 ? '1 question' : `${n} questions`),
+    stats: {
+      questions: 'questions before any architecture',
+      topics: 'topics from goal to licences',
+      more: [
+        { value: '3', text: 'questions without a quick answer: time for a call' },
+        { value: '30', text: 'minutes first call, no pitch' },
+      ],
+    },
+    quoteLead: 'And the question I always ask at the end:',
+    quote: 'What has failed before is the most honest answer in the whole project. It often saves months.',
+    quoteCaption: 'question 14',
   },
 };

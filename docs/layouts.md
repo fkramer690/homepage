@@ -88,6 +88,13 @@ dashed dividers and a cyan number, instead of one card per question. Since the
 page width rule the groups sit inside the reading column of `ReadingGrid`.
 Fits: long lists grouped by topic (FAQ-like pages, checklists).
 
+Extended 2026-10-30 (variant B of three, "noch geiler"): the page head moved into the
+dark grid area with a booking button (like the service pages), a figures strip
+(`.sp-stats`, question and topic counts computed from the data) sits above the topic
+tiles, the answers fold away (`<details>` per question, `+` like the blog FAQ, answers
+stay in the HTML and the FAQPage schema), and question 14 closes the list as a quote
+band (`.role-quote`) before the author box. Texts in `src/data/questions.ts`.
+
 ## Side column + compact row list (masterclass overview)
 
 Chosen 2026-10-29 for `/masterclass/` and `/en/masterclass/` (variant B of three).
