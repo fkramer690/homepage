@@ -232,25 +232,28 @@ const serviceIcons = ['architecture', 'change', 'pipeline', 'integration', 'team
 
     <section class="section" id="masterclasses">
       <div class="container">
-        <div class="mc-home">
-          <div>
-            <p class="label mono">{mcTexts.homeLabel}</p>
-            <h2>{mcTexts.homeTitle}</h2>
-            <p class="section-intro">{mcTexts.homeText}</p>
-            <p><a class="text-link" href={masterclassesIndex(lang)}>{mcTexts.homeAll} →</a></p>
-          </div>
-          <ul class="mc-home-list">
-            {masterclasses.map((mc) => (
-              <li>
-                <a href={mc.href}>
-                  <span class="mc-home-name">{mcTexts.homeNames[mc.id]}</span>
-                  <span class="mc-home-meta mono">{mcTexts.chapters.replace('{n}', String(mc.chapters))}</span>
-                  <span class="mc-home-arrow" aria-hidden="true">→</span>
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <p class="label mono">{mcTexts.homeLabel}</p>
+        <h2>{mcTexts.homeTitle}</h2>
+        <p class="section-intro">{mcTexts.homeText}</p>
+        <ul class="mc-home-tiles">
+          {masterclasses.map((mc) => (
+            <li>
+              <a href={mc.href}>
+                <Icon name={mc.icon} class="mc-home-icon" />
+                <span class="mc-home-name">{mc.shortName}</span>
+                <span class="mc-home-topics">{mcTexts.homeTopics[mc.id]}</span>
+                <span class="mc-home-meta mono">{mcTexts.chapters.replace('{n}', String(mc.chapters))} →</span>
+              </a>
+            </li>
+          ))}
+          <li class="mc-home-all">
+            <a href={masterclassesIndex(lang)}>
+              <span class="mc-home-total">{masterclasses.reduce((sum, mc) => sum + mc.chapters, 0)}</span>
+              <span class="mc-home-total-text">{mcTexts.homeTotal.replace('{n}', String(masterclasses.length))}</span>
+              <span class="mc-home-all-link">{mcTexts.homeAll} →</span>
+            </a>
+          </li>
+        </ul>
       </div>
     </section>
 
