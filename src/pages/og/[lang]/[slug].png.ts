@@ -13,7 +13,7 @@ export const GET: APIRoute = async ({ props }) => {
   const { post } = props as { post: Post };
   const png = await renderOgImage({
     title: post.data.title,
-    eyebrow: 'FK Solution Design · Blog',
+    eyebrow: 'Blog',
     footer: post.data.coAuthor
       ? `${getAuthor(post.data.lang, post.data.author).name} · ${getAuthor(post.data.lang, post.data.coAuthor).name}`
       : (({ name, jobTitle }) => `${name} · ${jobTitle}`)(getAuthor(post.data.lang, post.data.author)),
