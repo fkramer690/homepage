@@ -59,6 +59,25 @@ from `src/icons/` on the left, bold title, one or two sentences below.
 Chosen 2026-10-27: two columns, grey ✕ list "without" and cyan ✓ list "with"
 (`.compare`).
 
+## Quote after a comparison (start page, role section)
+
+Chosen 2026-10-30. A quote must not stand on its own under a list; it sums up one
+point that is visibly marked in the list above it. Fabian called both variants good
+examples to reuse in blog articles (backlog item 17).
+
+- **Stage band (built, variant B):** mark the matching pair in the comparison (left
+  struck through in grey, right bold in cyan-dark), one short lead sentence, then a
+  dark band with the photo on the right fading into anthracite and the quote in italic
+  white with a cyan bar and a mono attribution line (`.role-quote`, `.compare-hit`).
+  On phones the photo sits on top, the quote below. Needs a photo that is at least as
+  wide as the photo half of the band.
+- **Principle card (variant A, not built):** a dashed cyan line runs from the "with"
+  column down into a dark full-width card: round photo (cyan ring), mono kicker
+  "Mein Grundsatz", the quote, mono attribution. More compact than the band; fits
+  when there is no good wide photo.
+
+Mockups of both: project files `homepage/rolle-zitat/`.
+
 ## Topic tiles + side column + compact list (questions page)
 
 Chosen 2026-10-29 for `/fragen/` and `/en/questions/` (variant A of three; Fabian
