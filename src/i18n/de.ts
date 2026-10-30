@@ -728,11 +728,10 @@ export const de: Dict = {
     homeLabel: 'Masterclasses',
     homeTitle: 'Wissen zum Nachlesen, Kapitel für Kapitel',
     homeText: 'Sieben Masterclasses für Entscheider in Fertigungsunternehmen, frei lesbar auf Deutsch und Englisch.',
-    // Short names and topic lines for the tiles on the start page, keyed by course id.
+    // Short names and topic lines for the list on the start page, keyed by course id.
     homeTopics: { ai: 'Agentforce, Data Cloud, Lizenzen', devops: 'Pipelines, Releases, sfdx-hardis', 'manufacturing-cloud': 'Run-Rate, Absatzplanung, Rahmenverträge', 'revenue-cloud': 'Angebote, Preise, Verträge', 'b2b-commerce': 'Händlerportal, Bestellungen, ERP', 'field-service': 'Einsatzplanung, Techniker-App, Berichte', 'change-management': 'Akzeptanz, Key User, Roll-out' },
     homeNames: { ai: 'KI & Agentforce', devops: 'DevOps & Release-Management', 'manufacturing-cloud': 'Manufacturing Cloud', 'revenue-cloud': 'Revenue Cloud', 'b2b-commerce': 'B2B Commerce', 'field-service': 'Field Service', 'change-management': 'Change Management' },
     homeAll: 'Alle Masterclasses im Überblick',
-    homeTotal: 'Kapitel in {n} Masterclasses, auf Deutsch und Englisch',
   },
   side: {
     toc: 'Inhalt',
