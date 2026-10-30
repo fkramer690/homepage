@@ -13,7 +13,7 @@
     "block:pro-contra": {"title": "Pro-Contra", "proposal": 2, "rating": 2, "ratedOn": "2026-10-30"},
     "block:saeulen": {"title": "Säulen mit Dach", "proposal": 1, "rating": 1, "ratedOn": "2026-10-30"},
     "block:schritte": {"title": "Schritte", "proposal": 2, "rating": 3, "ratedOn": "2026-10-30", "todo": "docs/backlog.md G2"},
-    "block:stufen": {"title": "Stufen (Kacheln)", "proposal": 2, "rating": 3, "ratedOn": "2026-10-30", "todo": "docs/backlog.md G3"},
+    "block:stufen": {"title": "Stufen (Kacheln)", "proposal": 2, "rating": 3, "ratedOn": "2026-10-30", "todo": "docs/backlog.md G3 erledigt 2026-10-30 (Pfeilkette)"},
     "block:stufen-treppe": {"title": "Stufen als Treppe", "proposal": 2, "rating": 1, "ratedOn": "2026-10-30", "note": "super aber säulen per se könnte man auch gut animieren", "todo": "docs/backlog.md G7"},
     "block:vergleich": {"title": "Vergleich (ohne / mit)", "proposal": 1, "rating": 1, "ratedOn": "2026-10-30"},
     "block:vertiefung": {"title": "Vertiefung (einklappbar)", "proposal": 2, "rating": 2, "ratedOn": "2026-10-30"},
