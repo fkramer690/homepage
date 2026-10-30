@@ -29,7 +29,7 @@ const logo = (x: number, y: number, size: number) => `
     <defs><clipPath id="fk"><rect x="36" y="22" width="44" height="56"/></clipPath></defs>
     <rect width="100" height="100" rx="22" fill="#2f2f32"/>
     <g clip-path="url(#fk)" stroke="#ffffff" stroke-width="12">
-      <line x1="36" y1="50" x2="86" y2="0"/><line x1="36" y1="50" x2="86" y2="100"/>
+      <line x1="36" y1="50" x2="80" y2="4"/><line x1="36" y1="50" x2="80" y2="96"/>
     </g>
     <rect x="24" y="22" width="12" height="56" fill="#1BA1E2"/>
     <rect x="24" y="22" width="26" height="12" fill="#1BA1E2"/>
