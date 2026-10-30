@@ -17,7 +17,7 @@ Stand 28.10.2026. Grundlage: Ranking-Lauf, KI-Check und OnPage-Crawl vom 28.10.2
 | D7 | Freelancer-Profile nach Marktanalyse (https://claude.ai/artifact/Wzou8L3jKRP7rpTnRyk89w): Pflicht freelancermap, freelance.de, LinkedIn; danach GULP, Malt, XING, Trailblazer-Profil, FRATCH. Überall gleicher Titel und Schwerpunkt (Field Service, Manufacturing, Partnersteuerung). Hinweis: Kein Portal erlaubt einen Link auf die Website, Profile bei GULP und freelance.de sind anonym | Fabian | offen |
 | D8 | L1 Partnerauswahl: Antworten auf 4 Fragen (Warnsignal im Angebot, Standardfragen im Pitch, gescheiterte Partnerwahl, Referenzprüfung) | Fabian | offen |
 | D9 | Wirkung prüfen: Positionen von D4 und D5 nach 2 bis 3 Montagsläufen vergleichen | Claude | ab 16.11.2026 |
-| D10 | Profil-URLs mit Namen (LinkedIn, XING, Trailblazer, freelancermap, Malt) als sameAs ins Schema, sobald D7 steht | Claude | wartet auf D7 |
+| D10 | Profil-URLs mit Namen (LinkedIn, XING, Trailblazer, freelancermap, Malt) als sameAs ins Schema, sobald D7 steht | Claude | erledigt 30.10.2026 (PR #215, #217-#219: LinkedIn, XING, Trailblazer, GitHub, GULP, freelance.de, freelancermap, Fratch; offen: LinkedIn-Firmenseite, Google-Profil) |
 | D11 | Seite „Freiberuflicher Salesforce Architect“ (DE `/freiberuflicher-salesforce-architect/`, EN `/en/freelance-salesforce-architect/`): Anlässe, Abgrenzung zum Implementierungspartner, Ergebnisse, Praxisbeispiel, Konditionen, FAQ; im Footer verlinkt | Claude | erledigt (29.10.2026) |
 | D12 | Artikel „Salesforce-Freelancer oder Agentur: wann was passt“ (DE + EN, Kategorie Architektur & Partnersteuerung) | Claude | erledigt (29.10.2026) |
 | D13 | CV-Download auf der Recruiter-Seite (`/partner/recruiter/`, `/en/partners/recruiters/`) mit Hinweis: Hier liegt immer die aktuelle Version, ältere Versionen bitte nicht mehr bei Kunden einreichen. Lebenslauf gibt es nur in einer Version (Englisch) | Fabian (CV-PDF), dann Claude | erledigt (Download PR #163, Hinweis „immer aktuelle Fassung“ PR #187) |
@@ -120,6 +120,10 @@ Macht Fabian selbst (Quick Wins):
 - QD. Backlinks sammeln (Trailhead, Konferenz-/Sessionize-Seiten, Blue Apes) und URLs an Claude geben (kommen ins Schema als sameAs).
 - QE. Ab ca. 9.11.2026: Search Console Bericht „Seiten“ und PageSpeed Insights prüfen.
 - QF. Unternehmensverzeichnisse: Einträge mit überall gleichem Namen, gleicher Adresse und Telefonnummer wie im Google-Profil anlegen, jeweils mit Link auf www.fk-sd.de. Vorschläge: Bing Places (Import aus dem Google-Profil möglich), Apple Business Connect, Gelbe Seiten, Das Örtliche, Cylex, 11880. North Data und Firmenwissen ziehen Daten aus dem Handelsregister, dort nur prüfen und ggf. Website ergänzen. Fertige Eintrags-URLs an Claude geben (kommen ggf. ins Schema als sameAs).
+- QG. Verzeichniseinträge (Liste Fabian 30.10.2026), alle mit gleichem Namen, gleicher Adresse und Telefonnummer und Link auf www.fk-sd.de. Nur kostenlose Basiseinträge, keine Bezahlpakete. Nicht ins Schema als sameAs (Verzeichnisse, keine eigenen Profile).
+  - Webkataloge (wenig Aufwand, alte Domains, kaum Traffic, Freischaltung dauert Wochen bis Monate): onlinestreet.de, suchnase.de, webspider24.de (strenge Regeln vorher lesen), bunte-suche.de, go-findyou.de.
+  - Firmenverzeichnisse (gehen schnell online, teils viel Traffic): dasoertliche.de, werkenntdenbesten.de, gelbeseiten.de, stadtbranchenbuch.com, provenexpert.com (eher Bewertungsplattform).
+  - Ohne Backlink, wichtig für lokale Sichtbarkeit: Google-Unternehmensprofil (siehe QA), Bing Places (Import aus Google), Apple Maps (Apple Business Connect).
 
 ## Grafiken verbessern (Grafik-Ranking 30.10.2026)
 
