@@ -32,10 +32,14 @@ Ein KI-nativer Delivery-Prozess für Salesforce macht das Jira-Ticket zur ausfü
 
 KI-native Delivery bedeutet, den Lieferprozess um den Agenten herum zu bauen, statt dem alten Prozess einen Coding-Assistenten hinzuzufügen. Wie sich dadurch die Teamaufstellung ändert, habe ich in [KI-native Delivery: kleinere Salesforce-Teams](../ki-kleinere-salesforce-teams-delivery/) beschrieben. Hier geht es um den Ablauf selbst. Er ist mein Zielbild: Einzelne Schritte nutze ich schon, durchgängig vom Workshop bis zur Produktion setze ich ihn im nächsten Projekt auf, und ein paar Lücken sind noch zu schließen. Er ruht auf vier Ideen:
 
-- **Das Ticket ist die Spezifikation.** Ein Agent kann eine Story nur so gut umsetzen, wie ihre Akzeptanzkriterien geschrieben sind. Deshalb ist die Spec-Freigabe das wichtigste Tor.
-- **Der Agent macht die Fleißarbeit.** Org-Analyse, Protokoll, Story-Entwürfe, Prototyp, Code, Tests, Testskripte, Release Notes.
-- **Die Pipeline ist ein deterministischer Qualitätszaun.** Sie validiert und deployt, ohne dass irgendwo ein Modell entscheidet.
-- **Personen sitzen an klar definierten Toren** und führen jedes Gespräch mit dem Kunden selbst. Der Agent nimmt an keinem Termin teil.
+```saeulen
+dach: KI-native Delivery
+contract | Ticket | ist die Spezifikation | Ein Agent setzt eine Story nur so gut um, wie ihre Akzeptanzkriterien geschrieben sind.
+ai | Agent | macht die Fleißarbeit | Org-Analyse, Protokoll, Stories, Prototyp, Code, Tests und Release Notes entwirft der Agent.
+pipeline | Pipeline | prüft deterministisch | Sie validiert und deployt, ohne dass irgendwo ein Modell entscheidet.
+team | Personen | entscheiden an Toren | Sie führen jedes Gespräch mit dem Kunden selbst, der Agent sitzt in keinem Termin.
+basis: Ein Prozess, um den Agenten herum gebaut
+```
 
 Der Unterschied zu KI-gestützt: Dort bekommt der alte Prozess einen Coding-Assistenten, der Business Analyst tippt weiter Stories ab, und der Kunde sieht erst im Abnahmetest etwas Lauffähiges. Hier liefert der Agent Protokoll, Stories und einen Prototyp, und jede Rückmeldung wird gegen das bestätigte Protokoll eingeordnet.
 
@@ -111,16 +115,18 @@ Nach der Freigabe rollt die Pipeline die bereits validierte Deployment-ID per Qu
 
 Agent und Pipeline entscheiden nichts Verbindliches. Jede Entscheidung, die Scope, Qualität oder Produktion betrifft, trifft eine Person mit Namen.
 
-| | Discovery | Bauen | Release |
-|---|---|---|---|
-| Kunde | Erzählt, **bestätigt das Protokoll** | Beantwortet Rückfragen | Testet, **gibt das Release frei** |
-| Business Analyst | Moderiert, kuratiert, **gibt die Spec frei** | Klärt Fachfragen | Begleitet den Test, **entscheidet über CRs** |
-| Architekt | Setzt Leitplanken, **gibt die Spec frei** | Pflegt die Regeldatei | Achtet auf Datenmodell und Sharing |
-| Entwickler | Prüft den Prototyp | Gibt Pläne frei, **reviewt und merged** | Übernimmt bei Eskalation |
-| Agent | Analysiert, protokolliert, entwirft | Baut Code und Tests | Testskripte, Triage, Release Notes |
-| Pipeline | Noch nicht beteiligt | Validiert, setzt den Jira-Status | Deployt, setzt den Jira-Status |
-
-Fett sind die Entscheidungen an den fünf Toren. Alles andere ist Vorarbeit dafür.
+```tabelle
+titel: Wer in welcher Phase entscheidet
+spalten: | Discovery | Bauen | Release
+Kunde | Erzählt und bestätigt das Protokoll * | Beantwortet Rückfragen | Testet und gibt das Release frei *
+Business Analyst | Moderiert, kuratiert und gibt die Spec frei * | Klärt Fachfragen | Begleitet den Test, entscheidet über CRs *
+Architekt | Setzt Leitplanken und gibt die Spec frei * | Pflegt die Regeldatei | Achtet auf Datenmodell und Sharing
+Entwickler | Prüft den Prototyp | Gibt Pläne frei, reviewt und merged * | Übernimmt bei Eskalation
+Agent | Analysiert, protokolliert, entwirft | Baut Code und Tests | Testskripte, Triage, Release Notes
+Pipeline | Noch nicht beteiligt | Validiert, setzt den Jira-Status | Deployt, setzt den Jira-Status
+marke: Tor
+fazit: Markiert sind die Entscheidungen an den fünf Toren. Alles andere ist Vorarbeit dafür.
+```
 
 Für die Rollen ändert sich mehr als die Werkzeuge. Der Business Analyst schreibt weniger und entscheidet mehr; seine Kernkompetenz wird, Widersprüche zwischen Gesagtem und Gemeintem zu erkennen. Der Architekt wird zum Hüter der Regeldatei, der Markdown-Datei im Repository mit Trigger-Framework, Namenskonventionen, Sharing-Regeln und Verboten, die der Agent zu Beginn jeder Sitzung liest. Sie ist der größte Hebel für die Qualität aller Agenten-Ergebnisse, siehe [KI-Regeldatei im Salesforce-Repository](../ki-regeldatei-salesforce-repository/). Der Kunde braucht mehr Disziplin bei Bestätigungen, sonst kippt die Geschwindigkeit in Chaos.
 
@@ -172,6 +178,17 @@ Der Prozess hängt an keinem bestimmten Coding-Agenten. Er braucht vier Verbindu
 
 ## Wo sollten Sie anfangen?
 
-Fangen Sie mit dem Tor an, das am meisten spart: der Spec-Freigabe. Lassen Sie für einen Stream die Stories so schreiben, dass ein Agent sie ohne Rückfrage umsetzen kann, und messen Sie, wie oft der Entwickler im Review trotzdem nachfragen muss. Parallel klären Sie Aufzeichnung und Tenant für die Workshops und sperren jeden Produktionszugang außer dem der Pipeline. Erst wenn diese Strecke stabil läuft, lohnt es sich, Prototyp und Feedback-Triage dazuzunehmen.
+Fangen Sie mit dem Tor an, das am meisten spart: der Spec-Freigabe. Erst wenn diese Strecke stabil läuft, lohnt sich der Rest.
+
+```schritte
+Spec-Freigabe | ein Stream · BA und Architekt
+  Stories so schreiben, dass ein Agent sie ohne Rückfrage umsetzen kann.
+Messen | im Code-Review · Entwickler
+  Zählen, wie oft der Entwickler trotzdem nachfragen muss.
+Absichern | parallel
+  Aufzeichnung und Tenant klären, jeden Produktionszugang außer dem der Pipeline sperren.
+Ausbauen | wenn es stabil läuft
+  Prototyp und Feedback-Triage dazunehmen.
+```
 
 Ein KI-nativer Delivery-Prozess wird schnell, weil Personen an wenigen Toren entscheiden und alles dazwischen belegbar bleibt.

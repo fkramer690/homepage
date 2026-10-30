@@ -90,7 +90,9 @@ function check(collection, rules) {
         const wordsNow = text.split(/\s+/).filter(Boolean).length;
         if (kinds.size < 1) fail('add at least one content block or a table (see "Content blocks" in the guidelines)');
         else if (wordsNow > 1300 && kinds.size < 2) fail('over 1,300 words: use at least two different content blocks or a block and a table');
-        if (blocks.length > 4) fail(`${blocks.length} content blocks, at most 4 per text`);
+        // One block per 250 words, never fewer than four allowed (Fabian 2026-10-30).
+        const maxBlocks = Math.max(4, Math.floor(wordsNow / 250));
+        if (blocks.length > maxBlocks) fail(`${blocks.length} content blocks, at most ${maxBlocks} for ${wordsNow} words (one per 250, at least 4)`);
         if (blocks.filter((b) => b.name === 'praxis').length > 1) fail('at most one praxis block per text');
         if (blocks.filter((b) => b.name === 'hinweis').length > 2) fail('at most two hinweis blocks per text');
       }
