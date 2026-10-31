@@ -36,6 +36,8 @@ export const en = {
     newTab: '(opens Microsoft Bookings in a new tab)',
     externalTab: '(opens in a new tab)',
     switchLabel: 'Deutsch',
+    menuOpen: 'Open menu',
+    menuClose: 'Close menu',
   },
   hero: {
     eyebrow: 'FK Solution Design GmbH · Cologne',
@@ -787,6 +789,9 @@ export const en = {
     videoClose: 'Close video',
   },
   floating: {
+    shortCall: 'Book a call',
+    shortMessage: 'Message',
+    shortPhone: 'Call',
     label: 'Contact',
     call: 'Book a 30-minute call',
     message: 'Send a message',
