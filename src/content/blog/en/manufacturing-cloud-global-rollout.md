@@ -10,8 +10,7 @@ categories: [manufacturing-cloud]
 tags: [Manufacturing Cloud, Rollout, Harmonisation, Change Management, Manufacturing]
 series: { id: manufacturing-cloud, part: 8 }
 takeaways:
-  - "A global Manufacturing Cloud rollout starts with the strategic goal. Usually that is process harmonisation, and the order of countries follows from it."
-  - "I start with a large country of reasonable complexity and include one of the biggest regions in the first two phases, so the global template is tested under real load early."
+  - "I include one of the biggest regions in the first two phases, so the global template is tested under load early."
   - "All countries should work at least 80 percent identically. Every deviation per country is justified and kept as small as possible."
   - "Differences in processes, business units, IT systems and brands per country decide which country comes when."
   - "Change management belongs in every rollout, even when the client thinks they do not need it."
@@ -43,18 +42,18 @@ After the first country, these points can hardly be changed without touching eve
 
 How I keep that log is described under [Salesforce architecture](../../services/salesforce-architecture/).
 
-## Which country do you start with?
+## The first country is large and not too special
 
-A large country of reasonable complexity. Both count:
+I start with a large country of reasonable complexity. Both count:
 
-- **Big enough** for the template to see real volumes, real users and real edge cases. A small pilot country confirms a template that later fails at the first large country.
+- **Big enough** for the template to see real volumes, many users and everyday edge cases. A small pilot country confirms a template that later fails at the first large country.
 - **Not too special**, so its quirks do not shape the template for everyone else. A country with an unusual sales model or its own product line is a poor starting point, even if it is large.
 
 A second rule comes with it: one of the biggest regions should be part of the first two phases. If it only comes in phase five, it meets a template that grew on smaller countries and demands changes that affect every country already live. The earlier the large region is in, the cheaper those changes are.
 
-## What decides the order after that?
+## Processes, business units and IT systems decide the order
 
-Three questions, answered differently for each country:
+Three questions are answered differently for each country:
 
 1. **How similar are the processes?** Countries that already sell and invoice in a similar way go faster. Countries with their own processes need more time for harmonisation.
 2. **Which business units are there?** An entity with several business units is a bigger step than one with a single unit.
@@ -75,9 +74,9 @@ In Salesforce that touches more than you expect in the first workshop:
 
 So I put the brand into the template as its own question, even if the first country only has one. If the second brand only appears in the third country, it otherwise becomes a deviation every other country has to carry.
 
-## How do you keep deviations per country small?
+## Every country works at least 80 percent the same way
 
-With a rule of thumb and a process. The rule of thumb: all countries work at least 80 percent identically, and for each country the aim is to minimise the delta. Countries after the first should only show marginal deviations.
+There is a rule of thumb and a process for it. The rule of thumb: all countries work at least 80 percent identically, and for each country the aim is to minimise the delta. Countries after the first should only show marginal deviations.
 
 The process is simple but needs discipline:
 
@@ -96,7 +95,7 @@ Because harmonisation means people work differently. In every country that follo
 Many clients think they do not need change management. The budget is allocated, the training is planned, and users will get used to it. I still keep bringing it up, during planning, before each country and after each go-live.
 ```
 
-At least three things belong to it per country:
+Per country it needs at least:
 
 - **Key users** who know the template and answer the first questions in the country.
 - **Communication before go-live** that explains what changes and why, not just where to click.
@@ -104,9 +103,9 @@ At least three things belong to it per country:
 
 How I plan the introduction of new processes on the client side is described under [Salesforce change management consulting](../../services/change-management-salesforce/). What each country needs is in [change management in a global Salesforce rollout](../change-management-global-salesforce-rollout/), the overview in [Salesforce change management: why rollouts fail](../change-management-salesforce-rollout/).
 
-## Where should you start?
+## First step: put the goal in writing
 
-Before the first country is planned, settle five points:
+Before the first country is planned, settle these points:
 
 1. **The goal.** Harmonisation or local freedom, in writing and backed by management.
 2. **The template.** Account level, product rule, portal and the other base decisions in the decision log.
@@ -114,4 +113,4 @@ Before the first country is planned, settle five points:
 4. **The order.** A table with processes, business units, IT systems and brands per country.
 5. **Change management.** Key users, communication and usage per country, planned from the start.
 
-A global rollout succeeds when the template is tested under real load early and every further country changes only a little.
+I have point 1 signed off by management before the first country is planned. Every later deviation per country is measured against that goal and the 80 percent.

@@ -9,11 +9,10 @@ topic: data
 categories: [manufacturing-cloud]
 tags: [Manufacturing Cloud, Partner Visit Management, Dealers, Distributors, KPIs, Mobile]
 takeaways:
-  - "Partner visit management plans dealer visits with location, account, priority and an assigned rep, and gives every visit tasks with KPIs that reps capture on their phone."
-  - "Each KPI has an expected value, so the back office compares expected and actual per task across dealers instead of reading free-text visit reports."
-  - "Tasks can carry context such as a sales agreement, an order, an asset or a warranty term, so the rep sees the right record at the dealer."
-  - "The feature has its own switch, enablePartnerVisitManagement, since API version 56.0. Trailhead documents neither the licence nor offline use, so ask Salesforce before you plan with them."
-  - "With a few dealers and no fixed KPIs, a simple visit report object is enough. The feature pays off when many dealers are visited with the same checklist."
+  - "Every visit gets tasks with location, priority and KPIs that reps capture on their phone."
+  - "Tasks carry context such as a sales agreement, an order or an asset, so the rep sees the right record at the dealer."
+  - "The switch enablePartnerVisitManagement exists since API 56.0. Trailhead documents neither the licence nor offline use."
+  - "The feature pays off when many dealers are visited with the same checklist."
 faq:
   - q: "What is partner visit management in Salesforce?"
     a: "A Manufacturing Cloud feature for planned and ad hoc visits to dealers, distributors and suppliers. Managers define tasks and KPIs with expected values, reps execute the visit in a mobile app and record the actual values, notes and screenshots."
@@ -38,7 +37,7 @@ Partner visit management plans and records visits to dealers, distributors and s
 
 On the [product page](https://salesforce.com/manufacturing/cloud/sales) Salesforce adds that visits show location, priority, estimated visit time and previous visit history, and that admins build visit pages from components called Visit Overview, Visit Actions and Visit Task List.
 
-## How does a visit run from plan to KPI?
+## A visit runs from plan to KPI
 
 The [unit on creating and executing visits](https://trailhead.salesforce.com/content/learn/modules/partner-visit-management-for-dealers-and-distributors/create-and-execute-partner-visits) shows the steps in the back office:
 
@@ -61,7 +60,7 @@ The rep opens the Partner Visits app from the App Launcher, sees scheduled visit
 
 The first unit also shows tasks linked to customer records, for example a warranty term on a warranty renewal task or an asset on a damage inspection. That is useful for dealers who handle [warranty claims](../warranty-claims-dealers-salesforce/): the rep sees the open warranty terms while standing in the workshop.
 
-## How do you switch it on, and what is unclear?
+## Switching it on is easy, licence and offline are open
 
 The feature has its own setting. In the [IndustriesManufacturingSettings metadata](https://developer.salesforce.com/docs/atlas.en-us.automotive_cloud.meta/automotive_cloud/auto_metadata_api_industriesmanufacturingsettings.htm) it is `enablePartnerVisitManagement`, available since API version 56.0, next to `enablePartnerLeadManagement` and `enablePartnerPerformanceManagement`. All default to off. So "we have Manufacturing Cloud" does not mean visits are running.
 
@@ -72,9 +71,9 @@ Two points are not documented in the sources I checked:
 
 How I would treat both points in the licence plan is described in [Salesforce licences: does everyone need a full one?](../salesforce-licences-full-licence-needed/).
 
-## Scenario: 60 dealers, quarterly, five KPIs
+## Worked example: 60 dealers, quarterly, five KPIs
 
-A typical scenario, as an assumption: a manufacturer of agricultural machinery has 60 dealers and six area sales managers. Each dealer is visited once a quarter. The visit checks five KPIs: spare parts stock of the 20 fast movers, number of trained mechanics, demo machines on site, open warranty claims older than 30 days and the share of the quarterly target reached.
+Assume a manufacturer of agricultural machinery has 60 dealers and six area sales managers. Each dealer is visited once a quarter. The visit checks five KPIs: spare parts stock of the 20 fast movers, number of trained mechanics, demo machines on site, open warranty claims older than 30 days and the share of the quarterly target reached.
 
 That gives 240 visits and 1,200 KPI values per year, each with an expected value. After one year the head of sales can see which dealers miss the spare parts target every quarter and which area manager never records the training dates. Today that information sits in Word documents or emails, if it exists at all.
 
@@ -106,11 +105,11 @@ contra: What speaks for the simple report
 
 The chapter on the [dealer and partner channel](../../masterclass/manufacturing-cloud/dealer-and-partner-channel/) shows how visits sit next to rebates, portals and ship and debit. Whether to buy or build such a feature is part of my [make-or-buy and licence forecasts](../../services/make-or-buy-licences/).
 
-## Where should you start?
+## First step: write down the KPIs with expected values
 
 1. **KPIs.** Write down five KPIs with definition, data type and expected value per dealer group.
 2. **Licence and offline.** Get both confirmed in writing for reps and, if planned, dealer staff.
 3. **Pilot.** One region, one quarter, one template.
 4. **Review.** After the quarter, check which KPIs were filled and which led to a decision.
 
-Partner visit management turns dealer visits into comparable data once the KPIs are agreed and the app works where your reps are.
+I review the pilot with the head of sales. KPIs that did not lead to a decision after one quarter come out of the template before it goes to all regions.

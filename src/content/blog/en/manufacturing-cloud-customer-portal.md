@@ -10,10 +10,9 @@ categories: [manufacturing-cloud]
 tags: [Manufacturing Cloud, Experience Cloud, Customer Portal, Sales Agreements, Manufacturing]
 series: { id: manufacturing-cloud, part: 7 }
 takeaways:
-  - "A customer portal on Manufacturing Cloud can show sales agreements, orders, master data and cases, and take requests and orders."
-  - "Salesforce Help names sales agreements only for the partner licence, not for Customer Community Plus for Manufacturing. So the exact scope belongs in the quote, in writing."
-  - "Customers should see their sales agreements in a reduced view. Fields such as margin and cost sit on the same object and must not go outside."
-  - "When customers maintain data such as the billing address themselves, Salesforce becomes the entry system for those fields. The sync to the ERP needs clear rules and visible error handling."
+  - "Salesforce Help names sales agreements only for the partner licence. The exact licence scope belongs in the quote, in writing."
+  - "Margin and cost sit on the same object as the sales agreement. Customers therefore get a reduced view."
+  - "When customers maintain the billing address themselves, Salesforce becomes the entry system for that field, with rules for the sync to the ERP."
 faq:
   - q: "Which licence do customers need for a Manufacturing Cloud portal?"
     a: "Salesforce offers Customer Community Plus for Manufacturing for customers and Partner Community for Manufacturing for dealers and suppliers. In my project, customers had Customer Community Plus for Manufacturing. Get written confirmation in the quote of what exactly a licence covers."
@@ -62,7 +61,7 @@ If customers should see sales agreements in the portal, put that into the quote 
 
 What portal licences cost and how they differ from internal licences is covered in [Salesforce licences: does everyone need a full one?](../salesforce-licences-full-licence-needed/). How the portal fits into the dealer channel next to rebates and partner visits is in [chapter 3 of the Manufacturing Cloud masterclass](../../masterclass/manufacturing-cloud/dealer-and-partner-channel/).
 
-## How much of the sales agreement should customers see?
+## Customers see less of the sales agreement than sales does
 
 Less than internal staff. In the project, customers saw their sales agreements in a slimmed-down list view, not at the level of detail sales works with.
 
@@ -84,7 +83,7 @@ One side effect is worth a thought: when customers see for themselves that they 
 In the project, customers could maintain certain information themselves, such as the billing address. That data was saved in Salesforce first and then synced to the ERP.
 ```
 
-That sounds like a detail, but it shifts the roles of the systems. At manufacturers, the ERP usually leads for customer master data, because orders and invoices are created there. When a customer maintains a field in the portal, Salesforce becomes the entry system for that field. That leads to three rules I settle before building:
+That sounds like a detail, but it shifts the roles of the systems. At manufacturers, the ERP usually leads for customer master data, because orders and invoices are created there. When a customer maintains a field in the portal, Salesforce becomes the entry system for that field. That leads to rules I settle before building:
 
 1. **A list of fields customers may change.** Billing address yes, payment terms no. IT and the business maintain the list together.
 2. **One direction per field.** A field the customer changes in the portal must not be changed in the ERP at the same time and written back, or the systems overwrite each other.
@@ -92,7 +91,7 @@ That sounds like a detail, but it shifts the roles of the systems. At manufactur
 
 How I decide the leading system for customers, products, prices and orders is described under [integration with ERP, middleware and telephony](../../services/salesforce-integration/).
 
-## What happens to orders and requests from the portal?
+## Portal orders close the loop through the ERP
 
 An order in the portal is the last step for the customer and the first one for the manufacturer. It has to reach the ERP, be confirmed there and flow back into the sales agreement as an actual quantity. Planning the portal means planning the whole loop.
 
@@ -111,13 +110,13 @@ Requests for new products or prices take a different route. They go to sales and
 
 Cases are the most familiar part of the portal. Here Manufacturing Cloud helps with links to orders and assets, which Help lists for the customer licence. How warranty claims run through dealers is a topic of its own in a later part of this series.
 
-## Where should you start?
+## First step: check the feature list against the licence
 
-Before the portal is built, settle four points:
+Before the portal is built, settle these points:
 
 1. **What do customers see and do?** A list of features, as in the first section above.
 2. **Which licence covers it?** Confirmed in writing, especially for sales agreements.
 3. **Which fields go outside?** For the sales agreement and the master data, without margin and cost.
 4. **Which data flows back to the ERP?** One direction and one error handling per field.
 
-A customer portal only takes load off inside sales when its numbers are right and the data flows back to the ERP cleanly.
+I send the feature list from point 1 to Salesforce and have them confirm, line by line, which portal licence covers it. Whatever stays open does not go into the first release.

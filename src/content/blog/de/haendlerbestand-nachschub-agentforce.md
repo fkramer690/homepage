@@ -9,11 +9,10 @@ topic: data
 categories: [manufacturing-cloud, ai]
 tags: [Agentforce, Manufacturing Cloud, Händler, Lagerbestand, SAP, ERP]
 takeaways:
-  - "Agentforce for Manufacturing kann Bestände zusammenfassen und Nachschubanforderungen anlegen; die Inventory-Vorlage kam im August 2025, Distributor-Beschaffung steht im Summer '26 Release."
-  - "Händlerbestand, Min/Max-Regeln und der Nachschubvorschlag können in Salesforce liegen; Verfügbarkeit, Preise, Kreditlimit und der Auftrag selbst bleiben in SAP oder proALPHA."
-  - "Standardmäßig ist eine Nachschubanforderung in Manufacturing Cloud ein Product Request in Salesforce; verbindlich wird sie erst, wenn das ERP sie angenommen und eine Auftragsnummer geliefert hat."
-  - "Jede schreibende Aktion braucht Sperren, die Code setzt: Kreditstatus aus dem ERP, eine Mengengrenze, die Bestätigung durch den Händler und eine Dublettenprüfung vor dem Senden."
-  - "Starten Sie lesend mit Bestandsübersichten und Vorschlägen; Aufträge legt der Agent erst an, wenn der Simulationsaufruf ins ERP funktioniert und getestet ist."
+  - "Die Inventory-Vorlage kam im August 2025, die Automatisierung der Distributor-Beschaffung steht für Summer '26 auf der Produktseite."
+  - "Eine Nachschubanforderung ist zunächst ein Product Request in Salesforce. Verbindlich wird sie erst mit der Auftragsnummer aus dem ERP."
+  - "Vier Sperren setzt Code, nicht das Modell: Kreditstatus aus dem ERP, Mengengrenze, Freigabe durch den Händler und Dublettenprüfung."
+  - "Ich starte lesend und lasse den Agenten erst Aufträge anlegen, wenn der Simulationsaufruf ins ERP getestet ist."
 faq:
   - q: "Kann Agentforce Nachschubaufträge für Händler automatisch auslösen?"
     a: "Technisch ja: Die Inventory-Vorlage für die Fertigung enthält eine Aktion, die einen Product Request anlegt, und Salesforce führt für Summer '26 die Automatisierung der Distributor-Beschaffung. Ich würde den Agenten Aufträge vorschlagen und vorbereiten lassen; annehmen sollte sie das ERP nach Prüfung von Verfügbarkeit, Preis und Kredit."
@@ -40,7 +39,7 @@ Für Summer '26 verspricht die [Produktseite von Manufacturing Cloud](https://ww
 Salesforce schreibt auf der eigenen [Seite zu KI in der Fertigung](https://www.salesforce.com/manufacturing/artificial-intelligence/) selbst, dass die vorgefertigten Funktionen "may not reflect actual product details". Ich würde den Partner deshalb bitten, die Vorlage in Ihrer Sandbox mit Ihren Daten zu zeigen, bevor jemand damit plant.
 ```
 
-## Welche Bestandsdaten liegen in Salesforce?
+## Händlerbestand und Nachschubregeln liegen in Salesforce
 
 Manufacturing Cloud nutzt die Bestandsobjekte aus Field Service. Ein [ProductItem](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/sforce_api_objects_productitem.htm) ist ein Produkt an einem Standort, mit Mengen für Bestand, verfügbar, reserviert, beim Lieferanten bestellt und unterwegs. Ein Händlerlager kann ein solcher Standort sein.
 
@@ -68,7 +67,7 @@ Die lesende Seite, also wie ein Agent den Auftragsstatus über MuleSoft aus SAP 
 
 Wem welche Zeile gehört, ist genauso eine Governance-Frage wie eine technische. Pflegt der Vertriebsinnendienst Min/Max in Salesforce und die Logistik Sicherheitsbestände in SAP, müssen beide festlegen, was gilt. Das ist dieselbe Disziplin wie bei der [Object Ownership Matrix](../object-ownership-matrix-salesforce/).
 
-## Wie sichern Sie schreibende Aktionen ab?
+## Schreibende Aktionen brauchen Sperren in Code
 
 Der Leitfaden der Salesforce Architects zu [Hybrid Reasoning mit Agent Script](https://architect.salesforce.com/docs/architect/fundamentals/guide/hybrid-reasoning-agentforce-builder-agent-script) gibt die Regel vor: "if you can express a decision as code, it should be written as logic." Eine Aktion, deren `available when`-Bedingung falsch ist, verschwindet aus der Werkzeugliste des Modells. Der Leitfaden warnt auch: Wer das LLM die Sperrvariable setzen lässt, holt sich genau die Schwankung zurück, die die Sperre verhindern soll.
 
@@ -81,9 +80,9 @@ Für einen Nachschubauftrag würde ich vier Sperren in Code setzen:
 
 Wie diese Bausteine funktionieren, steht in [Agent Script: Geschäftsregeln gehören nicht ins LLM](../agent-script-regeln-statt-llm/). Was Simulations- und Anlageaufrufe an Verbrauch kosten, rechne ich in [Flex Credits pro Aktion](../flex-credits-agentforce-kosten-pro-aktion/) vor.
 
-## Ein typisches Szenario: Nachschub für 120 Händler
+## Rechenbeispiel: Nachschub für 120 Händler
 
-Nehmen wir einen Hersteller von Druckluftkomponenten mit SAP S/4HANA, 120 Händlern in Deutschland, Österreich und den Benelux-Ländern und einem Händlerportal auf Experience Cloud. Alle Zahlen in diesem Szenario sind Annahmen.
+Nehmen wir einen Hersteller von Druckluftkomponenten mit SAP S/4HANA, 120 Händlern in Deutschland, Österreich und den Benelux-Ländern und einem Händlerportal auf Experience Cloud. Alle Zahlen in diesem Beispiel sind Annahmen.
 
 Angenommen, jeder Händler lädt montags den Bestand für 300 Schnelldreher unter den Ersatzteilen hoch. Mit einer Min/Max-Regel pro Teil und Händlerstandort sind das 36.000 Regeln. Die pflegt niemand von Hand. Die Mindestmenge sollte deshalb aus dem Verbrauch oder aus der [Absatzprognose mit Account Forecasting](../account-forecasting-absatzprognose-vertrieb/) kommen, und der Vertriebsinnendienst pflegt nur die Ausnahmen.
 
@@ -106,7 +105,7 @@ Nehmen wir nun an, derselbe Händler liegt über seinem Kreditlimit. Die Simulat
 
 In so einem Piloten würde ich vor allem Datenthemen erwarten, keine KI-Themen: Händler, die nicht pünktlich melden, Teile mit falscher Materialnummer und Min/Max-Werte, die seit Jahren niemand angesehen hat. Upload-Dateien sind außerdem nicht vertrauenswürdige Eingaben, ein Risiko, das ich in [Prompt Injection über Händlerportale](../prompt-injection-haendlerportal-agentforce/) beschreibe.
 
-## Wo fangen Sie an?
+## Erster Schritt: führendes System pro Datenzeile festlegen
 
 1. **Führendes System festlegen** für jede Zeile der Tabelle oben, abgestimmt zwischen Vertrieb und Logistik.
 2. **Händlerbestände verlässlich einspielen.** Rhythmus und Format vereinbaren und das Meldedatum überall anzeigen, wo der Bestand erscheint.
@@ -116,5 +115,3 @@ In so einem Piloten würde ich vor allem Datenthemen erwarten, keine KI-Themen: 
 6. **Lizenzen früh klären.** Auf der [EU-Preisseite von Manufacturing Cloud](https://www.salesforce.com/eu/manufacturing/cloud/) nennen die Core-Editionen (Listenpreis 275 € pro Nutzer und Monat) Flex Credits für KI, Agentforce und Daten, die Max-Editionen (650 €) enthalten die volle Suite von Agentforce for Industries. Lassen Sie sich die Summer-'26-Funktionen zur Distributor-Beschaffung vom Partner in Ihrer Sandbox zeigen.
 
 Den größeren Teil der Arbeit macht das Schnittstellendesign zwischen Salesforce und ERP aus, also das, was ich unter [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/) anbiete. Das Gesamtbild der Agenten in der Fertigung finden Sie im Masterclass-Kapitel [KI-Agenten in der Fertigung](../../masterclass/ki-salesforce/ki-agenten-in-der-fertigung/).
-
-Ein Nachschubagent lohnt sich, wenn Salesforce den Vorschlag verantwortet und das ERP jede Zahl mit einer richtigen Antwort.

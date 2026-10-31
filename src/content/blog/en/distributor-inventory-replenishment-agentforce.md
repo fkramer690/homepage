@@ -9,11 +9,10 @@ topic: data
 categories: [manufacturing-cloud, ai]
 tags: [agentforce, manufacturing cloud, distributors, inventory, sap, erp]
 takeaways:
-  - "Agentforce for Manufacturing can summarise inventory and create replenishment requests; Salesforce announced the inventory template in August 2025 and lists distributor procurement automation for Summer '26."
-  - "Distributor stock, min/max policies and the replenishment proposal can live in Salesforce; availability, prices, credit limits and the order itself stay in SAP or proALPHA."
-  - "By default, a replenishment request in Manufacturing Cloud is a Product Request record in Salesforce; it becomes a binding order only once the ERP has accepted it and returned an order number."
-  - "Every write action needs gates set by code: credit status from the ERP, a quantity cap, confirmation by the distributor and a duplicate check before the order is sent."
-  - "Start read-only with stock summaries and proposals, and let the agent create orders only after the ERP simulation path works and is tested."
+  - "The inventory template arrived in August 2025, and the product page lists distributor procurement automation for Summer '26."
+  - "A replenishment request starts as a Product Request in Salesforce. It becomes binding only with the order number from the ERP."
+  - "Code sets four gates, not the model: credit status from the ERP, a quantity cap, approval by the distributor and a duplicate check."
+  - "I start read-only and let the agent create orders only once the ERP simulation call has been tested."
 faq:
   - q: "Can Agentforce place replenishment orders for distributors automatically?"
     a: "Technically yes: the Manufacturing inventory template includes an action that creates a product request, and Salesforce lists distributor procurement automation for Summer '26. I would let the agent propose and prepare orders, and let the ERP accept them after checking availability, price and credit."
@@ -40,7 +39,7 @@ For Summer '26, the [Manufacturing Cloud product page](https://www.salesforce.co
 Salesforce's own [manufacturing AI page](https://www.salesforce.com/manufacturing/artificial-intelligence/) adds that its prebuilt capabilities "may not reflect actual product details". So I would ask the partner to show the template in your sandbox, with your data, before anyone plans with it.
 ```
 
-## Which stock data lives in Salesforce?
+## Distributor stock and replenishment rules live in Salesforce
 
 Manufacturing Cloud uses the inventory objects known from Field Service. A [ProductItem](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/sforce_api_objects_productitem.htm) is one product at one location, with quantity on hand, available, allocated, ordered from suppliers and in transit. A distributor warehouse can be such a location.
 
@@ -68,7 +67,7 @@ The order status side of this, how an agent reads SAP through MuleSoft, is cover
 
 Who owns each row is a governance question as much as a technical one. If sales ops maintains min/max in Salesforce and supply chain maintains safety stock in SAP, both must agree on which wins, the same discipline as in the [object ownership matrix](../salesforce-object-ownership-matrix/).
 
-## How should write actions be gated?
+## Write actions need gates set in code
 
 The Salesforce Architects guide on [hybrid reasoning with Agent Script](https://architect.salesforce.com/docs/architect/fundamentals/guide/hybrid-reasoning-agentforce-builder-agent-script) gives the rule: "if you can express a decision as code, it should be written as logic." An action whose `available when` condition is false is removed from the model's tool list, and the guide warns that relying on the LLM to set the gate variable reintroduces the variability the gate was meant to prevent.
 
@@ -81,7 +80,7 @@ For a replenishment order I would put four gates in code:
 
 How these building blocks work is in [Agent Script: why business rules don't belong in the LLM](../agent-script-deterministic-rules/). What the simulation and create calls cost in consumption is estimated in [Flex Credits per action](../flex-credits-agentforce-cost-per-action/).
 
-## A typical scenario: replenishment for 120 distributors
+## Worked example: replenishment for 120 distributors
 
 Assume a manufacturer of compressed air components with SAP S/4HANA, 120 distributors in Germany, Austria and the Benelux, and a distributor portal on Experience Cloud. All numbers here are assumptions.
 
@@ -106,7 +105,7 @@ Now assume the same distributor is over its credit limit. The simulation returns
 
 What I would expect to surface in such a pilot is data, not AI: distributors who do not upload on time, parts mapped to the wrong material number, and min/max values nobody has reviewed in years. Upload files are also untrusted input, a risk described in [prompt injection through dealer portals](../prompt-injection-dealer-portals-agentforce/).
 
-## Where should you start?
+## First step: name the system of record for every data row
 
 1. **Write down the system of record** for every row of the table above, signed off by sales and supply chain.
 2. **Get distributor stock in reliably.** Agree on frequency and format, and show the report date everywhere the stock appears.
@@ -116,5 +115,3 @@ What I would expect to surface in such a pilot is data, not AI: distributors who
 6. **Check licences early.** On the Manufacturing Cloud pricing page, the Core editions (US list price 275 USD per user and month) list Flex Credits for AI and Agentforce, and the Max editions (from 650 USD) include the full suite of Agentforce for Industries. Have the partner demonstrate the Summer '26 distributor procurement features in your sandbox.
 
 The interface design between Salesforce and the ERP is the larger part of this work; it is what I cover under [Salesforce integration](../../services/salesforce-integration/). The wider picture of agents in manufacturing is in the masterclass chapter [AI agents in manufacturing](../../masterclass/ai-salesforce/ai-agents-in-manufacturing/).
-
-A replenishment agent pays off when Salesforce owns the proposal and the ERP owns every figure with a right answer.
