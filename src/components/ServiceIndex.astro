@@ -25,7 +25,7 @@ const ctaAttrs = contactExternal ? { target: '_blank', rel: 'noopener' } : {};
       <p class="blog-intro">{t.servicePage.indexIntro2}</p>
       <div class="service-proof">
         <ProofBar t={t} />
-        <p class="service-proof-links mono">
+        <p class="service-proof-links">
           <a href={`${homeHref(lang)}#references`}>{t.hero.ctaSecondary} →</a>
           <a href={localHref(lang, 'certifications/')}>{t.servicePage.certsLink} →</a>
         </p>
@@ -37,7 +37,7 @@ const ctaAttrs = contactExternal ? { target: '_blank', rel: 'noopener' } : {};
               <span class="card-index mono">{String(s.data.order).padStart(2, '0')}</span>
               <h2 class="card-title">{t.services.items[s.data.order - 1]?.title ?? s.data.title}</h2>
               <p>{s.data.description}</p>
-              <span class="card-more mono">{t.services.more} →</span>
+              <span class="card-more">{t.services.more} →</span>
             </a>
           </li>
         ))}

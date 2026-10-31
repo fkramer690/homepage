@@ -32,10 +32,10 @@ const people = [[portrait], [julianePortrait], [julianePortrait, portrait]];
             <Icon name={p.icon} class="card-icon" />
             <span class="pillar-people">{people[i].map((img) => <Image src={img} alt="" width={44} height={44} densities={[1, 2]} />)}</span>
           </span>
-          <span class="pillar-who mono">{p.who}</span>
+          <span class="pillar-who">{p.who}</span>
           <h3>{p.title}</h3>
           <p>{p.text}</p>
-          <span class="card-more mono">{p.more} →</span>
+          <span class="card-more">{p.more} →</span>
         </a>
       </li>
     ))}
