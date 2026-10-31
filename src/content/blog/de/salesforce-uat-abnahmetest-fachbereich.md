@@ -94,6 +94,6 @@ Halten Sie im Vertrag mit dem Partner fest, was „abgenommen“ bedeutet: Wer s
 
 UAT selbst lässt sich nicht automatisieren, weil es um das Urteil der Fachanwender geht. Automatisieren lässt sich aber, was davor und danach kommt: Regressionstests für die wichtigsten Prozesse, die bei jedem Release laufen, und die Vorbereitung der Sandbox nach dem Refresh. Ein guter Anfang sind die fünf Prozesse, an denen das meiste Geld hängt, etwa Angebot, Auftrag und Rechnung. Je mehr davon die Pipeline übernimmt, desto mehr Zeit bleibt den Testern für die neuen Funktionen. Für mobile Apps im Außendienst gilt das besonders, weil jede App-Version die Abläufe der Techniker verändern kann, siehe [Field Service App Updates testen](../field-service-app-updates-testen/).
 
-## Erster Schritt: Systemtest und Abnahmetest trennen
+## Systemtest und Abnahmetest im nächsten Release trennen
 
 Trennen Sie im nächsten Release Systemtest und Abnahmetest. Verlangen Sie vom Partner einen dokumentierten Systemtest pro Feature, bevor es in die UAT-Sandbox geht; diese Regel gehört in die [Partnersteuerung](../../leistungen/partnersteuerung/). Legen Sie Testnutzer pro Rolle an. Für das Release danach schreibt der Fachbereich die Testfälle schon beim Verfeinern der User Stories.

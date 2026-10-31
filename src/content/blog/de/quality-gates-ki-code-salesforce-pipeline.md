@@ -95,7 +95,7 @@ Ein Nearshore-Entwickler lässt einen Agenten einen Rundungsfehler in einer Klas
 
 Die Prüfung der API-Version stoppt den Pull Request. Der Partner setzt die Version zurück oder ergänzt einen `runAs`-Test mit einem eingeschränkten Techniker-Benutzer, der die fehlenden Datensätze zeigt. Ohne diese Prüfung sähen Techniker „nicht auf Lager“ für Teile, die im Zentrallager liegen, und die Disposition löste unnötige Eilbestellungen aus. Dagegen stehen, angenommen mit 25 Minuten pro Validierung, rund 46 Stunden Pipeline-Laufzeit im Monat für 110 Läufe, bezahlt in CI-Minuten, nicht in Arbeitszeit.
 
-## Erster Schritt: Pipeline und Schwellenwerte in Kundenhand
+## Pipeline und Schwellenwerte in Kundenhand legen
 
 Diese Prüfungen für Programme mit mehreren Partnern aufzusetzen ist der Kern meiner Arbeit in [DevOps und Release Management](../../leistungen/devops-und-release-management/). Die Reihenfolge ist wichtig, weil ein Partner jede Schwelle wieder abschalten kann, solange ihm die Pipeline gehört.
 

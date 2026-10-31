@@ -94,7 +94,7 @@ On Thursday partner A deploys its sprint release, which includes the Asset recor
 
 The same request in a developer sandbox with source tracking would have taken the same ten minutes. The admin retrieves the changes into a branch, opens a pull request, partner A reviews it as owner of Asset and merges the two flows into one. The field reaches production in the next release, about a week later.
 
-## First step: write the pipeline rule next to the ownership matrix
+## Write the pipeline rule next to the ownership matrix
 
 Setting up the release process and the rights model for admin AI is part of my [DevOps and release management](../../services/devops-release-management/) work. The order follows the permissions: whatever an admin may not do in production, the agent cannot do there either.
 

@@ -95,7 +95,7 @@ A nearshore developer asks an agent to fix a rounding error in a spare-parts ava
 
 The API version check stops the pull request. The partner either reverts the version or adds a `runAs` test with a restricted technician user, which shows the missing records. Without that gate, technicians would see "not in stock" for parts sitting in the central warehouse, and dispatchers would place emergency orders for nothing. Against that, assume 25 minutes per validation: 110 runs are about 46 hours of pipeline time a month, paid in CI minutes, not in anyone's calendar.
 
-## First step: pipeline and thresholds in client hands
+## Put pipeline and thresholds in client hands
 
 Setting up these gates for programmes with several partners is the core of my [DevOps and release management](../../services/devops-release-management/) work. The order matters, because a partner can switch off any threshold as long as the pipeline belongs to them.
 

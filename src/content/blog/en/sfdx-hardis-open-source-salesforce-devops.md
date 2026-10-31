@@ -97,7 +97,7 @@ In the second case a commercial platform can be the more honest answer.
 
 The point about licence budgets is often underestimated. The saved licence costs are best invested in an internal role that maintains the setup, onboards new teams and owns the release calendar. Without that role, even the best tool loses its effect after a few months. The same goes for development standards at partners, see [Reinforcement: making standards stick with partners](../partner-standards-reinforcement/).
 
-## First step: work through the free training
+## Get started with the free training
 
 The fastest way to understand sfdx-hardis is to try it. Cloudity offers a free, hands-on training with three levels and verified badges. I completed all three and wrote about my experience in [what I learned from the free sfdx-hardis training](../sfdx-hardis-free-devops-training/).
 

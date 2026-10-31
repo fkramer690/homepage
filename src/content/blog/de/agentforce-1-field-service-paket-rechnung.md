@@ -97,6 +97,6 @@ contra: Einzel-Add-ons gewinnen, wenn
 
 Ein dritter Weg liegt außerhalb beider Listen: ein Vertrag mit Pauschale für Agentforce, Data 360 und MuleSoft. Wann sich das lohnt, steht in [AELA: Agentforce-Pauschale oder Credits?](../aela-agentforce-pauschale-oder-credits/). Welche Agenten für Kunden, Disposition und Techniker heute tragen, steht in [KI-Agenten im Außendienst: Was funktioniert heute?](../ki-agenten-aussendienst-field-service/).
 
-## Erster Schritt: KI-Funktionen pro Rolle aufschreiben
+## KI-Funktionen pro Rolle aufschreiben und drei Spalten vergleichen
 
 Schreiben Sie pro Rolle auf, welche KI-Funktionen im ersten Jahr wirklich genutzt werden, und schätzen Sie die Aktionen der Kundenagenten pro Monat. Dann vergleichen Sie drei Spalten: Paket, Einzelteile und Einzelteile nach Rolle. Die Credit-Seite erklärt das [Kapitel Kosten und Token der KI-Masterclass](../../masterclass/ki-salesforce/kosten-und-token/), die Lizenzmatrix nach Rollen [Salesforce Field Service Lizenzen: Wer braucht welche?](../field-service-lizenzen-rollen-dispatcher-techniker/) und den Business Case insgesamt [Kapitel 1 der Masterclass Field Service](../../masterclass/field-service/field-service-lohnt-sich-lizenzen/).

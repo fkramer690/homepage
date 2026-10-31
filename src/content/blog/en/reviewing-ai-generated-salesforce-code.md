@@ -90,7 +90,7 @@ The human review takes about 45 minutes and finds three issues no tool reports:
 
 The third finding is the expensive one: a data leak between competing dealers that no coverage figure would have shown. Against that, 45 minutes of review is cheap.
 
-## First step: client approval for sharing and data model
+## Keep approval for sharing and data model on the client side
 
 ```schritte
 Protect the main branches

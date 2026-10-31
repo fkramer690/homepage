@@ -97,6 +97,6 @@ contra: Single add-ons win when
 
 A third route sits outside both lists: an agreement with a fixed fee for Agentforce, Data 360 and MuleSoft. When that is worth it is covered in [Salesforce AELA vs Flex Credits](../aela-agentforce-flat-fee-vs-credits/). Which agents for customers, dispatchers and technicians are ready today is covered in [AI agents in Field Service: what works today?](../field-service-ai-agents-what-works-today/).
 
-## First step: write down the AI features per role
+## Write down the AI features per role and compare three columns
 
 Write down per role which AI functions are really used in the first year, and estimate the customer-facing actions per month. Then compare three columns: bundle, parts, and parts by role. The credit side is explained in the [AI masterclass chapter on costs and tokens](../../masterclass/ai-salesforce/costs-and-tokens/), the licence matrix by role in [Salesforce Field Service licences: who needs which?](../field-service-licences-by-role/), and the overall business case in [chapter 1 of the Field Service masterclass](../../masterclass/field-service/field-service-business-case-licences/).

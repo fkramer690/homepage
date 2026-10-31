@@ -159,6 +159,6 @@ Decide per repository which tool owns merges and promotions. If you switch later
 
 For teams using coding agents this question matters more. Lifecycle Center is building a governance layer for agents in the hub org, sfdx-hardis relies on the checks in the pipeline. Which [quality gates should stop AI-generated code](../quality-gates-for-ai-code-salesforce-pipeline/) applies to both tools in the same way.
 
-## First step: settle Git platform, teams and release role
+## Settle Git platform, teams and release role
 
 Answer three questions first: which Git platform is set at your company, how many teams and partners work on the org, and who takes on the release role? With these answers the choice is made in most cases. If you are new to the topic, [why DevOps matters in Salesforce enterprise projects](../why-devops-matters-salesforce-enterprise/) explains the basics, and setting up a binding process is part of my work in [DevOps and release management](../../services/devops-release-management/).

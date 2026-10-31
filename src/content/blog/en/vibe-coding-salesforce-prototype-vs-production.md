@@ -107,7 +107,7 @@ After the workshop the architect reads the prototype code once, as a reference. 
 
 The production build therefore starts from the repository: three user stories, each with an approved plan, a `runAs` test as a dealer user and an SAP call through the existing MuleSoft API. Assume that takes two sprints for a partner team of three. Without the workshop, my estimate is that the first sprint would have gone into finding out what the screens should show. The prototype paid for itself in requirements and contributed no line of Apex. What the AI tools for such a team cost is covered in [AI coding costs in a Salesforce project](../ai-coding-costs-salesforce-project/).
 
-## First step: allow vibe coding explicitly in Developer Editions
+## Allow vibe coding explicitly in Developer Editions
 
 1. **Allow vibe coding explicitly**, in Developer Editions and scratch orgs with dummy data, so nobody does it quietly in a shared sandbox.
 2. **Disable Agentforce Vibes in production** and keep production deployments in the pipeline.

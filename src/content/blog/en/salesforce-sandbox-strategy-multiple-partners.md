@@ -105,6 +105,6 @@ contra: What you give up
 - The pipeline has to exist before the chain works
 ```
 
-## First step: list every sandbox with its owner
+## List every sandbox with its owner
 
 Start with the list. Write down every existing sandbox with its purpose and owner, and delete the ones nobody claims. Then define the chain and block direct changes in integration and UAT. The refresh calendar comes last, once the post-refresh steps exist as a script.

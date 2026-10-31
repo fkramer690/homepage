@@ -94,7 +94,7 @@ Am Donnerstag deployt Partner A sein Sprint-Release, darin die Asset-Datensatzse
 
 Dieselbe Anfrage in einer Developer-Sandbox mit Source Tracking hätte ebenfalls zehn Minuten gedauert. Die Administratorin holt die Änderungen in einen Branch, öffnet einen Pull Request, Partner A prüft ihn als Owner von Asset und führt die beiden Flows zu einem zusammen. Das Feld kommt mit dem nächsten Release in Produktion, rund eine Woche später.
 
-## Erster Schritt: die Pipeline-Regel neben die Ownership Matrix schreiben
+## Die Pipeline-Regel neben die Ownership Matrix schreiben
 
 Release-Prozess und Rechtemodell für Admin-KI aufzusetzen ist Teil meiner Arbeit in [DevOps und Release-Management](../../leistungen/devops-und-release-management/). Die Reihenfolge folgt den Rechten: Was ein Admin in Produktion nicht darf, kann auch der Agent dort nicht.
 

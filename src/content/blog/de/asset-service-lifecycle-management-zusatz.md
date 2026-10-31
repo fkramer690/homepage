@@ -102,7 +102,7 @@ Ein Hersteller von Hydraulikkomponenten arbeitet mit SAP als ERP und Field Servi
 
 **Der Vergleich.** Für die Rechnung setze ich Dollar und Euro gleich, so wie die Preisliste die Lizenzen in beiden Währungen gleich bepreist (175 € oder 175 Dollar). Bei angenommen 1.200 Euro Tagessatz kostet Variante A über zwei Jahre 24.000 Euro Einrichtung plus rund 54.000 Euro Lizenzen, zusammen 78.000 Euro. Variante B kostet 72.000 Euro plus 24.000 Euro Pflege, zusammen 96.000 Euro, und jeder Fehler gehört dem Unternehmen. Genutzt werden drei Funktionen: Deckungsansicht, Schätzung für Depotreparaturen und Kampagnen. Bei drei genutzten Funktionen gewinnt das Add-on. Bräuchte das Unternehmen nur die Deckungsansicht, würde ich Salesforce vor jedem Eigenbau um ein Angebot nur für die Hotline-Nutzer bitten. Wie ich solche Varianten vergleiche, beschreibe ich unter [Make-or-Buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/).
 
-## Erster Schritt: Asset-Prozesse auflisten und die Führung festlegen
+## Asset-Prozesse auflisten und die Führung festlegen
 
 Wie Assets, Wartung und Teile zusammenhängen, behandelt das [Kapitel Assets, Wartung, Teile und Partner der Field-Service-Masterclass](../../masterclass/field-service/field-service-assets-wartung-teile/). Der zweite Schritt unten entscheidet, ob ASLM oder Manufacturing Cloud die Garantie führt. Vor dem Angebot würde ich so vorgehen:
 

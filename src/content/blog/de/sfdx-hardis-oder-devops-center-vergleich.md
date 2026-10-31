@@ -159,6 +159,6 @@ Entscheiden Sie pro Repository, welches Werkzeug Merges und Promotions verantwor
 
 Für Teams, die Coding-Agenten einsetzen, wird diese Frage wichtiger. Lifecycle Center baut eine Governance-Schicht für Agenten in der Hub-Org, sfdx-hardis setzt auf die Prüfungen in der Pipeline. Welche [Quality Gates KI-generierten Code aufhalten sollten](../quality-gates-ki-code-salesforce-pipeline/), gilt für beide Werkzeuge gleich.
 
-## Erster Schritt: Git-Plattform, Teams und Release-Rolle klären
+## Git-Plattform, Teams und Release-Rolle klären
 
 Klären Sie zuerst drei Fragen: Welche Git-Plattform ist bei Ihnen gesetzt, wie viele Teams und Partner arbeiten an der Org, und wer übernimmt die Release-Rolle? Mit diesen Antworten ist die Wahl in den meisten Fällen getroffen. Wenn Sie neu im Thema sind, erklärt [warum DevOps über Salesforce-Großprojekte entscheidet](../warum-devops-salesforce-enterprise-projekte/) die Grundlagen, und die Einrichtung eines verbindlichen Prozesses gehört zu meiner Arbeit in [DevOps und Release-Management](../../leistungen/devops-und-release-management/).

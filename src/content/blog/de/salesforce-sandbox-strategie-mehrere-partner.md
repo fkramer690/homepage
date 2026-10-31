@@ -105,6 +105,6 @@ contra: Was Sie dafür aufgeben
 - Die Pipeline muss stehen, bevor die Kette funktioniert
 ```
 
-## Erster Schritt: alle Sandboxes mit Verantwortlichem auflisten
+## Alle Sandboxes mit Verantwortlichem auflisten
 
 Fangen Sie mit der Liste an. Schreiben Sie jede vorhandene Sandbox mit Zweck und Verantwortlichem auf und löschen Sie die, für die sich niemand meldet. Danach legen Sie die Kette fest und sperren direkte Änderungen in Integration und UAT. Der Refresh-Kalender kommt zuletzt, wenn die Post-Refresh-Schritte als Skript vorliegen.

@@ -97,7 +97,7 @@ Im zweiten Fall kann eine kommerzielle Plattform die ehrlichere Antwort sein.
 
 Der Punkt mit den Lizenzbudgets wird oft unterschätzt. Die eingesparten Lizenzkosten sind am besten in eine interne Rolle investiert, die das Setup pflegt, neue Teams einarbeitet und den Release-Kalender verantwortet. Ohne diese Rolle verliert auch das beste Werkzeug nach einigen Monaten an Wirkung. Mit Entwicklungsstandards bei Partnern ist es genauso, siehe [Reinforcement: Standards bei Partnern verankern](../standards-partner-verankern-reinforcement/).
 
-## Erster Schritt: das kostenlose Training durcharbeiten
+## Mit dem kostenlosen Training einsteigen
 
 Am schnellsten verstehen Sie sfdx-hardis, indem Sie es ausprobieren. Cloudity bietet ein kostenloses Praxistraining mit drei Leveln und geprüften Badges an. Ich habe alle drei abgeschlossen und meine Erfahrungen in [was ich aus dem kostenlosen sfdx-hardis-Training mitgenommen habe](../sfdx-hardis-kostenloses-devops-training/) aufgeschrieben.
 

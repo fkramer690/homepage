@@ -94,6 +94,6 @@ Write down in the partner contract what "accepted" means: who agrees, in which f
 
 UAT itself cannot be automated, because it is about the judgement of business users. What comes before and after it can be: regression tests for the most important processes that run with every release, and preparing the sandbox after a refresh. A good start are the five processes where most money is at stake, such as quote, order and invoice. The more of this the pipeline takes over, the more time testers have for the new features. This matters most for mobile apps in field service, because every app version can change how technicians work, see [testing Field Service app updates](../field-service-mobile-app-updates-testing/).
 
-## First step: separate system test and acceptance test
+## Separate system test and acceptance test in the next release
 
 In your next release, separate system test and acceptance test. Ask the partner for a documented system test per feature before it goes into the UAT sandbox; that rule belongs in your [partner governance](../../services/partner-governance/). Create test users per role. For the release after that, the business writes the test cases while the user stories are being refined.

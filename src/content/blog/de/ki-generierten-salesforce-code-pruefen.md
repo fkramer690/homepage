@@ -90,7 +90,7 @@ Das menschliche Review dauert rund 45 Minuten und findet drei Punkte, die kein W
 
 Der dritte Fund ist der teure. In Produktion wäre das ein Datenabfluss zwischen konkurrierenden Händlern, und keine Abdeckungszahl hätte ihn gezeigt. Dagegen sind 45 Minuten Review günstig.
 
-## Erster Schritt: Freigabe für Sharing und Datenmodell auf Kundenseite
+## Freigabe für Sharing und Datenmodell auf der Kundenseite halten
 
 ```schritte
 Haupt-Branches schützen

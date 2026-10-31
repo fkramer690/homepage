@@ -102,7 +102,7 @@ Assume a maker of hydraulic components with SAP as ERP and Field Service for 30 
 
 **The comparison.** At an assumed day rate of $1,200, option A costs $24,000 for setup plus $54,000 in licences over two years, $78,000 in total. Option B costs $72,000 plus $24,000 upkeep, $96,000 in total, and the company owns every bug. The company uses three functions: coverage view, estimation for depot repairs and campaigns. With three functions in use the add-on wins. If only the coverage view were needed, I would ask Salesforce for a quote limited to the hotline users before building anything. How I compare such options is part of [make-or-buy and licence forecasts](../../services/make-or-buy-licences/).
 
-## First step: list your asset processes and decide who owns each
+## List your asset processes and decide who owns each
 
 How assets, maintenance and parts fit together is the topic of the [Field Service masterclass chapter on assets, maintenance and parts](../../masterclass/field-service/field-service-assets-maintenance-parts/). Step 2 below decides whether ASLM or Manufacturing Cloud owns warranty. Before the quote I would proceed like this:
 

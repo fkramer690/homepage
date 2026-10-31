@@ -107,7 +107,7 @@ Nach dem Workshop liest der Architekt den Prototyp-Code einmal, als Referenz. Di
 
 Die Produktivumsetzung startet deshalb im Repository: drei User Stories, jede mit freigegebenem Plan, einem `runAs`-Test als Händlernutzer und einem SAP-Aufruf über die vorhandene MuleSoft-API. Angenommen sind dafür zwei Sprints für ein Partnerteam mit drei Personen. Ohne den Workshop wäre nach meiner Schätzung der erste Sprint dafür draufgegangen, herauszufinden, was die Masken zeigen sollen. Der Prototyp hat sich über die Anforderungen bezahlt gemacht und keine Zeile Apex beigesteuert. Was die KI-Werkzeuge für ein solches Team kosten, steht in [KI-Coding-Kosten im Salesforce-Projekt](../ki-coding-kosten-salesforce-projekt/).
 
-## Erster Schritt: Vibe Coding in Developer Editions ausdrücklich erlauben
+## Vibe Coding in Developer Editions ausdrücklich erlauben
 
 1. **Vibe Coding ausdrücklich erlauben**, in Developer Editions und Scratch Orgs mit Testdaten, damit es niemand still in einer gemeinsamen Sandbox tut.
 2. **Agentforce Vibes in Produktion abschalten** und produktive Deployments in der Pipeline halten.
