@@ -1775,6 +1775,17 @@ const drawings: Record<string, Drawing> = {
     ${t(14, 150, l('Siemens + Teamcenter: announced', 'Siemens + Teamcenter: angekündigt'), { size: 7 })}
     ${t(306, 150, l('3 actions = $0.30', '3 Aktionen = 0,30 €'), { fill: C, size: 7, anchor: 'end' })}`,
 
+  'enhanced-chat-beyond-text': (l) => `
+    ${box(14, 22, 140, 106)}${t(22, 36, 'ENHANCED CHAT V2', { fill: D, size: 7 })}
+    ${box(60, 44, 86, 18)}${t(103, 56, l('photo: type plate', 'Foto: Typenschild'), { size: 7, anchor: 'middle' })}
+    ${box(22, 70, 124, 50, C)}${t(30, 84, l('SPARE PART CARD', 'ERSATZTEILKARTE'), { fill: D, size: 7 })}
+    ${t(30, 98, l('image, stock, price', 'Bild, Bestand, Preis'), { size: 7 })}${t(30, 112, l('from ERP + PLM', 'aus ERP + PLM'), { fill: C, size: 7 })}
+    ${[['LIGHTNING TYPES', l('v2 only', 'nur v2')], [l('PHOTO UPLOAD', 'FOTO-UPLOAD'), 'v1 + v2'], ['STREAMING', l('checked at the end', 'geprüft erst am Ende')]]
+      .map(([a, b], i) => box(170, 22 + i * 36, 136, 30, i === 0 ? C : G) + t(180, 34 + i * 36, String(a), { fill: D, size: 7 }) + t(180, 46 + i * 36, String(b), { fill: i === 0 ? C : G, size: 7 })).join('')}
+    <path d="M14 138H306" stroke="${L}"/>
+    ${t(14, 152, l("Winter '27: from 21 Sep 2026", "Winter '27: ab 21.09.2026"), { size: 7 })}
+    ${t(306, 152, l('12 files per min', '12 Dateien pro Min.'), { fill: C, size: 7, anchor: 'end' })}`,
+
   'aela-flat-fee-vs-credits': (l) => `
     ${box(18, 28, 134, 58)}${t(28, 44, 'FLEX CREDITS', { fill: D, size: 7.5 })}${t(28, 58, l('$500 per 100K credits', '500 € je 100K Credits'), { size: 7 })}${t(28, 72, l('pay per use, no rollover', 'Verbrauch, kein Übertrag'), { size: 7 })}
     ${box(168, 28, 134, 58, C)}${t(178, 44, 'AELA', { fill: D, size: 7.5 })}${t(178, 58, l('fixed fee, 2 or 3 years', 'Pauschale, 2 oder 3 Jahre'), { size: 7 })}${t(178, 72, l('price not public', 'Preis nicht öffentlich'), { fill: C, size: 7 })}
