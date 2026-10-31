@@ -38,12 +38,18 @@ Chosen 2026-10-31 (Fabian: "Skala + Mono reduzieren"). Part of the polished desi
   `--fs-xs` 12px, `--fs-sm` 14px, `--fs-ui` 15px, `--fs-base` 17px (running
   text), `--fs-md` 19px (h3, card titles, lead), `--fs-lg` 26px, `--fs-xl` 36px.
   h1/h2 and hero headlines stay fluid (`clamp`). Never write a new `rem`/`px`
-  font size outside these tokens. Content blocks (`.cb-*`) still carry their own
-  sizes; they move to the tokens in a later step.
+  font size outside these tokens. This includes the content blocks (`.cb-*`,
+  `.cx-*`, `.cz-*`, since 2026-10-31): running text in a block (`hinweis`,
+  `praxis`, `vertiefung`) `--fs-base`; lists and text in wide cards, table
+  heads, lead lines `--fs-ui`; text in narrow tiles (steps, pillars, stages,
+  pipeline cards), table cells, captions and notes `--fs-sm`; titles of narrow
+  tiles `--fs-ui` (step titles in the arrow band `--fs-sm`); prominent card
+  titles `--fs-md`; key figures and stage numbers `--fs-lg` in Sora.
 - **Mono (IBM Plex Mono) only for eyebrows and uppercase labels, numbers,
   dates and step counters**, always at `--fs-xs`. Links ("Mehr erfahren"),
   meta lines, captions, tags, filter texts, back links and proof bar labels are
-  set in Sora.
+  set in Sora. In blocks the same: notes under a block, pills, link
+  names, legends and badges are Sora; only labels, numbers and dates stay mono.
 
 ## Page heads, key figures, links and cards (binding)
 
