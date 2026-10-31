@@ -10,11 +10,11 @@ pubDate: 2026-10-28
 short: "Garantie und After-Sales"
 summary: "Garantieansprüche, Rückrufaktionen und installierte Basis: wann Manufacturing Cloud for Service reicht und wo Field Service beginnt."
 takeaways:
-  - "Manufacturing Cloud Service Core kostet laut Preisliste 275 US-Dollar pro Nutzer und Monat, 80 mehr als Service Cloud Core; das lohnt sich für Garantie- und Rückrufteams, selten für die ganze Hotline."
-  - "Jede After-Sales-Funktion braucht ein Asset pro Maschine mit Seriennummer, Produkt, Eigentümer und Garantiebeginn; Asset Milestones (API 58.0) halten Ereignisse wie Registrierung oder Weiterverkauf fest."
-  - "Garantieansprüche laufen vom Händlerportal über eine regelbasierte Prüfung bis zur Gutschrift im ERP; der Prüfagent aus Winter '27 prüft zusätzlich die Deckung und markiert Betrugsverdacht."
-  - "Product Service Campaigns (API 51.0) bündeln einen Rückruf oder ein Upgrade mit einem Eintrag pro Maschine; die richtigen Maschinen findet nur, wer Seriennummern und Fertigungslose in Salesforce hat."
-  - "Manufacturing Cloud entscheidet, ob ein Schaden gedeckt ist und wer zahlt; Einsatz vor Ort, Wartungspläne und Technikerlager gehören zu Field Service und brauchen Field-Service-Lizenzen."
+  - "Service Core kostet laut Preisliste 275 US-Dollar pro Nutzer und Monat, 80 mehr als Service Cloud Core. Das lohnt sich für Garantie- und Rückrufteams."
+  - "Jede After-Sales-Funktion braucht ein Asset pro Maschine mit Seriennummer, Produkt, Eigentümer und Garantiebeginn."
+  - "Garantieansprüche laufen vom Händlerportal über eine regelbasierte Prüfung bis zur Gutschrift im ERP. Der Prüfagent aus Winter '27 prüft zusätzlich die Deckung."
+  - "Servicekampagnen bündeln einen Rückruf mit einem Eintrag pro Maschine. Die richtigen Maschinen findet, wer Seriennummern und Fertigungslose in Salesforce hat."
+  - "Manufacturing Cloud entscheidet, ob ein Schaden gedeckt ist und wer zahlt. Einsatz vor Ort, Wartungspläne und Technikerlager gehören zu Field Service."
 articles: [manufacturing-cloud-service-vs-service-cloud, manufacturing-cloud-installed-base-assets, manufacturing-cloud-warranty-claims, warranty-adjudication-agent-winter-27, manufacturing-cloud-product-service-campaigns, spare-parts-serial-number-ai]
 faq:
   - q: "Was bringt Manufacturing Cloud for Service zusätzlich zur Service Cloud?"
@@ -44,9 +44,9 @@ Für den Aufpreis bekommen Sie laut Preisseite Warranty Lifecycle Management, di
 Meine Regel: nach Rolle lizenzieren. Garantiesachbearbeiter und das Qualitätsteam, das Rückrufe steuert, arbeiten auf Manufacturing Cloud; ein First Level, der Cases anlegt und aus Knowledge antwortet, bleibt auf Service Cloud. Ein Punkt gehört in den Vertrag: welche Garantiedaten ein Service-Cloud-Nutzer lesen darf. Wie ich den Lizenzmix als Make-or-buy-Frage aufbereite, steht unter [Make-or-buy und Lizenzprognose](../../../leistungen/make-or-buy-lizenzen/), den Umfang der ganzen Branchenlösung behandelt [Kapitel 1](../einordnung-und-business-case/).
 ```
 
-## Warum beginnt After-Sales bei der installierten Basis?
+## After-Sales beginnt bei der installierten Basis
 
-Weil jede After-Sales-Frage eine Frage zu einer Maschine ist. Ist diese Seriennummer noch in der Garantie? Ist sie vom Rückruf betroffen? Welche Dichtung passt? Der Asset-Datensatz beantwortet alle drei Fragen oder keine.
+Jede After-Sales-Frage ist eine Frage zu einer Maschine. Ist diese Seriennummer noch in der Garantie? Ist sie vom Rückruf betroffen? Welche Dichtung passt? Der Asset-Datensatz beantwortet sie alle oder keine.
 
 Das Minimum pro Maschine: Seriennummer, Produkt, Eigentümer, Standort und das Datum, ab dem die Garantie läuft. Manufacturing Cloud ergänzt drei Dinge:
 
@@ -92,17 +92,17 @@ Eine Product Service Campaign steht laut [Objektreferenz](https://developer.sale
 
 Die Schwachstelle ist die Auswahl. Eine Kampagne trifft nur dann die richtigen Maschinen, wenn jede Maschine als Asset mit Seriennummer existiert und bekannt ist, welches Bauteillos in welcher Maschine steckt. Wählen Sie zu breit, zahlen Sie für Arbeit an Maschinen ohne Fehler; zu eng, und fehlerhafte Maschinen bleiben im Feld.
 
-Ein typisches Szenario, als Annahme: Ein Ventillos eines Lieferanten ist fehlerhaft und steckt in 1.800 Maschinen, verkauft über 70 Händler, 120 davon stehen noch unverkauft beim Händler. Die Kampagne führt die 1.680 Maschinen bei Endkunden als Einträge, die unverkauften als Partnerbestand und das Ventil als verursachendes Teil mit Rücksendung gegen Gutschrift vom Lieferanten. Händler melden jede Maschine einzeln als erledigt, nicht eine Zahl pro Händler. Den ganzen Ablauf, und wann eine Liste im Qualitätssystem reicht, beschreibt [Rückrufaktionen in Salesforce](../../../blog/rueckrufaktionen-service-kampagnen/).
+Rechenbeispiel: Ein Ventillos eines Lieferanten ist fehlerhaft und steckt in 1.800 Maschinen, verkauft über 70 Händler, 120 davon stehen noch unverkauft beim Händler. Die Kampagne führt die 1.680 Maschinen bei Endkunden als Einträge, die unverkauften als Partnerbestand und das Ventil als verursachendes Teil mit Rücksendung gegen Gutschrift vom Lieferanten. Händler melden jede Maschine einzeln als erledigt, nicht eine Zahl pro Händler. Den ganzen Ablauf, und wann eine Liste im Qualitätssystem reicht, beschreibt [Rückrufaktionen in Salesforce](../../../blog/rueckrufaktionen-service-kampagnen/).
 
 ```hinweis offen
 Die Preisseite nennt Product Service Campaigns nicht. Lassen Sie sich bestätigen, welche Edition sie enthält, bevor Sie einen Rückrufprozess darauf planen.
 ```
 
-## Was sieht der Servicemitarbeiter auf einem Bildschirm?
+## Die ganze Maschinengeschichte auf einem Bildschirm
 
 Zwei Konsolen für zwei Arten von Anrufen. Die [Service Console for Manufacturing](https://trailhead.salesforce.com/content/learn/modules/service-console-for-manufacturing-cloud-admin-essentials/learn-about-the-service-console-for-manufacturing) ist eine neu gestaltete Kontaktseite: die Daten des Anrufers plus Assets, Cases und Aufträge seines Accounts. Ihre Komponenten für Zeitleiste, Empfehlungen und Hinweise sind laut Trailhead „available with the Industries Service Excellence license“; fragen Sie, ob Ihre Edition diese Lizenz enthält. Die Asset Service Console geht von der Maschine aus: Laut Serviceseite zeigt sie „asset warranties, cases, work orders, and claims related to an asset“.
 
-Beide Konsolen wirken nur so vollständig wie die Daten dahinter. Hängen Milestones, Garantien und Ansprüche am Asset, sieht der Mitarbeiter die ganze Geschichte an einer Stelle. Fehlt bei der Hälfte der Maschinen der Garantiebeginn, zeigt die Konsole die Lücke schneller als jeder Bericht.
+Beide Konsolen wirken nur so vollständig wie die Daten dahinter. Hängen Milestones, Garantien und Ansprüche am Asset, sieht der Mitarbeiter die ganze Geschichte an einer Stelle. Fehlt bei der Hälfte der Maschinen der Garantiebeginn, zeigt die Konsole die Lücke früher als ein Bericht.
 
 ## Ersatzteile per Seriennummer
 
@@ -133,6 +133,4 @@ Asset-Hierarchie, Wartungspläne und Servicepartner sind Thema des Kapitels [Ass
 5. **Eine Kampagne testen**, und zwar an einem vergangenen Qualitätsfall, bevor ein echter Rückruf daran hängt.
 6. **Den Agenten zuletzt ergänzen**, mit einer Freigabeschwelle, die Service und Finanzen vereinbart haben.
 
-Die Datenflüsse zwischen SAP und Manufacturing Cloud, Gutschriften eingeschlossen, sind Thema von [Kapitel 5](../erp-ki-und-rollout/).
-
-Garantie, Rückrufe und Agenten in Manufacturing Cloud sind nur so gut wie die installierte Basis darunter, also beginnen Sie dort.
+Beginnen Sie mit Schritt 1, denn Garantie, Rückrufe und Agenten hängen alle an der installierten Basis. Die Datenflüsse zwischen SAP und Manufacturing Cloud, Gutschriften eingeschlossen, sind Thema von [Kapitel 5](../erp-ki-und-rollout/).

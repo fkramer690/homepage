@@ -10,11 +10,11 @@ pubDate: 2026-10-28
 short: "Preise, Warenkorb, Checkout"
 summary: "Kundenpreise, Angebotsanfrage, Bestellnummer statt Karte und schnelles Nachbestellen im B2B-Shop."
 takeaways:
-  - "Preisbücher mit Best Price oder Priority Price decken Listenpreise und Händlerstufen ab. SAP-Konditionen brauchen einen Live-Aufruf ans ERP oder Advanced Pricing aus Revenue Cloud."
+  - "Preisbücher decken Listenpreise und Händlerstufen ab. SAP-Konditionen brauchen einen Live-Aufruf ans ERP oder Advanced Pricing aus Revenue Cloud."
   - "Ein Preisaufruf im B2B-Store wertet nur die ersten 25 gültigen Preisbücher aus; alles darüber ignoriert der Store ohne Fehlermeldung."
-  - "Advanced Pricing setzt Commerce Growth oder Advanced plus Revenue Cloud Advanced voraus und lohnt sich, wenn der Vertrieb seine Angebote schon in Revenue Cloud rechnet."
+  - "Advanced Pricing setzt zusätzlich Revenue Cloud Advanced voraus und lohnt sich, wenn der Vertrieb seine Angebote schon in Revenue Cloud rechnet."
   - "Händler zahlen per Bestellnummer, die in Salesforce keine Zahlung auslöst. Kreditlimit und Auftragssperre prüft der Shop vor der Bestellung live im ERP."
-  - "Das Volumen kommt über Nachbestellungen: alte Bestellung in den Warenkorb, Bestellvorlagen, CSV-Import. Ein Warenkorb fasst meist 500 Positionen, mit Large Cart 2.000."
+  - "Das Volumen kommt über Nachbestellungen aus alter Bestellung, Vorlage oder CSV-Import. Ein Warenkorb fasst meist 500 Positionen, mit Large Cart 2.000."
 articles: [commerce-customer-prices, commerce-advanced-pricing-revenue-cloud, commerce-request-for-quote, commerce-checkout-purchase-order, commerce-reorder-order-templates, partner-sales-assistant-dealer-quotes]
 faq:
   - q: "Kann Salesforce B2B Commerce Händlerpreise direkt aus SAP zeigen?"
@@ -85,7 +85,7 @@ Zum Budget: Die B2B-Editionen stehen auf "Contact for Pricing", die [Preisseite 
 Meine Regel: Advanced Pricing lohnt sich, wenn der Vertrieb seine Angebote schon in Revenue Cloud rechnet, wenn Vertragspreise in Salesforce verhandelt werden oder wenn Sie Request for Quote brauchen. Berechnet SAP jeden Kundenpreis und soll das so bleiben, bauen Sie mit Revenue Cloud eine zweite Preis-Engine, die mit SAP übereinstimmen muss. Dann ist der Live-Aufruf einfacher. Die Abwägung im Detail steht in [Advanced Pricing im B2B-Shop](../../../blog/advanced-pricing-b2b-shop-revenue-cloud/). Für Rahmenverträge mit Mengen und Laufzeit, die eher den Absatz planen als den Shoppreis setzen, ist Manufacturing Cloud zuständig; das behandelt das Kapitel [Rahmenverträge und Prognosen](../../manufacturing-cloud/rahmenvertraege-und-prognosen/).
 ```
 
-## Wie wird aus einer Anfrage ein Angebot und daraus eine Bestellung?
+## Von der Anfrage über das Angebot zur Bestellung
 
 Händler fragen nach einem Preis für 200 Stück statt 5 oder für ein Projekt mit Liefertermin. Heute ist das eine E-Mail mit Excel-Liste. Mit Request for Quote senden angemeldete Käufer den Warenkorb als Angebotsanfrage, und der Innendienst bearbeitet das Angebot in Sales Cloud oder Agentforce Revenue Management. Salesforce nennt RFQ im [Beitrag vom Juni 2026](https://www.salesforce.com/blog/b2b-commerce-innovations-june-26/) "already generally available". Im selben Beitrag stehen Quote to Cart und Round-Trip Quoting: Ein freigegebenes Angebot kommt als Warenkorb zum Käufer zurück, der es im Shop bestellt.
 
@@ -133,7 +133,7 @@ Die [Warenkorblimits](https://developer.salesforce.com/docs/commerce/salesforce-
 
 Das [Reorder Portal](https://trailhead.salesforce.com/content/learn/modules/salesforce-reorder-portal-quick-look/boost-sales-with-the-reorder-portal) ist die schlanke Variante: Vertriebsmitarbeiter laden Käufer ein, die dann ihre früheren Bestellungen wiederholen. Für die Anbindung an Sales Cloud braucht es eine Agentforce-Commerce-Lizenz und eine aktivierte Digital Experience. Es passt, wenn kein Katalogprojekt geplant ist. Welche Funktion zu welchem Bestellmuster passt, steht in [Nachbestellen im B2B-Shop](../../../blog/nachbestellen-b2b-shop-vorlagen/).
 
-## Ein typisches Szenario, als Annahme
+## Rechenbeispiel: 600 Händler in 9 Ländern
 
 Ein Hersteller von Kompressoren verkauft Ersatzteile an 600 Händler in 9 Ländern. SAP hält einen Listenpreis je Land, einen Rabatt je Händlerstufe und Kundenpreise für 40 große Händler. Alle Händler haben ein Debitorenkonto. Der Vertrieb kalkuliert Maschinen in SAP, Revenue Cloud gibt es nicht.
 
@@ -148,7 +148,7 @@ So würde ich entscheiden:
 
 Die Zahlen sind erfunden, um die Methode zu zeigen. Ändern Sie eine Annahme, etwa einen Vertrieb, der schon in Revenue Cloud kalkuliert, kippt Punkt 1 zugunsten von Advanced Pricing.
 
-## Wo fangen Sie an?
+## Erster Schritt: die Preis-Master-Entscheidung auf eine Seite schreiben
 
 Schreiben Sie eine Seite zur Preis-Master-Entscheidung, bevor jemand den Store gestaltet:
 
@@ -159,5 +159,3 @@ Schreiben Sie eine Seite zur Preis-Master-Entscheidung, bevor jemand den Store g
 5. Welche Käufergruppen zahlen mit Bestellnummer, welche mit Karte, und wer prüft den Kredit?
 
 Diese Seite gehört neben Ihre [Object Ownership Matrix](../../../blog/object-ownership-matrix-salesforce/) und bestimmt die Schnittstellenliste für [Kapitel 4](../erp-integration-bestand-auftraege/). Den Entwurf der Preis- und Kreditaufrufe übernehme ich im Rahmen der [Salesforce-Schnittstellen](../../../leistungen/salesforce-schnittstellen/), die Lizenzfrage zu Revenue Cloud unter [Make-or-Buy und Lizenzen](../../../leistungen/make-or-buy-lizenzen/). Alle Kapitel finden Sie auf der [Übersichtsseite](../).
-
-Ein B2B-Shop verkauft nur dann, wenn der Händler seinen Preis sieht, auf Rechnung bestellt und in einer Minute nachbestellt.

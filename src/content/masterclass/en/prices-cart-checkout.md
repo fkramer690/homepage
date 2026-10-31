@@ -10,10 +10,10 @@ pubDate: 2026-10-28
 short: "Prices, cart and checkout"
 summary: "Customer prices, request for quote, purchase order instead of card and fast reordering in the B2B store."
 takeaways:
-  - "Price books with Best Price or Priority Price cover list prices and dealer tiers. SAP condition logic needs a live call to the ERP or Advanced Pricing powered by Revenue Cloud."
+  - "Price books cover list prices and dealer tiers. SAP condition logic needs a live call to the ERP or Advanced Pricing powered by Revenue Cloud."
   - "A pricing call in a B2B store evaluates only the first 25 valid price books; anything beyond that is ignored without an error."
   - "Advanced Pricing requires Commerce Growth or Advanced plus Revenue Cloud Advanced and pays off when sales already calculates its quotes in Revenue Cloud."
-  - "Dealers pay with a purchase order, which triggers no payment in Salesforce. The store checks credit limit and order block live in the ERP before the order is placed."
+  - "Dealers pay with a purchase order, which triggers no payment in Salesforce. The store checks credit limit and order block live in the ERP first."
   - "Volume comes from reorders: past order to cart, order templates, CSV import. Most stores cap a cart at 500 lines, 2,000 with large cart support."
 articles: [commerce-customer-prices, commerce-advanced-pricing-revenue-cloud, commerce-request-for-quote, commerce-checkout-purchase-order, commerce-reorder-order-templates, partner-sales-assistant-dealer-quotes]
 faq:
@@ -85,7 +85,7 @@ On budget: the B2B editions say "Contact for Pricing", and the [Revenue Cloud pr
 My rule: Advanced Pricing pays off when sales already calculates quotes in Revenue Cloud, when contract prices are negotiated in Salesforce or when you need Request for Quote. If SAP calculates every customer price and should keep doing so, Revenue Cloud gives you a second pricing engine that has to agree with SAP. Then the live call is simpler. The trade-offs in detail are in [Advanced Pricing in B2B stores](../../../blog/advanced-pricing-b2b-store-revenue-cloud/). Sales agreements with volumes and terms, which plan demand rather than set the store price, belong to Manufacturing Cloud; the chapter [agreements and forecasting](../../manufacturing-cloud/agreements-and-forecasting/) covers them.
 ```
 
-## How does a request become a quote and then an order?
+## From request to quote to order
 
 Dealers ask for a price on 200 pieces instead of 5, or for a project with a delivery date. Today that is an email with a spreadsheet. With Request for Quote, signed-in buyers send their cart as a quote request, and inside sales works on the quote in Sales Cloud or Agentforce Revenue Management. In its [June 2026 post](https://www.salesforce.com/blog/b2b-commerce-innovations-june-26/) Salesforce calls RFQ "already generally available". The same post introduces Quote to Cart and round-trip quoting: an approved quote comes back to the buyer as a cart, ready to order in the store.
 
@@ -133,7 +133,7 @@ The [cart limits](https://developer.salesforce.com/docs/commerce/salesforce-comm
 
 The [reorder portal](https://trailhead.salesforce.com/content/learn/modules/salesforce-reorder-portal-quick-look/boost-sales-with-the-reorder-portal) is the lightweight option: sales reps invite buyers, who then repeat their past orders. Integrating it with Sales Cloud needs an Agentforce Commerce licence and an enabled Digital Experience. It fits when no catalogue project is planned. Which feature fits which ordering pattern is in [reorders in B2B Commerce](../../../blog/b2b-commerce-reorder-order-templates/).
 
-## A typical scenario, as an assumption
+## Worked example: 600 dealers in 9 countries
 
 A compressor manufacturer sells spare parts to 600 dealers in 9 countries. SAP holds a list price per country, a discount per dealer tier and customer prices for 40 large dealers. All dealers have a customer account in SAP. Sales calculates machines in SAP; there is no Revenue Cloud.
 
@@ -148,7 +148,7 @@ This is how I would decide:
 
 The numbers are made up to show the method. Change one assumption, such as a sales team that already quotes in Revenue Cloud, and point 1 tips towards Advanced Pricing.
 
-## Where do you start?
+## First step: write the price master decision on one page
 
 Write one page on the price master decision before anyone designs the store:
 
@@ -159,5 +159,3 @@ Write one page on the price master decision before anyone designs the store:
 5. Which buyer groups pay by purchase order, which by card, and who checks credit?
 
 This page belongs next to your [object ownership matrix](../../../blog/salesforce-object-ownership-matrix/) and drives the interface list for [chapter 4](../erp-integration-stock-orders/). I design the price and credit calls as part of [Salesforce integration](../../../services/salesforce-integration/), and the Revenue Cloud licence question under [make or buy and licences](../../../services/make-or-buy-licences/). All chapters are on the [overview page](../).
-
-A B2B store only sells when the dealer sees their price, orders on account and reorders in a minute.

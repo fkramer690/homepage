@@ -10,10 +10,10 @@ pubDate: 2026-10-28
 short: "ERP-Anbindung"
 summary: "Welche Daten zwischen Shop und ERP fließen, was live abgefragt wird und wem der Auftrag gehört."
 takeaways:
-  - "Das ERP bleibt führend für Preise, Bestand, Kredit und den Auftrag; Salesforce B2B Commerce hält das Einkaufserlebnis und eine Kopie dessen, was der Shop dafür braucht."
-  - "Für jedes Datum entscheiden Sie, ob es nach Salesforce kopiert oder live abgefragt wird: kopieren, was sich selten ändert, live fragen, wo ein falscher Wert Geld oder Vertrauen kostet."
-  - "Live-Abfragen laufen über Commerce Extensions wie Commerce_Domain_Pricing_Service und Commerce_Domain_Inventory_Service; Salesforce empfiehlt sie seit Winter '24 gegenüber den älteren Checkout-Integrationen."
-  - "Shop-Bestellungen landen meist als unmanaged Order Summaries in Salesforce, SAP wickelt ab, und die Schnittstelle schreibt Auftragsnummer, Termine, Lieferungen und Rechnungen zurück."
+  - "B2B Commerce hält das Einkaufserlebnis und eine Kopie dessen, was der Shop braucht. Preise, Bestand, Kredit und Auftrag führt das ERP."
+  - "Kopieren Sie, was sich selten ändert, und fragen Sie live, wo ein falscher Wert Geld oder Vertrauen kostet."
+  - "Live-Abfragen laufen über Commerce Extensions für Preis und Bestand. Salesforce empfiehlt sie seit Winter '24 gegenüber den älteren Checkout-Integrationen."
+  - "Shop-Bestellungen werden unmanaged Order Summaries, SAP wickelt ab, und die Schnittstelle schreibt Auftragsnummer, Termine, Lieferungen und Rechnungen zurück."
   - "Jede Schnittstelle, die sich noch per OAuth Username-Password Flow bei Salesforce anmeldet, muss vor dem 20. Februar 2027 umgestellt sein."
 articles: [commerce-sap-data-flows, commerce-stock-availability-erp, commerce-order-to-erp, commerce-extensions-custom-code, commerce-headless-b2b, agentforce-sap-order-status, legacy-erp-without-api-agents, salesforce-password-integrations-2027]
 faq:
@@ -49,7 +49,7 @@ Die Tabelle sieht einfach aus. Die Entscheidungen stecken in zwei Fragen pro Zei
 
 Käufergruppen und Entitlement Policies stehen fast nie so im ERP. Sie werden aus Verkaufsorganisation, Kundengruppe oder Marke abgeleitet, wie in [Kapitel 2](../katalog-suche-sichtbarkeit/) beschrieben. Schreiben Sie diese Ableitung als Regel auf, sonst pflegt jemand die Gruppen von Hand, und der Shop läuft dem ERP davon.
 
-## Kopieren oder live abfragen: nach welcher Regel?
+## Kopieren oder live abfragen: die Regel
 
 Meine Regel lautet: kopieren, was sich seltener ändert, als ein Händler klickt, und live fragen, wo ein falscher Wert Geld oder Vertrauen kostet. Die Abwägung ist bei Preisen und Bestand dieselbe:
 
@@ -58,7 +58,7 @@ Meine Regel lautet: kopieren, was sich seltener ändert, als ein Händler klickt
 
 Vertragspreise aus der SAP-Konditionslogik und die Kreditprüfung gehören meist in die Live-Gruppe, Listenpreise, Händlerstaffeln und Produktdaten in die Kopie. Für jede Live-Abfrage schreiben Sie eine Rückfallregel auf, bevor die erste Zeile Code entsteht. Ein ERP ohne nutzbare API ändert die Rechnung: Dann bleibt oft nur eine lesende Replik hinter einer kleinen API, wie ich in [Altes ERP ohne API](../../../blog/altes-erp-ohne-api-ki-agenten/) beschreibe. Für einen Shop würde ich darüber nur lesen, nie Aufträge über Masken erfassen.
 
-## Commerce Extensions: Wo fragt der Shop das ERP?
+## Commerce Extensions fragen das ERP live
 
 Commerce Extensions sind Apex-Klassen, die Salesforce an benannten Erweiterungspunkten ausführt. Die [Liste der verfügbaren Extensions](https://developer.salesforce.com/docs/commerce/extensions/guide/available-extensions.html) nennt die Punkte, die für eine ERP-Anbindung zählen, und ihre Standards:
 
@@ -128,9 +128,9 @@ Eine Frist gilt für jede Batch-Schnittstelle. Salesforce schaltet den [OAuth Us
 
 Headless heißt: Ihre eigene Website oder App ist der Shop, und Salesforce liefert Katalog, Preise, Warenkorb, Checkout und Aufträge über die Commerce Connect REST APIs. Auf der [Seite zu den Commerce-Neuerungen](https://www.salesforce.com/de/commerce/innovations/) steht Headless B2B Commerce als heute verfügbar, mit einem React B2B Storefront Blueprint. Der [Developer Guide](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-comm-headless-journey-overview.html) verweist auf eine Referenz-App im GitHub-Repository `commerce-b2b-headless`.
 
-Für die ERP-Anbindung ist das eine gute Nachricht: Extensions werden durch Connect-API-Aufrufe ausgelöst, dieselbe Preis- und Bestandslogik gilt also im LWR-Store und in Ihrer App. Die Kosten liegen beim Frontend. Hosting, Login, Pipeline und Regressionstests gegen jedes Salesforce-Release tragen Sie selbst. Ich würde headless nur empfehlen, wenn eine genutzte Website oder Kunden-App schon existiert und ein Team sie über Jahre betreibt. Welche Lizenz headless Käufer brauchen, habe ich in der Dokumentation nicht gefunden; das gehört schriftlich bestätigt. Mehr in [Headless B2B Commerce: eigenes Frontend, Salesforce-Kern](../../../blog/headless-b2b-commerce-eigenes-frontend/).
+Für die ERP-Anbindung heißt das: Extensions werden durch Connect-API-Aufrufe ausgelöst, dieselbe Preis- und Bestandslogik gilt also im LWR-Store und in Ihrer App. Die Kosten liegen beim Frontend. Hosting, Login, Pipeline und Regressionstests gegen jedes Salesforce-Release tragen Sie selbst. Ich würde headless nur empfehlen, wenn eine genutzte Website oder Kunden-App schon existiert und ein Team sie über Jahre betreibt. Welche Lizenz headless Käufer brauchen, habe ich in der Dokumentation nicht gefunden; das gehört schriftlich bestätigt. Mehr in [Headless B2B Commerce: eigenes Frontend, Salesforce-Kern](../../../blog/headless-b2b-commerce-eigenes-frontend/).
 
-## Ein typisches Szenario, als Annahme
+## Rechenbeispiel: Schnittstellenliste für 250 Händler
 
 Ein Maschinenbauer mit SAP S/4HANA plant einen Shop auf Growth Edition für 250 Händler und 15.000 Ersatzteile. Telefon- und EDI-Aufträge bleiben in SAP. Die Schnittstellenliste nach dem ersten Workshop könnte so aussehen:
 
@@ -143,8 +143,6 @@ Ein Maschinenbauer mit SAP S/4HANA plant einen Shop auf Growth Edition für 250 
 
 Sechs Schnittstellen, drei davon live, alle über einen Integrationsnutzer mit Zertifikat statt Passwort. Antwortet SAP im Checkout nicht rechtzeitig, nimmt der Shop die Bestellung mit "Termin folgt" an. Jede Schnittstelle bekommt einen Verantwortlichen auf Kundenseite.
 
-## Wo starten Sie?
+## Erster Schritt: Ownership-Matrix und Schnittstellenliste schreiben
 
-Schreiben Sie zwei Dokumente, bevor jemand die Shopseiten entwirft. Erstens eine [Object Ownership Matrix](../../../blog/object-ownership-matrix-salesforce/) mit einer zusätzlichen Spalte: kopiert oder live. Zweitens eine Schnittstellenliste mit führendem System, maximalem Alter der Daten, Rückfallregel und Anmeldeverfahren pro Schnittstelle. Mit diesen beiden Seiten lässt sich jedes Partnerangebot vergleichen. Danach geht es in [Kapitel 5](../agentforce-migration-einfuehrung/) um Agenten, die auf denselben Schnittstellen aufsetzen, und um die Einführung bei den Händlern. Eine unabhängige Prüfung solcher Designs gehört zu meiner Arbeit bei [Salesforce-Schnittstellen](../../../leistungen/salesforce-schnittstellen/) und in der [Salesforce-Architektur](../../../leistungen/salesforce-architektur/).
-
-Ein B2B-Shop ist nur so verlässlich wie seine Datenflüsse aus dem ERP, also entscheiden Sie diese vor dem Design.
+Schreiben Sie zwei Dokumente, bevor jemand die Shopseiten entwirft. Das eine ist eine [Object Ownership Matrix](../../../blog/object-ownership-matrix-salesforce/) mit einer zusätzlichen Spalte: kopiert oder live. Das andere ist eine Schnittstellenliste mit führendem System, maximalem Alter der Daten, Rückfallregel und Anmeldeverfahren pro Schnittstelle. Mit diesen beiden Seiten lässt sich jedes Partnerangebot vergleichen. Danach geht es in [Kapitel 5](../agentforce-migration-einfuehrung/) um Agenten, die auf denselben Schnittstellen aufsetzen, und um die Einführung bei den Händlern. Eine unabhängige Prüfung solcher Designs gehört zu meiner Arbeit bei [Salesforce-Schnittstellen](../../../leistungen/salesforce-schnittstellen/) und in der [Salesforce-Architektur](../../../leistungen/salesforce-architektur/).

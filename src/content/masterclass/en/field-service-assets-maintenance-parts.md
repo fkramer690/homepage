@@ -10,9 +10,9 @@ pubDate: 2026-10-28
 short: "Assets, maintenance, parts, partners"
 summary: "How machines become assets, maintenance by calendar or operating hours, spare parts with the ERP and service partners in the same process."
 takeaways:
-  - "A component becomes an asset when it has its own serial number, its own maintenance or its own warranty; everything else stays in the PLM parts list, which usually leaves two or three levels per machine."
-  - "A maintenance contract spreads across three objects in Field Service: service contract for what was sold, maintenance plan for planned visits and entitlement for the committed response time."
-  - "Maintenance by operating hours needs one counter on the asset, updated once a day from the ERP, the IoT platform or the technician, and one criteria-based rule for \"2,000 hours or 12 months\"."
+  - "A component becomes an asset when it has its own serial number, maintenance or warranty. That usually leaves two or three levels per machine."
+  - "A maintenance contract consists of a service contract for what was sold, a maintenance plan for planned visits and an entitlement for the response time."
+  - "Maintenance by operating hours needs a counter on the asset, updated daily, and a criteria-based rule for \"2,000 hours or 12 months\"."
   - "The ERP keeps spare parts stock and the material master; Field Service holds a copy for vans and technicians and reports consumed parts back."
   - "Service partners work in the same process when each partner technician is a service resource and each partner company gets its own service territory."
 articles: [field-service-asset-hierarchy, field-service-maintenance-contracts, field-service-usage-based-maintenance, predictive-maintenance-data-readiness, asset-service-lifecycle-management-addon, field-service-spare-parts, field-service-service-partners]
@@ -56,7 +56,7 @@ In my Field Service projects, spare parts and the installed base came from the E
 
 Check serial numbers and locations before maintenance plans build on them.
 
-## Service contract, maintenance plan, entitlement: which object does what?
+## Service contract, maintenance plan, entitlement: one object per job
 
 A maintenance contract does not live in one object. In Field Service it is split three ways:
 
@@ -118,7 +118,7 @@ The price list marks the Asset Coverage View as "Available for Purchase" even fo
 
 Several ASLM functions handle stock, such as counts and replenishment; if SAP owns stock, they create a second truth. For a machine builder I see the fit in what the ERP does poorly on the service side: coverage at the hotline, repair quotes, retrofit campaigns and depot repair. The comparison of add-on and own build for 30 users is in [Asset Service Lifecycle Management: worth the add-on?](../../../blog/asset-service-lifecycle-management-add-on/).
 
-## Spare parts: why does the ERP keep the stock?
+## Spare parts: the ERP keeps the stock
 
 In the ERP a spare part has a value, a purchasing process and postings to accounting. Field Service only needs quantities per location. According to the [inventory data model](https://developer.salesforce.com/docs/atlas.en-us.field_service_dev.meta/field_service_dev/fsl_dev_soap_inventory.htm), a product item holds the stock of one part at one location, products required list what a job needs, and products consumed record what was used, with the product item quantity updated automatically. A [location](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_location.htm) can be a warehouse or a service vehicle.
 
@@ -147,15 +147,15 @@ Warranty touches three products, so decide the owner first:
 
 My rule: if dealers submit warranty claims, Manufacturing Cloud owns warranty, as described in the Manufacturing Cloud chapter on [warranty and after-sales](../../manufacturing-cloud/warranty-and-after-sales/). If only your own technicians need to see coverage when a visit is booked, the entitlement on the asset is enough and claims stay in the ERP. Two warranty models on the same asset give two answers to the same customer.
 
-## How do service partners fit into the same process?
+## Service partners work in the same process
 
 Partners belong in the same process as your own technicians: same plan, same app, same service report. Salesforce's [architecture guide on contractor sharing](https://architect.salesforce.com/docs/architect/fundamentals/guide/field-service-contractor-sharing-patterns) describes two models. A named contractor is treated much like an employee and needs a user licence of their own. A contractor company can be modelled as a capacity-based resource, and the partner assigns its own people. The guide uses the service territory as the main security boundary, with a child territory per contractor company.
 
 I prefer the first model for regular partners and the second for partners who step in at peaks. Contractor Plus costs $80 per user or $32 per login and month according to the price list, so per user wins above 2.5 logins a month. Roles and licence rules are in [Field Service licences by role](../../../blog/field-service-licences-by-role/), the setup and what stays deliberately different in [how to bring in service partners](../../../blog/salesforce-field-service-service-partners/).
 
-## A typical scenario, as an assumption: 1,200 machines in three series
+## Worked example: 1,200 machines in three series
 
-A typical scenario, as an assumption: a builder of machining centres has 1,200 machines in the field in three series. The service contract says: service every 2,000 operating hours or every 12 months, whichever comes first. 700 machines are connected, 500 are not. Two partner companies cover Scandinavia.
+A builder of machining centres has 1,200 machines in the field in three series. The service contract says: service every 2,000 operating hours or every 12 months, whichever comes first. 700 machines are connected, 500 are not. Two partner companies cover Scandinavia.
 
 | Area | Decision in the scenario |
 |---|---|
@@ -165,11 +165,11 @@ A typical scenario, as an assumption: a builder of machining centres has 1,200 m
 | Parts and partners | 30 vans in Salesforce as locations, stock synced nightly from SAP. The two partners get a territory each, regular technicians on Contractor Plus per user. |
 | Add-ons | None in the first year. Connected Assets would cost $180,000 a year without changing a single decision. |
 
-## What should you decide before a partner builds?
+## First step: set the asset depth per machine type
 
 | Decision | What it covers |
 |---|---|
-| Asset depth per machine type | Set with the three questions above, plus which system leads the installed base after delivery. |
+| Asset depth per machine type | Set with the questions above, plus which system leads the installed base after delivery. |
 | Contract types | Each with its objects: what was sold, which maintenance, which response time. |
 | Counter source per series | Where the counter comes from and which rule wins when the ERP and the technician disagree. |
 | Stock ownership | Which system owns stock and which locations go into Salesforce. |
@@ -177,5 +177,3 @@ A typical scenario, as an assumption: a builder of machining centres has 1,200 m
 | Partner model | One per partner company. |
 
 Most of these are interface questions, which I work on in [Salesforce integration](../../../services/salesforce-integration/). [Chapter 5](../field-service-ai-agents-rollout/) adds AI agents, rollout and operations; the [overview page](../) lists all chapters.
-
-Assets, contracts and parts carry everything that comes later in Field Service, so they deserve the first decisions.

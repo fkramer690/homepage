@@ -10,10 +10,9 @@ pubDate: 2026-10-28
 short: "Is B2B Commerce worth it?"
 summary: "What Salesforce B2B Commerce is, what it costs and when a portal or another shop system is enough."
 takeaways:
-  - "Salesforce B2B Commerce pays off when dealers and customers reorder known items such as spare parts, consumables and accessories in volume. Configured machines stay with sales."
-  - "The store runs as an Experience Cloud site on the core platform. Buyer groups, entitlement policies and price books control who sees which product at which price."
-  - "Salesforce charges a share of store revenue minus tax and shipping (GMV) and publishes no percentage. Buyer licences, implementation and ERP integration come on top."
-  - "Aura store templates are only available to orgs enabled for Commerce before Spring '23. Salesforce has published no retirement date for Aura stores or the Visualforce package."
+  - "The store is an Experience Cloud site. Buyer groups, entitlement policies and price books control who sees which product at which price."
+  - "Salesforce charges a share of store revenue (GMV) and publishes no percentage. Buyer licences, implementation and ERP integration come on top."
+  - "Aura store templates are only available to orgs enabled for Commerce before Spring '23. Salesforce has published no retirement date."
   - "Before the build, decide who owns prices and stock, which buyer groups exist, which store template you use and which ERP calls run live."
 articles: [commerce-shop-or-portal, commerce-gmv-pricing, commerce-business-case, commerce-buyer-licences, commerce-versions-visualforce-aura-lwr, manufacturing-cloud-customer-portal, salesforce-licence-types]
 faq:
@@ -57,7 +56,7 @@ The advantage over a separate shop system is that accounts, contacts, cases and 
 
 You will find three names in documents. Trailhead says: "B2B Commerce is now Agentforce Commerce for B2B" ([Trailhead](https://trailhead.salesforce.com/content/learn/modules/agentforce-for-guided-shopping-for-b2b-and-d2c/increase-revenue-with-agentforce-for-guided-shopping)). Salesforce Help still says "Salesforce B2B Commerce", and the [pricing page](https://www.salesforce.com/editions-pricing/commerce-cloud/b2b/) sells the editions as Commerce Cloud B2B Growth and Advanced. They all mean the same product. In this masterclass I write Salesforce B2B Commerce. What matters is the name in the quote: have the edition and its scope confirmed under the name used on the pricing page.
 
-## Which generation do you run?
+## Aura or LWR: the store generation
 
 Many manufacturers already have a shop on Salesforce, often set up by a partner years ago. There are three generations:
 
@@ -113,7 +112,7 @@ The buyer licence does not decide the question, since both use Customer Communit
 3. number of ordering dealers and customers,
 4. share of orders by phone and email.
 
-A typical scenario, as an assumption: a compressor manufacturer has 250 dealers who order 30,000 spare parts lines a year, mostly as emails with part numbers. That is about ten lines per dealer per month. Here I would build a store and keep the existing portal for warranty and cases. If the same manufacturer had 20 dealers who buy a configured system twice a year, a store would add nothing. The system needs a quote, and the portal shows its status. The four criteria in detail are in [B2B Commerce or dealer portal: when a shop pays off](../../../blog/b2b-commerce-or-dealer-portal/). What Manufacturing Cloud offers for selling through dealers, from rebates to the partner portal, is covered in the [dealer and partner channel](../../manufacturing-cloud/dealer-and-partner-channel/) chapter of the Manufacturing Cloud masterclass.
+Worked example: a compressor manufacturer has 250 dealers who order 30,000 spare parts lines a year, mostly as emails with part numbers. That is about ten lines per dealer per month. Here I would build a store and keep the existing portal for warranty and cases. If the same manufacturer had 20 dealers who buy a configured system twice a year, a store would add nothing. The system needs a quote, and the portal shows its status. The criteria in detail are in [B2B Commerce or dealer portal: when a shop pays off](../../../blog/b2b-commerce-or-dealer-portal/). What Manufacturing Cloud offers for selling through dealers, from rebates to the partner portal, is covered in the [dealer and partner channel](../../manufacturing-cloud/dealer-and-partner-channel/) chapter of the Manufacturing Cloud masterclass.
 
 ## When is Salesforce not the answer?
 
@@ -123,7 +122,7 @@ Three cases where I would advise against Salesforce B2B Commerce:
 - **The ERP comes with its own commerce module** that knows prices, stock and credit limits without an interface. Check that first, because the ERP integration is the most expensive part of a Salesforce project.
 - **Very small catalogue, few dealers.** With 200 items and 15 dealers, an order form in the portal or a list in the ERP costs less than any shop system with a revenue share.
 
-## What do you decide before a partner builds?
+## First step: settle prices, stock and ERP calls in writing
 
 Creating a store from the template is the smallest part of the project. The decisions that are expensive to change afterwards are yours:
 
@@ -135,5 +134,3 @@ Creating a store from the template is the smallest part of the project. The deci
 | Which ERP calls run live? | Price, availability, credit check and order handover need an ERP that answers fast. Settle this with the SAP team before the store design is fixed. |
 
 These four points belong in a short document that you own, not the partner. How I support architecture decisions of this kind on the client side is described under [Salesforce architecture](../../../services/salesforce-architecture/). An independent review of quote and licence plan is part of [make or buy and licences](../../../services/make-or-buy-licences/). Continue with [chapter 2 on catalogue, search and entitlements](../catalog-search-entitlements/); all chapters are on the [overview page](../).
-
-A B2B store on Salesforce pays off when dealers reorder known parts in volume and you have settled prices, stock and ERP calls before the build.

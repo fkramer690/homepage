@@ -10,11 +10,11 @@ pubDate: 2026-10-28
 short: "Angebot, Vertrag, Auftrag"
 summary: "Freigaben, Angebotsagent, Salesforce Contracts, Auftragsorchestrierung und Assets: der Weg vom Angebot bis zur Übergabe an SAP."
 takeaways:
-  - "In Revenue Cloud läuft jeder Verkauf über ein Angebot und einen Auftrag auf Standardobjekten, auch Nachtrag, Verlängerung und Kündigung. Wer Mengen direkt am Asset ändert, zerstört die Historie."
-  - "Rabatt- und Margenfreigaben laufen über Advanced Approvals mit Vorschau, parallelen Freigebenden und Audit Trail; Schwelle und Freigebender kommen aus Regeln, nie aus einem Agenten."
-  - "Der Angebotsagent erstellt und ändert Angebote aus normaler Sprache, aber nur so gut wie Katalog, synchronisierte Preise und Konfigurationsregeln in Salesforce dahinter."
-  - "Die Übergabe an SAP gehört in einen Callout-Schritt des Dynamic Revenue Orchestrator; geht ein Auftrag in einem Stück an SAP, reicht eine einfache Schnittstelle ohne dieses Add-on."
-  - "Revenue Cloud und Field Service arbeiten auf demselben Asset-Objekt; legen Sie vor dem ersten Sprint fest, ob verkaufte Abos und physische Maschinen dieselben Datensätze teilen."
+  - "Wer Mengen direkt am Asset ändert und nicht über Nachtrag oder Kündigung, zerstört die Historie."
+  - "Rabatt- und Margenfreigaben laufen über Advanced Approvals. Schwelle und Freigebender kommen aus Regeln, nie aus einem Agenten."
+  - "Der Angebotsagent erstellt Angebote aus normaler Sprache. Er braucht dafür einen gepflegten Katalog, synchronisierte Preise und Konfigurationsregeln."
+  - "Die Übergabe an SAP gehört in einen Callout-Schritt des Dynamic Revenue Orchestrator. Geht ein Auftrag am Stück an SAP, reicht eine einfache Schnittstelle."
+  - "Revenue Cloud und Field Service teilen das Asset-Objekt. Vor dem ersten Sprint steht fest, ob verkaufte Abos und Maschinen dieselben Datensätze nutzen."
 articles: [revenue-cloud-discount-approvals, revenue-cloud-quoting-agent, partner-sales-assistant-dealer-quotes, salesforce-contracts-revenue-cloud, revenue-cloud-order-orchestration-erp, revenue-cloud-installed-base-assets]
 faq:
   - q: "Wie wird in Revenue Cloud aus einem Angebot ein Auftrag?"
@@ -47,7 +47,7 @@ Revenue Cloud heißt in Help und Developer Guide derzeit Revenue Management, auf
 
 Für Architekten ist ein Punkt entscheidend: Es gibt keinen Nebenweg. Eine Mengenänderung, eine Verlängerung oder eine Kündigung ist wieder ein Angebot und wieder ein Auftrag. Das ist mehr Prozess als ein geändertes Feld, hält aber Preise, Freigaben und Historie konsistent.
 
-## Was leistet das Angebot im Transaction Management?
+## Das Angebot im Transaction Management
 
 Das Angebot bearbeiten Vertriebsmitarbeiter im Transaction Line Editor, einer Tabelle ähnlich einer Kalkulation. Laut [Trailhead zur Arbeit mit Angeboten](https://trailhead.salesforce.com/content/learn/modules/efficient-sales-with-revenue-cloud/work-with-quotes) gibt es dort Bearbeitung direkt in der Zeile, auch für mehrere Positionen auf einmal, Filter, Suche und fixierte Spalten. Bundles werden aus dem Aktionsmenü der Position konfiguriert. Ein Mouseover auf den Nettopreis zeigt den Preis-Wasserfall, also jede Stufe vom Listenpreis bis zum Endpreis.
 
@@ -92,9 +92,9 @@ Salesforce Contracts ist das Vertragsmanagement von Revenue Cloud. Laut [Trailhe
 
 Die [Preisseite](https://www.salesforce.com/eu/sales/revenue-lifecycle-management/contracts-pricing/) nennt Salesforce Contracts ab 50 Euro je Nutzer und Monat bei jährlicher Abrechnung, mit dem Hinweis auf Voraussetzungsprodukte. Revenue Cloud Advanced für 200 Euro führt laut [Revenue-Cloud-Preisseite](https://www.salesforce.com/eu/sales/revenue-lifecycle-management/pricing/) Contracts & Orders, bei Growth ist Contract Lifecycle Management ein Zusatzkauf.
 
-Meine Linie: Für Kundenverträge aus dem Vertriebsprozess auf eigenem Papier reicht Salesforce Contracts meist. Verwaltet die Rechtsabteilung Einkauf, NDAs und Konzernverträge in einem eigenen Werkzeug, oder kommen die meisten Verträge als Einkaufsbedingungen des Kunden, bleibt dieses Werkzeug, und Salesforce übergibt den unterschriebenen Vertrag. Achten Sie außerdem auf drei Dinge mit dem Namen „Vertrag“: den Vertrag in Salesforce Contracts, das Sales Agreement in Manufacturing Cloud und den Servicevertrag in Field Service. Die Abgrenzung steht in [Salesforce Contracts: Reicht das Vertragsmanagement?](../../../blog/salesforce-contracts-vertragsmanagement/).
+Meine Linie: Für Kundenverträge aus dem Vertriebsprozess auf eigenem Papier reicht Salesforce Contracts meist. Verwaltet die Rechtsabteilung Einkauf, NDAs und Konzernverträge in einem eigenen Werkzeug, oder kommen die meisten Verträge als Einkaufsbedingungen des Kunden, bleibt dieses Werkzeug, und Salesforce übergibt den unterschriebenen Vertrag. Achten Sie außerdem darauf, dass drei Objekte „Vertrag“ heißen: den Vertrag in Salesforce Contracts, das Sales Agreement in Manufacturing Cloud und den Servicevertrag in Field Service. Die Abgrenzung steht in [Salesforce Contracts: Reicht das Vertragsmanagement?](../../../blog/salesforce-contracts-vertragsmanagement/).
 
-## Wie kommt der Auftrag zu SAP?
+## Der Auftrag geht per Callout an SAP
 
 Der aktivierte Auftrag gelangt nach [Trailhead](https://trailhead.salesforce.com/content/learn/modules/revenue-cloud-design/manage-orders) über einen datensatzgesteuerten Flow zum Dynamic Revenue Orchestrator (DRO). DRO macht zwei Dinge. Die Dekomposition zerlegt die kommerziellen Produkte, die der Kunde kauft, in technische Produkte für nachgelagerte Systeme. Die Orchestrierung führt einen Plan mit [fünf Schritttypen](https://trailhead.salesforce.com/content/learn/modules/dynamic-revenue-orchestrator-foundations/explore-order-orchestration) aus: Auto Task, Callout, Manual Task, Milestone und Pause, gruppiert in Swimlanes pro System und mit Fristen pro Schritt.
 
@@ -122,7 +122,7 @@ Mit der Aktivierung des Auftrags erscheinen die verkauften Produkte als Assets a
 
 Field Service nutzt dasselbe Asset-Objekt, dort als Maschine beim Kunden mit Seriennummer und Baugruppenhierarchie. Revenue Cloud zählt Mengen, Field Service braucht einen Datensatz pro Seriennummer. Für die meisten Maschinenbauer empfehle ich zwei Arten von Assets, das verkaufte und die physische Maschine, mit einer festgelegten Verknüpfung. Beide Modelle mit ihren Risiken vergleiche ich in [Assets in Revenue Cloud: Nachträge und Verlängerungen](../../../blog/revenue-cloud-assets-nachtraege-verlaengerungen/). Wie Field Service Maschinen, Wartung und Teile abbildet, steht im Kapitel [Assets, Wartung und Teile](../../field-service/field-service-assets-wartung-teile/). Wer welches Objekt führt, gehört in eine [Object Ownership Matrix](../../../blog/object-ownership-matrix-salesforce/), bevor zwei Teams Trigger auf Asset gegeneinander bauen.
 
-## Ein typisches Szenario, als Annahme: Ersatzteilpaket und Fernüberwachung
+## Rechenbeispiel: Ersatzteilpaket und Fernüberwachung
 
 Ein Hersteller von Verpackungsanlagen verkauft einem Bestandskunden auf einem Angebot zwei Dinge: ein Verschleißteilpaket für drei Linien und ein Fernüberwachungsabo für dieselben drei Maschinen, zwölf Monate Laufzeit. Alle Details sind Annahmen.
 
@@ -136,7 +136,7 @@ Ein Hersteller von Verpackungsanlagen verkauft einem Bestandskunden auf einem An
 
 Die Rechnung für das Abo kann aus SAP oder aus Revenue Cloud Billing kommen. Diese Entscheidung und die wiederkehrende Abrechnung behandelt [Kapitel 4](../abrechnung-und-nutzungsbasierte-preise/), etwa in [Wartungsverträge wiederkehrend abrechnen](../../../blog/wartungsvertraege-wiederkehrend-abrechnen/).
 
-## Was sollten Sie vor dem Bau entscheiden?
+## Erster Schritt: Freigabematrix und SAP-Übergabe schriftlich klären
 
 Bevor ein Partner das erste Angebotslayout baut, würde ich diese Punkte schriftlich klären:
 
@@ -148,4 +148,4 @@ Bevor ein Partner das erste Angebotslayout baut, würde ich diese Punkte schrift
 | Auftrag | DRO oder einfache Schnittstelle, wer die Fallout-Queue abarbeitet, welche Prüfungen vor der Aktivierung laufen. |
 | Assets | gezählt oder an eine Seriennummer gebunden, und wem das Asset-Objekt gehört. |
 
-Alle Kapitel finden Sie auf der [Übersichtsseite](../). Revenue Cloud trägt den Weg vom Angebot zum Auftrag gut, wenn jede Änderung über Angebot und Auftrag läuft und die Übergabe an SAP vorher festgelegt ist.
+Ich fange mit der Freigabematrix an, weil Agent und Auftrag auf ihren Schwellen aufbauen. Alle Kapitel finden Sie auf der [Übersichtsseite](../).

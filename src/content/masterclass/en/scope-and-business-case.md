@@ -10,11 +10,11 @@ pubDate: 2026-10-28
 short: "Scope and business case"
 summary: "What Manufacturing Cloud contains, what it costs and when Sales Cloud plus a custom build is the better choice."
 takeaways:
-  - "Manufacturing Cloud is an industry cloud on top of Sales Cloud and Service Cloud with its own data model; Trailhead calls the same product Agentforce Manufacturing."
+  - "Manufacturing Cloud is an industry cloud on top of Sales Cloud and Service Cloud with its own data model. Trailhead calls it Agentforce Manufacturing."
   - "At list price Manufacturing Cloud Sales Core costs $275 per user and month and Sales Cloud Core $195. For 120 sales users that is $115,200 extra per year."
-  - "Max costs $650 instead of $275 and brings 2.75 million instead of 500,000 Flex Credits per org and year, ten times the Omnistudio calls and, as the only edition, the full Agentforce for Industries suite."
-  - "Portal licences, the Agentforce add-on, Channel Revenue Management and Connected Assets are not part of the edition and belong in the calculation from the start."
-  - "Without volume agreements, dealer rebates or warranty claims through partners, the reason for the industry licence is gone; then I compare Sales Cloud plus a custom build over five years."
+  - "Max costs $650 instead of $275 and brings 2.75 million instead of 500,000 Flex Credits per org and year plus the full Agentforce for Industries suite."
+  - "Portal licences, the Agentforce add-on, Channel Revenue Management and Connected Assets are not in the edition and belong in the calculation early."
+  - "Without volume agreements, dealer rebates or partner warranty claims, the industry licence has no reason. Then I compare Sales Cloud plus a custom build."
 articles: [manufacturing-cloud-worth-it, manufacturing-cloud-feature-map, manufacturing-cloud-add-ons-costs, salesforce-editions-core-advanced-max, salesforce-licence-types]
 faq:
   - q: "What is Salesforce Manufacturing Cloud?"
@@ -38,7 +38,7 @@ Manufacturing Cloud is an industry cloud, a package for one industry that Salesf
 
 That also settles the naming question. The [pricing page](https://www.salesforce.com/manufacturing/cloud/pricing/) sells "Manufacturing Cloud Sales Core", while its footnotes speak of "Agentforce Manufacturing for Sales". One product, two names. In this masterclass I write Manufacturing Cloud, because that is what the quote will say. The new name has one practical consequence: not every feature with "Agentforce" in its name is an agent. For each one, ask which subagent, which action and which licence stand behind it.
 
-## Which features does Manufacturing Cloud contain?
+## The features of Manufacturing Cloud at a glance
 
 The features fall into four areas. The list follows the Trailhead quick look and the product pages:
 
@@ -49,11 +49,9 @@ The features fall into four areas. The list follows the Trailhead quick look and
 | Channel | Rebate management, partner lead, partner performance and partner visit management | 3 |
 | Tools | Omnistudio, Business Rules Engine, Data Processing Engine | all |
 
-Which question each feature answers and where it stops is in [Manufacturing Cloud features: what is in the box](../../../blog/manufacturing-cloud-features-overview/). Two points from it decide the business case.
+Which question each feature answers and where it stops is in [Manufacturing Cloud features: what is in the box](../../../blog/manufacturing-cloud-features-overview/). For the business case it matters most that almost every sales and partner feature has its own switch. The [IndustriesManufacturingSettings metadata](https://developer.salesforce.com/docs/atlas.en-us.automotive_cloud.meta/automotive_cloud/auto_metadata_api_industriesmanufacturingsettings.htm) has one field each for sales agreements, account forecasts, advanced forecasting, targets, programmes and the three partner features, all false by default. So a licence says nothing about what runs in your org. An org can pay for Manufacturing Cloud for years and use only sales agreements.
 
-First, almost every sales and partner feature has its own switch. The [IndustriesManufacturingSettings metadata](https://developer.salesforce.com/docs/atlas.en-us.automotive_cloud.meta/automotive_cloud/auto_metadata_api_industriesmanufacturingsettings.htm) has one field each for sales agreements, account forecasts, advanced forecasting, targets, programmes and the three partner features, all false by default. So a licence says nothing about what runs in your org. An org can pay for Manufacturing Cloud for years and use only sales agreements.
-
-Second, the feature list also contains things Salesforce sells separately. Trailhead lists ship and debit and price protection under "Rebates" and Connected Assets under "Agentforce Service". On the [add-ons page](https://www.salesforce.com/manufacturing/cloud/pricing/add-ons/) both have a price of their own.
+The feature list also contains things Salesforce sells separately. Trailhead lists ship and debit and price protection under "Rebates" and Connected Assets under "Agentforce Service". On the [add-ons page](https://www.salesforce.com/manufacturing/cloud/pricing/add-ons/) both have a price of their own.
 
 What none of these lists contains is a quoting system with configurator, approvals and contract generation. Trailhead only names product catalog management. Quotes and configuration are covered by the Revenue Cloud masterclass, starting with the [overview and decision](../../revenue-cloud/revenue-cloud-overview/) and the chapter on [product catalog, configurator and pricing](../../revenue-cloud/product-catalog-configurator-pricing/).
 
@@ -93,7 +91,7 @@ Flex Credits are the consumption currency Salesforce uses to bill agent actions,
 
 For manufacturers the call limits often matter more than the credits. Omnistudio builds guided processes, the Business Rules Engine evaluates rules, for example when approving warranty claims. If warranty, rebates and portal processes all run on these engines, 10,000 rule calls a month go quickly. In my view only a feature need that Core does not cover justifies Max. For extra credits alone, Max is too expensive.
 
-## Which add-ons show up in the quote?
+## Add-ons that show up in the quote later
 
 The edition is the first line of a quote. The following add-ons are on the add-ons page and belong in the calculation from the start, not in the last round of negotiation:
 
@@ -149,7 +147,7 @@ Choosing between an industry cloud and a custom build is a make-or-buy question 
 3. **Maintenance and releases.** Custom code causes effort with each of the three Salesforce releases a year. Salesforce develops a standard feature further.
 4. **Follow-up costs**, such as a later switch or add-ons that only become necessary in year three.
 
-A typical scenario, as an assumption: a component maker with 120 sales users wants to see plan against actuals per customer and product. The list prices come from the pricing pages, all other numbers are assumptions.
+Worked example: a component maker with 120 sales users wants to see plan against actuals per customer and product. The list prices come from the pricing pages, all other numbers are assumptions.
 
 | Five years | Manufacturing Cloud Sales Core | Sales Cloud Core plus custom build |
 |---|---|---|
@@ -162,10 +160,8 @@ For a lean plan against actuals view the custom build wins clearly. The picture 
 
 The result belongs in a decision log: which features were checked, which numbers applied, who decided. After a partner change it is often the only document that explains why the org looks the way it does. How I build these calculations is described under [make-or-buy and licence forecasts](../../../services/make-or-buy-licences/); fitting the result into the overall architecture is part of [Salesforce architecture](../../../services/salesforce-architecture/).
 
-## Where should you start?
+## First step: ask sales and service about agreements, rebates and warranty
 
-Before a quote is on the table, three questions to sales and service help: what share of revenue runs through volume agreements? How are dealer bonuses calculated today? Who checks warranty claims, and how long does it take? The answers show faster than any demo whether Manufacturing Cloud fits. If a quote is already there, check it against the checklist in the feature overview: every feature from the business case, with the licence that covers it.
+Before a quote is on the table, three questions to sales and service help: what share of revenue runs through volume agreements? How are dealer bonuses calculated today? Who checks warranty claims, and how long does it take? The answers show sooner than a demo whether Manufacturing Cloud fits. If a quote is already there, check it against the checklist in the feature overview: every feature from the business case, with the licence that covers it.
 
 If the answer is volume agreements, [chapter 2 on agreements and forecasting](../agreements-and-forecasting/) continues with the data that has to come from the ERP for them. All chapters are on the [overview page](../).
-
-Manufacturing Cloud pays off when its core features match your business, and a five-year calculation shows that earlier than the first workshop.

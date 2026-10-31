@@ -10,11 +10,11 @@ pubDate: 2026-10-28
 short: "Scheduling and dispatch"
 summary: "Master data, scheduling policies, Enhanced Scheduling, the new Scheduling Console and multiday jobs: what carries field service planning."
 takeaways:
-  - "Field Service schedules only as well as six kinds of master data: territories with operating hours, technicians with skills, work types, assets, customer visiting hours and absences."
-  - "A scheduling policy combines work rules, which exclude technicians, with weighted service objectives, which rank the rest. A good start is automation up to Scheduled and a dispatcher who releases."
-  - "Enhanced Scheduling and Optimization is the default for new orgs and the only engine that runs the new Scheduling Console; older orgs switch territory by territory after a data check."
+  - "Field Service schedules with six kinds of master data: territories, technicians with skills, work types, assets, customer visiting hours and absences."
+  - "Work rules exclude technicians, weighted service objectives rank the rest. I start with automation up to Scheduled and a dispatcher who releases."
+  - "Enhanced Scheduling and Optimization is the default for new orgs and the only engine that runs the new Scheduling Console."
   - "Multiday appointments can span eight weeks, but automated scheduling only handles jobs that fit into 30 days, and they cannot be combined with complex work."
-  - "Before go-live, three decisions need a name next to them: which engine, which dispatcher console and who owns the scheduling policies."
+  - "Before go-live, engine and dispatcher console are fixed, and the scheduling policies have a named owner."
 articles: [field-service-master-data, field-service-scheduling-automation, field-service-enhanced-scheduling-eso, field-service-scheduling-console, field-service-multiday-crews-commissioning, field-service-on-call-shifts]
 faq:
   - q: "What is a scheduling policy in Salesforce Field Service?"
@@ -55,7 +55,7 @@ My starting point for the data check is always the same: the failed visits of th
 I have introduced Field Service for maintenance, breakdown jobs and commissioning, with automatic scheduling instead of purely manual dispatch. Whether the engine made good suggestions depended above all on the master data in this section.
 ```
 
-## How does the scheduling engine decide?
+## The scheduling engine: work rules filter, service objectives rank
 
 The engine assigns appointments by a scheduling policy. Work rules filter out technicians who cannot take a job, such as Match Skills or the visiting hours rule. Service objectives rank the rest with a weight: short travel, early slot, preferred technician. Field Service ships four policies: Customer First, High Intensity, Soft Boundaries and Emergency. I start with Customer First and adjust the weights instead of building a policy from scratch.
 
@@ -67,7 +67,7 @@ Automation grows when dispatchers hardly change proposals any more. To get there
 
 Enhanced Scheduling and Optimization, ESO for short, is the newer scheduling engine. According to the [Field Service guide](https://resources.docs.salesforce.com/latest/latest/en-us/sfdc/pdf/support_field_service.pdf), new orgs have it on for all territories, and existing orgs can switch all territories or one at a time. For an org that went live on the older engine, my answer is yes, but territory by territory. The details are in [Enhanced Scheduling and Optimization: switch now?](../../../blog/field-service-enhanced-scheduling-optimization-switch/).
 
-Three points decide the effort:
+These points decide the effort:
 
 | Point | What it means |
 |---|---|
@@ -121,9 +121,9 @@ Salesforce is moving scheduling towards agents. Gap filling after cancellations 
 
 For a machine builder I see the dispatcher staying in three places: breakdowns with an unclear cause, visits that need a shutdown at the customer, and long jobs. Planned maintenance from maintenance plans is the first candidate for an agent, because the rules are known. Which agents work today is in [AI agents in Field Service: what works today?](../../../blog/field-service-ai-agents-what-works-today/), the manufacturing view in the AI masterclass chapter on [AI agents in manufacturing](../../ai-salesforce/ai-agents-in-manufacturing/), and rollout and cost in [chapter 5](../field-service-ai-agents-rollout/). An agent books with the same policy as the engine, so everything in this chapter applies to it too.
 
-## A typical scenario, as an assumption: four dispatchers leave Excel
+## Worked example: four dispatchers leave Excel
 
-A typical scenario, as an assumption: a component maker with 40 technicians in three territories and four dispatchers. Field Service has been live since 2022 on the older engine. Two dispatchers plan maintenance in Excel and copy dates into the Classic Dispatch Console; two handle breakdowns directly in the Gantt. All numbers are assumptions to show the method.
+Assume a component maker with 40 technicians in three territories and four dispatchers. Field Service has been live since 2022 on the older engine. Two dispatchers plan maintenance in Excel and copy dates into the Classic Dispatch Console; two handle breakdowns directly in the Gantt. All numbers are assumptions to show the method.
 
 ```schritte
 Data | Weeks 1 to 3
@@ -140,9 +140,9 @@ On-call | Alongside
 
 The Excel list is gone after week 10. The dispatchers still decide, but from a proposal instead of an empty calendar.
 
-## What to decide before go-live
+## First step: a named owner for the scheduling policies
 
-Three decisions need a name next to them before a partner configures scheduling:
+These decisions need a name next to them before a partner configures scheduling:
 
 | Decision | What it covers |
 |---|---|
@@ -155,5 +155,3 @@ Policies, work rules, operating hours and territories are records, not metadata.
 ```
 
 Where the scheduling design touches ERP, project tools and partners, I help with the [Salesforce architecture](../../../services/salesforce-architecture/). The next step for technicians is the app: [chapter 3](../field-service-mobile-app-documents/) covers offline data, forms and service reports, and the [overview](../) lists all chapters.
-
-Good scheduling in Field Service starts with clean data and a named policy owner, and the engine, the console and the agents build on that.

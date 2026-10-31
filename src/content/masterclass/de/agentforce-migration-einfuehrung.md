@@ -10,11 +10,11 @@ pubDate: 2026-10-28
 short: "Agenten, Migration, Einführung"
 summary: "Buyer Agent und Merchandising Agent, der Weg von Aura zu LWR und die Einführung bei Händlern in Wellen."
 takeaways:
-  - "Agenten kommen nach einem Shop, der funktioniert: Der Buyer Agent beantwortet Händlerfragen aus Katalog, Preisen und Aufträgen des Shops und macht Fehler in diesen Daten nur schneller sichtbar."
-  - "Den Buyer Agent führt Salesforce seit Juni 2026 als allgemein verfügbar; den kompletten Auftrag im Chat mit Zahlung zum Vertragspreis datiert Salesforce als Carter für Käufer auf Januar 2027."
-  - "Vertragspreise, Kreditlimits und Liefertermine kommen aus Shop-Preisfindung und ERP, nie aus dem Sprachmodell, und jede Händlernachricht ist nicht vertrauenswürdige Eingabe."
-  - "Für Aura-Stores gibt es bis zum 27. Oktober 2026 kein Abschaltdatum. Migrieren Sie auf LWR, wenn Funktionen, wachsender Aura-Code oder ein neuer Checkout es verlangen."
-  - "Führen Sie den Shop in Wellen nach Buyer Group ein und messen Sie je Welle den Anteil der Auftragspositionen über den Shop, Suchen ohne Treffer und Innendienstminuten pro Position."
+  - "Der Buyer Agent beantwortet Händlerfragen aus Katalog, Preisen und Aufträgen des Shops und macht Fehler in diesen Daten schneller sichtbar."
+  - "Den Buyer Agent führt Salesforce seit Juni 2026 als allgemein verfügbar. Den kompletten Auftrag im Chat datiert Salesforce auf Januar 2027."
+  - "Vertragspreise, Kreditlimits und Liefertermine kommen aus Shop und ERP, nie aus dem Sprachmodell. Jede Händlernachricht ist nicht vertrauenswürdige Eingabe."
+  - "Für Aura-Stores gibt es bis zum 27. Oktober 2026 kein Abschaltdatum. Migrieren Sie auf LWR, wenn Funktionen, Aura-Code oder ein neuer Checkout es verlangen."
+  - "Führen Sie den Shop in Wellen ein und messen Sie je Welle den Shop-Anteil der Auftragspositionen, Suchen ohne Treffer und Innendienstminuten pro Position."
 articles: [commerce-buyer-agent-whatsapp, commerce-merchandising-agent, commerce-aura-to-lwr-migration, commerce-dealer-rollout, commerce-kpis-after-go-live, prompt-injection-dealer-portals, multilingual-dealer-agents, distributor-replenishment-agent]
 faq:
   - q: "Sollte ein Hersteller den B2B-Shop gleich mit Buyer Agent starten?"
@@ -36,7 +36,7 @@ Dieses Kapitel setzt voraus, was die vorigen beschrieben haben: eine Entscheidun
 
 Meine Reihenfolge für den Rest ist trotzdem nüchtern: erst der Shop bei den ersten Händlern, dann Kennzahlen, dann Agenten. Ein Agent liest dieselben Buyer Groups, Preisbücher und Order Summaries wie die Storefront. Ist ein Entitlement falsch, zeigt er das falsche Teil im Chat, nur schneller und überzeugender formuliert.
 
-## Was leisten Buyer Agent und Merchandising Agent heute?
+## Buyer Agent und Merchandising Agent: der Stand heute
 
 Salesforce bietet für B2B Commerce zwei Arten von Agenten an. Der eine spricht mit Händlern, der andere arbeitet für das Team, das den Shop betreibt. Die Termine, die Salesforce dafür nennt:
 
@@ -95,7 +95,7 @@ contra: Was für Abwarten spricht
 
 Auch wenn Sie abwarten, würde ich den ersten Schritt gehen: Aura-Komponenten im laufenden Store durch Lightning Web Components ersetzen, denn die laufen in beiden Store-Typen. Schritte, Checkout und offene Punkte des Leitfadens beschreibe ich in [Von Aura zu LWR: einen B2B-Commerce-Store migrieren](../../../blog/b2b-store-aura-lwr-migrieren/).
 
-## Wie führen Sie den Shop bei Händlern ein?
+## Einführung bei Händlern in Wellen nach Buyer Group
 
 Ein B2B-Shop zeigt jedem Händler seinen eigenen Katalog und seine eigenen Preise. Ein Big Bang zeigt deshalb jeden Datenfehler allen Händlern am selben Tag. Das Datenmodell macht Wellen einfach: Käufer kommen über Buyer Groups in den Store, also ist eine Welle die Menge der Buyer Groups, die Sie mit dem Store verbinden.
 
@@ -105,7 +105,7 @@ Ein B2B-Shop zeigt jedem Händler seinen eigenen Katalog und seine eigenen Preis
 - **Innendienst bleibt erreichbar.** Telefon und E-Mail laufen weiter. Händler wechseln, weil der Shop schneller ist. Ruft ein Pilothändler mit einer Nachbestellung an, führt die Kollegin ihn einmal durch den Shop.
 - **Schulung kurz halten.** Ein Termin pro Buyer Manager zur Benutzerverwaltung und eine Seite mit Suche nach Teilenummer und Nachbestellung reichen für den Start.
 
-Ein typisches Szenario, als Annahme: Ein Hersteller von Kompressoren verkauft Ersatzteile an 250 Händler in Deutschland, Österreich und der Schweiz. Welle 1 bringt in den Monaten 1 und 2 fünfzehn Pilothändler in Deutschland in einer Buyer Group. Welle 2 folgt mit den übrigen deutschen Händlern in drei Gruppen nach Händlerstufe, Welle 3 mit Österreich, der Schweiz und den Schlüsselkunden mit Sonderkonditionen. Zwischen den Wellen liegen zwei Wochen für Korrekturen. Den Buyer Agent bekommt erst Welle 1, wenn sie drei Monate im Shop bestellt hat. Die ganze Reihenfolge steht in [B2B-Shop für Händler einführen](../../../blog/b2b-shop-haendler-einfuehren/). Wenn Händler und Innendienst ihre Arbeitsweise ändern sollen, gehört [Change Management](../../../leistungen/change-management/) ab der ersten Welle in den Plan.
+Rechenbeispiel: Ein Hersteller von Kompressoren verkauft Ersatzteile an 250 Händler in Deutschland, Österreich und der Schweiz. Welle 1 bringt in den Monaten 1 und 2 fünfzehn Pilothändler in Deutschland in einer Buyer Group. Welle 2 folgt mit den übrigen deutschen Händlern in drei Gruppen nach Händlerstufe, Welle 3 mit Österreich, der Schweiz und den Schlüsselkunden mit Sonderkonditionen. Zwischen den Wellen liegen zwei Wochen für Korrekturen. Den Buyer Agent bekommt erst Welle 1, wenn sie drei Monate im Shop bestellt hat. Die ganze Reihenfolge steht in [B2B-Shop für Händler einführen](../../../blog/b2b-shop-haendler-einfuehren/). Wenn Händler und Innendienst ihre Arbeitsweise ändern sollen, gehört [Change Management](../../../leistungen/change-management/) ab der ersten Welle in den Plan.
 
 ## Welche Kennzahlen zeigen, ob der Shop wirkt?
 
@@ -123,7 +123,7 @@ Die Suchanalyse über Data Cloud hat Salesforce [im Juli 2026 angekündigt](http
 
 Zwei Dinge müssen vor dem Go-live stehen: ein Kanalkennzeichen in der Auftragsschnittstelle, damit jede Position im ERP dem Shop zugeordnet werden kann, und zwei Wochen Zeitmessung im Innendienst als Ausgangswert. Ohne diese Zahlen bleibt der [Business Case](../../../blog/b2b-webshop-business-case-hersteller/) eine Behauptung. Details und eine Beispielrechnung stehen in [B2B-Shop Kennzahlen: Was nach dem Go-live zählt](../../../blog/b2b-shop-kennzahlen-nach-go-live/).
 
-## Was verlangt der Betrieb nach dem Go-live?
+## Der Betrieb nach dem Go-live braucht eine Regressionsliste
 
 Salesforce liefert drei Releases im Jahr, und jedes trifft Storefront, Checkout und Extensions. Ich würde für den Shop eine feste Regressionsliste führen, die vor jedem Release in der Preview-Sandbox läuft:
 
@@ -136,7 +136,7 @@ Salesforce liefert drei Releases im Jahr, und jedes trifft Storefront, Checkout 
 
 Die Store-Konfiguration, also Buyer Groups, Entitlement Policies und Preisbücher, läuft dabei wie Metadaten durch die Pipeline. Wie Sie die drei Releases in einen Kalender legen, beschreibt das DevOps-Kapitel [Release-Planung für Salesforce](../../devops-release-management/release-planung-salesforce-releases/), wie Sie eine solche Arbeitsweise schrittweise einführen und messen, das Kapitel [Fahrplan und Messung](../../devops-release-management/einfuehrung-fahrplan/). Bei Pipeline und Testautomatisierung unterstütze ich im Rahmen von [DevOps und Release-Management](../../../leistungen/devops-und-release-management/).
 
-## Wo fangen Sie an?
+## Erster Schritt: der Shop vor dem Agenten
 
 ```schritte
 Shop vor Agent
@@ -152,5 +152,3 @@ Regressionsliste schreiben
 ```
 
 Alle fünf Kapitel finden Sie auf der [Übersichtsseite der Masterclass](../). Wer entscheiden muss, welche Daten zwischen ERP, PIM und Salesforce wem gehören, findet meine Unterstützung unter [Salesforce-Architektur](../../../leistungen/salesforce-architektur/).
-
-Ein B2B-Shop trägt, wenn die ersten Händler ihre Teile zu ihrem Preis beim ersten Versuch finden, und Agenten, Migration und Kennzahlen bauen auf genau diesem Fundament auf.

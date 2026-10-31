@@ -10,7 +10,7 @@ pubDate: 2026-10-29
 short: "Sponsor and communication"
 summary: "Awareness and desire: what the sponsor visibly does, what a rollout plan per release looks like and when the works council joins."
 takeaways:
-  - "Training does not create awareness and desire; the group's own leadership does, by explaining why something changes and deciding when departments disagree."
+  - "Awareness and desire come from the group's own leadership. It explains why something changes and decides when departments disagree."
   - "A sponsor plan states what management visibly does and when, so that \"management is behind it\" is more than a line on the first slide."
   - "A rollout plan per release has one row per affected group: what changes, who informs and when. It stands before development is finished."
   - "Release notes for users answer five questions in plain language and come in the local language, at most half a page per group."
@@ -32,7 +32,7 @@ Awareness and desire, the first two stages of the ADKAR model, come from the gro
 
 In the Prosci study [Best Practices in Change Management](https://www.prosci.com/hubfs/Website_English/2.downloads/research-executive-summaries/Best-Practices-in-Change-Management-12th-Edition-Executive-Summary.pdf), participants named active and visible sponsorship as the top success factor. In Salesforce programmes that is exactly what is missing most often. A sponsor is a person from management who visibly backs the rollout. They do not just sit on the steering committee; they stand in front of the teams affected.
 
-Three things make a sponsor effective:
+This is what makes a sponsor effective:
 
 ```saeulen
 dach: An effective sponsor
@@ -44,7 +44,7 @@ basis: Written down in the sponsor plan
 
 So I write a sponsor plan: a short list of dates when the sponsor appears, decisions that sit with them and the figures they receive each month. Without this plan, "management is behind it" turns into a line on the first slide.
 
-## What is in the rollout plan per release?
+## The rollout plan has one row per affected group
 
 With a clean release process, releases get smaller and more frequent. For business teams that means small changes more often instead of one big package a quarter. Whoever does not know something changed takes the change for a bug. The rollout plan prevents that. It has one row per affected group and is maintained together with the release plan:
 
@@ -79,7 +79,7 @@ After the release | first week · key users, project team
   Collect questions, check usage, take feedback into the backlog.
 ```
 
-## What if a change is contested?
+## The sponsor explains contested changes before acceptance testing
 
 Some changes do not please everyone. A new required field creates work for inside sales and helps sales planning. Such changes should not become known through the release notes for the first time. I mark these rows in the rollout plan, and the sponsor explains before acceptance testing why the change is coming. This is where desire is decided: whoever knows the reason and knows their own leadership backs it fills in the field. Whoever does not fills it with a dot.
 
@@ -95,6 +95,6 @@ Agree location data, working times and evaluations of individuals with the works
 
 The same applies to AI tools in development, see [AI coding tools: works council and GDPR](../../../blog/ai-coding-tools-works-council-gdpr/). How technicians adopt the app is covered in [chapter 3](../key-users-and-training/).
 
-## Where do you start?
+## First step: write the rollout plan for the next release
 
 Write a rollout plan for the next release with one row per affected group and mark the contested rows. Take this list to the sponsor and agree when they explain which change. If no sponsor can be found, that is the most important finding of the plan. The diagnosis behind it is in [chapter 1](../change-management-adkar-diagnosis/), my work on it on the page [Change management for Salesforce programmes](../../../services/change-management-salesforce/).

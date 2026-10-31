@@ -11,10 +11,10 @@ short: "Catalogue, search, entitlements"
 summary: "How product data, buyer groups and search work together so every dealer finds the right parts."
 takeaways:
   - "Buyer groups and entitlement policies decide whether a dealer sees a product; product data and search settings decide whether the dealer finds it."
-  - "A product should be entitled to no more than 2,000 buyer groups. Beyond that, Salesforce leaves the extra groups out of the search index, and the data load reports no error."
+  - "A product should be entitled to no more than 2,000 buyer groups. Beyond that, the extra groups are missing from the search index, with no load error."
   - "Cut buyer groups by country, dealer tier and brand, never one group per dealer. Their number then stays stable when new dealers join."
-  - "A store has exactly one catalogue and up to 4 million products, of which 1 million are searchable. A second brand with its own category tree therefore needs a second store."
-  - "Entitlements know nothing about serial numbers. Parts per machine come from a dedicated machine page fed by assets and PLM, not from one buyer group per machine."
+  - "A store has exactly one catalogue with up to 4 million products. A second brand with its own category tree therefore needs a second store."
+  - "Entitlements know nothing about serial numbers. Parts per machine come from a machine page fed by assets and PLM, not from a buyer group per machine."
 articles: [commerce-buyer-groups-entitlements, commerce-product-data-pim, commerce-search-part-numbers, commerce-stores-countries-brands, commerce-spare-parts-per-machine, spare-parts-serial-number-ai]
 faq:
   - q: "What is a buyer group in Salesforce B2B Commerce?"
@@ -47,7 +47,7 @@ title: Which standard objects form the chain?
 
 Visibility and price therefore hang on the same groups. If you cut buyer groups for the assortment only, you find out in [chapter 3](../prices-cart-checkout/) that prices would need a different split. That is why I design both together. What B2B Commerce is and what it costs is covered in [chapter 1](../b2b-commerce-worth-it-overview/).
 
-## Which limits shape the design?
+## The limits that shape the design
 
 Salesforce documents the limits on separate pages for [entitlements](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-entitlement-limits.html), [buyer groups](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-shopper-buyer-groups-accounts-limits.html), [products](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-product-limits.html), [search](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-search-limits.html), [stores](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-store-limits.html) and [price books](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-price-book-limits.html). Salesforce support raises soft limits on request; hard limits stay. The ones that matter for manufacturers, as of October 2026:
 
@@ -152,7 +152,7 @@ Entitlements and prices --Right to buy and price--> Machine page
 
 The data matters more than the component: without an as-built parts list per serial number, meaning the parts built into exactly this machine, no store can answer the question. The options are in [spare parts shop: show only parts for each machine](../../../blog/spare-parts-shop-parts-per-machine/), and the same data from an agent's point of view in [spare parts by serial number](../../../blog/spare-parts-by-serial-number-ai/). How the installed base is kept as assets is covered in the Manufacturing Cloud masterclass chapter [warranty and after-sales](../../manufacturing-cloud/warranty-and-after-sales/). One rule I never relax: the dealer sees only machines registered to their own account, read from the asset, never from a free text field.
 
-## A typical scenario, as an assumption
+## Worked example: 800 dealers in 12 countries
 
 A machine builder sells spare parts through 800 dealers in 12 countries, with three dealer tiers and two brands. All details are assumptions.
 
@@ -161,7 +161,7 @@ A machine builder sells spare parts through 800 dealers in 12 countries, with th
 - 30,000 active spare parts come from SAP, 8,000 of them with predecessor numbers. Those go into a searchable field; synonym rules stay for terms.
 - Parts per machine start with a machine page for the three most important machine series.
 
-## Where should you start?
+## First step: write the entitlement concept on one page
 
 Write the entitlement concept on one page before anyone loads data:
 
@@ -172,5 +172,3 @@ Write the entitlement concept on one page before anyone loads data:
 - 200 real search terms from dealers, taken from emails and phone notes and tested against a test store.
 
 The ERP fields that feed memberships and search then go into the interface list from [chapter 4](../erp-integration-stock-orders/). I review such concepts before a partner builds as part of [Salesforce architecture](../../../services/salesforce-architecture/); which data comes from which system is part of [Salesforce integration](../../../services/salesforce-integration/). All chapters are on the [overview page](../).
-
-Few buyer groups and clean product data decide more about a B2B store than any search setting.

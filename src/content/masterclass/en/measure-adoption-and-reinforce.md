@@ -10,7 +10,7 @@ pubDate: 2026-10-29
 short: "Measure and reinforce"
 summary: "Reinforcement: measure usage on four levels, spot shadow lists and keep standards in place with partners for good."
 takeaways:
-  - "Whether a process has arrived shows in reports on records created and maintained per group and country, not in logins and not in the number of training sessions."
+  - "Whether a process has arrived shows in records created and maintained per group and country, not in logins or the number of training sessions."
   - "I measure on four levels: activity, use of the process, data quality and outcome, each against a baseline from before go-live."
   - "Measure monthly for at least six months; whether a process sticks only shows after three to six months."
   - "With partners, the pipeline, pull request reviews and a Center of Excellence call anchor the standards; they only last with an internal owner."
@@ -33,7 +33,7 @@ The first weeks after go-live are distorted. Attention is high, key users are pr
 
 Many programmes report after go-live how many people were trained. That figure says the project did its job. It does not say whether anyone works differently.
 
-## Which figures show whether a process has arrived?
+## Four levels, measured against the baseline before go-live
 
 Salesforce helps with measuring, because almost everything a user does leaves a record with a timestamp and an owner. I measure on four levels:
 
@@ -64,7 +64,7 @@ None of these signs is proof. Each is a reason to talk to the team, ideally thro
 
 The steering committee needs two or three figures per process on the levels of use and outcome, with the trend since go-live. The sponsor of a country or department needs the same figures for their teams. When they ask about them in the monthly report, that is reinforcement in itself. Key users and team leads need the detailed view, but for conversations, not for rankings. Whoever compares individuals publicly gets well kept figures instead of well kept data, and in Germany such an evaluation needs to be agreed with the works council beforehand, as described in [chapter 2](../sponsor-and-communication/). In a global rollout you measure per country, because every country has its own curve.
 
-## How do you anchor standards with partners?
+## With partners, pipeline, review and Center of Excellence call anchor the standards
 
 Change management also affects developer teams and implementation partners. New standards for development and release water down after a few months, when new developers join, deadline pressure rises and attention fades. Then knowledge is not what is missing; reinforcement is.
 
@@ -82,7 +82,7 @@ Each lever covers a different part:
 
 There will be exceptions under deadline pressure. They need a justification in the pull request and a ticket for the fix. All levers in detail are in [Reinforcement: anchoring standards with partners](../../../blog/partner-standards-reinforcement/).
 
-## How do you know the change will last?
+## The change lasts when it holds without the people who introduced it
 
 With business teams, the figures at process level stay stable after six months, and new colleagues learn the process from key users instead of from old lists. With partners, reviewers flag the same points less often, new edge cases come to the call before they are built, and new developers follow the rules without anyone explaining them one by one. In both cases the change is anchored when it holds without the person who introduced it. So plan from the start who takes over on the client side. How I support you with this is on the page [Change management for Salesforce programmes](../../../services/change-management-salesforce/).
 

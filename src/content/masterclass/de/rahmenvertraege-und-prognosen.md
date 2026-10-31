@@ -10,9 +10,9 @@ pubDate: 2026-10-28
 short: "Rahmenverträge und Prognosen"
 summary: "Sales Agreements, Account Forecasting, Programmgeschäft und Vertriebsziele: was sie leisten und welche ERP-Daten sie brauchen."
 takeaways:
-  - "Das Sales Agreement ist der Kern der Vertriebsplanung in der Manufacturing Cloud: geplante Menge, Ist-Menge und Prognose pro Kunde, Produkt und Zeitraum in einem Datensatz."
-  - "Die Ist-Mengen kommen bei Herstellern aus dem ERP. Wie sie berechnet werden, legt der Actuals Calculation Mode fest, und jedes Sales Agreement übernimmt ihn bei der Anlage."
-  - "Salesforce empfiehlt auf Trailhead Advanced Account Forecasting: eigene Forecast Sets pro Geschäftsbereich, freie Dimensionen und Berechnungen über die Data Processing Engine."
+  - "Das Sales Agreement hält geplante Menge, Ist-Menge und Prognose pro Kunde, Produkt und Zeitraum in einem Datensatz."
+  - "Die Ist-Mengen kommen aus dem ERP. Wie sie berechnet werden, legt der Actuals Calculation Mode fest, den jedes Sales Agreement bei der Anlage übernimmt."
+  - "Salesforce empfiehlt Advanced Account Forecasting mit eigenen Forecast Sets pro Geschäftsbereich, freien Dimensionen und der Data Processing Engine."
   - "Ziele, Prognosen und Ist-Mengen ergeben nur zusammen Sinn, wenn alle drei dieselbe Kundenebene, dieselbe Produktebene und denselben Periodentyp nutzen."
   - "Produktions-, Material- und Kapazitätsplanung bleiben im ERP oder Planungssystem. Vor dem Start muss feststehen, welche Absatzzahl führend ist."
 articles: [manufacturing-cloud-quote-to-agreement, manufacturing-cloud-sales-agreements-actuals, manufacturing-cloud-account-forecasting, manufacturing-cloud-program-based-business, manufacturing-cloud-account-manager-targets, sales-planning-agent-agreements]
@@ -34,7 +34,7 @@ Die Vertriebsplanung der Manufacturing Cloud hat vier Bausteine. Sales Agreement
 
 ## Warum steht das Sales Agreement im Mittelpunkt?
 
-Viele Hersteller verdienen ihr Geld mit wiederkehrendem Geschäft: Ein Kunde nimmt Monat für Monat ähnliche Mengen ab, oft auf Basis eines Rahmenvertrags mit Jahresmenge. Im Englischen heißt das Run-Rate-Geschäft. Für dieses Geschäft zählt eine Frage mehr als jede Opportunity: Liegt der Kunde im Plan?
+Viele Hersteller verdienen ihr Geld mit wiederkehrendem Geschäft: Ein Kunde nimmt Monat für Monat ähnliche Mengen ab, oft auf Basis eines Rahmenvertrags mit Jahresmenge. Im Englischen heißt das Run-Rate-Geschäft. Für dieses Geschäft zählt vor allem eine Frage: Liegt der Kunde im Plan?
 
 Das Sales Agreement beantwortet sie. Laut [Objektreferenz](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_salesagreement.htm) hängt es an einem Account und einem Preisbuch. Pro Produkt wird eine Gesamtmenge eingetragen, die Salesforce auf die Zeiträume verteilt, und das Enddatum ergibt sich aus Startdatum, Häufigkeit und Anzahl der Zeiträume. Ein Agreement startet als Entwurf, wird freigegeben und aktiviert sich am Startdatum. Pro Zeitraum stehen dann Plan, Ist und Prognose nebeneinander.
 
@@ -52,7 +52,7 @@ Warum ich das Sales Agreement für den wichtigsten Grund halte, über die Manufa
 
 Ein Sales Agreement plant Mengen pro Produkt. Daraus folgt eine Anforderung an alles, was vorher passiert: Jede Variante, die geplant und gemessen werden soll, braucht eine eigene Produktidentität, die auch das ERP als Materialnummer kennt. Bei konfigurierbaren Produkten entscheidet deshalb der Konfigurator, wann aus einer Konfiguration ein Produkt wird.
 
-Für die Übergabe gibt es einen Standardweg. Die [Connect API der Manufacturing Cloud](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/connect_resources_sales_agreement.htm) erzeugt ein Sales Agreement aus einem Angebot, einer Opportunity oder einem eigenen Objekt, gesteuert über ein Mapping vom Typ ConvertToSalesAgreement. Vier Punkte muss dieses Mapping sauber lösen: Account-Ebene, Produkt, Preis und Laufzeit. Den Preis gebe ich einmal frei, am Angebot, und nicht ein zweites Mal am Agreement. Die Details stehen in [vom Angebot zum Sales Agreement](../../../blog/angebot-zu-sales-agreement-produktkonfigurator/).
+Für die Übergabe gibt es einen Standardweg. Die [Connect API der Manufacturing Cloud](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/connect_resources_sales_agreement.htm) erzeugt ein Sales Agreement aus einem Angebot, einer Opportunity oder einem eigenen Objekt, gesteuert über ein Mapping vom Typ ConvertToSalesAgreement. Das Mapping muss Account-Ebene, Produkt, Preis und Laufzeit sauber lösen. Den Preis gebe ich einmal frei, am Angebot, und nicht ein zweites Mal am Agreement. Die Details stehen in [vom Angebot zum Sales Agreement](../../../blog/angebot-zu-sales-agreement-produktkonfigurator/).
 
 Das Angebot selbst gehört nicht zur Manufacturing Cloud. [Salesforce CPQ](https://www.salesforce.com/sales/cpq/end-of-life/) wird an Neukunden nicht mehr verkauft, neue Funktionen entstehen in Revenue Cloud. Katalog, Konfigurator und Preise behandelt die Masterclass Revenue Cloud in [Produktkatalog, Konfigurator und Preise](../../revenue-cloud/produktkatalog-konfigurator-preise/).
 
@@ -141,7 +141,7 @@ Auf den Sales Agreements sitzt die Agentenvorlage Agentforce for Sales Planning.
 
 Jede Antwort zum Rückstand eines Kunden beruht auf den Ist-Mengen aus dem ERP. Fehlt eine Tochtergesellschaft im Datenfluss, meldet der Agent einen Rückstand, den es nicht gibt. Was die Vorlage kann und welche Lizenz sie braucht, steht in [Agentforce Vertriebsplanung: was der Agent wirklich kann](../../../blog/agentforce-vertriebsplanung-rahmenvertraege/), den Überblick über Agenten in der Fertigung gibt [KI-Agenten in der Fertigung](../../ki-salesforce/ki-agenten-in-der-fertigung/).
 
-## Ein typisches Szenario, als Annahme
+## Rechenbeispiel: 200 Rahmenverträge für Industrieventile
 
 Ein Hersteller von Industrieventilen mit 30 Account Managern hat 200 Rahmenverträge mit Händlern und Anlagenbauern, Aufträge in SAP. Heute pflegt jeder Account Manager eine Tabelle mit Plan und Prognose, die der Vertriebscontroller monatlich zusammenführt.
 
@@ -162,8 +162,6 @@ Ziele
 
 Programmgeschäft braucht dieser Hersteller nicht, weil er nicht in OEM-Programme liefert. Den Agenten würde ich erst prüfen, wenn der Ist-Datenfluss ein Quartal lang stabil läuft.
 
-## Wo geht es weiter?
+## Erster Schritt: den Ist-Datenfluss aus dem ERP klären
 
-Rahmenverträge und Prognosen betreffen den Direktvertrieb an große Kunden. Wer über Händler verkauft, braucht zusätzlich Boni, Portale und Händlerbesuche; das behandelt [Kapitel 3: Händler und Partnerkanal](../haendler-und-partnerkanal/). Alle Kapitel finden Sie auf der [Übersichtsseite](../).
-
-Die Vertriebsplanung der Manufacturing Cloud ist so gut wie der Ist-Datenfluss aus dem ERP und die gemeinsame Struktur von Ziel, Prognose und Ist.
+Klären Sie vor dem ersten Sales Agreement, wie die Ist-Mengen aus dem ERP kommen und auf welcher Kunden-, Produkt- und Periodenebene Ziel, Prognose und Ist zusammenpassen. Rahmenverträge und Prognosen betreffen den Direktvertrieb an große Kunden. Wer über Händler verkauft, braucht zusätzlich Boni, Portale und Händlerbesuche; das behandelt [Kapitel 3: Händler und Partnerkanal](../haendler-und-partnerkanal/). Alle Kapitel finden Sie auf der [Übersichtsseite](../).

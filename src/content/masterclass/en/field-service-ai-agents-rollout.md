@@ -10,10 +10,10 @@ pubDate: 2026-10-28
 short: "AI agents, rollout, operations"
 summary: "Which Field Service agents work today, how to roll out in waves, what an AI assistant may set up and which KPIs count afterwards."
 takeaways:
-  - "For a machine builder, proactive maintenance booking and the drafted job report are the first Field Service agents worth running, because both are frequent and follow known rules."
-  - "Customer-facing agents cost 20 Flex Credits per action, voice actions 30; employee functions cost $125 per user and month as an add-on or come with Agentforce 1 Field Service at $650."
-  - "Troubleshooting and spare parts agents depend on data the machine builder owns: manuals tagged with the asset's product key and an as-built parts list per serial number."
-  - "An AI assistant can configure Field Service headlessly after you approve its plan; run it in a sandbox and move the result through Git and the pipeline like any other change."
+  - "Proactive maintenance booking and the drafted job report are the first agents worth running, because both are frequent and follow known rules."
+  - "Customer-facing agents cost 20 Flex Credits per action, voice actions 30. Employee functions cost $125 per user and month as an add-on."
+  - "Troubleshooting and spare parts agents need manuals tagged with the asset's product key and an as-built parts list per serial number."
+  - "An AI assistant can configure Field Service headlessly. Run it in a sandbox and move the result through the pipeline like any other change."
   - "Roll out in waves by region or country, bring the works council in before the first wave and measure six KPIs against a baseline from the old system."
 articles: [field-service-ai-agents-today, breakdown-hotline-voice-agent, field-service-ai-troubleshooting-manuals, spare-parts-serial-number-ai, field-service-headless-setup-ai, field-service-rollout, field-service-kpis-after-go-live]
 faq:
@@ -65,7 +65,7 @@ These gates belong in deterministic logic, not in the prompt. I would start outs
 
 The rule table, the Agent Script patterns and what a call costs in voice actions or voice minutes are in [Breakdown hotline with Agentforce Voice: triage first](../../../blog/breakdown-hotline-agentforce-voice/).
 
-## Why do troubleshooting and spare parts agents need your data first?
+## Troubleshooting and spare parts agents need your data first
 
 Both agents depend on documents and parts lists that only the machine builder can fix.
 
@@ -103,7 +103,7 @@ Two rules I would not bend:
 
 The review table per plan section is in [Field Service setup by AI assistant: what to check](../../../blog/field-service-headless-setup-ai-assistant/).
 
-## Why roll out Field Service in waves?
+## Field Service rolls out in waves by region or country
 
 I recommend rolling out Field Service in waves, region by region or country by country. Each wave brings its own master data, dispatchers, technicians and partners, and the first wave tests everything the later ones rely on. If skills or visiting hours are missing, it hits one territory and not the whole field service.
 
@@ -135,9 +135,9 @@ Scheduling policies, territories, work types and operating hours are records tha
 | Product owner for agents | Triage rules, booking gates and the test set of real calls and faults. |
 | IT | Interfaces to ERP and PLM, monitoring and backup, as covered in the DevOps chapter on [operations, monitoring and backup](../../devops-release-management/operations-monitoring-backup/). |
 
-## A typical scenario, as an assumption: three waves over nine months
+## Worked example: three waves over nine months
 
-A typical scenario, as an assumption: a component maker with 90 technicians in three regions, SAP as ERP, and Field Service planned in three waves over nine months. All numbers are assumptions to show the order of decisions.
+Assume a component maker with 90 technicians in three regions, SAP as ERP, and Field Service planned in three waves over nine months. All numbers are assumptions to show the order of decisions.
 
 ```schritte
 Before wave one
@@ -152,7 +152,7 @@ Region three in another country | Months 7 to 9
 
 Troubleshooting waits until manuals carry the asset's product key, the spare parts agent until PLM delivers as-built lists through an API. A monthly KPI review decides where the next agent goes.
 
-## What should you decide before the first wave?
+## First step: pick the first agent with a measurable target
 
 | Decision | What it covers |
 |---|---|
@@ -162,6 +162,4 @@ Troubleshooting waits until manuals carry the asset's product key, the spare par
 | KPI definitions and baseline | Before go-live. |
 | Owners | Plus the rule that AI-built configuration reaches production only through the pipeline, as in my [DevOps and release management](../../../services/devops-release-management/) work. |
 
-This chapter closes the masterclass; assets and parts are in [chapter 4](../field-service-assets-maintenance-parts/), all chapters on the [overview page](../).
-
-Field Service pays off when agents start where the data is clean, waves start with the works council and the numbers are defined before go-live.
+Put these points in writing before the first region starts planning. This chapter closes the masterclass; assets and parts are in [chapter 4](../field-service-assets-maintenance-parts/), all chapters on the [overview page](../).

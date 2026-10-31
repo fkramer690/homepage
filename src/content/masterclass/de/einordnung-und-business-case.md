@@ -10,11 +10,11 @@ pubDate: 2026-10-28
 short: "Einordnung und Business Case"
 summary: "Was Manufacturing Cloud enthält, was es kostet und wann Sales Cloud mit Eigenbau die bessere Wahl ist."
 takeaways:
-  - "Manufacturing Cloud ist eine Branchenlösung auf Sales Cloud und Service Cloud mit eigenem Datenmodell; Trailhead nennt dasselbe Produkt Agentforce Manufacturing."
-  - "Laut Preisliste kostet Manufacturing Cloud Sales Core 275 Dollar pro Nutzer und Monat, Sales Cloud Core 195 Dollar. Bei 120 Vertriebsnutzern sind das 115.200 Dollar Aufschlag pro Jahr."
-  - "Max kostet 650 statt 275 Dollar und bringt 2,75 Millionen statt 500.000 Flex Credits pro Org und Jahr, zehnmal so viele Omnistudio-Aufrufe und als einzige Edition die volle Agentforce-for-Industries-Suite."
+  - "Manufacturing Cloud ist eine Branchenlösung auf Sales Cloud und Service Cloud mit eigenem Datenmodell. Trailhead nennt sie Agentforce Manufacturing."
+  - "Laut Preisliste kostet Sales Core 275 statt 195 Dollar pro Nutzer und Monat. Bei 120 Vertriebsnutzern sind das 115.200 Dollar Aufschlag im Jahr."
+  - "Max kostet 650 statt 275 Dollar und bringt 2,75 Millionen statt 500.000 Flex Credits pro Org und Jahr sowie die volle Agentforce-for-Industries-Suite."
   - "Portallizenzen, das Agentforce-Add-on, Channel Revenue Management und Connected Assets stehen nicht in der Edition und kommen oft erst spät ins Angebot."
-  - "Ohne Rahmenverträge, Händlerboni oder Garantieabwicklung über Partner fehlt der Grund für die Branchenlizenz; dann rechne ich Sales Cloud mit Eigenbau über fünf Jahre dagegen."
+  - "Ohne Rahmenverträge, Händlerboni oder Garantie über Partner fehlt der Grund für die Branchenlizenz. Dann rechne ich Sales Cloud mit Eigenbau dagegen."
 articles: [manufacturing-cloud-worth-it, manufacturing-cloud-feature-map, manufacturing-cloud-add-ons-costs, salesforce-editions-core-advanced-max, salesforce-licence-types]
 faq:
   - q: "Was ist Salesforce Manufacturing Cloud?"
@@ -38,7 +38,7 @@ Manufacturing Cloud ist eine Industry Cloud, also ein Paket für eine Branche, d
 
 Damit ist auch die Namensfrage beantwortet. Die [Preisseite](https://www.salesforce.com/manufacturing/cloud/pricing/) verkauft „Manufacturing Cloud Sales Core“, ihre Fußnoten sprechen von „Agentforce Manufacturing for Sales“. Es ist ein Produkt mit zwei Namen. Ich schreibe in dieser Masterclass Manufacturing Cloud, weil das Angebot so heißen wird. Wichtiger ist eine Folge des neuen Namens: Nicht jede Funktion mit „Agentforce“ im Namen ist ein Agent. Fragen Sie bei jeder nach Subagent, Aktion und Lizenz.
 
-## Welche Funktionen stecken in Manufacturing Cloud?
+## Die Funktionen von Manufacturing Cloud im Überblick
 
 Die Funktionen lassen sich nach vier Bereichen ordnen. Die Liste folgt dem Trailhead Quick Look und den Produktseiten:
 
@@ -49,11 +49,9 @@ Die Funktionen lassen sich nach vier Bereichen ordnen. Die Liste folgt dem Trail
 | Kanal | Rebate Management, Partner Lead, Partner Performance und Partner Visit Management | 3 |
 | Werkzeuge | Omnistudio, Business Rules Engine, Data Processing Engine | alle |
 
-Welche Frage jede Funktion beantwortet und wo sie aufhört, steht in [Manufacturing Cloud Funktionen: was enthalten ist](../../../blog/manufacturing-cloud-funktionen-ueberblick/). Für den Business Case sind zwei Punkte daraus entscheidend.
+Welche Frage jede Funktion beantwortet und wo sie aufhört, steht in [Manufacturing Cloud Funktionen: was enthalten ist](../../../blog/manufacturing-cloud-funktionen-ueberblick/). Für den Business Case ist daraus vor allem wichtig, dass fast jede Vertriebs- und Partnerfunktion einen eigenen Schalter hat. Die [Metadaten IndustriesManufacturingSettings](https://developer.salesforce.com/docs/atlas.en-us.automotive_cloud.meta/automotive_cloud/auto_metadata_api_industriesmanufacturingsettings.htm) führen je ein Feld für Rahmenverträge, Account Forecasts, Advanced Forecasting, Targets, Programme und die drei Partnerfunktionen, alle standardmäßig auf false. Eine Lizenz sagt also nichts darüber, was in Ihrer Org läuft. Eine Org kann jahrelang Manufacturing Cloud bezahlen und nur Rahmenverträge nutzen.
 
-Erstens hat fast jede Vertriebs- und Partnerfunktion einen eigenen Schalter. Die [Metadaten IndustriesManufacturingSettings](https://developer.salesforce.com/docs/atlas.en-us.automotive_cloud.meta/automotive_cloud/auto_metadata_api_industriesmanufacturingsettings.htm) führen je ein Feld für Rahmenverträge, Account Forecasts, Advanced Forecasting, Targets, Programme und die drei Partnerfunktionen, alle standardmäßig auf false. Eine Lizenz sagt also nichts darüber, was in Ihrer Org läuft. Eine Org kann jahrelang Manufacturing Cloud bezahlen und nur Rahmenverträge nutzen.
-
-Zweitens stehen in der Funktionsliste auch Dinge, die Salesforce getrennt verkauft. Trailhead führt Ship and Debit und Price Protection unter „Rebates“ und Connected Assets unter „Agentforce Service“. Auf der [Add-on-Seite](https://www.salesforce.com/manufacturing/cloud/pricing/add-ons/) haben beide einen eigenen Preis.
+Außerdem stehen in der Funktionsliste Dinge, die Salesforce getrennt verkauft. Trailhead führt Ship and Debit und Price Protection unter „Rebates“ und Connected Assets unter „Agentforce Service“. Auf der [Add-on-Seite](https://www.salesforce.com/manufacturing/cloud/pricing/add-ons/) haben beide einen eigenen Preis.
 
 Was in keiner dieser Listen steht, ist ein Angebotssystem mit Konfigurator, Freigaben und Vertragserstellung. Trailhead nennt nur Produktkatalog-Management. Angebote und Konfiguration behandelt die Masterclass zu Revenue Cloud, beginnend mit dem [Überblick und der Entscheidung](../../revenue-cloud/revenue-cloud-ueberblick/) und dem Kapitel zu [Produktkatalog, Konfigurator und Preisen](../../revenue-cloud/produktkatalog-konfigurator-preise/).
 
@@ -95,7 +93,7 @@ Flex Credits sind die Verbrauchswährung, in der Salesforce Agentenaktionen, Pro
 
 Für Hersteller zählen die Aufrufgrenzen oft mehr als die Credits. Omnistudio baut geführte Prozesse, die Business Rules Engine prüft Regeln, etwa bei der Freigabe von Garantieansprüchen. Laufen Garantie, Boni und Portalprozesse auf diesen Engines, sind 10.000 Regelaufrufe im Monat schnell erreicht. Für Max spricht aus meiner Sicht nur ein Bedarf an Funktionen, den Core nicht abdeckt. Für mehr Credits allein ist Max zu teuer.
 
-## Welche Add-ons kommen später ins Angebot?
+## Add-ons, die später ins Angebot kommen
 
 Die Edition ist die erste Zeile eines Angebots. Die folgenden Add-ons stehen auf der Add-on-Seite und gehören von Anfang an in die Kalkulation, nicht erst in die letzte Angebotsrunde:
 
@@ -151,7 +149,7 @@ Die Entscheidung zwischen Branchenlösung und Eigenbau ist eine Make-or-Buy-Frag
 3. **Wartung und Releases.** Eigener Code verursacht bei jedem der drei Salesforce-Releases im Jahr Aufwand. Eine Standardfunktion entwickelt Salesforce weiter.
 4. **Folgekosten**, etwa ein späterer Wechsel oder Add-ons, die erst im dritten Jahr nötig werden.
 
-Ein typisches Szenario, als Annahme: Ein Komponentenhersteller mit 120 Vertriebsnutzern will Plan gegen Ist pro Kunde und Produkt sehen. Die Listenpreise stammen von den Preisseiten, alle anderen Zahlen sind Annahmen.
+Rechenbeispiel: Ein Komponentenhersteller mit 120 Vertriebsnutzern will Plan gegen Ist pro Kunde und Produkt sehen. Die Listenpreise stammen von den Preisseiten, alle anderen Zahlen sind Annahmen.
 
 | Fünf Jahre | Manufacturing Cloud Sales Core | Sales Cloud Core mit Eigenbau |
 |---|---|---|
@@ -164,10 +162,8 @@ Für eine schlanke Plan-gegen-Ist-Ansicht gewinnt der Eigenbau deutlich. Das Bil
 
 Das Ergebnis gehört in ein Entscheidungsprotokoll: welche Funktionen geprüft wurden, welche Zahlen galten, wer entschieden hat. Nach einem Partnerwechsel ist das oft das einzige Dokument, das erklärt, warum die Org so aussieht, wie sie aussieht. Wie ich solche Rechnungen aufbaue, beschreibe ich unter [Make-or-Buy und Lizenzprognosen](../../../leistungen/make-or-buy-lizenzen/); die Einordnung in die Gesamtarchitektur gehört zur [Salesforce-Architektur](../../../leistungen/salesforce-architektur/).
 
-## Womit sollten Sie anfangen?
+## Erster Schritt: Vertrieb und Service nach Rahmenverträgen, Boni und Garantie fragen
 
-Bevor ein Angebot auf dem Tisch liegt, helfen drei Fragen an Vertrieb und Service: Welcher Anteil des Umsatzes läuft über Mengenvereinbarungen? Wie werden Händlerboni heute berechnet? Wer prüft Garantieansprüche, und wie lange dauert das? Die Antworten zeigen schneller als jede Demo, ob Manufacturing Cloud passt. Liegt schon ein Angebot vor, prüfen Sie es gegen die Checkliste aus dem Funktionsüberblick: jede Funktion aus dem Business Case mit der Lizenz, die sie abdeckt.
+Bevor ein Angebot auf dem Tisch liegt, helfen drei Fragen an Vertrieb und Service: Welcher Anteil des Umsatzes läuft über Mengenvereinbarungen? Wie werden Händlerboni heute berechnet? Wer prüft Garantieansprüche, und wie lange dauert das? Die Antworten zeigen früher als eine Demo, ob Manufacturing Cloud passt. Liegt schon ein Angebot vor, prüfen Sie es gegen die Checkliste aus dem Funktionsüberblick: jede Funktion aus dem Business Case mit der Lizenz, die sie abdeckt.
 
 Lautet die Antwort Rahmenverträge, geht es in [Kapitel 2 um Rahmenverträge und Prognosen](../rahmenvertraege-und-prognosen/) weiter, mit den Daten, die dafür aus dem ERP kommen müssen. Alle Kapitel finden Sie auf der [Übersichtsseite](../).
-
-Manufacturing Cloud lohnt sich, wenn seine Kernfunktionen zu Ihrem Geschäft passen, und eine Rechnung über fünf Jahre zeigt das früher als der erste Workshop.

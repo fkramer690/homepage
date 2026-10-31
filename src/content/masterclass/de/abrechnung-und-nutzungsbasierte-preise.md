@@ -10,11 +10,11 @@ pubDate: 2026-10-28
 short: "Abrechnung und Nutzung"
 summary: "Wann Rechnungen aus Revenue Cloud Billing kommen sollten, was Billing kostet, was die E-Rechnung verlangt und wie Pay-per-Use funktioniert."
 takeaways:
-  - "Bei einmaligen Maschinenverkäufen bleibt die Rechnung meist in SAP; Revenue Cloud Billing lohnt sich für Abonnements, Wartungsverträge und Nutzungsentgelte, die in Salesforce verkauft und geändert werden."
-  - "Revenue Cloud Billing macht Salesforce zum Nebenbuch mit Legal Entities, Buchungsperioden und Buchungssätzen; die Entscheidung und den Periodenabschluss verantwortet Finance."
-  - "Billing ist ein Add-on mit Preis auf Anfrage und verbraucht ein Billing Event je 50 Dollar Rechnungssumme ohne Steuern; ungenutzte Events verfallen zum Vertragsende."
-  - "Ab 1. Januar 2027 müssen deutsche Unternehmen mit mehr als 800.000 Euro Vorjahresumsatz inländischen Geschäftskunden E-Rechnungen schicken; der Weg muss vor der ersten Billing-Rechnung stehen."
-  - "Pay-per-Use für Maschinen braucht einen verlässlichen Zähler je Maschine aus der IoT-Plattform und einen Vertrag, der Einheit, Datenlücken und Mindestentgelt regelt, bevor jemand eine Rate Card baut."
+  - "Revenue Cloud Billing lohnt sich für Abonnements, Wartungsverträge und Nutzungsentgelte, die in Salesforce verkauft und geändert werden."
+  - "Billing macht Salesforce zum Nebenbuch mit Legal Entities, Buchungsperioden und Buchungssätzen. Entscheidung und Periodenabschluss verantwortet Finance."
+  - "Billing ist ein Add-on mit Preis auf Anfrage und verbraucht ein Billing Event je 50 Dollar Rechnungssumme ohne Steuern. Ungenutzte Events verfallen."
+  - "Ab 2027 schicken deutsche Unternehmen über 800.000 Euro Vorjahresumsatz Geschäftskunden im Inland E-Rechnungen. Der Weg steht vor der ersten Billing-Rechnung."
+  - "Pay-per-Use braucht einen verlässlichen Zähler je Maschine und einen Vertrag über Einheit, Datenlücken und Mindestentgelt, bevor jemand eine Rate Card baut."
 articles: [revenue-cloud-billing-or-erp-invoicing, revenue-cloud-billing-costs-billing-events, e-invoicing-germany-revenue-cloud, usage-based-pricing-machines-revenue-cloud, service-contracts-recurring-billing]
 faq:
   - q: "Sollte ein Maschinenbauer aus Revenue Cloud Billing oder aus SAP fakturieren?"
@@ -48,7 +48,7 @@ Das Signal, auf das ich achte: Der Vertrieb ändert jede Woche Verträge, und di
 
 Die Zahlung in einem B2B-Shop ist eine eigene Grenze. Händler, die Ersatzteile im Shop bestellen, zahlen meist auf Rechnung, und die Rechnung kommt aus dem ERP. Das behandelt das [B2B-Commerce-Kapitel zu Preisen, Warenkorb und Checkout](../../b2b-commerce/preise-warenkorb-checkout/).
 
-## Was kann Revenue Cloud Billing?
+## Revenue Cloud Billing macht Salesforce zum Nebenbuch
 
 Revenue Cloud Billing ist das Abrechnungs-Add-on zu Revenue Cloud. Die Salesforce-Hilfe und der [Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.revenue_lifecycle_management_dev_guide.meta/revenue_lifecycle_management_dev_guide/billing_overview.htm) zu Winter '27 nennen die Produktfamilie Revenue Management, Trailhead sagt Agentforce Revenue Management, und der frühere Name war Revenue Lifecycle Management. Suchen Sie unter allen Namen.
 
@@ -84,7 +84,7 @@ Billing wird nach Rechnungsvolumen abgerechnet, nicht nach Benutzern. Das [Rate 
 quelle: Revenue Cloud Preisseite (EU) und Revenue Cloud Billing Rate Sheet vom Februar 2026
 ```
 
-Ein typisches Szenario, als Annahme: Ein Maschinenbauer fakturiert 18 Millionen Euro im Jahr an Abonnements und Wartungspauschalen aus Billing, ohne Steuer. Bei angenommenen 1,15 Dollar je Euro sind das 20,7 Millionen Dollar oder 414.000 Billing Events im Jahr. Laufen zusätzlich 120 Millionen Euro Maschinenrechnungen über Billing, steigt die Zahl auf mehr als das Siebenfache, für Rechnungen, die SAP ohnehin erstellt. Der Umfang bestimmt die Kosten stärker als jede Verhandlung.
+Rechenbeispiel: Ein Maschinenbauer fakturiert 18 Millionen Euro im Jahr an Abonnements und Wartungspauschalen aus Billing, ohne Steuer. Bei angenommenen 1,15 Dollar je Euro sind das 20,7 Millionen Dollar oder 414.000 Billing Events im Jahr. Laufen zusätzlich 120 Millionen Euro Maschinenrechnungen über Billing, steigt die Zahl auf mehr als das Siebenfache, für Rechnungen, die SAP ohnehin erstellt. Der Umfang bestimmt die Kosten stärker als jede Verhandlung.
 
 Was ins Order Form gehört, wie Rundung und Gutschriften zählen könnten und wie Sie das Kontingent über die Laufzeit staffeln, steht in [Revenue Cloud Billing: Kosten](../../../blog/revenue-cloud-billing-kosten/). Solche Lizenzprognosen gehören zu meiner Arbeit an [Make-or-Buy und Lizenzen](../../../leistungen/make-or-buy-lizenzen/).
 
@@ -110,7 +110,7 @@ Auf der Salesforce-Seite dokumentiert [Trailhead](https://trailhead.salesforce.c
 
 Gehen Billing-Rechnungen nach dem 1. Januar 2027 hinaus, brauchen sie ab der ersten Rechnung einen strukturierten Weg. Starten Sie nicht mit PDFs, um das Format später nachzuziehen. Checkliste und rechtliche Details stehen in [E-Rechnung ab 2027](../../../blog/e-rechnung-pflicht-2027-revenue-cloud/). Lassen Sie das Setup von Ihrer Steuerberatung bestätigen; ich beschreibe die Systemseite, nicht das Steuerrecht.
 
-## Wie funktioniert Pay-per-Use mit Usage Management?
+## Pay-per-Use mit Usage Management braucht einen Zähler je Maschine
 
 Usage Management ist der Teil von Revenue Cloud für verbrauchsbasierte Produkte. [Trailhead](https://trailhead.salesforce.com/content/learn/modules/usage-management-foundations/explore-components-and-personas) nennt fünf Bausteine: Usage Modelling, Rate Management, Usage Selling, Wallet Management und Consumption Management. Rohe Nutzungsereignisse landen im Transaction Journal. Bewertete Nutzung endet in einer Liable Summary, dem Betrag, den der Kunde schuldet, und die geht zur Rechnung an Billing.
 
@@ -146,9 +146,9 @@ Field Service liest keine Revenue-Cloud-Abonnements. Servicevertrag, Vertragspos
 
 Die Details, mit einem Szenario über 800 quartalsweise abgerechnete Maschinen, stehen in [Wartungsverträge wiederkehrend abrechnen](../../../blog/wartungsvertraege-wiederkehrend-abrechnen/).
 
-## Was vor der Konfiguration von Billing entschieden sein muss
+## Erster Schritt: Finance legt den Rechnungssteller je Umsatzart fest
 
-Ein typisches Szenario, als Annahme: Ein Maschinenbauer mit SAP S/4HANA erstellt Angebote für Maschinen, Ersatzteile, Fernüberwachung und Wartungsverträge in Revenue Cloud. Maschinen und Ersatzteile fakturiert SAP, das bereits E-Rechnungen erzeugt. Abonnements, Wartungspauschalen und zusätzliche Betriebsstunden gehen an Billing, angebunden an den E-Rechnungsdienst, den SAP schon nutzt. Der Kunde bekommt zwei Arten von Rechnungen über einen Kanal, und der Kundendienst kann erklären, warum.
+Ein angenommenes Beispiel: Ein Maschinenbauer mit SAP S/4HANA erstellt Angebote für Maschinen, Ersatzteile, Fernüberwachung und Wartungsverträge in Revenue Cloud. Maschinen und Ersatzteile fakturiert SAP, das bereits E-Rechnungen erzeugt. Abonnements, Wartungspauschalen und zusätzliche Betriebsstunden gehen an Billing, angebunden an den E-Rechnungsdienst, den SAP schon nutzt. Der Kunde bekommt zwei Arten von Rechnungen über einen Kanal, und der Kundendienst kann erklären, warum.
 
 Damit das klappt, legt der Kunde diese Punkte selbst fest, bevor der Partner konfiguriert:
 
@@ -162,5 +162,3 @@ Damit das klappt, legt der Kunde diese Punkte selbst fest, bevor der Partner kon
 | Die Verbindung zu Field Service | Für Wartungsverträge, als Automatisierung mit Verantwortlichem. |
 
 Wer heute noch das alte Salesforce-Billing-Paket nutzt, muss zusätzlich offene Rechnungen, Abrechnungspläne und Zahlungshistorie umziehen. Diese Migration gehört zu [Kapitel 5, von CPQ zu Revenue Cloud](../von-cpq-zu-revenue-cloud/).
-
-Revenue Cloud Billing lohnt sich dort, wo sich Verträge schneller ändern, als SAP folgen kann, und wo diese Grenze verläuft, entscheidet Finance.

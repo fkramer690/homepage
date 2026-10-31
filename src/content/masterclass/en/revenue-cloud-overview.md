@@ -10,8 +10,7 @@ pubDate: 2026-10-28
 short: "Overview and decision"
 summary: "What Revenue Cloud covers, what it costs, what it is called and when a manufacturer is better off with SAP or Sales Cloud."
 takeaways:
-  - "Revenue Cloud is Salesforce's quote-to-cash product on core platform objects, from product catalog and configurator through quote and order to contracts and invoices."
-  - "It pays off for manufacturers with many variants, subscriptions or service contracts and frequent amendments, and rarely when a quote is only a price lookup in SAP."
+  - "Revenue Cloud pays off with many variants, subscriptions or service contracts and frequent amendments, and rarely for a plain price lookup in SAP."
   - "At list price Revenue Cloud Growth costs €150 and Revenue Cloud Advanced €200 per user and month, billed annually and bought on top of Sales Cloud."
   - "Salesforce documentation still mixes names, so order forms should name the edition, add-ons and SKUs instead of just Revenue Cloud."
   - "Before a partner builds, the company decides who owns the price, the configuration rules and the invoice, and how long CPQ keeps running."
@@ -67,7 +66,7 @@ I look for these signals in the current quoting process:
 
 Two or three of these together justify a closer look. One alone rarely does. The full list of signals for and against, with a cost frame, is in [Revenue Cloud for manufacturers: when is it worth it?](../../../blog/revenue-cloud-worth-it-manufacturers/).
 
-## Which name applies: Revenue Cloud, RLM or Revenue Management?
+## Revenue Cloud, RLM, Revenue Management: one product, several names
 
 All of them mean the same product, and the sources were updated at different times. As of late October 2026:
 
@@ -105,7 +104,7 @@ For every group except the users who create quotes, get the licence requirement 
 
 Add-ons, Billing Events and the licence forecast are in [Revenue Cloud pricing: Growth, Advanced and add-ons](../../../blog/revenue-cloud-editions-pricing/), and an independent check of a quote is part of [make-or-buy and licence forecasts](../../../services/make-or-buy-licences/).
 
-## Which tasks should stay in SAP?
+## These tasks stay in SAP
 
 In a manufacturing company SAP stays, and three tasks usually stay there:
 
@@ -150,7 +149,7 @@ For some manufacturers Revenue Cloud is too much:
 
 The alternatives are Sales Cloud quotes with an ERP interface, a CPQ product from a partner, or a custom approach on the platform. I describe the last route in [from quote to sales agreement](../../../blog/quote-to-sales-agreement-product-configurator/).
 
-## A typical scenario, as an assumption
+## Worked example: 25 base models with remote monitoring
 
 A maker of packaging machines with SAP S/4HANA sells 25 base models with options, plus spare parts packages and a remote monitoring subscription per machine. 60 people work in sales; 20 of them create project quotes. Spare parts prices are SAP conditions per customer. All details are assumptions.
 
@@ -169,7 +168,7 @@ SAP sales order --> SAP invoice
 
 Invoices stay in SAP in year one; Billing becomes a question once subscriptions are a business of their own.
 
-## What should you decide before a partner builds?
+## First step: price, rules and invoice into the decision log
 
 Partners ask about features. The decisions that drive cost and timeline belong to the company:
 
@@ -181,5 +180,3 @@ Partners ask about features. The decisions that drive cost and timeline belong t
 | CPQ coexistence | Existing CPQ customers are under no time pressure: the CPQ page says "There is no forced migration", but also that CPQ "will not receive new features". A typical migration runs three to six months according to the same page. The details are in chapter 5, [from CPQ to Revenue Cloud](../from-cpq-to-revenue-cloud/). |
 
 Write these four answers into the decision log before you ask for estimates. They are part of my work on [Salesforce architecture](../../../services/salesforce-architecture/). With them settled, [chapter 2 on catalog, configurator and pricing](../product-catalog-configurator-pricing/) covers how the products and prices are modelled; all chapters are on the [overview page](../).
-
-Revenue Cloud is worth it when your quotes are complex and your revenue recurs, and the decisions about price, rules and invoice come before the partner.

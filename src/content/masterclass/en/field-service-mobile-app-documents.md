@@ -10,11 +10,11 @@ pubDate: 2026-10-28
 short: "Mobile app and documents"
 summary: "What technicians need offline, how inspection reports work without paper, when the service report is enough and how to test every app update."
 takeaways:
-  - "The Field Service mobile app is a separate app for technicians. Every Field Service org can use offline Lightning web components in it, while the Salesforce mobile app needs the Mobile App Plus licence for that."
-  - "Briefcase Builder decides which records each group of technicians holds offline. Salesforce publishes no record limit, so size briefcases by role and test them with a partner user."
-  - "Data Capture forms are built in Flow Builder and work offline. Voice to Form has been GA since mobile release 260.0, and Winter '27 adds German, French, Italian, Spanish and Japanese."
-  - "Document Builder covers the service report with signature and offline creation, with 250 documents per user and month; inspection reports with conditional logic usually need a second tool."
-  - "The app has its own versions next to the three platform releases. Beta builds arrive one month before major versions, so a pilot group can test before every device updates."
+  - "Lightning web components run offline in the Field Service mobile app. The Salesforce mobile app needs the Mobile App Plus licence for that."
+  - "Briefcase Builder decides which records each technician group holds offline. Size briefcases by role and test them with a partner user."
+  - "Data Capture forms are built in Flow Builder and work offline. Voice to Form adds German and other languages in Winter '27."
+  - "Document Builder covers the service report with signature. Inspection reports with conditional logic usually need a second tool."
+  - "The app has its own versions. Beta builds arrive one month before major versions, so a pilot group can test before every device updates."
 articles: [field-service-mobile-offline, field-service-data-capture-forms, field-service-mobile-guided-voice, service-documents-document-builder, document-builder-limits-workarounds, visual-remote-assistant-instead-of-visit, field-service-mobile-release-testing]
 faq:
   - q: "What is the difference between the Field Service mobile app and the Salesforce mobile app?"
@@ -44,7 +44,7 @@ In my Field Service projects, technician acceptance was one of the stumbling blo
 
 Plan time to test forms and flows with the technicians themselves before the app is rolled out.
 
-## Which data does the technician need offline?
+## Offline data per technician group with Briefcase Builder
 
 The app has basic offline support out of the box. According to the [Trailhead module on offline briefcases](https://trailhead.salesforce.com/content/learn/modules/offline-briefcase/allow-access-to-information-online), Briefcase Builder defines which records each group of technicians downloads, and performance priming syncs the most critical changes every five minutes while there is a connection. Changes made offline are saved on the device and synced later.
 
@@ -60,7 +60,7 @@ The [considerations for LWC Offline](https://developer.salesforce.com/docs/atlas
 
 The briefcase per role, the full list of gaps and a day in a basement without network are in [Field Service mobile offline: which data goes on the device?](../../../blog/field-service-mobile-app-offline-data/).
 
-## How do paper protocols become forms?
+## Paper protocols become Data Capture forms
 
 Data Capture is the form feature of the Field Service app. According to the [Trailhead quick look](https://trailhead.salesforce.com/content/learn/modules/data-capture-quick-look), it is built directly on Flow Builder, and forms connect to service appointments, work orders and work order line items. They contain signature capture, text fields, lookups and checkboxes, and sections can appear based on earlier answers. Forms work offline, auto-save captures every entry, and every submission is logged.
 
@@ -136,9 +136,9 @@ My routine per version, on iOS and Android, fits into half a day:
 
 The pilot group, the calendar and who owns app versions are in [Field Service app updates: how to test each release](../../../blog/field-service-mobile-app-updates-testing/). App versions belong in the same calendar as the platform releases, described in the DevOps masterclass chapter on [release planning](../../devops-release-management/release-planning-salesforce-releases/). How such scripted tests fit into quality gates is in the chapter on [quality, tests and reviews](../../devops-release-management/quality-tests-reviews/).
 
-## A typical scenario, as an assumption: the commissioning protocol leaves paper
+## Worked example: the commissioning protocol leaves paper
 
-A typical scenario, as an assumption: a machine builder with 60 technicians commissions packaging machines in three variants. The paper protocol has 80 checkpoints. The technician fills it in by hand, scans it in the evening, and the back office types the readings into the ERP. All numbers are assumptions to show the order of decisions.
+A machine builder with 60 technicians commissions packaging machines in three variants. The paper protocol has 80 checkpoints. The technician fills it in by hand, scans it in the evening, and the back office types the readings into the ERP. All numbers are assumptions to show the order of decisions.
 
 ```schritte
 Data model | Weeks 1 and 2 · service, back office, ERP team
@@ -155,7 +155,7 @@ Pilot | Weeks 9 and 10 · eight technicians
 
 Voice to Form waits until data protection and the works council have agreed. After the pilot the readings are on the asset the evening of the job, and nobody types them in again.
 
-## What should you decide before the first form?
+## First step: set the target data model for service data
 
 Four decisions need a name next to them before a partner builds forms:
 
@@ -167,5 +167,3 @@ Four decisions need a name next to them before a partner builds forms:
 | Owner of app versions | Usually the release manager, together with device management. |
 
 The data model is [architecture work](../../../services/salesforce-architecture/) and decides whether forms, reports and later AI agents can use the data. [Chapter 4](../field-service-assets-maintenance-parts/) builds on it with assets, maintenance plans and spare parts, and the [overview](../) lists all chapters.
-
-The technician's app works when the data model comes before the first form and every app version is tested before it reaches the devices.

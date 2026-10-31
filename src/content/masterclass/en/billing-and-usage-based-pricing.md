@@ -10,11 +10,11 @@ pubDate: 2026-10-28
 short: "Billing and usage"
 summary: "When invoices should come from Revenue Cloud Billing, what Billing costs, what e-invoicing requires and how pay-per-use works."
 takeaways:
-  - "For one-off machine sales the invoice usually stays in SAP; Revenue Cloud Billing pays off for subscriptions, maintenance contracts and usage fees that are sold and changed in Salesforce."
-  - "Revenue Cloud Billing turns Salesforce into a subledger with legal entities, accounting periods and journal entries, so finance owns the decision and the period close."
+  - "Revenue Cloud Billing pays off for subscriptions, maintenance contracts and usage fees that are sold and changed in Salesforce."
+  - "Billing turns Salesforce into a subledger with legal entities, accounting periods and journal entries, so finance owns the decision and the period close."
   - "Billing is an add-on priced on request and consumes one billing event per $50 of invoice subtotal without tax; unused events expire at the order end date."
-  - "From 1 January 2027, German companies above €800,000 prior-year turnover must issue structured e-invoices to domestic business customers; plan the route before Billing sends its first invoice."
-  - "Pay-per-use for machines needs one trusted counter per machine from the IoT platform and a contract that defines the unit, gaps and the minimum fee before anyone builds a rate card."
+  - "From 2027, German companies above €800,000 prior-year turnover must send e-invoices to domestic business customers. Plan the route before Billing starts."
+  - "Pay-per-use needs one trusted counter per machine and a contract that defines the unit, gaps and the minimum fee before anyone builds a rate card."
 articles: [revenue-cloud-billing-or-erp-invoicing, revenue-cloud-billing-costs-billing-events, e-invoicing-germany-revenue-cloud, usage-based-pricing-machines-revenue-cloud, service-contracts-recurring-billing]
 faq:
   - q: "Should a machine builder invoice from Revenue Cloud Billing or from SAP?"
@@ -48,7 +48,7 @@ The signal I look for: sales changes contracts every week, and finance corrects 
 
 Payment in a B2B store is a separate boundary. Dealers who order spare parts in the shop usually pay on account, and the ERP issues the invoice; the [B2B Commerce chapter on prices, cart and checkout](../../b2b-commerce/prices-cart-checkout/) covers that side.
 
-## What does Revenue Cloud Billing do?
+## Revenue Cloud Billing turns Salesforce into a subledger
 
 Revenue Cloud Billing is the billing add-on for Revenue Cloud. Salesforce Help and the Winter '27 [developer guide](https://developer.salesforce.com/docs/atlas.en-us.revenue_lifecycle_management_dev_guide.meta/revenue_lifecycle_management_dev_guide/billing_overview.htm) call the product family Revenue Management, Trailhead says Agentforce Revenue Management, and the earlier name was Revenue Lifecycle Management. Search under all of them.
 
@@ -84,7 +84,7 @@ Billing is charged by invoice volume, not by user. The [rate sheet of February 2
 source: Revenue Cloud EU pricing page and Revenue Cloud Billing rate sheet of February 2026
 ```
 
-A typical scenario, as an assumption: a machine builder invoices €18 million a year of subscriptions and maintenance fees from Billing, without tax. At an assumed 1.15 dollars per euro that is $20.7 million, or 414,000 billing events a year. Put €120 million of machine invoices through Billing as well and the count grows more than sevenfold, for invoices SAP creates anyway. Scope drives the cost more than anything you negotiate.
+Worked example: a machine builder invoices €18 million a year of subscriptions and maintenance fees from Billing, without tax. At an assumed 1.15 dollars per euro that is $20.7 million, or 414,000 billing events a year. Put €120 million of machine invoices through Billing as well and the count grows more than sevenfold, for invoices SAP creates anyway. Scope drives the cost more than anything you negotiate.
 
 What to settle on the order form, how rounding and credit memos might count and how to ramp the entitlement over the term is in [Revenue Cloud Billing costs](../../../blog/revenue-cloud-billing-costs/). Licence forecasts like this are part of my [make-or-buy and licence](../../../services/make-or-buy-licences/) work.
 
@@ -110,7 +110,7 @@ On the Salesforce side, [Trailhead](https://trailhead.salesforce.com/content/lea
 
 If Billing invoices go out after 1 January 2027, they need a structured route from the first invoice. Do not start with PDFs and fix the format later. The checklist and the legal details are in [e-invoicing in Germany from 2027](../../../blog/e-invoicing-germany-2027-revenue-cloud/). Have your tax advisor confirm the setup; I describe the system side, not the tax law.
 
-## How does pay-per-use work with Usage Management?
+## Pay-per-use with Usage Management needs a counter per machine
 
 Usage Management is the part of Revenue Cloud for consumption-based products. [Trailhead](https://trailhead.salesforce.com/content/learn/modules/usage-management-foundations/explore-components-and-personas) names five components: usage modelling, rate management, usage selling, wallet management and consumption management. Raw usage events land in the transaction journal. Rated usage ends up in a liable summary, the final amount the customer owes, which goes to billing for the invoice.
 
@@ -146,9 +146,9 @@ Field Service does not read Revenue Cloud subscriptions. Service contract, contr
 
 The details, including a scenario with 800 machines billed quarterly, are in [maintenance contracts with recurring billing](../../../blog/maintenance-contracts-recurring-billing/).
 
-## What to decide before a partner configures Billing
+## First step: finance sets the invoice owner per revenue type
 
-A typical scenario, as an assumption: a machine builder with SAP S/4HANA quotes machines, spare parts, remote monitoring and maintenance contracts in Revenue Cloud. Machines and parts are invoiced from SAP, which already issues e-invoices. Subscriptions, maintenance fees and extra operating hours move to Billing, connected to the e-invoicing service SAP already uses. The customer receives two kinds of invoices through one channel, and customer service can explain why.
+An assumed example: a machine builder with SAP S/4HANA quotes machines, spare parts, remote monitoring and maintenance contracts in Revenue Cloud. Machines and parts are invoiced from SAP, which already issues e-invoices. Subscriptions, maintenance fees and extra operating hours move to Billing, connected to the e-invoicing service SAP already uses. The customer receives two kinds of invoices through one channel, and customer service can explain why.
 
 To get there, the client settles these points before the partner configures anything:
 
@@ -162,5 +162,3 @@ To get there, the client settles these points before the partner configures anyt
 | The link to Field Service | For maintenance contracts, as automation with an owner. |
 
 If you run the old Salesforce Billing package today, open invoices, schedules and payment history have to move as well. That migration is part of [chapter 5, from CPQ to Revenue Cloud](../from-cpq-to-revenue-cloud/).
-
-Revenue Cloud Billing is worth it where contracts change faster than SAP can follow, and finance has to decide where that line runs.

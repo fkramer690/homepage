@@ -10,9 +10,9 @@ pubDate: 2026-10-28
 short: "Agreements and forecasting"
 summary: "Sales agreements, account forecasting, program-based business and targets: what they do and which ERP data they need."
 takeaways:
-  - "The sales agreement is the core of sales planning in Manufacturing Cloud: planned quantity, actual quantity and forecast per customer, product and period in one record."
-  - "At manufacturers, actuals come from the ERP. The Actuals Calculation Mode decides how they are calculated, and every sales agreement copies it when it is created."
-  - "On Trailhead, Salesforce recommends advanced account forecasting: separate forecast sets per business unit, free dimensions and calculations through the Data Processing Engine."
+  - "The sales agreement holds planned quantity, actual quantity and forecast per customer, product and period in one record."
+  - "Actuals come from the ERP. The Actuals Calculation Mode decides how they are calculated, and every sales agreement copies it when it is created."
+  - "Salesforce recommends advanced account forecasting with separate forecast sets per business unit, free dimensions and the Data Processing Engine."
   - "Targets, forecasts and actuals only make sense together when all three use the same customer level, the same product level and the same period type."
   - "Production, material and capacity planning stay in the ERP or planning system. Before the start, decide which sales volume figure is the leading one."
 articles: [manufacturing-cloud-quote-to-agreement, manufacturing-cloud-sales-agreements-actuals, manufacturing-cloud-account-forecasting, manufacturing-cloud-program-based-business, manufacturing-cloud-account-manager-targets, sales-planning-agent-agreements]
@@ -34,7 +34,7 @@ Sales planning in Manufacturing Cloud has four building blocks. Sales agreements
 
 ## Why is the sales agreement at the centre?
 
-Many manufacturers earn their money with recurring business: a customer orders similar quantities month after month, often under a framework contract with an annual volume. This is called run-rate business. For it, one question matters more than any opportunity: is the customer on plan?
+Many manufacturers earn their money with recurring business: a customer orders similar quantities month after month, often under a framework contract with an annual volume. This is called run-rate business. For it, one question matters most: is the customer on plan?
 
 The sales agreement answers it. According to the [object reference](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_salesagreement.htm), it belongs to an account and a price book. You enter a total quantity per product, Salesforce spreads it across the periods, and the end date follows from start date, frequency and number of periods. An agreement starts as a draft, gets approved and activates on its start date. For each period, plan, actuals and forecast then sit side by side.
 
@@ -52,7 +52,7 @@ Why I consider the sales agreement the main reason to look at Manufacturing Clou
 
 A sales agreement plans quantities per product. That sets a requirement for everything before it: every variant that is planned and measured needs its own product identity, which the ERP also knows as a material number. With configurable products, the configurator therefore decides when a configuration becomes a product.
 
-There is a standard route for the handover. The [Manufacturing Cloud Connect API](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/connect_resources_sales_agreement.htm) creates a sales agreement from a quote, an opportunity or a custom object, controlled by a mapping of type ConvertToSalesAgreement. The mapping has to settle four points cleanly: account level, product, price and term. I approve the price once, on the quote, and not a second time on the agreement. The details are in [from quote to sales agreement](../../../blog/quote-to-sales-agreement-product-configurator/).
+There is a standard route for the handover. The [Manufacturing Cloud Connect API](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/connect_resources_sales_agreement.htm) creates a sales agreement from a quote, an opportunity or a custom object, controlled by a mapping of type ConvertToSalesAgreement. The mapping has to settle account level, product, price and term cleanly. I approve the price once, on the quote, and not a second time on the agreement. The details are in [from quote to sales agreement](../../../blog/quote-to-sales-agreement-product-configurator/).
 
 The quote itself is outside Manufacturing Cloud. [Salesforce CPQ](https://www.salesforce.com/sales/cpq/end-of-life/) is no longer sold to new customers, and new features are built in Revenue Cloud. Catalogue, configurator and pricing are covered in the Revenue Cloud masterclass chapter [product catalogue, configurator and pricing](../../revenue-cloud/product-catalog-configurator-pricing/).
 
@@ -141,7 +141,7 @@ The Agentforce for Sales Planning agent template sits on top of sales agreements
 
 Every answer about a customer's shortfall rests on actuals from the ERP. If a subsidiary is missing from the data flow, the agent reports a shortfall that does not exist. What the template does and which licence it needs is in [Agentforce sales planning: what the agent really does](../../../blog/agentforce-sales-planning-agreements-forecasts/); the overview of agents in manufacturing is in [AI agents in manufacturing](../../ai-salesforce/ai-agents-in-manufacturing/).
 
-## A typical scenario, as an assumption
+## Worked example: 200 framework contracts for industrial valves
 
 A maker of industrial valves with 30 account managers has 200 framework contracts with dealers and plant builders, orders in SAP. Today every account manager keeps a spreadsheet with plan and forecast, and the sales controller merges them every month.
 
@@ -162,8 +162,6 @@ Targets
 
 This manufacturer does not need program-based business, because it does not supply OEM programmes. I would evaluate the agent only after the actuals feed has run stably for a quarter.
 
-## Where does it continue?
+## First step: clarify the actuals feed from the ERP
 
-Framework contracts and forecasts concern direct sales to large customers. If you sell through dealers, you also need rebates, portals and dealer visits; that is [chapter 3: dealer and partner channel](../dealer-and-partner-channel/). All chapters are on the [overview page](../).
-
-Sales planning in Manufacturing Cloud is as good as the actuals feed from the ERP and the shared structure of target, forecast and actuals.
+Before the first sales agreement, clarify how actuals come from the ERP and on which customer, product and period level target, forecast and actuals fit together. Framework contracts and forecasts concern direct sales to large customers. If you sell through dealers, you also need rebates, portals and dealer visits; that is [chapter 3: dealer and partner channel](../dealer-and-partner-channel/). All chapters are on the [overview page](../).

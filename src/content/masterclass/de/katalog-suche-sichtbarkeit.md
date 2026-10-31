@@ -11,9 +11,9 @@ short: "Katalog, Suche, Sichtbarkeit"
 summary: "Wie Produktdaten, Käufergruppen und Suche zusammenspielen, damit jeder Händler die richtigen Teile findet."
 takeaways:
   - "Ob ein Händler ein Produkt sieht, entscheiden Buyer Groups und Entitlement Policies; ob er es findet, entscheiden Produktdaten und Sucheinstellungen."
-  - "Ein Produkt sollte höchstens 2.000 Buyer Groups zugeordnet sein. Darüber nimmt Salesforce die übrigen Gruppen nicht in den Suchindex auf, und der Datenimport meldet keinen Fehler."
+  - "Ein Produkt sollte höchstens 2.000 Buyer Groups zugeordnet sein. Darüber fehlen die übrigen Gruppen im Suchindex, ohne Fehlermeldung beim Import."
   - "Buyer Groups entstehen aus Land, Händlerstufe und Marke, nie eine Gruppe pro Händler. So bleibt ihre Zahl stabil, wenn neue Händler dazukommen."
-  - "Ein Store hat genau einen Katalog und bis zu 4 Millionen Produkte, davon 1 Million durchsuchbar. Eine zweite Marke mit eigenem Kategoriebaum braucht deshalb einen zweiten Store."
+  - "Ein Store hat genau einen Katalog mit bis zu 4 Millionen Produkten. Eine zweite Marke mit eigenem Kategoriebaum braucht deshalb einen zweiten Store."
   - "Entitlements kennen keine Seriennummer. Teile pro Maschine zeigt eine eigene Maschinenseite mit Daten aus Assets und PLM, nicht eine Buyer Group pro Maschine."
 articles: [commerce-buyer-groups-entitlements, commerce-product-data-pim, commerce-search-part-numbers, commerce-stores-countries-brands, commerce-spare-parts-per-machine, spare-parts-serial-number-ai]
 faq:
@@ -47,7 +47,7 @@ titel: Welche Standardobjekte bilden die Kette?
 
 Sichtbarkeit und Preis hängen damit an denselben Gruppen. Wer Buyer Groups nur für das Sortiment schneidet, merkt in [Kapitel 3](../preise-warenkorb-checkout/), dass die Preise eine andere Einteilung bräuchten. Ich entwerfe beides deshalb zusammen. Was B2B Commerce überhaupt ist und was es kostet, steht in [Kapitel 1](../b2b-commerce-lohnt-sich-ueberblick/).
 
-## Welche Grenzen bestimmen das Design?
+## Die Grenzen, die das Design bestimmen
 
 Salesforce dokumentiert die Grenzen auf eigenen Seiten für [Entitlements](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-entitlement-limits.html), [Buyer Groups](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-shopper-buyer-groups-accounts-limits.html), [Produkte](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-product-limits.html), [Suche](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-search-limits.html), [Stores](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-store-limits.html) und [Preisbücher](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-price-book-limits.html). Soft Limits erhöht der Salesforce-Support auf Anfrage, harte Grenzen nicht. Für Hersteller zählen diese, Stand Oktober 2026:
 
@@ -152,7 +152,7 @@ Entitlements und Preise --Kaufrecht und Preis--> Maschinenseite
 
 Die Daten entscheiden mehr als die Komponente: Ohne Stückliste pro Seriennummer, also die Teile, die in genau dieser Maschine verbaut sind, kann kein Shop die Frage beantworten. Die Optionen stehen in [Ersatzteilshop: nur Teile zur eigenen Maschine](../../../blog/ersatzteilshop-teile-pro-maschine/), dieselbe Datenlage aus Sicht eines Agenten in [Ersatzteile per Seriennummer finden](../../../blog/ersatzteile-seriennummer-ki-agent/). Wie die installierte Basis als Asset gepflegt wird, behandelt die Masterclass Manufacturing Cloud im Kapitel [Garantie und After-Sales](../../manufacturing-cloud/garantie-und-after-sales/). Eine Regel lockere ich nie: Der Händler sieht nur Maschinen, die auf seinen eigenen Account registriert sind, gelesen aus dem Asset, nie aus einem Freitextfeld.
 
-## Ein typisches Szenario, als Annahme
+## Rechenbeispiel: 800 Händler in 12 Ländern
 
 Ein Maschinenbauer verkauft Ersatzteile über 800 Händler in 12 Ländern, mit drei Händlerstufen und zwei Marken. Alle Details sind Annahmen.
 
@@ -161,7 +161,7 @@ Ein Maschinenbauer verkauft Ersatzteile über 800 Händler in 12 Ländern, mit d
 - 30.000 aktive Ersatzteile kommen aus SAP, 8.000 davon haben Vorgängernummern. Diese stehen in einem durchsuchbaren Feld, Synonymregeln bleiben für Begriffe.
 - Teile pro Maschine zeigt zuerst eine Maschinenseite für die drei wichtigsten Baureihen.
 
-## Wo fangen Sie an?
+## Erster Schritt: das Entitlement-Konzept auf eine Seite schreiben
 
 Schreiben Sie das Entitlement-Konzept auf eine Seite, bevor jemand Daten lädt:
 
@@ -172,5 +172,3 @@ Schreiben Sie das Entitlement-Konzept auf eine Seite, bevor jemand Daten lädt:
 - 200 echte Suchbegriffe von Händlern aus E-Mails und Telefonnotizen, gegen einen Teststore geprüft.
 
 Die ERP-Felder, die Mitgliedschaften und Suche speisen, wandern danach in die Schnittstellenliste aus [Kapitel 4](../erp-integration-bestand-auftraege/). Solche Konzepte prüfe ich, bevor ein Partner baut, im Rahmen von [Salesforce-Architektur](../../../leistungen/salesforce-architektur/); welche Daten aus welchem System kommen, ist Teil von [Salesforce-Schnittstellen](../../../leistungen/salesforce-schnittstellen/). Alle Kapitel finden Sie auf der [Übersichtsseite](../).
-
-Wenige Buyer Groups und saubere Produktdaten entscheiden mehr über einen B2B-Shop als jede Sucheinstellung.

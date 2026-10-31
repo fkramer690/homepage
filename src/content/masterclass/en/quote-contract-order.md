@@ -10,11 +10,11 @@ pubDate: 2026-10-28
 short: "Quote, contract, order"
 summary: "Approvals, the quoting agent, Salesforce Contracts, order orchestration and assets: the path from quote to the hand-over to SAP."
 takeaways:
-  - "In Revenue Cloud every sale runs through a quote and an order on standard objects, including amendments, renewals and cancellations. Changing quantities directly on the asset breaks the history."
-  - "Discount and margin approvals run on Advanced Approvals with preview, parallel approvers and an audit trail; the threshold and the approver come from rules, never from an agent."
-  - "The quoting agent creates and changes quotes from plain language, but it is only as good as the catalog, the synced prices and the configuration rules in Salesforce behind it."
-  - "The hand-over to SAP belongs in a callout step of Dynamic Revenue Orchestrator; if an order goes to SAP in one piece, a plain integration without this add-on is enough."
-  - "Revenue Cloud and Field Service work on the same Asset object; decide before the first sprint whether sold subscriptions and physical machines share records."
+  - "Changing quantities directly on the asset, and not through an amendment or cancellation, breaks the history."
+  - "Discount and margin approvals run on Advanced Approvals. The threshold and the approver come from rules, never from an agent."
+  - "The quoting agent creates quotes from plain language. It needs a maintained catalog, synced prices and configuration rules for that."
+  - "The hand-over to SAP belongs in a callout step of Dynamic Revenue Orchestrator. If an order goes to SAP in one piece, a plain integration is enough."
+  - "Revenue Cloud and Field Service share the Asset object. Before the first sprint, decide whether sold subscriptions and machines use the same records."
 articles: [revenue-cloud-discount-approvals, revenue-cloud-quoting-agent, partner-sales-assistant-dealer-quotes, salesforce-contracts-revenue-cloud, revenue-cloud-order-orchestration-erp, revenue-cloud-installed-base-assets]
 faq:
   - q: "How does a quote become an order in Revenue Cloud?"
@@ -47,7 +47,7 @@ Help and the developer guide currently call Revenue Cloud Revenue Management, Tr
 
 For architects one point matters most: there is no side entrance. A change in quantity, a renewal or a cancellation is again a quote and again an order. That is more process than editing a field, and it keeps prices, approvals and history consistent.
 
-## What does the quote do in Transaction Management?
+## The quote in Transaction Management
 
 Reps work on the quote in the Transaction Line Editor, a table that behaves much like a spreadsheet. According to [Trailhead on working with quotes](https://trailhead.salesforce.com/content/learn/modules/efficient-sales-with-revenue-cloud/work-with-quotes), it offers inline editing, also for several lines at once, filters, search and frozen columns. Bundles are configured from the line's action menu. Hovering over the net unit price shows the price waterfall, every step from list price to final price.
 
@@ -92,9 +92,9 @@ Salesforce Contracts is the contract management of Revenue Cloud. According to [
 
 The [pricing page](https://www.salesforce.com/eu/sales/revenue-lifecycle-management/contracts-pricing/) lists Salesforce Contracts from €50 or $50 per user and month, billed annually, with a note that it requires prerequisite products. According to the [Revenue Cloud pricing page](https://www.salesforce.com/eu/sales/revenue-lifecycle-management/pricing/), Revenue Cloud Advanced at €200 includes Contracts & Orders, while for Growth Contract Lifecycle Management is available for purchase.
 
-My line: for customer contracts from the sales process on your own paper, Salesforce Contracts is usually enough. If legal manages purchasing, NDAs and group contracts in its own tool, or most contracts arrive as the customer's purchasing terms, that tool stays and Salesforce hands over the signed contract. Also watch for three things called "contract": the contract in Salesforce Contracts, the sales agreement in Manufacturing Cloud and the service contract in Field Service. The boundaries are in [Salesforce Contracts: is the built-in CLM enough?](../../../blog/salesforce-contracts-clm-revenue-cloud/).
+My line: for customer contracts from the sales process on your own paper, Salesforce Contracts is usually enough. If legal manages purchasing, NDAs and group contracts in its own tool, or most contracts arrive as the customer's purchasing terms, that tool stays and Salesforce hands over the signed contract. Also note that three objects are called "contract": the contract in Salesforce Contracts, the sales agreement in Manufacturing Cloud and the service contract in Field Service. The boundaries are in [Salesforce Contracts: is the built-in CLM enough?](../../../blog/salesforce-contracts-clm-revenue-cloud/).
 
-## How does the order get to SAP?
+## The order goes to SAP through a callout
 
 According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/revenue-cloud-design/manage-orders), the activated order reaches Dynamic Revenue Orchestrator (DRO) through a record-triggered flow. DRO does two things. Decomposition breaks the commercial products the customer buys into technical products for downstream systems. Orchestration runs a plan with [five step types](https://trailhead.salesforce.com/content/learn/modules/dynamic-revenue-orchestrator-foundations/explore-order-orchestration): auto task, callout, manual task, milestone and pause, grouped in swimlanes per system and with deadlines per step.
 
@@ -122,7 +122,7 @@ When the order is activated, the sold products appear as assets on the customer 
 
 Field Service uses the same Asset object, there as the machine at the customer site with serial number and assembly hierarchy. Revenue Cloud counts quantities, Field Service needs one record per serial number. For most machine builders I recommend two kinds of assets, the sold one and the physical machine, with a defined link between them. I compare both models and their risks in [assets in Revenue Cloud: amendments and renewals](../../../blog/revenue-cloud-assets-amendments-renewals/). How Field Service models machines, maintenance and parts is in the chapter [assets, maintenance and parts](../../field-service/field-service-assets-maintenance-parts/). Who owns which object belongs in an [object ownership matrix](../../../blog/salesforce-object-ownership-matrix/), before two teams build triggers on Asset against each other.
 
-## A typical scenario, as an assumption: spare parts package and remote monitoring
+## Worked example: spare parts package and remote monitoring
 
 A maker of packaging lines sells an existing customer two things on one quote: a wear parts package for three lines and a remote monitoring subscription for the same three machines, with a twelve-month term. All details are assumptions.
 
@@ -136,7 +136,7 @@ A maker of packaging lines sells an existing customer two things on one quote: a
 
 The invoice for the subscription can come from SAP or from Revenue Cloud Billing. That decision and recurring billing are covered in [chapter 4](../billing-and-usage-based-pricing/), for example in [maintenance contracts: recurring billing](../../../blog/maintenance-contracts-recurring-billing/).
 
-## What should you decide before the build?
+## First step: settle the approval matrix and the SAP hand-over in writing
 
 Before a partner builds the first quote layout, I would settle these points in writing:
 
@@ -148,4 +148,4 @@ Before a partner builds the first quote layout, I would settle these points in w
 | Order | DRO or a plain integration, who works the fallout queue, which checks run before activation. |
 | Assets | Counted or tied to a serial number, and who owns the Asset object. |
 
-All chapters are on the [overview page](../). Revenue Cloud carries the path from quote to order well when every change runs through a quote and an order and the hand-over to SAP is fixed up front.
+I start with the approval matrix, because the agent and the order build on its thresholds. All chapters are on the [overview page](../).

@@ -45,7 +45,7 @@ Operations | ongoing · key users and admin
 
 In acceptance testing key users are the best testers, because they know which cases really occur in their team. How acceptance testing with business teams is set up is in [Salesforce UAT: who tests before the release?](../../../blog/salesforce-uat-business-acceptance-testing/).
 
-## How do you choose the right key users?
+## Choose key users by their standing in the team
 
 The most common choice is the worst: whoever has time becomes key user. I look at other criteria:
 
@@ -68,7 +68,7 @@ Agree the key users' time in writing with their manager, in weeks and hours, and
 
 Visible recognition costs nothing and works. Whoever takes on extra work for the project should find it in their annual review. That decides whether someone volunteers again for the next project.
 
-## How do you train so it holds in daily work?
+## Training shortly before go-live, with cases from the team's own work
 
 Training two months before go-live is forgotten by the time the system arrives. Training with invented sample data shows the function but not the team's own case. So I plan training by three rules:
 
@@ -88,6 +88,6 @@ In my Field Service projects with maintenance, breakdown jobs and commissioning,
 
 I recommend three to five experienced technicians per region who work along before the rollout. They test forms on real jobs, take the app where there is no signal, train their colleagues and remain contacts afterwards, like key users in inside sales. What matters is that their feedback leads to visible changes. What keeps technicians from the app and how to handle location data openly is in [Field Service app: how technicians adopt it](../../../blog/field-service-app-technician-adoption/), the rollout in waves in the Field Service chapter [AI agents, rollout and KPIs](../../field-service/field-service-ai-agents-rollout/).
 
-## Where do you start?
+## First step: ask whom each team goes to for advice today
 
 Ask in every affected team whom people go to for advice today, and talk to those people's managers about time and cover. Take the key users into the first workshops, before anything is built, and plan training on real cases into the last two weeks before go-live. What this looks like in a rollout across several countries is in [chapter 4](../change-management-rollout-countries/). The role of leadership behind it is in [chapter 2](../sponsor-and-communication/).

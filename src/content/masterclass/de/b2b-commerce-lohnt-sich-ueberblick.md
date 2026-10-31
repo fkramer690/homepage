@@ -10,10 +10,9 @@ pubDate: 2026-10-28
 short: "Lohnt sich B2B Commerce?"
 summary: "Was Salesforce B2B Commerce ist, was es kostet und wann ein Portal oder ein anderes Shopsystem reicht."
 takeaways:
-  - "Salesforce B2B Commerce lohnt sich, wenn Händler und Kunden bekannte Artikel wie Ersatzteile, Verbrauchsmaterial und Zubehör in Menge nachbestellen. Konfigurierte Maschinen bleiben im Vertrieb."
-  - "Der Store läuft als Experience-Cloud-Site auf der Kernplattform. Käufergruppen, Entitlement Policies und Preisbücher steuern, wer welches Produkt zu welchem Preis sieht."
-  - "Salesforce berechnet einen Anteil am Store-Umsatz ohne Steuern und Versand (GMV) und veröffentlicht keinen Satz. Käuferlizenzen, Umsetzung und ERP-Anbindung kommen dazu."
-  - "Aura-Store-Templates gibt es nur für Orgs, die vor Spring '23 für Commerce aktiviert waren. Ein Abkündigungsdatum für Aura oder das Visualforce-Paket hat Salesforce nicht veröffentlicht."
+  - "Der Store ist eine Experience-Cloud-Site. Käufergruppen, Entitlement Policies und Preisbücher steuern, wer welches Produkt zu welchem Preis sieht."
+  - "Salesforce berechnet einen Anteil am Store-Umsatz (GMV) und veröffentlicht keinen Satz. Käuferlizenzen, Umsetzung und ERP-Anbindung kommen dazu."
+  - "Aura-Store-Templates gibt es nur für Orgs, die vor Spring '23 für Commerce aktiviert waren. Ein Abkündigungsdatum hat Salesforce nicht veröffentlicht."
   - "Vor dem Bau entscheiden Sie, wem Preise und Bestand gehören, welche Käufergruppen es gibt, welches Store-Template Sie nutzen und welche ERP-Aufrufe live laufen."
 articles: [commerce-shop-or-portal, commerce-gmv-pricing, commerce-business-case, commerce-buyer-licences, commerce-versions-visualforce-aura-lwr, manufacturing-cloud-customer-portal, salesforce-licence-types]
 faq:
@@ -57,7 +56,7 @@ Der Vorteil gegenüber einem fremden Shopsystem liegt darin, dass Accounts, Kont
 
 Sie werden in Unterlagen drei Bezeichnungen finden. Trailhead schreibt: "B2B Commerce is now Agentforce Commerce for B2B" ([Trailhead](https://trailhead.salesforce.com/content/learn/modules/agentforce-for-guided-shopping-for-b2b-and-d2c/increase-revenue-with-agentforce-for-guided-shopping)). Die Salesforce-Hilfe heißt weiter "Salesforce B2B Commerce", und die [Preisseite](https://www.salesforce.com/editions-pricing/commerce-cloud/b2b/) verkauft die Editionen als Commerce Cloud B2B Growth und Advanced. Gemeint ist dasselbe Produkt. Ich schreibe in dieser Masterclass Salesforce B2B Commerce. Wichtig ist der Name im Angebot: Lassen Sie sich die Edition und den Funktionsumfang mit dem Namen bestätigen, der auf der Preisseite steht.
 
-## Welche Generation betreiben Sie?
+## Aura oder LWR: die Store-Generation
 
 Viele Hersteller haben schon einen Shop auf Salesforce, oft von einem Partner vor Jahren aufgesetzt. Es gibt drei Generationen:
 
@@ -113,7 +112,7 @@ Die Käuferlizenz entscheidet die Frage nicht, beide nutzen Customer Community P
 3. Zahl der bestellenden Händler und Kunden,
 4. Anteil der Bestellungen per Telefon und E-Mail.
 
-Ein typisches Szenario, als Annahme: Ein Hersteller von Kompressoren hat 250 Händler, die 30.000 Ersatzteilpositionen im Jahr bestellen, meist als E-Mail mit Teilenummern. Das sind rund zehn Positionen pro Händler und Monat. Hier würde ich einen Store bauen und das bestehende Portal für Garantie und Cases behalten. Hat derselbe Hersteller 20 Händler, die zweimal im Jahr eine konfigurierte Anlage kaufen, bringt ein Store nichts. Die Anlage braucht ein Angebot, und das Portal zeigt dessen Status. Die vier Kriterien im Detail stehen in [B2B Commerce oder Händlerportal: Wann lohnt ein Shop?](../../../blog/b2b-commerce-oder-haendlerportal/). Was Manufacturing Cloud für den Vertrieb über Händler bietet, von Boni bis Partnerportal, behandelt das Kapitel [Händler und Partnerkanal](../../manufacturing-cloud/haendler-und-partnerkanal/) der Masterclass Manufacturing Cloud.
+Rechenbeispiel: Ein Hersteller von Kompressoren hat 250 Händler, die 30.000 Ersatzteilpositionen im Jahr bestellen, meist als E-Mail mit Teilenummern. Das sind rund zehn Positionen pro Händler und Monat. Hier würde ich einen Store bauen und das bestehende Portal für Garantie und Cases behalten. Hat derselbe Hersteller 20 Händler, die zweimal im Jahr eine konfigurierte Anlage kaufen, bringt ein Store nichts. Die Anlage braucht ein Angebot, und das Portal zeigt dessen Status. Die Kriterien im Detail stehen in [B2B Commerce oder Händlerportal: Wann lohnt ein Shop?](../../../blog/b2b-commerce-oder-haendlerportal/). Was Manufacturing Cloud für den Vertrieb über Händler bietet, von Boni bis Partnerportal, behandelt das Kapitel [Händler und Partnerkanal](../../manufacturing-cloud/haendler-und-partnerkanal/) der Masterclass Manufacturing Cloud.
 
 ## Wann ist Salesforce nicht die Antwort?
 
@@ -123,7 +122,7 @@ Drei Fälle, in denen ich von Salesforce B2B Commerce abraten würde:
 - **Das ERP bringt ein eigenes Commerce-Modul mit**, das Preise, Bestand und Kreditlimit ohne Schnittstelle kennt. Das prüfen Sie zuerst, weil die ERP-Anbindung in Salesforce der teuerste Teil des Projekts ist.
 - **Sehr kleiner Katalog, wenige Händler.** Bei 200 Artikeln und 15 Händlern ist ein Bestellformular im Portal oder eine Liste im ERP günstiger als jedes Shopsystem mit Umsatzbeteiligung.
 
-## Was entscheiden Sie, bevor ein Partner baut?
+## Erster Schritt: Preise, Bestand und ERP-Aufrufe schriftlich klären
 
 Einen Store aus der Vorlage anzulegen ist der kleinste Teil des Projekts. Die Entscheidungen, die danach teuer zu ändern sind, liegen bei Ihnen:
 
@@ -135,5 +134,3 @@ Einen Store aus der Vorlage anzulegen ist der kleinste Teil des Projekts. Die En
 | Welche ERP-Aufrufe laufen live? | Preis, Verfügbarkeit, Kreditprüfung und Auftragsübergabe brauchen ein ERP, das schnell antwortet. Das klären Sie mit dem SAP-Team, bevor das Store-Design steht. |
 
 Diese vier Punkte gehören in ein kurzes Dokument, das Sie besitzen, nicht der Partner. Wie ich Architekturentscheidungen dieser Art auf Kundenseite begleite, steht unter [Salesforce-Architektur](../../../leistungen/salesforce-architektur/). Eine unabhängige Prüfung von Angebot und Lizenzplan gehört zu [Make-or-Buy und Lizenzen](../../../leistungen/make-or-buy-lizenzen/). Weiter geht es mit [Kapitel 2 zu Katalog, Suche und Sichtbarkeit](../katalog-suche-sichtbarkeit/), alle Kapitel finden Sie auf der [Übersichtsseite](../).
-
-Ein B2B-Shop auf Salesforce lohnt sich, wenn Händler bekannte Teile in Menge nachbestellen und Sie Preise, Bestand und ERP-Aufrufe vor dem Bau geklärt haben.
