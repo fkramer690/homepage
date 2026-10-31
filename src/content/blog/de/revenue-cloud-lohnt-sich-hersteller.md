@@ -9,10 +9,9 @@ topic: revenue
 categories: [revenue-cloud, architecture]
 tags: [Revenue Cloud, CPQ, Quote-to-Cash, Make-or-Buy, SAP, Fertigung]
 takeaways:
-  - "Revenue Cloud lohnt sich für Hersteller, deren Angebote viele Varianten, Wartungsverträge oder Abonnements verbinden und sich nach dem ersten Auftrag oft ändern."
   - "Ist ein Angebot nur eine Preisabfrage in SAP für ein kleines Sortiment, reichen meist Angebote in Sales Cloud und eine ERP-Schnittstelle."
-  - "Zum Listenpreis kostet Revenue Cloud Advanced 200 Euro pro Nutzer und Monat zusätzlich zu Sales Cloud. 50 Angebotsnutzer kosten damit 120.000 Euro im Jahr ohne Umsetzung."
-  - "Salesforce CPQ wird an Neukunden nicht mehr verkauft. Ein neues Projekt wählt deshalb zwischen Revenue Cloud, einem Partnerprodukt und einem eigenen Ansatz."
+  - "Revenue Cloud Advanced kostet 200 Euro pro Nutzer und Monat zusätzlich zu Sales Cloud, für 50 Angebotsnutzer 120.000 Euro im Jahr."
+  - "Salesforce CPQ wird an Neukunden nicht mehr verkauft. Ein neues Projekt wählt zwischen Revenue Cloud, einem Partnerprodukt und einem eigenen Ansatz."
   - "Bevor ein Partner ausgewählt wird, sollte feststehen, wo Preise berechnet werden und welches System die Rechnung stellt."
 faq:
   - q: "Was ist Salesforce Revenue Cloud?"
@@ -74,7 +73,7 @@ Für Hersteller, deren Angebote überwiegend Standardartikel mit Preisen aus dem
 
 Die Alternativen sind Angebote in Sales Cloud mit ERP-Schnittstelle, ein CPQ-Produkt eines Partners oder ein eigener Ansatz auf der Plattform, wie in [Vom Angebot zum Sales Agreement: der Konfigurator](../angebot-zu-sales-agreement-produktkonfigurator/) beschrieben. Ob zusätzlich Manufacturing Cloud passt, ist eine eigene Frage, die [Manufacturing Cloud vs. Sales Cloud: Wann lohnt sie sich?](../manufacturing-cloud-wann-lohnt-sie-sich/) beantwortet.
 
-## Was kostet Revenue Cloud?
+## Advanced kostet 200 Euro pro Nutzer zusätzlich zu Sales Cloud
 
 Die [Preisseite](https://www.salesforce.com/eu/sales/revenue-lifecycle-management/pricing/) (zuletzt geändert am 28. September 2026) nennt zwei Editionen pro Nutzer und Monat bei jährlicher Abrechnung:
 
@@ -87,7 +86,7 @@ Die FAQ derselben Seite sagt, dass Revenue Cloud ein kostenpflichtiges Zusatzpro
 
 Eine Rechnung zum Listenpreis, als Annahme: 50 Vertriebsnutzer, die Angebote erstellen, bekommen Revenue Cloud Advanced. Das sind 50 × 200 Euro × 12 = 120.000 Euro im Jahr. Haben diese Nutzer noch kein Sales Cloud, kommen mit Sales Cloud Core zu 195 Euro pro Nutzer und Monat 117.000 Euro hinzu. Umsetzung, SAP-Integration und Wartung kommen obendrauf. Wer wirklich eine Lizenz braucht, klärt eine Lizenzprognose, wie in [Salesforce-Lizenzen: Braucht jeder eine volle Lizenz?](../salesforce-lizenzen-volle-lizenz/) beschrieben. Editionen und Zusatzprodukte im Detail stehen in [Revenue Cloud Preise: Growth, Advanced und Add-ons](../revenue-cloud-editionen-preise/).
 
-## Ein typisches Szenario, als Annahme
+## Rechenbeispiel: 400 Angebote im Monat, eines von zehn ist ein Projekt
 
 Ein Komponentenhersteller verkauft Ventile und Antriebe in rund 3.000 Varianten. Der größte Teil des Geschäfts läuft über 120 Händler mit eigenen Preislisten, gepflegt als Konditionen in SAP. Der Innendienst erstellt 400 Angebote im Monat. Neun von zehn sind Standardartikel, die SAP in Sekunden bepreist. Eines von zehn ist ein Projektangebot mit kundenspezifischer Variante, Wartungsvertrag und Inbetriebnahme.
 
@@ -95,7 +94,7 @@ Für die 360 Standardangebote im Monat bringt Revenue Cloud wenig. Der Preis kom
 
 Meine Empfehlung in so einem Fall: zuerst entscheiden, ob SAP der Preismaster bleibt, und dann nur den Projektvertrieb lizenzieren. Mit 15 Nutzern auf Advanced sind das 36.000 Euro im Jahr zum Listenpreis statt eines sechsstelligen Betrags für den ganzen Vertrieb. Wie die Entscheidung über den Preismaster läuft, steht in [Kundenpreise: SAP-Konditionen oder Salesforce Pricing?](../kundenpreise-sap-konditionen-oder-salesforce-pricing/).
 
-## Was sollte vor der Partnerauswahl entschieden sein?
+## Erster Schritt: Preismaster und Rechnungssystem vor der Partnerauswahl festlegen
 
 Partner fragen nach Funktionen. Die Entscheidungen, die Kosten und Zeitplan treiben, sind andere, und sie gehören dem Unternehmen:
 
@@ -105,5 +104,3 @@ Partner fragen nach Funktionen. Die Entscheidungen, die Kosten und Zeitplan trei
 4. **Parallelbetrieb mit CPQ.** Bestandskunden von CPQ entscheiden selbst, ob und wann sie umsteigen. Das [Kapitel zum Umstieg von CPQ](../../masterclass/revenue-cloud/von-cpq-zu-revenue-cloud/) beschreibt die Optionen.
 
 Wie die Schritte vom Angebot bis zur Rechnung zwischen Revenue Cloud und SAP aufgeteilt werden, behandelt [Revenue Cloud und SAP: Wer führt was im Quote-to-Cash?](../revenue-cloud-sap-quote-to-cash-aufteilung/). Das [Überblickskapitel der Masterclass Revenue Cloud](../../masterclass/revenue-cloud/revenue-cloud-ueberblick/) ordnet alles ein, und die Architekturseite gehört zu meiner Arbeit in der [Salesforce-Architektur](../../leistungen/salesforce-architektur/).
-
-Revenue Cloud lohnt sich, wenn Ihre Angebote komplex sind und Ihr Umsatz wiederkehrt, und selten, wenn SAP die Preisfrage schon beantwortet.

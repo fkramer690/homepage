@@ -10,10 +10,9 @@ categories: [revenue-cloud, architecture]
 contactBrief: make-or-buy
 tags: [Salesforce CPQ, Revenue Cloud, migration, make-or-buy, decision]
 takeaways:
-  - "Staying on Salesforce CPQ is allowed: existing customers renew, add users and get support, there is no end-of-life date and no forced migration."
-  - "Reasons to move are needs that only Revenue Cloud covers: new features such as agent-based quoting, usage-based or recurring billing in Salesforce, or a product model that is redesigned anyway."
-  - "Reasons to wait are a stable quoting process, prices that come from the ERP anyway, a larger project such as an ERP migration, or no budget for a redesign this year."
-  - "A third route exists: a partner product or a custom approach on the platform, especially when configuration rules live in the ERP or in engineering."
+  - "Reasons to move are agent-based quoting, usage-based or recurring billing in Salesforce, or a product model that is redesigned anyway."
+  - "Reasons to wait are a stable quoting process, prices from the ERP, an ERP migration under way or no budget for a redesign this year."
+  - "A partner product or a custom approach fits when configuration rules live in the ERP or in engineering."
   - "The decision starts with an assessment of your CPQ org: rules, price logic, customisations and integrations show how big the redesign would be."
 faq:
   - q: "Should I stay on Salesforce CPQ or move to Revenue Cloud?"
@@ -58,7 +57,7 @@ These triggers speak for a move in the next one to two years:
 - **Org relaunch or partner change.** When the org is rebuilt or a new partner takes over, the move fits into a project that is happening anyway. An [AI org assessment](../ai-org-assessment-technical-debt/) helps to see what is actually in the old org.
 - **CPQ customisations are fragile.** If every release test breaks something in the quote calculator plugin and only one person understands it, a redesign removes a risk.
 
-## When is waiting the better choice?
+## Waiting fits a stable process and prices from the ERP
 
 Waiting makes sense when:
 
@@ -69,7 +68,7 @@ Waiting makes sense when:
 
 Waiting does not mean doing nothing. Delete unused rules, document the price logic and secure a renewal that allows parallel operation later. That makes a later move cheaper.
 
-## Is there a third route?
+## The third route: partner product or custom approach
 
 Yes, and I would always check it before signing anything. For quoting there are three routes today: Revenue Cloud, a partner product, or a custom approach on the platform. How a custom approach with its own product configurator feeds quotes and sales agreements is described in [from quote to sales agreement](../quote-to-sales-agreement-product-configurator/).
 
@@ -106,10 +105,8 @@ As an assumption, 50 quoting users on Advanced cost €120,000 a year at list pr
 
 The larger cost is the redesign. Salesforce names three to six months as a typical migration, and its [migration guide](https://help.salesforce.com/s/articleView?language=en_US&id=ind.rev_data_migration.htm&type=5) makes clear that tools do not replace design decisions for custom logic and integrations. Why that is so is explained in [Salesforce CPQ vs Revenue Cloud: the real differences](../salesforce-cpq-vs-revenue-cloud-differences/).
 
-A typical scenario, as an assumption: a machine builder with 50 CPQ users, 200 product rules, a quote calculator plugin and a CPQ renewal in nine months. Prices come from SAP, the configurator rules partly from engineering. Here I would renew CPQ for two years with an option for parallel operation, clean up the rules now, and run a proof of concept for the ten most important machines in Revenue Cloud before committing to a migration.
+A worked example: a machine builder with 50 CPQ users, 200 product rules, a quote calculator plugin and a CPQ renewal in nine months. Prices come from SAP, the configurator rules partly from engineering. Here I would renew CPQ for two years with an option for parallel operation, clean up the rules now, and run a proof of concept for the ten most important machines in Revenue Cloud before committing to a migration.
 
-## Where should you start?
+## First step: assess your CPQ org
 
 Assess your CPQ org first: number of product and price rules, size of the quote calculator plugin, integrations on SBQQ objects, open subscriptions and the renewal date. Then put the triggers above next to your roadmap for the next two years. The masterclass chapter [from CPQ to Revenue Cloud](../../masterclass/revenue-cloud/from-cpq-to-revenue-cloud/) walks through the whole path from status to migration.
-
-Stay, move or take a third route: each is right for some companies, as long as you choose it deliberately.

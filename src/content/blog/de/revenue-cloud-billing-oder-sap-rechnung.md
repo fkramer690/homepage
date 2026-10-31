@@ -10,7 +10,6 @@ categories: [revenue-cloud, architecture]
 tags: [Revenue Cloud Billing, SAP, Rechnungsstellung, Nebenbuch, Finance, Fertigung]
 takeaways:
   - "Bei einmaligen Maschinenverkäufen bleibt die Rechnung meist in SAP, weil Lieferung, Abnahme und Anzahlungen dort abgewickelt werden."
-  - "Revenue Cloud Billing lohnt sich für Abonnements, Serviceverträge und nutzungsbasierte Entgelte, die in Salesforce verkauft und geändert werden."
   - "Billing macht Salesforce zum Nebenbuch mit eigenen Legal Entities, Buchungsperioden und Sachkonten und überträgt Buchungssätze an das ERP."
   - "Billing wird nach Rechnungsbetrag abgerechnet. Maschinenrechnungen mit hohen Beträgen über Salesforce zu schicken, erhöht die Kosten ohne großen Nutzen."
   - "Die Entscheidung gehört Finance: welche Umsatzarten Salesforce fakturiert, wer Perioden schließt und wie Forderungen mit SAP abgestimmt werden."
@@ -57,7 +56,7 @@ Finance muss also Fragen beantworten, die es mit dem CRM-Team vermutlich nie bes
 
 Trailhead nennt eine [Rolle Accounts Receivable Admin](https://trailhead.salesforce.com/content/learn/modules/billing-basics-in-revenue-cloud/explore-billing-features-and-roles), die Buchungsperioden, Buchungssätze und Finanzberichte verwaltet. In einem Fertigungsunternehmen sitzt diese Person in der Buchhaltung. Übernimmt dort niemand die Rolle, sollte Billing nicht live gehen.
 
-## Wann sollte die Rechnung in SAP bleiben?
+## Die Maschinenrechnung bleibt in SAP
 
 Bei einmaligen Maschinenverkäufen lasse ich die Rechnung in SAP. Die Gründe sind praktisch:
 
@@ -79,9 +78,9 @@ Billing lohnt sich dort, wo die Rechnung eher dem Vertrag folgt als der Lieferun
 
 Das Signal, auf das ich achte: Wenn der Vertrieb jede Woche Verträge ändert und die Buchhaltung jeden Monat Rechnungen korrigiert, weil SAP von einer Änderung nichts wusste, spart Billing in Salesforce eine Übergabe. Besteht das wiederkehrende Geschäft aus ein paar hundert Verträgen mit einer Rechnung im Jahr, reicht die Fakturierung aus SAP meistens.
 
-## Eine typische Aufteilung, als Annahme
+## Rechenbeispiel: Aufteilung bei einem Maschinenbauer
 
-Ein typisches Szenario, als Annahme: Ein Maschinenbauer mit SAP S/4HANA verkauft Maschinen, Ersatzteile, ein Fernüberwachungs-Abo pro Maschine und Wartungsverträge. Der Vertrieb erstellt alle Angebote in Revenue Cloud.
+Angenommen, ein Maschinenbauer mit SAP S/4HANA verkauft Maschinen, Ersatzteile, ein Fernüberwachungs-Abo pro Maschine und Wartungsverträge. Der Vertrieb erstellt alle Angebote in Revenue Cloud.
 
 Ich würde so aufteilen:
 
@@ -108,7 +107,7 @@ Rechnung SAP --> Hauptbuch SAP
 
 Der Kunde bekommt zwei Arten von Rechnungen, die der Kundenservice erklären können muss. Ist das nicht akzeptabel, bleibt jede Rechnung in SAP, und Revenue Cloud liefert die Abrechnungsdaten. Dafür braucht es eine verlässliche Schnittstelle für Nachträge. Welches System welches Objekt führt, steht in [Revenue Cloud und SAP: Wer führt was im Quote-to-Cash?](../revenue-cloud-sap-quote-to-cash-aufteilung/).
 
-## Wer sollte entscheiden?
+## Finance zieht die Grenze
 
 Finance. Das CRM-Team kann zeigen, was Billing kann, aber die Folgen trägt die Finanzabteilung: ein zweites Debitorenbuch, ein zweiter Periodenabschluss und eine zweite Stelle, die sich Wirtschaftsprüfer ansehen. Die [Object Ownership Matrix](../object-ownership-matrix-salesforce/) hilft auch hier: Jedes Billing-Objekt braucht einen Owner, und bei Legal Entities, Buchungsperioden und Sachkonten sitzt dieser Owner in der Buchhaltung.
 
@@ -120,8 +119,6 @@ Halten Sie drei Punkte mit Finance schriftlich fest: welche Umsatzarten Salesfor
 
 Die Schnittstellen für Buchungssätze und Rechnungsstatus gehören zu meiner Arbeit bei [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).
 
-## Wo starten Sie?
+## Erster Schritt: Umsatzarten mit Rechnungsquelle auflisten
 
 Listen Sie Ihre Umsatzarten auf und notieren Sie zu jeder, wer heute fakturiert und wie oft sich der Vertrag ändert. Zeilen mit wiederkehrenden Gebühren und häufigen Änderungen sind Kandidaten für Billing, alles andere bleibt in SAP. Das Masterclass-Kapitel [Abrechnung und nutzungsbasierte Preise](../../masterclass/revenue-cloud/abrechnung-und-nutzungsbasierte-preise/) ordnet diese Entscheidung in den gesamten Quote-to-Cash-Prozess ein.
-
-Maschinenrechnungen bleiben in SAP, wiederkehrende Umsätze mit häufigen Änderungen können in Revenue Cloud Billing wandern, und Finance legt fest, wo die Grenze verläuft.
