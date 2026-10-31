@@ -19,7 +19,7 @@ import { homeHref, partnersHref } from '../lib/paths';
 import { masterclassesIndex } from '../lib/masterclass';
 import { getMasterclasses } from '../lib/masterclasses';
 import { questions, questionPaths } from '../data/questions';
-import { clients, logoHeight } from '../data/clients';
+import { clients, logoHeight, logoFile, logoRatio } from '../data/clients';
 import Icon from './Icon.astro';
 import Photo from './Photo.astro';
 import type { PhotoKey } from '../data/photos';
@@ -105,7 +105,6 @@ const serviceIcons = ['architecture', 'change', 'pipeline', 'integration', 'team
             <ul>{t.role.with.map((item, i) => <li class:list={{ 'compare-hit': i === t.role.quoteItem }}>{item}</li>)}</ul>
           </div>
         </div>
-        <p class="role-quote-lead">{t.role.quoteLead}</p>
         <figure class="role-quote">
           <Image src={speaking} alt={t.role.photoAlt} widths={[400, 614]} sizes="(max-width: 760px) 100vw, 614px" />
           <div class="role-quote-text">
@@ -182,7 +181,7 @@ const serviceIcons = ['architecture', 'change', 'pipeline', 'integration', 'team
               <li>
                 <label for={`rf-${i}`}>
                   <span class="rf-no mono">{pad(i + 1)}</span>
-                  <span class="rf-sector mono">{r.sector}</span>
+                  <span class="rf-sector">{r.sector}</span>
                   <span class="rf-title">{r.title}</span>
                 </label>
               </li>
@@ -192,7 +191,7 @@ const serviceIcons = ['architecture', 'change', 'pipeline', 'integration', 'team
             <article class="rf-panel">
               <Photo photo={refPhotos[i].photo} lang={lang} focus={refPhotos[i].focus} class="rf-photo" sizes="(max-width: 760px) calc(100vw - 32px), 860px" />
               <div class="rf-body">
-                <p class="ref-sector mono">{pad(i + 1)} · {r.sector}</p>
+                <p class="ref-sector"><span class="mono">{pad(i + 1)}</span> · {r.sector}</p>
                 <h3>{r.title}</h3>
                 <dl>
                   <dt class="mono">{t.references.startLabel}</dt><dd>{r.start}</dd>
@@ -216,11 +215,10 @@ const serviceIcons = ['architecture', 'change', 'pipeline', 'integration', 'team
               {[...clients, ...clients].map((c, i) => (
                 <li aria-hidden={i >= clients.length ? 'true' : undefined}>
                   <img
-                    class:list={{ light: c.light }}
                     style={`--h: ${logoHeight(c)}px`}
-                    width={Math.round(logoHeight(c) * c.ratio)}
+                    width={Math.round(logoHeight(c) * logoRatio(c))}
                     height={logoHeight(c)}
-                    src={`${import.meta.env.BASE_URL}clients/${c.file}`}
+                    src={`${import.meta.env.BASE_URL}${logoFile(c)}`}
                     alt={c.name}
                     loading="lazy"
                     decoding="async"
