@@ -2,13 +2,19 @@
 // Overview of all masterclasses (/masterclass/, /en/masterclass/), linked from the
 // main menu. Side column with intro, figures and points, then one row per
 // masterclass in a white box, each leading to its hub; the list comes from
-// src/lib/masterclasses.ts, the texts from `masterclasses` in src/i18n.
+// src/lib/masterclasses.ts, the texts from `masterclasses` in src/i18n. Ends like
+// the hubs: author box and contact section (booking, phone, form).
 import Page from '../layouts/Page.astro';
 import Icon from './Icon.astro';
 import Photo from './Photo.astro';
+import AuthorBox from './AuthorBox.astro';
+import Blueprint from './Blueprint.astro';
+import ContactForm from './ContactForm.astro';
+import ExternalMark from './ExternalMark.astro';
+import PhoneLine from './PhoneLine.astro';
 import { en } from '../i18n/en';
 import { de } from '../i18n/de';
-import { site } from '../site';
+import { site, contactHref, contactExternal } from '../site';
 import { homeHref } from '../lib/paths';
 import { masterclassesIndex } from '../lib/masterclass';
 import { getMasterclasses } from '../lib/masterclasses';
@@ -26,6 +32,7 @@ const abs = (path: string) => new URL(path, Astro.site).href;
 const url = abs(masterclassesIndex(lang));
 const suffix = ' | FK Solution Design';
 const pageTitle = o.metaTitle.length + suffix.length <= 60 ? o.metaTitle + suffix : o.metaTitle;
+const ctaAttrs = contactExternal ? { target: '_blank', rel: 'noopener' } : {};
 const ogImage = `${base}og/${lang}/masterclasses.png`;
 const totalChapters = masterclasses.reduce((sum, mc) => sum + mc.chapters, 0);
 // Articles are not summed: many are linked from more than one masterclass.
@@ -65,7 +72,7 @@ const schema = {
   ],
 };
 ---
-<Page layout="wide" lang={lang} title={pageTitle} description={o.metaDescription} alternates={{ en: masterclassesIndex('en'), de: masterclassesIndex('de') }} image={ogImage}>
+<Page layout="wide" lang={lang} title={pageTitle} description={o.metaDescription} alternates={{ en: masterclassesIndex('en'), de: masterclassesIndex('de') }} image={ogImage} hasContact>
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
   </Fragment>
@@ -108,6 +115,27 @@ const schema = {
           ))}
         </ul>
       </div>
+    </div>
+  </section>
+
+  <section class="section mc-author">
+    <div class="container">
+      <AuthorBox lang={lang} />
+    </div>
+  </section>
+
+  <section class="contact dark grid-bg" id="contact">
+    <Blueprint />
+    <div class="container contact-inner">
+      <div class="contact-intro">
+        <p class="label mono">{t.contact.label}</p>
+        <h2>{o.ctaTitle}</h2>
+        <p class="contact-text">{o.ctaText}</p>
+        <a class="btn" href={contactHref(o.name)} {...ctaAttrs}>{t.nav.cta}{contactExternal && <ExternalMark label={t.nav.newTab} />}</a>
+        {contactExternal && <p class="booking-note">{t.contact.bookingNote}</p>}
+        <PhoneLine t={t} />
+      </div>
+      <ContactForm t={t} subject={`${t.contact.form.subject}: ${o.formSubject}`} />
     </div>
   </section>
 </Page>
