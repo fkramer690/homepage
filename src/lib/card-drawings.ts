@@ -1826,6 +1826,14 @@ const drawings: Record<string, Drawing> = {
       .map((s, i) => dot(22, 95 + i * 15, G, 2) + t(30, 98 + i * 15, s, { size: 7 })).join('')}
     ${box(206, 88, 96, 56, C)}${t(254, 105, l('APAC 4 months late', 'Asien 4 Monate später'), { fill: C, size: 6.5, anchor: 'middle' })}${t(254, 119, l('300K credits expire', '300K Credits verfallen'), { fill: C, size: 6.5, anchor: 'middle' })}${t(254, 133, l('= $1,500', '= 1.500 €'), { fill: C, size: 7.5, anchor: 'middle' })}`,
 
+  'enhanced-chat-portal': (l) => `
+    ${t(18, 18, l('DEALER PORTAL', 'HÄNDLERPORTAL'), { fill: D, size: 7 })}${t(166, 18, l('3 LANGUAGE LAYERS', '3 SPRACHEBENEN'), { fill: D, size: 7 })}
+    ${box(18, 28, 62, 80)}${t(49, 46, l('MACHINE', 'MASCHINE'), { fill: D, size: 7, anchor: 'middle' })}${t(49, 60, l('serial no.', 'Seriennr.'), { size: 7, anchor: 'middle' })}
+    ${box(86, 28, 62, 80, C)}${t(117, 46, 'CHAT', { fill: C, size: 7.5, anchor: 'middle' })}${t(117, 60, 'inline', { size: 7, anchor: 'middle' })}
+    ${t(18, 128, "displayMode = 'inline'", { size: 7 })}${t(18, 142, l('only in v2, fills the container', 'nur v2, füllt den Container'), { size: 7 })}
+    ${[[l('INTERFACE', 'OBERFLÄCHE'), l('custom labels', 'Custom Labels')], [l('AI AGENT', 'KI-AGENT'), l('session language', 'Sitzungssprache')], ['SERVICE', l('live translation', 'Übersetzung')]].map(([a, b], i) => box(166, 28 + i * 28, 140, 22, i === 0 ? C : G) + t(174, 42 + i * 28, a, { fill: i === 0 ? C : D, size: 7 }) + t(298, 42 + i * 28, b, { size: 7, anchor: 'end' })).join('')}
+    ${t(166, 128, l('glossary: max. 10 languages', 'Glossar: max. 10 Sprachen'), { size: 7 })}${t(166, 142, l('12 languages: test each one', '12 Sprachen: jede testen'), { size: 7 })}`,
+
   'multilingual-dealer-agents': (l) => `
     ${t(18, 18, l('AGENTFORCE LANGUAGES', 'AGENTFORCE-SPRACHEN'), { fill: D, size: 7 })}${t(166, 18, l('KNOWLEDGE', 'WISSEN'), { fill: D, size: 7 })}
     ${box(18, 28, 130, 40)}${t(28, 43, 'TEXT', { fill: D, size: 7.5 })}${t(28, 58, l('31 languages + 25 beta', '31 Sprachen + 25 Beta'), { size: 7 })}
