@@ -125,7 +125,7 @@ const serviceIcons = ['architecture', 'change', 'pipeline', 'integration', 'team
             const href = serviceLinks.get(i + 1);
             const inner = (
               <>
-                <span class="card-top"><Icon name={serviceIcons[i]} class="card-icon" /><span class="card-index mono">{String(i + 1).padStart(2, '0')}</span></span>
+                <span class="card-top"><Icon name={serviceIcons[i]} class="card-icon" /></span>
                 <h3>{s.title}</h3>
                 <p>{s.text}</p>
                 {href && <span class="card-more">{t.services.more} →</span>}

@@ -84,11 +84,15 @@ const schema = {
       </div>
     </div>
   </header>
+  <section class="proof">
+    <div class="container">
+      <ul class="proof-list cols-4">
+        {stats.map((s) => <li><span class="proof-value">{s.value}</span><span class="proof-label">{s.text}</span></li>)}
+      </ul>
+    </div>
+  </section>
   <article class="section post questions">
     <div class="container">
-      <div class="sp-stats q-stats">
-        {stats.map((s) => <div class="sp-stat"><span class="sp-stat-value">{s.value}</span><span class="sp-stat-text">{s.text}</span></div>)}
-      </div>
 
       <nav class="q-topics" aria-label={c.topics}>
         {c.groups.map((group, gi) => (
