@@ -53,7 +53,6 @@ export const en = {
     { value: '20+', label: 'enterprise projects' },
     { value: '32', label: 'developers in 8 teams, one program' },
     { value: '25', label: 'Salesforce certifications, 8 architect' },
-    { value: '0', label: 'ties to vendors or partners' },
   ],
   role: {
     label: 'The role',
@@ -79,7 +78,7 @@ export const en = {
       'Checked first whether it belongs in Salesforce at all',
       'One release process with automated checks for everyone',
       'One standard framework for integrations and automations',
-      'Standards that make the result last',
+      'Checks in the pipeline, so no new legacy builds up after the cleanup',
     ],
     photoAlt: 'Fabian Kramer giving a live demo on stage',
     photoCaption: 'On stage: live demos instead of slideware.',
@@ -116,7 +115,7 @@ export const en = {
       },
       {
         title: 'Partner steering & governance',
-        text: 'One common governance and release framework across several implementation partners – and someone who actually reviews the deliveries.',
+        text: 'One common governance and release framework across several implementation partners. On top, I review what the partners deliver.',
       },
     ],
     more: 'Learn more',
@@ -200,17 +199,17 @@ export const en = {
     label: 'How I work',
     title: 'From assessment to global rollout',
     steps: [
-      { title: 'Assess', text: 'Current architecture, partner landscape, licenses: what is there and what hurts.' },
-      { title: 'Design', text: 'Target architecture, make-or-buy decisions and a roadmap that the business can follow.' },
-      { title: 'Govern', text: 'Standards for governance, DevOps and releases, and reviews of what partners deliver.' },
-      { title: 'Deliver', text: 'Hands-on support through implementation, up to the global rollout.' },
+      { title: 'Assess', text: 'I take stock of the org, the partners and the licences. The result is a list of problems, ranked by what they cost.' },
+      { title: 'Design', text: 'Target architecture and roadmap, with a make-or-buy decision for every major requirement.' },
+      { title: 'Govern', text: 'Common standards for all partners, a review of every delivery and one release process with automated checks.' },
+      { title: 'Deliver', text: 'I stay through the rollout to the countries and hand standards and reviews over to your internal team.' },
     ],
   },
   firstCall: {
     label: 'First call',
     title: 'Why start with 30 minutes?',
     paragraphs: [
-      'Most Salesforce programmes don’t have one problem, they have ten. Fighting on every front at once fixes none of them for good.',
+      'Most Salesforce programmes have ten problems. Fighting on every front at once fixes none of them for good.',
       'In the first call we find out which problem costs the most and where the first step pays off. And we work out what it takes for the result to last. A health check with a clean-up achieves little if the same problems are back two weeks later.',
     ],
     listTitle: 'What we clarify in the call',
@@ -230,7 +229,7 @@ export const en = {
     blocks: [
       {
         head: 'What I do',
-        text: 'I help manufacturing companies turn Salesforce into a reliable backbone for sales, service and after-sales – as the architect on the client side.',
+        text: 'I work as the architect on the client side for manufacturing companies that run sales, service and after-sales in Salesforce.',
       },
       {
         head: 'Projects',
@@ -244,7 +243,7 @@ export const en = {
     ],
     facts: [
       { label: 'Since 2020', text: 'Founder of FK Solution Design GmbH, Cologne' },
-      { label: '2022–2025', text: 'Co-founder of Blue Apes Consulting GmbH (up to 11 people, sold)' },
+      { label: '2022 to 2025', text: 'Co-founder of Blue Apes Consulting GmbH (up to 11 people, sold)' },
       { label: 'Education', text: 'M.Sc. Information Systems, University of Koblenz-Landau' },
     ],
     linkedin: 'LinkedIn profile',
@@ -289,7 +288,7 @@ export const en = {
   contact: {
     label: 'Contact',
     title: 'Planning or rescuing a Salesforce program?',
-    text: 'Tell me where you stand. A first call takes 30 minutes – worst case, you walk away with a second opinion.',
+    text: 'Tell me where you stand. A first call takes 30 minutes. Worst case, you walk away with a second opinion.',
     cta: 'Book a 30-minute call',
     bookingNote: 'Pick a slot in my calendar via Microsoft Bookings. Prefer to write? Use the form and I’ll get back to you.',
     linkedinLabel: 'LinkedIn',
@@ -350,7 +349,7 @@ export const en = {
     seriesPart: 'Part {part} of {total}',
     seriesUpcoming: 'More parts in preparation: {count}',
     seriesCurrent: 'You are reading',
-    authorBio: 'I help manufacturers turn Salesforce into a reliable backbone for sales, service and after-sales, as the architect on the client side and independent of vendors and partners.',
+    authorBio: 'I work as the architect on the client side for manufacturers that run sales, service and after-sales in Salesforce, independent of vendors and partners.',
     authorLabel: 'About the author',
     authorRole: 'Salesforce Enterprise Architect · Cologne',
     authorMore: 'More about me',
@@ -770,8 +769,8 @@ export const en = {
       { label: 'From practice', text: 'written by Fabian Kramer (25 Salesforce certifications, 8 of them architect), change management together with Juliane Winterscheid.' },
     ],
     homeLabel: 'Masterclasses',
-    homeTitle: 'Knowledge to read up on, chapter by chapter',
-    homeText: 'Seven masterclasses for decision makers at manufacturing companies, free to read in English and German.',
+    homeTitle: 'Seven masterclasses, {n} chapters, free to read',
+    homeText: 'Written for decision makers at manufacturing companies, in English and German.',
     // Short names and topic lines for the list on the start page, keyed by course id.
     homeTopics: { ai: 'Agentforce, Data Cloud, licences', devops: 'Pipelines, releases, sfdx-hardis', 'manufacturing-cloud': 'Run-rate, forecasts, agreements', 'revenue-cloud': 'Quotes, pricing, contracts', 'b2b-commerce': 'Dealer portal, orders, ERP', 'field-service': 'Scheduling, mobile app, reports', 'change-management': 'Adoption, key users, roll-out' },
     homeNames: { ai: 'AI & Agentforce', devops: 'DevOps & release management', 'manufacturing-cloud': 'Manufacturing Cloud', 'revenue-cloud': 'Revenue Cloud', 'b2b-commerce': 'B2B Commerce', 'field-service': 'Field Service', 'change-management': 'Change management' },
@@ -783,8 +782,8 @@ export const en = {
   },
   side: {
     toc: 'Contents',
-    ctaTitle: '30 minutes, no pitch',
-    ctaText: 'You describe your situation, I tell you honestly whether and how I can help.',
+    ctaTitle: 'First call, 30 minutes',
+    ctaText: 'You describe your situation, I tell you whether I can help and how.',
     phone: 'Or call directly',
     video: 'Video',
     videoSeconds: 'sec',

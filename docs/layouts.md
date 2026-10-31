@@ -50,6 +50,13 @@ Chosen 2026-10-31 (Fabian: "Skala + Mono reduzieren"). Part of the polished desi
   meta lines, captions, tags, filter texts, back links and proof bar labels are
   set in Sora. In blocks the same: notes under a block, pills, link
   names, legends and badges are Sora; only labels, numbers and dates stay mono.
+- **Eyebrows only where they carry information** (AI-slop review 2026-10-31):
+  in a page head (area, category, masterclass name) and as a label for a
+  group without its own heading (e.g. "Schwerpunkte"). A section with an h2
+  gets no eyebrow that repeats the menu item or the heading.
+- **Numbers (01, 02 …) only where the order matters** (steps, chapters,
+  phases), never as a counter on lists whose order means nothing (references,
+  questions).
 
 ## Colours, radii and shadows (binding)
 
