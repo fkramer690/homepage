@@ -1,8 +1,13 @@
 [
  {
   "page": "/",
-  "pageviews": 140,
-  "visits": 30
+  "pageviews": 160,
+  "visits": 50
+ },
+ {
+  "page": "/en/",
+  "pageviews": 40,
+  "visits": 10
  },
  {
   "page": "/blog/",
@@ -20,9 +25,9 @@
   "visits": 10
  },
  {
-  "page": "/en/",
-  "pageviews": 30,
-  "visits": 10
+  "page": "/en/blog/",
+  "pageviews": 20,
+  "visits": 0
  },
  {
   "page": "/partner/juliane-winterscheid/",
@@ -45,12 +50,12 @@
   "visits": 0
  },
  {
-  "page": "/fragen/",
+  "page": "/masterclass/manufacturing-cloud/",
   "pageviews": 10,
   "visits": 0
  },
  {
-  "page": "/homepage/speaking/",
+  "page": "/en/certifications/",
   "pageviews": 10,
   "visits": 0
  },
@@ -65,7 +70,7 @@
   "visits": 0
  },
  {
-  "page": "/masterclass/manufacturing-cloud/",
+  "page": "/homepage/speaking/",
   "pageviews": 10,
   "visits": 0
  },
@@ -75,12 +80,12 @@
   "visits": 0
  },
  {
-  "page": "/masterclass/revenue-cloud/",
+  "page": "/homepage/blog/salesforce-field-service-mobile-guided-voice/",
   "pageviews": 10,
   "visits": 0
  },
  {
-  "page": "/leistungen/",
+  "page": "/masterclass/revenue-cloud/",
   "pageviews": 10,
   "visits": 0
  },
@@ -90,12 +95,7 @@
   "visits": 0
  },
  {
-  "page": "/homepage/blog/salesforce-field-service-mobile-guided-voice/",
-  "pageviews": 10,
-  "visits": 0
- },
- {
-  "page": "/homepage/blog/",
+  "page": "/fragen/",
   "pageviews": 10,
   "visits": 0
  }

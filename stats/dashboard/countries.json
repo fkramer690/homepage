@@ -1,12 +1,12 @@
 [
  {
   "country": "DE",
-  "pageviews": 460,
+  "pageviews": 500,
   "visits": 50
  },
  {
   "country": "US",
-  "pageviews": 10,
-  "visits": 10
+  "pageviews": 40,
+  "visits": 40
  }
 ]

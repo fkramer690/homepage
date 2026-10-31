@@ -1,23 +1,32 @@
 {
-  "generatedAt": "2026-10-30T11:23:10.824Z",
+  "generatedAt": "2026-10-31T04:48:03.651Z",
   "range": {
-    "start": "2026-09-30",
-    "end": "2026-10-30"
+    "start": "2026-10-01",
+    "end": "2026-10-31"
   },
   "browsers": [
     {
-      "count": 450,
+      "count": 500,
       "dimensions": {
         "userAgentBrowser": "Chrome"
       },
       "sum": {
-        "visits": 40
+        "visits": 50
+      }
+    },
+    {
+      "count": 20,
+      "dimensions": {
+        "userAgentBrowser": "Unknown"
+      },
+      "sum": {
+        "visits": 20
       }
     },
     {
       "count": 10,
       "dimensions": {
-        "userAgentBrowser": "Unknown"
+        "userAgentBrowser": "Firefox"
       },
       "sum": {
         "visits": 10
@@ -35,7 +44,7 @@
   ],
   "countries": [
     {
-      "count": 460,
+      "count": 500,
       "dimensions": {
         "countryName": "DE"
       },
@@ -44,12 +53,12 @@
       }
     },
     {
-      "count": 10,
+      "count": 40,
       "dimensions": {
         "countryName": "US"
       },
       "sum": {
-        "visits": 10
+        "visits": 40
       }
     }
   ],
@@ -100,34 +109,61 @@
       }
     },
     {
-      "count": 20,
+      "count": 70,
       "dimensions": {
         "date": "2026-10-30"
+      },
+      "sum": {
+        "visits": 20
+      }
+    },
+    {
+      "count": 20,
+      "dimensions": {
+        "date": "2026-10-31"
+      },
+      "sum": {
+        "visits": 20
+      }
+    }
+  ],
+  "devices": [
+    {
+      "count": 530,
+      "dimensions": {
+        "deviceType": "desktop"
+      },
+      "sum": {
+        "visits": 80
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "deviceType": "mobile"
       },
       "sum": {
         "visits": 10
       }
     }
   ],
-  "devices": [
-    {
-      "count": 470,
-      "dimensions": {
-        "deviceType": "desktop"
-      },
-      "sum": {
-        "visits": 60
-      }
-    }
-  ],
   "pages": [
     {
-      "count": 140,
+      "count": 160,
       "dimensions": {
         "requestPath": "/"
       },
       "sum": {
-        "visits": 30
+        "visits": 50
+      }
+    },
+    {
+      "count": 40,
+      "dimensions": {
+        "requestPath": "/en/"
+      },
+      "sum": {
+        "visits": 10
       }
     },
     {
@@ -158,12 +194,12 @@
       }
     },
     {
-      "count": 30,
+      "count": 20,
       "dimensions": {
-        "requestPath": "/en/"
+        "requestPath": "/en/blog/"
       },
       "sum": {
-        "visits": 10
+        "visits": 0
       }
     },
     {
@@ -205,7 +241,7 @@
     {
       "count": 10,
       "dimensions": {
-        "requestPath": "/fragen/"
+        "requestPath": "/masterclass/manufacturing-cloud/"
       },
       "sum": {
         "visits": 0
@@ -214,7 +250,7 @@
     {
       "count": 10,
       "dimensions": {
-        "requestPath": "/homepage/speaking/"
+        "requestPath": "/en/certifications/"
       },
       "sum": {
         "visits": 0
@@ -241,7 +277,7 @@
     {
       "count": 10,
       "dimensions": {
-        "requestPath": "/masterclass/manufacturing-cloud/"
+        "requestPath": "/homepage/speaking/"
       },
       "sum": {
         "visits": 0
@@ -259,7 +295,7 @@
     {
       "count": 10,
       "dimensions": {
-        "requestPath": "/masterclass/revenue-cloud/"
+        "requestPath": "/homepage/blog/salesforce-field-service-mobile-guided-voice/"
       },
       "sum": {
         "visits": 0
@@ -268,7 +304,7 @@
     {
       "count": 10,
       "dimensions": {
-        "requestPath": "/leistungen/"
+        "requestPath": "/masterclass/revenue-cloud/"
       },
       "sum": {
         "visits": 0
@@ -286,16 +322,7 @@
     {
       "count": 10,
       "dimensions": {
-        "requestPath": "/homepage/blog/salesforce-field-service-mobile-guided-voice/"
-      },
-      "sum": {
-        "visits": 0
-      }
-    },
-    {
-      "count": 10,
-      "dimensions": {
-        "requestPath": "/homepage/blog/"
+        "requestPath": "/fragen/"
       },
       "sum": {
         "visits": 0
@@ -304,12 +331,21 @@
   ],
   "referers": [
     {
-      "count": 350,
+      "count": 390,
       "dimensions": {
         "refererHost": "www.fk-sd.de"
       },
       "sum": {
         "visits": 0
+      }
+    },
+    {
+      "count": 80,
+      "dimensions": {
+        "refererHost": ""
+      },
+      "sum": {
+        "visits": 80
       }
     },
     {
@@ -319,15 +355,6 @@
       },
       "sum": {
         "visits": 0
-      }
-    },
-    {
-      "count": 50,
-      "dimensions": {
-        "refererHost": ""
-      },
-      "sum": {
-        "visits": 50
       }
     },
     {
