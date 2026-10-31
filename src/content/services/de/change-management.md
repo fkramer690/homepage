@@ -65,7 +65,7 @@ Ein Release ist technisch in Minuten ausgerollt. Danach entscheidet sich, ob jem
 pro: Was wir dagegen tun
 - Ein Einführungsplan je Release legt fest, wer wann davon erfährt.
 - Die erste Version deckt die häufigsten Fälle ab, Randfälle kommen später.
-- Ein Sponsor-Plan hält fest, was das Management wann sichtbar tut.
+- Neue Regeln kommen vom Management, nicht nur vom Projektteam.
 - Der alte Weg wird geschlossen, sobald der neue trägt.
 contra: Woran es scheitert
 - **Betroffene erfahren zu spät davon** und suchen sich einen Weg drumherum.
@@ -114,7 +114,7 @@ ohne: Einmal im Quartal ein großes Paket
 - Viel Neues auf einmal, hohes Risiko je Release.
 - Probleme aus dem Alltag landen in E-Mails.
 mit: Kleine Releases mit festem Weg
-- Fachbereiche wissen vor dem Release, was sich ändert.
+- Fachbereiche sehen Änderungen schon vor dem Release.
 - Öfter kleine Änderungen, weniger Risiko je Release.
 - Rückmeldungen kommen auf festem Weg in den Backlog.
 ```

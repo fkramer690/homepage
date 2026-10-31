@@ -81,9 +81,9 @@ ohne: Jedes Projekt modelliert anders
 - Jahre später traut niemand den Reports.
 - Agenten geben falsche Antworten.
 mit: Datenmodell als Teil der Architektur
-- Die Kernobjekte und ihre Beziehungen werden einmal entworfen.
+- Accounts, Produkte und Verträge werden einmal für alle Projekte entworfen.
 - Die Beziehungen zum ERP sind festgelegt.
-- Reporting, Automatisierung und KI-Anwendungsfälle bauen darauf auf.
+- Reports stimmen, und Agenten finden die richtigen Daten.
 ```
 
 ## Was liefere ich?
