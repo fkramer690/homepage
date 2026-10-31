@@ -14,7 +14,7 @@ const proofIcons = ['clock', 'building', 'interview', 'badge', 'unlinked'];
   {t.proof.map((p, i) => (
     <li>
       <span class="proof-top"><Icon name={proofIcons[i]} class="proof-icon" /><span class="proof-value">{p.value}</span></span>
-      <span class="proof-label mono">{p.label}</span>
+      <span class="proof-label">{p.label}</span>
     </li>
   ))}
 </ul>

@@ -30,6 +30,21 @@ violations.
 - **Below 960px** the side column disappears and the text uses the full width
   (max. `--measure`); phones look as before.
 
+## Type scale and mono (binding)
+
+Chosen 2026-10-31 (Fabian: "Skala + Mono reduzieren"). Part of the polished design pass.
+
+- **Seven font sizes, nothing in between**, as tokens in `src/styles/global.css`:
+  `--fs-xs` 12px, `--fs-sm` 14px, `--fs-ui` 15px, `--fs-base` 17px (running
+  text), `--fs-md` 19px (h3, card titles, lead), `--fs-lg` 26px, `--fs-xl` 36px.
+  h1/h2 and hero headlines stay fluid (`clamp`). Never write a new `rem`/`px`
+  font size outside these tokens. Content blocks (`.cb-*`) still carry their own
+  sizes; they move to the tokens in a later step.
+- **Mono (IBM Plex Mono) only for eyebrows and uppercase labels, numbers,
+  dates and step counters**, always at `--fs-xs`. Links ("Mehr erfahren"),
+  meta lines, captions, tags, filter texts, back links and proof bar labels are
+  set in Sora.
+
 ## Compact cross list in a white box ("Damit es für beide fair bleibt")
 
 Approved 2026-10-29 ("perfekt"), live on `/partner/recruiter/` and

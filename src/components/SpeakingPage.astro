@@ -83,14 +83,14 @@ const schema = {
   </Fragment>
   <section class="section blog speaking">
     <div class="container">
-      <a class="post-back mono" href={`${home}#about`}>← {c.back}</a>
+      <a class="post-back" href={`${home}#about`}>← {c.back}</a>
       <p class="eyebrow mono">{t.about.label}</p>
       <h1>{c.title}</h1>
       <div class="speaking-intro">
         <p class="service-lead">{c.lead}</p>
         <figure class="stage-photo">
           <Image src={speaking} alt={c.photoAlt} widths={[320, 614]} sizes="(max-width: 760px) 100vw, 320px" />
-          <figcaption class="mono">{c.photoCaption}</figcaption>
+          <figcaption>{c.photoCaption}</figcaption>
         </figure>
       </div>
 
@@ -110,7 +110,7 @@ const schema = {
             {talks.map((talk) => (
               <article class="mc-tab-panel sp-panel">
                 <h3>{talk.title}</h3>
-                {talk.coSpeaker && <p class="talk-with mono">{c.with} {talk.coSpeaker}</p>}
+                {talk.coSpeaker && <p class="talk-with">{c.with} {talk.coSpeaker}</p>}
                 <div class="sp-panel-grid">
                   <p class="sp-abstract">{talk.abstract[lang]}</p>
                   <div class="sp-panel-side">
@@ -159,7 +159,7 @@ const schema = {
           <p>{c.topicsText}</p>
           <ul class="sp-topics">{c.topics.map((topic, i) => <li><Icon name={topicIcons[i]} class="sp-topic-icon" /><span>{topic}</span></li>)}</ul>
           <p>{c.formatsText}</p>
-          <ul class="sp-formats">{c.formats.map((f) => <li class="mono">{f}</li>)}</ul>
+          <ul class="sp-formats">{c.formats.map((f) => <li>{f}</li>)}</ul>
         </section>
       </ReadingGrid>
     </div>

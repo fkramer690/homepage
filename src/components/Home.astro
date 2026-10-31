@@ -110,7 +110,7 @@ const serviceIcons = ['architecture', 'change', 'pipeline', 'integration', 'team
           <Image src={speaking} alt={t.role.photoAlt} widths={[400, 614]} sizes="(max-width: 760px) 100vw, 614px" />
           <div class="role-quote-text">
             <blockquote><p>{qOpen}{t.role.quote}{qClose}</p></blockquote>
-            <figcaption class="mono">Fabian Kramer · {t.role.photoCaption}</figcaption>
+            <figcaption>Fabian Kramer · {t.role.photoCaption}</figcaption>
           </div>
         </figure>
       </div>
@@ -128,7 +128,7 @@ const serviceIcons = ['architecture', 'change', 'pipeline', 'integration', 'team
                 <span class="card-top"><Icon name={serviceIcons[i]} class="card-icon" /><span class="card-index mono">{String(i + 1).padStart(2, '0')}</span></span>
                 <h3>{s.title}</h3>
                 <p>{s.text}</p>
-                {href && <span class="card-more mono">{t.services.more} →</span>}
+                {href && <span class="card-more">{t.services.more} →</span>}
               </>
             );
             return href ? <li class="card card-link"><a href={href}>{inner}</a></li> : <li class="card">{inner}</li>;
@@ -137,8 +137,8 @@ const serviceIcons = ['architecture', 'change', 'pipeline', 'integration', 'team
             <div class="card-wide-head">
               <h3>{t.services.moreTitle}</h3>
               <span class="card-wide-links">
-                <a class="card-more mono" href={servicesIndex(lang)}>{t.services.moreAll} →</a>
-                <a class="card-more mono" href={partnersHref(lang)}>{t.services.morePartners} →</a>
+                <a class="card-more" href={servicesIndex(lang)}>{t.services.moreAll} →</a>
+                <a class="card-more" href={partnersHref(lang)}>{t.services.morePartners} →</a>
               </span>
             </div>
             <ul class="more-rows">

@@ -117,10 +117,10 @@ const schema = {
   </Fragment>
   <article class="section post mc-chapter">
     <div class="container">
-      <a class="post-back mono" href={masterclassIndex(lang, course)}>← {m.back}</a>
+      <a class="post-back" href={masterclassIndex(lang, course)}>← {m.back}</a>
       <p class="eyebrow mono">{eyebrow}</p>
       <h1>{title}</h1>
-      <p class="post-meta mono">
+      <p class="post-meta">
         {site.person}
         {updatedDate && <> · {t.blog.updated} <time datetime={updatedDate.toISOString()}>{formatDate(updatedDate, lang)}</time></>}
         {' · '}{chapterReadingMinutes(chapter)} {t.blog.readingTime}

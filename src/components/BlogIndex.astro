@@ -74,7 +74,7 @@ const schema = {
       <div class="blog-layout">
         <aside class="blog-filter" aria-label={t.blog.filterLabel}>
           <details class="blog-filter-box" open>
-            <summary class="blog-filter-toggle mono"><Icon name="sliders" class="blog-filter-toggle-icon" />{t.blog.filterButton} <span class="blog-filter-active" data-active></span></summary>
+            <summary class="blog-filter-toggle"><Icon name="sliders" class="blog-filter-toggle-icon" />{t.blog.filterButton} <span class="blog-filter-active" data-active></span></summary>
             <p class="blog-filter-head mono">{t.blog.filterAuthor}</p>
             <ul class="blog-filter-list">
               <li><button type="button" class="filter-item" data-author="all" aria-pressed="true"><span class="filter-media filter-all"><Icon name="team" /></span><span class="filter-label">{t.blog.filterAuthorAll}</span><span class="filter-count">{posts.length}</span></button></li>
@@ -89,7 +89,7 @@ const schema = {
                 <li><button type="button" class="filter-item" data-topic={f.id} aria-pressed="false"><span class="filter-media"><Icon name={f.icon} /></span><span class="filter-label">{f.label}</span><span class="filter-count" data-count-topic={f.id}>{f.count}</span></button></li>
               ))}
             </ul>
-            <p class="blog-filter-result mono" aria-live="polite"><span data-result>{posts.length}</span> {t.blog.filterResult} <button type="button" class="blog-filter-reset mono" data-reset hidden>× {t.blog.filterReset}</button></p>
+            <p class="blog-filter-result" aria-live="polite"><span data-result>{posts.length}</span> {t.blog.filterResult} <button type="button" class="blog-filter-reset" data-reset hidden>× {t.blog.filterReset}</button></p>
           </details>
         </aside>
         <div class="blog-main">
@@ -99,8 +99,8 @@ const schema = {
               <input type="search" data-search-input placeholder={t.blog.searchPlaceholder} aria-label={t.blog.searchLabel} autocomplete="off" />
               <kbd class="mono">/</kbd>
             </label>
-            <p class="blog-search-popular"><span class="mono">{t.blog.searchPopular}:</span>{t.blog.searchPopularTerms.map((term) => <button type="button" class="blog-search-chip" data-search-term={term}>{term}</button>)}</p>
-            <p class="blog-search-status mono" aria-live="polite" data-search-status hidden><span><strong data-search-count></strong> {t.blog.searchHits} {lang === 'de' ? '„' : '“'}<span data-search-query></span>{lang === 'de' ? '“' : '”'}</span> <button type="button" class="blog-filter-reset mono" data-search-clear>× {t.blog.searchClear}</button></p>
+            <p class="blog-search-popular"><span>{t.blog.searchPopular}:</span>{t.blog.searchPopularTerms.map((term) => <button type="button" class="blog-search-chip" data-search-term={term}>{term}</button>)}</p>
+            <p class="blog-search-status" aria-live="polite" data-search-status hidden><span><strong data-search-count></strong> {t.blog.searchHits} {lang === 'de' ? '„' : '“'}<span data-search-query></span>{lang === 'de' ? '“' : '”'}</span> <button type="button" class="blog-filter-reset" data-search-clear>× {t.blog.searchClear}</button></p>
           </search>
         <ul class="post-grid">
           {posts.map((post, i) => (
@@ -110,7 +110,7 @@ const schema = {
                   <CardDrawing translationKey={post.data.translationKey} topic={post.data.topic} lang={lang} />
                 </span>
                 <span class="post-tile-body">
-                  <span class="post-meta mono">
+                  <span class="post-meta">
                     <time datetime={post.data.pubDate.toISOString()}>{formatDate(post.data.pubDate, lang)}</time>
                     {' · '}{readingMinutes(post)} {t.blog.readingTime}
                   </span>
