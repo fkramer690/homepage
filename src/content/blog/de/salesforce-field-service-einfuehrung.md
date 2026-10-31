@@ -10,11 +10,10 @@ categories: [field-service]
 series: { id: field-service, part: 7 }
 tags: [Field Service, Außendienst, Einführung, Betriebsrat, Datenschutz, Fertigung]
 takeaways:
-  - "Salesforce Field Service führe ich immer in Wellen ein, Region für Region oder Land für Land. Jede Welle bringt ihre eigenen Daten, Disponenten, Techniker und Partner mit."
-  - "Der Betriebsrat spielt bei zwei Themen eine Rolle: bei der Sichtbarkeit der Techniker untereinander, etwa bei Timesheets, und beim Standort der Techniker."
-  - "Beide Themen sollten proaktiv auf den Tisch, bevor die erste Welle startet, und nicht erst, wenn die App schon auf den Geräten ist."
-  - "Die Standortverfolgung der Field Service App lässt sich in Intervall und Genauigkeit einstellen und für einzelne Techniker ausschalten. Diese Einstellungen gehören in die Gespräche mit dem Betriebsrat."
-  - "Je Region und Land gelten andere Rahmenbedingungen. Wellen nach Ländern erlauben, die Konfiguration an die jeweiligen Regeln anzupassen."
+  - "Jede Welle bringt eigene Daten, Disponenten, Techniker und Partner mit. Die erste Welle ist der Test für alle weiteren."
+  - "Der Betriebsrat redet bei zwei Themen mit: was Techniker voneinander sehen, etwa in Timesheets, und wo sie sind. Beide gehören vor die erste Welle."
+  - "Die Standortverfolgung der App lässt sich in Intervall und Genauigkeit einstellen und pro Techniker abschalten. Das gehört in die Gespräche."
+  - "Je Land gelten andere Regeln. Wellen nach Ländern erlauben, die Konfiguration an die jeweiligen Regeln anzupassen."
 faq:
   - q: "Wie führt man Salesforce Field Service am besten ein?"
     a: "In Wellen, also Region für Region oder Land für Land. Jede Welle umfasst die Stammdaten, Servicegebiete, Disponenten, Techniker und Partner einer Region. Die erste Welle ist zugleich der Test für alle weiteren."
@@ -31,7 +30,7 @@ Salesforce Field Service führe ich immer in Wellen ein, Region für Region oder
 
 Dies ist der letzte Teil der Serie. Die Teile davor beschreiben, was in jeder Welle stehen muss: die Entscheidung in [Teil 1](../salesforce-field-service-lohnt-sich/), die Stammdaten in [Teil 2](../salesforce-field-service-stammdaten/), die Planung in [Teil 3](../salesforce-field-service-terminplanung-automatisieren/), die Ersatzteile in [Teil 4](../salesforce-field-service-ersatzteile-erp/), die Verträge in [Teil 5](../salesforce-field-service-wartungsvertraege/) und die Partner in [Teil 6](../salesforce-field-service-servicepartner/).
 
-## Warum in Wellen und nicht auf einen Schlag?
+## Die erste Welle ist der Test für alle weiteren
 
 Field Service verändert den Arbeitstag von Disponenten und Technikern. Ein Disponent, der seit Jahren mit einer Plantafel arbeitet, prüft plötzlich Vorschläge einer Engine. Ein Techniker, der Berichte auf Papier geschrieben hat, dokumentiert in einer App. Das gelingt nicht für alle gleichzeitig.
 
@@ -60,7 +59,7 @@ Field Service sammelt Daten über Mitarbeitende. Zwei Themen haben in meinen Pro
 
 **Standort.** Die mobile App kann laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?language=en_US&id=service.mfs_resource_tracking.htm&type=5) den Standort der Techniker regelmäßig an Salesforce übertragen. Er landet im Feld Last Known Location an der Service Resource, und auf Wunsch lässt sich eine Historie mitschreiben. Für die Planung ist das nützlich, weil die Engine weiß, wo ein Techniker gerade ist. Für den Betriebsrat ist es ein Werkzeug, das Verhalten und Leistung sichtbar machen kann.
 
-Die gute Nachricht: Die Technik lässt sich einstellen. Darüber würde ich mit dem Betriebsrat konkret sprechen:
+Die Technik lässt sich einstellen. Darüber würde ich mit dem Betriebsrat konkret sprechen:
 
 | Einstellung | Spielraum |
 |---|---|
@@ -95,8 +94,6 @@ Jede Welle braucht Zahlen von vorher und nachher. Ich würde die nehmen, die in 
 
 Bessern sich die Zahlen in der ersten Welle nicht, liegt es meiner Einschätzung nach selten am Produkt. Meist fehlen Daten, oder die Planung wird noch nebenher gemacht. Welche Zahlen Sie beobachten sollten, steht in [Field Service Kennzahlen nach dem Go-live](../field-service-kennzahlen-operations-home/).
 
-## Wo sollten Sie anfangen?
+## Erster Schritt: eine Region mit sauberen Daten für die erste Welle
 
 Wählen Sie für die erste Welle eine Region mit sauberen Daten, einem offenen Serviceleiter und überschaubarer Größe. Nehmen Sie den Betriebsrat in die Planung dieser Welle auf, nicht erst in ihre Abnahme. Und prüfen Sie vor jeder weiteren Welle die Rahmenbedingungen des Landes, bevor Sie Termine zusagen.
-
-Damit endet die Serie.

@@ -9,11 +9,11 @@ topic: commerce
 categories: [b2b-commerce]
 tags: [B2B Commerce, Business Case, Ersatzteile, Innendienst, GMV, Make-or-Buy]
 takeaways:
-  - "Ein Business Case für einen B2B-Shop auf Salesforce stellt GMV-Gebühr, Käuferlizenzen, Umsetzung und Betrieb der eingesparten Innendienstzeit, weniger Erfassungsfehlern und zusätzlichem Umsatz gegenüber."
-  - "Die GMV-Gebühr wächst mit dem Wert jeder Bestellposition, die Zeitersparnis mit der Zahl der Positionen. Bei teuren Teilen frisst die Gebühr einen Großteil der Ersparnis pro Position."
-  - "In einem typischen Szenario mit 40.000 Positionen, je 4 Minuten Erfassung und einer angenommenen GMV-Gebühr von 2 Prozent decken Zeit- und Fehlerersparnis nur rund 37 Prozent der Dreijahreskosten."
-  - "Ein Shop rechnet sich meist über zusätzlichen Umsatz: Bestellungen nach Feierabend, Händler, die vorher woanders bestellt haben, weniger verlorene Aufträge. Diese Zahl braucht die strengste Prüfung."
-  - "Herstellerstudien wie die von Salesforce beauftragte Forrester-TEI-Studie beruhen auf einem zusammengesetzten Unternehmen. Sie zeigen Hebel, nicht das Ergebnis Ihres Shops."
+  - "Die meisten Schätzungen vergessen mindestens zwei von fünf Kostenposten. Die GMV-Gebühr steigt genau dann, wenn der Shop Erfolg hat."
+  - "Die GMV-Gebühr wächst mit dem Wert jeder Position, die Zeitersparnis mit der Zahl der Positionen. Bei teuren Teilen frisst die Gebühr den Großteil."
+  - "Im Rechenbeispiel mit 40.000 Positionen und 2 Prozent GMV-Gebühr decken Zeit- und Fehlerersparnis nur rund 37 Prozent der Dreijahreskosten."
+  - "Ein Shop rechnet sich meist über zusätzlichen Umsatz, etwa Bestellungen nach Feierabend. Diese Zahl braucht die strengste Prüfung."
+  - "Die von Salesforce beauftragte Forrester-TEI-Studie beruht auf einem zusammengesetzten Unternehmen. Sie zeigt Hebel, nicht das Ergebnis Ihres Shops."
 faq:
   - q: "Wie rechne ich den Business Case für einen B2B-Webshop?"
     a: "Rechnen Sie drei Jahre. Kosten sind GMV-Gebühr, Käuferlizenzen, Umsetzung, ERP-Anbindung und Betrieb. Nutzen sind Innendienstzeit pro Bestellposition, vermiedene Erfassungsfehler, weniger Statusanrufe und zusätzlicher Umsatz. Lassen Sie den digitalen Anteil Jahr für Jahr steigen, denn die Gebühr steigt mit."
@@ -26,9 +26,9 @@ faq:
 draft: false
 ---
 
-Ein Hersteller rechnet einen B2B-Shop auf Salesforce über drei Jahre: GMV-Gebühr, Käuferlizenzen, Umsetzung, ERP-Anbindung und Betrieb auf der einen Seite, eingesparte Innendienstzeit, weniger Erfassungsfehler und zusätzlicher Umsatz auf der anderen. Wichtig ist, dass die GMV-Gebühr mit dem Umsatz des Shops wächst, die Kosten steigen also genau dann, wenn der Shop Erfolg hat. In einem typischen Szenario, das ich unten durchrechne, decken Zeit- und Fehlerersparnis allein nur rund ein Drittel der Kosten. Ein Shop rechnet sich meist über zusätzlichen Umsatz und über Innendienstkapazität, die Sie tatsächlich anders einsetzen. Beides braucht ehrliche Zahlen, keine Durchschnittswerte von Herstellern.
+Ein Hersteller rechnet einen B2B-Shop auf Salesforce über drei Jahre: GMV-Gebühr, Käuferlizenzen, Umsetzung, ERP-Anbindung und Betrieb auf der einen Seite, eingesparte Innendienstzeit, weniger Erfassungsfehler und zusätzlicher Umsatz auf der anderen. Wichtig ist, dass die GMV-Gebühr mit dem Umsatz des Shops wächst, die Kosten steigen also genau dann, wenn der Shop Erfolg hat. Im Rechenbeispiel unten decken Zeit- und Fehlerersparnis allein nur rund ein Drittel der Kosten. Ein Shop rechnet sich meist über zusätzlichen Umsatz und über Innendienstkapazität, die Sie tatsächlich anders einsetzen. Beides braucht ehrliche Zahlen, keine Durchschnittswerte von Herstellern.
 
-## Was gehört auf die Kostenseite?
+## Fünf Kostenposten, von denen meist zwei fehlen
 
 Fünf Posten, und die meisten Schätzungen vergessen mindestens zwei:
 
@@ -49,9 +49,9 @@ Vier Posten, in der Reihenfolge, in der ich ihnen traue:
 
 Eine Regel für Posten 1: Eingesparte Zeit ist erst dann Geld, wenn Sie sie nutzen. Behält der Innendienst dieselbe Besetzung und dieselbe Arbeit, bleibt die Ersparnis auf dem Papier. Legen Sie vorher fest, was mit der frei werdenden Kapazität passiert, zum Beispiel aktive Anrufe bei Händlern, die weniger bestellen als im Vorjahr.
 
-## Ein typisches Szenario, als Annahme
+## Rechenbeispiel: Ersatzteilshop für 250 Händler
 
-Ein typisches Szenario, als Annahme: Ein Hersteller von Förderanlagen verkauft Ersatzteile über 250 Händler. Die Zahlen:
+Angenommen, ein Hersteller von Förderanlagen verkauft Ersatzteile über 250 Händler. Die Zahlen:
 
 - 40.000 Ersatzteil-Bestellpositionen im Jahr, durchschnittlich 150 Euro pro Position, also 6 Millionen Euro netto.
 - Der Innendienst braucht 4 Minuten pro Position bei Vollkosten von 55 Euro pro Stunde: rund 3,67 Euro pro Position.
@@ -84,7 +84,7 @@ Dahinter stecken zwei Effekte. Erstens skaliert die Gebühr mit dem Wert einer P
 
 Deshalb rechne ich immer drei Jahre mit steigendem Anteil. Eine Einjahresbetrachtung verdeckt, dass die Gebühr steigt, während die Umsetzung schon bezahlt ist.
 
-## Was ist mit der Forrester-Studie?
+## Die Forrester-Studie zeigt Hebel, kein Ergebnis
 
 Salesforce wirbt mit einer [Total-Economic-Impact-Studie von Forrester Consulting](https://tei.forrester.com/go/salesforce/b2bcommerce2024), beauftragt von Salesforce und veröffentlicht im April 2024. Ihre Kernzahlen:
 
@@ -97,10 +97,8 @@ quelle: Forrester Consulting, Total-Economic-Impact-Studie zu Salesforce B2B Com
 
 Die vier Interviews sind zu einem fiktiven Hersteller mit 1 Milliarde Dollar Umsatz zusammengefasst. Forrester selbst empfiehlt, mit eigenen Schätzungen zu rechnen.
 
-Ich lese solche Studien als Liste von Hebeln: Welchen Nutzen haben diese Kunden gesehen, welche Kosten haben sie genannt. Die Zahlen lassen sich nicht auf einen Hersteller mit 250 Händlern und 6 Millionen Euro Ersatzteilumsatz übertragen. Ihre eigene Stoppuhr im Innendienst ist mehr wert als jedes zusammengesetzte Unternehmen.
+Ich lese solche Studien als Liste von Hebeln: Welchen Nutzen haben diese Kunden gesehen, welche Kosten haben sie genannt. Die Zahlen lassen sich nicht auf einen Hersteller mit 250 Händlern und 6 Millionen Euro Ersatzteilumsatz übertragen. Ihre eigene Stoppuhr im Innendienst sagt Ihnen mehr als ein zusammengesetztes Unternehmen.
 
-## Wo starten Sie?
+## Erster Schritt: vier Zahlen aus den letzten zwölf Monaten
 
 Erheben Sie vier Zahlen aus den letzten zwölf Monaten: Bestellpositionen je Kanal, Durchschnittswert pro Position, Minuten pro manuell erfasster Position und Kosten von Erfassungsfehlern. Bauen Sie dann das Dreijahresmodell mit dem GMV-Satz als Variable bei 1, 2 und 3 Prozent. Ob überhaupt ein Store oder ein Portal passt, steht in [B2B Commerce oder Händlerportal: Wann lohnt ein Shop?](../b2b-commerce-oder-haendlerportal/), und welche Zahlen Sie nach dem Start messen, in [B2B-Shop Kennzahlen: Was nach dem Go-live zählt](../b2b-shop-kennzahlen-nach-go-live/). Die Gesamtentscheidung behandelt das [Masterclass-Kapitel zur Frage, ob sich B2B Commerce lohnt](../../masterclass/b2b-commerce/b2b-commerce-lohnt-sich-ueberblick/), und eine unabhängige Prüfung der Zahlen gehört zu meiner Arbeit bei [Make-or-Buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/).
-
-Ein B2B-Shop lohnt sich, wenn zusätzlicher Umsatz und neu eingesetzte Kapazität eine Gebühr übertreffen, die mit jeder Bestellung wächst.

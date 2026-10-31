@@ -9,11 +9,11 @@ topic: field-service
 categories: [field-service]
 tags: [field service, mobile, offline, briefcase builder, manufacturing]
 takeaways:
-  - "Briefcase Builder decides which records each group of technicians downloads. Performance priming syncs the most critical changes every five minutes and holds more records than standard priming."
-  - "Salesforce documents known offline gaps: tasks in a briefcase are not primed, global quick actions get no record ID, and on iOS changed Lightning web components load only after a full restart."
-  - "A community licence user can get a missing record error when opening a service appointment, so every offline test needs at least one partner technician's user."
-  - "For a machine builder the device needs the appointment, work order, asset with its history, van stock and the right manual. Price lists and every asset of a territory stay online."
-  - "Salesforce publishes no fixed number of records a device can hold offline, so size the briefcase with real technician profiles and measure the sync."
+  - "Briefcase Builder decides what each technician group downloads. Performance priming syncs the most critical changes every five minutes."
+  - "Salesforce documents gaps: tasks in a briefcase are not primed, and global quick actions get no record ID offline."
+  - "Community licence users can get an error when opening an appointment, so every offline test needs a partner technician's user."
+  - "The device holds appointment, work order, asset with history, van stock and manual. Price lists and every asset of a territory stay online."
+  - "Salesforce gives no upper limit for records offline. Cut the briefcase by role and measure the sync."
 faq:
   - q: "Does the Salesforce Field Service mobile app work offline?"
     a: "Yes. According to Trailhead the app has basic offline support out of the box. With Briefcase Builder an admin defines which records each group of workers downloads, and changes made offline are synced back when the device has a connection again."
@@ -78,13 +78,13 @@ The [considerations for LWC Offline in the Field Service mobile app](https://dev
 Point 5 also matters for every release of your own components. Who tells 50 technicians to close the app completely after a deployment? This belongs in the release plan, together with the app versions Salesforce ships. I cover the routine for that in [Field Service app updates: how to test each release](../field-service-mobile-app-updates-testing/).
 ```
 
-## Why should partner technicians test offline separately?
+## Partner technicians test offline separately
 
 Many manufacturers bring subcontractors into the same app. Partner technicians then work as community users with Field Service permissions, as described in [Field Service: how to bring in service partners](../salesforce-field-service-service-partners/). Point 3 of the list above hits exactly these users.
 
 Partners also have different sharing. They see only their own territory and their own appointments. A briefcase that works for internal technicians can therefore deliver fewer records to a partner, or none of the related ones. My advice: give partners a briefcase of their own and test it with a real partner user, never with an admin who switches profiles.
 
-## A typical scenario, as an assumption: a day without network
+## Worked example: a day without network
 
 A machine builder sends a technician to a customer's production hall. The compressors stand in a basement, there is no mobile network from 7:00 to 16:00, and the customer's guest Wi-Fi does not reach down there.
 
@@ -97,7 +97,7 @@ The scenario shows what offline really means for planning. The device works, but
 
 The service report in this scenario comes from Document Builder. Custom components in its template have to read their data offline as well. How that works is shown in [Document Builder: five limits and workarounds](../salesforce-document-builder-limits-workarounds/).
 
-## Where should you start?
+## First step: cut one briefcase per role
 
 ```schritte
 Map roles to briefcases
@@ -113,5 +113,3 @@ Measure the sync
 ```
 
 Offline design decides whether forms and documents work later. The next step is the form itself, covered in [Field Service Data Capture: inspection forms without paper](../field-service-data-capture-inspection-forms/), and the whole topic is part of [chapter 3 of the Field Service masterclass](../../masterclass/field-service/field-service-mobile-app-documents/).
-
-Put on the device what the technician needs for today, test the known gaps with a partner user, and the app holds up in the basement.

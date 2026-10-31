@@ -9,10 +9,10 @@ topic: commerce
 categories: [b2b-commerce, revenue-cloud]
 tags: [B2B Commerce, Request for Quote, quotes, Revenue Cloud, sales desk]
 takeaways:
-  - "Request for Quote in Salesforce B2B Commerce lets signed-in buyers send their cart or a single product as a quote request; Salesforce calls it generally available."
-  - "Quotes are reviewed in Sales Cloud or Agentforce Revenue Management. Salesforce Help lists Advanced Pricing powered by Revenue Cloud as a requirement for the feature."
+  - "Signed-in buyers send their cart or a single product as a quote request. Salesforce calls the feature generally available."
+  - "The sales desk reviews quotes in Sales Cloud or Revenue Management. Salesforce Help lists Advanced Pricing powered by Revenue Cloud as a requirement."
   - "Quote to Cart and round-trip quoting, announced in June 2026, send the negotiated quote back to the buyer as a cart to check out."
-  - "The Apex class ConnectApi.CommerceQuotes lists quotes, reads details, creates a quote from a product page and lets the buyer renegotiate or decline an approved quote."
+  - "ConnectApi.CommerceQuotes lists quotes, creates one from a product page and lets the buyer renegotiate or decline an approved quote."
   - "The feature only works if the sales desk answers quote requests within a fixed time; otherwise buyers go back to email and phone."
 faq:
   - q: "What is Request for Quote in Salesforce B2B Commerce?"
@@ -53,7 +53,7 @@ Order | Buyer
 
 On step 4, the June 2026 post says: "once a quote is negotiated and approved, sellers can share it with customers as a cart". Salesforce calls this round-trip quoting. The June post presents Quote to Cart and round-trip quoting as part of a release labelled "GA June 2026", but it gives the explicit status "generally available" only for RFQ. Before you plan step 4 into a rollout, check in your org which of these parts are active.
 
-## What do the CommerceQuotes APIs do?
+## The CommerceQuotes APIs for custom components
 
 If you build your own components or a headless frontend, the Apex class [ConnectApi.CommerceQuotes](https://developer.salesforce.com/docs/atlas.en-us.264.0.apexref.meta/apexref/apex_ConnectAPI_CommerceQuotes_static_methods.htm) is the interface. It has four methods:
 
@@ -89,18 +89,16 @@ Before go-live I would settle these points in writing:
 
 Large dealers also ask through sales reps and partner portals. If AI builds quotes there too, the same desk and the same price rules should serve both channels, as I describe for the [AI Partner Sales Assistant](../ai-partner-sales-assistant-dealer-quotes/).
 
-## A typical scenario, as an assumption
+## Worked example: 400 system integrators
 
-A typical scenario, as an assumption: a manufacturer of conveyor components sells to 400 system integrators. Most orders are reorders at tier prices, but about one order in ten is project business with larger quantities and a target price. Inside sales gets these requests by email today and answers within an average of four days.
+Assume a manufacturer of conveyor components sells to 400 system integrators. Most orders are reorders at tier prices, but about one order in ten is project business with larger quantities and a target price. Inside sales gets these requests by email today and answers within an average of four days.
 
 With RFQ, the integrator puts the parts list into the cart and requests a quote with the project name in the comment. The quote lands in a queue per country, the desk prices it with the Revenue Cloud procedure that sales already uses for machine quotes, and approves it. The integrator gets the quote in My Quotes, asks for one change through Renegotiate, receives the revised quote and checks out the cart that Quote to Cart creates. The order reaches SAP with the negotiated prices and the quote number as reference.
 
 The numbers are invented to show the method. What I would measure in the first three months: share of quote requests through the store instead of email, response time, and share of approved quotes that become orders.
 
-## Where should you start?
+## First step: set response time and price authority for the sales desk
 
 Start with the sales desk, not the component. Write down the response time, the queue owners and the price authority, and test the round trip with one buyer group that already sends many quote requests. Then check the licence question for your product types with Salesforce, because Help and the Apex reference read differently.
 
 The chapter [prices, cart and checkout](../../masterclass/b2b-commerce/prices-cart-checkout/) of the [B2B Commerce masterclass](../../masterclass/b2b-commerce/) shows how RFQ fits next to customer prices, checkout and reorders. How a quote in Revenue Cloud continues to contract and order is covered in the chapter [quote, contract, order](../../masterclass/revenue-cloud/quote-contract-order/) of the Revenue Cloud masterclass. Where RFQ touches several partners and teams, steering it is part of my work on [partner governance](../../services/partner-governance/).
-
-Request for Quote moves quote requests from email into the store, provided someone answers them on time.

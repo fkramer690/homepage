@@ -9,10 +9,9 @@ topic: field-service
 categories: [field-service, manufacturing-cloud]
 tags: [agentforce, spare parts, field service, PLM, installed base, dealer portal]
 takeaways:
-  - "An agent can find the right spare part for a serial number only if one of your systems already answers that question by rule: which parts are built into this machine today."
-  - "The data comes from three places: the as-built parts list from PLM, material, availability and price from the ERP, and the installed base with service history from Salesforce assets."
-  - "Siemens announced in September 2026 that Teamcenter “will work with” Agentforce for parts by serial number; the live, quantified part of that release concerns inbound leads."
-  - "Keep the full parts list in PLM and call it live through an API; Salesforce holds the machine and its main assemblies, and the agent writes its proposal to the work order."
+  - "The data comes from PLM (as-built parts list), the ERP (material, availability, price) and Salesforce (installed base, service history)."
+  - "Siemens announced in September 2026 that Teamcenter “will work with” Agentforce. The live, quantified part of that release concerns inbound leads."
+  - "The full parts list stays in PLM and is called through an API. Salesforce holds machine and main assemblies; the proposal goes to the work order."
   - "Dealers may only query serial numbers registered to their own account, taken from the asset record and never typed into the chat."
 faq:
   - q: "Can Agentforce identify spare parts by serial number?"
@@ -53,7 +52,7 @@ On the Salesforce side, [Trailhead](https://trailhead.salesforce.com/content/lea
 
 The row I would check first is the third. The as-built list shows the machine on the day it left the plant. Five years later two pumps have been replaced and a dealer has fitted a retrofit kit. If those changes live only in paper reports, PLM and Salesforce both describe a machine that no longer exists. The as-maintained state comes from consumed parts on completed work orders, which is one more reason to record them in the app, as described in [spare parts between ERP and Field Service](../salesforce-field-service-spare-parts-erp/).
 
-## Copy the parts list into Salesforce or call PLM live?
+## The parts list stays in PLM and is called live
 
 **Full copy.** Every as-built position becomes a child asset. Everything is available offline. The price is volume: every position of every machine is a record to load, keep in step with PLM and partly carry onto the mobile device.
 
@@ -96,7 +95,7 @@ The technician is the easier start: internal user, known machine, work order as 
 
 Which portal licence lets dealers see assets at all is covered in [the Manufacturing Cloud customer portal](../manufacturing-cloud-customer-portal/).
 
-## A typical scenario: 6,000 machines and one seal
+## Worked example: 6,000 machines and one seal
 
 Assume a machine builder with 6,000 installed machines, 40 technicians, 150 dealers, SAP and a PLM with as-built lists per serial number for machines delivered since 2016. All numbers here are assumptions.
 
@@ -106,7 +105,7 @@ Assume 1,500 parts questions a month, each with three actions: find the asset, g
 
 In the scenario, a pilot with ten technicians brings two findings. For machines delivered before 2016, PLM has only the type BOM, so the agent can name candidates but cannot confirm the variant; it has to say that, and the parts desk decides. And on 9 percent of the machines checked, consumed parts show an assembly replaced by a successor that the asset hierarchy does not reflect. Both are data problems. The decision in the scenario: technicians only, machines from 2016 onwards, and a monthly job that updates main assemblies from consumed parts.
 
-## Where should you start?
+## First step: check 20 spare part orders by hand
 
 ```schritte
 Test by hand first
@@ -119,6 +118,4 @@ Start with technicians
   Then open it to dealers with the portal rules above.
 ```
 
-Which system leads for which data is the subject of [Salesforce integration](../../services/salesforce-integration/); the wider agent picture is in the masterclass chapter [AI agents in manufacturing](../../masterclass/ai-salesforce/ai-agents-in-manufacturing/).
-
-An agent finds the right spare part only as reliably as your serial numbers lead to an as-built list.
+Which system leads for which data is the subject of [Salesforce integration](../../services/salesforce-integration/). The wider agent picture is in the masterclass chapter [AI agents in manufacturing](../../masterclass/ai-salesforce/ai-agents-in-manufacturing/).

@@ -11,7 +11,7 @@ tags: [B2B Commerce, Merchandising Agent, Agentforce, search, spare parts, catal
 takeaways:
   - "Both B2B Commerce editions, Growth and Advanced, list Merchant Agent under Agentforce on the Salesforce pricing page; no separate price is published."
   - "The Merchandising Agent for B2B is dated August 2026 and boosts or buries products in search, creates new products and manages buyer accounts in conversation."
-  - "Agentforce Skills for Merchandising summarise AOV and conversion rate for a store and draft promotions from predefined templates, which a person reviews before use."
+  - "The merchandising skills summarise AOV and conversion rate for a store and draft promotions from templates, which a person reviews before use."
   - "The agent needs generative AI, Agentforce and Data 360 activated; a store allows at most 100 boost and bury rules, whether a person or an agent writes them."
   - "Material numbers, units and sales status stay in the ERP or PIM; let the agent change search ranking and campaigns, not product master data."
 faq:
@@ -52,7 +52,7 @@ A parts catalogue is a store where search decides almost everything. Dealers typ
 
 **Buyer accounts.** The agent can manage buyer accounts. For a manufacturer that means requests like "add the new branch of dealer X as a buyer account". Which buyer group the account lands in decides what it sees and what it pays, so I would treat this skill with the most care. How buyer groups and entitlements are structured is the topic of the chapter [Catalogue, search, entitlements](../../masterclass/b2b-commerce/catalog-search-entitlements/).
 
-## What do KPI summaries and promotions add?
+## Summarise KPIs, draft promotions
 
 According to Trailhead, Agentforce Skills for Merchandising retrieve and summarise average order value (AOV) and conversion rate for a store and name derived insights such as the weakest category. Trailhead's example is a B2B store. The skills also suggest promotions by matching predefined promotion templates in Salesforce Commerce and generate the text, terms and configuration.
 
@@ -60,7 +60,7 @@ Trailhead calls this "semiautonomous": you review the promotion details and make
 
 Two KPIs matter more in parts stores than AOV: zero result searches and the share of order lines through the store. Search analytics through Data Cloud, which the July post lists, shows zero result searches. Whether the agent can summarise those as well is not documented on the pages I read.
 
-## What does the agent need before it works?
+## Generative AI, Agentforce and Data 360 come first
 
 Trailhead lists the prerequisites: Salesforce generative AI, Agentforce, bots and Data 360 activated for the store. Setup runs in the Commerce app with guided steps, and the topics and actions come preconfigured for Commerce. For licensing, Trailhead points to the Salesforce Help article on enabling Agentforce Skills for Merchandising.
 
@@ -93,13 +93,13 @@ My rule for a parts store:
 
 Every agent change should be traceable: who asked, what changed, who released it. Which logs Salesforce offers for this is covered in [Audit trail for AI agents in Salesforce: which logs?](../audit-trail-ai-agents-salesforce/).
 
-## What could this look like in practice?
+## Worked example: 60,000 spare parts for 300 dealers
 
-A typical scenario, as an assumption: a manufacturer of compressors runs a B2B store with 60,000 spare parts for 300 dealers. Every quarter, engineering supersedes a few hundred part numbers. Today one merchandiser maintains search rules by hand and is two months behind.
+Assume a manufacturer of compressors runs a B2B store with 60,000 spare parts for 300 dealers. Every quarter, engineering supersedes a few hundred part numbers. Today one merchandiser maintains search rules by hand and is two months behind.
 
 With the agent, the merchandiser asks after each ERP update: "bury every part whose sales status is superseded and boost its successor". The agent proposes the rules, the merchandiser checks a sample and releases them. Once a month the merchandiser asks for the zero result searches of the last month and passes missing old numbers to the PIM team as synonyms or attributes. The search side of this is covered in [B2B Commerce search: finding parts by part number](../b2b-commerce-search-part-numbers/).
 
-## Where should you start?
+## First step: clarify the licence and included skills
 
 1. **Clarify the licence.** Ask which skills the included Merchant Agent covers and how usage is counted.
 2. **Fix the data first.** A clean sales status and successor part in the ERP are what make good boost and bury requests possible.
@@ -108,5 +108,3 @@ With the agent, the merchandiser asks after each ERP update: "bury every part wh
 5. **Watch the limits.** 100 boost and bury rules per store, with a monthly cleanup.
 
 The chapter [Agents, migration, rollout](../../masterclass/b2b-commerce/agentforce-migration-rollout/) of the [B2B Commerce masterclass](../../masterclass/b2b-commerce/) places the Merchandising Agent next to the Buyer Agent and the rollout. For the question of who owns which data between ERP, PIM and Salesforce, see [Salesforce architecture](../../services/salesforce-architecture/).
-
-The Merchandising Agent saves clicks in search and campaigns, as long as product master data stays where it is maintained today.

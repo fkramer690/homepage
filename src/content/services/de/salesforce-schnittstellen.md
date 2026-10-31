@@ -13,16 +13,14 @@ situations:
   - "Das Contact Center nutzt eine Telefonieplattform ohne Anbindung an die Service Cloud, und Agenten kopieren Daten zwischen Bildschirmen."
   - "Schnittstellen melden sich noch mit Benutzername und Passwort an, und niemand hat den Umstieg auf moderne Authentifizierung geplant."
 deliverables:
-  - "Integrationsarchitektur: Systeme, Datenflüsse, führendes System pro Objekt und Integrationsmuster"
-  - "Entscheidung für Middleware oder direkte Anbindung, abhängig von Größe und Zahl der Systeme"
-  - "Schnittstellenspezifikationen, nach denen Umsetzungspartner bauen können"
-  - "Konzept für die Telefonie-Anbindung an die Service Cloud, zum Beispiel Genesys, Mirage oder Microsoft Teams"
-  - "Sicherheitsprüfung von Integrationsbenutzern, Berechtigungen und Authentifizierung"
-  - "Auswahl und Steuerung spezialisierter Integrationspartner"
+  - "Ich nehme auf, welche Systeme es gibt, welche Daten sie halten und wo bestehende Schnittstellen Probleme machen."
+  - "Ich entscheide mit Ihnen, ob eine Middleware nötig ist oder eine direkte Anbindung reicht."
+  - "Ich hole einen spezialisierten Integrationspartner dazu, wenn Sie keinen haben, und prüfe sein Design, bevor gebaut wird."
+  - "In der Umsetzung prüfe ich Fehlerbehandlung, Monitoring und End-to-End-Tests gegen die echten Prozesse."
 results:
-  - "Ein klar führendes System für jede Art von Daten"
-  - "Schnittstellen, die sich ändern lassen, ohne andere Systeme zu brechen"
-  - "Agenten, die Kundendaten sehen, sobald das Telefon klingelt"
+  - "Eine Systemlandkarte mit dem führenden System für jede Art von Daten"
+  - "Schnittstellenspezifikationen, nach denen Umsetzungspartner bauen können"
+  - "Ein Konzept für die Telefonie-Anbindung an die Service Cloud, zum Beispiel mit Genesys, Mirage oder Microsoft Teams"
   - "Integrationsbenutzer mit minimalen Rechten und moderner Authentifizierung"
 phases:
   - title: "Systemlandkarte"
@@ -51,12 +49,7 @@ Salesforce-Integration heißt, Salesforce mit den Systemen zu verbinden, die das
 
 ## Welches System führt für welche Daten?
 
-Die meisten Integrationsprobleme beginnen mit einer unklaren Antwort auf diese Frage. Können sowohl Salesforce als auch das ERP eine Kundenadresse oder einen Preis ändern, sind sich die beiden Systeme früher oder später uneinig. Der erste Schritt ist deshalb eine Systemlandkarte mit einem führenden System für jede Art von Daten:
-
-- **Kunden und Kontakte:** oft Salesforce für Interessenten und Kontakte, das ERP für Kunden mit Aufträgen und Rechnungen.
-- **Produkte und Preise:** meist das ERP, Salesforce liest, was der Vertrieb braucht.
-- **Aufträge und Rechnungen:** im ERP angelegt oder bestätigt und in Salesforce sichtbar.
-- **Fälle und Servicehistorie:** Salesforce, mit Verweisen auf Aufträge und installierte Produkte aus dem ERP.
+Die meisten Integrationsprobleme beginnen mit einer unklaren Antwort auf diese Frage. Können sowohl Salesforce als auch das ERP eine Kundenadresse oder einen Preis ändern, sind sich die beiden Systeme früher oder später uneinig. Der erste Schritt ist deshalb eine Systemlandkarte mit einem führenden System für jede Art von Daten. Eine typische Aufteilung sieht so aus:
 
 ```tabelle
 titel: Systemlandkarte: welches System bei welchen Daten führt
@@ -66,7 +59,7 @@ Produkte und Preise | Liest, was der Vertrieb braucht | Meist das führende Syst
 Aufträge und Rechnungen | Sichtbar für Vertrieb und Service | Hier angelegt oder bestätigt *
 Fälle und Servicehistorie | Fälle und Servicehistorie * | Aufträge und installierte Produkte als Verweis
 marke: führt
-fazit: Typische Aufteilung. Die Details unterscheiden sich in jedem Unternehmen, deshalb gehört die Landkarte zur Architektur.
+fazit: Ändern darf jeweils nur das führende System, das andere liest oder verweist.
 ```
 Die Details unterscheiden sich in jedem Unternehmen. Deshalb gehört diese Landkarte zur [Salesforce-Architektur](../salesforce-architektur/) und wird nicht der einzelnen Schnittstelle überlassen.
 
@@ -86,7 +79,7 @@ contra: Wann sie sich nicht lohnt
 
 Für die Umsetzung arbeite ich mit ausgewählten Partnern, die Integrationserfahrung aus großen internationalen Programmen haben. So bekommt der Kunde einen Partner, der zur Größe der Aufgabe passt, während Architektur und Spezifikationen auf Kundenseite bleiben.
 
-## Wie passt Telefonie in die Service Cloud?
+## Beim Klingeln sieht der Agent den Kunden in der Service Cloud
 
 In den meisten Serviceorganisationen sind Telefon und E-Mail noch die wichtigsten Kanäle. Eine CTI-Integration bringt Anrufe in die Service Cloud, sodass Agenten beim Klingeln den Kunden, die installierten Produkte und die offenen Fälle sehen.
 
@@ -102,7 +95,7 @@ Service Cloud --> Offene Fälle
 
 Ich habe mit den CTI-Anbietern Genesys und Mirage gearbeitet, und Microsoft Teams wird als Telefonieplattform wichtiger, weil viele Unternehmen es intern schon nutzen.
 
-## Und die Sicherheit?
+## Integrationsbenutzer brauchen weniger Rechte und eine neue Anmeldung
 
 Jede Schnittstelle hat einen technischen Benutzer, und diese Benutzer haben oft mehr Rechte als nötig. Auch die Authentifizierung ändert sich: Schnittstellen, die sich mit Benutzername und Passwort anmelden, müssen auf moderne Verfahren umsteigen, wie in [Salesforce-Passwort-Integrationen enden 2027](../../blog/salesforce-passwort-integrationen-2027/) beschrieben. Integrationsbenutzer, ihre Rechte und ihre Authentifizierung prüfe ich als Teil der Architektur. Die Termine für die Anmeldung von Integrationen:
 

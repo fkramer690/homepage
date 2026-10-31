@@ -9,10 +9,10 @@ topic: commerce
 categories: [b2b-commerce, devops]
 tags: [b2b commerce, extensions, apex, sfdx, release management, partner governance]
 takeaways:
-  - "Commerce extensions are Apex classes that plug into named extension points of Salesforce B2B Commerce, such as pricing, inventory, tax, shipping or order creation."
-  - "Domain extensions can extend or replace a whole service, endpoint extensions only change the request or response of one Connect API endpoint and cannot replace it."
-  - "Salesforce strongly recommends calling super() in domain extensions, so your code adds to the standard behaviour instead of rebuilding it and losing what later releases add."
-  - "Extensions are the preferred way to customise Salesforce Commerce, older integrations remain supported, and payments cannot be customised with an extension."
+  - "Commerce extensions are Apex classes at named extension points, such as pricing, inventory, tax, shipping or order creation."
+  - "Domain extensions extend or replace a whole service. Endpoint extensions only change the request or response of one Connect API endpoint."
+  - "Salesforce strongly recommends calling super() in domain extensions, so your code adds to the standard and keeps what later releases add."
+  - "Extensions are the preferred way to customise Commerce. Older integrations remain supported, and payments cannot be customised with an extension."
   - "Extension classes, their registration and their store mapping belong in the client's repository and pipeline, so any partner can take them over."
 faq:
   - q: "What are Salesforce Commerce extensions?"
@@ -41,7 +41,7 @@ There are two kinds:
 - **Domain extensions** belong to a functional area. A provider can extend or replace the default behaviour, and one change can affect several endpoints. Example: a pricing provider extends `commercestorepricing.PricingService` and overrides `processPrice` for product lists and detail pages and `processTransactionalPrice` for cart and checkout.
 - **Endpoint extensions** belong to one Connect API resource. The provider extends `ConnectApi.BaseEndpointExtension` and can change the request before and the response after the call. It cannot replace the default functionality and cannot call `super()`.
 
-## Which extension points exist?
+## Extension points from pricing to order creation
 
 The [list of available extensions](https://developer.salesforce.com/docs/commerce/extensions/guide/available-extensions.html) is short enough to read in full. For a manufacturer connecting SAP or another ERP, these matter most:
 
@@ -90,11 +90,11 @@ My rule: new logic goes into extensions. Existing integrations stay until the co
 
 Payments are the exception. Salesforce states: "Currently, payments can't be customized with an extension." Payment gateways keep their own adapter, see [B2B checkout: purchase order, card or invoice?](../b2b-checkout-purchase-order-card-invoice/).
 
-## How do extensions survive a change of partner?
+## Registration and mapping belong in the repository
 
 Registration and mapping are two separate steps, and both are configuration that someone has to reproduce in every environment. Salesforce recommends the CLI: `sf plugins install @salesforce/commerce`, then `sf commerce:extension:register` for the class and `sf commerce:extension:map` for the store. The same works through the `RegisteredExternalService` and `StoreIntegratedService` objects or the Connect API, and merchants can map domain extensions in the admin interface.
 
-That last option is the risk. A mapping changed by hand in production is invisible in Git. A typical scenario, as an assumption: a partner maps a new pricing provider directly in production to fix an urgent price error, the change never reaches the repository, and the next deployment from the pipeline maps the old provider again. Nobody notices until dealers complain about wrong prices.
+That last option is the risk. A mapping changed by hand in production is invisible in Git. Suppose a partner maps a new pricing provider directly in production to fix an urgent price error, the change never reaches the repository, and the next deployment from the pipeline maps the old provider again. Nobody notices until dealers complain about wrong prices.
 
 What I would put into the contract and the pipeline:
 
@@ -105,8 +105,6 @@ What I would put into the contract and the pipeline:
 
 The DevOps masterclass covers how store configuration travels with metadata in [data and configuration](../../masterclass/devops-release-management/data-and-configuration/) and how to set up the pipeline in [building the pipeline](../../masterclass/devops-release-management/building-the-pipeline/).
 
-## Where should you start?
+## First step: map every piece of custom logic to an extension point
 
 List every piece of custom logic in your store and assign it to an extension point, an old integration or a custom component. Mark each domain provider that does not call `super()` and ask for the reason. Then check whether registration and mapping can be rebuilt from the repository in a fresh sandbox. If that fails, you have found your biggest dependency on the current partner. The ERP side of the same decisions is part of the chapter [ERP integration](../../masterclass/b2b-commerce/erp-integration-stock-orders/), and the same extensions also serve a [headless storefront](../headless-b2b-commerce-own-frontend/).
-
-Extensions that call the standard and live in your pipeline are the custom code you can still maintain after the next release and the next partner.

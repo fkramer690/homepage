@@ -9,10 +9,9 @@ topic: field-service
 categories: [field-service]
 tags: [field service, maintenance plans, operating hours, assets, IoT, ERP]
 takeaways:
-  - "Salesforce Field Service triggers maintenance by operating hours through maintenance work rules that read a field on the asset instead of a calendar date."
-  - "A usage-based rule reads a usage field on the asset, which may be a formula, and writes a next occurrence field, which may not be one, because the system updates it."
-  - "Criteria-based rules use filter criteria such as downtime of 1,000 hours or more. While a generated work order is open, the rule creates no second one."
-  - "Limits to plan for: at most 2,600 work orders and line items per generation run, 2,000 assets in a plan with a count rule, and no more than five rules per plan or asset."
+  - "A usage-based rule reads a usage field that may be a formula. The system maintains the next occurrence field, which may not be a formula."
+  - "Criteria-based rules use filters such as downtime of 1,000 hours or more. While a generated work order is open, the rule creates no second one."
+  - "Limits: at most 2,600 work orders and line items per run, 2,000 assets per plan with a count rule and five rules per plan or asset."
   - "The counter comes from the ERP or IoT platform once a day. Raw sensor data stays outside Salesforce."
 faq:
   - q: "Can Salesforce Field Service schedule maintenance by operating hours?"
@@ -52,7 +51,7 @@ That means: one number field per counter type on the asset, filled from outside,
 One trap is combining rules. According to the help article on [criteria-based maintenance](https://help.salesforce.com/s/articleView?id=sf.fs_rfc_create_any_criteria.htm&language=en_US&type=5), a criteria rule and a calendar rule generate work orders independently of each other, even with the same suggested date. If you add a calendar rule "every 12 months" next to an hours rule, you can get two work orders for the same compressor in the same week. "Whichever comes first" belongs in one rule.
 ```
 
-## How do criteria-based rules behave?
+## Criteria-based rules create no second open work order
 
 You create recordset filter criteria with conditions on standard or custom asset fields, choose whether all must be true or at least one, and attach them to a maintenance work rule of type criteria-based. Help's own example combines 60,000 activations or six months since the last overhaul with OR logic. That is exactly the "whichever comes first" pattern machine builders write into their service contracts.
 
@@ -76,7 +75,7 @@ Help names three sources: maintained by hand, updated by an IoT platform, or thr
 
 A daily value is enough. A maintenance interval of 2,000 hours does not need minute-level data, and 1,200 counter updates a day are a small interface. The raw time series stay in the IoT platform or historian, as described in [predictive maintenance in Salesforce: what data you need](../predictive-maintenance-salesforce-data-needed/). Decide which source wins when two disagree, for example when the technician reads 2,140 hours and the ERP still shows 1,980. Like every master data question, this needs one leading system per field, as in [what data scheduling needs](../salesforce-field-service-master-data/). The interface itself belongs on the [Salesforce integration](../../services/salesforce-integration/) list.
 
-## Which limits matter?
+## The limits: 2,600 work orders per run, 2,000 assets per plan
 
 The [Field Service limits](https://help.salesforce.com/s/articleView?id=service.fs_limits.htm&language=en_US&type=5) that hit usage-based plans first:
 
@@ -92,9 +91,9 @@ Help gives 2,600 assets per plan as the practical limit, less than 1,300 with tw
 
 In practice I split plans by product series or service region. That keeps every plan below the limits and gives each one an owner.
 
-## A typical scenario, as an assumption: 1,200 compressors
+## Worked example: 1,200 compressors
 
-A typical scenario, as an assumption: a compressor manufacturer services 1,200 units in the field under contract. The contract says: service every 2,000 operating hours or every 12 months, whichever comes first. 800 units are connected, 400 are not.
+The figures are assumed. A compressor manufacturer services 1,200 units in the field under contract. The contract says: service every 2,000 operating hours or every 12 months, whichever comes first. 800 units are connected, 400 are not.
 
 **Data.** Each asset gets a number field for operating hours, a field for the reading at the last service and a date of the last service. A formula calculates hours since the last service, a second one the months. The IoT platform writes the hours of the connected units every night. For the other 400, technicians enter the reading at every visit, and the 12-month condition carries them.
 
@@ -104,8 +103,6 @@ A typical scenario, as an assumption: a compressor manufacturer services 1,200 u
 
 **Effect.** Assume half the connected units run two shifts at about 4,000 hours a year: they get two services a year instead of one. Single-shift units at 1,800 hours a year fall back to the 12-month condition. Compared with a fixed six-month calendar for all 1,200 units, that is 1,600 instead of 2,400 visits a year, and the heavily used compressors still get theirs on time.
 
-## Where should you start?
+## First step: one series with ten assets in a sandbox
 
 Pick one series and write down the interval from the contract in one sentence. Check where the counter lives today and how often it is updated. Then model the fields, one criteria-based rule and the reset flow in a sandbox, and test with ten real assets before you move the whole series. The [masterclass chapter on assets, maintenance and parts](../../masterclass/field-service/field-service-assets-maintenance-parts/) shows where this fits next to contracts, spare parts and service partners.
-
-Maintenance by operating hours needs one counter on the asset, one rule with OR logic and a reset at completion.

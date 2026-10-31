@@ -9,9 +9,9 @@ topic: revenue
 categories: [manufacturing-cloud]
 tags: [Manufacturing Cloud, Channel Revenue Management, Ship and Debit, Price Protection, Distributors]
 takeaways:
-  - "Ship and debit compensates a distributor who sells to a named end customer below its own purchase cost under an agreed special price. The distributor claims the difference."
-  - "Channel Revenue Management validates claims against programme rules, special pricing terms and transaction data and flags duplicates, wrong quantities and ineligible transactions."
-  - "Channel Revenue Management for Manufacturing is listed as an add-on at $30,000 per org and year. Partner access is bought separately, and another Salesforce page lists rebate management from $75 without a unit."
+  - "In ship and debit, the distributor sells to a named end customer below its own purchase cost and claims the difference from the manufacturer."
+  - "Channel Revenue Management validates claims against programme rules and transaction data and flags duplicates, wrong quantities and ineligible sales."
+  - "Channel Revenue Management for Manufacturing is listed at $30,000 per org and year. Partner access is bought separately."
   - "Rebates reward volume over a period. Ship and debit and price protection compensate price, deal by deal or when list prices fall."
   - "Without sell-through data and distributor stock, claim validation checks documents, not sales. That is where overpayments come from."
 faq:
@@ -59,7 +59,7 @@ Flows handle submission and approval, the Data Processing Engine handles large v
 
 Payment itself stays where it is today. Salesforce calculates and approves, the credit note is booked in the ERP. That is the same split as for [rebate management](../rebate-management-dealer-rebates/), and the interface carrying approved amounts to SAP should be planned with it.
 
-## What does Channel Revenue Management cost?
+## Channel Revenue Management costs $30,000 per org and year
 
 Salesforce publishes two different views:
 
@@ -85,7 +85,7 @@ That difference changes who works with the system. Rebates are calculated by pro
 
 In my view, many manufacturers selling through dealers only need rebates. Ship and debit matters when distributors hold stock and quote projects for end customers you also know, typical for components, electronics or industrial supplies sold through a two-tier channel.
 
-## Which data does claim validation need?
+## Claim validation needs sell-through and distributor stock
 
 Sell-through and stock. A claim says: I sold 1,200 units to customer X at $90. To check it, Salesforce needs to know three things:
 
@@ -95,21 +95,17 @@ Sell-through and stock. A claim says: I sold 1,200 units to customer X at $90. T
 
 Without these, the validation checks whether the documents match the programme, not whether the sale was real. Overpayments in price protection come from the same gap: a distributor claims stock on hand at the old price that it no longer has. Channel inventory tracking is in the package; the data still has to come from the distributors. How distributor stock reaches Salesforce, and how old it is when it arrives, I describe in [Agentforce for distributor stock and replenishment](../distributor-inventory-replenishment-agentforce/).
 
-## Scenario: 15 distributors and 600 claims a month
+## Worked example: 15 distributors and 600 claims a month
 
-A typical scenario, as an assumption: a manufacturer of electronic components sells through 15 distributors in Europe. 600 ship and debit claims arrive per month by email, with Excel lists attached. Two people in sales operations check them against special price approvals in a shared folder and pass approved amounts to finance.
+The figures are assumed. A manufacturer of electronic components sells through 15 distributors in Europe. 600 ship and debit claims arrive per month by email, with Excel lists attached. Two people in sales operations check them against special price approvals in a shared folder and pass approved amounts to finance.
 
 With Channel Revenue Management, special prices become pricing terms, distributors submit claims through the portal, and the validation rejects duplicates and claims above the approved quantity before a person looks. Assume 80 percent of claims pass automatically. The two people then handle 120 exceptions instead of 600 claims.
 
-Against that stand $30,000 a year for the add-on, portal licences for 15 distributors and the interface work. For partner access, the customer portal article explains [what partners see and which licence covers it](../manufacturing-cloud-customer-portal/). If only three distributors send twenty claims a month, I would keep the current process and tighten the approval rules first.
+Against that stand $30,000 a year for the add-on, portal licences for 15 distributors and the interface work. For partner access, the customer portal article explains [what partners see and which licence covers it](../manufacturing-cloud-customer-portal/). If only three distributors send twenty claims a month, I would keep the current process and tighten the approval rules first. The chapter on the [dealer and partner channel](../../masterclass/manufacturing-cloud/dealer-and-partner-channel/) shows where ship and debit sits next to rebates, portals and dealer visits.
 
-The chapter on the [dealer and partner channel](../../masterclass/manufacturing-cloud/dealer-and-partner-channel/) shows where ship and debit sits next to rebates, portals and dealer visits.
-
-## Where should you start?
+## First step: count claims per month
 
 1. **Count.** Claims per month, rejected claims and the average time to payment today.
 2. **Data.** Which distributors can deliver sell-through and stock as files, and how often.
 3. **Price.** Add-on, partner access and payout volume quoted in writing.
 4. **Process.** Who approves exceptions, and how approved amounts reach the ERP.
-
-Channel Revenue Management pays off for ship and debit when claim volume is high and distributors deliver the data to check it.
