@@ -194,8 +194,9 @@ a second filter by author next to the topic). Built in `src/components/BlogIndex
   one on tablet and phone, so the card drawing labels (viewBox 320) stay at 9px
   or more where the screen allows. Each card names one category, the first in
   `categories`; the filter still uses all of them.
-- The first 24 matching articles show, then "24 von 197 Artikeln" and "Weitere
-  Artikel laden" (+24, focus on the first new card). Filter and search always
+- The first 25 matching articles show (24 plus the wide card, so the last row is
+  full), then "25 von 197 Artikeln" and "Weitere Artikel laden" (+24, focus on the
+  first new card). Filter and search always
   look through all articles and start again at 24. Without JavaScript every
   article stays visible. The intro above is one sentence.
 - The filters combine; each list counts within the other one's choice and greys

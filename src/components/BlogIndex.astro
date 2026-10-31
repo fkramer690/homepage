@@ -175,15 +175,17 @@ const schema = {
       authors.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.author === state.author)));
       topics.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.topic === state.topic)));
       const searching = words().length > 0;
+      // The wide first card takes two places, so one more card fills the last row.
+      const limit = state.limit + (searching ? 0 : 1);
       let matches = 0;
       tiles.forEach((tile) => {
         const match = has(tile, 'authors', state.author) && has(tile, 'categories', state.topic) && found(tile);
         if (match) matches++;
-        tile.hidden = !match || matches > state.limit;
+        tile.hidden = !match || matches > limit;
         tile.classList.remove('featured');
       });
-      more.hidden = matches <= state.limit;
-      moreCount.textContent = moreText.replace('{shown}', String(Math.min(matches, state.limit))).replace('{total}', String(matches));
+      more.hidden = matches <= limit;
+      moreCount.textContent = moreText.replace('{shown}', String(Math.min(matches, limit))).replace('{total}', String(matches));
       highlight();
       // The newest visible article gets the wide card in every filtered view; search
       // results stay in plain order.
