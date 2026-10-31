@@ -10,9 +10,9 @@ categories: [devops, architecture]
 contactBrief: partner-governance
 tags: [UAT, Abnahmetest, Release-Management, Partnersteuerung]
 takeaways:
-  - "UAT (User Acceptance Testing) ist der Abnahmetest durch den Fachbereich: Er prüft, ob eine Funktion den Prozess abbildet, nicht ob der Code funktioniert."
+  - "40 Testfälle zu je 20 Minuten mit zwei Rollen ergeben mit Nachtests rund vier Personentage, die vor der Releaseplanung im Kalender der Tester stehen müssen."
   - "Den technischen Test schuldet der Partner vor UAT. Kommen Fehler wie fehlende Rechte oder kaputte Felder erst in UAT an, hat der Systemtest gefehlt."
-  - "Testfälle entstehen aus den Akzeptanzkriterien der User Story, bevor gebaut wird, und gehören dem Kunden."
+
   - "UAT läuft in der Full-Copy-Sandbox mit Testnutzern pro Rolle, und ein Release ist erst freigegeben, wenn der Fachbereich schriftlich zugestimmt hat."
 faq:
   - q: "Was ist UAT in Salesforce-Projekten?"
@@ -42,7 +42,7 @@ In einem Salesforce-Programm gibt es mehrere Testarten, die oft durcheinandergeh
 
 UAT ist die einzige Stufe, in der die Menschen testen, die später mit dem System arbeiten. Deshalb ist es teuer, sie mit Fehlern zu belasten, die eine frühere Stufe hätte finden müssen. Wenn ein Innendienstmitarbeiter in UAT feststellt, dass ihm das Recht auf ein Feld fehlt, hat der Systemtest gefehlt. Das kostet einen Testtag und Vertrauen in das Projekt.
 
-## Warum wird UAT mit mehreren Partnern so oft zur Fehlersuche?
+## Mit mehreren Partnern wird UAT oft zur Fehlersuche
 
 Partnerlieferungen werden in vielen Programmen ohne technisches Review abgenommen, und die Probleme zeigen sich erst in UAT oder in Produktion. Mit mehreren Partnern kommen zwei Effekte dazu:
 
@@ -90,12 +90,10 @@ Die Einstufung der Fehler trifft der Fachbereich. Der Partner kann einschätzen,
 Halten Sie im Vertrag mit dem Partner fest, was „abgenommen“ bedeutet: Wer stimmt zu, in welcher Form, und welche Fehlerstufen eine Abnahme verhindern. Sonst gilt eine Funktion als abgenommen, sobald sie in Produktion läuft.
 ```
 
-## Was kann man automatisieren?
+## Automatisieren lässt sich, was vor und nach dem UAT kommt
 
 UAT selbst lässt sich nicht automatisieren, weil es um das Urteil der Fachanwender geht. Automatisieren lässt sich aber, was davor und danach kommt: Regressionstests für die wichtigsten Prozesse, die bei jedem Release laufen, und die Vorbereitung der Sandbox nach dem Refresh. Ein guter Anfang sind die fünf Prozesse, an denen das meiste Geld hängt, etwa Angebot, Auftrag und Rechnung. Je mehr davon die Pipeline übernimmt, desto mehr Zeit bleibt den Testern für die neuen Funktionen. Für mobile Apps im Außendienst gilt das besonders, weil jede App-Version die Abläufe der Techniker verändern kann, siehe [Field Service App Updates testen](../field-service-app-updates-testen/).
 
-## Wo fangen Sie an?
+## Erster Schritt: Systemtest und Abnahmetest trennen
 
-Trennen Sie im nächsten Release Systemtest und Abnahmetest. Verlangen Sie vom Partner einen dokumentierten Systemtest pro Feature, bevor es in die UAT-Sandbox geht, und legen Sie Testnutzer pro Rolle an. Für das Release danach schreibt der Fachbereich die Testfälle schon beim Verfeinern der User Stories.
-
-UAT wird kurz und aussagekräftig, wenn nur noch der Fachbereich testet, was nur der Fachbereich beurteilen kann. Mehr dazu lesen Sie unter [Partnersteuerung](../../leistungen/partnersteuerung/).
+Trennen Sie im nächsten Release Systemtest und Abnahmetest. Verlangen Sie vom Partner einen dokumentierten Systemtest pro Feature, bevor es in die UAT-Sandbox geht; diese Regel gehört in die [Partnersteuerung](../../leistungen/partnersteuerung/). Legen Sie Testnutzer pro Rolle an. Für das Release danach schreibt der Fachbereich die Testfälle schon beim Verfeinern der User Stories.

@@ -10,9 +10,9 @@ categories: [devops, architecture]
 contactBrief: partner-governance
 tags: [UAT, acceptance testing, release management, partner governance]
 takeaways:
-  - "UAT (user acceptance testing) is the acceptance test by the business: it checks whether a feature fits the process, not whether the code works."
+  - "40 test cases at 20 minutes each with two roles add up to about four person-days with retests, booked before the release is planned."
   - "The partner owes the technical test before UAT. If defects such as missing permissions or broken fields only show up in UAT, the system test was missing."
-  - "Test cases come from the acceptance criteria of the user story, before anything is built, and they belong to the client."
+
   - "UAT runs in the Full Copy sandbox with test users per role, and a release is only approved once the business has agreed in writing."
 faq:
   - q: "What is UAT in Salesforce projects?"
@@ -42,7 +42,7 @@ A Salesforce programme has several kinds of testing that often get mixed up:
 
 UAT is the only stage in which the people who will later work with the system do the testing. That is why it is expensive to burden it with defects an earlier stage should have caught. When an inside sales rep discovers in UAT that they lack access to a field, the system test was missing. That costs a day of testing and trust in the project.
 
-## Why does UAT with several partners so often turn into a bug hunt?
+## With several partners, UAT often turns into a bug hunt
 
 In many programmes partner deliveries are accepted without a technical review, and the problems only show up in UAT or in production. With several partners two effects add to that:
 
@@ -90,12 +90,10 @@ The business rates the defects. The partner can judge how much work a fix is, bu
 Write down in the partner contract what "accepted" means: who agrees, in which form, and which defect levels prevent acceptance. Otherwise a feature counts as accepted as soon as it runs in production.
 ```
 
-## What can be automated?
+## Automation covers what comes before and after UAT
 
 UAT itself cannot be automated, because it is about the judgement of business users. What comes before and after it can be: regression tests for the most important processes that run with every release, and preparing the sandbox after a refresh. A good start are the five processes where most money is at stake, such as quote, order and invoice. The more of this the pipeline takes over, the more time testers have for the new features. This matters most for mobile apps in field service, because every app version can change how technicians work, see [testing Field Service app updates](../field-service-mobile-app-updates-testing/).
 
-## Where do you start?
+## First step: separate system test and acceptance test
 
-In your next release, separate system test and acceptance test. Ask the partner for a documented system test per feature before it goes into the UAT sandbox, and create test users per role. For the release after that, the business writes the test cases while the user stories are being refined.
-
-UAT becomes short and meaningful when the business only tests what only the business can judge. Read more about [partner governance](../../services/partner-governance/).
+In your next release, separate system test and acceptance test. Ask the partner for a documented system test per feature before it goes into the UAT sandbox; that rule belongs in your [partner governance](../../services/partner-governance/). Create test users per role. For the release after that, the business writes the test cases while the user stories are being refined.

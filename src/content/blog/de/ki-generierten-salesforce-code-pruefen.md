@@ -9,11 +9,11 @@ topic: code-review
 categories: [devops, ai]
 tags: [Code-Review, KI-Coding, Apex, Partnersteuerung, DevOps, Maschinenbau]
 takeaways:
-  - "Lassen Sie als Kunde die Pipeline SOQL in Schleifen, fehlende Sharing-Deklarationen und fehlende CRUD-Prüfungen finden, und setzen Sie menschliche Reviewzeit für Tests, Feldwahl, Datenzugriff und Geschäftsregeln ein."
-  - "Veracode hat 2026 für Code aus reinen Modellen eine Sicherheits-Passrate von 56 Prozent gemessen, Java lag mit 30 Prozent hinten; Apex-Daten gibt es nicht, ich lese das als Warnung für Apex."
-  - "Salesforce verlangt 75 Prozent Testabdeckung, rät aber ausdrücklich, sich nicht auf die Prozentzahl zu konzentrieren; ein Test, der nur auf ein Ergebnis ungleich null prüft, beweist nichts."
-  - "Seit API-Version 67.0 läuft Apex standardmäßig im User Mode und WITH SECURITY_ENFORCED kompiliert nicht mehr; ein Versionssprung in einem KI-generierten Diff braucht deshalb einen eigenen Test."
-  - "KI-Reviewer liefern dem Partner nützliche Hinweise, die Freigabe für Änderungen an Datenmodell, Sharing und Portalzugriff sollte aber bei einer Person auf Kundenseite bleiben."
+  - "Die Pipeline findet SOQL in Schleifen und fehlende Sharing-Deklarationen. Menschliche Reviewzeit gehört Tests, Feldwahl, Datenzugriff und Geschäftsregeln."
+  - "Veracode maß 2026 für reine Modelle eine Sicherheits-Passrate von 56 Prozent, Java lag bei 30 Prozent. Für Apex gibt es keine Daten."
+  - "Ein Test, der nur auf ein Ergebnis ungleich null prüft, bringt Abdeckung und beweist nichts. Salesforce rät selbst, nicht auf die Prozentzahl zu schauen."
+  - "Seit API-Version 67.0 läuft Apex standardmäßig im User Mode. Hebt ein Agent die Version an, braucht der Sprung einen eigenen Test."
+  - "KI-Reviewer geben dem Partner Hinweise. Die Freigabe für Datenmodell, Sharing und Portalzugriff bleibt bei einer Person auf Kundenseite."
 faq:
   - q: "Muss ich jede Zeile KI-generierten Salesforce-Codes lesen?"
     a: "Nein. Mit Code Analyzer, Apex-Tests und Validierungsdeployment als Merge-Voraussetzung konzentriert sich das menschliche Review auf Tests, Datenzugriff, Feldwahl, Umfang und Geschäftsregeln. Änderungen an Sharing, Datenmodell und Schnittstellen sollten immer eine menschliche Freigabe auf Kundenseite bekommen."
@@ -76,7 +76,7 @@ Sie müssen nicht jede Zeile lesen. Ist die Pipeline grün, würde ich einen Pul
 
 Verlangen Sie Belege vom Partner. Anthropic formuliert es in seinem Leitfaden treffend: „All tests pass“ allein sagt wenig, der ausgeführte Befehl und seine Ausgabe sagen mehr. Ich möchte den Testlauf und das Ergebnis von Code Analyzer im Pull Request sehen, dazu einen Hinweis, welche Teile ein Agent erzeugt hat. Das gehört in den Vertrag, wie in [Regeln für Partner, die mit KI programmieren](../partner-ki-coding-regeln-vertrag/) beschrieben, und ist Teil meiner Arbeit in der [Partnersteuerung](../../leistungen/partnersteuerung/).
 
-## Ein typisches Szenario: eine Story im Händlerportal
+## Rechenbeispiel: eine Story im Händlerportal
 
 Nehmen wir einen Maschinenbauer mit einem Händlerportal auf Experience Cloud, Service Cloud und SAP als ERP. Ein Partner setzt die Story „Händler sehen die offenen Garantieanträge zu ihren Maschinen“ um. Alle Zahlen sind Annahmen. Der Pull Request enthält einen Apex-Controller, eine Testklasse, eine Lightning Web Component und zwei neue Felder, rund 400 geänderte Zeilen, die meisten von einem Agenten erzeugt.
 
@@ -90,7 +90,7 @@ Das menschliche Review dauert rund 45 Minuten und findet drei Punkte, die kein W
 
 Der dritte Fund ist der teure. In Produktion wäre das ein Datenabfluss zwischen konkurrierenden Händlern, und keine Abdeckungszahl hätte ihn gezeigt. Dagegen sind 45 Minuten Review günstig.
 
-## Wo fangen Sie an?
+## Erster Schritt: Freigabe für Sharing und Datenmodell auf Kundenseite
 
 ```schritte
 Haupt-Branches schützen
@@ -106,5 +106,3 @@ Pull Requests klein halten
 Funde zählen
   Zählen Sie Review-Funde nach Kategorie. Nach einigen Sprints wissen Sie, welche Regeln in die [KI-Regeldatei Ihres Repositorys](../ki-regeldatei-salesforce-repository/) gehören und welche Prüfung in der Pipeline fehlt.
 ```
-
-KI-generierter Salesforce-Code braucht ein Review wie jeder andere Code, nur verschiebt sich die menschliche Aufmerksamkeit von der Syntax zu Tests, Datenzugriff und Geschäftsregeln.

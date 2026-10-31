@@ -10,8 +10,8 @@ categories: [devops, architecture]
 contactBrief: devops
 tags: [Sandbox-Strategie, DevOps, Release-Management, Partnersteuerung]
 takeaways:
-  - "Eine Sandbox-Strategie legt für jede Umgebung fest, wozu sie dient, wer darin arbeitet, welche Daten sie enthält und wann sie aktualisiert wird."
-  - "Mit mehreren Partnern braucht jeder Entwickler eine eigene Umgebung, dazu eine gemeinsame Integration, eine Partial Copy für ERP-Tests und eine Full Copy für UAT."
+  - "Ein Refresh kopiert die Endpunkte aus der Produktion mit. Ohne Post-Refresh-Skript spricht die Full Copy danach mit dem produktiven ERP."
+  - "Jeder Entwickler bekommt eine eigene Umgebung, dazu kommen eine gemeinsame Integration, eine Partial Copy für ERP-Tests und eine Full Copy für UAT."
   - "Ein Refresh überschreibt alles in der Sandbox. Was nicht in Git liegt, ist danach weg, deshalb führt nur die Pipeline Änderungen durch die Umgebungen."
   - "Alle Sandboxes gehören dem Kunden und stehen in einer Liste mit Zweck, Verantwortlichem und Refresh-Termin."
 faq:
@@ -43,7 +43,7 @@ Dazu kommen Scratch Orgs: kurzlebige Orgs, die aus einer Konfigurationsdatei im 
 
 Wie viele Sandboxes welcher Art im Vertrag enthalten sind, hängt von Edition und Vertrag ab. Full Copies sind fast immer knapp. Das ist der erste Grund, warum es eine Strategie braucht: Die teuerste Umgebung darf nicht einem Partner gehören, der sie für seine Entwicklung nutzt.
 
-## Warum laufen Sandboxes in Programmen mit mehreren Partnern auseinander?
+## Mit mehreren Partnern laufen Sandboxes auseinander
 
 In einer kleinen Org mit einem Admin gibt es selten Ärger mit Sandboxes. Mit mehreren Partnern sehe ich immer wieder dieselben Ursachen:
 
@@ -70,7 +70,7 @@ Ein Refresh ersetzt die Sandbox vollständig durch eine neue Kopie der Produktio
 
 Mit einer Pipeline auf der Git-Plattform des Kunden ist jederzeit sichtbar, welcher Stand in welcher Umgebung liegt. Das ist der Teil, den ich unter [DevOps und Release-Management](../../leistungen/devops-und-release-management/) aufsetze.
 
-## Wem gehören die Sandboxes?
+## Die Sandboxes gehören dem Kunden
 
 Alle Sandboxes hängen an der Produktions-Org, also technisch immer am Kunden. In der Praxis entscheidet aber oft ein Partner, wer Zugang bekommt und wann aktualisiert wird. Das halte ich für einen Fehler, aus demselben Grund, aus dem [Kunden ihre DevOps-Tools selbst besitzen sollten](../warum-kunden-devops-tools-selbst-besitzen-sollten/): Wer die Umgebungen steuert, bestimmt den Takt aller anderen.
 
@@ -105,8 +105,6 @@ contra: Was Sie dafür aufgeben
 - Die Pipeline muss stehen, bevor die Kette funktioniert
 ```
 
-## Wo sollten Sie anfangen?
+## Erster Schritt: alle Sandboxes mit Verantwortlichem auflisten
 
 Fangen Sie mit der Liste an. Schreiben Sie jede vorhandene Sandbox mit Zweck und Verantwortlichem auf und löschen Sie die, für die sich niemand meldet. Danach legen Sie die Kette fest und sperren direkte Änderungen in Integration und UAT. Der Refresh-Kalender kommt zuletzt, wenn die Post-Refresh-Schritte als Skript vorliegen.
-
-Eine Sandbox-Strategie ist eine Seite Papier, die viele Release-Wochenenden erspart.

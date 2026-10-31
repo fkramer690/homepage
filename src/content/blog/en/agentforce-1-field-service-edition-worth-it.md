@@ -10,10 +10,10 @@ categories: [field-service, ai]
 contactBrief: licences
 tags: [field service, agentforce, licences, flex credits, manufacturing]
 takeaways:
-  - "Agentforce 1 Field Service costs $650 per user and month and contains Field Service Plus, unlimited Agentforce use for employees, Appointment Assistant, Visual Remote Assistant, Digital Channels, Slack and Tableau Next."
-  - "Built from parts, Field Service Plus plus the Agentforce, Visual Remote Assistant and Appointment Assistant add-ons costs $430, so the bundle costs $220 more per user and month."
-  - "The bundle includes 1 million Flex Credits and 2.5 million Data Cloud credits per org and year. At list price, 1 million Flex Credits are worth $5,000, which covers the premium for about two users."
-  - "The bundle pays off when Slack, Tableau Next, Digital Channels and Data Cloud would be bought anyway. For technicians who only need the AI add-on, single licences win clearly."
+  - "The bundle costs $650 per user and month and includes Field Service Plus, Agentforce, Appointment Assistant, Visual Remote Assistant, Slack and Tableau Next."
+  - "Built from parts, the same core costs $430, so the bundle costs $220 more per user and month."
+  - "1 million Flex Credits per org and year are worth $5,000 at list price and cover the premium for about two users."
+  - "In the worked example with 50 users, the bundle costs at least $123,000 more a year than the same features from single licences."
 faq:
   - q: "What does Agentforce 1 Field Service cost?"
     a: "According to the Salesforce price list in October 2026, Agentforce 1 Field Service costs $650 or €650 per user and month on an annual contract. It includes everything in Field Service Plus plus AI, further products and credits per org."
@@ -43,7 +43,7 @@ In the feature grid, the row for the Scheduling Agent says "1M Flex Credits incl
 
 A second detail: the general [Agentforce pricing page](https://www.salesforce.com/agentforce/pricing/) mentions Agentforce 1 editions "from $550" with 2.5 million Flex Credits per org and year. The Field Service page says 1 million Flex Credits and 2.5 million Data Cloud credits. For the calculation I use the Field Service page and would ask for the exact figures in the order form.
 
-## What does the same scope cost from single parts?
+## From single parts, the core costs $430
 
 The same pricing page lists the add-ons separately. Per user and month, at list price:
 
@@ -67,9 +67,9 @@ Salesforce lists Flex Credits at [$500 per 100,000](https://www.salesforce.com/a
 
 The premium is per user, the credits are per org. $220 per user and month are $2,640 per user and year. $5,000 in credits cover the premium for 1.9 users, $10,000 for 3.8 users. From the fifth user on, the credits alone never justify the bundle. How to estimate credits per process in detail is covered in [Flex Credits: estimating Agentforce cost per action](../flex-credits-agentforce-cost-per-action/).
 
-## A typical scenario: 50 users and a booking agent
+## Worked example: 50 users and a booking agent
 
-A typical scenario, as an assumption: a manufacturer of compressors has 50 Field Service users, 40 technicians and 10 people in dispatch and hotline. A Scheduling Agent books 1,500 maintenance visits a month with customers. I assume 5 actions per booking: identify the customer, find the asset, look for slots, book, confirm. That is 100 credits per booking.
+All numbers are assumptions. A manufacturer of compressors has 50 Field Service users, 40 technicians and 10 people in dispatch and hotline. A Scheduling Agent books 1,500 maintenance visits a month with customers. I assume 5 actions per booking: identify the customer, find the asset, look for slots, book, confirm. That is 100 credits per booking.
 
 **Credit need.** 1,500 bookings times 100 credits are 150,000 credits a month, 1.8 million a year. At list price that is $9,000 a year.
 
@@ -79,7 +79,7 @@ A typical scenario, as an assumption: a manufacturer of compressors has 50 Field
 
 **Option C: by role.** Technicians get Technician, the Agentforce add-on and Appointment Assistant: $325 per month. Dispatch and hotline get Field Service Plus, the add-on and Visual Remote Assistant: $405. That is $13,000 plus $4,050, so $17,050 a month or $204,600 a year, plus $9,000 in credits. The bundle costs at least $176,400 more a year than this mix.
 
-So the bundle pays off in this scenario only if Slack, Tableau Next, Digital Channels and Data Cloud for 50 users would otherwise cost more than $123,000 a year. Whether Salesforce lets you mix the bundle with single licences in one contract is a question for your account team; for a role-based mix like option C, I would ask before the first quote.
+So the bundle pays off in this example only if Slack, Tableau Next, Digital Channels and Data Cloud for 50 users would otherwise cost more than $123,000 a year. Whether Salesforce lets you mix the bundle with single licences in one contract is a question for your account team; for a role-based mix like option C, I would ask before the first quote.
 
 ## When does the bundle pay off, and when do single add-ons win?
 
@@ -97,8 +97,6 @@ contra: Single add-ons win when
 
 A third route sits outside both lists: an agreement with a fixed fee for Agentforce, Data 360 and MuleSoft. When that is worth it is covered in [Salesforce AELA vs Flex Credits](../aela-agentforce-flat-fee-vs-credits/). Which agents for customers, dispatchers and technicians are ready today is covered in [AI agents in Field Service: what works today?](../field-service-ai-agents-what-works-today/).
 
-## Where should you start?
+## First step: write down the AI features per role
 
 Write down per role which AI functions are really used in the first year, and estimate the customer-facing actions per month. Then compare three columns: bundle, parts, and parts by role. The credit side is explained in the [AI masterclass chapter on costs and tokens](../../masterclass/ai-salesforce/costs-and-tokens/), the licence matrix by role in [Salesforce Field Service licences: who needs which?](../field-service-licences-by-role/), and the overall business case in [chapter 1 of the Field Service masterclass](../../masterclass/field-service/field-service-business-case-licences/).
-
-The bundle is worth it when you would buy most of its contents anyway, and rarely because of its credits.

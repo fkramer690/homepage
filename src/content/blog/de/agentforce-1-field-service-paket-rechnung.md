@@ -10,10 +10,10 @@ categories: [field-service, ai]
 contactBrief: licences
 tags: [Field Service, Agentforce, Lizenzen, Flex Credits, Außendienst]
 takeaways:
-  - "Agentforce 1 Field Service kostet 650 € pro Nutzer und Monat und enthält Field Service Plus, unbegrenzte Agentforce-Nutzung für Mitarbeitende, Appointment Assistant, Visual Remote Assistant, Slack und Tableau Next."
-  - "Aus Einzelteilen kosten Field Service Plus und die Add-ons für Agentforce, Visual Remote Assistant und Appointment Assistant 430 Dollar. Das Paket kostet also 220 Dollar mehr pro Nutzer und Monat."
-  - "Das Paket enthält 1 Million Flex Credits und 2,5 Millionen Data-Cloud-Credits pro Org und Jahr. 1 Million Flex Credits sind zum Listenpreis 5.000 Dollar wert und decken den Aufpreis für etwa zwei Nutzer."
-  - "Das Paket rechnet sich, wenn Slack, Tableau Next, Digital Channels und Data Cloud ohnehin gekauft würden. Für Techniker, die nur das KI-Add-on brauchen, sind Einzellizenzen klar günstiger."
+  - "Das Paket kostet 650 € pro Nutzer und Monat und enthält Field Service Plus, Agentforce, Appointment Assistant, Visual Remote Assistant, Slack und Tableau Next."
+  - "Aus Einzelteilen kostet derselbe Kern 430 Dollar, das Paket also 220 Dollar mehr pro Nutzer und Monat."
+  - "1 Million Flex Credits pro Org und Jahr sind zum Listenpreis 5.000 Dollar wert und decken den Aufpreis für etwa zwei Nutzer."
+  - "Im Rechenbeispiel mit 50 Nutzern kostet das Paket mindestens 123.000 Dollar mehr im Jahr als dieselben Funktionen aus Einzellizenzen."
 faq:
   - q: "Was kostet Agentforce 1 Field Service?"
     a: "Laut Salesforce-Preisliste vom Oktober 2026 kostet Agentforce 1 Field Service 650 € oder 650 Dollar pro Nutzer und Monat bei Jahresvertrag. Enthalten sind alles aus Field Service Plus, KI, weitere Produkte und Credits pro Org."
@@ -43,7 +43,7 @@ In der Funktionstabelle steht in der Zeile für den Scheduling Agent bei diesem 
 
 Ein zweites Detail: Die allgemeine [Agentforce-Preisseite](https://www.salesforce.com/agentforce/pricing/) nennt Agentforce-1-Editionen "ab 550 Dollar" mit 2,5 Millionen Flex Credits pro Org und Jahr. Die Field-Service-Seite nennt 1 Million Flex Credits und 2,5 Millionen Data-Cloud-Credits. Für die Rechnung nehme ich die Field-Service-Seite und würde die genauen Zahlen im Bestellformular festhalten lassen.
 
-## Was kostet derselbe Umfang aus Einzelteilen?
+## Aus Einzelteilen kostet der Kern 430 Dollar
 
 Dieselbe Preisseite nennt die Add-ons einzeln, und zwar nur in Dollar. Pro Nutzer und Monat, zum Listenpreis:
 
@@ -67,9 +67,9 @@ Salesforce nennt für Flex Credits [500 Dollar pro 100.000](https://www.salesfor
 
 Der Aufpreis gilt pro Nutzer, die Credits pro Org. 220 Dollar pro Nutzer und Monat sind 2.640 Dollar pro Nutzer und Jahr. 5.000 Dollar an Credits decken den Aufpreis für 1,9 Nutzer, 10.000 Dollar für 3,8 Nutzer. Ab dem fünften Nutzer rechtfertigen die Credits allein das Paket nie. Wie man Credits pro Prozess genauer schätzt, steht in [Flex Credits: Agentforce-Kosten pro Aktion schätzen](../flex-credits-agentforce-kosten-pro-aktion/).
 
-## Ein typisches Szenario: 50 Nutzer und ein Buchungsagent
+## Rechenbeispiel: 50 Nutzer und ein Buchungsagent
 
-Ein typisches Szenario, als Annahme: Ein Kompressorenhersteller hat 50 Field-Service-Nutzer, 40 Techniker und 10 Personen in Disposition und Hotline. Ein Scheduling Agent bucht mit Kunden 1.500 Wartungstermine im Monat. Ich nehme 5 Aktionen pro Buchung an: Kunde erkennen, Asset finden, Termine suchen, buchen, bestätigen. Das sind 100 Credits pro Buchung.
+Alle Zahlen sind Annahmen. Ein Kompressorenhersteller hat 50 Field-Service-Nutzer, 40 Techniker und 10 Personen in Disposition und Hotline. Ein Scheduling Agent bucht mit Kunden 1.500 Wartungstermine im Monat. Ich nehme 5 Aktionen pro Buchung an: Kunde erkennen, Asset finden, Termine suchen, buchen, bestätigen. Das sind 100 Credits pro Buchung.
 
 **Credit-Bedarf.** 1.500 Buchungen mal 100 Credits sind 150.000 Credits im Monat, 1,8 Millionen im Jahr. Zum Listenpreis sind das 9.000 Dollar im Jahr.
 
@@ -79,7 +79,7 @@ Ein typisches Szenario, als Annahme: Ein Kompressorenhersteller hat 50 Field-Ser
 
 **Variante C: nach Rolle.** Techniker bekommen Technician, das Agentforce-Add-on und Appointment Assistant: 325 Dollar im Monat. Disposition und Hotline bekommen Field Service Plus, das Add-on und Visual Remote Assistant: 405 Dollar. Das sind 13.000 plus 4.050, also 17.050 Dollar im Monat oder 204.600 Dollar im Jahr, dazu 9.000 Dollar für Credits. Das Paket kostet mindestens 176.400 Dollar mehr im Jahr als diese Mischung.
 
-In diesem Szenario rechnet sich das Paket also nur, wenn Slack, Tableau Next, Digital Channels und Data Cloud für 50 Nutzer sonst mehr als 123.000 Dollar im Jahr kosten würden. Ob Salesforce das Paket und Einzellizenzen in einem Vertrag mischen lässt, klären Sie mit Ihrem Account-Team; für eine Mischung nach Rollen wie in Variante C würde ich das vor dem ersten Angebot fragen.
+In diesem Rechenbeispiel rechnet sich das Paket also nur, wenn Slack, Tableau Next, Digital Channels und Data Cloud für 50 Nutzer sonst mehr als 123.000 Dollar im Jahr kosten würden. Ob Salesforce das Paket und Einzellizenzen in einem Vertrag mischen lässt, klären Sie mit Ihrem Account-Team; für eine Mischung nach Rollen wie in Variante C würde ich das vor dem ersten Angebot fragen.
 
 ## Wann rechnet sich das Paket, und wann gewinnen Einzel-Add-ons?
 
@@ -97,8 +97,6 @@ contra: Einzel-Add-ons gewinnen, wenn
 
 Ein dritter Weg liegt außerhalb beider Listen: ein Vertrag mit Pauschale für Agentforce, Data 360 und MuleSoft. Wann sich das lohnt, steht in [AELA: Agentforce-Pauschale oder Credits?](../aela-agentforce-pauschale-oder-credits/). Welche Agenten für Kunden, Disposition und Techniker heute tragen, steht in [KI-Agenten im Außendienst: Was funktioniert heute?](../ki-agenten-aussendienst-field-service/).
 
-## Wo starten Sie?
+## Erster Schritt: KI-Funktionen pro Rolle aufschreiben
 
 Schreiben Sie pro Rolle auf, welche KI-Funktionen im ersten Jahr wirklich genutzt werden, und schätzen Sie die Aktionen der Kundenagenten pro Monat. Dann vergleichen Sie drei Spalten: Paket, Einzelteile und Einzelteile nach Rolle. Die Credit-Seite erklärt das [Kapitel Kosten und Token der KI-Masterclass](../../masterclass/ki-salesforce/kosten-und-token/), die Lizenzmatrix nach Rollen [Salesforce Field Service Lizenzen: Wer braucht welche?](../field-service-lizenzen-rollen-dispatcher-techniker/) und den Business Case insgesamt [Kapitel 1 der Masterclass Field Service](../../masterclass/field-service/field-service-lohnt-sich-lizenzen/).
-
-Das Paket lohnt sich, wenn Sie den Großteil seines Inhalts ohnehin kaufen würden, und selten wegen seiner Credits.

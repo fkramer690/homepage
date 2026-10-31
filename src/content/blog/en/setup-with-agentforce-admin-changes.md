@@ -9,11 +9,11 @@ topic: governance
 categories: [devops, ai]
 tags: [setup with agentforce, einstein for flow, release management, governance, devops, manufacturing]
 takeaways:
-  - "Setup with Agentforce has been generally available since May 2026; it creates objects, fields, flows, Lightning pages, permission sets and sharing rules after the admin approves the proposal."
-  - "The approval click comes from the same person who asked, so it replaces neither a second reviewer nor the pipeline; metadata built by the agent goes through the repository like any other change."
-  - "In production I would allow the Setup agent for questions, access troubleshooting and user administration, and keep every metadata change in developer sandboxes."
-  - "The agent can only do what the admin's own permissions allow, so the real lever in production is who holds Customize Application, not who may use the agent."
-  - "Salesforce's pages leave open whether agent-built flows are saved active, how the Setup Audit Trail labels agent changes and what actions beyond the 500 free per month cost."
+  - "Since May 2026 the Setup agent creates objects, fields, flows, Lightning pages, permission sets and sharing rules after approval."
+  - "The approval click comes from the same person who asked. Metadata built by the agent therefore goes through repository and pipeline like any other change."
+  - "In production I would allow the Setup agent for questions, access troubleshooting and user administration, and keep metadata changes in developer sandboxes."
+  - "The agent can only do what the admin may do. In production, what counts is who holds Customize Application, not who may use the agent."
+  - "Open questions: whether agent-built flows are saved active, how the Audit Trail labels them and what actions beyond 500 a month cost."
 faq:
   - q: "What is Setup with Agentforce?"
     a: "An admin agent inside Salesforce Setup. Admins describe a task in natural language, the agent proposes a solution and applies it after approval, for example a custom object with fields, a flow, a permission set or a Lightning page."
@@ -55,7 +55,7 @@ One independent test is worth knowing. Andy Engin Utkan tried the agent in a pro
 
 Einstein for Flow is the narrower tool. According to [Salesforce Ben](https://www.salesforceben.com/einstein-for-flow-now-generally-available-tutorial-and-first-steps/), it became GA in Spring '25, drafts flows of up to about six elements, needs the Manage Flows permission and consumes Einstein Requests in production and sandboxes. The draft is not saved automatically.
 
-## Why does an agent change in production break the release process?
+## An agent change in production breaks the release process
 
 A governed Salesforce programme rests on one rule: production contains what the repository contains, and every change gets there through the pipeline. I describe why in [why DevOps decides Salesforce enterprise projects](../why-devops-matters-salesforce-enterprise/). A field, flow or Lightning page created directly in production breaks that rule, whether a person clicks it together or an agent does.
 
@@ -84,7 +84,7 @@ User administration is already done in production in most orgs and never travels
 
 You enforce this through permissions, not through a policy document. Salesforce says the agent can only do what the admin is allowed to do. So the question is who holds Customize Application and similar rights in production. If only the release user and one emergency admin hold them, no other admin can have the Setup agent build a flow in production, whatever its button offers.
 
-## A typical scenario: an extended warranty field before a trade fair
+## Worked example: an extended warranty field before a trade fair
 
 Assume a machine builder with Service Cloud, Field Service for its technicians in the field and SAP as ERP. All numbers are assumptions. Two partners work on the org: partner A owns Asset in the ownership matrix, partner B owns Work Order. Three in-house admins handle users and small requests in production.
 
@@ -94,7 +94,9 @@ On Thursday partner A deploys its sprint release, which includes the Asset recor
 
 The same request in a developer sandbox with source tracking would have taken the same ten minutes. The admin retrieves the changes into a branch, opens a pull request, partner A reviews it as owner of Asset and merges the two flows into one. The field reaches production in the next release, about a week later.
 
-## Where should you start?
+## First step: write the pipeline rule next to the ownership matrix
+
+Setting up the release process and the rights model for admin AI is part of my [DevOps and release management](../../services/devops-release-management/) work. The order follows the permissions: whatever an admin may not do in production, the agent cannot do there either.
 
 ```schritte
 Write the rule down
@@ -110,5 +112,3 @@ Read the audit trail
 Watch consumption
   Track Setup agent usage against the 500 actions and ask Salesforce in writing how actions beyond that are billed.
 ```
-
-If you want the release process and the rights model to cover admin AI, that is part of [DevOps and release management](../../services/devops-release-management/). The Setup agent is a fast way to build metadata and a poor way to deploy it.

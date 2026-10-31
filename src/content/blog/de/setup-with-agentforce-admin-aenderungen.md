@@ -9,11 +9,11 @@ topic: governance
 categories: [devops, ai]
 tags: [Setup with Agentforce, Einstein for Flow, Release-Management, Governance, DevOps, Maschinenbau]
 takeaways:
-  - "Setup with Agentforce ist seit Mai 2026 allgemein verfügbar; der Agent legt nach Freigabe durch den Admin Objekte, Felder, Flows, Lightning-Seiten, Permission Sets und Freigaberegeln an."
-  - "Die Freigabe klickt dieselbe Person, die gefragt hat; sie ersetzt weder ein Review noch die Pipeline. Metadaten aus dem Agenten gehen über das Repository wie jede andere Änderung."
+  - "Seit Mai 2026 legt der Setup-Agent nach Freigabe Objekte, Felder, Flows, Lightning-Seiten, Permission Sets und Freigaberegeln an."
+  - "Die Freigabe klickt dieselbe Person, die gefragt hat. Metadaten aus dem Agenten gehen deshalb über Repository und Pipeline wie jede andere Änderung."
   - "In Produktion würde ich den Setup-Agenten für Fragen, Zugriffsanalyse und Benutzerverwaltung erlauben und jede Metadatenänderung in Developer-Sandboxes halten."
-  - "Der Agent kann nur, was die Rechte des Admins erlauben. Der eigentliche Hebel in Produktion ist deshalb, wer Customize Application hat, nicht wer den Agenten nutzen darf."
-  - "Offen lassen die Salesforce-Seiten, ob Flows aus dem Agenten aktiv gespeichert werden, wie der Setup Audit Trail Agentenänderungen kennzeichnet und was Aktionen über 500 pro Monat kosten."
+  - "Der Agent kann nur, was der Admin darf. In Produktion zählt deshalb, wer Customize Application hat, und nicht, wer den Agenten nutzen darf."
+  - "Offen ist, ob Agenten-Flows aktiv gespeichert werden, wie der Audit Trail sie kennzeichnet und was Aktionen über 500 pro Monat kosten."
 faq:
   - q: "Was ist Setup with Agentforce?"
     a: "Ein Admin-Agent im Salesforce-Setup. Admins beschreiben eine Aufgabe in natürlicher Sprache, der Agent schlägt eine Lösung vor und setzt sie nach Freigabe um, zum Beispiel ein eigenes Objekt mit Feldern, einen Flow, ein Permission Set oder eine Lightning-Seite."
@@ -55,7 +55,7 @@ Ein unabhängiger Test lohnt einen Blick. Andy Engin Utkan hat den Agenten für 
 
 Einstein for Flow ist das engere Werkzeug. Laut [Salesforce Ben](https://www.salesforceben.com/einstein-for-flow-now-generally-available-tutorial-and-first-steps/) ist es seit Spring '25 GA, entwirft Flows mit bis zu etwa sechs Elementen, braucht die Berechtigung Manage Flows und verbraucht Einstein Requests in Produktion und Sandboxes. Der Entwurf wird nicht automatisch gespeichert.
 
-## Warum bricht eine Agentenänderung in Produktion den Release-Prozess?
+## Eine Agentenänderung in Produktion bricht den Release-Prozess
 
 Ein geregeltes Salesforce-Programm beruht auf einer Regel: In Produktion steht, was im Repository steht, und jede Änderung kommt über die Pipeline dorthin. Warum, beschreibe ich in [warum DevOps über Salesforce-Großprojekte entscheidet](../warum-devops-salesforce-enterprise-projekte/). Ein Feld, ein Flow oder eine Lightning-Seite, direkt in Produktion angelegt, bricht diese Regel, egal ob ein Mensch klickt oder ein Agent.
 
@@ -84,7 +84,7 @@ Benutzerverwaltung passiert in den meisten Orgs ohnehin in Produktion und läuft
 
 Durchsetzen lässt sich das über Berechtigungen, nicht über ein Richtliniendokument. Salesforce sagt, der Agent kann nur, was der Admin darf. Die Frage lautet also, wer in Produktion Customize Application und vergleichbare Rechte hat. Haben sie nur der Release-User und ein Notfall-Admin, kann kein anderer Admin den Setup-Agenten in Produktion einen Flow bauen lassen, was auch immer der Button anbietet.
 
-## Ein typisches Szenario: ein Feld für die Garantieverlängerung vor der Messe
+## Rechenbeispiel: ein Feld für die Garantieverlängerung vor der Messe
 
 Nehmen wir einen Maschinenbauer mit Service Cloud, Field Service für die Techniker im Außendienst und SAP als ERP an. Alle Zahlen sind Annahmen. Zwei Partner arbeiten an der Org: Partner A gehört laut Ownership Matrix das Objekt Asset, Partner B das Objekt Work Order. Drei interne Admins kümmern sich in Produktion um Benutzer und kleine Anfragen.
 
@@ -94,7 +94,9 @@ Am Donnerstag deployt Partner A sein Sprint-Release, darin die Asset-Datensatzse
 
 Dieselbe Anfrage in einer Developer-Sandbox mit Source Tracking hätte ebenfalls zehn Minuten gedauert. Die Administratorin holt die Änderungen in einen Branch, öffnet einen Pull Request, Partner A prüft ihn als Owner von Asset und führt die beiden Flows zu einem zusammen. Das Feld kommt mit dem nächsten Release in Produktion, rund eine Woche später.
 
-## Wo sollten Sie anfangen?
+## Erster Schritt: die Pipeline-Regel neben die Ownership Matrix schreiben
+
+Release-Prozess und Rechtemodell für Admin-KI aufzusetzen ist Teil meiner Arbeit in [DevOps und Release-Management](../../leistungen/devops-und-release-management/). Die Reihenfolge folgt den Rechten: Was ein Admin in Produktion nicht darf, kann auch der Agent dort nicht.
 
 ```schritte
 Die Regel aufschreiben
@@ -110,5 +112,3 @@ Den Audit Trail lesen
 Den Verbrauch beobachten
   Verfolgen Sie die Nutzung gegen die 500 Aktionen und lassen Sie sich von Salesforce schriftlich bestätigen, wie Aktionen darüber abgerechnet werden.
 ```
-
-Wenn Release-Prozess und Rechtemodell die Admin-KI abdecken sollen, ist das Teil von [DevOps und Release-Management](../../leistungen/devops-und-release-management/). Der Setup-Agent ist ein schneller Weg, Metadaten zu bauen, und ein schlechter Weg, sie auszurollen.

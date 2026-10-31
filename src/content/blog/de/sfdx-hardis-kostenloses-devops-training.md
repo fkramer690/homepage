@@ -9,7 +9,7 @@ topic: training
 categories: [devops]
 tags: [sfdx-hardis, DevOps-Training, Release-Management, DORA-Metriken]
 takeaways:
-  - "Das sfdx-hardis-DevOps-Training ist kostenlos und praxisnah: In 27 Labs auf drei Leveln entsteht eine komplette Salesforce-CI/CD-Pipeline auf kostenlosen Orgs, ohne Lizenz oder Kreditkarte."
+  - "In 27 Labs auf drei Leveln entsteht eine komplette Salesforce-CI/CD-Pipeline auf kostenlosen Orgs, ohne Lizenz oder Kreditkarte."
   - "Badges gibt es für echte Arbeit statt für Quizfragen: Ein Job führt alle Checks eines Levels erneut gegen das eigene öffentliche Repository aus."
   - "Selbst mit rund zwei Jahren sfdx-hardis-Erfahrung und soliden Git-Kenntnissen habe ich für alle drei Badges fast einen ganzen Tag gebraucht."
   - "Es ist der beste Salesforce-DevOps-Kurs, den ich gemacht habe, im Vergleich zu Kursen von Gearset, Flosum und Copado."
@@ -66,13 +66,13 @@ abschluss: Badge erreicht
 fazit: Jedes Badge prüft ein Job, der alle Checks am eigenen Repository erneut ausführt.
 ```
 
-## Wie bekommt man die Badges?
+## Badges gibt es nur für geprüfte Arbeit
 
 Das unterscheidet den Kurs von anderen. Es gibt kein Multiple-Choice-Quiz. Am Ende jedes Levels klont ein Job Ihr öffentliches Repository und führt alle Checks dieses Levels erneut aus. Nur wenn alles besteht, erhalten Sie das Badge, das Sie auf LinkedIn teilen können. Cloudity sagt klar, dass es ein Badge ist und keine Zertifizierung. Für mich ist das das ehrlichere Modell: Es belegt, dass Sie die Arbeit tatsächlich gemacht haben.
 
 Meine [drei Badges](https://sfdx-hardis-training.cloudity.com/badges/fkramer/) habe ich am 18. und 20. Oktober 2026 erhalten, mit allen Checks auf allen drei Leveln bestanden.
 
-## Was sind meine fünf Takeaways?
+## Meine fünf Takeaways
 
 Auch mit Erfahrung war einiges neu oder hat mir einen frischen Blick gegeben:
 
@@ -94,7 +94,7 @@ Ich empfehle es drei Gruppen:
 
 Für Kunden ist das Training außerdem ein günstiger Weg, internes DevOps-Wissen aufzubauen. Das ist die Grundlage dafür, den Release-Prozess selbst zu besitzen, statt ihn einem Partner zu überlassen. Dieses Thema zieht sich durch einen Großteil meiner [Arbeit an Architektur und Governance](../../leistungen/partnersteuerung/).
 
-## Wie fällt mein Fazit aus?
+## Mein Fazit: einen vollen Tag einplanen
 
 Planen Sie mit Erfahrung einen vollen Tag ein, ohne Erfahrung mehr. Die Zeit ist gut investiert.
 
@@ -102,4 +102,4 @@ Planen Sie mit Erfahrung einen vollen Tag ein, ohne Erfahrung mehr. Die Zeit ist
 Arbeiten Sie die Labs am besten am Stück durch und nicht verteilt über Wochen, denn die Level bauen direkt aufeinander auf und die Zusammenhänge zwischen Branch, Pull Request, Pipeline und Org werden so am deutlichsten.
 ```
 
-Der Kurs ist kostenlos, praxisnah und nah an echter Projektarbeit, und das Badge hat Aussagekraft, weil es geprüft wird. Wer in seinem Team Salesforce DevOps aufbauen will, findet hier einen guten Einstieg. Großes Lob und Dank an Nicolas Vuillamy und das Cloudity-Team.
+Der Kurs ist kostenlos, praxisnah und nah an der Projektarbeit, und das Badge hat Aussagekraft, weil es geprüft wird. Wer in seinem Team Salesforce DevOps aufbauen will, findet hier einen guten Einstieg. Großes Lob und Dank an Nicolas Vuillamy und das Cloudity-Team.

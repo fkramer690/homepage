@@ -9,7 +9,7 @@ topic: open-source
 categories: [devops]
 tags: [sfdx-hardis, devops, open source, release management, ci/cd]
 takeaways:
-  - "sfdx-hardis is a free, open-source toolkit for Salesforce DevOps, made of a Salesforce CLI plugin and a VS Code extension, led by Nicolas Vuillamy and Cloudity."
+  - "sfdx-hardis consists of a Salesforce CLI plugin and a VS Code extension and is led by Nicolas Vuillamy and Cloudity."
   - "It covers the full release lifecycle: CI/CD pipeline, delta deployments, quality checks, org monitoring, metadata backup and generated documentation."
   - "The pipeline runs on the client's existing Git platform, for example GitHub, GitLab, Azure DevOps, Bitbucket or Jenkins."
   - "Compared with commercial tools like Gearset or Copado, there are no ongoing licence costs, but the team needs some Git and pipeline know-how."
@@ -40,7 +40,7 @@ The idea behind it: Salesforce DevOps should not depend on an expensive platform
 
 A note on transparency: I support the open-source project, but I have no financial or other ties to Cloudity.
 
-## What does sfdx-hardis cover?
+## sfdx-hardis covers the full release process
 
 The scope is wider than most people expect from an open-source tool. The most important areas:
 
@@ -97,11 +97,11 @@ In the second case a commercial platform can be the more honest answer.
 
 The point about licence budgets is often underestimated. The saved licence costs are best invested in an internal role that maintains the setup, onboards new teams and owns the release calendar. Without that role, even the best tool loses its effect after a few months. The same goes for development standards at partners, see [Reinforcement: making standards stick with partners](../partner-standards-reinforcement/).
 
-## How do you get started?
+## First step: work through the free training
 
-The fastest way to understand sfdx-hardis is to try it, not to read about it. Cloudity offers a free, hands-on training with three levels and verified badges. I completed all three and wrote about my experience in [what I learned from the free sfdx-hardis training](../sfdx-hardis-free-devops-training/).
+The fastest way to understand sfdx-hardis is to try it. Cloudity offers a free, hands-on training with three levels and verified badges. I completed all three and wrote about my experience in [what I learned from the free sfdx-hardis training](../sfdx-hardis-free-devops-training/).
 
-For a real programme I recommend this order:
+Choosing the toolchain is part of [architecture and partner governance](../../services/partner-governance/), not a side decision for developers. For a running programme I recommend this order:
 
 ```schritte
 Build the repository
@@ -115,5 +115,3 @@ Deployment actions
 Switch on operations
   Turn on monitoring, backups and generated documentation.
 ```
-
-Choosing the toolchain is part of [architecture and partner governance](../../services/partner-governance/), not a side decision for developers. sfdx-hardis gives you a professional release process with no licence costs, as long as someone owns it.

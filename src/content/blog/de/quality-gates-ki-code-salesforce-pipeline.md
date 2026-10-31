@@ -9,11 +9,11 @@ topic: devops
 categories: [devops, ai]
 tags: [Quality Gates, KI-Coding, Code Analyzer, sfdx-hardis, DevOps, Maschinenbau]
 takeaways:
-  - "KI-generierter Salesforce-Code sollte bei jedem Pull Request blockierende Prüfungen bestehen: Code Analyzer mit Schwellenwert, Validierungsdeployment mit Apex-Tests, eigene Regeln und eine Merge-Sperre ohne Ausnahme."
-  - "Code Analyzer lässt eine Pipeline nur scheitern, wenn ein Fund den --severity-threshold erreicht; ohne diesen Parameter bleibt der Build grün. Ich würde ab High blockieren und den Rest berichten."
-  - "Ein Validierungsdeployment führt immer Apex-Tests aus, ohne zu deployen, und liefert eine Job-ID; ein Quick Deploy mit dieser ID überspringt die Tests und ist 10 Tage gültig."
-  - "ApexGuru gibt es nur in Produktion und Full-Copy-Sandboxes, die Bewertung nutzt Laufzeitdaten; in der Pipeline behandle ich es als Hinweis, nicht als Merge-Sperre."
-  - "sfdx-hardis deckt Validierungs- und Codequalitätsjob als Open Source ab; Regeln für KI-typische Risiken wie angehobene API-Versionen ergänzen Sie selbst."
+  - "Prüfungen, die ein Coding-Agent auf dem Rechner des Partners ausführt, ersetzen nicht die Pipeline, die dem Kunden gehört."
+  - "Ohne --severity-threshold bleibt der Build grün, egal was Code Analyzer findet. Ich würde ab High blockieren und den Rest berichten."
+  - "Ein Validierungsdeployment führt immer Apex-Tests aus. Ein Quick Deploy mit seiner Job-ID überspringt sie und ist 10 Tage gültig."
+  - "ApexGuru gibt es nur in Produktion und Full-Copy-Sandboxes. In der Pipeline behandle ich es als Hinweis, nicht als Merge-Sperre."
+  - "sfdx-hardis deckt Validierung und Codequalität als Open Source ab. Regeln wie die Prüfung der API-Version ergänzen Sie selbst."
 faq:
   - q: "Welche Quality Gates braucht KI-generierter Salesforce-Code?"
     a: "Mindestens Salesforce Code Analyzer mit Schwellenwert, ein Validierungsdeployment mit Apex-Tests gegen eine Integrations-Sandbox, einige eigene Regeln wie eine Prüfung der API-Version und Branch-Schutz, der den Merge sperrt, bis alles grün ist."
@@ -28,7 +28,7 @@ draft: false
 
 KI-generierter Salesforce-Code sollte dieselben Quality Gates bestehen wie menschlicher Code, aber jede Prüfung muss blockieren, in Ihrer Pipeline laufen und für jeden Partner gleich gelten. Konkret heißt das: Salesforce Code Analyzer mit Schwellenwert bei jedem Pull Request, ein Validierungsdeployment mit Apex-Tests gegen eine Integrations-Sandbox, einige Regeln für Muster, die Agenten falsch machen, und Branch-Schutz, den niemand umgeht. ApexGuru liefert Performance-Hinweise, wo Ihre Org das hergibt. sfdx-hardis deckt das meiste als Open Source ab. Was eine Regel nicht entscheiden kann, bleibt beim menschlichen Reviewer.
 
-## Warum brauchen KI-Coding-Agenten strengere Quality Gates?
+## KI-Coding-Agenten brauchen strengere Quality Gates
 
 Der [DORA-Report 2025](https://cloud.google.com/blog/products/ai-machine-learning/announcing-the-2025-dora-report) zeigt: KI-Nutzung erhöht den Durchsatz in der Softwareauslieferung, hängt aber weiterhin negativ mit deren Stabilität zusammen. Die Begründung: Ohne robuste Kontrollsysteme wie automatisierte Tests, ausgereifte Versionskontrolle und schnelle Rückmeldung führt mehr Änderungsvolumen zu Instabilität. In einem Salesforce-Programm ist die Pipeline dieses Kontrollsystem.
 
@@ -87,7 +87,7 @@ Standard-Testlevel ist `RunLocalTests` ([Smart Deployment](https://sfdx-hardis.c
 
 ApexGuru und org-spezifische Regeln wie die Prüfung der API-Version gehören nicht zu den dokumentierten Jobs; die ergänzen Sie als zusätzliche Schritte. Wie die übrige Pipeline aufgebaut ist, steht in [Warum DevOps über Salesforce-Großprojekte entscheidet](../warum-devops-salesforce-enterprise-projekte/).
 
-## Ein typisches Szenario: zwei Partner und eine Ersatzteilabfrage
+## Rechenbeispiel: zwei Partner und eine Ersatzteilabfrage
 
 Nehmen wir einen Maschinenbauer mit SAP S/4, Service Cloud, Field Service für 150 Servicetechniker im Außendienst und einem Händlerportal. Zwei Partner, einer onshore und einer nearshore, arbeiten seit diesem Jahr mit Coding-Agenten. Alle Zahlen sind Annahmen. Die Zahl der Pull Requests steigt von rund 60 auf 110 im Monat; auf Kundenseite prüfen weiterhin ein Architekt und ein Release Manager.
 
@@ -95,7 +95,9 @@ Ein Nearshore-Entwickler lässt einen Agenten einen Rundungsfehler in einer Klas
 
 Die Prüfung der API-Version stoppt den Pull Request. Der Partner setzt die Version zurück oder ergänzt einen `runAs`-Test mit einem eingeschränkten Techniker-Benutzer, der die fehlenden Datensätze zeigt. Ohne diese Prüfung sähen Techniker „nicht auf Lager“ für Teile, die im Zentrallager liegen, und die Disposition löste unnötige Eilbestellungen aus. Dagegen stehen, angenommen mit 25 Minuten pro Validierung, rund 46 Stunden Pipeline-Laufzeit im Monat für 110 Läufe, bezahlt in CI-Minuten, nicht in Arbeitszeit.
 
-## Wo fangen Sie an?
+## Erster Schritt: Pipeline und Schwellenwerte in Kundenhand
+
+Diese Prüfungen für Programme mit mehreren Partnern aufzusetzen ist der Kern meiner Arbeit in [DevOps und Release Management](../../leistungen/devops-und-release-management/). Die Reihenfolge ist wichtig, weil ein Partner jede Schwelle wieder abschalten kann, solange ihm die Pipeline gehört.
 
 1. **Die Pipeline gehört Ihnen.** Repository, Pipeline und Schwellenwerte liegen bei Ihnen, wie in [Warum Kunden ihre DevOps-Tools selbst besitzen sollten](../warum-kunden-devops-tools-selbst-besitzen-sollten/) beschrieben.
 2. **Schalten Sie Code Analyzer mit `--severity-threshold`** auf High und veröffentlichen Sie den vollständigen Bericht bei jedem Pull Request.
@@ -104,7 +106,3 @@ Die Prüfung der API-Version stoppt den Pull Request. Der Partner setzt die Vers
 5. **Schützen Sie die Branches** ohne Admin-Ausnahme, mit Code Ownern auf Kundenseite für Sharing und Schnittstellen.
 6. **Lassen Sie ApexGuru** auf dem Haupt-Branch gegen eine Org mit Laufzeitdaten laufen und sehen Sie die Funde je Release durch.
 7. **Zählen Sie gescheiterte Prüfungen** jeden Monat nach Partner und Kategorie. Eine steigende Kategorie zeigt, welche Regel in der Regeldatei oder im Vertrag fehlt.
-
-Diese Prüfungen für Programme mit mehreren Partnern aufzusetzen ist der Kern meiner Arbeit in [DevOps und Release Management](../../leistungen/devops-und-release-management/).
-
-Quality Gates machen KI-generierten Code genau so sicher wie die Regeln, die sie durchsetzen, und diese Regeln gehören in Ihre Pipeline, nicht in den Prompt eines Partners.

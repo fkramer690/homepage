@@ -10,8 +10,8 @@ categories: [field-service, manufacturing-cloud]
 contactBrief: licences
 tags: [field service, asset management, licences, warranty, connected assets]
 takeaways:
-  - "Asset Service Lifecycle Management costs $75 per user and month, Connected Assets $15,000 per org and month (Field Service price list, October 2026)."
-  - "Assets, asset hierarchies, maintenance plans, service contracts and entitlements are part of core Field Service. The add-on adds workflows on top, such as coverage selection, repair quotes, recalls and depot repair."
+  - "Connected Assets costs $15,000 per org and month and only pays off with a large connected fleet."
+  - "Assets, maintenance plans, service contracts and entitlements are core. The add-on adds coverage selection, repair quotes, recalls and depot repair."
   - "The price list marks the Asset Coverage View and the interactive hierarchy as available for purchase, even for Agentforce 1 Field Service."
   - "Several add-on functions, such as inventory counts and replenishment, overlap with the ERP. If SAP owns stock, they add little."
   - "Warranty claims, recalls and product service campaigns also exist in Manufacturing Cloud. Decide which product owns them before you buy both."
@@ -47,9 +47,9 @@ Salesforce sells Field Service today as Field Service and Operations. The [price
 
 Two details matter for planning. Work Order Estimation runs as a screen flow on top of Omnistudio document generation and Salesforce Pricing, according to the [setup guide](https://help.salesforce.com/s/articleView?id=sf.aslm_woe_setup_configure.htm&language=en_US&type=5). That is a real setup project with pricing procedures and lookup tables. And Help lists the ASLM features as [available with Field Service and several industry clouds](https://help.salesforce.com/s/articleView?id=xcloud.aslm_editions.htm&language=en_US&type=5), Manufacturing Cloud and Automotive Cloud among them, in Enterprise, Unlimited and Developer Editions.
 
-## What is already in the core Field Service licence?
+## The core Field Service licence includes more than many quotes suggest
 
-More than many quotes suggest. Assets with parent and child assets, maintenance plans with work rules, service contracts and entitlements belong to every Field Service org. How these three contract objects work together is described in [modelling maintenance contracts](../salesforce-field-service-maintenance-contracts/). Product service campaigns as objects are in the [Field Service setup guide](https://help.salesforce.com/s/articleView?language=en_US&id=sf.fs_setup_product_service_campaigns.htm&type=5) too, with a note for orgs created before Spring '21. And Salesforce's [warranty management data model](https://developer.salesforce.com/docs/platform/data-models/guide/field-service-warranty-management.html) for Field Service and Operations lists warranty terms, product warranty terms and asset warranties.
+Assets with parent and child assets, maintenance plans with work rules, service contracts and entitlements belong to every Field Service org. How these three contract objects work together is described in [modelling maintenance contracts](../salesforce-field-service-maintenance-contracts/). Product service campaigns as objects are in the [Field Service setup guide](https://help.salesforce.com/s/articleView?language=en_US&id=sf.fs_setup_product_service_campaigns.htm&type=5) too, with a note for orgs created before Spring '21. And Salesforce's [warranty management data model](https://developer.salesforce.com/docs/platform/data-models/guide/field-service-warranty-management.html) for Field Service and Operations lists warranty terms, product warranty terms and asset warranties.
 
 The add-on therefore buys work done on top of the data model:
 
@@ -63,9 +63,9 @@ What surprised me in the [comparison table of the price list](https://www.salesf
 Get it clarified in your quote which statement applies to your edition: available for purchase per the price list, or included per the asset management page.
 ```
 
-## Which ASLM functions does a manufacturer with SAP actually need?
+## A manufacturer with SAP needs only part of ASLM
 
-Fewer than the list suggests. Five of the functions deal with stock: allocation, batches, search and transfer, counts and replenishment. In most manufacturing companies I see the ERP as the owner of stock and material master, with Field Service holding a copy for van stock and parts consumed. I explain that split in [spare parts between ERP and Salesforce](../salesforce-field-service-spare-parts-erp/). If SAP plans replenishment and runs inventory counts, the same functions in Salesforce create a second truth.
+Five of the functions deal with stock: allocation, batches, search and transfer, counts and replenishment. In most manufacturing companies I see the ERP as the owner of stock and material master, with Field Service holding a copy for van stock and parts consumed. I explain that split in [spare parts between ERP and Salesforce](../salesforce-field-service-spare-parts-erp/). If SAP plans replenishment and runs inventory counts, the same functions in Salesforce create a second truth.
 
 The functions that usually fit a machine builder are the ones the ERP does not do well on the service side: the coverage view for the hotline, the hierarchy for machines with many assemblies, estimation for repair quotes and campaigns for retrofits. Depot repair fits companies that repair returned assemblies in their own repair centre.
 
@@ -92,7 +92,7 @@ My rule of thumb:
 - **Your own technicians need to see coverage when the visit is booked.** The Asset Coverage View is enough, and claims stay in the ERP.
 - **Both apply.** One product owns warranty terms and claims, the other reads them. Two warranty models on the same asset produce two answers to the same customer.
 
-## A typical scenario, as an assumption: a component maker with 30 users
+## Worked example: a component maker with 30 users
 
 Assume a maker of hydraulic components with SAP as ERP and Field Service for 30 users: 8 people in hotline and back office on Field Service Plus, 4 dispatchers and 18 technicians. Service sells repairs on returned pumps and runs one or two retrofit campaigns a year. All numbers are assumptions.
 
@@ -102,13 +102,11 @@ Assume a maker of hydraulic components with SAP as ERP and Field Service for 30 
 
 **The comparison.** At an assumed day rate of $1,200, option A costs $24,000 for setup plus $54,000 in licences over two years, $78,000 in total. Option B costs $72,000 plus $24,000 upkeep, $96,000 in total, and the company owns every bug. The company uses three functions: coverage view, estimation for depot repairs and campaigns. With three functions in use the add-on wins. If only the coverage view were needed, I would ask Salesforce for a quote limited to the hotline users before building anything. How I compare such options is part of [make-or-buy and licence forecasts](../../services/make-or-buy-licences/).
 
-## Where should you start?
+## First step: list your asset processes and decide who owns each
+
+How assets, maintenance and parts fit together is the topic of the [Field Service masterclass chapter on assets, maintenance and parts](../../masterclass/field-service/field-service-assets-maintenance-parts/). Step 2 below decides whether ASLM or Manufacturing Cloud owns warranty. Before the quote I would proceed like this:
 
 1. **List your asset processes**: coverage check at the hotline, repair quotes, recalls and retrofits, depot repair, van stock counts.
 2. **Mark the owner of each process**: core Field Service, ASLM, Manufacturing Cloud or the ERP.
 3. **Ask Salesforce three questions in writing**: which users need the add-on, whether your edition already includes parts of it, and whether your Manufacturing Cloud licence covers the same functions.
 4. **Keep Connected Assets for later**, until daily counters and a few aggregated signals show that real-time telemetry would change service decisions.
-
-How assets, maintenance and parts fit together is the topic of the [Field Service masterclass chapter on assets, maintenance and parts](../../masterclass/field-service/field-service-assets-maintenance-parts/).
-
-Asset Service Lifecycle Management pays off when you use at least a few of its workflows, and rarely for maintenance plans alone.

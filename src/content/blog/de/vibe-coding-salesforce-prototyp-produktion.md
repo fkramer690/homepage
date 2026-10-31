@@ -9,11 +9,11 @@ topic: devops
 categories: [devops, ai]
 tags: [Vibe Coding, Agentforce Vibes, KI-Coding, Prototyping, DevOps, Maschinenbau]
 takeaways:
-  - "Vibe Coding in Salesforce ist in Ordnung für Workshop-Prototypen wie ein Händlerportal-Mock-up oder ein Service-Cockpit als LWC, gebaut in einer Developer Edition oder Scratch Org mit Testdaten und danach verworfen."
-  - "Code für eine Org mit Händler-, Garantie- oder Servicedaten braucht agentic engineering: Die KI schreibt, ein Mensch prüft, und Tests und Pipeline-Gates entscheiden über das Deployment."
-  - "Neu bauen statt übernehmen: Der Prototyp wird zur Spezifikation mit Masken und Abnahmekriterien, die Produktivumsetzung startet im Repository des Kunden mit einem freigegebenen Plan."
-  - "Laut Salesforce-FAQ bekommt eine Developer Edition 110 Anfragen an Agentforce Vibes oder 1,5 Mio. Tokens für einen Monat ab erster Nutzung, ohne Auffrischung; eine Scratch Org lebt standardmäßig 7, höchstens 30 Tage."
-  - "Veracode fand 2026, dass reine Modelle fast immer kompilierbaren Code schreiben, aber nur 56 Prozent die Sicherheitstests bestanden; ein lauffähiges Mock-up beweist die Idee, nicht den Code."
+  - "Vibe Coding passt zu Workshop-Prototypen wie einem Händlerportal-Mock-up, gebaut in einer Developer Edition mit Testdaten und danach verworfen."
+  - "Code für eine Org mit Händler-, Garantie- oder Servicedaten braucht agentic engineering: Ein Mensch prüft, Tests und Pipeline-Gates entscheiden."
+  - "Der Prototyp wird zur Spezifikation mit Masken und Abnahmekriterien. Die Produktivumsetzung beginnt neu im Repository des Kunden."
+  - "Eine Developer Edition bekommt 110 Anfragen an Agentforce Vibes für einen Monat, eine Scratch Org lebt standardmäßig 7 und höchstens 30 Tage."
+  - "Reine Modelle schreiben fast immer kompilierbaren Code, aber laut Veracode bestehen nur 56 Prozent die Sicherheitstests."
 faq:
   - q: "Was ist Vibe Coding in Salesforce?"
     a: "Vibe Coding heißt, einem Coding-Agenten wie Agentforce Vibes oder Claude Code eine Funktion zu beschreiben und das Ergebnis zu übernehmen, ohne den Code zu lesen. In Salesforce entstehen so schnell lauffähige LWCs, Apex-Klassen und Metadaten. Für Prototypen ist das nützlich, für Produktion riskant."
@@ -56,7 +56,7 @@ quelle: Agentforce-Vibes-FAQ und Salesforce-DX-Handbuch, Stand Oktober 2026
 
 ## Regeln für die Prototyp-Org
 
-Ein Prototyp ist nur so harmlos wie die Org, in der er läuft. Als das wohl ernsteste Risiko nennt Fowler die Sicherheit: Per Vibe Coding gebaute Anwendungen „can often expose sensitive information or worse, credentials“. Für einen Salesforce-Prototyp setze ich fünf Regeln:
+Wie harmlos ein Prototyp ist, hängt an der Org, in der er läuft. Als das wohl ernsteste Risiko nennt Fowler die Sicherheit: Per Vibe Coding gebaute Anwendungen „can often expose sensitive information or worse, credentials“. Für einen Salesforce-Prototyp setze ich fünf Regeln:
 
 1. **Keine echten Daten.** Keine Händlernamen, keine Kundenmaschinen, keine Preise aus der Preisliste. Für ein Mock-up reichen erzeugte Testdaten.
 2. **Keine Verbindungen.** Keine Named Credential zu SAP oder proALPHA, kein Integrationsnutzer, keine Kopie produktiver Zugangsdaten. Die SAP-Antwort ist eine statische JSON-Datei.
@@ -99,7 +99,7 @@ Review und Gates
 
 Eine Ausnahme akzeptiere ich: HTML-Template und CSS einer Mock-up-LWC dürfen mit, wenn sie dasselbe Review bestehen. Apex und Datenzugriff werden immer neu gebaut.
 
-## Ein typisches Szenario: zwei Tage Workshop bei einem Maschinenbauer
+## Rechenbeispiel: zwei Tage Workshop bei einem Maschinenbauer
 
 Nehmen wir einen Maschinenbauer mit Service Cloud, SAP S/4 und 400 Händlern, der ein Händlerportal und ein neues Service-Cockpit plant. Alle Zahlen sind Annahmen. In einem zweitägigen Anforderungsworkshop baut ein Entwickler beide Mock-ups mit Agentforce Vibes in einer frischen Developer Edition. Die Portalseite dauert etwa drei Stunden, das Cockpit etwa zwei, zusammen rund 40 der 110 Anfragen. Händler und Serviceleitung korrigieren die Masken live: Das Cockpit bekommt eine Spalte für das Garantieende, das Portal verliert einen Filter, den niemand nutzt.
 
@@ -107,12 +107,10 @@ Nach dem Workshop liest der Architekt den Prototyp-Code einmal, als Referenz. Di
 
 Die Produktivumsetzung startet deshalb im Repository: drei User Stories, jede mit freigegebenem Plan, einem `runAs`-Test als Händlernutzer und einem SAP-Aufruf über die vorhandene MuleSoft-API. Angenommen sind dafür zwei Sprints für ein Partnerteam mit drei Personen. Ohne den Workshop wäre nach meiner Schätzung der erste Sprint dafür draufgegangen, herauszufinden, was die Masken zeigen sollen. Der Prototyp hat sich über die Anforderungen bezahlt gemacht und keine Zeile Apex beigesteuert. Was die KI-Werkzeuge für ein solches Team kosten, steht in [KI-Coding-Kosten im Salesforce-Projekt](../ki-coding-kosten-salesforce-projekt/).
 
-## Wo sollten Sie anfangen?
+## Erster Schritt: Vibe Coding in Developer Editions ausdrücklich erlauben
 
 1. **Vibe Coding ausdrücklich erlauben**, in Developer Editions und Scratch Orgs mit Testdaten, damit es niemand still in einer gemeinsamen Sandbox tut.
 2. **Agentforce Vibes in Produktion abschalten** und produktive Deployments in der Pipeline halten.
 3. **Die Übergabe festlegen:** Masken, Abnahmekriterien und offene Fragen verlassen den Workshop, Apex aus dem Prototyp nicht.
 4. **Pläne sichtbar machen.** Lassen Sie Ihren Partner den freigegebenen Plan an den Pull Request hängen.
 5. **Die Pipeline selbst besitzen.** Sie für Programme mit mehreren Partnern aufzusetzen, ist der Kern meiner Arbeit in [DevOps und Release-Management](../../leistungen/devops-und-release-management/).
-
-Nutzen Sie Vibe Coding für bessere Anforderungen aus dem Workshop und agentic engineering für Code in Ihrer Org.
