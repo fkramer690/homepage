@@ -10,10 +10,10 @@ categories: [field-service]
 tags: [Visual Remote Assistant, field service, remote service, breakdown hotline, works council]
 takeaways:
   - "Visual Remote Assistant sends the customer a link by SMS or email; the two-way video opens in the mobile browser without an app, login or password."
-  - "The add-on costs $50 or 50 € per user and month according to the product page of October 2026 and is included in Agentforce 1 Field Service. The customer needs no licence."
-  - "Video replaces a visit when the operator can fix the fault: parameters, operating errors, a reset. For mechanical repairs it shortens the visit, because the technician brings the right part."
-  - "Before the first session, settle recording consent with the customer, the works council for your own staff and which faults may be closed remotely."
-  - "Start with your breakdown history: count how many past visits needed no part and no tool. That share is your realistic potential."
+  - "The add-on costs $50 per user and month (October 2026) and is included in Agentforce 1 Field Service. The customer needs no licence."
+  - "Video replaces a visit for parameters, operating errors and resets. For mechanical faults it shortens the visit, because the right part comes along."
+  - "Before the first session, settle recording consent, the works council and which faults may be closed remotely."
+  - "Count the visits in your breakdown history that needed no part and no tool. That share is your realistic potential."
 faq:
   - q: "What does Visual Remote Assistant cost?"
     a: "According to the Salesforce product page, the add-on costs $50 or 50 € per user and month, billed annually (October 2026). It is included in the Agentforce 1 Field Service bundle. Only the people who run sessions need a licence; the customer joins through a link."
@@ -44,7 +44,7 @@ The product page adds automatic recording for later review, OCR that surfaces kn
 
 Two technical details from the [installation and configuration manual](https://resources.docs.salesforce.com/rel1/doc/en-us/static/pdf/vra_installation_configuration_manual.pdf) (Summer '25 version) matter for a machine builder. First, sessions start from a Salesforce record, such as a case or work order, and the session summary with its images is attached to that record. Second, a technician can start a session from the Field Service mobile app through an app extension. That covers the second use case: the technician on site calls in the expert from headquarters.
 
-## What does it cost?
+## The add-on costs $50 per user and month
 
 ```kennzahlen
 $50 | per user and month for the add-on, billed annually
@@ -69,9 +69,9 @@ Video does not replace a visit when the work needs tools, a qualified electricia
 
 Visual Remote Assistant fits the triage logic I describe for the [breakdown hotline with Agentforce Voice](../breakdown-hotline-agentforce-voice/): first decide whether the machine is down and what the contract covers, then decide whether video, a part shipment or a technician solves it. For the expert behind the video, the [troubleshooting agent](../field-service-ai-troubleshooting-manuals/) only helps if manuals carry the same product key as the asset.
 
-## A typical scenario, as an assumption: 20 percent solved by video
+## Worked example: 20 percent solved by video
 
-A typical scenario, as an assumption: a packaging machine builder takes 150 breakdown calls a month, a third of them from customers outside Europe. Today, almost every call that is not solved on the phone ends in a visit.
+The figures are assumed. A packaging machine builder takes 150 breakdown calls a month, a third of them from customers outside Europe. Today, almost every call that is not solved on the phone ends in a visit.
 
 The builder licenses six hotline agents and two remote experts, so eight users at $50, which is $4,800 a year. The target for the first year: 20 percent of breakdown calls solved by video, so 30 visits a month fewer. On top, the technician gets the fault confirmed by video before every remaining visit.
 
@@ -79,7 +79,7 @@ The method matters more than the target. Before the pilot, the service team pull
 
 Two numbers show after three months whether it works: the share of video sessions that close the case, and the share of those cases with a repeat call within seven days. A video fix followed by a visit two days later saved nothing.
 
-## What do you need to settle before the first session?
+## Before the first session: consent, works council, closing rules
 
 **Recording consent.** Sessions can be recorded, and recording is controlled by a custom permission. The customer's staff appear in the video, and so does their production hall. Agree with the customer whether you record at all, who sees the recording and how long you keep it. Some customers will not allow it, so the process has to work without recording too.
 
@@ -89,7 +89,7 @@ Two numbers show after three months whether it works: the share of video session
 
 **Which faults may be closed remotely.** Write down which fault classes a video session may close without a visit report, and how the instruction given to the operator is documented on the case. If the operator follows a wrong instruction and damages the machine, you need to know what was said.
 
-## Where should you start?
+## First step: sort last year's breakdowns by cause
 
 ```schritte
 Tag the breakdowns
@@ -101,5 +101,3 @@ Measure and decide
 ```
 
 How this fits with the mobile app and service documents is part of the [masterclass chapter on the mobile app](../../masterclass/field-service/field-service-mobile-app-documents/). Whether Field Service pays off at all is covered in [Salesforce Field Service: when is it worth it?](../salesforce-field-service-worth-it/), and the licence question as a whole under [make-or-buy and licences](../../services/make-or-buy-licences/).
-
-Visual Remote Assistant saves visits where the operator can fix the fault and saves second visits where the technician has to come anyway.

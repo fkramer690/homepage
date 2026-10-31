@@ -10,9 +10,9 @@ categories: [field-service]
 contactBrief: licences
 tags: [Field Service, ServiceMax, Asset 360, PTC, Entitlements, Asset Management]
 takeaways:
-  - "ServiceMax Asset 360 ist ein Managed Package von PTC, das Salesforce Field Service auf dessen Standardobjekten erweitert. PTC setzt Service Cloud und mindestens eine Field-Service-Lizenz voraus."
-  - "Der Kern ist eine Entitlement-Engine, die an Case, Arbeitsauftrag und Retourenauftrag interaktiv oder per Regel die passende Garantie oder den passenden Servicevertrag wählt."
-  - "Salesforce verkauft mit Asset Service Lifecycle Management seit 2024 ein eigenes Add-on für 75 Dollar pro Nutzer und Monat, das sich mit Asset 360 bei Deckungsauswahl, Hierarchie und Kampagnen überschneidet."
+  - "Asset 360 liegt auf den Standardobjekten von Field Service. PTC setzt Service Cloud und mindestens eine Field-Service-Lizenz voraus."
+  - "Der Kern ist eine Entitlement-Engine. Sie wählt an Case, Arbeitsauftrag und Retourenauftrag per Regel die passende Garantie oder den Vertrag."
+  - "Salesforce verkauft seit 2024 Asset Service Lifecycle Management für 75 Dollar pro Nutzer. Es überschneidet sich bei Deckung, Hierarchie und Kampagnen."
   - "Asset 360 erscheint zweimal im Jahr, zuletzt 26R2 am 9. September 2026. Patches gibt es laut PTC nur, wenn vereinbarte Fehlerbehebungen anstehen."
   - "PTC Asset 360 heißt seit Juni 2026 PTC Orbit und ist ein anderes Produkt. Prüfen Sie in jedem Angebot, welches gemeint ist."
 faq:
@@ -47,7 +47,7 @@ Für Sie heißt das: Disponenten planen weiter mit der Scheduling-Engine von Sal
 PTC hatte zwei Produkte namens Asset 360. Das zweite heißt seit Juni 2026 [PTC Orbit](https://www.ptc.com/en/products/ptc-orbit) und führt Asset-Daten aus PLM, ERP und Field Service zusammen. Prüfen Sie in Angeboten und Präsentationen, welches gemeint ist.
 ```
 
-## Was bringt Asset 360 konkret?
+## Asset 360 bringt eine Entitlement-Engine und über 60 Abläufe
 
 Die [Produktseite](https://www.ptc.com/en/products/servicemax/asset-360) nennt vier Bereiche. Ich habe sie mit der Doku abgeglichen:
 
@@ -82,7 +82,7 @@ In einem Field-Service-Projekt waren Entitlements Teil des Umfangs und haben die
 
 Asset 360 habe ich selbst nicht eingeführt. Aus dieser Erfahrung leite ich zwei Prüfpunkte ab. Erstens: Hängen Ihre Ansprüche heute direkt am Asset oder Account ohne Servicevertrag, passt die Engine laut Doku nicht ohne Umbau. Zweitens: Retouren- und Lagerabläufe in Asset 360 treffen auf ein ERP, das den Bestand führt. Wie ich diese Grenze ziehe, steht in [Ersatzteile zwischen ERP und Salesforce](../salesforce-field-service-ersatzteile-erp/).
 
-## Was bedeutet ein zweites Managed Package für Betrieb und Releases?
+## Ein zweites Managed Package bringt zwei Releases mehr im Jahr
 
 Asset 360 erscheint laut [Releaseplan](https://support.ptc.com/help/servicemax_asset360/en/articles/servicemax-asset-360-release-notes/releases.html) zweimal im Jahr: 26R1 am 5. März 2026, 26R2 am 9. September 2026. Patches gibt es nur, wenn vereinbarte Fehlerbehebungen anstehen. Salesforce liefert dreimal im Jahr. PTC veröffentlicht für jede Runde eine [Bewertung der Salesforce Release Updates](https://support.ptc.com/help/servicemax_asset360/en/articles/servicemax-asset-360-release-notes/assessment-for-2025-releases.html), das hilft beim Testen. Ihr Team testet trotzdem zwei Pakete gegen jeden Salesforce-Release.
 
@@ -96,13 +96,11 @@ Aus meiner Sicht in drei Fällen:
 2. **Ihr PLM und Ihre Ersatzteilplanung kommen von PTC.** Dann sind die Anbindungen an Windchill und Servigistics ein echter Vorteil.
 3. **Sie wollen fertige Abläufe statt Eigenbau.** Über 60 vorkonfigurierte Abläufe sparen Aufbauzeit, wenn Ihre Prozesse dazu passen.
 
-Trifft keiner davon zu, würde ich zuerst ASLM bewerten, weil ein Hersteller weniger Abstimmung bedeutet.
+Trifft keiner davon zu, würde ich zuerst ASLM bewerten. Ein Hersteller bedeutet weniger Abstimmung, und es gibt kein zweites Managed Package, das zweimal im Jahr getestet werden muss.
 
-## Wo fangen Sie an?
+## Erster Schritt: die eigenen Asset-Abläufe auflisten
 
 1. **Listen Sie Ihre Asset-Abläufe auf**: Deckungsprüfung, Wartung, Kampagnen, Retouren, Depot.
 2. **Prüfen Sie, wo Ihre Ansprüche heute hängen**: am Servicevertrag, am Asset oder am Account.
 3. **Fordern Sie Angebote für Asset 360 und ASLM an** und lassen Sie sich die Nutzer nennen, die jeweils eine Lizenz brauchen. Die Rollenlogik von Field Service steht in [Salesforce Field Service Lizenzen: Wer braucht welche?](../field-service-lizenzen-rollen-dispatcher-techniker/).
 4. **Rechnen Sie beide Varianten über drei Jahre** inklusive Releasetests. Wie ich solche Vergleiche aufsetze, steht unter [Make-or-Buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/).
-
-Asset 360 lohnt sich, wenn die automatische Anspruchsprüfung oder Ihr PTC-Portfolio den Ausschlag geben.
