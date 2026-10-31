@@ -9,9 +9,9 @@ topic: ai
 categories: [ai]
 tags: [mcp, flex credits, headless platform interactions, claude, budget, manufacturing]
 takeaways:
-  - "Salesforce will bill every successful MCP or agentic API call by a registered external agent as a Headless Platform Interaction in Flex Credits; the rate card of 31 August 2026 lists the rate as TBA."
-  - "Metering has not started, Salesforce promises 30 days' notice, and sandboxes, scratch orgs and Developer Edition orgs are excluded, according to Salesforce Ben."
-  - "The external agent decides how many calls a question costs, so tool design matters as much as the rate; in the scenario, eight calls instead of two multiply the bill by four."
+  - "Every successful MCP call by a registered external agent will be billed as a Headless Platform Interaction, and the rate is still listed as TBA."
+  - "Metering has not started, Salesforce promises 30 days' notice, and sandboxes and scratch orgs are excluded, according to Salesforce Ben."
+  - "In the worked example, eight calls per question instead of two multiply the bill by four, as much as a higher rate would."
   - "Companies using Claude or ChatGPT on Salesforce data pay twice: the AI provider for tokens and Salesforce for the interactions."
   - "Budget a range with three assumed rates, measure calls per task in a sandbox and ask your account executive for a cap before metering starts."
 faq:
@@ -51,7 +51,7 @@ The details come from a Salesforce Help article (005360285) that I could only re
 
 The [Hosted MCP Servers documentation](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/hosted-mcp-servers-overview.md) already says the servers are "intended only for customers with Flex Credits and you may be billed for server usage". When Salesforce made them [generally available on 29 April 2026](https://developer.salesforce.com/blogs/2026/04/salesforce-hosted-mcp-servers-are-now-generally-available) for Enterprise Edition and above, the announcement did not mention pricing. If you connected Claude in the spring and filed it under free, that assumption now has an end date, and nobody knows it yet.
 
-## Why do MCP calls to Salesforce become a budget item?
+## The external agent decides how many calls it makes
 
 With an Agentforce agent you design the actions, so you know that an order status request costs, say, two actions at 20 credits each. With an external agent you do not decide the call count. Salesforce Ben puts it plainly: the cost per interaction does not vary, but the number of interactions depends on the third-party agent's behaviour and implementation. Claude may answer "which orders of this dealer are late?" with one query, or with a search, five record reads and two follow-up queries because the first answer was incomplete.
 
@@ -67,7 +67,7 @@ There is a second ceiling that has nothing to do with Flex Credits. Agents that 
 Whether hosted MCP calls count against the daily API allocation, the documentation I read does not say. I would ask before a busy month end shows you.
 ```
 
-## A typical scenario: key account managers with Claude
+## Worked example: key account managers with Claude
 
 Assume a machine builder with 60 key account and dealer managers who use Claude with Salesforce. Each asks 15 questions a day on 220 working days: open orders of a dealer, last service visits on an installed machine, warranty cases of the quarter. That is 198,000 questions a year. All numbers are assumptions, and the three rates below are hypothetical, because Salesforce has published none.
 
@@ -89,7 +89,7 @@ Claude seats for the 60 users come on top. How the in-house alternative compares
 2. **Count calls per task in a sandbox.** Sandboxes are not metered, so this costs nothing. Take the ten most common questions per user group and log how many calls each needs.
 3. **Build focused servers per persona.** Salesforce's own [guidance on custom servers](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/custom-servers.html) says that beyond a few dozen tools an AI client struggles to pick the right one, and recommends curated servers scoped to a persona. A Flow or an invocable Apex action that returns a complete dealer overview saves calls on every question. Who may read what through these servers is the topic of [hosted MCP servers and data access](../salesforce-hosted-mcp-servers-data-access/).
 4. **Prepare for registered agents.** Salesforce Ben reports a new Agentic Identity model in which agents get their own credentials and permissions. Today hosted MCP calls run in the context of the authenticated user. I would expect connections to change once agents are registered, so ask your integration partner what that means for your setup.
-5. **Budget a range.** Use the three assumed rates from the scenario, take the middle one as plan and the upper one as risk reserve.
+5. **Budget a range.** Use the three assumed rates from the worked example, take the middle one as plan and the upper one as risk reserve.
 6. **Negotiate before the notice.** Ask your account executive for the rate, a cap or a fixed allocation, and whether the Max allocation applies to you. Thirty days is too short for a budget cycle. Salesforce writes about AIforce that ["pricing and packaging are subject to change"](https://www.salesforce.com/news/stories/aiforce-announcement/), which works in both directions.
 7. **Set alerts.** Digital Wallet offers threshold alerts and breakdowns, but Salesforce's setup steps for it include [turning on Data 360](https://www.salesforce.com/agentforce/digital-wallet/). If your org runs without Data 360, ask Salesforce now how you will see the consumption at all.
 
@@ -98,5 +98,3 @@ Claude seats for the 60 users come on top. How the in-house alternative compares
 Not every question belongs on this path. If order status, stock and credit limits live only in SAP or proALPHA, an agent that reaches the ERP through Salesforce adds a metered hop without adding information. If Salesforce only mirrors the ERP data, decide where the agent should read before the meter starts. That is an architecture question for [Salesforce integration](../../services/salesforce-integration/), and the commercial side, Claude seats versus Agentforce versus nothing at all, belongs in [make-or-buy and licence planning](../../services/make-or-buy-licences/).
 
 I would also keep bulk work away from external agents. A Claude session that checks 5,000 installed base records for missing warranty dates produces thousands of interactions; a report or a batch job does the same for free. MCP fits dialogue, not data cleansing. The basics of MCP and the decisions an IT lead has to make are in [MCP for IT leads](../mcp-salesforce-explained-for-it-leads/), and what AIforce brings on top is in [AIforce: Salesforce in Claude and Slack](../aiforce-salesforce-in-claude-and-slack/).
-
-External agents on Salesforce data will cost money per call, so measure the calls and negotiate the price while metering is still off.

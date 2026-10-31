@@ -10,11 +10,11 @@ categories: [ai]
 contactBrief: licences
 tags: [agentforce, flex credits, cost estimation, licensing, data 360, manufacturing]
 takeaways:
-  - "An Agentforce estimate needs several meters: actions at 20 Flex Credits, voice actions at 30, prompts priced by model tier, Data 360 document processing and test runs in the sandbox."
-  - "Prompts are billed per 2,000 tokens, rounded up: 2 credits on Basic models, 4 on Standard models such as Claude Sonnet, 16 on Advanced models such as Claude Opus or GPT 5.5."
-  - "Sandbox actions cost 16 credits instead of 20, but prompts cost the same as in production, and unstructured Data 360 processing costs a flat 120 credits per MB there."
-  - "Unused Flex Credits expire at the order end date and do not roll over, so buy credits along the go-live plan rather than the budget year."
-  - "In the illustrative scenario, a spare parts agent for dealers uses about 218,000 credits a month, and plain text actions make up only 55 percent of that."
+  - "An estimate needs actions at 20 Flex Credits, voice actions at 30, prompts priced by model tier, Data 360 processing and sandbox test runs."
+  - "Prompts cost 2 credits per started 2,000 tokens on Basic, 4 on Standard and 16 on Advanced models such as Claude Opus or GPT 5.5."
+  - "Sandbox actions cost 16 credits instead of 20, prompts cost the same as in production, and unstructured processing costs a flat 120 credits per MB."
+  - "Unused Flex Credits expire at the order end date, so buy them along the go-live plan rather than the budget year."
+  - "In the worked example, a spare parts agent for dealers uses about 218,000 credits a month, and plain text actions are only 55 percent of that."
 faq:
   - q: "What is one Flex Credit worth?"
     a: "Salesforce lists Flex Credits at $500 or €500 per 100,000 credits, so one credit costs half a cent. A standard or custom Agentforce action uses 20 credits, which is $0.10."
@@ -29,9 +29,9 @@ faq:
 draft: false
 ---
 
-Agentforce cost per action is easy to state and easy to underestimate. A standard action costs 20 Flex Credits, or $0.10. A realistic estimate also counts prompts priced by model tier, voice actions at 30 credits, Data 360 processing for manuals and spare parts catalogues, and test runs in the sandbox. Unused credits expire at the order end date. I estimate per conversation type, count every meter separately and buy credits along the go-live plan. In the illustrative scenario below, plain text actions make up only 55 percent of the monthly credits.
+Agentforce cost per action is easy to state and easy to underestimate. A standard action costs 20 Flex Credits, or $0.10. A realistic estimate also counts prompts priced by model tier, voice actions at 30 credits, Data 360 processing for manuals and spare parts catalogues, and test runs in the sandbox. Unused credits expire at the order end date. I estimate per conversation type, count every meter separately and buy credits along the go-live plan. In the worked example below, plain text actions make up only 55 percent of the monthly credits.
 
-## How do Flex Credits work?
+## Flex Credits as the currency for Agentforce
 
 Flex Credits are the currency in which Salesforce bills Agentforce consumption. The [Agentforce pricing page](https://www.salesforce.com/agentforce/pricing/) lists them at $500 or €500 per 100,000 credits. Every billable event draws a fixed number of credits from the [Flex Credits rate card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf), updated as of 31 August 2026. An action is "a specific function that an AI agent executes on the platform", for example reading an order from SAP. Whether an agent pays off at all is covered in [Agentforce for manufacturers](../agentforce-yes-or-no-manufacturers/).
 
@@ -78,7 +78,7 @@ If the agent grounds answers on manuals or spare parts catalogues, Data 360 proc
 
 Two more points come from [Salesforce Ben's guide to the Data 360 vector database](https://www.salesforceben.com/data-360-formerly-data-cloud-deep-dive-your-guide-to-the-vector-database/): hybrid search costs twice as many credits as vector search, and indexes must be rebuilt when new files are added. Plan the monthly update volume, not only the initial load. More in [Data 360 costs for AI agents](../data-360-costs-for-ai-agents/).
 
-## A typical scenario: a spare parts agent for dealers
+## Worked example: a spare parts agent for dealers
 
 Assume a machine builder with SAP, Service Cloud, a dealer portal and about 2,000 MB of spare parts catalogues and manuals as PDF files. The agent answers dealers on part numbers, availability and delivery dates, in the portal and by phone. All numbers are assumptions.
 
@@ -120,5 +120,3 @@ If you buy a year of credits in January and go-live slips from March to June, th
 ```
 
 I would buy the first year along the ramp-up profile: a small pre-purchase for pilot and tests, PayGo or Pre-Commit for the ramp-up, and a larger volume once Digital Wallet shows real numbers. Because overage is billed at the contracted rate without a penalty, a tight first purchase carries little risk. Also note the period of the included edition credits: the [Sales Cloud pricing page](https://www.salesforce.com/sales-cloud/pricing/) lists the pools per org and per year, while the [editions announcement of September 2026](https://www.salesforce.com/news/stories/salesforce-simplifies-editions-2026/) gives no period. Several agents share one pool, so ask how consumption per agent is monitored. These questions are part of my [make-or-buy and licence planning](../../services/make-or-buy-licences/).
-
-Flex Credits are simple to price per action, but you can only plan them per conversation with every meter counted.

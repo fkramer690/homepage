@@ -10,11 +10,11 @@ categories: [ai, architecture]
 contactBrief: licences
 tags: [agentforce, digital wallet, flex credits, chargeback, cost control, manufacturing]
 takeaways:
-  - "Flex Credits belong to the org and the contract: the edition pools are listed per org per year, and overage is billed to the contract holder monthly in arrears."
-  - "Digital Wallet breaks consumption down by agent, action and channel and supports custom tags for categories such as department and cost center, which is the basis for chargeback."
-  - "Digital Wallet sends threshold alerts but, in the documentation I opened, does not stop an agent when a plant's budget is used up, so budgets per plant are bookkeeping, not technical caps."
-  - "If a subsidiary buys its own credits into the shared org, Digital Wallet merges them into one card and draws from the contract that expires first, so separate contracts do not separate budgets."
-  - "Unused credits expire at the order end date; agree before go-live who carries that loss, otherwise it lands silently in the central IT budget."
+  - "The edition pools are listed per org per year, and overage is billed to the contract holder monthly in arrears."
+  - "Digital Wallet breaks consumption down by agent, action and channel and takes custom tags such as cost center, the basis for chargeback."
+  - "Digital Wallet sends threshold alerts but, according to the documentation, does not stop an agent when a plant's budget is used up."
+  - "If a subsidiary buys its own credits into the shared org, Digital Wallet draws from the contract that expires first."
+  - "Unused credits expire at the order end date. Agree before go-live who carries that loss, otherwise it lands in the central IT budget."
 faq:
   - q: "Can Digital Wallet charge Agentforce costs back to cost centers?"
     a: "It provides the data. Custom tags group consumption by categories such as department or cost center, and reports run on Data 360. The internal invoice itself is created in your controlling or ERP, based on the monthly statement."
@@ -53,7 +53,7 @@ Three contract terms decide where the money goes:
 
 So the question for a manufacturing group is organisational. I would make one person in group IT or the [Salesforce Center of Excellence](../salesforce-center-of-excellence-cadence/) the budget owner: they sign, they watch the pool, they run the chargeback. Plants and subsidiaries get budgets, not credits.
 
-## What does Digital Wallet show for chargeback?
+## Digital Wallet shows consumption by agent, action and channel
 
 [Digital Wallet](https://www.salesforce.com/agentforce/digital-wallet/) is Salesforce's consumption console. It is free with a Digital Wallet-enabled product and tracks Flex Credits, Data Services Credits, AI Requests and licences, among others. For chargeback four functions matter:
 
@@ -68,7 +68,7 @@ The limits matter as much as the functions. Salesforce Help says you need a Data
 What I did not find: an automatic stop. The pages I opened describe alerts only. [Salesforce Ben noted in May 2025](https://www.salesforceben.com/understanding-common-agentforce-pain-points-and-how-salesforce-addresses-them/) that there was no kill switch to freeze agents at a threshold, and I found nothing newer that says otherwise. A plant budget is therefore a number in controlling. If you need a hard stop, you deactivate the agent yourself.
 ```
 
-## A typical scenario: three regions in one org
+## Worked example: three regions in one org
 
 Assume a machine builder with two plants in Germany, a US sales and service subsidiary and a service region in Asia Pacific (APAC), all in one org on Advanced Edition. A dealer service agent answers order status and spare parts questions for all regions, and a scheduling agent supports field service in Germany and the US. All numbers are assumptions.
 
@@ -97,7 +97,7 @@ There are four models, and they fit different phases:
 
 The hard part is tagging a shared agent. One dealer service agent for all regions saves building and testing it three times, but its consumption must still be split. Salesforce documents the tag configuration in Help; before go-live I would test in production, with a small pilot volume, whether each event of the shared agent gets the right company tag, because Digital Wallet does not run in sandboxes. If the tagging cannot separate regions, you have two choices: one agent per region with its own maintenance, or a split key such as conversations per region from Service Cloud. I prefer the split key while volumes are small. More on the numbers to track per agent in [Agentforce KPIs after go-live](../agentforce-kpis-after-go-live/).
 
-## What happens with unused credits and overage?
+## Unused credits expire, overage follows the contract
 
 Unused credits are lost at the order end date, and overage is billed at the contracted rate. Both follow the contract, not the plant, which leads to three rules I would write down:
 
@@ -107,7 +107,7 @@ Unused credits are lost at the order end date, and overage is billed at the cont
 
 One meter has no price yet: the rate card lists Headless Platform Interactions with the rate "TBA". What they cover and why they matter for budgets is in [MCP calls as a budget risk](../mcp-api-calls-salesforce-budget-risk/). Give that meter its own tag and its own owner from the start.
 
-## Where should you start?
+## Name one budget owner for the pool
 
 1. Name one budget owner for the pool and write it into the programme charter.
 2. Agree the tag design: company, cost center, environment.
@@ -116,6 +116,4 @@ One meter has no price yet: the rate card lists Headless Platform Interactions w
 5. Run showback for six months against the monthly statement.
 6. Write the rules for unused credits, overage and reserved volumes before the first regional go-live.
 
-How to estimate the consumption itself is in [Flex Credits cost per action](../flex-credits-agentforce-cost-per-action/), and licence planning across several companies is part of my [make-or-buy and licence planning](../../services/make-or-buy-licences/).
-
-Digital Wallet gives you the numbers per agent and cost center, but the ownership and the rules for leftovers have to come from you.
+How to estimate the consumption itself is in [Flex Credits cost per action](../flex-credits-agentforce-cost-per-action/). Licence planning across several companies is part of my [make-or-buy and licence planning](../../services/make-or-buy-licences/).

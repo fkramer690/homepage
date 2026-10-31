@@ -9,11 +9,11 @@ topic: security
 categories: [ai]
 tags: [eu ai act, agentforce, compliance, ai agents, manufacturing, governance]
 takeaways:
-  - "Since 2 August 2026, Art. 50 of the EU AI Act requires that people chatting with an Agentforce agent are told at the first interaction that it is AI; in my reading that includes dealer staff in a B2B portal."
-  - "Regulation (EU) 2026/1744 moves high-risk obligations to 2 December 2027 for Annex III uses such as recruitment and workforce management, and to 2 August 2028 for AI in products under Annex I."
-  - "An agent that ranks applicants or assigns work by individual performance can be high-risk; configuring a general platform for that purpose can also make the manufacturer a provider under Art. 25."
-  - "For machine builders, the Machinery Regulation moves to section B of Annex I, with AI requirements due through delegated acts by 2 August 2028; that concerns the machine, not the CRM agent."
-  - "Deployers of high-risk systems keep automatically generated logs for at least six months unless other law says otherwise, and inform workers' representatives before use. An architect's reading, not legal advice."
+  - "Since 2 August 2026, people chatting with an Agentforce agent must be told at the first interaction that it is AI (Art. 50)."
+  - "Regulation (EU) 2026/1744 moves high-risk obligations to 2 December 2027 for Annex III and to 2 August 2028 for AI in products under Annex I."
+  - "An agent that ranks applicants or assigns work by performance can be high-risk, and configuring it can make you a provider under Art. 25."
+  - "AI requirements under the Machinery Regulation come through delegated acts by 2 August 2028 and concern the machine, not the CRM agent."
+  - "Deployers of high-risk systems keep logs for at least six months and inform workers' representatives first. An architect's reading, not legal advice."
 faq:
   - q: "Is an Agentforce service agent a high-risk AI system under the EU AI Act?"
     a: "As a rule, no. An agent that answers order status, delivery dates or spare part questions is not on the Annex III list. It is a transparency case under Art. 50(1): people must be told at the start that they are talking to an AI. Have your legal team confirm the classification."
@@ -49,7 +49,7 @@ The AI Act assigns duties by role. Under [Art. 3](https://ai-act-service-desk.ec
 
 [Art. 25(1)](https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-25) shifts that split: a deployer becomes a provider if it puts its own name on a high-risk system, modifies one substantially, or changes the intended purpose of a system so that it becomes high-risk. Agentforce is a general platform; if you configure an agent that ranks job applicants, you arguably create that high-risk purpose yourself, and with it the provider duties of Art. 16. Salesforce's [AI literacy guide](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/documents/guides/ai-literacy-and-compliance.pdf) from May 2025 urges customers to consult their own legal counsel. I would take that literally: the classification of your agents belongs with your legal team.
 
-## Why is a dealer chat agent a transparency case?
+## A dealer chat agent is a transparency case
 
 Most Agentforce agents at manufacturers answer dealers, customers or service partners about orders, delivery dates, spare parts or appointments. None of that is on the Annex III list. These agents fall under Art. 50(1), applicable since 2 August 2026.
 
@@ -76,13 +76,13 @@ The field service angle is easy to miss. Assigning jobs by skill, territory and 
 
 If an agent is high-risk, [Art. 26](https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-26) gives you as deployer concrete duties from 2 December 2027: use it according to the provider's instructions, assign human oversight to competent people with authority, check the input data you control, monitor operation, keep automatically generated logs for at least six months unless other law provides otherwise, and inform workers' representatives and affected workers before use. In Germany the works council is involved much earlier anyway; that path is in [AI coding tools, works council and GDPR](../ai-coding-tools-works-council-gdpr/).
 
-## What does the Annex I deadline mean for machine builders?
+## Annex I concerns the machine, not the CRM agent
 
 Annex I covers AI in products under EU harmonisation law. For machine builders, [Cuatrecasas](https://www.cuatrecasas.com/en/spain/intellectual-property/art/digital-omnibus-ai-has-been-published) reports the key change: the Machinery Regulation (EU) 2023/1230 moves from section A to section B of Annex I. Only a few AI Act provisions then apply directly to AI in machinery. The substantive high-risk requirements are to be added to the Machinery Regulation through delegated acts, which the Commission must adopt by 2 August 2028 at the latest. Until those delegated acts or the corresponding harmonised standards exist, manufacturers can, according to Cuatrecasas, keep referring to the harmonised standards or common specifications adopted under the AI Act to show presumption of conformity.
 
 This concerns AI in machine control or safety functions and belongs with product engineering and legal, not with your Agentforce agents. The new [Art. 6(1a)](https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-6) also states that AI systems "solely used for non-safety related aspects of user assistance" are not safety components. Art. 6(1b) takes precedence: AI whose failure or malfunctioning would endanger health and safety is a safety component. An agent that suggests a spare part to a technician is user assistance in that sense.
 
-## A typical scenario: four AI ideas at a machine builder
+## Example: four AI ideas at a machine builder
 
 Assume a machine builder with SAP, Service Cloud, Field Service with 60 technicians and a portal for 250 dealers. All circumstances are assumptions. The AI steering group asks which AI Act date applies to four ideas.
 
@@ -96,7 +96,7 @@ Assume a machine builder with SAP, Service Cloud, Field Service with 60 technici
 
 One idea is overdue, two get redesigned to stay out of high-risk, and one belongs to another team.
 
-## What should you do before December 2027?
+## First step: list every agent in the org
 
 1. **List every agent** and AI feature in the org, with purpose and the people it talks to.
 2. **Classify each one** by role, provider or deployer, and by category: transparency, Annex III, Annex I or none.
@@ -107,5 +107,3 @@ One idea is overdue, two get redesigned to stay out of high-risk, and one belong
 7. **Get legal sign-off** on the classification before go-live.
 
 Where the classification shapes the architecture, for example which decision needs a human approval step, I support the client side as part of [Salesforce architecture](../../services/salesforce-architecture/). Whether Agentforce is the right start at all is covered in [Agentforce for manufacturers: start now or wait?](../agentforce-yes-or-no-manufacturers/), and chapter 9 of the [AI masterclass](../../masterclass/ai-salesforce/teamwork-and-delivery/) puts the AI Act next to works council and GDPR.
-
-Add the AI disclosure to every customer-facing agent now and decide on HR and workforce agents well before 2 December 2027.

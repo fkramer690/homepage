@@ -9,11 +9,11 @@ topic: ai
 categories: [ai]
 tags: [AIforce, Claude, Slack, Agentforce Coworker, MCP, Maschinenbau]
 takeaways:
-  - "AIforce, vorgestellt am 15. September 2026, macht Salesforce-Daten und Workflows aus Claude, Slack und Lightning nutzbar, über Salesforce in Claude, Slackforce, Agentforce Coworker und das Headless Toolkit."
-  - "Die Umbenennung in SIForce beruht auf einem Post von Marc Benioff auf X vom 9. Oktober 2026, belegt nur durch Sekundärquellen; eine Pressemitteilung gibt es nicht, Unterlagen sollten beim Namen AIforce bleiben."
-  - "Salesforce in Claude ist eine Beta mit 37 Vertriebs-Skills; Skills für Service, Marketing und Branchen sind nur angekündigt, Aftersales und Außendienst können also noch nichts testen."
-  - "Jede AIforce-Anfrage läuft mit den eigenen Salesforce-Berechtigungen des Nutzers; zu weit gefasste Freigaben von heute werden morgen in einem Chatfenster sichtbar."
-  - "Laut Salesforce können sich Preise und Pakete noch ändern, und der Flex-Credit-Satz für agentische API- und MCP-Aufrufe steht weiter auf TBA; budgetieren Sie einen Piloten, keinen Rollout."
+  - "Zu AIforce gehören Salesforce in Claude, Slackforce, Agentforce Coworker und das Headless Toolkit."
+  - "SIForce beruht nur auf einem X-Post von Marc Benioff vom 9. Oktober 2026 ohne Pressemitteilung. Unterlagen bleiben deshalb beim Namen AIforce."
+  - "Salesforce in Claude ist eine Beta mit 37 Vertriebs-Skills. Für Aftersales und Außendienst gibt es noch nichts zu testen."
+  - "Jede AIforce-Anfrage läuft mit den Salesforce-Berechtigungen des Nutzers, zu weit gefasste Freigaben werden also im Chatfenster sichtbar."
+  - "Preise und Pakete können sich laut Salesforce noch ändern, der Flex-Credit-Satz für MCP-Aufrufe steht auf TBA. Budgetieren Sie einen Piloten."
 faq:
   - q: "Was ist AIforce bei Salesforce?"
     a: "AIforce ist eine Interface-Schicht, die Salesforce zur Dreamforce am 15. September 2026 angekündigt hat. Sie macht Salesforce-Daten, Workflows und Berechtigungen aus Claude, Slack und der Lightning-Oberfläche nutzbar. Bestandteile sind Salesforce in Claude, Slackforce, Agentforce Coworker und das Headless Toolkit."
@@ -58,7 +58,7 @@ In Ihren eigenen Unterlagen würde ich „AIforce“ schreiben und einmal „(vo
 2026-10-12 | Salesforce Ben findet keine offizielle Ankündigung
 ```
 
-## Was ist heute tatsächlich verfügbar?
+## Stand Oktober 2026: vieles ist erst angekündigt
 
 Die Ankündigungen sind größer als das, was sich einschalten lässt. Stand 27. Oktober 2026:
 
@@ -76,7 +76,7 @@ quelle: Anthropic zu Salesforce in Claude; Salesforce Flex Credits Rate Card vom
 
 Zu den Kosten sagt die Ankündigung: „Pricing and packaging are subject to change.“ Die Rate Card führt Headless Platform Interactions, den Zähler für agentische API- und MCP-Aufrufe, als „TBA“. Warum daraus ein Budgetposten wird, steht in [MCP-Zugriffe als Budgetrisiko](../mcp-zugriffe-salesforce-budgetrisiko/).
 
-## Was bedeutet AIforce für einen Hersteller?
+## Für Hersteller hilft AIforce heute dem Vertrieb mehr als dem Service
 
 Im Moment hilft AIforce dem Vertrieb mehr als dem Service. Laut [Anthropic](https://claude.com/blog/salesforce-in-claude) decken die 37 Skills Account-Recherche, Gesprächsvorbereitung, Pipeline-Review und CRM-Pflege ab. Das passt zu Key Account Managern und Händlerbetreuern, die Besuche vorbereiten und Opportunities pflegen. Skills für Service, Marketing, Commerce und Branchen nennt die Ankündigung von Salesforce erst für „the near future“. Aftersales und Außendienst (Field Service) haben also noch nichts zu testen.
 
@@ -86,7 +86,7 @@ Der dritte Punkt ist das Kollaborationswerkzeug. Viele Maschinenbauer arbeiten i
 
 Der vierte Punkt sind die Berechtigungen. „Every transaction runs as the authenticated user“, schreibt Salesforce zu Hosted MCP. Das ist richtig, und genau darin liegt das Risiko. Sehen Ihre Vertriebsmitarbeitenden alle Cases, Garantieanträge und Händler-Preisvereinbarungen, weil die Freigaben vor Jahren zu großzügig gesetzt wurden, zeigt ein Chat das in Sekunden statt nach zehn Klicks.
 
-## Ein typisches Szenario: ein Maschinenbauer mit Teams und SAP
+## Rechenbeispiel: ein Maschinenbauer mit Teams und SAP
 
 Nehmen wir einen Maschinenbauer mit 80 Sales-Cloud-Nutzern in Vertrieb und Händlerbetreuung, Service Cloud im Aftersales, SAP als ERP und Microsoft Teams für die Zusammenarbeit. Alle Zahlen und Umstände sind Annahmen. Einige Vertriebsmitarbeitende kopieren schon heute Account-Daten in private KI-Werkzeuge.
 
@@ -99,7 +99,7 @@ Die IT-Leitung sortiert die vier AIforce-Teile:
 
 Heraus kommen ein kleiner Pilot im Vertrieb und eine Woche Aufräumen bei den Berechtigungen. Nach meiner Einschätzung ist das die richtige Größe für eine Beta, deren Preise Salesforce noch nicht festgelegt hat.
 
-## Was sollte die IT-Leitung jetzt tun?
+## Die Schattennutzung finden, dann Rechte und Verträge prüfen
 
 1. **Die Schattennutzung finden.** Fragen Sie, welche Teams schon Salesforce-Daten in Claude, ChatGPT oder Copilot kopieren. Ein gesteuerter Connector mit den eigenen Berechtigungen des Nutzers ist besser als Copy and Paste.
 2. **Pro Nutzergruppe eine Oberfläche festlegen.** Zum Beispiel Lightning für den Innendienst im Service, Claude für Key Account Manager, Teams für alle anderen. Fünf parallele KI-Oberflächen bedeuten fünf Supportthemen.
@@ -108,6 +108,4 @@ Heraus kommen ein kleiner Pilot im Vertrieb und eine Woche Aufräumen bei den Be
 5. **Einen Piloten budgetieren.** Die Preise können sich ändern, der MCP-Satz ist offen. Ob sich Data 360 für Coworker lohnt oder Claude-Plätze für den Vertrieb, ist eine Frage für [Make-or-buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/).
 6. **In der Dokumentation beim Namen AIforce bleiben**, bis Salesforce SIForce schriftlich bestätigt.
 
-Ob Sie eigene Agentforce-Agenten bauen, ist eine eigene Entscheidung; dazu mehr in [Agentforce für Hersteller: jetzt starten oder warten?](../agentforce-ja-oder-nein-hersteller/).
-
-AIforce bringt Salesforce in die Werkzeuge, die Ihre Leute ohnehin nutzen, und die Arbeit der IT bleibt dieselbe: erst Berechtigungen, Daten und Verträge.
+Ob Sie eigene Agentforce-Agenten bauen, ist eine eigene Entscheidung; dazu mehr in [Agentforce für Hersteller: jetzt starten oder warten?](../agentforce-ja-oder-nein-hersteller/). Für AIforce selbst gilt die Reihenfolge der Liste oben: erst Berechtigungen, Daten und Verträge, dann die Oberfläche.

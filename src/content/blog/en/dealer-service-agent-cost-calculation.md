@@ -9,22 +9,21 @@ topic: ai
 categories: [ai]
 tags: [agentforce, flex credits, dealer service, data 360, manufacturing, business case]
 takeaways:
-  - "In the scenario, 3,000 dealer conversations a month with three actions and two prompts each cost 204,000 Flex Credits, about $1,020 a month in production."
-  - "The same volume costs $6,000 a month at $2 per conversation, and Salesforce does not support Flex Credits and conversation pricing in the same org."
-  - "Indexing 2,000 MB of spare part catalogues in Data 360 costs 300,000 credits once; the same catalogue in a sandbox costs 240,000 credits, so test with a subset."
-  - "With Help Agent resolutions at 400 credits, Flex Credits are cheaper in the scenario as soon as more than 17 percent of conversations are resolved."
-  - "The first year in the scenario needs about 3 million credits, more than the 2.75 million included in a Max edition, and unused credits expire at the order end date."
+  - "At $2 per conversation the same volume costs $6,000 a month, and Salesforce does not support Flex Credits and conversation pricing in the same org."
+  - "Indexing 2,000 MB of spare part catalogues costs 300,000 credits once, 240,000 in a sandbox. So test with a subset."
+  - "With Help Agent resolutions at 400 credits, Flex Credits are cheaper as soon as more than 17 percent of conversations are resolved."
+  - "The first year in the worked example needs about 3 million credits, more than the 2.75 million of a Max edition, and unused credits expire."
 faq:
   - q: "What does an Agentforce service agent for dealers cost per month?"
     a: "It depends on volume and actions per conversation. With 3,000 conversations, three actions and two Standard Prompts each, the agent uses 204,000 Flex Credits, about $1,020 a month at list price. Data 360, MuleSoft and implementation come on top."
   - q: "Is Agentforce cheaper per action or per conversation?"
-    a: "For narrow enquiries with few actions, Flex Credits are usually cheaper. In the scenario a conversation costs 68 credits or $0.34, against $2 on the conversation model. The two models cannot run in the same org."
+    a: "For narrow enquiries with few actions, Flex Credits are usually cheaper. In the worked example a conversation costs 68 credits or $0.34, against $2 on the conversation model. The two models cannot run in the same org."
   - q: "Does testing an Agentforce agent cost Flex Credits?"
     a: "Yes. Salesforce says running tests consumes requests and credits. Actions cost 16 credits in a sandbox instead of 20, and Data 360 processing of documents costs 120 credits per MB in a sandbox."
   - q: "What does Data 360 cost for spare part catalogues?"
     a: "The rate card charges 150 credits per MB of unstructured processing in the base tier. A 2,000 MB catalogue therefore costs 300,000 credits, about $1,500, for the initial processing."
   - q: "Do the Flex Credits in my Salesforce edition cover a dealer agent?"
-    a: "Core includes 500,000, Advanced 1 million and Max 2.75 million credits. The scenario needs about 3 million in the first year, and the pool is shared with all other metered usage in the org."
+    a: "Core includes 500,000, Advanced 1 million and Max 2.75 million credits. The worked example needs about 3 million in the first year, and the pool is shared with all other metered usage in the org."
 draft: false
 ---
 
@@ -44,7 +43,7 @@ An action is one step the agent executes, for example reading an order from SAP.
 
 Unused Flex Credits do not roll over and must be used before the order end date. An oversized pool costs money just as surely as running short.
 
-## A typical scenario: 3,000 dealer enquiries a month
+## Worked example: 3,000 dealer enquiries a month
 
 Assume a machine builder with 400 dealers in Europe, SAP S/4HANA as ERP, a dealer portal on Experience Cloud and an existing MuleSoft API for order data. Dealers ask about order status, confirmed delivery dates and spare part availability. All volumes and shares below are assumptions to show the method; only the multipliers come from Salesforce.
 
@@ -90,17 +89,17 @@ Not included: MuleSoft licences, implementation, licences for your service reps 
 
 Now the value side. Assume a service rep needs six minutes per enquiry today, so 3,000 enquiries take 300 hours a month. If the agent resolves 60 percent, 180 hours are freed. In steady state the agent costs 219,000 credits a month, about $1,095, or around $6 per freed hour. In my judgement consumption rarely decides this business case. Build, test and maintenance effort does.
 
-## Flex Credits, per conversation or per resolution: which model fits?
+## Flex Credits, per conversation or per resolution compared
 
 Salesforce offers three ways to pay for this agent:
 
-- **Flex Credits per action and prompt.** In the scenario $1,020 a month in production.
+- **Flex Credits per action and prompt.** In the worked example $1,020 a month in production.
 - **Per conversation.** The pricing page lists $2 per conversation, so $6,000 a month. According to the same page, Flex Credits and conversations are not supported in the same org, and conversation pricing is not available with the PayGo and Pre-Commit models.
 - **Per resolution.** Help Agent, now called Casey (see [Casey and the Service Rep Assistant](../service-cloud-casey-service-rep-assistant/)), costs 400 credits or $2 per resolved conversation. According to [Salesforce Germany](https://www.salesforce.com/de/news/press-releases/2026/06/30/salesforce-agentforce-help-agent/), there is no fee when a case is handed over, including the Data 360 and Agentforce calls made before. It has been generally available since July 2026, portals included. At 60 percent resolved: 1,800 × $2 = $3,600 a month.
 
 What counts as resolved matters. [Salesforce Ben](https://www.salesforceben.com/complete-guide-to-agentforce-pricing-options/) lists the conditions: at least two message turns, final feedback not explicitly negative, and either no escalation to a human or explicitly positive feedback. Without feedback, a messaging session that runs past two hours counts as resolved. A dealer who asks twice, reads the status and closes the window is billed. So is a dealer who got a wrong date and left without feedback.
 
-The break-even is simple. Flex Credits cost 68 credits per conversation in the scenario, a resolution 400. As soon as more than 17 percent of conversations are resolved, Flex Credits are cheaper. At 60 percent the agent would need twelve or more actions per conversation before resolution pricing wins.
+The break-even is simple. Flex Credits cost 68 credits per conversation in the worked example, a resolution 400. As soon as more than 17 percent of conversations are resolved, Flex Credits are cheaper. At 60 percent the agent would need twelve or more actions per conversation before resolution pricing wins.
 
 For narrow dealer enquiries I would therefore plan with Flex Credits. Resolution pricing has one real advantage in the first months: when nobody knows the resolution rate yet, a weak agent costs nothing, and sandbox resolutions are free.
 
@@ -115,7 +114,7 @@ The Salesforce pricing pages list the Flex Credit pools of the [Core, Advanced a
 source: Salesforce editions release 2026 and pricing pages
 ```
 
-The scenario needs about 3 million credits in the first year, more than even the Max pool, and that pool also covers every other metered agent in the org. Additional credits are sold as PayGo or Pre-Commit. Plan the ramp-up: a dealer agent rarely reaches full volume in its first month, and credits committed for a year but used only from month four partly expire. How to estimate this per action is the topic of [Flex Credits and Agentforce cost per action](../flex-credits-agentforce-cost-per-action/), and the editions themselves are covered in [Core, Advanced and Max](../salesforce-editions-core-advanced-max/). Whether you buy credits, change edition at renewal or build nothing in Salesforce is a question for [make-or-buy and licence planning](../../services/make-or-buy-licences/).
+The worked example needs about 3 million credits in the first year, more than even the Max pool, and that pool also covers every other metered agent in the org. Additional credits are sold as PayGo or Pre-Commit. Plan the ramp-up: a dealer agent rarely reaches full volume in its first month, and credits committed for a year but used only from month four partly expire. How to estimate this per action is the topic of [Flex Credits and Agentforce cost per action](../flex-credits-agentforce-cost-per-action/), and the editions themselves are covered in [Core, Advanced and Max](../salesforce-editions-core-advanced-max/). Whether you buy credits, change edition at renewal or build nothing in Salesforce is a question for [make-or-buy and licence planning](../../services/make-or-buy-licences/).
 
 ## When is an agent the wrong answer for dealer enquiries?
 
@@ -123,7 +122,7 @@ The scenario needs about 3 million credits in the first year, more than even the
 - **When the delivery date in SAP is not maintained.** Then the agent repeats a wrong date 3,000 times a month. The integration path is described in [Agentforce and SAP order status](../agentforce-sap-order-status-mulesoft/).
 - **When dealers' own AI assistants query your Salesforce.** Agentic calls through MCP or APIs fall under Headless Platform Interactions, and that rate is still "TBA". I look at this risk in [MCP access as a budget risk](../mcp-api-calls-salesforce-budget-risk/).
 
-## How do you budget a dealer service agent?
+## Count dealer enquiries by type and run two test weeks
 
 ```schritte
 Count enquiries by type
@@ -139,5 +138,3 @@ Check the contract
 Run two test weeks
   Read Digital Wallet, recalculate and set alerts on the credit pool.
 ```
-
-A dealer service agent costs little per conversation, so the budget risk sits in documents, sandboxes and an oversized credit pool.
