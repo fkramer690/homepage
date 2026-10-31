@@ -62,4 +62,5 @@ export const clients: Client[] = [
   { name: 'KNF', file: 'knf.svg' },
   { name: 'Schubert', file: 'schubert.svg' },
   { name: 'Reemtsma (Imperial Brands)', file: 'reemtsma.svg' },
+  { name: 'Lieferando', file: 'lieferando.webp' },
 ];

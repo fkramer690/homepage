@@ -113,5 +113,10 @@
     "file": "mono/reemtsma.webp",
     "ratio": 2.954,
     "ink": 0.285
+  },
+  "lieferando.webp": {
+    "file": "mono/lieferando.webp",
+    "ratio": 4.365,
+    "ink": 0.312
   }
 }
