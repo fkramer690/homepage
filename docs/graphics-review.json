@@ -299,6 +299,8 @@
     "page:logos": {"title": "Logo-Band", "proposal": 2, "rating": 2, "ratedOn": "2026-10-30", "note": "macht es sinn das bissche ngrößer zu machen? so zirka 20 Prozent?", "todo": "docs/backlog.md G9 erledigt 2026-10-30 (+30 %)"},
     "page:mc-liste": {"title": "Masterclass-Liste", "proposal": 3, "rating": 2, "ratedOn": "2026-10-30", "note": "bitte vorschlag machen", "todo": "docs/backlog.md G10 erledigt 2026-10-30 (Variante A: Liste mit Icons und Themenzeile)"},
     "page:proof": {"title": "Zahlenleiste", "proposal": 1, "rating": 2, "ratedOn": "2026-10-30", "note": "geht. aber mir fällt gerade auch nix besseres ein"},
+    "page:artikelkopf": {"title": "Artikel- und Kapitelkopf: Pill für Teil/Kapitel, Metazeile mit Foto, Datum, Lesezeit", "proposal": 1, "rating": null},
+    "page:blog-mehr-laden": {"title": "Blog-Übersicht: Mehr laden nach 24 Artikeln, eine Kategorie pro Karte", "proposal": 1, "rating": null},
     "page:blog-video": {"title": "Blog: Video-Karte im Seitenrand mit Overlay und Transkript (Variante B)", "proposal": 1, "rating": null},
     "page:rolle-zitat": {"title": "Rolle: Vergleichspaar markiert, Zitat als Bühnenband", "proposal": 1, "rating": null},
     "page:referenzen": {"title": "Referenz-Karten (Projekt im Fokus)", "proposal": 2, "rating": 2, "ratedOn": "2026-10-30", "note": "bitte vorschlag machen", "todo": "docs/backlog.md G11 erledigt 2026-10-30 (Projekt im Fokus: Liste plus Panel mit Foto, Ausgangslage, Rolle, Ergebnis)"},
