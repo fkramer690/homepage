@@ -75,7 +75,7 @@ Nach drei Monaten mit Agenten sinkt der Bauschritt angenommen von 4 auf 2,5 Tage
 
 Beide Zahlen stimmen. Das Programmieren ist schneller, das Programm kaum. Nützlich ist die Erkenntnis, wo Sie ansetzen: kleinere Pull Requests mit automatischen Prüfungen, feste tägliche UAT-Termine mit der Serviceleitung und ein Reviewer auf Kundenseite, der dafür eingeplant ist. Ohne Basislinie hätte der Lenkungsausschuss nur die 30 Prozent gehört.
 
-## Erster Schritt: den Status-Workflow aufräumen, bevor die Werkzeuge kommen
+## Den Status-Workflow aufräumen, bevor die Werkzeuge kommen
 
 Fangen Sie an, bevor die Werkzeuge kommen, denn eine Basislinie lässt sich nicht aus dem Gedächtnis rekonstruieren.
 

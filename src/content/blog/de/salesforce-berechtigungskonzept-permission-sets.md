@@ -81,6 +81,6 @@ Salesforce bietet den kostenlosen User Access and Permissions Assistant, der vor
 - Nutzer schrittweise umstellen, Land für Land, und die alten Profile erst löschen, wenn niemand sie mehr hat.
 ```
 
-## Erster Schritt: eine Bestandsaufnahme der Profile und Systemrechte
+## Bestandsaufnahme der Profile und Systemrechte
 
 Fangen Sie mit einer Bestandsaufnahme an: Wie viele Profile gibt es, wie viele Nutzer hängen an jedem, und welche Integrationsnutzer haben Systemrechte wie „Alle Daten ändern“? Danach schreiben Sie die Rollenmatrix auf, bevor Sie in Salesforce etwas umbauen. Neue Funktionen bekommen ab sofort nur noch Permission Sets. Die Migration der alten Profile kann dann Rolle für Rolle folgen. Für die erste Zahl reicht ein Benutzerbericht, gruppiert nach Profil. Jeder Integrationsnutzer bekommt danach ein eigenes Permission Set mit genau den Objekten, die seine Schnittstelle liest oder schreibt. Wie ich das auf Kundenseite aufsetze, steht unter [Salesforce-Architektur auf Kundenseite](../../leistungen/salesforce-architektur/).

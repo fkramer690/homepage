@@ -103,7 +103,7 @@ Die Supportseite nennt die Nutzungsanalyse nur für Team, Enterprise und die Con
 
 Sechs Wochen klingen lang. Ein Pilot, den der Betriebsrat nach vier Wochen stoppt, kostet mehr.
 
-## Erster Schritt: ein Inventar, wer welches KI-Tool mit welchem Konto nutzt
+## Inventar: Wer nutzt welches KI-Tool mit welchem Konto
 
 1. **Inventar erstellen:** Wer nutzt heute welches KI-Tool, mit welchem Konto?
 2. **Betriebsrat früh informieren**, mit einer Liste der Daten, die jedes Tool erzeugt, und wer sie sieht.

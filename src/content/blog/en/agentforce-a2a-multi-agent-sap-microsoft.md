@@ -102,7 +102,7 @@ Assume a machine builder with 250 dealers, SAP S/4HANA, Microsoft 365 and an Age
 
 One of three requests goes through A2A. For a first year, I consider that ratio healthy.
 
-## First step: one owner agent per audience
+## Name one owner agent per audience
 
 1. **Name one owner agent per audience** and channel: dealers, service customers, sales reps, back office.
 2. **List the questions that cross systems** and mark each as a data read (API or MCP) or delegated judgement (agent).

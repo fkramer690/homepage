@@ -105,6 +105,6 @@ Wenn Sie einen Architekten für Ihre Seite des Tisches suchen, helfen andere Fra
 - **Wie regelt er Ausfälle?** Eine Vertretung durch Kollegen gibt es bei einem Freelancer nicht. Was es geben muss: dokumentierte Standards, ein Entscheidungslog und einen internen Kollegen, der Reviews und Calls übernehmen kann. In einem Programm lief anfangs jeder Pull Request über meinen Schreibtisch, als der Prozess stabil lief, habe ich ihn an einen internen Kollegen übergeben.
 - **Wer ist Vertragspartner?** Bei mir ist das die FK Solution Design GmbH, abgerechnet wird monatlich nach Aufwand. Viele Kunden beauftragen über einen Personaldienstleister, auch das ist möglich.
 
-## Erster Schritt: aufschreiben, welche Rolle fehlt
+## Aufschreiben, welche Rolle fehlt
 
 Schreiben Sie zuerst auf, welche Rolle fehlt: Kapazität, die baut, oder Kontrolle, die entscheidet. Fehlt Kapazität, suchen Sie einen Partner, und kein Freelancer-Portal löst das Problem. Fehlt Kontrolle, weil ein Partner seine eigene Arbeit prüft oder mehrere Partner nach eigenen Regeln bauen, holen Sie sich einen Architekten auf Ihre Seite, bevor die nächste Ausschreibung rausgeht. Wie ich diese Rolle ausfülle, steht auf der Seite [Freiberuflicher Salesforce Architect](../../freiberuflicher-salesforce-architect/) und unter [Partnersteuerung](../../leistungen/partnersteuerung/).

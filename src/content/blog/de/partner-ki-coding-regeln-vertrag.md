@@ -81,7 +81,7 @@ Agenten machen Änderungen billig, auch Änderungen an Objekten, die ein anderer
 
 Die Anlage sollte für alle Partner identisch sein. Bringt jeder Partner eigene KI-Regeln mit, wird stillschweigend die strengste oder die lauteste zu Ihrem Standard, und Partner lassen sich schwerer vergleichen. Damit die Regeln nach einigen Monaten nicht verwässern, braucht es mehr als den Vertrag: Pipeline, Review und einen festen Termin für neue Fälle, beschrieben in [Reinforcement: Standards bei Partnern verankern](../standards-partner-verankern-reinforcement/). Diese Regeln auf Kundenseite festzulegen, gehört zu meiner Arbeit in der [Partnersteuerung](../../leistungen/partnersteuerung/).
 
-## Erster Schritt: einen Fragebogen an jeden Partner schicken
+## Einen Fragebogen an jeden Partner schicken
 
 ```schritte
 Fragebogen verschicken

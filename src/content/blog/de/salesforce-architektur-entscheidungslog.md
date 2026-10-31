@@ -95,6 +95,6 @@ Ein Log, das niemand liest, ist Papierkram. Drei Gelegenheiten machen es nützli
 - **Review von Partner-Designs.** Bevor ein Design gebaut wird, prüfe ich es gegen die Einträge. Widerspricht es einer Entscheidung, gibt es zwei Wege: das Design anpassen oder einen neuen Eintrag vorschlagen, der die alte Entscheidung ersetzt.
 - **Lenkungsausschuss.** Wird eine Entscheidung dort angezweifelt, liegt der Eintrag mit Optionen und Gründen auf dem Tisch. Die Diskussion beginnt dann bei der Frage, was sich seitdem geändert hat.
 
-## Erster Schritt: die fünf meistdiskutierten Entscheidungen nachtragen
+## Die fünf meistdiskutierten Entscheidungen nachtragen
 
 Beginnen Sie mit den fünf Entscheidungen, die in Ihrem Programm am häufigsten angezweifelt werden, eine Vorlage im Wiki braucht es dafür nicht. Für den ersten Eintrag eignet sich fast immer die Frage, die im letzten Lenkungsausschuss offen geblieben ist. Schreiben Sie für jede einen Eintrag, auch rückwirkend. Danach gilt die Regel, dass jede neue Architekturentscheidung einen Eintrag braucht, bevor gebaut wird. Nach einem halben Jahr haben Sie zwanzig bis dreißig Einträge und eine Dokumentation, die ein neuer Partner in einem Nachmittag liest. Wie ich das Log als Architekt auf Kundenseite führe, beschreibe ich unter [Salesforce-Architektur auf Kundenseite](../../leistungen/salesforce-architektur/).

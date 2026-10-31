@@ -103,7 +103,7 @@ Nehmen wir einen Maschinenbauer in Deutschland mit 300 Händlern in Frankreich, 
 
 Das Warten auf die schriftliche Bestätigung verschiebt den Go-live um etwa drei Wochen. Aus meiner Sicht ist das billiger, als den Datenfluss hinterher zu erklären.
 
-## Erster Schritt: Modell, Region und Ausfallpfad pro Agent schriftlich bestätigen lassen
+## Modell, Region und Ausfallpfad pro Agent schriftlich bestätigen lassen
 
 Fragen Sie Salesforce pro Agent und legen Sie die Antworten in der Architekturdokumentation ab:
 

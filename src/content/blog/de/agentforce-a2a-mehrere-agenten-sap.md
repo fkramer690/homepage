@@ -102,7 +102,7 @@ Nehmen wir einen Maschinenbauer mit 250 Händlern, SAP S/4HANA, Microsoft 365 un
 
 Eine von drei Anfragen läuft über A2A. Für ein erstes Jahr halte ich dieses Verhältnis für gesund.
 
-## Erster Schritt: ein führender Agent pro Zielgruppe
+## Pro Zielgruppe einen führenden Agenten festlegen
 
 1. **Legen Sie pro Zielgruppe einen führenden Agenten fest**, samt Kanal: Händler, Servicekunden, Vertrieb, Backoffice.
 2. **Listen Sie die Fragen auf, die Systemgrenzen überschreiten**, und markieren Sie jede als Datenabfrage (API oder MCP) oder delegiertes Urteil (Agent).

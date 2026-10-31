@@ -98,7 +98,7 @@ Most of these problems can be limited contractually and organisationally if you 
 
 These rules protect both sides from the moment when, after six months, half the team has changed and nobody remembers why an automation was built the way it was.
 
-## First step: check team size, leavers and object ownership
+## Check team size, leavers and object ownership
 
 If you already have a nearshore team, answer three questions:
 

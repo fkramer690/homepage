@@ -103,7 +103,7 @@ Keine der beiden Quellen sagt, ob ein Agent-API-Aufruf aus Ihrer Händler-App zu
 
 Wie man einen Zähler ohne Preis budgetiert, steht in [MCP-Zugriffe als Budgetrisiko](../mcp-zugriffe-salesforce-budgetrisiko/).
 
-## Erster Schritt: ein lesender Anwendungsfall wie der Auftragsstatus
+## Mit einem lesenden Anwendungsfall wie dem Auftragsstatus beginnen
 
 1. **Einen lesenden Anwendungsfall wählen**, etwa Auftragsstatus für Händler, und schreibende Aktionen auf später verschieben.
 2. **Zuerst die Identitätskette entwerfen**: Ihr Login, die Account-Zuordnung, eine per API gesetzte Session-Variable, Aktionen, die danach filtern.

@@ -96,7 +96,7 @@ Ob sieben Personen liefern, was vorher zwölf geliefert haben, bleibt offen, bis
 - **Teams ohne funktionierende Pipeline.** Pods liefern mehr Änderungen pro Tag. Ohne Versionskontrolle, automatisierte Tests und Validierungsdeployments entstehen im höheren Tempo vor allem schneller Fehler.
 - **Dünne Seniorität beim Partner.** Ein Pod hat keine Juniors, die nebenbei lernen. Geht der Builder-Reviewer, geht ein großer Teil des Wissens mit. Mindestverweildauern zählen hier noch mehr als in dem Setup, das ich in [warum Nearshore-Teams höchstens acht Entwickler haben sollten](../nearshore-teams-salesforce-acht-entwickler/) beschreibe. Was sich für Nearshore-Teams mit KI-Agenten ändert, steht in [Nearshore-Teams für Salesforce mit KI-Agenten](../nearshore-salesforce-teams-ki-agenten/).
 
-## Erster Schritt: einen Stream mit klarem Prozess wählen
+## Einen Stream mit klarem Prozess wählen
 
 ```schritte
 Einen Stream wählen

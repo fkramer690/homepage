@@ -93,6 +93,6 @@ Datenqualität ist eine Aufgabe des Fachbereichs, nicht der IT und nicht des Par
 
 Ich empfehle deshalb pro Land und pro Objekt eine verantwortliche Person auf Kundenseite. Sie bekommt den monatlichen Bericht über neue mögliche Dubletten, entscheidet über das Zusammenführen und meldet, wenn eine Schnittstelle immer wieder dieselben Fehler erzeugt. Für die installierte Basis ist das oft der Serviceinnendienst, weil er die Anlagen am besten kennt. Ohne diese Rolle beginnt die Bereinigung nach einem Jahr von vorn.
 
-## Erster Schritt: eine Matching Rule für die 100 wichtigsten Kunden
+## Matching Rule für die 100 wichtigsten Kunden anlegen
 
 Legen Sie eine Matching Rule für Accounts an und lassen Sie den Bericht laufen. Die Zahl der möglichen Paare unter Ihren hundert wichtigsten Kunden zeigt Ihnen in einer Stunde, wie es um Ihre Daten steht. Für den ersten Bericht reicht die Standard-Matching-Rule für Accounts; eigene Kriterien wie die ERP-Kundennummer ergänzen Sie, sobald der Schlüssel feststeht. Danach legen Sie pro Objekt das führende System und den Schlüssel fest und stellen die Schnittstelle auf Upsert um, bevor Sie mit dem Zusammenführen beginnen.

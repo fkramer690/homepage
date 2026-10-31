@@ -81,7 +81,7 @@ Agents make changes cheap, including changes to objects another stream owns. An 
 
 The annex should be identical for all partners. If each partner brings its own AI rules, the strictest or the loudest one quietly becomes your standard, and comparing partners gets harder. For the rules not to wear off after a few months, the contract is not enough: they need the pipeline, review and a fixed slot for new cases, described in [Reinforcement: making standards stick with partners](../partner-standards-reinforcement/). Setting these rules on the client side is part of my work in [partner governance](../../services/partner-governance/).
 
-## First step: send a questionnaire to every partner
+## Send a questionnaire to every partner
 
 ```schritte
 Send the questionnaire

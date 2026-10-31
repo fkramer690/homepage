@@ -100,7 +100,7 @@ A [CODEOWNERS file](https://docs.github.com/en/repositories/managing-your-reposi
 
 The matrix belongs to the client, not to a partner. If a partner decides who owns which object, it also decides what its competitors may build. The same applies to repository and pipeline, as described in [why clients should own their DevOps tools](../why-clients-should-own-their-devops-tools/).
 
-## First step: list the 15 to 20 most important objects
+## List the 15 to 20 most important objects
 
 A first matrix is ready sooner than most people expect:
 

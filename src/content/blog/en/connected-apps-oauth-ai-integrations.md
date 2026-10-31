@@ -105,6 +105,6 @@ The fixes take an assumed two weeks. The chatbot gets its own integration user w
 
 None of this stops a vendor from losing your tokens. It decides what a stolen token can do: from an unknown address nothing, and from an allowed one it could create leads, not read dealer prices.
 
-## First step: mark every app that sends Salesforce data to a model
+## Mark every app that sends Salesforce data to a model
 
 Start with the AI tools, because they are the newest and least reviewed: mark every app that sends Salesforce data to a model and check user, scopes and token policy for those first. Their second risk is [prompt injection in dealer portals](../prompt-injection-dealer-portals-agentforce/). An inventory of interfaces with named owners is part of my [Salesforce integration work](../../services/salesforce-integration/).

@@ -96,7 +96,7 @@ Whether seven people deliver what twelve did is an open question until cycle tim
 - **Teams without a working pipeline.** Pods push more changes per day. Without version control, automated tests and validation deploys, the faster pace mostly produces faster defects.
 - **Thin seniority at the partner.** A pod has no juniors who learn on the side. If the builder-reviewer leaves, a large share of the knowledge leaves with them. Minimum staffing periods matter even more than in the setup I describe in [why I cap nearshore teams at eight developers](../salesforce-nearshore-teams-eight-developers/), and what changes for nearshore teams working with agents is covered in [nearshore Salesforce teams with AI agents](../nearshore-salesforce-teams-ai-agents/).
 
-## First step: pick one stream with a clear process
+## Pick one stream with a clear process
 
 ```schritte
 Pick one stream

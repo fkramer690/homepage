@@ -105,6 +105,6 @@ If you are looking for an architect for your side of the table, other questions 
 - **How does he handle dropping out?** Cover by colleagues does not exist with a freelancer. What must exist: documented standards, a decision log and an internal colleague who can take over reviews and calls. In one programme every pull request went across my desk at first, and once the process was stable I handed it over to an internal colleague.
 - **Who is the contracting party?** With me it is FK Solution Design GmbH, billed monthly by effort. Many clients hire through a staffing agency, which works as well.
 
-## First step: write down which role is missing
+## Write down which role is missing
 
 First write down which role is missing: capacity that builds, or control that decides. If capacity is missing, look for a partner, and no freelancer portal solves that. If control is missing, because a partner checks its own work or several partners build by their own rules, get an architect on your side before the next tender goes out. How I fill this role is on the page [Freelance Salesforce Architect](../../freelance-salesforce-architect/) and under [partner governance](../../services/partner-governance/).

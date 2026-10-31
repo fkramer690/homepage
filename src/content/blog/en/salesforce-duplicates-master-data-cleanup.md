@@ -93,6 +93,6 @@ Data quality is a task for the business, not for IT and not for the partner. The
 
 So I recommend one responsible person on the client side per country and per object. They get the monthly report on new possible duplicates, decide on merges and report when an interface keeps producing the same errors. For the installed base this is often the service back office, because it knows the machines best. Without this role, the cleanup starts from scratch after a year.
 
-## First step: a matching rule for your 100 most important customers
+## Create a matching rule for your 100 most important customers
 
 Create a matching rule for accounts and run the report. The number of possible pairs among your hundred most important customers shows you within an hour where your data stands. The standard account matching rule is enough for the first report; add your own criteria such as the ERP customer number once the key is settled. Then define the leading system and key per object and switch the interface to upsert before you start merging.

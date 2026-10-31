@@ -109,7 +109,7 @@ Saving at any cost is wrong too. A full licence is right when a user works on le
 
 The same trade-off applies to industry clouds. When Manufacturing Cloud pays off compared to Sales Cloud, for example, is its own make-or-buy question, which I describe under [make-or-buy and licence forecasts](../../services/make-or-buy-licences/). AI features add consumption credits, and there the business value comes first, as described in [Agentforce: business value and data quality first](../agentforce-business-value-data-quality-first/).
 
-## First step: check who edited opportunities or cases last quarter
+## Check who edited opportunities or cases last quarter
 
 If a renewal or a new quote is coming up, take one hour for three questions: how many users with a full licence edited an opportunity or a case last quarter? Which external users work on internal licences today? Which interfaces run through a user with a full licence?
 

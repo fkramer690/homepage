@@ -84,6 +84,6 @@ Prüfen Sie, ob Ihre Partnerverträge auf die Standards verweisen und ob ein Ver
 
 Drei Zeichen zeigen es. Reviewer merken seltener dieselben Punkte an, weil die Pipeline sie vorher findet. Neue Randfälle kommen im Center-of-Excellence-Call auf den Tisch, bevor sie gebaut sind, statt danach als Konflikt. Und neue Entwickler eines Partners halten die Regeln ein, ohne dass jemand sie einzeln erklärt. In meinem Programm fielen die Randfälle irgendwann ganz weg, weil Themen besprochen wurden, bevor sie zu Konflikten wurden.
 
-## Erster Schritt: wiederkehrende Review-Anmerkungen zählen
+## Wiederkehrende Review-Anmerkungen zählen
 
 Sehen Sie sich die Review-Kommentare der letzten zwei Monate an und zählen Sie, welche Anmerkungen sich wiederholen. Jede Anmerkung, die sich automatisch prüfen lässt, kommt in die Pipeline, mit einer klaren Fehlermeldung, die den Standard nennt. Typische Kandidaten sind Namenskonventionen, fest eingetragene IDs im Code und Felder ohne Beschreibung; der Salesforce Code Analyzer oder eine eigene Regel in der Pipeline findet sie, bevor ein Reviewer sie sieht. Für den Rest richten Sie einen festen Call mit den technischen Leads ein. Und planen Sie von Anfang an, wer auf Kundenseite die Standards übernimmt, wenn das Projekt endet. Wie ich das mit mehreren Partnern aufsetze, beschreibe ich unter [Partnersteuerung](../../leistungen/partnersteuerung/).

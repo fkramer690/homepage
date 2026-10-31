@@ -98,7 +98,7 @@ Die meisten dieser Probleme lassen sich vertraglich und organisatorisch begrenze
 
 Diese Regeln schützen beide Seiten vor dem Moment, in dem nach sechs Monaten die Hälfte des Teams gewechselt hat und keiner mehr weiß, warum eine Automatisierung so gebaut wurde.
 
-## Erster Schritt: Teamgröße, Abgänge und Objektverantwortung prüfen
+## Teamgröße, Abgänge und Objektverantwortung prüfen
 
 Haben Sie bereits ein Nearshore-Team, beantworten Sie drei Fragen:
 

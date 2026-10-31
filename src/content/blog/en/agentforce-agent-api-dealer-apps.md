@@ -103,7 +103,7 @@ Neither source says whether a call to the Agent API from your dealer app counts 
 
 How to budget a meter without a price is in [MCP calls as a budget risk](../mcp-api-calls-salesforce-budget-risk/).
 
-## First step: one read-only use case such as order status
+## Begin with one read-only use case such as order status
 
 1. **Pick one read-only use case**, such as order status for dealers, and keep write actions for later.
 2. **Design the identity chain first**: your login, account mapping, a session variable set by the API, actions that filter on it.

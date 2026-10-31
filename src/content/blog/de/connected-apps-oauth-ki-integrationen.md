@@ -105,6 +105,6 @@ Die Korrekturen dauern angenommen zwei Wochen. Der Chatbot bekommt einen eigenen
 
 Nichts davon verhindert, dass ein Anbieter Ihre Tokens verliert. Es entscheidet, was ein gestohlenes Token kann: von einer fremden Adresse nichts, von einer erlaubten Leads anlegen, aber keine Händlerpreise lesen.
 
-## Erster Schritt: jede App markieren, die Salesforce-Daten an ein Modell schickt
+## Jede App markieren, die Salesforce-Daten an ein Modell schickt
 
 Fangen Sie mit den KI-Tools an, weil sie die neuesten und am wenigsten geprüften sind: Markieren Sie jede App, die Salesforce-Daten an ein Modell schickt, und prüfen Sie für diese zuerst Benutzer, Scopes und Token-Richtlinie. Ihr zweites Risiko ist [Prompt Injection im Händlerportal](../prompt-injection-haendlerportal-agentforce/). Eine Liste aller Schnittstellen mit benannten Verantwortlichen gehört zu meiner Arbeit an [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).

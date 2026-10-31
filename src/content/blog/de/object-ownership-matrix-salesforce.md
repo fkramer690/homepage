@@ -100,7 +100,7 @@ Eine [CODEOWNERS-Datei](https://docs.github.com/en/repositories/managing-your-re
 
 Die Matrix gehört dem Kunden, nicht einem Partner. Legt ein Partner fest, wer welches Objekt verantwortet, entscheidet er auch darüber, was seine Wettbewerber bauen dürfen. Dasselbe gilt für Repository und Pipeline, wie in [warum Kunden ihre DevOps-Tools selbst besitzen sollten](../warum-kunden-devops-tools-selbst-besitzen-sollten/) beschrieben.
 
-## Erster Schritt: die 15 bis 20 wichtigsten Objekte auflisten
+## Die 15 bis 20 wichtigsten Objekte auflisten
 
 Eine erste Matrix steht schneller, als die meisten erwarten:
 

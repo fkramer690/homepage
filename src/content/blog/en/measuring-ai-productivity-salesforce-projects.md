@@ -75,7 +75,7 @@ After three months with agents, assume the build step drops from 4 to 2.5 days. 
 
 Both numbers are true. The coding is faster; the programme barely is. The useful conclusion is where to act: smaller pull requests with automated gates, fixed daily UAT slots with the head of service, and a reviewer on the client side with time reserved for it. Without the baseline, the steering committee would only have heard the 30 percent.
 
-## First step: clean up the status workflow before the tools arrive
+## Clean up the status workflow before the tools arrive
 
 Start before the tools arrive, because a baseline cannot be reconstructed from memory.
 

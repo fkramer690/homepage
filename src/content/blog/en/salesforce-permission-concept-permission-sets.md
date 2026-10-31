@@ -81,6 +81,6 @@ Salesforce offers the free User Access and Permissions Assistant, which analyses
 - Switch users step by step, country by country, and only delete the old profiles once nobody uses them.
 ```
 
-## First step: take stock of profiles and system permissions
+## Take stock of profiles and system permissions
 
 Start with an inventory: how many profiles exist, how many users hang on each one, and which integration users have system permissions such as "Modify All Data"? Then write down the role matrix before you rebuild anything in Salesforce. From now on new features only get permission sets. The migration of the old profiles can follow role by role. For the first number, a user report grouped by profile is enough. Each integration user then gets its own permission set with exactly the objects its interface reads or writes. How I set this up on the client side is described under [Salesforce architecture on the client side](../../services/salesforce-architecture/).

@@ -81,6 +81,6 @@ Für KI-generierten Code gelten dieselben Regeln. Eine Regeldatei im Repository 
 
 Die erste Version deckt nie alles ab. In den Wochen danach tauchen Fälle auf, die niemand bedacht hat: ein Stream braucht ein Feld auf einem fremden Objekt, oder zwei Teams planen gleichzeitig eine Änderung am selben Flow. In meinem Programm haben wir diese Fälle in regelmäßigen [Center-of-Excellence-Calls](../salesforce-center-of-excellence-format/) besprochen, in denen anstehende Änderungen mit genug Vorlauf für alle Streams auf den Tisch kamen. Jede Entscheidung aus diesen Calls wurde in die Standards übernommen. Irgendwann fielen die Randfälle weg, weil Themen besprochen wurden, bevor sie zu Konflikten wurden. Warum Standards bei Partnern ohne solche Termine nach einigen Monaten verwässern, beschreibe ich in [Reinforcement: Standards bei Partnern verankern](../standards-partner-verankern-reinforcement/).
 
-## Erster Schritt: zwei bis drei Wochen lang Review-Anmerkungen sammeln
+## Zwei bis drei Wochen lang Review-Anmerkungen sammeln
 
 Schreiben Sie keine Standards am Schreibtisch. Lassen Sie zwei bis drei Wochen lang jeden Pull Request reviewen und notieren Sie, was Sie wiederholt anmerken. Daraus entsteht die erste Version, und sie passt zu Ihrer Org statt zu einem Lehrbuch. Danach kommen die Definition of Done, die automatischen Prüfungen und ein fester Termin, an dem neue Randfälle mit allen Streams besprochen werden.

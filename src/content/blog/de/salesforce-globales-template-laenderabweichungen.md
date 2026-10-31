@@ -95,6 +95,6 @@ Die 80 Prozent sind ein Richtwert, keine exakte Messung. Trotzdem lässt sich di
 - **Landesspezifische Metadaten.** Flows, Datensatztypen oder Seitenlayouts, die nur für ein Land existieren. Die Zahl sollte nahe null liegen.
 - **Testaufwand pro Release für das Land.** Braucht ein Land deutlich mehr Testfälle als die anderen, trägt es mehr Abweichungen, als die Liste zeigt.
 
-## Erster Schritt: das Ziel vor dem ersten Land aufschreiben
+## Das Ziel vor dem ersten Land aufschreiben
 
 Legen Sie vor dem ersten Land fest, was das Ziel ist, und schreiben Sie es auf. Ist es Harmonisierung, folgt daraus der Richtwert für die Übereinstimmung und der Antragsweg für Abweichungen. Führen Sie dann eine Liste der Abweichungen pro Land, mit Grund und Datum der Freigabe. In die Liste gehört auch, was die Abweichung im Betrieb kostet, etwa einen zusätzlichen Testfall in jedem Release. Im Lenkungsausschuss zeigt sie auf einen Blick, ob das Template hält. Wie Länder das Template annehmen, ist auch eine Frage des [Change Managements](../../leistungen/change-management/).

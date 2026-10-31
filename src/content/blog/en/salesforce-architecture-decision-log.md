@@ -95,6 +95,6 @@ A log nobody reads is paperwork. Three occasions make it useful:
 - **Reviewing partner designs.** Before a design is built, I check it against the entries. If it contradicts a decision, there are two ways forward: adjust the design, or propose a new entry that supersedes the old decision.
 - **Steering committee.** When a decision is questioned there, the entry with options and reasons is on the table. The discussion then starts with what has changed since.
 
-## First step: write up the five most questioned decisions
+## Write up the five most questioned decisions
 
 Begin with the five decisions that are questioned most often in your programme; you do not need a wiki template for that. The first entry is almost always the question that stayed open in the last steering committee. Write an entry for each, even after the fact. From then on the rule is that every new architecture decision needs an entry before anything is built. After six months you have twenty to thirty entries and documentation a new partner can read in an afternoon. How I run the log as the architect on the client side is described under [Salesforce architecture on the client side](../../services/salesforce-architecture/).

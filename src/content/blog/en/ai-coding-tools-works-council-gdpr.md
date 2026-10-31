@@ -103,7 +103,7 @@ The support page lists usage analytics only for Team, Enterprise and Console, so
 
 Six weeks sounds long. A pilot stopped after four weeks costs more.
 
-## First step: an inventory of who uses which AI tool on which account
+## Inventory: who uses which AI tool on which account
 
 1. **Take inventory:** who uses which AI tool today, on which account?
 2. **Inform the works council early**, with a list of the data each tool produces and who sees it.

@@ -103,7 +103,7 @@ contra: What you accept in return
 
 If a group runs several orgs, for example one per subsidiary, the hybrid model fits better. The CoE then sets the shared rules and each org enforces them with its own team.
 
-## First step: name a sponsor and a CoE lead
+## Name a sponsor and a CoE lead
 
 A CoE does not have to be a new department. This is the order I recommend:
 

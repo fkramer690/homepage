@@ -81,6 +81,6 @@ The same rules apply to AI-generated code. A rules file in the repository turns 
 
 The first version never covers everything. In the weeks after, cases come up that nobody thought of: a stream needs a field on another stream's object, or two teams plan a change to the same flow at the same time. In my programme we discussed these cases in regular [Center of Excellence calls](../salesforce-center-of-excellence-cadence/), where upcoming changes came to the table with enough lead time for all streams. Every decision from these calls went into the standards. At some point the edge cases disappeared, because topics were discussed before they turned into conflicts. Why standards at partners wear off after a few months without such a slot is described in [Reinforcement: making standards stick with partners](../partner-standards-reinforcement/).
 
-## First step: collect review comments for two to three weeks
+## Collect review comments for two to three weeks
 
 Do not write standards at your desk. For two to three weeks, have every pull request reviewed and note what you keep commenting on. That becomes the first version, and it fits your org instead of a textbook. After that come the definition of done, the automatic checks and a fixed slot where new edge cases are discussed with all streams.

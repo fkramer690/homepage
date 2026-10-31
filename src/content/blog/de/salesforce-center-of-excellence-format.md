@@ -103,7 +103,7 @@ contra: Was Sie dafür in Kauf nehmen
 
 Hat ein Konzern mehrere Orgs, etwa eine pro Tochtergesellschaft, passt das hybride Modell besser. Dann setzt das CoE die gemeinsamen Regeln, und jede Org setzt sie mit ihrem eigenen Team durch.
 
-## Erster Schritt: Sponsor und CoE-Lead benennen
+## Sponsor und CoE-Lead benennen
 
 Ein CoE muss keine neue Abteilung sein. Diese Reihenfolge empfehle ich:
 

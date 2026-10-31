@@ -103,7 +103,7 @@ Assume a machine builder in Germany with 300 dealers in France, Italy, Austria, 
 
 Waiting for the written confirmation delays go-live by about three weeks. In my judgement that is cheaper than explaining the data flow afterwards.
 
-## First step: get model, region and failover confirmed in writing per agent
+## Get model, region and failover confirmed in writing per agent
 
 Ask Salesforce per agent and file the answers in the architecture documentation:
 

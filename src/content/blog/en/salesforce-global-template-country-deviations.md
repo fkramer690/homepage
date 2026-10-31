@@ -95,6 +95,6 @@ The 80 percent is a guideline, not an exact measurement. Still, the direction is
 - **Country-specific metadata.** Flows, record types or page layouts that exist for one country only. The number should be close to zero.
 - **Test effort per release for the country.** If a country needs clearly more test cases than the others, it carries more deviations than the list shows.
 
-## First step: write down the goal before the first country
+## Write down the goal before the first country
 
 Before the first country, decide what the goal is and write it down. If it is harmonisation, the guideline for the match and the request path for deviations follow from it. Then keep a list of deviations per country, with reason and approval date. The list should also say what each deviation costs in operation, such as an extra test case in every release. In the steering committee it shows at a glance whether the template holds. How countries take up the template is also a question of [change management](../../services/change-management-salesforce/).

@@ -109,7 +109,7 @@ Sparen um jeden Preis ist auch falsch. Eine volle Lizenz ist richtig, wenn ein N
 
 Dieselbe Abwägung gilt bei Industry Clouds. Wann sich zum Beispiel die Manufacturing Cloud gegenüber Sales Cloud lohnt, ist eine eigene Make-or-buy-Frage, die ich unter [Make-or-buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/) beschreibe. Bei KI-Funktionen kommen Verbrauchs-Credits dazu, und dort zählt zuerst der Nutzen, wie in [Agentforce: Business Value und Datenqualität zuerst](../agentforce-business-value-datenqualitaet/) beschrieben.
 
-## Erster Schritt: prüfen, wer im letzten Quartal Opportunities oder Fälle bearbeitet hat
+## Prüfen, wer im letzten Quartal Opportunities oder Fälle bearbeitet hat
 
 Liegt eine Verlängerung oder ein neues Angebot an, nehmen Sie sich eine Stunde für drei Fragen: Wie viele Nutzer mit voller Lizenz haben im letzten Quartal eine Opportunity oder einen Fall bearbeitet? Welche externen Nutzer arbeiten heute mit internen Lizenzen? Welche Schnittstellen laufen über einen Benutzer mit voller Lizenz?
 

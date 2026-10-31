@@ -84,6 +84,6 @@ Check whether your partner contracts refer to the standards and whether a violat
 
 Three signs show it. Reviewers comment on the same points less often, because the pipeline finds them first. New edge cases come to the Center of Excellence call before they are built, instead of afterwards as a conflict. And a partner's new developers follow the rules without anyone explaining them one by one. In my programme the edge cases eventually disappeared, because topics were discussed before they turned into conflicts.
 
-## First step: count the review comments that repeat
+## Count the review comments that repeat
 
 Look at the review comments of the last two months and count which remarks repeat. Every remark that can be checked automatically goes into the pipeline, with a clear error message that names the standard. Typical candidates are naming conventions, hard-coded IDs and fields without a description; Salesforce Code Analyzer or a custom rule in the pipeline finds them before a reviewer does. For the rest, set up a fixed call with the technical leads. And plan from the start who on the client side takes over the standards when the project ends. How I set this up with several partners is described under [partner governance](../../services/partner-governance/).
