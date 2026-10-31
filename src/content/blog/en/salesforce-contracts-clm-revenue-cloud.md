@@ -10,11 +10,10 @@ categories: [revenue-cloud]
 contactBrief: make-or-buy
 tags: [salesforce contracts, contract lifecycle management, revenue cloud, docusign, clause library, make-or-buy]
 takeaways:
-  - "Salesforce Contracts covers sales contracts from quote to signature: templates, a clause library, Word editing through Microsoft 365, DocuSign, versions and obligation tracking."
-  - "Contracts can be created through APIs from opportunities, quotes, orders or any standard object, so the contract starts with the data sales already entered."
-  - "Salesforce Contracts is listed from €50 or $50 per user and month and needs prerequisite products; Revenue Cloud Advanced lists Contracts & Orders, Growth offers CLM as an add-on."
-  - "It is enough for customer contracts that come out of the sales process; legal keeps its own CLM when it manages purchasing, NDAs and group contracts in one place."
-  - "Sales agreements in Manufacturing Cloud and service contracts in Field Service remain separate objects; decide which record answers which question."
+  - "Contracts are created through APIs from an opportunity, quote or order and start with the data sales already entered."
+  - "Salesforce Contracts is listed from €50 or $50 per user and month. With Growth, CLM is an add-on."
+  - "Legal keeps its own CLM when it manages purchasing, NDAs and group contracts in one place."
+  - "Sales agreements in Manufacturing Cloud and service contracts in Field Service remain separate objects. Decide which record answers which question."
 faq:
   - q: "What is Salesforce Contracts?"
     a: "Salesforce Contracts is the contract lifecycle management product of Salesforce, part of Revenue Cloud. It covers authoring with templates and a clause library, negotiation in Word, approvals, e-signature through DocuSign, activation and obligation management on the Salesforce platform."
@@ -37,7 +36,7 @@ Two design points matter for an architect. First, contract types define what kin
 
 The [Salesforce Contracts developer guide](https://developer.salesforce.com/docs/atlas.en-us.clm_developer_guide.meta/clm_developer_guide/clm_objects_overview.htm) for Winter '27 lists the standard objects behind it, among them ContractDocumentVersion for document versions, DocumentClause for clauses, ContractType and Obligation.
 
-## What does it cover from quote to signature?
+## From quote to signature: templates, clauses, Word and DocuSign
 
 The authoring side is the strongest part. Trailhead names these capabilities:
 
@@ -80,7 +79,7 @@ The feature matrix on both pricing pages does not show in readable form which ed
 
 More on licence planning in [Salesforce licences: does everyone need a full one?](../salesforce-licences-full-licence-needed/)
 
-## Which contract belongs in which record?
+## Sales agreements and service contracts stay separate objects
 
 Manufacturers who use several Salesforce products quickly have three things called "contract". They answer different questions.
 
@@ -100,10 +99,8 @@ I would keep or choose a dedicated CLM tool outside Salesforce in these cases:
 - **Most contracts are on the customer's paper.** Large OEM customers send their own purchasing terms. Then review and redlining of third-party documents matter more than templates.
 - **Legal does not work in Salesforce.** If lawyers would need a licence only for contract review, the per-user price adds up and adoption suffers.
 
-In these cases Salesforce creates the commercial data and hands the signed contract over through an integration. A typical scenario, as an assumption: a supplier of drive components has an in-house legal team with an existing CLM tool for all group contracts. Sales sends 300 standard supply contracts a year from quotes. Here I would generate the standard contracts in Salesforce Contracts with approved clauses and DocuSign, and send only contracts with deviating clauses to legal's tool. That keeps the routine fast and the exceptions with legal. This make-or-buy question is part of my work on [make-or-buy and licence forecasts](../../services/make-or-buy-licences/).
+In these cases Salesforce creates the commercial data and hands the signed contract over through an integration. A worked example: a supplier of drive components has an in-house legal team with an existing CLM tool for all group contracts. Sales sends 300 standard supply contracts a year from quotes. Here I would generate the standard contracts in Salesforce Contracts with approved clauses and DocuSign, and send only contracts with deviating clauses to legal's tool. That keeps the routine fast and the exceptions with legal. This make-or-buy question is part of my work on [make-or-buy and licence forecasts](../../services/make-or-buy-licences/).
 
-## Where should you start?
+## First step: count your customer contracts and sort them into three groups
 
 Count your customer contracts per year and sort them into three groups: own template without changes, own template with negotiated clauses, customer's paper. If the first two groups dominate, Salesforce Contracts fits. Then build the clause library with legal before the first template. How contracts fit into the path from quote to order is in the chapter [quote, contract, order](../../masterclass/revenue-cloud/quote-contract-order/).
-
-Salesforce Contracts is enough when contracts come out of the sales process on your own paper.

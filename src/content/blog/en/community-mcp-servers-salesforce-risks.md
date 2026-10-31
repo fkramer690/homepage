@@ -10,10 +10,9 @@ categories: [devops, ai]
 contactBrief: partner-governance
 tags: [mcp, community mcp server, security, claude code, partner governance, manufacturing]
 takeaways:
-  - "A community MCP server is third-party code that runs with a Salesforce login, so it needs the same approval as an integration, not the approval of a browser plugin."
   - "Before approval, check six things: identity, credentials, maintainer and pinned version, tool list, other tools in the same client and the target org."
-  - "The precedents are real: a fake postmark-mcp package copied every email to its author from version 1.0.16, and mcp-remote had a CVSS 9.6 flaw with over 437,000 downloads."
-  - "For a person working with Claude, ChatGPT or Cursor on an Enterprise Edition org, Salesforce Hosted MCP is the safer route: named user, OAuth with PKCE, off by default."
+  - "A fake postmark-mcp package copied every email to its author from version 1.0.16; mcp-remote had a CVSS 9.6 flaw."
+  - "For a person using Claude, ChatGPT or Cursor on Enterprise Edition, Salesforce Hosted MCP is safer: named user, OAuth with PKCE."
   - "Nightly or machine-to-machine jobs belong in a classic integration or the Agent API, not in a community MCP server with a stored password."
 faq:
   - q: "Are community MCP servers for Salesforce unsafe?"
@@ -46,7 +45,7 @@ I found no published incident with a Salesforce community server. The risk is th
 
 The tool descriptions add a quieter risk. Simon Willison, citing Invariant Labs, describes [tool poisoning](https://simonwillison.net/2025/Apr/9/mcp-prompt-injection/), where "malicious instructions are tucked away in the tool descriptions themselves", and quotes Elena Cross: "MCP tools can mutate their own definitions after installation." A server you reviewed in March can behave differently after an update in May.
 
-## Which checks belong before approval?
+## Approval needs six written answers first
 
 I would ask the partner or developer for written answers to six questions before anyone installs the server.
 
@@ -89,7 +88,7 @@ Hosted MCP has limits that drive people to community servers:
 
 Neither limit makes a community server the answer. A nightly job is an integration with its own user and the client credentials or JWT flow. When Agentforce is the client, [Trailhead](https://trailhead.salesforce.com/content/learn/modules/mcp-for-agentforce-quick-look/discover-mcp-for-agentforce) describes registering third-party servers in Agentforce Registry, selecting tools and limiting calls through Agentforce Gateway. That governs the agent's side; the server behind it still needs the six checks.
 
-## A typical scenario: three requests from the partner team
+## Worked example: three requests from the partner team
 
 Assume a machine builder with Sales Cloud, Service Cloud, a dealer portal and SAP, Enterprise Edition with Flex Credits, and an implementation partner with six developers. All numbers are assumptions.
 
@@ -101,13 +100,11 @@ Assume a machine builder with Sales Cloud, Service Cloud, a dealer portal and SA
 
 All three needs get met, and no community server reaches the org.
 
-## Where should you start?
+## First step: inventory the MCP servers at every partner
 
 1. **Inventory.** Ask every partner which MCP servers are configured in their clients for your orgs, including versions. The DX MCP server deadline is a good occasion, see [the end of the Salesforce DX MCP Server](../salesforce-dx-mcp-server-end-of-life/).
 2. **Put the rule in writing.** Hosted or Salesforce-operated servers by default; community servers only after the six checks, in sandboxes, with a pinned version.
 3. **Enforce it where you can.** If you license Claude Code centrally, [managed settings](https://code.claude.com/docs/en/managed-mcp) with `allowedMcpServers` and `allowManagedMcpServersOnly` block every server that is not on your list.
 4. **Review on every update.** A new version is a new approval.
 
-Steering partners on tools like this is part of my [partner governance](../../services/partner-governance/) work, and the interface overview is in [chapter 3 of the masterclass](../../masterclass/ai-salesforce/mcp-and-interfaces/).
-
-A community MCP server earns approval only when you can name its user, its secret, its maintainer and its version.
+For the inventory, a table with partner, server, version, user and target org is enough. Steering partners on tools like this is part of my [partner governance](../../services/partner-governance/) work, and the interface overview is in [chapter 3 of the masterclass](../../masterclass/ai-salesforce/mcp-and-interfaces/).

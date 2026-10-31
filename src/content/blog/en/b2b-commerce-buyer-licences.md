@@ -10,9 +10,9 @@ categories: [b2b-commerce, architecture]
 contactBrief: licences
 tags: [B2B Commerce, licences, Customer Community Plus, Experience Cloud, dealers]
 takeaways:
-  - "According to Trailhead, buyers and buyer managers in a Salesforce B2B Commerce store need Customer Community Plus, merchandisers the B2B and D2C Commerce licence and developers a full Salesforce licence."
-  - "Buyer licences are not part of the Commerce editions. The B2B pricing page lists storefronts, Order Management and Data Cloud credits, but no buyer licences."
-  - "At the Experience Cloud for Manufacturing list price, Customer Community Plus costs $35 per member or $15 per login and month. From three login days a month, the member licence is cheaper."
+  - "From three login days a month, the member licence is cheaper. So login days per buyer decide the bill more than the number of dealers does."
+  - "Buyer licences are not part of the Commerce editions. The B2B pricing page lists storefronts, Order Management and Data Cloud credits."
+  - "At the Experience Cloud for Manufacturing list price, Customer Community Plus costs $35 per member or $15 per login and month."
   - "Customer Community Plus needs roles. The default is 50,000 portal roles per org, which Salesforce can extend for B2B."
   - "A buyer who orders for many accounts uses the Account Switcher, which slows down beyond 200 accounts and fails at 2,000."
 faq:
@@ -42,7 +42,7 @@ Salesforce B2B Commerce, which Salesforce now also markets as "Agentforce Commer
 
 The [B2B Commerce pricing page](https://www.salesforce.com/editions-pricing/commerce-cloud/b2b/) lists 6 or 10 storefronts, 20 inventory locations, Order Management, Data Cloud credits, the Merchant Agent and 3 or 5 users each for CRM Analytics and Knowledge. Buyer licences do not appear there. They come on top of the GMV fee, which I cover in [B2B Commerce pricing: what the GMV model costs](../b2b-commerce-pricing-gmv-model/).
 
-## Which licence do buyers and buyer managers need?
+## Buyers and buyer managers need Customer Community Plus
 
 Both get Customer Community Plus. According to [Salesforce Help on external user licences](https://help.salesforce.com/s/articleView?language=en_US&id=sf.users_license_types_communities.htm&type=5), this licence is meant for external users who need reports, dashboards and standard sharing. Partner Community is described there for business-to-business sites that need sales data, such as partner relationship management. Trailhead does not mention Partner Community for the store.
 
@@ -71,13 +71,13 @@ The [Experience Cloud for Manufacturing page](https://www.salesforce.com/manufac
 
 The break-even is simple. A buyer with two login days a month costs $30 on login and $35 as a member. From three login days, at $45, the member licence is cheaper. Anyone who orders weekly therefore gets a member licence, anyone who orders a few times a year a login licence.
 
-A typical scenario, as an assumption: a manufacturer with 250 dealers, each with one buyer manager and two buyers, so 750 users. 150 of them order several times a week and get member licences: 150 × $35 = $5,250 a month. The other 600 log in once a month on average: 600 logins × $15 = $9,000. Together that is $14,250 a month, or $171,000 a year at list price. With member licences for all 750 users it would be $26,250 a month, or $315,000 a year.
+Worked example: a manufacturer with 250 dealers, each with one buyer manager and two buyers, so 750 users. 150 of them order several times a week and get member licences: 150 × $35 = $5,250 a month. The other 600 log in once a month on average: 600 logins × $15 = $9,000. Together that is $14,250 a month, or $171,000 a year at list price. With member licences for all 750 users it would be $26,250 a month, or $315,000 a year.
 
 ```hinweis achtung
 A login day is any day someone logs in, also to check an order status. If the store is where dealers look up delivery dates, login days rise even when orders do not.
 ```
 
-## What limits matter for licence planning?
+## Roles and the Account Switcher limit the plan
 
 Some limits sit next to the licence and show up late if nobody checks them. The [Commerce developer guide on buyer limits](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-shopper-buyer-groups-accounts-limits.html) and Help name these:
 
@@ -95,8 +95,6 @@ Internal staff work in Salesforce with their internal licence. The Trailhead per
 
 My advice: write down per internal group what they do in the store, for example look at it as a dealer would, order on a dealer's behalf or maintain the catalogue, and have Salesforce confirm in the quote which licence covers each activity. Which internal users really need a full licence is covered in [Salesforce licences: does everyone need a full one?](../salesforce-licences-full-licence-needed/).
 
-## Where should you start?
+## First step: count login days per buyer
 
 Build a list with four columns: role, number of people, login days per month and licence. Fill it from your order data of the last twelve months: who ordered how often by phone, email or portal. Then check the limits above, especially roles and the Account Switcher for dealer groups. Whether a store or a portal fits your dealers at all is the question in [B2B Commerce or dealer portal](../b2b-commerce-or-dealer-portal/), and the whole cost picture is in [chapter 1 of the B2B Commerce masterclass](../../masterclass/b2b-commerce/b2b-commerce-worth-it-overview/). Licence forecasts like this are part of my work on [make-or-buy and licences](../../services/make-or-buy-licences/).
-
-Count login days per buyer before you sign, because they decide the licence bill more than the number of dealers does.

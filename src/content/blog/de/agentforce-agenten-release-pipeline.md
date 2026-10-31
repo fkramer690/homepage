@@ -9,11 +9,11 @@ topic: release
 categories: [devops, ai]
 tags: [Agentforce, Release-Management, DevOps, Agent Script, Partnersteuerung, Maschinenbau]
 takeaways:
-  - "Ein Agentforce-Agent ist Metadaten: Seine Agent-Script-Datei liegt in einem Authoring Bundle in Git und läuft wie ein Flow durch Pull Request, Validierung und gezieltes Deployment."
+  - "Die Agent-Script-Datei liegt in einem Authoring Bundle in Git und läuft wie ein Flow durch Pull Request, Validierung und gezieltes Deployment."
   - "Publish erzeugt eine neue Agentenversion im Status inaktiv; das Aktivieren ist ein eigener Schritt, und pro Agent kann immer nur eine Version aktiv sein."
-  - "Committete Versionen lassen sich nicht bearbeiten, und Salesforce blockiert weitere Deployments, wenn Quell- und Ziel-Org auseinanderlaufen. Ein Schnellfix im Builder der Produktion bricht die Pipeline."
-  - "Salesforce beschreibt kein Rollback-Verfahren; nach meiner Lesart ist es am schnellsten, die vorherige Version wieder zu aktivieren, während Flows und Apex hinter den Aktionen ein eigenes Revert brauchen."
-  - "Der Partner baut und testet, der Release Manager des Kunden deployt, published und aktiviert, und der Fachverantwortliche gibt die Aktivierung in Produktion frei."
+  - "Committete Versionen lassen sich nicht bearbeiten. Ein Schnellfix im Builder der Produktion lässt die Orgs auseinanderlaufen und blockiert Deployments."
+  - "Salesforce beschreibt kein Rollback. Am schnellsten ist es, die vorherige Version zu aktivieren; Flows und Apex brauchen ein eigenes Revert."
+  - "Der Partner baut und testet, der Release Manager des Kunden deployt und aktiviert, der Fachverantwortliche gibt die Aktivierung frei."
 faq:
   - q: "Lässt sich ein Agentforce-Agent wie andere Salesforce-Metadaten deployen?"
     a: "Ja. Agent Script liegt im Metadatentyp AiAuthoringBundle und wird mit der Salesforce CLI deployt. Danach wird das Bundle in der Ziel-Org gepublished, was die Agentenversion erzeugt, und anschließend aktiviert."
@@ -89,7 +89,7 @@ Das hat eine Grenze, die jede Serviceleitung kennen sollte. Nach meiner Lesart d
 
 Deaktivieren ist die Notbremse, und zwar eine harte. Laut [Agentforce-DX-Dokumentation](https://developer.salesforce.com/docs/ai/agentforce/guide/agent-dx-manage.html) beendet das Deaktivieren offene Interaktionen und macht den Agenten für alle Verbindungen unerreichbar. Für ein Händlerportal würde ich vorher festlegen, wo Händler dann landen, etwa in einem Fallformular oder bei der Service-Hotline.
 
-## Ein typisches Szenario: Der Partner baut, der Kunde gibt frei
+## Beispiel: Der Partner baut, der Kunde gibt frei
 
 Nehmen wir einen Maschinenbauer mit Service Cloud, SAP, Händlerportal und einer Produktiv-Org. Ein Partner hat den Serviceagenten für Händleranfragen gebaut; ein internes Team aus vier Personen verantwortet Git und Pipeline, alle zwei Wochen gibt es ein Release. Alle Zahlen sind Annahmen.
 
@@ -97,7 +97,7 @@ Version 3 des Agenten beantwortet in Produktion Fragen zu Auftragsstatus und Gar
 
 Zwei Tage später empfiehlt der Ersatzteil-Subagent für eine Produktlinie das falsche Nachfolgeteil. Der Release Manager aktiviert innerhalb von 15 Minuten wieder Version 3; Auftragsstatus und Garantieauskünfte laufen weiter. Auch Version 3 ruft den erweiterten Flow auf, aber das zusätzliche Feld schadet nicht, also bleibt der Flow, und die Korrektur kommt als Version 5 über den normalen Weg. Produktionsrechte hat der Partner dabei nie gebraucht.
 
-## Wer gibt den Agenten frei, wenn Kunde und Partner eine Org teilen?
+## Der Kunde gibt frei, auch in einer geteilten Org
 
 Der Kunde, mit klaren Grenzen zwischen den Rollen:
 
@@ -110,7 +110,7 @@ Jeder Agent bekommt in der [Object Ownership Matrix](../object-ownership-matrix-
 
 Unternehmensgruppen mit einer Produktiv-Org je Tochtergesellschaft stehen vor einer Lücke. Die [Referenz der agent-Befehle](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_agent_commands_unified.htm) nennt eine Agentenvorlage für Second-Generation Managed Packages, aber eine Anleitung von Salesforce, wie man einen Agenten in mehrere eigene Orgs ausrollt, habe ich nicht gefunden. Bis dahin würde ich jede Org als eigenes Release-Ziel mit eigenem Versionsprotokoll behandeln.
 
-## Wo fangen Sie an?
+## Erster Schritt: die .agent-Dateien ins Repository des Kunden
 
 1. Legen Sie die `.agent`-Datei jedes Agenten ins Repository des Kunden und bauen Sie Agenten nicht mehr direkt in geteilten Orgs.
 2. Nehmen Sie `sf agent validate authoring-bundle` und gezielte Deployments in die Pipeline auf.
@@ -118,5 +118,3 @@ Unternehmensgruppen mit einer Produktiv-Org je Tochtergesellschaft stehen vor ei
 4. Führen Sie ein Versionsprotokoll pro Org: Git-Commit, Versionsnummer, Datum, Freigabe.
 5. Schreiben Sie ein Rollback-Runbook: welche Version wieder aktiviert wird, welche Flows zurückgedreht werden, wohin Händler gehen, wenn der Agent aus ist.
 6. Prüfen Sie, ob beide Orgs auf API v68 sind, bevor Sie Agenten mit den neuen Metadatentypen deployen.
-
-Ein Agent ist reif für einen Enterprise-Release-Prozess, wenn jede Version, jede Aktivierung und jedes Rollback so nachvollziehbar ist wie jede andere Änderung.

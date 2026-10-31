@@ -9,11 +9,11 @@ topic: commerce
 categories: [b2b-commerce, architecture]
 tags: [B2B Commerce, buyer groups, entitlement policies, product visibility, dealers, data model]
 takeaways:
-  - "In Salesforce B2B Commerce, entitlement policies decide which products a buyer sees, and buyer groups decide which policies and price books apply to a buyer account."
-  - "A buyer account can belong to 20 buyer groups by default, an entitlement policy serves up to 200 buyer groups, and a product should be entitled to no more than 2,000 buyer groups."
-  - "Beyond 2,000 buyer groups per product, Salesforce indexes only the first 2,000 for search. The limit is not enforced on data load, so nothing fails until dealers stop finding parts."
-  - "Cut buyer groups by country, dealer tier and brand, never one group per dealer account. The number of groups then stays stable when new dealers join."
-  - "Assignment by rule is possible through an Apex buyer group extension or Revenue Management qualification rules, both with conditions you should know first."
+  - "Entitlement policies decide which products a buyer sees. Buyer groups decide which policies and price books apply to the buyer's account."
+  - "A buyer account belongs to at most 20 buyer groups, a policy serves up to 200 groups, and a product should be entitled to no more than 2,000 groups."
+  - "Beyond 2,000 groups per product, search indexes only the first 2,000. Data load does not check it, so the error shows up only in the store."
+  - "Cut buyer groups by country, dealer tier and brand, never one group per dealer. The number of groups then stays stable when new dealers join."
+  - "Assignment by rule works through an Apex buyer group extension or Revenue Management qualification rules, both with conditions."
 faq:
   - q: "What is a buyer group in Salesforce B2B Commerce?"
     a: "A buyer group bundles buyer accounts that share store access, entitlement policies and price books. Buyers reach a store only through a buyer group, so every buyer account needs at least one membership."
@@ -40,7 +40,7 @@ Salesforce B2B Commerce, which Salesforce now also markets as "Agentforce Commer
 
 Visibility and price therefore hang on the same buyer groups. That is why I design both together. How the price side works, and when prices should come live from the ERP instead, is covered in [customer prices in B2B Commerce](../b2b-commerce-customer-prices-price-books-erp/).
 
-## Which limits shape the design?
+## 20, 200 and 2,000: the limits that shape the design
 
 Salesforce documents the limits for [buyer groups and buyer accounts](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-shopper-buyer-groups-accounts-limits.html) and for [entitlements](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-entitlement-limits.html) on two pages. Soft limits can be raised through Salesforce support, hard limits cannot. The ones that matter for a manufacturer, as of October 2026:
 
@@ -70,7 +70,7 @@ The idea is tempting because it mirrors the ERP: every customer has its own cond
 
 Individual prices are rarely a good reason for individual groups. At manufacturers with SAP or a similar ERP, net prices usually come from conditions per customer. Those belong either in a live price call or in a small number of price books per tier, not in one price book per dealer.
 
-## How should a manufacturer cut buyer groups?
+## Cut buyer groups by country, dealer tier and brand
 
 I build buyer groups from attributes that change rarely and that the ERP already holds in the customer master:
 
@@ -80,7 +80,7 @@ I build buyer groups from attributes that change rarely and that the ERP already
 
 Entitlement policies then follow assortments, not customers: "spare parts general", "spare parts for service partners", "consumables", "accessories brand B".
 
-A typical scenario, as an assumption: a manufacturer with 800 dealers in 12 countries, three dealer tiers and two brands. Country and tier give 36 buyer groups, the two brands two more. Each dealer account sits in two groups, well below 20. A common spare part is entitled to 36 groups instead of 800, and the policy "spare parts general" serves 36 groups instead of hitting 200. A new dealer means two memberships and no new policy.
+Worked example: a manufacturer with 800 dealers in 12 countries, three dealer tiers and two brands. Country and tier give 36 buyer groups, the two brands two more. Each dealer account sits in two groups, well below 20. A common spare part is entitled to 36 groups instead of 800, and the policy "spare parts general" serves 36 groups instead of hitting 200. A new dealer means two memberships and no new policy.
 
 Exceptions stay exceptions. If one dealer needs a special part for a special machine, a small "special agreements" group is fine. Showing every dealer only the parts for the machines it owns is a different problem, which buyer groups do not solve. I describe the options in [show only parts for each machine](../spare-parts-shop-parts-per-machine/). And if countries or brands differ so much that catalogue or checkout differ, the question becomes [one store or several](../b2b-stores-countries-brands-dealers/).
 
@@ -94,7 +94,7 @@ Memberships and policy assignments are data that someone has to maintain. Salesf
 
 My default is simpler: the integration sets memberships from the ERP customer master, for example in a nightly job that maps country and tier fields to buyer groups. That is easy to test and easy to explain to the business. Rules only pay off when the number of combinations keeps growing.
 
-## Where should you start?
+## First step: the entitlement concept on one page
 
 Write the entitlement concept on one page before anyone loads data:
 
@@ -104,5 +104,3 @@ Write the entitlement concept on one page before anyone loads data:
 - a count against the limits above, for today and for three years from now.
 
 The ERP fields that drive membership then go into the interface list. This page is the first deliverable of the [chapter on catalogue, search and entitlements](../../masterclass/b2b-commerce/catalog-search-entitlements/) in my [B2B Commerce masterclass](../../masterclass/b2b-commerce/). Whether dealers then actually find the parts they are entitled to depends on search, covered in [finding parts by part number](../b2b-commerce-search-part-numbers/). Reviewing such concepts before a partner builds is part of my work on [Salesforce architecture](../../services/salesforce-architecture/).
-
-Few buyer groups cut by country, tier and brand keep a B2B store manageable for years.

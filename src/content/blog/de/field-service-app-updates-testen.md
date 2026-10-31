@@ -9,11 +9,11 @@ topic: field-service
 categories: [field-service, devops]
 tags: [Field Service, Außendienst, mobile App, Release-Management, Test, Beta]
 takeaways:
-  - "Neben den drei Plattform-Releases im Jahr hat die Field Service App eigene Haupt- und Patch-Versionen, die über App Store und Google Play zu den Technikern kommen."
-  - "Das Beta-Programm liefert Builds einen Monat vor Hauptversionen und eine Woche vor Patches. Mit Debug-Builds testen Entwickler ihre eigenen Komponenten in Sandboxes."
-  - "Salesforce verteilt Haupt- und Patch-Versionen über mehrere Tage, und ein Update erreicht unter Umständen erst sieben Tage nach der allgemeinen Verfügbarkeit alle Nutzer."
-  - "Eine Testroutine pro Version umfasst fünf bis zehn Einsätze nach Skript unter iOS und Android, mit Offline-Priming, Data-Capture-Formular, Servicebericht und einem Partnernutzer."
-  - "Eine Pilotgruppe von Technikern, die vor jeder Hauptversion zwei Wochen mit der Beta testet, findet die Fehler, die Admins im Büro übersehen."
+  - "Neben drei Plattform-Releases im Jahr hat die App eigene Haupt- und Patch-Versionen, die über App Store und Google Play zu den Technikern kommen."
+  - "Das Beta-Programm liefert Builds einen Monat vor Hauptversionen und eine Woche vor Patches. Debug-Builds testen eigene Komponenten in Sandboxes."
+  - "Salesforce verteilt Versionen über mehrere Tage. Ein Update erreicht manche Nutzer erst sieben Tage nach der allgemeinen Verfügbarkeit."
+  - "Pro Version laufen fünf bis zehn Einsätze nach Skript unter iOS und Android, mit Offline-Priming, Formular, Servicebericht und Partnernutzer."
+  - "Eine Pilotgruppe, die vor jeder Hauptversion zwei Wochen mit der Beta arbeitet, findet die Fehler, die Admins im Büro übersehen."
 faq:
   - q: "Wie oft wird die Salesforce Field Service App aktualisiert?"
     a: "Die App hat Hauptversionen wie 260.0 für Spring '26 und dazwischen Patch-Versionen. Allein im September 2026 hat Salesforce am 4. September den Patch 262.3 und am 23. September einen weiteren Patch veröffentlicht."
@@ -46,7 +46,7 @@ Beide Beiträge ergänzen, dass Salesforce Haupt- und Patch-Versionen über mehr
 Der Support fragt bei jedem Ticket zuerst nach der App-Version. Sie steht in der App unter Profil, Einstellungen, Info.
 ```
 
-## Was bieten Beta-Programm und Debug-Builds?
+## Beta-Programm und Debug-Builds liefern Versionen vorab
 
 Das [Field Service Mobile Beta and Early Adopters Program](https://developer.salesforce.com/tools/field-service-mobile-beta) steht Kunden offen. Laut Salesforce gibt es Beta-Versionen einen Monat vor Hauptversionen und eine Woche vor Patches nach Bedarf. Die Daten zu 262.3 passen dazu: Beta am 26. August, Veröffentlichung am 4. September.
 
@@ -79,7 +79,7 @@ Ich würde eine Person für jede App-Version verantwortlich machen, meist den Re
 
 Der Kalender dafür ist derselbe, der die Plattform-Releases enthält. Wie Sie ihn mit Freeze-Fenstern und Preview-Sandboxes aufbauen, steht im [Kapitel Release-Planung der DevOps-Masterclass](../../masterclass/devops-release-management/release-planung-salesforce-releases/). Was Winter '27 für Pipelines geändert hat, steht in [Salesforce Winter '27: Was sich für Ihre Pipeline ändert](../salesforce-winter-27-aenderungen-pipeline/).
 
-## Ein typisches Szenario, als Annahme: acht Pilottechniker
+## Rechenbeispiel: acht Pilottechniker
 
 Ein Maschinenbauer beschäftigt 100 Techniker, 70 mit iPads und 30 mit Android-Tablets, dazu 15 Partnertechniker. Der Release-Manager stellt eine Pilotgruppe aus acht Personen zusammen: fünf interne Techniker unter iOS, zwei unter Android und ein Partnertechniker.
 
@@ -98,7 +98,7 @@ Der Aufwand liegt bei etwa 32 Stunden Technikerzeit pro Hauptversion, dazu die Z
 
 Die übrigen Techniker sollten vor dem Update wissen, was sich für sie ändert und an wen sie sich wenden. Das ist dieselbe Aufgabe wie bei jedem Release für den Innendienst, beschrieben in [Salesforce-Releases an den Fachbereich kommunizieren](../salesforce-releases-fachbereich-kommunizieren/).
 
-## Wo fangen Sie an?
+## Erster Schritt: für das Beta-Programm anmelden
 
 1. **Für das Beta-Programm anmelden** und die Release-Beiträge der Gruppe Field Service Mobile abonnieren.
 2. **Die Routine schreiben**, als acht Skripte mit erwartetem Ergebnis.
@@ -106,6 +106,4 @@ Die übrigen Techniker sollten vor dem Update wissen, was sich für sie ändert 
 4. **App-Versionen in den Release-Kalender aufnehmen**, neben die Plattform-Releases.
 5. **Mit dem Gerätemanagement klären**, wie App- und Betriebssystem-Updates auf die Geräte kommen.
 
-App-Tests gehören zu [Kapitel 3 der Masterclass Field Service](../../masterclass/field-service/field-service-mobile-app-dokumente/), und einen Release-Prozess aufzusetzen, der sie abdeckt, gehört zu meiner Arbeit in [DevOps und Release-Management](../../leistungen/devops-und-release-management/).
-
-Jede App-Version, die eine Pilotgruppe getestet hat, bevor sie auf 100 Geräten landet, erspart einen Vormittag voller Supportanrufe.
+App-Tests gehören zu [Kapitel 3 der Masterclass Field Service](../../masterclass/field-service/field-service-mobile-app-dokumente/). Einen Release-Prozess aufzusetzen, der sie abdeckt, gehört zu meiner Arbeit in [DevOps und Release-Management](../../leistungen/devops-und-release-management/).

@@ -9,11 +9,10 @@ topic: revenue
 categories: [revenue-cloud, architecture]
 tags: [E-Rechnung, XRechnung, ZUGFeRD, Revenue Cloud Billing, SAP, Umsatzsteuer]
 takeaways:
-  - "Ab 1. Januar 2027 müssen Unternehmen mit mehr als 800.000 Euro Umsatz in 2026 inländische B2B-Rechnungen als E-Rechnung ausstellen, ab 1. Januar 2028 alle."
-  - "Eine E-Rechnung ist ein strukturiertes elektronisches Format nach EN 16931, etwa XRechnung oder ZUGFeRD ab Version 2.0.1. Ein PDF per E-Mail zählt nicht mehr als E-Rechnung."
-  - "Salesforce dokumentiert für Revenue Cloud Billing Rechnungs-PDFs. Eine native Ausgabe nach EN 16931 habe ich in der Dokumentation mit Stand Oktober 2026 nicht gefunden."
-  - "Es gibt drei Wege: Rechnung aus SAP, Revenue Cloud Billing an einen E-Rechnungsdienst anbinden oder eine Partner-App nutzen."
-  - "Bevor Rechnungen Salesforce verlassen, sollten Sie eine schriftliche Aussage von Salesforce zur E-Rechnung einholen und das Setup vom Steuerberater bestätigen lassen."
+  - "Die Umsatzgrenze von 800.000 Euro gilt je Gesellschaft. Eine Gruppe prüft jede deutsche Gesellschaft einzeln auf 2027 oder 2028."
+  - "Zulässig sind Formate nach EN 16931, etwa XRechnung oder ZUGFeRD ab Version 2.0.1. Der Übermittlungsweg ist frei."
+  - "Für Revenue Cloud Billing dokumentiert Salesforce Rechnungs-PDFs. Eine native Ausgabe nach EN 16931 fand ich mit Stand Oktober 2026 nicht."
+  - "Infrage kommen die Rechnung aus SAP, ein angebundener E-Rechnungsdienst oder eine Partner-App in der Org."
 faq:
   - q: "Ab wann ist die E-Rechnung in Deutschland Pflicht?"
     a: "Der Empfang ist seit 1. Januar 2025 für alle inländischen Unternehmen Pflicht. Ausstellen müssen sie ab 1. Januar 2027 Unternehmen mit mehr als 800.000 Euro Vorjahresumsatz und ab 1. Januar 2028 alle für inländische B2B-Rechnungen."
@@ -42,7 +41,7 @@ Eine E-Rechnung wird "in einem strukturierten elektronischen Format ausgestellt,
 
 Ausgenommen sind unter anderem Rechnungen an Verbraucher, Kleinbetragsrechnungen bis 250 Euro, Fahrausweise und bestimmte steuerfreie Umsätze. Den Übermittlungsweg schreibt das Gesetz nicht vor: E-Mail, Schnittstelle oder Download aus einem Portal sind zulässig. Das ist eine Zusammenfassung für die Planung, keine Steuerberatung. Lassen Sie die Einzelheiten von Ihrem Steuerberater bestätigen, auch das Schreiben vom Oktober 2026.
 
-## Welche Rechnungen eines Herstellers sind betroffen?
+## Betroffen ist fast jede Inlandsrechnung eines Herstellers
 
 Jede Rechnung an einen in Deutschland ansässigen Geschäftskunden: Maschinen, Ersatzteile, Serviceeinsätze, Wartungsverträge und Abonnements. Bei einem Maschinenbauer mit deutschen Händlern und Endkunden ist das der Großteil des Inlandsvolumens. Rechnungen an Kunden im Ausland fallen nicht unter die deutsche Pflicht, andere Länder haben aber eigene Regeln.
 
@@ -58,7 +57,7 @@ Keine dieser Quellen erwähnt EN 16931, XRechnung, ZUGFeRD oder Peppol, und weit
 Behandeln Sie die E-Rechnung also als Lücke, die Sie schließen müssen, und bitten Sie Salesforce um eine schriftliche Aussage, was Billing für Deutschland unterstützt und ab wann.
 ```
 
-## Welche Wege gibt es?
+## SAP, E-Rechnungsdienst oder Partner-App
 
 Ich sehe drei Wege, und welcher passt, hängt davon ab, woher Ihre Rechnungen heute kommen.
 
@@ -74,13 +73,13 @@ Ich sehe drei Wege, und welcher passt, hängt davon ab, woher Ihre Rechnungen he
 
 **Eine Partner-App** hält die Logik in der Org, bringt aber einen weiteren Anbieter in jedes Salesforce-Release. Prüfen Sie, welche Formate und Versionen sie unterstützt, wie sie validiert, wie sie mit Gutschriften umgeht und wer sie repariert, wenn ein Release etwas kaputt macht.
 
-## Ein typisches Szenario, als Annahme
+## Rechenbeispiel: Fernüberwachungs-Abos ab Mitte 2027
 
 Ein Maschinenbauer mit 60 Millionen Euro Umsatz fakturiert Maschinen und Ersatzteile aus SAP, das bereits E-Rechnungen ausstellt. Ab Mitte 2027 will er Fernüberwachungs-Abos aus Revenue Cloud Billing fakturieren.
 
 Die Pflicht gilt schon, wenn die erste Billing-Rechnung rausgeht, für den neuen Prozess gibt es also keine Übergangszeit. Ich würde Billing-Rechnungen nicht als PDF starten und das Format später nachziehen. Entweder laufen die Abo-Rechnungen im ersten Jahr über SAP, oder Billing wird an den E-Rechnungsdienst angebunden, den die SAP-Rechnungen schon nutzen. Was davon passt, hängt davon ab, wie oft sich Abos ändern, beschrieben in [Wer führt was im Quote-to-Cash?](../revenue-cloud-sap-quote-to-cash-aufteilung/).
 
-## Welche Checkliste braucht das Projekt?
+## Erster Schritt: Grenze und Rechnungsquelle je Gesellschaft klären
 
 1. **Grenze je Gesellschaft.** Welche deutschen Gesellschaften stellen Rechnungen aus, und gilt für jede die Pflicht ab 2027 oder ab 2028?
 2. **Rechnungsquelle je Umsatzart.** Welche Rechnungen kommen aus Salesforce, welche aus SAP.
@@ -91,6 +90,4 @@ Die Pflicht gilt schon, wenn die erste Billing-Rechnung rausgeht, für den neuen
 7. **Archivierung.** Klären, wo die strukturierte Datei archiviert wird.
 8. **Aussage von Salesforce.** Schriftlich, mit dem Datum, an dem Sie sie erhalten haben.
 
-Die Kostenseite der Fakturierung aus Salesforce steht in [Revenue Cloud Billing: Kosten](../revenue-cloud-billing-kosten/), und das Masterclass-Kapitel [Abrechnung und nutzungsbasierte Preise](../../masterclass/revenue-cloud/abrechnung-und-nutzungsbasierte-preise/) ordnet die E-Rechnung in den gesamten Quote-to-Cash-Prozess ein.
-
-Verlassen ab 2027 Rechnungen Revenue Cloud Billing, brauchen sie vom ersten Tag an einen strukturierten Weg nach EN 16931, also klären Sie ihn vor dem Go-live.
+Punkt 1 und 2 entscheiden, ob Billing überhaupt E-Rechnungen ausstellen muss und ab wann. Die übrigen Punkte brauchen Sie vor dem Go-live, Punkt 8 können Sie sofort anstoßen. Die Kostenseite der Fakturierung aus Salesforce steht in [Revenue Cloud Billing: Kosten](../revenue-cloud-billing-kosten/), und das Masterclass-Kapitel [Abrechnung und nutzungsbasierte Preise](../../masterclass/revenue-cloud/abrechnung-und-nutzungsbasierte-preise/) ordnet die E-Rechnung in den gesamten Quote-to-Cash-Prozess ein.

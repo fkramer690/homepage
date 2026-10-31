@@ -9,11 +9,11 @@ topic: commerce
 categories: [b2b-commerce]
 tags: [B2B Commerce, business case, spare parts, inside sales, GMV, make-or-buy]
 takeaways:
-  - "A business case for a B2B shop on Salesforce compares the GMV fee, buyer licences, implementation and run costs with saved inside sales time, fewer order errors and additional revenue."
-  - "The GMV fee grows with the value of each order line, the time saving with the number of lines. With high-value parts, the fee can eat most of the saving per line."
-  - "In a typical scenario with 40,000 order lines, 4 minutes each and a GMV fee assumed at 2 percent, time and error savings cover only about 37 percent of three-year costs."
-  - "A store usually pays off through additional revenue: after-hours orders, dealers who used to order elsewhere, fewer lost orders. That number needs the most scrutiny."
-  - "Vendor studies such as the Forrester TEI study commissioned by Salesforce are based on a composite company. They show which levers exist, not what your store will earn."
+  - "Most estimates miss at least two of five cost items. The GMV fee is the one that rises exactly when the store succeeds."
+  - "The GMV fee grows with the value of each order line, the time saving with the number of lines. With high-value parts, the fee eats most of the saving."
+  - "In the worked example with 40,000 order lines and a 2 percent GMV fee, time and error savings cover only about 37 percent of three-year costs."
+  - "A store usually pays off through additional revenue, such as after-hours orders. That number needs the most scrutiny."
+  - "The Forrester TEI study commissioned by Salesforce is based on a composite company. It shows which levers exist, not what your store will earn."
 faq:
   - q: "How do I calculate the business case for a B2B webshop?"
     a: "Model three years. Costs are the GMV fee, buyer licences, implementation, ERP integration and run costs. Benefits are inside sales time per order line, avoided order errors, fewer status calls and additional revenue. Let the digital share rise year by year, because the fee rises with it."
@@ -26,9 +26,9 @@ faq:
 draft: false
 ---
 
-A manufacturer calculates a B2B shop on Salesforce over three years: GMV fee, buyer licences, implementation, ERP integration and run costs on one side, saved inside sales time, fewer order errors and additional revenue on the other. The important part is that the GMV fee grows with the store's revenue, so the costs rise exactly when the store succeeds. In a typical scenario I calculate below, time and error savings alone cover only about a third of the costs. A store usually pays off through additional revenue and through inside sales capacity you actually redeploy. Both need honest numbers, not vendor averages.
+A manufacturer calculates a B2B shop on Salesforce over three years: GMV fee, buyer licences, implementation, ERP integration and run costs on one side, saved inside sales time, fewer order errors and additional revenue on the other. The important part is that the GMV fee grows with the store's revenue, so the costs rise exactly when the store succeeds. In the worked example below, time and error savings alone cover only about a third of the costs. A store usually pays off through additional revenue and through inside sales capacity you actually redeploy. Both need honest numbers, not vendor averages.
 
-## What belongs on the cost side?
+## Five cost items, and most estimates miss two
 
 Five items, and most estimates miss at least two:
 
@@ -49,9 +49,9 @@ Four items, in the order in which I trust them:
 
 One rule for item 1: saved time is only money when you use it. If inside sales keeps the same headcount and does the same work, the saving stays on paper. Decide in advance what happens with the freed capacity, for example active calls to dealers who order less than last year.
 
-## A typical scenario, as an assumption
+## Worked example: spare parts store for 250 dealers
 
-A typical scenario, as an assumption: a manufacturer of conveyor systems sells spare parts through 250 dealers. The numbers:
+Assume a manufacturer of conveyor systems sells spare parts through 250 dealers. The numbers:
 
 - 40,000 spare parts order lines a year, average value 150 euros per line, so 6 million euros net.
 - Inside sales needs 4 minutes per line at a full cost of 55 euros per hour: about 3.67 euros per line.
@@ -84,7 +84,7 @@ Two effects are behind this. First, the fee scales with the value of a line, the
 
 That is why I always model three years with a rising share. A one-year view hides that the fee rises while implementation is already paid.
 
-## What about the Forrester study?
+## The Forrester study shows levers, not results
 
 Salesforce promotes a [Total Economic Impact study by Forrester Consulting](https://tei.forrester.com/go/salesforce/b2bcommerce2024), commissioned by Salesforce and published in April 2024. Its headline figures:
 
@@ -97,10 +97,8 @@ source: Forrester Consulting, Total Economic Impact study of Salesforce B2B Comm
 
 The four interviews are combined into one composite manufacturer with 1 billion dollars in revenue. Forrester itself advises readers to use their own estimates.
 
-I read such studies as a list of levers: which benefits did those customers see, which costs did they name. The numbers do not transfer to a manufacturer with 250 dealers and 6 million euros in spare parts revenue. Your own clock in inside sales is worth more than any composite company.
+I read such studies as a list of levers: which benefits did those customers see, which costs did they name. The numbers do not transfer to a manufacturer with 250 dealers and 6 million euros in spare parts revenue. Your own stopwatch in inside sales tells you more than a composite company does.
 
-## Where should you start?
+## First step: four numbers from the last twelve months
 
 Collect four numbers from the last twelve months: order lines by channel, average value per line, minutes per manually entered line and the cost of order errors. Then build the three-year model with the GMV rate as a variable at 1, 2 and 3 percent. Whether a store or a portal fits at all is covered in [B2B Commerce or dealer portal: when a shop pays off](../b2b-commerce-or-dealer-portal/), and the numbers to measure after launch are in [B2B shop KPIs: what to measure after go-live](../b2b-shop-kpis-after-go-live/). The overall decision is in the [masterclass chapter on whether B2B Commerce is worth it](../../masterclass/b2b-commerce/b2b-commerce-worth-it-overview/), and an independent check of the numbers is part of my work on [make-or-buy and licence forecasts](../../services/make-or-buy-licences/).
-
-A B2B shop pays off when additional revenue and redeployed capacity outweigh a fee that grows with every order.

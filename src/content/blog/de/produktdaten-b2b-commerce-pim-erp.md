@@ -9,11 +9,11 @@ topic: data
 categories: [b2b-commerce, architecture]
 tags: [B2B Commerce, Produktdaten, PIM, ERP, Katalog, Datenqualität]
 takeaways:
-  - "Für einen Shop in Salesforce B2B Commerce sollte das ERP Materialnummer, Mengeneinheit und Vertriebsstatus führen, ein PIM Texte, Merkmale und Bilder, Salesforce hält eine Kopie."
+  - "Das ERP führt Materialnummer, Mengeneinheit und Vertriebsstatus, ein PIM Texte, Merkmale und Bilder. Salesforce hält eine Kopie."
   - "Ein Store hat genau einen Katalog und fasst 4 Mio. Produkte, davon 1 Mio. durchsuchbar. Ein Variantenträger kann 200 Varianten haben."
-  - "Pro Produkt sind 9 Bilder und 5 Dateianhänge möglich. Mit dem Release im Juli 2026 hat Salesforce angekündigt, dass sich externe DAM-Inhalte, 3D-Modelle und technische Daten auf Produktseiten zeigen lassen."
-  - "Produktname, Beschreibung und SKU sind standardmäßig durchsuchbar. Die Shopsuche braucht einen Treffer für alle Suchbegriffe, deshalb entscheidet die Datenqualität, was Händler finden."
-  - "Legen Sie pro Produktfeld einen Owner fest, bevor der erste Import läuft. Änderungen in Salesforce, die der nächste ERP- oder PIM-Lauf überschreibt, kosten mehr als der Import."
+  - "Pro Produkt sind 9 Bilder und 5 Dateianhänge möglich. Seit Juli 2026 sind externe DAM-Inhalte, 3D-Modelle und technische Daten angekündigt."
+  - "Name, Beschreibung und SKU sind standardmäßig durchsuchbar, und die Suche braucht einen Treffer für alle Begriffe. Die Datenqualität entscheidet."
+  - "Legen Sie pro Produktfeld einen Owner fest, bevor der erste Import läuft. Änderungen, die der nächste ERP-Lauf überschreibt, kosten mehr als der Import."
 faq:
   - q: "Brauche ich ein PIM für Salesforce B2B Commerce?"
     a: "Nicht immer. Bei einigen tausend Ersatzteilen mit Texten aus dem ERP kann das ERP die einzige Quelle sein. Ein PIM lohnt sich, wenn für einen großen Katalog Vertriebstexte, viele technische Merkmale, Bilder und mehrere Sprachen gepflegt werden müssen."
@@ -56,9 +56,9 @@ Meine Regel ist ein Owner pro Feld, und der Owner ist das System, in dem die Dat
 
 Die letzte Zeile ist die einzige, die Merchandiser im Shop pflegen. Alles andere kommt über eine Schnittstelle, und diese Schnittstelle muss festlegen, welche Seite gewinnt. Korrigiert ein Merchandiser einen Tippfehler in Salesforce und der nächtliche ERP-Lauf überschreibt ihn, sieht der Händler am nächsten Tag wieder den Fehler, und der Merchandiser verliert das Vertrauen in den Shop. Dasselbe Prinzip gilt für jedes Objekt in einer Salesforce-Org. Ich beschreibe es in der [Object Ownership Matrix](../object-ownership-matrix-salesforce/).
 
-Brauchen Sie ein PIM? Nicht für jeden Shop. Ein typisches Szenario, als Annahme: ein Hersteller mit 6.000 Ersatzteilen, deutschen und englischen Texten aus dem ERP und einem Foto pro Teil. Hier kann das ERP die einzige Quelle sein, ein PIM brächte ein System mehr, aber keine Daten mehr. Bei 60.000 Teilen, 15 Sprachen, technischen Merkmalen für Filter und mehreren Bildern pro Teil würde ich ein PIM wollen, weil das niemand in ERP-Materialstämmen pflegt.
+Brauchen Sie ein PIM? Nicht für jeden Shop. Rechenbeispiel: ein Hersteller mit 6.000 Ersatzteilen, deutschen und englischen Texten aus dem ERP und einem Foto pro Teil. Hier kann das ERP die einzige Quelle sein, ein PIM brächte ein System mehr, aber keine Daten mehr. Bei 60.000 Teilen, 15 Sprachen, technischen Merkmalen für Filter und mehreren Bildern pro Teil würde ich ein PIM wollen, weil das niemand in ERP-Materialstämmen pflegt.
 
-## Welche Katalog-Grenzen gelten?
+## Ein Katalog, 4 Millionen Produkte, 1 Million durchsuchbar
 
 Salesforce führt die [Grenzen für Produkte und Kategorien](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-product-limits.html) auf einer Seite. Stand Oktober 2026:
 
@@ -81,7 +81,7 @@ Salesforce schreibt, dass nur bis zu 1 Mio. Produkte von der Suche unterstützt 
 
 Die Kategorietiefe von 5 ist für Ersatzteile selten ein Problem. ERP-Warengruppen sind oft tiefer, aber Käufer klicken sich nicht durch acht Ebenen. Ich würde sie auf drei oder vier Ebenen verflachen und den Rest Suche und Filtern überlassen.
 
-## Wie funktionieren Varianten und Merkmale?
+## Bis zu 200 Varianten pro Variantenträger
 
 Varianten bündeln Produkte, die sich in einem oder mehreren Merkmalen unterscheiden, etwa eine Dichtung in fünf Durchmessern. Ein Variantenträger fasst bis zu 200 Varianten, und die Merkmale, die die Varianten unterscheiden, gehören zu einer Merkmalsgruppe. Das Soft Limit von 5 Merkmalen pro Gruppe reicht für die meisten Teile.
 
@@ -99,7 +99,7 @@ Mit dem Release im Juli 2026 hat Salesforce die Product Media Extensibility ange
 Der Beitrag nennt keine Verfügbarkeit pro Funktion. Ich würde die Product Media Extensibility deshalb in einer Sandbox testen, bevor ich damit plane.
 ```
 
-## Warum entscheidet die Datenqualität über die Suche?
+## Die Suche findet nur, was in den Daten steht
 
 Die Shopsuche findet nur, was in den Daten steht. Laut Salesforce sind Produktname, Beschreibung und SKU standardmäßig durchsuchbar, weitere Felder lassen sich ergänzen. Die Einheit ist für D2C-Stores auf derselben Plattformsuche geschrieben und beschreibt auch, wie der Abgleich funktioniert: Ergebnisse erscheinen nur, wenn alle Suchbegriffe vorkommen, und Teiltreffer am Wortanfang oder in der Wortmitte werden nicht unterstützt.
 
@@ -111,8 +111,6 @@ Für einen Teilekatalog hat das direkte Folgen:
 
 Behoben wird all das in den Produktdaten und in der Sucheinrichtung, beschrieben in [Ersatzteile über die Teilenummer finden](../b2b-shop-suche-teilenummer/).
 
-## Wo starten Sie?
+## Erster Schritt: 200 Ersatzteile aus dem ERP prüfen
 
 Nehmen Sie eine Stichprobe von 200 typischen Ersatzteilen aus dem ERP und prüfen Sie jedes gegen die Liste oben: Gibt es eine brauchbare Bezeichnung, ein Bild, die Merkmale, nach denen ein Händler filtern würde, einen sauberen Vertriebsstatus? Das Ergebnis zeigt, wie viel Datenarbeit vor dem Shop liegt. Schreiben Sie dann die Owner-Tabelle für Produktfelder und nehmen Sie sie in die Schnittstellenliste auf. Welche Daten wie oft von SAP in den Shop fließen, steht in [B2B Commerce und SAP: Datenflüsse](../b2b-commerce-sap-datenfluesse/), und das ganze Thema gehört zum [Kapitel zu Katalog, Suche und Sichtbarkeit](../../masterclass/b2b-commerce/katalog-suche-sichtbarkeit/) meiner Masterclass B2B Commerce. Solche Schnittstellen zu entwerfen, gehört zu meiner Arbeit bei [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).
-
-Ein B2B-Shop ist nur so gut wie die Produktdaten, die ERP und PIM ihm liefern.

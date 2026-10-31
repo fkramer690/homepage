@@ -10,9 +10,9 @@ categories: [field-service]
 series: { id: field-service, part: 6 }
 tags: [Field Service, Außendienst, Servicepartner, Subunternehmer, Experience Cloud, Fertigung]
 takeaways:
-  - "Externe Servicepartner gehören in die eigenen Prozesse. Ziel ist, dass Disponent und Techniker gleich arbeiten, egal ob ein interner oder externer Techniker den Einsatz übernimmt."
-  - "Field Service kennt zwei Modelle: Jeder Partnertechniker ist eine eigene Service Resource, oder nur der Partner ist eine Ressource mit Kapazität. Für eine gleiche Arbeitsweise passt das erste besser."
-  - "Partnertechniker arbeiten mit derselben mobilen App wie interne. Dafür brauchen sie eine Community-Lizenz und die Permission Set Licenses für Field Service Scheduling und Mobile."
+  - "Disponent und Techniker sollen gleich arbeiten, egal ob ein interner oder ein externer Techniker den Einsatz übernimmt."
+  - "Entweder ist jeder Partnertechniker eine eigene Service Resource, oder der Partner ist eine Kapazitätsressource. Für gleiche Arbeit passt das erste besser."
+  - "Partnertechniker nutzen dieselbe App wie interne. Sie brauchen eine Community-Lizenz und Permission Set Licenses für Scheduling und Mobile."
   - "Ein eigenes Servicegebiet pro Partnerfirma sorgt dafür, dass der Partner nur seine eigenen Leute und Termine sieht."
   - "Bewusst unterschiedlich bleiben Datenzugriff und Abrechnung. Ein Partner sieht nur, was er für seinen Einsatz braucht."
 faq:
@@ -31,7 +31,7 @@ Externe Servicepartner und Subunternehmer gehören in Salesforce Field Service i
 
 Dieser Artikel ist Teil 6 der Serie. Die Lizenzpreise für Subunternehmer stehen in [Teil 1](../salesforce-field-service-lohnt-sich/), wie die Planungsengine entscheidet, steht in [Teil 3](../salesforce-field-service-terminplanung-automatisieren/).
 
-## Warum sollen interne und externe Techniker gleich arbeiten?
+## Interne und externe Techniker arbeiten gleich
 
 Viele Hersteller decken Spitzen, entfernte Regionen oder bestimmte Gewerke mit Partnern ab. Wird der Partner nebenher gesteuert, per E-Mail, Telefon und eigener Excel-Liste, entstehen zwei Welten. Der Disponent hat zwei Pläne. Der Kunde bekommt zwei Arten von Servicebericht. Ersatzteile und Arbeitszeit des Partners kommen erst mit der Rechnung an, und die Anlagenhistorie hat Lücken.
 
@@ -75,7 +75,7 @@ Einmal durchgespielt, im ersten Modell: Bei einem Kunden in einer Region ohne ei
 
 Für den Kunden sieht der Einsatz damit genauso aus wie einer mit eigenem Techniker. Für den Innendienst liegt alles an derselben Anlage. Und die Partnerrechnung lässt sich gegen die Rückmeldung aus der App prüfen, statt gegen einen handschriftlichen Bericht.
 
-## Was bleibt bewusst unterschiedlich?
+## Datenzugriff, Abrechnung und Nachweise bleiben getrennt
 
 Gleiche Arbeitsweise heißt nicht gleiche Rechte. Drei Dinge würde ich bewusst trennen:
 
@@ -83,8 +83,6 @@ Gleiche Arbeitsweise heißt nicht gleiche Rechte. Drei Dinge würde ich bewusst 
 - **Abrechnung.** Interne Einsätze laufen über Kostenstellen, Partnereinsätze über eine Rechnung. Die Rückmeldung aus der App, also Arbeitszeit und verbaute Teile aus [Teil 4](../salesforce-field-service-ersatzteile-erp/), ist die Grundlage, um diese Rechnung zu prüfen.
 - **Qualifikationsnachweise.** Bei eigenen Technikern pflegt die Personalabteilung die Qualifikationen. Beim Partner muss festgelegt sein, wer sie meldet und wer sie prüft, bevor die Engine den Partner für einen Einsatz einplant.
 
-## Wo sollten Sie anfangen?
+## Erster Schritt: aufschreiben, wie ein Einsatz zum wichtigsten Partner kommt
 
-Nehmen Sie Ihren wichtigsten Partner und schreiben Sie auf, wie ein Einsatz heute zu ihm kommt und wie die Rückmeldung zurückkommt. Jeder Schritt, der anders läuft als bei internen Technikern, ist ein Kandidat für die Angleichung. Starten Sie mit einem Partner und einem Servicegebiet, bevor Sie alle anbinden. Mischformen sind erlaubt: Ein großer Stammpartner arbeitet im ersten Modell, ein kleiner Partner für Spitzenzeiten im zweiten. Wichtig ist, dass die Entscheidung je Partner bewusst fällt und dokumentiert ist.
-
-Im letzten Teil der Serie geht es um die Einführung selbst.
+Nehmen Sie Ihren wichtigsten Partner und schreiben Sie auf, wie ein Einsatz heute zu ihm kommt und wie die Rückmeldung zurückkommt. Jeder Schritt, der anders läuft als bei internen Technikern, ist ein Kandidat für die Angleichung. Starten Sie mit einem Partner und einem Servicegebiet, bevor Sie alle anbinden. Mischformen sind erlaubt: Ein großer Stammpartner arbeitet im ersten Modell, ein kleiner Partner für Spitzenzeiten im zweiten. Wichtig ist, dass die Entscheidung je Partner bewusst fällt und dokumentiert ist. Wie die Einführung danach in Wellen läuft, zeigt der [letzte Teil der Serie](../salesforce-field-service-einfuehrung/).

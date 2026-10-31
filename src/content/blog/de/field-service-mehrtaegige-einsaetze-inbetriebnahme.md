@@ -9,10 +9,10 @@ topic: field-service
 categories: [field-service]
 tags: [Field Service, Außendienst, Mehrtägige Einsätze, Crews, Inbetriebnahme, Terminplanung]
 takeaways:
-  - "Salesforce Field Service plant lange Einsätze als mehrtägige Termine von bis zu acht Kalenderwochen, die automatische Planung und Optimierung erfassen aber nur Einsätze, die in 30 Tage passen."
-  - "Mehrtägige Termine lassen sich nicht mit Complex Work kombinieren und nicht kapazitätsbasierten Ressourcen zuweisen. Ein Partner, der nur als Kapazität abgebildet ist, kann keine Inbetriebnahme übernehmen."
-  - "Eine Crew ist eine eigene Serviceressource. Die Planung berücksichtigt Abwesenheiten und Effizienz der Crew, nicht die ihrer Mitglieder, und Mitglieder bekommen keine Zuweisungsbenachrichtigung."
-  - "Mit Enhanced Scheduling and Optimization plant eine Abhängigkeitsgruppe bis zu fünf Termine ganz oder gar nicht, und mehrtägige Termine werden nie umgeplant oder verworfen."
+  - "Ein mehrtägiger Termin darf bis zu acht Kalenderwochen umfassen. Automatische Planung und Optimierung erfassen aber nur Einsätze bis 30 Tage."
+  - "Mehrtägige Termine gehen nicht mit Complex Work und nicht an Kapazitätsressourcen. Ein nur als Kapazität abgebildeter Partner fällt also aus."
+  - "Eine Crew ist eine eigene Serviceressource. Die Planung sieht ihre Abwesenheiten, nicht die der Mitglieder, und Mitglieder bekommen keine Benachrichtigung."
+  - "Mit Enhanced Scheduling plant eine Abhängigkeitsgruppe bis zu fünf Termine ganz oder gar nicht. Mehrtägige Termine werden nie umgeplant."
   - "Bei Inbetriebnahmen plane ich Vorabbesichtigung und Haupteinsatz als getrennte Termine und halte den Projektplan außerhalb des Gantt."
 faq:
   - q: "Wie lang darf ein mehrtägiger Termin in Salesforce Field Service sein?"
@@ -28,7 +28,7 @@ draft: false
 
 Salesforce Field Service kann Inbetriebnahmen, Revisionen und andere Einsätze planen, bei denen ein Team mehrere Tage beim Kunden arbeitet, allerdings mit klaren Grenzen. Ein mehrtägiger Termin darf bis zu acht Kalenderwochen umfassen, die automatische Planung und Optimierung erfassen aber nur Einsätze, die in 30 Tage passen. Teams bilden Sie als Crews ab, die die Planung wie eine Ressource behandelt. Complex Work verknüpft Termine in fester Reihenfolge, lässt sich aber nicht mit mehrtägigen Terminen kombinieren. Bei Herstellern, deren Außendienst vor allem Inbetriebnahmen fährt, plane ich deshalb den langen Einsatz in Field Service und halte den Projektplan mit seinen Phasen im ERP oder einem Projektwerkzeug.
 
-## Warum brauchen lange Einsätze ein eigenes Planungsmodell?
+## Lange Einsätze brauchen ein eigenes Planungsmodell
 
 Field Service ist für viele kurze Einsätze pro Techniker und Tag gebaut. Dort lohnt sich Routen- und Terminoptimierung, wie in [Salesforce Field Service: Wann lohnt es sich?](../salesforce-field-service-lohnt-sich/) beschrieben. Salesforce verkauft das Produkt heute als Field Service and Operations, die Planungslogik ist dieselbe geblieben.
 
@@ -64,7 +64,7 @@ Eine Crew ist eine Gruppe von Technikern, die die Planung als eine Einheit behan
 
 Für ein Inbetriebnahme-Team heißt das: Die Crew braucht sorgfältige Pflege. Ein Urlaub wird entweder zu einer geänderten Crew-Mitgliedschaft oder, wenn die Crew ohne diese Person nicht arbeiten kann, zu einer Abwesenheit an der Crew. Sonst zeigt der Plan drei Personen, wo nur zwei ankommen.
 
-## Was leistet Complex Work, und wo hört es auf?
+## Complex Work verknüpft bis zu fünf Termine
 
 Complex Work verknüpft Termine in einer festen Reihenfolge.
 
@@ -86,9 +86,9 @@ Die Grenze, die Inbetriebnahmen am stärksten trifft: Mehrtägige Planung und Co
 | Besichtigung vor Montage | Complex Work | Nicht mit mehrtägigen Terminen |
 | Partner stellt einen Monteur | Einzelne Serviceressource | Partner als Kapazität können keine mehrtägigen Einsätze übernehmen |
 
-## Ein typisches Szenario, als Annahme
+## Rechenbeispiel: eine Verpackungslinie in 12 Arbeitstagen
 
-Ein Hersteller von Verpackungsmaschinen nimmt beim Kunden eine Linie in Betrieb. Die Inbetriebnahme dauert 12 Arbeitstage mit einer Crew aus drei Personen: Crew-Leiter, Mechaniker und Elektriker. Zwei Wochen vorher findet eine eintägige Besichtigung statt. Der Elektriker kommt von einem Servicepartner.
+Die Zahlen sind angenommen. Ein Hersteller von Verpackungsmaschinen nimmt beim Kunden eine Linie in Betrieb. Die Inbetriebnahme dauert 12 Arbeitstage mit einer Crew aus drei Personen: Crew-Leiter, Mechaniker und Elektriker. Zwei Wochen vorher findet eine eintägige Besichtigung statt. Der Elektriker kommt von einem Servicepartner.
 
 So würde ich das in Field Service aufsetzen:
 
@@ -98,16 +98,14 @@ So würde ich das in Field Service aufsetzen:
 4. **Benachrichtigungen.** Eine eigene Push-Benachrichtigung informiert beim Dispatch alle drei Mitglieder, weil Field Service das für Crew-Mitglieder nicht tut.
 5. **Phasen außerhalb des Gantt.** Mechanische Montage, elektrische Inbetriebnahme, Probelauf und Abnahme bleiben als Meilensteine im Projektplan des ERP. Der Termin trägt die Arbeit, die Zeiten und die Dokumentation.
 
-Dauerte die Inbetriebnahme sechs Wochen, würde ich den Termin von Hand planen oder in zwei mehrtägige Termine von je drei Wochen teilen. Jede Teilung bringt zusätzliche Abstimmung, deshalb mache ich das nur, wenn die automatische Planung wirklich hilft.
+Dauerte die Inbetriebnahme sechs Wochen, würde ich den Termin von Hand planen oder in zwei mehrtägige Termine von je drei Wochen teilen. Jede Teilung bringt zusätzliche Abstimmung, deshalb mache ich das nur, wenn die automatische Planung dadurch Vorschläge machen kann.
 
 ## Wann sollten lange Einsätze außerhalb von Field Service bleiben?
 
 Meine Regel: Besteht Ihr Außendienst überwiegend aus Inbetriebnahmen und Revisionen, lohnt sich Field Service für die Planung allein selten. Die Engine hat wenig zu optimieren, wenn ein Team zwei Wochen gebucht ist. Field Service verdient seinen Platz, wenn dieselben Techniker zwischen den Projekten auch Wartungen und Störungseinsätze fahren, weil dann beide Arten von Arbeit in einem Plan landen.
 
-Zwei Entscheidungen gehören in das Design, bevor ein Partner etwas baut. Erstens: Welches System hält den Projektplan mit Phasen und Terminen, und wie kommen die Termine an das Service Appointment? Zweitens: Wie schützen Disponenten lange Einsätze vor kurzen? Die Scheduling Policy aus [Wie viel Planung darf automatisch laufen?](../salesforce-field-service-terminplanung-automatisieren/) braucht dafür eine klare Regel. Wo die Architekturfrage über Field Service hinausgeht, beschreibe ich mein Vorgehen unter [Salesforce-Architektur](../../leistungen/salesforce-architektur/).
+Zwei Entscheidungen gehören in das Design, bevor ein Partner etwas baut. Die erste: Welches System hält den Projektplan mit Phasen und Terminen, und wie kommen die Termine an das Service Appointment? Die zweite: Wie schützen Disponenten lange Einsätze vor kurzen? Die Scheduling Policy aus [Wie viel Planung darf automatisch laufen?](../salesforce-field-service-terminplanung-automatisieren/) braucht dafür eine klare Regel. Wo die Architekturfrage über Field Service hinausgeht, beschreibe ich mein Vorgehen unter [Salesforce-Architektur](../../leistungen/salesforce-architektur/).
 
-## Wo sollten Sie anfangen?
+## Erster Schritt: die letzten zehn Inbetriebnahmen auswerten
 
 Nehmen Sie Ihre letzten zehn Inbetriebnahmen und notieren Sie Dauer, Teamgröße, Vorarbeiten und ob Partner beteiligt waren. Bleiben die meisten unter 30 Tagen und sind die Teams stabil, tragen mehrtägige Termine mit Crews die Planung. Laufen viele länger oder haben mehr als fünf verknüpfte Schritte, halten Sie den Projektplan außerhalb und nutzen Field Service für die Arbeit vor Ort.
-
-Field Service plant mehrtägige Einsätze und Crews gut, solange sie in 30 Tage passen und ohne Abhängigkeiten auskommen, bei längeren Einsätzen muss ein Projektplan die Last tragen.

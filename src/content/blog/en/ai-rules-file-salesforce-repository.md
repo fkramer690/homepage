@@ -9,11 +9,11 @@ topic: devops
 categories: [devops, ai]
 tags: [ai coding, devops, partner governance, claude code, agentforce vibes, manufacturing]
 takeaways:
-  - "Your Salesforce repository needs an AI rules file as soon as anyone codes with an agent: CLAUDE.md for Claude Code, AGENTS.md for Codex and Copilot, .vibes/rules/ for Agentforce Vibes."
-  - "The file belongs in the client's repository and is owned by a named person on the client side; partners propose changes through pull requests instead of bringing their own template as the standard."
-  - "Anthropic says Claude treats CLAUDE.md as context, not enforced configuration; rules that must hold every time belong in deny rules, hooks, pipeline gates and branch protection."
-  - "Claude Code reads AGENTS.md only when there is no CLAUDE.md or CLAUDE.local.md, so a two-line CLAUDE.md that imports @AGENTS.md keeps one shared file working across tools."
-  - "Protect the rules files with CODEOWNERS: Copilot code review reads instructions from the pull request's head branch, so editing the file changes the review of that very change."
+  - "As soon as anyone codes with an agent, the repository needs a rules file: CLAUDE.md, AGENTS.md or .vibes/rules/."
+  - "The file lives in the client's repository with a named owner there; partners propose changes through pull requests."
+  - "Anthropic says Claude treats CLAUDE.md as context. Rules that must always hold belong in deny rules, hooks, pipeline gates and branch protection."
+  - "Claude Code reads AGENTS.md only without a CLAUDE.md; a two-line CLAUDE.md importing @AGENTS.md keeps one shared file for all tools."
+  - "Protect the rules files with CODEOWNERS, because Copilot code review reads instructions from the pull request's head branch."
 faq:
   - q: "Do I need a separate AI rules file for every coding tool?"
     a: "Mostly not. One AGENTS.md serves Codex and Copilot, and Claude Code through a short CLAUDE.md that imports it. Agentforce Vibes reads .vibes/rules/ and its docs do not mention AGENTS.md, so keep a short Vibes rule and update it in the same pull request."
@@ -47,7 +47,7 @@ For a team with several tools, two details decide whether one file is enough. Ac
 A developer who creates a personal `CLAUDE.local.md` stops Claude from reading the shared `AGENTS.md` without anyone noticing. Anthropic's remedy is a `CLAUDE.md` that imports the shared file with `@AGENTS.md`.
 ```
 
-## Why does the rules file belong to the client?
+## The rules file belongs to the client
 
 Partners like to bring their own template. That is quick at the start and expensive later, for the reasons in [why clients should own their DevOps tools](../why-clients-should-own-their-devops-tools/): whoever writes the rules sets the standard. For rules files I see three specific reasons.
 
@@ -118,7 +118,7 @@ The committed deny rules for Claude Code look like this:
 
 Deny rules have limits too. Anthropic's [permissions docs](https://code.claude.com/docs/en/permissions) say a Bash rule matches the command text the agent writes and "isn't a security boundary around the program": the same command wrapped in `bash -c` is not caught. The real boundary is that production credentials never reach a developer laptop and only the pipeline deploys to production. Salesforce lets you [disable Agentforce Vibes for a production org](https://developer.salesforce.com/blogs/2025/12/five-pro-tips-for-using-agentforce-vibes) under Setup, Agentforce Vibes Extensions. If you provide the Claude licences yourself, managed settings apply, which according to Anthropic no personal settings file can override.
 
-## A typical scenario: three tools, two partners, one file
+## Worked example: three tools, two partners, one file
 
 Assume a machine builder with Service Cloud, Field Service, a dealer portal on Experience Cloud and SAP S/4 as ERP. Partner A builds the portal and service processes with six nearshore developers and Claude Code. Partner B builds the SAP integration with three developers and Copilot. Two internal developers use Agentforce Vibes. All figures are assumptions to show the method.
 
@@ -133,7 +133,7 @@ The client then sets this up:
 
 Partner A's template becomes a proposal pull request; a handful of lines survive. Assume two days for the first version and half an hour per sprint afterwards. The reviewer still reviews, but stops repeating the same comments.
 
-## Who maintains the file, and how does it change?
+## Changes go through pull requests with CODEOWNERS
 
 Rules files are part of your controls. GitHub's documentation notes that Copilot code review reads custom instructions from the pull request's head branch. A pull request that edits `copilot-instructions.md` therefore changes the instructions its own AI review runs with. In the same way, a committed deny rule can be deleted in a pull request like any other line.
 
@@ -141,7 +141,7 @@ That is why I would put every rules and settings file under [CODEOWNERS](https:/
 
 The file grows from evidence, not from wish lists. OpenAI recommends adding rules after repeated mistakes, Anthropic after the second correction. In practice, the input is the review findings counted by category, as described in [reviewing AI-generated Salesforce code](../reviewing-ai-generated-salesforce-code/). Lines move out again once a pipeline gate covers them. After each Salesforce release, the owner checks the API version line first.
 
-## Where should you start?
+## First step: take stock of the rules files in your repository
 
 ```schritte
 Take stock
@@ -158,4 +158,4 @@ Protect the files
   With CODEOWNERS and branch protection.
 ```
 
-Setting this up is part of my work in [DevOps and release management](../../services/devops-release-management/) and in [partner governance](../../services/partner-governance/). An AI rules file costs a few days and gives every agent in your repository the same rules, as long as you own the file and enforce the hard rules elsewhere.
+Setting this up is part of my work in [DevOps and release management](../../services/devops-release-management/) and in [partner governance](../../services/partner-governance/). For the first version I plan a few days.

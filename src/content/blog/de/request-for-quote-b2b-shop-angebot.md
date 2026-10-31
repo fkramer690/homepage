@@ -9,10 +9,10 @@ topic: commerce
 categories: [b2b-commerce, revenue-cloud]
 tags: [B2B Commerce, Angebotsanfrage, Request for Quote, Revenue Cloud, Innendienst]
 takeaways:
-  - "Mit Request for Quote in Salesforce B2B Commerce senden angemeldete Käufer ihren Warenkorb oder ein einzelnes Produkt als Angebotsanfrage; Salesforce nennt die Funktion allgemein verfügbar."
-  - "Angebote werden in Sales Cloud oder Agentforce Revenue Management bearbeitet. Die Salesforce-Hilfe nennt Advanced Pricing powered by Revenue Cloud als Voraussetzung."
+  - "Angemeldete Käufer senden ihren Warenkorb oder ein einzelnes Produkt als Angebotsanfrage. Salesforce nennt die Funktion allgemein verfügbar."
+  - "Angebote bearbeitet der Innendienst in Sales Cloud oder Revenue Management. Die Hilfe nennt Advanced Pricing powered by Revenue Cloud als Voraussetzung."
   - "Quote to Cart und Round-Trip Quoting, im Juni 2026 angekündigt, schicken das verhandelte Angebot als Warenkorb zum Bestellen an den Käufer zurück."
-  - "Die Apex-Klasse ConnectApi.CommerceQuotes listet Angebote, liest Details, erzeugt ein Angebot von der Produktseite und lässt Käufer ein freigegebenes Angebot nachverhandeln oder ablehnen."
+  - "ConnectApi.CommerceQuotes listet Angebote, erzeugt eines von der Produktseite und lässt Käufer ein freigegebenes Angebot nachverhandeln oder ablehnen."
   - "Die Funktion trägt nur, wenn der Innendienst Anfragen in einer festen Zeit beantwortet; sonst gehen Käufer zurück zu E-Mail und Telefon."
 faq:
   - q: "Was ist Request for Quote in Salesforce B2B Commerce?"
@@ -53,7 +53,7 @@ Bestellung | Käufer
 
 Im Juni-Beitrag heißt es zu Schritt 4: "once a quote is negotiated and approved, sellers can share it with customers as a cart". Salesforce nennt das Round-Trip Quoting. Der Juni-Beitrag stellt Quote to Cart und Round-Trip Quoting als Teil eines Pakets mit dem Etikett "GA June 2026" vor, den ausdrücklichen Status "generally available" gibt er aber nur für RFQ an. Bevor Sie Schritt 4 in eine Einführung einplanen, prüfen Sie in Ihrer Org, welche Teile aktiv sind.
 
-## Was leisten die CommerceQuotes-APIs?
+## Die CommerceQuotes-APIs für eigene Komponenten
 
 Bauen Sie eigene Komponenten oder ein Headless-Frontend, ist die Apex-Klasse [ConnectApi.CommerceQuotes](https://developer.salesforce.com/docs/atlas.en-us.264.0.apexref.meta/apexref/apex_ConnectAPI_CommerceQuotes_static_methods.htm) die Schnittstelle. Sie hat vier Methoden:
 
@@ -89,18 +89,16 @@ Vor dem Go-live würde ich diese Punkte schriftlich festlegen:
 
 Große Händler fragen außerdem über Außendienst und Partnerportale an. Baut dort ebenfalls eine KI Angebote, sollten derselbe Innendienst und dieselben Preisregeln beide Kanäle bedienen, wie ich es für den [Partner Sales Assistant](../ki-angebote-haendler-partner-sales-assistant/) beschreibe.
 
-## Ein typisches Szenario, als Annahme
+## Rechenbeispiel: 400 Systemintegratoren
 
-Ein typisches Szenario, als Annahme: Ein Hersteller von Fördertechnik-Komponenten verkauft an 400 Systemintegratoren. Die meisten Bestellungen sind Nachbestellungen zu Stufenpreisen, aber etwa jede zehnte ist Projektgeschäft mit größeren Mengen und einem Zielpreis. Der Innendienst bekommt diese Anfragen heute per E-Mail und antwortet im Schnitt nach vier Tagen.
+Angenommen, ein Hersteller von Fördertechnik-Komponenten verkauft an 400 Systemintegratoren. Die meisten Bestellungen sind Nachbestellungen zu Stufenpreisen, aber etwa jede zehnte ist Projektgeschäft mit größeren Mengen und einem Zielpreis. Der Innendienst bekommt diese Anfragen heute per E-Mail und antwortet im Schnitt nach vier Tagen.
 
 Mit RFQ legt der Integrator die Stückliste in den Warenkorb und fragt ein Angebot an, den Projektnamen im Kommentar. Das Angebot landet in einer Queue je Land, der Innendienst kalkuliert es mit der Revenue-Cloud-Procedure, die der Vertrieb schon für Maschinenangebote nutzt, und gibt es frei. Der Integrator sieht das Angebot unter My Quotes, bittet über Renegotiate um eine Änderung, bekommt das überarbeitete Angebot und bestellt den Warenkorb, den Quote to Cart erzeugt. Der Auftrag erreicht SAP mit den verhandelten Preisen und der Angebotsnummer als Referenz.
 
 Die Zahlen sind erfunden, um die Methode zu zeigen. Was ich in den ersten drei Monaten messen würde: Anteil der Angebotsanfragen über den Shop statt per E-Mail, Antwortzeit und Anteil der freigegebenen Angebote, die zu Aufträgen werden.
 
-## Wo starten Sie?
+## Erster Schritt: Antwortzeit und Preiskompetenz im Innendienst festlegen
 
 Starten Sie beim Innendienst, nicht bei der Komponente. Legen Sie Antwortzeit, Verantwortliche je Queue und Preiskompetenz fest und testen Sie den Kreislauf mit einer Käufergruppe, die heute schon viele Anfragen schickt. Klären Sie danach die Lizenzfrage für Ihre Produkttypen mit Salesforce, weil Hilfe und Apex-Referenz sich unterschiedlich lesen.
 
 Das Kapitel [Preise, Warenkorb, Checkout](../../masterclass/b2b-commerce/preise-warenkorb-checkout/) der [Masterclass B2B Commerce](../../masterclass/b2b-commerce/) zeigt, wie RFQ neben Kundenpreisen, Checkout und Nachbestellung steht. Wie aus dem Angebot in Revenue Cloud Vertrag und Auftrag werden, behandelt das Kapitel [Angebot, Vertrag, Auftrag](../../masterclass/revenue-cloud/angebot-vertrag-auftrag/) der Masterclass Revenue Cloud. Wo RFQ mehrere Partner und Teams berührt, gehört die Steuerung zu meiner Arbeit in der [Partnersteuerung](../../leistungen/partnersteuerung/).
-
-Request for Quote holt Angebotsanfragen aus dem Postfach in den Shop, vorausgesetzt, jemand beantwortet sie rechtzeitig.

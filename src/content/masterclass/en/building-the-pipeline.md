@@ -10,11 +10,11 @@ pubDate: 2026-10-28
 short: "Building the pipeline"
 summary: "The building blocks of a Salesforce pipeline, from pull requests, test levels and delta deployments to a login without passwords."
 takeaways:
-  - "Every change goes through a pull request that triggers a validation deployment against the target org; merging requires a green validation and an approved review."
-  - "RunLocalTests is the default for production; Salesforce still labels RunRelevantTests as beta and says it does not belong in production pipelines yet."
+  - "A pull request is merged only when its validation deployment is green and a reviewer has approved it."
+  - "RunLocalTests is the default for production. Salesforce still labels RunRelevantTests as beta, so it does not belong in production pipelines yet."
   - "Quick deploy reuses a successful validation for up to ten days without running the tests again, which shortens the production release window."
-  - "Steps before and after a deployment belong in the pipeline under version control, for example as sfdx-hardis deployment actions, not in a spreadsheet of manual tasks."
-  - "The pipeline logs in with the JWT bearer flow and a certificate; certificate and keys belong to the client and are replaced when a partner leaves."
+  - "Steps before and after a deployment belong in the pipeline under version control, for example as sfdx-hardis deployment actions, not in a task list."
+  - "The pipeline logs in with the JWT bearer flow and a certificate. Certificate and keys belong to the client and are replaced when a partner leaves."
 articles: [sfdx-hardis-introduction, pull-request-reviews-enterprise, salesforce-password-integrations-2027, sfdx-hardis-training]
 faq:
   - q: "Which Apex test level should a production pipeline use?"
@@ -145,7 +145,7 @@ A pipeline whose result nobody sees is just a log. Three audiences need differen
 
 A channel that announces every successful validation gets muted after two weeks.
 
-## A typical scenario, as an assumption
+## Walk-through: one user story with a field, a flow and a work type
 
 A maker of industrial equipment uses Field Service and an SAP interface. All details are assumptions. A user story adds a warranty end date field to the asset, changes a flow and needs a new work type as a reference record.
 
@@ -156,5 +156,3 @@ A maker of industrial equipment uses Field Service and an SAP interface. All det
 - The pipeline logs in with JWT, and the service team gets a message in its Teams channel.
 
 None of this needs an expensive tool, but someone has to set it up and look after it. I have used sfdx-hardis in client projects for about two years; how it is built is explained in the [sfdx-hardis introduction](../../../blog/sfdx-hardis-open-source-salesforce-devops/), and if you want to build the route once yourself, the [free sfdx-hardis training](../../../blog/sfdx-hardis-free-devops-training/) covers exactly these steps as labs. I help with the setup as part of [DevOps and release management](../../../services/devops-release-management/), and all chapters are on the [overview page](../).
-
-A good pipeline makes every release equally boring, whichever partner built the change.

@@ -9,10 +9,9 @@ topic: revenue
 categories: [revenue-cloud, ai]
 tags: [Revenue Cloud, Agentforce, Angebotsagent, Angebote, Flex Credits, KI-Agenten]
 takeaways:
-  - "Der Angebotsagent in Revenue Cloud erstellt, ändert und fasst Angebote aus normaler Sprache zusammen, bietet nur gültige Katalogprodukte an und hält Preise und Rabatte in den Leitplanken des Systems."
-  - "Salesforce meldet 75 Prozent weniger Zeit und 87 Prozent weniger Klicks im eigenen Vertrieb; das ist eine Herstellerangabe aus einem Unternehmen, kein Maßstab für Maschinenbauer."
-  - "Der Agent ist nur so gut wie Katalog, synchronisierte Preisdaten, Konfigurationsregeln und Freigabegrenzen dahinter; diese kommen zuerst."
-  - "Winter '27 erweitert das Angebotswesen per Agent auf Self-Service für Kunden, Partner in ihrem eigenen Arbeitsbereich und Entwürfe für Vertragsverlängerungen."
+  - "Salesforce meldet 75 Prozent weniger Zeit und 87 Prozent weniger Klicks im eigenen Vertrieb. Das ist eine Herstellerangabe, kein Maßstab für Maschinenbauer."
+  - "Katalog, synchronisierte Preisdaten, Konfigurationsregeln und Freigabegrenzen müssen stehen, bevor der Agent das erste Angebot schreibt."
+  - "Winter '27 erweitert das Angebotswesen per Agent auf Self-Service für Kunden, Partner im eigenen Arbeitsbereich und Verlängerungsentwürfe."
   - "Jede Agentenaktion kostet 20 Flex Credits, ein Angebot aus fünf Aktionen also rund 0,50 Dollar zum Listenpreis, Prompts nicht eingerechnet."
 faq:
   - q: "Was macht der Angebotsagent in Revenue Cloud?"
@@ -41,7 +40,7 @@ Der [Trailhead-Quick-Start zum Angebotsagenten](https://trailhead.salesforce.com
 
 Die Arbeit erledigt der Subagent Quote Management, dessen Aktionen auf Flows beruhen. In der Übung fragen Sie 15 Headsets mit 15 Prozent Rabatt für einen Account und eine Opportunity an, ändern den Rabatt dann auf 10 Prozent und versenden das Angebot anschließend selbst von der Opportunity aus mit einer E-Mail-Vorlage. Die Salesforce-Hilfe nennt einen zweiten Baustein, den Subagenten Product Selection für Produktsuche und Filter. Auf salesforce.com heißt das Produkt Revenue Cloud; Hilfe und Trailhead führen den Agenten unter Agentforce Revenue Management oder Revenue Management.
 
-## Was muss stehen, bevor der Agent Angebote schreibt?
+## Katalog, Preise und Regeln kommen vor dem Agenten
 
 Der Agent liest dieselben Datensätze wie Ihr Innendienst. Was eine erfahrene Kollegin aus Gewohnheit korrigiert, gibt der Agent einfach weiter. Die Vorbereitung ist deshalb vor allem Arbeit an Daten und Regeln:
 
@@ -53,7 +52,7 @@ Der Agent liest dieselben Datensätze wie Ihr Innendienst. Was eine erfahrene Ko
 
 Ich würde zuerst zählen, welcher Anteil der Produkte sich mit den Worten finden lässt, die Kunden benutzen. Ist er niedrig, beheben Sie das vor dem Pilot.
 
-## Was ändert sich mit Winter '27?
+## Winter '27 bringt Self-Service, Partner und Verlängerungen
 
 Die [Ankündigung zu Winter '27](https://www.salesforce.com/news/stories/winter-2027-product-release-announcement/), allgemein verfügbar seit dem 12. Oktober 2026, erweitert Angebote per Agent auf drei Gruppen: "self-service quoting for customer buyers, integrated quoting for partners, and automated renewal package assembly for account executives". Kunden bestellen ohne Vertriebsmitarbeiter, Partner arbeiten, ohne ihren Arbeitsbereich zu verlassen, und Account Manager bekommen vor einer Verlängerung "a drafted quote and risk signals".
 
@@ -89,14 +88,12 @@ In vier Fällen würde ich ihn nicht oder noch nicht einsetzen:
 3. **Preise nur in SAP-Konditionen.** Hält Salesforce nur Listenpreise und kommt der Nettopreis aus SAP, nennt der Agent den falschen Preis, solange die Preisfindung SAP nicht abfragt.
 4. **Wenige Angebote mit hohem Wert.** Zehn Angebote im Monat mit wochenlanger Verhandlung brauchen keinen Agenten, sondern einen guten Vertriebsingenieur.
 
-## Ein typisches Szenario, als Annahme
+## Rechenbeispiel: Ersatzteil- und Nachrüstangebote im Innendienst
 
 Ein Hersteller von Verpackungsmaschinen betreibt einen Innendienst, der Ersatzteil- und Nachrüstanfragen von Bestandskunden beantwortet: Verschleißteilsätze, Upgrade-Pakete und Servicestunden. Die Preise stehen in Salesforce-Preisbüchern, jede Nacht aus SAP synchronisiert, und der Katalog hat saubere Beschreibungen. Der Innendienst bearbeitet sehr viele kleine Angebote.
 
 Hier passt der Agent gut. Eine Mitarbeiterin tippt "Verschleißteilsatz für Linie 3 plus zwei Servicetage, üblicher Rabatt", und der Agent findet Satz und Serviceposition im Katalog und baut das Angebot für den Account des Kunden. Rabatte über der Grenze gehen in den Freigabe-Workflow. Angebote für neue Maschinen bleiben bei den Vertriebsingenieuren, weil deren Konfigurationsregeln noch in SAP liegen. Eingeführt wird der Agent zuerst in einem Land und mit echten Anfragen aus dem letzten Quartal getestet.
 
-## Wo starten Sie?
+## Erster Schritt: 30 Testanfragen für eine Angebotsart schreiben
 
 Wählen Sie eine Angebotsart mit Standardprodukten und synchronisierten Preisen, schreiben Sie 30 Testanfragen aus echten Fällen und legen Sie für jede das erwartete Angebot fest. Lassen Sie diese in einer Sandbox laufen, bevor ein Kunde oder Händler ein Agentenangebot sieht, wie in [Agentforce-Agenten testen und freigeben](../agentforce-agenten-testen-freigeben/) beschrieben. Wo Agenten in der Fertigung über Angebote hinaus passen, zeigt das Kapitel [KI-Agenten in der Fertigung](../../masterclass/ki-salesforce/ki-agenten-in-der-fertigung/), den ganzen Weg vom Angebot zum Auftrag das Kapitel [Angebot, Vertrag, Auftrag](../../masterclass/revenue-cloud/angebot-vertrag-auftrag/).
-
-Der Angebotsagent lohnt sich, wo Angebote häufig, Produkte standardisiert und Daten sauber sind.

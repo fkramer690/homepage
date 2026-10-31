@@ -10,11 +10,10 @@ categories: [revenue-cloud, architecture]
 contactBrief: integration
 tags: [revenue cloud, sap s/4hana, quote to cash, integration, billing, manufacturing]
 takeaways:
-  - "In quote to cash with Revenue Cloud and SAP S/4HANA, Salesforce usually owns catalog for selling, configuration, quote and approval, while SAP keeps the material master, delivery and the invoice for machine sales."
-  - "MuleSoft's SAP accelerator documents SAP as the system of record for pricing conditions and creates the SAP order from Salesforce, but only for Sales Cloud and Salesforce CPQ, not for Revenue Cloud."
-  - "There are three sensible cuts: quote only, quote and order, or full quote to cash with Revenue Cloud Billing as a subledger that sends journal entries to the ERP."
-  - "Revenue Cloud Billing brings its own legal entities, accounting periods and general ledger accounts, so finance has to agree before the first invoice leaves Salesforce."
-  - "Write the split down as one table with an owner per object, the direction of every interface and a named person for errors, signed by sales, finance and IT."
+  - "MuleSoft's SAP accelerator creates the SAP order from Salesforce, but documents this only for Sales Cloud and CPQ, not for Revenue Cloud."
+  - "There are three sensible cuts: quote only, quote and order, or full quote to cash with Revenue Cloud Billing as a subledger."
+  - "Billing brings its own legal entities, accounting periods and general ledger accounts. Finance has to agree before the first invoice."
+  - "Write the split down in one table, with an owner per object, the direction of every interface and a person for errors."
 faq:
   - q: "Should SAP or Revenue Cloud be the price master?"
     a: "Exactly one of them. If SAP pricing conditions already hold customer prices and discounts, I keep SAP as the master and fetch the net price for the quote through an API. Revenue Cloud pricing pays off when the logic lives in sales anyway, for example for subscriptions and bundles."
@@ -41,7 +40,7 @@ Three details from that page matter for a manufacturer:
 
 The pattern still carries over to Revenue Cloud, which Salesforce's Winter '27 documentation also calls Revenue Management and which started as Revenue Lifecycle Management. Revenue Cloud works on standard objects: the [quote data model](https://developer.salesforce.com/docs/platform/data-models/guide/transaction-management-quote.html) and the [order data model](https://developer.salesforce.com/docs/platform/data-models/guide/transaction-mgmt-order.html) list Quote, Quote Line Item, Order, Order Item, Asset, Product2 and Pricebook Entry. So the integration points are the same, but the design is your partner's, and someone on your side should review it.
 
-## What are the three ways to cut quote to cash?
+## Quote only, quote and order, or all the way to the invoice
 
 I see three cuts that work. Each one moves the line between Salesforce and SAP one step further to the right.
 
@@ -89,7 +88,7 @@ Every one of these records already exists in SAP. So before cut 3, finance has t
 
 If finance has not been in the room for these four points, cut 3 is not ready.
 
-## A typical scenario, as an assumption
+## Worked example: machines, spare parts and remote monitoring
 
 A machine builder with SAP S/4HANA sells 40 base machines with options, spare parts and a remote monitoring subscription per machine. Customer prices for spare parts are SAP conditions maintained for years. Machine prices follow list prices plus option surcharges.
 
@@ -109,7 +108,7 @@ SAP order --> SAP invoice
 
 What the sales desk then needs on top, live order status from SAP for example, follows the pattern in [Agentforce and SAP: order status through MuleSoft](../agentforce-sap-order-status-mulesoft/).
 
-## How do you write the split down?
+## One table with an owner per object
 
 On one page, in a form that a new partner understands in ten minutes:
 
@@ -121,8 +120,6 @@ On one page, in a form that a new partner understands in ten minutes:
 
 Designing these interfaces is a large part of my work on [Salesforce integration](../../services/salesforce-integration/). The wider decision of whether Revenue Cloud fits at all is in the masterclass chapter [Revenue Cloud overview and decision](../../masterclass/revenue-cloud/revenue-cloud-overview/).
 
-## Where should you start?
+## First step: settle the unclear rows with finance
 
 List your quote-to-cash steps in one column and write SAP or Salesforce next to each, as things work today. Then mark the three rows where the answer is unclear: in most companies that is the price, the order and the invoice. Settle those three with finance before you ask partners for estimates, because each answer changes the scope by weeks.
-
-The split between Revenue Cloud and SAP is decided per object and signed by finance before the build starts.

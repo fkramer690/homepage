@@ -9,11 +9,10 @@ topic: revenue
 categories: [revenue-cloud]
 tags: [Revenue Cloud, product catalog, variants, product classification, bundles, SAP]
 takeaways:
-  - "The Revenue Cloud product catalog models what sales sells: catalogs, categories, product classifications with attributes, simple products, bundles and selling models."
-  - "A product classification is a template with a set of attributes. Products created from it inherit the attributes and can override them, so one machine family needs one template."
-  - "A variant becomes its own product when the ERP has its own material number for it, when it is planned in a sales agreement or when it is stocked and serviced separately. Otherwise it stays an attribute."
-  - "The ERP delivers material numbers and list prices. Categories, selling attributes, bundle structure and selling models exist only in Salesforce and need an owner there."
-  - "Catalog records are data: the Developer Guide lists a deployment sequence and lookup fields for them, so they move through the pipeline as data in a fixed order."
+  - "Products created from a classification inherit its attributes and can override them. One machine family therefore needs one template."
+  - "A variant becomes its own product with its own material number, planning in a sales agreement or separate stocking and service."
+  - "The ERP delivers material numbers and list prices. Categories, bundles and selling models exist only in Salesforce and need an owner there."
+  - "Catalog records move through the pipeline as data, in the deployment sequence of the Developer Guide."
 faq:
   - q: "What is a product classification in Revenue Cloud?"
     a: "A product classification is a template with a set of attributes, for example motor power, voltage and control type for one machine family. Products created from the classification inherit these attributes and can override single ones that do not apply."
@@ -88,7 +87,7 @@ In most cases, yes. A machine builder sells a few dozen machines and often tens 
 
 Services such as maintenance contracts or remote monitoring need a term-defined or evergreen selling model in addition, because they are sold as subscriptions. I would put them in a separate catalog so that product management and service management each maintain their own part.
 
-## A typical scenario, as an assumption: 40 base machines with options
+## Worked example: 40 base machines with options
 
 A machine builder sells 40 base machines in four families, each with around a dozen selling options, plus 60 accessories with their own material numbers and around 8,000 spare parts. Without a model, someone suggests creating every sold combination as a product, which quickly runs into the thousands.
 
@@ -102,7 +101,7 @@ With the catalog model it looks like this:
 
 The product catalog for quotes then holds around 140 records plus the bundles, and every combination a customer can order is still described completely.
 
-## Catalog data is configuration: who maintains it and how does it move?
+## Catalog data is configuration and needs an owner
 
 Classifications, attributes and bundles are records, not metadata. So catalog changes are tested in a sandbox and moved as data through the same pipeline as metadata. How that works with SFDMU or commercial tools is in the DevOps chapter on [data and configuration](../../masterclass/devops-release-management/data-and-configuration/), and the Revenue Cloud specifics are in [Revenue Cloud deployments](../revenue-cloud-configuration-deployment/).
 
@@ -113,7 +112,7 @@ The Developer Guide has an [object deployment reference](https://developer.sales
 
 The owner should be product management at the manufacturer, not the implementation partner. After go-live new machines, options and price changes arrive every quarter, and whoever maintains the catalog decides how fast sales can quote them.
 
-## Where should you start?
+## First step: list machine families and the questions sales asks
 
 1. **List the machine families** and the questions sales asks per family. They become classifications and attributes.
 2. **Apply the three tests** to every variant: own material number, planned in a sales agreement, stocked or serviced separately.
@@ -121,6 +120,4 @@ The owner should be product management at the manufacturer, not the implementati
 4. **Separate machines, spare parts and services** into catalogs with different owners.
 5. **Name the catalog owner** and put the catalog under version control as data.
 
-The whole chapter is in the masterclass part [catalog, configurator, pricing](../../masterclass/revenue-cloud/product-catalog-configurator-pricing/), and drawing the line between SAP and Salesforce is part of my [Salesforce architecture](../../services/salesforce-architecture/) work.
-
-A good Revenue Cloud catalog describes every machine a customer can order with a few hundred records, as long as variants stay attributes until the ERP says otherwise.
+Point 2 decides the size of the catalog: a variant that meets none of the three tests stays an attribute and gets no product record of its own. The whole chapter is in the masterclass part [catalog, configurator, pricing](../../masterclass/revenue-cloud/product-catalog-configurator-pricing/), and drawing the line between SAP and Salesforce is part of my [Salesforce architecture](../../services/salesforce-architecture/) work.

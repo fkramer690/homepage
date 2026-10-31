@@ -11,8 +11,8 @@ coAuthor: juliane
 contactBrief: change
 tags: [change management, rollout, global template, harmonisation]
 takeaways:
-  - "A worldwide rollout with a global template means people in every country work differently. That is why change management belongs in every wave, not only the first."
-  - "Every country needs its own sponsor from local management. A global sponsor at headquarters is not enough if the local subsidiary does not share the reason for harmonisation."
+  - "Change management belongs in every wave of a global rollout, not only the first, because different habits change in every country."
+  - "Every country needs a sponsor from local management. The global sponsor is not enough if the country does not share the reason for harmonisation."
   - "Per country you need at least key users, communication before go-live and a look at usage afterwards."
   - "The first wave is also the test for change management: whatever gets stuck there is adjusted before the next wave."
 faq:
@@ -29,7 +29,7 @@ draft: false
 
 In a worldwide Salesforce rollout with a global template, people in every country work differently after go-live than before. That is why change management belongs in every wave, not only the first. Each country needs its own sponsor from local management, key users who know the template, communication before go-live that explains why something changes, and a look at usage afterwards. The first wave is a test for change management just as much as for the technology: whatever gets stuck there is adjusted before the next wave.
 
-## Why is change management at headquarters not enough?
+## Change management at headquarters is not enough
 
 The strategic goal of a worldwide rollout is usually to harmonise processes. At headquarters that goal is clear, in the countries often not. For a subsidiary that has worked successfully with its own processes for years, the global template is first of all a requirement from outside. If nobody there explains why it is worth it, you get deviation requests instead of support.
 
@@ -75,9 +75,9 @@ Every request to deviate from the template is also a change management question.
 
 The other way round, the list of deviations shows where change management has to start. If one country submits twenty requests and the others three, it is rarely the business. Usually awareness is missing there. That is why I bring the deviation list to every conversation with a country's sponsor.
 
-## What do you learn from the first wave?
+## The first wave is the test for all others
 
-The first wave is the test for all others, including for change management. After the go-live of the first country I check three questions with the sponsor and the key users:
+The first wave is the test for all others, including for change management. After the go-live of the first country I check with the sponsor and the key users:
 
 1. **Which questions came up most often after go-live?** They show where training or communication was missing.
 2. **Where do people keep working with their own lists next to Salesforce?** That shows which ADKAR stage was missing. How to measure this is in [measuring Salesforce adoption after go-live](../salesforce-adoption-metrics-after-go-live/).
@@ -89,8 +89,6 @@ This needs breathing room between two waves. Whoever starts the next wave while 
 Let key users of the next country work for a few days in the country of the current wave. They see real cases, learn the questions that come after go-live and bring that back to their own country.
 ```
 
-## Where do you start?
+## First step: a sponsor per country before planning starts
 
-Name a sponsor for every country before the country enters planning, and have them review the list of country deviations. Define key users per country and agree their time with their managers, as described in [key users in Salesforce rollouts](../salesforce-key-user-network/). After the first country, plan a review before the second one starts.
-
-A global template is introduced anew in every country, and every country needs its own people to carry it. Read more about [change management for Salesforce programmes](../../services/change-management-salesforce/).
+Name a sponsor for every country before the country enters planning, and have them review the list of country deviations. Define key users per country and agree their time with their managers, as described in [key users in Salesforce rollouts](../salesforce-key-user-network/). After the first country, plan a review before the second one starts. A country without a named sponsor does not enter planning, even when the schedule is tight. How we set this up in programmes is described under [change management for Salesforce programmes](../../services/change-management-salesforce/).

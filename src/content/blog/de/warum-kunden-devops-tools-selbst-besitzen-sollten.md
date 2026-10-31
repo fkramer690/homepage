@@ -9,10 +9,10 @@ topic: ownership
 categories: [devops]
 tags: [Partnersteuerung, DevOps, Jira, Vendor Lock-in, Berechtigungsmanagement]
 takeaways:
-  - "Kunden sollten Accounts, Lizenzen und Zugriffsrechte ihrer Projekt-Tools immer selbst in der Hand haben, vom Git-Repository und der CI/CD-Pipeline bis zu Jira, Confluence und Miro."
+  - "Accounts, Lizenzen und Zugriffsrechte gehören dem Kunden, vom Git-Repository und der Pipeline bis zu Jira, Confluence und Miro."
   - "Tools zu besitzen heißt nicht, eigene Server zu betreiben: Cloud-Dienste sind in Ordnung, solange Arbeitsbereich und Admin-Rechte beim Kunden liegen."
   - "Partner erhalten persönliche Benutzer mit Rollen passend zu ihrer Aufgabe, für die Dauer der Zusammenarbeit, und ihre Arbeit bleibt in den Systemen des Kunden."
-  - "Tools im Besitz eines Partners schaffen Abhängigkeit, machen Partner schwer vergleichbar und gefährden Historie, Dokumentation und Entscheidungen beim Partnerwechsel."
+  - "Tools im Besitz eines Partners schaffen Abhängigkeit, machen Partner schwer vergleichbar und gefährden die Historie beim Partnerwechsel."
   - "Kundeneigene Tools einzurichten kostet am Anfang wenig und ist später sehr teuer nachzuholen."
 faq:
   - q: "Müssen Kunden ihre DevOps-Tools auf eigenen Servern betreiben?"
@@ -67,13 +67,13 @@ Solange die Zusammenarbeit gut läuft, merkt es niemand. Die Probleme zeigen sic
 
 Das ist kein Vorwurf an Partner. Die meisten guten Partner arbeiten lieber in den Tools des Kunden, weil das ihren eigenen Ausstieg sauber und ihre Arbeit sichtbar macht.
 
-## Was hat das mit Partnersteuerung zu tun?
+## Eigene Tools machen Partner vergleichbar und austauschbar
 
 Sehr viel. Als [Architekt auf Kundenseite](../../#about) ist eines meiner wichtigsten Ziele, Umsetzungspartner vergleichbar und austauschbar zu halten. Das funktioniert nur, wenn die Grundlagen dem Kunden gehören: Repository, Pipeline, Backlog und Dokumentation. Dann lässt sich ein neuer Partner in ein bekanntes Setup mit schriftlichen Standards einarbeiten, und ein scheidender Partner gibt nichts weiter ab als seine Benutzer.
 
 Es ist auch die Voraussetzung, um internes Ownership aufzubauen. In dem Programm, das ich in meinem DevOps-Artikel beschreibe, wurde der Release-Prozess am Ende an einen internen Kollegen übergeben. Eine solche Übergabe ist nur realistisch, wenn Tools und Rechte bereits auf Kundenseite liegen. Sonst erbt die interne Person einen Prozess, der weiter an fremden Accounts hängt. Der Besitz der Tools ist die Grundlage guter [Partnersteuerung und Governance](../../leistungen/partnersteuerung/).
 
-## Wie setzen Sie das in der Praxis auf?
+## Regeln für die Praxis, bevor der erste Partner startet
 
 Am besten, bevor der erste Partner startet. Diese Regeln haben sich bewährt:
 
@@ -89,6 +89,6 @@ Am besten, bevor der erste Partner startet. Diese Regeln haben sich bewährt:
 Besitzt ein Partner bereits einige der Tools, planen Sie den Umzug früh und in einer ruhigen Phase, nicht während eines Ausstiegs. Ein Repository lässt sich mit voller Historie an einem Tag umziehen. Jira und Miro brauchen mehr Planung, sind aber jetzt immer noch deutlich günstiger umzuziehen als später.
 ```
 
-## Wo fangen Sie an?
+## Erster Schritt: eine Liste aller Tools mit Vertrag und Admins
 
-Machen Sie eine einfache Liste: jedes Tool im Projekt, wer den Vertrag hält, wer die Admins sind und welche Mitarbeitenden von Partnern Zugriff haben. In vielen Programmen zeigt schon diese Liste, wo die Risiken liegen. Die eigenen Tools zu besitzen kostet wenig und schützt den wertvollsten Teil eines Salesforce-Programms, sein Wissen.
+Machen Sie eine einfache Liste: jedes Tool im Projekt, wer den Vertrag hält, wer die Admins sind und welche Mitarbeitenden von Partnern Zugriff haben. In vielen Programmen zeigt schon diese Liste, wo die Risiken liegen. Jede Zeile, in der ein Partner den Vertrag oder die Admin-Rechte hält, bekommt ein Datum, bis zu dem sie auf Sie übertragen ist.
