@@ -11,8 +11,8 @@ coAuthor: juliane
 contactBrief: change
 tags: [Change Management, Rollout, globales Template, Harmonisierung]
 takeaways:
-  - "Ein weltweiter Rollout mit globalem Template heißt, dass Menschen in jedem Land anders arbeiten. Change Management gehört deshalb in jede Welle, nicht nur in die erste."
-  - "Jedes Land braucht einen eigenen Sponsor aus der Landesleitung. Ein globaler Sponsor in der Zentrale reicht nicht, wenn die Landesgesellschaft den Grund für die Harmonisierung nicht teilt."
+  - "Change Management gehört in jede Welle eines globalen Rollouts, nicht nur in die erste, weil sich in jedem Land andere Gewohnheiten ändern."
+  - "Jedes Land braucht einen Sponsor aus der Landesleitung. Der globale Sponsor reicht nicht, wenn das Land den Grund für die Harmonisierung nicht teilt."
   - "Pro Land gehören mindestens Key User, Kommunikation vor dem Go-live und ein Blick auf die Nutzung danach dazu."
   - "Die erste Welle ist auch für das Change Management der Test: Was dort hakt, wird vor der nächsten Welle angepasst."
 faq:
@@ -29,7 +29,7 @@ draft: false
 
 In einem weltweiten Salesforce-Rollout mit globalem Template arbeiten Menschen in jedem Land nach dem Go-live anders als vorher. Change Management gehört deshalb in jede Welle, nicht nur in die erste. Pro Land braucht es einen eigenen Sponsor aus der Landesleitung, Key User, die das Template kennen, Kommunikation vor dem Go-live, die erklärt, warum sich etwas ändert, und einen Blick auf die Nutzung danach. Die erste Welle ist für das Change Management genauso ein Test wie für die Technik: Was dort hakt, wird vor der nächsten Welle angepasst.
 
-## Warum reicht Change Management in der Zentrale nicht?
+## Change Management in der Zentrale reicht nicht
 
 Das strategische Ziel eines weltweiten Rollouts ist meist die Harmonisierung von Prozessen. In der Zentrale ist dieses Ziel klar, in den Ländern oft nicht. Für eine Landesgesellschaft, die seit Jahren erfolgreich mit eigenen Abläufen arbeitet, ist das globale Template zuerst einmal eine Vorgabe von außen. Wer dort nicht erklärt, warum es sich lohnt, bekommt Abweichungswünsche statt Unterstützung.
 
@@ -75,9 +75,9 @@ Jeder Wunsch nach Abweichung vom Template ist auch eine Frage des Change Managem
 
 Umgekehrt zeigt die Liste der Abweichungen, wo das Change Management ansetzen muss. Wenn ein Land zwanzig Wünsche einreicht und die anderen drei, liegt das selten am Geschäft. Meist fehlt dort Awareness. Ich nehme die Abweichungsliste deshalb in jedes Gespräch mit dem Sponsor eines Landes mit.
 
-## Was lernt man aus der ersten Welle?
+## Die erste Welle ist der Test für alle weiteren
 
-Die erste Welle ist der Test für alle weiteren, auch für das Change Management. Nach dem Go-live des ersten Landes prüfe ich mit dem Sponsor und den Key Usern drei Fragen:
+Die erste Welle ist der Test für alle weiteren, auch für das Change Management. Nach dem Go-live des ersten Landes prüfe ich mit dem Sponsor und den Key Usern:
 
 1. **Welche Fragen kamen nach dem Go-live am häufigsten?** Sie zeigen, wo Schulung oder Kommunikation gefehlt hat.
 2. **Wo wird neben Salesforce weiter mit eigenen Listen gearbeitet?** Das zeigt, welche Stufe im ADKAR-Modell gefehlt hat. Wie man das misst, beschreibe ich in [Salesforce-Nutzung nach dem Go-live messen](../salesforce-nutzung-messen-nach-go-live/).
@@ -89,8 +89,6 @@ Zwischen zwei Wellen braucht es dafür Luft. Wer die nächste Welle startet, wä
 Lassen Sie Key User des nächsten Landes einige Tage im Land der laufenden Welle mitarbeiten. Sie sehen echte Fälle, lernen die Fragen kennen, die nach dem Go-live kommen, und bringen das in ihr eigenes Land mit.
 ```
 
-## Wo fangen Sie an?
+## Erster Schritt: ein Sponsor pro Land, bevor die Planung beginnt
 
-Benennen Sie für jedes Land einen Sponsor, bevor das Land in die Planung kommt, und lassen Sie ihn die Liste der Landesabweichungen mit prüfen. Legen Sie pro Land Key User fest und vereinbaren Sie ihre Zeit mit den Führungskräften, wie in [Key User in Salesforce-Einführungen](../salesforce-key-user-netzwerk/) beschrieben. Nach dem ersten Land planen Sie eine Auswertung ein, bevor das zweite startet.
-
-Ein globales Template wird in jedem Land neu eingeführt, und jedes Land braucht dafür eigene Menschen, die es tragen. Mehr dazu lesen Sie unter [Change Management für Salesforce-Programme](../../leistungen/change-management/).
+Benennen Sie für jedes Land einen Sponsor, bevor das Land in die Planung kommt, und lassen Sie ihn die Liste der Landesabweichungen mit prüfen. Legen Sie pro Land Key User fest und vereinbaren Sie ihre Zeit mit den Führungskräften, wie in [Key User in Salesforce-Einführungen](../salesforce-key-user-netzwerk/) beschrieben. Nach dem ersten Land planen Sie eine Auswertung ein, bevor das zweite startet. Ein Land ohne benannten Sponsor kommt nicht in die Planung, auch wenn der Zeitplan drängt. Wie wir das in Programmen aufsetzen, steht unter [Change Management für Salesforce-Programme](../../leistungen/change-management/).

@@ -11,9 +11,8 @@ coAuthor: juliane
 contactBrief: change
 tags: [change management process, Prosci, ADKAR, Salesforce rollout, project phases]
 takeaways:
-  - "The change management process runs alongside the Salesforce project plan, not after it. Every project phase has its own change task with a tangible output."
+  - "Every project phase has its own change task with a tangible output, from the impact assessment to the handover to internal roles."
   - "Planning produces the most important part: which groups are affected, what changes for each, who in management backs it and how success is measured."
-  - "During build and acceptance testing, key users get involved, communication and training are prepared and resistance is spotted early."
   - "At go-live you have to make sure there is no way back to the old way of working. Otherwise no change happens."
   - "After go-live it is decided whether the change lasts: measure, close gaps and hand ownership to internal roles."
 faq:
@@ -30,7 +29,7 @@ draft: false
 
 The change management process in a Salesforce project runs in parallel to the project plan, and every project phase has its own change task. In planning you clarify which groups are affected, what changes for each, who in management backs it and how you measure success. During build and acceptance testing you involve key users and prepare communication and training. At go-live you make sure there is no way back. Afterwards you measure usage, close gaps and hand ownership to internal roles. I follow the Prosci process and translate it into the phases of a Salesforce project.
 
-## How does the change management process attach to the project plan?
+## The three Prosci phases on the Salesforce project plan
 
 Prosci structures the work in three phases: prepare approach, manage change, sustain outcomes. What the phases mean in general is explained by Juliane Winterscheid in [What is change management?](../what-is-change-management/), and how Prosci differs from Lewin and Kotter in [Change management models compared](../change-management-models/). Here the question is the one that matters in a project: what has to happen in which project phase, and what is on the table at the end?
 
@@ -72,7 +71,7 @@ Three things work particularly well in this phase:
 
 At the end of acceptance testing the [training plan](../salesforce-training-plan-rollout/) is in place: which role learns which processes, in which format and when.
 
-## What changes at go-live?
+## At go-live there is no way back
 
 At go-live comes the part many projects underestimate. I make sure there is no way back. As long as the option to work the old way remains, no change happens. That means: old templates and lists get a switch-off date that leadership announces, and reports to the management board come from Salesforce from that day on.
 
@@ -84,12 +83,10 @@ At the same time [hypercare](../salesforce-hypercare-after-go-live/) begins. Pro
 
 ## How do you sustain the outcome after go-live?
 
-The third Prosci phase starts after go-live and is the one most often cut, because the project team moves on. It has three parts. First, measure: the sponsor gets the metrics from planning every month, per group and country. Second, close gaps: where usage stalls, ask for the missing ADKAR stage instead of retraining by default. Third, hand over ownership: internal roles take over what the project built, such as the key user exchange, release communication and regular meetings like a [Center of Excellence call](../salesforce-center-of-excellence-cadence/) where new topics come up in advance.
+The third Prosci phase starts after go-live and is the one most often cut, because the project team moves on. It has three parts. Measure: the sponsor gets the metrics from planning every month, per group and country. Close gaps: where usage stalls, ask for the missing ADKAR stage instead of retraining by default. Hand over ownership: internal roles take over what the project built, such as the key user exchange, release communication and regular meetings like a [Center of Excellence call](../salesforce-center-of-excellence-cadence/) where new topics come up in advance.
 
 The process ends when the new way of working is measurably in use and nobody from the project is needed for it any more. That is well after go-live.
 
-## Where should you start?
+## First step: write one change output into every project phase
 
-Take the project plan of your next Salesforce initiative and write down for every phase which change output should exist at its end. If planning is missing the impact assessment, the sponsor plan or the metrics, that is your first step. The hub article [Salesforce change management: why rollouts fail](../change-management-salesforce-rollout/) shows which topics belong to it.
-
-Change management is a process that starts with the project plan and ends after go-live. Read more about [Salesforce change management consulting](../../services/change-management-salesforce/).
+Take the project plan of your next Salesforce initiative and write down for every phase which change output should exist at its end. If planning is missing the impact assessment, the sponsor plan or the metrics, that is your first step. The hub article [Salesforce change management: why rollouts fail](../change-management-salesforce-rollout/) shows which topics belong to it. How we run the process in programmes is described under [Salesforce change management consulting](../../services/change-management-salesforce/).

@@ -11,7 +11,7 @@ coAuthor: juliane
 contactBrief: change
 tags: [adoption, usage, change management, KPIs]
 takeaways:
-  - "Whether a process has landed is shown better by reports on records created and maintained than by any survey or by the number of training sessions."
+  - "The number of training sessions shows that the project did its job. It does not show whether anyone works differently."
   - "Logins say little. Whoever logs in to export a list and keeps working in Excel counts as an active user."
   - "I measure on four levels: activity, use of the process, data quality and outcome, each per group and country."
   - "The numbers are defined before go-live, with a baseline, and discussed regularly with the sponsor after go-live."
@@ -27,9 +27,9 @@ faq:
 draft: false
 ---
 
-Whether a new Salesforce process has landed after go-live is shown better by reports on records created and maintained, per group and country, than by any survey. Logins say little: whoever logs in, exports a list and keeps working in Excel counts as an active user. That is why I measure on four levels: activity, use of the process, data quality and outcome. Which numbers they are and which baseline applies is fixed before go-live. Afterwards the sponsor discusses them every month, so it shows when a group keeps working with its own lists next to Salesforce.
+Whether a new Salesforce process has landed after go-live is shown more reliably by reports on records created and maintained, per group and country, than by a survey. Logins say little: whoever logs in, exports a list and keeps working in Excel counts as an active user. That is why I measure on four levels: activity, use of the process, data quality and outcome. Which numbers they are and which baseline applies is fixed before go-live. Afterwards the sponsor discusses them every month, so it shows when a group keeps working with its own lists next to Salesforce.
 
-## Why measure adoption instead of training?
+## Training numbers say nothing about adoption
 
 Many programmes report after go-live how many people were trained. That number says the project did its job. It does not say whether anyone works differently. That is why at the start I define how success is measured, for example by usage numbers in Salesforce instead of the number of training sessions.
 
@@ -70,16 +70,14 @@ A bad number is a question, not an answer. I then ask at which stage of the [ADK
 
 The numbers belong in the regular meeting with the sponsor. When the sponsor asks about their teams' usage in the monthly report, that is reinforcement in itself: the teams notice that it counts.
 
-## Who gets which number?
+## Steering committee, sponsor and key users need different numbers
 
 Not every number belongs in every report. The steering committee needs two or three numbers per process, ideally on the levels of use and outcome, with the trend since go-live. A country's or department's sponsor needs the same numbers for their teams, so they can ask specific questions. Key users and team leads need the detailed view: which people hardly create records, which fields stay empty? This view is meant for conversations, not rankings. Whoever compares individuals publicly gets polished numbers instead of maintained data, and in Germany such an evaluation has to be clarified with the works council beforehand anyway.
 
-## How long should you measure?
+## Measure for at least six months, monthly
 
 At least six months, monthly. The first weeks after go-live are distorted: attention is high, key users are present, and many people try out the new system. Whether a process stays only shows after three to six months, when the project team has moved on. If a number drops during that time, reinforcement is missing. In a worldwide rollout, measure per country, because every country follows its own curve, see [change management in a global Salesforce rollout](../change-management-global-salesforce-rollout/).
 
-## Where do you start?
+## First step: one adoption number for your most important process
 
-For your most important new process, choose one number on the level "use of the process", such as the share of quotes created in Salesforce. Set the baseline before go-live and build a report that shows the number per group and country. After go-live, this report goes to the sponsor every month.
-
-Salesforce is introduced when the work happens in it, not when everyone can log in. Read more about [change management for Salesforce programmes](../../services/change-management-salesforce/).
+For your most important new process, choose one number on the level "use of the process", such as the share of quotes created in Salesforce. Set the baseline before go-live and build a report that shows the number per group and country. After go-live, this report goes to the sponsor every month. If the share in a country is below the baseline after three months, ask the key users there at which point the work leaves Salesforce. How we set this up in programmes is described under [change management for Salesforce programmes](../../services/change-management-salesforce/).
