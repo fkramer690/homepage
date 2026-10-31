@@ -1647,6 +1647,19 @@ const drawings: Record<string, Drawing> = {
     ${t(18, 140, l('all to agent: 2.88M credits/yr > 2.75M Max pool', 'alles zum Agenten: 2,88 Mio. Credits/Jahr > 2,75 Mio. Max'), { fill: D, size: 7 })}
     ${t(18, 153, l('hybrid: 1.34M credits/yr, 20 credits ($0.10) per action', 'hybrid: 1,34 Mio. Credits/Jahr, 20 Credits (0,10 €) pro Aktion'), { size: 7 })}`,
 
+  'enhanced-chat-v2-switch': (l) => `
+    ${t(18, 18, l('SAME CHANNEL · NEW CLIENT · MOVE OPTIONAL', 'GLEICHER KANAL · NEUE OBERFLÄCHE · OPTIONAL'), { fill: D, size: 7 })}
+    ${box(18, 28, 110, 84)}${t(28, 43, l('V1 ONLY', 'NUR IN V1'), { fill: D, size: 7.5 })}
+    ${[l('Form, Time Selector', 'Form, Time Selector'), l('typing indicator', 'Tippanzeige'), l('opt-out keywords', 'Opt-Out-Keywords'), l('fallback message', 'Fallback Message')]
+      .map((s, i) => dot(31, 54 + i * 14, G, 2.5) + t(38, 57 + i * 14, s, { size: 7 })).join('')}
+    ${arrow(128, 70, 192, C)}${t(160, 61, l('switch', 'umstellen'), { fill: C, size: 7, anchor: 'middle' })}${t(160, 84, 'optional', { size: 7, anchor: 'middle' })}
+    ${box(192, 28, 110, 84, C)}${t(202, 43, l('V2 ONLY', 'NUR IN V2'), { fill: D, size: 7.5 })}
+    ${['Lightning Types', 'Token Streaming', 'Context Events', l('inline mode', 'Inline-Modus')]
+      .map((s, i) => check(202, 51 + i * 14) + t(214, 57 + i * 14, s, { size: 7 })).join('')}
+    <path d="M18 124H302" stroke="${L}"/>
+    ${t(18, 140, l('11 v1 features are missing in v2', '11 Funktionen aus v1 fehlen in v2'), { fill: D, size: 7.5 })}
+    ${t(18, 153, l('v1 + v2 on one domain: messages may be lost', 'v1 + v2 auf einer Domain: Nachrichten fehlen'), { size: 7 })}`,
+
   'einstein-trust-layer-explained': (l) => `
     ${box(14, 40, 70, 44)}${t(49, 58, l('AGENT', 'AGENT'), { fill: D, size: 8, anchor: 'middle' })}${t(49, 72, 'Agentforce', { size: 7, anchor: 'middle' })}
     ${arrow(84, 62, 112)}
