@@ -216,6 +216,11 @@ const drawings: Record<string, Drawing> = {
     ${box(222, 36, 82, 70)}${t(263, 52, l('AWS IRELAND', 'AWS IRLAND'), { fill: D, size: 7, anchor: 'middle' })}${t(227, 70, 'Service Board', { size: 7 })}${t(227, 84, l('Optimization', 'Optimierung'), { size: 7 })}
     ${tag(18, 128, 150, l('2 vendors · 2 calendars', '2 Hersteller · 2 Kalender'))}${t(178, 141, l('no PTC SLA for suites', 'keine PTC-SLA für Suiten'), { size: 7 })}`,
 
+  'field-service-management-software': (l) => `
+    ${t(18, 18, l('THE LEADING SYSTEM DECIDES', 'DAS FÜHRENDE SYSTEM ENTSCHEIDET'), { fill: D, size: 7 })}
+    ${[['Service Cloud', 'Salesforce Field Service'], ['S/4HANA', 'SAP Field Service Mgmt.'], [l('IFS ERP / EAM', 'IFS-ERP / EAM'), 'IFS Cloud FSM'], ['ServiceNow CSM', 'ServiceNow FSM']].map(([a, b], i) => box(18, 28 + i * 22, 110, 18) + t(73, 40 + i * 22, a, { size: 7, anchor: 'middle' }) + arrow(132, 37 + i * 22, 150, i === 0 ? C : G) + box(150, 28 + i * 22, 152, 18, i === 0 ? C : G) + t(226, 40 + i * 22, b, { fill: i === 0 ? C : D, size: 7, anchor: 'middle' })).join('')}
+    ${tag(18, 128, 150, l('same risks for all four', 'gleiche Risiken bei allen'))}${t(178, 141, l('assets · technicians · ERP', 'Anlagen · Techniker · ERP'), { size: 7 })}`,
+
   'servicemax-asset-360': (l) => `
     ${t(18, 18, l('TWO ADD-ONS, SAME OBJECTS', 'ZWEI ERWEITERUNGEN, GLEICHE OBJEKTE'), { fill: D, size: 7 })}
     ${box(18, 28, 130, 50, C)}${t(83, 42, 'ASSET 360 · PTC', { fill: C, size: 7.5, anchor: 'middle' })}${t(28, 57, l('entitlement engine', 'Entitlement-Engine'), { size: 7 })}${t(28, 70, l('Windchill link', 'Windchill-Anbindung'), { size: 7 })}
