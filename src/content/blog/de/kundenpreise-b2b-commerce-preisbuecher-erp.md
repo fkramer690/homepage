@@ -9,10 +9,10 @@ topic: commerce
 categories: [b2b-commerce, architecture]
 tags: [B2B Commerce, Kundenpreise, Preisbücher, SAP, ERP-Anbindung, Commerce Extensions]
 takeaways:
-  - "Preise in Salesforce B2B Commerce kommen aus Preisbüchern, die dem Store und Käufergruppen zugeordnet sind; eine Preisstrategie, Best Price oder Priority Price, entscheidet, welches gilt."
-  - "Ein Store hat bis zu 5 Preisbücher, ein Preisbuch bis zu 350.000 Einträge, und ein Preisaufruf wertet nur die ersten 25 gültigen Preisbücher aus. Das letzte Limit ist hart."
+  - "Preise kommen aus Preisbüchern, die Store und Käufergruppen zugeordnet sind. Die Preisstrategie Best Price oder Priority Price entscheidet, welches gilt."
+  - "Ein Store hat bis zu 5 Preisbücher, eines bis zu 350.000 Einträge. Ein Preisaufruf wertet nur die ersten 25 gültigen Preisbücher aus, das Limit ist hart."
   - "SAP-Konditionen mit Kundenpreisen, Gruppenrabatten und Zuschlägen passen selten eins zu eins in Preisbücher, die einen Preis pro Produkt und Buch halten."
-  - "Die Extension Commerce_Domain_Pricing_Service ersetzt Preisbücher durch eigene Logik, etwa einen Live-Aufruf ans ERP. Der Preis stimmt dann, aber das ERP muss schnell antworten."
+  - "Die Extension Commerce_Domain_Pricing_Service ersetzt Preisbücher durch eigene Logik, etwa einen Live-Aufruf ans ERP, das dann schnell antworten muss."
   - "Legen Sie schriftlich fest, welches System Preis-Master ist, bevor ein Käufer einen Preis sieht, und was gilt, wenn Shoppreis und Auftragspreis abweichen."
 faq:
   - q: "Woher kommen Kundenpreise in Salesforce B2B Commerce?"
@@ -41,7 +41,7 @@ Für Mengenrabatte gibt es Staffelpreise (Tiered Pricing). Das Preis-Datenmodell
 
 Die Salesforce-Hilfe nennt drei typische Muster: je Händlerstufe eine Käufergruppe, eine Entitlement Policy und ein Preisbuch; je Käufer ein Preisbuch und eine Käufergruppe, wenn Sie käuferindividuelle Preise wollen; und Käufergruppen je Produktgruppe, um Sichtbarkeit zu steuern. Mit dem ersten Muster würde ich anfangen.
 
-## Welche Limits prägen das Preisdesign?
+## 5 Preisbücher pro Store, 25 pro Preisaufruf
 
 Die [Limits für Preisbuchdaten](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-price-book-limits.html) entscheiden früh, ob Preisbücher für Sie realistisch sind:
 
@@ -83,9 +83,9 @@ Die Abwägung ist klar:
 
 Eine dritte Option ist Advanced Pricing powered by Revenue Cloud, eine Preis-Engine innerhalb von Salesforce. Wann sich die zusätzliche Lizenz lohnt, steht in [Advanced Pricing im B2B-Shop](../advanced-pricing-b2b-shop-revenue-cloud/).
 
-## Ein typisches Szenario, als Annahme
+## Rechenbeispiel: Kompressorenhersteller mit 600 Händlern
 
-Ein typisches Szenario, als Annahme: Ein Hersteller von Kompressoren verkauft Ersatzteile an 600 Händler in 9 Ländern. SAP hält einen Listenpreis je Land, einen Rabatt je Händlerstufe und Materialgruppe und Kundenpreise für etwa 40 große Händler. Rund 25.000 Teile werden online verkauft.
+Angenommen, ein Hersteller von Kompressoren verkauft Ersatzteile an 600 Händler in 9 Ländern. SAP hält einen Listenpreis je Land, einen Rabatt je Händlerstufe und Materialgruppe und Kundenpreise für etwa 40 große Händler. Rund 25.000 Teile werden online verkauft.
 
 Ich würde aufteilen. Für die rund 560 Händler mit Stufenrabatt berechnet ein nächtlicher Job die Nettopreise in je ein Preisbuch pro Land und Stufe; bei 9 Ländern und 3 Stufen sind das 27 Preisbücher mit höchstens 25.000 Einträgen, und jeder Käufer sieht genau eines davon. Für die 40 großen Händler mit Kundenpreisen fragt die Pricing Extension im Warenkorb live bei SAP. Fracht- und Mindermengenzuschläge kommen für alle im Checkout aus SAP. Der Auftrag, der zurück an SAP geht, trägt den Preis, den der Käufer gesehen hat, und SAP prüft ihn mit einer festgelegten Toleranz gegen das eigene Ergebnis.
 
@@ -101,7 +101,7 @@ Warenkorb --Auftrag mit Preis--> SAP-Auftrag
 
 Die Zahlen sind erfunden, um die Methode zu zeigen. Entscheidend ist, dass die Aufteilung der Preisfindung in SAP folgt und nicht dem, was der Shop technisch kann.
 
-## Wo starten Sie?
+## Erster Schritt: eine Seite zur Preis-Master-Entscheidung
 
 Schreiben Sie vor dem Store-Design eine Seite zur Preis-Master-Entscheidung:
 
@@ -112,5 +112,3 @@ Schreiben Sie vor dem Store-Design eine Seite zur Preis-Master-Entscheidung:
 5. Welcher Preis gilt, wenn Shop und ERP abweichen, und wer klärt das?
 
 Diese Entscheidung gehört in dasselbe Dokument wie Ihre [Object Ownership Matrix](../object-ownership-matrix-salesforce/) und bestimmt die Schnittstellenliste zum ERP, wie in [B2B Commerce und SAP: Welche Daten fließen wohin?](../b2b-commerce-sap-datenfluesse/) beschrieben. Wie Preise, Angebote, Checkout und Nachbestellung zusammenspielen, behandelt das Kapitel [Preise, Warenkorb, Checkout](../../masterclass/b2b-commerce/preise-warenkorb-checkout/) der [Masterclass B2B Commerce](../../masterclass/b2b-commerce/). Den Entwurf der Schnittstelle selbst übernehme ich im Rahmen der [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).
-
-Preisbücher reichen für Stufenpreise, SAP-Konditionen brauchen einen Live-Aufruf oder eine bewusste Replikation.

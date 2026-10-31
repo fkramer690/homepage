@@ -9,10 +9,10 @@ topic: commerce
 categories: [b2b-commerce, architecture]
 tags: [B2B Commerce, Visualforce, Aura, LWR, CloudCraze, migration]
 takeaways:
-  - "Salesforce B2B Commerce exists in three generations: the Visualforce managed package from the CloudCraze acquisition in 2018, and stores on the core platform with an Aura or an LWR template."
-  - "The last major version of B2B Commerce for Visualforce listed in Salesforce Help is 4.13 from Winter '21. Since Summer '25, Salesforce maintains only patch notes for it."
+  - "B2B Commerce exists in three generations: the Visualforce package from the CloudCraze acquisition in 2018, and stores with an Aura or LWR template."
+  - "The last major version of B2B Commerce for Visualforce is 4.13 from Winter '21. Since Summer '25, Salesforce maintains only patch notes for it."
   - "Aura store templates are only offered to orgs that had Commerce enabled before Spring '23. Salesforce recommends the LWR template for new stores."
-  - "As of 27 October 2026, Salesforce has published no retirement date for Aura stores or the Visualforce package. Plan by the features you need, not by fear of a deadline."
+  - "As of 27 October 2026, there is no retirement date for Aura stores or the Visualforce package. Plan by the features you need, not by a deadline."
 faq:
   - q: "What is the difference between B2B Commerce for Visualforce and B2B Commerce on Lightning?"
     a: "B2B Commerce for Visualforce is the managed package that came with CloudCraze, with storefront pages in Visualforce. B2B Commerce on the core platform builds the store as an Experience Cloud site with Experience Builder, using an Aura or an LWR template."
@@ -47,7 +47,7 @@ Summer '25 | Salesforce maintains only patch notes for the Visualforce package
 2026-06 | Innovations with headless, Buyer Agent and Quote to Cart, without the Visualforce package
 ```
 
-## What do I need to know about B2B Commerce for Visualforce?
+## B2B Commerce for Visualforce only gets patches
 
 The [release notes page in Salesforce Help](https://help.salesforce.com/s/articleView?language=en_US&id=commerce.b2b_commerce_release_notes.htm&type=5) lists patch notes for versions 4.5 to 4.13. The newest is [version 4.13 from Winter '21](https://help.salesforce.com/s/articleView?language=en_US&id=sf.b2b_commerce_rn_2021_winter_patches.htm&type=5). The same page says that since Summer '25 Salesforce maintains only patch notes for B2B Commerce for Visualforce. The [list of installation URLs](https://help.salesforce.com/s/articleView?id=000388718&language=en_US&type=1) calls it "the B2B Commerce managed package" and advises installing the most recent patch for your major release, because patches are cumulative.
 
@@ -70,7 +70,7 @@ The [migration guide](https://developer.salesforce.com/docs/commerce/lwr-migrati
 
 No. As of 27 October 2026, neither Aura stores nor B2B Commerce for Visualforce appear in the [list of active product and feature retirements](https://help.salesforce.com/s/articleView?id=000381744&language=en_US&type=1), and the migration guide names no date. I would only act on a date that Salesforce publishes in Help or in a release note.
 
-That is why I plan by features, not fear. A typical scenario, as an assumption: a manufacturer runs an Aura store for spare parts since 2022, with 15 custom Aura components for the parts list per machine and a custom checkout flow. A move to LWR then needs a concrete trigger:
+That is why I plan by features, not fear. Worked example: a manufacturer runs an Aura store for spare parts since 2022, with 15 custom Aura components for the parts list per machine and a custom checkout flow. A move to LWR then needs a concrete trigger:
 
 ```pro-contra
 pro: Keep the Aura store
@@ -88,7 +88,7 @@ Two checks belong in every roadmap discussion:
 - **Which new feature do we want, and does Salesforce document it for our store template?** The June 2026 announcements do not name a template. Ask the partner for the Help or developer page that confirms support for your store type.
 - **How much custom Aura code do we have?** Every Aura component is a piece the [migration](../b2b-store-aura-to-lwr-migration/) replaces. The more there are, the larger the move.
 
-## How do I find out what my company runs?
+## Find out within an hour what your company runs
 
 Many manufacturers do not know it exactly, because a partner set up the store years ago. Three checks give an answer within an hour:
 
@@ -98,8 +98,6 @@ Many manufacturers do not know it exactly, because a partner set up the store ye
 
 Write the result down with the number of custom components and the partner who built them. That one page is the basis for every later decision.
 
-## Where should you start?
+## First step: identify your generation and check roadmap features
 
 Find out which generation you run and list the features on your roadmap for the next two years. Then check per feature whether Salesforce documents it for your store type. If nothing on the list needs a new generation, keep the store and invest in data and processes. If something does, plan the move with the [release planning for Salesforce releases](../../masterclass/devops-release-management/release-planning-salesforce-releases/) in mind, because a store migration should not collide with a major release. The cost side is covered in [chapter 1 of the B2B Commerce masterclass](../../masterclass/b2b-commerce/b2b-commerce-worth-it-overview/), the move itself in [chapter 5 on agents, migration and rollout](../../masterclass/b2b-commerce/agentforce-migration-rollout/), and the licence question for buyers in [B2B Commerce buyer licences](../b2b-commerce-buyer-licences/). Store architecture decisions like this are part of my [Salesforce architecture](../../services/salesforce-architecture/) work.
-
-Know your generation before you discuss a roadmap, and move only when a feature you need requires it.

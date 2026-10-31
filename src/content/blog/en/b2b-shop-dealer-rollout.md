@@ -9,9 +9,9 @@ topic: commerce
 categories: [b2b-commerce]
 tags: [b2b commerce, rollout, dealers, buyer groups, buyer managers, change management]
 takeaways:
-  - "Roll out a B2B store in waves by buyer group, starting with pilot dealers who reorder known parts often. A big bang puts every data error in front of every dealer on the same day."
-  - "In Salesforce B2B Commerce buyers reach the store through buyer groups, so a wave is simply the set of buyer groups that get the store, with their entitlements and price books."
-  - "Buyer managers with Delegated External User Administration can create users, reset passwords and deactivate users for their own account, which takes user admin off your service desk."
+  - "Roll out the store in waves by buyer group, starting with dealers who reorder known parts often. A big bang shows every data error to every dealer at once."
+  - "Buyers reach the store through buyer groups, so a wave is the set of buyer groups that get the store, with their entitlements and price books."
+  - "Buyer managers create users, reset passwords and deactivate users for their own account, which takes user admin off your service desk."
   - "Inside sales keeps taking phone and email orders during the transition. Dealers move because the store is faster, not because the phone stops working."
   - "Before each wave, test entitlements, prices, stock calls and checkout with a real buyer account of that wave, not only with an admin user."
 faq:
@@ -62,7 +62,7 @@ $15 | Customer Community Plus per login per month
 source: Salesforce, Experience Cloud for Manufacturing page (list prices, billed annually) and Salesforce limits for buyer groups and accounts
 ```
 
-## What has to be tested before each wave?
+## Test each wave as a buyer of that wave
 
 Admin users see everything, so tests with an admin prove nothing about a dealer. Before each wave, log in as a real buyer of that wave and check:
 
@@ -74,15 +74,15 @@ Admin users see everything, so tests with an admin prove nothing about a dealer.
 
 Each wave adds new data, so each wave gets this test, not only the first one. Treat buyer groups, entitlement policies and price books as configuration that moves through your pipeline, as described in the DevOps chapter on [data and configuration](../../masterclass/devops-release-management/data-and-configuration/).
 
-## What happens to inside sales?
+## Inside sales keeps taking orders
 
 Inside sales keeps taking phone and email orders during the whole rollout. Dealers move to the store because it is faster and always open, not because the old channel was switched off. Forcing the switch creates frustration exactly with the dealers you want to win.
 
 Inside sales does have a new job: when a pilot dealer calls with a reorder that the store could have handled, the rep offers to walk them through it once. After two or three months, measure per buyer group how many order lines arrive through the store, and talk to dealers who stay on the phone. The numbers to watch are covered in [B2B shop KPIs after go-live](../b2b-shop-kpis-after-go-live/). Inside sales also needs to see store orders in Salesforce, so they can answer status calls without asking the dealer to repeat everything.
 
-## A typical scenario: three waves in six months
+## Worked example: three waves in six months
 
-A typical scenario, as an assumption: a manufacturer of compressors sells spare parts to 250 dealers in Germany, Austria and Switzerland.
+Assume a manufacturer of compressors sells spare parts to 250 dealers in Germany, Austria and Switzerland.
 
 ```schritte
 Wave 1 | Months 1 and 2
@@ -95,8 +95,6 @@ Wave 3 | Months 5 and 6
 
 Between waves there are two weeks without a new group, reserved for fixes and the test of the next wave's data. If wave 1 shows that search does not find parts by old part numbers, wave 2 waits until that is solved.
 
-## Where should you start?
+## First step: a dealer list with order lines and data quality
 
 Start with a list of all dealers with their yearly order lines, their price logic and the quality of their data, and choose the pilot group from it. Name a buyer manager for each pilot dealer, set up the test buyer accounts and write down the five checks above. The rest of this topic, from agents to the move from Aura to LWR, is in the masterclass chapter on [agents, migration and rollout](../../masterclass/b2b-commerce/agentforce-migration-rollout/). If dealers and inside sales have to change how they work, plan [change management](../../services/change-management-salesforce/) from the first wave.
-
-A dealer store succeeds when the first dealers find their parts at their price on the first try, so roll out in waves and test each one.

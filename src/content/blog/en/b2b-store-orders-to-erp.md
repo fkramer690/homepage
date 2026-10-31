@@ -10,8 +10,8 @@ categories: [b2b-commerce, architecture]
 contactBrief: integration
 tags: [b2b commerce, order management, sap, order summary, erp integration, order history]
 takeaways:
-  - "Salesforce marks every order summary with OrderLifeCycleType: managed means Salesforce Order Management runs the lifecycle, unmanaged means an external system such as SAP does."
-  - "For most manufacturers SAP stays the order owner: the store sends the order, SAP creates the sales order, and status, deliveries and invoices are written back to the unmanaged summary."
+  - "Every order summary carries an OrderLifeCycleType: managed means Salesforce Order Management runs the order, unmanaged means a system such as SAP does."
+  - "For most manufacturers SAP stays the order owner. Status, deliveries and invoices are written back to the unmanaged summary."
   - "Growth Edition includes Order Management Lite, Advanced full Order Management; orders from other channels need a standalone Order Management purchase."
   - "Buyers see their orders through the order summary APIs in the store, so the data written back from SAP decides what the order history shows."
   - "The extension Commerce_Domain_Checkout_CreateOrder shapes the order before it leaves the store, for example with fields SAP needs for the sales order."
@@ -48,7 +48,7 @@ According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/
 
 That is a full order management system. It fits companies that ship from several locations and want to run returns and exchanges in Salesforce, as many retailers do. A machine builder with SAP SD (sales and distribution), warehouse management and invoicing already has all of that in SAP.
 
-## Which edition includes what?
+## Order Management Lite in Growth, full Order Management in Advanced
 
 The [B2B pricing page](https://www.salesforce.com/editions-pricing/commerce-cloud/b2b/) lists:
 
@@ -91,7 +91,7 @@ Order summary --> Order history
 
 ## What comes back from SAP, and when?
 
-The store's order history is only as good as the data written back. Salesforce offers the buyer a set of [order summary APIs](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-d2c-comm-order-summaries-apis.html): order history, a single order summary, delivery groups, items, shipments and shipment items. There is also Add Order to Cart, which copies a past order into the cart for a reorder.
+The store's order history shows only what SAP writes back. Salesforce offers the buyer a set of [order summary APIs](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-d2c-comm-order-summaries-apis.html): order history, a single order summary, delivery groups, items, shipments and shipment items. There is also Add Order to Cart, which copies a past order into the cart for a reorder.
 
 For unmanaged summaries all of that is filled by your integration. I would write back at least:
 
@@ -105,13 +105,13 @@ The integration user needs the permission B2B Commerce Integrator User or Edit U
 
 Dealers who want status in a chat need the same data. An [agent reading order status from SAP](../agentforce-sap-order-status-mulesoft/) and the store's order history should use the same API, so both show the same date.
 
-## How do I shape the order for SAP?
+## Shape the order for SAP with CreateOrder
 
 The extension point **Commerce_Domain_Checkout_CreateOrder** "creates an order from cart information during checkout", according to the [list of available extensions](https://developer.salesforce.com/docs/commerce/extensions/guide/available-extensions.html). That is where you add what SAP needs and the standard order does not have, such as a sales organisation, an order type or a shipping condition. The check before the order exists, credit or order block, belongs in **Commerce_Domain_Checkout_PlaceOrder**, as described in [B2B checkout with purchase order](../b2b-checkout-purchase-order-card-invoice/).
 
 Keep the order lean. Each extra field is a mapping that has to be tested in every Salesforce release.
 
-## A typical scenario, as an assumption
+## Worked example: a Growth Edition store for 180 dealers
 
 A manufacturer of compressors starts a store on Growth Edition for 180 dealers. Phone and EDI orders stay in SAP. The design could look like this:
 
@@ -123,8 +123,6 @@ A manufacturer of compressors starts a store on Growth Edition for 180 dealers. 
 
 Point five is a real limit. Showing all SAP orders in the store means bringing phone and EDI orders into Salesforce as order summaries too. Whether that touches the pricing page footnote on orders from other channels is a question to put to Salesforce in writing before you promise dealers a complete history.
 
-## Where should you start?
+## First step: write down who owns the order at each step
 
 Write down who owns the order at each step, from cart to invoice, and which status the buyer sees at each step. Then decide whether Order Management has a role at all. How the order fits into the other data flows is covered in [B2B Commerce and SAP: which data flows where](../b2b-commerce-sap-data-flows/), and the [ERP integration chapter of the masterclass](../../masterclass/b2b-commerce/erp-integration-stock-orders/) puts it into context. An independent review of such designs is part of my work on [Salesforce architecture](../../services/salesforce-architecture/).
-
-The store takes the order and SAP processes it, as long as the status comes back reliably.

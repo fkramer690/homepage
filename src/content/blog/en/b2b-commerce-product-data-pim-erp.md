@@ -9,11 +9,11 @@ topic: data
 categories: [b2b-commerce, architecture]
 tags: [B2B Commerce, product data, PIM, ERP, catalogue, data quality]
 takeaways:
-  - "For a Salesforce B2B Commerce store, the ERP should own material number, unit and sales status, a PIM should own texts, attributes and images, and Salesforce should hold a copy."
+  - "The ERP should own material number, unit and sales status, a PIM texts, attributes and images, and Salesforce holds a copy."
   - "A store has exactly one catalogue and can hold 4 million products, of which 1 million are searchable. A variation parent can have 200 variants."
-  - "Each product can carry 9 images and 5 file attachments. With the July 2026 release, Salesforce announced that external DAM content, 3D models and technical specs can be shown on product pages."
-  - "Product name, description and SKU are searchable by default. Store search needs all search terms to match, so product data quality decides what dealers find."
-  - "Write down one owner per product field before the first import. Changes made in Salesforce that the next ERP or PIM load overwrites cost more than the import itself."
+  - "Each product can carry 9 images and 5 file attachments. In July 2026 Salesforce announced external DAM content, 3D models and technical specs."
+  - "Name, description and SKU are searchable by default, and store search needs all terms to match, so data quality decides what dealers find."
+  - "Write down one owner per product field before the first import. Changes that the next ERP load overwrites cost more than the import itself."
 faq:
   - q: "Do I need a PIM for Salesforce B2B Commerce?"
     a: "Not always. With a few thousand spare parts and texts that come from the ERP, the ERP can be the only source. A PIM pays off when marketing texts, many technical attributes, images and several languages have to be maintained for a large catalogue."
@@ -56,9 +56,9 @@ My rule is one owner per field, and the owner is the system where the data is cr
 
 The last row is the only one merchandisers maintain in the store. Everything else arrives through an interface, and that interface has to say which side wins. If a merchandiser corrects a typo in Salesforce and the nightly ERP load overwrites it, the dealer sees the typo again the next day, and the merchandiser stops trusting the store. The same principle applies to every object in a Salesforce org. I describe it in the [object ownership matrix](../salesforce-object-ownership-matrix/).
 
-Do you need a PIM? Not for every store. A typical scenario, as an assumption: a manufacturer with 6,000 spare parts, German and English texts from the ERP, and one photo per part. The ERP can be the only source here, and a PIM would add a system without adding data. With 60,000 parts, 15 languages, technical attributes for filters and several images per part, I would want a PIM, because nobody maintains that in ERP material masters.
+Do you need a PIM? Not for every store. Worked example: a manufacturer with 6,000 spare parts, German and English texts from the ERP, and one photo per part. The ERP can be the only source here, and a PIM would add a system without adding data. With 60,000 parts, 15 languages, technical attributes for filters and several images per part, I would want a PIM, because nobody maintains that in ERP material masters.
 
-## Which catalogue limits apply?
+## One catalogue, 4 million products, 1 million searchable
 
 Salesforce lists the [product and category limits](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-product-limits.html) on one page. As of October 2026:
 
@@ -81,7 +81,7 @@ Salesforce writes that only up to 1 million products are supported for search an
 
 Category depth 5 is rarely a problem for spare parts. ERP material groups are often deeper, but buyers do not click through eight levels. I would flatten them to three or four levels and let search and filters do the rest.
 
-## How do variations and attributes work?
+## Up to 200 variants per variation parent
 
 Variations bundle products that differ in one or more attributes, such as a seal in five diameters. A variation parent groups up to 200 variants, and the attributes that define the variants belong to an attribute set. The soft limit of 5 attributes per set is enough for most parts.
 
@@ -99,7 +99,7 @@ With its July 2026 release, Salesforce announced product media extensibility. Ac
 The post does not give separate availability details per feature, so I would test product media extensibility in a sandbox before planning around it.
 ```
 
-## Why does data quality decide search quality?
+## Search finds only what is in the data
 
 Store search can only find what is in the data. According to Salesforce, product name, description and SKU are searchable by default, and further fields can be made searchable. The unit, written for D2C stores on the same core platform search, also describes how matching works: results appear only when all search terms are present, and prefix or infix partial matches are not supported.
 
@@ -111,8 +111,6 @@ For a parts catalogue, that has direct consequences:
 
 All of this gets fixed in the product data and in the search setup, which I cover in [finding parts by part number](../b2b-commerce-search-part-numbers/).
 
-## Where should you start?
+## First step: check 200 spare parts from the ERP
 
 Take a sample of 200 typical spare parts from the ERP and check each one against the list above: is there a usable name, a picture, the attributes a dealer would filter by, a clean sales status? The result shows how much data work comes before the store. Then write the ownership table for product fields and add it to the interface list. Which data flows from SAP to the store and how often is covered in [B2B Commerce and SAP data flows](../b2b-commerce-sap-data-flows/), and the whole topic sits in the [chapter on catalogue, search and entitlements](../../masterclass/b2b-commerce/catalog-search-entitlements/) of my B2B Commerce masterclass. Designing such interfaces is part of my work on [Salesforce integration](../../services/salesforce-integration/).
-
-A B2B store is only as good as the product data the ERP and PIM deliver to it.
