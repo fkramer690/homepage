@@ -89,6 +89,6 @@ Ideally, before the first partner starts. These rules have proven useful:
 If a partner already owns some of the tools, plan the move early and do it in a calm phase, not during an exit. A repository can be moved with its full history in a day. Jira and Miro take more planning, but are still far cheaper to move now than later.
 ```
 
-## First step: list every tool with its contract holder and admins
+## List every tool with its contract holder and admins
 
 Make a simple list: every tool in the project, who holds the contract, who the admins are, and which partner employees have access. In many programmes that list alone shows where the risks are. Every row where a partner holds the contract or the admin rights gets a date by which it moves to you.

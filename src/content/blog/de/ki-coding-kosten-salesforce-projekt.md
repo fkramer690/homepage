@@ -102,7 +102,7 @@ Die Antwort folgt dem Vertragsmodell. Bei Abrechnung nach Aufwand zahlt der Kund
 
 Bei Aufwand bevorzuge ich die erste Variante: Für 650 $ bis 1.500 $ im Monat behält der Kunde Daten, Limits und Offboarding in der Hand. In deutschen Unternehmen redet der Betriebsrat mit, siehe [KI-Coding, Betriebsrat und DSGVO](../ki-coding-betriebsrat-dsgvo/). Ob Sie überhaupt Seats kaufen, gehört zu meiner Arbeit in [Make-or-buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/).
 
-## Erster Schritt: vor dem ersten Sprint klären, wer zahlt
+## Vor dem ersten Sprint klären, wer zahlt
 
 1. **Klären Sie vor dem ersten Sprint, wer zahlt**, und schreiben Sie es in den Vertrag.
 2. **Setzen Sie Limits.** Claude Team und Enterprise bieten Ausgabenlimits pro Organisation, Gruppe und Mitglied für Nutzung über das Seat-Kontingent hinaus, die Claude Console Limits pro Workspace, GitHub Budgets pro Nutzer und Kostenstelle.

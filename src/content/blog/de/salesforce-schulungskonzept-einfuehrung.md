@@ -82,6 +82,6 @@ Dazu kommen kurze Anleitungen pro Ablauf, die im System verlinkt sind, und die K
 
 Nicht an der Zahl der Teilnehmenden. Die Zahl zeigt, dass das Projekt geschult hat, nicht, dass jemand anders arbeitet. Zwei Quellen sind aussagekräftiger: die Fragen der ersten Wochen, die Key User und Support sammeln, und die Nutzungszahlen pro Gruppe. Häufen sich Fragen zu einem Ablauf, fehlt dort Wissen, und eine kurze Nachschulung lohnt sich. Bleiben Datensätze aus, obwohl niemand fragt, fehlt meist Bereitschaft. Wie Sie diese Zahlen aufbauen, beschreibe ich in [Salesforce-Nutzung nach dem Go-live messen](../salesforce-nutzung-messen-nach-go-live/).
 
-## Erster Schritt: Rollen und ihre Abläufe für den ersten Tag auflisten
+## Rollen und ihre Abläufe für den ersten Tag auflisten
 
 Schreiben Sie die betroffenen Rollen untereinander und daneben die drei bis fünf Abläufe, die jede Rolle ab dem ersten Tag können muss. Diese Liste ist der Kern Ihres Schulungskonzepts. Danach legen Sie fest, wer welche Rolle schult, und planen die Schulungs-Sandbox früh genug, damit Übungsfälle vor dem Abnahmetest fertig sind. Mit meiner Kooperationspartnerin [Juliane Winterscheid](../../partner/juliane-winterscheid/) plane ich Schulung und Change Management gemeinsam. Mehr dazu lesen Sie unter [Change Management Beratung für Salesforce](../../leistungen/change-management/).

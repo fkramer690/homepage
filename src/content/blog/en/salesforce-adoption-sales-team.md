@@ -85,6 +85,6 @@ The same applies one level up. If the sales forecast for the management board co
 
 I draw one line here. Rankings of individual reps by data quality lead to maintained figures instead of maintained data. In Germany, a report per person needs to be agreed with the works council first anyway. For steering, figures per team or country are enough, and the conversation with individuals is held by their manager or the [key user](../salesforce-key-user-network/).
 
-## First step: ask two reps how they prepare a customer meeting
+## Ask two reps how they prepare a customer meeting
 
 Sit down with two sales reps and ask: what do you look at before a customer meeting, and where is it today? Everything they name that is not in Salesforce is your list for the next releases. Then agree a date with the head of sales from which pipeline and forecast are only discussed from Salesforce. I developed this approach with my cooperation partner [Juliane Winterscheid](../../partners/juliane-winterscheid/), who has supported a global Sales Cloud rollout among other projects. Read more about [Salesforce change management consulting](../../services/change-management-salesforce/).

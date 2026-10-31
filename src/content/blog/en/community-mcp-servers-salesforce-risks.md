@@ -100,7 +100,7 @@ Assume a machine builder with Sales Cloud, Service Cloud, a dealer portal and SA
 
 All three needs get met, and no community server reaches the org.
 
-## First step: inventory the MCP servers at every partner
+## Inventory the MCP servers at every partner
 
 1. **Inventory.** Ask every partner which MCP servers are configured in their clients for your orgs, including versions. The DX MCP server deadline is a good occasion, see [the end of the Salesforce DX MCP Server](../salesforce-dx-mcp-server-end-of-life/).
 2. **Put the rule in writing.** Hosted or Salesforce-operated servers by default; community servers only after the six checks, in sandboxes, with a pinned version.

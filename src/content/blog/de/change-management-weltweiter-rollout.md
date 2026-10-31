@@ -89,6 +89,6 @@ Zwischen zwei Wellen braucht es dafür Luft. Wer die nächste Welle startet, wä
 Lassen Sie Key User des nächsten Landes einige Tage im Land der laufenden Welle mitarbeiten. Sie sehen echte Fälle, lernen die Fragen kennen, die nach dem Go-live kommen, und bringen das in ihr eigenes Land mit.
 ```
 
-## Erster Schritt: ein Sponsor pro Land, bevor die Planung beginnt
+## Pro Land einen Sponsor benennen, bevor die Planung beginnt
 
 Benennen Sie für jedes Land einen Sponsor, bevor das Land in die Planung kommt, und lassen Sie ihn die Liste der Landesabweichungen mit prüfen. Legen Sie pro Land Key User fest und vereinbaren Sie ihre Zeit mit den Führungskräften, wie in [Key User in Salesforce-Einführungen](../salesforce-key-user-netzwerk/) beschrieben. Nach dem ersten Land planen Sie eine Auswertung ein, bevor das zweite startet. Ein Land ohne benannten Sponsor kommt nicht in die Planung, auch wenn der Zeitplan drängt. Wie wir das in Programmen aufsetzen, steht unter [Change Management für Salesforce-Programme](../../leistungen/change-management/).

@@ -82,6 +82,6 @@ Add short guides per process, linked from inside the system, and key users nearb
 
 Not by the number of participants. That figure shows the project trained people, not that anyone works differently. Two sources say more: the questions of the first weeks, collected by key users and support, and usage figures per group. When questions pile up around one process, knowledge is missing there and a short refresher pays off. When records stay away although nobody asks, desire is usually missing. How to build these figures is covered in [Measuring Salesforce adoption after go-live](../salesforce-adoption-metrics-after-go-live/).
 
-## First step: list the roles and their processes for day one
+## List the roles and their processes for day one
 
 Write down the affected roles and, next to each, the three to five processes that role has to master from day one. That list is the core of your training plan. Then decide who trains which role, and plan the training sandbox early enough for practice cases to be ready before acceptance testing. I plan training and change management together with my cooperation partner [Juliane Winterscheid](../../partners/juliane-winterscheid/). Read more about [Salesforce change management consulting](../../services/change-management-salesforce/).

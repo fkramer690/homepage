@@ -141,7 +141,7 @@ That is why I would put every rules and settings file under [CODEOWNERS](https:/
 
 The file grows from evidence, not from wish lists. OpenAI recommends adding rules after repeated mistakes, Anthropic after the second correction. In practice, the input is the review findings counted by category, as described in [reviewing AI-generated Salesforce code](../reviewing-ai-generated-salesforce-code/). Lines move out again once a pipeline gate covers them. After each Salesforce release, the owner checks the API version line first.
 
-## First step: take stock of the rules files in your repository
+## Take stock of the rules files in your repository
 
 ```schritte
 Take stock

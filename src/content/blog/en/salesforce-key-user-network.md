@@ -87,6 +87,6 @@ A network of key users needs a fixed slot. I recommend a short exchange where ke
 
 It also matters that the role is visibly recognised. Whoever takes on extra work for the project should find it in their annual review. That costs nothing and decides whether anyone volunteers for the next project.
 
-## First step: ask whom the team turns to today
+## Ask whom the team turns to today
 
 Ask every affected team: whom do you ask today when you get stuck in the system? The names that come up several times are your candidates. Then agree the time with the managers and bring the key users into the first workshops, before anything is built. If no name comes up in a team, nobody there carries the topic yet, and that team needs more support during training. How we build the network in programmes is described under [change management for Salesforce programmes](../../services/change-management-salesforce/).

@@ -110,7 +110,7 @@ Jeder Agent bekommt in der [Object Ownership Matrix](../object-ownership-matrix-
 
 Unternehmensgruppen mit einer Produktiv-Org je Tochtergesellschaft stehen vor einer Lücke. Die [Referenz der agent-Befehle](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_agent_commands_unified.htm) nennt eine Agentenvorlage für Second-Generation Managed Packages, aber eine Anleitung von Salesforce, wie man einen Agenten in mehrere eigene Orgs ausrollt, habe ich nicht gefunden. Bis dahin würde ich jede Org als eigenes Release-Ziel mit eigenem Versionsprotokoll behandeln.
 
-## Erster Schritt: die .agent-Dateien ins Repository des Kunden
+## Die .agent-Dateien ins Repository des Kunden legen
 
 1. Legen Sie die `.agent`-Datei jedes Agenten ins Repository des Kunden und bauen Sie Agenten nicht mehr direkt in geteilten Orgs.
 2. Nehmen Sie `sf agent validate authoring-bundle` und gezielte Deployments in die Pipeline auf.

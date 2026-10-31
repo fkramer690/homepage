@@ -89,7 +89,7 @@ Der Abnahmetest findet drei Probleme:
 
 Zwei von drei Problemen melden sich selbst. Das dritte wäre live gegangen und hätte Geld gekostet, eine Gutschrift nach der anderen.
 
-## Erster Schritt: den Umstieg als kleines Projekt planen
+## Den Umstieg auf API 67.0 als kleines Projekt planen
 
 Ich würde ihn als kleines Projekt mit eigenem Releaseplan aufsetzen:
 

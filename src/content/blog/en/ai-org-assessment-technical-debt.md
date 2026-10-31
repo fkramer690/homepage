@@ -114,7 +114,7 @@ The client. Run the scans in your pipeline and the model calls in your own API a
 
 The assessment is the starting point for the handover: which objects move to which partner, which components get deleted and which are rebuilt. Steering that is part of [partner governance](../../services/partner-governance/).
 
-## First step: all metadata into a repository you own
+## Retrieve all metadata into a repository you own
 
 1. Retrieve the full metadata into a repository you own.
 2. Turn on sfdx-hardis monitoring for two weeks to collect usage data.

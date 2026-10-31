@@ -114,7 +114,7 @@ contra: Open Source und Coding-Agent reichen, wenn
 - Sie oder Ihr Architekt das Setup verantworten
 ```
 
-## Erster Schritt: diese Fragen vor dem Kauf schriftlich stellen
+## Diese Fragen vor dem Kauf schriftlich stellen
 
 Diese Fragen würde ich jedem DevOps-Anbieter stellen, der einen KI-Agenten verkauft, und die Antworten ins Bestellformular schreiben lassen:
 

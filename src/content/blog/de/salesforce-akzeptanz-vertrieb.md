@@ -85,6 +85,6 @@ Dasselbe gilt eine Ebene höher. Kommt die Absatzprognose an die Geschäftsführ
 
 Eine Grenze ziehe ich dabei. Ranglisten einzelner Vertriebler nach Pflegequote führen zu gepflegten Zahlen statt zu gepflegten Daten. In Deutschland gehört eine Auswertung pro Person ohnehin vorher mit dem Betriebsrat geklärt. Für die Steuerung reichen Zahlen pro Team oder Land, und das Gespräch mit Einzelnen führt die Führungskraft oder der [Key User](../salesforce-key-user-netzwerk/).
 
-## Erster Schritt: zwei Vertriebler nach ihrer Terminvorbereitung fragen
+## Zwei Vertriebler nach ihrer Terminvorbereitung fragen
 
 Setzen Sie sich mit zwei Vertrieblern zusammen und fragen Sie: Was schauen Sie sich vor einem Kundentermin an, und wo steht es heute? Alles, was die beiden nennen und nicht in Salesforce steht, ist Ihre Liste für die nächsten Releases. Danach vereinbaren Sie mit dem Vertriebsleiter ein Datum, ab dem Pipeline und Prognose nur noch aus Salesforce besprochen werden. Das Vorgehen habe ich mit meiner Kooperationspartnerin [Juliane Winterscheid](../../partner/juliane-winterscheid/) entwickelt, die unter anderem einen globalen Sales-Cloud-Rollout begleitet hat. Mehr dazu lesen Sie unter [Change Management Beratung für Salesforce](../../leistungen/change-management/).

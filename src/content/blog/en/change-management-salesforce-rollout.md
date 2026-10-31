@@ -98,7 +98,7 @@ Sustain outcomes | after go-live · internal owners
 
 Timing is what matters. Change management that starts two weeks before go-live can only inform. The question of which groups are affected and what changes for them belongs in planning, before anything is built. With a [global template](../salesforce-global-template-country-deviations/) it is even part of the architecture, because every deviation per country is also a question of habit.
 
-## First step: write down groups, changes and sponsor of your next release
+## Write down groups, changes and sponsor of your next release
 
 For your next release, answer three questions in writing: which groups are affected? What changes for each in their daily work? Who in management visibly backs it? If the third answer is missing, that is the first step. Then decide how you measure success, for example by usage numbers in Salesforce instead of the number of training sessions.
 
