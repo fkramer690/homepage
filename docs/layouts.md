@@ -45,6 +45,25 @@ Chosen 2026-10-31 (Fabian: "Skala + Mono reduzieren"). Part of the polished desi
   meta lines, captions, tags, filter texts, back links and proof bar labels are
   set in Sora.
 
+## Page heads, key figures, links and cards (binding)
+
+Chosen 2026-10-31 as part of the polished design pass.
+
+- **Two page heads.** Pages that present an offer (start, service pages and
+  the service overview, masterclass overview and hubs, questions, speaking,
+  partner and recruiter pages, freelancer page, 404) open with the dark head
+  `service-hero dark grid-bg` (or the start/recruiter hero): back link, mono
+  eyebrow naming the area, h1, lead, optional photo on the right
+  (`service-head has-photo`). Reading and list pages (blog overview, articles,
+  masterclass chapters, certifications, legal) keep the light head.
+- **Key figures** always sit as the grey band `.proof` directly below the dark
+  head (`proof-list`, `cols-4` for four figures), never inside the running text.
+- **One link style for "next" links** (`.text-link`, `.card-more`, `.fa-link`):
+  Sora, bold, `--fs-ui`, cyan-dark, text arrow "→". Links in running text stay
+  underlined.
+- **Cards** carry an icon, title, text and link; no running numbers. In linked
+  cards the link sits at the bottom so links in one row line up.
+
 ## Compact cross list in a white box ("Damit es für beide fair bleibt")
 
 Approved 2026-10-29 ("perfekt"), live on `/partner/recruiter/` and

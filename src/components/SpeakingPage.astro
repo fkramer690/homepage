@@ -81,23 +81,33 @@ const schema = {
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
   </Fragment>
-  <section class="section blog speaking">
+  <header class="service-hero dark grid-bg">
     <div class="container">
       <a class="post-back" href={`${home}#about`}>← {c.back}</a>
-      <p class="eyebrow mono">{t.about.label}</p>
-      <h1>{c.title}</h1>
-      <div class="speaking-intro">
-        <p class="service-lead">{c.lead}</p>
-        <figure class="stage-photo">
-          <Image src={speaking} alt={c.photoAlt} widths={[320, 614]} sizes="(max-width: 760px) 100vw, 320px" />
+      <div class="service-head has-photo">
+        <div>
+          <p class="eyebrow mono">{t.about.label}</p>
+          <h1>{c.title}</h1>
+          <p class="service-lead">{c.lead}</p>
+        </div>
+        <figure class="service-photo stage-photo">
+          <Image src={speaking} alt={c.photoAlt} widths={[320, 614]} sizes="(max-width: 960px) 100vw, 300px" />
           <figcaption>{c.photoCaption}</figcaption>
         </figure>
       </div>
+    </div>
+  </header>
+  <section class="proof">
+    <div class="container">
+      <ul class="proof-list cols-4">
+        {stats.map((s) => <li><span class="proof-value">{s.value}</span><span class="proof-label">{s.text}</span></li>)}
+      </ul>
+    </div>
+  </section>
+  <section class="section blog speaking">
+    <div class="container">
 
       <ReadingGrid t={t} headings={[{ slug: 'talks', text: c.talksTitle }, { slug: 'more', text: c.moreTitle }, { slug: 'topics', text: c.topicsTitle }]} cta={c.formSubject}>
-        <div class="sp-stats" role="list">
-          {stats.map((s) => <div class="sp-stat" role="listitem"><span class="sp-stat-value">{s.value}</span><span class="sp-stat-text">{s.text}</span></div>)}
-        </div>
 
         <section class="service-block" aria-labelledby="talks">
           <h2 id="talks">{c.talksTitle}</h2>

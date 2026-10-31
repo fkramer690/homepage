@@ -512,6 +512,7 @@ a:hover { color: var(--anthracite); }
   border-left: 1px dashed var(--line);
 }
 .proof-list li:first-child { border-left: 0; padding-left: 0; }
+@media (min-width: 901px) { .proof-list.cols-4 { grid-template-columns: repeat(4, 1fr); } }
 /* Closing call to action on the service overview */
 .service-index-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 28px; margin-top: 2.5em; }
 .service-index-cta p { margin: 0; font-size: var(--fs-md); }
@@ -868,7 +869,17 @@ a:hover { color: var(--anthracite); }
 .about-block p { margin: 0 0 0.6em; color: var(--text-2); }
 .about-links { list-style: none; padding: 0; margin: 1.2em 0 0; display: grid; gap: 0.5em; }
 .subpage-tbd { display: inline-block; color: var(--cyan); border: 1px solid currentColor; border-radius: 4px; padding: 0.1em 0.6em; letter-spacing: 0.12em; }
-.text-link { font-weight: 600; text-decoration: none; }
+/* One style for every "next" link (docs/layouts.md "Links"): Sora, bold, cyan, arrow. */
+.text-link,
+.card-more,
+.fa-link,
+.service-proof-links a,
+.partner-links a { font-family: var(--font); font-weight: 600; font-size: var(--fs-ui); color: var(--cyan-dark); text-decoration: none; }
+.text-link:hover,
+a.card-more:hover,
+.fa-link:hover,
+.service-proof-links a:hover,
+.partner-links a:hover { color: var(--anthracite); text-decoration: none; }
 @media (max-width: 860px) {
   .about { grid-template-columns: 1fr; }
   .about-side { max-width: 360px; }
@@ -1264,6 +1275,7 @@ p.post-series-note { margin: 0.6em 0 0; font-size: var(--fs-ui); }
   font-size: var(--fs-xs);
   color: var(--text-2);
 }
+.service-hero .stage-photo figcaption { color: rgba(255, 255, 255, 0.6); }
 @media (max-width: 760px) { .stage-photo { max-width: 300px; } }
 
 /* Small portrait in the contact section */
@@ -1281,10 +1293,12 @@ p.post-series-note { margin: 0.6em 0 0; font-size: var(--fs-ui); }
 
 /* Service pages */
 .card-link { padding: 0; transition: border-color 0.15s, box-shadow 0.15s; }
-.card-link a { display: block; height: 100%; padding: 28px 24px 22px; color: inherit; text-decoration: none; }
+.card-link a { display: flex; flex-direction: column; height: 100%; padding: 28px 24px 22px; color: inherit; text-decoration: none; }
 .card-link:hover { border-color: var(--cyan); box-shadow: 0 6px 20px rgba(35, 35, 37, 0.08); }
 .card-link .card-title { font-size: var(--fs-md); margin: 0 0 0.5em; }
-.card-more { display: inline-block; margin-top: 1em; font-size: var(--fs-xs); color: var(--cyan-dark); }
+.card-more { display: inline-block; margin-top: 1em; }
+/* In linked cards the link sits at the bottom, whatever the text length */
+.card-link a > .card-more { margin-top: auto; padding-top: 1em; align-self: flex-start; }
 .service-note { display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: baseline; margin: 0 0 1.6em; padding: 12px 16px; border: 1px dashed var(--cyan); border-radius: 6px; font-size: var(--fs-ui); color: var(--text-2); max-width: 46em; }
 .service-note-label { font-size: var(--fs-xs); letter-spacing: 0.08em; text-transform: uppercase; color: var(--cyan-dark); }
 .service-lead { font-size: clamp(1.05rem, 1.8vw, 1.2rem); color: var(--text-2); margin: 0.6em 0 1.4em; max-width: 46em; }
@@ -2101,8 +2115,7 @@ p.post-series-note { margin: 0.6em 0 0; font-size: var(--fs-ui); }
 .fa-cards li { display: flex; flex-direction: column; gap: 8px; padding: 24px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--white); }
 .fa-cards h3 { margin: 6px 0 0; font-size: var(--fs-base); }
 .fa-cards p { margin: 0; color: var(--text-2); font-size: var(--fs-ui); }
-.fa-link { margin-top: auto; padding-top: 8px; font-size: var(--fs-xs); color: var(--cyan-dark); text-decoration: none; }
-.fa-link:hover { text-decoration: underline; }
+.fa-link { margin-top: auto; padding-top: 8px; }
 .fa-table-wrap { overflow-x: auto; margin-top: 1.6em; }
 .fa-table { width: 100%; min-width: 560px; border-collapse: separate; border-spacing: 0; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); }
 .fa-table th, .fa-table td { padding: 14px 18px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }

@@ -21,11 +21,15 @@ const recruiterTeaser = recruiters[lang].teaser;
 const serviceLinks = new Map(services.map((s) => [s.data.order, serviceHref(s)]));
 ---
 <Page layout="wide" lang={lang} title={t.partnerPage.metaTitle} description={t.partnerPage.description} alternates={{ en: partnersHref('en'), de: partnersHref('de') }}>
+  <header class="service-hero dark grid-bg">
+    <div class="container">
+      <p class="eyebrow mono">{lang === 'de' ? 'Partner' : 'Partners'}</p>
+      <h1>{t.partnerPage.title}</h1>
+      <p class="service-lead">{t.partnerPage.lead}</p>
+    </div>
+  </header>
   <section class="section blog">
     <div class="container">
-      <p class="eyebrow mono">FK Solution Design</p>
-      <h1>{t.partnerPage.title}</h1>
-      <p class="partner-lead">{t.partnerPage.lead}</p>
       <p class="partner-intro">{t.partnerPage.intro}</p>
       {t.partnerPage.partners.map((p) => {
         const serviceLink = serviceLinks.get(p.service);
