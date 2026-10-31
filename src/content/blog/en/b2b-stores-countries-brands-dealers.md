@@ -9,10 +9,10 @@ topic: commerce
 categories: [b2b-commerce, architecture]
 tags: [B2B Commerce, store design, buyer groups, multi-country, brands]
 takeaways:
-  - "In Salesforce B2B Commerce, countries and dealer tiers rarely need their own store; buyer groups, entitlement policies and price books handle them inside one store."
+  - "Countries and dealer tiers rarely need their own store. Buyer groups, entitlement policies and price books handle them inside one store."
   - "One store supports up to 25 languages, one catalogue and five price books; an org can have up to 100 B2B stores."
   - "A second store is justified when the brand, the catalogue structure, the checkout or the ERP behind it really differs."
-  - "Growth includes 6 storefronts and Advanced 10. Every extra store adds pages, translations, extension mappings and regression tests after each Salesforce release."
+  - "Growth includes 6 storefronts and Advanced 10. Every extra store adds pages, translations, extension mappings and regression tests after each release."
 faq:
   - q: "How many stores can a Salesforce org have for B2B Commerce?"
     a: "The store data limits allow 100 B2B stores per org as a hard limit. The commercial limit comes earlier: Commerce Cloud B2B Growth includes 6 storefronts, Advanced includes 10."
@@ -39,7 +39,7 @@ Three objects decide whether one store is enough:
 
 So the store is the unit for everything buyers experience as "the shop": look, domain, catalogue structure, checkout and the logic behind it. Who sees what at which price is decided one level below, in the buyer groups. How to cut them is covered in [buyer groups and entitlements](../buyer-groups-entitlements-product-visibility/).
 
-## Which limits shape the decision?
+## 25 languages, one catalogue, five price books per store
 
 These limits come from the Salesforce Developers pages on [store limits](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-store-limits.html), [product limits](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-product-limits.html), [price book limits](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-price-book-limits.html) and [buyer group limits](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-shopper-buyer-groups-accounts-limits.html), as of October 2026:
 
@@ -80,15 +80,15 @@ I would plan a second store in four cases:
 
 If two brands share most parts, the shared catalogue helps: two storefronts, one set of product data.
 
-## What does each extra store cost?
+## Every extra store costs upkeep after each release
 
 The licence side is short. The [B2B pricing page](https://www.salesforce.com/editions-pricing/commerce-cloud/b2b/) includes 6 storefronts in Growth and 10 in Advanced and states no price for more. If your plan gets close, put the number of storefronts and the price of additional ones into the contract. The GMV fee is charged on revenue through the storefronts, so a second store changes the GMV only if it brings new orders, see [B2B Commerce pricing and the GMV model](../b2b-commerce-pricing-gmv-model/).
 
 The effort side is longer. Every store has its own pages, navigation, translations, extension mappings and settings. After each of the three Salesforce releases a year, every store needs its regression test, and every custom component is tested in every store that uses it. How to plan that rhythm is covered in the DevOps chapter on [Salesforce release planning](../../masterclass/devops-release-management/release-planning-salesforce-releases/). Two stores are not twice the work of one, but they are clearly more than one store with two buyer groups.
 
-## A typical scenario: two brands in 14 countries
+## Worked example: two brands in 14 countries
 
-A typical scenario, as an assumption: a machine builder sells spare parts under two brands. Brand A is sold in 9 countries, brand B, acquired a few years ago, in 5 countries. Brand B still runs on its own ERP client. Dealers have three tiers in brand A and two in brand B.
+Assume a machine builder sells spare parts under two brands. Brand A is sold in 9 countries, brand B, acquired a few years ago, in 5 countries. Brand B still runs on its own ERP client. Dealers have three tiers in brand A and two in brand B.
 
 One store per country would mean 14 stores, above the 10 storefronts in Advanced and with 14 regression tests per release. One store for everything would put brand B dealers into a shop with brand A's look and brand A's ERP calls.
 
@@ -96,7 +96,7 @@ The cut in the scenario: two stores, one per brand. Brand A gets buyer groups pe
 
 This follows the same order as a [global Manufacturing Cloud rollout](../manufacturing-cloud-global-rollout/): the brand is a question for the template from day one, even if the first country has only one.
 
-## Where should you start?
+## First step: brands, ERP clients and countries on one page
 
 ```schritte
 Put it on one page
@@ -109,6 +109,4 @@ Settle the commercials
   Number of storefronts and price of additional ones in writing.
 ```
 
-The chapter [catalogue, search and entitlements](../../masterclass/b2b-commerce/catalog-search-entitlements/) of the [B2B Commerce masterclass](../../masterclass/b2b-commerce/) puts this decision into the wider store design, and my approach to such cuts is described under [Salesforce architecture](../../services/salesforce-architecture/).
-
-One store per brand or ERP and buyer groups for countries and tiers is the default I would argue against only with a concrete reason.
+The chapter [catalogue, search and entitlements](../../masterclass/b2b-commerce/catalog-search-entitlements/) of the [B2B Commerce masterclass](../../masterclass/b2b-commerce/) puts this decision into the wider store design. My approach to such cuts is described under [Salesforce architecture](../../services/salesforce-architecture/).
