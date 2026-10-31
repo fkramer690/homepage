@@ -122,7 +122,7 @@ The worked example needs about 3 million credits in the first year, more than ev
 - **When the delivery date in SAP is not maintained.** Then the agent repeats a wrong date 3,000 times a month. The integration path is described in [Agentforce and SAP order status](../agentforce-sap-order-status-mulesoft/).
 - **When dealers' own AI assistants query your Salesforce.** Agentic calls through MCP or APIs fall under Headless Platform Interactions, and that rate is still "TBA". I look at this risk in [MCP access as a budget risk](../mcp-api-calls-salesforce-budget-risk/).
 
-## First step: count dealer enquiries by type
+## Count dealer enquiries by type and run two test weeks
 
 ```schritte
 Count enquiries by type

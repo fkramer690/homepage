@@ -107,7 +107,7 @@ A prompt template also writes a case summary for the field service technician: 3
 
 BYOLLM saves at most $90 a month, about $1,080 a year, before the Azure token bill. That alone does not justify a second contract path; the model tier moves four times as much. Here I would recommend managed models for the agent, BYOLLM only if the Azure agreement is IT's approved data path for service data, and Opus for troubleshooting only if the test shows a clear gap.
 
-## First step: pin the model per subagent
+## Pin and document the model per subagent
 
 1. **Pin the model** per agent and subagent in Agent Script.
 2. **Start with a tested model** in the lowest tier that passes; upgrade a subagent only with test evidence.

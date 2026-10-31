@@ -103,7 +103,7 @@ Gartner [erwartet](https://www.gartner.com/en/newsroom/press-releases/2025-06-25
 
 Die 40 Prozent sind meine Startwerte, keine Vorgaben von Salesforce. Abschalten muss nicht Aufhören heißen: Sie können den Agenten auf einen Subagenten verkleinern, ihn nur außerhalb der Servicezeiten laufen lassen oder korrigieren und neu testen. Für die letzte Option ordnet der Agent Optimizer wiederkehrende Fehlermuster aus Produktivsitzungen nach Auswirkung. Salesforce nennt ihn im [Beitrag vom September 2026](https://www.salesforce.com/blog/agent-optimizer/) als Beta verfügbar, die Dreamforce-Liste kündigt GA für Oktober an. A/B Experimentation lässt eine Korrektur auf geteiltem Verkehr gegen die aktuelle Version antreten und ist als Beta für Oktober angekündigt; prüfen Sie den Status in Ihrer Org.
 
-## Erster Schritt: drei Monate Ausgangswerte messen
+## Die 90-Tage-Prüfung mit drei Monaten Ausgangswerten vorbereiten
 
 1. **Ausgangswerte messen**, drei Monate lang: Händleranfragen nach Art, Bearbeitungszeit, Eingangszeit nach Land.
 2. **Audit and Feedback einschalten**, damit Qualitäts- und Vertrauenswerte ab dem ersten Tag vorliegen.

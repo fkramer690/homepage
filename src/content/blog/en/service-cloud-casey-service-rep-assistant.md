@@ -97,7 +97,7 @@ From an architecture point of view, four things decide whether Casey and the ass
 
 These points apply to every AI agent, which is why I argue for putting [business value and data quality first](../agentforce-business-value-data-quality-first/). They also explain why AI features belong in the target architecture and not only in a pilot.
 
-## First step: the Service Rep Assistant in one team
+## Begin with the Service Rep Assistant in one team
 
 Choosing the right Service Cloud building blocks is part of [architecture and partner governance](../../services/salesforce-architecture/). My path:
 

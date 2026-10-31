@@ -107,7 +107,7 @@ Dazu schreibt eine Prompt-Vorlage eine Fallzusammenfassung für den Techniker im
 
 BYOLLM spart höchstens 90 € im Monat, rund 1.080 € im Jahr, vor der Token-Rechnung von Azure. Das allein rechtfertigt keinen zweiten Vertragsweg; die Modellstufe bewegt das Vierfache. Ich würde hier verwaltete Modelle für den Agenten empfehlen, BYOLLM nur, wenn der Azure-Vertrag der freigegebene Datenweg der IT für Servicedaten ist, und Opus für die Fehlersuche nur, wenn der Test eine klare Lücke zeigt.
 
-## Erster Schritt: das Modell pro Subagent festlegen
+## Das Modell pro Subagent festlegen und dokumentieren
 
 1. **Das Modell festlegen**, pro Agent und Subagent in Agent Script.
 2. **Mit einem getesteten Modell beginnen**, in der niedrigsten Stufe, die besteht; einen Subagenten nur mit Testergebnissen höher stufen.

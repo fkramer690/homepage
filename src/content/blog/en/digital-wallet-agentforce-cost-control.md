@@ -107,7 +107,7 @@ Unused credits are lost at the order end date, and overage is billed at the cont
 
 One meter has no price yet: the rate card lists Headless Platform Interactions with the rate "TBA". What they cover and why they matter for budgets is in [MCP calls as a budget risk](../mcp-api-calls-salesforce-budget-risk/). Give that meter its own tag and its own owner from the start.
 
-## First step: name one budget owner for the pool
+## Name one budget owner for the pool
 
 1. Name one budget owner for the pool and write it into the programme charter.
 2. Agree the tag design: company, cost center, environment.

@@ -107,7 +107,7 @@ Mehr, als es klingt. Das Modell erkennt die Absicht, füllt Pflichtangaben aus F
 
 Agent Script ist auch nicht immer der richtige Ort für die Regel selbst. Hat die Regel viele Varianten, etwa Garantiebedingungen pro Produktfamilie und Bauteil, gehört sie ins Datenmodell oder in die Business Rules Engine, die die [Seite der Manufacturing Cloud](https://www.salesforce.com/manufacturing/cloud/) für Claims, Boni und Angebote nennt. Das Script ruft sie dann auf. Gehört die Regel dem ERP, ruft das Script das ERP. Agent Script entscheidet, wann eine Regel geprüft wird und was mit dem Ergebnis passiert.
 
-## Erster Schritt: alle Entscheidungen des Agenten auflisten
+## Alle Entscheidungen auflisten, bevor der Partner baut
 
 Bevor Ihr Partner mit dem Bau beginnt, würde ich diese Schritte durchgehen:
 

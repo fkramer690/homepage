@@ -107,7 +107,7 @@ Ungenutzte Credits verfallen zum Bestellende, Mehrverbrauch wird zum vertraglich
 
 Ein Zähler hat noch keinen Preis: Die Rate Card führt Headless Platform Interactions mit dem Satz "TBA". Was sie abdecken und warum sie fürs Budget zählen, steht in [MCP-Zugriffe als Budgetrisiko](../mcp-zugriffe-salesforce-budgetrisiko/). Geben Sie diesem Zähler von Anfang an einen eigenen Tag und einen eigenen Verantwortlichen.
 
-## Erster Schritt: eine Budgetverantwortliche für den Pool benennen
+## Eine Budgetverantwortliche für den Pool benennen
 
 1. Benennen Sie eine Budgetverantwortliche für den Pool und schreiben Sie das in den Programmauftrag.
 2. Legen Sie das Tag-Schema fest: Gesellschaft, Kostenstelle, Umgebung.

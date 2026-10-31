@@ -109,7 +109,7 @@ Ein Agent braucht mehr. [Agententests laufen nur in Sandboxes](https://developer
 
 Ein Flex-Template funktioniert auch außerhalb von Salesforce. [Hosted MCP Server](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/prompt-builder.html) veröffentlichen es als MCP-Prompt, den ein Benutzer in Claude oder Cursor auswählt, mit dessen Berechtigungen und demselben Credit-Verbrauch wie in der Salesforce-Oberfläche. ChatGPT unterstützt MCP-Prompts laut dieser Seite nicht.
 
-## Erster Schritt: Textaufgaben mit Volumen und Leser auflisten
+## Mit den Textaufgaben in Service und Vertrieb beginnen
 
 ```schritte
 Textaufgaben auflisten

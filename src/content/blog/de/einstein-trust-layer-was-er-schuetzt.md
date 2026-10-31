@@ -88,7 +88,7 @@ Den Schutz trägt deshalb das Design:
 
 Aus Architektensicht ist das die normale Arbeitsteilung: Der Trust Layer kümmert sich um den Modellanbieter, Ihr Design darum, wer was sieht.
 
-## Erster Schritt: den Maskierungsstatus je Funktion klären
+## Maskierung, Agentenbenutzer und Aktionen einstellen
 
 1. **Maskierungsstatus je Funktion klären.** Für Agenten von "aus" ausgehen und im Audit Trail prüfen. Für Prompt Builder und eingebettete Funktionen im Einstein Trust Layer Setup festlegen, welche Datentypen maskiert werden, auch den Firmennamen.
 2. **Agentenbenutzer auf das Minimum schneiden.** Ein Permission Set pro Service-Agent, keine Preis-, Margen- oder Vertragsfelder, solange keine Aktion sie braucht.

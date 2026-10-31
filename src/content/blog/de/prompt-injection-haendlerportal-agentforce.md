@@ -96,7 +96,7 @@ Die Änderungen sind unspektakulär. Der Running User darf nur noch Anträge, As
 
 Danach kann eine versteckte Anweisung in einer Fehlerbeschreibung noch eine Zusammenfassung verfälschen. Sie kommt aber an keine Daten außerhalb dieses Antrags und hat keinen Weg nach draußen. Das Restrisiko ist eine irreführende Zusammenfassung, und die fällt auf, weil Anträge über einem vereinbarten Betrag immer vollständig gelesen werden. Nach meiner Einschätzung ist dieses Restrisiko vertretbar. Ein Agent mit breiten Leserechten und einer E-Mail-Aktion ist es nicht.
 
-## Erster Schritt: ein halber Tag mit Administration und Serviceleitung
+## Einen halben Tag lang die beschreibbaren Felder durchgehen
 
 Für einen ersten Durchgang würde ich mich einen halben Tag mit der Salesforce-Administration und der Serviceleitung zusammensetzen und fünf Fragen beantworten:
 

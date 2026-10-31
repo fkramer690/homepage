@@ -103,7 +103,7 @@ Gartner [expects](https://www.gartner.com/en/newsroom/press-releases/2025-06-25-
 
 The 40 percent values are my starting points, not Salesforce figures. Switching off does not have to mean ending: narrow the agent to one subagent, run it only while the service desk is closed, or fix and retest. For the last option, Agent Optimizer ranks recurring failure patterns from production sessions by impact. Salesforce's [September 2026 post](https://www.salesforce.com/blog/agent-optimizer/) calls it available in beta, and the Dreamforce list announces GA for October. A/B Experimentation lets a fix compete with the current version on split traffic and is announced as beta for October, so check the status in your org.
 
-## First step: measure the baseline for three months
+## Prepare the 90-day review with three months of baseline data
 
 1. **Measure the baseline** for three months: dealer enquiries by type, handle time, arrival time by country.
 2. **Switch on Audit and Feedback** so that quality and trust scores exist from day one.

@@ -110,7 +110,7 @@ Die zusätzlichen Prompt-Einheiten unterstellen, dass einer von zwei Prompts pro
 
 Die Sprache kostet im Rechenbeispiel rund 112 € im Monat zusätzlich zu 1.200 € für Aktionen. Handbücher in allen 13 Sprachen zu indexieren kostet das Sechseinhalbfache des Index in zwei Sprachen, und jede Version braucht Pflege. Die Budgetfrage ist die Zahl der gepflegten Sprachen, nicht der Preis pro Zeichen.
 
-## Erster Schritt: Händlersprachen nach Volumen auflisten
+## Händlersprachen nach Volumen auflisten
 
 1. **Händlersprachen nach Volumen auflisten**, aus den Fällen und E-Mails der letzten drei Monate.
 2. **Jede Sprache prüfen** auf der Hilfeseite: ohne Label, Beta oder fehlend. Voice gesondert prüfen.

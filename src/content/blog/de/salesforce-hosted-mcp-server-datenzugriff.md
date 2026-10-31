@@ -107,7 +107,7 @@ Nehmen wir einen Maschinenbauer mit Sales Cloud, Service Cloud, SAP, einem Händ
 
 Zwei von drei Anfragen gehen durch, beide enger als beantragt. Nach meiner Einschätzung ist das das normale Ergebnis einer Zugriffsprüfung.
 
-## Erster Schritt: festlegen, wer sich verbinden darf
+## Vor der ersten Verbindung festlegen, wer sich verbinden darf
 
 1. **Festlegen, wer sich verbinden darf.** Jede External Client App auf ein Permission Set beschränken, mit der OAuth-Richtlinie „Admin approved users are pre-authorized“. Administratoren bleiben draußen: Ein Admin, der Claude autorisiert, gibt ihm fast die ganze Org.
 2. **Freigaben und Feldrechte prüfen** für Fälle, Anlagen, Garantieanträge, Preisvereinbarungen und Kontakte.

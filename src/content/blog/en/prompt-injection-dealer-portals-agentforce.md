@@ -96,7 +96,7 @@ The fixes are dull. The running user gets read access only to claims, assets and
 
 After that, a hidden instruction in a fault description can still distort one summary. It cannot reach data outside that claim and has no way out. The remaining risk is a misleading summary, and the clerk catches it because claims above an agreed amount are always read in full. In my judgement that residual risk is acceptable. An agent with broad read rights and an email action is not.
 
-## First step: half a day with the admin and the head of service
+## Spend half a day on the fields outsiders can write
 
 For a first pass I would sit with the Salesforce admin and the head of service for half a day and answer five questions:
 

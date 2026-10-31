@@ -107,7 +107,7 @@ More than it sounds. The model recognises intent, fills required inputs from fre
 
 Agent Script is also not always the right place for the rule itself. If the rule has many variants, such as warranty terms per product family and part, it belongs in the data model or in the Business Rules Engine, which the [Manufacturing Cloud page](https://www.salesforce.com/manufacturing/cloud/) lists for claims, rebates and quoting. The script then calls it. If the ERP owns the rule, the script calls the ERP. Agent Script decides when a rule is checked and what happens with the result.
 
-## First step: list every decision the agent touches
+## List every decision before your partner builds
 
 Before your partner starts building, I would go through these steps:
 

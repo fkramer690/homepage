@@ -99,7 +99,7 @@ Die IT-Leitung sortiert die vier AIforce-Teile:
 
 Heraus kommen ein kleiner Pilot im Vertrieb und eine Woche Aufräumen bei den Berechtigungen. Nach meiner Einschätzung ist das die richtige Größe für eine Beta, deren Preise Salesforce noch nicht festgelegt hat.
 
-## Erster Schritt: die Schattennutzung finden
+## Die Schattennutzung finden, dann Rechte und Verträge prüfen
 
 1. **Die Schattennutzung finden.** Fragen Sie, welche Teams schon Salesforce-Daten in Claude, ChatGPT oder Copilot kopieren. Ein gesteuerter Connector mit den eigenen Berechtigungen des Nutzers ist besser als Copy and Paste.
 2. **Pro Nutzergruppe eine Oberfläche festlegen.** Zum Beispiel Lightning für den Innendienst im Service, Claude für Key Account Manager, Teams für alle anderen. Fünf parallele KI-Oberflächen bedeuten fünf Supportthemen.

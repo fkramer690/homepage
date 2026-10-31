@@ -122,7 +122,7 @@ Das Rechenbeispiel braucht im ersten Jahr rund 3 Mio. Credits, mehr als selbst d
 - **Wenn der Liefertermin in SAP nicht gepflegt ist.** Dann wiederholt der Agent einen falschen Termin 3.000-mal im Monat. Den Integrationsweg beschreibe ich in [Agentforce und SAP-Auftragsstatus](../agentforce-sap-auftragsstatus/).
 - **Wenn die KI-Assistenten Ihrer Händler Ihr Salesforce abfragen.** Agentische Aufrufe über MCP oder APIs fallen unter Headless Platform Interactions, und dieser Satz steht noch auf „TBA“. Dieses Risiko betrachte ich in [MCP-Zugriffe als Budgetrisiko](../mcp-zugriffe-salesforce-budgetrisiko/).
 
-## Erster Schritt: Händleranfragen nach Typ zählen
+## Händleranfragen nach Typ zählen und zwei Testwochen fahren
 
 ```schritte
 Anfragen nach Typ zählen

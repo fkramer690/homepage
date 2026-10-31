@@ -115,7 +115,7 @@ Eine Kopie hat trotzdem ihren Platz, etwa der Fahrzeugbestand, den Techniker im 
 
 MuleSoft kann dieselbe API auch zu einem MCP-Server machen: [Agent Fabric](https://docs.mulesoft.com/general/agent-fabric-overview) beschreibt eine MCP Bridge, die das ohne eigenen Code erledigt und die bestehenden Gateway-Policies behält. Das wird wichtig, wenn externe Agenten wie Claude die API erreichen sollen. Für Agentforce selbst ist die Aktion aus dem API Catalog der dokumentierte Weg. Einen nativen MCP-Client für Agentforce hat Salesforce als [Pilot mit dem Release von Juli 2025](https://developer.salesforce.com/blogs/2025/06/introducing-mcp-support-across-salesforce) angekündigt; dessen aktuellen Status würde ich prüfen, bevor ich einen produktiven Agenten darauf baue. Was MCP für eine IT-Leitung bedeutet, steht in [MCP in Salesforce, erklärt für die IT-Leitung](../mcp-salesforce-erklaert-it-leitung/).
 
-## Erster Schritt: die vorhandene Auftrags-API prüfen
+## Die vorhandene Auftrags-API prüfen
 
 1. **Die API prüfen.** Gibt es eine Mule-API oder eine andere REST-API für Kundenaufträge, und liefert sie bestätigte Termine pro Position?
 2. **Zuerst die Identität klären.** Jeder Händler-Account braucht die richtigen Auftraggebernummern, gepflegt von einer benannten Person.

@@ -99,7 +99,7 @@ The IT lead sorts the four AIforce parts:
 
 The outcome is one small pilot in sales and a week of permission clean-up. In my judgement that is the right size for a beta whose prices Salesforce has not fixed.
 
-## First step: find the shadow use
+## Find the shadow use, then check permissions and contracts
 
 1. **Find the shadow use.** Ask which teams already copy Salesforce data into Claude, ChatGPT or Copilot. A governed connector with the user's own permissions beats copy and paste.
 2. **Assign one interface per user group.** For example Lightning for service agents, Claude for key account managers, Teams for everyone else. Five parallel AI surfaces mean five support topics.

@@ -88,7 +88,7 @@ So the design carries the protection:
 
 In my judgement this is the normal division of labour: the Trust Layer handles the model provider, your design handles who sees what.
 
-## First step: check the masking state per feature
+## Configure masking, agent users and actions
 
 1. **Check the masking state per feature.** Agents: assume off and verify in the audit trail. Prompt Builder and embedded features: decide in Einstein Trust Layer setup which data types to mask, including company name.
 2. **Cut the agent user to the minimum.** One permission set per service agent, no price, margin or contract fields unless an action needs them.

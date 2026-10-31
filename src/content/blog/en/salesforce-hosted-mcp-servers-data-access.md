@@ -107,7 +107,7 @@ Assume a machine builder with Sales Cloud, Service Cloud, SAP, a dealer network 
 
 Two of three go ahead, both narrower than asked. In my judgement that is the normal outcome of an access review.
 
-## First step: decide who may connect
+## Decide who may connect before the first connection
 
 1. **Decide who may connect.** Restrict each External Client App to a permission set with the OAuth policy "Admin approved users are pre-authorized". Keep administrators out: an admin who authorises Claude hands it almost the whole org.
 2. **Review sharing and field-level security** for cases, assets, warranty claims, price agreements and contacts.

@@ -97,7 +97,7 @@ Aus Architektursicht entscheiden vier Dinge, ob Casey und der Assistent helfen:
 
 Diese Punkte gelten für jeden KI-Agenten, und deshalb plädiere ich dafür, [Business Value und Datenqualität an die erste Stelle zu setzen](../agentforce-business-value-datenqualitaet/). Sie erklären auch, warum KI-Funktionen in die Zielarchitektur gehören und nicht nur in einen Piloten.
 
-## Erster Schritt: der Service Rep Assistant in einem Team
+## Mit dem Service Rep Assistant in einem Team beginnen
 
 Welche Bausteine der Service Cloud passen, kläre ich im Rahmen von [Architektur und Partnersteuerung](../../leistungen/salesforce-architektur/). Mein Weg:
 

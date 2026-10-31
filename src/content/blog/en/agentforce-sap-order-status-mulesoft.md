@@ -115,7 +115,7 @@ A copy still has its place, for example van stock that technicians need offline,
 
 MuleSoft can also turn the same API into an MCP server: [Agent Fabric](https://docs.mulesoft.com/general/agent-fabric-overview) describes an MCP Bridge that does this without custom code and keeps the existing gateway policies. That matters when external agents such as Claude should reach the API. For Agentforce itself the API Catalog action is the documented path. Salesforce announced a native MCP client for Agentforce as a [pilot with the July 2025 release](https://developer.salesforce.com/blogs/2025/06/introducing-mcp-support-across-salesforce); I would check its current status before building a production agent on it. What MCP means for an IT lead is in [MCP explained for IT leads](../mcp-salesforce-explained-for-it-leads/).
 
-## First step: check the existing sales order API
+## Check the existing sales order API
 
 1. **Check the API.** Is there a Mule API or another REST API for sales orders, and does it return confirmed dates per item?
 2. **Fix identity first.** Every dealer account needs the right sold-to numbers, maintained by a named person.

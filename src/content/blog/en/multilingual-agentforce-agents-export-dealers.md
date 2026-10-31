@@ -110,7 +110,7 @@ The extra prompt units assume one of two prompts per conversation crosses the 2,
 
 Language adds about $112 a month to $1,200 for actions. Indexing manuals in all 13 languages costs six and a half times the two-language index, and each version needs maintenance. The budget question is the number of maintained languages, not the price per character.
 
-## First step: list dealer languages by volume
+## List dealer languages by volume
 
 1. **List dealer languages by volume** from the last three months of cases and emails.
 2. **Check each language** on the help page: no label, beta or missing. Check voice separately.
