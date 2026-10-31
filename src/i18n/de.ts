@@ -66,7 +66,6 @@ export const de: Dict = {
     photoAlt: 'Fabian Kramer bei einer Live-Demo auf der Bühne',
     photoCaption: 'Auf der Bühne: Live-Demo statt Foliensatz.',
     quote: 'Nicht alles, was man in Salesforce bauen kann, sollte man in Salesforce bauen.',
-    quoteLead: 'Auf einen Satz gebracht:',
     quoteItem: 4,
   },
   services: {
@@ -758,6 +757,10 @@ export const de: Dict = {
     homeTopics: { ai: 'Agentforce, Data Cloud, Lizenzen', devops: 'Pipelines, Releases, sfdx-hardis', 'manufacturing-cloud': 'Run-Rate, Absatzplanung, Rahmenverträge', 'revenue-cloud': 'Angebote, Preise, Verträge', 'b2b-commerce': 'Händlerportal, Bestellungen, ERP', 'field-service': 'Einsatzplanung, Techniker-App, Berichte', 'change-management': 'Akzeptanz, Key User, Roll-out' },
     homeNames: { ai: 'KI & Agentforce', devops: 'DevOps & Release-Management', 'manufacturing-cloud': 'Manufacturing Cloud', 'revenue-cloud': 'Revenue Cloud', 'b2b-commerce': 'B2B Commerce', 'field-service': 'Field Service', 'change-management': 'Change Management' },
     homeAll: 'Alle Masterclasses im Überblick',
+    // Contact section at the end of the overview page.
+    ctaTitle: 'Ihr Thema steht in keiner Masterclass?',
+    ctaText: 'Dann schildern Sie es mir direkt. In 30 Minuten klären wir, wo Ihr Salesforce-Programm steht und welcher Schritt als Nächstes zählt.',
+    formSubject: 'Masterclasses',
   },
   side: {
     toc: 'Inhalt',
