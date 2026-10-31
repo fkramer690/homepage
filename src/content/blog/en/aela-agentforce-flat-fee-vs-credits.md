@@ -10,11 +10,10 @@ categories: [architecture, ai]
 contactBrief: licences
 tags: [aela, flex credits, licences, agentforce, contract negotiation, manufacturing]
 takeaways:
-  - "Forrester describes the Salesforce AELA as unlimited use of Agentforce, Data 360 and MuleSoft for a fixed fee over two or three years. Salesforce has published no list price and no standard terms."
-  - "Salesforce sold more than 120 AELAs in the fourth quarter of fiscal 2026, and its CFO described the aim as converting AELA customers to consumption later."
-  - "At the list price of $500 per 100,000 Flex Credits, an assumed fixed fee of $150,000 a year breaks even at 30 million credits, which is 1.5 million standard agent actions."
-  - "An AELA can suit a manufacturer that plans several agents across sales, service, field service and dealers and would buy the bundled licences anyway."
-  - "Negotiate the renewal at signature: what follows the term, a cap on the price step, annual exit points, the exact scope and access to your own usage data."
+  - "The AELA is a fixed fee for Agentforce, Data 360 and MuleSoft over two or three years, and Salesforce has published no list price for it."
+  - "With an assumed fixed fee of $150,000 a year, the break-even is 30 million Flex Credits, which is 1.5 million standard agent actions."
+  - "An AELA suits manufacturers that plan several agents for sales, service, field service and dealers and would buy the bundled licences anyway."
+  - "Salesforce wants to move AELA customers to consumption later, so negotiate a price cap and exit points at signature."
 faq:
   - q: "What is a Salesforce Agentic Enterprise License Agreement?"
     a: "Forrester describes it as a contract with unlimited use of consumption-based products such as Agentforce, Data 360 and MuleSoft for a fixed fee over two or three years. Salesforce publishes no standard terms, and the deals made public so far differ in scope and term."
@@ -53,7 +52,7 @@ Two deals have been made public:
 
 What is not public: the price, who qualifies, the fair-use rules, which meters are covered and what follows the term. The [Agentforce pricing page](https://www.salesforce.com/agentforce/pricing/) does not mention the AELA. Gartner covers Salesforce licensing in paid research, which I could not read. The renewal points below are therefore my own reasoning, not Gartner's.
 
-## How does an AELA compare with Flex Credits?
+## With Flex Credits you carry the volume risk, with an AELA Salesforce does
 
 | Model | You pay | Who carries the volume risk | Public terms |
 |---|---|---|---|
@@ -67,7 +66,7 @@ For a manufacturer two lines matter most. The [pricing page](https://www.salesfo
 
 That part is metered on the [Flex Credits rate card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf): 20 credits per standard action in production, 16 in a sandbox, 150 credits per MB for unstructured Data 360 processing at the base tier. The rate for Headless Platform Interactions, the meter for agents calling Salesforce through API or MCP, is still "TBA". This is where an AELA removes the meter. How to estimate each of these meters is in [Flex Credits and Agentforce cost per action](../flex-credits-agentforce-cost-per-action/), and how the edition pools fit in is in [Salesforce editions Core, Advanced, Max](../salesforce-editions-core-advanced-max/).
 
-## A typical scenario: three agents over three years
+## Worked example: three agents over three years
 
 Assume a machine builder with SAP, 300 Salesforce users in sales and service, 120 field technicians and a dealer portal. Salesforce offers a three-year AELA, and the part of the offer above today's licences is assumed at $150,000 a year. All numbers are assumptions to show the method; Salesforce publishes no AELA prices.
 
@@ -118,7 +117,7 @@ Salesforce's CFO speaks openly about converting AELA customers to consumption. T
 
 This list is a commercial checklist, not legal advice. Have the contract itself reviewed by your lawyer.
 
-## Where should you start?
+## First step: a three-year consumption plan per agent
 
 1. **Build a three-year consumption plan per agent,** with prompts, tests and Data 360. The method is in the [masterclass chapter on costs and tokens](../../masterclass/ai-salesforce/costs-and-tokens/).
 2. **Price the Flex Credit path** with your edition pool and the per-user add-ons for employees.
@@ -126,6 +125,4 @@ This list is a commercial checklist, not legal advice. Have the contract itself 
 4. **Compare whole contracts** and run the stress test with tripled consumption.
 5. **Check your partner's incentives.** Salesforce now rewards partners for consumption, as covered in [fixed price vs time and materials](../fixed-price-vs-time-and-materials-ai/).
 
-Comparing licence models over several years is part of my [make-or-buy and licence planning](../../services/make-or-buy-licences/), on the client side and without a stake in the deal.
-
-An AELA buys a known price for two or three years, and the renewal clause decides what the year after costs.
+Comparing licence models over several years is part of my [make-or-buy and licence planning](../../services/make-or-buy-licences/), on the client side and without a stake in the deal. If you bring the consumption plan and the written offer to our first call, we price both paths for your agents side by side.

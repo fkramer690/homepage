@@ -10,10 +10,10 @@ categories: [architecture, manufacturing-cloud]
 contactBrief: architecture
 tags: [global template, rollout, harmonisation, Salesforce architecture]
 takeaways:
-  - "A global template is the shared core of processes, data model and automation that every country adopts. Countries only add what is really different there."
   - "My guideline: every country is at least 80 percent identical to the template, and the delta per country is kept as small as possible."
   - "Deviations from law, tax, language and real differences in the business are justified. Habit alone is not a reason."
   - "Country differences belong in configuration, such as custom metadata per country, not in separate flows or code per country."
+  - "A global process owner decides on deviations together with the architect on the client side, and every decision goes into the log."
 faq:
   - q: "What is a global template in Salesforce?"
     a: "A global template is the shared state of processes, data model, automation and permissions that all countries of a worldwide rollout adopt. Country specifics are added as small, documented extensions."
@@ -60,7 +60,7 @@ The last group is the largest, and the hardest, because it rarely goes by that n
 
 The fourth group deserves a second look. If one country sells through dealers and the others sell directly, that is a second variant of the sales process. If the same variant appears in several countries, it belongs in the template, and only once.
 
-## How do you build country differences without splitting the template?
+## Country differences belong in configuration, not in code
 
 The technical rule is simple: country differences belong in configuration, not in code or separate flows per country.
 
@@ -87,7 +87,7 @@ A country requests a deviation in writing: what it needs, why, and what it costs
 
 Two rules help. First, the country carries the follow-up cost of its deviation, including the tests in every future release. That makes many requests smaller. Second, every deviation is reviewed after a year: is it still needed, or can the country go back to the template? Many requests come from habit. If the sponsor in the country understands why the template is built the way it is, they can put these requests in context before they reach the architect, more on that in [Change management in a global Salesforce rollout](../change-management-global-salesforce-rollout/).
 
-## How do you measure whether the template holds?
+## Metrics per country show whether the template holds
 
 The 80 percent is a guideline, not an exact measurement. Still, the direction is easy to follow with three simple numbers per country:
 
@@ -95,8 +95,6 @@ The 80 percent is a guideline, not an exact measurement. Still, the direction is
 - **Country-specific metadata.** Flows, record types or page layouts that exist for one country only. The number should be close to zero.
 - **Test effort per release for the country.** If a country needs clearly more test cases than the others, it carries more deviations than the list shows.
 
-## Where do you start?
+## Write down the goal before the first country
 
-Before the first country, decide what the goal is and write it down. If it is harmonisation, the guideline for the match and the request path for deviations follow from it. Then keep a list of deviations per country, with reason and approval date. In the steering committee this list shows better than any status report whether the template holds.
-
-A global template holds when every deviation has a reason, an owner and a price. Read more about [change management](../../services/change-management-salesforce/).
+Before the first country, decide what the goal is and write it down. If it is harmonisation, the guideline for the match and the request path for deviations follow from it. Then keep a list of deviations per country, with reason and approval date. The list should also say what each deviation costs in operation, such as an extra test case in every release. In the steering committee it shows at a glance whether the template holds. How countries take up the template is also a question of [change management](../../services/change-management-salesforce/).

@@ -9,11 +9,11 @@ topic: governance
 categories: [architecture, ai]
 tags: [ai-native delivery, programme management, team setup, ai coding, partner governance, manufacturing]
 takeaways:
-  - "AI-native delivery means coding agents draft, build and test, while people set the intent, review the output and own the result; teams shrink to small pods of architect, builder-reviewer and domain lead."
-  - "In McKinsey's 2026 survey, 79 percent of respondents at top-accelerating organisations reported smaller squads, with the median falling from about ten people to seven."
+  - "Coding agents draft, build and test, while people set the intent, review the output and own the result."
+  - "In McKinsey's 2026 survey, 79 percent of respondents at top-accelerating organisations reported smaller squads, with the median falling from ten to seven."
   - "The bottleneck moves to the manufacturer: each pod needs a domain lead from service, sales or after-sales who accepts working software every day."
-  - "A short intent with testable acceptance criteria replaces the long specification for most stories; SAP interfaces and warranty or pricing rules still need precise specifications."
-  - "A named person owns every artifact, agents work only in sandboxes and scratch orgs, and the same pipeline gates apply to human and agent code."
+  - "A short intent with testable acceptance criteria replaces the long specification for most stories; SAP interfaces and pricing rules still need precise specs."
+  - "A named person owns every artifact, and the same pipeline gates apply to human and agent code."
 faq:
   - q: "What is AI-native delivery in Salesforce projects?"
     a: "A delivery model built around coding agents from the start: agents draft stories, code, tests and runbooks, while people define the intent, review the output and own each artifact. Small pods replace the classic pyramid of many junior developers."
@@ -30,7 +30,7 @@ AI-native delivery shrinks a Salesforce team to small pods: an architect, a buil
 
 ## What is AI-native delivery?
 
-AI-native delivery means designing the whole delivery lifecycle around AI agents instead of adding a coding assistant to the old process. The clearest description for Salesforce comes from a practitioner, not a study: Amit Chaudhary's [ApexHours article](https://www.apexhours.com/ai-native-delivery-for-salesforce/) of 19 October 2026. In his framework agents draft, build, test and document, while people "set intent and guardrails, review output, own the outcome". He calls the alternative "the old process with faster typing".
+AI-native delivery means designing the whole delivery lifecycle around AI agents rather than adding a coding assistant to the old process. The clearest description for Salesforce comes from a practitioner, not a study: Amit Chaudhary's [ApexHours article](https://www.apexhours.com/ai-native-delivery-for-salesforce/) of 19 October 2026. In his framework agents draft, build, test and document, while people "set intent and guardrails, review output, own the outcome". He calls the alternative "the old process with faster typing".
 
 The framework has five building blocks that matter for programme organisation:
 
@@ -57,7 +57,7 @@ That technology company moved from product pods of 8 to 10 people to agentic tea
 
 Two caveats from the same source. The figures are self-reported by leaders, and 30 percent of respondents said team productivity fell. McKinsey also writes that "Speed is improving faster than quality". DORA's 2025 report found that AI adoption still has a [negative relationship with delivery stability](https://cloud.google.com/blog/products/ai-machine-learning/announcing-the-2025-dora-report), and DORA lists [working in small batches and a user-centric focus](https://dora.dev/capabilities/) among the seven capabilities that amplify AI's benefit. Small pods with daily feedback are a direct answer to both points. How to check whether your own programme gets faster is the topic of [measuring AI productivity in Salesforce projects](../measuring-ai-productivity-salesforce-projects/).
 
-## What changes in a manufacturer's programme organisation?
+## In the programme organisation the business side becomes the bottleneck
 
 ### The business side becomes the bottleneck
 
@@ -75,11 +75,11 @@ The daily demo replaces the stand-up and much of the steering report. A steering
 
 With fewer people, each one carries more knowledge, and an agent owns nothing. The named owner per artifact fits the [object ownership matrix](../salesforce-object-ownership-matrix/) I use when several partners share one org: one team owns each object, one person owns each Flow, class and agent. The pipeline gates come on top, see [quality gates for AI code in the Salesforce pipeline](../quality-gates-for-ai-code-salesforce-pipeline/).
 
-## A typical scenario: from one large partner team to three pods
+## Worked example: from one large partner team to three pods
 
 Assume a machine builder with Sales Cloud, Service Cloud, Field Service and an SAP integration. Its partner works with a classic team of twelve: one architect, one project lead, two business analysts, six developers (four of them junior) and two testers. All numbers here are assumptions to show the method. Three streams are planned: warranty claims from dealers, spare part ordering in the dealer portal, and field service work orders with spare part reservations.
 
-The partner proposes three pods. Each pod gets an architect and a builder-reviewer from the partner; one platform and DevOps engineer serves all three. That is seven partner people instead of twelve. The domain leads come from the manufacturer: a warranty specialist, a dealer sales coordinator and a field service dispatcher, each at about half time, so 1.5 full-time equivalents the business did not give before.
+The partner proposes three pods. Each pod gets an architect and a builder-reviewer from the partner; one platform and DevOps engineer serves all three. That is seven partner people, down from twelve. The domain leads come from the manufacturer: a warranty specialist, a dealer sales coordinator and a field service dispatcher, each at about half time, so 1.5 full-time equivalents the business did not give before.
 
 Three decisions make or break this setup:
 
@@ -96,7 +96,7 @@ Whether seven people deliver what twelve did is an open question until cycle tim
 - **Teams without a working pipeline.** Pods push more changes per day. Without version control, automated tests and validation deploys, the faster pace mostly produces faster defects.
 - **Thin seniority at the partner.** A pod has no juniors who learn on the side. If the builder-reviewer leaves, a large share of the knowledge leaves with them. Minimum staffing periods matter even more than in the setup I describe in [why I cap nearshore teams at eight developers](../salesforce-nearshore-teams-eight-developers/), and what changes for nearshore teams working with agents is covered in [nearshore Salesforce teams with AI agents](../nearshore-salesforce-teams-ai-agents/).
 
-## Where should you start?
+## Pick one stream with a clear process
 
 ```schritte
 Pick one stream
@@ -111,6 +111,4 @@ Measure and decide | 3 months
   Measure cycle time and rework, and only then decide on the other streams.
 ```
 
-Planning streams, team setups and the business time behind them is the core of my [programme management for Salesforce programmes](../../services/program-management-nearshore/).
-
-Smaller Salesforce teams work when the manufacturer puts its own process experts into the pods every day.
+The ten intents from the third step are also the yardstick for the measurement after three months. Planning streams, team setups and the business time behind them is the core of my [programme management for Salesforce programmes](../../services/program-management-nearshore/).

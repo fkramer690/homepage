@@ -9,11 +9,11 @@ topic: governance
 categories: [architecture, ai]
 tags: [Nearshore, KI-Coding, Code-Review, Einarbeitung, Partnersteuerung, Maschinenbau]
 takeaways:
-  - "Arbeiten Nearshore-Teams für Salesforce mit KI-Agenten, wandert der Engpass vom Schreiben ins Review; geplant werden muss die Review-Kapazität mit Wissen über Ihre Org, nicht die Zahl der Entwickler."
-  - "In McKinseys Umfrage von 2026 sparten Teams im Schnitt 11,8 Prozent Zeit, aber nur 6,2 Prozent Nacharbeit; es kommt also mehr Code beim Review an, ohne im selben Maß besser zu werden."
-  - "In einer Studie von Anthropic erreichten überwiegend junge Entwickler, die eine neue Bibliothek mit KI-Assistent lernten, im Test danach 50 statt 67 Prozent, mit der größten Lücke beim Debugging."
-  - "Jede Rotation im Nearshore-Team wird zum Zugriffsereignis: Werkzeugkonto, Org-Zugang und lokale Agenten-Transkripte, die Claude Code standardmäßig 30 Tage im Klartext speichert, werden pro Person aufgeräumt."
-  - "Die Agenten-Einstellungen gehören dem Kunden: verwaltete Einstellungen, die Entwickler nicht überschreiben können, Agenten nur in Sandboxes und Scratch Orgs, Agentforce Vibes in Produktion deaktiviert."
+  - "Planen Sie die Review-Kapazität mit Wissen über Ihre Org und nicht die Zahl der Entwickler."
+  - "Laut McKinsey sparen Teams 11,8 Prozent Zeit, aber nur 6,2 Prozent Nacharbeit, also kommt mehr Code beim Review an, ohne im selben Maß besser zu sein."
+  - "In einer Anthropic-Studie schnitten junge Entwickler, die eine Bibliothek mit KI lernten, im Test mit 50 statt 67 Prozent ab, am schwächsten beim Debugging."
+  - "Jede Rotation im Team ist ein Zugriffsereignis: Werkzeugkonto, Org-Zugang und lokale Agenten-Transkripte werden pro Person aufgeräumt."
+  - "Die Agenten-Einstellungen gehören dem Kunden, Agenten laufen nur in Sandboxes und Scratch Orgs, und Agentforce Vibes ist in Produktion deaktiviert."
 faq:
   - q: "Werden Nearshore-Teams für Salesforce mit KI-Agenten kleiner?"
     a: "Vielleicht, aber ich würde Entwickler erst reduzieren, wenn Durchlaufzeit und Nacharbeit gemessen sind. Sicherer ist zuerst eine andere Mischung: mehr Review-Kapazität mit Org-Wissen pro Team. Die Obergrenze von etwa acht Entwicklern pro Team gilt weiter."
@@ -57,7 +57,7 @@ Im Nearshore-Team landet das bei sehr wenigen Personen. Die Mischung, die ich em
 - **Kleine Pull Requests mit dem Plan des Agenten.** Der Plan beantwortet die Frage, die der Reviewer sonst über die Zeitzone hinweg stellen müsste.
 - **Nach Risiko sortieren.** McKinsey empfiehlt, dass Änderungen mit höherem Risiko „require stronger evidence and accountable human review“: kundenwirksames Verhalten, regulierte Daten, sicherheitskritischer Code. Bei einem Maschinenbauer gehen Garantieregeln, Preise und alles, was nach SAP bucht, an Ihren Reviewer; eine geänderte Beschriftung im Händlerportal nicht.
 
-## Welche Rollen verschieben sich im Nearshore-Team?
+## Wer einen Agenten steuert, prüft mehr, als er tippt
 
 Wer einen Agenten steuert, verbringt mehr Zeit mit Beschreiben, Prüfen und Korrigieren als mit Tippen. Salesforce beschreibt das für die eigenen Entwickler in [vier Kompetenzstufen](https://engineering.salesforce.com/how-salesforce-built-an-agentic-engineering-enablement-strategy-for-thousands-of-software-engineers/): AI-Assisted, AI-Validating, AI-Orchestrating und AI-Native. Auf der zweiten Stufe gilt: „Engineers shift from trusting AI output to validating it.“
 
@@ -85,7 +85,7 @@ Werkzeuge, Modellwege, Datenklassen und kein Produktionszugriff gehören in den 
 
 **Keine echten Daten im Agentenkontext.** Servicefälle mit Kundennamen, Seriennummern und Händlerpreisen bleiben draußen, egal wo der Entwickler sitzt. Wo Prompts verarbeitet werden, hängt vom Modellweg ab; Anthropics eigene API bietet als [Inferenzregion](https://platform.claude.com/docs/en/manage-claude/data-residency) nur „us“ und „global“. Für Ihre eigenen Mitarbeitenden kommt der Betriebsrat dazu, siehe [KI-Coding-Werkzeuge, Betriebsrat und DSGVO](../ki-coding-betriebsrat-dsgvo/).
 
-## Ein typisches Szenario: der Field-Service-Stream mit einem Nearshore-Team
+## Rechenbeispiel: der Field-Service-Stream mit einem Nearshore-Team
 
 Nehmen wir einen Maschinenbauer mit Service Cloud, Field Service für den Außendienst, einem Händlerportal und SAP. Ein Nearshore-Partner trägt den Field-Service-Stream mit sieben Entwicklern und einem Senior, der prüft; beim Kunden gibt es einen Architekten und einen Admin. Der Partner führt Coding-Agenten ein. Alle Zahlen sind Annahmen.
 
@@ -96,7 +96,7 @@ Nehmen wir einen Maschinenbauer mit Service Cloud, Field Service für den Außen
 
 Ob der Stream schneller geworden ist, bleibt offen, bis Durchlaufzeit und Nacharbeit mit der Ausgangslage verglichen sind, siehe [KI-Nutzen im Salesforce-Projekt messen](../ki-nutzen-salesforce-projekt-messen/). Der zusätzliche Entwickler, den der Partner zuerst angeboten hat, hätte nur die Schlange verlängert.
 
-## Wo sollten Sie anfangen?
+## Erster Schritt: Reviewer pro Team zählen
 
 1. **Reviewer pro Team zählen**, nicht nur Entwickler, und ihren Rückstau prüfen.
 2. **Beim Partner die Agenten-Stufe pro Person abfragen.**
@@ -105,6 +105,4 @@ Ob der Stream schneller geworden ist, bleibt offen, bis Durchlaufzeit und Nachar
 5. **Einarbeitungszeit einplanen** und klären, wer sie bezahlt.
 6. **Durchlaufzeit und Nacharbeit messen**, vorher und nachher.
 
-Teamaufstellungen, Review-Kapazität und Rotationsregeln zu planen, gehört zu meiner [Programmsteuerung mit Nearshore-Teams](../../leistungen/projektsteuerung-nearshore/).
-
-Nearshore-Teams für Salesforce liefern mit KI-Agenten nur dann mehr, wenn Review-Kapazität, Einarbeitung und Zugriffsregeln mit dem Output wachsen.
+Für Punkt 1 reicht ein Blick auf die offenen Pull Requests und darauf, wie lange sie im Schnitt auf ein Review warten. Teamaufstellungen, Review-Kapazität und Rotationsregeln zu planen, gehört zu meiner [Programmsteuerung mit Nearshore-Teams](../../leistungen/projektsteuerung-nearshore/).

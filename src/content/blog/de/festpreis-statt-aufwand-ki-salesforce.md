@@ -10,11 +10,10 @@ categories: [architecture, ai]
 contactBrief: partner-governance
 tags: [Festpreis, Abrechnung nach Aufwand, Partnersteuerung, KI-Coding, Partnerprogramm, Maschinenbau]
 takeaways:
-  - "KI drückt Salesforce-Arbeitspakete mit prüfbaren Abnahmekriterien in Richtung Festpreis; Discovery, undokumentierte ERP-Schnittstellen und Support bleiben bei Abrechnung nach Aufwand."
-  - "Bei Stundenabrechnung verliert ein Partner für jeden Tag, den ein Coding-Agent spart, Umsatz; reine Aufwandsverträge geben ihm also wenig Grund, Ihnen den Produktivitätsgewinn zu zeigen."
-  - "Salesforce hat im März 2026 angekündigt, Partnervergütung an aktiven Verbrauch statt an Lizenzen zu koppeln, und das FDE Partner Network knüpft Anreize daran, dass Agenten in Produktion gehen."
-  - "McKinsey fand im Schnitt 11,8 Prozent Zeitersparnis, aber nur 6,2 Prozent weniger Nacharbeit; Preise sollten deshalb gemessenen Durchlaufzeiten folgen, nicht der Aussage eines Partners."
-  - "Erfolgsanteile funktionieren als Teil des Honorars, gekoppelt an eine Kennzahl, die der Hersteller selbst misst, und kombiniert mit einer Obergrenze für Flex Credits pro Vorgang."
+  - "Bei Stundenabrechnung verliert ein Partner für jeden Tag, den ein Coding-Agent spart, Umsatz und hat wenig Grund, Ihnen den Gewinn zu zeigen."
+  - "Salesforce hat im März 2026 angekündigt, Partnervergütung an aktiven Verbrauch zu koppeln, und das FDE Partner Network belohnt Agenten in Produktion."
+  - "McKinsey fand 11,8 Prozent Zeitersparnis, aber nur 6,2 Prozent weniger Nacharbeit, deshalb sollten Preise gemessenen Durchlaufzeiten folgen."
+  - "Erfolgsanteile funktionieren als Teil des Honorars, gekoppelt an eine selbst gemessene Kennzahl und mit einer Obergrenze für Flex Credits pro Vorgang."
 faq:
   - q: "Werden Festpreisprojekte in Salesforce durch KI günstiger?"
     a: "Nicht automatisch. Ein Festpreis auf Basis der alten Schätzung gibt den gesamten KI-Gewinn an den Partner. Günstiger wird es für Sie nur, wenn Preise gegen gemessenen Aufwand nachverhandelt werden, etwa alle sechs Monate."
@@ -35,7 +34,7 @@ Abrechnung nach Aufwand, im Englischen Time and Materials (T&M), heißt: Sie bez
 
 Coding-Agenten brechen diese Stabilität auf. Lässt ein Entwickler Claude Code oder Agentforce Vibes die Apex-Klasse, die Testklasse und das Deployment-Manifest entwerfen, kann der Bauschritt deutlich schrumpfen. Bei Aufwandsabrechnung stellt der Partner dann weniger Tage in Rechnung und verdient weniger. Alle Anreize sprechen dafür, den Agenten still zu nutzen und abzurechnen wie bisher. Ich unterstelle hier keine böse Absicht. Ich sehe ein Geschäftsmodell, das Ehrlichkeit bestraft.
 
-Wie groß der Gewinn wirklich ist, bleibt offen, und das zählt für die Preisgestaltung. McKinseys [Umfrage unter 334 Produkt- und Engineering-Verantwortlichen](https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/beyond-the-copilot-scaling-the-agentic-product-development-life-cycle) (veröffentlicht im August 2026, durchgeführt im Mai) fand über den Entwicklungszyklus diese Werte:
+Wie groß der Gewinn ist, bleibt offen, und das zählt für die Preisgestaltung. McKinseys [Umfrage unter 334 Produkt- und Engineering-Verantwortlichen](https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/beyond-the-copilot-scaling-the-agentic-product-development-life-cycle) (veröffentlicht im August 2026, durchgeführt im Mai) fand über den Entwicklungszyklus diese Werte:
 
 ```kennzahlen
 11,8 % | Zeitersparnis im Schnitt
@@ -70,13 +69,13 @@ Für einen Hersteller hat das zwei Seiten. Ein Partner, der beim Go-live verdien
 
 **Ein Festpreis braucht eine prüfbare Leistungsbeschreibung.** „Ein Händler reicht einen Garantieantrag mit Seriennummer, Fehlercode und Fotos ein; der Antrag wird gegen den Garantiebeginn der Anlage geprüft und für die Gutschrift an SAP übergeben“ lässt sich abnehmen. „Händlerservice verbessern“ nicht. KI macht das Bauen günstiger, gegen eine unklare Anforderung hilft sie nicht. [CMS weist darauf hin](https://cms.law/de/deu/legal-updates/meilensteine-und-abnahme-in-it-projekten), dass Softwareentwicklung in IT-Verträgen häufig dem Werkvertragsrecht mit Abnahme unterstellt wird, während beim Dienstvertrag, der üblichen Form der Aufwandsabrechnung, von Gesetzes wegen keine Abnahme vorgesehen ist. Genau dieser Unterschied verschiebt das Risiko zum Partner.
 
-**Ein Preiskatalog passt zu Betrieb und Weiterentwicklung.** Sie vereinbaren einmal Preise pro Story-Größe, der Partner profitiert von jeder Effizienz, und Sie bekommen planbare Kosten. Der Haken: Prüfen Sie den Katalog alle sechs Monate gegen gemessene Durchlaufzeiten, sonst behält der Partner den Gewinn für immer.
+**Ein Preiskatalog passt zu Betrieb und Weiterentwicklung.** Sie vereinbaren einmal Preise pro Story-Größe, der Partner profitiert von jeder Effizienz, und Sie bekommen planbare Kosten. Eine Bedingung gehört dazu: Prüfen Sie den Katalog alle sechs Monate gegen gemessene Durchlaufzeiten, sonst behält der Partner den Gewinn für immer.
 
 **Erfolgsanteile funktionieren als Anteil, nicht als ganzes Honorar.** Kein Partner kontrolliert Ihre Anlagendaten, die Verfügbarkeit Ihres SAP-Systems oder wie viele Händler das Portal nutzen. Ein Honorar, das komplett an der Nutzung hängt, ist für beide Seiten ein Glücksspiel. Nach meiner Einschätzung sind 10 bis 20 Prozent des Honorars, gekoppelt an eine Kennzahl, eine diskutable Größenordnung.
 
 **Wer die Tokens bezahlt, gehört in den Preis.** McKinsey schätzt, dass Tokens, Rechenleistung, Infrastruktur und KI-Betrieb bis zu 20 Prozent der bisherigen Personalkosten erreichen können. Beim Festpreis trägt das der Partner, bei Aufwandsabrechnung muss der Vertrag sagen, wer. Die Zahlen stehen in [was KI-Coding im Salesforce-Projekt kostet](../ki-coding-kosten-salesforce-projekt/).
 
-## Ein typisches Szenario: Verlängerung eines Rahmenvertrags
+## Rechenbeispiel: Verlängerung eines Rahmenvertrags
 
 Nehmen wir einen Maschinenbauer mit Sales Cloud, Service Cloud, Field Service für den Außendienst und SAP. Er arbeitet mit einem Implementierungspartner auf Basis eines Rahmenvertrags über 600 Personentage im Jahr zu 1.100 € pro Tag, insgesamt 660.000 €. Bei der Verlängerung erklärt der Partner, sein Team baue jetzt mit Coding-Agenten, und möchte den Tagessatz halten. Alle Zahlen sind Annahmen, die das Vorgehen zeigen sollen.
 
@@ -90,7 +89,7 @@ Für das nächste Jahr sind drei Arbeitspakete geplant.
 
 Der Tagessatz bleibt gleich. Neu ist, dass der Partner mehr verdient, wenn er schneller arbeitet, statt Umsatz zu verlieren.
 
-## Wo fangen Sie an?
+## Erster Schritt: das Backlog nach Art der Arbeit sortieren
 
 1. **Sortieren Sie das Backlog** in Pakete mit prüfbaren Abnahmekriterien, Discovery-Arbeit und laufende Änderungen. Jede Art bekommt ihr eigenes Modell.
 2. **Messen Sie eine Basislinie** für Durchlaufzeit und Nacharbeit, bevor Sie nachverhandeln, damit Sie auf Daten bepreisen statt auf Behauptungen.
@@ -98,6 +97,4 @@ Der Tagessatz bleibt gleich. Neu ist, dass der Partner mehr verdient, wenn er sc
 4. **Klären Sie, wer bezahlt**: Tokens und Flex Credits in Entwicklung, Sandbox-Tests und Produktion.
 5. **Prüfen Sie Preise alle sechs Monate** gegen gemessene Zahlen. Kleinere, KI-native Teams verändern auch die Kostenbasis, siehe [KI und kleinere Salesforce-Teams](../ki-kleinere-salesforce-teams-delivery/).
 
-Solche kommerziellen Regeln aufzusetzen gehört zu meiner Arbeit in der [Partnersteuerung](../../leistungen/partnersteuerung/), auf Kundenseite und ohne Anteil am Umsatz eines Partners.
-
-Festpreis für das, was sich prüfen lässt, Stunden für das, was niemand schätzen kann, und ein gemessener Anteil für Ergebnisse: Diese Mischung würde ich in den nächsten Rahmenvertrag schreiben.
+Solche kommerziellen Regeln aufzusetzen gehört zu meiner Arbeit in der [Partnersteuerung](../../leistungen/partnersteuerung/), auf Kundenseite und ohne Anteil am Umsatz eines Partners. Für die Basislinie aus Punkt 2 reichen die Durchlaufzeiten der letzten 20 abgeschlossenen Stories aus Ihrem Ticketsystem.

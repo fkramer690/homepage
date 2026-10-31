@@ -9,11 +9,11 @@ topic: governance
 categories: [architecture, ai]
 tags: [nearshore, ai coding, code review, onboarding, partner governance, manufacturing]
 takeaways:
-  - "When nearshore Salesforce teams work with AI agents, the bottleneck moves from writing code to review; reviewer capacity with knowledge of your org becomes the number to plan, not developer headcount."
-  - "McKinsey's 2026 survey found 11.8 percent average time savings but only 6.2 percent less rework, so more code reaches the reviewers without getting better at the same rate."
-  - "In an Anthropic study, mostly junior engineers who learned a new library with an AI assistant scored 50 percent on a follow-up quiz against 67 percent without it, with the largest gap in debugging."
-  - "Every rotation in a nearshore team becomes an access event: tool account, org access and local agent transcripts, which Claude Code keeps in plaintext for 30 days by default, are cleaned up per person."
-  - "Agent settings belong to the client: managed settings developers cannot override, agents only in sandboxes and scratch orgs, and Agentforce Vibes disabled for production."
+  - "Plan reviewer capacity with knowledge of your org, not developer headcount."
+  - "McKinsey found 11.8 percent time savings but only 6.2 percent less rework, so more code reaches review without getting better at the same rate."
+  - "In an Anthropic study, junior engineers who learned a library with an AI assistant scored 50 instead of 67 percent, with the largest gap in debugging."
+  - "Every rotation in the team is an access event: tool account, org access and local agent transcripts are cleaned up per person."
+  - "Agent settings belong to the client, agents run only in sandboxes and scratch orgs, and Agentforce Vibes is disabled for production."
 faq:
   - q: "Do nearshore Salesforce teams get smaller with AI agents?"
     a: "Possibly, but I would only cut developers after measuring cycle time and rework. The safer first change is the mix: more review capacity with org knowledge per team. The cap of about eight developers per team still applies."
@@ -57,7 +57,7 @@ In a nearshore team this lands on very few people. The mix I recommend, a few se
 - **Small pull requests with the agent's plan attached.** The plan answers the question a reviewer would otherwise ask across the time zone.
 - **Triage by risk.** McKinsey recommends that higher-risk changes "require stronger evidence and accountable human review": customer-facing behaviour, regulated data, security-sensitive code. For a machine builder, warranty rules, prices and anything that posts to SAP go to your reviewer; a label change in the dealer portal does not.
 
-## Which roles shift in a nearshore team?
+## Steering an agent means more checking than typing
 
 A developer who steers an agent spends more time describing, checking and correcting than typing. Salesforce describes this for its own engineers in [four proficiency levels](https://engineering.salesforce.com/how-salesforce-built-an-agentic-engineering-enablement-strategy-for-thousands-of-software-engineers/): AI-Assisted, AI-Validating, AI-Orchestrating and AI-Native. At the second level, "Engineers shift from trusting AI output to validating it."
 
@@ -85,7 +85,7 @@ Tools, model routes, data classes and no production access belong in the contrac
 
 **No real data in agent context.** Service cases with customer names, serial numbers and dealer prices stay out, wherever the developer sits. Where prompts are processed depends on the model route; Anthropic's own API offers only "us" and "global" as [inference regions](https://platform.claude.com/docs/en/manage-claude/data-residency). For your in-house staff the works council comes in, see [AI coding tools, works council and GDPR](../ai-coding-tools-works-council-gdpr/).
 
-## A typical scenario: the field service stream with a nearshore team
+## Worked example: the field service stream with a nearshore team
 
 Assume a machine builder with Service Cloud, Field Service, a dealer portal and SAP. A nearshore partner carries the field service stream with seven developers and one senior who reviews; the client has an architect and an admin. The partner introduces coding agents. All numbers are assumptions.
 
@@ -96,7 +96,7 @@ Assume a machine builder with Service Cloud, Field Service, a dealer portal and 
 
 Whether the stream got faster stays open until cycle time and rework are compared with the baseline, see [measuring AI productivity in Salesforce projects](../measuring-ai-productivity-salesforce-projects/). The extra developer the partner offered first would only have lengthened the queue.
 
-## Where should you start?
+## First step: count reviewers per team
 
 1. **Count reviewers per team**, not only developers, and check their backlog.
 2. **Ask the partner for the agent level per person.**
@@ -105,6 +105,4 @@ Whether the stream got faster stays open until cycle time and rework are compare
 5. **Plan onboarding time** and agree who pays.
 6. **Measure cycle time and rework** before and after.
 
-Planning team setups, reviewer capacity and rotation rules is part of my [programme management for nearshore teams](../../services/program-management-nearshore/).
-
-Nearshore Salesforce teams with AI agents deliver more only when review capacity, onboarding and access rules grow with the output.
+For point 1, a look at the open pull requests and how long they wait for a review on average is enough. Planning team setups, reviewer capacity and rotation rules is part of my [programme management for nearshore teams](../../services/program-management-nearshore/).
