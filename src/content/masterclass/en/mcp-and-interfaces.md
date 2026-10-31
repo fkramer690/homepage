@@ -8,11 +8,11 @@ chapter: 3
 short: "MCP and interfaces"
 summary: "Which MCP servers and APIs connect AI agents to Salesforce, who reads which data through them and what the calls will cost."
 takeaways:
-  - "The local Salesforce DX MCP Server (@salesforce/mcp) reaches end of life on 2 November 2026 according to the maintainers' notice; teams should inventory their configurations now."
-  - "Hosted MCP Servers have been GA for Enterprise Edition and above since 29 April 2026, are off by default and run every call with the permissions of the signed-in user."
-  - "Hosted MCP has no service accounts and no machine-to-machine flows; unattended night-time agents need the Agent API or a classic integration instead."
-  - "When an external model such as Claude reads data through Hosted MCP, I find no statement in the Salesforce docs that the Einstein Trust Layer applies; the AI vendor contract is what counts."
-  - "Agentic MCP and API calls will consume Flex Credits as Headless Platform Interactions; the rate card dated 31 Aug 2026 still lists the rate as TBA."
+  - "The local Salesforce DX MCP Server (@salesforce/mcp) reaches end of life on 2 November 2026. Inventory your configurations now."
+  - "Hosted MCP Servers have been GA for Enterprise Edition and above since 29 April 2026, are off by default and run with the signed-in user's permissions."
+  - "Hosted MCP has no service accounts and no machine-to-machine flows. Unattended night-time agents need the Agent API or a classic integration."
+  - "The Salesforce docs do not say whether the Einstein Trust Layer applies when Claude reads data through Hosted MCP. The AI vendor contract is what counts."
+  - "Agentic MCP and API calls will consume Flex Credits as Headless Platform Interactions. The rate card still lists the rate as TBA."
 articles: [salesforce-dx-mcp-server-end-of-life, mcp-explained-salesforce-it-leads, hosted-mcp-servers-data-access, headless-platform-interactions-budget]
 faq:
   - q: "What happens to the Salesforce DX MCP Server on 2 November 2026?"
@@ -24,7 +24,7 @@ faq:
 draft: false
 ---
 
-MCP (Model Context Protocol) is the standard way AI tools such as Claude, ChatGPT or Cursor work with Salesforce in 2026. Three points matter for manufacturers. The local Salesforce DX MCP Server reaches end of life on 2 November 2026. Salesforce's hosted MCP servers have been GA since April 2026 and always act on behalf of a signed-in user. And agentic calls will soon cost Flex Credits, at a rate Salesforce has not published. My advice: start read-only, grant access per person, and settle the budget line before the rollout.
+MCP (Model Context Protocol) is the standard way AI tools such as Claude, ChatGPT or Cursor work with Salesforce in 2026. The local Salesforce DX MCP Server reaches end of life on 2 November 2026. Salesforce's hosted MCP servers have been GA since April 2026 and always act on behalf of a signed-in user. And agentic calls will soon cost Flex Credits, at a rate Salesforce has not published. My advice: start read-only, grant access per person, and settle the budget line before the rollout.
 
 ## What is MCP, and where does it sit in a Salesforce architecture?
 
@@ -90,7 +90,7 @@ The details are in [Salesforce DX MCP Server end of life](../../../blog/salesfor
 
 Salesforce released the Hosted MCP Servers on [29 April 2026 for every Enterprise Edition org and above](https://developer.salesforce.com/blogs/2026/04/salesforce-hosted-mcp-servers-are-now-generally-available). They run on Salesforce infrastructure; an admin enables them in Setup under API Catalog and creates an External Client App with the `mcp_api` and `refresh_token` scopes. The [server reference](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/servers-reference.html) lists four sObject servers (All, Reads, Mutations, Deletes) plus servers for Data 360, Tableau Next and Headless 360.
 
-The security model is strict, which is good news for manufacturers. From the [security best practices](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/security-best-practices.html):
+The security model is strict, which works in manufacturers' favour. From the [security best practices](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/security-best-practices.html):
 
 | Topic | Rule |
 |---|---|
@@ -119,7 +119,7 @@ The [Hosted MCP Servers overview](https://developer.salesforce.com/docs/platform
 
 For planning, this means you do not know the price, but you can estimate the volume. Count users, questions per day and tool calls per question, because an agent often calls several tools for one answer. The worked numbers are in [MCP and API calls to Salesforce as a budget risk](../../../blog/mcp-api-calls-salesforce-budget-risk/), and the cost models as a whole in [chapter 7](../costs-and-tokens/).
 
-## A typical scenario: service data in Claude at a machine builder
+## Walk-through: service data in Claude at a machine builder
 
 Assume a machine builder with Service Cloud, SAP S/4 and an implementation partner whose six developers work with Claude Code. All numbers are assumptions. The head of service wants 25 people in the service back office to ask Claude about open cases, the installed base and warranty status.
 
@@ -146,5 +146,3 @@ Salesforce puts the setup at under 30 minutes. The real work is in five decision
 | Budget | Who pays for Headless Platform Interactions, the business unit or IT? |
 
 These questions are part of my work on [Salesforce integration](../../../services/salesforce-integration/). [Chapter 4](../external-coding-agents/) covers the external coding agents your partner can use, and the [masterclass overview](../) lists all chapters.
-
-MCP makes Salesforce reachable for every AI tool; whether that helps your service depends on permissions, data routes and budget.

@@ -10,11 +10,11 @@ pubDate: 2026-10-28
 short: "Rollout and roadmap"
 summary: "Seven phases from change sets to a client-owned pipeline, with training, metrics and an outlook on coding agents."
 takeaways:
-  - "A Salesforce DevOps rollout works in phases with a checkable result: ownership, Git, validation, quality gates, data, release calendar and operations, in that order."
-  - "One stream or partner goes first as a pilot, the others follow on dates written into the contract; a cut-off date ends change sets for UAT and production."
-  - "The most important investment is an internal release role; licence savings from the tool choice are better spent there than on extra partner days."
+  - "A DevOps rollout works in phases with a checkable result: ownership, Git, validation, quality gates, data, release calendar and operations."
+  - "One stream or partner goes first as a pilot, the others follow on dates from the contract. A cut-off date ends change sets for UAT and production."
+  - "The most important investment is an internal release role. Licence savings from the tool choice are better spent there than on partner days."
   - "Measure against a baseline: the DORA metrics plus your own figures, such as manual steps in the release plan and waiting time until the first review."
-  - "Coding agents amplify what the pipeline already does; they come after the quality gates, with a rules file in your repository and the same checks as for people."
+  - "Coding agents come after the quality gates, with a rules file in your repository and the same checks as for people."
 articles: [sfdx-hardis-training, quality-gates-ai-code-pipeline, agentforce-agents-release-pipeline, ai-rules-file-salesforce-repo, nearshore-teams-with-ai-agents]
 faq:
   - q: "How long does the move from change sets to a Salesforce pipeline take?"
@@ -73,7 +73,7 @@ The commercial vendors have their own offers, and I have taken courses from Gear
 
 I would treat partners like internal teams and require in the contract that every developer shows the basic training and has read the onboarding document in your repository before their first pull request. That costs a day per person and saves the discussion in sprint three about why the partner would like to deploy by change set after all. How this fits into steering several partners is part of my [partner governance](../../../services/partner-governance/) work.
 
-## Which mistakes slow the rollout down?
+## These mistakes slow the rollout down
 
 These patterns follow from the structure of a programme with several partners, which is why they keep coming back:
 
@@ -89,11 +89,11 @@ These patterns follow from the structure of a programme with several partners, w
 Mandatory reviews belong in from the start, even while the pipeline is still simple. The reasons are in [why pull request reviews are a must](../../../blog/why-pull-request-reviews-are-a-must-in-enterprise-projects/).
 ```
 
-## How do you measure progress?
+## Measuring progress against a baseline
 
 DORA now describes [five metrics](https://dora.dev/guides/dora-metrics-four-keys/) for software delivery: change lead time, deployment frequency, failed deployment recovery time, change fail rate, and deployment rework rate, the share of unplanned deployments caused by a production incident. The first three measure throughput, the last two instability.
 
-The tools provide part of this. According to its documentation, the [sfdx-hardis DORA report](https://sfdx-hardis.cloudity.com/hardis/doc/salesforce-devops-dora-report/) computes all five per major branch, as described in [chapter 9](../operations-monitoring-backup/), and the [overview](https://sfdx-hardis.cloudity.com/salesforce-devops-home/) rates the classic four against industry benchmarks. Gearset has a [DevOps performance dashboard](https://docs.gearset.com/en/articles/11560575-measuring-your-devops-performance) with the same four, which requires a Teams or Enterprise Automation Platform licence and Pipelines with the promotion branch strategy; change failure rate and time to restore are based on bugs your team reports in promotions. Both figures are therefore only as good as the discipline in reporting.
+The tools provide part of this. According to its documentation, the [sfdx-hardis DORA report](https://sfdx-hardis.cloudity.com/hardis/doc/salesforce-devops-dora-report/) computes all five per major branch, as described in [chapter 9](../operations-monitoring-backup/), and the [overview](https://sfdx-hardis.cloudity.com/salesforce-devops-home/) rates the classic four against industry benchmarks. Gearset has a [DevOps performance dashboard](https://docs.gearset.com/en/articles/11560575-measuring-your-devops-performance) with the same four, which requires a Teams or Enterprise Automation Platform licence and Pipelines with the promotion branch strategy; change failure rate and time to restore are based on bugs your team reports in promotions. Both figures are therefore reliable only if incidents are reported consistently.
 
 For a programme in rollout, I would add four figures of my own, because they show progress earlier than DORA:
 
@@ -104,9 +104,9 @@ For a programme in rollout, I would add four figures of my own, because they sho
 
 Take the baseline before phase 2 starts, from the release plans of the last six months if need be. I would report these figures to the steering committee every quarter on one page, split by stream and partner.
 
-## A typical scenario, as an assumption: three partners, one org
+## Worked example: three partners, one org
 
-A typical scenario, as an assumption: a machine builder runs Service Cloud, Field Service for its field technicians, a dealer portal on Experience Cloud and an SAP integration for orders and spare parts. Three partners deploy by change set, and every four weeks there is a release with a plan of 60 manual lines. All figures are assumptions.
+Suppose a machine builder runs Service Cloud, Field Service for its field technicians, a dealer portal on Experience Cloud and an SAP integration for orders and spare parts. Three partners deploy by change set, and every four weeks there is a release with a plan of 60 manual lines. All figures are assumptions.
 
 ```schritte
 Settle ownership | Months 1 and 2 · client
@@ -121,13 +121,13 @@ Data and operations | Months 7 to 9
   Price books and Field Service configuration move into the repository, the release calendar is set, and monitoring reports drift.
 ```
 
-After nine months the release plan has twelve manual lines instead of 60, UAT gets new builds weekly instead of monthly, and a partner change in the Field Service stream would be a contract question, not a technical project. These figures are planning values for the example, not measurements.
+After nine months the release plan has twelve manual lines, down from 60, UAT gets new builds weekly instead of monthly, and a partner change in the Field Service stream would be a contract question, not a technical project. These figures are planning values for the example, not measurements.
 
 ## What changes when coding agents work in the pipeline?
 
 Coding agents write code faster than people can review it. A pipeline with mandatory reviews and blocking gates absorbs that; a pipeline without them just moves it into production faster. That is why DORA lists [working in small batches](https://dora.dev/capabilities/) among the capabilities that offset the risk when AI speeds up development. For me the order is clear: phases 1 to 4 first, then agents.
 
-When you get there, four things change:
+When you get there, the following changes:
 
 - **A rules file enters the repository.** `CLAUDE.md`, `AGENTS.md` or `.vibes/rules/` belong to you and have a named owner on your side, see [the AI rules file in your Salesforce repository](../../../blog/ai-rules-file-salesforce-repository/).
 - **The gates get rules for typical agent mistakes**, such as a check whether an agent raised the API version of an Apex class in passing. Details in [quality gates for AI code](../../../blog/quality-gates-for-ai-code-salesforce-pipeline/).
@@ -137,5 +137,3 @@ When you get there, four things change:
 Review capacity takes the biggest hit, especially with nearshore teams in other time zones. I have worked with nearshore teams in Eastern Europe and India, and what agents shift there is covered in [nearshore Salesforce teams with AI agents](../../../blog/nearshore-salesforce-teams-ai-agents/).
 
 From here, the AI masterclass takes over. Which coding agent suits your team or partner, and what the contract needs to say about it, is covered in [chapter 4 of the AI masterclass](../../ai-salesforce/external-coding-agents/). How roles, review gates and metrics change when teams deliver with agents is in [chapter 9 of the AI masterclass](../../ai-salesforce/teamwork-and-delivery/). The operations this phase builds on are described in the previous [chapter 9 on operations and monitoring](../operations-monitoring-backup/), and all chapters of this masterclass are on the [overview page](../). I support the rollout itself as part of [DevOps and release management](../../../services/devops-release-management/).
-
-A DevOps rollout is finished when your own team could run the release process without today's partner.

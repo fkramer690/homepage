@@ -8,11 +8,11 @@ chapter: 8
 short: "AI code best practices"
 summary: "How to keep AI-generated Salesforce code under control with a rules file, pipeline checks and clear org boundaries."
 takeaways:
-  - "A rules file in the repository is a request to the model; only deny rules, hooks and pipeline checks, which run whatever the model decides, are binding."
-  - "Veracode measured a 56 percent security pass rate for unreviewed AI code in 2026, and only 30 percent for Java; there is no Apex data, and Java is its closest relative."
-  - "From API 67.0, Apex classes run in user mode and with sharing by default; the risk lies in raising a class's API version, which coding agents like to do in passing."
-  - "75 percent test coverage is the minimum for a deployment; bulk tests, tests as restricted users and real asserts belong in the definition of done."
-  - "Coding agents work only against scratch orgs and developer sandboxes; code reaches production only through the pipeline with human approval."
+  - "A rules file in the repository is a request to the model. Only deny rules, hooks and pipeline checks, which run whatever the model decides, are binding."
+  - "Veracode measured a 56 percent security pass rate for unreviewed AI code in 2026, and 30 percent for Java. There is no data for Apex."
+  - "From API 67.0, Apex classes run in user mode and with sharing. The risk lies in raising the API version, which agents like to do in passing."
+  - "75 percent test coverage is only the minimum. Bulk tests, tests as restricted users and real asserts belong in the definition of done."
+  - "Coding agents work only against scratch orgs and developer sandboxes. Code reaches production only through the pipeline with human approval."
 articles: [reviewing-ai-generated-salesforce-code, api-67-user-mode-apex, quality-gates-ai-code-pipeline, ai-rules-file-salesforce-repo, vibe-coding-prototype-not-production]
 faq:
   - q: "As the client, do I need to be able to read AI-generated code myself?"
@@ -49,7 +49,7 @@ Salesforce documents the weak spots itself. The [review checklist for Agentforce
 | Bulk processing | trigger handles one record instead of a list | bulk test; the [Apex testing guide](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/api/apex_testing_best_practices.htm) asks for at least 20 records |
 | Permissions | no sharing declaration, no `WITH USER_MODE` | Code Analyzer, `runAs` test |
 | Tests | coverage without assertions, test data taken from the org | review, assert rule |
-| Field names | invented API names instead of the real ones in the org | validation deployment |
+| Field names | invented API names that do not exist in the org | validation deployment |
 | Metadata | new field missing from the permission set | validation deployment, review |
 | Configuration | agent changes sharing, profiles, layouts | rule: a human does this in Setup |
 
@@ -136,7 +136,7 @@ My minimum rules for every programme:
 
 These rules belong in the contract with your partner, not only in their working instructions. They are part of my work in [DevOps and release management](../../../services/devops-release-management/).
 
-## A typical scenario: spare-part availability in the dealer portal
+## Walk-through: spare-part availability in the dealer portal
 
 Assume a machine builder with an Experience Cloud dealer portal, Service Cloud and SAP S/4. All figures are assumptions. The partner is to build, with four developers and Claude Code, a component that shows dealers the availability of spare parts for their machines.
 
@@ -156,5 +156,3 @@ Review
 ```
 
 None of these steps is new. What is new is that without them, far more unreviewed code is produced in the same time. The cost of the AI tools themselves is covered in [chapter 7](../costs-and-tokens/), and all chapters are on the [overview page](../).
-
-On Salesforce, AI code is as good as the rules, gates and org boundaries you set as the client.

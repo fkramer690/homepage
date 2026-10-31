@@ -10,10 +10,10 @@ pubDate: 2026-10-28
 short: "Warum Releases entscheiden"
 summary: "Die Grundbegriffe, die Kosten schlechter Releases mit mehreren Partnern und fünf Reifestufen von Change Sets bis zur eigenen Pipeline."
 takeaways:
-  - "Release-Management für Salesforce heißt, dass jede Änderung aus einem Git-Repository über eine feste Pipeline mit Review und Tests in Produktion kommt und ein Release zu einem geplanten Termin freigeschaltet wird."
-  - "Ein Deployment ist der technische Transport von Metadaten in eine Org; ein Release ist die geplante Freigabe für Anwender mit Kommunikation und Abnahme durch den Fachbereich."
-  - "Schlechte Releases kosten in Programmen mit mehreren Partnern vor allem Nacharbeit über Teamgrenzen, wiederholte Tests in UAT und Stillstand im Service oder im Händlerportal."
-  - "Change Sets funktionieren nur zwischen Orgs derselben Produktion, enthalten keine Daten und keine Historie; für mehrere Teams auf einer Org reichen sie nicht."
+  - "Jede Änderung kommt aus Git über eine feste Pipeline mit Review und Tests in Produktion, und Releases werden zu geplanten Terminen freigeschaltet."
+  - "Ein Deployment transportiert Metadaten in eine Org. Ein Release ist die geplante Freigabe für Anwender, mit Kommunikation und Abnahme durch den Fachbereich."
+  - "Schlechte Releases kosten vor allem Nacharbeit über Teamgrenzen, wiederholte Tests in UAT und Stillstand im Service oder im Händlerportal."
+  - "Change Sets funktionieren nur zwischen Orgs derselben Produktion und haben weder Daten noch Historie. Für mehrere Teams auf einer Org reichen sie nicht."
   - "Der Weg von Change Sets zur Pipeline führt über fünf Stufen und braucht keinen Big Bang, aber eine frühe, für alle Partner verbindliche Entscheidung."
 articles: [devops-salesforce-enterprise, client-owned-devops-tools, pull-request-reviews-enterprise]
 faq:
@@ -61,9 +61,9 @@ Ich habe ein Programm mit acht Teams und 32 Entwicklern begleitet, Orgs betreut,
 | Wachsende Pakete | Wer schlechte Erfahrungen mit Releases macht, released seltener. Seltenere Releases werden größer, größere Releases riskanter. Messbar wird das mit den [fünf Kennzahlen von DORA](https://dora.dev/guides/dora-metrics/), etwa der Deployment-Frequenz und der Change Fail Rate, dem Anteil der Deployments, die sofortige Nacharbeit wie ein Rollback oder einen Notfall-Patch brauchen. |
 | Abhängigkeit und Schuldfrage | Ohne Historie im Repository kann niemand belegen, welcher Partner welche Änderung gemacht hat. Die Diskussion darüber kostet Steuerungszeit und belastet die Zusammenarbeit. |
 
-Ein typisches Szenario, als Annahme: Ein Maschinenbauer betreibt Service Cloud mit Field Service, ein Händlerportal auf Experience Cloud und eine Schnittstelle zu SAP. Drei Partner arbeiten auf derselben Org, je einer für Service, Vertrieb mit Portal und Integration. Am Freitagabend deployt der Vertriebspartner per Change Set eine neue Validierungsregel auf dem Auftragsobjekt. Sie ist in seiner Sandbox korrekt, kennt aber ein Feld nicht, das der Integrationspartner zwei Wochen zuvor eingeführt hat. Am Montag schlägt die nächtliche Auftragsübergabe aus SAP fehl, Händler sehen keine Liefertermine, und das Service-Team muss den eigenen UAT-Lauf verschieben, weil die Org nicht stabil ist. Keine dieser Kosten taucht als eigene Zeile im Projektbudget auf. Ein Validierungs-Deployment gegen den gemeinsamen Stand im Repository hätte den Konflikt vor dem Merge gezeigt.
+Angenommen, ein Maschinenbauer betreibt Service Cloud mit Field Service, ein Händlerportal auf Experience Cloud und eine Schnittstelle zu SAP. Drei Partner arbeiten auf derselben Org, je einer für Service, Vertrieb mit Portal und Integration. Am Freitagabend deployt der Vertriebspartner per Change Set eine neue Validierungsregel auf dem Auftragsobjekt. Sie ist in seiner Sandbox korrekt, kennt aber ein Feld nicht, das der Integrationspartner zwei Wochen zuvor eingeführt hat. Am Montag schlägt die nächtliche Auftragsübergabe aus SAP fehl, Händler sehen keine Liefertermine, und das Service-Team muss den eigenen UAT-Lauf verschieben, weil die Org nicht stabil ist. Keine dieser Kosten taucht als eigene Zeile im Projektbudget auf. Ein Validierungs-Deployment gegen den gemeinsamen Stand im Repository hätte den Konflikt vor dem Merge gezeigt.
 
-## Warum reichen Change Sets nicht mehr?
+## Change Sets reichen für mehrere Partner nicht mehr
 
 Change Sets sind das Standardwerkzeug, mit dem viele Orgs anfangen, und für einen einzelnen Admin sind sie in Ordnung. Laut [Salesforce Help](https://help.salesforce.com/apex/HTViewHelpDoc?id=changesets.htm) brauchen sie eine Deployment-Verbindung, die nur zwischen Orgs derselben Produktion besteht. Sie enthalten nur Änderungen, die über das Setup möglich sind, keine Datensätze, und werden als Ganzes deployt. Für ein Programm mit mehreren Partnern fehlen die entscheidenden Dinge:
 
@@ -148,5 +148,3 @@ Sechs Fragen genügen für eine erste Einordnung. Sie sollten jede in einem Satz
 - Wie lange dauert es, eine fehlerhafte Änderung in Produktion zurückzunehmen?
 
 Wenn Sie bei mehr als zwei Fragen zögern, liegt Ihr Programm in Stufe 1 oder 2. Dann klären Sie zuerst Eigentum und Rollen und erst danach das Werkzeug. Damit geht es weiter in [Kapitel 2: Eigentum und Rollen](../release-prozess-eigentum-rollen/).
-
-Ein Salesforce-Programm mit mehreren Partnern bleibt nur planbar, wenn Ihnen der Release-Prozess gehört und jede Änderung denselben Weg nimmt.

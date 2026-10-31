@@ -10,11 +10,10 @@ pubDate: 2026-10-28
 short: "Daten und Konfiguration"
 summary: "Welche Konfigurations- und Referenzdaten keine Metadaten sind, wie sie durch die Pipeline kommen und wie Sandboxes maskiert bleiben."
 takeaways:
-  - "Field-Service-Planungsrichtlinien, Arbeitsregeln, Betriebszeiten und Custom-Settings-Datensätze sind Daten; ein Metadaten-Deployment nimmt sie nicht mit."
-  - "Konfigurationsdaten gehören ins Repository und laufen nach dem Metadaten-Deployment durch dieselbe Pipeline, mit externen IDs statt Salesforce-IDs."
-  - "SFDMU ist ein Open-Source-Plugin der Salesforce CLI für Datenmigrationen; sfdx-hardis ruft es als Deployment Action auf, Gearset, Copado und Flosum haben eigene Datenmodule."
+  - "Konfigurationsdaten gehören ins Repository und laufen nach dem Metadaten-Deployment durch dieselbe Pipeline, mit externen IDs als Schlüssel."
+  - "SFDMU ist ein Open-Source-Plugin der Salesforce CLI. sfdx-hardis ruft es als Deployment Action auf, Gearset, Copado und Flosum haben eigene Datenmodule."
   - "Stammdaten wie Produkte und Preise aus SAP kommen über die Schnittstelle oder als Seed-Datensatz, nie per Deployment aus einer Sandbox in die Produktion."
-  - "Nach jedem Refresh einer Partial- oder Full-Sandbox läuft die Maskierung, bevor Partner Zugang bekommen; Data Mask & Seed von Salesforce ist dafür eine Option."
+  - "Nach jedem Refresh einer Partial- oder Full-Sandbox läuft die Maskierung, bevor Partner Zugang bekommen. Data Mask & Seed von Salesforce ist eine Option."
 articles: [sandbox-data-ai-coding-agents, sfdx-hardis-introduction, sfdx-hardis-training, client-owned-devops-tools]
 faq:
   - q: "Warum kommen Custom-Settings-Datensätze nicht mit dem Deployment mit?"
@@ -61,9 +60,7 @@ Für einen Hersteller heißt das:
 Bei bestehenden Orgs würde ich Custom Settings nicht pauschal umbauen. Ich würde aber in die Partnerregeln schreiben, dass neue Konfiguration als Custom Metadata Type entsteht, sofern es keinen fachlichen Grund dagegen gibt. Wer diese Regeln festlegt und durchsetzt, beschreibt [Kapitel 2](../release-prozess-eigentum-rollen/).
 ```
 
-## Wie kommen Konfigurationsdaten durch die Pipeline?
-
-Drei Dinge machen einen Datenschritt wiederholbar.
+## Konfigurationsdaten laufen durch dieselbe Pipeline
 
 **Externe IDs statt Salesforce-IDs.** Eine Arbeitsregel hat in jeder Org eine andere Salesforce-ID. Ein Datenschritt muss den Datensatz an einem fachlichen Schlüssel erkennen, sonst legt er beim zweiten Lauf Dubletten an. Ich gebe jedem Konfigurationsobjekt ein Feld als externe ID, etwa einen sprechenden Code wie `WR_SKILL_HYDRAULIK`.
 
@@ -129,7 +126,7 @@ Zugänge freigeben
 
 Für Coding-Agenten gilt eine strengere Regel, die [Kapitel 8 der KI-Masterclass](../../ki-salesforce/best-practices-ki-code/) beschreibt: Sie arbeiten in Scratch Orgs und Developer-Sandboxes mit Seed-Daten, nie in einer Full Copy.
 
-## Ein typisches Szenario, als Annahme: Field Service für den Wartungsservice
+## Rechenbeispiel: Field Service für den Wartungsservice
 
 Nehmen wir einen Maschinenbauer, der Field Service für Wartung und Reparatur beim Kunden einführt. Zwei Partner arbeiten auf derselben Org, SAP liefert Produkte, Materialnummern und Preise. Alle Zahlen sind Annahmen.
 
@@ -145,9 +142,9 @@ Mit Datenschritt sieht derselbe Go-live anders aus:
 
 Wäre das Programm auf Gearset, Copado oder Flosum, sähe die Struktur gleich aus, nur mit einer Datenvorlage statt `export.json`. Entscheidend ist, dass kein manueller Datenschritt mehr im Release-Plan steht.
 
-## Was gehört in die Partnerregeln?
+## Diese Regeln gehören in den Partnervertrag
 
-Fünf Regeln würde ich in jeden Vertrag schreiben:
+In jeden Vertrag würde ich schreiben:
 
 1. Konfigurationsdaten werden nie direkt in einer Stufen-Org gepflegt, nur im Repository.
 2. Jedes Konfigurationsobjekt hat eine externe ID.
@@ -156,5 +153,3 @@ Fünf Regeln würde ich in jeden Vertrag schreiben:
 5. Kein Partner bekommt Zugang zu einer Sandbox, bevor die Maskierung nach dem Refresh gelaufen ist.
 
 Wann Sie Datenschritte im Release-Kalender einplanen und wie die drei Salesforce-Releases pro Jahr hineinspielen, behandelt [Kapitel 8](../release-planung-salesforce-releases/). Datenschritte und Sandbox-Stufen gehören zu meiner Arbeit in [DevOps und Release-Management](../../../leistungen/devops-und-release-management/).
-
-Konfigurationsdaten verdienen denselben Weg wie Code: Repository, Review, Pipeline, und Kundendaten bleiben maskiert.
