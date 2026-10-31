@@ -9,11 +9,10 @@ topic: revenue
 categories: [revenue-cloud]
 tags: [Revenue Cloud, Produktkatalog, Varianten, Produktklassifizierung, Bundles, SAP]
 takeaways:
-  - "Der Produktkatalog in Revenue Cloud bildet ab, was der Vertrieb verkauft: Kataloge, Kategorien, Produktklassifizierungen mit Attributen, einfache Produkte, Bundles und Verkaufsmodelle."
-  - "Eine Produktklassifizierung ist eine Vorlage mit Attributen. Produkte, die daraus entstehen, erben die Attribute und können sie überschreiben, eine Maschinenfamilie braucht also eine Vorlage."
-  - "Eine Variante wird ein eigenes Produkt, wenn das ERP eine eigene Materialnummer hat, wenn sie in einem Sales Agreement geplant wird oder wenn sie separat gelagert und gewartet wird."
-  - "Das ERP liefert Materialnummern und Listenpreise. Kategorien, Vertriebsattribute, Bundle-Struktur und Verkaufsmodelle gibt es nur in Salesforce, und sie brauchen dort einen Verantwortlichen."
-  - "Katalogdatensätze sind Daten: Der Developer Guide nennt für sie eine Deployment-Reihenfolge und Lookup-Felder, sie wandern also als Daten in fester Reihenfolge durch die Pipeline."
+  - "Produkte aus einer Klassifizierung erben deren Attribute und können sie überschreiben. Eine Maschinenfamilie braucht also eine Vorlage."
+  - "Eine Variante wird ein eigenes Produkt bei eigener Materialnummer, Planung im Sales Agreement oder separater Lagerung und Wartung."
+  - "Das ERP liefert Materialnummern und Listenpreise. Kategorien, Bundles und Verkaufsmodelle gibt es nur in Salesforce, mit eigenem Verantwortlichen."
+  - "Katalogdatensätze wandern als Daten in der Deployment-Reihenfolge des Developer Guide durch die Pipeline."
 faq:
   - q: "Was ist eine Produktklassifizierung in Revenue Cloud?"
     a: "Eine Produktklassifizierung ist eine Vorlage mit Attributen, zum Beispiel Motorleistung, Spannung und Steuerung für eine Maschinenfamilie. Produkte, die aus der Klassifizierung entstehen, erben diese Attribute und können einzelne überschreiben, die nicht passen."
@@ -88,7 +87,7 @@ In den meisten Fällen ja. Ein Maschinenbauer verkauft einige Dutzend Maschinen 
 
 Services wie Wartungsverträge oder Fernüberwachung brauchen zusätzlich ein Verkaufsmodell mit fester Laufzeit oder ein unbefristetes, weil sie als Abo verkauft werden. Ich würde sie in einen eigenen Katalog legen, damit Produktmanagement und Serviceleitung jeweils ihren Teil pflegen.
 
-## Ein typisches Szenario, als Annahme: 40 Grundmaschinen mit Optionen
+## Rechenbeispiel: 40 Grundmaschinen mit Optionen
 
 Ein Maschinenbauer verkauft 40 Grundmaschinen in vier Familien mit je etwa zwölf Vertriebsoptionen, dazu 60 Zubehörteile mit eigener Materialnummer und rund 8.000 Ersatzteile. Ohne Modell schlägt jemand vor, jede verkaufte Kombination als Produkt anzulegen, und schnell sind es tausende.
 
@@ -102,7 +101,7 @@ Mit dem Katalogmodell sieht es so aus:
 
 Der Produktkatalog für Angebote umfasst dann rund 140 Datensätze plus die Bundles, und jede Kombination, die ein Kunde bestellen kann, ist trotzdem vollständig beschrieben.
 
-## Katalogdaten sind Konfiguration: Wer pflegt sie, und wie kommen sie in die Produktion?
+## Katalogdaten sind Konfiguration und brauchen einen Verantwortlichen
 
 Klassifizierungen, Attribute und Bundles sind Datensätze, keine Metadaten. Katalogänderungen werden also in einer Sandbox getestet und als Daten durch dieselbe Pipeline gebracht wie Metadaten. Wie das mit SFDMU oder kommerziellen Werkzeugen geht, steht im DevOps-Kapitel [Daten und Konfiguration](../../masterclass/devops-release-management/daten-und-konfiguration/), die Besonderheiten von Revenue Cloud in [Revenue Cloud Deployments](../revenue-cloud-konfiguration-deployment/).
 
@@ -113,7 +112,7 @@ Der Developer Guide enthält eine [Object Deployment Reference](https://develope
 
 Verantwortlich sollte das Produktmanagement des Herstellers sein, nicht der Implementierungspartner. Nach dem Go-live kommen jedes Quartal neue Maschinen, Optionen und Preisänderungen, und wer den Katalog pflegt, bestimmt, wie schnell der Vertrieb sie anbieten kann.
 
-## Wo starten Sie?
+## Erster Schritt: Maschinenfamilien und Vertriebsfragen auflisten
 
 1. **Listen Sie die Maschinenfamilien auf** und die Fragen, die der Vertrieb pro Familie stellt. Daraus werden Klassifizierungen und Attribute.
 2. **Wenden Sie die drei Prüffragen** auf jede Variante an: eigene Materialnummer, im Sales Agreement geplant, separat gelagert oder gewartet.
@@ -121,6 +120,4 @@ Verantwortlich sollte das Produktmanagement des Herstellers sein, nicht der Impl
 4. **Trennen Sie Maschinen, Ersatzteile und Services** in Kataloge mit unterschiedlichen Verantwortlichen.
 5. **Benennen Sie den Katalogverantwortlichen** und stellen Sie den Katalog als Daten unter Versionskontrolle.
 
-Das ganze Kapitel steht im Masterclass-Teil [Katalog, Konfigurator, Preise](../../masterclass/revenue-cloud/produktkatalog-konfigurator-preise/), und die Grenze zwischen SAP und Salesforce zu ziehen gehört zu meiner Arbeit in der [Salesforce-Architektur](../../leistungen/salesforce-architektur/).
-
-Ein guter Revenue-Cloud-Katalog beschreibt jede bestellbare Maschine mit einigen hundert Datensätzen, solange Varianten Attribute bleiben, bis das ERP etwas anderes sagt.
+Punkt 2 entscheidet über die Größe des Katalogs: Eine Variante, auf die keine der drei Prüffragen zutrifft, bleibt ein Attribut und bekommt keinen eigenen Produktdatensatz. Das ganze Kapitel steht im Masterclass-Teil [Katalog, Konfigurator, Preise](../../masterclass/revenue-cloud/produktkatalog-konfigurator-preise/), und die Grenze zwischen SAP und Salesforce zu ziehen gehört zu meiner Arbeit in der [Salesforce-Architektur](../../leistungen/salesforce-architektur/).

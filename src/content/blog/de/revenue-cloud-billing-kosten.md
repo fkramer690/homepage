@@ -10,7 +10,6 @@ categories: [revenue-cloud]
 contactBrief: licences
 tags: [Revenue Cloud Billing, Billing Events, Lizenzen, Preise, Order Form]
 takeaways:
-  - "Revenue Cloud Billing ist ein Add-on zu Revenue Cloud mit Preis auf Anfrage. Einen Preis pro Billing Event veröffentlicht Salesforce nicht."
   - "Laut Rate Sheet vom Februar 2026 wird je 50 Dollar Rechnungsbetrag ein Billing Event verbraucht, also 0,02 Events pro Dollar."
   - "Gezählt wird die Zwischensumme gebuchter Rechnungen ohne Steuer, aber mit Versand. Andere Währungen werden zum Tagesdurchschnittskurs in Dollar umgerechnet."
   - "Billing Events verfallen zum Vertragsende und werden nicht übertragen. Ein Kontingent, das auf das dritte Jahr ausgelegt ist, verfällt im ersten Jahr teilweise."
@@ -55,7 +54,7 @@ quelle: Revenue Cloud Billing Rate Sheet, Februar 2026
 
 Das Kontingent steht im Order Form, in der Tabelle Usage Details. Billing Events müssen bis zum Order End Date verbraucht werden, ein Übertrag ist ausgeschlossen. Das Rate Sheet sagt außerdem, dass sich Verbrauchstypen und Faktoren ändern können. Das ist dieselbe Logik wie bei [Flex Credits für Agentforce](../flex-credits-agentforce-kosten-pro-aktion/): Sie kaufen ein Kontingent für die Laufzeit, und was Sie nicht nutzen, verfällt.
 
-## Was zählt zum Rechnungsbetrag?
+## Gezählt wird die Zwischensumme ohne Steuer
 
 Die Definitionen im Rate Sheet sind kurz, und jedes Wort zählt:
 
@@ -74,7 +73,7 @@ Drei Fragen beantwortet das Rate Sheet nicht: ob Gutschriften den gezählten Bet
 
 Die Formel ist einfach: Zwischensumme der Rechnungen pro Jahr in Dollar, geteilt durch 50. Schwierig ist das Rechnungsvolumen.
 
-Ein typisches Szenario, als Annahme: Ein Maschinenbauer will Fernüberwachungs-Abos und Wartungsverträge aus Revenue Cloud Billing fakturieren, 18 Millionen Euro im Jahr ohne Steuer. Für die Schätzung nehme ich einen Kurs von 1,15 Dollar je Euro an. Das ist eine Annahme, keine Prognose.
+Rechenbeispiel: Ein Maschinenbauer will Fernüberwachungs-Abos und Wartungsverträge aus Revenue Cloud Billing fakturieren, 18 Millionen Euro im Jahr ohne Steuer. Für die Schätzung nehme ich einen Kurs von 1,15 Dollar je Euro an. Das ist eine Annahme, keine Prognose.
 
 | Umfang in Billing | Zwischensumme pro Jahr | In Dollar bei 1,15 | Billing Events pro Jahr |
 |---|---|---|---|
@@ -87,7 +86,7 @@ Zwei Effekte übersieht man leicht. Die Rechnungsfrequenz spielt kaum eine Rolle
 
 Den Preis pro Event liefert Ihr Angebot, denn Salesforce veröffentlicht ihn nicht. Multiplizieren Sie Ihre Event-Prognose mit diesem Preis und vergleichen Sie das Ergebnis mit den Kosten, denselben Umsatz aus SAP zu fakturieren, einschließlich der Schnittstelle, die Sie dann für Vertragsänderungen bräuchten.
 
-## Was sollte ins Order Form?
+## Staffel, Mehrverbrauch und Wechselkurs gehören ins Order Form
 
 Diese Punkte würde ich in die Verhandlung mitnehmen:
 
@@ -100,8 +99,6 @@ Diese Punkte würde ich in die Verhandlung mitnehmen:
 
 Solche Lizenzentscheidungen gehören in eine Lizenzprognose mit echten Zahlen, nicht in die letzte Woche vor der Unterschrift. Bei Nutzerlizenzen ist es genauso, beschrieben in [Braucht jeder eine volle Lizenz?](../salesforce-lizenzen-volle-lizenz/) und [Salesforce-Editionen Core, Advanced, Max](../salesforce-editionen-core-advanced-max/). Solche Prognosen erstelle ich im Rahmen von [Make-or-Buy und Lizenzen](../../leistungen/make-or-buy-lizenzen/).
 
-## Wer sollte die Prognose verantworten?
+## Erster Schritt: Finance übernimmt die Prognose
 
 Finance kennt die Rechnungsvolumen je Umsatzart, der Vertrieb das geplante Wachstum der Abos, und der Einkauf verhandelt. Ich würde die Zahl bei Finance verankern, weil Finance später auch das Nebenbuch und die Rechnungen sieht. Das Masterclass-Kapitel [Abrechnung und nutzungsbasierte Preise](../../masterclass/revenue-cloud/abrechnung-und-nutzungsbasierte-preise/) zeigt, wo Billing im übrigen Quote-to-Cash-Prozess steht.
-
-Revenue Cloud Billing kostet ein Billing Event je 50 Dollar Rechnungsbetrag, also entscheiden Sie zuerst, was Sie in Salesforce fakturieren, und verhandeln Sie dann den Preis.

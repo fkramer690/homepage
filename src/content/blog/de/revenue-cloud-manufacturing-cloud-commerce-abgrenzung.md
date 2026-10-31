@@ -9,11 +9,10 @@ topic: revenue
 categories: [revenue-cloud, manufacturing-cloud, b2b-commerce]
 tags: [Revenue Cloud, Manufacturing Cloud, B2B Commerce, Angebote, Architektur, Fertigung]
 takeaways:
-  - "Revenue Cloud bepreist und verkauft konfigurierte Angebote, vom Katalog und Konfigurator über Angebot und Auftrag bis zur Abrechnung. Unter den dreien ist es das Angebotssystem."
-  - "Manufacturing Cloud verfolgt das Seriengeschäft: Sales Agreements mit Plan gegen Ist, Account Forecasts und Händlerboni. Konfigurierte Angebote gehören in Revenue Cloud."
-  - "B2B Commerce lässt Händler und Kunden bekannte Artikel wie Ersatzteile und Verbrauchsmaterial selbst bestellen, in einem Shop mit Käufergruppen, Preisbüchern, Warenkorb und Checkout."
-  - "Die drei überschneiden sich bei Katalog, Preis und Angebot. Manufacturing Cloud und B2B Commerce können Katalog und Preislogik von Revenue Cloud nutzen, aber nur, wenn Sie sich auf ein Modell festlegen."
-  - "Zwei Angebotsmodelle oder zwei Angebotsagenten für dieselben Produkte führen zu zwei Preisen für dieselbe Maschine. Legen Sie pro Prozessschritt fest, welches Produkt führt."
+  - "Revenue Cloud ist unter den dreien das Angebotssystem, vom Konfigurator über Angebot und Auftrag bis zur Abrechnung."
+  - "Manufacturing Cloud verfolgt das Seriengeschäft mit Sales Agreements, Account Forecasts und Händlerboni. Konfigurierte Angebote gehören nicht hinein."
+  - "B2B Commerce lässt Händler und Kunden bekannte Artikel wie Ersatzteile und Verbrauchsmaterial selbst bestellen."
+  - "Zwei Angebotsmodelle für dieselben Produkte ergeben zwei Preise für dieselbe Maschine. Legen Sie pro Prozessschritt fest, welches Produkt führt."
 faq:
   - q: "Was ist der Unterschied zwischen Revenue Cloud und Manufacturing Cloud?"
     a: "Revenue Cloud konfiguriert, bepreist und bietet Produkte an und führt das Geschäft über Auftrag und Abrechnung weiter. Manufacturing Cloud plant und misst wiederkehrendes Geschäft mit Sales Agreements, Account Forecasts und Boni. Ein Angebot aus Revenue Cloud kann der Ausgangspunkt für ein Sales Agreement in Manufacturing Cloud sein."
@@ -65,7 +64,7 @@ Zwei Zeilen brauchen einen Kommentar. Aus einem konfigurierten Angebot kann ein 
 
 Die Rechnungszeile ist eine eigene Entscheidung, die ich in [Revenue Cloud und SAP: Wer führt was im Quote-to-Cash?](../revenue-cloud-sap-quote-to-cash-aufteilung/) beschreibe.
 
-## Was sollten Sie vermeiden?
+## Vier Konstellationen, die ich im Design-Review stoppe
 
 Vier Konstellationen würde ich in keinem Design-Review durchgehen lassen:
 
@@ -74,7 +73,7 @@ Vier Konstellationen würde ich in keinem Design-Review durchgehen lassen:
 3. **Zwei Angebotsmodelle.** Händler bieten auf Standardangeboten mit Preisbüchern in Manufacturing Cloud an, der Innendienst in Revenue Cloud. Berichte, Freigaben und die Übergabe an das ERP gibt es dann doppelt.
 4. **Zwei Angebotsagenten** auf diesen beiden Angebotsmodellen. Jeder Agent braucht eigene Tests, Leitplanken und ein eigenes Verbrauchsbudget, und ihre Antworten können sich widersprechen.
 
-## Ein typisches Szenario, als Annahme
+## Rechenbeispiel: Kompressorenhersteller mit 200 Händlern
 
 Ein Hersteller von Industriekompressoren verkauft konfigurierte Maschinen über einen Innendienst und 200 Händler. Händler bestellen Filter und Ersatzteile per E-Mail nach. Zehn Großkunden haben Jahresmengenverträge, und Händler bekommen einen Jahresbonus, der in Tabellen berechnet wird.
 
@@ -91,8 +90,6 @@ Manufacturing Cloud
 
 Die Reihenfolge ist weniger wichtig als die Regel dahinter: Das zweite Produkt nutzt Katalog und Preismaster des ersten.
 
-## Wo starten Sie?
+## Erster Schritt: den teuersten Schritt im Vertriebsprozess markieren
 
 Schreiben Sie Ihren Vertriebsprozess in Schritten auf, von der Anfrage bis zur Nachbestellung, und markieren Sie den Schritt, der heute am meisten Zeit oder Geld kostet. Prüfen Sie dann für diesen Schritt die Überschneidungen: welcher Katalog, welcher Preismaster, welches Angebotsmodell. Das Masterclass-Kapitel [Revenue Cloud: Überblick und Entscheidung](../../masterclass/revenue-cloud/revenue-cloud-ueberblick/) hilft bei der ersten Produktentscheidung, und die Produktgrenzen gehören in das Decision Log Ihrer [Salesforce-Architektur](../../leistungen/salesforce-architektur/).
-
-Revenue Cloud verkauft, Manufacturing Cloud misst, B2B Commerce lässt Händler bestellen, und jeder Schritt braucht genau eines davon als Verantwortlichen.
