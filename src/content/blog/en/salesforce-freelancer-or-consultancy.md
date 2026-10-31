@@ -10,11 +10,11 @@ categories: [architecture]
 contactBrief: partner-governance
 tags: [Freelancer, Consultancy, Implementation partner, Partner governance, Salesforce architect]
 takeaways:
-  - "A Salesforce consultancy or implementation partner provides delivery capacity: a team that builds, tests and runs. A single freelancer does not replace that team."
-  - "An independent Salesforce architect on the client side pays off when decisions, standards and the steering of several partners should stay with the client, not with the partner who earns from them."
-  - "The warnings against Salesforce freelancers are right for one role: the freelancer as a cheaper substitute for a development team. The architect role on the client side raises different questions."
-  - "In larger programmes both work together. In my largest programme 5 partners built with more than 30 developers in 8 streams, and the standards for it came from the client side."
-  - "The biggest risk of a freelancer is that he drops out. A decision log, documented standards and an internal colleague who can take over the role keep that risk small."
+  - "A consultancy provides delivery capacity, a team that builds, tests and runs, and a single freelancer does not replace that team."
+  - "An independent architect on the client side pays off when decisions and standards should stay with the client, not with the partner who earns from them."
+  - "The warnings against freelancers are right for the freelancer as a cheaper substitute for a development team, not for the architect role."
+  - "In my largest programme 5 partners built with more than 30 developers in 8 streams, and the standards came from the client side."
+  - "A decision log, documented standards and an internal colleague as a stand-in keep the risk of a freelancer dropping out small."
 faq:
   - q: "Is a Salesforce freelancer cheaper than a consultancy?"
     a: "Per day often yes, because the consultancy's sales, overhead and margin fall away. The real question is which role you fill. For a whole delivery team a consultancy is almost always the better choice, for the architect role on the client side an independent architect."
@@ -27,7 +27,7 @@ faq:
 draft: false
 ---
 
-Whether you hire a Salesforce freelancer or a consultancy depends on the role you want to fill. If you need a team that builds, tests and runs an implementation, a consultancy or implementation partner is the right choice. A single Salesforce freelancer does not replace that team. If architecture decisions, standards and the steering of several partners should stay with you, an independent architect on the client side fits better than any partner, because he does not earn from the delivery. In larger programmes at manufacturers, both work together.
+Whether you hire a Salesforce freelancer or a consultancy depends on the role you want to fill. If you need a team that builds, tests and runs an implementation, a consultancy or implementation partner is the right choice. A single Salesforce freelancer does not replace that team. If architecture decisions, standards and the steering of several partners should stay with you, the right fit is an independent architect on the client side, because he does not earn from the delivery. In larger programmes at manufacturers, both work together.
 
 ## What speaks against a Salesforce freelancer?
 
@@ -77,7 +77,7 @@ Typical situations in which I am called in:
 - **Securing quality the client cannot check alone.** An architect on the client side reads along before anything goes to production. Why that is a must in enterprise projects is in [pull request reviews](../why-pull-request-reviews-are-a-must-in-enterprise-projects/).
 - **Keeping tools and knowledge with the client.** Repository, pipeline and decisions belong to the client, so a change of partner stays possible. I describe this in detail in [why clients should own their DevOps tools](../why-clients-should-own-their-devops-tools/).
 
-## How do the architect and the partners work together?
+## The architect and the partners have separate roles
 
 In most programmes I work in, there are both: partners who build, and me on the client side. The roles are clearly split.
 
@@ -95,7 +95,7 @@ In my largest programme 5 implementation partners built on the same org with mor
 
 No single partner could have taken this role without setting the rules for its competitors. And no freelancer could have done the work of the 30 developers. What the board around it looks like is in [Salesforce Center of Excellence: cadence and format](../salesforce-center-of-excellence-cadence/).
 
-## How do you check an independent Salesforce architect?
+## These questions help you check an independent architect
 
 If you are looking for an architect for your side of the table, other questions help than for a developer:
 
@@ -105,8 +105,6 @@ If you are looking for an architect for your side of the table, other questions 
 - **How does he handle dropping out?** Cover by colleagues does not exist with a freelancer. What must exist: documented standards, a decision log and an internal colleague who can take over reviews and calls. In one programme every pull request went across my desk at first, and once the process was stable I handed it over to an internal colleague.
 - **Who is the contracting party?** With me it is FK Solution Design GmbH, billed monthly by effort. Many clients hire through a staffing agency, which works as well.
 
-## Where should you start?
+## First step: write down which role is missing
 
 First write down which role is missing: capacity that builds, or control that decides. If capacity is missing, look for a partner, and no freelancer portal solves that. If control is missing, because a partner checks its own work or several partners build by their own rules, get an architect on your side before the next tender goes out. How I fill this role is on the page [Freelance Salesforce Architect](../../freelance-salesforce-architect/) and under [partner governance](../../services/partner-governance/).
-
-An independent architect does not replace your partners, he makes sure they build by your rules.

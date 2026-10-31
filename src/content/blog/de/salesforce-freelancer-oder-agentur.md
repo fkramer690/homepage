@@ -10,11 +10,11 @@ categories: [architecture]
 contactBrief: partner-governance
 tags: [Freelancer, Agentur, Implementierungspartner, Partnersteuerung, Salesforce Architekt]
 takeaways:
-  - "Eine Salesforce-Agentur oder ein Implementierungspartner liefert Umsetzungskapazität: ein Team, das baut, testet und betreibt. Ein einzelner Freelancer ersetzt dieses Team nicht."
-  - "Ein freiberuflicher Salesforce-Architekt auf Kundenseite lohnt sich, wenn Entscheidungen, Standards und die Steuerung mehrerer Partner beim Kunden liegen sollen und nicht bei dem Partner, der davon lebt."
-  - "Die Warnungen vor Salesforce-Freelancern stimmen für eine Rolle: den Freelancer als günstigeren Ersatz für ein Entwicklerteam. Für die Architektenrolle auf Kundenseite gelten andere Fragen."
-  - "In größeren Programmen arbeiten beide zusammen. In meinem größten Programm haben 5 Partner mit über 30 Entwicklern in 8 Streams gebaut, die Standards dafür kamen von der Kundenseite."
-  - "Das größte Risiko eines Freelancers ist, dass er ausfällt. Dagegen helfen ein Entscheidungslog, dokumentierte Standards und ein interner Kollege, der die Rolle übernehmen kann."
+  - "Eine Agentur liefert Umsetzungskapazität, also ein Team, das baut, testet und betreibt, und ein einzelner Freelancer ersetzt dieses Team nicht."
+  - "Ein freiberuflicher Architekt auf Kundenseite lohnt sich, wenn Entscheidungen und Standards beim Kunden liegen sollen und nicht beim Partner, der davon lebt."
+  - "Die Warnungen vor Freelancern stimmen für den Freelancer als günstigeren Ersatz für ein Entwicklerteam, nicht für die Architektenrolle."
+  - "In meinem größten Programm bauten 5 Partner mit über 30 Entwicklern in 8 Streams, die Standards dafür kamen von der Kundenseite."
+  - "Gegen das Ausfallrisiko eines Freelancers helfen ein Entscheidungslog, dokumentierte Standards und ein interner Kollege als Vertretung."
 faq:
   - q: "Ist ein Salesforce-Freelancer günstiger als eine Agentur?"
     a: "Pro Tag oft ja, weil Vertrieb, Overhead und Marge einer Agentur wegfallen. Die Frage ist aber, welche Rolle Sie besetzen. Für ein ganzes Umsetzungsteam ist eine Agentur fast immer die bessere Wahl, für die Architektenrolle auf Kundenseite ein unabhängiger Architekt."
@@ -27,7 +27,7 @@ faq:
 draft: false
 ---
 
-Ob Sie für Salesforce einen Freelancer oder eine Agentur beauftragen, hängt an der Rolle, die Sie besetzen wollen. Brauchen Sie ein Team, das eine Einführung baut, testet und betreibt, ist eine Agentur oder ein Implementierungspartner die richtige Wahl. Ein einzelner Salesforce-Freelancer ersetzt dieses Team nicht. Sollen dagegen Architekturentscheidungen, Standards und die Steuerung mehrerer Partner beim Kunden liegen, passt ein freiberuflicher Architekt auf Kundenseite besser als jeder Partner, weil er nicht an der Umsetzung verdient. In größeren Programmen von Herstellern arbeiten beide zusammen.
+Ob Sie für Salesforce einen Freelancer oder eine Agentur beauftragen, hängt an der Rolle, die Sie besetzen wollen. Brauchen Sie ein Team, das eine Einführung baut, testet und betreibt, ist eine Agentur oder ein Implementierungspartner die richtige Wahl. Ein einzelner Salesforce-Freelancer ersetzt dieses Team nicht. Sollen dagegen Architekturentscheidungen, Standards und die Steuerung mehrerer Partner beim Kunden liegen, passt ein freiberuflicher Architekt auf Kundenseite, weil er nicht an der Umsetzung verdient. In größeren Programmen von Herstellern arbeiten beide zusammen.
 
 ## Was spricht gegen einen Salesforce-Freelancer?
 
@@ -77,7 +77,7 @@ Typische Situationen, in denen ich gerufen werde:
 - **Qualität sichern, die der Kunde nicht selbst prüfen kann.** Ein Architekt auf Kundenseite liest mit, bevor etwas in Produktion geht. Warum das in Enterprise-Projekten Pflicht ist, steht in [Pull-Request-Reviews](../warum-pull-request-reviews-pflicht-sind/).
 - **Werkzeuge und Wissen beim Kunden halten.** Repository, Pipeline und Entscheidungen gehören dem Kunden, damit ein Partnerwechsel möglich bleibt. Das beschreibe ich ausführlich in [warum Kunden ihre DevOps-Tools selbst besitzen sollten](../warum-kunden-devops-tools-selbst-besitzen-sollten/).
 
-## Wie sieht die Zusammenarbeit von Architekt und Partnern aus?
+## Architekt und Partner haben getrennte Rollen
 
 In den meisten Programmen, in denen ich arbeite, gibt es beides: Partner, die bauen, und mich auf Kundenseite. Die Rollen sind klar getrennt.
 
@@ -95,7 +95,7 @@ In meinem größten Programm haben 5 Implementierungspartner mit über 30 Entwic
 
 Kein einzelner Partner hätte diese Rolle übernehmen können, ohne Regeln für seine Wettbewerber festzulegen. Und kein Freelancer hätte die Arbeit der 30 Entwickler leisten können. Wie das Gremium dazu aussieht, steht in [Salesforce Center of Excellence: Format und Rhythmus](../salesforce-center-of-excellence-format/).
 
-## Wie prüfen Sie einen freiberuflichen Salesforce-Architekten?
+## Mit diesen Fragen prüfen Sie einen freiberuflichen Architekten
 
 Wenn Sie einen Architekten für Ihre Seite des Tisches suchen, helfen andere Fragen als bei einem Entwickler:
 
@@ -105,8 +105,6 @@ Wenn Sie einen Architekten für Ihre Seite des Tisches suchen, helfen andere Fra
 - **Wie regelt er Ausfälle?** Eine Vertretung durch Kollegen gibt es bei einem Freelancer nicht. Was es geben muss: dokumentierte Standards, ein Entscheidungslog und einen internen Kollegen, der Reviews und Calls übernehmen kann. In einem Programm lief anfangs jeder Pull Request über meinen Schreibtisch, als der Prozess stabil lief, habe ich ihn an einen internen Kollegen übergeben.
 - **Wer ist Vertragspartner?** Bei mir ist das die FK Solution Design GmbH, abgerechnet wird monatlich nach Aufwand. Viele Kunden beauftragen über einen Personaldienstleister, auch das ist möglich.
 
-## Wo sollten Sie anfangen?
+## Erster Schritt: aufschreiben, welche Rolle fehlt
 
 Schreiben Sie zuerst auf, welche Rolle fehlt: Kapazität, die baut, oder Kontrolle, die entscheidet. Fehlt Kapazität, suchen Sie einen Partner, und kein Freelancer-Portal löst das Problem. Fehlt Kontrolle, weil ein Partner seine eigene Arbeit prüft oder mehrere Partner nach eigenen Regeln bauen, holen Sie sich einen Architekten auf Ihre Seite, bevor die nächste Ausschreibung rausgeht. Wie ich diese Rolle ausfülle, steht auf der Seite [Freiberuflicher Salesforce Architect](../../freiberuflicher-salesforce-architect/) und unter [Partnersteuerung](../../leistungen/partnersteuerung/).
-
-Ein freiberuflicher Architekt ersetzt keinen Partner, er sorgt dafür, dass Ihre Partner nach Ihren Regeln bauen.

@@ -10,11 +10,10 @@ categories: [architecture]
 contactBrief: partner-governance
 tags: [Center of Excellence, CoE, Partnersteuerung, Governance, Object Ownership Matrix]
 takeaways:
-  - "Ein Salesforce Center of Excellence (CoE) ist das Gremium beim Kunden, das Standards festlegt und anstehende Änderungen über alle Teams und Partner abstimmt."
-  - "Für den Anfang reichen zwei Termine: ein technischer Call alle zwei Wochen für Änderungen und Randfälle und ein monatlicher Termin für Roadmap und Prioritäten."
-  - "Das CoE gehört dem Kunden. Partner nehmen teil, aber Vorsitz und Entscheidungen liegen beim Kunden, sonst legt ein Partner die Regeln für seine Wettbewerber fest."
-  - "Ein CoE-Call wirkt, wenn Streams Änderungen an gemeinsamen Objekten vorstellen, bevor sie bauen. In meinem größten Programm sind die Randfälle dadurch fast verschwunden."
-  - "Ein CoE ohne Durchsetzung bleibt eine Gesprächsrunde. Seine Entscheidungen müssen im Pull-Request-Review und in der Pipeline ankommen."
+  - "Für den Anfang reichen ein technischer Call alle zwei Wochen für Änderungen und Randfälle und ein monatlicher Termin für Roadmap und Prioritäten."
+  - "Vorsitz und Entscheidungen liegen beim Kunden, sonst legt ein Partner die Regeln für seine Wettbewerber fest."
+  - "Streams stellen Änderungen an gemeinsamen Objekten vor, bevor sie bauen; in meinem größten Programm sind die Randfälle dadurch fast verschwunden."
+  - "Die Entscheidungen des CoE müssen im Pull-Request-Review und in der Pipeline ankommen, sonst bleibt es eine Gesprächsrunde."
 faq:
   - q: "Was ist ein Salesforce Center of Excellence?"
     a: "Ein Team aus verschiedenen Bereichen des Unternehmens, das Standards, Roadmap und Befähigung für die Salesforce-Plattform verantwortet. Salesforce beschreibt es als Lenkungskreis und Wissenszentrum für alle Salesforce-Initiativen."
@@ -59,7 +58,7 @@ Trailhead empfiehlt einen [wöchentlichen Rhythmus für operative und technische
 
 Der Roadmap-Termin ist auch der Ort für Budgetfragen, die mehrere Bereiche betreffen. Ein Beispiel ist das Kontingent für Agentforce, das ich in [Digital Wallet: Agentforce-Kostenkontrolle für Werke](../digital-wallet-agentforce-kostenkontrolle/) beschreibe: Jemand im CoE muss den Pool beobachten und die Verrechnung an Werke und Töchter führen.
 
-## Wie läuft ein technischer CoE-Call ab?
+## Der technische Call folgt immer derselben Agenda
 
 Der technische Call ist der Teil, der den Unterschied macht. Damit er kein Statusmeeting wird, reichen die Streams ihre Themen vorher ein, und die Agenda geht vor dem Termin an alle Teilnehmer. So kann sich der verantwortliche Stream vorbereiten, statt im Call spontan zu entscheiden. Die Agenda folgt immer derselben Reihenfolge:
 
@@ -73,7 +72,7 @@ Neben der Agenda pflege ich einen Backlog mit CoE-Themen, die nicht dringend sin
 
 Wichtig ist auch, wer entscheidet. Die Frage gehört dem Stream, der das Objekt verantwortet. Können sich zwei Streams nicht einigen, entscheidet der Architekt auf Kundenseite. Ein CoE, das jede Frage per Abstimmung klärt, wird langsam und politisch.
 
-## Was hat ein CoE in meinem Programm mit acht Streams gebracht?
+## In meinem Programm mit acht Streams verschwanden die Randfälle fast
 
 Das größte Programm, das ich gesteuert habe, hatte mehr als 30 Entwickler in acht Streams, geliefert von fünf Umsetzungspartnern und internen Teams. Zu Beginn war nicht festgelegt, welches Team für welche Objekte und Metadaten verantwortlich war. Änderungen überschrieben sich gegenseitig.
 
@@ -104,7 +103,7 @@ contra: Was Sie dafür in Kauf nehmen
 
 Hat ein Konzern mehrere Orgs, etwa eine pro Tochtergesellschaft, passt das hybride Modell besser. Dann setzt das CoE die gemeinsamen Regeln, und jede Org setzt sie mit ihrem eigenen Team durch.
 
-## Wo sollten Sie anfangen?
+## Erster Schritt: Sponsor und CoE-Lead benennen
 
 Ein CoE muss keine neue Abteilung sein. Diese Reihenfolge empfehle ich:
 
@@ -122,5 +121,3 @@ Monatlichen Roadmap-Termin ergänzen | CoE-Lead und Fachbereiche
 ```
 
 Wie sich neue Regeln im Alltag verankern lassen, beschreibe ich unter [Change Management Beratung für Salesforce](../../leistungen/change-management/), und wie der Call Standards bei Partnern hält, in [Reinforcement: Standards bei Partnern verankern](../standards-partner-verankern-reinforcement/). Den Rahmen für mehrere Partner insgesamt finden Sie unter [Partnersteuerung](../../leistungen/partnersteuerung/).
-
-Ein Center of Excellence wirkt, wenn es klein anfängt, dem Kunden gehört und seine Entscheidungen im Review ankommen.

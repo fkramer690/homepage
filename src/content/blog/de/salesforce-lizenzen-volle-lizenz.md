@@ -10,9 +10,9 @@ categories: [architecture]
 contactBrief: licences
 tags: [Lizenzen, Make-or-buy, Business Case, Platform, Experience Cloud]
 takeaways:
-  - "Nicht jeder Salesforce-Nutzer braucht eine volle Lizenz. Wer nur liest, freigibt oder in einem engen eigenen Prozess arbeitet, kommt oft mit einer Platform-Lizenz aus."
-  - "Laut Preisliste kostet Sales Cloud Core 195 € pro Nutzer und Monat, Platform Starter 25 €. Bei 100 Nutzern, die nur lesen und freigeben, sind das 204.000 € Unterschied pro Jahr."
-  - "Platform-Lizenzen haben harte Grenzen: keine Opportunities, wenige Custom Objects, und Standardfunktionen dürfen nicht mit eigener Entwicklung nachgebaut werden, um Lizenzen zu sparen."
+  - "Wer nur liest, freigibt oder in einem engen eigenen Prozess arbeitet, kommt oft mit einer Platform-Lizenz aus."
+  - "Sales Cloud Core kostet 195 € pro Nutzer und Monat, Platform Starter 25 €, bei 100 Nutzern sind das 204.000 € Unterschied im Jahr."
+  - "Platform-Lizenzen erlauben keine Opportunities und wenige Custom Objects, und Standardfunktionen dürfen nicht nachgebaut werden, um Lizenzen zu sparen."
   - "Externe Nutzer wie Händler und Kunden brauchen keine internen Lizenzen. Portallizenzen gibt es ab 4 € pro Login oder 10 € pro Mitglied."
   - "Eine Lizenzprognose gruppiert Nutzer nach dem, was sie im System tatsächlich tun, und gehört vor die Verhandlung, nicht danach."
 faq:
@@ -72,7 +72,7 @@ quelle: Salesforce-Preisseiten für Sales Cloud und Platform, Listenpreise Stand
 
 Bei externen Nutzern ist der Fehler noch teurer. Händler oder Kunden, die mit internen Lizenzen arbeiten, weil ein Portal „später“ kommen sollte, kosten ein Vielfaches einer Portallizenz. Käufer, die in einem B2B-Shop bestellen, brauchen einen eigenen Lizenztyp, siehe [B2B Commerce Lizenzen für Käufer: Wer braucht welche?](../b2b-commerce-lizenzen-kaeufer/).
 
-## Was können Platform-Lizenzen nicht?
+## Keine Opportunities, wenige Custom Objects: die Grenzen der Platform-Lizenz
 
 Platform-Lizenzen haben harte Grenzen, und wer sie ignoriert, verletzt den Vertrag:
 
@@ -84,7 +84,7 @@ Platform-Lizenzen haben harte Grenzen, und wer sie ignoriert, verletzt den Vertr
 
 Deshalb gehört die Lizenzfrage in die Architektur. Ob ein Freigabeprozess auf Platform-Lizenzen läuft, hängt davon ab, welche Objekte er berührt. Wer den Prozess auf Opportunities baut, hat die Lizenzentscheidung damit schon getroffen.
 
-## Wie erstelle ich eine Lizenzprognose?
+## So erstelle ich eine Lizenzprognose
 
 Eine Lizenzprognose beantwortet, welche Lizenztypen ein Unternehmen in welcher Menge braucht, heute und in den nächsten Jahren. Ich gehe dabei so vor:
 
@@ -109,8 +109,8 @@ Sparen um jeden Preis ist auch falsch. Eine volle Lizenz ist richtig, wenn ein N
 
 Dieselbe Abwägung gilt bei Industry Clouds. Wann sich zum Beispiel die Manufacturing Cloud gegenüber Sales Cloud lohnt, ist eine eigene Make-or-buy-Frage, die ich unter [Make-or-buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/) beschreibe. Bei KI-Funktionen kommen Verbrauchs-Credits dazu, und dort zählt zuerst der Nutzen, wie in [Agentforce: Business Value und Datenqualität zuerst](../agentforce-business-value-datenqualitaet/) beschrieben.
 
-## Wo sollten Sie anfangen?
+## Erster Schritt: prüfen, wer im letzten Quartal Opportunities oder Fälle bearbeitet hat
 
 Liegt eine Verlängerung oder ein neues Angebot an, nehmen Sie sich eine Stunde für drei Fragen: Wie viele Nutzer mit voller Lizenz haben im letzten Quartal eine Opportunity oder einen Fall bearbeitet? Welche externen Nutzer arbeiten heute mit internen Lizenzen? Welche Schnittstellen laufen über einen Benutzer mit voller Lizenz?
 
-Die Antworten zeigen, wie viel Spielraum im Angebot steckt. Die volle Lizenz für alle ist die bequemste Lösung, selten die günstigste.
+Die Antworten zeigen, wie viel Spielraum im Angebot steckt. Für die erste Frage reicht ein Bericht über Opportunities und Fälle, gruppiert nach „Zuletzt geändert von“, den Sie neben die Liste der aktiven Nutzer legen.

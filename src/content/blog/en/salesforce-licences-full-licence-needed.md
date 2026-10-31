@@ -10,9 +10,9 @@ categories: [architecture]
 contactBrief: licences
 tags: [licences, make-or-buy, business case, platform, experience cloud]
 takeaways:
-  - "Not every Salesforce user needs a full licence. Users who only read, approve or work in one narrow custom process can often use a Platform licence."
-  - "At list price, Sales Cloud Core costs $195 per user and month and Platform Starter $25. For 100 users who only read and approve, that is a difference of $204,000 per year."
-  - "Platform licences have hard limits: no opportunities, few custom objects, and standard features must not be rebuilt with custom development to save licences."
+  - "Users who only read, approve or work in one narrow custom process can often use a Platform licence."
+  - "Sales Cloud Core costs $195 per user and month and Platform Starter $25, so for 100 users the difference is $204,000 a year."
+  - "Platform licences allow no opportunities and few custom objects, and standard features must not be rebuilt with custom development to save licences."
   - "External users such as dealers and customers do not need internal licences. Portal licences start at $4 per login or $10 per member."
   - "A licence forecast groups users by what they actually do in the system, and it belongs before the negotiation, not after it."
 faq:
@@ -72,7 +72,7 @@ source: Salesforce pricing pages for Sales Cloud and Platform, list prices Octob
 
 With external users the mistake costs even more. Dealers or customers working on internal licences because a portal was supposed to come "later" cost many times a portal licence. Buyers who order in a B2B store need their own licence type, covered in [B2B Commerce buyer licences: who needs which one?](../b2b-commerce-buyer-licences/).
 
-## What can't Platform licences do?
+## No opportunities, few custom objects: the limits of a Platform licence
 
 Platform licences have hard limits, and ignoring them breaks the contract:
 
@@ -84,7 +84,7 @@ Special licences have similar limits. According to the pricing page, Field Servi
 
 That is why the licence question belongs in the architecture. Whether an approval process can run on Platform licences depends on which objects it touches. If you build the process on opportunities, you have already made the licence decision.
 
-## How do I build a licence forecast?
+## How I build a licence forecast
 
 A licence forecast answers which licence types a company needs and how many, today and in the coming years. This is how I approach it:
 
@@ -109,8 +109,8 @@ Saving at any cost is wrong too. A full licence is right when a user works on le
 
 The same trade-off applies to industry clouds. When Manufacturing Cloud pays off compared to Sales Cloud, for example, is its own make-or-buy question, which I describe under [make-or-buy and licence forecasts](../../services/make-or-buy-licences/). AI features add consumption credits, and there the business value comes first, as described in [Agentforce: business value and data quality first](../agentforce-business-value-data-quality-first/).
 
-## Where should you start?
+## First step: check who edited opportunities or cases last quarter
 
 If a renewal or a new quote is coming up, take one hour for three questions: how many users with a full licence edited an opportunity or a case last quarter? Which external users work on internal licences today? Which interfaces run through a user with a full licence?
 
-The answers show how much room the quote leaves. A full licence for everyone is the most convenient solution and rarely the cheapest.
+The answers show how much room the quote leaves. For the first question, a report on opportunities and cases grouped by "Last Modified By", set next to the list of active users, is enough.

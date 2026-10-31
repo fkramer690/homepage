@@ -13,7 +13,7 @@ takeaways:
   - "Bei Claude Code unter kommerziellen Bedingungen trainiert Anthropic nicht mit Ihrem Code, bei Free, Pro und Max entscheidet eine Nutzereinstellung."
   - "Vollständig von KI erzeugter Code ist laut CMS nach deutschem Recht gemeinfrei, eine Klausel zur Rechteübertragung überträgt dann weniger, als sie verspricht."
   - "Die Urheberrechts-Freistellung eines Modellanbieters schützt dessen eigenen Kunden, also den Partner, nicht den Hersteller, der den Code bekommt."
-  - "Veracode misst für ungeprüften KI-Code eine Passrate von 56 Prozent, für Java 30 Prozent, deshalb gehören Review und Pipeline-Prüfung in den Vertrag."
+  - "Veracode misst für ungeprüften KI-Code 56 Prozent Sicherheits-Passrate, für Java 30 Prozent, deshalb gehören Review und Pipeline-Prüfung in den Vertrag."
 faq:
   - q: "Kann ich meinem Salesforce-Partner KI-Coding-Tools verbieten?"
     a: "Können Sie, ich würde es aber nicht tun. Ein Verbot lässt sich kaum prüfen und kostet Tempo. Lassen Sie den Partner Tools und Modellwege offenlegen, begrenzen Sie, welche Daten das Modell sieht, und verlangen Sie dasselbe Review für jede Zeile."

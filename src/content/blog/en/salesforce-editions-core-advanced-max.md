@@ -10,11 +10,11 @@ categories: [architecture, ai]
 contactBrief: licences
 tags: [licences, editions, flex credits, agentforce, make-or-buy, manufacturing]
 takeaways:
-  - "Since 3 September 2026 Salesforce sells Sales and Service Cloud as Core, Advanced and Max at $195, $395 and $550 per user and month; pricing on legacy editions stays unchanged for existing customers."
-  - "The pricing pages list the included Flex Credits per org and year: 500,000 in Core, 1 million in Advanced and 2.75 million in Max, worth $2,500, $5,000 and $13,750 at list price."
-  - "One dealer service agent with 1,500 enquiries a month and three actions each uses 1.08 million credits a year, more than the Advanced pool before prompts, tests and Data 360."
-  - "Moving 200 users from Core to Advanced costs $480,000 a year at list price for 500,000 extra credits worth $2,500, so choose the edition by features and buy missing credits separately."
-  - "New pricing for the Industries editions, which matters for Manufacturing Cloud, was still unpublished on 27 October 2026, and Field Service is still sold in its own licence model."
+  - "Core, Advanced and Max cost $195, $395 and $550 per user and month, and existing customers keep the pricing of their legacy editions."
+  - "The pools hold 500,000, 1 million and 2.75 million Flex Credits per org and year, worth $2,500, $5,000 and $13,750 at list price."
+  - "One dealer service agent with 1,500 enquiries a month and three actions each uses 1.08 million credits a year, more than the Advanced pool."
+  - "Moving 200 users from Core to Advanced costs $480,000 a year more for credits worth $2,500, so choose the edition by features."
+  - "Industries edition pricing for Manufacturing Cloud was still open on 27 October 2026, and Field Service keeps its own licence model."
 faq:
   - q: "Do existing Salesforce customers have to move to Core, Advanced or Max?"
     a: "No. Salesforce says existing customer pricing on legacy editions remains unchanged. Whether Enterprise and Unlimited will still be offered at every renewal is not confirmed, so ask your account executive before the renewal talks start."
@@ -49,7 +49,7 @@ For existing customers Salesforce writes that "existing customer pricing on lega
 
 The edition question only concerns users who need a full CRM licence. Readers, approvers and dealers often do not, as described in [does everyone need a full licence](../salesforce-licences-full-licence-needed/). I would settle that first, because every user on a Platform or portal licence is one you do not pay Core or Max for.
 
-## How far does a Flex Credit pool go?
+## A Flex Credit pool covers 25,000 to 137,500 actions a year
 
 According to the [Flex Credits rate card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf), a standard or custom action costs 20 credits in production. That turns the pools into actions:
 
@@ -66,7 +66,7 @@ These are upper limits, because the rate card bills more than actions in Flex Cr
 
 Two contract details matter. Credits must be used before the order end date and do not roll over. And the pricing pages state the pool per org, independent of seats: as listed, an org with 30 users gets the same 500,000 credits as one with 3,000. If you run separate orgs for sales and service or for regions, ask how the pool is allocated. How to estimate consumption per action is in [Flex Credits and Agentforce cost per action](../flex-credits-agentforce-cost-per-action/).
 
-## A typical scenario: 200 users and one dealer agent
+## Worked example: 200 users and one dealer agent
 
 Assume a machine builder with SAP, 120 Sales Cloud users and 80 Service Cloud users on Enterprise Edition, with the renewal due in spring 2027. All numbers are assumptions to show the method. The company plans one agent that answers dealer enquiries about order status, delivery dates and spare part availability.
 
@@ -116,7 +116,7 @@ contra: What the credits do not make up for
 
 If only a small group of power users needs AI features, ask whether that group can be licensed on its own instead of lifting all 200 users. These trade-offs are the core of my [make-or-buy and licence planning](../../services/make-or-buy-licences/).
 
-## What should you check before the renewal?
+## First step: clean up the user base before the renewal
 
 1. **Clean up the user base.** Decide who needs a full licence at all before you compare editions.
 2. **List features per user group** that exist only in Advanced or Max, and today's add-ons an edition would replace.
@@ -124,5 +124,3 @@ If only a small group of power users needs AI features, ask whether that group c
 4. **Get three answers in writing:** pool per org and year, allocation across several orgs, and what happens to unused credits at the order end date.
 5. **Set up monitoring.** [Digital Wallet](https://www.salesforce.com/agentforce/digital-wallet/) shows consumption by agent, action and channel and sends alerts at thresholds; it requires Data 360.
 6. **For Manufacturing Cloud,** wait for the Industries pricing or secure the right to switch.
-
-Choose the edition by the features your teams use and treat Flex Credits as a separate, measured budget line.

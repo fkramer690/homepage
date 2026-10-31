@@ -9,8 +9,8 @@ topic: security
 categories: [architecture, devops]
 tags: [permission concept, permission sets, security, partner governance]
 takeaways:
-  - "A Salesforce permission concept has two layers: what a user may do (objects, fields, functions) and which records they see (sharing)."
-  - "Profiles keep their permissions for now, but Salesforce only develops permission sets and permission set groups further. New permissions belong there."
+  - "Profiles keep their permissions for now, but new permissions belong in permission sets, because Salesforce only develops those further."
+  - "The concept has two layers: what a user may do with objects, fields and functions, and which records they see through sharing."
   - "I recommend one lean base profile per licence type, permission sets per function and permission set groups per role, owned by the client."
   - "With several partners, each stream delivers permission sets for its features, while the mapping to roles stays with the client and goes through review."
 faq:
@@ -48,7 +48,7 @@ In 2023 Salesforce announced it would retire permissions on profiles with Spring
 Before creating any new profile, check whether a permission set is enough. In most cases it is. A new profile is really only needed for a new licence type or different login rules.
 ```
 
-## What does a concept built on permission sets look like?
+## Base profile, permission sets and groups per role
 
 I build it in three layers:
 
@@ -81,8 +81,6 @@ Salesforce offers the free User Access and Permissions Assistant, which analyses
 - Switch users step by step, country by country, and only delete the old profiles once nobody uses them.
 ```
 
-## Where do you start?
+## First step: take stock of profiles and system permissions
 
-Start with an inventory: how many profiles exist, how many users hang on each one, and which integration users have system permissions such as "Modify All Data"? Then write down the role matrix before you rebuild anything in Salesforce. From now on new features only get permission sets. The migration of the old profiles can follow role by role.
-
-A good permission concept is a table the client owns plus a rule that every new permission goes through a review. Read more about [Salesforce architecture on the client side](../../services/salesforce-architecture/).
+Start with an inventory: how many profiles exist, how many users hang on each one, and which integration users have system permissions such as "Modify All Data"? Then write down the role matrix before you rebuild anything in Salesforce. From now on new features only get permission sets. The migration of the old profiles can follow role by role. For the first number, a user report grouped by profile is enough. Each integration user then gets its own permission set with exactly the objects its interface reads or writes. How I set this up on the client side is described under [Salesforce architecture on the client side](../../services/salesforce-architecture/).
