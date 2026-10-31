@@ -39,7 +39,7 @@ Four masterclasses with a hub and five chapters each, same frontmatter, body rul
 | B2B Commerce | `b2b-commerce` | `commerce-01` … `commerce-05` | `b2b-commerce` | `masterclassCommerce` |
 | Field Service | `field-service` | `fsl-01` … `fsl-05` | `field-service` | `masterclassFieldService` |
 
-Each chapter links its articles (blog categories and the topics `commerce`, `revenue`, `field-service`), its neighbouring chapters and the matching chapters of the other masterclasses (`../../<segment>/<slug>/`). Boundaries: sales agreements, rebates and warranty belong to Manufacturing Cloud; quote, configurator, pricing, billing and the move from Salesforce CPQ and Billing to Revenue Cloud; storefront, cart and checkout to B2B Commerce; scheduling, mobile app and maintenance to Field Service. Examples are marked as assumptions until Fabian confirms them. Hub clusters are in `src/lib/masterclass.ts`.
+Each chapter links its articles (blog categories and the topics `commerce`, `revenue`, `field-service`), its neighbouring chapters and the matching chapters of the other masterclasses (`../../<segment>/<slug>/`). Boundaries: sales agreements, rebates and warranty belong to Manufacturing Cloud; quote, configurator, pricing, billing and the move from Salesforce CPQ and Billing to Revenue Cloud; storefront, cart and checkout to B2B Commerce; scheduling, mobile app and maintenance to Field Service. Examples are introduced as "Rechenbeispiel" / "Worked example" until Fabian confirms them. Hub clusters are in `src/lib/masterclass.ts`.
 
 # Masterclass "Change management"
 
@@ -85,7 +85,7 @@ Each of the three sections has a heading plus one or two sentences below it (`de
 | `chapter` | 1–10, sets the order |
 | `short` | 5–40 characters, card title on the hub |
 | `summary` | 40–160 characters, one sentence for the card |
-| `takeaways` | 3–5 standalone sentences, max. 220 characters each |
+| `takeaways` | 3–5 standalone sentences, max. 160 characters each (structure check), the first not a copy of the intro |
 | `articles` | 1–8 blog translationKeys covered by the chapter |
 | `faq` | optional, up to 6 questions, answers up to 600 characters |
 | `updatedDate` | optional, set when the chapter changes in substance |
