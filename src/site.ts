@@ -16,11 +16,33 @@ export const site = {
   // Cloudflare Web Analytics (cookieless). The site token comes from the
   // CF_ANALYTICS_TOKEN repository secret at build time; empty = no tracking.
   analyticsToken: import.meta.env.PUBLIC_CF_ANALYTICS_TOKEN ?? '',
+  // Business phone: German pages show the national format, English pages the
+  // international one; links always dial the international number.
+  phone: {
+    de: '0221 98656758',
+    en: '+49 221 98656758',
+    href: 'tel:+4922198656758',
+  },
   linkedin: 'https://www.linkedin.com/in/fabian-kramer-400500127',
+  // Further profiles of Fabian, only listed as sameAs in the structured data.
+  profiles: [
+    'https://github.com/fkramer690',
+    'https://www.gulp.de/gulp2/g/experten/selbststaendige/profile/6ae5021d8751e904955971b5/homepage',
+    'https://www.freelance.de/freelancer/261653-Independent-Salesforce-Enterprise-Architect-for-Manufacturers',
+    'https://www.freelancermap.de/profil/fabian-kramer',
+    'https://www.xing.com/profile/Fabian_Kramer13',
+    'https://app.fratch.io/de/profile/fabian-kramer-j',
+    'https://www.salesforce.com/trailblazer/fkramer',
+  ],
+  // Profiles of the company, only listed as sameAs in the structured data.
+  companyProfiles: [
+    // Google Business Profile (knowledge graph id).
+    'https://www.google.com/search?kgmid=/g/11z_04sr6b',
+  ],
   legal: {
     street: 'Hans-Keul-Weg 27',
     city: '51105 Köln',
-    phone: '', // optional
+    phone: '0221 98656758',
     managingDirector: 'Fabian Kramer',
     register: 'HRB 103579',
     registerCourt: 'Amtsgericht Köln',

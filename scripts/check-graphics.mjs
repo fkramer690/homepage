@@ -8,13 +8,14 @@
 // The drawings set their text in IBM Plex Mono (global.css), where every glyph is
 // 0.6 em wide, so label widths are exact without a browser.
 // Checked: the card drawings of the blog overview (src/lib/card-drawings.ts, every
-// article in both languages) and the figure on the masterclass hubs. Any other inline SVG with <text> fails until its class is
+// article in both languages), the figure on the masterclass hubs and the partner flow
+// block (```partnerfluss, src/lib/content-blocks.mjs). Any other inline SVG with <text> fails until its class is
 // listed here, so a new kind of drawing cannot slip past unchecked.
 import { readFileSync, readdirSync, statSync } from 'node:fs';
 import { join, relative } from 'node:path';
 
 const dist = new URL('../dist/', import.meta.url).pathname;
-const CHECKED = ['mc-drawing'];
+const CHECKED = ['mc-drawing', 'pf-drawing'];
 // card-drawing: checked straight from src/lib/card-drawings.ts below.
 // flowchart: Mermaid diagrams, scripts/render-diagrams.mjs checks their labels when it renders them.
 const SKIPPED = ['card-drawing', 'flowchart'];

@@ -55,6 +55,11 @@ blogTags: [partner governance, partnersteuerung, pull request review, vendor loc
 
 Partner governance on the client side is what keeps a Salesforce programme with several implementation partners in control. It means one set of standards, clear ownership for every object and process, one release process and someone who technically reviews each delivery before it moves on. Without it, every partner optimises its own scope, and the client pays for the conflicts between them. I take on this role as an independent architect, without ties to any vendor or partner.
 
+```partnerfluss architect
+without: Without an owner on the client side | Every partner delivers its part, conflicts only show in the org.
+with: With an architect on the client side | Every delivery runs through standards and review, one checked stream reaches the org.
+```
+
 ## What does this look like in a real programme?
 
 ```kennzahlen
@@ -72,8 +77,17 @@ The first step was simple and effective: every change went through a pull reques
 - **An object ownership matrix**, which defined which stream was responsible for which object. Before a team changed an object it did not own, it had to coordinate with the owner.
 - **Rules for configuration**, for example which values belong in custom metadata types or custom labels instead of being hardcoded.
 
-![Simplified example of an object ownership matrix: the sales stream owns Account, Opportunity and Quote, the service stream owns Case and Asset, the field service stream owns Work Order. Every other stream coordinates with the owner before it changes one of these objects.](../../../assets/blog/object-ownership-matrix-en.png)
-
+```tabelle matrix
+title: Object ownership matrix, simplified example
+columns: Object | Sales stream | Service stream | Field service stream
+Account | Owner * | coordinates | coordinates
+Opportunity | Owner * | coordinates | coordinates
+Quote | Owner * | coordinates | coordinates
+Case | coordinates | Owner * | coordinates
+Asset | coordinates | Owner * | coordinates
+Work Order | coordinates | coordinates | Owner *
+note: Before a team changes another team's object, it coordinates with the owner.
+```
 It took about three months until the standards were stable. The first version covered roughly 80 percent of the cases. New edge cases came up over the following weeks. We addressed them in regular [Center of Excellence calls](../../blog/salesforce-center-of-excellence-cadence/), where upcoming changes were raised with enough lead time for all streams. After a while the edge cases disappeared, because topics came up before they turned into conflicts. Once the process ran smoothly, I handed it over to an internal colleague who now owns it.
 
 ## Why does governance belong on the client side?

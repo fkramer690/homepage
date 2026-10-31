@@ -64,8 +64,15 @@ Commercial tools like Gearset or Copado have their place. They offer a managed w
 - **Know-how.** sfdx-hardis expects the team to understand Git, branches and pipelines, at least at a basic level. A commercial platform hides more of that. The VS Code extension closes much of the gap for admins, but not all of it.
 - **Support.** Open source means community support or paid consulting, not a vendor hotline. For most enterprise teams I work with, that is acceptable if at least one internal person owns the setup.
 
-![Comparison of sfdx-hardis with commercial platforms such as Gearset or Copado: sfdx-hardis has no licence fees, keeps the process in the client's repository and pipeline configuration in plain files, needs Git basics with the VS Code extension closing much of the gap for admins, and relies on community support or paid consulting. Commercial platforms are typically billed per user and year, keep part of the process in the vendor's product, hide more of Git behind a managed web interface and offer vendor support. No tool is right for every team: choose early, justify it and make it binding for every partner.](../../../assets/blog/sfdx-hardis-vs-commercial-en.png)
-
+```tabelle
+title: sfdx-hardis compared with commercial platforms
+columns: | sfdx-hardis * | Commercial platforms such as Gearset or Copado ~ Gearset, Copado and co.
+Licence costs | No licence fees | Typically billed per user and year
+Where the process lives | In the client's repository and pipeline configuration, in plain files | Partly in the vendor's product
+Know-how | Git basics needed. The VS Code extension closes much of the gap for admins | Hides more of Git behind a managed web interface
+Support | Community support or paid consulting | Vendor support
+note: No tool is right for every team. Choose early, justify it, make it binding for every partner.
+```
 Salesforce's own DevOps Center is another free option. It is a good start for click-based teams, but covers less of the pipeline, monitoring and documentation side. The full comparison, including the supported Git platforms, is in [sfdx-hardis vs DevOps Center](../sfdx-hardis-vs-devops-center-comparison/).
 
 What matters most to me: no tool is right for every team. The choice should be made early, justified properly and then made binding for everyone involved, including every partner. A programme where each partner brings its own tool ends up with several release processes, and therefore with none.

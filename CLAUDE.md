@@ -8,7 +8,7 @@ Every blog article must follow `docs/blog-guidelines.md`: best-practice structur
 
 Every article page has the same fixed structure: takeaways, article body, collapsible FAQ, author box (`src/components/AuthorBox.astro`), related articles and the contact section ("Book a call" plus the contact form). All of it comes from `src/components/BlogPost.astro`; a Markdown file only provides the body and frontmatter. Change shared parts in the components, never per article.
 
-Articles and masterclass chapters loosen up their text with content blocks from the library in `docs/content-blocks.md` (```hinweis, ```praxis, ```kennzahlen, ```zeitleiste, ```ablauf, ```pro-contra, ```vertiefung, ```schritte, ```stufen, ```vergleich, ```hebel, ```eintrag, ```saeulen; rules under "Content blocks" in `docs/blog-guidelines.md`). They render through `src/lib/content-blocks-plugin.mjs`; the build check enforces their use. Flow diagrams are rendered once with `node scripts/render-diagrams.mjs`, which fails when a label does not fit its box.
+Articles and masterclass chapters loosen up their text with content blocks from the library in `docs/content-blocks.md` (```hinweis, ```praxis, ```kennzahlen, ```zeitleiste, ```ablauf, ```pro-contra, ```vertiefung, ```schritte, ```stufen, ```vergleich, ```hebel, ```eintrag, ```saeulen, ```partnerfluss, ```tabelle, ```staerken-grenzen, ```pipeline, ```saeulenwechsel, ```basis-addons, ```level, ```prozess, ```kette, ```steuerzentrale, ```eisberg; rules under "Content blocks" in `docs/blog-guidelines.md`). They render through `src/lib/content-blocks-plugin.mjs`; the build check enforces their use. Flow diagrams are rendered once with `node scripts/render-diagrams.mjs`, which fails when a label does not fit its box.
 
 ## Two pillars
 
@@ -42,6 +42,10 @@ The sitemap must list exactly the indexable pages. `scripts/check-sitemap.mjs` r
 
 No label in a drawing may run over the edge, out of its box, into another box or under a line or icon. `scripts/check-graphics.mjs` runs after `astro build` and checks every card drawing (`src/lib/card-drawings.ts`, EN and DE) and every other inline SVG with text; a new kind of drawing must be added to it. `src/lib/og.ts` refuses preview image titles over three lines. Rules under "Card image" in `docs/blog-guidelines.md`; never weaken the check.
 
+## Graphics review
+
+Every graphic (content blocks, explanatory graphics, card drawings, hub drawings, icons, layouts, page elements, animations, preview images) has an entry in `docs/graphics-review.json` with Fabian's rating (1 reference, 2 okay, 3 todo) or `null` while it is open. A new graphic gets its entry with `"rating": null` in the same pull request; never set a rating Fabian did not give. `scripts/check-graphics-review.mjs` runs in `npm run build` and fails on graphics missing from the register; never weaken it. Process in `docs/graphics-review.md`.
+
 ## Page titles
 
 Every indexable page has a unique `<title>` of at most 60 characters, keyword first; the brand suffix ` | FK Solution Design` is added only where it fits. `scripts/check-titles.mjs` runs after `astro build` and enforces this; never weaken it.
@@ -49,3 +53,7 @@ Every indexable page has a unique `<title>` of at most 60 characters, keyword fi
 ## FAQ heading
 
 On German pages the FAQ section is always called "Häufig gestellte Fragen" (English: "Frequently asked questions"), never "Häufige Fragen". `scripts/check-blog.mjs` fails on the old wording anywhere in `src/`.
+
+## Repository root
+
+Only project files live in the repository root; `scripts/check-root.mjs` fails the build on anything else. Card drawing previews go to `previews/` (git-ignored) via `npm run cards:export`; where every other kind of file belongs is listed under "Where files go" in README.md.

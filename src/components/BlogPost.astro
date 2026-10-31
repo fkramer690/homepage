@@ -2,11 +2,13 @@
 import Page from '../layouts/Page.astro';
 import ExternalMark from './ExternalMark.astro';
 import ContactForm from './ContactForm.astro';
+import PhoneLine from './PhoneLine.astro';
 import AuthorBox from './AuthorBox.astro';
 import PartnerBox from './PartnerBox.astro';
 import Blueprint from './Blueprint.astro';
 import ContactBrief from './ContactBrief.astro';
 import ReadingGrid from './ReadingGrid.astro';
+import VideoCard from './VideoCard.astro';
 import { getContactBrief } from '../lib/contact-briefs';
 import { render } from 'astro:content';
 import { en } from '../i18n/en';
@@ -23,7 +25,7 @@ interface Props {
   post: Post;
 }
 const { post } = Astro.props;
-const { lang, title, description, pubDate, updatedDate, takeaways, faq, tags, author: authorId } = post.data;
+const { lang, title, description, pubDate, updatedDate, takeaways, faq, tags, author: authorId, video } = post.data;
 const t = lang === 'de' ? de : en;
 const { Content, headings } = await render(post);
 const toc = [...headings.filter((h) => h.depth === 2), { slug: 'faq', text: t.blog.faq }];
@@ -89,6 +91,23 @@ const schema = {
       inLanguage: lang,
       mainEntity: faq.map(({ q, a }) => ({ '@type': 'Question', name: q, text: q, answerCount: 1, acceptedAnswer: { '@type': 'Answer', text: a } })),
     },
+    ...(video
+      ? [
+          {
+            '@type': 'VideoObject',
+            '@id': `${url}#video`,
+            name: video.title,
+            description,
+            inLanguage: lang,
+            thumbnailUrl: abs(`${base}videos/${video.file}.jpg`),
+            contentUrl: abs(`${base}videos/${video.file}.mp4`),
+            uploadDate: video.uploadDate.toISOString(),
+            duration: `PT${video.duration}S`,
+            transcript: video.transcript,
+            isPartOf: { '@id': `${url}#article` },
+          },
+        ]
+      : []),
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
@@ -122,12 +141,14 @@ const schema = {
         <p class="post-series-line mono"><a href="#series">{partLabel(seriesRef.part)} · {t.blog.series} {seriesInfo[lang]}</a></p>
       )}
       <ReadingGrid t={t} headings={toc} cta={title}>
+        {video && <VideoCard t={t} part="card" video={video} class="video-card-side" slot="side" />}
         <aside class="post-takeaways" aria-label={t.blog.takeaways}>
           <p class="label mono">{t.blog.takeaways}</p>
           <ul>
             {takeaways.map((item) => <li>{item}</li>)}
           </ul>
         </aside>
+        {video && <VideoCard t={t} part="card" video={video} class="video-card-inline" />}
         <div class="prose">
           <Content />
         </div>
@@ -176,6 +197,7 @@ const schema = {
         )}
       </ReadingGrid>
     </div>
+    {video && <VideoCard t={t} part="dialog" video={video} />}
   </article>
   <section class="contact dark grid-bg" id="contact">
     <Blueprint />
@@ -185,6 +207,7 @@ const schema = {
         <ContactBrief brief={brief} t={t} />
         <a class="btn" href={contactHref(title)} {...ctaAttrs}>{t.nav.cta}{contactExternal && <ExternalMark label={t.nav.newTab} />}</a>
         {contactExternal && <p class="booking-note">{t.contact.bookingNote}</p>}
+        <PhoneLine t={t} />
       </div>
       <ContactForm t={t} subject={formSubject} />
     </div>

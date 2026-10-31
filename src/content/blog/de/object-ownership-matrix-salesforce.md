@@ -56,8 +56,17 @@ Als ich in das Programm kam, hatte niemand klar festgelegt, welches Team für we
 
 Der erste Schritt war, jede Änderung über einen Pull Request mit Review laufen zu lassen. Eine Zeit lang ging jeder einzelne über meinen Schreibtisch. Aus diesen Reviews haben wir Standards aufgeschrieben, darunter Namenskonventionen, eine Automatisierung pro Objekt und Kontext und Testabdeckung. Zwei Elemente haben den größten Unterschied gemacht: die Object Ownership Matrix und Regeln für Konfiguration, etwa welche Werte in Custom Metadata Types oder Custom Labels gehören, statt fest im Code zu stehen.
 
-![Vereinfachtes Beispiel einer Object Ownership Matrix: Der Stream Vertrieb verantwortet Account, Opportunity und Quote, der Stream Service verantwortet Case und Asset, der Stream Field Service verantwortet Work Order. Jeder andere Stream stimmt sich mit dem Verantwortlichen ab, bevor er eines dieser Objekte ändert.](../../../assets/blog/object-ownership-matrix-de.png)
-
+```tabelle matrix
+titel: Object Ownership Matrix, vereinfachtes Beispiel
+spalten: Objekt | Stream Vertrieb | Stream Service | Stream Field Service
+Account | Verantwortlich * | stimmt sich ab | stimmt sich ab
+Opportunity | Verantwortlich * | stimmt sich ab | stimmt sich ab
+Quote | Verantwortlich * | stimmt sich ab | stimmt sich ab
+Case | stimmt sich ab | Verantwortlich * | stimmt sich ab
+Asset | stimmt sich ab | Verantwortlich * | stimmt sich ab
+Work Order | stimmt sich ab | stimmt sich ab | Verantwortlich *
+fazit: Bevor ein Team ein fremdes Objekt ändert, stimmt es sich mit dem Verantwortlichen ab.
+```
 Die Regel war einfach: Bevor ein Team ein fremdes Objekt änderte, musste es sich mit dem verantwortlichen Stream abstimmen. Im vereinfachten Beispiel oben verantwortet der Vertrieb Account, Opportunity und Quote, der Service Case und Asset, Field Service die Work Order.
 
 ```praxis

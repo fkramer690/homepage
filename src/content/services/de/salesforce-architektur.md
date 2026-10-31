@@ -62,7 +62,14 @@ Sales Cloud und Service Cloud sind in fast jedem Enterprise-Projekt gesetzt. Die
 - **Experience Cloud** passt zu kundennahen Prozessen. Self-Service-Portale sparen interne Kapazität, weil Kunden Antworten selbst finden und Anfragen selbst stellen.
 - **Manufacturing Cloud** ergibt nur Sinn, wenn ihre Funktionen dazu passen, wie das Unternehmen tatsächlich verkauft. Der Fit muss im ROI-Case gerechnet werden, den ich auf der Seite [Make-or-buy und Lizenzen](../make-or-buy-lizenzen/) beschreibe.
 
-![Welche Clouds das Unternehmen wirklich braucht: Sales Cloud und Service Cloud sind in fast jedem Enterprise-Projekt gesetzt. Die spannenden Fragen beginnen bei den Add-ons. Field Service passt bei vielen kurzen Einsätzen, bei denen Routen- und Terminoptimierung die Kennzahlen deutlich verbessert, und bringt bei wenigen langen Projekten viel kleineren Nutzen. Experience Cloud passt zu kundennahen Prozessen, Self-Service-Portale sparen interne Kapazität. Manufacturing Cloud passt nur, wenn die Funktionen dazu passen, wie das Unternehmen tatsächlich verkauft, und das wird im ROI-Case gerechnet.](../../../assets/blog/which-clouds-de.png)
+```basis-addons
+titel: Welche Clouds das Unternehmen wirklich braucht
+basis: Sales Cloud, Service Cloud | In fast jedem Enterprise-Projekt gesetzt
++ Field Service | Passt bei vielen kurzen Einsätzen, bei denen Routen- und Terminoptimierung die Kennzahlen deutlich verbessert. Bei wenigen langen Projekten viel kleinerer Nutzen.
++ Experience Cloud | Passt zu kundennahen Prozessen. Self-Service-Portale sparen interne Kapazität.
++ Manufacturing Cloud | Nur wenn die Funktionen dazu passen, wie das Unternehmen tatsächlich verkauft. Der Fit wird im ROI-Case gerechnet.
+fazit: Die spannenden Fragen beginnen bei den Add-ons.
+```
 
 ## Warum entscheidet das Datenmodell so viel?
 

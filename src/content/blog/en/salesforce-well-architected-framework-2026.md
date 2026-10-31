@@ -54,7 +54,20 @@ The old framework had three pillars with eight qualities in total: Trusted (secu
 
 Salesforce did not throw the old content away; it re-sorted it. The [Legacy Framework Mapping](https://architect.salesforce.com/docs/architect/well-architected/guide/tea-pillar-mapping.html) page shows where each part went. Some examples: monitoring used to sit under Reliable and now belongs to Operational Excellence. Disaster recovery used to sit under Resilient and now belongs to Reliability. Business value and ROI used to sit under Automated and now belong to Resource and Cost Optimization. Accessibility and privacy rights sit under Fairness, while legal compliance and data residency stay with Trust. Messaging, eventing and API management moved out of the framework into the Integration Patterns.
 
-![How the old Well-Architected areas were split across the five new pillars: Secure goes to Trust. Reliable goes to Reliability, performance to Resource and Cost Optimization, monitoring to Operational Excellence. Compliant goes to Fairness, while legal and data residency stay with Trust. Intentional and Automated go to Operational Excellence, ROI and maintainability to Resource and Cost Optimization. Engaging goes to Fairness. Resilient goes to Operational Excellence, disaster recovery to Reliability. Composable goes to Resource and Cost Optimization, messaging, eventing and APIs to the Integration Patterns. New on top is the Agentic Enterprise lens for every pillar.](../../../assets/blog/well-architected-mapping-en.png)
+```saeulenwechsel
+before: Previously: three pillars
+old: Trusted | secure, compliant, reliable
+old: Easy | intentional, automated, engaging
+old: Adaptable | resilient, composable
+title: Well-Architected: from three to five pillars
+Trust | Security < Secure | Legal, data residency < Compliant
+Reliability | Availability, scaling < Reliable | Disaster recovery < Resilient
+Operational Excellence | Monitoring < Reliable | Strategy, governance < Intentional | Automation < Automated | ALM, incidents < Resilient
+Resource and Cost Optimization * | Performance < Reliable | ROI, maintainability < Automated, Intentional | Licences, sandboxes < 2026 framework
+Fairness | Ethics, privacy rights < Compliant | Accessibility < Engaging
+note: **New:** Agentic Enterprise lens for every pillar.
+note: **Moved out:** messaging, eventing and APIs to the Integration Patterns.
+```
 
 What stands out is how concrete the new pages are. Two figures from them:
 

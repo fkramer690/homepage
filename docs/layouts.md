@@ -59,6 +59,25 @@ from `src/icons/` on the left, bold title, one or two sentences below.
 Chosen 2026-10-27: two columns, grey ✕ list "without" and cyan ✓ list "with"
 (`.compare`).
 
+## Quote after a comparison (start page, role section)
+
+Chosen 2026-10-30. A quote must not stand on its own under a list; it sums up one
+point that is visibly marked in the list above it. Fabian called both variants good
+examples to reuse in blog articles (backlog item 17).
+
+- **Stage band (built, variant B):** mark the matching pair in the comparison (left
+  struck through in grey, right bold in cyan-dark), one short lead sentence, then a
+  dark band with the photo on the right fading into anthracite and the quote in italic
+  white with a cyan bar and a mono attribution line (`.role-quote`, `.compare-hit`).
+  On phones the photo sits on top, the quote below. Needs a photo that is at least as
+  wide as the photo half of the band.
+- **Principle card (variant A, not built):** a dashed cyan line runs from the "with"
+  column down into a dark full-width card: round photo (cyan ring), mono kicker
+  "Mein Grundsatz", the quote, mono attribution. More compact than the band; fits
+  when there is no good wide photo.
+
+Mockups of both: project files `homepage/rolle-zitat/`.
+
 ## Topic tiles + side column + compact list (questions page)
 
 Chosen 2026-10-29 for `/fragen/` and `/en/questions/` (variant A of three; Fabian
@@ -68,6 +87,13 @@ title in a sticky left column, the questions on the right as one white box with
 dashed dividers and a cyan number, instead of one card per question. Since the
 page width rule the groups sit inside the reading column of `ReadingGrid`.
 Fits: long lists grouped by topic (FAQ-like pages, checklists).
+
+Extended 2026-10-30 (variant B of three, "noch geiler"): the page head moved into the
+dark grid area with a booking button (like the service pages), a figures strip
+(`.sp-stats`, question and topic counts computed from the data) sits above the topic
+tiles, the answers fold away (`<details>` per question, `+` like the blog FAQ, answers
+stay in the HTML and the FAQPage schema), and question 14 closes the list as a quote
+band (`.role-quote`) before the author box. Texts in `src/data/questions.ts`.
 
 ## Side column + compact row list (masterclass overview)
 
@@ -104,7 +130,9 @@ counterparts do not repeat. The studio portrait and the stage photo stay for
 author box, contact, schema and the speaking page.
 
 - Start page hero: portrait in the hall in a framed box right of the text, hidden below 900px.
-- Start page "Arbeitsweise": one 3:2 photo above each of the four steps.
+- Start page "Ausgewählte Projekte": one wide photo per project panel. The
+  "Arbeitsweise" steps have no photos any more (Fabian 2026-10-30: otherwise too
+  many photos of him on one page).
 - Service pages and questions page: square photo right of the page head, as wide
   as the side column (`.service-head.has-photo`, mapping `servicePhotos`); 16:9 full width below 960px.
 - Masterclass overview: 3:2 photo at the top of the side column.
@@ -128,6 +156,22 @@ a second filter by author next to the topic). Built in `src/components/BlogIndex
   (`#field-service`) still work.
 - Below 960px the column becomes a folded "Filter" box above the grid.
 - Fits: overviews with many items and two or more filter dimensions.
+
+## Search bar above the articles (blog overview)
+
+Chosen 2026-10-30 for `/blog/` and `/en/blog/` (variant B of three: side-column
+field, bar above the articles, full-text result list). Built in
+`src/components/BlogIndex.astro`, next to the filter side column.
+
+- Above the article column a 54px search field (`search` icon, "/" shortcut hint),
+  below it "Oft gesucht" chips with fixed terms from `t.blog.searchPopularTerms`
+  and, while searching, "N Treffer für „…“ × Suche leeren".
+- Searches title, description, tags and topic names, every word must match. Hits
+  are marked in the card title and description; no wide card while searching.
+- Combines with author and topic: the side-column counts follow the search. The
+  query sits in `?q=`, the filters stay in the hash.
+- Below 960px the bar sits above the folded "Filter" box.
+- Fits: overviews with enough items that people look for a term, not a category.
 
 ## Two authors
 
@@ -226,3 +270,40 @@ Content block ```saeulen (see `docs/content-blocks.md`), CSS `.cb-pillars`.
   bar what it stands on ("Auf der Git-Plattform des Kunden").
 - On phones the pillars stand below each other with the icon on the left.
 - Fits: three to five equal principles or building blocks of one thing, not a sequence.
+
+## Project in focus (start page, "Ausgewählte Projekte")
+
+Chosen 2026-10-30 (graphics review G11) instead of the card slider: no new icons and
+no square tiles, because the services section already uses them. Built in
+`src/components/Home.astro` (`.rf`), texts in `references.items` of the i18n files,
+photo and crop per project in `refPhotos`.
+
+- **Numbered list left, one panel right** (radio tabs, no script): the list shows
+  number, sector and title; the active row gets a white background and a cyan left bar.
+  On phones the list becomes swipeable chips with short names (`short`).
+- **Panel:** wide photo of Fabian (own `focus` per project so heads stay whole), then
+  number and sector, title, a definition list *Ausgangslage / Meine Rolle / Ergebnis*
+  (outcome line darker) and the stack tags. All panels stay in the HTML.
+- The About section no longer repeats the projects; it links up to them.
+- Fits: any section with a few cases that each need context, role and result.
+
+## References from the graphics review (30.10.2026)
+
+Rated 1 by Fabian in the first graphics review (register `docs/graphics-review.json`,
+process `docs/graphics-review.md`). All layouts above were confirmed as 1 except the
+speaking page pattern, which he rated 2 (still fine to reuse, no longer the first choice).
+
+- **Content blocks:** `kennzahlen` (big figure, one line, source below: the model for
+  every figure), `vergleich` (cyan "with" column), `hebel` (lever cards with result line),
+  `eintrag` (decision log with dark head row), `hinweis tipp`, `stufen treppe` (staircase
+  with "source of truth" band; Fabian would like the pillars animated, backlog G7).
+- **Explanatory graphics (PNG):** `agentforce-adoption` (four figures, one message),
+  `devops-pipeline`, `pull-request-review-split` (machine checks vs. human checks),
+  `password-flow-timeline` (deadline highlighted), `field-service-report` (one source fanning
+  out to five processes), `casey-or-service-rep`, `agent-context-engine`.
+- **Certification coverage graphic** with its own narrow version for phones: the model for
+  any wide graphic.
+- **Blog card drawings** as a series, the **icon library**, and the **article preview
+  images** (`src/lib/og.ts`; logo line to be aligned with the standard image, backlog G4).
+- **Start page:** hero with measure lines on the photo, "Arbeitsweise" with icons and
+  progress line, service tiles with "Weitere Leistungen" box.
