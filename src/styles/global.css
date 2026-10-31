@@ -623,14 +623,6 @@ a:hover { color: var(--anthracite); }
   border-radius: var(--radius);
   padding: 28px 24px 22px;
 }
-.card::before {
-  content: '';
-  position: absolute;
-  top: -1px;
-  left: 24px;
-  width: 36px;
-  border-top: 3px solid var(--cyan);
-}
 .card-index {
   display: block;
   font-size: var(--fs-xs);
@@ -681,7 +673,7 @@ a:hover { color: var(--anthracite); }
 .more-rows a,
 .more-rows li > div {
   display: grid;
-  grid-template-columns: 2.2em 1fr auto;
+  grid-template-columns: 1fr auto;
   gap: 4px 10px;
   align-items: baseline;
   padding: 0.5em 0;
@@ -689,12 +681,11 @@ a:hover { color: var(--anthracite); }
   text-decoration: none;
 }
 .more-rows a:hover .more-title { color: var(--cyan-dark); }
-.more-index { font-size: var(--fs-xs); color: var(--text-2); }
 .more-title { font-weight: 600; }
 .more-arrow { color: var(--cyan-dark); }
-.more-text { grid-column: 2 / 3; color: var(--text-2); font-size: var(--fs-sm); }
+.more-text { grid-column: 1 / 2; color: var(--text-2); font-size: var(--fs-sm); }
 @media (max-width: 620px) {
-  .more-text { grid-column: 2 / -1; }
+  .more-text { grid-column: 1 / -1; }
 }
 @media (max-width: 960px) {
   .cards { grid-template-columns: repeat(2, 1fr); }
@@ -830,7 +821,6 @@ a:hover { color: var(--anthracite); }
   align-items: baseline;
   background: var(--bg);
   border: 1px solid var(--line);
-  border-left: 3px solid var(--cyan);
   border-radius: var(--radius);
   padding: 16px 20px;
 }
@@ -1138,9 +1128,8 @@ p.post-series-note { margin: 0.6em 0 0; font-size: var(--fs-ui); }
   margin-top: 3em;
   padding: clamp(22px, 4vw, 36px);
   border-radius: var(--radius);
-  background: linear-gradient(135deg, var(--tint-2) 0%, var(--bg) 100%);
+  background: var(--tint-2);
   border: 1px solid var(--tint-line);
-  border-top: 4px solid var(--cyan);
 }
 .post-author-img {
   flex-shrink: 0;
@@ -2205,16 +2194,11 @@ p.post-series-note { margin: 0.6em 0 0; font-size: var(--fs-ui); }
 .rc-rules-list strong { color: var(--text); font-weight: 600; }
 @media (max-width: 760px) { .rc-rules-list { columns: 1; } }
 
-/* Icons on the home page (service cards, further services, proof bar), on the
-   service pages ("typical situation" as cross list) */
+/* Card icons (change team cards). The start page service cards, further services
+   and the proof bar carry no icons since the AI-slop review (2026-10-31). */
 .card-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.8em; }
 .card-top .card-index { margin: 0; }
 .card-icon { width: 40px; height: 40px; display: block; }
-.more-rows a, .more-rows li > div { grid-template-columns: 2.6em 1fr auto; align-items: center; }
-.more-icon { width: 30px; height: 30px; display: block; }
-.more-text { margin-top: -4px; }
-.proof-top { display: flex; align-items: center; gap: 10px; }
-.proof-icon { width: 30px; height: 30px; flex: none; }
 .sit-box { margin-top: 0; }
 .sit-box .rc-rules-list li { font-size: var(--fs-ui); }
 

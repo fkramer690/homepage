@@ -54,6 +54,12 @@ Chosen 2026-10-31 (Fabian: "Skala + Mono reduzieren"). Part of the polished desi
   in a page head (area, category, masterclass name) and as a label for a
   group without its own heading (e.g. "Schwerpunkte"). A section with an h2
   gets no eyebrow that repeats the menu item or the heading.
+- **Decoration only with a job** (AI-slop review 2026-10-31): no icon that
+  only illustrates the word next to it (proof bar, start page service cards
+  carry none); no cyan accent bar on top of cards; the cyan line on the left
+  is reserved for quotes and the takeaways box; no gradients on boxes; the
+  Blueprint marks (dimension lines, crosshair) only in the start page hero.
+  At most one without/with comparison per page.
 - **Numbers (01, 02 …) only where the order matters** (steps, chapters,
   phases), never as a counter on lists whose order means nothing (references,
   questions).

@@ -5,7 +5,6 @@ import ContactForm from './ContactForm.astro';
 import PhoneLine from './PhoneLine.astro';
 import AuthorBox from './AuthorBox.astro';
 import PartnerBox from './PartnerBox.astro';
-import Blueprint from './Blueprint.astro';
 import ContactBrief from './ContactBrief.astro';
 import ReadingGrid from './ReadingGrid.astro';
 import VideoCard from './VideoCard.astro';
@@ -197,7 +196,6 @@ const schema = {
     {video && <VideoCard t={t} part="dialog" video={video} />}
   </article>
   <section class="contact dark grid-bg" id="contact">
-    <Blueprint />
     <div class="container contact-inner">
       <div class="contact-intro">
         <p class="label mono">{t.contact.label}</p>
