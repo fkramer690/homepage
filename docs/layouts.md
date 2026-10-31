@@ -254,7 +254,16 @@ a second filter by author next to the topic). Built in `src/components/BlogIndex
   (icon from `src/icons/` per category in `src/lib/categories.ts`, count);
   dashed dividers, the chosen entry gets a cyan left border and grey background.
   Below: number of articles shown and "Filter zurücksetzen".
-- Right the article cards in two columns, newest visible one as wide card.
+- Right the article cards, newest visible one as wide card. A card is never
+  narrower than 412px (`minmax(min(100%, 412px), 1fr)`): two columns on desktop,
+  one on tablet and phone, so the card drawing labels (viewBox 320) stay at 9px
+  or more where the screen allows. Each card names one category, the first in
+  `categories`; the filter still uses all of them.
+- The first 25 matching articles show (24 plus the wide card, so the last row is
+  full), then "25 von 197 Artikeln" and "Weitere Artikel laden" (+24, focus on the
+  first new card). Filter and search always
+  look through all articles and start again at 24. Without JavaScript every
+  article stays visible. The intro above is one sentence.
 - The filters combine; each list counts within the other one's choice and greys
   out empty entries. An article counts for its author and its `coAuthor`. The
   choice sits in the hash (`#juliane+change-management`), old topic links
@@ -277,6 +286,22 @@ field, bar above the articles, full-text result list). Built in
   query sits in `?q=`, the filters stay in the hash.
 - Below 960px the bar sits above the folded "Filter" box.
 - Fits: overviews with enough items that people look for a term, not a category.
+
+## Article head (blog articles and masterclass chapters)
+
+Chosen 2026-10-31 (polished design, package D). Built in
+`src/components/PostMeta.astro`, used by `BlogPost.astro` and
+`MasterclassChapter.astro`.
+
+- Above the title a kicker row: the series part ("Teil 4 von 8") or the chapter
+  ("Kapitel 07 von 10") as a light cyan pill, followed by the series link or the
+  masterclass name in plain text.
+- Below the title one meta line: round photo(s) (28px, overlapping for two
+  authors), name(s), the newest date only ("Aktualisiert …" when updated on a
+  later day) in short form, reading time. On phones "Lesezeit" is dropped so the
+  line fits; with two authors the date moves to a second line.
+- Wide tables in the text scroll sideways with a shadow edge on the side that has
+  more columns (`.prose table`, CSS scroll shadows, no extra markup).
 
 ## Two authors
 
