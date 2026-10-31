@@ -79,7 +79,7 @@ Ein Maschinenbauer mit 60 Millionen Euro Umsatz fakturiert Maschinen und Ersatzt
 
 Die Pflicht gilt schon, wenn die erste Billing-Rechnung rausgeht, für den neuen Prozess gibt es also keine Übergangszeit. Ich würde Billing-Rechnungen nicht als PDF starten und das Format später nachziehen. Entweder laufen die Abo-Rechnungen im ersten Jahr über SAP, oder Billing wird an den E-Rechnungsdienst angebunden, den die SAP-Rechnungen schon nutzen. Was davon passt, hängt davon ab, wie oft sich Abos ändern, beschrieben in [Wer führt was im Quote-to-Cash?](../revenue-cloud-sap-quote-to-cash-aufteilung/).
 
-## Erster Schritt: Grenze und Rechnungsquelle je Gesellschaft klären
+## Grenze und Rechnungsquelle je Gesellschaft klären
 
 1. **Grenze je Gesellschaft.** Welche deutschen Gesellschaften stellen Rechnungen aus, und gilt für jede die Pflicht ab 2027 oder ab 2028?
 2. **Rechnungsquelle je Umsatzart.** Welche Rechnungen kommen aus Salesforce, welche aus SAP.

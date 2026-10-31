@@ -96,7 +96,7 @@ One buyer group per machine is ruled out by the limits above. One buyer group pe
 
 The decision in the scenario: buyer groups stay per country and dealer tier. A machine page shows the dealer's assets and calls PLM live for the spare-relevant positions of the selected machine; the result is cached on the asset for a day. For machines older than ten years, the page falls back to the parts list of the machine series and says so. Search filtering by extension is postponed until the class is generally available.
 
-## First step: trace 20 orders to the as-built list
+## Trace 20 orders to the as-built list
 
 ```schritte
 Check the data first

@@ -99,6 +99,6 @@ Vergleich
 
 Die Konfiguration dafür, also die Einstellung pro Gebiet, Scheduling Policies und Work Rules, besteht aus Datensätzen, nicht aus Metadaten. Sie gehört in die Pipeline, wie im Kapitel [Daten und Konfiguration](../../masterclass/devops-release-management/daten-und-konfiguration/) der DevOps-Masterclass beschrieben, sonst laufen getesteter Sandbox-Stand und Produktion auseinander.
 
-## Erster Schritt: Termine ohne Gebiet, Work Rules und Recipes auflisten
+## Termine ohne Gebiet, Work Rules und Recipes auflisten
 
 Fangen Sie mit drei Listen an: Termine ohne Servicegebiet, Work Rules, die häufig leere Felder lesen, und genutzte Recipes. Sie zeigen, wie viel Arbeit der Wechsel macht. Wählen Sie dann das Gebiet mit den saubersten Daten als Pilot. Wie die Engine in die gesamte Disposition passt, steht im Masterclass-Kapitel [Terminplanung und Disposition](../../masterclass/field-service/field-service-terminplanung-disposition/).

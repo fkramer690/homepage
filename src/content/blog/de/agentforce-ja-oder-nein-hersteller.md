@@ -101,7 +101,7 @@ Zu einer ehrlichen Entscheidung gehört, zu benennen, wo ein Agent in Salesforce
 
 Diese Fragen gehören zu meiner Arbeit in [Make-or-buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/), denn manchmal ist der günstigste Agent der, den Sie nicht in Salesforce bauen.
 
-## Erster Schritt: einen Prozess und eine Zielzahl wählen
+## Einen Prozess und eine Zielzahl wählen
 
 Gartner [erwartet](https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027), dass mehr als 40 Prozent der Projekte mit KI-Agenten bis Ende 2027 abgebrochen werden, wegen steigender Kosten, unklarem Nutzen und unzureichender Risikokontrollen. Diese Schritte setzen an allen drei Punkten an:
 

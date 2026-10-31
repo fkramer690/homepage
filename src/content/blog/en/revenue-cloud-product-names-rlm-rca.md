@@ -84,7 +84,7 @@ Marketing names change faster than contracts run. A three-year order form signed
 - **Licence forecast:** list Revenue Cloud as its own line next to Sales Cloud, because it is bought on top of a Sales Cloud subscription. How I build such a forecast is described in [Salesforce licences: does everyone need a full one?](../salesforce-licences-full-licence-needed/).
 - **Project glossary:** pick one name for the project and stick to it. I would use Revenue Cloud, because that is what salesforce.com shows today.
 
-## First step: search under all names
+## Search under all names
 
 Each source has its own name, so searches miss half of the material when they use only one:
 

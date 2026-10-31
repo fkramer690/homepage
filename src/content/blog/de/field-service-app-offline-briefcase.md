@@ -97,7 +97,7 @@ Das Szenario zeigt, was offline für die Planung bedeutet. Das Gerät arbeitet, 
 
 Der Servicebericht in diesem Szenario kommt aus dem Document Builder. Eigene Komponenten in der Vorlage müssen ihre Daten ebenfalls offline lesen. Wie das geht, steht in [Salesforce Document Builder: fünf Grenzen und Workarounds](../salesforce-document-builder-grenzen-workarounds/).
 
-## Erster Schritt: einen Briefcase pro Rolle zuschneiden
+## Einen Briefcase pro Rolle zuschneiden
 
 ```schritte
 Rollen auf Briefcases abbilden

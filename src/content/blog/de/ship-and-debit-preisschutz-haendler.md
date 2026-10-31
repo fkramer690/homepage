@@ -103,7 +103,7 @@ Mit Channel Revenue Management werden Sonderpreise zu Preiskonditionen, Distribu
 
 Dagegen stehen 30.000 Dollar im Jahr für das Add-on, Portallizenzen für 15 Distributoren und der Aufwand für die Schnittstellen. Was Partner im Portal sehen und welche Lizenz das abdeckt, erklärt der Artikel zum [Manufacturing-Cloud-Kundenportal](../manufacturing-cloud-kundenportal/). Schicken nur drei Distributoren zwanzig Ansprüche im Monat, würde ich den heutigen Prozess behalten und zuerst die Freigaberegeln schärfen. Das Kapitel [Händler und Partnerkanal](../../masterclass/manufacturing-cloud/haendler-und-partnerkanal/) der Masterclass zeigt, wo Ship and Debit neben Boni, Portalen und Händlerbesuchen steht.
 
-## Erster Schritt: Ansprüche pro Monat zählen
+## Ansprüche pro Monat zählen
 
 1. **Zählen.** Ansprüche pro Monat, abgelehnte Ansprüche und die heutige Zeit bis zur Zahlung.
 2. **Daten.** Welche Distributoren Abverkauf und Bestand als Datei liefern können, und wie oft.

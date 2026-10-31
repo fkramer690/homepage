@@ -79,7 +79,7 @@ A machine builder with €60 million turnover invoices machines and spare parts 
 
 The duty already applies when the first Billing invoice goes out, so there is no transition period for the new process. I would not start Billing invoices with PDFs and fix the format later. Either the subscription invoices run through SAP in the first year, or Billing is connected to the e-invoicing service that SAP's invoices already use. Which of the two depends on how often subscriptions change, as described in [who owns what in quote to cash](../revenue-cloud-sap-quote-to-cash-ownership/).
 
-## First step: threshold and invoice source per company
+## Threshold and invoice source per company
 
 1. **Threshold per legal entity.** Which German companies issue invoices, and is each one subject to the duty from 2027 or 2028?
 2. **Invoice source per revenue type.** Which invoices leave Salesforce, which leave SAP.

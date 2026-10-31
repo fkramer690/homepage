@@ -95,6 +95,6 @@ Internal staff work in Salesforce with their internal licence. The Trailhead per
 
 My advice: write down per internal group what they do in the store, for example look at it as a dealer would, order on a dealer's behalf or maintain the catalogue, and have Salesforce confirm in the quote which licence covers each activity. Which internal users really need a full licence is covered in [Salesforce licences: does everyone need a full one?](../salesforce-licences-full-licence-needed/).
 
-## First step: count login days per buyer
+## Count login days per buyer
 
 Build a list with four columns: role, number of people, login days per month and licence. Fill it from your order data of the last twelve months: who ordered how often by phone, email or portal. Then check the limits above, especially roles and the Account Switcher for dealer groups. Whether a store or a portal fits your dealers at all is the question in [B2B Commerce or dealer portal](../b2b-commerce-or-dealer-portal/), and the whole cost picture is in [chapter 1 of the B2B Commerce masterclass](../../masterclass/b2b-commerce/b2b-commerce-worth-it-overview/). Licence forecasts like this are part of my work on [make-or-buy and licences](../../services/make-or-buy-licences/).

@@ -110,7 +110,7 @@ Assume a machine builder with SAP, Service Cloud and Field Service already live.
 
 The total is about 34,000 credits, roughly $170 a month. Connected Assets at $15,000 per org per month only pays off once the health score drives decisions the thresholds cannot.
 
-## First step: count corrective work orders per series
+## Count corrective work orders per series
 
 1. **Count** corrective work orders per series and coded failure cause for the last three years.
 2. **Close the gaps**: asset links, picklists for causes, reporting duties for dealers and service partners.

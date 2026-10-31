@@ -93,7 +93,7 @@ contra: When a list is enough
 
 The selection problem stays the same either way: without clean serial numbers and batches, the best list does not help.
 
-## First step: settle trigger, costs and reporting in writing
+## Settle trigger, costs and reporting in writing
 
 These are the questions I would answer in writing before building:
 

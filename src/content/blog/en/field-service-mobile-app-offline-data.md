@@ -97,7 +97,7 @@ The scenario shows what offline really means for planning. The device works, but
 
 The service report in this scenario comes from Document Builder. Custom components in its template have to read their data offline as well. How that works is shown in [Document Builder: five limits and workarounds](../salesforce-document-builder-limits-workarounds/).
 
-## First step: cut one briefcase per role
+## Cut one briefcase per role
 
 ```schritte
 Map roles to briefcases

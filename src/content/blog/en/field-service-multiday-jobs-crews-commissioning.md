@@ -106,6 +106,6 @@ My rule: if most of your field service is commissioning and overhauls, Field Ser
 
 Two decisions belong in the design before a partner builds anything. The first: which system holds the project plan with phases and dates, and how the dates reach the appointment. The second: how dispatchers protect long jobs from short ones; the scheduling policy from [how much scheduling should be automatic](../salesforce-field-service-scheduling-automation/) needs a clear rule for that. Where the architecture question goes beyond Field Service, I describe my approach under [Salesforce architecture](../../services/salesforce-architecture/).
 
-## First step: review your last ten commissioning jobs
+## Review your last ten commissioning jobs
 
 Take your last ten commissioning jobs and note duration, team size, preceding work and whether partners were involved. If most stay under 30 days and the teams are stable, multiday appointments with crews will carry the planning. If many run longer or have more than five linked steps, keep the project plan outside and use Field Service for the work on site.

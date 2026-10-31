@@ -98,7 +98,7 @@ Der Aufwand liegt bei etwa 32 Stunden Technikerzeit pro Hauptversion, dazu die Z
 
 Die übrigen Techniker sollten vor dem Update wissen, was sich für sie ändert und an wen sie sich wenden. Das ist dieselbe Aufgabe wie bei jedem Release für den Innendienst, beschrieben in [Salesforce-Releases an den Fachbereich kommunizieren](../salesforce-releases-fachbereich-kommunizieren/).
 
-## Erster Schritt: für das Beta-Programm anmelden
+## Für das Beta-Programm anmelden
 
 1. **Für das Beta-Programm anmelden** und die Release-Beiträge der Gruppe Field Service Mobile abonnieren.
 2. **Die Routine schreiben**, als acht Skripte mit erwartetem Ergebnis.

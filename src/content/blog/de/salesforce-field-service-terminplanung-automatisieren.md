@@ -82,7 +82,7 @@ Bevorzugte, erforderliche oder ausgeschlossene Techniker lassen sich laut [Sales
 
 So wächst die Automatik mit dem Vertrauen und nicht nach einem Plan, den jemand vor dem Projekt festgelegt hat. Welche Rolle die Ersatzteile dabei spielen, also wer weiß, ob das Teil im Fahrzeug ist, ist Thema des nächsten Teils der Serie.
 
-## Erster Schritt: mit Freigabe durch den Disponenten starten
+## Mit Freigabe durch den Disponenten starten
 
 ```schritte
 Mit Freigabe starten

@@ -95,7 +95,7 @@ Part of an honest decision is naming where an agent in Salesforce does not belon
 
 These questions are part of my [make-or-buy and licence planning](../../services/make-or-buy-licences/), because sometimes the cheapest agent is the one you do not build in Salesforce.
 
-## First step: pick one process and one target number
+## Pick one process and one target number
 
 Gartner [expects](https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027) more than 40 percent of agentic AI projects to be cancelled by the end of 2027, citing rising costs, unclear business value and inadequate risk controls. These steps address all three:
 

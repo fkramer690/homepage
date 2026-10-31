@@ -109,6 +109,6 @@ The point of the exercise is less the total than the decisions it forces. Who an
 
 How all this fits into the overall business case for Field Service is covered in [part 1 of the series](../salesforce-field-service-worth-it/) and in [chapter 1 of the Field Service masterclass](../../masterclass/field-service/field-service-business-case-licences/). If the service organisation also runs warranty claims, check the [Manufacturing Cloud chapter on warranty and after-sales](../../masterclass/manufacturing-cloud/warranty-and-after-sales/) before you buy licences for the same people twice.
 
-## First step: list every person and what they do in the system
+## List every person and what they do in the system
 
 List every person in the service organisation with what they do in the system each week, then assign the licence by the rules above. I do this as part of [make-or-buy and licence forecasts](../../services/make-or-buy-licences/), before the negotiation starts.

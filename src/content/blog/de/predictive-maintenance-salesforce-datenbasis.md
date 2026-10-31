@@ -110,7 +110,7 @@ Nehmen wir einen Maschinenbauer mit SAP, Service Cloud und Field Service im Betr
 
 Zusammen sind das rund 34.000 Credits, etwa 170 € im Monat. Connected Assets für 15.000 $ pro Org und Monat (US-Listenpreis) rechnet sich erst, wenn der Health Score Entscheidungen trägt, die Schwellwerte nicht treffen können.
 
-## Erster Schritt: Störungs-Work-Orders pro Baureihe zählen
+## Störungs-Work-Orders pro Baureihe zählen
 
 1. **Zählen** Sie Störungs-Work-Orders pro Baureihe und codierter Ursache für die letzten drei Jahre.
 2. **Schließen Sie die Lücken**: Verknüpfung mit der Anlage, Auswahllisten für Ursachen, Meldepflichten für Händler und Servicepartner.

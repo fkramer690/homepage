@@ -100,6 +100,6 @@ Diese Zahlen lassen sich meist aus dem ERP oder der bestehenden Einsatzplanung z
 
 Danach kommt die Frage nach den Daten. Field Service plant mit den Anlagen, Standorten, Qualifikationen und Verfügbarkeiten, die gepflegt sind, und mit keinen anderen. Ein Techniker, dessen Qualifikationen nirgends hinterlegt sind, wird von der Engine falsch eingeplant. Welche Daten das genau sind, beschreibe ich in [Teil 2 dieser Serie](../salesforce-field-service-stammdaten/).
 
-## Erster Schritt: vier Zahlen für einen Monat und eine Region erheben
+## Vier Zahlen für einen Monat und eine Region erheben
 
 Erheben Sie die vier Zahlen für einen Monat und eine Region. Zeigen sie viele kurze Einsätze mit viel Fahrzeit, rechnen Sie den Business Case für Field Service mit Lizenzen, Umsetzung und Wartung über mehrere Jahre. Wie die Einführung danach Region für Region abläuft, beschreibe ich in [Salesforce Field Service Einführung: Warum in Wellen?](../salesforce-field-service-einfuehrung/). Zeigen sie wenige lange Einsätze, prüfen Sie zuerst, ob Service Cloud, ein Portal oder das ERP die Lücke schließen. Was die mobile App heute für Techniker kann, steht in [Field Service Mobile im Außendienst](../salesforce-field-service-mobile-aussendienst/).

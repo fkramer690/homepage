@@ -102,6 +102,6 @@ If the store runs stably, has little custom code and no change is planned, waiti
 
 Worked example: a machine builder has run an Aura store since 2021 with about 30 custom components and a checkout flow with an ERP credit check. In the first quarter the team replaces the leaf components with Lightning web components inside the Aura store and releases them normally. In the second quarter it builds the LWR store in a sandbox, rebuilds the credit check as a PlaceOrder extension and moves the styling to the Theme panel. Then one pilot buyer group switches to the new store, the old one stays online as a fallback for two weeks, and the remaining groups follow, as described in [B2B shop rollout to dealers](../b2b-shop-dealer-rollout/).
 
-## First step: list Aura components and checkout subflows
+## List Aura components and checkout subflows
 
 Start with the inventory: list all Aura components, the checkout flow with its subflows and every place that links to the cart. Then decide which components you replace inside the Aura store in the next two releases. Plan the switch itself into your [Salesforce release calendar](../../masterclass/devops-release-management/release-planning-salesforce-releases/), with regression tests for search, cart and checkout, because three Salesforce releases a year hit both the old and the new store. The other topics of this chapter, from agents to rollout, are in the B2B Commerce masterclass chapter on [agents, migration and rollout](../../masterclass/b2b-commerce/agentforce-migration-rollout/).

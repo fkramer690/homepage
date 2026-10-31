@@ -110,7 +110,7 @@ Der Verbrauch ist klein. Die eigentlichen Kosten stecken in den drei Monaten Dat
 
 Der Agent geht wie jede andere Änderung in Produktion: mit einem Testsatz aus echten Ansprüchen, einer vereinbarten Bestehensquote und Monitoring danach, wie in [Agentforce-Agenten testen und freigeben](../agentforce-agenten-testen-freigeben/) beschrieben. Diese Grenzen zwischen Regeln, Agent und Menschen zu ziehen, gehört zu meiner [Arbeit als Salesforce-Architekt](../../leistungen/salesforce-architektur/). Ist die Entscheidung für die Manufacturing Cloud selbst noch offen, beginnen Sie mit [wann sich die Manufacturing Cloud lohnt](../manufacturing-cloud-wann-lohnt-sie-sich/).
 
-## Erster Schritt: die Anlagenabdeckung messen
+## Die Anlagenabdeckung messen
 
 1. **Anlagenabdeckung messen**: Anteil der Ansprüche des letzten Jahres, deren Seriennummer als Anlage mit Startdatum existiert.
 2. **Zuerst regelbasiert prüfen.** Laut Salesforce-Hilfe ist das in Enterprise, Unlimited und Developer Edition verfügbar, und es zeigt schnell, ob Ihre Bedingungen als Regeln funktionieren.

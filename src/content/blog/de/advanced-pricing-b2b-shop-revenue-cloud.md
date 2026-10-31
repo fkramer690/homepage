@@ -96,7 +96,7 @@ Hier passt Advanced Pricing. Listenpreise kommen wie heute aus SAP in Preisbüch
 
 Ändern Sie eine Annahme: Der Hersteller kalkuliert Maschinen in SAP und hat kein Revenue Cloud. Dann würde ich Ersatzteile mit Preisbüchern für die Stufen und einem Live-Aufruf an SAP für die 30 Schlüsselkunden bepreisen und keine Preis-Engine nur für den Shop kaufen.
 
-## Erster Schritt: Preislogik und Vertragspreise aufschreiben
+## Preislogik und Vertragspreise aufschreiben
 
 Schreiben Sie drei Dinge auf, bevor Sie mit Salesforce über Lizenzen sprechen: wo Ihre Preislogik heute liegt, wer Vertragspreise pflegt und ob Sie Request for Quote oder konfigurierte Bundles im Shop brauchen. Zeigen zwei der drei Antworten auf Salesforce, lohnt sich ein Proof of Concept mit Ihren echten Procedures. Die Lizenzfrage gehört in dieselbe Prüfung, die ich unter [Make-or-Buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/) beschreibe.
 

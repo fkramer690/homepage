@@ -111,6 +111,6 @@ Für einen Teilekatalog hat das direkte Folgen:
 
 Behoben wird all das in den Produktdaten und in der Sucheinrichtung, beschrieben in [Ersatzteile über die Teilenummer finden](../b2b-shop-suche-teilenummer/).
 
-## Erster Schritt: 200 Ersatzteile aus dem ERP prüfen
+## 200 Ersatzteile aus dem ERP prüfen
 
 Nehmen Sie eine Stichprobe von 200 typischen Ersatzteilen aus dem ERP und prüfen Sie jedes gegen die Liste oben: Gibt es eine brauchbare Bezeichnung, ein Bild, die Merkmale, nach denen ein Händler filtern würde, einen sauberen Vertriebsstatus? Das Ergebnis zeigt, wie viel Datenarbeit vor dem Shop liegt. Schreiben Sie dann die Owner-Tabelle für Produktfelder und nehmen Sie sie in die Schnittstellenliste auf. Welche Daten wie oft von SAP in den Shop fließen, steht in [B2B Commerce und SAP: Datenflüsse](../b2b-commerce-sap-datenfluesse/), und das ganze Thema gehört zum [Kapitel zu Katalog, Suche und Sichtbarkeit](../../masterclass/b2b-commerce/katalog-suche-sichtbarkeit/) meiner Masterclass B2B Commerce. Solche Schnittstellen zu entwerfen, gehört zu meiner Arbeit bei [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).

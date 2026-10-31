@@ -115,6 +115,6 @@ Händlerbestände sind noch einmal ein eigenes Thema. Bestand beim Händler und 
 
 Die [Winter-'27-Highlights auf Trailhead](https://trailhead.salesforce.com/content/learn/modules/winter-27-release-highlights/see-whats-new-marketing-commerce-revenue-management) nennen Unified Omnichannel Inventory: Filial- und Onlinebestand in einem Echtzeit-Datensatz, gegen "Ghost Stock" und für Abholung in der Filiale. B2B erwähnt die Beschreibung nicht. Für einen Hersteller mit Werken und Lagern statt Filialen würde ich in einer Sandbox prüfen, ob sich etwas ändert, bevor ich damit plane.
 
-## Erster Schritt: die Bestandsquelle pro Ansicht festlegen
+## Die Bestandsquelle pro Ansicht festlegen
 
 Legen Sie pro Ansicht fest, welche Bestandsquelle gilt: Produktliste, Produktseite, Warenkorb, Checkout. Definieren Sie dann die drei Zustände für Händler, den Update-Zyklus der Kopie und die Rückfallregel, wenn SAP nicht antwortet. Wie der Bestand in die gesamte Schnittstellenliste passt, steht in [B2B Commerce und SAP: Welche Daten fließen wohin](../b2b-commerce-sap-datenfluesse/), und das [Kapitel zur ERP-Anbindung der Masterclass](../../masterclass/b2b-commerce/erp-integration-bestand-auftraege/) ordnet es ein. Solche Schnittstellen unabhängig zu prüfen, gehört zu meiner Arbeit bei [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).

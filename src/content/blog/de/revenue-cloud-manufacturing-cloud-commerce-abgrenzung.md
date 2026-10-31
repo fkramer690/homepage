@@ -90,6 +90,6 @@ Manufacturing Cloud
 
 Die Reihenfolge ist weniger wichtig als die Regel dahinter: Das zweite Produkt nutzt Katalog und Preismaster des ersten.
 
-## Erster Schritt: den teuersten Schritt im Vertriebsprozess markieren
+## Den teuersten Schritt im Vertriebsprozess markieren
 
 Schreiben Sie Ihren Vertriebsprozess in Schritten auf, von der Anfrage bis zur Nachbestellung, und markieren Sie den Schritt, der heute am meisten Zeit oder Geld kostet. Prüfen Sie dann für diesen Schritt die Überschneidungen: welcher Katalog, welcher Preismaster, welches Angebotsmodell. Das Masterclass-Kapitel [Revenue Cloud: Überblick und Entscheidung](../../masterclass/revenue-cloud/revenue-cloud-ueberblick/) hilft bei der ersten Produktentscheidung, und die Produktgrenzen gehören in das Decision Log Ihrer [Salesforce-Architektur](../../leistungen/salesforce-architektur/).

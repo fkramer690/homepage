@@ -92,6 +92,6 @@ The handover is the moment the project team moves on. It works well when support
 
 After the handover one task remains for change management: the collected questions and tickets show which groups still need support. That list belongs to the sponsor, not in the archive.
 
-## First step: put team, meetings and exit criteria in writing
+## Put team, meetings and exit criteria in writing
 
 Before the next go-live, put in writing who is on the hypercare team, how often it meets and on which criteria hypercare ends. Plan the person from support in from the start, so the handover to operations can happen step by step. How we set up hypercare in programmes is described under [Salesforce change management consulting](../../services/change-management-salesforce/).

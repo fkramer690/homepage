@@ -82,7 +82,7 @@ Daran würde ich vor dem Start arbeiten:
 
 Keines dieser Probleme löst eine Software. Jedes braucht einen Verantwortlichen, der die Daten pflegt, und einen Prozess, der falsche Buchungen sichtbar macht. Eine regelmäßige Inventur einzelner Fahrzeuge ist dafür ein einfacher erster Schritt.
 
-## Erster Schritt: drei Techniker ihr Fahrzeug zählen lassen
+## Drei Techniker ihr Fahrzeug zählen lassen
 
 Prüfen Sie, wie genau der Fahrzeugbestand im ERP heute ist.
 

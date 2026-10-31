@@ -110,7 +110,7 @@ Requests for new products or prices take a different route. They go to sales and
 
 Cases are the most familiar part of the portal. Here Manufacturing Cloud helps with links to orders and assets, which Help lists for the customer licence. How warranty claims run through dealers is a topic of its own in a later part of this series.
 
-## First step: check the feature list against the licence
+## Check the feature list against the licence
 
 Before the portal is built, settle these points:
 

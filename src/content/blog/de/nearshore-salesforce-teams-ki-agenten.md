@@ -96,7 +96,7 @@ Nehmen wir einen Maschinenbauer mit Service Cloud, Field Service für den Außen
 
 Ob der Stream schneller geworden ist, bleibt offen, bis Durchlaufzeit und Nacharbeit mit der Ausgangslage verglichen sind, siehe [KI-Nutzen im Salesforce-Projekt messen](../ki-nutzen-salesforce-projekt-messen/). Der zusätzliche Entwickler, den der Partner zuerst angeboten hat, hätte nur die Schlange verlängert.
 
-## Erster Schritt: Reviewer pro Team zählen
+## Reviewer pro Team zählen
 
 1. **Reviewer pro Team zählen**, nicht nur Entwickler, und ihren Rückstau prüfen.
 2. **Beim Partner die Agenten-Stufe pro Person abfragen.**

@@ -111,6 +111,6 @@ An order from the store creates an order summary in Salesforce. Order summaries 
 
 Who owns the order from that point on is covered in [B2B store orders to the ERP](../b2b-store-orders-to-erp/), and which data flows between store and SAP in [B2B Commerce and SAP: which data flows where?](../b2b-commerce-sap-data-flows/). How dealers get to the checkout faster, with past orders and templates, is the topic of [reorders in B2B Commerce](../b2b-commerce-reorder-order-templates/).
 
-## First step: ask finance how dealers pay
+## Ask finance how dealers pay
 
 Start with finance, before the store design. Ask how each group of buyers pays today, which system holds credit limits and order blocks, and how fast that system can answer a live call. Then choose the component, and write down the validate logic with its timeout behaviour. The chapter [prices, cart and checkout](../../masterclass/b2b-commerce/prices-cart-checkout/) of the [B2B Commerce masterclass](../../masterclass/b2b-commerce/) puts the checkout next to price and reorder decisions, and the interface work behind the credit check is part of [Salesforce integration](../../services/salesforce-integration/).

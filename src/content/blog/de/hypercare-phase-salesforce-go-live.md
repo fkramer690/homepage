@@ -92,6 +92,6 @@ Die Übergabe ist der Moment, in dem das Projektteam weiterzieht. Gut läuft sie
 
 Nach der Übergabe bleibt eine Aufgabe für das Change Management: Die gesammelten Fragen und Meldungen zeigen, welche Gruppen noch Unterstützung brauchen. Diese Liste gehört zum Sponsor, nicht in die Ablage.
 
-## Erster Schritt: Team, Termine und Endkriterien schriftlich festlegen
+## Team, Termine und Endkriterien schriftlich festlegen
 
 Legen Sie vor dem nächsten Go-live schriftlich fest, wer im Hypercare-Team sitzt, wie oft es sich trifft und nach welchen Kriterien die Hypercare endet. Planen Sie die Person aus dem Support von Anfang an ein, damit die Übergabe an den Betrieb schrittweise laufen kann. Wie wir Hypercare in Programmen aufsetzen, steht unter [Change Management Beratung für Salesforce](../../leistungen/change-management/).

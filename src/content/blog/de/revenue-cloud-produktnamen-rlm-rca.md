@@ -84,7 +84,7 @@ Marketingnamen wechseln schneller, als Verträge laufen. Ein Bestellformular üb
 - **Lizenzprognose:** Revenue Cloud als eigene Zeile neben Sales Cloud führen, weil es zusätzlich zu einem Sales-Cloud-Abonnement gekauft wird. Wie ich so eine Prognose aufbaue, steht in [Salesforce-Lizenzen: Braucht jeder eine volle Lizenz?](../salesforce-lizenzen-volle-lizenz/).
 - **Projektglossar:** einen Namen für das Projekt festlegen und dabei bleiben. Ich würde Revenue Cloud nehmen, weil salesforce.com das heute zeigt.
 
-## Erster Schritt: unter allen Namen suchen
+## Unter allen Namen suchen
 
 Jede Quelle hat ihren eigenen Namen. Wer nur unter einem sucht, findet die Hälfte nicht:
 

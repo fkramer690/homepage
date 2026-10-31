@@ -119,6 +119,6 @@ Agree three points with finance in writing: which revenue types Salesforce invoi
 
 The interfaces for journal entries and invoice status are part of my work on [Salesforce integration](../../services/salesforce-integration/).
 
-## First step: list revenue types with their invoice source
+## List revenue types with their invoice source
 
 List your revenue types and note for each who invoices today and how often the contract changes. Rows with recurring fees and frequent changes are candidates for Billing, everything else stays in SAP. The masterclass chapter [billing and usage-based pricing](../../masterclass/revenue-cloud/billing-and-usage-based-pricing/) puts this decision into the whole quote-to-cash process.

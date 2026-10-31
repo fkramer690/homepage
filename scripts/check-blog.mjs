@@ -33,7 +33,7 @@ const structureIssues = [];
 const structurePhrases = [
   /nur so gut wie/i, /only as good as/i, /\b(besser|mehr|schneller) als jede[rsnm]?\b/i, /\b(better|more|faster) than any\b/i,
   /die gute nachricht/i, /the good news/i, /\bder haken\b/i, /\bthe catch\b/i, /the honest answer/i, /die ehrliche antwort/i,
-  /ein typisches szenario, als annahme/i, /a typical scenario, as an assumption/i, /^(erstens|zweitens|drittens)\b/im,
+  /ein typisches szenario, als annahme/i, /a typical scenario, as an assumption/i, /^(erstens|zweitens|firstly|secondly)\b/im, /\b(drittens|thirdly)\b/i,
 ];
 const genericCloser = /^(wo (fangen sie an|starten sie|sollten sie (anfangen|starten))|womit (fangen sie an|sollten sie anfangen)|where (do|should) you (start|begin)|what should you start with)\??$/i;
 const countAnnounce = /\b(drei|vier|fünf|three|four|five) (dinge|punkte|fragen|regeln|gründe|entscheidungen|kriterien|hebel|things|points|questions|rules|reasons|decisions|criteria|levers)\b/gi;

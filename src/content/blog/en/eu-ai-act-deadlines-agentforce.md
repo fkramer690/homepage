@@ -96,7 +96,7 @@ Assume a machine builder with SAP, Service Cloud, Field Service with 60 technici
 
 One idea is overdue, two get redesigned to stay out of high-risk, and one belongs to another team.
 
-## First step: list every agent in the org
+## List every agent in the org
 
 1. **List every agent** and AI feature in the org, with purpose and the people it talks to.
 2. **Classify each one** by role, provider or deployer, and by category: transparency, Annex III, Annex I or none.

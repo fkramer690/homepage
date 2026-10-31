@@ -86,7 +86,7 @@ According to [Trailhead on credit consumption](https://trailhead.salesforce.com/
 
 Salesforce does not publish how many credits search analytics uses. So check consumption in Digital Wallet after the first month, before someone builds ten more dashboards on Data Cloud. How credits relate to other AI costs is covered in the AI masterclass chapter on [costs and tokens](../../masterclass/ai-salesforce/costs-and-tokens/).
 
-## First step: take baselines before go-live
+## Take baselines before go-live
 
 Measuring starts before go-live, not after it.
 

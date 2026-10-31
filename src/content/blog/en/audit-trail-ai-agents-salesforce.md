@@ -104,7 +104,7 @@ Assume a machine builder with 90 dealers, an Agentforce service agent in the dea
 
 **Week 11, a dealer complaint.** A dealer says a competitor knew his net prices. Who read his price agreement through MCP in the past 40 days? Without the daily download only yesterday's file would exist. With it, the filter on `SALESFORCE_HOSTED_MCP` returns three users from dealer management, and the investigation moves on.
 
-## First step: switch on audit data and tracing before the first conversation
+## Switch on audit data and tracing before the first conversation
 
 1. **Switch on audit data collection and tracing** before the first productive conversation. There is no backfill.
 2. **Write a log inventory**: question answered, owner, readers, retention, deletion.

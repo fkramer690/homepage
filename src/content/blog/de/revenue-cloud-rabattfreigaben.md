@@ -101,6 +101,6 @@ Die Namen klingen gleich, übernommen wird trotzdem nichts. Die [Salesforce-Hilf
 
 Ich würde die Migration zum Aufräumen nutzen. In CPQ-Orgs sammeln sich gern Freigaberegeln, die niemand mehr erklären kann. Bauen Sie nur nach, was Vertriebsleitung und Controlling bestätigen. Den ganzen Migrationsweg beschreibt das Kapitel [Von CPQ zu Revenue Cloud](../../masterclass/revenue-cloud/von-cpq-zu-revenue-cloud/).
 
-## Erster Schritt: die Freigabematrix auf eine Seite schreiben
+## Die Freigabematrix auf eine Seite schreiben
 
 Schreiben Sie die Freigabematrix auf eine Seite, bevor jemand einen Workflow baut: Auslöser, Schwellen, Verantwortliche und die Quelle der Kostendaten. Bauen Sie dann die Workflows mit Vorschau, parallelen Freigebenden und Vertretung, und testen Sie jede Regel mit einem Angebot, das sie auslösen soll, und einem, das sie nicht auslösen soll. Wie Freigaben in den Weg vom Angebot zum Auftrag passen, zeigt das Kapitel [Angebot, Vertrag, Auftrag](../../masterclass/revenue-cloud/angebot-vertrag-auftrag/), und ich unterstütze dabei im Rahmen der [Salesforce-Architektur](../../leistungen/salesforce-architektur/).

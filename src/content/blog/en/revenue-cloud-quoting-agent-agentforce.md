@@ -94,6 +94,6 @@ A maker of packaging machines runs a sales desk that answers spare parts and ret
 
 Here the agent fits well. A rep types "wear part kit for line 3 plus two service days, usual discount", and the agent finds the kit and the service item in the catalog and builds the quote for the customer's account. Discounts above the limit go to the approval workflow. New machine quotes stay with the sales engineers, because their configuration rules still live in SAP. The agent is introduced in one country first and tested with real requests from the last quarter.
 
-## First step: write 30 test requests for one quote type
+## Write 30 test requests for one quote type
 
 Pick one quote type with standard products and synced prices, write 30 test requests from real cases and define the expected quote for each. Run them in a sandbox before any customer or dealer sees an agent quote, as described in [testing Agentforce agents before go-live](../testing-agentforce-agents-before-go-live/). Where agents fit in manufacturing beyond quoting is covered in the chapter [AI agents in manufacturing](../../masterclass/ai-salesforce/ai-agents-in-manufacturing/), and the whole path from quote to order in [quote, contract, order](../../masterclass/revenue-cloud/quote-contract-order/).

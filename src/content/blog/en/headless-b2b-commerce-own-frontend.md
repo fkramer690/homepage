@@ -106,6 +106,6 @@ Salesforce sells B2B Commerce as a share of storefront revenue and publishes no 
 
 The frontend repository and pipeline should belong to you, not to the agency that builds it, for the same reasons I give in [why clients should own their DevOps tools](../why-clients-should-own-their-devops-tools/). If you also want an Agentforce agent inside your own app, the [Agent API](../agentforce-agent-api-dealer-apps/) is the separate entry point, with its own identity questions. How agents reuse the same interfaces is covered in the AI masterclass chapter on [MCP and interfaces](../../masterclass/ai-salesforce/mcp-and-interfaces/).
 
-## First step: check channels in use and the frontend team
+## Check channels in use and the frontend team
 
 Write down which channels buyers really use today and which one should take orders. Then check whether a frontend team will exist for the next three years. If both answers point to headless, build a short proof with the reference app against a sandbox that holds your real catalogue and your pricing extension, and measure how fast cart and checkout answer with the live ERP call. The data flows behind it are part of the chapter [ERP integration](../../masterclass/b2b-commerce/erp-integration-stock-orders/) in my B2B Commerce masterclass, and I support this kind of decision under [Salesforce integration](../../services/salesforce-integration/).

@@ -118,7 +118,7 @@ The cheapest megabyte is the one you never process.
 - **Files above the Data Library limits.** Trailhead lists [100 MB per PDF and 4 MB per text or HTML file](https://trailhead.salesforce.com/content/learn/modules/agentforce-data-library-basics/build-a-file-based-data-library-for-an-agent), and the data source of a library cannot be changed later. Large catalogues need splitting, ideally by product line.
 - **Documents nobody asks about.** Start with the catalogues behind the most frequent dealer enquiries.
 
-## First step: measure the documents in MB per type
+## Measure the documents in MB per type
 
 1. **Measure the documents in MB per type**, after removing old versions and duplicates.
 2. **Choose the parser per type** using a sample in Intelligent Context or the sandbox.

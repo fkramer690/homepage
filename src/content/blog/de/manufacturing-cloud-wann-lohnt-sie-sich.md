@@ -103,7 +103,7 @@ Der Vergleich kippt oft an Punkt 3. Eine schlanke Eigenentwicklung für einen Pl
 
 Ein Punkt gehört noch dazu: Wer die Manufacturing Cloud wegen der Agenten kauft, sollte zuerst die Daten prüfen. Ein Agent, der Garantieansprüche bewertet, kann nur gegen die Anlagen- und Vertragsdaten dahinter prüfen, wie ich in [Agentforce: Business Value und Datenqualität zuerst](../agentforce-business-value-datenqualitaet/) beschreibe.
 
-## Erster Schritt: Vertrieb und Service befragen
+## Vertrieb und Service befragen
 
 Bevor ein Angebot auf dem Tisch liegt, helfen drei Fragen an den eigenen Vertrieb und Service: Wie viel Prozent des Umsatzes laufen über Rahmenverträge mit Mengen? Wie werden Händlerboni heute gerechnet? Wer prüft Garantieansprüche, und wie lange dauert das? Die Antworten zeigen früher als eine Demo, ob die Manufacturing Cloud zu Ihrem Geschäft passt.
 

@@ -99,6 +99,6 @@ Comparison
 
 The configuration for this, the territory setting, scheduling policies and work rules, consists of records rather than metadata. It belongs in the pipeline as described in the DevOps masterclass chapter on [data and configuration](../../masterclass/devops-release-management/data-and-configuration/), otherwise the tested sandbox state and production drift apart.
 
-## First step: list appointments without a territory, work rules and recipes
+## List appointments without a territory, work rules and recipes
 
 Start with three lists: appointments without a territory, work rules that read fields which are often empty, and recipes in use. They show how much work the switch is. Then pick the territory with the cleanest data as the pilot. How the engine fits into dispatching as a whole is covered in the masterclass chapter on [scheduling and dispatch](../../masterclass/field-service/field-service-scheduling-dispatch/).

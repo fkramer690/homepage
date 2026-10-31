@@ -101,6 +101,6 @@ In diesen Fällen würde ich ein eigenes CLM-Werkzeug außerhalb von Salesforce 
 
 Dann erzeugt Salesforce die kaufmännischen Daten und übergibt den unterschriebenen Vertrag über eine Schnittstelle. Ein Rechenbeispiel: Ein Zulieferer von Antriebskomponenten hat eine eigene Rechtsabteilung mit einem bestehenden CLM-Werkzeug für alle Konzernverträge. Der Vertrieb verschickt 300 Standard-Lieferverträge im Jahr aus Angeboten. Hier würde ich die Standardverträge in Salesforce Contracts mit freigegebenen Klauseln und DocuSign erzeugen und nur Verträge mit abweichenden Klauseln an das Werkzeug der Rechtsabteilung geben. So bleibt die Routine schnell und die Ausnahme bei den Juristen. Diese Make-or-Buy-Frage gehört zu meiner Arbeit an [Make-or-Buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/).
 
-## Erster Schritt: Kundenverträge zählen und in drei Gruppen sortieren
+## Kundenverträge zählen und in drei Gruppen sortieren
 
 Zählen Sie Ihre Kundenverträge pro Jahr und sortieren Sie sie in drei Gruppen: eigene Vorlage ohne Änderungen, eigene Vorlage mit verhandelten Klauseln, Papier des Kunden. Überwiegen die ersten beiden Gruppen, passt Salesforce Contracts. Bauen Sie dann mit der Rechtsabteilung die Klauselbibliothek, bevor die erste Vorlage entsteht. Wie Verträge in den Weg vom Angebot zum Auftrag passen, zeigt das Kapitel [Angebot, Vertrag, Auftrag](../../masterclass/revenue-cloud/angebot-vertrag-auftrag/).

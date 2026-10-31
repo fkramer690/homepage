@@ -98,7 +98,7 @@ In my view in three cases:
 
 If none of these applies, I would evaluate ASLM first. One vendor means less coordination, and there is no second managed package to test twice a year.
 
-## First step: list your own asset workflows
+## List your own asset workflows
 
 1. **List your asset workflows**: coverage checks, maintenance, campaigns, returns, depot.
 2. **Check where your entitlements sit today**: on the service contract, the asset or the account.

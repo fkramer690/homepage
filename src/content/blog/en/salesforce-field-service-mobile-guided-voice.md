@@ -94,7 +94,7 @@ Voice input is attractive for technicians who work with gloves, at height or in 
 
 It also makes sense to define which fields may be filled by voice and which values the technician has to confirm, for example measured values relevant to safety.
 
-## First step: pick one high-volume job type
+## Pick one high-volume job type
 
 A pragmatic order for a manufacturer with field service:
 

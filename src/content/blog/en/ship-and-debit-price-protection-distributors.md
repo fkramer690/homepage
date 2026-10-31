@@ -103,7 +103,7 @@ With Channel Revenue Management, special prices become pricing terms, distributo
 
 Against that stand $30,000 a year for the add-on, portal licences for 15 distributors and the interface work. For partner access, the customer portal article explains [what partners see and which licence covers it](../manufacturing-cloud-customer-portal/). If only three distributors send twenty claims a month, I would keep the current process and tighten the approval rules first. The chapter on the [dealer and partner channel](../../masterclass/manufacturing-cloud/dealer-and-partner-channel/) shows where ship and debit sits next to rebates, portals and dealer visits.
 
-## First step: count claims per month
+## Count claims per month
 
 1. **Count.** Claims per month, rejected claims and the average time to payment today.
 2. **Data.** Which distributors can deliver sell-through and stock as files, and how often.

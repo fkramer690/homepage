@@ -95,6 +95,6 @@ Wann der Milestone als erfüllt gilt, etwa mit dem Status In Progress vor Ort, l
 
 **Klären Sie die Grenze zur Garantie.** Ob ein Einsatz unter Garantie, Vertrag oder gegen Rechnung läuft, entscheidet über die Abrechnung. Diese kaufmännische Seite gehört nicht in die Planung, muss aber am Arbeitsauftrag erkennbar sein. Sonst baut der Techniker ein Teil ein, das später niemand abrechnen kann, oder der Kunde bekommt eine Rechnung für einen Einsatz, der unter Garantie lief.
 
-## Erster Schritt: die drei häufigsten Vertragsarten aufschreiben
+## Die drei häufigsten Vertragsarten aufschreiben
 
 Nehmen Sie Ihre drei häufigsten Vertragsarten und schreiben Sie für jede auf, was der Kunde gekauft hat, welche Wartungen geplant sind und welche Reaktionszeit zugesagt ist. Daraus ergeben sich Service Contracts, Maintenance Plans und Entitlements fast von selbst. Danach legen Sie fest, welche Priorität jede Zusage in der Planung bekommt. Wie Servicepartner und Subunternehmer in dieselbe Planung kommen, zeigt der [nächste Teil der Serie](../salesforce-field-service-servicepartner/).

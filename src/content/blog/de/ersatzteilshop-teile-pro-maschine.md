@@ -96,7 +96,7 @@ Eine Käufergruppe pro Maschine scheidet an den Limits oben aus. Eine Käufergru
 
 Die Entscheidung im Szenario: Käufergruppen bleiben pro Land und Händlerstufe. Eine Maschinenseite zeigt die Assets des Händlers und fragt für die gewählte Maschine die ersatzteilrelevanten Positionen live im PLM ab, das Ergebnis wird einen Tag am Asset zwischengespeichert. Für Maschinen, die älter als zehn Jahre sind, fällt die Seite auf die Teileliste der Baureihe zurück und sagt das auch. Das Filtern der Suche per Extension wird verschoben, bis die Klasse allgemein verfügbar ist.
 
-## Erster Schritt: 20 Bestellungen bis zur As-built-Stückliste prüfen
+## 20 Bestellungen bis zur As-built-Stückliste prüfen
 
 ```schritte
 Zuerst die Daten prüfen

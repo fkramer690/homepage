@@ -99,7 +99,7 @@ Facetten helfen, wenn eine Suche viele Treffer liefert, etwa "Filter" in einem K
 
 Händlern nur Teile zu zeigen, die zu einer bestimmten Maschine passen, ist eine andere Anforderung. Suche und Facetten wissen nicht, welche Maschinen ein Händler hat. Die Wege dafür stehen in [nur Teile zur eigenen Maschine zeigen](../ersatzteilshop-teile-pro-maschine/), die KI-Seite in [Ersatzteile per Seriennummer](../ersatzteile-seriennummer-ki-agent/).
 
-## Erster Schritt: 200 Suchbegriffe aus dem Innendienst testen
+## 200 Suchbegriffe aus dem Innendienst testen
 
 Sammeln Sie, was Händler eintippen, bevor Sie etwas einstellen. Der Innendienst hat E-Mails und Telefonnotizen voller Teilenummern, alter Nummern und Beschreibungen. Nehmen Sie 200 davon und lassen Sie sie gegen einen Test-Store mit Ihren echten Daten laufen. Jeder Fehltreffer ist entweder fehlende Daten, ein fehlendes durchsuchbares Feld oder ein Problem mit der Schreibweise.
 

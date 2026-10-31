@@ -96,7 +96,7 @@ Nehmen wir einen Maschinenbauer mit SAP, Service Cloud, Field Service mit 60 Tec
 
 Eine Idee ist überfällig, zwei werden so umgeplant, dass sie außerhalb von Hochrisiko bleiben, und eine gehört in ein anderes Team.
 
-## Erster Schritt: alle Agenten der Org erfassen
+## Alle Agenten der Org erfassen
 
 1. **Alle Agenten erfassen**, dazu die KI-Funktionen der Org, mit Zweck und den Menschen, mit denen sie sprechen.
 2. **Jeden einordnen** nach Rolle, Anbieter oder Betreiber, und nach Kategorie: Transparenz, Anhang III, Anhang I oder nichts davon.

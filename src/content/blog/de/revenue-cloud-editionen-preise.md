@@ -112,7 +112,7 @@ Rechenbeispiel: Ein Maschinenbauer hat 80 Sales-Cloud-Nutzer. 35 davon erstellen
 
 Ob Growth und Advanced in einer Org gemischt werden können, steht auf der Preisseite ebenfalls nicht. Braucht nur der Projektvertrieb Verträge und Verbrauchsabrechnung, wäre eine Mischung der günstigere Plan, also fragen Sie ausdrücklich danach. Wie ich eine solche Prognose allgemein aufbaue, steht in [Salesforce-Lizenzen: Braucht jeder eine volle Lizenz?](../salesforce-lizenzen-volle-lizenz/).
 
-## Erster Schritt: Lizenzbedarf für Leser und Freigeber schriftlich klären
+## Lizenzbedarf für Leser und Freigeber schriftlich klären
 
 Listenpreise sind ein Ausgangspunkt, und Salesforce stellt sein Editionsmodell gerade über mehrere Clouds um. Sales Cloud gibt es jetzt als Core, Advanced und Max, wie in [Salesforce-Editionen Core, Advanced, Max für Hersteller](../salesforce-editionen-core-advanced-max/) beschrieben. Vor der Unterschrift würde ich mir diese Punkte schriftlich geben lassen:
 

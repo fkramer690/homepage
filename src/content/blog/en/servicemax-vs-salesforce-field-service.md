@@ -106,7 +106,7 @@ contra: What you accept in return
 
 My rule of thumb: Salesforce Field Service is the default for manufacturers who already run sales and service on Salesforce and mainly schedule maintenance and breakdown jobs. Whether Field Service pays off at all is covered in [Salesforce Field Service: when is it worth it?](../salesforce-field-service-worth-it/). ServiceMax Core belongs on the list when repairs in your own depot, returns and contractual entitlements shape your service and your PLM comes from PTC. If you want to keep Salesforce Field Service and only add asset depth, Asset 360 is the variant I would look at first.
 
-## First step: mark the service processes with depot, returns and contracts
+## Mark the service processes with depot, returns and contracts
 
 1. **List your service processes** and mark the ones that involve the depot, returns and entitlement checks.
 2. **Request two quotes**: PTC including all Salesforce licences, Salesforce Field Service including add-ons. The role logic for Salesforce is in [Salesforce Field Service licences by role](../field-service-licences-by-role/).

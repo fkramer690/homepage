@@ -90,6 +90,6 @@ Manufacturing Cloud
 
 The order matters less than the rule behind it: the second product reuses the catalog and price master of the first.
 
-## First step: mark the most expensive step in your selling process
+## Mark the most expensive step in your selling process
 
 Write down your selling process in steps, from enquiry to reorder, and mark the step that costs most time or money today. Then check the overlaps for that step: which catalog, which price master, which quote model. The masterclass chapter [Revenue Cloud overview and decision](../../masterclass/revenue-cloud/revenue-cloud-overview/) helps with the first product decision, and the product boundaries belong in your [Salesforce architecture](../../services/salesforce-architecture/) decision log.

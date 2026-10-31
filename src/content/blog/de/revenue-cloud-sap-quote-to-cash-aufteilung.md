@@ -120,6 +120,6 @@ Auf einer Seite, so dass ein neuer Partner sie in zehn Minuten versteht:
 
 Diese Schnittstellen zu entwerfen ist ein großer Teil meiner Arbeit bei [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/). Die größere Frage, ob Revenue Cloud überhaupt passt, behandelt das Masterclass-Kapitel [Revenue Cloud: Überblick und Entscheidung](../../masterclass/revenue-cloud/revenue-cloud-ueberblick/).
 
-## Erster Schritt: die unklaren Zeilen mit der Finanzabteilung klären
+## Die unklaren Zeilen mit der Finanzabteilung klären
 
 Schreiben Sie Ihre Quote-to-Cash-Schritte in eine Spalte und daneben SAP oder Salesforce, so wie es heute läuft. Markieren Sie dann die drei Zeilen, bei denen die Antwort unklar ist: In den meisten Unternehmen sind das Preis, Auftrag und Rechnung. Klären Sie diese drei mit der Finanzabteilung, bevor Sie Partner um Schätzungen bitten, denn jede Antwort verändert den Umfang um Wochen.

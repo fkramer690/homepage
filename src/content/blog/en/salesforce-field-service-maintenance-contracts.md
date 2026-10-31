@@ -95,6 +95,6 @@ When the milestone counts as met, for example with the status In Progress on sit
 
 **Settle the line to warranty.** Whether a visit runs under warranty, under contract or is billed decides the invoicing. That commercial side does not belong in scheduling, but it has to be visible on the work order. Otherwise the technician fits a part that nobody can invoice later, or the customer gets a bill for a visit that ran under warranty.
 
-## First step: write down your three most common contract types
+## Write down your three most common contract types
 
 Take your three most common contract types and write down for each what the customer bought, which maintenance is planned and which response time is committed. Service contracts, maintenance plans and entitlements follow almost by themselves. Then decide which priority each commitment gets in scheduling. How service partners and subcontractors fit into the same scheduling is covered in the [next part of the series](../salesforce-field-service-service-partners/).

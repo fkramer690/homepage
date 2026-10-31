@@ -112,7 +112,7 @@ Der Developer Guide enthält eine [Object Deployment Reference](https://develope
 
 Verantwortlich sollte das Produktmanagement des Herstellers sein, nicht der Implementierungspartner. Nach dem Go-live kommen jedes Quartal neue Maschinen, Optionen und Preisänderungen, und wer den Katalog pflegt, bestimmt, wie schnell der Vertrieb sie anbieten kann.
 
-## Erster Schritt: Maschinenfamilien und Vertriebsfragen auflisten
+## Maschinenfamilien und Vertriebsfragen auflisten
 
 1. **Listen Sie die Maschinenfamilien auf** und die Fragen, die der Vertrieb pro Familie stellt. Daraus werden Klassifizierungen und Attribute.
 2. **Wenden Sie die drei Prüffragen** auf jede Variante an: eigene Materialnummer, im Sales Agreement geplant, separat gelagert oder gewartet.

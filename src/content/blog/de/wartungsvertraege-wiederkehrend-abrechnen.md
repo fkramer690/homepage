@@ -99,6 +99,6 @@ In Revenue Cloud ist jede Stufe ein Abo-Produkt mit eigenem Preis, die Zahl der 
 
 Zu den Billing Events: Summieren sich die Verträge auf 2,4 Millionen US-Dollar im Jahr, verbrauchen die Rechnungen 48.000 Events, bei einem Event je 50 US-Dollar Zwischensumme laut [Rate Sheet vom Februar 2026](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/documents/pricing/revenue-cloud-billing-rate-sheet-feb-2026.pdf). Den Preis je Event veröffentlicht Salesforce nicht.
 
-## Erster Schritt: den Anteil der Wartung am Umsatz prüfen
+## Den Anteil der Wartung am Umsatz prüfen
 
 Revenue Cloud Billing lohnt sich, wenn Wartungs- und Serviceverträge oft in Salesforce verkauft und geändert werden und einen echten Anteil am Umsatz haben. Fakturiert SAP Maschinen und Ersatzteile und ist Wartung ein kleiner Zusatz, würde ich die Rechnung in SAP lassen und Revenue Cloud für Angebot, Auftrag und Asset nutzen. Die Abwägung steht in [Revenue Cloud Billing oder SAP](../revenue-cloud-billing-oder-sap-rechnung/). Nutzungsbasierte Verträge folgen derselben Logik und stehen in [Pay-per-Use für Maschinen](../pay-per-use-maschinen-revenue-cloud/). Das Kapitel [Abrechnung und nutzungsbasierte Preise](../../masterclass/revenue-cloud/abrechnung-und-nutzungsbasierte-preise/) fasst diese Beiträge zusammen.

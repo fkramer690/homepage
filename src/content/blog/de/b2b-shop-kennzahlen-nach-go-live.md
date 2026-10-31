@@ -86,7 +86,7 @@ Laut [Trailhead zum Credit-Verbrauch](https://trailhead.salesforce.com/content/l
 
 Wie viele Credits die Suchanalyse verbraucht, veröffentlicht Salesforce nicht. Prüfen Sie den Verbrauch deshalb nach dem ersten Monat im Digital Wallet, bevor jemand zehn weitere Dashboards auf Data Cloud baut. Wie Credits mit anderen KI-Kosten zusammenhängen, steht im KI-Masterclass-Kapitel [Kosten und Token](../../masterclass/ki-salesforce/kosten-und-token/).
 
-## Erster Schritt: Ausgangswerte vor dem Go-live erheben
+## Ausgangswerte vor dem Go-live erheben
 
 Die Messung beginnt vor dem Go-live, nicht danach.
 

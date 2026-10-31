@@ -106,7 +106,7 @@ contra: Was Sie dafür in Kauf nehmen
 
 Meine Faustregel: Salesforce Field Service ist der Standard für Hersteller, die Vertrieb und Service schon auf Salesforce haben und vor allem Wartung und Störungseinsätze planen. Ob sich Field Service überhaupt rechnet, zeigt [Salesforce Field Service: Wann lohnt es sich?](../salesforce-field-service-lohnt-sich/). ServiceMax Core gehört auf die Liste, wenn Reparaturen im eigenen Depot, Rücksendungen und vertragliche Ansprüche Ihren Service prägen und Ihr PLM von PTC kommt. Wenn Sie Salesforce Field Service behalten und nur Anlagentiefe ergänzen wollen, ist Asset 360 die Variante, die ich mir zuerst ansehen würde.
 
-## Erster Schritt: Serviceprozesse mit Depot, Retouren und Verträgen markieren
+## Serviceprozesse mit Depot, Retouren und Verträgen markieren
 
 1. **Listen Sie Ihre Serviceprozesse auf** und markieren Sie, welche davon Depot, Retouren und Vertragsprüfung betreffen.
 2. **Fordern Sie zwei Angebote an**: PTC inklusive aller Salesforce-Lizenzen, Salesforce Field Service inklusive Add-ons. Die Rollenlogik für Salesforce steht in [Salesforce Field Service Lizenzen: Wer braucht welche?](../field-service-lizenzen-rollen-dispatcher-techniker/).

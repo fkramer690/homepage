@@ -82,7 +82,7 @@ According to the [Salesforce data model](https://developer.salesforce.com/docs/a
 
 That way automation grows with trust, and not by a plan someone fixed before the project. Which role spare parts play in this, meaning who knows whether the part is in the van, is the topic of the next part of the series.
 
-## First step: start with the dispatcher releasing every appointment
+## Start with the dispatcher releasing every appointment
 
 ```schritte
 Start with release

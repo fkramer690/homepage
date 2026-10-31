@@ -89,7 +89,7 @@ Nach drei Monaten zeigen zwei Zahlen, ob es funktioniert: der Anteil der Videosi
 
 **Welche Fehler ohne Einsatz geschlossen werden dürfen.** Legen Sie schriftlich fest, welche Fehlerklassen eine Videositzung ohne Einsatzbericht schließen darf und wie die Anweisung an den Bediener am Case dokumentiert wird. Wenn der Bediener einer falschen Anweisung folgt und die Maschine beschädigt, müssen Sie wissen, was gesagt wurde.
 
-## Erster Schritt: die Störungen des letzten Jahres nach Ursache ordnen
+## Die Störungen des letzten Jahres nach Ursache ordnen
 
 ```schritte
 Störungen ordnen

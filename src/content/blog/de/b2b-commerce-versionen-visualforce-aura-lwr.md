@@ -98,6 +98,6 @@ Viele Hersteller wissen es nicht genau, weil ein Partner den Shop vor Jahren auf
 
 Schreiben Sie das Ergebnis auf, mit der Zahl der eigenen Komponenten und dem Partner, der sie gebaut hat. Diese eine Seite ist die Grundlage für jede spätere Entscheidung.
 
-## Erster Schritt: Generation feststellen und Roadmap-Funktionen prüfen
+## Generation feststellen und Roadmap-Funktionen prüfen
 
 Stellen Sie fest, welche Generation Sie betreiben, und listen Sie die Funktionen auf Ihrer Roadmap für die nächsten zwei Jahre. Prüfen Sie dann pro Funktion, ob Salesforce sie für Ihren Store-Typ dokumentiert. Braucht nichts auf der Liste eine neue Generation, behalten Sie den Shop und investieren in Daten und Prozesse. Braucht etwas sie, planen Sie den Umzug mit Blick auf die [Releaseplanung für Salesforce-Releases](../../masterclass/devops-release-management/release-planung-salesforce-releases/), denn eine Store-Migration sollte nicht mit einem großen Release zusammenfallen. Die Kostenseite steht in [Kapitel 1 der Masterclass B2B Commerce](../../masterclass/b2b-commerce/b2b-commerce-lohnt-sich-ueberblick/), der Umzug selbst in [Kapitel 5 zu Agenten, Migration und Einführung](../../masterclass/b2b-commerce/agentforce-migration-einfuehrung/) und die Lizenzfrage für Käufer in [B2B Commerce Lizenzen für Käufer](../b2b-commerce-lizenzen-kaeufer/). Architekturentscheidungen wie diese gehören zu meiner Arbeit in der [Salesforce-Architektur](../../leistungen/salesforce-architektur/).
