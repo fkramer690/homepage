@@ -89,6 +89,6 @@ Am besten, bevor der erste Partner startet. Diese Regeln haben sich bewährt:
 Besitzt ein Partner bereits einige der Tools, planen Sie den Umzug früh und in einer ruhigen Phase, nicht während eines Ausstiegs. Ein Repository lässt sich mit voller Historie an einem Tag umziehen. Jira und Miro brauchen mehr Planung, sind aber jetzt immer noch deutlich günstiger umzuziehen als später.
 ```
 
-## Erster Schritt: eine Liste aller Tools mit Vertrag und Admins
+## Alle Tools mit Vertrag und Admins auflisten
 
 Machen Sie eine einfache Liste: jedes Tool im Projekt, wer den Vertrag hält, wer die Admins sind und welche Mitarbeitenden von Partnern Zugriff haben. In vielen Programmen zeigt schon diese Liste, wo die Risiken liegen. Jede Zeile, in der ein Partner den Vertrag oder die Admin-Rechte hält, bekommt ein Datum, bis zu dem sie auf Sie übertragen ist.

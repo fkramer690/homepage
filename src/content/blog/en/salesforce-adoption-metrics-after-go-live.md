@@ -78,6 +78,6 @@ Not every number belongs in every report. The steering committee needs two or th
 
 At least six months, monthly. The first weeks after go-live are distorted: attention is high, key users are present, and many people try out the new system. Whether a process stays only shows after three to six months, when the project team has moved on. If a number drops during that time, reinforcement is missing. In a worldwide rollout, measure per country, because every country follows its own curve, see [change management in a global Salesforce rollout](../change-management-global-salesforce-rollout/).
 
-## First step: one adoption number for your most important process
+## Pick one adoption number for your most important process
 
 For your most important new process, choose one number on the level "use of the process", such as the share of quotes created in Salesforce. Set the baseline before go-live and build a report that shows the number per group and country. After go-live, this report goes to the sponsor every month. If the share in a country is below the baseline after three months, ask the key users there at which point the work leaves Salesforce. How we set this up in programmes is described under [change management for Salesforce programmes](../../services/change-management-salesforce/).

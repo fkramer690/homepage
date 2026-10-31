@@ -98,7 +98,7 @@ Ergebnisse sichern | nach dem Go-live · interne Verantwortliche
 
 Entscheidend ist der Zeitpunkt. Change Management, das zwei Wochen vor dem Go-live beginnt, kann nur noch informieren. Die Frage, welche Gruppen betroffen sind und was sich für sie ändert, gehört in die Planung, bevor gebaut wird. Bei einem [globalen Template](../salesforce-globales-template-laenderabweichungen/) ist sie sogar Teil der Architektur, weil jede Abweichung pro Land auch eine Frage der Gewohnheit ist.
 
-## Erster Schritt: Gruppen, Änderungen und Sponsor des nächsten Releases aufschreiben
+## Gruppen, Änderungen und Sponsor des nächsten Releases aufschreiben
 
 Beantworten Sie für Ihr nächstes Release drei Fragen schriftlich: Welche Gruppen sind betroffen? Was ändert sich für jede im Alltag? Wer im Management steht sichtbar dahinter? Fehlt die dritte Antwort, ist das der erste Schritt. Danach legen Sie fest, woran Sie Erfolg messen, zum Beispiel an Nutzungszahlen in Salesforce statt an der Zahl der Schulungen.
 

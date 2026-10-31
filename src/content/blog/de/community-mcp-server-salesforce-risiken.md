@@ -100,7 +100,7 @@ Nehmen wir einen Maschinenbauer mit Sales Cloud, Service Cloud, Händlerportal u
 
 Alle drei Anliegen werden erfüllt, und kein Community-Server erreicht die Org.
 
-## Erster Schritt: Bestandsaufnahme der MCP-Server bei allen Partnern
+## Die MCP-Server bei allen Partnern erfassen
 
 1. **Bestandsaufnahme.** Fragen Sie jeden Partner, welche MCP-Server in seinen Clients für Ihre Orgs eingerichtet sind, mit Versionen. Das Ende des DX MCP Servers ist ein guter Anlass, siehe [das Ende des Salesforce DX MCP Servers](../salesforce-dx-mcp-server-ende/).
 2. **Die Regel aufschreiben.** Standard sind gehostete oder von Salesforce betriebene Server; Community-Server nur nach den sechs Prüfpunkten, in Sandboxes und mit gepinnter Version.

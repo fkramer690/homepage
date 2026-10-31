@@ -141,7 +141,7 @@ Deshalb würde ich jede Regel- und Settings-Datei unter [CODEOWNERS](https://doc
 
 Die Datei wächst aus Belegen, nicht aus Wunschlisten. OpenAI empfiehlt, Regeln nach wiederholten Fehlern zu ergänzen, Anthropic nach der zweiten Korrektur. In der Praxis sind die Review-Funde nach Kategorie die Grundlage, wie in [KI-generierten Salesforce-Code prüfen](../ki-generierten-salesforce-code-pruefen/) beschrieben. Zeilen fliegen wieder raus, sobald ein Pipeline-Gate sie abdeckt. Nach jedem Salesforce-Release prüft die verantwortliche Person zuerst die Zeile zur API-Version.
 
-## Erster Schritt: vorhandene Regeldateien im Repository aufnehmen
+## Vorhandene Regeldateien im Repository aufnehmen
 
 ```schritte
 Bestand aufnehmen

@@ -78,6 +78,6 @@ Nicht jede Zahl gehört in jeden Bericht. Der Lenkungsausschuss braucht zwei ode
 
 Mindestens ein halbes Jahr, monatlich. Die ersten Wochen nach dem Go-live sind verzerrt: Die Aufmerksamkeit ist hoch, Key User sind präsent, und viele probieren das neue System aus. Ob ein Prozess bleibt, zeigt sich erst nach drei bis sechs Monaten, wenn das Projektteam weitergezogen ist. Fällt eine Zahl in dieser Zeit ab, fehlt Reinforcement. Bei einem weltweiten Rollout messen Sie pro Land, weil jedes Land einen eigenen Verlauf hat, siehe [Change Management im weltweiten Salesforce-Rollout](../change-management-weltweiter-rollout/).
 
-## Erster Schritt: eine Nutzungszahl für den wichtigsten Prozess
+## Eine Nutzungszahl für den wichtigsten Prozess festlegen
 
 Wählen Sie für Ihren wichtigsten neuen Prozess eine Zahl auf der Ebene „Nutzung des Prozesses“, etwa den Anteil der Angebote, die in Salesforce erstellt werden. Legen Sie den Ausgangswert vor dem Go-live fest und bauen Sie einen Bericht, der die Zahl pro Gruppe und Land zeigt. Nach dem Go-live geht dieser Bericht jeden Monat an den Sponsor. Liegt der Anteil nach drei Monaten in einem Land unter dem Ausgangswert, fragen Sie die Key User dort, an welcher Stelle die Arbeit aus Salesforce herausgeht. Wie wir das in Programmen aufsetzen, steht unter [Change Management für Salesforce-Programme](../../leistungen/change-management/).

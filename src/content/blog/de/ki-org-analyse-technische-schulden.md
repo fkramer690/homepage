@@ -114,7 +114,7 @@ Dem Kunden. Lassen Sie die Scans in Ihrer Pipeline und die Modellaufrufe in Ihre
 
 Die Analyse ist der Startpunkt für die Übergabe: welche Objekte an welchen Partner gehen, welche Komponenten gelöscht und welche neu gebaut werden. Diese Steuerung gehört zu meiner Arbeit in der [Partnersteuerung](../../leistungen/partnersteuerung/).
 
-## Erster Schritt: alle Metadaten in ein eigenes Repository
+## Alle Metadaten in ein eigenes Repository abrufen
 
 1. Rufen Sie alle Metadaten in ein Repository ab, das Ihnen gehört.
 2. Schalten Sie das sfdx-hardis-Monitoring für zwei Wochen ein, um Nutzungsdaten zu sammeln.

@@ -87,6 +87,6 @@ Ein Netzwerk aus Key Usern braucht einen festen Termin. Ich empfehle einen kurze
 
 Wichtig ist auch, dass die Rolle sichtbar anerkannt wird. Wer zusätzliche Arbeit für das Projekt übernimmt, sollte das in seinem Jahresgespräch wiederfinden. Das kostet nichts und entscheidet darüber, ob sich beim nächsten Projekt wieder jemand meldet.
 
-## Erster Schritt: fragen, wen das Team heute um Rat bittet
+## Fragen, wen das Team heute um Rat bittet
 
 Fragen Sie in jedem betroffenen Team: Wen fragen Sie heute, wenn Sie im System nicht weiterkommen? Die Namen, die mehrfach fallen, sind Ihre Kandidaten. Danach vereinbaren Sie mit den Führungskräften die Zeit und nehmen die Key User in die ersten Workshops mit, bevor gebaut wird. Fällt in einem Team kein Name, trägt dort noch niemand das Thema, und dieses Team braucht in der Schulung mehr Begleitung. Wie wir das Netzwerk in Programmen aufbauen, steht unter [Change Management für Salesforce-Programme](../../leistungen/change-management/).

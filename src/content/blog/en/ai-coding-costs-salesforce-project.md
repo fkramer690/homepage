@@ -102,7 +102,7 @@ The answer follows the commercial model. In time and materials the client pays f
 
 In time and materials I prefer the first setup: for $650 to $1,500 a month, the client controls data, limits and offboarding. In a German company the works council has a say, see [AI coding tools, works council and GDPR](../ai-coding-tools-works-council-gdpr/). Whether to buy seats at all is part of my [make-or-buy and licence planning](../../services/make-or-buy-licences/).
 
-## First step: decide who pays before the first sprint
+## Decide who pays before the first sprint
 
 1. **Decide who pays before the first sprint** and write it into the statement of work.
 2. **Set limits.** Claude Team and Enterprise have spend limits per organisation, group and member for usage beyond the seat allowance, the Claude Console has workspace limits, and GitHub has budgets per user and cost centre.

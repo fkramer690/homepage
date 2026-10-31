@@ -87,6 +87,6 @@ The third Prosci phase starts after go-live and is the one most often cut, becau
 
 The process ends when the new way of working is measurably in use and nobody from the project is needed for it any more. That is well after go-live.
 
-## First step: write one change output into every project phase
+## Write one change output into every project phase
 
 Take the project plan of your next Salesforce initiative and write down for every phase which change output should exist at its end. If planning is missing the impact assessment, the sponsor plan or the metrics, that is your first step. The hub article [Salesforce change management: why rollouts fail](../change-management-salesforce-rollout/) shows which topics belong to it. How we run the process in programmes is described under [Salesforce change management consulting](../../services/change-management-salesforce/).

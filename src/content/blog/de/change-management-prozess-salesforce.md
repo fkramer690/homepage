@@ -87,6 +87,6 @@ Die dritte Prosci-Phase beginnt nach dem Go-live und wird am häufigsten gestric
 
 Der Prozess endet, wenn die neue Arbeitsweise gemessen genutzt wird und niemand aus dem Projekt mehr dafür gebraucht wird. Das ist deutlich nach dem Go-live.
 
-## Erster Schritt: ein Change-Ergebnis pro Projektphase eintragen
+## Ein Change-Ergebnis in jede Projektphase eintragen
 
 Nehmen Sie den Projektplan Ihres nächsten Salesforce-Vorhabens und tragen Sie für jede Phase ein, welches Change-Ergebnis am Ende vorliegen soll. Fehlen in der Planung die Impact-Analyse, der Sponsor-Plan oder die Kennzahlen, ist das Ihr erster Schritt. Der Hub-Artikel [Salesforce Change Management: warum Einführungen scheitern](../change-management-salesforce-einfuehrung/) zeigt, welche Themen dazugehören. Wie wir den Prozess in Programmen begleiten, steht unter [Change Management Beratung für Salesforce](../../leistungen/change-management/).

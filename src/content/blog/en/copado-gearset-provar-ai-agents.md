@@ -114,7 +114,7 @@ contra: Open source and a coding agent are enough when
 - you or your architect own the setup
 ```
 
-## First step: put these questions in writing before you pay
+## Put these questions in writing before you pay
 
 I would put these questions to any DevOps vendor selling an AI agent and get the answers into the order form:
 

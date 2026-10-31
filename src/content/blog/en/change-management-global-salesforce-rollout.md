@@ -89,6 +89,6 @@ This needs breathing room between two waves. Whoever starts the next wave while 
 Let key users of the next country work for a few days in the country of the current wave. They see real cases, learn the questions that come after go-live and bring that back to their own country.
 ```
 
-## First step: a sponsor per country before planning starts
+## Name a sponsor per country before planning starts
 
 Name a sponsor for every country before the country enters planning, and have them review the list of country deviations. Define key users per country and agree their time with their managers, as described in [key users in Salesforce rollouts](../salesforce-key-user-network/). After the first country, plan a review before the second one starts. A country without a named sponsor does not enter planning, even when the schedule is tight. How we set this up in programmes is described under [change management for Salesforce programmes](../../services/change-management-salesforce/).

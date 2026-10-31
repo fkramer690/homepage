@@ -110,7 +110,7 @@ Each agent gets exactly one owner in the [object ownership matrix](../salesforce
 
 Groups with one production org per subsidiary face a gap. The [agent command reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_agent_commands_unified.htm) lists an agent template for second-generation managed packages, but I found no Salesforce guide for rolling one agent out to several of your own orgs. Until then I would treat each org as its own release target with its own version log.
 
-## First step: put the .agent files in the client repository
+## Put the .agent files in the client repository
 
 1. Put every agent's `.agent` file in the client repository and stop building agents directly in shared orgs.
 2. Add `sf agent validate authoring-bundle` and scoped deploys to the pipeline.

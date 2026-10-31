@@ -87,7 +87,7 @@ UAT finds three problems:
 
 Two of three problems announce themselves. The third would have gone live and cost money, one credit note at a time.
 
-## First step: plan the move as a small project
+## Plan the move to API 67.0 as a small project
 
 I would run it as a small project with its own release plan:
 
