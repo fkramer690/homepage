@@ -14,16 +14,15 @@ situations:
   - "Developers rotate in and out of the team, and knowledge leaves with every change."
   - "Several teams and partners deliver in parallel, and nobody plans dependencies and releases across them."
 deliverables:
-  - "Programme plan with streams, dependencies, milestones and release plan"
-  - "Team setup for nearshore development, including size, roles and seniority mix"
-  - "Selection of nearshore partners and agreement on rules for staffing and rotation"
-  - "Onboarding into standards, review process and pipeline"
-  - "Regular steering with status, risks and decisions for management"
+  - "I select nearshore partners with you and look at culture and the will to deliver as closely as at skills."
+  - "I onboard new teams into the standards, the review process and the pipeline."
+  - "I keep dependencies between teams and partners visible and plan releases across them."
+  - "I steer plan, risks and quality for as long as the programme runs."
 results:
-  - "Nearshore teams that stay stable and build up knowledge of the org"
-  - "Predictable delivery across teams and partners"
-  - "Quality that is checked in reviews, not discovered in production"
-  - "Management that sees status and risks early and decides on facts"
+  - "A programme plan with streams, dependencies, milestones and release plan"
+  - "A team setup for every nearshore team with size, roles and seniority mix"
+  - "Written rules for staffing and rotation, agreed with every nearshore partner"
+  - "Regular reporting with status, risks and upcoming decisions for management"
 phases:
   - title: "Plan and team setup"
     icon: "team"
@@ -66,7 +65,7 @@ with: A setup that delivers steadily
 - Management gets status, risks and decisions presented regularly.
 ```
 
-## How do I set up nearshore teams?
+## Eight developers per team at most, and fixed rules for rotation
 
 ```kennzahlen
 8 | developers per team, at most
@@ -83,14 +82,12 @@ From day one, a nearshore team works with the same standards, pull request revie
 
 ![Several small teams on one shared base: each team has up to around eight developers and clear responsibilities. From day one, every team works with the same standards, pull request reviews and pipeline as everyone else. Rules for staffing and rotation are agreed before the first sprint, and one programme plan with streams and dependencies plus one release process keep the teams aligned.](../../../assets/blog/nearshore-team-setup-en.png)
 
-## What does steering look like across several teams?
+## Steering across several teams and partners
 
-With several teams and partners, the plan only holds if dependencies and releases are coordinated. For that I keep three things:
+With several teams and partners, the plan only holds if dependencies and releases are coordinated. The rules that make several partners work together are described under [partner governance](../partner-governance/), and the shared release process under [DevOps and release management](../devops-release-management/). On the client side I run the programme plan, the release process and the reporting:
 
 ```stufen
 1 | Programme plan | streams and dependencies | Who delivers what, and when?
 2 | Release process | shared by all teams | When does what go live?
 3 | Reporting | status, risks, decisions | What does management need to decide?
 ```
-
-The rules that make several partners work together are described under [partner governance](../partner-governance/), and the shared release process under [DevOps and release management](../devops-release-management/).
