@@ -1647,6 +1647,19 @@ const drawings: Record<string, Drawing> = {
     ${t(18, 140, l('all to agent: 2.88M credits/yr > 2.75M Max pool', 'alles zum Agenten: 2,88 Mio. Credits/Jahr > 2,75 Mio. Max'), { fill: D, size: 7 })}
     ${t(18, 153, l('hybrid: 1.34M credits/yr, 20 credits ($0.10) per action', 'hybrid: 1,34 Mio. Credits/Jahr, 20 Credits (0,10 €) pro Aktion'), { size: 7 })}`,
 
+  'enhanced-chat-legacy-migration': (l) => `
+    ${t(18, 18, l('LEGACY CHAT TO ENHANCED CHAT', 'LEGACY CHAT ZU ENHANCED CHAT'), { fill: D, size: 7 })}
+    ${box(18, 26, 110, 84)}${t(28, 41, 'LEGACY CHAT', { fill: D, size: 7.5 })}
+    ${[l('pre-chat form', 'Pre-Chat-Formular'), l('button routing', 'Button-Routing'), l('chat reports', 'Chat-Berichte'), 'embedded_svc']
+      .map((s, i) => cross(32, 55 + i * 14) + t(42, 58 + i * 14, s, { size: 7 })).join('')}
+    ${arrow(128, 68, 176, C)}${t(152, 61, l('rebuild', 'neu bauen'), { fill: C, size: 7, anchor: 'middle' })}
+    ${box(176, 26, 126, 84, C)}${t(186, 41, 'ENHANCED CHAT', { fill: D, size: 7.5 })}
+    ${[l('pre-chat in flow', 'Pre-Chat im Flow'), 'Omni-Channel-Flow', 'Session Metrics', l('bootstrap snippet', 'Bootstrap-Snippet')]
+      .map((s, i) => check(186, 51 + i * 14, C) + t(200, 57 + i * 14, s, { size: 7 })).join('')}
+    <path d="M18 126H302" stroke="${L}"/>
+    ${t(18, 140, l('migration tool keeps: branding, custom labels', 'Migrationswerkzeug behält: Branding, Custom Labels'), { fill: D, size: 7 })}
+    ${t(18, 153, l('both chats can run in one org: switch in waves', 'beide Chats parallel in einer Org: Wellen'), { size: 7 })}`,
+
   'einstein-trust-layer-explained': (l) => `
     ${box(14, 40, 70, 44)}${t(49, 58, l('AGENT', 'AGENT'), { fill: D, size: 8, anchor: 'middle' })}${t(49, 72, 'Agentforce', { size: 7, anchor: 'middle' })}
     ${arrow(84, 62, 112)}
