@@ -471,6 +471,7 @@ a:hover { color: var(--anthracite); }
 .compare-hit { color: var(--text-2); text-decoration: line-through; text-decoration-color: #b0b0b4; }
 .compare-with .compare-hit { color: var(--cyan-dark); font-weight: 700; text-decoration: none; }
 .role-quote-lead { margin: 2.2em 0 14px; font-weight: 600; font-size: var(--fs-base); }
+.compare + .role-quote { margin-top: 36px; }
 .role-quote { position: relative; display: grid; min-height: 340px; margin: 0; border-radius: var(--radius); overflow: hidden; background: var(--anthracite); }
 .role-quote img { position: absolute; top: 0; right: 0; width: min(614px, 55%); height: 100%; object-fit: cover; object-position: 50% 40%; }
 .role-quote::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, var(--anthracite) 50%, rgba(35, 35, 37, 0.8) 56%, rgba(35, 35, 37, 0) 78%); }
@@ -665,7 +666,7 @@ a:hover { color: var(--anthracite); }
 
 /* References: one project at a time (radio tabs, styles per item in Home.astro).
    Desktop: numbered list left, panel right; phones: chips above the panel. */
-.rf { display: grid; grid-template-columns: 330px 1fr; gap: 0 24px; margin-top: 1.6em; align-items: start; }
+.rf { display: grid; grid-template-columns: 380px 1fr; gap: 0 24px; margin-top: 1.6em; align-items: start; }
 .rf-chips { display: none; }
 .rf-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); grid-row: 1; }
 .rf-list label {
@@ -680,18 +681,12 @@ a:hover { color: var(--anthracite); }
 }
 .rf-list label:hover { background: var(--white); }
 .rf-no { grid-row: 1 / 3; padding-top: 3px; font-size: var(--fs-xs); color: var(--text-2); }
-.rf-sector { font-size: var(--fs-xs); letter-spacing: 0.07em; text-transform: uppercase; color: var(--text-2); }
+.rf-sector { font-size: var(--fs-sm); line-height: 1.4; color: var(--text-2); }
 .rf-title { font-weight: 600; font-size: var(--fs-ui); line-height: 1.35; }
 .rf-panel { display: none; grid-row: 1; grid-column: 2; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
 .rf-photo { display: block; width: 100%; height: 280px; object-fit: cover; }
 .rf-body { padding: 22px 26px 24px; }
-.ref-sector {
-  font-size: var(--fs-xs);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--cyan-dark);
-  margin: 0;
-}
+.ref-sector { margin: 0; font-size: var(--fs-sm); font-weight: 600; color: var(--cyan-dark); }
 .rf-body h3 { font-size: var(--fs-md); margin: 0.25em 0 0.8em; }
 .rf-body dl { display: grid; grid-template-columns: 150px 1fr; gap: 10px 18px; margin: 0 0 18px; }
 .rf-body dt { font-size: var(--fs-xs); letter-spacing: 0.07em; text-transform: uppercase; color: var(--cyan-dark); padding-top: 4px; }
@@ -711,7 +706,8 @@ a:hover { color: var(--anthracite); }
   .rf-body dt { padding-top: 6px; }
 }
 
-/* Client logo band: grey logos, coloured on hover, pauses on hover */
+/* Client logo band: one-colour logos (public/clients/mono/, see scripts/logos-mono.mjs)
+   in one grey, darker on hover; the band pauses on hover */
 .clients { margin-top: 2.6em; }
 .clients h3 { margin: 0 0 0.25em; font-size: var(--fs-md); }
 .clients > p { color: var(--text-2); margin: 0 0 1.1em; font-size: var(--fs-ui); }
@@ -740,15 +736,10 @@ a:hover { color: var(--anthracite); }
   height: var(--h, 32px);
   width: auto;
   object-fit: contain;
-  filter: grayscale(1);
-  opacity: 0.6;
-  mix-blend-mode: multiply;
-  transition: filter 0.2s, opacity 0.2s;
+  opacity: 0.42;
+  transition: opacity 0.2s;
 }
-.marquee-track img:hover { filter: none; opacity: 1; }
-.marquee-track img.light, .marquee-track img.light:hover { filter: brightness(0); }
-.marquee-track img.light { opacity: 0.5; }
-.marquee-track img.light:hover { opacity: 0.85; }
+.marquee-track img:hover { opacity: 0.75; }
 @keyframes marquee { to { transform: translateX(-50%); } }
 @media (prefers-reduced-motion: reduce) {
   .marquee { -webkit-mask-image: none; mask-image: none; }
@@ -1722,7 +1713,7 @@ p.post-series-note { margin: 0.6em 0 0; font-size: var(--fs-ui); }
   .mc-overview-meta { grid-column: 2; grid-row: 2; text-align: left; }
   .mc-overview-arrow { grid-column: 3; grid-row: 1; }
 }
-.mc-articles + .mc-author { padding-top: 0; }
+.mc-articles + .mc-author, .blog + .mc-author { padding-top: 0; }
 .mc-author .post-author { margin-top: 0; }
 .mc-chapter .eyebrow { color: var(--cyan-dark); }
 .mc-pager {
