@@ -6,10 +6,13 @@
   "scripts": {
     "dev": "astro dev",
     "check:blog": "node scripts/check-blog.mjs",
-    "build": "node scripts/check-blog.mjs && astro build && node scripts/check-links.mjs && node scripts/check-sitemap.mjs && node scripts/check-titles.mjs && node scripts/check-layout.mjs && node scripts/check-graphics.mjs",
+    "build": "node scripts/check-root.mjs && node scripts/check-blog.mjs && node scripts/check-graphics-review.mjs && astro build && node scripts/check-links.mjs && node scripts/check-sitemap.mjs && node scripts/check-titles.mjs && node scripts/check-layout.mjs && node scripts/check-graphics.mjs",
+    "cards:export": "node scripts/export-card-drawings.mjs",
     "check:graphics": "node scripts/check-graphics.mjs",
+    "check:graphics-review": "node scripts/check-graphics-review.mjs",
     "check:layout": "node scripts/check-layout.mjs",
     "check:links": "node scripts/check-links.mjs",
+    "check:root": "node scripts/check-root.mjs",
     "check:sitemap": "node scripts/check-sitemap.mjs",
     "check:titles": "node scripts/check-titles.mjs",
     "preview": "astro preview"

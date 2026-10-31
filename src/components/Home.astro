@@ -42,8 +42,15 @@ const mcTexts = t.masterclasses;
 const [qOpen, qClose] = lang === 'de' ? ['„', '“'] : ['“', '”'];
 // Icons of the four approach steps (analyse, design, steer, implement).
 const stepIcons = ['analyse', 'design', 'steer', 'implement'];
-// Photo per approach step; versions chosen so shirt and counterpart change from step to step.
-const stepPhotos: PhotoKey[] = ['07-rundgang-produktion-v02', '02-workshop-whiteboard-v03', '09-coaching-bildschirm-v01', '10-projektabschluss-v02'];
+// Photo per reference project (by order), with its own crop for the wide panel image.
+const refPhotos: { photo: PhotoKey; focus: string }[] = [
+  { photo: '01-werkhalle-v02', focus: '55% 30%' },
+  { photo: '04-service-maschine-v02', focus: '35% 30%' },
+  { photo: '13-remote-beratung-v01', focus: '30% 12%' },
+  { photo: '16-anwendungstest-v01', focus: '35% 12%' },
+  { photo: '11-partnerabstimmung-v01', focus: '40% 12%' },
+];
+const pad = (n: number) => String(n).padStart(2, '0');
 // Icons of the services (by order).
 const serviceIcons = ['architecture', 'change', 'pipeline', 'integration', 'team', 'license', 'partners'];
 ---
@@ -53,7 +60,7 @@ const serviceIcons = ['architecture', 'change', 'pipeline', 'integration', 'team
   <Header t={t} home={home} switchHref={switchHref} />
 
   <main id="main" data-layout="wide">
-    <section class="hero dark grid-bg">
+    <section class="hero dark grid-bg has-measure">
       <Blueprint />
       <div class="container hero-inner hero-split">
         <div class="hero-text">
@@ -68,8 +75,11 @@ const serviceIcons = ['architecture', 'change', 'pipeline', 'integration', 'team
           <a class="btn btn-ghost" href="#references">{t.hero.ctaSecondary}</a>
         </div>
         </div>
-        <figure class="hero-photo">
-          <Photo photo="06-portraet-halle-v02" lang={lang} widths={[360, 540, 720]} sizes="360px" />
+        <figure class="hero-photo is-measured">
+          <Photo photo="06-portraet-halle-v02" lang={lang} sizes="640px" />
+          <span class="hm-line hm-top" aria-hidden="true"><span class="hm-dot"></span></span>
+          <span class="hm-line hm-side" aria-hidden="true"></span>
+          <span class="hm-cross" aria-hidden="true"></span>
         </figure>
       </div>
     </section>
@@ -88,20 +98,21 @@ const serviceIcons = ['architecture', 'change', 'pipeline', 'integration', 'team
         <div class="compare">
           <div class="compare-col">
             <h3 class="compare-head mono">{t.role.withoutTitle}</h3>
-            <ul>{t.role.without.map((item) => <li>{item}</li>)}</ul>
+            <ul>{t.role.without.map((item, i) => <li class:list={{ 'compare-hit': i === t.role.quoteItem }}>{item}</li>)}</ul>
           </div>
           <div class="compare-col compare-with">
             <h3 class="compare-head mono">{t.role.withTitle}</h3>
-            <ul>{t.role.with.map((item) => <li>{item}</li>)}</ul>
+            <ul>{t.role.with.map((item, i) => <li class:list={{ 'compare-hit': i === t.role.quoteItem }}>{item}</li>)}</ul>
           </div>
         </div>
-        <div class="quote-row">
-          <blockquote class="quote"><p>{qOpen}{t.role.quote}{qClose}</p></blockquote>
-          <figure class="stage-photo">
-            <Image src={speaking} alt={t.role.photoAlt} widths={[320, 480, 614]} sizes="300px" />
-            <figcaption class="mono">{t.role.photoCaption}</figcaption>
-          </figure>
-        </div>
+        <p class="role-quote-lead">{t.role.quoteLead}</p>
+        <figure class="role-quote">
+          <Image src={speaking} alt={t.role.photoAlt} widths={[400, 614]} sizes="(max-width: 760px) 100vw, 614px" />
+          <div class="role-quote-text">
+            <blockquote><p>{qOpen}{t.role.quote}{qClose}</p></blockquote>
+            <figcaption class="mono">Fabian Kramer · {t.role.photoCaption}</figcaption>
+          </div>
+        </figure>
       </div>
     </section>
 
@@ -158,28 +169,43 @@ const serviceIcons = ['architecture', 'change', 'pipeline', 'integration', 'team
     <section class="section" id="references">
       <div class="container">
         <p class="label mono">{t.references.label}</p>
-        <div class="slider-head">
-          <h2>{t.references.title}</h2>
-          <div class="slider-nav" hidden>
-            <span class="slider-count mono" aria-live="polite">01 / {String(t.references.items.length).padStart(2, '0')}</span>
-            <button type="button" class="slider-btn" data-dir="-1" aria-label={t.references.prev}>←</button>
-            <button type="button" class="slider-btn" data-dir="1" aria-label={t.references.next}>→</button>
+        <h2>{t.references.title}</h2>
+        {/* One project at a time: radio tabs without script, as on the speaking page.
+            Desktop picks from the numbered list, phones from the chips. */}
+        <div class="rf">
+          {t.references.items.map((_, i) => <input type="radio" name="rf" id={`rf-${i}`} class="visually-hidden" checked={i === 0} />)}
+          <div class="rf-chips" role="group" aria-label={t.references.pickLabel}>
+            {t.references.items.map((r, i) => <label for={`rf-${i}`}>{r.short}</label>)}
           </div>
-        </div>
-        <ul class="refs-slider" tabindex="0" aria-label={t.references.title}>
-          {t.references.items.map((r) => (
-            <li class="ref">
-              <p class="ref-sector mono">{r.sector}</p>
-              <h3>{r.title}</h3>
-              <p>{r.text}</p>
-              <ul class="tags tags-small">
-                {r.tags.map((tag) => <li>{tag}</li>)}
-              </ul>
-            </li>
+          <ol class="rf-list" aria-label={t.references.pickLabel}>
+            {t.references.items.map((r, i) => (
+              <li>
+                <label for={`rf-${i}`}>
+                  <span class="rf-no mono">{pad(i + 1)}</span>
+                  <span class="rf-sector mono">{r.sector}</span>
+                  <span class="rf-title">{r.title}</span>
+                </label>
+              </li>
+            ))}
+          </ol>
+          {t.references.items.map((r, i) => (
+            <article class="rf-panel">
+              <Photo photo={refPhotos[i].photo} lang={lang} focus={refPhotos[i].focus} class="rf-photo" sizes="(max-width: 760px) calc(100vw - 32px), 860px" />
+              <div class="rf-body">
+                <p class="ref-sector mono">{pad(i + 1)} · {r.sector}</p>
+                <h3>{r.title}</h3>
+                <dl>
+                  <dt class="mono">{t.references.startLabel}</dt><dd>{r.start}</dd>
+                  <dt class="mono">{t.references.roleLabel}</dt><dd>{r.role}</dd>
+                  <dt class="mono">{t.references.resultLabel}</dt><dd>{r.result}</dd>
+                </dl>
+                <ul class="tags tags-small">
+                  {r.tags.map((tag) => <li>{tag}</li>)}
+                </ul>
+              </div>
+            </article>
           ))}
-        </ul>
-        <div class="slider-dots" aria-hidden="true">
-          {t.references.items.map(() => <span></span>)}
+          <style is:inline set:html={t.references.items.map((_, i) => `#rf-${i}:checked ~ .rf-list label[for="rf-${i}"] { background: var(--white); border-left-color: var(--cyan); } #rf-${i}:checked ~ .rf-list label[for="rf-${i}"] .rf-no { color: var(--cyan-dark); } #rf-${i}:checked ~ .rf-chips label[for="rf-${i}"] { background: var(--anthracite); border-color: var(--anthracite); color: var(--white); } #rf-${i}:focus-visible ~ .rf-list label[for="rf-${i}"], #rf-${i}:focus-visible ~ .rf-chips label[for="rf-${i}"] { outline: 2px solid var(--cyan); outline-offset: -2px; } #rf-${i}:checked ~ .rf-panel:nth-of-type(${i + 1}) { display: block; }`).join('\n')} />
         </div>
 
         <div class="clients">
@@ -215,7 +241,6 @@ const serviceIcons = ['architecture', 'change', 'pipeline', 'integration', 'team
         <ol class="steps">
           {t.approach.steps.map((s, i) => (
             <li>
-              <Photo photo={stepPhotos[i]} lang={lang} class="step-photo" widths={[320, 480, 640]} sizes="(max-width: 520px) calc(100vw - 32px), (max-width: 860px) 45vw, 280px" />
               <Icon name={stepIcons[i]} class="step-icon" />
               <span class="step-no mono">{String(i + 1).padStart(2, '0')}</span>
               <h3>{s.title}</h3>
@@ -240,7 +265,11 @@ const serviceIcons = ['architecture', 'change', 'pipeline', 'integration', 'team
             {masterclasses.map((mc) => (
               <li>
                 <a href={mc.href}>
-                  <span class="mc-home-name">{mcTexts.homeNames[mc.id]}</span>
+                  <Icon name={mc.icon} class="mc-home-icon" />
+                  <span class="mc-home-text">
+                    <span class="mc-home-name">{mc.shortName}</span>
+                    <span class="mc-home-topics">{mcTexts.homeTopics[mc.id]}</span>
+                  </span>
                   <span class="mc-home-meta mono">{mcTexts.chapters.replace('{n}', String(mc.chapters))}</span>
                   <span class="mc-home-arrow" aria-hidden="true">→</span>
                 </a>
@@ -268,8 +297,7 @@ const serviceIcons = ['architecture', 'change', 'pipeline', 'integration', 'team
           {t.about.blocks.map((b) => (
             <div class="about-block">
               <h3 class="mono">{b.head}</h3>
-              <p>{b.text}</p>
-              {b.items && <ul class="about-checks">{b.items.map((item) => <li>{item}</li>)}</ul>}
+              <p>{b.text}{b.link && <> <a class="text-link" href={b.link.href}>{b.link.text}</a>.</>}</p>
             </div>
           ))}
           <ul class="about-links">
@@ -316,6 +344,10 @@ const serviceIcons = ['architecture', 'change', 'pipeline', 'integration', 'team
           {contactExternal && <p class="booking-note">{t.contact.bookingNote}</p>}
           <dl class="contact-list">
             <div>
+              <dt class="mono">{t.contact.phoneLabel}</dt>
+              <dd><a href={site.phone.href}>{t.lang === 'de' ? site.phone.de : site.phone.en}</a></dd>
+            </div>
+            <div>
               <dt class="mono">{t.contact.form.email}</dt>
               <dd><a href={`mailto:${site.email}`}>{site.email}</a></dd>
             </div>
@@ -332,33 +364,22 @@ const serviceIcons = ['architecture', 'change', 'pipeline', 'integration', 'team
   <FloatingContact t={t} />
 
   <script>
-    // Project slider: native horizontal scrolling with scroll snap (swipe, trackpad,
-    // keyboard). The buttons, counter and dots only appear with JavaScript.
-    const track = document.querySelector<HTMLElement>('.refs-slider');
-    const nav = document.querySelector<HTMLElement>('.slider-nav');
-    const count = document.querySelector<HTMLElement>('.slider-count');
-    const dots = [...document.querySelectorAll<HTMLElement>('.slider-dots span')];
-    if (track && nav && count) {
-      const cards = [...track.children] as HTMLElement[];
-      const pad = (n: number) => String(n).padStart(2, '0');
-      const step = () => (cards[1] ? cards[1].offsetLeft - cards[0].offsetLeft : track.clientWidth);
-      const update = () => {
-        const atEnd = track.scrollLeft + track.clientWidth >= track.scrollWidth - 4;
-        const index = atEnd ? cards.length - 1 : Math.round(track.scrollLeft / step());
-        count.textContent = `${pad(index + 1)} / ${pad(cards.length)}`;
-        dots.forEach((d, i) => d.classList.toggle('on', i === index));
-        nav.querySelectorAll<HTMLButtonElement>('.slider-btn').forEach((b) => {
-          b.disabled = b.dataset.dir === '-1' ? track.scrollLeft <= 4 : atEnd;
-        });
-      };
-      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      nav.hidden = false;
-      nav.querySelectorAll<HTMLButtonElement>('.slider-btn').forEach((b) =>
-        b.addEventListener('click', () => track.scrollBy({ left: Number(b.dataset.dir) * step(), behavior: reduce ? 'auto' : 'smooth' })),
+    // Approach steps: progress line from 01 to 04 once the steps scroll into view
+    // (styles under "Progress line" in global.css). Without JavaScript or with
+    // reduced motion the steps simply stay visible.
+    const steps = document.querySelector<HTMLElement>('#approach .steps');
+    const calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (steps && !calm && 'IntersectionObserver' in window) {
+      steps.classList.add('js-progress');
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (!entry.isIntersecting) return;
+          steps.classList.add('is-visible');
+          observer.disconnect();
+        },
+        { threshold: 0.3 },
       );
-      track.addEventListener('scroll', update, { passive: true });
-      window.addEventListener('resize', update);
-      update();
+      observer.observe(steps);
     }
   </script>
 

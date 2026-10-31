@@ -10,7 +10,7 @@ export const GET: APIRoute = async ({ params }) => {
   const lang = params.lang as 'en' | 'de';
   const png = await renderOgImage({
     title: questions[lang].title,
-    eyebrow: `FK Solution Design · ${questions[lang].eyebrow}`,
+    eyebrow: questions[lang].eyebrow,
     footer: `${site.person} · Salesforce Enterprise Architect`,
   });
   return new Response(new Uint8Array(png), { headers: { 'Content-Type': 'image/png' } });

@@ -1,0 +1,16 @@
+---
+// Phone number as the second way to reach Fabian, under the booking button
+// of a contact section or in the booking box of the side column.
+import Icon from './Icon.astro';
+import { site } from '../site';
+import type { Dict } from '../i18n/en';
+
+interface Props {
+  t: Dict;
+  // Lead-in text; the contact section's question by default.
+  lead?: string;
+  class?: string;
+}
+const { t, lead = t.contact.phoneLine, class: cls = 'phone-line' } = Astro.props;
+---
+<p class={cls}>{lead} <a href={site.phone.href}><Icon name="phone" />{t.lang === 'de' ? site.phone.de : site.phone.en}</a></p>

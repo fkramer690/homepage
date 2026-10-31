@@ -3,6 +3,7 @@
 import Page from '../layouts/Page.astro';
 import ExternalMark from './ExternalMark.astro';
 import ContactForm from './ContactForm.astro';
+import PhoneLine from './PhoneLine.astro';
 import Blueprint from './Blueprint.astro';
 import Icon from './Icon.astro';
 import { Image } from 'astro:assets';
@@ -150,7 +151,7 @@ const schema = {
           </ul>
           <p class="fa-practice-text">{c.practice.text}</p>
         </div>
-        <figure class="hero-photo"><Photo photo="07-rundgang-produktion-v01" lang={lang} widths={[360, 540, 720]} sizes="360px" /></figure>
+        <figure class="hero-photo"><Photo photo="07-rundgang-produktion-v01" lang={lang} sizes="640px" /></figure>
       </div>
     </div>
   </section>
@@ -206,6 +207,7 @@ const schema = {
         <p class="contact-text">{c.ctaText}</p>
         <a class="btn" href={contactHref(c.formSubject)} {...ctaAttrs}>{t.nav.cta}{contactExternal && <ExternalMark label={t.nav.newTab} />}</a>
         {contactExternal && <p class="booking-note">{t.contact.bookingNote}</p>}
+        <PhoneLine t={t} />
       </div>
       <ContactForm t={t} subject={c.formSubject} />
     </div>

@@ -17,10 +17,10 @@ Stand 28.10.2026. Grundlage: Ranking-Lauf, KI-Check und OnPage-Crawl vom 28.10.2
 | D7 | Freelancer-Profile nach Marktanalyse (https://claude.ai/artifact/Wzou8L3jKRP7rpTnRyk89w): Pflicht freelancermap, freelance.de, LinkedIn; danach GULP, Malt, XING, Trailblazer-Profil, FRATCH. Überall gleicher Titel und Schwerpunkt (Field Service, Manufacturing, Partnersteuerung). Hinweis: Kein Portal erlaubt einen Link auf die Website, Profile bei GULP und freelance.de sind anonym | Fabian | offen |
 | D8 | L1 Partnerauswahl: Antworten auf 4 Fragen (Warnsignal im Angebot, Standardfragen im Pitch, gescheiterte Partnerwahl, Referenzprüfung) | Fabian | offen |
 | D9 | Wirkung prüfen: Positionen von D4 und D5 nach 2 bis 3 Montagsläufen vergleichen | Claude | ab 16.11.2026 |
-| D10 | Profil-URLs mit Namen (LinkedIn, XING, Trailblazer, freelancermap, Malt) als sameAs ins Schema, sobald D7 steht | Claude | wartet auf D7 |
+| D10 | Profil-URLs mit Namen (LinkedIn, XING, Trailblazer, freelancermap, Malt) als sameAs ins Schema, sobald D7 steht | Claude | erledigt 30.10.2026 (PR #215, #217-#219: LinkedIn, XING, Trailblazer, GitHub, GULP, freelance.de, freelancermap, Fratch; offen: LinkedIn-Firmenseite, Google-Profil) |
 | D11 | Seite „Freiberuflicher Salesforce Architect“ (DE `/freiberuflicher-salesforce-architect/`, EN `/en/freelance-salesforce-architect/`): Anlässe, Abgrenzung zum Implementierungspartner, Ergebnisse, Praxisbeispiel, Konditionen, FAQ; im Footer verlinkt | Claude | erledigt (29.10.2026) |
 | D12 | Artikel „Salesforce-Freelancer oder Agentur: wann was passt“ (DE + EN, Kategorie Architektur & Partnersteuerung) | Claude | erledigt (29.10.2026) |
-| D13 | CV-Download auf der Recruiter-Seite (`/partner/recruiter/`, `/en/partners/recruiters/`) mit Hinweis: Hier liegt immer die aktuelle Version, ältere Versionen bitte nicht mehr bei Kunden einreichen. Lebenslauf gibt es nur in einer Version (Englisch) | Fabian (CV-PDF), dann Claude | offen |
+| D13 | CV-Download auf der Recruiter-Seite (`/partner/recruiter/`, `/en/partners/recruiters/`) mit Hinweis: Hier liegt immer die aktuelle Version, ältere Versionen bitte nicht mehr bei Kunden einreichen. Lebenslauf gibt es nur in einer Version (Englisch) | Fabian (CV-PDF), dann Claude | erledigt (Download PR #163, Hinweis „immer aktuelle Fassung“ PR #187) |
 | D14 | Open CTI (PR #82): Antworten auf 3 Fragen (meister Aufwand im globalen CTI-Rollout und Rolle von MuleSoft und Teams, lief Mirage über Open CTI mit Swyx, Lehre aus dem Rollout als Praxisbeispiel) | Fabian | offen |
 | D15 | SAP-Überblick (PR #113, L2): Antworten auf 2 Fragen (war das ERP bei den Sales Agreements mit Ist-Mengen ein SAP, Erfahrung mit SAP Integration Suite statt MuleSoft) | Fabian | offen |
 | D16 | Ranking-Auswertung Change-Management-Reihe (Hub und Spokes): Zwischenstand ca. 26.11.2026, Auswertung ca. 24.12.2026 | Claude | ab 26.11.2026 |
@@ -33,26 +33,26 @@ Grundlage: Jev-Lauf (jev-1.14.0) über Start, EN, Leistungen, Freiberufler-Seite
 
 | # | Maßnahme | Impact | Aufwand | Wer | Status |
 |---|---|---|---|---|---|
-| J1 | E-Mail-Adresse im Kontaktblock der Startseite neben LinkedIn (Jev: direkter Kontakt 0,04; Formular und Bookings decken die meisten Besucher ab, deshalb nur dort) | klein | klein | Claude | PR |
-| J2 | Vertrauensbelege auf Leistungs- und Masterclass-Übersicht: Kennzahlen und Zertifikate (Jev-Vertrauen Leistungen 1,36 von 4, jev-seo 0,45) | hoch | klein | Claude | PR |
-| J3 | Kennzahl „8 · 32“ als „32 Entwickler in 8 Teams“ ausschreiben | mittel | klein | Claude | PR |
-| J4 | Kundenlogos mit width und height gegen Layout-Sprünge (92 Bilder auf / und /en) | klein | klein | Claude | PR |
-| J5 | EN-Footer: Impressum und Datenschutz als deutschsprachig kennzeichnen | klein | klein | Claude | PR |
+| J1 | E-Mail-Adresse im Kontaktblock der Startseite neben LinkedIn (Jev: direkter Kontakt 0,04; Formular und Bookings decken die meisten Besucher ab, deshalb nur dort) | klein | klein | Claude | erledigt (PR #145) |
+| J2 | Vertrauensbelege auf Leistungs- und Masterclass-Übersicht: Kennzahlen und Zertifikate (Jev-Vertrauen Leistungen 1,36 von 4, jev-seo 0,45) | hoch | klein | Claude | erledigt (PR #145) |
+| J3 | Kennzahl „8 · 32“ als „32 Entwickler in 8 Teams“ ausschreiben | mittel | klein | Claude | erledigt (PR #145) |
+| J4 | Kundenlogos mit width und height gegen Layout-Sprünge (92 Bilder auf / und /en) | klein | klein | Claude | erledigt (PR #145) |
+| J5 | EN-Footer: Impressum und Datenschutz als deutschsprachig kennzeichnen | klein | klein | Claude | erledigt (PR #145) |
 | J6 | Faktencheck der 17 Artikel mit „unbelegten“ Preisen und Fristen: 108 Sätze mit Salesforce-Quelle gegen die Quellseiten geprüft, alle abrufbaren Zahlen und alle Rechnungen stimmen; Jev folgt keinen Links (Bericht `/mnt/project-files/typesafe/faktencheck-blog-2026-10-29.md`) | mittel | mittel | Claude | erledigt (29.10.2026) |
-| J7 | Review-Rhythmus für zeitkritische Artikel (82 % veralten laut Jev in 12 Monaten): `scripts/stale-articles.mjs` plus monatlicher Workflow, der ein Issue „Artikel prüfen“ pflegt (Preise älter als 6 Monate, verstrichene Fristen und Releases); geprüft = `updatedDate` setzen | hoch | mittel | Claude | PR |
+| J7 | Review-Rhythmus für zeitkritische Artikel (82 % veralten laut Jev in 12 Monaten): `scripts/stale-articles.mjs` plus monatlicher Workflow, der ein Issue „Artikel prüfen“ pflegt (Preise älter als 6 Monate, verstrichene Fristen und Releases); geprüft = `updatedDate` setzen | hoch | mittel | Claude | erledigt (PR #148, Monatslauf seit #165 als Claude-Task) |
 | J8 | Kundenstimmen und Ergebnisse je Referenz (= Weitere Ideen 4 und 11), stärkster Hebel für Vertrauen | hoch | mittel | Fabian liefert, Claude baut ein | Backlog, wartet auf Fabian |
-| J9 | Blog-Übersicht /blog und /en/blog (je ca. 690 KB HTML, gzip übertragen nur ca. 105 KB): Kartengrafiken außerhalb des Bildschirms nicht rendern (content-visibility) | klein | klein | Claude | PR |
-| J10 | Ein klarer nächster Schritt auf der Leistungsübersicht (Jev 0,35; bisher kein Button). Die Freiberufler-Seite hat bereits Buttons im Hero und Kontaktbereich | mittel | klein | Claude | PR |
+| J9 | Blog-Übersicht /blog und /en/blog (je ca. 690 KB HTML, gzip übertragen nur ca. 105 KB): Kartengrafiken außerhalb des Bildschirms nicht rendern (content-visibility) | klein | klein | Claude | erledigt (PR #146) |
+| J10 | Ein klarer nächster Schritt auf der Leistungsübersicht (Jev 0,35; bisher kein Button). Die Freiberufler-Seite hat bereits Buttons im Hero und Kontaktbereich | mittel | klein | Claude | erledigt (PR #146) |
 | J11 | Kernaussage nach vorn: /partner und vier Artikel (AELA, Buyer Agent WhatsApp, Account Forecasting, Garantieansprüche) | mittel | mittel | Claude | erledigt (PR #150) |
-| J12 | Masterclass und Blog abgrenzen: H1 der Hubs Manufacturing Cloud und B2B Commerce auf „vom Business Case bis zum Rollout“ statt der „lohnt sich“-Frage, die die Artikel besetzen (verlinkt sind sie schon) | mittel | klein | Claude | PR |
+| J12 | Masterclass und Blog abgrenzen: H1 der Hubs Manufacturing Cloud und B2B Commerce auf „vom Business Case bis zum Rollout“ statt der „lohnt sich“-Frage, die die Artikel besetzen (verlinkt sind sie schon) | mittel | klein | Claude | erledigt (PR #146) |
 | J13 | Einstiegsartikel für Leser ohne benanntes Problem (nur 4 von 196 Artikeln): [Themenliste mit 14 Vorschlägen](https://claude.ai/artifact/QLb9Ss97LuuwdBYvnn8VSm), Empfehlung Runde 1 mit Nr. 1, 2, 3, 6 und 14; pro Thema braucht es ein Praxisbeispiel von Fabian | mittel | groß | Fabian wählt aus, Claude schreibt | Backlog, wartet auf Fabians Themenauswahl |
 | J14 | Veröffentlichungsdaten: 174 von 196 DE-Artikeln tragen 27. bis 29.10.2026. Das sind die echten Daten (Website seit 23.10.2026 online), sie bleiben; nie rückdatieren. „Aktualisiert am“ nur nach echter Prüfung (J7) | mittel | klein | Fabian | entschieden, keine Änderung |
 | J15 | Logo-Band: Freigaben der Kunden liegen vor (Fabian, 29.10.2026) | mittel | klein | Fabian | erledigt |
 | J16 | /blog/change-management-modelle wirkt generisch (Spezifität 0,38): Praxisbeispiel ergänzen | klein | mittel | Juliane | Backlog, wartet auf Juliane |
 | J17 | Relative Links auf absolute Pfade umstellen: 496 Stellen in den Inhalten, im Browser alle korrekt, nur ein Crawler-Fehler | klein | mittel | später | zurückgestellt |
-| J18 | PageSpeed-Key (PAGESPEED_API_KEY) besorgen und jev-seo mit Core Web Vitals wiederholen | klein | klein | Fabian | Backlog, wartet auf Fabian |
+| J18 | PageSpeed-Key (PAGESPEED_API_KEY) besorgen und jev-seo mit Core Web Vitals wiederholen | klein | klein | Fabian | Key als Secret PAGESPEED_API_KEY gesetzt (31.10.2026); monatlicher PageSpeed-Lauf `.github/workflows/pagespeed.yml`, Ergebnisse auf dem Branch stats unter stats/pagespeed/ |
 | J19 | HSTS und Sicherheits-Header: bei GitHub Pages nur über vorgeschaltetes CDN möglich | klein | mittel | später | zurückgestellt |
-| J20 | 21 tote Quellenlinks (404) in 50+ Artikeln und Kapiteln, meist entfernte Trailhead-Module: 16 durch geprüfte Quellen ersetzt, 5 ohne gleichwertige Quelle neutral formuliert („laut Salesforce“). Die monatliche Prüfliste (J7) meldet künftig tote Links mit | hoch | mittel | Claude | PR |
+| J20 | 21 tote Quellenlinks (404) in 50+ Artikeln und Kapiteln, meist entfernte Trailhead-Module: 16 durch geprüfte Quellen ersetzt, 5 ohne gleichwertige Quelle neutral formuliert („laut Salesforce“). Die monatliche Prüfliste (J7) meldet künftig tote Links mit | hoch | mittel | Claude | erledigt (PR #151) |
 | J21 | Fünf Aussagen ohne gleichwertige Quelle seit #151 gegenlesen (stehen jetzt als „laut Salesforce“): Visualforce-Store weiter unterstützt; Lizenzen und Rechte von Käufer und Buyer Manager; Store-Suche (Standardfelder, alle Begriffe, keine Teiltreffer); Flosum Salesforce-nativ; Beispiel 35/35/30 % und drei Schnitte bei Account Manager Targets | klein | klein | Fabian | Backlog |
 
 Kein Handlungsbedarf: ich/wir auf der Startseite (getrennt nach Fabian, Juliane und gemeinsamem Angebot; „wir“ im Gesprächsabschnitt meint Kunde und Fabian), doppelte Logos (zweite Kopie hat bereits aria-hidden), Antwortzeit über 0,8 s (Einzelwert).
@@ -108,7 +108,7 @@ Inhalte (Claude entwirft, Fabian gibt frei):
 - ~~S5. Seite „Fragen, die ich in jedem Projekt stelle“~~ (umgesetzt 26.10.2026, PR #54, siehe Punkt 3 unten).
 
 Macht Fabian selbst (Quick Wins):
-- QA. Google Business Profile (Google-Unternehmensprofil) anlegen: Unternehmen mit Einzugsgebiet, Adresse ausblenden. Anleitung als Video: https://www.youtube.com/watch?v=wYupOi4DIh8
+- ~~QA. Google Business Profile (Google-Unternehmensprofil) anlegen: Unternehmen mit Einzugsgebiet, Adresse ausblenden. Anleitung als Video: https://www.youtube.com/watch?v=wYupOi4DIh8~~ (erledigt 31.10.2026; Profil als sameAs der Organisation im Schema)
 - QB. LinkedIn abstimmen, Anleitung mit fertigen Texten: https://claude.ai/artifact/7iboGaKLpFfe2wZZkSVeLU
   - ~~Website in Kontaktinfo~~ (erledigt 26.10.2026)
   - Headline, Info-Text und Top-Kenntnisse ersetzen (Schritt 2+3, ca. 15 Min.)
@@ -122,6 +122,43 @@ Macht Fabian selbst (Quick Wins):
 - QD. Backlinks sammeln (Trailhead, Konferenz-/Sessionize-Seiten, Blue Apes) und URLs an Claude geben (kommen ins Schema als sameAs).
 - QE. Ab ca. 9.11.2026: Search Console Bericht „Seiten“ und PageSpeed Insights prüfen.
 - QF. Unternehmensverzeichnisse: Einträge mit überall gleichem Namen, gleicher Adresse und Telefonnummer wie im Google-Profil anlegen, jeweils mit Link auf www.fk-sd.de. Vorschläge: Bing Places (Import aus dem Google-Profil möglich), Apple Business Connect, Gelbe Seiten, Das Örtliche, Cylex, 11880. North Data und Firmenwissen ziehen Daten aus dem Handelsregister, dort nur prüfen und ggf. Website ergänzen. Fertige Eintrags-URLs an Claude geben (kommen ggf. ins Schema als sameAs).
+- QG. Verzeichniseinträge (Liste Fabian 30.10.2026), alle mit gleichem Namen, gleicher Adresse und Telefonnummer und Link auf www.fk-sd.de. Nur kostenlose Basiseinträge, keine Bezahlpakete. Nicht ins Schema als sameAs (Verzeichnisse, keine eigenen Profile).
+  - Webkataloge (wenig Aufwand, alte Domains, kaum Traffic, Freischaltung dauert Wochen bis Monate): onlinestreet.de, suchnase.de, webspider24.de (strenge Regeln vorher lesen), bunte-suche.de, go-findyou.de.
+  - Firmenverzeichnisse (gehen schnell online, teils viel Traffic): dasoertliche.de, werkenntdenbesten.de, gelbeseiten.de, stadtbranchenbuch.com, provenexpert.com (eher Bewertungsplattform), dastelefonbuch.de, Creditreform (kostenloser Firmeneintrag, Daten auch für Firmenwissen; Website ergänzen).
+  - Ergänzung 30.10.2026: webwiki.de (Webkatalog, auch für Blogs) sowie die B2B-Plattformen europages.de und wlw.de (Wer liefert was); beide eher für Hersteller, aber in 10 Minuten erledigt.
+  - Ohne Backlink, wichtig für lokale Sichtbarkeit: Google-Unternehmensprofil (siehe QA), Bing Places (Import aus Google), Apple Maps (Apple Business Connect).
+- QH. Gastartikel bei Salesforce Break nachhaken: https://salesforcebreak.com/2025/09/04/measure-salesforce-flow-performance/ . Fabian ist Autor, aber die Seite zeigt nur einen Benutzernamen statt seines Namens und hat keinen Link auf www.fk-sd.de (nur die Mailadresse). Redaktion bitten: Autorname „Fabian Kramer“, kurze Autoren-Bio mit Link auf www.fk-sd.de (oder die Vorträge-Seite). URL der Autorenseite danach an Claude (kommt ggf. ins Schema als sameAs).
+- QM. Backlinks aus KI-Quellen (Recherche 31.10.2026): Quellen, die ChatGPT, Claude, Gemini, Perplexity und Google AI Mode im KI-Check vom 28.10.2026 und in Websuchen zu Fabians Themen zitieren. Wettbewerber aussortiert, nur kostenlose oder verdiente Links. Reihenfolge nach Nutzen:
+  - sfdx-hardis-Doku, Seite „Articles & Videos“ (KI-Antworten zu DevOps zitieren die Doku mehrfach): Fabians sfdx-hardis-Artikel dort aufnehmen lassen. Weg: Pull Request auf docs/articles-videos.md im Repo hardisgroupcom/sfdx-hardis oder kurz beim Maintainer anfragen. Claude kann den PR-Text vorbereiten.
+  - Salesforce Ben (in fünf KI-Antworten zitiert, u. a. zu Document Builder, SAP-Anbindung, Field Service): eigenen Fachartikel als Gastautor einreichen, nur Originaltext, nicht werblich. Autorenprofil mit Link auf www.fk-sd.de. Themenvorschlag: Document-Builder-Grenzen oder Field-Service-Rollout in Wellen.
+  - CIO.de / COMPUTERWOCHE (Foundry-Expertennetzwerk, Zielgruppe CIO): kostenlos, Bewerbung per Mail, 500 bis 1.500 Wörter, mindestens zwei Beiträge pro Jahr, Autorenprofil mit Link.
+  - DIGITAL BUSINESS Magazin (WIN-Verlag, von Google AI Mode zur Frage „Lohnt sich die Manufacturing Cloud für Mittelständler?“ zitiert): Fachbeitrag zur Manufacturing Cloud anbieten. Weg: Redaktion über kontakt.win-verlag.de/de/dbm anfragen, vorher klären, ob Fachbeiträge kostenlos sind (gesponserte Beiträge ablehnen).
+  - Salesforce Dictionary (in drei KI-Antworten zu DevOps und Field Service zitiert): fehlende Begriffe über salesforcedictionary.com/contribute einreichen, Beitrag erscheint mit Byline. Ob ein Link auf die Website möglich ist, beim Eintragen prüfen.
+  - Reddit r/salesforce (KI-Antworten zu DevOps und Document Builder zitieren Threads): Fragen zu Field Service, Document Builder und sfdx-hardis fachlich beantworten, Link nur, wenn ein eigener Artikel die Frage wirklich besser beantwortet. Bringt kaum Linkkraft, aber KI-Sichtbarkeit.
+  - ensun.io (B2B-Anbietersuche, erscheint bei „Salesforce Consulting Germany“): prüfen, ob ein kostenloses Firmenprofil mit Website-Link möglich ist.
+  - Bewusst weggelassen: Clutch und The Manifest (kostenloses Profil ohne Website-Link, Link erst ab 499 USD im Jahr), consultingheads (KI-zitiert, aber Profile sind nicht öffentlich), bilarna (SEO-Werkzeug, kein Verzeichnis), Top-10-Listen von Beratungshäusern (Wettbewerber). Freelancer-Portale stehen schon unter D7 und QG.
+- QI. Salesforce-Partnerprogramm und AppExchange: Mitgliedschaft der FK Solution Design GmbH im Salesforce Partner Program prüfen (Bedingungen und Kosten für eine Ein-Personen-GmbH, Navigator-Zertifizierungen) und danach ein Consultant-Listing auf AppExchange („Consultants“) mit Expertise, Branchen und Link auf www.fk-sd.de anlegen. Hoher Aufwand, aber starke Quelle für Google und KI-Suche. Listing-URL danach an Claude (kommt ins Schema als sameAs der Organisation).
+- QJ. Gastauftritte in Podcasts (Link in den Shownotes, Beschreibung selbst bestimmen). Kandidaten EN: Salesforce Way, Salesforce Developers Podcast (beide in der sfdx-hardis-Doku verlinkt), Salesforce Admins Podcast. DE: deutschsprachige CRM-, IT-Leitungs- und Industrie-4.0-Podcasts noch recherchieren. Themen: DevOps mit Open Source (sfdx-hardis), Flow-Performance, Partnersteuerung für Fertiger.
+- QK. Expertenzitate und Pressekontakte: kostenlose Profile bei Qwoted und Source of Sources anlegen und passende Anfragen (Salesforce, CRM, IT-Strategie, Fertigung) beantworten. Journalisten, die über Fabian geschrieben haben, nach ein paar Monaten wieder anschreiben und Zitate oder Hilfe anbieten.
+- QL. Routine LinkedIn: 15 Minuten am Tag durchdachte Kommentare bei Salesforce-Leuten, CIO-Medien und möglichen Linkgebern (Beziehung zuerst, nicht nach Links fragen).
+
+## Grafiken verbessern (Grafik-Ranking 30.10.2026)
+
+Aus Fabians Bewertung: alle Grafiken mit 3 und alle mit einer Notiz, die einen Auftrag enthält. Je Punkt ein eigener Thread im Projekt, der klärt, was genau geändert wird, und Mockups liefert. Notizen wörtlich im Register (`docs/graphics-review.json`, Feld `note`).
+
+| # | Thema | Bewertung | Status |
+|---|---|---|---|
+| G1 | Ablauf-Diagramme: Kantenbeschriftung liegt auf der Linie, viel Leerraum | 3 | erledigt 30.10.2026 (Variante A: Beschriftung als Schild, kompakter, Handy von oben nach unten) |
+| G2 | Content-Block Schritte neu gestalten | 3 | Erledigt 30.10.2026: Pfeilband mit Ringen |
+| G3 | Content-Block Stufen (Kacheln) neu gestalten | 3 | Erledigt 30.10.2026: Variante A Pfeilkette |
+| G4 | Vorschaubilder: Standardbild auf Deutsch und Englisch, Artikelbilder mit Logo-Zeile „FK Solution Design / Salesforce Architecture“ | 3 und 1 | Erledigt: Logo-Zeile auf allen Vorschaubildern, Rubrik oben rechts, Standardbild je Sprache aus dem Hero-Text |
+| G5 | Erklärgrafiken neu: integration-leading-system, object-ownership-matrix, sfdx-hardis-vs-commercial, service-documents-limits | 3 und 2 | Erledigt 30.10.2026: helle HTML-Bausteine `tabelle` (1A, 2A, 3A) und `staerken-grenzen` (4B), PNGs entfernt |
+| G6 | Erklärgrafiken animieren: well-architected-mapping, devops-pipeline, which-clouds, sfdx-hardis-training-levels (dort auch Kontrast, Level 3) | 3, 1 und 2 | Erledigt 30.10.2026: animierte HTML-Bausteine im dunklen Look A (`pipeline`, `saeulenwechsel` Säule für Säule, `basis-addons`, `level` mit Level 3 weiß auf dunklerem Blau), PNGs entfernt |
+| G7 | Masterclass-Kopfzeichnungen und Treppe (Säulen) animieren | 2 und 1 | Erledigt 30.10.2026: Kopfzeichnungen bauen sich einmal auf (Variante A, ohne Punkt), Treppe und Säulen bauen sich langsam beim Reinscrollen auf |
+| G8 | Quick Wins: Zertifikatsgrafik „Schnittstellen“ läuft aus der Box, graue Boxen der Document-Builder-Grafik niedriger, Orange in winter-27-org-display ersetzen (gehört nicht zur Palette) | 2 | Erledigt 30.10.2026: Text in zwei Zeilen, graue Boxen auf Texthöhe gekürzt, Orange durch Hellgrau ersetzt |
+| G9 | Logo-Band auf der Startseite ca. 20 % größer | 2 | Erledigt 30.10.2026: Variante B, Logos und Abstände 30 % größer, auch auf dem Handy |
+| G10 | Vorschlag Masterclass-Liste auf der Startseite | 2 | Erledigt 30.10.2026: Variante A, Liste in weißer Box mit Icon und Themenzeile je Masterclass |
+| G11 | Vorschlag Referenz-Karten auf der Startseite | 2 | Erledigt 30.10.2026: Projekt im Fokus, nummerierte Liste plus Panel mit Foto, Ausgangslage, Rolle und Ergebnis; Projektliste unter „Über mich“ durch Verweis ersetzt |
 
 ## Weitere Ideen
 
@@ -148,7 +185,9 @@ Ideen für mehr persönliche Note, von Fabian freigegeben, später abarbeiten:
 
 15. **Eigener Kontakt für Julianes Artikel** (von Fabian gewünscht 29.10.2026) – Julianes Artikel (und ggf. ihr Profil) bekommen Julianes eigenen Buchungslink und/oder ihre E-Mail statt Fabians Bookings und Formular. Bis dahin läuft jeder Kontakt über Fabian. *Braucht: Buchungslink oder E-Mail von Juliane.*
 
-16. **Alle Grafiken durchgehen und die besten nominieren** (von Fabian gewünscht 29.10.2026) – Irgendwann alle Grafiken und grafischen Bausteine der Website gemeinsam durchsehen (Content-Blöcke, Erklärgrafiken, Kartenskizzen, Seitenlayouts) und daraus wieder die besten nominieren. Die Gewinner kommen nach `docs/layouts.md` als bevorzugte Vorlagen, schwache Stellen bekommen einen eigenen Punkt. Bisher nominiert unter anderem: Säulen mit Dach (DevOps-Leistungsseite). *Übersicht mit Screenshots: Claude, Auswahl: Fabian.*
+16. ~~**Alle Grafiken durchgehen und die besten nominieren**~~ (erledigt 30.10.2026) – Fabian hat alle 302 Grafiken bewertet (Übersicht https://claude.ai/artifact/KusEFgFZ7i7THrd8Lz2FeC, Register `docs/graphics-review.json`, Ablauf `docs/graphics-review.md`). Die 1er stehen in `docs/layouts.md`, die Todos unter „Grafiken verbessern“ oben. Neue Grafiken laufen über das Register automatisch in die nächste Runde.
+
+17. **Zitat nach einem Vergleich in Blogartikeln** (von Fabian gewünscht 30.10.2026) – die beiden Muster aus der Startseite (Rolle → Zitat) auch in Blogartikeln einsetzen: „Bühnenband“ (Foto rechts, Zitat kursiv auf dunklem Verlauf, gebaut auf der Startseite) und „Grundsatz-Karte“ (gestrichelte Linie aus der Vergleichsspalte in eine dunkle Karte mit rundem Foto). Beschreibung in `docs/layouts.md` („Quote after a comparison“). Dafür als Content-Block in die Bibliothek aufnehmen und passende Artikel mit einem Vergleich plus Kernsatz auswählen. *Entwurf: Claude, Freigabe: Fabian.*
 
 Weitere offene Punkte:
 - Fallstudien-Seiten (Ausgangslage, Architekturentscheidungen, Ergebnis, Grafik), sobald die Kundenfreigaben vorliegen. Status klärt Fabian.

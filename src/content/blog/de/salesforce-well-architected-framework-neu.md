@@ -54,7 +54,20 @@ Das alte Framework hatte drei Säulen mit zusammen acht Eigenschaften: Trusted (
 
 Salesforce hat die alten Inhalte nicht weggeworfen, sondern umsortiert. Die Seite [Legacy Framework Mapping](https://architect.salesforce.com/docs/architect/well-architected/guide/tea-pillar-mapping.html) zeigt, wohin was gewandert ist. Einige Beispiele: Monitoring lag früher unter Reliable und gehört jetzt zu Operational Excellence. Disaster Recovery lag unter Resilient und gehört jetzt zu Reliability. Business Value und ROI lagen unter Automated und gehören jetzt zu Resource and Cost Optimization. Barrierefreiheit und Datenschutzrechte stehen unter Fairness, rechtliche Vorgaben und Data Residency bleiben bei Trust. Messaging, Eventing und API-Management sind ganz aus dem Framework in die Integration Patterns gezogen.
 
-![Wie die alten Well-Architected-Bereiche auf die fünf neuen Säulen verteilt wurden: Secure geht zu Trust. Reliable geht zu Reliability, Performance zu Resource and Cost Optimization, Monitoring zu Operational Excellence. Compliant geht zu Fairness, Recht und Data Residency bleiben bei Trust. Intentional und Automated gehen zu Operational Excellence, ROI und Wartbarkeit zu Resource and Cost Optimization. Engaging geht zu Fairness. Resilient geht zu Operational Excellence, Disaster Recovery zu Reliability. Composable geht zu Resource and Cost Optimization, Messaging, Eventing und APIs zu den Integration Patterns. Neu dazu kommt die Agentic-Enterprise-Linse für jede Säule.](../../../assets/blog/well-architected-mapping-de.png)
+```saeulenwechsel
+bisher: Bisher: drei Säulen
+alt: Trusted | secure, compliant, reliable
+alt: Easy | intentional, automated, engaging
+alt: Adaptable | resilient, composable
+titel: Well-Architected: von drei auf fünf Säulen
+Trust | Sicherheit < Secure | Recht, Data Residency < Compliant
+Reliability | Verfügbarkeit, Skalierung < Reliable | Disaster Recovery < Resilient
+Operational Excellence | Monitoring < Reliable | Strategie, Governance < Intentional | Automatisierung < Automated | ALM, Incidents < Resilient
+Resource and Cost Optimization * | Performance < Reliable | ROI, Wartbarkeit < Automated, Intentional | Lizenzen, Sandboxes < Framework 2026
+Fairness | Ethik, Datenschutzrechte < Compliant | Barrierefreiheit < Engaging
+fazit: **Neu:** Agentic-Enterprise-Linse für jede Säule.
+fazit: **Ausgelagert:** Messaging, Eventing und APIs in die Integration Patterns.
+```
 
 Auffällig ist, wie konkret die neuen Seiten geworden sind. Zwei Zahlen daraus:
 

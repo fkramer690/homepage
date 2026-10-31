@@ -55,6 +55,11 @@ blogTags: [partner governance, partnersteuerung, pull request review, vendor loc
 
 Partnersteuerung auf Kundenseite hält ein Salesforce-Programm mit mehreren Umsetzungspartnern unter Kontrolle. Dazu gehören gemeinsame Standards, klare Verantwortung für jedes Objekt und jeden Prozess, ein Release-Prozess und jemand, der jede Lieferung technisch prüft, bevor sie weitergeht. Ohne das optimiert jeder Partner seinen eigenen Bereich, und der Kunde bezahlt die Konflikte dazwischen. Diese Rolle übernehme ich als unabhängiger Architekt, ohne Bindung an Hersteller oder Partner.
 
+```partnerfluss architekt
+ohne: Ohne Verantwortung beim Kunden | Jeder Partner liefert seinen Teil, Konflikte zeigen sich erst in der Org.
+mit: Mit Architekt auf Kundenseite | Jede Lieferung läuft über Standards und Review, in der Org kommt ein geprüfter Strom an.
+```
+
 ## Wie sieht das in einem echten Programm aus?
 
 ```kennzahlen
@@ -72,8 +77,17 @@ Der erste Schritt war einfach und wirksam: Jede Änderung ging über einen Pull 
 - **Eine Object Ownership Matrix**, die festlegte, welcher Stream für welches Objekt verantwortlich war. Bevor ein Team ein fremdes Objekt änderte, musste es sich mit dem Verantwortlichen abstimmen.
 - **Regeln für Konfiguration**, zum Beispiel welche Werte in Custom Metadata Types oder Custom Labels gehören, statt fest im Code zu stehen.
 
-![Vereinfachtes Beispiel einer Object Ownership Matrix: Der Stream Vertrieb verantwortet Account, Opportunity und Quote, der Stream Service verantwortet Case und Asset, der Stream Field Service verantwortet Work Order. Jeder andere Stream stimmt sich mit dem Verantwortlichen ab, bevor er eines dieser Objekte ändert.](../../../assets/blog/object-ownership-matrix-de.png)
-
+```tabelle matrix
+titel: Object Ownership Matrix, vereinfachtes Beispiel
+spalten: Objekt | Stream Vertrieb | Stream Service | Stream Field Service
+Account | Verantwortlich * | stimmt sich ab | stimmt sich ab
+Opportunity | Verantwortlich * | stimmt sich ab | stimmt sich ab
+Quote | Verantwortlich * | stimmt sich ab | stimmt sich ab
+Case | stimmt sich ab | Verantwortlich * | stimmt sich ab
+Asset | stimmt sich ab | Verantwortlich * | stimmt sich ab
+Work Order | stimmt sich ab | stimmt sich ab | Verantwortlich *
+fazit: Bevor ein Team ein fremdes Objekt ändert, stimmt es sich mit dem Verantwortlichen ab.
+```
 Bis die Standards stabil waren, hat es etwa drei Monate gedauert. Die erste Version deckte rund 80 Prozent der Fälle ab. In den Wochen danach kamen neue Randfälle hinzu. Wir haben sie in regelmäßigen [Center-of-Excellence-Calls](../../blog/salesforce-center-of-excellence-format/) besprochen, in denen anstehende Änderungen mit genug Vorlauf für alle Streams auf den Tisch kamen. Irgendwann fielen die Randfälle ganz weg, weil Themen besprochen wurden, bevor sie zu Konflikten wurden. Als der Prozess rund lief, habe ich ihn an einen internen Kollegen übergeben, der ihn seitdem verantwortet.
 
 ## Warum gehört die Governance auf die Kundenseite?

@@ -13,7 +13,7 @@ export const GET: APIRoute = async ({ props }) => {
   const { service } = props as { service: Service };
   const png = await renderOgImage({
     title: service.data.title,
-    eyebrow: service.data.lang === 'de' ? 'FK Solution Design · Leistungen' : 'FK Solution Design · Services',
+    eyebrow: service.data.lang === 'de' ? 'Leistungen' : 'Services',
     footer: `${site.person} · Salesforce Enterprise Architect`,
   });
   return new Response(new Uint8Array(png), { headers: { 'Content-Type': 'image/png' } });

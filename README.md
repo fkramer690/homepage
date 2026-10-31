@@ -25,6 +25,8 @@ Visitor statistics use [Cloudflare Web Analytics](https://www.cloudflare.com/web
 
 Search and AI visibility come from [DataForSEO](https://dataforseo.com) (secrets `DATAFORSEO_LOGIN` and `DATAFORSEO_PASSWORD`, the API login, not the account e-mail). `.github/workflows/rankings.yml` runs every Monday: Google positions, search volumes and AI Overview citations for the keywords in `seo/keywords.json`, plus every keyword fk-sd.de ranks for. `.github/workflows/ai-visibility.yml` runs on the 1st of each month and asks the questions in `seo/ai-prompts.json` to ChatGPT, Claude, Gemini, Perplexity and Google AI Mode. `.github/workflows/onpage.yml` crawls the live site on the 1st of each month with the DataForSEO OnPage API (duplicate titles, descriptions and content, broken links, redirect chains, non-indexable pages, structured data errors; a manual run can reuse an earlier crawl by its task id). They store snapshots on the `stats` branch (`stats/rankings/`, `stats/ai/`, `stats/onpage/`) and the dashboard rows in `stats/seo-dashboard/`. Edit the two JSON files to change what is tracked.
 
+Page speed comes from the PageSpeed Insights API (secret `PAGESPEED_API_KEY`). `.github/workflows/pagespeed.yml` runs on the 3rd of each month (and by hand) for the key pages in `scripts/fetch-pagespeed.mjs`, mobile and desktop: Lighthouse scores, lab metrics and Core Web Vitals from real users once Google has enough data. Snapshots go to `stats/pagespeed/` on the `stats` branch.
+
 The Claude scheduled task "Monatliche Artikelprüfung" runs on the 3rd of each month (`.github/workflows/stale-articles.yml` does the same when started by hand): `scripts/stale-articles.mjs` lists blog articles and masterclass chapters whose prices or Flex Credits were last checked more than six months ago, or whose deadlines and Salesforce releases have passed since then, and also lists external source links that answer 404 or 410 (`--links`), and keeps one open issue "Artikel prüfen: Preise, Fristen und tote Links" (label `artikel-pruefen`) up to date. After checking an article, set its `updatedDate`. Locally behind a proxy, run it with `NODE_USE_ENV_PROXY=1`.
 
 Setting `bookingUrl` in `src/site.ts` (e.g. a Microsoft Bookings page) turns all "Book a call" buttons into links to that page; otherwise they open an email.
@@ -57,6 +59,20 @@ Rule: every external link opens in a new tab. Links in Markdown get `target="_bl
 
 Page titles: `scripts/check-titles.mjs` runs after the sitemap check and fails if an indexable page has no `<title>`, a title longer than 60 characters, or the same title as another page (`npm run check:titles`). Articles, chapters and most pages add ` | FK Solution Design` only when it still fits in 60 characters, so the keyword stays at the front.
 
+## Where files go
+
+The repository root holds only project files (`package.json`, configs, `README.md`, `CLAUDE.md`). `scripts/check-root.mjs` runs first in `npm run build` and fails on anything else there, such as an exported SVG (`npm run check:root`).
+
+| File | Place |
+|---|---|
+| Card drawings of the blog overview (one per article, EN + DE) | code in `src/lib/card-drawings.ts`, keyed by `translationKey`; drawn into the page at build time, no image files |
+| Card drawings as standalone SVG, to look at or share | `npm run cards:export` (or `npm run cards:export -- <translationKey>`) writes `previews/card-drawings/<translationKey>-<lang>.svg`; the folder is git-ignored and regenerated on every export |
+| Flow diagrams in articles | `src/assets/diagrams/`, rendered by `node scripts/render-diagrams.mjs` |
+| Explanatory graphics, photos, certification badges | `src/assets/blog/`, `src/assets/photos/`, `src/assets/certifications/` |
+| Icons | `src/icons/` |
+| Files served as they are (favicon, client logos, downloads) | `public/` |
+| Concept notes for reuse in other projects (not published) | `docs/konzepte/` |
+
 ## Local development
 
 ```sh
@@ -70,7 +86,7 @@ npm run build    # output in dist/
 Every push to `main` builds and deploys the site via `.github/workflows/deploy.yml`.
 One-time setup: in the repository settings under **Pages**, set **Source** to **GitHub Actions**.
 
-After each deploy, `scripts/indexnow.mjs` sends the pages whose HTML changed to IndexNow (Bing and others). It compares against `indexnow-hashes.json` on the live site; the key file is `public/<key>.txt`.
+After each deploy, `scripts/indexnow.mjs` sends the pages whose content changed (title, description, text of the main area without navigation and contact section; layout and style changes do not count) to IndexNow (Bing and others). It compares against `indexnow-hashes.json` on the live site; the key file is `public/<key>.txt`.
 
 The site is served at https://www.fk-sd.de/ (`site` and `base` in `astro.config.mjs`, domain in `public/CNAME`). Both fk-sd.de and the old address https://fkramer690.github.io/homepage/ redirect there.
 
