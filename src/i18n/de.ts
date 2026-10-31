@@ -35,7 +35,6 @@ export const de: Dict = {
     { value: '20+', label: 'Enterprise-Projekte' },
     { value: '32', label: 'Entwickler in 8 Teams, ein Programm' },
     { value: '25', label: 'Salesforce-Zertifikate, 8 Architect' },
-    { value: '0', label: 'Bindungen an Hersteller oder Partner' },
   ],
   role: {
     label: 'Die Rolle',
@@ -61,7 +60,7 @@ export const de: Dict = {
       'Vorher geklärt, ob es überhaupt in Salesforce gehört',
       'Ein Release-Prozess mit automatischen Prüfungen für alle',
       'Ein Standard-Framework für Integrationen und Automatisierungen',
-      'Standards, die dafür sorgen, dass das Ergebnis hält',
+      'Prüfungen in der Pipeline, damit nach dem Cleanup keine neuen Altlasten entstehen',
     ],
     photoAlt: 'Fabian Kramer bei einer Live-Demo auf der Bühne',
     photoCaption: 'Auf der Bühne: Live-Demo statt Foliensatz.',
@@ -98,7 +97,7 @@ export const de: Dict = {
       },
       {
         title: 'Partnersteuerung & Governance',
-        text: 'Ein gemeinsames Governance- und Release-Framework über mehrere Implementierungspartner – und jemand, der die Lieferungen tatsächlich prüft.',
+        text: 'Ein gemeinsames Governance- und Release-Framework über mehrere Implementierungspartner. Dazu prüfe ich, was die Partner liefern.',
       },
     ],
     more: 'Mehr erfahren',
@@ -182,17 +181,17 @@ export const de: Dict = {
     label: 'Arbeitsweise',
     title: 'Von der Bestandsaufnahme bis zum globalen Rollout',
     steps: [
-      { title: 'Analysieren', text: 'Bestehende Architektur, Partnerlandschaft, Lizenzen: was da ist und wo es hakt.' },
-      { title: 'Entwerfen', text: 'Zielarchitektur, Make-or-Buy-Entscheidungen und eine Roadmap, der der Fachbereich folgen kann.' },
-      { title: 'Steuern', text: 'Standards für Governance, DevOps und Releases, und Reviews der Partnerlieferungen.' },
-      { title: 'Umsetzen', text: 'Begleitung der Umsetzung bis zum globalen Rollout.' },
+      { title: 'Analysieren', text: 'Ich nehme Org, Partner und Lizenzen auf. Ergebnis ist eine Liste der Probleme, sortiert nach dem, was sie kosten.' },
+      { title: 'Entwerfen', text: 'Zielarchitektur und Roadmap, mit einer Make-or-Buy-Entscheidung für jede größere Anforderung.' },
+      { title: 'Steuern', text: 'Gemeinsame Standards für alle Partner, ein Review jeder Lieferung und ein Release-Prozess mit automatischen Prüfungen.' },
+      { title: 'Umsetzen', text: 'Ich begleite den Rollout in die Länder und übergebe Standards und Reviews an Ihr internes Team.' },
     ],
   },
   firstCall: {
     label: 'Erstgespräch',
     title: 'Warum zuerst 30 Minuten?',
     paragraphs: [
-      'Die meisten Salesforce-Programme haben nicht ein Problem, sondern zehn. Wer an allen Fronten gleichzeitig kämpft, verbessert keine davon dauerhaft.',
+      'Die meisten Salesforce-Programme haben zehn Probleme. Wer an allen Fronten gleichzeitig kämpft, verbessert keine davon dauerhaft.',
       'Im ersten Gespräch finden wir heraus, welches Problem am meisten kostet und wo sich der erste Schritt lohnt. Und wir klären, was nötig ist, damit das Ergebnis hält. Ein Healthcheck mit Cleanup bringt wenig, wenn zwei Wochen später dieselben Probleme wieder entstehen.',
     ],
     listTitle: 'Was wir im Gespräch klären',
@@ -212,7 +211,7 @@ export const de: Dict = {
     blocks: [
       {
         head: 'Was ich mache',
-        text: 'Ich helfe Fertigungsunternehmen, Salesforce zu einem verlässlichen Rückgrat für Vertrieb, Service und After-Sales zu machen – als Architekt auf Kundenseite.',
+        text: 'Ich arbeite als Architekt auf Kundenseite für Fertigungsunternehmen, die Vertrieb, Service und After-Sales in Salesforce führen.',
       },
       {
         head: 'Projekte',
@@ -226,7 +225,7 @@ export const de: Dict = {
     ],
     facts: [
       { label: 'Seit 2020', text: 'Gründer der FK Solution Design GmbH, Köln' },
-      { label: '2022–2025', text: 'Mitgründer der Blue Apes Consulting GmbH (bis zu 11 Mitarbeitende, verkauft)' },
+      { label: '2022 bis 2025', text: 'Mitgründer der Blue Apes Consulting GmbH (bis zu 11 Mitarbeitende, verkauft)' },
       { label: 'Studium', text: 'M.Sc. Wirtschaftsinformatik, Universität Koblenz-Landau' },
     ],
     linkedin: 'LinkedIn-Profil',
@@ -271,7 +270,7 @@ export const de: Dict = {
   contact: {
     label: 'Kontakt',
     title: 'Sie planen ein Salesforce-Programm oder müssen eins retten?',
-    text: 'Erzählen Sie mir, wo Sie stehen. Ein erstes Gespräch dauert 30 Minuten – schlimmstenfalls haben Sie danach eine zweite Meinung.',
+    text: 'Erzählen Sie mir, wo Sie stehen. Ein erstes Gespräch dauert 30 Minuten. Schlimmstenfalls haben Sie danach eine zweite Meinung.',
     cta: '30-Minuten-Gespräch vereinbaren',
     bookingNote: 'Wählen Sie einen Termin in meinem Kalender über Microsoft Bookings. Lieber schreiben? Nutzen Sie das Formular, ich melde mich bei Ihnen.',
     linkedinLabel: 'LinkedIn',
@@ -331,7 +330,7 @@ export const de: Dict = {
     seriesPart: 'Teil {part} von {total}',
     seriesUpcoming: 'Weitere Teile in Vorbereitung: {count}',
     seriesCurrent: 'Sie lesen gerade',
-    authorBio: 'Ich helfe Fertigungsunternehmen, Salesforce zu einem verlässlichen Rückgrat für Vertrieb, Service und After-Sales zu machen, als Architekt auf Kundenseite und unabhängig von Herstellern und Partnern.',
+    authorBio: 'Ich arbeite als Architekt auf Kundenseite für Fertigungsunternehmen, die Vertrieb, Service und After-Sales in Salesforce führen, unabhängig von Herstellern und Partnern.',
     authorLabel: 'Über den Autor',
     authorRole: 'Salesforce Enterprise Architect · Köln',
     authorMore: 'Mehr über mich',
@@ -751,8 +750,8 @@ export const de: Dict = {
       { label: 'Aus der Praxis', text: 'geschrieben von Fabian Kramer (25 Salesforce-Zertifikate, davon 8 Architect), Change Management gemeinsam mit Juliane Winterscheid.' },
     ],
     homeLabel: 'Masterclasses',
-    homeTitle: 'Wissen zum Nachlesen, Kapitel für Kapitel',
-    homeText: 'Sieben Masterclasses für Entscheider in Fertigungsunternehmen, frei lesbar auf Deutsch und Englisch.',
+    homeTitle: 'Sieben Masterclasses, {n} Kapitel, frei lesbar',
+    homeText: 'Geschrieben für Entscheider in Fertigungsunternehmen, auf Deutsch und Englisch.',
     // Short names and topic lines for the list on the start page, keyed by course id.
     homeTopics: { ai: 'Agentforce, Data Cloud, Lizenzen', devops: 'Pipelines, Releases, sfdx-hardis', 'manufacturing-cloud': 'Run-Rate, Absatzplanung, Rahmenverträge', 'revenue-cloud': 'Angebote, Preise, Verträge', 'b2b-commerce': 'Händlerportal, Bestellungen, ERP', 'field-service': 'Einsatzplanung, Techniker-App, Berichte', 'change-management': 'Akzeptanz, Key User, Roll-out' },
     homeNames: { ai: 'KI & Agentforce', devops: 'DevOps & Release-Management', 'manufacturing-cloud': 'Manufacturing Cloud', 'revenue-cloud': 'Revenue Cloud', 'b2b-commerce': 'B2B Commerce', 'field-service': 'Field Service', 'change-management': 'Change Management' },
@@ -764,8 +763,8 @@ export const de: Dict = {
   },
   side: {
     toc: 'Inhalt',
-    ctaTitle: '30 Minuten, kein Pitch',
-    ctaText: 'Sie schildern Ihre Lage, ich sage ehrlich, ob und wie ich helfen kann.',
+    ctaTitle: 'Erstgespräch, 30 Minuten',
+    ctaText: 'Sie schildern Ihre Lage, ich sage Ihnen, ob ich helfen kann und wie.',
     phone: 'Oder direkt anrufen',
     video: 'Video',
     videoSeconds: 'Sek.',

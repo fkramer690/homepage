@@ -144,13 +144,16 @@ function check(collection, rules) {
   return pairs.size;
 }
 
-// The closing calls to action (src/lib/contact-briefs.ts) are page text too, so the same wording rules apply.
-const briefs = readFileSync(new URL('../src/lib/contact-briefs.ts', import.meta.url), 'utf8');
-for (const [, str] of briefs.matchAll(/'((?:[^'\\\n]|\\.)*)'/g)) {
-  const fail = (msg) => errors.push(`src/lib/contact-briefs.ts: "${str.slice(0, 50)}": ${msg}`);
+// The closing calls to action (src/lib/contact-briefs.ts) and the page texts in src/i18n (start page, page heads,
+// side column, footer) are page text too, so the same wording rules apply (AI-slop review 2026-10-31).
+for (const file of ['src/lib/contact-briefs.ts', 'src/i18n/de.ts', 'src/i18n/en.ts']) {
+const text = readFileSync(new URL(`../${file}`, import.meta.url), 'utf8');
+for (const [, str] of text.matchAll(/'((?:[^'\\\n]|\\.)*)'/g)) {
+  const fail = (msg) => errors.push(`${file}: "${str.slice(0, 50)}": ${msg}`);
   for (const re of banned) if (re.test(str)) fail(`contains a banned term (${re})`);
   for (const re of slop) if (re.test(str)) fail(`sounds generated, rewrite in plain words (${re})`);
   if (/[\u2013\u2014]/.test(str)) fail('no en or em dashes (– —), use a comma, a full stop or "to"');
+}
 }
 
 // The German FAQ heading is always "Häufig gestellte Fragen" (Fabian, 2026-10-29), on every page.
