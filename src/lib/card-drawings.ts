@@ -1560,6 +1560,19 @@ const drawings: Record<string, Drawing> = {
     ${check(14, 139, G)}${t(26, 144, l('120 s timeout, 1 request per session', '120 s Timeout, 1 Anfrage pro Session'), { size: 7 })}
     ${t(306, 128, l('20 credits per action', '20 Credits pro Aktion'), { size: 7, anchor: 'end' })}`,
 
+  'enhanced-chat-user-verification': (l) => `
+    ${t(14, 18, l('SIGNED IN = HISTORY STAYS', 'ANGEMELDET = VERLAUF BLEIBT'), { fill: D, size: 7 })}${tag(222, 4, 84, l('RS256, 2048 bit', 'RS256, 2048 Bit'))}
+    ${box(14, 32, 80, 44)}${t(54, 51, 'PORTAL', { fill: D, size: 7, anchor: 'middle' })}${t(54, 65, 'Login', { size: 7, anchor: 'middle' })}
+    ${arrow(94, 54, 124, C)}${t(109, 47, 'JWT', { fill: C, size: 7, anchor: 'middle' })}
+    ${box(124, 32, 84, 44)}${t(166, 51, 'WEBSITE', { fill: D, size: 7, anchor: 'middle' })}${t(166, 65, 'setIdentityToken', { size: 7, anchor: 'middle' })}
+    ${arrow(208, 54, 236)}
+    ${box(236, 32, 70, 44, C)}${t(271, 51, 'SALESFORCE', { fill: D, size: 7, anchor: 'middle' })}${t(271, 65, 'Keyset', { fill: C, size: 7, anchor: 'middle' })}
+    <path d="M14 92H306" stroke="${L}"/>
+    ${check(14, 107)}${t(26, 112, l('verified: history across devices', 'verifiziert: Verlauf über Geräte'), { size: 7 })}
+    ${cross(18, 124)}${t(26, 128, l('anonymous: gone after 6 h max.', 'anonym: weg nach max. 6 Stunden'), { size: 7 })}
+    ${check(14, 139, G)}${t(26, 144, l('sub claim = key to the history', 'Claim sub = Schlüssel zum Verlauf'), { size: 7 })}
+    ${t(306, 112, l('button only with token', 'Button erst mit Token'), { size: 7, anchor: 'end' })}`,
+
   'agentforce-a2a-multi-agent': (l) => `
     ${t(18, 18, l('WHO OWNS THE CONVERSATION', 'WER FÜHRT DAS GESPRÄCH'), { fill: D, size: 7 })}
     ${box(18, 28, 62, 30)}${t(49, 41, l('DEALER', 'HÄNDLER'), { fill: D, size: 7.5, anchor: 'middle' })}${t(49, 52, 'portal', { size: 7, anchor: 'middle' })}
