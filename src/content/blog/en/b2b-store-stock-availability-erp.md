@@ -14,7 +14,7 @@ takeaways:
   - "Omnichannel Inventory holds a near real-time copy per location, but Salesforce says it does not replace the inventory system of record. The ERP stays master."
   - "A copy is fast and keeps the store running when SAP is down. Live is exact and returns a confirmed date, but SAP has to answer within the checkout."
   - "Dealers need a usable signal more than an exact quantity: in stock, on request, or a confirmed date. That also protects stock levels from competitors."
-  - "Both B2B editions include 20 inventory locations. Unified Omnichannel Inventory from Winter '27 is described for store and online stock and does not mention B2B."
+  - "Both B2B editions include 20 inventory locations. Unified Omnichannel Inventory (Winter '27) is described for store stock, B2B is not mentioned."
 faq:
   - q: "Where does Salesforce B2B Commerce get stock data from?"
     a: "By default from Omnichannel Inventory, a Salesforce service that holds availability per location and location group. With the inventory extension, the store can ask another source instead, for example SAP live."

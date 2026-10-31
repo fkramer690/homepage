@@ -24,10 +24,10 @@ const slop = [
 
 const errors = [];
 
-// Structural AI-slop patterns (AI-slop review 2026-10-31, "No AI slop" in docs/blog-guidelines.md). They are
-// reported as warnings until every existing text is rewritten; STRICT_STRUCTURE then turns them into errors.
+// Structural AI-slop patterns (AI-slop review 2026-10-31, "No AI slop" in docs/blog-guidelines.md). Errors since
+// every blog article, chapter and service page was rewritten; never set STRICT_STRUCTURE back to false.
 // `node scripts/check-blog.mjs --structure` lists every finding and exits non-zero while any is left.
-const STRICT_STRUCTURE = false;
+const STRICT_STRUCTURE = true;
 const showStructure = process.argv.includes('--structure');
 const structureIssues = [];
 const structurePhrases = [
@@ -172,7 +172,7 @@ function check(collection, rules) {
       if (/[\u2013\u2014]/.test(text)) fail('no en or em dashes (– —), use a comma, a full stop or "to"');
       const contrasts = (text.match(/\b(is|are|isn't|aren't) not (just |only )?(about|a|an)\b[^.]*\.\s+(it|they) (is|are)\b|geht es nicht (nur )?(um|darum)|\b(ist|sind) (kein|keine|nicht)\b[^.]*\.\s+(es|sie) (ist|sind)\b/gi) ?? []).length;
       if (contrasts > 0) fail('avoid the "it is not X, it is Y" pattern, state what it is');
-      if (collection !== 'services') checkStructure(name, lang, text, fm);
+      checkStructure(name, lang, text, fm);
     }
   }
 
