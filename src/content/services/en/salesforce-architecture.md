@@ -7,24 +7,22 @@ slug: salesforce-architecture
 translationKey: service-architecture
 contactBrief: architecture
 order: 1
-lead: "Large Salesforce programmes rarely fail because of one wrong click. They fail because nobody decided early which clouds, which data model and which integrations the company really needs. I design the target architecture on the client side and document every decision, so it still holds when partners change."
+lead: "Large Salesforce programmes mostly get into trouble because nobody decided early which clouds, which data model and which integrations the company needs. I design the target architecture on the client side and document every decision, so it still holds when partners change."
 situations:
   - "A new Salesforce programme is starting, and the company needs a target picture before it signs with an implementation partner."
   - "Several clouds, portals and integrations have grown over the years, and nobody has the overall picture anymore."
   - "Partners propose additional clouds or industry products, and the company cannot judge whether they pay off."
   - "The data model has grown project by project, and reports, automation and AI use cases suffer from it."
 deliverables:
-  - "Target architecture: clouds, portals, integrations and their responsibilities"
-  - "Data model for the core objects and their relationships to ERP and other systems"
-  - "Decision log with options, reasons and consequences for every architecture decision"
-  - "Assessment of add-ons such as Field Service, Experience Cloud or Manufacturing Cloud against the ROI case"
-  - "Solution design for complex requirements, ready for implementation partners"
-  - "Architecture reviews of partner designs before they are built"
+  - "I map processes, users and existing systems before I recommend a cloud."
+  - "I assess add-ons such as Field Service, Experience Cloud or Manufacturing Cloud against the ROI case."
+  - "I review partner designs before they are built."
+  - "During implementation I keep the decision log up to date and step in when the build drifts from the target picture."
 results:
-  - "A target picture that business, IT and partners share"
-  - "Clouds and add-ons chosen because they pay off, not because they were offered"
-  - "Decisions that remain traceable when people or partners change"
-  - "A data model that supports reporting, automation and AI use cases"
+  - "A target architecture with clouds, portals, integrations and their responsibilities"
+  - "A data model for the core objects and their relationships to ERP and other systems"
+  - "A decision log with options, reasons and consequences for every architecture decision"
+  - "Solution designs for the critical areas that implementation partners can build from"
 phases:
   - title: "Understanding the business"
     icon: "building"
@@ -54,24 +52,22 @@ Salesforce architecture on the client side means designing the overall picture i
 I have had this role at global manufacturers, including the first worldwide Manufacturing Cloud rollout with CPQ, a product configurator and a customer portal.
 ```
 
-## Which clouds does the company really need?
+## Which clouds does the company need?
 
-Sales Cloud and Service Cloud are a given in almost every enterprise project. The interesting questions start with the add-ons:
-
-- **Field Service** depends on the type of work, the locations and the duration of the jobs. The biggest benefit comes with many short jobs, where route and appointment optimisation clearly improves the numbers. With a few long projects, the benefit is much smaller. I wrote about the current mobile features in [Field Service mobile with guided flows and voice](../../blog/salesforce-field-service-mobile-guided-voice/).
-- **Experience Cloud** fits customer-facing processes. Self-service portals save internal capacity, because customers find answers and submit requests themselves.
-- **Manufacturing Cloud** only makes sense when its features match how the company actually sells. The fit has to be calculated in the ROI case, which I describe on the [make-or-buy and licences](../make-or-buy-licences/) page.
+Which add-ons pay off depends on the type of work:
 
 ```basis-addons
-title: Which clouds the company really needs
+title: Which clouds the company needs
 base: Sales Cloud, Service Cloud | A given in almost every enterprise project
 + Field Service | Fits with many short jobs, where route and appointment optimisation clearly improves the numbers. Much smaller benefit with a few long projects.
 + Experience Cloud | Fits customer-facing processes. Self-service portals save internal capacity.
-+ Manufacturing Cloud | Only when its features match how the company actually sells. The fit is calculated in the ROI case.
-note: The interesting questions start with the add-ons.
++ Manufacturing Cloud | Only when its features match how the company sells. The fit is calculated in the ROI case.
+note: Sales Cloud and Service Cloud are a given, the decision is about the add-ons.
 ```
 
-## Why does the data model decide so much?
+For Field Service, the locations and the duration of the jobs count as well as the type of work. I wrote about the current mobile features in [Field Service mobile with guided flows and voice](../../blog/salesforce-field-service-mobile-guided-voice/). Experience Cloud saves capacity because customers find answers and submit requests themselves. I calculate the fit of Manufacturing Cloud in the ROI case, which I describe on the [make-or-buy and licences](../make-or-buy-licences/) page.
+
+## The data model carries reports, automation and AI
 
 Every report, every automation and every AI use case depends on the data model. That is why I treat the data model as part of the architecture, including its relationships to ERP. My view on AI is the same: business value and data quality come first, as described in [Agentforce: business value and data quality first](../../blog/agentforce-business-value-data-quality-first/).
 
@@ -86,9 +82,9 @@ with: Data model as part of the architecture
 - Reports add up, and agents find the right data.
 ```
 
-## What do I deliver?
+## Every decision gets an entry in the log
 
-The scope ranges from the target picture to the decision log to the data model. Each architecture decision gets a short entry with the options, the reasons and the consequences. That sounds like paperwork, but it is what lets a company change partners or people without losing the reasoning behind its system.
+Alongside the target picture and the data model, I keep a decision log. Every architecture decision gets a short entry there with the options, the reasons and the consequences. With this log a company can change partners or people without losing the reasoning behind its system.
 
 ```eintrag Decision log
 Decision | What was decided?
