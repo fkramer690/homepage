@@ -293,7 +293,7 @@
     "og:artikel": {"title": "Vorschaubilder (LinkedIn, Google) je Seite", "proposal": 2, "rating": 1, "ratedOn": "2026-10-30", "note": "nimm hier bitte auch die FK Solution Design in weiß mit Salesforce Architecture drunter wie bei Standard-Vorschaubild", "todo": "docs/backlog.md G4 (erledigt)"},
     "og:statisch": {"title": "Standard-Vorschaubild", "proposal": 3, "rating": 3, "ratedOn": "2026-10-30", "note": "please fix wording", "todo": "docs/backlog.md G4 (erledigt)"},
     "page:arbeitsweise": {"title": "Arbeitsweise mit Fortschrittslinie (Fotos entfernt 2026-10-30)", "proposal": 1, "rating": 1, "ratedOn": "2026-10-30"},
-    "page:blueprint": {"title": "Blueprint-Deko in dunklen Bereichen (Maßlinien oben/unten, Fadenkreuz, im Rahmen)", "proposal": 1, "rating": null},
+    "page:blueprint": {"title": "Blueprint-Deko (Maßlinien, Fadenkreuz), seit 2026-10-31 nur noch im Hero der Startseite", "proposal": 1, "rating": null},
     "page:footer": {"title": "Footer zweistufig (Leistungen, Masterclasses, Wissen & mehr, Rechtliches)", "proposal": 2, "rating": null, "note": "Polished-Design-Paket F, 31.10.2026"},
     "page:hero": {"title": "Hero mit Maßlinien am Foto", "proposal": 2, "rating": 1, "ratedOn": "2026-10-30"},
     "page:leistungen": {"title": "Leistungskacheln", "proposal": 2, "rating": 1, "ratedOn": "2026-10-30"},
