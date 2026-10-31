@@ -9,10 +9,10 @@ topic: security
 categories: [architecture, ai]
 tags: [agentforce, data residency, gdpr, hyperforce, llm, manufacturing]
 takeaways:
-  - "Claude and Amazon models in Agentforce run on Amazon Bedrock inside the Salesforce trust boundary; other models run with partners in a shared trust zone or at the LLM provider directly."
-  - "Salesforce's sub-processor list names OpenAI with the location United States and Microsoft Azure with European locations such as Germany, France and Sweden, so the model behind an agent decides where a prompt goes."
-  - "Geo-aware routing sends LLM requests to a data center near your org's Data 360 region, but Salesforce publishes no list of models that stay in the EU, and for Agentforce Vibes it documents a US fallback."
-  - "The Hyperforce EU Operating Zone covers a vetted set of products and its pages do not mention Agentforce; Koa, Salesforce's own reasoning model, is expected in US regions first."
+  - "Claude and Amazon models run on Amazon Bedrock inside the Salesforce trust boundary, other models with partners or at the LLM provider."
+  - "Salesforce's sub-processor list places OpenAI in the United States and Microsoft Azure in Germany, France, Sweden and other EU locations."
+  - "Geo-aware routing follows your org's Data 360 region, but Salesforce publishes no list of the models that stay in the EU."
+  - "The Hyperforce EU Operating Zone pages do not mention Agentforce, and Koa, Salesforce's own reasoning model, comes to US regions first."
   - "Before go-live, get in writing per agent: model, processing region, failover path, sub-processor and retention terms."
 faq:
   - q: "Does Agentforce process data in the EU?"
@@ -71,7 +71,7 @@ The setting sits in Einstein Setup and requires Data 360. When the regional endp
 
 In-region only has a price: during an outage the agent returns an error. For order status that is acceptable with a handover to a person. For a [breakdown hotline](../breakdown-hotline-agentforce-voice/) I would not accept it without a tested fallback to a dispatcher.
 
-## What does the Hyperforce EU Operating Zone cover?
+## The Hyperforce EU Operating Zone does not mention Agentforce
 
 Salesforce [launched](https://www.salesforce.com/news/press-releases/2023/03/02/hyperforce-eu-operating-zone-news/) the Hyperforce EU Operating Zone on 2 March 2023, so customers can store and process their data in the EU, with support by EU-based personnel. The [product page](https://salesforce.com/platform/data-residence-eu-oz) speaks of processing and storing customer data "strictly within the region (EU and Switzerland)" and of "a select set of products and features that have been vetted", spanning Sales Cloud, Service Cloud, the platform and industries. Neither page mentions Agentforce, Einstein or Data 360.
 
@@ -89,7 +89,7 @@ I am a Salesforce architect, not a lawyer, and this is not legal advice. As I re
 
 Three neighbouring topics follow other rules: the [EU AI Act deadlines for Agentforce](../eu-ai-act-deadlines-agentforce/), [AI coding tools under works council and GDPR](../ai-coding-tools-works-council-gdpr/), and external models reading Salesforce data through [hosted MCP servers](../salesforce-hosted-mcp-servers-data-access/), where Salesforce's retention agreements do not reach.
 
-## A typical scenario: dealer enquiries from five countries
+## Worked example: dealer enquiries from five countries
 
 Assume a machine builder in Germany with 300 dealers in France, Italy, Austria, Switzerland and Poland, Service Cloud, SAP S/4HANA for orders and Data 360 provisioned in a European region. All numbers are assumptions. A service agent is to answer about 3,000 dealer enquiries per month on order status, spare parts availability and warranty case status. Prompts contain dealer contact names, serial numbers and order values.
 
@@ -103,7 +103,7 @@ Assume a machine builder in Germany with 300 dealers in France, Italy, Austria, 
 
 Waiting for the written confirmation delays go-live by about three weeks. In my judgement that is cheaper than explaining the data flow afterwards.
 
-## What should a manufacturer get confirmed in writing?
+## First step: get model, region and failover confirmed in writing per agent
 
 Ask Salesforce per agent and file the answers in the architecture documentation:
 
@@ -115,6 +115,4 @@ Ask Salesforce per agent and file the answers in the architecture documentation:
 6. **Retention.** Does zero data retention apply to your model, and if you use BYOLLM, which clauses in your own provider contract cover it?
 7. **Changes.** How will you learn when the default model or the sub-processor list changes?
 
-Settling these questions per agent is part of my work on [Salesforce architecture](../../services/salesforce-architecture/); the wider map of agents in manufacturing is in [chapter 10 of the AI masterclass](../../masterclass/ai-salesforce/ai-agents-in-manufacturing/).
-
-Where an Agentforce agent processes your dealer data depends on the model you choose, and only Salesforce's written confirmation for your org settles it.
+When Salesforce changes the default model or the sub-processor list, ask questions 1 to 4 again; an entry in the [decision log](../salesforce-architecture-decision-log/) is the simplest way to record which answer applies to which agent. Settling these questions per agent is part of my work on [Salesforce architecture](../../services/salesforce-architecture/); the wider map of agents in manufacturing is in [chapter 10 of the AI masterclass](../../masterclass/ai-salesforce/ai-agents-in-manufacturing/).

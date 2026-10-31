@@ -9,8 +9,8 @@ topic: governance
 categories: [architecture]
 tags: [decision log, architecture decision record, Salesforce architecture, partner governance]
 takeaways:
-  - "A decision log records every architecture decision with context, options, reasons and consequences, one page per decision."
-  - "Two years later it answers why something was built this way, even when partners and people have long moved on."
+  - "To Michael Nygard's ADR format I add two fields for Salesforce: which options were considered and who decided."
+  - "Two years later the log answers why something was built this way, even when partners and people have long moved on."
   - "The log holds decisions that are expensive to change: clouds and add-ons, the leading system per object, data model, visibility and integration patterns."
   - "The log belongs to the client and lives in the client's tools. Partners propose entries, the architect on the client side keeps it current."
 faq:
@@ -75,7 +75,7 @@ In one manufacturing project I assessed Manufacturing Cloud and rejected it, bec
 
 The questions such an assessment has to answer are in [Salesforce Manufacturing Cloud: is it worth it?](../salesforce-manufacturing-cloud-is-it-worth-it/).
 
-## Who owns the decision log?
+## The log belongs to the client and lives in the client's repository
 
 The log belongs to the client and lives in the client's tools. I prefer to keep it as Markdown files in the org's repository, one file per decision. That way it is versioned, changes go through a pull request, and a developer finds the reasoning right next to the code. If the company maintains its own wiki, that works too, as long as it does not belong to the partner. The reasons are the same as for [repository and pipeline](../why-clients-should-own-their-devops-tools/).
 
@@ -87,7 +87,7 @@ The roles are simple:
 
 A decision is never overwritten. When the situation changes, the old entry gets the status "superseded" and a link to the new one. That keeps visible what applied before and why it changed.
 
-## What do you use the log for while the programme runs?
+## In the running programme: new partners, design reviews, steering committee
 
 A log nobody reads is paperwork. Three occasions make it useful:
 
@@ -95,8 +95,6 @@ A log nobody reads is paperwork. Three occasions make it useful:
 - **Reviewing partner designs.** Before a design is built, I check it against the entries. If it contradicts a decision, there are two ways forward: adjust the design, or propose a new entry that supersedes the old decision.
 - **Steering committee.** When a decision is questioned there, the entry with options and reasons is on the table. The discussion then starts with what has changed since.
 
-## Where do you start?
+## First step: write up the five most questioned decisions
 
-Do not start with a template in the wiki, start with the five decisions that are questioned most often in your programme. Write an entry for each, even after the fact. From then on the rule is that every new architecture decision needs an entry before anything is built. After six months you have twenty to thirty entries and documentation a new partner can read in an afternoon.
-
-A decision log is the cheapest insurance against a change of partner. Read more about [Salesforce architecture on the client side](../../services/salesforce-architecture/).
+Begin with the five decisions that are questioned most often in your programme; you do not need a wiki template for that. The first entry is almost always the question that stayed open in the last steering committee. Write an entry for each, even after the fact. From then on the rule is that every new architecture decision needs an entry before anything is built. After six months you have twenty to thirty entries and documentation a new partner can read in an afternoon. How I run the log as the architect on the client side is described under [Salesforce architecture on the client side](../../services/salesforce-architecture/).

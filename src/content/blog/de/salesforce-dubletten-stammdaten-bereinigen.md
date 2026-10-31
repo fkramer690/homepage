@@ -10,7 +10,7 @@ categories: [architecture, ai]
 contactBrief: architecture
 tags: [Datenqualität, Dubletten, Stammdaten, Agentforce]
 takeaways:
-  - "Dubletten entstehen bei Herstellern meist an Schnittstellen und Ländergrenzen: mehrfache ERP-Importe, neu angelegte Kunden pro Land, Anlagen ohne eindeutige Seriennummer."
+  - "Dubletten entstehen bei Herstellern meist an Schnittstellen und Ländergrenzen, etwa durch mehrfache ERP-Importe oder pro Land neu angelegte Kunden."
   - "Vor dem Bereinigen steht die Frage, welches System den Datensatz führt und welcher Schlüssel ihn eindeutig macht, etwa ERP-Kundennummer oder Seriennummer."
   - "Salesforce bringt Matching Rules und Duplicate Rules mit. Sie verhindern neue Dubletten, bereinigen aber keine alten."
   - "Ein KI-Agent wählt bei zwei gleichen Accounts den falschen genauso sicher wie den richtigen. Deshalb kommt die Bereinigung vor dem Agenten."
@@ -67,7 +67,7 @@ Der zweite Schritt ist der wichtigste und wird am häufigsten übersprungen. Wer
 
 Beim Zusammenführen wählen Sie einen Hauptdatensatz, und Salesforce hängt die verknüpften Datensätze wie Kontakte, Opportunities und Cases an ihn um. In der Oberfläche gehen höchstens drei Datensätze auf einmal. Bei Hunderten von Paaren braucht es ein Werkzeug oder ein Skript, und davor eine Sicherung.
 
-## Was können Matching Rules und Duplicate Rules?
+## Matching Rules und Duplicate Rules verhindern neue Dubletten, bereinigen aber keine alten
 
 Salesforce trennt zwei Dinge ([Salesforce Help: Duplicate Management](https://resources.docs.salesforce.com/224/latest/en-us/sfdc/pdf/salesforce_data_quality_duplicate_prevention.pdf)):
 
@@ -83,7 +83,7 @@ Für Anlagen gibt es keine Standardregel, aber eigene Matching Rules sind mögli
 Starten Sie Duplicate Rules mit der Aktion „Warnen“ und einem Bericht. Nach zwei bis drei Wochen sehen Sie, ob die Matching Rule zu viele falsche Treffer liefert. Erst dann stellen Sie auf „Blockieren“ um.
 ```
 
-## Wie verhindern Sie Dubletten aus dem ERP?
+## Gegen Dubletten aus dem ERP hilft ein Upsert über die External ID
 
 Die wirksamste Maßnahme liegt in der Schnittstelle. Jeder Datensatz aus dem ERP trägt dessen Schlüssel in einem External-ID-Feld, und die Schnittstelle schreibt per Upsert: Gibt es den Schlüssel schon, wird aktualisiert, sonst angelegt. Damit kann ein Import keine Dublette mehr erzeugen, egal wie sich der Name schreibt. Welches System welche Daten führt, gehört in die Integrationsarchitektur, die ich unter [Integration mit ERP, Middleware und Telefonie](../../leistungen/salesforce-schnittstellen/) beschreibe.
 
@@ -93,8 +93,6 @@ Datenqualität ist eine Aufgabe des Fachbereichs, nicht der IT und nicht des Par
 
 Ich empfehle deshalb pro Land und pro Objekt eine verantwortliche Person auf Kundenseite. Sie bekommt den monatlichen Bericht über neue mögliche Dubletten, entscheidet über das Zusammenführen und meldet, wenn eine Schnittstelle immer wieder dieselben Fehler erzeugt. Für die installierte Basis ist das oft der Serviceinnendienst, weil er die Anlagen am besten kennt. Ohne diese Rolle beginnt die Bereinigung nach einem Jahr von vorn.
 
-## Wo fangen Sie an?
+## Erster Schritt: eine Matching Rule für die 100 wichtigsten Kunden
 
-Legen Sie eine Matching Rule für Accounts an und lassen Sie den Bericht laufen. Die Zahl der möglichen Paare unter Ihren hundert wichtigsten Kunden sagt mehr über den Zustand Ihrer Daten als jedes Audit. Danach legen Sie pro Objekt das führende System und den Schlüssel fest und stellen die Schnittstelle auf Upsert um, bevor Sie mit dem Zusammenführen beginnen.
-
-Saubere Stammdaten sind die Voraussetzung für jeden Agenten, jeden Bericht und jeden Techniker vor Ort.
+Legen Sie eine Matching Rule für Accounts an und lassen Sie den Bericht laufen. Die Zahl der möglichen Paare unter Ihren hundert wichtigsten Kunden zeigt Ihnen in einer Stunde, wie es um Ihre Daten steht. Für den ersten Bericht reicht die Standard-Matching-Rule für Accounts; eigene Kriterien wie die ERP-Kundennummer ergänzen Sie, sobald der Schlüssel feststeht. Danach legen Sie pro Objekt das führende System und den Schlüssel fest und stellen die Schnittstelle auf Upsert um, bevor Sie mit dem Zusammenführen beginnen.

@@ -9,11 +9,11 @@ topic: ai
 categories: [architecture, ai]
 tags: [Agentforce, A2A, Multi-Agent, MuleSoft, SAP, Architektur]
 takeaways:
-  - "Das Gespräch führt der Agent des Systems, in dem sich die Person anmeldet und in dem der Vorgang liegt; für Händler und Servicekunden im Salesforce-Portal ist das Agentforce."
-  - "Innerhalb einer Salesforce-Org ist Multi-Agent-Orchestrierung mit Connected Subagents seit Winter '27 allgemein verfügbar; über Herstellergrenzen hinweg ist die MuleSoft A2A Bridge der dokumentierte Weg."
-  - "Die A2A Bridge kennt für Agentforce keine asynchronen Tasks und keine Push-Benachrichtigungen und hält den Task-Status im Gateway-Speicher; die Agent API bricht nach 120 Sekunden ab."
-  - "SAP stellt Joule-Agenten laut Referenzarchitektur per A2A über das Agent Gateway für Dritte bereit, die bidirektionale Kommunikation mit Agenten anderer Hersteller ist aber noch nicht unterstützt."
-  - "Datenabfragen mit genau einer richtigen Antwort gehören in eine API oder ein MCP-Tool; an einen anderen Agenten delegieren Sie nur, wenn er Logik besitzt, die Sie nicht nachbauen wollen."
+  - "Das Gespräch führt der Agent des Systems, in dem sich die Person anmeldet; für Händler und Servicekunden im Salesforce-Portal ist das Agentforce."
+  - "Innerhalb einer Org ist Multi-Agent-Orchestrierung seit Winter '27 GA, zwischen Herstellern ist die MuleSoft A2A Bridge der dokumentierte Weg."
+  - "Die A2A Bridge kennt für Agentforce keine asynchronen Tasks, und die Agent API bricht nach 120 Sekunden ab."
+  - "SAP stellt Joule-Agenten per A2A für Dritte bereit, die bidirektionale Kommunikation mit fremden Agenten unterstützt SAP aber noch nicht."
+  - "Datenabfragen mit genau einer richtigen Antwort gehören in eine API oder ein MCP-Tool und nicht an einen zweiten Agenten."
 faq:
   - q: "Was ist A2A (Agent2Agent)?"
     a: "A2A ist ein offenes Protokoll, über das Agenten verschiedener Hersteller sich per Agent Card finden, Aufgaben übergeben und Ergebnisse zurückgeben. MCP verbindet einen Agenten mit Werkzeugen und Daten, A2A verbindet ihn mit einem anderen Agenten, der selbst schlussfolgert."
@@ -58,7 +58,7 @@ Herstellerübergreifendes A2A passt heute also zu einer Frage, die in Sekunden b
 
 ## Welcher Agent sollte das Gespräch mit Händlern und Servicekunden führen?
 
-Das Gespräch führt der Agent des Systems, in dem sich die Person anmeldet und in dem das Ergebnis festgehalten wird. Vier Fragen entscheiden:
+Das Gespräch führt der Agent des Systems, in dem sich die Person anmeldet und in dem das Ergebnis festgehalten wird. Diese Fragen entscheiden es:
 
 1. **Wer kennt die Person?** Ein Händler im Experience-Cloud-Portal ist ein Kontakt an einem Account mit der SAP-Auftraggebernummer. Jede Sichtbarkeitsregel beginnt dort.
 2. **Wo liegt das Ergebnis?** Fälle, Garantieanträge und Arbeitsaufträge liegen in Salesforce, also schreibt der führende Agent das Ergebnis dorthin.
@@ -79,7 +79,7 @@ MuleSoft A2A Bridge --Agent API--> Agentforce-Spezialist
 
 Ich würde das pro Zielgruppe schriftlich festlegen, so wie jedes Objekt genau einen Owner hat. Den Ausschlag sollte nie geben, welcher Hersteller an dem Tag die beste Demo gezeigt hat.
 
-## Wann lohnt sich ein zweiter Agent?
+## Ein zweiter Agent lohnt sich nur, wenn er eigene Logik besitzt
 
 Eine Datenabfrage mit genau einer richtigen Antwort gehört in eine API oder ein MCP-Tool. Fragt ein Agent einen anderen nach dem Auftragsstatus, ist das ein API-Aufruf mit zwei Sprachmodellen dazwischen, und beide können die Frage falsch verstehen. Delegieren Sie an einen anderen Agenten nur, wenn er Urteil und Regeln besitzt, die Sie nicht nachbauen wollen, etwa einen SAP-seitigen Prozess, der bereits mit SAPs eigenen Prüfungen läuft.
 
@@ -90,7 +90,7 @@ Vor dem Go-live wirft jeder Sprung vier Fragen auf:
 - **Wer zahlt?** Laut Salesforce zählt die Nutzung der Agent API zum Credit-Verbrauch, und die aufrufende Plattform rechnet ihre eigene Nutzung ab. Eine Händlerfrage läuft dann über zwei Zähler.
 - **Wo liegt die Spur?** Ein Fehler über zwei Hersteller bedeutet zwei Logs und zwei Supportverträge. Herstellerübergreifende Fälle gehören in die Testfälle aus [Agentforce-Agenten testen und freigeben](../agentforce-agenten-testen-freigeben/).
 
-## Ein typisches Szenario: Händlerportal, Teams und ein Joule-Agent
+## Rechenbeispiel: Händlerportal, Teams und ein Joule-Agent
 
 Nehmen wir einen Maschinenbauer mit 250 Händlern, SAP S/4HANA, Microsoft 365 und einem Agentforce-Agenten im Händlerportal, der Garantie- und Auftragsfragen beantwortet. Alle Zahlen sind Annahmen. In einem Quartal kommen drei Anfragen bei der IT an.
 
@@ -102,7 +102,7 @@ Nehmen wir einen Maschinenbauer mit 250 Händlern, SAP S/4HANA, Microsoft 365 un
 
 Eine von drei Anfragen läuft über A2A. Für ein erstes Jahr halte ich dieses Verhältnis für gesund.
 
-## Wo sollten Sie anfangen?
+## Erster Schritt: ein führender Agent pro Zielgruppe
 
 1. **Legen Sie pro Zielgruppe einen führenden Agenten fest**, samt Kanal: Händler, Servicekunden, Vertrieb, Backoffice.
 2. **Listen Sie die Fragen auf, die Systemgrenzen überschreiten**, und markieren Sie jede als Datenabfrage (API oder MCP) oder delegiertes Urteil (Agent).
@@ -110,6 +110,4 @@ Eine von drei Anfragen läuft über A2A. Für ein erstes Jahr halte ich dieses V
 4. **Prüfen Sie Identität, Timeout, Kosten und Logging** für jeden herstellerübergreifenden Sprung, bevor Sie ihn bauen.
 5. **Pilotieren Sie einen lesenden A2A-Sprung**, wenn MuleSoft bei Ihnen schon läuft, und lassen Sie sich von SAP und Microsoft den GA-Status ihrer Seite schriftlich bestätigen.
 
-Welches Integrationsmuster zu welchem System passt, gehört zu [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/), und das Masterclass-Kapitel [MCP und Schnittstellen](../../masterclass/ki-salesforce/mcp-und-schnittstellen/) ordnet die Protokolle ein.
-
-Ein Agent pro Zielgruppe führt das Gespräch, A2A ist für die wenigen Sprünge, bei denen ein anderer Agent echte Logik besitzt.
+Für den ersten Punkt reicht eine Tabelle mit Zielgruppe, Kanal, führendem Agenten und den Systemen, die er abfragt. Welches Integrationsmuster zu welchem System passt, gehört zu [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/), und das Masterclass-Kapitel [MCP und Schnittstellen](../../masterclass/ki-salesforce/mcp-und-schnittstellen/) ordnet die Protokolle ein.

@@ -10,10 +10,10 @@ categories: [architecture, devops]
 contactBrief: partner-governance
 tags: [development standards, definition of done, partner governance, code quality]
 takeaways:
-  - "Development standards define how things are built in a Salesforce org; the definition of done defines when a user story is finished. Both belong to the client."
-  - "The first version does not have to be complete. In my largest programme it covered about 80 percent of cases, and the rest followed over the next weeks."
-  - "Standards cover names, automation per object and context, and test coverage. What made the biggest difference for me was the object ownership matrix and rules for configuration."
-  - "Whatever can be checked automatically is checked by the pipeline. The review checks the rest, otherwise standards stay a document nobody reads."
+  - "The definition of done sets when a user story is finished, and like the development standards it belongs to the client."
+  - "The first version does not have to be complete; in my largest programme it covered about 80 percent of cases."
+  - "What made the biggest difference for me was the object ownership matrix and rules for configuration."
+  - "Whatever can be checked automatically is checked by the pipeline, and the review checks the rest."
 faq:
   - q: "What is a definition of done?"
     a: "A definition of done is a short list of conditions every user story must meet before it counts as finished, such as review approved, tests green, permissions in a permission set and documentation updated. It is the same for all teams."
@@ -68,7 +68,7 @@ The definition of done is shorter than the standards and is ticked off for every
 
 One definition of done for all teams matters more than a perfect one. With two partners and two definitions on one org, the looser one quietly wins. Before UAT it is the line between partner and business, see [Salesforce UAT: who tests before the release?](../salesforce-uat-business-acceptance-testing/).
 
-## How do you check that partners follow the standards?
+## The pipeline checks what it can, the review checks the rest
 
 Standards nobody checks are ignored after two sprints. I split the check in two:
 
@@ -77,12 +77,10 @@ Standards nobody checks are ignored after two sprints. I split the check in two:
 
 The same rules apply to AI-generated code. A rules file in the repository turns the standards into instructions for coding agents, see [an AI rules file in the Salesforce repository](../ai-rules-file-salesforce-repository/).
 
-## What happens to the edge cases?
+## Edge cases belong in the Center of Excellence call
 
 The first version never covers everything. In the weeks after, cases come up that nobody thought of: a stream needs a field on another stream's object, or two teams plan a change to the same flow at the same time. In my programme we discussed these cases in regular [Center of Excellence calls](../salesforce-center-of-excellence-cadence/), where upcoming changes came to the table with enough lead time for all streams. Every decision from these calls went into the standards. At some point the edge cases disappeared, because topics were discussed before they turned into conflicts. Why standards at partners wear off after a few months without such a slot is described in [Reinforcement: making standards stick with partners](../partner-standards-reinforcement/).
 
-## Where do you start?
+## First step: collect review comments for two to three weeks
 
 Do not write standards at your desk. For two to three weeks, have every pull request reviewed and note what you keep commenting on. That becomes the first version, and it fits your org instead of a textbook. After that come the definition of done, the automatic checks and a fixed slot where new edge cases are discussed with all streams.
-
-Good standards are short, belong to the client and are checked with every pull request.

@@ -11,10 +11,10 @@ coAuthor: juliane
 contactBrief: partner-governance
 tags: [Reinforcement, Change Management, Partnersteuerung, Entwicklungsstandards]
 takeaways:
-  - "Reinforcement ist die letzte ADKAR-Stufe: dafür sorgen, dass niemand zurückfällt. Bei Partnern verwässern Standards, wenn neue Entwickler kommen und der Termindruck steigt."
-  - "Wenn die Entwickler eines Partners die Namenskonventionen kennen, aber niemand sie in der Pipeline prüft, fehlt Reinforcement. Dann gehört eine automatische Prüfung in den Release-Prozess."
+  - "Bei Partnern verwässern Standards, sobald neue Entwickler kommen und der Termindruck steigt."
+  - "Kennen die Entwickler eines Partners die Namenskonventionen, ohne dass die Pipeline sie prüft, fehlt Reinforcement."
   - "Was sich nicht automatisch prüfen lässt, verankern Pull-Request-Reviews und ein regelmäßiger Center-of-Excellence-Call mit den technischen Leads."
-  - "Standards sind erst verankert, wenn ein interner Verantwortlicher sie führt. Solange alles an einer externen Person hängt, endet die Verankerung mit ihrem Vertrag."
+  - "Verankert sind Standards erst, wenn ein interner Verantwortlicher sie führt, sonst enden sie mit dem Vertrag der externen Person."
 faq:
   - q: "Was bedeutet Reinforcement im Change Management?"
     a: "Reinforcement ist im ADKAR-Modell von Prosci die fünfte Stufe: Maßnahmen, die dafür sorgen, dass eine Veränderung bleibt und niemand in alte Gewohnheiten zurückfällt."
@@ -43,9 +43,9 @@ Im [ADKAR-Modell](../change-management-salesforce-einfuehrung/) fehlt dann nicht
 In meinem größten Programm mit mehr als 30 Entwicklern in acht Streams und fünf Umsetzungspartnern lief anfangs jeder Pull Request über meinen Schreibtisch. Bis die Standards gelebt wurden, hat es etwa drei Monate gedauert. Danach brachten wir neue Themen alle zwei Wochen in einem Center-of-Excellence-Call mit den technischen Leads der Streams auf den Tisch. Als der Prozess rund lief, habe ich ihn an einen internen Kollegen übergeben, der ihn seitdem verantwortet.
 ```
 
-## Welche Hebel verankern Standards?
+## Jeder Hebel verankert einen anderen Teil der Standards
 
-Jeder Hebel deckt einen anderen Teil der Standards ab. Zusammen lassen sie wenig Raum für stilles Verwässern:
+Zusammen lassen die Hebel wenig Raum für stilles Verwässern:
 
 | Hebel | Was er verankert | Wer |
 |---|---|---|
@@ -58,7 +58,7 @@ Jeder Hebel deckt einen anderen Teil der Standards ab. Zusammen lassen sie wenig
 
 Die Pipeline ist der günstigste Hebel, weil sie nie müde wird. Was dort geprüft wird, muss kein Reviewer mehr anmerken. Welche Regeln in die Standards gehören und was davon automatisch geht, beschreibe ich in [Salesforce-Entwicklungsstandards für mehrere Partner](../salesforce-entwicklungsstandards-definition-of-done/).
 
-## Wie hilft der Center-of-Excellence-Call?
+## Der Center-of-Excellence-Call klärt neue Randfälle
 
 Standards sind nie fertig. Neue Fälle tauchen auf, etwa ein Stream, der ein Feld auf einem fremden Objekt braucht. Ohne festen Ort werden diese Fälle zwischen zwei Entwicklern entschieden, und jeder Partner entscheidet anders. Ein regelmäßiger Call mit den technischen Leads aller Streams gibt ihnen einen Ort. Jede Entscheidung dort wird in die Standards übernommen.
 
@@ -68,7 +68,7 @@ Der Call hat einen zweiten Effekt, der für Reinforcement fast wichtiger ist: Di
 
 Jeder Personalwechsel beim Partner ist ein kleiner Neustart. Ich empfehle eine kurze, feste Einarbeitung, die der Partner verantwortet und der Kunde prüft: die geltenden Standards, die [Object Ownership Matrix](../object-ownership-matrix-salesforce/), der Weg eines Pull Requests durch die Pipeline und die wichtigsten Einträge aus dem Entscheidungslog. Der erste Pull Request eines neuen Entwicklers bekommt ein ausführlicheres Review als üblich, damit Missverständnisse früh auffallen. Das kostet einen halben Tag und spart Wochen an Korrekturen. Je öfter ein Partner Personen austauscht, desto mehr lohnt es sich, deshalb gehört die Einarbeitung als Pflicht in die Vereinbarung mit dem Partner.
 
-## Was tun bei Ausnahmen unter Termindruck?
+## Ausnahmen unter Termindruck brauchen eine Begründung und ein Ticket
 
 Ausnahmen wird es geben. Entscheidend ist, dass sie sichtbar sind. Eine Ausnahme von den Standards braucht im Pull Request eine Begründung und ein Ticket, das die Korrektur im nächsten Release einplant. So bleibt die Ausnahme eine Ausnahme. Häufen sich Ausnahmen bei einer Regel, gehört die Regel in den nächsten Center-of-Excellence-Call: Entweder passt sie nicht, oder der Plan lässt zu wenig Zeit.
 
@@ -84,8 +84,6 @@ Prüfen Sie, ob Ihre Partnerverträge auf die Standards verweisen und ob ein Ver
 
 Drei Zeichen zeigen es. Reviewer merken seltener dieselben Punkte an, weil die Pipeline sie vorher findet. Neue Randfälle kommen im Center-of-Excellence-Call auf den Tisch, bevor sie gebaut sind, statt danach als Konflikt. Und neue Entwickler eines Partners halten die Regeln ein, ohne dass jemand sie einzeln erklärt. In meinem Programm fielen die Randfälle irgendwann ganz weg, weil Themen besprochen wurden, bevor sie zu Konflikten wurden.
 
-## Wo fangen Sie an?
+## Erster Schritt: wiederkehrende Review-Anmerkungen zählen
 
-Sehen Sie sich die Review-Kommentare der letzten zwei Monate an und zählen Sie, welche Anmerkungen sich wiederholen. Jede Anmerkung, die sich automatisch prüfen lässt, kommt in die Pipeline, mit einer klaren Fehlermeldung, die den Standard nennt. Für den Rest richten Sie einen festen Call mit den technischen Leads ein. Und planen Sie von Anfang an, wer auf Kundenseite die Standards übernimmt, wenn das Projekt endet.
-
-Standards sind verankert, wenn sie auch ohne die Person halten, die sie eingeführt hat. Dafür gehören wiederkehrende Review-Anmerkungen in die Pipeline und alles andere in einen festen Call mit den technischen Leads. Mehr dazu lesen Sie unter [Partnersteuerung](../../leistungen/partnersteuerung/).
+Sehen Sie sich die Review-Kommentare der letzten zwei Monate an und zählen Sie, welche Anmerkungen sich wiederholen. Jede Anmerkung, die sich automatisch prüfen lässt, kommt in die Pipeline, mit einer klaren Fehlermeldung, die den Standard nennt. Typische Kandidaten sind Namenskonventionen, fest eingetragene IDs im Code und Felder ohne Beschreibung; der Salesforce Code Analyzer oder eine eigene Regel in der Pipeline findet sie, bevor ein Reviewer sie sieht. Für den Rest richten Sie einen festen Call mit den technischen Leads ein. Und planen Sie von Anfang an, wer auf Kundenseite die Standards übernimmt, wenn das Projekt endet. Wie ich das mit mehreren Partnern aufsetze, beschreibe ich unter [Partnersteuerung](../../leistungen/partnersteuerung/).

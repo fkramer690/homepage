@@ -10,10 +10,10 @@ categories: [architecture]
 contactBrief: nearshore
 tags: [nearshore, team size, programme management, partner governance, scrum]
 takeaways:
-  - "I cap Salesforce nearshore teams at about eight developers. With a product owner and a scrum master, the team stays at ten people, the upper limit in the Scrum Guide."
-  - "With every extra person, the number of communication paths grows faster than capacity: eight people have 28 paths between them, twelve have 66 and sixteen have 120."
-  - "If a programme needs more capacity, I set up several teams with clear responsibilities instead of one large team, for example through an object ownership matrix."
-  - "Rotation, turnover and overly senior teams slow nearshore teams down more often than missing skills. A minimum stay of about six months belongs in the agreement before the first sprint."
+  - "With a product owner and a scrum master, a team of eight developers stays at ten people, the upper limit in the Scrum Guide."
+  - "Eight people have 28 communication paths between them, twelve have 66 and sixteen have 120."
+  - "If a programme needs more capacity, I set up several teams with clear responsibilities, for example through an object ownership matrix."
+  - "Rotation, turnover and overly senior teams slow things down more often than missing skills, so I agree a minimum stay before the first sprint."
 faq:
   - q: "How large should a Salesforce nearshore team be?"
     a: "Up to about eight developers per team. With a product owner and a scrum master that makes ten people, the upper limit the Scrum Guide names. Beyond that, coordination takes over and sprint meetings get long."
@@ -55,7 +55,7 @@ A team with twelve or fifteen developers rarely works the way it was planned on 
 
 There is also a commercial effect. A nearshore partner is paid per head. If extra developers mostly create extra coordination, the team's daily cost goes up, but delivery does not.
 
-## How do I spread more capacity across several teams?
+## More capacity means several teams with clear areas of responsibility
 
 If a programme needs more than eight developers, I set up several teams, each with a clear area of responsibility. The Scrum Guide recommends the same: a team that grows too large should reorganise into several cohesive teams working on the same product.
 
@@ -87,7 +87,7 @@ When a nearshore team delivers less than expected, skills are often blamed first
 
 Culture counts as much as skills: shared values, trust and the will to deliver, on both sides. A small, stable team builds that faster than a large one that keeps changing its members.
 
-## Which rules belong before the first sprint?
+## These rules belong before the first sprint
 
 Most of these problems can be limited contractually and organisationally if you raise them before the start. The client and the nearshore partner should therefore agree rules on:
 
@@ -98,7 +98,7 @@ Most of these problems can be limited contractually and organisationally if you 
 
 These rules protect both sides from the moment when, after six months, half the team has changed and nobody remembers why an automation was built the way it was.
 
-## Where should you start?
+## First step: check team size, leavers and object ownership
 
 If you already have a nearshore team, answer three questions:
 
@@ -107,5 +107,3 @@ If you already have a nearshore team, answer three questions:
 3. **Who owns which objects?** If that is not written down anywhere, start with an object ownership matrix before splitting teams.
 
 If you are planning a new setup, define team size, roles and rotation rules before you compare quotes. Then you compare partners on the same basis, not just on the daily rate. How I plan and steer programmes with nearshore teams is described under [programme management and nearshore teams](../../services/program-management-nearshore/).
-
-Eight developers per team is not a rigid number, but it is a good upper limit that saves a lot of coordination.

@@ -9,10 +9,10 @@ topic: security
 categories: [architecture, ai]
 tags: [Agentforce, Datenresidenz, DSGVO, Hyperforce, LLM, Maschinenbau]
 takeaways:
-  - "Claude- und Amazon-Modelle laufen in Agentforce auf Amazon Bedrock innerhalb der Salesforce Trust Boundary; andere Modelle betreiben Partner in einer Shared Trust Zone oder der LLM-Anbieter direkt."
-  - "Die Unterauftragsverarbeiter-Liste von Salesforce nennt für OpenAI den Standort USA und für Microsoft Azure europäische Standorte wie Deutschland, Frankreich und Schweden; das Modell entscheidet, wohin ein Prompt geht."
-  - "Geo-aware Routing schickt LLM-Anfragen an ein Rechenzentrum nahe der Data-360-Region Ihrer Org, eine Liste EU-fähiger Modelle fehlt aber, und für Agentforce Vibes dokumentiert Salesforce einen Fallback in die USA."
-  - "Die Hyperforce EU Operating Zone umfasst eine geprüfte Auswahl an Produkten, ihre Seiten erwähnen Agentforce nicht; Koa, das eigene Reasoning-Modell von Salesforce, kommt zuerst in US-Regionen."
+  - "Claude- und Amazon-Modelle laufen auf Amazon Bedrock innerhalb der Salesforce Trust Boundary, andere Modelle bei Partnern oder beim LLM-Anbieter."
+  - "Laut Unterauftragsverarbeiter-Liste sitzt OpenAI in den USA und Microsoft Azure unter anderem in Deutschland, Frankreich und Schweden."
+  - "Geo-aware Routing folgt der Data-360-Region Ihrer Org, eine Liste der Modelle, die in der EU bleiben, veröffentlicht Salesforce aber nicht."
+  - "Die Seiten zur Hyperforce EU Operating Zone erwähnen Agentforce nicht, und Koa, das eigene Reasoning-Modell, kommt zuerst in US-Regionen."
   - "Lassen Sie sich vor dem Go-live pro Agent schriftlich bestätigen: Modell, Verarbeitungsregion, Ausfallpfad, Unterauftragsverarbeiter und Aufbewahrung."
 faq:
   - q: "Verarbeitet Agentforce Daten in der EU?"
@@ -71,7 +71,7 @@ Sie liegt im Einstein Setup und setzt Data 360 voraus. Ist der regionale Endpunk
 
 In-Region-only hat einen Preis: Bei einem Ausfall liefert der Agent einen Fehler. Beim Auftragsstatus ist das mit Übergabe an einen Menschen vertretbar. Für eine [Störungshotline](../stoerungshotline-agentforce-voice-deutsch/) würde ich es ohne getesteten Fallback zur Disposition nicht akzeptieren.
 
-## Was deckt die Hyperforce EU Operating Zone ab?
+## Die Hyperforce EU Operating Zone erwähnt Agentforce nicht
 
 Salesforce hat die Hyperforce EU Operating Zone am 2. März 2023 [gestartet](https://www.salesforce.com/news/press-releases/2023/03/02/hyperforce-eu-operating-zone-news/), damit Kunden ihre Daten in der EU speichern und verarbeiten können, mit Support durch Personal in der EU. Die [Produktseite](https://salesforce.com/platform/data-residence-eu-oz) spricht von Verarbeitung und Speicherung „strictly within the region (EU and Switzerland)“ und von einer ausgewählten, geprüften Menge an Produkten und Funktionen aus Sales Cloud, Service Cloud, Plattform und Industries. Agentforce, Einstein oder Data 360 erwähnen beide Seiten nicht.
 
@@ -89,7 +89,7 @@ Ich bin Salesforce-Architekt, kein Anwalt, und das hier ist keine Rechtsberatung
 
 Drei benachbarte Themen folgen eigenen Regeln: die [Fristen des EU AI Act für Agentforce](../eu-ai-act-fristen-agentforce/), [KI-Coding-Tools mit Betriebsrat und DSGVO](../ki-coding-betriebsrat-dsgvo/) und externe Modelle, die über [Hosted MCP Server](../salesforce-hosted-mcp-server-datenzugriff/) Salesforce-Daten lesen und für die die Aufbewahrungsvereinbarungen von Salesforce nicht greifen.
 
-## Ein typisches Szenario: Händleranfragen aus fünf Ländern
+## Rechenbeispiel: Händleranfragen aus fünf Ländern
 
 Nehmen wir einen Maschinenbauer in Deutschland mit 300 Händlern in Frankreich, Italien, Österreich, der Schweiz und Polen, mit Service Cloud, SAP S/4HANA für Aufträge und Data 360 in einer europäischen Region. Alle Zahlen sind Annahmen. Ein Serviceagent soll rund 3.000 Händleranfragen pro Monat zu Auftragsstatus, Ersatzteilverfügbarkeit und Stand von Garantiefällen beantworten. Die Prompts enthalten Namen von Ansprechpartnern, Seriennummern und Auftragswerte.
 
@@ -103,7 +103,7 @@ Nehmen wir einen Maschinenbauer in Deutschland mit 300 Händlern in Frankreich, 
 
 Das Warten auf die schriftliche Bestätigung verschiebt den Go-live um etwa drei Wochen. Aus meiner Sicht ist das billiger, als den Datenfluss hinterher zu erklären.
 
-## Was sollte ein Hersteller schriftlich bestätigen lassen?
+## Erster Schritt: Modell, Region und Ausfallpfad pro Agent schriftlich bestätigen lassen
 
 Fragen Sie Salesforce pro Agent und legen Sie die Antworten in der Architekturdokumentation ab:
 
@@ -115,6 +115,4 @@ Fragen Sie Salesforce pro Agent und legen Sie die Antworten in der Architekturdo
 6. **Aufbewahrung.** Gilt Zero Data Retention für Ihr Modell, und welche Klauseln Ihres eigenen Anbietervertrags greifen bei BYOLLM?
 7. **Änderungen.** Wie erfahren Sie, wenn sich das Standardmodell oder die Unterauftragsverarbeiter-Liste ändert?
 
-Diese Fragen pro Agent zu klären, gehört zu meiner Arbeit in der [Salesforce-Architektur](../../leistungen/salesforce-architektur/); den größeren Überblick über Agenten in der Fertigung gibt [Kapitel 10 der KI-Masterclass](../../masterclass/ki-salesforce/ki-agenten-in-der-fertigung/).
-
-Wo ein Agentforce-Agent Ihre Händlerdaten verarbeitet, hängt vom gewählten Modell ab, und nur eine schriftliche Bestätigung von Salesforce für Ihre Org klärt es.
+Ändert Salesforce das Standardmodell oder die Liste der Unterauftragsverarbeiter, stellen Sie die Fragen 1 bis 4 neu; am einfachsten hält ein Eintrag im [Entscheidungslog](../salesforce-architektur-entscheidungslog/) fest, welche Antwort für welchen Agenten gilt. Diese Fragen pro Agent zu klären, gehört zu meiner Arbeit in der [Salesforce-Architektur](../../leistungen/salesforce-architektur/); den größeren Überblick über Agenten in der Fertigung gibt [Kapitel 10 der KI-Masterclass](../../masterclass/ki-salesforce/ki-agenten-in-der-fertigung/).

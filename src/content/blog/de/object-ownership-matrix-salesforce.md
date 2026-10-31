@@ -10,10 +10,9 @@ categories: [architecture]
 contactBrief: partner-governance
 tags: [Partnersteuerung, Object Ownership Matrix, Governance, Pull Request Review, Automatisierung]
 takeaways:
-  - "Eine Object Ownership Matrix ist eine Tabelle, die jedem Salesforce-Objekt und seinen Metadaten genau einen verantwortlichen Stream zuordnet."
-  - "Ändert ein Team ein fremdes Objekt, stimmt es sich vorher mit dem Verantwortlichen ab. Das verhindert, dass Teams sich gegenseitig Felder, Flows und Trigger überschreiben."
-  - "Gemeinsam genutzte Objekte wie Account brauchen einen Verantwortlichen und eine Regel, wie Automatisierung dort gebündelt wird, weil Salesforce die Reihenfolge mehrerer Trigger nicht garantiert."
-  - "In einem Programm mit mehr als 30 Entwicklern in acht Streams dauerte es etwa drei Monate, bis Matrix und Standards stabil waren. Die erste Version deckte rund 80 Prozent der Fälle ab."
+  - "Ändert ein Team ein fremdes Objekt, stimmt es sich vorher mit dem Verantwortlichen ab, damit sich Felder, Flows und Trigger nicht überschreiben."
+  - "Geteilte Objekte wie Account brauchen einen Verantwortlichen und einen Einstiegspunkt für Automatisierung, weil die Trigger-Reihenfolge nicht garantiert ist."
+  - "In meinem Programm mit über 30 Entwicklern in acht Streams waren Matrix und Standards nach etwa drei Monaten stabil."
   - "Durchgesetzt wird die Matrix im Pull-Request-Review und in regelmäßigen Center-of-Excellence-Calls, nicht durch ein Dokument im Wiki."
 faq:
   - q: "Was ist eine Object Ownership Matrix in Salesforce?"
@@ -50,7 +49,7 @@ Ohne klare Verantwortung baut jedes Team seine eigene Automatisierung auf dem Ac
 
 Fünf Teams mit fünf Ansätzen auf einem Objekt halten sich an keine dieser Empfehlungen. Die Folgen kennt jeder, der in solchen Programmen gearbeitet hat: Ein Feld wird von zwei Automatisierungen gesetzt, ein Deployment überschreibt das Layout eines anderen Teams, und ein Fehler in Produktion lässt sich keinem Team zuordnen.
 
-## Wie sah das in meinem Programm aus?
+## So lief es in meinem Programm mit acht Streams
 
 Als ich in das Programm kam, hatte niemand klar festgelegt, welches Team für welche Prozesse, Objekte und Metadaten im Lead war. Änderungen überschrieben sich, und die technischen Ansätze der Teams lagen weit auseinander.
 
@@ -86,7 +85,7 @@ Schwierig sind die gemeinsam genutzten Objekte wie Account, Contact oder Product
 
 Was nicht in die Matrix gehört: Detailregeln für Namenskonventionen, Tests oder Code-Stil. Die stehen in den Entwicklungsstandards. Die Matrix beantwortet nur die Frage, wer entscheidet.
 
-## Wie setzt man die Matrix durch?
+## Durchgesetzt wird die Matrix im Review, nicht im Wiki
 
 Eine Tabelle im Wiki ändert allein nichts. Die Matrix wirkt erst, wenn sie im täglichen Ablauf geprüft wird.
 
@@ -101,7 +100,7 @@ Eine [CODEOWNERS-Datei](https://docs.github.com/en/repositories/managing-your-re
 
 Die Matrix gehört dem Kunden, nicht einem Partner. Legt ein Partner fest, wer welches Objekt verantwortet, entscheidet er auch darüber, was seine Wettbewerber bauen dürfen. Dasselbe gilt für Repository und Pipeline, wie in [warum Kunden ihre DevOps-Tools selbst besitzen sollten](../warum-kunden-devops-tools-selbst-besitzen-sollten/) beschrieben.
 
-## Wo sollten Sie anfangen?
+## Erster Schritt: die 15 bis 20 wichtigsten Objekte auflisten
 
 Eine erste Matrix steht schneller, als die meisten erwarten:
 
@@ -112,5 +111,3 @@ Eine erste Matrix steht schneller, als die meisten erwarten:
 5. **Randfälle im Center of Excellence klären** und die Matrix nachziehen.
 
 Nach meiner Erfahrung ist die erste Version nie vollständig, und das muss sie auch nicht sein. Mit 80 Prozent fängt man an, den Rest liefern die Reviews. Mehr dazu, wie ich Programme mit mehreren Partnern steuere, steht unter [Partnersteuerung](../../leistungen/partnersteuerung/).
-
-Eine Object Ownership Matrix ist schnell aufgeschrieben und erspart einem Programm mit mehreren Partnern viele Konflikte zwischen Teams.

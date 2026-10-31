@@ -9,11 +9,11 @@ topic: ai
 categories: [architecture, ai]
 tags: [agentforce, a2a, multi-agent, mulesoft, sap, architecture]
 takeaways:
-  - "The agent that owns a conversation should belong to the system where the person logs in and where the case lives; for dealers and service customers on a Salesforce portal, that is Agentforce."
-  - "Inside one Salesforce org, multi-agent orchestration with connected subagents is generally available since Winter '27; across vendors, the documented path is MuleSoft's A2A Bridge."
-  - "MuleSoft's A2A Bridge for Agentforce supports no async tasks and no push notifications and keeps task state in gateway memory; the Agent API itself times out after 120 seconds."
-  - "SAP's reference architecture exposes Joule agents to third parties over A2A through Agent Gateway, but says bidirectional communication with third-party agents is not yet supported."
-  - "Data reads with one right answer belong in an API or MCP tool; delegate to another agent only when that agent owns logic you do not want to rebuild."
+  - "The conversation belongs to the agent of the system where the person logs in; for dealers and service customers on a Salesforce portal, that is Agentforce."
+  - "Inside one org, multi-agent orchestration is GA since Winter '27; across vendors, MuleSoft's A2A Bridge is the documented path."
+  - "The A2A Bridge supports no async tasks for Agentforce, and the Agent API times out after 120 seconds."
+  - "SAP exposes Joule agents to third parties over A2A, but does not yet support bidirectional communication with other vendors' agents."
+  - "Data reads with exactly one right answer belong in an API or an MCP tool, not with a second agent."
 faq:
   - q: "What is A2A (Agent2Agent)?"
     a: "A2A is an open protocol through which agents from different vendors find each other via an agent card, hand over tasks and return results. MCP connects an agent to tools and data; A2A connects an agent to another agent that does its own reasoning."
@@ -58,7 +58,7 @@ So cross-vendor A2A today fits a question that gets an answer within seconds. A 
 
 ## Which agent should own the dealer or service conversation?
 
-The owner is the agent of the system where the person authenticates and where the result is recorded. Four questions decide it:
+The owner is the agent of the system where the person authenticates and where the result is recorded. These questions decide it:
 
 1. **Who knows the person?** A dealer logged into an Experience Cloud portal is a contact on an account that carries the SAP sold-to number. Every visibility rule starts there.
 2. **Where does the result live?** Cases, warranty claims and work orders sit in Salesforce, so the owner writes the outcome there.
@@ -79,7 +79,7 @@ MuleSoft A2A Bridge --Agent API--> Agentforce specialist
 
 I would write this down per audience, the same way an object has one owner. The owner should never be the vendor whose demo was best on the day.
 
-## When is a second agent worth the hop?
+## A second agent is worth the hop only when it owns logic
 
 A data read with one right answer belongs in an API or an MCP tool. An agent asking another agent for an order status is an API call with two language models in between, and each of them can misread the question. Delegate to another agent only when it owns judgement and rules you do not want to rebuild, for example an SAP-side process that already runs with SAP's own checks.
 
@@ -90,7 +90,7 @@ Every hop raises four questions before go-live:
 - **Who pays?** Salesforce states that Agent API usage counts toward credit consumption, and the calling platform bills its own usage. One dealer question then runs on two meters.
 - **Where is the trace?** A failure across two vendors means two logs and two support contracts. Cross-vendor cases belong in the test set described in [testing Agentforce agents before go-live](../testing-agentforce-agents-before-go-live/).
 
-## A typical scenario: dealer portal, Teams and a Joule agent
+## Worked example: dealer portal, Teams and a Joule agent
 
 Assume a machine builder with 250 dealers, SAP S/4HANA, Microsoft 365 and an Agentforce agent on the dealer portal answering warranty and order questions. All numbers are assumptions. In one quarter three requests reach IT.
 
@@ -102,7 +102,7 @@ Assume a machine builder with 250 dealers, SAP S/4HANA, Microsoft 365 and an Age
 
 One of three requests goes through A2A. For a first year, I consider that ratio healthy.
 
-## Where should you start?
+## First step: one owner agent per audience
 
 1. **Name one owner agent per audience** and channel: dealers, service customers, sales reps, back office.
 2. **List the questions that cross systems** and mark each as a data read (API or MCP) or delegated judgement (agent).
@@ -110,6 +110,4 @@ One of three requests goes through A2A. For a first year, I consider that ratio 
 4. **Check identity, timeout, cost and logging** for every cross-vendor hop before building it.
 5. **Pilot one read-only A2A hop** if MuleSoft already runs in your company, and ask SAP and Microsoft for the GA status of their side in writing.
 
-Which integration pattern fits which system is part of [Salesforce integration](../../services/salesforce-integration/), and the masterclass chapter [MCP and interfaces](../../masterclass/ai-salesforce/mcp-and-interfaces/) maps the protocols.
-
-One agent per audience owns the conversation, and A2A is for the few hops where another agent owns real logic.
+For the first point, a table with audience, channel, owner agent and the systems it queries is enough. Which integration pattern fits which system is part of [Salesforce integration](../../services/salesforce-integration/), and the masterclass chapter [MCP and interfaces](../../masterclass/ai-salesforce/mcp-and-interfaces/) maps the protocols.

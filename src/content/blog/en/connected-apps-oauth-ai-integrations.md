@@ -9,11 +9,11 @@ topic: security
 categories: [architecture, ai]
 tags: [connected apps, oauth, security, ai integrations, external client apps, manufacturing]
 takeaways:
-  - "In August 2025 attackers used stolen OAuth tokens of the Drift AI chat app to export Cases, Accounts, Users and Opportunities from Salesforce orgs without exploiting any Salesforce vulnerability."
-  - "Every SaaS tool that holds a refresh token for your org is part of your security perimeter; the damage depends on the integration user's rights, the scopes, the token policy and IP restrictions."
-  - "Since September 2025 Salesforce blocks uninstalled connected apps for most users, since Spring '26 new connected apps need Support, and new External Client Apps enforce refresh token rotation."
-  - "Admins cannot verify most OAuth controls inside a vendor's app, so AI vendors should confirm in writing how they store, rotate and restrict your tokens."
-  - "Machine builders should search service cases for passwords and remote access details, because the Drift attacker mined exported records for credentials."
+  - "In August 2025 attackers used stolen OAuth tokens of the Drift AI app to export data from Salesforce orgs without exploiting a Salesforce vulnerability."
+  - "Every SaaS tool with a refresh token is part of your security perimeter; user rights, scopes, token policy and IP restrictions decide the damage."
+  - "Since September 2025 Salesforce blocks uninstalled connected apps for most users, and new External Client Apps enforce refresh token rotation."
+  - "Admins cannot verify most OAuth controls inside a vendor's app, so AI vendors should confirm them in writing."
+  - "Search service cases for passwords and remote access details, because the Drift attacker mined exported records for credentials."
 faq:
   - q: "Was the Salesloft Drift breach a Salesforce vulnerability?"
     a: "No. Google Threat Intelligence and Salesforce both state that it did not stem from a vulnerability in the core Salesforce platform. The attacker used valid OAuth tokens stolen from the Drift application, so Salesforce saw normal API access by an authorised app."
@@ -61,9 +61,9 @@ Drift was not the last case. In November 2025 Salesforce [revoked the OAuth toke
 
 For a manufacturer the exported objects carry specific weight. Opportunities and accounts hold dealer conditions and project prices. The User query in GTIG's report pulled names, titles, emails and mobile numbers of active users, a ready-made phishing list. And in a machine builder's service cases I would expect exactly what GTIG told customers to search for: login URLs, VPN details and passwords, pasted in by technicians who needed remote access to a machine in a customer's plant. That hurts the customer first.
 
-## What has Salesforce changed since?
+## Salesforce has tightened OAuth access since 2025
 
-Salesforce has tightened OAuth access in several steps:
+The steps in detail:
 
 - **Early September 2025: uninstalled connected apps blocked.** Apps that users authorised without an admin installing them are no longer accessible to most users, according to the [Salesforce Admins blog](https://admin.salesforce.com/blog/2025/get-ready-for-changes-to-connected-app-usage-restrictions). Users with "Approve Uninstalled Connected Apps" or "Use Any API Client" can bypass this, so those permissions should be rare.
 - **Spring '26: no new connected apps.** Creation is restricted by default, except through package installation, and re-enabling needs a Support request, according to the [Spring '26 architect highlights](https://www.salesforce.com/blog/spring-26-release-architect-highlights/).
@@ -93,7 +93,7 @@ What I would require for every connected app and ECA in production, starting wit
 
 Most of this is configuration. Event Monitoring has a price tag and deserves a conscious decision.
 
-## A typical scenario: nine apps at a machine builder
+## Worked example: nine apps at a machine builder
 
 Assume a machine builder with Sales Cloud, Service Cloud, SAP and 80 dealers. All numbers are assumptions. Connected Apps OAuth Usage lists nine apps, among them the SAP middleware, a backup tool, an AI meeting recorder used by 25 sales reps, an AI chatbot for spare part requests on the website and one app nobody recognises.
 
@@ -105,8 +105,6 @@ The fixes take an assumed two weeks. The chatbot gets its own integration user w
 
 None of this stops a vendor from losing your tokens. It decides what a stolen token can do: from an unknown address nothing, and from an allowed one it could create leads, not read dealer prices.
 
-## Where should you start?
+## First step: mark every app that sends Salesforce data to a model
 
 Start with the AI tools, because they are the newest and least reviewed: mark every app that sends Salesforce data to a model and check user, scopes and token policy for those first. Their second risk is [prompt injection in dealer portals](../prompt-injection-dealer-portals-agentforce/). An inventory of interfaces with named owners is part of my [Salesforce integration work](../../services/salesforce-integration/).
-
-Every connected app is a key to your org held by someone else, so give each one an owner, a narrow user and an expiry date.

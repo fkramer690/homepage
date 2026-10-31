@@ -9,11 +9,10 @@ topic: governance
 categories: [architecture, ai]
 tags: [KI-Coding, Produktivität, DORA-Metriken, Programmsteuerung, Salesforce DevOps]
 takeaways:
-  - "Den KI-Nutzen im Salesforce-Programm messen Sie mit Durchlaufzeit pro Story, Fehlerdurchschlupf, Nacharbeit und Change Fail Rate gegen die eigene Basislinie, nie mit Selbstauskünften der Entwickler."
-  - "In der METR-Studie brauchten erfahrene Entwickler mit KI in ihren eigenen großen Codebasen 19 Prozent länger und glaubten hinterher trotzdem, KI habe sie 20 Prozent schneller gemacht."
-  - "DORA 2025 zeigt: Mehr KI-Nutzung geht mit höherem Durchsatz, aber weiter mit geringerer Stabilität der Auslieferung einher. KI verstärkt die Stärken und Schwächen, die ein Team schon hat."
-  - "Laut McKinsey-Umfrage 2026 sparen Teams im Schnitt 11,8 Prozent Zeit, aber nur 6,2 Prozent Nacharbeit, und 30 Prozent der Führungskräfte melden sinkende Produktivität."
-  - "Schnelleres Programmieren verkürzt ein Salesforce-Programm nur, wenn Review, Test und Abnahme durch die Fachbereiche mithalten; sonst wandert die Warteschlange nur weiter."
+  - "In der METR-Studie brauchten erfahrene Entwickler mit KI 19 Prozent länger und hielten sich hinterher für 20 Prozent schneller."
+  - "DORA 2025 zeigt mehr Durchsatz, aber weiter geringere Stabilität: KI verstärkt die Stärken und Schwächen, die ein Team schon hat."
+  - "Laut McKinsey sparen Teams 11,8 Prozent Zeit, aber nur 6,2 Prozent Nacharbeit, und 30 Prozent der Führungskräfte melden sinkende Produktivität."
+  - "Schnelleres Programmieren verkürzt ein Salesforce-Programm nur, wenn Review, Test und Abnahme durch die Fachbereiche mithalten."
 faq:
   - q: "Wie messe ich, ob KI-Coding mein Salesforce-Projekt beschleunigt?"
     a: "Erfassen Sie zwei bis drei Monate vor Einführung der Werkzeuge Durchlaufzeit pro Story, Fehlerdurchschlupf, Nacharbeit und Change Fail Rate. Vergleichen Sie danach dieselben Arten von Stories. Eindrücke der Entwickler und Nutzungszahlen sind kein Beleg, denn METR hat fast 40 Punkte Abstand zwischen gefühlter und gemessener Geschwindigkeit gefunden."
@@ -26,7 +25,7 @@ faq:
 draft: false
 ---
 
-Den KI-Nutzen im Salesforce-Projekt messen Sie mit Ergebniskennzahlen gegen Ihre eigene Basislinie: Durchlaufzeit pro Story, Fehlerdurchschlupf, Nacharbeit und Change Fail Rate, erfasst bevor der erste Coding-Agent kommt. Eindrücke der Entwickler und Lizenzzahlen beweisen nichts. Die veröffentlichten Studien reichen von 55 Prozent schneller bis 19 Prozent langsamer, je nach Aufgabe und Codebasis. Eine gewachsene Org mit Jahren an Triggern, Flows und SAP-Schnittstelle liegt am schwierigen Ende dieser Spanne. Die ehrliche Antwort auf „Macht KI unser Programm schneller?“ ist deshalb eine Zahl, die Sie selbst erhoben haben.
+Den KI-Nutzen im Salesforce-Projekt messen Sie mit Ergebniskennzahlen gegen Ihre eigene Basislinie: Durchlaufzeit pro Story, Fehlerdurchschlupf, Nacharbeit und Change Fail Rate, erfasst bevor der erste Coding-Agent kommt. Eindrücke der Entwickler und Lizenzzahlen beweisen nichts. Die veröffentlichten Studien reichen von 55 Prozent schneller bis 19 Prozent langsamer, je nach Aufgabe und Codebasis. Eine gewachsene Org mit Jahren an Triggern, Flows und SAP-Schnittstelle liegt am schwierigen Ende dieser Spanne. Ob KI Ihr Programm schneller macht, beantwortet deshalb nur eine Zahl, die Sie selbst erhoben haben.
 
 ## Was sagen die Studien zur Produktivität mit KI-Coding?
 
@@ -66,7 +65,7 @@ Ich würde fünf Zahlen verfolgen, getrennt nach Art der Story (Konfiguration, A
 
 Als Erfolgsmaß weglassen würde ich Codezeilen, den Anteil KI-generierten Codes, Lizenzen und Prompt-Volumen. McKinsey weist darauf hin, dass Nutzungskennzahlen nur zeigen, ob die Werkzeuge benutzt werden, nicht ob Releases schneller oder zuverlässiger werden, und 86 Prozent der Spitzenreiter in der Umfrage messen stattdessen Ergebnisse. Token-Kosten pro Story sind für das Budget nützlich, dazu mehr in [was KI-Coding im Salesforce-Projekt kostet](../ki-coding-kosten-salesforce-projekt/).
 
-## Ein typisches Szenario: zwei Zahlen, zwei Geschichten
+## Rechenbeispiel: zwei Zahlen, zwei Geschichten
 
 Nehmen wir einen Maschinenbauer mit Sales Cloud, Service Cloud und Field Service, einer SAP-Anbindung über Middleware und zwei Umsetzungspartnern mit zusammen acht Entwicklern. Alle Zahlen sind Annahmen, die das Vorgehen zeigen sollen. Partner A schlägt Coding-Agenten vor und verspricht „rund 30 Prozent schneller“.
 
@@ -76,7 +75,7 @@ Nach drei Monaten mit Agenten sinkt der Bauschritt angenommen von 4 auf 2,5 Tage
 
 Beide Zahlen stimmen. Das Programmieren ist schneller, das Programm kaum. Nützlich ist die Erkenntnis, wo Sie ansetzen: kleinere Pull Requests mit automatischen Prüfungen, feste tägliche UAT-Termine mit der Serviceleitung und ein Reviewer auf Kundenseite, der dafür eingeplant ist. Ohne Basislinie hätte der Lenkungsausschuss nur die 30 Prozent gehört.
 
-## Wo fangen Sie an?
+## Erster Schritt: den Status-Workflow aufräumen, bevor die Werkzeuge kommen
 
 Fangen Sie an, bevor die Werkzeuge kommen, denn eine Basislinie lässt sich nicht aus dem Gedächtnis rekonstruieren.
 
@@ -93,6 +92,4 @@ Prüftermin vereinbaren
   Etwa nach drei Monaten, und dann entscheiden, ob sich Setup, Prozess oder Vertragsmodell ändern. Liefert ein Partner wirklich schneller, sollte sich das im Preis zeigen. Das ist die Frage hinter [Festpreis statt Aufwand](../festpreis-statt-aufwand-ki-salesforce/).
 ```
 
-So setze ich [Projektsteuerung für Salesforce-Programme](../../leistungen/projektsteuerung-nearshore/) auf, und das Ganze steht auf einer funktionierenden Pipeline, wie in [warum DevOps über Salesforce-Großprojekte entscheidet](../warum-devops-salesforce-enterprise-projekte/) beschrieben.
-
-Messen Sie den KI-Nutzen wie jede andere Investition: erst die Basislinie, dann wenige Ergebniszahlen und ein fester Entscheidungstermin.
+Für den ersten Bericht genügen Durchlaufzeit und Nacharbeit, die übrigen Zahlen kommen dazu, sobald die Definitionen stehen. So setze ich [Projektsteuerung für Salesforce-Programme](../../leistungen/projektsteuerung-nearshore/) auf, und das Ganze steht auf einer funktionierenden Pipeline, wie in [warum DevOps über Salesforce-Großprojekte entscheidet](../warum-devops-salesforce-enterprise-projekte/) beschrieben.

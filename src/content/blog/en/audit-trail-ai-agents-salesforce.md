@@ -9,11 +9,11 @@ topic: security
 categories: [architecture, ai]
 tags: [audit trail, event monitoring, agentforce, hosted mcp, works council, manufacturing]
 takeaways:
-  - "An audit trail for AI agents in Salesforce consists of several logs: Trust Layer audit data, Session Tracing, API event logs, Setup Audit Trail, field history and the AI vendor's own logs."
-  - "The Trust Layer audit trail and Session Tracing live in Data 360 and store prompts, responses and action inputs; the Salesforce pages I read name no retention period for them."
-  - "Hosted MCP calls appear in the standard API logs with the named user; without paid Event Monitoring those files are kept for one day only."
-  - "Paid Event Monitoring keeps logs 30 days by default and up to one year, but never before the contract start, so the retention decision belongs before go-live."
-  - "Per-person logs of agent and AI tool use are also monitoring data, so retention, readers and evaluations should be settled with data protection and the works council in one round."
+  - "The audit trail is made of Trust Layer audit data, Session Tracing, API event logs, Setup Audit Trail, field history and the AI vendor's own logs."
+  - "The Trust Layer audit trail and Session Tracing store prompts, responses and action inputs in Data 360, and Salesforce names no retention period."
+  - "Hosted MCP calls appear in the API logs with the named user, but without paid Event Monitoring only for one day."
+  - "Paid Event Monitoring keeps logs from 30 days up to one year, but never before the contract start, so the decision belongs before go-live."
+  - "Per-person agent logs are also monitoring data, so settle retention and read access with data protection and the works council together."
 faq:
   - q: "Where does Salesforce store the audit trail of an Agentforce agent?"
     a: "In Data 360. According to Salesforce Help, the generative AI audit data with feedback is stored there, including the masked prompt, the LLM response and the unmasked response shown to the user. Data collection has to be switched on in Einstein setup."
@@ -70,7 +70,7 @@ These logs are a store of personal data in their own right: the input of a "chec
 
 When Claude, ChatGPT or Cursor reads Salesforce data through hosted MCP, the [security best practices](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/security-best-practices.html) say that agent actions appear "in standard Salesforce API logs with full user attribution". You isolate them with `API_CLIENT_CATEGORY = SALESFORCE_HOSTED_MCP`. The logs show operations, objects and timestamps per user; the permission model is in [hosted MCP servers and data access](../salesforce-hosted-mcp-servers-data-access/).
 
-The catch is retention. According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/event_monitoring/event_monitoring_intro), Enterprise, Unlimited and Performance Edition orgs get a handful of event types for free, among them Login, Logout and API Total Usage, with one day of retention. In my reading, an org without the add-on that does not download these files every day has no MCP history at all.
+Retention is where it gets difficult. According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/event_monitoring/event_monitoring_intro), Enterprise, Unlimited and Performance Edition orgs get a handful of event types for free, among them Login, Logout and API Total Usage, with one day of retention. In my reading, an org without the add-on that does not download these files every day has no MCP history at all.
 
 With Shield or the Event Monitoring add-on, the [Event Monitoring FAQ](https://help.salesforce.com/s/articleView?id=000396295&language=en_US&type=1) says logs are kept 30 days by default and up to one year. The Salesloft Drift attackers were active from 8 August until at least 18 August 2025, [according to The Hacker News](https://thehackernews.com/2025/08/salesloft-oauth-breach-via-drift-ai.html), so a question asked on day ten needs logs from day one. The token side of that incident is in [connected apps and OAuth lessons](../connected-apps-oauth-ai-integrations/).
 
@@ -82,7 +82,7 @@ The paid tier adds event types such as [Unique Query](https://developer.salesfor
 
 Salesforce's logs end where the data leaves Salesforce. For Claude, [Anthropic's audit logs](https://support.claude.com/en/articles/9970975-access-audit-logs) exist for Enterprise organisations only. They record sign-ins, file uploads and conversations created, deleted or renamed, without chat content, and an export covers the past 180 days. I would ask every other AI vendor the same: which events, how long, which export.
 
-## Which logs show who changed the agent?
+## Setup Audit Trail and field history show who changed the agent
 
 For configuration, the [Setup Audit Trail](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_setupaudittrail.htm) represents changes made in Setup "for at least the last 180 days". An audit of last year's warranty decision will not find the change there. I would keep agent definitions in version control and deploy them through a pipeline, as in [testing Agentforce agents before go-live](../testing-agentforce-agents-before-go-live/), because a repository history does not expire.
 
@@ -94,7 +94,7 @@ For data, field history tracking covers up to 20 fields per object for 18 to 24 
 
 I still use six months as the benchmark, and the table shows the gaps: one day for free API logs, 30 days by default for paid ones and no stated period for the Data 360 logs. Longer is not automatically better, though. Logs per named user show who asked what and when, which in Germany makes them a works council topic, see [AI coding tools, works council and GDPR](../ai-coding-tools-works-council-gdpr/).
 
-## A typical scenario: three questions in one quarter
+## Worked example: three requests in one quarter
 
 Assume a machine builder with 90 dealers, an Agentforce service agent in the dealer portal that answers warranty status questions and opens claims, and 25 service back office users working with Claude Enterprise through hosted MCP. Event Monitoring has not been bought. All numbers are assumptions.
 
@@ -104,7 +104,7 @@ Assume a machine builder with 90 dealers, an Agentforce service agent in the dea
 
 **Week 11, a dealer complaint.** A dealer says a competitor knew his net prices. Who read his price agreement through MCP in the past 40 days? Without the daily download only yesterday's file would exist. With it, the filter on `SALESFORCE_HOSTED_MCP` returns three users from dealer management, and the investigation moves on.
 
-## What should you settle before go-live?
+## First step: switch on audit data and tracing before the first conversation
 
 1. **Switch on audit data collection and tracing** before the first productive conversation. There is no backfill.
 2. **Write a log inventory**: question answered, owner, readers, retention, deletion.
@@ -113,6 +113,4 @@ Assume a machine builder with 90 dealers, an Agentforce service agent in the dea
 5. **Version agent definitions** outside Setup.
 6. **Settle the works agreement and the DPO's deletion concept together**, because both are about the same logs.
 
-A log inventory with owners is part of my work on [Salesforce architecture](../../services/salesforce-architecture/).
-
-Agents make decisions in your org, so the logs that explain those decisions need an owner and a retention period before the first auditor asks.
+For the inventory, a table with one row per log and the columns from point 2 is enough to begin with. A log inventory with owners is part of my work on [Salesforce architecture](../../services/salesforce-architecture/).

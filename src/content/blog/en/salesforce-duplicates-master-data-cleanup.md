@@ -10,7 +10,7 @@ categories: [architecture, ai]
 contactBrief: architecture
 tags: [data quality, duplicates, master data, Agentforce]
 takeaways:
-  - "At manufacturers, duplicates mostly come from interfaces and country borders: repeated ERP imports, customers created again per country, assets without a unique serial number."
+  - "At manufacturers, duplicates mostly come from interfaces and country borders, such as repeated ERP imports or customers created again per country."
   - "Before cleaning up, decide which system leads the record and which key makes it unique, such as the ERP customer number or the serial number."
   - "Salesforce comes with matching rules and duplicate rules. They prevent new duplicates, but they do not clean up old ones."
   - "With two identical accounts, an AI agent picks the wrong one just as confidently as the right one. That is why the cleanup comes before the agent."
@@ -67,7 +67,7 @@ The second step is the most important one and the one most often skipped. If you
 
 When merging, you choose a master record, and Salesforce moves related records such as contacts, opportunities and cases over to it. The user interface merges at most three records at a time. With hundreds of pairs you need a tool or a script, and a backup before that.
 
-## What can matching rules and duplicate rules do?
+## Matching rules and duplicate rules prevent new duplicates but do not clean up old ones
 
 Salesforce separates two things ([Salesforce Help: Duplicate Management](https://resources.docs.salesforce.com/224/latest/en-us/sfdc/pdf/salesforce_data_quality_duplicate_prevention.pdf)):
 
@@ -83,7 +83,7 @@ There is no standard rule for assets, but custom matching rules are possible, fo
 Start duplicate rules with the action "alert" and a report. After two to three weeks you can see whether the matching rule produces too many false matches. Only then switch to "block".
 ```
 
-## How do you prevent duplicates from the ERP?
+## An upsert on the external ID stops duplicates from the ERP
 
 The most effective measure sits in the interface. Every record from the ERP carries the ERP's key in an external ID field, and the interface writes with an upsert: if the key exists, the record is updated, otherwise it is created. That way an import can no longer create a duplicate, however the name is spelled. Which system leads which data belongs in the integration architecture I describe under [integration with ERP, middleware and telephony](../../services/salesforce-integration/).
 
@@ -93,8 +93,6 @@ Data quality is a task for the business, not for IT and not for the partner. The
 
 So I recommend one responsible person on the client side per country and per object. They get the monthly report on new possible duplicates, decide on merges and report when an interface keeps producing the same errors. For the installed base this is often the service back office, because it knows the machines best. Without this role, the cleanup starts from scratch after a year.
 
-## Where do you start?
+## First step: a matching rule for your 100 most important customers
 
-Create a matching rule for accounts and run the report. The number of possible pairs among your hundred most important customers says more about the state of your data than any audit. Then define the leading system and key per object and switch the interface to upsert before you start merging.
-
-Clean master data is the precondition for every agent, every report and every technician on site.
+Create a matching rule for accounts and run the report. The number of possible pairs among your hundred most important customers shows you within an hour where your data stands. The standard account matching rule is enough for the first report; add your own criteria such as the ERP customer number once the key is settled. Then define the leading system and key per object and switch the interface to upsert before you start merging.

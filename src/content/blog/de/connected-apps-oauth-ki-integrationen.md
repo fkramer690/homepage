@@ -9,11 +9,11 @@ topic: security
 categories: [architecture, ai]
 tags: [Connected Apps, OAuth, Sicherheit, KI-Integrationen, External Client Apps, Maschinenbau]
 takeaways:
-  - "Im August 2025 exportierten Angreifer mit gestohlenen OAuth-Tokens der KI-Chat-App Drift Cases, Accounts, User und Opportunities aus Salesforce-Orgs, ohne eine Schwachstelle in Salesforce auszunutzen."
-  - "Jedes SaaS-Tool mit einem Refresh Token für Ihre Org gehört zu Ihrer Sicherheitsgrenze; den Schaden bestimmen Rechte des Integrationsusers, Scopes, Token-Richtlinie und IP-Beschränkung."
-  - "Seit September 2025 sperrt Salesforce nicht installierte Connected Apps für die meisten Benutzer, seit Spring '26 brauchen neue Connected Apps den Support, neue External Client Apps erzwingen Token-Rotation."
-  - "Die meisten OAuth-Kontrollen in der App eines Anbieters können Admins nicht prüfen; KI-Anbieter sollten schriftlich bestätigen, wie sie Ihre Tokens speichern, rotieren und beschränken."
-  - "Maschinenbauer sollten Servicefälle nach Passwörtern und Fernwartungszugängen durchsuchen, denn der Drift-Angreifer hat exportierte Datensätze gezielt nach Zugangsdaten durchsucht."
+  - "Im August 2025 exportierten Angreifer mit gestohlenen OAuth-Tokens der KI-App Drift Daten aus Salesforce-Orgs, ohne eine Salesforce-Lücke zu nutzen."
+  - "Jedes SaaS-Tool mit Refresh Token gehört zu Ihrer Sicherheitsgrenze, den Schaden bestimmen Benutzerrechte, Scopes, Token-Richtlinie und IP-Beschränkung."
+  - "Seit September 2025 sperrt Salesforce nicht installierte Connected Apps für die meisten Benutzer, neue External Client Apps erzwingen Token-Rotation."
+  - "Die meisten OAuth-Kontrollen in der App eines Anbieters können Admins nicht prüfen, deshalb sollten KI-Anbieter sie schriftlich bestätigen."
+  - "Durchsuchen Sie Servicefälle nach Passwörtern und Fernwartungszugängen, denn der Drift-Angreifer suchte in exportierten Daten gezielt nach Zugangsdaten."
 faq:
   - q: "War der Salesloft-Drift-Vorfall eine Sicherheitslücke in Salesforce?"
     a: "Nein. Google Threat Intelligence und Salesforce stellen beide fest, dass er nicht auf eine Schwachstelle der Salesforce-Plattform zurückgeht. Der Angreifer nutzte gültige OAuth-Tokens, die aus der Drift-Anwendung gestohlen wurden; Salesforce sah also normalen API-Zugriff einer autorisierten App."
@@ -61,9 +61,9 @@ Drift war nicht der letzte Fall. Im November 2025 hat Salesforce die [OAuth-Toke
 
 Für einen Hersteller haben die exportierten Objekte besonderes Gewicht. Opportunities und Accounts enthalten Händlerkonditionen und Projektpreise. Die User-Abfrage im GTIG-Bericht zog Namen, Titel, E-Mails und Mobilnummern aktiver Benutzer, eine fertige Phishing-Liste. Und in den Servicefällen eines Maschinenbauers würde ich genau das erwarten, wonach GTIG suchen lässt: Login-URLs, VPN-Daten und Passwörter, eingetragen von Technikern, die Fernzugriff auf eine Maschine im Werk eines Kunden brauchten. Das trifft zuerst den Kunden.
 
-## Was hat Salesforce seitdem geändert?
+## Salesforce hat den OAuth-Zugang seit 2025 verschärft
 
-Salesforce hat den OAuth-Zugang in mehreren Schritten verschärft:
+Die Schritte im Einzelnen:
 
 - **Anfang September 2025: nicht installierte Connected Apps gesperrt.** Apps, die Benutzer autorisiert haben, ohne dass ein Admin sie installiert hat, sind für die meisten Benutzer nicht mehr erreichbar, laut [Salesforce-Admins-Blog](https://admin.salesforce.com/blog/2025/get-ready-for-changes-to-connected-app-usage-restrictions). Wer „Approve Uninstalled Connected Apps“ oder „Use Any API Client“ hat, umgeht die Sperre; diese Berechtigungen sollten also selten sein.
 - **Spring '26: keine neuen Connected Apps.** Das Anlegen ist standardmäßig gesperrt, außer über Paketinstallation, und die Freischaltung braucht eine Anfrage beim Support, laut [Spring-'26-Überblick für Architekten](https://www.salesforce.com/blog/spring-26-release-architect-highlights/).
@@ -93,7 +93,7 @@ Das würde ich für jede Connected App und ECA in Produktion verlangen, beginnen
 
 Das meiste davon ist Konfiguration. Event Monitoring kostet Geld und verdient eine bewusste Entscheidung.
 
-## Ein typisches Szenario: neun Apps bei einem Maschinenbauer
+## Rechenbeispiel: neun Apps bei einem Maschinenbauer
 
 Nehmen wir einen Maschinenbauer mit Sales Cloud, Service Cloud, SAP und 80 Händlern. Alle Zahlen sind Annahmen. Connected Apps OAuth Usage zeigt neun Apps, darunter die SAP-Middleware, ein Backup-Tool, einen KI-Meeting-Recorder für 25 Vertriebsmitarbeitende, einen KI-Chatbot für Ersatzteilanfragen auf der Website und eine App, die niemand kennt.
 
@@ -105,8 +105,6 @@ Die Korrekturen dauern angenommen zwei Wochen. Der Chatbot bekommt einen eigenen
 
 Nichts davon verhindert, dass ein Anbieter Ihre Tokens verliert. Es entscheidet, was ein gestohlenes Token kann: von einer fremden Adresse nichts, von einer erlaubten Leads anlegen, aber keine Händlerpreise lesen.
 
-## Wo sollten Sie anfangen?
+## Erster Schritt: jede App markieren, die Salesforce-Daten an ein Modell schickt
 
 Fangen Sie mit den KI-Tools an, weil sie die neuesten und am wenigsten geprüften sind: Markieren Sie jede App, die Salesforce-Daten an ein Modell schickt, und prüfen Sie für diese zuerst Benutzer, Scopes und Token-Richtlinie. Ihr zweites Risiko ist [Prompt Injection im Händlerportal](../prompt-injection-haendlerportal-agentforce/). Eine Liste aller Schnittstellen mit benannten Verantwortlichen gehört zu meiner Arbeit an [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).
-
-Jede Connected App ist ein Schlüssel zu Ihrer Org in fremder Hand, also geben Sie jeder einen Verantwortlichen, einen engen Benutzer und ein Ablaufdatum.
