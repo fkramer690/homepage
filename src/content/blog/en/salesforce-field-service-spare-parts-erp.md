@@ -82,7 +82,7 @@ This is what I would work on before go-live:
 
 None of these problems is solved by software. Each needs an owner who maintains the data, and a process that makes wrong postings visible. A regular stock count of individual vans is a simple first step.
 
-## First step: have three technicians count their van
+## Have three technicians count their van
 
 Check how accurate van stock in the ERP is today.
 

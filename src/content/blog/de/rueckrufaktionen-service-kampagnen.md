@@ -93,7 +93,7 @@ contra: Wann eine Liste reicht
 
 Für die Auswahl der Maschinen gilt in beiden Fällen dasselbe: Ohne saubere Seriennummern und Chargen hilft auch die beste Liste nicht.
 
-## Erster Schritt: Auslöser, Kosten und Meldeweg schriftlich klären
+## Auslöser, Kosten und Meldeweg schriftlich klären
 
 Diese Fragen würde ich vor dem Bau schriftlich beantworten:
 

@@ -101,6 +101,6 @@ I would keep or choose a dedicated CLM tool outside Salesforce in these cases:
 
 In these cases Salesforce creates the commercial data and hands the signed contract over through an integration. A worked example: a supplier of drive components has an in-house legal team with an existing CLM tool for all group contracts. Sales sends 300 standard supply contracts a year from quotes. Here I would generate the standard contracts in Salesforce Contracts with approved clauses and DocuSign, and send only contracts with deviating clauses to legal's tool. That keeps the routine fast and the exceptions with legal. This make-or-buy question is part of my work on [make-or-buy and licence forecasts](../../services/make-or-buy-licences/).
 
-## First step: count your customer contracts and sort them into three groups
+## Count your customer contracts and sort them into three groups
 
 Count your customer contracts per year and sort them into three groups: own template without changes, own template with negotiated clauses, customer's paper. If the first two groups dominate, Salesforce Contracts fits. Then build the clause library with legal before the first template. How contracts fit into the path from quote to order is in the chapter [quote, contract, order](../../masterclass/revenue-cloud/quote-contract-order/).

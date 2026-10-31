@@ -101,6 +101,6 @@ The names sound alike, but nothing carries over. [Salesforce Help on the migrati
 
 I would use the migration to clean up. CPQ orgs tend to collect approval rules that nobody can explain. Rebuild only what the head of sales and finance confirm. The full migration path is in the chapter [from CPQ to Revenue Cloud](../../masterclass/revenue-cloud/from-cpq-to-revenue-cloud/).
 
-## First step: write the approval matrix on one page
+## Write the approval matrix on one page
 
 Write the approval matrix on one page before anyone builds a workflow: triggers, thresholds, owners and the source of the cost data. Then build the workflows with preview, parallel approvers and delegation, and test each rule with a quote that should and one that should not trigger it. How approvals fit into the path from quote to order is in the chapter [quote, contract, order](../../masterclass/revenue-cloud/quote-contract-order/), and I help with this as part of [Salesforce architecture](../../services/salesforce-architecture/).

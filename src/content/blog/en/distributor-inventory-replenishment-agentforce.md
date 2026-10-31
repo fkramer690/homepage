@@ -105,7 +105,7 @@ Now assume the same distributor is over its credit limit. The simulation returns
 
 What I would expect to surface in such a pilot is data, not AI: distributors who do not upload on time, parts mapped to the wrong material number, and min/max values nobody has reviewed in years. Upload files are also untrusted input, a risk described in [prompt injection through dealer portals](../prompt-injection-dealer-portals-agentforce/).
 
-## First step: name the system of record for every data row
+## Name the system of record for every data row
 
 1. **Write down the system of record** for every row of the table above, signed off by sales and supply chain.
 2. **Get distributor stock in reliably.** Agree on frequency and format, and show the report date everywhere the stock appears.

@@ -96,6 +96,6 @@ Vor der Unterschrift würde ich diese Punkte schriftlich festhalten:
 
 Wie die Editionen der Kernplattform einen Lizenzplan verändern, beschreibe ich in [Salesforce-Editionen Core, Advanced, Max](../salesforce-editionen-core-advanced-max/). Welchen Lizenztyp welche Nutzergruppe braucht, steht in [Salesforce-Lizenzen: Braucht jeder eine volle Lizenz?](../salesforce-lizenzen-volle-lizenz/).
 
-## Erster Schritt: die Gebühr mit 1, 2 und 3 Prozent rechnen
+## Die Gebühr mit 1, 2 und 3 Prozent rechnen
 
 Schätzen Sie das Store-GMV für drei Jahre mit steigendem digitalem Anteil und rechnen Sie die Gebühr mit 1, 2 und 3 Prozent neben Käuferlizenzen und Umsetzung. Trägt der Business Case nur beim niedrigsten Satz, kennen Sie Ihre Verhandlungsposition vor dem ersten Termin. Die vollständige Rechnung steht im [Business Case für einen B2B-Webshop](../b2b-webshop-business-case-hersteller/), und wo die Preise in der Gesamtentscheidung stehen, zeigt das [Masterclass-Kapitel zur Frage, ob sich B2B Commerce lohnt](../../masterclass/b2b-commerce/b2b-commerce-lohnt-sich-ueberblick/). Eine unabhängige Prüfung von Angeboten gehört zu meiner Arbeit bei [Make-or-Buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/).

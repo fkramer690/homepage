@@ -82,7 +82,7 @@ Articles must read like Fabian talking to a client, not like generated content. 
 - **No reflexive lists of three.** Use as many items as there really are.
 - **No hype, no superlatives without a reason.** "Best course I have taken" is fine when the article says why; "revolutionary" is not.
 - **Fabian's voice.** First person, direct, a little dry, with his own phrasing where he gave it (e.g. from LinkedIn posts). Keep real quirks instead of smoothing them out.
-- **No template shape** (AI-slop review 2026-10-31). Every article had the same skeleton, which reads as generated even when each sentence is fine. `node scripts/check-blog.mjs --structure` lists these findings (warnings in the normal build until all texts are rewritten, then errors):
+- **No template shape** (AI-slop review 2026-10-31). Every article had the same skeleton, which reads as generated even when each sentence is fine. `node scripts/check-blog.mjs --structure` lists these findings (errors in the build since 2026-10-31):
   - No generic closing heading ("Wo fangen Sie an?", "Wo sollten Sie anfangen?", "Where should you start?"). The last section names the concrete first step in its heading.
   - No one-sentence summary or moral as the last paragraph ("X ist nur so gut wie Y", "Saubere Stammdaten sind die Voraussetzung für …"). The article ends with the step.
   - Key takeaways: 3 to 5, as many as there are, at most 160 characters each, and the first does not repeat the intro's first sentence. The intro, the takeaways and the first FAQ answer each add something.

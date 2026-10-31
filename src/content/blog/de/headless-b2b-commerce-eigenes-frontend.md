@@ -106,6 +106,6 @@ Salesforce verkauft B2B Commerce als Anteil am Shop-Umsatz und veröffentlicht k
 
 Repository und Pipeline des Frontends sollten Ihnen gehören, nicht der Agentur, die es baut, aus denselben Gründen wie in [warum Kunden ihre DevOps-Tools selbst besitzen sollten](../warum-kunden-devops-tools-selbst-besitzen-sollten/). Soll in Ihrer App auch ein Agentforce-Agent antworten, ist die [Agent API](../agentforce-agent-api-eigene-apps/) der eigene Einstieg, mit eigenen Fragen zur Identität. Wie Agenten dieselben Schnittstellen nutzen, beschreibt das Kapitel [MCP und Schnittstellen](../../masterclass/ki-salesforce/mcp-und-schnittstellen/) der KI-Masterclass.
 
-## Erster Schritt: genutzte Kanäle und Frontend-Team prüfen
+## Genutzte Kanäle und Frontend-Team prüfen
 
 Schreiben Sie auf, welche Kanäle Käufer heute wirklich nutzen und welcher Bestellungen annehmen soll. Prüfen Sie dann, ob es in den nächsten drei Jahren ein Frontend-Team gibt. Zeigen beide Antworten auf headless, bauen Sie einen kurzen Test mit der Referenz-App gegen eine Sandbox mit Ihrem echten Katalog und Ihrer Preis-Extension und messen Sie, wie schnell Warenkorb und Checkout mit dem Live-Aufruf ins ERP antworten. Die Datenflüsse dahinter sind Teil des Kapitels [ERP-Anbindung](../../masterclass/b2b-commerce/erp-integration-bestand-auftraege/) meiner Masterclass B2B Commerce, und solche Entscheidungen begleite ich unter [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).

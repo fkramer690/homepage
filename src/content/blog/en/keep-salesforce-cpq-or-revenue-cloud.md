@@ -107,6 +107,6 @@ The larger cost is the redesign. Salesforce names three to six months as a typic
 
 A worked example: a machine builder with 50 CPQ users, 200 product rules, a quote calculator plugin and a CPQ renewal in nine months. Prices come from SAP, the configurator rules partly from engineering. Here I would renew CPQ for two years with an option for parallel operation, clean up the rules now, and run a proof of concept for the ten most important machines in Revenue Cloud before committing to a migration.
 
-## First step: assess your CPQ org
+## Assess your CPQ org
 
 Assess your CPQ org first: number of product and price rules, size of the quote calculator plugin, integrations on SBQQ objects, open subscriptions and the renewal date. Then put the triggers above next to your roadmap for the next two years. The masterclass chapter [from CPQ to Revenue Cloud](../../masterclass/revenue-cloud/from-cpq-to-revenue-cloud/) walks through the whole path from status to migration.

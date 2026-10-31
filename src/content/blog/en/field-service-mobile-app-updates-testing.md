@@ -98,7 +98,7 @@ The effort is about 32 hours of technician time per major version, plus the rele
 
 The other technicians should know before the update what changes for them and whom to ask. That is the same task as with every release for the back office, described in [Communicating Salesforce releases to the business](../salesforce-release-communication-business/).
 
-## First step: sign up for the beta programme
+## Sign up for the beta programme
 
 1. **Sign up for the beta programme** and subscribe to the release posts of the Field Service Mobile group.
 2. **Write the routine** as eight scripts with expected results.

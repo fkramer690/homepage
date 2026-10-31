@@ -111,7 +111,7 @@ Field Service selbst lohnt sich am meisten bei vielen kurzen Einsätzen, wo Term
 
 Die Kombination, die oft sinnvoll ist: Document Builder für alles, was der Techniker vor Ort erstellt, und ein Tool zur Dokumentenerstellung für den Innendienst, lizenziert nur für die Nutzer, die es brauchen.
 
-## Erster Schritt: die heutigen Berichte mit Volumen sammeln
+## Die heutigen Berichte mit Volumen sammeln
 
 1. **Sammeln Sie Ihre heutigen Berichte.** Jedes Papierformular und jedes PDF, das Techniker und Serviceinnendienst heute erstellen, mit dem Volumen pro Monat.
 2. **Prüfen Sie sie gegen die Grenzen oben.** Objekt, Bedingungslogik, Seitenzahl, Ausgabeformat, wer unterschreibt.

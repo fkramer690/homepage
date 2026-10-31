@@ -95,6 +95,6 @@ Interne Mitarbeiter arbeiten in Salesforce mit ihrer internen Lizenz. In der Tra
 
 Mein Rat: Schreiben Sie pro interner Gruppe auf, was sie im Store tut, etwa den Shop aus Händlersicht ansehen, im Namen eines Händlers bestellen oder den Katalog pflegen, und lassen Sie sich im Angebot bestätigen, welche Lizenz welche Tätigkeit abdeckt. Welche internen Nutzer wirklich eine volle Lizenz brauchen, steht in [Salesforce-Lizenzen: Braucht jeder eine volle Lizenz?](../salesforce-lizenzen-volle-lizenz/).
 
-## Erster Schritt: Login-Tage pro Käufer zählen
+## Login-Tage pro Käufer zählen
 
 Legen Sie eine Liste mit vier Spalten an: Rolle, Anzahl Personen, Login-Tage pro Monat und Lizenz. Füllen Sie sie aus Ihren Auftragsdaten der letzten zwölf Monate: Wer hat wie oft per Telefon, E-Mail oder Portal bestellt? Prüfen Sie dann die Limits oben, vor allem Rollen und den Account Switcher bei Händlergruppen. Ob ein Shop oder ein Portal überhaupt zu Ihren Händlern passt, klärt [B2B Commerce oder Händlerportal](../b2b-commerce-oder-haendlerportal/), das ganze Kostenbild steht in [Kapitel 1 der Masterclass B2B Commerce](../../masterclass/b2b-commerce/b2b-commerce-lohnt-sich-ueberblick/). Lizenzprognosen wie diese gehören zu meiner Arbeit bei [Make-or-Buy und Lizenzen](../../leistungen/make-or-buy-lizenzen/).

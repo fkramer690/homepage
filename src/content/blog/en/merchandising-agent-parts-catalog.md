@@ -99,7 +99,7 @@ Assume a manufacturer of compressors runs a B2B store with 60,000 spare parts fo
 
 With the agent, the merchandiser asks after each ERP update: "bury every part whose sales status is superseded and boost its successor". The agent proposes the rules, the merchandiser checks a sample and releases them. Once a month the merchandiser asks for the zero result searches of the last month and passes missing old numbers to the PIM team as synonyms or attributes. The search side of this is covered in [B2B Commerce search: finding parts by part number](../b2b-commerce-search-part-numbers/).
 
-## First step: clarify the licence and included skills
+## Clarify the licence and included skills
 
 1. **Clarify the licence.** Ask which skills the included Merchant Agent covers and how usage is counted.
 2. **Fix the data first.** A clean sales status and successor part in the ERP are what make good boost and bury requests possible.

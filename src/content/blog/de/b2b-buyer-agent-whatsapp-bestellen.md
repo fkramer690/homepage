@@ -108,7 +108,7 @@ Im Pilot bekommen 15 Händler mit vielen Wiederholungsbestellungen den Buyer Age
 
 Erst wenn diese Antworten verlässlich sind, würde ich einen Messaging-Kanal wie WhatsApp ergänzen, und erst mit Carter für Käufer würde ich den Agenten Aufträge mit Zahlung abschließen lassen. Schnelles Nachbestellen im Shop selbst ist das Thema von [Nachbestellen im B2B-Shop: Vorlagen, CSV, Reorder](../nachbestellen-b2b-shop-vorlagen/), die Backoffice-Seite der Agenten beschreibe ich in [Merchandising Agent: Was er im Teilekatalog leistet](../merchandising-agent-teilekatalog/).
 
-## Erster Schritt: den Shop ohne Agent prüfen
+## Den Shop ohne Agent prüfen
 
 1. **Erst den Shop prüfen.** Käufergruppen, Berechtigungen, Preise und Auftragsstatus müssen ohne Agent stimmen. Ein Agent macht Fehler in diesen Daten schneller sichtbar, er behebt sie nicht.
 2. **Lizenzen prüfen.** Service-Cloud-Edition, Add-ons Agentforce und Einstein for Service und die Einrichtung von Data 360, wie Trailhead sie nennt.

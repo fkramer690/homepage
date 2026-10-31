@@ -94,7 +94,7 @@ Für die 360 Standardangebote im Monat bringt Revenue Cloud wenig. Der Preis kom
 
 Meine Empfehlung in so einem Fall: zuerst entscheiden, ob SAP der Preismaster bleibt, und dann nur den Projektvertrieb lizenzieren. Mit 15 Nutzern auf Advanced sind das 36.000 Euro im Jahr zum Listenpreis statt eines sechsstelligen Betrags für den ganzen Vertrieb. Wie die Entscheidung über den Preismaster läuft, steht in [Kundenpreise: SAP-Konditionen oder Salesforce Pricing?](../kundenpreise-sap-konditionen-oder-salesforce-pricing/).
 
-## Erster Schritt: Preismaster und Rechnungssystem vor der Partnerauswahl festlegen
+## Preismaster und Rechnungssystem vor der Partnerauswahl festlegen
 
 Partner fragen nach Funktionen. Die Entscheidungen, die Kosten und Zeitplan treiben, sind andere, und sie gehören dem Unternehmen:
 

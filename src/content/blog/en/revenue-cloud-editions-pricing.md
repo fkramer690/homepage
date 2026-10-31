@@ -112,7 +112,7 @@ Worked example: a machine builder has 80 Sales Cloud users. 35 of them create qu
 
 Whether Growth and Advanced can be mixed in one org is not stated on the pricing page either. If only project sales needs contracts and usage, a mix would be the cheaper plan, so ask for it explicitly. How I build such a forecast in general is described in [Salesforce licences: does everyone need a full one?](../salesforce-licences-full-licence-needed/).
 
-## First step: get the licence rule for readers and approvers in writing
+## Get the licence rule for readers and approvers in writing
 
 List prices are a starting point, and Salesforce is changing its edition model across clouds. Sales Cloud now comes as Core, Advanced and Max, as described in [Salesforce editions Core, Advanced, Max for manufacturers](../salesforce-editions-core-advanced-max/). Before signing I would get these points in writing:
 

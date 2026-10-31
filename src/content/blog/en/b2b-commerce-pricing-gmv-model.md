@@ -96,6 +96,6 @@ Before signing, I would get these points in writing:
 
 How the editions of the core platform affect a licence plan is described in [Salesforce editions Core, Advanced, Max](../salesforce-editions-core-advanced-max/). Which licence type each user group needs is in [Salesforce licences: does everyone need a full one?](../salesforce-licences-full-licence-needed/).
 
-## First step: calculate the fee at 1, 2 and 3 percent
+## Calculate the fee at 1, 2 and 3 percent
 
 Estimate store GMV for three years with a rising digital share, then calculate the fee at 1, 2 and 3 percent next to buyer licences and implementation. If the business case only works at the lowest rate, you know your negotiating position before the first call. The full calculation is in the [B2B webshop business case for manufacturers](../b2b-webshop-business-case-manufacturers/), and the place of pricing in the overall decision is in the [masterclass chapter on whether B2B Commerce is worth it](../../masterclass/b2b-commerce/b2b-commerce-worth-it-overview/). An independent check of quotes is part of my work on [make-or-buy and licence forecasts](../../services/make-or-buy-licences/).

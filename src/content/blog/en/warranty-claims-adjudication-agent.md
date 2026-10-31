@@ -110,7 +110,7 @@ The consumption is small. The real cost is the three months of data work, and th
 
 The agent goes to production like any other change: with a test set of real claims, an agreed pass rate and monitoring afterwards, as described in [testing Agentforce agents before go-live](../testing-agentforce-agents-before-go-live/). Drawing these lines between rules, agent and people is part of my [architecture work](../../services/salesforce-architecture/). If you have not decided on Manufacturing Cloud itself yet, start with [whether Manufacturing Cloud pays off](../salesforce-manufacturing-cloud-is-it-worth-it/).
 
-## First step: measure asset coverage
+## Measure asset coverage
 
 1. **Measure asset coverage**: share of last year's claims whose serial number exists as an asset with start date.
 2. **Run rules-based adjudication first.** According to Salesforce Help it is available in Enterprise, Unlimited and Developer Editions, and it shows quickly whether your terms work as rules.

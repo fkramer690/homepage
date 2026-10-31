@@ -102,6 +102,6 @@ Ein Rechenbeispiel: Ein Maschinenbauer mit 60 CPQ-Nutzern verlängert im Frühja
 
 Nein. Der Status nimmt den Zeitdruck heraus, und diese Zeit würde ich nutzen. Ob Bleiben, Wechseln oder ein dritter Weg passt, hängt von Ihren Prozessen, Ihrem Preis-Master und Ihrem Budget ab. Die Kriterien gehe ich in [CPQ behalten oder zu Revenue Cloud wechseln?](../cpq-behalten-oder-revenue-cloud/) durch. Für Hersteller, die erst jetzt ein Angebotssystem auswählen, ist CPQ ohnehin keine Option mehr. Sie vergleichen Revenue Cloud, Partnerprodukte und einen eigenen Ansatz, wie in [vom Angebot zum Sales Agreement](../angebot-zu-sales-agreement-produktkonfigurator/) beschrieben.
 
-## Erster Schritt: das Verlängerungsdatum Ihrer Verträge heraussuchen
+## Das Verlängerungsdatum Ihrer Verträge heraussuchen
 
 Suchen Sie das Verlängerungsdatum Ihrer CPQ- und Billing-Verträge heraus, notieren Sie die Zahl der Nutzer und Ihre Anpassungen, und legen Sie fest, ob Sie eine kurze oder lange Laufzeit wollen, bevor das Account-Team anruft. Den ganzen Weg vom Status bis zur Migration beschreibt das Masterclass-Kapitel [von CPQ zu Revenue Cloud](../../masterclass/revenue-cloud/von-cpq-zu-revenue-cloud/).

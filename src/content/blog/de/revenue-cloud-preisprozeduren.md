@@ -106,6 +106,6 @@ Die Prozedur enthielte den Listenpreis mit vertragsbasierter Preisfindung, einen
 
 Ob SAP oder Salesforce Händler- und Vertragspreise überhaupt berechnen sollte, ist eine eigene Entscheidung. Die behandle ich in [Kundenpreise: SAP-Konditionen oder Salesforce Pricing?](../kundenpreise-sap-konditionen-oder-salesforce-pricing/).
 
-## Erster Schritt: die Preislogik als Schritte aufschreiben
+## Die Preislogik als Schritte aufschreiben
 
 Schreiben Sie Ihre Preislogik als Schritte auf, bevor jemand den Builder öffnet: Welcher Preis ist der Ausgangspunkt, welche Rabatte folgen in welcher Reihenfolge, welche brauchen eine Freigabe? Diese Liste wird zugleich die Prozedur und die ersten Regressionsfälle. Wie die Preisfindung mit Katalog und Konfigurator zusammenspielt, erklärt das Kapitel [Katalog, Konfigurator, Preise](../../masterclass/revenue-cloud/produktkatalog-konfigurator-preise/) der Masterclass Revenue Cloud, die Freigaben behandelt [Rabattfreigaben in Revenue Cloud](../revenue-cloud-rabattfreigaben/).

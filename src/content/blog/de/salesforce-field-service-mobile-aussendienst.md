@@ -94,7 +94,7 @@ Spracheingabe ist attraktiv für Techniker, die mit Handschuhen, in der Höhe od
 
 Außerdem ist es sinnvoll festzulegen, welche Felder per Sprache gefüllt werden dürfen und welche Werte der Techniker bestätigen muss, etwa sicherheitsrelevante Messwerte.
 
-## Erster Schritt: eine Einsatzart mit hohem Volumen auswählen
+## Eine Einsatzart mit hohem Volumen auswählen
 
 Eine pragmatische Reihenfolge für einen Hersteller mit eigenem Außendienst:
 

@@ -99,7 +99,7 @@ Facets help when a search returns many hits, for example "filter" in a catalogue
 
 Showing dealers only parts that fit a specific machine is a different requirement. Search and facets cannot know which machines a dealer owns. The options for that are in [show only parts for each machine](../spare-parts-shop-parts-per-machine/), and the AI side in [spare parts by serial number](../spare-parts-by-serial-number-ai/).
 
-## First step: test 200 search terms from inside sales
+## Test 200 search terms from inside sales
 
 Collect what dealers actually type before you configure anything. Inside sales has emails and phone notes full of part numbers, old numbers and descriptions. Take 200 of them and run them against a test store with your real data. Every miss is either missing data, a missing searchable field or a spelling problem.
 

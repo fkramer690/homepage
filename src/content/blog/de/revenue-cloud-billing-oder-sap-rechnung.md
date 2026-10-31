@@ -119,6 +119,6 @@ Halten Sie drei Punkte mit Finance schriftlich fest: welche Umsatzarten Salesfor
 
 Die Schnittstellen für Buchungssätze und Rechnungsstatus gehören zu meiner Arbeit bei [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).
 
-## Erster Schritt: Umsatzarten mit Rechnungsquelle auflisten
+## Umsatzarten mit Rechnungsquelle auflisten
 
 Listen Sie Ihre Umsatzarten auf und notieren Sie zu jeder, wer heute fakturiert und wie oft sich der Vertrag ändert. Zeilen mit wiederkehrenden Gebühren und häufigen Änderungen sind Kandidaten für Billing, alles andere bleibt in SAP. Das Masterclass-Kapitel [Abrechnung und nutzungsbasierte Preise](../../masterclass/revenue-cloud/abrechnung-und-nutzungsbasierte-preise/) ordnet diese Entscheidung in den gesamten Quote-to-Cash-Prozess ein.

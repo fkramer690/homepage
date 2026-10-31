@@ -94,6 +94,6 @@ Ein Hersteller von Verpackungsmaschinen betreibt einen Innendienst, der Ersatzte
 
 Hier passt der Agent gut. Eine Mitarbeiterin tippt "Verschleißteilsatz für Linie 3 plus zwei Servicetage, üblicher Rabatt", und der Agent findet Satz und Serviceposition im Katalog und baut das Angebot für den Account des Kunden. Rabatte über der Grenze gehen in den Freigabe-Workflow. Angebote für neue Maschinen bleiben bei den Vertriebsingenieuren, weil deren Konfigurationsregeln noch in SAP liegen. Eingeführt wird der Agent zuerst in einem Land und mit echten Anfragen aus dem letzten Quartal getestet.
 
-## Erster Schritt: 30 Testanfragen für eine Angebotsart schreiben
+## 30 Testanfragen für eine Angebotsart schreiben
 
 Wählen Sie eine Angebotsart mit Standardprodukten und synchronisierten Preisen, schreiben Sie 30 Testanfragen aus echten Fällen und legen Sie für jede das erwartete Angebot fest. Lassen Sie diese in einer Sandbox laufen, bevor ein Kunde oder Händler ein Agentenangebot sieht, wie in [Agentforce-Agenten testen und freigeben](../agentforce-agenten-testen-freigeben/) beschrieben. Wo Agenten in der Fertigung über Angebote hinaus passen, zeigt das Kapitel [KI-Agenten in der Fertigung](../../masterclass/ki-salesforce/ki-agenten-in-der-fertigung/), den ganzen Weg vom Angebot zum Auftrag das Kapitel [Angebot, Vertrag, Auftrag](../../masterclass/revenue-cloud/angebot-vertrag-auftrag/).

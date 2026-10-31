@@ -105,6 +105,6 @@ Was ich in Vertrag und Pipeline festlegen würde:
 
 Wie Store-Konfiguration mit den Metadaten wandert, beschreibt die DevOps-Masterclass im Kapitel [Daten und Konfiguration](../../masterclass/devops-release-management/daten-und-konfiguration/), den Aufbau der Pipeline im Kapitel [Pipeline aufbauen](../../masterclass/devops-release-management/pipeline-aufbauen/).
 
-## Erster Schritt: jede eigene Logik einem Erweiterungspunkt zuordnen
+## Jede eigene Logik einem Erweiterungspunkt zuordnen
 
 Listen Sie jede eigene Logik in Ihrem Store auf und ordnen Sie sie einem Erweiterungspunkt, einer alten Integration oder einer eigenen Komponente zu. Markieren Sie jeden Domain Provider, der kein `super()` aufruft, und fragen Sie nach dem Grund. Prüfen Sie dann, ob sich Registrierung und Mapping aus dem Repository in einer frischen Sandbox wieder aufbauen lassen. Klappt das nicht, haben Sie Ihre größte Abhängigkeit vom aktuellen Partner gefunden. Die ERP-Seite derselben Entscheidungen ist Teil des Kapitels [ERP-Anbindung](../../masterclass/b2b-commerce/erp-integration-bestand-auftraege/), und dieselben Extensions bedienen auch eine [headless Storefront](../headless-b2b-commerce-eigenes-frontend/).

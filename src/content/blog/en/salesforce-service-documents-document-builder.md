@@ -111,7 +111,7 @@ Field Service itself pays off most when there are many short jobs, where schedul
 
 The combination that often makes sense: Document Builder for everything the technician creates on site, and one document generation tool for the office, licensed only for the users who need it.
 
-## First step: collect today's reports with their volume
+## Collect today's reports with their volume
 
 1. **Collect your current reports.** Every paper form and every PDF your technicians and the service office create today, with the volume per month.
 2. **Check them against the limits above.** Object, conditional logic, page count, output format, who signs.

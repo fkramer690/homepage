@@ -106,6 +106,6 @@ Daraus ziehe ich für Hersteller drei Schlüsse:
 
 Ob sich der Wechsel überhaupt lohnt, ist eine eigene Frage. Die beantworte ich in [CPQ behalten oder zu Revenue Cloud wechseln?](../cpq-behalten-oder-revenue-cloud/).
 
-## Erster Schritt: Regeln, Plugin-Zeilen und Schnittstellen zählen
+## Regeln, Plugin-Zeilen und Schnittstellen zählen
 
 Zählen Sie, was Sie haben: Produktregeln, Preisregeln, Zeilen im Quote Calculator Plugin, Angebotsvorlagen, Freigabeketten, offene Subscriptions und Schnittstellen, die in SBQQ-Objekte schreiben. Diese Liste ist der Umfang des Neuentwurfs. Wie die Migration dann in Phasen abläuft, steht in [CPQ zu Revenue Cloud migrieren](../cpq-migration-revenue-cloud-phasen/) und im Masterclass-Kapitel [von CPQ zu Revenue Cloud](../../masterclass/revenue-cloud/von-cpq-zu-revenue-cloud/).

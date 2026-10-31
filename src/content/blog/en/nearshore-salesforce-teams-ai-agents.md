@@ -96,7 +96,7 @@ Assume a machine builder with Service Cloud, Field Service, a dealer portal and 
 
 Whether the stream got faster stays open until cycle time and rework are compared with the baseline, see [measuring AI productivity in Salesforce projects](../measuring-ai-productivity-salesforce-projects/). The extra developer the partner offered first would only have lengthened the queue.
 
-## First step: count reviewers per team
+## Count reviewers per team
 
 1. **Count reviewers per team**, not only developers, and check their backlog.
 2. **Ask the partner for the agent level per person.**

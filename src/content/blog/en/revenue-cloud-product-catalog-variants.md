@@ -112,7 +112,7 @@ The Developer Guide has an [object deployment reference](https://developer.sales
 
 The owner should be product management at the manufacturer, not the implementation partner. After go-live new machines, options and price changes arrive every quarter, and whoever maintains the catalog decides how fast sales can quote them.
 
-## First step: list machine families and the questions sales asks
+## List machine families and the questions sales asks
 
 1. **List the machine families** and the questions sales asks per family. They become classifications and attributes.
 2. **Apply the three tests** to every variant: own material number, planned in a sales agreement, stocked or serviced separately.

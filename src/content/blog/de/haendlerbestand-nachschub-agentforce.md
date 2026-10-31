@@ -105,7 +105,7 @@ Nehmen wir nun an, derselbe Händler liegt über seinem Kreditlimit. Die Simulat
 
 In so einem Piloten würde ich vor allem Datenthemen erwarten, keine KI-Themen: Händler, die nicht pünktlich melden, Teile mit falscher Materialnummer und Min/Max-Werte, die seit Jahren niemand angesehen hat. Upload-Dateien sind außerdem nicht vertrauenswürdige Eingaben, ein Risiko, das ich in [Prompt Injection über Händlerportale](../prompt-injection-haendlerportal-agentforce/) beschreibe.
 
-## Erster Schritt: führendes System pro Datenzeile festlegen
+## Führendes System pro Datenzeile festlegen
 
 1. **Führendes System festlegen** für jede Zeile der Tabelle oben, abgestimmt zwischen Vertrieb und Logistik.
 2. **Händlerbestände verlässlich einspielen.** Rhythmus und Format vereinbaren und das Meldedatum überall anzeigen, wo der Bestand erscheint.

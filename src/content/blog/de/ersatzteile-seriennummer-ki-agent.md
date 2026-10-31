@@ -105,7 +105,7 @@ Angenommen sind 1.500 Ersatzteilfragen im Monat mit je drei Aktionen: Asset find
 
 Im Szenario bringt ein Pilot mit zehn Technikern zwei Erkenntnisse. Für Maschinen vor 2016 hat das PLM nur die Typstückliste, der Agent kann Kandidaten nennen, aber die Variante nicht bestätigen; das muss er sagen, und die Ersatzteilabteilung entscheidet. Und bei 9 Prozent der geprüften Maschinen zeigen verbrauchte Teile eine durch einen Nachfolger getauschte Baugruppe, die in der Asset-Hierarchie fehlt. Beides sind Datenprobleme. Die Entscheidung im Szenario: nur Techniker, nur Maschinen ab 2016, und ein monatlicher Job, der Hauptbaugruppen aus verbrauchten Teilen nachzieht.
 
-## Erster Schritt: 20 Ersatzteilbestellungen von Hand prüfen
+## 20 Ersatzteilbestellungen von Hand prüfen
 
 ```schritte
 Zuerst von Hand testen

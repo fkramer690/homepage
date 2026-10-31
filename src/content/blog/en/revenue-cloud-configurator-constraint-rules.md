@@ -107,7 +107,7 @@ A machine builder has three product lines. Two are maintained by application eng
 
 My recommendation in that case: the two spreadsheet lines go into constraint models, with table constraints filled from a custom object, regression cases per line and a named owner in product management. The SAP line keeps its configurator for now. Salesforce receives the configured result through an interface, prices it and creates the quote. After a year the manufacturer can decide whether the third line follows, based on real maintenance effort instead of assumptions.
 
-## First step: inventory the rules and pick a pilot family
+## Inventory the rules and pick a pilot family
 
 1. **Inventory the rules**: how many, where they live, who changes them and how often.
 2. **Pick one product family** as a pilot, ideally one whose rules sit in spreadsheets.

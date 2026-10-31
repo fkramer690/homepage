@@ -109,6 +109,6 @@ Der Wert der Übung liegt weniger in der Summe als in den Entscheidungen, die si
 
 Wie das in den Business Case für Field Service passt, steht in [Teil 1 der Serie](../salesforce-field-service-lohnt-sich/) und in [Kapitel 1 der Masterclass Field Service](../../masterclass/field-service/field-service-lohnt-sich-lizenzen/). Bearbeitet die Serviceorganisation auch Garantieansprüche, lohnt vor dem Kauf ein Blick in das [Manufacturing-Cloud-Kapitel zu Garantie und After-Sales](../../masterclass/manufacturing-cloud/garantie-und-after-sales/), damit dieselben Personen nicht zweimal lizenziert werden.
 
-## Erster Schritt: jede Person mit ihrer Arbeit im System auflisten
+## Jede Person mit ihrer Arbeit im System auflisten
 
 Listen Sie jede Person der Serviceorganisation mit dem auf, was sie jede Woche im System tut, und ordnen Sie dann die Lizenz nach den Regeln oben zu. Das mache ich im Rahmen von [Make-or-Buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/), bevor die Verhandlung beginnt.

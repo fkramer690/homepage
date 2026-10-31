@@ -103,7 +103,7 @@ Daraus folgen die Schnittstellen. Anlagen und Qualifikationen von Hand in Salesf
 
 Qualifikationen und Abwesenheiten sind Daten über Mitarbeitende. Klären Sie früh mit Datenschutz und, wo vorhanden, mit dem Betriebsrat, welche davon in Salesforce landen dürfen. Das gilt auch für die neuen Funktionen der App, die ich in [Field Service Mobile im Außendienst](../salesforce-field-service-mobile-aussendienst/) beschreibe.
 
-## Erster Schritt: die Fehleinsätze der letzten drei Monate auswerten
+## Die Fehleinsätze der letzten drei Monate auswerten
 
 Nehmen Sie die Fehleinsätze der letzten drei Monate in einer Region. Ordnen Sie jeden einer Ursache zu: Teile, Zugang, Qualifikation, Verfügbarkeit oder etwas anderes. Die Ursache mit den meisten Fehleinsätzen zeigt, welche Daten Sie zuerst sauber brauchen. Gibt es keine Liste der Fehleinsätze, ist auch das ein Ergebnis, denn dann fehlt die Messgröße, an der sich Field Service später messen lassen muss.
 

@@ -98,7 +98,7 @@ Aus meiner Sicht in drei Fällen:
 
 Trifft keiner davon zu, würde ich zuerst ASLM bewerten. Ein Hersteller bedeutet weniger Abstimmung, und es gibt kein zweites Managed Package, das zweimal im Jahr getestet werden muss.
 
-## Erster Schritt: die eigenen Asset-Abläufe auflisten
+## Die eigenen Asset-Abläufe auflisten
 
 1. **Listen Sie Ihre Asset-Abläufe auf**: Deckungsprüfung, Wartung, Kampagnen, Retouren, Depot.
 2. **Prüfen Sie, wo Ihre Ansprüche heute hängen**: am Servicevertrag, am Asset oder am Account.

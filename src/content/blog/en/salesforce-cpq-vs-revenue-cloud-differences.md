@@ -106,6 +106,6 @@ From this I draw three conclusions for a manufacturer:
 
 Whether the move pays off at all is a separate question, which I answer in [keep Salesforce CPQ or move to Revenue Cloud?](../keep-salesforce-cpq-or-revenue-cloud/).
 
-## First step: count rules, plugin lines and integrations
+## Count rules, plugin lines and integrations
 
 Count what you have: product rules, price rules, lines in the quote calculator plugin, quote templates, approval chains, open subscriptions and integrations that write to SBQQ objects. That list is the scope of the redesign. How the migration then runs in phases is described in [CPQ to Revenue Cloud migration](../cpq-to-revenue-cloud-migration-phases/) and in the masterclass chapter [from CPQ to Revenue Cloud](../../masterclass/revenue-cloud/from-cpq-to-revenue-cloud/).

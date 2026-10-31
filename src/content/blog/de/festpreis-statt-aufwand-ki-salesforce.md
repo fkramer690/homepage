@@ -89,7 +89,7 @@ Für das nächste Jahr sind drei Arbeitspakete geplant.
 
 Der Tagessatz bleibt gleich. Neu ist, dass der Partner mehr verdient, wenn er schneller arbeitet, statt Umsatz zu verlieren.
 
-## Erster Schritt: das Backlog nach Art der Arbeit sortieren
+## Das Backlog nach Art der Arbeit sortieren
 
 1. **Sortieren Sie das Backlog** in Pakete mit prüfbaren Abnahmekriterien, Discovery-Arbeit und laufende Änderungen. Jede Art bekommt ihr eigenes Modell.
 2. **Messen Sie eine Basislinie** für Durchlaufzeit und Nacharbeit, bevor Sie nachverhandeln, damit Sie auf Daten bepreisen statt auf Behauptungen.

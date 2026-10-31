@@ -116,7 +116,7 @@ contra: What the credits do not make up for
 
 If only a small group of power users needs AI features, ask whether that group can be licensed on its own instead of lifting all 200 users. These trade-offs are the core of my [make-or-buy and licence planning](../../services/make-or-buy-licences/).
 
-## First step: clean up the user base before the renewal
+## Clean up the user base before the renewal
 
 1. **Clean up the user base.** Decide who needs a full licence at all before you compare editions.
 2. **List features per user group** that exist only in Advanced or Max, and today's add-ons an edition would replace.

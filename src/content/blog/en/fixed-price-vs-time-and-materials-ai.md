@@ -89,7 +89,7 @@ Three work packages are planned for next year.
 
 The day rate stays the same. What changes is that the partner earns more by working faster instead of losing revenue.
 
-## First step: sort the backlog by type of work
+## Sort the backlog by type of work
 
 1. **Sort the backlog** into packages with testable acceptance criteria, discovery work and continuous change. Each type gets its own model.
 2. **Measure a baseline** of cycle time and rework before you renegotiate, so you price on data instead of claims.

@@ -97,7 +97,7 @@ With RFQ, the integrator puts the parts list into the cart and requests a quote 
 
 The numbers are invented to show the method. What I would measure in the first three months: share of quote requests through the store instead of email, response time, and share of approved quotes that become orders.
 
-## First step: set response time and price authority for the sales desk
+## Set response time and price authority for the sales desk
 
 Start with the sales desk, not the component. Write down the response time, the queue owners and the price authority, and test the round trip with one buyer group that already sends many quote requests. Then check the licence question for your product types with Salesforce, because Help and the Apex reference read differently.
 

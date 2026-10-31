@@ -104,7 +104,7 @@ Nehmen wir einen Maschinenbauer mit 90 Händlern, einem Agentforce-Serviceagente
 
 **Woche 11, eine Händlerbeschwerde.** Ein Händler sagt, ein Wettbewerber kannte seine Nettopreise. Wer hat seine Preisvereinbarung in den letzten 40 Tagen über MCP gelesen? Ohne täglichen Download gäbe es nur die Datei von gestern. Mit ihm liefert der Filter auf `SALESFORCE_HOSTED_MCP` drei Benutzer aus dem Händlermanagement, und die Untersuchung geht weiter.
 
-## Erster Schritt: Auditdaten und Tracing vor dem ersten Gespräch einschalten
+## Auditdaten und Tracing vor dem ersten Gespräch einschalten
 
 1. **Auditdatenerfassung und Tracing einschalten**, bevor das erste produktive Gespräch läuft. Nachträglich wird nichts befüllt.
 2. **Ein Log-Inventar schreiben**: beantwortete Frage, Verantwortliche, Leserechte, Aufbewahrung, Löschung.

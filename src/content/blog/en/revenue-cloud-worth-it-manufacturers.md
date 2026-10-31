@@ -94,7 +94,7 @@ For the 360 standard quotes a month, Revenue Cloud adds little. The price comes 
 
 My recommendation in such a case: first decide whether SAP stays the price master, then license only the project sales team. With 15 users on Advanced that is €36,000 a year at list price instead of six figures for the whole sales organisation. How the price master decision works is covered in [Customer prices: SAP conditions or Salesforce Pricing?](../customer-prices-sap-conditions-or-salesforce-pricing/).
 
-## First step: settle price master and invoice owner before choosing a partner
+## Settle price master and invoice owner before choosing a partner
 
 Partners will ask about features. The decisions that drive cost and timeline are different ones, and the company should own them:
 

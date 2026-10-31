@@ -99,7 +99,7 @@ Angenommen, ein Hersteller von Kompressoren betreibt einen B2B-Shop mit 60.000 E
 
 Mit dem Agenten fragt sie nach jeder ERP-Aktualisierung: "Stufe jedes Teil mit Vertriebsstatus ersetzt herab und hebe sein Nachfolgeteil hervor." Der Agent schlägt die Regeln vor, sie prüft eine Stichprobe und gibt frei. Einmal im Monat fragt sie nach den Suchen ohne Treffer und gibt fehlende alte Nummern als Synonyme oder Attribute an das PIM-Team. Die Suchseite davon beschreibe ich in [B2B-Shop-Suche: Ersatzteile über die Teilenummer finden](../b2b-shop-suche-teilenummer/).
 
-## Erster Schritt: Lizenz und enthaltene Skills klären
+## Lizenz und enthaltene Skills klären
 
 1. **Lizenz klären.** Fragen Sie, welche Skills der enthaltene Merchant Agent abdeckt und wie Nutzung gezählt wird.
 2. **Erst die Daten.** Sauberer Vertriebsstatus und Nachfolgeteil im ERP machen gute Boost-und-Bury-Bitten erst möglich.

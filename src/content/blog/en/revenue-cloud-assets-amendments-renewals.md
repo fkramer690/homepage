@@ -93,6 +93,6 @@ A year later the customer sells two machines and cancels monitoring for them. Th
 
 There are two ways out. Either you sell monitoring per machine, one line per serial number, which makes quotes longer and every change precise. Or you keep the quantity and maintain a separate list of covered machines, owned by inside service. I prefer one line per machine as long as a customer has no more than a few dozen machines, because the asset then answers the question that technicians and billing both ask. How such subscriptions are invoiced is covered in [maintenance contracts: recurring billing](../maintenance-contracts-recurring-billing/).
 
-## First step: list the products that live on after the order
+## List the products that live on after the order
 
 List the products you sell that live on after the order: subscriptions, service contracts, software licences, monitoring. For each one decide whether it is counted or tied to a serial number, who may amend and renew it, and which record Field Service uses. Write the decision into the ownership matrix before the first sprint on either cloud. The chapter [quote, contract, order](../../masterclass/revenue-cloud/quote-contract-order/) shows where assets sit between quote and SAP.

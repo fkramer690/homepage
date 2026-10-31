@@ -97,7 +97,7 @@ Mit RFQ legt der Integrator die Stückliste in den Warenkorb und fragt ein Angeb
 
 Die Zahlen sind erfunden, um die Methode zu zeigen. Was ich in den ersten drei Monaten messen würde: Anteil der Angebotsanfragen über den Shop statt per E-Mail, Antwortzeit und Anteil der freigegebenen Angebote, die zu Aufträgen werden.
 
-## Erster Schritt: Antwortzeit und Preiskompetenz im Innendienst festlegen
+## Antwortzeit und Preiskompetenz im Innendienst festlegen
 
 Starten Sie beim Innendienst, nicht bei der Komponente. Legen Sie Antwortzeit, Verantwortliche je Queue und Preiskompetenz fest und testen Sie den Kreislauf mit einer Käufergruppe, die heute schon viele Anfragen schickt. Klären Sie danach die Lizenzfrage für Ihre Produkttypen mit Salesforce, weil Hilfe und Apex-Referenz sich unterschiedlich lesen.
 

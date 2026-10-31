@@ -106,6 +106,6 @@ Meine Regel: Besteht Ihr Außendienst überwiegend aus Inbetriebnahmen und Revis
 
 Zwei Entscheidungen gehören in das Design, bevor ein Partner etwas baut. Die erste: Welches System hält den Projektplan mit Phasen und Terminen, und wie kommen die Termine an das Service Appointment? Die zweite: Wie schützen Disponenten lange Einsätze vor kurzen? Die Scheduling Policy aus [Wie viel Planung darf automatisch laufen?](../salesforce-field-service-terminplanung-automatisieren/) braucht dafür eine klare Regel. Wo die Architekturfrage über Field Service hinausgeht, beschreibe ich mein Vorgehen unter [Salesforce-Architektur](../../leistungen/salesforce-architektur/).
 
-## Erster Schritt: die letzten zehn Inbetriebnahmen auswerten
+## Die letzten zehn Inbetriebnahmen auswerten
 
 Nehmen Sie Ihre letzten zehn Inbetriebnahmen und notieren Sie Dauer, Teamgröße, Vorarbeiten und ob Partner beteiligt waren. Bleiben die meisten unter 30 Tagen und sind die Teams stabil, tragen mehrtägige Termine mit Crews die Planung. Laufen viele länger oder haben mehr als fünf verknüpfte Schritte, halten Sie den Projektplan außerhalb und nutzen Field Service für die Arbeit vor Ort.

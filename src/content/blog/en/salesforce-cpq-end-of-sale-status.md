@@ -102,6 +102,6 @@ A worked example: a machine builder with 60 CPQ users renews in spring 2027 and 
 
 No. The status removes the urgency, and I would use that time. Whether staying, moving or a third route fits depends on your processes, your pricing master and your budget, and I go through the criteria in [keep Salesforce CPQ or move to Revenue Cloud?](../keep-salesforce-cpq-or-revenue-cloud/). For manufacturers who are only now choosing a quoting system, CPQ is no longer an option at all. They compare Revenue Cloud, partner products and a custom approach, as described in [from quote to sales agreement](../quote-to-sales-agreement-product-configurator/).
 
-## First step: find the renewal date of your contracts
+## Find the renewal date of your contracts
 
 Find the renewal date of your CPQ and Billing contracts, list how many users and which customisations you have, and decide before the account team calls whether you want a short or a long term. The whole path from status to migration is laid out in the masterclass chapter [from CPQ to Revenue Cloud](../../masterclass/revenue-cloud/from-cpq-to-revenue-cloud/).

@@ -96,7 +96,7 @@ Here Advanced Pricing fits. List prices come from SAP into price books as today,
 
 Change one assumption: the manufacturer quotes machines in SAP and has no Revenue Cloud. Then I would price spare parts with price books for tiers and a live SAP call for the 30 key accounts, and not buy a pricing engine only for the store.
 
-## First step: write down your pricing logic and contract prices
+## Write down your pricing logic and contract prices
 
 Write down three things before you talk to Salesforce about licences: where your pricing logic lives today, who maintains contract prices, and whether you need Request for Quote or configured bundles in the store. If two of the three point to Salesforce, Advanced Pricing is worth a proof of concept with your real procedures. The licence question belongs in the same make-or-buy review I describe under [make-or-buy and licence forecasts](../../services/make-or-buy-licences/).
 

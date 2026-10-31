@@ -116,7 +116,7 @@ contra: Was die Credits nicht aufwiegen
 
 Braucht nur eine kleine Gruppe von Power-Usern KI-Funktionen, fragen Sie, ob sich diese Gruppe getrennt lizenzieren lässt, statt alle 200 Nutzer anzuheben. Genau diese Abwägungen gehören zu meiner Arbeit in [Make-or-buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/).
 
-## Erster Schritt: die Nutzerbasis vor der Verlängerung bereinigen
+## Die Nutzerbasis vor der Verlängerung bereinigen
 
 1. **Nutzerbasis bereinigen.** Klären Sie, wer überhaupt eine volle Lizenz braucht, bevor Sie Editionen vergleichen.
 2. **Funktionen pro Nutzergruppe auflisten,** die es nur in Advanced oder Max gibt, und heutige Add-ons, die eine Edition ersetzen würde.

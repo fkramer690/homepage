@@ -103,7 +103,7 @@ The interfaces follow from this table. Maintaining assets and skills by hand in 
 
 Skills and absences are data about employees. Agree early with data protection and, where there is one, the works council which of them may go into Salesforce. The same applies to the new app features I describe in [Field Service Mobile: guided flows and voice](../salesforce-field-service-mobile-guided-voice/).
 
-## First step: analyse the failed visits of the last three months
+## Analyse the failed visits of the last three months
 
 Take the failed visits of the last three months in one region. Assign each one a cause: parts, access, skills, availability or something else. The cause with the most failed visits shows which data you need clean first. If there is no list of failed visits, that is a result too: then the metric that Field Service will later have to be measured against is missing.
 

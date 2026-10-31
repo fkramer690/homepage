@@ -88,7 +88,7 @@ Salesforce hat sie so gebaut. Die [Metadaten IndustriesManufacturingSettings](ht
 
 Für die ersten drei Felder nennt die Seite keine eigene Version, nur die 47.0 der Komponente.
 
-Daraus folgen drei Dinge. Erstens sind Lizenz und aktive Funktion zwei verschiedene Sachen. Eine Org kann jahrelang für die Manufacturing Cloud zahlen und nur Sales Agreements nutzen. Zweitens hängen Funktionen voneinander ab: Das Programmgeschäft braucht laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/program-based-business-with-manufacturing-cloud/get-started-with-program-based-business) Advanced Account Forecasting, Data Pipelines und eigene Berechtigungssätze. Drittens sind die Schalter Metadaten. Sie gehören in die Versionsverwaltung und den Release-Prozess wie jede andere Einstellung, nicht in einen Klick in der Produktion.
+Lizenz und aktive Funktion sind zwei verschiedene Sachen. Eine Org kann jahrelang für die Manufacturing Cloud zahlen und nur Sales Agreements nutzen. Dazu hängen Funktionen voneinander ab: Das Programmgeschäft braucht laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/program-based-business-with-manufacturing-cloud/get-started-with-program-based-business) Advanced Account Forecasting, Data Pipelines und eigene Berechtigungssätze. Und die Schalter sind Metadaten. Sie gehören in die Versionsverwaltung und den Release-Prozess wie jede andere Einstellung, nicht in einen Klick in der Produktion.
 
 ## Manufacturing Cloud und Agentforce Manufacturing sind dasselbe Produkt
 

@@ -88,7 +88,7 @@ Salesforce built it that way. The [IndustriesManufacturingSettings metadata](htt
 
 For the first three fields the page gives no version of their own, only the component's 47.0.
 
-Three consequences follow. First, a licence and an active feature are two different things. An org can pay for Manufacturing Cloud for years and use only sales agreements. Second, features depend on each other: program-based business needs advanced account forecasting, Data Pipelines and its own permission sets, according to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/program-based-business-with-manufacturing-cloud/get-started-with-program-based-business). Third, the switches are metadata. They belong in version control and the release process like every other setting, not in a click in production.
+A licence and an active feature are two different things. An org can pay for Manufacturing Cloud for years and use only sales agreements. On top of that, features depend on each other: program-based business needs advanced account forecasting, Data Pipelines and its own permission sets, according to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/program-based-business-with-manufacturing-cloud/get-started-with-program-based-business). And the switches are metadata. They belong in version control and the release process like every other setting, not in a click in production.
 
 ## Manufacturing Cloud and Agentforce Manufacturing are the same product
 

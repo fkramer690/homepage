@@ -107,6 +107,6 @@ Der größere Kostenblock ist der Neuentwurf. Salesforce nennt drei bis sechs Mo
 
 Ein Rechenbeispiel: Ein Maschinenbauer hat 50 CPQ-Nutzer, 200 Produktregeln, ein Quote Calculator Plugin und eine CPQ-Verlängerung in neun Monaten. Die Preise kommen aus SAP, die Konfigurationsregeln teilweise aus der Konstruktion. Hier würde ich CPQ für zwei Jahre mit Option auf Parallelbetrieb verlängern, die Regeln jetzt aufräumen und einen Proof of Concept für die zehn wichtigsten Maschinen in Revenue Cloud bauen, bevor eine Migration beauftragt wird.
 
-## Erster Schritt: die CPQ-Org analysieren
+## Die CPQ-Org analysieren
 
 Analysieren Sie zuerst Ihre CPQ-Org: Zahl der Produkt- und Preisregeln, Umfang des Quote Calculator Plugins, Schnittstellen auf SBQQ-Objekte, offene Subscriptions und das Verlängerungsdatum. Legen Sie dann die Auslöser oben neben Ihre Roadmap für die nächsten zwei Jahre. Das Masterclass-Kapitel [von CPQ zu Revenue Cloud](../../masterclass/revenue-cloud/von-cpq-zu-revenue-cloud/) führt durch den ganzen Weg vom Status bis zur Migration.

@@ -117,6 +117,6 @@ Zu den Kosten: Die [Preisseite von Revenue Cloud](https://www.salesforce.com/eu/
 Was dieser Freemium-Zugang umfasst, steht auf der Preisseite nicht. Lassen Sie es sich schriftlich geben, bevor Ihr Design davon abhängt.
 ```
 
-## Erster Schritt: die fünf häufigsten Auftragsarten skizzieren
+## Die fünf häufigsten Auftragsarten skizzieren
 
 Nehmen Sie Ihre fünf häufigsten Auftragsarten und skizzieren Sie für jede, was nach der Unterschrift passiert: welches System, welches Team, in welcher Reihenfolge. Endet jede Skizze mit "den Rest macht SAP", beginnen Sie mit einer einfachen Schnittstelle. Sehen Sie mehrere Systeme und Abhängigkeiten, bilden Sie zuerst eine Auftragsart in DRO ab, samt Callout an SAP und Fallout-Queue, und testen Sie die Ablehnungen vor dem Normalfall. Das Kapitel [Angebot, Vertrag, Auftrag](../../masterclass/revenue-cloud/angebot-vertrag-auftrag/) zeigt, wo dieser Schritt im Gesamtprozess sitzt, und das Schnittstellendesign gehört zu meiner Arbeit bei [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).

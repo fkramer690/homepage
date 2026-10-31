@@ -98,6 +98,6 @@ Many manufacturers do not know it exactly, because a partner set up the store ye
 
 Write the result down with the number of custom components and the partner who built them. That one page is the basis for every later decision.
 
-## First step: identify your generation and check roadmap features
+## Identify your generation and check roadmap features
 
 Find out which generation you run and list the features on your roadmap for the next two years. Then check per feature whether Salesforce documents it for your store type. If nothing on the list needs a new generation, keep the store and invest in data and processes. If something does, plan the move with the [release planning for Salesforce releases](../../masterclass/devops-release-management/release-planning-salesforce-releases/) in mind, because a store migration should not collide with a major release. The cost side is covered in [chapter 1 of the B2B Commerce masterclass](../../masterclass/b2b-commerce/b2b-commerce-worth-it-overview/), the move itself in [chapter 5 on agents, migration and rollout](../../masterclass/b2b-commerce/agentforce-migration-rollout/), and the licence question for buyers in [B2B Commerce buyer licences](../b2b-commerce-buyer-licences/). Store architecture decisions like this are part of my [Salesforce architecture](../../services/salesforce-architecture/) work.

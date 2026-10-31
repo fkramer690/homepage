@@ -99,7 +99,7 @@ The curve therefore works as a basis for conversation, not as a diagnosis. In a 
 Do not show the change curve to the affected team and tell them they are now in the valley. It comes across as condescending and turns legitimate objections into a stage that will pass. The curve is a tool for managers, not a message to employees.
 ```
 
-## First step: plan for the valley
+## Plan for the valley
 
 Plan for the valley. If you know that morale and productivity drop after go-live, you can provide contacts, adjust targets for the first weeks and explain to management why the first figures look worse. Ask each group where it stands instead of choosing the same action for everyone. And connect the curve with a model that derives actions; the basics are in [What is change management?](../what-is-change-management/). In Salesforce programmes I do this together with Fabian Kramer, see [Salesforce change management consulting](../../services/change-management-salesforce/).
 

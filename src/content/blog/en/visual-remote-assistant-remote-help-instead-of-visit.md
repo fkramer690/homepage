@@ -89,7 +89,7 @@ Two numbers show after three months whether it works: the share of video session
 
 **Which faults may be closed remotely.** Write down which fault classes a video session may close without a visit report, and how the instruction given to the operator is documented on the case. If the operator follows a wrong instruction and damages the machine, you need to know what was said.
 
-## First step: sort last year's breakdowns by cause
+## Sort last year's breakdowns by cause
 
 ```schritte
 Tag the breakdowns

@@ -108,7 +108,7 @@ In the pilot, 15 dealers with many repeat orders get the Buyer Agent in the stor
 
 Only when these answers are reliable would I add a messaging channel such as WhatsApp, and only after Carter for Buyers is available would I let the agent close orders with payment. Fast reorders in the store itself are the topic of [reorders in B2B Commerce: templates, CSV, reorder](../b2b-commerce-reorder-order-templates/), and the back office side of agents in [Merchandising Agent: what it does for a parts catalog](../merchandising-agent-parts-catalog/).
 
-## First step: check the store without an agent
+## Check the store without an agent
 
 1. **Check the store first.** Buyer groups, entitlements, prices and order status must be correct without an agent. An agent makes errors in this data visible faster, it does not fix them.
 2. **Check the licences.** Service Cloud edition, Agentforce and Einstein for Service add-ons and Data 360 setup, as listed on Trailhead.

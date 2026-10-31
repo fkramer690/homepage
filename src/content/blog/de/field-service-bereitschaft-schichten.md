@@ -101,6 +101,6 @@ So würde ich es aufsetzen:
 
 Das Datenmodell ist klein. Der Aufwand liegt in der Abstimmung des Plans und darin, die Schichten jedes Quartal zu bestätigen.
 
-## Erster Schritt: die heutigen Bereitschaftsregeln aufschreiben
+## Die heutigen Bereitschaftsregeln aufschreiben
 
 Schreiben Sie Ihre heutigen Bereitschaftsregeln auf: wer wann Bereitschaft hat, für welche Kunden und welche Arten von Einsätzen. Prüfen Sie dann, ob Ihre Scheduling Policies zwischen geplanter Arbeit und Störungen unterscheiden. Wenn nicht, beheben Sie das zuerst, denn Extended-Schichten funktionieren nur über diese Unterscheidung. Wo Schichten in die Planung insgesamt passen, steht in [Kapitel 2 der Masterclass Field Service](../../masterclass/field-service/field-service-terminplanung-disposition/), lange Einsätze über mehrere Tage in [Mehrtägige Einsätze im Field Service](../field-service-mehrtaegige-einsaetze-inbetriebnahme/).

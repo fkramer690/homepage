@@ -103,7 +103,7 @@ The comparison often tips on point 3. A lean custom build for a plan versus actu
 
 One more point: anyone buying Manufacturing Cloud for the agents should check the data first. An agent that assesses warranty claims can only check against the asset and contract data behind it, as I explain in [Agentforce: business value and data quality first](../agentforce-business-value-data-quality-first/).
 
-## First step: ask your sales and service teams
+## Ask your sales and service teams
 
 Before a quote is on the table, three questions to your own sales and service teams help: what share of revenue runs through volume agreements? How are dealer bonuses calculated today? Who checks warranty claims, and how long does it take? The answers show sooner than a demo whether Manufacturing Cloud fits your business.
 

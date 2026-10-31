@@ -110,7 +110,7 @@ Anfragen nach neuen Produkten oder Preisen gehen einen anderen Weg. Sie landen b
 
 Cases sind im Portal der vertrauteste Teil. Hier hilft die Manufacturing Cloud mit Bezügen zu Aufträgen und Assets, die laut Hilfe zur Kundenlizenz gehören. Wie Garantieansprüche über Händler laufen, ist ein eigenes Thema in einem späteren Teil dieser Serie.
 
-## Erster Schritt: Funktionsliste gegen die Lizenz prüfen
+## Funktionsliste gegen die Lizenz prüfen
 
 Bevor das Portal gebaut wird, klären Sie diese Punkte:
 

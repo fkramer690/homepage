@@ -111,6 +111,6 @@ Eine Bestellung im Shop erzeugt in Salesforce eine Order Summary. Order Summarie
 
 Wem der Auftrag ab dann gehört, beschreibe ich in [Shop-Bestellungen ins ERP](../shop-bestellungen-erp-auftrag/), welche Daten zwischen Shop und SAP fließen, in [B2B Commerce und SAP](../b2b-commerce-sap-datenfluesse/). Wie Händler mit alten Bestellungen und Vorlagen schneller zum Checkout kommen, steht in [Nachbestellen im B2B-Shop](../nachbestellen-b2b-shop-vorlagen/).
 
-## Erster Schritt: bei der Buchhaltung fragen, wie Händler zahlen
+## Bei der Buchhaltung fragen, wie Händler zahlen
 
 Fangen Sie bei der Buchhaltung an, vor dem Shop-Design. Fragen Sie, wie jede Käufergruppe heute zahlt, welches System Kreditlimits und Auftragssperren führt und wie schnell es einen Live-Aufruf beantwortet. Wählen Sie danach die Komponente und schreiben Sie die validate-Logik mit ihrem Verhalten bei Zeitüberschreitung auf. Das Kapitel [Preise, Warenkorb, Checkout](../../masterclass/b2b-commerce/preise-warenkorb-checkout/) der [Masterclass B2B Commerce](../../masterclass/b2b-commerce/) stellt den Checkout neben die Entscheidungen zu Preisen und Nachbestellung, und die Schnittstellenarbeit hinter der Kreditprüfung gehört zu [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).

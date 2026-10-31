@@ -14,7 +14,7 @@ takeaways:
   - "Omnichannel Inventory holds a near real-time copy per location, but Salesforce says it does not replace the inventory system of record. The ERP stays master."
   - "A copy is fast and keeps the store running when SAP is down. Live is exact and returns a confirmed date, but SAP has to answer within the checkout."
   - "Dealers need a usable signal more than an exact quantity: in stock, on request, or a confirmed date. That also protects stock levels from competitors."
-  - "Both B2B editions include 20 inventory locations. Unified Omnichannel Inventory from Winter '27 is described for store and online stock and does not mention B2B."
+  - "Both B2B editions include 20 inventory locations. Unified Omnichannel Inventory (Winter '27) is described for store stock, B2B is not mentioned."
 faq:
   - q: "Where does Salesforce B2B Commerce get stock data from?"
     a: "By default from Omnichannel Inventory, a Salesforce service that holds availability per location and location group. With the inventory extension, the store can ask another source instead, for example SAP live."
@@ -115,6 +115,6 @@ Distributor stock is a separate topic again. Stock held at the distributor, and 
 
 The [Winter '27 highlights on Trailhead](https://trailhead.salesforce.com/content/learn/modules/winter-27-release-highlights/see-whats-new-marketing-commerce-revenue-management) list Unified Omnichannel Inventory: store and digital inventory in one real-time record, aimed at removing "ghost stock" and enabling pick-up in store. The description does not mention B2B. For a manufacturer with plants and warehouses rather than shops, I would check in a sandbox whether it changes anything before planning with it.
 
-## First step: decide the stock source per screen
+## Decide the stock source per screen
 
 Decide per screen which stock source applies: product list, product page, cart, checkout. Then define the three states for dealers, the update cycle of the copy and the fallback when SAP does not answer. How stock fits into the full interface list is described in [B2B Commerce and SAP: which data flows where](../b2b-commerce-sap-data-flows/), and the [ERP integration chapter of the masterclass](../../masterclass/b2b-commerce/erp-integration-stock-orders/) puts it into context. Reviewing such interfaces independently is part of my work on [Salesforce integration](../../services/salesforce-integration/).

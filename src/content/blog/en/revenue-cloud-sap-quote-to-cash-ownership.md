@@ -120,6 +120,6 @@ On one page, in a form that a new partner understands in ten minutes:
 
 Designing these interfaces is a large part of my work on [Salesforce integration](../../services/salesforce-integration/). The wider decision of whether Revenue Cloud fits at all is in the masterclass chapter [Revenue Cloud overview and decision](../../masterclass/revenue-cloud/revenue-cloud-overview/).
 
-## First step: settle the unclear rows with finance
+## Settle the unclear rows with finance
 
 List your quote-to-cash steps in one column and write SAP or Salesforce next to each, as things work today. Then mark the three rows where the answer is unclear: in most companies that is the price, the order and the invoice. Settle those three with finance before you ask partners for estimates, because each answer changes the scope by weeks.

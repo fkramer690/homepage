@@ -93,6 +93,6 @@ Ein Jahr später verkauft der Kunde zwei Maschinen weiter und kündigt die Über
 
 Es gibt zwei Auswege. Entweder Sie verkaufen die Überwachung pro Maschine, eine Position pro Seriennummer. Das macht Angebote länger und jede Änderung eindeutig. Oder Sie behalten die Menge und pflegen eine eigene Liste der abgedeckten Maschinen, verantwortet vom Innendienst. Ich bevorzuge eine Position pro Maschine, solange ein Kunde höchstens einige Dutzend Maschinen hat, weil das Asset dann die Frage beantwortet, die Technik und Abrechnung gleichermaßen stellen. Wie solche Abonnements abgerechnet werden, steht in [Wartungsverträge wiederkehrend abrechnen](../wartungsvertraege-wiederkehrend-abrechnen/).
 
-## Erster Schritt: Produkte auflisten, die nach dem Auftrag weiterleben
+## Produkte auflisten, die nach dem Auftrag weiterleben
 
 Listen Sie die Produkte auf, die nach dem Auftrag weiterleben: Abonnements, Serviceverträge, Softwarelizenzen, Überwachung. Entscheiden Sie für jedes, ob es gezählt oder an eine Seriennummer gebunden wird, wer Nachträge und Verlängerungen auslösen darf und welchen Datensatz Field Service nutzt. Halten Sie die Entscheidung in der Ownership-Matrix fest, bevor der erste Sprint in einer der beiden Clouds beginnt. Das Kapitel [Angebot, Vertrag, Auftrag](../../masterclass/revenue-cloud/angebot-vertrag-auftrag/) zeigt, wo Assets zwischen Angebot und SAP stehen.

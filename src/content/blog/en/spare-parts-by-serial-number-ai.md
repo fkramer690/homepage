@@ -105,7 +105,7 @@ Assume 1,500 parts questions a month, each with three actions: find the asset, g
 
 In the scenario, a pilot with ten technicians brings two findings. For machines delivered before 2016, PLM has only the type BOM, so the agent can name candidates but cannot confirm the variant; it has to say that, and the parts desk decides. And on 9 percent of the machines checked, consumed parts show an assembly replaced by a successor that the asset hierarchy does not reflect. Both are data problems. The decision in the scenario: technicians only, machines from 2016 onwards, and a monthly job that updates main assemblies from consumed parts.
 
-## First step: check 20 spare part orders by hand
+## Check 20 spare part orders by hand
 
 ```schritte
 Test by hand first

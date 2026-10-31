@@ -107,7 +107,7 @@ Ein Maschinenbauer hat drei Produktlinien. Zwei pflegen Anwendungstechniker in E
 
 Meine Empfehlung in diesem Fall: Die beiden Excel-Linien gehen in Constraint-Modelle, mit Tabellen-Constraints aus einem Custom-Objekt, Regressionsfällen pro Linie und einem benannten Verantwortlichen im Produktmanagement. Die SAP-Linie behält vorerst ihren Konfigurator. Salesforce erhält das konfigurierte Ergebnis über eine Schnittstelle, bepreist es und erstellt das Angebot. Nach einem Jahr kann der Hersteller entscheiden, ob die dritte Linie folgt, auf Basis des echten Pflegeaufwands statt Annahmen.
 
-## Erster Schritt: Regeln erfassen und eine Pilotfamilie wählen
+## Regeln erfassen und eine Pilotfamilie wählen
 
 1. **Erfassen Sie die Regeln**: wie viele, wo sie liegen, wer sie ändert und wie oft.
 2. **Wählen Sie eine Produktfamilie** als Pilot, am besten eine, deren Regeln in Excel liegen.
