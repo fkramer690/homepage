@@ -108,7 +108,7 @@ The questions that come up in almost every design:
 
 How I set up interfaces between ERP, middleware and Salesforce is described under [Salesforce integration](../../services/salesforce-integration/).
 
-## First step: fill in the table with objects, direction and frequency
+## Fill in the table with objects, direction and frequency
 
 1. **Fill in the table** with your objects, leading system, direction and frequency.
 2. **Decide actuals as orders or totals** before the first sales agreement goes live.

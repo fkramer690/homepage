@@ -105,7 +105,7 @@ contra: Was für den einfachen Bericht spricht
 
 Das Kapitel [Händler und Partnerkanal](../../masterclass/manufacturing-cloud/haendler-und-partnerkanal/) der Masterclass zeigt, wie Besuche neben Boni, Portalen und Ship and Debit stehen. Ob man eine solche Funktion kauft oder baut, gehört zu meiner Arbeit an [Make-or-Buy und Lizenzprognose](../../leistungen/make-or-buy-lizenzen/).
 
-## Erster Schritt: Kennzahlen mit Sollwert aufschreiben
+## Kennzahlen mit Sollwert aufschreiben, dann eine Region pilotieren
 
 1. **Kennzahlen.** Fünf Kennzahlen mit Definition, Datentyp und Sollwert pro Händlergruppe aufschreiben.
 2. **Lizenz und Offline.** Beides schriftlich bestätigen lassen, für den Außendienst und, falls geplant, für Händlermitarbeiter.

@@ -103,7 +103,7 @@ Per country it needs at least:
 
 How I plan the introduction of new processes on the client side is described under [Salesforce change management consulting](../../services/change-management-salesforce/). What each country needs is in [change management in a global Salesforce rollout](../change-management-global-salesforce-rollout/), the overview in [Salesforce change management: why rollouts fail](../change-management-salesforce-rollout/).
 
-## First step: put the goal in writing
+## Put the rollout goal in writing
 
 Before the first country is planned, settle these points:
 

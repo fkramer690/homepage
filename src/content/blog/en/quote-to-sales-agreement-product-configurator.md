@@ -101,7 +101,7 @@ I recommend approving the price once, on the quote, where the configuration and 
 
 When something changes later, such as a new variant or a new price during the term, the route repeats: configuration, quote, approval, agreement update. In my project, customers could also request new products and prices themselves through the customer portal. How the portal fits in is covered in a later part of this series.
 
-## First step: list the properties with a cost effect
+## List the properties with a cost effect
 
 Before the configurator is built or a product is chosen, settle these points:
 

@@ -109,7 +109,7 @@ contra: Zurückhaltend wäre ich, wenn
 
 Im zweiten Fall bringt das Datenmodell wenig. Ob sich die Manufacturing Cloud insgesamt lohnt, behandelt [Teil 1 der Serie](../manufacturing-cloud-wann-lohnt-sie-sich/).
 
-## Erster Schritt: Anlagendaten finden und nach Salesforce holen
+## Anlagendaten finden und nach Salesforce holen
 
 Bevor die erste Garantiebedingung angelegt wird, klären Sie diese Punkte:
 

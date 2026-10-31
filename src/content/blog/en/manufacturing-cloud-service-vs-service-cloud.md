@@ -103,6 +103,6 @@ contra: What you take on
 
 This is the same make-or-buy question as for the whole industry cloud, covered in [is Manufacturing Cloud worth it](../salesforce-manufacturing-cloud-is-it-worth-it/) and in the [scope and business case chapter](../../masterclass/manufacturing-cloud/scope-and-business-case/). I describe the approach under [make-or-buy and licence forecasts](../../services/make-or-buy-licences/).
 
-## First step: count the users per role for one region
+## Count the users per role for one region
 
 Count the users per role for one region: how many handle warranty claims, how many run campaigns, how many only take calls. Then ask for a quote with exactly that mix, including the Industries Service Excellence question and read access for Service Cloud users. The after-sales features themselves are in the [warranty and after-sales chapter](../../masterclass/manufacturing-cloud/warranty-and-after-sales/) of the Manufacturing Cloud masterclass.

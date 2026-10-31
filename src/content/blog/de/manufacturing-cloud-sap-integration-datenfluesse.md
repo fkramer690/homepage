@@ -108,7 +108,7 @@ Diese Fragen kommen in fast jedem Design:
 
 Wie ich Schnittstellen zwischen ERP, Middleware und Salesforce aufsetze, beschreibe ich unter [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).
 
-## Erster Schritt: Tabelle mit Objekten, Richtung und Takt füllen
+## Tabelle mit Objekten, Richtung und Takt füllen
 
 1. **Füllen Sie die Tabelle** mit Ihren Objekten, führendem System, Richtung und Takt.
 2. **Entscheiden Sie Ist-Mengen als Aufträge oder Summen**, bevor das erste Sales Agreement live geht.

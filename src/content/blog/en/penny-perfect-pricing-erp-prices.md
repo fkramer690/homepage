@@ -104,7 +104,7 @@ Assume a machine builder with a telesales desk of ten people takes spare parts o
 
 I would choose A when SAP answers fast and is reliably available, which is the more common case. I would look at B when the pricing logic is stable, condition changes are rare and the desk must keep working when SAP does not answer. Either way, SAP should decide the final invoice price, and the interface should flag any order where the two prices differ.
 
-## First step: count condition types and fix the price master
+## Count condition types and fix the price master
 
 1. **Count your condition types** and how often condition records change per week.
 2. **Write down the price master** and which price wins when Salesforce and SAP disagree.

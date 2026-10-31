@@ -103,6 +103,6 @@ contra: Was Sie dafür tragen
 
 Das ist dieselbe Make-or-Buy-Frage wie bei der ganzen Branchen-Cloud, beschrieben in [Manufacturing Cloud vs. Sales Cloud: Wann lohnt sie sich?](../manufacturing-cloud-wann-lohnt-sie-sich/) und im [Kapitel Einordnung und Business Case](../../masterclass/manufacturing-cloud/einordnung-und-business-case/). Mein Vorgehen beschreibe ich unter [Make-or-Buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/).
 
-## Erster Schritt: Nutzer pro Rolle für eine Region zählen
+## Nutzer pro Rolle für eine Region zählen
 
 Zählen Sie die Nutzer pro Rolle für eine Region: wie viele Garantieanträge bearbeiten, wie viele Kampagnen steuern, wie viele nur Anrufe annehmen. Fordern Sie dann ein Angebot mit genau diesem Mix an, einschließlich der Frage nach Industries Service Excellence und dem Lesezugriff für Service-Cloud-Nutzer. Die After-Sales-Funktionen selbst stehen im [Kapitel Garantie und After-Sales](../../masterclass/manufacturing-cloud/garantie-und-after-sales/) der Masterclass Manufacturing Cloud.

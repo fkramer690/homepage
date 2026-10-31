@@ -97,7 +97,7 @@ Nehmen wir einen Hersteller von Kompaktbaumaschinen mit 140 Händlern in 12 Län
 
 Der Verbrauch ist klein im Vergleich zu sechs Personen im Innendienst. Die Arbeit steckt in vier Monaten Katalog- und Preisdaten, offen bleibt die Lizenz für Partnerbenutzer.
 
-## Erster Schritt: einen Kanal wählen und den Katalog messen
+## Einen Kanal wählen und den Katalog messen
 
 ```schritte
 Einen Kanal zuerst wählen

@@ -103,7 +103,7 @@ Die saubere Trennung: Salesforce hält Ziel und Zielerreichung, das Vergütungss
 
 Auch der Sales-Planning-Agent arbeitet nicht mit Zielen. Welche Subagenten Salesforce dokumentiert, steht in [was der Vertriebsplanungs-Agent wirklich kann](../agentforce-vertriebsplanung-rahmenvertraege/). Wo Ziele neben Sales Agreements und Prognosen stehen, zeigt das Kapitel [Rahmenverträge und Prognosen](../../masterclass/manufacturing-cloud/rahmenvertraege-und-prognosen/) der Masterclass.
 
-## Erster Schritt: Hierarchie und Ebenen festlegen
+## Hierarchie und Ebenen mit Vertrieb und Controlling festlegen
 
 1. **Hierarchie.** Managerhierarchie oder Forecast-Hierarchie, und wer das Feld Manager pflegt.
 2. **Ebenen.** Eine Kundenebene, eine Produktebene, ein Periodentyp für Ziel, Prognose und Ist.

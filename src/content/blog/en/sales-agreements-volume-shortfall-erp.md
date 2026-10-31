@@ -119,7 +119,7 @@ Salesforce can sort customers by shortfall, put inventory and season next to it 
 
 I would not want to automate that step either. The reasons for a shortfall range from a weak season at the customer to a competitor who is cheaper right now, and no metric in the system knows them. If you want to put agents on this kind of data, check data quality first, as I describe in [Agentforce: business value and data quality first](../agentforce-business-value-data-quality-first/).
 
-## First step: decide the mode for actuals
+## Decide the actuals mode before the first agreement
 
 Before the first sales agreement goes live, settle these points:
 

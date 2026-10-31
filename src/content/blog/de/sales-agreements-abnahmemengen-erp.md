@@ -119,7 +119,7 @@ Salesforce kann Kunden nach Abweichung sortieren, Lager und Saison danebenstelle
 
 Ich würde diesen Schritt auch nicht automatisieren wollen. Die Gründe für einen Rückstand reichen von einer schwachen Saison beim Kunden bis zu einem Wettbewerber, der gerade billiger liefert, und keine Kennzahl im System kennt sie. Wer Agenten auf solche Daten ansetzen möchte, sollte zuerst die Datenqualität prüfen, wie ich in [Agentforce: Business Value und Datenqualität zuerst](../agentforce-business-value-datenqualitaet/) beschreibe.
 
-## Erster Schritt: Modus für die Ist-Mengen festlegen
+## Modus für die Ist-Mengen vor dem ersten Agreement festlegen
 
 Bevor das erste Sales Agreement produktiv angelegt wird, klären Sie diese Punkte:
 

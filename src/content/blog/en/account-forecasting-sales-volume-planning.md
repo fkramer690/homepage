@@ -116,7 +116,7 @@ contra: I would hold back
 
 In the last case the company pays for a feature that cannot work with its own data. Whether Manufacturing Cloud pays off as a whole is covered in [part 1 of this series](../salesforce-manufacturing-cloud-is-it-worth-it/).
 
-## First step: settle order history and scope
+## Settle order history and scope before the first forecast set
 
 Before the first forecast set is configured, settle these points:
 

@@ -101,7 +101,7 @@ Ich rate dazu, den Preis einmal freizugeben, am Angebot, wo die Konfiguration un
 
 Ändert sich später etwas, etwa eine neue Variante oder ein neuer Preis während der Laufzeit, wiederholt sich der Weg: Konfiguration, Angebot, Freigabe, Anpassung des Agreements. In meinem Projekt konnten Kunden neue Produkte und Preise auch selbst über das Kundenportal anfragen. Wie das Portal dazu passt, behandelt ein späterer Teil dieser Serie.
 
-## Erster Schritt: Eigenschaften mit Kostenwirkung auflisten
+## Eigenschaften mit Kostenwirkung auflisten
 
 Bevor der Konfigurator gebaut oder ein Produkt ausgewählt wird, klären Sie diese Punkte:
 

@@ -105,7 +105,7 @@ contra: What speaks for the simple report
 
 The chapter on the [dealer and partner channel](../../masterclass/manufacturing-cloud/dealer-and-partner-channel/) shows how visits sit next to rebates, portals and ship and debit. Whether to buy or build such a feature is part of my [make-or-buy and licence forecasts](../../services/make-or-buy-licences/).
 
-## First step: write down the KPIs with expected values
+## Write down KPIs with expected values, then pilot one region
 
 1. **KPIs.** Write down five KPIs with definition, data type and expected value per dealer group.
 2. **Licence and offline.** Get both confirmed in writing for reps and, if planned, dealer staff.

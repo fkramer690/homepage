@@ -109,7 +109,7 @@ contra: I would hold back when
 
 In the second case the data model adds little. Whether Manufacturing Cloud pays off as a whole is covered in [part 1 of this series](../salesforce-manufacturing-cloud-is-it-worth-it/).
 
-## First step: find the asset data and bring it into Salesforce
+## Find the asset data and bring it into Salesforce
 
 Before the first warranty term is created, settle these points:
 

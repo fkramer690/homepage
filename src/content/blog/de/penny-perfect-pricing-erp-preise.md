@@ -104,7 +104,7 @@ Angenommen, ein Maschinenbauer nimmt mit einem Telesales-Team von zehn Personen 
 
 Ich würde A wählen, wenn SAP schnell antwortet und zuverlässig erreichbar ist, und das ist der häufigere Fall. B würde ich prüfen, wenn die Preislogik stabil ist, sich Konditionen selten ändern und das Team weiterarbeiten muss, wenn SAP nicht antwortet. In beiden Fällen sollte SAP den endgültigen Rechnungspreis bestimmen, und die Schnittstelle sollte jeden Auftrag markieren, bei dem die beiden Preise abweichen.
 
-## Erster Schritt: Konditionsarten zählen und Preis-Master festlegen
+## Konditionsarten zählen und Preis-Master festlegen
 
 1. **Zählen Sie Ihre Konditionsarten** und wie oft sich Konditionssätze pro Woche ändern.
 2. **Halten Sie den Preis-Master fest** und welcher Preis gilt, wenn Salesforce und SAP abweichen.

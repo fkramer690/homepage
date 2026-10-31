@@ -107,7 +107,7 @@ Die Regel daraus gilt hier genauso: Eine Funktion wird gekauft, wenn sie zum Ges
 
 Zurückhaltend wäre ich bei einem einfachen Jahresbonus für wenige Kunden. Den können viele ERP-Systeme über Konditionen abrechnen, ohne eine zweite Logik in Salesforce. Boni belohnen Menge; Preisansprüche von Distributoren sind ein anderer Prozess, siehe [Ship and Debit](../ship-and-debit-preisschutz-haendler/). Ob sich die Manufacturing Cloud insgesamt lohnt, behandelt [Teil 1 der Serie](../manufacturing-cloud-wann-lohnt-sie-sich/).
 
-## Erster Schritt: jede Formel der heutigen Tabelle aufschreiben
+## Jede Formel der heutigen Bonustabelle als Regel aufschreiben
 
 Bevor das erste Programm angelegt wird, klären Sie diese Punkte:
 

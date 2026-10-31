@@ -103,7 +103,7 @@ Pro Land gehört mindestens dazu:
 
 Wie ich die Einführung neuer Prozesse auf Kundenseite plane, beschreibe ich unter [Change Management Beratung für Salesforce](../../leistungen/change-management/). Was pro Land dazugehört, steht in [Change Management im weltweiten Salesforce-Rollout](../change-management-weltweiter-rollout/), der Überblick in [Salesforce Change Management: warum Einführungen scheitern](../change-management-salesforce-einfuehrung/).
 
-## Erster Schritt: das Ziel schriftlich festlegen
+## Das Ziel des Rollouts schriftlich festlegen
 
 Bevor das erste Land geplant wird, klären Sie diese Punkte:
 

@@ -107,7 +107,7 @@ The rule from that applies here too: you buy a feature when it fits the business
 
 I would hold back with a simple annual bonus for a few customers. Many ERP systems can settle that through pricing conditions, without a second logic in Salesforce. Rebates reward volume; price claims from distributors are a different process, see [ship and debit](../ship-and-debit-price-protection-distributors/). Whether Manufacturing Cloud pays off as a whole is covered in [part 1 of this series](../salesforce-manufacturing-cloud-is-it-worth-it/).
 
-## First step: write down every formula in the current spreadsheet
+## Write every formula in the current rebate spreadsheet down as a rule
 
 Before the first programme is created, settle these points:
 

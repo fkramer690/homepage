@@ -116,7 +116,7 @@ contra: Zurückhaltend wäre ich
 
 Im letzten Fall zahlt das Unternehmen für eine Funktion, die mit den eigenen Daten nicht arbeiten kann. Ob sich die Manufacturing Cloud insgesamt lohnt, behandelt [Teil 1 der Serie](../manufacturing-cloud-wann-lohnt-sie-sich/).
 
-## Erster Schritt: Auftragshistorie und Zuschnitt klären
+## Auftragshistorie und Zuschnitt vor dem ersten Forecast Set klären
 
 Bevor das erste Forecast Set konfiguriert wird, klären Sie diese Punkte:
 

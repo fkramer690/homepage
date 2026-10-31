@@ -10,10 +10,9 @@ categories: [revenue-cloud, architecture]
 contactBrief: integration
 tags: [Revenue Cloud, SAP, Konditionen, Salesforce Pricing, Schnittstellen, Preisführung]
 takeaways:
-  - "Jede Preisart braucht genau ein führendes System. Rechnen SAP und Salesforce denselben Nettopreis, laufen sie auseinander, und die Differenz landet im Vertriebsinnendienst."
-  - "Weg A: SAP rechnet, Salesforce fragt den Nettopreis per API ab. Der MuleSoft Accelerator for SAP beschreibt das mit der SAP-Auftragssimulation für Salesforce CPQ, nicht für Revenue Cloud."
-  - "Weg B baut SAP-Konditionen in Revenue Cloud nach, mit Preisbüchern, Staffeln, Vertragspreisen und Decision Tables. Die Preisfindung ist schnell und nachvollziehbar, aber SAP muss aufhören, denselben Preis zu rechnen."
-  - "Weg C lädt Listenpreise aus SAP und rechnet Rabatte in Salesforce Pricing. Das passt, wenn der Vertrieb Rabatte wirklich pro Geschäft entscheidet."
+  - "Rechnen SAP und Salesforce denselben Nettopreis, laufen sie auseinander, und die Differenz landet im Vertriebsinnendienst."
+  - "Der MuleSoft Accelerator for SAP beschreibt die SAP-Auftragssimulation für Salesforce CPQ, nicht für Revenue Cloud."
+  - "Weg B rechnet schnell und nachvollziehbar, aber nur, wenn SAP aufhört, denselben Preis zu rechnen."
   - "Preise, die auch für Aufträge per EDI, Telefon oder Shop ohne Salesforce gelten, sollten in SAP bleiben."
 faq:
   - q: "Sollen Kundenpreise in SAP oder in Salesforce berechnet werden?"
@@ -100,14 +99,12 @@ Sales Agreements in Manufacturing Cloud planen Mengen je Periode und tragen eine
 
 Der B2B-Shop muss denselben Preis zeigen wie das Angebot. Wie Preisbücher und ein Live-Aufruf ins ERP dort funktionieren, steht in [Kundenpreise in B2B Commerce](../kundenpreise-b2b-commerce-preisbuecher-erp/) und im Kapitel [Preise, Warenkorb und Checkout](../../masterclass/b2b-commerce/preise-warenkorb-checkout/). Dasselbe gilt für KI-erstellte Händlerangebote, siehe [KI-Angebote für Händler mit dem Partner Sales Assistant](../ki-angebote-haendler-partner-sales-assistant/).
 
-## Ein typisches Szenario, als Annahme
+## Rechenbeispiel: Förderanlagen mit 200 Händlern
 
-Ein Hersteller von Förderanlagen verkauft Maschinen über den Direktvertrieb und Ersatzteile über 200 Händler. SAP hält Listenpreise je Land, Händlerrabatte je Materialgruppe und Kundenpreise für 30 Großkunden. Maschinenangebote haben 20 bis 80 Positionen und werden in der Konfiguration oft neu berechnet. Händler bestellen Ersatzteile außerdem per EDI.
+Angenommen, ein Hersteller von Förderanlagen verkauft Maschinen über den Direktvertrieb und Ersatzteile über 200 Händler. SAP hält Listenpreise je Land, Händlerrabatte je Materialgruppe und Kundenpreise für 30 Großkunden. Maschinenangebote haben 20 bis 80 Positionen und werden in der Konfiguration oft neu berechnet. Händler bestellen Ersatzteile außerdem per EDI.
 
 Ich würde nach Preisart trennen. Für Maschinen Weg C: Listenpreise jede Nacht aus SAP, Rabatte und Freigaben in Revenue Cloud, und SAP übernimmt den Auftragspreis als festen Preis. Für Ersatzteile Weg A: Händlerrabatte und Großkundenpreise bleiben in SAP, weil sie auch für EDI-Aufträge gelten, und Salesforce fragt SAP nach dem Nettopreis, wenn das Angebot vor dem Versand geprüft wird. Ein führendes System je Preisart, festgehalten in der [Object Ownership Matrix](../object-ownership-matrix-salesforce/).
 
-## Wo fangen Sie an?
+## Preisarten auflisten und je Preisart das führende System festlegen
 
 Listen Sie Ihre Preisarten auf: Listenpreis, Händlerrabatt, Kundenpreis, Vertragspreis, Aktion, Frachtzuschlag. Notieren Sie für jede, wo sie heute gepflegt wird, wer sie ändert, wie oft, und ob sie auch für Aufträge gilt, die nicht aus Salesforce kommen. Die letzte Frage entscheidet meistens: Preise, die für EDI-, Telefon- oder Shop-Aufträge ohne Salesforce gelten, bleiben in SAP. Die Aufteilung von Quote-to-Cash zwischen den Systemen behandelt [Revenue Cloud und SAP: Wer führt was?](../revenue-cloud-sap-quote-to-cash-aufteilung/), den Zusammenhang das Kapitel [Katalog, Konfigurator, Preise](../../masterclass/revenue-cloud/produktkatalog-konfigurator-preise/) der Masterclass Revenue Cloud. Die Schnittstelle selbst zu entwerfen, gehört zu meiner Arbeit an [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).
-
-Legen Sie je Preisart fest, welches System rechnet, und lassen Sie das andere fragen.

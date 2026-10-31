@@ -97,7 +97,7 @@ Assume a maker of compact construction machinery with 140 dealers in 12 countrie
 
 The consumption is small next to six people on a desk. The work sits in four months of catalogue and price data, and the open item is the licence for partner users.
 
-## First step: pick one channel and measure the catalogue
+## Pick one channel and measure the catalogue
 
 ```schritte
 Pick one channel first

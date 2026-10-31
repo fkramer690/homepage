@@ -103,7 +103,7 @@ The clean split: Salesforce holds the target and the attainment, the compensatio
 
 The Sales Planning agent does not work on targets either. Which subagents Salesforce documents is in [what the Sales Planning agent really does](../agentforce-sales-planning-agreements-forecasts/), and the wider chapter on [agreements and forecasting](../../masterclass/manufacturing-cloud/agreements-and-forecasting/) shows where targets fit next to sales agreements and forecasts.
 
-## First step: fix the hierarchy and the levels
+## Fix hierarchy and levels with sales and controlling
 
 1. **Hierarchy.** Manager hierarchy or forecasts hierarchy, and who keeps the Manager field correct.
 2. **Levels.** One customer level, one product level, one period type for targets, forecasts and actuals.

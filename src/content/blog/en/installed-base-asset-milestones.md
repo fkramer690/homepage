@@ -98,7 +98,7 @@ Assets, milestones, participants and fleets are shared ground. Maintenance plans
 
 Two add-ons often come up here. According to the [add-ons page](https://www.salesforce.com/manufacturing/cloud/pricing/add-ons/), Connected Assets costs $15,000 per org and month and brings telemetry; Asset Service Lifecycle Management costs $75 per user and month and comes with Field Service editions. Neither is needed for a clean installed base. Whether telemetry pays off is covered in [predictive maintenance in Salesforce](../predictive-maintenance-salesforce-data-needed/).
 
-## First step: count the gaps in last year's claims
+## Count the gaps in last year's warranty claims
 
 ```schritte
 Count the gaps
