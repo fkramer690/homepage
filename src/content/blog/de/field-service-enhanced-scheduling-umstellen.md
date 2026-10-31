@@ -9,11 +9,11 @@ topic: field-service
 categories: [field-service]
 tags: [Field Service, Enhanced Scheduling, Optimierung, Scheduling Console, Disposition]
 takeaways:
-  - "Neue Salesforce-Orgs haben Enhanced Scheduling and Optimization standardmäßig für alle Servicegebiete aktiv. Bestehende Orgs können alle Gebiete auf einmal oder Gebiet für Gebiet umstellen."
-  - "Die neue Engine hebt Limits an, die in der Fertigung zählen: 250 Skills pro Serviceressource statt 100 und 50.000 optimierte Termine pro rollierenden 24 Stunden oder 500 pro Scheduling-Lizenz, je nachdem, was höher ist."
-  - "Scheduling Recipes gibt es mit der neuen Engine nicht mehr, Salesforce verweist auf den Flow Fix Schedule Overlaps. Optimization Insights wird durch den Optimization Hub ersetzt."
-  - "Mehrere Work Rules behandeln leere Felder anders, und ein Termin ohne Servicegebiet bekommt Kandidaten aus allen Gebieten. Die Datenqualität entscheidet, wie glatt der Wechsel läuft."
-  - "Die neue Scheduling Console gibt es nur mit Enhanced Scheduling and Optimization. Die Entscheidung über die Engine entscheidet also auch über den Bildschirm der Disponenten."
+  - "Neue Orgs haben Enhanced Scheduling and Optimization für alle Servicegebiete aktiv. Bestehende Orgs stellen alle Gebiete auf einmal oder einzeln um."
+  - "Die neue Engine erlaubt 250 statt 100 Skills pro Ressource und 50.000 optimierte Termine pro 24 Stunden oder 500 pro Scheduling-Lizenz."
+  - "Scheduling Recipes entfallen, Salesforce verweist auf den Flow Fix Schedule Overlaps. Optimization Insights wird zum Optimization Hub."
+  - "Mehrere Work Rules behandeln leere Felder anders, und ein Termin ohne Servicegebiet bekommt Kandidaten aus allen Gebieten."
+  - "Die neue Scheduling Console gibt es nur mit der neuen Engine. Damit entscheidet die Engine auch über den Bildschirm der Disponenten."
 faq:
   - q: "Was ist Enhanced Scheduling and Optimization in Salesforce Field Service?"
     a: "Es ist die neuere Planungs- und Optimierungs-Engine von Field Service. Sie verteilt Termine wie die ältere Engine nach Scheduling Policy auf Techniker, hat aber höhere Limits, behandelt einige Work Rules anders und rechnet Fahrzeiten punktgenau vorausschauend. Neue Orgs haben sie standardmäßig aktiv."
@@ -36,7 +36,7 @@ Die [Release Notes zu Summer '23](https://resources.docs.salesforce.com/244/late
 
 Offen ist die Frage also nur für Orgs, die mit der älteren Engine live gegangen sind. Für sie ändert sich nichts von selbst. Die Engine läuft weiter wie bisher, bis jemand den Wechsel beschließt, und ohne Frist wird diese Entscheidung gern verschoben.
 
-## Welche Limits ändern sich mit dem Wechsel?
+## Höhere Limits für Skills und optimierte Termine
 
 Die [Limits für Enhanced Scheduling and Optimization](https://help.salesforce.com/s/articleView?id=sf.pfs_enhanced_available_limits.htm&language=en_US&type=5) in der Salesforce-Hilfe nennen die Zahlen. Für Maschinen- und Anlagenbauer zählen diese:
 
@@ -76,15 +76,15 @@ Die meisten Punkte haben eines gemeinsam: leere Felder. Ein Termin ohne Serviceg
 
 Eine Änderung hilft Herstellern direkt. Termine, die gegen eine Regel verstoßen, konnte die ältere Engine nicht optimieren. Mit der neuen Engine kann die Optimierung für sie einen vertretbaren Termin finden oder sie aus dem Plan nehmen.
 
-## Warum entscheidet der Wechsel auch über die Dispositionskonsole?
+## Die neue Scheduling Console gibt es nur mit der neuen Engine
 
 Salesforce hat inzwischen zwei Oberflächen für Disponenten: die Classic Dispatch Console mit dem bekannten Gantt und die neue Scheduling Console. Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/scheduling-console-quick-look/didispatch-smarter-with-the-scheduling-console) ist die Scheduling Console nur mit Enhanced Scheduling and Optimization verfügbar.
 
 Damit hängen zwei Entscheidungen zusammen, die getrennt aussehen. Eine Org, die bei der älteren Engine bleibt, bleibt auch bei der Classic Dispatch Console. Neue Funktionen der Konsole, etwa KI-Erklärungen zu vorgeschlagenen Terminen oder mehrtägige Einsätze, die Winter '27 als einen zusammenhängenden Auftrag zeigt, bleiben dann außer Reichweite. Ob Ihre Disponenten jetzt wechseln sollten, behandle ich in [Scheduling Console im Field Service: Disponenten umstellen?](../field-service-scheduling-console-disponenten/).
 
-## Ein typisches Szenario, als Annahme: erst ein Pilotgebiet
+## Rechenbeispiel: erst ein Pilotgebiet
 
-Ein typisches Szenario, als Annahme: Ein Maschinenbauer hat 45 Techniker in fünf Servicegebieten, Field Service läuft seit 2021 mit der älteren Engine, dazu vier Disponenten und zwei Scheduling Recipes für verspätete Termine. Alle Zahlen sind Annahmen, um die Methode zu zeigen.
+Die Zahlen sind angenommen. Ein Maschinenbauer hat 45 Techniker in fünf Servicegebieten, Field Service läuft seit 2021 mit der älteren Engine, dazu vier Disponenten und zwei Scheduling Recipes für verspätete Termine. Alle Zahlen sind Annahmen, um die Methode zu zeigen.
 
 ```schritte
 Datenprüfung | 2 Wochen
@@ -99,8 +99,6 @@ Vergleich
 
 Die Konfiguration dafür, also die Einstellung pro Gebiet, Scheduling Policies und Work Rules, besteht aus Datensätzen, nicht aus Metadaten. Sie gehört in die Pipeline, wie im Kapitel [Daten und Konfiguration](../../masterclass/devops-release-management/daten-und-konfiguration/) der DevOps-Masterclass beschrieben, sonst laufen getesteter Sandbox-Stand und Produktion auseinander.
 
-## Wo fangen Sie an?
+## Erster Schritt: Termine ohne Gebiet, Work Rules und Recipes auflisten
 
 Fangen Sie mit drei Listen an: Termine ohne Servicegebiet, Work Rules, die häufig leere Felder lesen, und genutzte Recipes. Sie zeigen, wie viel Arbeit der Wechsel macht. Wählen Sie dann das Gebiet mit den saubersten Daten als Pilot. Wie die Engine in die gesamte Disposition passt, steht im Masterclass-Kapitel [Terminplanung und Disposition](../../masterclass/field-service/field-service-terminplanung-disposition/).
-
-Für eine Org mit der älteren Engine ist der Wechsel fällig, sobald die Daten sauber sind, weil die neue Konsole und die höheren Limits nur mit ihm kommen.

@@ -9,11 +9,10 @@ topic: field-service
 categories: [field-service]
 tags: [field service, KPIs, first-time fix, Operations Home, rollout, analytics]
 takeaways:
-  - "After go-live, Field Service has to move the numbers from the business case: jobs per technician and day, travel share, first-time fix rate, response times met and arrivals within the window."
-  - "The share of engine proposals that dispatchers change before release shows whether data and scheduling policy fit. Salesforce does not deliver it ready-made."
-  - "Operations Home shows 12 KPIs, Field Service Intelligence five dashboards with more than 30 KPIs. Both run on Data 360 and need to be licensed."
-  - "First-time fix needs a written definition before any dashboard: time window, same asset, same fault code and which planned follow-up visits do not count."
-  - "Without a baseline from the old system, measured over three months with the same definitions, nobody can say after go-live whether Field Service helped."
+  - "I also measure how often dispatchers change the engine's proposals before release. It shows whether data and scheduling policy fit."
+  - "Operations Home shows 12 KPIs, Field Service Intelligence five dashboards with more than 30. Both run on Data 360 and need licences."
+  - "First-time fix needs a written definition: time window, same asset, same fault code and which follow-up visits do not count."
+  - "Without a baseline from the old system, measured over three months with the same definitions, nobody can say whether Field Service helped."
 faq:
   - q: "Which KPIs matter after a Field Service go-live?"
     a: "I use six: jobs per technician and day, share of travel time, first-time fix rate, response times met, arrivals within the arrival window and the share of engine proposals dispatchers change before release. They match the business case."
@@ -45,7 +44,7 @@ Two of these come almost for free. The service appointment object has fields for
 
 The dispatcher change rate takes some effort, and it is the most useful number in the first months. In [how much scheduling should be automatic](../salesforce-field-service-scheduling-automation/) I recommend having dispatchers note why they change a proposal. A picklist with the reason on the appointment turns that into a report. A high rate means missing data or a policy that does not fit, and the reasons show which one.
 
-## What do Operations Home and Field Service Intelligence provide?
+## Operations Home and Field Service Intelligence run on Data 360
 
 Salesforce sells Field Service today as Field Service and Operations, and its analytics come in two parts. According to the [Salesforce blog of September 2025](https://www.salesforce.com/blog/how-to-transform-field-service-operations-with-agentic-analytics/):
 
@@ -62,7 +61,7 @@ Have your account team confirm which line items your edition needs for Operation
 
 My view: the ready-made views are worth it once the definitions are agreed and Data 360 is in place anyway. For the first wave, standard reports on service appointments and work orders cover the business case numbers.
 
-## Why does first-time fix need a definition first?
+## First-time fix needs a definition first
 
 Because a KPI name is not a formula. Operations Home shows a first-time fix rate. Whether it matches what your service manager means is something you have to check. I write down five decisions:
 
@@ -80,9 +79,9 @@ Measure three months before go-live with the same definitions you will use after
 
 Then compare per region and per wave. The [rollout in waves](../salesforce-field-service-rollout/) gives you a natural control group: regions that are not live yet still run on the old process. If a live region improves and a waiting region stays flat, the change comes from Field Service and not from a quiet season.
 
-## A typical scenario, as an assumption: baseline and the first wave
+## Worked example: baseline and the first wave
 
-A typical scenario, as an assumption: a component maker with 90 technicians in three regions, SAP as ERP and a rollout in three waves. All numbers are assumptions.
+Assume a component maker with 90 technicians in three regions, SAP as ERP and a rollout in three waves.
 
 **Baseline, three months from SAP service orders and timesheets.** 2.1 jobs per technician and day, 38 percent travel share, 71 percent first-time fix (14 days, same asset, same fault code), 84 percent of breakdowns within the committed response time.
 
@@ -96,7 +95,7 @@ Someone in the business, not the project. I would give the definitions to the he
 
 If you add Field Service agents later, measure them separately with their own KPIs, as described in [Agentforce KPIs after go-live](../agentforce-kpis-after-go-live/). An agent that books maintenance visits changes jobs per day only indirectly.
 
-## Where should you start?
+## First step: at most six KPIs from the business case
 
 ```schritte
 Pick the KPIs
@@ -111,6 +110,4 @@ Review monthly per region
   Tie every outlier to a data or process fix.
 ```
 
-How the KPIs fit into rollout and operations is covered in the [Field Service masterclass chapter on AI agents, rollout and operations](../../masterclass/field-service/field-service-ai-agents-rollout/).
-
-Field Service proves itself in six numbers you defined before go-live, and a dashboard only shows them.
+Since the baseline takes three months, measuring starts three months before go-live at the latest. How the KPIs fit into rollout and operations is covered in the [Field Service masterclass chapter on AI agents, rollout and operations](../../masterclass/field-service/field-service-ai-agents-rollout/).

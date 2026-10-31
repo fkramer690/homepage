@@ -9,9 +9,9 @@ topic: revenue
 categories: [manufacturing-cloud]
 tags: [Manufacturing Cloud, Channel Revenue Management, Ship and Debit, Preisschutz, Distributoren]
 takeaways:
-  - "Ship and Debit gleicht einem Distributor aus, dass er an einen benannten Endkunden unter seinem eigenen Einkaufspreis verkauft, zu einem vereinbarten Sonderpreis. Die Differenz fordert er beim Hersteller ein."
-  - "Channel Revenue Management prüft Ansprüche gegen Programmregeln, Sonderpreiskonditionen und Transaktionsdaten und markiert Dubletten, falsche Mengen und nicht berechtigte Verkäufe."
-  - "Channel Revenue Management for Manufacturing steht als Add-on mit 30.000 Dollar pro Org und Jahr in der Liste. Partnerzugang kostet extra, eine andere Salesforce-Seite nennt Rebate Management ab 75 Dollar ohne Einheit."
+  - "Bei Ship and Debit verkauft der Distributor einem benannten Endkunden unter seinem Einkaufspreis und fordert die Differenz beim Hersteller ein."
+  - "Channel Revenue Management prüft Ansprüche gegen Programmregeln und Transaktionsdaten und markiert Dubletten, falsche Mengen und unberechtigte Verkäufe."
+  - "Channel Revenue Management for Manufacturing steht mit 30.000 Dollar pro Org und Jahr in der Preisliste. Partnerzugang kostet extra."
   - "Boni belohnen Menge über einen Zeitraum. Ship and Debit und Preisschutz gleichen Preise aus, pro Geschäft oder bei sinkenden Listenpreisen."
   - "Ohne Abverkaufsdaten und Distributorbestand prüft die Validierung Belege, nicht Verkäufe. Genau dort entstehen Überzahlungen."
 faq:
@@ -59,7 +59,7 @@ Flows steuern Einreichung und Freigabe, die Data Processing Engine verarbeitet g
 
 Die Zahlung bleibt, wo sie heute ist. Salesforce rechnet und gibt frei, die Gutschrift bucht das ERP. Das ist dieselbe Aufteilung wie beim [Rebate Management](../rebate-management-haendlerboni/), und die Schnittstelle, die freigegebene Beträge nach SAP bringt, sollte gleich mitgeplant werden.
 
-## Was kostet Channel Revenue Management?
+## Channel Revenue Management kostet 30.000 Dollar pro Org und Jahr
 
 Salesforce veröffentlicht zwei unterschiedliche Sichten:
 
@@ -85,7 +85,7 @@ Dieser Unterschied ändert, wer mit dem System arbeitet. Boni rechnen Programmve
 
 Nach meiner Einschätzung brauchen viele Hersteller, die über Händler verkaufen, nur Boni. Ship and Debit wird wichtig, wenn Distributoren Lager halten und Projekte für Endkunden anbieten, die Sie auch kennen. Das ist typisch für Komponenten, Elektronik oder Industriebedarf im zweistufigen Vertrieb.
 
-## Welche Daten braucht die Prüfung?
+## Die Prüfung braucht Abverkauf und Distributorbestand
 
 Abverkauf und Bestand. Ein Anspruch sagt: Ich habe 1.200 Stück zu 90 Dollar an Kunde X verkauft. Um das zu prüfen, braucht Salesforce drei Dinge:
 
@@ -95,21 +95,17 @@ Abverkauf und Bestand. Ein Anspruch sagt: Ich habe 1.200 Stück zu 90 Dollar an 
 
 Fehlt das, prüft die Validierung, ob die Belege zum Programm passen, aber nicht, ob der Verkauf echt war. Überzahlungen beim Preisschutz entstehen aus derselben Lücke: Ein Distributor meldet Lagerbestand zum alten Preis, den er nicht mehr hat. Die Kanalbestandsverfolgung ist im Paket enthalten, die Daten müssen trotzdem von den Distributoren kommen. Wie Distributorbestand nach Salesforce kommt und wie alt er dann ist, beschreibe ich in [Händlerbestand und Nachschub mit Agentforce](../haendlerbestand-nachschub-agentforce/).
 
-## Szenario: 15 Distributoren und 600 Ansprüche im Monat
+## Rechenbeispiel: 15 Distributoren und 600 Ansprüche im Monat
 
-Ein typisches Szenario, als Annahme: Ein Hersteller elektronischer Komponenten verkauft über 15 Distributoren in Europa. Pro Monat kommen 600 Ship-and-Debit-Ansprüche per E-Mail, mit Excel-Listen im Anhang. Zwei Personen im Vertriebsinnendienst prüfen sie gegen Sonderpreisfreigaben in einem gemeinsamen Ordner und geben freigegebene Beträge an die Buchhaltung.
+Die Zahlen sind angenommen. Ein Hersteller elektronischer Komponenten verkauft über 15 Distributoren in Europa. Pro Monat kommen 600 Ship-and-Debit-Ansprüche per E-Mail, mit Excel-Listen im Anhang. Zwei Personen im Vertriebsinnendienst prüfen sie gegen Sonderpreisfreigaben in einem gemeinsamen Ordner und geben freigegebene Beträge an die Buchhaltung.
 
 Mit Channel Revenue Management werden Sonderpreise zu Preiskonditionen, Distributoren reichen Ansprüche über das Portal ein, und die Prüfung lehnt Dubletten und Ansprüche über der freigegebenen Menge ab, bevor ein Mensch hinsieht. Angenommen, 80 Prozent bestehen automatisch. Die beiden Personen bearbeiten dann 120 Ausnahmen statt 600 Ansprüche.
 
-Dagegen stehen 30.000 Dollar im Jahr für das Add-on, Portallizenzen für 15 Distributoren und der Aufwand für die Schnittstellen. Was Partner im Portal sehen und welche Lizenz das abdeckt, erklärt der Artikel zum [Manufacturing-Cloud-Kundenportal](../manufacturing-cloud-kundenportal/). Schicken nur drei Distributoren zwanzig Ansprüche im Monat, würde ich den heutigen Prozess behalten und zuerst die Freigaberegeln schärfen.
+Dagegen stehen 30.000 Dollar im Jahr für das Add-on, Portallizenzen für 15 Distributoren und der Aufwand für die Schnittstellen. Was Partner im Portal sehen und welche Lizenz das abdeckt, erklärt der Artikel zum [Manufacturing-Cloud-Kundenportal](../manufacturing-cloud-kundenportal/). Schicken nur drei Distributoren zwanzig Ansprüche im Monat, würde ich den heutigen Prozess behalten und zuerst die Freigaberegeln schärfen. Das Kapitel [Händler und Partnerkanal](../../masterclass/manufacturing-cloud/haendler-und-partnerkanal/) der Masterclass zeigt, wo Ship and Debit neben Boni, Portalen und Händlerbesuchen steht.
 
-Das Kapitel [Händler und Partnerkanal](../../masterclass/manufacturing-cloud/haendler-und-partnerkanal/) der Masterclass zeigt, wo Ship and Debit neben Boni, Portalen und Händlerbesuchen steht.
-
-## Wo sollten Sie anfangen?
+## Erster Schritt: Ansprüche pro Monat zählen
 
 1. **Zählen.** Ansprüche pro Monat, abgelehnte Ansprüche und die heutige Zeit bis zur Zahlung.
 2. **Daten.** Welche Distributoren Abverkauf und Bestand als Datei liefern können, und wie oft.
 3. **Preis.** Add-on, Partnerzugang und Auszahlungsvolumen schriftlich im Angebot.
 4. **Prozess.** Wer Ausnahmen freigibt und wie freigegebene Beträge ins ERP kommen.
-
-Channel Revenue Management lohnt sich für Ship and Debit, wenn viele Ansprüche kommen und die Distributoren die Daten zur Prüfung liefern.
