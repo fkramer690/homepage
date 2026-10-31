@@ -34,6 +34,11 @@ export const site = {
     'https://app.fratch.io/de/profile/fabian-kramer-j',
     'https://www.salesforce.com/trailblazer/fkramer',
   ],
+  // Profiles of the company, only listed as sameAs in the structured data.
+  companyProfiles: [
+    // Google Business Profile (knowledge graph id).
+    'https://www.google.com/search?kgmid=/g/11z_04sr6b',
+  ],
   legal: {
     street: 'Hans-Keul-Weg 27',
     city: '51105 Köln',
