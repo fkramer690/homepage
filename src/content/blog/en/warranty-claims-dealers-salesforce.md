@@ -10,9 +10,9 @@ categories: [manufacturing-cloud]
 tags: [Manufacturing Cloud, Warranty, Dealers, After-Sales, Manufacturing]
 series: { id: manufacturing-cloud, part: 6 }
 takeaways:
-  - "Manufacturing Cloud models warranties on three levels: warranty terms per product family or product, adjustments per part, and the warranty of the individual asset."
-  - "Dealers submit warranty claims through a portal, with parts, labour and costs. An adjudicator adjusts the amounts and approves them."
-  - "Whether a claim is covered depends on the asset data: serial number, purchase or installation date and usage. Without it, neither a person nor an agent can check properly."
+  - "Warranties have three levels: terms per product family or product, adjustments per part, and the warranty of the individual asset."
+  - "Dealers submit warranty claims through a portal, with parts, labour and costs."
+  - "An adjudicator adjusts the amounts and approves them. Without serial number, start date and usage, an agent cannot check properly either."
   - "From a warranty claim, Salesforce creates one supplier recovery claim per causal part."
   - "Warranty is a commercial process. The on-site visit, maintenance contracts and response times belong to Field Service."
 faq:
@@ -29,9 +29,9 @@ Whether a dealer's warranty claim can be checked properly in Salesforce is decid
 
 Like parts 4 and 5, I am writing this part as an evaluation guide, not as a project report. I treat warranty as a commercial process; the on-site visit is covered by the Field Service series.
 
-## How does Manufacturing Cloud model a warranty?
+## A warranty has three levels
 
-On three levels. According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/warranty-administration-and-claims-management-in-manufacturing-cloud/administer-warranty-terms):
+According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/warranty-administration-and-claims-management-in-manufacturing-cloud/administer-warranty-terms):
 
 - **Warranty term.** It holds the type, duration and start of the warranty, the coverage for labour, parts and expenses as percentages, the covered usage and exclusions. A term can cover a whole product family, a product or individual assets.
 - **Warranty term coverage, the adjustment per part.** It extends or restricts a term for a specific part. Trailhead's example is a forklift whose engine is additionally covered and whose mast is excluded.
@@ -66,9 +66,9 @@ Warranty claim --per causal part--> Recovery claim
 Recovery claim --submitted--> Supplier
 ```
 
-## Why does everything depend on the asset data?
+## Every check is a question about the asset
 
-Because every check is a question about the asset. Is this serial number still under warranty? When did it start, at purchase or at installation? Is usage below the limit? Is the defective part covered?
+Is this serial number still under warranty? When did it start, at purchase or at installation? Is usage below the limit? Is the defective part covered?
 
 The asset warranty only answers these questions when the asset and its data are in Salesforce. For many manufacturers that is exactly the gap:
 
@@ -109,13 +109,13 @@ contra: I would hold back when
 
 In the second case the data model adds little. Whether Manufacturing Cloud pays off as a whole is covered in [part 1 of this series](../salesforce-manufacturing-cloud-is-it-worth-it/).
 
-## Where should you start?
+## Find the asset data and bring it into Salesforce
 
-Before the first warranty term is created, settle four points:
+Before the first warranty term is created, settle these points:
 
 1. **Asset data.** Where do serial number, purchase or installation date and usage live, and how do they reach Salesforce?
 2. **Terms.** Can your rules be expressed as base term, exceptions per part and adjustment per asset?
 3. **Submission.** Which fields does the dealer fill in the portal, and which are required, including for recovery?
 4. **Credit note.** How does the approved amount reach the ERP, and when does the dealer see that it has been paid?
 
-Warranty management in Manufacturing Cloud is as good as the asset data it checks against.
+For point 1, I take one quarter's warranty claims and check how many have serial number, start date and usage. That ratio decides whether the project starts with the terms or with the asset data.

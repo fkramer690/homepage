@@ -9,11 +9,10 @@ topic: service
 categories: [manufacturing-cloud, field-service]
 tags: [Manufacturing Cloud, recalls, product service campaigns, dealers, after-sales]
 takeaways:
-  - "A product service campaign in Salesforce, available since API 51.0, describes activities on a set of assets, such as a recall, a fix or an upgrade. Each affected asset becomes one campaign item."
-  - "Since API 65.0 the data model adds definitions with affected product, serial range and production batches, causal parts with a remediation type, partners and unsold dealer stock."
-  - "Selecting the right machines depends on serial numbers and production batches in Salesforce. Without them a campaign hits too many machines or misses some."
-  - "Dealers and service partners carry out the work. Work orders and appointments are Field Service and need Field Service licences."
-  - "Before building, decide who triggers a campaign, who pays for parts and labour, and how dealers report completion per machine."
+  - "Product service campaigns exist since API 51.0. Each affected machine becomes one campaign item with its own status."
+  - "Since API 65.0 the model adds serial ranges, production batches, causal parts, partners and unsold dealer stock."
+  - "Dealers and service partners carry out the work. Work orders and appointments are Field Service and need its licences."
+  - "Neither the pricing page nor the reference names the licence for the campaigns themselves. That belongs in the quote, in writing."
 faq:
   - q: "What is a product service campaign in Salesforce?"
     a: "A product service campaign represents a set of activities to be performed on a group of assets, for example a recall for safety issues or product defects, a fix or an upgrade. Each affected asset is a product service campaign item with its own status. The object is available from API version 51.0."
@@ -34,7 +33,7 @@ The object reference describes the [product service campaign](https://developer.
 
 Manufacturing Cloud builds on that. The [Trailhead overview](https://trailhead.salesforce.com/content/learn/modules/agentforce-manufacturing-quick-look/explore-agentforce-manufacturing-capabilities) lists product service campaigns among its service capabilities: "Launch and manage proactive service campaigns for recalls, upgrades, or maintenance initiatives". The campaign is not limited to safety recalls. A retrofit kit offered to all machines of one series fits the same model.
 
-## Which objects does the data model use?
+## Since API 65.0 the data model knows batches and causal parts
 
 The [product service campaign data model](https://developer.salesforce.com/docs/platform/data-models/guide/product-service-campaign-management.html) shows the full picture. The objects added in API 65.0 are documented in the Manufacturing Cloud and Automotive Cloud developer guides:
 
@@ -61,9 +60,9 @@ This is where most recalls go wrong, in Salesforce or anywhere else. The definit
 
 If one of these is missing, you choose between two bad options. Select too broadly and you pay for work on machines that are fine. Select too narrowly and faulty machines stay in the field. I would test the selection logic against one past quality case before trusting it with a real recall.
 
-## A typical scenario, as an assumption
+## Worked example: a faulty valve batch
 
-A machine builder learns that a supplier's valve batch is faulty. The valve sits in 1,800 machines of two series, sold through 70 dealers. 120 of those machines are still unsold in dealer stock.
+Assume a machine builder learns that a supplier's valve batch is faulty. The valve sits in 1,800 machines of two series, sold through 70 dealers. 120 of those machines are still unsold in dealer stock.
 
 In the data model this becomes a campaign and a group definition. The causal item is the valve, remediation type Replace, with a product return against credit so the supplier pays. Two definitions cover the two series, each with production start date, last affected serial number and the linked production batches. The supplier and the 70 dealers are group definition partners. The 120 unsold machines appear as partner inventory, so they are fixed before they reach a customer.
 
@@ -94,9 +93,9 @@ contra: When a list is enough
 
 The selection problem stays the same either way: without clean serial numbers and batches, the best list does not help.
 
-## What should you decide before building?
+## First step: settle trigger, costs and reporting in writing
 
-Three questions I would answer in writing:
+These are the questions I would answer in writing before building:
 
 1. **Who triggers a campaign?** Usually quality, sometimes product management for upgrades. One role creates it, another approves.
 2. **Who pays?** Parts, labour for the dealer and travel. The causal item covers supplier recovery; how dealers get paid for labour, through claims or a flat rate, is your decision.
@@ -108,6 +107,4 @@ Then there is the licence question:
 The [Manufacturing Cloud pricing page](https://www.salesforce.com/manufacturing/cloud/pricing/) does not mention service campaigns, and the reference pages name no licence. Get Salesforce to confirm in writing which licence covers product service campaigns.
 ```
 
-The full after-sales picture is in the [warranty and after-sales chapter](../../masterclass/manufacturing-cloud/warranty-and-after-sales/) of the Manufacturing Cloud masterclass.
-
-A recall in Salesforce works when the affected machines can be found by serial number and batch, and stalls when they cannot.
+I walk through the reporting route from question 3 with two dealers before the first campaign starts. The full after-sales picture is in the [warranty and after-sales chapter](../../masterclass/manufacturing-cloud/warranty-and-after-sales/) of the Manufacturing Cloud masterclass.

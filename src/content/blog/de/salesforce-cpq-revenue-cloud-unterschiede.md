@@ -9,11 +9,10 @@ topic: revenue
 categories: [revenue-cloud, architecture]
 tags: [Salesforce CPQ, Revenue Cloud, Salesforce Billing, SteelBrick, Datenmodell, Migration]
 takeaways:
-  - "Salesforce CPQ und Salesforce Billing sind Managed Packages aus der Übernahme von SteelBrick mit den Namespaces SBQQ und blng. Revenue Cloud nutzt diese Pakete nicht und arbeitet auf Standardobjekten."
-  - "In CPQ entscheiden Produktregeln, Preisregeln und optional ein JavaScript Quote Calculator Plugin über Konfiguration und Preis. In Revenue Cloud tun das eine Constraint-Engine und Preisprozeduren."
-  - "CPQ ändert Verträge über Subscription-Datensätze und ein neues Angebot mit Opportunity. Revenue Cloud führt verkaufte Produkte als Assets mit Zeiträumen, jede Änderung läuft über Angebot und Auftrag."
-  - "Laut Salesforce-Hilfe unterscheiden sich die Datenmodelle erheblich, und Revenue Cloud ist mehr als die nächste CPQ-Version. Berichte und Dashboards werden auf Standardobjekten neu gebaut."
-  - "Der Wechsel von CPQ zu Revenue Cloud bedeutet, Regeln, Preise und Daten neu zu entwerfen. Planen und budgetieren Sie ihn wie eine Neueinführung."
+  - "CPQ und Billing sind Managed Packages mit den Namespaces SBQQ und blng. Revenue Cloud nutzt diese Pakete nicht."
+  - "Wo CPQ Produktregeln, Preisregeln und ein JavaScript-Plugin nutzt, arbeitet Revenue Cloud mit Constraint-Engine und Preisprozeduren."
+  - "Revenue Cloud führt verkaufte Produkte als Assets mit Zeiträumen. Jede Änderung läuft über Angebot und Auftrag."
+  - "Berichte und Dashboards werden auf Standardobjekten neu gebaut. Budgetieren Sie den Wechsel wie eine Neueinführung."
 faq:
   - q: "Ist Revenue Cloud ein Upgrade von Salesforce CPQ?"
     a: "Nein. Die Salesforce-Hilfe schreibt, dass Revenue Cloud nicht nur die nächste Version von Salesforce CPQ ist und sich die Datenmodelle erheblich unterscheiden. Ein Versions-Upgrade gibt es nicht; Konfiguration, Preise und Daten werden neu gebaut oder migriert."
@@ -73,13 +72,13 @@ Für die Regeln bietet Revenue Cloud die [Constraint Rules Engine](https://trail
 
 Meine Einschätzung: Für einen Hersteller ist das die größte Änderung. Dreihundert Produktregeln werden nicht zu dreihundert Constraints. Jemand muss verstehen, was die Regeln technisch bedeuten, und sie neu modellieren. Diese Person sitzt meist im Produktmanagement oder in der Konstruktion, selten im CRM-Team.
 
-## Wie unterscheidet sich die Preisberechnung?
+## Preisprozeduren ersetzen Preisregeln und Plugin
 
 In CPQ automatisieren [Preisregeln](https://trailhead.salesforce.com/content/learn/modules/salesforce-cpq-features/product-and-price-rules) Berechnungen und schreiben Felder der Angebotspositionen. Wo das nicht reichte, haben viele Orgs das [JavaScript Quote Calculator Plugin](https://developer.salesforce.com/docs/revenue/cpq-plugins/guide/cpq-dev-jsqcp-parent.html) ergänzt: eigener JavaScript-Code, als Custom Script gespeichert, der die Berechnung im Quote Line Editor verändert.
 
 Revenue Cloud rechnet mit [Salesforce Pricing](https://trailhead.salesforce.com/content/learn/modules/revenue-cloud-design/configure-pricing-for-products). Eine Context Definition übergibt die Produktdaten aus dem Angebot an eine Preisprozedur. Die Prozedur führt ihre Preiselemente nacheinander aus, Decision Tables holen die Preisdaten, und das Ergebnis geht zurück ins Angebot. Ein Preis-Wasserfall zeigt jeden Schritt vom Listenpreis bis zum Nettopreis. Für Controlling und Prüfungen ist das ein echter Fortschritt, weil die Frage "warum dieser Preis?" eine Antwort auf dem Bildschirm bekommt.
 
-Für ein Quote Calculator Plugin gibt es kein direktes Gegenstück. Seine Logik muss auf Prozedurelemente, Decision Tables oder einen externen Aufruf verteilt werden. Ein typisches Szenario, als Annahme: Ein Komponentenhersteller hat 40 Preisregeln und ein Plugin mit einigen hundert Zeilen JavaScript für Händlerrabatte. Jede Regel und jeder Zweig im Plugin wird zur Designentscheidung: Wird sie noch gebraucht, gehört sie in eine Prozedur, oder sollte der Preis aus SAP kommen?
+Für ein Quote Calculator Plugin gibt es kein direktes Gegenstück. Seine Logik muss auf Prozedurelemente, Decision Tables oder einen externen Aufruf verteilt werden. Ein Rechenbeispiel mit angenommenen Zahlen: Ein Komponentenhersteller hat 40 Preisregeln und ein Plugin mit einigen hundert Zeilen JavaScript für Händlerrabatte. Jede Regel und jeder Zweig im Plugin wird zur Designentscheidung: Wird sie noch gebraucht, gehört sie in eine Prozedur, oder sollte der Preis aus SAP kommen?
 
 ## Wie unterscheiden sich Verträge, Nachträge und Verlängerungen?
 
@@ -89,7 +88,7 @@ Revenue Cloud führt die installierte Basis als Assets. [Trailhead](https://trai
 
 Für Hersteller mit Wartungsverträgen und Abos ist das die zweite große Änderung. Offene CPQ-Subscriptions müssen zu Assets mit korrekter Historie werden. Die Salesforce-Hilfe behandelt das im Migrationsleitfaden unter den Asset-Daten.
 
-## Was ist mit Abrechnung und Freigaben?
+## Auch Abrechnung und Freigaben sind getrennte Produkte
 
 Auch das Paket Salesforce Billing und Revenue Cloud Billing sind getrennte Produkte. Laut [Salesforce](https://www.salesforce.com/sales/revenue-cloud-billing/) umfasst Revenue Cloud Billing nutzungsbasierte Abrechnung mit Digital Wallet, eine Invoicing Engine mit Dokumenterstellung, Zahlungen, Mahnwesen, Steuern über externe Steuer-Engines und ein Accounting Subledger, das Buchungen an das ERP übergibt. Was ein Umstieg für offene Rechnungen und Zahlungshistorie bedeutet, beschreibe ich in [von Salesforce Billing zu Revenue Cloud Billing](../von-salesforce-billing-zu-revenue-cloud-billing/).
 
@@ -107,8 +106,6 @@ Daraus ziehe ich für Hersteller drei Schlüsse:
 
 Ob sich der Wechsel überhaupt lohnt, ist eine eigene Frage. Die beantworte ich in [CPQ behalten oder zu Revenue Cloud wechseln?](../cpq-behalten-oder-revenue-cloud/).
 
-## Wo starten Sie?
+## Erster Schritt: Regeln, Plugin-Zeilen und Schnittstellen zählen
 
 Zählen Sie, was Sie haben: Produktregeln, Preisregeln, Zeilen im Quote Calculator Plugin, Angebotsvorlagen, Freigabeketten, offene Subscriptions und Schnittstellen, die in SBQQ-Objekte schreiben. Diese Liste ist der Umfang des Neuentwurfs. Wie die Migration dann in Phasen abläuft, steht in [CPQ zu Revenue Cloud migrieren](../cpq-migration-revenue-cloud-phasen/) und im Masterclass-Kapitel [von CPQ zu Revenue Cloud](../../masterclass/revenue-cloud/von-cpq-zu-revenue-cloud/).
-
-CPQ und Revenue Cloud haben denselben Zweck und unterscheiden sich darunter fast überall, behandeln Sie den Wechsel deshalb als neuen Entwurf.

@@ -10,8 +10,7 @@ categories: [manufacturing-cloud]
 tags: [Manufacturing Cloud, Rollout, Harmonisierung, Change Management, Fertigung]
 series: { id: manufacturing-cloud, part: 8 }
 takeaways:
-  - "Ein weltweiter Rollout der Manufacturing Cloud beginnt mit dem strategischen Ziel. Meistens ist das die Harmonisierung von Prozessen, und daraus folgt die Reihenfolge der Länder."
-  - "Ich starte mit einem großen Land mit angemessener Komplexität und nehme eine der größten Regionen in die ersten zwei Phasen auf, damit das globale Template früh unter echter Last steht."
+  - "Ich nehme eine der größten Regionen in die ersten zwei Phasen auf, damit das globale Template früh unter Last steht."
   - "Alle Länder sollten zu mindestens 80 Prozent identisch arbeiten. Jede Abweichung pro Land wird begründet und so klein wie möglich gehalten."
   - "Unterschiedliche Prozesse, Business Units, IT-Landschaften und Marken pro Land bestimmen, welches Land wann kommt."
   - "Change Management gehört in jeden Rollout, auch wenn der Kunde meint, er brauche keins."
@@ -43,18 +42,18 @@ Diese Punkte lassen sich nach dem ersten Land kaum noch ändern, ohne alle berei
 
 Wie ich dieses Log führe, beschreibe ich unter [Salesforce-Architektur](../../leistungen/salesforce-architektur/).
 
-## Mit welchem Land fängt man an?
+## Das erste Land ist groß und nicht zu speziell
 
-Mit einem großen Land mit angemessener Komplexität. Beides zählt:
+Ich fange mit einem großen Land mit angemessener Komplexität an. Beides zählt:
 
-- **Groß genug**, damit das Template echte Mengen, echte Nutzer und echte Sonderfälle sieht. Ein kleines Pilotland bestätigt ein Template, das später am ersten großen Land scheitert.
+- **Groß genug**, damit das Template reale Mengen, viele Nutzer und die Sonderfälle aus dem Alltag sieht. Ein kleines Pilotland bestätigt ein Template, das später am ersten großen Land scheitert.
 - **Nicht zu speziell**, damit seine Eigenheiten nicht das Template für alle anderen prägen. Ein Land mit ungewöhnlichem Vertriebsmodell oder einer eigenen Produktlinie ist ein schlechter Startpunkt, auch wenn es groß ist.
 
 Dazu kommt eine zweite Regel: Eine der größten Regionen sollte in den ersten zwei Phasen dabei sein. Kommt sie erst in Phase fünf, stößt sie auf ein Template, das an kleineren Ländern gewachsen ist, und fordert Änderungen, die alle schon eingeführten Länder betreffen. Je früher die große Region dabei ist, desto günstiger sind diese Änderungen.
 
-## Wonach richtet sich die Reihenfolge danach?
+## Prozesse, Business Units und IT-Landschaft bestimmen die Reihenfolge
 
-Nach drei Fragen, die für jedes Land anders beantwortet werden:
+Drei Fragen werden für jedes Land anders beantwortet:
 
 1. **Wie ähnlich sind die Prozesse?** Länder, die schon heute ähnlich verkaufen und abrechnen, gehen schneller. Länder mit eigenen Abläufen brauchen mehr Zeit für die Harmonisierung.
 2. **Welche Business Units gibt es dort?** Eine Gesellschaft mit mehreren Geschäftsbereichen ist ein größerer Schritt als eine mit einem.
@@ -75,9 +74,9 @@ In Salesforce betrifft das mehr, als man im ersten Workshop denkt:
 
 Ich nehme die Marke deshalb als eigene Frage ins Template auf, auch wenn das erste Land nur eine hat. Kommt die zweite Marke erst im dritten Land, ist sie sonst eine Abweichung, die alle anderen Länder mittragen müssen.
 
-## Wie hält man die Abweichungen pro Land klein?
+## Jedes Land arbeitet zu mindestens 80 Prozent gleich
 
-Mit einem Richtwert und einem Prozess. Der Richtwert: Alle Länder arbeiten zu mindestens 80 Prozent identisch, und pro Land wird versucht, das Delta zu minimieren. Andere Länder als das erste sollten nur marginale Abweichungen haben.
+Dafür gibt es einen Richtwert und einen Prozess. Der Richtwert: Alle Länder arbeiten zu mindestens 80 Prozent identisch, und pro Land wird versucht, das Delta zu minimieren. Andere Länder als das erste sollten nur marginale Abweichungen haben.
 
 Der Prozess dazu ist einfach, braucht aber Disziplin:
 
@@ -96,7 +95,7 @@ Weil Harmonisierung heißt, dass Menschen anders arbeiten. In jedem Land, das de
 Viele Kunden meinen, sie bräuchten kein Change Management. Das Budget ist verteilt, die Schulungen sind geplant, und die Nutzer werden sich schon gewöhnen. Ich bringe es trotzdem immer wieder ins Gespräch, in der Planung, vor jedem Land und nach jedem Go-live.
 ```
 
-Mindestens drei Dinge gehören pro Land dazu:
+Pro Land gehört mindestens dazu:
 
 - **Key User**, die das Template kennen und im Land die ersten Fragen beantworten.
 - **Kommunikation vor dem Go-live**, die erklärt, was sich ändert und warum, nicht nur, wo man klickt.
@@ -104,9 +103,9 @@ Mindestens drei Dinge gehören pro Land dazu:
 
 Wie ich die Einführung neuer Prozesse auf Kundenseite plane, beschreibe ich unter [Change Management Beratung für Salesforce](../../leistungen/change-management/). Was pro Land dazugehört, steht in [Change Management im weltweiten Salesforce-Rollout](../change-management-weltweiter-rollout/), der Überblick in [Salesforce Change Management: warum Einführungen scheitern](../change-management-salesforce-einfuehrung/).
 
-## Wo sollten Sie anfangen?
+## Das Ziel des Rollouts schriftlich festlegen
 
-Bevor das erste Land geplant wird, klären Sie fünf Punkte:
+Bevor das erste Land geplant wird, klären Sie diese Punkte:
 
 1. **Das Ziel.** Harmonisierung oder lokale Freiheit, schriftlich und von der Geschäftsführung getragen.
 2. **Das Template.** Account-Ebene, Produktregel, Portal und die anderen Grundentscheidungen im Entscheidungslog.
@@ -114,4 +113,4 @@ Bevor das erste Land geplant wird, klären Sie fünf Punkte:
 4. **Die Reihenfolge.** Eine Tabelle mit Prozessen, Business Units, IT-Landschaft und Marken pro Land.
 5. **Change Management.** Key User, Kommunikation und Nutzung pro Land, eingeplant von Anfang an.
 
-Ein weltweiter Rollout gelingt, wenn das Template früh unter echter Last steht und jedes weitere Land nur noch wenig ändert.
+Punkt 1 lasse ich von der Geschäftsführung unterschreiben, bevor das erste Land geplant wird. Jede spätere Abweichung pro Land messe ich an diesem Ziel und an den 80 Prozent.

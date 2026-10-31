@@ -12,9 +12,9 @@ tags: [Manufacturing Cloud, Account Forecasting, Demand Planning, ERP, Manufactu
 series: { id: manufacturing-cloud, part: 4 }
 takeaways:
   - "Account forecasting plans quantities and revenue per customer, product and period, combining orders, opportunities and sales agreements."
-  - "The forecast is only as good as the order history behind it. At manufacturers that history lives in the ERP and has to reach Salesforce through an integration."
-  - "Customers times products times periods quickly adds up to millions of combinations. Salesforce counts forecast records against a limit, so the scope has to be set before go-live."
-  - "Salesforce provides the sales view. Capacity, materials and production planning stay in the ERP or the planning system, and one number has to count as the leading one."
+  - "The forecast is calculated from order history, which at manufacturers lives in the ERP. It has to reach Salesforce through an integration."
+  - "Customers times products times periods quickly means millions of records that count against a limit. Set the scope before go-live."
+  - "Salesforce provides the sales view, the ERP plans capacity and materials. One of the two numbers has to count as the leading one."
 faq:
   - q: "What is account forecasting in Manufacturing Cloud?"
     a: "Account forecasting is the sales forecast in Manufacturing Cloud. It plans quantities and revenue per customer, product and period and, according to Salesforce, uses orders, opportunities, sales agreements and custom objects that the Data Processing Engine aggregates."
@@ -44,7 +44,7 @@ On the [product page](https://www.salesforce.com/manufacturing/cloud/sales/), Sa
 
 The difference to the forecast many know from Sales Cloud: there, sales mainly estimates which opportunities close in which quarter. Account forecasting also plans the running business, meaning the volumes existing customers take month after month. For a manufacturer with a lot of recurring business, that is often the larger share of revenue.
 
-## Which data does the forecast need?
+## The forecast needs data from the ERP
 
 Three sources carry the forecast, and at manufacturers two of them rarely live in Salesforce:
 
@@ -87,7 +87,7 @@ That requires a fixed rhythm in sales. A forecast that is only adjusted when som
 - **When?** In the same rhythm as production and procurement plan. Otherwise the sales forecast arrives too late for the decision it is needed for.
 - **How are deviations explained?** A field for the reason behind a larger adjustment costs little and makes the number traceable later.
 
-## Where does sales forecasting in Salesforce end?
+## Sales forecasting ends where production planning begins
 
 At the question of what gets produced. Account forecasting provides what sales expects: which customer will take which quantity of which product in which month. Whether that quantity can be produced, with which material and on which line, is decided by planning in the ERP or a dedicated planning system. How forecasts, sales agreements and targets fit together is covered in [chapter 2 of the Manufacturing Cloud masterclass](../../masterclass/manufacturing-cloud/agreements-and-forecasting/).
 
@@ -100,7 +100,7 @@ A note on Agentforce: Trailhead says that "Agentforce Manufacturing" generates f
 
 ## When does account forecasting pay off?
 
-I would recommend account forecasting when several of the first four points apply:
+I would recommend account forecasting when several of the first four conditions apply:
 
 ```pro-contra
 pro: Account forecasting pays off
@@ -116,13 +116,13 @@ contra: I would hold back
 
 In the last case the company pays for a feature that cannot work with its own data. Whether Manufacturing Cloud pays off as a whole is covered in [part 1 of this series](../salesforce-manufacturing-cloud-is-it-worth-it/).
 
-## Where should you start?
+## Settle order history and scope before the first forecast set
 
-Before the first forecast set is configured, settle four points:
+Before the first forecast set is configured, settle these points:
 
 1. **Order history.** Which data comes from the ERP, at which level and how often?
 2. **Scope.** Product or category, which customers, how many periods, checked against the limit.
 3. **Rhythm.** Who adjusts when, aligned with planning in production and procurement.
 4. **Leading number.** Which forecast counts, and how does it reach the ERP?
 
-Account forecasting is a good sales forecast when the data from the ERP is right and it is clear where planning takes over.
+I calculate the scope in the first workshop: customers times products times periods, compared with the org's limit. If it does not fit, I plan at product category level and shorten the horizon before anyone creates the first forecast set.

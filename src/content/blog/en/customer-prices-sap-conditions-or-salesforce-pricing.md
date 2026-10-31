@@ -10,10 +10,9 @@ categories: [revenue-cloud, architecture]
 contactBrief: integration
 tags: [Revenue Cloud, SAP, pricing conditions, Salesforce Pricing, integration, price master]
 takeaways:
-  - "Every price type needs exactly one master system. If SAP and Salesforce both calculate the same net price, they drift apart, and the difference lands with inside sales."
-  - "Route A: SAP calculates and Salesforce asks for the net price through an API. The MuleSoft Accelerator for SAP documents this with SAP sales order simulation for Salesforce CPQ, not for Revenue Cloud."
-  - "Route B rebuilds SAP conditions in Revenue Cloud with price books, volume tiers, contract prices and decision tables. Pricing is fast and explainable, but SAP must stop calculating the same price."
-  - "Route C loads list prices from SAP and calculates discounts in Salesforce Pricing. It fits when sales really decides discounts per deal."
+  - "If SAP and Salesforce both calculate the same net price, they drift apart, and the difference lands with inside sales."
+  - "The MuleSoft Accelerator for SAP documents SAP sales order simulation for Salesforce CPQ, not for Revenue Cloud."
+  - "Route B prices fast and explainably, but only if SAP stops calculating the same price."
   - "Prices that also apply to orders arriving by EDI, phone or shop without Salesforce should stay in SAP."
 faq:
   - q: "Should customer prices be calculated in SAP or in Salesforce?"
@@ -100,14 +99,12 @@ Sales agreements in Manufacturing Cloud plan quantities per period and carry a s
 
 The B2B store must show the same price as the quote. How price books and a live ERP call work there is covered in [customer prices in B2B Commerce](../b2b-commerce-customer-prices-price-books-erp/) and in the chapter [prices, cart and checkout](../../masterclass/b2b-commerce/prices-cart-checkout/). The same applies to AI-built dealer quotes, see [AI Partner Sales Assistant](../ai-partner-sales-assistant-dealer-quotes/).
 
-## A typical scenario, as an assumption
+## Worked example: conveyor systems with 200 dealers
 
-A manufacturer of conveyor systems sells machines through direct sales and spare parts through 200 dealers. SAP holds list prices per country, dealer discounts per material group and customer prices for 30 key accounts. Machine quotes have 20 to 80 lines and are recalculated often during configuration. Dealers also order spare parts by EDI.
+Assume a manufacturer of conveyor systems sells machines through direct sales and spare parts through 200 dealers. SAP holds list prices per country, dealer discounts per material group and customer prices for 30 key accounts. Machine quotes have 20 to 80 lines and are recalculated often during configuration. Dealers also order spare parts by EDI.
 
 I would split by price type. For machines, route C: list prices from SAP every night, discounts and approvals in Revenue Cloud, and SAP takes the order price as fixed. For spare parts, route A: dealer discounts and key account prices stay in SAP because they also apply to EDI orders, and Salesforce asks SAP for the net price when the quote is checked before sending. One master per price type, written down in the [object ownership matrix](../salesforce-object-ownership-matrix/).
 
-## Where should you start?
+## List your price types and name one master for each
 
 List your price types: list price, dealer discount, customer price, contract price, promotion, freight surcharge. For each, note where it is maintained today, who changes it, how often, and whether it also applies to orders that do not come from Salesforce. The last question usually decides: prices that apply to EDI, phone or shop orders without Salesforce stay in SAP. The wider split of quote to cash between the systems is covered in [Revenue Cloud and SAP: who owns what?](../revenue-cloud-sap-quote-to-cash-ownership/), the context in the chapter [catalog, configurator, pricing](../../masterclass/revenue-cloud/product-catalog-configurator-pricing/) of the Revenue Cloud masterclass. Designing the interface itself is part of my work on [Salesforce integration](../../services/salesforce-integration/).
-
-Decide per price type which system calculates it, and let the other one ask.

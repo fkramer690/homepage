@@ -9,11 +9,10 @@ topic: data
 categories: [manufacturing-cloud, ai]
 tags: [Agentforce, Manufacturing Cloud, Sales Agreements, Account Forecasting, ERP, Sales Planning]
 takeaways:
-  - "According to Salesforce Help, the Sales Planning agent answers questions about sales agreements, writes performance summaries, helps set up visits and draft emails, and bulk updates sales agreements."
-  - "The help pages document three subagents: Sales Agreement Management, Sales Agreement Bulk Update and Program Forecasts to Opportunities. None of them is described as working on account forecasts."
-  - "The proactive alerts on build plan deviations from the August 2025 announcement are not described in the help pages for the template, as far as I could find."
-  - "Every answer about agreement performance rests on actual quantities from the ERP. Without a daily actuals feed per customer, product and period, the agent reports gaps that do not exist."
-  - "Agentforce Manufacturing is also the product name on Trailhead, so a feature with that label is not automatically an agent. Ask which subagent, which action and which licence."
+  - "The help pages document three subagents. None of them is described as working on account forecasts."
+  - "I could not find the proactive alerts on build plan deviations from the 2025 announcement in the help pages."
+  - "Without a daily actuals feed per customer, product and period, the agent reports gaps that do not exist."
+  - "Not every feature labelled Agentforce Manufacturing is an agent. Ask which subagent, action and licence stand behind it."
 faq:
   - q: "What is Agentforce for Sales Planning?"
     a: "An agent template for Manufacturing Cloud. According to Salesforce Help, it answers questions about sales agreements, generates performance summaries, assists with visits and emails, bulk updates sales agreements and converts program component forecasts to opportunities."
@@ -48,7 +47,7 @@ The help page lists three subagents: Sales Agreement Management, Sales Agreement
 Licensing is stated as Enterprise, Performance or Unlimited Edition with the Agentforce for Manufacturing add-on, or Agentforce 1 Manufacturing Edition, and "each user" needs the add-on. The [Manufacturing Cloud product page](https://www.salesforce.com/manufacturing/cloud/) lists the "full suite of Agentforce for Industries" in the Max editions. How the two fit together for your contract is a question for the account team before the pilot, not after.
 ```
 
-## Why is "Agentforce Manufacturing" not always an agent?
+## "Agentforce Manufacturing" is also a product name
 
 Trailhead now calls the product itself Agentforce Manufacturing. The [Trailhead quick look](https://trailhead.salesforce.com/content/learn/modules/agentforce-manufacturing-quick-look/explore-agentforce-manufacturing-capabilities) lists "Agent-powered sales agreements" and "Advanced account forecasting" as capabilities, next to "Agentforce for sales planning". The unit names no Agentforce actions.
 
@@ -70,7 +69,7 @@ On account forecasts, the documentation is silent. The template page does not na
 
 The build plan comparison from the announcement is the biggest gap. I found no description of where the build plan comes from, which object holds it or what triggers an alert. As I read the help page, the agent answers when someone asks. Salesforce's [AI page for manufacturing](https://www.salesforce.com/manufacturing/artificial-intelligence/) speaks of "surfacing run-rate agreements, demand forecasts, and opportunity data conversationally" and adds that capabilities "may not reflect actual product details". I take that disclaimer literally.
 
-## Which ERP actuals feed must exist first?
+## The ERP actuals feed has to exist first
 
 When an account manager asks which agreements are behind, the agent compares planned and actual quantities on the sales agreement product schedules. At a manufacturer, the actual quantities live in the ERP. If they are missing or late, the agent reports a shortfall with full confidence.
 
@@ -93,7 +92,7 @@ Which calculation mode fits and why it is hard to change later is covered in [sa
 
 If you want the build plan comparison, the plan quantities from production planning have to reach Salesforce too. Account forecasts additionally need order history, as described in [account forecasting for sales volume planning](../account-forecasting-sales-volume-planning/). How I split leading systems between ERP and Salesforce is part of my [integration with ERP, middleware and telephony](../../services/salesforce-integration/).
 
-## A typical scenario: the Monday review at a compressor maker
+## Worked example: the Monday review at a compressor maker
 
 Assume a compressor manufacturer with 35 account managers and 280 sales agreements with distributors and OEM customers, orders in SAP. All numbers here are assumptions for illustration.
 
@@ -114,4 +113,4 @@ Then a price increase for one product family has to go into 60 agreements. The b
 
 Whether agents fit your company at all is covered in [Agentforce for manufacturers: start now or wait?](../agentforce-yes-or-no-manufacturers/), and the overview of manufacturing agents in the masterclass chapter [AI agents in manufacturing](../../masterclass/ai-salesforce/ai-agents-in-manufacturing/).
 
-The Sales Planning agent is a useful assistant on top of sales agreements once the ERP actuals are right, and less than the 2025 announcement suggests.
+Point 2 decides the rest. As long as actuals are not reconciled with the ERP daily, I do not switch the agent on for sales.
