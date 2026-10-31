@@ -10,11 +10,11 @@ pubDate: 2026-10-28
 short: "Von CPQ zu Revenue Cloud"
 summary: "Was Salesforce zu CPQ und Billing zusagt, worin sich die Produkte unterscheiden und wie die Migration in drei Phasen abläuft."
 takeaways:
-  - "Salesforce CPQ ist end of sale, nicht end of life: Bestandskunden nutzen es weiter, kaufen Nutzer nach, verlängern und erhalten Support, aber keine neuen Funktionen. Ein End-of-Life-Datum gibt es nicht."
-  - "Revenue Cloud arbeitet auf Standardobjekten statt in den Paketen SBQQ und blng. Produktregeln, Preisregeln, Subscriptions, Freigaben und Berichte werden deshalb neu entworfen."
-  - "Bleiben Sie bei CPQ, solange der Angebotsprozess stabil ist, wechseln Sie, wenn Sie brauchen, was nur Revenue Cloud bekommt, und prüfen Sie einen dritten Weg, wenn Ihre Regeln außerhalb von Salesforce liegen."
-  - "Die Salesforce-Hilfe teilt die Migration in Vorbereitung, Strategie und Umsetzung; die CPQ-Seite nennt 3 bis 6 Monate als typisch, mit CPQ und Revenue Cloud im Parallelbetrieb."
-  - "Preis-Master, Cutover-Modell, Umfang der Historie und der Stichtag für die Abrechnung entscheiden Kunde und Finance; Partner und Migrationswerkzeuge setzen sie um."
+  - "Bestandskunden nutzen CPQ weiter, kaufen Nutzer nach und erhalten Support, aber keine neuen Funktionen. Ein End-of-Life-Datum gibt es nicht."
+  - "Revenue Cloud arbeitet auf Standardobjekten. Produktregeln, Preisregeln, Subscriptions, Freigaben und Berichte werden deshalb neu entworfen."
+  - "Bleiben Sie bei CPQ, solange der Angebotsprozess stabil ist, und wechseln Sie, wenn Sie brauchen, was nur Revenue Cloud bekommt."
+  - "Die CPQ-Seite nennt 3 bis 6 Monate als typische Dauer einer Migration, mit CPQ und Revenue Cloud im Parallelbetrieb."
+  - "Preis-Master, Cutover-Modell, Historie und Stichtag der Abrechnung entscheiden Kunde und Finance. Partner und Werkzeuge setzen sie um."
 articles: [salesforce-cpq-end-of-sale-status, cpq-vs-revenue-cloud-differences, stay-on-cpq-or-migrate, cpq-to-revenue-cloud-migration-plan, salesforce-billing-to-revenue-cloud-billing, revenue-cloud-configuration-deployment]
 faq:
   - q: "Muss ich von Salesforce CPQ zu Revenue Cloud migrieren?"
@@ -54,7 +54,7 @@ Die praktische Frist ist Ihre nächste Verlängerung. Was Sie genau absichern so
 Vereinbaren Sie bei der Verlängerung die Laufzeit, eine Obergrenze für Preiserhöhungen und das Recht, CPQ und Revenue Cloud während einer Migration parallel zu betreiben.
 ```
 
-## Worin unterscheiden sich Salesforce CPQ und Revenue Cloud?
+## Revenue Cloud ist ein Neuentwurf auf Standardobjekten
 
 Beide Produkte konfigurieren, bepreisen, erstellen Angebote und rechnen ab, und darunter haben sie fast nichts gemeinsam. Die Salesforce-Hilfe schreibt auf ihrer [Migrationsseite](https://help.salesforce.com/s/articleView?language=en_US&id=ind.rev_data_migration.htm&type=5), die Datenmodelle "differ significantly". Die CPQ-Seite ergänzt, dass "CPQ-specific objects, custom fields, pricing rules, and scripts don't map directly". Der Vergleich je Bereich:
 
@@ -127,13 +127,13 @@ Meine Regeln: Jede offene Subscription zieht vor ihrem nächsten Verlängerungst
 
 ## Was ändert sich für Kunden von Salesforce Billing?
 
-Das Billing-Paket hat eigene Objekte unter `blng`; Revenue Cloud Billing nutzt Standardobjekte wie Invoice, CreditMemo und AccountingPeriod und erzeugt Billing Schedules aus Aufträgen. Eine Umwandlung an Ort und Stelle gibt es nicht, und die Abrechnungspläne folgen den migrierten Assets, statt kopiert zu werden.
+Das Billing-Paket hat eigene Objekte unter `blng`; Revenue Cloud Billing nutzt Standardobjekte wie Invoice, CreditMemo und AccountingPeriod und erzeugt Billing Schedules aus Aufträgen. Eine Umwandlung an Ort und Stelle gibt es nicht, und die Abrechnungspläne folgen den migrierten Assets und werden nicht kopiert.
 
 Ich stelle zum Ende einer Buchungsperiode um: letzter Rechnungslauf im Paket, Abstimmung des Nebenbuchs mit dem ERP, offene Forderungen als Salden mit der alten Rechnungsnummer als Referenz übernommen, abgeschlossene Rechnungen lesbar gehalten oder archiviert. Der erste Rechnungslauf in Revenue Cloud beginnt genau nach der letzten abgerechneten Periode, sonst bekommen Kunden doppelt oder gar keine Rechnung. Steuer-Engine, Payment Gateway und Rechnungsnummernkreis werden neu angebunden und getestet.
 
 Diesen Cutover zeichnet Finance ab, nicht das CRM-Team. Ob Rechnungen nach dem Wechsel überhaupt aus Salesforce kommen sollten und was die E-Rechnungspflicht ab 2027 verlangt, behandelt [Kapitel 4](../abrechnung-und-nutzungsbasierte-preise/). Den Cutover selbst beschreibt [Von Salesforce Billing zu Revenue Cloud Billing](../../../blog/von-salesforce-billing-zu-revenue-cloud-billing/).
 
-## Wie ändern sich Konfiguration und Deployments?
+## Konfiguration und Deployments laufen anders
 
 Katalog, Selling Models, Preisbucheinträge und Billing Policies sind Datensätze; Decision Tables, Pricing Recipes und Context Definitions sind Metadaten. Der [Deployment Guide](https://developer.salesforce.com/docs/revenue/revenue-management/guide/deployment-overview.html) sagt: "There's no built-in, Revenue Management-specific deployment tool." Jedes Release besteht also aus einem Metadaten-Deployment, einem Daten-Deployment in der dokumentierten Reihenfolge und manuellen Schritten wie dem Aktualisieren der Decision Tables und dem Synchronisieren der Preisdaten.
 
@@ -147,7 +147,7 @@ Meine Regeln, festgelegt vor dem ersten Datensatz:
 
 Wie Konfigurationsdaten durch eine Pipeline laufen, steht im DevOps-Kapitel [Daten und Konfiguration](../../devops-release-management/daten-und-konfiguration/), welches Werkzeug passt, im [Vergleich der DevOps-Werkzeuge](../../devops-release-management/devops-werkzeuge-vergleich/), und die Details für Revenue Cloud, einschließlich Context Definitions und Konfiguratorregeln, in [Revenue Cloud Deployments](../../../blog/revenue-cloud-konfiguration-deployment/).
 
-## Ein typisches Szenario, als Annahme
+## Rechenbeispiel: Dosieranlagen mit 45 CPQ-Nutzern
 
 Ein Hersteller von Dosieranlagen nutzt CPQ seit 2019: 45 Nutzer, die Angebote erstellen, etwa 150 Produktregeln, ein Quote Calculator Plugin für Händlerrabatte und das Billing-Paket für 600 Wartungsverträge mit quartalsweiser Rechnung. Die CPQ-Verlängerung steht in zehn Monaten an. Alle Angaben sind Annahmen.
 
@@ -156,7 +156,7 @@ Ein Hersteller von Dosieranlagen nutzt CPQ seit 2019: 45 Nutzer, die Angebote er
 - **Proof of Concept:** die fünf am stärksten konfigurierten Anlagen als Constraint-Modelle, vor jedem Migrationsvertrag.
 - **Cutover:** Ersatzteile und Services zuerst, konfigurierte Anlagen danach. Subscriptions ziehen in Paketen vor ihrem Verlängerungsmonat um, die Abrechnung zum Geschäftsjahresende.
 
-## Was entscheiden Sie, und was machen Partner und Werkzeuge?
+## Preis-Master, Cutover und Stichtag selbst entscheiden
 
 | Thema | Der Kunde entscheidet | Partner und Werkzeuge setzen um |
 |---|---|---|
@@ -169,5 +169,3 @@ Ein Hersteller von Dosieranlagen nutzt CPQ seit 2019: 45 Nutzer, die Angebote er
 | Betrieb | Owner je Konfigurationsobjekt, Konten der Werkzeuge | Pipeline in den Werkzeugen des Kunden |
 
 Die linke Spalte gehört ins Entscheidungslog, bevor Sie Schätzungen anfragen. Mehrere Partner durch einen solchen Wechsel zu steuern, gehört zu meiner Arbeit in der [Partnersteuerung](../../../leistungen/partnersteuerung/), und eine [Object Ownership Matrix](../../../blog/object-ownership-matrix-salesforce/) hält Katalog, Preise und Assets nach dem Go-live zugeordnet. Dies ist das letzte Kapitel; [Kapitel 4](../abrechnung-und-nutzungsbasierte-preise/) behandelt Abrechnung und Nutzung, und alle Kapitel finden Sie auf der [Übersichtsseite](../).
-
-Der Wechsel von CPQ und Billing zu Revenue Cloud gelingt, wenn Sie ihn zur Verlängerung entscheiden und als Neuentwurf mit Ihren eigenen Entscheidungen vorab behandeln.

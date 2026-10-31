@@ -10,11 +10,11 @@ pubDate: 2026-10-28
 short: "Warranty and after-sales"
 summary: "Warranty claims, recalls and the installed base: when Manufacturing Cloud for Service is enough and where Field Service begins."
 takeaways:
-  - "Manufacturing Cloud Service Core lists at $275 per user and month, $80 more than Service Cloud Core; the premium pays off for people who handle warranty claims and recalls, rarely for the whole hotline."
-  - "Every after-sales feature starts from one asset per machine with serial number, product, owner and warranty start date; asset milestones (API 58.0) record events such as registration or resale."
-  - "Warranty claims run from the dealer portal through rules-based adjudication to a credit note in the ERP; the Winter '27 adjudication agent validates coverage and flags fraud on top of that."
-  - "Product service campaigns (API 51.0) bundle a recall or upgrade with one item per affected machine; finding the right machines depends on serial numbers and production batches in Salesforce."
-  - "Manufacturing Cloud decides whether damage is covered and who pays; the on-site visit, maintenance plans and technician stock belong to Field Service and need Field Service licences."
+  - "Service Core lists at $275 per user and month, $80 more than Service Cloud Core. The premium pays off for warranty and recall teams."
+  - "Every after-sales feature starts from one asset per machine with serial number, product, owner and warranty start date."
+  - "Warranty claims run from the dealer portal through rules-based adjudication to a credit note in the ERP. The Winter '27 agent also validates coverage."
+  - "Product service campaigns bundle a recall with one item per machine. Finding the right machines depends on serial numbers and production batches in Salesforce."
+  - "Manufacturing Cloud decides whether damage is covered and who pays. The on-site visit, maintenance plans and technician stock belong to Field Service."
 articles: [manufacturing-cloud-service-vs-service-cloud, manufacturing-cloud-installed-base-assets, manufacturing-cloud-warranty-claims, warranty-adjudication-agent-winter-27, manufacturing-cloud-product-service-campaigns, spare-parts-serial-number-ai]
 faq:
   - q: "What does Manufacturing Cloud for Service add to Service Cloud?"
@@ -44,9 +44,9 @@ The premium buys, according to the pricing page, Warranty Lifecycle Management, 
 My rule: license by role. Warranty adjudicators and the quality team that runs recalls work on Manufacturing Cloud, a first-level hotline that opens cases and answers from knowledge stays on Service Cloud. One point belongs in the contract: which warranty records a Service Cloud user may read. How I frame the licence mix as a make-or-buy question is described under [make-or-buy and licence forecasts](../../../services/make-or-buy-licences/), and the scope of the whole industry cloud is in [chapter 1](../scope-and-business-case/).
 ```
 
-## Why does after-sales start with the installed base?
+## After-sales starts with the installed base
 
-Because every after-sales question is a question about one machine. Is this serial number still under warranty? Is it affected by the recall? Which seal fits it? The asset record answers all three, or none.
+Every after-sales question is a question about one machine. Is this serial number still under warranty? Is it affected by the recall? Which seal fits it? The asset record answers all three, or none.
 
 The minimum per machine: serial number, product, owning account, location and the date that starts the warranty. Manufacturing Cloud adds three things on top:
 
@@ -92,17 +92,17 @@ A product service campaign, according to the [object reference](https://develope
 
 The weak point is the selection. A campaign finds the right machines only when every machine exists as an asset with a serial number and the link from component batch to machine is known. Select too broadly and you pay for work on machines that are fine; too narrowly and faulty machines stay in the field.
 
-A typical scenario, as an assumption: a supplier's valve batch is faulty and sits in 1,800 machines sold through 70 dealers, 120 of them still unsold in dealer stock. The campaign covers the 1,680 machines at end customers as items, the unsold ones as partner inventory, and the valve as causal part with a product return against credit from the supplier. Dealers report each machine as done, not a number per dealer. The full walkthrough, and when a list in the quality system is enough, is in [product recalls in Salesforce](../../../blog/product-recalls-service-campaigns/).
+Worked example: a supplier's valve batch is faulty and sits in 1,800 machines sold through 70 dealers, 120 of them still unsold in dealer stock. The campaign covers the 1,680 machines at end customers as items, the unsold ones as partner inventory, and the valve as causal part with a product return against credit from the supplier. Dealers report each machine as done, not a number per dealer. The full walkthrough, and when a list in the quality system is enough, is in [product recalls in Salesforce](../../../blog/product-recalls-service-campaigns/).
 
 ```hinweis offen
 The pricing page does not mention product service campaigns. Get confirmed which edition includes them before you plan a recall process on them.
 ```
 
-## What does the service agent see on one screen?
+## The whole machine history on one screen
 
 Two consoles, for two kinds of calls. The [Service Console for Manufacturing](https://trailhead.salesforce.com/content/learn/modules/service-console-for-manufacturing-cloud-admin-essentials/learn-about-the-service-console-for-manufacturing) is a redesigned contact page: the caller's details plus the assets, cases and orders of their account. Its timeline, recommendations and record alerts components are "available with the Industries Service Excellence license", so ask whether your edition includes it. The Asset Service Console starts from the machine instead: according to the service page it shows "asset warranties, cases, work orders, and claims related to an asset".
 
-Both consoles look only as complete as the data behind them. If milestones, warranties and claims hang on the asset, the agent sees the whole history in one place. If half the machines have no warranty start date, the console shows the gap faster than any report.
+Both consoles look only as complete as the data behind them. If milestones, warranties and claims hang on the asset, the agent sees the whole history in one place. If half the machines have no warranty start date, the console shows the gap sooner than a report.
 
 ## Spare parts by serial number
 
@@ -133,6 +133,4 @@ The asset hierarchy, maintenance plans and service partners are the topic of the
 5. **Test a campaign** against one past quality case before a real recall depends on it.
 6. **Add the agent last**, with an approval threshold agreed with service and finance.
 
-The data flows between SAP and Manufacturing Cloud, including credit notes, are the topic of [chapter 5](../erp-ai-and-rollout/).
-
-Warranty, recalls and agents in Manufacturing Cloud are only as good as the installed base underneath, so start there.
+Start with step 1, because warranty, recalls and agents all depend on the installed base. The data flows between SAP and Manufacturing Cloud, including credit notes, are the topic of [chapter 5](../erp-ai-and-rollout/).

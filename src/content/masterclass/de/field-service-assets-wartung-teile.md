@@ -10,9 +10,9 @@ pubDate: 2026-10-28
 short: "Assets, Wartung, Teile, Partner"
 summary: "Wie Maschinen als Assets abgebildet werden, Wartung nach Kalender oder Betriebsstunden, Ersatzteile mit dem ERP und Servicepartner im selben Prozess."
 takeaways:
-  - "Eine Komponente wird zum Asset, wenn sie eine eigene Seriennummer, eine eigene Wartung oder eine eigene Garantie hat; alles andere bleibt in der Stückliste im PLM. Meist bleiben zwei oder drei Ebenen pro Maschine."
-  - "Ein Wartungsvertrag verteilt sich in Field Service auf drei Objekte: Servicevertrag für das Verkaufte, Wartungsplan für geplante Einsätze und Entitlement für die zugesagte Reaktionszeit."
-  - "Wartung nach Betriebsstunden braucht einen Zähler am Asset, einmal am Tag aus ERP, IoT-Plattform oder vom Techniker gefüllt, und eine kriterienbasierte Regel für „2.000 Stunden oder 12 Monate“."
+  - "Eine Komponente wird zum Asset, wenn sie eigene Seriennummer, Wartung oder Garantie hat. Meist bleiben zwei oder drei Ebenen pro Maschine."
+  - "Ein Wartungsvertrag besteht aus Servicevertrag für das Verkaufte, Wartungsplan für geplante Einsätze und Entitlement für die zugesagte Reaktionszeit."
+  - "Wartung nach Betriebsstunden braucht einen täglich gefüllten Zähler am Asset und eine kriterienbasierte Regel für „2.000 Stunden oder 12 Monate“."
   - "Das ERP führt Ersatzteilbestand und Materialstamm; Field Service hält eine Kopie für Fahrzeuge und Techniker und meldet verbaute Teile zurück."
   - "Servicepartner arbeiten im selben Prozess, wenn jeder Partnertechniker eine eigene Serviceressource ist und jede Partnerfirma ein eigenes Servicegebiet bekommt."
 articles: [field-service-asset-hierarchy, field-service-maintenance-contracts, field-service-usage-based-maintenance, predictive-maintenance-data-readiness, asset-service-lifecycle-management-addon, field-service-spare-parts, field-service-service-partners]
@@ -56,7 +56,7 @@ In meinen Field-Service-Projekten kamen Ersatzteile und installierte Basis aus d
 
 Prüfen Sie Seriennummern und Standorte, bevor Wartungspläne darauf aufbauen.
 
-## Servicevertrag, Wartungsplan, Entitlement: Welches Objekt macht was?
+## Servicevertrag, Wartungsplan, Entitlement: ein Objekt je Aufgabe
 
 Ein Wartungsvertrag steckt nicht in einem Objekt. In Field Service verteilt er sich auf drei:
 
@@ -118,7 +118,7 @@ Die Vergleichstabelle der Preisliste markiert Asset Coverage View und Interactiv
 
 Mehrere ASLM-Funktionen betreffen den Bestand: Reservierung, Chargen, Inventur, Nachschub. Wenn SAP den Bestand führt, entsteht damit eine zweite Wahrheit. Für einen Maschinenbauer passen aus meiner Sicht die Funktionen, die das ERP auf der Serviceseite schlecht kann: Deckungsprüfung an der Hotline, Reparaturangebote, Nachrüstkampagnen und Depotreparatur. Den Vergleich von Add-on und Eigenbau für 30 Nutzer finden Sie in [Asset Service Lifecycle Management: Lohnt das Add-on?](../../../blog/asset-service-lifecycle-management-zusatz/).
 
-## Ersatzteile: Warum führt das ERP den Bestand?
+## Ersatzteile: Das ERP führt den Bestand
 
 Im ERP hat ein Ersatzteil einen Wert, einen Einkaufsprozess, Mindestbestände und Buchungen in die Finanzbuchhaltung. Field Service hält Mengen je Standort und protokolliert Bewegungen, und mehr soll es auch nicht tun. Laut [Datenmodell für die Lagerverwaltung](https://developer.salesforce.com/docs/atlas.en-us.field_service_dev.meta/field_service_dev/fsl_dev_soap_inventory.htm) hält ein Product Item den Bestand eines Teils an einem Standort, Products Required listen, was ein Auftrag braucht, und Products Consumed erfassen, was verbaut wurde. Die Menge am Product Item passt sich dabei automatisch an. Eine [Location](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_location.htm) kann ein Lager oder ein Servicefahrzeug sein.
 
@@ -147,15 +147,15 @@ Garantie berührt drei Produkte, deshalb legen Sie den Verantwortlichen vor dem 
 
 Meine Regel: Reichen Händler Garantieansprüche ein, gehört die Garantie in die Manufacturing Cloud, wie im Manufacturing-Cloud-Kapitel zu [Garantie und After-Sales](../../manufacturing-cloud/garantie-und-after-sales/) beschrieben. Müssen nur Ihre eigenen Techniker bei der Terminbuchung die Deckung sehen, reicht das Entitlement am Asset, und die Ansprüche bleiben im ERP. Zwei Garantiemodelle am selben Asset geben demselben Kunden zwei Antworten.
 
-## Wie passen Servicepartner in denselben Prozess?
+## Servicepartner arbeiten im selben Prozess
 
 Partner gehören in denselben Prozess wie Ihre eigenen Techniker: derselbe Plan für den Disponenten, dieselbe App, derselbe Servicebericht, dieselbe Asset-Historie. Der [Architekturleitfaden von Salesforce zu Subunternehmern](https://architect.salesforce.com/docs/architect/fundamentals/guide/field-service-contractor-sharing-patterns) beschreibt zwei Modelle. Ein namentlich geführter Subunternehmer wird ähnlich wie ein Mitarbeiter behandelt und braucht eine eigene Benutzerlizenz. Eine Partnerfirma lässt sich als kapazitätsbasierte Ressource abbilden, und der Partner teilt seine Leute selbst ein. Der Leitfaden nutzt das Servicegebiet als wichtigste Sicherheitsgrenze, mit einem Untergebiet pro Partnerfirma.
 
 Für gleiche Arbeitsweise bevorzuge ich das erste Modell für regelmäßige Partner und das zweite für Partner, die bei Spitzen einspringen. Contractor Plus kostet laut Preisliste 80 Euro pro Nutzer oder 32 Euro pro Login und Monat, ab 2,5 Logins im Monat ist die Nutzerlizenz günstiger. Rollen und Lizenzregeln stehen in [Field Service Lizenzen nach Rolle](../../../blog/field-service-lizenzen-rollen-dispatcher-techniker/), Einrichtung und was bewusst anders bleibt in [Servicepartner einbinden](../../../blog/salesforce-field-service-servicepartner/).
 
-## Ein typisches Szenario, als Annahme: 1.200 Maschinen in drei Baureihen
+## Rechenbeispiel: 1.200 Maschinen in drei Baureihen
 
-Ein typisches Szenario, als Annahme: Ein Hersteller von Bearbeitungszentren hat 1.200 Maschinen in drei Baureihen im Feld. Der Servicevertrag sagt: Service alle 2.000 Betriebsstunden oder alle 12 Monate, was zuerst eintritt. 700 Maschinen sind vernetzt, 500 nicht. Zwei Partnerfirmen decken Skandinavien ab.
+Ein Hersteller von Bearbeitungszentren hat 1.200 Maschinen in drei Baureihen im Feld. Der Servicevertrag sagt: Service alle 2.000 Betriebsstunden oder alle 12 Monate, was zuerst eintritt. 700 Maschinen sind vernetzt, 500 nicht. Zwei Partnerfirmen decken Skandinavien ab.
 
 | Bereich | Entscheidung im Szenario |
 |---|---|
@@ -165,11 +165,11 @@ Ein typisches Szenario, als Annahme: Ein Hersteller von Bearbeitungszentren hat 
 | Teile und Partner | 30 Fahrzeuge als Locations in Salesforce, Bestand nächtlich aus SAP. Die zwei Partner bekommen je ein Gebiet, regelmäßige Techniker Contractor Plus pro Nutzer. |
 | Add-ons | Im ersten Jahr keine. Connected Assets würde 180.000 US-Dollar im Jahr kosten und keine Entscheidung ändern, die ein täglicher Zähler nicht auch trifft. |
 
-## Was sollten Sie entscheiden, bevor ein Partner baut?
+## Asset-Tiefe pro Maschinentyp festlegen
 
 | Entscheidung | Was dazugehört |
 |---|---|
-| Asset-Tiefe pro Maschinentyp | Mit den drei Fragen oben bestimmt, dazu welches System die installierte Basis nach Auslieferung führt. |
+| Asset-Tiefe pro Maschinentyp | Mit den Fragen oben bestimmt, dazu welches System die installierte Basis nach Auslieferung führt. |
 | Vertragstypen | Jeder mit seinen Objekten: was verkauft wurde, welche Wartung, welche Reaktionszeit. |
 | Zählerquelle pro Baureihe | Woher der Zähler kommt und welche Regel gilt, wenn ERP und Techniker abweichen. |
 | Bestandsführung | Welches System den Bestand führt und welche Standorte nach Salesforce kommen. |
@@ -177,5 +177,3 @@ Ein typisches Szenario, als Annahme: Ein Hersteller von Bearbeitungszentren hat 
 | Partnermodell | Eines pro Partnerfirma. |
 
 Die meisten dieser Punkte sind Schnittstellenfragen, und daran arbeite ich im Bereich [Salesforce-Schnittstellen](../../../leistungen/salesforce-schnittstellen/). [Kapitel 5](../field-service-ki-agenten-einfuehrung/) baut auf diesem Datenmodell auf, mit KI-Agenten, Einführung in Wellen und Betrieb, und die [Übersichtsseite](../) listet alle Kapitel.
-
-Assets, Verträge und Teile tragen alles, was später in Field Service kommt, deshalb verdienen sie die ersten Entscheidungen.

@@ -10,11 +10,10 @@ pubDate: 2026-10-28
 short: "Nutzen und Lizenzen"
 summary: "Wann sich Salesforce Field Service für Hersteller rechnet, welche Rolle welche Lizenz braucht und wie ein Auftrag vom Case zum Techniker kommt."
 takeaways:
-  - "Salesforce Field Service rechnet sich vor allem bei vielen kurzen Einsätzen pro Techniker und Tag, hohem Fahrzeitanteil und vielen Skills, die zum Auftrag passen müssen."
-  - "Dispatcher und Technician kosten laut Preisliste vom Oktober 2026 je 175 € pro Nutzer und Monat, Field Service Plus 230 € und Contractor Plus 80 € pro Nutzer oder 32 € pro Login."
-  - "Dispatcher- und Technician-Lizenzen dürfen nicht für Contact Center oder Case Management genutzt werden. Wer Cases bearbeitet und auch disponiert, braucht Field Service Plus."
-  - "Ein Auftrag läuft über Case, Arbeitsauftrag, Positionen und Serviceauftrag; Wartungspläne erzeugen Arbeitsaufträge ohne Case, und beide landen in derselben Disposition."
-  - "Agentforce 1 Field Service für 650 € lohnt sich nur, wenn Sie Slack, Tableau Next und Data Cloud ohnehin kaufen würden; aus Einzelteilen kostet der Kern 430 Dollar."
+  - "Dispatcher und Technician kosten laut Preisliste je 175 € pro Nutzer und Monat, Field Service Plus 230 €, Contractor Plus 80 € oder 32 € pro Login."
+  - "Dispatcher- und Technician-Lizenzen gelten nicht für Contact Center oder Case Management. Wer Cases bearbeitet und disponiert, braucht Field Service Plus."
+  - "Ein Auftrag läuft über Case, Arbeitsauftrag und Serviceauftrag. Wartungspläne erzeugen Arbeitsaufträge ohne Case für dieselbe Disposition."
+  - "Agentforce 1 Field Service für 650 € lohnt sich nur, wenn Sie Slack, Tableau Next und Data Cloud ohnehin kaufen. Der Kern kostet einzeln 430 Dollar."
 articles: [field-service-worth-it, field-service-licences-by-role, agentforce-1-field-service-bundle, field-service-case-to-work-order, salesforce-licence-types]
 faq:
   - q: "Was kostet Salesforce Field Service pro Techniker?"
@@ -58,7 +57,7 @@ Wartung, Reparaturen und Inspektionen mit mehreren Kunden pro Tag sind der beste
 
 Kennt niemand die vier Zahlen, fehlt die Grundlage für jeden Business Case. Die Kriterien im Detail und die Rechnung mit 40 Technikern stehen in [Salesforce Field Service: Wann lohnt es sich?](../../../blog/salesforce-field-service-lohnt-sich/).
 
-## Wie kommt ein Auftrag vom Case zum Techniker?
+## Vom Case zum Techniker: der Weg eines Auftrags
 
 Eine Kundenanfrage läuft in Salesforce über vier Datensätze, bevor ein Techniker losfährt. Der [Field Service Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.field_service_dev.meta/field_service_dev/fsl_dev_soap_core.htm) beschreibt die Kernobjekte so:
 
@@ -115,7 +114,7 @@ Die Preisseite verweist für loginbasierte Contractor-Lizenzen an den Vertrieb, 
 
 Contractor-Lizenzen sind für das Personal Ihrer Servicepartner gedacht; eigene Leute darauf zu setzen, um zu sparen, würde ich nicht riskieren. Die ganze Rollenmatrix mit einer Jahresrechnung steht in [Salesforce Field Service Lizenzen: Wer braucht welche?](../../../blog/field-service-lizenzen-rollen-dispatcher-techniker/).
 
-## Welche Add-ons gibt es, und wann lohnt das Agentforce-1-Paket?
+## Add-ons und das Agentforce-1-Paket
 
 Die Preisseite listet fünf Add-ons, auf der deutschen Seite in Dollar:
 
@@ -141,7 +140,7 @@ Nicht jeder Außendienst braucht ein Planungsprodukt. Drei Alternativen prüfe i
 
 Zwei Grenzen zu anderen Salesforce-Produkten sollten Sie vor dem Angebot kennen. Bearbeitet dieselbe Serviceorganisation Garantieansprüche von Händlern, kommt Manufacturing Cloud for Service ins Spiel; wo die Garantie endet und Field Service beginnt, klärt das Kapitel [Garantie und After-Sales](../../manufacturing-cloud/garantie-und-after-sales/) der Manufacturing-Cloud-Masterclass. Werden Wartungsverträge als wiederkehrender Umsatz verkauft und abgerechnet, ist das ein Thema für Revenue Cloud, eingeordnet im [Überblick zu Revenue Cloud](../../revenue-cloud/revenue-cloud-ueberblick/).
 
-## Ein typisches Szenario, als Annahme: die Lizenzrechnung eines Komponentenherstellers
+## Rechenbeispiel: die Lizenzrechnung eines Komponentenherstellers
 
 Ein Komponentenhersteller hat drei Mitarbeitende, die Hotline und Disposition gemeinsam machen, zwei reine Disponenten, 25 eigene Techniker, eine Person im Backoffice, die Verträge pflegt, und einen Servicepartner mit vier Technikern. Alle Zahlen sind Annahmen, die Preise Listenpreise vom Oktober 2026.
 
@@ -157,7 +156,7 @@ Das sind 5.930 € im Monat und 71.160 € im Jahr zum Listenpreis, Implementier
 
 Soll die Hotline zusätzlich einen KI-Agenten bekommen, kosten die fünf Büroarbeitsplätze mit dem Agentforce-Add-on 625 Dollar mehr im Monat. Dieselben fünf Plätze auf Agentforce 1 Field Service kosten 3.250 € im Monat. Aus Einzelteilen sind es 1.040 € für Field Service Plus und Dispatcher plus 625 Dollar für das Add-on, das die deutsche Seite nur in Dollar nennt. Ohne geplanten Bedarf für Slack, Tableau Next und Data Cloud spricht hier nichts für das Paket.
 
-## Was sollten Sie entscheiden, bevor ein Partner baut?
+## Erster Schritt: die vier Zahlen für eine Region erheben
 
 | Entscheidung | Was dazugehört |
 |---|---|
@@ -169,5 +168,3 @@ Soll die Hotline zusätzlich einen KI-Agenten bekommen, kosten die fünf Büroar
 | Eine Lizenzprognose über drei Jahre | Nach Rollen und Einführungswellen, damit Sie nicht am ersten Tag 45 Technikerlizenzen kaufen, wenn die erste Welle 15 hat. |
 
 Diese Liste ist Teil meiner Arbeit unter [Make-or-buy und Lizenzprognosen](../../../leistungen/make-or-buy-lizenzen/), vor der Verhandlung und unabhängig von Hersteller und Partner. Steht der Business Case, geht es um die Planung selbst: Stammdaten, Scheduling Policies und die neue Konsole behandelt [Kapitel 2: Terminplanung und Disposition](../field-service-terminplanung-disposition/). Alle Kapitel finden Sie auf der [Übersichtsseite](../).
-
-Field Service rechnet sich mit vielen kurzen Einsätzen und einer Lizenzmatrix, die aus den Rollen folgt.

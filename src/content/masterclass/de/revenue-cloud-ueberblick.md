@@ -10,9 +10,8 @@ pubDate: 2026-10-28
 short: "Überblick und Entscheidung"
 summary: "Was Revenue Cloud umfasst, was es kostet, wie es heißt und wann ein Hersteller besser bei SAP oder Sales Cloud bleibt."
 takeaways:
-  - "Revenue Cloud ist das Quote-to-Cash-Produkt von Salesforce auf Standardobjekten der Plattform, vom Produktkatalog über Konfigurator, Angebot und Auftrag bis zu Vertrag und Rechnung."
-  - "Es lohnt sich für Hersteller mit vielen Varianten, Abonnements oder Wartungsverträgen und häufigen Nachträgen, selten dagegen, wenn ein Angebot nur eine Preisabfrage in SAP ist."
-  - "Zum Listenpreis kostet Revenue Cloud Growth 150 Euro und Revenue Cloud Advanced 200 Euro pro Nutzer und Monat, jährlich abgerechnet und zusätzlich zu Sales Cloud."
+  - "Revenue Cloud lohnt sich bei vielen Varianten, Abonnements oder Wartungsverträgen und häufigen Nachträgen, selten bei einer reinen Preisabfrage in SAP."
+  - "Zum Listenpreis kostet Growth 150 Euro und Advanced 200 Euro pro Nutzer und Monat, jährlich abgerechnet und zusätzlich zu Sales Cloud."
   - "Die Salesforce-Dokumentation mischt noch mehrere Namen. Im Bestellformular stehen deshalb Edition, Zusatzprodukte und SKUs, nicht nur Revenue Cloud."
   - "Bevor ein Partner baut, entscheidet das Unternehmen, wem Preis, Konfigurationsregeln und Rechnung gehören und wie lange CPQ weiterläuft."
 articles: [revenue-cloud-worth-it-manufacturers, revenue-cloud-product-names, revenue-cloud-editions-pricing, revenue-cloud-sap-system-boundaries, revenue-cloud-vs-manufacturing-cloud-commerce]
@@ -67,7 +66,7 @@ Ich suche im heutigen Angebotsprozess nach diesen Signalen:
 
 Zwei oder drei dieser Signale zusammen rechtfertigen einen genaueren Blick, eines allein selten. Die vollständige Liste der Signale dafür und dagegen samt Kostenrahmen steht in [Revenue Cloud für Hersteller: Wann lohnt es sich?](../../../blog/revenue-cloud-lohnt-sich-hersteller/).
 
-## Welcher Name gilt: Revenue Cloud, RLM oder Revenue Management?
+## Revenue Cloud, RLM, Revenue Management: ein Produkt, mehrere Namen
 
 Alle meinen dasselbe Produkt, die Quellen wurden nur zu unterschiedlichen Zeitpunkten aktualisiert. Stand Ende Oktober 2026:
 
@@ -105,7 +104,7 @@ Für alle Gruppen außer denen, die Angebote erstellen, sollten Sie sich die Liz
 
 Zusatzprodukte, Billing Events und die Lizenzprognose stehen in [Revenue Cloud Preise: Growth, Advanced und Add-ons](../../../blog/revenue-cloud-editionen-preise/), eine unabhängige Prüfung eines Angebots gehört zu [Make-or-Buy und Lizenzprognosen](../../../leistungen/make-or-buy-lizenzen/).
 
-## Welche Aufgaben sollten bei SAP bleiben?
+## Diese Aufgaben bleiben bei SAP
 
 In einem Fertigungsunternehmen bleibt SAP, und drei Aufgaben bleiben meist dort:
 
@@ -150,7 +149,7 @@ Revenue Cloud ist ein großes Produkt, und für manche Hersteller ist es zu viel
 
 Die Alternativen sind Angebote in Sales Cloud mit ERP-Schnittstelle, ein CPQ-Produkt eines Partners oder ein eigener Ansatz auf der Plattform. Den letzten Weg beschreibe ich in [vom Angebot zum Sales Agreement](../../../blog/angebot-zu-sales-agreement-produktkonfigurator/).
 
-## Ein typisches Szenario, als Annahme
+## Rechenbeispiel: 25 Grundmodelle mit Fernüberwachung
 
 Ein Hersteller von Verpackungsmaschinen mit SAP S/4HANA verkauft 25 Grundmodelle mit Optionen, dazu Ersatzteilpakete und ein Abonnement für Fernüberwachung je Maschine. Im Vertrieb arbeiten 60 Personen, 20 davon erstellen Projektangebote. Ersatzteilpreise sind SAP-Konditionen je Kunde. Alle Details sind Annahmen.
 
@@ -169,7 +168,7 @@ Kundenauftrag SAP --> Rechnung SAP
 
 Die Rechnungen bleiben im ersten Jahr in SAP; Billing wird erst zum Thema, wenn die Abonnements ein eigenes Geschäft sind.
 
-## Was sollten Sie entscheiden, bevor ein Partner baut?
+## Erster Schritt: Preis, Regeln und Rechnung ins Entscheidungsprotokoll
 
 Partner fragen nach Funktionen. Die Entscheidungen, die Kosten und Zeitplan treiben, gehören dem Unternehmen:
 
@@ -181,5 +180,3 @@ Partner fragen nach Funktionen. Die Entscheidungen, die Kosten und Zeitplan trei
 | Parallelbetrieb mit CPQ | Bestandskunden von CPQ stehen nicht unter Zeitdruck: Die CPQ-Seite sagt „There is no forced migration“, aber auch, dass CPQ „will not receive new features“. Eine typische Migration dauert laut derselben Seite drei bis sechs Monate. Die Einzelheiten stehen in Kapitel 5, [von CPQ zu Revenue Cloud](../von-cpq-zu-revenue-cloud/). |
 
 Schreiben Sie diese vier Antworten ins Entscheidungsprotokoll, bevor Sie Schätzungen anfragen. Sie gehören zu meiner Arbeit in der [Salesforce-Architektur](../../../leistungen/salesforce-architektur/). Sind sie geklärt, zeigt [Kapitel 2 zu Katalog, Konfigurator und Preisen](../produktkatalog-konfigurator-preise/), wie Produkte und Preise abgebildet werden; alle Kapitel stehen auf der [Übersichtsseite](../).
-
-Revenue Cloud lohnt sich, wenn Ihre Angebote komplex sind und Ihr Umsatz wiederkehrt, und die Entscheidungen zu Preis, Regeln und Rechnung kommen vor dem Partner.
