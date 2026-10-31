@@ -11,10 +11,9 @@ contactBrief: change-basics
 author: juliane
 tags: [Change Management, ADKAR, Kotter, Lewin, Prosci]
 takeaways:
-  - "Die bekanntesten Change-Management-Modelle sind Lewins drei Phasen, Kotters acht Stufen, das ADKAR-Modell und der Prosci 3-Phase Process."
-  - "Lewin und Kotter beschreiben die Veränderung aus Sicht der Organisation, ADKAR aus Sicht der einzelnen Person. Gute Pläne brauchen beide Blickwinkel."
+  - "Lewin und Kotter sehen die Veränderung aus Sicht der Organisation, ADKAR aus Sicht der einzelnen Person. Ein guter Plan braucht beide Blickwinkel."
   - "Kotter eignet sich, um eine große Transformation von oben zu führen. ADKAR eignet sich, um je Gruppe zu erkennen, woran eine Einführung hängt."
-  - "Kein Modell ersetzt einen Sponsor im Management. Alle bekannten Modelle setzen voraus, dass jemand mit Entscheidungsbefugnis sichtbar hinter der Veränderung steht."
+  - "Kein Modell ersetzt einen Sponsor im Management, der mit Entscheidungsbefugnis sichtbar hinter der Veränderung steht."
 faq:
   - q: "Welche Change-Management-Modelle gibt es?"
     a: "Die bekanntesten sind das Drei-Phasen-Modell von Kurt Lewin, das Acht-Stufen-Modell von John Kotter, das ADKAR-Modell und der 3-Phase Process von Prosci. Daneben gibt es Phasenmodelle für die emotionale Reaktion auf Veränderung, die oft als Veränderungskurve gezeichnet werden."
@@ -42,7 +41,7 @@ Modelle für Veränderungen gibt es viele. Vier davon begegnen mir in Unternehme
 
 Daneben gibt es Phasenmodelle, die beschreiben, wie Menschen emotional auf eine Veränderung reagieren, vom ersten Schock bis zur Integration. Sie werden oft als [Veränderungskurve oder Change-Kurve](../change-kurve/) gezeichnet und helfen Führungskräften zu verstehen, warum ein Team nach anfänglicher Zustimmung plötzlich bremst. Einen Plan für die Einführung liefern sie nicht.
 
-## Was besagt das Drei-Phasen-Modell von Lewin?
+## Lewin: auftauen, verändern, einfrieren
 
 Kurt Lewin, ein Sozialpsychologe, beschrieb Veränderung als Abfolge von drei Phasen:
 
@@ -52,7 +51,7 @@ Kurt Lewin, ein Sozialpsychologe, beschrieb Veränderung als Abfolge von drei Ph
 
 Das Modell ist das älteste der vier und bis heute nützlich, weil es in drei Worten erklärt, warum eine Veränderung Vorbereitung und Nacharbeit braucht. Es hat aber Kritik auf sich gezogen. Bernard Burnes fasst sie in seiner [Neubewertung von Lewins Ansatz](https://dspace.stir.ac.uk/handle/1893/21356) im Journal of Management Studies zusammen: Lewin setze einen stabilen Zustand voraus, tauge nur für kleine Veränderungen, blende Macht und Politik aus und sei von oben gesteuert. Burnes selbst hält den Ansatz trotzdem für aktuell. Als Bild für Führungskräfte funktioniert Lewin gut, als Arbeitsplan reicht es nicht.
 
-## Wie funktionieren Kotters acht Stufen?
+## Kotters acht Stufen führen eine Transformation von oben
 
 John Kotter, Professor an der Harvard Business School, leitete seine [acht Stufen](https://www.kotterinc.com/methodology/8-steps/) aus der Beobachtung von Unternehmen ab, die eine Transformation versucht haben. Die Stufen heißen im Original:
 
@@ -83,7 +82,7 @@ Die Stufen bauen aufeinander auf. Der Nutzen liegt in der Diagnose: Stockt eine 
 
 ADKAR allein ist aber kein Plan für eine Organisation. Es sagt nicht, wer die Veränderung trägt oder in welcher Reihenfolge Gruppen und Standorte drankommen.
 
-## Wie hängen der Prosci-Prozess und ADKAR zusammen?
+## Der Prosci-Prozess gibt ADKAR einen Rahmen für die Organisation
 
 Prosci ergänzt ADKAR um einen Rahmen für die Organisation, den [3-Phase Process](https://www.prosci.com/methodology/3-phase-process): Vorgehen vorbereiten, Veränderung steuern, Ergebnisse sichern. In der ersten Phase wird festgelegt, welche Gruppen betroffen sind, was sich für jede ändert, wer Sponsor ist und woran Erfolg gemessen wird. In der zweiten laufen die Pläne je Gruppe, ausgerichtet an den ADKAR-Stufen. In der dritten wird gemessen, nachgesteuert und die Verantwortung übergeben.
 
@@ -101,8 +100,6 @@ Eine Faustregel nach Art der Veränderung:
 - **Eine neue Software für mehrere Abteilungen.** Prosci-Prozess mit ADKAR je Gruppe. Bei einer CRM-Einführung haben Vertrieb, Innendienst und Service unterschiedliche Fragen, und eine Diagnose je Gruppe spart Schulungen, die niemand braucht.
 - **Eine Transformation über Länder und Bereiche.** Prosci-Prozess als Rahmen, Kotter als Prüfliste für die Führung, ADKAR je Gruppe und Land. Bei solchen Vorhaben wird der Plan je Land aufwendig, und ohne Sponsor vor Ort bleibt die Veränderung eine Ansage aus der Zentrale.
 
-Aus meinen Projekten kenne ich beide Enden dieser Skala: einen weltweiten Rollout der Salesforce Sales Cloud mit mehr als 500 Anwenderinnen und Anwendern und eine IT-Transformation bei einem Versicherer mit mehr als 20.000 Betroffenen in 19 Ländern. Welche Rolle die Modelle in einem Salesforce-Programm spielen, beschreibe ich mit Fabian Kramer in der [Masterclass Change Management](../../masterclass/change-management/), die Grundlagen stehen in [Was ist Change Management?](../was-ist-change-management/).
+Aus meinen Projekten kenne ich beide Enden dieser Skala: einen weltweiten Rollout der Salesforce Sales Cloud mit mehr als 500 Anwenderinnen und Anwendern und eine IT-Transformation bei einem Versicherer mit mehr als 20.000 Betroffenen in 19 Ländern. Welche Rolle die Modelle in einem Salesforce-Programm spielen, beschreibe ich mit Fabian Kramer in der [Masterclass Change Management](../../masterclass/change-management/), die Grundlagen stehen in [Was ist Change Management?](../was-ist-change-management/). Wie wir das in Programmen umsetzen, steht unter [Change Management Beratung für Salesforce](../../leistungen/change-management/).
 
-Ein Modell ersetzt keine Entscheidung im Management, es macht nur sichtbar, welche fehlt. Mehr dazu lesen Sie unter [Change Management Beratung für Salesforce](../../leistungen/change-management/).
-
-Prosci und ADKAR sind eingetragene Marken von Prosci, Inc.
+*Prosci und ADKAR sind eingetragene Marken von Prosci, Inc.*

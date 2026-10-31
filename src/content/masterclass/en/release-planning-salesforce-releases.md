@@ -10,10 +10,10 @@ pubDate: 2026-10-28
 short: "Release planning"
 summary: "How to align your release calendar with the three Salesforce releases, release updates and retirements."
 takeaways:
-  - "A Salesforce release calendar lays two calendars on top of each other: your own cadence with freeze windows, and Salesforce's calendar with three releases, release updates and retirements."
-  - "Whether a sandbox gets the new release early depends on its instance; only a refresh before the cutoff changes that, and for Winter '27 the cutoff was 27 August 2026."
-  - "Sandboxes on the preview release do not belong in the deployment path to production, because they work with a newer API version than the production org."
-  - "Release updates carry a date by which you should complete their steps; a test run enables the change immediately, so it belongs in a sandbox first."
+  - "The release calendar lays your cadence with freeze windows over Salesforce's calendar of releases, release updates and retirements."
+  - "Whether a sandbox gets a release early depends on its instance. Only a refresh before the cutoff changes that, for Winter '27 on 27 August 2026."
+  - "Sandboxes on the preview release do not belong in the deployment path to production, because they work with a newer API version than production."
+  - "Release updates carry a date by which you should complete their steps. A test run enables the change immediately, so it belongs in a sandbox first."
   - "Several retirements with fixed dates run until Summer '28, from the CLI token change on 28 October 2026 to API versions 31.0 to 40.0."
 articles: [salesforce-winter-27-pipeline, api-67-user-mode-apex, salesforce-password-integrations-2027, salesforce-dx-mcp-server-end-of-life]
 faq:
@@ -45,7 +45,7 @@ Four layers go into it:
 The fourth layer is the one people forget. A release on the last day of the quarter hits sales exactly when quotes and orders have to go through Salesforce. A release that changes the SAP interface does not belong in the week the SAP team imports its own transports.
 ```
 
-## Which cadence and freeze windows fit?
+## A fixed cadence with freeze windows
 
 I recommend a fixed cadence over releases on demand. Every two or three weeks on the same weekday is a good start for most programmes. A fixed date forces partners to ship small packages, and the business knows when things change. Anything urgent that cannot wait goes through the hotfix path from [chapter 3](../environments-and-branching/), not through a special release.
 
@@ -133,9 +133,9 @@ What works without much effort:
 - **One channel for feedback.** Salesforce itself advises telling users where to report questions and problems.
 - **External users early.** Dealers in the portal do not plan their training around your sprint. They need a longer lead time.
 
-## A typical scenario, as an assumption: a machine builder before Spring '27
+## Example: a machine builder before Spring '27
 
-A typical scenario, as an assumption: a machine builder runs Service Cloud, Field Service and a dealer portal connected to SAP S/4. Three partners work on one org, and releases go live every second Thursday. The release manager on the client side plans in November:
+Suppose a machine builder runs Service Cloud, Field Service and a dealer portal connected to SAP S/4. Three partners work on one org, and releases go live every second Thursday. The release manager on the client side plans in November:
 
 ```schritte
 Enter the retirements | November
@@ -151,5 +151,3 @@ Share the calendar | with every partner
 ```
 
 None of these steps needs a new tool. It needs someone on the client side who owns the calendar, and partners who are contractually bound to plan into it. How such rules get into partner contracts is part of my [partner governance](../../../services/partner-governance/) work; the data side of a release is covered in [chapter 7](../data-and-configuration/), and all chapters are on the [overview page](../).
-
-A release calendar that shows your dates and Salesforce's in one place turns retirements and upgrades into plannable work.

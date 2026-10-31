@@ -9,10 +9,10 @@ topic: commerce
 categories: [b2b-commerce, field-service]
 tags: [B2B Commerce, Ersatzteile, installierte Basis, Assets, PLM, Endpoint Extensions]
 takeaways:
-  - "Entitlements in Salesforce B2B Commerce wirken pro Käufergruppe, nicht pro Seriennummer, und können deshalb nicht beantworten, welche Teile zu einer bestimmten Maschine passen."
+  - "Entitlements wirken pro Käufergruppe, nicht pro Seriennummer. Sie beantworten deshalb nicht, welche Teile zu einer bestimmten Maschine passen."
   - "Eine Käufergruppe pro Maschine scheitert an festen Limits: 2.000 Buyer Entitlements pro Produkt und standardmäßig 20 Käufergruppen pro Käuferkonto."
-  - "Robust ist eine Maschinenseite: Eine eigene Lightning-Web-Komponente listet die Anlagen des Händlers und die Ersatzteile zu jeder davon, aus Salesforce oder dem PLM."
-  - "Suchergebnisse pro Maschine zu filtern geht über Endpoint Extensions, die Basisklasse ist aber noch als Beta markiert, und nachträgliches Filtern reißt Lücken in Ergebnisseiten."
+  - "Robust ist eine Maschinenseite: Eine eigene Komponente listet die Anlagen des Händlers und die Ersatzteile zu jeder davon, aus Salesforce oder dem PLM."
+  - "Suche pro Maschine filtern geht über Endpoint Extensions. Die Basisklasse ist aber Beta, und nachträgliches Filtern reißt Lücken in Ergebnisseiten."
   - "Der Händler sieht nur Maschinen, die auf sein eigenes Konto registriert sind, gelesen aus dem Asset-Datensatz und nie als Freitext eingegeben."
 faq:
   - q: "Können Entitlements in B2B Commerce Teile nach Seriennummer einschränken?"
@@ -88,15 +88,15 @@ Diese Regel würde ich nie lockern: Der Händler sieht nur Maschinen, die auf se
 
 Auf der Lizenzseite nennt die [Salesforce-Hilfe zu Experience-Cloud-Lizenzen](https://help.salesforce.com/s/articleView?language=en_US&id=sf.users_license_types_communities.htm&type=5) Lese-, Anlage- und Bearbeitungsrechte auf Assets für Customer Community Plus und Partner Community. Welche Assets ein Käufer tatsächlich sieht, ist eine Frage der Freigabe. Praktisch heißt das: Das Konto des Assets muss das Käuferkonto sein, oder die Händlerbeziehung muss so modelliert sein, dass die Freigabe ihr folgt. Maschinen, die über einen Händler verkauft, aber auf den Endkunden registriert sind, brauchen vor dem Go-live eine klare Regel. Welche Portallizenz in Manufacturing Cloud was abdeckt, steht im Beitrag zum [Kundenportal in Manufacturing Cloud](../manufacturing-cloud-kundenportal/).
 
-## Ein typisches Szenario: 6.000 Maschinen und 150 Händler
+## Rechenbeispiel: 6.000 Maschinen und 150 Händler
 
-Ein typisches Szenario, als Annahme: Ein Maschinenbauer hat 6.000 installierte Maschinen in acht Baureihen, 150 Händler und ein PLM mit As-built-Stücklisten für Maschinen, die in den letzten zehn Jahren ausgeliefert wurden.
+Angenommen, ein Maschinenbauer hat 6.000 installierte Maschinen in acht Baureihen, 150 Händler und ein PLM mit As-built-Stücklisten für Maschinen, die in den letzten zehn Jahren ausgeliefert wurden.
 
 Eine Käufergruppe pro Maschine scheidet an den Limits oben aus. Eine Käufergruppe pro Baureihe ergäbe bis zu acht Gruppen pro Händler, innerhalb der 20, grenzt die Liste aber nur auf die Baureihe ein, nicht auf die Variante in einer bestimmten Maschine.
 
 Die Entscheidung im Szenario: Käufergruppen bleiben pro Land und Händlerstufe. Eine Maschinenseite zeigt die Assets des Händlers und fragt für die gewählte Maschine die ersatzteilrelevanten Positionen live im PLM ab, das Ergebnis wird einen Tag am Asset zwischengespeichert. Für Maschinen, die älter als zehn Jahre sind, fällt die Seite auf die Teileliste der Baureihe zurück und sagt das auch. Das Filtern der Suche per Extension wird verschoben, bis die Klasse allgemein verfügbar ist.
 
-## Womit sollten Sie anfangen?
+## Erster Schritt: 20 Bestellungen bis zur As-built-Stückliste prüfen
 
 ```schritte
 Zuerst die Daten prüfen
@@ -110,5 +110,3 @@ Mit der Maschinenseite starten
 ```
 
 Das Kapitel [Katalog, Suche, Sichtbarkeit](../../masterclass/b2b-commerce/katalog-suche-sichtbarkeit/) der [Masterclass B2B Commerce](../../masterclass/b2b-commerce/) ordnet das in das Store-Design ein. Welches System welche Daten führt, ist Thema von [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).
-
-Ein Ersatzteilshop zeigt pro Maschine nur so zuverlässig die richtigen Teile, wie Ihre Seriennummern zu einer As-built-Stückliste führen.

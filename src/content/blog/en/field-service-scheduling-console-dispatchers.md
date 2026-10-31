@@ -12,8 +12,8 @@ takeaways:
   - "The Field Service Scheduling Console puts the Gantt, the appointment list and the map on one screen and opens as a tab in the Field Service app."
   - "The Scheduling Console is available only with Enhanced Scheduling and Optimization. Orgs on the older engine have to switch the engine first."
   - "Candidate search shows readable recommendations instead of numeric grades, and Why? gives an AI-generated explanation for a suggested slot."
-  - "According to Trailhead, customisations of the Classic Dispatch Console, the Gantt state and user settings carry over. A Salesforce team member wrote in May 2026 that both consoles are not yet fully at parity."
-  - "My recommendation: two dispatchers test the Scheduling Console for one territory while the others stay on the Classic Dispatch Console, until the gaps that matter to you are closed."
+  - "Customisations and settings carry over according to Trailhead. In May 2026 a Salesforce team member said both consoles were not yet at parity."
+  - "I let two dispatchers test the new console in one territory. The others stay on the classic console until the gaps that matter to them are closed."
 faq:
   - q: "What is the Field Service Scheduling Console?"
     a: "It is the new dispatcher workspace in Salesforce Field Service. It shows the Gantt, the service appointment list and a map on one screen, built on Lightning Web Components, and suggests candidates with AI explanations."
@@ -44,7 +44,7 @@ The old console now has a new name. According to a [Salesforce knowledge article
 If Visualforce pages, custom tabs or navigation rules point to the old label, they can break. The article describes a workaround with a custom Visualforce tab.
 ```
 
-## What does the new console do better?
+## The new console explains its proposals
 
 The biggest change for dispatchers is candidate search. According to the Trailhead unit [Dispatch smarter with the Scheduling Console](https://trailhead.salesforce.com/content/learn/modules/scheduling-console-quick-look/didispatch-smarter-with-the-scheduling-console), the console shows readable recommendations instead of numeric grades. A **Why?** next to a candidate gives an AI-generated explanation of why that slot was suggested.
 
@@ -59,7 +59,7 @@ Trailhead names further changes:
 
 For Winter '27, Salesforce lists [Scheduling Console Enhancements](https://trailhead.salesforce.com/content/learn/modules/winter-27-release-highlights/see-whats-new-service-field-service-it-hr-service-and-contact-center): appointments that span several visits or days appear as one connected job and move with a single drag. For machine builders with commissioning or overhauls over several days, that is the most useful addition so far.
 
-## What do you need for the Scheduling Console?
+## The Scheduling Console needs the enhanced engine
 
 The first requirement is the engine. The Scheduling Console is available only with Enhanced Scheduling and Optimization. Orgs that went live on the older engine have to switch first, and that switch has its own homework: scheduling recipes disappear and empty fields are treated differently by several work rules. The details are in [Enhanced Scheduling and Optimization: switch now?](../field-service-enhanced-scheduling-optimization-switch/).
 
@@ -73,9 +73,9 @@ Both consoles are not identical yet. In a [Trailblazer Community thread](https:/
 
 For a manufacturer this is the important point. Dispatchers who plan annual maintenance weeks ahead or watch utilization across a whole territory work in exactly those long views. Dispatchers who mostly handle breakdowns for today and tomorrow barely miss them. Which group you have decides how fast the move can go.
 
-## A typical scenario, as an assumption: two dispatchers test first
+## Worked example: two dispatchers test first
 
-A typical scenario, as an assumption: a component maker with four dispatchers and three service territories already runs Enhanced Scheduling and Optimization. All numbers are assumptions to show the method.
+The figures are assumed. A component maker with four dispatchers and three service territories already runs Enhanced Scheduling and Optimization. All numbers are assumptions to show the method.
 
 ```schritte
 Inventory | 1 week · admin and dispatchers
@@ -90,8 +90,6 @@ Decision
 
 The note on Why? is worth collecting. If dispatchers use it often and then change the proposal anyway, the explanation points to missing data or a policy that does not fit, which is useful input long before any AI agent schedules on its own. Which agents work for dispatchers today is covered in [AI agents in Field Service: what works today?](../field-service-ai-agents-what-works-today/), and the wider picture in the AI masterclass chapter on [AI agents in manufacturing](../../masterclass/ai-salesforce/ai-agents-in-manufacturing/).
 
-## Where should you start?
+## First step: check which engine you run
 
 Check the engine first. If it is still the older one, the console question waits until the switch to Enhanced Scheduling and Optimization. If it already is the enhanced engine, give two dispatchers the permission set and let them plan one territory for a few weeks. Engine, console and policy owner are the three decisions of the masterclass chapter on [scheduling and dispatch](../../masterclass/field-service/field-service-scheduling-dispatch/).
-
-Move dispatchers to the Scheduling Console when the views they use every day are there, and not because a new screen is available.

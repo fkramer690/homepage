@@ -12,7 +12,7 @@ contactBrief: change
 tags: [release management, change management, release notes, business users]
 takeaways:
   - "Smaller, more frequent releases lower the technical risk, but they need a fixed path through which business users learn beforehand what changes."
-  - "Before every release the release plan states which teams are affected, what changes in their workflows and who informs them, before development is finished."
+  - "Before every release the plan states which teams are affected, what changes for them and who informs them, before development is finished."
   - "Release notes for the business describe what changes in daily work, not which fields and flows were deployed."
   - "Communication needs a way back: whatever does not fit in daily work lands in the backlog instead of an email."
 faq:
@@ -27,9 +27,9 @@ faq:
 draft: false
 ---
 
-Business users should learn before every Salesforce release what changes for them, not afterwards. That takes three things: a rollout plan per release that defines which teams are affected, what changes in their workflows and who informs them; release notes in plain words instead of a list of deployed components; and a way back through which users report what does not fit in daily work. With smaller, more frequent releases this matters more, because changes come more often. The plan is in place before development is finished.
+Business users should learn before every Salesforce release what changes for them, not afterwards. That takes a rollout plan per release that defines which teams are affected, what changes in their workflows and who informs them; release notes in plain words instead of a list of deployed components; and a way back through which users report what does not fit in daily work. With smaller, more frequent releases this matters more, because changes come more often. The plan is in place before development is finished.
 
-## Why is a good release not enough?
+## Smaller releases need more communication
 
 With a clean release process, releases get smaller and more frequent. That lowers the risk of each release. For the business, though, it also means: small changes more often instead of one big package per quarter. Whoever does not know that something has changed takes the change for a defect, calls support or builds a workaround.
 
@@ -51,7 +51,7 @@ The rollout plan is a table with one row per affected group. It is created when 
 
 The last row is not a joke. If a release does not affect a group, that group should not get an email either. Whoever gets release emails every week that do not concern them will not read the one that does.
 
-## What do release notes for the business look like?
+## Release notes for the business describe daily work
 
 Technical release notes list user stories, fields and flows. For the business they are useless. Release notes for users answer five questions:
 
@@ -80,7 +80,7 @@ After the release | first week · key users, project team
 
 For hints directly inside Salesforce the platform offers In-App Guidance: short prompts on a page that explain new fields or workflows. They do not replace release notes, but they help in the first week when a user sees the change for the first time.
 
-## How does the way back work?
+## The way back leads into the backlog
 
 One-way communication is not enough. Otherwise problems from daily work end up in emails to individual people, and after a month nobody knows how often the same question came up. That is why I set up a fixed way back:
 
@@ -98,8 +98,6 @@ Some changes do not please everyone, such as a new required field that creates w
 
 Salesforce publishes three releases a year: Spring, Summer and Winter. They can change interfaces, introduce features or switch old ones off. Most changes affect admins and developers, some affect users too. I described what mattered for the pipeline in [Winter '27](../salesforce-winter-27-what-changes-for-your-pipeline/). For the business the same path applies: whatever your own users see goes into the rollout plan of your next own release.
 
-## Where do you start?
+## First step: a rollout plan for your next release
 
-For your next release, create a rollout plan with one row per affected group before development is finished. Write the release notes for users separately from the technical ones and have a key user read them: if they understand them without explanation, they work. After the release, ask the key users which questions came up and add the answers to the next release notes.
-
-A release has only landed once the people affected know what changes. Read more about [DevOps and release management](../../services/devops-release-management/).
+For your next release, create a rollout plan with one row per affected group before development is finished. Write the release notes for users separately from the technical ones and have a key user read them: if they understand them without explanation, they work. After the release, ask the key users which questions came up and add the answers to the next release notes. Repeat this in the same order for every release, so the business knows when to expect information. How I set up releases in programmes is described under [DevOps and release management](../../services/devops-release-management/).

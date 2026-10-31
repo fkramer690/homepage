@@ -9,11 +9,11 @@ topic: commerce
 categories: [b2b-commerce]
 tags: [B2B Commerce, Einführung, Händler, Buyer Groups, Buyer Manager, Change Management]
 takeaways:
-  - "Führen Sie einen B2B-Shop in Wellen nach Buyer Group ein, beginnend mit Pilothändlern, die bekannte Teile oft nachbestellen. Ein Big Bang zeigt jeden Datenfehler allen Händlern am selben Tag."
-  - "In Salesforce B2B Commerce kommen Käufer über Buyer Groups in den Store. Eine Welle ist deshalb die Menge der Buyer Groups, die den Store erhalten, mit ihren Entitlements und Preisbüchern."
-  - "Buyer Manager mit Delegated External User Administration legen Benutzer ihres eigenen Kontos an, setzen Passwörter zurück und deaktivieren Benutzer. Das entlastet Ihren Service Desk."
-  - "Der Innendienst nimmt während der Umstellung weiter Bestellungen per Telefon und E-Mail an. Händler wechseln, weil der Shop schneller ist, nicht weil das Telefon schweigt."
-  - "Testen Sie vor jeder Welle Entitlements, Preise, Bestandsabfragen und Checkout mit einem echten Käuferkonto dieser Welle, nicht nur mit einem Admin-Benutzer."
+  - "Führen Sie den Shop in Wellen nach Buyer Group ein, zuerst mit Händlern, die bekannte Teile oft nachbestellen. Ein Big Bang zeigt jeden Datenfehler allen."
+  - "Käufer kommen über Buyer Groups in den Store. Eine Welle ist deshalb die Menge der Buyer Groups, die den Store erhalten, mit Entitlements und Preisbüchern."
+  - "Buyer Manager legen Benutzer ihres eigenen Kontos an, setzen Passwörter zurück und deaktivieren Benutzer. Das entlastet Ihren Service Desk."
+  - "Der Innendienst nimmt weiter Bestellungen per Telefon und E-Mail an. Händler wechseln, weil der Shop schneller ist, nicht weil das Telefon schweigt."
+  - "Testen Sie vor jeder Welle Entitlements, Preise, Bestand und Checkout mit einem echten Käuferkonto dieser Welle, nicht nur mit einem Admin-Benutzer."
 faq:
   - q: "Sollte ein B2B-Shop für alle Händler gleichzeitig live gehen?"
     a: "Davon rate ich ab. Starten Sie mit einer Pilotgruppe von Händlern, die oft nachbestellen, beheben Sie, was sie finden, und nehmen Sie weitere Buyer Groups in Wellen dazu. Jede Welle bringt eigene Entitlements, Preise und ERP-Daten mit, und Fehler bleiben auf eine Gruppe begrenzt."
@@ -62,7 +62,7 @@ Auch Lizenzen gehören in den Plan. Customer Community Plus gibt es laut der [Se
 quelle: Salesforce, Seite zu Experience Cloud for Manufacturing (Listenpreise, jährliche Abrechnung) und Salesforce-Limits zu Buyer Groups und Konten
 ```
 
-## Was muss vor jeder Welle getestet werden?
+## Vor jeder Welle als Käufer dieser Welle testen
 
 Admin-Benutzer sehen alles, ein Test mit Admin-Rechten beweist also nichts über einen Händler. Melden Sie sich vor jeder Welle als echter Käufer dieser Welle an und prüfen Sie:
 
@@ -74,15 +74,15 @@ Admin-Benutzer sehen alles, ein Test mit Admin-Rechten beweist also nichts über
 
 Jede Welle bringt neue Daten, also bekommt jede Welle diesen Test, nicht nur die erste. Behandeln Sie Buyer Groups, Entitlement Policies und Preisbücher als Konfiguration, die durch Ihre Pipeline läuft, wie im DevOps-Kapitel [Daten und Konfiguration](../../masterclass/devops-release-management/daten-und-konfiguration/) beschrieben.
 
-## Was passiert mit dem Innendienst?
+## Der Innendienst nimmt weiter Bestellungen an
 
 Der Innendienst nimmt während der gesamten Einführung weiter Bestellungen per Telefon und E-Mail an. Händler wechseln in den Shop, weil er schneller und immer erreichbar ist, nicht weil der alte Kanal abgeschaltet wurde. Ein erzwungener Wechsel erzeugt Frust genau bei den Händlern, die Sie gewinnen wollen.
 
 Der Innendienst bekommt aber eine neue Aufgabe: Ruft ein Pilothändler mit einer Nachbestellung an, die der Shop hätte abwickeln können, bietet die Kollegin an, ihn einmal durch den Shop zu führen. Nach zwei bis drei Monaten messen Sie je Buyer Group, wie viele Auftragspositionen über den Shop kommen, und sprechen mit den Händlern, die beim Telefon bleiben. Welche Zahlen dabei zählen, steht in [B2B-Shop Kennzahlen nach dem Go-live](../b2b-shop-kennzahlen-nach-go-live/). Außerdem muss der Innendienst Shop-Bestellungen in Salesforce sehen, damit er Statusanrufe beantworten kann, ohne dass der Händler alles wiederholt.
 
-## Ein typisches Szenario: drei Wellen in sechs Monaten
+## Rechenbeispiel: drei Wellen in sechs Monaten
 
-Ein typisches Szenario, als Annahme: Ein Hersteller von Kompressoren verkauft Ersatzteile an 250 Händler in Deutschland, Österreich und der Schweiz.
+Angenommen, ein Hersteller von Kompressoren verkauft Ersatzteile an 250 Händler in Deutschland, Österreich und der Schweiz.
 
 ```schritte
 Welle 1 | Monat 1 und 2
@@ -95,8 +95,6 @@ Welle 3 | Monat 5 und 6
 
 Zwischen den Wellen liegen jeweils zwei Wochen ohne neue Gruppe, reserviert für Korrekturen und den Test der Daten der nächsten Welle. Zeigt Welle 1, dass die Suche Teile über alte Teilenummern nicht findet, wartet Welle 2, bis das gelöst ist.
 
-## Wo starten Sie?
+## Erster Schritt: Händlerliste mit Auftragspositionen und Datenqualität
 
 Beginnen Sie mit einer Liste aller Händler mit ihren jährlichen Auftragspositionen, ihrer Preislogik und der Qualität ihrer Daten, und wählen Sie daraus die Pilotgruppe. Benennen Sie für jeden Pilothändler einen Buyer Manager, richten Sie die Test-Käuferkonten ein und schreiben Sie die fünf Prüfungen oben auf. Den Rest des Themas, von Agenten bis zum Umstieg von Aura auf LWR, finden Sie im Masterclass-Kapitel [Agenten, Migration, Einführung](../../masterclass/b2b-commerce/agentforce-migration-einfuehrung/). Wenn Händler und Innendienst ihre Arbeitsweise ändern müssen, planen Sie [Change Management](../../leistungen/change-management/) ab der ersten Welle ein.
-
-Ein Händlershop gelingt, wenn die ersten Händler ihre Teile zu ihrem Preis beim ersten Versuch finden, also führen Sie ihn in Wellen ein und testen Sie jede einzelne.

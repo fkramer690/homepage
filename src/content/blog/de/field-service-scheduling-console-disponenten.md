@@ -12,8 +12,8 @@ takeaways:
   - "Die Scheduling Console im Field Service zeigt Gantt, Terminliste und Karte auf einem Bildschirm und öffnet sich als Tab in der Field-Service-App."
   - "Die Scheduling Console gibt es nur mit Enhanced Scheduling and Optimization. Orgs mit der älteren Engine müssen zuerst die Engine umstellen."
   - "Die Kandidatensuche zeigt lesbare Empfehlungen statt Punktwerten, und Why? liefert eine KI-generierte Erklärung, warum ein Termin vorgeschlagen wurde."
-  - "Laut Trailhead bleiben Anpassungen der Classic Dispatch Console, Gantt-Zustand und Nutzereinstellungen erhalten. Ein Salesforce-Mitarbeiter schrieb im Mai 2026, beide Konsolen seien noch nicht ganz gleichwertig."
-  - "Meine Empfehlung: Zwei Disponenten testen die Scheduling Console für ein Gebiet, die anderen bleiben bei der Classic Dispatch Console, bis die für Sie wichtigen Lücken geschlossen sind."
+  - "Anpassungen und Einstellungen bleiben laut Trailhead erhalten. Gleichwertig waren beide Konsolen laut einem Salesforce-Mitarbeiter im Mai 2026 noch nicht."
+  - "Ich lasse zwei Disponenten die neue Konsole in einem Gebiet testen. Die anderen bleiben bei der alten, bis die für sie wichtigen Lücken geschlossen sind."
 faq:
   - q: "Was ist die Scheduling Console im Field Service?"
     a: "Sie ist der neue Arbeitsplatz für Disponenten in Salesforce Field Service. Sie zeigt Gantt, Liste der Servicetermine und Karte auf einem Bildschirm, ist mit Lightning Web Components gebaut und schlägt Kandidaten mit KI-Erklärung vor."
@@ -44,7 +44,7 @@ Die alte Konsole hat inzwischen einen neuen Namen. Laut einem [Wissensartikel vo
 Zeigen Visualforce-Seiten, eigene Tabs oder Navigationsregeln auf die alte Bezeichnung, können sie brechen. Der Artikel beschreibt einen Workaround mit einem eigenen Visualforce-Tab.
 ```
 
-## Was macht die neue Konsole besser?
+## Die neue Konsole erklärt ihre Vorschläge
 
 Die größte Änderung für Disponenten ist die Kandidatensuche. Laut der Trailhead-Einheit [Dispatch smarter with the Scheduling Console](https://trailhead.salesforce.com/content/learn/modules/scheduling-console-quick-look/didispatch-smarter-with-the-scheduling-console) zeigt die Konsole lesbare Empfehlungen statt Punktwerten. Ein **Why?** neben einem Kandidaten liefert eine KI-generierte Erklärung, warum dieser Termin vorgeschlagen wurde.
 
@@ -59,7 +59,7 @@ Trailhead nennt weitere Änderungen:
 
 Für Winter '27 nennt Salesforce [Scheduling Console Enhancements](https://trailhead.salesforce.com/content/learn/modules/winter-27-release-highlights/see-whats-new-service-field-service-it-hr-service-and-contact-center): Termine über mehrere Besuche oder Tage erscheinen als ein zusammenhängender Auftrag und lassen sich mit einem Zug verschieben. Für Maschinenbauer mit Inbetriebnahmen oder Überholungen über mehrere Tage ist das bisher die nützlichste Ergänzung.
 
-## Was brauchen Sie für die Scheduling Console?
+## Die Scheduling Console braucht die neue Engine
 
 Die erste Voraussetzung ist die Engine. Die Scheduling Console gibt es nur mit Enhanced Scheduling and Optimization. Orgs, die mit der älteren Engine live gegangen sind, müssen zuerst umstellen, und dieser Wechsel hat eigene Hausaufgaben: Scheduling Recipes fallen weg, und mehrere Work Rules behandeln leere Felder anders. Die Einzelheiten stehen in [Enhanced Scheduling and Optimization: jetzt umstellen?](../field-service-enhanced-scheduling-umstellen/).
 
@@ -73,9 +73,9 @@ Gleich sind beide Konsolen noch nicht. In einem [Thread der Trailblazer Communit
 
 Für Hersteller ist das der entscheidende Punkt. Disponenten, die Jahreswartungen Wochen im Voraus planen oder die Auslastung eines ganzen Gebiets im Blick behalten, arbeiten genau in diesen langen Ansichten. Disponenten, die vor allem Störungen für heute und morgen einplanen, vermissen sie kaum. Welche Gruppe Sie haben, bestimmt das Tempo des Umstiegs.
 
-## Ein typisches Szenario, als Annahme: zwei Disponenten testen zuerst
+## Rechenbeispiel: zwei Disponenten testen zuerst
 
-Ein typisches Szenario, als Annahme: Ein Komponentenhersteller mit vier Disponenten und drei Servicegebieten nutzt bereits Enhanced Scheduling and Optimization. Alle Zahlen sind Annahmen, um die Methode zu zeigen.
+Die Zahlen sind angenommen. Ein Komponentenhersteller mit vier Disponenten und drei Servicegebieten nutzt bereits Enhanced Scheduling and Optimization. Alle Zahlen sind Annahmen, um die Methode zu zeigen.
 
 ```schritte
 Bestandsaufnahme | 1 Woche · Admin und Disponenten
@@ -90,8 +90,6 @@ Entscheidung
 
 Die Notiz zu Why? lohnt sich. Nutzen Disponenten die Erklärung oft und ändern den Vorschlag trotzdem, zeigt sie auf fehlende Daten oder eine unpassende Policy. Das ist eine nützliche Rückmeldung, lange bevor ein KI-Agent selbst plant. Welche Agenten Disponenten heute helfen, steht in [KI-Agenten im Außendienst: Was Field Service heute kann](../ki-agenten-aussendienst-field-service/), das größere Bild im Kapitel [KI-Agenten in der Fertigung](../../masterclass/ki-salesforce/ki-agenten-in-der-fertigung/) der KI-Masterclass.
 
-## Wo fangen Sie an?
+## Erster Schritt: prüfen, welche Engine läuft
 
 Prüfen Sie zuerst die Engine. Ist es noch die ältere, wartet die Frage nach der Konsole, bis Sie auf Enhanced Scheduling and Optimization umgestellt haben. Ist es schon die neue, geben Sie zwei Disponenten das Permission Set und lassen Sie sie einige Wochen ein Gebiet planen. Engine, Konsole und Verantwortlicher für die Policies sind die drei Entscheidungen im Masterclass-Kapitel [Terminplanung und Disposition](../../masterclass/field-service/field-service-terminplanung-disposition/).
-
-Stellen Sie Disponenten auf die Scheduling Console um, wenn die Ansichten da sind, die sie jeden Tag brauchen, und nicht, weil es einen neuen Bildschirm gibt.

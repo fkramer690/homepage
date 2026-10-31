@@ -8,11 +8,11 @@ chapter: 9
 short: "Teamarbeit und Delivery"
 summary: "Wie Hersteller Rollen, Review-Gates, Kennzahlen und Betriebsrat aufstellen, wenn Partner und eigene Teams mit Coding-Agenten liefern."
 takeaways:
-  - "Mit Coding-Agenten verschiebt sich der Engpass im Salesforce-Programm vom Schreiben des Codes zur Prüfung und zur fachlichen Abnahme; dort sollten Hersteller Kapazität einplanen."
-  - "Laut McKinsey-Umfrage 2026 sparen Teams im Schnitt 11,8 Prozent Zeit, aber nur 6,2 Prozent Nacharbeit, und 30 Prozent der Befragten melden sinkende Produktivität."
-  - "Ich empfehle für jede agentengenerierte Änderung einen benannten menschlichen Owner, feste Review-Gates mit klaren Verantwortlichen und eine schriftliche Definition of Done."
-  - "KI-Systeme lösen laut CMS in aller Regel Mitbestimmung nach § 87 Abs. 1 Nr. 6 BetrVG aus; Coding-Agenten mit Nutzungsstatistiken pro Person gehören nach meiner Einschätzung klar dazu."
-  - "Die Verordnung (EU) 2026/1744 verschiebt die Hochrisiko-Pflichten des AI Act auf den 2. Dezember 2027 (Anhang III) und 2. August 2028 (Anhang I); Coding-Assistenten betrifft das meist nicht."
+  - "Mit Coding-Agenten wandert der Engpass vom Schreiben des Codes zu Prüfung und fachlicher Abnahme. Dort sollten Hersteller Kapazität einplanen."
+  - "Laut McKinsey-Umfrage 2026 sparen Teams 11,8 Prozent Zeit, aber nur 6,2 Prozent Nacharbeit, und 30 Prozent melden sinkende Produktivität."
+  - "Jede agentengenerierte Änderung braucht einen benannten menschlichen Owner, feste Review-Gates und eine schriftliche Definition of Done."
+  - "KI-Systeme lösen laut CMS in der Regel Mitbestimmung nach § 87 Abs. 1 Nr. 6 BetrVG aus. Coding-Agenten mit Statistiken pro Person gehören dazu."
+  - "Die Verordnung (EU) 2026/1744 verschiebt die Hochrisiko-Pflichten des AI Act auf Dezember 2027 und August 2028. Coding-Assistenten betrifft das meist nicht."
 articles: [smaller-teams-ai-native-delivery, measuring-ai-benefit-salesforce-projects, nearshore-teams-with-ai-agents, partners-ai-coding-sow-rules, ai-coding-works-council-gdpr, eu-ai-act-agentforce-deadlines]
 faq:
   - q: "Wird ein Salesforce-Team mit Coding-Agenten kleiner?"
@@ -28,7 +28,7 @@ draft: false
 
 Wenn Coding-Agenten in einem Salesforce-Programm Code schreiben, wird das Schreiben billig und die Prüfung teuer. Teamarbeit und Delivery mit KI heißen deshalb vor allem: kleinere Teams mit klaren Rollen, ein benannter Mensch, der jede Änderung verantwortet, feste Review-Gates bis zur fachlichen Abnahme und Kennzahlen, die gegen eine Basislinie messen. Für Hersteller liegt die größte Änderung auf der eigenen Seite. Service, Vertrieb oder Aftersales müssen täglich entscheiden und abnehmen, und Betriebsrat und Datenschutz gehören vor den Pilot, nicht dahinter.
 
-## Wo liegt der Engpass, wenn Agenten programmieren?
+## Der Engpass wandert vom Schreiben zur Prüfung
 
 Drei Quellen beschreiben dasselbe Muster aus unterschiedlichen Richtungen. Die ausführlichste Beschreibung für Salesforce kommt von einem Praktiker: Amit Chaudhary skizziert auf [ApexHours](https://www.apexhours.com/ai-native-delivery-for-salesforce/) am 19. Oktober 2026 „AI-native delivery“, also einen Delivery-Prozess, der von Anfang an um KI-Agenten herum gebaut ist. Das ist ein Praxis-Framework ohne Messdaten, die Zahlen liefern McKinsey und DORA.
 
@@ -155,7 +155,7 @@ Die Verordnung (EU) 2026/1744 ist laut [White & Case](https://www.whitecase.com/
 
 Coding-Assistenten im Salesforce-Projekt sind nach meiner Einschätzung in aller Regel keine Hochrisiko-Systeme. Ein Agentforce-Agent, der Bewerbungen vorsortiert, könnte dagegen unter Anhang III fallen. Für Maschinenbauer gibt es eine zweite, getrennte Baustelle: Laut Cuatrecasas wandert die Maschinenverordnung in Abschnitt B von Anhang I, die inhaltlichen Hochrisiko-Anforderungen sollen über delegierte Rechtsakte kommen, spätestens am 2. August 2028. Das betrifft KI in Ihren Maschinen, nicht Ihr CRM, und gehört zu Produktentwicklung und Rechtsabteilung. Was die Fristen für Agentforce-Projekte bedeuten, steht in [EU AI Act: Fristen für Agentforce](../../../blog/eu-ai-act-fristen-agentforce/); Agenten in Service und Vertrieb behandelt [Kapitel 10](../ki-agenten-in-der-fertigung/).
 
-## Ein typisches Szenario: die ersten acht Wochen bei einem Maschinenbauer
+## Angenommen: die ersten acht Wochen bei einem Maschinenbauer
 
 Nehmen wir einen Maschinenbauer mit Service Cloud, Field Service, einem Händlerportal und SAP S/4. Ein Nearshore-Partner stellt sechs Entwickler, intern gibt es einen Architekten und zwei Admins. Der Partner möchte mit Coding-Agenten arbeiten. Alle Zahlen und Umstände sind Annahmen.
 
@@ -175,5 +175,3 @@ Auswertung | Woche 7 bis 8
 ```
 
 Der Garantiestrom kommt erst danach, weil Gutschriften in SAP gebucht werden und dort ein Ende-zu-Ende-Test vor jedem Release bleibt. Diese Reihenfolge ist Teil dessen, was ich in der [Projektsteuerung für Salesforce-Programme](../../../leistungen/projektsteuerung-nearshore/) aufsetze; die Freigabe der Fachbereiche und die Kommunikation ins Team gehören ins [Change Management](../../../leistungen/change-management/). Alle Kapitel finden Sie in der [Übersicht der Masterclass](../).
-
-KI beschleunigt ein Salesforce-Programm nur so weit, wie Review, Abnahme und Mitbestimmung mithalten, und das organisieren Sie als Auftraggeber.

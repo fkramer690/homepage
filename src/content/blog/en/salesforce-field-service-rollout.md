@@ -10,11 +10,10 @@ categories: [field-service]
 series: { id: field-service, part: 7 }
 tags: [Field Service, Rollout, Works council, Data protection, Manufacturing]
 takeaways:
-  - "I always roll out Salesforce Field Service in waves, region by region or country by country. Each wave brings its own data, dispatchers, technicians and partners."
-  - "The works council plays a role on two topics: what technicians can see of each other, for example in timesheets, and the technicians' location."
-  - "Both topics belong on the table proactively, before the first wave starts, not once the app is already on the devices."
-  - "Location tracking in the Field Service app can be set by interval and accuracy and switched off for single technicians. These settings belong in the talks with the works council."
-  - "Different regions and countries have different conditions. Waves by country make it possible to adapt the configuration to the rules in each."
+  - "Each wave brings its own data, dispatchers, technicians and partners. The first wave is the test for all others."
+  - "The works council has a say on two topics: what technicians see of each other, e.g. in timesheets, and where they are. Both go before the first wave."
+  - "Location tracking in the app can be set by interval and accuracy and switched off per technician. These settings belong in the talks."
+  - "Each country has its own rules. Waves by country let you adapt the configuration to them."
 faq:
   - q: "What is the best way to roll out Salesforce Field Service?"
     a: "In waves, region by region or country by country. Each wave covers the master data, territories, dispatchers, technicians and partners of one region. The first wave is also the test for all others."
@@ -31,7 +30,7 @@ I always roll out Salesforce Field Service in waves, region by region or country
 
 This is the last part of the series. The parts before describe what has to be in place in every wave: the decision in [part 1](../salesforce-field-service-worth-it/), master data in [part 2](../salesforce-field-service-master-data/), scheduling in [part 3](../salesforce-field-service-scheduling-automation/), spare parts in [part 4](../salesforce-field-service-spare-parts-erp/), contracts in [part 5](../salesforce-field-service-maintenance-contracts/) and partners in [part 6](../salesforce-field-service-service-partners/).
 
-## Why in waves and not all at once?
+## The first wave is the test for all others
 
 Field Service changes the working day of dispatchers and technicians. A dispatcher who has worked with a planning board for years suddenly reviews proposals from an engine. A technician who wrote reports on paper documents in an app. That does not work for everyone at the same time.
 
@@ -60,7 +59,7 @@ Field Service collects data about employees. Two topics played a role in my proj
 
 **Location.** According to [Salesforce Help](https://help.salesforce.com/s/articleView?language=en_US&id=service.mfs_resource_tracking.htm&type=5), the mobile app can send technicians' location to Salesforce regularly. It lands in the Last Known Location field on the service resource, and a history can be recorded if wanted. For scheduling that is useful, because the engine knows where a technician is. For the works council it is a tool that can make behaviour and performance visible.
 
-The good news: the technology can be configured. This is what I would discuss with the works council in concrete terms:
+The technology can be configured. This is what I would discuss with the works council in concrete terms:
 
 | Setting | Room to adjust |
 |---|---|
@@ -95,8 +94,6 @@ Every wave needs numbers from before and after. I would take the ones that alrea
 
 If the numbers do not improve in the first wave, in my view it is rarely the product. Usually data is missing, or scheduling still happens on the side. Which numbers to watch is covered in [Field Service KPIs after go-live](../field-service-kpis-after-go-live/).
 
-## Where should you start?
+## First step: a region with clean data for the first wave
 
 For the first wave, pick a region with clean data, an open-minded service manager and a manageable size. Bring the works council into planning that wave, not only into its acceptance. And check the conditions of each country before every further wave, before you commit to dates.
-
-That concludes the series.

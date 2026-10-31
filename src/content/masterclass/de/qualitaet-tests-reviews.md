@@ -10,11 +10,11 @@ pubDate: 2026-10-28
 short: "Qualität, Tests, Reviews"
 summary: "Welche Reviews, Tests und automatischen Prüfungen jede Änderung bestehen muss, bevor sie gemergt wird, für Code und für Flows."
 takeaways:
-  - "Ein Quality Gate ist eine Prüfung, die einen Merge oder ein Deployment technisch sperrt, solange sie rot ist; ein Bericht, den niemand lesen muss, ist keins."
-  - "Salesforce verlangt 75 Prozent Apex-Abdeckung für Produktion und rät im selben Leitfaden, sich nicht auf die Prozentzahl zu konzentrieren; Asserts, Bulk-Tests und runAs zählen mehr."
-  - "Flows sind Automatisierung wie Apex: Flow-Tests, Flow Scanner im Code Analyzer und die Abdeckungsgrenze für aktiv deployte Flows gehören in dieselbe Pipeline."
-  - "Code Analyzer lässt einen Lauf nur scheitern, wenn Sie --severity-threshold setzen; ohne Schwelle bleibt die Pipeline grün, egal was im Bericht steht."
-  - "Schwellenwerte, Regelsätze und Ausnahmen legt der Kunde fest und nur sein Release Manager ändert sie, für jeden Partner gleich."
+  - "Ein Quality Gate sperrt einen Merge oder ein Deployment technisch, solange es rot ist. Ein Bericht, den niemand lesen muss, ist keins."
+  - "Salesforce verlangt 75 Prozent Apex-Abdeckung, rät aber selbst, sich nicht auf die Prozentzahl zu konzentrieren. Asserts, Bulk-Tests und runAs zählen mehr."
+  - "Flows sind Automatisierung wie Apex: Flow-Tests, Flow Scanner im Code Analyzer und die Abdeckungsgrenze für aktive Flows gehören in dieselbe Pipeline."
+  - "Code Analyzer lässt einen Lauf nur scheitern, wenn Sie --severity-threshold setzen. Ohne Schwelle bleibt die Pipeline grün, egal was im Bericht steht."
+  - "Schwellenwerte, Regelsätze und Ausnahmen legt der Kunde fest, und nur sein Release Manager ändert sie, für jeden Partner gleich."
 articles: [pull-request-reviews-enterprise, quality-gates-ai-code-pipeline, reviewing-ai-generated-salesforce-code, api-67-user-mode-apex]
 faq:
   - q: "Reichen 75 Prozent Testabdeckung für ein Salesforce-Release?"
@@ -141,7 +141,7 @@ Arbeiten Ihre Partner mit Coding-Agenten, steigt die Zahl der Pull Requests, Ihr
 
 Was KI-Code zusätzlich braucht, von der Regeldatei bis zu Org-Grenzen für Agenten, behandelt [Kapitel 8 der KI-Masterclass](../../ki-salesforce/best-practices-ki-code/). Die Gates im Detail stehen in [Quality Gates für KI-Code](../../../blog/quality-gates-ki-code-salesforce-pipeline/), das Review aus Kundensicht in [KI-generierten Salesforce-Code prüfen](../../../blog/ki-generierten-salesforce-code-pruefen/).
 
-## Ein typisches Szenario, als Annahme
+## Durchgespielt: ein Flow mit Update in der Schleife
 
 Ein Maschinenbauer betreibt Service Cloud mit Field Service für seine Außendiensttechniker, ein Händlerportal und eine Schnittstelle zu SAP. Zwei Partner arbeiten auf derselben Org, einer am Außendienst, einer am Portal. Alle Details sind Annahmen.
 
@@ -150,5 +150,3 @@ Ein Admin des ersten Partners baut einen record-triggered Flow auf dem Arbeitsau
 Im Validierungs-Deployment scheitert danach ein Apex-Test des zweiten Partners: Der Bulk-Test der SAP-Importklasse legt 200 Arbeitsaufträge an und läuft jetzt durch den neuen Flow. Ohne diesen Test wäre das Problem erst beim nächtlichen Import in Produktion aufgefallen. Das Review durch den Architekten des Kunden klärt am Ende die fachliche Frage, die kein Werkzeug stellt: ob der Termin bei einem stornierten Auftrag gelöscht oder nur abgesagt werden soll.
 
 Welche Konfigurationsdaten solche Flows in Sandboxes brauchen, damit Tests aussagekräftig sind, behandelt [Kapitel 7](../daten-und-konfiguration/). Wie ich Programme dabei unterstütze, steht unter [DevOps und Release-Management](../../../leistungen/devops-und-release-management/) und [Partnersteuerung](../../../leistungen/partnersteuerung/).
-
-Qualität entsteht in Salesforce-Programmen mit mehreren Partnern durch Gates, die sperren, und durch Schwellen, die der Kunde festlegt.

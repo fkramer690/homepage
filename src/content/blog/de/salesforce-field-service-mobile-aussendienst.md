@@ -9,11 +9,10 @@ topic: field-service
 categories: [field-service]
 tags: [Field Service, Außendienst, Mobile, Fertigung, Spracheingabe]
 takeaways:
-  - "Salesforce hat im Oktober 2026 für die Field Service App geführte Abläufe, die sich an die Situation anpassen, ein Headless-Setup für Papierformulare und Spracheingabe für Formulare angekündigt."
-  - "Laut Salesforce-Studie verbringen Außendienstmitarbeitende rund 18 Prozent ihrer Arbeitszeit mit Verwaltung, und 43 Prozent der Organisationen nutzen im Außendienst noch Papierprotokolle."
-  - "Für Hersteller liegt der Nutzen vor allem in vollständigen, strukturierten Servicedaten: Prüfergebnisse, Messwerte und Ersatzteile, die ohne Abtippen im Innendienst und im ERP ankommen."
-  - "Ein schnell digitalisiertes Papierformular hilft nur, wenn das Datenmodell dahinter stimmt; sonst wird aus einem schlechten Formular ein schlechtes digitales Formular."
-  - "Spracheingabe braucht in Deutschland eine frühe Abstimmung mit dem Datenschutz und, wo vorhanden, dem Betriebsrat, weil sie Sprache von Mitarbeitenden verarbeitet."
+  - "Laut einer Salesforce-Studie verbringen Techniker rund 18 Prozent ihrer Zeit mit Verwaltung, und 43 Prozent der Firmen nutzen noch Papierprotokolle."
+  - "Für Hersteller zählen vollständige Servicedaten: Prüfergebnisse, Messwerte und Ersatzteile kommen ohne Abtippen im Innendienst und im ERP an."
+  - "Ein schnell digitalisiertes Papierformular hilft nur mit sauberem Datenmodell dahinter. Sonst wird ein schlechtes Formular einfach digital."
+  - "Spracheingabe verarbeitet die Sprache von Mitarbeitenden und braucht deshalb früh den Datenschutz und, wo vorhanden, den Betriebsrat."
 faq:
   - q: "Was ist neu in der Salesforce Field Service App?"
     a: "Salesforce hat eine geführte Erfahrung mit Schritt-für-Schritt-Anleitung angekündigt, die sich an den Einsatz anpasst, ein Headless-Setup, das digitale Formulare aus Papiervorlagen oder bestehenden Mobile Flows erzeugt, und Voice to Form, das Formularfelder aus gesprochener Eingabe füllt."
@@ -48,7 +47,7 @@ quelle: Salesforce-Forschung, zitiert im Blogbeitrag zu geführter mobiler Arbei
 Die Ankündigung zeigt Demos, nennt aber weder Verfügbarkeit noch Editionen oder Lizenzen. Bevor Sie einen Rollout planen, prüfen Sie die Release Notes und sprechen Sie mit Ihrem Account-Team.
 ```
 
-## Warum ist das für Hersteller wichtig?
+## Für Hersteller zählen vollständige Servicedaten
 
 In der Fertigung entscheidet sich die Kundenbeziehung oft im Außendienst. Techniker installieren Maschinen, warten sie, beheben Störungen und prüfen Anlagen. Was sie vor Ort erfassen, speist mehrere Prozesse gleichzeitig:
 
@@ -72,11 +71,11 @@ Geführte Abläufe machen den größten Unterschied, wo Einsätze variieren und 
 
 Voraussetzung ist, dass die Logik hinter der Führung sauber definiert ist. Jemand muss entscheiden, welche Schritte für welche Anlage gelten, welche Werte Pflicht sind und welche Ergebnisse Folgeaktionen auslösen. Das ist Prozess- und Datenarbeit, und sie gehört in die Serviceorganisation, nicht nur in die IT.
 
-## Wo liegt der Haken bei der schnellen Digitalisierung von Papierformularen?
+## Eine schnelle Digitalisierung übernimmt die Fehler des Papierformulars
 
 Das Headless-Setup verspricht, aus einem Papierformular in sehr kurzer Zeit ein digitales zu machen. Das ist nützlich, denn viele Serviceorganisationen haben Dutzende Protokolle und Checklisten, die es nie ins System geschafft haben.
 
-Eine schnelle digitale Kopie ist aber nur so gut wie das Formular selbst. Typische Probleme, die ich zuerst prüfen würde:
+Eine schnelle digitale Kopie übernimmt aber jeden Fehler des Papierformulars. Typische Probleme, die ich zuerst prüfen würde:
 
 - **Felder ohne klare Bedeutung**, etwa ein Freitextfeld „Bemerkungen“, in dem die Hälfte der relevanten Informationen steht.
 - **Doppelte Daten**, wenn das Formular Informationen abfragt, die bereits an der Anlage oder am Auftrag hinterlegt sind.
@@ -95,7 +94,7 @@ Spracheingabe ist attraktiv für Techniker, die mit Handschuhen, in der Höhe od
 
 Außerdem ist es sinnvoll festzulegen, welche Felder per Sprache gefüllt werden dürfen und welche Werte der Techniker bestätigen muss, etwa sicherheitsrelevante Messwerte.
 
-## Wie führen Sie die neuen Funktionen ein?
+## Erster Schritt: eine Einsatzart mit hohem Volumen auswählen
 
 Eine pragmatische Reihenfolge für einen Hersteller mit eigenem Außendienst:
 
@@ -114,6 +113,4 @@ Wirkung messen
   Zeit für Dokumentation, Vollständigkeit der Berichte, Zeit bis zur Abrechnung.
 ```
 
-Ob die Techniker die neuen Funktionen dann auch nutzen, entscheidet sich daran, was sie selbst davon haben. Darum geht es in [Field Service App: wie Techniker sie annehmen](../field-service-app-akzeptanz-techniker/).
-
-Gute Außendienstdaten sind auch die Grundlage für KI-Agenten im Service, die verlässliche Informationen brauchen, wie ich in [Agentforce: Business Value und Datenqualität zuerst](../agentforce-business-value-datenqualitaet/) erkläre.
+Ob die Techniker die neuen Funktionen dann auch nutzen, entscheidet sich daran, was sie selbst davon haben. Darum geht es in [Field Service App: wie Techniker sie annehmen](../field-service-app-akzeptanz-techniker/). Vollständige Außendienstdaten braucht später auch jeder KI-Agent im Service, wie ich in [Agentforce: Business Value und Datenqualität zuerst](../agentforce-business-value-datenqualitaet/) erkläre.

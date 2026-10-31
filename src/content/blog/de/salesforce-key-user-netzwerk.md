@@ -29,9 +29,9 @@ draft: false
 
 Key User sind Fachanwender, die das neue Salesforce-System vor allen anderen kennen, an den Tests mitwirken und nach dem Go-live die erste Anlaufstelle für Fragen in ihrem Team sind. Sie tragen außerdem Rückmeldungen aus dem Alltag zurück ins Projekt. Ohne sie landet jede Frage beim Projektteam oder beim Support, und viele Fragen werden gar nicht gestellt, sondern mit einer Excel-Liste umgangen. Gute Key User wählt man nach Ansehen im Team aus, nicht nach freier Zeit, und die Zeit, die sie brauchen, gehört vorher in die Planung des Fachbereichs.
 
-## Wofür braucht eine Einführung Key User?
+## Key User decken Wissen und Fähigkeit ab
 
-Im [ADKAR-Modell](../change-management-salesforce-einfuehrung/) decken Key User vor allem zwei Stufen ab: Wissen (Knowledge) und Fähigkeit (Ability). Eine Schulung vermittelt Wissen, aber erst im Alltag zeigt sich, ob jemand die Funktion im Kundentermin oder am Telefon wirklich anwenden kann. In diesem Moment hilft keine Hotline, sondern die Kollegin am Nachbartisch, die es schon einmal gemacht hat.
+Im [ADKAR-Modell](../change-management-salesforce-einfuehrung/) decken Key User vor allem zwei Stufen ab: Wissen (Knowledge) und Fähigkeit (Ability). Eine Schulung vermittelt Wissen, aber erst im Alltag zeigt sich, ob jemand die Funktion im Kundentermin oder am Telefon anwenden kann. In diesem Moment hilft keine Hotline, sondern die Kollegin am Nachbartisch, die es schon einmal gemacht hat.
 
 Bei Herstellern kommt etwas dazu: Vertrieb, Innendienst und Service arbeiten in jedem Land und an jedem Standort ein wenig anders. Das Projektteam kennt diese Unterschiede nicht. Key User kennen sie und können früh sagen, wo der geplante Prozess im eigenen Team nicht funktionieren wird.
 
@@ -39,7 +39,7 @@ Bei Herstellern kommt etwas dazu: Vertrieb, Innendienst und Service arbeiten in 
 Beim weltweiten Manufacturing-Cloud-Rollout gehörten zu jedem Land Key User, die das Template kannten und im Land die ersten Fragen beantworteten. In Field-Service-Einführungen hilft es, wenn Disponenten der nächsten Welle vorher in der laufenden Region zuschauen. Sie lernen dort mehr als in jeder Schulung, weil sie echte Fälle aus ihrem eigenen Alltag sehen.
 ```
 
-## Was macht ein Key User konkret?
+## Die Aufgaben ändern sich mit der Projektphase
 
 Die Aufgaben ändern sich mit der Phase des Projekts:
 
@@ -54,14 +54,14 @@ Betrieb | laufend · Key User und Admin
   Neue Kollegen einarbeiten, vor jedem Release erfahren, was kommt, und es im Team weitergeben.
 ```
 
-Im Abnahmetest sind Key User die besten Tester, weil sie wissen, welche Fälle in ihrem Team wirklich vorkommen. Wie UAT aufgebaut sein sollte, beschreibe ich in [Salesforce UAT: Wer testet vor dem Release?](../salesforce-uat-abnahmetest-fachbereich/).
+Im Abnahmetest sind Key User die besten Tester, weil sie wissen, welche Fälle in ihrem Team vorkommen. Wie UAT aufgebaut sein sollte, beschreibe ich in [Salesforce UAT: Wer testet vor dem Release?](../salesforce-uat-abnahmetest-fachbereich/).
 
 ## Wie wählen Sie die richtigen Key User aus?
 
 Die häufigste Auswahl ist die schlechteste: Wer gerade Zeit hat, wird Key User. Das sind selten die Personen, die das Team bei Fragen ohnehin anspricht. Ich achte auf andere Kriterien:
 
 - **Ansehen im Team.** Kollegen fragen diese Person schon heute um Rat, egal zu welchem System.
-- **Kenntnis des Prozesses.** Sie weiß, wie ein Angebot, ein Auftrag oder ein Serviceeinsatz im eigenen Team wirklich läuft, inklusive der Ausnahmen.
+- **Kenntnis des Prozesses.** Sie weiß, wie ein Angebot, ein Auftrag oder ein Serviceeinsatz im eigenen Team läuft, inklusive der Ausnahmen.
 - **Neugier statt Begeisterung.** Ein Key User muss nicht von Salesforce begeistert sein. Kritische Key User finden die Schwächen früher, und wenn sie überzeugt sind, überzeugen sie andere.
 - **Bleibt eine Weile.** Wer in drei Monaten die Stelle wechselt, nimmt das Wissen mit.
 
@@ -81,14 +81,12 @@ Diese Zeit muss die Führungskraft vor dem Projektstart zusagen, und jemand muss
 Vereinbaren Sie die Zeit der Key User schriftlich mit der Führungskraft, mit Wochen und Stunden, und legen Sie fest, wer in dieser Zeit ihre Arbeit übernimmt. Diese Vereinbarung ist Teil des Sponsor-Plans.
 ```
 
-## Wie halten Sie das Netzwerk zusammen?
+## Das Netzwerk braucht einen festen Termin
 
 Ein Netzwerk aus Key Usern braucht einen festen Termin. Ich empfehle einen kurzen Austausch, in dem Key User ihre wichtigsten Rückmeldungen einbringen und vorab erfahren, was das nächste Release ändert. So wird jeder Key User zum Kanal in beide Richtungen: Änderungen kommen über ihn ins Team, und Probleme aus dem Team kommen über ihn ins Projekt. Wie dieser Weg vor einem Release aussieht, beschreibe ich in [Salesforce-Releases an den Fachbereich kommunizieren](../salesforce-releases-fachbereich-kommunizieren/).
 
 Wichtig ist auch, dass die Rolle sichtbar anerkannt wird. Wer zusätzliche Arbeit für das Projekt übernimmt, sollte das in seinem Jahresgespräch wiederfinden. Das kostet nichts und entscheidet darüber, ob sich beim nächsten Projekt wieder jemand meldet.
 
-## Wo fangen Sie an?
+## Erster Schritt: fragen, wen das Team heute um Rat bittet
 
-Fragen Sie in jedem betroffenen Team: Wen fragen Sie heute, wenn Sie im System nicht weiterkommen? Die Namen, die mehrfach fallen, sind Ihre Kandidaten. Danach vereinbaren Sie mit den Führungskräften die Zeit und nehmen die Key User in die ersten Workshops mit, bevor gebaut wird.
-
-Key User sind der günstigste Weg, Wissen aus dem Projekt in den Alltag zu bringen und Rückmeldungen aus dem Alltag ins Projekt. Mehr dazu lesen Sie unter [Change Management für Salesforce-Programme](../../leistungen/change-management/).
+Fragen Sie in jedem betroffenen Team: Wen fragen Sie heute, wenn Sie im System nicht weiterkommen? Die Namen, die mehrfach fallen, sind Ihre Kandidaten. Danach vereinbaren Sie mit den Führungskräften die Zeit und nehmen die Key User in die ersten Workshops mit, bevor gebaut wird. Fällt in einem Team kein Name, trägt dort noch niemand das Thema, und dieses Team braucht in der Schulung mehr Begleitung. Wie wir das Netzwerk in Programmen aufbauen, steht unter [Change Management für Salesforce-Programme](../../leistungen/change-management/).

@@ -10,9 +10,9 @@ categories: [field-service]
 series: { id: field-service, part: 1 }
 tags: [field service, licences, make-or-buy, manufacturing, service]
 takeaways:
-  - "Salesforce Field Service pays off most with many short jobs per technician and day, because scheduling and route optimisation clearly improve the numbers there."
-  - "With few long jobs, such as commissioning over several days or weeks, optimisation adds much less, and other solutions can be enough."
-  - "According to the price list, Dispatcher and Technician licences cost $175 per user and month each on Enterprise Edition. 40 technicians and 4 dispatchers therefore cost $92,400 per year."
+  - "Scheduling and route optimisation pay off most when technicians run many short jobs a day: more jobs, less travel."
+  - "With few long jobs, such as commissioning over several days, optimisation adds little, and other solutions can be enough."
+  - "Dispatcher and Technician cost $175 per user and month each (Enterprise Edition). 40 technicians and 4 dispatchers cost $92,400 a year."
   - "Technician and Dispatcher licences may not be used for case management in a contact centre. Anyone who does both needs Field Service Plus at $230."
   - "The decision starts with four numbers from your own field service: jobs per day, share of travel time, number of skills and first-time fix rate."
 faq:
@@ -39,7 +39,7 @@ Salesforce Field Service is the field service product built on Service Cloud. Sa
 
 Scheduling is the core. According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/field-service-lightning-scheduling-basics/examine-scheduling-policies), it works with two kinds of rules. Work rules filter out technicians who cannot take a job, for example because a skill is missing. Service objectives rate the remaining candidates, for example by least travel time, earliest slot or preferred technician. Together they form a scheduling policy.
 
-## When is Field Service worth it?
+## Field Service pays off with many short jobs
 
 Optimisation helps most where there is a lot to optimise. In my experience that depends on the type of work, the locations and the duration of jobs. I see the biggest benefit with:
 
@@ -50,7 +50,7 @@ Optimisation helps most where there is a lot to optimise. In my experience that 
 
 Salesforce backs this direction with its own research. In an [article on scheduling](https://www.salesforce.com/blog/field-service-scheduling/), Salesforce calls scheduling the biggest efficiency blocker for technicians and writes that 47 percent of appointments do not go as planned. Whoever reschedules dozens of jobs a day saves the most.
 
-## When is Field Service not worth it?
+## With few long jobs it rarely pays off
 
 With few long jobs the benefit is much smaller. A technician who commissions a plant over two weeks does not need route optimisation. He or she needs a project plan, access to drawings and clean documentation at the end.
 
@@ -98,10 +98,8 @@ I start with four numbers from your own field service, before the product even c
 
 These numbers can usually be pulled from the ERP or the existing scheduling tool. If nobody knows them, that is a finding in itself: the basis for any business case is missing, whatever the product.
 
-Then comes the data question. Field Service only schedules as well as assets, locations, skills and availability are maintained. A technician whose skills are recorded nowhere will be scheduled wrongly by the engine. Which data that is exactly is covered in [part 2 of this series](../salesforce-field-service-master-data/).
+Then comes the data question. Field Service schedules with the assets, locations, skills and availability that are maintained, and nothing else. A technician whose skills are recorded nowhere will be scheduled wrongly by the engine. Which data that is exactly is covered in [part 2 of this series](../salesforce-field-service-master-data/).
 
-## Where should you start?
+## First step: collect four numbers for one month and one region
 
 Collect the four numbers for one month and one region. If they show many short jobs with a lot of travel, build the business case for Field Service with licences, implementation and maintenance over several years. How the rollout then works region by region is covered in [Salesforce Field Service implementation: why in waves?](../salesforce-field-service-rollout/). If they show few long jobs, first check whether Service Cloud, a portal or the ERP can close the gap. What the mobile app can do for technicians today is covered in [Field Service mobile: guidance and voice](../salesforce-field-service-mobile-guided-voice/).
-
-Field Service is worth it when your field team runs many short appointments, and rarely when it handles long projects.

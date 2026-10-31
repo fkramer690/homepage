@@ -11,9 +11,9 @@ tags: [b2b commerce, checkout, purchase order, payments, credit limit, erp]
 takeaways:
   - "In Salesforce B2B Commerce a purchase order counts as a form of payment but triggers no payment flow; the PO number travels to the ERP for invoicing."
   - "An order can only be placed if the cart has either a payment authorisation or a purchase order. Every checkout has to end in one of the two."
-  - "The Purchase Order component needs no payment gateway. Dual Payment offers card and purchase order and is for B2B stores only; Salesforce Payments runs on Stripe."
+  - "The Purchase Order component needs no payment gateway. Dual Payment offers card and purchase order, and Salesforce Payments runs on Stripe."
   - "Payments cannot be customised with a Commerce extension. Custom payment logic needs an Apex adapter or a custom checkout component."
-  - "Credit limit and order block belong to the ERP. The PlaceOrder extension with its validate method is the place to ask the ERP before the order exists."
+  - "Credit limit and order block belong to the ERP. The validate method of the PlaceOrder extension asks the ERP before the order exists."
 faq:
   - q: "Does a B2B store on Salesforce need a payment gateway?"
     a: "Not if all buyers order on account. The Purchase Order component is meant for B2B stores that accept purchase orders only and need no gateway. A gateway is only needed when some buyers pay by card."
@@ -38,7 +38,7 @@ The same page contains the rule that shapes every checkout design: if there is n
 
 Salesforce now also markets the product as "Agentforce Commerce for B2B". The checkout components are the same under both names.
 
-## Which payment components does Salesforce B2B Commerce offer?
+## The payment components of Salesforce B2B Commerce
 
 The developer guide lists these options for B2B stores, available in Enterprise, Unlimited and Developer Edition:
 
@@ -72,7 +72,7 @@ Each card payment brings work that the purchase order does not. Someone has to b
 
 So I recommend the Purchase Order component when the store is for known dealers only, and Dual Payment or Salesforce Payments with the PO option when a defined group of buyers should pay by card. Starting with a card because consumer webshops do it adds a gateway, fees and a reconciliation process for orders that would have come in on account anyway.
 
-## How does the store check credit limit and order block?
+## The PlaceOrder extension checks credit limit and order block
 
 Credit limits, open items and order blocks live in the ERP, in SAP for example in credit management. The store knows none of this. Without a check, a blocked dealer can place an order that the ERP will reject later, and inside sales has to call and explain.
 
@@ -97,7 +97,7 @@ Three decisions belong in the specification:
 
 I would not copy credit limits into Salesforce overnight to save the live call. A copy from last night is wrong exactly when it matters, for the dealer who placed three large orders this morning.
 
-## A typical scenario, as an assumption
+## Worked example: pump manufacturer with 300 dealers
 
 A manufacturer of pumps sells spare parts through 300 dealers in Germany, Austria and Switzerland. All dealers have a customer account in SAP and pay within 30 days. On top, around 50 small service workshops a year order once or twice and have no customer account.
 
@@ -111,8 +111,6 @@ An order from the store creates an order summary in Salesforce. Order summaries 
 
 Who owns the order from that point on is covered in [B2B store orders to the ERP](../b2b-store-orders-to-erp/), and which data flows between store and SAP in [B2B Commerce and SAP: which data flows where?](../b2b-commerce-sap-data-flows/). How dealers get to the checkout faster, with past orders and templates, is the topic of [reorders in B2B Commerce](../b2b-commerce-reorder-order-templates/).
 
-## Where should you start?
+## First step: ask finance how dealers pay
 
 Start with finance, before the store design. Ask how each group of buyers pays today, which system holds credit limits and order blocks, and how fast that system can answer a live call. Then choose the component, and write down the validate logic with its timeout behaviour. The chapter [prices, cart and checkout](../../masterclass/b2b-commerce/prices-cart-checkout/) of the [B2B Commerce masterclass](../../masterclass/b2b-commerce/) puts the checkout next to price and reorder decisions, and the interface work behind the credit check is part of [Salesforce integration](../../services/salesforce-integration/).
-
-Most dealers should finish the checkout with a PO number and a credit check from the ERP, and only a defined group should need a card.

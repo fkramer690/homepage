@@ -139,11 +139,11 @@ const schema = {
           <div class="service-columns">
             <section class="service-block" aria-labelledby="deliverables">
               <h2 id="deliverables">{isChange ? changeSection[lang].deliverables : t.servicePage.deliverables}</h2>
-              <ul class="service-list check">{deliverables.map((item) => <li>{item}</li>)}</ul>
+              <ul class="service-list">{deliverables.map((item) => <li>{item}</li>)}</ul>
             </section>
             <section class="service-block results" aria-labelledby="results">
               <h2 id="results">{t.servicePage.results}</h2>
-              <ul class="service-list check">{results.map((item) => <li>{item}</li>)}</ul>
+              <ul class="service-list">{results.map((item) => <li>{item}</li>)}</ul>
             </section>
           </div>
           <div class="prose">

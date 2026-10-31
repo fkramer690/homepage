@@ -9,11 +9,11 @@ topic: field-service
 categories: [field-service, devops]
 tags: [field service, mobile, release management, testing, beta]
 takeaways:
-  - "Besides the three platform releases a year, the Field Service mobile app has its own major and patch versions that reach technicians through the App Store and Google Play."
-  - "The beta programme provides builds one month before major releases and one week before patch releases; debug builds let developers test their own components in sandboxes."
-  - "Salesforce rolls out major and patch versions over several days, and an update may not reach every user until seven days after general availability."
-  - "A test routine per version covers five to ten scripted jobs on iOS and Android, including offline priming, a Data Capture form, the service report and a partner user."
-  - "A pilot group of technicians running the beta for two weeks before each major version finds the problems that admins in the office miss."
+  - "Besides three platform releases a year, the app has its own major and patch versions that reach technicians through the App Store and Google Play."
+  - "The beta programme provides builds one month before major releases and one week before patches. Debug builds test your own components in sandboxes."
+  - "Salesforce rolls out versions over several days. An update may reach some users only seven days after general availability."
+  - "Each version gets five to ten scripted jobs on iOS and Android, with offline priming, a Data Capture form, the service report and a partner user."
+  - "A pilot group running the beta for two weeks before each major version finds the problems that admins in the office miss."
 faq:
   - q: "How often is the Salesforce Field Service mobile app updated?"
     a: "The app has major versions, such as 260.0 for Spring '26, and patch versions in between. In September 2026 alone Salesforce released patch 262.3 on 4 September and a further patch on 23 September."
@@ -46,7 +46,7 @@ Both posts add that Salesforce deploys major and patch releases over several day
 Support asks for the app version first on every ticket. It is shown in the app under Profile, Settings, About.
 ```
 
-## What do the beta programme and debug builds offer?
+## The beta programme and debug builds deliver versions early
 
 The [Field Service Mobile Beta and Early Adopters Program](https://developer.salesforce.com/tools/field-service-mobile-beta) is open to customers. According to Salesforce, beta releases are available one month before major releases and one week before as-needed patch releases. The 262.3 dates match that: beta on 26 August, release on 4 September.
 
@@ -79,7 +79,7 @@ I would make one person responsible for each app version, usually the release ma
 
 The calendar for this is the same one that holds the platform releases. How to build it with freeze windows and preview sandboxes is covered in the [release planning chapter of the DevOps masterclass](../../masterclass/devops-release-management/release-planning-salesforce-releases/). What Winter '27 changed for pipelines is in [Salesforce Winter '27: what changes for your pipeline](../salesforce-winter-27-what-changes-for-your-pipeline/).
 
-## A typical scenario, as an assumption: eight pilot technicians
+## Worked example: eight pilot technicians
 
 A machine builder runs 100 technicians, 70 on iPads and 30 on Android tablets, plus 15 partner technicians. The release manager sets up a pilot group of eight: five internal technicians on iOS, two on Android and one partner technician.
 
@@ -98,7 +98,7 @@ The effort is about 32 hours of technician time per major version, plus the rele
 
 The other technicians should know before the update what changes for them and whom to ask. That is the same task as with every release for the back office, described in [Communicating Salesforce releases to the business](../salesforce-release-communication-business/).
 
-## Where should you start?
+## First step: sign up for the beta programme
 
 1. **Sign up for the beta programme** and subscribe to the release posts of the Field Service Mobile group.
 2. **Write the routine** as eight scripts with expected results.
@@ -106,6 +106,4 @@ The other technicians should know before the update what changes for them and wh
 4. **Put app versions in the release calendar** next to the platform releases.
 5. **Agree with device management** how app and operating system updates reach the devices.
 
-App testing is part of [chapter 3 of the Field Service masterclass](../../masterclass/field-service/field-service-mobile-app-documents/), and setting up a release process that covers it belongs to my work in [DevOps and release management](../../services/devops-release-management/).
-
-Every app version that a pilot group has tested before it reaches 100 devices saves a morning of support calls.
+App testing is part of [chapter 3 of the Field Service masterclass](../../masterclass/field-service/field-service-mobile-app-documents/). Setting up a release process that covers it belongs to my work in [DevOps and release management](../../services/devops-release-management/).

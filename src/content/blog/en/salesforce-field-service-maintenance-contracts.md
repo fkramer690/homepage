@@ -10,10 +10,10 @@ categories: [field-service]
 series: { id: field-service, part: 5 }
 tags: [Field Service, Maintenance contracts, Entitlements, Manufacturing]
 takeaways:
-  - "In Salesforce Field Service a maintenance contract spreads across three objects: service contract for what was sold, maintenance plan for planned maintenance and entitlement for the committed service level."
-  - "Entitlements are only partly about maintenance contracts. They can also come from a warranty or a support package and describe what a customer is entitled to."
+  - "A maintenance contract sits on three objects: service contract (what was sold), maintenance plan (planned maintenance) and entitlement (service level)."
+  - "Entitlements can also come from a warranty or a support package. They describe what a customer is entitled to."
   - "Maintenance plans generate work orders for maintenance in advance, according to Salesforce at most 2,600 work orders and line items per run."
-  - "Entitlements can influence priority in dispatching. Field Service schedules high-priority appointments first and can push out low-priority ones to do so."
+  - "Entitlements can steer priority in dispatching. Field Service schedules high-priority appointments first and can push out others to do so."
   - "Response times from the contract are measured with entitlement processes and milestones on the work order, which makes them provable."
 faq:
   - q: "What is the difference between a service contract and an entitlement?"
@@ -85,18 +85,16 @@ Release | Dispatcher
 
 When the milestone counts as met, for example with the status In Progress on site, you define yourself in the entitlement process.
 
-## What should you watch out for?
+## Separate the objects, keep levels few, settle hours and warranty
 
-First: separate the objects cleanly from the start. If response times live in a text field on the service contract, you can neither measure them nor bring them into scheduling. If maintenance intervals hide in entitlements, you get no automatically generated work orders.
+**Separate the objects cleanly from the start.** If response times live in a text field on the service contract, you can neither measure them nor bring them into scheduling. If maintenance intervals hide in entitlements, you get no automatically generated work orders.
 
-Second: keep the number of service levels small. Each level needs its own process, its own milestones and its own priority rule. Three levels can be explained and checked, ten cannot.
+**Keep the number of service levels small.** Each level needs its own process, its own milestones and its own priority rule. Three levels can be explained and checked, ten cannot.
 
-Third: check the hours. According to [Salesforce Help](https://help.salesforce.com/s/articleView?id=fs_oh_considerations.htm&language=en_US&type=5), entitlements can carry their own operating hours for appointment booking, for example shorter time windows for customers with a premium contract. On top come the visiting hours on the account from part 2. If you maintain both, know which one applies before a customer asks why their 24-hour appointment did not happen on Saturday.
+**Check the hours.** According to [Salesforce Help](https://help.salesforce.com/s/articleView?id=fs_oh_considerations.htm&language=en_US&type=5), entitlements can carry their own operating hours for appointment booking, for example shorter time windows for customers with a premium contract. On top come the visiting hours on the account from part 2. If you maintain both, know which one applies before a customer asks why their 24-hour appointment did not happen on Saturday.
 
-Fourth: settle the line to warranty. Whether a visit runs under warranty, under contract or is billed decides the invoicing. That commercial side does not belong in scheduling, but it has to be visible on the work order. Otherwise the technician fits a part that nobody can invoice later, or the customer gets a bill for a visit that ran under warranty.
+**Settle the line to warranty.** Whether a visit runs under warranty, under contract or is billed decides the invoicing. That commercial side does not belong in scheduling, but it has to be visible on the work order. Otherwise the technician fits a part that nobody can invoice later, or the customer gets a bill for a visit that ran under warranty.
 
-## Where should you start?
+## First step: write down your three most common contract types
 
-Take your three most common contract types and write down for each what the customer bought, which maintenance is planned and which response time is committed. Service contracts, maintenance plans and entitlements follow almost by themselves. Then decide which priority each commitment gets in scheduling.
-
-The next part of the series covers service partners and subcontractors.
+Take your three most common contract types and write down for each what the customer bought, which maintenance is planned and which response time is committed. Service contracts, maintenance plans and entitlements follow almost by themselves. Then decide which priority each commitment gets in scheduling. How service partners and subcontractors fit into the same scheduling is covered in the [next part of the series](../salesforce-field-service-service-partners/).

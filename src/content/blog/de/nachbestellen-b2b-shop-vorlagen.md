@@ -9,10 +9,10 @@ topic: commerce
 categories: [b2b-commerce]
 tags: [B2B Commerce, Nachbestellung, Bestellvorlagen, Warenkorb, Ersatzteile, Händler]
 takeaways:
-  - "Salesforce B2B Commerce kennt vier Wege zum Nachbestellen: alte Bestellung in den Warenkorb, gespeicherte Bestellvorlagen, CSV- oder JSON-Datei in den Warenkorb und das schlankere Reorder Portal."
+  - "Nachbestellen geht auf vier Wegen: alte Bestellung in den Warenkorb, Bestellvorlagen, CSV- oder JSON-Datei in den Warenkorb und das Reorder Portal."
   - "Die Add Order to Cart API kopiert alle Positionen einer früheren Order Summary in den aktuellen Warenkorb und legt einen an, wenn keiner aktiv ist."
-  - "Bestellvorlagen für Käufer und Vertrieb führt Salesforce als GA September 2026; Import und Export des Warenkorbs per CSV oder JSON kamen mit dem Release vom Juli 2026."
-  - "Die meisten Shops begrenzen einen Warenkorb auf 500 Positionen, mit Large-Cart-Unterstützung auf 2.000. Ein Nutzer kann 100 Warenkörbe haben, einen aktiven und bis zu 99 weitere."
+  - "Bestellvorlagen führt Salesforce als GA September 2026. Import und Export des Warenkorbs per CSV oder JSON kamen mit dem Release vom Juli 2026."
+  - "Ein Warenkorb fasst meist 500 Positionen, mit Large-Cart-Unterstützung 2.000. Ein Nutzer kann einen aktiven und bis zu 99 weitere Warenkörbe haben."
   - "Multi-Cart-Zusammenarbeit, bei der mehrere Nutzer einen Warenkorb gemeinsam füllen und freigeben, ist für Januar 2027 angekündigt."
 faq:
   - q: "Wie bestellt ein Händler in Salesforce B2B Commerce eine frühere Bestellung nach?"
@@ -36,7 +36,7 @@ Die meisten Ersatzteile und Verbrauchsmaterialien, die ein Händler kauft, hat e
 
 Deshalb schaue ich mir in einem B2B-Shop eines Herstellers die Wege zum Nachbestellen vor der Produktdetailseite an. Suche und Katalog sind für neue Teile wichtig, das Volumen kommt über Nachbestellungen. Salesforce vermarktet das Produkt inzwischen auch als "Agentforce Commerce for B2B"; alle Funktionen unten gehören zum selben Produkt.
 
-## Welche Wege zum Nachbestellen bietet Salesforce B2B Commerce?
+## Vier Wege zum Nachbestellen in Salesforce B2B Commerce
 
 | Weg | Was der Käufer tut | Stand Oktober 2026 |
 |---|---|---|
@@ -56,9 +56,9 @@ Eine Folge für Hersteller: Die API arbeitet mit Order Summaries in Salesforce. 
 
 **Bestellvorlagen.** Auf der [Commerce-Innovationsseite](https://www.salesforce.com/de/commerce/innovations/) führt Salesforce wiederverwendbare Bestellungen mit "AV Sept. 26": Einkäufer und Vertriebsmitarbeiter erstellen, speichern und verwenden häufig vorkommende Bestellungen wieder. Das passt zu Händlern mit festem Korb, etwa dem Filter- und Dichtungssatz für jeden Wartungseinsatz.
 
-**Warenkorb importieren und exportieren.** Das [B2B-Commerce-Release vom Juli 2026](https://www.salesforce.com/blog/b2b-commerce-innovations-july-26/) brachte Import und Export des Warenkorbs als CSV oder JSON. Käufer laden eine vorbereitete Tabelle in den Warenkorb und exportieren den Warenkorb mit einem Klick zur internen Freigabe. Für Händler, die ihren Bestand im eigenen Warenwirtschaftssystem planen, ist eine Datei schneller als jedes Klicken.
+**Warenkorb importieren und exportieren.** Das [B2B-Commerce-Release vom Juli 2026](https://www.salesforce.com/blog/b2b-commerce-innovations-july-26/) brachte Import und Export des Warenkorbs als CSV oder JSON. Käufer laden eine vorbereitete Tabelle in den Warenkorb und exportieren den Warenkorb mit einem Klick zur internen Freigabe. Für Händler, die ihren Bestand im eigenen Warenwirtschaftssystem planen, ist eine Datei schneller als Klicken im Shop.
 
-## Wie groß darf ein Warenkorb werden?
+## 500 Positionen pro Warenkorb, 2.000 mit Large Cart
 
 Die [Warenkorblimits](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-cart-limits.html) setzen den Rahmen für Importe und Vorlagen. Die Zahl der Warenkörbe pro Nutzer ist ein Soft Limit, das der Salesforce-Support erhöhen kann.
 
@@ -84,14 +84,12 @@ Das Reorder Portal ist eine schlankere Variante für Unternehmen, die keinen vol
 
 Meine Sicht: Das Reorder Portal passt, wenn ein Vertriebsteam Wiederholungsbestellungen von einigen hundert Bestandskunden will und kein Katalogprojekt hat. Sobald Händler neue Teile finden, eigene Sortimente sehen oder lange Listen importieren sollen, ist der vollständige Shop die bessere Grundlage.
 
-## Ein typisches Szenario, als Annahme
+## Rechenbeispiel: 180 Händler, zwei Drittel Wiederholungen
 
 Ein Kompressorenhersteller hat 180 Händler. Zwei Drittel ihrer Ersatzteilbestellungen wiederholen eine frühere Bestellung mit kleinen Änderungen, ein Viertel sind Wartungssätze mit festem Inhalt, und einige große Händler schicken zweimal im Jahr Listen mit 300 bis 800 Positionen aus ihrem eigenen System.
 
 Für diese Mischung würde ich alle drei Wege einschalten: alte Bestellung in den Warenkorb für die Wiederholungen, Bestellvorlagen für die Wartungssätze, CSV-Import für die großen Händler, mit Large-Cart-Unterstützung, weil 800 Positionen über den üblichen 500 liegen. Drei Monate lang würde ich messen, welche Käufergruppe welchen Weg nutzt, bevor ich weiter investiere. Gemeinsame Warenkörbe für die großen Händler kommen mit dem Release im Januar 2027.
 
-## Wo fangen Sie an?
+## Erster Schritt: Bestellpositionen der letzten zwölf Monate sortieren
 
 Holen Sie die Bestellpositionen der letzten zwölf Monate aus dem ERP und sortieren Sie sie in Wiederholungen, feste Körbe und lange Listen. Daran sehen Sie, welcher Weg am meisten zählt und ob 500 Positionen reichen. Wie die Bestellung danach mit Bestellnummer und Kreditprüfung den Shop verlässt, steht in [B2B-Checkout: Bestellnummer, Karte oder Rechnung?](../b2b-checkout-bestellnummer-rechnung/). Nachbestellen im Chat über WhatsApp ist Thema von [B2B Buyer Agent](../b2b-buyer-agent-whatsapp-bestellen/), Nachschubvorschläge aus Händlerbeständen beschreibe ich in [Agentforce für Händlerbestand und Nachschub](../haendlerbestand-nachschub-agentforce/). Das Kapitel [Preise, Warenkorb, Checkout](../../masterclass/b2b-commerce/preise-warenkorb-checkout/) der [Masterclass B2B Commerce](../../masterclass/b2b-commerce/) bringt diese Entscheidungen zusammen, und das Zielbild über Shop, ERP und Vertrieb gehört zu meiner Arbeit an der [Salesforce-Architektur](../../leistungen/salesforce-architektur/).
-
-Händler bleiben beim Shop, wenn die Nachbestellung, die sie jede Woche machen, eine Minute dauert.

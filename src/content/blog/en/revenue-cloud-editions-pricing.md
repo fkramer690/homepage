@@ -10,11 +10,10 @@ categories: [revenue-cloud, architecture]
 contactBrief: licences
 tags: [revenue cloud, pricing, licences, billing, make-or-buy]
 takeaways:
-  - "Revenue Cloud Growth costs €150 and Revenue Cloud Advanced €200 per user and month at list price, billed annually, as of October 2026."
-  - "Revenue Cloud is bought on top of a Sales Cloud subscription, so a quoting user on Sales Cloud Core and Revenue Cloud Advanced costs €395 per month at list price."
-  - "Contract Lifecycle Management, Dynamic Revenue Orchestration, Invoice Management and External User Support are add-ons; the last three are marked for Advanced."
-  - "Revenue Cloud Billing has no published price and consumes one Billing Event per $50 of invoice amount, with no rollover past the order end date."
-  - "The biggest lever is the number of licences, so group users by what they do in quotes before you compare editions."
+  - "The biggest lever is the number of licences. Group users by what they do in quotes before you compare editions."
+  - "A quoting user on Sales Cloud Core and Revenue Cloud Advanced costs €395 per month at list price."
+  - "Contract Lifecycle Management, Dynamic Revenue Orchestration, Invoice Management and External User Support are add-ons."
+  - "Revenue Cloud Billing has no published price and consumes one Billing Event per $50 of invoice amount."
 faq:
   - q: "How much does Salesforce Revenue Cloud cost?"
     a: "According to the Salesforce pricing page (October 2026), Revenue Cloud Growth costs €150 or $150 and Revenue Cloud Advanced €200 or $200 per user and month, billed annually. Revenue Cloud Billing is priced on request."
@@ -48,7 +47,7 @@ Three details from the same page matter for the budget:
 
 There is no free trial. The FAQ points to hands-on workshops instead.
 
-## What does each edition contain?
+## Get the feature list per edition in the quote
 
 The edition cards on the pricing page name three features for Growth and three more for Advanced, as listed in the table above. Below them the page has a comparison table with these rows: product catalog and price management, product configurator, price and quote, order management, subscription and asset lifecycle, Advanced Approvals, Advanced Doc Gen, usage selling, Contract Lifecycle Management, Revenue Management Intelligence, Agentforce templates, Dynamic Revenue Orchestration, Invoice Management and External User Support.
 
@@ -90,7 +89,7 @@ External User Support is not described either. I would ask whether it covers dea
 
 For contract management there is a second data point. Salesforce's older [billing pricing page](https://www.salesforce.com/eu/sales/revenue-lifecycle-management/billing-pricing/), last modified in May 2025, lists Salesforce Contracts from $50 per user and month. The same page still lists CPQ from $75, although Salesforce no longer sells CPQ licences to new customers according to the [CPQ end-of-sale page](https://www.salesforce.com/sales/cpq/end-of-life/). Check the modification date of every pricing page you quote internally.
 
-## How is Revenue Cloud Billing charged?
+## Billing is charged by invoice amount
 
 Revenue Cloud Billing is a separate add-on with the price "Request a Quote". According to the pricing page it contains usage rating and digital wallet, the invoicing engine with document production, and the accounting subledger. Add-ons are sold separately from their prerequisite products and need an annual contract.
 
@@ -109,11 +108,11 @@ The edition decides the price per user. The licence forecast decides the number 
 5. **Dealers and customers** who quote themselves. That is a question for External User Support or a portal licence.
 6. **Finance** working in invoices. That belongs to the Billing add-on.
 
-A typical scenario, as an assumption: a machine builder has 80 Sales Cloud users. 35 of them create quotes, the other 45 work on accounts and opportunities and look at quotes now and then. 35 users on Advanced cost 35 × €200 × 12 = €84,000 a year at list price, on Growth €63,000. If all 80 users got Advanced, it would be €192,000. The difference of €108,000 a year only holds if read access works without a Revenue Cloud licence, which is exactly why that question belongs in the quote.
+Worked example: a machine builder has 80 Sales Cloud users. 35 of them create quotes, the other 45 work on accounts and opportunities and look at quotes now and then. 35 users on Advanced cost 35 × €200 × 12 = €84,000 a year at list price, on Growth €63,000. If all 80 users got Advanced, it would be €192,000. The difference of €108,000 a year only holds if read access works without a Revenue Cloud licence, which is exactly why that question belongs in the quote.
 
 Whether Growth and Advanced can be mixed in one org is not stated on the pricing page either. If only project sales needs contracts and usage, a mix would be the cheaper plan, so ask for it explicitly. How I build such a forecast in general is described in [Salesforce licences: does everyone need a full one?](../salesforce-licences-full-licence-needed/).
 
-## What should you clarify before you sign?
+## First step: get the licence rule for readers and approvers in writing
 
 List prices are a starting point, and Salesforce is changing its edition model across clouds. Sales Cloud now comes as Core, Advanced and Max, as described in [Salesforce editions Core, Advanced, Max for manufacturers](../salesforce-editions-core-advanced-max/). Before signing I would get these points in writing:
 
@@ -125,5 +124,3 @@ List prices are a starting point, and Salesforce is changing its edition model a
 - a price cap for the renewal.
 
 Whether Revenue Cloud pays off at all is covered in [Revenue Cloud for manufacturers: when is it worth it?](../revenue-cloud-worth-it-manufacturers/), and the [overview chapter of the Revenue Cloud masterclass](../../masterclass/revenue-cloud/revenue-cloud-overview/) puts pricing next to the other decisions. Licence forecasts are part of my work in [make-or-buy and licence forecasts](../../services/make-or-buy-licences/).
-
-The list price per user matters less than the number of users and the add-ons you really need.

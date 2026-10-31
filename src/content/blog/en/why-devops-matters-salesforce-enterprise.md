@@ -77,7 +77,7 @@ note: Git repository: single source of truth for all metadata
 
 That last point matters a lot to me as an [architect on the client side](../../#about). A repository and pipeline under the client's control make partners comparable and replaceable, which is the basis for [partner steering and governance](../../services/partner-governance/). They also make onboarding a new partner much easier, because the standards are written down and enforced automatically.
 
-## What did this look like in a real programme?
+## What this looked like in a programme I joined
 
 In one programme I joined, a large enterprise ran Salesforce with several implementation partners and internal teams. Nobody had clearly defined who led which processes, objects and metadata. The result was predictable:
 
@@ -85,7 +85,7 @@ In one programme I joined, a large enterprise ran Salesforce with several implem
 - The technical approaches of the teams had drifted far apart, so similar problems were solved in very different ways.
 - Every release was a risk, and errors often surfaced only when users ran into them.
 
-We changed this in a few steps. First, every change went through a pull request with a review. Second, we wrote down development and architecture standards and enforced them in those reviews. Third, the pipeline became the only way to move changes from one org to the next.
+We changed this in a few steps. Every change went through a pull request with a review. We wrote down development and architecture standards and enforced them in those reviews. And the pipeline became the only way to move changes from one org to the next.
 
 ```praxis
 For a while, every single pull request crossed my desk. Once the process was stable, I handed it over to an internal colleague who now owns it.
@@ -115,9 +115,9 @@ DevOps sounds like a topic for developers. In practice the business side often b
 - **Traceability for audits.** For every field, flow or permission you can show who changed it, when, why and who approved it.
 - **Lower dependency on individuals.** Knowledge lives in the repository and the pipeline, not in the head of one admin or one partner's lead developer.
 
-For a steering committee this translates into a simple question: how confident are we that the next release will not disrupt sales or service operations? Without DevOps, the honest answer is often a guess.
+For a steering committee this translates into a simple question: how confident are we that the next release will not disrupt sales or service operations? Without DevOps, the answer is often a guess.
 
-## Where should you start?
+## First step: production metadata into Git
 
 If your Salesforce programme still works with change sets or manual deployments, you don't need a big-bang migration. A pragmatic order:
 
@@ -134,4 +134,4 @@ Operations
   Add monitoring, backups and generated documentation.
 ```
 
-DevOps is not an extra layer for later. In enterprise projects it is part of the architecture, and it should be in place before the second partner starts working on the org.
+The first two steps should be in place before the second partner starts working on the org. How I set this up with open source is in the [introduction to sfdx-hardis](../sfdx-hardis-open-source-salesforce-devops/).

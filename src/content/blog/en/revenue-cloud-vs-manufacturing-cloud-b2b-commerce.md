@@ -9,11 +9,10 @@ topic: revenue
 categories: [revenue-cloud, manufacturing-cloud, b2b-commerce]
 tags: [revenue cloud, manufacturing cloud, b2b commerce, quoting, architecture, manufacturing]
 takeaways:
-  - "Revenue Cloud prices and sells configured offers, from catalog and configurator through quote and order to billing. It is the quoting system among the three."
-  - "Manufacturing Cloud tracks run-rate business: sales agreements with plan against actuals, account forecasts and dealer rebates. Configured quotes belong in Revenue Cloud."
-  - "B2B Commerce lets dealers and customers order known items themselves, such as spare parts and consumables, in a store with buyer groups, price books, cart and checkout."
-  - "The three overlap at catalog, price and quote. Salesforce lets Manufacturing Cloud and B2B Commerce use Revenue Cloud's catalog and pricing, but only if you decide on one model."
-  - "Two quote models or two quoting agents for the same products lead to two prices for the same machine. Decide per process step which product leads."
+  - "Among the three, Revenue Cloud is the quoting system, from configurator through quote and order to billing."
+  - "Manufacturing Cloud tracks run-rate business with sales agreements, account forecasts and dealer rebates. Configured quotes do not belong there."
+  - "B2B Commerce lets dealers and customers order known items themselves, such as spare parts and consumables."
+  - "Two quote models for the same products give two prices for the same machine. Decide per process step which product leads."
 faq:
   - q: "What is the difference between Revenue Cloud and Manufacturing Cloud?"
     a: "Revenue Cloud configures, prices and quotes products and carries the deal through order and billing. Manufacturing Cloud plans and measures recurring business with sales agreements, account forecasts and rebates. A quote from Revenue Cloud can be the starting point for a sales agreement in Manufacturing Cloud."
@@ -65,7 +64,7 @@ Two rows need a comment. A configured quote can become a sales agreement: Manufa
 
 The invoice row is a separate decision, which I describe in [Revenue Cloud and SAP: who owns what in quote to cash?](../revenue-cloud-sap-quote-to-cash-ownership/).
 
-## What should you avoid?
+## Four setups I stop in a design review
 
 Four setups I would not accept in a design review:
 
@@ -74,7 +73,7 @@ Four setups I would not accept in a design review:
 3. **Two quote models.** Dealers quote on standard quotes with price books in Manufacturing Cloud, the sales desk quotes in Revenue Cloud. Reports, approvals and the hand-over to the ERP exist twice.
 4. **Two quoting agents** on these two quote models. Each agent needs its own tests, guardrails and consumption budget, and their answers can disagree.
 
-## A typical scenario, as an assumption
+## Worked example: compressor maker with 200 dealers
 
 A maker of industrial compressors sells configured machines through a sales desk and 200 dealers. Dealers reorder filters and spare parts by email. Ten key accounts have annual volume agreements, and dealers earn a yearly rebate calculated in spreadsheets.
 
@@ -91,8 +90,6 @@ Manufacturing Cloud
 
 The order matters less than the rule behind it: the second product reuses the catalog and price master of the first.
 
-## Where should you start?
+## First step: mark the most expensive step in your selling process
 
 Write down your selling process in steps, from enquiry to reorder, and mark the step that costs most time or money today. Then check the overlaps for that step: which catalog, which price master, which quote model. The masterclass chapter [Revenue Cloud overview and decision](../../masterclass/revenue-cloud/revenue-cloud-overview/) helps with the first product decision, and the product boundaries belong in your [Salesforce architecture](../../services/salesforce-architecture/) decision log.
-
-Revenue Cloud sells, Manufacturing Cloud measures and B2B Commerce lets dealers order, and each step needs exactly one of them in charge.
