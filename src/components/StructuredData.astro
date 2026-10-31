@@ -48,7 +48,7 @@ const data = {
       areaServed: ['DE', 'Europe', 'Worldwide'],
       knowsAbout: ['Salesforce', 'Salesforce Architecture', 'Manufacturing Cloud', 'Field Service', 'Service Cloud', 'CPQ', 'B2B Commerce'],
       founder: { '@id': `${abs(base)}#person` },
-      sameAs: [site.linkedin],
+      sameAs: [site.linkedin, ...site.companyProfiles],
       inLanguage: t.lang,
     },
     {
