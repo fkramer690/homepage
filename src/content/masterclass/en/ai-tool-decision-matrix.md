@@ -8,11 +8,10 @@ chapter: 6
 short: "What to use when"
 summary: "Which AI tool fits which job, in twelve scenarios for manufacturers, from workshop prototype to ERP agent and EU data residency."
 takeaways:
-  - "The baseline rule for AI in a Salesforce programme: agents work in a sandbox or scratch org, data arrives read-only through Hosted MCP, and releases go only through the pipeline with review."
   - "Which coding agent fits is usually decided by contracts, data residency and the existing toolchain, and less often by model quality."
-  - "Salesforce says Agentforce Vibes is not available in the Hyperforce EU Operating Zone; Anthropic's direct Claude API offers only US or global inference, so EU processing runs through Amazon Bedrock, for example."
-  - "For agents in production, rules such as warranty eligibility or credit limits belong in deterministic logic, while the language model handles language and intent."
-  - "If the ERP has no API, the options are document extraction with RPA or the Systems Integration Agent; the RPA step and the agent both work through the user interface and need tests and monitoring."
+  - "Agentforce Vibes is not available in the Hyperforce EU Operating Zone. Claude with EU processing is available through Amazon Bedrock, for example."
+  - "Rules such as warranty eligibility or credit limits belong in deterministic logic, while the language model handles language and intent."
+  - "If the ERP has no API, the options are document extraction with RPA or the Systems Integration Agent. Both work through the UI and need tests."
 articles: [agentforce-yes-or-no-manufacturers, vibes-claude-code-copilot-comparison, agentforce-sap-order-status, legacy-erp-without-api-agents]
 faq:
   - q: "Which coding agent is best for Salesforce?"
@@ -90,7 +89,7 @@ Which checks are deterministic?
 
 For agents in production a seventh question comes before all others: is the process worth it at all? I go through volume, data quality, ERP access, cost model and edition in [Agentforce for manufacturers: start now or wait?](../../../blog/agentforce-yes-or-no-manufacturers/).
 
-## A typical scenario: three initiatives at a machine builder
+## Example: three initiatives at a machine builder
 
 Assume a machine builder with Sales Cloud and Service Cloud in an org that sits in the Hyperforce EU Operating Zone. Headquarters runs SAP S/4, while an acquired plant still uses an older ERP without an interface. IT runs GitHub Enterprise, and an implementation partner supplies six developers. All circumstances and numbers are assumptions. Three initiatives are on the table.
 
@@ -115,5 +114,3 @@ Three questions no table answers.
 | Whether Salesforce is the right place | Decisions SAP already makes do not belong in an agent in Salesforce. For routine work without language, a flow or an ERP job is often cheaper than any agent. |
 
 Sorting out these decisions for your org and your partners is part of my work in [Salesforce architecture](../../../services/salesforce-architecture/). Where agents carry weight in manufacturing today is the subject of [chapter 10](../ai-agents-in-manufacturing/); all chapters are listed on the [masterclass overview](../).
-
-Settle data residency and contracts first, then the job, and keep the rules the same for every tool.
