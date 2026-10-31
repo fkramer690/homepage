@@ -807,6 +807,16 @@ export const en = {
     imprint: 'Legal notice (German)',
     privacy: 'Privacy (German)',
     blog: 'Blog',
+    tagline: 'Salesforce architecture for manufacturers. On the client side, independent of vendors and implementation partners.',
+    servicesTitle: 'Services',
+    masterclassesTitle: 'Masterclasses',
+    moreTitle: 'Knowledge & more',
+    allServices: 'All services',
+    allMasterclasses: 'Overview',
+    questions: 'Questions I ask in every project',
+    speaking: 'Talks & events',
+    certifications: 'Certifications',
+    partners: 'Partners',
   },
 };
 

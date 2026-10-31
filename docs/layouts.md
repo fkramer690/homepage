@@ -70,6 +70,31 @@ Chosen 2026-10-31 as part of the polished design pass.
 - **Cards** carry an icon, title, text and link; no running numbers. In linked
   cards the link sits at the bottom so links in one row line up.
 
+## Hover, focus and motion (binding)
+
+Chosen 2026-10-31 as part of the polished design pass (details package).
+
+- **One hover for linked cards** (`.card-link`, `.post-tile a`, `.post-card`,
+  `.q-topic`, `.post-service`, `.video-card`; grouped rule in global.css): cyan
+  border, `--shadow-hover`, title in cyan-dark. Nothing moves or jumps. A new
+  kind of linked card joins that rule instead of getting its own hover.
+- **Rows in a white box** (masterclass lists on start and overview) get the grey
+  `--bg` background on hover; rows without a box only colour the title.
+- **Keyboard focus is always visible**: the global `:focus-visible` ring (2px
+  cyan, 3px offset). On a card the ring goes around the whole card
+  (`.card-link:has(a:focus-visible)`), so it follows the rounded corners; never
+  set `outline: none` without a replacement.
+- **Timing**: `--t-fast` (0.15s) for every hover, focus and small state change,
+  `--t-reveal` (0.6s) for graphics drawing themselves in. Reduced motion sets
+  `--t-fast` to 0.
+- **Content is readable at once.** Only the hero and graphics (content blocks,
+  hub drawings, the approach line) animate; text, cards and card drawings are
+  never hidden or faded until they scroll into view, and no `content-visibility`
+  on card images (they stayed empty when scrolling fast).
+- **Contact form** on dark: fields `rgba(255,255,255,0.06)` with a 0.32 white
+  border, cyan border plus 3px cyan glow on focus, red border (`:user-invalid`)
+  only after the visitor has touched a field.
+
 ## Compact cross list in a white box ("Damit es für beide fair bleibt")
 
 Approved 2026-10-29 ("perfekt"), live on `/partner/recruiter/` and
@@ -178,6 +203,15 @@ author box, contact, schema and the speaking page.
 - Masterclass overview: 3:2 photo at the top of the side column.
 - Masterclass hubs with a photo in `coursePhotos` show it in the hero instead of the layer drawing.
 - Freelance architect page: framed photo next to "Aus meiner Praxis".
+
+Frame and formats (binding, chosen 2026-10-31, polished design pass): every photo
+has `--radius` corners. In dark heads a photo sits in the passe-partout of the
+start page hero (1px white 14% border, 10px padding, 6px inner corners; classes
+`hero-photo`, `rc-portrait`, `.service-hero .service-photo`); on light
+backgrounds photos have no frame. Four formats only: 4:5 portrait (hero), 1:1
+(side column, About), 3:2 landscape (masterclass overview and hubs), and the
+wide bands of the project panels and quote band; 16:9 only as the narrow-screen
+form of the side-column photo.
 
 ## Filter side column (blog overview)
 

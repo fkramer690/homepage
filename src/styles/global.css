@@ -22,6 +22,10 @@
   --fs-lg: 1.625rem;    /* 26px: sub-headlines */
   --fs-xl: 2.25rem;     /* 36px: large numbers */
   --radius: 10px;
+  /* Motion and interaction (docs/layouts.md "Hover, focus and motion") */
+  --t-fast: 0.15s;           /* hover, focus, small state changes */
+  --t-reveal: 0.6s;          /* graphics drawing themselves in */
+  --shadow-hover: 0 6px 20px rgba(35, 35, 37, 0.08);
   /* Width system (docs/layouts.md, "Page width"): one frame for every page,
      text pages split it into a reading column and a side column. */
   --max: 1280px;
@@ -44,6 +48,7 @@ html {
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+  :root { --t-fast: 0s; }
 }
 
 body {
@@ -116,9 +121,7 @@ a:hover { color: var(--anthracite); }
 
 /* Video card of a blog article (src/components/VideoCard.astro): in the side column on
    wide screens, below the takeaways on narrow ones; opens the video in an overlay. */
-.video-card { display: flex; gap: 14px; align-items: center; padding: 12px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--white); font: inherit; color: var(--text); text-align: left; cursor: pointer; transition: border-color 0.15s, box-shadow 0.15s; }
-.video-card:hover { border-color: var(--cyan); box-shadow: 0 4px 16px rgba(35, 35, 37, 0.08); }
-.video-card:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
+.video-card { display: flex; gap: 14px; align-items: center; padding: 12px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--white); font: inherit; color: var(--text); text-align: left; cursor: pointer; }
 .video-card-thumb { position: relative; flex: none; }
 .video-card-thumb img { display: block; width: 72px; height: 128px; object-fit: cover; border-radius: 6px; }
 .video-card-thumb::after { content: ''; position: absolute; left: 50%; top: 50%; width: 36px; height: 36px; margin: -18px 0 0 -18px; border-radius: 50%; background: var(--cyan); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35); }
@@ -186,7 +189,7 @@ a:hover { color: var(--anthracite); }
   font-size: var(--fs-ui);
   text-decoration: none;
   border: 1.5px solid var(--cyan);
-  transition: background 0.15s, border-color 0.15s, color 0.15s;
+  transition: background var(--t-fast), border-color var(--t-fast), color var(--t-fast);
 }
 .btn:hover {
   background: var(--cyan-light);
@@ -598,6 +601,31 @@ a:hover { color: var(--anthracite); }
   margin-bottom: 0.8em;
 }
 .card p { color: var(--text-2); font-size: var(--fs-ui); margin: 0; }
+/* One hover for every linked card (docs/layouts.md "Hover, focus and motion"):
+   cyan border, soft shadow, title in cyan; nothing moves. Keyboard focus shows the
+   same state plus the cyan ring, drawn around the whole card so it follows its corners. */
+.card-link, .post-tile a, .post-card, .q-topic, .post-service, .video-card {
+  transition: border-color var(--t-fast), box-shadow var(--t-fast);
+}
+.card-link:hover, .card-link:has(a:focus-visible),
+.post-tile a:hover, .post-tile a:focus-visible,
+.post-card:hover, .post-card:focus-visible,
+.q-topic:hover, .q-topic:focus-visible,
+.post-service:hover, .post-service:focus-visible,
+.video-card:hover, .video-card:focus-visible {
+  border-color: var(--cyan);
+  box-shadow: var(--shadow-hover);
+  color: var(--text);
+}
+.card-link .card-title, .post-tile .post-title, .post-card .post-title, .q-topic-title, .post-service-title, .video-card-title { transition: color var(--t-fast); }
+.card-link:hover .card-title, .card-link:has(a:focus-visible) .card-title,
+.post-tile a:hover .post-title, .post-tile a:focus-visible .post-title,
+.post-card:hover .post-title, .post-card:focus-visible .post-title,
+.q-topic:hover .q-topic-title, .q-topic:focus-visible .q-topic-title,
+.post-service:hover .post-service-title, .post-service:focus-visible .post-service-title,
+.video-card:hover .video-card-title, .video-card:focus-visible .video-card-title { color: var(--cyan-dark); }
+.card-link a:focus-visible { outline: none; }
+.card-link:has(a:focus-visible) { outline: 2px solid var(--cyan); outline-offset: 3px; }
 
 /* Wide card on the home page: further services as rows */
 .card-wide { grid-column: span 2; }
@@ -676,7 +704,7 @@ a:hover { color: var(--anthracite); }
   border-bottom: 1px solid var(--line);
   border-left: 3px solid transparent;
   cursor: pointer;
-  transition: background 0.15s;
+  transition: background var(--t-fast);
 }
 .rf-list label:hover { background: var(--white); }
 .rf-no { grid-row: 1 / 3; padding-top: 3px; font-size: var(--fs-xs); color: var(--text-2); }
@@ -743,7 +771,7 @@ a:hover { color: var(--anthracite); }
   filter: grayscale(1);
   opacity: 0.6;
   mix-blend-mode: multiply;
-  transition: filter 0.2s, opacity 0.2s;
+  transition: filter var(--t-fast), opacity var(--t-fast);
 }
 .marquee-track img:hover { filter: none; opacity: 1; }
 .marquee-track img.light, .marquee-track img.light:hover { filter: brightness(0); }
@@ -811,10 +839,9 @@ a:hover { color: var(--anthracite); }
   background: var(--cyan);
 }
 /* Progress line (start page approach): when the steps scroll into view, a solid
-   cyan line draws over the dashed one from step 01 to 04 and each step lights
-   up as the line reaches it. Only with JavaScript and without reduced motion
-   (class set in Home.astro); otherwise the steps stay as they are. */
-.steps.js-progress li { opacity: 0.35; transition: opacity 0.5s ease; }
+   cyan line draws over the dashed one from step 01 to 04. The text is readable
+   from the start; only the line moves. Only with JavaScript and without reduced
+   motion (class set in Home.astro); otherwise the steps stay as they are. */
 .steps.js-progress li::after {
   content: '';
   position: absolute;
@@ -823,15 +850,11 @@ a:hover { color: var(--anthracite); }
   width: 0;
   height: 1.5px;
   background: var(--cyan);
-  transition: width 0.6s linear;
+  transition: width var(--t-reveal) linear;
 }
-.steps.js-progress.is-visible li { opacity: 1; }
 .steps.js-progress.is-visible li::after { width: 100%; }
-.steps.js-progress.is-visible li:nth-child(2),
 .steps.js-progress.is-visible li:nth-child(2)::after { transition-delay: 0.6s; }
-.steps.js-progress.is-visible li:nth-child(3),
 .steps.js-progress.is-visible li:nth-child(3)::after { transition-delay: 1.2s; }
-.steps.js-progress.is-visible li:nth-child(4),
 .steps.js-progress.is-visible li:nth-child(4)::after { transition-delay: 1.8s; }
 .step-icon { display: block; width: 44px; height: 44px; margin-bottom: 10px; }
 .step-no { font-size: var(--fs-xs); color: var(--cyan-dark); display: block; margin-bottom: 0.6em; }
@@ -856,7 +879,7 @@ a:hover { color: var(--anthracite); }
   height: auto;
   aspect-ratio: 1;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: var(--radius);
   margin-bottom: 24px;
 }
 .about-facts { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
@@ -913,25 +936,48 @@ a.card-more:hover,
 .contact-list a { color: var(--white); text-decoration-color: var(--cyan); text-underline-offset: 4px; overflow-wrap: anywhere; }
 .contact-list a:hover { color: var(--cyan-light); }
 
-/* Footer */
+/* Footer: brand and three link columns on top, legal links below (docs/layouts.md "Footer") */
 .site-footer {
   background: #1b1b1d;
   color: rgba(255, 255, 255, 0.65);
   font-size: var(--fs-sm);
 }
-.footer-inner {
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr 1fr;
+  gap: 32px 40px;
+  padding-top: 56px;
+  padding-bottom: 40px;
+}
+.footer-logo { display: inline-flex; align-items: center; gap: 10px; color: var(--white); font-weight: 600; font-size: var(--fs-ui); text-decoration: none; }
+.footer-brand p { margin: 14px 0 0; max-width: 32ch; line-height: 1.55; }
+.footer-linkedin { display: inline-block; margin-top: 16px; color: var(--white); font-weight: 600; text-decoration: none; }
+.footer-head { margin: 0 0 14px; font-size: var(--fs-xs); letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255, 255, 255, 0.5); }
+.footer-col ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.footer-col a, .footer-legal a { color: rgba(255, 255, 255, 0.82); text-decoration: none; transition: color var(--t-fast); }
+.footer-col a.footer-all { color: var(--cyan-light); font-weight: 600; }
+.footer-col a:hover, .footer-legal a:hover, .footer-logo:hover, .footer-linkedin:hover { color: var(--cyan-light); }
+.footer-bottom {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 16px 32px;
-  padding-top: 28px;
-  padding-bottom: 28px;
+  gap: 8px 24px;
+  padding-top: 18px;
+  padding-bottom: 22px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: var(--fs-xs);
 }
-.footer-brand { display: flex; align-items: center; gap: 10px; margin-right: auto; }
-.footer-nav { display: flex; flex-wrap: wrap; gap: 8px 22px; }
-.footer-nav a { color: rgba(255, 255, 255, 0.8); text-decoration: none; }
-.footer-nav a:hover { color: var(--cyan-light); }
-.footer-copy { margin: 0; width: 100%; font-size: var(--fs-xs); color: rgba(255, 255, 255, 0.55); }
+.footer-copy { margin: 0 auto 0 0; color: rgba(255, 255, 255, 0.55); }
+.footer-legal { display: flex; flex-wrap: wrap; gap: 8px 24px; }
+@media (max-width: 900px) {
+  .footer-top { grid-template-columns: 1fr 1fr; }
+  .footer-brand { grid-column: 1 / -1; }
+}
+@media (max-width: 520px) {
+  .footer-top { gap: 28px 20px; padding-top: 40px; }
+  .footer-col:last-child { grid-column: 1 / -1; }
+  .footer-copy { width: 100%; }
+}
 
 /* Legal pages */
 .legal h1 { font-size: clamp(1.8rem, 3.5vw, 2.4rem); margin-bottom: 1em; }
@@ -951,9 +997,7 @@ a.card-more:hover,
   border-radius: var(--radius);
   color: var(--text);
   text-decoration: none;
-  transition: border-color 0.15s;
 }
-.post-card:hover { border-color: var(--cyan); color: var(--text); }
 .post-card .post-title { font-size: var(--fs-md); font-weight: 600; line-height: 1.3; }
 .post-card .post-desc { color: var(--text-2); }
 .post-meta { font-size: var(--fs-xs); color: var(--text-2); }
@@ -1016,7 +1060,7 @@ a.card-more:hover,
   font-size: 1.3rem;
   line-height: 1;
   color: var(--cyan-dark);
-  transition: transform 0.15s;
+  transition: transform var(--t-fast);
 }
 .faq-item[open] summary::after { transform: rotate(45deg); }
 .faq-item summary:hover h3 { color: var(--cyan-dark); }
@@ -1100,7 +1144,7 @@ p.post-series-note { margin: 0.6em 0 0; font-size: var(--fs-ui); }
   flex-direction: column;
   gap: 2px;
   transform: translateY(-50%);
-  transition: opacity 0.2s, transform 0.2s;
+  transition: opacity var(--t-fast), transform var(--t-fast);
 }
 .float-contact.is-hidden { opacity: 0; pointer-events: none; transform: translate(100%, -50%); }
 .float-btn {
@@ -1115,7 +1159,7 @@ p.post-series-note { margin: 0.6em 0 0; font-size: var(--fs-ui); }
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-right: 0;
   text-decoration: none;
-  transition: background 0.15s, color 0.15s;
+  transition: background var(--t-fast), color var(--t-fast);
 }
 .float-btn:first-child { border-top-left-radius: var(--radius); }
 .float-btn:last-child { border-bottom-left-radius: var(--radius); }
@@ -1134,7 +1178,7 @@ p.post-series-note { margin: 0.6em 0 0; font-size: var(--fs-ui); }
   opacity: 0;
   transform: translateX(6px);
   pointer-events: none;
-  transition: opacity 0.15s, transform 0.15s;
+  transition: opacity var(--t-fast), transform var(--t-fast);
 }
 /* The call button only shows on phones, where a tap dials. */
 .float-phone { display: none; }
@@ -1223,7 +1267,7 @@ p.post-series-note { margin: 0.6em 0 0; font-size: var(--fs-ui); }
   gap: 6px;
   margin-bottom: 16px;
   font-size: var(--fs-sm);
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.85);
 }
 .field em { font-style: normal; color: rgba(255, 255, 255, 0.55); }
 .field input,
@@ -1232,18 +1276,25 @@ p.post-series-note { margin: 0.6em 0 0; font-size: var(--fs-ui); }
   font: inherit;
   font-size: var(--fs-ui);
   color: var(--white);
-  background: rgba(0, 0, 0, 0.25);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.32);
   border-radius: 6px;
   padding: 0.65em 0.8em;
+  transition: border-color var(--t-fast), box-shadow var(--t-fast), background var(--t-fast);
 }
+.field input:hover,
+.field textarea:hover { border-color: rgba(255, 255, 255, 0.5); }
 .field textarea { resize: vertical; min-height: 120px; }
 .field input:focus,
 .field textarea:focus {
   outline: none;
   border-color: var(--cyan);
-  box-shadow: 0 0 0 1px var(--cyan);
+  background: rgba(255, 255, 255, 0.09);
+  box-shadow: 0 0 0 3px rgba(27, 161, 226, 0.35);
 }
+/* Only after the visitor has touched the field, not on an empty form */
+.field input:user-invalid,
+.field textarea:user-invalid { border-color: #ff9d8a; }
 .form-privacy { font-size: var(--fs-xs); color: rgba(255, 255, 255, 0.55); }
 .form-privacy a { color: var(--cyan-light); }
 .contact-form .btn { cursor: pointer; font-family: inherit; }
@@ -1292,9 +1343,8 @@ p.post-series-note { margin: 0.6em 0 0; font-size: var(--fs-ui); }
 .not-found { min-height: calc(100vh - 190px); }
 
 /* Service pages */
-.card-link { padding: 0; transition: border-color 0.15s, box-shadow 0.15s; }
+.card-link { padding: 0; }
 .card-link a { display: flex; flex-direction: column; height: 100%; padding: 28px 24px 22px; color: inherit; text-decoration: none; }
-.card-link:hover { border-color: var(--cyan); box-shadow: 0 6px 20px rgba(35, 35, 37, 0.08); }
 .card-link .card-title { font-size: var(--fs-md); margin: 0 0 0.5em; }
 .card-more { display: inline-block; margin-top: 1em; }
 /* In linked cards the link sits at the bottom, whatever the text length */
@@ -1333,7 +1383,6 @@ p.post-series-note { margin: 0.6em 0 0; font-size: var(--fs-ui); }
 }
 .service .prose { margin-top: 2.6em; }
 .post-service { display: block; margin-top: 2em; padding: 18px 22px; border: 1px solid var(--line); border-left: 4px solid var(--cyan); border-radius: var(--radius); background: var(--white); color: inherit; text-decoration: none; }
-.post-service:hover { border-color: var(--cyan); }
 .post-service .label { display: block; font-size: var(--fs-xs); letter-spacing: 0.12em; text-transform: uppercase; color: var(--cyan-dark); margin-bottom: 0.3em; }
 .post-service-title { font-weight: 600; }
 @media (max-width: 720px) {
@@ -1348,7 +1397,10 @@ p.post-series-note { margin: 0.6em 0 0; font-size: var(--fs-ui); }
 .service-hero .service-lead { color: rgba(255, 255, 255, 0.78); }
 .service-hero .service-note { color: rgba(255, 255, 255, 0.78); background: rgba(255, 255, 255, 0.04); }
 .service-hero .service-note a, .service-hero .service-note-label { color: var(--cyan-light); }
-.service-hero .service-photo img { border: 1px solid rgba(255, 255, 255, 0.14); }
+/* Photos in dark heads sit in the same passe-partout as the start page hero
+   (docs/layouts.md "Photos of Fabian", frame rule) */
+.service-hero .service-photo { border: 1px solid rgba(255, 255, 255, 0.14); border-radius: var(--radius); padding: 10px; background: rgba(255, 255, 255, 0.03); }
+.service-hero .service-photo img { border-radius: 6px; }
 .service-band .container > :first-child, .service-band .service-block:first-child { margin-top: 0; }
 .service-band:not(.alt) + .service-band:not(.alt) { padding-top: 0; }
 .service-band .page-grid { margin-top: 0; }
@@ -1361,8 +1413,7 @@ p.post-series-note { margin: 0.6em 0 0; font-size: var(--fs-ui); }
 .questions .service-lead { max-width: 760px; }
 /* Topic tiles as jump links, then per group: topic on the left, questions as one compact list */
 .q-topics { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin: 1.6em 0 2.4em; }
-.q-topic { display: flex; flex-direction: column; gap: 4px; padding: 14px 14px 12px; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); text-decoration: none; color: inherit; transition: border-color 0.15s; }
-.q-topic:hover { border-color: var(--cyan); }
+.q-topic { display: flex; flex-direction: column; gap: 4px; padding: 14px 14px 12px; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); text-decoration: none; color: inherit; }
 .q-topic-icon { width: 30px; height: 30px; margin-bottom: 4px; }
 .q-topic-title { font-weight: 600; font-size: var(--fs-ui); line-height: 1.3; }
 .q-topic-count { font-size: var(--fs-xs); color: var(--text-2); }
@@ -1457,12 +1508,8 @@ p.post-series-note { margin: 0.6em 0 0; font-size: var(--fs-ui); }
   overflow: hidden;
   color: var(--text);
   text-decoration: none;
-  transition: border-color 0.15s, transform 0.15s;
 }
-.post-tile a:hover { border-color: var(--cyan); color: var(--text); transform: translateY(-2px); }
 .post-tile-media { position: relative; overflow: hidden; display: block; aspect-ratio: 2 / 1; background: var(--bg); border-bottom: 1px solid var(--line); }
-/* About 200 inline drawings on the overview: skip rendering those off screen. */
-.post-tile-media { content-visibility: auto; }
 .card-drawing { position: absolute; inset: 0; display: block; width: 100%; height: 100%; }
 .card-drawing text { font-family: var(--mono); }
 .post-tile-body { display: flex; flex-direction: column; gap: 8px; padding: 20px 22px 22px; flex: 1; }
@@ -1510,7 +1557,7 @@ p.post-series-note { margin: 0.6em 0 0; font-size: var(--fs-ui); }
   width: 100%; display: flex; align-items: center; gap: 12px;
   padding: 8px 8px; font: inherit; font-size: var(--fs-ui); line-height: 1.25; text-align: left;
   color: var(--text); background: none; border: 0; border-left: 2px solid transparent; cursor: pointer;
-  transition: background 0.15s;
+  transition: background var(--t-fast);
 }
 .filter-item:hover { background: var(--bg); }
 .filter-item[aria-pressed='true'] { border-left-color: var(--cyan); background: var(--bg); font-weight: 600; }
@@ -1548,7 +1595,7 @@ p.post-series-note { margin: 0.6em 0 0; font-size: var(--fs-ui); }
 /* Search bar above the articles (blog overview); it filters together with the side column. */
 .blog-main { min-width: 0; }
 .blog-search { display: block; margin-bottom: 24px; }
-.blog-search-field { display: flex; align-items: center; gap: 12px; height: 54px; padding: 0 16px; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); transition: border-color 0.15s, box-shadow 0.15s; }
+.blog-search-field { display: flex; align-items: center; gap: 12px; height: 54px; padding: 0 16px; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); transition: border-color var(--t-fast), box-shadow var(--t-fast); }
 .blog-search-field:focus-within { border-color: var(--cyan); box-shadow: 0 0 0 3px rgba(27, 161, 226, 0.15); }
 .blog-search-field input { flex: 1; min-width: 0; border: 0; outline: 0; background: none; font: inherit; font-size: var(--fs-base); color: var(--text); }
 .blog-search-field input::-webkit-search-cancel-button { cursor: pointer; }
@@ -1649,7 +1696,7 @@ p.post-series-note { margin: 0.6em 0 0; font-size: var(--fs-ui); }
 .mc-path-title { font-size: var(--fs-ui); margin: 0 0 2px; }
 .mc-path-summary { display: block; color: var(--text-2); font-size: var(--fs-ui); line-height: 1.5; }
 .mc-tab-bar { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
-.mc-tab-bar label { cursor: pointer; padding: 8px 14px; border: 1px solid var(--line); border-radius: 999px; background: var(--white); font-size: var(--fs-sm); transition: border-color 0.15s; }
+.mc-tab-bar label { cursor: pointer; padding: 8px 14px; border: 1px solid var(--line); border-radius: 999px; background: var(--white); font-size: var(--fs-sm); transition: border-color var(--t-fast); }
 .mc-tab-bar label:hover { border-color: var(--cyan); }
 .mc-tab-bar label span { color: var(--text-2); font-size: var(--fs-xs); margin-left: 4px; }
 .mc-tab-panel { display: none; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 24px; }
@@ -1674,6 +1721,10 @@ p.post-series-note { margin: 0.6em 0 0; font-size: var(--fs-ui); }
 .mc-home-list li + li { border-top: 1px dashed var(--line); }
 .mc-home-list a { display: grid; grid-template-columns: 32px 1fr auto 16px; gap: 16px; align-items: center; padding: 12px 20px; color: inherit; text-decoration: none; }
 .mc-home-list a:hover .mc-home-name { color: var(--cyan-dark); }
+.mc-home-list li:first-child a, .mc-overview-list li:first-child a { border-radius: var(--radius) var(--radius) 0 0; }
+.mc-home-list li:last-child a, .mc-overview-list li:last-child a { border-radius: 0 0 var(--radius) var(--radius); }
+.mc-home-list a, .mc-overview-list a { transition: background var(--t-fast); }
+.mc-home-list a:hover, .mc-overview-list a:hover { background: var(--bg); }
 .mc-home-icon { width: 32px; height: 32px; }
 .mc-home-text { display: grid; }
 .mc-home-name { font-weight: 600; line-height: 1.3; }
@@ -2300,7 +2351,7 @@ p.post-series-note { margin: 0.6em 0 0; font-size: var(--fs-ui); }
 .cb-explain .cx-pp-row .cx-d { font-size: var(--fs-sm); }
 .cb-explain .cx-pp-row .cx-card + .cx-card::before,
 .cb-explain .cx-pp-row .cx-card + .cx-card::after { content: ''; position: absolute; left: -17px; top: 50%; width: 14px; height: 2px; background: var(--x-line); }
-.cb-explain .cx-pp-row .cx-card + .cx-card::after { background: var(--x-eye); transform-origin: left; transition: transform 0.35s, background-color 0.2s; }
+.cb-explain .cx-pp-row .cx-card + .cx-card::after { background: var(--x-eye); transform-origin: left; transition: transform 0.35s, background-color var(--t-fast); }
 .cb-explain .cx-check { position: absolute; right: 10px; top: 10px; width: 18px; height: 18px; border-radius: 50%; background: var(--cyan); display: grid; place-items: center; transition: transform 0.3s, background-color 0.3s; }
 .cb-explain .cx-check svg { width: 12px; height: 12px; stroke: var(--white); stroke-width: 3; }
 .cb-explain .cx-pp-legend { margin-top: 14px; display: grid; gap: 6px; font-size: var(--fs-sm); line-height: 1.45; }
