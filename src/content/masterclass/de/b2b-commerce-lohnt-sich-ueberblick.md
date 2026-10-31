@@ -122,7 +122,7 @@ Drei Fälle, in denen ich von Salesforce B2B Commerce abraten würde:
 - **Das ERP bringt ein eigenes Commerce-Modul mit**, das Preise, Bestand und Kreditlimit ohne Schnittstelle kennt. Das prüfen Sie zuerst, weil die ERP-Anbindung in Salesforce der teuerste Teil des Projekts ist.
 - **Sehr kleiner Katalog, wenige Händler.** Bei 200 Artikeln und 15 Händlern ist ein Bestellformular im Portal oder eine Liste im ERP günstiger als jedes Shopsystem mit Umsatzbeteiligung.
 
-## Erster Schritt: Preise, Bestand und ERP-Aufrufe schriftlich klären
+## Preise, Bestand und ERP-Aufrufe vor dem ersten Sprint klären
 
 Einen Store aus der Vorlage anzulegen ist der kleinste Teil des Projekts. Die Entscheidungen, die danach teuer zu ändern sind, liegen bei Ihnen:
 

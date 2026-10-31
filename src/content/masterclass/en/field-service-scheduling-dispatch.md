@@ -140,7 +140,7 @@ On-call | Alongside
 
 The Excel list is gone after week 10. The dispatchers still decide, but from a proposal instead of an empty calendar.
 
-## First step: a named owner for the scheduling policies
+## Name an owner for the scheduling policies
 
 These decisions need a name next to them before a partner configures scheduling:
 

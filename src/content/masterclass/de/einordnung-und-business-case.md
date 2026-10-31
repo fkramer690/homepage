@@ -162,7 +162,7 @@ Für eine schlanke Plan-gegen-Ist-Ansicht gewinnt der Eigenbau deutlich. Das Bil
 
 Das Ergebnis gehört in ein Entscheidungsprotokoll: welche Funktionen geprüft wurden, welche Zahlen galten, wer entschieden hat. Nach einem Partnerwechsel ist das oft das einzige Dokument, das erklärt, warum die Org so aussieht, wie sie aussieht. Wie ich solche Rechnungen aufbaue, beschreibe ich unter [Make-or-Buy und Lizenzprognosen](../../../leistungen/make-or-buy-lizenzen/); die Einordnung in die Gesamtarchitektur gehört zur [Salesforce-Architektur](../../../leistungen/salesforce-architektur/).
 
-## Erster Schritt: Vertrieb und Service nach Rahmenverträgen, Boni und Garantie fragen
+## Vertrieb und Service nach Rahmenverträgen, Boni und Garantie fragen
 
 Bevor ein Angebot auf dem Tisch liegt, helfen drei Fragen an Vertrieb und Service: Welcher Anteil des Umsatzes läuft über Mengenvereinbarungen? Wie werden Händlerboni heute berechnet? Wer prüft Garantieansprüche, und wie lange dauert das? Die Antworten zeigen früher als eine Demo, ob Manufacturing Cloud passt. Liegt schon ein Angebot vor, prüfen Sie es gegen die Checkliste aus dem Funktionsüberblick: jede Funktion aus dem Business Case mit der Lizenz, die sie abdeckt.
 

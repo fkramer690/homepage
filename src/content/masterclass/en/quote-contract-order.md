@@ -136,7 +136,7 @@ A maker of packaging lines sells an existing customer two things on one quote: a
 
 The invoice for the subscription can come from SAP or from Revenue Cloud Billing. That decision and recurring billing are covered in [chapter 4](../billing-and-usage-based-pricing/), for example in [maintenance contracts: recurring billing](../../../blog/maintenance-contracts-recurring-billing/).
 
-## First step: settle the approval matrix and the SAP hand-over in writing
+## Settle the approval matrix and the SAP hand-over in writing
 
 Before a partner builds the first quote layout, I would settle these points in writing:
 

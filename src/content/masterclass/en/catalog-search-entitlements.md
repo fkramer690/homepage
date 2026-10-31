@@ -161,7 +161,7 @@ A machine builder sells spare parts through 800 dealers in 12 countries, with th
 - 30,000 active spare parts come from SAP, 8,000 of them with predecessor numbers. Those go into a searchable field; synonym rules stay for terms.
 - Parts per machine start with a machine page for the three most important machine series.
 
-## First step: write the entitlement concept on one page
+## Write the entitlement concept on one page
 
 Write the entitlement concept on one page before anyone loads data:
 

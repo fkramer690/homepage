@@ -152,7 +152,7 @@ Region drei in einem anderen Land | Monate 7 bis 9
 
 Die Fehlersuche wartet, bis die Handbücher den Produktschlüssel des Assets tragen, der Ersatzteilagent, bis das PLM As-built-Stücklisten über eine API liefert. Der monatliche Kennzahlentermin entscheidet, wo der nächste Agent hinkommt.
 
-## Erster Schritt: den ersten Agenten mit messbarem Ziel festlegen
+## Den ersten Agenten mit einem messbaren Ziel auswählen
 
 | Entscheidung | Was dazugehört |
 |---|---|

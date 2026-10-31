@@ -95,6 +95,6 @@ Agree location data, working times and evaluations of individuals with the works
 
 The same applies to AI tools in development, see [AI coding tools: works council and GDPR](../../../blog/ai-coding-tools-works-council-gdpr/). How technicians adopt the app is covered in [chapter 3](../key-users-and-training/).
 
-## First step: write the rollout plan for the next release
+## Write the rollout plan for the next release
 
 Write a rollout plan for the next release with one row per affected group and mark the contested rows. Take this list to the sponsor and agree when they explain which change. If no sponsor can be found, that is the most important finding of the plan. The diagnosis behind it is in [chapter 1](../change-management-adkar-diagnosis/), my work on it on the page [Change management for Salesforce programmes](../../../services/change-management-salesforce/).

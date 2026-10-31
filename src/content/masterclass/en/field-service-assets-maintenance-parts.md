@@ -165,7 +165,7 @@ A builder of machining centres has 1,200 machines in the field in three series. 
 | Parts and partners | 30 vans in Salesforce as locations, stock synced nightly from SAP. The two partners get a territory each, regular technicians on Contractor Plus per user. |
 | Add-ons | None in the first year. Connected Assets would cost $180,000 a year without changing a single decision. |
 
-## First step: set the asset depth per machine type
+## Set the asset depth per machine type
 
 | Decision | What it covers |
 |---|---|

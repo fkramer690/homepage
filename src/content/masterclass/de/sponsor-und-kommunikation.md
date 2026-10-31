@@ -95,6 +95,6 @@ Klären Sie Standortdaten, Zeiten und Auswertungen über Personen mit dem Betrie
 
 Für KI-Werkzeuge in der Entwicklung gilt dasselbe, siehe [KI-Coding: Betriebsrat und DSGVO](../../../blog/ki-coding-betriebsrat-dsgvo/). Wie Techniker die App annehmen, behandelt [Kapitel 3](../key-user-und-schulung/).
 
-## Erster Schritt: Einführungsplan für das nächste Release schreiben
+## Einführungsplan für das nächste Release schreiben
 
 Schreiben Sie für das nächste Release einen Einführungsplan mit einer Zeile pro betroffener Gruppe und markieren Sie die umstrittenen Zeilen. Gehen Sie mit dieser Liste zum Sponsor und vereinbaren Sie, wann er welche Änderung erklärt. Wenn kein Sponsor zu finden ist, ist das die wichtigste Erkenntnis des Plans. Die Diagnose dahinter steht in [Kapitel 1](../change-management-adkar-diagnose/), meine Arbeit dazu auf der Seite [Change Management für Salesforce-Programme](../../../leistungen/change-management/).

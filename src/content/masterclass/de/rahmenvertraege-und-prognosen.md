@@ -162,6 +162,6 @@ Ziele
 
 Programmgeschäft braucht dieser Hersteller nicht, weil er nicht in OEM-Programme liefert. Den Agenten würde ich erst prüfen, wenn der Ist-Datenfluss ein Quartal lang stabil läuft.
 
-## Erster Schritt: den Ist-Datenfluss aus dem ERP klären
+## Den Ist-Datenfluss aus dem ERP vor dem ersten Sales Agreement klären
 
 Klären Sie vor dem ersten Sales Agreement, wie die Ist-Mengen aus dem ERP kommen und auf welcher Kunden-, Produkt- und Periodenebene Ziel, Prognose und Ist zusammenpassen. Rahmenverträge und Prognosen betreffen den Direktvertrieb an große Kunden. Wer über Händler verkauft, braucht zusätzlich Boni, Portale und Händlerbesuche; das behandelt [Kapitel 3: Händler und Partnerkanal](../haendler-und-partnerkanal/). Alle Kapitel finden Sie auf der [Übersichtsseite](../).

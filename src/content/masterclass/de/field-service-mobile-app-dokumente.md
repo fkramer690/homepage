@@ -155,7 +155,7 @@ Pilot | Wochen 9 und 10 · acht Techniker
 
 Voice to Form wartet, bis Datenschutz und Betriebsrat zugestimmt haben. Nach dem Pilot stehen die Messwerte am Abend des Einsatzes am Asset, und niemand tippt sie noch einmal ab.
 
-## Erster Schritt: das Zieldatenmodell für Servicedaten festlegen
+## Zieldatenmodell für Servicedaten vor dem ersten Formular festlegen
 
 Vier Entscheidungen brauchen einen Namen, bevor ein Partner Formulare baut:
 

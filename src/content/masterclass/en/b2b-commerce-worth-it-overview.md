@@ -122,7 +122,7 @@ Three cases where I would advise against Salesforce B2B Commerce:
 - **The ERP comes with its own commerce module** that knows prices, stock and credit limits without an interface. Check that first, because the ERP integration is the most expensive part of a Salesforce project.
 - **Very small catalogue, few dealers.** With 200 items and 15 dealers, an order form in the portal or a list in the ERP costs less than any shop system with a revenue share.
 
-## First step: settle prices, stock and ERP calls in writing
+## Settle prices, stock and ERP calls before the first sprint
 
 Creating a store from the template is the smallest part of the project. The decisions that are expensive to change afterwards are yours:
 

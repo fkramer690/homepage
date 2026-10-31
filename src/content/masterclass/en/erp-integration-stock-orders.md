@@ -143,6 +143,6 @@ A machine builder with SAP S/4HANA plans a store on Growth Edition for 250 deale
 
 Six interfaces, three of them live, all through an integration user with a certificate instead of a password. If SAP does not answer in time during checkout, the store accepts the order with "date to follow". Every interface gets an owner on the client side.
 
-## First step: write the ownership matrix and the interface list
+## Write the ownership matrix and the interface list before the store design
 
 Write two documents before anyone designs store pages. One is an [object ownership matrix](../../../blog/salesforce-object-ownership-matrix/) with one extra column: copied or live. The other is an interface list with master system, maximum data age, fallback rule and login method per interface. With these two pages you can compare any partner proposal. [Chapter 5](../agentforce-migration-rollout/) then covers agents that build on the same interfaces and the rollout to dealers. An independent review of such designs is part of my work in [Salesforce integration](../../../services/salesforce-integration/) and [Salesforce architecture](../../../services/salesforce-architecture/).

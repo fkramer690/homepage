@@ -160,7 +160,7 @@ For a lean plan against actuals view the custom build wins clearly. The picture 
 
 The result belongs in a decision log: which features were checked, which numbers applied, who decided. After a partner change it is often the only document that explains why the org looks the way it does. How I build these calculations is described under [make-or-buy and licence forecasts](../../../services/make-or-buy-licences/); fitting the result into the overall architecture is part of [Salesforce architecture](../../../services/salesforce-architecture/).
 
-## First step: ask sales and service about agreements, rebates and warranty
+## Ask sales and service about agreements, rebates and warranty
 
 Before a quote is on the table, three questions to sales and service help: what share of revenue runs through volume agreements? How are dealer bonuses calculated today? Who checks warranty claims, and how long does it take? The answers show sooner than a demo whether Manufacturing Cloud fits. If a quote is already there, check it against the checklist in the feature overview: every feature from the business case, with the licence that covers it.
 

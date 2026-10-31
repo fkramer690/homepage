@@ -136,7 +136,7 @@ Ein Hersteller von Verpackungsanlagen verkauft einem Bestandskunden auf einem An
 
 Die Rechnung für das Abo kann aus SAP oder aus Revenue Cloud Billing kommen. Diese Entscheidung und die wiederkehrende Abrechnung behandelt [Kapitel 4](../abrechnung-und-nutzungsbasierte-preise/), etwa in [Wartungsverträge wiederkehrend abrechnen](../../../blog/wartungsvertraege-wiederkehrend-abrechnen/).
 
-## Erster Schritt: Freigabematrix und SAP-Übergabe schriftlich klären
+## Freigabematrix und SAP-Übergabe schriftlich klären
 
 Bevor ein Partner das erste Angebotslayout baut, würde ich diese Punkte schriftlich klären:
 

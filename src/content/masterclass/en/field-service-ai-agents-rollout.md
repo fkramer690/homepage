@@ -152,7 +152,7 @@ Region three in another country | Months 7 to 9
 
 Troubleshooting waits until manuals carry the asset's product key, the spare parts agent until PLM delivers as-built lists through an API. A monthly KPI review decides where the next agent goes.
 
-## First step: pick the first agent with a measurable target
+## Pick the first agent with a measurable target
 
 | Decision | What it covers |
 |---|---|

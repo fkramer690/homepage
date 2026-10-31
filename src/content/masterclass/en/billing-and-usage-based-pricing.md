@@ -146,7 +146,7 @@ Field Service does not read Revenue Cloud subscriptions. Service contract, contr
 
 The details, including a scenario with 800 machines billed quarterly, are in [maintenance contracts with recurring billing](../../../blog/maintenance-contracts-recurring-billing/).
 
-## First step: finance sets the invoice owner per revenue type
+## Finance sets the invoice owner per revenue type
 
 An assumed example: a machine builder with SAP S/4HANA quotes machines, spare parts, remote monitoring and maintenance contracts in Revenue Cloud. Machines and parts are invoiced from SAP, which already issues e-invoices. Subscriptions, maintenance fees and extra operating hours move to Billing, connected to the e-invoicing service SAP already uses. The customer receives two kinds of invoices through one channel, and customer service can explain why.
 

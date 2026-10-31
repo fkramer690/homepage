@@ -161,7 +161,7 @@ Ein Maschinenbauer verkauft Ersatzteile über 800 Händler in 12 Ländern, mit d
 - 30.000 aktive Ersatzteile kommen aus SAP, 8.000 davon haben Vorgängernummern. Diese stehen in einem durchsuchbaren Feld, Synonymregeln bleiben für Begriffe.
 - Teile pro Maschine zeigt zuerst eine Maschinenseite für die drei wichtigsten Baureihen.
 
-## Erster Schritt: das Entitlement-Konzept auf eine Seite schreiben
+## Das Entitlement-Konzept auf eine Seite schreiben
 
 Schreiben Sie das Entitlement-Konzept auf eine Seite, bevor jemand Daten lädt:
 

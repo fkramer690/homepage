@@ -88,6 +88,6 @@ In my Field Service projects with maintenance, breakdown jobs and commissioning,
 
 I recommend three to five experienced technicians per region who work along before the rollout. They test forms on real jobs, take the app where there is no signal, train their colleagues and remain contacts afterwards, like key users in inside sales. What matters is that their feedback leads to visible changes. What keeps technicians from the app and how to handle location data openly is in [Field Service app: how technicians adopt it](../../../blog/field-service-app-technician-adoption/), the rollout in waves in the Field Service chapter [AI agents, rollout and KPIs](../../field-service/field-service-ai-agents-rollout/).
 
-## First step: ask whom each team goes to for advice today
+## Ask whom each team goes to for advice today
 
 Ask in every affected team whom people go to for advice today, and talk to those people's managers about time and cover. Take the key users into the first workshops, before anything is built, and plan training on real cases into the last two weeks before go-live. What this looks like in a rollout across several countries is in [chapter 4](../change-management-rollout-countries/). The role of leadership behind it is in [chapter 2](../sponsor-and-communication/).

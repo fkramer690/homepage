@@ -146,7 +146,7 @@ Field Service liest keine Revenue-Cloud-Abonnements. Servicevertrag, Vertragspos
 
 Die Details, mit einem Szenario über 800 quartalsweise abgerechnete Maschinen, stehen in [Wartungsverträge wiederkehrend abrechnen](../../../blog/wartungsvertraege-wiederkehrend-abrechnen/).
 
-## Erster Schritt: Finance legt den Rechnungssteller je Umsatzart fest
+## Finance legt den Rechnungssteller je Umsatzart fest
 
 Ein angenommenes Beispiel: Ein Maschinenbauer mit SAP S/4HANA erstellt Angebote für Maschinen, Ersatzteile, Fernüberwachung und Wartungsverträge in Revenue Cloud. Maschinen und Ersatzteile fakturiert SAP, das bereits E-Rechnungen erzeugt. Abonnements, Wartungspauschalen und zusätzliche Betriebsstunden gehen an Billing, angebunden an den E-Rechnungsdienst, den SAP schon nutzt. Der Kunde bekommt zwei Arten von Rechnungen über einen Kanal, und der Kundendienst kann erklären, warum.
 

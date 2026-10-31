@@ -140,7 +140,7 @@ Bereitschaft | parallel
 
 Nach Woche 10 ist die Excel-Liste weg. Die Disponenten entscheiden weiter, aber auf Basis eines Vorschlags statt eines leeren Kalenders.
 
-## Erster Schritt: eine verantwortliche Person für die Scheduling Policies
+## Eine verantwortliche Person für die Scheduling Policies benennen
 
 Diese Entscheidungen brauchen einen Namen, bevor ein Partner die Terminplanung konfiguriert:
 

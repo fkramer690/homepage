@@ -88,6 +88,6 @@ In meinen Field-Service-Projekten mit Wartung, Störungseinsätzen und Inbetrieb
 
 Ich empfehle drei bis fünf erfahrene Techniker pro Region, die vor dem Rollout mitarbeiten. Sie testen Formulare im echten Einsatz, nehmen die App dorthin mit, wo kein Netz ist, schulen ihre Kollegen und bleiben danach Ansprechpartner wie Key User im Innendienst. Wichtig ist, dass ihre Rückmeldungen sichtbare Änderungen bewirken. Was Techniker von der App abhält und wie Sie Standortdaten offen klären, steht in [Field Service App: wie Techniker sie annehmen](../../../blog/field-service-app-akzeptanz-techniker/), die Einführung in Wellen im Field-Service-Kapitel [KI-Agenten, Einführung und Kennzahlen](../../field-service/field-service-ki-agenten-einfuehrung/).
 
-## Erster Schritt: fragen, wen das Team heute um Rat fragt
+## In jedem Team fragen, wen die Leute heute um Rat fragen
 
 Fragen Sie in jedem betroffenen Team, wen die Leute heute um Rat fragen, und sprechen Sie mit den Führungskräften dieser Personen über Zeit und Vertretung. Nehmen Sie die Key User in die ersten Workshops mit, bevor gebaut wird, und planen Sie die Schulung am echten Fall in die letzten zwei Wochen vor dem Go-live. Wie das in einem Rollout über mehrere Länder aussieht, zeigt [Kapitel 4](../change-management-rollout-laender/). Die Rolle der Führung dahinter steht in [Kapitel 2](../sponsor-und-kommunikation/).

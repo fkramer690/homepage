@@ -143,6 +143,6 @@ Ein Maschinenbauer mit SAP S/4HANA plant einen Shop auf Growth Edition für 250 
 
 Sechs Schnittstellen, drei davon live, alle über einen Integrationsnutzer mit Zertifikat statt Passwort. Antwortet SAP im Checkout nicht rechtzeitig, nimmt der Shop die Bestellung mit "Termin folgt" an. Jede Schnittstelle bekommt einen Verantwortlichen auf Kundenseite.
 
-## Erster Schritt: Ownership-Matrix und Schnittstellenliste schreiben
+## Ownership-Matrix und Schnittstellenliste schreiben, bevor jemand Shopseiten entwirft
 
 Schreiben Sie zwei Dokumente, bevor jemand die Shopseiten entwirft. Das eine ist eine [Object Ownership Matrix](../../../blog/object-ownership-matrix-salesforce/) mit einer zusätzlichen Spalte: kopiert oder live. Das andere ist eine Schnittstellenliste mit führendem System, maximalem Alter der Daten, Rückfallregel und Anmeldeverfahren pro Schnittstelle. Mit diesen beiden Seiten lässt sich jedes Partnerangebot vergleichen. Danach geht es in [Kapitel 5](../agentforce-migration-einfuehrung/) um Agenten, die auf denselben Schnittstellen aufsetzen, und um die Einführung bei den Händlern. Eine unabhängige Prüfung solcher Designs gehört zu meiner Arbeit bei [Salesforce-Schnittstellen](../../../leistungen/salesforce-schnittstellen/) und in der [Salesforce-Architektur](../../../leistungen/salesforce-architektur/).

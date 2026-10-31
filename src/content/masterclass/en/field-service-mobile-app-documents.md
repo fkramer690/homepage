@@ -155,7 +155,7 @@ Pilot | Weeks 9 and 10 · eight technicians
 
 Voice to Form waits until data protection and the works council have agreed. After the pilot the readings are on the asset the evening of the job, and nobody types them in again.
 
-## First step: set the target data model for service data
+## Set the target data model for service data before the first form
 
 Four decisions need a name next to them before a partner builds forms:
 

@@ -148,7 +148,7 @@ This is how I would decide:
 
 The numbers are made up to show the method. Change one assumption, such as a sales team that already quotes in Revenue Cloud, and point 1 tips towards Advanced Pricing.
 
-## First step: write the price master decision on one page
+## Write the price master decision on one page
 
 Write one page on the price master decision before anyone designs the store:
 

@@ -156,7 +156,7 @@ A maker of dosing systems has used CPQ since 2019: 45 quoting users, about 150 p
 - **Proof of concept:** the five most configured systems as constraint models, before any migration contract.
 - **Cutover:** spare parts and services first, configured systems second. Subscriptions move in batches before their renewal month, and billing moves at the fiscal year end.
 
-## First step: decide price master, cutover and billing date yourself
+## Decide price master, cutover and billing date yourself
 
 | Topic | The client decides | Partner and tools carry out |
 |---|---|---|

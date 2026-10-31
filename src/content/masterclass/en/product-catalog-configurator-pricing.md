@@ -152,7 +152,7 @@ A manufacturer of packaging machines sells 30 base machines in three families th
 
 Three classifications with about a dozen attributes each, 30 base machines, configurable bundles for tooling and safety packages, a separate spare parts catalog loaded from SAP. Constraint models for the two spreadsheet families, with compatibility tables loaded from a custom object and regression cases per family. The SAP family keeps its configurator for now, and Salesforce takes the result through an interface. Machine prices follow route C with list prices from SAP every night and the sync right after the load. Dealer prices for spare parts follow route A. Product management owns the catalog and the constraint models, a pricing admin in sales operations owns the procedures, and controlling signs off every pricing change.
 
-## First step: name the owner of the catalog
+## Name an owner for the catalog
 
 1. **Catalog owner and the three variant tests**, written down before the first data load.
 2. **Rule master per product line**: Revenue Cloud, SAP variant configuration or an external configurator, never two.

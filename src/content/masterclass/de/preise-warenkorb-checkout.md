@@ -148,7 +148,7 @@ So würde ich entscheiden:
 
 Die Zahlen sind erfunden, um die Methode zu zeigen. Ändern Sie eine Annahme, etwa einen Vertrieb, der schon in Revenue Cloud kalkuliert, kippt Punkt 1 zugunsten von Advanced Pricing.
 
-## Erster Schritt: die Preis-Master-Entscheidung auf eine Seite schreiben
+## Die Preis-Master-Entscheidung auf eine Seite schreiben
 
 Schreiben Sie eine Seite zur Preis-Master-Entscheidung, bevor jemand den Store gestaltet:
 

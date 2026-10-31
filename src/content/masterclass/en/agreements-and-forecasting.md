@@ -162,6 +162,6 @@ Targets
 
 This manufacturer does not need program-based business, because it does not supply OEM programmes. I would evaluate the agent only after the actuals feed has run stably for a quarter.
 
-## First step: clarify the actuals feed from the ERP
+## Clarify the actuals feed from the ERP before the first sales agreement
 
 Before the first sales agreement, clarify how actuals come from the ERP and on which customer, product and period level target, forecast and actuals fit together. Framework contracts and forecasts concern direct sales to large customers. If you sell through dealers, you also need rebates, portals and dealer visits; that is [chapter 3: dealer and partner channel](../dealer-and-partner-channel/). All chapters are on the [overview page](../).

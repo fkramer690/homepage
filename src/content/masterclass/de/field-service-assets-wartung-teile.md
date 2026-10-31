@@ -165,7 +165,7 @@ Ein Hersteller von Bearbeitungszentren hat 1.200 Maschinen in drei Baureihen im 
 | Teile und Partner | 30 Fahrzeuge als Locations in Salesforce, Bestand nächtlich aus SAP. Die zwei Partner bekommen je ein Gebiet, regelmäßige Techniker Contractor Plus pro Nutzer. |
 | Add-ons | Im ersten Jahr keine. Connected Assets würde 180.000 US-Dollar im Jahr kosten und keine Entscheidung ändern, die ein täglicher Zähler nicht auch trifft. |
 
-## Erster Schritt: die Asset-Tiefe pro Maschinentyp festlegen
+## Asset-Tiefe pro Maschinentyp festlegen
 
 | Entscheidung | Was dazugehört |
 |---|---|

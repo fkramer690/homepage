@@ -152,7 +152,7 @@ Ein Hersteller von Verpackungsmaschinen verkauft 30 Grundmaschinen in drei Famil
 
 Drei Klassifizierungen mit je etwa einem Dutzend Attributen, 30 Grundmaschinen, konfigurierbare Bundles für Werkzeuge und Sicherheitspakete, ein eigener Ersatzteilkatalog, der aus SAP geladen wird. Constraint-Modelle für die beiden Tabellenfamilien, mit Verträglichkeitstabellen aus einem eigenen Objekt und Regressionsfällen pro Familie. Die SAP-Familie behält vorerst ihren Konfigurator, Salesforce übernimmt das Ergebnis über eine Schnittstelle. Maschinenpreise laufen über Weg C, mit Listenpreisen aus SAP jede Nacht und dem Sync direkt nach dem Laden. Händlerpreise für Ersatzteile laufen über Weg A. Das Produktmanagement verantwortet Katalog und Constraint-Modelle, eine Pricing-Administration in Sales Operations die Prozeduren, und das Controlling gibt jede Preisänderung frei.
 
-## Erster Schritt: die Verantwortung für den Katalog festlegen
+## Eine verantwortliche Person für den Katalog benennen
 
 1. **Verantwortung für den Katalog und die drei Variantentests**, schriftlich vor dem ersten Datenladen.
 2. **Führendes Regelwerk pro Produktlinie**: Revenue Cloud, SAP-Variantenkonfiguration oder externer Konfigurator, nie zwei.

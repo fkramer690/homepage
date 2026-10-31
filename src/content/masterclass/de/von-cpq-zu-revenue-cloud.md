@@ -156,7 +156,7 @@ Ein Hersteller von Dosieranlagen nutzt CPQ seit 2019: 45 Nutzer, die Angebote er
 - **Proof of Concept:** die fünf am stärksten konfigurierten Anlagen als Constraint-Modelle, vor jedem Migrationsvertrag.
 - **Cutover:** Ersatzteile und Services zuerst, konfigurierte Anlagen danach. Subscriptions ziehen in Paketen vor ihrem Verlängerungsmonat um, die Abrechnung zum Geschäftsjahresende.
 
-## Erster Schritt: Preis-Master, Cutover und Stichtag selbst entscheiden
+## Preis-Master, Cutover und Stichtag selbst entscheiden
 
 | Thema | Der Kunde entscheidet | Partner und Werkzeuge setzen um |
 |---|---|---|
