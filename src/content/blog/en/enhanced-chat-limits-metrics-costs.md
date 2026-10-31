@@ -74,12 +74,12 @@ What is missing is the content. According to the [Messaging Object Model](https:
 The visible number is the licence for service reps. The bigger items often sit below it, with the agent and with maintaining the channel.
 
 ```eisberg
-title: What the cost of Enhanced Chat is made of
-visible: Licence for service reps | Contact Center Digital, $75 per user per month, or already included with legacy Chat
-- Flex Credits | 20 credits or $0.10 per Agentforce action, plus prompts | Agent
-- Analysing content | Data Cloud or your own analysis, because messages are stored off platform | Data
-- Maintaining the channel | Pre-chat, translations, Lightning Types and tests after every release | Team
-note: The licence is predictable. Credits and maintenance depend on how many chats the agent takes and how often the portal changes.
+title: What Enhanced Chat costs in operation
+visible: Licence | Contact Center Digital per service rep and month, partly included already
+- Agentforce | Flex Credits per agent action | per answer
+- Build | Channel, flow, pre-chat, context and Lightning Types | one-off
+- Operation | Reports, maintaining flow, agent and translations, analysing content | ongoing
+note: Amounts are in the text with source and date. The licence is predictable; credits and maintenance depend on how many chats the agent takes and how often the portal changes.
 ```
 
 **Licence.** According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/migrating-from-legacy-chat-to-enhanced-chat/explore-enhanced-chat), customers who had the old Chat often already have access to Enhanced Chat. The test is simple: if Enhanced Chat shows up as a channel type under Messaging Settings when you click New Channel, it is licensed; otherwise you need Digital Engagement. On the [pricing page](https://www.salesforce.com/service/digital-customer-engagement-platform/pricing/?bc=SOC) the product is called Contact Center Digital and costs $75 (75 € in Europe) per user per month, billed annually, including chat for web and app and messaging over SMS, WhatsApp and other channels. Salesforce bills SMS and WhatsApp on top by usage, through a separate rate card. The licence is per service rep, not per dealer who chats.

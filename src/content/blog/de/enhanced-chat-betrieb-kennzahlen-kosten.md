@@ -74,12 +74,12 @@ Was fehlt, sind die Inhalte. Die einzelnen Nachrichten liegen laut [Messaging Ob
 Die sichtbare Zahl ist die Lizenz für Servicekräfte. Die größeren Posten liegen oft darunter, beim Agenten und bei der Pflege des Kanals.
 
 ```eisberg
-titel: Woraus sich die Kosten von Enhanced Chat zusammensetzen
-sichtbar: Lizenz für Servicekräfte | Contact Center Digital, 75 € pro Nutzer und Monat, oder schon im bisherigen Chat enthalten
-- Flex Credits | 20 Credits oder 0,10 € pro Aktion des Agentforce-Agenten, dazu Prompts | Agent
-- Auswertung der Inhalte | Data Cloud oder eigene Auswertung, weil Nachrichten off platform liegen | Daten
-- Pflege des Kanals | Pre-Chat, Übersetzungen, Lightning Types und Tests nach jedem Release | Team
-fazit: Die Lizenz ist planbar. Credits und Pflege hängen davon ab, wie viele Chats der Agent übernimmt und wie oft sich das Portal ändert.
+titel: Was Enhanced Chat im Betrieb kostet
+sichtbar: Lizenz | Contact Center Digital pro Servicekraft und Monat, teils schon enthalten
+- Agentforce | Flex Credits pro Aktion des Agenten | je Antwort
+- Aufbau | Kanal, Flow, Pre-Chat, Kontext und Lightning Types | einmalig
+- Betrieb | Berichte, Pflege von Flow, Agent und Übersetzungen, Auswertung der Inhalte | laufend
+fazit: Die Beträge stehen im Text mit Quelle und Stand. Die Lizenz ist planbar, Credits und Pflege hängen davon ab, wie viele Chats der Agent übernimmt und wie oft sich das Portal ändert.
 ```
 
 **Lizenz.** Wer bisher den alten Chat hatte, hat laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/migrating-from-legacy-chat-to-enhanced-chat/explore-enhanced-chat) oft schon Zugriff auf Enhanced Chat. Der Test ist einfach: Erscheint unter Messaging Settings bei „New Channel“ der Kanaltyp Enhanced Chat, ist er lizenziert, sonst brauchen Sie Digital Engagement. Auf der [Preisseite](https://www.salesforce.com/service/digital-customer-engagement-platform/pricing/?bc=SOC) heißt das Produkt Contact Center Digital und kostet 75 € pro Nutzer und Monat bei jährlicher Abrechnung, mit Chat für Web und App sowie Messaging über SMS, WhatsApp und weitere Kanäle. SMS und WhatsApp rechnet Salesforce zusätzlich nach Nutzung über eine eigene Rate Card ab. Die Lizenz gilt pro Servicekraft, nicht pro Händler, der chattet.
