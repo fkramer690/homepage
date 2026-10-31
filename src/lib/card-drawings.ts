@@ -27,6 +27,18 @@ const pin = (x: number, y: number, color = G) =>
   `<g transform="translate(${x} ${y})"><path d="M0 0c-6-8-9-12-9-16a9 9 0 0 1 18 0c0 4-3 8-9 16z" fill="#fff" stroke="${color}" stroke-width="1.4"/><circle cx="0" cy="-16" r="3" fill="${color}"/></g>`;
 
 const drawings: Record<string, Drawing> = {
+  'enhanced-chat-data-model': (l) => `
+    ${t(18, 20, l('IN YOUR ORG · REPORTABLE', 'IN IHRER ORG · BERICHTBAR'), { fill: D, size: 7 })}${t(196, 20, 'OFF PLATFORM', { fill: C, size: 7 })}
+    ${box(18, 28, 150, 72)}
+    ${check(26, 40)}${t(40, 46, 'MessagingSession', { size: 7 })}${check(26, 56)}${t(40, 62, 'MessagingSessionMetrics', { size: 7 })}${check(26, 72)}${t(40, 78, 'MessagingEndUser', { size: 7 })}
+    ${t(40, 92, l('+ case, AgentWork', '+ Case, AgentWork'), { size: 7 })}
+    <path d="M182 26V102" stroke="${G}" stroke-width="1.2" stroke-dasharray="4 3"/>
+    ${box(196, 28, 106, 72, C)}
+    ${t(204, 46, 'ConversationEntry', { fill: D, size: 7 })}${t(204, 60, l('every message', 'jede Nachricht'), { size: 7 })}
+    ${cross(210, 75)}${t(220, 78, l('no SOQL', 'kein SOQL'), { size: 7 })}${cross(210, 89)}${t(220, 92, l('no reports', 'kein Bericht'), { size: 7 })}
+    <path d="M18 114H302" stroke="${L}"/>
+    ${tag(18, 128, 110, l('3 ways to content', '3 Wege zum Inhalt'))}${t(138, 141, l('API · Data Cloud · bulk export', 'API · Data Cloud · Bulk Export'), { size: 7 })}`,
+
   'cpq-to-revenue-cloud-migration-plan': (l) => `
     ${t(18, 20, l('3 PHASES · TYPICALLY 3 TO 6 MONTHS', '3 PHASEN · TYPISCH 3 BIS 6 MONATE'), { fill: D, size: 7 })}
     ${[l('Prepare', 'Vorbereiten'), l('Strategy', 'Strategie'), l('Execute', 'Umsetzen')].map((s, i) => box(18 + i * 100, 30, 84, 30, i === 2 ? C : G) + t(60 + i * 100, 49, (i + 1) + ' · ' + s, { fill: i === 2 ? C : G, size: 7.5, anchor: 'middle' })).join('')}

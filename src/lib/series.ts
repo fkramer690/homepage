@@ -13,6 +13,11 @@ export const series = {
     de: 'Salesforce Manufacturing Cloud für Hersteller',
     parts: 8,
   },
+  'enhanced-chat': {
+    en: 'Salesforce Enhanced Chat for manufacturers',
+    de: 'Salesforce Enhanced Chat für Hersteller',
+    parts: 9,
+  },
 } as const;
 
 export type SeriesId = keyof typeof series;
