@@ -1600,6 +1600,17 @@ const drawings: Record<string, Drawing> = {
     <path d="M18 128H302" stroke="${G}" stroke-width="0.8"/>${dot(60, 128, G, 2.5)}${dot(160, 128, G, 2.5)}${dot(260, 128, C, 3.5)}
     ${t(60, 146, l('day 30', 'Tag 30'), { size: 7, anchor: 'middle' })}${t(160, 146, l('day 60', 'Tag 60'), { size: 7, anchor: 'middle' })}${t(260, 146, l('day 90: decision', 'Tag 90: Entscheidung'), { fill: C, size: 7, anchor: 'middle' })}`,
 
+  'enhanced-chat-operations-costs': (l) => `
+    ${t(18, 18, 'RATE LIMITS', { fill: D, size: 7 })}
+    ${[[l('tokens / min / org', 'Tokens / Min. / Org'), '200'], [l('starts / page / 30 s', 'Starts / Seite / 30 s'), '3'], [l('messages / conv. / min', 'Nachrichten / Min.'), '22'], [l('files / conv. / min', 'Dateien / Min.'), '12']]
+      .map(([a, b], i) => t(18, 38 + i * 18, String(a), { size: 7 }) + t(150, 38 + i * 18, String(b), { fill: i === 0 ? C : D, size: 7.5, anchor: 'end' }) + `<path d="M18 ${43 + i * 18}H150" stroke="${L}"/>`).join('')}
+    ${t(176, 18, l('COST PER MONTH (ASSUMPTION)', 'KOSTEN PRO MONAT (ANNAHME)'), { fill: D, size: 7 })}
+    ${box(176, 26, 126, 22)}${t(184, 40, l('10 reps: $750', '10 Servicekräfte: 750 €'), { size: 7 })}
+    ${box(176, 56, 126, 22, C)}${t(184, 70, l('agent: $900 + prompts', 'Agent: 900 € + Prompts'), { fill: C, size: 7 })}
+    ${t(176, 94, l('9,000 actions × 20 credits', '9.000 Aktionen × 20 Credits'), { size: 7 })}
+    <path d="M18 120H302" stroke="${G}" stroke-width="0.8"/>
+    ${t(18, 140, l('chat content off platform: not in reports', 'Chatinhalte off platform: nicht in Berichten'), { size: 7 })}`,
+
   'agentforce-llm-choice-byollm': (l) => `
     ${t(18, 16, l('MODEL PER SUBAGENT', 'MODELL PRO SUBAGENT'), { fill: D, size: 7 })}
     ${box(18, 62, 70, 36)}${t(53, 78, 'ROUTER', { fill: D, size: 7.5, anchor: 'middle' })}${t(53, 90, 'HyperClassifier', { size: 6.5, anchor: 'middle' })}
