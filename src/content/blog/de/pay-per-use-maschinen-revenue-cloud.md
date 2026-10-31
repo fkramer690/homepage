@@ -9,10 +9,9 @@ topic: revenue
 categories: [revenue-cloud]
 tags: [Revenue Cloud, Pay-per-Use, Usage Management, Abrechnung, IoT, Maschinenbau]
 takeaways:
-  - "Revenue Cloud Usage Management bewertet Maschinenstunden oder Stückzahlen mit Kontingenten, Rate Cards und Wallets und übergibt eine Liable Summary an die Abrechnung."
-  - "Die eigentliche Arbeit bei Pay-per-Use liegt außerhalb von Salesforce: ein verlässlicher Zähler je Maschine aus der IoT-Plattform, der Seriennummer zugeordnet und vor dem Rating geprüft."
+  - "Die eigentliche Arbeit liegt außerhalb von Salesforce: ein verlässlicher Zähler je Maschine, der Seriennummer zugeordnet und vor dem Rating geprüft."
   - "Schicken Sie einen Nutzungsdatensatz je Maschine und Tag nach Salesforce, nie Rohdaten der Sensoren; Zeitreihen bleiben in der IoT-Plattform oder im Historian."
-  - "Der Vertrag muss festlegen, was als Nutzung zählt, welcher Zähler gilt, wie Datenlücken behandelt werden und wie hoch die Mindestgebühr ist, bevor jemand eine Rate Card anlegt."
+  - "Der Vertrag legt Nutzung, gültigen Zähler, Umgang mit Datenlücken und Mindestgebühr fest, bevor jemand eine Rate Card anlegt."
   - "Usage Rating steht im Zusatzprodukt Revenue Cloud Billing, Preis auf Anfrage, abgerechnet in Billing Events, eines je 50 US-Dollar Rechnungszwischensumme."
 faq:
   - q: "Kann Salesforce Revenue Cloud Betriebsstunden von Maschinen abrechnen?"
@@ -56,7 +55,7 @@ Die [Einheit zu Nutzungsressourcen und Kontingenten](https://trailhead.salesforc
 
 Wallets können warnen, weitere Nutzung sperren oder ein Nachkaufen anbieten, wenn das Guthaben aufgebraucht ist. Bei Maschinen würde ich nur die Warnungen nutzen. Eine Sperre in Salesforce hält keinen Kompressor an, und eine Kundenmaschine wegen eines Abrechnungsstands abzuschalten, gehört, wenn überhaupt, in den Vertrag und in die Steuerung.
 
-## Woher kommen die Maschinendaten?
+## Ein Nutzungsdatensatz je Maschine und Tag aus der IoT-Plattform
 
 Salesforce erwartet Nutzungsdatensätze mit Zeitstempel, Kunde, Produkt, Ressource und Menge. Wie sie von der Maschine dorthin kommen, ist Ihre Schnittstelle. Üblich ist: Die Steuerung meldet an eine IoT-Plattform oder einen Historian, der die Zeitreihen hält. Von dort schickt ein Job einen verdichteten Datensatz je Maschine und Tag nach Salesforce.
 
@@ -79,7 +78,7 @@ Zwischen den beiden Systemen liegen die Prüfungen, an denen die Rechnung hängt
 
 Rohdaten gehören nicht nach Salesforce. Das gilt genauso bei [Predictive Maintenance](../predictive-maintenance-salesforce-datenbasis/), wo Rohdaten über Data 360 schnell teuer werden. Der tägliche Betriebsstundenzähler ist zugleich das, was Field Service für die Wartung nach Nutzung braucht, eine Datenstrecke kann also beides bedienen; die Sicht von Field Service steht im [Kapitel zu Assets und Wartung](../../masterclass/field-service/field-service-assets-wartung-teile/). Wie ich diese Schnittstelle aufsetze, gehört zu meiner Arbeit an [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).
 
-## Ein typisches Szenario, als Annahme
+## Rechenbeispiel: 120 Kompressoren mit 300 Stunden Grundkontingent
 
 Ein Kompressorenhersteller bietet 120 Kompressoren bei 40 Kunden im Pay-per-Use an. Jeder Vertrag hat eine monatliche Grundgebühr, die 300 Betriebsstunden enthält, Mehrstunden kosten in zwei Staffeln, die Rechnung kommt monatlich nachträglich.
 
@@ -100,7 +99,7 @@ Bevor jemand eine Rate Card baut, müssen sich Recht, Finanzen und Vertrieb auf 
 
 Das sind kaufmännische und rechtliche Entscheidungen. Ein Partner konfiguriert sie, treffen muss sie Ihr Unternehmen.
 
-## Welche Lizenzen braucht Pay-per-Use?
+## Usage Rating steckt im Zusatzprodukt Revenue Cloud Billing
 
 Die [Preisseite von Revenue Cloud](https://www.salesforce.com/de/sales/cpq/pricing/) nennt Revenue Cloud Advanced mit 200 Euro pro Nutzer und Monat bei jährlicher Abrechnung, mit "Consumption & Invoicing" im Umfang. Dieselbe Seite führt Revenue Cloud Billing als Zusatzprodukt mit "Usage Rating & Digital Wallet", der Rechnungsmaschine und dem Accounting Subledger, Preis auf Anfrage.
 
@@ -119,6 +118,4 @@ In diesen Fällen schaue ich zuerst woanders hin:
 - **Kein verlässlicher Zähler.** Dann beginnt das Projekt mit der Maschinenanbindung und nicht mit Revenue Cloud.
 - **Pay-per-Use ist ein Pilot.** Testen Sie das Geschäftsmodell mit wenigen Kunden, bevor Sie Rate Cards für alle konfigurieren.
 
-Wie Pay-per-Use neben klassischen Wartungsverträgen steht, beschreibe ich in [Wartungsverträge wiederkehrend abrechnen](../wartungsvertraege-wiederkehrend-abrechnen/), und das Kapitel [Abrechnung und nutzungsbasierte Preise](../../masterclass/revenue-cloud/abrechnung-und-nutzungsbasierte-preise/) ordnet beides ein.
-
-Pay-per-Use mit Revenue Cloud funktioniert, wenn Zähler und Vertrag sauber sind, denn Salesforce bewertet nur, was Sie liefern.
+Bevor Sie die erste Rate Card anlegen, würde ich für drei Maschinen einen Monat lang den Zähler aus der IoT-Plattform mit dem Betriebsstundenzähler an der Maschine vergleichen. Wie Pay-per-Use neben klassischen Wartungsverträgen steht, beschreibe ich in [Wartungsverträge wiederkehrend abrechnen](../wartungsvertraege-wiederkehrend-abrechnen/), und das Kapitel [Abrechnung und nutzungsbasierte Preise](../../masterclass/revenue-cloud/abrechnung-und-nutzungsbasierte-preise/) ordnet beides ein.

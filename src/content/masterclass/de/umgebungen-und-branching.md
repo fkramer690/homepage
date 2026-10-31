@@ -10,11 +10,10 @@ pubDate: 2026-10-28
 short: "Umgebungen und Branches"
 summary: "Wie Sandboxes, Scratch Orgs und Branches zusammenpassen, damit Entwickler-Orgs aktuell bleiben und Hotfixes nicht verloren gehen."
 takeaways:
-  - "Jede Stufe der Pipeline braucht eine eigene Org und einen eigenen Branch: Entwicklung, Integration, UAT, Staging und Produktion, dazu ein fester Weg für Hotfixes."
-  - "Scratch Orgs leben höchstens 30 Tage und sind leer; in einer gewachsenen Kundenorg sind Developer-Sandboxes mit Source Tracking oft der pragmatischere Arbeitsplatz."
-  - "Entwickler-Sandboxes veralten mit jedem Merge; sfdx-hardis backpromote, Gearset Developer Sandbox Updates und die Back Promotions von Copado und Flosum holen sie zurück."
-  - "Ein Hotfix ist erst fertig, wenn er per Retrofit auch im Integrations-Branch steht; sonst überschreibt das nächste Release die Korrektur in Produktion."
-  - "Ein Refresh ersetzt die Sandbox durch eine neue Kopie der Produktion; Source Tracking und nicht ausgelieferte Änderungen gehen dabei verloren."
+  - "Scratch Orgs leben höchstens 30 Tage und sind leer. In einer gewachsenen Kundenorg sind Developer-Sandboxes mit Source Tracking oft praktischer."
+  - "Entwickler-Sandboxes veralten mit jedem Merge. sfdx-hardis backpromote, Gearset und die Back Promotions von Copado und Flosum holen sie zurück."
+  - "Ein Hotfix ist erst fertig, wenn er per Retrofit auch im Integrations-Branch steht. Sonst überschreibt das nächste Release die Korrektur in Produktion."
+  - "Ein Refresh ersetzt die Sandbox durch eine neue Kopie der Produktion. Source Tracking und nicht ausgelieferte Änderungen gehen dabei verloren."
 articles: [devops-salesforce-enterprise, sfdx-hardis-training, sandbox-data-ai-coding-agents]
 faq:
   - q: "Wie viele Sandboxes braucht ein Salesforce-Programm mit mehreren Partnern?"
@@ -144,7 +143,7 @@ Der kritische Schritt kommt danach. Die Stufen-Branches darunter wurden vor dem 
 
 Dieselbe Logik gilt für Änderungen, die jemand von Hand in Produktion gemacht hat. Sie kommen als normale Story von unten zurück ins Repository. Wie Sie solche Änderungen überhaupt bemerken, behandelt [Kapitel 9 zu Betrieb und Monitoring](../betrieb-monitoring-backup/).
 
-## Ein typisches Szenario, als Annahme: drei Partner auf einer Service-Org
+## Beispiel: drei Partner auf einer Service-Org
 
 Ein Maschinenbauer betreibt Service Cloud, Field Service und ein Händlerportal auf einer Org, mit SAP als ERP. Drei Partner arbeiten parallel: einer am Außendienst, einer am Portal, ein Nearshore-Team an Schnittstellen. Alle Zahlen hier sind Annahmen.
 
@@ -155,5 +154,3 @@ Ein Maschinenbauer betreibt Service Cloud, Field Service und ein Händlerportal 
 - **Ein Hotfix-Weg** über `preprod`, mit Retrofit am selben Tag.
 
 Die Regeln dazu stehen im Vertrag mit jedem Partner: Backpromote vor jeder Story, keine Änderung im Setup einer Stufen-Org, kein Feature-Branch älter als zwei Wochen. Wie die Pipeline zwischen diesen Stufen technisch läuft, beschreibt [Kapitel 5](../pipeline-aufbauen/). Solche Modelle entwerfe ich in meiner Arbeit zu [DevOps und Release-Management](../../../leistungen/devops-und-release-management/).
-
-Umgebungen und Branches funktionieren, wenn jede Org genau einem Branch gehört und Änderungen in beide Richtungen nach festen Regeln fließen.

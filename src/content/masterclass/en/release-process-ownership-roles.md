@@ -10,9 +10,9 @@ pubDate: 2026-10-28
 short: "Ownership and roles"
 summary: "Who owns repository and pipeline, which four roles a release needs, who approves what and how the process survives a partner change."
 takeaways:
-  - "Repository, pipeline, DevOps tool, sandboxes and credentials belong to the client; partners work in them with personal users whose access ends with the engagement."
-  - "A release process with several partners needs four named roles: a release manager and an architect on the client side, a technical lead per partner and product owners in the business."
-  - "Approvals belong in a matrix and in the Git platform: branch protection, required reviews and code owners enforce what would otherwise only sit in a concept paper."
+  - "Partners work in your tools and orgs with personal users, and their access ends with the engagement."
+  - "Four roles are named: a release manager and an architect on the client side, a technical lead per partner and product owners in the business."
+  - "Approvals belong in a matrix and in the Git platform: branch protection, required reviews and code owners enforce what would otherwise sit on paper."
   - "Tool choice, pull requests, standards, release calendar and exit duties go into one annex to the framework contract, identical for every partner."
   - "A partner change costs little when the client owns the process: revoke access, renew certificates, reconcile org and repository."
 articles: [client-owned-devops-tools, pull-request-reviews-enterprise, partners-ai-coding-sow-rules, ai-org-assessment-technical-debt]
@@ -62,7 +62,7 @@ The release role is the one programmes most often save on. My position, which I 
 In one programme I supported, every pull request went across my desk at first. Once the process was stable, I handed it over to an internal colleague. That is the path I recommend: build it with outside help, hand it over internally.
 ```
 
-## Who approves what?
+## Approvals in a matrix and in the Git platform
 
 An approval matrix answers two questions for every kind of change: who checks, and who decides? Here is a starting point that I would adapt to your streams:
 
@@ -98,7 +98,7 @@ According to the [Metadata API Developer Guide](https://developer.salesforce.com
 
 So check in production, UAT and staging which partner users hold one of these permissions. Only the pipeline's technical user should deploy there, as [chapter 5](../building-the-pipeline/) describes. For temporary rights, say for an analysis in production, permission set assignments can get an expiration date according to the [Salesforce Admins blog](https://admin.salesforce.com/blog/2021/how-to-set-assignment-expiration-on-permission-sets-and-permission-set-groups), after which the rights lapse automatically.
 
-## Which rules belong in every partner contract?
+## One contract annex, the same for every partner
 
 I am an architect, not a lawyer. The points below describe what I want to see in writing from a technical point of view. Your legal department turns them into clauses. I recommend one annex to the framework contract that applies identically to every partner, instead of renegotiating rules in every statement of work.
 
@@ -113,12 +113,12 @@ I am an architect, not a lawyer. The points below describe what I want to see in
 9. **Exit.** Handover with no work outside the repository, confirmation that local copies of your code and credentials are deleted, and active support for the handover over an agreed period.
 
 ```hinweis tipp
-I have worked with nearshore teams in Eastern Europe and India, and my view is that written rules are worth more than any alignment call. A team in another time zone cannot quickly ask whether a Setup click in UAT is fine. It needs the rule beforehand.
+I have worked with nearshore teams in Eastern Europe and India, and my view is that written rules help more than alignment calls. A team in another time zone cannot quickly ask whether a Setup click in UAT is fine. It needs the rule beforehand.
 ```
 
 ## How does the release process survive a partner change?
 
-Once ownership, roles and contract rules are in place, a partner change is a procedure with a checklist. A typical scenario, as an assumption: a packaging machine manufacturer runs Service Cloud with Field Service, a dealer portal and an SAP integration. Three partners work on the org. After a tender, the partner for the service stream is replaced by a new one, with four weeks of overlap.
+Once ownership, roles and contract rules are in place, a partner change is a procedure with a checklist. Suppose a packaging machine manufacturer runs Service Cloud with Field Service, a dealer portal and an SAP integration. Three partners work on the org. After a tender, the partner for the service stream is replaced by a new one, with four weeks of overlap.
 
 ```schritte
 Take stock before the exit is announced
@@ -135,7 +135,7 @@ Renew secrets
 
 In this scenario the release calendar runs on without a break, because pipeline, history and standards belong to the manufacturer. From day one the new partner works by the same rules as the other two, and the partners stay comparable. The same situation with a pipeline in the old partner's account would have meant a migration in the middle of the change.
 
-## Where do you start?
+## First step: list every tool with its contract owner and admins
 
 1. List every tool with contract holder, admins and partner users.
 2. Name a release manager and an architect on the client side, even if one person does both.
@@ -144,5 +144,3 @@ In this scenario the release calendar runs on without a break, because pipeline,
 5. Draft the annex for all partner contracts with your legal department.
 
 Running this across all partners is the core of my work in [partner governance](../../../services/partner-governance/). Which orgs and branches the roles in this chapter work with follows in [chapter 3 on environments and branches](../environments-and-branching/).
-
-A release process stays stable when you own it, every role is named and every partner has signed the same rules.

@@ -58,7 +58,7 @@ sfdx-hardis provides a report on these metrics, and commercial DevOps tools for 
 Changes made directly in the production org do not show up in any Git statistics. Check the Setup Audit Trail regularly. If it lists many changes by users outside the pipeline, the DORA numbers are too good to be true.
 ```
 
-## Which traps are specific to Salesforce?
+## Salesforce has its own traps that distort the numbers
 
 Salesforce programmes have a few peculiarities that distort the numbers:
 
@@ -67,7 +67,7 @@ Salesforce programmes have a few peculiarities that distort the numbers:
 - **Data instead of metadata.** Product catalogues, pricing rules or configurator rules are stored as records in some clouds. If they are changed by hand, they are missing from the metrics.
 - **Large packages.** A release with 200 changes that has one defect counts as one failed deployment. Smaller releases make the change fail rate more meaningful.
 
-## How does IT leadership use the metrics?
+## IT leadership looks at the trend, not the single value
 
 I recommend three rules:
 
@@ -95,10 +95,8 @@ The metrics are only useful if a bad number leads to an action. This mapping fit
 - **High change fail rate:** defects slip past the tests. A [UAT with test users per role](../salesforce-uat-business-acceptance-testing/) and regression tests for the most important processes catch most of them.
 - **Long recovery time:** there is no fast path for fixes. A hotfix environment with the production state and a dedicated hotfix branch shorten it.
 
-As an assumption: a programme with twelve releases a year, four of which needed a hotfix, has a change fail rate of 33 percent. This number alone tells the steering committee more than any list of open tickets, and it can be checked again after every measure.
+Worked example: a programme with twelve releases a year, four of which needed a hotfix, has a change fail rate of 33 percent. This number alone tells the steering committee more than a list of open tickets, and it can be checked again after every measure.
 
-## Where do you start?
+## First step: deployment frequency and change fail rate
 
-Start with two numbers: deployment frequency and change fail rate. Both can be read from the pipeline and the number of hotfixes, even before a tool reports them automatically. Set today's value as the baseline and report the trend once a month. Lead time follows as soon as all changes run through pull requests.
-
-DORA metrics show whether a release process is improving, as long as nobody uses them as a report card.
+Start with two numbers: deployment frequency and change fail rate. Both can be read from the pipeline and the number of hotfixes, even before a tool reports them automatically. Set today's value as the baseline and report the trend once a month. Lead time follows as soon as all changes run through pull requests. A hotfix is every change that reaches production outside the planned release, including a fix made directly in Setup that you only find in the Setup Audit Trail.

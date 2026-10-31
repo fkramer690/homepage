@@ -9,11 +9,11 @@ topic: devops
 categories: [devops, ai]
 tags: [AI-native delivery, coding agents, Jira, DevOps, requirements, manufacturing]
 takeaways:
-  - "In an AI-native delivery process for Salesforce the Jira ticket becomes the executable specification: an agent does the legwork from workshop minutes to pull request, people decide at five fixed gates."
-  - "The common thread is an unbroken chain from a sentence in the workshop transcript through requirement, story, commit and test to the release note; every line of code traces back to something the client said."
+  - "An agent does the legwork from workshop minutes to pull request; people decide at five fixed gates."
+  - "Every line of code traces back through requirement, story, commit and test to a sentence in the workshop transcript."
   - "The most important gate is the spec approval \"Ready for Agent\" by business analyst and architect, because a mistake there is cheapest to fix."
   - "The pipeline stays deterministic, with no AI decisions; only the pipeline has access to production, the agent works in scratch orgs and sandboxes only."
-  - "The agent classifies feedback from user acceptance testing as bug, change request or open question, with evidence from the confirmed minutes; scope creep becomes visible."
+  - "The agent classifies UAT feedback as bug, change request or open question, with evidence from the confirmed minutes."
 faq:
   - q: "What is the difference between AI-assisted and AI-native Salesforce delivery?"
     a: "AI-assisted means the old process gets a coding assistant. AI-native means the process is built around the agent: it analyses, takes minutes, drafts and codes, while people curate and decide at fixed gates."
@@ -111,7 +111,7 @@ After the merge the pipeline deploys to the UAT sandbox, and the agent writes te
 
 After approval the pipeline rolls out the already validated deployment ID by quick deploy. The agent writes release notes and a user guide in the language of the business, and the business analyst proofreads.
 
-## Who decides what in this process?
+## Only named people make binding decisions
 
 Agent and pipeline decide nothing binding. Every decision that affects scope, quality or production is made by a named person.
 
@@ -132,7 +132,7 @@ The roles change more than the tools do. The business analyst writes less and de
 
 ## An example: from a sentence in the workshop to the release note
 
-A scenario as an assumption, to show the chain. In the discovery workshop of a machine builder the head of sales says at minute 14: "We do not close an opportunity under 10,000 euros."
+An assumed example, to show the chain. In the discovery workshop of a machine builder the head of sales says at minute 14: "We do not close an opportunity under 10,000 euros."
 
 - The agent turns this into the requirement "close opportunities only from 10,000 euros" in the minutes, with a reference to 00:14:52, and into a story with this acceptance criterion.
 - In the refinement on the prototype the head of sales notices that lost opportunities must still be closable under 10,000 euros. The agent shows this as a diff to the story: the rule only applies to "Closed Won". Business analyst and architect approve.
@@ -176,7 +176,7 @@ The process does not depend on a particular coding agent. It needs four connecti
 - **Profiles, permission sets, destructive changes.** The classic deployment traps belong in the rules file as explicit rules.
 - **Configuration data.** CPQ and Field Service set-ups or custom settings are no metadata deployment and need their own track.
 
-## Where should you start?
+## First step: the spec approval
 
 Start with the gate that saves the most: the spec approval. Only when this track runs reliably is the rest worth it.
 
@@ -190,5 +190,3 @@ Secure | in parallel
 Expand | once it runs reliably
   Add the prototype and the feedback triage.
 ```
-
-An AI-native delivery process gets fast because people decide at a few gates and everything in between stays traceable.

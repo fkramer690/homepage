@@ -8,11 +8,11 @@ chapter: 5
 short: "AIforce and partners"
 summary: "What AIforce and SIForce really are, and how Salesforce's new partner model shifts the interests of your implementation partner."
 takeaways:
-  - "\"SI / AI Force\" has two readings: AIforce, the interface layer for Claude, Slack and Lightning launched on 15 September 2026, and SI as system integrator, meaning your implementation partner."
-  - "The rename from AIforce to SIForce rests only on secondary press such as Salesforce Ben, reporting a post by Marc Benioff on X; I found no Salesforce document that uses SIForce."
-  - "Executive Order 14434 only requires US executive branch agencies to write \"SI\" instead of \"AI\"; it creates no obligation for Salesforce, its partners or manufacturers in Europe."
-  - "Salesforce ties partner incentives to active consumption and to agents reaching production rather than to licences sold; when your credit consumption rises, your partner benefits too."
-  - "Manufacturers should measure partners on outcomes they can check, agree caps on Flex Credits and write rules for AI-assisted coding into the contract."
+  - "AIforce is the layer launched on 15 September 2026 that makes Salesforce data and workflows usable in Claude, Slack and Lightning."
+  - "The rename to SIForce rests on a single post by Marc Benioff on X so far. I found no Salesforce document that uses the name."
+  - "Executive Order 14434 applies only to US federal agencies. Salesforce, its partners and manufacturers in Europe do not have to rename anything."
+  - "Since 2026 partners earn on consumption and on agents in production. When your credit consumption rises, your partner benefits too."
+  - "Measure partners on outcomes you can check yourself, cap Flex Credits and write rules for AI-assisted coding into the contract."
 articles: [aiforce-salesforce-in-claude-slack, fixed-price-ai-salesforce-partners, partners-ai-coding-sow-rules]
 faq:
   - q: "What is AIforce in Salesforce?"
@@ -102,7 +102,7 @@ contra: Where the conflict lies
 
 On top of that, partners now build with coding agents themselves. That shortens work that used to be billed by the hour. Whether fixed price or outcome-based contracts fit better as a result is the subject of [fixed price vs. time and materials with AI](../../../blog/fixed-price-vs-time-and-materials-ai/). What belongs in the contract when a partner codes with AI, meaning disclosure, data handling, IP, no production access and review, is in [partners using AI coding: contract rules](../../../blog/partners-using-ai-coding-contract-rules/).
 
-## A typical scenario: two offers for a dealer agent
+## Worked example: two offers for a dealer agent
 
 Assume a machine builder with Service Cloud, SAP and a dealer portal. It wants an agent that answers dealer questions on order status and delivery dates and asks two partners for offers. All numbers and circumstances are assumptions.
 
@@ -139,5 +139,3 @@ After that the two offers can be compared, because AI use, access and consumptio
 - **Check industry depth.** Ask for agents in production for warranty, spare parts or dealer sales, not for certificates or the FDE network logo.
 
 These points are part of my work in [partner governance](../../../services/partner-governance/). Which tool fits which purpose is the subject of the next chapter, the [decision matrix](../ai-tool-decision-matrix/); how teams organise themselves around AI is covered in [chapter 9](../teamwork-and-delivery/). All chapters are listed on the [masterclass overview](../).
-
-AIforce changes where your people work with Salesforce, the new partner model changes what your partner earns on, and both should be visible in your contract.

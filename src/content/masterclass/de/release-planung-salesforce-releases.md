@@ -10,10 +10,10 @@ pubDate: 2026-10-28
 short: "Release-Planung"
 summary: "Wie Sie Ihren Release-Kalender mit den drei Salesforce-Releases, Release Updates und Abschaltungen abstimmen."
 takeaways:
-  - "Ein Salesforce-Release-Kalender legt zwei Kalender übereinander: den eigenen Rhythmus mit Freeze-Fenstern und den Kalender von Salesforce mit drei Releases, Release Updates und Abschaltungen."
-  - "Ob eine Sandbox das neue Release früh bekommt, entscheidet ihre Instanz; ändern lässt sich das nur per Refresh vor dem Stichtag, für Winter '27 war das der 27. August 2026."
-  - "Sandboxes auf der Preview-Version gehören nicht in die Deployment-Kette nach Produktion, weil sie mit einer neueren API-Version arbeiten als die Produktions-Org."
-  - "Release Updates haben ein Datum, bis zu dem Sie die Schritte erledigt haben sollen; ein Testlauf schaltet die Änderung sofort ein und gehört deshalb zuerst in eine Sandbox."
+  - "Der Release-Kalender legt Ihren Rhythmus mit Freeze-Fenstern und den Kalender von Salesforce mit Releases, Updates und Abschaltungen übereinander."
+  - "Ob eine Sandbox ein Release früh bekommt, entscheidet ihre Instanz. Das ändert nur ein Refresh vor dem Stichtag, bei Winter '27 am 27. August 2026."
+  - "Sandboxes auf der Preview-Version gehören nicht in die Deployment-Kette nach Produktion, weil sie eine neuere API-Version haben als die Produktion."
+  - "Release Updates haben ein Datum für die nötigen Schritte. Ein Testlauf schaltet die Änderung sofort ein und gehört deshalb zuerst in eine Sandbox."
   - "Bis Summer '28 laufen mehrere Abschaltungen mit festen Terminen, vom CLI-Token am 28. Oktober 2026 bis zu den API-Versionen 31.0 bis 40.0."
 articles: [salesforce-winter-27-pipeline, api-67-user-mode-apex, salesforce-password-integrations-2027, salesforce-dx-mcp-server-end-of-life]
 faq:
@@ -45,7 +45,7 @@ Vier Ebenen gehören hinein:
 Die vierte Ebene wird am häufigsten vergessen. Ein Release am letzten Tag des Quartals trifft den Vertrieb genau dann, wenn Angebote und Aufträge durch Salesforce müssen. Ein Release, das die Schnittstelle zu SAP ändert, gehört nicht in die Woche, in der das SAP-Team selbst Transporte einspielt.
 ```
 
-## Welcher Rhythmus und welche Freeze-Fenster passen?
+## Ein fester Rhythmus mit Freeze-Fenstern
 
 Ich empfehle einen festen Rhythmus statt Releases nach Bedarf. Alle zwei oder drei Wochen am selben Wochentag ist für die meisten Programme ein guter Start. Ein fester Termin zwingt die Partner, kleine Pakete zu schnüren, und die Fachbereiche wissen, wann sich etwas ändert. Was dringend ist und nicht warten kann, läuft über den Hotfix-Pfad aus [Kapitel 3](../umgebungen-und-branching/), nicht über ein Sonder-Release.
 
@@ -133,9 +133,9 @@ Was sich bewährt, ohne viel Aufwand:
 - **Ein Kanal für Rückmeldungen.** Salesforce rät selbst, Anwendern zu sagen, wo sie Fragen und Probleme melden.
 - **Externe Benutzer rechtzeitig.** Händler im Portal planen ihre Schulungen nicht nach Ihrem Sprint. Für sie gilt ein längerer Vorlauf.
 
-## Ein typisches Szenario, als Annahme: ein Maschinenbauer vor Spring '27
+## Beispiel: ein Maschinenbauer vor Spring '27
 
-Ein typisches Szenario, als Annahme: Ein Maschinenbauer betreibt Service Cloud, Field Service und ein Händlerportal, angebunden an SAP S/4. Drei Partner arbeiten auf einer Org, Releases gehen alle zwei Wochen am Donnerstag live. Die Release-Managerin auf Kundenseite plant im November:
+Angenommen, ein Maschinenbauer betreibt Service Cloud, Field Service und ein Händlerportal, angebunden an SAP S/4. Drei Partner arbeiten auf einer Org, Releases gehen alle zwei Wochen am Donnerstag live. Die Release-Managerin auf Kundenseite plant im November:
 
 ```schritte
 Abschaltungen eintragen | November
@@ -151,5 +151,3 @@ Kalender verteilen | an alle Partner
 ```
 
 Keiner dieser Schritte braucht ein neues Werkzeug. Er braucht jemanden auf Kundenseite, der den Kalender besitzt, und Partner, die vertraglich in ihn hinein planen. Wie solche Regeln in die Partnerverträge kommen, beschreibe ich unter [Partnersteuerung](../../../leistungen/partnersteuerung/); die Datenseite eines Releases behandelt [Kapitel 7](../daten-und-konfiguration/), alle Kapitel finden Sie auf der [Übersichtsseite](../).
-
-Ein Release-Kalender, der Ihre Termine und die von Salesforce an einer Stelle zeigt, macht aus Abschaltungen und Upgrades planbare Arbeit.

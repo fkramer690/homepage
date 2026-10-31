@@ -10,11 +10,11 @@ pubDate: 2026-10-28
 short: "Einführung und Fahrplan"
 summary: "In sieben Phasen von Change Sets zur Pipeline in Kundenhand, mit Training, Kennzahlen und einem Ausblick auf Coding-Agenten."
 takeaways:
-  - "Die Einführung von Salesforce DevOps gelingt in Phasen mit prüfbarem Abschluss: Eigentum, Git, Validierung, Quality Gates, Daten, Release-Kalender und Betrieb, in dieser Reihenfolge."
-  - "Ein Stream oder Partner geht als Pilot voran, die übrigen folgen zu Terminen, die im Vertrag stehen; ein Stichtag beendet Change Sets für UAT und Produktion."
-  - "Die wichtigste Investition ist eine interne Release-Rolle; Lizenzersparnisse aus der Werkzeugwahl sind dort besser angelegt als in zusätzlichen Partnertagen."
+  - "Die Einführung gelingt in Phasen mit prüfbarem Abschluss: Eigentum, Git, Validierung, Quality Gates, Daten, Release-Kalender und Betrieb."
+  - "Ein Stream oder Partner geht als Pilot voran, die übrigen folgen zu Terminen aus dem Vertrag. Ein Stichtag beendet Change Sets für UAT und Produktion."
+  - "Die wichtigste Investition ist eine interne Release-Rolle. Lizenzersparnisse aus der Werkzeugwahl sind dort besser angelegt als in Partnertagen."
   - "Messen Sie gegen eine Basislinie: DORA-Kennzahlen plus eigene Werte wie manuelle Schritte im Release-Plan und Wartezeit bis zum ersten Review."
-  - "Coding-Agenten verstärken, was die Pipeline schon kann; sie kommen nach den Quality Gates, mit einer Regeldatei in Ihrem Repository und denselben Prüfungen wie für Menschen."
+  - "Coding-Agenten kommen nach den Quality Gates, mit einer Regeldatei in Ihrem Repository und denselben Prüfungen wie für Menschen."
 articles: [sfdx-hardis-training, quality-gates-ai-code-pipeline, agentforce-agents-release-pipeline, ai-rules-file-salesforce-repo, nearshore-teams-with-ai-agents]
 faq:
   - q: "Wie lange dauert die Umstellung von Change Sets auf eine Salesforce-Pipeline?"
@@ -73,7 +73,7 @@ Die kommerziellen Anbieter haben eigene Angebote, und ich habe Kurse von Gearset
 
 Partner würde ich wie interne Teams behandeln und im Vertrag verlangen, dass jeder Entwickler vor dem ersten Pull Request das Basistraining nachweist und das Onboarding-Dokument aus Ihrem Repository gelesen hat. Das kostet einen Tag pro Person und spart die Diskussion im dritten Sprint, warum der Partner doch wieder per Change Set deployen möchte. Wie das in die Steuerung mehrerer Partner passt, beschreibe ich in der [Partnersteuerung](../../../leistungen/partnersteuerung/).
 
-## Welche Fehler bremsen die Einführung?
+## Diese Fehler bremsen die Einführung
 
 Die folgenden Muster folgen aus der Struktur eines Programms mit mehreren Partnern und tauchen deshalb immer wieder auf:
 
@@ -89,11 +89,11 @@ Die folgenden Muster folgen aus der Struktur eines Programms mit mehreren Partne
 Pflicht-Reviews gehören von Anfang an dazu, auch wenn die Pipeline noch einfach ist. Warum, steht in [warum Pull-Request-Reviews Pflicht sind](../../../blog/warum-pull-request-reviews-pflicht-sind/).
 ```
 
-## Wie messen Sie den Fortschritt?
+## Fortschritt gegen eine Basislinie messen
 
 DORA beschreibt heute [fünf Kennzahlen](https://dora.dev/guides/dora-metrics-four-keys/) für die Auslieferung von Software: Durchlaufzeit von Änderungen, Deployment-Häufigkeit, Wiederherstellungszeit nach einem fehlgeschlagenen Deployment, Änderungsfehlerrate und die Rate der ungeplanten Deployments nach einem Produktionsvorfall (Deployment Rework Rate). Die ersten drei messen Durchsatz, die letzten zwei Instabilität.
 
-Die Werkzeuge liefern einen Teil davon mit. Der [DORA-Bericht von sfdx-hardis](https://sfdx-hardis.cloudity.com/hardis/doc/salesforce-devops-dora-report/) berechnet laut Dokumentation alle fünf pro Hauptbranch, wie in [Kapitel 9](../betrieb-monitoring-backup/) beschrieben, und die [Übersicht](https://sfdx-hardis.cloudity.com/salesforce-devops-home/) ordnet die klassischen vier gegen Branchenwerte ein. Gearset hat ein [DevOps-Performance-Dashboard](https://docs.gearset.com/en/articles/11560575-measuring-your-devops-performance) mit denselben vier, das eine Lizenz für Teams oder Enterprise Automation Platform und Pipelines mit Promotion-Branch-Strategie voraussetzt; Änderungsfehlerrate und Wiederherstellungszeit beruhen dort auf Fehlern, die Ihr Team in den Promotions meldet. Beide Zahlen sind also nur so gut wie die Disziplin beim Melden.
+Die Werkzeuge liefern einen Teil davon mit. Der [DORA-Bericht von sfdx-hardis](https://sfdx-hardis.cloudity.com/hardis/doc/salesforce-devops-dora-report/) berechnet laut Dokumentation alle fünf pro Hauptbranch, wie in [Kapitel 9](../betrieb-monitoring-backup/) beschrieben, und die [Übersicht](https://sfdx-hardis.cloudity.com/salesforce-devops-home/) ordnet die klassischen vier gegen Branchenwerte ein. Gearset hat ein [DevOps-Performance-Dashboard](https://docs.gearset.com/en/articles/11560575-measuring-your-devops-performance) mit denselben vier, das eine Lizenz für Teams oder Enterprise Automation Platform und Pipelines mit Promotion-Branch-Strategie voraussetzt; Änderungsfehlerrate und Wiederherstellungszeit beruhen dort auf Fehlern, die Ihr Team in den Promotions meldet. Beide Zahlen stimmen also nur, wenn Störungen konsequent gemeldet werden.
 
 Für ein Programm in der Einführung würde ich vier eigene Werte ergänzen, weil sie den Fortschritt früher zeigen als DORA:
 
@@ -104,9 +104,9 @@ Für ein Programm in der Einführung würde ich vier eigene Werte ergänzen, wei
 
 Erheben Sie die Basislinie, bevor Phase 2 beginnt, notfalls aus den Release-Plänen des letzten Halbjahres. Dem Lenkungsausschuss würde ich diese Werte quartalsweise auf einer Seite berichten, nach Stream und Partner getrennt.
 
-## Ein typisches Szenario, als Annahme: drei Partner, eine Org
+## Rechenbeispiel: drei Partner, eine Org
 
-Ein typisches Szenario, als Annahme: Ein Maschinenbauer betreibt Service Cloud, Field Service für den Außendienst, ein Händlerportal auf Experience Cloud und eine SAP-Schnittstelle für Aufträge und Ersatzteile. Drei Partner deployen per Change Set, alle vier Wochen gibt es ein Release mit einem Plan von 60 manuellen Zeilen. Alle Zahlen sind Annahmen.
+Angenommen, ein Maschinenbauer betreibt Service Cloud, Field Service für den Außendienst, ein Händlerportal auf Experience Cloud und eine SAP-Schnittstelle für Aufträge und Ersatzteile. Drei Partner deployen per Change Set, alle vier Wochen gibt es ein Release mit einem Plan von 60 manuellen Zeilen. Alle Zahlen sind Annahmen.
 
 ```schritte
 Eigentum klären | Monate 1 und 2 · Kunde
@@ -121,13 +121,13 @@ Daten und Betrieb | Monate 7 bis 9
   Preisbücher und Field-Service-Konfiguration kommen ins Repository, der Release-Kalender steht, das Monitoring meldet Drift.
 ```
 
-Nach neun Monaten hat der Release-Plan zwölf statt 60 manuelle Zeilen, UAT bekommt wöchentlich statt monatlich neue Stände, und ein Partnerwechsel im Field-Service-Stream wäre eine Vertragsfrage, kein Technikprojekt. Diese Zahlen sind Planwerte für das Beispiel, keine Messung.
+Nach neun Monaten hat der Release-Plan zwölf manuelle Zeilen, vorher waren es 60, UAT bekommt wöchentlich statt monatlich neue Stände, und ein Partnerwechsel im Field-Service-Stream wäre eine Vertragsfrage, kein Technikprojekt. Diese Zahlen sind Planwerte für das Beispiel, keine Messung.
 
 ## Was ändert sich, wenn Coding-Agenten in der Pipeline arbeiten?
 
 Coding-Agenten schreiben Code schneller, als Menschen ihn prüfen. Eine Pipeline mit Pflicht-Reviews und blockierenden Gates fängt das ab, eine Pipeline ohne sie leitet es nur schneller in Produktion. DORA zählt [kleine Batches](https://dora.dev/capabilities/) deshalb zu den Fähigkeiten, die das Risiko ausgleichen, wenn KI die Entwicklung beschleunigt. Für mich folgt daraus eine klare Reihenfolge: erst die Phasen 1 bis 4, dann Agenten.
 
-Wenn es so weit ist, ändern sich vier Dinge:
+Wenn es so weit ist, ändert sich Folgendes:
 
 - **Eine Regeldatei kommt ins Repository.** `CLAUDE.md`, `AGENTS.md` oder `.vibes/rules/` gehören Ihnen und haben eine verantwortliche Person auf Ihrer Seite, siehe [die KI-Regeldatei im Salesforce-Repository](../../../blog/ki-regeldatei-salesforce-repository/).
 - **Die Gates bekommen Regeln für typische Agentenfehler**, etwa eine Prüfung, ob ein Agent nebenbei die API-Version einer Apex-Klasse angehoben hat. Details in [Quality Gates für KI-Code](../../../blog/quality-gates-ki-code-salesforce-pipeline/).
@@ -137,5 +137,3 @@ Wenn es so weit ist, ändern sich vier Dinge:
 Am stärksten trifft das die Review-Kapazität, besonders bei Nearshore-Teams in anderen Zeitzonen. Ich habe mit Nearshore-Teams in Osteuropa und Indien gearbeitet, und was sich mit Agenten dort verschiebt, beschreibe ich in [Nearshore-Salesforce-Teams mit KI-Agenten](../../../blog/nearshore-salesforce-teams-ki-agenten/).
 
 Ab hier übernimmt die KI-Masterclass. Welcher Coding-Agent zu Ihrem Team oder Partner passt und was dafür im Vertrag stehen muss, behandelt [Kapitel 4 der KI-Masterclass](../../ki-salesforce/externe-coding-agenten/). Wie sich Rollen, Review-Gates und Kennzahlen ändern, wenn Teams mit Agenten liefern, steht in [Kapitel 9 der KI-Masterclass](../../ki-salesforce/teamarbeit-und-delivery/). Den Betrieb, auf dem diese Phase aufsetzt, beschreibt das vorige [Kapitel 9 zu Betrieb und Monitoring](../betrieb-monitoring-backup/), alle Kapitel dieser Masterclass finden Sie auf der [Übersichtsseite](../). Die Einführung selbst begleite ich im [DevOps- und Release-Management](../../../leistungen/devops-und-release-management/).
-
-Eine DevOps-Einführung ist dann fertig, wenn Ihr eigenes Team den Release-Prozess auch ohne den heutigen Partner betreiben könnte.
