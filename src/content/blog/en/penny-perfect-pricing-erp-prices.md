@@ -9,11 +9,10 @@ topic: revenue
 categories: [manufacturing-cloud]
 tags: [Manufacturing Cloud, Penny Perfect Pricing, SAP, pricing, telesales, Winter '27]
 takeaways:
-  - "Penny Perfect Pricing is a pricing engine for advanced order line items in Manufacturing Cloud, Automotive Cloud and Consumer Goods Cloud; its 19 objects are available from API version 68.0 (Winter '27)."
-  - "Its objects mirror the SAP condition technique: calculation schema, pricing specifications, search strategies, key types and pricing condition records with volume tiers."
+  - "Penny Perfect Pricing also exists in Automotive Cloud and Consumer Goods Cloud. Its 19 objects arrived with API 68.0 (Winter '27)."
+  - "Its objects mirror the SAP condition technique, from calculation schema and search strategy to condition records with scales."
   - "It prices telesales orders; quotes belong to Revenue Cloud and store prices to B2B Commerce, so it does not replace either."
-  - "The developer documentation names no licence and no standard way to load condition records from SAP; ask Salesforce in writing before you plan with it."
-  - "Two price engines drift apart. Decide one price master and which price wins when Salesforce and SAP disagree, before the first order is priced."
+  - "Before the first order, decide which system is price master and which price wins when they disagree."
 faq:
   - q: "What is Penny Perfect Pricing in Salesforce?"
     a: "A pricing engine that calculates real-time prices for advanced order line items, for example in telesales. Salesforce lists it under Winter '27 for Manufacturing Cloud and documents it for Manufacturing, Automotive and Consumer Goods Cloud."
@@ -42,9 +41,9 @@ The [developer guide](https://developer.salesforce.com/docs/industries/penny-per
 
 The guide covers 19 objects, all available from API version 68.0, and names Manufacturing Cloud, Automotive Cloud and Consumer Goods Cloud as the clouds that use them. The [Manufacturing Cloud developer guide](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/mfg_penny_perfect_pricing_dev.htm) has its own entry for it, right next to Advanced Orders for Telesales.
 
-## How close is it to SAP pricing?
+## In its structure it is close to SAP pricing
 
-Very close in its structure. SAP calculates prices with the condition technique: according to [SAP Learning](https://learning.sap.com/courses/configuring-pricing-in-sap-s-4hana-sales), a pricing procedure lists the condition types, each condition type has an access sequence, and the access sequence searches condition tables for a valid condition record, including scales by quantity.
+SAP calculates prices with the condition technique: according to [SAP Learning](https://learning.sap.com/courses/configuring-pricing-in-sap-s-4hana-sales), a pricing procedure lists the condition types, each condition type has an access sequence, and the access sequence searches condition tables for a valid condition record, including scales by quantity.
 
 The [object reference](https://developer.salesforce.com/docs/industries/penny-perfect-pricing/references/penny-perfect-pricing-objects) of Penny Perfect Pricing reads like a translation of that model. Salesforce does not publish the mapping; the right column is my reading of the object descriptions:
 
@@ -84,9 +83,9 @@ Three things I could not find in any official source on 28 October 2026:
 So the ERP integration is yours to build, and the licence is yours to ask about. Both belong in writing before a project plan depends on them.
 ```
 
-## Why do two price engines drift apart?
+## Two price engines drift apart because conditions change
 
-Because condition records change all the time. Pricing teams add customer discounts, end promotions and update scales in SAP every week. If Salesforce calculates with copies, every change has to arrive before the next order is priced. Typical gaps:
+Condition records change all the time. Pricing teams add customer discounts, end promotions and update scales in SAP every week. If Salesforce calculates with copies, every change has to arrive before the next order is priced. Typical gaps:
 
 - **Timing.** A condition changes in SAP at ten in the morning, the copy arrives overnight, and the telesales rep quotes yesterday's price all day.
 - **New condition types.** Finance adds a surcharge in SAP. Nobody adds the matching pricing specification to the calculation schema in Salesforce.
@@ -95,9 +94,9 @@ Because condition records change all the time. Pricing teams add customer discou
 
 These gaps are manageable once one price master and a rule for disagreements are set, before any rep relies on a Salesforce price.
 
-## A typical scenario: a telesales desk for spare parts
+## Worked example: a telesales desk for spare parts
 
-A typical scenario, as an assumption: a machine builder with a telesales desk of ten people takes spare parts orders by phone. 30,000 spare parts, 2,500 customers, prices from SAP with four condition types: list price, customer discount, a small quantity surcharge and quantity scales. Orders should be entered in Salesforce, where the rep also sees the customer's installed base and open cases.
+Assume a machine builder with a telesales desk of ten people takes spare parts orders by phone. 30,000 spare parts, 2,500 customers, prices from SAP with four condition types: list price, customer discount, a small quantity surcharge and quantity scales. Orders should be entered in Salesforce, where the rep also sees the customer's installed base and open cases.
 
 **Option A: SAP stays price master.** Salesforce calls SAP for the price of each line while the order is built, through an API like the one in [order status from SAP via MuleSoft](../agentforce-sap-order-status-mulesoft/). Prices are always identical. The cost is a dependency: if SAP is in a maintenance window, the desk cannot price orders.
 
@@ -105,7 +104,7 @@ A typical scenario, as an assumption: a machine builder with a telesales desk of
 
 I would choose A when SAP answers fast and is reliably available, which is the more common case. I would look at B when the pricing logic is stable, condition changes are rare and the desk must keep working when SAP does not answer. Either way, SAP should decide the final invoice price, and the interface should flag any order where the two prices differ.
 
-## Where should you start?
+## First step: count condition types and fix the price master
 
 1. **Count your condition types** and how often condition records change per week.
 2. **Write down the price master** and which price wins when Salesforce and SAP disagree.
@@ -113,6 +112,4 @@ I would choose A when SAP answers fast and is reliably available, which is the m
 4. **Plan the data flows** together with the rest of the SAP interface, as in [Manufacturing Cloud and SAP: which data flows where](../manufacturing-cloud-sap-integration-data-flows/).
 5. **Test with real orders**: 200 historical orders priced in both systems, compared line by line.
 
-The full chapter on ERP integration, agents and rollout is [ERP, AI and rollout](../../masterclass/manufacturing-cloud/erp-ai-and-rollout/) in the Manufacturing Cloud masterclass, and drawing the line between ERP and Salesforce is part of my [architecture work](../../services/salesforce-architecture/).
-
-Penny Perfect Pricing brings SAP-style pricing into Salesforce, but one system still has to own the price.
+The full chapter on ERP integration, agents and rollout is [ERP, AI and rollout](../../masterclass/manufacturing-cloud/erp-ai-and-rollout/) in the Manufacturing Cloud masterclass. Drawing the line between ERP and Salesforce is part of my [architecture work](../../services/salesforce-architecture/).

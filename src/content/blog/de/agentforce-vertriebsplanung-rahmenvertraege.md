@@ -9,11 +9,10 @@ topic: data
 categories: [manufacturing-cloud, ai]
 tags: [Agentforce, Manufacturing Cloud, Sales Agreements, Account Forecasting, ERP, Vertriebsplanung]
 takeaways:
-  - "Laut Salesforce-Hilfe beantwortet der Sales-Planning-Agent Fragen zu Sales Agreements, schreibt Performance-Zusammenfassungen, hilft bei Besuchen und E-Mails und ändert Sales Agreements in Massen."
-  - "Die Hilfe dokumentiert drei Subagents: Sales Agreement Management, Sales Agreement Bulk Update und Program Forecasts to Opportunities. Keiner davon arbeitet laut Beschreibung mit Account Forecasts."
-  - "Die proaktiven Hinweise auf Abweichungen im Produktionsplan aus der Ankündigung vom August 2025 finden sich in den Hilfeseiten zur Vorlage nicht, soweit ich sehen konnte."
-  - "Jede Aussage zur Vertragserfüllung beruht auf Ist-Mengen aus dem ERP. Ohne täglichen Ist-Datenfluss pro Kunde, Produkt und Zeitraum meldet der Agent Rückstände, die es nicht gibt."
-  - "Agentforce Manufacturing ist auf Trailhead auch der Produktname. Eine Funktion mit diesem Etikett ist also nicht automatisch ein Agent. Fragen Sie nach Subagent, Aktion und Lizenz."
+  - "Die Hilfe dokumentiert drei Subagents. Keiner davon arbeitet laut Beschreibung mit Account Forecasts."
+  - "Die proaktiven Hinweise auf Abweichungen im Produktionsplan aus der Ankündigung von 2025 fand ich in den Hilfeseiten nicht."
+  - "Ohne täglichen Ist-Datenfluss pro Kunde, Produkt und Zeitraum meldet der Agent Rückstände, die es nicht gibt."
+  - "Nicht jede Funktion mit dem Etikett Agentforce Manufacturing ist ein Agent. Fragen Sie nach Subagent, Aktion und Lizenz."
 faq:
   - q: "Was ist Agentforce for Sales Planning?"
     a: "Eine Agentenvorlage für die Manufacturing Cloud. Laut Salesforce-Hilfe beantwortet sie Fragen zu Sales Agreements, erstellt Performance-Zusammenfassungen, unterstützt bei Besuchen und E-Mails, ändert Sales Agreements in Massen und wandelt Programmprognosen in Opportunities um."
@@ -48,7 +47,7 @@ Die Hilfeseite nennt drei Subagents: Sales Agreement Management, Sales Agreement
 Als Lizenz nennt die Hilfeseite Enterprise, Performance oder Unlimited Edition mit dem Add-on Agentforce for Manufacturing oder die Agentforce 1 Manufacturing Edition, und „each user“ braucht das Add-on. Die [Produktseite der Manufacturing Cloud](https://www.salesforce.com/manufacturing/cloud/) führt die „full suite of Agentforce for Industries“ in den Max-Editionen. Wie beides für Ihren Vertrag zusammenpasst, gehört vor den Piloten auf den Tisch des Account-Teams.
 ```
 
-## Warum ist „Agentforce Manufacturing“ nicht immer ein Agent?
+## „Agentforce Manufacturing“ ist auch ein Produktname
 
 Trailhead nennt das Produkt selbst inzwischen Agentforce Manufacturing. Der [Trailhead-Überblick](https://trailhead.salesforce.com/content/learn/modules/agentforce-manufacturing-quick-look/explore-agentforce-manufacturing-capabilities) listet „Agent-powered sales agreements“ und „Advanced account forecasting“ als Funktionen, direkt neben „Agentforce for sales planning“. Agentforce-Aktionen nennt die Einheit keine.
 
@@ -70,7 +69,7 @@ Zu Account Forecasts schweigt die Dokumentation. Die Seite zur Vorlage nennt sie
 
 Die größte Lücke ist der Abgleich mit dem Produktionsplan aus der Ankündigung. Ich habe keine Beschreibung gefunden, woher der Produktionsplan kommt, in welchem Objekt er liegt oder was einen Hinweis auslöst. So wie ich die Hilfeseite lese, antwortet der Agent, wenn jemand fragt. Die [KI-Seite für die Fertigung](https://www.salesforce.com/manufacturing/artificial-intelligence/) spricht davon, Rahmenverträge, Absatzprognosen und Opportunities „conversationally“ bereitzustellen, und ergänzt, die Funktionen könnten „not reflect actual product details“. Diesen Hinweis nehme ich wörtlich.
 
-## Welcher Ist-Datenfluss aus dem ERP muss zuerst stehen?
+## Der Ist-Datenfluss aus dem ERP muss zuerst stehen
 
 Fragt ein Account Manager, welche Verträge im Rückstand sind, vergleicht der Agent Plan- und Ist-Mengen in den Zeitplänen der Sales-Agreement-Produkte. Beim Hersteller liegen die Ist-Mengen im ERP. Fehlen sie oder kommen sie spät, meldet der Agent einen Rückstand mit voller Überzeugung.
 
@@ -93,7 +92,7 @@ Welcher Berechnungsmodus passt und warum er sich später schwer ändern lässt, 
 
 Wer den Abgleich mit dem Produktionsplan will, braucht auch die Planmengen aus der Produktionsplanung in Salesforce. Account Forecasts brauchen zusätzlich die Auftragshistorie, wie in [Account Forecasting für die Absatzprognose](../account-forecasting-absatzprognose-vertrieb/) beschrieben. Wie ich führende Systeme zwischen ERP und Salesforce aufteile, gehört zu meinen [Schnittstellen zu ERP, Middleware und Telefonie](../../leistungen/salesforce-schnittstellen/).
 
-## Ein typisches Szenario: die Montagsrunde bei einem Kompressorenhersteller
+## Rechenbeispiel: die Montagsrunde bei einem Kompressorenhersteller
 
 Nehmen wir einen Kompressorenhersteller mit 35 Account Managern und 280 Sales Agreements mit Händlern und OEM-Kunden an, Aufträge in SAP. Alle Zahlen sind Annahmen zur Veranschaulichung.
 
@@ -114,4 +113,4 @@ Dann soll eine Preiserhöhung für eine Produktfamilie in 60 Verträge. Die Mass
 
 Ob Agenten überhaupt zu Ihrem Unternehmen passen, behandle ich in [Agentforce für Hersteller: jetzt starten oder warten?](../agentforce-ja-oder-nein-hersteller/), den Überblick über Agenten in der Fertigung im Masterclass-Kapitel [KI-Agenten in der Fertigung](../../masterclass/ki-salesforce/ki-agenten-in-der-fertigung/).
 
-Der Sales-Planning-Agent ist ein brauchbarer Assistent auf Sales Agreements, sobald die Ist-Mengen aus dem ERP stimmen, und er kann weniger, als die Ankündigung von 2025 nahelegt.
+Punkt 2 entscheidet über den Rest. Solange die Ist-Mengen nicht täglich mit dem ERP abgeglichen sind, schalte ich den Agenten für den Vertrieb nicht frei.

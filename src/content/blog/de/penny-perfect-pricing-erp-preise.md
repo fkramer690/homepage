@@ -9,11 +9,10 @@ topic: revenue
 categories: [manufacturing-cloud]
 tags: [Manufacturing Cloud, Penny Perfect Pricing, SAP, Preisfindung, Telesales, Winter '27]
 takeaways:
-  - "Penny Perfect Pricing ist eine Preisfindung für Positionen von Advanced Orders in Manufacturing Cloud, Automotive Cloud und Consumer Goods Cloud; ihre 19 Objekte gibt es ab API-Version 68.0 (Winter '27)."
-  - "Die Objekte bilden die SAP-Konditionstechnik nach: Kalkulationsschema, Preisspezifikationen, Suchstrategien, Schlüsseltypen und Konditionssätze mit Mengenstaffeln."
+  - "Penny Perfect Pricing gibt es auch in Automotive Cloud und Consumer Goods Cloud. Ihre 19 Objekte kamen mit API 68.0 (Winter '27)."
+  - "Die Objekte bilden die SAP-Konditionstechnik nach, von Kalkulationsschema und Suchstrategie bis zu Konditionssätzen mit Staffeln."
   - "Sie berechnet Preise für Telesales-Aufträge; Angebote gehören zu Revenue Cloud und Shoppreise zu B2B Commerce, beides ersetzt sie nicht."
-  - "Die Entwicklerdokumentation nennt keine Lizenz und keinen Standardweg, Konditionssätze aus SAP zu laden; fragen Sie Salesforce schriftlich, bevor Sie damit planen."
-  - "Zwei Preisfindungen laufen auseinander. Legen Sie einen Preis-Master fest und welcher Preis gilt, wenn Salesforce und SAP abweichen, bevor der erste Auftrag bepreist wird."
+  - "Vor dem ersten Auftrag steht fest, welches System Preis-Master ist und welcher Preis bei Abweichungen gilt."
 faq:
   - q: "Was ist Penny Perfect Pricing in Salesforce?"
     a: "Eine Preisfindung, die Preise für Positionen von Advanced Orders in Echtzeit berechnet, etwa im Telesales. Salesforce führt sie unter Winter '27 für die Manufacturing Cloud und dokumentiert sie für Manufacturing, Automotive und Consumer Goods Cloud."
@@ -42,9 +41,9 @@ Konkreter wird der [Developer Guide](https://developer.salesforce.com/docs/indus
 
 Der Guide beschreibt 19 Objekte, alle ab API-Version 68.0 verfügbar, und nennt Manufacturing Cloud, Automotive Cloud und Consumer Goods Cloud als die Clouds, die sie nutzen. Im [Developer Guide der Manufacturing Cloud](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/mfg_penny_perfect_pricing_dev.htm) hat sie einen eigenen Eintrag, direkt neben Advanced Orders for Telesales.
 
-## Wie nah ist sie an der SAP-Preisfindung?
+## In der Struktur ist sie nah an der SAP-Preisfindung
 
-In der Struktur sehr nah. SAP berechnet Preise mit der Konditionstechnik: Laut [SAP Learning](https://learning.sap.com/courses/configuring-pricing-in-sap-s-4hana-sales) enthält ein Kalkulationsschema die Konditionsarten, jede Konditionsart hat eine Zugriffsfolge, und die Zugriffsfolge sucht in Konditionstabellen nach einem gültigen Konditionssatz, einschließlich Staffeln nach Menge.
+SAP berechnet Preise mit der Konditionstechnik: Laut [SAP Learning](https://learning.sap.com/courses/configuring-pricing-in-sap-s-4hana-sales) enthält ein Kalkulationsschema die Konditionsarten, jede Konditionsart hat eine Zugriffsfolge, und die Zugriffsfolge sucht in Konditionstabellen nach einem gültigen Konditionssatz, einschließlich Staffeln nach Menge.
 
 Die [Objektreferenz](https://developer.salesforce.com/docs/industries/penny-perfect-pricing/references/penny-perfect-pricing-objects) von Penny Perfect Pricing liest sich wie eine Übersetzung dieses Modells. Salesforce veröffentlicht die Zuordnung nicht; die rechte Spalte ist meine Lesart der Objektbeschreibungen:
 
@@ -84,9 +83,9 @@ Drei Dinge habe ich am 28. Oktober 2026 in keiner offiziellen Quelle gefunden:
 Die ERP-Anbindung bauen also Sie, und nach der Lizenz fragen auch Sie. Beides gehört schriftlich geklärt, bevor ein Projektplan davon abhängt.
 ```
 
-## Warum laufen zwei Preisfindungen auseinander?
+## Zwei Preisfindungen laufen auseinander, weil Konditionen sich ändern
 
-Weil sich Konditionssätze ständig ändern. Die Preisabteilung legt in SAP jede Woche Kundenrabatte an, beendet Aktionen und passt Staffeln an. Rechnet Salesforce mit Kopien, muss jede Änderung ankommen, bevor der nächste Auftrag bepreist wird. Typische Lücken:
+Konditionssätze ändern sich ständig. Die Preisabteilung legt in SAP jede Woche Kundenrabatte an, beendet Aktionen und passt Staffeln an. Rechnet Salesforce mit Kopien, muss jede Änderung ankommen, bevor der nächste Auftrag bepreist wird. Typische Lücken:
 
 - **Zeitpunkt.** Eine Kondition ändert sich in SAP um zehn Uhr, die Kopie kommt über Nacht, und der Telesales-Mitarbeiter nennt den ganzen Tag den Preis von gestern.
 - **Neue Konditionsarten.** Die Finanzabteilung führt in SAP einen Zuschlag ein. Niemand ergänzt die passende Preisspezifikation im Kalkulationsschema in Salesforce.
@@ -95,9 +94,9 @@ Weil sich Konditionssätze ständig ändern. Die Preisabteilung legt in SAP jede
 
 Diese Lücken lassen sich beherrschen, wenn ein Preis-Master und eine Regel für Abweichungen feststehen, bevor sich ein Mitarbeiter auf einen Salesforce-Preis verlässt.
 
-## Ein typisches Szenario: Telesales für Ersatzteile
+## Rechenbeispiel: Telesales für Ersatzteile
 
-Ein typisches Szenario, als Annahme: Ein Maschinenbauer nimmt mit einem Telesales-Team von zehn Personen Ersatzteilaufträge am Telefon an. 30.000 Ersatzteile, 2.500 Kunden, Preise aus SAP mit vier Konditionsarten: Listenpreis, Kundenrabatt, Mindermengenzuschlag und Mengenstaffeln. Die Aufträge sollen in Salesforce erfasst werden, wo der Mitarbeiter auch die installierte Basis und offene Fälle des Kunden sieht.
+Angenommen, ein Maschinenbauer nimmt mit einem Telesales-Team von zehn Personen Ersatzteilaufträge am Telefon an. 30.000 Ersatzteile, 2.500 Kunden, Preise aus SAP mit vier Konditionsarten: Listenpreis, Kundenrabatt, Mindermengenzuschlag und Mengenstaffeln. Die Aufträge sollen in Salesforce erfasst werden, wo der Mitarbeiter auch die installierte Basis und offene Fälle des Kunden sieht.
 
 **Variante A: SAP bleibt Preis-Master.** Salesforce fragt SAP pro Position nach dem Preis, während der Auftrag erfasst wird, über eine API wie in [Agentforce und SAP: Auftragsstatus über MuleSoft](../agentforce-sap-auftragsstatus/). Die Preise sind immer identisch. Der Preis dafür ist eine Abhängigkeit: Ist SAP im Wartungsfenster, kann das Team keine Aufträge bepreisen.
 
@@ -105,7 +104,7 @@ Ein typisches Szenario, als Annahme: Ein Maschinenbauer nimmt mit einem Telesale
 
 Ich würde A wählen, wenn SAP schnell antwortet und zuverlässig erreichbar ist, und das ist der häufigere Fall. B würde ich prüfen, wenn die Preislogik stabil ist, sich Konditionen selten ändern und das Team weiterarbeiten muss, wenn SAP nicht antwortet. In beiden Fällen sollte SAP den endgültigen Rechnungspreis bestimmen, und die Schnittstelle sollte jeden Auftrag markieren, bei dem die beiden Preise abweichen.
 
-## Wo fangen Sie an?
+## Erster Schritt: Konditionsarten zählen und Preis-Master festlegen
 
 1. **Zählen Sie Ihre Konditionsarten** und wie oft sich Konditionssätze pro Woche ändern.
 2. **Halten Sie den Preis-Master fest** und welcher Preis gilt, wenn Salesforce und SAP abweichen.
@@ -113,6 +112,4 @@ Ich würde A wählen, wenn SAP schnell antwortet und zuverlässig erreichbar ist
 4. **Planen Sie die Datenflüsse** zusammen mit der übrigen SAP-Schnittstelle, wie in [Manufacturing Cloud und SAP: welche Daten wohin](../manufacturing-cloud-sap-integration-datenfluesse/).
 5. **Testen Sie mit echten Aufträgen**: 200 historische Aufträge in beiden Systemen bepreist und Position für Position verglichen.
 
-Das ganze Kapitel zu ERP-Anbindung, Agenten und Rollout ist [ERP, KI und Rollout](../../masterclass/manufacturing-cloud/erp-ki-und-rollout/) in der Masterclass Manufacturing Cloud, und die Grenze zwischen ERP und Salesforce zu ziehen, gehört zu meiner [Arbeit als Salesforce-Architekt](../../leistungen/salesforce-architektur/).
-
-Penny Perfect Pricing bringt eine Preisfindung nach SAP-Muster nach Salesforce, aber ein System muss den Preis weiterhin führen.
+Das ganze Kapitel zu ERP-Anbindung, Agenten und Rollout ist [ERP, KI und Rollout](../../masterclass/manufacturing-cloud/erp-ki-und-rollout/) in der Masterclass Manufacturing Cloud. Die Grenze zwischen ERP und Salesforce zu ziehen, gehört zu meiner [Arbeit als Salesforce-Architekt](../../leistungen/salesforce-architektur/).

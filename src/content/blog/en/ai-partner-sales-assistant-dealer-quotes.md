@@ -9,11 +9,10 @@ topic: ai
 categories: [manufacturing-cloud, ai]
 tags: [agentforce, manufacturing cloud, dealers, quoting, pricing, ai agents]
 takeaways:
-  - "Salesforce lists the AI Partner Sales Assistant under Summer '26 and the AI Sales Concierge under Winter '27; both find products and build quotes, the first for the channel, the second for self-service visitors."
-  - "Setup guides, licence terms and prices for both agents were not in the Salesforce sources I could open on 27 October 2026; ask in writing before you budget."
-  - "An AI-built quote is only as good as the catalogue, the price per market and dealer tier, the configuration rules and the discount limits behind it."
-  - "If dealer prices live in SAP conditions and Salesforce holds only list prices, the agent quotes list prices; decide the price master before any dealer sees an AI quote."
-  - "Keep configured machines with the sales desk until your configuration rules can be called by the agent, and start with accessories, attachments and standard machines."
+  - "Setup, licence and price of both agents were in no Salesforce source I could open on 27 October 2026. Ask in writing before you budget."
+  - "If dealer prices live only as SAP conditions, the agent quotes list prices. Decide the price master first."
+  - "Configured machines stay with the sales desk until the agent can call the rules. I start with accessories and standard machines."
+  - "An AI quote is ready when your sales desk would sign it unchanged."
 faq:
   - q: "What does the AI Partner Sales Assistant do?"
     a: "According to the Manufacturing Cloud product page, it accelerates channel sales by finding products and building quotes in seconds. Salesforce lists it under the Summer '26 release."
@@ -60,7 +59,7 @@ I would choose by where your quote lives today. If you already quote in Revenue 
 
 For machine builders with dealers, the Sales Concierge raises a commercial question before a technical one. If an end customer finds a machine on your site and gets a price, which dealer receives the lead, and may that price undercut what the dealer quotes? Settle routing and price visibility with the head of sales before go-live.
 
-## Which data must be clean before dealers get AI-built quotes?
+## Catalogue, prices, rules and discount limits must be right first
 
 An agent that builds a quote reads the same records your sales desk reads. What an experienced desk corrects by habit, the agent passes straight to the dealer.
 
@@ -84,7 +83,7 @@ The tier discount is part of the price; anything above it is a decision. The mod
 
 The Sales Concierge locates dealers and searches assets. That needs dealer accounts with territories and the product lines each dealer may sell, and assets with serial numbers so a customer finds parts for their own machine. Partner users should see only their own price book and customers, and every field a dealer or customer types is outside input for the agent, as I describe in [prompt injection in dealer portals](../prompt-injection-dealer-portals-agentforce/). Which portal licence covers quotes is part of [the Manufacturing Cloud customer portal](../manufacturing-cloud-customer-portal/).
 
-## A typical scenario: 140 dealers and one sales desk
+## Worked example: 140 dealers and one sales desk
 
 Assume a maker of compact construction machinery with 140 dealers in 12 countries, SAP S/4HANA and Manufacturing Cloud with a partner portal. All numbers are assumptions to show the method.
 
@@ -98,7 +97,7 @@ Assume a maker of compact construction machinery with 140 dealers in 12 countrie
 
 The consumption is small next to six people on a desk. The work sits in four months of catalogue and price data, and the open item is the licence for partner users.
 
-## Where should you start?
+## First step: pick one channel and measure the catalogue
 
 ```schritte
 Pick one channel first
@@ -115,6 +114,4 @@ Build a test set
   From real dealer requests, including wrong part numbers and unbuildable combinations, as in [testing Agentforce agents before go-live](../testing-agentforce-agents-before-go-live/).
 ```
 
-Where these agents fit among the other manufacturing agents is covered in the masterclass chapter [AI agents in manufacturing](../../masterclass/ai-salesforce/ai-agents-in-manufacturing/), and drawing the line between ERP, configurator and agent is part of my [architecture work](../../services/salesforce-architecture/).
-
-AI quotes for dealers pay off once catalogue, prices and rules are clean enough that your sales desk would sign the quote unchanged.
+Where these agents fit among the other manufacturing agents is covered in the masterclass chapter [AI agents in manufacturing](../../masterclass/ai-salesforce/ai-agents-in-manufacturing/). Drawing the line between ERP, configurator and agent is part of my [architecture work](../../services/salesforce-architecture/).
