@@ -23,6 +23,50 @@ const slop = [
 ];
 
 const errors = [];
+
+// Structural AI-slop patterns (AI-slop review 2026-10-31, "No AI slop" in docs/blog-guidelines.md). They are
+// reported as warnings until every existing text is rewritten; STRICT_STRUCTURE then turns them into errors.
+// `node scripts/check-blog.mjs --structure` lists every finding and exits non-zero while any is left.
+const STRICT_STRUCTURE = false;
+const showStructure = process.argv.includes('--structure');
+const structureIssues = [];
+const structurePhrases = [
+  /nur so gut wie/i, /only as good as/i, /\b(besser|mehr|schneller) als jede[rsnm]?\b/i, /\b(better|more|faster) than any\b/i,
+  /die gute nachricht/i, /the good news/i, /\bder haken\b/i, /\bthe catch\b/i, /the honest answer/i, /die ehrliche antwort/i,
+  /ein typisches szenario, als annahme/i, /a typical scenario, as an assumption/i, /^(erstens|zweitens|drittens)\b/im,
+];
+const genericCloser = /^(wo (fangen sie an|starten sie|sollten sie (anfangen|starten))|womit (fangen sie an|sollten sie anfangen)|where (do|should) you (start|begin)|what should you start with)\??$/i;
+const countAnnounce = /\b(drei|vier|fünf|three|four|five) (dinge|punkte|fragen|regeln|gründe|entscheidungen|kriterien|hebel|things|points|questions|rules|reasons|decisions|criteria|levers)\b/gi;
+const intensifiers = { de: /\b(echt(e|er|en|es|em)?|wirklich|tatsächlich|ehrlich)\b/gi, en: /\b(really|actually|honest(ly)?|genuinely|truly)\b/gi };
+const contentWords = (str) => new Set((str.toLowerCase().match(/[a-zäöüß0-9]{4,}/g) ?? []));
+
+function checkStructure(name, lang, text, fm) {
+  const issue = (msg) => structureIssues.push(`${name}: ${msg}`);
+  for (const re of structurePhrases) if (re.test(text) || re.test(fm)) issue(`formula phrase, rewrite (${re})`);
+  const h2 = [...text.matchAll(/^## (.+)$/gm)].map((m) => m[1].trim());
+  for (const h of h2) if (genericCloser.test(h)) issue(`generic heading "${h}", name the concrete first step instead`);
+  const questions = h2.filter((h) => h.endsWith('?')).length;
+  if (questions > Math.ceil(h2.length / 2)) issue(`${questions} of ${h2.length} H2 are questions, at most half (state the answer in the heading)`);
+  const counts = text.match(countAnnounce) ?? [];
+  if (counts.length > 1) issue(`counting formula used ${counts.length}× (${counts.slice(0, 3).join(', ')}), at most once`);
+  const intens = text.match(intensifiers[lang] ?? intensifiers.en) ?? [];
+  if (intens.length > 3) issue(`${intens.length} intensifiers (${[...new Set(intens.map((w) => w.toLowerCase()))].join(', ')}), at most 3`);
+  const insteadOf = (text.match(lang === 'de' ? /\bstatt\b/gi : /\binstead of\b/gi) ?? []).length;
+  if (insteadOf > 5) issue(`"${lang === 'de' ? 'statt' : 'instead of'}" used ${insteadOf}×, at most 5`);
+  // The last paragraph is not a one-sentence moral.
+  const paras = text.trim().split(/\n\s*\n/).map((p) => p.trim()).filter((p) => p && !/^(#|\||-|\*|\d+\.|>)/.test(p));
+  const last = paras.at(-1) ?? '';
+  if (last && (last.match(/[.!?](\s|$)/g) ?? []).length <= 1 && last.split(/\s+/).length < 35) issue(`ends on a one-sentence summary ("${last.slice(0, 60)}…"), end with the concrete step`);
+  // Takeaways: short, and the first one does not repeat the intro.
+  const takeaways = [...(fm.match(/^takeaways:\n((?:\s+- .*\n?)+)/m)?.[1] ?? '').matchAll(/^\s+- "?(.*?)"?\s*$/gm)].map((m) => m[1]);
+  for (const t of takeaways) if (t.length > 160) issue(`takeaway over 160 characters ("${t.slice(0, 40)}…"), one line each`);
+  if (takeaways[0]) {
+    const intro = contentWords(text.trim().split(/(?<=[.!?])\s/)[0]);
+    const first = contentWords(takeaways[0]);
+    const shared = [...first].filter((w) => intro.has(w)).length;
+    if (first.size && shared / first.size > 0.6) issue('first takeaway repeats the first sentence of the intro, say something new');
+  }
+}
 const drawings = readFileSync(new URL('../src/lib/card-drawings.ts', import.meta.url), 'utf8');
 
 // Blog articles, service pages and masterclass chapters share the content rules; only length and structure differ.
@@ -126,6 +170,7 @@ function check(collection, rules) {
       if (/[\u2013\u2014]/.test(text)) fail('no en or em dashes (– —), use a comma, a full stop or "to"');
       const contrasts = (text.match(/\b(is|are|isn't|aren't) not (just |only )?(about|a|an)\b[^.]*\.\s+(it|they) (is|are)\b|geht es nicht (nur )?(um|darum)|\b(ist|sind) (kein|keine|nicht)\b[^.]*\.\s+(es|sie) (ist|sind)\b/gi) ?? []).length;
       if (contrasts > 0) fail('avoid the "it is not X, it is Y" pattern, state what it is');
+      if (collection !== 'services') checkStructure(name, lang, text, fm);
     }
   }
 
@@ -169,6 +214,15 @@ function scanFaqLabel(dir) {
 scanFaqLabel(new URL('../src/', import.meta.url).pathname);
 
 const counts = Object.entries(collections).map(([name, rules]) => `${check(name, rules)} ${name}`);
+
+if (STRICT_STRUCTURE) errors.push(...structureIssues);
+else if (showStructure) {
+  console.log(structureIssues.join('\n'));
+  console.log(`${structureIssues.length} structural findings in ${new Set(structureIssues.map((i) => i.split(':')[0])).size} files.`);
+  if (structureIssues.length) process.exitCode = 1;
+} else if (structureIssues.length) {
+  console.warn(`Warning: ${structureIssues.length} structural AI-slop findings, run node scripts/check-blog.mjs --structure (see "No AI slop" in docs/blog-guidelines.md).`);
+}
 
 if (errors.length) {
   console.error(`Content check failed (see docs/blog-guidelines.md, docs/service-pages.md and docs/masterclass.md):\n- ${errors.join('\n- ')}`);
