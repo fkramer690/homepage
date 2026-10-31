@@ -9,13 +9,14 @@ import Blueprint from './Blueprint.astro';
 import ContactBrief from './ContactBrief.astro';
 import ReadingGrid from './ReadingGrid.astro';
 import VideoCard from './VideoCard.astro';
+import PostMeta from './PostMeta.astro';
 import { getContactBrief } from '../lib/contact-briefs';
 import { render } from 'astro:content';
 import { en } from '../i18n/en';
 import { de } from '../i18n/de';
 import { site, contactHref, contactExternal } from '../site';
 import { getPostService, serviceHref } from '../lib/services';
-import { type Post, blogIndex, postHref, getTranslation, getRelated, getSeriesParts, readingMinutes, formatDate } from '../lib/blog';
+import { type Post, blogIndex, postHref, getTranslation, getRelated, getSeriesParts, readingMinutes } from '../lib/blog';
 import { homeHref, localHref } from '../lib/paths';
 import { getAuthor } from '../lib/authors';
 import { juliane } from '../data/juliane-winterscheid';
@@ -131,15 +132,11 @@ const schema = {
   <article class="section post">
     <div class="container">
       <a class="post-back" href={blogIndex(lang)}>← {t.blog.back}</a>
-      <h1>{title}</h1>
-      <p class="post-meta">
-        {author.name}{coAuthor && <> {t.blog.with} {coAuthor.name}</>} · {t.blog.published} <time datetime={pubDate.toISOString()}>{formatDate(pubDate, lang)}</time>
-        {updatedDate && <> · {t.blog.updated} <time datetime={updatedDate.toISOString()}>{formatDate(updatedDate, lang)}</time></>}
-        {' · '}{readingMinutes(post)} {t.blog.readingTime}
-      </p>
       {seriesInfo && seriesRef && (
-        <p class="post-series-line"><a href="#series">{partLabel(seriesRef.part)} · {t.blog.series} {seriesInfo[lang]}</a></p>
+        <p class="post-kicker"><span class="post-pill">{partLabel(seriesRef.part)}</span><a href="#series">{t.blog.series} {seriesInfo[lang]}</a></p>
       )}
+      <h1>{title}</h1>
+      <PostMeta lang={lang} authors={coAuthorId ? [authorId, coAuthorId] : [authorId]} pubDate={pubDate} updatedDate={updatedDate} minutes={readingMinutes(post)} />
       <ReadingGrid t={t} headings={toc} cta={title}>
         {video && <VideoCard t={t} part="card" video={video} class="video-card-side" slot="side" />}
         <aside class="post-takeaways" aria-label={t.blog.takeaways}>

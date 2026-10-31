@@ -978,7 +978,16 @@ a.card-more:hover,
 }
 .prose blockquote p:last-child { margin-bottom: 0; }
 .prose code { font-family: var(--mono); font-size: 0.9em; background: var(--bg); padding: 0.1em 0.35em; border-radius: 4px; }
-.prose table { width: 100%; border-collapse: collapse; margin: 0 0 1.4em; font-size: var(--fs-ui); display: block; overflow-x: auto; }
+/* Wide tables scroll sideways; a shadow edge on the side with more columns shows it
+   (scroll shadows: the white covers move with the content, the shadows stay put). */
+.prose table {
+  width: 100%; border-collapse: collapse; margin: 0 0 1.4em; font-size: var(--fs-ui); display: block; overflow-x: auto;
+  background:
+    linear-gradient(to right, var(--white) 30%, rgba(255, 255, 255, 0)) left / 40px 100% no-repeat local,
+    linear-gradient(to left, var(--white) 30%, rgba(255, 255, 255, 0)) right / 40px 100% no-repeat local,
+    radial-gradient(farthest-side at 0 50%, rgba(43, 45, 49, 0.22), rgba(43, 45, 49, 0)) left / 14px 100% no-repeat scroll,
+    radial-gradient(farthest-side at 100% 50%, rgba(43, 45, 49, 0.22), rgba(43, 45, 49, 0)) right / 14px 100% no-repeat scroll;
+}
 .prose th,
 .prose td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
 .prose th { font-weight: 600; }
@@ -1023,9 +1032,21 @@ a.card-more:hover,
 .faq-item p { margin: 0 0 16px; color: var(--text-2); max-width: 70ch; }
 @media (prefers-reduced-motion: reduce) { .faq-item summary::after { transition: none; } }
 .post-related { margin-top: 2em; }
-.post-series-line { margin: -1.6em 0 2.4em; font-size: var(--fs-sm); }
-.post-series-line a { color: var(--cyan-dark); text-decoration: none; }
-.post-series-line a:hover { text-decoration: underline; }
+/* Article and chapter head (docs/layouts.md "Article head"): series or chapter as a
+   pill above the title, one meta line below it (photo, name, date, reading time). */
+.post-kicker { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; margin: 0 0 14px; font-size: var(--fs-sm); color: var(--text-2); }
+.post-kicker a { color: var(--cyan-dark); text-decoration: none; }
+.post-kicker a:hover { text-decoration: underline; }
+.post-pill { display: inline-block; padding: 3px 11px; font-size: var(--fs-xs); font-weight: 600; color: var(--cyan-dark); background: #e8f6fd; border: 1px solid #cfe9f7; border-radius: 999px; white-space: nowrap; }
+.post .post-meta-line { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 0; font-size: var(--fs-sm); }
+.post-meta-who { display: inline-flex; align-items: center; gap: 10px; font-weight: 500; color: var(--anthracite); }
+.post-meta-date::before, .post-meta-time::before { content: '·'; margin: 0 8px; color: var(--text-2); }
+.post-meta-line time { white-space: nowrap; }
+@media (max-width: 640px) {
+  .post-meta-long { display: none; }
+  .post-meta-who:has(img + img) { flex-basis: 100%; }
+  .post-meta-who:has(img + img) + .post-meta-date::before { content: none; margin: 0; }
+}
 .post-series {
   margin-top: 2em;
   padding: 20px 24px;
@@ -1498,7 +1519,15 @@ p.post-series-note { margin: 0.6em 0 0; font-size: var(--fs-ui); }
 /* Blog overview: sticky filter column (author + topic) left of a two-column grid,
    a folded "Filter" box above the grid below 960px (docs/layouts.md). */
 .blog-layout { display: grid; grid-template-columns: var(--side) 1fr; gap: 40px; align-items: start; margin-top: 2em; }
-.blog-layout .post-grid { grid-template-columns: repeat(2, 1fr); }
+/* A card is never narrower than 412px (where the space allows): below that the labels
+   of the card drawings (viewBox 320) shrink under 9px. */
+.blog-layout .post-grid { grid-template-columns: repeat(auto-fill, minmax(min(100%, 412px), 1fr)); }
+.blog-more { display: flex; flex-direction: column; align-items: center; gap: 12px; margin-top: 32px; }
+.blog-more[hidden] { display: none; }
+.blog-more-count { margin: 0; font-size: var(--fs-xs); color: var(--text-2); }
+.blog-more-button { font: inherit; font-weight: 600; cursor: pointer; }
+.blog-more-button.btn-ghost { color: var(--anthracite); border-color: var(--line); background: var(--white); }
+.blog-more-button.btn-ghost:hover { color: var(--cyan-dark); border-color: var(--cyan); }
 .blog-filter { position: sticky; top: 96px; max-height: calc(100vh - 112px); overflow-y: auto; scrollbar-width: thin; }
 .blog-filter-toggle { display: none; list-style: none; }
 .blog-filter-toggle::-webkit-details-marker { display: none; }
@@ -1544,7 +1573,6 @@ p.post-series-note { margin: 0.6em 0 0; font-size: var(--fs-ui); }
   .blog-filter-active { margin-left: auto; color: var(--cyan-dark); }
   .blog-filter-result { margin-bottom: 14px; }
 }
-@media (max-width: 640px) { .blog-layout .post-grid { grid-template-columns: 1fr; } }
 /* Search bar above the articles (blog overview); it filters together with the side column. */
 .blog-main { min-width: 0; }
 .blog-search { display: block; margin-bottom: 24px; }

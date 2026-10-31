@@ -69,7 +69,6 @@ const schema = {
         <p class="eyebrow mono">FK Solution Design</p>
         <h1>{t.blog.title}</h1>
         <p class="blog-intro">{t.blog.intro}</p>
-        <p class="blog-intro">{t.blog.intro2}</p>
       </div>
       <div class="blog-layout">
         <aside class="blog-filter" aria-label={t.blog.filterLabel}>
@@ -102,7 +101,7 @@ const schema = {
             <p class="blog-search-popular"><span>{t.blog.searchPopular}:</span>{t.blog.searchPopularTerms.map((term) => <button type="button" class="blog-search-chip" data-search-term={term}>{term}</button>)}</p>
             <p class="blog-search-status" aria-live="polite" data-search-status hidden><span><strong data-search-count></strong> {t.blog.searchHits} {lang === 'de' ? '„' : '“'}<span data-search-query></span>{lang === 'de' ? '“' : '”'}</span> <button type="button" class="blog-filter-reset" data-search-clear>× {t.blog.searchClear}</button></p>
           </search>
-        <ul class="post-grid">
+        <ul class="post-grid" data-more-text={t.blog.loadMoreCount}>
           {posts.map((post, i) => (
             <li class:list={['post-tile', { featured: i === 0 }]} data-categories={post.data.categories.join(' ')} data-authors={authorsOf(post).join(' ')} data-search={searchText(post)}>
               <a href={postHref(post)}>
@@ -114,7 +113,7 @@ const schema = {
                     <time datetime={post.data.pubDate.toISOString()}>{formatDate(post.data.pubDate, lang)}</time>
                     {' · '}{readingMinutes(post)} {t.blog.readingTime}
                   </span>
-                  <span class="post-category mono">{post.data.categories.map((c) => categories[c][lang]).join(' · ')}</span>
+                  <span class="post-category mono">{categories[post.data.categories[0]][lang]}</span>
                   <span class="post-title">{post.data.title}</span>
                   <span class="post-desc">{post.data.description}</span>
                   <span class="post-byline"><span class="post-byline-faces">{authorsOf(post).map((a) => <Image src={authorImg[a]} alt="" width={28} height={28} densities={[1, 2]} />)}</span>{authorsOf(post).map((a) => getAuthor(lang, a).name).join(' & ')}</span>
@@ -124,6 +123,10 @@ const schema = {
           ))}
         </ul>
         <p class="blog-search-none" data-search-none hidden>{t.blog.searchNone}</p>
+        <div class="blog-more" data-more hidden>
+          <p class="blog-more-count" aria-live="polite" data-more-count></p>
+          <button type="button" class="btn btn-ghost blog-more-button" data-more-button>{t.blog.loadMore}</button>
+        </div>
         </div>
       </div>
     </div>
@@ -134,6 +137,9 @@ const schema = {
   // Without JavaScript all articles stay visible. Search, author and topic filter
   // combine. The filters are kept in the URL hash (#juliane, #devops or
   // #juliane+change-management), the search in ?q=, so every view can be shared.
+  // The overview shows the first PAGE matching articles; "Load more" adds the next
+  // PAGE. Filter and search always look through all articles.
+  const PAGE = 24;
   const box = document.querySelector<HTMLElement>('.blog-filter');
   const grid = document.querySelector<HTMLElement>('.post-grid');
   if (box && grid) {
@@ -143,7 +149,10 @@ const schema = {
     const input = document.querySelector<HTMLInputElement>('[data-search-input]')!;
     const status = document.querySelector<HTMLElement>('[data-search-status]')!;
     const none = document.querySelector<HTMLElement>('[data-search-none]')!;
-    const state = { author: 'all', topic: 'all', q: '' };
+    const more = document.querySelector<HTMLElement>('[data-more]')!;
+    const moreCount = more.querySelector<HTMLElement>('[data-more-count]')!;
+    const moreText = grid.dataset.moreText ?? '';
+    const state = { author: 'all', topic: 'all', q: '', limit: PAGE };
     const has = (tile: HTMLElement, key: 'authors' | 'categories', id: string) =>
       id === 'all' || (tile.dataset[key] ?? '').split(' ').includes(id);
     // Every word must appear (in any order); one-letter words are ignored.
@@ -166,10 +175,15 @@ const schema = {
       authors.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.author === state.author)));
       topics.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.topic === state.topic)));
       const searching = words().length > 0;
+      let matches = 0;
       tiles.forEach((tile) => {
-        tile.hidden = !(has(tile, 'authors', state.author) && has(tile, 'categories', state.topic) && found(tile));
+        const match = has(tile, 'authors', state.author) && has(tile, 'categories', state.topic) && found(tile);
+        if (match) matches++;
+        tile.hidden = !match || matches > state.limit;
         tile.classList.remove('featured');
       });
+      more.hidden = matches <= state.limit;
+      moreCount.textContent = moreText.replace('{shown}', String(Math.min(matches, state.limit))).replace('{total}', String(matches));
       highlight();
       // The newest visible article gets the wide card in every filtered view; search
       // results stay in plain order.
@@ -198,10 +212,18 @@ const schema = {
       history.replaceState(null, '', `${location.pathname}${query}${active.length ? `#${active.join('+')}` : ''}`);
     }
 
-    authors.forEach((b) => b.addEventListener('click', () => { state.author = b.dataset.author ?? 'all'; apply(); }));
-    topics.forEach((b) => b.addEventListener('click', () => { state.topic = b.dataset.topic ?? 'all'; apply(); }));
-    const search = (q: string) => { state.q = q; input.value = q; apply(); };
-    input.addEventListener('input', () => { state.q = input.value; apply(); });
+    // Every new filter or search starts again with the first PAGE hits.
+    authors.forEach((b) => b.addEventListener('click', () => { state.author = b.dataset.author ?? 'all'; state.limit = PAGE; apply(); }));
+    topics.forEach((b) => b.addEventListener('click', () => { state.topic = b.dataset.topic ?? 'all'; state.limit = PAGE; apply(); }));
+    const search = (q: string) => { state.q = q; input.value = q; state.limit = PAGE; apply(); };
+    input.addEventListener('input', () => { state.q = input.value; state.limit = PAGE; apply(); });
+    more.querySelector('[data-more-button]')?.addEventListener('click', () => {
+      // Focus moves to the first new article, so keyboard users continue there.
+      const first = tiles.filter((tile) => tile.hidden && has(tile, 'authors', state.author) && has(tile, 'categories', state.topic) && found(tile))[0];
+      state.limit += PAGE;
+      apply();
+      first?.querySelector('a')?.focus({ preventScroll: true });
+    });
     document.querySelectorAll<HTMLButtonElement>('[data-search-term]').forEach((b) => b.addEventListener('click', () => search(b.dataset.searchTerm ?? '')));
     status.querySelector('[data-search-clear]')?.addEventListener('click', () => { search(''); input.focus(); });
     box.querySelector('[data-reset]')?.addEventListener('click', () => { state.author = 'all'; state.topic = 'all'; search(''); });
@@ -221,6 +243,6 @@ const schema = {
     if (window.matchMedia('(max-width: 960px)').matches) box.querySelector('details')?.removeAttribute('open');
     state.q = new URLSearchParams(location.search).get('q') ?? '';
     input.value = state.q;
-    if (state.author !== 'all' || state.topic !== 'all' || state.q) apply();
+    apply();
   }
 </script>
