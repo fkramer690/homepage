@@ -50,7 +50,6 @@ const refPhotos: { photo: PhotoKey; focus: string }[] = [
   { photo: '11-partnerabstimmung-v01', focus: '40% 12%' },
 ];
 // Icons of the services (by order).
-const serviceIcons = ['architecture', 'change', 'pipeline', 'integration', 'team', 'license', 'partners'];
 ---
 <Base lang={lang} title={t.meta.title} description={t.meta.description} alternates={{ en: enHome, de: deHome }}>
   <StructuredData slot="head" t={t} url={new URL(home, Astro.site).href} />
@@ -120,7 +119,6 @@ const serviceIcons = ['architecture', 'change', 'pipeline', 'integration', 'team
             const href = serviceLinks.get(i + 1);
             const inner = (
               <>
-                <span class="card-top"><Icon name={serviceIcons[i]} class="card-icon" /></span>
                 <h3>{s.title}</h3>
                 <p>{s.text}</p>
                 {href && <span class="card-more">{t.services.more} →</span>}
@@ -141,7 +139,6 @@ const serviceIcons = ['architecture', 'change', 'pipeline', 'integration', 'team
                 const href = serviceLinks.get(m.order);
                 const inner = (
                   <>
-                    <span class="more-index mono"><Icon name={serviceIcons[m.order - 1]} class="more-icon" /></span>
                     <span class="more-title">{t.services.items[m.order - 1].title}</span>
                     {href && <span class="more-arrow mono" aria-hidden="true">→</span>}
                     <span class="more-text">{m.text}</span>
@@ -318,7 +315,6 @@ const serviceIcons = ['architecture', 'change', 'pipeline', 'integration', 'team
     </section>
 
     <section class="contact dark grid-bg" id="contact">
-      <Blueprint />
       <div class="container contact-inner">
         <div class="contact-intro">
           <div class="contact-head">
