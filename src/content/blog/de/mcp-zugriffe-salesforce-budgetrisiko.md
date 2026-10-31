@@ -9,11 +9,11 @@ topic: ai
 categories: [ai]
 tags: [MCP, Flex Credits, Headless Platform Interactions, Claude, Budget, Maschinenbau]
 takeaways:
-  - "Salesforce wird jeden erfolgreichen MCP- oder agentischen API-Aufruf eines registrierten externen Agenten als Headless Platform Interaction in Flex Credits abrechnen; die Rate Card vom 31. August 2026 nennt den Satz TBA."
-  - "Laut Salesforce Ben läuft die Abrechnung noch nicht, Salesforce kündigt sie 30 Tage vorher an, und Sandboxes, Scratch Orgs und Developer Edition Orgs sind ausgenommen."
-  - "Der externe Agent bestimmt, wie viele Aufrufe eine Frage kostet; im Szenario vervierfachen acht statt zwei Aufrufe pro Frage die Rechnung, so stark wie ein höherer Satz."
+  - "Jeder erfolgreiche MCP-Aufruf eines registrierten externen Agenten wird als Headless Platform Interaction abgerechnet, der Satz steht noch auf TBA."
+  - "Laut Salesforce Ben läuft die Abrechnung noch nicht, Salesforce kündigt sie 30 Tage vorher an, und Sandboxes und Scratch Orgs sind ausgenommen."
+  - "Im Rechenbeispiel vervierfachen acht statt zwei Aufrufe pro Frage die Rechnung, so stark wie ein höherer Satz."
   - "Wer Claude oder ChatGPT auf Salesforce-Daten nutzt, zahlt doppelt: den KI-Anbieter für Tokens oder Lizenzen und Salesforce für die Interaktionen."
-  - "Budgetieren Sie eine Spanne mit drei angenommenen Sätzen, zählen Sie Aufrufe pro Aufgabe in der Sandbox und verhandeln Sie eine Obergrenze, bevor die Abrechnung beginnt."
+  - "Budgetieren Sie eine Spanne mit drei angenommenen Sätzen, zählen Sie Aufrufe pro Aufgabe in der Sandbox und verhandeln Sie eine Obergrenze."
 faq:
   - q: "Was ist eine Headless Platform Interaction bei Salesforce?"
     a: "Das ist der Flex-Credit-Zähler für erfolgreiche Aufrufe, die ein registrierter KI-Agent über MCP oder eine als agentisch eingestufte API an Salesforce richtet. Die Flex Credits Rate Card vom 31. August 2026 führt ihn mit dem Satz TBA."
@@ -51,7 +51,7 @@ Die Details stehen in einem Salesforce-Hilfeartikel (005360285), den ich nur üb
 
 Die [Dokumentation der Hosted MCP Servers](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/hosted-mcp-servers-overview.md) sagt schon heute, die Server seien „intended only for customers with Flex Credits and you may be billed for server usage“. Als Salesforce sie am [29. April 2026 allgemein verfügbar gemacht](https://developer.salesforce.com/blogs/2026/04/salesforce-hosted-mcp-servers-are-now-generally-available) hat, für Enterprise Edition und höher, stand in der Ankündigung nichts zu Preisen. Wenn Sie Claude im Frühjahr angebunden und unter „kostenlos“ verbucht haben, hat diese Annahme jetzt ein Ablaufdatum, und das kennt noch niemand.
 
-## Warum werden MCP-Zugriffe auf Salesforce zum Budgetposten?
+## Der externe Agent bestimmt die Zahl der Aufrufe
 
 Bei einem Agentforce-Agenten legen Sie die Aktionen selbst fest und wissen, dass eine Auftragsstatus-Anfrage etwa zwei Aktionen zu je 20 Credits kostet. Bei einem externen Agenten bestimmen Sie die Zahl der Aufrufe nicht. Salesforce Ben formuliert es deutlich: Der Preis pro Interaktion ist fest, die Zahl der Interaktionen hängt aber vom Verhalten und der Umsetzung des fremden Agenten ab. Claude beantwortet „Welche Aufträge dieses Händlers sind verspätet?“ vielleicht mit einer Abfrage, vielleicht mit einer Suche, fünf Datensatz-Lesezugriffen und zwei Nachfragen, weil die erste Antwort unvollständig war.
 
@@ -67,7 +67,7 @@ Daneben gibt es eine zweite Grenze, die mit Flex Credits nichts zu tun hat. Agen
 Ob Hosted-MCP-Aufrufe gegen das tägliche API-Kontingent zählen, steht in der Dokumentation, die ich gelesen habe, nicht. Ich würde das klären, bevor es Ihnen ein voller Monatsabschluss zeigt.
 ```
 
-## Ein typisches Szenario: Key Account Manager mit Claude
+## Rechenbeispiel: Key Account Manager mit Claude
 
 Nehmen wir einen Maschinenbauer mit 60 Key Account und Händlermanagern, die Claude mit Salesforce nutzen. Jede und jeder stellt an 220 Arbeitstagen 15 Fragen am Tag: offene Aufträge eines Händlers, letzte Serviceeinsätze an einer installierten Maschine, Garantiefälle des Quartals. Das sind 198.000 Fragen im Jahr. Alle Zahlen sind Annahmen, und die drei Sätze unten sind hypothetisch, weil Salesforce keinen veröffentlicht hat.
 
@@ -89,7 +89,7 @@ Die Claude-Lizenzen für die 60 Nutzer kommen dazu. Wie die Alternative im eigen
 2. **Aufrufe pro Aufgabe in der Sandbox zählen.** Sandboxes werden nicht gemessen, das kostet also nichts. Nehmen Sie die zehn häufigsten Fragen je Nutzergruppe und protokollieren Sie, wie viele Aufrufe jede braucht.
 3. **Gezielte Server pro Rolle bauen.** Salesforces eigene [Hinweise zu Custom Servers](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/custom-servers.html) sagen, dass ein KI-Client ab einigen Dutzend Tools Mühe hat, das richtige zu wählen, und empfehlen Server, die auf eine Rolle zugeschnitten sind. Ein Flow oder eine Invocable Apex Action, die eine vollständige Händlerübersicht liefert, spart bei jeder Frage Aufrufe. Wer über diese Server was lesen darf, behandle ich in [Hosted MCP Server und Datenzugriff](../salesforce-hosted-mcp-server-datenzugriff/).
 4. **Registrierte Agenten vorbereiten.** Salesforce Ben berichtet von einem neuen Agentic-Identity-Modell, in dem Agenten eigene Zugangsdaten und Berechtigungen bekommen. Heute laufen Hosted-MCP-Aufrufe im Kontext des angemeldeten Nutzers. Ich rechne damit, dass sich Verbindungen ändern, sobald Agenten registriert sind; fragen Sie Ihren Implementierungspartner, was das für Ihr Setup heißt.
-5. **Eine Spanne budgetieren.** Nehmen Sie die drei angenommenen Sätze aus dem Szenario, den mittleren als Plan, den oberen als Risikoreserve.
+5. **Eine Spanne budgetieren.** Nehmen Sie die drei angenommenen Sätze aus dem Rechenbeispiel, den mittleren als Plan, den oberen als Risikoreserve.
 6. **Vor der Ankündigung verhandeln.** Fragen Sie Ihren Account Executive nach dem Satz, einer Obergrenze oder einem festen Kontingent und ob das Max-Kontingent für Sie gilt. 30 Tage sind für einen Budgetzyklus zu kurz. Salesforce schreibt zu AIforce, [„Pricing and packaging are subject to change“](https://www.salesforce.com/news/stories/aiforce-announcement/), und das gilt in beide Richtungen.
 7. **Warnschwellen setzen.** Das Digital Wallet bietet Schwellenwert-Alarme und Aufschlüsselungen. In den Einrichtungsschritten von Salesforce gehört dazu aber, [Data 360 einzuschalten](https://www.salesforce.com/agentforce/digital-wallet/). Läuft Ihre Org ohne Data 360, fragen Sie Salesforce jetzt, wie Sie den Verbrauch überhaupt sehen.
 
@@ -98,5 +98,3 @@ Die Claude-Lizenzen für die 60 Nutzer kommen dazu. Wie die Alternative im eigen
 Nicht jede Frage gehört auf diesen Weg. Stehen Auftragsstatus, Bestand und Kreditlimits nur in SAP oder proALPHA, fügt ein Agent, der das ERP über Salesforce erreicht, einen bezahlten Zwischenschritt hinzu, ohne Information zu gewinnen. Spiegelt Salesforce die ERP-Daten nur, entscheiden Sie, wo der Agent liest, bevor der Zähler startet. Das ist eine Architekturfrage für [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/), und die kaufmännische Seite, Claude-Lizenzen gegen Agentforce gegen gar nichts, gehört in [Make-or-buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/).
 
 Massenarbeit würde ich von externen Agenten fernhalten. Eine Claude-Sitzung, die 5.000 Datensätze der installierten Basis auf fehlenden Garantiebeginn prüft, erzeugt Tausende Interaktionen; ein Bericht oder ein Batch-Job erledigt dasselbe kostenlos. MCP passt zum Dialog, nicht zur Datenbereinigung. Die Grundlagen von MCP und die Entscheidungen der IT-Leitung stehen in [MCP für die IT-Leitung](../mcp-salesforce-erklaert-it-leitung/), was AIforce zusätzlich bringt, in [AIforce: Salesforce in Claude und Slack](../aiforce-salesforce-in-claude-und-slack/).
-
-Externe Agenten auf Salesforce-Daten werden pro Aufruf Geld kosten, also messen Sie die Aufrufe und verhandeln Sie den Preis, solange der Zähler noch steht.

@@ -10,11 +10,11 @@ categories: [field-service]
 contactBrief: licences
 tags: [field service, licences, dispatcher, technician, contractor plus, manufacturing]
 takeaways:
-  - "Dispatcher and Technician cost $175 per user and month each, Field Service Plus $230 and Contractor Plus $80 per user or $32 per login (price list, October 2026, Enterprise Edition, annual contract)."
+  - "Dispatcher and Technician cost $175 per user and month each, Field Service Plus $230, Contractor Plus $80 or $32 per login (Enterprise Edition, 10/2026)."
   - "Dispatcher and Technician licences may not be used for contact centre or case management. A hotline agent who also dispatches needs Field Service Plus."
-  - "Every Field Service org needs at least one Service Cloud user licence, and technicians and contractors need at least one Dispatcher licence for scheduling to work."
+  - "Every Field Service org needs at least one Service Cloud licence, and scheduling needs at least one Dispatcher licence."
   - "For partner technicians, per user beats per login above 2.5 logins a month, so per login suits partners who only help out at peaks."
-  - "A licence matrix by role, built from what people actually do in the system, belongs in the business case before the first quote."
+  - "A licence matrix by role, built from what people do in the system, belongs in the business case before the first quote."
 faq:
   - q: "Which licence does a Field Service dispatcher need?"
     a: "A dispatcher who only plans and dispatches jobs needs the Dispatcher licence at $175 per user and month. If the same person also works cases in the contact centre, the price list requires Field Service Plus at $230."
@@ -43,7 +43,7 @@ Salesforce sells the product today as Field Service and Operations. The [Field S
 
 On Unlimited Edition, Dispatcher and Technician cost $330 and the Plus bundle $380 according to the footnote. Whether the $650 bundle pays off is a separate calculation, covered in [Agentforce 1 Field Service: when does the bundle pay off?](../agentforce-1-field-service-edition-worth-it/).
 
-## Which rules in the small print change the bill?
+## The small print changes the bill
 
 Three footnotes on the price list matter more than the prices themselves.
 
@@ -82,9 +82,9 @@ The pricing page says contractor licences are also available on a monthly logins
 
 Salesforce's [architecture guide on contractor sharing](https://architect.salesforce.com/docs/architect/fundamentals/guide/field-service-contractor-sharing-patterns.html) describes a contractor company as a third-party entity that manages its own workforce. That is who these licences are for: your service partners, not your own staff on a cheaper ticket. How partner technicians get their own resource and territory is covered in [Field Service: how to bring in service partners](../salesforce-field-service-service-partners/).
 
-## A typical scenario: what does the licence bill look like?
+## Worked example: hotline, dispatch, own technicians and two partners
 
-A typical scenario, as an assumption: a machine builder runs a hotline with 6 agents, 4 dispatchers, 45 own technicians and two service partners. Partner A sends 5 technicians who work for the machine builder about ten days a month. Partner B has 3 technicians who only help out at peaks, about two days a month each.
+The figures are assumed. A machine builder runs a hotline with 6 agents, 4 dispatchers, 45 own technicians and two service partners. Partner A sends 5 technicians who work for the machine builder about ten days a month. Partner B has 3 technicians who only help out at peaks, about two days a month each.
 
 | Role | Count | Licence | Per month |
 |---|---|---|---|
@@ -99,7 +99,7 @@ That is $124,044 per year at list price. If Partner B were on user licences, it 
 
 The point of the exercise is less the total than the decisions it forces. Who answers calls, who dispatches, and who does both? Once that is written down, the licence matrix follows almost by itself.
 
-## What should be clear before the quote?
+## Before the quote, settle roles, partners, edition and add-ons
 
 - **Who does case management.** Every person who works cases and also plans technicians needs Field Service Plus. That is a process question first.
 - **How partners work.** Regular partner technicians on user licences, occasional ones per login. Agree on the counting rule.
@@ -109,8 +109,6 @@ The point of the exercise is less the total than the decisions it forces. Who an
 
 How all this fits into the overall business case for Field Service is covered in [part 1 of the series](../salesforce-field-service-worth-it/) and in [chapter 1 of the Field Service masterclass](../../masterclass/field-service/field-service-business-case-licences/). If the service organisation also runs warranty claims, check the [Manufacturing Cloud chapter on warranty and after-sales](../../masterclass/manufacturing-cloud/warranty-and-after-sales/) before you buy licences for the same people twice.
 
-## Where should you start?
+## First step: list every person and what they do in the system
 
 List every person in the service organisation with what they do in the system each week, then assign the licence by the rules above. I do this as part of [make-or-buy and licence forecasts](../../services/make-or-buy-licences/), before the negotiation starts.
-
-The licence follows the role, and the role follows the process, so settle who works cases and who dispatches first.

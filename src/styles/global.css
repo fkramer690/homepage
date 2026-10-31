@@ -1392,9 +1392,6 @@ p.post-series-note { margin: 0.6em 0 0; font-size: var(--fs-ui); }
 .service-list { margin: 0; padding-left: 1.2em; }
 .service-list li { margin-bottom: 0.5em; }
 .service-list li::marker { color: var(--cyan-dark); }
-.service-list.check { list-style: none; padding-left: 0; }
-.service-list.check li { position: relative; padding-left: 1.6em; }
-.service-list.check li::before { content: ''; position: absolute; left: 0.1em; top: 0.45em; width: 0.7em; height: 0.38em; border-left: 2px solid var(--cyan-dark); border-bottom: 2px solid var(--cyan-dark); transform: rotate(-45deg); }
 .service-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 0 36px; }
 .service-block.results { background: var(--tint-2); border-radius: var(--radius); padding: 4px 24px 12px; }
 .service-block.results h2 { margin-top: 0.8em; }

@@ -10,11 +10,10 @@ categories: [architecture, ai]
 contactBrief: partner-governance
 tags: [Partnersteuerung, KI-Coding, Leistungsbeschreibung, Datenschutz, Code-Review, Maschinenbau]
 takeaways:
-  - "Programmiert ein Salesforce-Partner mit KI-Agenten, sollte die Leistungsbeschreibung offengelegte Tools und Modellwege, erlaubte Daten, keinen Produktionszugriff, Review jeder Zeile, Rechte und Haftung regeln."
-  - "Anthropic trainiert nicht mit Code, der unter kommerziellen Bedingungen an Claude Code geht; bei Free, Pro und Max hängt das Training an einer Nutzereinstellung. Private Konten gehören nicht ins Kundenprojekt."
-  - "Vollständig von KI erzeugter Code ist nach deutschem Recht laut CMS gemeinfrei; eine Klausel, die alle Rechte auf den Kunden überträgt, kann also weniger übertragen, als sie verspricht."
+  - "Bei Claude Code unter kommerziellen Bedingungen trainiert Anthropic nicht mit Ihrem Code, bei Free, Pro und Max entscheidet eine Nutzereinstellung."
+  - "Vollständig von KI erzeugter Code ist laut CMS nach deutschem Recht gemeinfrei, eine Klausel zur Rechteübertragung überträgt dann weniger, als sie verspricht."
   - "Die Urheberrechts-Freistellung eines Modellanbieters schützt dessen eigenen Kunden, also den Partner, nicht den Hersteller, der den Code bekommt."
-  - "Veracode misst 2026 für ungeprüften KI-Code eine Sicherheits-Passrate von 56 Prozent, für Java 30 Prozent; deshalb gehören Review und Pipeline-Prüfungen in den Vertrag."
+  - "Veracode misst für ungeprüften KI-Code 56 Prozent Sicherheits-Passrate, für Java 30 Prozent, deshalb gehören Review und Pipeline-Prüfung in den Vertrag."
 faq:
   - q: "Kann ich meinem Salesforce-Partner KI-Coding-Tools verbieten?"
     a: "Können Sie, ich würde es aber nicht tun. Ein Verbot lässt sich kaum prüfen und kostet Tempo. Lassen Sie den Partner Tools und Modellwege offenlegen, begrenzen Sie, welche Daten das Modell sieht, und verlangen Sie dasselbe Review für jede Zeile."
@@ -63,7 +62,7 @@ Diese neun Punkte nutze ich als Prüfliste für Leistungsbeschreibungen und Rahm
 8. **Die Haftung bleibt, wo sie war.** Der Partner steht für seine Lieferungen ein, egal welches Werkzeug sie erzeugt hat. Gewährleistung, Abnahmekriterien und Mängelbehandlung gelten wie bisher, ohne Ausnahme für „von KI erzeugt“. CMS warnt, dass Freistellungen der Anbieter oft weitreichende Ausschlüsse haben; sie ersetzen die des Partners also nicht.
 9. **Nachweise und Ausstieg.** Sie dürfen Tool-Liste, Kontenliste und relevante Einstellungen zu Beginn und einmal im Jahr anfordern. Zum Ende des Auftrags bestätigt der Partner, dass lokale Protokolle und Caches mit Ihrem Code gelöscht sind.
 
-## Ein typisches Szenario: zwei Partner, ein Fragebogen
+## Beispiel: zwei Partner, ein Fragebogen
 
 Nehmen wir einen Maschinenbauer mit Sales Cloud, Service Cloud und Field Service für den Außendienst auf einer Org, SAP als ERP und zwei Partnern. Partner A baut mit sechs Entwicklern das Händlerportal und die Serviceprozesse, Partner B mit drei Entwicklern die SAP-Schnittstelle. Alle Details sind Annahmen, die das Vorgehen zeigen sollen.
 
@@ -82,7 +81,7 @@ Agenten machen Änderungen billig, auch Änderungen an Objekten, die ein anderer
 
 Die Anlage sollte für alle Partner identisch sein. Bringt jeder Partner eigene KI-Regeln mit, wird stillschweigend die strengste oder die lauteste zu Ihrem Standard, und Partner lassen sich schwerer vergleichen. Damit die Regeln nach einigen Monaten nicht verwässern, braucht es mehr als den Vertrag: Pipeline, Review und einen festen Termin für neue Fälle, beschrieben in [Reinforcement: Standards bei Partnern verankern](../standards-partner-verankern-reinforcement/). Diese Regeln auf Kundenseite festzulegen, gehört zu meiner Arbeit in der [Partnersteuerung](../../leistungen/partnersteuerung/).
 
-## Wo sollten Sie anfangen?
+## Einen Fragebogen an jeden Partner schicken
 
 ```schritte
 Fragebogen verschicken
@@ -96,5 +95,3 @@ Technisch durchsetzen
 Einmal im Jahr prüfen
   Tools, Tarife und Nutzungsbedingungen ändern sich schneller als Verträge.
 ```
-
-KI-Coding durch Partner ist in Ordnung, wenn der Vertrag regelt, welche Tools, welche Daten und welches Review gelten, und Sie das prüfen können.

@@ -11,8 +11,8 @@ coAuthor: juliane
 contactBrief: change
 tags: [Change Management, ADKAR, Prosci, Salesforce-Einführung]
 takeaways:
-  - "Eine Salesforce-Einführung scheitert selten an der Technik. Sie scheitert, wenn Menschen nach dem Go-live weiter so arbeiten wie vorher, mit Excel, E-Mail und eigenen Listen."
-  - "Das ADKAR-Modell von Prosci zeigt, an welcher von fünf Stufen es hängt: Bewusstsein, Bereitschaft, Wissen, Fähigkeit oder Verankerung. Eine weitere Schulung hilft nur bei zwei davon."
+  - "Eine Einführung scheitert, wenn Menschen nach dem Go-live weiter mit Excel, E-Mail und eigenen Listen arbeiten."
+  - "ADKAR zeigt, an welcher von fünf Stufen es hängt. Eine weitere Schulung hilft nur bei zwei davon, Wissen und Fähigkeit."
   - "In der Prosci-Studie erreichten Projekte mit sehr gutem Change Management ihre Ziele in 88 Prozent der Fälle, mit schlechtem in 13 Prozent."
   - "Change Management betrifft nicht nur Fachbereiche, sondern auch Entwicklerteams und Partner, die nach neuen Standards bauen sollen."
 faq:
@@ -66,7 +66,7 @@ Der Sponsor verdient einen eigenen Satz, weil er in Salesforce-Programmen am hä
 
 Prosci und ADKAR sind eingetragene Marken von Prosci, Inc. Das Vorgehen habe ich gemeinsam mit [Juliane Winterscheid](../../partner/juliane-winterscheid/) auf Salesforce-Programme übertragen, meiner Kooperationspartnerin für Change Management.
 
-## Welche Themen gehören zu Change Management in Salesforce-Programmen?
+## Diese Themen gehören zu Change Management in Salesforce-Programmen
 
 Change Management ist kein einzelner Arbeitsschritt. In Salesforce-Programmen von Herstellern kommen immer wieder dieselben Themen vor. Jedes hat einen eigenen Artikel:
 
@@ -83,7 +83,7 @@ Change Management ist kein einzelner Arbeitsschritt. In Salesforce-Programmen vo
 
 Die allgemeinen Werkzeuge dahinter erklärt Juliane Winterscheid in eigenen Grundlagenartikeln: die [Stakeholder-Analyse](../stakeholder-analyse/) mit Vorlage, den [Kommunikationsplan](../kommunikationsplan-change-management/) und die [Change-Kurve](../change-kurve/).
 
-## Wie läuft Change Management neben der Umsetzung?
+## Change Management läuft in drei Phasen neben der Umsetzung
 
 Prosci gliedert die Arbeit auf Ebene der Organisation in drei Phasen, den [Prosci 3-Phase Process](https://www.prosci.com/methodology/3-phase-process). In einem Salesforce-Programm laufen sie neben dem Release-Plan:
 
@@ -98,10 +98,8 @@ Ergebnisse sichern | nach dem Go-live · interne Verantwortliche
 
 Entscheidend ist der Zeitpunkt. Change Management, das zwei Wochen vor dem Go-live beginnt, kann nur noch informieren. Die Frage, welche Gruppen betroffen sind und was sich für sie ändert, gehört in die Planung, bevor gebaut wird. Bei einem [globalen Template](../salesforce-globales-template-laenderabweichungen/) ist sie sogar Teil der Architektur, weil jede Abweichung pro Land auch eine Frage der Gewohnheit ist.
 
-## Wo fangen Sie an?
+## Gruppen, Änderungen und Sponsor des nächsten Releases aufschreiben
 
 Beantworten Sie für Ihr nächstes Release drei Fragen schriftlich: Welche Gruppen sind betroffen? Was ändert sich für jede im Alltag? Wer im Management steht sichtbar dahinter? Fehlt die dritte Antwort, ist das der erste Schritt. Danach legen Sie fest, woran Sie Erfolg messen, zum Beispiel an Nutzungszahlen in Salesforce statt an der Zahl der Schulungen.
 
-Wer die fünf Stufen der Reihe nach durchgehen möchte, findet sie in der [Masterclass Change Management](../../masterclass/change-management/), ein Kapitel pro Stufe mit den passenden Artikeln.
-
-Salesforce ist erst eingeführt, wenn die Menschen damit arbeiten. Mehr dazu lesen Sie unter [Change Management Beratung für Salesforce](../../leistungen/change-management/).
+Wer die fünf Stufen der Reihe nach durchgehen möchte, findet sie in der [Masterclass Change Management](../../masterclass/change-management/), ein Kapitel pro Stufe mit den passenden Artikeln. Wie Juliane Winterscheid und ich das in Programmen begleiten, steht unter [Change Management Beratung für Salesforce](../../leistungen/change-management/).

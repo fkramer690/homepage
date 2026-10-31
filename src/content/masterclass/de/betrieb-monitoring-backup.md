@@ -10,10 +10,9 @@ pubDate: 2026-10-28
 short: "Betrieb und Monitoring"
 summary: "Was nach dem Go-live dazugehört: tägliches Org-Monitoring, getestete Backups, sichtbare technische Schulden, DORA-Kennzahlen und ein Hotfix-Weg."
 takeaways:
-  - "Ein Metadaten-Backup in Git und ein Daten-Backup sind zwei verschiedene Dinge; Git sichert keine Datensätze, und ein Daten-Backup ersetzt nicht die Historie Ihrer Konfiguration."
-  - "Ein tägliches Org-Monitoring zeigt Änderungen, die direkt in Produktion gemacht wurden, mit Vorher und Nachher; der Setup Audit Trail nennt nur, wer was geändert hat."
+  - "Ein Metadaten-Backup in Git und ein Daten-Backup sind zwei Dinge. Git sichert keine Datensätze, und ein Daten-Backup kennt keine Konfigurationshistorie."
+  - "Ein tägliches Org-Monitoring zeigt Änderungen direkt in Produktion mit Vorher und Nachher. Der Setup Audit Trail nennt nur, wer was geändert hat."
   - "Ein Backup ist erst dann etwas wert, wenn Sie den Restore geübt haben, inklusive neuer Datensatz-IDs, Sharing und Schnittstellen zu SAP."
-  - "DORA misst seit 2024 fünf Kennzahlen; sie zeigen, wo Änderungen in Ihrer Pipeline warten, und taugen nicht für eine Rangliste der Partner."
   - "Ein Hotfix läuft über einen Branch und die Pipeline und wird danach in die laufende Entwicklung zurückgeführt, auch wenn es um ein einzelnes Feld geht."
 articles: [sfdx-hardis-introduction, ai-org-assessment-technical-debt, devops-salesforce-enterprise]
 faq:
@@ -138,12 +137,10 @@ Nachbereiten
 
 sfdx-hardis beschreibt das als zwei Ströme: RUN für schnelle Korrekturen, BUILD für die nächste Version. Ein [Hotfix](https://sfdx-hardis.cloudity.com/salesforce-devops-hotfixes/) geht über einen Branch nach Preprod und Produktion, danach folgt der Retrofit in die BUILD-Branches. Die Doku formuliert es deutlich: Eine Korrektur von Hand im Setup ist nie vorgesehen, auch nicht um zwei Uhr nachts, weil das nächste Deployment sie überschreibt. Den Hotfix-Weg in der Branch-Strategie beschreibt [Kapitel 3](../umgebungen-und-branching/), die Validierung in der Pipeline [Kapitel 5](../pipeline-aufbauen/).
 
-Ein typisches Szenario, als Annahme: Ein Maschinenbauer betreibt Field Service und ein Händlerportal. Am Montagmorgen meldet das Monitoring Flow-Fehler beim Anlegen von Arbeitsaufträgen. Der Audit Trail zeigt eine Änderung am Freitag im Setup, das Metadaten-Backup zeigt die geänderte Entscheidung im Flow. Gleichzeitig fällt auf, dass ein Datenimport am Wochenende das Garantieende auf tausenden Anlagen überschrieben hat. Der Flow wird per Hotfix korrigiert und zurückgeführt. Das Garantieende kommt per Restore genau dieses Feldes aus dem Backup vom Freitag zurück, ohne die neuen Arbeitsaufträge vom Montag anzufassen.
+Angenommen, ein Maschinenbauer betreibt Field Service und ein Händlerportal. Am Montagmorgen meldet das Monitoring Flow-Fehler beim Anlegen von Arbeitsaufträgen. Der Audit Trail zeigt eine Änderung am Freitag im Setup, das Metadaten-Backup zeigt die geänderte Entscheidung im Flow. Gleichzeitig fällt auf, dass ein Datenimport am Wochenende das Garantieende auf tausenden Anlagen überschrieben hat. Der Flow wird per Hotfix korrigiert und zurückgeführt. Das Garantieende kommt per Restore genau dieses Feldes aus dem Backup vom Freitag zurück, ohne die neuen Arbeitsaufträge vom Montag anzufassen.
 
 ## Wem gehört der Betrieb?
 
 Monitoring-Repository, Backup-Lösung, Benachrichtigungskanäle und Kennzahlen gehören dem Kunden, aus denselben Gründen wie Repository und Pipeline: Sie sollen einen Partnerwechsel überleben. Warum ich das so sehe, steht in [warum Kunden ihre DevOps-Tools selbst besitzen sollten](../../../blog/warum-kunden-devops-tools-selbst-besitzen-sollten/). Die Partner bekommen Zugriff auf die Kanäle und die Pflicht, auf Meldungen zu ihren Komponenten in einer vereinbarten Zeit zu reagieren. Das gehört in den Vertrag, siehe [Partnersteuerung](../../../leistungen/partnersteuerung/).
 
 Wie Monitoring und Backup in den gesamten Prozess passen, zeigen [warum DevOps über Salesforce-Großprojekte entscheidet](../../../blog/warum-devops-salesforce-enterprise-projekte/) und die [Einführung in sfdx-hardis](../../../blog/sfdx-hardis-einfuehrung-salesforce-devops/). In welcher Reihenfolge Sie all das einführen, beschreibt das letzte Kapitel, [Einführung und Fahrplan](../einfuehrung-fahrplan/). Mein Rat für den Start: Monitoring und Daten-Backup zuerst, denn beides können Sie einschalten, bevor die Pipeline fertig ist. Wie ich Sie dabei unterstütze, steht unter [DevOps und Release-Management](../../../leistungen/devops-und-release-management/).
-
-Ein stabiler Betrieb heißt, dass Sie jede Änderung sehen, jeden Datensatz zurückholen und jeden Hotfix nachvollziehen können.

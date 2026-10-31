@@ -8,11 +8,11 @@ chapter: 8
 short: "Best Practices für KI-Code"
 summary: "Wie Sie KI-generierten Salesforce-Code mit Regeldatei, Pipeline-Prüfungen und klaren Org-Grenzen beherrschbar machen."
 takeaways:
-  - "Eine Regeldatei im Repository ist ein Wunsch an das Modell; verbindlich sind nur Deny-Regeln, Hooks und Prüfungen in der Pipeline, die ohne Zutun des Modells laufen."
-  - "Veracode misst 2026 für KI-Code ohne Review eine Sicherheits-Passrate von 56 Prozent, bei Java nur 30 Prozent; für Apex gibt es keine eigenen Daten, Java ist der nächste Verwandte."
-  - "Ab API 67.0 laufen Apex-Klassen standardmäßig im User Mode und mit Sharing; das Risiko liegt im Anheben der API-Version, das Coding-Agenten gern nebenbei erledigen."
-  - "75 Prozent Testabdeckung sind die Mindestgrenze für ein Deployment; Bulk-Tests, Tests mit eingeschränkten Benutzern und echte Asserts gehören in die Definition of Done."
-  - "Coding-Agenten arbeiten nur gegen Scratch Orgs und Entwickler-Sandboxes; in Produktion gelangt Code ausschließlich über die Pipeline mit menschlicher Freigabe."
+  - "Eine Regeldatei im Repository ist ein Wunsch an das Modell. Verbindlich sind Deny-Regeln, Hooks und Pipeline-Prüfungen, die ohne das Modell laufen."
+  - "Veracode misst 2026 für KI-Code ohne Review eine Sicherheits-Passrate von 56 Prozent, bei Java 30 Prozent. Für Apex gibt es keine eigenen Daten."
+  - "Ab API 67.0 laufen Apex-Klassen im User Mode und mit Sharing. Das Risiko liegt im Anheben der API-Version, das Agenten gern nebenbei erledigen."
+  - "75 Prozent Testabdeckung sind nur die Mindestgrenze. Bulk-Tests, Tests mit eingeschränkten Benutzern und Asserts gehören in die Definition of Done."
+  - "Coding-Agenten arbeiten nur gegen Scratch Orgs und Entwickler-Sandboxes. In Produktion kommt Code nur über die Pipeline mit menschlicher Freigabe."
 articles: [reviewing-ai-generated-salesforce-code, api-67-user-mode-apex, quality-gates-ai-code-pipeline, ai-rules-file-salesforce-repo, vibe-coding-prototype-not-production]
 faq:
   - q: "Muss ich als Auftraggeber KI-generierten Code selbst lesen können?"
@@ -33,7 +33,7 @@ Die Studien messen sehr unterschiedliche Dinge, und keine davon misst Apex. Für
 | Studie | Setting | Ergebnis |
 |---|---|---|
 | [Veracode, Juli 2026](https://www.veracode.com/news/llms-are-getting-smarter-but-not-safer-veracode-2026-genai-code-security-report-finds-ai-generated-code-security-has-stalled-at-56%25-pass-rate/) | Rohmodelle ohne Werkzeuge und ohne Review, 11 Modelle im aktuellen Vergleich | 56 % Sicherheits-Passrate, „virtually unchanged“; Python 63 %, Java 30 % auf dem letzten Platz |
-| [METR, Juli 2025](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/) | 16 erfahrene Entwickler, echte Aufgaben in eigenen großen Repositories | 19 % langsamer mit KI, gefühlt 20 % schneller |
+| [METR, Juli 2025](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/) | 16 erfahrene Entwickler, reale Aufgaben in eigenen großen Repositories | 19 % langsamer mit KI, gefühlt 20 % schneller |
 | [METR, Februar 2026](https://metr.org/blog/2026-02-24-uplift-update/) | Folgestudie | Beschleunigung heute „likely“, die Daten seien aber „only very weak evidence“ für ihre Größe |
 | [DORA, September 2025](https://cloud.google.com/blog/products/ai-machine-learning/announcing-the-2025-dora-report) | knapp 5.000 Befragte | KI steigert den Durchsatz, schadet weiter der Stabilität; „it amplifies what's already there“ |
 
@@ -49,7 +49,7 @@ Salesforce dokumentiert die Schwachstellen selbst. Die [Prüfliste für Agentfor
 | Bulk-Verarbeitung | Trigger verarbeitet einen Datensatz statt einer Liste | Bulk-Test; der [Apex-Testleitfaden](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/api/apex_testing_best_practices.htm) verlangt mindestens 20 Datensätze |
 | Rechte | keine Sharing-Deklaration, kein `WITH USER_MODE` | Code Analyzer, Test mit `runAs` |
 | Tests | Abdeckung ohne Aussage, Testdaten aus der Org | Review, Assert-Regel |
-| Feldnamen | erfundene API-Namen statt der echten aus der Org | Validierungs-Deployment |
+| Feldnamen | erfundene API-Namen, die es in der Org nicht gibt | Validierungs-Deployment |
 | Metadaten | neues Feld fehlt im Permission Set | Validierungs-Deployment, Review |
 | Konfiguration | Agent ändert Sharing, Profile, Layouts | Regel: das macht ein Mensch im Setup |
 
@@ -124,11 +124,11 @@ Vor dem Gate entscheidet die Arbeitsweise, wie viel durchfällt. Drei Gewohnheit
 
 ## Warum bekommt kein Agent Zugriff auf Produktion?
 
-Simon Willison beschreibt die [„lethal trifecta“](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/): Zugriff auf private Daten, Kontakt mit nicht vertrauenswürdigen Inhalten und ein Weg nach außen. Ein Coding-Agent mit sf-CLI-Anmeldung an einer Org mit echten Händler- und Kundendaten, der Tickets und Webseiten liest und Netzwerkzugriff hat, erfüllt alle drei. Anthropic nennt im [Leitfaden zum sicheren Betrieb](https://code.claude.com/docs/en/agent-sdk/secure-deployment) selbst das Beispiel einer README mit ungewöhnlichen Anweisungen, die der Agent übernehmen könnte.
+Simon Willison beschreibt die [„lethal trifecta“](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/): Zugriff auf private Daten, Kontakt mit nicht vertrauenswürdigen Inhalten und ein Weg nach außen. Ein Coding-Agent mit sf-CLI-Anmeldung an einer Org mit produktiven Händler- und Kundendaten, der Tickets und Webseiten liest und Netzwerkzugriff hat, erfüllt alle drei. Anthropic nennt im [Leitfaden zum sicheren Betrieb](https://code.claude.com/docs/en/agent-sdk/secure-deployment) selbst das Beispiel einer README mit ungewöhnlichen Anweisungen, die der Agent übernehmen könnte.
 
 Meine Mindestregeln für jedes Projekt:
 
-1. Agenten arbeiten nur gegen Scratch Orgs und Entwickler-Sandboxes ohne echte Kundendaten.
+1. Agenten arbeiten nur gegen Scratch Orgs und Entwickler-Sandboxes ohne Kundendaten aus Produktion.
 2. Agentforce Vibes ist in Produktions-Orgs im Setup unter „Agentforce Vibes Extensions“ [deaktiviert](https://developer.salesforce.com/blogs/2025/12/five-pro-tips-for-using-agentforce-vibes).
 3. Berechtigungen starten bei „Ask every time“ und werden schrittweise geöffnet, wie es die Vibes-Dokumentation empfiehlt.
 4. Deny-Regeln sperren Anmeldedaten und Produktions-Aliase; Zugangsdaten liegen außerhalb der Agentenumgebung, Anthropic beschreibt dafür einen Proxy.
@@ -136,7 +136,7 @@ Meine Mindestregeln für jedes Projekt:
 
 Diese Regeln gehören in den Vertrag mit dem Partner, nicht nur in seine Arbeitsanweisung. Das ist Teil meiner Arbeit in [DevOps und Release-Management](../../../leistungen/devops-und-release-management/).
 
-## Ein typisches Szenario: Ersatzteilverfügbarkeit im Händlerportal
+## Durchgespielt: Ersatzteilverfügbarkeit im Händlerportal
 
 Nehmen wir einen Maschinenbauer mit Experience-Cloud-Händlerportal, Service Cloud und SAP S/4. Alle Zahlen sind Annahmen. Der Partner soll mit vier Entwicklern und Claude Code eine Komponente bauen, in der Händler die Verfügbarkeit von Ersatzteilen für ihre Maschinen sehen.
 
@@ -156,5 +156,3 @@ Review
 ```
 
 Kein Schritt davon ist neu. Neu ist, dass ohne diese Schritte in derselben Zeit deutlich mehr ungeprüfter Code entsteht. Die Kosten der KI-Werkzeuge selbst behandelt [Kapitel 7](../kosten-und-token/), alle Kapitel finden Sie auf der [Übersichtsseite](../).
-
-KI-Code wird auf Salesforce so gut wie die Regeln, Gates und Org-Grenzen, die Sie als Auftraggeber festlegen.

@@ -9,11 +9,11 @@ topic: security
 categories: [ai]
 tags: [EU AI Act, KI-Verordnung, Agentforce, Compliance, KI-Agenten, Maschinenbau]
 takeaways:
-  - "Seit dem 2. August 2026 verlangt Art. 50 des EU AI Act, dass Menschen im Chat mit einem Agentforce-Agenten beim ersten Kontakt erfahren, dass es eine KI ist; nach meiner Lesart auch Händlermitarbeitende im B2B-Portal."
-  - "Die Verordnung (EU) 2026/1744 verschiebt Hochrisiko-Pflichten auf den 2. Dezember 2027 für Anhang III, etwa Personalauswahl und Personalsteuerung, und auf den 2. August 2028 für KI in Produkten nach Anhang I."
-  - "Ein Agent, der Bewerbungen bewertet oder Arbeit nach individueller Leistung verteilt, kann Hochrisiko sein; wer eine allgemeine Plattform dafür konfiguriert, kann nach Art. 25 selbst Anbieter werden."
-  - "Für Maschinenbauer wandert die Maschinenverordnung in Abschnitt B von Anhang I, KI-Anforderungen kommen über delegierte Rechtsakte bis spätestens 2. August 2028; das betrifft die Maschine, nicht den CRM-Agenten."
-  - "Betreiber von Hochrisiko-Systemen bewahren automatisch erzeugte Protokolle mindestens sechs Monate auf, sofern gesetzlich nichts anderes gilt, und informieren vorab die Arbeitnehmervertretung. Keine Rechtsberatung."
+  - "Seit dem 2. August 2026 müssen Menschen im Chat mit einem Agentforce-Agenten beim ersten Kontakt erfahren, dass es eine KI ist (Art. 50)."
+  - "Die Verordnung (EU) 2026/1744 verschiebt Hochrisiko-Pflichten auf den 2. Dezember 2027 für Anhang III und auf den 2. August 2028 für Anhang I."
+  - "Ein Agent, der Bewerbungen bewertet oder Arbeit nach Leistung verteilt, kann Hochrisiko sein, und wer ihn konfiguriert, kann nach Art. 25 Anbieter werden."
+  - "KI-Anforderungen der Maschinenverordnung kommen bis 2. August 2028 über delegierte Rechtsakte und betreffen die Maschine, nicht den CRM-Agenten."
+  - "Betreiber von Hochrisiko-Systemen bewahren Protokolle mindestens sechs Monate auf und informieren vorab die Arbeitnehmervertretung. Keine Rechtsberatung."
 faq:
   - q: "Ist ein Agentforce-Serviceagent ein Hochrisiko-KI-System nach dem EU AI Act?"
     a: "In der Regel nicht. Ein Agent, der Auftragsstatus, Liefertermine oder Ersatzteilfragen beantwortet, steht nicht in Anhang III. Er ist ein Transparenzfall nach Art. 50 Abs. 1: Menschen müssen zu Beginn erfahren, dass sie mit einer KI sprechen. Lassen Sie die Einstufung von Ihrer Rechtsabteilung bestätigen."
@@ -49,7 +49,7 @@ Der AI Act verteilt Pflichten nach Rollen. Nach [Art. 3](https://ai-act-service-
 
 [Art. 25 Abs. 1](https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-25) verschiebt diese Aufteilung: Ein Betreiber wird zum Anbieter, wenn er ein Hochrisiko-System unter eigenem Namen anbietet, es wesentlich verändert oder die Zweckbestimmung eines Systems so ändert, dass es zum Hochrisiko-System wird. Agentforce ist eine allgemeine Agentenplattform. Konfigurieren Sie einen Agenten, der Bewerbungen in eine Rangfolge bringt, schaffen Sie diesen Hochrisiko-Zweck vermutlich selbst, und damit die Anbieterpflichten aus Art. 16. Salesforce rät in seinem [Leitfaden zu KI-Kompetenz](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/documents/guides/ai-literacy-and-compliance.pdf) vom Mai 2025 Kunden, eigenen Rechtsrat einzuholen. Das würde ich wörtlich nehmen: Die Einstufung Ihrer Agenten gehört in die Rechtsabteilung.
 
-## Warum ist ein Chat-Agent für Händler ein Transparenzfall?
+## Ein Chat-Agent für Händler ist ein Transparenzfall
 
 Die meisten Agentforce-Agenten bei Herstellern antworten Händlern, Kunden oder Servicepartnern zu Auftragsstatus, Lieferterminen, Ersatzteilen oder Terminen. Nichts davon steht in Anhang III. Diese Agenten fallen unter Art. 50 Abs. 1, der seit dem 2. August 2026 gilt.
 
@@ -76,13 +76,13 @@ Der Außendienst wird dabei leicht übersehen. Aufträge nach Qualifikation, Geb
 
 Ist ein Agent Hochrisiko, gibt Ihnen [Art. 26](https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-26) als Betreiber ab dem 2. Dezember 2027 konkrete Pflichten: Verwendung nach der Betriebsanleitung des Anbieters, menschliche Aufsicht durch Personen mit Kompetenz und Befugnis, Prüfung der Eingabedaten, die Sie steuern, Überwachung des Betriebs, Aufbewahrung automatisch erzeugter Protokolle für mindestens sechs Monate, soweit nichts anderes gesetzlich geregelt ist, und Information von Arbeitnehmervertretung und Beschäftigten vor dem Einsatz. In Deutschland ist der Betriebsrat nach BetrVG ohnehin viel früher im Spiel; diesen Weg beschreibe ich in [KI-Coding, Betriebsrat und DSGVO](../ki-coding-betriebsrat-dsgvo/).
 
-## Was bedeutet die Frist für Anhang I im Maschinenbau?
+## Anhang I betrifft die Maschine, nicht den CRM-Agenten
 
 Anhang I erfasst KI in Produkten nach EU-Harmonisierungsrecht. Für Maschinenbauer nennt [Cuatrecasas](https://www.cuatrecasas.com/en/spain/intellectual-property/art/digital-omnibus-ai-has-been-published) die entscheidende Änderung: Die Maschinenverordnung (EU) 2023/1230 wandert von Abschnitt A in Abschnitt B von Anhang I. Für KI in Maschinen gelten dann nur wenige Vorschriften des AI Act unmittelbar. Die inhaltlichen Hochrisiko-Anforderungen sollen über delegierte Rechtsakte in die Maschinenverordnung kommen, die die Kommission bis spätestens 2. August 2028 erlassen muss. Bis es diese delegierten Rechtsakte oder die passenden harmonisierten Normen gibt, können Hersteller laut Cuatrecasas weiter auf die harmonisierten Normen oder gemeinsamen Spezifikationen nach dem AI Act verweisen, um die Konformitätsvermutung zu belegen.
 
 Das betrifft KI in Maschinensteuerung oder Sicherheitsfunktionen und gehört zu Produktentwicklung und Rechtsabteilung, nicht zu Ihren Agentforce-Agenten. Der neue [Art. 6 Abs. 1a](https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-6) stellt zudem klar, dass KI-Systeme, die ausschließlich für nicht sicherheitsbezogene Aspekte der Nutzerunterstützung eingesetzt werden, keine Sicherheitskomponenten sind. Art. 6 Abs. 1b geht vor: KI, deren Ausfall oder Fehlfunktion Gesundheit und Sicherheit gefährden würde, ist eine Sicherheitskomponente. Ein Agent, der einem Techniker ein Ersatzteil vorschlägt, ist Nutzerunterstützung in diesem Sinn.
 
-## Ein typisches Szenario: vier KI-Ideen bei einem Maschinenbauer
+## Beispiel: vier KI-Ideen bei einem Maschinenbauer
 
 Nehmen wir einen Maschinenbauer mit SAP, Service Cloud, Field Service mit 60 Technikern im Außendienst und einem Portal für 250 Händler. Alle Umstände sind Annahmen. Der KI-Lenkungskreis fragt, welche Frist des AI Act für vier Ideen gilt.
 
@@ -96,7 +96,7 @@ Nehmen wir einen Maschinenbauer mit SAP, Service Cloud, Field Service mit 60 Tec
 
 Eine Idee ist überfällig, zwei werden so umgeplant, dass sie außerhalb von Hochrisiko bleiben, und eine gehört in ein anderes Team.
 
-## Was sollten Sie vor Dezember 2027 erledigen?
+## Erster Schritt: alle Agenten der Org erfassen
 
 1. **Alle Agenten erfassen**, dazu die KI-Funktionen der Org, mit Zweck und den Menschen, mit denen sie sprechen.
 2. **Jeden einordnen** nach Rolle, Anbieter oder Betreiber, und nach Kategorie: Transparenz, Anhang III, Anhang I oder nichts davon.
@@ -107,5 +107,3 @@ Eine Idee ist überfällig, zwei werden so umgeplant, dass sie außerhalb von Ho
 7. **Freigabe der Rechtsabteilung** für die Einstufung vor dem Go-live einholen.
 
 Wo die Einstufung die Architektur prägt, etwa welche Entscheidung eine menschliche Freigabe braucht, unterstütze ich die Kundenseite im Rahmen der [Salesforce-Architektur](../../leistungen/salesforce-architektur/). Ob Agentforce überhaupt der richtige Einstieg ist, behandelt [Agentforce für Hersteller: jetzt starten oder warten?](../agentforce-ja-oder-nein-hersteller/), und Kapitel 9 der [KI-Masterclass](../../masterclass/ki-salesforce/teamarbeit-und-delivery/) stellt den AI Act neben Betriebsrat und DSGVO.
-
-Ergänzen Sie den KI-Hinweis jetzt in jedem Agenten mit Kundenkontakt und entscheiden Sie über HR- und Personalagenten deutlich vor dem 2. Dezember 2027.

@@ -10,7 +10,6 @@ categories: [revenue-cloud]
 contactBrief: licences
 tags: [revenue cloud billing, billing events, licences, pricing, order form]
 takeaways:
-  - "Revenue Cloud Billing is an add-on to Revenue Cloud with price on request; Salesforce publishes no price per billing event."
   - "According to the rate sheet of February 2026, one billing event is consumed for every $50 of total invoice amount, which is 0.02 events per dollar."
   - "The invoice amount is the subtotal of posted invoices without tax but with shipping; other currencies are converted to US dollars at the average daily rate."
   - "Billing events must be used before the order end date and do not roll over, so an entitlement sized for year three is wasted in year one."
@@ -55,7 +54,7 @@ source: Revenue Cloud Billing rate sheet, February 2026
 
 The entitlement is part of the order form, in the usage details table. Billing events "must be used before the Order End Date", and no rollover is permitted. The rate sheet also says that usage types and multipliers may change over time. That is the same logic as with [Flex Credits for Agentforce](../flex-credits-agentforce-cost-per-action/): you buy a pool for the term and lose what you do not use.
 
-## What counts toward the invoice amount?
+## The subtotal without tax counts
 
 The definitions in the rate sheet are short, and every word matters:
 
@@ -74,7 +73,7 @@ Three things the rate sheet does not answer: whether credit memos reduce the cou
 
 The formula is simple: invoice subtotal per year in US dollars, divided by 50. The hard part is the invoice volume.
 
-A typical scenario, as an assumption: a machine builder plans to invoice remote monitoring subscriptions and maintenance contracts from Revenue Cloud Billing, €18 million a year without tax. For the estimate I assume an exchange rate of 1.15 dollars per euro; that is an assumption, not a forecast.
+Worked example: a machine builder plans to invoice remote monitoring subscriptions and maintenance contracts from Revenue Cloud Billing, €18 million a year without tax. For the estimate I assume an exchange rate of 1.15 dollars per euro; that is an assumption, not a forecast.
 
 | Scope in Billing | Subtotal per year | In USD at 1.15 | Billing events per year |
 |---|---|---|---|
@@ -87,7 +86,7 @@ Two effects are easy to miss. Invoice frequency hardly matters: twelve monthly i
 
 The price per event comes from your quote, because Salesforce does not publish it. Multiply your event forecast by that price and compare the result with the cost of invoicing the same revenue from SAP, including the interface you would need for amendments.
 
-## What should you settle on the order form?
+## Tiers, overage and exchange rate belong on the order form
 
 I would take these points into the negotiation:
 
@@ -100,8 +99,6 @@ I would take these points into the negotiation:
 
 Licence decisions like this belong in a licence forecast with real numbers, not in the last week before signature. The same applies to user licences, as described in [does everyone need a full licence](../salesforce-licences-full-licence-needed/) and [Salesforce editions Core, Advanced, Max](../salesforce-editions-core-advanced-max/). Preparing such forecasts is part of [make-or-buy and licence forecasts](../../services/make-or-buy-licences/).
 
-## Who should own the forecast?
+## First step: finance owns the forecast
 
 Finance has the invoice volumes per revenue type, sales knows the planned growth of subscriptions, and procurement negotiates. I would have finance own the number, because finance will also see the subledger and the invoices. The masterclass chapter [billing and usage-based pricing](../../masterclass/revenue-cloud/billing-and-usage-based-pricing/) shows where Billing fits into the rest of quote to cash.
-
-Revenue Cloud Billing costs one billing event per $50 of invoice amount, so decide what you invoice in Salesforce before you negotiate the price.

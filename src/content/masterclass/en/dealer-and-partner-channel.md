@@ -10,10 +10,9 @@ pubDate: 2026-10-28
 short: "Dealer and partner channel"
 summary: "Dealer rebates, ship and debit, partner portal and dealer visits: what Manufacturing Cloud offers for selling through dealers."
 takeaways:
-  - "For the dealer channel, Salesforce offers rebate management, a partner portal and partner visit management around Manufacturing Cloud; ship and debit and price protection come with the Channel Revenue Management add-on."
-  - "Channel Revenue Management for Manufacturing is listed at $30,000 per org and year on the add-ons page; according to Salesforce, partner access is bought on top."
+  - "Channel Revenue Management for Manufacturing is listed at $30,000 per org and year. According to Salesforce, partner access is bought on top."
   - "Dealers who see rebates, submit claims or work with sales agreements need Partner Community for Manufacturing: $20 per login or $50 per member and month."
-  - "Partner visit management, partner lead management and partner performance management each have their own switch since API version 56.0, and all are off by default."
+  - "Partner visit, lead and performance management each have their own switch since API version 56.0, and all are off by default."
   - "Salesforce calculates and approves, the ERP pays. Ordering from a catalogue with cart and checkout belongs to B2B Commerce, not to the partner portal."
 articles: [manufacturing-cloud-rebate-management, channel-revenue-ship-and-debit, manufacturing-cloud-customer-portal, manufacturing-cloud-partner-visit-management, partner-sales-assistant-dealer-quotes, distributor-replenishment-agent]
 faq:
@@ -48,7 +47,7 @@ Whether Manufacturing Cloud pays off as a whole is covered in [chapter 1](../sco
 
 Rebate management handles rebate programmes: programme, members, rebate types with tiers, payout periods and the approval of amounts. The Data Processing Engine calculates them from transactions in the Transaction Journal object. The details, including the three routes by which revenue reaches that object, are in [rebate management: dealer rebates without Excel](../../../blog/rebate-management-dealer-rebates/).
 
-Three points matter for the decision:
+This is what matters for the decision:
 
 - **Revenue almost always comes from the ERP.** Invoices are created there, so an interface delivers them as transactions. Without that interface, rebate management calculates with whatever happens to be in Salesforce.
 - **No system decides what counts as rebate-relevant revenue.** Order, delivery or invoice, with or without returns, which product groups: put it in writing before the first programme is created.
@@ -142,7 +141,7 @@ At the cart. The Manufacturing Cloud partner portal shows dealers their sales ag
 
 Both run on Experience Cloud and can live in one org. The question is who builds what and who pays for what. I would decide before the portal project which dealer actions belong in the portal and which in the store, or the portal partner ends up rebuilding half a cart. When a store pays off is covered in the first chapter of the [B2B Commerce masterclass](../../b2b-commerce/b2b-commerce-worth-it-overview/).
 
-## A typical scenario, as an assumption
+## Worked example: compact machines through 80 dealers
 
 A maker of compact machinery sells through 80 dealers in Germany, Austria and Switzerland, each with three portal users. Spare parts also go through six distributors. All numbers are assumptions.
 
@@ -155,5 +154,3 @@ A maker of compact machinery sells through 80 dealers in Germany, Austria and Sw
 The largest line here is the portal and not the rebate logic. Dealer users are easy to leave out of a first quote, so I would count them before every licence negotiation, together with the roles of the partners who build the portal; that is part of [partner governance](../../../services/partner-governance/).
 
 Warranty claims submitted by dealers and recalls across the dealer network are covered in [chapter 4](../warranty-and-after-sales/). All chapters are on the [overview page](../).
-
-The dealer channel in Manufacturing Cloud pays off when you pick the features by channel model and plan portal licences and ERP data before the first programme.

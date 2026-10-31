@@ -11,8 +11,8 @@ contactBrief: change-basics
 author: juliane
 tags: [Stakeholder-Analyse, Stakeholder-Matrix, Change Management, Vorlage]
 takeaways:
-  - "Eine Stakeholder-Analyse hält fest, wer von einer Veränderung betroffen ist, wer Einfluss darauf hat und wie diese Personen und Gruppen dazu stehen."
-  - "Die klassische Stakeholder-Matrix ordnet nach Einfluss und Interesse. Im Change Management ist die Achse Betroffenheit wichtiger als Interesse, weil die stark Betroffenen die Veränderung am Ende umsetzen müssen."
+  - "Ich ordne Gruppen nach Einfluss und Betroffenheit, weil die stark Betroffenen die Veränderung im Alltag umsetzen müssen."
+  - "Die klassische Matrix nach Einfluss und Interesse schiebt die künftigen Nutzer oft ins Feld „Beobachten“, obwohl sie über den Erfolg entscheiden."
   - "Eine gute Analyse endet nicht mit der Matrix, sondern mit einer Maßnahme und einer verantwortlichen Person je Gruppe."
   - "Die Analyse ist nie fertig: Haltungen ändern sich mit jeder Entscheidung, deshalb gehört sie in jede Projektphase neu auf den Tisch."
 faq:
@@ -90,7 +90,7 @@ Nehmen wir ein Unternehmen, das ein CRM-System wie Salesforce für Vertrieb und 
 | IT-Betrieb | mittel | mittel | unterstützend | Betriebsübergabe planen | IT-Leitung |
 | Controlling | niedrig | mittel | neutral | über neue Berichte informieren | Projektleitung |
 
-Drei Dinge fallen auf. Erstens steht beim Betriebsrat „unbekannt“, und das ist ehrlicher als eine Schätzung. Bei Software, die Verhalten oder Leistung der Beschäftigten auswerten kann, hat er in Deutschland ein Mitbestimmungsrecht, deshalb gehört das Gespräch an den Anfang. Zweitens ist der Außendienst die kritischste Gruppe: stark betroffen, mit genug informellem Einfluss, um das System zu umgehen, und skeptisch. Hier hilft keine Rundmail, sondern die eigene Führungskraft und Kolleginnen und Kollegen als [Key User](../salesforce-key-user-netzwerk/). Drittens hat jede Zeile eine verantwortliche Person, und das ist selten die Change-Managerin.
+Beim Betriebsrat steht „unbekannt“, und das ist ehrlicher als eine Schätzung. Bei Software, die Verhalten oder Leistung der Beschäftigten auswerten kann, hat er in Deutschland ein Mitbestimmungsrecht, deshalb gehört das Gespräch an den Anfang. Der Außendienst ist die kritischste Gruppe: stark betroffen, mit genug informellem Einfluss, um das System zu umgehen, und skeptisch. Hier hilft keine Rundmail, sondern die eigene Führungskraft und Kolleginnen und Kollegen als [Key User](../salesforce-key-user-netzwerk/). Und jede Zeile hat eine verantwortliche Person, und das ist selten die Change-Managerin.
 
 Die Spalte ADKAR-Stufe habe ich im Beispiel weggelassen, in der Vorlage ist sie enthalten. Sie zeigt, wo eine Gruppe im Moment steht: Fehlt das Bewusstsein, warum sich etwas ändert, oder fehlt das Wissen, wie es geht? Je nach Antwort ist die Maßnahme eine ganz andere. Wie das Modell funktioniert, steht in [Change-Management-Modelle im Vergleich](../change-management-modelle/).
 
@@ -111,7 +111,7 @@ Die [Vorlage als Excel-Datei](../../downloads/stakeholder-analyse-vorlage.xlsx) 
 Wenn eine Stakeholder-Analyse Namen und Einschätzungen zu einzelnen Personen enthält, gehört sie nicht auf ein öffentliches Laufwerk. Arbeiten Sie im Zweifel mit Rollen statt mit Namen, und legen Sie die Datei dort ab, wo nur das Kernteam sie sieht.
 ```
 
-## Welche Fehler passieren bei der Stakeholder-Analyse?
+## Typische Fehler bei der Stakeholder-Analyse
 
 Typisch sind diese:
 
@@ -121,10 +121,8 @@ Typisch sind diese:
 - **Die stark Betroffenen fehlen in der Strategie.** Die klassische Matrix übersieht sie, weil sie wenig formellen Einfluss haben.
 - **Es fehlt die Verbindung zum Kommunikationsplan.** Aus der Analyse folgt, wer was wann von wem hört. Wie Sie das aufbauen, beschreibe ich im Artikel zum [Kommunikationsplan im Change Management](../kommunikationsplan-change-management/).
 
-## Wann lohnt sich Unterstützung von außen?
+## Unterstützung lohnt sich bei unklaren Haltungen und heiklen Gesprächen
 
 Für ein Vorhaben mit drei, vier Gruppen kann die Projektleitung die Analyse mit der Vorlage allein erstellen. Unterstützung lohnt sich, wenn viele Gruppen oder Länder betroffen sind, wenn die Haltung wichtiger Gruppen unklar ist oder wenn intern niemand die heiklen Gespräche führen kann, etwa mit dem Betriebsrat oder einer skeptischen Führungskraft. In Salesforce-Programmen arbeite ich dabei mit Fabian Kramer zusammen; wie wir das aufsetzen, steht in [Salesforce Change Management: warum Einführungen scheitern](../change-management-salesforce-einfuehrung/) und auf der Seite [Change Management Beratung für Salesforce](../../leistungen/change-management/).
 
-Eine Stakeholder-Analyse ist so gut wie die Maßnahmen, die daraus folgen.
-
-Prosci und ADKAR sind eingetragene Marken von Prosci, Inc.
+*Prosci und ADKAR sind eingetragene Marken von Prosci, Inc.*

@@ -10,10 +10,10 @@ pubDate: 2026-10-28
 short: "Why releases decide"
 summary: "The core terms, the cost of bad releases with several partners and five maturity stages from change sets to your own pipeline."
 takeaways:
-  - "Salesforce release management means every change comes from a Git repository through a fixed pipeline with review and tests, and a release goes live for users on a planned date."
-  - "A deployment is the technical transfer of metadata into an org; a release is the planned go-live for users, with communication and sign-off by the business."
+  - "Every change comes from Git through a fixed pipeline with review and tests, and releases go live for users on planned dates."
+  - "A deployment is the technical transfer of metadata into an org. A release is the planned go-live for users, with communication and sign-off by the business."
   - "In programmes with several partners, bad releases cost mostly rework across team boundaries, repeated UAT runs and downtime in service or the dealer portal."
-  - "Change sets only work between orgs of the same production org and carry no data and no history; they are not enough for several teams on one org."
+  - "Change sets only work between orgs of the same production org and carry neither data nor history. They are not enough for several teams on one org."
   - "The path from change sets to a pipeline has five stages and needs no big bang, but it does need an early decision that binds every partner."
 articles: [devops-salesforce-enterprise, client-owned-devops-tools, pull-request-reviews-enterprise]
 faq:
@@ -61,9 +61,9 @@ I have worked in a programme with eight teams and 32 developers, on orgs where s
 | Growing packages | Teams with bad release experiences release less often. Less frequent releases get bigger, bigger releases get riskier. The [five DORA metrics](https://dora.dev/guides/dora-metrics/) make this measurable, for example deployment frequency and change fail rate, the share of deployments that need immediate rework such as a rollback or an emergency patch. |
 | Dependency and blame | Without history in the repository nobody can show which partner made which change. Arguing about it costs steering time and strains the collaboration. |
 
-A typical scenario, as an assumption: a machinery manufacturer runs Service Cloud with Field Service, a dealer portal on Experience Cloud and an SAP interface. Three partners work on the same org, one each for service, sales with the portal, and integration. On Friday evening the sales partner deploys a new validation rule on the order object with a change set. It is correct in the partner's sandbox, but it does not know a field the integration partner introduced two weeks earlier. On Monday the nightly order handover from SAP fails, dealers see no delivery dates, and the service team has to postpone its own UAT run because the org is unstable. None of these costs shows up as its own line in the project budget. A validation deployment against the shared state in the repository would have shown the conflict before the merge.
+Suppose a machinery manufacturer runs Service Cloud with Field Service, a dealer portal on Experience Cloud and an SAP interface. Three partners work on the same org, one each for service, sales with the portal, and integration. On Friday evening the sales partner deploys a new validation rule on the order object with a change set. It is correct in the partner's sandbox, but it does not know a field the integration partner introduced two weeks earlier. On Monday the nightly order handover from SAP fails, dealers see no delivery dates, and the service team has to postpone its own UAT run because the org is unstable. None of these costs shows up as its own line in the project budget. A validation deployment against the shared state in the repository would have shown the conflict before the merge.
 
-## Why are change sets no longer enough?
+## Change sets are no longer enough for several partners
 
 Change sets are the standard tool many orgs start with, and for a single admin they are fine. According to [Salesforce Help](https://help.salesforce.com/apex/HTViewHelpDoc?id=changesets.htm), they need a deployment connection, which only exists between orgs affiliated with the same production org. They contain only changes you can make in Setup, no records, and they are deployed as a whole. For a programme with several partners the decisive things are missing:
 
@@ -148,5 +148,3 @@ Six questions are enough for a first assessment. You should be able to answer ea
 - How long does it take to take back a faulty change in production?
 
 If you hesitate on more than two of them, your programme is at stage 1 or 2. Then settle ownership and roles first and the tool after that. The path continues in [chapter 2: ownership and roles](../release-process-ownership-roles/).
-
-A Salesforce programme with several partners stays predictable only when you own the release process and every change takes the same route.

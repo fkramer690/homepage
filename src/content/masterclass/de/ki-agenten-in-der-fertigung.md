@@ -8,11 +8,10 @@ chapter: 10
 short: "Agenten in der Fertigung"
 summary: "Wo Agentforce-Agenten bei Herstellern heute tragen, wie Sie sie regelbasiert bauen, testen und absichern, und was erst angekündigt ist."
 takeaways:
-  - "Agenten tragen in der Fertigung heute dort, wo Volumen hoch, Regeln klar und Daten gepflegt sind: Händleranfragen zum Auftragsstatus, Wartungsbuchung im Außendienst und die Vorprüfung von Garantieansprüchen."
-  - "Salesforce Architects empfiehlt, alles in Logik zu schreiben, was sich als Code ausdrücken lässt; Kreditlimit und Garantieberechtigung entscheiden Agent Script, Flow oder ERP, das Modell versteht und formuliert."
-  - "Ein Agent geht wie Code in Produktion: als Metadaten in Git, mit Testfällen, einer vorab vereinbarten Passrate und Monitoring der Sitzungen nach dem Go-live."
-  - "Jedes Feld, das Händler, Kunden oder Interessenten beschreiben, ist nicht vertrauenswürdige Eingabe für einen Agenten, und jede verbundene App ist ein Zugang, den Sie wie ein Passwort schützen."
-  - "Bei Siemens sind laut Meldung vom September 2026 zwei Agenten für eingehende Leads live; Teamcenter, Lieferanten-Onboarding und SAP-Schritte stehen in der Zukunftsform."
+  - "Ob ein Händler Garantie bekommt oder welches Kreditlimit gilt, entscheiden Agent Script, Flow oder ERP. Das Modell versteht und formuliert."
+  - "Ein Agent geht wie Code in Produktion: als Metadaten in Git, mit Testfällen, einer vorab vereinbarten Passrate und Monitoring nach dem Go-live."
+  - "Jedes Feld, das Händler oder Kunden beschreiben, ist für einen Agenten nicht vertrauenswürdige Eingabe. Jede verbundene App schützen Sie wie ein Passwort."
+  - "Bei Siemens sind laut Meldung vom September 2026 zwei Agenten für eingehende Leads live. Teamcenter, Lieferanten und SAP stehen in der Zukunftsform."
 articles: [agent-script-deterministic-rules, warranty-adjudication-agent-winter-27, field-service-ai-agents-today, agentforce-sap-order-status, prompt-injection-dealer-portals, oauth-connected-apps-ai-lessons]
 faq:
   - q: "Welcher Agent ist für einen Maschinenbauer der beste Einstieg?"
@@ -50,7 +49,7 @@ Zur Lizenz: Laut [Seite der Manufacturing Cloud](https://www.salesforce.com/eu/m
 
 Ich sortiere diese Liste für einen Maschinenbauer nach drei Fragen: Wie viele gleichartige Vorgänge gibt es im Monat, wo steht die Regel, und sind die Daten dahinter gepflegt? Daraus ergibt sich meist diese Reihenfolge: zuerst Auftragsstatus für Händler und geplante Wartungen, dann der Einsatzbericht, dann die Garantie. Welche Field-Service-Funktionen sich lohnen, steht in [KI-Agenten im Außendienst](../../../blog/ki-agenten-aussendienst-field-service/), was vor dem Garantieagenten stehen muss, in [Garantie-Prüfagent aus Winter '27](../../../blog/garantie-pruefagent-winter-27/). Ob ein Agent überhaupt der nächste Schritt ist, prüfe ich mit den Kriterien aus [Agentforce für Hersteller: jetzt starten oder warten?](../../../blog/agentforce-ja-oder-nein-hersteller/). Wie Sie Agenten im Außendienst Schritt für Schritt einführen, steht in [Kapitel 5 der Masterclass Field Service](../../field-service/field-service-ki-agenten-einfuehrung/).
 
-## Wie baut man einen Agenten, der gleich antwortet?
+## Gleiche Antworten: Regeln in die Logik, Sprache ins Modell
 
 Im früheren Agentforce traf das Sprachmodell jede Entscheidung zur Laufzeit, von der Absicht bis zur Auswahl der Aktion. Gleiche Eingaben konnten unterschiedliche Wege nehmen. Für eine Garantieablehnung, die ein Händler anficht, ist das unbrauchbar. Seit Februar 2026 ist das neue Agentforce mit hybridem Reasoning allgemein verfügbar, und Salesforce Architects formuliert die Regel dazu im [Leitfaden zu Agent Script](https://architect.salesforce.com/docs/architect/fundamentals/guide/hybrid-reasoning-agentforce-builder-agent-script): „if you can express a decision as code, it should be written as logic.“
 
@@ -69,7 +68,7 @@ Beim Weg über den API Catalog legt Salesforce Named Credentials und External Se
 
 Für Wissen aus Handbüchern und Wissensartikeln braucht der Agent Grounding über Data 360. Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/data-cloud-powered-agentforce/enable-trusted-agents-with-data-cloud) ist die Agentforce Data Library der schnelle Weg, aber auf unstrukturierte Inhalte und eine Quelle pro Bibliothek begrenzt. Mehrere Quellen, strukturierte Daten und Zero Copy brauchen das erweiterte Data-360-Setup. Im Maschinenbau gibt es Handbücher je Variante und Stand, und bevor sie verarbeitet werden, sollte feststehen, welches Handbuch zu welcher Seriennummer gehört. Die Verarbeitung kostet laut [Rate Card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) in der Basisstufe 150 Flex Credits pro MB; die Rechnung steht in [Kapitel 7](../kosten-und-token/).
 
-## Wie kommt ein Agent sicher in Produktion?
+## Ein Agent geht wie Code in Produktion
 
 Ein Agentforce-Agent ist heute ein Satz Metadaten, den ein Coding-Agent mitschreiben kann. Der [Entwickler-Blog vom Juni 2026](https://developer.salesforce.com/blogs/2026/06/master-the-agentic-development-lifecycle-for-agentforce) beschreibt den Weg so:
 
@@ -124,7 +123,7 @@ quelle: Siemens-Meldung vom 15. September 2026; Ankündigung Agentforce for Manu
 
 Eine Fallstudie aus dem deutschsprachigen Raum mit harten Kennzahlen zu Service, Garantie oder Außendienst habe ich nicht gefunden. Auch die Marktzahlen brauchen eine Fußnote: Salesforce meldet für das Quartal bis Juli 2026 mehr als 1,5 Mrd. US-Dollar Agentforce-ARR, zählt dort aber [seit diesem Quartal](https://investor.salesforce.com/news/news-details/2026/Salesforce-Delivers-Record-Second-Quarter-Fiscal-2027-Results/default.aspx) auch Slackbot, KI-Angebote und Headless 360 mit. Und Gartner [erwartet](https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027), dass mehr als 40 Prozent der Projekte mit KI-Agenten bis Ende 2027 abgebrochen werden, wegen Kosten, unklarem Nutzen oder schwacher Risikokontrollen.
 
-## Ein typisches Szenario: Fahrplan für einen Maschinenbauer
+## Angenommen: Fahrplan für einen Maschinenbauer
 
 Nehmen wir einen Maschinenbauer mit SAP S/4 und vorhandener MuleSoft-API, Service Cloud, Field Service mit 45 Technikern und rund 200 Händlern, die über ein Portal bestellen. Die Manufacturing Cloud wird gerade eingeführt. Alle Umstände und Zahlen sind Annahmen, die das Vorgehen zeigen sollen.
 
@@ -157,5 +156,3 @@ Am Ende des Jahres laufen drei Agenten, alle mit denselben Regeln: eigener Nutze
 - **EU AI Act:** Die Fristen in der Zeitleiste folgen laut [White & Case](https://www.whitecase.com/insight-alert/eu-ai-omnibus-enters-force-amending-ai-act) aus der Verordnung (EU) 2026/1744. Für Maschinenbauer betrifft Anhang I eher die Maschine als den CRM-Agenten. Was das für Agentforce-Projekte heißt, steht in [EU AI Act: Fristen für Agentforce](../../../blog/eu-ai-act-fristen-agentforce/) und in [Kapitel 9](../teamarbeit-und-delivery/).
 
 Welche Regeln in Ihren Agenten gehören und welche im ERP bleiben, kläre ich auf Kundenseite in der [Salesforce-Architektur](../../../leistungen/salesforce-architektur/), die ERP-Anbindung in [Salesforce-Schnittstellen](../../../leistungen/salesforce-schnittstellen/). Alle Kapitel finden Sie in der [Übersicht der Masterclass](../).
-
-Starten Sie mit dem Agenten, dessen Regeln und Daten schon stehen, und behandeln Sie ihn vom ersten Tag an wie Code mit Tests und eigenen Rechten.

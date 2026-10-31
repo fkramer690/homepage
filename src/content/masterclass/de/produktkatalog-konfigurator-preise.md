@@ -10,11 +10,11 @@ pubDate: 2026-10-28
 short: "Katalog, Konfigurator, Preise"
 summary: "Wie Produktkatalog, Constraint-Konfigurator und Salesforce Pricing zusammenspielen und welcher Preis aus SAP kommen sollte."
 takeaways:
-  - "In Revenue Cloud kommt der Katalog zuerst: Produktklassifizierungen mit Attributen beschreiben eine Maschinenfamilie, Varianten bleiben Attributwerte statt tausender Produktdatensätze."
-  - "Der Konfigurator hat zwei Regelwerke: Konfigurationsregeln für einfache Wenn-dann-Logik und die Constraint Rules Engine für voneinander abhängige Attribute, modelliert in CML."
-  - "Salesforce Pricing rechnet mit Pricing Procedures, die Decision Tables lesen. Nach jeder Änderung der Preisdaten müssen die Decision Tables aktualisiert werden, sonst rechnen Angebote mit alten Werten."
-  - "Jede Preisart braucht ein führendes System. Konditionen, die auch für EDI-, Telefon- oder Shop-Aufträge ohne Salesforce gelten, bleiben in SAP und werden per API abgefragt."
-  - "Katalogdaten, Constraint-Modelle und Pricing Procedures bestimmen, was der Vertrieb anbieten kann. Jedes braucht eine verantwortliche Person beim Hersteller, Versionen und Regressionsfälle."
+  - "Produktklassifizierungen mit Attributen beschreiben eine Maschinenfamilie. Varianten bleiben Attributwerte und werden keine tausend Produktdatensätze."
+  - "Konfigurationsregeln decken einfache Wenn-dann-Logik ab. Für voneinander abhängige Attribute gibt es die Constraint Rules Engine mit Modellen in CML."
+  - "Pricing Procedures lesen Decision Tables. Nach jeder Änderung der Preisdaten müssen diese aktualisiert werden, sonst rechnen Angebote mit alten Werten."
+  - "Konditionen, die auch für EDI-, Telefon- oder Shop-Aufträge ohne Salesforce gelten, bleiben in SAP und werden per API abgefragt."
+  - "Katalogdaten, Constraint-Modelle und Pricing Procedures brauchen je eine verantwortliche Person beim Hersteller, Versionen und Regressionsfälle."
 articles: [revenue-cloud-product-catalog-variants, revenue-cloud-configurator-constraint-rules, revenue-cloud-pricing-procedures, customer-prices-sap-or-salesforce-pricing, manufacturing-cloud-quote-to-agreement]
 faq:
   - q: "Was ersetzt Produktregeln und Preisregeln aus CPQ in Revenue Cloud?"
@@ -85,7 +85,7 @@ Constraint-Modelle werden in CML geschrieben, der Constraint Modeling Language. 
 
 ### Wo liegen Ihre Konfigurationsregeln heute?
 
-Diese Frage entscheidet den Weg mehr als jede Funktionsliste:
+Diese Frage entscheidet den Weg stärker als die Funktionsliste:
 
 | Wo die Regeln liegen | Was daraus folgt |
 |---|---|
@@ -146,13 +146,13 @@ quelle: [CML User Guide](https://resources.docs.salesforce.com/rel1/doc/en-us/st
 
 Wie Konfigurationsdaten durch eine Pipeline wandern, behandelt das DevOps-Kapitel [Daten und Konfiguration](../../devops-release-management/daten-und-konfiguration/), wie Tests in den Release-Prozess gehören, das Kapitel [Qualität, Tests und Reviews](../../devops-release-management/qualitaet-tests-reviews/).
 
-## Ein typisches Szenario, als Annahme
+## Rechenbeispiel: 30 Verpackungsmaschinen in drei Familien
 
 Ein Hersteller von Verpackungsmaschinen verkauft 30 Grundmaschinen in drei Familien über den Direktvertrieb und Ersatzteile über Händler. Zwei Familien haben ihre Verträglichkeitsregeln in Tabellen der Anwendungstechnik, die dritte nutzt die SAP-Variantenkonfiguration.
 
 Drei Klassifizierungen mit je etwa einem Dutzend Attributen, 30 Grundmaschinen, konfigurierbare Bundles für Werkzeuge und Sicherheitspakete, ein eigener Ersatzteilkatalog, der aus SAP geladen wird. Constraint-Modelle für die beiden Tabellenfamilien, mit Verträglichkeitstabellen aus einem eigenen Objekt und Regressionsfällen pro Familie. Die SAP-Familie behält vorerst ihren Konfigurator, Salesforce übernimmt das Ergebnis über eine Schnittstelle. Maschinenpreise laufen über Weg C, mit Listenpreisen aus SAP jede Nacht und dem Sync direkt nach dem Laden. Händlerpreise für Ersatzteile laufen über Weg A. Das Produktmanagement verantwortet Katalog und Constraint-Modelle, eine Pricing-Administration in Sales Operations die Prozeduren, und das Controlling gibt jede Preisänderung frei.
 
-## Was sollte entschieden sein, bevor ein Partner baut?
+## Eine verantwortliche Person für den Katalog benennen
 
 1. **Verantwortung für den Katalog und die drei Variantentests**, schriftlich vor dem ersten Datenladen.
 2. **Führendes Regelwerk pro Produktlinie**: Revenue Cloud, SAP-Variantenkonfiguration oder externer Konfigurator, nie zwei.
@@ -161,5 +161,3 @@ Drei Klassifizierungen mit je etwa einem Dutzend Attributen, 30 Grundmaschinen, 
 5. **Regressionsfälle** für Preise und Constraint-Modelle, im Besitz des Herstellers.
 
 Diese Grenzen zwischen SAP und Salesforce zu ziehen, ist Teil meiner Arbeit in der [Salesforce-Architektur](../../../leistungen/salesforce-architektur/), die Preisschnittstelle selbst gehört zu [Salesforce-Schnittstellen](../../../leistungen/salesforce-schnittstellen/). [Kapitel 3](../angebot-vertrag-auftrag/) geht weiter mit Freigaben, Verträgen und der Auftragsübergabe an SAP, alle Kapitel finden Sie auf der [Übersichtsseite](../).
-
-Katalog, Konfigurator und Preisfindung funktionieren in Revenue Cloud, wenn jedes ein führendes System und eine verantwortliche Person beim Hersteller hat.

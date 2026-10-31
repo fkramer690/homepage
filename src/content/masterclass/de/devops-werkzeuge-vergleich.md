@@ -10,11 +10,10 @@ pubDate: 2026-10-28
 short: "Werkzeuge im Überblick"
 summary: "Vom Change Set bis zur kommerziellen Plattform: welches DevOps-Werkzeug zu Ihrer Git-Plattform, Ihrem Team und Ihren Partnern passt."
 takeaways:
-  - "Salesforce DevOps lässt sich mit drei Arten von Werkzeugen aufbauen: dem Standard von Salesforce, Open Source wie sfdx-hardis und kommerziellen Plattformen wie Gearset, Copado oder Flosum."
-  - "Change Sets funktionieren nur zwischen Orgs derselben Produktion, enthalten keine Daten und bieten keine Versionskontrolle; für mehrere Partner an einer Org reichen sie nicht."
-  - "Lifecycle Center, bis Oktober 2026 DevOps Center, ist nativ in Salesforce, unterstützt aber nur GitHub.com-Cloud-Pläne und Bitbucket Cloud und fehlt in der EU Operating Zone."
-  - "Die Git-Plattform, die Ihre IT schon betreibt, schließt oft schon die Hälfte der Werkzeuge aus; klären Sie sie vor jeder Produktdemo."
-  - "Ein kommerzielles Werkzeug ist mit dem Prinzip des Kundeneigentums vereinbar, solange Vertrag, Admin-Rechte und Repository auf Ihren Namen laufen."
+  - "Change Sets funktionieren nur zwischen Orgs derselben Produktion und haben weder Daten noch Versionskontrolle. Für mehrere Partner reichen sie nicht."
+  - "Lifecycle Center, bis Oktober 2026 DevOps Center, unterstützt nur GitHub.com-Cloud-Pläne und Bitbucket Cloud und fehlt in der EU Operating Zone."
+  - "Die Git-Plattform, die Ihre IT schon betreibt, schließt oft die Hälfte der Werkzeuge aus. Klären Sie sie vor jeder Produktdemo."
+  - "Ein kommerzielles Werkzeug passt zum Kundeneigentum, solange Vertrag, Admin-Rechte und Repository auf Ihren Namen laufen."
 articles: [sfdx-hardis-vs-devops-center, sfdx-hardis-introduction, devops-ai-agents-copado-gearset, client-owned-devops-tools]
 faq:
   - q: "Reichen Change Sets für ein Salesforce-Programm mit mehreren Partnern?"
@@ -105,7 +104,7 @@ Ich gehe die Kriterien in dieser Reihenfolge durch, weil die ersten am meisten a
 2. **Team.** Wer arbeitet täglich mit dem Werkzeug: Admins, die klicken, oder Entwickler, die mit VS Code und Branches umgehen? Und gibt es beim Kunden jemanden, der eine Pipeline verantworten kann?
 3. **Partner.** Wie viele Teams und Implementierungspartner arbeiten an derselben Org? Ab dem zweiten Partner brauchen Sie Pull Requests mit [Pflicht-Review](../../../blog/warum-pull-request-reviews-pflicht-sind/) und einen Prozess, den alle gleich nutzen.
 4. **Eigentum.** Läuft der Vertrag auf Sie, haben Ihre Mitarbeitenden Admin-Rechte, liegt das Repository in Ihrer Organisation? Warum das zählt, steht in [warum Kunden ihre DevOps-Tools selbst besitzen sollten](../../../blog/warum-kunden-devops-tools-selbst-besitzen-sollten/).
-5. **Kosten.** Lizenz, CI-Minuten, Einrichtung und vor allem die Release-Rolle. Nach meiner Einschätzung kostet diese Rolle in einem Programm mit mehreren Partnern mehr als jedes Werkzeug.
+5. **Kosten.** Lizenz, CI-Minuten, Einrichtung und vor allem die Release-Rolle. Nach meiner Einschätzung kostet diese Rolle in einem Programm mit mehreren Partnern mehr als die Lizenz des Werkzeugs.
 6. **Support.** Brauchen Sie einen Vertrag mit Reaktionszeiten, oder reichen Community und ein Dienstleister bei Bedarf?
 
 ## Die Entscheidungsmatrix
@@ -126,7 +125,7 @@ Die Fakten in der Tabelle stammen von den oben verlinkten Herstellerseiten. Die 
 Zwei Dinge zeigt die Matrix nicht. Erstens die Qualität des Supports, die Sie nur in Referenzgesprächen erfahren. Zweitens, wie gut ein Werkzeug Ihre konkreten Metadaten verarbeitet, etwa Field-Service-Konfiguration oder Experience-Cloud-Seiten für ein Händlerportal. Das prüfen Sie in einem kurzen Test mit Ihrer eigenen Org, bevor Sie unterschreiben.
 ```
 
-## Ein typisches Szenario, als Annahme
+## Beispiel: zwei Partner, Azure DevOps, bisher Change Sets
 
 Ein Maschinenbauer betreibt Sales Cloud für den Händlervertrieb, Service Cloud und Field Service für den Außendienst und eine SAP-Schnittstelle für Ersatzteile. Zwei Implementierungspartner arbeiten an derselben Org, einer davon mit einem Nearshore-Team. Die IT hat Azure DevOps für alle anderen Anwendungen. Bisher wird mit Change Sets deployt.
 
@@ -143,5 +142,3 @@ Drei Regeln halte ich für nicht verhandelbar:
 - **Die Historie bleibt portabel.** Bei Flosum, wo Git optional ist, würde ich die Git-Anbindung trotzdem einschalten, damit die Versionsgeschichte auch ohne das Werkzeug lesbar bleibt.
 
 Die Sandboxes und Branches, auf denen jedes dieser Werkzeuge aufsetzt, beschreibt [Kapitel 3](../umgebungen-und-branching/). Wie daraus eine Pipeline mit Pull Requests, Validierungen und Delta-Deployments wird, folgt in [Kapitel 5](../pipeline-aufbauen/). Bei der Auswahl und dem Aufbau unterstütze ich im Rahmen von [DevOps und Release-Management](../../../leistungen/devops-und-release-management/) und, wenn mehrere Partner beteiligt sind, in der [Partnersteuerung](../../../leistungen/partnersteuerung/).
-
-Das richtige Werkzeug ist das, das zu Ihrer Git-Plattform passt und für das Sie eine verantwortliche Person beim Kunden haben.

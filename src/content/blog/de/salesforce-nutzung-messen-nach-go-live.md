@@ -11,7 +11,7 @@ coAuthor: juliane
 contactBrief: change
 tags: [Nutzung, Adoption, Change Management, Kennzahlen]
 takeaways:
-  - "Ob ein Prozess angekommen ist, zeigen Berichte über angelegte und gepflegte Datensätze besser als jede Umfrage und besser als die Zahl der Schulungen."
+  - "Die Zahl der Schulungen zeigt, dass das Projekt seine Arbeit gemacht hat. Ob jemand anders arbeitet, zeigt sie nicht."
   - "Logins sagen wenig. Wer sich anmeldet, um eine Liste zu exportieren und in Excel weiterzuarbeiten, zählt als aktiver Nutzer."
   - "Ich messe auf vier Ebenen: Aktivität, Nutzung des Prozesses, Datenqualität und Ergebnis, jeweils pro Gruppe und Land."
   - "Die Zahlen werden vor dem Go-live festgelegt, mit einem Ausgangswert, und nach dem Go-live regelmäßig mit dem Sponsor besprochen."
@@ -27,11 +27,11 @@ faq:
 draft: false
 ---
 
-Ob ein neuer Salesforce-Prozess nach dem Go-live angekommen ist, zeigen Berichte über angelegte und gepflegte Datensätze, pro Gruppe und Land, besser als jede Umfrage. Logins sagen wenig: Wer sich anmeldet, eine Liste exportiert und in Excel weiterarbeitet, zählt als aktiver Nutzer. Ich messe deshalb auf vier Ebenen: Aktivität, Nutzung des Prozesses, Datenqualität und Ergebnis. Welche Zahlen es sind und welcher Ausgangswert gilt, steht vor dem Go-live fest. Danach bespricht der Sponsor sie jeden Monat, damit auffällt, wenn eine Gruppe neben Salesforce weiter mit eigenen Listen arbeitet.
+Ob ein neuer Salesforce-Prozess nach dem Go-live angekommen ist, zeigen Berichte über angelegte und gepflegte Datensätze, pro Gruppe und Land, zuverlässiger als eine Umfrage. Logins sagen wenig: Wer sich anmeldet, eine Liste exportiert und in Excel weiterarbeitet, zählt als aktiver Nutzer. Ich messe deshalb auf vier Ebenen: Aktivität, Nutzung des Prozesses, Datenqualität und Ergebnis. Welche Zahlen es sind und welcher Ausgangswert gilt, steht vor dem Go-live fest. Danach bespricht der Sponsor sie jeden Monat, damit auffällt, wenn eine Gruppe neben Salesforce weiter mit eigenen Listen arbeitet.
 
-## Warum messen Sie Nutzung statt Schulungen?
+## Schulungszahlen sagen nichts über Nutzung
 
-Viele Programme berichten nach dem Go-live, wie viele Personen geschult wurden. Die Zahl sagt, dass das Projekt seine Arbeit gemacht hat. Ob jemand anders arbeitet, sagt sie nicht. Deshalb lege ich zu Beginn fest, woran Erfolg gemessen wird, zum Beispiel an Nutzungszahlen in Salesforce statt an der Zahl der Schulungen.
+Viele Programme berichten nach dem Go-live, wie viele Personen geschult wurden. Die Zahl sagt, dass das Projekt seine Arbeit gemacht hat. Ob jemand anders arbeitet, sagt sie nicht. Deshalb lege ich zu Beginn fest, woran Erfolg gemessen wird, zum Beispiel an Nutzungszahlen in Salesforce und nicht an der Zahl der Schulungen.
 
 Salesforce hilft beim Messen, weil fast alles, was ein Nutzer tut, einen Datensatz mit Zeitstempel und Besitzer hinterlässt. Ob ein Vertriebsteam seine Opportunities pflegt, ob der Innendienst Angebote in Salesforce erstellt und ob Techniker Aufträge in der App abschließen, lässt sich mit Standardberichten zählen. Das ist genauer als eine Umfrage, in der jeder angibt, das System regelmäßig zu nutzen.
 
@@ -42,7 +42,7 @@ Ich messe auf vier Ebenen. Jede beantwortet eine andere Frage:
 | Ebene | Frage | Beispiele |
 |---|---|---|
 | Aktivität | Öffnen die Nutzer das System? | aktive Nutzer pro Woche, Logins, Seitenaufrufe |
-| Nutzung des Prozesses | Findet der Prozess in Salesforce statt? | Angebote aus Salesforce statt aus Word, Aufträge in der App abgeschlossen, Opportunities mit gepflegtem nächsten Schritt |
+| Nutzung des Prozesses | Findet der Prozess in Salesforce statt? | Angebote aus Salesforce und nicht aus Word, Aufträge in der App abgeschlossen, Opportunities mit gepflegtem nächsten Schritt |
 | Datenqualität | Sind die Daten brauchbar? | Pflichtfelder sinnvoll gefüllt statt mit Punkten, neue Dubletten, veraltete Datensätze |
 | Ergebnis | Bringt es, wofür es gebaut wurde? | Prognosegenauigkeit, Erstlösungsquote im Service, Durchlaufzeit vom Angebot zum Auftrag |
 
@@ -70,16 +70,14 @@ Eine schlechte Zahl ist eine Frage, keine Antwort. Ich frage dann, an welcher St
 
 Die Zahlen gehören in den regelmäßigen Termin mit dem Sponsor. Wenn der Sponsor im Monatsbericht nach der Nutzung seiner Teams fragt, ist das selbst schon Reinforcement: Die Teams merken, dass es zählt.
 
-## Wer bekommt welche Zahl?
+## Lenkungsausschuss, Sponsor und Key User brauchen verschiedene Zahlen
 
 Nicht jede Zahl gehört in jeden Bericht. Der Lenkungsausschuss braucht zwei oder drei Zahlen pro Prozess, am besten auf den Ebenen Nutzung und Ergebnis, mit dem Verlauf seit dem Go-live. Der Sponsor eines Landes oder Bereichs braucht dieselben Zahlen für seine Teams, damit er gezielt nachfragen kann. Key User und Teamleitungen brauchen die Detailsicht: Welche Personen legen kaum Datensätze an, welche Felder bleiben leer? Diese Sicht ist für Gespräche gedacht, nicht für Ranglisten. Wer Einzelpersonen öffentlich vergleicht, bekommt gepflegte Zahlen statt gepflegter Daten, und in Deutschland gehört eine solche Auswertung ohnehin vorher mit dem Betriebsrat geklärt.
 
-## Wie lange sollten Sie messen?
+## Mindestens sechs Monate messen, monatlich
 
 Mindestens ein halbes Jahr, monatlich. Die ersten Wochen nach dem Go-live sind verzerrt: Die Aufmerksamkeit ist hoch, Key User sind präsent, und viele probieren das neue System aus. Ob ein Prozess bleibt, zeigt sich erst nach drei bis sechs Monaten, wenn das Projektteam weitergezogen ist. Fällt eine Zahl in dieser Zeit ab, fehlt Reinforcement. Bei einem weltweiten Rollout messen Sie pro Land, weil jedes Land einen eigenen Verlauf hat, siehe [Change Management im weltweiten Salesforce-Rollout](../change-management-weltweiter-rollout/).
 
-## Wo fangen Sie an?
+## Eine Nutzungszahl für den wichtigsten Prozess festlegen
 
-Wählen Sie für Ihren wichtigsten neuen Prozess eine Zahl auf der Ebene „Nutzung des Prozesses“, etwa den Anteil der Angebote, die in Salesforce erstellt werden. Legen Sie den Ausgangswert vor dem Go-live fest und bauen Sie einen Bericht, der die Zahl pro Gruppe und Land zeigt. Nach dem Go-live geht dieser Bericht jeden Monat an den Sponsor.
-
-Salesforce ist eingeführt, wenn die Arbeit darin stattfindet, nicht wenn sich alle anmelden können. Eine Zahl pro Prozess, gemessen vor und nach dem Go-live, zeigt den Unterschied. Mehr dazu lesen Sie unter [Change Management für Salesforce-Programme](../../leistungen/change-management/).
+Wählen Sie für Ihren wichtigsten neuen Prozess eine Zahl auf der Ebene „Nutzung des Prozesses“, etwa den Anteil der Angebote, die in Salesforce erstellt werden. Legen Sie den Ausgangswert vor dem Go-live fest und bauen Sie einen Bericht, der die Zahl pro Gruppe und Land zeigt. Nach dem Go-live geht dieser Bericht jeden Monat an den Sponsor. Liegt der Anteil nach drei Monaten in einem Land unter dem Ausgangswert, fragen Sie die Key User dort, an welcher Stelle die Arbeit aus Salesforce herausgeht. Wie wir das in Programmen aufsetzen, steht unter [Change Management für Salesforce-Programme](../../leistungen/change-management/).

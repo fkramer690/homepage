@@ -11,8 +11,8 @@ coAuthor: juliane
 contactBrief: change
 tags: [change management, ADKAR, Prosci, Salesforce rollout]
 takeaways:
-  - "A Salesforce rollout rarely fails because of the technology. It fails when people keep working the way they did before go-live, with Excel, email and their own lists."
-  - "Prosci's ADKAR model shows at which of five stages it is stuck: awareness, desire, knowledge, ability or reinforcement. Another training session only helps with two of them."
+  - "A rollout fails when people keep working with Excel, email and their own lists after go-live."
+  - "ADKAR shows at which of five stages it is stuck. Another training session only helps with two of them, knowledge and ability."
   - "In the Prosci study, projects with excellent change management met their objectives in 88 percent of cases, projects with poor change management in 13 percent."
   - "Change management concerns not only business users but also development teams and partners who are supposed to build to new standards."
 faq:
@@ -66,7 +66,7 @@ The sponsor deserves a sentence of its own, because it is the role most often mi
 
 Prosci and ADKAR are registered trademarks of Prosci, Inc. I adapted the approach to Salesforce programmes together with [Juliane Winterscheid](../../partners/juliane-winterscheid/), my cooperation partner for change management.
 
-## Which topics belong to change management in Salesforce programmes?
+## These topics belong to change management in Salesforce programmes
 
 Change management is not a single work step. The same topics come up again and again in Salesforce programmes at manufacturers. Each one has its own article:
 
@@ -83,7 +83,7 @@ Change management is not a single work step. The same topics come up again and a
 
 The general tools behind this are explained by Juliane Winterscheid in her own articles on the basics: the [stakeholder analysis](../stakeholder-analysis/) with a template, the [communication plan](../change-management-communication-plan/) and the [change curve](../change-curve/).
 
-## How does change management run alongside delivery?
+## Change management runs in three phases alongside delivery
 
 Prosci structures the work at the level of the organisation in three phases, the [Prosci 3-Phase Process](https://www.prosci.com/methodology/3-phase-process). In a Salesforce programme they run alongside the release plan:
 
@@ -98,10 +98,8 @@ Sustain outcomes | after go-live · internal owners
 
 Timing is what matters. Change management that starts two weeks before go-live can only inform. The question of which groups are affected and what changes for them belongs in planning, before anything is built. With a [global template](../salesforce-global-template-country-deviations/) it is even part of the architecture, because every deviation per country is also a question of habit.
 
-## Where do you start?
+## Write down groups, changes and sponsor of your next release
 
 For your next release, answer three questions in writing: which groups are affected? What changes for each in their daily work? Who in management visibly backs it? If the third answer is missing, that is the first step. Then decide how you measure success, for example by usage numbers in Salesforce instead of the number of training sessions.
 
-If you want to go through the five stages in order, the [change management masterclass](../../masterclass/change-management/) has a chapter per stage with the matching articles.
-
-Salesforce is only introduced once people work with it. Read more about [Salesforce change management consulting](../../services/change-management-salesforce/).
+If you want to go through the five stages in order, the [change management masterclass](../../masterclass/change-management/) has a chapter per stage with the matching articles. How Juliane Winterscheid and I support this in programmes is described under [Salesforce change management consulting](../../services/change-management-salesforce/).

@@ -10,11 +10,11 @@ pubDate: 2026-10-28
 short: "From CPQ to Revenue Cloud"
 summary: "What Salesforce commits to for CPQ and Billing, how the products differ and how the migration runs in three phases."
 takeaways:
-  - "Salesforce CPQ is end of sale, not end of life: existing customers keep using it, add users, renew and get support, but no new features. No end-of-life date is announced."
-  - "Revenue Cloud runs on standard objects instead of the SBQQ and blng packages, so product rules, price rules, subscriptions, approvals and reports are redesigned rather than upgraded."
-  - "Stay on CPQ while the quoting process is stable, move when you need what only Revenue Cloud gets, and check a third route when your configuration rules live outside Salesforce."
-  - "Salesforce Help splits the migration into prepare, strategy and execute; the CPQ page names 3 to 6 months as typical, with CPQ and Revenue Cloud running side by side."
-  - "Price master, cutover model, scope of history and the billing cutover date are decisions for the client and finance; partners and migration tools carry them out."
+  - "Existing customers keep using CPQ, add users and get support, but no new features. No end-of-life date is announced."
+  - "Revenue Cloud runs on standard objects, so product rules, price rules, subscriptions, approvals and reports are redesigned, not upgraded."
+  - "Stay on CPQ while the quoting process is stable, and move when you need what only Revenue Cloud gets."
+  - "The CPQ page names 3 to 6 months as a typical migration, with CPQ and Revenue Cloud running side by side."
+  - "Price master, cutover model, history and the billing cutover date are decisions for the client and finance. Partners and tools carry them out."
 articles: [salesforce-cpq-end-of-sale-status, cpq-vs-revenue-cloud-differences, stay-on-cpq-or-migrate, cpq-to-revenue-cloud-migration-plan, salesforce-billing-to-revenue-cloud-billing, revenue-cloud-configuration-deployment]
 faq:
   - q: "Do I have to migrate from Salesforce CPQ to Revenue Cloud?"
@@ -54,7 +54,7 @@ The practical deadline is your next renewal. What exactly to secure is in [Sales
 At the renewal, agree the term, a cap on price increases and the right to run CPQ and Revenue Cloud side by side during a migration.
 ```
 
-## How do Salesforce CPQ and Revenue Cloud differ?
+## Revenue Cloud is a redesign on standard objects
 
 Both products configure, price, quote and bill, and underneath they share almost nothing. Salesforce Help says on its [migration page](https://help.salesforce.com/s/articleView?language=en_US&id=ind.rev_data_migration.htm&type=5): the data models "differ significantly". The CPQ page adds that "CPQ-specific objects, custom fields, pricing rules, and scripts don't map directly". The comparison per area:
 
@@ -133,7 +133,7 @@ I cut over at the end of an accounting period: last invoice run in the package, 
 
 Finance signs off this cutover, not the CRM team. Whether invoices should come from Salesforce at all after the move, and what German e-invoicing from 2027 requires, is covered in [chapter 4](../billing-and-usage-based-pricing/). The cutover itself is in [From Salesforce Billing to Revenue Cloud Billing](../../../blog/from-salesforce-billing-to-revenue-cloud-billing/).
 
-## How do configuration and deployments change?
+## Configuration and deployments work differently
 
 Catalog, selling models, price book entries and billing policies are records; decision tables, pricing recipes and context definitions are metadata. The [deployment guide](https://developer.salesforce.com/docs/revenue/revenue-management/guide/deployment-overview.html) states: "There's no built-in, Revenue Management-specific deployment tool." Every release is a metadata deployment, a data deployment in the documented order and manual steps such as refreshing decision tables and syncing pricing data.
 
@@ -147,7 +147,7 @@ My rules, set before the first record exists:
 
 How configuration data moves through a pipeline is covered in the DevOps chapter on [data and configuration](../../devops-release-management/data-and-configuration/), which tool fits in [DevOps tools compared](../../devops-release-management/devops-tools-compared/), and the Revenue Cloud details, including context definitions and configurator rules, in [Revenue Cloud deployments](../../../blog/revenue-cloud-configuration-deployment/).
 
-## A typical scenario, as an assumption
+## Worked example: dosing systems with 45 CPQ users
 
 A maker of dosing systems has used CPQ since 2019: 45 quoting users, about 150 product rules, a quote calculator plugin for dealer discounts and the Billing package for 600 maintenance contracts billed quarterly. The CPQ renewal is due in ten months. All details are assumptions.
 
@@ -156,7 +156,7 @@ A maker of dosing systems has used CPQ since 2019: 45 quoting users, about 150 p
 - **Proof of concept:** the five most configured systems as constraint models, before any migration contract.
 - **Cutover:** spare parts and services first, configured systems second. Subscriptions move in batches before their renewal month, and billing moves at the fiscal year end.
 
-## What do you decide, and what do partners and tools do?
+## Decide price master, cutover and billing date yourself
 
 | Topic | The client decides | Partner and tools carry out |
 |---|---|---|
@@ -169,5 +169,3 @@ A maker of dosing systems has used CPQ since 2019: 45 quoting users, about 150 p
 | Operation | Owner per configuration object, tool accounts | Pipeline in the client's tools |
 
 The left column belongs in the decision log before you ask for estimates. Steering several partners through such a move is part of my work in [partner governance](../../../services/partner-governance/), and an [object ownership matrix](../../../blog/salesforce-object-ownership-matrix/) keeps catalog, pricing and assets assigned after go-live. This is the last chapter; [chapter 4](../billing-and-usage-based-pricing/) covers billing and usage, and all chapters are on the [overview page](../).
-
-The move from CPQ and Billing to Revenue Cloud goes well when you decide it at the renewal and treat it as a redesign with your own decisions up front.

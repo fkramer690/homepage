@@ -8,11 +8,11 @@ chapter: 5
 short: "AIforce und Partner"
 summary: "Was AIforce und SIForce wirklich sind und wie das neue Partnermodell von Salesforce die Interessen Ihres Implementierungspartners verschiebt."
 takeaways:
-  - "„SI / AI Force“ hat zwei Lesarten: AIforce, die am 15. September 2026 vorgestellte Interface-Schicht für Claude, Slack und Lightning, und SI als Systemintegrator, also Ihr Implementierungspartner."
-  - "Die Umbenennung von AIforce in SIForce stützt sich nur auf Sekundärpresse wie Salesforce Ben, die über einen Post von Marc Benioff auf X berichtet; ein Salesforce-Dokument mit SIForce habe ich nicht gefunden."
-  - "Die Executive Order 14434 verpflichtet nur Behörden der US-Exekutive, „SI“ statt „AI“ zu schreiben; für Salesforce, Partner und Hersteller in Europa folgt daraus keine Pflicht."
-  - "Salesforce knüpft Partneranreize an aktiven Verbrauch und an Agenten in Produktion statt an verkaufte Lizenzen; steigt Ihr Credit-Verbrauch, profitiert Ihr Partner mit."
-  - "Hersteller sollten Partner an messbaren Ergebnissen messen, Obergrenzen für Flex Credits vereinbaren und Regeln für KI-gestütztes Programmieren in den Vertrag schreiben."
+  - "AIforce ist die am 15. September 2026 vorgestellte Schicht, die Salesforce-Daten und Workflows in Claude, Slack und Lightning nutzbar macht."
+  - "Für die Umbenennung in SIForce gibt es bisher nur einen Post von Marc Benioff auf X, ein Salesforce-Dokument mit dem Namen habe ich nicht gefunden."
+  - "Die Executive Order 14434 gilt nur für US-Bundesbehörden. Salesforce, Partner und Hersteller in Europa müssen nichts umbenennen."
+  - "Partner verdienen seit 2026 an Verbrauch und an Agenten in Produktion. Steigt Ihr Credit-Verbrauch, profitiert Ihr Partner mit."
+  - "Messen Sie Partner an Ergebnissen, die Sie selbst prüfen können, deckeln Sie Flex Credits und schreiben Sie KI-Regeln in den Vertrag."
 articles: [aiforce-salesforce-in-claude-slack, fixed-price-ai-salesforce-partners, partners-ai-coding-sow-rules]
 faq:
   - q: "Was ist AIforce bei Salesforce?"
@@ -72,14 +72,14 @@ Der Anlass ist dagegen als Primärquelle nachlesbar. Die [Executive Order 14434]
 2026-10-12 | Salesforce Ben findet keine offizielle Ankündigung
 ```
 
-Für Ihre Unterlagen empfehle ich „AIforce (vom CEO als SIForce angekündigt)“, bis Salesforce den Namen schriftlich bestätigt. Drei Namen in rund sechs Monaten sind auch ein Grund, Architekturdokumente nach Funktionen zu gliedern statt nach Produktnamen.
+Für Ihre Unterlagen empfehle ich „AIforce (vom CEO als SIForce angekündigt)“, bis Salesforce den Namen schriftlich bestätigt. Drei Namen in rund sechs Monaten sind auch ein Grund, Architekturdokumente nach Funktionen zu gliedern und Produktnamen nur in Klammern zu nennen.
 
 ## SI als Systemintegrator: was sich im Partnermodell ändert
 
 Die zweite Lesart betrifft Ihren Implementierungspartner. Salesforce hat das [Partnerprogramm am 2. März 2026 umgebaut](https://www.salesforce.com/news/stories/rewarding-value-through-new-salesforce-partner-program/):
 
 - Zwei Stufen, Summit und Select.
-- 28 Kernkompetenzen statt 170 Auszeichnungen, darunter die stärker nachgefragten für Agentforce und Data 360.
+- 28 Kernkompetenzen, bisher waren es 170 Auszeichnungen, darunter die stärker nachgefragten für Agentforce und Data 360.
 - Anreize hängen an aktivem Verbrauch statt an bereitgestellten Lizenzen.
 - Agentforce-Fähigkeit wird in einer Sandbox nachgewiesen, nicht nur per Wissenstest.
 - KI-Governance und Sicherheitsvorgaben sind Pflicht.
@@ -102,7 +102,7 @@ contra: Wo der Konflikt liegt
 
 Dazu kommt, dass Partner selbst mit Coding-Agenten bauen. Das verkürzt Arbeit, die bisher nach Stunden abgerechnet wurde. Ob deshalb Festpreis oder ergebnisbasierte Verträge besser passen, untersuche ich in [Festpreis statt Aufwand](../../../blog/festpreis-statt-aufwand-ki-salesforce/). Was im Vertrag stehen muss, wenn ein Partner mit KI programmiert, also Offenlegung, Datenumgang, Rechte am Code, kein Zugriff auf Produktion und Review, steht in [Partner mit KI-Coding: Regeln für den Vertrag](../../../blog/partner-ki-coding-regeln-vertrag/).
 
-## Ein typisches Szenario: zwei Angebote für einen Händleragenten
+## Rechenbeispiel: zwei Angebote für einen Händleragenten
 
 Nehmen wir einen Maschinenbauer mit Service Cloud, SAP und einem Händlerportal. Er möchte einen Agenten, der Händleranfragen zu Auftragsstatus und Lieferterminen beantwortet, und holt zwei Angebote ein. Alle Zahlen und Umstände sind Annahmen.
 
@@ -132,12 +132,10 @@ Danach lassen sich beide Angebote vergleichen, weil KI-Einsatz, Zugriffe und Ver
 
 ## Was sollten Hersteller jetzt mit ihren Partnern regeln?
 
-- **Namen festhalten.** In Konzepten „AIforce“ schreiben, bis Salesforce SIForce schriftlich bestätigt, und Funktionen beschreiben statt Produktnamen.
-- **Ergebnisse statt Stunden vereinbaren**, wo der Umfang klar ist, mit einer Kennzahl, die Sie selbst messen können.
+- **Namen festhalten.** In Konzepten „AIforce“ schreiben, bis Salesforce SIForce schriftlich bestätigt, und vor allem die Funktionen beschreiben.
+- **Nach Ergebnissen abrechnen**, wo der Umfang klar ist, mit einer Kennzahl, die Sie selbst messen können.
 - **Verbrauch begrenzen.** Erwartete Aktionen pro Vorgang, Credit-Obergrenze, Verantwortung für Sandbox-Tests.
 - **KI-Regeln in den Vertrag schreiben**: Offenlegung der Werkzeuge, kein Produktivzugriff, Review durch Menschen, Rechte am Code.
 - **Branchentiefe prüfen.** Fragen Sie nach Agenten in Produktion bei Garantie, Ersatzteilen oder Händlervertrieb, nicht nach Zertifikaten oder dem Logo des FDE-Netzwerks.
 
 Diese Punkte gehören zu meiner Arbeit in der [Partnersteuerung](../../../leistungen/partnersteuerung/). Welches Werkzeug für welchen Zweck passt, zeigt das nächste Kapitel, die [Entscheidungsmatrix](../entscheidungsmatrix-ki-werkzeuge/); wie sich Teams mit KI organisieren, behandelt [Kapitel 9](../teamarbeit-und-delivery/). Alle Kapitel finden Sie in der [Übersicht der Masterclass](../).
-
-AIforce ändert, wo Ihre Leute mit Salesforce arbeiten, das neue Partnermodell ändert, woran Ihr Partner verdient, und beides sollten Sie im Vertrag sichtbar machen.

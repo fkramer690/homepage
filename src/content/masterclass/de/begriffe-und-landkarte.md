@@ -8,10 +8,10 @@ chapter: 1
 short: "Begriffe und Landkarte"
 summary: "Welche vier Ebenen KI im Salesforce-Projekt hat, was Vibe Coding von agentic engineering trennt und welche Produktnamen wofür stehen."
 takeaways:
-  - "KI im Salesforce-Projekt hat vier Ebenen: KI zum Bauen, Schnittstellen für Agenten, KI im Produkt und KI als Oberfläche. Jede hat andere Verantwortliche, andere Risiken und ein anderes Abrechnungsmodell."
-  - "Ein Coding-Agent wie Claude Code oder Agentforce Vibes schreibt Metadaten und Code; ein Agentforce-Agent läuft in der Org und beantwortet zum Beispiel Händleranfragen. Wer beides vermischt, plant das falsche Budget."
-  - "Vibe Coding heißt, Code von der KI erzeugen zu lassen, ohne ihn zu prüfen. Für Workshop-Prototypen ist das in Ordnung, für eine Kundenorg mit Händler- und Garantiedaten braucht es Review, Tests und CI."
-  - "Salesforce hat die KI-Schicht für externe Oberflächen in rund sechs Monaten dreimal benannt: Headless 360, AIforce, SIForce. Schreiben Sie Produktnamen in Konzepten deshalb immer mit Datum."
+  - "Jede der vier Ebenen hat eigene Verantwortliche, eigene Risiken und ein eigenes Abrechnungsmodell und braucht deshalb eine eigene Entscheidung."
+  - "Ein Coding-Agent wie Claude Code schreibt Metadaten und Code, ein Agentforce-Agent läuft in der Org. Wer beides vermischt, plant das falsche Budget."
+  - "Vibe Coding, also KI-Code ohne Prüfung, reicht für Workshop-Prototypen. Eine Kundenorg mit Händler- und Garantiedaten braucht Review, Tests und CI."
+  - "Salesforce hat die Schicht für externe Oberflächen in sechs Monaten dreimal benannt. Schreiben Sie Produktnamen in Konzepten deshalb mit Datum."
 articles: [vibe-coding-prototype-not-production, aiforce-salesforce-in-claude-slack, agentforce-yes-or-no-manufacturers]
 faq:
   - q: "Was ist der Unterschied zwischen Agentforce und Agentforce Vibes?"
@@ -111,7 +111,7 @@ Ich schreibe in Konzepten „AIforce (Stand Oktober 2026)“ und übernehme in V
 
 Was hinter AIforce steckt und was eine IT-Leitung jetzt tun sollte, steht in [AIforce: Salesforce in Claude und Slack](../../../blog/aiforce-salesforce-in-claude-und-slack/), die zweite Lesart von „SI“ als Systemintegrator in [Kapitel 5](../aiforce-und-systemintegratoren/).
 
-## Ein typisches Szenario: viermal „KI“ im Lenkungskreis
+## Beispiel: viermal „KI“ im Lenkungskreis
 
 Nehmen wir einen Maschinenbauer mit Sales Cloud, Service Cloud, SAP und einem Händlernetz mit Portal. Alle Zahlen sind Annahmen zur Veranschaulichung. Im Lenkungskreis stehen an einem Vormittag vier KI-Wünsche auf der Agenda:
 
@@ -134,5 +134,3 @@ Die folgenden Kapitel gehen die Ebenen einzeln durch:
 - **Über alle Ebenen:** [Kapitel 6](../entscheidungsmatrix-ki-werkzeuge/) liefert die Entscheidungsmatrix, [Kapitel 7](../kosten-und-token/) die Kosten mit Rechenbeispielen.
 
 Die Übersicht aller Kapitel finden Sie auf der [Startseite der Masterclass](../). Wenn Sie die Ebenen für Ihr eigenes Programm sortieren wollen, ist das ein typischer Einstieg in meine Arbeit zur [Salesforce-Architektur](../../../leistungen/salesforce-architektur/).
-
-Wer die vier Ebenen trennt und Produktnamen mit Datum verwendet, kann jedes KI-Angebot für Salesforce einordnen, bevor er über Werkzeuge spricht.

@@ -90,7 +90,7 @@ The second big change is the Agentic Enterprise lens. It is no sixth pillar. Eac
 
 The key sentence is in the announcement blog: "Agents don't get their own rulebook." An agent has to meet the same requirements for security, stability and cost as any other solution in your org. That matches my stance from Agentforce projects: business value and data quality come before the agent. More on that in [Agentforce: business value and data quality first](../agentforce-business-value-data-quality-first/).
 
-## What is really new for CIOs and heads of CRM?
+## For CIOs, cost, operations and named trade-offs matter
 
 From the point of view of a client-side architect, three changes matter.
 
@@ -109,7 +109,7 @@ For all the agreement: it is still a vendor document.
 - **The Architect Agent is not tangible yet.** Salesforce showed it at Dreamforce but did not state availability or pricing. I would test it before trusting it with architecture questions.
 - **It does not replace a decision.** The framework provides questions and patterns. Whether you need 99.5 percent availability or 99, whether you build or buy, depends on your business model and not on the document.
 
-## How do I use the framework in a programme with several partners?
+## How I use the framework in a programme with several partners
 
 I already used the old framework with Trusted, Easy and Adaptable in client projects and presented it in user group talks.
 
@@ -128,6 +128,6 @@ In practice that means:
 
 How I set up standards and reviews in such programmes is part of my [work on partner governance and architecture](../../services/partner-governance/).
 
-## Where should you start?
+## First step: check your development standards against the five pillars
 
-Read the [overview in the Architecture Center](https://architect.salesforce.com/docs/architect/well-architected/guide/overview.html) and the legacy mapping if your teams still work with Trusted, Easy and Adaptable. Then check your existing development standards against the five pillars. Cost and operations are usually what is missing. The new Well-Architected Framework is a useful shared standard as long as you make the decisions yourself.
+Read the [overview in the Architecture Center](https://architect.salesforce.com/docs/architect/well-architected/guide/overview.html) and the legacy mapping if your teams still work with Trusted, Easy and Adaptable. Then check your existing development standards against the five pillars. Cost and operations are usually what is missing.

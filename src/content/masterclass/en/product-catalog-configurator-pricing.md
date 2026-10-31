@@ -10,10 +10,10 @@ pubDate: 2026-10-28
 short: "Catalog, configurator, pricing"
 summary: "How the product catalog, constraint configurator and Salesforce Pricing work together, and which prices should come from SAP."
 takeaways:
-  - "In Revenue Cloud the catalog comes first: product classifications with attributes describe a machine family, so variants stay attribute values instead of thousands of product records."
-  - "The configurator has two rule engines: configuration rules for simple if-then logic and the constraint rules engine for interdependent attributes, modelled in CML."
-  - "Salesforce Pricing calculates with pricing procedures that read decision tables. After every change to pricing data the decision tables need a refresh, or quotes use old values."
-  - "Every price type needs one master. Conditions that also apply to EDI, phone or shop orders without Salesforce should stay in SAP and be requested through an API."
+  - "Product classifications with attributes describe a machine family, so variants stay attribute values and do not become thousands of product records."
+  - "Configuration rules cover simple if-then logic. Interdependent attributes need the constraint rules engine with models in CML."
+  - "Pricing procedures read decision tables. After every change to pricing data the decision tables need a refresh, or quotes use old values."
+  - "Conditions that also apply to EDI, phone or shop orders without Salesforce stay in SAP and are requested through an API."
   - "Catalog records, constraint models and pricing procedures change what sales can quote. Each needs an owner at the manufacturer, versions and regression cases."
 articles: [revenue-cloud-product-catalog-variants, revenue-cloud-configurator-constraint-rules, revenue-cloud-pricing-procedures, customer-prices-sap-or-salesforce-pricing, manufacturing-cloud-quote-to-agreement]
 faq:
@@ -85,7 +85,7 @@ Constraint models are written in CML, the Constraint Modeling Language. Visual B
 
 ### Where do your configuration rules live today?
 
-That question decides the route more than any feature list:
+That question decides the route more than the feature list does:
 
 | Where the rules live | What follows |
 |---|---|
@@ -146,13 +146,13 @@ source: [CML User Guide](https://resources.docs.salesforce.com/rel1/doc/en-us/st
 
 How configuration data moves through a pipeline is the subject of the DevOps chapter on [data and configuration](../../devops-release-management/data-and-configuration/), and how tests fit into the release process is in [quality, tests and reviews](../../devops-release-management/quality-tests-reviews/).
 
-## A typical scenario, as an assumption
+## Worked example: 30 packaging machines in three families
 
 A manufacturer of packaging machines sells 30 base machines in three families through direct sales, and spare parts through dealers. Two families have their compatibility rules in spreadsheets kept by application engineers, the third uses SAP variant configuration.
 
 Three classifications with about a dozen attributes each, 30 base machines, configurable bundles for tooling and safety packages, a separate spare parts catalog loaded from SAP. Constraint models for the two spreadsheet families, with compatibility tables loaded from a custom object and regression cases per family. The SAP family keeps its configurator for now, and Salesforce takes the result through an interface. Machine prices follow route C with list prices from SAP every night and the sync right after the load. Dealer prices for spare parts follow route A. Product management owns the catalog and the constraint models, a pricing admin in sales operations owns the procedures, and controlling signs off every pricing change.
 
-## What should be decided before a partner builds?
+## Name an owner for the catalog
 
 1. **Catalog owner and the three variant tests**, written down before the first data load.
 2. **Rule master per product line**: Revenue Cloud, SAP variant configuration or an external configurator, never two.
@@ -161,5 +161,3 @@ Three classifications with about a dozen attributes each, 30 base machines, conf
 5. **Regression cases** for pricing and constraint models, owned by the manufacturer.
 
 Setting these boundaries between SAP and Salesforce is part of my work on [Salesforce architecture](../../../services/salesforce-architecture/), and the price interface itself falls under [Salesforce integration](../../../services/salesforce-integration/). [Chapter 3](../quote-contract-order/) continues with approvals, contracts and the order hand-over to SAP, and all chapters are on the [overview page](../).
-
-Catalog, configurator and pricing work in Revenue Cloud when each has one master and one owner at the manufacturer.

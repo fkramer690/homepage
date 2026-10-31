@@ -10,16 +10,16 @@ categories: [devops, architecture]
 contactBrief: partner-governance
 tags: [Org-Analyse, Technische Schulden, Claude Batch API, Code Analyzer, sfdx-hardis, Partnerwechsel]
 takeaways:
-  - "Ein LLM übernimmt bei der Org-Analyse gut das Lesen: was jede Klasse, jeder Flow und jedes Permission Set tut, welchem Prozess es dient und wo zwei Partner dieselbe Logik doppelt gebaut haben."
-  - "Anzahlen, Nutzung, API-Versionen, Regelverstöße und Testabdeckung müssen aus deterministischen Tools kommen, etwa Code Analyzer, sfdx-hardis-Monitoring und einem Apex-Testlauf, nie aus dem Modell."
-  - "Im Szenario kostet ein Batch-Lauf über 2.250 Komponenten zu US-Listenpreisen rund 59 $ mit Sonnet 5.5 und 119 $ mit Opus 5.5, weil die Claude Batch API Input- und Output-Preise halbiert."
-  - "Die echten Kosten liegen in der Architektenzeit für Fragenkatalog und Stichproben; im Szenario rund zehn Tage, gegenüber angenommenen 47 Tagen, wenn jemand alles von Hand liest."
-  - "Der Kunde sollte die Analyse mit eigenen Tools und eigenem Account durchführen, denn der scheidende Partner verteidigt seinen Code und der neue möchte einen Neubau verkaufen."
+  - "Ein LLM liest gut: was jede Klasse, jeder Flow und jedes Permission Set tut und wo zwei Partner dieselbe Logik doppelt gebaut haben."
+  - "Anzahlen, Nutzung, API-Versionen, Regelverstöße und Testabdeckung kommen aus deterministischen Tools wie Code Analyzer, nie aus dem Modell."
+  - "Im Rechenbeispiel kostet ein Batch-Lauf über 2.250 Komponenten rund 59 $ mit Sonnet 5.5 und 119 $ mit Opus 5.5 zu US-Listenpreisen."
+  - "Teuer ist die Architektenzeit: im Rechenbeispiel rund zehn Tage, gegenüber angenommenen 47 Tagen, wenn jemand alles von Hand liest."
+  - "Der Kunde führt die Analyse selbst durch, denn der scheidende Partner verteidigt seinen Code und der neue möchte einen Neubau verkaufen."
 faq:
   - q: "Kann ChatGPT oder Claude eine Salesforce-Org bewerten?"
     a: "Die Modelle können abgerufene Metadaten und Code lesen und erklären: Zweck, Geschäftsprozess, doppelte Logik und Risiko in verständlicher Sprache. Was ungenutzt ist, wie viele Komponenten es gibt und welche Regeln verletzt sind, sagen sie nicht verlässlich. Dafür braucht es deterministische Tools."
   - q: "Was kostet eine KI-Org-Analyse an Tokens?"
-    a: "Im Szenario mit 1.400 Apex-Klassen und Triggern, 600 Flows und 250 Permission Sets kostet der erste Durchlauf über die Batch API zu US-Listenpreisen rund 59 $ mit Claude Sonnet 5.5 und 119 $ mit Opus 5.5. Ein zweiter Durchlauf pro Objekt kommt mit rund 10 $ dazu."
+    a: "Im Rechenbeispiel mit 1.400 Apex-Klassen und Triggern, 600 Flows und 250 Permission Sets kostet der erste Durchlauf über die Batch API zu US-Listenpreisen rund 59 $ mit Claude Sonnet 5.5 und 119 $ mit Opus 5.5. Ein zweiter Durchlauf pro Objekt kommt mit rund 10 $ dazu."
   - q: "Eignet sich die Claude Batch API für vertraulichen Quellcode?"
     a: "Anthropic führt die Batch-Verarbeitung als nicht geeignet für Zero Data Retention, die Ergebnisse werden 29 Tage gespeichert. Gespeicherte Daten werden ohne Ihre Zustimmung nicht zum Training genutzt. Entfernen Sie fest codierte personenbezogene Daten vorher und stimmen Sie das Setup mit Ihrem Datenschutzbeauftragten ab."
   - q: "Welche Tools finden technische Schulden in Salesforce ohne KI?"
@@ -29,9 +29,9 @@ faq:
 draft: false
 ---
 
-Eine KI-Org-Analyse lohnt sich vor einem Relaunch oder Partnerwechsel, solange das Modell liest und die Tools zählen. Ein LLM erklärt, was jede Apex-Klasse, jeder Flow und jedes Permission Set tut, welchem Geschäftsprozess es dient und wo Partner dieselbe Logik doppelt gebaut haben. Über die Claude Batch API kostet ein Lauf über 2.250 Komponenten im Szenario unten rund 59 $ bis 119 $. Ob etwas ungenutzt ist, welche Regeln es verletzt und wie hoch die Testabdeckung ist, müssen deterministische Tools liefern: Code Analyzer, sfdx-hardis-Monitoring und ein Apex-Testlauf. Diese lasse ich zuerst laufen und gebe die Ergebnisse dem Modell mit.
+Eine KI-Org-Analyse lohnt sich vor einem Relaunch oder Partnerwechsel, solange das Modell liest und die Tools zählen. Ein LLM erklärt, was jede Apex-Klasse, jeder Flow und jedes Permission Set tut, welchem Geschäftsprozess es dient und wo Partner dieselbe Logik doppelt gebaut haben. Über die Claude Batch API kostet ein Lauf über 2.250 Komponenten im Rechenbeispiel unten rund 59 $ bis 119 $. Ob etwas ungenutzt ist, welche Regeln es verletzt und wie hoch die Testabdeckung ist, müssen deterministische Tools liefern: Code Analyzer, sfdx-hardis-Monitoring und ein Apex-Testlauf. Diese lasse ich zuerst laufen und gebe die Ergebnisse dem Modell mit.
 
-## Warum vor dem Partnerwechsel auf die gewachsene Org schauen?
+## Eine gewachsene Org trägt die Handschrift jedes Partners
 
 Eine Salesforce-Org, die zehn Jahre unter mehreren Partnern gewachsen ist, trägt deren Handschrift. Bei einem Maschinenbauer hat vielleicht ein Partner das Händlerportal gebaut, ein zweiter die Prozesse für den Außendienst mit Field Service, ein dritter die SAP-Schnittstelle für Aufträge und Ersatzteile. Jeder brachte sein eigenes Trigger-Framework, seine Namenskonventionen und seinen Teststil mit. Bevor ein neuer Partner übernimmt oder ein Relaunch startet, muss jemand klären, was in der Org steckt, was davon genutzt wird und was riskant wäre, einfach weiterzubetreiben.
 
@@ -62,7 +62,7 @@ Alles, was eine Anzahl, eine Nutzungszahl oder ein Regelverstoß ist. Ein Modell
 
 Meine Regel: Enthält ein Satz im Bericht eine Zahl oder das Wort „ungenutzt“, hat ihn ein Tool erzeugt. Dieselben Tools als Prüfschritte in der Pipeline beschreibe ich in [Quality Gates für KI-Code](../quality-gates-ki-code-salesforce-pipeline/); für die Analyse laufen sie einmal gegen die ganze Org.
 
-## Ein typisches Szenario: drei Partner, eine Org, ein Relaunch
+## Rechenbeispiel: drei Partner, eine Org, ein Relaunch
 
 Nehmen wir einen Maschinenbauer mit Sales Cloud, Service Cloud, Field Service, einem Händlerportal und SAP. In zwölf Jahren haben drei Partner an der Org gearbeitet, ein vierter soll übernehmen. Die Org enthält 1.400 Apex-Klassen und Trigger, 600 Flows und 250 Permission Sets. Alle Mengen und Token-Größen unten sind Annahmen.
 
@@ -83,7 +83,7 @@ Pro Objekt verdichten
 
 ### Was der Batch-Lauf kostet
 
-Die [Claude Batch API](https://platform.claude.com/docs/en/build-with-claude/batch-processing) verarbeitet Anfragen asynchron, die meisten Batches innerhalb einer Stunde, und berechnet 50 Prozent der Standardpreise. Laut [Preisseite](https://platform.claude.com/docs/en/about-claude/pricing) sind das für Sonnet 5.5 1 $ Input und 5 $ Output pro Million Tokens, für Opus 5.5 2 $ und 10 $. Einen Euro-Listenpreis veröffentlicht Anthropic dort nicht, die Beträge sind US-Listenpreise. Ein Batch fasst bis zu 100.000 Anfragen oder 256 MB, je nachdem, was zuerst erreicht ist. Der Input im Szenario umfasst grob 150 MB Text (meine Schätzung), ich würde ihn deshalb auf zwei Batches aufteilen.
+Die [Claude Batch API](https://platform.claude.com/docs/en/build-with-claude/batch-processing) verarbeitet Anfragen asynchron, die meisten Batches innerhalb einer Stunde, und berechnet 50 Prozent der Standardpreise. Laut [Preisseite](https://platform.claude.com/docs/en/about-claude/pricing) sind das für Sonnet 5.5 1 $ Input und 5 $ Output pro Million Tokens, für Opus 5.5 2 $ und 10 $. Einen Euro-Listenpreis veröffentlicht Anthropic dort nicht, die Beträge sind US-Listenpreise. Ein Batch fasst bis zu 100.000 Anfragen oder 256 MB, je nachdem, was zuerst erreicht ist. Der Input im Rechenbeispiel umfasst grob 150 MB Text (meine Schätzung), ich würde ihn deshalb auf zwei Batches aufteilen.
 
 - Code und Metadaten: 1.400 Klassen zu 6.000 Tokens, 600 Flows zu 10.000 Tokens Flow-XML, 250 Permission Sets zu 4.000 Tokens = 15,4 Mio. Tokens.
 - Fragenkatalog und Tool-Befunde: 12.000 Tokens pro Anfrage × 2.250 Anfragen = 27 Mio. Tokens.
@@ -93,20 +93,20 @@ Die [Claude Batch API](https://platform.claude.com/docs/en/build-with-claude/bat
 59 $ | Sonnet 5.5, erster Durchlauf: 42,4 Mio. × 1 $ + 3,4 Mio. × 5 $, gerundet
 119 $ | Opus 5.5, erster Durchlauf: 42,4 Mio. × 2 $ + 3,4 Mio. × 10 $, gerundet
 10 $ | Zweiter Durchlauf für 40 Objekte mit je 100.000 Tokens Input und 5.000 Output auf Opus 5.5
-quelle: Claude Preisseite (Batch-Preise, US-Listenpreise), Token-Mengen als Annahmen im Szenario
+quelle: Claude Preisseite (Batch-Preise, US-Listenpreise), Token-Mengen als Annahmen im Rechenbeispiel
 ```
 
 Prompt-Caching lässt sich mit dem Batch-Rabatt kombinieren, im Batch sind Cache-Treffer aber nicht garantiert; Anthropic nennt Trefferquoten von 30 bis 98 Prozent. Ich rechne ohne Caching und betrachte jede Ersparnis als Zugabe. Thinking-Tokens werden [als Output abgerechnet](https://code.claude.com/docs/en/costs) und lassen sich bei den 5.5-Modellen nicht abschalten; verdreifachen sie den Output, steigt der Opus-Lauf auf rund 187 $. Die Grundlagen der Token-Rechnung stehen im [Masterclass-Kapitel zu Kosten und Token](../../masterclass/ki-salesforce/kosten-und-token/).
 
 ### Wo die echten Kosten liegen
 
-Die Token-Rechnung ist klein. Die Arbeit liegt bei Menschen. Im Szenario würde ich rund zehn Architektentage einplanen: drei bis vier für die Einrichtung der Tools und den Fragenkatalog, den Rest für eine Stichprobe von 10 Prozent der Befunde und jeden Befund mit hohem Risiko. 2.250 Komponenten von Hand zu lesen, bei angenommenen zehn Minuten pro Stück, dauert rund 375 Stunden oder 47 Tage. Das LLM übernimmt das erste Lesen, Menschen entscheiden.
+Die Token-Rechnung ist klein. Die Arbeit liegt bei Menschen. Im Rechenbeispiel würde ich rund zehn Architektentage einplanen: drei bis vier für die Einrichtung der Tools und den Fragenkatalog, den Rest für eine Stichprobe von 10 Prozent der Befunde und jeden Befund mit hohem Risiko. 2.250 Komponenten von Hand zu lesen, bei angenommenen zehn Minuten pro Stück, dauert rund 375 Stunden oder 47 Tage. Das LLM übernimmt das erste Lesen, Menschen entscheiden.
 
 ## Was ist mit Quellcode und Datenschutz?
 
 Der Quellcode der Org gehört dem Kunden, und Testklassen enthalten oft Namen, E-Mail-Adressen oder Datensatz-IDs. Anthropics [Seite zur Datenaufbewahrung](https://platform.claude.com/docs/en/manage-claude/api-and-data-retention) führt die Batch-Verarbeitung als nicht geeignet für Zero Data Retention, weil die Ergebnisse 29 Tage gespeichert werden. Auf derselben Seite steht, dass gespeicherte Daten „never used for model training without your express permission“ sind. Entfernen Sie personenbezogene Daten vor dem Lauf und stimmen Sie das Setup mit Ihrem Datenschutzbeauftragten ab; Betriebsrat und DSGVO behandle ich in [KI-Coding, Betriebsrat und DSGVO](../ki-coding-betriebsrat-dsgvo/).
 
-Gilt die Vorgabe ohne Datenaufbewahrung streng, gibt es zwei Alternativen. Sie zahlen den vollen Preis ohne Batch, im Szenario rund 119 $ bis 238 $, nachdem Sie geprüft haben, welche Endpunkte Ihr Vertrag abdeckt. Oder Sie nutzen die KI-Dokumentation von sfdx-hardis, die laut [Seite zum KI-Setup](https://sfdx-hardis.cloudity.com/salesforce-ai-setup/) mit Agentforce, OpenAI oder über LangChain.js mit Anthropic, Google GenAI und Ollama für lokal betriebene Modelle arbeitet. Dieselbe Seite warnt, dass der erste Dokumentationslauf „can make hundreds of API calls“, empfiehlt, den KI-Cache einzuchecken, und begrenzt die Aufrufe pro Befehl standardmäßig auf 10.000.
+Gilt die Vorgabe ohne Datenaufbewahrung streng, gibt es zwei Alternativen. Sie zahlen den vollen Preis ohne Batch, im Rechenbeispiel rund 119 $ bis 238 $, nachdem Sie geprüft haben, welche Endpunkte Ihr Vertrag abdeckt. Oder Sie nutzen die KI-Dokumentation von sfdx-hardis, die laut [Seite zum KI-Setup](https://sfdx-hardis.cloudity.com/salesforce-ai-setup/) mit Agentforce, OpenAI oder über LangChain.js mit Anthropic, Google GenAI und Ollama für lokal betriebene Modelle arbeitet. Dieselbe Seite warnt, dass der erste Dokumentationslauf „can make hundreds of API calls“, empfiehlt, den KI-Cache einzuchecken, und begrenzt die Aufrufe pro Befehl standardmäßig auf 10.000.
 
 ## Wem sollte die Analyse gehören?
 
@@ -114,7 +114,7 @@ Dem Kunden. Lassen Sie die Scans in Ihrer Pipeline und die Modellaufrufe in Ihre
 
 Die Analyse ist der Startpunkt für die Übergabe: welche Objekte an welchen Partner gehen, welche Komponenten gelöscht und welche neu gebaut werden. Diese Steuerung gehört zu meiner Arbeit in der [Partnersteuerung](../../leistungen/partnersteuerung/).
 
-## Wo fangen Sie an?
+## Alle Metadaten in ein eigenes Repository abrufen
 
 1. Rufen Sie alle Metadaten in ein Repository ab, das Ihnen gehört.
 2. Schalten Sie das sfdx-hardis-Monitoring für zwei Wochen ein, um Nutzungsdaten zu sammeln.
@@ -122,5 +122,3 @@ Die Analyse ist der Startpunkt für die Übergabe: welche Objekte an welchen Par
 4. Schreiben Sie zehn Analysefragen und testen Sie sie an 50 Komponenten, zweimal; weichen die beiden Läufe bei vielen Risikobewertungen voneinander ab, schärfen Sie die Fragen nach.
 5. Starten Sie den Batch und danach den zweiten Durchlauf pro Objekt.
 6. Prüfen Sie Stichproben und jeden Befund mit hohem Risiko, bevor etwas in den Übergabeplan geht.
-
-Eine KI-Org-Analyse kostet an Tokens weniger als ein Workshop-Tag, solange die Tools die Fakten liefern und das Modell sie nur erklärt.

@@ -9,9 +9,9 @@ topic: commerce
 categories: [b2b-commerce]
 tags: [B2B Commerce, search, spare parts, part numbers, synonyms, search analytics]
 takeaways:
-  - "Salesforce documents for its store search that all search terms must match and that prefix and infix partial matches are not supported. Part numbers must be stored the way dealers type them."
+  - "Store search needs all search terms to match and supports no partial matches inside a word. Part numbers must be stored the way dealers type them."
   - "A store allows 25 searchable and 50 filterable attributes, 100 synonym rules and 100 boost and bury rules. 10 facets per query are standard, 50 on request."
-  - "Old and cross-reference part numbers belong in a searchable field on the current product. Synonym rules are too few for numbers and better used for terms like O-ring and seal."
+  - "Old and cross-reference part numbers belong in a searchable field on the current product. Synonym rules fit terms like O-ring and seal better."
   - "Search analytics via Data Cloud, announced in July 2026, shows zero-result searches. They are the best list of product data that is missing."
   - "After changes to searchable fields, products, categories or entitlement policies, the search index has to be rebuilt before dealers see the result."
 faq:
@@ -40,7 +40,7 @@ The unit states them for D2C stores; I found no separate description for B2B, so
 
 Visibility comes first. A dealer only finds products that its buyer groups are entitled to see, and only the first 2,000 buyer groups of a product are indexed. I explain that limit in [buyer groups and entitlements](../buyer-groups-entitlements-product-visibility/). Field-level security matters too: Trailhead warns that a shopper without access to an indexed searchable field cannot search the store at all.
 
-## Which search limits apply?
+## 25 searchable attributes and 100 synonym rules per store
 
 Salesforce lists the [search limits](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-search-limits.html) on one page. As of October 2026:
 
@@ -77,15 +77,13 @@ contra: Synonym rule per number
 - Covers a handful of numbers, not a parts history
 ```
 
-I would always take the field for numbers. The data already exists in the ERP, in supersession chains or material master notes, and the interface can fill the field with every load. A typical scenario, as an assumption: a manufacturer with 30,000 active spare parts, of which 8,000 have one or more predecessor numbers. As synonym rules that is impossible. As a field it is one more column in the product import.
+I would always take the field for numbers. The data already exists in the ERP, in supersession chains or material master notes, and the interface can fill the field with every load. Worked example: a manufacturer with 30,000 active spare parts, of which 8,000 have one or more predecessor numbers. As synonym rules that is impossible. As a field it is one more column in the product import.
 
 The same field can hold spellings: "4711-0020" and "47110020" side by side if dealers type both. Which spellings matter, the search analytics will show after a few weeks.
 
 Synonym rules remain useful for words. "O-ring", "seal ring" and the German "Dichtring" for the same thing, "filter cartridge" and "filter element", the internal name of a machine series and the name on the dealer's sales brochure. That is where 100 rules go a long way.
 
-## What did Salesforce change in 2026?
-
-Three announcements from 2026 matter for parts search.
+## Three announcements from 2026 for parts search
 
 **B2B Search (June 2026).** In its [June release post](https://www.salesforce.com/blog/b2b-commerce-innovations-june-26/), Salesforce describes AI-driven and attribute-based search. Buyers no longer need "the exact product name or SKU" and can describe what they need in plain language. Merchandisers get "granular control over attribute-based search and product visibility". For dealers who know their part number this changes little. For end customers or new dealers who describe a part, it can help. I would test it with your own descriptions before relying on it.
 
@@ -101,12 +99,10 @@ Facets help when a search returns many hits, for example "filter" in a catalogue
 
 Showing dealers only parts that fit a specific machine is a different requirement. Search and facets cannot know which machines a dealer owns. The options for that are in [show only parts for each machine](../spare-parts-shop-parts-per-machine/), and the AI side in [spare parts by serial number](../spare-parts-by-serial-number-ai/).
 
-## Where should you start?
+## First step: test 200 search terms from inside sales
 
 Collect what dealers actually type before you configure anything. Inside sales has emails and phone notes full of part numbers, old numbers and descriptions. Take 200 of them and run them against a test store with your real data. Every miss is either missing data, a missing searchable field or a spelling problem.
 
 After go-live, the list of zero-result searches is the working list for the next data cleanup. Check it every week in the first months. How that fits with other KPIs is covered in [B2B shop KPIs after go-live](../b2b-shop-kpis-after-go-live/). And after every change to searchable fields, products, categories or entitlement policies, rebuild the search index, because Trailhead names all of these as triggers.
 
 The topic belongs to the [chapter on catalogue, search and entitlements](../../masterclass/b2b-commerce/catalog-search-entitlements/) of my B2B Commerce masterclass. Defining which ERP fields feed search is part of my work on [Salesforce integration](../../services/salesforce-integration/).
-
-Dealers find parts when the numbers they type are in the data, so start with their search terms, not with the search settings.
