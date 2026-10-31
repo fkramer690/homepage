@@ -10,10 +10,9 @@ pubDate: 2026-10-28
 short: "Operations and monitoring"
 summary: "What go-live adds to the job: daily org monitoring, tested backups, visible technical debt, DORA metrics and a hotfix path."
 takeaways:
-  - "A metadata backup in Git and a data backup are two different things; Git does not hold records, and a data backup does not replace the history of your configuration."
-  - "Daily org monitoring shows changes made directly in production with before and after; the Setup Audit Trail only tells you who changed what."
+  - "A metadata backup in Git and a data backup are two different things. Git does not hold records, and a data backup has no configuration history."
+  - "Daily org monitoring shows changes made directly in production with before and after. The Setup Audit Trail only tells you who changed what."
   - "A backup is worth something only once you have rehearsed the restore, including new record IDs, sharing and your SAP integration."
-  - "DORA has measured five metrics since 2024; they show where changes wait in your pipeline and are not meant for ranking your partners."
   - "A hotfix goes through a branch and the pipeline and is then merged back into ongoing development, even when it is a single field."
 articles: [sfdx-hardis-introduction, ai-org-assessment-technical-debt, devops-salesforce-enterprise]
 faq:
@@ -138,12 +137,10 @@ Follow up
 
 sfdx-hardis describes this as two streams: RUN for quick fixes, BUILD for the next version. A [hotfix](https://sfdx-hardis.cloudity.com/salesforce-devops-hotfixes/) goes through a branch to preprod and production, followed by a retrofit into the BUILD branches. The docs are blunt about it: fixing something by hand in Setup is never on the list, not even at 2 am, because the next deployment overwrites it. The hotfix path in the branch model is covered in [chapter 3](../environments-and-branching/), validation in the pipeline in [chapter 5](../building-the-pipeline/).
 
-A typical scenario, as an assumption: a machine builder runs Field Service and a dealer portal. On Monday morning, monitoring reports Flow errors when work orders are created. The audit trail shows a change in Setup on Friday, and the metadata backup shows the changed decision in the flow. At the same time it turns out that a data import over the weekend overwrote the warranty end date on thousands of assets. The flow is fixed by hotfix and merged back. The warranty end date comes back through a restore of exactly that field from Friday's backup, without touching Monday's new work orders.
+Suppose a machine builder runs Field Service and a dealer portal. On Monday morning, monitoring reports Flow errors when work orders are created. The audit trail shows a change in Setup on Friday, and the metadata backup shows the changed decision in the flow. At the same time it turns out that a data import over the weekend overwrote the warranty end date on thousands of assets. The flow is fixed by hotfix and merged back. The warranty end date comes back through a restore of exactly that field from Friday's backup, without touching Monday's new work orders.
 
 ## Who owns operations?
 
 The monitoring repository, the backup product, the notification channels and the metrics belong to the client, for the same reasons as the repository and the pipeline: they should survive a partner change. Why I see it that way is in [why clients should own their DevOps tools](../../../blog/why-clients-should-own-their-devops-tools/). Partners get access to the channels and the duty to respond to alerts about their components within an agreed time. That belongs in the contract; see [partner governance](../../../services/partner-governance/).
 
 How monitoring and backup fit into the whole process is covered in [why DevOps decides Salesforce enterprise projects](../../../blog/why-devops-matters-salesforce-enterprise/) and the [introduction to sfdx-hardis](../../../blog/sfdx-hardis-open-source-salesforce-devops/). The order in which to introduce all of this is the topic of the last chapter, [rollout and roadmap](../rollout-roadmap/). My advice for the start: monitoring and data backup first, because you can switch on both before the pipeline is finished. How I support this is described under [DevOps and release management](../../../services/devops-release-management/).
-
-Stable operations mean you can see every change, get every record back and trace every hotfix.

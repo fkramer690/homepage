@@ -9,10 +9,10 @@ topic: revenue
 categories: [revenue-cloud]
 tags: [Salesforce Billing, Revenue Cloud Billing, migration, cutover, finance]
 takeaways:
-  - "Salesforce Billing is a managed package with the namespace blng. Revenue Cloud Billing runs on standard objects such as Invoice, CreditMemo, BillingSchedule and AccountingPeriod."
-  - "Salesforce says current Billing customers keep full access including support. New customers and those updating their products are offered Revenue Cloud Advanced and Revenue Cloud Billing."
+  - "Revenue Cloud Billing runs on standard objects such as Invoice, CreditMemo, BillingSchedule and AccountingPeriod, not in the blng namespace."
+  - "Salesforce says current Billing customers keep full access with support. New customers get Revenue Cloud Advanced and Revenue Cloud Billing."
   - "Billing schedules in Revenue Cloud are created from orders, so they come from migrated assets and orders, not from a copy of the old schedules."
-  - "I cut over at the end of an accounting period: finish open invoices in the package, move open balances, keep closed history readable or archived."
+  - "I cut over at a period end: finish open invoices in the package, move open balances, archive closed history."
   - "Finance signs off the billing cutover, including tax engine, payment gateway, journal entries to the ERP and invoice numbering."
 faq:
   - q: "Is Salesforce Billing still supported?"
@@ -36,7 +36,7 @@ The [CPQ end-of-life page](https://www.salesforce.com/sales/cpq/end-of-life/) on
 
 A note on names: Salesforce Help currently calls the product Revenue Management, earlier Revenue Lifecycle Management, and the CPQ page says Agentforce Revenue Management. Salesforce's product pages say Revenue Cloud, with Revenue Cloud Billing as the billing add-on.
 
-## How does the Billing package differ from Revenue Cloud Billing?
+## Package objects in the blng namespace against standard objects
 
 The package has 59 custom objects in its [developer guide](https://developer.salesforce.com/docs/atlas.en-us.blng_dev.meta/blng_dev/blng_custom_objects_parent.htm). Revenue Cloud Billing uses standard objects from the [Revenue Management Developer Guide](https://developer.salesforce.com/docs/revenue/revenue-management/guide/billing-std-objects-parent.html). Salesforce publishes no official mapping between them; the table is my orientation by function:
 
@@ -70,7 +70,7 @@ Salesforce Help lists billing data as its own topic in the [migration guide](htt
 - **Billing schedules for active contracts:** rebuild them from migrated assets and orders. The first invoice run in Revenue Cloud must start exactly after the last billed period in the package, otherwise a customer gets billed twice or not at all.
 - **Stored payment methods:** clarify with your payment provider whether tokens can be reused in the new connection.
 
-## Why should the cutover sit at a period end?
+## The cutover belongs at a period end
 
 Revenue Cloud Billing works with accounting periods per legal entity. The [billing deployment notes](https://developer.salesforce.com/docs/revenue/revenue-management/guide/deployment-billing-additional-info.html) state that accounting periods can only be created in Open status, and that a legal entity must be active when child records are created. Journal entries then flow from Salesforce to the ERP; Salesforce's [Revenue Cloud Billing page](https://www.salesforce.com/sales/revenue-cloud-billing/) describes Salesforce acting as a sub-ledger "while synchronizing journal entries".
 
@@ -106,7 +106,7 @@ Tax and payments
 
 How these configuration records move from sandbox to production is covered in [Revenue Cloud deployments](../revenue-cloud-configuration-deployment/), and the general approach in the DevOps masterclass chapter on [data and configuration](../../masterclass/devops-release-management/data-and-configuration/).
 
-## A typical scenario, as an assumption
+## Worked example: 800 subscription customers invoiced quarterly
 
 A machine builder sells remote monitoring and maintenance subscriptions to 800 customers and invoices them quarterly from Salesforce Billing. Machine invoices come from SAP. The company moves quoting to Revenue Cloud. All figures are assumptions.
 
@@ -114,8 +114,6 @@ The billing team plans the cutover for 31 March, the end of a quarter. The last 
 
 Before the cutover, finance checks one more topic: from 2027 German e-invoicing duties apply. Whether invoices should come from Revenue Cloud at all is covered in [Revenue Cloud Billing or SAP](../revenue-cloud-billing-or-sap-invoicing/) and [e-invoicing in Germany from 2027](../e-invoicing-germany-2027-revenue-cloud/).
 
-## Who signs off the billing cutover?
+## First step: finance signs the cutover checklist
 
-Finance, not the CRM team. The decisions here are accounting decisions: opening balances, period close, tax treatment, journal entries to the ERP and invoice numbering. I would set up the cutover with a written checklist that finance signs, and plan the licence cost of Revenue Cloud Billing early; how it is charged is explained in [Revenue Cloud Billing costs](../revenue-cloud-billing-costs/). The overall migration order sits in [CPQ to Revenue Cloud migration](../cpq-to-revenue-cloud-migration-phases/) and in the masterclass chapter [from CPQ to Revenue Cloud](../../masterclass/revenue-cloud/from-cpq-to-revenue-cloud/). The interfaces between Salesforce and SAP are part of my work in [Salesforce integration](../../services/salesforce-integration/).
-
-A billing cutover goes well when it sits at a period end and finance owns the checklist.
+Finance signs off, not the CRM team. The decisions here are accounting decisions: opening balances, period close, tax treatment, journal entries to the ERP and invoice numbering. I would set up the cutover with a written checklist that finance signs, and plan the licence cost of Revenue Cloud Billing early; how it is charged is explained in [Revenue Cloud Billing costs](../revenue-cloud-billing-costs/). The overall migration order sits in [CPQ to Revenue Cloud migration](../cpq-to-revenue-cloud-migration-phases/) and in the masterclass chapter [from CPQ to Revenue Cloud](../../masterclass/revenue-cloud/from-cpq-to-revenue-cloud/). The interfaces between Salesforce and SAP are part of my work in [Salesforce integration](../../services/salesforce-integration/).

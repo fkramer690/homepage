@@ -9,9 +9,8 @@ topic: revenue
 categories: [revenue-cloud, ai]
 tags: [revenue cloud, agentforce, quoting agent, quotes, flex credits, ai agents]
 takeaways:
-  - "The Revenue Cloud quoting agent creates, changes and summarises quotes from plain language, quotes only valid catalog products and keeps pricing and discounts within the system's guardrails."
-  - "Salesforce reports 75 percent less quoting time and 87 percent fewer clicks for its own sales team; that is a vendor figure from one company, not a benchmark for machine builders."
-  - "The agent is only as good as the catalog, the synced pricing data, the configuration rules and the approval limits behind it; these come first."
+  - "Salesforce reports 75 percent less quoting time and 87 percent fewer clicks for its own sales team. That is a vendor figure, not a benchmark for you."
+  - "Catalog, synced pricing data, configuration rules and approval limits have to be in place before the agent writes its first quote."
   - "Winter '27 extends agent quoting to customer self-service, partners in their own workspace and renewal drafts for account executives."
   - "Each agent action costs 20 Flex Credits, so a quote built in five actions costs about $0.50 at list price before prompts."
 faq:
@@ -41,7 +40,7 @@ The [Trailhead quick start for a quoting agent](https://trailhead.salesforce.com
 
 The work is done by the Quote Management subagent, whose actions are based on flows. In the exercise you ask for 15 headsets with 15 percent discount for an account and opportunity, then change the discount to 10 percent; you then email the quote yourself from the opportunity with a template. Salesforce Help lists a second building block, the Product Selection subagent, for searching and filtering products. The product is called Revenue Cloud on salesforce.com; Help and Trailhead file the agent under Agentforce Revenue Management or Revenue Management.
 
-## What has to be in place before the agent quotes?
+## Catalog, prices and rules come before the agent
 
 The agent reads the same records your sales desk reads. What an experienced rep corrects by habit, the agent passes on. So the preparation is mostly data and rules work:
 
@@ -53,7 +52,7 @@ The agent reads the same records your sales desk reads. What an experienced rep 
 
 I would count the share of products that a rep can find by the words customers use. If it is low, fix that before the pilot.
 
-## What changes with Winter '27?
+## Winter '27 adds self-service, partners and renewals
 
 The [Winter '27 announcement](https://www.salesforce.com/news/stories/winter-2027-product-release-announcement/), generally available since 12 October 2026, extends agent quoting to three groups: "self-service quoting for customer buyers, integrated quoting for partners, and automated renewal package assembly for account executives". Customers "order without a rep", partners "transact without leaving their workspace", and account executives get "a drafted quote and risk signals" before a renewal.
 
@@ -89,14 +88,12 @@ I would not use it, or not yet, in four situations:
 3. **Prices only in SAP conditions.** If Salesforce holds list prices and the net price comes from SAP, the agent quotes the wrong price unless pricing calls SAP.
 4. **Few quotes with high value.** Ten quotes a month with weeks of negotiation do not need an agent; they need a good sales engineer.
 
-## A typical scenario, as an assumption
+## Worked example: spare parts and retrofit quotes on the sales desk
 
 A maker of packaging machines runs a sales desk that answers spare parts and retrofit requests from existing customers: wear part kits, upgrade packages and service hours. Prices are in Salesforce price books, synced from SAP every night, and the catalog has clean descriptions. The desk handles a large number of small quotes.
 
 Here the agent fits well. A rep types "wear part kit for line 3 plus two service days, usual discount", and the agent finds the kit and the service item in the catalog and builds the quote for the customer's account. Discounts above the limit go to the approval workflow. New machine quotes stay with the sales engineers, because their configuration rules still live in SAP. The agent is introduced in one country first and tested with real requests from the last quarter.
 
-## Where should you start?
+## First step: write 30 test requests for one quote type
 
 Pick one quote type with standard products and synced prices, write 30 test requests from real cases and define the expected quote for each. Run them in a sandbox before any customer or dealer sees an agent quote, as described in [testing Agentforce agents before go-live](../testing-agentforce-agents-before-go-live/). Where agents fit in manufacturing beyond quoting is covered in the chapter [AI agents in manufacturing](../../masterclass/ai-salesforce/ai-agents-in-manufacturing/), and the whole path from quote to order in [quote, contract, order](../../masterclass/revenue-cloud/quote-contract-order/).
-
-The quoting agent pays off where quotes are frequent, products are standard and the data is clean.

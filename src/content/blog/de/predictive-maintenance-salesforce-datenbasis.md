@@ -9,10 +9,10 @@ topic: field-service
 categories: [field-service, ai]
 tags: [Predictive Maintenance, Field Service, Data 360, Asset Service Prediction, Maschinenbau, Flex Credits]
 takeaways:
-  - "Asset Service Prediction lernt aus aktuellen Anlagendaten und der Servicehistorie ähnlicher Anlagen; verknüpfte Work Orders und codierte Ausfallursachen zählen deshalb mehr als Sensoren."
-  - "Salesforce hat Asset Service Prediction im Juni 2024 als Open Beta angekündigt, die Produktseite nennt heute keinen Status; lassen Sie sich die Verfügbarkeit für Ihre Edition schriftlich geben."
-  - "Maschinendaten per Streaming in Data 360 kosten in der Basisstaffel 3.500 Flex Credits pro Million Zeilen; 15-Minuten-Aggregate kosten damit einige hundert Mal weniger als Rohwerte im Sekundentakt."
-  - "Bei wenigen hundert Maschinen pro Baureihe und Fehlercodes im Freitext sind Wartungspläne mit nutzungs- und zustandsabhängigen Auslösern die ehrliche Alternative zur Ausfallprognose."
+  - "Asset Service Prediction lernt aus der Servicehistorie ähnlicher Anlagen. Verknüpfte Work Orders und codierte Ursachen zählen mehr als Sensoren."
+  - "Asset Service Prediction war im Juni 2024 Open Beta, die Produktseite nennt heute keinen Status. Lassen Sie sich die Verfügbarkeit schriftlich geben."
+  - "Streaming in Data 360 kostet 3.500 Flex Credits pro Million Zeilen. 15-Minuten-Aggregate sind damit einige hundert Mal billiger als Sekundenwerte."
+  - "Bei wenigen hundert Maschinen pro Baureihe und Fehlercodes im Freitext sind Wartungspläne mit Nutzungs- und Zustandsauslösern die bessere Wahl."
   - "Rohe Zeitreihen gehören in die IoT-Plattform oder den Historian; Salesforce braucht Zähler, Aggregate und Schwellwertereignisse, die eine Work Order auslösen."
 faq:
   - q: "Unterstützt Salesforce Field Service vorausschauende Wartung?"
@@ -26,7 +26,7 @@ faq:
 draft: false
 ---
 
-Ein Maschinenbauer hat genug Daten für Predictive Maintenance in Salesforce, wenn eine Baureihe Hunderte vergleichbarer Maschinen umfasst, jede Störungs-Work-Order an einer Seriennummer hängt und Ausfallursachen in codierten Feldern stehen. Asset Service Prediction lernt aus genau dieser Servicehistorie, Sensordaten kommen erst danach. Ist die Historie dünn, sind [Wartungspläne mit nutzungs- und zustandsabhängigen Auslösern](../field-service-wartung-nach-betriebsstunden/) die ehrliche Alternative. Maschinendaten sind als Aggregate bezahlbar: Im Beispiel unten kosten Rohwerte im Sekundentakt von 300 Maschinen rund 65.900 € im Monat an Flex Credits, 15-Minuten-Aggregate rund 180 €.
+Ein Maschinenbauer hat genug Daten für Predictive Maintenance in Salesforce, wenn eine Baureihe Hunderte vergleichbarer Maschinen umfasst, jede Störungs-Work-Order an einer Seriennummer hängt und Ausfallursachen in codierten Feldern stehen. Asset Service Prediction lernt aus genau dieser Servicehistorie, Sensordaten kommen erst danach. Ist die Historie dünn, sind [Wartungspläne mit nutzungs- und zustandsabhängigen Auslösern](../field-service-wartung-nach-betriebsstunden/) die bessere Wahl. Maschinendaten sind als Aggregate bezahlbar: Im Beispiel unten kosten Rohwerte im Sekundentakt von 300 Maschinen rund 65.900 € im Monat an Flex Credits, 15-Minuten-Aggregate rund 180 €.
 
 ## Was bietet Salesforce heute für vorausschauende Wartung?
 
@@ -56,7 +56,7 @@ Salesforce beschreibt Asset Service Prediction als Modell, das häufige Probleme
 
 Ein Bericht über Störungs-Work-Orders pro Baureihe und Fehlercode zeigt an einem Nachmittag, ob eine Prognose realistisch ist.
 
-## Was kostet das Streaming von Maschinendaten in Data 360?
+## Streaming in Data 360 kostet 3.500 Flex Credits pro Million Zeilen
 
 Die [Flex Credits Rate Card vom 31. August 2026](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) bepreist zwei Positionen für Maschinendaten:
 
@@ -83,7 +83,7 @@ Das Grounding von Agenten auf Betriebsanleitungen ist ein eigener Kostenblock, b
 
 Rohe Zeitreihen gehören in die IoT-Plattform oder den Historian, den der Maschinenbauer ohnehin betreibt. Salesforce braucht Zähler, Aggregate und Schwellwertereignisse, denn genau die lösen eine Work Order aus.
 
-## Wann sind Wartungspläne die ehrliche Alternative?
+## Wann sind Wartungspläne die bessere Wahl?
 
 Ein großer Teil des Nutzens, der unter „predictive“ versprochen wird, kommt aus zwei einfacheren Dingen: Keine geplante Wartung geht verloren, und die Intervalle folgen der echten Nutzung statt dem Kalender. Beides deckt Field Service ohne Prognosemodell ab.
 
@@ -91,9 +91,9 @@ Wartungspläne erzeugen die Work Orders, und Maintenance Work Rules an der Anlag
 
 Den Termin bucht dann der Agent für proaktive Wartung. Braucht eine Buchung fünf Aktionen, sind das 100 Credits oder 0,50 €.
 
-Für mich ist das die ehrliche Antwort, wenn Baureihen klein sind, Maschinen kundenspezifisch gebaut werden, Fehlercodes bis vor kurzem Freitext waren oder Händler keine Reparaturen melden. Ein Pilot zur Ausfallprognose lohnt sich, wenn eine Baureihe viele hundert vernetzte Maschinen hat, die codierte Historie mehrere Jahre abdeckt und ungeplanter Stillstand unter einer Verfügbarkeitszusage im Servicevertrag echtes Geld kostet.
+Für mich ist das die richtige Antwort, wenn Baureihen klein sind, Maschinen kundenspezifisch gebaut werden, Fehlercodes bis vor kurzem Freitext waren oder Händler keine Reparaturen melden. Ein Pilot zur Ausfallprognose lohnt sich, wenn eine Baureihe viele hundert vernetzte Maschinen hat, die codierte Historie mehrere Jahre abdeckt und ungeplanter Stillstand unter einer Verfügbarkeitszusage im Servicevertrag echtes Geld kostet.
 
-## Ein typisches Szenario: 1.400 Maschinen in fünf Baureihen
+## Rechenbeispiel: 1.400 Maschinen in fünf Baureihen
 
 Nehmen wir einen Maschinenbauer mit SAP, Service Cloud und Field Service im Betrieb. Alle Zahlen sind Annahmen, um die Methode zu zeigen.
 
@@ -110,7 +110,7 @@ Nehmen wir einen Maschinenbauer mit SAP, Service Cloud und Field Service im Betr
 
 Zusammen sind das rund 34.000 Credits, etwa 170 € im Monat. Connected Assets für 15.000 $ pro Org und Monat (US-Listenpreis) rechnet sich erst, wenn der Health Score Entscheidungen trägt, die Schwellwerte nicht treffen können.
 
-## Wo sollten Sie anfangen?
+## Erster Schritt: Störungs-Work-Orders pro Baureihe zählen
 
 1. **Zählen** Sie Störungs-Work-Orders pro Baureihe und codierter Ursache für die letzten drei Jahre.
 2. **Schließen Sie die Lücken**: Verknüpfung mit der Anlage, Auswahllisten für Ursachen, Meldepflichten für Händler und Servicepartner.
@@ -118,6 +118,4 @@ Zusammen sind das rund 34.000 Credits, etwa 170 € im Monat. Connected Assets f
 4. **Schätzen Sie Credits pro Signal**, bevor die erste Maschine angebunden wird, etwa mit [Flex Credits und Agentforce-Kosten pro Aktion](../flex-credits-agentforce-kosten-pro-aktion/).
 5. **Fragen Sie Salesforce schriftlich** nach Status und Preis von Asset Service Prediction für Ihre Edition.
 
-Wie Maschinendaten, ERP und Salesforce zusammenpassen, ist Teil meiner Arbeit an der [Schnittstellenarchitektur](../../leistungen/salesforce-schnittstellen/).
-
-Vorausschauende Wartung beginnt mit einer sauberen Servicehistorie, die Sensoren kommen danach.
+Wie Maschinendaten, ERP und Salesforce zusammenpassen, ist Teil meiner Arbeit an der [Schnittstellenarchitektur](../../leistungen/salesforce-schnittstellen/). Die Anbindung der Sensoren plane ich erst, wenn die Schritte 1 und 2 erledigt sind.

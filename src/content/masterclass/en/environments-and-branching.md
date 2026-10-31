@@ -10,11 +10,10 @@ pubDate: 2026-10-28
 short: "Environments and branches"
 summary: "How sandboxes, scratch orgs and branches fit together so developer orgs stay current and hotfixes do not get lost."
 takeaways:
-  - "Every stage of the pipeline needs its own org and its own branch: development, integration, UAT, staging and production, plus a fixed path for hotfixes."
-  - "Scratch orgs live for 30 days at most and start empty; in a mature client org, developer sandboxes with source tracking are often the more practical workplace."
-  - "Developer sandboxes fall behind with every merge; sfdx-hardis backpromote, Gearset developer sandbox updates and the back promotions in Copado and Flosum bring them back."
-  - "A hotfix is finished only when a retrofit has put it into the integration branch too; otherwise the next release overwrites the fix in production."
-  - "A refresh replaces the sandbox with a new copy of production; source tracking and undelivered changes are lost in the process."
+  - "Scratch orgs live for 30 days at most and start empty. In a mature client org, developer sandboxes with source tracking are often more practical."
+  - "Developer sandboxes fall behind with every merge. sfdx-hardis backpromote, Gearset and the back promotions in Copado and Flosum bring them back."
+  - "A hotfix is finished only when a retrofit has put it into the integration branch too. Otherwise the next release overwrites the fix in production."
+  - "A refresh replaces the sandbox with a new copy of production. Source tracking and undelivered changes are lost in the process."
 articles: [devops-salesforce-enterprise, sfdx-hardis-training, sandbox-data-ai-coding-agents]
 faq:
   - q: "How many sandboxes does a Salesforce programme with several partners need?"
@@ -144,7 +143,7 @@ The critical step comes afterwards. The stage branches below were cut before the
 
 The same logic applies to changes someone made by hand in production. They come back into the repository from the bottom as a normal story. How you notice such changes at all is covered in [chapter 9 on operations and monitoring](../operations-monitoring-backup/).
 
-## A typical scenario, as an assumption: three partners on one service org
+## Example: three partners on one service org
 
 A machine builder runs Service Cloud, Field Service and a dealer portal on one org, with SAP as ERP. Three partners work in parallel: one on field service, one on the portal, a nearshore team on interfaces. All figures here are assumptions.
 
@@ -155,5 +154,3 @@ A machine builder runs Service Cloud, Field Service and a dealer portal on one o
 - **One hotfix path** through `preprod`, with the retrofit on the same day.
 
 The rules for this are in the contract with every partner: backpromote before every story, no changes in Setup of a stage org, no feature branch older than two weeks. How the pipeline runs between these stages technically is described in [chapter 5](../building-the-pipeline/). I design such models as part of my work in [DevOps and release management](../../../services/devops-release-management/).
-
-Environments and branches work when each org belongs to exactly one branch and changes flow in both directions by fixed rules.

@@ -10,9 +10,8 @@ categories: [field-service]
 series: { id: field-service, part: 3 }
 tags: [Field Service, Scheduling, Dispatching, Manufacturing]
 takeaways:
-  - "How much scheduling in Salesforce Field Service should run automatically depends above all on how much the company trusts the technology."
-  - "A good start: automation schedules appointments up to the status Scheduled, a dispatcher reviews the plan and releases each appointment to the technician with the status Dispatched."
-  - "The scheduling engine decides by a scheduling policy made of work rules, which exclude technicians, and weighted service objectives, which rank the rest."
+  - "To start, automation schedules up to the status Scheduled. A dispatcher reviews the plan and releases each appointment with Dispatched."
+  - "The engine decides by a scheduling policy: work rules exclude technicians, weighted service objectives rank the rest."
   - "The dispatcher adds what is not in the data, for example a customer who first has to shut down the machine for maintenance."
   - "More automation pays off when dispatchers hardly change the engine's proposals any more. Then dispatch can also run automatically for simple jobs."
 faq:
@@ -52,7 +51,7 @@ Salesforce ships four policies. Customer First balances customer preference and 
 
 On top comes optimization. According to [Salesforce Help](https://help.salesforce.com/s/articleView?id=pfs_optimization.htm&language=en_US&type=5) it can rearrange the plan for one or more territories over several days, for example every night. On the day of service, in-day optimization absorbs short-notice changes, and there is a separate optimization for a single technician when an appointment is cancelled or runs late. Whether to switch to the newer engine is covered in [Enhanced Scheduling and Optimization: switch now?](../field-service-enhanced-scheduling-optimization-switch/), the full picture of engine, console and rules in [chapter 2 of the Field Service masterclass](../../masterclass/field-service/field-service-scheduling-dispatch/).
 
-## Why does a dispatcher review before dispatch?
+## The dispatcher adds what is not in the data
 
 The engine only knows what is in the data. An experienced dispatcher knows more. They know that a customer has to shut down the machine for maintenance first and can only do that on certain days. They know that a spare part is booked in the warehouse but not yet in the van. They know which technician once had trouble with a customer, even if that is written down nowhere.
 
@@ -83,7 +82,7 @@ According to the [Salesforce data model](https://developer.salesforce.com/docs/a
 
 That way automation grows with trust, and not by a plan someone fixed before the project. Which role spare parts play in this, meaning who knows whether the part is in the van, is the topic of the next part of the series.
 
-## Where should you start?
+## First step: start with the dispatcher releasing every appointment
 
 ```schritte
 Start with release
@@ -95,5 +94,3 @@ Turn reasons into data
 Automate dispatch
   Once the dispatcher hardly changes the proposals, simple work types such as planned maintenance run without them.
 ```
-
-The list from the second step is the basis for every further step of automation and shows which data is still missing.

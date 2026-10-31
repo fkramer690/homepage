@@ -10,11 +10,11 @@ categories: [b2b-commerce, architecture]
 contactBrief: integration
 tags: [B2B Commerce, SAP, ERP-Anbindung, Commerce Extensions, MuleSoft, Schnittstellen]
 takeaways:
-  - "Zwischen Salesforce B2B Commerce und SAP fließen Daten in vier Richtungen: Stammdaten per Batch, Live-Abfragen in Warenkorb und Checkout, der Auftrag raus, Status, Lieferung und Rechnung zurück."
-  - "Accounts, Produkte, Kategorien, Preisbücher und Berechtigungen werden nach Salesforce kopiert; der Produktimport liest CSV-Dateien mit Produkt-, Kategorie- und Preisbuchspalten als asynchronen Job."
-  - "Preis, Bestand, Steuer, Fracht und die Prüfung vor dem Absenden laufen über Commerce-Extension-Points wie Commerce_Domain_Pricing_Service und Commerce_Domain_Checkout_PlaceOrder."
-  - "Salesforce empfiehlt seit Winter '24 Extensions statt der älteren Checkout-Integrationen; das alte Framework wird weiter unterstützt, Zahlungen lassen sich nicht per Extension anpassen."
-  - "Jede Schnittstelle, die sich noch mit Benutzername und Passwort bei Salesforce anmeldet, muss vor dem 20. Februar 2027 auf einen anderen OAuth-Flow umgestellt werden."
+  - "Daten fließen in vier Richtungen: Stammdaten per Batch, Live-Abfragen in Warenkorb und Checkout, der Auftrag zu SAP, Status und Rechnung zurück."
+  - "Accounts, Produkte, Kategorien, Preisbücher und Berechtigungen werden nach Salesforce kopiert, der Produktimport liest CSV-Dateien als asynchronen Job."
+  - "Preis, Bestand, Steuer, Fracht und die Prüfung vor dem Absenden laufen über Extension Points wie Commerce_Domain_Pricing_Service."
+  - "Salesforce empfiehlt seit Winter '24 Extensions vor den älteren Checkout-Integrationen. Zahlungen lassen sich nicht per Extension anpassen."
+  - "Schnittstellen, die sich mit Benutzername und Passwort anmelden, müssen vor dem 20. Februar 2027 auf einen anderen OAuth-Flow umgestellt werden."
 faq:
   - q: "Welche Daten braucht Salesforce B2B Commerce aus SAP?"
     a: "Kundenstämme, Produkte mit Kategorien, Preise und die Regeln, wer welches Produkt sehen darf, dazu Live-Antworten zu Preis, Verfügbarkeit und Kredit im Checkout. Nach der Bestellung braucht der Shop die SAP-Auftragsnummer, den Lieferstatus und die Rechnungen zurück."
@@ -44,7 +44,7 @@ Die Tabelle sieht einfach aus. Die Entscheidungen stecken in der zweiten Spalte 
 
 Zum Namen: Salesforce vermarktet das Produkt inzwischen auch als "Agentforce Commerce for B2B". An der Integrationsarchitektur ändert das nichts.
 
-## Welche Stammdaten kommen per Batch?
+## Stammdaten kommen per Batch als Kopie
 
 Alles, was sich seltener ändert, als ein Händler klickt, gehört in eine Kopie. Das sind SAP-Kundenstämme, die in Salesforce zu Accounts und Buyer Accounts werden, Ansprechpartner, die zu Käufern werden, Materialien, die zu Produkten werden, Produkthierarchien, die zu Kategorien werden, und die Preise für den Shop.
 
@@ -54,7 +54,7 @@ Käufergruppen (Buyer Groups) und Entitlement Policies, also die Regeln, wer wel
 
 Wem welches Objekt gehört, beantwortet meine [Object Ownership Matrix](../object-ownership-matrix-salesforce/). Für einen Shop ergänze ich eine Spalte: kopiert oder live.
 
-## Was sollte der Shop live bei SAP abfragen?
+## Preis, Bestand, Steuer und Fracht live über Extension Points
 
 Salesforce B2B Commerce hat benannte Extension Points, an denen eigener Apex-Code einen Dienst übernimmt. Die [Liste der verfügbaren Extensions](https://developer.salesforce.com/docs/commerce/extensions/guide/available-extensions.html) zeigt die für SAP wichtigen:
 
@@ -107,7 +107,7 @@ Direkte Apex-Callouts mit Named Credentials reichen für einen Shop mit zwei ode
 Eine Frist gilt für jede Batch-Schnittstelle. Salesforce schaltet den [OAuth Username-Password Flow](https://help.salesforce.com/s/articleView?id=release-notes.rn_security_unpw_flow_retirement.htm&language=en_US&release=262&type=5) für Connected Apps am 20. Februar 2027 ab. Ein nächtlicher Produktimport, der sich mit Passwort anmeldet, läuft dann nicht mehr, oft ohne dass es jemand merkt. Wie Sie diese Schnittstellen finden und umstellen, steht in [Passwort-Integrationen enden 2027](../salesforce-passwort-integrationen-2027/).
 ```
 
-## Ein typisches Szenario, als Annahme
+## Rechenbeispiel: S/4HANA und 300 Händler in Europa
 
 Ein Maschinenbauer arbeitet mit SAP S/4HANA und will einen Shop für 300 Händler in Europa mit 15.000 Ersatzteilen. Die Schnittstellenliste nach dem ersten Workshop könnte so aussehen:
 
@@ -121,8 +121,6 @@ Ein Maschinenbauer arbeitet mit SAP S/4HANA und will einen Shop für 300 Händle
 
 Sieben Schnittstellen, drei davon live. Das ist ein realistischer Umfang für ein erstes Release, und jede davon braucht einen Verantwortlichen auf Kundenseite.
 
-## Wo starten Sie?
+## Erster Schritt: Object Ownership Matrix und Schnittstellenliste
 
 Schreiben Sie Object Ownership Matrix und Schnittstellenliste, bevor jemand die Shopseiten entwirft. Notieren Sie für jedes Datum das führende System, Kopie oder live, das maximale Alter und was passiert, wenn SAP nicht erreichbar ist. Das [Kapitel zur ERP-Anbindung der Masterclass B2B Commerce](../../masterclass/b2b-commerce/erp-integration-bestand-auftraege/) bringt diese Entscheidungen in eine Reihenfolge, und eine unabhängige Prüfung von Schnittstellen gehört zu meiner Arbeit bei [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).
-
-Ein B2B-Shop ist nur so gut wie seine Datenflüsse aus SAP, also entscheiden Sie diese zuerst.

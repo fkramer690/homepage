@@ -9,11 +9,11 @@ topic: release
 categories: [devops]
 tags: [Apex, API 67.0, User Mode, KI-Coding, Release-Management, Maschinenbau]
 takeaways:
-  - "Ab API-Version 67.0 laufen Datenbankoperationen in Apex im User Mode und Klassen ohne Sharing-Deklaration mit Sharing; Code mit 66.0 oder älter behält das alte Verhalten, bis jemand die Version anhebt."
-  - "Datensätze, die das Sharing ausblendet, fehlen ohne Fehlermeldung im Ergebnis; eine fehlende Feldberechtigung lässt eine Abfrage im User Mode dagegen mit einer QueryException scheitern."
-  - "WITH SECURITY_ENFORCED kompiliert mit 67.0 nicht mehr; der Ersatz WITH USER_MODE prüft auch polymorphe Felder und die WHERE-Klausel, ersetzte Abfragen brauchen also einen Test."
-  - "KI-Agenten haben Apex von vor 2026 gelernt, heben API-Versionen nebenbei an und schreiben Tests ohne System.runAs(); ein Versionssprung braucht daher einen eigenen Pull Request und Tests mit echten Benutzern."
-  - "Mit 67.0 umgeht without sharing allein das Sharing bei einer Abfrage ohne Zugriffsmodus nicht mehr; bewusster Systemzugriff braucht without sharing, WITH SYSTEM_MODE und eine Begründung."
+  - "Code mit API 66.0 oder älter behält das alte Verhalten, bis jemand die Version anhebt; das Risiko entsteht beim Versionssprung."
+  - "Vom Sharing ausgeblendete Datensätze fehlen ohne Fehlermeldung; eine fehlende Feldberechtigung lässt die Abfrage mit einer QueryException scheitern."
+  - "WITH SECURITY_ENFORCED kompiliert mit 67.0 nicht mehr. WITH USER_MODE prüft auch polymorphe Felder und WHERE, ersetzte Abfragen brauchen einen Test."
+  - "KI-Agenten heben API-Versionen nebenbei an und testen ohne System.runAs(). Ein Versionssprung braucht deshalb einen eigenen Pull Request."
+  - "Bewusster Systemzugriff braucht mit 67.0 without sharing, WITH SYSTEM_MODE und eine schriftliche Begründung."
 faq:
   - q: "Ändert API 67.0 meinen bestehenden Apex-Code automatisch?"
     a: "Nein. Die Änderung ist versioniert: Sie gilt für Klassen und Trigger, die mit API-Version 67.0 oder neuer gespeichert sind. Bestehender Code läuft weiter im System Mode, bis jemand seine Version anhebt; deshalb braucht jeder Versionssprung einen Testplan."
@@ -77,7 +77,7 @@ Vier Gründe, jeder mit der heutigen Arbeitsweise von Coding-Agenten verbunden.
 
 **Leitplanken lösen das halbe Problem.** Die Skills von Salesforce für Claude Code „force the sharing keyword on all classes“ ([Salesforce Developers Blog](https://developer.salesforce.com/blogs/2026/06/build-production-ready-apps-in-claude-code-with-salesforce-skills)). Eine explizite Deklaration ist besser als der Standard, aber ein Agent, der `with sharing` an einen SAP-Integrationsservice schreibt, hat eine fachliche Entscheidung getroffen, die niemand geprüft hat. Die typischen Fehler von KI-Code beschreibe ich in [KI-generierten Salesforce-Code prüfen](../ki-generierten-salesforce-code-pruefen/); hier geht es darum, dass die Versionsnummer auf die Review-Liste gehört.
 
-## Ein typisches Szenario: API-Versionen bei einem Maschinenbauer vereinheitlichen
+## Beispiel: API-Versionen bei einem Maschinenbauer vereinheitlichen
 
 Nehmen wir einen Maschinenbauer mit Service Cloud, einem Händlerportal und SAP S/4, angebunden über Apex-REST-Services. Alle Zahlen sind Annahmen. Nach den Compiler-Warnungen für sehr alte API-Versionen aus Winter '27, beschrieben in [Salesforce Winter '27: Was sich für Ihre Pipeline ändert](../salesforce-winter-27-aenderungen-pipeline/), beschließt die IT, 220 Apex-Klassen mit Versionen zwischen 38.0 und 62.0 auf 67.0 zu heben. Der Partner arbeitet mit einem Coding-Agenten. Der hebt die Versionen an, ersetzt in 15 Abfragen `WITH SECURITY_ENFORCED` durch `WITH USER_MODE` und behebt jeden Kompilierfehler. Alle Tests laufen durch, die Abdeckung bleibt bei 84 Prozent.
 
@@ -89,7 +89,7 @@ Der Abnahmetest findet drei Probleme:
 
 Zwei von drei Problemen melden sich selbst. Das dritte wäre live gegangen und hätte Geld gekostet, eine Gutschrift nach der anderen.
 
-## Wie planen Sie den Umstieg auf API 67.0?
+## Erster Schritt: den Umstieg als kleines Projekt planen
 
 Ich würde ihn als kleines Projekt mit eigenem Releaseplan aufsetzen:
 
@@ -112,6 +112,4 @@ public without sharing class SapOrderSyncSelector {
 5. **Berechtigungssätze der Integrationsuser zuerst prüfen.** Geben Sie Integrationsusern die Feldzugriffe, die ihre Services brauchen, vor dem Versionssprung, damit die Schnittstelle es nicht in der Produktion herausfindet.
 6. **In Etappen nach Fachbereich anheben.** Schnittstellen, Händlerportal, Servicelogik: Jede Etappe geht durch einen Abnahmetest mit jemandem aus dem Fachbereich, der weiß, welche Zahlen herauskommen müssen.
 
-Einen solchen Umstieg über mehrere Partner hinweg zu planen, gehört zu meiner Arbeit in [DevOps und Release-Management](../../leistungen/devops-und-release-management/).
-
-API 67.0 macht Apex standardmäßig sicherer, der Preis ist, dass jeder Versionssprung zu einer Änderung des Datenzugriffs wird, die einen eigenen Test verdient.
+Mit der ersten Etappe, den Schnittstellen, sehen Sie am schnellsten, ob Integrationsusern Feldzugriffe fehlen. Einen solchen Umstieg über mehrere Partner hinweg zu planen, gehört zu meiner Arbeit in [DevOps und Release-Management](../../leistungen/devops-und-release-management/).

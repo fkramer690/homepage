@@ -8,11 +8,11 @@ chapter: 4
 short: "Externe Coding-Agenten"
 summary: "Claude Code, Codex, Copilot und DevOps-Agenten im Vergleich: was das Werkzeug entscheidet und was Vertrag, Datenresidenz und Regeln entscheiden."
 takeaways:
-  - "Claude Code, Codex, Copilot und Cursor können mit Salesforce arbeiten, weil Salesforce seine Skills und gehosteten MCP-Server für jeden kompatiblen Agenten öffnet."
-  - "Einen unabhängigen Benchmark für Apex, LWC oder Flow gibt es nicht; testen Sie Kandidaten an 10 bis 20 Aufgaben aus Ihrem eigenen Backlog."
-  - "Die First-Party-API von Anthropic bietet nur Inferenz in den USA oder global; regionale Verarbeitung für Claude gibt es über Amazon Bedrock oder Google Cloud."
-  - "Anthropic nennt für Claude Code im Schnitt rund 13 $ pro Entwickler und aktivem Tag, OpenAI für Codex 100 bis 200 $ im Monat; der Seatpreis ist selten die echte Rechnung."
-  - "Regeldatei, Pipeline und Freigabeliste der Werkzeuge gehören dem Kunden, damit ein Partner- oder Toolwechsel die Qualitätsregeln nicht mitnimmt."
+  - "Claude Code, Codex, Copilot und Cursor arbeiten mit Salesforce, weil Salesforce Skills und gehostete MCP-Server für jeden kompatiblen Agenten öffnet."
+  - "Einen unabhängigen Benchmark für Apex, LWC oder Flow gibt es nicht. Testen Sie Kandidaten an 10 bis 20 Aufgaben aus Ihrem eigenen Backlog."
+  - "Die First-Party-API von Anthropic bietet nur Inferenz in den USA oder global. Regionale Verarbeitung für Claude gibt es über Amazon Bedrock oder Google Cloud."
+  - "Anthropic nennt für Claude Code rund 13 $ pro Entwickler und aktivem Tag, OpenAI für Codex 100 bis 200 $ im Monat. Der Seatpreis ist selten die ganze Rechnung."
+  - "Regeldatei, Pipeline und Freigabeliste gehören dem Kunden, damit ein Partner- oder Toolwechsel die Qualitätsregeln nicht mitnimmt."
 articles: [vibes-claude-code-copilot-comparison, ai-coding-works-council-gdpr, ai-coding-costs-salesforce-project]
 faq:
   - q: "Welcher Coding-Agent ist für Salesforce am besten?"
@@ -130,7 +130,7 @@ Die DevOps-Anbieter haben 2026 eigene Agenten gebracht. Sie ersetzen den Coding-
 
 Weder Gearset noch Copado nennen in diesen Quellen das zugrunde liegende Modell. Für einen Hersteller mit Datenschutzvorgaben ist das eine Due-Diligence-Frage: welches Modell, welche Region, welche Aufbewahrung.
 
-## Ein typisches Szenario: Werkzeugwahl bei einem Maschinenbauer
+## Durchgespielt: Werkzeugwahl bei einem Maschinenbauer
 
 Nehmen wir einen Maschinenbauer mit SAP S/4HANA, Service Cloud und einem Händlerportal auf Experience Cloud. Drei interne Entwickler arbeiten mit einem Partner, der fünf Nearshore-Entwickler stellt. Alle Zahlen sind Annahmen. Die internen Entwickler haben Copilot Business über die bestehende GitHub-Lizenz, der Partner möchte Claude Code mit eigenen Konten nutzen.
 
@@ -146,5 +146,3 @@ So würde ich vorgehen:
 | Mit der Testsuite starten | 15 Aufgaben aus dem Backlog, beide Werkzeuge, gleiche Gates. Danach entscheidet das Ergebnis, nicht die Vorliebe einzelner Entwickler. |
 
 Nach meiner Einschätzung dauert in so einem Setup die Abstimmung mit Betriebsrat und Datenschutz länger als die Werkzeugauswahl. Planen Sie sie deshalb zuerst ein. Die Steuerung mehrerer Partner mit unterschiedlichen Werkzeugen ist Teil meiner Arbeit in der [Partnersteuerung](../../../leistungen/partnersteuerung/), die Gates gehören ins [DevOps und Release Management](../../../leistungen/devops-und-release-management/). Wie Salesforce sein Partnermodell gerade auf Agenten umstellt, behandelt [Kapitel 5](../aiforce-und-systemintegratoren/).
-
-Wählen Sie den Coding-Agenten nach Vertrag, Datenresidenz und Kosten, und legen Sie die Qualität in Regeldatei, Review und Pipeline, die Ihnen gehören.

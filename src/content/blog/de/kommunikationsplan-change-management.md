@@ -11,8 +11,8 @@ contactBrief: change-basics
 author: juliane
 tags: [Kommunikationsplan, Change-Kommunikation, Change Management, Vorlage]
 takeaways:
-  - "Ein Kommunikationsplan im Change Management legt fest, welche Gruppe welche Botschaft wann, über welchen Kanal und von wem erhält."
-  - "Der Absender zählt so viel wie die Botschaft: Warum sich etwas ändert, wollen Menschen laut Prosci von der Unternehmensleitung hören, was es für sie selbst bedeutet, von ihrer direkten Führungskraft."
+  - "Der Plan ist eine Tabelle und keine Strategie auf zwanzig Folien. Jede Zeile ist eine Nachricht an eine Gruppe."
+  - "Das Warum wollen Menschen laut Prosci von der Unternehmensleitung hören, die Folgen für sich selbst von ihrer direkten Führungskraft."
   - "Prosci empfiehlt, Kernbotschaften fünf- bis siebenmal zu wiederholen. Eine einzige Rundmail zur Ankündigung reicht nicht."
   - "Grundlage des Plans ist die Stakeholder-Analyse: Jede stark betroffene Gruppe bekommt eigene Botschaften und einen eigenen Absender."
 faq:
@@ -48,7 +48,7 @@ Ein Kommunikationsplan ist eine Tabelle, keine Strategie auf zwanzig Folien. Jed
 
 Die Spalte Ziel ist die wichtigste und fehlt am häufigsten. Sie verbindet die Nachricht mit der Stufe, an der eine Gruppe gerade steht. Im [ADKAR-Modell](../change-management-modelle/) sind das Bewusstsein, Bereitschaft, Wissen, Fähigkeit und Verankerung. Eine Nachricht, die Bewusstsein schaffen soll, sieht ganz anders aus als eine, die Wissen vermittelt. Wer beides in dieselbe Rundmail packt, erreicht meist keins von beidem.
 
-## Wer sollte die Veränderung kommunizieren?
+## Die Leitung erklärt das Warum, die Führungskraft die Folgen
 
 Der Absender entscheidet darüber, ob eine Botschaft ernst genommen wird. Prosci hat in seiner Studienreihe Best Practices in Change Management gefragt, von wem Mitarbeitende welche Informationen hören wollen. Das Ergebnis ist eindeutig und in einem Beitrag zu [wirksamer Change-Kommunikation](https://www.prosci.com/blog/understanding-why-some-communications-work-and-others-dont) zusammengefasst:
 
@@ -115,10 +115,8 @@ Planen Sie jede Kernbotschaft mindestens dreimal ein, über verschiedene Absende
 
 Für Salesforce-Programme mit regelmäßigen Releases gibt es eine eigene Form: Jede neue Version ändert etwas für einen Fachbereich und braucht eine kurze, gezielte Ankündigung. Wie das funktioniert, beschreibt Fabian Kramer in [Salesforce-Releases an den Fachbereich kommunizieren](../salesforce-releases-fachbereich-kommunizieren/).
 
-## Wann lohnt sich Unterstützung?
+## Unterstützung lohnt sich bei vielen Gruppen und Ländern
 
 Bei einer Veränderung für ein Team reicht die Vorlage. Wenn viele Gruppen und Länder betroffen sind, wenn heikle Botschaften anstehen oder wenn Führungskräfte selbst noch unsicher sind, hilft ein Blick von außen, der Botschaften schärft und Führungskräfte vorbereitet. In Salesforce-Programmen arbeite ich dafür mit Fabian Kramer zusammen, siehe [Change Management Beratung für Salesforce](../../leistungen/change-management/) und [Salesforce Change Management: warum Einführungen scheitern](../change-management-salesforce-einfuehrung/).
 
-Eine Veränderung wird nicht durch die erste Ankündigung verstanden, sondern durch die richtige Person zur richtigen Zeit, mehrfach.
-
-Prosci und ADKAR sind eingetragene Marken von Prosci, Inc.
+*Prosci und ADKAR sind eingetragene Marken von Prosci, Inc.*

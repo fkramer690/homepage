@@ -9,11 +9,11 @@ topic: field-service
 categories: [field-service]
 tags: [Visual Remote Assistant, Field Service, Fernservice, Störungshotline, Betriebsrat]
 takeaways:
-  - "Visual Remote Assistant schickt dem Kunden einen Link per SMS oder E-Mail. Das Video in beide Richtungen öffnet sich im mobilen Browser, ohne App, Login oder Passwort."
-  - "Das Add-on kostet laut Produktseite vom Oktober 2026 50 € oder 50 Dollar pro Nutzer und Monat und ist in Agentforce 1 Field Service enthalten. Der Kunde braucht keine Lizenz."
-  - "Video ersetzt den Einsatz, wenn der Bediener den Fehler beheben kann: Parameter, Bedienfehler, Reset. Bei mechanischen Schäden verkürzt es den Einsatz, weil das richtige Teil mitkommt."
-  - "Vor der ersten Sitzung klären Sie die Einwilligung zur Aufzeichnung beim Kunden, den Betriebsrat für eigene Mitarbeitende und welche Fehler ohne Einsatz geschlossen werden dürfen."
-  - "Der Anfang liegt in Ihrer Störungshistorie: Zählen Sie, wie viele Einsätze weder Teil noch Werkzeug gebraucht haben. Dieser Anteil ist Ihr realistisches Potenzial."
+  - "Der Kunde bekommt einen Link per SMS oder E-Mail. Das Video in beide Richtungen öffnet sich im Browser, ohne App, Login oder Passwort."
+  - "Das Add-on kostet 50 € pro Nutzer und Monat (Stand Oktober 2026) und steckt in Agentforce 1 Field Service. Der Kunde braucht keine Lizenz."
+  - "Video ersetzt den Einsatz bei Parametern, Bedienfehlern und Resets. Bei mechanischen Schäden verkürzt es ihn, weil das richtige Teil mitkommt."
+  - "Vorher klären Sie die Einwilligung zur Aufzeichnung, den Betriebsrat und welche Fehler ohne Einsatz geschlossen werden dürfen."
+  - "Zählen Sie in der Störungshistorie die Einsätze ohne Teil und Werkzeug. Dieser Anteil ist Ihr realistisches Potenzial."
 faq:
   - q: "Was kostet Visual Remote Assistant?"
     a: "Laut Salesforce-Produktseite kostet das Add-on 50 € oder 50 Dollar pro Nutzer und Monat bei jährlicher Abrechnung (Oktober 2026). Im Paket Agentforce 1 Field Service ist es enthalten. Lizenzen brauchen nur die Personen, die Sitzungen führen, der Kunde kommt über einen Link dazu."
@@ -44,7 +44,7 @@ Die Produktseite nennt dazu die automatische Aufzeichnung zur späteren Auswertu
 
 Zwei technische Details aus dem [Installations- und Konfigurationshandbuch](https://resources.docs.salesforce.com/rel1/doc/en-us/static/pdf/vra_installation_configuration_manual.pdf) (Stand Summer '25) sind für Maschinenbauer wichtig. Erstens startet jede Sitzung an einem Salesforce-Datensatz, etwa einem Case oder Arbeitsauftrag, und die Zusammenfassung mit den Bildern hängt danach an diesem Datensatz. Zweitens kann ein Techniker die Sitzung über eine App-Erweiterung aus der Field-Service-App starten. Damit ist der zweite Anwendungsfall abgedeckt: Der Techniker vor Ort holt den Experten aus der Zentrale dazu.
 
-## Was kostet das?
+## Das Add-on kostet 50 € pro Nutzer und Monat
 
 ```kennzahlen
 50 € | pro Nutzer und Monat für das Add-on, bei jährlicher Abrechnung
@@ -69,9 +69,9 @@ Keinen Einsatz ersetzt das Video, wenn die Arbeit Werkzeug, eine Elektrofachkraf
 
 Visual Remote Assistant passt zur Triage, die ich für die [Störungshotline mit Agentforce Voice](../stoerungshotline-agentforce-voice-deutsch/) beschreibe: Erst klären, ob die Maschine steht und was der Vertrag abdeckt, dann entscheiden, ob Video, ein Teileversand oder ein Techniker das Problem löst. Für den Experten hinter dem Video hilft der [Agent zur Fehlersuche](../ki-fehlersuche-handbuecher-aussendienst/) nur, wenn die Handbücher denselben Produktschlüssel tragen wie das Asset.
 
-## Ein typisches Szenario, als Annahme: 20 Prozent per Video gelöst
+## Rechenbeispiel: 20 Prozent per Video gelöst
 
-Ein typisches Szenario, als Annahme: Ein Hersteller von Verpackungsmaschinen nimmt 150 Störungsmeldungen im Monat an, ein Drittel davon von Kunden außerhalb Europas. Heute endet fast jeder Anruf, der am Telefon nicht gelöst wird, mit einem Einsatz.
+Die Zahlen sind angenommen. Ein Hersteller von Verpackungsmaschinen nimmt 150 Störungsmeldungen im Monat an, ein Drittel davon von Kunden außerhalb Europas. Heute endet fast jeder Anruf, der am Telefon nicht gelöst wird, mit einem Einsatz.
 
 Der Hersteller lizenziert sechs Hotline-Mitarbeitende und zwei Remote-Experten, also acht Nutzer zu 50 €, zusammen 4.800 € im Jahr. Das Ziel für das erste Jahr: 20 Prozent der Störungen per Video lösen, also 30 Einsätze weniger im Monat. Dazu bekommt der Techniker vor jedem verbleibenden Einsatz den Fehler per Video bestätigt.
 
@@ -79,7 +79,7 @@ Wichtiger als das Ziel ist die Methode. Vor dem Pilot zieht das Serviceteam die 
 
 Nach drei Monaten zeigen zwei Zahlen, ob es funktioniert: der Anteil der Videositzungen, die den Fall schließen, und der Anteil dieser Fälle mit erneutem Anruf innerhalb von sieben Tagen. Eine Lösung per Video, auf die zwei Tage später doch ein Einsatz folgt, hat nichts gespart.
 
-## Was müssen Sie vor der ersten Sitzung klären?
+## Vor der ersten Sitzung: Einwilligung, Betriebsrat, Abschlussregeln
 
 **Einwilligung zur Aufzeichnung.** Sitzungen lassen sich aufzeichnen, gesteuert über eine eigene Berechtigung. Im Bild sind die Mitarbeitenden des Kunden und seine Produktionshalle. Vereinbaren Sie mit dem Kunden, ob überhaupt aufgezeichnet wird, wer die Aufnahme sieht und wie lange Sie sie aufbewahren. Manche Kunden werden ablehnen, der Prozess muss also auch ohne Aufzeichnung funktionieren.
 
@@ -89,7 +89,7 @@ Nach drei Monaten zeigen zwei Zahlen, ob es funktioniert: der Anteil der Videosi
 
 **Welche Fehler ohne Einsatz geschlossen werden dürfen.** Legen Sie schriftlich fest, welche Fehlerklassen eine Videositzung ohne Einsatzbericht schließen darf und wie die Anweisung an den Bediener am Case dokumentiert wird. Wenn der Bediener einer falschen Anweisung folgt und die Maschine beschädigt, müssen Sie wissen, was gesagt wurde.
 
-## Wo fangen Sie an?
+## Erster Schritt: die Störungen des letzten Jahres nach Ursache ordnen
 
 ```schritte
 Störungen ordnen
@@ -101,5 +101,3 @@ Messen und entscheiden
 ```
 
 Wie das zu mobiler App und Servicedokumenten passt, steht im [Masterclass-Kapitel zur mobilen App](../../masterclass/field-service/field-service-mobile-app-dokumente/). Ob sich Field Service überhaupt rechnet, beschreibe ich in [Salesforce Field Service: Wann lohnt es sich?](../salesforce-field-service-lohnt-sich/), und die Lizenzfrage im Ganzen unter [Make-or-Buy und Lizenzen](../../leistungen/make-or-buy-lizenzen/).
-
-Visual Remote Assistant spart Einsätze, wo der Bediener den Fehler selbst beheben kann, und zweite Einsätze, wo der Techniker ohnehin kommen muss.

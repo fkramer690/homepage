@@ -9,11 +9,11 @@ topic: ai
 categories: [ai, manufacturing-cloud]
 tags: [Agentforce, KI-Agenten, Maschinenbau, Business Case, Flex Credits, ERP]
 takeaways:
-  - "Starten Sie jetzt mit Agentforce, wenn ein Prozess hohes Volumen, klare Regeln, saubere Anlagen- und Auftragsdaten und eine API zum ERP hat; fehlt eines davon, beheben Sie das zuerst."
+  - "Fehlen Volumen, klare Regeln, saubere Anlagen- und Auftragsdaten oder die ERP-API, beheben Sie das vor dem ersten Agenten."
   - "Eine Agentforce-Aktion kostet 20 Flex Credits, beim Listenpreis von 500 € je 100.000 Credits also 0,10 €; dieselbe Aktion in einer Sandbox kostet 16 Credits."
   - "Die Editionen Core, Advanced und Max enthalten 500.000, 1 Mio. und 2,75 Mio. Flex Credits pro Org und Jahr; reicht der Pool nicht, kaufen Sie Credits nach."
-  - "Salesforce ist nicht die Antwort für Entscheidungen, die das ERP schon trifft, für die Fertigung selbst und für seltene Expertenfragen, bei denen das Volumen den Aufwand nie einspielt."
-  - "Gartner erwartet, dass mehr als 40 Prozent der Projekte mit KI-Agenten bis Ende 2027 abgebrochen werden; ein vor dem Piloten vereinbarter Entscheidungstermin schützt das Budget."
+  - "Entscheidungen, die das ERP schon trifft, die Fertigung selbst und seltene Expertenfragen gehören nicht in einen Agenten in Salesforce."
+  - "Gartner erwartet, dass bis Ende 2027 mehr als 40 Prozent der KI-Agentenprojekte abgebrochen werden. Ein fester Entscheidungstermin schützt das Budget."
 faq:
   - q: "Lohnt sich Agentforce für einen mittelständischen Maschinenbauer?"
     a: "Ja, wenn ein Prozess Tausende ähnliche Anfragen pro Monat hat, die Daten dahinter gepflegt sind und das ERP über eine API erreichbar ist. Bei seltenen oder sehr technischen Fragen spielen Aufbau, Test und Pflege eines Agenten ihre Kosten selten ein."
@@ -42,7 +42,7 @@ Was bei Herstellern tatsächlich live ist, ist schmaler als das Angekündigte. S
 
 Offen ist also, ob Ihr erster Prozess bereit ist. Das entscheiden fünf Kriterien.
 
-## Fünf Kriterien für die Entscheidung über Agentforce
+## Die Kriterien für die Entscheidung über Agentforce
 
 ### 1. Gibt es genug Volumen?
 
@@ -77,7 +77,7 @@ Data 360 berechnet außerdem 150 Credits pro MB für unstrukturierte Dokumente w
 
 Am 3. September 2026 hat Salesforce die [Editionen Core, Advanced und Max](https://www.salesforce.com/news/stories/salesforce-simplifies-editions-2026/) angekündigt, zu 195 €, 395 € und 550 € pro Nutzer und Monat, mit 500.000, 1 Mio. und 2,75 Mio. enthaltenen Flex Credits. Die Meldung selbst nennt keine Laufzeit, die [Preisseite der Sales Cloud](https://www.salesforce.com/eu/products/sales-pricing/) gibt die Pools aber pro Org und Jahr an. Ein Pool für die ganze Org ist schnell verbraucht, wenn mehrere Agenten daraus schöpfen. Für Bestandskunden auf bisherigen Editionen bleiben die Preise unverändert. Neue Preise für die Industries-Editionen sind für „later this fall“ angekündigt. Für Hersteller nennt die Seite der Manufacturing Cloud die volle Agentforce-for-Industries-Ausstattung schon jetzt nur in den Max-Editionen, zu 650 € oder 700 € pro Nutzer und Monat. Mitten in der Vertragslaufzeit lautet die praktische Frage: jetzt Credits für einen Prozess kaufen oder bei der Verlängerung die Edition wechseln? Das betrachte ich in [die Editionen Core, Advanced und Max](../salesforce-editionen-core-advanced-max/).
 
-## Ein typisches Szenario: drei Kandidaten bei einem Maschinenbauer
+## Rechenbeispiel: drei Kandidaten bei einem Maschinenbauer
 
 Nehmen wir einen Maschinenbauer mit SAP, Sales Cloud und Service Cloud, einem Händlernetz und einem Händlerportal. Alle Zahlen sind Annahmen, die das Vorgehen zeigen sollen. Die IT sammelt drei Ideen für einen ersten Agenten.
 
@@ -89,7 +89,7 @@ Nehmen wir einen Maschinenbauer mit SAP, Sales Cloud und Service Cloud, einem H�
 
 Einer von drei ist bereit. Nach meiner Einschätzung ist das ein normales Verhältnis, und ein solider Start ist mehr wert als drei parallele Piloten.
 
-## Wo ist Salesforce nicht die Antwort?
+## Wo Salesforce nicht die Antwort ist
 
 Zu einer ehrlichen Entscheidung gehört, zu benennen, wo ein Agent in Salesforce nichts verloren hat:
 
@@ -101,13 +101,13 @@ Zu einer ehrlichen Entscheidung gehört, zu benennen, wo ein Agent in Salesforce
 
 Diese Fragen gehören zu meiner Arbeit in [Make-or-buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/), denn manchmal ist der günstigste Agent der, den Sie nicht in Salesforce bauen.
 
-## Wie starten Sie ohne einen Piloten, der im Sand verläuft?
+## Erster Schritt: einen Prozess und eine Zielzahl wählen
 
 Gartner [erwartet](https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027), dass mehr als 40 Prozent der Projekte mit KI-Agenten bis Ende 2027 abgebrochen werden, wegen steigender Kosten, unklarem Nutzen und unzureichender Risikokontrollen. Diese Schritte setzen an allen drei Punkten an:
 
 ```schritte
 Prozess wählen
-  Einen Prozess, der die fünf Kriterien besteht, und eine Zielzahl, etwa den Anteil der Händleranfragen, die ohne Servicemitarbeitende beantwortet werden.
+  Einen Prozess, der alle Kriterien oben besteht, und eine Zielzahl, etwa den Anteil der Händleranfragen, die ohne Servicemitarbeitende beantwortet werden.
 Ist-Zustand messen
   Volumen, Bearbeitungszeit, Fehlerquote.
 Vertrag prüfen
@@ -119,5 +119,3 @@ Regeln in Logik gießen
 Entscheidungstermin vereinbaren
   Bevor der Pilot startet, zum Beispiel nach acht Wochen gegen die Zielzahl.
 ```
-
-Starten Sie mit Agentforce dort, wo Volumen, Daten und ERP-Zugriff stimmen, und nutzen Sie die Zeit anderswo, um dorthin zu kommen.

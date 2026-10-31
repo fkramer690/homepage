@@ -9,11 +9,11 @@ topic: devops
 categories: [devops, ai]
 tags: [KI-native Delivery, Coding-Agenten, Jira, DevOps, Anforderungsmanagement, Maschinenbau]
 takeaways:
-  - "Im KI-nativen Delivery-Prozess für Salesforce ist das Jira-Ticket die ausführbare Spezifikation: Ein Agent macht die Fleißarbeit bis zum Pull Request, Personen entscheiden an fünf Toren."
-  - "Der rote Faden ist eine lückenlose Kette vom Satz im Workshop-Transkript über Anforderung, Story, Commit und Test bis zur Release Note; jede Zeile Code lässt sich auf eine Aussage des Kunden zurückführen."
+  - "Ein Agent macht die Fleißarbeit vom Workshop-Protokoll bis zum Pull Request, Personen entscheiden an fünf festen Toren."
+  - "Jede Zeile Code lässt sich über Anforderung, Story, Commit und Test auf einen Satz im Workshop-Transkript zurückführen."
   - "Das wichtigste Tor ist die Spec-Freigabe „Ready for Agent“ durch Business Analyst und Architekt, weil ein Fehler dort am billigsten zu korrigieren ist."
-  - "Die Pipeline bleibt deterministisch und ohne KI-Entscheidungen; nur sie hat Zugang zur Produktion, der Agent arbeitet ausschließlich in Scratch Orgs und Sandboxes."
-  - "Rückmeldungen aus dem Abnahmetest ordnet der Agent mit Beleg aus dem bestätigten Protokoll als Bug, Change Request oder Klärungsbedarf ein; Scope Creep wird damit sichtbar."
+  - "Die Pipeline bleibt deterministisch und hat als Einzige Zugang zur Produktion; der Agent arbeitet nur in Scratch Orgs und Sandboxes."
+  - "Rückmeldungen aus dem Abnahmetest ordnet der Agent mit Beleg aus dem Protokoll als Bug, Change Request oder Klärungsbedarf ein."
 faq:
   - q: "Was ist der Unterschied zwischen KI-gestützter und KI-nativer Salesforce-Delivery?"
     a: "KI-gestützt heißt, der alte Prozess bekommt einen Coding-Assistenten. KI-nativ heißt, der Prozess ist um den Agenten herum gebaut: Er analysiert, protokolliert, entwirft und programmiert, Personen kuratieren und entscheiden an festen Toren."
@@ -111,7 +111,7 @@ Nach dem Merge deployt die Pipeline in die UAT-Sandbox, und der Agent schreibt T
 
 Nach der Freigabe rollt die Pipeline die bereits validierte Deployment-ID per Quick Deploy aus. Der Agent schreibt Release Notes und eine Anwenderhilfe in der Sprache des Fachbereichs, der Business Analyst liest gegen.
 
-## Wer entscheidet in diesem Prozess was?
+## Verbindlich entscheiden nur Personen mit Namen
 
 Agent und Pipeline entscheiden nichts Verbindliches. Jede Entscheidung, die Scope, Qualität oder Produktion betrifft, trifft eine Person mit Namen.
 
@@ -132,7 +132,7 @@ Für die Rollen ändert sich mehr als die Werkzeuge. Der Business Analyst schrei
 
 ## Ein Beispiel: vom Satz im Workshop zur Release Note
 
-Ein Szenario als Annahme, um die Kette zu zeigen. Im Discovery-Workshop eines Maschinenbauers sagt der Vertriebsleiter bei Minute 14: „Eine Opportunity unter 10.000 Euro schließen wir nicht ab.“
+Ein angenommenes Beispiel, um die Kette zu zeigen. Im Discovery-Workshop eines Maschinenbauers sagt der Vertriebsleiter bei Minute 14: „Eine Opportunity unter 10.000 Euro schließen wir nicht ab.“
 
 - Der Agent macht daraus im Protokoll die Anforderung „Opportunity erst ab 10.000 Euro schließen“, mit Verweis auf 00:14:52, und eine Story mit diesem Akzeptanzkriterium.
 - Im Refinement am Prototyp fällt dem Vertriebsleiter auf, dass verlorene Opportunities auch unter 10.000 Euro geschlossen werden müssen. Der Agent zeigt das als Diff zur Story: Die Regel gilt nur für „Closed Won“. Business Analyst und Architekt geben frei.
@@ -176,7 +176,7 @@ Der Prozess hängt an keinem bestimmten Coding-Agenten. Er braucht vier Verbindu
 - **Profile, Permission Sets, Destructive Changes.** Die klassischen Deploy-Fallen gehören als ausdrückliche Regeln in die Regeldatei.
 - **Konfigurationsdaten.** CPQ- und Field-Service-Setups oder Custom Settings sind kein Metadaten-Deploy und brauchen eine eigene Strecke.
 
-## Wo sollten Sie anfangen?
+## Erster Schritt: die Spec-Freigabe
 
 Fangen Sie mit dem Tor an, das am meisten spart: der Spec-Freigabe. Erst wenn diese Strecke stabil läuft, lohnt sich der Rest.
 
@@ -190,5 +190,3 @@ Absichern | parallel
 Ausbauen | wenn es stabil läuft
   Prototyp und Feedback-Triage dazunehmen.
 ```
-
-Ein KI-nativer Delivery-Prozess wird schnell, weil Personen an wenigen Toren entscheiden und alles dazwischen belegbar bleibt.

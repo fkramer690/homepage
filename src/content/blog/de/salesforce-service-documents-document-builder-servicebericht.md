@@ -9,10 +9,10 @@ topic: field-service
 categories: [field-service]
 tags: [Field Service, Außendienst, Service Documents, Document Builder, Dokumentenerstellung, Fertigung]
 takeaways:
-  - "Salesforce Service Documents sind PDFs, die Field Service aus Arbeitsaufträgen, Auftragspositionen und Serviceterminen erzeugt. Die Vorlagen entstehen im Document Builder."
-  - "Der Document Builder ist in den Lizenzen Field Service Dispatcher und Mobile enthalten, mit 250 Dokumenten pro Nutzer und Monat und einem einmaligen Zusatzkontingent von 10.000 Dokumenten."
+  - "Service Documents sind PDFs, die Field Service aus Arbeitsaufträgen, Positionen und Terminen erzeugt. Die Vorlagen entstehen im Document Builder."
+  - "Der Document Builder steckt in den Lizenzen Dispatcher und Mobile: 250 Dokumente pro Nutzer und Monat, dazu einmalig 10.000 zusätzliche."
   - "Seine Stärke ist der Servicebericht vor Ort: Kundenunterschrift, Fotos und Erstellung in der mobilen App, auch offline."
-  - "Er erzeugt nur PDFs, nur auf drei Objekten und ohne dokumentierte Bedingungslogik. Prüfprotokolle, Maschinenakten und Angebote brauchen meist Document Generation oder ein AppExchange-Tool."
+  - "Er erzeugt nur PDFs auf drei Objekten, ohne dokumentierte Bedingungslogik. Prüfprotokolle, Maschinenakten und Angebote brauchen meist ein anderes Tool."
   - "Prüfen Sie Ihre bestehenden Berichte, Ihre iOS- und Android-Geräte und Ihr Dokumentenvolumen gegen die Grenzen, bevor Sie ein Zusatztool kaufen."
 faq:
   - q: "Was sind Salesforce Service Documents?"
@@ -37,7 +37,7 @@ Eingeführt hat Salesforce Service Documents mit dem Release Spring '24. Die pas
 
 Nicht verwechseln sollten Sie den Namen mit S-Docs. S-Docs ist ein eigenständiges Produkt im AppExchange und hat mit dieser Funktion nichts zu tun.
 
-## Was kostet der Document Builder?
+## Der Document Builder steckt in den Field-Service-Lizenzen
 
 Nichts extra, solange Field Service lizenziert ist. Laut [Salesforce-Hilfe zu den Berechtigungen](https://help.salesforce.com/s/articleView?id=fs_document_builder_perm_sets.htm&language=en_US&type=5) brauchen Nutzer entweder die Permission Set License Field Service Dispatcher oder Field Service Mobile.
 
@@ -80,7 +80,7 @@ titel: Document Builder: stark für den Servicebericht vor Ort
 - Logik | keine dokumentierte Bedingungslogik
 besser: Für Prüfprotokolle, Maschinenakten, Angebote und Massenläufe: Salesforce Document Generation oder ein AppExchange-Tool.
 ```
-## Wo liegen die Grenzen des Document Builder?
+## Die Grenzen: nur PDF, drei Objekte, keine Bedingungslogik
 
 Die [Übersicht der Field-Service-Limits](https://help.salesforce.com/s/articleView?id=service.fs_limits.htm&language=en_US&type=5) listet sie auf. Diese zählen in Projekten bei Herstellern:
 
@@ -111,7 +111,7 @@ Field Service selbst lohnt sich am meisten bei vielen kurzen Einsätzen, wo Term
 
 Die Kombination, die oft sinnvoll ist: Document Builder für alles, was der Techniker vor Ort erstellt, und ein Tool zur Dokumentenerstellung für den Innendienst, lizenziert nur für die Nutzer, die es brauchen.
 
-## Wie fangen Sie am besten an?
+## Erster Schritt: die heutigen Berichte mit Volumen sammeln
 
 1. **Sammeln Sie Ihre heutigen Berichte.** Jedes Papierformular und jedes PDF, das Techniker und Serviceinnendienst heute erstellen, mit dem Volumen pro Monat.
 2. **Prüfen Sie sie gegen die Grenzen oben.** Objekt, Bedingungslogik, Seitenzahl, Ausgabeformat, wer unterschreibt.

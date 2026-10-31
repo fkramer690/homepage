@@ -9,8 +9,8 @@ topic: commerce
 categories: [b2b-commerce]
 tags: [b2b commerce, kpis, search analytics, data cloud, inside sales, conversion]
 takeaways:
-  - "The main KPI of a B2B store is the share of order lines that arrive through the store, per buyer group. Revenue through the store alone hides whether dealers really switched."
-  - "Zero-result searches show missing part numbers and synonyms. Salesforce announced search analytics via Data Cloud in July 2026, with queries, click-through, conversions and zero-result searches."
+  - "The main KPI is the share of order lines through the store, per buyer group. Store revenue alone hides whether dealers switched."
+  - "Zero-result searches show missing part numbers and synonyms. Salesforce announced search analytics via Data Cloud for this in July 2026."
   - "The Merchant Agent, included in Growth and Advanced, can summarise average order value and site conversion for a store in conversation."
   - "Inside sales minutes per order line and the rate of orders that need manual correction show whether the store saves work or only moves it."
   - "Growth includes 250K and Advanced 500K Data Cloud credits. Check consumption in Digital Wallet before you build more dashboards on Data Cloud."
@@ -58,21 +58,21 @@ With the July 2026 B2B Commerce release, Salesforce announced [search analytics 
 
 Click-through and conversion show the next step: a search that finds 50 results but leads to no click usually means bad sorting. Boost and bury rules help here; Salesforce allows up to 100 of them.
 
-## What can the Merchant Agent report?
+## The Merchant Agent summarises order value and conversion
 
 According to the [Salesforce pricing page](https://www.salesforce.com/editions-pricing/commerce-cloud/b2b/), both B2B editions, Growth and Advanced, include the Merchant Agent. The [Trailhead module on the Merchant Agent](https://trailhead.salesforce.com/content/learn/modules/agentforce-merchant-quick-look/get-to-know-your-merchant-agent) shows it retrieving and summarising the average order value of a store and naming the weakest category, and it answers requests for site conversion details. For setup, you activate generative AI, Agentforce, bots and Data 360 for the store.
 
 I find that useful for a merchandiser's weekly question, "which category dropped?". For the KPI review with management I would not rely on chat answers. Use the agent to find a topic, then check the number in a report you can reproduce. The editions also include CRM Analytics, 3 users on Growth and 5 on Advanced, which is enough for the people who build and own the dashboard.
 
-## How do you measure the work saved?
+## Measure saved work in inside sales minutes per line
 
 Inside sales minutes per order line is the KPI that pays for the store, and Salesforce cannot measure it for you. It needs a baseline from before go-live: for two weeks, inside sales notes how long typing in a phone or email order takes, split by order lines. Repeat the same study three months after each wave.
 
 The second number is the rate of store orders that someone has to correct by hand, for example because of a wrong delivery address, a price difference or a part the ERP rejects. A high rate means the store creates work instead of saving it. Usually the cause is data: price books that differ from the ERP, or entitlements for parts that can no longer be ordered.
 
-A typical scenario, as an assumption: before go-live, inside sales handles 40,000 order lines a year at 4 minutes each, about 2,670 hours. After six months, 45 percent of the lines, 18,000, arrive through the store, and 3 percent of those lines need a correction of 10 minutes. The saving is about 1,200 hours of typing minus 90 hours of corrections. At a correction rate of 20 percent, corrections would eat 600 hours, half of the saving.
+Worked example: before go-live, inside sales handles 40,000 order lines a year at 4 minutes each, about 2,670 hours. After six months, 45 percent of the lines, 18,000, arrive through the store, and 3 percent of those lines need a correction of 10 minutes. The saving is about 1,200 hours of typing minus 90 hours of corrections. At a correction rate of 20 percent, corrections would eat 600 hours, half of the saving.
 
-## What do the Data Cloud credits limit?
+## 250K or 500K Data Cloud credits limit the analysis
 
 Search analytics runs on Data Cloud, and Data Cloud work consumes credits from your edition's allowance.
 
@@ -86,7 +86,7 @@ According to [Trailhead on credit consumption](https://trailhead.salesforce.com/
 
 Salesforce does not publish how many credits search analytics uses. So check consumption in Digital Wallet after the first month, before someone builds ten more dashboards on Data Cloud. How credits relate to other AI costs is covered in the AI masterclass chapter on [costs and tokens](../../masterclass/ai-salesforce/costs-and-tokens/).
 
-## Where should you start?
+## First step: take baselines before go-live
 
 Measuring starts before go-live, not after it.
 
@@ -101,6 +101,4 @@ Repeat per wave
   Every further buyer group is measured three months after its go-live.
 ```
 
-The same discipline for agents is described in [Agentforce KPIs after go-live](../agentforce-kpis-after-go-live/), and the whole chapter is in the masterclass on [agents, migration and rollout](../../masterclass/b2b-commerce/agentforce-migration-rollout/).
-
-A B2B store works when dealers order more lines through it and inside sales types fewer, and only a baseline from before go-live proves that.
+The same discipline for agents is described in [Agentforce KPIs after go-live](../agentforce-kpis-after-go-live/). The whole chapter is in the masterclass on [agents, migration and rollout](../../masterclass/b2b-commerce/agentforce-migration-rollout/).

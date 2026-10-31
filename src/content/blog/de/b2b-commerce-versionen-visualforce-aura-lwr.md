@@ -9,10 +9,10 @@ topic: commerce
 categories: [b2b-commerce, architecture]
 tags: [B2B Commerce, Visualforce, Aura, LWR, CloudCraze, Migration]
 takeaways:
-  - "Salesforce B2B Commerce gibt es in drei Generationen: das Visualforce-Managed-Package aus der CloudCraze-Übernahme 2018 und Stores auf der Kernplattform mit Aura- oder LWR-Template."
-  - "Die letzte Hauptversion von B2B Commerce for Visualforce in der Salesforce-Hilfe ist 4.13 aus Winter '21. Seit Summer '25 pflegt Salesforce dafür nur noch Patch Notes."
+  - "B2B Commerce gibt es in drei Generationen: das Visualforce-Paket aus der CloudCraze-Übernahme 2018 und Stores mit Aura- oder LWR-Template."
+  - "Die letzte Hauptversion von B2B Commerce for Visualforce ist 4.13 aus Winter '21. Seit Summer '25 pflegt Salesforce dafür nur noch Patch Notes."
   - "Aura-Store-Templates bekommen nur Orgs, in denen Commerce vor Spring '23 aktiviert war. Für neue Stores empfiehlt Salesforce das LWR-Template."
-  - "Stand 27. Oktober 2026 hat Salesforce kein Abkündigungsdatum für Aura-Stores oder das Visualforce-Paket veröffentlicht. Planen Sie nach Funktionen, nicht aus Angst vor einer Frist."
+  - "Stand 27. Oktober 2026 gibt es kein Abkündigungsdatum für Aura-Stores oder das Visualforce-Paket. Planen Sie nach Funktionen, nicht nach einer Frist."
 faq:
   - q: "Was ist der Unterschied zwischen B2B Commerce for Visualforce und B2B Commerce auf Lightning?"
     a: "B2B Commerce for Visualforce ist das Managed Package, das mit CloudCraze kam, mit Shopseiten in Visualforce. B2B Commerce auf der Kernplattform baut den Shop als Experience-Cloud-Site mit Experience Builder, auf Basis eines Aura- oder LWR-Templates."
@@ -47,7 +47,7 @@ Summer '25 | Für das Visualforce-Paket pflegt Salesforce nur noch Patch Notes
 2026-06 | Neuerungen mit Headless, Buyer Agent und Quote to Cart, ohne das Visualforce-Paket
 ```
 
-## Was muss ich über B2B Commerce for Visualforce wissen?
+## B2B Commerce for Visualforce bekommt nur noch Patches
 
 Die [Seite mit den Release Notes in der Salesforce-Hilfe](https://help.salesforce.com/s/articleView?language=en_US&id=commerce.b2b_commerce_release_notes.htm&type=5) listet Patch Notes für die Versionen 4.5 bis 4.13. Die neueste ist [Version 4.13 aus Winter '21](https://help.salesforce.com/s/articleView?language=en_US&id=sf.b2b_commerce_rn_2021_winter_patches.htm&type=5). Auf derselben Seite steht, dass Salesforce seit Summer '25 für B2B Commerce for Visualforce nur noch Patch Notes pflegt. Die [Liste der Installations-URLs](https://help.salesforce.com/s/articleView?id=000388718&language=en_US&type=1) nennt es "the B2B Commerce managed package" und rät, den neuesten Patch der eigenen Hauptversion zu installieren, weil Patches kumulativ sind.
 
@@ -70,7 +70,7 @@ Der [Migrationsleitfaden](https://developer.salesforce.com/docs/commerce/lwr-mig
 
 Nein. Stand 27. Oktober 2026 stehen weder Aura-Stores noch B2B Commerce for Visualforce in der [Liste der aktiven Produkt- und Funktionsabkündigungen](https://help.salesforce.com/s/articleView?id=000381744&language=en_US&type=1), und der Migrationsleitfaden nennt kein Datum. Ich würde nur auf ein Datum reagieren, das Salesforce in der Hilfe oder in Release Notes veröffentlicht.
 
-Deshalb plane ich nach Funktionen, nicht aus Angst. Ein typisches Szenario, als Annahme: Ein Hersteller betreibt seit 2022 einen Aura-Store für Ersatzteile, mit 15 eigenen Aura-Komponenten für die Teileliste pro Maschine und einem eigenen Checkout-Flow. Ein Wechsel zu LWR braucht dann einen konkreten Anlass:
+Deshalb plane ich nach Funktionen, nicht aus Angst. Rechenbeispiel: Ein Hersteller betreibt seit 2022 einen Aura-Store für Ersatzteile, mit 15 eigenen Aura-Komponenten für die Teileliste pro Maschine und einem eigenen Checkout-Flow. Ein Wechsel zu LWR braucht dann einen konkreten Anlass:
 
 ```pro-contra
 pro: Aura-Store behalten
@@ -88,7 +88,7 @@ Zwei Prüfungen gehören in jede Roadmap-Runde:
 - **Welche neue Funktion wollen wir, und dokumentiert Salesforce sie für unser Store-Template?** Die Ankündigungen vom Juni 2026 nennen kein Template. Lassen Sie sich vom Partner die Seite in Hilfe oder Entwicklerdoku zeigen, die Ihren Store-Typ bestätigt.
 - **Wie viel eigenen Aura-Code haben wir?** Jede Aura-Komponente ist ein Teil, das die [Migration](../b2b-store-aura-lwr-migrieren/) ersetzt. Je mehr es sind, desto größer der Umzug.
 
-## Wie finde ich heraus, was wir betreiben?
+## In einer Stunde herausfinden, was Sie betreiben
 
 Viele Hersteller wissen es nicht genau, weil ein Partner den Shop vor Jahren aufgesetzt hat. Drei Prüfungen liefern die Antwort in einer Stunde:
 
@@ -98,8 +98,6 @@ Viele Hersteller wissen es nicht genau, weil ein Partner den Shop vor Jahren auf
 
 Schreiben Sie das Ergebnis auf, mit der Zahl der eigenen Komponenten und dem Partner, der sie gebaut hat. Diese eine Seite ist die Grundlage für jede spätere Entscheidung.
 
-## Wo starten Sie?
+## Erster Schritt: Generation feststellen und Roadmap-Funktionen prüfen
 
 Stellen Sie fest, welche Generation Sie betreiben, und listen Sie die Funktionen auf Ihrer Roadmap für die nächsten zwei Jahre. Prüfen Sie dann pro Funktion, ob Salesforce sie für Ihren Store-Typ dokumentiert. Braucht nichts auf der Liste eine neue Generation, behalten Sie den Shop und investieren in Daten und Prozesse. Braucht etwas sie, planen Sie den Umzug mit Blick auf die [Releaseplanung für Salesforce-Releases](../../masterclass/devops-release-management/release-planung-salesforce-releases/), denn eine Store-Migration sollte nicht mit einem großen Release zusammenfallen. Die Kostenseite steht in [Kapitel 1 der Masterclass B2B Commerce](../../masterclass/b2b-commerce/b2b-commerce-lohnt-sich-ueberblick/), der Umzug selbst in [Kapitel 5 zu Agenten, Migration und Einführung](../../masterclass/b2b-commerce/agentforce-migration-einfuehrung/) und die Lizenzfrage für Käufer in [B2B Commerce Lizenzen für Käufer](../b2b-commerce-lizenzen-kaeufer/). Architekturentscheidungen wie diese gehören zu meiner Arbeit in der [Salesforce-Architektur](../../leistungen/salesforce-architektur/).
-
-Kennen Sie Ihre Generation, bevor Sie über die Roadmap sprechen, und ziehen Sie erst um, wenn eine benötigte Funktion es verlangt.

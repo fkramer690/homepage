@@ -9,11 +9,11 @@ topic: ai
 categories: [ai]
 tags: [prompt builder, agentforce, flex credits, ai agents, manufacturing, governance]
 takeaways:
-  - "A Prompt Builder template is enough when one input produces one text and a person reads it before anything happens: service report text, case summary, dealer reply draft or a nightly warranty summary."
-  - "You need an agent with actions when the system must choose its next step, answer without a person in between, or write records such as cases, orders or field service appointments."
-  - "On a Standard model a prompt costs 4 Flex Credits per 2,000 tokens, while every agent action costs 20 credits before any prompt; on an Advanced model one long summary costs more than two actions."
-  - "Salesforce listed JSON output and asynchronous batches of up to 1,000 prompts for Prompt Builder in Winter '26, which covers many summary jobs without an agent."
-  - "A tested template stays useful when an agent follows, because it can become the agent's reference action. Start with the template and add the agent only where dialogue or a write step pays for it."
+  - "Service report text, case summaries, reply drafts and a nightly warranty summary are template jobs, because a person reads the text first."
+  - "You need an agent with actions when the system must choose its next step, answer without a person in between, or write records."
+  - "On a Standard model a prompt costs 4 Flex Credits per 2,000 tokens, while every agent action costs 20 credits plus its prompts."
+  - "Salesforce listed JSON output and asynchronous batches of up to 1,000 prompts for Prompt Builder in Winter '26."
+  - "A tested template becomes the agent's reference action if an agent follows later, so it is never wasted work."
 faq:
   - q: "What is the difference between Prompt Builder and an Agentforce agent?"
     a: "Prompt Builder creates reusable prompt templates that a button, a Flow, Apex or an agent calls for one generation step. An Agentforce agent decides at runtime which action to run, holds a conversation and changes records only through predefined actions."
@@ -38,7 +38,7 @@ An agent decides for itself which action comes next. According to [Trailhead on 
 
 So the real question is who decides the next step. With a template, your process decides: the technician presses the button, the Flow runs at 2 a.m. With an agent, the language model decides within limits you design, as described in [Agent Script instead of LLM judgement](../agent-script-deterministic-rules/).
 
-## Which manufacturing tasks does a template cover?
+## After-sales tasks a template covers
 
 Four typical tasks in after-sales service work well with a template:
 
@@ -83,7 +83,7 @@ The help article says nothing about whether a prompt template called as an agent
 
 All other meters are in [Flex Credits per action](../flex-credits-agentforce-cost-per-action/).
 
-## A typical scenario: templates first, then the dealer agent
+## Worked example: templates first, then the dealer agent
 
 Assume a machine builder with Service Cloud, Field Service, a dealer portal and SAP. All volumes are assumptions, priced on a Standard model:
 
@@ -101,7 +101,7 @@ A test suite of 100 conversations with four actions at 16 credits and two prompt
 
 The agent is worth it if it saves more rep time than the extra $600 a month and the tests cost, for example when dealers in other time zones wait until the next morning today. If reps answer within the hour anyway, I would keep the drafts. The full calculation for an order status agent is in [what a dealer service agent costs](../dealer-service-agent-cost-calculation/).
 
-## How do testing and governance differ?
+## You test a template differently from an agent
 
 A template has one input and one output, so you test it with real records. Salesforce announced at [Dreamforce 2026](https://www.salesforce.com/blog/dreamforce-2026-announcements/) batch prompt testing, which runs a template against many real inputs in one pass, as a beta. Reference visibility is GA and shows every Flow and action that depends on a template before you change it. Templates are metadata of the type [GenAiPromptTemplate](https://developer.salesforce.com/docs/atlas.en-us.252.0.api_meta.meta/api_meta/meta_genaiprompttemplate.htm), so they belong in the repository and go through the pipeline like a Flow.
 
@@ -109,7 +109,7 @@ An agent needs more. [Agent tests run only in sandboxes](https://developer.sales
 
 A Flex template also works outside Salesforce. [Hosted MCP servers](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/prompt-builder.html) publish it as an MCP prompt that a user picks in Claude or Cursor, with the user's permissions and the same credit consumption as in the Salesforce UI. ChatGPT does not support MCP prompts, according to that page.
 
-## Where should you start?
+## Begin with the text tasks in service and sales
 
 ```schritte
 List the text tasks
@@ -122,6 +122,4 @@ Add an agent
   Only where nobody should have to read first, where the path varies or where something must be written. Reuse the tested template as the agent's reference action.
 ```
 
-Which tool fits which job across the Salesforce platform is in the masterclass chapter on [Salesforce AI development tools](../../masterclass/ai-salesforce/salesforce-ai-development-tools/), and this kind of decision is part of my [Salesforce architecture work](../../services/salesforce-architecture/).
-
-For the four text tasks above a template does the job, and an agent earns its higher price only where it answers or acts without a person in between.
+Which tool fits which job across the Salesforce platform is in the masterclass chapter on [Salesforce AI development tools](../../masterclass/ai-salesforce/salesforce-ai-development-tools/). This kind of decision is part of my [Salesforce architecture work](../../services/salesforce-architecture/).

@@ -9,11 +9,11 @@ topic: ai
 categories: [ai]
 tags: [Agentforce, KI-Agenten, Datenqualität, Business Case, Architektur]
 takeaways:
-  - "Laut einer Umfrage von Oppenheimer haben 85 Prozent der Salesforce-Kunden Agentforce getestet oder eingeführt, fast die Hälfte steckt aber noch in Pilot oder Test."
+  - "Laut einer Oppenheimer-Umfrage haben 85 Prozent der Salesforce-Kunden Agentforce getestet oder eingeführt, fast die Hälfte steckt noch im Piloten."
   - "Agentforce-Projekte scheitern selten an der Technik, sondern an einem fehlenden Business Case, schlechter Datenqualität und unklaren Berechtigungen."
-  - "Jeder Agent braucht ein messbares fachliches Ziel, bevor der erste Prompt geschrieben wird, etwa Bearbeitungszeit, Erstlösungsquote oder eingesparte Stunden pro Woche."
-  - "Ein Agent ist nur so gut wie die Daten und das Wissen, die er liest; Stammdaten, Wissensartikel und Zugriffsregeln aufzuräumen gehört zum Projekt und ist keine Vorarbeit für andere."
-  - "Starten Sie mit einem engen, häufigen Anwendungsfall, lassen Sie bei folgenreichen Entscheidungen einen Menschen mitentscheiden und messen Sie ab dem ersten Tag."
+  - "Jeder Agent braucht vor dem ersten Prompt ein messbares Ziel, etwa Bearbeitungszeit, Erstlösungsquote oder eingesparte Stunden pro Woche."
+  - "Stammdaten, Wissensartikel und Zugriffsregeln aufzuräumen gehört zum Agentenprojekt, denn genau diese Daten liest der Agent."
+  - "Starten Sie mit einem engen, häufigen Fall, lassen Sie bei folgenreichen Entscheidungen einen Menschen mitentscheiden und messen Sie ab dem ersten Tag."
 faq:
   - q: "Warum bleiben so viele Agentforce-Projekte in der Pilotphase?"
     a: "Häufige Gründe sind ein fehlender Business Case, unvollständige oder widersprüchliche Daten, unklare Zugriffsrechte und keine vereinbarte Erfolgsmessung. Die Technik selbst ist selten der Engpass."
@@ -27,7 +27,7 @@ faq:
 
 Agentforce-Projekte gelingen, wenn Business Value und Datenqualität an erster Stelle stehen und die Technik an zweiter. Die meisten Salesforce-Kunden haben Agentforce inzwischen ausprobiert, trotzdem verlassen viele Projekte die Pilotphase nie. Nach meiner Erfahrung liegt das selten am Agenten selbst. Es fehlen ein Business Case, Daten, denen der Agent trauen kann, und durchdachte Zugriffsregeln. Mein erster Agentforce-Pilot war eine grüne Banane: ein Produkt, das ausgeliefert wurde, bevor es reif war. Heute sind mehrere Agentforce-Projekte, an denen ich beteiligt bin, in der Umsetzung, und der Unterschied liegt fast ausschließlich darin, wie sie gestartet sind.
 
-## Wo steht die Agentforce-Einführung wirklich?
+## 85 Prozent testen, fast die Hälfte steckt im Piloten
 
 Die Zahlen aus dem Oktober 2026 zeigen ein geteiltes Bild. Eine Umfrage der Investmentbank Oppenheimer unter Salesforce-Kunden, [über die Salesforce Ben berichtet](https://www.salesforceben.com/85-of-customers-have-tried-agentforce-but-demand-hasnt-picked-up-why/), ergab, dass 85 Prozent Agentforce getestet oder eingeführt haben. In derselben Umfrage gab fast die Hälfte an, noch in der Pilot- oder Testphase zu sein. Salesforce selbst meldet mehr als 29.000 bezahlte Abschlüsse.
 
@@ -37,7 +37,7 @@ Gleichzeitig wächst die Nachfrage nach Agentforce-Wissen schnell. Laut dem Tale
 
 Unternehmen experimentieren und stellen ein, aber der produktive Einsatz hinkt hinterher. Das deckt sich mit dem, was ich auf Kundenseite sehe: viel Interesse, viele Demos und eine Lücke zwischen einer überzeugenden Demo und einem Agenten, der jeden Tag zuverlässig arbeitet.
 
-## Was habe ich aus meinem ersten Piloten gelernt?
+## Mein erster Pilot kam zu früh
 
 ```praxis
 Der erste Agentforce-Pilot, an dem ich beteiligt war, kam schlicht zu früh. Die Plattform war jung und für unser Vorhaben noch nicht reif genug. Das ist ein normales Risiko bei neuer Technik, und es hat mich gelehrt, genauer auf die Bedingungen rund um einen Agenten zu schauen als auf den Agenten selbst.
@@ -101,8 +101,6 @@ Begrenzt live gehen
 
 Das ist ganz normale Projektdisziplin, angewendet auf eine neue Art von System. Agenten sollten durch denselben Release-Prozess laufen wie jede andere Änderung, mit Konfiguration im Repository und Deployment über eine Pipeline, wie ich es in [warum DevOps über Salesforce-Großprojekte entscheidet](../warum-devops-salesforce-enterprise-projekte/) beschreibe.
 
-## Welche Rolle spielt der Architekt?
+## Der Architekt fragt, ob der Agent seine Kosten wert ist
 
 Auf Kundenseite ist meine Aufgabe in Agentforce-Projekten, den Fokus auf dem Nutzen zu halten und dafür zu sorgen, dass die Grundlagen tragen: Datenmodell, Schnittstellen, Berechtigungen und Release-Prozess. Partner und Hersteller möchten verständlicherweise zeigen, was die Technik kann. Jemand muss fragen, ob ein bestimmter Agent seine Kosten wert ist und ob die Daten ihn tragen. Das ist ein Kernteil von [Architektur und Partnersteuerung](../../leistungen/salesforce-architektur/).
-
-Agentforce kann echten Nutzen bringen, aber nur dort, wo ein klares fachliches Ziel auf Daten trifft, denen der Agent trauen kann.

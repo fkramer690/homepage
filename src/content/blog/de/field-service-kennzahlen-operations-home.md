@@ -9,11 +9,10 @@ topic: field-service
 categories: [field-service]
 tags: [Field Service, Kennzahlen, Erstlösungsquote, Operations Home, Einführung, Analytics]
 takeaways:
-  - "Nach dem Go-live muss Field Service die Zahlen aus dem Business Case bewegen: Einsätze pro Techniker und Tag, Fahrzeitanteil, Erstlösungsquote, eingehaltene Reaktionszeiten und Ankunft im Zeitfenster."
-  - "Der Anteil der Vorschläge, die Disponenten vor der Freigabe ändern, zeigt, ob Daten und Scheduling Policy passen. Salesforce liefert ihn nicht fertig."
-  - "Operations Home zeigt 12 Kennzahlen, Field Service Intelligence fünf Dashboards mit mehr als 30 Kennzahlen. Beide laufen auf Data 360 und müssen lizenziert werden."
-  - "Die Erstlösungsquote braucht vor jedem Dashboard eine schriftliche Definition: Zeitfenster, gleiches Asset, gleicher Fehlercode und welche geplanten Folgeeinsätze nicht zählen."
-  - "Ohne Ausgangswert aus dem Altsystem, drei Monate lang mit denselben Definitionen gemessen, kann nach dem Go-live niemand sagen, ob Field Service geholfen hat."
+  - "Ich messe zusätzlich, wie oft Disponenten die Vorschläge der Engine vor der Freigabe ändern. Das zeigt, ob Daten und Scheduling Policy passen."
+  - "Operations Home zeigt 12 Kennzahlen, Field Service Intelligence fünf Dashboards mit mehr als 30. Beide laufen auf Data 360 und brauchen Lizenzen."
+  - "Die Erstlösungsquote braucht eine schriftliche Definition: Zeitfenster, gleiches Asset, gleicher Fehlercode und welche Folgeeinsätze nicht zählen."
+  - "Ohne Ausgangswert aus dem Altsystem, drei Monate mit denselben Definitionen gemessen, kann niemand sagen, ob Field Service geholfen hat."
 faq:
   - q: "Welche Kennzahlen zählen nach einem Field-Service-Go-live?"
     a: "Ich nutze sechs: Einsätze pro Techniker und Tag, Fahrzeitanteil, Erstlösungsquote, eingehaltene Reaktionszeiten, Ankunft im zugesagten Zeitfenster und den Anteil der Vorschläge, die Disponenten vor der Freigabe ändern. Sie passen zum Business Case."
@@ -45,7 +44,7 @@ Zwei davon gibt es fast geschenkt. Das Service Appointment hat Felder für den [
 
 Die Änderungsquote der Disposition kostet etwas Aufwand und ist in den ersten Monaten die nützlichste Zahl. In [Wie viel Terminplanung automatisch laufen sollte](../salesforce-field-service-terminplanung-automatisieren/) empfehle ich, dass Disponenten notieren, warum sie einen Vorschlag ändern. Eine Auswahlliste mit dem Grund am Termin macht daraus einen Bericht. Eine hohe Quote heißt: Daten fehlen oder die Policy passt nicht, und die Gründe zeigen, was davon.
 
-## Was liefern Operations Home und Field Service Intelligence?
+## Operations Home und Field Service Intelligence laufen auf Data 360
 
 Salesforce verkauft Field Service heute als Field Service and Operations, die Auswertungen kommen in zwei Teilen. Laut [Salesforce-Blog vom September 2025](https://www.salesforce.com/blog/how-to-transform-field-service-operations-with-agentic-analytics/):
 
@@ -62,7 +61,7 @@ Welche Positionen Ihre Edition für Operations Home, Field Service Intelligence 
 
 Meine Einschätzung: Die fertigen Ansichten lohnen sich, sobald die Definitionen abgestimmt sind und Data 360 ohnehin im Haus ist. Für die erste Welle decken Standardberichte auf Terminen und Arbeitsaufträgen die Zahlen aus dem Business Case ab.
 
-## Warum braucht die Erstlösungsquote zuerst eine Definition?
+## Die Erstlösungsquote braucht zuerst eine Definition
 
 Weil ein Kennzahlname noch keine Formel ist. Operations Home zeigt eine Erstlösungsquote. Ob sie dem entspricht, was Ihre Serviceleitung meint, müssen Sie prüfen. Ich halte fünf Entscheidungen schriftlich fest:
 
@@ -80,9 +79,9 @@ Messen Sie drei Monate vor dem Go-live mit denselben Definitionen, die Sie danac
 
 Vergleichen Sie dann pro Region und pro Welle. Die [Einführung in Wellen](../salesforce-field-service-einfuehrung/) liefert eine natürliche Vergleichsgruppe: Regionen, die noch nicht live sind, arbeiten im alten Prozess. Verbessert sich eine Live-Region und bleibt eine wartende Region gleich, kommt die Änderung von Field Service und nicht von einer ruhigen Saison.
 
-## Ein typisches Szenario, als Annahme: Ausgangswert und erste Welle
+## Rechenbeispiel: Ausgangswert und erste Welle
 
-Ein typisches Szenario, als Annahme: ein Komponentenhersteller mit 90 Technikern in drei Regionen, SAP als ERP und einer Einführung in drei Wellen. Alle Zahlen sind Annahmen.
+Angenommen ist ein Komponentenhersteller mit 90 Technikern in drei Regionen, SAP als ERP und einer Einführung in drei Wellen.
 
 **Ausgangswert, drei Monate aus SAP-Serviceaufträgen und Stundenzetteln.** 2,1 Einsätze pro Techniker und Tag, 38 Prozent Fahrzeitanteil, 71 Prozent Erstlösungsquote (14 Tage, gleiches Asset, gleicher Fehlercode), 84 Prozent der Störungen in der zugesagten Reaktionszeit.
 
@@ -96,7 +95,7 @@ Jemandem im Fachbereich und nicht dem Projekt. Ich würde die Definitionen der S
 
 Kommen später Field-Service-Agenten dazu, messen Sie diese getrennt mit eigenen Kennzahlen, wie in [Agentforce-Kennzahlen nach dem Go-live](../agentforce-kennzahlen-nach-go-live/) beschrieben. Ein Agent, der Wartungstermine bucht, verändert die Einsätze pro Tag nur mittelbar.
 
-## Wo fangen Sie an?
+## Erster Schritt: höchstens sechs Kennzahlen aus dem Business Case
 
 ```schritte
 Kennzahlen wählen
@@ -111,6 +110,4 @@ Monatlich pro Region prüfen
   Ordnen Sie jeden Ausreißer einer Daten- oder Prozesskorrektur zu.
 ```
 
-Wie die Kennzahlen in Einführung und Betrieb passen, behandelt das [Kapitel KI-Agenten, Einführung und Betrieb der Field-Service-Masterclass](../../masterclass/field-service/field-service-ki-agenten-einfuehrung/).
-
-Field Service beweist sich an sechs Zahlen, die Sie vor dem Go-live definiert haben, ein Dashboard zeigt sie nur an.
+Da der Ausgangswert drei Monate braucht, beginnt die Messung spätestens drei Monate vor dem Go-live. Wie die Kennzahlen in Einführung und Betrieb passen, behandelt das [Kapitel KI-Agenten, Einführung und Betrieb der Field-Service-Masterclass](../../masterclass/field-service/field-service-ki-agenten-einfuehrung/).

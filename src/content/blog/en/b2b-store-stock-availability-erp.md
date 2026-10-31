@@ -10,11 +10,11 @@ categories: [b2b-commerce, architecture]
 contactBrief: integration
 tags: [b2b commerce, inventory, sap, available to promise, omnichannel inventory, erp integration]
 takeaways:
-  - "By default Salesforce B2B Commerce reads stock from Omnichannel Inventory; the extension Commerce_Domain_Inventory_Service replaces it with your own logic, such as a live ERP call."
-  - "Omnichannel Inventory holds a near real-time copy per location and location group, but Salesforce says it does not replace the inventory system of record. The ERP stays the master."
-  - "A copy is fast and keeps the store running when SAP is down; a live availability check is exact and returns a confirmed date, but SAP has to answer within the checkout."
-  - "Dealers need a usable signal more than an exact quantity: in stock, on request, or a confirmed date. That also protects stock levels from competitors and resellers."
-  - "Both B2B editions list 20 inventory locations on the pricing page; Unified Omnichannel Inventory from Winter '27 is described for store and online stock, so check whether it fits B2B."
+  - "By default the store reads stock from Omnichannel Inventory. The extension Commerce_Domain_Inventory_Service replaces it, for example with a live ERP call."
+  - "Omnichannel Inventory holds a near real-time copy per location, but Salesforce says it does not replace the inventory system of record. The ERP stays master."
+  - "A copy is fast and keeps the store running when SAP is down. Live is exact and returns a confirmed date, but SAP has to answer within the checkout."
+  - "Dealers need a usable signal more than an exact quantity: in stock, on request, or a confirmed date. That also protects stock levels from competitors."
+  - "Both B2B editions include 20 inventory locations. Unified Omnichannel Inventory from Winter '27 is described for store and online stock and does not mention B2B."
 faq:
   - q: "Where does Salesforce B2B Commerce get stock data from?"
     a: "By default from Omnichannel Inventory, a Salesforce service that holds availability per location and location group. With the inventory extension, the store can ask another source instead, for example SAP live."
@@ -50,7 +50,7 @@ The copy gets in through APIs. According to the [Omnichannel Inventory API unit]
 
 The [B2B pricing page](https://www.salesforce.com/editions-pricing/commerce-cloud/b2b/) lists 20 inventory locations for both Growth and Advanced Edition. For most spare parts businesses that is enough. A manufacturer with many plants and regional warehouses should clarify before signing how Salesforce counts locations.
 
-## Copied or live: which trade-off?
+## Copied or live: the trade-off in one table
 
 This is the same decision as for prices, with different numbers. I put it in a table for the steering committee:
 
@@ -91,7 +91,7 @@ That has three advantages. The product list stays fast, because it only reads th
 
 The same logic applies to agents. My article on [order status from SAP](../agentforce-sap-order-status-mulesoft/) makes the point that an agent passes on the confirmed date from SAP and never estimates one from stock figures. A store should do the same.
 
-## A typical scenario, as an assumption
+## Worked example: 12,000 spare parts in three warehouses
 
 A manufacturer of pumps sells 12,000 spare parts to 250 dealers. Stock sits in SAP in three warehouses. The architecture could look like this:
 
@@ -111,12 +111,10 @@ The stock the store shows is often the same stock Field Service technicians draw
 
 Distributor stock is a separate topic again. Stock held at the distributor, and replenishment proposals for it, are covered in [Agentforce for distributor stock](../distributor-inventory-replenishment-agentforce/). The store only shows the manufacturer's own stock.
 
-## What about Unified Omnichannel Inventory in Winter '27?
+## Check Unified Omnichannel Inventory from Winter '27 against B2B first
 
 The [Winter '27 highlights on Trailhead](https://trailhead.salesforce.com/content/learn/modules/winter-27-release-highlights/see-whats-new-marketing-commerce-revenue-management) list Unified Omnichannel Inventory: store and digital inventory in one real-time record, aimed at removing "ghost stock" and enabling pick-up in store. The description does not mention B2B. For a manufacturer with plants and warehouses rather than shops, I would check in a sandbox whether it changes anything before planning with it.
 
-## Where should you start?
+## First step: decide the stock source per screen
 
 Decide per screen which stock source applies: product list, product page, cart, checkout. Then define the three states for dealers, the update cycle of the copy and the fallback when SAP does not answer. How stock fits into the full interface list is described in [B2B Commerce and SAP: which data flows where](../b2b-commerce-sap-data-flows/), and the [ERP integration chapter of the masterclass](../../masterclass/b2b-commerce/erp-integration-stock-orders/) puts it into context. Reviewing such interfaces independently is part of my work on [Salesforce integration](../../services/salesforce-integration/).
-
-Show the copy for browsing and the SAP date for the promise.

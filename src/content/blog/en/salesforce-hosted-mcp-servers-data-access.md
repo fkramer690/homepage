@@ -9,10 +9,10 @@ topic: security
 categories: [ai]
 tags: [mcp, hosted mcp, security, einstein trust layer, claude, manufacturing]
 takeaways:
-  - "Every hosted MCP call runs as the named user who authorised the connection, with that user's object rights, field-level security and sharing; there are no service accounts and no machine-to-machine flows."
-  - "Salesforce permissions apply per person, not per channel: whatever a user sees in Lightning can reach an external model, so showing Claude less than the person sees needs Named Queries or custom servers."
+  - "Every call runs as the user who authorised the connection, with that user's object rights, field-level security and sharing; there are no service accounts."
+  - "Whatever a user sees in Lightning can reach an external model. Showing Claude less than the person sees needs Named Queries or custom servers."
   - "Start with the sobject-reads server in a sandbox; it removes the risk of changes to records, but not the risk that data leaves through the AI client."
-  - "In my assessment the Einstein Trust Layer does not protect data an external model reads through hosted MCP; Salesforce documents it for its own LLM calls and never mentions it for hosted MCP."
+  - "In my assessment the Einstein Trust Layer does not protect data an external model reads through hosted MCP."
   - "Restrict each External Client App to one permission set, keep administrators out and settle the AI provider contract before the first department connects."
 faq:
   - q: "Can Claude read all our Salesforce data through hosted MCP?"
@@ -48,7 +48,7 @@ The [official Claude setup](https://developer.salesforce.com/blogs/2026/05/conne
 On the positive side, the `mcp_api` scope gives access to MCP "but not our existing REST APIs", according to the GA post. A token stolen from an MCP client opens less than a classic API token.
 ```
 
-## Why do permissions per person not protect per channel?
+## Permissions apply per person, not per channel
 
 The security guide states the rule: what a user cannot do in the Lightning UI or the REST API, they cannot do through MCP. The reverse holds too. Everything a key account manager can open in Lightning, the AI client can query, and one query returns hundreds of records that a person would click through one at a time.
 
@@ -62,7 +62,7 @@ If an external model should see less than the person, the standard sObject serve
 
 Custom servers cost build effort, but they also cut calls per question, which counts once Salesforce bills them, see [MCP calls as a budget risk](../mcp-api-calls-salesforce-budget-risk/).
 
-## Which server should you enable first?
+## Start with sobject-reads in a sandbox
 
 The GA post recommends `sobject-reads` in a sandbox and calls it "read-only, risk-free, and immediately useful". I agree with the starting point, not with "risk-free". The security guide is more precise: the read-only server removes modification risk. It does nothing about data leaving through the client.
 
@@ -95,7 +95,7 @@ Ask Salesforce and Anthropic which contract backs the sentence "not retained by 
 
 Until then your AI contract governs the data. For Claude Code, Anthropic's [data usage page](https://code.claude.com/docs/en/data-usage) says commercial prompts are not used for training, standard retention is 30 days, and zero data retention is enabled per organisation for eligible Enterprise accounts. These terms go to your data protection officer, and to the works council where employee data is involved, see [AI coding tools, works council and GDPR](../ai-coding-tools-works-council-gdpr/).
 
-## A typical scenario: three requests at a machine builder
+## Example: three requests at a machine builder
 
 Assume a machine builder with Sales Cloud, Service Cloud, SAP, a dealer network and Claude Enterprise. All numbers are assumptions. In one month IT receives three requests.
 
@@ -107,7 +107,7 @@ Assume a machine builder with Sales Cloud, Service Cloud, SAP, a dealer network 
 
 Two of three go ahead, both narrower than asked. In my judgement that is the normal outcome of an access review.
 
-## What should an IT lead set up before the first connection?
+## Decide who may connect before the first connection
 
 1. **Decide who may connect.** Restrict each External Client App to a permission set with the OAuth policy "Admin approved users are pre-authorized". Keep administrators out: an admin who authorises Claude hands it almost the whole org.
 2. **Review sharing and field-level security** for cases, assets, warranty claims, price agreements and contacts.
@@ -117,6 +117,4 @@ Two of three go ahead, both narrower than asked. In my judgement that is the nor
 6. **Settle the AI contract**: training, retention, zero data retention, hosting region.
 7. **Watch the API logs** for who reads which objects in which volume.
 
-This is part of my work on [Salesforce integration](../../services/salesforce-integration/): an MCP server is an interface and needs an owner.
-
-Hosted MCP enforces Salesforce permissions reliably, so the real decision is which people, which fields and which AI contract you trust with your data.
+This is part of my work on [Salesforce integration](../../services/salesforce-integration/): an MCP server is an interface and needs an owner. Hosted MCP enforces the permissions reliably; what you decide is which people, fields and AI contract you trust with the data.

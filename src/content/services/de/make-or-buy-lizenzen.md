@@ -12,18 +12,17 @@ situations:
   - "Ein Partner oder der Hersteller schlägt eine Industry Cloud vor, und das Unternehmen möchte wissen, ob eine eigene Lösung auf der Kernplattform reichen würde."
   - "Eine Tool-Entscheidung steht an, etwa für Dokumentenerstellung oder E-Signatur, und die Optionen innerhalb und außerhalb von Salesforce wirken auf dem Papier ähnlich."
   - "Es geht um die Frage, ob sich ein KI-Anwendungsfall mit Agentforce lohnt oder ob die Daten noch nicht so weit sind."
-  - "Eine Lizenzverlängerung oder ein neues Angebot liegt vor, und niemand hat geprüft, welche Lizenztypen die Nutzer wirklich brauchen."
+  - "Eine Lizenzverlängerung oder ein neues Angebot liegt vor, und niemand hat geprüft, welche Lizenztypen die Nutzer brauchen."
 deliverables:
-  - "Make-or-buy-Bewertung mit Optionen, Kriterien und Empfehlung"
-  - "ROI-Case über mehrere Jahre, inklusive Lizenzen, Umsetzung, Wartung und Folgekosten"
-  - "Lizenzprognose pro Nutzergruppe, basierend darauf, was Nutzer tatsächlich im System tun"
-  - "Prüfung von Salesforce-Angeboten und Vorbereitung der Verhandlung"
-  - "Roadmap der Produkte, die das Unternehmen in den nächsten zwei bis drei Jahren voraussichtlich braucht"
+  - "Ich halte fest, was der Fachbereich braucht, und sammle die Optionen innerhalb und außerhalb von Salesforce."
+  - "Ich werte aus, was Nutzer im System tun, und leite daraus die Lizenztypen ab."
+  - "Ich prüfe Salesforce-Angebote und bereite die Verhandlung mit Ihnen vor."
+  - "Ich empfehle auch Tools außerhalb von Salesforce, wenn sie besser passen."
 results:
-  - "Entscheidungen auf Basis langfristiger Kosten statt nur des Preises im ersten Jahr"
-  - "Lizenztypen, die zu den Nutzern passen, ohne für ungenutzte Funktionen zu zahlen"
-  - "Eine klare Position für Verhandlungen mit dem Hersteller"
-  - "Weniger Tools und Produkte, die gekauft und nie genutzt wurden"
+  - "Eine Make-or-buy-Bewertung mit Optionen, Kriterien und Empfehlung"
+  - "Einen ROI-Case über mehrere Jahre mit Lizenzen, Umsetzung, Wartung und Folgekosten"
+  - "Eine Lizenzprognose pro Nutzergruppe, die sich mit dem Angebot des Herstellers vergleichen lässt"
+  - "Eine Roadmap der Produkte, die Sie in den nächsten zwei bis drei Jahren voraussichtlich brauchen"
 phases:
   - title: "Anforderungen und Optionen"
     icon: "analyse"
@@ -49,7 +48,7 @@ faq:
 blogTags: [business case, agentforce, open source, vendor lock-in, lizenzen]
 ---
 
-Make-or-buy bei Salesforce heißt, für jede Anforderung zu entscheiden, ob sie ein Standardprodukt, eine Industry Cloud, eine Eigenentwicklung auf der Kernplattform oder ein separates Tool abdeckt. Die Lizenzprognose beantwortet die verwandte Frage, welche Lizenztypen die Nutzer wirklich brauchen. Beide Entscheidungen fallen früh und lassen sich nur teuer zurückdrehen, daher stütze ich sie auf einen langfristigen ROI-Case inklusive Wartung und Folgekosten. Das Lizenzmodell und die Preisgestaltung von Salesforce kenne ich gut aus der Pre-Sales-Arbeit gemeinsam mit Salesforce.
+Make-or-buy bei Salesforce heißt, für jede Anforderung zu entscheiden, ob sie ein Standardprodukt, eine Industry Cloud, eine Eigenentwicklung auf der Kernplattform oder ein separates Tool abdeckt. Die Lizenzprognose beantwortet die verwandte Frage, welche Lizenztypen die Nutzer brauchen. Beide Entscheidungen fallen früh und lassen sich nur teuer zurückdrehen, daher stütze ich sie auf einen langfristigen ROI-Case inklusive Wartung und Folgekosten. Das Lizenzmodell und die Preisgestaltung von Salesforce kenne ich gut aus der Pre-Sales-Arbeit gemeinsam mit Salesforce.
 
 ## Wann lohnt sich eine Industry Cloud?
 
@@ -70,7 +69,7 @@ In einem Fertigungsprojekt waren Sales Agreements, eine Kernfunktion der Manufac
 
 Dieselbe Logik gilt über Salesforce-Produkte hinaus. Dokumentenerstellung, E-Signatur, Telefonie und KI-Anwendungsfälle werfen alle die Frage auf, ob man kauft, baut oder es in einem anderen System lässt. Bei KI ist der wichtigste Faktor der Zustand der Daten, wie ich in [Agentforce: Business Value und Datenqualität zuerst](../../blog/agentforce-business-value-datenqualitaet/) erkläre. Auch Open-Source-Tools verändern die Rechnung, zum Beispiel bei DevOps, wie in [warum Kunden ihre DevOps-Tools selbst besitzen sollten](../../blog/warum-kunden-devops-tools-selbst-besitzen-sollten/) beschrieben.
 
-## Wie rechne ich den ROI-Case?
+## ROI-Case über mehrere Jahre, mit Wartung und Folgekosten
 
 Der Preis im ersten Jahr ist die uninteressanteste Zahl. Ich betrachte mehrere Jahre und nehme Lizenzen, Umsetzung, Wartung und Upgrades sowie Folgekosten auf:
 
@@ -78,9 +77,9 @@ Der Preis im ersten Jahr ist die uninteressanteste Zahl. Ich betrachte mehrere J
 
 Make-or-buy-Entscheidungen prägen die Architektur, deshalb geht diese Leistung oft mit [Salesforce-Architektur und Solution Design](../salesforce-architektur/) zusammen.
 
-## Was sollten Sie über Salesforce-Lizenzen wissen?
+## Lizenztyp und Zeitpunkt entscheiden über den Lizenzpreis
 
-Der Listenpreis ist selten das endgültige Angebot. Zwei Hebel machen den Unterschied:
+Der Listenpreis ist selten das endgültige Angebot. Den Unterschied machen diese Hebel:
 
 ```hebel
 Der Lizenztyp | Leicht sechsstellig pro Jahr bei großer Nutzerbasis
