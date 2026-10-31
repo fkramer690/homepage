@@ -45,6 +45,37 @@ Chosen 2026-10-31 (Fabian: "Skala + Mono reduzieren"). Part of the polished desi
   meta lines, captions, tags, filter texts, back links and proof bar labels are
   set in Sora.
 
+## Colours, radii and shadows (binding)
+
+Set up 2026-10-31 as part of the polished design pass (package A). Converted
+without a visible change: a pixel comparison of 22 pages (desktop 1440 and
+mobile 390) before and after shows 15 pages identical; the rest differs only
+by at most 12 of 255 colour levels on thin lines and quiet text, plus the
+corner of 12px legend squares (3px to 4px).
+
+- **Every colour is a token in `:root` of `src/styles/global.css`.** Brand:
+  `--cyan`, `--cyan-light`, `--cyan-dark`, `--anthracite`, `--text`,
+  `--text-2`, `--bg`, `--line`, `--white`. Surfaces: `--tint` (light cyan for
+  marked cells and chips), `--tint-2` (stronger light cyan, e.g. "Was Sie
+  bekommen"), `--tint-line`, `--paper` + `--paper-grid` (drawing paper of the
+  content blocks). Greys `--grey-200` to `--grey-700`. Dark: `--anthracite-deep`
+  (footer), `--anthracite-2` (contact form), `--anthracite-3`, `--dark-line`,
+  `--on-dark`, `--on-dark-2`, `--on-cyan`, `--on-cyan-2`. Status: `--amber`,
+  `--error-on-dark`. Never write a hex value in a component; if a new colour is
+  really needed, add a token. Transparent layers (`rgba(...)`) on photos and dark
+  areas stay allowed.
+- **Radii:** `--radius` 10px (cards, frames, blocks), `--radius-md` 8px (boxes
+  inside a block), `--radius-sm` 6px (small boxes, photos, buttons),
+  `--radius-xs` 4px (tags, code, tiny marks), `--radius-pill`; circles use
+  `50%`, square edges `0`.
+- **Shadows:** accent lines `--accent-top` (cyan), `--accent-top-dark`,
+  `--accent-left`; one lift on hover `--shadow-lift`; `--shadow-up` for the
+  bottom contact bar; `--shadow-knob` for the play button; `--focus-glow` for
+  focus and the "now" dot. Outline rings stay as `0 0 0 Npx var(--token)`.
+- `scripts/check-tokens.mjs` runs in `npm run build` and fails on a hex colour
+  outside `:root`, a radius that is not a token, or a shadow that is not a token
+  or an outline ring. Never weaken it.
+
 ## Page heads, key figures, links and cards (binding)
 
 Chosen 2026-10-31 as part of the polished design pass.
