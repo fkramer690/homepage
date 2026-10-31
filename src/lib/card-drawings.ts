@@ -1661,6 +1661,19 @@ const drawings: Record<string, Drawing> = {
     ${t(14, 140, l('prices, contracts: permissions + actions', 'Preise, Verträge: Rechte + Aktionen'), { fill: D, size: 7.5 })}
     ${t(14, 154, l('masking on = 65,536 token context', 'Maskierung an = 65.536 Token Kontext'), { size: 7 })}`,
 
+  'enhanced-chat-agentforce-handover': (l) => `
+    ${t(14, 18, l('ENHANCED CHAT: HANDOVER TO A PERSON', 'ENHANCED CHAT: ÜBERGABE AN MENSCHEN'), { fill: D, size: 7 })}
+    ${box(14, 40, 62, 40)}${t(45, 57, 'CHAT', { fill: D, size: 8, anchor: 'middle' })}${t(45, 71, 'v1 + v2', { size: 7, anchor: 'middle' })}
+    ${arrow(76, 60, 98)}
+    ${box(98, 30, 84, 60, C)}${t(140, 47, 'AGENTFORCE', { fill: D, size: 7.5, anchor: 'middle' })}${t(140, 61, 'Service Agent', { size: 7, anchor: 'middle' })}${t(140, 76, 'Escalation', { fill: C, size: 7, anchor: 'middle' })}
+    ${arrow(182, 60, 212, C)}
+    ${box(212, 40, 94, 40)}${t(259, 57, l('QUEUE: PERSON', 'QUEUE: MENSCH'), { fill: D, size: 7.5, anchor: 'middle' })}${t(259, 71, l('with history', 'mit Verlauf'), { size: 7, anchor: 'middle' })}
+    <path d="M259 80V100H140V90" fill="none" stroke="${G}" stroke-dasharray="3 3"/>
+    ${t(120, 113, l('nobody free: agent resumes', 'niemand frei: Agent macht weiter'), { size: 7 })}
+    <path d="M14 124H306" stroke="${L}"/>
+    ${t(14, 140, l('escalation: one attempt per session', 'Eskalation: ein Versuch pro Sitzung'), { fill: D, size: 7.5 })}
+    ${t(14, 153, l('machine down: flow routes straight to people', 'Stillstand: Flow routet direkt an Menschen'), { size: 7 })}`,
+
   'breakdown-hotline-voice-agent': (l) => `
     ${box(18, 56, 78, 40)}${t(57, 73, l('HOTLINE CALL', 'HOTLINE-ANRUF'), { fill: D, size: 7.5, anchor: 'middle' })}${t(57, 86, l('German: GA', 'Deutsch: GA'), { size: 7, anchor: 'middle' })}
     ${arrow(96, 76, 112)}
