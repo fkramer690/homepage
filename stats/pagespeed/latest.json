@@ -1,0 +1,272 @@
+{
+  "fetched": "2026-10-31T00:26:23.470Z",
+  "origin": "https://www.fk-sd.de",
+  "results": [
+    {
+      "path": "/",
+      "strategy": "mobile",
+      "scores": {
+        "performance": 99,
+        "accessibility": 97,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "lab": {
+        "lcp_ms": 1694,
+        "cls": 0,
+        "tbt_ms": 0,
+        "fcp_ms": 1694,
+        "speed_index_ms": 2812
+      },
+      "field": null,
+      "origin_field": null
+    },
+    {
+      "path": "/",
+      "strategy": "desktop",
+      "scores": {
+        "performance": 100,
+        "accessibility": 97,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "lab": {
+        "lcp_ms": 306,
+        "cls": 0,
+        "tbt_ms": 0,
+        "fcp_ms": 306,
+        "speed_index_ms": 393
+      },
+      "field": null,
+      "origin_field": null
+    },
+    {
+      "path": "/en/",
+      "strategy": "mobile",
+      "scores": {
+        "performance": 98,
+        "accessibility": 97,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "lab": {
+        "lcp_ms": 1917,
+        "cls": 0,
+        "tbt_ms": 3,
+        "fcp_ms": 1713,
+        "speed_index_ms": 2534
+      },
+      "field": null,
+      "origin_field": null
+    },
+    {
+      "path": "/en/",
+      "strategy": "desktop",
+      "scores": {
+        "performance": 100,
+        "accessibility": 97,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "lab": {
+        "lcp_ms": 281,
+        "cls": 0,
+        "tbt_ms": 0,
+        "fcp_ms": 281,
+        "speed_index_ms": 336
+      },
+      "field": null,
+      "origin_field": null
+    },
+    {
+      "path": "/leistungen/",
+      "strategy": "mobile",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "lab": {
+        "lcp_ms": 907,
+        "cls": 0,
+        "tbt_ms": 0,
+        "fcp_ms": 907,
+        "speed_index_ms": 1405
+      },
+      "field": null,
+      "origin_field": null
+    },
+    {
+      "path": "/leistungen/",
+      "strategy": "desktop",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "lab": {
+        "lcp_ms": 241,
+        "cls": 0,
+        "tbt_ms": 0,
+        "fcp_ms": 241,
+        "speed_index_ms": 256
+      },
+      "field": null,
+      "origin_field": null
+    },
+    {
+      "path": "/blog/",
+      "strategy": "mobile",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "lab": {
+        "lcp_ms": 1501,
+        "cls": 0,
+        "tbt_ms": 0,
+        "fcp_ms": 1501,
+        "speed_index_ms": 1991
+      },
+      "field": null,
+      "origin_field": null
+    },
+    {
+      "path": "/blog/",
+      "strategy": "desktop",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "lab": {
+        "lcp_ms": 400,
+        "cls": 0,
+        "tbt_ms": 9,
+        "fcp_ms": 400,
+        "speed_index_ms": 444
+      },
+      "field": null,
+      "origin_field": null
+    },
+    {
+      "path": "/blog/salesforce-field-service-lohnt-sich/",
+      "strategy": "mobile",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "lab": {
+        "lcp_ms": 930,
+        "cls": 0,
+        "tbt_ms": 0,
+        "fcp_ms": 930,
+        "speed_index_ms": 2328
+      },
+      "field": null,
+      "origin_field": null
+    },
+    {
+      "path": "/blog/salesforce-field-service-lohnt-sich/",
+      "strategy": "desktop",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "lab": {
+        "lcp_ms": 241,
+        "cls": 0,
+        "tbt_ms": 0,
+        "fcp_ms": 241,
+        "speed_index_ms": 241
+      },
+      "field": null,
+      "origin_field": null
+    },
+    {
+      "path": "/masterclass/",
+      "strategy": "mobile",
+      "scores": {
+        "performance": 97,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "lab": {
+        "lcp_ms": 1952,
+        "cls": 0,
+        "tbt_ms": 48,
+        "fcp_ms": 1634,
+        "speed_index_ms": 4006
+      },
+      "field": null,
+      "origin_field": null
+    },
+    {
+      "path": "/masterclass/",
+      "strategy": "desktop",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "lab": {
+        "lcp_ms": 241,
+        "cls": 0,
+        "tbt_ms": 0,
+        "fcp_ms": 241,
+        "speed_index_ms": 241
+      },
+      "field": null,
+      "origin_field": null
+    },
+    {
+      "path": "/freiberuflicher-salesforce-architect/",
+      "strategy": "mobile",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "lab": {
+        "lcp_ms": 902,
+        "cls": 0,
+        "tbt_ms": 0,
+        "fcp_ms": 902,
+        "speed_index_ms": 2325
+      },
+      "field": null,
+      "origin_field": null
+    },
+    {
+      "path": "/freiberuflicher-salesforce-architect/",
+      "strategy": "desktop",
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "lab": {
+        "lcp_ms": 241,
+        "cls": 0,
+        "tbt_ms": 0,
+        "fcp_ms": 241,
+        "speed_index_ms": 269
+      },
+      "field": null,
+      "origin_field": null
+    }
+  ]
+}
