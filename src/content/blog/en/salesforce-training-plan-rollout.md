@@ -11,7 +11,6 @@ coAuthor: juliane
 contactBrief: change
 tags: [training plan, Salesforce training, change management, key users, train the trainer]
 takeaways:
-  - "A Salesforce training plan is built around roles and processes, not features. A dispatcher learns their working day, not a tour of the system."
   - "In the ADKAR model, training covers knowledge and ability. When awareness or desire is missing, even the best training does not help."
   - "Training happens on real cases in a sandbox with real processes and anonymised data, shortly before go-live, not months earlier."
   - "Key users train their own team better than a trainer from the project, provided they were trained thoroughly themselves first."
@@ -36,7 +35,7 @@ In the [ADKAR model](../change-management-salesforce-rollout/), training covers 
 
 You can tell by the mood in a training session. When the first half hour consists of questions like "Why are we doing this at all?", awareness is missing. The trainer cannot answer, because they did not make the decision. A short introduction by the group's manager, on why the new process is coming and what it brings the team, saves that half hour.
 
-## How do you plan training by role?
+## Plan training by roles and processes
 
 A feature tour of Salesforce shows everything and sticks with nobody. A matrix of roles and processes works better. For every affected role it is clear which processes it has to master, in which format it learns and when.
 
@@ -58,10 +57,10 @@ Users prefer to learn from colleagues who know the same customers, machines and 
 The approach has prerequisites. Key users need the time freed up, finished training material and practice cases prepared by the project. Without that preparation every key user improvises differently, and teams learn different routes.
 
 ```praxis
-I have run training in all of these forms, depending on what the client wanted: train the trainer through key users, a separate training sandbox and training per role. In Field Service rollouts it also helps when dispatchers of the next wave first shadow colleagues in the region that is already live. Real cases from a colleague's day teach them more than any exercise in a training room.
+I have run training in all of these forms, depending on what the client wanted: train the trainer through key users, a separate training sandbox and training per role. In Field Service rollouts it also helps when dispatchers of the next wave first shadow colleagues in the region that is already live. Real cases from a colleague's day teach them more than an exercise in a training room.
 ```
 
-## Where does training take place?
+## Training takes place in a separate sandbox
 
 In a separate training sandbox. Salesforce explicitly names training as one of the purposes of [sandboxes](https://help.salesforce.com/s/articleView?id=platform.deploy_sandboxes_parent.htm&type=5). Training in the test sandbox disrupts acceptance testing, and training in production creates real quotes and orders that someone has to clean up.
 
@@ -73,7 +72,7 @@ Real customer data does not belong in a training sandbox that many people can ac
 
 Every exercise needs a case participants know from their daily work: a typical customer, a typical machine, a typical fault. People who recognise their own processes transfer what they learned to daily work faster.
 
-## What helps after training?
+## After training, help belongs inside the system
 
 What people learned in training fades quickly when they do not use it in daily work. That is why help belongs inside the system. With Salesforce In-App Guidance you can show short prompts and guided walkthroughs directly on the pages where someone works, for example when creating a quote for the first time ([Trailhead: Create In-App Prompts](https://trailhead.salesforce.com/content/learn/modules/user-engagement/create-in-app-prompts)). Prompts are included; more than three custom walkthroughs need an additional licence. Check this for your org before planning many walkthroughs.
 
@@ -83,8 +82,6 @@ Add short guides per process, linked from inside the system, and key users nearb
 
 Not by the number of participants. That figure shows the project trained people, not that anyone works differently. Two sources say more: the questions of the first weeks, collected by key users and support, and usage figures per group. When questions pile up around one process, knowledge is missing there and a short refresher pays off. When records stay away although nobody asks, desire is usually missing. How to build these figures is covered in [Measuring Salesforce adoption after go-live](../salesforce-adoption-metrics-after-go-live/).
 
-## Where should you start?
+## First step: list the roles and their processes for day one
 
-Write down the affected roles and, next to each, the three to five processes that role has to master from day one. That list is the core of your training plan. Then decide who trains which role, and plan the training sandbox early enough for practice cases to be ready before acceptance testing.
-
-Good training comes shortly before go-live, on real cases and from a colleague. I plan training and change management together with my cooperation partner [Juliane Winterscheid](../../partners/juliane-winterscheid/). Read more about [Salesforce change management consulting](../../services/change-management-salesforce/).
+Write down the affected roles and, next to each, the three to five processes that role has to master from day one. That list is the core of your training plan. Then decide who trains which role, and plan the training sandbox early enough for practice cases to be ready before acceptance testing. I plan training and change management together with my cooperation partner [Juliane Winterscheid](../../partners/juliane-winterscheid/). Read more about [Salesforce change management consulting](../../services/change-management-salesforce/).

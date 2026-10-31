@@ -9,11 +9,11 @@ topic: release
 categories: [devops]
 tags: [apex, api 67.0, user mode, ai coding, release management, manufacturing]
 takeaways:
-  - "From API version 67.0, Apex database operations run in user mode and classes without a sharing declaration run with sharing; code saved at 66.0 or earlier keeps the old behaviour until its version is raised."
+  - "Code saved at 66.0 or earlier keeps the old behaviour until someone raises its version; the risk sits in the version bump."
   - "Records hidden by sharing disappear from query results without an error, while a missing field permission makes a user-mode query fail with a QueryException."
-  - "WITH SECURITY_ENFORCED no longer compiles at 67.0; its replacement WITH USER_MODE also checks polymorphic fields and the WHERE clause, so replaced queries need a test."
-  - "AI coding agents learned pre-2026 Apex, may raise API versions as a side effect and write tests without System.runAs(), so a version bump needs its own pull request and tests as real users."
-  - "At 67.0, without sharing alone no longer bypasses sharing for a query without access mode; deliberate system access needs without sharing, WITH SYSTEM_MODE and a written reason."
+  - "WITH SECURITY_ENFORCED no longer compiles at 67.0. WITH USER_MODE also checks polymorphic fields and WHERE, so replaced queries need a test."
+  - "AI coding agents raise API versions as a side effect and test without System.runAs(). A version bump therefore needs its own pull request."
+  - "At 67.0, deliberate system access needs without sharing, WITH SYSTEM_MODE and a written reason."
 faq:
   - q: "Does API 67.0 change my existing Apex code automatically?"
     a: "No. The change is versioned: it applies to classes and triggers saved at API version 67.0 or later. Existing code keeps running in system mode until someone raises its version, which is why every bump needs a test plan."
@@ -75,7 +75,7 @@ For a manufacturer, who runs the code matters more than the code itself:
 
 **Guardrails solve half the problem.** Salesforce's own skills for Claude Code "force the sharing keyword on all classes" ([Salesforce Developers Blog](https://developer.salesforce.com/blogs/2026/06/build-production-ready-apps-in-claude-code-with-salesforce-skills)). An explicit declaration beats the default, but an agent that writes `with sharing` on an SAP integration service has made a business decision nobody reviewed. The typical defects of AI code are covered in [reviewing AI-generated Salesforce code](../reviewing-ai-generated-salesforce-code/); the point here is that the version number belongs on the review list.
 
-## A typical scenario: consolidating API versions at a machine builder
+## Worked example: consolidating API versions at a machine builder
 
 Assume a machine builder with Service Cloud, a dealer portal and SAP S/4, connected through Apex REST services. All numbers are assumptions. After the Winter '27 compiler warnings for very old API versions, described in [what Winter '27 changes for your pipeline](../salesforce-winter-27-what-changes-for-your-pipeline/), IT decides to move 220 Apex classes, saved between 38.0 and 62.0, to 67.0. The partner's coding agent raises the versions, replaces `WITH SECURITY_ENFORCED` with `WITH USER_MODE` in 15 queries and fixes every compile error. All tests pass, coverage stays at 84 percent.
 
@@ -87,7 +87,7 @@ UAT finds three problems:
 
 Two of three problems announce themselves. The third would have gone live and cost money, one credit note at a time.
 
-## How should you plan the move to API 67.0?
+## First step: plan the move as a small project
 
 I would run it as a small project with its own release plan:
 
@@ -110,6 +110,4 @@ public without sharing class SapOrderSyncSelector {
 5. **Check integration permission sets first.** Give integration users the field access their services need before the bump, so the interface does not find out in production.
 6. **Bump in batches by domain.** Integrations, dealer portal, service logic: each batch goes through UAT with someone from the business who knows what the numbers should be.
 
-Planning such a move across several partners is part of my [DevOps and release management](../../services/devops-release-management/) work.
-
-API 67.0 makes Apex safer by default, and the price is that every version bump becomes a change in data access that deserves its own test.
+The first stage, the interfaces, shows fastest whether integration users are missing field access. Planning such a move across several partners is part of my [DevOps and release management](../../services/devops-release-management/) work.

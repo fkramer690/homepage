@@ -11,8 +11,8 @@ contactBrief: change-basics
 author: juliane
 tags: [communication plan, change communication, change management, template]
 takeaways:
-  - "A change management communication plan defines which group receives which message, when, through which channel and from whom."
-  - "The sender matters as much as the message: according to Prosci, people want to hear why something changes from senior leadership, and what it means for them from their direct manager."
+  - "The plan is a table, not a strategy on twenty slides. Each row is one message to one group."
+  - "According to Prosci, people want to hear the why from senior leadership and what it means for them from their direct manager."
   - "Prosci recommends repeating key messages five to seven times. A single announcement email is not enough."
   - "The basis of the plan is the stakeholder analysis: every highly affected group gets its own messages and its own sender."
 faq:
@@ -48,7 +48,7 @@ A communication plan is a table, not a strategy on twenty slides. Each row is on
 
 The purpose column is the most important one and the one most often missing. It links the message to the stage a group is at right now. In the [ADKAR model](../change-management-models/) these are awareness, desire, knowledge, ability and reinforcement. A message meant to build awareness looks completely different from one that passes on knowledge. Putting both into the same circular email usually achieves neither.
 
-## Who should communicate the change?
+## Leadership explains the why, managers explain the impact
 
 The sender decides whether a message is taken seriously. In its Best Practices in Change Management research series, Prosci asked from whom employees want to hear which information. The result is clear and summarised in an article on [why some communications work and others do not](https://www.prosci.com/blog/understanding-why-some-communications-work-and-others-dont):
 
@@ -115,10 +115,8 @@ Plan every key message at least three times, through different senders and chann
 
 Salesforce programmes with regular releases need a form of their own: every new version changes something for a business team and needs a short, targeted announcement. Fabian Kramer describes how that works in [Communicating Salesforce releases to the business](../salesforce-release-communication-business/).
 
-## When is support worth it?
+## Support pays off when many groups and countries are affected
 
 For a change affecting one team, the template is enough. When many groups and countries are affected, when sensitive messages are due or when managers are unsure themselves, an outside view helps to sharpen messages and prepare managers. In Salesforce programmes I work with Fabian Kramer on this, see [Salesforce change management consulting](../../services/change-management-salesforce/) and [Salesforce change management: why rollouts fail](../change-management-salesforce-rollout/).
 
-A change is not understood through the first announcement, but through the right person at the right time, more than once.
-
-Prosci and ADKAR are registered trademarks of Prosci, Inc.
+*Prosci and ADKAR are registered trademarks of Prosci, Inc.*

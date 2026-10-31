@@ -9,11 +9,10 @@ topic: devops
 categories: [devops, ai]
 tags: [ai coding, claude code, github copilot, agentforce vibes, partner governance, costs]
 takeaways:
-  - "AI coding in a Salesforce project costs about $19 to $250 per developer and month at list price, from Copilot Business with included credits to Claude Code at API rates."
-  - "Anthropic reports about $13 per developer per active day for Claude Code; caching makes repeated context cheap, so output and thinking tokens become the expensive part."
-  - "In the scenario, AI tools for a partner team of eight cost about $650 to $1,500 a month, around one percent of what the team costs in day rates."
-  - "Metered Agentforce Vibes draws on the same Flex Credits as your production agents and counts usage in units of 2,000 tokens; Opus models cost 16 credits per unit."
-  - "In time and materials the client should own the accounts and pay for the tokens; in a fixed price the partner pays, and the contract names the allowed tools and data rules."
+  - "Anthropic reports about $13 per developer per active day for Claude Code; caching makes repeated context cheap, output and thinking are expensive."
+  - "In the worked example, AI tools for a partner team of eight cost about $650 to $1,500 a month, around one percent of the team's day rates."
+  - "Metered Agentforce Vibes draws on the same Flex Credits as your production agents; Opus models cost 16 credits per 2,000 tokens."
+  - "In time and materials the client owns the accounts and pays for tokens; in a fixed price the partner pays, and the contract sets the rules."
 faq:
   - q: "What does Claude Code cost per developer per month?"
     a: "Anthropic reports an average of about $13 per developer per active day and $150 to $250 per developer per month in enterprise deployments at API rates. A Claude Team Premium seat costs $125 a month, or $100 billed annually, with a usage allowance instead of a token bill."
@@ -42,7 +41,7 @@ Most coding tools now sell a seat with a budget and bill usage above it per toke
 
 The seat price says little about the bill. GitHub converts tokens into credits at the model's rate, so $19 of included usage covers only a handful of the agent sessions below.
 
-## How do tokens turn into a bill?
+## How tokens turn into a bill
 
 A token is the unit models are billed in, roughly a piece of a word or of code. A coding agent works in a loop: it reads files, runs a command and sends everything back to the model. In a Salesforce repository that context holds the rules file, Apex classes, metadata XML and test output. Three rules on [Anthropic's pricing page](https://platform.claude.com/docs/en/about-claude/pricing) decide the price:
 
@@ -69,7 +68,7 @@ Without caching, the 2.16 million input tokens alone cost $8.62. Output is under
 
 Two effects push this up: Claude 4.7 and later produce about 30 percent more tokens for the same text, and agent teams use about 7 times more tokens than a standard session in plan mode.
 
-## A typical scenario: a partner team builds service processes
+## Worked example: a partner team of eight builds service processes
 
 Assume a machine builder with SAP, Service Cloud, Field Service for its service technicians and a dealer portal. A nearshore partner team of eight builds the next release: six developers who use a coding agent on 18 days a month, plus a lead consultant and a project manager with chat seats. All volumes are assumptions; prices are the list prices above.
 
@@ -80,7 +79,7 @@ Assume a machine builder with SAP, Service Cloud, Field Service for its service 
 
 At an assumed blended rate of $800 per person and day, the team itself costs 8 × 18 × $800 = $115,200 a month. AI coding adds about one percent. McKinsey [writes](https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/beyond-the-copilot-scaling-the-agentic-product-development-life-cycle) that spending on tokens, compute, infrastructure and AI Ops can rise to as much as 20 percent of existing labour costs as agents take on more work. In my view the bigger risks today are a meter without limits and the open question of who gets the productivity gain.
 
-## Why does Agentforce Vibes need its own calculation?
+## Agentforce Vibes needs its own calculation
 
 Agentforce Vibes is Salesforce's coding agent. Two points matter:
 
@@ -103,7 +102,7 @@ The answer follows the commercial model. In time and materials the client pays f
 
 In time and materials I prefer the first setup: for $650 to $1,500 a month, the client controls data, limits and offboarding. In a German company the works council has a say, see [AI coding tools, works council and GDPR](../ai-coding-tools-works-council-gdpr/). Whether to buy seats at all is part of my [make-or-buy and licence planning](../../services/make-or-buy-licences/).
 
-## How do you keep AI coding costs under control?
+## First step: decide who pays before the first sprint
 
 1. **Decide who pays before the first sprint** and write it into the statement of work.
 2. **Set limits.** Claude Team and Enterprise have spend limits per organisation, group and member for usage beyond the seat allowance, the Claude Console has workspace limits, and GitHub has budgets per user and cost centre.
@@ -111,5 +110,3 @@ In time and materials I prefer the first setup: for $650 to $1,500 a month, the 
 4. **Keep the rules file short.** Anthropic advises keeping CLAUDE.md under 200 lines, see [the AI rules file for your repository](../ai-rules-file-salesforce-repository/).
 5. **Pilot with two developers for two weeks** and read the real spend.
 6. **Budget the review.** A human reviewer for generated Apex costs more than the tokens, see [reviewing AI-generated Salesforce code](../reviewing-ai-generated-salesforce-code/).
-
-AI coding costs about one percent of a Salesforce partner team in the scenario, so settle accounts and limits before you negotiate the price.

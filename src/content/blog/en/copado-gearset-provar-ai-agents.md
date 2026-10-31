@@ -9,9 +9,8 @@ topic: devops
 categories: [devops, ai]
 tags: [copado, gearset, provar, ai agents, devops, due diligence]
 takeaways:
-  - "Copado Agentia, Gearset Cam and Provar MCP are AI agents from Salesforce DevOps and testing vendors; in October 2026 everything known about them comes from the vendors' own pages."
-  - "Copado says Agentia is available in its Advanced and Pro editions, Gearset launched Cam on 2 September 2026 with pilot customers, and Provar MCP is a local plugin at no extra cost for Provar Automation customers."
-  - "Neither Copado nor Gearset names the model behind its agent; Gearset's general AI terms name OpenAI and Amazon Web Services, US data centres and 90 days of retention."
+  - "Agentia is in Copado's Advanced and Pro editions, Cam started on 2 September 2026 as a pilot, and Provar MCP is free for Provar customers."
+  - "Neither Copado nor Gearset names the model; Gearset's AI terms name OpenAI, AWS, US data centres and 90 days of retention."
   - "Before paying, ask in writing which model runs, where data is processed, how long it is kept, how usage is capped and who approves what the agent produces."
   - "A team already running open-source DevOps such as sfdx-hardis covers much of the same ground with a general coding agent and a model it chooses itself."
 faq:
@@ -40,7 +39,7 @@ The descriptions below are the vendors' own; I found no independent test on Sale
 
 Copado and Gearset sell an agent that changes your org. Provar adds a tool to the AI assistant your developers already use, which makes its due diligence much shorter.
 
-## What is generally available and what is still a pilot?
+## What is generally available and what is still a pilot
 
 A pilot rarely comes with a service level or a fixed price, so status matters. As of 27 October 2026:
 
@@ -63,7 +62,7 @@ source: Gearset announcement of 2 September 2026
 
 That is one customer, measured by the vendor, after one week. It shows that Cam can produce mergeable pull requests in a real org, nothing more. One in four was not merged, and every one went through the team's review.
 
-## Which model, which region, which retention?
+## Model, region and retention set the three apart most
 
 Here the three products differ most, and this is where a manufacturer with GDPR obligations and a works council should start.
 
@@ -83,7 +82,7 @@ US data centres mean a third-country transfer your data protection officer must 
 
 **Provar MCP** runs "entirely on your local machine", according to its documentation, and sends "no project files, test code, or credentials" to Provar servers unless you switch on an optional API validation. The metadata and test cases still reach whichever AI assistant you connect. The data question moves to your contract with Anthropic, GitHub or Cursor; the [works council and GDPR article](../ai-coding-tools-works-council-gdpr/) covers that part. As I read the vendors' pages, Provar MCP is the easiest of the three to approve. My reading of these terms is not legal advice.
 
-## A typical scenario: a machine builder with Copado and a nearshore partner
+## Worked example: a machine builder with Copado and a nearshore partner
 
 Assume a machine builder with Sales Cloud for dealer sales, Field Service for its service technicians and an SAP S/4HANA integration for spare parts and warranty. The pipeline runs on Copado. Three internal developers work with a partner who provides six nearshore developers, and the partner already codes with Claude Code through accounts the client owns. All numbers here are assumptions.
 
@@ -115,7 +114,7 @@ contra: Open source and a coding agent are enough when
 - you or your architect own the setup
 ```
 
-## What should you ask before you pay?
+## First step: put these questions in writing before you pay
 
 I would put these questions to any DevOps vendor selling an AI agent and get the answers into the order form:
 
@@ -128,5 +127,3 @@ I would put these questions to any DevOps vendor selling an AI agent and get the
 - What happens to the context the agent built about our org when we leave?
 
 The last two follow from two rules: the client should [own the DevOps tools](../why-clients-should-own-their-devops-tools/), and the same terms belong in [partner contracts for AI coding](../partners-using-ai-coding-contract-rules/). Setting this up is part of my [DevOps and release management](../../services/devops-release-management/) work; the wider tool choice is in [chapter 4 of the AI masterclass](../../masterclass/ai-salesforce/external-coding-agents/).
-
-A DevOps AI agent is worth paying for once the vendor answers the model, region and retention questions in writing and a pilot in your own org beats your current setup.

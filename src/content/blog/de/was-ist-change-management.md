@@ -11,10 +11,10 @@ contactBrief: change-basics
 author: juliane
 tags: [Change Management, Prosci, ADKAR, Veränderungsmanagement]
 takeaways:
-  - "Change Management ist die strukturierte Begleitung der Menschen durch eine Veränderung, damit eine neue Arbeitsweise im Alltag ankommt und dort bleibt."
-  - "Projektmanagement liefert die Lösung, Change Management sorgt dafür, dass sie genutzt wird. IT-Change-Management nach ITIL ist etwas anderes: die kontrollierte Freigabe von Änderungen an Systemen."
+  - "Jede Veränderung hat eine technische Seite, die Lösung selbst, und eine menschliche: ob die Menschen, die damit arbeiten sollen, sie annehmen."
+  - "Projektmanagement liefert die Lösung, Change Management sorgt für ihre Nutzung. IT-Change-Management nach ITIL meint die Freigabe von Systemänderungen."
   - "Prosci gliedert Change Management in drei Phasen: Vorgehen vorbereiten, Veränderung steuern, Ergebnisse sichern."
-  - "In der Prosci-Studie mit 2.668 Teilnehmenden erreichten Projekte mit sehr gutem Change Management ihre Ziele in 88 Prozent der Fälle, mit schlechtem in 13 Prozent."
+  - "In der Prosci-Studie (2.668 Teilnehmende) erreichten Projekte mit sehr gutem Change Management in 88 Prozent ihre Ziele, mit schlechtem in 13 Prozent."
   - "Der wichtigste Erfolgsfaktor ist ein Sponsor im Management, der sichtbar hinter der Veränderung steht."
 faq:
   - q: "Was ist Change Management einfach erklärt?"
@@ -64,7 +64,7 @@ Wie viel das organisatorische Change Management ausmacht, zeigt die Forschung vo
 quelle: Prosci, Best Practices in Change Management, 12. Ausgabe
 ```
 
-## Welche Phasen hat Change Management?
+## Prosci gliedert Change Management in drei Phasen
 
 Auf Ebene der Organisation gliedert Prosci die Arbeit in drei Phasen, den [Prosci 3-Phase Process](https://www.prosci.com/methodology/3-phase-process). Sie laufen neben dem Projektplan, nicht danach:
 
@@ -81,7 +81,7 @@ Der häufigste Fehler liegt in der ersten Phase: Change Management beginnt zu sp
 
 Auf Ebene der einzelnen Person hilft das ADKAR-Modell bei der Diagnose. Stockt eine Einführung, fehlt meist eine der fünf Stufen, und jede braucht eine andere Maßnahme. Eine weitere Schulung hilft nur, wenn Wissen oder Fähigkeit fehlt. Wenn niemand verstanden hat, wozu die Veränderung gut ist, muss das die Führungskraft erklären. Wie sich ADKAR von anderen bekannten Modellen unterscheidet, beschreibe ich in [Change-Management-Modelle im Vergleich](../change-management-modelle/).
 
-## Wer ist für Change Management verantwortlich?
+## Sponsor, Führungskräfte, Change-Team und Key User teilen sich die Arbeit
 
 Change Management ist Teamarbeit, mit klar verteilten Rollen:
 
@@ -99,16 +99,14 @@ Nehmen wir die Einführung eines CRM-Systems wie Salesforce in einem Unternehmen
 1. **Gruppen und Änderungen festhalten.** Für jede Gruppe schriftlich: Was ändert sich im Alltag? Der Außendienst pflegt Besuchsberichte künftig in der App statt in einer Tabelle, der Innendienst erstellt Angebote im System statt in Word.
 2. **Den Sponsor sichtbar machen.** Die Vertriebsleitung erklärt im eigenen Meeting, warum Prognosen künftig aus dem System kommen, und fragt danach im Monatsbericht.
 3. **Je Gruppe die ADKAR-Stufe prüfen.** Der Innendienst will mitmachen, kennt aber die neuen Abläufe nicht: Hier hilft Schulung am echten Fall. Der Außendienst sieht keinen Nutzen: Hier hilft ein Gespräch mit der Führungskraft, eine Schulung ändert nichts.
-4. **Nutzung messen.** Es zählt, ob Datensätze angelegt und gepflegt werden; die Zahl der Schulungen sagt darüber wenig. Berichte im System zeigen das besser als jede Umfrage.
+4. **Nutzung messen.** Es zählt, ob Datensätze angelegt und gepflegt werden; die Zahl der Schulungen sagt darüber wenig. Berichte im System zeigen das zuverlässiger als eine Umfrage.
 
 Welche Spannweite solche Projekte haben, zeigen zwei aus meiner Arbeit: ein weltweiter Rollout der Salesforce Sales Cloud mit mehr als 500 Anwenderinnen und Anwendern in den USA, Asien und Europa, und eine IT-Transformation bei einem Versicherer mit mehr als 20.000 Betroffenen in 19 Ländern. Die Phasen sind dieselben, der Plan je Gruppe und Land wird mit der Größe aufwendiger. Wie ich das mit Fabian Kramer speziell für Salesforce-Programme aufsetze, steht in [Salesforce Change Management: warum Einführungen scheitern](../change-management-salesforce-einfuehrung/).
 
-## Wann lohnt sich Change Management von außen?
+## Hilfe von außen lohnt sich ab mehreren Gruppen oder Ländern
 
 Nicht jede Veränderung braucht eine externe Change-Managerin. Ändert sich für ein Team von zehn Personen ein einzelner Ablauf, reicht eine Führungskraft, die ADKAR als Checkliste nutzt und die fünf Fragen ehrlich beantwortet.
 
 Unterstützung von außen lohnt sich, wenn mehrere Gruppen oder Länder betroffen sind, wenn intern niemand Zeit und Erfahrung für die Planung hat oder wenn der Sponsor noch unklar ist. Dann hilft ein Blick von außen, der die Rollen klärt, die Führungskräfte begleitet und die Arbeit am Ende an interne Verantwortliche übergibt. Für Salesforce-Programme gibt es dafür die [Change Management Beratung für Salesforce](../../leistungen/change-management/).
 
-Eine Veränderung ist erst geschafft, wenn im Alltag anders gearbeitet wird.
-
-Prosci und ADKAR sind eingetragene Marken von Prosci, Inc.
+*Prosci und ADKAR sind eingetragene Marken von Prosci, Inc.*
