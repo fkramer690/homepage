@@ -50,7 +50,7 @@ In der Praxis sieht so ein Regelwerk etwa so aus: Ein Anspruch geht in die manue
 
 Die Frage „Ist das gedeckt?“ hat also schon eine deterministische Antwort. Ein Agent bringt dort etwas, wo Regeln schwach sind: die freie Fehlerbeschreibung des Händlers lesen, sie mit Fehlercode und beanspruchten Teilen abgleichen, bemerken, dass dieselbe Seriennummer zweimal kam, den Fall für den Sachbearbeiter zusammenfassen und eine Nachforderung fehlender Angaben entwerfen. Salesforces eigener [Architektur-Leitfaden zu Hybrid Reasoning](https://architect.salesforce.com/docs/architect/fundamentals/guide/hybrid-reasoning-agentforce-builder-agent-script) formuliert die Regel, die ich anwenden würde: Was sich als Code ausdrücken lässt, gehört in Logik. Wie Sie diese Trennung bauen, beschreibe ich in [Agent Script: Regeln statt LLM](../agent-script-regeln-statt-llm/).
 
-## Vor dem Agenten: Anlagendaten mit Seriennummer und Garantiebeginn
+## Was vor dem Agenten stehen muss
 
 ### Anlagendaten mit Seriennummer und Garantiebeginn
 

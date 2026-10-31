@@ -50,7 +50,7 @@ In practice such a rule set looks like this: a claim goes to manual review if it
 
 So the question "is this covered?" already has a deterministic answer. An agent adds value where rules are weak: reading the dealer's free-text fault description, comparing it with the fault code and the parts claimed, noticing that the same serial number came in twice, summarising the case for the adjudicator and drafting a request for missing information. Salesforce's own [architect guide on hybrid reasoning](https://architect.salesforce.com/docs/architect/fundamentals/guide/hybrid-reasoning-agentforce-builder-agent-script) states the rule I would apply: "if you can express a decision as code, it should be written as logic." How to build that split is the topic of [Agent Script: rules instead of the LLM](../agent-script-deterministic-rules/).
 
-## Before the agent: asset data with serial numbers and start dates
+## What has to be in place before the agent
 
 ### Asset data with serial numbers and start dates
 
