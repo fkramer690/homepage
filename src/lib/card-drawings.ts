@@ -1560,6 +1560,19 @@ const drawings: Record<string, Drawing> = {
     ${check(14, 139, G)}${t(26, 144, l('120 s timeout, 1 request per session', '120 s Timeout, 1 Anfrage pro Session'), { size: 7 })}
     ${t(306, 128, l('20 credits per action', '20 Credits pro Aktion'), { size: 7, anchor: 'end' })}`,
 
+  'enhanced-chat-context': (l) => `
+    ${t(14, 18, l('TWO WAYS INTO THE AGENT', 'ZWEI WEGE ZUM AGENTEN'), { fill: D, size: 7 })}
+    ${box(14, 30, 64, 60)}${t(46, 56, 'WEBSITE', { fill: D, size: 7.5, anchor: 'middle' })}${t(46, 68, l('portal', 'Portal'), { size: 7, anchor: 'middle' })}
+    ${arrow(78, 44, 130)}${t(104, 39, 'Pre-Chat', { size: 7, anchor: 'middle' })}
+    ${box(130, 30, 92, 28)}${t(176, 41, 'MESSAGING SESSION', { fill: D, size: 7, anchor: 'middle' })}${t(176, 52, 'Serial_Number__c', { size: 7, anchor: 'middle' })}
+    ${arrow(222, 44, 246)}
+    ${arrow(78, 76, 246, C)}${t(162, 87, l('context event · v2', 'Context Event · v2'), { fill: C, size: 7, anchor: 'middle' })}
+    ${box(246, 30, 60, 60, C)}${t(276, 56, 'AGENT', { fill: D, size: 7.5, anchor: 'middle' })}${t(276, 68, 'Agentforce', { size: 7, anchor: 'middle' })}
+    <path d="M14 100H306" stroke="${L}"/>
+    ${check(14, 109)}${t(26, 114, l('pre-chat: fixed before the conversation', 'Pre-Chat: fest vor Beginn der Konversation'), { size: 7 })}
+    ${check(14, 124)}${t(26, 129, l('context: page and search, every message', 'Kontext: Seite und Suche, jede Nachricht'), { size: 7 })}
+    ${check(14, 139, G)}${t(26, 144, l('browser values are hints, not identity', 'Browser-Werte sind Hinweise, keine Identität'), { size: 7 })}`,
+
   'agentforce-a2a-multi-agent': (l) => `
     ${t(18, 18, l('WHO OWNS THE CONVERSATION', 'WER FÜHRT DAS GESPRÄCH'), { fill: D, size: 7 })}
     ${box(18, 28, 62, 30)}${t(49, 41, l('DEALER', 'HÄNDLER'), { fill: D, size: 7.5, anchor: 'middle' })}${t(49, 52, 'portal', { size: 7, anchor: 'middle' })}
