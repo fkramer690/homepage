@@ -10,9 +10,8 @@ categories: [manufacturing-cloud]
 tags: [Manufacturing Cloud, Sales Agreements, ERP, Integration, Fertigung]
 series: { id: manufacturing-cloud, part: 3 }
 takeaways:
-  - "Ein Sales Agreement zeigt nur dann, welche Kunden hinter ihren vereinbarten Abnahmemengen liegen, wenn die Ist-Mengen aus dem ERP zuverlässig pro Kunde, Produkt und Zeitraum ankommen."
-  - "Wie die Ist-Mengen berechnet werden, legt die Einstellung Actuals Calculation Mode fest. Jedes Sales Agreement übernimmt sie bei der Anlage, eine spätere Änderung gilt nur für neue Agreements."
-  - "Auf welcher Ebene der Account-Struktur ein Sales Agreement liegt, entscheidet über die Aussagekraft. Bei internationalen Kunden mit vielen Gesellschaften ist das jedes Mal eine eigene Entscheidung."
+  - "Den Actuals Calculation Mode übernimmt jedes Sales Agreement bei der Anlage. Eine spätere Änderung gilt nur für neue Agreements."
+  - "Bei internationalen Kunden mit vielen Gesellschaften ist die Account-Ebene des Sales Agreements jedes Mal eine eigene Entscheidung."
   - "Der Lagerbestand gehört als Kennzahl neben die Abweichung. Erst beides zusammen zeigt, welche offenen Mengen sich realistisch noch liefern lassen."
   - "Salesforce zeigt die Lücke. Wie sie geschlossen wird, verhandeln Menschen, abhängig von Saison und Größe der Abweichung."
 faq:
@@ -35,7 +34,7 @@ Was ein Sales Agreement ist und wann sich die Manufacturing Cloud dafür lohnt, 
 
 Im Alltag stellt der Vertrieb eine einfache Frage: Wer liegt hinter seiner Zusage? Ein Kunde hat für das Jahr eine Menge zugesagt, aufgeteilt in Monate oder Quartale. Pro Zeitraum und Produkt stehen im Sales Agreement geplante Menge, tatsächliche Menge und Prognose nebeneinander. Die Abweichung ist die Zahl, mit der Account Manager arbeiten.
 
-Diese Zahl ist nur so gut wie die Ist-Mengen dahinter. Die Planmengen pflegt der Vertrieb beim Abschluss selbst. Die Ist-Mengen entstehen bei Herstellern fast immer woanders, im ERP, wo Aufträge angelegt, bestätigt und ausgeliefert werden. Damit wird die Frage nach den Abnahmemengen zuerst eine Frage der Schnittstelle.
+Diese Zahl hängt an den Ist-Mengen dahinter. Die Planmengen pflegt der Vertrieb beim Abschluss selbst. Die Ist-Mengen entstehen bei Herstellern fast immer woanders, im ERP, wo Aufträge angelegt, bestätigt und ausgeliefert werden. Damit wird die Frage nach den Abnahmemengen zuerst eine Frage der Schnittstelle.
 
 ## Woher kommen die Ist-Mengen, wenn die Aufträge im ERP liegen?
 
@@ -81,13 +80,13 @@ Welche Variante passt, hängt davon ab, was Salesforce sonst noch über Aufträg
 Bei einem globalen Hersteller habe ich einen weltweiten Rollout der Manufacturing Cloud begleitet. Der wichtigste Grund für die Lizenz waren die Sales Agreements. Der Vertrieb sollte erkennen, welche Kunden ihre vereinbarten Mengen noch nicht abgenommen hatten, und planen, wie sich die offenen Mengen noch realisieren lassen. Sowohl die Aufträge als auch die Lagerbestände kamen aus dem ERP.
 ```
 
-Drei Dinge haben sich dabei als schwieriger herausgestellt, als die Funktion vermuten lässt.
+Flughöhe, Lagerbestand und Verhandlung waren schwieriger, als die Funktion vermuten lässt.
 
-Erstens die Flughöhe. Ein Sales Agreement hängt an einem Account. Bei einem internationalen Kunden mit einer großen Account-Struktur, also Konzern, Landesgesellschaften und Werke, stellt sich die Frage, auf welcher Ebene die Zusage gilt. Das ist nicht immer einfach und hängt vom Kunden ab. Dazu mehr im nächsten Abschnitt.
+Die Flughöhe zuerst. Ein Sales Agreement hängt an einem Account. Bei einem internationalen Kunden mit einer großen Account-Struktur, also Konzern, Landesgesellschaften und Werke, stellt sich die Frage, auf welcher Ebene die Zusage gilt. Das ist nicht immer einfach und hängt vom Kunden ab. Dazu mehr im nächsten Abschnitt.
 
-Zweitens der Lagerbestand. Eine Abweichung allein sagt noch nicht, was zu tun ist. Ob ein Rückstand ein Problem ist, hängt davon ab, ob die Ware im Lager liegt und Platz braucht oder ob sie ohnehin knapp ist.
+Dann der Lagerbestand. Eine Abweichung allein sagt noch nicht, was zu tun ist. Ob ein Rückstand ein Problem ist, hängt davon ab, ob die Ware im Lager liegt und Platz braucht oder ob sie ohnehin knapp ist.
 
-Drittens die Verhandlung. Wie eine offene Menge realisiert wird, verhandeln Menschen miteinander, individuell pro Kunde. Es kommt auf die Saison an und darauf, wie stark die Abweichung ist. Salesforce liefert die Grundlage für dieses Gespräch und ersetzt es nicht.
+Und schließlich die Verhandlung. Wie eine offene Menge realisiert wird, verhandeln Menschen miteinander, individuell pro Kunde. Es kommt auf die Saison an und darauf, wie stark die Abweichung ist. Salesforce liefert die Grundlage für dieses Gespräch und ersetzt es nicht.
 
 ## Auf welcher Ebene der Account-Struktur gehört ein Sales Agreement hin?
 
@@ -101,7 +100,7 @@ Die zweite Konstellation entscheidet sich oft an der Kundennummer im ERP. Steht 
 
 Ich kläre die Ebene deshalb pro Kunde, nicht einmal für alle. Für die großen Kunden mit Rahmenverträgen ist das eine Liste von überschaubarer Länge, und jede Zeile darauf erspart später eine Diskussion über falsche Zahlen.
 
-## Warum gehört der Lagerbestand neben die Abweichung?
+## Der Lagerbestand gehört neben die Abweichung
 
 Eine Liste der Kunden mit Rückstand ist ein guter Anfang. Handeln kann der Vertrieb erst, wenn er weiß, ob die offene Menge lieferbar ist und ob sie das Lager belastet.
 
@@ -114,19 +113,19 @@ Zwei Beispiele, wie sich dieselbe Abweichung unterschiedlich lesen lässt:
 
 Dazu kommt die Saison. Ein Rückstand im ersten Quartal kann bei saisonalem Geschäft normal sein und sich bis zum Sommer von selbst ausgleichen. Eine gute Ansicht zeigt deshalb Abweichung, Lager und Zeitraum zusammen, damit niemand im Februar einen Kunden anruft, der im Juni ohnehin bestellt.
 
-## Was bleibt beim Menschen?
+## Die Verhandlung bleibt beim Menschen
 
-Die Verhandlung. Salesforce kann Kunden nach Abweichung sortieren, Lager und Saison danebenstellen und eine Aufgabe für den Account Manager anlegen. Ob ein Kunde einen Preisnachlass bekommt, einen Abruf vorzieht oder die Zusage im nächsten Jahr angepasst wird, entscheiden Menschen, die den Kunden kennen.
+Salesforce kann Kunden nach Abweichung sortieren, Lager und Saison danebenstellen und eine Aufgabe für den Account Manager anlegen. Ob ein Kunde einen Preisnachlass bekommt, einen Abruf vorzieht oder die Zusage im nächsten Jahr angepasst wird, entscheiden Menschen, die den Kunden kennen.
 
 Ich würde diesen Schritt auch nicht automatisieren wollen. Die Gründe für einen Rückstand reichen von einer schwachen Saison beim Kunden bis zu einem Wettbewerber, der gerade billiger liefert, und keine Kennzahl im System kennt sie. Wer Agenten auf solche Daten ansetzen möchte, sollte zuerst die Datenqualität prüfen, wie ich in [Agentforce: Business Value und Datenqualität zuerst](../agentforce-business-value-datenqualitaet/) beschreibe.
 
-## Wo sollten Sie anfangen?
+## Erster Schritt: Modus für die Ist-Mengen festlegen
 
-Bevor das erste Sales Agreement produktiv angelegt wird, klären Sie vier Punkte:
+Bevor das erste Sales Agreement produktiv angelegt wird, klären Sie diese Punkte:
 
 1. **Modus für die Ist-Mengen.** Aufträge in Salesforce oder Summen per API, festgelegt vor dem ersten Agreement.
 2. **Ebene pro Kunde.** Für jeden großen Kunden mit Rahmenvertrag: An welchem Account hängt die Zusage, und welche Auftraggeber im ERP gehören dazu?
 3. **Lagerbestand als Kennzahl.** Welches System liefert ihn, wie oft und auf welcher Ebene?
 4. **Die Ansicht für den Vertrieb.** Welche Liste sieht ein Account Manager am Montagmorgen, und was tut er damit?
 
-Ein Sales Agreement zeigt die Lücke zwischen Zusage und Abnahme so gut, wie Schnittstelle und Account-Struktur es zulassen.
+Den Modus lege ich mit dem ERP-Team fest, bevor das erste Agreement angelegt wird, weil eine spätere Änderung nur für neue Agreements gilt. Die Liste für Montagmorgen baue ich danach mit zwei Account Managern.

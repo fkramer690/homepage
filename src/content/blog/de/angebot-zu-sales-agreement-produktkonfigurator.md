@@ -10,11 +10,10 @@ categories: [manufacturing-cloud]
 tags: [Manufacturing Cloud, Sales Agreements, CPQ, Produktkonfigurator, Fertigung]
 series: { id: manufacturing-cloud, part: 2 }
 takeaways:
-  - "Bei Herstellern mit technisch definierten Produkten entscheidet der Produktkonfigurator, was im Angebot steht und später im Sales Agreement geplant und gemessen wird."
-  - "Konfiguriert werden Eigenschaften, die dem Endkunden wichtig sind und beim Hersteller Preis oder Kosten beeinflussen, etwa physikalisch-chemische Kriterien, Rohstoffe oder Zertifikate."
-  - "Ein Sales Agreement plant Mengen pro Produkt. Jede konfigurierte Variante, die geplant und gemessen werden soll, braucht deshalb eine eigene Produktidentität, die auch das ERP kennt."
-  - "Salesforce kann ein Sales Agreement per Connect API aus einem Angebot, einer Opportunity oder einem eigenen Objekt erzeugen. Welche Felder übernommen werden, legt ein Mapping fest."
-  - "Salesforce CPQ wird an Neukunden nicht mehr verkauft. Wer heute ein Angebotssystem auswählt, vergleicht Revenue Cloud Advanced, Partnerprodukte und einen eigenen Ansatz."
+  - "Konfiguriert werden Eigenschaften mit Kostenwirkung, etwa physikalisch-chemische Kriterien, Rohstoffe oder Zertifikate."
+  - "Jede Variante, die im Sales Agreement geplant werden soll, braucht eine eigene Produktidentität, die auch das ERP kennt."
+  - "Die Connect API erzeugt ein Sales Agreement aus Angebot, Opportunity oder eigenem Objekt. Ein Mapping legt die Felder fest."
+  - "Salesforce CPQ gibt es für Neukunden nicht mehr. Zur Wahl stehen Revenue Cloud Advanced, Partnerprodukte und ein eigener Ansatz."
 faq:
   - q: "Kann man ein Sales Agreement aus einem Angebot erzeugen?"
     a: "Ja. Die Connect API der Manufacturing Cloud erzeugt ein Sales Agreement aus einem Angebot, einer Opportunity oder einem eigenen Objekt. Welche Felder übernommen werden, steht in einem Mapping vom Typ ConvertToSalesAgreement."
@@ -39,7 +38,7 @@ Bei Konfiguratoren denken viele an Maschinen: Motor, Steuerung, Zubehör, also e
 
 Die Regel dahinter war einfach: Konfiguriert wird alles, was dem Endkunden wichtig ist und für den Hersteller einen Einfluss auf Preis oder Kosten hat. Ein feinerer Mahlgrad kostet mehr Maschinenzeit, ein zertifizierter Rohstoff mehr im Einkauf. Der Konfigurator muss diese Kostenwirkung kennen, sonst rechnet der Vertrieb mit einem Preis, der die Kosten nicht deckt.
 
-Daraus folgt eine Anforderung, die oft spät auffällt: Die Regeln, welche Kombination machbar ist und was sie kostet, liegen meist in Produktion, Qualität und Einkauf, selten im Vertrieb. Der Konfigurator ist nur so gut wie die Pflege dieser Regeln, und dafür braucht es Verantwortliche außerhalb von Salesforce.
+Daraus folgt eine Anforderung, die oft spät auffällt: Die Regeln, welche Kombination machbar ist und was sie kostet, liegen meist in Produktion, Qualität und Einkauf, selten im Vertrieb. Ohne gepflegte Regeln rechnet der Konfigurator falsch, und für die Pflege braucht es Verantwortliche außerhalb von Salesforce.
 
 ## Eigener Ansatz oder Standardprodukt?
 
@@ -67,7 +66,7 @@ Für das Design heißt das, früh zu entscheiden:
 
 Wie die Ist-Mengen danach aus dem ERP ins Sales Agreement kommen, beschreibe ich in [Teil 3: Sales Agreements, fehlende Abnahmemengen erkennen](../sales-agreements-abnahmemengen-erp/).
 
-## Wie kommt das Angebot ins Sales Agreement?
+## Die Connect API macht aus dem Angebot ein Sales Agreement
 
 Salesforce bietet dafür einen Standardweg. Die [Connect API der Manufacturing Cloud](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/connect_resources_sales_agreement.htm) erzeugt ein Sales Agreement aus einem Angebot, einer Opportunity oder einem eigenen Objekt. Welche Felder übernommen werden, steht in einem Mapping vom Typ ConvertToSalesAgreement. Felder, die das Mapping nicht abdeckt, lassen sich beim Aufruf mit Standardwerten füllen. Das passt auch zu einem eigenen CPQ-Ansatz, weil das Angebot ein eigenes Objekt sein darf.
 
@@ -94,21 +93,21 @@ Die Zeile Laufzeit wird gern übersehen. Laut Trailhead berechnet Salesforce das
 
 Ein Sales Agreement startet laut Trailhead immer als Entwurf, wird freigegeben und aktiviert sich am Startdatum automatisch. Damit stellt sich die nächste Frage.
 
-## Wo gehört die Preisfreigabe hin?
+## Der Preis wird an genau einer Stelle freigegeben
 
-An eine Stelle. Ein Angebot mit konfigurierten Produkten braucht oft eine Freigabe, weil der Preis von der Konfiguration und damit von den Kosten abhängt. Das Sales Agreement hat einen eigenen Freigabeschritt, den der Admin laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/manufacturing-cloud-admin-essentials/configure-sales-agreements-to-negotiate-better) auch abschalten kann.
+Ein Angebot mit konfigurierten Produkten braucht oft eine Freigabe, weil der Preis von der Konfiguration und damit von den Kosten abhängt. Das Sales Agreement hat einen eigenen Freigabeschritt, den der Admin laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/manufacturing-cloud-admin-essentials/configure-sales-agreements-to-negotiate-better) auch abschalten kann.
 
 Ich rate dazu, den Preis einmal freizugeben, am Angebot, wo die Konfiguration und ihre Kosten sichtbar sind. Wird das Agreement direkt aus dem freigegebenen Angebot erzeugt, kann seine eigene Freigabe schlanker sein oder entfallen. Zwei Freigaben für denselben Preis kosten Zeit und erzeugen die Frage, welche gilt, wenn sie sich unterscheiden.
 
 Ändert sich später etwas, etwa eine neue Variante oder ein neuer Preis während der Laufzeit, wiederholt sich der Weg: Konfiguration, Angebot, Freigabe, Anpassung des Agreements. In meinem Projekt konnten Kunden neue Produkte und Preise auch selbst über das Kundenportal anfragen. Wie das Portal dazu passt, behandelt ein späterer Teil dieser Serie.
 
-## Wo sollten Sie anfangen?
+## Erster Schritt: Eigenschaften mit Kostenwirkung auflisten
 
-Bevor der Konfigurator gebaut oder ein Produkt ausgewählt wird, klären Sie vier Punkte:
+Bevor der Konfigurator gebaut oder ein Produkt ausgewählt wird, klären Sie diese Punkte:
 
 1. **Was wird konfiguriert?** Eine Liste der Eigenschaften mit Kostenwirkung, abgestimmt mit Produktion, Qualität und Einkauf.
 2. **Wann entsteht ein Produkt?** Die Regel, welche Eigenschaft eine neue Materialnummer im ERP erzeugt.
 3. **Welche Felder wandern ins Agreement?** Das Mapping aus der Tabelle oben, inklusive Laufzeit und Account-Ebene.
 4. **Wo wird freigegeben?** Eine Stelle für den Preis, dokumentiert im Entscheidungslog der [Salesforce-Architektur](../../leistungen/salesforce-architektur/).
 
-Ein Sales Agreement ist nur so sauber wie die Produkte, die aus dem Konfigurator hineinkommen.
+Punkt 2 entscheide ich zusammen mit dem ERP-Team, weil jede neue Variante dort eine Materialnummer bekommt. Ohne diese Regel landen im Sales Agreement Produkte, die das ERP nicht kennt.

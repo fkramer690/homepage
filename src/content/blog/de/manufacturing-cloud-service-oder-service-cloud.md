@@ -10,10 +10,9 @@ categories: [manufacturing-cloud, field-service]
 contactBrief: licences
 tags: [Manufacturing Cloud, Service Cloud, Lizenzen, Garantie, Make-or-Buy]
 takeaways:
-  - "Manufacturing Cloud Service Core kostet laut Liste 275 US-Dollar pro Nutzer und Monat, Service Cloud Core 195. Der Aufpreis liegt bei 80 US-Dollar; Core ist die Edition, die Service Cloud Enterprise ersetzt."
-  - "Der Aufpreis bringt Warranty Lifecycle Management, die Asset Service Console, die Service Console for Manufacturing, Pre-Work Estimation und das Fertigungs-Datenmodell."
-  - "Case-Management, Hilfecenter, Entitlements und Knowledge sind Funktionen der Service Cloud. Eine Hotline, die nur Cases bearbeitet, braucht keine Manufacturing Cloud."
-  - "Gemischte Lizenzen sind der Normalfall: Garantiesachbearbeiter und Kampagnenverantwortliche auf Manufacturing Cloud, First Level auf Service Cloud. Lassen Sie sich den Mix schriftlich bestätigen."
+  - "Der Aufpreis bringt Warranty Lifecycle Management, zwei Servicekonsolen, Pre-Work Estimation und das Fertigungs-Datenmodell."
+  - "Case-Management, Entitlements und Knowledge gehören zur Service Cloud. Eine reine Hotline braucht keine Manufacturing Cloud."
+  - "Gemischte Lizenzen sind der Normalfall: Garantie und Kampagnen auf Manufacturing Cloud, First Level auf Service Cloud."
   - "Techniker im Außendienst brauchen in jedem Fall Field-Service-Lizenzen, Technician kostet 175 US-Dollar in der Enterprise Edition."
 faq:
   - q: "Was kostet Manufacturing Cloud for Service?"
@@ -44,7 +43,7 @@ Die [Preisseite der Service Cloud](https://www.salesforce.com/service/pricing/) 
 
 Die [Preisseite der Manufacturing Cloud](https://www.salesforce.com/manufacturing/cloud/pricing/) hat zwei Fußnoten, die sich widersprechen. Die eine sagt, die Preise gelten für die Enterprise Edition und Unlimited koste 425 US-Dollar. Die andere sagt, die Preise gelten für die Unlimited Edition. Dieselbe Ankündigung sagt, neue Preise für die Branchen-Editionen folgen „later this fall“. Welcher Preis für Sie gilt, zeigt erst das Angebot.
 
-## Was bringt der Aufpreis?
+## Der Aufpreis bringt Garantie, zwei Konsolen und das Datenmodell
 
 Die Preisseite der Manufacturing Cloud nennt diese Servicefunktionen: Warranty Lifecycle Management, Asset Service Console, Service Console for Mfg und Pre-Work Estimation, dazu die Fertigungs-Datenmodelle. Service Max ergänzt Contact Center Digital, Workforce Management, Quality Management und Customer Signal Intelligence, die Max-Editionen enthalten „all full suite of Agentforce for Industries“. Die Häkchen pro Edition waren auf der Seite, die ich gelesen habe, nicht auslesbar. Lassen Sie sich im Angebot bestätigen, welche Edition welche Funktion enthält.
 
@@ -61,9 +60,9 @@ Mehr als viele erwarten. Die Edition Service Cloud Core nennt Case-Management un
 
 Eine Hotline, die Anrufe annimmt, Cases anlegt, einen Servicevertrag prüft und mit Knowledge-Artikeln antwortet, läuft also auf Service Cloud. Was fehlt, ist die Fertigungsschicht: Garantiebedingungen pro Produkt und Teil, Anträge mit Kostenpositionen, Asset-Meilensteine, Beteiligte und Flotten, Kampagnen mit Verursacherteilen. Wenn Sie dem Agenten nur ein Garantieende am Asset zeigen wollen, reicht ein eigenes Feld.
 
-## Wer braucht welche Lizenz?
+## Rechenbeispiel: 45 Nutzer im Service
 
-Ich würde nach Rolle entscheiden, nicht nach Abteilung. Ein typisches Szenario, als Annahme: ein Maschinenbauer mit 45 Nutzern im Service.
+Ich würde nach Rolle entscheiden, nicht nach Abteilung. Als Beispiel dient ein angenommener Maschinenbauer mit 45 Nutzern im Service.
 
 | Rolle | Nutzer | Lizenz |
 |---|---|---|
@@ -104,8 +103,6 @@ contra: Was Sie dafür tragen
 
 Das ist dieselbe Make-or-Buy-Frage wie bei der ganzen Branchen-Cloud, beschrieben in [Manufacturing Cloud vs. Sales Cloud: Wann lohnt sie sich?](../manufacturing-cloud-wann-lohnt-sie-sich/) und im [Kapitel Einordnung und Business Case](../../masterclass/manufacturing-cloud/einordnung-und-business-case/). Mein Vorgehen beschreibe ich unter [Make-or-Buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/).
 
-## Wo fangen Sie an?
+## Erster Schritt: Nutzer pro Rolle für eine Region zählen
 
 Zählen Sie die Nutzer pro Rolle für eine Region: wie viele Garantieanträge bearbeiten, wie viele Kampagnen steuern, wie viele nur Anrufe annehmen. Fordern Sie dann ein Angebot mit genau diesem Mix an, einschließlich der Frage nach Industries Service Excellence und dem Lesezugriff für Service-Cloud-Nutzer. Die After-Sales-Funktionen selbst stehen im [Kapitel Garantie und After-Sales](../../masterclass/manufacturing-cloud/garantie-und-after-sales/) der Masterclass Manufacturing Cloud.
-
-Manufacturing Cloud for Service ist ihren Aufpreis für die Menschen wert, die an Garantie und Rückrufen arbeiten, selten für das ganze Serviceteam.

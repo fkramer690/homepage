@@ -10,11 +10,10 @@ categories: [manufacturing-cloud]
 tags: [Manufacturing Cloud, Sales Agreements, CPQ, Product Configurator, Manufacturing]
 series: { id: manufacturing-cloud, part: 2 }
 takeaways:
-  - "For manufacturers with technically defined products, the product configurator decides what goes into the quote and what is later planned and measured in the sales agreement."
-  - "What gets configured are properties that matter to the end customer and affect the manufacturer's price or cost, such as physical and chemical criteria, raw materials or certificates."
-  - "A sales agreement plans quantities per product. Every configured variant that should be planned and measured therefore needs its own product identity that the ERP knows too."
-  - "Salesforce can create a sales agreement from a quote, an opportunity or a custom object through the Connect API. A mapping defines which fields carry over."
-  - "Salesforce CPQ is no longer sold to new customers. Anyone choosing a quoting system today compares Revenue Cloud Advanced, partner products and a custom approach."
+  - "What gets configured are properties with a cost effect, such as physical and chemical criteria, raw materials or certificates."
+  - "Every variant that should be planned in the sales agreement needs its own product identity that the ERP knows too."
+  - "The Connect API creates a sales agreement from a quote, an opportunity or a custom object. A mapping defines the fields."
+  - "Salesforce CPQ is no longer sold to new customers. The options are Revenue Cloud Advanced, partner products and a custom approach."
 faq:
   - q: "Can you create a sales agreement from a quote?"
     a: "Yes. The Manufacturing Cloud Connect API creates a sales agreement from a quote, an opportunity or a custom object. A mapping of type ConvertToSalesAgreement defines which fields carry over."
@@ -27,7 +26,7 @@ faq:
 draft: false
 ---
 
-For a manufacturer with technically defined products, the product configurator decides what goes into the quote and what is later planned and measured in the sales agreement. In a global Manufacturing Cloud rollout we took a custom CPQ approach for this and built our own product configurator. The configured products were carried into the quote and then into the sales agreement. For that to hold up, three things have to be settled before the first quote: when a configuration becomes a product, which data moves from the quote to the agreement, and who approves the price.
+For a manufacturer with technically defined products, the product configurator decides what goes into the quote and what is later planned and measured in the sales agreement. In a global Manufacturing Cloud rollout we took a custom CPQ approach for this and built our own product configurator. The configured products were carried into the quote and then into the sales agreement. For that to hold up, these decisions have to be made before the first quote: when a configuration becomes a product, which data moves from the quote to the agreement, and who approves the price.
 
 ## What actually gets configured at a manufacturer?
 
@@ -39,7 +38,7 @@ When people hear configurator, many think of machines: motor, controls, accessor
 
 The rule behind it was simple: configure everything that matters to the end customer and affects price or cost for the manufacturer. A finer grind costs more machine time, a certified raw material costs more to buy. The configurator has to know that cost effect, or sales quotes a price that does not cover the cost.
 
-This leads to a requirement that often surfaces late: the rules on which combination is feasible and what it costs usually live in production, quality and procurement, rarely in sales. The configurator is only as good as the upkeep of those rules, and that needs owners outside Salesforce.
+This leads to a requirement that often surfaces late: the rules on which combination is feasible and what it costs usually live in production, quality and procurement, rarely in sales. Without maintained rules the configurator calculates wrong prices, and maintaining them needs owners outside Salesforce.
 
 ## Custom approach or standard product?
 
@@ -67,7 +66,7 @@ For the design, that means deciding early:
 
 How actuals then get from the ERP into the sales agreement is covered in [part 3: sales agreements, spotting customers behind on volume](../sales-agreements-volume-shortfall-erp/).
 
-## How does the quote get into the sales agreement?
+## The Connect API turns the quote into a sales agreement
 
 Salesforce provides a standard route. The [Manufacturing Cloud Connect API](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/connect_resources_sales_agreement.htm) creates a sales agreement from a quote, an opportunity or a custom object. A mapping of type ConvertToSalesAgreement defines which fields carry over. Fields the mapping does not cover can be filled with default values in the call. That also works with a custom CPQ approach, because the quote may be a custom object.
 
@@ -94,21 +93,21 @@ The term row is easy to miss. According to Trailhead, Salesforce calculates the 
 
 According to Trailhead, a sales agreement always starts as a draft, gets approved and activates automatically on its start date. Which raises the next question.
 
-## Where does price approval belong?
+## The price is approved in exactly one place
 
-In one place. A quote with configured products often needs an approval, because the price depends on the configuration and therefore on cost. The sales agreement has its own approval step, which an admin can also switch off, according to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/manufacturing-cloud-admin-essentials/configure-sales-agreements-to-negotiate-better).
+A quote with configured products often needs an approval, because the price depends on the configuration and therefore on cost. The sales agreement has its own approval step, which an admin can also switch off, according to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/manufacturing-cloud-admin-essentials/configure-sales-agreements-to-negotiate-better).
 
 I recommend approving the price once, on the quote, where the configuration and its cost are visible. If the agreement is created directly from the approved quote, its own approval can be lighter or dropped. Two approvals for the same price cost time and raise the question of which one counts when they differ.
 
 When something changes later, such as a new variant or a new price during the term, the route repeats: configuration, quote, approval, agreement update. In my project, customers could also request new products and prices themselves through the customer portal. How the portal fits in is covered in a later part of this series.
 
-## Where should you start?
+## First step: list the properties with a cost effect
 
-Before the configurator is built or a product is chosen, settle four points:
+Before the configurator is built or a product is chosen, settle these points:
 
 1. **What gets configured?** A list of properties with a cost effect, agreed with production, quality and procurement.
 2. **When does a product come into being?** The rule for which property creates a new material number in the ERP.
 3. **Which fields move into the agreement?** The mapping from the table above, including term and account level.
 4. **Where is the price approved?** One place, documented in the decision log of the [Salesforce architecture](../../services/salesforce-architecture/).
 
-A sales agreement is only as clean as the products the configurator feeds into it.
+I decide point 2 together with the ERP team, because every new variant gets a material number there. Without that rule, the sales agreement fills up with products the ERP does not know.

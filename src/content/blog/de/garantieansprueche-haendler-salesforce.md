@@ -10,9 +10,9 @@ categories: [manufacturing-cloud]
 tags: [Manufacturing Cloud, Garantie, Händler, After-Sales, Fertigung]
 series: { id: manufacturing-cloud, part: 6 }
 takeaways:
-  - "Die Manufacturing Cloud bildet Garantien in drei Ebenen ab: Garantiebedingungen pro Produktfamilie oder Produkt, Anpassungen pro Teil und die Garantie der einzelnen Anlage."
-  - "Händler reichen Garantieansprüche über ein Portal ein, mit Teilen, Arbeitszeit und Kosten. Ein Prüfer passt die Beträge an und gibt frei."
-  - "Ob ein Anspruch gedeckt ist, hängt an den Daten der Anlage: Seriennummer, Kauf- oder Installationsdatum und Nutzung. Fehlen sie, kann weder ein Mensch noch ein Agent sauber prüfen."
+  - "Garantien haben drei Ebenen: Bedingungen pro Produktfamilie oder Produkt, Anpassungen pro Teil und die Garantie der einzelnen Anlage."
+  - "Händler reichen Garantieansprüche über ein Portal ein, mit Teilen, Arbeitszeit und Kosten."
+  - "Ein Prüfer passt die Beträge an und gibt frei. Ohne Seriennummer, Startdatum und Nutzung kann auch ein Agent nicht sauber prüfen."
   - "Aus einem Garantieanspruch erzeugt Salesforce pro verursachendem Teil einen Regressanspruch an den Lieferanten."
   - "Die Garantie ist ein kaufmännischer Prozess. Der Einsatz vor Ort, Wartungsverträge und Reaktionszeiten gehören zu Field Service."
 faq:
@@ -29,9 +29,9 @@ Ob ein Garantieanspruch eines Händlers in Salesforce sauber geprüft werden kan
 
 Wie Teil 4 und 5 schreibe ich diesen Teil als Leitfaden für die Bewertung, nicht als Projektbericht. Die Garantie behandle ich als kaufmännischen Prozess, den Einsatz vor Ort deckt die Field-Service-Serie ab.
 
-## Wie bildet die Manufacturing Cloud eine Garantie ab?
+## Eine Garantie hat drei Ebenen
 
-In drei Ebenen. Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/warranty-administration-and-claims-management-in-manufacturing-cloud/administer-warranty-terms) gilt:
+Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/warranty-administration-and-claims-management-in-manufacturing-cloud/administer-warranty-terms) gilt:
 
 - **Warranty Term, die Garantiebedingung.** Sie enthält Art, Dauer und Beginn der Garantie, die Deckung für Arbeit, Teile und Nebenkosten in Prozent, die abgedeckte Nutzung und Ausschlüsse. Eine Bedingung kann eine ganze Produktfamilie, ein Produkt oder einzelne Anlagen abdecken.
 - **Warranty Term Coverage, die Anpassung pro Teil.** Damit wird eine Bedingung für ein bestimmtes Teil erweitert oder eingeschränkt. Trailhead nennt als Beispiel einen Gabelstapler, bei dem der Motor zusätzlich gedeckt und der Hubmast ausgeschlossen ist.
@@ -66,9 +66,9 @@ Garantieanspruch --pro Teil--> Regressanspruch
 Regressanspruch --eingereicht--> Lieferant
 ```
 
-## Warum hängt alles an den Anlagendaten?
+## Jede Prüfung ist eine Frage an die Anlage
 
-Weil jede Prüfung eine Frage an die Anlage ist. Ist diese Seriennummer noch in der Garantie? Seit wann läuft sie, ab Kauf oder ab Installation? Liegt die Nutzung unter dem Grenzwert? Ist das defekte Teil gedeckt?
+Ist diese Seriennummer noch in der Garantie? Seit wann läuft sie, ab Kauf oder ab Installation? Liegt die Nutzung unter dem Grenzwert? Ist das defekte Teil gedeckt?
 
 Diese Fragen beantwortet die Asset Warranty nur, wenn die Anlage mit ihren Daten in Salesforce steht. Bei vielen Herstellern ist genau das die Lücke:
 
@@ -109,13 +109,13 @@ contra: Zurückhaltend wäre ich, wenn
 
 Im zweiten Fall bringt das Datenmodell wenig. Ob sich die Manufacturing Cloud insgesamt lohnt, behandelt [Teil 1 der Serie](../manufacturing-cloud-wann-lohnt-sie-sich/).
 
-## Wo sollten Sie anfangen?
+## Erster Schritt: Anlagendaten finden und nach Salesforce holen
 
-Bevor die erste Garantiebedingung angelegt wird, klären Sie vier Punkte:
+Bevor die erste Garantiebedingung angelegt wird, klären Sie diese Punkte:
 
 1. **Anlagendaten.** Wo stehen Seriennummer, Kauf- oder Installationsdatum und Nutzung, und wie kommen sie nach Salesforce?
 2. **Bedingungen.** Lassen sich die eigenen Regeln in Grundbedingung, Ausnahmen pro Teil und Anpassung pro Anlage abbilden?
 3. **Einreichung.** Welche Felder füllt der Händler im Portal, und welche sind Pflicht, auch für den Regress?
 4. **Gutschrift.** Wie kommt der genehmigte Betrag ins ERP, und wann sieht der Händler, dass gezahlt wurde?
 
-Die Garantieabwicklung in der Manufacturing Cloud ist so gut wie die Anlagendaten, auf denen sie prüft.
+Für Punkt 1 nehme ich die Garantieanträge eines Quartals und prüfe, bei wie vielen Seriennummer, Startdatum und Nutzung vorhanden sind. Diese Quote entscheidet, ob das Projekt mit den Bedingungen oder mit den Anlagendaten beginnt.

@@ -11,8 +11,8 @@ tags: [Manufacturing Cloud, Rebate Management, Händlerboni, ERP, Fertigung]
 series: { id: manufacturing-cloud, part: 5 }
 takeaways:
   - "Rebate Management rechnet Bonusprogramme für Händler und Kunden in Salesforce: Programm, Teilnehmer, Staffeln, Abrechnungszeiträume und Freigabe der Auszahlung."
-  - "Die Berechnung braucht Transaktionen im Objekt Transaction Journal. Bei Herstellern kommen sie meist aus Rechnungen im ERP, manchmal als Upload der Händler über ein Portal."
-  - "Salesforce rechnet und gibt frei, das ERP zahlt aus. Laut Salesforce holt eine Schnittstelle die freigegebenen Beträge und Rückstellungen ins ERP, wo die Finanzabteilung sie abrechnet."
+  - "Die Berechnung braucht Transaktionen im Transaction Journal. Bei Herstellern kommen sie meist aus Rechnungen im ERP."
+  - "Salesforce rechnet und gibt frei, das ERP zahlt aus. Eine Schnittstelle holt Beträge und Rückstellungen in die Buchhaltung."
   - "Vor dem Start muss feststehen, was als bonusrelevanter Umsatz zählt: Auftrag, Lieferung oder Rechnung, mit oder ohne Retouren."
   - "Rebate Management lohnt sich bei vielen Händlern mit gestaffelten Programmen. Ein einfacher Jahresbonus für wenige Kunden läuft oft auch im ERP."
 faq:
@@ -43,7 +43,7 @@ Bis zum Berechnungsdatum steht der Status eines Teilnehmers auf „Calculation i
 
 ## Woher kommen die Transaktionen?
 
-Die Berechnung ist nur so gut wie die Umsätze im Transaction Journal. Laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?id=sf.admin_rebates_populate_transaction_data.htm&language=en_US&type=5) gibt es drei Wege:
+Die Berechnung rechnet nur mit den Umsätzen, die im Transaction Journal stehen. Laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?id=sf.admin_rebates_populate_transaction_data.htm&language=en_US&type=5) gibt es drei Wege:
 
 | Quelle | Wie sie ins Transaction Journal kommt | Passt, wenn |
 |---|---|---|
@@ -65,9 +65,9 @@ Diese Frage beantwortet kein System. Laut Hilfe entscheiden Programmverantwortli
 
 Diese Regeln stehen heute meist in der Tabelle, mit der jemand im Vertrieb oder in der Finanzabteilung rechnet. Der erste Schritt einer Einführung ist deshalb, diese Tabelle zu lesen und jede Formel darin in eine Regel zu übersetzen.
 
-## Was bleibt im ERP?
+## Die Auszahlung bleibt im ERP
 
-Die Auszahlung. Laut Hilfe holt eine Schnittstelle die freigegebenen Beträge und Rückstellungen ins ERP, und die Finanzabteilung rechnet sie dort ab, per Scheck, Gutschrift oder anders.
+Laut Hilfe holt eine Schnittstelle die freigegebenen Beträge und Rückstellungen ins ERP, und die Finanzabteilung rechnet sie dort ab, per Scheck, Gutschrift oder anders.
 
 Für die Architektur ergibt sich daraus eine klare Aufteilung. **Salesforce führt** Programme, Teilnehmer, Staffeln, die Berechnung und die Freigabe, **das ERP führt** Rechnungen, Gutschriften, Rückstellungen und die Buchung:
 
@@ -82,9 +82,9 @@ Freigabe --Beträge--> Auszahlung
 
 Die Rückstellungen verdienen einen eigenen Termin mit der Finanzabteilung. Wer einen Jahresbonus monatlich zurückstellt, braucht jeden Monat eine Zahl. Kommt sie aus Salesforce, muss sie pünktlich zum Monatsabschluss im ERP sein. Wie ich führende Systeme pro Datenart festlege, beschreibe ich unter [Integration mit ERP, Middleware und Telefonie](../../leistungen/salesforce-schnittstellen/).
 
-## Was sehen Händler?
+## Händler können ihre Beträge im Portal sehen
 
-Optional ihre Beträge. Laut Hilfe können Partner ihre Auszahlungen über Experience Cloud sehen. Für Händler, die heute per E-Mail nach ihrem Stand fragen, ist das der sichtbarste Nutzen.
+Das ist optional. Laut Hilfe können Partner ihre Auszahlungen über Experience Cloud sehen. Für Händler, die heute per E-Mail nach ihrem Stand fragen, ist das der sichtbarste Nutzen.
 
 Laut der Übersicht der Portallizenzen, die ich in [Teil 7: Kundenportal in der Manufacturing Cloud](../manufacturing-cloud-kundenportal/) beschreibe, nennt Salesforce Bonusansprüche bei der Lizenz Partner Community for Manufacturing. Wer Händlern Boni im Portal zeigen will, plant also Partnerlizenzen ein, nicht die günstigere Kundenlizenz.
 
@@ -107,13 +107,13 @@ Die Regel daraus gilt hier genauso: Eine Funktion wird gekauft, wenn sie zum Ges
 
 Zurückhaltend wäre ich bei einem einfachen Jahresbonus für wenige Kunden. Den können viele ERP-Systeme über Konditionen abrechnen, ohne eine zweite Logik in Salesforce. Boni belohnen Menge; Preisansprüche von Distributoren sind ein anderer Prozess, siehe [Ship and Debit](../ship-and-debit-preisschutz-haendler/). Ob sich die Manufacturing Cloud insgesamt lohnt, behandelt [Teil 1 der Serie](../manufacturing-cloud-wann-lohnt-sie-sich/).
 
-## Wo sollten Sie anfangen?
+## Erster Schritt: jede Formel der heutigen Tabelle aufschreiben
 
-Bevor das erste Programm angelegt wird, klären Sie vier Punkte:
+Bevor das erste Programm angelegt wird, klären Sie diese Punkte:
 
 1. **Die heutige Tabelle.** Jede Formel darin als Regel aufschreiben.
 2. **Bonusrelevanter Umsatz.** Auftrag, Lieferung oder Rechnung, mit Retouren und Produktgruppen.
 3. **Transaktionen.** Welches System liefert sie, auf welcher Ebene und wie oft?
 4. **Abrechnung.** Wann kommen Freigaben und Rückstellungen ins ERP, abgestimmt mit dem Monatsabschluss?
 
-Rebate Management ersetzt die Tabelle, wenn die Regeln darin vorher sauber aufgeschrieben sind und das ERP weiter auszahlt.
+Die Formeln aus der heutigen Tabelle gehe ich mit Vertrieb und Finanzabteilung Zeile für Zeile durch. Eine Formel, die niemand erklären kann, kommt nicht ins erste Programm.

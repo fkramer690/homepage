@@ -11,8 +11,8 @@ tags: [Manufacturing Cloud, Rebate Management, Dealer Rebates, ERP, Manufacturin
 series: { id: manufacturing-cloud, part: 5 }
 takeaways:
   - "Rebate management calculates rebate programmes for dealers and customers in Salesforce: programme, members, tiers, payout periods and payout approval."
-  - "The calculation needs transactions in the Transaction Journal object. At manufacturers they usually come from invoices in the ERP, sometimes as dealer uploads through a portal."
-  - "Salesforce calculates and approves, the ERP pays. According to Salesforce, an integration pulls approved payouts and accruals into the ERP, where finance settles them."
+  - "The calculation needs transactions in the Transaction Journal. At manufacturers they usually come from invoices in the ERP."
+  - "Salesforce calculates and approves, the ERP pays. An integration pulls amounts and accruals into finance."
   - "Before go-live it has to be clear what counts as rebate-relevant revenue: order, delivery or invoice, with or without returns."
   - "Rebate management pays off with many dealers on tiered programmes. A simple annual bonus for a few customers often runs in the ERP as well."
 faq:
@@ -43,7 +43,7 @@ Until the calculation date, a member's status reads "Calculation in Progress", a
 
 ## Where do the transactions come from?
 
-The calculation is only as good as the revenue in the Transaction Journal. According to [Salesforce Help](https://help.salesforce.com/s/articleView?id=sf.admin_rebates_populate_transaction_data.htm&language=en_US&type=5) there are three routes:
+The calculation only uses the revenue that sits in the Transaction Journal. According to [Salesforce Help](https://help.salesforce.com/s/articleView?id=sf.admin_rebates_populate_transaction_data.htm&language=en_US&type=5) there are three routes:
 
 | Source | How it reaches the Transaction Journal | Fits when |
 |---|---|---|
@@ -65,9 +65,9 @@ No system answers this question. According to Help, programme managers decide wh
 
 Today these rules usually live in the spreadsheet someone in sales or finance calculates with. So the first step of an implementation is to read that spreadsheet and turn every formula in it into a rule.
 
-## What stays in the ERP?
+## The payout stays in the ERP
 
-The payout. According to Help, an integration pulls approved amounts and accruals into the ERP, and finance settles them there, by cheque, credit note or another method.
+According to Help, an integration pulls approved amounts and accruals into the ERP, and finance settles them there, by cheque, credit note or another method.
 
 This gives the architecture a clear split. **Salesforce leads** for programmes, members, tiers, the calculation and the approval, **the ERP leads** for invoices, credit notes, accruals and posting:
 
@@ -82,9 +82,9 @@ Approval --Amounts--> Payout
 
 Accruals deserve their own meeting with finance. Anyone accruing an annual rebate monthly needs a number every month. If it comes from Salesforce, it has to be in the ERP in time for month-end close. How I decide leading systems per type of data is described under [integration with ERP, middleware and telephony](../../services/salesforce-integration/).
 
-## What do dealers see?
+## Dealers can see their amounts in the portal
 
-Optionally, their amounts. According to Help, partners can see their payouts through Experience Cloud. For dealers who ask about their status by email today, that is the most visible benefit.
+That is optional. According to Help, partners can see their payouts through Experience Cloud. For dealers who ask about their status by email today, that is the most visible benefit.
 
 In the overview of portal licences I describe in [part 7: Manufacturing Cloud customer portal](../manufacturing-cloud-customer-portal/), Salesforce lists rebate claims under the Partner Community for Manufacturing licence. So if you want to show dealers their rebates in the portal, plan for partner licences, not the cheaper customer licence.
 
@@ -107,13 +107,13 @@ The rule from that applies here too: you buy a feature when it fits the business
 
 I would hold back with a simple annual bonus for a few customers. Many ERP systems can settle that through pricing conditions, without a second logic in Salesforce. Rebates reward volume; price claims from distributors are a different process, see [ship and debit](../ship-and-debit-price-protection-distributors/). Whether Manufacturing Cloud pays off as a whole is covered in [part 1 of this series](../salesforce-manufacturing-cloud-is-it-worth-it/).
 
-## Where should you start?
+## First step: write down every formula in the current spreadsheet
 
-Before the first programme is created, settle four points:
+Before the first programme is created, settle these points:
 
 1. **Today's spreadsheet.** Write down every formula in it as a rule.
 2. **Rebate-relevant revenue.** Order, delivery or invoice, with returns and product groups.
 3. **Transactions.** Which system delivers them, at which level and how often?
 4. **Settlement.** When do approvals and accruals reach the ERP, aligned with month-end close?
 
-Rebate management replaces the spreadsheet when its rules are written down cleanly first and the ERP keeps paying out.
+I go through the formulas in the current spreadsheet line by line with sales and finance. A formula nobody can explain does not go into the first programme.

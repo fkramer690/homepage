@@ -10,9 +10,8 @@ categories: [manufacturing-cloud]
 tags: [manufacturing cloud, make-or-buy, licences, architecture, manufacturing]
 series: { id: manufacturing-cloud, part: 1 }
 takeaways:
-  - "Manufacturing Cloud is worth it when a manufacturer runs long-term agreements with planned quantities over months or years and wants to see plan against actuals in Salesforce."
-  - "At list price, Manufacturing Cloud Sales Core costs $275 per user and month and Sales Cloud Core $195. For 200 sales users that is $192,000 extra per year."
-  - "Sales agreements are the core sales feature. If the business does not sell through long-term volume agreements, the main reason for the licence is gone."
+  - "Sales Core lists at $275 per user and month, Sales Cloud Core at $195. For 200 users that is $192,000 extra per year."
+  - "If a manufacturer does not sell through long-term volume agreements, the main reason for the licence is gone."
   - "Rebate management, warranty processes and dealer portals can carry the case even when sales agreements play no role."
   - "The decision belongs in a multi-year ROI case that compares licences, implementation and the maintenance of a custom build."
 faq:
@@ -78,7 +77,7 @@ I took one rule from that: an industry cloud is bought for its features, not for
 
 There is a second situation where I am careful. If framework contracts and call-offs already live cleanly in the ERP, the question is whether Salesforce should own them at all. Two systems that both maintain quantities and prices will disagree sooner or later. Then it can be enough for Salesforce to show the numbers from the ERP, and that needs no industry cloud.
 
-## When does it pay off?
+## In the global rollout, sales agreements carried the case
 
 I have also seen the other side: a global Manufacturing Cloud rollout at a global manufacturer, together with CPQ, a product configurator and a customer portal. The main reason for Manufacturing Cloud there was sales agreements. Sales needed to see which customers had not yet taken the agreed quantities, and to plan how the open volumes could still be realised, taking current warehouse capacity into account. That is exactly the question the plan versus actuals view in a sales agreement is built for, and according to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/manufacturing-cloud-admin-essentials/configure-sales-agreements-to-negotiate-better) a figure like inventory level can be carried along as its own metric per period. What became of CPQ and how Revenue Cloud fits next to Manufacturing Cloud is covered in [chapter 1 of the Revenue Cloud masterclass](../../masterclass/revenue-cloud/revenue-cloud-overview/).
 
@@ -91,9 +90,9 @@ In my experience Manufacturing Cloud pays off when at least one of these points 
 
 If none of these applies, I stay with Sales Cloud and Service Cloud and build what is missing.
 
-## How do I decide between an industry cloud and a custom build?
+## Industry cloud or custom build is a make-or-buy over years
 
-The decision is a make-or-buy over several years. The price in year one is the least interesting number. For both options I calculate:
+The price in year one is the least interesting number. For both options I calculate:
 
 1. **Licences per user group**, including expected growth. Not every user works with sales agreements. Someone who only handles cases or reads data may need a different licence. Get it confirmed in writing whether a mixed set works in your org.
 2. **Implementation** by internal teams and partners. An industry cloud also has to be configured, integrated and tested.
@@ -102,12 +101,10 @@ The decision is a make-or-buy over several years. The price in year one is the l
 
 The comparison often tips on point 3. A lean custom build for a plan versus actuals view is manageable. Add renewals, approvals, forecasts and dealer access, and it grows into a product someone has to maintain for years. How I calculate such cases is described under [make-or-buy and licence forecasts](../../services/make-or-buy-licences/).
 
-One more point: anyone buying Manufacturing Cloud for the agents should check the data first. An agent that assesses warranty claims is only as good as the asset and contract data behind it, as I explain in [Agentforce: business value and data quality first](../agentforce-business-value-data-quality-first/).
+One more point: anyone buying Manufacturing Cloud for the agents should check the data first. An agent that assesses warranty claims can only check against the asset and contract data behind it, as I explain in [Agentforce: business value and data quality first](../agentforce-business-value-data-quality-first/).
 
-## Where should you start?
+## First step: ask your sales and service teams
 
-Before a quote is on the table, three questions to your own sales and service teams help: what share of revenue runs through volume agreements? How are dealer bonuses calculated today? Who checks warranty claims, and how long does it take? The answers show faster than any demo whether Manufacturing Cloud fits your business.
+Before a quote is on the table, three questions to your own sales and service teams help: what share of revenue runs through volume agreements? How are dealer bonuses calculated today? Who checks warranty claims, and how long does it take? The answers show sooner than a demo whether Manufacturing Cloud fits your business.
 
 After that, the question belongs in your [Salesforce architecture](../../services/salesforce-architecture/), with an entry in the decision log so the reasons stay traceable after a partner change. The full picture of features, add-ons and licences is in [chapter 1 of the Manufacturing Cloud masterclass](../../masterclass/manufacturing-cloud/scope-and-business-case/).
-
-Manufacturing Cloud is worth it when its core features match your business, not because you are a manufacturer.

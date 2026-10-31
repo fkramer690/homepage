@@ -10,9 +10,8 @@ categories: [manufacturing-cloud]
 tags: [Manufacturing Cloud, Sales Agreements, ERP, Integration, Manufacturing]
 series: { id: manufacturing-cloud, part: 3 }
 takeaways:
-  - "A sales agreement only shows which customers are behind on their committed volume when actual quantities arrive reliably from the ERP per customer, product and period."
-  - "The Actuals Calculation Mode setting decides how actuals are calculated. Every sales agreement takes it over when it is created, and a later change only applies to new agreements."
-  - "The level in the account hierarchy where a sales agreement sits decides how meaningful it is. For international customers with many entities, that is a separate decision every time."
+  - "Every sales agreement takes over the Actuals Calculation Mode when it is created. A later change only applies to new agreements."
+  - "For international customers with many entities, the account level of the sales agreement is a separate decision every time."
   - "Inventory belongs next to the shortfall as a metric. Only both together show which open volumes can realistically still be delivered."
   - "Salesforce shows the gap. How it is closed is negotiated between people, depending on the season and the size of the shortfall."
 faq:
@@ -35,7 +34,7 @@ What a sales agreement is and when Manufacturing Cloud pays off for it, I cover 
 
 Day to day, sales asks a simple question: who is behind on their commitment? A customer has committed to a volume for the year, split into months or quarters. For each period and product, the sales agreement shows planned quantity, actual quantity and forecast side by side. The gap is the number account managers work with.
 
-That number is only as good as the actuals behind it. Sales maintains planned quantities when the deal is signed. At manufacturers, actuals are almost always created elsewhere, in the ERP, where orders are entered, confirmed and shipped. So the question about committed volume is first a question about the integration.
+That number depends on the actuals behind it. Sales maintains planned quantities when the deal is signed. At manufacturers, actuals are almost always created elsewhere, in the ERP, where orders are entered, confirmed and shipped. So the question about committed volume is first a question about the integration.
 
 ## Where do actuals come from when orders live in the ERP?
 
@@ -81,13 +80,13 @@ Which one fits depends on what else Salesforce needs to know about orders. The b
 At a global manufacturer I worked on a worldwide Manufacturing Cloud rollout. The main reason for the licence was sales agreements. Sales needed to see which customers had not yet taken their agreed volume, and to plan how the open volume could still be realised. Both orders and inventory levels came from the ERP.
 ```
 
-Three things turned out to be harder than the feature suggests.
+Altitude, inventory and the negotiation turned out to be harder than the feature suggests.
 
-First, the altitude. A sales agreement belongs to one account. For an international customer with a large account hierarchy, meaning group, national subsidiaries and plants, the question is which level the commitment applies to. That is not always easy and depends on the customer. More on this in the next section.
+Altitude first. A sales agreement belongs to one account. For an international customer with a large account hierarchy, meaning group, national subsidiaries and plants, the question is which level the commitment applies to. That is not always easy and depends on the customer. More on this in the next section.
 
-Second, inventory. A gap on its own does not say what to do. Whether a shortfall is a problem depends on whether the goods are sitting in the warehouse and need the space, or whether they are scarce anyway.
+Then inventory. A gap on its own does not say what to do. Whether a shortfall is a problem depends on whether the goods are sitting in the warehouse and need the space, or whether they are scarce anyway.
 
-Third, the negotiation. How open volume gets realised is negotiated between people, individually for each customer. It depends on the season and on how large the gap is. Salesforce provides the basis for that conversation and does not replace it.
+And finally the negotiation. How open volume gets realised is negotiated between people, individually for each customer. It depends on the season and on how large the gap is. Salesforce provides the basis for that conversation and does not replace it.
 
 ## Which level of the account hierarchy should a sales agreement sit on?
 
@@ -101,7 +100,7 @@ The second situation is often decided by the customer number in the ERP. If it h
 
 So I settle the level per customer, not once for everyone. For the large customers with framework agreements that is a list of manageable length, and every line on it saves an argument about wrong numbers later.
 
-## Why does inventory belong next to the shortfall?
+## Inventory belongs next to the shortfall
 
 A list of customers behind on volume is a good start. Sales can only act once it knows whether the open volume can be delivered and whether it is filling up the warehouse.
 
@@ -114,19 +113,19 @@ Two examples of how the same gap reads differently:
 
 Then there is the season. A shortfall in the first quarter can be normal in a seasonal business and even out by summer. A good view therefore shows gap, inventory and period together, so nobody calls a customer in February who would order in June anyway.
 
-## What stays with people?
+## The negotiation stays with people
 
-The negotiation. Salesforce can sort customers by shortfall, put inventory and season next to it and create a task for the account manager. Whether a customer gets a price concession, pulls an order forward or has the commitment adjusted next year is decided by people who know the customer.
+Salesforce can sort customers by shortfall, put inventory and season next to it and create a task for the account manager. Whether a customer gets a price concession, pulls an order forward or has the commitment adjusted next year is decided by people who know the customer.
 
 I would not want to automate that step either. The reasons for a shortfall range from a weak season at the customer to a competitor who is cheaper right now, and no metric in the system knows them. If you want to put agents on this kind of data, check data quality first, as I describe in [Agentforce: business value and data quality first](../agentforce-business-value-data-quality-first/).
 
-## Where should you start?
+## First step: decide the mode for actuals
 
-Before the first sales agreement goes live, settle four points:
+Before the first sales agreement goes live, settle these points:
 
 1. **Mode for actuals.** Orders in Salesforce or totals through the API, decided before the first agreement.
 2. **Level per customer.** For every large customer with a framework agreement: which account holds the commitment, and which sold-to parties in the ERP belong to it?
 3. **Inventory as a metric.** Which system provides it, how often and at what level?
 4. **The view for sales.** Which list does an account manager see on Monday morning, and what do they do with it?
 
-A sales agreement shows the gap between commitment and offtake as well as the integration and the account hierarchy allow.
+I decide the mode with the ERP team before the first agreement is created, because a later change only applies to new agreements. Then I build the Monday morning list with two account managers.
