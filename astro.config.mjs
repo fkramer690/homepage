@@ -5,6 +5,7 @@ import { satteri } from '@astrojs/markdown-satteri';
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { externalLinks } from './src/lib/external-links.mjs';
 import { contentBlocks } from './src/lib/content-blocks-plugin.mjs';
+import { explicitEmptyAlt } from './src/lib/explicit-empty-alt.mjs';
 
 // The site runs on the custom domain https://www.fk-sd.de (see public/CNAME).
 const site = process.env.SITE_URL ?? 'https://www.fk-sd.de';
@@ -110,6 +111,7 @@ export default defineConfig({
     processor: satteri({ mdastPlugins: [contentBlocks({ site })], hastPlugins: [externalLinks({ site })] }),
   },
   integrations: [
+    explicitEmptyAlt(),
     sitemap({
       // Legal pages are noindex, so keep them out of the sitemap, as well as
       // the redirect pages.
