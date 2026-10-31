@@ -9,10 +9,10 @@ topic: ai
 categories: [ai]
 tags: [Agentforce, Kennzahlen, Agent Analytics, Digital Wallet, Händlerservice, Maschinenbau]
 takeaways:
-  - "Fünf Zahlen entscheiden 90 Tage nach Go-live: Eskalationsquote, Task-Resolution-Quote, Kosten pro gelöster Anfrage, Bearbeitungszeit eskalierter Anfragen und der Anteil außerhalb der Servicezeiten."
-  - "Agent Analytics in Agentforce Studio liefert Eskalations-, Deflection- und Task-Resolution-Quote; Salesforce schreibt selbst, dass Eskalations- und Deflection-Quoten nur Ersatzsignale messen."
-  - "Die Kosten pro gelöster Anfrage verbinden die Credits des Agenten aus Digital Wallet mit Ihren eigenen Betriebskosten; im Szenario sind es 3,06 € gegenüber 6 € für eine Servicekraft."
-  - "Vereinbaren Sie die Abschaltregel vor dem Go-live mit der Serviceleitung und wenden Sie sie pro Subagent an: Im Szenario kostet der Ersatzteil-Subagent 9,12 € pro Lösung und wird abgeschaltet."
+  - "Es zählen Eskalationsquote, Task-Resolution-Quote, Kosten pro Lösung, Bearbeitungszeit eskalierter Fälle und der Anteil außerhalb der Servicezeiten."
+  - "Agent Analytics liefert Eskalations-, Deflection- und Task-Resolution-Quote. Eskalation und Deflection sind laut Salesforce selbst nur Ersatzsignale."
+  - "Die Kosten pro Lösung verbinden die Credits aus Digital Wallet mit Ihren Betriebskosten, im Rechenbeispiel 3,06 € gegenüber 6 € für eine Servicekraft."
+  - "Die Abschaltregel steht vor dem Go-live und gilt pro Subagent. Im Rechenbeispiel kostet der Ersatzteil-Subagent 9,12 € pro Lösung und wird abgeschaltet."
 faq:
   - q: "Wo finde ich die Kennzahlen eines Agentforce-Agenten?"
     a: "Eskalations-, Deflection-, Abbruch- und Task-Resolution-Quote stehen in Agent Analytics in Agentforce Studio unter Observe & Optimize. Die Credits pro Agent liefert Digital Wallet, die Bearbeitungszeit nach der Übergabe kommt aus Service Cloud."
@@ -43,13 +43,13 @@ Für einen Händleragenten im Maschinenbau nutze ich fünf Kennzahlen:
 | Bearbeitungszeit eskalierter Anfragen | Minuten, die eine Servicekraft nach der Übergabe braucht | Service Cloud, Omni-Channel |
 | Anteil außerhalb der Servicezeiten | Gelöste Anfragen, die eingingen, während der Innendienst geschlossen war | Startzeit der Sitzung gegen Servicezeiten |
 
-## Woher kommt welche Zahl?
+## Woher die Zahlen kommen
 
 **Agent Analytics.** Sie finden es in Agentforce Studio unter Observe & Optimize. Das [Trailhead-Modul zu Agent Analytics](https://trailhead.salesforce.com/content/learn/modules/agent-analytics-and-monitoring/monitor-agent-metrics-and-scores) definiert die Eskalationsquote als Anteil der Sitzungen, die an einen Supportmitarbeitenden oder einen anderen Agenten eskaliert wurden, und die Deflection-Quote als Anteil, der ohne Eskalation endete. Als Abbruch zählen Sitzungen, die nach standardmäßig zwei Stunden ablaufen. Die Task-Resolution-Quote ist der Anteil, den der Task-Resolution-Detektor im Trust Layer als vollständig gelöst bewertet. Qualitätswerte wie Answer Faithfulness setzen Audit and Feedback im Setup voraus. Performance Insights zerlegt jede Kennzahl nach Subagent, Intent oder Aktion, und genau dort fällt die Abschaltentscheidung.
 
 Das Lesen kostet keine Credits: Laut dem [Observability-Beitrag von Juli 2026](https://www.salesforce.com/blog/agentforce-observability/) ist Agentforce Observability „now unmetered for every customer across all Agentforce SKUs“.
 
-**Digital Wallet.** [Digital Wallet](https://www.salesforce.com/agentforce/digital-wallet/) schlüsselt den Verbrauch bis auf Agent, Aktion und Kanal auf und unterstützt eigene Tags. Voraussetzung ist Data 360. Die Credits eines Agenten geteilt durch seine gelösten Sitzungen ergeben den Verbrauchsanteil der Kosten pro gelöster Anfrage. Wissenspflege, Regressionstests und Partnertage stehen in Ihrer eigenen Kostenrechnung, und im Szenario unten sind sie der größere Teil.
+**Digital Wallet.** [Digital Wallet](https://www.salesforce.com/agentforce/digital-wallet/) schlüsselt den Verbrauch bis auf Agent, Aktion und Kanal auf und unterstützt eigene Tags. Voraussetzung ist Data 360. Die Credits eines Agenten geteilt durch seine gelösten Sitzungen ergeben den Verbrauchsanteil der Kosten pro gelöster Anfrage. Wissenspflege, Regressionstests und Partnertage stehen in Ihrer eigenen Kostenrechnung, und im Rechenbeispiel unten sind sie der größere Teil.
 
 **Service Cloud.** Eskalationen, die über Omni-Channel geroutet werden, werden zu AgentWork-Datensätzen, laut Salesforce eine [Arbeitszuweisung an einen Agenten](https://developer.salesforce.com/docs/atlas.en-us.260.0.object_reference.meta/object_reference/sforce_api_objects_agentwork.htm), hier also an die Servicekraft. Werten Sie die Bearbeitungszeit nach der Übergabe gegen die Ausgangswerte vor dem Go-live aus. Eine saubere Zusammenfassung durch den Agenten senkt sie; Händler, die nach drei erfolglosen Versuchen verärgert ankommen, treiben sie hoch.
 
@@ -69,7 +69,7 @@ Die Abrechnung bringt eine dritte Definition. Bei der Abrechnung pro Lösung fü
 
 Ich zähle eine Anfrage deshalb nur als gelöst, wenn der Task-Resolution-Detektor das sagt, und eine erfahrene Servicekraft liest 50 Sitzungen im Monat. Findet die Stichprobe falsche Antworten in Sitzungen, die als gelöst markiert sind, ist die Kennzahl zu optimistisch, und diese Lücke gehört in den Bericht.
 
-## Ein typisches Szenario: ein Händleragent nach 90 Tagen
+## Rechenbeispiel: ein Händleragent nach 90 Tagen
 
 Nehmen wir einen Maschinenbauer mit 350 Händlern in 30 Ländern, SAP als ERP und einem Agenten im Händlerportal mit zwei Subagenten: Auftragsstatus und Ersatzteilverfügbarkeit. Alle Zahlen sind Annahmen, um die Methode zu zeigen; nur die Credit-Faktoren und der Listenpreis stammen von Salesforce.
 
@@ -87,7 +87,7 @@ Nehmen wir einen Maschinenbauer mit 350 Händlern in 30 Ländern, SAP als ERP un
 3,06 € | pro gelöster Anfrage, ganzer Agent
 6 € | pro Anfrage bei einer Servicekraft vor dem Go-live
 9,12 € | pro gelöster Anfrage, Ersatzteil-Subagent
-quelle: Szenario mit angenommenen Werten; Credit-Faktoren laut Flex Credits Rate Card vom 31. August 2026, Listenpreis laut Salesforce
+quelle: Rechenbeispiel mit angenommenen Werten; Credit-Faktoren laut Flex Credits Rate Card vom 31. August 2026, Listenpreis laut Salesforce
 ```
 
 Die Entscheidung an Tag 90: Der Auftragsstatus bleibt und geht an die nächste Händlergruppe. Ersatzteile kommen aus dem Agenten heraus und gehen über ein strukturiertes Portalformular an die Ersatzteilabteilung, bis die Bestände der Regionallager in Salesforce ankommen. Wie ein Agent das richtige Teil findet, behandle ich in [Ersatzteile per Seriennummer](../ersatzteile-seriennummer-ki-agent/).
@@ -103,7 +103,7 @@ Gartner [erwartet](https://www.gartner.com/en/newsroom/press-releases/2025-06-25
 
 Die 40 Prozent sind meine Startwerte, keine Vorgaben von Salesforce. Abschalten muss nicht Aufhören heißen: Sie können den Agenten auf einen Subagenten verkleinern, ihn nur außerhalb der Servicezeiten laufen lassen oder korrigieren und neu testen. Für die letzte Option ordnet der Agent Optimizer wiederkehrende Fehlermuster aus Produktivsitzungen nach Auswirkung. Salesforce nennt ihn im [Beitrag vom September 2026](https://www.salesforce.com/blog/agent-optimizer/) als Beta verfügbar, die Dreamforce-Liste kündigt GA für Oktober an. A/B Experimentation lässt eine Korrektur auf geteiltem Verkehr gegen die aktuelle Version antreten und ist als Beta für Oktober angekündigt; prüfen Sie den Status in Ihrer Org.
 
-## Wie bereiten Sie die 90-Tage-Prüfung vor dem Go-live vor?
+## Erster Schritt: drei Monate Ausgangswerte messen
 
 1. **Ausgangswerte messen**, drei Monate lang: Händleranfragen nach Art, Bearbeitungszeit, Eingangszeit nach Land.
 2. **Audit and Feedback einschalten**, damit Qualitäts- und Vertrauenswerte ab dem ersten Tag vorliegen.
@@ -113,5 +113,3 @@ Die 40 Prozent sind meine Startwerte, keine Vorgaben von Salesforce. Abschalten 
 6. **Prüftermine festlegen**: Tag 30, Tag 60, Entscheidung an Tag 90.
 
 Die Kennzahlen brauchen einen Business Case aus der Zeit vor dem Go-live, deshalb stelle ich [Business Value und Datenqualität an den Anfang](../agentforce-business-value-datenqualitaet/). Welche Agenten ihre Kosten wert sind, kläre ich im Rahmen von [Make-or-Buy und Lizenzplanung](../../leistungen/make-or-buy-lizenzen/).
-
-Ein Agent lohnt sich, wenn seine Kosten pro gelöster Anfrage unter denen Ihres Innendienstes bleiben und die eskalierten Fälle nicht schwieriger werden.

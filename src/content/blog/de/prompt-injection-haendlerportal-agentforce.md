@@ -9,10 +9,10 @@ topic: security
 categories: [ai]
 tags: [Agentforce, Prompt Injection, Sicherheit, Händlerportal, Experience Cloud, Maschinenbau]
 takeaways:
-  - "Jedes Feld, das Händler, Kunden oder Websitebesucher beschreiben können, von der Fehlerbeschreibung im Garantieantrag bis zu Web-to-Lead und Email-to-Case, ist Text, den ein Agentforce-Agent liest und befolgen kann."
-  - "ForcedLeak (CVSS 9,4, gemeldet im Juli 2025) brachte Agentforce dazu, Lead-Daten an eine abgelaufene Allowlist-Domain zu senden; seit 8. September 2025 erzwingt Salesforce Trusted URLs für Agenten."
-  - "Prompt-Filter und Eingabeprüfung helfen, arbeiten aber mit Wahrscheinlichkeiten; planen Sie so, als würden sie etwas übersehen, und sorgen Sie dafür, dass eine erfolgreiche Injection wenig Schaden anrichtet."
-  - "Brechen Sie die Lethal Trifecta bei jedem Agenten, der fremden Text liest: enge Leserechte für den Running User, keine ausgehenden Aktionen oder verwaisten Trusted URLs, Entscheidungen in deterministischer Logik."
+  - "Jedes Feld, das Externe beschreiben können, von der Fehlerbeschreibung im Garantieantrag bis zu Email-to-Case, ist Text, den ein Agent befolgen kann."
+  - "ForcedLeak (CVSS 9,4) brachte Agentforce dazu, Lead-Daten an eine abgelaufene Allowlist-Domain zu senden. Seit 8. September 2025 gelten Trusted URLs."
+  - "Prompt-Filter arbeiten mit Wahrscheinlichkeiten. Planen Sie so, als würden sie etwas übersehen, und begrenzen Sie den Schaden einer Injection."
+  - "Brechen Sie die Lethal Trifecta: enge Leserechte für den Running User, kein Weg nach draußen und Entscheidungen in deterministischer Logik."
 faq:
   - q: "Was ist Prompt Injection bei Agentforce?"
     a: "Prompt Injection heißt, dass Text, den ein Angreifer kontrolliert, in den Kontext des Agenten gelangt und als Anweisung behandelt wird. Bei der indirekten Variante steht der Text in einem Datensatz, etwa einer Lead-Beschreibung oder einem Garantieantrag, und wirkt, sobald jemand intern den Agenten zu diesem Datensatz fragt."
@@ -51,7 +51,7 @@ Salesforce hat die Meldung am 31. Juli bestätigt und erzwingt laut [SalesforceB
 
 Zwei Punkte sind mir wichtiger als der Patch. Noma schreibt, dem Modell habe die Fähigkeit gefehlt („lacked the ability to distinguish“), zwischen Daten in seinem Kontext und Anweisungen aus vertrauenswürdigen Quellen zu unterscheiden. Das gilt für jedes Sprachmodell. Und ein Sprecher von Salesforce nannte Prompt Injection gegenüber [SalesforceBen](https://www.salesforceben.com/agentforce-web-to-lead-vulnerability-exposed-could-you-be-impacted/) „a complex and evolving area“. Der konkrete Ausgang ist zu. Das Muster bleibt.
 
-## Warum sind Händlerportal und Servicepostfach Einfallstore?
+## Händlerportal und Servicepostfach sind Einfallstore
 
 Simon Willison hat das Muster im Juni 2025 [Lethal Trifecta](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/) genannt: Ein Agent mit Zugriff auf private Daten, Kontakt zu nicht vertrauenswürdigen Inhalten und der Möglichkeit, nach außen zu kommunizieren, lässt sich dazu bringen, diese Daten abfließen zu lassen. Nicht vertrauenswürdig ist für ihn jeder Weg, auf dem Text oder Bilder eines Angreifers beim Sprachmodell ankommen können. ForcedLeak nannte er einen [klassischen Fall](https://simonwillison.net/2025/Sep/26/agentforce/) davon. In einer Org eines Herstellers kommt solcher Text durch mehr Türen als Web-to-Lead:
 
@@ -86,7 +86,7 @@ Ziel ist, dass eine erfolgreiche Injection wenig anrichtet. Brechen Sie bei jede
 5. **Lesen und Handeln trennen.** Ein Paper zu Entwurfsmustern, das Willison [zusammengefasst](https://simonwillison.net/2025/Jun/13/prompt-injection-design-patterns/) hat, bringt das Prinzip auf eine Zeile: Hat ein Agent nicht vertrauenswürdige Eingaben gelesen, muss er eingeschränkt werden. In Salesforce heißt das für mich: ein Zusammenfassungsschritt ohne Aktionen, dessen Ergebnis ein Mensch oder ein deterministischer Schritt weiterverwendet.
 6. **Testen und zurückschauen.** Nehmen Sie Schutzfälle mit versteckten Anweisungen in das Testset des Agenten auf, wie in [Agentforce-Agenten testen und freigeben](../agentforce-agenten-testen-freigeben/), und durchsuchen Sie bestehende Datensätze nach ungewöhnlichen Anweisungen in den externen Feldern, wie Noma es nach ForcedLeak empfohlen hat.
 
-## Ein typisches Szenario: Garantieanträge von 120 Händlern
+## Beispiel: Garantieanträge von 120 Händlern
 
 Nehmen wir einen Hersteller von Verpackungsmaschinen mit 120 Händlern, SAP als ERP und Manufacturing Cloud mit Händlerportal. Alle Zahlen sind Annahmen, die das Vorgehen zeigen sollen. Die Händler reichen rund 300 Garantieanträge im Monat ein, jeder mit freier Fehlerbeschreibung. Geplant ist ein interner Agent, der dem Garantieteam jeden Morgen die neuen Anträge zusammenfasst.
 
@@ -96,7 +96,7 @@ Die Änderungen sind unspektakulär. Der Running User darf nur noch Anträge, As
 
 Danach kann eine versteckte Anweisung in einer Fehlerbeschreibung noch eine Zusammenfassung verfälschen. Sie kommt aber an keine Daten außerhalb dieses Antrags und hat keinen Weg nach draußen. Das Restrisiko ist eine irreführende Zusammenfassung, und die fällt auf, weil Anträge über einem vereinbarten Betrag immer vollständig gelesen werden. Nach meiner Einschätzung ist dieses Restrisiko vertretbar. Ein Agent mit breiten Leserechten und einer E-Mail-Aktion ist es nicht.
 
-## Wo sollten Sie anfangen?
+## Erster Schritt: ein halber Tag mit Administration und Serviceleitung
 
 Für einen ersten Durchgang würde ich mich einen halben Tag mit der Salesforce-Administration und der Serviceleitung zusammensetzen und fünf Fragen beantworten:
 
@@ -107,5 +107,3 @@ Für einen ersten Durchgang würde ich mich einen halben Tag mit der Salesforce-
 5. Welche Entscheidungen trifft das Modell, die eine Regel treffen sollte?
 
 Dieselben Fragen gelten für externe KI-Werkzeuge, die Salesforce-Daten über MCP lesen, denn für die Lethal Trifecta spielt es keine Rolle, welcher Client das Feld liest. Das behandle ich in [Hosted MCP Server und Datenzugriff](../salesforce-hosted-mcp-server-datenzugriff/), die OAuth-Seite in [Connected Apps und KI-Integrationen](../connected-apps-oauth-ki-integrationen/). Datenflüsse und Berechtigungen so aufzunehmen, gehört zu meiner Arbeit in der [Salesforce-Architektur](../../leistungen/salesforce-architektur/).
-
-Ein Agent, der Text von Händlern oder aus dem Web liest, braucht enge Leserechte und keinen Weg nach draußen, und mit beidem wird Prompt Injection vom Datenleck zum Qualitätsthema.

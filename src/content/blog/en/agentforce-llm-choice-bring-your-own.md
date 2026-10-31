@@ -9,11 +9,11 @@ topic: ai
 categories: [ai, architecture]
 tags: [agentforce, llm, byollm, model choice, architecture, manufacturing]
 takeaways:
-  - "Agentforce runs on Salesforce Default unless you choose otherwise; the Supported Models page describes it as a managed mix that currently includes GPT-4o."
-  - "Agent Script can pin a model per agent, per subagent and for the router, and Salesforce names GPT 4.1, Claude Haiku 4.5 and Gemini 3.5 Flash as thoroughly tested with agents."
-  - "The model tier is a price lever: a prompt of up to 2,000 tokens costs 2 Flex Credits on Basic, 4 on Standard, 16 on Advanced and 2 on your own model, plus your provider's bill."
-  - "Salesforce documents bring your own LLM for prompt templates, the Models API and custom actions, and its privacy FAQ treats such a model as a non-Salesforce application under your own contract."
-  - "The managed model list lags vendor releases: Anthropic lists Claude Opus 5.5 and Sonnet 5.5, while Salesforce's list ends at Sonnet 5 and Opus 4.8."
+  - "Unless you choose otherwise, Agentforce runs on Salesforce Default, a managed model mix that currently includes GPT-4o."
+  - "Agent Script pins a model per agent, subagent and router; Salesforce names GPT 4.1, Claude Haiku 4.5 and Gemini 3.5 Flash as tested with agents."
+  - "A prompt of up to 2,000 tokens costs 2 Flex Credits on Basic, 4 on Standard, 16 on Advanced and 2 on your own model, plus your provider's bill."
+  - "Salesforce's privacy FAQ treats a model connected through BYOLLM as a non-Salesforce application under your own contract."
+  - "Anthropic lists Claude Opus 5.5 and Sonnet 5.5, while Salesforce's managed model list ends at Sonnet 5 and Opus 4.8."
 faq:
   - q: "Which LLM does Agentforce use by default?"
     a: "The default option is Salesforce Default, which the Supported Models page describes as a managed mix of trusted models that currently includes GPT-4o. Salesforce decides what is in the mix, so pin a model if you need a fixed one."
@@ -42,7 +42,7 @@ Anthropic and Amazon models run on Bedrock "entirely within the Salesforce Trust
 
 The [Claudeforce press release of 27 August 2026](https://www.salesforce.com/ap/news/press-releases/2026/08/27/sg-salesforce-and-anthropic-announce-claudeforce-the-1-ai-meets-the-1-ai-crm/) names Claude as "a reasoning model for the Atlas Reasoning Engine" and "available in Agent Builder". It does not call Claude the default for agents, and the developer documentation still names GPT-4o in the default mix. Salesforce's own CRM reasoning model Koa is, according to the [announcement of 15 September 2026](https://investor.salesforce.com/news/news-details/2026/Announcing-Koa-Salesforces-First-CRM-Reasoning-Model-Built-on-NVIDIA-Nemotron/default.aspx), in pilot, with general availability "expected Winter 2026 in U.S. regions". For a German machine builder planning now, Koa is not yet an option.
 
-## How do you pin a model per agent or subagent?
+## Pin the model per agent and subagent
 
 According to the [model configuration guide](https://developer.salesforce.com/docs/ai/agentforce/guide/ascript-model.html), every agent uses the org default unless Agent Script sets `model_config`: for the whole agent, inside a single subagent, or on the agent router that picks the subagent. A subagent model overrides the agent model.
 
@@ -80,7 +80,7 @@ Whether a BYOLLM model may also run the agent's reasoning is something to get Sa
 
 **What it saves.** Starter prompts cost 2 credits instead of 4 on Standard, and the Supported Models page speaks of "30% fewer Einstein Requests". Your provider bills the tokens on top.
 
-## Why does the model list lag behind?
+## The model list lags behind the vendors
 
 Anthropic's [model overview](https://platform.claude.com/docs/en/about-claude/models/overview) lists Claude Opus 5.5, Sonnet 5.5 and Haiku 5.5 as current models; Salesforce's managed list ends at Sonnet 5 and Opus 4.8. Even Salesforce's own pages differ: the help page lists Gemini 3.7 and 3.8 Flash, the developer page stops at 3.6 Flash. I assume a new frontier model reaches Agentforce weeks to months after release and never build a business case on a model that is not on the list.
 
@@ -88,7 +88,7 @@ Models also leave. After its shutdown date a deprecated model is rerouted to a r
 
 Region is the third check. Managed models "eventually re-route to a US region" when a request fails in the designated region, unless an admin turns on "Enable In-Region Model Requests Only", which covers "some models". The help page lists `eu` inference profiles for Claude Sonnet 5 and Opus 4.8, and only the United States for GPT 5.6 Terra. More in [Agentforce EU data residency](../agentforce-eu-data-residency-models/).
 
-## A typical scenario: a service agent with an Azure OpenAI contract
+## Worked example: a service agent with an Azure OpenAI contract
 
 Assume a machine builder with Service Cloud, Field Service, a dealer portal and SAP. Corporate IT has an Azure OpenAI contract and asks why Agentforce should not use it. All numbers are assumptions.
 
@@ -107,7 +107,7 @@ A prompt template also writes a case summary for the field service technician: 3
 
 BYOLLM saves at most $90 a month, about $1,080 a year, before the Azure token bill. That alone does not justify a second contract path; the model tier moves four times as much. Here I would recommend managed models for the agent, BYOLLM only if the Azure agreement is IT's approved data path for service data, and Opus for troubleshooting only if the test shows a clear gap.
 
-## How should you decide on the model?
+## First step: pin the model per subagent
 
 1. **Pin the model** per agent and subagent in Agent Script.
 2. **Start with a tested model** in the lowest tier that passes; upgrade a subagent only with test evidence.
@@ -116,6 +116,4 @@ BYOLLM saves at most $90 a month, about $1,080 a year, before the Azure token bi
 5. **Check the model page and release notes regularly** and rerun the tests after every reroute.
 6. **Measure in Digital Wallet** whether reasoning calls show up as prompts.
 
-I treat these decisions as [Salesforce architecture](../../services/salesforce-architecture/) work, next to data model and permissions.
-
-The model choice in Agentforce has cost, contract and test consequences, so make it per subagent and write it down.
+I treat these decisions as [Salesforce architecture](../../services/salesforce-architecture/) work, next to data model and permissions. For each subagent I write down model, tier, region and test result, because every change touches cost, contracts and tests.

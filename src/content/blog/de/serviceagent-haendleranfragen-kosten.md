@@ -9,22 +9,21 @@ topic: ai
 categories: [ai]
 tags: [Agentforce, Flex Credits, Händlerservice, Data 360, Maschinenbau, Business Case]
 takeaways:
-  - "Im Szenario kosten 3.000 Händlergespräche im Monat mit je drei Aktionen und zwei Prompts 204.000 Flex Credits, in Produktion also rund 1.020 € im Monat."
-  - "Dasselbe Volumen kostet im Modell mit 2 € pro Gespräch 6.000 € im Monat, und Salesforce unterstützt Flex Credits und Gesprächspreise nicht in derselben Org."
-  - "2.000 MB Ersatzteilkataloge in Data 360 aufzubereiten kostet einmalig 300.000 Credits; derselbe Katalog in der Sandbox kostet 240.000 Credits, testen Sie also mit einem Ausschnitt."
-  - "Bei Help-Agent-Lösungen zu 400 Credits sind Flex Credits im Szenario günstiger, sobald mehr als 17 Prozent der Gespräche gelöst werden."
-  - "Das erste Jahr braucht im Szenario rund 3 Mio. Credits, mehr als die 2,75 Mio. einer Max-Edition, und nicht genutzte Credits verfallen zum Ende der Bestellung."
+  - "Mit 2 € pro Gespräch kostet dasselbe Volumen 6.000 € im Monat, und Flex Credits und Gesprächspreise gehen nicht in derselben Org."
+  - "2.000 MB Ersatzteilkataloge aufzubereiten kostet einmalig 300.000 Credits, in der Sandbox 240.000. Testen Sie deshalb mit einem Ausschnitt."
+  - "Bei Help-Agent-Lösungen zu 400 Credits sind Flex Credits günstiger, sobald mehr als 17 Prozent der Gespräche gelöst werden."
+  - "Das erste Jahr braucht im Rechenbeispiel rund 3 Mio. Credits, mehr als die 2,75 Mio. einer Max-Edition, und ungenutzte Credits verfallen."
 faq:
   - q: "Was kostet ein Agentforce-Serviceagent für Händler pro Monat?"
     a: "Das hängt von Volumen und Aktionen pro Gespräch ab. Bei 3.000 Gesprächen mit je drei Aktionen und zwei Standard Prompts verbraucht der Agent 204.000 Flex Credits, zum Listenpreis rund 1.020 € im Monat. Data 360, MuleSoft und die Umsetzung kommen dazu."
   - q: "Ist Agentforce pro Aktion oder pro Gespräch günstiger?"
-    a: "Bei engen Anfragen mit wenigen Aktionen sind Flex Credits meist günstiger. Im Szenario kostet ein Gespräch 68 Credits oder 0,34 €, im Gesprächsmodell 2 €. Beide Modelle laufen nicht in derselben Org."
+    a: "Bei engen Anfragen mit wenigen Aktionen sind Flex Credits meist günstiger. Im Rechenbeispiel kostet ein Gespräch 68 Credits oder 0,34 €, im Gesprächsmodell 2 €. Beide Modelle laufen nicht in derselben Org."
   - q: "Kostet das Testen eines Agentforce-Agenten Flex Credits?"
     a: "Ja. Laut Salesforce verbrauchen Testläufe Requests und Credits. Aktionen kosten in der Sandbox 16 statt 20 Credits, die Verarbeitung von Dokumenten in Data 360 dort 120 Credits pro MB."
   - q: "Was kostet Data 360 für Ersatzteilkataloge?"
     a: "Die Rate Card berechnet in der Grundstufe 150 Credits pro MB für Unstructured Processing. Ein Katalogbestand von 2.000 MB kostet damit für die erste Aufbereitung 300.000 Credits, rund 1.500 €."
   - q: "Reichen die Flex Credits meiner Salesforce-Edition für einen Händleragenten?"
-    a: "Core enthält 500.000, Advanced 1 Mio. und Max 2,75 Mio. Credits. Das Szenario braucht im ersten Jahr rund 3 Mio., und der Pool deckt auch jede andere verbrauchsabhängige Nutzung in der Org."
+    a: "Core enthält 500.000, Advanced 1 Mio. und Max 2,75 Mio. Credits. Das Rechenbeispiel braucht im ersten Jahr rund 3 Mio., und der Pool deckt auch jede andere verbrauchsabhängige Nutzung in der Org."
 draft: false
 ---
 
@@ -44,7 +43,7 @@ Eine Aktion ist ein Schritt, den der Agent ausführt, etwa einen Auftrag aus SAP
 
 Nicht genutzte Flex Credits verfallen und müssen vor dem Ende der Bestellung verbraucht sein. Ein großer Pool „zur Sicherheit“ kostet also genauso sicher Geld wie ein zu kleiner.
 
-## Ein typisches Szenario: 3.000 Händleranfragen im Monat
+## Rechenbeispiel: 3.000 Händleranfragen im Monat
 
 Nehmen wir einen Maschinenbauer mit 400 Händlern in Europa, SAP S/4HANA als ERP, einem Händlerportal auf Experience Cloud und einer bestehenden MuleSoft-API für Auftragsdaten. Die Händler fragen nach Auftragsstatus, bestätigten Lieferterminen und Ersatzteilverfügbarkeit. Alle Mengen und Anteile unten sind Annahmen, die das Vorgehen zeigen; nur die Multiplikatoren stammen von Salesforce.
 
@@ -90,17 +89,17 @@ Nicht enthalten sind MuleSoft-Lizenzen, die Umsetzung, Lizenzen für Ihre Servic
 
 Jetzt die Nutzenseite. Angenommen, eine Servicemitarbeiterin braucht heute sechs Minuten pro Anfrage, dann binden 3.000 Anfragen 300 Stunden im Monat. Löst der Agent 60 Prozent, werden 180 Stunden frei. Im laufenden Betrieb kostet der Agent 219.000 Credits im Monat, rund 1.095 €, also etwa 6 € pro frei gewordener Stunde. Nach meiner Einschätzung entscheidet der Verbrauch diesen Business Case selten. Aufbau, Tests und Pflege entscheiden ihn.
 
-## Flex Credits, pro Gespräch oder pro Lösung: Welches Modell passt?
+## Flex Credits, pro Gespräch oder pro Lösung im Vergleich
 
 Salesforce bietet drei Wege, diesen Agenten zu bezahlen:
 
-- **Flex Credits pro Aktion und Prompt.** Im Szenario 1.020 € im Monat in Produktion.
+- **Flex Credits pro Aktion und Prompt.** Im Rechenbeispiel 1.020 € im Monat in Produktion.
 - **Pro Gespräch.** Die Preisseite nennt 2 € pro Gespräch, also 6.000 € im Monat. Laut derselben Seite werden Flex Credits und Gesprächspreise nicht in derselben Org unterstützt, und Gesprächspreise gibt es nicht mit den Modellen PayGo und Pre-Commit.
 - **Pro Lösung.** Der Help Agent, inzwischen Casey genannt (siehe [Casey und der Service Rep Assistant](../service-cloud-casey-und-service-rep-assistant/)), kostet 400 Credits, bei 500 € je 100.000 Credits also rechnerisch 2 € pro gelöstem Gespräch (die Preisseite führt den Preis nur als 2 US-Dollar). Laut [Salesforce Deutschland](https://www.salesforce.com/de/news/press-releases/2026/06/30/salesforce-agentforce-help-agent/) fällt bei einer Übergabe keine Gebühr an, auch nicht für die zuvor getätigten Aufrufe von Data 360 oder Agentforce. Das Modell ist seit Juli 2026 allgemein verfügbar, Portale gehören zu den Kanälen. Bei 60 Prozent gelösten Gesprächen: 1.800 × 2 € = 3.600 € im Monat.
 
 Wichtig ist, was als gelöst zählt. [Salesforce Ben](https://www.salesforceben.com/complete-guide-to-agentforce-pricing-options/) nennt die Bedingungen: mindestens zwei Nachrichtenwechsel, keine ausdrücklich negative Rückmeldung am Ende und entweder keine Eskalation an einen Menschen oder eine ausdrücklich positive Rückmeldung. Ohne Rückmeldung zählt eine Messaging-Sitzung als gelöst, wenn sie länger als zwei Stunden läuft. Ein Händler, der zweimal fragt, den Status liest und das Fenster schließt, wird abgerechnet. Einer, der einen falschen Termin bekam und ohne Rückmeldung gegangen ist, ebenfalls.
 
-Der Break-even ist einfach. Flex Credits kosten im Szenario 68 Credits pro Gespräch, eine Lösung 400. Sobald mehr als 17 Prozent der Gespräche gelöst werden, sind Flex Credits günstiger. Bei 60 Prozent bräuchte der Agent zwölf oder mehr Aktionen pro Gespräch, bevor sich der Preis pro Lösung rechnet.
+Der Break-even ist einfach. Flex Credits kosten im Rechenbeispiel 68 Credits pro Gespräch, eine Lösung 400. Sobald mehr als 17 Prozent der Gespräche gelöst werden, sind Flex Credits günstiger. Bei 60 Prozent bräuchte der Agent zwölf oder mehr Aktionen pro Gespräch, bevor sich der Preis pro Lösung rechnet.
 
 Für enge Händleranfragen würde ich deshalb mit Flex Credits planen. Der Preis pro Lösung hat in den ersten Monaten einen echten Vorteil: Solange niemand die Lösungsquote kennt, kostet ein schwacher Agent nichts, und Lösungen in der Sandbox sind kostenlos.
 
@@ -115,7 +114,7 @@ Die Preisseiten von Salesforce führen die Flex-Credit-Pools der [Editionen Core
 quelle: Salesforce, Meldung zu den Editionen 2026 und Preisseiten
 ```
 
-Das Szenario braucht im ersten Jahr rund 3 Mio. Credits, mehr als selbst der Max-Pool, und dieser Pool deckt auch jeden anderen verbrauchsabhängigen Agenten in der Org. Zusätzliche Credits gibt es als PayGo oder Pre-Commit. Planen Sie den Hochlauf: Ein Händleragent erreicht selten im ersten Monat das volle Volumen, und Credits, die für ein Jahr gebucht, aber erst ab dem vierten Monat genutzt werden, verfallen zum Teil. Wie Sie das pro Aktion schätzen, beschreibe ich in [Flex Credits: Agentforce-Kosten pro Aktion](../flex-credits-agentforce-kosten-pro-aktion/), die Editionen selbst in [Core, Advanced und Max](../salesforce-editionen-core-advanced-max/). Ob Sie Credits kaufen, bei der Verlängerung die Edition wechseln oder gar nichts in Salesforce bauen, ist eine Frage für [Make-or-buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/).
+Das Rechenbeispiel braucht im ersten Jahr rund 3 Mio. Credits, mehr als selbst der Max-Pool, und dieser Pool deckt auch jeden anderen verbrauchsabhängigen Agenten in der Org. Zusätzliche Credits gibt es als PayGo oder Pre-Commit. Planen Sie den Hochlauf: Ein Händleragent erreicht selten im ersten Monat das volle Volumen, und Credits, die für ein Jahr gebucht, aber erst ab dem vierten Monat genutzt werden, verfallen zum Teil. Wie Sie das pro Aktion schätzen, beschreibe ich in [Flex Credits: Agentforce-Kosten pro Aktion](../flex-credits-agentforce-kosten-pro-aktion/), die Editionen selbst in [Core, Advanced und Max](../salesforce-editionen-core-advanced-max/). Ob Sie Credits kaufen, bei der Verlängerung die Edition wechseln oder gar nichts in Salesforce bauen, ist eine Frage für [Make-or-buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/).
 
 ## Wann ist ein Agent für Händleranfragen die falsche Antwort?
 
@@ -123,7 +122,7 @@ Das Szenario braucht im ersten Jahr rund 3 Mio. Credits, mehr als selbst der Max
 - **Wenn der Liefertermin in SAP nicht gepflegt ist.** Dann wiederholt der Agent einen falschen Termin 3.000-mal im Monat. Den Integrationsweg beschreibe ich in [Agentforce und SAP-Auftragsstatus](../agentforce-sap-auftragsstatus/).
 - **Wenn die KI-Assistenten Ihrer Händler Ihr Salesforce abfragen.** Agentische Aufrufe über MCP oder APIs fallen unter Headless Platform Interactions, und dieser Satz steht noch auf „TBA“. Dieses Risiko betrachte ich in [MCP-Zugriffe als Budgetrisiko](../mcp-zugriffe-salesforce-budgetrisiko/).
 
-## Wie budgetieren Sie einen Serviceagenten für Händler?
+## Erster Schritt: Händleranfragen nach Typ zählen
 
 ```schritte
 Anfragen nach Typ zählen
@@ -139,5 +138,3 @@ Vertrag prüfen
 Zwei Testwochen fahren
   Das Digital Wallet auswerten, neu rechnen und Warnschwellen auf den Credit-Pool setzen.
 ```
-
-Ein Serviceagent für Händler kostet pro Gespräch wenig, das Budgetrisiko liegt in Dokumenten, Sandboxes und einem zu großen Credit-Pool.

@@ -9,10 +9,10 @@ topic: ai
 categories: [ai, manufacturing-cloud]
 tags: [agentforce, multilingual, knowledge, flex credits, dealer service, manufacturing]
 takeaways:
-  - "Salesforce lists 56 languages for Agentforce Service Agent, 25 of them in beta, including Russian, Slovak and Ukrainian. Agentforce Voice names seven languages and adds \"many others\"."
+  - "Salesforce lists 56 languages for Agentforce Service Agent, 25 of them in beta. Agentforce Voice names seven languages and mentions others."
   - "The Translation meter costs 4,000 Flex Credits per million characters, about $20, so translating one dealer chat costs around five cents."
-  - "Other languages often need more tokens than English, and prompts are metered in 2,000-token units, so the same grounded answer in another language can cost two prompt units where English needs one."
-  - "By default the knowledge retriever filters articles by the session language, so an Italian dealer finds only Italian articles unless you build a custom retriever."
+  - "Other languages often need more tokens than English, and prompts are metered in 2,000-token units, so the same answer can cost two units."
+  - "By default the knowledge retriever filters articles by the session language, so an Italian dealer finds only Italian articles."
   - "I would maintain knowledge in one or two languages, keep safety and warranty content per country and test every allowed language before go-live."
 faq:
   - q: "Which languages does Agentforce support?"
@@ -42,7 +42,7 @@ Voice has a shorter list. The [Agentforce Voice product page](https://www.salesf
 Get French for France confirmed before you plan a voice line for French dealers, and do the same for Polish or Czech, which the product page does not name.
 ```
 
-## How does the agent pick its language?
+## The agent's language comes from the channel
 
 The guide, written for the earlier Agentforce Builder, describes three settings. The **End User Language** comes from the channel, in Enhanced Chat from a pre-chat field that can be filled from the browser locale. The **default language** is the fallback. **Secondary languages** complete the allowlist.
 
@@ -68,7 +68,7 @@ Less clear is when it runs. The [help article on billable usage types](https://h
 
 For human reps, [Real-Time Translations](https://help.salesforce.com/s/articleView?language=en_US&id=service.messaging_translate_2.htm&type=5) translates enhanced chat and messaging. It needs the Agentforce for Service SKU plus a permission set license and takes custom terminology for up to 10 languages. The help pages I read do not say how its usage is billed.
 
-## Why do prompts in other languages use more tokens?
+## Prompts in other languages use more tokens
 
 A token is the unit a language model reads and writes, often part of a word. OpenAI's [help center](https://help.openai.com/en/articles/4936856-understanding-and-counting-tokens) gives the rule of thumb "1 token is approximately 4 characters" and notes that "other languages can have different relationships between characters, words, and tokens".
 
@@ -93,7 +93,7 @@ My split for a machine builder:
 
 Machine translation renames parts, and the guide does not promise that its keep-tag workaround protects a term. Part names belong in a terminology list and in the test cases.
 
-## A typical scenario: dealers in 20 countries
+## Worked example: dealers in 20 countries
 
 Assume a machine builder with dealers in 20 countries and 13 languages. Knowledge is maintained in German and English; manuals take 150 MB per language. Assume 4,000 dealer conversations a month, 1,600 of them in the eleven other languages. All volumes are assumptions; the multipliers come from the rate card.
 
@@ -110,7 +110,7 @@ The extra prompt units assume one of two prompts per conversation crosses the 2,
 
 Language adds about $112 a month to $1,200 for actions. Indexing manuals in all 13 languages costs six and a half times the two-language index, and each version needs maintenance. The budget question is the number of maintained languages, not the price per character.
 
-## Where should you start?
+## First step: list dealer languages by volume
 
 1. **List dealer languages by volume** from the last three months of cases and emails.
 2. **Check each language** on the help page: no label, beta or missing. Check voice separately.
@@ -120,5 +120,3 @@ Language adds about $112 a month to $1,200 for actions. Indexing manuals in all 
 6. **Test every allowed language** with real dealer questions.
 
 In a country rollout, language becomes a column in the table from [rolling out Manufacturing Cloud globally](../manufacturing-cloud-global-rollout/). Language set and retriever design are part of my [Salesforce architecture](../../services/salesforce-architecture/) work.
-
-A multilingual dealer agent costs little in translation; the money goes into the knowledge and tests you run per language.

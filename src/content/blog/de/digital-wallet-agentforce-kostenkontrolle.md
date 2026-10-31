@@ -10,11 +10,11 @@ categories: [ai, architecture]
 contactBrief: licences
 tags: [Agentforce, Digital Wallet, Flex Credits, Leistungsverrechnung, Kostenkontrolle, Fertigung]
 takeaways:
-  - "Flex Credits gehören zur Org und zum Vertrag: Die Editions-Pools gelten laut Preisseite pro Org und Jahr, und Mehrverbrauch wird dem Vertragspartner monatlich nachträglich berechnet."
-  - "Digital Wallet schlüsselt den Verbrauch nach Agent, Aktion und Kanal auf und unterstützt eigene Tags für Kategorien wie Abteilung und Kostenstelle, die Grundlage jeder Leistungsverrechnung."
-  - "Digital Wallet warnt bei Schwellenwerten, stoppt laut den Seiten, die ich geöffnet habe, aber keinen Agenten, wenn ein Werk sein Budget verbraucht hat. Werksbudgets sind eine Größe im Controlling."
-  - "Kauft eine Tochter eigene Credits für die gemeinsame Org, führt Digital Wallet sie in einer Karte zusammen und verbraucht zuerst den Vertrag, der am frühesten endet."
-  - "Ungenutzte Credits verfallen zum Bestellende; legen Sie vor dem Go-live fest, wer diesen Verlust trägt, sonst landet er unbemerkt im zentralen IT-Budget."
+  - "Die Editions-Pools gelten laut Preisseite pro Org und Jahr, und Mehrverbrauch wird dem Vertragspartner monatlich nachträglich berechnet."
+  - "Digital Wallet schlüsselt den Verbrauch nach Agent, Aktion und Kanal auf und nimmt eigene Tags wie Kostenstelle, die Grundlage der Leistungsverrechnung."
+  - "Digital Wallet warnt bei Schwellenwerten, stoppt laut Dokumentation aber keinen Agenten, wenn ein Werk sein Budget verbraucht hat."
+  - "Kauft eine Tochter eigene Credits für die gemeinsame Org, verbraucht Digital Wallet zuerst den Vertrag, der am frühesten endet."
+  - "Ungenutzte Credits verfallen zum Bestellende. Legen Sie vor dem Go-live fest, wer diesen Verlust trägt, sonst landet er im zentralen IT-Budget."
 faq:
   - q: "Kann Digital Wallet Agentforce-Kosten auf Kostenstellen verrechnen?"
     a: "Es liefert die Daten. Eigene Tags gruppieren den Verbrauch nach Kategorien wie Abteilung oder Kostenstelle, Berichte laufen auf Data 360. Die interne Rechnung selbst entsteht im Controlling oder im ERP, auf Basis der Monatsabrechnung."
@@ -53,7 +53,7 @@ Drei Vertragsbedingungen entscheiden, wo das Geld landet:
 
 Für einen Fertigungskonzern ist das deshalb eine Organisationsfrage. Ich würde eine Person in der Konzern-IT oder im [Salesforce Center of Excellence](../salesforce-center-of-excellence-format/) zur Budgetverantwortlichen machen: Sie unterschreibt, beobachtet den Pool und führt die Verrechnung. Werke und Töchter bekommen Budgets, keine Credits.
 
-## Was zeigt Digital Wallet für die Leistungsverrechnung?
+## Digital Wallet zeigt den Verbrauch nach Agent, Aktion und Kanal
 
 [Digital Wallet](https://www.salesforce.com/eu/agentforce/digital-wallet/) ist die Verbrauchskonsole von Salesforce. Sie ist mit einem Digital-Wallet-fähigen Produkt kostenlos und erfasst unter anderem Flex Credits, Data Services Credits, AI Requests und Lizenzen. Für die Verrechnung zählen vier Funktionen:
 
@@ -68,7 +68,7 @@ Die Grenzen zählen genauso. Die Salesforce-Hilfe verlangt eine Data-360-Lizenz,
 Was ich nicht gefunden habe: einen automatischen Stopp. Die Seiten, die ich geöffnet habe, beschreiben nur Warnungen. [Salesforce Ben schrieb im Mai 2025](https://www.salesforceben.com/understanding-common-agentforce-pain-points-and-how-salesforce-addresses-them/), es gebe keinen "Kill Switch", der Agenten bei einem Schwellenwert einfriert, und ich habe nichts Neueres gefunden, das dem widerspricht. Ein Werksbudget bleibt damit eine Zahl im Controlling. Wer eine harte Grenze braucht, deaktiviert den Agenten selbst.
 ```
 
-## Ein typisches Szenario: drei Regionen in einer Org
+## Rechenbeispiel: drei Regionen in einer Org
 
 Nehmen wir einen Maschinenbauer mit zwei Werken in Deutschland, einer Vertriebs- und Servicetochter in den USA und einer Serviceregion Asien-Pazifik, alle in einer Org mit Advanced Edition. Ein Serviceagent beantwortet Händlern aller Regionen Fragen zu Auftragsstatus und Ersatzteilen, ein Planungsagent unterstützt den Außendienst (Field Service) in Deutschland und den USA. Alle Zahlen sind Annahmen.
 
@@ -97,7 +97,7 @@ Es gibt vier Modelle, und sie passen zu unterschiedlichen Phasen:
 
 Schwierig wird es beim gemeinsamen Agenten. Ein Serviceagent für alle Regionen spart dreifachen Aufbau und dreifache Tests, sein Verbrauch muss aber trotzdem aufgeteilt werden. Salesforce dokumentiert die Tag-Konfiguration in der Hilfe; vor dem Go-live würde ich in Produktion mit kleinem Pilotvolumen prüfen, ob jedes Ereignis des gemeinsamen Agenten den richtigen Gesellschafts-Tag bekommt, denn in Sandboxes läuft Digital Wallet nicht. Trennt das Tagging die Regionen nicht, bleiben zwei Wege: ein Agent pro Region mit eigener Wartung oder ein Verteilschlüssel, etwa Konversationen pro Region aus Service Cloud. Solange die Mengen klein sind, ziehe ich den Schlüssel vor. Welche Kennzahlen Sie pro Agent verfolgen sollten, steht in [Agentforce-Kennzahlen nach dem Go-live](../agentforce-kennzahlen-nach-go-live/).
 
-## Was passiert mit ungenutzten Credits und Mehrverbrauch?
+## Ungenutzte Credits verfallen, Mehrverbrauch folgt dem Vertrag
 
 Ungenutzte Credits verfallen zum Bestellende, Mehrverbrauch wird zum vertraglichen Satz berechnet. Beides folgt dem Vertrag und nicht dem Werk. Daraus ergeben sich drei Regeln, die ich aufschreiben würde:
 
@@ -107,7 +107,7 @@ Ungenutzte Credits verfallen zum Bestellende, Mehrverbrauch wird zum vertraglich
 
 Ein Zähler hat noch keinen Preis: Die Rate Card führt Headless Platform Interactions mit dem Satz "TBA". Was sie abdecken und warum sie fürs Budget zählen, steht in [MCP-Zugriffe als Budgetrisiko](../mcp-zugriffe-salesforce-budgetrisiko/). Geben Sie diesem Zähler von Anfang an einen eigenen Tag und einen eigenen Verantwortlichen.
 
-## Wo fangen Sie an?
+## Erster Schritt: eine Budgetverantwortliche für den Pool benennen
 
 1. Benennen Sie eine Budgetverantwortliche für den Pool und schreiben Sie das in den Programmauftrag.
 2. Legen Sie das Tag-Schema fest: Gesellschaft, Kostenstelle, Umgebung.
@@ -116,6 +116,4 @@ Ein Zähler hat noch keinen Preis: Die Rate Card führt Headless Platform Intera
 5. Fahren Sie sechs Monate Showback gegen die Monatsabrechnung.
 6. Schreiben Sie die Regeln für Restmengen, Mehrverbrauch und reservierte Mengen vor dem ersten regionalen Go-live auf.
 
-Wie Sie den Verbrauch selbst schätzen, steht in [Flex Credits: Kosten pro Aktion](../flex-credits-agentforce-kosten-pro-aktion/); die Lizenzplanung über mehrere Gesellschaften gehört zu meiner [Make-or-buy- und Lizenzplanung](../../leistungen/make-or-buy-lizenzen/).
-
-Digital Wallet liefert die Zahlen pro Agent und Kostenstelle, die Verantwortung und die Regeln für Restmengen müssen von Ihnen kommen.
+Wie Sie den Verbrauch selbst schätzen, steht in [Flex Credits: Kosten pro Aktion](../flex-credits-agentforce-kosten-pro-aktion/). Die Lizenzplanung über mehrere Gesellschaften gehört zu meiner [Make-or-buy- und Lizenzplanung](../../leistungen/make-or-buy-lizenzen/).

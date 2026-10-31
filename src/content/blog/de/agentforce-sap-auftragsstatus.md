@@ -9,11 +9,11 @@ topic: ai
 categories: [ai, architecture]
 tags: [Agentforce, SAP, MuleSoft, Schnittstellen, Maschinenbau, Händlerservice]
 takeaways:
-  - "Ein Agentforce-Agent liest den Auftragsstatus aus SAP S/4HANA über eine API: Eine in Topic Center freigeschaltete MuleSoft-API, in Exchange veröffentlicht und in den API Catalog synchronisiert, wird zur Agenten-Aktion."
-  - "Laut MuleSoft-Dokumentation sind Topic-Instructions nicht deterministisch und sollen keine Geschäftsregeln enthalten; welcher Händler welchen Auftrag sehen darf, regeln API und Code."
-  - "Verfügbarkeit kommt aus der Verfügbarkeitsprüfung in SAP; der Agent gibt den bestätigten Termin weiter und schätzt nie selbst aus Bestand oder Wiederbeschaffungszeit."
-  - "Eine schmale Agenten-API mit drei Operationen und vorberechneten Feldern wie Gesamtstatus und nächstem bestätigtem Termin liefert stabilere Antworten als generische OData-Services."
-  - "Geben Sie dem Agenten eine eigene Client-Anwendung im API Manager, damit ein Rate Limit pro Vertrag einen Agenten in der Schleife stoppt, bevor das Händlerportal langsam wird."
+  - "Eine in Topic Center freigeschaltete MuleSoft-API wird, in Exchange veröffentlicht und in den API Catalog synchronisiert, zur Agenten-Aktion."
+  - "Topic-Instructions sind laut MuleSoft nicht deterministisch. Welcher Händler welchen Auftrag sehen darf, regeln deshalb API und Code."
+  - "Die Verfügbarkeit kommt aus SAP. Der Agent gibt den bestätigten Termin weiter und schätzt nie selbst aus Bestand oder Wiederbeschaffungszeit."
+  - "Eine schmale Agenten-API mit drei Operationen und vorberechneten Feldern wie Gesamtstatus liefert stabilere Antworten als generische OData-Services."
+  - "Eine eigene Client-Anwendung im API Manager mit Rate Limit stoppt einen Agenten in der Schleife, bevor das Händlerportal langsam wird."
 faq:
   - q: "Kann Agentforce den Auftragsstatus aus SAP S/4HANA lesen?"
     a: "Ja, über eine API. Der dokumentierte Weg führt über MuleSoft: Der SAP S/4HANA OData Connector liest die OData-APIs von S/4HANA Cloud oder On-Premise, und die Mule-API wird über Topic Center und API Catalog zur Agenten-Aktion."
@@ -72,7 +72,7 @@ titel: Welche Kennzeichen steuern den Agenten?
 
 Berechnen Sie vor, was Händler am häufigsten fragen. „Gesamtstatus“ und „nächster bestätigter Termin“ sollten Felder sein, die die API berechnet, keine Schlüsse, die das Modell aus zehn Einteilungen zieht.
 
-## Was bleibt deterministisch?
+## Geschäftsregeln gehören in API und Code
 
 Die Topic-Center-Dokumentation von MuleSoft sagt selbst, Instructions seien „nondeterministic, so they shouldn't include sensitive or deterministic business rules“. Diesen Satz würde ich auf die erste Seite jedes Agentendesigns schreiben. Beim Auftragsstatus betrifft er vier Punkte.
 
@@ -84,13 +84,13 @@ Die Topic-Center-Dokumentation von MuleSoft sagt selbst, Instructions seien „n
 
 **Schreibende Aktionen.** Einen Liefertermin ändern oder einen Auftrag anlegen ist eine zweite Phase, mit Gates wie in [Agent Script: Regeln statt LLM](../agent-script-regeln-statt-llm/). Im ersten Release würde ich den Agenten nur lesen lassen.
 
-## Ein typisches Szenario: Auftragsstatus für 400 Händler
+## Rechenbeispiel: Auftragsstatus für 400 Händler
 
 Nehmen wir einen Maschinenbauer mit S/4HANA On-Premise, 400 Händlern in Europa, einem Händlerportal auf Experience Cloud und MuleSoft, das schon die Auftragsliste im Portal versorgt. Alle Zahlen sind Annahmen.
 
 Angenommen sind 2.000 Auftragsanfragen im Monat mit bis zu drei API-Aufrufen: Auftragsstatus, Liefertermine, Verfügbarkeit einer Ersatzposition. Das sind rund 6.000 Aufrufe im Monat, etwa 300 pro Arbeitstag. SAP merkt davon nichts. Ein Fehler, durch den der Agent die API in einer Schleife aufruft, schon. Die [Rate-Limiting-SLA-Policy](https://docs.mulesoft.com/mule-gateway/policies-included-rate-limiting-sla) von MuleSoft setzt Grenzen pro Client-Anwendung über Verträge im API Manager und antwortet mit HTTP 429, sobald das Kontingent verbraucht ist. Der Agent bekommt deshalb eine eigene Client-Anwendung mit eigenem Limit, angenommen 60 Anfragen pro Minute, getrennt vom Portal. Ein Agent in der Schleife stößt an seine eigene Decke, und die Händler im Portal arbeiten weiter.
 
-Im Szenario bringt die erste Testwoche drei Befunde. Telefonisch erfasste Aufträge haben keine Bestellnummer des Händlers, der Agent muss also auch nach SAP-Auftragsnummer suchen. Manche Händler haben für Tochtergesellschaften mehrere Auftraggebernummern, der Account braucht also eine Zuordnung, die jemand pflegt, dasselbe Problem wie bei [Sales Agreements und Ist-Mengen aus dem ERP](../sales-agreements-abnahmemengen-erp/). Und ein Werk pflegt für Ersatzteile keine bestätigten Termine, für diese Positionen kann der Agent nur „noch nicht bestätigt“ sagen. Das ist ein Datenproblem, und kein Prompt behebt es.
+Im Rechenbeispiel bringt die erste Testwoche drei Befunde. Telefonisch erfasste Aufträge haben keine Bestellnummer des Händlers, der Agent muss also auch nach SAP-Auftragsnummer suchen. Manche Händler haben für Tochtergesellschaften mehrere Auftraggebernummern, der Account braucht also eine Zuordnung, die jemand pflegt, dasselbe Problem wie bei [Sales Agreements und Ist-Mengen aus dem ERP](../sales-agreements-abnahmemengen-erp/). Und ein Werk pflegt für Ersatzteile keine bestätigten Termine, für diese Positionen kann der Agent nur „noch nicht bestätigt“ sagen. Das ist ein Datenproblem, und kein Prompt behebt es.
 
 Was ein Gespräch in Flex Credits kostet, rechne ich in [was ein Serviceagent für Händleranfragen kostet](../serviceagent-haendleranfragen-kosten/) durch.
 
@@ -115,7 +115,7 @@ Eine Kopie hat trotzdem ihren Platz, etwa der Fahrzeugbestand, den Techniker im 
 
 MuleSoft kann dieselbe API auch zu einem MCP-Server machen: [Agent Fabric](https://docs.mulesoft.com/general/agent-fabric-overview) beschreibt eine MCP Bridge, die das ohne eigenen Code erledigt und die bestehenden Gateway-Policies behält. Das wird wichtig, wenn externe Agenten wie Claude die API erreichen sollen. Für Agentforce selbst ist die Aktion aus dem API Catalog der dokumentierte Weg. Einen nativen MCP-Client für Agentforce hat Salesforce als [Pilot mit dem Release von Juli 2025](https://developer.salesforce.com/blogs/2025/06/introducing-mcp-support-across-salesforce) angekündigt; dessen aktuellen Status würde ich prüfen, bevor ich einen produktiven Agenten darauf baue. Was MCP für eine IT-Leitung bedeutet, steht in [MCP in Salesforce, erklärt für die IT-Leitung](../mcp-salesforce-erklaert-it-leitung/).
 
-## Wo sollten Sie anfangen?
+## Erster Schritt: die vorhandene Auftrags-API prüfen
 
 1. **Die API prüfen.** Gibt es eine Mule-API oder eine andere REST-API für Kundenaufträge, und liefert sie bestätigte Termine pro Position?
 2. **Zuerst die Identität klären.** Jeder Händler-Account braucht die richtigen Auftraggebernummern, gepflegt von einer benannten Person.
@@ -123,6 +123,4 @@ MuleSoft kann dieselbe API auch zu einem MCP-Server machen: [Agent Fabric](https
 4. **Getrennte Client-Anwendungen** für Agent und Portal, jede mit eigenem Rate Limit.
 5. **Die Fehlerfälle testen:** fremde Auftragsnummer, fehlender bestätigter Termin, SAP offline.
 
-Hat Ihr ERP gar keine API, lesen Sie [altes ERP ohne API](../altes-erp-ohne-api-ki-agenten/); ob der Prozess überhaupt reif für einen Agenten ist, steht in [Agentforce für Hersteller: jetzt starten oder warten](../agentforce-ja-oder-nein-hersteller/).
-
-Ein Agent, der den Auftragsstatus aus SAP liest, ist vor allem ein Schnittstellenprojekt mit einem Sprachmodell obendrauf.
+Hat Ihr ERP gar keine API, lesen Sie [altes ERP ohne API](../altes-erp-ohne-api-ki-agenten/). Ob der Prozess überhaupt reif für einen Agenten ist, steht in [Agentforce für Hersteller: jetzt starten oder warten](../agentforce-ja-oder-nein-hersteller/).

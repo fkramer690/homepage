@@ -9,11 +9,11 @@ topic: ai
 categories: [ai, architecture]
 tags: [agentforce, sap, mulesoft, integration, manufacturing, dealer service]
 takeaways:
-  - "An Agentforce agent reads order status from SAP S/4HANA through an API: a MuleSoft API enabled in Topic Center, published to Exchange and synced into API Catalog becomes an agent action."
-  - "MuleSoft's documentation says topic instructions are nondeterministic and should not contain business rules; which dealer may see which order belongs in the API and in code."
-  - "Availability comes from the availability check in SAP; the agent passes on the confirmed date and never estimates one from stock figures or lead times."
-  - "A narrow agent API with three operations and precomputed fields such as overall status and next confirmed date gives more stable answers than generic OData services."
-  - "Give the agent its own client application in API Manager, so a rate limit per contract stops a looping agent before it slows down the dealer portal."
+  - "A MuleSoft API enabled in Topic Center, published to Exchange and synced into API Catalog becomes an agent action."
+  - "MuleSoft says topic instructions are nondeterministic, so which dealer may see which order belongs in the API and in code."
+  - "Availability comes from SAP. The agent passes on the confirmed date and never estimates one from stock figures or lead times."
+  - "A narrow agent API with three operations and precomputed fields such as overall status gives more stable answers than generic OData services."
+  - "A separate client application in API Manager with its own rate limit stops a looping agent before it slows down the dealer portal."
 faq:
   - q: "Can Agentforce read order status from SAP S/4HANA?"
     a: "Yes, through an API. The documented route runs through MuleSoft: the SAP S/4HANA OData Connector reads the OData APIs of S/4HANA Cloud or on-premise, and the Mule API becomes an agent action through Topic Center and API Catalog."
@@ -72,7 +72,7 @@ title: Which flags steer the agent?
 
 Precompute what dealers ask most. "Overall status" and "next confirmed date" should be fields the API calculates, not conclusions the model draws from ten schedule lines.
 
-## What stays deterministic?
+## Business rules belong in the API and in code
 
 MuleSoft's own Topic Center documentation says instructions "are nondeterministic, so they shouldn't include sensitive or deterministic business rules". I would put that sentence on the first page of every agent design. For order status it covers four things.
 
@@ -84,13 +84,13 @@ MuleSoft's own Topic Center documentation says instructions "are nondeterministi
 
 **Write actions.** Changing a delivery date or placing an order is a second phase, with gates as described in [Agent Script: rules instead of the LLM](../agent-script-deterministic-rules/). For the first release I would keep the agent read-only.
 
-## A typical scenario: order status for 400 dealers
+## Worked example: order status for 400 dealers
 
 Assume a machine builder with S/4HANA on-premise, 400 dealers in Europe, a dealer portal on Experience Cloud and MuleSoft already serving the portal's order list. All numbers here are assumptions.
 
 Assume 2,000 order enquiries a month, each with up to three API calls: order status, delivery dates, availability of one replacement item. That is about 6,000 calls a month, roughly 300 per working day. SAP will not notice. A bug that makes the agent call the API in a loop will. MuleSoft's [Rate-Limiting SLA policy](https://docs.mulesoft.com/mule-gateway/policies-included-rate-limiting-sla) sets limits per client application through contracts in API Manager and answers with HTTP 429 once the quota is used up. So the agent gets its own client application with its own limit, assume 60 requests a minute, separate from the portal. A looping agent hits its own ceiling, and dealers in the portal keep working.
 
-In the scenario, the first test week brings three findings. Orders taken by phone carry no dealer purchase order number, so the agent must also search by SAP order number. Some dealers have several sold-to numbers for subsidiaries, so the account needs a mapping that someone maintains, the same problem as with [sales agreements and ERP actuals](../sales-agreements-volume-shortfall-erp/). And one plant does not maintain confirmed dates for spare parts, so for those items the agent can only say "not confirmed yet". That is a data problem, and no prompt fixes it.
+In the worked example, the first test week brings three findings. Orders taken by phone carry no dealer purchase order number, so the agent must also search by SAP order number. Some dealers have several sold-to numbers for subsidiaries, so the account needs a mapping that someone maintains, the same problem as with [sales agreements and ERP actuals](../sales-agreements-volume-shortfall-erp/). And one plant does not maintain confirmed dates for spare parts, so for those items the agent can only say "not confirmed yet". That is a data problem, and no prompt fixes it.
 
 What a conversation costs in Flex Credits is calculated in [the dealer service agent cost calculation](../dealer-service-agent-cost-calculation/).
 
@@ -115,7 +115,7 @@ A copy still has its place, for example van stock that technicians need offline,
 
 MuleSoft can also turn the same API into an MCP server: [Agent Fabric](https://docs.mulesoft.com/general/agent-fabric-overview) describes an MCP Bridge that does this without custom code and keeps the existing gateway policies. That matters when external agents such as Claude should reach the API. For Agentforce itself the API Catalog action is the documented path. Salesforce announced a native MCP client for Agentforce as a [pilot with the July 2025 release](https://developer.salesforce.com/blogs/2025/06/introducing-mcp-support-across-salesforce); I would check its current status before building a production agent on it. What MCP means for an IT lead is in [MCP explained for IT leads](../mcp-salesforce-explained-for-it-leads/).
 
-## Where should you start?
+## First step: check the existing sales order API
 
 1. **Check the API.** Is there a Mule API or another REST API for sales orders, and does it return confirmed dates per item?
 2. **Fix identity first.** Every dealer account needs the right sold-to numbers, maintained by a named person.
@@ -123,6 +123,4 @@ MuleSoft can also turn the same API into an MCP server: [Agent Fabric](https://d
 4. **Separate client applications** for agent and portal, each with its own rate limit.
 5. **Test the unhappy paths:** someone else's order number, a missing confirmed date, SAP offline.
 
-If your ERP has no API at all, see [legacy ERP without an API](../legacy-erp-without-api-ai-agents/); whether the process is ready for an agent at all, see [Agentforce for manufacturers: start now or wait](../agentforce-yes-or-no-manufacturers/).
-
-An agent that reads order status from SAP is mostly an integration project with a language model on top.
+If your ERP has no API at all, see [legacy ERP without an API](../legacy-erp-without-api-ai-agents/). Whether the process is ready for an agent at all is covered in [Agentforce for manufacturers: start now or wait](../agentforce-yes-or-no-manufacturers/).

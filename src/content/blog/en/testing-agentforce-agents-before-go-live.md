@@ -9,10 +9,10 @@ topic: ai
 categories: [ai]
 tags: [agentforce, testing center, ai agents, quality gates, devops, manufacturing]
 takeaways:
-  - "An Agentforce agent is ready for production when it passes an agreed test set at an agreed pass rate over several runs; Salesforce provides the tools but publishes no threshold."
-  - "Each Agentforce test case can check the subagent, the actions that ran and the outcome, which a language model grades as judge; hard business rules need exact checks instead."
-  - "Agent tests run in sandboxes, consume credits and can change data; an action costs 16 Flex Credits there, so three runs of 60 cases with three actions each cost about $43."
-  - "I recommend 100 percent for hard rules such as warranty eligibility and about 90 percent over three runs for answer quality, agreed with the business owner before the pilot."
+  - "Salesforce provides testing tools but no threshold. You agree the test set and the pass rate over several runs yourself."
+  - "A test case checks the subagent, the actions and the outcome. A language model grades the outcome, so hard business rules need exact checks."
+  - "An action costs 16 Flex Credits in a sandbox, so three runs of 60 cases with three actions each cost about $43."
+  - "I recommend 100 percent for hard rules such as warranty eligibility and about 90 percent over three runs for answer quality."
   - "Session traces, health metrics and a staged rollout must be active on day one, and every failed production conversation becomes a new test case."
 faq:
   - q: "What is the Agentforce Testing Center?"
@@ -36,7 +36,7 @@ An Apex test gives the same result every time: same input, same output, green or
 
 So the question becomes: how often does it pass, and which failures can we live with? A clumsy delivery date summary is annoying. A wrong statement that a machine is still under warranty costs a credit note. These failures need different gates.
 
-## Which tools does Salesforce provide for testing agents?
+## Salesforce's tools for testing agents
 
 Salesforce introduced the [Agentforce Testing Center](https://www.salesforce.com/news/?p=83400) in November 2024. It generates hundreds of synthetic interactions from a plain-language description and runs them in parallel in a sandbox. For teams that work with source control, [Agentforce DX](https://developer.salesforce.com/docs/ai/agentforce/guide/agent-dx.html) offers the same through VS Code, CLI commands and a testing API.
 
@@ -68,7 +68,7 @@ Salesforce gives you scores, but it publishes no threshold that means "ready". T
 
 The judge needs checking too. Anthropic recommends calibrating model graders against human experts, so the service expert reads a sample of judged answers in the first runs. If expert and judge often disagree, the outcome descriptions in the test cases are too vague.
 
-## A typical scenario: a spare parts agent for dealers
+## Worked example: a spare parts agent for dealers
 
 Assume a machine builder with SAP, Service Cloud and a dealer portal. The planned agent answers dealer questions about spare part availability and order status. All numbers below are assumptions to show the method.
 
@@ -80,7 +80,7 @@ Assume a machine builder with SAP, Service Cloud and a dealer portal. The planne
 
 Most failures in such a run point at data and interfaces, which is why I put [business value and data quality first](../agentforce-business-value-data-quality-first/).
 
-## What happens after go-live?
+## After go-live, monitoring runs from day one
 
 Tests cover the questions you thought of. Dealers will ask others, so monitoring runs from day one:
 
@@ -91,9 +91,9 @@ Tests cover the questions you thought of. Dealers will ask others, so monitoring
 
 Retest whenever something under the agent changes: a subagent, a Flow, knowledge articles, a Salesforce release, the SAP API.
 
-## Where should you start, and who owns the tests?
+## The client owns the tests
 
-The client. The partner writes and runs the tests, but the test set, the thresholds and the go-live decision belong to the company that answers to its dealers. It is the principle from [DevOps for enterprise projects](../why-devops-matters-salesforce-enterprise/): agent tests live in the same repository and pipeline, with JUnit output and a gate that blocks the deployment below the threshold. Setting this up is part of my [DevOps and release management](../../services/devops-release-management/) work.
+The partner writes and runs the tests, but the test set, the thresholds and the go-live decision belong to the company that answers to its dealers. It is the principle from [DevOps for enterprise projects](../why-devops-matters-salesforce-enterprise/): agent tests live in the same repository and pipeline, with JUnit output and a gate that blocks the deployment below the threshold. Setting this up is part of my [DevOps and release management](../../services/devops-release-management/) work.
 
 ```schritte
 Name unacceptable failures
@@ -109,5 +109,3 @@ Budget sandbox credits
 Switch on monitoring
   And define the rollout group, before you activate the agent.
 ```
-
-An Agentforce agent is ready when it meets thresholds you set in advance, run after run, and when you can see what it does in production from the first day.

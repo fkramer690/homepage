@@ -9,10 +9,10 @@ topic: ai
 categories: [ai]
 tags: [agentforce, kpis, agent analytics, digital wallet, dealer service, manufacturing]
 takeaways:
-  - "Five numbers decide 90 days after go-live: escalation rate, task resolution rate, cost per resolved enquiry, handle time on escalated enquiries and the share of enquiries answered out of hours."
-  - "Agent Analytics in Agentforce Studio supplies escalation, deflection and task resolution rates; Salesforce itself says escalation and deflection rates measure proxy signals."
-  - "Cost per resolved enquiry combines the agent's credits from Digital Wallet with your own run costs; in the scenario it is $3.06, against $6 for a service rep."
-  - "Agree the stop rule with the head of service before go-live and apply it per subagent: in the scenario the spare parts subagent costs $9.12 per resolved enquiry and is switched off."
+  - "What counts: escalation rate, task resolution rate, cost per resolution, handle time on escalated cases and the share answered out of hours."
+  - "Agent Analytics supplies escalation, deflection and task resolution rates. Salesforce itself calls escalation and deflection proxy signals."
+  - "Cost per resolution combines the credits from Digital Wallet with your run costs: $3.06 in the worked example, against $6 for a service rep."
+  - "The stop rule is agreed before go-live and applies per subagent. In the worked example the spare parts subagent costs $9.12 per resolution and is switched off."
 faq:
   - q: "Where do I find the KPIs of an Agentforce agent?"
     a: "Escalation, deflection, abandonment and task resolution rates are in Agent Analytics in Agentforce Studio, under Observe & Optimize. Credits per agent come from Digital Wallet, and handle time after a handover comes from Service Cloud."
@@ -43,13 +43,13 @@ For a machine builder's dealer agent I use five KPIs:
 | Handle time on escalated enquiries | Minutes a service rep spends after the handover | Service Cloud, Omni-Channel |
 | Out-of-hours share | Resolved enquiries that arrived while the service desk was closed | Session start times against business hours |
 
-## Where does each number come from?
+## Where the numbers come from
 
 **Agent Analytics.** It sits in Agentforce Studio under Observe & Optimize. The [Trailhead module on agent analytics](https://trailhead.salesforce.com/content/learn/modules/agent-analytics-and-monitoring/monitor-agent-metrics-and-scores) defines escalation rate as the "share of sessions that escalated to a support representative or another agent" and deflection rate as the share that "ended without escalation". Abandonment counts sessions that timed out, by default after two hours. Task resolution rate is the share "evaluated as fully resolved by the Trust Layer Task Resolution detector". Quality scores such as answer faithfulness require Audit and Feedback in Setup. Performance Insights breaks each metric down by subagent, intent or action, which is where the switch-off decision gets made.
 
 Reading them costs no credits: Salesforce's [Observability post of July 2026](https://www.salesforce.com/blog/agentforce-observability/) says Observability "is now unmetered for every customer across all Agentforce SKUs".
 
-**Digital Wallet.** [Digital Wallet](https://www.salesforce.com/agentforce/digital-wallet/) breaks consumption down "to the agent, action, and channel level" and supports custom tags. It requires Data 360. One agent's credits divided by its resolved sessions give the consumption part of the cost per resolved enquiry. Knowledge upkeep, regression tests and partner days sit in your own books, and in the scenario below they are the larger part.
+**Digital Wallet.** [Digital Wallet](https://www.salesforce.com/agentforce/digital-wallet/) breaks consumption down "to the agent, action, and channel level" and supports custom tags. It requires Data 360. One agent's credits divided by its resolved sessions give the consumption part of the cost per resolved enquiry. Knowledge upkeep, regression tests and partner days sit in your own books, and in the worked example below they are the larger part.
 
 **Service Cloud.** Escalations routed through Omni-Channel become AgentWork records, a [work assignment routed to an agent](https://developer.salesforce.com/docs/atlas.en-us.260.0.object_reference.meta/object_reference/sforce_api_objects_agentwork.htm), here meaning the human rep. Report handle time after the handover against the baseline from before go-live. A clean summary from the agent should lower it; dealers who arrive annoyed after three failed attempts raise it.
 
@@ -69,7 +69,7 @@ Billing adds a third definition. For resolution-based Help Agent pricing, accord
 
 So I count an enquiry as resolved only when the task resolution detector says so, and a senior service rep reads 50 sessions a month. Wrong answers in sessions marked as resolved mean the KPI is too optimistic, and that gap goes into the report.
 
-## A typical scenario: a dealer agent after 90 days
+## Worked example: a dealer agent after 90 days
 
 Assume a machine builder with 350 dealers in 30 countries, SAP as ERP and an agent in the dealer portal with two subagents: order status and spare part availability. All figures below are assumptions to show the method; only the credit multipliers and the list price come from Salesforce.
 
@@ -87,7 +87,7 @@ Assume a machine builder with 350 dealers in 30 countries, SAP as ERP and an age
 $3.06 | per resolved enquiry, whole agent
 $6 | per enquiry for a service rep before go-live
 $9.12 | per resolved enquiry, spare parts subagent
-source: scenario with assumed values; credit multipliers from the Flex Credits rate card of 31 August 2026, list price from Salesforce
+source: worked example with assumed values; credit multipliers from the Flex Credits rate card of 31 August 2026, list price from Salesforce
 ```
 
 The decision on day 90: order status stays and goes to the next dealer group. Spare parts comes out of the agent and goes to the parts desk through a structured portal form until regional stock data reaches Salesforce. Part identification is covered in [spare parts by serial number](../spare-parts-by-serial-number-ai/).
@@ -103,7 +103,7 @@ Gartner [expects](https://www.gartner.com/en/newsroom/press-releases/2025-06-25-
 
 The 40 percent values are my starting points, not Salesforce figures. Switching off does not have to mean ending: narrow the agent to one subagent, run it only while the service desk is closed, or fix and retest. For the last option, Agent Optimizer ranks recurring failure patterns from production sessions by impact. Salesforce's [September 2026 post](https://www.salesforce.com/blog/agent-optimizer/) calls it available in beta, and the Dreamforce list announces GA for October. A/B Experimentation lets a fix compete with the current version on split traffic and is announced as beta for October, so check the status in your org.
 
-## How do you prepare the 90-day review before go-live?
+## First step: measure the baseline for three months
 
 1. **Measure the baseline** for three months: dealer enquiries by type, handle time, arrival time by country.
 2. **Switch on Audit and Feedback** so that quality and trust scores exist from day one.
@@ -113,5 +113,3 @@ The 40 percent values are my starting points, not Salesforce figures. Switching 
 6. **Fix the review dates:** day 30, day 60, decision on day 90.
 
 The KPIs need a business case from before go-live, which is why I put [business value and data quality first](../agentforce-business-value-data-quality-first/). Deciding which agents are worth their costs is part of my [make-or-buy and licence planning](../../services/make-or-buy-licences/) work.
-
-An agent pays off when its cost per resolved enquiry stays below your service desk's and the escalated cases do not get harder to handle.

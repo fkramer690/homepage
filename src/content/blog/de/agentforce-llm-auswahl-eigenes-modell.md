@@ -9,11 +9,11 @@ topic: ai
 categories: [ai, architecture]
 tags: [Agentforce, LLM, BYOLLM, Modellauswahl, Architektur, Fertigung]
 takeaways:
-  - "Agentforce läuft auf Salesforce Default, solange Sie nichts anderes wählen; die Supported-Models-Seite beschreibt das als verwalteten Modellmix, der derzeit GPT-4o enthält."
-  - "Agent Script legt das Modell pro Agent, pro Subagent und für den Router fest; als gründlich mit Agenten getestet nennt Salesforce GPT 4.1, Claude Haiku 4.5 und Gemini 3.5 Flash."
-  - "Die Modellstufe ist ein Preishebel: Ein Prompt bis 2.000 Tokens kostet 2 Flex Credits auf Basic, 4 auf Standard, 16 auf Advanced und 2 auf dem eigenen Modell, plus die Rechnung des Anbieters."
-  - "Salesforce dokumentiert Bring Your Own LLM für Prompt-Vorlagen, Models API und eigene Aktionen; das Datenschutz-FAQ behandelt ein solches Modell als Nicht-Salesforce-Anwendung unter Ihrem eigenen Vertrag."
-  - "Die verwaltete Modellliste hinkt den Herstellern hinterher: Anthropic führt Claude Opus 5.5 und Sonnet 5.5, die Liste von Salesforce endet bei Sonnet 5 und Opus 4.8."
+  - "Ohne eigene Wahl läuft Agentforce auf Salesforce Default, laut Supported-Models-Seite ein verwalteter Modellmix, der derzeit GPT-4o enthält."
+  - "Agent Script legt das Modell pro Agent, Subagent und Router fest; mit Agenten getestet sind GPT 4.1, Claude Haiku 4.5 und Gemini 3.5 Flash."
+  - "Ein Prompt bis 2.000 Tokens kostet 2 Flex Credits auf Basic, 4 auf Standard, 16 auf Advanced und 2 auf dem eigenen Modell, plus die Anbieterrechnung."
+  - "Ein eigenes Modell über BYOLLM gilt im Datenschutz-FAQ von Salesforce als Nicht-Salesforce-Anwendung unter Ihrem eigenen Vertrag."
+  - "Anthropic führt Claude Opus 5.5 und Sonnet 5.5, die verwaltete Modellliste von Salesforce endet bei Sonnet 5 und Opus 4.8."
 faq:
   - q: "Welches LLM nutzt Agentforce standardmäßig?"
     a: "Standard ist Salesforce Default, laut Supported-Models-Seite ein verwalteter Mix vertrauenswürdiger Modelle, der derzeit GPT-4o enthält. Was im Mix steckt, entscheidet Salesforce; wer ein festes Modell braucht, legt es selbst fest."
@@ -42,7 +42,7 @@ Modelle von Anthropic und Amazon laufen auf Bedrock „entirely within the Sales
 
 Die [Claudeforce-Pressemitteilung vom 27. August 2026](https://www.salesforce.com/ap/news/press-releases/2026/08/27/sg-salesforce-and-anthropic-announce-claudeforce-the-1-ai-meets-the-1-ai-crm/) nennt Claude „a reasoning model for the Atlas Reasoning Engine“ und „available in Agent Builder“. Zum Standard für Agenten erklärt sie Claude nicht, und die Entwicklerdokumentation nennt weiterhin GPT-4o im Standardmix. Salesforces eigenes CRM-Reasoning-Modell Koa ist laut [Ankündigung vom 15. September 2026](https://investor.salesforce.com/news/news-details/2026/Announcing-Koa-Salesforces-First-CRM-Reasoning-Model-Built-on-NVIDIA-Nemotron/default.aspx) im Pilot, die allgemeine Verfügbarkeit wird für „Winter 2026 in U.S. regions“ erwartet. Für einen deutschen Maschinenbauer, der jetzt plant, ist Koa noch keine Option.
 
-## Wie legen Sie das Modell pro Agent oder Subagent fest?
+## Das Modell pro Agent und Subagent festlegen
 
 Laut [Anleitung zur Modellkonfiguration](https://developer.salesforce.com/docs/ai/agentforce/guide/ascript-model.html) nutzt jeder Agent den Org-Standard, solange Agent Script kein `model_config` setzt: für den ganzen Agenten, in einem einzelnen Subagenten oder am Agent Router, der den Subagenten auswählt. Das Modell des Subagenten hat Vorrang vor dem des Agenten.
 
@@ -80,7 +80,7 @@ Ob ein eigenes Modell über BYOLLM auch das Reasoning des Agenten übernehmen da
 
 **Was es spart.** Starter Prompts kosten 2 Credits statt 4 auf Standard, und die Supported-Models-Seite spricht von „30% fewer Einstein Requests“. Die Tokens rechnet Ihr Anbieter zusätzlich ab.
 
-## Warum hinkt die Modellliste hinterher?
+## Die Modellliste hinkt den Herstellern hinterher
 
 Die [Modellübersicht von Anthropic](https://platform.claude.com/docs/en/about-claude/models/overview) führt Claude Opus 5.5, Sonnet 5.5 und Haiku 5.5 als aktuelle Modelle, die verwaltete Liste von Salesforce endet bei Sonnet 5 und Opus 4.8. Selbst die Seiten von Salesforce unterscheiden sich: Die Hilfeseite führt Gemini 3.7 und 3.8 Flash, die Entwicklerseite endet bei 3.6 Flash. Ich gehe davon aus, dass ein neues Spitzenmodell Wochen bis Monate nach Erscheinen in Agentforce ankommt, und rechne nie einen Business Case mit einem Modell, das nicht auf der Liste steht.
 
@@ -88,7 +88,7 @@ Modelle verschwinden auch wieder. Nach dem Abschaltdatum wird ein abgekündigtes
 
 Die Region ist die dritte Prüfung. Verwaltete Modelle werden „eventually re-route to a US region“, wenn eine Anfrage in der vorgesehenen Region scheitert, es sei denn, ein Admin aktiviert „Enable In-Region Model Requests Only“, was für „some models“ gilt. Die Hilfeseite nennt `eu`-Inference-Profile für Claude Sonnet 5 und Opus 4.8 und für GPT 5.6 Terra nur die USA. Mehr in [Agentforce und EU-Datenresidenz](../agentforce-eu-datenresidenz-modelle/).
 
-## Ein typisches Szenario: ein Service-Agent und ein Azure-OpenAI-Vertrag
+## Rechenbeispiel: ein Service-Agent und ein Azure-OpenAI-Vertrag
 
 Nehmen wir einen Maschinenbauer mit Service Cloud, Field Service, einem Händlerportal und SAP. Die Konzern-IT hat einen Azure-OpenAI-Vertrag und fragt, warum Agentforce nicht diesen nutzt. Alle Zahlen sind Annahmen.
 
@@ -107,7 +107,7 @@ Dazu schreibt eine Prompt-Vorlage eine Fallzusammenfassung für den Techniker im
 
 BYOLLM spart höchstens 90 € im Monat, rund 1.080 € im Jahr, vor der Token-Rechnung von Azure. Das allein rechtfertigt keinen zweiten Vertragsweg; die Modellstufe bewegt das Vierfache. Ich würde hier verwaltete Modelle für den Agenten empfehlen, BYOLLM nur, wenn der Azure-Vertrag der freigegebene Datenweg der IT für Servicedaten ist, und Opus für die Fehlersuche nur, wenn der Test eine klare Lücke zeigt.
 
-## Wie sollten Sie das Modell auswählen?
+## Erster Schritt: das Modell pro Subagent festlegen
 
 1. **Das Modell festlegen**, pro Agent und Subagent in Agent Script.
 2. **Mit einem getesteten Modell beginnen**, in der niedrigsten Stufe, die besteht; einen Subagenten nur mit Testergebnissen höher stufen.
@@ -116,6 +116,4 @@ BYOLLM spart höchstens 90 € im Monat, rund 1.080 € im Jahr, vor der Token-R
 5. **Modellseite und Release Notes regelmäßig prüfen** und nach jeder Umleitung die Tests erneut laufen lassen.
 6. **In Digital Wallet messen**, ob Reasoning-Aufrufe als Prompts auftauchen.
 
-Ich behandle diese Entscheidungen als Teil der [Salesforce-Architektur](../../leistungen/salesforce-architektur/), neben Datenmodell und Berechtigungen.
-
-Die Modellwahl in Agentforce hat Folgen für Kosten, Verträge und Tests, entscheiden und dokumentieren Sie sie deshalb pro Subagent.
+Ich behandle diese Entscheidungen als Teil der [Salesforce-Architektur](../../leistungen/salesforce-architektur/), neben Datenmodell und Berechtigungen. Pro Subagent halte ich Modell, Stufe, Region und Testergebnis schriftlich fest, weil jede Änderung Kosten, Verträge und Tests berührt.

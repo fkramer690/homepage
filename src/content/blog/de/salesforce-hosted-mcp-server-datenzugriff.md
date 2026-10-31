@@ -9,11 +9,11 @@ topic: security
 categories: [ai]
 tags: [MCP, Hosted MCP, Datenschutz, Einstein Trust Layer, Claude, Maschinenbau]
 takeaways:
-  - "Jeder Aufruf über Hosted MCP läuft als der Benutzer, der die Verbindung autorisiert hat, mit seinen Objektrechten, Feldrechten und Freigaben; Service Accounts und Machine-to-Machine-Flows gibt es nicht."
-  - "Salesforce-Rechte gelten pro Person, nicht pro Kanal: Was jemand in Lightning sieht, kann ein externes Modell erreichen; soll Claude weniger sehen, braucht es Named Queries oder Custom Server."
+  - "Jeder Aufruf läuft als der Benutzer, der die Verbindung autorisiert hat, mit seinen Objekt- und Feldrechten und Freigaben; Service Accounts gibt es nicht."
+  - "Was jemand in Lightning sieht, kann ein externes Modell erreichen. Soll Claude weniger sehen, braucht es Named Queries oder Custom Server."
   - "Starten Sie mit dem Server sobject-reads in einer Sandbox; er schließt Änderungen an Datensätzen aus, aber nicht, dass Daten über den KI-Client abfließen."
-  - "Nach meiner Einschätzung schützt der Einstein Trust Layer keine Daten, die ein externes Modell über Hosted MCP liest; Salesforce dokumentiert ihn für eigene LLM-Aufrufe, nicht für Hosted MCP."
-  - "Beschränken Sie jede External Client App auf ein Permission Set, halten Sie Administratoren heraus und klären Sie den Vertrag mit dem KI-Anbieter, bevor der erste Fachbereich startet."
+  - "Nach meiner Einschätzung schützt der Einstein Trust Layer keine Daten, die ein externes Modell über Hosted MCP liest."
+  - "Beschränken Sie jede External Client App auf ein Permission Set, halten Sie Administratoren heraus und klären Sie den Vertrag mit dem KI-Anbieter."
 faq:
   - q: "Kann Claude über Hosted MCP alle unsere Salesforce-Daten lesen?"
     a: "Nein. Claude sieht genau das, was der Benutzer sieht, der die Verbindung autorisiert hat, denn jeder Aufruf läuft mit dessen Objektrechten, Feldrechten und Freigaberegeln. Ist dieser Benutzer Administrator, kann das fast die ganze Org sein."
@@ -48,7 +48,7 @@ Die [offizielle Anleitung für Claude](https://developer.salesforce.com/blogs/20
 Positiv: Der Scope `mcp_api` gibt laut GA-Ankündigung Zugriff auf MCP, „but not our existing REST APIs“. Ein Token, das aus einem MCP-Client gestohlen wird, öffnet weniger als ein klassisches API-Token.
 ```
 
-## Warum schützen Rechte pro Person nicht pro Kanal?
+## Rechte gelten pro Person, nicht pro Kanal
 
 Die Security-Seite nennt die Regel: Was ein Benutzer in Lightning oder über die REST API nicht darf, darf er auch über MCP nicht. Umgekehrt gilt es genauso. Alles, was ein Key Account Manager in Lightning öffnen kann, kann der KI-Client abfragen, und eine Abfrage liefert Hunderte Datensätze, durch die sich ein Mensch einzeln klicken würde.
 
@@ -62,7 +62,7 @@ Soll ein externes Modell weniger sehen als die Person, helfen die Standard-sObje
 
 Custom Server kosten Aufwand, senken aber die Aufrufe pro Frage, und das zählt, sobald Salesforce sie abrechnet, siehe [MCP-Zugriffe auf Salesforce als Budgetrisiko](../mcp-zugriffe-salesforce-budgetrisiko/).
 
-## Welchen Server sollten Sie zuerst aktivieren?
+## Zuerst sobject-reads in einer Sandbox
 
 Die GA-Ankündigung empfiehlt `sobject-reads` in einer Sandbox und nennt ihn „read-only, risk-free, and immediately useful“. Dem Startpunkt stimme ich zu, dem „risk-free“ nicht. Die Security-Seite ist genauer: Der lesende Server beseitigt das Risiko von Änderungen. Gegen Daten, die über den Client abfließen, tut er nichts.
 
@@ -95,7 +95,7 @@ Fragen Sie Salesforce und Anthropic, welcher Vertrag den Satz „not retained by
 
 Bis dahin regelt Ihr KI-Vertrag die Daten. Für Claude Code schreibt Anthropic auf der [Seite zur Datennutzung](https://code.claude.com/docs/en/data-usage), dass Prompts unter kommerziellen Bedingungen nicht zum Training genutzt werden, die Standardaufbewahrung 30 Tage beträgt und Zero Data Retention pro Organisation für berechtigte Enterprise-Konten freigeschaltet wird. Diese Bedingungen gehören zum Datenschutzbeauftragten und, wo Beschäftigtendaten betroffen sind, zum Betriebsrat, siehe [KI-Coding, Betriebsrat und DSGVO](../ki-coding-betriebsrat-dsgvo/).
 
-## Ein typisches Szenario: drei Anfragen bei einem Maschinenbauer
+## Beispiel: drei Anfragen bei einem Maschinenbauer
 
 Nehmen wir einen Maschinenbauer mit Sales Cloud, Service Cloud, SAP, einem Händlernetz und Claude Enterprise. Alle Zahlen sind Annahmen. In einem Monat erreichen die IT drei Anfragen.
 
@@ -107,7 +107,7 @@ Nehmen wir einen Maschinenbauer mit Sales Cloud, Service Cloud, SAP, einem Händ
 
 Zwei von drei Anfragen gehen durch, beide enger als beantragt. Nach meiner Einschätzung ist das das normale Ergebnis einer Zugriffsprüfung.
 
-## Was sollte die IT-Leitung vor der ersten Verbindung einrichten?
+## Erster Schritt: festlegen, wer sich verbinden darf
 
 1. **Festlegen, wer sich verbinden darf.** Jede External Client App auf ein Permission Set beschränken, mit der OAuth-Richtlinie „Admin approved users are pre-authorized“. Administratoren bleiben draußen: Ein Admin, der Claude autorisiert, gibt ihm fast die ganze Org.
 2. **Freigaben und Feldrechte prüfen** für Fälle, Anlagen, Garantieanträge, Preisvereinbarungen und Kontakte.
@@ -117,6 +117,4 @@ Zwei von drei Anfragen gehen durch, beide enger als beantragt. Nach meiner Einsc
 6. **Den KI-Vertrag klären**: Training, Aufbewahrung, Zero Data Retention, Hosting-Region.
 7. **Die API-Logs beobachten**: Wer liest welche Objekte in welcher Menge?
 
-Das gehört zu meiner Arbeit an [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/): Ein MCP-Server ist eine Schnittstelle und braucht einen Verantwortlichen.
-
-Hosted MCP setzt die Salesforce-Rechte zuverlässig durch; die eigentliche Entscheidung ist, welchen Personen, welchen Feldern und welchem KI-Vertrag Sie Ihre Daten anvertrauen.
+Das gehört zu meiner Arbeit an [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/): Ein MCP-Server ist eine Schnittstelle und braucht einen Verantwortlichen. Die Rechte setzt Hosted MCP zuverlässig durch, entscheiden müssen Sie, welchen Personen, Feldern und welchem KI-Vertrag Sie die Daten anvertrauen.

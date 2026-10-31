@@ -9,10 +9,10 @@ topic: security
 categories: [ai]
 tags: [agentforce, prompt injection, security, dealer portal, experience cloud, manufacturing]
 takeaways:
-  - "Every field a dealer, customer or website visitor can write, from a warranty fault description to Web-to-Lead and Email-to-Case, is text an Agentforce agent may read and follow."
-  - "ForcedLeak (CVSS 9.4, reported July 2025) made Agentforce send lead data to an expired allowlisted domain; Salesforce has enforced Trusted URLs for agents since 8 September 2025."
-  - "Prompt filters and input validation help, but they are probabilistic; plan as if they miss and make sure a successful injection can do little harm."
-  - "Break the lethal trifecta for every agent that reads external text: narrow read rights for the running user, no outbound actions or stray Trusted URLs, decisions in deterministic logic."
+  - "Every field outsiders can write, from a warranty fault description to Email-to-Case, is text an Agentforce agent may read and follow."
+  - "ForcedLeak (CVSS 9.4) made Agentforce send lead data to an expired allowlisted domain. Trusted URLs have been enforced since 8 September 2025."
+  - "Prompt filters are probabilistic. Plan as if they miss and make sure a successful injection can do little harm."
+  - "Break the lethal trifecta: narrow read rights for the running user, no way out and decisions in deterministic logic."
 faq:
   - q: "What is prompt injection in Agentforce?"
     a: "Prompt injection means text that an attacker controls ends up in the agent's context and is treated as an instruction. With indirect injection the text sits in a record, for example a lead description or a warranty claim, and fires when an employee asks the agent about that record."
@@ -51,7 +51,7 @@ Salesforce acknowledged the report on 31 July and has enforced Trusted URLs for 
 
 Two points matter more to me than the patch. Noma wrote that the model "lacked the ability to distinguish" between data loaded into its context and instructions from trusted sources. That holds for every language model. And a Salesforce spokesperson told [SalesforceBen](https://www.salesforceben.com/agentforce-web-to-lead-vulnerability-exposed-could-you-be-impacted/) that prompt injection is "a complex and evolving area". The specific exit is closed. The pattern behind it stays.
 
-## Why are dealer portals and service mailboxes entry points?
+## Dealer portals and service mailboxes are entry points
 
 Simon Willison named the pattern the [lethal trifecta](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/) in June 2025: an agent with access to private data, exposure to untrusted content and the ability to communicate externally can be made to leak that data. Willison called ForcedLeak a [classic case](https://simonwillison.net/2025/Sep/26/agentforce/) of it. In a manufacturing org untrusted text comes in through more doors than Web-to-Lead:
 
@@ -86,7 +86,7 @@ The goal is that a successful injection does little harm. For every agent that r
 5. **Separate reading from acting.** A paper on design patterns that Willison [summarised](https://simonwillison.net/2025/Jun/13/prompt-injection-design-patterns/) puts the principle in one line: "once an LLM agent has ingested untrusted input, it must be constrained". In Salesforce I build that as a summarising step without actions, whose output a person or a deterministic step then uses.
 6. **Test and look back.** Add guardrail cases with hidden instructions to the agent's test set, as in [testing Agentforce agents before go-live](../testing-agentforce-agents-before-go-live/), and search existing records for unusual instructions in the external fields, as Noma recommended after ForcedLeak.
 
-## A typical scenario: warranty claims from 120 dealers
+## Example: warranty claims from 120 dealers
 
 Assume a maker of packaging machines with 120 dealers, SAP as ERP and Manufacturing Cloud with a dealer portal. All numbers are assumptions to show the method. Dealers submit around 300 warranty claims a month, each with a free-text fault description. The company plans an employee agent that summarises new claims for the warranty team every morning.
 
@@ -96,7 +96,7 @@ The fixes are dull. The running user gets read access only to claims, assets and
 
 After that, a hidden instruction in a fault description can still distort one summary. It cannot reach data outside that claim and has no way out. The remaining risk is a misleading summary, and the clerk catches it because claims above an agreed amount are always read in full. In my judgement that residual risk is acceptable. An agent with broad read rights and an email action is not.
 
-## Where should you start?
+## First step: half a day with the admin and the head of service
 
 For a first pass I would sit with the Salesforce admin and the head of service for half a day and answer five questions:
 
@@ -107,5 +107,3 @@ For a first pass I would sit with the Salesforce admin and the head of service f
 5. Which decisions does the model make that a rule should make?
 
 The same questions apply to external AI tools that read Salesforce data through MCP, because the trifecta does not care which client reads the field. I cover that in [hosted MCP servers and data access](../salesforce-hosted-mcp-servers-data-access/), and the OAuth side in [connected apps and AI integrations](../connected-apps-oauth-ai-integrations/). Mapping data flows and permissions like this is part of my [Salesforce architecture work](../../services/salesforce-architecture/).
-
-An agent that reads text from dealers or the web needs narrow read rights and no way out, and with both in place prompt injection becomes a quality issue instead of a data leak.

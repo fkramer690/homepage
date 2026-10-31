@@ -9,9 +9,9 @@ topic: ai
 categories: [ai]
 tags: [agent script, agentforce, ai agents, manufacturing, warranty, architecture]
 takeaways:
-  - "Credit limit checks, warranty eligibility and price approvals belong in Agent Script logic or in the Flow, Apex or ERP call behind it; the LLM only understands the request and explains the result."
-  - "The new Agentforce, generally available since February 2026, uses hybrid reasoning: logic instructions execute as code without an LLM call, prompt instructions trigger one."
-  - "An action with an available when condition disappears from the LLM's tool list while the condition is false, so the model cannot place an order for a dealer who is over the credit limit."
+  - "The LLM understands the request and explains the result. The decision is made by Agent Script logic or the Flow, Apex or ERP call behind it."
+  - "In the new Agentforce, available since February 2026, logic instructions run as code without an LLM call; only prompt instructions trigger one."
+  - "An action with an available when condition disappears from the LLM's tool list while the condition is false."
   - "Gate variables must be set by code, never by the LLM; otherwise the gate brings back exactly the variability it was meant to remove."
   - "before_reasoning runs on every parse, so an ERP lookup placed there without a guard runs several times per user turn."
 faq:
@@ -48,7 +48,7 @@ Because these are decisions with a right answer. A dealer is over the credit lim
 
 **Untrusted input.** Dealer portals, warranty forms and emails are written by people outside your company. If a rule depends on the model's reading of free text, that text can push the model. I cover this in [prompt injection through dealer portals](../prompt-injection-dealer-portals-agentforce/).
 
-## Which Agent Script building blocks enforce a rule?
+## How Agent Script enforces a rule
 
 Four building blocks matter for a decision maker. Your partner should be able to show you where each rule sits.
 
@@ -89,9 +89,9 @@ title: Gate variables, the guard and is_displayable
 The [Flex Credits rate card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) bills actions at 20 credits but does not say whether script-triggered calls count differently. With an ERP lookup in `before_reasoning`, I would have that confirmed in the quote.
 ```
 
-## A typical scenario: a dealer agent for spare parts and warranty
+## Worked example: a dealer agent for spare parts and warranty
 
-Assume a machine builder with SAP, Sales Cloud, Service Cloud and a dealer portal. The numbers are assumptions to show the method. The agent handles 800 spare part orders and 150 warranty pre-checks a month, and it touches three rules.
+Assume a machine builder with SAP, Sales Cloud, Service Cloud and a dealer portal. The numbers are assumptions to show the method. The agent handles 800 spare part orders and 150 warranty pre-checks a month, and it touches credit limit, warranty and price approval.
 
 **Credit limit.** SAP credit management decides. A MuleSoft API returns a flag per dealer, as described in [Agentforce and SAP order status](../agentforce-sap-order-status-mulesoft/). The agent reads it once per session and gates the order action. Assume 4 percent of dealers are blocked at any time: for them the model explains that credit management has to release the order and offers to forward the request. It never sees an order button.
 
@@ -107,7 +107,7 @@ More than it sounds. The model recognises intent, fills required inputs from fre
 
 Agent Script is also not always the right place for the rule itself. If the rule has many variants, such as warranty terms per product family and part, it belongs in the data model or in the Business Rules Engine, which the [Manufacturing Cloud page](https://www.salesforce.com/manufacturing/cloud/) lists for claims, rebates and quoting. The script then calls it. If the ERP owns the rule, the script calls the ERP. Agent Script decides when a rule is checked and what happens with the result.
 
-## How do you split rules and language in your next agent?
+## First step: list every decision the agent touches
 
 Before your partner starts building, I would go through these steps:
 
@@ -125,5 +125,3 @@ Test the rules like code
 ```
 
 This is the part of an agent design I review on the client side as part of [Salesforce architecture](../../services/salesforce-architecture/), because it decides whether the agent can be audited later. Whether your process is ready for an agent at all is covered in [Agentforce for manufacturers: start now or wait](../agentforce-yes-or-no-manufacturers/).
-
-Put the rules in logic and the language in the model, and your agent will give the same answer to the same dealer twice.

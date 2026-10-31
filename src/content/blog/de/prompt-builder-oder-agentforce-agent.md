@@ -9,11 +9,11 @@ topic: ai
 categories: [ai]
 tags: [Prompt Builder, Agentforce, Flex Credits, KI-Agenten, Maschinenbau, Governance]
 takeaways:
-  - "Ein Prompt-Builder-Template reicht, wenn aus einem Datensatz ein Text entsteht und ein Mensch ihn liest, bevor etwas passiert: Serviceberichtstext, Fallzusammenfassung, Antwortentwurf oder nächtliche Garantieübersicht."
-  - "Einen Agenten mit Aktionen brauchen Sie, wenn das System den nächsten Schritt selbst wählt, ohne Mensch dazwischen antwortet oder Datensätze schreibt, etwa Fälle, Bestellungen oder Außendiensttermine."
-  - "Auf einem Standard-Modell kostet ein Prompt 4 Flex Credits pro 2.000 Tokens, jede Agentenaktion 20 Credits vor jedem Prompt; auf einem Advanced-Modell kostet eine lange Zusammenfassung mehr als zwei Aktionen."
-  - "Salesforce hat für Prompt Builder in Winter '26 JSON-Ausgabe und asynchrone Batches mit bis zu 1.000 Prompts genannt, damit lassen sich viele Zusammenfassungen ohne Agent erledigen."
-  - "Ein getestetes Template bleibt wertvoll, wenn später ein Agent kommt, denn es wird zu dessen Referenzaktion. Starten Sie mit dem Template und ergänzen Sie den Agenten nur, wo Dialog oder Schreibschritt ihn bezahlen."
+  - "Serviceberichtstext, Fallzusammenfassung, Antwortentwurf und nächtliche Garantieübersicht erledigt ein Template, weil ein Mensch den Text zuerst liest."
+  - "Einen Agenten mit Aktionen brauchen Sie, wenn das System den nächsten Schritt selbst wählt, ohne Mensch dazwischen antwortet oder Datensätze schreibt."
+  - "Auf einem Standard-Modell kostet ein Prompt 4 Flex Credits pro 2.000 Tokens, jede Agentenaktion 20 Credits plus ihre Prompts."
+  - "Für Winter '26 hat Salesforce JSON-Ausgabe und asynchrone Batches mit bis zu 1.000 Prompts für Prompt Builder genannt."
+  - "Ein getestetes Template wird zur Referenzaktion, wenn später ein Agent kommt, und ist deshalb keine verlorene Arbeit."
 faq:
   - q: "Was ist der Unterschied zwischen Prompt Builder und einem Agentforce-Agenten?"
     a: "Prompt Builder erstellt wiederverwendbare Prompt-Templates, die ein Button, ein Flow, Apex oder ein Agent für genau einen Generierungsschritt aufruft. Ein Agentforce-Agent entscheidet zur Laufzeit, welche Aktion er ausführt, führt ein Gespräch und ändert Datensätze nur über vordefinierte Aktionen."
@@ -38,7 +38,7 @@ Ein Agent entscheidet selbst, welche Aktion als Nächstes kommt. Laut [Trailhead
 
 Die eigentliche Frage lautet also: Wer entscheidet über den nächsten Schritt? Beim Template entscheidet Ihr Prozess: Der Techniker drückt den Button, der Flow läuft um zwei Uhr nachts. Beim Agenten entscheidet das Sprachmodell innerhalb von Grenzen, die Sie entwerfen. Wie das geht, beschreibe ich in [Agent Script statt LLM-Urteil](../agent-script-regeln-statt-llm/).
 
-## Welche Aufgaben im Maschinenbau deckt ein Template ab?
+## Aufgaben im After-Sales, die ein Template abdeckt
 
 Vier typische Aufgaben im After-Sales-Service funktionieren gut mit einem Template:
 
@@ -83,7 +83,7 @@ Der Hilfeartikel sagt nicht, ob ein Template, das ein Agent als Aktion aufruft, 
 
 Alle weiteren Zähler stehen in [Flex Credits pro Aktion](../flex-credits-agentforce-kosten-pro-aktion/).
 
-## Ein typisches Szenario: erst Templates, dann der Händleragent
+## Rechenbeispiel: erst Templates, dann der Händleragent
 
 Nehmen wir einen Maschinenbauer mit Service Cloud, Field Service, Händlerportal und SAP. Alle Mengen sind Annahmen, gerechnet auf einem Standard-Modell:
 
@@ -101,7 +101,7 @@ Hinzu kommen Tests. Eine Suite mit 100 Gesprächen zu je vier Aktionen à 16 Cre
 
 Der Agent lohnt sich, wenn er mehr Arbeitszeit im Service spart als die zusätzlichen 600 € im Monat und die Tests kosten, etwa wenn Händler in anderen Zeitzonen heute bis zum nächsten Morgen warten. Antwortet Ihr Service ohnehin innerhalb einer Stunde, würde ich bei den Entwürfen bleiben. Die vollständige Rechnung für einen Auftragsstatus-Agenten finden Sie unter [was ein Serviceagent für Händleranfragen kostet](../serviceagent-haendleranfragen-kosten/).
 
-## Wie unterscheiden sich Test und Governance?
+## Ein Template testen Sie anders als einen Agenten
 
 Ein Template hat eine Eingabe und eine Ausgabe, also testen Sie es mit echten Datensätzen. Salesforce hat auf der [Dreamforce 2026](https://www.salesforce.com/blog/dreamforce-2026-announcements/) Batch Prompt Testing als Beta angekündigt, das ein Template in einem Durchlauf gegen viele echte Eingaben laufen lässt. Reference Visibility ist GA und zeigt vor einer Änderung jeden Flow und jede Aktion, die von einem Template abhängt. Templates sind Metadaten vom Typ [GenAiPromptTemplate](https://developer.salesforce.com/docs/atlas.en-us.252.0.api_meta.meta/api_meta/meta_genaiprompttemplate.htm), gehören also ins Repository und durch die Pipeline wie ein Flow.
 
@@ -109,7 +109,7 @@ Ein Agent braucht mehr. [Agententests laufen nur in Sandboxes](https://developer
 
 Ein Flex-Template funktioniert auch außerhalb von Salesforce. [Hosted MCP Server](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/prompt-builder.html) veröffentlichen es als MCP-Prompt, den ein Benutzer in Claude oder Cursor auswählt, mit dessen Berechtigungen und demselben Credit-Verbrauch wie in der Salesforce-Oberfläche. ChatGPT unterstützt MCP-Prompts laut dieser Seite nicht.
 
-## Wo sollten Sie anfangen?
+## Erster Schritt: Textaufgaben mit Volumen und Leser auflisten
 
 ```schritte
 Textaufgaben auflisten
@@ -123,5 +123,3 @@ Einen Agenten ergänzen
 ```
 
 Welches Werkzeug auf der Salesforce-Plattform zu welcher Aufgabe passt, steht im Masterclass-Kapitel zu [Salesforce-Werkzeugen für KI-Entwicklung](../../masterclass/ki-salesforce/salesforce-werkzeuge-ki-entwicklung/). Solche Entscheidungen sind Teil meiner [Salesforce-Architekturarbeit](../../leistungen/salesforce-architektur/).
-
-Für die vier Textaufgaben oben reicht ein Template, und ein Agent verdient seinen höheren Preis nur dort, wo er ohne Mensch dazwischen antwortet oder handelt.
