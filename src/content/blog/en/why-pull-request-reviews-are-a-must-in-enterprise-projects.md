@@ -45,6 +45,11 @@ In a small org with one admin, that admin knows every change. In an enterprise p
 
 Every one of these is cheap to fix in a pull request and expensive to fix later. Once a change has reached UAT, several teams have built on it, testers have logged defects against it and business users have seen it.
 
+```partnerfluss review
+without: Without reviews | Every team deploys its own way, conflicts only surface in UAT or production.
+with: With pull request reviews | Every change goes through a review before it reaches the org.
+```
+
 ## What should a good review check?
 
 A review is not a style check. Formatting, naming and known anti-patterns are things a machine can check faster and more reliably. The human reviewer should focus on what tools can't judge. In my reviews I look at these points:

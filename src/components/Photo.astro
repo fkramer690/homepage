@@ -1,7 +1,10 @@
 ---
 // One photo of Fabian from src/data/photos.ts, as AVIF/WebP with a JPEG fallback
-// in responsive widths. `sizes` must match the rendered width; `eager` only for a
-// photo above the fold (it then also gets fetchpriority high).
+// in responsive widths up to the 1536px original. `sizes` must be the width the
+// image is drawn at, not the box: with object-fit cover a 3:2 photo in a square
+// box is drawn 1.5 times wider than the box. The browser multiplies `sizes` by
+// the device pixel ratio, so a too small value makes photos blurry on Retina and
+// phones. `eager` only for a photo above the fold (it then also gets fetchpriority high).
 import { Picture } from 'astro:assets';
 import { photos, type PhotoKey } from '../data/photos';
 
@@ -12,8 +15,10 @@ interface Props {
   widths?: number[];
   eager?: boolean;
   class?: string;
+  /** Crop override (CSS object-position) where the default focus cuts off a head. */
+  focus?: string;
 }
-const { photo, lang, sizes, widths = [400, 640, 960, 1280], eager = false, class: className } = Astro.props;
+const { photo, lang, sizes, widths = [480, 768, 1024, 1280, 1536], eager = false, class: className, focus } = Astro.props;
 const p = photos[photo];
 ---
 <Picture
@@ -28,5 +33,5 @@ const p = photos[photo];
   fetchpriority={eager ? 'high' : 'auto'}
   decoding="async"
   class={className}
-  style={`object-position: ${p.focus}`}
+  style={`object-position: ${focus ?? p.focus}`}
 />

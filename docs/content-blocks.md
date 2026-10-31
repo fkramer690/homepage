@@ -1,6 +1,6 @@
 # Content blocks (library)
 
-Twelve building blocks that loosen up blog articles and masterclass chapters. They are written in Markdown as a fenced code block whose language is the block name, so articles stay free of HTML. `src/lib/content-blocks-plugin.mjs` turns them into markup at build time (logic in `src/lib/content-blocks.mjs`, styles under "Content blocks" in `src/styles/global.css`), and `scripts/check-blog.mjs` validates them. Rules for when to use them: "Content blocks" in [blog-guidelines.md](blog-guidelines.md).
+Fourteen building blocks that loosen up blog articles and masterclass chapters. They are written in Markdown as a fenced code block whose language is the block name, so articles stay free of HTML. `src/lib/content-blocks-plugin.mjs` turns them into markup at build time (logic in `src/lib/content-blocks.mjs`, styles under "Content blocks" in `src/styles/global.css`), and `scripts/check-blog.mjs` validates them. Rules for when to use them: "Content blocks" in [blog-guidelines.md](blog-guidelines.md).
 
 Design: only the site's own colours and forms (cyan, anthracite, greys, dashed mono labels, cards with a short bar on top, the technical grid). No other colours, no icons beyond the cyan tick and grey cross.
 
@@ -70,7 +70,7 @@ Asset ..> Wartung Field Service
 ```
 ````
 
-After adding or changing a diagram run `node scripts/render-diagrams.mjs` (needs the Mermaid CLI and Playwright with Chromium, plus the Sora font installed locally: copy `node_modules/@fontsource/sora/files/sora-latin-{400,600}-normal.woff` to `~/.fonts/` and run `fc-cache`). It writes `src/assets/diagrams/<hash>.svg`, deletes unused ones and **fails if any label does not fit its box with at least 8 px room**; then shorten the label. Commit the SVGs: the build only reads them. If a page still shows an old diagram locally, delete `.astro/data-store.json` (content cache).
+After adding or changing a diagram run `node scripts/render-diagrams.mjs` (needs the Mermaid CLI and Playwright with Chromium, plus the Sora font installed locally: copy `node_modules/@fontsource/sora/files/sora-latin-{400,600}-normal.woff` to `~/.fonts/` and run `fc-cache`). It writes `src/assets/diagrams/<hash>.svg` (left to right where that fits 700 px, plus a top-to-bottom twin `<hash>-tb.svg` for phones; top to bottom everywhere otherwise), sets edge labels as white mono chips on the line, deletes unused files and **fails if any box label does not fit its box with at least 8 px room or an edge label touches a box or another edge label**; then shorten the label. To point the Mermaid CLI at an installed Chromium, set `MMDC_PUPPETEER_CONFIG` to a Puppeteer config file. After a style change delete `src/assets/diagrams/*.svg` and render again. Commit the SVGs: the build only reads them. If a page still shows an old diagram locally, delete `node_modules/.astro/data-store.json` (content cache).
 
 ## 6. Pro-Contra
 
@@ -100,7 +100,7 @@ Produktkatalog, Preisprozeduren und Konfiguratorregeln liegen in Revenue Cloud z
 
 ## 8. Schritte (steps)
 
-Three to six phases of a real sequence: `Title | duration · owner` (the part after `|` is optional), then the description on an indented line.
+Three to six phases of a real sequence: `Title | duration · owner` (the part after `|` is optional), then the description on an indented line. Look (Fabian chose it 2026-10-30): the titles sit in one band of arrow heads whose cyan gets stronger towards the last step; below each arrow a cyan ring with the number, the duration line in mono and the text, centred, with clear space between the columns and German hyphenation. On mobile the arrows point downwards with ring and text below. Keep each description short (one or two sentences), because on desktop it stands in a narrow column.
 
 ````
 ```schritte
@@ -115,7 +115,7 @@ Umsetzen | 3 bis 6 Monate · Partner
 
 ## 9. Stufen (stage tiles)
 
-Three to seven stages of a model in one row, `Letter | Name | Subtitle | Question`. A trailing `*` marks the stages the cases below refer to (cyan frame). Optional zero to three cases `fall: Title | situation | consequence` (EN `case:`) as grey cards with a cyan left bar. Approved by Fabian 2026-10-29 for ADKAR on the change management page; fits models such as ADKAR or maturity levels.
+Three to seven stages of a model in one row, `Letter | Name | Subtitle | Question`. A trailing `*` marks the stages the cases below refer to (cyan frame). Optional zero to three cases `fall: Title | situation | consequence` (EN `case:`) as grey cards with a cyan left bar. Approved by Fabian 2026-10-29 for ADKAR on the change management page; fits models such as ADKAR or maturity levels. Look (Fabian chose the "Pfeilkette" 2026-10-30): letter and name sit in one continuous chain of arrow heads (light cyan, marked stages full cyan with white text), subtitle and question stand below without a frame, separated by thin lines; on mobile the chain runs downwards.
 
 ````
 ```stufen
@@ -138,6 +138,8 @@ band: 3-3 | Quelle der Wahrheit: das Repository *
 fall: Von Stufe 2 zu 3 | Die Quelle der Wahrheit wandert ins Repository. | Direkte Änderungen in der Org sind ab dann ein Fehler.
 ```
 ````
+
+Animation of the variant `treppe` (Fabian 2026-10-30, kept slow on purpose): when the staircase scrolls into view the steps rise one after another, then the risk row and the bands appear; once per page view (`src/components/BlockMotion.astro`, CSS in `global.css`). Reduced motion or no script: the still picture.
 
 ## 10. Vergleich (without / with)
 
@@ -191,6 +193,187 @@ check | Prüfungen | Bei jedem Pull Request | Ein Validierungs-Deployment, Apex-
 gear | Automatisierung | Nach dem Deployment | Was früher von Hand lief, ist Teil des Deployments.
 analyse | Review | Für jede Änderung | Menschen prüfen Design und Lesbarkeit.
 basis: Auf der Git-Plattform des Kunden
+```
+````
+
+Animation (Fabian 2026-10-30, slow): when the block scrolls into view the base appears, the pillars grow from it one after another and the roof lands last; once per page view, same script and fallback as the staircase.
+
+## 14. Partnerfluss (partner flow, animated)
+
+Two animated panels side by side: without a central owner, Partner A, B, C and the internal IT deliver on their own crossing paths into the Salesforce org and conflicts flash where they cross; with one, everything runs through a hub and arrives as one checked stream. Variant after the name: `architekt` (EN `architect`, hub "Architekt" / "Architect") or `review` (hub "Review"). The node labels are fixed per language; the file gives each panel a title and a one-line caption as `ohne: Title | caption` and `mit: Title | caption` (EN `without:`, `with:`). Drawing and labels in `src/lib/content-blocks.mjs`, animation under "Partner flow" in `global.css` (still picture with reduced motion), labels checked by `scripts/check-graphics.mjs` (class `pf-drawing`). Approved by Fabian 2026-10-30 for the partner governance service page and the pull request review article; use it only where the text is about several partners or teams delivering into one org.
+
+````
+```partnerfluss review
+ohne: Ohne Review | Jedes Team deployt auf eigenem Weg, Konflikte fallen erst in UAT oder Produktion auf.
+mit: Mit Pull-Request-Review | Jede Änderung geht durch ein Review, bevor sie in die Org kommt.
+```
+````
+
+## 15. Tabelle (light table)
+
+A comparison or assignment as a light HTML table instead of a table image, so the text stays readable on phones and for search engines. First line `titel:` (EN `title:`), then `spalten: Corner | Column | Column` (EN `columns:`, two to four columns, the corner may stay empty), then one row per line `Row label | cell | cell` (two to eight rows). A trailing `*` marks a cell (light cyan with a cyan bar) or, in the `spalten:` line, a whole column. `Name ~ short name` gives a long column a shorter label for phones. Optional `marke: Word` (EN `mark:`) puts that word as a tag in front of every marked cell, optional `fazit:` (EN `note:`) adds the dashed note below. On phones every row becomes a card with the column names as small labels. Variant `matrix`: marked cells show their text as a solid cyan tag, the others as quiet grey text that phones leave out, for responsibility matrices. Approved by Fabian 2026-10-30 (G5) for the system map on the integration service page, the object ownership matrix and the sfdx-hardis comparison.
+
+````
+```tabelle
+titel: Systemlandkarte: welches System bei welchen Daten führt
+spalten: | Salesforce | ERP
+Kunden und Kontakte | Interessenten und Kontakte * | Kunden mit Aufträgen und Rechnungen *
+Produkte und Preise | Liest, was der Vertrieb braucht | Meist das führende System *
+marke: führt
+fazit: Typische Aufteilung. Die Details unterscheiden sich in jedem Unternehmen.
+```
+````
+
+````
+```tabelle matrix
+titel: Object Ownership Matrix, vereinfachtes Beispiel
+spalten: Objekt | Stream Vertrieb | Stream Service
+Account | Verantwortlich * | stimmt sich ab
+Case | stimmt sich ab | Verantwortlich *
+```
+````
+
+## 16. Stärken und Grenzen (strengths and limits)
+
+What a tool does well and where it stops: `titel:` (EN `title:`), two to four strengths `+ Title | text` as tiles with a cyan tick (a trailing `*` highlights one, e.g. the licence), two to six limits `- Title | text` as a compact ✕ list in a white box (headed "Grenzen" / "Limits"), optional `besser: Text` (EN `better:`) as a line "Dafür besser" / "Better suited" below. Approved by Fabian 2026-10-30 (G5) for the Document Builder article.
+
+````
+```staerken-grenzen
+titel: Document Builder: stark für den Servicebericht vor Ort
++ Unterschrift | Kunde und Techniker, auch offline in der mobilen App
++ Enthalten | in der Field-Service-Lizenz, 250 Dokumente pro Nutzer und Monat *
+- Format | nur PDF und nur synchron
+- Android | nur Servicetermin
+besser: Für Prüfprotokolle und Massenläufe: Salesforce Document Generation oder ein AppExchange-Tool.
+```
+````
+
+## 17. Animated explainers (dark panel)
+
+Four blocks that replaced the dark explainer PNGs, plus the process in lanes (`prozess`) and the traceability chain (`kette`), both light (described at the end of this section) (Fabian 2026-10-30, G6, look A): the anthracite panel with grey cards, the highlighted card white on cyan-dark (contrast 5:1). Text stays real HTML, the cards stack on phones. They build up once when they scroll into view (`src/components/BlockMotion.astro`, styles under "Animated explainers" in `global.css`); the pipeline repeats while it stays in view. Reduced motion or no script: the finished picture. All four take `titel:` (EN `title:`) and one or more `fazit:` lines (EN `note:`) for the dashed note; `**Label:**` in a note turns cyan.
+
+**`pipeline`**: three to six stages `Stage | text`, a trailing `*` puts the green check on the gate stage, the last stage is the target and is highlighted. `schranke:` (EN `gate:`) and `hotfix:` give the two legend lines. Motion: a change runs through stage by stage, then the hotfix runs the same way faster in amber.
+
+````
+```pipeline
+titel: Salesforce-Release-Pipeline
+Entwickler-Sandbox | Bauen und auf Feature-Branch committen
+Validierung | Deploy-Check, Apex-Tests, Code-Analyse *
+Produktion | Release nur über die Pipeline
+schranke: Qualitätsschranke: Merge nur bei grüner Pipeline
+hotfix: Hotfix: eigener Branch, gleiche Pipeline, Stunden statt Wochen
+fazit: Git-Repository: einzige Quelle der Wahrheit für alle Metadaten
+```
+````
+
+**`saeulenwechsel`** (pillar shift): `bisher:` (EN `before:`) heads two to four old pillars `alt: Name | term, term` (EN `old:`); `titel:` heads three to six new pillars `Name | Item < Source | Item < Source` (one to five items, a `*` after the name highlights one pillar). A source made of old terms reads "aus Secure" / "from Secure", anything else stands as it is. Motion (Fabian's choice): the new pillars fill one by one, the old terms each pillar comes from light up above; terms no pillar took light up with the notes at the end.
+
+````
+```saeulenwechsel
+bisher: Bisher: drei Säulen
+alt: Trusted | secure, compliant, reliable
+alt: Adaptable | resilient, composable
+titel: Well-Architected: von drei auf fünf Säulen
+Trust | Sicherheit < Secure | Recht, Data Residency < Compliant
+Reliability | Disaster Recovery < Resilient
+Resource and Cost Optimization * | Performance < Reliable | Lizenzen, Sandboxes < Framework 2026
+fazit: **Ausgelagert:** Messaging, Eventing und APIs in die Integration Patterns.
+```
+````
+
+**`basis-addons`**: `basis: Part, Part | text` (EN `base:`) is what is set anyway (label "gesetzt" / "given"), two to four add-ons `+ Name | text` (label "Add-on"). Motion: the base stands, the add-ons dock on one by one.
+
+````
+```basis-addons
+titel: Welche Clouds das Unternehmen wirklich braucht
+basis: Sales Cloud, Service Cloud | In fast jedem Enterprise-Projekt gesetzt
++ Field Service | Passt bei vielen kurzen Einsätzen mit Routen- und Terminoptimierung.
++ Experience Cloud | Passt zu kundennahen Prozessen.
+fazit: Die spannenden Fragen beginnen bei den Add-ons.
+```
+````
+
+**`level`**: two to four levels `Name | meta` with two to five indented lines each (label "Level 1" …; the last level is highlighted), `abschluss:` (EN `done:`) is the badge line under every level. Motion: a rail runs across, the lines tick off, then the badge appears.
+
+````
+```level
+titel: sfdx-hardis-DevOps-Training · drei Level
+Contributor Basics | 7 Labs · ca. 2 h 15
+  Setup: VS Code, Git, sfdx-hardis
+  Deployment-Check und Merge
+Release Manager | 11 Labs · ca. 6 h 55
+  Pull Requests reviewen
+  Hotfixes, Monitoring, Doku
+abschluss: Badge erreicht
+```
+````
+
+**`prozess`** (process in lanes, light): one phase of a delivery or approval process, so a long process becomes one picture per phase that sits in the text next to its section (Fabian 2026-10-30). Style of the light reference blocks: dashed label (`titel:`) above, white frame on the technical grid, head row like the table head. `spuren:` (EN `lanes:`) names two or three lanes (for example people, agent, pipeline). Then in order: steps `Lane | Title | text` (two to sixteen, the lane by its name; numbered automatically), `tor: text` (EN `gate:`, up to six) for a binding decision, `zurueck: text` (EN `loop:`) for a way back attached to the step or gate before it, and optionally `phase: Name` (up to four). `start: 7 | 3` lets the next phase go on counting (first step 07, first gate Tor 3). Optional `ticket: Jira` adds a status column on the right as a cyan band with a cyan head, like a highlighted table column: a step's fourth field `Lane | Title | text | status` or a gate's `tor: text | status` stands there as a pill on the same row (`In UAT · Pipeline`, the part after the dot names who sets it). Nothing else enters that column: gates span the lanes only. Cards: people white with anthracite bar, agent light cyan with cyan bar, pipeline dashed; gates anthracite bars; ways back dashed chips. Motion: steps and gates light up one by one. On phones one column, the lane name next to the number and the status as a tag in the card. Built 2026-10-30 for the article on the AI-native delivery process; rating open.
+
+````
+```prozess
+titel: Phase 1 von 3 · Discovery
+spuren: Personen | Agent | Pipeline
+ticket: Jira
+Personen | Discovery-Workshop | Kunde, BA, Architekt; Transkript läuft
+Agent | Auswertung | Protokoll, Story-Entwürfe mit Zeitstempel | Stories angelegt · Agent
+tor: Kunde bestätigt das Protokoll
+zurueck: Offene Punkte zurück in den Workshop
+```
+````
+
+Next phase in its own block, numbering goes on:
+
+````
+```prozess
+titel: Phase 2 von 3 · Bauen
+spuren: Personen | Agent | Pipeline
+ticket: Jira
+start: 7 | 3
+Agent | Implementierung | Plan, Freigabe, Code und Tests | In Arbeit · Agent
+Pipeline | CI-Validierung | Check-Deploy, Tests, Analyzer | Validiert · Pipeline
+```
+````
+
+**`kette`** (traceability chain, light): three to seven links top to bottom, `Link | example` per line, plus `titel:` and optional `fazit:`. Same frame as `prozess`; the link names are pills like the table tags on one cyan line, the example in a white box next to them; the last pill is solid cyan. Use it to show how one item can be traced through several artefacts (sentence in a workshop, story, commit, test, release note). Motion: the links light up one after another. Built 2026-10-30, separate from `prozess` on Fabian's request; rating open.
+
+````
+```kette
+titel: Rückverfolgung: vom Satz im Workshop zur Release Note
+Satz im Transkript | 00:23:14: „Anträge über 5.000 Euro will ich selbst sehen.“
+Story | Akzeptanzkriterium mit Vertretungsregel
+Release Note | Freigabe ab 5.000 Euro mit Vertretungsregel
+```
+````
+
+## 18. Steuerzentrale and Eisberg (light, animated)
+
+Two light blocks in the style of the chain (dashed label above, white frames on the technical grid), built 2026-10-30 for the sfdx-hardis and DevOps Center comparison after Fabian picked them from mockups; rating open. Text stays real HTML, no SVG.
+
+**`steuerzentrale`** (control centre): where a process is controlled, for two tools or approaches side by side. `titel:` (EN `title:`), then exactly two sides `seite: Name | control centre | Stage, Stage, Stage` (EN `side:`, two to four stages), each followed by exactly two boxes `- Role | Name | detail | link label` that hang below the control centre, and an optional `fazit:` (EN `note:`) as the caption of that side. The label "Steuerzentrale" / "Control centre" is added automatically. Motion (loops like the partner flow): the stages light up one after another, then a dot runs down each link and the box it reaches lights up. Reduced motion: the still picture. On phones the sides stack.
+
+````
+```steuerzentrale
+titel: Wo der Release-Prozess gesteuert wird
+seite: Lifecycle Center | Hub-Org in Salesforce | Entwicklung, UAT, Produktion
+- Speicher | Git | GitHub.com, Bitbucket Cloud | Branch, PR
+- Ziel | Salesforce-Orgs | UAT, Produktion | Deployment
+fazit: Ein Salesforce-Dienst ruft die Git-Plattform von außen auf.
+seite: sfdx-hardis | Git-Plattform mit CI | Pull Request, Prüfungen, Merge
+- Ziel | Salesforce-Orgs | UAT, Produktion | Deployment
+- Dazu | Monitoring | Backup, Dokumentation | geplant
+```
+````
+
+**`eisberg`** (iceberg): what is visible (often the licence) and the costs or efforts below it. `titel:`, `sichtbar: Title | text` (EN `visible:`) above the dashed waterline, then two to five items `- Title | text | tag`, each wider than the one before; a trailing `*` marks the biggest item (anthracite, tag in cyan). Optional `fazit:` (EN `note:`) for the dashed note. The waterline reads "Darunter: die echten Kosten" / "Below: the real costs". Use only with items the text names; no invented amounts. Motion: builds once when it scrolls into view (tip, waterline, then the items sink in one by one; `src/components/BlockMotion.astro`). Reduced motion or no script: the still picture. On phones every item takes the full width.
+
+````
+```eisberg
+titel: Was beide Werkzeuge wirklich kosten
+sichtbar: Lizenz: 0 € | bei beiden Werkzeugen
+- Git-Plattform | Kosten pro Nutzer | beide
+- Einrichtung | schnell bei Lifecycle Center, Pipeline-Aufbau bei sfdx-hardis | beide
+- Release-Rolle | ein Admin, der klickt, oder jemand, der die Pipeline pflegt | größter Posten *
 ```
 ````
 

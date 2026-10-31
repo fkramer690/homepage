@@ -61,7 +61,17 @@ A solid setup does not need to be complicated. In my projects these building blo
 5. **Delta deployments.** Only what changed is deployed. That keeps deployments fast and reduces side effects.
 6. **Monitoring and backup.** Regular metadata backups and checks show changes made directly in production, outdated API versions or unused components.
 
-![Salesforce release pipeline in five stages: developer sandbox, pull request with review, validation with deploy check, Apex tests and code analysis, integration and UAT, and production. A quality gate allows merges only when the pipeline is green, hotfixes use the same pipeline, and the Git repository is the single source of truth.](../../../assets/blog/devops-pipeline-en.png)
+```pipeline
+title: Salesforce release pipeline
+Developer sandbox | Build and commit to a feature branch
+Pull request | Review by the architecture owner
+Validation | Deploy check, Apex tests, code analysis *
+Integration · UAT | Same deployment, tested by the business
+Production | Released from the pipeline only
+gate: Quality gate: merge only when the pipeline is green
+hotfix: Hotfix: separate branch, same pipeline, hours instead of weeks
+note: Git repository: single source of truth for all metadata
+```
 
 > The pipeline belongs to the client, not to the partner. Whoever owns the release process owns the platform.
 

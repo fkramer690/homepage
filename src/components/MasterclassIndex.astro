@@ -75,7 +75,7 @@ const schema = {
       <h1>{o.title}</h1>
       <div class="mc-overview">
         <aside class="mc-overview-side">
-          <figure class="mc-overview-photo"><Photo photo="05-masterclass-gruppe-v03" lang={lang} eager widths={[300, 450, 600]} sizes="(max-width: 900px) calc(100vw - 32px), 300px" /></figure>
+          <figure class="mc-overview-photo"><Photo photo="05-masterclass-gruppe-v03" lang={lang} eager sizes="(max-width: 900px) calc(100vw - 32px), 300px" /></figure>
           <p class="mc-overview-lead">{o.intro}</p>
           <ul class="mc-overview-stats">
             {stats.map(([n, label]) => <li><strong>{n}</strong><span>{label}</span></li>)}

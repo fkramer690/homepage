@@ -45,6 +45,11 @@ In einer kleinen Org mit einem Admin kennt dieser Admin jede Änderung. In einem
 
 All das ist im Pull Request günstig zu beheben und später teuer. Hat eine Änderung erst einmal UAT erreicht, haben andere Teams darauf aufgebaut, Tester Fehler dagegen erfasst und Fachanwender sie gesehen.
 
+```partnerfluss review
+ohne: Ohne Review | Jedes Team deployt auf eigenem Weg, Konflikte fallen erst in UAT oder Produktion auf.
+mit: Mit Pull-Request-Review | Jede Änderung geht durch ein Review, bevor sie in die Org kommt.
+```
+
 ## Was sollte ein gutes Review prüfen?
 
 Ein Review ist keine Stilprüfung. Formatierung, Benennung und bekannte Anti-Patterns kann eine Maschine schneller und zuverlässiger prüfen. Der menschliche Reviewer sollte sich auf das konzentrieren, was Werkzeuge nicht beurteilen können. In meinen Reviews achte ich auf diese Punkte:

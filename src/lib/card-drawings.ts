@@ -1400,6 +1400,23 @@ const drawings: Record<string, Drawing> = {
     ${t(18, 128, l('1 action = 20 credits: Core pool = 25,000 actions', '1 Aktion = 20 Credits: Core-Pool = 25.000 Aktionen'), { fill: D, size: 7.5 })}
     ${t(18, 144, l('Core to Advanced, 200 users: +$480K for $2.5K credits', 'Core zu Advanced, 200 Nutzer: +480K € für 2,5K € Credits'), { size: 7 })}`,
 
+  'ai-native-delivery-process': (l) => {
+    // 14 steps and 5 gates (g) in sequence; lanes 0 people, 1 agent, 2 pipeline
+    const seq = [1, 0, 1, 'g', 1, 0, 1, 'g', 1, 1, 'g', 2, 2, 0, 1, 'g', 'g', 2, 1];
+    const x = (i: number) => 80 + i * 12;
+    const y = (lane: number) => 36 + lane * 22;
+    const pts = seq.map((s, i) => (s === 'g' ? null : [x(i), y(s as number)])).filter(Boolean) as number[][];
+    return `
+    ${t(18, 18, l('14 STEPS · 5 GATES · 3 LANES', '14 SCHRITTE · 5 TORE · 3 SPUREN'), { fill: D, size: 7 })}
+    ${[l('people', 'Personen'), 'Agent', 'Pipeline'].map((s, i) => t(18, y(i) + 2.5, s, { fill: i === 1 ? C : G, size: 7 }) + `<path d="M74 ${y(i)}H306" stroke="${L}"/>`).join('')}
+    ${seq.map((s, i) => (s === 'g' ? `<path d="M${x(i)} 28V88" stroke="${C}" stroke-width="2"/>` : '')).join('')}
+    <path d="M${pts.map((p) => p.join(' ')).join('L')}" fill="none" stroke="${G}" stroke-width="1"/>
+    ${pts.map(([px, py]) => dot(px, py, py === y(1) ? C : G, 3)).join('')}
+    <path d="M18 104H302" stroke="${L}"/>
+    ${t(18, 120, l('transcript > story > commit > test > note', 'Transkript > Story > Commit > Test > Note'), { size: 7 })}
+    ${tag(18, 132, 190, l('only the pipeline deploys to prod', 'nur die Pipeline deployt in Prod'))}`;
+  },
+
   'smaller-teams-ai-native-delivery': (l) => `
     ${t(18, 18, l('TODAY (SCENARIO)', 'HEUTE (SZENARIO)'), { fill: D, size: 7 })}
     ${[0, 1, 2, 3].map((r) => [0, 1, 2].map((c) => dot(30 + c * 18, 36 + r * 16, G, 4)).join('')).join('')}

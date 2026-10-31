@@ -18,7 +18,7 @@ const l = site.legal;
   <h2>Kontakt</h2>
   <p>
     E-Mail: <a href={`mailto:${site.email}`}>{site.email}</a>
-    {l.phone && (<><br />Telefon: {l.phone}</>)}
+    {l.phone && (<><br />Telefon: <a href={site.phone.href}>{l.phone}</a></>)}
   </p>
 
   <h2>Registereintrag</h2>
