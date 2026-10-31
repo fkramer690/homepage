@@ -81,9 +81,9 @@ without: Every project models differently
 - Years later, nobody trusts the reports.
 - Agents give wrong answers.
 with: Data model as part of the architecture
-- The core objects and their relationships are designed once.
+- Accounts, products and contracts are designed once for all projects.
 - The relationships to ERP are defined.
-- Reporting, automation and AI use cases build on it.
+- Reports add up, and agents find the right data.
 ```
 
 ## What do I deliver?

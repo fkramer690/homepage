@@ -98,10 +98,10 @@ A partner can write good standards. What matters is who owns the rules and the t
 without: Rules and tools with a partner
 - The partner decides how every other partner builds, including its competitors.
 - The repository, the pipeline and tools like Jira or Miro belong to it.
-- Partners are hard to compare or replace.
+- Changing partners gets expensive, because everything sits with them.
 with: Rules and tools with the client
 - The standards, the review rights and the tools belong to the client.
-- A new partner is onboarded into a documented setup.
+- A new partner starts with the same rules, tools and rights as everyone else.
 - A partner who leaves hands over nothing but their user accounts.
 - Offers can be compared fairly, and conversations about quality stay honest.
 ```

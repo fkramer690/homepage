@@ -65,7 +65,7 @@ A release is technically rolled out in minutes. What happens next decides whethe
 pro: What we do about it
 - A rollout plan per release sets who hears about it and when.
 - The first version covers the most common cases, edge cases come later.
-- A sponsor plan sets out what management does visibly and when.
+- New rules come from management, not only from the project team.
 - The old way is closed as soon as the new one works.
 contra: Where it fails
 - **The people affected hear about it too late** and look for a way around it.
@@ -114,7 +114,7 @@ without: One large package per quarter
 - A lot of new things at once, high risk per release.
 - Problems from daily work end up in emails.
 with: Small releases with a fixed route
-- Business teams know before the release what changes.
+- Business teams see changes before the release.
 - Small changes more often, less risk per release.
 - Feedback reaches the backlog by a fixed route.
 ```

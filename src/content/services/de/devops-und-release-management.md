@@ -60,15 +60,15 @@ Salesforce macht es leicht, direkt in einer Org etwas zu ändern. Am Anfang ist 
 
 ```vergleich
 ohne: Änderungen direkt in der Org
-- Niemand weiß, welche Version eines Flows oder Permission Sets die richtige ist.
-- Sandboxes laufen auseinander.
-- Manuelle Schritte vor und nach dem Deployment stehen in Checklisten oder in den Köpfen weniger Leute.
-- Jedes Release hängt davon ab, dass diese Leute verfügbar sind.
+- Wer etwas ändert, ändert es direkt in einer Sandbox oder in Produktion.
+- Welche Version gilt, weiß nur, wer zuletzt daran gearbeitet hat.
+- Vor und nach dem Deployment arbeitet jemand eine Checkliste ab.
+- Ein Release braucht die zwei, drei Leute, die den Ablauf kennen.
 mit: Git, Pull Request und Pipeline
-- Jede Änderung in Produktion lässt sich einem Pull Request und einem Reviewer zuordnen.
-- Fehler werden bei der Validierung gefunden, bevor sie UAT oder Produktion erreichen.
-- Flows aktivieren, Referenzdaten laden und Einstellungen anpassen sind Teil des Deployments.
-- Releases werden kleiner, häufiger und planbar.
+- Jede Änderung beginnt als Branch und endet als Pull Request.
+- Die gültige Version steht in Git, nicht in einer Org.
+- Die Checkliste ist Code und läuft mit jedem Deployment.
+- Ein Release startet mit einem Merge, nicht mit einem Termin am Wochenende.
 ```
 
 ## Was macht eine gute Salesforce-Pipeline?

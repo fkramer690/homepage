@@ -98,10 +98,10 @@ Auch ein Partner kann gute Standards schreiben. Entscheidend ist, wem die Regeln
 ohne: Regeln und Tools beim Partner
 - Der Partner entscheidet, wie alle anderen Partner bauen, auch seine Wettbewerber.
 - Repository, Pipeline und Tools wie Jira oder Miro gehören ihm.
-- Partner lassen sich schwer vergleichen oder austauschen.
+- Ein Partnerwechsel wird teuer, weil alles bei ihm liegt.
 mit: Regeln und Tools beim Kunden
 - Standards, Freigaberechte und Tools gehören dem Kunden.
-- Ein neuer Partner wird in ein dokumentiertes Setup eingearbeitet.
+- Ein neuer Partner startet mit denselben Regeln, Tools und Rechten wie alle anderen.
 - Ein scheidender Partner gibt nichts weiter ab als seine Benutzer.
 - Angebote lassen sich fair vergleichen, und Gespräche über Qualität bleiben ehrlich.
 ```

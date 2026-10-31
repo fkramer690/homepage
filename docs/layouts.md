@@ -260,8 +260,9 @@ Text an Text"). Built in `src/components/ServicePage.astro` (`.phase-flow`).
 - No cards: each phase gets a cyan ring with a line icon from `src/icons/`
   (frontmatter `phases[].icon`), the number in cyan mono, the title and its text
   in grey below.
-- A dashed grey line connects the rings from left to right; below 860px the
-  timeline turns vertical with the ring on the left.
+- Since 2026-10-31 the timeline stands vertically in the reading column, right
+  before the FAQ: ring on the left, a dashed grey line connects the rings from
+  top to bottom.
 - The whole text stays visible; the rings and the line break up the text.
 - Fits: three to five ordered steps with one or two sentences each.
 
@@ -295,11 +296,14 @@ Chosen 2026-10-29 after two rounds (four narrow tiles and a 2 × 2 grid were "no
 good enough"); Fabian: "merk dir die Grafik, die ist richtig gut geworden".
 Content block ```saeulen (see `docs/content-blocks.md`), CSS `.cb-pillars`.
 
-- Four pillars in one row, each with a cyan top line, a line icon from
-  `src/icons/` and the number in grey mono, then a one-word title, a cyan mono
-  line with the core ("Bei jedem Pull Request") and one full sentence.
-- Title, cyan line and text start at the same height in every pillar (subgrid),
-  all pillars end together.
+- Four slim pillars in one row, each with a cyan top line, a line icon from
+  `src/icons/`, a one-word title and a cyan mono line with the core ("Bei jedem
+  Pull Request"), centred; no numbers.
+- Title and cyan line start at the same height in every pillar (subgrid), all
+  pillars end together.
+- The full sentence per pillar stands below the base, two columns with the
+  pillar name in bold (2026-10-31: in a quarter of the 740px text column the
+  sentences broke after every word).
 - A dark roof bar names the whole ("Eine gute Salesforce-Pipeline"), a grey base
   bar what it stands on ("Auf der Git-Plattform des Kunden").
 - On phones the pillars stand below each other with the icon on the left.
