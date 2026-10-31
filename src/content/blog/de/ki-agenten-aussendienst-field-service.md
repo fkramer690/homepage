@@ -9,11 +9,11 @@ topic: field-service
 categories: [field-service, ai]
 tags: [Field Service, Außendienst, Agentforce, KI-Agenten, Maschinenbau, Wartung]
 takeaways:
-  - "Allgemein verfügbar sind in Salesforce Field Service heute KI-Agenten für Terminbuchung, proaktive Wartungsplanung, das Füllen von Planungslücken, Pre-Work Briefs, Einsatzberichte und Fehlersuche vor Ort."
-  - "Für einen Maschinenbauer lohnen sich zuerst die proaktive Buchung von Wartungsterminen und der vorformulierte Einsatzbericht, weil beide häufig sind und die Regeln dahinter feststehen."
-  - "Kundenseitige Terminbuchung läuft über Flex Credits mit 20 Credits (0,10 €) pro Aktion, die Funktionen für Mitarbeitende kosten als Add-on Agentforce for Field Service 125 € pro Nutzer und Monat."
-  - "Störungsbuchung, Fehlersuche vor Ort und Ausfallprognose brauchen Triage, sortierte Handbücher oder eine große Flottenhistorie; diese Funktionen würde ich später starten."
-  - "Ein vorformulierter Einsatzbericht hilft nur, wenn Ersatzteile, Zeiten und Fehlercodes strukturierte Felder bleiben, denn Garantie, Abrechnung und ERP lesen keinen Fließtext."
+  - "Salesforce nennt 17 Minuten, um einen Vor-Ort-Termin zu planen, und unter 5 Minuten mit dem Buchungsagenten. Das sind Herstellerangaben."
+  - "Für einen Maschinenbauer lohnen sich zuerst die proaktive Wartungsbuchung und der vorformulierte Einsatzbericht, weil beide häufig und regelbasiert sind."
+  - "Kundenseitige Buchung kostet 20 Flex Credits (0,10 €) pro Aktion, das Add-on für Mitarbeitende 125 € pro Nutzer und Monat."
+  - "Störungsbuchung, Fehlersuche und Ausfallprognose brauchen Triage, sortierte Handbücher oder eine große Flottenhistorie. Sie kommen später."
+  - "Ein Berichtsentwurf hilft nur, wenn Ersatzteile, Zeiten und Fehlercodes strukturierte Felder bleiben, denn das ERP liest keinen Fließtext."
 faq:
   - q: "Welche Agentforce-Funktionen gibt es für Salesforce Field Service?"
     a: "Laut Salesforce: Termine buchen, verschieben und absagen, proaktive Wartungsplanung aus Maintenance Plans, Planungslücken für Disponenten füllen, Pre-Work Briefs und Post-Work Summaries für Techniker sowie Fehlersuche vor Ort. Die Buchung per Telefon mit Agentforce Voice steht in den Winter-'27-Highlights."
@@ -67,23 +67,23 @@ Für Field-Service-Agenten gibt es zwei Preismodelle, und sie folgen der Grenze 
 
 Für die Budgetplanung heißt das: Ein Buchungsagent kostet Cent pro Buchung, das Add-on für 60 Techniker dagegen 90.000 € im Jahr zum Listenpreis. Stützt sich die Fehlersuche auf Handbücher in Data 360, kommen 150 Credits pro MB Verarbeitung dazu. Wie Sie Credits pro Prozess schätzen, steht in [Flex Credits: Agentforce-Kosten pro Aktion](../flex-credits-agentforce-kosten-pro-aktion/), was die Anbindung von Dokumenten kostet, in [Data-360-Kosten für KI-Agenten](../data-360-kosten-fuer-ki-agenten/).
 
-## Welche Funktionen lohnen sich für einen Maschinenbauer?
+## Für Maschinenbauer lohnen sich zuerst Wartungsbuchung und Einsatzbericht
 
 Der Außendienst eines Maschinenbauers ist ein anderer als bei Routerinstallation oder Alarmanlagenwartung. Es gibt weniger und längere Einsätze, die Maschinen haben Seriennummern und Verträge, und am anderen Ende sitzt ein Werksleiter, der einen Stillstand planen muss. Daran gemessen sortiere ich die Funktionen so.
 
-**Die proaktive Wartungsbuchung passt am besten.** Maintenance Plans erzeugen die Work Orders ohnehin, wie in [Wartungsverträge abbilden](../salesforce-field-service-wartungsvertraege/) beschrieben. Der Agent muss nur noch einen Termin vereinbaren. Der Haken ist das Stillstandsfenster: Der Agent sieht die in Salesforce gepflegten Öffnungszeiten und nichts von der Produktionsspitze nächste Woche. Ist kein Fenster gepflegt, sollte er Termine vorschlagen und an einen Disponenten übergeben, statt selbst zu buchen.
+**Die proaktive Wartungsbuchung passt am besten.** Maintenance Plans erzeugen die Work Orders ohnehin, wie in [Wartungsverträge abbilden](../salesforce-field-service-wartungsvertraege/) beschrieben. Der Agent muss nur noch einen Termin vereinbaren. Schwierig wird es beim Stillstandsfenster: Der Agent sieht die in Salesforce gepflegten Öffnungszeiten und nichts von der Produktionsspitze nächste Woche. Ist kein Fenster gepflegt, sollte er Termine vorschlagen und an einen Disponenten übergeben, statt selbst zu buchen.
 
 **Der vorformulierte Einsatzbericht passt, unter einer Bedingung.** Die Post-Work Summary ist Fließtext. Garantie, Abrechnung und ERP brauchen Ersatzteile, Arbeitszeit und Fehlercodes als Felder. Ich würde die strukturierten Felder als führenden Datensatz behalten und die Zusammenfassung für den Text nutzen, den der Kunde liest, etwa im Servicebericht aus dem [Document Builder](../salesforce-service-documents-document-builder-servicebericht/). Die [geführten mobilen Abläufe](../salesforce-field-service-mobile-aussendienst/) hängen am selben Datenmodell.
 
-**Der Pre-Work Brief ist so gut wie die Anlagenhistorie.** Ist die Hälfte der alten Work Orders keiner Anlage zugeordnet, hat das Briefing wenig zu sagen. Das ist die Datenfrage aus [Stammdaten für die Planung](../salesforce-field-service-stammdaten/).
+**Der Pre-Work Brief hängt an der Anlagenhistorie.** Ist die Hälfte der alten Work Orders keiner Anlage zugeordnet, hat das Briefing wenig zu sagen. Das ist die Datenfrage aus [Stammdaten für die Planung](../salesforce-field-service-stammdaten/).
 
-**Das Füllen von Lücken hängt vom Einsatzmix ab.** Bei vielen kurzen Einsätzen am Tag spart es echte Disponentenzeit. Bei Inbetriebnahmen über mehrere Tage gibt es kaum Lücken. Ob ein Disponent jeden Vorschlag noch freigeben sollte, ist die Frage aus [wie viel Planung automatisch laufen darf](../salesforce-field-service-terminplanung-automatisieren/). Winter '27 zeigt mehrtägige Termine in der Scheduling-Konsole immerhin als einen zusammenhängenden Einsatz.
+**Das Füllen von Lücken hängt vom Einsatzmix ab.** Bei vielen kurzen Einsätzen am Tag spart es Disponentenzeit. Bei Inbetriebnahmen über mehrere Tage gibt es kaum Lücken. Ob ein Disponent jeden Vorschlag noch freigeben sollte, ist die Frage aus [wie viel Planung automatisch laufen darf](../salesforce-field-service-terminplanung-automatisieren/). Winter '27 zeigt mehrtägige Termine in der Scheduling-Konsole immerhin als einen zusammenhängenden Einsatz.
 
 **Selbstbuchung bei Störungen braucht zuerst Triage.** Steht eine Maschine, muss jemand klären, was ausgefallen ist, welches Teil gebraucht wird und ob der Vertrag eine Reaktion in 24 Stunden zusagt. Das entscheidet das Entitlement, und das gehört in deterministische Logik, wie in [Agent Script: Regeln statt LLM](../agent-script-regeln-statt-llm/) beschrieben. Ein Agent kann den Anruf annehmen und den Fall anlegen. Buchen lassen würde ich ihn nur eindeutig eingeordnete Einsätze.
 
-**Fehlersuche und Ausfallprognose kommen später.** Die Fehlersuche ist nur so verlässlich wie die Handbücher dahinter, und die gibt es im Maschinenbau je Variante und Stand. Asset Service Prediction arbeitet laut [Produktseite](https://www.salesforce.com/service/field-service-management/) mit der Servicehistorie ähnlicher Anlagen. Bei 300 Exemplaren einer Sondermaschine ist diese Historie dünn.
+**Fehlersuche und Ausfallprognose kommen später.** Die Fehlersuche hängt an den Handbüchern dahinter, und die gibt es im Maschinenbau je Variante und Stand. Asset Service Prediction arbeitet laut [Produktseite](https://www.salesforce.com/service/field-service-management/) mit der Servicehistorie ähnlicher Anlagen. Bei 300 Exemplaren einer Sondermaschine ist diese Historie dünn.
 
-## Ein typisches Szenario: ein Maschinenbauer mit 60 Technikern
+## Rechenbeispiel: ein Maschinenbauer mit 60 Technikern
 
 Nehmen wir einen Maschinenbauer mit SAP, Service Cloud und bereits laufendem Field Service, 60 Technikern, 4 Disponenten und Wartungsverträgen für 1.500 Maschinen. Alle Zahlen sind Annahmen, die das Vorgehen zeigen sollen.
 
@@ -95,7 +95,7 @@ Nehmen wir einen Maschinenbauer mit SAP, Service Cloud und bereits laufendem Fie
 
 Das Muster dahinter: Der Agent mit dem niedrigsten Preis pro Vorgang ist am leichtesten zu starten, und das Add-on pro Nutzer ist eine Lizenzentscheidung, die ein sauberes Datenmodell braucht, bevor sie ihr Geld wert ist.
 
-## Wo sollten Sie anfangen?
+## Erster Schritt: Wartungsbuchung mit gepflegten Stillstandsfenstern
 
 ```schritte
 Eine Funktion wählen
@@ -111,5 +111,3 @@ Betriebsrat früh einbinden
 ```
 
 Ob das Add-on oder Agentforce 1 Field Service die bessere Wahl ist, ist eine Lizenzfrage, die ich in [Make-or-buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/) kläre. Zur grundsätzlichen Entscheidung über Agenten lesen Sie [Agentforce für Hersteller: jetzt starten oder warten?](../agentforce-ja-oder-nein-hersteller/). Wie Sie Agenten im Außendienst Schritt für Schritt einführen, steht in [Kapitel 5 der Masterclass Field Service](../../masterclass/field-service/field-service-ki-agenten-einfuehrung/).
-
-Starten Sie mit dem Agenten, der geplante Wartungen bucht, und lassen Sie den Einsatzbericht folgen, sobald die Felder dahinter sauber sind.

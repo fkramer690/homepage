@@ -9,11 +9,11 @@ topic: field-service
 categories: [field-service, ai]
 tags: [field service, agentforce, knowledge, data 360, grounding, manufacturing]
 takeaways:
-  - "A Field Service troubleshooting agent finds text that matches the question; it only knows which manual belongs to which machine if every document carries the same product key as the asset."
-  - "Service bulletins and retrofits need a serial number range or build state as a field, otherwise the agent applies them to every unit of a machine type."
-  - "Keep one valid version per variant and build state in the index; Knowledge replaces the published version on republishing, a file library keeps every file until someone deletes it."
-  - "A Data Library holds one source and filters Knowledge only by data category; once several variants share an index, the variant key belongs in a filter field of an advanced Data 360 setup."
-  - "Maintenance procedures with fixed steps belong on the work type, where they appear on every matching work order, and stock, prices and raw email threads stay out of the index."
+  - "The agent finds text that matches the question. It only knows which manual belongs to the machine through the same product key on document and asset."
+  - "Service bulletins and retrofits need a serial number range or build state as a field, otherwise the agent applies them to every machine of the type."
+  - "Knowledge replaces the old version on republishing. A file library keeps every file until someone deletes it."
+  - "A Data Library filters Knowledge only by data category. If variants share one index, you need filter fields in the advanced Data 360 setup."
+  - "Maintenance procedures with fixed steps belong on the work type. Stock, prices and raw email threads stay out of the index."
 faq:
   - q: "Which sources does the Field Service troubleshooting agent use?"
     a: "According to Salesforce's announcement of April 2025, it queries product manuals, similar repairs and sensor data plus previous chats and emails, and guides the technician step by step, also using photos. On-site troubleshooting was scheduled as generally available in June 2025."
@@ -34,7 +34,7 @@ Salesforce announced on-site troubleshooting in April 2025 as part of [Agentforc
 
 None of the pages I opened explains how the agent picks the manual for a given asset. The mechanics are documented: according to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/data-cloud-powered-agentforce/enable-trusted-agents-with-data-cloud), Data 360 chunks documents, embeds the chunks in a search index, and a retriever, "the link between the prompt and the search index", fetches the chunks closest to the question. Whether a chunk describes variant A or variant B plays no role unless the document carries that information as data.
 
-## Why do machine builders' manuals confuse an agent?
+## Machine builders' manuals confuse an agent
 
 A machine builder rarely has one manual per product. Take a machining centre in three variants, with a new control from a certain build year, a retrofit on some units and a service bulletin for serial numbers 4100 to 4380 only. A technician asks about spindle alarm 2041. If three manual versions describe that alarm differently, the retriever returns the chunk that fits the wording best, and the agent presents the wrong procedure as confidently as the right one.
 
@@ -87,7 +87,7 @@ contra: What you give up
 
 My reading: once several variants share an index, variant key and serial range become filter fields in the advanced setup. Whether the filter value can come from the asset on the work order at runtime is not described on the pages I opened, so I would test it in a sandbox before committing. How Data 360 assembles context beyond documents is covered in [the Agent Context Engine explained](../salesforce-agent-context-engine-explained/).
 
-## What should stay out of the index?
+## Stock, prices and email threads stay out of the index
 
 - **Stock, prices and delivery dates.** They change daily and belong to the ERP. Why the ERP owns parts stock is covered in [spare parts between ERP and Field Service](../salesforce-field-service-spare-parts-erp/).
 - **Superseded versions and drafts**, for the reasons above.
@@ -95,7 +95,7 @@ My reading: once several variants share an index, variant key and serial range b
 - **Documents on records an interface updates.** According to the billing notes, a data model object and all its file attachments are treated as a single unit for processing, so a change to a field or attachment can trigger reindexing of every attachment of that object.
 - **Machines you no longer service.** Every megabyte costs credits and adds a candidate for a wrong match.
 
-## A typical scenario: four product lines, 1,500 machines
+## Worked example: four product lines, 1,500 machines
 
 Assume a machine builder with four product lines, 1,500 machines under contract, Field Service live and 3,000 MB of manuals as PDFs. All numbers are assumptions.
 
@@ -105,7 +105,7 @@ The order of work: link those assets to products, tag the 1,100 MB with variant 
 
 Indexing 1,100 MB instead of 3,000 MB with the default parser costs 165,000 credits instead of 450,000 per full run at the base rate of 150 credits per MB, $825 instead of $2,250 before volume tiers at [$500 per 100,000 credits](https://www.salesforce.com/agentforce/pricing/). The larger effect shows in testing with 50 real fault cases per product line and known correct answers, as described in [testing Agentforce agents before go-live](../testing-agentforce-agents-before-go-live/). The pilot runs on a Data Library for the product line with the best documents; the second product line triggers the move to the advanced setup.
 
-## Where should you start?
+## Count the documents per product line before the agent starts
 
 ```schritte
 Count documents
@@ -123,5 +123,3 @@ Test with real faults
 ```
 
 The document model outlives any agent version, so I treat it as part of [Salesforce architecture](../../services/salesforce-architecture/). The wider picture is in the masterclass chapter [AI agents in manufacturing](../../masterclass/ai-salesforce/ai-agents-in-manufacturing/).
-
-The troubleshooting agent is only as precise as the link between manual and serial number, so build that link before you switch the agent on.

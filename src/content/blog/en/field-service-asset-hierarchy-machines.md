@@ -12,7 +12,7 @@ takeaways:
   - "Salesforce allows 2,000 child assets per asset, 50 levels and 10,000 assets per hierarchy, but the tree grid view shows only hierarchies up to 500 assets."
   - "Rule of thumb: an asset for everything with its own serial number, its own maintenance or its own warranty. Everything else stays in the PLM parts list."
   - "Asset attributes store measured values and states per asset, so you do not need new custom fields for every machine series."
-  - "The installed base comes from the ERP at delivery. Who updates it after a retrofit or an exchanged assembly must be decided before go-live, or the tree goes stale."
+  - "The installed base comes from the ERP at delivery. Who updates it after an exchanged assembly must be decided before go-live."
   - "Every extra level weighs on maintenance plans, data loads and the mobile app, so keep the hierarchy as flat as service allows."
 faq:
   - q: "How many levels can a Salesforce asset hierarchy have?"
@@ -65,7 +65,7 @@ I use attributes for descriptive values that vary by series. For counters that d
 
 The installed base usually comes from the ERP at delivery: machine, serial numbers of the main assemblies, customer, site, delivery date. That load is the easy part. The hard part starts a year later, when a technician exchanges a gearbox, a customer retrofits a second robot or a dealer moves the machine to another plant.
 
-Without a defined process, the Salesforce hierarchy then shows the machine as delivered, and nobody trusts it. Three questions decide it:
+Without a defined process, the Salesforce hierarchy then shows the machine as delivered, and nobody trusts it. These points need an answer before go-live:
 
 1. **Who records an exchanged assembly?** In my view, the technician in the mobile app, with the serial number of the new unit, because they have it in their hands.
 2. **Which system leads afterwards?** If the ERP stays the master for the installed base, the change from the app has to go back to the ERP. If Salesforce leads after delivery, the ERP gets a copy. Both work, a mix does not. This is the same ownership question as in [master data for scheduling](../salesforce-field-service-master-data/), and it belongs in the interface design on the [Salesforce integration](../../services/salesforce-integration/) page.
@@ -73,7 +73,7 @@ Without a defined process, the Salesforce hierarchy then shows the machine as de
 
 Warranty claims on the installed base belong to Manufacturing Cloud and are covered in the [warranty and after-sales chapter](../../masterclass/manufacturing-cloud/warranty-and-after-sales/) of that masterclass.
 
-## Why does a deep hierarchy cost you later?
+## A deep hierarchy costs you later
 
 Each level looks cheap when the data is loaded once. It costs later, in three places:
 
@@ -90,9 +90,9 @@ source: Salesforce Help, Field Service limits
 
 The same applies to dealer portals: every asset a dealer may see has to be shared correctly, as in the [spare parts shop per machine](../spare-parts-shop-parts-per-machine/).
 
-## A typical scenario, as an assumption: a packaging line
+## Worked example: a packaging line
 
-A typical scenario, as an assumption: a packaging machine builder delivers a line with 6 machines. They contain 40 serialised assemblies, such as servo drives, robots and labelling units, and around 900 other parts.
+All numbers are assumptions. A packaging machine builder delivers a line with 6 machines. They contain 40 serialised assemblies, such as servo drives, robots and labelling units, and around 900 other parts.
 
 **Full copy.** Line, machines, assemblies and parts as assets: about 947 records per line. That is well within the 10,000 limit, but above the 500 the tree grid can show, and 900 records per line have to stay in step with PLM.
 
@@ -100,8 +100,6 @@ A typical scenario, as an assumption: a packaging machine builder delivers a lin
 
 With 50 lines in the field that is 2,350 assets instead of about 47,000, and every one of them carries information that service uses.
 
-## Where should you start?
+## Run one machine type through the rule of thumb
 
-Take one machine type and go through its bill of materials with the three questions: serial number, own maintenance, own warranty. Write down the resulting levels and count the assets per machine. Then decide who records an exchanged assembly and which system leads after delivery, before the first load from the ERP. The [masterclass chapter on assets, maintenance and parts](../../masterclass/field-service/field-service-assets-maintenance-parts/) shows how the hierarchy connects to maintenance plans, spare parts and service partners.
-
-The right depth is the one service actually uses, usually three levels and far fewer assets than the parts list.
+Take one machine type and go through its bill of materials with the rule of thumb: serial number, own maintenance, own warranty. Write down the resulting levels and count the assets per machine. Then decide who records an exchanged assembly and which system leads after delivery, before the first load from the ERP. The [masterclass chapter on assets, maintenance and parts](../../masterclass/field-service/field-service-assets-maintenance-parts/) shows how the hierarchy connects to maintenance plans, spare parts and service partners.

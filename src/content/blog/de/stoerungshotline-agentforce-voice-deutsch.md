@@ -9,11 +9,10 @@ topic: field-service
 categories: [field-service, ai]
 tags: [Agentforce Voice, Field Service, Außendienst, Störungshotline, Entitlements, Flex Credits]
 takeaways:
-  - "Salesforce führt Deutsch seit der Dreamforce 2026 als allgemein verfügbare Sprache von Agentforce Voice, damit ist ein Sprachagent an einer deutschsprachigen Störungshotline technisch möglich."
-  - "An der Störungshotline sollte der Sprachagent zuerst Annahme und Triage übernehmen: Anrufer und Maschine erkennen, nach dem Stillstand fragen, das Entitlement prüfen, den Fall anlegen."
-  - "Selbst bucht der Agent einen Techniker nur, wenn die Maschine noch läuft, das Entitlement den Einsatz abdeckt und die Fehlerklasse bekannt ist; Stillstände mit Reaktionszeit gehen an die Disposition."
-  - "Entitlement-Prüfung und Buchungssperre gehören in deterministische Logik, etwa Agent-Script-Bedingungen und available when, damit nie das LLM entscheidet, was der Vertrag zusagt."
-  - "Ein Anruf kostet mit vier Sprachaktionen 120 Flex Credits, also 0,60 €, oder bei Verträgen mit Agentforce Voice Minutes 60 Credits (0,30 €) pro Minute, jeweils zum Listenpreis."
+  - "Der Agent erkennt die Maschine über Rufnummer, Kontakt und installierte Anlagen und fragt die Seriennummer nur bei mehreren gleichen Maschinen ab."
+  - "Selbst bucht der Agent nur, wenn die Maschine läuft, das Entitlement den Einsatz abdeckt und die Fehlerklasse bekannt ist. Stillstände gehen an die Disposition."
+  - "Entitlement-Prüfung und Buchungssperre gehören in Agent-Script-Bedingungen, damit nie das LLM entscheidet, was der Vertrag zusagt."
+  - "Ein Anruf mit vier Sprachaktionen kostet 120 Flex Credits, also 0,60 €. Mit Agentforce Voice Minutes sind es 60 Credits pro Minute."
 faq:
   - q: "Unterstützt Agentforce Voice Deutsch?"
     a: "Ja. Die Dreamforce-2026-Ankündigungen von Salesforce führen Deutsch unter sechs neuen Sprachen von Agentforce Voice mit dem Status GA. Testen Sie trotzdem mit echten Anrufen Ihrer Kunden, inklusive Hallenlärm und Dialekt."
@@ -42,7 +41,7 @@ Für den Aufbau der Hotline zählen diese Fakten zur Plattform:
 
 Die Beispiele von Salesforce sind geplante Termine: Die [Winter-'27-Ankündigung](https://salesforce.com/news/stories/winter-2027-product-release-announcement) verspricht, „15-minute booking calls“ auf Sekunden zu verkürzen. Ein Störungsanruf ist die schwierigere Aufgabe. Den allgemeinen Serviceagenten beschreibe ich in [Casey und der Service Rep Assistant](../service-cloud-casey-und-service-rep-assistant/).
 
-## Warum ist ein Störungsanruf schwieriger als eine Terminbuchung?
+## Ein Störungsanruf ist schwieriger als eine Terminbuchung
 
 Am Telefon ist meist ein Instandhalter, der neben einer stehenden Linie in einer lauten Halle steht. Er will einen Techniker, kein Menü. Vier Dinge entscheiden über den nächsten Schritt, und keines davon sagt der Anrufer in einer Form, mit der ein System arbeiten kann:
 
@@ -93,7 +92,7 @@ Für diese Arbeitsplätze nennt die [Preisseite von Salesforce Voice](https://ww
 
 Wie man Kosten pro Aktion grundsätzlich schätzt, steht in [Flex Credits: Agentforce-Kosten pro Aktion schätzen](../flex-credits-agentforce-kosten-pro-aktion/).
 
-## Ein typisches Szenario: 400 Hotline-Anrufe im Monat
+## Rechenbeispiel: 400 Hotline-Anrufe im Monat
 
 Nehmen wir einen Maschinenbauer mit SAP, Service Cloud und Field Service im Betrieb, 1.200 Maschinen unter Vertrag und einer Hotline, die zwei Disponenten von 7 bis 17 Uhr besetzen. Außerhalb dieser Zeit nimmt ein Bereitschaftstechniker jeden Anruf an; wie Sie diese Schichten in Field Service planen, steht in [Bereitschaftsdienst im Field Service](../field-service-bereitschaft-schichten/). Alle Zahlen sind Annahmen.
 
@@ -106,7 +105,7 @@ Angenommen sind 400 Anrufe im Monat: 120 Stillstände, 160 Maschinen mit Einschr
 
 Die Credits sind in beiden Modellen klein. Der Gewinn liegt in der Nacht: Der Bereitschaftstechniker bekommt einen klassifizierten Fall statt eines rohen Anrufs.
 
-## Was muss stehen, bevor der Agent ans Telefon geht?
+## Das muss stehen, bevor der Agent ans Telefon geht
 
 1. **Rufnummern an Kontakten und saubere Anlagen.** Ohne sie wird jeder Anruf zur Weiterleitung, und bei doppelt angelegten Maschinen wählt der Agent die falsche.
 2. **Entitlements als Datensätze.** Liegen die Verträge in SAP, replizieren Sie die Reaktionszeiten nach Salesforce. Der Agentforce-Voice-Leitfaden nennt einen „2-second action latency benchmark“, und eine Live-Abfrage im ERP während des Gesprächs gefährdet ihn.
@@ -114,9 +113,9 @@ Die Credits sind in beiden Modellen klein. Der Gewinn liegt in der Nacht: Der Be
 4. **Tests auf Deutsch mit echtem Ton.** Salesforce führt Voice and Conversation Testing in den Dreamforce-Ankündigungen als Beta. Nehmen Sie Testanrufe mit Hallenlärm und Dialekt auf und planen Sie die Testlast mit 24 Credits pro Sprachaktion ein, wie in [Agentforce-Agenten testen](../agentforce-agenten-testen-freigeben/) beschrieben.
 5. **Datenschutz und Kennzeichnung.** Trailhead nennt Vereinbarungen zur Null-Datenspeicherung mit OpenAI, Deepgram und ElevenLabs. Die Begrüßung sollte trotzdem sagen, dass eine KI antwortet; die rechtliche Seite steht in [EU AI Act: Was die neuen Fristen für Agentforce bedeuten](../eu-ai-act-fristen-agentforce/).
 
-## Wo fangen Sie an?
+## Erster Schritt: vier Wochen nachts nur Triage
 
-Ich würde den Sprachagenten in drei Stufen einführen:
+Wo das zwischen den anderen Außendienst-Agenten steht, beschreibe ich in [KI-Agenten im Außendienst: Was Field Service heute kann](../ki-agenten-aussendienst-field-service/), die Lizenzseite gehört zu [Make-or-buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/). Den Sprachagenten selbst würde ich in drei Stufen einführen:
 
 ```schritte
 Nachts nur Triage | 4 Wochen
@@ -126,7 +125,3 @@ Buchung bei Einschränkung
 Buchung tagsüber
   Erst danach geben Sie die Buchung auch für Anrufe während der Geschäftszeiten frei.
 ```
-
-Wo das zwischen den anderen Außendienst-Agenten steht, beschreibe ich in [KI-Agenten im Außendienst: Was Field Service heute kann](../ki-agenten-aussendienst-field-service/), die Lizenzseite gehört zu [Make-or-buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/).
-
-Ein Sprachagent an der Störungshotline lohnt sich, wenn er der Disposition einen klassifizierten Fall übergibt und die Entscheidung über Stillstände bei ihr lässt.

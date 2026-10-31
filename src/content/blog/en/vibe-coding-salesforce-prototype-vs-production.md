@@ -9,11 +9,11 @@ topic: devops
 categories: [devops, ai]
 tags: [vibe coding, agentforce vibes, ai coding, prototyping, devops, manufacturing]
 takeaways:
-  - "Vibe coding in Salesforce is fine for workshop prototypes such as a dealer-portal mock-up or a service cockpit LWC, built in a Developer Edition or scratch org with dummy data and then thrown away."
-  - "Code that goes into an org with dealer, warranty or service data needs agentic engineering: the AI writes, a person reviews, and tests and pipeline gates decide whether it deploys."
-  - "Rebuild instead of promoting: the prototype becomes the specification with screens and acceptance criteria, and the production build starts from the client's repository with an approved plan."
-  - "According to Salesforce's FAQ, a Developer Edition org gets 110 Agentforce Vibes requests or 1.5 million tokens for one month after first use, without refresh; a scratch org lives 7 days by default, 30 at most."
-  - "Veracode found in 2026 that raw models write compilable code almost every time, yet only 56 percent passed its security tests; a mock-up that runs proves the idea, not the code."
+  - "Vibe coding fits workshop prototypes such as a dealer portal mock-up, built in a Developer Edition with test data and thrown away afterwards."
+  - "Code for an org with dealer, warranty or service data needs agentic engineering: a human reviews, tests and pipeline gates decide."
+  - "The prototype becomes the specification with screens and acceptance criteria. The production build starts fresh in the client's repository."
+  - "A Developer Edition gets 110 Agentforce Vibes requests for one month, and a scratch org lives 7 days by default and 30 at most."
+  - "Raw models almost always write compilable code, but according to Veracode only 56 percent pass the security tests."
 faq:
   - q: "What is vibe coding in Salesforce?"
     a: "Vibe coding means describing a feature to an AI coding agent such as Agentforce Vibes or Claude Code and accepting the result without reading the code. In Salesforce that produces working LWCs, Apex and metadata quickly, which is useful for prototypes and risky for production."
@@ -56,7 +56,7 @@ source: Agentforce Vibes FAQ and Salesforce DX guide, as of October 2026
 
 ## Rules for the prototype org
 
-A prototype is only as harmless as the org it runs in. Fowler calls security perhaps the most serious risk: vibe-coded applications "can often expose sensitive information or worse, credentials". For a Salesforce prototype I set five rules:
+How harmless a prototype is depends on the org it runs in. Fowler calls security perhaps the most serious risk: vibe-coded applications "can often expose sensitive information or worse, credentials". For a Salesforce prototype I set five rules:
 
 1. **No real data.** No dealer names, no customer machines, no prices from the price list. Generated dummy data is enough for a mock-up.
 2. **No connections.** No Named Credential to SAP or proALPHA, no integration user, no copy of production secrets. The SAP response is a static JSON file.
@@ -99,7 +99,7 @@ Review and gates
 
 One exception I accept: the HTML template and CSS of a mock-up LWC can be carried over if they pass the same review. Apex and data access are always rebuilt.
 
-## A typical scenario: two-day workshop at a machine builder
+## Worked example: two-day workshop at a machine builder
 
 Assume a machine builder with Service Cloud, SAP S/4 and 400 dealers, planning a dealer portal and a new service cockpit. All numbers are assumptions. In a two-day requirements workshop, one developer builds both mock-ups with Agentforce Vibes in a fresh Developer Edition. The portal page takes about three hours, the cockpit about two, together roughly 40 of the 110 requests. Dealers and the head of service correct the screens live: the cockpit gets a column for the warranty end date, the portal loses a filter nobody used.
 
@@ -107,12 +107,10 @@ After the workshop the architect reads the prototype code once, as a reference. 
 
 The production build therefore starts from the repository: three user stories, each with an approved plan, a `runAs` test as a dealer user and an SAP call through the existing MuleSoft API. Assume that takes two sprints for a partner team of three. Without the workshop, my estimate is that the first sprint would have gone into finding out what the screens should show. The prototype paid for itself in requirements and contributed no line of Apex. What the AI tools for such a team cost is covered in [AI coding costs in a Salesforce project](../ai-coding-costs-salesforce-project/).
 
-## Where should you start?
+## Allow vibe coding explicitly in Developer Editions
 
 1. **Allow vibe coding explicitly**, in Developer Editions and scratch orgs with dummy data, so nobody does it quietly in a shared sandbox.
 2. **Disable Agentforce Vibes in production** and keep production deployments in the pipeline.
 3. **Define the hand-over:** screens, acceptance criteria and open questions leave the workshop; prototype Apex does not.
 4. **Make plans visible.** Ask your partner to attach the approved plan to the pull request.
 5. **Own the pipeline.** Setting it up for programmes with several partners is the core of my [DevOps and release management](../../services/devops-release-management/) work.
-
-Use vibe coding to get better requirements out of the workshop and agentic engineering to get code into your org.

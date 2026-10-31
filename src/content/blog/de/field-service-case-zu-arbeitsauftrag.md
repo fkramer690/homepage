@@ -9,10 +9,10 @@ topic: field-service
 categories: [field-service, architecture]
 tags: [Field Service, Arbeitsauftrag, Serviceanfrage, Case, Work Type, Außendienst]
 takeaways:
-  - "In Salesforce Field Service hält ein Case das Problem des Kunden, ein Arbeitsauftrag den zu erledigenden Job, Positionen die Teilschritte und ein Servicetermin den Einsatz, der geplant wird."
-  - "Work Types sind Vorlagen für Einsatzarten wie Jahreswartung oder Störungsbehebung. Sie tragen Dauer und benötigte Skills und können den Servicetermin automatisch anlegen."
-  - "Nicht jeder Case braucht einen Einsatz. Die Hotline entscheidet mit Anspruch und Triage-Checkliste, ob Fernhilfe, ein Teileversand oder ein Techniker das Problem löst."
-  - "Wartungspläne erzeugen Arbeitsaufträge ohne Case. Geplante und ungeplante Arbeit landen deshalb in derselben Dispositionsliste und konkurrieren um dieselben Techniker."
+  - "Der Case hält das Problem, der Arbeitsauftrag den Job, Positionen die Teilschritte und der Servicetermin den geplanten Einsatz."
+  - "Work Types sind Vorlagen für Einsatzarten mit Dauer und Skills und können den Servicetermin automatisch anlegen."
+  - "Die Hotline entscheidet mit Anspruch und Triage-Checkliste, ob Fernhilfe, ein Teileversand oder ein Techniker das Problem löst."
+  - "Wartungspläne erzeugen Arbeitsaufträge ohne Case. Geplante und ungeplante Arbeit konkurrieren deshalb um dieselben Techniker."
   - "Wer im Contact Center Cases bearbeitet, darf das nicht mit einer Dispatcher- oder Technician-Lizenz tun. Die Datensatzkette entscheidet also auch den Lizenzmix."
 faq:
   - q: "Was ist der Unterschied zwischen Case und Arbeitsauftrag in Salesforce?"
@@ -41,7 +41,7 @@ Salesforce verkauft das Produkt heute als Field Service and Operations, das Date
 
 Laut Entwicklerleitfaden kann ein Arbeitsauftrag auf einen Case verweisen, um zu zeigen, dass die Arbeit zu einem Kundenfall gehört. Der übergeordnete Datensatz eines Servicetermins ist meist ein Arbeitsauftrag oder eine Position. Positionen helfen, wenn ein Einsatz mehrere Schritte hat, die verschiedene Skills brauchen oder getrennt abgerechnet werden.
 
-## Was leisten Work Types?
+## Work Types sind Vorlagen für Einsatzarten
 
 Ein Work Type ist eine Vorlage für eine Einsatzart, etwa Jahreswartung, Störungsbehebung oder Inbetriebnahme. Laut [Trailhead](https://trailhead.salesforce.com/content/learn/projects/modify-the-field-service-center/create-a-work-type) trägt er die geschätzte Dauer und die benötigten Skills, und Wissensartikel am Work Type erscheinen auf jedem Arbeitsauftrag, der ihn nutzt. Work Types lassen sich auf Arbeitsaufträge und auf Positionen anwenden, eine Position kann also einen eigenen Work Type mit eigenen Skills haben.
 
@@ -78,9 +78,7 @@ Geplante Wartung kommt durch eine andere Tür. Laut der [Trailhead-Einheit zum E
 
 Die Folge: Geplante und ungeplante Arbeit landen in derselben Dispositionsliste und konkurrieren um dieselben Techniker. Ist die geplante Wartung der nächsten vier Wochen schon gebucht, muss für einen Maschinenstillstand am Dienstag etwas weichen. Prioritäten und Planungsziele entscheiden, was verschoben wird, und für diese Regel braucht es einen Verantwortlichen.
 
-## Wo steckt die Lizenzfalle in dieser Kette?
-
-Die Datensatzkette entscheidet auch über den Lizenzmix.
+## Die Datensatzkette entscheidet auch über den Lizenzmix
 
 ```hinweis achtung
 Laut [Field-Service-Preisseite](https://www.salesforce.com/de/products/field-service/pricing) dürfen Dispatcher- und Technician-Lizenzen nicht für Contact Center, Call Center oder Case Management genutzt werden. Wer Cases bearbeitet, braucht Service Cloud oder Field Service Plus.
@@ -88,9 +86,9 @@ Laut [Field-Service-Preisseite](https://www.salesforce.com/de/products/field-ser
 
 In der Praxis trifft das das kleine Serviceteam, in dem der Disponent auch die Hotline annimmt. Diese Person braucht Field Service Plus für 230 € statt Dispatcher für 175 € (Preisliste Oktober 2026). Die vollständige Rollenmatrix steht in [Salesforce Field Service Lizenzen: Wer braucht welche?](../field-service-lizenzen-rollen-dispatcher-techniker/).
 
-## Ein typisches Szenario: der Anruf "Maschine steht"
+## Rechenbeispiel: der Anruf "Maschine steht"
 
-Ein typisches Szenario, als Annahme: Ein Kunde ruft an einem Dienstag um 7:40 Uhr an, weil eine Verpackungsmaschine mit einem Fehler stoppt.
+Alle Angaben sind Annahmen. Ein Kunde ruft an einem Dienstag um 7:40 Uhr an, weil eine Verpackungsmaschine mit einem Fehler stoppt.
 
 ```schritte
 Case anlegen | Hotline
@@ -109,8 +107,6 @@ Einsatz und Abschluss | Techniker
 
 Bei den Schritten 3 und 4 zahlt sich das Datenmodell aus. Ohne Work Type muss die Hotline Dauer und Skills selbst kennen, und der Termin entsteht von Hand.
 
-## Wo starten Sie?
+## Die drei häufigsten Anrufarten aufzeichnen
 
 Zeichnen Sie den Weg für Ihre drei häufigsten Anrufarten auf, vom ersten Anruf bis zum geschlossenen Arbeitsauftrag, und schreiben Sie dazu, wer welchen Datensatz anlegt. Diese Zeichnung beantwortet die Lizenzfrage und zeigt, welche Work Types Sie brauchen. Wie das in den Business Case passt, steht in [Kapitel 1 der Masterclass Field Service](../../masterclass/field-service/field-service-lohnt-sich-lizenzen/).
-
-Case, Arbeitsauftrag und Termin sind drei Datensätze mit drei Verantwortlichen, und der Work Type verbindet sie.

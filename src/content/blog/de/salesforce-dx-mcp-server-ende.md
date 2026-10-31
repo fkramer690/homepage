@@ -9,11 +9,11 @@ topic: devops
 categories: [devops, ai]
 tags: [MCP, Salesforce DX, Claude Code, Agentforce Vibes, Partnersteuerung, DevOps]
 takeaways:
-  - "Laut offiziellem README erreicht der lokale Salesforce DX MCP Server (@salesforce/mcp) am 2. November 2026 sein End of Life; am 27. Oktober lieferte npm noch 0.30.15 ohne Deprecated-Hinweis."
-  - "Die Salesforce-Anleitung konfiguriert den Server mit @latest, er aktualisiert sich also selbst; pinnen Sie auf jedem Partnerrechner 0.30.15, bis der alte Eintrag entfernt ist."
-  - "Der Server arbeitet mit jeder Org, an der ein Entwickler per Salesforce CLI angemeldet ist; ALLOW_ALL_ORGS oder DEFAULT_TARGET_ORG lassen einen KI-Agenten unbemerkt bis in die Produktion."
-  - "Salesforce bietet die offene Bibliothek sf-skills, ein Claude-Code-Plugin und Hosted MCP Server an, nennt sie in den Quellen, die ich öffnen konnte, aber nicht Nachfolger; das ist meine Lesart."
-  - "Zwei MCP-Server des Plugins laufen auf Salesforce-Infrastruktur, ein Admin auf Kundenseite muss sie in der Org aktivieren; einer davon ist ein Beta-Service, dessen Aufrufe auf das API-Kontingent der Org zählen."
+  - "Am 27. Oktober lieferte npm noch Version 0.30.15 ohne Deprecated-Hinweis, und keine Dokumentationsseite von Salesforce nennt das Datum."
+  - "Die Salesforce-Anleitung konfiguriert den Server mit @latest. Pinnen Sie auf jedem Partnerrechner 0.30.15, bis der alte Eintrag entfernt ist."
+  - "Mit ALLOW_ALL_ORGS oder DEFAULT_TARGET_ORG erreicht ein KI-Agent jede Org, an der der Entwickler angemeldet ist, auch die Produktion."
+  - "sf-skills, das Claude-Code-Plugin und Hosted MCP decken die Arbeit ab. Dass sie Nachfolger sind, ist meine Lesart, keine Aussage von Salesforce."
+  - "Ein MCP-Server des Plugins ist ein Beta-Service, den ein Admin in der Org aktivieren muss, und seine Aufrufe zählen auf das API-Kontingent."
 faq:
   - q: "Was passiert am 2. November 2026 mit dem Salesforce DX MCP Server?"
     a: "Laut README in beiden Salesforce-Repositories erreicht der lokale Server @salesforce/mcp dann sein End of Life. Die Details stehen in GitHub-Issue 46, das ich nicht öffnen konnte. Was danach genau mit Repository und npm-Paket passiert, ist deshalb nicht bestätigt."
@@ -26,7 +26,7 @@ faq:
 draft: false
 ---
 
-Der lokale Salesforce DX MCP Server (`@salesforce/mcp`) erreicht laut offiziellem README am 2. November 2026 sein End of Life. Setzen Ihre Implementierungspartner Claude Code, Cursor, Copilot oder Agentforce Vibes auf Ihren Orgs ein, nutzen einige ihn wahrscheinlich. Lassen Sie vor dem Stichtag jede Konfiguration auflisten, Version 0.30.15 statt `@latest` fest eintragen und die Arbeit auf Salesforce CLI mit Skills, das Claude-Code-Plugin und Hosted MCP umstellen. Die wichtigere Frage für Sie ist aber nicht das Werkzeug, sondern mit welchem Org-Zugriff es läuft.
+Der lokale Salesforce DX MCP Server (`@salesforce/mcp`) erreicht laut offiziellem README am 2. November 2026 sein End of Life. Setzen Ihre Implementierungspartner Claude Code, Cursor, Copilot oder Agentforce Vibes auf Ihren Orgs ein, nutzen einige ihn wahrscheinlich. Lassen Sie vor dem Stichtag jede Konfiguration auflisten, Version 0.30.15 statt `@latest` fest eintragen und die Arbeit auf Salesforce CLI mit Skills, das Claude-Code-Plugin und Hosted MCP umstellen. Wichtiger als das Werkzeug ist für Sie, mit welchem Org-Zugriff es läuft.
 
 ## Was genau endet am 2. November 2026?
 
@@ -50,7 +50,7 @@ Zum Vergleich die [Richtlinie für Hosted MCP Server](https://developer.salesfor
 2026-11-02 | End of Life des lokalen DX MCP Servers laut README
 ```
 
-## Warum ist ein Entwicklerwerkzeug Sache der IT-Leitung?
+## Ein Entwicklerwerkzeug mit Org-Zugriff ist Sache der IT-Leitung
 
 MCP (Model Context Protocol) ist der offene Standard, über den ein KI-Werkzeug Funktionen in einem anderen System aufruft. Der DX MCP Server gibt einem Coding-Agenten mehr als 60 solcher Funktionen für Ihre Salesforce-Orgs. Er läuft auf dem Rechner des Entwicklers und nutzt die Orgs, an denen dieser per Salesforce CLI angemeldet ist. Welche Orgs der Agent anfassen darf, legt beim Start ein einziger Parameter fest, `--orgs`. Das [README](https://raw.githubusercontent.com/salesforcecli/mcp/main/README.md) nennt die Werte:
 
@@ -78,7 +78,7 @@ Salesforce hat 2026 drei Bausteine veröffentlicht. Keine der Seiten, die ich ge
 
 **Hosted MCP Server** sind seit dem [29. April 2026 GA](https://developer.salesforce.com/blogs/2026/04/salesforce-hosted-mcp-servers-are-now-generally-available), für Enterprise Edition und höher. Laut [Security Best Practices](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/security-best-practices.html) sind sie standardmäßig aus, jeder Aufruf läuft mit den Rechten des Benutzers, der die Verbindung autorisiert hat, und Service Accounts gibt es nicht. Wer darüber welche Daten lesen darf, steht in [Hosted MCP Server: wer darf welche Daten lesen](../salesforce-hosted-mcp-server-datenzugriff/), warum die Aufrufe zum Kostenposten werden, in [MCP-Zugriffe auf Salesforce als Budgetrisiko](../mcp-zugriffe-salesforce-budgetrisiko/).
 
-## Ein typisches Szenario: drei Partner, ein Stichtag
+## Rechenbeispiel: drei Partner, ein Stichtag
 
 Nehmen wir einen Maschinenbauer mit Service Cloud, Field Service für den Außendienst und SAP S/4. Drei Partner arbeiten auf denselben Orgs: einer für Service und Außendienst, einer für die SAP-Schnittstelle, eine Agentur für das Händlerportal. Alle Zahlen sind Annahmen, die das Vorgehen zeigen sollen.
 
@@ -97,5 +97,3 @@ Am längsten dürfte die Frage dauern, wer Hosted Server in der Produktion freig
 5. **Repository anpassen.** Die gemeinsame MCP-Konfiguration und die [KI-Regeldatei](../ki-regeldatei-salesforce-repository/) gehören in Ihr Repository und ändern sich nur über einen geprüften Pull Request, wie jeder andere Code. Claude Code unterstützt außerdem eine zentral verwaltete MCP-Konfiguration mit Allowlists, wenn Sie es selbst lizenzieren.
 
 Das ist normales Abhängigkeits- und Zugriffsmanagement, angewendet auf KI-Werkzeuge, und es gehört auf Kundenseite zu [DevOps und Release-Management](../../leistungen/devops-und-release-management/). Die übrigen Schnittstellen beschreibt [Kapitel 3 der Masterclass](../../masterclass/ki-salesforce/mcp-und-schnittstellen/).
-
-Nutzen Sie den Stichtag, um herauszufinden, welche KI-Werkzeuge mit wessen Anmeldung Ihre Orgs erreichen, dann wird der Wechsel des Servers selbst zur kleinen Aufgabe.
