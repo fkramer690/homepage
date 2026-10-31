@@ -42,7 +42,9 @@ const contentWords = (str) => new Set((str.toLowerCase().match(/[a-zäöüß0-9]
 
 function checkStructure(name, lang, text, fm) {
   const issue = (msg) => structureIssues.push(`${name}: ${msg}`);
-  for (const re of structurePhrases) if (re.test(text) || re.test(fm)) issue(`formula phrase, rewrite (${re})`);
+  // The video transcript is the spoken text word for word and stays as recorded.
+  const fmText = fm.replace(/^video:\n(?:\s+.*\n?)*/m, '');
+  for (const re of structurePhrases) if (re.test(text) || re.test(fmText)) issue(`formula phrase, rewrite (${re})`);
   const h2 = [...text.matchAll(/^## (.+)$/gm)].map((m) => m[1].trim());
   for (const h of h2) if (genericCloser.test(h)) issue(`generic heading "${h}", name the concrete first step instead`);
   const questions = h2.filter((h) => h.endsWith('?')).length;
