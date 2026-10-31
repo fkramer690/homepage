@@ -18,6 +18,8 @@ export const de: Dict = {
     newTab: '(öffnet Microsoft Bookings in einem neuen Tab)',
     externalTab: '(öffnet in einem neuen Tab)',
     switchLabel: 'English',
+    menuOpen: 'Menü öffnen',
+    menuClose: 'Menü schließen',
   },
   hero: {
     eyebrow: 'FK Solution Design GmbH · Köln',
@@ -768,6 +770,9 @@ export const de: Dict = {
     videoClose: 'Video schließen',
   },
   floating: {
+    shortCall: 'Termin',
+    shortMessage: 'Nachricht',
+    shortPhone: 'Anrufen',
     label: 'Kontakt',
     call: '30-Minuten-Termin buchen',
     message: 'Nachricht senden',
