@@ -77,12 +77,30 @@ Bestehende Artikel nachschärfen (Titel, Einstieg, FAQ um den Suchbegriff ergän
 - L11. CPQ-Verkaufsende-Artikel auf „salesforce cpq end of life / retirement / replacement“ (je 10).
 - L12. Field-Service-Einführung auf „salesforce field service implementation guide“ (10); laut Benchmark rankt für „field service einführung“ bisher der Artikel „lohnt sich“ statt des Einführungsartikels. *Erledigt (D4, PR #103).*
 
+## Serie Enhanced Chat (Plan 31.10.2026)
+
+Von Fabian gewünscht 31.10.2026 („das Thema richtig ausschlachten“, er hat ein komplettes Projekt dazu umgesetzt). Recherche: `docs/recherche/enhanced-chat/dossier.md`. Serien-ID `enhanced-chat`, 9 Teile, Titel „Salesforce Enhanced Chat für Hersteller“ / „Salesforce Enhanced Chat for manufacturers“. Offizieller Name ist Enhanced Chat v2 (früher Messaging for In-App and Web), nicht „Enhanced Chat 2.0“. Jeder Teil braucht ein Praxisbeispiel aus Fabians Projekt; bis zu seinen Antworten Platzhalter statt Erfahrung. Je Teil Grafik-Mockups mit mehreren Optionen (Light Mode, Stil der bestehenden Blöcke). Claude entwirft, Fabian gibt frei.
+
+| # | Titel DE / EN | Kernfrage | Zielgruppe | Hauptquellen | Grafik-Idee |
+|---|---|---|---|---|---|
+| EC1 | Salesforce Enhanced Chat v2: was neu ist und ob sich der Wechsel lohnt / Salesforce Enhanced Chat v2: what's new and should you switch? | Muss ich von v1 auf v2 und was verliere ich dabei? | IT-Leitung, Leitung Service | Help „What's Enhanced Chat v2?“, „Compare v1 to v2“ | Vergleich v1/v2 (neu, gleich, fehlt), Zeitleiste Legacy Chat > MIAW > v1 > v2 |
+| EC2 | Vom Legacy Chat zu Enhanced Chat: was Sie neu bauen müssen / Migrating from legacy Chat to Enhanced Chat: what you rebuild | Was ändert sich bei Pre-Chat, Routing, Berichten und Lizenz? | IT-Leitung, Service-Betrieb | Trailhead „Migrating from Legacy Chat“, Help „Switch to v2“ | Ablauf in Schritten, Checkliste „alt > neu“ |
+| EC3 | Enhanced Chat Datenmodell: wo Chatverläufe liegen / Enhanced Chat data model: where conversations live | Welche Daten stehen in Salesforce, welche off platform, was lässt sich berichten? | Architekten, IT-Leitung | Messaging Object Model | Eisberg (Session sichtbar, Nachrichten off platform), Objektdiagramm |
+| EC4 | Angemeldete Händler im Enhanced Chat: User Verification / Verified dealers in Enhanced Chat: user verification | Anonymer Website-Chat oder verifizierter Portal-Chat mit Verlauf? | IT-Leitung, Portalverantwortliche | Trailhead „Verify End Users“, Help User Verification | Vergleich anonym/verifiziert, Ablauf JWT |
+| EC5 | Agentforce im Enhanced Chat: Routing und Übergabe an Menschen / Agentforce in Enhanced Chat: routing and human handover | Wann übernimmt der Agent, wann ein Mensch, und was passiert, wenn keiner frei ist? | Leitung Service, Service-Betrieb | Trailhead Agentforce Deployment, Help „Connect a Service Agent to v2“ | Partnerfluss Kunde > Agent > Queue > Mensch, Fallback |
+| EC6 | Kontext im Enhanced Chat: Seriennummer, Seite und Suche an den Agenten / Context in Enhanced Chat: serial number, page and search | Wie weiß der Agent, um welche Maschine und welche Seite es geht? | Architekten, Entwickler | Guides Hidden Pre-Chat, Context Events | Pipeline Website > Pre-Chat/Context > Variablen > Agent |
+| EC7 | Mehr als Text im Chat: Lightning Types, Fotos und Streaming / Beyond text: Lightning Types, photos and streaming | Wie zeigt der Agent Ersatzteile, Status und Termine und nimmt Fotos an? | Leitung Service, Architekten | Custom Lightning Types, Winter '27 Developer's Guide, Token Streaming | Chat-Mockup mit Ersatzteilkarte, animiertes Streaming |
+| EC8 | Enhanced Chat im Portal: Inline-Modus, Branding und 12 Sprachen / Enhanced Chat in your portal: inline mode, branding, languages | Wie bette ich den Chat ins Händlerportal ein und betreibe ihn in vielen Sprachen? | Portalverantwortliche, Marketing, IT | Inline Mode Guide, Custom Labels, Real-Time Translations | Mockup schwebend vs. inline, Sprachmatrix |
+| EC9 | Enhanced Chat im Betrieb: Grenzen, Kennzahlen und Kosten / Running Enhanced Chat: limits, metrics and costs | Was messe ich nach dem Go-live, welche Grenzen gelten, was kostet es? | IT-Leitung, Leitung Service | Help Rate Limits, MessagingSessionMetrics, Preisseite Digital Channels | Kennzahlen-Block, Kostenrechnung |
+
+Optional nach Fabians Antworten: EC10 Praxisbericht „Was ich aus einem Enhanced-Chat-v2-Projekt gelernt habe“, falls das Projekt genug für einen eigenen Teil hergibt. Verlinkt werden die bestehenden Artikel zu Einstein Bots, mehrsprachigen Agenten, Agent API, Kundenportal, Trust Layer, Flex Credits.
+
 ## Blog: Themen aus dem täglichen Lauf (übernommen 28.10.2026)
 
 Der tägliche Lauf schreibt einen Artikel pro Tag (EN + DE) und ergänzt hier neue Ideen. Reihenfolge: zuerst Priorität 1 (L1 bis L7), dann diese Liste. Ideen ohne bestätigtes Praxisbeispiel sind markiert.
 
 - B1. SAP-Thema (Leitsystem für Kunden, Preise, Aufträge) → aufgegangen in L2 und L3.
-- B2. Embedded Chat für 12 Sprachen: was ein Proof of Concept klären muss.
+- B2. Embedded Chat für 12 Sprachen: was ein Proof of Concept klären muss. → aufgegangen in EC8 (Serie Enhanced Chat).
 - B3. Center of Excellence auf Kundenseite: Format und Rhythmus. *Erledigt (#125).*
 - B4. MuleSoft oder Jitterbit: welche Middleware für Salesforce und das ERP? *Braucht Beispiel von Fabian.*
 - B5. Salesforce an proALPHA anbinden: was anders ist als bei SAP. *Braucht Beispiel von Fabian.*
