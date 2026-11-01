@@ -1283,6 +1283,15 @@ const drawings: Record<string, Drawing> = {
     ${t(18, 118, l('SALESFORCE PARTNER INCENTIVES 2026', 'SALESFORCE-PARTNERANREIZE 2026'), { fill: D, size: 7 })}
     ${tag(18, 126, 138, l('active consumption', 'aktiver Verbrauch'))}${tag(164, 126, 138, l('agents in production', 'Agenten in Produktion'))}`,
 
+  'what-is-agentforce': (l) => `
+    ${t(18, 18, l('HOW AN AGENT WORKS', 'SO ARBEITET EIN AGENT'), { fill: D, size: 7 })}
+    ${box(18, 28, 64, 26)}${t(50, 44, l('Request', 'Anfrage'), { size: 7, anchor: 'middle' })}${arrow(82, 41, 98)}
+    ${box(98, 28, 124, 26, C)}${t(160, 44, 'Reasoning Engine', { fill: C, size: 7.5, anchor: 'middle' })}${arrow(222, 41, 238)}
+    ${box(238, 28, 64, 26)}${t(270, 44, l('Answer', 'Antwort'), { size: 7, anchor: 'middle' })}
+    <path d="M160 54V72M62 72H258M62 72V76M160 72V76M258 72V76" fill="none" stroke="${G}" stroke-width="1.2"/>
+    ${[[l('Subagents', 'Subagenten'), l('jobs', 'Aufgaben')], [l('Instructions', 'Anweisungen'), l('style, limits', 'Stil, Grenzen')], [l('Actions', 'Aktionen'), 'Flow · Apex · API']].map(([a, b], i) => box(18 + i * 98, 76, 88, 36) + t(62 + i * 98, 90, a, { fill: D, size: 7, anchor: 'middle' }) + t(62 + i * 98, 104, b, { size: 6.5, anchor: 'middle' })).join('')}
+    ${tag(18, 124, 150, l('Agent Script: fixed rules', 'Agent Script: feste Regeln'))}${t(178, 137, l('20 Flex Credits per action', '20 Flex Credits je Aktion'), { size: 7 })}`,
+
   'flex-credits-agentforce-costs': (l) => `
     ${t(18, 18, l('SCENARIO: CREDITS PER MONTH', 'SZENARIO: CREDITS PRO MONAT'), { fill: D, size: 7 })}${t(302, 18, l('218,000 ≈ $1,090', '218.000 ≈ 1.090 €'), { fill: D, size: 7.5, anchor: 'end' })}
     <rect x="18" y="28" width="156" height="22" rx="3" fill="${C}" fill-opacity="0.18" stroke="${C}" stroke-width="1.2"/>

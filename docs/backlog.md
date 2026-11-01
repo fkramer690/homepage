@@ -66,7 +66,7 @@ Neue Artikel:
 - L2. **SAP an Salesforce anbinden: Überblick** für IT-Leitung. Begriffe: „sap to salesforce“ (170), „salesforce sap integration“ und Varianten (40). Bündelt die bestehenden SAP-Teilartikel (Manufacturing Cloud, B2B Commerce, Revenue Cloud, Agentforce). (Ersetzt S3.)
 - L3. **SAP CRM oder Salesforce** (Wartungsende SAP CRM, Wechselgründe). Begriffe: „sap vs salesforce“ / „salesforce vs sap“ (110). (Ersetzt S2.)
 - L4. **Field Service Management Software: wann Salesforce, wann SAP, IFS oder ServiceNow?** Begriffe: „field service management software“ (590), „sap field service management“ (210), „field service management system“ (90). Größtes Volumen, Entscheidungsartikel für CIOs.
-- L5. **Was ist Agentforce? Erklärt für die IT-Leitung.** Begriffe: „was ist agentforce“ (20), „what is agentforce“ (20). Definition zuerst, dann Einordnung, Links auf die Agentforce-Artikel.
+- L5. **Was ist Agentforce? Erklärt für die IT-Leitung.** Begriffe: „was ist agentforce“ (20), „what is agentforce“ (20). Definition zuerst, dann Einordnung, Links auf die Agentforce-Artikel. *Entwurf 1.11.2026 (PR #268).*
 - L6. **Manufacturing Cloud vs. Sales Cloud.** Begriff: „salesforce manufacturing cloud vs sales cloud“ (10). *Umgesetzt als Schärfung des bestehenden Artikels (D5, PR #103).*
 - L7. **Salesforce-Release-Kalender: was die IT-Leitung je Release prüfen muss.** Begriffe: „salesforce release notes“ (90), „salesforce release schedule/cycle/dates“ (je 20). Evergreen-Seite, je Release aktualisieren.
 
@@ -93,6 +93,8 @@ Der tägliche Lauf schreibt einen Artikel pro Tag (EN + DE) und ergänzt hier ne
 - ~~B10. Key User~~ (umgesetzt 29.10.2026 als Spoke der Change-Management-Reihe B11). Key User: Was Key User leisten müssen und wie viel Zeit der Fachbereich freistellen muss. (Begriffssuche 29.10.2026; passt als Spoke in die Change-Management-Reihe B11.)
 - ~~B11. Change Management nach Prosci/ADKAR als Hub-and-Spoke-Reihe~~ (umgesetzt 29.10.2026, von Fabian freigegeben): Hub „Warum Salesforce-Einführungen scheitern“ plus sechs Spokes (Key User, weltweiter Rollout, Techniker-Akzeptanz Field Service, Release-Kommunikation, Reinforcement bei Partnern, Nutzung messen). Manufacturing-Cloud-Teil 8 und Leistungsseite verlinken den Hub.
 - ~~B12. Weitere Change-Management-Spokes (29.10.2026, Keyword-Liste `/mnt/project-files/seo/change-management-keywords.md`): Hypercare-Phase (1.000 + 720 Suchen), Schulungskonzept und Akzeptanz im Vertrieb als Spokes 7 bis 9 umgesetzt.~~ Change-Management-Prozess (320) als Spoke 10 umgesetzt, angewandt auf Salesforce-Projektphasen; Phasen und Modelle allgemein decken Julianes Grundlagenartikel ab (#136).
+- B19. Agent Script für Serviceregeln: Garantie, Rücksendung und Seriennummer fest im Agenten statt im Prompt (Folgeartikel zu L5). *Braucht Beispiel von Fabian.*
+- B20. Schreibende Agentenaktionen ins ERP: Berechtigung, Plausibilität und Protokoll, bevor ein Agent Liefertermine oder Rücksendungen ändert (Folgeartikel zu L5). *Braucht Beispiel von Fabian.*
 
 Erledigt im täglichen Lauf: Manufacturing Cloud lohnt sich (#41), Object Ownership Matrix (#42), Salesforce-Lizenzen (#43), Field Service lohnt sich (#44), Nearshore-Teams (#55), Open CTI endet 2028 (#82, Entwurf). Aus der Begriffssuche vom 29.10.2026: Sandbox-Strategie, Berechtigungskonzept, UAT, Entwicklungsstandards und Definition of Done, Entscheidungslog, globales Template, DORA-Metriken, Dubletten und Stammdaten (ein PR, Entwurf).
 
