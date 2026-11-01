@@ -1,30 +1,46 @@
 [
  {
   "domain": "salesforce.com",
-  "citations": 16
+  "citations": 21
  },
  {
   "domain": "help.salesforce.com",
-  "citations": 14
+  "citations": 17
+ },
+ {
+  "domain": "vertexaisearch.cloud.google.com",
+  "citations": 15
+ },
+ {
+  "domain": "trailhead.salesforce.com",
+  "citations": 8
+ },
+ {
+  "domain": "developer.salesforce.com",
+  "citations": 7
+ },
+ {
+  "domain": "freelance.de",
+  "citations": 6
+ },
+ {
+  "domain": "github.com",
+  "citations": 6
  },
  {
   "domain": "gearset.com",
   "citations": 5
  },
  {
-  "domain": "developer.salesforce.com",
-  "citations": 5
- },
- {
-  "domain": "salesforceben.com",
-  "citations": 5
- },
- {
-  "domain": "linkedin.com",
+  "domain": "appexchange.salesforce.com",
   "citations": 4
  },
  {
-  "domain": "trailhead.salesforce.com",
+  "domain": "freelancermap.de",
+  "citations": 4
+ },
+ {
+  "domain": "linkedin.com",
   "citations": 4
  },
  {
@@ -32,23 +48,15 @@
   "citations": 4
  },
  {
-  "domain": "github.com",
+  "domain": "reddit.com",
   "citations": 4
  },
  {
-  "domain": "bc-advisory.de",
-  "citations": 3
- },
- {
-  "domain": "appexchange.salesforce.com",
-  "citations": 3
+  "domain": "helpx.adobe.com",
+  "citations": 4
  },
  {
   "domain": "gulp.de",
-  "citations": 3
- },
- {
-  "domain": "freelancermap.de",
   "citations": 3
  },
  {
@@ -56,23 +64,15 @@
   "citations": 3
  },
  {
-  "domain": "freelance.de",
+  "domain": "salesforceben.com",
   "citations": 3
  },
  {
-  "domain": "youtube.com",
+  "domain": "find-your-software.de",
   "citations": 3
  },
  {
-  "domain": "salesforcedictionary.com",
-  "citations": 3
- },
- {
-  "domain": "accelq.com",
-  "citations": 3
- },
- {
-  "domain": "reddit.com",
+  "domain": "flosum.com",
   "citations": 3
  },
  {

@@ -15,7 +15,16 @@
   "prompt": "Welcher unabhängige Salesforce-Berater hilft, mehrere Implementierungspartner in einem Programm zu steuern?",
   "cited": "nein",
   "mentioned": "nein",
-  "sources": "bc-advisory.de, bilarna.com"
+  "sources": "bc-advisory.de"
+ },
+ {
+  "key": "gemini:Welcher unabhängige Salesforce-Berater hilft, mehrere Implementierungspartner in einem Programm zu steuern?",
+  "provider": "gemini",
+  "lang": "DE",
+  "prompt": "Welcher unabhängige Salesforce-Berater hilft, mehrere Implementierungspartner in einem Programm zu steuern?",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": "vertexaisearch.cloud.google.com"
  },
  {
   "key": "perplexity:Welcher unabhängige Salesforce-Berater hilft, mehrere Implementierungspartner in einem Programm zu steuern?",
@@ -24,7 +33,7 @@
   "prompt": "Welcher unabhängige Salesforce-Berater hilft, mehrere Implementierungspartner in einem Programm zu steuern?",
   "cited": "nein",
   "mentioned": "nein",
-  "sources": "cremanski.com, 3li.global, ventionteams.com"
+  "sources": "thinkbeyond.cloud, ibmix.de, conet.de"
  },
  {
   "key": "google_ai_mode:Welcher unabhängige Salesforce-Berater hilft, mehrere Implementierungspartner in einem Programm zu steuern?",
@@ -33,7 +42,7 @@
   "prompt": "Welcher unabhängige Salesforce-Berater hilft, mehrere Implementierungspartner in einem Programm zu steuern?",
   "cited": "nein",
   "mentioned": "nein",
-  "sources": "consultingheads.com, linkedin.com"
+  "sources": "bc-advisory.de, malt.com, freelancermap.de"
  },
  {
   "key": "chat_gpt:Empfiehl einen freiberuflichen Salesforce Solution Architect in Deutschland für Fertigungsunternehmen.",
@@ -42,7 +51,7 @@
   "prompt": "Empfiehl einen freiberuflichen Salesforce Solution Architect in Deutschland für Fertigungsunternehmen.",
   "cited": "nein",
   "mentioned": "nein",
-  "sources": "sfmike.de, gulp.de, freelancermap.com"
+  "sources": ""
  },
  {
   "key": "claude:Empfiehl einen freiberuflichen Salesforce Solution Architect in Deutschland für Fertigungsunternehmen.",
@@ -52,6 +61,15 @@
   "cited": "nein",
   "mentioned": "nein",
   "sources": ""
+ },
+ {
+  "key": "gemini:Empfiehl einen freiberuflichen Salesforce Solution Architect in Deutschland für Fertigungsunternehmen.",
+  "provider": "gemini",
+  "lang": "DE",
+  "prompt": "Empfiehl einen freiberuflichen Salesforce Solution Architect in Deutschland für Fertigungsunternehmen.",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": "vertexaisearch.cloud.google.com"
  },
  {
   "key": "perplexity:Empfiehl einen freiberuflichen Salesforce Solution Architect in Deutschland für Fertigungsunternehmen.",
@@ -90,6 +108,15 @@
   "sources": ""
  },
  {
+  "key": "gemini:Wie führe ich Salesforce Field Service in einem Maschinenbauunternehmen ein?",
+  "provider": "gemini",
+  "lang": "DE",
+  "prompt": "Wie führe ich Salesforce Field Service in einem Maschinenbauunternehmen ein?",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": "vertexaisearch.cloud.google.com"
+ },
+ {
   "key": "perplexity:Wie führe ich Salesforce Field Service in einem Maschinenbauunternehmen ein?",
   "provider": "perplexity",
   "lang": "DE",
@@ -105,7 +132,7 @@
   "prompt": "Wie führe ich Salesforce Field Service in einem Maschinenbauunternehmen ein?",
   "cited": "nein",
   "mentioned": "nein",
-  "sources": "fieldcamp.ai, youtube.com, jetbi.com"
+  "sources": "salesforceben.com, salesforce.com, developer.salesforce.com"
  },
  {
   "key": "chat_gpt:Lohnt sich die Salesforce Manufacturing Cloud für einen Mittelständler?",
@@ -114,7 +141,7 @@
   "prompt": "Lohnt sich die Salesforce Manufacturing Cloud für einen Mittelständler?",
   "cited": "nein",
   "mentioned": "nein",
-  "sources": ""
+  "sources": "help.salesforce.com, resources.docs.salesforce.com, salesforce.com"
  },
  {
   "key": "claude:Lohnt sich die Salesforce Manufacturing Cloud für einen Mittelständler?",
@@ -123,7 +150,16 @@
   "prompt": "Lohnt sich die Salesforce Manufacturing Cloud für einen Mittelständler?",
   "cited": "nein",
   "mentioned": "nein",
-  "sources": "itransition.com, salesforce.com, find-your-software.de"
+  "sources": "getapp.com, softwarefinder.com, find-your-software.de"
+ },
+ {
+  "key": "gemini:Lohnt sich die Salesforce Manufacturing Cloud für einen Mittelständler?",
+  "provider": "gemini",
+  "lang": "DE",
+  "prompt": "Lohnt sich die Salesforce Manufacturing Cloud für einen Mittelständler?",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": "vertexaisearch.cloud.google.com"
  },
  {
   "key": "perplexity:Lohnt sich die Salesforce Manufacturing Cloud für einen Mittelständler?",
@@ -132,7 +168,7 @@
   "prompt": "Lohnt sich die Salesforce Manufacturing Cloud für einen Mittelständler?",
   "cited": "nein",
   "mentioned": "nein",
-  "sources": "salesforce.com, appexchange.salesforce.com, cargas.com"
+  "sources": "salesforce.com, find-your-software.de, appexchange.salesforce.com"
  },
  {
   "key": "google_ai_mode:Lohnt sich die Salesforce Manufacturing Cloud für einen Mittelständler?",
@@ -141,7 +177,7 @@
   "prompt": "Lohnt sich die Salesforce Manufacturing Cloud für einen Mittelständler?",
   "cited": "nein",
   "mentioned": "nein",
-  "sources": "salesforce.com, routine-automation.com, salesfuchs.com"
+  "sources": "help.salesforce.com, zeeg.me, itportal24.de"
  },
  {
   "key": "chat_gpt:Salesforce CPQ oder Revenue Cloud: Was sollten Hersteller 2026 tun?",
@@ -150,7 +186,7 @@
   "prompt": "Salesforce CPQ oder Revenue Cloud: Was sollten Hersteller 2026 tun?",
   "cited": "nein",
   "mentioned": "nein",
-  "sources": "salesforce.com, help.salesforce.com, companybench.com"
+  "sources": "salesforce.com, help.salesforce.com, stretch.se"
  },
  {
   "key": "claude:Salesforce CPQ oder Revenue Cloud: Was sollten Hersteller 2026 tun?",
@@ -159,7 +195,16 @@
   "prompt": "Salesforce CPQ oder Revenue Cloud: Was sollten Hersteller 2026 tun?",
   "cited": "nein",
   "mentioned": "nein",
-  "sources": "cloudmasonry.com, le-configurateur-des-industriels.com, dhruvsoft.com"
+  "sources": "cloudmasonry.com, salesforce.com, clonepartner.com"
+ },
+ {
+  "key": "gemini:Salesforce CPQ oder Revenue Cloud: Was sollten Hersteller 2026 tun?",
+  "provider": "gemini",
+  "lang": "DE",
+  "prompt": "Salesforce CPQ oder Revenue Cloud: Was sollten Hersteller 2026 tun?",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": "vertexaisearch.cloud.google.com"
  },
  {
   "key": "perplexity:Salesforce CPQ oder Revenue Cloud: Was sollten Hersteller 2026 tun?",
@@ -168,7 +213,7 @@
   "prompt": "Salesforce CPQ oder Revenue Cloud: Was sollten Hersteller 2026 tun?",
   "cited": "nein",
   "mentioned": "nein",
-  "sources": "salesforce.com, aleysian.com, experlogix.com"
+  "sources": "salesforce.com, gspsolutions.com, flosum.com"
  },
  {
   "key": "google_ai_mode:Salesforce CPQ oder Revenue Cloud: Was sollten Hersteller 2026 tun?",
@@ -177,7 +222,7 @@
   "prompt": "Salesforce CPQ oder Revenue Cloud: Was sollten Hersteller 2026 tun?",
   "cited": "nein",
   "mentioned": "nein",
-  "sources": "servicepath.co, youtube.com, applikontech.com"
+  "sources": "applikontech.com, salesforce.com, accordion.com"
  },
  {
   "key": "chat_gpt:Welches Salesforce-DevOps-Werkzeug passt für Enterprise-Projekte: sfdx-hardis, Copado oder Gearset?",
@@ -186,7 +231,7 @@
   "prompt": "Welches Salesforce-DevOps-Werkzeug passt für Enterprise-Projekte: sfdx-hardis, Copado oder Gearset?",
   "cited": "nein",
   "mentioned": "nein",
-  "sources": "copado.com, gearset.com, sfdx-hardis.github.io"
+  "sources": "copado.com, gearset.com, sfdx-hardis.cloudity.com"
  },
  {
   "key": "claude:Welches Salesforce-DevOps-Werkzeug passt für Enterprise-Projekte: sfdx-hardis, Copado oder Gearset?",
@@ -198,13 +243,22 @@
   "sources": "getclientell.com, salesforcedictionary.com, gearset.com"
  },
  {
+  "key": "gemini:Welches Salesforce-DevOps-Werkzeug passt für Enterprise-Projekte: sfdx-hardis, Copado oder Gearset?",
+  "provider": "gemini",
+  "lang": "DE",
+  "prompt": "Welches Salesforce-DevOps-Werkzeug passt für Enterprise-Projekte: sfdx-hardis, Copado oder Gearset?",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": "vertexaisearch.cloud.google.com"
+ },
+ {
   "key": "perplexity:Welches Salesforce-DevOps-Werkzeug passt für Enterprise-Projekte: sfdx-hardis, Copado oder Gearset?",
   "provider": "perplexity",
   "lang": "DE",
   "prompt": "Welches Salesforce-DevOps-Werkzeug passt für Enterprise-Projekte: sfdx-hardis, Copado oder Gearset?",
   "cited": "nein",
   "mentioned": "nein",
-  "sources": "copado.com, gearset.com, accelq.com"
+  "sources": "gearset.com, copado.com, sherwen.com"
  },
  {
   "key": "google_ai_mode:Welches Salesforce-DevOps-Werkzeug passt für Enterprise-Projekte: sfdx-hardis, Copado oder Gearset?",
@@ -213,7 +267,7 @@
   "prompt": "Welches Salesforce-DevOps-Werkzeug passt für Enterprise-Projekte: sfdx-hardis, Copado oder Gearset?",
   "cited": "nein",
   "mentioned": "nein",
-  "sources": "de.linkedin.com, reddit.com, gearset.com"
+  "sources": "reddit.com, gearset.com, linkedin.com"
  },
  {
   "key": "chat_gpt:Was kostet Agentforce für einen Hersteller mit Händlernetz?",
@@ -222,7 +276,7 @@
   "prompt": "Was kostet Agentforce für einen Hersteller mit Händlernetz?",
   "cited": "nein",
   "mentioned": "nein",
-  "sources": "salesforce.com, salesfuchs.com, crm.virtual-marketer.de"
+  "sources": "salesforce.com, reddit.com"
  },
  {
   "key": "claude:Was kostet Agentforce für einen Hersteller mit Händlernetz?",
@@ -231,7 +285,16 @@
   "prompt": "Was kostet Agentforce für einen Hersteller mit Händlernetz?",
   "cited": "nein",
   "mentioned": "nein",
-  "sources": "oliv.ai, salesforce.com, cloudconsultants.ch"
+  "sources": "cloudconsultants.ch, coworker.ai, pluno.ai"
+ },
+ {
+  "key": "gemini:Was kostet Agentforce für einen Hersteller mit Händlernetz?",
+  "provider": "gemini",
+  "lang": "DE",
+  "prompt": "Was kostet Agentforce für einen Hersteller mit Händlernetz?",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": "vertexaisearch.cloud.google.com"
  },
  {
   "key": "perplexity:Was kostet Agentforce für einen Hersteller mit Händlernetz?",
@@ -240,7 +303,7 @@
   "prompt": "Was kostet Agentforce für einen Hersteller mit Händlernetz?",
   "cited": "nein",
   "mentioned": "nein",
-  "sources": "oliv.ai, salesforce.com, supered.io"
+  "sources": "salesforce.com, ekfrazo.com, zarasa.io"
  },
  {
   "key": "google_ai_mode:Was kostet Agentforce für einen Hersteller mit Händlernetz?",
@@ -258,7 +321,7 @@
   "prompt": "Welche Grenzen hat der Salesforce Document Builder für Serviceberichte?",
   "cited": "nein",
   "mentioned": "nein",
-  "sources": "help.salesforce.com, luminix.atlassian.net"
+  "sources": "help.salesforce.com, resources.docs.salesforce.com, luminix.atlassian.net"
  },
  {
   "key": "claude:Welche Grenzen hat der Salesforce Document Builder für Serviceberichte?",
@@ -267,7 +330,16 @@
   "prompt": "Welche Grenzen hat der Salesforce Document Builder für Serviceberichte?",
   "cited": "nein",
   "mentioned": "nein",
-  "sources": "github.com"
+  "sources": "help.salesforce.com, github.com"
+ },
+ {
+  "key": "gemini:Welche Grenzen hat der Salesforce Document Builder für Serviceberichte?",
+  "provider": "gemini",
+  "lang": "DE",
+  "prompt": "Welche Grenzen hat der Salesforce Document Builder für Serviceberichte?",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": "vertexaisearch.cloud.google.com"
  },
  {
   "key": "perplexity:Welche Grenzen hat der Salesforce Document Builder für Serviceberichte?",
@@ -276,7 +348,7 @@
   "prompt": "Welche Grenzen hat der Salesforce Document Builder für Serviceberichte?",
   "cited": "nein",
   "mentioned": "nein",
-  "sources": "help.salesforce.com, developer.salesforce.com, comforth-easyfront.eu"
+  "sources": "help.salesforce.com, developer.salesforce.com, helpx.adobe.com"
  },
  {
   "key": "google_ai_mode:Welche Grenzen hat der Salesforce Document Builder für Serviceberichte?",
@@ -285,7 +357,7 @@
   "prompt": "Welche Grenzen hat der Salesforce Document Builder für Serviceberichte?",
   "cited": "nein",
   "mentioned": "nein",
-  "sources": ""
+  "sources": "help.salesforce.com, docable.co, developer.salesforce.com"
  },
  {
   "key": "chat_gpt:Wie verbinde ich Salesforce mit SAP für Auftragsstatus und Kundenpreise?",
@@ -303,7 +375,16 @@
   "prompt": "Wie verbinde ich Salesforce mit SAP für Auftragsstatus und Kundenpreise?",
   "cited": "nein",
   "mentioned": "nein",
-  "sources": "salesforcetutorial.com, walkme.com, sfapps.info"
+  "sources": ""
+ },
+ {
+  "key": "gemini:Wie verbinde ich Salesforce mit SAP für Auftragsstatus und Kundenpreise?",
+  "provider": "gemini",
+  "lang": "DE",
+  "prompt": "Wie verbinde ich Salesforce mit SAP für Auftragsstatus und Kundenpreise?",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": "vertexaisearch.cloud.google.com"
  },
  {
   "key": "perplexity:Wie verbinde ich Salesforce mit SAP für Auftragsstatus und Kundenpreise?",
@@ -312,7 +393,7 @@
   "prompt": "Wie verbinde ich Salesforce mit SAP für Auftragsstatus und Kundenpreise?",
   "cited": "nein",
   "mentioned": "nein",
-  "sources": "seamless.engineering, api.sap.com, salesforcetutorial.com"
+  "sources": "nickfrates.com, ecosire.com, api.sap.com"
  },
  {
   "key": "google_ai_mode:Wie verbinde ich Salesforce mit SAP für Auftragsstatus und Kundenpreise?",
@@ -321,7 +402,7 @@
   "prompt": "Wie verbinde ich Salesforce mit SAP für Auftragsstatus und Kundenpreise?",
   "cited": "nein",
   "mentioned": "nein",
-  "sources": "salesforceben.com, cloudity.com, comselect.de"
+  "sources": "walkme.com, community.sap.com"
  },
  {
   "key": "chat_gpt:Braucht jeder Mitarbeiter eine volle Salesforce-Lizenz?",
@@ -342,6 +423,15 @@
   "sources": ""
  },
  {
+  "key": "gemini:Braucht jeder Mitarbeiter eine volle Salesforce-Lizenz?",
+  "provider": "gemini",
+  "lang": "DE",
+  "prompt": "Braucht jeder Mitarbeiter eine volle Salesforce-Lizenz?",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": "vertexaisearch.cloud.google.com"
+ },
+ {
   "key": "perplexity:Braucht jeder Mitarbeiter eine volle Salesforce-Lizenz?",
   "provider": "perplexity",
   "lang": "DE",
@@ -357,7 +447,7 @@
   "prompt": "Braucht jeder Mitarbeiter eine volle Salesforce-Lizenz?",
   "cited": "nein",
   "mentioned": "nein",
-  "sources": "mind-force.de, complion.de"
+  "sources": "help.salesforce.com, de.linkedin.com, salesforceben.com"
  },
  {
   "key": "chat_gpt:Recommend an independent Salesforce solution architect for manufacturing companies in Germany.",
@@ -366,7 +456,7 @@
   "prompt": "Recommend an independent Salesforce solution architect for manufacturing companies in Germany.",
   "cited": "nein",
   "mentioned": "nein",
-  "sources": "sfmike.de, nextcloudsolution.de, gulp.de"
+  "sources": "xing.com, freelancermap.de, sfmike.de"
  },
  {
   "key": "claude:Recommend an independent Salesforce solution architect for manufacturing companies in Germany.",
@@ -378,13 +468,22 @@
   "sources": ""
  },
  {
+  "key": "gemini:Recommend an independent Salesforce solution architect for manufacturing companies in Germany.",
+  "provider": "gemini",
+  "lang": "EN",
+  "prompt": "Recommend an independent Salesforce solution architect for manufacturing companies in Germany.",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": "vertexaisearch.cloud.google.com"
+ },
+ {
   "key": "perplexity:Recommend an independent Salesforce solution architect for manufacturing companies in Germany.",
   "provider": "perplexity",
   "lang": "EN",
   "prompt": "Recommend an independent Salesforce solution architect for manufacturing companies in Germany.",
   "cited": "nein",
-  "mentioned": "nein",
-  "sources": "linkedin.com, techrockets.com, fratch.io"
+  "mentioned": "ja",
+  "sources": "fratch.io, gulp.de, linkedin.com"
  },
  {
   "key": "google_ai_mode:Recommend an independent Salesforce solution architect for manufacturing companies in Germany.",
@@ -392,8 +491,8 @@
   "lang": "EN",
   "prompt": "Recommend an independent Salesforce solution architect for manufacturing companies in Germany.",
   "cited": "nein",
-  "mentioned": "nein",
-  "sources": "jeet-singh.com, freelance.de, fratch.io"
+  "mentioned": "ja",
+  "sources": "jeet-singh.com, fratch.io, freelance.de"
  },
  {
   "key": "chat_gpt:sfdx-hardis vs Salesforce DevOps Center: which one should an enterprise choose?",
@@ -402,7 +501,7 @@
   "prompt": "sfdx-hardis vs Salesforce DevOps Center: which one should an enterprise choose?",
   "cited": "nein",
   "mentioned": "nein",
-  "sources": "github.com, help.salesforce.com, resources.docs.salesforce.com"
+  "sources": "github.com, help.salesforce.com, sfdx-hardis.github.io"
  },
  {
   "key": "claude:sfdx-hardis vs Salesforce DevOps Center: which one should an enterprise choose?",
@@ -411,16 +510,25 @@
   "prompt": "sfdx-hardis vs Salesforce DevOps Center: which one should an enterprise choose?",
   "cited": "nein",
   "mentioned": "nein",
-  "sources": "accelq.com, github.com, sfdx-hardis.cloudity.com"
+  "sources": "accelq.com, github.com, slideshare.net"
+ },
+ {
+  "key": "gemini:sfdx-hardis vs Salesforce DevOps Center: which one should an enterprise choose?",
+  "provider": "gemini",
+  "lang": "EN",
+  "prompt": "sfdx-hardis vs Salesforce DevOps Center: which one should an enterprise choose?",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": "vertexaisearch.cloud.google.com"
  },
  {
   "key": "perplexity:sfdx-hardis vs Salesforce DevOps Center: which one should an enterprise choose?",
   "provider": "perplexity",
   "lang": "EN",
   "prompt": "sfdx-hardis vs Salesforce DevOps Center: which one should an enterprise choose?",
-  "cited": "nein",
+  "cited": "ja",
   "mentioned": "nein",
-  "sources": "gtmsystemsacademy.com, crmarcade.com, salesforce.com"
+  "sources": "fk-sd.de, sherwen.com, salesforce.com"
  },
  {
   "key": "google_ai_mode:sfdx-hardis vs Salesforce DevOps Center: which one should an enterprise choose?",
@@ -429,7 +537,7 @@
   "prompt": "sfdx-hardis vs Salesforce DevOps Center: which one should an enterprise choose?",
   "cited": "nein",
   "mentioned": "nein",
-  "sources": "gearset.com, youtube.com, salesforcedictionary.com"
+  "sources": "gearset.com, youtube.com, reddit.com"
  },
  {
   "key": "chat_gpt:How do I govern several Salesforce implementation partners in one program?",
@@ -450,13 +558,22 @@
   "sources": ""
  },
  {
+  "key": "gemini:How do I govern several Salesforce implementation partners in one program?",
+  "provider": "gemini",
+  "lang": "EN",
+  "prompt": "How do I govern several Salesforce implementation partners in one program?",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": "vertexaisearch.cloud.google.com"
+ },
+ {
   "key": "perplexity:How do I govern several Salesforce implementation partners in one program?",
   "provider": "perplexity",
   "lang": "EN",
   "prompt": "How do I govern several Salesforce implementation partners in one program?",
   "cited": "nein",
   "mentioned": "nein",
-  "sources": "salesforce.com, help.salesforce.com, developer.salesforce.com"
+  "sources": "salesforce.com, help.salesforce.com, docs.introw.io"
  },
  {
   "key": "google_ai_mode:How do I govern several Salesforce implementation partners in one program?",
@@ -465,7 +582,7 @@
   "prompt": "How do I govern several Salesforce implementation partners in one program?",
   "cited": "nein",
   "mentioned": "nein",
-  "sources": ""
+  "sources": "flosum.com"
  },
  {
   "key": "chat_gpt:Best practices for rolling out Salesforce Field Service in waves",
@@ -483,7 +600,16 @@
   "prompt": "Best practices for rolling out Salesforce Field Service in waves",
   "cited": "nein",
   "mentioned": "nein",
-  "sources": "praxedo.com, andrewreise.com, clicklearn.com"
+  "sources": "cirriussolutions.com, omi.co, salesforce.com"
+ },
+ {
+  "key": "gemini:Best practices for rolling out Salesforce Field Service in waves",
+  "provider": "gemini",
+  "lang": "EN",
+  "prompt": "Best practices for rolling out Salesforce Field Service in waves",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": "vertexaisearch.cloud.google.com"
  },
  {
   "key": "perplexity:Best practices for rolling out Salesforce Field Service in waves",
@@ -492,7 +618,7 @@
   "prompt": "Best practices for rolling out Salesforce Field Service in waves",
   "cited": "nein",
   "mentioned": "nein",
-  "sources": "salesforce.com, salesforcedictionary.com, resources.docs.salesforce.com"
+  "sources": "help.salesforce.com, salesforce.com, resources.docs.salesforce.com"
  },
  {
   "key": "google_ai_mode:Best practices for rolling out Salesforce Field Service in waves",
@@ -501,7 +627,7 @@
   "prompt": "Best practices for rolling out Salesforce Field Service in waves",
   "cited": "nein",
   "mentioned": "nein",
-  "sources": "australia.viseo.com, salesforce.com, help.salesforce.com"
+  "sources": "trailhead.salesforce.com, salesforce.com, reewamp.com"
  },
  {
   "key": "chat_gpt:What are the limitations of Salesforce Document Builder?",
@@ -510,7 +636,7 @@
   "prompt": "What are the limitations of Salesforce Document Builder?",
   "cited": "nein",
   "mentioned": "nein",
-  "sources": "help.salesforce.com, developer.salesforce.com, levelupsalesforce.com"
+  "sources": "help.salesforce.com, developer.salesforce.com, helpx.adobe.com"
  },
  {
   "key": "claude:What are the limitations of Salesforce Document Builder?",
@@ -519,7 +645,16 @@
   "prompt": "What are the limitations of Salesforce Document Builder?",
   "cited": "nein",
   "mentioned": "nein",
-  "sources": "help.salesforce.com, tinkertimelabs.com, thecloudupdate.co"
+  "sources": "help.salesforce.com, helpx.adobe.com, titandxp.com"
+ },
+ {
+  "key": "gemini:What are the limitations of Salesforce Document Builder?",
+  "provider": "gemini",
+  "lang": "EN",
+  "prompt": "What are the limitations of Salesforce Document Builder?",
+  "cited": "nein",
+  "mentioned": "nein",
+  "sources": "vertexaisearch.cloud.google.com"
  },
  {
   "key": "perplexity:What are the limitations of Salesforce Document Builder?",
@@ -537,6 +672,6 @@
   "prompt": "What are the limitations of Salesforce Document Builder?",
   "cited": "nein",
   "mentioned": "nein",
-  "sources": "help.salesforce.com, developer.salesforce.com"
+  "sources": "docable.co, developer.salesforce.com, reddit.com"
  }
 ]

@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-28T20:56:02.616Z",
+  "generatedAt": "2026-11-01T11:47:10.255Z",
   "domain": "fk-sd.de",
-  "cost": 0.9894,
+  "cost": 1.5576,
   "models": {
     "chat_gpt": {
       "name": "gpt-5-mini",
@@ -38,8 +38,7 @@
       "cited": false,
       "mentioned": false,
       "domains": [
-        "bc-advisory.de",
-        "bilarna.com"
+        "bc-advisory.de"
       ]
     },
     {
@@ -47,7 +46,11 @@
       "model": "gemini-2.5-flash",
       "lang": "de",
       "prompt": "Welcher unabhängige Salesforce-Berater hilft, mehrere Implementierungspartner in einem Programm zu steuern?",
-      "error": "ai_optimization/gemini/llm_responses/live: Invalid Field: 'web_search_country_iso_code'."
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "vertexaisearch.cloud.google.com"
+      ]
     },
     {
       "provider": "perplexity",
@@ -57,16 +60,15 @@
       "cited": false,
       "mentioned": false,
       "domains": [
-        "cremanski.com",
+        "thinkbeyond.cloud",
+        "ibmix.de",
+        "conet.de",
         "3li.global",
         "ventionteams.com",
         "salesforce.com",
-        "bc-advisory.de",
-        "routine-automation.com",
         "help.salesforce.com",
-        "salesforce-berater.de",
         "appexchange.salesforce.com",
-        "srmtech.com"
+        "itportal24.de"
       ]
     },
     {
@@ -77,8 +79,10 @@
       "cited": false,
       "mentioned": false,
       "domains": [
-        "consultingheads.com",
-        "linkedin.com"
+        "bc-advisory.de",
+        "malt.com",
+        "freelancermap.de",
+        "freelance.de"
       ]
     },
     {
@@ -88,11 +92,7 @@
       "prompt": "Empfiehl einen freiberuflichen Salesforce Solution Architect in Deutschland für Fertigungsunternehmen.",
       "cited": false,
       "mentioned": false,
-      "domains": [
-        "sfmike.de",
-        "gulp.de",
-        "freelancermap.com"
-      ]
+      "domains": []
     },
     {
       "provider": "claude",
@@ -108,7 +108,11 @@
       "model": "gemini-2.5-flash",
       "lang": "de",
       "prompt": "Empfiehl einen freiberuflichen Salesforce Solution Architect in Deutschland für Fertigungsunternehmen.",
-      "error": "ai_optimization/gemini/llm_responses/live: Invalid Field: 'web_search_country_iso_code'."
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "vertexaisearch.cloud.google.com"
+      ]
     },
     {
       "provider": "perplexity",
@@ -121,8 +125,9 @@
         "gulp.de",
         "freelancermap.de",
         "fratch.io",
-        "freelance.de",
-        "freelancermap.com"
+        "linkedin.com",
+        "malt.com",
+        "freelance.de"
       ]
     },
     {
@@ -161,7 +166,11 @@
       "model": "gemini-2.5-flash",
       "lang": "de",
       "prompt": "Wie führe ich Salesforce Field Service in einem Maschinenbauunternehmen ein?",
-      "error": "ai_optimization/gemini/llm_responses/live: Invalid Field: 'web_search_country_iso_code'."
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "vertexaisearch.cloud.google.com"
+      ]
     },
     {
       "provider": "perplexity",
@@ -185,11 +194,9 @@
       "cited": false,
       "mentioned": false,
       "domains": [
-        "fieldcamp.ai",
-        "youtube.com",
-        "jetbi.com",
+        "salesforceben.com",
         "salesforce.com",
-        "trailhead.salesforce.com"
+        "developer.salesforce.com"
       ]
     },
     {
@@ -199,7 +206,16 @@
       "prompt": "Lohnt sich die Salesforce Manufacturing Cloud für einen Mittelständler?",
       "cited": false,
       "mentioned": false,
-      "domains": []
+      "domains": [
+        "help.salesforce.com",
+        "resources.docs.salesforce.com",
+        "salesforce.com",
+        "prometheusagency.co",
+        "blog.seraleads.com",
+        "appexchange.salesforce.com",
+        "techradar.com",
+        "systemselect.eu"
+      ]
     },
     {
       "provider": "claude",
@@ -209,10 +225,10 @@
       "cited": false,
       "mentioned": false,
       "domains": [
-        "itransition.com",
-        "salesforce.com",
+        "getapp.com",
+        "softwarefinder.com",
         "find-your-software.de",
-        "ardncloudsolutions.com"
+        "salesforce.com"
       ]
     },
     {
@@ -220,7 +236,11 @@
       "model": "gemini-2.5-flash",
       "lang": "de",
       "prompt": "Lohnt sich die Salesforce Manufacturing Cloud für einen Mittelständler?",
-      "error": "ai_optimization/gemini/llm_responses/live: Invalid Field: 'web_search_country_iso_code'."
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "vertexaisearch.cloud.google.com"
+      ]
     },
     {
       "provider": "perplexity",
@@ -231,8 +251,8 @@
       "mentioned": false,
       "domains": [
         "salesforce.com",
-        "appexchange.salesforce.com",
-        "cargas.com"
+        "find-your-software.de",
+        "appexchange.salesforce.com"
       ]
     },
     {
@@ -243,11 +263,11 @@
       "cited": false,
       "mentioned": false,
       "domains": [
+        "help.salesforce.com",
+        "zeeg.me",
+        "itportal24.de",
         "salesforce.com",
-        "routine-automation.com",
-        "salesfuchs.com",
-        "digitalbusiness-magazin.de",
-        "symestic.com"
+        "routine-automation.com"
       ]
     },
     {
@@ -260,8 +280,10 @@
       "domains": [
         "salesforce.com",
         "help.salesforce.com",
+        "stretch.se",
         "companybench.com",
-        "assets.gearset.com"
+        "clouderia.digital",
+        "pwc.com"
       ]
     },
     {
@@ -273,8 +295,11 @@
       "mentioned": false,
       "domains": [
         "cloudmasonry.com",
-        "le-configurateur-des-industriels.com",
-        "dhruvsoft.com"
+        "salesforce.com",
+        "clonepartner.com",
+        "forceperformers.com",
+        "dhruvsoft.com",
+        "le-configurateur-des-industriels.com"
       ]
     },
     {
@@ -282,7 +307,11 @@
       "model": "gemini-2.5-flash",
       "lang": "de",
       "prompt": "Salesforce CPQ oder Revenue Cloud: Was sollten Hersteller 2026 tun?",
-      "error": "ai_optimization/gemini/llm_responses/live: Invalid Field: 'web_search_country_iso_code'."
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "vertexaisearch.cloud.google.com"
+      ]
     },
     {
       "provider": "perplexity",
@@ -293,13 +322,12 @@
       "mentioned": false,
       "domains": [
         "salesforce.com",
-        "aleysian.com",
+        "gspsolutions.com",
+        "flosum.com",
         "experlogix.com",
-        "ione360.com",
         "techforceservices.com",
         "cloudmasonry.com",
-        "bunny.com",
-        "erpresearch.com"
+        "ione360.com"
       ]
     },
     {
@@ -310,11 +338,10 @@
       "cited": false,
       "mentioned": false,
       "domains": [
-        "servicepath.co",
-        "youtube.com",
         "applikontech.com",
-        "everstage.com",
-        "accordion.com"
+        "salesforce.com",
+        "accordion.com",
+        "2-data.com"
       ]
     },
     {
@@ -327,9 +354,10 @@
       "domains": [
         "copado.com",
         "gearset.com",
-        "sfdx-hardis.github.io",
-        "sfdx-hardis-training.github.io",
-        "faun.dev"
+        "sfdx-hardis.cloudity.com",
+        "faun.dev",
+        "github.com",
+        "gtmsystemsacademy.com"
       ]
     },
     {
@@ -350,7 +378,11 @@
       "model": "gemini-2.5-flash",
       "lang": "de",
       "prompt": "Welches Salesforce-DevOps-Werkzeug passt für Enterprise-Projekte: sfdx-hardis, Copado oder Gearset?",
-      "error": "ai_optimization/gemini/llm_responses/live: Invalid Field: 'web_search_country_iso_code'."
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "vertexaisearch.cloud.google.com"
+      ]
     },
     {
       "provider": "perplexity",
@@ -360,10 +392,11 @@
       "cited": false,
       "mentioned": false,
       "domains": [
-        "copado.com",
         "gearset.com",
-        "accelq.com",
-        "flosum.com"
+        "copado.com",
+        "sherwen.com",
+        "flosum.com",
+        "accelq.com"
       ]
     },
     {
@@ -374,11 +407,10 @@
       "cited": false,
       "mentioned": false,
       "domains": [
-        "de.linkedin.com",
         "reddit.com",
         "gearset.com",
         "linkedin.com",
-        "sfdx-hardis.cloudity.com"
+        "de.linkedin.com"
       ]
     },
     {
@@ -390,8 +422,7 @@
       "mentioned": false,
       "domains": [
         "salesforce.com",
-        "salesfuchs.com",
-        "crm.virtual-marketer.de"
+        "reddit.com"
       ]
     },
     {
@@ -402,10 +433,11 @@
       "cited": false,
       "mentioned": false,
       "domains": [
-        "oliv.ai",
-        "salesforce.com",
         "cloudconsultants.ch",
-        "zenml.io"
+        "coworker.ai",
+        "pluno.ai",
+        "eesel.ai",
+        "activepieces.com"
       ]
     },
     {
@@ -413,7 +445,11 @@
       "model": "gemini-2.5-flash",
       "lang": "de",
       "prompt": "Was kostet Agentforce für einen Hersteller mit Händlernetz?",
-      "error": "ai_optimization/gemini/llm_responses/live: Invalid Field: 'web_search_country_iso_code'."
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "vertexaisearch.cloud.google.com"
+      ]
     },
     {
       "provider": "perplexity",
@@ -423,14 +459,15 @@
       "cited": false,
       "mentioned": false,
       "domains": [
-        "oliv.ai",
         "salesforce.com",
-        "supered.io",
-        "default.com",
-        "lucidlabs.de",
-        "salesfive.com",
+        "ekfrazo.com",
+        "zarasa.io",
+        "getclientell.com",
         "find-your-software.de",
-        "meetergo.com"
+        "oliv.ai",
+        "default.com",
+        "supered.io",
+        "lucidlabs.de"
       ]
     },
     {
@@ -455,7 +492,10 @@
       "mentioned": false,
       "domains": [
         "help.salesforce.com",
-        "luminix.atlassian.net"
+        "resources.docs.salesforce.com",
+        "luminix.atlassian.net",
+        "trailhead.salesforce.com",
+        "linkedin.com"
       ]
     },
     {
@@ -466,6 +506,7 @@
       "cited": false,
       "mentioned": false,
       "domains": [
+        "help.salesforce.com",
         "github.com"
       ]
     },
@@ -474,7 +515,11 @@
       "model": "gemini-2.5-flash",
       "lang": "de",
       "prompt": "Welche Grenzen hat der Salesforce Document Builder für Serviceberichte?",
-      "error": "ai_optimization/gemini/llm_responses/live: Invalid Field: 'web_search_country_iso_code'."
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "vertexaisearch.cloud.google.com"
+      ]
     },
     {
       "provider": "perplexity",
@@ -486,9 +531,8 @@
       "domains": [
         "help.salesforce.com",
         "developer.salesforce.com",
-        "comforth-easyfront.eu",
         "helpx.adobe.com",
-        "resources.docs.salesforce.com"
+        "trailhead.salesforce.com"
       ]
     },
     {
@@ -498,7 +542,12 @@
       "prompt": "Welche Grenzen hat der Salesforce Document Builder für Serviceberichte?",
       "cited": false,
       "mentioned": false,
-      "domains": []
+      "domains": [
+        "help.salesforce.com",
+        "docable.co",
+        "developer.salesforce.com",
+        "trailhead.salesforce.com"
+      ]
     },
     {
       "provider": "chat_gpt",
@@ -516,20 +565,18 @@
       "prompt": "Wie verbinde ich Salesforce mit SAP für Auftragsstatus und Kundenpreise?",
       "cited": false,
       "mentioned": false,
-      "domains": [
-        "salesforcetutorial.com",
-        "walkme.com",
-        "sfapps.info",
-        "vigience.com",
-        "twopirconsulting.com"
-      ]
+      "domains": []
     },
     {
       "provider": "gemini",
       "model": "gemini-2.5-flash",
       "lang": "de",
       "prompt": "Wie verbinde ich Salesforce mit SAP für Auftragsstatus und Kundenpreise?",
-      "error": "ai_optimization/gemini/llm_responses/live: Invalid Field: 'web_search_country_iso_code'."
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "vertexaisearch.cloud.google.com"
+      ]
     },
     {
       "provider": "perplexity",
@@ -539,14 +586,15 @@
       "cited": false,
       "mentioned": false,
       "domains": [
-        "seamless.engineering",
+        "nickfrates.com",
+        "ecosire.com",
         "api.sap.com",
         "salesforcetutorial.com",
         "comselect.de",
         "help.sap.com",
         "mulesoft.com",
         "jitterbit.com",
-        "skyvia.com"
+        "appseconnect.com"
       ]
     },
     {
@@ -557,10 +605,8 @@
       "cited": false,
       "mentioned": false,
       "domains": [
-        "salesforceben.com",
-        "cloudity.com",
-        "comselect.de",
-        "burq.io"
+        "walkme.com",
+        "community.sap.com"
       ]
     },
     {
@@ -586,7 +632,11 @@
       "model": "gemini-2.5-flash",
       "lang": "de",
       "prompt": "Braucht jeder Mitarbeiter eine volle Salesforce-Lizenz?",
-      "error": "ai_optimization/gemini/llm_responses/live: Invalid Field: 'web_search_country_iso_code'."
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "vertexaisearch.cloud.google.com"
+      ]
     },
     {
       "provider": "perplexity",
@@ -598,7 +648,8 @@
       "domains": [
         "help.salesforce.com",
         "architect.salesforce.com",
-        "trailhead.salesforce.com"
+        "trailhead.salesforce.com",
+        "salesforce.com"
       ]
     },
     {
@@ -609,8 +660,9 @@
       "cited": false,
       "mentioned": false,
       "domains": [
-        "mind-force.de",
-        "complion.de"
+        "help.salesforce.com",
+        "de.linkedin.com",
+        "salesforceben.com"
       ]
     },
     {
@@ -621,9 +673,12 @@
       "cited": false,
       "mentioned": false,
       "domains": [
+        "xing.com",
+        "freelancermap.de",
         "sfmike.de",
+        "gulp.de",
         "nextcloudsolution.de",
-        "gulp.de"
+        "freelance.de"
       ]
     },
     {
@@ -640,7 +695,11 @@
       "model": "gemini-2.5-flash",
       "lang": "en",
       "prompt": "Recommend an independent Salesforce solution architect for manufacturing companies in Germany.",
-      "error": "ai_optimization/gemini/llm_responses/live: Invalid Field: 'web_search_country_iso_code'."
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "vertexaisearch.cloud.google.com"
+      ]
     },
     {
       "provider": "perplexity",
@@ -648,15 +707,13 @@
       "lang": "en",
       "prompt": "Recommend an independent Salesforce solution architect for manufacturing companies in Germany.",
       "cited": false,
-      "mentioned": false,
+      "mentioned": true,
       "domains": [
-        "linkedin.com",
-        "techrockets.com",
         "fratch.io",
-        "bc-advisory.de",
-        "freelancermap.de",
-        "bay20.com",
-        "fluidogroup.com"
+        "gulp.de",
+        "linkedin.com",
+        "conet.de",
+        "freelance.de"
       ]
     },
     {
@@ -665,11 +722,12 @@
       "lang": "en",
       "prompt": "Recommend an independent Salesforce solution architect for manufacturing companies in Germany.",
       "cited": false,
-      "mentioned": false,
+      "mentioned": true,
       "domains": [
         "jeet-singh.com",
+        "fratch.io",
         "freelance.de",
-        "fratch.io"
+        "de.linkedin.com"
       ]
     },
     {
@@ -682,9 +740,11 @@
       "domains": [
         "github.com",
         "help.salesforce.com",
-        "resources.docs.salesforce.com",
         "sfdx-hardis.github.io",
-        "sfdx-hardis-training.github.io"
+        "salesforce.com",
+        "sfdx-hardis-training.cloudity.com",
+        "elements.cloud",
+        "cirra.ai"
       ]
     },
     {
@@ -697,6 +757,7 @@
       "domains": [
         "accelq.com",
         "github.com",
+        "slideshare.net",
         "sfdx-hardis.cloudity.com"
       ]
     },
@@ -705,22 +766,25 @@
       "model": "gemini-2.5-flash",
       "lang": "en",
       "prompt": "sfdx-hardis vs Salesforce DevOps Center: which one should an enterprise choose?",
-      "error": "ai_optimization/gemini/llm_responses/live: Invalid Field: 'web_search_country_iso_code'."
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "vertexaisearch.cloud.google.com"
+      ]
     },
     {
       "provider": "perplexity",
       "model": "sonar",
       "lang": "en",
       "prompt": "sfdx-hardis vs Salesforce DevOps Center: which one should an enterprise choose?",
-      "cited": false,
+      "cited": true,
       "mentioned": false,
       "domains": [
-        "gtmsystemsacademy.com",
-        "crmarcade.com",
+        "fk-sd.de",
+        "sherwen.com",
         "salesforce.com",
-        "accelq.com",
         "sfdx-hardis.cloudity.com",
-        "linkedin.com",
+        "marketplace.visualstudio.com",
         "github.com",
         "salesforceben.com"
       ]
@@ -735,7 +799,6 @@
       "domains": [
         "gearset.com",
         "youtube.com",
-        "salesforcedictionary.com",
         "reddit.com"
       ]
     },
@@ -762,7 +825,11 @@
       "model": "gemini-2.5-flash",
       "lang": "en",
       "prompt": "How do I govern several Salesforce implementation partners in one program?",
-      "error": "ai_optimization/gemini/llm_responses/live: Invalid Field: 'web_search_country_iso_code'."
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "vertexaisearch.cloud.google.com"
+      ]
     },
     {
       "provider": "perplexity",
@@ -774,7 +841,7 @@
       "domains": [
         "salesforce.com",
         "help.salesforce.com",
-        "developer.salesforce.com",
+        "docs.introw.io",
         "partners.salesforce.com"
       ]
     },
@@ -785,7 +852,9 @@
       "prompt": "How do I govern several Salesforce implementation partners in one program?",
       "cited": false,
       "mentioned": false,
-      "domains": []
+      "domains": [
+        "flosum.com"
+      ]
     },
     {
       "provider": "chat_gpt",
@@ -804,11 +873,14 @@
       "cited": false,
       "mentioned": false,
       "domains": [
-        "praxedo.com",
-        "andrewreise.com",
-        "clicklearn.com",
-        "techforceservices.com",
-        "fieldservicesoftware.io"
+        "cirriussolutions.com",
+        "omi.co",
+        "salesforce.com",
+        "minusculetechnologies.com",
+        "synebo.io",
+        "developer.salesforce.com",
+        "jetbi.com",
+        "muncly.com"
       ]
     },
     {
@@ -816,7 +888,11 @@
       "model": "gemini-2.5-flash",
       "lang": "en",
       "prompt": "Best practices for rolling out Salesforce Field Service in waves",
-      "error": "ai_optimization/gemini/llm_responses/live: Invalid Field: 'web_search_country_iso_code'."
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "vertexaisearch.cloud.google.com"
+      ]
     },
     {
       "provider": "perplexity",
@@ -826,12 +902,12 @@
       "cited": false,
       "mentioned": false,
       "domains": [
-        "salesforce.com",
-        "salesforcedictionary.com",
-        "resources.docs.salesforce.com",
         "help.salesforce.com",
+        "salesforce.com",
+        "resources.docs.salesforce.com",
         "appexchange.salesforce.com",
-        "fluidogroup.com"
+        "devsinc.com",
+        "fieldax.com"
       ]
     },
     {
@@ -842,54 +918,14 @@
       "cited": false,
       "mentioned": false,
       "domains": [
-        "australia.viseo.com",
+        "trailhead.salesforce.com",
         "salesforce.com",
-        "help.salesforce.com",
-        "salesforceben.com"
+        "reewamp.com"
       ]
     },
     {
       "provider": "chat_gpt",
       "model": "gpt-5-mini-2025-08-07",
-      "lang": "en",
-      "prompt": "What are the limitations of Salesforce Document Builder?",
-      "cited": false,
-      "mentioned": false,
-      "domains": [
-        "help.salesforce.com",
-        "developer.salesforce.com",
-        "levelupsalesforce.com",
-        "salesforceben.com",
-        "reddit.com"
-      ]
-    },
-    {
-      "provider": "claude",
-      "model": "claude-sonnet-5",
-      "lang": "en",
-      "prompt": "What are the limitations of Salesforce Document Builder?",
-      "cited": false,
-      "mentioned": false,
-      "domains": [
-        "help.salesforce.com",
-        "tinkertimelabs.com",
-        "thecloudupdate.co",
-        "salesforceben.com",
-        "experlogix.com",
-        "titandxp.com",
-        "helpx.adobe.com"
-      ]
-    },
-    {
-      "provider": "gemini",
-      "model": "gemini-2.5-flash",
-      "lang": "en",
-      "prompt": "What are the limitations of Salesforce Document Builder?",
-      "error": "ai_optimization/gemini/llm_responses/live: Invalid Field: 'web_search_country_iso_code'."
-    },
-    {
-      "provider": "perplexity",
-      "model": "sonar",
       "lang": "en",
       "prompt": "What are the limitations of Salesforce Document Builder?",
       "cited": false,
@@ -902,6 +938,48 @@
       ]
     },
     {
+      "provider": "claude",
+      "model": "claude-sonnet-5",
+      "lang": "en",
+      "prompt": "What are the limitations of Salesforce Document Builder?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "help.salesforce.com",
+        "helpx.adobe.com",
+        "titandxp.com",
+        "experlogix.com",
+        "360degreecloud.com"
+      ]
+    },
+    {
+      "provider": "gemini",
+      "model": "gemini-2.5-flash",
+      "lang": "en",
+      "prompt": "What are the limitations of Salesforce Document Builder?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "vertexaisearch.cloud.google.com"
+      ]
+    },
+    {
+      "provider": "perplexity",
+      "model": "sonar",
+      "lang": "en",
+      "prompt": "What are the limitations of Salesforce Document Builder?",
+      "cited": false,
+      "mentioned": false,
+      "domains": [
+        "help.salesforce.com",
+        "developer.salesforce.com",
+        "helpx.adobe.com",
+        "titandxp.com",
+        "trailhead.salesforce.com",
+        "github.com"
+      ]
+    },
+    {
       "provider": "google_ai_mode",
       "model": "Google AI Mode",
       "lang": "en",
@@ -909,8 +987,9 @@
       "cited": false,
       "mentioned": false,
       "domains": [
-        "help.salesforce.com",
-        "developer.salesforce.com"
+        "docable.co",
+        "developer.salesforce.com",
+        "reddit.com"
       ]
     }
   ]
