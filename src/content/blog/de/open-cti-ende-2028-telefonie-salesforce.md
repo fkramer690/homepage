@@ -10,11 +10,11 @@ categories: [architecture]
 contactBrief: integration
 tags: [Open CTI, Salesforce Voice, Telefonie, Service Cloud, Genesys, Microsoft Teams]
 takeaways:
-  - "Salesforce schaltet Open CTI am 28. Februar 2028 ab. Danach funktionieren Softphones, Call-Center-Adapter und eigene CTI-Logik auf Basis von Open CTI nicht mehr."
-  - "Der Nachfolger ist Salesforce Voice, früher Service Cloud Voice. Es gibt vier Wege: den eigenen Telefonieanbieter behalten, Amazon Connect selbst oder über Salesforce betreiben oder Telefonie direkt von Salesforce."
+  - "Ab 28. Februar 2028 funktionieren Softphones, Call-Center-Adapter und eigene CTI-Logik auf Basis von Open CTI nicht mehr."
+  - "Nachfolger ist Salesforce Voice mit vier Wegen: eigener Anbieter, Amazon Connect selbst oder über Salesforce, oder Telefonie von Salesforce."
   - "Laut Preisliste kostet Partner Contact Center 50 € pro Nutzer und Monat zusätzlich zur Lizenz des Telefonieanbieters, das native Contact Center 125 €."
-  - "Wichtiger als die Abschaltung selbst ist der Umbau: Anrufe werden VoiceCall-Datensätze statt Aufgaben, Screen Pop und Präsenz laufen über Omni-Channel, Berichte müssen neu gebaut werden."
-  - "Wer heute ein Open-CTI-Produkt nutzt, sollte den Anbieter jetzt nach seinem Weg zu Salesforce Voice fragen und Rufnummern, Nutzer, Berichte und eigene Logik erfassen."
+  - "Der Umbau wiegt schwerer als die Abschaltung: Anrufe werden VoiceCall-Datensätze, Präsenz läuft über Omni-Channel, Berichte entstehen neu."
+  - "Fragen Sie Ihren Anbieter jetzt nach seinem Weg zu Salesforce Voice und erfassen Sie Rufnummern, Nutzer, Berichte und eigene Logik."
 faq:
   - q: "Wann wird Open CTI abgeschaltet?"
     a: "Am 28. Februar 2028. Seit dem 16. Februar 2026 ist Open CTI in neu angelegten Agentforce-Service-Orgs nicht mehr verfügbar. Bestehende Orgs können es bis zur Abschaltung weiter nutzen, bekommen aber keine neuen Funktionen."
@@ -43,7 +43,7 @@ Mit der Abschaltung funktionieren die Open-CTI-Schnittstelle, Call-Center-Adapte
 
 Das betrifft viele Produkte, die in deutschen Serviceorganisationen verbreitet sind. Der Mirage CTI Data Connector zum Beispiel, der Swyx-Telefonanlagen an Salesforce anbindet, ist laut [Produktbeschreibung](https://www.enreach.de/en/products/complete-your-telephone-system/third-party-products/connectors/tap-product/mirage-cti-data-connector-for-salesforce.html) eine Integration auf Basis von Open CTI.
 
-## Welche Wege zu Salesforce Voice gibt es?
+## Vier Wege führen zu Salesforce Voice
 
 Salesforce hat die Produkte gerade umbenannt, deshalb tauchen in Angeboten und Dokumentation noch alte Namen auf. Das [Trailhead-Modul zur Migration](https://trailhead.salesforce.com/content/learn/modules/open-cti-to-voice-migration/choose-your-migration-path) nennt vier Wege:
 
@@ -69,9 +69,9 @@ Ein Rechenbeispiel mit Listenpreisen: 40 Servicemitarbeiter mit Partner Contact 
 
 Der Vergleich gelingt nur mit den Kosten der heutigen Telefonie daneben. Wer einen Vertrag mit Genesys hat, der noch Jahre läuft, rechnet anders als jemand, dessen Telefonanlage ohnehin ersetzt wird. Wie ich Lizenzen über mehrere Jahre plane, beschreibe ich in [Salesforce-Lizenzen: braucht jeder eine volle Lizenz?](../salesforce-lizenzen-volle-lizenz/).
 
-## Was ist mehr Arbeit als gedacht?
+## Der Umbau macht mehr Arbeit als die Abschaltung
 
-Die Umstellung bedeutet mehr als ein neues Softphone. Laut [Migrationsleitfaden](https://developer.salesforce.com/docs/service/api-cti/guide/migrate-cti.html) ändern sich drei Dinge grundlegend:
+Die Umstellung bedeutet mehr als ein neues Softphone. Laut [Migrationsleitfaden](https://developer.salesforce.com/docs/service/api-cti/guide/migrate-cti.html) ändert sich Folgendes grundlegend:
 
 - **Datenmodell.** Open CTI protokolliert Anrufe meist als Aufgaben. Salesforce Voice legt VoiceCall-Datensätze an. Jeder Bericht und jedes Dashboard über Anrufe muss auf das neue Objekt umgebaut werden.
 - **Screen Pop und Präsenz.** Beides läuft künftig über Omni-Channel. Screen Pop wird zu einer Aktion in einem Omni-Channel-Flow, der Status der Mitarbeiter wird in Omni-Channel gesteuert.
@@ -91,7 +91,7 @@ Ich beginne mit drei Fragen, bevor es um Produkte geht:
 
 Telefon und E-Mail bleiben in den meisten Serviceorganisationen die wichtigsten Kanäle. Eine Hotline, die im Februar 2028 nicht mehr in Salesforce klingelt, trifft den Service direkt.
 
-## Wo sollten Sie anfangen?
+## Open CTI in diesem Quartal erfassen
 
 Erfassen Sie in diesem Quartal, was Open CTI bei Ihnen heute tut: wie viele Nutzer am Call Center hängen, welche Rufnummern und Warteschlangen es gibt, welche Berichte Anrufdaten nutzen und welche eigene Logik existiert. Fragen Sie parallel Ihren Telefonieanbieter schriftlich, wie sein Weg zu Salesforce Voice aussieht und ab wann er verfügbar ist. Planen Sie dann die Umstellung so, dass sie nicht mit einem großen Release oder der Hochsaison im Service zusammenfällt.
 

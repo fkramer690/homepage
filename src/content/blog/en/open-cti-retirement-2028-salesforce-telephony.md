@@ -11,9 +11,9 @@ contactBrief: integration
 tags: [Open CTI, Salesforce Voice, telephony, Service Cloud, Genesys, Microsoft Teams]
 takeaways:
   - "Salesforce retires Open CTI on 28 February 2028. After that, softphones, call center adapters and custom CTI logic built on Open CTI stop working."
-  - "The successor is Salesforce Voice, formerly Service Cloud Voice. There are four paths: keep your telephony vendor, run Amazon Connect yourself or through Salesforce, or get telephony directly from Salesforce."
+  - "The successor is Salesforce Voice, with four paths: your own vendor, Amazon Connect yourself or through Salesforce, or telephony from Salesforce."
   - "At list price, Partner Contact Center costs €50 per user and month on top of the telephony vendor's licence, and the native Contact Center €125."
-  - "The rebuild matters more than the retirement itself: calls become VoiceCall records instead of tasks, screen pop and presence move to Omni-Channel, and reports need to be rebuilt."
+  - "The rebuild matters more than the retirement: calls become VoiceCall records, presence moves to Omni-Channel, and reports are rebuilt."
   - "If you use an Open CTI product today, ask your vendor now about its path to Salesforce Voice and take stock of phone numbers, users, reports and custom logic."
 faq:
   - q: "When will Open CTI be retired?"
@@ -43,7 +43,7 @@ With the retirement, the Open CTI API, call center adapters from AgentExchange, 
 
 This affects many products that are common in German-speaking service organisations. The Mirage CTI Data Connector, for example, which connects Swyx phone systems to Salesforce, is an integration based on Open CTI according to its [product description](https://www.enreach.de/en/products/complete-your-telephone-system/third-party-products/connectors/tap-product/mirage-cti-data-connector-for-salesforce.html).
 
-## Which paths to Salesforce Voice are there?
+## Four paths lead to Salesforce Voice
 
 Salesforce has just renamed the products, so quotes and documentation still show old names. The [Trailhead migration module](https://trailhead.salesforce.com/content/learn/modules/open-cti-to-voice-migration/choose-your-migration-path) names four paths:
 
@@ -69,9 +69,9 @@ An example with list prices: 40 service agents on Partner Contact Center cost �
 
 The comparison only works with the cost of today's telephony next to it. A company with a Genesys contract that runs for years calculates differently from one whose phone system is being replaced anyway. How I plan licences over several years is described in [Salesforce licences: does everyone need a full one?](../salesforce-licences-full-licence-needed/).
 
-## What takes more work than expected?
+## The rebuild takes more work than the retirement
 
-The switch means more than a new softphone. According to the [migration guide](https://developer.salesforce.com/docs/service/api-cti/guide/migrate-cti.html), three things change fundamentally:
+The switch means more than a new softphone. According to the [migration guide](https://developer.salesforce.com/docs/service/api-cti/guide/migrate-cti.html), the following changes fundamentally:
 
 - **Data model.** Open CTI usually logs calls as tasks. Salesforce Voice creates VoiceCall records. Every report and dashboard on calls has to be rebuilt on the new object.
 - **Screen pop and presence.** Both move to Omni-Channel. Screen pop becomes an action in an Omni-Channel flow, and agent status is managed in Omni-Channel.
@@ -91,7 +91,7 @@ I start with three questions before talking about products:
 
 Phone and email remain the most important channels in most service organisations. A hotline that no longer rings in Salesforce in February 2028 hits service directly.
 
-## Where should you start?
+## Take stock of Open CTI this quarter
 
 This quarter, take stock of what Open CTI does for you today: how many users are assigned to the call center, which phone numbers and queues exist, which reports use call data and which custom logic exists. At the same time, ask your telephony vendor in writing what its path to Salesforce Voice looks like and from when it is available. Then plan the switch so it does not coincide with a major release or the peak season in service.
 
