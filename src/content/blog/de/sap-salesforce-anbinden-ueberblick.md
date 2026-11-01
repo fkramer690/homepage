@@ -11,10 +11,10 @@ contactBrief: integration
 tags: [SAP, Salesforce SAP Integration, MuleSoft, S/4HANA, Schnittstellen, ERP]
 takeaways:
   - "Am Anfang einer SAP-to-Salesforce-Integration steht eine Landkarte: Für jede Art von Daten führt genau ein System, und das andere liest."
-  - "Salesforce beschreibt sechs Integrationsmuster. Für SAP reichen meist drei: Stammdaten per Batch, Live-Abfragen für Preise und Verfügbarkeit, Aufträge per Übergabe mit Status zurück."
-  - "Als Middleware kommen MuleSoft, SAP Integration Suite oder eine andere Plattform in Frage. Bei wenigen stabilen Schnittstellen kann eine direkte Anbindung reichen."
-  - "Die Wartung von SAP ECC endet regulär Ende 2027, optional Ende 2030. Wer heute Schnittstellen baut, sollte sie so schneiden, dass der Wechsel auf S/4HANA nicht alles neu macht."
-  - "Für jedes Produkt gibt es eigene Datenflüsse: Manufacturing Cloud, B2B Commerce, Revenue Cloud, Field Service und Agentforce. Dieser Überblick verlinkt die Detailartikel."
+  - "Von sechs Integrationsmustern reichen für SAP meist drei: Stammdaten per Batch, Preise und Verfügbarkeit live, Aufträge mit Status zurück."
+  - "Als Middleware passen MuleSoft oder SAP Integration Suite. Bei wenigen stabilen Schnittstellen kann eine direkte Anbindung reichen."
+  - "SAP ECC verliert Ende 2027 die reguläre Wartung. Schnittstellen sollten so geschnitten sein, dass der Wechsel auf S/4HANA nicht alles neu macht."
+  - "Manufacturing Cloud, B2B Commerce, Revenue Cloud, Field Service und Agentforce haben eigene Datenflüsse, jeweils mit Detailartikel."
 faq:
   - q: "Wie verbinde ich SAP mit Salesforce?"
     a: "Über eine Middleware wie MuleSoft oder SAP Integration Suite oder direkt über die APIs beider Systeme. Vorher steht die Frage, welches System für Kunden, Produkte, Preise und Aufträge führt, und welches Muster jede Verbindung braucht: Batch, Live-Abfrage oder Übergabe mit Statusmeldung."
@@ -44,7 +44,7 @@ Die meisten Integrationsprobleme beginnen mit einer unklaren Antwort auf diese F
 
 Die Details unterscheiden sich in jedem Unternehmen, vor allem bei Preisen. Ob Kundenpreise aus SAP-Konditionen kommen oder in Salesforce neu entstehen, vergleiche ich in [Kundenpreise: SAP-Konditionen oder Salesforce Pricing?](../kundenpreise-sap-konditionen-oder-salesforce-pricing/). Diese Landkarte gehört zur Architektur und nicht in die Spezifikation einer einzelnen Schnittstelle.
 
-## Welche Integrationsmuster passen zu SAP?
+## Für SAP reichen meist drei Integrationsmuster
 
 Salesforce beschreibt in seinem [Architektur-Leitfaden](https://architect.salesforce.com/docs/architect/fundamentals/guide/integration-patterns.html) sechs Integrationsmuster, sortiert nach Richtung und Zeitpunkt. Für SAP reichen meist drei davon:
 
@@ -89,7 +89,7 @@ Viele Hersteller betreiben noch SAP ECC und planen den Umstieg auf S/4HANA. SAP 
 
 Für Salesforce heißt das: Eine Schnittstelle, die heute per BAPI oder IDoc an ECC hängt, wird mit S/4HANA oft auf OData-APIs umgebaut. Wer jetzt baut, sollte die SAP-Seite deshalb hinter einer stabilen Schnittstelle in der Middleware kapseln. Salesforce ruft dann „Auftragsstatus abfragen“ auf und muss nicht wissen, ob dahinter ECC oder S/4HANA antwortet. Laufen Salesforce-Einführung und S/4HANA-Umstieg parallel, gehört diese Abhängigkeit in den gemeinsamen Programmplan.
 
-## Welche Datenflüsse braucht welches Salesforce-Produkt?
+## Jedes Salesforce-Produkt hat eigene Datenflüsse
 
 Jedes Salesforce-Produkt braucht andere Daten aus SAP. Die Details stehen in eigenen Artikeln:
 
@@ -103,10 +103,8 @@ Jedes Salesforce-Produkt braucht andere Daten aus SAP. Die Details stehen in eig
 Ich habe Sales Agreements mit Ist-Mengen aus dem ERP in der Manufacturing Cloud eingeführt, und die ERP-Schnittstelle war dabei der Stolperstein. In Field-Service-Projekten kamen Ersatzteile und installierte Basis aus dem ERP, und auch dort waren die ERP-Schnittstellen einer der Stolpersteine.
 ```
 
-## Wo sollten Sie anfangen?
+## Mit der Landkarte der Daten beginnen
 
 Zeichnen Sie die Landkarte, bevor Sie über Werkzeuge sprechen: eine Zeile pro Datenart, eine Spalte für das führende System, eine für die Richtung und eine für den Zeitpunkt, also Batch, live oder Übergabe. Prüfen Sie dann, welche Schnittstellen es heute schon gibt und welche davon an ECC-Techniken hängen, die mit S/4HANA wegfallen. Erst mit dieser Liste lässt sich entscheiden, ob sich eine Middleware lohnt und welche.
 
 Legen Sie außerdem für jede Schnittstelle einen Verantwortlichen auf Kundenseite fest und prüfen Sie, mit welchem technischen Benutzer sie sich anmeldet. Integrationsbenutzer haben oft mehr Rechte als nötig, und Anmeldungen mit Benutzername und Passwort laufen aus, wie in [Salesforce-Passwort-Integrationen enden 2027](../salesforce-passwort-integrationen-2027/) beschrieben.
-
-Die Landkarte ist in wenigen Workshops erstellt und spart später viele Diskussionen zwischen Salesforce- und SAP-Team.

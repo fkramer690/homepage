@@ -11,9 +11,9 @@ contactBrief: integration
 tags: [SAP, Salesforce SAP integration, MuleSoft, S/4HANA, interfaces, ERP]
 takeaways:
   - "An SAP to Salesforce integration starts with a map: for each kind of data exactly one system leads, and the other reads."
-  - "Salesforce describes six integration patterns. For SAP, three usually suffice: master data in batches, live lookups for prices and availability, and order handover with status coming back."
+  - "Of six integration patterns, three usually suffice for SAP: master data in batches, live prices and availability, orders with status back."
   - "MuleSoft, SAP Integration Suite or another platform can serve as middleware. With a few stable interfaces, a direct connection can be enough."
-  - "Mainstream maintenance for SAP ECC ends at the end of 2027, optionally at the end of 2030. If you build interfaces today, cut them so the move to S/4HANA does not mean rebuilding everything."
+  - "SAP ECC loses mainstream maintenance at the end of 2027. Cut interfaces so that the move to S/4HANA does not mean rebuilding everything."
   - "Each product has its own data flows: Manufacturing Cloud, B2B Commerce, Revenue Cloud, Field Service and Agentforce. This overview links the detailed articles."
 faq:
   - q: "How do I connect SAP to Salesforce?"
@@ -44,7 +44,7 @@ Most integration problems start with an unclear answer to this question. If Sale
 
 The details differ in every company, especially for prices. Whether customer prices come from SAP conditions or are created in Salesforce is compared in [customer prices: SAP conditions or Salesforce pricing?](../customer-prices-sap-conditions-or-salesforce-pricing/). This map belongs to the architecture, not to the specification of a single interface.
 
-## Which integration patterns fit SAP?
+## Three integration patterns usually suffice for SAP
 
 In its [architecture guide](https://architect.salesforce.com/docs/architect/fundamentals/guide/integration-patterns.html), Salesforce describes six integration patterns, sorted by direction and timing. For SAP, three of them usually suffice:
 
@@ -89,7 +89,7 @@ Many manufacturers still run SAP ECC and plan the move to S/4HANA. SAP set the d
 
 For Salesforce this means: an interface that connects to ECC through BAPI or IDoc today is often rebuilt on OData APIs with S/4HANA. If you build now, encapsulate the SAP side behind a stable interface in the middleware. Salesforce then calls "get order status" and does not need to know whether ECC or S/4HANA answers behind it. If the Salesforce implementation and the S/4HANA move run in parallel, this dependency belongs in the shared programme plan.
 
-## Which data flows does each Salesforce product need?
+## Each Salesforce product has its own data flows
 
 Each Salesforce product needs different data from SAP. The details are in separate articles:
 
@@ -103,10 +103,8 @@ Each Salesforce product needs different data from SAP. The details are in separa
 I introduced sales agreements with actuals from the ERP in Manufacturing Cloud, and the ERP interface was the stumbling block. In field service projects, spare parts and installed base came from the ERP, and there too the ERP interfaces were one of the stumbling blocks.
 ```
 
-## Where should you start?
+## Start with the map of your data
 
 Draw the map before you talk about tools: one row per kind of data, one column for the leading system, one for the direction and one for the timing, meaning batch, live or handover. Then check which interfaces exist today and which of them depend on ECC techniques that go away with S/4HANA. Only with this list can you decide whether middleware pays off, and which one.
 
 Also name an owner on the client side for each interface and check which technical user it logs in with. Integration users often have more rights than they need, and logins with username and password are being phased out, as described in [Salesforce password integrations end in 2027](../salesforce-password-integrations-end-2027/).
-
-The map takes a few workshops and saves many discussions between the Salesforce and SAP teams later.
