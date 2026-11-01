@@ -225,6 +225,17 @@ const drawings: Record<string, Drawing> = {
     ${box(18, 96, 284, 26)}${t(160, 112, 'Field Service: WorkOrder · Asset', { fill: D, size: 7, anchor: 'middle' })}
     ${tag(18, 132, 170, l('needs Service Cloud + FS', 'braucht Service Cloud + FS'))}${t(196, 145, l('26R2 · 9 Sep 2026', '26R2 · 9.9.2026'), { size: 7 })}`,
 
+  'sap-crm-or-salesforce': (l) => `
+    ${t(18, 18, l('SAP CRM 7.0 · MAINTENANCE', 'SAP CRM 7.0 · WARTUNG'), { fill: D, size: 7 })}
+    <path d="M30 36H290" stroke="${G}" stroke-width="1.2"/>
+    ${dot(30, 36)}${t(18, 52, l('end 2027', 'Ende 2027'), { fill: D, size: 7 })}${t(18, 63, l('mainstream ends', 'reguläre endet'), { size: 6.5 })}
+    ${dot(160, 36)}${t(160, 52, l('2028 to 2030', '2028 bis 2030'), { fill: D, size: 7, anchor: 'middle' })}${t(160, 63, l('extended, +2 points', 'verlängert, +2 Punkte'), { size: 6.5, anchor: 'middle' })}
+    ${dot(290, 36, C)}${t(302, 52, l('from 2031', 'ab 2031'), { fill: C, size: 7, anchor: 'end' })}${t(302, 63, l('customer-specific', 'kundenspezifisch'), { size: 6.5, anchor: 'end' })}
+    <path d="M18 74H302" stroke="${L}"/>
+    ${t(18, 90, l('THREE PATHS', 'DREI WEGE'), { fill: D, size: 7 })}
+    ${['S/4HANA', 'Sales/Service Cloud', 'Salesforce'].map((s, i) => box(18 + i * 98, 98, 88, 24, i === 2 ? C : G) + t(62 + i * 98, 113, s, { fill: i === 2 ? C : G, size: 7, anchor: 'middle' })).join('')}
+    ${tag(18, 132, 150, l('decide by 2027 or 2028', 'entscheiden bis 2027/2028'))}${t(178, 145, l('replacement: about 2 years', 'Ablösung: rund 2 Jahre'), { size: 7 })}`,
+
   'customer-prices-sap-or-salesforce-pricing': (l) => `
     ${box(18, 26, 72, 98)}${t(54, 44, 'SAP', { fill: D, size: 8, anchor: 'middle' })}${t(54, 58, l('conditions', 'Konditionen'), { size: 7, anchor: 'middle' })}
     ${box(230, 26, 74, 98, C)}${t(267, 44, 'Revenue Cloud', { fill: D, size: 7.5, anchor: 'middle' })}${t(267, 58, 'Pricing Procedure', { size: 6.5, anchor: 'middle' })}
