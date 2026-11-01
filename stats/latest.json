@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-31T10:54:24.841Z",
+  "generatedAt": "2026-11-01T04:48:17.321Z",
   "range": {
-    "start": "2026-10-01",
-    "end": "2026-10-31"
+    "start": "2026-10-02",
+    "end": "2026-11-01"
   },
   "browsers": [
     {
-      "count": 500,
+      "count": 530,
       "dimensions": {
         "userAgentBrowser": "Chrome"
       },
@@ -59,6 +59,15 @@
       },
       "sum": {
         "visits": 40
+      }
+    },
+    {
+      "count": 30,
+      "dimensions": {
+        "countryName": "FR"
+      },
+      "sum": {
+        "visits": 0
       }
     }
   ],
@@ -118,7 +127,7 @@
       }
     },
     {
-      "count": 20,
+      "count": 50,
       "dimensions": {
         "date": "2026-10-31"
       },
@@ -129,7 +138,7 @@
   ],
   "devices": [
     {
-      "count": 530,
+      "count": 560,
       "dimensions": {
         "deviceType": "desktop"
       },
@@ -158,21 +167,21 @@
       }
     },
     {
+      "count": 50,
+      "dimensions": {
+        "requestPath": "/blog/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
       "count": 40,
       "dimensions": {
         "requestPath": "/en/"
       },
       "sum": {
         "visits": 10
-      }
-    },
-    {
-      "count": 30,
-      "dimensions": {
-        "requestPath": "/blog/"
-      },
-      "sum": {
-        "visits": 0
       }
     },
     {
@@ -241,6 +250,15 @@
     {
       "count": 10,
       "dimensions": {
+        "requestPath": "/blog/sfdx-hardis-oder-devops-center-vergleich/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
         "requestPath": "/masterclass/manufacturing-cloud/"
       },
       "sum": {
@@ -286,7 +304,7 @@
     {
       "count": 10,
       "dimensions": {
-        "requestPath": "/homepage/blog/salesforce-service-documents-document-builder/"
+        "requestPath": "/en/services/change-management-salesforce/"
       },
       "sum": {
         "visits": 0
@@ -295,7 +313,7 @@
     {
       "count": 10,
       "dimensions": {
-        "requestPath": "/homepage/blog/salesforce-field-service-mobile-guided-voice/"
+        "requestPath": "/homepage/blog/salesforce-service-documents-document-builder/"
       },
       "sum": {
         "visits": 0
@@ -313,16 +331,7 @@
     {
       "count": 10,
       "dimensions": {
-        "requestPath": "/en/services/change-management-salesforce/"
-      },
-      "sum": {
-        "visits": 0
-      }
-    },
-    {
-      "count": 10,
-      "dimensions": {
-        "requestPath": "/fragen/"
+        "requestPath": "/homepage/blog/salesforce-field-service-mobile-guided-voice/"
       },
       "sum": {
         "visits": 0
@@ -331,7 +340,7 @@
   ],
   "referers": [
     {
-      "count": 390,
+      "count": 420,
       "dimensions": {
         "refererHost": "www.fk-sd.de"
       },

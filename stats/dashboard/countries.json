@@ -8,5 +8,10 @@
   "country": "US",
   "pageviews": 40,
   "visits": 40
+ },
+ {
+  "country": "FR",
+  "pageviews": 30,
+  "visits": 0
  }
 ]

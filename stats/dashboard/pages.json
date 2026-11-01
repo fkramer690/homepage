@@ -5,14 +5,14 @@
   "visits": 50
  },
  {
+  "page": "/blog/",
+  "pageviews": 50,
+  "visits": 0
+ },
+ {
   "page": "/en/",
   "pageviews": 40,
   "visits": 10
- },
- {
-  "page": "/blog/",
-  "pageviews": 30,
-  "visits": 0
  },
  {
   "page": "/leistungen/change-management/",
@@ -50,6 +50,11 @@
   "visits": 0
  },
  {
+  "page": "/blog/sfdx-hardis-oder-devops-center-vergleich/",
+  "pageviews": 10,
+  "visits": 0
+ },
+ {
   "page": "/masterclass/manufacturing-cloud/",
   "pageviews": 10,
   "visits": 0
@@ -75,12 +80,12 @@
   "visits": 0
  },
  {
-  "page": "/homepage/blog/salesforce-service-documents-document-builder/",
+  "page": "/en/services/change-management-salesforce/",
   "pageviews": 10,
   "visits": 0
  },
  {
-  "page": "/homepage/blog/salesforce-field-service-mobile-guided-voice/",
+  "page": "/homepage/blog/salesforce-service-documents-document-builder/",
   "pageviews": 10,
   "visits": 0
  },
@@ -90,12 +95,7 @@
   "visits": 0
  },
  {
-  "page": "/en/services/change-management-salesforce/",
-  "pageviews": 10,
-  "visits": 0
- },
- {
-  "page": "/fragen/",
+  "page": "/homepage/blog/salesforce-field-service-mobile-guided-voice/",
   "pageviews": 10,
   "visits": 0
  }
