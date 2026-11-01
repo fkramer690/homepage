@@ -1,17 +1,17 @@
 {
-  "generatedAt": "2026-11-01T04:48:17.321Z",
+  "generatedAt": "2026-11-01T11:49:37.972Z",
   "range": {
     "start": "2026-10-02",
     "end": "2026-11-01"
   },
   "browsers": [
     {
-      "count": 530,
+      "count": 560,
       "dimensions": {
         "userAgentBrowser": "Chrome"
       },
       "sum": {
-        "visits": 50
+        "visits": 60
       }
     },
     {
@@ -53,12 +53,12 @@
       }
     },
     {
-      "count": 40,
+      "count": 70,
       "dimensions": {
         "countryName": "US"
       },
       "sum": {
-        "visits": 40
+        "visits": 50
       }
     },
     {
@@ -134,16 +134,25 @@
       "sum": {
         "visits": 20
       }
+    },
+    {
+      "count": 30,
+      "dimensions": {
+        "date": "2026-11-01"
+      },
+      "sum": {
+        "visits": 10
+      }
     }
   ],
   "devices": [
     {
-      "count": 560,
+      "count": 590,
       "dimensions": {
         "deviceType": "desktop"
       },
       "sum": {
-        "visits": 80
+        "visits": 90
       }
     },
     {
@@ -158,12 +167,12 @@
   ],
   "pages": [
     {
-      "count": 160,
+      "count": 180,
       "dimensions": {
         "requestPath": "/"
       },
       "sum": {
-        "visits": 50
+        "visits": 60
       }
     },
     {
@@ -268,6 +277,15 @@
     {
       "count": 10,
       "dimensions": {
+        "requestPath": "/homepage/speaking/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
         "requestPath": "/en/certifications/"
       },
       "sum": {
@@ -277,7 +295,7 @@
     {
       "count": 10,
       "dimensions": {
-        "requestPath": "/blog/change-management-prozess-salesforce/"
+        "requestPath": "/blog/salesforce-architektur-entscheidungslog/"
       },
       "sum": {
         "visits": 0
@@ -295,7 +313,7 @@
     {
       "count": 10,
       "dimensions": {
-        "requestPath": "/homepage/speaking/"
+        "requestPath": "/blog/change-management-prozess-salesforce/"
       },
       "sum": {
         "visits": 0
@@ -313,25 +331,16 @@
     {
       "count": 10,
       "dimensions": {
-        "requestPath": "/homepage/blog/salesforce-service-documents-document-builder/"
-      },
-      "sum": {
-        "visits": 0
-      }
-    },
-    {
-      "count": 10,
-      "dimensions": {
-        "requestPath": "/masterclass/revenue-cloud/"
-      },
-      "sum": {
-        "visits": 0
-      }
-    },
-    {
-      "count": 10,
-      "dimensions": {
         "requestPath": "/homepage/blog/salesforce-field-service-mobile-guided-voice/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "requestPath": "/homepage/blog/salesforce-service-documents-document-builder/"
       },
       "sum": {
         "visits": 0
@@ -340,7 +349,7 @@
   ],
   "referers": [
     {
-      "count": 420,
+      "count": 440,
       "dimensions": {
         "refererHost": "www.fk-sd.de"
       },
@@ -349,12 +358,12 @@
       }
     },
     {
-      "count": 80,
+      "count": 90,
       "dimensions": {
         "refererHost": ""
       },
       "sum": {
-        "visits": 80
+        "visits": 90
       }
     },
     {
