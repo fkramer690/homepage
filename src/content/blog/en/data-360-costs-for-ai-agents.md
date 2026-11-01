@@ -10,11 +10,11 @@ categories: [ai]
 contactBrief: licences
 tags: [data 360, agentforce, flex credits, grounding, spare parts, manufacturing]
 takeaways:
-  - "Data 360 bills document grounding in three places: processing per MB when a document is indexed, queries per million rows when the agent searches, and storage for files, chunks and index objects."
-  - "LLM-based parsing, which spare part catalogues with exploded drawings often need, is billed as Intelligent Processing at 600 credits per MB, four times the 150 credits of the default parser."
-  - "In the scenario, the agent's searches cost about 14,400 credits a month, while 400 MB of changed documents cost 195,000; changing documents drive the bill, not questions."
-  - "A change to one field or attachment on a source record reindexes all attachments of that record, so catalogues should not hang on records that an ERP interface updates every night."
-  - "Data 360 has no volume tiers in a sandbox: indexing 6,000 MB of catalogues with LLM parsing costs 2.88 million credits there, more than the 2.22 million in production."
+  - "Data 360 bills processing per MB when a document is indexed, queries per million rows on every search, and storage for files, chunks and index objects."
+  - "LLM parsing for catalogues with exploded drawings is billed as Intelligent Processing at 600 credits per MB, four times the default parser."
+  - "In the worked example, the agent's searches cost about 14,400 credits a month, while 400 MB of changed documents cost 195,000."
+  - "A change to one field on a source record reindexes all its attachments, so catalogues should not hang on records an ERP interface updates nightly."
+  - "Data 360 has no volume tiers in a sandbox: 6,000 MB of catalogues with LLM parsing cost 2.88 million credits there, more than 2.22 million in production."
 faq:
   - q: "What does Data 360 cost per MB of documents?"
     a: "The Flex Credits rate card charges 150 credits per MB for unstructured processing and 600 per MB for intelligent processing such as LLM-based parsing, in the base tier. At $500 per 100,000 credits that is $0.75 and $3 per MB. Higher monthly volumes get lower rates per usage type."
@@ -29,7 +29,7 @@ faq:
 draft: false
 ---
 
-Data 360 costs for AI agents come mostly from documents that change, not from the agent asking. When an Agentforce agent reads spare part catalogues, manuals and service bulletins, Data 360 charges 150 Flex Credits per MB to index a document with the default parser and 600 per MB with LLM-based parsing. Searches cost 3 credits per million rows. In the scenario below, the agent's searches cost about $72 a month, while re-indexing changed documents costs almost $1,000. The levers are the parser, the document scope and where the files are stored.
+Data 360 costs for AI agents come mostly from documents that change, not from the agent asking. When an Agentforce agent reads spare part catalogues, manuals and service bulletins, Data 360 charges 150 Flex Credits per MB to index a document with the default parser and 600 per MB with LLM-based parsing. Searches cost 3 credits per million rows. In the worked example below, the agent's searches cost about $72 a month, while re-indexing changed documents costs almost $1,000. The levers are the parser, the document scope and where the files are stored.
 
 ## What does Data 360 charge when an agent reads documents?
 
@@ -60,7 +60,7 @@ A spare part catalogue is mostly exploded drawings with position numbers and tab
 
 The [list of Data 360 usage types](https://help.salesforce.com/s/articleView?id=data.c360_a_data_usage_types.htm&language=en_US&type=5) also names Intelligent Context, the workspace for trying parsing and chunking settings, among the features billed as Intelligent Processing. For catalogues, "only documents with visual elements" means almost every document, so visual preprocessing saves little there. For operating manuals that are mostly text, the default parser is often enough. I would decide per document type and test retrieval quality on a sample, because 600 against 150 credits per MB is the biggest single lever in the estimate.
 
-## A typical scenario: after-sales documents at a machine builder
+## Worked example: after-sales documents at a machine builder
 
 Assume a machine builder whose agent answers dealers and service reps on spare parts and maintenance. All volumes below are assumptions to show the method; the rates come from the rate card at list price.
 
@@ -83,7 +83,7 @@ For the searches I assume each query counts the whole index. The help article sa
 
 Three results stand out. Searches are 7 percent of the running cost. With the default parser for the catalogues too, the initial load would cost 1,164,000 credits instead of 2,664,000. And the first year comes to about 5 million credits, more than the 2.75 million Flex Credits per org per year that Salesforce lists for Max Edition, before a single agent action. The agent side of the bill is in [what a dealer service agent costs](../dealer-service-agent-cost-calculation/).
 
-## Where do the hidden Data 360 costs sit?
+## The hidden Data 360 costs
 
 ### Re-indexing whole records
 
@@ -118,7 +118,7 @@ The cheapest megabyte is the one you never process.
 - **Files above the Data Library limits.** Trailhead lists [100 MB per PDF and 4 MB per text or HTML file](https://trailhead.salesforce.com/content/learn/modules/agentforce-data-library-basics/build-a-file-based-data-library-for-an-agent), and the data source of a library cannot be changed later. Large catalogues need splitting, ideally by product line.
 - **Documents nobody asks about.** Start with the catalogues behind the most frequent dealer enquiries.
 
-## How do you budget Data 360 for an agent?
+## Measure the documents in MB per type
 
 1. **Measure the documents in MB per type**, after removing old versions and duplicates.
 2. **Choose the parser per type** using a sample in Intelligent Context or the sandbox.
@@ -129,5 +129,3 @@ The cheapest megabyte is the one you never process.
 7. **Set alerts in [Digital Wallet](https://www.salesforce.com/agentforce/digital-wallet/)**, which tracks consumption down to agent, action and channel, and compare with the estimate after four weeks.
 
 How to plan credits across all meters is covered in [Flex Credits and Agentforce cost per action](../flex-credits-agentforce-cost-per-action/). Whether this budget belongs in Salesforce at all is part of my [make-or-buy and licence planning](../../services/make-or-buy-licences/).
-
-Data 360 grounding is cheap per question and expensive per changed megabyte, so decide the parser, the scope and the file location before the first load.

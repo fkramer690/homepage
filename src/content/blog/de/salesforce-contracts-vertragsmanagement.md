@@ -10,11 +10,10 @@ categories: [revenue-cloud]
 contactBrief: make-or-buy
 tags: [Salesforce Contracts, Vertragsmanagement, Revenue Cloud, DocuSign, Klauselbibliothek, Make-or-Buy]
 takeaways:
-  - "Salesforce Contracts deckt Kundenverträge vom Angebot bis zur Unterschrift ab: Vorlagen, Klauselbibliothek, Bearbeitung in Word über Microsoft 365, DocuSign, Versionen und Pflichtenverfolgung."
-  - "Verträge lassen sich über APIs aus Opportunities, Angeboten, Aufträgen oder jedem Standardobjekt erzeugen, der Vertrag startet also mit den Daten, die der Vertrieb schon erfasst hat."
-  - "Salesforce Contracts steht ab 50 Euro je Nutzer und Monat in der Preisliste und braucht Voraussetzungsprodukte; Revenue Cloud Advanced nennt Contracts & Orders, Growth bietet CLM als Zusatz."
-  - "Für Kundenverträge aus dem Vertriebsprozess reicht es; die Rechtsabteilung behält ihr eigenes CLM, wenn sie Einkauf, NDAs und Konzernverträge an einer Stelle verwaltet."
-  - "Sales Agreements in Manufacturing Cloud und Serviceverträge in Field Service bleiben eigene Objekte; legen Sie fest, welcher Datensatz welche Frage beantwortet."
+  - "Verträge entstehen über APIs aus Opportunity, Angebot oder Auftrag und starten mit den Daten, die der Vertrieb schon erfasst hat."
+  - "Salesforce Contracts steht ab 50 Euro je Nutzer und Monat in der Preisliste. Bei Growth gibt es CLM als Zusatz."
+  - "Die Rechtsabteilung behält ihr eigenes CLM, wenn sie Einkauf, NDAs und Konzernverträge an einer Stelle verwaltet."
+  - "Sales Agreements in Manufacturing Cloud und Serviceverträge in Field Service bleiben eigene Objekte. Legen Sie fest, welcher Datensatz was beantwortet."
 faq:
   - q: "Was ist Salesforce Contracts?"
     a: "Salesforce Contracts ist das Produkt für Vertragsmanagement (Contract Lifecycle Management) von Salesforce und gehört zu Revenue Cloud. Es deckt Erstellung mit Vorlagen und Klauselbibliothek, Verhandlung in Word, Freigaben, elektronische Unterschrift über DocuSign, Aktivierung und Pflichtenverwaltung auf der Salesforce-Plattform ab."
@@ -37,7 +36,7 @@ Für die Architektur zählen zwei Punkte. Erstens legen Vertragstypen fest, um w
 
 Der [Developer Guide zu Salesforce Contracts](https://developer.salesforce.com/docs/atlas.en-us.clm_developer_guide.meta/clm_developer_guide/clm_objects_overview.htm) für Winter '27 nennt die Standardobjekte dahinter, darunter ContractDocumentVersion für Dokumentversionen, DocumentClause für Klauseln, ContractType und Obligation.
 
-## Was deckt es vom Angebot bis zur Unterschrift ab?
+## Vom Angebot bis zur Unterschrift: Vorlagen, Klauseln, Word und DocuSign
 
 Die Erstellung ist der stärkste Teil. Trailhead nennt diese Funktionen:
 
@@ -80,7 +79,7 @@ Die Funktionsmatrix auf beiden Preisseiten zeigt nicht lesbar, welche Edition we
 
 Mehr zur Lizenzplanung in [Salesforce-Lizenzen: Braucht jeder eine volle Lizenz?](../salesforce-lizenzen-volle-lizenz/)
 
-## Welcher Vertrag gehört in welchen Datensatz?
+## Sales Agreements und Serviceverträge bleiben eigene Objekte
 
 Hersteller mit mehreren Salesforce-Produkten haben schnell drei Dinge, die "Vertrag" heißen. Sie beantworten unterschiedliche Fragen.
 
@@ -100,10 +99,8 @@ In diesen Fällen würde ich ein eigenes CLM-Werkzeug außerhalb von Salesforce 
 - **Die meisten Verträge entstehen auf dem Papier des Kunden.** Große OEM-Kunden schicken ihre eigenen Einkaufsbedingungen. Dann zählen Prüfung und Redlining fremder Dokumente mehr als Vorlagen.
 - **Die Rechtsabteilung arbeitet nicht in Salesforce.** Bräuchten Juristen eine Lizenz nur für die Vertragsprüfung, summiert sich der Preis je Nutzer, und die Akzeptanz leidet.
 
-Dann erzeugt Salesforce die kaufmännischen Daten und übergibt den unterschriebenen Vertrag über eine Schnittstelle. Ein typisches Szenario, als Annahme: Ein Zulieferer von Antriebskomponenten hat eine eigene Rechtsabteilung mit einem bestehenden CLM-Werkzeug für alle Konzernverträge. Der Vertrieb verschickt 300 Standard-Lieferverträge im Jahr aus Angeboten. Hier würde ich die Standardverträge in Salesforce Contracts mit freigegebenen Klauseln und DocuSign erzeugen und nur Verträge mit abweichenden Klauseln an das Werkzeug der Rechtsabteilung geben. So bleibt die Routine schnell und die Ausnahme bei den Juristen. Diese Make-or-Buy-Frage gehört zu meiner Arbeit an [Make-or-Buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/).
+Dann erzeugt Salesforce die kaufmännischen Daten und übergibt den unterschriebenen Vertrag über eine Schnittstelle. Ein Rechenbeispiel: Ein Zulieferer von Antriebskomponenten hat eine eigene Rechtsabteilung mit einem bestehenden CLM-Werkzeug für alle Konzernverträge. Der Vertrieb verschickt 300 Standard-Lieferverträge im Jahr aus Angeboten. Hier würde ich die Standardverträge in Salesforce Contracts mit freigegebenen Klauseln und DocuSign erzeugen und nur Verträge mit abweichenden Klauseln an das Werkzeug der Rechtsabteilung geben. So bleibt die Routine schnell und die Ausnahme bei den Juristen. Diese Make-or-Buy-Frage gehört zu meiner Arbeit an [Make-or-Buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/).
 
-## Wo starten Sie?
+## Kundenverträge zählen und in drei Gruppen sortieren
 
 Zählen Sie Ihre Kundenverträge pro Jahr und sortieren Sie sie in drei Gruppen: eigene Vorlage ohne Änderungen, eigene Vorlage mit verhandelten Klauseln, Papier des Kunden. Überwiegen die ersten beiden Gruppen, passt Salesforce Contracts. Bauen Sie dann mit der Rechtsabteilung die Klauselbibliothek, bevor die erste Vorlage entsteht. Wie Verträge in den Weg vom Angebot zum Auftrag passen, zeigt das Kapitel [Angebot, Vertrag, Auftrag](../../masterclass/revenue-cloud/angebot-vertrag-auftrag/).
-
-Salesforce Contracts reicht, wenn Verträge auf Ihrem eigenen Papier aus dem Vertriebsprozess entstehen.

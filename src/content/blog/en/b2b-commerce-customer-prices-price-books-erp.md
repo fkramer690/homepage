@@ -9,10 +9,10 @@ topic: commerce
 categories: [b2b-commerce, architecture]
 tags: [B2B Commerce, pricing, price books, SAP, ERP integration, commerce extensions]
 takeaways:
-  - "Salesforce B2B Commerce prices come from price books assigned to the store and to buyer groups; a pricing strategy, Best Price or Priority Price, decides which one wins."
+  - "Prices come from price books assigned to the store and to buyer groups. The pricing strategy, Best Price or Priority Price, decides which one wins."
   - "A store can have 5 price books, a price book up to 350,000 entries, and a pricing call evaluates only the first 25 valid price books. The last limit is hard."
   - "SAP condition logic with customer prices, group discounts and surcharges rarely maps one to one to price books, which hold one price per product per book."
-  - "The pricing extension Commerce_Domain_Pricing_Service replaces price books with your own logic, such as a live ERP call. The price is exact, but the ERP must answer fast."
+  - "The extension Commerce_Domain_Pricing_Service replaces price books with your own logic, such as a live ERP call, and the ERP must then answer fast."
   - "Decide in writing which system is the price master before any buyer sees a price, and what happens when store price and order price differ."
 faq:
   - q: "Where do customer prices in Salesforce B2B Commerce come from?"
@@ -41,7 +41,7 @@ For volume discounts there is tiered pricing. The pricing data model contains Pr
 
 Salesforce Help names three typical designs: one buyer group, entitlement policy and price book per dealer tier; one price book and buyer group per buyer when you want buyer-specific prices; and buyer groups per product group to steer visibility. The first one is what I would start with.
 
-## Which limits shape the price design?
+## 5 price books per store, 25 per pricing call
 
 The [price book data limits](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-price-book-limits.html) decide early whether price books are realistic for you:
 
@@ -83,9 +83,9 @@ The trade-offs are clear:
 
 A third option is Advanced Pricing powered by Revenue Cloud, a pricing engine inside Salesforce. When it is worth the extra licence is covered in [Advanced Pricing in B2B stores](../advanced-pricing-b2b-store-revenue-cloud/).
 
-## A typical scenario, as an assumption
+## Worked example: compressor maker with 600 dealers
 
-A typical scenario, as an assumption: a maker of compressors sells spare parts to 600 dealers in 9 countries. SAP holds a list price per country, a discount per dealer tier and material group, and customer prices for about 40 large dealers. Around 25,000 parts are sold online.
+Assume a maker of compressors sells spare parts to 600 dealers in 9 countries. SAP holds a list price per country, a discount per dealer tier and material group, and customer prices for about 40 large dealers. Around 25,000 parts are sold online.
 
 I would split it. For the roughly 560 dealers on tier discounts, a nightly job calculates the net prices into one price book per country and tier; with 9 countries and 3 tiers that is 27 price books of at most 25,000 entries each, and each buyer sees exactly one of them. For the 40 large dealers with customer prices, the pricing extension asks SAP live in the cart. Freight and minimum quantity surcharges come from SAP at checkout for everyone. The order that goes back to SAP carries the price the buyer saw, and SAP checks it against its own result with a defined tolerance.
 
@@ -101,7 +101,7 @@ Cart --order with price--> SAP order
 
 The numbers are invented to show the method. The point is that the split follows how prices are made in SAP, not what the store can technically do.
 
-## Where should you start?
+## First step: a one-page price master decision
 
 Write a one-page price master decision before the store design:
 
@@ -112,5 +112,3 @@ Write a one-page price master decision before the store design:
 5. Which price applies when store and ERP differ, and who resolves it?
 
 This decision belongs in the same document as your [object ownership matrix](../salesforce-object-ownership-matrix/), and it shapes the interface list for the ERP, as described in [B2B Commerce and SAP: which data flows where?](../b2b-commerce-sap-data-flows/). How prices, quotes, checkout and reorders fit together is the subject of the chapter [prices, cart and checkout](../../masterclass/b2b-commerce/prices-cart-checkout/) in the [B2B Commerce masterclass](../../masterclass/b2b-commerce/). Designing the interface itself is part of my work on [Salesforce integration](../../services/salesforce-integration/).
-
-Price books are enough for tier prices, and SAP condition logic needs a live call or a deliberate replication.

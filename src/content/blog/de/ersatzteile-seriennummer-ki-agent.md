@@ -9,10 +9,9 @@ topic: field-service
 categories: [field-service, manufacturing-cloud]
 tags: [Agentforce, Ersatzteile, Field Service, PLM, Installierte Basis, Händlerportal]
 takeaways:
-  - "Ein Agent findet das richtige Ersatzteil zur Seriennummer nur, wenn eines Ihrer Systeme diese Frage schon nach Regeln beantwortet: Welche Teile stecken heute in genau dieser Maschine?"
-  - "Die Daten kommen aus drei Quellen: As-built-Stückliste aus dem PLM, Material, Verfügbarkeit und Preis aus dem ERP, installierte Basis und Servicehistorie aus den Salesforce-Assets."
-  - "Siemens hat im September 2026 angekündigt, dass Teamcenter mit Agentforce zusammenarbeiten wird; live und mit Zahlen belegt ist in dieser Meldung nur die Bearbeitung eingehender Leads."
-  - "Die vollständige Stückliste bleibt im PLM und wird live per API abgefragt; Salesforce hält Maschine und Hauptbaugruppen, der Agent schreibt seinen Vorschlag in den Arbeitsauftrag."
+  - "Die Daten kommen aus PLM (As-built-Stückliste), ERP (Material, Verfügbarkeit, Preis) und Salesforce (installierte Basis, Servicehistorie)."
+  - "Siemens kündigte im September 2026 Teamcenter mit Agentforce an. Live und mit Zahlen belegt ist in der Meldung nur die Bearbeitung eingehender Leads."
+  - "Die Stückliste bleibt im PLM und wird per API abgefragt. Salesforce hält Maschine und Hauptbaugruppen, der Vorschlag landet im Arbeitsauftrag."
   - "Händler dürfen nur Seriennummern abfragen, die ihrem eigenen Account zugeordnet sind, übernommen aus dem Asset und nie frei in den Chat getippt."
 faq:
   - q: "Kann Agentforce Ersatzteile anhand der Seriennummer ermitteln?"
@@ -53,7 +52,7 @@ Auf der Salesforce-Seite beschreibt [Trailhead](https://trailhead.salesforce.com
 
 Die Zeile, die ich zuerst prüfen würde, ist die dritte. Die As-built-Stückliste zeigt die Maschine am Tag der Auslieferung. Fünf Jahre später sind zwei Pumpen getauscht, und ein Händler hat einen Nachrüstsatz eingebaut. Stehen diese Änderungen nur in Papierberichten, beschreiben PLM und Salesforce eine Maschine, die es so nicht mehr gibt. Den aktuellen Stand liefern die verbrauchten Teile auf abgeschlossenen Arbeitsaufträgen. Ein Grund mehr, sie in der App zu erfassen, wie in [Ersatzteile zwischen ERP und Field Service](../salesforce-field-service-ersatzteile-erp/) beschrieben.
 
-## Stückliste nach Salesforce kopieren oder live aus dem PLM holen?
+## Die Stückliste bleibt im PLM und wird live abgefragt
 
 **Vollständige Kopie.** Jede As-built-Position wird ein untergeordnetes Asset. Alles ist offline verfügbar. Der Preis ist die Menge: Jede Position jeder Maschine ist ein Datensatz, der geladen, mit dem PLM abgeglichen und teilweise auf das mobile Gerät gebracht werden muss.
 
@@ -96,7 +95,7 @@ Der Techniker im Außendienst ist der leichtere Start: interner Benutzer, bekann
 
 Mit welcher Portallizenz Händler Assets überhaupt sehen, steht im Beitrag zum [Manufacturing-Cloud-Kundenportal](../manufacturing-cloud-kundenportal/).
 
-## Ein typisches Szenario: 6.000 Maschinen und eine Dichtung
+## Rechenbeispiel: 6.000 Maschinen und eine Dichtung
 
 Nehmen wir einen Maschinenbauer mit 6.000 installierten Maschinen, 40 Technikern, 150 Händlern, SAP und einem PLM mit As-built-Stücklisten je Seriennummer für Maschinen, die seit 2016 ausgeliefert wurden. Alle Zahlen sind Annahmen.
 
@@ -106,7 +105,7 @@ Angenommen sind 1.500 Ersatzteilfragen im Monat mit je drei Aktionen: Asset find
 
 Im Szenario bringt ein Pilot mit zehn Technikern zwei Erkenntnisse. Für Maschinen vor 2016 hat das PLM nur die Typstückliste, der Agent kann Kandidaten nennen, aber die Variante nicht bestätigen; das muss er sagen, und die Ersatzteilabteilung entscheidet. Und bei 9 Prozent der geprüften Maschinen zeigen verbrauchte Teile eine durch einen Nachfolger getauschte Baugruppe, die in der Asset-Hierarchie fehlt. Beides sind Datenprobleme. Die Entscheidung im Szenario: nur Techniker, nur Maschinen ab 2016, und ein monatlicher Job, der Hauptbaugruppen aus verbrauchten Teilen nachzieht.
 
-## Wo sollten Sie anfangen?
+## 20 Ersatzteilbestellungen von Hand prüfen
 
 ```schritte
 Zuerst von Hand testen
@@ -119,6 +118,4 @@ Mit Technikern starten
   Nehmen Sie Händler erst mit den Portalregeln von oben dazu.
 ```
 
-Welches System welche Daten führt, ist Thema der [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/); das größere Bild zu Agenten in der Fertigung zeigt das Masterclass-Kapitel [KI-Agenten in der Fertigung](../../masterclass/ki-salesforce/ki-agenten-in-der-fertigung/).
-
-Ein Agent findet das richtige Ersatzteil nur so zuverlässig, wie Ihre Seriennummern zu einer As-built-Stückliste führen.
+Welches System welche Daten führt, ist Thema der [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/). Das größere Bild zu Agenten in der Fertigung zeigt das Masterclass-Kapitel [KI-Agenten in der Fertigung](../../masterclass/ki-salesforce/ki-agenten-in-der-fertigung/).

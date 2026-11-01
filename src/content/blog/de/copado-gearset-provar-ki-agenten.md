@@ -9,10 +9,9 @@ topic: devops
 categories: [devops, ai]
 tags: [Copado, Gearset, Provar, KI-Agenten, DevOps, Due Diligence]
 takeaways:
-  - "Copado Agentia, Gearset Cam und Provar MCP sind KI-Agenten von Salesforce-DevOps- und Testanbietern; im Oktober 2026 stammt alles Bekannte darüber von den Seiten der Hersteller selbst."
-  - "Laut Copado ist Agentia in den Editionen Advanced und Pro verfügbar, Gearset hat Cam am 2. September 2026 mit Pilotkunden gestartet, Provar MCP ist ein lokales Plugin ohne Aufpreis für Provar-Automation-Kunden."
-  - "Weder Copado noch Gearset nennt das Modell hinter dem Agenten; Gearsets allgemeine KI-Bedingungen nennen OpenAI und Amazon Web Services, Rechenzentren in den USA und 90 Tage Aufbewahrung."
-  - "Fragen Sie vor dem Kauf schriftlich, welches Modell läuft, wo Daten verarbeitet werden, wie lange sie gespeichert bleiben, wie der Verbrauch gedeckelt ist und wer freigibt, was der Agent liefert."
+  - "Agentia gibt es laut Copado in Advanced und Pro, Cam startete am 2. September 2026 im Pilot, Provar MCP ist für Provar-Kunden ohne Aufpreis."
+  - "Weder Copado noch Gearset nennt das Modell; Gearsets KI-Bedingungen nennen OpenAI, AWS, Rechenzentren in den USA und 90 Tage Aufbewahrung."
+  - "Fragen Sie vor dem Kauf schriftlich nach Modell, Datenregion, Aufbewahrung, Verbrauchsdeckel und wer freigibt, was der Agent liefert."
   - "Ein Team mit Open-Source-DevOps wie sfdx-hardis deckt mit einem allgemeinen Coding-Agenten und einem selbst gewählten Modell vieles davon ab."
 faq:
   - q: "Was ist Copado Agentia?"
@@ -40,7 +39,7 @@ Die Beschreibungen unten stammen von den Herstellern selbst; einen unabhängigen
 
 Copado und Gearset verkaufen einen Agenten, der Ihre Org verändert. Provar ergänzt den KI-Assistenten, den Ihre Entwickler ohnehin nutzen, um ein Werkzeug. Das macht die Prüfung bei Provar deutlich kürzer.
 
-## Was ist allgemein verfügbar, was noch Pilot?
+## Was allgemein verfügbar ist und was noch Pilot
 
 Für einen Industriebetrieb zählt der Produktstatus, weil ein Pilot selten mit Service Level oder festem Preis kommt. Stand 27. Oktober 2026 sagen die Hersteller Folgendes:
 
@@ -63,7 +62,7 @@ quelle: Gearset-Ankündigung vom 2. September 2026
 
 Das ist ein Kunde, gemessen vom Hersteller, nach einer Woche. Es zeigt, dass Cam in einer echten Org mergefähige Pull Requests erzeugen kann, mehr nicht. Jeder vierte wurde nicht gemergt, und jeder lief durch das Review des Teams.
 
-## Welches Modell, welche Region, welche Aufbewahrung?
+## Modell, Region und Aufbewahrung unterscheiden die drei am stärksten
 
 Hier unterscheiden sich die drei Produkte am stärksten, und hier sollte ein Hersteller mit DSGVO-Pflichten und Betriebsrat zuerst hinschauen.
 
@@ -83,7 +82,7 @@ Rechenzentren in den USA bedeuten eine Übermittlung in ein Drittland. Die muss 
 
 **Provar MCP** läuft laut Dokumentation "entirely on your local machine" und sendet keine Projektdateien, keinen Testcode und keine Zugangsdaten an Provar, solange Sie die optionale API-Validierung nicht einschalten. Metadaten und Testfälle erreichen aber den KI-Assistenten, den Sie anbinden. Die Datenfrage verschiebt sich damit in Ihren Vertrag mit Anthropic, GitHub oder Cursor, den Sie ohnehin geklärt haben sollten; dazu mehr im Beitrag zu [Betriebsrat und DSGVO bei KI-Coding](../ki-coding-betriebsrat-dsgvo/). Nach meiner Lesart der Herstellerseiten ist Provar MCP das am leichtesten freizugebende der drei Produkte. Meine Lesart der Bedingungen ist keine Rechtsberatung.
 
-## Ein typisches Szenario: ein Maschinenbauer mit Copado und Nearshore-Partner
+## Beispiel: ein Maschinenbauer mit Copado und Nearshore-Partner
 
 Nehmen wir einen Maschinenbauer mit Sales Cloud für den Händlervertrieb, Field Service für den Außendienst und einer Schnittstelle zu SAP S/4HANA für Ersatzteile und Gewährleistung. Die Pipeline läuft auf Copado. Drei interne Entwickler arbeiten mit einem Partner, der sechs Nearshore-Entwickler stellt, und der Partner programmiert bereits mit Claude Code über Accounts, die dem Kunden gehören. Alle Zahlen sind Annahmen.
 
@@ -115,7 +114,7 @@ contra: Open Source und Coding-Agent reichen, wenn
 - Sie oder Ihr Architekt das Setup verantworten
 ```
 
-## Was sollten Sie vor dem Kauf fragen?
+## Diese Fragen vor dem Kauf schriftlich stellen
 
 Diese Fragen würde ich jedem DevOps-Anbieter stellen, der einen KI-Agenten verkauft, und die Antworten ins Bestellformular schreiben lassen:
 
@@ -128,5 +127,3 @@ Diese Fragen würde ich jedem DevOps-Anbieter stellen, der einen KI-Agenten verk
 - Was passiert mit dem Kontext, den der Agent über unsere Org aufgebaut hat, wenn wir wechseln?
 
 Die letzten beiden Fragen hängen mit Punkten zusammen, die ich an anderer Stelle beschreibe: Der Kunde sollte [seine DevOps-Tools selbst besitzen](../warum-kunden-devops-tools-selbst-besitzen-sollten/), und dieselben Regeln gehören in die [Verträge mit Partnern, die mit KI programmieren](../partner-ki-coding-regeln-vertrag/). Das Aufsetzen gehört zu meiner Arbeit im [DevOps- und Release-Management](../../leistungen/devops-und-release-management/), die breitere Werkzeugwahl steht in [Kapitel 4 der KI-Masterclass](../../masterclass/ki-salesforce/externe-coding-agenten/).
-
-Ein DevOps-KI-Agent ist sein Geld wert, sobald der Anbieter Modell, Region und Aufbewahrung schriftlich beantwortet und ein Pilot in Ihrer eigenen Org Ihr heutiges Setup schlägt.

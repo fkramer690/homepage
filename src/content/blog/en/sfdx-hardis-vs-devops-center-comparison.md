@@ -9,10 +9,9 @@ topic: devops
 categories: [devops]
 tags: [sfdx-hardis, DevOps Center, Lifecycle Center, release management, CI/CD, Git]
 takeaways:
-  - "sfdx-hardis and Salesforce DevOps Center, called Lifecycle Center since October 2026, both come without licence fees, but they follow different approaches."
-  - "Lifecycle Center is a native app in a Salesforce org with a click-based interface and supports only GitHub.com cloud plans and Bitbucket Cloud."
-  - "sfdx-hardis runs as a pipeline in the client's CI on GitHub, GitLab, Azure DevOps, Bitbucket or Jenkins and adds monitoring, backup and documentation."
-  - "Lifecycle Center suits smaller, click-based teams on GitHub or Bitbucket Cloud; sfdx-hardis suits programmes with several partners or another Git platform."
+  - "Lifecycle Center supports only GitHub.com cloud plans and Bitbucket Cloud. Teams on Azure DevOps or GitLab cannot use it today."
+  - "sfdx-hardis runs in the client's CI on GitHub, GitLab, Azure DevOps, Bitbucket or Jenkins and adds monitoring, backup and documentation."
+  - "Lifecycle Center suits small, click-based teams, sfdx-hardis suits programmes with several partners or another Git platform."
   - "Exactly one tool per repository should decide on merges and promotions, otherwise you end up with two release processes."
 faq:
   - q: "What is the difference between sfdx-hardis and DevOps Center?"
@@ -105,9 +104,9 @@ With sfdx-hardis, everything sits in files in the repository and in the pipeline
 
 For operations this means: Lifecycle Center needs an admin in the hub org, sfdx-hardis needs someone who understands the pipeline. Either way it is a role that someone on the client side should hold.
 
-## What do both really cost?
+## The cost sits in the release role
 
-Neither has licence fees. The real costs are elsewhere:
+Neither has licence fees. The costs are elsewhere:
 
 - **Lifecycle Center:** you need GitHub or Bitbucket Cloud, with their per-user costs. According to Salesforce, the AI features through MCP tools can be used together with services that consume paid credits. Setup is quick, because nothing is installed.
 - **sfdx-hardis:** CI minutes on the Git platform, setting up the pipeline and a person who maintains it. Cloudity offers paid help, but you do not need it.
@@ -121,7 +120,7 @@ visible: Licence: €0 | for both tools
 - Release role | an admin who clicks, or someone who maintains the pipeline | biggest item *
 ```
 
-In the programmes I support, the cost of a responsible release role is always higher than the cost of the tool. So choose the tool by the role you can actually fill: an admin who clicks, or someone who is at home with pipelines.
+In the programmes I support, the cost of a responsible release role is always higher than the cost of the tool. So choose the tool by the role you can fill: an admin who clicks, or someone who is at home with pipelines.
 
 ## What I see in projects
 
@@ -150,9 +149,9 @@ sfdx-hardis fits when
 - monitoring, metadata backup and documentation are needed,
 - someone on the client side can own the pipeline, or that role is being built.
 
-If you need a fully managed service with org comparisons and contractual support instead, commercial platforms such as Gearset or Copado are the more honest answer. How these vendors are currently adding AI agents to their products is summarised in [Copado, Gearset and Provar AI agents](../copado-gearset-provar-ai-agents/).
+If you need a fully managed service with org comparisons and contractual support instead, commercial platforms such as Gearset or Copado are the better fit. How these vendors are currently adding AI agents to their products is summarised in [Copado, Gearset and Provar AI agents](../copado-gearset-provar-ai-agents/).
 
-## Can you combine both?
+## I would not combine both tools
 
 Technically both can point at the same org and even the same repository. Lifecycle Center handles merges that happen outside the app, and sfdx-hardis validates every pull request, wherever it comes from. I still would not do it. When two tools decide on the same stage branches, there are two release processes, and in the end nobody knows which state counts in production.
 
@@ -160,8 +159,6 @@ Decide per repository which tool owns merges and promotions. If you switch later
 
 For teams using coding agents this question matters more. Lifecycle Center is building a governance layer for agents in the hub org, sfdx-hardis relies on the checks in the pipeline. Which [quality gates should stop AI-generated code](../quality-gates-for-ai-code-salesforce-pipeline/) applies to both tools in the same way.
 
-## Where should you start?
+## Settle Git platform, teams and release role
 
-Answer three questions first: which Git platform is set at your company, how many teams and partners work on the org, and who takes on the release role? With these three answers the choice is made in most cases. If you are new to the topic, [why DevOps matters in Salesforce enterprise projects](../why-devops-matters-salesforce-enterprise/) explains the basics, and setting up a binding process is part of my work in [DevOps and release management](../../services/devops-release-management/).
-
-Both tools are good, they just fit different teams.
+Answer three questions first: which Git platform is set at your company, how many teams and partners work on the org, and who takes on the release role? With these answers the choice is made in most cases. If you are new to the topic, [why DevOps matters in Salesforce enterprise projects](../why-devops-matters-salesforce-enterprise/) explains the basics, and setting up a binding process is part of my work in [DevOps and release management](../../services/devops-release-management/).

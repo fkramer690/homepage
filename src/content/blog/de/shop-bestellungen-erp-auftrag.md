@@ -10,11 +10,11 @@ categories: [b2b-commerce, architecture]
 contactBrief: integration
 tags: [B2B Commerce, Order Management, SAP, Order Summary, ERP-Anbindung, Bestellhistorie]
 takeaways:
-  - "Salesforce kennzeichnet jede Order Summary mit OrderLifeCycleType: managed heißt, Salesforce Order Management führt den Lebenszyklus, unmanaged heißt, ein externes System wie SAP."
-  - "Bei den meisten Herstellern bleibt SAP Herr des Auftrags: Der Shop schickt die Bestellung, SAP legt den Kundenauftrag an, Status, Lieferungen und Rechnungen kommen in die unmanaged Summary zurück."
+  - "Jede Order Summary trägt einen OrderLifeCycleType: managed heißt, Salesforce Order Management führt den Auftrag, unmanaged heißt, ein System wie SAP."
+  - "Bei den meisten Herstellern bleibt SAP Herr des Auftrags. Status, Lieferungen und Rechnungen kommen in die unmanaged Summary zurück."
   - "Growth Edition enthält Order Management Lite, Advanced das volle Order Management; Aufträge aus anderen Kanälen brauchen ein separat gekauftes Order Management."
   - "Käufer sehen ihre Aufträge über die Order-Summary-APIs im Shop, also entscheiden die aus SAP zurückgeschriebenen Daten, was die Bestellhistorie zeigt."
-  - "Die Extension Commerce_Domain_Checkout_CreateOrder formt den Auftrag, bevor er den Shop verlässt, zum Beispiel mit Feldern, die SAP für den Kundenauftrag braucht."
+  - "Die Extension Commerce_Domain_Checkout_CreateOrder formt den Auftrag, bevor er den Shop verlässt, etwa mit Feldern, die SAP braucht."
 faq:
   - q: "Brauche ich Salesforce Order Management für B2B Commerce?"
     a: "Nicht, wenn SAP den Lebenszyklus des Auftrags führt. Der Shop legt dann unmanaged Order Summaries an, und die Schnittstelle hält sie aktuell. Order Management lohnt sich, wenn Salesforce selbst Aufträge zuteilen, ausliefern, stornieren und retournieren soll."
@@ -48,7 +48,7 @@ Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/scom-ord
 
 Das ist ein vollständiges Auftragsmanagement. Es passt zu Unternehmen, die aus mehreren Standorten liefern und Retouren und Umtausch in Salesforce abwickeln wollen, wie viele Einzelhändler. Ein Maschinenbauer mit SAP SD (Vertrieb), Lagerverwaltung und Fakturierung hat all das schon in SAP.
 
-## Welche Edition enthält was?
+## Order Management Lite in Growth, volles Order Management in Advanced
 
 Die [B2B-Preisseite](https://www.salesforce.com/editions-pricing/commerce-cloud/b2b/) nennt:
 
@@ -91,7 +91,7 @@ Order Summary --> Bestellhistorie
 
 ## Was kommt aus SAP zurück, und wann?
 
-Die Bestellhistorie im Shop ist nur so gut wie die zurückgeschriebenen Daten. Salesforce bietet Käufern eine Reihe von [Order-Summary-APIs](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-d2c-comm-order-summaries-apis.html): Bestellhistorie, einzelne Order Summary, Delivery Groups, Positionen, Sendungen und Sendungspositionen. Dazu kommt Add Order to Cart, das eine frühere Bestellung für eine Nachbestellung in den Warenkorb kopiert.
+Die Bestellhistorie im Shop zeigt nur, was SAP zurückschreibt. Salesforce bietet Käufern eine Reihe von [Order-Summary-APIs](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-d2c-comm-order-summaries-apis.html): Bestellhistorie, einzelne Order Summary, Delivery Groups, Positionen, Sendungen und Sendungspositionen. Dazu kommt Add Order to Cart, das eine frühere Bestellung für eine Nachbestellung in den Warenkorb kopiert.
 
 Bei unmanaged Summaries befüllt Ihre Schnittstelle all das. Ich würde mindestens zurückschreiben:
 
@@ -105,13 +105,13 @@ Der Integrationsnutzer braucht laut Developer Guide die Berechtigung B2B Commerc
 
 Händler, die den Status im Chat abfragen wollen, brauchen dieselben Daten. Ein [Agent, der den Auftragsstatus aus SAP liest](../agentforce-sap-auftragsstatus/), und die Bestellhistorie im Shop sollten dieselbe API nutzen, damit beide denselben Termin zeigen.
 
-## Wie forme ich den Auftrag für SAP?
+## Den Auftrag für SAP mit CreateOrder formen
 
 Der Extension Point **Commerce_Domain_Checkout_CreateOrder** "creates an order from cart information during checkout", so die [Liste der verfügbaren Extensions](https://developer.salesforce.com/docs/commerce/extensions/guide/available-extensions.html). Dort ergänzen Sie, was SAP braucht und der Standardauftrag nicht hat, etwa Verkaufsorganisation, Auftragsart oder Versandbedingung. Die Prüfung, bevor der Auftrag existiert, also Kredit oder Liefersperre, gehört in **Commerce_Domain_Checkout_PlaceOrder**, wie in [B2B-Checkout mit Bestellnummer](../b2b-checkout-bestellnummer-rechnung/) beschrieben.
 
 Halten Sie den Auftrag schlank. Jedes zusätzliche Feld ist ein Mapping, das in jedem Salesforce-Release getestet werden muss.
 
-## Ein typisches Szenario, als Annahme
+## Rechenbeispiel: Shop auf Growth Edition für 180 Händler
 
 Ein Kompressorenhersteller startet einen Shop auf Growth Edition für 180 Händler. Telefon- und EDI-Aufträge bleiben in SAP. Das Design könnte so aussehen:
 
@@ -123,8 +123,6 @@ Ein Kompressorenhersteller startet einen Shop auf Growth Edition für 180 Händl
 
 Punkt fünf ist eine echte Grenze. Sollen alle SAP-Aufträge im Shop erscheinen, müssen auch Telefon- und EDI-Aufträge als Order Summaries nach Salesforce. Ob das die Fußnote der Preisseite zu Aufträgen aus anderen Kanälen berührt, klären Sie schriftlich mit Salesforce, bevor Sie Händlern eine vollständige Historie versprechen.
 
-## Wo starten Sie?
+## Erster Schritt: aufschreiben, wem der Auftrag in jedem Schritt gehört
 
 Schreiben Sie auf, wem der Auftrag in jedem Schritt gehört, vom Warenkorb bis zur Rechnung, und welchen Status der Käufer in jedem Schritt sieht. Entscheiden Sie dann, ob Order Management überhaupt eine Rolle hat. Wie der Auftrag in die übrigen Datenflüsse passt, steht in [B2B Commerce und SAP: Welche Daten fließen wohin](../b2b-commerce-sap-datenfluesse/), und das [Kapitel zur ERP-Anbindung der Masterclass](../../masterclass/b2b-commerce/erp-integration-bestand-auftraege/) ordnet es ein. Eine unabhängige Prüfung solcher Designs gehört zu meiner Arbeit in der [Salesforce-Architektur](../../leistungen/salesforce-architektur/).
-
-Der Shop nimmt den Auftrag an und SAP wickelt ihn ab, solange der Status zuverlässig zurückkommt.

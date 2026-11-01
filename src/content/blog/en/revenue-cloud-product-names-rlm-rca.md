@@ -9,9 +9,8 @@ topic: revenue
 categories: [revenue-cloud]
 tags: [revenue cloud, revenue lifecycle management, cpq, licences, naming]
 takeaways:
-  - "In October 2026 salesforce.com sells the product as Revenue Cloud, with the editions Revenue Cloud Growth and Revenue Cloud Advanced and the add-on Revenue Cloud Billing."
-  - "Documentation still mixes names: the Winter '27 Developer Guide says Revenue Management, Trailhead says Agentforce Revenue Management, older guides say Revenue Lifecycle Management."
-  - "Revenue Cloud from 2020 was a suite around the Salesforce CPQ and Billing packages; today's Revenue Cloud is a different product on core platform objects."
+  - "The Winter '27 Developer Guide says Revenue Management, Trailhead says Agentforce Revenue Management, older guides Revenue Lifecycle Management."
+  - "Revenue Cloud from 2020 was a suite around the CPQ and Billing packages. Today's Revenue Cloud is a different product on core platform objects."
   - "In an order form or tender, name the edition, the add-ons and the SKUs from the Salesforce quote, never just Revenue Cloud."
   - "When searching Help, Trailhead or partner blogs, search under all names, because each source uses a different one."
 faq:
@@ -76,7 +75,7 @@ The reverse applies to existing CPQ customers: if a proposal says "Revenue Cloud
 
 The status of the old packages is a topic of its own: CPQ is no longer sold to new customers, but existing customers can renew and get support. The [chapter on moving from CPQ to Revenue Cloud](../../masterclass/revenue-cloud/from-cpq-to-revenue-cloud/) covers what that means.
 
-## Which name belongs in an order form or tender?
+## Name edition, add-ons and SKUs in the order form
 
 Marketing names change faster than contracts run. A three-year order form signed today will outlive at least one more name. My rules:
 
@@ -85,7 +84,7 @@ Marketing names change faster than contracts run. A three-year order form signed
 - **Licence forecast:** list Revenue Cloud as its own line next to Sales Cloud, because it is bought on top of a Sales Cloud subscription. How I build such a forecast is described in [Salesforce licences: does everyone need a full one?](../salesforce-licences-full-licence-needed/).
 - **Project glossary:** pick one name for the project and stick to it. I would use Revenue Cloud, because that is what salesforce.com shows today.
 
-## How do you find the right documentation?
+## Search under all names
 
 Each source has its own name, so searches miss half of the material when they use only one:
 
@@ -95,5 +94,3 @@ Each source has its own name, so searches miss half of the material when they us
 - **Watch out for other vendors:** Certinia, a vendor built on the Salesforce platform, runs its own product area called Revenue Management with its own [release notes](https://help.certinia.com/main/2026.1/Content/RevenueManagement/Release/WhatsNew/WhatsNew.htm). Results from help.certinia.com describe a different product.
 
 What the product covers, under whatever name, is in [Revenue Cloud for manufacturers: when is it worth it?](../revenue-cloud-worth-it-manufacturers/), and what it costs is in [Revenue Cloud pricing: Growth, Advanced and add-ons](../revenue-cloud-editions-pricing/). The [overview chapter of the Revenue Cloud masterclass](../../masterclass/revenue-cloud/revenue-cloud-overview/) brings these topics together.
-
-The name on the website will probably change again, so what counts is the edition and SKU in your contract.

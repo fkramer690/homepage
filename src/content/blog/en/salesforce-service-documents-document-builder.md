@@ -9,10 +9,10 @@ topic: field-service
 categories: [field-service]
 tags: [field service, service documents, document builder, document generation, manufacturing]
 takeaways:
-  - "Salesforce Service Documents are PDFs that Field Service creates from work orders, work order line items and service appointments, using templates built in Document Builder."
-  - "Document Builder is included in the Field Service Dispatcher and Mobile licences, with 250 documents per user per month and a one-time extra allowance of 10,000 documents."
+  - "Service Documents are PDFs that Field Service creates from work orders, line items and appointments, using templates built in Document Builder."
+  - "Document Builder comes with the Dispatcher and Mobile licences: 250 documents per user and month, plus a one-time extra 10,000."
   - "Its strength is the service report on site: customer signature, photos and creation in the mobile app, also offline."
-  - "It only produces PDFs, only works on three objects and has no documented conditional logic, so inspection reports, machine files and quotes usually need Salesforce Document Generation or an AppExchange tool."
+  - "It only produces PDFs on three objects, with no documented conditional logic. Inspection reports, machine files and quotes usually need another tool."
   - "Check your existing reports, your iOS and Android devices and your document volume against the limits before you buy an extra tool."
 faq:
   - q: "What are Salesforce Service Documents?"
@@ -37,7 +37,7 @@ Salesforce introduced Service Documents in the Spring '24 release. The matching 
 
 Do not confuse the name with S-Docs. S-Docs is a separate product on the AppExchange and has nothing to do with this feature.
 
-## What does Document Builder cost?
+## Document Builder comes with the Field Service licences
 
 Nothing extra, as long as Field Service is licensed. According to the [Salesforce Help on permissions](https://help.salesforce.com/s/articleView?id=fs_document_builder_perm_sets.htm&language=en_US&type=5), users need either the Field Service Dispatcher or the Field Service Mobile permission set licence.
 
@@ -80,7 +80,7 @@ title: Document Builder: strong for the service report on site
 - Logic | no documented conditional logic
 better: For inspection reports, machine files, quotes and batch runs: Salesforce Document Generation or an AppExchange tool.
 ```
-## Where are the limits of Document Builder?
+## The limits: PDF only, three objects, no conditional logic
 
 The [Field Service limits page](https://help.salesforce.com/s/articleView?id=service.fs_limits.htm&language=en_US&type=5) lists them. The ones that matter in manufacturing projects:
 
@@ -111,7 +111,7 @@ Field Service itself pays off most when there are many short jobs, where schedul
 
 The combination that often makes sense: Document Builder for everything the technician creates on site, and one document generation tool for the office, licensed only for the users who need it.
 
-## How should you start?
+## Collect today's reports with their volume
 
 1. **Collect your current reports.** Every paper form and every PDF your technicians and the service office create today, with the volume per month.
 2. **Check them against the limits above.** Object, conditional logic, page count, output format, who signs.

@@ -9,10 +9,10 @@ topic: governance
 categories: [architecture, ai]
 tags: [ai coding, works council, gdpr, data residency, claude code, github copilot]
 takeaways:
-  - "When a company provides coding agents through company accounts in Germany, CMS says section 87(1) no. 6 BetrVG applies as a rule; without works council consent or a conciliation ruling the tool cannot go live."
-  - "Claude Code shows admins lines of code accepted per person and month, and GitHub provides Copilot metrics down to user level; exactly these reports belong in the works agreement."
-  - "Anthropic's API offers only \"us\" or \"global\" inference; EU processing is available through Amazon Bedrock in an EU region, Copilot with EU data residency or OpenAI with European data residency."
-  - "Private AI accounts may avoid co-determination, but the code then runs under consumer terms and the company loses control over training, retention and offboarding."
+  - "Without works council consent or a conciliation ruling, a coding agent on company accounts cannot go live at a German site, according to CMS."
+  - "Claude Code shows admins accepted lines of code per person and GitHub provides Copilot metrics per user, which is exactly what the works agreement covers."
+  - "EU inference is available through Amazon Bedrock in an EU region, Copilot with EU data residency or OpenAI; Anthropic's API offers only \"us\" or \"global\"."
+  - "Private AI accounts may avoid co-determination, but then consumer terms govern training, retention and offboarding."
   - "Plan the works council and data protection before the pilot, and keep the tool rollout separate from later changes to team size or roles."
 faq:
   - q: "Does a German works council have to approve Claude Code or GitHub Copilot?"
@@ -73,7 +73,7 @@ Your data protection officer should settle three points before the first licence
 
 **Data in context.** Personal data does not belong in a coding agent's context. For a manufacturer that means no service cases with customer names, no dealer contacts and no technician assignment data from the full copy sandbox. Agents work in scratch orgs and developer sandboxes with anonymised data. The data classes in detail are in [partners coding with AI: what belongs in the contract](../partners-using-ai-coding-contract-rules/).
 
-## Where does inference run, and do you need the EU?
+## EU inference is available through Bedrock, Copilot and OpenAI
 
 GDPR does not require data to stay in the EU; Standard Contractual Clauses cover transfers. Some data protection officers in manufacturing still want EU processing for code with dealer conditions or warranty rules. The options:
 
@@ -84,7 +84,7 @@ GDPR does not require data to stay in the EU; Standard Contractual Clauses cover
 
 The full comparison of the tools by contract, cost and governance is in [Agentforce Vibes, Claude Code, Codex or Copilot?](../agentforce-vibes-claude-code-copilot/). Agentforce agents in HR processes face separate EU AI Act deadlines, see [EU AI Act deadlines for Agentforce](../eu-ai-act-deadlines-agentforce/).
 
-## A typical scenario: approval before the pilot
+## Worked example: approval before the pilot
 
 Assume a machine builder with its main plant in Germany, a works council, SAP, Sales Cloud, Service Cloud and Field Service, five internal Salesforce developers, two admins and a nearshore partner. All details are assumptions. IT wants Copilot for everyone and Claude Code for two developers who want to use the Salesforce plugin.
 
@@ -103,7 +103,7 @@ The support page lists usage analytics only for Team, Enterprise and Console, so
 
 Six weeks sounds long. A pilot stopped after four weeks costs more.
 
-## Where should you start?
+## Inventory: who uses which AI tool on which account
 
 1. **Take inventory:** who uses which AI tool today, on which account?
 2. **Inform the works council early**, with a list of the data each tool produces and who sees it.
@@ -111,6 +111,4 @@ Six weeks sounds long. A pilot stopped after four weeks costs more.
 4. **Settle data protection:** contract basis, account type, data classes and region.
 5. **Enforce it technically:** restrict dashboards, set `cleanupPeriodDays`, enable the EU policy in Copilot.
 
-Getting teams and partners to adopt new rules in daily work is part of my [change management](../../services/change-management-salesforce/) work; the framework for roles and review is in [chapter 9 of the masterclass](../../masterclass/ai-salesforce/teamwork-and-delivery/).
-
-At a German site with a works council, AI coding tools go live only once the works council and data protection have agreed, and with good preparation that takes weeks, not months, in my judgement.
+With this preparation, approval by the works council and data protection takes weeks rather than months, in my judgement. Getting teams and partners to adopt new rules in daily work is part of my [change management](../../services/change-management-salesforce/) work; the framework for roles and review is in [chapter 9 of the masterclass](../../masterclass/ai-salesforce/teamwork-and-delivery/).

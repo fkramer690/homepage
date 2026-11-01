@@ -9,10 +9,10 @@ topic: field-service
 categories: [field-service, ai]
 tags: [predictive maintenance, field service, data 360, asset service prediction, manufacturing, flex credits]
 takeaways:
-  - "Asset Service Prediction learns from current asset data and the service history of similar assets, so linked work orders and coded failure causes matter more than sensors."
-  - "Salesforce announced Asset Service Prediction as an open beta in June 2024, and the product page lists it without a status today, so ask for written availability in your edition."
-  - "Streaming machine data into Data 360 costs 3,500 Flex Credits per million rows in the base tier, so 15-minute aggregates cost a few hundred times less than raw one-second readings."
-  - "With a few hundred units per series and fault codes in free text, maintenance plans with usage and condition triggers are the honest alternative to failure prediction."
+  - "Asset Service Prediction learns from the service history of similar assets. Linked work orders and coded failure causes matter more than sensors."
+  - "Asset Service Prediction was an open beta in June 2024, and the product page shows no status today. Get availability for your edition in writing."
+  - "Streaming into Data 360 costs 3,500 Flex Credits per million rows, so 15-minute aggregates cost a few hundred times less than one-second readings."
+  - "With a few hundred units per series and fault codes in free text, maintenance plans with usage and condition triggers are the better choice."
   - "Raw time series belong in the IoT platform or historian; Salesforce needs counters, aggregates and threshold events that create a work order."
 faq:
   - q: "Does Salesforce Field Service support predictive maintenance?"
@@ -26,7 +26,7 @@ faq:
 draft: false
 ---
 
-A machine builder has enough data for predictive maintenance in Salesforce when one model series has hundreds of comparable units, every corrective work order is linked to a serial number and failure causes sit in coded fields. Asset Service Prediction learns from that service history, and sensor data comes second. If the history is thin, [maintenance plans with usage and condition triggers](../field-service-usage-based-maintenance/) are the honest alternative. Telemetry is affordable as aggregates: in my example below, raw one-second readings from 300 machines cost about $65,900 a month in Flex Credits, 15-minute aggregates about $180.
+A machine builder has enough data for predictive maintenance in Salesforce when one model series has hundreds of comparable units, every corrective work order is linked to a serial number and failure causes sit in coded fields. Asset Service Prediction learns from that service history, and sensor data comes second. If the history is thin, [maintenance plans with usage and condition triggers](../field-service-usage-based-maintenance/) are the better choice. Telemetry is affordable as aggregates: in my example below, raw one-second readings from 300 machines cost about $65,900 a month in Flex Credits, 15-minute aggregates about $180.
 
 ## What does Salesforce offer for predictive maintenance today?
 
@@ -56,7 +56,7 @@ Salesforce describes Asset Service Prediction as a model that can "identify comm
 
 A report of corrective work orders per series and failure code shows in an afternoon whether prediction is realistic.
 
-## What does streaming machine data into Data 360 cost?
+## Streaming into Data 360 costs 3,500 Flex Credits per million rows
 
 The [Flex Credits rate card of 31 August 2026](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) prices two lines for machine data:
 
@@ -83,7 +83,7 @@ Grounding agents on manuals is a separate cost block, described in [Data 360 cos
 
 Raw time series belong in the IoT platform or historian the machine builder already runs. Salesforce needs counters, aggregates and threshold events, because those are what create a work order.
 
-## When is maintenance-plan-based service the honest alternative?
+## When are maintenance plans the better choice?
 
 Much of the value promised under "predictive" comes from two simpler things: no planned maintenance gets missed, and intervals follow real usage instead of the calendar. Field Service covers both without a prediction model.
 
@@ -91,9 +91,9 @@ Maintenance plans generate the work orders, and maintenance work rules on the as
 
 The proactive maintenance agent then books the visit. If one booking takes five actions, that is 100 credits or $0.50.
 
-I consider this the honest answer when series are small, machines are customer-specific, fault codes were free text until recently or dealers do not report repairs. Failure prediction is worth a pilot when one series has many hundreds of connected units, the coded history covers several years and unplanned downtime costs real money under an availability commitment in the service contract.
+I consider this the right answer when series are small, machines are customer-specific, fault codes were free text until recently or dealers do not report repairs. Failure prediction is worth a pilot when one series has many hundreds of connected units, the coded history covers several years and unplanned downtime costs real money under an availability commitment in the service contract.
 
-## A typical scenario: 1,400 machines in five series
+## Worked example: 1,400 machines in five series
 
 Assume a machine builder with SAP, Service Cloud and Field Service already live. All numbers are assumptions to show the method.
 
@@ -110,7 +110,7 @@ Assume a machine builder with SAP, Service Cloud and Field Service already live.
 
 The total is about 34,000 credits, roughly $170 a month. Connected Assets at $15,000 per org per month only pays off once the health score drives decisions the thresholds cannot.
 
-## Where should you start?
+## Count corrective work orders per series
 
 1. **Count** corrective work orders per series and coded failure cause for the last three years.
 2. **Close the gaps**: asset links, picklists for causes, reporting duties for dealers and service partners.
@@ -118,6 +118,4 @@ The total is about 34,000 credits, roughly $170 a month. Connected Assets at $15
 4. **Estimate credits per signal** before the first machine is connected, using [Flex Credits and Agentforce cost per action](../flex-credits-agentforce-cost-per-action/).
 5. **Ask Salesforce in writing** for the status and price of Asset Service Prediction in your edition.
 
-How machine data, ERP and Salesforce fit together is part of my [integration architecture work](../../services/salesforce-integration/).
-
-Predictive maintenance starts with a clean service history, and the sensors come second.
+How machine data, ERP and Salesforce fit together is part of my [integration architecture work](../../services/salesforce-integration/). I plan the sensor connection only once steps 1 and 2 are done.

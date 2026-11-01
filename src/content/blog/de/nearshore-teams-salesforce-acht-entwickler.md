@@ -10,10 +10,10 @@ categories: [architecture]
 contactBrief: nearshore
 tags: [Nearshore, Teamgröße, Programmsteuerung, Partnersteuerung, Scrum]
 takeaways:
-  - "Ich begrenze Nearshore-Teams für Salesforce auf etwa acht Entwickler. Mit Product Owner und Scrum Master bleibt das Team damit bei zehn Personen, der Obergrenze aus dem Scrum Guide."
-  - "Mit jeder weiteren Person wächst die Zahl der Abstimmungswege schneller als die Kapazität: Acht Personen haben 28 Wege miteinander, zwölf schon 66 und sechzehn 120."
-  - "Braucht ein Programm mehr Kapazität, setze ich mehrere Teams mit klaren Verantwortlichkeiten auf statt eines großen Teams, etwa über eine Object Ownership Matrix."
-  - "Rotation, Fluktuation und zu seniore Teams bremsen Nearshore-Teams öfter als fehlende Skills. Eine Mindestverweildauer von etwa sechs Monaten gehört deshalb vor den ersten Sprint."
+  - "Mit Product Owner und Scrum Master bleibt ein Team aus acht Entwicklern bei zehn Personen, der Obergrenze aus dem Scrum Guide."
+  - "Acht Personen haben 28 Abstimmungswege miteinander, zwölf schon 66 und sechzehn 120."
+  - "Braucht ein Programm mehr Kapazität, setze ich mehrere Teams mit klaren Verantwortlichkeiten auf, etwa über eine Object Ownership Matrix."
+  - "Rotation, Fluktuation und zu seniore Teams bremsen öfter als fehlende Skills, deshalb vereinbare ich vor dem ersten Sprint eine Mindestverweildauer."
 faq:
   - q: "Wie groß sollte ein Nearshore-Team für Salesforce sein?"
     a: "Bis zu etwa acht Entwickler pro Team. Mit Product Owner und Scrum Master sind das zehn Personen, die Obergrenze, die der Scrum Guide nennt. Darüber nimmt die Abstimmung überhand, und Sprint-Meetings werden lang."
@@ -55,7 +55,7 @@ Ein Team mit zwölf oder fünfzehn Entwicklern funktioniert selten so, wie es au
 
 Dazu kommt ein kaufmännischer Effekt. Ein Nearshore-Partner wird nach Köpfen bezahlt. Wenn zusätzliche Entwickler vor allem zusätzliche Abstimmung erzeugen, steigt der Tagessatz des Teams, aber nicht die Lieferung.
 
-## Wie verteile ich mehr Kapazität auf mehrere Teams?
+## Mehr Kapazität heißt mehrere Teams mit klaren Verantwortungsbereichen
 
 Braucht ein Programm mehr als acht Entwickler, setze ich mehrere Teams auf, jedes mit einem klaren Verantwortungsbereich. Der Scrum Guide empfiehlt dasselbe: Ein zu großes Team soll sich in mehrere zusammenhängende Teams aufteilen, die am selben Produkt arbeiten.
 
@@ -87,7 +87,7 @@ Liefert ein Nearshore-Team weniger als erwartet, werden oft zuerst die Skills ve
 
 Kultur zählt dabei so viel wie Skills: gemeinsame Werte, Vertrauen und der Wille zu liefern, auf beiden Seiten. Ein kleines, stabiles Team baut das schneller auf als ein großes, das sich ständig neu zusammensetzt.
 
-## Welche Regeln gehören vor den ersten Sprint?
+## Diese Regeln gehören vor den ersten Sprint
 
 Die meisten dieser Probleme lassen sich vertraglich und organisatorisch begrenzen, wenn man sie vor dem Start anspricht. Kunde und Nearshore-Partner sollten deshalb Regeln vereinbaren zu:
 
@@ -98,7 +98,7 @@ Die meisten dieser Probleme lassen sich vertraglich und organisatorisch begrenze
 
 Diese Regeln schützen beide Seiten vor dem Moment, in dem nach sechs Monaten die Hälfte des Teams gewechselt hat und keiner mehr weiß, warum eine Automatisierung so gebaut wurde.
 
-## Wo sollten Sie anfangen?
+## Teamgröße, Abgänge und Objektverantwortung prüfen
 
 Haben Sie bereits ein Nearshore-Team, beantworten Sie drei Fragen:
 
@@ -107,5 +107,3 @@ Haben Sie bereits ein Nearshore-Team, beantworten Sie drei Fragen:
 3. **Wer verantwortet welche Objekte?** Ist das nirgends festgehalten, beginnen Sie mit einer Object Ownership Matrix, bevor Sie Teams teilen.
 
 Planen Sie ein neues Setup, legen Sie Teamgröße, Rollen und Rotationsregeln fest, bevor Sie Angebote vergleichen. Dann vergleichen Sie Partner auf derselben Grundlage, und nicht nur über den Tagessatz. Wie ich Programme mit Nearshore-Teams plane und steuere, beschreibe ich unter [Programmsteuerung und Nearshore-Teams](../../leistungen/projektsteuerung-nearshore/).
-
-Acht Entwickler pro Team sind keine starre Zahl, aber eine gute Obergrenze, die viel Abstimmung erspart.

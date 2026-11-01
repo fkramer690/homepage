@@ -9,10 +9,10 @@ topic: commerce
 categories: [b2b-commerce]
 tags: [b2b commerce, reorder, order templates, cart, spare parts, dealers]
 takeaways:
-  - "Salesforce B2B Commerce has four ways to reorder: a past order back into the cart, saved order templates, a CSV or JSON file into the cart, and the lighter reorder portal."
+  - "Reordering works four ways: a past order back into the cart, saved order templates, a CSV or JSON file into the cart, and the lighter reorder portal."
   - "The Add Order to Cart API copies all items of a past order summary into the current cart and creates a cart if none is active."
-  - "Order templates for buyers and sales reps are listed by Salesforce as GA September 2026; cart import and export by CSV or JSON came with the July 2026 release."
-  - "Most stores limit a cart to 500 line items; with large cart support it is 2,000. A user can have 100 carts, one active and up to 99 secondary."
+  - "Order templates are listed by Salesforce as GA September 2026. Cart import and export by CSV or JSON came with the July 2026 release."
+  - "Most stores limit a cart to 500 line items, 2,000 with large cart support. A user can have one active cart and up to 99 secondary ones."
   - "Multi-cart live collaboration, where several users build and approve one cart together, is listed for January 2027."
 faq:
   - q: "How do dealers reorder a previous order in Salesforce B2B Commerce?"
@@ -36,7 +36,7 @@ Most spare parts and consumables a dealer buys are items they have bought before
 
 So in a manufacturer's B2B store I look at reorder paths before I look at the product detail page. Search and catalogue matter for new parts; reorders carry the volume. Salesforce now also markets the product as "Agentforce Commerce for B2B", and all reorder features below belong to the same product.
 
-## Which reorder options does Salesforce B2B Commerce offer?
+## Four ways to reorder in Salesforce B2B Commerce
 
 | Option | What the buyer does | Status, October 2026 |
 |---|---|---|
@@ -56,9 +56,9 @@ One consequence for manufacturers: the API works on order summaries in Salesforc
 
 **Order templates.** On its [Commerce innovations page](https://www.salesforce.com/ca/commerce/innovations/), Salesforce lists order templates as "GA September '26": "Buyers and sales reps create, save, and reuse common orders". That fits dealers with a fixed basket, for example the filter and seal set for every maintenance visit.
 
-**Cart import and export.** The [July 2026 B2B Commerce release](https://www.salesforce.com/blog/b2b-commerce-innovations-july-26/) added import and export of the cart as CSV or JSON. Buyers upload a prepared spreadsheet into the cart and export the cart with one click for internal approval. For dealers who plan their stock in their own merchandise management system, a file is faster than any clicking.
+**Cart import and export.** The [July 2026 B2B Commerce release](https://www.salesforce.com/blog/b2b-commerce-innovations-july-26/) added import and export of the cart as CSV or JSON. Buyers upload a prepared spreadsheet into the cart and export the cart with one click for internal approval. For dealers who plan their stock in their own merchandise management system, a file is faster than clicking through the store.
 
-## How large can a cart get?
+## 500 lines per cart, 2,000 with large cart support
 
 The [cart limits](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-cart-limits.html) set the frame for imports and templates. The number of carts per user is a soft limit that Salesforce support can raise.
 
@@ -84,14 +84,12 @@ The reorder portal is a lighter option for companies that do not want a full sto
 
 My view: the reorder portal fits when a sales team wants repeat orders from a few hundred existing customers and has no catalogue project. Once dealers need to find new parts, see buyer-specific assortments or import long lists, the full store is the better base.
 
-## A typical scenario, as an assumption
+## Worked example: 180 dealers, two thirds repeat orders
 
 A manufacturer of compressors has 180 dealers. Two thirds of their spare parts orders repeat an earlier order with small changes, a quarter are maintenance kits with fixed contents, and a few large dealers send lists of 300 to 800 lines from their own system twice a year.
 
 For this mix I would switch on all three paths: past orders to cart for the repeats, order templates for the maintenance kits, CSV import for the large dealers, with large cart support because 800 lines exceed the usual 500. I would measure for three months which path each buyer group uses before investing in more. Shared carts for the large dealers come with the January 2027 release.
 
-## Where should you start?
+## Sort the order lines of the last twelve months
 
 Pull the order lines of the last twelve months from the ERP and sort them into repeats, fixed baskets and long lists. That tells you which reorder path matters most, and whether 500 lines are enough. How the order then leaves the store with PO number and credit check is covered in [B2B checkout: purchase order, card or invoice?](../b2b-checkout-purchase-order-card-invoice/). Reordering through chat on WhatsApp is the topic of [the B2B Buyer Agent](../b2b-buyer-agent-whatsapp-ordering/), and replenishment proposals from distributor stock are covered in [Agentforce for distributor stock and replenishment](../distributor-inventory-replenishment-agentforce/). The chapter [prices, cart and checkout](../../masterclass/b2b-commerce/prices-cart-checkout/) of the [B2B Commerce masterclass](../../masterclass/b2b-commerce/) puts these decisions together, and the target picture across store, ERP and sales is part of my [Salesforce architecture](../../services/salesforce-architecture/) work.
-
-Dealers keep using a store when the reorder they do every week takes a minute.

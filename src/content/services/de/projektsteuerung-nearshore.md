@@ -14,16 +14,15 @@ situations:
   - "Entwickler rotieren ins Team und wieder hinaus, und mit jedem Wechsel geht Wissen verloren."
   - "Mehrere Teams und Partner liefern parallel, und niemand plant Abhängigkeiten und Releases übergreifend."
 deliverables:
-  - "Programmplan mit Streams, Abhängigkeiten, Meilensteinen und Release-Plan"
-  - "Team-Setup für Nearshore-Entwicklung, inklusive Größe, Rollen und Senioritätsmix"
-  - "Auswahl von Nearshore-Partnern und Vereinbarung von Regeln zu Besetzung und Rotation"
-  - "Einarbeitung in Standards, Review-Prozess und Pipeline"
-  - "Regelmäßige Steuerung mit Status, Risiken und Entscheidungen für das Management"
+  - "Ich wähle mit Ihnen Nearshore-Partner aus und achte dabei auf Kultur und den Willen zu liefern so sehr wie auf Skills."
+  - "Ich arbeite neue Teams in Standards, Review-Prozess und Pipeline ein."
+  - "Ich halte Abhängigkeiten zwischen Teams und Partnern sichtbar und plane Releases übergreifend."
+  - "Ich steuere Plan, Risiken und Qualität, solange das Programm läuft."
 results:
-  - "Nearshore-Teams, die stabil bleiben und Wissen über die Org aufbauen"
-  - "Planbare Lieferung über Teams und Partner hinweg"
-  - "Qualität, die in Reviews geprüft und nicht erst in Produktion entdeckt wird"
-  - "Ein Management, das Status und Risiken früh sieht und auf Basis von Fakten entscheidet"
+  - "Einen Programmplan mit Streams, Abhängigkeiten, Meilensteinen und Release-Plan"
+  - "Ein Team-Setup für jedes Nearshore-Team mit Größe, Rollen und Senioritätsmix"
+  - "Schriftlich vereinbarte Regeln zu Besetzung und Rotation mit jedem Nearshore-Partner"
+  - "Ein regelmäßiges Reporting mit Status, Risiken und anstehenden Entscheidungen für das Management"
 phases:
   - title: "Plan und Team-Setup"
     icon: "team"
@@ -66,7 +65,7 @@ mit: Ein Setup, das stabil liefert
 - Das Management bekommt Status, Risiken und Entscheidungen regelmäßig vorgelegt.
 ```
 
-## Wie setze ich Nearshore-Teams auf?
+## Höchstens acht Entwickler pro Team und feste Regeln zur Rotation
 
 ```kennzahlen
 8 | Entwickler pro Team, höchstens
@@ -83,14 +82,12 @@ Vom ersten Tag an arbeitet ein Nearshore-Team mit denselben Standards, Pull-Requ
 
 ![Mehrere kleine Teams auf einer gemeinsamen Basis: Jedes Team hat bis zu etwa acht Entwickler und klare Verantwortlichkeiten. Vom ersten Tag an arbeitet jedes Team mit denselben Standards, Pull-Request-Reviews und derselben Pipeline wie alle anderen. Regeln zu Besetzung und Rotation werden vor dem ersten Sprint vereinbart, und ein Programmplan mit Streams und Abhängigkeiten sowie ein Release-Prozess halten die Teams zusammen.](../../../assets/blog/nearshore-team-setup-de.png)
 
-## Wie sieht Steuerung über mehrere Teams aus?
+## Steuerung über mehrere Teams und Partner
 
-Mit mehreren Teams und Partnern hält der Plan nur, wenn Abhängigkeiten und Releases abgestimmt sind. Dafür führe ich drei Dinge:
+Mit mehreren Teams und Partnern hält der Plan nur, wenn Abhängigkeiten und Releases abgestimmt sind. Die Regeln, mit denen mehrere Partner zusammenarbeiten, beschreibe ich unter [Partnersteuerung](../partnersteuerung/), den gemeinsamen Release-Prozess unter [DevOps und Release-Management](../devops-und-release-management/). Auf Kundenseite führe ich dafür den Programmplan, den Release-Prozess und das Reporting:
 
 ```stufen
 1 | Programmplan | Streams und Abhängigkeiten | Wer liefert wann was?
 2 | Release-Prozess | gemeinsam für alle Teams | Wann geht was live?
 3 | Reporting | Status, Risiken, Entscheidungen | Was muss das Management entscheiden?
 ```
-
-Die Regeln, mit denen mehrere Partner zusammenarbeiten, beschreibe ich unter [Partnersteuerung](../partnersteuerung/), den gemeinsamen Release-Prozess unter [DevOps und Release-Management](../devops-und-release-management/).

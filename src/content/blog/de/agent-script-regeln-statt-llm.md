@@ -9,9 +9,9 @@ topic: ai
 categories: [ai]
 tags: [Agent Script, Agentforce, KI-Agenten, Maschinenbau, Garantie, Architektur]
 takeaways:
-  - "Kreditlimitprüfung, Garantieberechtigung und Preisfreigabe gehören in Agent-Script-Logik oder in den Flow-, Apex- oder ERP-Aufruf dahinter; das LLM versteht die Anfrage und erklärt das Ergebnis."
-  - "Das neue Agentforce, seit Februar 2026 allgemein verfügbar, nutzt hybrides Reasoning: Logikanweisungen laufen als Code ohne LLM-Aufruf, Prompt-Anweisungen lösen einen aus."
-  - "Eine Aktion mit available-when-Bedingung verschwindet aus der Werkzeugliste des LLM, solange die Bedingung falsch ist; das Modell kann für einen Händler über dem Kreditlimit keinen Auftrag anlegen."
+  - "Das LLM versteht die Anfrage und erklärt das Ergebnis. Die Entscheidung trifft Agent-Script-Logik oder der Flow-, Apex- oder ERP-Aufruf dahinter."
+  - "Im neuen Agentforce, seit Februar 2026 verfügbar, laufen Logikanweisungen als Code ohne LLM-Aufruf, nur Prompt-Anweisungen lösen einen aus."
+  - "Eine Aktion mit available-when-Bedingung verschwindet aus der Werkzeugliste des LLM, solange die Bedingung falsch ist."
   - "Gate-Variablen muss Code setzen, nie das LLM; sonst bringt das Gate genau die Schwankung zurück, die es verhindern soll."
   - "before_reasoning läuft bei jedem Parse; eine ERP-Abfrage dort ohne Schutzbedingung läuft mehrmals pro Nutzereingabe."
 faq:
@@ -48,7 +48,7 @@ Weil es Entscheidungen mit einer richtigen Antwort sind. Ein Händler liegt übe
 
 **Fremde Eingaben.** Händlerportale, Garantieformulare und E-Mails schreiben Menschen außerhalb Ihres Unternehmens. Hängt eine Regel davon ab, wie das Modell Freitext liest, kann dieser Text das Modell schieben. Das beschreibe ich in [Prompt Injection über Händlerportale](../prompt-injection-haendlerportal-agentforce/).
 
-## Mit welchen Bausteinen setzt Agent Script eine Regel durch?
+## So setzt Agent Script eine Regel durch
 
 Für Entscheider zählen vier Bausteine. Ihr Partner sollte Ihnen zeigen können, wo jede Regel sitzt.
 
@@ -89,9 +89,9 @@ titel: Gate-Variablen, Schutzbedingung und is_displayable
 Die [Flex Credits Rate Card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) berechnet Aktionen mit 20 Credits, sagt aber nicht, ob vom Script ausgelöste Aufrufe anders zählen. Bei einer ERP-Abfrage in `before_reasoning` würde ich mir das im Angebot bestätigen lassen.
 ```
 
-## Ein typisches Szenario: Händleragent für Ersatzteile und Garantie
+## Rechenbeispiel: Händleragent für Ersatzteile und Garantie
 
-Nehmen wir einen Maschinenbauer mit SAP, Sales Cloud, Service Cloud und Händlerportal. Die Zahlen sind Annahmen, die das Vorgehen zeigen. Der Agent bearbeitet im Monat 800 Ersatzteilaufträge und 150 Garantie-Vorprüfungen und berührt dabei drei Regeln.
+Nehmen wir einen Maschinenbauer mit SAP, Sales Cloud, Service Cloud und Händlerportal. Die Zahlen sind Annahmen, die das Vorgehen zeigen. Der Agent bearbeitet im Monat 800 Ersatzteilaufträge und 150 Garantie-Vorprüfungen und berührt dabei Kreditlimit, Garantie und Preisfreigabe.
 
 **Kreditlimit.** Das SAP-Kreditmanagement entscheidet. Eine MuleSoft-API liefert pro Händler ein Kennzeichen, wie in [Agentforce und SAP-Auftragsstatus](../agentforce-sap-auftragsstatus/) beschrieben. Der Agent liest es einmal pro Sitzung und sperrt damit die Auftragsaktion. Angenommen, 4 Prozent der Händler sind jeweils gesperrt: Ihnen erklärt das Modell, dass das Kreditmanagement den Auftrag freigeben muss, und bietet an, die Anfrage weiterzuleiten. Einen Bestellknopf sieht es nie.
 
@@ -107,7 +107,7 @@ Mehr, als es klingt. Das Modell erkennt die Absicht, füllt Pflichtangaben aus F
 
 Agent Script ist auch nicht immer der richtige Ort für die Regel selbst. Hat die Regel viele Varianten, etwa Garantiebedingungen pro Produktfamilie und Bauteil, gehört sie ins Datenmodell oder in die Business Rules Engine, die die [Seite der Manufacturing Cloud](https://www.salesforce.com/manufacturing/cloud/) für Claims, Boni und Angebote nennt. Das Script ruft sie dann auf. Gehört die Regel dem ERP, ruft das Script das ERP. Agent Script entscheidet, wann eine Regel geprüft wird und was mit dem Ergebnis passiert.
 
-## Wie trennen Sie Regeln und Sprache in Ihrem nächsten Agenten?
+## Alle Entscheidungen auflisten, bevor der Partner baut
 
 Bevor Ihr Partner mit dem Bau beginnt, würde ich diese Schritte durchgehen:
 
@@ -125,5 +125,3 @@ Regeln wie Code testen
 ```
 
 Diesen Teil eines Agentendesigns prüfe ich auf Kundenseite im Rahmen der [Salesforce-Architektur](../../leistungen/salesforce-architektur/), weil er entscheidet, ob sich der Agent später prüfen lässt. Ob Ihr Prozess überhaupt reif für einen Agenten ist, steht in [Agentforce für Hersteller: jetzt starten oder warten](../agentforce-ja-oder-nein-hersteller/).
-
-Regeln in die Logik, Sprache ins Modell, dann gibt Ihr Agent demselben Händler zweimal dieselbe Antwort.

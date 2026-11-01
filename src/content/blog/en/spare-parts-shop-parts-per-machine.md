@@ -9,10 +9,10 @@ topic: commerce
 categories: [b2b-commerce, field-service]
 tags: [B2B Commerce, spare parts, installed base, assets, PLM, endpoint extensions]
 takeaways:
-  - "Entitlements in Salesforce B2B Commerce work per buyer group, not per serial number, so they cannot answer which parts fit one specific machine."
+  - "Entitlements work per buyer group, not per serial number, so they cannot answer which parts fit one specific machine."
   - "One buyer group per machine fails on hard limits: 2,000 buyer entitlements per product and 20 buyer groups per buyer account by default."
-  - "The robust option is a machine page: a custom Lightning web component lists the dealer's assets and the spare parts for each one from Salesforce or PLM."
-  - "Filtering normal search results per machine is possible through endpoint extensions, but the base class is still labelled Beta and filtering afterwards leaves gaps in result pages."
+  - "The robust option is a machine page: a custom component lists the dealer's assets and the spare parts for each one from Salesforce or PLM."
+  - "Filtering search per machine works through endpoint extensions, but the base class is still Beta and filtering afterwards leaves gaps in result pages."
   - "The dealer may only see machines registered to their own account, read from the asset record and never typed in as free text."
 faq:
   - q: "Can B2B Commerce entitlements restrict parts by serial number?"
@@ -88,15 +88,15 @@ This is the rule I would never relax: the dealer sees only machines registered t
 
 On the licence side, [Salesforce Help on Experience Cloud licences](https://help.salesforce.com/s/articleView?language=en_US&id=sf.users_license_types_communities.htm&type=5) lists read, create and edit access to assets for Customer Community Plus and Partner Community. Which assets a buyer actually sees is a question of sharing. In practice that means: the asset's account must be the buyer account, or the dealer relation must be modelled so that sharing follows it. Machines sold through a dealer but registered to the end customer need a clear rule before the store goes live. Which portal licence covers what in Manufacturing Cloud is described in [the Manufacturing Cloud customer portal](../manufacturing-cloud-customer-portal/).
 
-## A typical scenario: 6,000 machines and 150 dealers
+## Worked example: 6,000 machines and 150 dealers
 
-A typical scenario, as an assumption: a machine builder has 6,000 installed machines in eight series, 150 dealers and a PLM with as-built lists for machines delivered in the last ten years.
+Assume a machine builder has 6,000 installed machines in eight series, 150 dealers and a PLM with as-built lists for machines delivered in the last ten years.
 
 One buyer group per machine is ruled out by the limits above. One buyer group per series would mean up to eight groups per dealer, within the 20, but it only narrows the list to the series, not to the variant built into one machine.
 
 The decision in the scenario: buyer groups stay per country and dealer tier. A machine page shows the dealer's assets and calls PLM live for the spare-relevant positions of the selected machine; the result is cached on the asset for a day. For machines older than ten years, the page falls back to the parts list of the machine series and says so. Search filtering by extension is postponed until the class is generally available.
 
-## Where should you start?
+## Trace 20 orders to the as-built list
 
 ```schritte
 Check the data first
@@ -109,6 +109,4 @@ Start with the machine page
   Consider search filtering only when dealers ask for it.
 ```
 
-The chapter [catalogue, search and entitlements](../../masterclass/b2b-commerce/catalog-search-entitlements/) of the [B2B Commerce masterclass](../../masterclass/b2b-commerce/) places this in the store design; which system leads for which data is the subject of [Salesforce integration](../../services/salesforce-integration/).
-
-A spare parts shop shows the right parts per machine only as reliably as your serial numbers lead to an as-built list.
+The chapter [catalogue, search and entitlements](../../masterclass/b2b-commerce/catalog-search-entitlements/) of the [B2B Commerce masterclass](../../masterclass/b2b-commerce/) places this in the store design. Which system leads for which data is the subject of [Salesforce integration](../../services/salesforce-integration/).

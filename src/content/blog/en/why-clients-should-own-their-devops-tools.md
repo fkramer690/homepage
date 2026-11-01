@@ -9,7 +9,7 @@ topic: ownership
 categories: [devops]
 tags: [partner governance, devops, jira, vendor lock-in, access management]
 takeaways:
-  - "Clients should always control the accounts, licences and access rights of their project tools, including the Git repository, CI/CD pipeline, Jira, Confluence and Miro."
+  - "Accounts, licences and access rights belong to the client, from the Git repository and pipeline to Jira, Confluence and Miro."
   - "Owning the tools does not mean running your own servers: cloud services are fine, as long as the workspace and admin rights belong to the client."
   - "Partners receive named user accounts with roles for their task, for the duration of the engagement, and their work stays in the client's systems."
   - "Tools owned by a partner create lock-in, make partners hard to compare and put history, documentation and decisions at risk when the engagement ends."
@@ -67,13 +67,13 @@ As long as the collaboration runs well, nobody notices. The problems appear when
 
 None of this is a reproach to partners. Most good partners prefer working in the client's tools, because it makes their own exit clean and their work visible.
 
-## What does this have to do with partner governance?
+## Owning the tools keeps partners comparable and replaceable
 
 A lot. As an [architect on the client side](../../#about), one of my main goals is to keep implementation partners comparable and replaceable. That only works if the foundations belong to the client: the repository, the pipeline, the backlog and the documentation. Then a new partner can be onboarded into a known setup with written standards, and an exiting partner hands over nothing but their user accounts.
 
 It also makes it possible to build internal ownership. In the programme I described in my DevOps article, the release process was eventually handed over to an internal colleague. A handover like that is only realistic when the tools and rights are already on the client side. Otherwise, the internal person inherits a process that still depends on someone else's accounts. Ownership of tools is the basis of good [partner steering and governance](../../services/partner-governance/).
 
-## How do you set it up in practice?
+## Rules for practice, before the first partner starts
 
 Ideally, before the first partner starts. These rules have proven useful:
 
@@ -89,6 +89,6 @@ Ideally, before the first partner starts. These rules have proven useful:
 If a partner already owns some of the tools, plan the move early and do it in a calm phase, not during an exit. A repository can be moved with its full history in a day. Jira and Miro take more planning, but are still far cheaper to move now than later.
 ```
 
-## Where should you start?
+## List every tool with its contract holder and admins
 
-Make a simple list: every tool in the project, who holds the contract, who the admins are, and which partner employees have access. In many programmes that list alone shows where the risks are. Owning your tools costs little and protects the most valuable part of a Salesforce programme, its knowledge.
+Make a simple list: every tool in the project, who holds the contract, who the admins are, and which partner employees have access. In many programmes that list alone shows where the risks are. Every row where a partner holds the contract or the admin rights gets a date by which it moves to you.

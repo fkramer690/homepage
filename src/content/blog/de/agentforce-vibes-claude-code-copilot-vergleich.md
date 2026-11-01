@@ -9,9 +9,9 @@ topic: devops
 categories: [devops, ai]
 tags: [KI-Coding, Agentforce Vibes, Claude Code, GitHub Copilot, Datenresidenz, Partnersteuerung]
 takeaways:
-  - "Welchen Coding-Agenten ein Salesforce-Team nutzt, entscheiden vor allem vier Punkte auf Kundenseite: bestehende Verträge, EU-Datenresidenz, Kostenmodell und Governance, erst danach das Modell."
+  - "Erst nach Verträgen, EU-Datenresidenz, Kostenmodell und Governance zählt bei der Wahl des Coding-Agenten das Modell."
   - "Agentforce Vibes ist in der Hyperforce EU Operating Zone nicht verfügbar; liegt Ihre Org dort, bleiben Copilot, Claude Code über einen Cloud-Anbieter und Codex."
-  - "Die First-Party-API von Anthropic bietet nur Inferenz in den USA oder global, GitHub Copilot dagegen seit April 2026 EU-Datenresidenz für alle allgemein verfügbaren Funktionen, mit 10 Prozent mehr AI Credits."
+  - "Anthropics First-Party-API rechnet nur in den USA oder global. Copilot hat seit April 2026 EU-Datenresidenz, für 10 Prozent mehr AI Credits."
   - "Codex unterstützt EU-Datenresidenz nur mit ChatGPT Enterprise und nur in Codex-App und CLI; ChatGPT Business hat keine Datenresidenz, Codex Web ist ausgenommen."
   - "Ich empfehle höchstens zwei freigegebene Coding-Agenten, Konten im Besitz des Kunden und eine Regeldatei im Kunden-Repository, die jeder Agent liest."
 faq:
@@ -26,7 +26,7 @@ faq:
 draft: false
 ---
 
-Ob Agentforce Vibes, Claude Code, Codex oder Copilot: Die Wahl des Coding-Agenten für Salesforce ist eher eine Kundenentscheidung als eine Vorliebe der Entwickler. Vier Punkte auf Ihrer Seite entscheiden: welche Verträge und Werkzeuge Sie schon haben, ob Code und Prompts in der EU verarbeitet werden müssen, welches Kostenmodell Sie steuern können und welche Governance Ihre IT-Sicherheit erwartet. Liegt Ihre Org in der Hyperforce EU Operating Zone, fällt Vibes weg. Ist EU-Verarbeitung Pflicht, fällt die eigene API von Anthropic weg, Copilot oder Bedrock kommen dazu. Die Modellqualität entscheidet zuletzt.
+Ob Agentforce Vibes, Claude Code, Codex oder Copilot: Die Wahl des Coding-Agenten für Salesforce ist eher eine Kundenentscheidung als eine Vorliebe der Entwickler. Den Ausschlag geben Fakten auf Ihrer Seite: welche Verträge und Werkzeuge Sie schon haben, ob Code und Prompts in der EU verarbeitet werden müssen, welches Kostenmodell Sie steuern können und welche Governance Ihre IT-Sicherheit erwartet. Liegt Ihre Org in der Hyperforce EU Operating Zone, fällt Vibes weg. Ist EU-Verarbeitung Pflicht, fällt die eigene API von Anthropic weg, Copilot oder Bedrock kommen dazu. Die Modellqualität entscheidet zuletzt.
 
 ## Warum sollte der Kunde entscheiden und nicht der Entwickler?
 
@@ -83,7 +83,7 @@ Die Rechnung für ein ganzes Team und die Frage, ob Kunde oder Partner zahlt, st
 - **Training und Aufbewahrung.** Anthropic [trainiert nicht mit Code unter kommerziellen Bedingungen](https://code.claude.com/docs/en/data-usage) und bewahrt ihn 30 Tage auf; Zero Data Retention für Claude Code schaltet das Account-Team pro Organisation frei. OpenAI nutzt Eingaben von Geschäftskunden standardmäßig nicht fürs Training.
 - **Eine Regeldatei.** Der Copilot Coding Agent [liest AGENTS.md und CLAUDE.md](https://github.blog/changelog/2025-08-28-copilot-coding-agent-now-supports-agents-md-custom-instructions). Eine Datei in Ihrem Repository kann also mehrere Werkzeuge steuern, siehe [die KI-Regeldatei im Salesforce-Repository](../ki-regeldatei-salesforce-repository/).
 
-## Ein typisches Szenario: zwei freigegebene Werkzeuge statt vier
+## Rechenbeispiel: zwei freigegebene Werkzeuge statt vier
 
 Nehmen wir einen Maschinenbauer mit Sales Cloud, Service Cloud und Field Service für den Außendienst auf einer EU-Org außerhalb der EU Operating Zone, dazu SAP S/4HANA und GitHub Enterprise Cloud. Der Datenschutzbeauftragte verlangt EU-Verarbeitung für Code, der Händlerkonditionen enthält. Zwei interne Admins pflegen Flows, drei interne Entwickler bauen Apex und LWC, ein Partner stellt sechs Nearshore-Entwickler für das Händlerportal. All das ist angenommen, um das Vorgehen zu zeigen.
 
@@ -105,7 +105,9 @@ Am Ende stehen zwei Werkzeuge und eine `AGENTS.md`, die der interne Architekt ve
 - **GitHub Copilot:** Ihre Repositories liegen nicht in GitHub, Cloud Agent und Partner Agents hätten also nichts zu bearbeiten.
 - **Codex:** Sie haben nur ChatGPT Business und brauchen EU-Verarbeitung, oder das Team will Codex Web, das selbst mit Enterprise von der Residenz ausgenommen ist.
 
-## Wie entscheiden Sie in vier Wochen?
+## Erster Schritt: in Woche 1 EU Operating Zone und Verträge prüfen
+
+Diese Regeln über mehrere Partner hinweg festzulegen, gehört zu meiner Arbeit in der [Partnersteuerung](../../leistungen/partnersteuerung/) und im [DevOps- und Release-Management](../../leistungen/devops-und-release-management/). Ohne Sonderfälle steht die Entscheidung nach vier Wochen:
 
 ```schritte
 Bestand aufnehmen | Woche 1
@@ -117,7 +119,3 @@ Freigeben | Woche 3
 Testen | Woche 4
   Lassen Sie 10 bis 15 Backlog-Aufgaben durch die freigegebenen Werkzeuge und dieselben Pipeline-Prüfungen laufen, wie in [Quality Gates für KI-Code](../quality-gates-ki-code-salesforce-pipeline/) beschrieben.
 ```
-
-Diese Regeln über mehrere Partner hinweg festzulegen, gehört zu meiner Arbeit in der [Partnersteuerung](../../leistungen/partnersteuerung/) und im [DevOps- und Release-Management](../../leistungen/devops-und-release-management/).
-
-Wählen Sie den Coding-Agenten nach Vertrag, Residenz und Governance, und halten Sie die Qualität in Regeldatei und Pipeline, die Ihnen gehören.

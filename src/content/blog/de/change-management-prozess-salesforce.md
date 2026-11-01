@@ -11,9 +11,8 @@ coAuthor: juliane
 contactBrief: change
 tags: [Change-Management-Prozess, Prosci, ADKAR, Salesforce-Einführung, Projektphasen]
 takeaways:
-  - "Der Change-Management-Prozess läuft neben dem Salesforce-Projektplan, nicht danach. Jede Projektphase hat eine eigene Change-Aufgabe mit einem greifbaren Ergebnis."
+  - "Jede Projektphase hat eine eigene Change-Aufgabe mit einem greifbaren Ergebnis, von der Impact-Analyse bis zur Übergabe an interne Rollen."
   - "In der Planung entsteht das Wichtigste: welche Gruppen betroffen sind, was sich für jede ändert, wer im Management dahintersteht und woran Erfolg gemessen wird."
-  - "Während Bau und Abnahmetest werden Key User beteiligt, Kommunikation und Schulung vorbereitet und Widerstände früh erkannt."
   - "Zum Go-live muss sichergestellt sein, dass es keinen Weg zurück zur alten Arbeitsweise gibt. Sonst tritt keine Veränderung ein."
   - "Nach dem Go-live entscheidet sich, ob die Veränderung bleibt: messen, Lücken schließen und die Verantwortung an interne Rollen übergeben."
 faq:
@@ -30,7 +29,7 @@ draft: false
 
 Der Change-Management-Prozess in einem Salesforce-Projekt läuft parallel zum Projektplan, und jede Projektphase hat ihre eigene Change-Aufgabe. In der Planung klären Sie, welche Gruppen betroffen sind, was sich für jede ändert, wer im Management dahintersteht und woran Sie Erfolg messen. Während Bau und Abnahmetest beteiligen Sie Key User und bereiten Kommunikation und Schulung vor. Zum Go-live stellen Sie sicher, dass es keinen Weg zurück gibt. Danach messen Sie die Nutzung, schließen Lücken und übergeben die Verantwortung an interne Rollen. Ich orientiere mich dabei am Prozess von Prosci und übersetze ihn in die Phasen eines Salesforce-Projekts.
 
-## Wie hängt der Change-Management-Prozess am Projektplan?
+## Die drei Prosci-Phasen am Salesforce-Projektplan
 
 Prosci gliedert die Arbeit in drei Phasen: Vorgehen vorbereiten, Veränderung steuern, Ergebnisse sichern. Was die Phasen allgemein bedeuten, erklärt Juliane Winterscheid in [Was ist Change Management?](../was-ist-change-management/), und wie sich Prosci von Lewin und Kotter unterscheidet, in [Change-Management-Modelle im Vergleich](../change-management-modelle/). Hier geht es um die Frage, die im Projekt zählt: Was ist in welcher Projektphase zu tun, und was liegt am Ende auf dem Tisch?
 
@@ -72,7 +71,7 @@ Drei Dinge sind in dieser Phase besonders wirksam:
 
 Am Ende des Abnahmetests steht das [Schulungskonzept](../salesforce-schulungskonzept-einfuehrung/): welche Rolle welche Abläufe lernt, in welchem Format und wann.
 
-## Was ändert sich zum Go-live?
+## Zum Go-live gibt es keinen Weg zurück
 
 Zum Go-live kommt der Teil, den viele Projekte unterschätzen. Ich achte darauf, dass es keinen Weg zurück gibt. Solange es die Option gibt, nach der alten Weise zu arbeiten, tritt keine Veränderung ein. Das heißt: Alte Vorlagen und Listen bekommen ein Abschaltdatum, das die Führung ankündigt, und Berichte an die Geschäftsführung kommen ab diesem Tag aus Salesforce.
 
@@ -84,12 +83,10 @@ Gleichzeitig beginnt die [Hypercare-Phase](../hypercare-phase-salesforce-go-live
 
 ## Wie sichern Sie das Ergebnis nach dem Go-live?
 
-Die dritte Prosci-Phase beginnt nach dem Go-live und wird am häufigsten gestrichen, weil das Projektteam weiterzieht. Sie hat drei Teile. Erstens messen: Der Sponsor bekommt jeden Monat die Kennzahlen aus der Planung, pro Gruppe und Land. Zweitens Lücken schließen: Wo die Nutzung hängt, wird nach der fehlenden ADKAR-Stufe gefragt, nicht automatisch nachgeschult. Drittens die Verantwortung übergeben: Interne Rollen übernehmen, was das Projekt aufgebaut hat, etwa der Key-User-Austausch, die Release-Kommunikation und regelmäßige Termine wie ein [Center-of-Excellence-Call](../salesforce-center-of-excellence-format/), in dem neue Themen vorab auf den Tisch kommen.
+Die dritte Prosci-Phase beginnt nach dem Go-live und wird am häufigsten gestrichen, weil das Projektteam weiterzieht. Sie hat drei Teile. Messen: Der Sponsor bekommt jeden Monat die Kennzahlen aus der Planung, pro Gruppe und Land. Lücken schließen: Wo die Nutzung hängt, wird nach der fehlenden ADKAR-Stufe gefragt, nicht automatisch nachgeschult. Die Verantwortung übergeben: Interne Rollen übernehmen, was das Projekt aufgebaut hat, etwa der Key-User-Austausch, die Release-Kommunikation und regelmäßige Termine wie ein [Center-of-Excellence-Call](../salesforce-center-of-excellence-format/), in dem neue Themen vorab auf den Tisch kommen.
 
 Der Prozess endet, wenn die neue Arbeitsweise gemessen genutzt wird und niemand aus dem Projekt mehr dafür gebraucht wird. Das ist deutlich nach dem Go-live.
 
-## Wo fangen Sie an?
+## Ein Change-Ergebnis in jede Projektphase eintragen
 
-Nehmen Sie den Projektplan Ihres nächsten Salesforce-Vorhabens und tragen Sie für jede Phase ein, welches Change-Ergebnis am Ende vorliegen soll. Fehlen in der Planung die Impact-Analyse, der Sponsor-Plan oder die Kennzahlen, ist das Ihr erster Schritt. Der Hub-Artikel [Salesforce Change Management: warum Einführungen scheitern](../change-management-salesforce-einfuehrung/) zeigt, welche Themen dazugehören.
-
-Change Management ist ein Prozess, der mit dem Projektplan beginnt und nach dem Go-live endet. Mehr dazu lesen Sie unter [Change Management Beratung für Salesforce](../../leistungen/change-management/).
+Nehmen Sie den Projektplan Ihres nächsten Salesforce-Vorhabens und tragen Sie für jede Phase ein, welches Change-Ergebnis am Ende vorliegen soll. Fehlen in der Planung die Impact-Analyse, der Sponsor-Plan oder die Kennzahlen, ist das Ihr erster Schritt. Der Hub-Artikel [Salesforce Change Management: warum Einführungen scheitern](../change-management-salesforce-einfuehrung/) zeigt, welche Themen dazugehören. Wie wir den Prozess in Programmen begleiten, steht unter [Change Management Beratung für Salesforce](../../leistungen/change-management/).

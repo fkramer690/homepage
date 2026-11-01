@@ -9,11 +9,10 @@ topic: field-service
 categories: [field-service]
 tags: [field service, data capture, mobile, inspection, commissioning]
 takeaways:
-  - "Data Capture forms are built in Flow Builder, run natively in the Field Service mobile app and are tied to the work order, service appointment or work order line item."
-  - "Forms work offline, save every entry automatically and log every submission, online or offline, so a technician can close a form and resume it later."
-  - "Voice to Form has been generally available since mobile release 260.0 in Spring '26, and Winter '27 adds Spanish, Japanese, Italian, French and German."
-  - "Decide before the first form which answers become fields on the asset or work order, such as readings, overall result and parts, and which stay as form answers."
-  - "Split a long protocol by machine variant and job phase instead of building one form with every checkpoint and hiding most of them."
+  - "Forms work offline and save every entry automatically. A technician can close a form and continue later."
+  - "Voice to Form has been generally available since app release 260.0, and Winter '27 adds German among other languages."
+  - "Readings, overall result and parts become fields on the asset or work order. The proof per checkpoint stays a form answer."
+  - "A protocol with 80 checkpoints for three variants becomes short forms per variant and job phase that can be tested one by one."
 faq:
   - q: "What is Data Capture in Salesforce Field Service?"
     a: "Data Capture is the form feature of the Field Service mobile app. Admins build the forms in Flow Builder with fields, checkboxes, lookups, signatures, photos and conditional sections, and technicians fill them in the app, also offline."
@@ -44,7 +43,7 @@ For field work, two properties matter more than the components. The forms work o
 Offline only works if the records the form reads are on the device. Which records belong in the briefcase is covered in [Field Service mobile offline: which data goes on the device?](../field-service-mobile-app-offline-data/).
 ```
 
-## What is generally available, and what came later?
+## Voice to Form has been generally available since Spring '26
 
 The status changes with every mobile release, so it is worth knowing where it stands.
 
@@ -67,7 +66,7 @@ This is the decision I would make before the first form. A form answer is fine f
 | Parts used | Products consumed on the work order | Van stock and ERP |
 | Customer signature | Form and service report | Proof of acceptance |
 
-Two rules follow from this table. First, a form does not ask for anything that already exists on the asset or the work order, such as serial number, customer or machine type. Second, consumption is booked as products consumed, never as a free text field in the form, otherwise the van stock and the ERP do not see it.
+Two rules follow from this table. A form does not ask for anything that already exists on the asset or the work order, such as serial number, customer or machine type. And consumption is booked as products consumed, never as a free text field in the form, otherwise the van stock and the ERP do not see it.
 
 Readings on the asset connect the form to maintenance planning. How maintenance plans and entitlements fit together is covered in [Field Service: how to model maintenance contracts](../salesforce-field-service-maintenance-contracts/). This is classic [architecture work](../../services/salesforce-architecture/) and belongs to the service organisation as much as to IT.
 
@@ -75,11 +74,11 @@ Readings on the asset connect the form to maintenance planning. How maintenance 
 
 Data Capture collects the data. The PDF the customer receives comes from Document Builder. Document Builder works on work orders, work order line items and service appointments, as described in [Salesforce Service Documents: is Document Builder enough?](../salesforce-service-documents-document-builder/). If the customer needs the inspection results in the report, check in the first sprint how the answers reach the template. Values that are fields on the work order can be placed in the template directly.
 
-Inspection reports with a lot of conditional content can outgrow Document Builder. In that case a separate inspection document from Document Generation or an AppExchange tool is the honest answer, and the form still provides the data.
+Inspection reports with a lot of conditional content can outgrow Document Builder. In that case a separate inspection document from Document Generation or an AppExchange tool is the better solution, and the form still provides the data.
 
-## A typical scenario, as an assumption: 80 checkpoints, three variants
+## Worked example: 80 checkpoints, three variants
 
-A machine builder commissions packaging machines in three variants. The paper protocol has 80 checkpoints over twelve pages, plus a page for the customer's acceptance. Today the technician fills it in by hand, scans it in the evening, and the back office types the readings into the ERP.
+All numbers are assumptions. A machine builder commissions packaging machines in three variants. The paper protocol has 80 checkpoints over twelve pages, plus a page for the customer's acceptance. Today the technician fills it in by hand, scans it in the evening, and the back office types the readings into the ERP.
 
 Built as one form, it would contain every checkpoint of every variant, with conditional visibility hiding most of them. Every change to one variant would touch the form for all three. I would split it:
 
@@ -89,9 +88,11 @@ Built as one form, it would contain every checkpoint of every variant, with cond
 
 A machine therefore still gets 80 checkpoints, but each form is short enough to test. Defects found in form 2 become line items, so the dispatcher sees the follow-up work.
 
-In this scenario the back office gains the most. After the sync the readings are on the asset, nobody types them in again, and the overall result on the work order shows when the invoice can go out. If a limit value changes for one variant, the admin changes only that variant's form and tests only that one.
+In this example the back office gains the most. After the sync the readings are on the asset, nobody types them in again, and the overall result on the work order shows when the invoice can go out. If a limit value changes for one variant, the admin changes only that variant's form and tests only that one.
 
-## Where should you start?
+## Pick one high-volume protocol
+
+Forms, offline data and the service report together make up [chapter 3 of the Field Service masterclass](../../masterclass/field-service/field-service-mobile-app-documents/). For the first form I would proceed like this:
 
 ```schritte
 Pick one protocol
@@ -105,7 +106,3 @@ Build and test offline
 Add Voice to Form
   In a separate step, after data protection and the works council have agreed.
 ```
-
-Forms, offline data and the service report together make up [chapter 3 of the Field Service masterclass](../../masterclass/field-service/field-service-mobile-app-documents/).
-
-A paper protocol becomes useful data when you decide first which answers become fields, and only then build the form.

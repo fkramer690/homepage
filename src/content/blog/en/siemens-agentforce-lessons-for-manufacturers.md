@@ -9,11 +9,10 @@ topic: ai
 categories: [manufacturing-cloud, ai]
 tags: [agentforce, siemens, manufacturing, ai agents, use cases, lead qualification]
 takeaways:
-  - "In the Siemens and Salesforce release of 15 September 2026, only two agents for inbound leads are live; Teamcenter, the distributor SDR agent and supplier onboarding in SAP are written in the future tense."
-  - "Siemens started where volume was high, the data already sat in Sales Cloud and a wrong answer cost little: over 2,500 unqualified leads a month for 18,000 sellers."
-  - "The only published result is that Siemens engages 100 percent of inbound leads; the release gives no conversion rate, pipeline value or seller hours saved."
-  - "A mid-sized machine builder should copy the criteria behind the Siemens order, not the lead use case, because at a few hundred leads a month a scoring rule and one person are cheaper."
-  - "Spare parts by serial number need as-built data linked to each machine, so that data work should start on day one even if the agent comes second or third."
+  - "Siemens started with over 2,500 unqualified leads a month: high volume, data already in Sales Cloud, low cost per error."
+  - "The only published result is that Siemens engages 100 percent of inbound leads. Conversion and pipeline value are missing."
+  - "At a few hundred leads a month, a scoring rule and one person are cheaper than an agent."
+  - "Spare parts by serial number need as-built data per machine. That data work starts on day one."
 faq:
   - q: "What is live at Siemens with Agentforce?"
     a: "According to the release of 15 September 2026, an engagement agent and a qualification agent work on inbound leads in Sales Cloud and route the strongest to sellers. Siemens engages 100 percent of these leads across 132 countries."
@@ -68,7 +67,7 @@ The other industrial references follow the same pattern. In Salesforce's [Agentf
 
 **Agentforce Operations.** Salesforce declared it [generally available on 29 April 2026](https://www.salesforce.com/news/stories/agentforce-operations-announcement/), built on Regrello technology, with integration features such as triggering Flows that were expected to enter beta in May 2026. That announcement mentions ERP in general and does not name SAP. So the product is GA, the SAP steps at Siemens are a plan, and how they reach SAP is not described. Whatever an agent writes into the ERP, the rules for it belong in deterministic logic, as described in [Agent Script: rules instead of the LLM](../agent-script-deterministic-rules/).
 
-## A typical scenario: a machine builder with 1,100 employees
+## Worked example: a machine builder with 1,100 employees
 
 Assume a machine builder with 1,100 employees, SAP S/4HANA, Sales Cloud and Service Cloud, 140 dealers in 35 countries and 9,000 machines in the installed base. All numbers are assumptions to show the method. Four ideas from the Siemens release are on the table.
 
@@ -80,7 +79,7 @@ Assume a machine builder with 1,100 employees, SAP S/4HANA, Sales Cloud and Serv
 
 **Supplier onboarding.** Assume 25 new suppliers a year. An approval process with a checklist covers that, and an agent would never pay back its build and test effort. The Siemens release gives no supplier volume, so the "weeks to days" promise says nothing about your case.
 
-## Which order of use cases follows for a smaller company?
+## A smaller company needs its own order of use cases
 
 From the scenario I derive this order:
 
@@ -97,6 +96,4 @@ Write steps into the ERP
 
 Before any of these goes live, agree one result metric beyond activity, for example the share of dealer enquiries closed without a back office reply. Siemens published an activity number; your board will ask for a result. The five criteria behind this order are in [Agentforce for manufacturers: start now or wait?](../agentforce-yes-or-no-manufacturers/), and the wider picture of what runs today is in the masterclass chapter [AI agents in manufacturing](../../masterclass/ai-salesforce/ai-agents-in-manufacturing/).
 
-When someone in your company says "Siemens already does this", ask four questions: which tense does the source use, is the number a baseline or a result, whose number is it, and does it name a source. Sorting that out before a budget decision is part of my work in [architecture and partner governance](../../services/salesforce-architecture/).
-
-Siemens shows a sound order more than a finished solution, and that order fits a mid-sized machine builder too.
+When someone in your company says "Siemens already does this", ask these questions: which tense does the source use, is the number a baseline or a result, whose number is it, and does it name a source. Sorting that out before a budget decision is part of my work in [architecture and partner governance](../../services/salesforce-architecture/).

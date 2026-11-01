@@ -9,11 +9,11 @@ topic: revenue
 categories: [b2b-commerce, revenue-cloud]
 tags: [B2B Commerce, Revenue Cloud, Advanced Pricing, Vertragspreise, Pricing Procedures]
 takeaways:
-  - "Agentforce Revenue Management for B2B Commerce braucht eine Lizenz Commerce Growth oder Commerce Advanced plus Revenue Cloud Advanced, gekauft über den Salesforce Account Executive."
-  - "Es ersetzt die einfache Preisbuchlogik durch Pricing Procedures, Entscheidungstabellen, Vertragspreise, Mengenstaffeln, konfigurierbare Bundles, Qualification Rules und Abonnements."
+  - "Advanced Pricing im Shop braucht Commerce Growth oder Advanced plus Revenue Cloud Advanced, gekauft über den Account Executive."
+  - "Pricing Procedures, Entscheidungstabellen und Vertragspreise ersetzen die Preisbuchlogik, dazu kommen Staffeln, Bundles und Qualification Rules."
   - "Die Salesforce-Hilfe nennt Advanced Pricing for Commerce Powered by Revenue Cloud als Voraussetzung für Request for Quote in B2B-Stores."
   - "Der Hauptnutzen ist eine Preislogik für Angebote, Aufträge und Shop. Er zahlt sich aus, wenn der Vertrieb schon in Revenue Cloud kalkuliert."
-  - "Berechnet SAP alle Kundenpreise und kalkuliert der Vertrieb außerhalb von Revenue Cloud, stellt Advanced Pricing eine zweite Preis-Engine neben SAP. Dann ist ein Live-Aufruf ans ERP meist einfacher."
+  - "Rechnet SAP alle Kundenpreise, stellt Advanced Pricing eine zweite Preis-Engine daneben. Dann ist ein Live-Aufruf ans ERP meist einfacher."
 faq:
   - q: "Was ist Advanced Pricing for Commerce Powered by Revenue Cloud?"
     a: "Die Preis-Engine von Revenue Cloud, eingesetzt in einem B2B-Commerce-Store. Statt nur Preisbüchern berechnet sie Preise mit Pricing Procedures, Entscheidungstabellen und Vertragspreisen, und Salesforce nennt sie als Grundlage für Funktionen wie Request for Quote."
@@ -43,7 +43,7 @@ Die [Salesforce-Hilfe zu Agentforce Revenue Management for B2B Commerce](https:/
 
 Zwei Begriffe vorab, weil der Rest des Artikels sie nutzt. Eine Pricing Procedure ist die geordnete Folge von Schritten, die aus einem Listenpreis einen Nettopreis macht. Eine Entscheidungstabelle (Decision Table) ist eine Nachschlagetabelle, die die Procedure liest, etwa den Rabatt je Kundengruppe und Materialgruppe. Der [Preisbereich der Salesforce-Hilfe für B2B-Stores](https://help.salesforce.com/s/articleView?language=en_US&id=commerce.comm_pricebooks.htm&type=5) hat eigene Artikel zu Advanced Pricing, darunter Pricing Procedure Plans, das Aktualisieren der Entscheidungstabellen des Stores, eigene Felder in der Pricing Procedure und vertragsbasierte Preise für B2B-Stores.
 
-## Welche Lizenzen brauchen Sie?
+## Commerce Growth oder Advanced plus Revenue Cloud Advanced
 
 Laut Salesforce-Hilfe sind die Revenue-Management-Funktionen für B2B Commerce in Orgs mit einer Lizenz Commerce Growth oder Commerce Advanced zusammen mit einer Lizenz Revenue Cloud Advanced verfügbar. Die Revenue Settings müssen aktiviert sein, und die Lizenzen kaufen Sie über Ihren Account Executive.
 
@@ -88,18 +88,16 @@ contra: Vorsichtig wäre ich, wenn
 
 Wo Ihre Preis-Engine grundsätzlich liegen sollte, behandelt das Kapitel [Produktkatalog, Konfigurator und Preise](../../masterclass/revenue-cloud/produktkatalog-konfigurator-preise/) der Masterclass Revenue Cloud. Für den Shop folgt die Entscheidung dem Preis-Master: Das System, dem der Vertrieb bei einem Angebot vertraut, sollte auch den Warenkorb rechnen.
 
-## Ein typisches Szenario, als Annahme
+## Rechenbeispiel: Ersatzteilshop mit 30 Vertragskunden
 
-Ein typisches Szenario, als Annahme: Ein Hersteller von Verpackungsmaschinen hat vor einem Jahr Revenue Cloud für Maschinenangebote eingeführt, mit Pricing Procedures für Länderzuschläge und Vertragspreisen für 30 Schlüsselkunden. Jetzt will er einen Shop für Ersatzteile und Service-Kits für seine 300 Kunden. SAP hält weiter die Listenpreise.
+Angenommen, ein Hersteller von Verpackungsmaschinen hat vor einem Jahr Revenue Cloud für Maschinenangebote eingeführt, mit Pricing Procedures für Länderzuschläge und Vertragspreisen für 30 Schlüsselkunden. Jetzt will er einen Shop für Ersatzteile und Service-Kits für seine 300 Kunden. SAP hält weiter die Listenpreise.
 
 Hier passt Advanced Pricing. Listenpreise kommen wie heute aus SAP in Preisbücher, die bestehende Procedure ergänzt den Länderzuschlag und wendet die Vertragspreise an, und Schlüsselkunden sehen im Shop, was ihr Vertriebsmitarbeiter anbieten würde. Große oder ungewöhnliche Bestellungen gehen über Request for Quote an denselben Innendienst.
 
 Ändern Sie eine Annahme: Der Hersteller kalkuliert Maschinen in SAP und hat kein Revenue Cloud. Dann würde ich Ersatzteile mit Preisbüchern für die Stufen und einem Live-Aufruf an SAP für die 30 Schlüsselkunden bepreisen und keine Preis-Engine nur für den Shop kaufen.
 
-## Wo starten Sie?
+## Preislogik und Vertragspreise aufschreiben
 
 Schreiben Sie drei Dinge auf, bevor Sie mit Salesforce über Lizenzen sprechen: wo Ihre Preislogik heute liegt, wer Vertragspreise pflegt und ob Sie Request for Quote oder konfigurierte Bundles im Shop brauchen. Zeigen zwei der drei Antworten auf Salesforce, lohnt sich ein Proof of Concept mit Ihren echten Procedures. Die Lizenzfrage gehört in dieselbe Prüfung, die ich unter [Make-or-Buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/) beschreibe.
 
 Das Gesamtbild zu Preisen, Angeboten und Checkout steht im Kapitel [Preise, Warenkorb, Checkout](../../masterclass/b2b-commerce/preise-warenkorb-checkout/) der [Masterclass B2B Commerce](../../masterclass/b2b-commerce/). Wie Käufer aus dem Warenkorb ein Angebot machen, zeigt [Request for Quote im B2B-Shop](../request-for-quote-b2b-shop-angebot/), die Händlerseite von KI-Angeboten [KI-Angebote mit dem Partner Sales Assistant](../ki-angebote-haendler-partner-sales-assistant/).
-
-Advanced Pricing lohnt sich, wenn der Shop so rechnen soll, wie der Vertrieb es in Revenue Cloud schon tut.

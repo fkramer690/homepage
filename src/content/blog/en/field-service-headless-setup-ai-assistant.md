@@ -9,11 +9,10 @@ topic: field-service
 categories: [field-service, ai]
 tags: [field service, headless 360, AI assistant, setup, master data, DevOps]
 takeaways:
-  - "In a headless Field Service setup, an AI assistant such as Gemini, Claude or Slackbot reads your website, asks questions, proposes an implementation plan and configures the org after approval."
-  - "It creates territories, operating hours, work types, skill requirements and scheduling policies, plus mobile branding, pre-work briefs and data capture forms."
-  - "The assistant knows your public website. Which technician has which skill, which customer allows visits when and which depot serves which region come from HR, the ERP and the dispatchers."
-  - "Most of what it builds is configuration data, not metadata. Run it in a sandbox and move the result through Git and the pipeline like any other change."
-  - "Before approving, the service manager and the dispatch lead should review territories, work types and policies section by section."
+  - "The assistant creates territories, operating hours, work types, skill requirements and scheduling policies, plus branding and forms for the app."
+  - "It does not know which technician has which skill, when customers allow visits or which depot serves which region. That comes from HR, ERP and dispatch."
+  - "Most of what it builds is configuration data. It works in a sandbox, and the result reaches production through Git and the pipeline."
+  - "The service manager and the dispatch lead review territories, work types and policies section by section before anyone approves the plan."
 faq:
   - q: "What is a headless setup of Salesforce Field Service?"
     a: "Configuring Field Service through a conversation with an AI assistant instead of the Setup menus. According to Trailhead, the assistant uses headless skills in three tiers, orchestration, configuration and feature, and builds the org only after you approve its implementation plan."
@@ -40,7 +39,7 @@ The [Trailhead unit on setting up Field Service headlessly](https://trailhead.sa
 
 In Slack the proposed territories, work types and policies appear as live list views next to the assistant's answers. According to Trailhead, nothing is final until you approve it, and the configuration you approved is what gets built. Technicians then find branding, pre-loaded sample service appointments, pre-work briefs, work plans and data capture forms in the app. How Salesforce brings its platform into Claude and Slack more broadly is described in [AIforce: Salesforce in Claude and Slack](../aiforce-salesforce-in-claude-and-slack/).
 
-## What does the assistant know, and what does it not know?
+## The assistant knows your website, not your dispatching
 
 It starts from your website URL. A machine builder's website shows product lines, locations and perhaps a service promise. It does not show the knowledge that makes scheduling work. In [the master data Field Service needs](../salesforce-field-service-master-data/) I list six kinds of data and their leading systems:
 
@@ -72,7 +71,7 @@ I would review the plan in one workshop with the service manager and the dispatc
 
 Two points deserve extra attention. First, data capture forms. Before forms are built at scale, decide which values become fields on the asset or work order, as I argue in [Field Service mobile: guided work and voice](../salesforce-field-service-mobile-guided-voice/). Voice to form processes what technicians say, which in Germany touches the works council. Second, sample data. The setup loads sample service appointments for technicians, which belong in a sandbox and nowhere else.
 
-## Why does an AI-built configuration still go through Git?
+## An AI-built configuration still goes through Git
 
 Because most of what the assistant creates are records. Territories, operating hours, work types, skill requirements and scheduling policies with their work rules are data in Salesforce. A metadata deployment does not carry them, as the DevOps masterclass chapter on [data and configuration](../../masterclass/devops-release-management/data-and-configuration/) shows. The data capture forms, on the other hand, are flows and therefore metadata.
 
@@ -91,9 +90,9 @@ Review and deploy
 
 Approval in a chat is no review. The person who asked the assistant also approves its plan, just as with the Setup agent. I described why that matters in [Setup with Agentforce: allow admin AI in production?](../setup-with-agentforce-admin-changes/) The assistant is a fast way to build a configuration and a poor way to deploy it.
 
-## A typical scenario, as an assumption: 14 territories cut to 6
+## Worked example: 14 territories cut to 6
 
-A typical scenario, as an assumption: a machine builder with 45 technicians in Germany, Austria and Switzerland. The website lists 14 sales and service locations. All numbers are assumptions.
+Assume a machine builder with 45 technicians in Germany, Austria and Switzerland. The website lists 14 sales and service locations. All numbers are assumptions.
 
 **The proposal.** In a two-hour session the assistant proposes 14 territories, one per location, 22 work types derived from the product pages and a scheduling policy based on Customer First.
 
@@ -103,14 +102,12 @@ A typical scenario, as an assumption: a machine builder with 45 technicians in G
 
 **The effort.** Two hours of chat, three workshop days to review, two days to bring flows and records into the repository and pipeline. The assistant saved the typing in Setup screens. The decisions took as long as before.
 
-## Where should you start?
+## First step: prepare what the website does not show
+
+The website gives the assistant locations and products, but no skills, depots or response times. Where the headless setup fits next to agents and rollout waves is part of the [Field Service masterclass chapter on AI agents and rollout](../../masterclass/field-service/field-service-ai-agents-rollout/).
 
 1. **Prepare what the website lacks**: depot list with technicians, training matrix, work type list with durations, response times from contracts.
 2. **Choose a sandbox** without production data for the headless setup.
 3. **Review the plan** with service manager and dispatch lead before you approve it.
 4. **Bring the result into Git**: flows as metadata, configuration records as a data workspace.
 5. **Decide who may connect an assistant to which org.** Production stays reserved for the pipeline, as in my [DevOps and release management](../../services/devops-release-management/) work.
-
-Where the headless setup fits next to agents and rollout waves is part of the [Field Service masterclass chapter on AI agents and rollout](../../masterclass/field-service/field-service-ai-agents-rollout/).
-
-An AI assistant gets you a Field Service draft quickly, and your people still decide what goes into it.

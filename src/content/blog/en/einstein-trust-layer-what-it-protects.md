@@ -10,8 +10,8 @@ categories: [ai, architecture]
 tags: [einstein trust layer, agentforce, data masking, security, manufacturing]
 takeaways:
   - "In an Agentforce agent the Einstein Trust Layer protects mainly through zero data retention agreements, toxicity scoring and an audit trail in Data 360."
-  - "Salesforce disabled data masking for Agentforce use cases because it added latency and hurt accuracy; masking still works for Prompt Builder and embedded features."
-  - "Masking only detects patterns such as names, email addresses, phone and card numbers; dealer prices and contract terms are never masked, so permissions and action design have to protect them."
+  - "Salesforce disabled data masking for Agentforce because it added latency and hurt accuracy; it still works for Prompt Builder and embedded features."
+  - "Masking detects names, email addresses, phone and card numbers. Dealer prices and contract terms are protected only by permissions and action design."
   - "The audit trail stores the prompt text in Data 360, which makes it a sensitive data store of its own that needs access rules and a retention period."
   - "The Trust Layer covers LLM calls that Salesforce makes; an external model reading CRM data through MCP falls under your contract with that AI provider."
 faq:
@@ -56,7 +56,7 @@ Outside Agentforce masking works "the same as it always has", according to the b
 A dealer net price, a 3 percent rebate or "payment 60 days net" matches none of these patterns. Even where masking is on, it never protects commercial data.
 ```
 
-## Where does the Trust Layer stop?
+## The limits of the Trust Layer
 
 Four limits matter for an architecture decision.
 
@@ -72,7 +72,7 @@ Four limits matter for an architecture decision.
 The audit trail itself stores the prompt text. Whatever an agent puts into a prompt, including prices and personal data, ends up in Data 360 objects. The Trailhead units I read state no retention period, so that decision is yours, and it touches the logging duties described in [EU AI Act deadlines for Agentforce](../eu-ai-act-deadlines-agentforce/).
 ```
 
-## A typical scenario: a dealer agent with net prices
+## Worked example: a dealer agent with net prices
 
 Assume a machine builder with 60 dealers in 14 countries, Service Cloud, a dealer portal on Experience Cloud and SAP as the source for prices and stock. All numbers are assumptions. A service agent in the portal should answer spare part availability and the dealer's own net price; an employee agent should help 15 key account managers prepare dealer reviews.
 
@@ -88,7 +88,7 @@ So the design carries the protection:
 
 In my judgement this is the normal division of labour: the Trust Layer handles the model provider, your design handles who sees what.
 
-## What should a manufacturer configure?
+## Configure masking, agent users and actions
 
 1. **Check the masking state per feature.** Agents: assume off and verify in the audit trail. Prompt Builder and embedded features: decide in Einstein Trust Layer setup which data types to mask, including company name.
 2. **Cut the agent user to the minimum.** One permission set per service agent, no price, margin or contract fields unless an action needs them.
@@ -99,6 +99,4 @@ In my judgement this is the normal division of labour: the Trust Layer handles t
 7. **Check languages.** Salesforce tells developers to verify that each language and locale is supported in the Trust Layer; do it for every dealer country.
 8. **Watch the dashboards.** Toxicity and masking dashboards belong in the weekly review of a new agent.
 
-This configuration is part of my work on [Salesforce architecture](../../services/salesforce-architecture/), because the decisions sit in the data model and permissions, not in the agent prompt.
-
-The Einstein Trust Layer keeps your data away from the model provider's storage, and everything else depends on permissions and action design you control.
+This configuration is part of my work on [Salesforce architecture](../../services/salesforce-architecture/), because the decisions sit in the data model and permissions, not in the agent prompt. What the Trust Layer itself still gives an agent is mainly that the model provider does not store your data.

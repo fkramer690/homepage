@@ -10,11 +10,11 @@ pubDate: 2026-10-28
 short: "KI-Agenten, Einführung, Betrieb"
 summary: "Welche Field-Service-Agenten heute tragen, wie Sie in Wellen einführen, was ein KI-Assistent einrichten darf und welche Kennzahlen danach zählen."
 takeaways:
-  - "Für einen Maschinenbauer lohnen sich zuerst die proaktive Wartungsbuchung und der vorformulierte Einsatzbericht, weil beide häufig vorkommen und bekannten Regeln folgen."
-  - "Kundenseitige Agenten kosten 20 Flex Credits pro Aktion, Sprachaktionen 30; Funktionen für Mitarbeitende kosten 125 Dollar pro Nutzer und Monat als Add-on oder stecken in Agentforce 1 Field Service für 650 €."
-  - "Agenten für Fehlersuche und Ersatzteile hängen an Daten des Herstellers: Handbücher mit dem Produktschlüssel des Assets und eine As-built-Stückliste je Seriennummer."
-  - "Ein KI-Assistent kann Field Service nach Freigabe seines Plans ohne Setup-Masken einrichten; lassen Sie ihn in einer Sandbox arbeiten und bringen Sie das Ergebnis über Git und die Pipeline in Produktion."
-  - "Führen Sie in Wellen nach Region oder Land ein, holen Sie den Betriebsrat vor der ersten Welle dazu und messen Sie sechs Kennzahlen gegen eine Ausgangsbasis aus dem Altsystem."
+  - "Zuerst lohnen sich die proaktive Wartungsbuchung und der vorformulierte Einsatzbericht, weil beide häufig vorkommen und bekannten Regeln folgen."
+  - "Kundenseitige Agenten kosten 20 Flex Credits pro Aktion, Sprachaktionen 30. Funktionen für Mitarbeitende kosten 125 Dollar pro Nutzer und Monat als Add-on."
+  - "Agenten für Fehlersuche und Ersatzteile brauchen Handbücher mit dem Produktschlüssel des Assets und eine As-built-Stückliste je Seriennummer."
+  - "Ein KI-Assistent kann Field Service ohne Setup-Masken einrichten. Lassen Sie ihn in einer Sandbox arbeiten und bringen Sie das Ergebnis über die Pipeline live."
+  - "Führen Sie in Wellen nach Region ein, holen Sie den Betriebsrat vor der ersten Welle dazu und messen Sie gegen eine Ausgangsbasis aus dem Altsystem."
 articles: [field-service-ai-agents-today, breakdown-hotline-voice-agent, field-service-ai-troubleshooting-manuals, spare-parts-serial-number-ai, field-service-headless-setup-ai, field-service-rollout, field-service-kpis-after-go-live]
 faq:
   - q: "Mit welchem KI-Agenten sollte ein Maschinenbauer in Field Service beginnen?"
@@ -65,7 +65,7 @@ Diese Schranken gehören in deterministische Logik, nicht in den Prompt. Ich wü
 
 Die Regeltabelle, die Muster in Agent Script und die Kosten eines Anrufs in Sprachaktionen oder Sprachminuten stehen in [Störungshotline mit Agentforce Voice: erst die Triage](../../../blog/stoerungshotline-agentforce-voice-deutsch/).
 
-## Warum brauchen Agenten für Fehlersuche und Ersatzteile zuerst Ihre Daten?
+## Agenten für Fehlersuche und Ersatzteile brauchen zuerst Ihre Daten
 
 Beide Agenten hängen an Dokumenten und Stücklisten, die nur der Hersteller in Ordnung bringen kann.
 
@@ -103,7 +103,7 @@ Zwei Regeln würde ich nicht aufweichen:
 
 Die Prüftabelle je Planabschnitt steht in [Field Service per KI-Assistent einrichten: Was prüfen?](../../../blog/field-service-einrichtung-ki-assistent/).
 
-## Warum Field Service in Wellen einführen?
+## Field Service kommt in Wellen nach Region oder Land
 
 Ich empfehle, Field Service in Wellen einzuführen, Region für Region oder Land für Land. Jede Welle bringt ihre eigenen Stammdaten, Disponenten, Techniker und Partner mit, und die erste Welle testet alles, worauf die späteren bauen. Fehlen Skills oder Besuchszeiten, trifft das ein Gebiet und nicht den ganzen Außendienst.
 
@@ -135,9 +135,9 @@ Scheduling Policies, Gebiete, Arbeitstypen und Betriebszeiten sind Datensätze, 
 | Product Owner für Agenten | Triage-Regeln, Buchungsschranken und der Testbestand aus echten Anrufen und Fehlern. |
 | IT | Schnittstellen zu ERP und PLM, Monitoring und Backup, wie im DevOps-Kapitel [Monitoring und Backup nach dem Go-live](../../devops-release-management/betrieb-monitoring-backup/) beschrieben. |
 
-## Ein typisches Szenario, als Annahme: drei Wellen in neun Monaten
+## Rechenbeispiel: drei Wellen in neun Monaten
 
-Ein typisches Szenario, als Annahme: ein Komponentenhersteller mit 90 Technikern in drei Regionen, SAP als ERP und Field Service in drei Wellen über neun Monate. Alle Zahlen sind Annahmen, sie zeigen die Reihenfolge der Entscheidungen.
+Angenommen ist ein Komponentenhersteller mit 90 Technikern in drei Regionen, SAP als ERP und Field Service in drei Wellen über neun Monate. Alle Zahlen sind Annahmen, sie zeigen die Reihenfolge der Entscheidungen.
 
 ```schritte
 Vor der ersten Welle
@@ -152,7 +152,7 @@ Region drei in einem anderen Land | Monate 7 bis 9
 
 Die Fehlersuche wartet, bis die Handbücher den Produktschlüssel des Assets tragen, der Ersatzteilagent, bis das PLM As-built-Stücklisten über eine API liefert. Der monatliche Kennzahlentermin entscheidet, wo der nächste Agent hinkommt.
 
-## Was sollten Sie vor der ersten Welle entscheiden?
+## Den ersten Agenten mit einem messbaren Ziel auswählen
 
 | Entscheidung | Was dazugehört |
 |---|---|
@@ -162,6 +162,4 @@ Die Fehlersuche wartet, bis die Handbücher den Produktschlüssel des Assets tra
 | Definitionen der Kennzahlen und Ausgangsbasis | Vor dem Go-live. |
 | Verantwortliche | Dazu die Regel, dass KI-gebaute Konfiguration nur über die Pipeline in Produktion kommt, wie in meiner Arbeit zu [DevOps und Release-Management](../../../leistungen/devops-und-release-management/). |
 
-Mit diesem Kapitel endet die Masterclass; Assets und Teile stehen in [Kapitel 4](../field-service-assets-wartung-teile/), alle Kapitel auf der [Übersichtsseite](../).
-
-Field Service rechnet sich, wenn Agenten dort starten, wo die Daten sauber sind, Wellen mit dem Betriebsrat beginnen und die Zahlen vor dem Go-live feststehen.
+Legen Sie diese Punkte schriftlich fest, bevor die erste Region plant. Mit diesem Kapitel endet die Masterclass; Assets und Teile stehen in [Kapitel 4](../field-service-assets-wartung-teile/), alle Kapitel auf der [Übersichtsseite](../).

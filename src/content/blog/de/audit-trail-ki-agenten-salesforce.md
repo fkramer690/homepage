@@ -9,11 +9,11 @@ topic: security
 categories: [architecture, ai]
 tags: [Audit-Trail, Event Monitoring, Agentforce, Hosted MCP, Betriebsrat, Fertigung]
 takeaways:
-  - "Ein Audit-Trail für KI-Agenten in Salesforce besteht aus mehreren Logs: Trust-Layer-Auditdaten, Session Tracing, API-Ereignisprotokolle, Setup Audit Trail, Feldhistorie und die Logs des KI-Anbieters."
-  - "Trust-Layer-Audit-Trail und Session Tracing liegen in Data 360 und speichern Prompts, Antworten und Aktionseingaben; die Salesforce-Seiten, die ich gelesen habe, nennen dafür keine Aufbewahrungsdauer."
-  - "Aufrufe über Hosted MCP erscheinen mit dem benannten Benutzer in den API-Logs; ohne kostenpflichtiges Event Monitoring werden diese Dateien nur einen Tag aufbewahrt."
-  - "Bezahltes Event Monitoring hält Logs standardmäßig 30 Tage und bis zu ein Jahr, aber nie vor Vertragsbeginn; die Entscheidung gehört deshalb vor den Go-live."
-  - "Personenbezogene Logs zur Nutzung von Agenten und KI-Tools sind auch Überwachungsdaten; Aufbewahrung, Leserechte und Auswertungen klären Sie mit Datenschutz und Betriebsrat in einer Runde."
+  - "Zum Audit-Trail gehören Trust-Layer-Auditdaten, Session Tracing, API-Ereignisprotokolle, Setup Audit Trail, Feldhistorie und die Logs des KI-Anbieters."
+  - "Trust-Layer-Audit-Trail und Session Tracing speichern Prompts, Antworten und Aktionseingaben in Data 360, eine Aufbewahrungsdauer nennt Salesforce nicht."
+  - "Hosted-MCP-Aufrufe stehen mit dem benannten Benutzer in den API-Logs, ohne bezahltes Event Monitoring aber nur einen Tag lang."
+  - "Bezahltes Event Monitoring hält Logs 30 Tage bis ein Jahr, aber nie vor Vertragsbeginn, deshalb fällt die Entscheidung vor dem Go-live."
+  - "Personenbezogene Agenten-Logs sind auch Überwachungsdaten, Aufbewahrung und Leserechte klären Sie mit Datenschutz und Betriebsrat gemeinsam."
 faq:
   - q: "Wo speichert Salesforce den Audit-Trail eines Agentforce-Agenten?"
     a: "In Data 360. Laut Salesforce-Hilfe liegen dort die Audit- und Feedbackdaten der generativen KI, darunter der maskierte Prompt, die Antwort des LLM und die unmaskierte Antwort, die der Benutzer gesehen hat. Die Datenerfassung muss im Einstein-Setup eingeschaltet werden."
@@ -70,7 +70,7 @@ Diese Logs sind selbst ein Speicher personenbezogener Daten: Die Eingabe einer A
 
 Liest Claude, ChatGPT oder Cursor Salesforce-Daten über Hosted MCP, erscheinen die Aktionen laut den [Security Best Practices](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/security-best-practices.html) "in standard Salesforce API logs with full user attribution". Sie filtern sie mit `API_CLIENT_CATEGORY = SALESFORCE_HOSTED_MCP`. Die Logs zeigen Operationen, Objekte und Zeitstempel pro Benutzer; das Berechtigungsmodell steht in [Hosted MCP Server und Datenzugriff](../salesforce-hosted-mcp-server-datenzugriff/).
 
-Der Haken ist die Aufbewahrung. Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/event_monitoring/event_monitoring_intro) erhalten Orgs der Enterprise, Unlimited und Performance Edition einige Ereignistypen kostenlos, darunter Login, Logout und API Total Usage, mit einem Tag Aufbewahrung. Nach meiner Lesart hat eine Org ohne Add-on, die diese Dateien nicht täglich herunterlädt, gar keine MCP-Historie.
+Schwierig wird es bei der Aufbewahrung. Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/event_monitoring/event_monitoring_intro) erhalten Orgs der Enterprise, Unlimited und Performance Edition einige Ereignistypen kostenlos, darunter Login, Logout und API Total Usage, mit einem Tag Aufbewahrung. Nach meiner Lesart hat eine Org ohne Add-on, die diese Dateien nicht täglich herunterlädt, gar keine MCP-Historie.
 
 Mit Shield oder dem Event-Monitoring-Add-on bleiben Logs laut [Event-Monitoring-FAQ](https://help.salesforce.com/s/articleView?id=000396295&language=en_US&type=1) standardmäßig 30 Tage und bis zu ein Jahr. Die Angreifer im Fall Salesloft Drift waren [laut The Hacker News](https://thehackernews.com/2025/08/salesloft-oauth-breach-via-drift-ai.html) vom 8. August bis mindestens 18. August 2025 aktiv. Eine Frage an Tag zehn braucht also Logs ab Tag eins. Die Token-Seite dieses Vorfalls beschreibe ich in [Connected Apps und OAuth: Lehren aus Drift](../connected-apps-oauth-ki-integrationen/).
 
@@ -82,7 +82,7 @@ Die bezahlte Stufe bringt Ereignistypen wie [Unique Query](https://developer.sal
 
 Die Salesforce-Logs enden dort, wo die Daten Salesforce verlassen. Für Claude gibt es [Audit-Logs von Anthropic](https://support.claude.com/en/articles/9970975-access-audit-logs) nur für Enterprise-Organisationen. Sie erfassen Anmeldungen, Datei-Uploads und angelegte, gelöschte oder umbenannte Unterhaltungen, ohne Chatinhalte, und ein Export umfasst die letzten 180 Tage. Jedem anderen KI-Anbieter würde ich dieselben Fragen stellen: welche Ereignisse, wie lange, welcher Export.
 
-## Welche Logs zeigen, wer den Agenten geändert hat?
+## Setup Audit Trail und Feldhistorie zeigen, wer den Agenten geändert hat
 
 Für die Konfiguration enthält der [Setup Audit Trail](https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_setupaudittrail.htm) Änderungen im Setup "for at least the last 180 days". Eine Prüfung der Garantieentscheidung vom letzten Jahr findet die Änderung dort nicht mehr. Ich würde Agentendefinitionen in einer Versionsverwaltung halten und über eine Pipeline ausrollen, wie in [Agentforce-Agenten testen und freigeben](../agentforce-agenten-testen-freigeben/) beschrieben, denn eine Repository-Historie läuft nicht ab.
 
@@ -94,7 +94,7 @@ Für Daten deckt die Feldhistorie laut [Field-Audit-Trail-Leitfaden](https://dev
 
 Sechs Monate nehme ich trotzdem als Richtwert, und die Tabelle zeigt die Lücken: ein Tag für kostenlose API-Logs, standardmäßig 30 Tage für bezahlte und keine genannte Dauer für die Logs in Data 360. Länger heißt allerdings nicht automatisch besser. Logs pro benanntem Benutzer zeigen, wer wann was gefragt hat, und damit sind sie in Deutschland ein Thema für den Betriebsrat, siehe [KI-Coding, Betriebsrat und DSGVO](../ki-coding-betriebsrat-dsgvo/).
 
-## Ein typisches Szenario: drei Fragen in einem Quartal
+## Beispiel: drei Anfragen in einem Quartal
 
 Nehmen wir einen Maschinenbauer mit 90 Händlern, einem Agentforce-Serviceagenten im Händlerportal, der Fragen zum Garantiestatus beantwortet und Anträge anlegt, und 25 Mitarbeitenden im Service-Innendienst, die über Hosted MCP mit Claude Enterprise arbeiten. Event Monitoring ist nicht gekauft. Alle Zahlen sind Annahmen.
 
@@ -104,7 +104,7 @@ Nehmen wir einen Maschinenbauer mit 90 Händlern, einem Agentforce-Serviceagente
 
 **Woche 11, eine Händlerbeschwerde.** Ein Händler sagt, ein Wettbewerber kannte seine Nettopreise. Wer hat seine Preisvereinbarung in den letzten 40 Tagen über MCP gelesen? Ohne täglichen Download gäbe es nur die Datei von gestern. Mit ihm liefert der Filter auf `SALESFORCE_HOSTED_MCP` drei Benutzer aus dem Händlermanagement, und die Untersuchung geht weiter.
 
-## Was sollten Sie vor dem Go-live klären?
+## Auditdaten und Tracing vor dem ersten Gespräch einschalten
 
 1. **Auditdatenerfassung und Tracing einschalten**, bevor das erste produktive Gespräch läuft. Nachträglich wird nichts befüllt.
 2. **Ein Log-Inventar schreiben**: beantwortete Frage, Verantwortliche, Leserechte, Aufbewahrung, Löschung.
@@ -113,6 +113,4 @@ Nehmen wir einen Maschinenbauer mit 90 Händlern, einem Agentforce-Serviceagente
 5. **Agentendefinitionen außerhalb des Setups versionieren.**
 6. **Betriebsvereinbarung und Löschkonzept des Datenschutzes gemeinsam klären**, denn beide betreffen dieselben Logs.
 
-Ein Log-Inventar mit Verantwortlichen gehört zu meiner Arbeit in der [Salesforce-Architektur](../../leistungen/salesforce-architektur/).
-
-Agenten treffen Entscheidungen in Ihrer Org, also brauchen die Logs, die diese Entscheidungen erklären, einen Verantwortlichen und eine Aufbewahrungsdauer, bevor die erste Prüferin fragt.
+Für das Inventar reicht anfangs eine Tabelle mit einer Zeile pro Log und den Spalten aus Punkt 2. Ein Log-Inventar mit Verantwortlichen gehört zu meiner Arbeit in der [Salesforce-Architektur](../../leistungen/salesforce-architektur/).

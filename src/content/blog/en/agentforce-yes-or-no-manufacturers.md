@@ -9,11 +9,11 @@ topic: ai
 categories: [ai, manufacturing-cloud]
 tags: [agentforce, ai agents, manufacturing, business case, flex credits, erp]
 takeaways:
-  - "Start with Agentforce now if one process has high volume, clear rules, clean asset and order data and an API to the ERP; if one of these is missing, fix it first."
+  - "If volume, clear rules, clean asset and order data or the ERP API are missing, fix that before the first agent."
   - "One Agentforce action costs 20 Flex Credits, which is $0.10 at the list price of $500 per 100,000 credits; the same action in a sandbox costs 16 credits."
   - "The Core, Advanced and Max editions include 500,000, 1 million and 2.75 million Flex Credits per org and year; if the pool runs out, you buy more credits."
-  - "Salesforce is not the answer for decisions the ERP already makes, for the shop floor or for rare expert questions where volume never pays back the build and test effort."
-  - "Gartner expects more than 40 percent of agentic AI projects to be cancelled by the end of 2027; a go or no-go date agreed before the pilot protects the budget."
+  - "Decisions the ERP already makes, the shop floor itself and rare expert questions do not belong in an agent in Salesforce."
+  - "Gartner expects more than 40 percent of agentic AI projects to be cancelled by the end of 2027. A fixed go or no-go date protects the budget."
 faq:
   - q: "Is Agentforce worth it for a mid-sized manufacturer?"
     a: "It is worth it when one process has thousands of similar requests per month, the data behind it is maintained and the ERP can be reached through an API. For rare or highly technical questions the cost of building, testing and maintaining an agent rarely pays back."
@@ -36,7 +36,7 @@ What is live at manufacturers is narrower than what is announced. Siemens, the m
 
 So the open question is whether your first process is ready. Five criteria decide that.
 
-## Five criteria for the Agentforce decision
+## The criteria for the Agentforce decision
 
 ### 1. Is there enough volume?
 
@@ -71,7 +71,7 @@ Data 360 also charges 150 credits per MB for unstructured documents such as manu
 
 On 3 September 2026 Salesforce announced [Core, Advanced and Max editions](https://www.salesforce.com/news/stories/salesforce-simplifies-editions-2026/) at $195, $395 and $550 per user and month, with 500,000, 1 million and 2.75 million Flex Credits included. The release itself gives no period, but the [Sales Cloud pricing page](https://www.salesforce.com/sales-cloud/pricing/) lists the pools per org and year. One pool for the whole org runs out quickly when several agents draw on it. Pricing for existing customers on legacy editions stays unchanged. New pricing for the Industries editions was announced for "later this fall". For manufacturers, the Manufacturing Cloud page already lists the full Agentforce for Industries suite only in the Max editions, at $650 or $700 per user and month. If you are mid-contract, the practical question is whether to buy credits for one process now or change editions at renewal. I look at that in [the editions Core, Advanced and Max](../salesforce-editions-core-advanced-max/).
 
-## A typical scenario: three candidates at a machine builder
+## Worked example: three candidates at a machine builder
 
 Assume a machine builder with SAP, Sales Cloud and Service Cloud, a dealer network and a dealer portal. All numbers below are assumptions to show the method. IT collects three ideas for a first agent.
 
@@ -83,7 +83,7 @@ Assume a machine builder with SAP, Sales Cloud and Service Cloud, a dealer netwo
 
 One of three is ready. In my judgement that is a normal ratio, and one solid start beats three parallel pilots.
 
-## Where is Salesforce not the answer?
+## Where Salesforce is not the answer
 
 Part of an honest decision is naming where an agent in Salesforce does not belong:
 
@@ -95,13 +95,13 @@ Part of an honest decision is naming where an agent in Salesforce does not belon
 
 These questions are part of my [make-or-buy and licence planning](../../services/make-or-buy-licences/), because sometimes the cheapest agent is the one you do not build in Salesforce.
 
-## How do you start without a pilot that goes nowhere?
+## Pick one process and one target number
 
 Gartner [expects](https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027) more than 40 percent of agentic AI projects to be cancelled by the end of 2027, citing rising costs, unclear business value and inadequate risk controls. These steps address all three:
 
 ```schritte
 Pick one process
-  One process that passes the five criteria, and one target number, for example the share of dealer enquiries answered without a service rep.
+  One process that passes all the criteria above, and one target number, for example the share of dealer enquiries answered without a service rep.
 Measure the baseline
   Volume, handling time, error rate.
 Check your contract
@@ -113,5 +113,3 @@ Put rules into logic
 Agree a go or no-go date
   Before the pilot starts, for example after eight weeks against the target number.
 ```
-
-Start with Agentforce where volume, data and ERP access are in place, and use the time elsewhere to get them there.

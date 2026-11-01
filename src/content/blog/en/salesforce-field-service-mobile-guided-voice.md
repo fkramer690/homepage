@@ -9,11 +9,10 @@ topic: field-service
 categories: [field-service]
 tags: [field service, mobile, manufacturing, service, voice]
 takeaways:
-  - "In October 2026 Salesforce announced guided workflows that adapt to the situation, a headless setup that digitises paper forms and voice input that fills forms for the Field Service mobile app."
-  - "According to Salesforce research, field workers spend about 18 percent of their working time on admin, and 43 percent of organisations still use paper logs in the field."
-  - "For manufacturers the main value lies in complete, structured service data: inspection results, measured values and spare parts that reach the back office and the ERP without retyping."
-  - "Digitising a paper form quickly only helps if the data model behind it is right; otherwise a bad form simply becomes a bad digital form."
-  - "Voice input in Germany needs early alignment with data protection and, where one exists, the works council, because it processes employees' speech."
+  - "According to Salesforce research, field workers spend about 18 percent of their time on admin, and 43 percent of organisations still use paper logs."
+  - "For manufacturers, complete service data counts: inspection results, measured values and parts reach the back office and the ERP without retyping."
+  - "A quickly digitised paper form only helps with a sound data model behind it. Otherwise a bad form simply becomes digital."
+  - "Voice input processes employees' speech, so it needs data protection and, where one exists, the works council on board early."
 faq:
   - q: "What is new in the Salesforce Field Service mobile app?"
     a: "Salesforce announced a guided experience with step-by-step guidance that adapts to the job, a headless setup that creates digital forms from paper templates or existing mobile flows, and voice to form, which fills form fields from spoken input."
@@ -48,7 +47,7 @@ source: Salesforce research, cited in the blog post on guided mobile work of 20 
 The announcement shows demos, but does not state availability, editions or licences. Before planning a rollout, check the release notes and talk to your account team.
 ```
 
-## Why does this matter for manufacturers?
+## For manufacturers, complete service data is what counts
 
 In manufacturing, field service is often where the customer relationship is decided. Technicians install machines, carry out maintenance, repair breakdowns and inspect equipment. What they record on site feeds several processes at once:
 
@@ -72,11 +71,11 @@ Guided workflows make the biggest difference where jobs vary and mistakes are ex
 
 The prerequisite is that the logic behind the guidance is well defined. Someone has to decide which steps apply to which asset, which values are mandatory and which results trigger follow-up actions. That is process and data work, and it belongs to the service organisation, not only to IT.
 
-## What is the catch with digitising paper forms quickly?
+## Quick digitising keeps the flaws of the paper form
 
 The headless setup promises to turn a paper form into a digital one in very little time. That is useful, because many service organisations have dozens of protocols and checklists that never made it into the system.
 
-But a fast digital copy of a form is only as good as the form itself. Typical problems I would check first:
+But a fast digital copy keeps every flaw of the paper form. Typical problems I would check first:
 
 - **Fields without a clear meaning**, such as a free text field "remarks" that contains half the relevant information.
 - **Duplicate data**, where the form asks for information that already exists on the asset or work order.
@@ -95,7 +94,7 @@ Voice input is attractive for technicians who work with gloves, at height or in 
 
 It also makes sense to define which fields may be filled by voice and which values the technician has to confirm, for example measured values relevant to safety.
 
-## How should you introduce the new features?
+## Pick one high-volume job type
 
 A pragmatic order for a manufacturer with field service:
 
@@ -114,6 +113,4 @@ Measure the effect
   Time spent on documentation, completeness of reports, time until invoicing.
 ```
 
-Whether technicians then actually use the new features depends on what they get out of them. That is the subject of [Field Service app: getting technicians on board](../field-service-app-technician-adoption/).
-
-Good field service data is also the foundation for AI agents in service, which need reliable information to work with, as I explain in [why Agentforce needs business value and data quality first](../agentforce-business-value-data-quality-first/).
+Whether technicians then actually use the new features depends on what they get out of them. That is the subject of [Field Service app: getting technicians on board](../field-service-app-technician-adoption/). Complete field service data is also what any AI agent in service needs later, as I explain in [why Agentforce needs business value and data quality first](../agentforce-business-value-data-quality-first/).

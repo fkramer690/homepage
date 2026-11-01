@@ -9,10 +9,9 @@ topic: revenue
 categories: [revenue-cloud, devops]
 tags: [Salesforce CPQ, Revenue Cloud, Migration, Cutover, Datenmigration]
 takeaways:
-  - "Eine Migration von Salesforce CPQ zu Revenue Cloud ist ein Neuaufbau auf Standardobjekten. Laut Salesforce-Hilfe unterscheiden sich die Datenmodelle deutlich, Berichte werden neu gebaut."
-  - "Die Salesforce-Hilfe teilt die Migration in drei Phasen: vorbereiten, Strategie wählen, umsetzen. Jede Phase wird abgeschlossen, bevor die nächste beginnt."
-  - "Salesforce nennt 3 bis 6 Monate von der Analyse bis zum Go-live als typisch, bei komplexen Orgs mehr. Eine Frist gibt es nicht, weil CPQ kein End-of-Life-Datum hat."
-  - "Daten wandern in der Reihenfolge ihrer Abhängigkeiten: zuerst Katalog und Attribute, dann Verkaufsmodelle und Preise, dann Assets aus offenen Abos, zuletzt Billing-Daten."
+  - "Laut Salesforce-Hilfe unterscheiden sich die Datenmodelle deutlich. Berichte werden neu gebaut, nicht migriert."
+  - "Eine Frist gibt es nicht, weil CPQ kein End-of-Life-Datum hat. Den Termin setzt Ihr Lizenzvertrag."
+  - "Zuerst wandern Katalog und Attribute, dann Verkaufsmodelle und Preise, dann Assets aus offenen Abos, zuletzt Billing-Daten."
   - "Migrationswerkzeuge von Forsys, IdeaHelix und Prodly beschleunigen das Mapping. Preisführung, Cutover-Termin und Umfang der Historie entscheidet der Kunde."
 faq:
   - q: "Wie lange dauert eine Migration von Salesforce CPQ zu Revenue Cloud?"
@@ -46,7 +45,7 @@ Was das für die Migration heißt, Baustein für Baustein:
 
 Den ausführlichen Vergleich finden Sie in [Salesforce CPQ und Revenue Cloud: die echten Unterschiede](../salesforce-cpq-revenue-cloud-unterschiede/). Für die Planung reicht ein Punkt: Es gibt keinen Upgrade-Knopf, und jede Zeile dieser Tabelle ist ein Arbeitspaket.
 
-## Wie strukturiert Salesforce die Migration?
+## Salesforce teilt die Migration in drei Phasen
 
 Der Hilfeartikel [Migrate to Revenue Management](https://help.salesforce.com/s/articleView?language=en_US&id=ind.rev_data_migration.htm&type=5) gibt den Rahmen vor. Die Arbeit läuft in Phasen, und Salesforce verlangt, alle Aufgaben einer Phase in der genannten Reihenfolge abzuschließen, bevor die nächste beginnt:
 
@@ -63,7 +62,7 @@ Einen festen Zeitrahmen setzt die Hilfe nicht. Die CPQ-Seite nennt 3 bis 6 Monat
 
 Der Lizenzpunkt betrifft das Budget. Während des Aufbaus erstellt CPQ weiter Angebote in Produktion, Sie zahlen also für die Dauer des Projekts CPQ und Revenue Cloud parallel. Ein Grund mehr, die Migration nicht über Jahre zu strecken.
 
-## In welcher Reihenfolge wandern die Daten?
+## Die Daten wandern in der Reihenfolge ihrer Abhängigkeiten
 
 Die Hilfe nennt drei Gruppen: Produktdaten, Asset-Daten und Billing-Daten. Die Reihenfolge innerhalb dieser Gruppen folgt den Abhängigkeiten, die der Revenue Cloud Developer Guide in seiner [Object Deployment Reference](https://developer.salesforce.com/docs/atlas.en-us.revenue_lifecycle_management_dev_guide.meta/revenue_lifecycle_management_dev_guide/deployment_appendix_A.htm) aufführt. Eltern vor Kindern, Metadaten vor Datensätzen:
 
@@ -76,7 +75,7 @@ Die Hilfe nennt drei Gruppen: Produktdaten, Asset-Daten und Billing-Daten. Die R
 ```hinweis tipp
 Zwei Regeln von meiner Seite. Erstens: **Offene Abos vor ihrem nächsten Verlängerungstermin migrieren.** Ein Vertrag, der zwei Wochen nach dem Go-live noch in CPQ verlängert wird, erzeugt genau die doppelte Arbeit, die Sie vermeiden wollen.
 
-Zweitens: **Abgeschlossene Angebote nicht migrieren.** Sie bleiben als lesbare Historie in CPQ oder gehen in ein Archiv. Niemand ändert ein Angebot aus 2021.
+Die zweite Regel: **Abgeschlossene Angebote nicht migrieren.** Sie bleiben als lesbare Historie in CPQ oder gehen in ein Archiv. Niemand ändert ein Angebot aus 2021.
 ```
 
 Wie Katalog und Preise danach von der Sandbox in die Produktion kommen, ist ein eigenes Thema: [Revenue Cloud Deployments](../revenue-cloud-konfiguration-deployment/).
@@ -89,9 +88,9 @@ Diese Werkzeuge sparen Zeit bei Produkten, Preisbucheinträgen und Abos. Die Hil
 
 Beim Vergleich von Partnerangeboten würde ich jeden Partner nach denselben drei Zahlen fragen: wie viele Preisregeln, Produktregeln und Skripte er in Ihrer Org gezählt hat und was er mit jedem vorhat. Wer ohne Zählung anbietet, verkauft eine Spanne. Wie Sie solche Angebote vergleichen und welches Vertragsmodell passt, beschreiben [Festpreis statt Aufwand](../festpreis-statt-aufwand-ki-salesforce/) und das Kapitel der KI-Masterclass zu [AIforce und Systemintegratoren](../../masterclass/ki-salesforce/aiforce-und-systemintegratoren/).
 
-## Ein typisches Szenario, als Annahme
+## Rechenbeispiel: ein Komponentenhersteller mit CPQ seit 2018
 
-Ein Komponentenhersteller nutzt Salesforce CPQ seit 2018. Er hat 60 Nutzer, die Angebote erstellen, 1.200 Produkte, 40 Preisregeln, ein Quote Calculator Plugin mit über Jahre gewachsener Logik und 3.500 aktive Service-Abos für Fernüberwachung. Rechnungen kommen aus SAP. Alle Zahlen sind Annahmen.
+Angenommen, ein Komponentenhersteller nutzt Salesforce CPQ seit 2018. Er hat 60 Nutzer, die Angebote erstellen, 1.200 Produkte, 40 Preisregeln, ein Quote Calculator Plugin mit über Jahre gewachsener Logik und 3.500 aktive Service-Abos für Fernüberwachung. Rechnungen kommen aus SAP. Alle Zahlen sind Annahmen.
 
 Der Plan könnte so aussehen:
 
@@ -115,5 +114,3 @@ Diese Entscheidungen gehören Ihnen, nicht dem Partner und nicht dem Werkzeug:
 - **Lizenzende:** wann der CPQ-Vertrag ausläuft. CPQ hat kein End-of-Life-Datum, dieser Termin liegt also ganz bei Ihnen.
 
 Ob Sie überhaupt umsteigen oder vorerst bei CPQ bleiben, behandelt [CPQ behalten oder zu Revenue Cloud wechseln?](../cpq-behalten-oder-revenue-cloud/). Das ganze Thema finden Sie im Masterclass-Kapitel [Von CPQ zu Revenue Cloud](../../masterclass/revenue-cloud/von-cpq-zu-revenue-cloud/), und mehrere Partner durch einen solchen Umstieg zu steuern, gehört zu meiner Arbeit in der [Partnersteuerung](../../leistungen/partnersteuerung/).
-
-Eine CPQ-Migration gelingt, wenn Preisführung, Cutover und Historie entschieden sind, bevor der erste Partner baut.

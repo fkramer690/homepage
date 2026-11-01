@@ -10,11 +10,10 @@ pubDate: 2026-10-28
 short: "Data and configuration"
 summary: "Which configuration and reference data is not metadata, how it moves through the pipeline and how sandboxes stay masked."
 takeaways:
-  - "Field Service scheduling policies, work rules, operating hours and custom settings records are data; a metadata deployment does not carry them."
-  - "Configuration data belongs in the repository and runs through the same pipeline after the metadata deployment, matched on external IDs instead of Salesforce IDs."
-  - "SFDMU is an open-source Salesforce CLI plugin for data migration; sfdx-hardis runs it as a deployment action, and Gearset, Copado and Flosum have their own data modules."
+  - "Configuration data belongs in the repository and runs through the same pipeline after the metadata deployment, matched on external IDs."
+  - "SFDMU is an open-source Salesforce CLI plugin. sfdx-hardis runs it as a deployment action, while Gearset, Copado and Flosum have their own data modules."
   - "Master data such as products and prices from SAP arrives through the integration or as a seed data set, never by deployment from a sandbox to production."
-  - "After every refresh of a partial or full sandbox, masking runs before partners get access; Salesforce Data Mask & Seed is one option for this."
+  - "After every refresh of a partial or full sandbox, masking runs before partners get access. Salesforce Data Mask & Seed is one option for this."
 articles: [sandbox-data-ai-coding-agents, sfdx-hardis-introduction, sfdx-hardis-training, client-owned-devops-tools]
 faq:
   - q: "Why don't custom settings records come along with a deployment?"
@@ -61,9 +60,7 @@ For a manufacturer, that means:
 In an existing org I would not rebuild every custom setting. I would write into the partner rules, though, that new configuration is built as a custom metadata type unless there is a business reason against it. Who sets and enforces these rules is covered in [chapter 2](../release-process-ownership-roles/).
 ```
 
-## How does configuration data move through the pipeline?
-
-Three things make a data step repeatable.
+## Configuration data runs through the same pipeline
 
 **External IDs instead of Salesforce IDs.** A work rule has a different Salesforce ID in every org. A data step has to recognise the record by a business key, or it creates duplicates on the second run. I give every configuration object a field marked as external ID, holding a readable code such as `WR_SKILL_HYDRAULICS`.
 
@@ -129,7 +126,7 @@ Open access
 
 Coding agents get a stricter rule, described in [chapter 8 of the AI masterclass](../../ai-salesforce/ai-code-best-practices/): they work in scratch orgs and developer sandboxes with seed data, never in a full copy.
 
-## A typical scenario, as an assumption: Field Service for maintenance
+## Worked example: Field Service for maintenance
 
 Assume a machine builder introducing Field Service for maintenance and repairs at customer sites. Two partners work on the same org, and SAP supplies products, material numbers and prices. All numbers are assumptions.
 
@@ -145,9 +142,9 @@ With a data step, the same go-live looks different:
 
 On Gearset, Copado or Flosum the structure would be the same, with a data template instead of `export.json`. What counts is that no manual data step is left in the release plan.
 
-## What belongs in the partner rules?
+## These rules belong in the partner contract
 
-I would write five rules into every contract:
+I would write these into every contract:
 
 1. Configuration data is never edited directly in a stage org, only in the repository.
 2. Every configuration object has an external ID.
@@ -156,5 +153,3 @@ I would write five rules into every contract:
 5. No partner gets access to a sandbox before masking has run after the refresh.
 
 When to schedule data steps in the release calendar, and how the three Salesforce releases a year fit in, is covered in [chapter 8](../release-planning-salesforce-releases/). Data steps and sandbox levels are part of my work in [DevOps and release management](../../../services/devops-release-management/).
-
-Configuration data deserves the same route as code: repository, review, pipeline, with customer data kept masked.

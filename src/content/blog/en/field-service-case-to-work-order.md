@@ -9,11 +9,11 @@ topic: field-service
 categories: [field-service, architecture]
 tags: [field service, work order, service appointment, case, work type, manufacturing]
 takeaways:
-  - "In Salesforce Field Service a case holds the customer's problem, a work order the job to be done, line items the subtasks and a service appointment the visit that gets scheduled."
-  - "Work types are templates for kinds of jobs such as annual maintenance or breakdown repair. They carry duration and required skills and can create the service appointment automatically."
-  - "Not every case needs a visit. The hotline decides with the entitlement and a triage checklist whether remote help, a part shipment or a technician solves the problem."
-  - "Maintenance plans create work orders without a case, so planned and unplanned work end up in the same dispatch queue and compete for the same technicians."
-  - "Whoever works cases in the contact centre cannot do that on a Dispatcher or Technician licence, so the record chain decides the licence mix as well."
+  - "The case holds the problem, the work order the job, line items the sub-steps and the service appointment the planned visit."
+  - "Work types are templates for kinds of jobs with duration and skills, and they can create the service appointment automatically."
+  - "The hotline decides with entitlement and triage checklist whether remote help, a parts shipment or a technician solves the problem."
+  - "Maintenance plans create work orders without a case. Planned and unplanned work therefore compete for the same technicians."
+  - "Whoever works cases in the contact centre cannot do that on a Dispatcher or Technician licence. The record chain decides the licence mix too."
 faq:
   - q: "What is the difference between a case and a work order in Salesforce?"
     a: "A case records the customer's problem and the communication around it. A work order describes the job that has to be done in the field. A work order can reference the case it belongs to."
@@ -41,7 +41,7 @@ Salesforce sells the product today as Field Service and Operations; the data mod
 
 The developer guide states that a work order can reference a case "to indicate that the work is being performed as part of a customer case". The parent of a service appointment is typically a work order or a work order line item. Line items help when one visit has several steps that need different skills or are billed separately.
 
-## What do work types do?
+## Work types are templates for kinds of jobs
 
 A work type is a template for a kind of job, for example annual maintenance, breakdown repair or commissioning. According to [Trailhead](https://trailhead.salesforce.com/content/learn/projects/modify-the-field-service-center/create-a-work-type), it carries the estimated duration and the required skills, and knowledge articles attached to the work type show up on every work order that uses it. Work types can be applied to work orders and to line items, so a line item can carry its own work type with its own skills.
 
@@ -78,9 +78,7 @@ Planned maintenance enters through a different door. According to the [Trailhead
 
 The consequence: planned and unplanned work land in the same dispatch queue and compete for the same technicians. If the planned maintenance for the next four weeks is already booked, a machine-down call on Tuesday has to push something out. Priorities and service objectives decide what moves, and somebody has to own that rule.
 
-## Where is the licence trap in this chain?
-
-The record chain also decides the licence mix.
+## The record chain also decides the licence mix
 
 ```hinweis achtung
 According to the [Field Service pricing page](https://www.salesforce.com/service/field-service-management/pricing/), Dispatcher and Technician licences may not be used for contact centre, call centre or customer case management. Whoever works cases needs Service Cloud or Field Service Plus.
@@ -88,9 +86,9 @@ According to the [Field Service pricing page](https://www.salesforce.com/service
 
 In practice this hits the small service team where the dispatcher also answers the hotline. That person needs Field Service Plus at $230 instead of Dispatcher at $175 (price list, October 2026). The full role matrix is in [Salesforce Field Service licences: who needs which?](../field-service-licences-by-role/).
 
-## A typical scenario: a "machine down" call
+## Worked example: a "machine down" call
 
-A typical scenario, as an assumption: a customer calls at 7:40 on a Tuesday because a packaging machine stops with an error.
+All details are assumptions. A customer calls at 7:40 on a Tuesday because a packaging machine stops with an error.
 
 ```schritte
 Create the case | Hotline
@@ -109,8 +107,6 @@ Visit and close | Technician
 
 Steps 3 and 4 are where the data model pays off. Without the work type, the agent has to know duration and skills, and the appointment is created by hand.
 
-## Where should you start?
+## Map your three most common call types
 
 Draw the path for your three most common call types, from the first call to the closed work order, and write down who creates which record. That drawing answers the licence question and shows which work types you need. How this fits into the business case is covered in [chapter 1 of the Field Service masterclass](../../masterclass/field-service/field-service-business-case-licences/).
-
-Case, work order and appointment are three records with three owners, and the work type connects them.

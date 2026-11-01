@@ -9,11 +9,11 @@ topic: data
 categories: [ai]
 tags: [agentforce, data 360, ai agents, data governance, architecture]
 takeaways:
-  - "The Agent Context Engine is a shared context layer on top of Data 360 that assembles, for each request, exactly the data an AI agent needs and is allowed to see."
-  - "It works for Agentforce and for agents built on other platforms such as Google ADK, AWS Bedrock, LangGraph or the OpenAI SDK, connected through an SDK or MCP tools."
+  - "For each request the engine assembles a small data package: the unified customer profile, memories, real-time signals and a slice of the knowledge graph."
+  - "Besides Agentforce, agents on Google ADK, AWS Bedrock, LangGraph or the OpenAI SDK can use it, connected through an SDK or MCP tools."
   - "Business terms like active customer are defined once in a semantic layer, so every agent uses the same definition."
-  - "Existing Salesforce and Data 360 permissions, sharing rules and data classification apply to the context, and agent memories are stored with their source and can require human confirmation."
-  - "The Agent Context Engine is in preview; companies should first work on identity resolution, data classification and agreed business definitions, because the engine can only pass on what the data holds."
+  - "Existing permissions and data classification also apply to the context, and every agent memory is stored with its source."
+  - "The engine is in preview. Identity resolution, data classification and agreed business terms pay off now, with or without the engine."
 faq:
   - q: "What is the Salesforce Agent Context Engine?"
     a: "It is a shared context layer built on Data 360. For each agent request it assembles a scoped package of data, such as the resolved customer profile, relevant memories, real-time signals and the relevant part of the knowledge graph, while respecting permissions."
@@ -29,7 +29,7 @@ The Salesforce Agent Context Engine gives AI agents the context they need for a 
 
 ## What problem does the Agent Context Engine solve?
 
-An AI agent is only as good as the information it works with. In a typical enterprise, that information is spread across CRM objects, data warehouses, ERP systems, knowledge bases and previous conversations. Without a common layer, every agent project solves the same problems again:
+An AI agent cannot take into account what it is never given. In a typical enterprise, that information is spread across CRM objects, data warehouses, ERP systems, knowledge bases and previous conversations. Without a common layer, every agent project solves the same problems again:
 
 - **Which data is relevant** for this task, and which is noise?
 - **Which customer** is meant, when the same company exists several times across systems?
@@ -39,7 +39,7 @@ An AI agent is only as good as the information it works with. In a typical enter
 
 Salesforce illustrates this in its [announcement](https://www.salesforce.com/blog/?p=157012) with a sales example: an opportunity is marked as "commit" and a sales agent drafts a closing email. With the right context, the agent also sees declining product usage, an open billing dispute and an unsigned compliance document, and it respects a price hold that another agent had already agreed with the customer. Instead of a closing email it recommends a service-oriented conversation with the sponsor.
 
-## How does the Agent Context Engine work?
+## Definitions, data package, graph and memories
 
 According to Salesforce, the engine combines several building blocks:
 
@@ -52,7 +52,7 @@ The engine builds on Data 360 and inherits its real-time pipeline, zero-copy acc
 
 ![How the Agent Context Engine assembles context: data from CRM objects, ERP systems, data warehouses such as Snowflake, Databricks and BigQuery via zero copy, knowledge bases and previous conversations flows into the Agent Context Engine on Data 360. The engine combines shared definitions, a scoped package per request, graph traversal (GraphRAG) and governed memory, and applies existing object, field and row-level security, sharing rules and data classification. Agents on Agentforce, Google ADK, AWS Bedrock, LangGraph and the OpenAI SDK use it via SDK or MCP tools. Agents inherit every weakness of the existing permission model.](../../../assets/blog/agent-context-engine-en.png)
 
-## Which agents can use it?
+## Agents outside Agentforce can use it too
 
 This is one of the more interesting points. The Agent Context Engine is not limited to Agentforce. According to Salesforce, agents built on Google ADK, AWS Bedrock, LangGraph or the OpenAI SDK can use it as well, through an SDK or MCP tools, and limited to their permitted scope.
 
@@ -68,7 +68,7 @@ This is the right principle. It also means that agents inherit every weakness of
 The memory function raises a further question for European companies: how are stored memories handled when a customer asks for deletion or information under GDPR? Salesforce states that every memory is traceable to its source. That is a good starting point, but the process for deletion and retention should be defined before memories are switched on.
 ```
 
-## What should companies prepare now?
+## Prepare now: identity resolution, classification and terms
 
 The Agent Context Engine is in preview, and Salesforce has not published pricing in its announcement. That is a good reason not to rush, and an equally good reason to start with the groundwork, because it pays off with or without the engine:
 
@@ -80,7 +80,7 @@ The Agent Context Engine is in preview, and Salesforce has not published pricing
 
 I describe why these foundations matter more than the agent itself in [Agentforce pilots: business value and data quality first](../agentforce-business-value-data-quality-first/).
 
-## How does this fit into the overall architecture?
+## Data 360 becomes the core of the AI architecture
 
 The Agent Context Engine is a sign of where Salesforce is heading: Data 360 as the shared foundation for data, context and governance, with agents from different platforms on top. For a client-side architect, that raises the usual questions: how much depends on one vendor, which data really needs to flow into Data 360, what it costs at scale, and who owns definitions and permissions.
 

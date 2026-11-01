@@ -10,10 +10,10 @@ categories: [architecture, devops]
 contactBrief: partner-governance
 tags: [Entwicklungsstandards, Definition of Done, Partnersteuerung, Codequalität]
 takeaways:
-  - "Entwicklungsstandards legen fest, wie in einer Salesforce-Org gebaut wird; die Definition of Done legt fest, wann eine User Story fertig ist. Beide gehören dem Kunden."
-  - "Die erste Version muss nicht vollständig sein. In meinem größten Programm deckte sie rund 80 Prozent der Fälle ab, der Rest kam in den folgenden Wochen dazu."
-  - "Standards decken Namen, Automatisierung pro Objekt und Kontext und Testabdeckung ab. Den größten Unterschied machten bei mir die Object Ownership Matrix und Regeln für Konfiguration."
-  - "Was sich automatisch prüfen lässt, prüft die Pipeline. Das Review prüft den Rest, sonst bleiben Standards ein Dokument, das niemand liest."
+  - "Die Definition of Done legt fest, wann eine User Story fertig ist, und gehört wie die Entwicklungsstandards dem Kunden."
+  - "Die erste Version muss nicht vollständig sein, in meinem größten Programm deckte sie rund 80 Prozent der Fälle ab."
+  - "Den größten Unterschied machten bei mir die Object Ownership Matrix und Regeln für Konfiguration."
+  - "Was sich automatisch prüfen lässt, prüft die Pipeline, und das Review prüft den Rest."
 faq:
   - q: "Was ist eine Definition of Done?"
     a: "Eine Definition of Done ist eine kurze Liste von Bedingungen, die jede User Story erfüllen muss, bevor sie als fertig gilt, etwa Review freigegeben, Tests grün, Rechte im Permission Set und Doku aktualisiert. Sie gilt für alle Teams gleich."
@@ -68,7 +68,7 @@ Die Definition of Done ist kürzer als die Standards und wird bei jeder User Sto
 
 Eine Definition of Done für alle Teams ist wichtiger als eine perfekte. Mit zwei Partnern und zwei Definitionen auf einer Org gilt sonst still die lockerere. Vor UAT ist sie die Grenze zwischen Partner und Fachbereich, siehe [Salesforce UAT: Wer testet vor dem Release?](../salesforce-uat-abnahmetest-fachbereich/).
 
-## Wie prüfen Sie, ob Partner die Standards einhalten?
+## Die Pipeline prüft, was automatisch geht, das Review den Rest
 
 Standards, die niemand prüft, werden nach zwei Sprints ignoriert. Ich teile die Prüfung in zwei Teile:
 
@@ -77,12 +77,10 @@ Standards, die niemand prüft, werden nach zwei Sprints ignoriert. Ich teile die
 
 Für KI-generierten Code gelten dieselben Regeln. Eine Regeldatei im Repository übersetzt die Standards in Anweisungen für Coding-Agenten, siehe [KI-Regeldatei im Salesforce-Repository](../ki-regeldatei-salesforce-repository/).
 
-## Was passiert mit den Randfällen?
+## Randfälle gehören in den Center-of-Excellence-Call
 
 Die erste Version deckt nie alles ab. In den Wochen danach tauchen Fälle auf, die niemand bedacht hat: ein Stream braucht ein Feld auf einem fremden Objekt, oder zwei Teams planen gleichzeitig eine Änderung am selben Flow. In meinem Programm haben wir diese Fälle in regelmäßigen [Center-of-Excellence-Calls](../salesforce-center-of-excellence-format/) besprochen, in denen anstehende Änderungen mit genug Vorlauf für alle Streams auf den Tisch kamen. Jede Entscheidung aus diesen Calls wurde in die Standards übernommen. Irgendwann fielen die Randfälle weg, weil Themen besprochen wurden, bevor sie zu Konflikten wurden. Warum Standards bei Partnern ohne solche Termine nach einigen Monaten verwässern, beschreibe ich in [Reinforcement: Standards bei Partnern verankern](../standards-partner-verankern-reinforcement/).
 
-## Wo fangen Sie an?
+## Zwei bis drei Wochen lang Review-Anmerkungen sammeln
 
 Schreiben Sie keine Standards am Schreibtisch. Lassen Sie zwei bis drei Wochen lang jeden Pull Request reviewen und notieren Sie, was Sie wiederholt anmerken. Daraus entsteht die erste Version, und sie passt zu Ihrer Org statt zu einem Lehrbuch. Danach kommen die Definition of Done, die automatischen Prüfungen und ein fester Termin, an dem neue Randfälle mit allen Streams besprochen werden.
-
-Gute Standards sind kurz, gehören dem Kunden und werden bei jedem Pull Request geprüft.

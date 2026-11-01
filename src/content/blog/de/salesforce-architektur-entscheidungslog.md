@@ -9,8 +9,8 @@ topic: governance
 categories: [architecture]
 tags: [Entscheidungslog, Architekturentscheidung, Salesforce-Architektur, Partnersteuerung]
 takeaways:
-  - "Ein Entscheidungslog hält jede Architekturentscheidung mit Kontext, Optionen, Gründen und Folgen fest, eine Seite pro Entscheidung."
-  - "Es beantwortet zwei Jahre später die Frage, warum etwas so gebaut wurde, auch wenn Partner und Beteiligte längst gewechselt haben."
+  - "Zum ADR-Format von Michael Nygard ergänze ich für Salesforce zwei Felder: welche Optionen geprüft wurden und wer entschieden hat."
+  - "Das Log beantwortet zwei Jahre später die Frage, warum etwas so gebaut wurde, auch wenn Partner und Beteiligte längst gewechselt haben."
   - "Ins Log gehören Entscheidungen, die teuer zu ändern sind: Clouds und Add-ons, führendes System pro Objekt, Datenmodell, Sichtbarkeit und Integrationsmuster."
   - "Das Log gehört dem Kunden und liegt in seinen Tools. Partner schlagen Einträge vor, der Architekt auf Kundenseite hält es aktuell."
 faq:
@@ -75,7 +75,7 @@ In einem Fertigungsprojekt habe ich die Manufacturing Cloud bewertet und abgeleh
 
 Welche Fragen eine solche Bewertung klären muss, steht in [Manufacturing Cloud: Wann lohnt sie sich?](../manufacturing-cloud-wann-lohnt-sie-sich/).
 
-## Wem gehört das Entscheidungslog?
+## Das Log gehört dem Kunden und liegt in seinem Repository
 
 Das Log gehört dem Kunden und liegt in seinen Tools. Ich lege es am liebsten als Markdown-Dateien im Repository der Org ab, eine Datei pro Entscheidung. Dann ist es versioniert, Änderungen laufen über einen Pull Request, und ein Entwickler findet die Begründung direkt neben dem Code. Wenn das Unternehmen ein eigenes Wiki pflegt, geht das auch, solange es nicht dem Partner gehört. Die Gründe sind dieselben wie bei [Repository und Pipeline](../warum-kunden-devops-tools-selbst-besitzen-sollten/).
 
@@ -87,7 +87,7 @@ Die Rollen sind einfach:
 
 Eine Entscheidung wird nie überschrieben. Ändert sich die Lage, bekommt der alte Eintrag den Status „ersetzt“ und einen Verweis auf den neuen. So bleibt sichtbar, was früher galt und warum es sich geändert hat.
 
-## Wofür nutzen Sie das Log im laufenden Programm?
+## Im laufenden Programm: neue Partner, Design-Reviews, Lenkungsausschuss
 
 Ein Log, das niemand liest, ist Papierkram. Drei Gelegenheiten machen es nützlich:
 
@@ -95,8 +95,6 @@ Ein Log, das niemand liest, ist Papierkram. Drei Gelegenheiten machen es nützli
 - **Review von Partner-Designs.** Bevor ein Design gebaut wird, prüfe ich es gegen die Einträge. Widerspricht es einer Entscheidung, gibt es zwei Wege: das Design anpassen oder einen neuen Eintrag vorschlagen, der die alte Entscheidung ersetzt.
 - **Lenkungsausschuss.** Wird eine Entscheidung dort angezweifelt, liegt der Eintrag mit Optionen und Gründen auf dem Tisch. Die Diskussion beginnt dann bei der Frage, was sich seitdem geändert hat.
 
-## Wo fangen Sie an?
+## Die fünf meistdiskutierten Entscheidungen nachtragen
 
-Fangen Sie nicht mit einer Vorlage im Wiki an, sondern mit den fünf Entscheidungen, die in Ihrem Programm am häufigsten angezweifelt werden. Schreiben Sie für jede einen Eintrag, auch rückwirkend. Danach gilt die Regel, dass jede neue Architekturentscheidung einen Eintrag braucht, bevor gebaut wird. Nach einem halben Jahr haben Sie zwanzig bis dreißig Einträge und eine Dokumentation, die ein neuer Partner in einem Nachmittag liest.
-
-Ein Entscheidungslog ist die günstigste Versicherung gegen Partnerwechsel. Mehr dazu lesen Sie unter [Salesforce-Architektur auf Kundenseite](../../leistungen/salesforce-architektur/).
+Beginnen Sie mit den fünf Entscheidungen, die in Ihrem Programm am häufigsten angezweifelt werden, eine Vorlage im Wiki braucht es dafür nicht. Für den ersten Eintrag eignet sich fast immer die Frage, die im letzten Lenkungsausschuss offen geblieben ist. Schreiben Sie für jede einen Eintrag, auch rückwirkend. Danach gilt die Regel, dass jede neue Architekturentscheidung einen Eintrag braucht, bevor gebaut wird. Nach einem halben Jahr haben Sie zwanzig bis dreißig Einträge und eine Dokumentation, die ein neuer Partner in einem Nachmittag liest. Wie ich das Log als Architekt auf Kundenseite führe, beschreibe ich unter [Salesforce-Architektur auf Kundenseite](../../leistungen/salesforce-architektur/).

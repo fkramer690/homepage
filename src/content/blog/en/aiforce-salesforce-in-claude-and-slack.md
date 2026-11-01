@@ -9,11 +9,11 @@ topic: ai
 categories: [ai]
 tags: [aiforce, claude, slack, agentforce coworker, mcp, manufacturing]
 takeaways:
-  - "AIforce, launched on 15 September 2026, makes Salesforce data and workflows usable from Claude, Slack and Lightning through Salesforce in Claude, Slackforce, Agentforce Coworker and the Headless Toolkit."
-  - "The rename to SIForce rests on a post by Marc Benioff on X on 9 October 2026, known only from secondary sources; Salesforce has published no press release, so documents should keep the name AIforce."
-  - "Salesforce in Claude is a beta with 37 sales skills; service, marketing and industry skills are only announced, so after-sales and field service teams at manufacturers have nothing to test yet."
-  - "Every AIforce request runs with the user's own Salesforce permissions, so sharing rules that are too broad today become visible in a chat window tomorrow."
-  - "Salesforce says pricing and packaging are subject to change, and the Flex Credit rate for agentic API and MCP calls is still listed as TBA; budget for a pilot, not a rollout."
+  - "AIforce consists of Salesforce in Claude, Slackforce, Agentforce Coworker and the Headless Toolkit."
+  - "SIForce rests only on an X post by Marc Benioff on 9 October 2026, with no press release, so documents should keep the name AIforce."
+  - "Salesforce in Claude is a beta with 37 sales skills. After-sales and field service teams have nothing to test yet."
+  - "Every AIforce request runs with the user's own Salesforce permissions, so sharing rules that are too broad become visible in a chat window."
+  - "Salesforce says pricing may still change, and the Flex Credit rate for MCP calls is listed as TBA. Budget for a pilot, not a rollout."
 faq:
   - q: "What is AIforce in Salesforce?"
     a: "AIforce is an interface layer Salesforce announced at Dreamforce on 15 September 2026. It makes Salesforce data, workflows and permissions usable from Claude, Slack and the Lightning interface. Its parts are Salesforce in Claude, Slackforce, Agentforce Coworker and the Headless Toolkit."
@@ -58,7 +58,7 @@ For your own documents I would write "AIforce" and add "(announced by the CEO as
 2026-10-12 | Salesforce Ben finds no official announcement
 ```
 
-## What is actually available today?
+## Status October 2026: most of it is only announced
 
 The announcements are bigger than what you can switch on. Status on 27 October 2026:
 
@@ -76,7 +76,7 @@ source: Anthropic on Salesforce in Claude; Salesforce Flex Credits rate card of 
 
 On cost, the announcement says: "Pricing and packaging are subject to change." The rate card lists Headless Platform Interactions, the meter for agentic API and MCP calls, as "TBA". Why that becomes a budget line is explained in [MCP calls as a budget risk](../mcp-api-calls-salesforce-budget-risk/).
 
-## What does AIforce mean for a manufacturer?
+## For manufacturers, AIforce helps sales more than service today
 
 Right now AIforce helps sales more than service. According to [Anthropic](https://claude.com/blog/salesforce-in-claude), the 37 skills cover account research, call preparation, pipeline review and CRM updates. That fits key account managers and dealer managers who prepare visits and maintain opportunities. Salesforce's announcement lists skills for service, marketing, commerce and industries only for "the near future". Heads of after-sales and field service have nothing to test yet.
 
@@ -86,7 +86,7 @@ The third point is the collaboration tool. Many machine builders work in Microso
 
 The fourth point is permissions. "Every transaction runs as the authenticated user", Salesforce writes about hosted MCP. That is correct, and it is also the risk. If your sales reps can see all cases, warranty claims and dealer price agreements because sharing was set too broadly years ago, a chat shows it in seconds instead of after ten clicks.
 
-## A typical scenario: a machine builder with Teams and SAP
+## Worked example: a machine builder with Teams and SAP
 
 Assume a machine builder with 80 Sales Cloud users in sales and dealer management, Service Cloud for after-sales, SAP as ERP and Microsoft Teams for collaboration. All numbers and circumstances are assumptions. A few sales reps already paste account data into private AI tools.
 
@@ -99,7 +99,7 @@ The IT lead sorts the four AIforce parts:
 
 The outcome is one small pilot in sales and a week of permission clean-up. In my judgement that is the right size for a beta whose prices Salesforce has not fixed.
 
-## What should an IT lead do now?
+## Find the shadow use, then check permissions and contracts
 
 1. **Find the shadow use.** Ask which teams already copy Salesforce data into Claude, ChatGPT or Copilot. A governed connector with the user's own permissions beats copy and paste.
 2. **Assign one interface per user group.** For example Lightning for service agents, Claude for key account managers, Teams for everyone else. Five parallel AI surfaces mean five support topics.
@@ -108,6 +108,4 @@ The outcome is one small pilot in sales and a week of permission clean-up. In my
 5. **Budget a pilot.** Prices are subject to change and the MCP rate is open. Whether Data 360 is worth buying for Coworker, or Claude seats for the sales team, is a question for [make-or-buy and licence planning](../../services/make-or-buy-licences/).
 6. **Keep the name AIforce in your documentation** until Salesforce confirms SIForce in writing.
 
-Whether to build your own Agentforce agents is a separate decision, covered in [Agentforce for manufacturers: start now or wait?](../agentforce-yes-or-no-manufacturers/).
-
-AIforce moves Salesforce into the tools your people already use, and the work for IT stays the same: permissions, data and contracts first.
+Whether to build your own Agentforce agents is a separate decision, covered in [Agentforce for manufacturers: start now or wait?](../agentforce-yes-or-no-manufacturers/). For AIforce itself the order of the list above applies: permissions, data and contracts first, then the interface.

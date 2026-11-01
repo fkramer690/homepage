@@ -10,11 +10,10 @@ categories: [revenue-cloud, architecture]
 contactBrief: licences
 tags: [Revenue Cloud, Preise, Lizenzen, Billing, Make-or-Buy]
 takeaways:
-  - "Revenue Cloud Growth kostet 150 Euro und Revenue Cloud Advanced 200 Euro pro Nutzer und Monat zum Listenpreis bei jährlicher Abrechnung, Stand Oktober 2026."
-  - "Revenue Cloud wird zusätzlich zu Sales Cloud gekauft. Ein Angebotsnutzer mit Sales Cloud Core und Revenue Cloud Advanced kostet zum Listenpreis 395 Euro im Monat."
-  - "Contract Lifecycle Management, Dynamic Revenue Orchestration, Invoice Management und External User Support sind Add-ons, die letzten drei sind bei Advanced markiert."
-  - "Revenue Cloud Billing hat keinen veröffentlichten Preis und verbraucht ein Billing Event pro 50 Dollar Rechnungsbetrag, ohne Übertrag über das Vertragsende."
   - "Der größte Hebel ist die Zahl der Lizenzen. Gruppieren Sie Nutzer danach, was sie mit Angeboten tun, bevor Sie Editionen vergleichen."
+  - "Ein Angebotsnutzer mit Sales Cloud Core und Revenue Cloud Advanced kostet zum Listenpreis 395 Euro im Monat."
+  - "Contract Lifecycle Management, Dynamic Revenue Orchestration, Invoice Management und External User Support sind Add-ons."
+  - "Revenue Cloud Billing hat keinen veröffentlichten Preis und verbraucht ein Billing Event pro 50 Dollar Rechnungsbetrag."
 faq:
   - q: "Was kostet Salesforce Revenue Cloud?"
     a: "Laut Preisseite von Salesforce (Oktober 2026) kostet Revenue Cloud Growth 150 Euro und Revenue Cloud Advanced 200 Euro pro Nutzer und Monat bei jährlicher Abrechnung. Revenue Cloud Billing gibt es nur auf Anfrage."
@@ -48,7 +47,7 @@ Drei Details derselben Seite sind für das Budget wichtig:
 
 Eine kostenlose Testversion gibt es nicht. Die FAQ verweist stattdessen auf praktische Workshops.
 
-## Was enthalten die Editionen?
+## Die Funktionsliste pro Edition gehört ins Angebot
 
 Die Editionskarten auf der Preisseite nennen drei Funktionen für Growth und drei weitere für Advanced, wie in der Tabelle oben. Darunter steht eine Vergleichstabelle mit diesen Zeilen: Produktkatalog und Preisverwaltung, Produktkonfigurator, Preis und Angebot, Auftragsverwaltung, Abonnement- und Asset-Lebenszyklus, Advanced Approvals, Advanced Doc Gen, Usage Selling, Contract Lifecycle Management, Revenue Management Intelligence, Agentforce-Vorlagen, Dynamic Revenue Orchestration, Invoice Management und External User Support.
 
@@ -90,7 +89,7 @@ Auch External User Support ist nicht beschrieben. Ich würde fragen, ob es Händ
 
 Für das Vertragsmanagement gibt es einen zweiten Anhaltspunkt. Die ältere [Billing-Preisseite](https://www.salesforce.com/eu/sales/revenue-lifecycle-management/billing-pricing/) von Salesforce, zuletzt geändert im Mai 2025, nennt Salesforce Contracts ab 50 Dollar pro Nutzer und Monat. Dieselbe Seite führt noch CPQ ab 75 Dollar, obwohl Salesforce laut [CPQ-Seite zum Verkaufsende](https://www.salesforce.com/sales/cpq/end-of-life/) keine CPQ-Lizenzen mehr an Neukunden verkauft. Prüfen Sie bei jeder Preisseite, die Sie intern zitieren, das Änderungsdatum.
 
-## Wie wird Revenue Cloud Billing abgerechnet?
+## Billing wird nach Rechnungsbetrag abgerechnet
 
 Revenue Cloud Billing ist ein eigenes Add-on mit dem Preis "Request a Quote". Laut Preisseite enthält es Usage Rating und Digital Wallet, die Rechnungs-Engine mit Dokumenterstellung und das Accounting Subledger, also ein Nebenbuch für Buchungen. Add-ons werden getrennt von ihren Voraussetzungsprodukten verkauft und brauchen einen Jahresvertrag.
 
@@ -109,11 +108,11 @@ Die Edition bestimmt den Preis pro Nutzer. Die Lizenzprognose bestimmt die Zahl 
 5. **Händler und Kunden**, die selbst Angebote erstellen. Das ist eine Frage für External User Support oder eine Portallizenz.
 6. **Finanzwesen**, das mit Rechnungen arbeitet. Das gehört zum Billing-Add-on.
 
-Ein typisches Szenario, als Annahme: Ein Maschinenbauer hat 80 Sales-Cloud-Nutzer. 35 davon erstellen Angebote, die anderen 45 arbeiten an Accounts und Opportunities und sehen Angebote gelegentlich an. 35 Nutzer auf Advanced kosten 35 × 200 Euro × 12 = 84.000 Euro im Jahr zum Listenpreis, auf Growth 63.000 Euro. Bekämen alle 80 Nutzer Advanced, wären es 192.000 Euro. Die Differenz von 108.000 Euro im Jahr gilt nur, wenn Lesezugriff ohne Revenue-Cloud-Lizenz funktioniert, und genau deshalb gehört diese Frage ins Angebot.
+Rechenbeispiel: Ein Maschinenbauer hat 80 Sales-Cloud-Nutzer. 35 davon erstellen Angebote, die anderen 45 arbeiten an Accounts und Opportunities und sehen Angebote gelegentlich an. 35 Nutzer auf Advanced kosten 35 × 200 Euro × 12 = 84.000 Euro im Jahr zum Listenpreis, auf Growth 63.000 Euro. Bekämen alle 80 Nutzer Advanced, wären es 192.000 Euro. Die Differenz von 108.000 Euro im Jahr gilt nur, wenn Lesezugriff ohne Revenue-Cloud-Lizenz funktioniert, und genau deshalb gehört diese Frage ins Angebot.
 
 Ob Growth und Advanced in einer Org gemischt werden können, steht auf der Preisseite ebenfalls nicht. Braucht nur der Projektvertrieb Verträge und Verbrauchsabrechnung, wäre eine Mischung der günstigere Plan, also fragen Sie ausdrücklich danach. Wie ich eine solche Prognose allgemein aufbaue, steht in [Salesforce-Lizenzen: Braucht jeder eine volle Lizenz?](../salesforce-lizenzen-volle-lizenz/).
 
-## Was sollten Sie vor der Unterschrift klären?
+## Lizenzbedarf für Leser und Freigeber schriftlich klären
 
 Listenpreise sind ein Ausgangspunkt, und Salesforce stellt sein Editionsmodell gerade über mehrere Clouds um. Sales Cloud gibt es jetzt als Core, Advanced und Max, wie in [Salesforce-Editionen Core, Advanced, Max für Hersteller](../salesforce-editionen-core-advanced-max/) beschrieben. Vor der Unterschrift würde ich mir diese Punkte schriftlich geben lassen:
 
@@ -125,5 +124,3 @@ Listenpreise sind ein Ausgangspunkt, und Salesforce stellt sein Editionsmodell g
 - eine Preisobergrenze für die Verlängerung.
 
 Ob sich Revenue Cloud überhaupt lohnt, steht in [Revenue Cloud für Hersteller: Wann lohnt es sich?](../revenue-cloud-lohnt-sich-hersteller/), und das [Überblickskapitel der Masterclass Revenue Cloud](../../masterclass/revenue-cloud/revenue-cloud-ueberblick/) stellt die Preise neben die anderen Entscheidungen. Lizenzprognosen gehören zu meiner Arbeit in [Make-or-Buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/).
-
-Der Listenpreis pro Nutzer zählt weniger als die Zahl der Nutzer und die Add-ons, die Sie wirklich brauchen.

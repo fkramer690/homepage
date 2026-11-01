@@ -9,9 +9,9 @@ topic: field-service
 categories: [field-service]
 tags: [Field Service, Außendienst, Bereitschaftsdienst, Schichten, Terminplanung, Betriebsrat]
 takeaways:
-  - "Arbeitszeiten (Operating Hours) beschreiben die reguläre Arbeitszeit eines Servicegebiets. In Salesforce Field Service ergänzt das Objekt Shift Arbeitszeit außerhalb davon, etwa Bereitschaft, Wochenende oder Überstunden."
-  - "Nur bestätigte Schichten zählen für die Planung. Eine Schicht mit dem Zeitfenstertyp Extended nimmt Termine nur an, wenn die Work Rule Service Resource Availability Überstunden erlaubt."
-  - "Recordset Filter Criteria begrenzen eine Schicht auf bestimmte Termine. So bekommt der Techniker in der Wochenendbereitschaft nur Störungen und keine geplanten Wartungen."
+  - "Arbeitszeiten beschreiben die reguläre Arbeitszeit eines Gebiets. Das Objekt Shift ergänzt Zeit außerhalb davon: Bereitschaft, Wochenende, Überstunden."
+  - "Nur bestätigte Schichten zählen. Eine Extended-Schicht nimmt Termine nur an, wenn die Work Rule Service Resource Availability Überstunden erlaubt."
+  - "Filterkriterien begrenzen eine Schicht auf bestimmte Termine. So bekommt der Wochenendtechniker nur Störungen und keine geplanten Wartungen."
   - "Eine Störung mit zugesagter Reaktionszeit an einem Samstag braucht eine bestätigte Bereitschaftsschicht. Ohne sie findet die Planung keinen Techniker."
   - "In Deutschland unterliegen Bereitschaftspläne und Überstunden der Mitbestimmung des Betriebsrats nach § 87 BetrVG, genau wie Timesheets und Standortdaten."
 faq:
@@ -66,7 +66,7 @@ Das ist eine typische Überraschung nach dem Go-live. Ein Kunde mit dem Vertrag 
 Enden die Arbeitszeiten des Gebiets am Freitag und gibt es keine bestätigte Schicht, ist niemand verplanbar. Der Termin bleibt im Status None, und die Reaktionszeit läuft.
 ```
 
-Drei Dinge müssen zusammenpassen:
+Damit die Störung beim Bereitschaftstechniker landet, muss Folgendes zusammenpassen:
 
 1. **Das Entitlement.** Es trägt die Reaktionszeit und kann eigene Arbeitszeiten für die Terminbuchung haben. Wie Reaktionszeiten in die Disposition kommen, steht in [Wie bildet man Wartungsverträge ab?](../salesforce-field-service-wartungsvertraege/).
 2. **Die Schicht.** Eine bestätigte Extended-Schicht für das Wochenende, mit einem Filter, der Störungen durchlässt.
@@ -74,7 +74,7 @@ Drei Dinge müssen zusammenpassen:
 
 Nimmt außerhalb der Geschäftszeiten ein Sprachagent den Anruf an, bekommt der Bereitschaftstechniker einen klassifizierten Case statt eines rohen Anrufs. Wie ich die Triage an der Hotline aufsetzen würde, steht in [Störungshotline mit Agentforce Voice](../stoerungshotline-agentforce-voice-deutsch/). Buchen kann der Agent aber nichts, wenn keine Schicht dahintersteht.
 
-## Was muss der Betriebsrat mitbestimmen?
+## Der Betriebsrat bestimmt nach § 87 BetrVG mit
 
 Bereitschaft ist Arbeitszeit, und damit ist in Deutschland der Betriebsrat im Spiel. [§ 87 BetrVG](https://www.gesetze-im-internet.de/betrvg/__87.html) gibt ihm unter anderem Mitbestimmung bei Beginn und Ende der täglichen Arbeitszeit und ihrer Verteilung auf die Wochentage (Nr. 2), bei vorübergehender Verlängerung der betriebsüblichen Arbeitszeit (Nr. 3) und bei technischen Einrichtungen, die dazu bestimmt sind, Verhalten oder Leistung zu überwachen (Nr. 6).
 
@@ -87,9 +87,9 @@ Ein Bereitschaftsplan in Field Service berührt alle drei. Schichten verteilen A
 
 Das ist dasselbe Gespräch wie bei Timesheets und Standort, das ich in [Salesforce Field Service Einführung: Warum in Wellen?](../salesforce-field-service-einfuehrung/) beschreibe. Einfacher ist es, dieses Gespräch einmal für alle Themen zu führen. Ich bin kein Jurist, die rechtliche Bewertung gehört zu Ihren Fachleuten für Arbeitsrecht.
 
-## Ein typisches Szenario, als Annahme
+## Rechenbeispiel: Wochenendbereitschaft in drei Regionen
 
-Ein Hersteller von Kompressoren betreibt den Service in drei Regionen. In jeder Region hat ein Techniker Wochenendbereitschaft von Samstag 7:00 bis Sonntag 19:00. Verträge sagen Premiumkunden 24 Stunden bis zum Eintreffen zu.
+Die Zahlen sind angenommen. Ein Hersteller von Kompressoren betreibt den Service in drei Regionen. In jeder Region hat ein Techniker Wochenendbereitschaft von Samstag 7:00 bis Sonntag 19:00. Verträge sagen Premiumkunden 24 Stunden bis zum Eintreffen zu.
 
 So würde ich es aufsetzen:
 
@@ -101,8 +101,6 @@ So würde ich es aufsetzen:
 
 Das Datenmodell ist klein. Der Aufwand liegt in der Abstimmung des Plans und darin, die Schichten jedes Quartal zu bestätigen.
 
-## Wo sollten Sie anfangen?
+## Die heutigen Bereitschaftsregeln aufschreiben
 
 Schreiben Sie Ihre heutigen Bereitschaftsregeln auf: wer wann Bereitschaft hat, für welche Kunden und welche Arten von Einsätzen. Prüfen Sie dann, ob Ihre Scheduling Policies zwischen geplanter Arbeit und Störungen unterscheiden. Wenn nicht, beheben Sie das zuerst, denn Extended-Schichten funktionieren nur über diese Unterscheidung. Wo Schichten in die Planung insgesamt passen, steht in [Kapitel 2 der Masterclass Field Service](../../masterclass/field-service/field-service-terminplanung-disposition/), lange Einsätze über mehrere Tage in [Mehrtägige Einsätze im Field Service](../field-service-mehrtaegige-einsaetze-inbetriebnahme/).
-
-Bereitschaft in Field Service funktioniert, wenn Schichten, Policies und Entitlements zusammenpassen und der Betriebsrat die Regeln vor dem ersten Wochenende mitbestimmt hat.

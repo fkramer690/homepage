@@ -9,10 +9,9 @@ topic: code-review
 categories: [devops]
 tags: [pull request review, devops, partner governance, code quality]
 takeaways:
-  - "A pull request review is the last point where a change can be stopped cheaply, before it reaches shared environments, users and other teams."
+  - "A review takes minutes. Fixing an unreviewed change in UAT or production often takes days and affects several teams."
   - "In enterprise Salesforce programmes, reviews keep several partners on one set of standards and stop teams from overwriting each other's work."
-  - "A good review checks architecture, data model, security, automation and test coverage, not only code style."
-  - "Automated checks handle the repeatable part, so human reviewers can focus on design decisions and side effects."
+  - "The pipeline checks code style. The reviewer checks architecture, data model, security, automation and tests."
   - "Reviews should be owned by the client side, with clear rules, small pull requests and a defined response time."
 faq:
   - q: "What is a pull request review?"
@@ -25,7 +24,7 @@ faq:
     a: "Yes. Flows, page layouts, permission sets and custom fields are metadata in the repository and show up in the pull request like code. Reviewers check them for naming, logic, performance and security."
 ---
 
-A pull request review is a must in enterprise projects because it is the last point where a change can be stopped cheaply. Before a change is merged, a second person checks whether it fits the architecture, follows the agreed standards and does not break someone else's work. In a Salesforce programme with several partners and internal teams on one org, that single step prevents more production incidents than any later test phase. It also keeps teams aligned without a meeting.
+A pull request review is a must in enterprise projects because it is the last point where a change can be stopped cheaply. Before a change is merged, a second person checks whether it fits the architecture, follows the agreed standards and does not break someone else's work. In a Salesforce programme with several partners and internal teams on one org, that single step catches errors a test phase would only find weeks later. It also keeps teams aligned without a meeting.
 
 ## What is a pull request review?
 
@@ -33,7 +32,7 @@ A pull request is a request to merge a set of changes from one branch into anoth
 
 This works for low-code as well. Flows, page layouts, permission sets and custom fields are metadata in the repository. They appear in the pull request like any other file.
 
-## Why does an enterprise project need reviews more than a small org?
+## Enterprise projects need reviews more than a small org
 
 In a small org with one admin, that admin knows every change. In an enterprise programme that knowledge is spread across many people. I have worked in programmes with up to eight project teams and more than 30 developers on one platform. Without reviews, the same problems show up again and again:
 
@@ -65,7 +64,7 @@ The repeatable part should be automated: static code analysis, naming convention
 
 ![Pull request review in four steps: one user story per pull request; the pipeline automatically checks the validation deployment, Apex tests, static code analysis, naming conventions and API versions; a human reviewer checks fit with the architecture, data model, automation and side effects, security and access, tests and quality, and traceability; the merge happens only when the change is approved and the pipeline is green. Machines check the repeatable part, people check what tools can't judge.](../../../assets/blog/pull-request-review-split-en.png)
 
-## What did reviews change in a real programme?
+## What reviews changed in a programme with several partners
 
 In one programme I joined, several implementation partners and internal teams worked on the same Salesforce org. Nobody had clearly defined who led which processes, objects and metadata. Changes overwrote each other because nobody coordinated who deployed what and when, and the technical approaches of the teams had drifted far apart.
 
@@ -88,13 +87,13 @@ The most common objection is speed. In my experience reviews slow a project down
 - **Automation first.** Merging is technically blocked until the pipeline is green. The reviewer only looks at changes that have already passed the automated checks.
 - **Reviews as knowledge transfer.** Junior developers and new partners learn the standards fastest by reading and receiving reviews.
 
-## Who should own the review process?
+## The client owns the review process
 
-The client. This matters to me as an [architect on the client side](../../#about). If one implementation partner owns the review rules, that partner decides how everyone else builds, including its competitors. When the client owns the rules and the approval for architecture-relevant changes, partners stay comparable and replaceable. That is the basis of good [partner steering and governance](../../services/partner-governance/).
+This matters to me as an [architect on the client side](../../#about). If one implementation partner owns the review rules, that partner decides how everyone else builds, including its competitors. When the client owns the rules and the approval for architecture-relevant changes, partners stay comparable and replaceable. That is the basis of good [partner steering and governance](../../services/partner-governance/).
 
 This does not mean the client has to review every line personally. Partners can and should review each other's work. But the standards, the approval rights and the repository should sit with the client, ideally with an internal person who takes over the process long term.
 
-## Where should you start?
+## First step: protect the main branches
 
 If your programme still merges or deploys without reviews, start small:
 
@@ -110,5 +109,3 @@ Settle approvals
 Start centrally
   Review the first weeks centrally, then spread the responsibility.
 ```
-
-Pull request reviews cost minutes per change and save days per release.

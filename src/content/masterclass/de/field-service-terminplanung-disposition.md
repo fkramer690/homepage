@@ -10,11 +10,11 @@ pubDate: 2026-10-28
 short: "Terminplanung und Disposition"
 summary: "Stammdaten, Scheduling Policies, Enhanced Scheduling, die neue Scheduling Console und mehrtägige Einsätze: was die Planung im Außendienst trägt."
 takeaways:
-  - "Field Service plant nur so gut wie sechs Arten von Stammdaten: Gebiete mit Arbeitszeiten, Techniker mit Skills, Arbeitstypen, Assets, Besuchszeiten der Kunden und Abwesenheiten."
-  - "Eine Scheduling Policy verbindet Work Rules, die Techniker ausschließen, mit gewichteten Service Objectives, die den Rest bewerten. Guter Start: Automatik bis Scheduled, ein Disponent gibt frei."
-  - "Enhanced Scheduling and Optimization ist Standard für neue Orgs und die einzige Engine für die neue Scheduling Console; ältere Orgs stellen nach einer Datenprüfung Gebiet für Gebiet um."
-  - "Mehrtägige Termine dürfen acht Wochen dauern, die automatische Planung schafft aber nur Einsätze, die in 30 Tage passen, und sie lassen sich nicht mit Complex Work verknüpfen."
-  - "Vor dem Go-live brauchen drei Entscheidungen einen Namen: welche Engine, welche Disponentenkonsole und wer die Scheduling Policies verantwortet."
+  - "Field Service plant mit sechs Arten von Stammdaten: Gebiete, Techniker mit Skills, Arbeitstypen, Assets, Besuchszeiten der Kunden und Abwesenheiten."
+  - "Work Rules schließen Techniker aus, gewichtete Service Objectives bewerten den Rest. Ich starte mit Automatik bis Scheduled, ein Disponent gibt frei."
+  - "Enhanced Scheduling and Optimization ist Standard für neue Orgs und die einzige Engine für die neue Scheduling Console."
+  - "Mehrtägige Termine dürfen acht Wochen dauern, die automatische Planung schafft aber nur Einsätze, die in 30 Tage passen."
+  - "Vor dem Go-live stehen Engine und Disponentenkonsole fest, und die Scheduling Policies haben eine verantwortliche Person."
 articles: [field-service-master-data, field-service-scheduling-automation, field-service-enhanced-scheduling-eso, field-service-scheduling-console, field-service-multiday-crews-commissioning, field-service-on-call-shifts]
 faq:
   - q: "Was ist eine Scheduling Policy in Salesforce Field Service?"
@@ -55,7 +55,7 @@ Mein Einstieg in die Datenprüfung ist immer derselbe: die gescheiterten Einsät
 Ich habe Field Service für Wartung, Störungseinsätze und Inbetriebnahmen eingeführt, mit automatischer Planung statt reiner Disposition per Hand. Ob die Engine gute Vorschläge macht, hing dort vor allem an den Stammdaten aus diesem Abschnitt.
 ```
 
-## Wie entscheidet die Scheduling Engine?
+## Die Scheduling Engine: Work Rules filtern, Service Objectives bewerten
 
 Die Engine vergibt Termine nach einer Scheduling Policy. Work Rules filtern Techniker heraus, die einen Einsatz nicht übernehmen können, etwa Match Skills oder die Regel für Besuchszeiten. Service Objectives bewerten die übrigen mit einem Gewicht: kurze Fahrt, früher Termin, bevorzugter Techniker. Field Service bringt vier Policies mit: Customer First, High Intensity, Soft Boundaries und Emergency. Ich starte mit Customer First und passe die Gewichte an, statt eine Policy von Grund auf zu bauen.
 
@@ -67,7 +67,7 @@ Die Automatik wächst, wenn Disponenten die Vorschläge kaum noch ändern. Dafü
 
 Enhanced Scheduling and Optimization, kurz ESO, ist die neuere Engine der Terminplanung. Laut [Field-Service-Leitfaden](https://resources.docs.salesforce.com/latest/latest/en-us/sfdc/pdf/support_field_service.pdf) haben neue Orgs sie für alle Gebiete aktiv, bestehende Orgs können alle Gebiete auf einmal oder einzeln umstellen. Für eine Org, die mit der älteren Engine live gegangen ist, lautet meine Antwort: ja, aber Gebiet für Gebiet. Die Details stehen in [Enhanced Scheduling and Optimization: jetzt umstellen?](../../../blog/field-service-enhanced-scheduling-umstellen/).
 
-Drei Punkte bestimmen den Aufwand:
+Den Aufwand bestimmen diese Punkte:
 
 | Punkt | Was er bedeutet |
 |---|---|
@@ -121,9 +121,9 @@ Salesforce bewegt die Terminplanung in Richtung Agenten. Das Füllen von Lücken
 
 Bei einem Maschinenbauer sehe ich den Disponenten an drei Stellen: bei Störungen mit unklarer Ursache, bei Einsätzen, die eine Abschaltung beim Kunden brauchen, und bei langen Einsätzen. Geplante Wartung aus Wartungsplänen ist der erste Kandidat für einen Agenten, weil die Regeln bekannt sind. Welche Agenten heute tragen, steht in [KI-Agenten im Field Service](../../../blog/ki-agenten-aussendienst-field-service/), die Sicht auf die Fertigung im Kapitel [KI-Agenten in der Fertigung](../../ki-salesforce/ki-agenten-in-der-fertigung/) der KI-Masterclass, Einführung und Kosten in [Kapitel 5](../field-service-ki-agenten-einfuehrung/). Ein Agent bucht mit derselben Policy wie die Engine, alles aus diesem Kapitel gilt also auch für ihn.
 
-## Ein typisches Szenario, als Annahme: vier Disponenten verlassen Excel
+## Rechenbeispiel: vier Disponenten verlassen Excel
 
-Ein typisches Szenario, als Annahme: ein Komponentenhersteller mit 40 Technikern in drei Gebieten und vier Disponenten. Field Service läuft seit 2022 mit der älteren Engine. Zwei Disponenten planen Wartungen in Excel und übertragen Termine in die Classic Dispatch Console, zwei bearbeiten Störungen direkt im Gantt. Alle Zahlen sind Annahmen und sollen das Vorgehen zeigen.
+Angenommen ist ein Komponentenhersteller mit 40 Technikern in drei Gebieten und vier Disponenten. Field Service läuft seit 2022 mit der älteren Engine. Zwei Disponenten planen Wartungen in Excel und übertragen Termine in die Classic Dispatch Console, zwei bearbeiten Störungen direkt im Gantt. Alle Zahlen sind Annahmen und sollen das Vorgehen zeigen.
 
 ```schritte
 Daten | Woche 1 bis 3
@@ -140,9 +140,9 @@ Bereitschaft | parallel
 
 Nach Woche 10 ist die Excel-Liste weg. Die Disponenten entscheiden weiter, aber auf Basis eines Vorschlags statt eines leeren Kalenders.
 
-## Was Sie vor dem Go-live entscheiden
+## Eine verantwortliche Person für die Scheduling Policies benennen
 
-Drei Entscheidungen brauchen einen Namen, bevor ein Partner die Terminplanung konfiguriert:
+Diese Entscheidungen brauchen einen Namen, bevor ein Partner die Terminplanung konfiguriert:
 
 | Entscheidung | Was dazugehört |
 |---|---|
@@ -155,5 +155,3 @@ Policies, Work Rules, Arbeitszeiten und Gebiete sind Datensätze und keine Metad
 ```
 
 Wo das Planungsdesign ERP, Projektwerkzeuge und Partner berührt, unterstütze ich bei der [Salesforce-Architektur](../../../leistungen/salesforce-architektur/). Der nächste Schritt für die Techniker ist die App: [Kapitel 3](../field-service-mobile-app-dokumente/) behandelt Offline-Daten, Formulare und Serviceberichte, die [Übersicht](../) zeigt alle Kapitel.
-
-Gute Terminplanung im Field Service beginnt mit sauberen Daten und einer verantwortlichen Person für die Policies, Engine, Konsole und Agenten bauen darauf auf.

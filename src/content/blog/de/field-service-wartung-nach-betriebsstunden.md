@@ -9,10 +9,9 @@ topic: field-service
 categories: [field-service]
 tags: [Field Service, Wartungspläne, Betriebsstunden, Assets, IoT, ERP]
 takeaways:
-  - "Salesforce Field Service löst Wartung nach Betriebsstunden über Maintenance Work Rules aus, die ein Feld am Asset lesen statt eines Kalenderdatums."
-  - "Eine nutzungsbasierte Regel liest ein Nutzungsfeld am Asset, das eine Formel sein darf, und schreibt ein Feld für das nächste Auftreten, das keine Formel sein darf, weil das System es pflegt."
-  - "Kriterienbasierte Regeln arbeiten mit Filterkriterien wie Stillstand ab 1.000 Stunden. Solange ein erzeugter Arbeitsauftrag offen ist, entsteht kein zweiter."
-  - "Wichtige Limits: höchstens 2.600 Arbeitsaufträge und Positionen pro Lauf, 2.000 Assets in einem Plan mit Zählregel und nicht mehr als fünf Regeln pro Plan oder Asset."
+  - "Eine nutzungsbasierte Regel liest ein Nutzungsfeld, das eine Formel sein darf. Das Feld für das nächste Auftreten pflegt das System, es darf keine Formel sein."
+  - "Kriterienbasierte Regeln arbeiten mit Filtern wie Stillstand ab 1.000 Stunden. Solange ein erzeugter Arbeitsauftrag offen ist, entsteht kein zweiter."
+  - "Limits: höchstens 2.600 Arbeitsaufträge und Positionen pro Lauf, 2.000 Assets pro Plan mit Zählregel und fünf Regeln pro Plan oder Asset."
   - "Der Zähler kommt einmal am Tag aus dem ERP oder der IoT-Plattform. Rohdaten der Sensoren bleiben außerhalb von Salesforce."
 faq:
   - q: "Kann Salesforce Field Service Wartung nach Betriebsstunden planen?"
@@ -52,7 +51,7 @@ Pro Zählerart brauchen Sie also ein Zahlenfeld am Asset, das von außen gefüll
 Eine Falle ist die Kombination von Regeln. Laut Hilfeartikel zur [kriterienbasierten Wartung](https://help.salesforce.com/s/articleView?id=sf.fs_rfc_create_any_criteria.htm&language=en_US&type=5) erzeugen eine Kriterienregel und eine Kalenderregel ihre Arbeitsaufträge unabhängig voneinander, auch mit demselben vorgeschlagenen Datum. Wer neben die Stundenregel eine Kalenderregel „alle 12 Monate“ legt, bekommt womöglich zwei Arbeitsaufträge für denselben Kompressor in derselben Woche. „Was zuerst eintritt“ gehört in eine einzige Regel.
 ```
 
-## Wie verhalten sich kriterienbasierte Regeln?
+## Kriterienbasierte Regeln erzeugen keinen zweiten offenen Auftrag
 
 Sie legen Recordset Filter Criteria mit Bedingungen auf Standard- oder eigenen Asset-Feldern an, wählen, ob alle oder mindestens eine zutreffen müssen, und hängen sie an eine Maintenance Work Rule vom Typ kriterienbasiert. Das Beispiel der Hilfe kombiniert 60.000 Schaltspiele oder sechs Monate seit der letzten Überholung mit ODER. Genau dieses Muster „was zuerst eintritt“ schreiben Maschinenbauer in ihre Serviceverträge.
 
@@ -76,7 +75,7 @@ Die Hilfe nennt drei Quellen: von Hand gepflegt, von einer IoT-Plattform aktuali
 
 Ein Wert pro Tag reicht. Ein Intervall von 2.000 Stunden braucht keine Minutenwerte, und 1.200 Zählerstände am Tag sind eine kleine Schnittstelle. Die Zeitreihen bleiben in der IoT-Plattform oder im Historian, wie in [Predictive Maintenance in Salesforce: die Datenbasis](../predictive-maintenance-salesforce-datenbasis/) beschrieben. Legen Sie fest, welche Quelle gewinnt, wenn zwei sich widersprechen, etwa wenn der Techniker 2.140 Stunden abliest und das ERP noch 1.980 zeigt. Wie bei allen Stammdaten braucht es pro Feld ein führendes System, siehe [welche Daten die Terminplanung braucht](../salesforce-field-service-stammdaten/). Die Schnittstelle selbst gehört auf die Liste der [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).
 
-## Welche Limits zählen?
+## Die Limits: 2.600 Aufträge pro Lauf, 2.000 Assets pro Plan
 
 Die [Limits von Field Service](https://help.salesforce.com/s/articleView?id=service.fs_limits.htm&language=en_US&type=5), die nutzungsbasierte Pläne zuerst treffen:
 
@@ -92,9 +91,9 @@ Als praktische Grenze nennt die Hilfe 2.600 Assets pro Plan, weniger als 1.300 b
 
 In der Praxis teile ich Pläne nach Baureihe oder Serviceregion. So bleibt jeder Plan unter den Grenzen, und jeder hat einen Verantwortlichen.
 
-## Ein typisches Szenario, als Annahme: 1.200 Kompressoren
+## Rechenbeispiel: 1.200 Kompressoren
 
-Ein typisches Szenario, als Annahme: Ein Hersteller von Kompressoren betreut 1.200 Anlagen im Feld unter Vertrag. Im Vertrag steht: Wartung alle 2.000 Betriebsstunden oder alle 12 Monate, je nachdem, was zuerst eintritt. 800 Anlagen sind vernetzt, 400 nicht.
+Die Zahlen sind angenommen. Ein Hersteller von Kompressoren betreut 1.200 Anlagen im Feld unter Vertrag. Im Vertrag steht: Wartung alle 2.000 Betriebsstunden oder alle 12 Monate, je nachdem, was zuerst eintritt. 800 Anlagen sind vernetzt, 400 nicht.
 
 **Daten.** Jedes Asset bekommt ein Zahlenfeld für die Betriebsstunden, ein Feld für den Stand bei der letzten Wartung und das Datum der letzten Wartung. Eine Formel berechnet die Stunden seit der letzten Wartung, eine zweite die Monate. Die IoT-Plattform schreibt jede Nacht die Stunden der vernetzten Anlagen. Bei den übrigen 400 tragen Techniker den Stand bei jedem Einsatz ein, dort greift die 12-Monats-Bedingung.
 
@@ -104,8 +103,6 @@ Ein typisches Szenario, als Annahme: Ein Hersteller von Kompressoren betreut 1.2
 
 **Wirkung.** Angenommen, die Hälfte der vernetzten Anlagen läuft zweischichtig mit etwa 4.000 Stunden im Jahr: Sie bekommen zwei Wartungen im Jahr statt einer. Einschichtige Anlagen mit 1.800 Stunden im Jahr fallen auf die 12-Monats-Bedingung zurück. Verglichen mit einem festen Halbjahresrhythmus für alle 1.200 Anlagen sind das 1.600 statt 2.400 Einsätze im Jahr, und die stark genutzten Kompressoren werden trotzdem rechtzeitig gewartet.
 
-## Wo fangen Sie an?
+## Erster Schritt: eine Baureihe mit zehn Assets in der Sandbox
 
 Nehmen Sie eine Baureihe und schreiben Sie das Intervall aus dem Vertrag in einem Satz auf. Prüfen Sie, wo der Zähler heute liegt und wie oft er aktualisiert wird. Dann bauen Sie Felder, eine kriterienbasierte Regel und den Flow zum Zurücksetzen in einer Sandbox und testen mit zehn echten Assets, bevor Sie die ganze Baureihe umstellen. Das [Masterclass-Kapitel zu Assets, Wartung und Teilen](../../masterclass/field-service/field-service-assets-wartung-teile/) zeigt, wo das neben Verträgen, Ersatzteilen und Servicepartnern steht.
-
-Wartung nach Betriebsstunden braucht einen Zähler am Asset, eine Regel mit ODER und ein Zurücksetzen beim Abschluss.

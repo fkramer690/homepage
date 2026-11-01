@@ -10,11 +10,10 @@ pubDate: 2026-10-28
 short: "Tools compared"
 summary: "From change sets to commercial platforms: which DevOps tool fits your Git platform, your team and your implementation partners."
 takeaways:
-  - "Salesforce DevOps can be built with three kinds of tools: Salesforce's own standard tooling, open source such as sfdx-hardis, and commercial platforms such as Gearset, Copado or Flosum."
-  - "Change sets only work between orgs of the same production org, carry no data and have no version control; they are not enough for several partners on one org."
-  - "Lifecycle Center, called DevOps Center until October 2026, is native to Salesforce but supports only GitHub.com cloud plans and Bitbucket Cloud and is not available in the EU Operating Zone."
-  - "The Git platform your IT already runs often rules out half of the tools; settle it before any product demo."
-  - "A commercial tool fits the principle of client ownership, as long as the contract, the admin rights and the repository are in your name."
+  - "Change sets only work between orgs of the same production org and carry neither data nor version control. They are not enough for several partners."
+  - "Lifecycle Center, called DevOps Center until October 2026, supports only GitHub.com cloud plans and Bitbucket Cloud and is missing in the EU Operating Zone."
+  - "The Git platform your IT already runs often rules out half of the tools. Settle it before any product demo."
+  - "A commercial tool fits client ownership as long as the contract, the admin rights and the repository are in your name."
 articles: [sfdx-hardis-vs-devops-center, sfdx-hardis-introduction, devops-ai-agents-copado-gearset, client-owned-devops-tools]
 faq:
   - q: "Are change sets enough for a Salesforce programme with several partners?"
@@ -105,7 +104,7 @@ I go through the criteria in this order, because the first ones rule out the mos
 2. **Team.** Who works with the tool every day: admins who click, or developers at home with VS Code and branches? And is there someone on the client side who can own a pipeline?
 3. **Partners.** How many teams and implementation partners work on the same org? From the second partner on, you need pull requests with [mandatory reviews](../../../blog/why-pull-request-reviews-are-a-must-in-enterprise-projects/) and one process that everyone uses the same way.
 4. **Ownership.** Is the contract in your name, do your employees hold admin rights, does the repository sit in your organisation? Why that matters is in [why clients should own their DevOps tools](../../../blog/why-clients-should-own-their-devops-tools/).
-5. **Cost.** Licence, CI minutes, setup and above all the release role. In my assessment, in a programme with several partners that role costs more than any tool.
+5. **Cost.** Licence, CI minutes, setup and above all the release role. In my assessment, in a programme with several partners that role costs more than the tool licence.
 6. **Support.** Do you need a contract with response times, or are the community and a service provider on demand enough?
 
 ## The decision matrix
@@ -126,7 +125,7 @@ The facts in the table come from the vendor pages linked above. The "Fits" row i
 Two things the matrix does not show. First, the quality of support, which you only learn in reference calls. Second, how well a tool handles your actual metadata, for example Field Service configuration or Experience Cloud pages for a dealer portal. Check that in a short test with your own org before you sign.
 ```
 
-## A typical scenario, as an assumption
+## Example: two partners, Azure DevOps, change sets so far
 
 A machine builder runs Sales Cloud for dealer sales, Service Cloud and Field Service for its service technicians, and an SAP integration for spare parts. Two implementation partners work on the same org, one of them with a nearshore team. IT runs Azure DevOps for all other applications. Deployments so far use change sets.
 
@@ -143,5 +142,3 @@ Three rules are not negotiable for me:
 - **History stays portable.** With Flosum, where Git is optional, I would still switch on the Git connection so that the version history stays readable without the tool.
 
 The sandboxes and branches each of these tools builds on are covered in [chapter 3](../environments-and-branching/). How they become a pipeline with pull requests, validations and delta deployments follows in [chapter 5](../building-the-pipeline/). I help with the selection and setup as part of [DevOps and release management](../../../services/devops-release-management/) and, when several partners are involved, in [partner governance](../../../services/partner-governance/).
-
-The right tool is the one that fits your Git platform and has a responsible person on the client side.

@@ -9,11 +9,11 @@ topic: revenue
 categories: [revenue-cloud, architecture]
 tags: [Revenue Cloud, Produktkonfigurator, Constraint-Regeln, CML, SAP-Variantenkonfiguration]
 takeaways:
-  - "Der Revenue-Cloud-Konfigurator bietet zwei Regelwerke: Konfigurationsregeln auf der Business Rules Engine für Validierung, Ausschluss und Pflicht sowie die Constraint Rules Engine für Constraint-Modelle."
-  - "Constraint-Regeln lohnen sich, wenn Attribute voneinander abhängen und Optionen zahlreich sind, weil die Engine alle Kombinationen prüft und ungültige in Echtzeit herausfiltert."
-  - "Constraint-Modelle werden in CML geschrieben. Visual Builder erzeugt CML ohne Code, der CML Editor ist für komplexe Logik, und die Pflege braucht jemanden mit Modellierungswissen."
-  - "Der CML-Leitfaden von Salesforce nennt als Ziel unter 100 Millisekunden und weniger als 1.000 Backtracks pro Modelllauf, jedes Constraint-Modell braucht also Performance- und Regressionstests."
-  - "Wo die Regeln heute liegen, entscheidet den Weg: Regeln aus Tabellen ziehen in Revenue Cloud um, Regeln, die SAP-Variantenkonfiguration ohnehin prüft, brauchen ein führendes System."
+  - "Es gibt zwei Regelwerke: Konfigurationsregeln für Validierung, Ausschluss und Pflicht und die Constraint Rules Engine für Constraint-Modelle."
+  - "Constraint-Regeln lohnen sich bei voneinander abhängigen Attributen und vielen Optionen. Die Engine filtert ungültige Kombinationen in Echtzeit heraus."
+  - "Constraint-Modelle werden in CML geschrieben. Für die Pflege brauchen Sie jemanden beim Hersteller, der modellieren kann."
+  - "Salesforce nennt als Ziel unter 100 Millisekunden und unter 1.000 Backtracks pro Modelllauf. Jedes Modell braucht deshalb Performance-Tests."
+  - "Regeln aus Excel ziehen in Revenue Cloud um. Prüft die SAP-Variantenkonfiguration sie ohnehin, braucht es ein führendes System."
 faq:
   - q: "Was ist CML in Salesforce Revenue Cloud?"
     a: "CML, die Constraint Modeling Language, ist eine domänenspezifische Sprache für Constraint-Modelle. Sie beschreibt Typen, Attribute, Beziehungen und Constraints eines Produkts. Visual Builder erzeugt CML, im CML Editor schreiben Sie es direkt."
@@ -64,7 +64,7 @@ Meine Sicht: CML ist Code, auch wenn ein Teil davon zusammengeklickt wird. Ein M
 
 Ein nützliches Detail: Tabellen-Constraints können ihre Zeilen laut Developer Guide aus einem Standard- oder Custom-Objekt in Salesforce importieren. Eine Verträglichkeitstabelle, die in SAP oder im PLM gepflegt wird, lässt sich so über die Schnittstelle in ein Custom-Objekt laden, statt sie von Hand in CML abzutippen. Das führende System bleibt draußen, die Prüfung läuft in Salesforce.
 
-## Wie testen Sie Constraint-Modelle?
+## Testziel: unter 100 Millisekunden pro Modelllauf
 
 Der CML-Leitfaden setzt klare Ziele pro Modell:
 
@@ -101,13 +101,13 @@ Ich schaue darauf, wo sie heute liegen:
 
 Für Angebote mit KI hat das eine Nebenwirkung. Ein Agent kann nur Regeln einhalten, die er aufrufen kann. Liegen die Regeln außerhalb von Salesforce, lasse ich konfigurierte Maschinen beim Innendienst, wie in [KI-Angebote für Händler: Partner Sales Assistant](../ki-angebote-haendler-partner-sales-assistant/) beschrieben.
 
-## Ein typisches Szenario, als Annahme
+## Rechenbeispiel: drei Produktlinien, eine bleibt in SAP
 
 Ein Maschinenbauer hat drei Produktlinien. Zwei pflegen Anwendungstechniker in Excel mit rund 150 Verträglichkeitsregeln. Die dritte nutzt die SAP-Variantenkonfiguration mit Beziehungswissen, das die Fertigung bei jedem Auftrag prüft.
 
 Meine Empfehlung in diesem Fall: Die beiden Excel-Linien gehen in Constraint-Modelle, mit Tabellen-Constraints aus einem Custom-Objekt, Regressionsfällen pro Linie und einem benannten Verantwortlichen im Produktmanagement. Die SAP-Linie behält vorerst ihren Konfigurator. Salesforce erhält das konfigurierte Ergebnis über eine Schnittstelle, bepreist es und erstellt das Angebot. Nach einem Jahr kann der Hersteller entscheiden, ob die dritte Linie folgt, auf Basis des echten Pflegeaufwands statt Annahmen.
 
-## Wo starten Sie?
+## Regeln erfassen und eine Pilotfamilie wählen
 
 1. **Erfassen Sie die Regeln**: wie viele, wo sie liegen, wer sie ändert und wie oft.
 2. **Wählen Sie eine Produktfamilie** als Pilot, am besten eine, deren Regeln in Excel liegen.
@@ -116,5 +116,3 @@ Meine Empfehlung in diesem Fall: Die beiden Excel-Linien gehen in Constraint-Mod
 5. **Benennen Sie den Verantwortlichen**, der das Modell nach dem Go-live pflegt.
 
 Das ganze Kapitel steht im Masterclass-Teil [Katalog, Konfigurator, Preise](../../masterclass/revenue-cloud/produktkatalog-konfigurator-preise/), und wie Hersteller konfigurierte Produkte in ein Sales Agreement übernehmen, beschreibt [vom Angebot zum Sales Agreement](../angebot-zu-sales-agreement-produktkonfigurator/). Das führende System für Regeln zwischen SAP und Salesforce festzulegen gehört zu meiner Arbeit in der [Salesforce-Architektur](../../leistungen/salesforce-architektur/).
-
-Constraint-Regeln lohnen sich, wenn die Regeln ein Zuhause und einen Verantwortlichen haben, ob dieses Zuhause Revenue Cloud ist oder nicht.

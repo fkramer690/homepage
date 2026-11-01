@@ -11,10 +11,10 @@ coAuthor: juliane
 contactBrief: change
 tags: [Hypercare, Hypercare-Phase, Go-live, Change Management, Salesforce-Einführung, Support]
 takeaways:
-  - "Die Hypercare-Phase ist die Zeit direkt nach dem Go-live, in der das Projektteam verstärkt erreichbar bleibt, bis der neue Prozess im Alltag stabil läuft."
+  - "Der normale Support kennt die neuen Abläufe noch nicht, und seine Reaktionszeiten passen nicht zu einem Vertrieb, der heute ein Angebot schicken muss."
   - "Sie endet nach vorher vereinbarten Kriterien, etwa ohne offene kritische Fehler und mit sinkender Zahl neuer Fragen, nicht an einem festen Datum."
-  - "Ein fester Termin sortiert jede Meldung in Fehler, Bedienfrage, Datenproblem oder Änderungswunsch. Kleine Änderungswünsche werden als Quick Wins noch in der Hypercare umgesetzt, große gehen ins Backlog."
-  - "In meinen Projekten habe ich die Hypercare-Phase meist mit der Umsetzung von Feedback und Quick Wins verbunden. Teilweise lief sie bis zu drei Monate, mit wöchentlichen Status-Calls."
+  - "Ein fester Termin sortiert jede Meldung in Fehler, Bedienfrage, Datenproblem oder Änderungswunsch. Kleine Wünsche werden noch in der Hypercare umgesetzt."
+  - "In meinen Projekten lief die Hypercare teils bis zu drei Monate, mit wöchentlichen Status-Calls und der Umsetzung von Feedback und Quick Wins."
   - "Hypercare ist auch Change Management: Fragen der ersten Wochen zeigen, an welcher ADKAR-Stufe eine Gruppe hängt."
 faq:
   - q: "Was bedeutet Hypercare-Phase?"
@@ -36,7 +36,7 @@ In den ersten Tagen nach einem Go-live kommen drei Dinge zusammen: Fehler, die d
 
 Wer in dieser Phase keine schnelle Antwort bekommt, sucht sich einen Weg drumherum. Ein Angebot geht dann doch wieder aus Word raus, ein Einsatz wird per Telefon vergeben. Aus diesen Umwegen werden schnell Gewohnheiten, und die lassen sich später schwerer ändern als jeder Fehler. Im [ADKAR-Modell](../change-management-salesforce-einfuehrung/) ist das die Stufe Ability: Die Anwender wissen, wie es geht, schaffen es im Alltag aber noch nicht allein.
 
-## Wer gehört zum Hypercare-Team?
+## Ein kleines Hypercare-Team, das entscheiden kann
 
 Ein kleines Team, das Entscheidungen treffen und Fehler beheben kann:
 
@@ -48,7 +48,7 @@ Ein kleines Team, das Entscheidungen treffen und Fehler beheben kann:
 
 Bei Schnittstellen zum ERP gehört außerdem jemand aus dem ERP-Team dazu. Viele Meldungen der ersten Tage sind Daten, die im ERP anders ankommen als erwartet, und die lassen sich nur gemeinsam klären.
 
-## Wie laufen die Termine in der Hypercare?
+## Ein fester Termin jeden Morgen
 
 Meine Empfehlung für die ersten Tage nach dem Go-live: ein fester Termin am Morgen, 15 bis 30 Minuten, mit allen Meldungen des Vortags. Sobald die Zahl der Meldungen sinkt, reicht ein wöchentlicher Status-Call. Jede Meldung bekommt eine von vier Kategorien:
 
@@ -59,7 +59,7 @@ Meine Empfehlung für die ersten Tage nach dem Go-live: ein fester Termin am Mor
 | Datenproblem | Kunde aus der Migration ohne Ansprechpartner | Admin oder Datenteam korrigiert |
 | Änderungswunsch | „Das Feld hätten wir gern weiter oben“ | klein: Quick Win in der Hypercare, groß: Backlog |
 
-Die letzte Zeile verdient Aufmerksamkeit. Nach einem Go-live kommen viele berechtigte Wünsche. Kleine Verbesserungen, die schnell umgesetzt sind, gehören in die Hypercare: Die Anwender sehen, dass ihre Rückmeldung etwas bewirkt, und das stärkt die Bereitschaft mehr als jede Rundmail. Zwei Regeln gelten dabei. Fehler haben immer Vorrang, und auch Quick Wins gehen über die normale Pipeline mit Test, weil jede Änderung neue Fehler bringen kann. Größere Wünsche kommen ins Backlog und mit dem nächsten regulären Release. Wie Releases danach weiterlaufen, beschreibe ich in [Salesforce-Releases an den Fachbereich kommunizieren](../salesforce-releases-fachbereich-kommunizieren/).
+Die letzte Zeile verdient Aufmerksamkeit. Nach einem Go-live kommen viele berechtigte Wünsche. Kleine Verbesserungen, die schnell umgesetzt sind, gehören in die Hypercare: Die Anwender sehen, dass ihre Rückmeldung etwas bewirkt, und das stärkt die Bereitschaft mehr als eine Rundmail. Zwei Regeln gelten dabei. Fehler haben immer Vorrang, und auch Quick Wins gehen über die normale Pipeline mit Test, weil jede Änderung neue Fehler bringen kann. Größere Wünsche kommen ins Backlog und mit dem nächsten regulären Release. Wie Releases danach weiterlaufen, beschreibe ich in [Salesforce-Releases an den Fachbereich kommunizieren](../salesforce-releases-fachbereich-kommunizieren/).
 
 ```hinweis tipp
 Zählen Sie die Meldungen pro Kategorie und pro Gruppe jeden Tag mit. Viele Bedienfragen aus einem Team zeigen eine Lücke in der Schulung. Viele Änderungswünsche aus einem Team zeigen, dass es an den Entscheidungen vorher nicht beteiligt war.
@@ -92,8 +92,6 @@ Die Übergabe ist der Moment, in dem das Projektteam weiterzieht. Gut läuft sie
 
 Nach der Übergabe bleibt eine Aufgabe für das Change Management: Die gesammelten Fragen und Meldungen zeigen, welche Gruppen noch Unterstützung brauchen. Diese Liste gehört zum Sponsor, nicht in die Ablage.
 
-## Wo fangen Sie an?
+## Team, Termine und Endkriterien schriftlich festlegen
 
-Legen Sie vor dem nächsten Go-live drei Dinge schriftlich fest: wer im Hypercare-Team sitzt, wie oft es sich trifft und nach welchen Kriterien die Hypercare endet. Planen Sie die Person aus dem Support von Anfang an ein.
-
-Ein Go-live ist erst geschafft, wenn der Betrieb ihn ohne Projektteam trägt. Mehr dazu lesen Sie unter [Change Management Beratung für Salesforce](../../leistungen/change-management/).
+Legen Sie vor dem nächsten Go-live schriftlich fest, wer im Hypercare-Team sitzt, wie oft es sich trifft und nach welchen Kriterien die Hypercare endet. Planen Sie die Person aus dem Support von Anfang an ein, damit die Übergabe an den Betrieb schrittweise laufen kann. Wie wir Hypercare in Programmen aufsetzen, steht unter [Change Management Beratung für Salesforce](../../leistungen/change-management/).

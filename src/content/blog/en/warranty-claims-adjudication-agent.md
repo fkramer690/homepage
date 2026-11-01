@@ -9,9 +9,9 @@ topic: ai
 categories: [ai, manufacturing-cloud]
 tags: [agentforce, warranty, manufacturing cloud, ai agents, dealers, after-sales]
 takeaways:
-  - "Salesforce describes the Winter '27 Warranty Claims Adjudication Agent as validating coverage and flagging potential fraud; Winter '27 became generally available on 12 October 2026."
-  - "Manufacturing Cloud already adjudicates claims with Flow, the Business Rules Engine and expression sets; the agent should work around these rules and leave the coverage decision to them."
-  - "Before the agent runs, every claimed machine needs a serial number and a warranty start date in Salesforce, plus a usage source where terms depend on it; otherwise it decides on gaps."
+  - "Winter '27 has been generally available since 12 October 2026, but the product page describes the agent in a single sentence."
+  - "Manufacturing Cloud already adjudicates claims with Flow, the Business Rules Engine and expression sets, and the coverage decision stays there."
+  - "Every claimed machine needs a serial number and a warranty start date in Salesforce, plus operating hours where terms depend on usage."
   - "Claims above an agreed amount, every fraud flag, goodwill and claims with missing asset data should go to a human adjudicator before any credit note is issued."
   - "In the sources I could open, Salesforce has not published the licence, the fraud signals or a setup guide for this agent; clarify all three before you budget."
 faq:
@@ -26,7 +26,7 @@ faq:
 draft: false
 ---
 
-The Warranty Claims Adjudication Agent in Manufacturing Cloud, part of Winter '27, checks whether a dealer's warranty claim is covered and flags potential fraud. It is only as good as the asset data and rules behind it. Before you switch it on, every claimed machine needs a serial number and a warranty start date in Salesforce, your warranty terms need to exist as rules, and someone has to own the point where a person approves the money. I would let the agent sort and prepare claims, keep the coverage logic in rules and leave payment approval with an adjudicator.
+The Warranty Claims Adjudication Agent in Manufacturing Cloud, part of Winter '27, checks whether a dealer's warranty claim is covered and flags potential fraud. It depends entirely on the asset data and rules behind it. Before you switch it on, every claimed machine needs a serial number and a warranty start date in Salesforce, your warranty terms need to exist as rules, and someone has to own the point where a person approves the money. I would let the agent sort and prepare claims, keep the coverage logic in rules and leave payment approval with an adjudicator.
 
 ## What does the Warranty Claims Adjudication Agent do?
 
@@ -42,7 +42,7 @@ What is documented are the [Agentforce for Manufacturing warranty actions](https
 
 The data model underneath, from warranty terms to supplier recovery, is described in [warranty claims from dealers in Salesforce](../warranty-claims-dealers-salesforce/). Here I look only at the agent and what it needs.
 
-## What changes compared with rules-based adjudication?
+## Rules-based adjudication exists today
 
 Manufacturing Cloud can adjudicate claims without any AI today. According to [Salesforce Help](https://help.salesforce.com/s/articleView?id=mfg_warranties_adjudication_process_worflow.htm&language=en_US&type=5), a record-triggered flow starts when a claim meets defined conditions, collects the claim data through Context Service and hands it to an expression set in the Business Rules Engine. The expression set validates the claim and returns adjusted amounts and a status, and the flow updates the claim and emails the participants. A [Claim Validation element](https://help.salesforce.com/s/articleView?id=mfg_warranties_flow_bre.htm&language=en_US&type=5) reports whether a claim is approved and which products are not covered. A Scoring Framework adds a prediction of how likely a claim is to be approved, based on past approvals.
 
@@ -50,7 +50,7 @@ In practice such a rule set looks like this: a claim goes to manual review if it
 
 So the question "is this covered?" already has a deterministic answer. An agent adds value where rules are weak: reading the dealer's free-text fault description, comparing it with the fault code and the parts claimed, noticing that the same serial number came in twice, summarising the case for the adjudicator and drafting a request for missing information. Salesforce's own [architect guide on hybrid reasoning](https://architect.salesforce.com/docs/architect/fundamentals/guide/hybrid-reasoning-agentforce-builder-agent-script) states the rule I would apply: "if you can express a decision as code, it should be written as logic." How to build that split is the topic of [Agent Script: rules instead of the LLM](../agent-script-deterministic-rules/).
 
-## What must be in place before the agent checks claims?
+## What has to be in place before the agent
 
 ### Asset data with serial numbers and start dates
 
@@ -81,7 +81,7 @@ source: [Flex Credits rate card](https://www.salesforce.com/en-us/wp-content/upl
 
 Plan two separate lines: consumption, which you can estimate, and the licence, which only Salesforce can answer for now.
 
-## A typical scenario: agricultural machinery sold through 90 dealers
+## Worked example: agricultural machinery sold through 90 dealers
 
 Assume a maker of agricultural machinery with 90 dealers in Germany and Austria, SAP as ERP and Manufacturing Cloud with a dealer portal. All numbers are assumptions to show the method.
 
@@ -110,7 +110,7 @@ The consumption is small. The real cost is the three months of data work, and th
 
 The agent goes to production like any other change: with a test set of real claims, an agreed pass rate and monitoring afterwards, as described in [testing Agentforce agents before go-live](../testing-agentforce-agents-before-go-live/). Drawing these lines between rules, agent and people is part of my [architecture work](../../services/salesforce-architecture/). If you have not decided on Manufacturing Cloud itself yet, start with [whether Manufacturing Cloud pays off](../salesforce-manufacturing-cloud-is-it-worth-it/).
 
-## Where should you start?
+## Measure asset coverage
 
 1. **Measure asset coverage**: share of last year's claims whose serial number exists as an asset with start date.
 2. **Run rules-based adjudication first.** According to Salesforce Help it is available in Enterprise, Unlimited and Developer Editions, and it shows quickly whether your terms work as rules.
@@ -118,5 +118,3 @@ The agent goes to production like any other change: with a test set of real clai
 4. **Treat portal free text as untrusted** before any agent reads it.
 5. **Ask Salesforce three questions**: which licence, which fraud signals, which setup documentation.
 6. **Build a test set** from real claims, including rejected ones and known fraud cases.
-
-The Warranty Claims Adjudication Agent can speed up decisions, but only on top of clean asset data, rules that already work and a clear approval line.

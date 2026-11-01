@@ -10,11 +10,10 @@ categories: [manufacturing-cloud, architecture]
 contactBrief: integration
 tags: [Manufacturing Cloud, SAP, ERP-Anbindung, MuleSoft, Sales Agreements, Boni]
 takeaways:
-  - "In die Manufacturing Cloud fließen Accounts, Produkte, Aufträge oder Auftragssummen als Ist-Mengen und Lagerbestände; zurück fließen freigegebene Bonusauszahlungen und Garantiebeträge, die SAP als Gutschrift bucht."
-  - "Der MuleSoft Accelerator for Manufacturing deckt den Abgleich von Accounts, Produkten und Aufträgen aus SAP S/4HANA und Bonus-Gutschriften nach SAP ab; Sales Agreements und Garantie kommen darin nicht vor."
-  - "Die Aktion Refresh Actuals Calculation berechnet die Ist-Mengen eines Sales Agreements für den aktuellen, vergangene oder künftige Zeiträume neu und ist seit API-Version 47.0 verfügbar."
-  - "Ist-Mengen für Sales Agreements brauchen einen täglichen Lauf, der Auftragsstatus für Händler einen Live-Aufruf; ein Takt für alles kostet entweder API-Aufrufe oder Vertrauen."
-  - "Ab 1. Dezember 2026 brauchen ERP-Schnittstellen, die sich per SOAP login() anmelden, die Berechtigung Use Any API Auth; SOAP login() in den API-Versionen 31.0 bis 64.0 entfällt mit Summer '27."
+  - "Lagerbestände fließen ebenfalls aus SAP nach Salesforce. Bonus- und Garantiebeträge bucht SAP als Gutschrift."
+  - "Die Aktion Refresh Actuals Calculation rechnet die Ist-Mengen eines Sales Agreements pro Zeitraum neu, seit API-Version 47.0."
+  - "Ein Takt für alle Daten kostet entweder API-Aufrufe oder das Vertrauen der Händler in den Auftragsstatus."
+  - "Ab 1. Dezember 2026 brauchen Schnittstellen mit SOAP login() die Berechtigung Use Any API Auth. Mit Summer '27 entfällt login() in API 31.0 bis 64.0."
 faq:
   - q: "Welche Daten müssen von SAP in die Manufacturing Cloud fließen?"
     a: "Accounts mit ihrer Hierarchie, Produkte und entweder Aufträge oder Auftragssummen pro Kunde, Produkt und Zeitraum als Ist-Mengen für Sales Agreements. Der Lagerbestand ist als zusätzliche Kennzahl neben der Abweichung nützlich."
@@ -76,11 +75,11 @@ Für die Schnittstelle zählt eine Aktion: [Refresh Actuals Calculation](https:/
 
 Daraus ergibt sich ein sauberes Muster für die Schnittstelle. Hat SAP verspätete Aufträge oder Korrekturen für einen abgeschlossenen Monat geliefert, ruft die Middleware die Aktion für die betroffenen Agreements mit "aktueller und vergangene Zeiträume" auf. Ohne diesen Schritt zeigt das Agreement bis zum nächsten regulären Lauf den Rückstand des Vormonats, und Account Manager rufen Kunden wegen Mengen an, die längst abgenommen sind.
 
-## Wie oft müssen welche Daten fließen?
+## Der Takt folgt der Frage, die die Daten beantworten
 
 Der Takt folgt der Frage, die die Daten beantworten. Sales Agreements laufen über Monate oder ein Jahr, also reicht ein täglicher Lauf für die Ist-Mengen. Ein Händler, der fragt, wo sein Auftrag steht, will den Stand von heute. Den Auftragsstatus sollte man deshalb live in SAP abfragen, wie in [Agentforce und SAP: Auftragsstatus über MuleSoft](../agentforce-sap-auftragsstatus/). Ein Takt für alles verschwendet entweder API-Aufrufe oder zeigt dort alte Daten, wo es wehtut.
 
-Das Volumen entscheidet zwischen ganzen Aufträgen und Summen. Ein typisches Szenario, als Annahme: 800 Accounts mit Sales Agreements, im Schnitt 40 Produkte pro Agreement und Monatszeiträume. Summen pro Kunde, Produkt und Monat bedeuten höchstens 800 × 40 = 32.000 Werte im Monat, und ein täglicher Delta-Lauf schickt nur die geänderten Werte. Jede Auftragsposition zusätzlich zu replizieren, kostet Datenspeicher und einen Verknüpfungsschritt pro Auftrag. Das lohnt sich nur, wenn Vertrieb oder Service die Aufträge selbst in Salesforce sehen sollen.
+Das Volumen entscheidet zwischen ganzen Aufträgen und Summen. Ein Rechenbeispiel mit angenommenen Zahlen: 800 Accounts mit Sales Agreements, im Schnitt 40 Produkte pro Agreement und Monatszeiträume. Summen pro Kunde, Produkt und Monat bedeuten höchstens 800 × 40 = 32.000 Werte im Monat, und ein täglicher Delta-Lauf schickt nur die geänderten Werte. Jede Auftragsposition zusätzlich zu replizieren, kostet Datenspeicher und einen Verknüpfungsschritt pro Auftrag. Das lohnt sich nur, wenn Vertrieb oder Service die Aufträge selbst in Salesforce sehen sollen.
 
 Der Lagerbestand gehört in denselben täglichen Lauf. Ein Rückstand liest sich anders, wenn die Ware das Lager füllt, als wenn sie ohnehin knapp ist.
 
@@ -96,7 +95,7 @@ Summer '28 | Aufrufe an SOAP-, REST- und Bulk-API 31.0 bis 40.0 schlagen fehl
 
 Salesforce rät im selben Guide, diese Schnittstellen auf OAuth mit External Client Apps umzustellen. Ein Ist-Mengen-Lauf, der still ausfällt, ist schlimmer als einer, der laut ausfällt, weil der Vertrieb einen alten Rückstand sieht und ihm glaubt. Wie Sie alle betroffenen Schnittstellen finden, steht in [Salesforce-Passwort-Integrationen enden 2027](../salesforce-passwort-integrationen-2027/).
 
-## Wem gehört welches Objekt?
+## Jedes Objekt braucht ein führendes System und eine Person
 
 Jede Zeile der Tabelle oben braucht ein führendes System und eine benannte Person, schriftlich festgehalten vor dem Bau. Die [Object Ownership Matrix](../object-ownership-matrix-salesforce/) leistet das für Objekte innerhalb der Org; für eine ERP-Schnittstelle ergänze ich zwei Spalten: Richtung und Takt.
 
@@ -109,7 +108,7 @@ Diese Fragen kommen in fast jedem Design:
 
 Wie ich Schnittstellen zwischen ERP, Middleware und Salesforce aufsetze, beschreibe ich unter [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).
 
-## Wo fangen Sie an?
+## Tabelle mit Objekten, Richtung und Takt füllen
 
 1. **Füllen Sie die Tabelle** mit Ihren Objekten, führendem System, Richtung und Takt.
 2. **Entscheiden Sie Ist-Mengen als Aufträge oder Summen**, bevor das erste Sales Agreement live geht.
@@ -117,4 +116,4 @@ Wie ich Schnittstellen zwischen ERP, Middleware und Salesforce aufsetze, beschre
 4. **Planen Sie die Geldflüsse zurück**: Bonusauszahlungen und Garantiebeträge, jeweils mit einem Status, der nach Salesforce zurückkommt.
 5. **Listen Sie jeden Schnittstellennutzer** und seine Anmeldemethode vor dem 1. Dezember 2026 auf.
 
-Die Manufacturing Cloud ist nur so aktuell wie die SAP-Daten, die sie bekommt, deshalb kommt das Schnittstellendesign vor dem Funktionsdesign.
+Die ausgefüllte Tabelle ist bei mir das erste Dokument im Projekt, noch vor dem ersten Workshop zu Sales Agreements. Die Manufacturing Cloud rechnet mit dem, was SAP liefert, also steht das Schnittstellendesign vor dem Funktionsdesign.

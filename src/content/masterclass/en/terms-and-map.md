@@ -8,10 +8,10 @@ chapter: 1
 short: "Terms and map"
 summary: "The four layers of AI in a Salesforce programme, what separates vibe coding from agentic engineering and which product name stands for what."
 takeaways:
-  - "AI in a Salesforce programme has four layers: AI for building, interfaces for agents, AI in the product and AI as the interface. Each has different owners, different risks and a different billing model."
-  - "A coding agent such as Claude Code or Agentforce Vibes writes metadata and code; an Agentforce agent runs in the org and answers, for example, dealer enquiries. Mixing the two up leads to the wrong budget."
-  - "Vibe coding means letting AI generate code without reviewing it. That is fine for workshop prototypes; an org holding dealer and warranty data needs review, tests and CI."
-  - "Salesforce named its layer for external interfaces three times in about six months: Headless 360, AIforce, SIForce. Always write product names in concepts with a date."
+  - "Each of the four layers has its own owners, its own risks and its own billing model, so each one needs its own decision."
+  - "A coding agent such as Claude Code writes metadata and code, an Agentforce agent runs in the org. Mixing the two up leads to the wrong budget."
+  - "Vibe coding, meaning AI code without review, is fine for workshop prototypes. An org with dealer and warranty data needs review, tests and CI."
+  - "Salesforce renamed its layer for external interfaces three times in about six months, so write product names in concepts with a date."
 articles: [vibe-coding-prototype-not-production, aiforce-salesforce-in-claude-slack, agentforce-yes-or-no-manufacturers]
 faq:
   - q: "What is the difference between Agentforce and Agentforce Vibes?"
@@ -111,7 +111,7 @@ In concepts I write "AIforce (as of October 2026)", and in contracts I use the n
 
 What AIforce contains and what an IT lead should do now is in [AIforce: Salesforce in Claude and Slack](../../../blog/aiforce-salesforce-in-claude-and-slack/); the second reading of "SI" as system integrator is in [chapter 5](../aiforce-and-system-integrators/).
 
-## A typical scenario: "AI" four times in one steering committee
+## Example: "AI" four times in one steering committee
 
 Assume a machine builder with Sales Cloud, Service Cloud, SAP and a dealer network with a portal. All numbers are assumptions for illustration. One morning, the steering committee has four AI requests on the agenda:
 
@@ -120,7 +120,7 @@ Assume a machine builder with Sales Cloud, Service Cloud, SAP and a dealer netwo
 | Head of sales | Key account managers should prepare dealer visits in Claude and update opportunities from there. That is layer D. Salesforce in Claude is a beta, and Salesforce says prices may still change. Before anything else, someone has to check whether sharing for warranty cases and price agreements is too open. |
 | Head of service | An agent should answer dealer enquiries about order status and delivery dates. That is layer C, with a dependency on layer B, because the answers live in SAP. Assume 1,500 enquiries a month with three actions each: 4,500 actions at 20 credits make 90,000 credits, about $450 a month, before testing and integration work. |
 | Implementation partner | It wants to build the new dealer portal with coding agents and promises shorter sprints. That is layer A. What counts here are review rules, the rules file and the pipeline, whatever the tool is called. |
-| IT lead | Asks who actually reads which data when Claude, the partner's agent and the service agent all talk to the org at once. That is layer B, and it affects the other three. |
+| IT lead | Asks who reads which data when Claude, the partner's agent and the service agent all talk to the org at once. That is layer B, and it affects the other three. |
 
 Without the layers, these four requests land in one pot called "AI initiative" with one budget and one owner. With the layers they become four projects with four owners: sales with IT and data protection, service, programme management with partner governance, integration architecture. Only the second needs an Agentforce decision. Whether the service agent starts now or the data gets fixed first is answered in [Agentforce for manufacturers: start now or wait?](../../../blog/agentforce-yes-or-no-manufacturers/).
 
@@ -134,5 +134,3 @@ The following chapters take the layers one at a time:
 - **Across layers:** [chapter 6](../ai-tool-decision-matrix/) gives the decision matrix, [chapter 7](../costs-and-tokens/) the costs with worked examples.
 
 All chapters are listed on the [masterclass overview](../). Sorting the layers for your own programme is a typical starting point for my work on [Salesforce architecture](../../../services/salesforce-architecture/).
-
-Once you separate the four layers and date every product name, you can place any AI offer for Salesforce before anyone talks about tools.

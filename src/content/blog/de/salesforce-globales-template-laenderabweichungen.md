@@ -10,10 +10,10 @@ categories: [architecture, manufacturing-cloud]
 contactBrief: architecture
 tags: [globales Template, Rollout, Harmonisierung, Salesforce-Architektur]
 takeaways:
-  - "Ein globales Template ist der gemeinsame Kern aus Prozessen, Datenmodell und Automatisierung, den jedes Land übernimmt. Länder ergänzen nur, was dort wirklich anders ist."
-  - "Mein Richtwert: Jedes Land ist mindestens zu 80 Prozent identisch mit dem Template, und das Delta pro Land wird so klein wie möglich gehalten."
+  - "Mein Richtwert: Jedes Land ist mindestens zu 80 Prozent identisch mit dem Template, und das Delta pro Land bleibt so klein wie möglich."
   - "Berechtigt sind Abweichungen aus Recht, Steuern, Sprache und echten Unterschieden im Geschäft. Gewohnheit allein ist kein Grund."
   - "Landesunterschiede gehören in Konfiguration, etwa Custom Metadata pro Land, nicht in eigene Flows oder eigenen Code pro Land."
+  - "Über Abweichungen entscheidet ein globaler Prozessverantwortlicher mit dem Architekten auf Kundenseite, und jede Entscheidung kommt ins Log."
 faq:
   - q: "Was ist ein globales Template in Salesforce?"
     a: "Ein globales Template ist der gemeinsame Stand aus Prozessen, Datenmodell, Automatisierung und Rechten, den alle Länder eines weltweiten Rollouts übernehmen. Landesspezifisches kommt als kleine, dokumentierte Ergänzung dazu."
@@ -60,7 +60,7 @@ Die letzte Gruppe ist die größte, und sie ist die schwierigste, weil sie selte
 
 Bei der vierten Gruppe lohnt ein zweiter Blick. Verkauft ein Land über Händler und die anderen direkt, ist das eine zweite Variante des Vertriebsprozesses. Taucht dieselbe Variante in mehreren Ländern auf, gehört sie ins Template, und zwar einmal.
 
-## Wie bauen Sie Landesunterschiede, ohne das Template zu spalten?
+## Landesunterschiede gehören in Konfiguration, nicht in Code
 
 Die technische Regel ist einfach: Landesunterschiede gehören in Konfiguration, nicht in Code oder eigene Flows pro Land.
 
@@ -87,7 +87,7 @@ Ein Land beantragt eine Abweichung schriftlich: was es braucht, warum, und was e
 
 Zwei Regeln helfen dabei. Erstens trägt das Land die Folgekosten seiner Abweichung, auch die Tests bei jedem künftigen Release. Das macht viele Wünsche kleiner. Zweitens wird jede Abweichung nach einem Jahr geprüft: Wird sie noch gebraucht, oder kann das Land zum Template zurück? Viele Wünsche entstehen aus Gewohnheit. Versteht der Sponsor im Land, warum das Template so gebaut ist, ordnet er sie ein, bevor sie beim Architekten ankommen, mehr dazu in [Change Management im weltweiten Salesforce-Rollout](../change-management-weltweiter-rollout/).
 
-## Wie messen Sie, ob das Template hält?
+## Ob das Template hält, zeigen Kennzahlen pro Land
 
 Die 80 Prozent sind ein Richtwert, keine exakte Messung. Trotzdem lässt sich die Richtung gut verfolgen, mit drei einfachen Zahlen pro Land:
 
@@ -95,8 +95,6 @@ Die 80 Prozent sind ein Richtwert, keine exakte Messung. Trotzdem lässt sich di
 - **Landesspezifische Metadaten.** Flows, Datensatztypen oder Seitenlayouts, die nur für ein Land existieren. Die Zahl sollte nahe null liegen.
 - **Testaufwand pro Release für das Land.** Braucht ein Land deutlich mehr Testfälle als die anderen, trägt es mehr Abweichungen, als die Liste zeigt.
 
-## Wo fangen Sie an?
+## Das Ziel vor dem ersten Land aufschreiben
 
-Legen Sie vor dem ersten Land fest, was das Ziel ist, und schreiben Sie es auf. Ist es Harmonisierung, folgt daraus der Richtwert für die Übereinstimmung und der Antragsweg für Abweichungen. Führen Sie dann eine Liste der Abweichungen pro Land, mit Grund und Datum der Freigabe. Diese Liste zeigt im Lenkungsausschuss besser als jeder Statusbericht, ob das Template hält.
-
-Ein globales Template hält, wenn jede Abweichung einen Grund, einen Besitzer und einen Preis hat. Mehr dazu lesen Sie unter [Change Management](../../leistungen/change-management/).
+Legen Sie vor dem ersten Land fest, was das Ziel ist, und schreiben Sie es auf. Ist es Harmonisierung, folgt daraus der Richtwert für die Übereinstimmung und der Antragsweg für Abweichungen. Führen Sie dann eine Liste der Abweichungen pro Land, mit Grund und Datum der Freigabe. In die Liste gehört auch, was die Abweichung im Betrieb kostet, etwa einen zusätzlichen Testfall in jedem Release. Im Lenkungsausschuss zeigt sie auf einen Blick, ob das Template hält. Wie Länder das Template annehmen, ist auch eine Frage des [Change Managements](../../leistungen/change-management/).
