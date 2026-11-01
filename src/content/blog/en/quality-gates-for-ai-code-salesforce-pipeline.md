@@ -9,11 +9,11 @@ topic: devops
 categories: [devops, ai]
 tags: [quality gates, ai coding, code analyzer, sfdx-hardis, devops, manufacturing]
 takeaways:
-  - "AI-generated Salesforce code should pass blocking gates on every pull request: Code Analyzer with a severity threshold, a validation deploy with Apex tests, org-specific rules and a merge block nobody bypasses."
-  - "Code Analyzer only fails a pipeline when a violation meets the --severity-threshold; without that flag the build stays green whatever the report says. I would block at High and report the rest."
-  - "A validation deploy always runs Apex tests without deploying and returns a job ID; a quick deploy with that ID skips the tests and works for 10 days."
-  - "ApexGuru is available only in Production and Full Copy orgs and rates findings with runtime data, so I treat it as advisory in the pipeline, not as a merge blocker."
-  - "sfdx-hardis covers the check deploy and code quality jobs as open source; rules for AI-specific risks such as API version bumps you add yourself."
+  - "Checks a coding agent runs on a partner's machine do not replace the pipeline the client owns."
+  - "Without --severity-threshold the build stays green whatever Code Analyzer finds. I would block at High and report the rest."
+  - "A validation deploy always runs Apex tests. A quick deploy with its job ID skips them and works for 10 days."
+  - "ApexGuru is available only in Production and Full Copy orgs. In the pipeline I treat it as advisory, not as a merge blocker."
+  - "sfdx-hardis covers validation and code quality as open source. Rules such as the API version check you add yourself."
 faq:
   - q: "Which quality gates does AI-generated Salesforce code need?"
     a: "At least Salesforce Code Analyzer with a severity threshold, a validation deploy with Apex tests against an integration sandbox, a few org-specific rules such as an API version check, and branch protection that blocks the merge until all of them are green."
@@ -28,7 +28,7 @@ draft: false
 
 AI-generated Salesforce code should pass the same quality gates as human code, but every gate must block, run in your pipeline and apply to every partner alike. In practice that means Salesforce Code Analyzer with a severity threshold on each pull request, a validation deploy with Apex tests against an integration sandbox, a few rules for patterns agents get wrong, and branch protection nobody bypasses. ApexGuru adds performance hints where your org supports it. sfdx-hardis covers most of this as open source. What a rule cannot decide stays with a human reviewer.
 
-## Why do AI coding agents need harder quality gates?
+## AI coding agents need harder quality gates
 
 The [2025 DORA report](https://cloud.google.com/blog/products/ai-machine-learning/announcing-the-2025-dora-report) found that AI adoption improves delivery throughput but still has a negative relationship with delivery stability. Its explanation: "Without robust control systems, like strong automated testing, mature version control practices, and fast feedback loops, an increase in change volume leads to instability." In a Salesforce programme, the pipeline is that control system.
 
@@ -87,7 +87,7 @@ The default test level is `RunLocalTests` ([smart deployment](https://sfdx-hardi
 
 ApexGuru and org-specific rules such as the API version check are not part of the documented jobs; add them as extra steps. How the rest of the pipeline fits together is in [why DevOps decides Salesforce enterprise projects](../why-devops-matters-salesforce-enterprise/).
 
-## A typical scenario: two partners and a spare-parts lookup
+## Worked example: two partners and a spare-parts lookup
 
 Assume a machine builder with SAP S/4, Service Cloud, Field Service for 150 technicians and a dealer portal. Two partners, one onshore and one nearshore, started using coding agents this year. All numbers are assumptions. Pull requests rise from about 60 to 110 a month; on the client side, one architect and one release manager still review them.
 
@@ -95,7 +95,9 @@ A nearshore developer asks an agent to fix a rounding error in a spare-parts ava
 
 The API version check stops the pull request. The partner either reverts the version or adds a `runAs` test with a restricted technician user, which shows the missing records. Without that gate, technicians would see "not in stock" for parts sitting in the central warehouse, and dispatchers would place emergency orders for nothing. Against that, assume 25 minutes per validation: 110 runs are about 46 hours of pipeline time a month, paid in CI minutes, not in anyone's calendar.
 
-## Where should you start?
+## Put pipeline and thresholds in client hands
+
+Setting up these gates for programmes with several partners is the core of my [DevOps and release management](../../services/devops-release-management/) work. The order matters, because a partner can switch off any threshold as long as the pipeline belongs to them.
 
 1. **Own the pipeline.** Repository, pipeline and thresholds sit with you, as described in [why clients should own their DevOps tools](../why-clients-should-own-their-devops-tools/).
 2. **Turn on Code Analyzer with `--severity-threshold`** at High and publish the full report on every pull request.
@@ -105,6 +107,3 @@ The API version check stops the pull request. The partner either reverts the ver
 6. **Run ApexGuru** on the main branch against an org where it has runtime data, and review the findings per release.
 7. **Count gate failures per partner and category** every month. A rising category shows which rule is missing from the rules file or the contract.
 
-Setting up these gates for programmes with several partners is the core of my [DevOps and release management](../../services/devops-release-management/) work.
-
-Quality gates make AI-generated code exactly as safe as the rules they enforce, and those rules belong in your pipeline, not in a partner's prompt.

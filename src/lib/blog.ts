@@ -31,6 +31,10 @@ export function readingMinutes(post: Post): number {
 export const formatDate = (date: Date, lang: 'en' | 'de') =>
   date.toLocaleDateString(lang === 'de' ? 'de-DE' : 'en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
 
+// Short form for meta lines: "27. Okt. 2026" / "27 Oct 2026".
+export const formatShortDate = (date: Date, lang: 'en' | 'de') =>
+  date.toLocaleDateString(lang === 'de' ? 'de-DE' : 'en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+
 // Up to three other articles in the same language, most shared tags first.
 // Articles of the same series are left out; the series box already lists them.
 export async function getRelated(post: Post, limit = 3): Promise<Post[]> {

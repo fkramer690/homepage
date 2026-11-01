@@ -1,10 +1,16 @@
 ---
+// Two-tier footer (docs/layouts.md "Footer"): brand and three link columns on top
+// (services, masterclasses, knowledge & more), legal links and language switch below.
+// No phone number here (Fabian 2026-10-30: phone only in the contact areas).
 import ExternalMark from './ExternalMark.astro';
 import Logo from './Logo.astro';
 import type { Dict } from '../i18n/en';
 import { site } from '../site';
-import { homeHref, localHref } from '../lib/paths';
+import { homeHref, localHref, partnersHref } from '../lib/paths';
 import { masterclassesIndex } from '../lib/masterclass';
+import { getMasterclasses } from '../lib/masterclasses';
+import { getServices, serviceHref, servicesIndex } from '../lib/services';
+import { questionPaths } from '../data/questions';
 import { freelanceArchitect, freelanceArchitectPaths } from '../data/freelance-architect';
 
 interface Props {
@@ -12,25 +18,56 @@ interface Props {
   switchHref: string;
 }
 const { t, switchHref } = Astro.props;
+const lang = t.lang;
+const f = t.footer;
 const base = import.meta.env.BASE_URL;
-const home = homeHref(t.lang);
+const home = homeHref(lang);
 const year = new Date().getFullYear();
+const services = await getServices(lang);
+const masterclasses = await getMasterclasses(lang);
+const more = [
+  { href: `${home}blog/`, label: f.blog },
+  { href: localHref(lang, questionPaths[lang]), label: f.questions },
+  { href: localHref(lang, 'speaking/'), label: f.speaking },
+  { href: localHref(lang, 'certifications/'), label: f.certifications },
+  { href: partnersHref(lang), label: f.partners },
+  { href: localHref(lang, freelanceArchitectPaths[lang]), label: freelanceArchitect[lang].footerLink },
+];
 ---
 <footer class="site-footer">
-  <div class="container footer-inner">
+  <div class="container footer-top">
     <div class="footer-brand">
-      <Logo size={28} />
-      <span>{site.company} · {t.lang === 'de' ? 'Köln' : 'Cologne'}</span>
+      <a class="footer-logo" href={home}><Logo size={28} decorative /><span>{site.company.replace(/ GmbH$/, '')}</span></a>
+      <p>{f.tagline}</p>
+      <a class="footer-linkedin" href={site.linkedin} target="_blank" rel="noopener">LinkedIn<ExternalMark label={t.nav.externalTab} /></a>
     </div>
-    <nav class="footer-nav" aria-label="Footer">
-      <a href={`${home}blog/`}>{t.footer.blog}</a>
-      <a href={masterclassesIndex(t.lang)}>{t.nav.masterclass}</a>
-      <a href={localHref(t.lang, freelanceArchitectPaths[t.lang])}>{freelanceArchitect[t.lang].footerLink}</a>
-      <a href={`${base}impressum/`}>{t.footer.imprint}</a>
-      <a href={`${base}datenschutz/`}>{t.footer.privacy}</a>
-      <a href={site.linkedin} target="_blank" rel="noopener">LinkedIn<ExternalMark label={t.nav.externalTab} /></a>
-      <a href={switchHref}>{t.nav.switchLabel}</a>
+    <nav class="footer-col" aria-label={f.servicesTitle}>
+      <p class="footer-head mono">{f.servicesTitle}</p>
+      <ul>
+        {services.map((s) => <li><a href={serviceHref(s)}>{t.services.items[s.data.order - 1]?.title ?? s.data.title}</a></li>)}
+        <li><a class="footer-all" href={servicesIndex(lang)}>{f.allServices} →</a></li>
+      </ul>
     </nav>
-    <p class="footer-copy">© {year} {site.company}</p>
+    <nav class="footer-col" aria-label={f.masterclassesTitle}>
+      <p class="footer-head mono">{f.masterclassesTitle}</p>
+      <ul>
+        {masterclasses.map((m) => <li><a href={m.href}>{m.shortName}</a></li>)}
+        <li><a class="footer-all" href={masterclassesIndex(lang)}>{f.allMasterclasses} →</a></li>
+      </ul>
+    </nav>
+    <nav class="footer-col" aria-label={f.moreTitle}>
+      <p class="footer-head mono">{f.moreTitle}</p>
+      <ul>
+        {more.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
+      </ul>
+    </nav>
+  </div>
+  <div class="container footer-bottom">
+    <p class="footer-copy">© {year} {site.company} · {lang === 'de' ? 'Köln' : 'Cologne'}</p>
+    <nav class="footer-legal" aria-label={lang === 'de' ? 'Rechtliches' : 'Legal'}>
+      <a href={`${base}impressum/`}>{f.imprint}</a>
+      <a href={`${base}datenschutz/`}>{f.privacy}</a>
+      <a href={switchHref} hreflang={lang === 'de' ? 'en' : 'de'}>{t.nav.switchLabel}</a>
+    </nav>
   </div>
 </footer>

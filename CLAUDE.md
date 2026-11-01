@@ -34,6 +34,10 @@ Every icon is one SVG file in `src/icons/` (catalogue and style rules in `src/ic
 
 Every page uses one frame (`--max`, 1216px content) and is either a `reading` or a `wide` page (`layout` prop of `src/layouts/Page.astro`). Reading pages put all running text into `src/components/ReadingGrid.astro` (740px text column plus sticky side column with contents and booking box); wide pages (start, overviews, partner) use the full frame for cards and grids. Rules under "Page width" in `docs/layouts.md`. `scripts/check-layout.mjs` runs after `astro build` and fails on violations; never give a container its own width and never weaken the check.
 
+## Colours, radii and shadows
+
+Every colour, radius and shadow comes from the tokens in `:root` of `src/styles/global.css` (rules under "Colours, radii and shadows" in `docs/layouts.md`). `scripts/check-tokens.mjs` runs in `npm run build` and fails on hard-coded values; add a token instead and never weaken the check.
+
 ## Sitemap
 
 The sitemap must list exactly the indexable pages. `scripts/check-sitemap.mjs` runs after `astro build` and fails if a page without `noindex` is missing from it, a `noindex` page is in it, or a listed URL has no page. To keep a page out of the sitemap, give it `noindex` (and add it to the sitemap filter in `astro.config.mjs`); never weaken the check.

@@ -11,7 +11,7 @@ tags: [release management, devops, salesforce cli, winter 27, apex]
 takeaways:
   - "From 28 October 2026 the Salesforce CLI command org display no longer prints access tokens, so pipeline scripts that read the token from its output will break."
   - "The Salesforce CLI now requires Node.js 22 or later, which means CI runner images and developer machines need an update."
-  - "Winter '27 hides the Developer Console in Setup and makes Apex read-only in the new Web Console for production orgs, which strengthens the case for deploying only through a pipeline."
+  - "The Developer Console disappears from Setup, and Apex is read-only in the Web Console in production. Changes now go through the pipeline."
   - "Apex heap limits rise automatically from 6 to 10 MB for synchronous and from 12 to 25 MB for asynchronous code."
   - "API retirements have started: SOAP login() needs a new permission from 1 December 2026 and API versions 31.0 to 40.0 stop receiving updates in Summer '27."
 faq:
@@ -47,11 +47,11 @@ What to do:
 
 **The CLI requires Node.js 22 or later.** CI runners often use pinned Docker images or preinstalled Node versions. If a runner still has an older Node version, installing or updating the CLI fails. Check the base images of your pipeline, the setup steps of hosted runners and the machines of your developers. Tools that build on the Salesforce CLI, such as [sfdx-hardis](../sfdx-hardis-open-source-salesforce-devops/), follow the same requirement.
 
-## Why does the Developer Console change matter?
+## The Developer Console disappears from Setup
 
 With Winter '27 the Developer Console no longer appears in the Setup menu by default. Its successor is the Web Console, which is generally available. In production orgs, Apex is read-only in the Web Console.
 
-For well-run programmes this is good news. Editing code or running ad hoc changes directly in production has always been a risk: no review, no history, no way back. The new default pushes teams towards the way it should work anyway, with every change in the repository, reviewed in a pull request and deployed through the pipeline. I explain why that matters in [why pull request reviews are a must in enterprise projects](../why-pull-request-reviews-are-a-must-in-enterprise-projects/).
+For well-run programmes little changes. Editing code or running ad hoc changes directly in production has always been a risk: no review, no history, no way back. The new default pushes teams towards the way it should work anyway, with every change in the repository, reviewed in a pull request and deployed through the pipeline. I explain why that matters in [why pull request reviews are a must in enterprise projects](../why-pull-request-reviews-are-a-must-in-enterprise-projects/).
 
 Some teams still use the Developer Console for quick queries, log analysis or anonymous Apex in production. Those habits need a replacement now. Agree on which tasks are allowed in production, who may do them and how they are documented.
 
@@ -79,7 +79,7 @@ Summer '28 | SOAP, REST and Bulk API versions 31.0 to 40.0 fail
 
 Together with the end of the username-password flow, this is a real workload for integration teams. I describe the inventory and migration in [Salesforce password integrations end in 2027](../salesforce-password-integrations-end-2027/).
 
-## What else should release managers know?
+## What else release managers should know
 
 Three smaller points with governance impact:
 
@@ -87,9 +87,9 @@ Three smaller points with governance impact:
 - **Gemini model rerouting.** Requests to Gemini 2.5 Pro, Flash and Flash-Lite were rerouted to newer Gemini models on 20 October 2026. If prompt templates or agents rely on a specific model, test their results again.
 - **Multi-agent orchestration is generally available**, and Agent Script gained functions and `else if` chains. Both make agent logic more powerful, and more reason to review it like code.
 
-## What is a practical checklist for Winter '27?
+## Winter '27 checklist, starting with the token scripts
 
-For a release team, these steps cover the essentials:
+Three releases a year mean a checklist like this every few months. A pipeline that runs every change through validation and tests catches most of these issues early, which is one of the reasons [DevOps decides Salesforce enterprise projects](../why-devops-matters-salesforce-enterprise/). For a release team, these steps cover the essentials:
 
 1. Find and fix every use of `org display` tokens in pipelines before 28 October.
 2. Update Node.js to version 22 on runners, Docker images and developer machines.
@@ -98,5 +98,3 @@ For a release team, these steps cover the essentials:
 5. Check which integration users log in via SOAP and give them the required permission or migrate them.
 6. Define who may build and activate agents, and put agent metadata under version control.
 7. Retest prompt templates and agents that depended on specific Gemini models.
-
-Three releases a year mean a checklist like this every few months. A pipeline that runs every change through validation and tests catches most of these issues early, which is one of the reasons [DevOps decides Salesforce enterprise projects](../why-devops-matters-salesforce-enterprise/).

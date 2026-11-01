@@ -820,8 +820,11 @@ export function renderBlock(block, { lang, isExternal, readDiagram, today = new 
   }
   if (name === 'saeulen') {
     const { roof, base, pillars } = parsePillars(content);
-    const cols = pillars.map((x, i) => `<li style="--i:${i}"><span class="cb-pillar-head">${iconHtml(x.icon, 'cb-pillar-icon')}<span class="cb-pillar-no">${String(i + 1).padStart(2, '0')}</span></span><span class="cb-pillar-name">${inline(x.name, o)}</span><span class="cb-pillar-sub">${inline(x.sub, o)}</span><span class="cb-pillar-text">${inline(x.text, o)}</span></li>`).join('');
-    return `<div class="cb cb-pillars${roof ? ' cb-pillars-roofed' : ''}" style="--n:${pillars.length}">${roof ? `<p class="cb-pillar-roof">${inline(roof, o)}</p>` : ''}<ol>${cols}</ol>${base ? `<p class="cb-pillar-base">${inline(base, o)}</p>` : ''}</div>`;
+    // Slim pillars (icon, name, core line); the sentences stand below the base in two
+    // columns, so they never run in a quarter of the text column (Fabian 2026-10-31).
+    const cols = pillars.map((x, i) => `<li style="--i:${i}">${iconHtml(x.icon, 'cb-pillar-icon')}<span class="cb-pillar-name">${inline(x.name, o)}</span><span class="cb-pillar-sub">${inline(x.sub, o)}</span></li>`).join('');
+    const notes = pillars.map((x) => `<div><dt>${inline(x.name, o)}</dt><dd>${inline(x.text, o)}</dd></div>`).join('');
+    return `<div class="cb cb-pillars${roof ? ' cb-pillars-roofed' : ''}" style="--n:${pillars.length}">${roof ? `<p class="cb-pillar-roof">${inline(roof, o)}</p>` : ''}<ol>${cols}</ol>${base ? `<p class="cb-pillar-base">${inline(base, o)}</p>` : ''}<dl class="cb-pillar-notes">${notes}</dl></div>`;
   }
   if (name === 'hebel') {
     return `<div class="cb cb-levers">${parseSteps(content).map((s, i) => `<div class="cb-lever"><p class="cb-lever-no">${lang === 'de' ? 'Hebel' : 'Lever'} ${String(i + 1).padStart(2, '0')}</p><p class="cb-lever-title">${inline(s.title, o)}</p><p class="cb-lever-text">${inline(s.text, o)}</p>${s.meta ? `<p class="cb-lever-effect">${inline(s.meta, o)}</p>` : ''}</div>`).join('')}</div>`;

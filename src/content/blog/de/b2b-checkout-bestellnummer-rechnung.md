@@ -9,11 +9,11 @@ topic: commerce
 categories: [b2b-commerce]
 tags: [B2B Commerce, Checkout, Bestellnummer, Zahlung, Kreditlimit, ERP]
 takeaways:
-  - "In Salesforce B2B Commerce gilt eine Bestellnummer (Purchase Order) als Zahlungsform, löst aber keinen Zahlungsvorgang aus; die Nummer geht für die Rechnung ans ERP."
-  - "Eine Bestellung lässt sich nur abschicken, wenn der Warenkorb eine Zahlungsautorisierung oder eine Bestellnummer hat. Jeder Checkout muss in einem der beiden enden."
-  - "Die Purchase-Order-Komponente braucht kein Payment Gateway. Dual Payment bietet Karte und Bestellnummer und ist nur für B2B; Salesforce Payments läuft über Stripe."
-  - "Zahlungen lassen sich nicht mit einer Commerce Extension anpassen. Eigene Zahlungslogik braucht einen Apex-Adapter oder eine eigene Checkout-Komponente."
-  - "Kreditlimit und Auftragssperre gehören ins ERP. Die PlaceOrder-Extension mit ihrer validate-Methode ist der Ort, das ERP vor dem Anlegen der Bestellung zu fragen."
+  - "Eine Bestellnummer (Purchase Order) gilt im Shop als Zahlungsform, löst aber keine Zahlung aus. Die Nummer geht für die Rechnung ans ERP."
+  - "Eine Bestellung geht nur ab, wenn der Warenkorb eine Zahlungsautorisierung oder eine Bestellnummer hat. Jeder Checkout endet in einem der beiden."
+  - "Die Purchase-Order-Komponente braucht kein Payment Gateway. Dual Payment bietet Karte und Bestellnummer, Salesforce Payments läuft über Stripe."
+  - "Zahlungen lassen sich nicht mit einer Commerce Extension anpassen. Eigene Zahlungslogik braucht einen Apex-Adapter oder eine eigene Komponente."
+  - "Kreditlimit und Auftragssperre gehören ins ERP. Die validate-Methode der PlaceOrder-Extension fragt das ERP, bevor die Bestellung entsteht."
 faq:
   - q: "Braucht ein B2B-Shop auf Salesforce ein Payment Gateway?"
     a: "Nicht, wenn alle Käufer auf Rechnung bestellen. Die Purchase-Order-Komponente ist für B2B-Shops gedacht, die nur Bestellnummern annehmen und kein Gateway brauchen. Ein Gateway wird erst nötig, wenn ein Teil der Käufer mit Karte zahlt."
@@ -38,7 +38,7 @@ Auf derselben Seite steht die Regel, die jedes Checkout-Design prägt: Hat der W
 
 Salesforce vermarktet das Produkt inzwischen auch als "Agentforce Commerce for B2B". Die Checkout-Komponenten sind unter beiden Namen dieselben.
 
-## Welche Zahlungskomponenten bietet Salesforce B2B Commerce?
+## Die Zahlungskomponenten von Salesforce B2B Commerce
 
 Das Entwicklerhandbuch nennt für B2B-Shops diese Optionen, verfügbar in Enterprise, Unlimited und Developer Edition:
 
@@ -72,7 +72,7 @@ Jede Kartenzahlung bringt Arbeit, die die Bestellnummer nicht hat. Jemand muss d
 
 Ich empfehle daher die Purchase-Order-Komponente, wenn der Shop nur für bekannte Händler gedacht ist, und Dual Payment oder Salesforce Payments mit Bestellnummer, wenn eine klar umrissene Gruppe per Karte zahlen soll. Wer mit der Karte anfängt, weil Endkundenshops das so machen, holt sich Gateway, Gebühren und einen Abstimmungsprozess für Bestellungen, die ohnehin auf Rechnung gekommen wären.
 
-## Wie prüft der Shop Kreditlimit und Auftragssperre?
+## Kreditlimit und Auftragssperre prüft die PlaceOrder-Extension
 
 Kreditlimit, offene Posten und Auftragssperren liegen im ERP, bei SAP zum Beispiel im Kreditmanagement. Der Shop kennt davon nichts. Ohne Prüfung kann ein gesperrter Händler eine Bestellung abschicken, die das ERP später ablehnt, und der Innendienst muss anrufen und erklären.
 
@@ -97,7 +97,7 @@ Drei Entscheidungen gehören in die Spezifikation:
 
 Ich würde Kreditlimits nicht nachts nach Salesforce kopieren, um den Live-Aufruf zu sparen. Eine Kopie von gestern Abend ist genau dann falsch, wenn es darauf ankommt: bei dem Händler, der heute Morgen drei große Bestellungen abgeschickt hat.
 
-## Ein typisches Szenario, als Annahme
+## Rechenbeispiel: Pumpenhersteller mit 300 Händlern
 
 Ein Pumpenhersteller verkauft Ersatzteile über 300 Händler in Deutschland, Österreich und der Schweiz. Alle Händler haben ein Debitorenkonto in SAP und zahlen innerhalb von 30 Tagen. Dazu bestellen rund 50 kleine Servicewerkstätten pro Jahr ein- oder zweimal und haben kein Debitorenkonto.
 
@@ -111,8 +111,6 @@ Eine Bestellung im Shop erzeugt in Salesforce eine Order Summary. Order Summarie
 
 Wem der Auftrag ab dann gehört, beschreibe ich in [Shop-Bestellungen ins ERP](../shop-bestellungen-erp-auftrag/), welche Daten zwischen Shop und SAP fließen, in [B2B Commerce und SAP](../b2b-commerce-sap-datenfluesse/). Wie Händler mit alten Bestellungen und Vorlagen schneller zum Checkout kommen, steht in [Nachbestellen im B2B-Shop](../nachbestellen-b2b-shop-vorlagen/).
 
-## Wo fangen Sie an?
+## Bei der Buchhaltung fragen, wie Händler zahlen
 
 Fangen Sie bei der Buchhaltung an, vor dem Shop-Design. Fragen Sie, wie jede Käufergruppe heute zahlt, welches System Kreditlimits und Auftragssperren führt und wie schnell es einen Live-Aufruf beantwortet. Wählen Sie danach die Komponente und schreiben Sie die validate-Logik mit ihrem Verhalten bei Zeitüberschreitung auf. Das Kapitel [Preise, Warenkorb, Checkout](../../masterclass/b2b-commerce/preise-warenkorb-checkout/) der [Masterclass B2B Commerce](../../masterclass/b2b-commerce/) stellt den Checkout neben die Entscheidungen zu Preisen und Nachbestellung, und die Schnittstellenarbeit hinter der Kreditprüfung gehört zu [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).
-
-Die meisten Händler sollten den Checkout mit Bestellnummer und einer Kreditprüfung aus dem ERP abschließen, und nur eine klar umrissene Gruppe sollte eine Karte brauchen.

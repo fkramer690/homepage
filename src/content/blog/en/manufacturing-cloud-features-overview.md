@@ -9,11 +9,10 @@ topic: governance
 categories: [manufacturing-cloud]
 tags: [Manufacturing Cloud, licences, sales agreements, warranty, dealer channel, make-or-buy]
 takeaways:
-  - "Manufacturing Cloud adds sales agreements, forecasting, programmes, targets and visits for sales, warranty and asset features for service, and rebate and partner features for the dealer channel."
-  - "Each sales and partner feature has its own setting in the IndustriesManufacturingSettings metadata, false by default, so a Manufacturing Cloud licence says nothing about what is switched on."
-  - "Some capabilities in Salesforce's own feature lists are sold separately: ship and debit sits in Channel Revenue Management at $30,000 per org and year, Connected Assets costs $15,000 per org and month."
-  - "Trailhead calls the product Agentforce Manufacturing, and features with Agentforce in their name are not always agents. Ask which subagent, action and licence stand behind each one."
-  - "A quote should name every feature the business case needs, with the licence that covers it, instead of only the edition."
+  - "Each sales and partner feature has its own setting in IndustriesManufacturingSettings, false by default."
+  - "Ship and debit sits in Channel Revenue Management at $30,000 per org and year, Connected Assets costs $15,000 per org and month."
+  - "Features with Agentforce in their name are not always agents. Ask which subagent, action and licence stand behind each one."
+  - "A quote should name every feature the business case needs, with the licence that covers it, not only the edition."
 faq:
   - q: "Which features does Salesforce Manufacturing Cloud include?"
     a: "For sales: sales agreements, account forecasting, program-based business, account manager targets and visit management. For service: service console, asset service console, warranty lifecycle management, product service campaigns, prework estimation and inventory features. For the channel: rebate management and partner lead, performance and visit management."
@@ -44,7 +43,7 @@ Forecasting exists twice: the settings have one switch for account forecasts and
 
 Trailhead also lists product catalog management, which keeps product definitions and pricing structures in one place. A quoting system with configurator, approvals and contract generation does not appear in any of these feature lists. In this masterclass, quoting belongs to Revenue Cloud.
 
-## What does it contain for service?
+## For service, warranty, campaigns and two consoles come on top
 
 The [product page for service](https://salesforce.com/manufacturing/cloud/service) names three blocks:
 
@@ -73,9 +72,9 @@ Clarify whether your edition covers partner visit management or whether it needs
 
 Rebate management itself is covered in [part 5 of the series](../rebate-management-dealer-rebates/). Whether it needs extra licences is another open point; the prices that contradict each other are collected in [Manufacturing Cloud add-ons: what costs extra](../manufacturing-cloud-add-ons-extra-costs/).
 
-## Why does every feature have its own switch?
+## Every feature has its own switch
 
-Because Salesforce built it that way. The [IndustriesManufacturingSettings metadata](https://developer.salesforce.com/docs/atlas.en-us.automotive_cloud.meta/automotive_cloud/auto_metadata_api_industriesmanufacturingsettings.htm) has one boolean field per feature, all false by default:
+Salesforce built it that way. The [IndustriesManufacturingSettings metadata](https://developer.salesforce.com/docs/atlas.en-us.automotive_cloud.meta/automotive_cloud/auto_metadata_api_industriesmanufacturingsettings.htm) has one boolean field per feature, all false by default:
 
 | Setting | Feature | Since API |
 |---|---|---|
@@ -89,19 +88,19 @@ Because Salesforce built it that way. The [IndustriesManufacturingSettings metad
 
 For the first three fields the page gives no version of their own, only the component's 47.0.
 
-Three consequences follow. First, a licence and an active feature are two different things. An org can pay for Manufacturing Cloud for years and use only sales agreements. Second, features depend on each other: program-based business needs advanced account forecasting, Data Pipelines and its own permission sets, according to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/program-based-business-with-manufacturing-cloud/get-started-with-program-based-business). Third, the switches are metadata. They belong in version control and the release process like every other setting, not in a click in production.
+A licence and an active feature are two different things. An org can pay for Manufacturing Cloud for years and use only sales agreements. On top of that, features depend on each other: program-based business needs advanced account forecasting, Data Pipelines and its own permission sets, according to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/program-based-business-with-manufacturing-cloud/get-started-with-program-based-business). And the switches are metadata. They belong in version control and the release process like every other setting, not in a click in production.
 
-## Manufacturing Cloud or Agentforce Manufacturing: which name counts?
+## Manufacturing Cloud and Agentforce Manufacturing are the same product
 
-Both. The pricing page sells "Manufacturing Cloud Sales Core", its footnotes speak of "Agentforce Manufacturing for Sales". Trailhead calls the whole product Agentforce Manufacturing. It is one product with two names.
+Both names count. The pricing page sells "Manufacturing Cloud Sales Core", its footnotes speak of "Agentforce Manufacturing for Sales". Trailhead calls the whole product Agentforce Manufacturing. It is one product with two names.
 
 The name causes a practical problem. Trailhead lists "Agent-powered sales agreements", but the description is about long-term agreements on prices and products, with no agent action named. "Agentforce for sales planning" is a real agent template with three documented subagents, as described in [what the Sales Planning agent really does](../agentforce-sales-planning-agreements-forecasts/). And the automatic forecast for new products, which Trailhead attributes to Agentforce Manufacturing, is a scheduled calculation.
 
 In every vendor workshop I would ask the same question: which subagent, which action, which licence? For Core, the pricing page lists Agentforce via Flex Credits and Salesforce sells the Agentforce for Manufacturing Cloud add-on; the full Agentforce for Industries suite is only in the Max editions.
 
-## A typical scenario, as an assumption
+## Worked example: a quote for a hydraulics maker
 
-A maker of hydraulic components receives a quote for 120 Sales Core and 40 Service Core users. The business case names six things: sales agreements with distributors, targets per account manager, quarterly visits at 60 dealers, warranty claims from dealers through a portal, price protection for distributors and an agent for agreement questions.
+Assume a maker of hydraulic components receives a quote for 120 Sales Core and 40 Service Core users. The business case names six things: sales agreements with distributors, targets per account manager, quarterly visits at 60 dealers, warranty claims from dealers through a portal, price protection for distributors and an agent for agreement questions.
 
 Checked against the feature lists:
 
@@ -124,5 +123,3 @@ Only two of the six points are settled by the edition in the quote. The other fo
 7. **The price basis:** the pricing page footnotes contradict each other on Enterprise and Unlimited Edition.
 
 This list is the first half of chapter 1 of the [Manufacturing Cloud masterclass](../../masterclass/manufacturing-cloud/scope-and-business-case/). Weighing the features against a custom build is part of my work on [make-or-buy and licence forecasts](../../services/make-or-buy-licences/).
-
-Manufacturing Cloud contains a lot, but only what is named in the quote and switched on in the org helps your business case.

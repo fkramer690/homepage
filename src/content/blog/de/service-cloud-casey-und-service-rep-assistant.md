@@ -9,8 +9,8 @@ topic: service
 categories: [ai]
 tags: [Service Cloud, Agentforce, Contact Center, Kundenservice, Fertigung]
 takeaways:
-  - "Casey ist der fertige Agentforce-Agent von Salesforce für den Kundenservice, früher Help Agent genannt; er wird aus Wissensartikeln, PDFs und URLs eingerichtet und kann an Kanäle wie Telefon angebunden werden."
-  - "Der Service Rep Assistant unterstützt Servicemitarbeitende, indem er Stimmung und Fallkontext in Echtzeit auswertet und einen Aktionsplan im Gesprächsverlauf anpasst."
+  - "Casey, früher Help Agent, wird aus Wissensartikeln, PDFs und URLs eingerichtet und lässt sich an Kanäle wie Telefon anbinden."
+  - "Der Service Rep Assistant wertet Stimmung und Fallkontext in Echtzeit aus und passt den Aktionsplan im Gesprächsverlauf an."
   - "Erreicht Casey eine Richtliniengrenze, etwa bei Rabatten oder Kulanz, kann er eine Freigabeanfrage an einen Menschen in der Konsole weiterleiten."
   - "Das native Contact Center von Salesforce ist seit dem 16. Oktober 2026 in mehr als 30 europäischen Ländern allgemein verfügbar."
   - "Im B2B-Service der Fertigung entscheiden die Qualität der Wissensartikel und klare Freigaberegeln, ob Casey hilft oder zusätzliche Arbeit erzeugt."
@@ -27,7 +27,7 @@ faq:
 
 Salesforce ordnet sein Service-Angebot um zwei Arten von Hilfe: Casey, einen KI-Agenten, der Kunden direkt antwortet, und den Service Rep Assistant, der Servicemitarbeitende während eines Falls unterstützt. Im Oktober 2026 hat Salesforce außerdem sein natives Contact Center in Europa allgemein verfügbar gemacht. Für Hersteller mit B2B-Service können diese Neuerungen Antwortzeiten verkürzen und Serviceteams entlasten, aber nur, wenn das Wissen dahinter verlässlich ist und die Regeln für die Übergabe an Menschen klar sind. Es folgen ein Überblick über die Neuerungen und eine Einschätzung aus Kundensicht.
 
-## Was hat Salesforce in der Service Cloud vorgestellt?
+## Zehn Neuerungen in der Service Cloud vom 13. Oktober 2026
 
 Am 13. Oktober 2026 hat Salesforce [zehn Neuerungen in der Service Cloud](https://www.salesforce.com/blog/?p=155993) zusammengefasst. Für Serviceorganisationen in Unternehmen sind diese am wichtigsten:
 
@@ -59,7 +59,7 @@ Zwei verwandte Funktionen machen Casey für den Service in Unternehmen interessa
 - **Freigaben für Agenten.** Erreicht Casey eine Richtliniengrenze, etwa einen Rabatt oder eine Kulanzleistung über einem Schwellenwert, kann er eine Freigabeanfrage an einen Menschen schicken. Dieser gibt sie in der Konsole frei oder lehnt sie ab.
 - **Agent Optimizer.** Analysiert Gespräche, ordnet Kontaktgründe nach Häufigkeit und kann bestehende Flows und Apex-Klassen in Aktionen umwandeln, die der Agent nutzen kann.
 
-## Wie unterscheidet sich der Service Rep Assistant von Casey?
+## Der Service Rep Assistant arbeitet neben dem Menschen
 
 Casey spricht mit dem Kunden. Der Service Rep Assistant arbeitet neben dem Menschen. Er verfolgt das Gespräch, erkennt die Stimmung, behält den Fallkontext im Blick und schlägt die nächsten Schritte vor. Salesforce hat außerdem eine neu gebaute Servicekonsole gezeigt, die Arbeit nach Kundenwert und Abwanderungsrisiko priorisiert und nicht nur nach dem Alter eines Falls.
 
@@ -86,7 +86,7 @@ Service in der Fertigung unterscheidet sich vom Endkundenservice. Kunden sind Un
 
 Der Start des Contact Centers ist für deutsche Hersteller relevant, die ihre Hotline heute auf einer separaten Telefonanlage betreiben. Ein natives Contact Center bringt Anrufe, Fälle und Kundendaten zusammen. Ob es passt, hängt von der bestehenden Telefonie, den Anforderungen an die Datenspeicherung und der Anbindung an Ticketsysteme in anderen Bereichen ab.
 
-## Was muss vor dem Go-live stehen?
+## Vor dem Go-live muss das Wissen stimmen
 
 Aus Architektursicht entscheiden vier Dinge, ob Casey und der Assistent helfen:
 
@@ -97,9 +97,9 @@ Aus Architektursicht entscheiden vier Dinge, ob Casey und der Assistent helfen:
 
 Diese Punkte gelten für jeden KI-Agenten, und deshalb plädiere ich dafür, [Business Value und Datenqualität an die erste Stelle zu setzen](../agentforce-business-value-datenqualitaet/). Sie erklären auch, warum KI-Funktionen in die Zielarchitektur gehören und nicht nur in einen Piloten.
 
-## Wie sollte eine Serviceorganisation starten?
+## Mit dem Service Rep Assistant in einem Team beginnen
 
-Ein pragmatischer Weg:
+Welche Bausteine der Service Cloud passen, kläre ich im Rahmen von [Architektur und Partnersteuerung](../../leistungen/salesforce-architektur/). Mein Weg:
 
 ```schritte
 Mit dem Service Rep Assistant starten
@@ -113,5 +113,3 @@ Freigaben einrichten
 Messen und ausweiten
   Erst wenn die Zahlen es tragen.
 ```
-
-Die Service Cloud entwickelt sich schnell, und die Wahl der richtigen Bausteine gehört zu [Architektur und Partnersteuerung](../../leistungen/salesforce-architektur/).

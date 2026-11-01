@@ -8,11 +8,11 @@ chapter: 9
 short: "Teamwork and delivery"
 summary: "How manufacturers set up roles, review gates, metrics and works council approval when partners and in-house teams deliver with coding agents."
 takeaways:
-  - "With coding agents, the bottleneck in a Salesforce programme moves from writing code to verification and business acceptance; that is where manufacturers should plan capacity."
-  - "According to a 2026 McKinsey survey, teams save 11.8 percent of time on average but cut rework by only 6.2 percent, and 30 percent of respondents report falling productivity."
-  - "I recommend a named human owner for every agent-generated change, fixed review gates with clear decision makers and a written Definition of Done."
-  - "According to CMS, AI systems in Germany generally trigger works council co-determination under section 87(1) no. 6 BetrVG; in my reading, coding agents with per-person usage statistics clearly qualify."
-  - "Regulation (EU) 2026/1744 moves the EU AI Act's high-risk obligations to 2 December 2027 (Annex III) and 2 August 2028 (Annex I); in my judgement coding assistants are mostly not affected."
+  - "With coding agents, the bottleneck moves from writing code to verification and business acceptance. That is where manufacturers should plan capacity."
+  - "According to a 2026 McKinsey survey, teams save 11.8 percent of time but cut rework by only 6.2 percent, and 30 percent report falling productivity."
+  - "Every agent-generated change needs a named human owner, fixed review gates with clear decision makers and a written Definition of Done."
+  - "According to CMS, AI systems generally trigger co-determination under section 87(1) no. 6 BetrVG. Coding agents with per-person statistics qualify."
+  - "Regulation (EU) 2026/1744 moves the AI Act's high-risk obligations to December 2027 and August 2028. Coding assistants are mostly not affected."
 articles: [smaller-teams-ai-native-delivery, measuring-ai-benefit-salesforce-projects, nearshore-teams-with-ai-agents, partners-ai-coding-sow-rules, ai-coding-works-council-gdpr, eu-ai-act-agentforce-deadlines]
 faq:
   - q: "Does a Salesforce team get smaller with coding agents?"
@@ -28,7 +28,7 @@ draft: false
 
 When coding agents write code in a Salesforce programme, writing becomes cheap and verification becomes expensive. Teamwork and delivery with AI therefore come down to smaller teams with clear roles, a named person who owns every change, fixed review gates up to business acceptance, and metrics measured against a baseline. For manufacturers the biggest change sits on their own side. Service, sales or after-sales have to decide and accept work every day, and the works council and data protection come before the pilot, not after it.
 
-## Where is the bottleneck when agents write the code?
+## The bottleneck moves from writing to verification
 
 Three sources describe the same pattern from different angles. The most detailed description for Salesforce comes from a practitioner: on 19 October 2026 Amit Chaudhary outlined "AI-native delivery" on [ApexHours](https://www.apexhours.com/ai-native-delivery-for-salesforce/), a delivery process built around AI agents from day one. It is a practice framework without measured data; the numbers come from McKinsey and DORA.
 
@@ -155,7 +155,7 @@ According to [White & Case](https://www.whitecase.com/insight-alert/eu-ai-omnibu
 
 In my judgement, coding assistants in a Salesforce project are as a rule not high-risk systems. An Agentforce agent that pre-sorts job applications, on the other hand, could fall under Annex III. Machine builders have a second, separate topic: according to Cuatrecasas, the Machinery Regulation moves to section B of Annex I, and the substantive high-risk requirements are to come through delegated acts by 2 August 2028 at the latest. That concerns AI in your machines, not your CRM, and belongs with product engineering and legal. What the deadlines mean for Agentforce projects is in [EU AI Act deadlines for Agentforce](../../../blog/eu-ai-act-deadlines-agentforce/); agents in service and sales are covered in [chapter 10](../ai-agents-in-manufacturing/).
 
-## A typical scenario: the first eight weeks at a machine builder
+## Assumed: the first eight weeks at a machine builder
 
 Assume a machine builder with Service Cloud, Field Service, a dealer portal and SAP S/4. A nearshore partner provides six developers; in-house there is one architect and two admins. The partner wants to work with coding agents. All numbers and circumstances are assumptions.
 
@@ -175,5 +175,3 @@ Evaluation | weeks 7 to 8
 ```
 
 The warranty stream comes later, because credit notes are posted in SAP and an end-to-end test before each release stays there. This sequencing is part of what I set up in [programme management for Salesforce programmes](../../../services/program-management-nearshore/); getting business time released and communicating with the team belong to [change management](../../../services/change-management-salesforce/). All chapters are on the [masterclass overview](../).
-
-AI speeds up a Salesforce programme only as far as review, acceptance and co-determination keep pace, and organising that is your job as the client.

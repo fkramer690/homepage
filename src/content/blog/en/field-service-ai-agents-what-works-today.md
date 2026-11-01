@@ -9,11 +9,11 @@ topic: field-service
 categories: [field-service, ai]
 tags: [field service, agentforce, ai agents, manufacturing, maintenance, flex credits]
 takeaways:
-  - "Generally available AI agent functions in Salesforce Field Service: appointment booking, proactive maintenance scheduling, schedule gap filling, pre-work briefs, post-work summaries and on-site troubleshooting."
-  - "For a machine builder, proactive maintenance booking and the drafted job report pay off first, because both are frequent and the rules behind them are known."
-  - "Customer-facing scheduling runs on Flex Credits at 20 credits ($0.10) per action, while the employee functions cost $125 per user and month as the Agentforce for Field Service add-on."
-  - "Breakdown booking, on-site troubleshooting and failure prediction need triage, sorted manuals or a large fleet history, so I would start them later."
-  - "A drafted job report helps only if parts, times and fault codes stay structured fields, because warranty, invoicing and the ERP cannot read prose."
+  - "Salesforce quotes 17 minutes to schedule an on-site visit and under 5 minutes with the booking agent. These are vendor figures."
+  - "For a machine builder, proactive maintenance booking and the drafted job report pay off first, because both are frequent and rule-based."
+  - "Customer-facing booking costs 20 Flex Credits (€0.10) per action, the add-on for employees €125 per user and month."
+  - "Breakdown booking, troubleshooting and failure prediction need triage, sorted manuals or a large fleet history. They come later."
+  - "A drafted report only helps if parts, times and fault codes stay structured fields, because the ERP does not read free text."
 faq:
   - q: "Which Agentforce functions are available for Salesforce Field Service?"
     a: "According to Salesforce: booking, rescheduling and cancelling appointments, proactive maintenance scheduling from maintenance plans, filling schedule gaps for dispatchers, pre-work briefs and post-work summaries for technicians, and on-site troubleshooting. Booking by phone with Agentforce Voice is listed in the Winter '27 highlights."
@@ -67,23 +67,23 @@ Field Service agents have two price models, and they follow the line between cus
 
 The consequence for budgeting: a booking agent costs cents per booking, while the employee add-on for 60 technicians costs $90,000 a year at list price. If troubleshooting is grounded on manuals in Data 360, processing adds 150 credits per MB. How to estimate credits per process is covered in [Flex Credits and Agentforce cost per action](../flex-credits-agentforce-cost-per-action/), and what grounding on documents costs in [Data 360 costs for AI agents](../data-360-costs-for-ai-agents/).
 
-## Which functions make sense for a machine builder?
+## For machine builders, maintenance booking and job reports come first
 
 Field service at a machine builder differs from installing routers or servicing alarm systems. Jobs are fewer and longer, machines carry serial numbers and contracts, and the person on the other end is a plant manager who has to plan a shutdown. Measured against that, I sort the functions like this.
 
-**Proactive maintenance booking fits best.** Maintenance plans already generate the work orders, as described in [modelling maintenance contracts](../salesforce-field-service-maintenance-contracts/). The agent only has to agree a date. The catch is the shutdown window: the agent sees the operating hours maintained in Salesforce and nothing about next week's production peak. If no window is maintained, it should propose dates and pass the case to a dispatcher instead of booking.
+**Proactive maintenance booking fits best.** Maintenance plans already generate the work orders, as described in [modelling maintenance contracts](../salesforce-field-service-maintenance-contracts/). The agent only has to agree a date. The hard part is the shutdown window: the agent sees the operating hours maintained in Salesforce and nothing about next week's production peak. If no window is maintained, it should propose dates and pass the case to a dispatcher instead of booking.
 
 **The drafted job report fits, under one condition.** The Post-Work Summary is prose. Warranty, invoicing and the ERP need parts, working time and fault codes as fields. I would keep the structured fields as the master record and use the summary for the text the customer reads, for example in the service report from [Document Builder](../salesforce-service-documents-document-builder/). The [guided mobile workflows](../salesforce-field-service-mobile-guided-voice/) belong to the same data model.
 
-**The Pre-Work Brief is as good as the asset history.** If half of the past work orders are not linked to an asset, the brief has little to say. The data question is the one from [master data for scheduling](../salesforce-field-service-master-data/).
+**The Pre-Work Brief depends on the asset history.** If half of the past work orders are not linked to an asset, the brief has little to say. The data question is the one from [master data for scheduling](../salesforce-field-service-master-data/).
 
-**Gap filling depends on the job mix.** With many short jobs a day it saves real dispatcher time. With commissioning over several days there are hardly any gaps to fill. Whether a dispatcher should still release each proposal is the question from [how much scheduling should be automatic](../salesforce-field-service-scheduling-automation/). Winter '27 at least shows multi-day appointments as one connected job in the scheduling console.
+**Gap filling depends on the job mix.** With many short jobs a day it saves dispatcher time. With commissioning over several days there are hardly any gaps to fill. Whether a dispatcher should still release each proposal is the question from [how much scheduling should be automatic](../salesforce-field-service-scheduling-automation/). Winter '27 at least shows multi-day appointments as one connected job in the scheduling console.
 
 **Self-booking for breakdowns needs triage first.** When a machine stands still, someone has to clarify what failed, which part is needed and whether the contract promises a response within 24 hours. The entitlement decides that, and it belongs in deterministic logic, as described in [Agent Script: rules instead of the LLM](../agent-script-deterministic-rules/). An agent can take the call and open the case. I would let it book only clearly classified jobs.
 
-**Troubleshooting and failure prediction come later.** Troubleshooting is only as reliable as the manuals behind it, and at machine builders these exist per variant and version. Asset Service Prediction, according to the [product page](https://www.salesforce.com/service/field-service-management/), works from the service history of similar assets. With 300 units of one special machine, that history is thin.
+**Troubleshooting and failure prediction come later.** Troubleshooting depends on the manuals behind it, and at machine builders these exist per variant and version. Asset Service Prediction, according to the [product page](https://www.salesforce.com/service/field-service-management/), works from the service history of similar assets. With 300 units of one special machine, that history is thin.
 
-## A typical scenario: a machine builder with 60 technicians
+## Worked example: a machine builder with 60 technicians
 
 Assume a machine builder with SAP, Service Cloud and Field Service already live, 60 technicians, 4 dispatchers and maintenance contracts for 1,500 machines. All numbers are assumptions to show the method.
 
@@ -95,7 +95,7 @@ Assume a machine builder with SAP, Service Cloud and Field Service already live,
 
 The pattern behind it: the agent with the lowest price per transaction is the easiest to start, and the per-user add-on is a licence decision that needs a clean data model before it is worth the money.
 
-## Where should you start?
+## First step: maintenance booking with maintained shutdown windows
 
 ```schritte
 Pick one function
@@ -111,5 +111,3 @@ Involve the works council early
 ```
 
 Whether the add-on or Agentforce 1 Field Service is the better buy is a licence question I handle in [make-or-buy and licence planning](../../services/make-or-buy-licences/). For the general go or no-go on agents, see [Agentforce for manufacturers: start now or wait?](../agentforce-yes-or-no-manufacturers/). How to roll out agents in field service step by step is in [chapter 5 of the Field Service masterclass](../../masterclass/field-service/field-service-ai-agents-rollout/).
-
-Start with the agent that books planned maintenance, and let the job report follow once the fields behind it are clean.

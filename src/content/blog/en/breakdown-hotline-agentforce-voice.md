@@ -9,11 +9,10 @@ topic: field-service
 categories: [field-service, ai]
 tags: [agentforce voice, field service, service hotline, entitlements, manufacturing, flex credits]
 takeaways:
-  - "Salesforce lists German as generally available in Agentforce Voice since Dreamforce 2026, so a German-speaking breakdown hotline is now technically possible."
-  - "On a breakdown hotline the voice agent should own intake and triage first: identify caller and machine, ask whether the machine is down, check the entitlement, open the case."
-  - "The agent books a technician itself only when the machine still runs, the entitlement covers the visit and the fault class is known; machine-down calls with a response time go to a dispatcher."
-  - "Entitlement checks and the booking gate belong in deterministic logic, for example Agent Script conditionals and available when, so the LLM never decides what the contract promises."
-  - "A call costs about 120 Flex Credits ($0.60) with four voice actions, or 60 credits ($0.30) per minute for customers on Agentforce Voice Minutes, at US list price."
+  - "The agent identifies the machine from phone number, contact and installed assets, and asks for the serial number only when several identical machines exist."
+  - "The agent books itself only when the machine runs, the entitlement covers the visit and the fault class is known. Machine-down calls go to dispatch."
+  - "Entitlement checks and the booking gate belong in Agent Script conditions, so the LLM never decides what the contract promises."
+  - "A call with four voice actions costs 120 Flex Credits, or €0.60. With Agentforce Voice Minutes it is 60 credits per minute."
 faq:
   - q: "Does Agentforce Voice support German?"
     a: "Yes. Salesforce's Dreamforce 2026 announcements list German among six new Agentforce Voice languages with the status GA. Test it with real calls from your customers, including noise from the shop floor and regional accents."
@@ -42,7 +41,7 @@ These platform facts matter for the hotline design:
 
 Salesforce's examples are planned appointments: the [Winter '27 announcement](https://salesforce.com/news/stories/winter-2027-product-release-announcement) promises to cut "15-minute booking calls down to seconds". A breakdown call is a harder job. The generic service agent is covered in [Casey and the Service Rep Assistant](../service-cloud-casey-service-rep-assistant/).
 
-## Why is a breakdown call harder than a booking call?
+## A breakdown call is harder than a booking call
 
 The caller is usually a maintenance technician standing next to a stopped line in a loud hall. They want a technician of yours, not a menu. Four facts decide the next step, and the caller says none of them in a form a system can use:
 
@@ -93,7 +92,7 @@ For those seats, the [Salesforce Voice pricing page](https://www.salesforce.com/
 
 For the method behind per-action estimates, see [Flex Credits and Agentforce cost per action](../flex-credits-agentforce-cost-per-action/).
 
-## A typical scenario: 400 hotline calls a month
+## Worked example: 400 hotline calls a month
 
 Assume a machine builder with SAP, Service Cloud and Field Service live, 1,200 machines under contract and a hotline staffed by two dispatchers from 7:00 to 17:00. Outside these hours an on-call engineer takes every call; how to plan those shifts in Field Service is covered in [Field Service on-call duty](../field-service-on-call-shifts/). All numbers are assumptions.
 
@@ -106,7 +105,7 @@ Assume 400 calls a month: 120 machine down, 160 machine running with restriction
 
 The credits are small either way. The gain is at night: the on-call engineer gets a classified case instead of a raw call.
 
-## What has to be in place before the agent answers the phone?
+## What has to be in place before the agent answers the phone
 
 1. **Phone numbers on contacts and clean assets.** Without them every call becomes a transfer, and with duplicated machines the agent picks the wrong one.
 2. **Entitlements as records.** If contracts live in SAP, replicate response times to Salesforce. The Agentforce Voice guide cites a "2-second action latency benchmark", and a live ERP lookup during the call puts that at risk.
@@ -114,9 +113,9 @@ The credits are small either way. The gain is at night: the on-call engineer get
 4. **Tests in German with real audio.** Salesforce lists Voice and Conversation Testing as Beta in the Dreamforce announcements. Record test calls with hall noise and regional accents, and plan the test load at 24 credits per voice action, as described in [testing Agentforce agents before go-live](../testing-agentforce-agents-before-go-live/).
 5. **Data protection and disclosure.** Trailhead states zero data retention policies with OpenAI, Deepgram and ElevenLabs. The greeting should still say that an AI answers; the legal side is in [EU AI Act deadlines for Agentforce](../eu-ai-act-deadlines-agentforce/).
 
-## Where should you start?
+## First step: four weeks of night-time triage only
 
-I would introduce the voice agent in three stages:
+Where this sits among the other Field Service agents is in [AI agents in Field Service: what works today?](../field-service-ai-agents-what-works-today/), the licence side in [make-or-buy and licence planning](../../services/make-or-buy-licences/). I would introduce the voice agent itself in three stages:
 
 ```schritte
 Nights, triage only | 4 weeks
@@ -126,7 +125,3 @@ Booking when restricted
 Booking in daytime
   Only after that, switch on booking for calls during business hours too.
 ```
-
-Where this sits among the other Field Service agents is in [AI agents in Field Service: what works today?](../field-service-ai-agents-what-works-today/), the licence side in [make-or-buy and licence planning](../../services/make-or-buy-licences/).
-
-A voice agent on the breakdown hotline pays off when it hands dispatchers a classified case and leaves the decision on machine-down calls with them.

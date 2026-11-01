@@ -9,11 +9,11 @@ topic: field-service
 categories: [field-service]
 tags: [Field Service, On-call duty, Shifts, Scheduling, Works council, Manufacturing]
 takeaways:
-  - "Operating hours describe a territory's regular working time. In Salesforce Field Service, the Shift object adds working time outside it, such as on-call duty, weekends or overtime."
-  - "Only confirmed shifts count for scheduling. A shift with the time slot type Extended takes appointments only if the Service Resource Availability work rule allows overtime."
+  - "Operating hours describe a territory's regular working time. The Shift object adds time outside it: on-call duty, weekends, overtime."
+  - "Only confirmed shifts count. An Extended shift takes appointments only if the Service Resource Availability work rule allows overtime."
   - "Recordset filter criteria limit a shift to certain appointments, so the technician on weekend call only gets machine-down jobs and no planned maintenance."
   - "A machine-down call with a committed response time on a Saturday needs a confirmed on-call shift. Without one, the engine finds no technician."
-  - "In Germany, on-call rotas and overtime fall under works council co-determination in section 87 of the Works Constitution Act, like timesheets and location tracking."
+  - "In Germany, on-call rotas and overtime fall under works council co-determination (section 87 BetrVG), like timesheets and location data."
 faq:
   - q: "What is a shift in Salesforce Field Service?"
     a: "A shift is a block of working time outside a resource's normal operating hours, such as on-call duty, a night or overtime. Shifts always add availability. They are a core Salesforce object, and the Field Service managed package is needed for the full function."
@@ -66,7 +66,7 @@ This is a typical surprise after go-live. A customer with a contract for "techni
 If the territory's operating hours end on Friday and no confirmed shift exists, there is nobody to schedule. The appointment stays at None, and the response time runs.
 ```
 
-Three things have to fit together:
+For the call to land on the on-call technician, these have to fit together:
 
 1. **The entitlement.** It carries the response time and can have its own operating hours for booking. How response times reach dispatching is described in [modelling maintenance contracts](../salesforce-field-service-maintenance-contracts/).
 2. **The shift.** A confirmed Extended shift for the weekend, with a filter that lets breakdowns through.
@@ -74,7 +74,7 @@ Three things have to fit together:
 
 If a voice agent takes the call outside business hours, the on-call technician gets a classified case instead of a raw call. How I would set up triage on the hotline is in [Breakdown hotline with Agentforce Voice](../breakdown-hotline-agentforce-voice/). The agent cannot book anything, though, if there is no shift behind it.
 
-## What does the works council have to agree to?
+## The works council co-determines under section 87 BetrVG
 
 On-call duty is working time, and in Germany that brings the works council in. [Section 87 of the Works Constitution Act](https://www.gesetze-im-internet.de/betrvg/__87.html) gives it a right of co-determination on, among other things, the start and end of daily working time and its distribution across the weekdays (no. 2), temporary extension of normal working hours (no. 3) and technical systems designed to monitor behaviour or performance (no. 6).
 
@@ -87,9 +87,9 @@ An on-call rota in Field Service touches all three. Shifts distribute working ti
 
 This is the same conversation as for timesheets and location, which I describe in [rolling out Field Service in waves](../salesforce-field-service-rollout/). It is easier to have it once for all topics. I am not a lawyer; the legal assessment belongs to your labour law experts.
 
-## A typical scenario, as an assumption
+## Worked example: weekend call in three regions
 
-A compressor manufacturer runs service in three regions. Each region has one technician on weekend call from Saturday 7:00 to Sunday 19:00. Contracts promise 24 hours on site for premium customers.
+The figures are assumed. A compressor manufacturer runs service in three regions. Each region has one technician on weekend call from Saturday 7:00 to Sunday 19:00. Contracts promise 24 hours on site for premium customers.
 
 The setup I would choose:
 
@@ -101,8 +101,6 @@ The setup I would choose:
 
 The data model is small. The effort lies in agreeing the rota and in keeping shifts confirmed every quarter.
 
-## Where should you start?
+## Write down today's on-call rules
 
 List your current on-call rules: who is on call when, for which customers and which kinds of jobs. Then check whether your scheduling policies distinguish between planned work and breakdowns. If they do not, fix that first, because Extended shifts only work through that distinction. Where shifts fit into scheduling as a whole is covered in [chapter 2 of the Field Service masterclass](../../masterclass/field-service/field-service-scheduling-dispatch/), and long jobs over several days in [Field Service multiday jobs](../field-service-multiday-jobs-crews-commissioning/).
-
-On-call duty in Field Service works when shifts, policies and entitlements fit together and the works council has agreed the rules before the first weekend.

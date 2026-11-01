@@ -9,11 +9,11 @@ topic: field-service
 categories: [field-service]
 tags: [Field Service, Außendienst, mobile App, offline, Briefcase Builder]
 takeaways:
-  - "Briefcase Builder legt fest, welche Datensätze jede Technikergruppe herunterlädt. Performance Priming synchronisiert die wichtigsten Änderungen alle fünf Minuten und hält mehr Datensätze als Standard-Priming."
-  - "Salesforce dokumentiert bekannte Offline-Lücken: Aufgaben im Briefcase werden nicht geladen, globale Quick Actions erhalten keine Datensatz-ID, und unter iOS laden geänderte Komponenten erst nach einem Neustart."
-  - "Ein Nutzer mit Community-Lizenz kann beim Öffnen eines Service-Termins einen Fehler wegen eines fehlenden Datensatzes bekommen. Jeder Offline-Test braucht deshalb einen Partnertechniker."
-  - "Für einen Maschinenbauer gehören Termin, Arbeitsauftrag, Asset mit Historie, Fahrzeuglager und das passende Handbuch aufs Gerät. Preislisten und alle Assets eines Gebiets bleiben online."
-  - "Salesforce nennt keine feste Zahl an Datensätzen, die ein Gerät offline halten kann. Legen Sie den Briefcase deshalb mit echten Technikerprofilen an und messen Sie die Synchronisation."
+  - "Briefcase Builder legt fest, was jede Technikergruppe lädt. Performance Priming synchronisiert die wichtigsten Änderungen alle fünf Minuten."
+  - "Salesforce dokumentiert Lücken: Aufgaben im Briefcase werden nicht geladen, und globale Quick Actions erhalten offline keine Datensatz-ID."
+  - "Nutzer mit Community-Lizenz können beim Öffnen eines Termins einen Fehler bekommen. Jeder Offline-Test braucht deshalb einen Partnertechniker."
+  - "Aufs Gerät gehören Termin, Arbeitsauftrag, Asset mit Historie, Fahrzeuglager und Handbuch. Preislisten und alle Assets eines Gebiets bleiben online."
+  - "Salesforce nennt keine Obergrenze für Datensätze offline. Schneiden Sie den Briefcase nach Rolle zu und messen Sie die Synchronisation."
 faq:
   - q: "Funktioniert die Salesforce Field Service App offline?"
     a: "Ja. Laut Trailhead bringt die App eine Grundausstattung für den Offline-Betrieb mit. Mit Briefcase Builder legt ein Admin fest, welche Datensätze jede Gruppe herunterlädt, und offline erfasste Änderungen werden synchronisiert, sobald das Gerät wieder Verbindung hat."
@@ -26,7 +26,7 @@ faq:
 draft: false
 ---
 
-Die Salesforce Field Service App sollte offline alles enthalten, was ein Techniker für die heutigen Einsätze braucht, und nicht mehr: den Service-Termin, den Arbeitsauftrag mit seinen Positionen, das Asset mit der jüngeren Historie, das Fahrzeuglager und das Handbuch zur Maschine. Das legen Sie pro Technikergruppe in Briefcase Builder fest, und Performance Priming hält diese Daten alle fünf Minuten aktuell, solange Verbindung besteht. Vollständige Preislisten oder alle Assets eines Gebiets gehören nicht aufs Gerät. Testen Sie die dokumentierten Offline-Lücken vor dem Go-live mit einem echten internen Techniker und einem echten Partnernutzer, in einer Halle ohne Netz.
+Die Salesforce Field Service App sollte offline alles enthalten, was ein Techniker für die heutigen Einsätze braucht, und nicht mehr: den Service-Termin, den Arbeitsauftrag mit seinen Positionen, das Asset mit der jüngeren Historie, das Fahrzeuglager und das Handbuch zur Maschine. Das legen Sie pro Technikergruppe in Briefcase Builder fest, und Performance Priming hält diese Daten alle fünf Minuten aktuell, solange Verbindung besteht. Vollständige Preislisten oder alle Assets eines Gebiets gehören nicht aufs Gerät. Testen Sie die dokumentierten Offline-Lücken vor dem Go-live mit einem internen Techniker und einem Partnernutzer, in einer Halle ohne Netz.
 
 ## Was hält die Field Service App offline vor?
 
@@ -78,13 +78,13 @@ Die [Hinweise zu LWC Offline in der Field Service App](https://developer.salesfo
 Punkt 5 betrifft auch jedes Release Ihrer eigenen Komponenten. Wer sagt 50 Technikern, dass sie die App nach einem Deployment komplett schließen sollen? Das gehört in den Release-Plan, zusammen mit den App-Versionen, die Salesforce ausliefert. Die Routine dafür beschreibe ich in [Field Service App Updates: jede Version vorher testen](../field-service-app-updates-testen/).
 ```
 
-## Warum sollten Partnertechniker offline getrennt testen?
+## Partnertechniker testen offline getrennt
 
 Viele Hersteller holen Subunternehmer in dieselbe App. Partnertechniker arbeiten dann als Community-Nutzer mit Field-Service-Berechtigungen, wie in [Field Service: Wie bindet man Servicepartner ein?](../salesforce-field-service-servicepartner/) beschrieben. Punkt 3 der Liste oben trifft genau diese Nutzer.
 
 Partner haben außerdem andere Freigaben. Sie sehen nur ihr eigenes Gebiet und ihre eigenen Termine. Ein Briefcase, der für interne Techniker funktioniert, liefert einem Partner deshalb unter Umständen weniger Datensätze oder keine der verknüpften. Mein Rat: Geben Sie Partnern einen eigenen Briefcase und testen Sie ihn mit einem echten Partnernutzer, nie mit einem Admin, der das Profil wechselt.
 
-## Ein typisches Szenario, als Annahme: ein Tag ohne Netz
+## Rechenbeispiel: ein Tag ohne Netz
 
 Ein Maschinenbauer schickt einen Techniker in die Produktionshalle eines Kunden. Die Kompressoren stehen im Keller, von 7 bis 16 Uhr gibt es kein Mobilfunknetz, und das Gast-WLAN des Kunden reicht nicht bis nach unten.
 
@@ -97,7 +97,7 @@ Das Szenario zeigt, was offline für die Planung bedeutet. Das Gerät arbeitet, 
 
 Der Servicebericht in diesem Szenario kommt aus dem Document Builder. Eigene Komponenten in der Vorlage müssen ihre Daten ebenfalls offline lesen. Wie das geht, steht in [Salesforce Document Builder: fünf Grenzen und Workarounds](../salesforce-document-builder-grenzen-workarounds/).
 
-## Wo fangen Sie an?
+## Einen Briefcase pro Rolle zuschneiden
 
 ```schritte
 Rollen auf Briefcases abbilden
@@ -113,5 +113,3 @@ Die Synchronisation messen
 ```
 
 Das Offline-Design entscheidet, ob Formulare und Dokumente später funktionieren. Der nächste Schritt ist das Formular selbst, beschrieben in [Field Service Data Capture: Prüfprotokolle ohne Papier](../field-service-data-capture-pruefprotokolle/). Das ganze Thema gehört zu [Kapitel 3 der Masterclass Field Service](../../masterclass/field-service/field-service-mobile-app-dokumente/).
-
-Wer aufs Gerät legt, was der Techniker heute braucht, und die bekannten Lücken mit einem Partnernutzer testet, hat eine App, die auch im Keller funktioniert.

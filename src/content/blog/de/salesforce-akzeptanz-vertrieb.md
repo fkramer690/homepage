@@ -11,10 +11,9 @@ coAuthor: juliane
 contactBrief: change
 tags: [CRM-Akzeptanz, Vertrieb, Change Management, ADKAR, Salesforce-Einführung]
 takeaways:
-  - "Der Vertrieb umgeht Salesforce, wenn die Pflege vor allem dem Management nützt und für den Vertriebler selbst nur Arbeit bedeutet."
   - "Die häufigste Ursache ist fehlende Bereitschaft (Desire im ADKAR-Modell), nicht fehlendes Wissen. Eine weitere Schulung ändert daran wenig."
-  - "Akzeptanz entsteht, wenn der Vertriebler vor dem Kundentermin in Salesforce mehr findet als in seiner eigenen Liste, etwa Aufträge, Abnahmemengen und offene Servicefälle aus dem ERP."
-  - "Es darf keinen Weg zurück geben. Solange der Vertrieb weiter nach der alten Weise arbeiten kann, tritt keine Veränderung ein, und Doppelpflege führt direkt zur Schattenliste."
+  - "Akzeptanz entsteht, wenn der Vertriebler vor dem Kundentermin in Salesforce mehr findet als in seiner Liste, etwa Aufträge und Servicefälle aus dem ERP."
+  - "Es darf keinen Weg zurück geben. Solange der Vertrieb nach der alten Weise arbeiten kann, ändert sich nichts, und Doppelpflege führt zur Schattenliste."
   - "Das Pipeline-Meeting entscheidet: Bespricht der Vertriebsleiter nur, was in Salesforce steht, wird Salesforce gepflegt."
 faq:
   - q: "Warum nutzt der Vertrieb das CRM nicht?"
@@ -58,7 +57,7 @@ In Manufacturing Cloud habe ich Rahmenverträge mit Ist-Mengen aus dem ERP einge
 
 Wie diese Daten in Salesforce kommen, beschreibe ich in [Manufacturing Cloud und SAP: welche Daten wohin fließen](../manufacturing-cloud-sap-integration-datenfluesse/). Für die Akzeptanz zählt vor allem die Reihenfolge: Daten, die dem Vertrieb nützen, sollten zum Go-live da sein, nicht in einer späteren Phase. Sonst lernt der Vertrieb in den ersten Wochen, dass Salesforce nur nimmt und nichts gibt, und dieser Eindruck hält.
 
-## Wie schaffen Sie Doppelpflege ab?
+## Doppelpflege führt direkt zur Schattenliste
 
 Doppelpflege ist der schnellste Weg zur Schattenliste. Jede Information, die schon an anderer Stelle steht, sollte niemand ein zweites Mal eintippen müssen. Drei Stellen sollten Sie vor dem Go-live im Vertrieb prüfen:
 
@@ -78,7 +77,7 @@ Zu viele Pflichtfelder zeigen sich schnell in den Daten: Platzhalter, immer ders
 Lassen Sie die Felder einer Opportunity von zwei Vertrieblern und dem Vertriebsleiter gemeinsam durchgehen, bevor gebaut wird. Was keiner der drei braucht, bleibt optional. So wird der Vertrieb an der Entscheidung beteiligt, einer der Punkte, die Prosci gegen Widerstand nennt.
 ```
 
-## Warum entscheidet das Pipeline-Meeting?
+## Das Pipeline-Meeting entscheidet über die Pflege
 
 Am Ende verankert die Führung, ob Salesforce gepflegt wird. Wenn der Vertriebsleiter im wöchentlichen Pipeline-Meeting das Salesforce-Dashboard öffnet und nur bespricht, was darin steht, pflegt das Team Salesforce. Wenn er sich vor dem Meeting eine Excel-Liste schicken lässt, pflegt das Team die Excel-Liste. Das ist die Stufe Reinforcement, und sie kostet keine Lizenz und keine Entwicklung.
 
@@ -86,8 +85,6 @@ Dasselbe gilt eine Ebene höher. Kommt die Absatzprognose an die Geschäftsführ
 
 Eine Grenze ziehe ich dabei. Ranglisten einzelner Vertriebler nach Pflegequote führen zu gepflegten Zahlen statt zu gepflegten Daten. In Deutschland gehört eine Auswertung pro Person ohnehin vorher mit dem Betriebsrat geklärt. Für die Steuerung reichen Zahlen pro Team oder Land, und das Gespräch mit Einzelnen führt die Führungskraft oder der [Key User](../salesforce-key-user-netzwerk/).
 
-## Wo fangen Sie an?
+## Zwei Vertriebler nach ihrer Terminvorbereitung fragen
 
-Setzen Sie sich mit zwei Vertrieblern zusammen und fragen Sie: Was schauen Sie sich vor einem Kundentermin an, und wo steht es heute? Alles, was die beiden nennen und nicht in Salesforce steht, ist Ihre Liste für die nächsten Releases. Danach vereinbaren Sie mit dem Vertriebsleiter ein Datum, ab dem Pipeline und Prognose nur noch aus Salesforce besprochen werden.
-
-Der Vertrieb nutzt Salesforce, wenn es ihm vor dem Kundentermin hilft und die Führung danach fragt. Das Vorgehen habe ich mit meiner Kooperationspartnerin [Juliane Winterscheid](../../partner/juliane-winterscheid/) entwickelt, die unter anderem einen globalen Sales-Cloud-Rollout begleitet hat. Mehr dazu lesen Sie unter [Change Management Beratung für Salesforce](../../leistungen/change-management/).
+Setzen Sie sich mit zwei Vertrieblern zusammen und fragen Sie: Was schauen Sie sich vor einem Kundentermin an, und wo steht es heute? Alles, was die beiden nennen und nicht in Salesforce steht, ist Ihre Liste für die nächsten Releases. Danach vereinbaren Sie mit dem Vertriebsleiter ein Datum, ab dem Pipeline und Prognose nur noch aus Salesforce besprochen werden. Das Vorgehen habe ich mit meiner Kooperationspartnerin [Juliane Winterscheid](../../partner/juliane-winterscheid/) entwickelt, die unter anderem einen globalen Sales-Cloud-Rollout begleitet hat. Mehr dazu lesen Sie unter [Change Management Beratung für Salesforce](../../leistungen/change-management/).

@@ -10,11 +10,11 @@ pubDate: 2026-10-28
 short: "ERP, KI und Rollout"
 summary: "Welche Daten zwischen SAP und Manufacturing Cloud fließen, wann Agentforce sich lohnt und in welcher Reihenfolge Länder live gehen."
 takeaways:
-  - "SAP bleibt führend für Accounts, Produkte, Aufträge und meist auch Preise; die Manufacturing Cloud bekommt Ist-Mengen täglich und schickt freigegebene Boni und Garantiebeträge als Gutschrift zurück."
-  - "Ab 1. Dezember 2026 braucht jeder Schnittstellennutzer mit SOAP login() die Berechtigung Use Any API Auth; mit Summer '27 entfällt SOAP login() in den API-Versionen 31.0 bis 64.0."
-  - "Agentforce lohnt sich zuerst bei lesenden Prozessen mit hohem Volumen, sauberen Daten und einer API zum ERP, etwa Händleranfragen zum Auftragsstatus; eine Aktion kostet 20 Flex Credits."
-  - "Ein weltweiter Rollout beginnt mit einem großen Land mit angemessener Komplexität, holt eine der größten Regionen in die ersten zwei Phasen und hält alle Länder zu mindestens 80 Prozent identisch."
-  - "Forecast Sets, Definitionen der Data Processing Engine und Expression Sets der Business Rules Engine gehören in jeden Regressionstest vor einem der drei Salesforce-Releases im Jahr."
+  - "SAP führt Accounts, Produkte, Aufträge und meist Preise. Die Manufacturing Cloud bekommt täglich Ist-Mengen und schickt Boni und Garantie als Gutschrift zurück."
+  - "Ab 1. Dezember 2026 braucht jeder Schnittstellennutzer mit SOAP login() die Berechtigung Use Any API Auth. Summer '27 schaltet es in API 31.0 bis 64.0 ab."
+  - "Agentforce lohnt sich zuerst bei lesenden Prozessen mit Volumen und API zum ERP, etwa Händleranfragen zum Auftragsstatus. Eine Aktion kostet 20 Flex Credits."
+  - "Ein weltweiter Rollout beginnt mit einem großen Land mit angemessener Komplexität und hält alle Länder zu mindestens 80 Prozent identisch."
+  - "Forecast Sets, Definitionen der Data Processing Engine und Expression Sets gehören vor jedem Salesforce-Release in den Regressionstest."
 articles: [manufacturing-cloud-erp-integration, penny-perfect-pricing-erp-prices, agentforce-yes-or-no-manufacturers, siemens-agentforce-lessons, multilingual-dealer-agents, manufacturing-cloud-global-rollout]
 faq:
   - q: "Brauche ich MuleSoft, um SAP an die Manufacturing Cloud anzubinden?"
@@ -50,7 +50,7 @@ So würde ich die Verantwortung bei einem typischen Hersteller mit SAP aufteilen
 
 Für Objekte innerhalb der Org nutze ich die [Object Ownership Matrix](../../../blog/object-ownership-matrix-salesforce/). Für ERP-Schnittstellen ergänze ich zwei Spalten, Richtung und Takt. Die häufigste Lücke liegt in der Account-Hierarchie: Liegt der Auftraggeber aus SAP nicht auf derselben Ebene wie der Account mit dem Sales Agreement, braucht es eine Zuordnungstabelle, und auch die braucht einen Verantwortlichen.
 
-## Welche Daten fließen zwischen SAP und der Manufacturing Cloud?
+## Datenflüsse zwischen SAP und der Manufacturing Cloud
 
 Nach Salesforce fließen Stammdaten und Ist-Mengen, zurück fließt Geld. Den Takt bestimmt die Frage, die die Daten beantworten. Sales Agreements laufen über Monate, für ihre Ist-Mengen reicht ein täglicher Lauf. Ein Händler, der nach seinem Auftrag fragt, will den Stand von heute; diesen Status frage ich live in SAP ab, statt ihn zu kopieren, wie in [Agentforce und SAP: Auftragsstatus über MuleSoft](../../../blog/agentforce-sap-auftragsstatus/). Alle Flüsse mit Richtung und Takt stehen in [Manufacturing Cloud und SAP: welche Daten wohin](../../../blog/manufacturing-cloud-sap-integration-datenfluesse/).
 
@@ -95,7 +95,7 @@ Die Grenzen bleiben wie in den anderen Kapiteln: Angebote mit Konfigurator gehö
 
 ## Wann lohnt sich Agentforce für Hersteller?
 
-Wenn ein Prozess fünf Kriterien erfüllt, die ich in [Agentforce für Hersteller: jetzt starten oder warten?](../../../blog/agentforce-ja-oder-nein-hersteller/) beschreibe: genug Volumen, tragfähige Daten, Zugriff auf das ERP per API, ein passendes Kostenmodell und eine Edition, die dazu passt. Händleranfragen zu Auftragsstatus und Lieferterminen erfüllen sie oft. Eine Garantie-Vorprüfung, bei der in der installierten Basis der Garantiebeginn fehlt, erfüllt sie nicht.
+Wenn ein Prozess die Kriterien erfüllt, die ich in [Agentforce für Hersteller: jetzt starten oder warten?](../../../blog/agentforce-ja-oder-nein-hersteller/) beschreibe: genug Volumen, tragfähige Daten, Zugriff auf das ERP per API, ein passendes Kostenmodell und eine Edition, die dazu passt. Händleranfragen zu Auftragsstatus und Lieferterminen erfüllen sie oft. Eine Garantie-Vorprüfung, bei der in der installierten Basis der Garantiebeginn fehlt, erfüllt sie nicht.
 
 Für die Kosten zählen zwei Zahlen. Eine Standard- oder Custom-Aktion kostet laut [Flex Credits Rate Card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) 20 Flex Credits, bei [500 € je 100.000 Credits](https://www.salesforce.com/eu/agentforce/pricing/) also 0,10 €. Und die Edition bestimmt den Pool: Laut [Preisseite der Manufacturing Cloud](https://www.salesforce.com/manufacturing/cloud/pricing/) enthalten die Core-Editionen 500.000 Flex Credits pro Org und Jahr, die Max-Editionen 2,75 Millionen und als einzige die volle Agentforce-for-Industries-Ausstattung. Zu Core gibt es das Agentforce for Manufacturing Cloud Add-on: Die Add-on-Seite nennt 150 $ pro Nutzer und Monat, die Preisseite "from $ 150 login/month". Lassen Sie sich die Einheit schriftlich bestätigen. Wie Sie Credits pro Aktion schätzen, steht im Kapitel [Kosten und Token](../../ki-salesforce/kosten-und-token/) der KI-Masterclass.
 
@@ -108,7 +108,7 @@ quelle: Salesforce Flex Credits Rate Card, Agentforce-Preisseite und Preisseite 
 
 Die sichtbarste Industriereferenz zeigt, wo man anfängt. In der [Meldung von Siemens und Salesforce](https://www.salesforce.com/news/press-releases/2026/09/15/siemens-agentforce-redefine-industrial-sales-service/) vom 15. September 2026 sind zwei Agenten für eingehende Leads live, für 18.000 Vertriebsmitarbeitende in 132 Ländern. Teamcenter-Antworten für den Service und das Lieferanten-Onboarding in SAP stehen im Futur. In [Siemens und Agentforce: Lehren für den Mittelstand](../../../blog/siemens-agentforce-lehren-mittelstand/) leite ich daraus eine Reihenfolge ab: erst nur lesen bei hohem Volumen, dann aus dem ERP lesen, dann Antworten aus PLM und Seriennummern, schreibende Schritte ins ERP zuletzt. Welche Agenten es für Vertrieb, Service und Garantie heute gibt, zeigt das Kapitel [KI-Agenten in der Fertigung](../../ki-salesforce/ki-agenten-in-der-fertigung/).
 
-## Wie bedient ein Agent Händler in vielen Sprachen?
+## Ein Agent für Händler in vielen Sprachen
 
 Für Exporteure mit Händlern in vielen Ländern ist die Sprache eine eigene Planungsfrage. Salesforce unterscheidet bei Agentforce zwischen allgemein verfügbaren Sprachen und Beta-Sprachen, und laut dem [Leitfaden zur Mehrsprachigkeit](https://www.salesforce.com/blog/multi-language-guide/) liegt die Qualitätssicherung bei Beta-Sprachen beim Kunden. Prüfen Sie jede Händlersprache gegen die aktuelle Liste, denn Salesforce ändert sie laufend. Die Übersetzung selbst ist günstig: Die Rate Card nennt 4.000 Flex Credits pro Million übersetzter Zeichen, zum Listenpreis also 20 €.
 
@@ -128,7 +128,7 @@ Zuerst steht das Ziel fest, meistens die Harmonisierung von Prozessen. Daraus fo
 
 Die ERP-Spalte hat das meiste Gewicht. Ein Land mit eigenem SAP-System oder eigener Middleware braucht neue Schnittstellen für Ist-Mengen, Boni und Garantie. Teilt es das ERP mit einem schon eingeführten Land, ist der Weg kürzer. Wie ich einen Fahrplan mit Phasen und Freigaben aufbaue, steht im Kapitel [Einführung und Fahrplan](../../devops-release-management/einfuehrung-fahrplan/) der DevOps-Masterclass, die Arbeit mit den Menschen in den Ländern unter [Change Management für Salesforce-Programme](../../../leistungen/change-management/).
 
-## Was müssen Sie nach jedem Salesforce-Release neu testen?
+## Nach jedem Salesforce-Release neu testen
 
 Salesforce bringt drei Releases im Jahr, und Preview-Sandboxes bekommen jedes davon vor der Produktion. Wie Sie das mit dem eigenen Release-Kalender abstimmen, beschreibt das Kapitel [Release-Planung](../../devops-release-management/release-planung-salesforce-releases/) der DevOps-Masterclass. In einer Manufacturing-Cloud-Org gehören vor allem die Teile in den Regressionstest, die Zahlen erzeugen:
 
@@ -141,8 +141,6 @@ Salesforce bringt drei Releases im Jahr, und Preview-Sandboxes bekommen jedes da
 
 Mein Test pro Release ist bewusst klein: eine Neugenerierung der Prognose, eine Neuberechnung der Ist-Mengen für drei Sales Agreements, ein Garantieanspruch durch das Expression Set und ein Bonuslauf für einen Zeitraum, jeweils in der Preview-Sandbox und verglichen mit Produktion. Weicht eine Zahl ab, wissen Sie es vor Ihren Account Managern. Damit diese Definitionen zwischen Orgs wandern wie jede andere Konfiguration, gehören sie ins Repository, wie im Kapitel [Daten und Konfiguration](../../devops-release-management/daten-und-konfiguration/) beschrieben.
 
-## Wie hängt dieses Kapitel mit den anderen zusammen?
+## Erster Schritt: die Objektliste mit dem SAP-Team abstimmen
 
-Dieses Kapitel schließt die Masterclass ab. Es setzt die Entscheidungen aus Business Case, Rahmenverträgen, Händlerkanal und Garantie voraus und klärt, was sie im Betrieb und in vielen Ländern brauchen. Davor kam [Kapitel 4 zu Garantie und After-Sales](../garantie-und-after-sales/), alle fünf Kapitel finden Sie auf der [Übersichtsseite](../).
-
-Die Manufacturing Cloud ist nur so gut wie die SAP-Daten, die sie bekommt, und ein Rollout nur so gut wie das Template, das im ersten großen Land hält.
+Stimmen Sie mit dem SAP-Team ab, welches System welches Objekt führt, bevor die erste Schnittstelle gebaut wird, und legen Sie das Template im ersten großen Land fest, bevor das zweite Land plant. Dieses Kapitel schließt die Masterclass ab. Es setzt die Entscheidungen aus Business Case, Rahmenverträgen, Händlerkanal und Garantie voraus und klärt, was sie im Betrieb und in vielen Ländern brauchen. Davor kam [Kapitel 4 zu Garantie und After-Sales](../garantie-und-after-sales/), alle fünf Kapitel finden Sie auf der [Übersichtsseite](../).

@@ -9,11 +9,10 @@ topic: data
 categories: [manufacturing-cloud]
 tags: [Manufacturing Cloud, Partner Visit Management, Händler, Distributoren, Kennzahlen, Mobil]
 takeaways:
-  - "Partner Visit Management plant Händlerbesuche mit Ort, Account, Priorität und zugewiesenem Mitarbeiter und gibt jedem Besuch Aufgaben mit Kennzahlen, die der Außendienst am Handy erfasst."
-  - "Jede Kennzahl hat einen Sollwert. Der Innendienst vergleicht so Soll und Ist pro Aufgabe über alle Händler, statt Besuchsberichte im Freitext zu lesen."
-  - "Aufgaben können Kontext tragen, etwa ein Sales Agreement, einen Auftrag, eine Anlage oder eine Garantiebedingung, damit der Mitarbeiter beim Händler den richtigen Datensatz sieht."
-  - "Die Funktion hat einen eigenen Schalter, enablePartnerVisitManagement, seit API-Version 56.0. Lizenz und Offline-Fähigkeit dokumentiert Trailhead nicht, fragen Sie Salesforce vor der Planung."
-  - "Bei wenigen Händlern ohne feste Kennzahlen reicht ein einfaches Besuchsberichtsobjekt. Die Funktion lohnt sich, wenn viele Händler mit derselben Checkliste besucht werden."
+  - "Jeder Besuch bekommt Aufgaben mit Ort, Priorität und Kennzahlen, die der Außendienst am Handy erfasst."
+  - "Aufgaben tragen Kontext wie ein Sales Agreement, einen Auftrag oder eine Anlage, damit der Mitarbeiter beim Händler den richtigen Datensatz sieht."
+  - "Der Schalter enablePartnerVisitManagement existiert seit API 56.0. Lizenz und Offline-Fähigkeit dokumentiert Trailhead nicht."
+  - "Die Funktion lohnt sich, wenn viele Händler mit derselben Checkliste besucht werden."
 faq:
   - q: "Was ist Partner Visit Management in Salesforce?"
     a: "Eine Funktion der Manufacturing Cloud für geplante und spontane Besuche bei Händlern, Distributoren und Lieferanten. Manager legen Aufgaben und Kennzahlen mit Sollwerten fest, der Außendienst führt den Besuch in einer mobilen App durch und erfasst Istwerte, Notizen und Screenshots."
@@ -38,7 +37,7 @@ Partner Visit Management plant und dokumentiert Besuche bei Händlern, Distribut
 
 Auf der [Produktseite](https://salesforce.com/manufacturing/cloud/sales) ergänzt Salesforce, dass Besuche Ort, Priorität, geschätzte Besuchsdauer und die Historie früherer Besuche zeigen und dass Admins die Besuchsseiten aus Komponenten namens Visit Overview, Visit Actions und Visit Task List bauen.
 
-## Wie läuft ein Besuch von der Planung bis zur Kennzahl?
+## Ein Besuch läuft von der Planung bis zur Kennzahl
 
 Die [Unit zum Anlegen und Durchführen von Besuchen](https://trailhead.salesforce.com/content/learn/modules/partner-visit-management-for-dealers-and-distributors/create-and-execute-partner-visits) zeigt die Schritte im Innendienst:
 
@@ -61,7 +60,7 @@ Der Außendienst öffnet die App Partner Visits über den App Launcher, sieht di
 
 Die erste Unit zeigt außerdem Aufgaben mit verknüpften Kundendatensätzen, etwa eine Garantiebedingung an einer Aufgabe zur Garantieverlängerung oder eine Anlage an einer Schadensprüfung. Das hilft bei Händlern, die [Garantieansprüche](../garantieansprueche-haendler-salesforce/) abwickeln: Der Mitarbeiter sieht in der Werkstatt die offenen Garantiebedingungen.
 
-## Wie schalten Sie es ein, und was ist offen?
+## Einschalten ist einfach, Lizenz und Offline sind offen
 
 Die Funktion hat eine eigene Einstellung. In den [Metadaten IndustriesManufacturingSettings](https://developer.salesforce.com/docs/atlas.en-us.automotive_cloud.meta/automotive_cloud/auto_metadata_api_industriesmanufacturingsettings.htm) heißt sie `enablePartnerVisitManagement`, seit API-Version 56.0, neben `enablePartnerLeadManagement` und `enablePartnerPerformanceManagement`. Alle stehen standardmäßig auf aus. „Wir haben Manufacturing Cloud“ heißt also noch nicht, dass Besuche laufen.
 
@@ -72,9 +71,9 @@ Zwei Punkte sind in den Quellen, die ich geprüft habe, nicht dokumentiert:
 
 Wie ich beide Punkte in der Lizenzplanung behandle, steht in [Salesforce-Lizenzen: Braucht jeder eine volle Lizenz?](../salesforce-lizenzen-volle-lizenz/).
 
-## Szenario: 60 Händler, quartalsweise, fünf Kennzahlen
+## Rechenbeispiel: 60 Händler, quartalsweise, fünf Kennzahlen
 
-Ein typisches Szenario, als Annahme: Ein Landmaschinenhersteller hat 60 Händler und sechs Gebietsverkaufsleiter. Jeder Händler wird einmal im Quartal besucht. Der Besuch prüft fünf Kennzahlen: Ersatzteilbestand der 20 Schnelldreher, Zahl geschulter Mechaniker, Vorführmaschinen vor Ort, offene Garantieansprüche älter als 30 Tage und den erreichten Anteil am Quartalsziel.
+Angenommen, ein Landmaschinenhersteller hat 60 Händler und sechs Gebietsverkaufsleiter. Jeder Händler wird einmal im Quartal besucht. Der Besuch prüft fünf Kennzahlen: Ersatzteilbestand der 20 Schnelldreher, Zahl geschulter Mechaniker, Vorführmaschinen vor Ort, offene Garantieansprüche älter als 30 Tage und den erreichten Anteil am Quartalsziel.
 
 Das ergibt 240 Besuche und 1.200 Kennzahlwerte im Jahr, jeweils mit Sollwert. Nach einem Jahr sieht die Vertriebsleitung, welche Händler den Ersatzteilbestand jedes Quartal verfehlen und welcher Gebietsleiter die Schulungstermine nie erfasst. Heute steht das in Word-Dokumenten oder E-Mails, wenn überhaupt.
 
@@ -106,11 +105,11 @@ contra: Was für den einfachen Bericht spricht
 
 Das Kapitel [Händler und Partnerkanal](../../masterclass/manufacturing-cloud/haendler-und-partnerkanal/) der Masterclass zeigt, wie Besuche neben Boni, Portalen und Ship and Debit stehen. Ob man eine solche Funktion kauft oder baut, gehört zu meiner Arbeit an [Make-or-Buy und Lizenzprognose](../../leistungen/make-or-buy-lizenzen/).
 
-## Wo sollten Sie anfangen?
+## Kennzahlen mit Sollwert aufschreiben, dann eine Region pilotieren
 
 1. **Kennzahlen.** Fünf Kennzahlen mit Definition, Datentyp und Sollwert pro Händlergruppe aufschreiben.
 2. **Lizenz und Offline.** Beides schriftlich bestätigen lassen, für den Außendienst und, falls geplant, für Händlermitarbeiter.
 3. **Pilot.** Eine Region, ein Quartal, eine Vorlage.
 4. **Auswertung.** Nach dem Quartal prüfen, welche Kennzahlen erfasst wurden und welche zu einer Entscheidung geführt haben.
 
-Partner Visit Management macht Händlerbesuche vergleichbar, sobald die Kennzahlen vereinbart sind und die App dort funktioniert, wo Ihr Außendienst arbeitet.
+Den Pilot werte ich mit der Vertriebsleitung aus. Kennzahlen, die nach einem Quartal zu keiner Entscheidung geführt haben, fliegen aus der Vorlage, bevor sie auf alle Regionen geht.

@@ -10,11 +10,11 @@ pubDate: 2026-10-28
 short: "Agents, migration, rollout"
 summary: "Buyer Agent and Merchandising Agent, the path from Aura to LWR and rolling out to dealers in waves."
 takeaways:
-  - "Agents come after a store that works: the Buyer Agent answers dealer questions from the store's catalogue, prices and orders, so it only makes errors in that data visible faster."
-  - "Salesforce lists the Buyer Agent as generally available since June 2026; the complete order in the chat with payment at contract price is dated January 2027 as Carter for Buyers."
-  - "Contract prices, credit limits and delivery dates come from store pricing and the ERP, never from the language model, and every dealer message is untrusted input."
+  - "The Buyer Agent answers dealer questions from the store's catalogue, prices and orders, so it makes errors in that data visible faster."
+  - "Salesforce lists the Buyer Agent as generally available since June 2026. The complete order in the chat is dated January 2027."
+  - "Contract prices, credit limits and delivery dates come from the store and the ERP, never from the language model. Every dealer message is untrusted input."
   - "There is no retirement date for Aura stores as of 27 October 2026. Migrate to LWR when features, growing Aura code or a new checkout call for it."
-  - "Roll the store out in waves by buyer group and measure per wave the share of order lines through the store, zero-result searches and inside sales minutes per line."
+  - "Roll the store out in waves and measure per wave the store share of order lines, zero-result searches and inside sales minutes per line."
 articles: [commerce-buyer-agent-whatsapp, commerce-merchandising-agent, commerce-aura-to-lwr-migration, commerce-dealer-rollout, commerce-kpis-after-go-live, prompt-injection-dealer-portals, multilingual-dealer-agents, distributor-replenishment-agent]
 faq:
   - q: "Should a manufacturer launch the B2B store with the Buyer Agent from day one?"
@@ -36,7 +36,7 @@ This chapter assumes what the previous ones described: a decision for Salesforce
 
 My order for the rest is still sober: first the store with the first dealers, then KPIs, then agents. An agent reads the same buyer groups, price books and order summaries as the storefront. If an entitlement is wrong, it shows the wrong part in the chat, just faster and in more convincing words.
 
-## What do the Buyer Agent and the Merchandising Agent do today?
+## The Buyer Agent and the Merchandising Agent today
 
 Salesforce offers two kinds of agents for B2B Commerce. One talks to dealers, the other works for the team that runs the store. The dates Salesforce gives for them:
 
@@ -95,7 +95,7 @@ contra: What speaks for waiting
 
 Even if you wait, I would take the first step: replace Aura components in the running store with Lightning web components, because those run in both store types. Steps, checkout and the gaps in the guide are in [Aura to LWR: migrating a B2B Commerce store](../../../blog/b2b-store-aura-to-lwr-migration/).
 
-## How do you roll the store out to dealers?
+## Rolling out to dealers in waves by buyer group
 
 A B2B store shows every dealer its own catalogue and its own prices. A big bang therefore shows every data error to every dealer on the same day. The data model makes waves easy: buyers reach the store through buyer groups, so a wave is the set of buyer groups you connect to the store.
 
@@ -105,7 +105,7 @@ A B2B store shows every dealer its own catalogue and its own prices. A big bang 
 - **Inside sales stays available.** Phone and email keep working. Dealers switch because the store is faster. When a pilot dealer phones in a reorder, the colleague walks them through the store once.
 - **Keep training short.** One session per buyer manager on user administration and one page on searching by part number and reordering are enough to start.
 
-A typical scenario, as an assumption: a compressor manufacturer sells spare parts to 250 dealers in Germany, Austria and Switzerland. Wave 1 brings fifteen pilot dealers in Germany into one buyer group in months 1 and 2. Wave 2 follows with the remaining German dealers in three groups by dealer tier, wave 3 with Austria, Switzerland and the key accounts with special conditions. Two weeks between waves are reserved for fixes. Wave 1 gets the Buyer Agent only after three months of ordering in the store. The full sequence is in [B2B shop rollout to dealers](../../../blog/b2b-shop-dealer-rollout/). If dealers and inside sales have to change how they work, plan [change management](../../../services/change-management-salesforce/) from the first wave.
+Worked example: a compressor manufacturer sells spare parts to 250 dealers in Germany, Austria and Switzerland. Wave 1 brings fifteen pilot dealers in Germany into one buyer group in months 1 and 2. Wave 2 follows with the remaining German dealers in three groups by dealer tier, wave 3 with Austria, Switzerland and the key accounts with special conditions. Two weeks between waves are reserved for fixes. Wave 1 gets the Buyer Agent only after three months of ordering in the store. The full sequence is in [B2B shop rollout to dealers](../../../blog/b2b-shop-dealer-rollout/). If dealers and inside sales have to change how they work, plan [change management](../../../services/change-management-salesforce/) from the first wave.
 
 ## Which KPIs show whether the store works?
 
@@ -123,7 +123,7 @@ Salesforce [announced search analytics in Data Cloud in July 2026](https://www.s
 
 Two things must be in place before go-live: a channel flag in the order interface so every line in the ERP can be traced to the store, and two weeks of time measurement in inside sales as a baseline. Without those numbers the [business case](../../../blog/b2b-webshop-business-case-manufacturers/) stays a claim. Details and a sample calculation are in [B2B shop KPIs: what to measure after go-live](../../../blog/b2b-shop-kpis-after-go-live/).
 
-## What does running the store take after go-live?
+## Running the store after go-live needs a regression list
 
 Salesforce ships three releases a year, and each one touches storefront, checkout and extensions. I would keep a fixed regression list for the store that runs in the preview sandbox before every release:
 
@@ -136,7 +136,7 @@ Salesforce ships three releases a year, and each one touches storefront, checkou
 
 Store configuration, meaning buyer groups, entitlement policies and price books, runs through the pipeline like metadata. How to place the three releases in a calendar is covered in the DevOps chapter on [Salesforce release planning](../../devops-release-management/release-planning-salesforce-releases/), how to introduce such a way of working step by step and measure it in the chapter on the [rollout roadmap](../../devops-release-management/rollout-roadmap/). I support pipeline and test automation as part of [DevOps and release management](../../../services/devops-release-management/).
 
-## Where should you start?
+## First step: the store before the agent
 
 ```schritte
 Store before agent
@@ -152,5 +152,3 @@ Write the regression list
 ```
 
 All five chapters are on the [masterclass overview page](../). If you need to decide which data between ERP, PIM and Salesforce belongs to whom, see how I help under [Salesforce architecture](../../../services/salesforce-architecture/).
-
-A B2B store carries its weight when the first dealers find their parts at their price on the first try, and agents, migration and KPIs all build on that foundation.

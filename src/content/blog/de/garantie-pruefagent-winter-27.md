@@ -9,11 +9,11 @@ topic: ai
 categories: [ai, manufacturing-cloud]
 tags: [Agentforce, Garantie, Manufacturing Cloud, KI-Agenten, Händler, After-Sales]
 takeaways:
-  - "Laut Salesforce prüft der Warranty Claims Adjudication Agent aus Winter '27 die Deckung von Garantieansprüchen und markiert mögliche Betrugsfälle; Winter '27 ist seit dem 12. Oktober 2026 allgemein verfügbar."
-  - "Die Manufacturing Cloud prüft Garantieansprüche schon heute mit Flow, Business Rules Engine und Expression Sets; der Agent sollte um diese Regeln herum arbeiten und die Deckungsentscheidung ihnen überlassen."
-  - "Bevor der Agent prüft, braucht jede beanstandete Maschine Seriennummer und Garantiebeginn in Salesforce, bei nutzungsabhängigen Bedingungen auch eine Quelle für Betriebsstunden."
-  - "Ansprüche über einer vereinbarten Grenze, jeder Betrugsverdacht, Kulanz und Fälle mit fehlenden Anlagendaten gehören zu einem Menschen, bevor eine Gutschrift entsteht."
-  - "In den Quellen, die ich öffnen konnte, hat Salesforce Lizenz, Betrugssignale und Einrichtungsanleitung für diesen Agenten nicht veröffentlicht; klären Sie alle drei vor der Budgetplanung."
+  - "Winter '27 ist seit dem 12. Oktober 2026 allgemein verfügbar, auf der Produktseite beschreibt Salesforce den Agenten aber nur in einem Satz."
+  - "Die Manufacturing Cloud prüft Garantieansprüche schon heute mit Flow, Business Rules Engine und Expression Sets. Die Deckungsentscheidung bleibt dort."
+  - "Jede beanstandete Maschine braucht Seriennummer und Garantiebeginn in Salesforce, bei nutzungsabhängigen Bedingungen auch Betriebsstunden."
+  - "Ansprüche über einer vereinbarten Grenze, Betrugsverdacht, Kulanz und fehlende Anlagendaten gehören zu einem Menschen, bevor eine Gutschrift entsteht."
+  - "Lizenz, Betrugssignale und Einrichtungsanleitung hat Salesforce in den Quellen, die ich öffnen konnte, nicht veröffentlicht. Klären Sie das vor dem Budget."
 faq:
   - q: "Was macht der Warranty Claims Adjudication Agent?"
     a: "Laut Produktseite der Manufacturing Cloud prüft er die Deckung von Garantieansprüchen und markiert mögliche Betrugsfälle, um Entscheidungen zu beschleunigen. Er gehört zum Release Winter '27, das seit dem 12. Oktober 2026 allgemein verfügbar ist."
@@ -42,7 +42,7 @@ Dokumentiert sind die [Garantie-Aktionen von Agentforce for Manufacturing](https
 
 Das Datenmodell darunter, von der Garantiebedingung bis zum Lieferantenregress, beschreibe ich in [Garantieansprüche von Händlern in Salesforce prüfen](../garantieansprueche-haendler-salesforce/). Hier geht es nur um den Agenten und was er braucht.
 
-## Was ändert sich gegenüber der regelbasierten Prüfung?
+## Die regelbasierte Prüfung gibt es schon heute
 
 Die Manufacturing Cloud kann Garantieansprüche schon heute ohne KI prüfen. Laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?id=mfg_warranties_adjudication_process_worflow.htm&language=en_US&type=5) startet ein datensatzausgelöster Flow, sobald ein Anspruch festgelegte Bedingungen erfüllt, sammelt die Daten über den Context Service und übergibt sie an ein Expression Set der Business Rules Engine. Das Expression Set prüft den Anspruch, liefert angepasste Beträge und einen Status zurück, und der Flow aktualisiert den Anspruch und informiert die Beteiligten per E-Mail. Ein [Claim-Validation-Element](https://help.salesforce.com/s/articleView?id=mfg_warranties_flow_bre.htm&language=en_US&type=5) meldet, ob ein Anspruch genehmigt ist und welche Produkte nicht gedeckt sind. Ein Scoring Framework schätzt zusätzlich anhand früherer Freigaben, wie wahrscheinlich eine Genehmigung ist.
 
@@ -50,7 +50,7 @@ In der Praxis sieht so ein Regelwerk etwa so aus: Ein Anspruch geht in die manue
 
 Die Frage „Ist das gedeckt?“ hat also schon eine deterministische Antwort. Ein Agent bringt dort etwas, wo Regeln schwach sind: die freie Fehlerbeschreibung des Händlers lesen, sie mit Fehlercode und beanspruchten Teilen abgleichen, bemerken, dass dieselbe Seriennummer zweimal kam, den Fall für den Sachbearbeiter zusammenfassen und eine Nachforderung fehlender Angaben entwerfen. Salesforces eigener [Architektur-Leitfaden zu Hybrid Reasoning](https://architect.salesforce.com/docs/architect/fundamentals/guide/hybrid-reasoning-agentforce-builder-agent-script) formuliert die Regel, die ich anwenden würde: Was sich als Code ausdrücken lässt, gehört in Logik. Wie Sie diese Trennung bauen, beschreibe ich in [Agent Script: Regeln statt LLM](../agent-script-regeln-statt-llm/).
 
-## Was muss stehen, bevor der Agent Ansprüche prüft?
+## Was vor dem Agenten stehen muss
 
 ### Anlagendaten mit Seriennummer und Garantiebeginn
 
@@ -81,7 +81,7 @@ quelle: [Flex Credits Rate Card](https://www.salesforce.com/en-us/wp-content/upl
 
 Planen Sie zwei getrennte Posten: den Verbrauch, den Sie schätzen können, und die Lizenz, die vorerst nur Salesforce beantworten kann.
 
-## Ein typisches Szenario: Landmaschinen über 90 Händler
+## Rechenbeispiel: Landmaschinen über 90 Händler
 
 Nehmen wir einen Landmaschinenhersteller mit 90 Händlern in Deutschland und Österreich, SAP als ERP und Manufacturing Cloud mit Händlerportal. Alle Zahlen sind Annahmen, die das Vorgehen zeigen sollen.
 
@@ -110,7 +110,7 @@ Der Verbrauch ist klein. Die eigentlichen Kosten stecken in den drei Monaten Dat
 
 Der Agent geht wie jede andere Änderung in Produktion: mit einem Testsatz aus echten Ansprüchen, einer vereinbarten Bestehensquote und Monitoring danach, wie in [Agentforce-Agenten testen und freigeben](../agentforce-agenten-testen-freigeben/) beschrieben. Diese Grenzen zwischen Regeln, Agent und Menschen zu ziehen, gehört zu meiner [Arbeit als Salesforce-Architekt](../../leistungen/salesforce-architektur/). Ist die Entscheidung für die Manufacturing Cloud selbst noch offen, beginnen Sie mit [wann sich die Manufacturing Cloud lohnt](../manufacturing-cloud-wann-lohnt-sie-sich/).
 
-## Wo sollten Sie anfangen?
+## Die Anlagenabdeckung messen
 
 1. **Anlagenabdeckung messen**: Anteil der Ansprüche des letzten Jahres, deren Seriennummer als Anlage mit Startdatum existiert.
 2. **Zuerst regelbasiert prüfen.** Laut Salesforce-Hilfe ist das in Enterprise, Unlimited und Developer Edition verfügbar, und es zeigt schnell, ob Ihre Bedingungen als Regeln funktionieren.
@@ -118,5 +118,3 @@ Der Agent geht wie jede andere Änderung in Produktion: mit einem Testsatz aus e
 4. **Portal-Freitext als nicht vertrauenswürdig behandeln**, bevor ein Agent ihn liest.
 5. **Salesforce drei Fragen stellen**: welche Lizenz, welche Betrugssignale, welche Einrichtungsdokumentation.
 6. **Einen Testsatz bauen** aus echten Ansprüchen, auch abgelehnten und bekannten Betrugsfällen.
-
-Der Garantie-Prüfagent kann Entscheidungen beschleunigen, aber nur auf sauberen Anlagendaten, funktionierenden Regeln und einer klaren Freigabegrenze.

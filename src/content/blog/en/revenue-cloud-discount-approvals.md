@@ -9,11 +9,10 @@ topic: revenue
 categories: [revenue-cloud]
 tags: [revenue cloud, advanced approvals, discounts, margin, quote, cpq migration]
 takeaways:
-  - "Discount approvals in Revenue Cloud run on Advanced Approvals: approval workflows with stages and steps, serial and parallel approvers and an audit trail, started from the quote."
   - "A preview through the Advanced Approvals Business APIs shows the approval levels before a rep submits, so nobody has to guess who will be asked."
-  - "Margin approvals only work when cost data from the ERP is on every quote line; without it, approve on discount and deal size only."
-  - "Approval rules stay deterministic: an agent may submit, summarise or search approvals, but the threshold and the approver come from the workflow."
-  - "The Advanced Approvals package of Salesforce CPQ does not carry over to Revenue Cloud; rules, chains and approvers are rebuilt and tested as part of the migration."
+  - "Margin approvals only work with ERP cost data on every quote line. Without it, you approve on discount and deal size."
+  - "An agent may submit, summarise or search approvals. The threshold and the approver still come from the workflow."
+  - "Advanced Approvals from Salesforce CPQ does not carry over. You rebuild rules, chains and approvers in the migration and test them."
 faq:
   - q: "What is Advanced Approvals in Revenue Cloud?"
     a: "Advanced Approvals is the approval feature of Revenue Cloud, called Revenue Management in the developer guide. It provides invocable actions for parallel or sequential approval chains with detailed audit trails, and Business APIs that preview approval levels before a record is submitted."
@@ -51,9 +50,9 @@ Around this core, the same Help section documents several features that decide h
 
 My recommendation: use the preview from day one. Most frustration with approvals comes from reps who submit and then wait without knowing for whom.
 
-## Which approval matrix fits a manufacturer?
+## Discount, margin and deal size as triggers
 
-An approval matrix is the table that says which deviation needs which approver. Keep it to a handful of triggers that sales can remember. A typical scenario, as an assumption: a component maker sells standard parts and configured assemblies through 25 internal sales reps. A matrix for it could look like this.
+An approval matrix is the table that says which deviation needs which approver. Keep it to a handful of triggers that sales can remember. A worked example: a component maker sells standard parts and configured assemblies through 25 internal sales reps. A matrix for it could look like this.
 
 | Trigger | Threshold | Approver |
 |---|---|---|
@@ -67,7 +66,7 @@ Three rules keep such a matrix workable. Each trigger has exactly one owner who 
 
 The discount itself comes from pricing. How Revenue Cloud calculates list price, volume discount and manual discount in sequence is covered in [Salesforce Pricing: how Revenue Cloud calculates prices](../revenue-cloud-pricing-procedures-explained/). The approval should check the result of that calculation, not recalculate it.
 
-## Where does the margin for an approval come from?
+## Margin needs cost data from the ERP
 
 A margin approval needs a cost per quote line. In manufacturing that cost lives in the ERP: standard cost or a calculated cost per material in SAP controlling. Salesforce does not know it unless you bring it over.
 
@@ -89,7 +88,7 @@ Salesforce Help lists an Agentforce area for Advanced Approvals with three subag
 Third-party Winter '27 summaries also mention an approval agent for reps. I could not open the Revenue Cloud release notes to confirm it, so check them before you plan with it.
 ```
 
-## What changes when you migrate approvals from CPQ?
+## Approvals from CPQ are rebuilt
 
 In Salesforce CPQ, approvals come from a separate managed package, Advanced Approvals, with approval rules, conditions, approvers and approval chains. The [Trailhead module for CPQ admins](https://trailhead.salesforce.com/content/learn/modules/advanced-approvals-for-admins/discover-advanced-approvals) shows the model: a rule has at least one condition, such as a partner discount above 20 percent, and an approver or approver group.
 
@@ -102,8 +101,6 @@ The names sound alike, but nothing carries over. [Salesforce Help on the migrati
 
 I would use the migration to clean up. CPQ orgs tend to collect approval rules that nobody can explain. Rebuild only what the head of sales and finance confirm. The full migration path is in the chapter [from CPQ to Revenue Cloud](../../masterclass/revenue-cloud/from-cpq-to-revenue-cloud/).
 
-## Where should you start?
+## Write the approval matrix on one page
 
 Write the approval matrix on one page before anyone builds a workflow: triggers, thresholds, owners and the source of the cost data. Then build the workflows with preview, parallel approvers and delegation, and test each rule with a quote that should and one that should not trigger it. How approvals fit into the path from quote to order is in the chapter [quote, contract, order](../../masterclass/revenue-cloud/quote-contract-order/), and I help with this as part of [Salesforce architecture](../../services/salesforce-architecture/).
-
-A short approval matrix with clear owners keeps sales fast and gives finance control.

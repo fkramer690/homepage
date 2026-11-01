@@ -10,7 +10,7 @@ pubDate: 2026-10-29
 short: "Sponsor und Kommunikation"
 summary: "Awareness und Desire: was der Sponsor sichtbar tut, wie ein Einführungsplan je Release aussieht und wann der Betriebsrat dazukommt."
 takeaways:
-  - "Awareness und Desire schafft keine Schulung, sondern die eigene Führung: Sie erklärt, warum sich etwas ändert, und entscheidet, wenn Bereiche sich nicht einigen."
+  - "Awareness und Desire schafft die eigene Führung. Sie erklärt, warum sich etwas ändert, und entscheidet, wenn Bereiche sich nicht einigen."
   - "Ein Sponsor-Plan legt fest, was das Management wann sichtbar tut, damit „das Management steht dahinter“ mehr ist als eine Zeile auf der ersten Folie."
   - "Ein Einführungsplan je Release hat eine Zeile pro betroffener Gruppe: was sich ändert, wer informiert und wann, und steht, bevor die Entwicklung fertig ist."
   - "Release Notes für Anwender beantworten fünf Fragen in Alltagssprache und kommen in der Landessprache, höchstens eine halbe Seite pro Gruppe."
@@ -32,7 +32,7 @@ Bewusstsein und Bereitschaft, die ersten beiden Stufen im ADKAR-Modell, entstehe
 
 In der Prosci-Studie [Best Practices in Change Management](https://www.prosci.com/hubfs/Website_English/2.downloads/research-executive-summaries/Best-Practices-in-Change-Management-12th-Edition-Executive-Summary.pdf) nannten die Teilnehmenden aktives und sichtbares Sponsoring als wichtigsten Erfolgsfaktor. In Salesforce-Programmen fehlt genau das am häufigsten. Ein Sponsor ist eine Person aus dem Management, die sichtbar hinter der Einführung steht. Sie sitzt nicht nur im Lenkungsausschuss, sie tritt vor die betroffenen Teams.
 
-Drei Dinge machen einen Sponsor wirksam:
+Wirksam wird ein Sponsor so:
 
 ```saeulen
 dach: Ein wirksamer Sponsor
@@ -44,7 +44,7 @@ basis: Festgehalten im Sponsor-Plan
 
 Ich schreibe deshalb einen Sponsor-Plan: eine kurze Liste mit Terminen, an denen der Sponsor auftritt, Entscheidungen, die bei ihm liegen, und den Zahlen, die er monatlich bekommt. Ohne diesen Plan wird aus „das Management steht dahinter“ eine Zeile auf der ersten Folie.
 
-## Was steht im Einführungsplan je Release?
+## Der Einführungsplan hat eine Zeile pro betroffener Gruppe
 
 Mit einem sauberen Release-Prozess werden Releases kleiner und häufiger. Für Fachbereiche heißt das: öfter kleine Änderungen statt einmal im Quartal ein großes Paket. Wer nicht weiß, dass sich etwas geändert hat, hält die Änderung für einen Fehler. Der Einführungsplan verhindert das. Er hat eine Zeile pro betroffener Gruppe und wird mit dem Release-Plan zusammen gepflegt:
 
@@ -79,7 +79,7 @@ Nach dem Release | erste Woche · Key User, Projektteam
   Fragen sammeln, Nutzung prüfen, Rückmeldungen in den Backlog übernehmen.
 ```
 
-## Was tun, wenn eine Änderung umstritten ist?
+## Umstrittene Änderungen erklärt der Sponsor vor dem Abnahmetest
 
 Manche Änderungen gefallen nicht allen. Ein neues Pflichtfeld macht dem Innendienst Arbeit und hilft der Absatzplanung. Solche Änderungen sollten nicht über die Release Notes zum ersten Mal bekannt werden. Im Einführungsplan markiere ich diese Zeilen, und der Sponsor erklärt vor dem Abnahmetest, warum die Änderung kommt. Hier entscheidet sich Desire: Wer den Grund kennt und weiß, dass die eigene Führung ihn trägt, füllt das Feld. Wer ihn nicht kennt, füllt es mit einem Punkt.
 
@@ -95,6 +95,6 @@ Klären Sie Standortdaten, Zeiten und Auswertungen über Personen mit dem Betrie
 
 Für KI-Werkzeuge in der Entwicklung gilt dasselbe, siehe [KI-Coding: Betriebsrat und DSGVO](../../../blog/ki-coding-betriebsrat-dsgvo/). Wie Techniker die App annehmen, behandelt [Kapitel 3](../key-user-und-schulung/).
 
-## Wo fangen Sie an?
+## Einführungsplan für das nächste Release schreiben
 
 Schreiben Sie für das nächste Release einen Einführungsplan mit einer Zeile pro betroffener Gruppe und markieren Sie die umstrittenen Zeilen. Gehen Sie mit dieser Liste zum Sponsor und vereinbaren Sie, wann er welche Änderung erklärt. Wenn kein Sponsor zu finden ist, ist das die wichtigste Erkenntnis des Plans. Die Diagnose dahinter steht in [Kapitel 1](../change-management-adkar-diagnose/), meine Arbeit dazu auf der Seite [Change Management für Salesforce-Programme](../../../leistungen/change-management/).

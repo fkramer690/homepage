@@ -1,6 +1,6 @@
 ---
 title: "Salesforce Field Service: What Data Does Scheduling Need?"
-description: "Salesforce Field Service schedules only as well as its master data. Which data scheduling needs, where it comes from and who maintains it in field service."
+description: "The six kinds of master data Salesforce Field Service needs before the first job, where they come from and who maintains them in field service."
 pubDate: 2026-10-26
 lang: en
 slug: salesforce-field-service-master-data
@@ -10,11 +10,11 @@ categories: [field-service]
 series: { id: field-service, part: 2 }
 tags: [Field Service, Data model, Master data, Manufacturing]
 takeaways:
-  - "Salesforce Field Service needs six kinds of master data before the first job: service territories with operating hours, technicians with skills, work types, assets, customer visiting hours and absences."
-  - "The scheduling engine only checks what is in this data. A technician without a recorded skill is no candidate for jobs that require one, and a technician with a wrong skill gets scheduled wrongly."
-  - "Customer opening hours only count in scheduling when the visiting hours work rule is active in the scheduling policy. Without it, Field Service books appointments when nobody at the customer can open the door."
-  - "Before go-live, decide for each kind of master data which system leads and who maintains it. Most of the data already exists in the ERP, in HR or in the dispatchers' heads."
-  - "A good starting point is the failed visits of the last few months: each failed visit shows which data was missing."
+  - "Field Service needs six kinds of data: territories with operating hours, skills, work types, assets, customer visiting hours and absences."
+  - "A technician without a recorded skill is no candidate for jobs that require it. One with a wrong skill gets scheduled wrongly."
+  - "Customer opening hours only count when the visiting hours work rule is active. Without it, Field Service books visits when nobody can open the door."
+  - "Before go-live, decide for each kind of data which system leads and who maintains it. Most of it already sits in the ERP, in HR or with dispatchers."
+  - "The failed visits of the last few months show which data has to be clean first."
 faq:
   - q: "What master data does Salesforce Field Service need?"
     a: "At least service territories with operating hours, technicians as service resources with their skills, work types with duration and required skills, the assets at the customer site, customer visiting hours and the technicians' absences."
@@ -27,11 +27,11 @@ faq:
 draft: false
 ---
 
-Salesforce Field Service schedules only as well as the master data it knows. Before the scheduling engine assigns the first job, it needs six kinds of data: service territories with operating hours, technicians with their skills, work types with duration and requirements, the assets at the customer site, customer visiting hours and the technicians' absences. If one of them is missing or out of date, the engine sends the wrong technician or sends them at the wrong time. Most of this data already exists in the company, spread across the ERP, HR and the dispatchers' heads.
+Salesforce Field Service schedules with the master data it knows and nothing else. Before the scheduling engine assigns the first job, it needs six kinds of data: service territories with operating hours, technicians with their skills, work types with duration and requirements, the assets at the customer site, customer visiting hours and the technicians' absences. If one of them is missing or out of date, the engine sends the wrong technician or sends them at the wrong time. Most of this data already exists in the company, spread across the ERP, HR and the dispatchers' heads.
 
 Whether Field Service is worth it for your field service operation at all is the topic of the first part of this series: [Salesforce Field Service: is it worth it?](../salesforce-field-service-worth-it/). This part covers the next question: what has to be in place before scheduling starts?
 
-## Why do field service visits fail on missing data?
+## Missing data leads to failed visits
 
 ```praxis
 In service projects I have seen the same pattern again and again. Technicians were on site and could not do their job. Sometimes the spare parts were not there. Sometimes the machine was not accessible. Sometimes the wrong technician stood in front of the equipment, or the right one was not able to work. Partly the customer caused it, partly the way technicians were planned.
@@ -103,7 +103,7 @@ The interfaces follow from this table. Maintaining assets and skills by hand in 
 
 Skills and absences are data about employees. Agree early with data protection and, where there is one, the works council which of them may go into Salesforce. The same applies to the new app features I describe in [Field Service Mobile: guided flows and voice](../salesforce-field-service-mobile-guided-voice/).
 
-## Where should you start?
+## Analyse the failed visits of the last three months
 
 Take the failed visits of the last three months in one region. Assign each one a cause: parts, access, skills, availability or something else. The cause with the most failed visits shows which data you need clean first. If there is no list of failed visits, that is a result too: then the metric that Field Service will later have to be measured against is missing.
 

@@ -10,11 +10,10 @@ categories: [manufacturing-cloud, architecture]
 contactBrief: integration
 tags: [Manufacturing Cloud, SAP, ERP integration, MuleSoft, sales agreements, rebates]
 takeaways:
-  - "Into Manufacturing Cloud flow accounts, products, orders or order totals as actuals, and stock; out of it flow approved rebate payouts and warranty credits, which SAP books as credit memos."
-  - "The MuleSoft Accelerator for Manufacturing covers account, product and order sync from SAP S/4HANA and rebate credit memos back to SAP; it creates no sales agreements and names no warranty flow."
-  - "The Refresh Actuals Calculation action recalculates actuals per sales agreement for the current, past or future periods and has been available since API version 47.0."
-  - "Actuals for sales agreements need a daily feed, order status for dealers needs a live call; one frequency for everything wastes either API calls or trust."
-  - "From 1 December 2026, ERP interfaces that log in with SOAP login() need the Use Any API Auth permission, and SOAP login() in API versions 31.0 to 64.0 is retired in Summer '27."
+  - "Stock also flows from SAP into Salesforce. SAP books rebate and warranty amounts as credit memos."
+  - "The Refresh Actuals Calculation action recalculates a sales agreement's actuals per period, since API version 47.0."
+  - "One frequency for all data costs either API calls or the dealers' trust in the order status."
+  - "From 1 December 2026, interfaces using SOAP login() need Use Any API Auth. Summer '27 retires login() in API 31.0 to 64.0."
 faq:
   - q: "Which data has to flow from SAP to Manufacturing Cloud?"
     a: "Accounts with their hierarchy, products, and either orders or order totals per customer, product and period as actuals for sales agreements. Stock is useful as an extra metric next to the shortfall."
@@ -76,11 +75,11 @@ For the interface, one action matters: [Refresh Actuals Calculation](https://dev
 
 That gives the integration a clean pattern. After SAP has delivered late orders or corrections for a closed month, the middleware calls the action for the affected agreements with "current and past periods". Without that step, the agreement shows last month's shortfall until the next regular run, and account managers call customers about volume they have already taken.
 
-## How often does which data need to flow?
+## Frequency follows the question the data answers
 
 Frequency follows the question the data answers. Sales agreements run over months or a year, so a daily feed of actuals is enough. A dealer asking where an order is wants today's answer, so order status should be called live from SAP, as in [Agentforce and SAP: order status through MuleSoft](../agentforce-sap-order-status-mulesoft/). One frequency for everything either wastes API calls or shows stale data where it hurts.
 
-Volume decides between full orders and totals. A typical scenario, as an assumption: 800 accounts with sales agreements, on average 40 products per agreement and monthly periods. Totals per customer, product and month mean at most 800 × 40 = 32,000 values per month, and a daily delta run only sends the values that changed. Replicating every order line as well adds data storage and a linking step per order, which pays off only when sales or service should see the orders themselves in Salesforce.
+Volume decides between full orders and totals. A worked example with assumed numbers: 800 accounts with sales agreements, on average 40 products per agreement and monthly periods. Totals per customer, product and month mean at most 800 × 40 = 32,000 values per month, and a daily delta run only sends the values that changed. Replicating every order line as well adds data storage and a linking step per order, which pays off only when sales or service should see the orders themselves in Salesforce.
 
 Stock belongs in the same daily run. A shortfall reads differently when the goods are filling the warehouse than when they are scarce anyway.
 
@@ -96,7 +95,7 @@ Summer '28 | Calls to SOAP, REST and Bulk API 31.0 to 40.0 fail
 
 Salesforce's advice in the same guide is to "move those integrations to OAuth with external client apps". An actuals feed that fails quietly is worse than one that fails loudly, because sales sees an old shortfall and believes it. How to find every affected interface is described in [Salesforce password integrations end in 2027](../salesforce-password-integrations-end-2027/).
 
-## Who owns which object?
+## Every object needs one leading system and one person
 
 Every row in the table above needs one leading system and one named person, written down before the build. The [object ownership matrix](../salesforce-object-ownership-matrix/) does this for objects inside the org; for an ERP interface I add two columns: direction and frequency.
 
@@ -109,7 +108,7 @@ The questions that come up in almost every design:
 
 How I set up interfaces between ERP, middleware and Salesforce is described under [Salesforce integration](../../services/salesforce-integration/).
 
-## Where should you start?
+## Fill in the table with objects, direction and frequency
 
 1. **Fill in the table** with your objects, leading system, direction and frequency.
 2. **Decide actuals as orders or totals** before the first sales agreement goes live.
@@ -117,4 +116,4 @@ How I set up interfaces between ERP, middleware and Salesforce is described unde
 4. **Plan the money flows back**: rebate payouts and warranty credits, each with a status that returns to Salesforce.
 5. **List every interface user** and its login method before 1 December 2026.
 
-Manufacturing Cloud is only as current as the SAP data it receives, so the integration design comes before the feature design.
+The filled-in table is the first document in my projects, before the first workshop on sales agreements. Manufacturing Cloud calculates with what SAP delivers, so the integration design comes before the feature design.

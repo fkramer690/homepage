@@ -9,11 +9,10 @@ topic: revenue
 categories: [revenue-cloud, field-service]
 tags: [Revenue Cloud, maintenance contracts, recurring billing, Field Service, subscriptions, manufacturing]
 takeaways:
-  - "In Revenue Cloud a maintenance contract is a subscription on a quote; order activation creates an asset with state periods and billing schedules, from which invoice schedulers create invoices."
-  - "Every change to the contract, whether an upsell, a renewal or a cancellation, runs through a quote and an order, so billing and the asset history stay in step."
-  - "Field Service knows nothing about Revenue Cloud subscriptions; service contract, maintenance plan and entitlement deliver the visits and must be created from the sold contract."
-  - "The Revenue Cloud asset should answer what was sold and for how much; the service contract answers which machines get which service level."
-  - "If machines and spare parts are invoiced in SAP and maintenance is a small share, quoting in Revenue Cloud with invoicing in SAP can be the better split."
+  - "Every upsell, renewal or cancellation runs through a quote and an order, so billing and the asset history stay in step."
+  - "Field Service knows nothing about Revenue Cloud subscriptions. Service contract, maintenance plan and entitlement must be created from the sold contract."
+  - "The asset answers what was sold and for how much. The service contract answers which machine gets which service level."
+  - "If SAP invoices machines and spare parts and maintenance is a small share, the invoice is better left in SAP."
 faq:
   - q: "How does Revenue Cloud bill a maintenance contract every quarter?"
     a: "The contract is sold as a subscription product. When the order is activated, billing schedules are created per order item according to the product's billing policy and treatment, for example in advance. An invoice scheduler then picks up schedules that are ready for invoicing and creates the invoices."
@@ -36,7 +35,7 @@ Sales puts it on a quote like any other product. Once the quote becomes an order
 
 The name question comes up in every project, so once: Salesforce sells the product as Revenue Cloud, Trailhead calls it Agentforce Revenue Management and the developer guide Revenue Management. It is the same product.
 
-## How do billing schedules turn into invoices?
+## The invoice scheduler turns billing schedules into invoices
 
 Three records decide how an order item is billed. The [Trailhead unit on billing policies](https://trailhead.salesforce.com/content/learn/modules/billing-management-with-revenue-cloud/create-billing-policies-and-treatments) describes them:
 
@@ -52,7 +51,7 @@ Invoices come from invoice schedulers. According to the [Trailhead unit on invoi
 
 One point for German customers: from 1 January 2027, companies with more than €800,000 prior-year turnover must issue e-invoices for domestic B2B, from 2028 all companies, according to the [IHK Köln](https://www.ihk.de/koeln/hauptnavigation/recht-steuern/recht/e-rechnungen-5943094). A quarterly maintenance invoice is such an invoice. What that means for Revenue Cloud is in the article on [e-invoicing from 2027](../e-invoicing-germany-2027-revenue-cloud/).
 
-## What happens on upsells, renewals and cancellations?
+## Every change runs through a quote and an order
 
 Every change to the contract is a quote, then an order. The [Trailhead unit on amendments](https://trailhead.salesforce.com/content/learn/modules/asset-lifecycle-management-with-revenue-cloud/manage-customer-asset-amendments) shows the fields: the start quantity, the change as a positive or negative number, and the end quantity. After activation a new asset state period holds the new quantity, and an asset action records the change, for example with the business category "Upsells". Billing creates new billing schedules linked to the original ones, which leaves an audit trail.
 
@@ -92,7 +91,7 @@ One record has to be the master for the commercial contract, otherwise sales, se
 
 Write this down per object, as in an [object ownership matrix](../salesforce-object-ownership-matrix/). The weak point is the third case: a machine is replaced under contract, service swaps the asset on the contract line item, and nobody checks whether the price changes.
 
-## A typical scenario, as an assumption
+## Worked example: 800 machines in three maintenance levels
 
 A machine builder has 800 machines under maintenance contracts at 150 customers, in three levels: an annual inspection, the same plus a 24-hour response, and a premium level with an 8-hour response. Contracts run for three years and are billed quarterly in advance.
 
@@ -100,8 +99,6 @@ In Revenue Cloud each level is a subscription product with its own price, the nu
 
 For the Billing Events: if the contracts add up to $2.4 million a year, the invoices consume 48,000 events at one event per $50 of subtotal, according to the [rate sheet of February 2026](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/documents/pricing/revenue-cloud-billing-rate-sheet-feb-2026.pdf). The price per event is not public.
 
-## When should the invoice stay in SAP?
+## Check the share of maintenance in revenue
 
 Revenue Cloud Billing pays off when maintenance and service contracts are sold and changed often in Salesforce and make up a real share of revenue. If SAP invoices machines and spare parts and maintenance is a small add-on, I would keep the invoice in SAP and use Revenue Cloud for quote, order and asset. The trade-offs are in [Revenue Cloud Billing or SAP](../revenue-cloud-billing-or-sap-invoicing/). Usage-based contracts follow the same logic and are covered in [pay-per-use for machines](../pay-per-use-machines-revenue-cloud/). The chapter on [billing and usage-based pricing](../../masterclass/revenue-cloud/billing-and-usage-based-pricing/) brings these articles together.
-
-Recurring billing of maintenance contracts works in Revenue Cloud when every commercial change runs through a quote and Field Service receives its contract from there.

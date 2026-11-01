@@ -10,10 +10,9 @@ categories: [revenue-cloud, architecture]
 contactBrief: make-or-buy
 tags: [Salesforce CPQ, Revenue Cloud, Migration, Make-or-Buy, Entscheidung]
 takeaways:
-  - "Bei Salesforce CPQ zu bleiben ist erlaubt: Bestandskunden verlängern, kaufen Nutzer nach und erhalten Support, ein End-of-Life-Datum und eine erzwungene Migration gibt es nicht."
-  - "Für den Wechsel sprechen Anforderungen, die nur Revenue Cloud abdeckt: neue Funktionen wie agentenbasierte Angebote, wiederkehrende oder nutzungsbasierte Abrechnung in Salesforce oder ein ohnehin neues Produktmodell."
-  - "Für das Abwarten sprechen ein stabiler Angebotsprozess, Preise, die ohnehin aus dem ERP kommen, ein größeres Projekt wie eine ERP-Migration oder fehlendes Budget in diesem Jahr."
-  - "Es gibt einen dritten Weg: ein Partnerprodukt oder ein eigener Ansatz auf der Plattform, vor allem wenn die Konfigurationsregeln im ERP oder in der Konstruktion liegen."
+  - "Für den Wechsel sprechen agentenbasierte Angebote, wiederkehrende oder nutzungsbasierte Abrechnung in Salesforce oder ein ohnehin neues Produktmodell."
+  - "Für das Abwarten sprechen ein stabiler Angebotsprozess, Preise aus dem ERP, eine laufende ERP-Migration oder fehlendes Budget in diesem Jahr."
+  - "Ein Partnerprodukt oder ein eigener Ansatz passt, wenn die Konfigurationsregeln im ERP oder in der Konstruktion liegen."
   - "Die Entscheidung beginnt mit einer Analyse Ihrer CPQ-Org: Regeln, Preislogik, Anpassungen und Schnittstellen zeigen, wie groß der Neuentwurf wäre."
 faq:
   - q: "Soll ich bei Salesforce CPQ bleiben oder zu Revenue Cloud wechseln?"
@@ -58,7 +57,7 @@ Diese Auslöser sprechen für einen Wechsel in den nächsten ein bis zwei Jahren
 - **Org-Neustart oder Partnerwechsel.** Wenn die Org neu aufgebaut wird oder ein neuer Partner übernimmt, passt der Wechsel in ein Projekt, das ohnehin läuft. Eine [KI-gestützte Org-Analyse](../ki-org-analyse-technische-schulden/) hilft zu sehen, was wirklich in der alten Org steckt.
 - **CPQ-Anpassungen sind fragil.** Wenn jeder Release-Test etwas im Quote Calculator Plugin bricht und nur eine Person es versteht, nimmt ein Neuentwurf ein Risiko weg.
 
-## Wann ist Abwarten die bessere Wahl?
+## Abwarten passt bei stabilem Prozess und Preisen aus dem ERP
 
 Abwarten ist sinnvoll, wenn
 
@@ -69,7 +68,7 @@ Abwarten ist sinnvoll, wenn
 
 Abwarten heißt nicht, nichts zu tun. Löschen Sie ungenutzte Regeln, dokumentieren Sie die Preislogik und sichern Sie sich bei der Verlängerung den späteren Parallelbetrieb. Das macht einen späteren Wechsel günstiger.
 
-## Gibt es einen dritten Weg?
+## Der dritte Weg: Partnerprodukt oder eigener Ansatz
 
 Ja, und ich würde ihn immer prüfen, bevor etwas unterschrieben wird. Für Angebote gibt es heute drei Wege: Revenue Cloud, ein Partnerprodukt oder einen eigenen Ansatz auf der Plattform. Wie ein eigener Ansatz mit eigenem Produktkonfigurator Angebote und Sales Agreements versorgt, beschreibe ich in [vom Angebot zum Sales Agreement](../angebot-zu-sales-agreement-produktkonfigurator/).
 
@@ -106,10 +105,8 @@ Als Annahme kosten 50 Nutzer im Angebotsprozess auf Advanced 120.000 Euro pro Ja
 
 Der größere Kostenblock ist der Neuentwurf. Salesforce nennt drei bis sechs Monate als typische Migrationsdauer, und der [Migrationsleitfaden](https://help.salesforce.com/s/articleView?language=en_US&id=ind.rev_data_migration.htm&type=5) stellt klar, dass Werkzeuge keine Designentscheidungen für eigene Logik und Schnittstellen ersetzen. Warum das so ist, erkläre ich in [Salesforce CPQ vs. Revenue Cloud: Die echten Unterschiede](../salesforce-cpq-revenue-cloud-unterschiede/).
 
-Ein typisches Szenario, als Annahme: Ein Maschinenbauer hat 50 CPQ-Nutzer, 200 Produktregeln, ein Quote Calculator Plugin und eine CPQ-Verlängerung in neun Monaten. Die Preise kommen aus SAP, die Konfigurationsregeln teilweise aus der Konstruktion. Hier würde ich CPQ für zwei Jahre mit Option auf Parallelbetrieb verlängern, die Regeln jetzt aufräumen und einen Proof of Concept für die zehn wichtigsten Maschinen in Revenue Cloud bauen, bevor eine Migration beauftragt wird.
+Ein Rechenbeispiel: Ein Maschinenbauer hat 50 CPQ-Nutzer, 200 Produktregeln, ein Quote Calculator Plugin und eine CPQ-Verlängerung in neun Monaten. Die Preise kommen aus SAP, die Konfigurationsregeln teilweise aus der Konstruktion. Hier würde ich CPQ für zwei Jahre mit Option auf Parallelbetrieb verlängern, die Regeln jetzt aufräumen und einen Proof of Concept für die zehn wichtigsten Maschinen in Revenue Cloud bauen, bevor eine Migration beauftragt wird.
 
-## Wo starten Sie?
+## Die CPQ-Org analysieren
 
 Analysieren Sie zuerst Ihre CPQ-Org: Zahl der Produkt- und Preisregeln, Umfang des Quote Calculator Plugins, Schnittstellen auf SBQQ-Objekte, offene Subscriptions und das Verlängerungsdatum. Legen Sie dann die Auslöser oben neben Ihre Roadmap für die nächsten zwei Jahre. Das Masterclass-Kapitel [von CPQ zu Revenue Cloud](../../masterclass/revenue-cloud/von-cpq-zu-revenue-cloud/) führt durch den ganzen Weg vom Status bis zur Migration.
-
-Bleiben, wechseln oder ein dritter Weg: Jede Variante ist für manche Unternehmen richtig, solange Sie sie bewusst wählen.

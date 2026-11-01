@@ -9,10 +9,9 @@ topic: revenue
 categories: [revenue-cloud]
 tags: [Revenue Cloud, pay-per-use, usage management, billing, IoT, manufacturing]
 takeaways:
-  - "Revenue Cloud Usage Management can rate machine hours or output with grants, rate cards and wallets and hands a liable summary to billing; Salesforce's own examples are cloud storage and mobile plans."
-  - "The hard part of pay-per-use for machines sits outside Salesforce: one reliable counter per machine from the IoT platform, mapped to a serial number and checked before it is rated."
+  - "The hard part sits outside Salesforce: one reliable counter per machine, mapped to a serial number and checked before it is rated."
   - "Send one usage record per machine and day into Salesforce, never raw sensor readings; time series stay in the IoT platform or historian."
-  - "The contract must define what counts as usage, which counter is binding, how data gaps are handled and the minimum fee, before anyone configures a rate card."
+  - "The contract defines usage, the binding counter, how data gaps are handled and the minimum fee, before anyone configures a rate card."
   - "Usage rating is listed in the Revenue Cloud Billing add-on, priced on request and charged in Billing Events, one per $50 of invoice subtotal."
 faq:
   - q: "Can Salesforce Revenue Cloud bill machine operating hours?"
@@ -56,7 +55,7 @@ The [unit on usage resources and grants](https://trailhead.salesforce.com/conten
 
 Wallets can raise alerts, block further usage or offer a top-up when a balance runs out. For machines I would use only the alerts. Blocking in Salesforce does not stop a compressor, and switching off a customer's machine because of a billing balance belongs in the contract and the controller, if anywhere.
 
-## Where does the machine data come from?
+## One usage record per machine and day from the IoT platform
 
 Salesforce expects time-stamped usage records with customer, product, resource and quantity. How they get there from a machine is your integration. In a typical setup the controller reports to an IoT platform or historian, which keeps the time series. From there a job sends one aggregated record per machine and day into Salesforce.
 
@@ -79,7 +78,7 @@ Between the two systems sit the checks that decide whether the invoice holds:
 
 Raw readings do not belong in Salesforce. The same rule applies to [predictive maintenance](../predictive-maintenance-salesforce-data-needed/), where streaming raw data through Data 360 gets expensive fast. The daily operating-hours counter is also what Field Service needs for maintenance by usage, so one feed can serve both; the Field Service view is in the [chapter on assets and maintenance](../../masterclass/field-service/field-service-assets-maintenance-parts/). How I would design that interface is part of my work on [Salesforce integration](../../services/salesforce-integration/).
 
-## A typical scenario, as an assumption
+## Worked example: 120 compressors with 300 included hours
 
 A compressor maker offers 120 compressors at 40 customers on pay-per-use. Each contract has a monthly base fee that includes 300 operating hours, extra hours are charged in two tiers, and invoices go out monthly in arrears.
 
@@ -100,7 +99,7 @@ Before anyone builds a rate card, legal, finance and sales have to agree on thes
 
 These are commercial and legal decisions. A partner configures them; your company has to make them.
 
-## Which licences does pay-per-use need?
+## Usage rating sits in the Revenue Cloud Billing add-on
 
 The [Revenue Cloud pricing page](https://www.salesforce.com/sales/cpq/pricing/) shows Revenue Cloud Advanced at $200 or €200 per user and month, billed annually, with "Consumption & Invoicing" in its scope. The same page lists Revenue Cloud Billing as an add-on with "Usage Rating & Digital Wallet", the invoicing engine and the accounting subledger, price on request.
 
@@ -119,6 +118,4 @@ In these cases I would look elsewhere first:
 - **No reliable counter.** Then the project starts with the machine connection, not with Revenue Cloud.
 - **Pay-per-use is a pilot.** Test the commercial model with a few customers before you configure rate cards for everyone.
 
-How pay-per-use fits next to classic service contracts is covered in [maintenance contracts with recurring billing](../maintenance-contracts-recurring-billing/), and the whole chapter on [billing and usage-based pricing](../../masterclass/revenue-cloud/billing-and-usage-based-pricing/) puts both in context.
-
-Pay-per-use with Revenue Cloud works when the counter and the contract are clean, and Salesforce only rates what you send it.
+Before you configure the first rate card, I would compare the counter from the IoT platform with the hour meter on the machine for three machines over one month. How pay-per-use fits next to classic service contracts is covered in [maintenance contracts with recurring billing](../maintenance-contracts-recurring-billing/), and the whole chapter on [billing and usage-based pricing](../../masterclass/revenue-cloud/billing-and-usage-based-pricing/) puts both in context.

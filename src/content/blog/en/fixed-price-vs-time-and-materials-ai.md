@@ -10,11 +10,10 @@ categories: [architecture, ai]
 contactBrief: partner-governance
 tags: [fixed price, time and materials, partner governance, ai coding, partner program, manufacturing]
 takeaways:
-  - "AI pushes Salesforce work packages with testable acceptance criteria towards fixed price; discovery, undocumented ERP interfaces and support stay on time and materials."
-  - "Under hourly billing a partner loses revenue for every day a coding agent saves, so pure time and materials gives partners little reason to show you the productivity gain."
-  - "Salesforce announced in March 2026 that it links partner payouts to active consumption instead of seats, and its FDE Partner Network ties incentives to agents reaching production."
-  - "McKinsey found 11.8 percent average time savings but only 6.2 percent less rework, so prices should follow measured cycle times rather than a partner's claim."
-  - "Outcome components work as a share of the fee, tied to a metric the manufacturer measures itself and combined with a cap on Flex Credits per transaction."
+  - "Under hourly billing a partner loses revenue for every day a coding agent saves and has little reason to show you the gain."
+  - "Salesforce announced in March 2026 that it links partner payouts to active consumption, and its FDE Partner Network rewards agents in production."
+  - "McKinsey found 11.8 percent time savings but only 6.2 percent less rework, so prices should follow measured cycle times."
+  - "Outcome components work as a share of the fee, tied to a metric the manufacturer measures itself and capped in Flex Credits per transaction."
 faq:
   - q: "Does AI make fixed-price Salesforce projects cheaper?"
     a: "Not automatically. A fixed price based on the old estimate passes the whole AI gain to the partner. It only gets cheaper for you if prices are renegotiated against measured effort, for example every six months."
@@ -31,11 +30,11 @@ AI coding pushes Salesforce projects towards fixed price for work packages with 
 
 ## Why does AI put time and materials under pressure?
 
-Time and materials (T&M) means you pay for the person-days actually worked, whatever the result. The model always had a weak incentive: a slower team earns more. That was tolerable because the effort for Salesforce work was fairly stable. A Flow, a Lightning page or an Apex trigger with tests took roughly the same time with any good team.
+Time and materials (T&M) means you pay for the person-days worked, whatever the result. The model always had a weak incentive: a slower team earns more. That was tolerable because the effort for Salesforce work was fairly stable. A Flow, a Lightning page or an Apex trigger with tests took roughly the same time with any good team.
 
 Coding agents break that stability. When a developer has Claude Code or Agentforce Vibes draft the Apex class, the test class and the deployment manifest, the build step can shrink a lot. Under T&M the partner then bills fewer days and earns less. Every incentive points towards using the agent quietly and billing as before. I do not assume bad intent here. I assume a business model that punishes honesty.
 
-How large the gain really is remains open, and that matters for pricing. McKinsey's [survey of 334 product and engineering leaders](https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/beyond-the-copilot-scaling-the-agentic-product-development-life-cycle) published in August 2026 (fielded in May) found these values across the development life cycle:
+How large the gain is remains open, and that matters for pricing. McKinsey's [survey of 334 product and engineering leaders](https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/beyond-the-copilot-scaling-the-agentic-product-development-life-cycle) published in August 2026 (fielded in May) found these values across the development life cycle:
 
 ```kennzahlen
 11.8 % | average time savings
@@ -70,13 +69,13 @@ For a manufacturer this has two sides. A partner paid at go-live has less intere
 
 **Fixed price needs a specification you can test.** "A dealer submits a warranty claim with serial number, fault code and photos; the claim is checked against the warranty start date of the asset and passed to SAP for the credit note" can be accepted. "Improve dealer service" cannot. AI makes building cheaper; it does nothing for an unclear requirement. Under German law, [CMS points out](https://cms.law/de/deu/legal-updates/meilensteine-und-abnahme-in-it-projekten) that software development is often treated as a contract for work with formal acceptance, while a service contract, the usual form of T&M, has no statutory acceptance. That difference is what moves risk to the partner.
 
-**A price catalogue suits run and change.** You agree prices per story size once, the partner profits from every efficiency, and you get predictable costs. The catch: review the catalogue every six months against measured cycle times, or the partner keeps the gain forever.
+**A price catalogue suits run and change.** You agree prices per story size once, the partner profits from every efficiency, and you get predictable costs. One condition comes with it: review the catalogue every six months against measured cycle times, or the partner keeps the gain forever.
 
 **Outcome components work as a share, not as the whole fee.** No partner controls your asset data, the availability of your SAP system or how many dealers use the portal. A fee that depends entirely on adoption is a gamble for both sides. In my view, 10 to 20 percent of the fee tied to a metric is a range worth discussing.
 
 **Who pays for tokens belongs in the price.** McKinsey estimates that tokens, compute, infrastructure and AI operations can reach up to 20 percent of existing labour costs. Under fixed price the partner carries them; under T&M the contract has to say who does. The numbers are in [what AI coding costs in a Salesforce project](../ai-coding-costs-salesforce-project/).
 
-## A typical scenario: renewing a framework contract
+## Worked example: renewing a framework contract
 
 Assume a machine builder with Sales Cloud, Service Cloud, Field Service and SAP. It works with one implementation partner on a framework contract of 600 person-days a year at $1,100 per day, $660,000 in total. At renewal the partner says its team now builds with coding agents and wants to keep the day rate. All figures are assumptions to show the method.
 
@@ -90,7 +89,7 @@ Three work packages are planned for next year.
 
 The day rate stays the same. What changes is that the partner earns more by working faster instead of losing revenue.
 
-## Where should you start?
+## Sort the backlog by type of work
 
 1. **Sort the backlog** into packages with testable acceptance criteria, discovery work and continuous change. Each type gets its own model.
 2. **Measure a baseline** of cycle time and rework before you renegotiate, so you price on data instead of claims.
@@ -98,6 +97,4 @@ The day rate stays the same. What changes is that the partner earns more by work
 4. **Agree who pays** for tokens and Flex Credits in development, sandbox tests and production.
 5. **Review prices every six months** against measured numbers. Smaller AI-native teams change the cost base as well, see [AI-native delivery with smaller Salesforce teams](../ai-native-delivery-smaller-salesforce-teams/).
 
-Setting up these commercial rules is part of my work in [partner governance](../../services/partner-governance/), on the client side and without a stake in any partner's revenue.
-
-Fixed price for what you can test, hours for what nobody can estimate and a measured share for outcomes is the mix I would put into the next framework contract.
+Setting up these commercial rules is part of my work in [partner governance](../../services/partner-governance/), on the client side and without a stake in any partner's revenue. For the baseline in point 2, the cycle times of the last 20 completed stories in your ticket system are enough.

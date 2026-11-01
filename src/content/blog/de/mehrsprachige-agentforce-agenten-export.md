@@ -9,11 +9,11 @@ topic: ai
 categories: [ai, manufacturing-cloud]
 tags: [Agentforce, Mehrsprachigkeit, Knowledge, Flex Credits, Händlerservice, Maschinenbau]
 takeaways:
-  - "Salesforce listet für den Agentforce Service Agent 56 Sprachen, 25 davon als Beta, darunter Russisch, Slowakisch und Ukrainisch. Agentforce Voice nennt sieben Sprachen und ergänzt \"many others\"."
+  - "Für den Agentforce Service Agent listet Salesforce 56 Sprachen, 25 davon als Beta. Agentforce Voice nennt sieben Sprachen und weitere ohne Namen."
   - "Übersetzung kostet 4.000 Flex Credits pro Million Zeichen, rund 20 €. Ein übersetztes Händlergespräch kostet damit etwa fünf Cent."
-  - "Andere Sprachen brauchen oft mehr Tokens als Englisch, und Prompts werden in Einheiten von 2.000 Tokens abgerechnet. Dieselbe Antwort in einer anderen Sprache kann deshalb zwei Einheiten kosten statt einer."
-  - "Standardmäßig filtert der Retriever Wissensartikel nach der Sitzungssprache. Ein italienischer Händler findet nur italienische Artikel, solange Sie keinen eigenen Retriever bauen."
-  - "Ich würde Wissen in ein oder zwei Sprachen pflegen, Sicherheits- und Gewährleistungsinhalte pro Land halten und jede freigegebene Sprache vor dem Go-live testen."
+  - "Andere Sprachen brauchen oft mehr Tokens als Englisch, und Prompts zählen in Einheiten von 2.000 Tokens. Dieselbe Antwort kann so zwei Einheiten kosten."
+  - "Standardmäßig filtert der Retriever Wissensartikel nach Sitzungssprache, ein italienischer Händler findet also nur italienische Artikel."
+  - "Ich würde Wissen in ein oder zwei Sprachen pflegen, Sicherheits- und Gewährleistungsinhalte pro Land halten und jede Sprache vor dem Go-live testen."
 faq:
   - q: "Welche Sprachen unterstützt Agentforce?"
     a: "Die Hilfeseite zum Agentforce Service Agent nennt 56 Sprachen. 31 tragen kein Beta-Label, darunter Deutsch, Französisch, Italienisch, Spanisch, Polnisch, Tschechisch und Türkisch. 25 sind Beta, etwa Russisch, Ukrainisch, Slowakisch und Arabisch; dort liegt die Qualitätssicherung laut Salesforce beim Kunden."
@@ -42,7 +42,7 @@ Für Voice ist die Liste kürzer. Die [Produktseite von Agentforce Voice](https:
 Lassen Sie sich Französisch für Frankreich bestätigen, bevor Sie eine Sprachhotline für französische Händler planen. Gleiches gilt für Polnisch und Tschechisch, die die Produktseite nicht nennt.
 ```
 
-## Wie wählt der Agent seine Sprache?
+## Die Sprache des Agenten kommt aus dem Kanal
 
 Der Leitfaden, geschrieben für den bisherigen Agentforce Builder, beschreibt drei Einstellungen. Die **End User Language** kommt aus dem Kanal, im Enhanced Chat aus einem Pre-Chat-Feld, das sich aus der Browsersprache füllen lässt. Die **Standardsprache** greift als Rückfall. **Zusätzliche Sprachen** vervollständigen die Liste der erlaubten Sprachen.
 
@@ -68,7 +68,7 @@ Unklar ist, wann der Zähler läuft. Der [Hilfeartikel zu abrechenbaren Nutzungs
 
 Für Servicemitarbeitende gibt es eine eigene Funktion. [Real-Time Translations](https://help.salesforce.com/s/articleView?language=en_US&id=service.messaging_translate_2.htm&type=5) übersetzt Enhanced Chat und Messaging zwischen Händler und Mitarbeitenden. Sie braucht die Agentforce-for-Service-SKU plus eine Permission Set License und nimmt eigene Terminologie für bis zu 10 Sprachen an. Wie die Nutzung abgerechnet wird, steht auf den Hilfeseiten, die ich gelesen habe, nicht.
 
-## Warum brauchen Prompts in anderen Sprachen mehr Tokens?
+## Prompts in anderen Sprachen brauchen mehr Tokens
 
 Ein Token ist die Einheit, die ein Sprachmodell liest und schreibt, oft ein Wortteil. Das [Help Center von OpenAI](https://help.openai.com/en/articles/4936856-understanding-and-counting-tokens) nennt als Faustregel ein Token pro etwa vier Zeichen und merkt an, dass andere Sprachen ein anderes Verhältnis zwischen Zeichen, Wörtern und Tokens haben können.
 
@@ -93,7 +93,7 @@ Meine Aufteilung für einen Maschinenbauer:
 
 Maschinelle Übersetzung benennt Teile um, und der Leitfaden verspricht nicht, dass sein Workaround mit Keep-Tags einen Begriff zuverlässig schützt. Teilebezeichnungen gehören in eine Terminologieliste und in die Testfälle.
 
-## Ein typisches Szenario: Händler in 20 Ländern
+## Rechenbeispiel: Händler in 20 Ländern
 
 Nehmen wir einen Maschinenbauer mit Händlern in 20 Ländern und 13 Sprachen an. Das Wissen wird auf Deutsch und Englisch gepflegt, die Handbücher umfassen 150 MB pro Sprache. Angenommen sind 4.000 Händlergespräche im Monat, davon 1.600 in den elf übrigen Sprachen. Alle Mengen sind Annahmen, die Multiplikatoren stammen aus der Rate Card.
 
@@ -108,9 +108,9 @@ Nehmen wir einen Maschinenbauer mit Händlern in 20 Ländern und 13 Sprachen an.
 
 Die zusätzlichen Prompt-Einheiten unterstellen, dass einer von zwei Prompts pro Gespräch die Grenze von 2.000 Tokens überschreitet. Ein Testgespräch rechnet mit drei Aktionen zu 16 Sandbox-Credits und zwei Prompts zu je 4. Die vollständige Methode steht in [Agentforce-Serviceagent für Händler: Kosten pro Monat](../serviceagent-haendleranfragen-kosten/).
 
-Die Sprache kostet im Szenario rund 112 € im Monat zusätzlich zu 1.200 € für Aktionen. Handbücher in allen 13 Sprachen zu indexieren kostet das Sechseinhalbfache des Index in zwei Sprachen, und jede Version braucht Pflege. Die Budgetfrage ist die Zahl der gepflegten Sprachen, nicht der Preis pro Zeichen.
+Die Sprache kostet im Rechenbeispiel rund 112 € im Monat zusätzlich zu 1.200 € für Aktionen. Handbücher in allen 13 Sprachen zu indexieren kostet das Sechseinhalbfache des Index in zwei Sprachen, und jede Version braucht Pflege. Die Budgetfrage ist die Zahl der gepflegten Sprachen, nicht der Preis pro Zeichen.
 
-## Wo sollten Sie anfangen?
+## Händlersprachen nach Volumen auflisten
 
 1. **Händlersprachen nach Volumen auflisten**, aus den Fällen und E-Mails der letzten drei Monate.
 2. **Jede Sprache prüfen** auf der Hilfeseite: ohne Label, Beta oder fehlend. Voice gesondert prüfen.
@@ -120,5 +120,3 @@ Die Sprache kostet im Szenario rund 112 € im Monat zusätzlich zu 1.200 € f�
 6. **Jede erlaubte Sprache testen** mit echten Händlerfragen.
 
 Bei einem Rollout über mehrere Länder wird die Sprache eine Spalte in der Tabelle aus [Manufacturing Cloud weltweit ausrollen](../manufacturing-cloud-weltweit-ausrollen/). Sprachauswahl und Retriever-Design gehören zu meiner Arbeit in der [Salesforce-Architektur](../../leistungen/salesforce-architektur/).
-
-Ein mehrsprachiger Händleragent kostet bei der Übersetzung wenig, das Geld steckt im Wissen und in den Tests, die Sie pro Sprache betreiben.

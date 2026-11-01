@@ -9,11 +9,11 @@ topic: data
 categories: [ai]
 tags: [Agentforce, Data 360, KI-Agenten, Data Governance, Architektur]
 takeaways:
-  - "Die Agent Context Engine ist eine gemeinsame Kontextschicht auf Data 360, die für jede Anfrage genau die Daten zusammenstellt, die ein KI-Agent braucht und sehen darf."
-  - "Sie funktioniert für Agentforce und für Agenten auf anderen Plattformen wie Google ADK, AWS Bedrock, LangGraph oder dem OpenAI SDK, angebunden über ein SDK oder MCP-Tools."
+  - "Die Engine stellt pro Anfrage ein kleines Datenpaket aus Kundenprofil, Erinnerungen, Echtzeitsignalen und einem Ausschnitt des Wissensgraphen zusammen."
+  - "Neben Agentforce können auch Agenten auf Google ADK, AWS Bedrock, LangGraph oder dem OpenAI SDK sie nutzen, angebunden über ein SDK oder MCP-Tools."
   - "Fachbegriffe wie aktiver Kunde werden einmal in einer semantischen Schicht definiert, sodass jeder Agent dieselbe Definition nutzt."
-  - "Bestehende Berechtigungen, Freigaberegeln und Datenklassifizierung gelten auch für den Kontext; Erinnerungen von Agenten werden mit Quelle gespeichert und können eine Bestätigung erfordern."
-  - "Die Agent Context Engine ist in der Preview; Unternehmen sollten zuerst an Identity Resolution, Datenklassifizierung und abgestimmten Fachbegriffen arbeiten, denn die Engine kann nur weitergeben, was in den Daten steht."
+  - "Bestehende Berechtigungen und die Datenklassifizierung gelten auch für den Kontext, und jede Erinnerung wird mit ihrer Quelle gespeichert."
+  - "Die Engine ist in der Preview. Identity Resolution, Datenklassifizierung und abgestimmte Fachbegriffe zahlen sich schon jetzt aus, mit oder ohne Engine."
 faq:
   - q: "Was ist die Salesforce Agent Context Engine?"
     a: "Eine gemeinsame Kontextschicht auf Basis von Data 360. Für jede Agentenanfrage stellt sie ein begrenztes Datenpaket zusammen, etwa das zusammengeführte Kundenprofil, relevante Erinnerungen, Echtzeitsignale und den passenden Ausschnitt des Wissensgraphen, unter Beachtung der Berechtigungen."
@@ -29,7 +29,7 @@ Die Salesforce Agent Context Engine gibt KI-Agenten den Kontext, den sie für ei
 
 ## Welches Problem löst die Agent Context Engine?
 
-Ein KI-Agent ist nur so gut wie die Informationen, mit denen er arbeitet. In einem typischen Unternehmen verteilen sich diese Informationen auf CRM-Objekte, Data Warehouses, ERP-Systeme, Wissensdatenbanken und frühere Gespräche. Ohne gemeinsame Schicht löst jedes Agentenprojekt dieselben Probleme von vorn:
+Was ein KI-Agent nicht bekommt, kann er nicht berücksichtigen. In einem typischen Unternehmen verteilen sich diese Informationen auf CRM-Objekte, Data Warehouses, ERP-Systeme, Wissensdatenbanken und frühere Gespräche. Ohne gemeinsame Schicht löst jedes Agentenprojekt dieselben Probleme von vorn:
 
 - **Welche Daten sind relevant** für diese Aufgabe und welche sind Rauschen?
 - **Welcher Kunde** ist gemeint, wenn dasselbe Unternehmen mehrfach in verschiedenen Systemen existiert?
@@ -39,7 +39,7 @@ Ein KI-Agent ist nur so gut wie die Informationen, mit denen er arbeitet. In ein
 
 Salesforce zeigt das in seiner [Ankündigung](https://www.salesforce.com/blog/?p=157012) an einem Vertriebsbeispiel: Eine Opportunity steht auf „Commit“, und ein Vertriebsagent entwirft eine Abschluss-E-Mail. Mit dem richtigen Kontext sieht der Agent zusätzlich sinkende Produktnutzung, einen offenen Rechnungsstreit und ein nicht unterschriebenes Compliance-Dokument, und er respektiert eine Preiszusage, die ein anderer Agent bereits mit dem Kunden vereinbart hatte. Statt der Abschluss-E-Mail empfiehlt er ein serviceorientiertes Gespräch mit dem Sponsor.
 
-## Wie funktioniert die Agent Context Engine?
+## Definitionen, Datenpaket, Graph und Erinnerungen
 
 Laut Salesforce verbindet die Engine mehrere Bausteine:
 
@@ -52,7 +52,7 @@ Die Engine baut auf Data 360 auf und übernimmt dessen Echtzeit-Pipeline, Zero-C
 
 ![So stellt die Agent Context Engine Kontext zusammen: Daten aus CRM-Objekten, ERP-Systemen, Data Warehouses wie Snowflake, Databricks und BigQuery per Zero Copy, Wissensdatenbanken und früheren Gesprächen fließen in die Agent Context Engine auf Data 360. Die Engine verbindet gemeinsame Definitionen, ein begrenztes Paket pro Anfrage, Navigation im Graphen (GraphRAG) und geregelte Erinnerungen und wendet die bestehenden Objekt-, Feld- und Datensatzberechtigungen, Freigaberegeln und die Datenklassifizierung an. Agenten auf Agentforce, Google ADK, AWS Bedrock, LangGraph und dem OpenAI SDK nutzen sie über ein SDK oder MCP-Tools. Agenten erben jede Schwäche des bestehenden Berechtigungsmodells.](../../../assets/blog/agent-context-engine-de.png)
 
-## Welche Agenten können sie nutzen?
+## Auch Agenten außerhalb von Agentforce können sie nutzen
 
 Das ist einer der interessanteren Punkte. Die Agent Context Engine ist nicht auf Agentforce beschränkt. Laut Salesforce können auch Agenten auf Google ADK, AWS Bedrock, LangGraph oder dem OpenAI SDK sie nutzen, über ein SDK oder MCP-Tools und begrenzt auf ihren erlaubten Bereich.
 
@@ -68,7 +68,7 @@ Das ist das richtige Prinzip. Es bedeutet aber auch, dass Agenten jede Schwäche
 Die Erinnerungsfunktion wirft für europäische Unternehmen eine weitere Frage auf: Wie werden gespeicherte Erinnerungen behandelt, wenn ein Kunde nach DSGVO Löschung oder Auskunft verlangt? Salesforce gibt an, dass jede Erinnerung auf ihre Quelle zurückführbar ist. Das ist ein guter Ausgangspunkt, aber der Prozess für Löschung und Aufbewahrung sollte stehen, bevor Erinnerungen eingeschaltet werden.
 ```
 
-## Was sollten Unternehmen jetzt vorbereiten?
+## Jetzt vorbereiten: Identity Resolution, Klassifizierung und Begriffe
 
 Die Agent Context Engine ist in der Preview, und Preise hat Salesforce in der Ankündigung nicht veröffentlicht. Das ist ein guter Grund, nichts zu überstürzen, und ein ebenso guter Grund, mit den Grundlagen zu beginnen, denn die zahlen sich mit oder ohne Engine aus:
 
@@ -80,7 +80,7 @@ Die Agent Context Engine ist in der Preview, und Preise hat Salesforce in der An
 
 Warum diese Grundlagen wichtiger sind als der Agent selbst, beschreibe ich in [Agentforce: Business Value und Datenqualität zuerst](../agentforce-business-value-datenqualitaet/).
 
-## Wie passt das in die Gesamtarchitektur?
+## Data 360 wird zum Kern der KI-Architektur
 
 Die Agent Context Engine zeigt, wohin Salesforce steuert: Data 360 als gemeinsame Grundlage für Daten, Kontext und Governance, mit Agenten verschiedener Plattformen darüber. Für einen Architekten auf Kundenseite stellen sich die üblichen Fragen: Wie viel hängt an einem Hersteller, welche Daten müssen wirklich nach Data 360, was kostet es im großen Maßstab, und wer verantwortet Definitionen und Berechtigungen?
 

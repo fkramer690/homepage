@@ -30,6 +30,115 @@ violations.
 - **Below 960px** the side column disappears and the text uses the full width
   (max. `--measure`); phones look as before.
 
+## Type scale and mono (binding)
+
+Chosen 2026-10-31 (Fabian: "Skala + Mono reduzieren"). Part of the polished design pass.
+
+- **Seven font sizes, nothing in between**, as tokens in `src/styles/global.css`:
+  `--fs-xs` 12px, `--fs-sm` 14px, `--fs-ui` 15px, `--fs-base` 17px (running
+  text), `--fs-md` 19px (h3, card titles, lead), `--fs-lg` 26px, `--fs-xl` 36px.
+  h1/h2 and hero headlines stay fluid (`clamp`). Never write a new `rem`/`px`
+  font size outside these tokens. This includes the content blocks (`.cb-*`,
+  `.cx-*`, `.cz-*`, since 2026-10-31): running text in a block (`hinweis`,
+  `praxis`, `vertiefung`) `--fs-base`; lists and text in wide cards, table
+  heads, lead lines `--fs-ui`; text in narrow tiles (steps, pillars, stages,
+  pipeline cards), table cells, captions and notes `--fs-sm`; titles of narrow
+  tiles `--fs-ui` (step titles in the arrow band `--fs-sm`); prominent card
+  titles `--fs-md`; key figures and stage numbers `--fs-lg` in Sora.
+- **Mono (IBM Plex Mono) only for eyebrows and uppercase labels, numbers,
+  dates and step counters**, always at `--fs-xs`. Links ("Mehr erfahren"),
+  meta lines, captions, tags, filter texts, back links and proof bar labels are
+  set in Sora. In blocks the same: notes under a block, pills, link
+  names, legends and badges are Sora; only labels, numbers and dates stay mono.
+- **Eyebrows only where they carry information** (AI-slop review 2026-10-31):
+  in a page head (area, category, masterclass name) and as a label for a
+  group without its own heading (e.g. "Schwerpunkte"). A section with an h2
+  gets no eyebrow that repeats the menu item or the heading.
+- **Decoration only with a job** (AI-slop review 2026-10-31): no icon that
+  only illustrates the word next to it (proof bar, start page service cards
+  carry none); no cyan accent bar on top of cards; the cyan line on the left
+  is reserved for quotes and the takeaways box; no gradients on boxes; the
+  Blueprint marks (dimension lines, crosshair) only in the start page hero.
+  At most one without/with comparison per page.
+- **Numbers (01, 02 …) only where the order matters** (steps, chapters,
+  phases), never as a counter on lists whose order means nothing (references,
+  questions).
+
+## Colours, radii and shadows (binding)
+
+Set up 2026-10-31 as part of the polished design pass (package A). Converted
+without a visible change: a pixel comparison of 22 pages (desktop 1440 and
+mobile 390) before and after shows 15 pages identical; the rest differs only
+by at most 12 of 255 colour levels on thin lines and quiet text, plus the
+corner of 12px legend squares (3px to 4px).
+
+- **Every colour is a token in `:root` of `src/styles/global.css`.** Brand:
+  `--cyan`, `--cyan-light`, `--cyan-dark`, `--anthracite`, `--text`,
+  `--text-2`, `--bg`, `--line`, `--white`. Surfaces: `--tint` (light cyan for
+  marked cells and chips), `--tint-2` (stronger light cyan, e.g. "Was Sie
+  bekommen"), `--tint-line`, `--paper` + `--paper-grid` (drawing paper of the
+  content blocks). Greys `--grey-200` to `--grey-700`. Dark: `--anthracite-deep`
+  (footer), `--anthracite-2` (contact form), `--anthracite-3`, `--dark-line`,
+  `--on-dark`, `--on-dark-2`, `--on-cyan`, `--on-cyan-2`. Status: `--amber`,
+  `--error-on-dark`. Never write a hex value in a component; if a new colour is
+  really needed, add a token. Transparent layers (`rgba(...)`) on photos and dark
+  areas stay allowed.
+- **Radii:** `--radius` 10px (cards, frames, blocks), `--radius-md` 8px (boxes
+  inside a block), `--radius-sm` 6px (small boxes, photos, buttons),
+  `--radius-xs` 4px (tags, code, tiny marks), `--radius-pill`; circles use
+  `50%`, square edges `0`.
+- **Shadows:** accent lines `--accent-top` (cyan), `--accent-top-dark`,
+  `--accent-left`; one lift on hover `--shadow-lift`; `--shadow-up` for the
+  bottom contact bar; `--shadow-knob` for the play button; `--focus-glow` for
+  focus and the "now" dot. Outline rings stay as `0 0 0 Npx var(--token)`.
+- `scripts/check-tokens.mjs` runs in `npm run build` and fails on a hex colour
+  outside `:root`, a radius that is not a token, or a shadow that is not a token
+  or an outline ring. Never weaken it.
+
+## Page heads, key figures, links and cards (binding)
+
+Chosen 2026-10-31 as part of the polished design pass.
+
+- **Two page heads.** Pages that present an offer (start, service pages and
+  the service overview, masterclass overview and hubs, questions, speaking,
+  partner and recruiter pages, freelancer page, 404) open with the dark head
+  `service-hero dark grid-bg` (or the start/recruiter hero): back link, mono
+  eyebrow naming the area, h1, lead, optional photo on the right
+  (`service-head has-photo`). Reading and list pages (blog overview, articles,
+  masterclass chapters, certifications, legal) keep the light head.
+- **Key figures** always sit as the grey band `.proof` directly below the dark
+  head (`proof-list`, `cols-4` for four figures), never inside the running text.
+- **One link style for "next" links** (`.text-link`, `.card-more`, `.fa-link`):
+  Sora, bold, `--fs-ui`, cyan-dark, text arrow "→". Links in running text stay
+  underlined.
+- **Cards** carry an icon, title, text and link; no running numbers. In linked
+  cards the link sits at the bottom so links in one row line up.
+
+## Hover, focus and motion (binding)
+
+Chosen 2026-10-31 as part of the polished design pass (details package).
+
+- **One hover for linked cards** (`.card-link`, `.post-tile a`, `.post-card`,
+  `.q-topic`, `.post-service`, `.video-card`; grouped rule in global.css): cyan
+  border, `--shadow-lift`, title in cyan-dark. Nothing moves or jumps. A new
+  kind of linked card joins that rule instead of getting its own hover.
+- **Rows in a white box** (masterclass lists on start and overview) get the grey
+  `--bg` background on hover; rows without a box only colour the title.
+- **Keyboard focus is always visible**: the global `:focus-visible` ring (2px
+  cyan, 3px offset). On a card the ring goes around the whole card
+  (`.card-link:has(a:focus-visible)`), so it follows the rounded corners; never
+  set `outline: none` without a replacement.
+- **Timing**: `--t-fast` (0.15s) for every hover, focus and small state change,
+  `--t-reveal` (0.6s) for graphics drawing themselves in. Reduced motion sets
+  `--t-fast` to 0.
+- **Content is readable at once.** Only the hero and graphics (content blocks,
+  hub drawings, the approach line) animate; text, cards and card drawings are
+  never hidden or faded until they scroll into view, and no `content-visibility`
+  on card images (they stayed empty when scrolling fast).
+- **Contact form** on dark: fields `rgba(255,255,255,0.06)` with a 0.32 white
+  border, cyan border plus `--focus-glow-dark` on focus, red border (`:user-invalid`)
+  only after the visitor has touched a field.
+
 ## Compact cross list in a white box ("Damit es für beide fair bleibt")
 
 Approved 2026-10-29 ("perfekt"), live on `/partner/recruiter/` and
@@ -139,6 +248,15 @@ author box, contact, schema and the speaking page.
 - Masterclass hubs with a photo in `coursePhotos` show it in the hero instead of the layer drawing.
 - Freelance architect page: framed photo next to "Aus meiner Praxis".
 
+Frame and formats (binding, chosen 2026-10-31, polished design pass): every photo
+has `--radius` corners. In dark heads a photo sits in the passe-partout of the
+start page hero (1px white 14% border, 10px padding, 6px inner corners; classes
+`hero-photo`, `rc-portrait`, `.service-hero .service-photo`); on light
+backgrounds photos have no frame. Four formats only: 4:5 portrait (hero), 1:1
+(side column, About), 3:2 landscape (masterclass overview and hubs), and the
+wide bands of the project panels and quote band; 16:9 only as the narrow-screen
+form of the side-column photo.
+
 ## Filter side column (blog overview)
 
 Chosen 2026-10-29 for `/blog/` and `/en/blog/` (variant B of three; Fabian wanted
@@ -149,7 +267,16 @@ a second filter by author next to the topic). Built in `src/components/BlogIndex
   (icon from `src/icons/` per category in `src/lib/categories.ts`, count);
   dashed dividers, the chosen entry gets a cyan left border and grey background.
   Below: number of articles shown and "Filter zurücksetzen".
-- Right the article cards in two columns, newest visible one as wide card.
+- Right the article cards, newest visible one as wide card. A card is never
+  narrower than 412px (`minmax(min(100%, 412px), 1fr)`): two columns on desktop,
+  one on tablet and phone, so the card drawing labels (viewBox 320) stay at 9px
+  or more where the screen allows. Each card names one category, the first in
+  `categories`; the filter still uses all of them.
+- The first 25 matching articles show (24 plus the wide card, so the last row is
+  full), then "25 von 197 Artikeln" and "Weitere Artikel laden" (+24, focus on the
+  first new card). Filter and search always
+  look through all articles and start again at 24. Without JavaScript every
+  article stays visible. The intro above is one sentence.
 - The filters combine; each list counts within the other one's choice and greys
   out empty entries. An article counts for its author and its `coAuthor`. The
   choice sits in the hash (`#juliane+change-management`), old topic links
@@ -172,6 +299,22 @@ field, bar above the articles, full-text result list). Built in
   query sits in `?q=`, the filters stay in the hash.
 - Below 960px the bar sits above the folded "Filter" box.
 - Fits: overviews with enough items that people look for a term, not a category.
+
+## Article head (blog articles and masterclass chapters)
+
+Chosen 2026-10-31 (polished design, package D). Built in
+`src/components/PostMeta.astro`, used by `BlogPost.astro` and
+`MasterclassChapter.astro`.
+
+- Above the title a kicker row: the series part ("Teil 4 von 8") or the chapter
+  ("Kapitel 07 von 10") as a light cyan pill, followed by the series link or the
+  masterclass name in plain text.
+- Below the title one meta line: round photo(s) (28px, overlapping for two
+  authors), name(s), the newest date only ("Aktualisiert …" when updated on a
+  later day) in short form, reading time. On phones "Lesezeit" is dropped so the
+  line fits; with two authors the date moves to a second line.
+- Wide tables in the text scroll sideways with a shadow edge on the side that has
+  more columns (`.prose table`, CSS scroll shadows, no extra markup).
 
 ## Two authors
 
@@ -226,8 +369,9 @@ Text an Text"). Built in `src/components/ServicePage.astro` (`.phase-flow`).
 - No cards: each phase gets a cyan ring with a line icon from `src/icons/`
   (frontmatter `phases[].icon`), the number in cyan mono, the title and its text
   in grey below.
-- A dashed grey line connects the rings from left to right; below 860px the
-  timeline turns vertical with the ring on the left.
+- Since 2026-10-31 the timeline stands vertically in the reading column, right
+  before the FAQ: ring on the left, a dashed grey line connects the rings from
+  top to bottom.
 - The whole text stays visible; the rings and the line break up the text.
 - Fits: three to five ordered steps with one or two sentences each.
 
@@ -261,11 +405,14 @@ Chosen 2026-10-29 after two rounds (four narrow tiles and a 2 × 2 grid were "no
 good enough"); Fabian: "merk dir die Grafik, die ist richtig gut geworden".
 Content block ```saeulen (see `docs/content-blocks.md`), CSS `.cb-pillars`.
 
-- Four pillars in one row, each with a cyan top line, a line icon from
-  `src/icons/` and the number in grey mono, then a one-word title, a cyan mono
-  line with the core ("Bei jedem Pull Request") and one full sentence.
-- Title, cyan line and text start at the same height in every pillar (subgrid),
-  all pillars end together.
+- Four slim pillars in one row, each with a cyan top line, a line icon from
+  `src/icons/`, a one-word title and a cyan mono line with the core ("Bei jedem
+  Pull Request"), centred; no numbers.
+- Title and cyan line start at the same height in every pillar (subgrid), all
+  pillars end together.
+- The full sentence per pillar stands below the base, two columns with the
+  pillar name in bold (2026-10-31: in a quarter of the 740px text column the
+  sentences broke after every word).
 - A dark roof bar names the whole ("Eine gute Salesforce-Pipeline"), a grey base
   bar what it stands on ("Auf der Git-Plattform des Kunden").
 - On phones the pillars stand below each other with the icon on the left.

@@ -10,11 +10,10 @@ categories: [architecture]
 contactBrief: partner-governance
 tags: [center of excellence, CoE, partner governance, governance, object ownership matrix]
 takeaways:
-  - "A Salesforce Center of Excellence (CoE) is the body on the client side that sets standards and aligns upcoming changes across all teams and partners."
   - "Two meetings are enough to start: a technical call every two weeks for changes and edge cases, and a monthly meeting for roadmap and priorities."
-  - "The CoE belongs to the client. Partners take part, but the chair and the decisions stay with the client, otherwise one partner sets the rules for its competitors."
-  - "A CoE call works when streams present changes to shared objects before they build them. In my largest programme this made edge cases almost disappear."
-  - "A CoE without enforcement is a talking shop. Its decisions have to show up in pull request reviews and in the pipeline."
+  - "The chair and the decisions stay with the client, otherwise one partner sets the rules for its competitors."
+  - "Streams present changes to shared objects before they build them; in my largest programme this made edge cases almost disappear."
+  - "The CoE's decisions have to show up in pull request reviews and in the pipeline, otherwise it is a talking shop."
 faq:
   - q: "What is a Salesforce Center of Excellence?"
     a: "A team from across the company that owns standards, roadmap and enablement for the Salesforce platform. Salesforce describes it as the steering committee and knowledge hub for all Salesforce initiatives."
@@ -59,7 +58,7 @@ Trailhead recommends a [weekly schedule for operational and technical topics and
 
 The roadmap meeting is also the place for budget questions that cut across units. One example is the Agentforce allowance I describe in [Digital Wallet: Agentforce cost control for plants](../digital-wallet-agentforce-cost-control/): someone in the CoE has to watch the pool and run the chargeback to plants and subsidiaries.
 
-## How does a technical CoE call run?
+## The technical call always follows the same agenda
 
 The technical call is the part that makes the difference. To keep it from turning into a status meeting, streams submit their topics in advance and the agenda goes out to all attendees before the meeting. That way the owning stream can prepare instead of deciding on the spot. The agenda always follows the same order:
 
@@ -73,7 +72,7 @@ Next to the agenda I keep a backlog of CoE topics that are not urgent, such as n
 
 It also matters who decides. The question belongs to the stream that owns the object. If two streams cannot agree, the client-side architect decides. A CoE that settles every question by vote becomes slow and political.
 
-## What did a CoE bring in my programme with eight streams?
+## In my programme with eight streams the edge cases almost disappeared
 
 The largest programme I steered had more than 30 developers in eight streams, delivered by five implementation partners and internal teams. At the start nobody had defined which team owned which objects and metadata. Changes overwrote each other.
 
@@ -104,7 +103,7 @@ contra: What you accept in return
 
 If a group runs several orgs, for example one per subsidiary, the hybrid model fits better. The CoE then sets the shared rules and each org enforces them with its own team.
 
-## Where should you start?
+## Name a sponsor and a CoE lead
 
 A CoE does not have to be a new department. This is the order I recommend:
 
@@ -122,5 +121,3 @@ Hand over | internal owner
 ```
 
 How to anchor new rules in daily work is described under [Salesforce change management consulting](../../services/change-management-salesforce/), and how the call keeps standards in place with partners in [Reinforcement: making standards stick with partners](../partner-standards-reinforcement/). The overall frame for several partners is under [partner governance](../../services/partner-governance/).
-
-A Center of Excellence works when it starts small, belongs to the client and its decisions show up in reviews.

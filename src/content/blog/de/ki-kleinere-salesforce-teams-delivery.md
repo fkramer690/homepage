@@ -9,11 +9,11 @@ topic: governance
 categories: [architecture, ai]
 tags: [KI-native Delivery, Programmsteuerung, Teamaufstellung, KI-Coding, Partnersteuerung, Maschinenbau]
 takeaways:
-  - "KI-native Delivery heißt: Coding-Agenten entwerfen, bauen und testen, Menschen geben die Absicht vor, prüfen das Ergebnis und verantworten es; Teams schrumpfen auf Pods aus Architekt, Builder-Reviewer und Fachexperte."
-  - "In der McKinsey-Umfrage von 2026 meldeten 79 Prozent der Befragten aus Organisationen mit dem größten Tempogewinn kleinere Teams, der Median sank von etwa zehn auf sieben Personen."
+  - "Coding-Agenten entwerfen, bauen und testen, Menschen geben die Absicht vor, prüfen das Ergebnis und verantworten es."
+  - "In der McKinsey-Umfrage meldeten 79 Prozent der Organisationen mit dem größten Tempogewinn kleinere Teams, im Median sieben statt etwa zehn Personen."
   - "Der Engpass wandert zum Hersteller: Jeder Pod braucht einen Fachexperten aus Service, Vertrieb oder After-Sales, der täglich laufende Software abnimmt."
-  - "Ein kurzer Intent mit prüfbaren Akzeptanzkriterien ersetzt für die meisten Stories das lange Lastenheft; SAP-Schnittstellen sowie Garantie- und Preisregeln brauchen weiter genaue Spezifikationen."
-  - "Jedes Artefakt hat einen benannten Verantwortlichen, Agenten arbeiten nur in Sandboxes und Scratch Orgs, und für Menschen- und Agentencode gelten dieselben Pipeline-Prüfungen."
+  - "Ein kurzer Intent mit prüfbaren Akzeptanzkriterien ersetzt meist das Lastenheft, SAP-Schnittstellen sowie Garantie- und Preisregeln brauchen Spezifikationen."
+  - "Jedes Artefakt hat einen benannten Verantwortlichen, und für Menschen- und Agentencode gelten dieselben Pipeline-Prüfungen."
 faq:
   - q: "Was ist KI-native Delivery in Salesforce-Projekten?"
     a: "Ein Liefermodell, das von Anfang an um Coding-Agenten herum gebaut ist: Agenten entwerfen Stories, Code, Tests und Runbooks, Menschen definieren den Intent, prüfen das Ergebnis und verantworten jedes Artefakt. Kleine Pods ersetzen die klassische Pyramide aus vielen Junior-Entwicklern."
@@ -30,7 +30,7 @@ KI-native Delivery verkleinert ein Salesforce-Team auf kleine Pods: ein Architek
 
 ## Was ist KI-native Delivery?
 
-KI-native Delivery bedeutet, den gesamten Lieferprozess um KI-Agenten herum zu gestalten, statt dem alten Prozess einen Coding-Assistenten hinzuzufügen. Die klarste Beschreibung für Salesforce stammt aus der Praxis, nicht aus einer Studie: der [Beitrag von Amit Chaudhary auf ApexHours](https://www.apexhours.com/ai-native-delivery-for-salesforce/) vom 19. Oktober 2026. In seinem Framework entwerfen, bauen, testen und dokumentieren Agenten, während Menschen „set intent and guardrails, review output, own the outcome“: Absicht und Leitplanken vorgeben, Ergebnisse prüfen, das Resultat verantworten. Die Alternative nennt er „the old process with faster typing“, also den alten Prozess mit schnellerem Tippen.
+KI-native Delivery bedeutet, den gesamten Lieferprozess um KI-Agenten herum zu gestalten und nicht dem alten Prozess einen Coding-Assistenten hinzuzufügen. Die klarste Beschreibung für Salesforce stammt aus der Praxis, nicht aus einer Studie: der [Beitrag von Amit Chaudhary auf ApexHours](https://www.apexhours.com/ai-native-delivery-for-salesforce/) vom 19. Oktober 2026. In seinem Framework entwerfen, bauen, testen und dokumentieren Agenten, während Menschen „set intent and guardrails, review output, own the outcome“: Absicht und Leitplanken vorgeben, Ergebnisse prüfen, das Resultat verantworten. Die Alternative nennt er „the old process with faster typing“, also den alten Prozess mit schnellerem Tippen.
 
 Für die Programmorganisation zählen fünf Bausteine:
 
@@ -57,7 +57,7 @@ Dieses Technologieunternehmen ging von Produktteams mit 8 bis 10 Personen auf ag
 
 Zwei Einschränkungen aus derselben Quelle. Die Zahlen sind Selbstauskünfte von Führungskräften, und 30 Prozent der Befragten sagen, die Produktivität ihrer Teams sei gesunken. McKinsey schreibt außerdem, dass sich das Tempo schneller verbessert als die Qualität. Der DORA-Bericht 2025 fand weiter einen [negativen Zusammenhang zwischen KI-Einsatz und Lieferstabilität](https://cloud.google.com/blog/products/ai-machine-learning/announcing-the-2025-dora-report), und DORA zählt [kleine Batches und Nutzerzentrierung](https://dora.dev/capabilities/) zu den sieben Fähigkeiten, die den Nutzen von KI verstärken. Kleine Pods mit täglichem Feedback sind eine direkte Antwort auf beide Punkte. Wie Sie prüfen, ob Ihr eigenes Programm schneller wird, beschreibe ich in [KI-Nutzen im Salesforce-Projekt messen](../ki-nutzen-salesforce-projekt-messen/).
 
-## Was ändert sich in der Programmorganisation eines Herstellers?
+## In der Programmorganisation wird der Fachbereich zum Engpass
 
 ### Der Fachbereich wird zum Engpass
 
@@ -75,11 +75,11 @@ Die tägliche Demo ersetzt das Standup und einen guten Teil des Statusberichts. 
 
 Mit weniger Personen trägt jede einzelne mehr Wissen, und ein Agent verantwortet nichts. Der benannte Verantwortliche pro Artefakt passt zur [Object Ownership Matrix](../object-ownership-matrix-salesforce/), die ich nutze, wenn sich mehrere Partner eine Org teilen: Ein Team verantwortet jedes Objekt, eine Person jeden Flow, jede Klasse und jeden Agenten. Dazu kommen die Prüfungen in der Pipeline, siehe [Quality Gates für KI-Code in der Salesforce-Pipeline](../quality-gates-ki-code-salesforce-pipeline/).
 
-## Ein typisches Szenario: aus einem großen Partnerteam werden drei Pods
+## Rechenbeispiel: aus einem großen Partnerteam werden drei Pods
 
 Nehmen wir einen Maschinenbauer mit Sales Cloud, Service Cloud, Field Service und einer SAP-Anbindung. Sein Partner arbeitet mit einem klassischen Team aus zwölf Personen: ein Architekt, eine Projektleitung, zwei Business Analysts, sechs Entwickler (davon vier Junior) und zwei Tester. Alle Zahlen sind Annahmen, die das Vorgehen zeigen sollen. Geplant sind drei Streams: Garantieanträge von Händlern, Ersatzteilbestellung im Händlerportal und Arbeitsaufträge im Außendienst mit Ersatzteilreservierung.
 
-Der Partner schlägt drei Pods vor. Jeder Pod bekommt einen Architekten und einen Builder-Reviewer vom Partner; eine Person für Plattform und DevOps arbeitet für alle drei. Das sind sieben Personen beim Partner statt zwölf. Die Fachexperten stellt der Hersteller: eine Garantiesachbearbeiterin, eine Koordinatorin aus dem Händlervertrieb und einen Disponenten aus dem Außendienst, jeweils zur Hälfte, also 1,5 Vollzeitstellen, die der Fachbereich bisher nicht gegeben hat.
+Der Partner schlägt drei Pods vor. Jeder Pod bekommt einen Architekten und einen Builder-Reviewer vom Partner; eine Person für Plattform und DevOps arbeitet für alle drei. Das sind sieben Personen beim Partner, vorher waren es zwölf. Die Fachexperten stellt der Hersteller: eine Garantiesachbearbeiterin, eine Koordinatorin aus dem Händlervertrieb und einen Disponenten aus dem Außendienst, jeweils zur Hälfte, also 1,5 Vollzeitstellen, die der Fachbereich bisher nicht gegeben hat.
 
 Drei Entscheidungen tragen oder kippen dieses Setup:
 
@@ -96,7 +96,7 @@ Ob sieben Personen liefern, was vorher zwölf geliefert haben, bleibt offen, bis
 - **Teams ohne funktionierende Pipeline.** Pods liefern mehr Änderungen pro Tag. Ohne Versionskontrolle, automatisierte Tests und Validierungsdeployments entstehen im höheren Tempo vor allem schneller Fehler.
 - **Dünne Seniorität beim Partner.** Ein Pod hat keine Juniors, die nebenbei lernen. Geht der Builder-Reviewer, geht ein großer Teil des Wissens mit. Mindestverweildauern zählen hier noch mehr als in dem Setup, das ich in [warum Nearshore-Teams höchstens acht Entwickler haben sollten](../nearshore-teams-salesforce-acht-entwickler/) beschreibe. Was sich für Nearshore-Teams mit KI-Agenten ändert, steht in [Nearshore-Teams für Salesforce mit KI-Agenten](../nearshore-salesforce-teams-ki-agenten/).
 
-## Wo sollten Sie anfangen?
+## Einen Stream mit klarem Prozess wählen
 
 ```schritte
 Einen Stream wählen
@@ -111,6 +111,4 @@ Messen und entscheiden | 3 Monate
   Durchlaufzeit und Nacharbeit messen und erst dann über die anderen Streams entscheiden.
 ```
 
-Streams, Teamaufstellungen und die Fachbereichszeit dahinter zu planen, ist der Kern meiner [Programmsteuerung für Salesforce-Programme](../../leistungen/projektsteuerung-nearshore/).
-
-Kleinere Salesforce-Teams funktionieren, wenn der Hersteller seine eigenen Prozessexperten täglich in die Pods gibt.
+Die zehn Intents aus dem dritten Schritt sind zugleich der Maßstab für die Messung nach drei Monaten. Streams, Teamaufstellungen und die Fachbereichszeit dahinter zu planen, ist der Kern meiner [Programmsteuerung für Salesforce-Programme](../../leistungen/projektsteuerung-nearshore/).

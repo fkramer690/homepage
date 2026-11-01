@@ -10,11 +10,11 @@ topic: governance
 categories: [architecture]
 tags: [Well-Architected, Architektur, Governance, Agentforce, Kosten]
 takeaways:
-  - "Salesforce hat Well-Architected nach der Dreamforce 2024 nicht mehr gepflegt, im August 2025 die Rückkehr angekündigt und am 14. September 2026 ein neues Framework veröffentlicht."
+  - "Nach der Dreamforce 2024 pflegte Salesforce Well-Architected nicht mehr, im August 2025 kam die Ankündigung, am 14. September 2026 das neue Framework."
   - "Aus drei Säulen (Trusted, Easy, Adaptable) wurden fünf: Trust, Reliability, Operational Excellence, Resource and Cost Optimization und Fairness."
   - "Neu ist eine Agentic-Enterprise-Linse: Für jede Säule gibt es eine Agenten-Variante, und Agenten müssen dieselben Anforderungen erfüllen wie jede andere Lösung."
   - "Kosten sind jetzt eine eigene Säule, mit Lizenzen, Sandboxes und Make-or-Buy; für Kunden ist das die nützlichste Änderung."
-  - "Das Framework ist eine gute gemeinsame Sprache für Design Reviews mit mehreren Partnern, die Abwägungen zwischen den Säulen muss aber der Kunde selbst treffen."
+  - "Das Framework ist eine gute gemeinsame Sprache für Design Reviews mit mehreren Partnern, die Abwägungen zwischen den Säulen trifft aber der Kunde."
 faq:
   - q: "Was ist das Salesforce Well-Architected Framework?"
     a: "Ein Leitfaden von Salesforce, nach dem Architekten Lösungen auf der Plattform entwerfen und prüfen. Es liefert Fragen, Muster und ein gemeinsames Vokabular und liegt kostenlos im Salesforce Architecture Center auf architect.salesforce.com."
@@ -90,7 +90,7 @@ Die zweite große Änderung ist die Agentic-Enterprise-Linse. Sie ist keine sech
 
 Der wichtigste Satz dazu steht im Ankündigungsblog: „Agents don't get their own rulebook." Ein Agent muss also dieselben Anforderungen an Sicherheit, Stabilität und Kosten erfüllen wie jede andere Lösung in Ihrer Org. Das passt zu meiner Haltung aus Agentforce-Projekten: Business Value und Datenqualität kommen vor dem Agenten. Mehr dazu in [Agentforce: Business Value und Datenqualität zuerst](../agentforce-business-value-datenqualitaet/).
 
-## Was ist für CIOs und CRM-Verantwortliche wirklich neu?
+## Für CIOs zählen Kosten, Betrieb und benannte Zielkonflikte
 
 Aus Sicht eines Architekten auf Kundenseite sind drei Änderungen relevant.
 
@@ -109,7 +109,7 @@ Bei aller Zustimmung: Es bleibt ein Herstellerdokument.
 - **Der Architect Agent ist noch nicht greifbar.** Salesforce hat ihn auf der Dreamforce gezeigt, Verfügbarkeit und Preis aber nicht genannt. Ich würde ihn testen, bevor ich ihm Architekturfragen anvertraue.
 - **Es ersetzt keine Entscheidung.** Das Framework liefert Fragen und Muster. Ob Sie 99,5 Prozent Verfügbarkeit brauchen oder 99, ob Sie Make oder Buy wählen, entscheidet Ihr Geschäftsmodell und nicht das Dokument.
 
-## Wie nutze ich das Framework in einem Programm mit mehreren Partnern?
+## So nutze ich das Framework in einem Programm mit mehreren Partnern
 
 Ich habe schon das alte Framework mit Trusted, Easy und Adaptable in Kundenprojekten genutzt und in User-Group-Vorträgen vorgestellt.
 
@@ -128,6 +128,6 @@ Konkret heißt das:
 
 Wie ich Standards und Reviews in solchen Programmen aufsetze, gehört zu meiner [Arbeit an Partnersteuerung und Architektur](../../leistungen/partnersteuerung/).
 
-## Wo sollten Sie anfangen?
+## Die eigenen Entwicklungsstandards gegen die fünf Säulen prüfen
 
-Lesen Sie die [Übersicht im Architecture Center](https://architect.salesforce.com/docs/architect/well-architected/guide/overview.html) und das Legacy Mapping, wenn Ihre Teams noch mit Trusted, Easy und Adaptable arbeiten. Prüfen Sie dann Ihre bestehenden Entwicklungsstandards gegen die fünf Säulen. Meist fehlen Kosten und Betrieb. Das neue Well-Architected Framework ist ein brauchbarer gemeinsamer Maßstab, solange Sie die Entscheidungen selbst treffen.
+Lesen Sie die [Übersicht im Architecture Center](https://architect.salesforce.com/docs/architect/well-architected/guide/overview.html) und das Legacy Mapping, wenn Ihre Teams noch mit Trusted, Easy und Adaptable arbeiten. Prüfen Sie dann Ihre bestehenden Entwicklungsstandards gegen die fünf Säulen. Meist fehlen Kosten und Betrieb.

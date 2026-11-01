@@ -9,11 +9,10 @@ topic: field-service
 categories: [field-service, ai]
 tags: [Field Service, Headless 360, KI-Assistent, Einrichtung, Stammdaten, DevOps]
 takeaways:
-  - "Bei der Headless-Einrichtung von Field Service liest ein KI-Assistent wie Gemini, Claude oder Slackbot Ihre Website, stellt Fragen, schlägt einen Umsetzungsplan vor und konfiguriert die Org nach Freigabe."
-  - "Er legt Gebiete, Betriebszeiten, Arbeitstypen, Skill-Anforderungen und Scheduling Policies an, dazu Branding, Pre-Work Briefs und Formulare für die mobile App."
-  - "Der Assistent kennt Ihre öffentliche Website. Welcher Techniker welchen Skill hat, wann ein Kunde Besuche zulässt und welches Lager welche Region bedient, kommt aus HR, ERP und Disposition."
-  - "Das meiste, was er baut, sind Konfigurationsdaten und keine Metadaten. Lassen Sie ihn in einer Sandbox arbeiten und bringen Sie das Ergebnis über Git und Pipeline in Produktion."
-  - "Vor der Freigabe sollten Serviceleitung und Dispositionsleitung Gebiete, Arbeitstypen und Policies Abschnitt für Abschnitt prüfen."
+  - "Der Assistent legt Gebiete, Betriebszeiten, Arbeitstypen, Skill-Anforderungen und Scheduling Policies an, dazu Branding und Formulare für die App."
+  - "Welche Skills die Techniker haben, wann Kunden Besuche zulassen und welches Lager welche Region bedient, weiß er nicht. Das kommt aus HR, ERP und Disposition."
+  - "Das meiste, was er baut, sind Konfigurationsdaten. Er arbeitet in einer Sandbox, und das Ergebnis geht über Git und Pipeline in Produktion."
+  - "Service- und Dispositionsleitung prüfen Gebiete, Arbeitstypen und Policies Abschnitt für Abschnitt, bevor jemand den Plan freigibt."
 faq:
   - q: "Was ist eine Headless-Einrichtung von Salesforce Field Service?"
     a: "Die Konfiguration von Field Service im Gespräch mit einem KI-Assistenten statt über die Setup-Menüs. Laut Trailhead nutzt der Assistent Headless Skills in drei Stufen, Orchestrierung, Konfiguration und Feature, und baut die Org erst, nachdem Sie seinen Umsetzungsplan freigegeben haben."
@@ -40,7 +39,7 @@ Die [Trailhead-Einheit zur Headless-Einrichtung von Field Service](https://trail
 
 In Slack erscheinen die vorgeschlagenen Gebiete, Arbeitstypen und Policies als Listenansichten neben den Antworten des Assistenten. Laut Trailhead ist nichts endgültig, bevor Sie freigeben, und gebaut wird genau die freigegebene Konfiguration. Die Techniker finden danach Branding, vorab geladene Beispieltermine, Pre-Work Briefs, Arbeitspläne und Erfassungsformulare in der App. Wie Salesforce seine Plattform allgemein in Claude und Slack bringt, steht in [AIforce: Salesforce in Claude und Slack](../aiforce-salesforce-in-claude-und-slack/).
 
-## Was weiß der Assistent, und was weiß er nicht?
+## Der Assistent kennt Ihre Website, nicht Ihre Disposition
 
 Er beginnt mit der Adresse Ihrer Website. Die Website eines Maschinenbauers zeigt Produktlinien, Standorte und vielleicht ein Serviceversprechen. Das Wissen, mit dem die Terminplanung funktioniert, steht dort nicht. In [Welche Stammdaten Field Service braucht](../salesforce-field-service-stammdaten/) nenne ich sechs Datenarten und ihre führenden Systeme:
 
@@ -72,7 +71,7 @@ Ich würde den Plan in einem Workshop mit Serviceleitung und Dispositionsleitung
 
 Zwei Punkte verdienen besondere Aufmerksamkeit. Erstens die Erfassungsformulare. Bevor Formulare in großem Stil entstehen, legen Sie fest, welche Werte Felder am Asset oder Arbeitsauftrag werden, wie ich in [Field Service mobil: Führung und Sprache](../salesforce-field-service-mobile-aussendienst/) begründe. Voice to Form verarbeitet, was Techniker sagen, das betrifft in Deutschland den Betriebsrat. Zweitens die Beispieldaten. Die Einrichtung lädt Beispieltermine für Techniker, die gehören in eine Sandbox und nirgendwo sonst hin.
 
-## Warum geht eine KI-gebaute Konfiguration trotzdem über Git?
+## Auch eine KI-gebaute Konfiguration geht über Git
 
 Weil der Assistent vor allem Datensätze anlegt. Gebiete, Betriebszeiten, Arbeitstypen, Skill-Anforderungen und Scheduling Policies mit ihren Work Rules sind in Salesforce Daten. Ein Metadaten-Deployment nimmt sie nicht mit, wie das DevOps-Masterclass-Kapitel [Daten und Konfiguration](../../masterclass/devops-release-management/daten-und-konfiguration/) zeigt. Die Erfassungsformulare dagegen sind Flows und damit Metadaten.
 
@@ -91,9 +90,9 @@ Prüfen und ausrollen
 
 Eine Freigabe im Chat ersetzt kein Review. Wer den Assistenten beauftragt, gibt auch dessen Plan frei, genau wie beim Setup-Agenten. Warum das zählt, habe ich in [Setup with Agentforce: Admin-KI in Produktion zulassen?](../setup-with-agentforce-admin-aenderungen/) beschrieben. Der Assistent baut eine Konfiguration schnell und eignet sich schlecht, sie auszurollen.
 
-## Ein typisches Szenario, als Annahme: aus 14 Gebieten werden 6
+## Rechenbeispiel: aus 14 Gebieten werden 6
 
-Ein typisches Szenario, als Annahme: ein Maschinenbauer mit 45 Technikern in Deutschland, Österreich und der Schweiz. Die Website nennt 14 Vertriebs- und Servicestandorte. Alle Zahlen sind Annahmen.
+Angenommen ist ein Maschinenbauer mit 45 Technikern in Deutschland, Österreich und der Schweiz. Die Website nennt 14 Vertriebs- und Servicestandorte. Alle Zahlen sind Annahmen.
 
 **Der Vorschlag.** In einer zweistündigen Sitzung schlägt der Assistent 14 Gebiete vor, eins pro Standort, 22 Arbeitstypen aus den Produktseiten und eine Scheduling Policy auf Basis von Customer First.
 
@@ -103,14 +102,12 @@ Ein typisches Szenario, als Annahme: ein Maschinenbauer mit 45 Technikern in Deu
 
 **Der Aufwand.** Zwei Stunden Chat, drei Workshoptage für die Prüfung, zwei Tage, um Flows und Datensätze in Repository und Pipeline zu bringen. Der Assistent hat das Tippen in Setup-Masken gespart. Die Entscheidungen haben so lange gedauert wie vorher.
 
-## Wo fangen Sie an?
+## Erster Schritt: vorbereiten, was die Website nicht hergibt
+
+Die Website liefert dem Assistenten Standorte und Produkte, aber keine Skills, Lager und Reaktionszeiten. Wo die Headless-Einrichtung neben Agenten und Einführungswellen steht, behandelt das [Kapitel KI-Agenten, Einführung und Betrieb der Field-Service-Masterclass](../../masterclass/field-service/field-service-ki-agenten-einfuehrung/).
 
 1. **Bereiten Sie vor, was die Website nicht hergibt**: Lagerliste mit Technikern, Schulungsmatrix, Liste der Arbeitstypen mit Dauern, Reaktionszeiten aus den Verträgen.
 2. **Wählen Sie eine Sandbox** ohne Produktionsdaten für die Headless-Einrichtung.
 3. **Prüfen Sie den Plan** mit Service- und Dispositionsleitung, bevor Sie freigeben.
 4. **Bringen Sie das Ergebnis in Git**: Flows als Metadaten, Konfigurationsdatensätze als Datenbereich.
 5. **Legen Sie fest, wer einen Assistenten mit welcher Org verbinden darf.** Produktion bleibt der Pipeline vorbehalten, wie in meiner Arbeit zu [DevOps und Release-Management](../../leistungen/devops-und-release-management/).
-
-Wo die Headless-Einrichtung neben Agenten und Einführungswellen steht, behandelt das [Kapitel KI-Agenten, Einführung und Betrieb der Field-Service-Masterclass](../../masterclass/field-service/field-service-ki-agenten-einfuehrung/).
-
-Ein KI-Assistent liefert schnell einen Entwurf für Field Service, was hineinkommt, entscheiden weiterhin Ihre Leute.

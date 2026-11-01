@@ -15,18 +15,16 @@ situations:
   - "Several teams deploy to the same org without a shared branching model."
   - "A commercial DevOps tool is in place, but licence costs keep rising and only a few people know how to use it."
 deliverables:
-  - "Branching and environment strategy that fits the number of teams and the release rhythm"
-  - "CI/CD pipeline on GitHub, GitLab, Azure DevOps or Bitbucket, owned by the client"
-  - "Automated checks on every pull request: validation deployment, Apex tests, static code analysis"
-  - "Automated post-deployment steps and data deployments instead of manual checklists"
-  - "Review rules and code quality standards for internal teams and partners"
-  - "Documentation and training, so internal colleagues run the process themselves"
+  - "I agree the branching model, the environments and the checks per stage with you, to fit the number of teams and the release rhythm."
+  - "I build the pipeline on the Git platform you already use, usually with the open-source tool sfdx-hardis."
+  - "I turn the manual steps before and after a deployment into automated steps and data deployments."
+  - "At the start I review alongside the teams, until internal colleagues take the reviews over."
+  - "I train your colleagues until they run and extend the pipeline themselves."
 results:
-  - "Every change in production is traceable to a pull request and a reviewer"
-  - "Smaller, more frequent releases instead of big release weekends"
-  - "Errors found during validation, before they reach UAT or production"
-  - "No running licence fees for the pipeline itself when it is built with open-source tools"
-  - "A process the client owns and can hand to any partner"
+  - "A CI/CD pipeline in your repository that validates every pull request against the target org and runs Apex tests and static code analysis"
+  - "Review rules and code quality standards that apply to internal teams and partners"
+  - "A history in which every change in production is traceable to a pull request and a reviewer"
+  - "The process documentation in the repository, right next to the code"
 phases:
   - title: "Assessment"
     icon: "analyse"
@@ -60,20 +58,20 @@ Salesforce makes it easy to change things directly in an org. That is useful at 
 
 ```vergleich
 without: Changes made directly in the org
-- Nobody knows which version of a flow or a permission set is the correct one.
-- Sandboxes drift apart.
-- Manual steps before and after the deployment live in checklists or in the heads of a few people.
-- Every release depends on these people being available.
+- Whoever changes something changes it directly in a sandbox or in production.
+- Only the person who last worked on it knows which version is valid.
+- Before and after the deployment, someone works through a checklist.
+- A release needs the two or three people who know the routine.
 with: Git, pull request and pipeline
-- Every change in production can be traced to a pull request and a reviewer.
-- Errors are caught at validation, before they reach UAT or production.
-- Activating flows, loading reference data and adjusting settings are part of the deployment.
-- Releases become smaller, more frequent and predictable.
+- Every change starts as a branch and ends as a pull request.
+- The valid version lives in Git, not in an org.
+- The checklist is code and runs with every deployment.
+- A release starts with a merge, not with a weekend appointment.
 ```
 
-## What does a good Salesforce pipeline do?
+## What a good Salesforce pipeline covers
 
-A pipeline that works for enterprise teams covers a few basics:
+For enterprise teams I build the pipeline on these basics:
 
 ```saeulen
 roof: A good Salesforce pipeline
@@ -90,7 +88,7 @@ More on reviews in [why pull request reviews are a must in enterprise projects](
 In one programme I built the release process myself. At first every pull request went across my desk; later I handed this task over to an internal colleague.
 ```
 
-## Which tools do I use?
+## The pipeline runs on your Git platform, usually with sfdx-hardis
 
 ```kennzahlen
 4 | Git platforms: GitHub, GitLab, Azure DevOps and Bitbucket
@@ -107,6 +105,6 @@ For the Salesforce part I often use sfdx-hardis, an open-source DevOps tool that
 Platform changes are part of release management too. Each Salesforce release, such as [Winter '27](../../blog/salesforce-winter-27-what-changes-for-your-pipeline/), can change API versions, CLI behaviour or security settings that a pipeline depends on.
 ```
 
-## How does this fit with several partners?
+## One release process for all partners
 
-A shared release process is the base for steering several implementation partners. If every partner deploys in its own way, no governance framework will hold. That is why DevOps usually goes together with [partner governance](../partner-governance/).
+A shared release process is the base for steering several implementation partners. Every partner delivers through pull requests into the same repository, every delivery runs through the same checks, and the approval sits with the client. If every partner deploys in its own way instead, no governance framework holds. I describe the rules for standards, ownership and reviews across several partners under [partner governance](../partner-governance/).

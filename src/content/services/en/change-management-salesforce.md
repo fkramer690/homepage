@@ -18,19 +18,16 @@ situations:
   - "Releases become smaller and more frequent, and business teams learn about changes only once they are in production."
   - "Management expects results from the programme but is rarely there when decisions about the rollout are due."
 deliverables:
-  - "We agree with you how you measure success, for example by usage figures in Salesforce instead of the number of training sessions."
-  - "Each release gets a rollout plan. It shows which groups are affected, what changes for them and when they hear about it."
   - "For each affected group we use the ADKAR model to assess at which of the five stages the rollout is stuck."
-  - "A sponsor plan sets out what management does visibly and when, so that new rules become binding."
-  - "We set up a fixed format in which business teams, developers and partners see upcoming changes early and can have a say."
   - "We introduce new standards in stages and start with the most common cases."
-  - "Feedback from daily work reaches the backlog by a fixed route. At the end we hand responsibility over to your internal owners."
+  - "We set up a fixed format in which business teams, developers and partners see upcoming changes early and can have a say."
+  - "We measure usage in Salesforce and adjust where it gets stuck."
 results:
-  - "Your processes and standards are used in daily work and do not only exist on paper."
-  - "Business teams know before each release what changes for them."
-  - "Management visibly backs the rollout."
-  - "Teams and partners work by the same rules."
-  - "Fewer shadow solutions grow up next to Salesforce."
+  - "Agreed success measures from Salesforce reports, for example on records created and maintained"
+  - "A rollout plan per release that shows which groups are affected, what changes for them and when they hear about it"
+  - "A sponsor plan that sets out what management does visibly and when, so that new rules become binding"
+  - "A fixed route by which feedback from daily work reaches the backlog"
+  - "Internal owners who carry the rollout on after the handover"
 phases:
   - title: "Prepare the approach"
     icon: "compass"
@@ -65,7 +62,7 @@ A release is technically rolled out in minutes. What happens next decides whethe
 pro: What we do about it
 - A rollout plan per release sets who hears about it and when.
 - The first version covers the most common cases, edge cases come later.
-- A sponsor plan sets out what management does visibly and when.
+- New rules come from management, not only from the project team.
 - The old way is closed as soon as the new one works.
 contra: Where it fails
 - **The people affected hear about it too late** and look for a way around it.
@@ -76,7 +73,7 @@ contra: Where it fails
 
 ## What does ADKAR look like in a Salesforce programme?
 
-The [ADKAR model](https://www.prosci.com/blog/adkar-model) by Prosci describes five stages each person goes through in a change. When a rollout stalls, one of them is usually missing. We often see the following: the training has taken place, yet usage stays low. Instead of scheduling another session, we ask per affected group at which stage it is stuck. Two typical cases:
+The [ADKAR model](https://www.prosci.com/blog/adkar-model) by Prosci describes five stages each person goes through in a change. When a rollout stalls, one of them is usually missing. We often see the following: the training has taken place, yet usage stays low. Instead of scheduling another session, we ask per affected group at which stage it is stuck:
 
 ```stufen
 A | Awareness | Why it changes | Why is something changing? *
@@ -88,9 +85,9 @@ case: Awareness is missing | A sales team does not know what the maintained oppo
 case: Reinforcement is missing | A partner's developers know the naming conventions, but nobody checks them in the pipeline. | Then an automatic check belongs in the [release process](../devops-release-management/).
 ```
 
-Salesforce helps with measuring. Whether a new process is used shows in reports on created and maintained records better than in any survey. We define these figures in the first phase and look at them regularly in the second. I describe the individual topics, from key users to measuring adoption, in [Salesforce change management: why rollouts fail](../../blog/change-management-salesforce-rollout/). The [change management masterclass](../../masterclass/change-management/) goes through the five stages chapter by chapter.
+Salesforce helps with measuring. Whether a new process is used shows more reliably in reports on created and maintained records than in a survey. We define these figures in the first phase and look at them regularly in the second. I describe the individual topics, from key users to measuring adoption, in [Salesforce change management: why rollouts fail](../../blog/change-management-salesforce-rollout/). The [change management masterclass](../../masterclass/change-management/) goes through the five stages chapter by chapter.
 
-## How did I introduce new standards in a large programme?
+## Common standards for five partners in three months
 
 ```kennzahlen
 30+ | developers in eight streams
@@ -100,26 +97,15 @@ Salesforce helps with measuring. Whether a new process is used shows in reports 
 source: my largest programme as architect on the client side
 ```
 
-In my largest programme, more than 30 developers worked in eight streams with five implementation partners. Common standards for naming conventions, one automation per object, test coverage and an [object ownership matrix](../../blog/salesforce-object-ownership-matrix/) took about three months until people lived by them.
+At the start of this programme, the technical approaches of the teams had drifted far apart. So we introduced common standards for naming conventions, one automation per object, test coverage and an [object ownership matrix](../../blog/salesforce-object-ownership-matrix/) in stages.
 
 The first version covered around 80 percent of the cases. The edge cases were added step by step as they came up in the project. Later we raised new topics in the programme with lead time in regular [Center of Excellence calls](../../blog/salesforce-center-of-excellence-cadence/), before they turned into problems. At some point hardly any new edge cases came up. I describe the rules for several partners under [partner governance](../partner-governance/).
 
-## What changes for business teams?
+## Smaller releases need a fixed route into the business
 
 With a clean release process, releases become smaller and more frequent. For business teams this means small changes more often instead of one large package per quarter. For that to work, they need a fixed route on which they learn in advance what changes, and a route back on which they report what does not fit their daily work. Before each release I clarify with the owners in the business which teams are affected, what changes in their processes and who informs them. That goes into the release plan before development is finished. After the release I check whether the new processes are used and bring feedback from daily work into the backlog.
 
-```vergleich
-without: One large package per quarter
-- Business teams see changes only in production.
-- A lot of new things at once, high risk per release.
-- Problems from daily work end up in emails.
-with: Small releases with a fixed route
-- Business teams know before the release what changes.
-- Small changes more often, less risk per release.
-- Feedback reaches the backlog by a fixed route.
-```
-
-## Why Prosci?
+## Prosci is built on research since 1998
 
 To me, Prosci is the gold standard in change management. The reason is the research behind it: Prosci has surveyed projects about their experience with change since 1998.
 
@@ -132,6 +118,6 @@ source: Prosci, Best Practices in Change Management, 12th edition, 2,668 partici
 
 In the 12th edition of its study [Best Practices in Change Management](https://www.prosci.com/hubfs/Website_English/2.downloads/research-executive-summaries/Best-Practices-in-Change-Management-12th-Edition-Executive-Summary.pdf), with 2,668 participants, projects with excellent change management met their objectives seven times as often as projects with poor change management, 88 against 13 percent. Participants name active and visible sponsorship by management as the biggest contributor to success. That matches what I see in Salesforce programmes.
 
-Together with [Juliane Winterscheid](../../partners/juliane-winterscheid/), who is Prosci certified, I have applied two building blocks from Prosci to Salesforce programmes: the ADKAR model described above and the [Prosci 3-Phase Process](https://www.prosci.com/methodology/3-phase-process). The 3-Phase Process gives the rollout a frame at the level of the organisation: Prepare Approach, Manage Change and Sustain Outcomes. The three steps further up this page follow these phases.
+Together with [Juliane Winterscheid](../../partners/juliane-winterscheid/), who is Prosci certified, I have applied two building blocks from Prosci to Salesforce programmes: the ADKAR model described above and the [Prosci 3-Phase Process](https://www.prosci.com/methodology/3-phase-process). The 3-Phase Process gives the rollout a frame at the level of the organisation: Prepare Approach, Manage Change and Sustain Outcomes. The steps under “How we work together” follow these phases.
 
 Prosci and ADKAR are registered trademarks of Prosci, Inc. The Prosci certification is held by Juliane Winterscheid, not by FK Solution Design, and FK Solution Design is not a Prosci partner. This page describes how we apply elements of the approach in Salesforce programmes.

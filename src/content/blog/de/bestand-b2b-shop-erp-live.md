@@ -10,11 +10,11 @@ categories: [b2b-commerce, architecture]
 contactBrief: integration
 tags: [B2B Commerce, Bestand, SAP, Verfügbarkeitsprüfung, Omnichannel Inventory, ERP-Anbindung]
 takeaways:
-  - "Standardmäßig liest Salesforce B2B Commerce den Bestand aus Omnichannel Inventory; die Extension Commerce_Domain_Inventory_Service ersetzt das durch eigene Logik, etwa eine Live-Abfrage im ERP."
-  - "Omnichannel Inventory hält eine nahezu aktuelle Kopie pro Lagerort und Lagerortgruppe, ersetzt laut Salesforce aber nicht das führende Bestandssystem. Das ERP bleibt Master."
-  - "Eine Kopie ist schnell und hält den Shop am Laufen, wenn SAP steht; eine Live-Verfügbarkeitsprüfung ist genau und liefert einen bestätigten Termin, aber SAP muss im Checkout antworten."
-  - "Händler brauchen ein brauchbares Signal statt einer exakten Menge: lieferbar, auf Anfrage oder ein bestätigter Termin. Das schützt Bestände auch vor Wettbewerbern und Wiederverkäufern."
-  - "Beide B2B-Editionen nennen auf der Preisseite 20 Lagerorte; Unified Omnichannel Inventory aus Winter '27 ist für Filial- und Onlinebestand beschrieben, prüfen Sie die Eignung für B2B."
+  - "Der Shop liest Bestand standardmäßig aus Omnichannel Inventory. Die Extension Commerce_Domain_Inventory_Service ersetzt das, etwa durch eine ERP-Abfrage."
+  - "Omnichannel Inventory hält eine nahezu aktuelle Kopie pro Lagerort, ersetzt laut Salesforce aber nicht das führende Bestandssystem. Das ERP bleibt Master."
+  - "Eine Kopie ist schnell und hält den Shop am Laufen, wenn SAP steht. Live ist genau und liefert einen bestätigten Termin, aber SAP muss im Checkout antworten."
+  - "Händler brauchen ein Signal statt einer exakten Menge: lieferbar, auf Anfrage oder ein bestätigter Termin. Das schützt Bestände auch vor Wettbewerbern."
+  - "Beide B2B-Editionen enthalten 20 Lagerorte. Unified Omnichannel Inventory aus Winter '27 ist für Filialbestand beschrieben, B2B wird nicht erwähnt."
 faq:
   - q: "Woher bekommt Salesforce B2B Commerce die Bestandsdaten?"
     a: "Standardmäßig aus Omnichannel Inventory, einem Salesforce-Dienst, der Verfügbarkeit pro Lagerort und Lagerortgruppe hält. Mit der Inventory-Extension kann der Shop stattdessen eine andere Quelle fragen, zum Beispiel SAP live."
@@ -50,7 +50,7 @@ Die Kopie kommt über APIs hinein. Laut der [Trailhead-Einheit zu den Omnichanne
 
 Die [B2B-Preisseite](https://www.salesforce.com/editions-pricing/commerce-cloud/b2b/) nennt für Growth und Advanced Edition jeweils 20 Inventory Locations. Für die meisten Ersatzteilgeschäfte reicht das. Ein Hersteller mit vielen Werken und Regionallagern sollte vor der Unterschrift klären, wie Salesforce Lagerorte zählt.
 
-## Kopie oder live: welche Abwägung?
+## Kopie oder live: die Abwägung in einer Tabelle
 
 Es ist dieselbe Entscheidung wie bei den Preisen, nur mit anderen Zahlen. Für den Lenkungskreis bringe ich sie in eine Tabelle:
 
@@ -91,7 +91,7 @@ Das hat drei Vorteile. Die Produktliste bleibt schnell, weil sie nur die Kopie l
 
 Dieselbe Logik gilt für Agenten. In meinem Artikel zum [Auftragsstatus aus SAP](../agentforce-sap-auftragsstatus/) gibt der Agent den bestätigten Termin aus SAP weiter und schätzt nie einen aus Beständen. Ein Shop sollte es genauso halten.
 
-## Ein typisches Szenario, als Annahme
+## Rechenbeispiel: 12.000 Ersatzteile in drei Lagern
 
 Ein Pumpenhersteller verkauft 12.000 Ersatzteile an 250 Händler. Der Bestand liegt in SAP in drei Lagern. Die Architektur könnte so aussehen:
 
@@ -111,12 +111,10 @@ Der Bestand, den der Shop zeigt, ist oft derselbe, aus dem Field-Service-Technik
 
 Händlerbestände sind noch einmal ein eigenes Thema. Bestand beim Händler und Nachschubvorschläge dafür behandle ich in [Agentforce für Händlerbestand und Nachschub](../haendlerbestand-nachschub-agentforce/). Der Shop zeigt nur den eigenen Bestand des Herstellers.
 
-## Was ist mit Unified Omnichannel Inventory in Winter '27?
+## Unified Omnichannel Inventory aus Winter '27 erst auf B2B prüfen
 
 Die [Winter-'27-Highlights auf Trailhead](https://trailhead.salesforce.com/content/learn/modules/winter-27-release-highlights/see-whats-new-marketing-commerce-revenue-management) nennen Unified Omnichannel Inventory: Filial- und Onlinebestand in einem Echtzeit-Datensatz, gegen "Ghost Stock" und für Abholung in der Filiale. B2B erwähnt die Beschreibung nicht. Für einen Hersteller mit Werken und Lagern statt Filialen würde ich in einer Sandbox prüfen, ob sich etwas ändert, bevor ich damit plane.
 
-## Wo starten Sie?
+## Die Bestandsquelle pro Ansicht festlegen
 
 Legen Sie pro Ansicht fest, welche Bestandsquelle gilt: Produktliste, Produktseite, Warenkorb, Checkout. Definieren Sie dann die drei Zustände für Händler, den Update-Zyklus der Kopie und die Rückfallregel, wenn SAP nicht antwortet. Wie der Bestand in die gesamte Schnittstellenliste passt, steht in [B2B Commerce und SAP: Welche Daten fließen wohin](../b2b-commerce-sap-datenfluesse/), und das [Kapitel zur ERP-Anbindung der Masterclass](../../masterclass/b2b-commerce/erp-integration-bestand-auftraege/) ordnet es ein. Solche Schnittstellen unabhängig zu prüfen, gehört zu meiner Arbeit bei [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).
-
-Zeigen Sie die Kopie zum Stöbern und den SAP-Termin für das Versprechen.

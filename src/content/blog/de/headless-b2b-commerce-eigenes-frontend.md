@@ -9,11 +9,10 @@ topic: commerce
 categories: [b2b-commerce, architecture]
 tags: [B2B Commerce, Headless, Connect REST API, React, Storefront, Fertigung]
 takeaways:
-  - "Headless B2B Commerce heißt: Ihre eigene Website oder App ist der Shop, Salesforce hält Katalog, Preise, Warenkorb, Checkout und Aufträge und liefert sie über die Commerce Connect REST APIs."
-  - "Salesforce führt Headless B2B Commerce als allgemein verfügbar, mit einem React B2B Storefront Blueprint und einer Headless-Referenz-App, deren Quellcode auf GitHub liegt."
-  - "Headless betreibt Ihr Unternehmen Frontend, Hosting, Deployment-Pipeline und Login selbst; bei einem Store aus Experience Builder hostet und skaliert Salesforce die Seite."
+  - "Headless betreiben Sie Frontend, Hosting, Deployment-Pipeline und Login selbst. Bei einem Store aus Experience Builder hostet und skaliert Salesforce die Seite."
+  - "Headless B2B Commerce ist allgemein verfügbar, mit React B2B Storefront Blueprint und einer Referenz-App, deren Quellcode auf GitHub liegt."
   - "Preis-, Bestands- und Checkout-Extensions laufen bei den Connect-API-Aufrufen mit, deshalb gilt dieselbe ERP-Logik im LWR-Store und in Ihrer App."
-  - "Headless lohnt sich, wenn eine Unternehmenswebsite oder Kunden-App und ein Team dafür schon da sind; für den ersten Shop ist ein LWR-Store der günstigere Start."
+  - "Headless lohnt sich, wenn eine Website oder Kunden-App und ein Team dafür schon da sind. Für den ersten Shop ist ein LWR-Store der günstigere Start."
 faq:
   - q: "Was ist Headless B2B Commerce bei Salesforce?"
     a: "Ein Aufbau, bei dem Ihr eigenes Frontend, etwa eine React-Website oder eine mobile App, die Commerce Connect REST APIs von Salesforce für Suche, Produktdetails, Preise, Warenkorb, Checkout und Bestellhistorie aufruft. Salesforce B2B Commerce bleibt das Commerce-Backend, die Oberfläche bauen und hosten Sie selbst."
@@ -43,7 +42,7 @@ Das Produkt trägt gerade mehrere Namen. Die Salesforce-Hilfe schreibt weiter "S
 
 Auf der [Seite zu den Commerce-Neuerungen](https://www.salesforce.com/de/commerce/innovations/) steht Headless B2B Commerce mit "AV heute", also verfügbar, und dem Versprechen von B2B-Einkauf "auf Ihrer Website, in Ihrer App, sogar in Slack". Im selben Eintrag nennt Salesforce einen neuen React B2B Storefront Blueprint und einen erweiterbaren Checkout. Im [Release-Beitrag vom Juni 2026](https://www.salesforce.com/blog/b2b-commerce-innovations-june-26/) kommt eine Headless-Referenz-App dazu: eine lauffähige Anwendung, die die empfohlenen API-Abfolgen vom Katalog bis zum Checkout zeigt, für Teams, die mit React oder Vue bauen. Der [Developer Guide](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-comm-headless-journey-overview.html) verlinkt den Quellcode im Repository `trailheadapps/commerce-b2b-headless`.
 
-## Was bleibt in Salesforce, was wandert zu Ihnen?
+## Salesforce hält die Daten, Sie betreiben das Frontend
 
 Die Aufteilung ist klarer als in den meisten Architekturdiskussionen, weil Salesforce sie im Architektur-Guide selbst nennt: Headless verwaltet Ihr Unternehmen Frontend-Hosting, Deployment-Pipelines und Integrationsschichten. Bei Experience Builder kümmert sich Salesforce um Hosting, Skalierung und die Plattform-Infrastruktur.
 
@@ -83,7 +82,7 @@ Den Login bauen Sie selbst. Für registrierte Käufer nutzt der [Guide zum Headl
 Welche Lizenz Käufer in einem headless Shop brauchen, steht in den Guides, die ich gelesen habe, nicht. Für einen Standard-Store nennt Trailhead Customer Community Plus, siehe [B2B Commerce Lizenzen für Käufer](../b2b-commerce-lizenzen-kaeufer/). Den Headless-Fall würde ich mir schriftlich bestätigen lassen, bevor jemand einen Business Case rechnet.
 ```
 
-## Wann lohnt sich headless für einen Hersteller?
+## Vier Bedingungen für headless beim Hersteller
 
 Ich sehe vier Bedingungen, und mindestens die erste und die letzte sollten erfüllt sein:
 
@@ -92,7 +91,7 @@ Ich sehe vier Bedingungen, und mindestens die erste und die letzte sollten erfü
 3. **Mehrere Kanäle teilen ein Backend.** Website, App und später Slack oder ein Agent nutzen denselben Katalog, dieselben Preise und dieselben Aufträge.
 4. **Ein Frontend-Team bleibt über Jahre.** Intern oder über einen langen Vertrag, mit React-Kenntnissen, eigener Pipeline und jemandem, der ans Telefon geht, wenn der Shop langsam ist.
 
-Ein typisches Szenario, als Annahme: Ein Maschinenbauer betreibt eine React-App, in der 3.000 Bediener den Status ihrer Maschinen sehen. Wenn "Verschleißteile bestellen" über die Connect APIs in diese App kommt, bleibt der Käufer in einem Werkzeug, das er ohnehin täglich öffnet. Die 200 Händler desselben Herstellers, die Ersatzteile in großen Mengen bestellen, sind mit einem Standard-LWR-Store besser bedient. Beides kann auf demselben Salesforce-Katalog laufen.
+Rechenbeispiel: Ein Maschinenbauer betreibt eine React-App, in der 3.000 Bediener den Status ihrer Maschinen sehen. Wenn "Verschleißteile bestellen" über die Connect APIs in diese App kommt, bleibt der Käufer in einem Werkzeug, das er ohnehin täglich öffnet. Die 200 Händler desselben Herstellers, die Ersatzteile in großen Mengen bestellen, sind mit einem Standard-LWR-Store besser bedient. Beides kann auf demselben Salesforce-Katalog laufen.
 
 Falsch ist headless für einen ersten Shop ohne Frontend-Team, oder wenn das Ziel vor allem ist, Händler schnell vom Telefon wegzubekommen. Wer nur eine mobile App braucht: Der Juni-Beitrag nennt auch Mobile Publisher, der eine App in Ihrem Design in die Stores von Apple und Google bringt, ohne ein headless Frontend zu bauen.
 
@@ -107,8 +106,6 @@ Salesforce verkauft B2B Commerce als Anteil am Shop-Umsatz und veröffentlicht k
 
 Repository und Pipeline des Frontends sollten Ihnen gehören, nicht der Agentur, die es baut, aus denselben Gründen wie in [warum Kunden ihre DevOps-Tools selbst besitzen sollten](../warum-kunden-devops-tools-selbst-besitzen-sollten/). Soll in Ihrer App auch ein Agentforce-Agent antworten, ist die [Agent API](../agentforce-agent-api-eigene-apps/) der eigene Einstieg, mit eigenen Fragen zur Identität. Wie Agenten dieselben Schnittstellen nutzen, beschreibt das Kapitel [MCP und Schnittstellen](../../masterclass/ki-salesforce/mcp-und-schnittstellen/) der KI-Masterclass.
 
-## Wo starten Sie?
+## Genutzte Kanäle und Frontend-Team prüfen
 
 Schreiben Sie auf, welche Kanäle Käufer heute wirklich nutzen und welcher Bestellungen annehmen soll. Prüfen Sie dann, ob es in den nächsten drei Jahren ein Frontend-Team gibt. Zeigen beide Antworten auf headless, bauen Sie einen kurzen Test mit der Referenz-App gegen eine Sandbox mit Ihrem echten Katalog und Ihrer Preis-Extension und messen Sie, wie schnell Warenkorb und Checkout mit dem Live-Aufruf ins ERP antworten. Die Datenflüsse dahinter sind Teil des Kapitels [ERP-Anbindung](../../masterclass/b2b-commerce/erp-integration-bestand-auftraege/) meiner Masterclass B2B Commerce, und solche Entscheidungen begleite ich unter [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).
-
-Headless ist eine gute Option für Hersteller, die schon ein genutztes Frontend betreiben, und ein teurer Umweg für alle anderen.

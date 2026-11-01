@@ -8,11 +8,10 @@ chapter: 2
 short: "Salesforce-Werkzeuge"
 summary: "Welche KI-Werkzeuge Salesforce selbst für Entwicklung und Administration anbietet, was sie kosten und wo ihre Grenzen liegen."
 takeaways:
-  - "Salesforce bietet einen eigenen Coding-Agenten, Agentforce Vibes, und dieselben Fähigkeiten als Skills, Claude-Code-Plugin und MCP-Server für fremde Agenten. Die Wahl des Agenten bleibt damit offen."
-  - "Agentforce Vibes ist in der EU Operating Zone nicht verfügbar. Außerhalb der Developer Edition braucht es seit Juni 2026 Flex Credits oder eine Unmetered-Lizenz."
-  - "Die Unmetered-Lizenz begrenzt das Premium-Modell auf 2.500 Requests oder 36 Mio. Token pro Org und 30 Tage, nicht pro Nutzer. Sechs Entwickler mit je 25 Requests am Tag erreichen sie nach acht Arbeitstagen."
-  - "Neue Agentforce-Agenten entstehen seit Juli 2026 nur noch mit Agent Script. Als AiAuthoringBundle lassen sie sich in Git versionieren, testen und über die Pipeline ausrollen."
-  - "Code Analyzer und ApexGuru prüfen ohne Sprachmodell. Eigene Regeln für KI-generierten Code hat Salesforce nicht, deshalb gehören diese Prüfungen als Pflicht in die Pipeline."
+  - "Agentforce Vibes gibt es nicht in der EU Operating Zone. Außerhalb der Developer Edition braucht es seit Juni 2026 Flex Credits oder eine Unmetered-Lizenz."
+  - "Die Unmetered-Lizenz begrenzt das Premium-Modell auf 2.500 Requests pro Org und 30 Tage. Sechs Entwickler sind damit nach acht Arbeitstagen am Limit."
+  - "Neue Agentforce-Agenten entstehen seit Juli 2026 nur mit Agent Script und lassen sich als AiAuthoringBundle in Git versionieren, testen und ausrollen."
+  - "Code Analyzer und ApexGuru prüfen ohne Sprachmodell. Weil Salesforce keine eigenen Regeln für KI-Code hat, gehören sie als Pflicht in die Pipeline."
 articles: [vibes-claude-code-copilot-comparison, testing-agentforce-agents, ai-rules-file-salesforce-repo, agent-script-deterministic-rules]
 faq:
   - q: "Ist Agentforce Vibes kostenlos?"
@@ -138,7 +137,7 @@ Die Admin-KI ändert dieselbe Org, nur über die Oberfläche statt über Code.
 
 Damit verbraucht die Admin-KI drei Währungen: Einstein Requests, Data 360 Credits und Flex Credits. Das gehört in die Lizenzplanung. Meine Empfehlung: Setup-Agent und Einstein for Flow nur in Sandboxes einsetzen, und die Ergebnisse gehen über die Pipeline wie jede andere Metadatenänderung. Ein Agent, der in Produktion Freigabeeinstellungen ändert, macht das alte Problem direkter Änderungen nur schneller.
 
-## Ein typisches Szenario: Werkzeugwahl bei einem Maschinenbauer
+## Beispiel: Werkzeugwahl bei einem Maschinenbauer
 
 Nehmen wir einen Maschinenbauer mit Sales Cloud, Service Cloud, Händlerportal und SAP an. Ein Implementierungspartner arbeitet mit sechs Entwicklern, geplant ist ein erster Agentforce-Agent für Händleranfragen zum Auftragsstatus. Alle Zahlen sind Annahmen, die das Vorgehen zeigen sollen.
 
@@ -166,5 +165,3 @@ In diesem Szenario ist die Frage nach dem Agenten schnell beantwortet. Zeit kost
 6. **Admin-KI auf Sandboxes begrenzen.**
 
 Salesforce wirbt auf der [Produktseite](https://www.salesforce.com/agentforce/developers/vibe-coding/) damit, Teams könnten mit Vibes „up to 95% faster“ innovieren. Eine Studie dazu nennt die Seite nicht. Messen Sie den Effekt in Ihrem eigenen Programm, wie in [Kapitel 9](../teamarbeit-und-delivery/) beschrieben, und sehen Sie sich als Nächstes in [Kapitel 3](../mcp-und-schnittstellen/) an, über welche Schnittstellen diese Werkzeuge auf Ihre Org zugreifen.
-
-Wählen Sie den Coding-Agenten nach Standort und Lizenz, und legen Sie die Qualität in Agent Script, Tests und Pipeline, die Ihnen gehören.

@@ -10,11 +10,11 @@ categories: [architecture, ai]
 contactBrief: integration
 tags: [Agentforce, Agent API, Händlerportal, Sicherheit, Flex Credits, Maschinenbau]
 takeaways:
-  - "Mit der Agentforce Agent API spricht jedes System, das REST aufrufen kann, mit einem Agenten: Ihr Backend holt ein Token per Client Credentials Flow, öffnet eine Session und sendet oder streamt Nachrichten."
-  - "Mit Client Credentials erreicht jeder Händler in Ihrer App Salesforce als derselbe Run-As-User; die Salesforce-Freigaben trennen die Aufträge der Händler dann nicht mehr voneinander."
-  - "Übergeben Sie den Account des Händlers beim Session-Start in einer Variablen, die die API setzen darf, und lassen Sie die Aktionen des Agenten in Logik danach filtern, nie nach dem, was das Sprachmodell im Chat liest."
-  - "Agent-API-Nutzung verbraucht Flex Credits wie anderer Agentenverkehr; ob sie zusätzlich als Headless Platform Interaction mit noch offenem Satz zählt, steht auf keiner Seite, die ich öffnen konnte."
-  - "Für Mitarbeitende mit Claude oder ChatGPT behält der Agent als Hosted-MCP-Tool deren eigenen Benutzerkontext; die Agent API passt zu Apps, deren Nutzer kein Salesforce-Login haben."
+  - "Ihr Backend holt ein Token per Client Credentials Flow, öffnet eine Session und sendet oder streamt Nachrichten an den Agenten."
+  - "Mit Client Credentials erreichen alle Händler Salesforce als derselbe Run-As-User, die Freigaben trennen ihre Aufträge dann nicht mehr."
+  - "Setzen Sie den Händler-Account beim Session-Start per API und lassen Sie die Aktionen in Logik danach filtern, nie nach dem Chattext."
+  - "Ob Agent-API-Aufrufe zusätzlich als Headless Platform Interaction zählen, deren Satz noch offen ist, steht auf keiner Seite, die ich öffnen konnte."
+  - "Für Mitarbeitende mit Claude oder ChatGPT passt der Agent als Hosted-MCP-Tool besser, weil er ihren eigenen Benutzerkontext behält."
 faq:
   - q: "Was ist die Agentforce Agent API?"
     a: "Eine REST-Schnittstelle, über die Agentforce-Agenten von überall erreichbar sind, wo REST-Aufrufe möglich sind. Ein Client startet eine Session für einen Agenten, sendet Nachrichten synchron oder als Stream und beendet die Session danach."
@@ -67,7 +67,7 @@ Für die Nachvollziehbarkeit gilt dasselbe. Salesforce protokolliert den Run-As-
 
 Für den Run-As-User würde ich die [Salesforce Integration User Lizenz](https://help.salesforce.com/s/articleView?language=en_US&id=platform.integration_user.htm&type=5) mit ihrem API-Only-Profil nehmen und Rechte über ein Permission Set vergeben. Orgs erhalten standardmäßig eine begrenzte Zahl dieser Lizenzen, die Seite nennt keine Zahl. Eine External Client App und ein Run-As-User pro externer App halten den möglichen Schaden klein; Token- und IP-Kontrollen stehen in [Connected Apps und OAuth für KI-Integrationen](../connected-apps-oauth-ki-integrationen/).
 
-## Agent API, Chat-Kanal oder Hosted MCP: welcher Weg passt?
+## Agent API, Chat-Kanal und Hosted MCP im Vergleich
 
 Die Agent API ist einer von drei Wegen aus Salesforce hinaus, und der mit der meisten Arbeit auf Ihrer Seite.
 
@@ -81,7 +81,7 @@ Salesforce sieht seine [Custom Connections](https://developer.salesforce.com/doc
 
 Für Mitarbeitende beschreibt die [Hosted-MCP-Seite zu Agenten](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/agentforce.html) das Gegenmodell: Der Agent läuft „in the authenticated user's context“, Freigaben und Feldberechtigungen gelten. Das geht nur mit Agenten aus dem neuen Agent Script Builder. Einen Release-Status nennt die Seite nicht; die [GA-Ankündigung vom 29. April 2026](https://developer.salesforce.com/blogs/2026/04/salesforce-hosted-mcp-servers-are-now-generally-available) sprach noch von „soon“. Die MCP-Entscheidungen für die IT-Leitung stehen in [MCP erklärt für die IT-Leitung](../mcp-salesforce-erklaert-it-leitung/).
 
-## Ein typisches Szenario: Händler-App und Maschinenportal
+## Rechenbeispiel: Händler-App und Maschinenportal
 
 Nehmen wir einen Maschinenbauer mit 250 Händlern, einer eigenen Händler-App für Aufträge und Ersatzteile und einem Portal, in dem Endkunden ihre installierten Maschinen sehen. Beide laufen auf dem eigenen Backend mit eigenem Login. Alle Zahlen sind Annahmen.
 
@@ -103,7 +103,7 @@ Keine der beiden Quellen sagt, ob ein Agent-API-Aufruf aus Ihrer Händler-App zu
 
 Wie man einen Zähler ohne Preis budgetiert, steht in [MCP-Zugriffe als Budgetrisiko](../mcp-zugriffe-salesforce-budgetrisiko/).
 
-## Wo sollten Sie anfangen?
+## Mit einem lesenden Anwendungsfall wie dem Auftragsstatus beginnen
 
 1. **Einen lesenden Anwendungsfall wählen**, etwa Auftragsstatus für Händler, und schreibende Aktionen auf später verschieben.
 2. **Zuerst die Identitätskette entwerfen**: Ihr Login, die Account-Zuordnung, eine per API gesetzte Session-Variable, Aktionen, die danach filtern.
@@ -112,6 +112,4 @@ Wie man einen Zähler ohne Preis budgetiert, steht in [MCP-Zugriffe als Budgetri
 5. **`externalSessionKey` mit der User-ID des Händlers protokollieren**, in Ihrer App.
 6. **Die Frage zu Headless Platform Interactions klären**, bevor Sie die Flex-Credit-Bestellung dimensionieren.
 
-Schnittstellen- und Identitätsdesign ist der Kern meiner Arbeit an [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/); alle Schnittstellen im Vergleich zeigt das Masterclass-Kapitel [MCP und Schnittstellen](../../masterclass/ki-salesforce/mcp-und-schnittstellen/).
-
-Die Agent API bringt einen Agenten schnell in Ihre eigenen Apps, aber die Grenze zwischen Händlern liegt dann in Ihrem Code, also entwerfen Sie sie vor dem ersten Bildschirm.
+Für den Test über Händlergrenzen reichen zwei Händler-Accounts in der Sandbox: Angemeldet als Händler A fragen Sie nach den Aufträgen von Händler B. Schnittstellen- und Identitätsdesign ist der Kern meiner Arbeit an [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/); alle Schnittstellen im Vergleich zeigt das Masterclass-Kapitel [MCP und Schnittstellen](../../masterclass/ki-salesforce/mcp-und-schnittstellen/).

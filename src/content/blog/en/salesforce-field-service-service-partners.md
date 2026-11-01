@@ -10,9 +10,9 @@ categories: [field-service]
 series: { id: field-service, part: 6 }
 tags: [Field Service, Service partners, Subcontractors, Experience Cloud, Manufacturing]
 takeaways:
-  - "External service partners belong in your own processes. The goal is that dispatchers and technicians work the same way, whether an internal or an external technician takes the job."
-  - "Field Service offers two models: each partner technician is a service resource of their own, or only the partner is a capacity-based resource. For the same way of working, the first fits better."
-  - "Partner technicians use the same mobile app as internal ones. For that they need a community licence and the permission set licences for Field Service Scheduling and Mobile."
+  - "Dispatchers and technicians should work the same way, whether an internal or an external technician takes the job."
+  - "Either each partner technician is a service resource of their own, or the partner is a capacity-based resource. For the same way of working, the first fits."
+  - "Partner technicians use the same app as internal ones. They need a community licence and permission set licences for scheduling and mobile."
   - "A service territory of its own for each partner company makes sure the partner only sees their own people and appointments."
   - "Data access and invoicing stay deliberately different. A partner sees only what they need for their job."
 faq:
@@ -31,7 +31,7 @@ External service partners and subcontractors belong in your own processes in Sal
 
 This article is part 6 of the series. Licence prices for subcontractors are in [part 1](../salesforce-field-service-worth-it/), how the scheduling engine decides is in [part 3](../salesforce-field-service-scheduling-automation/).
 
-## Why should internal and external technicians work the same way?
+## Internal and external technicians work the same way
 
 Many manufacturers cover peaks, remote regions or certain trades with partners. If the partner is steered on the side, by email, phone and their own spreadsheet, two worlds appear. The dispatcher has two plans. The customer gets two kinds of service report. The partner's spare parts and working time only arrive with the invoice, and the asset history has gaps.
 
@@ -75,7 +75,7 @@ Played through once, in the first model: equipment fails at a customer in a regi
 
 For the customer, the job then looks exactly like one with an own technician. For the back office, everything sits on the same asset. And the partner invoice can be checked against the feedback from the app instead of a handwritten report.
 
-## What stays deliberately different?
+## Data access, invoicing and proof of skills stay separate
 
 The same way of working does not mean the same rights. I would separate three things on purpose:
 
@@ -83,8 +83,6 @@ The same way of working does not mean the same rights. I would separate three th
 - **Invoicing.** Internal jobs run through cost centres, partner jobs through an invoice. The feedback from the app, working time and parts used from [part 4](../salesforce-field-service-spare-parts-erp/), is the basis for checking that invoice.
 - **Proof of skills.** For your own technicians, HR maintains the skills. For partners it has to be clear who reports them and who checks them before the engine schedules the partner for a job.
 
-## Where should you start?
+## First step: write down how a job reaches your most important partner
 
-Take your most important partner and write down how a job reaches them today and how the feedback comes back. Every step that runs differently from internal technicians is a candidate for alignment. Start with one partner and one territory before connecting all of them. Mixed setups are fine: a large core partner works in the first model, a small partner for peaks in the second. What matters is that the decision is made deliberately per partner and documented.
-
-The last part of the series is about the rollout itself.
+Take your most important partner and write down how a job reaches them today and how the feedback comes back. Every step that runs differently from internal technicians is a candidate for alignment. Start with one partner and one territory before connecting all of them. Mixed setups are fine: a large core partner works in the first model, a small partner for peaks in the second. What matters is that the decision is made deliberately per partner and documented. How the rollout then runs in waves is covered in the [last part of the series](../salesforce-field-service-rollout/).

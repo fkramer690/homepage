@@ -10,11 +10,11 @@ categories: [architecture, ai]
 contactBrief: integration
 tags: [agentforce, agent api, dealer portal, security, flex credits, manufacturing]
 takeaways:
-  - "The Agentforce Agent API lets any system that can call REST talk to an agent: your backend gets a token through the client credentials flow, opens a session and sends or streams messages."
-  - "With client credentials every dealer in your app reaches Salesforce as the same run-as user, so Salesforce sharing no longer separates one dealer's orders from another's."
-  - "Pass the dealer's account at session start in a variable the API may set, and let the agent's actions filter on it in logic, never on what the language model reads from the chat."
-  - "Agent API usage consumes Flex Credits like other agent traffic; whether it also counts as a Headless Platform Interaction, whose rate is still TBA, is not stated on the pages I could open."
-  - "For employees using Claude or ChatGPT, exposing the agent as a hosted MCP tool keeps their own user context; the Agent API fits apps whose users have no Salesforce login."
+  - "Your backend gets a token through the client credentials flow, opens a session and sends or streams messages to the agent."
+  - "With client credentials every dealer reaches Salesforce as the same run-as user, so sharing no longer separates their orders."
+  - "Set the dealer account through the API at session start and let the actions filter on it in logic, never on the chat text."
+  - "Whether Agent API calls also count as Headless Platform Interactions, whose rate is still TBA, is not stated on any page I could open."
+  - "For employees using Claude or ChatGPT, the agent fits better as a hosted MCP tool because it keeps their own user context."
 faq:
   - q: "What is the Agentforce Agent API?"
     a: "A REST API that gives access to Agentforce agents from anywhere that can call REST. A client creates a session for an agent, sends messages synchronously or as a stream and ends the session when done."
@@ -67,7 +67,7 @@ Audit follows the same logic. Salesforce logs the run-as user, so it cannot tell
 
 For the run-as user I would use the [Salesforce Integration user licence](https://help.salesforce.com/s/articleView?language=en_US&id=platform.integration_user.htm&type=5) with its API-only profile and a permission set on top. Orgs get "a limited number" of these licences by default; the page gives no figure. One External Client App and one run-as user per external app keeps the damage small; token and IP controls are in [connected apps and OAuth for AI integrations](../connected-apps-oauth-ai-integrations/).
 
-## Agent API, chat channel or hosted MCP: which path fits?
+## Agent API, chat channel and hosted MCP compared
 
 The Agent API is one of three ways out of Salesforce, and the one with the most work on your side.
 
@@ -81,7 +81,7 @@ Salesforce positions its [custom connections](https://developer.salesforce.com/d
 
 For employees the [hosted MCP page on agents](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/agentforce.html) describes the opposite model: the agent runs "in the authenticated user's context", with sharing and field-level security applied. Only agents built with the new Agent Script Builder qualify. The page states no release status; the [GA announcement of 29 April 2026](https://developer.salesforce.com/blogs/2026/04/salesforce-hosted-mcp-servers-are-now-generally-available) still said "soon". The MCP decisions for IT leads are in [MCP explained for IT leads](../mcp-salesforce-explained-for-it-leads/).
 
-## A typical scenario: dealer app and machine portal
+## Worked example: dealer app and machine portal
 
 Assume a machine builder with 250 dealers and its own dealer app for orders and spare parts, plus a portal where end customers see their installed machines. Both run on the company's own backend and login. All numbers here are assumptions.
 
@@ -103,7 +103,7 @@ Neither source says whether a call to the Agent API from your dealer app counts 
 
 How to budget a meter without a price is in [MCP calls as a budget risk](../mcp-api-calls-salesforce-budget-risk/).
 
-## Where should you start?
+## Begin with one read-only use case such as order status
 
 1. **Pick one read-only use case**, such as order status for dealers, and keep write actions for later.
 2. **Design the identity chain first**: your login, account mapping, a session variable set by the API, actions that filter on it.
@@ -112,6 +112,4 @@ How to budget a meter without a price is in [MCP calls as a budget risk](../mcp-
 5. **Log `externalSessionKey` with the dealer's user ID** in your app.
 6. **Get the Headless Platform Interaction question answered** before you size the Flex Credit order.
 
-Interface and identity design is what I do under [Salesforce integration](../../services/salesforce-integration/); all interfaces side by side are in the masterclass chapter [MCP and interfaces](../../masterclass/ai-salesforce/mcp-and-interfaces/).
-
-The Agent API brings an agent into your own apps quickly, but the dealer boundary becomes your code, so design it before the first screen.
+For the cross-dealer test, two dealer accounts in a sandbox are enough: logged in as dealer A, you ask for the orders of dealer B. Interface and identity design is what I do under [Salesforce integration](../../services/salesforce-integration/); all interfaces side by side are in the masterclass chapter [MCP and interfaces](../../masterclass/ai-salesforce/mcp-and-interfaces/).

@@ -10,10 +10,10 @@ categories: [devops]
 contactBrief: integration
 tags: [Integration, Sicherheit, OAuth, Release-Management, Partnersteuerung]
 takeaways:
-  - "Salesforce schaltet den OAuth 2.0 Username-Password Flow für Connected Apps am 20. Februar 2027 ab; Integrationen, die sich mit Benutzer, Passwort und Security Token anmelden, schlagen dann fehl."
+  - "Ab dem 20. Februar 2027 schlagen Logins über den OAuth Username-Password Flow für Connected Apps fehl."
   - "SOAP-API-Logins brauchen ab 1. Dezember 2026 die Berechtigung Use Any API Auth, und SOAP login() in den API-Versionen 31.0 bis 64.0 entfällt mit Summer '27."
-  - "Ersatz sind der Client Credentials Flow für Server-zu-Server-Integrationen, der JWT Bearer Flow für zertifikatsbasiertes Vertrauen und der Web Server Flow mit PKCE für Anwendungen mit echten Benutzern."
-  - "Fehler fallen oft nicht auf: Eine nächtliche Synchronisation aktualisiert einfach keine Datensätze mehr. Die Bestandsaufnahme beginnt deshalb mit Login History, Middleware-Logs und Herstellerauskünften."
+  - "Ersatz sind Client Credentials oder JWT Bearer für Server-zu-Server-Integrationen und der Web Server Flow mit PKCE für Anwendungen mit echten Benutzern."
+  - "Ausfälle sind leise: Eine nächtliche Synchronisation aktualisiert keine Datensätze mehr. Die Suche beginnt in Login History und Middleware-Logs."
   - "Jede Integration braucht einen benannten Verantwortlichen auf Kundenseite, einen eigenen Integrationsuser und Zugangsdaten im Tresor des Kunden."
 faq:
   - q: "Wann funktioniert der OAuth Username-Password Flow nicht mehr?"
@@ -40,7 +40,7 @@ Die Details stehen im [Entwickler-Leitfaden zu Winter '27](https://developer.sal
 
 ![Zeitstrahl der Salesforce-Login-Änderungen für Integrationen: Ab 1. Dezember 2026 braucht SOAP login() die Berechtigung Use Any API Auth, am 20. Februar 2027 endet der OAuth Username-Password Flow für Connected Apps, mit Summer '27 entfällt SOAP login() in den API-Versionen 31.0 bis 64.0 und die Versionen 31.0 bis 40.0 bekommen keine Updates mehr, mit Summer '28 fallen SOAP-, REST- und Bulk-API in den Versionen 31.0 bis 40.0 aus. Abfragen, Anlegen und Ändern funktionieren weiter, es ändert sich, wie sich Integrationen anmelden.](../../../assets/blog/password-flow-timeline-de.png)
 
-## Warum trifft das Enterprise-Organisationen stärker?
+## Enterprise-Organisationen trifft es stärker
 
 Eine kleine Org hat eine Handvoll Integrationen, und der Admin kennt sie. Eine Enterprise-Org ist über Jahre gewachsen. Typische Quellen für Passwort-Logins sind:
 
@@ -88,18 +88,18 @@ Multi-Faktor-Authentifizierung ist das zweite Sicherheitsthema auf vielen Listen
 
 MFA und die OAuth-Abschaltung zeigen in dieselbe Richtung: keine geteilten Passwörter mehr. Integrationsuser sollten sich nie interaktiv anmelden, und echte Benutzer sollten nie Accounts mit Integrationen teilen.
 
-## Wer sollte die Umstellung verantworten?
+## Der Kunde verantwortet die Umstellung
 
-Der Kunde. Integrationen verbinden die Systeme des Kunden, und die Zugangsdaten gehören in seinen Tresor und nicht in die Konfiguration eines Partners. In der Praxis heißt das:
+Integrationen verbinden die Systeme des Kunden, und die Zugangsdaten gehören in seinen Tresor und nicht in die Konfiguration eines Partners. In der Praxis heißt das:
 
 - **Ein benannter Verantwortlicher pro Integration** auf Kundenseite, auch wenn ein Partner die technische Arbeit macht.
 - **Ein eigener Integrationsuser pro Integration**, nur mit den Rechten, die er braucht. Geteilte technische Benutzer machen es unmöglich zu erkennen, welches System was tut.
 - **Secrets und Zertifikate im Tresor des Kunden**, erneuert beim Partnerwechsel. Das grundsätzliche Prinzip erkläre ich in [warum Kunden ihre DevOps-Tools selbst besitzen sollten](../warum-kunden-devops-tools-selbst-besitzen-sollten/).
 - **Änderungen über den normalen Release-Prozess**, mit der Konfiguration der neuen Connected App oder External Client App im Repository und Deployment über die Pipeline.
 
-## Wie sollte der Plan aussehen?
+## Erster Schritt: Bestandsaufnahme bis Ende November 2026
 
-Eine realistische Reihenfolge für die kommenden Monate:
+Vom 20. Februar 2027 zurückgerechnet bleiben knapp vier Monate. Eine realistische Reihenfolge:
 
 ```schritte
 Bestandsaufnahme | bis Ende November 2026
@@ -113,5 +113,3 @@ Selbst abschalten | Anfang Februar 2027
 SOAP-Versionen | Frühjahr 2027
   Verbleibende SOAP-Logins vor Summer '27 von API-Versionen unter 65.0 wegbringen.
 ```
-
-Der Termin steht fest und die Arbeit ist planbar, solange sie mit einer vollständigen Liste beginnt.

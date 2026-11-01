@@ -10,11 +10,10 @@ categories: [revenue-cloud, architecture]
 contactBrief: integration
 tags: [Revenue Cloud, SAP S/4HANA, Quote-to-Cash, Schnittstellen, Billing, Fertigung]
 takeaways:
-  - "Mit Revenue Cloud und SAP S/4HANA führt Salesforce meist Verkaufskatalog, Konfiguration, Angebot und Freigabe, SAP behält Materialstamm, Lieferung und die Rechnung für das Maschinengeschäft."
-  - "Der SAP-Accelerator von MuleSoft beschreibt SAP als führendes System für Preiskonditionen und legt den SAP-Auftrag aus Salesforce an, allerdings nur für Sales Cloud und Salesforce CPQ, nicht für Revenue Cloud."
-  - "Es gibt drei sinnvolle Schnitte: nur Angebot, Angebot und Auftrag oder Quote-to-Cash komplett mit Revenue Cloud Billing als Nebenbuch, das Buchungen an das ERP übergibt."
-  - "Revenue Cloud Billing bringt eigene Gesellschaften (Legal Entities), Buchungsperioden und Sachkonten mit, deshalb muss die Finanzabteilung vor der ersten Rechnung aus Salesforce zustimmen."
-  - "Halten Sie die Aufteilung in einer Tabelle fest: Eigentümer pro Objekt, Richtung jeder Schnittstelle und eine benannte Person für Fehler, unterschrieben von Vertrieb, Finanzen und IT."
+  - "Der SAP-Accelerator von MuleSoft legt den SAP-Auftrag aus Salesforce an, beschreibt das aber nur für Sales Cloud und CPQ, nicht für Revenue Cloud."
+  - "Sinnvoll sind drei Schnitte: nur Angebot, Angebot und Auftrag oder Quote-to-Cash komplett mit Revenue Cloud Billing als Nebenbuch."
+  - "Billing bringt eigene Legal Entities, Buchungsperioden und Sachkonten mit. Die Finanzabteilung muss vor der ersten Rechnung zustimmen."
+  - "Halten Sie die Aufteilung in einer Tabelle fest, mit Eigentümer pro Objekt, Richtung jeder Schnittstelle und einer Person für Fehler."
 faq:
   - q: "Soll SAP oder Revenue Cloud die Preise führen?"
     a: "Genau eines von beiden. Wenn SAP-Konditionen heute schon Kundenpreise und Rabatte abbilden, bleibt SAP führend, und das Angebot holt den Nettopreis über eine API. Salesforce Pricing lohnt sich, wenn die Logik ohnehin im Vertrieb lebt, etwa bei Abonnements und Bundles."
@@ -41,7 +40,7 @@ Drei Details auf dieser Seite sind für Hersteller wichtig:
 
 Das Muster lässt sich trotzdem auf Revenue Cloud übertragen, das in der Winter-'27-Dokumentation auch Revenue Management heißt und als Revenue Lifecycle Management begonnen hat. Revenue Cloud arbeitet auf Standardobjekten: Das [Datenmodell für Angebote](https://developer.salesforce.com/docs/platform/data-models/guide/transaction-management-quote.html) und das [Datenmodell für Aufträge](https://developer.salesforce.com/docs/platform/data-models/guide/transaction-mgmt-order.html) nennen Quote, Quote Line Item, Order, Order Item, Asset, Product2 und Pricebook Entry. Die Schnittstellenpunkte sind also dieselben, das Design stammt aber von Ihrem Partner, und jemand auf Ihrer Seite sollte es prüfen.
 
-## Welche drei Schnitte gibt es im Quote-to-Cash?
+## Nur Angebot, Angebot und Auftrag oder alles bis zur Rechnung
 
 Ich sehe drei Schnitte, die funktionieren. Jeder verschiebt die Grenze zwischen Salesforce und SAP einen Schritt weiter nach rechts.
 
@@ -89,7 +88,7 @@ Jeder dieser Datensätze existiert in SAP schon. Vor Schnitt 3 muss die Finanzab
 
 Saß die Finanzabteilung bei diesen vier Punkten nicht mit am Tisch, ist Schnitt 3 nicht reif.
 
-## Ein typisches Szenario, als Annahme
+## Rechenbeispiel: Maschinen, Ersatzteile und Fernüberwachung
 
 Ein Maschinenbauer mit SAP S/4HANA verkauft 40 Grundmaschinen mit Optionen, Ersatzteile und pro Maschine ein Abonnement für Fernüberwachung. Kundenpreise für Ersatzteile sind seit Jahren gepflegte SAP-Konditionen. Maschinenpreise folgen Listenpreisen plus Aufpreisen für Optionen.
 
@@ -109,7 +108,7 @@ SAP-Auftrag --> SAP-Rechnung
 
 Was der Vertriebsinnendienst dann zusätzlich braucht, etwa den Auftragsstatus live aus SAP, folgt dem Muster aus [Agentforce und SAP: Auftragsstatus über MuleSoft](../agentforce-sap-auftragsstatus/).
 
-## Wie halten Sie die Aufteilung fest?
+## Eine Tabelle mit Eigentümer pro Objekt
 
 Auf einer Seite, so dass ein neuer Partner sie in zehn Minuten versteht:
 
@@ -121,8 +120,6 @@ Auf einer Seite, so dass ein neuer Partner sie in zehn Minuten versteht:
 
 Diese Schnittstellen zu entwerfen ist ein großer Teil meiner Arbeit bei [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/). Die größere Frage, ob Revenue Cloud überhaupt passt, behandelt das Masterclass-Kapitel [Revenue Cloud: Überblick und Entscheidung](../../masterclass/revenue-cloud/revenue-cloud-ueberblick/).
 
-## Wo starten Sie?
+## Die unklaren Zeilen mit der Finanzabteilung klären
 
 Schreiben Sie Ihre Quote-to-Cash-Schritte in eine Spalte und daneben SAP oder Salesforce, so wie es heute läuft. Markieren Sie dann die drei Zeilen, bei denen die Antwort unklar ist: In den meisten Unternehmen sind das Preis, Auftrag und Rechnung. Klären Sie diese drei mit der Finanzabteilung, bevor Sie Partner um Schätzungen bitten, denn jede Antwort verändert den Umfang um Wochen.
-
-Die Aufteilung zwischen Revenue Cloud und SAP wird pro Objekt entschieden und von der Finanzabteilung unterschrieben, bevor der Bau beginnt.

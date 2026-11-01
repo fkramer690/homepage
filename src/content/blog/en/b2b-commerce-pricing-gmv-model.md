@@ -10,11 +10,11 @@ categories: [b2b-commerce, architecture]
 contactBrief: licences
 tags: [B2B Commerce, pricing, GMV, licences, Order Management, make-or-buy]
 takeaways:
-  - "Salesforce sells B2B Commerce as Growth and Advanced Edition, both at \"Contact for Pricing\". The fee is a percentage of gross merchandise value (GMV), and Salesforce publishes no percentage."
-  - "GMV is the revenue through the store minus tax and shipping. Only orders placed through the commerce storefront count, not orders from EDI, phone or other channels."
-  - "Growth includes 6 storefronts, Order Management Lite and 250K Data Cloud credits, Advanced 10 storefronts, full Order Management and 500K credits. Both include 20 inventory locations and Merchant Agent."
-  - "Not in the fee: buyer licences, Revenue Cloud Advanced for advanced pricing, standalone Order Management for orders from other channels, implementation and ERP integration."
-  - "Get the GMV definition, the rate, any minimum and the true-up rule in writing. Figures of 1 to 2 percent come from integrators and are not confirmed by Salesforce."
+  - "B2B Commerce comes as Growth and Advanced Edition. The fee is a percentage of gross merchandise value (GMV), and Salesforce publishes no rate."
+  - "GMV is store revenue minus tax and shipping. Only orders through the commerce storefront count, not orders from EDI, phone or other channels."
+  - "Growth includes 6 storefronts, Order Management Lite and 250K Data Cloud credits, Advanced 10 storefronts, full Order Management and 500K credits."
+  - "Not in the fee: buyer licences, Revenue Cloud Advanced for pricing logic, standalone Order Management, implementation and ERP integration."
+  - "Get the GMV definition, rate, minimum and true-up rule in writing. The 1 to 2 percent figures come from integrators, not from Salesforce."
 faq:
   - q: "How much does Salesforce B2B Commerce cost?"
     a: "Salesforce publishes no price. Both the Growth and the Advanced Edition show \"Contact for Pricing\", and the pricing page says Salesforce takes a percentage of gross merchandise value based on the functions you need. The rate is part of your quote."
@@ -43,7 +43,7 @@ That has three consequences for a manufacturer:
 
 Salesforce now also markets the product as "Agentforce Commerce for B2B", according to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/agentforce-for-guided-shopping-for-b2b-and-d2c/increase-revenue-with-agentforce-for-guided-shopping). On the pricing page the editions are still called Commerce Cloud B2B Growth Edition and Commerce Cloud B2B Advanced Edition.
 
-## What do Growth and Advanced include?
+## Growth and Advanced compared
 
 The pricing page lists these items (October 2026):
 
@@ -62,7 +62,7 @@ For most manufacturers the decisive line is Order Management. [Order Management]
 
 One rule applies to existing customers: the pricing page says customers who already use Order Management "will need to renew on Commerce Cloud Advanced". Upgrades during the contract term are possible.
 
-## What is not included in the fee?
+## Buyer licences, implementation and ERP integration come on top
 
 This is where estimates go wrong most often. The GMV fee covers the store and the items above. These come on top:
 
@@ -80,7 +80,7 @@ Integrators publish rates of about 1 percent of GMV for Growth and 2 percent for
 Salesforce does not confirm these figures: its pricing page shows "Contact for Pricing" for both editions. I treat them as a rough starting point for a first estimate and nothing more.
 ```
 
-What I would rather do is calculate with the rate as a variable. A typical scenario, as an assumption: a manufacturer expects 15 million euros of spare parts revenue through the store in year three, net of tax and shipping. Every percentage point of GMV is then 150,000 euros a year. The difference between a quote at 1 percent and one at 2 percent is the salary of more than one inside sales employee. That is why the rate, not the licence count, is what you negotiate.
+What I would rather do is calculate with the rate as a variable. Worked example: a manufacturer expects 15 million euros of spare parts revenue through the store in year three, net of tax and shipping. Every percentage point of GMV is then 150,000 euros a year. The difference between a quote at 1 percent and one at 2 percent is the salary of more than one inside sales employee. That is why the rate, not the licence count, is what you negotiate.
 
 Buyer licences are still not small change. In the same scenario with 250 dealers and one buyer each on a member licence, that is 250 times $35 times 12, so $105,000 a year at list price. If some dealers only order on a few days a month, the login licence at $15 can be cheaper, because according to [Salesforce Help](https://help.salesforce.com/s/articleView?language=en_US&id=sf.users_license_types_communities.htm&type=5) several logins on the same day consume only one login. Work out that split before the quote, not after it.
 
@@ -96,8 +96,6 @@ Before signing, I would get these points in writing:
 
 How the editions of the core platform affect a licence plan is described in [Salesforce editions Core, Advanced, Max](../salesforce-editions-core-advanced-max/). Which licence type each user group needs is in [Salesforce licences: does everyone need a full one?](../salesforce-licences-full-licence-needed/).
 
-## Where should you start?
+## Calculate the fee at 1, 2 and 3 percent
 
 Estimate store GMV for three years with a rising digital share, then calculate the fee at 1, 2 and 3 percent next to buyer licences and implementation. If the business case only works at the lowest rate, you know your negotiating position before the first call. The full calculation is in the [B2B webshop business case for manufacturers](../b2b-webshop-business-case-manufacturers/), and the place of pricing in the overall decision is in the [masterclass chapter on whether B2B Commerce is worth it](../../masterclass/b2b-commerce/b2b-commerce-worth-it-overview/). An independent check of quotes is part of my work on [make-or-buy and licence forecasts](../../services/make-or-buy-licences/).
-
-The GMV fee is fair when the store sells, but only if you know the rate and the definition before you sign.

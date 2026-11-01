@@ -11,7 +11,6 @@ coAuthor: juliane
 contactBrief: change
 tags: [Schulungskonzept, Salesforce-Schulung, Change Management, Key User, Train the Trainer]
 takeaways:
-  - "Ein Schulungskonzept für Salesforce plant nach Rollen und Abläufen, nicht nach Funktionen. Ein Disponent lernt seinen Arbeitstag, keinen Rundgang durch das System."
   - "Schulung deckt im ADKAR-Modell Wissen und Fähigkeit ab. Fehlen Bewusstsein oder Bereitschaft, hilft auch die beste Schulung nicht."
   - "Geschult wird am eigenen Fall in einer Sandbox mit echten Abläufen und anonymisierten Daten, kurz vor dem Go-live, nicht Monate vorher."
   - "Key User schulen ihr eigenes Team besser als ein Trainer aus dem Projekt, wenn sie vorher selbst gründlich geschult wurden."
@@ -36,7 +35,7 @@ Im [ADKAR-Modell](../change-management-salesforce-einfuehrung/) deckt Schulung z
 
 Man erkennt das an der Stimmung in einer Schulung. Wenn die erste halbe Stunde aus Fragen besteht wie „Warum machen wir das überhaupt?“, fehlt Awareness. Der Trainer kann die Frage nicht beantworten, weil er die Entscheidung nicht getroffen hat. Eine kurze Einleitung durch die Führungskraft der Gruppe, warum der neue Ablauf kommt und was er dem Team bringt, spart diese halbe Stunde.
 
-## Wie planen Sie Schulungen nach Rollen?
+## Schulung nach Rollen und Abläufen planen
 
 Ein Funktionsrundgang durch Salesforce zeigt alles und bleibt bei niemandem hängen. Besser ist eine Matrix aus Rollen und Abläufen. Für jede betroffene Rolle steht fest, welche Abläufe sie können muss, in welchem Format sie lernt und wann.
 
@@ -58,10 +57,10 @@ Anwender lernen lieber von Kollegen, die dieselben Kunden, Maschinen und Ausnahm
 Der Ansatz hat Voraussetzungen. Key User brauchen die freigestellte Zeit, fertige Schulungsunterlagen und Übungsfälle, die das Projekt vorbereitet. Ohne diese Vorbereitung improvisiert jeder Key User anders, und die Teams lernen unterschiedliche Wege.
 
 ```praxis
-Ich habe Schulungen in allen diesen Formen umgesetzt, je nach Wunsch des Kunden: Train the Trainer über Key User, eine eigene Schulungs-Sandbox und Schulungen je Rolle. In Field-Service-Einführungen hilft es außerdem, wenn Disponenten der nächsten Welle vorher in der laufenden Region zuschauen. Echte Fälle aus dem Alltag einer Kollegin bringen ihnen mehr als jede Übung im Schulungsraum.
+Ich habe Schulungen in allen diesen Formen umgesetzt, je nach Wunsch des Kunden: Train the Trainer über Key User, eine eigene Schulungs-Sandbox und Schulungen je Rolle. In Field-Service-Einführungen hilft es außerdem, wenn Disponenten der nächsten Welle vorher in der laufenden Region zuschauen. Echte Fälle aus dem Alltag einer Kollegin bringen ihnen mehr als eine Übung im Schulungsraum.
 ```
 
-## Wo wird geschult?
+## Geschult wird in einer eigenen Sandbox
 
 In einer eigenen Schulungs-Sandbox. Salesforce nennt Schulung ausdrücklich als einen der Zwecke von [Sandboxes](https://help.salesforce.com/s/articleView?id=platform.deploy_sandboxes_parent.htm&type=5). Schulungen in der Test-Sandbox stören den Abnahmetest, und Schulungen in Produktion erzeugen echte Angebote und Aufträge, die jemand wieder aufräumen muss.
 
@@ -73,7 +72,7 @@ Echte Kundendaten gehören nicht unanonymisiert in eine Schulungs-Sandbox, auf d
 
 Jede Übung braucht einen Fall, den die Teilnehmenden aus ihrem Alltag kennen: ein typischer Kunde, eine typische Maschine, eine typische Störung. Wer seine eigenen Abläufe wiedererkennt, überträgt das Gelernte schneller in den Alltag.
 
-## Was hilft nach der Schulung?
+## Nach der Schulung gehört die Hilfe ins System
 
 Was in der Schulung gelernt wurde, geht ohne Anwendung im Alltag schnell wieder verloren. Deshalb gehört Hilfe in das System selbst. Mit der In-App Guidance von Salesforce lassen sich kurze Hinweise und geführte Walkthroughs direkt auf den Seiten einblenden, auf denen jemand arbeitet, zum Beispiel beim ersten Anlegen eines Angebots ([Trailhead: In-App-Prompts erstellen](https://trailhead.salesforce.com/content/learn/modules/user-engagement/create-in-app-prompts)). Hinweise sind enthalten, für mehr als drei eigene Walkthroughs braucht es eine Zusatzlizenz. Prüfen Sie das für Ihre Org, bevor Sie viele Walkthroughs planen.
 
@@ -83,8 +82,6 @@ Dazu kommen kurze Anleitungen pro Ablauf, die im System verlinkt sind, und die K
 
 Nicht an der Zahl der Teilnehmenden. Die Zahl zeigt, dass das Projekt geschult hat, nicht, dass jemand anders arbeitet. Zwei Quellen sind aussagekräftiger: die Fragen der ersten Wochen, die Key User und Support sammeln, und die Nutzungszahlen pro Gruppe. Häufen sich Fragen zu einem Ablauf, fehlt dort Wissen, und eine kurze Nachschulung lohnt sich. Bleiben Datensätze aus, obwohl niemand fragt, fehlt meist Bereitschaft. Wie Sie diese Zahlen aufbauen, beschreibe ich in [Salesforce-Nutzung nach dem Go-live messen](../salesforce-nutzung-messen-nach-go-live/).
 
-## Wo fangen Sie an?
+## Rollen und ihre Abläufe für den ersten Tag auflisten
 
-Schreiben Sie die betroffenen Rollen untereinander und daneben die drei bis fünf Abläufe, die jede Rolle ab dem ersten Tag können muss. Diese Liste ist der Kern Ihres Schulungskonzepts. Danach legen Sie fest, wer welche Rolle schult, und planen die Schulungs-Sandbox früh genug, damit Übungsfälle vor dem Abnahmetest fertig sind.
-
-Eine gute Schulung kommt kurz vor dem Go-live, am eigenen Fall und von einem Kollegen. Mit meiner Kooperationspartnerin [Juliane Winterscheid](../../partner/juliane-winterscheid/) plane ich Schulung und Change Management gemeinsam. Mehr dazu lesen Sie unter [Change Management Beratung für Salesforce](../../leistungen/change-management/).
+Schreiben Sie die betroffenen Rollen untereinander und daneben die drei bis fünf Abläufe, die jede Rolle ab dem ersten Tag können muss. Diese Liste ist der Kern Ihres Schulungskonzepts. Danach legen Sie fest, wer welche Rolle schult, und planen die Schulungs-Sandbox früh genug, damit Übungsfälle vor dem Abnahmetest fertig sind. Mit meiner Kooperationspartnerin [Juliane Winterscheid](../../partner/juliane-winterscheid/) plane ich Schulung und Change Management gemeinsam. Mehr dazu lesen Sie unter [Change Management Beratung für Salesforce](../../leistungen/change-management/).

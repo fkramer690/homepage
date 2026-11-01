@@ -10,10 +10,10 @@ categories: [devops]
 contactBrief: integration
 tags: [integration, security, oauth, release management, partner governance]
 takeaways:
-  - "Salesforce retires the OAuth 2.0 username-password flow for connected apps on 20 February 2027; integrations that log in with username, password and security token will then fail."
+  - "From 20 February 2027, logins through the OAuth username-password flow for connected apps fail."
   - "SOAP API login() calls need the Use Any API Auth permission from 1 December 2026, and SOAP login() in API versions 31.0 to 64.0 is retired in Summer '27."
-  - "The replacements are the client credentials flow for server-to-server integrations, the JWT bearer flow for certificate-based trust and the web server flow with PKCE for user-facing apps."
-  - "Failures are often silent: a nightly sync simply stops updating records, so the inventory has to start from Login History, middleware logs and vendor confirmations."
+  - "The replacements are client credentials or JWT bearer for server-to-server integrations and the web server flow with PKCE for user-facing apps."
+  - "Failures are silent: a nightly sync stops updating records. The search starts in Login History and middleware logs."
   - "Every integration needs a named owner on the client side, a dedicated integration user and credentials stored in the client's own vault."
 faq:
   - q: "When does the Salesforce OAuth username-password flow stop working?"
@@ -40,7 +40,7 @@ Salesforce lists the details in its [developer guide to Winter '27](https://deve
 
 ![Timeline of the Salesforce login changes for integrations: from 1 December 2026 SOAP login() needs the user permission Use Any API Auth, on 20 February 2027 the OAuth username-password flow for connected apps ends, in Summer '27 SOAP login() in API versions 31.0 to 64.0 is retired and API versions 31.0 to 40.0 get no more updates, and in Summer '28 SOAP, REST and Bulk API versions 31.0 to 40.0 fail. Query, create and update keep working; what changes is how integrations log in.](../../../assets/blog/password-flow-timeline-en.png)
 
-## Why does this matter more in enterprise organisations?
+## Enterprise organisations are hit harder
 
 A small org has a handful of integrations, and the admin knows them. An enterprise org has grown over years. Typical sources of password-based logins are:
 
@@ -88,18 +88,18 @@ Multi-factor authentication is the other security topic on many lists right now.
 
 MFA and the OAuth retirement point in the same direction: no more shared passwords. Integration users should never log in interactively, and human users should never share accounts with integrations.
 
-## Who should own the migration?
+## The client owns the migration
 
-The client. Integrations connect the client's systems, and the credentials belong in the client's vault, not in a partner's configuration. In practice that means:
+Integrations connect the client's systems, and the credentials belong in the client's vault, not in a partner's configuration. In practice that means:
 
 - **A named owner per integration** on the client side, even if a partner does the technical work.
 - **One dedicated integration user per integration**, with only the permissions it needs. Shared technical users make it impossible to tell which system does what.
 - **Secrets and certificates in the client's vault**, rotated when a partner leaves. I explain the broader principle in [why clients should own their DevOps tools](../why-clients-should-own-their-devops-tools/).
 - **Changes through the normal release process**, with the new connected app or External Client App configuration in the repository and deployed through the pipeline.
 
-## What should the plan look like?
+## First step: inventory by the end of November 2026
 
-A realistic order for the coming months:
+Counting back from 20 February 2027 leaves just under four months. A realistic order:
 
 ```schritte
 Inventory | by end of November 2026
@@ -113,5 +113,3 @@ Switch off yourself | early February 2027
 SOAP versions | spring 2027
   Move remaining SOAP logins away from API versions below 65.0 before Summer '27.
 ```
-
-The deadline is fixed and the work is predictable, as long as it starts with a complete list.

@@ -9,11 +9,11 @@ topic: data
 categories: [ai, architecture]
 tags: [agentforce, erp, legacy systems, rpa, mulesoft, manufacturing]
 takeaways:
-  - "An agent can work with an ERP that has no API through three detours: a read-only database replica behind a small API, document extraction with RPA, or the Systems Integration Agent."
-  - "For order status, delivery dates and stock, a replica behind a MuleSoft API is the most stable route, and the agent action stays unchanged when the ERP is replaced later."
-  - "MuleSoft IDP sends documents below a confidence threshold to a human reviewer; the Salesforce Admins example uses 80 percent, and every reprocessing of a document is charged in full."
-  - "RPA and the Systems Integration Agent work through the screens; Salesforce says the agent relearns a changed screen in about 20 minutes, which still needs monitoring and an owner."
-  - "Prices, credit limits and availability checks stay in the ERP; an agent connected to an old ERP may enter data under human review, but it should not decide."
+  - "An agent reaches an ERP without an API through a database replica behind a small API, document extraction with RPA, or the Systems Integration Agent."
+  - "For order status, delivery dates and stock, a replica behind a MuleSoft API is the most stable route, and it moves over when the ERP is replaced."
+  - "MuleSoft IDP sends documents below a confidence threshold to a human reviewer, and every reprocessing of a document is charged in full."
+  - "RPA and the Systems Integration Agent work through the screens, so they need monitoring and an owner."
+  - "Prices, credit limits and availability checks stay in the ERP. An agent on an old ERP may enter data under review, but it should not decide."
 faq:
   - q: "Can Agentforce connect to an ERP without an API?"
     a: "Yes, through a detour. Data can be read from a database replica behind a MuleSoft API, documents can be entered with MuleSoft IDP and RPA, and the Systems Integration Agent operates browser-based applications through their screens."
@@ -40,7 +40,7 @@ The same applies to MES and other shop floor systems, which often have only a de
 
 So there are three cases. If an API exists, the standard path applies, which I describe in [Agentforce and SAP order status](../agentforce-sap-order-status-mulesoft/). If the data can be reached but there is no API, you build a read layer. If only the screen is left, you automate the screen.
 
-## Which routes reach an ERP without an API?
+## The routes to an ERP without an API
 
 ### Route 1: read from a replica behind your own API
 
@@ -74,13 +74,13 @@ I like one detail of this pattern: the agent decides nothing. It is a chat front
 
 At Dreamforce 2026 Salesforce presented the Systems Integration Agent as part of Agentforce Operations, in the same section as the back-office agent Marshall, marked [GA](https://www.salesforce.com/blog/dreamforce-2026-announcements/). According to the [product blog](https://www.salesforce.com/blog/regrello/) it learns a browser-based application "the way a new employee would, in about 90 minutes", without code, APIs or RPA, including "customized SAP, Oracle, and homegrown systems". When a screen changes, it relearns that part "typically in about 20 minutes, with the repair logged for an administrator to review". The [Agentforce Operations page](https://www.salesforce.com/agentforce/operations/) adds an audit trail and preserved permissions and approval controls, and says the product is priced by blueprint packages, from a starter pack with 5 blueprints to Large with more than 50, "not priced based on consumption". I found no list prices.
 
-The catch for manufacturers is the word "browser-based". If your ERP or MES runs as a desktop client, check whether a web client exists before anyone plans with this agent. These are launch-month vendor claims, and I would test them on your own screens, including one ERP update in a test system, before relying on them.
+For manufacturers, the word that matters is "browser-based". If your ERP or MES runs as a desktop client, check whether a web client exists before anyone plans with this agent. These are launch-month vendor claims, and I would test them on your own screens, including one ERP update in a test system, before relying on them.
 
 ```hinweis offen
 The product blog states GA explicitly only for Marshall. Confirm availability of the Systems Integration Agent for your org with your account team.
 ```
 
-## A typical scenario: spare part orders at a machine builder with an old ERP
+## Worked example: spare part orders at a machine builder with an old ERP
 
 Assume a machine builder with an on-premises ERP that offers no usable interface, Service Cloud and a dealer portal on Salesforce, and 40 dealers. All numbers are assumptions to show the method.
 
@@ -108,4 +108,4 @@ The second limit is the number of write processes. Every bot is software that so
 
 And thirty orders a month do not justify an RPA bot, no matter how old the ERP is.
 
-With an old ERP, start with the read route behind a stable API contract and automate writing only where documents and screens are stable and a person reviews the uncertain cases.
+My advice for an old ERP: start with the read route behind a stable API contract. Automate writing only where documents and screens are stable and a person reviews the uncertain cases.

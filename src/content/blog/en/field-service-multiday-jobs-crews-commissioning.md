@@ -9,10 +9,10 @@ topic: field-service
 categories: [field-service]
 tags: [Field Service, Multiday appointments, Crews, Commissioning, Scheduling, Manufacturing]
 takeaways:
-  - "Salesforce Field Service plans long jobs as multiday appointments of up to eight calendar weeks, but automated scheduling and optimization only handle jobs that fit into a 30-day window."
-  - "Multiday appointments cannot be combined with complex work and cannot go to capacity-based resources, so a partner company modelled as capacity cannot take a commissioning job."
-  - "A crew is a service resource of its own. Scheduling looks at the crew's absences and efficiency, not at those of its members, and members get no assignment notification."
-  - "With Enhanced Scheduling and Optimization, a dependency group schedules up to five appointments all or none, and multiday appointments are never reshuffled or dropped."
+  - "A multiday appointment may span up to eight calendar weeks. Automated scheduling and optimization only handle jobs that fit into 30 days."
+  - "Multiday appointments cannot use complex work or go to capacity-based resources, so a partner modelled only as capacity is ruled out."
+  - "A crew is a service resource of its own. Scheduling sees the crew's absences, not its members', and members get no assignment notification."
+  - "With Enhanced Scheduling, a dependency group schedules up to five appointments all or none. Multiday appointments are never reshuffled."
   - "For commissioning I plan the site survey and the main job as separate appointments and keep the project plan outside the Gantt."
 faq:
   - q: "How long can a multiday service appointment be in Salesforce Field Service?"
@@ -28,7 +28,7 @@ draft: false
 
 Salesforce Field Service can plan commissioning, overhauls and other jobs that keep a team on site for days, but with clear limits. A multiday appointment may span up to eight calendar weeks, while automated scheduling and optimization only handle jobs that fit into 30 days. Teams are modelled as crews, which the engine treats as one resource. Complex work links appointments in a fixed order, yet it cannot be combined with multiday appointments. For manufacturers whose field service is mostly commissioning, I therefore plan the long job in Field Service and keep the project plan with its phases in the ERP or a project tool.
 
-## Why do long jobs need their own planning model?
+## Long jobs need their own planning model
 
 Field Service was built for many short jobs per technician and day. That is where route and slot optimisation pays off, as described in [Salesforce Field Service: when is it worth it?](../salesforce-field-service-worth-it/). Salesforce sells the product today as Field Service and Operations, and the scheduling logic is still the same.
 
@@ -64,7 +64,7 @@ A crew is a group of technicians that the engine schedules as one unit. Technica
 
 For a commissioning team that means the crew has to be maintained with care. A vacation becomes either a change of crew membership or, if the crew cannot work without that person, an absence on the crew. Otherwise the plan shows three people where only two will arrive.
 
-## What does complex work add, and where does it stop?
+## Complex work links up to five appointments
 
 Complex work links appointments in a fixed order.
 
@@ -86,9 +86,9 @@ The limit that hits commissioning hardest: multiday scheduling and complex work 
 | Survey before installation | Complex work | Not with multiday appointments |
 | Partner supplies a fitter | Single service resource | Capacity-based partners cannot take multiday jobs |
 
-## A typical scenario, as an assumption
+## Worked example: a packaging line in 12 working days
 
-A packaging machine builder commissions a line at a customer site. Commissioning takes 12 working days with a crew of three: a crew leader, a mechanic and an electrician. A one-day site survey takes place two weeks before. The electrician comes from a service partner.
+The figures are assumed. A packaging machine builder commissions a line at a customer site. Commissioning takes 12 working days with a crew of three: a crew leader, a mechanic and an electrician. A one-day site survey takes place two weeks before. The electrician comes from a service partner.
 
 Here is how I would set this up in Field Service:
 
@@ -98,16 +98,14 @@ Here is how I would set this up in Field Service:
 4. **Notifications.** A custom push notification informs all three members on dispatch, because Field Service does not do it for crew members.
 5. **Phases outside the Gantt.** Mechanical installation, electrical commissioning, test run and acceptance stay as milestones in the project plan of the ERP. The appointment carries the work, the time and the documentation.
 
-If the commissioning took six weeks, I would schedule the appointment by hand or split it into two multiday appointments of three weeks each. Each split adds coordination, so I only do it when automated scheduling really helps.
+If the commissioning took six weeks, I would schedule the appointment by hand or split it into two multiday appointments of three weeks each. Each split adds coordination, so I only do it when it lets automated scheduling make proposals.
 
 ## When should long jobs stay outside Field Service?
 
 My rule: if most of your field service is commissioning and overhauls, Field Service rarely pays off for planning alone. The engine has little to optimise when a team is booked for two weeks. Field Service earns its place when the same technicians also run maintenance and breakdown visits between projects, because then both kinds of work land in one plan.
 
-Two decisions belong in the design before a partner builds anything. First, which system holds the project plan with phases and dates, and how the dates reach the appointment. Second, how dispatchers protect long jobs from short ones; the scheduling policy from [how much scheduling should be automatic](../salesforce-field-service-scheduling-automation/) needs a clear rule for that. Where the architecture question goes beyond Field Service, I describe my approach under [Salesforce architecture](../../services/salesforce-architecture/).
+Two decisions belong in the design before a partner builds anything. The first: which system holds the project plan with phases and dates, and how the dates reach the appointment. The second: how dispatchers protect long jobs from short ones; the scheduling policy from [how much scheduling should be automatic](../salesforce-field-service-scheduling-automation/) needs a clear rule for that. Where the architecture question goes beyond Field Service, I describe my approach under [Salesforce architecture](../../services/salesforce-architecture/).
 
-## Where should you start?
+## Review your last ten commissioning jobs
 
 Take your last ten commissioning jobs and note duration, team size, preceding work and whether partners were involved. If most stay under 30 days and the teams are stable, multiday appointments with crews will carry the planning. If many run longer or have more than five linked steps, keep the project plan outside and use Field Service for the work on site.
-
-Field Service handles multiday jobs and crews well within 30 days and without dependencies, and beyond that a project plan has to carry the load.

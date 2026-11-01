@@ -1,0 +1,39 @@
+---
+// Meta line in the head of every blog article and masterclass chapter: author photo(s),
+// name(s), the newest date and the reading time. On phones it fits one line
+// (docs/layouts.md "Article head"); with a co-author the date moves to a second line.
+import { Image } from 'astro:assets';
+import portrait from '../assets/portrait.png';
+import julianePortrait from '../assets/partners/juliane-winterscheid-portrait.jpg';
+import { en } from '../i18n/en';
+import { de } from '../i18n/de';
+import { type AuthorId, getAuthor } from '../lib/authors';
+import { formatShortDate } from '../lib/blog';
+
+interface Props {
+  lang: 'en' | 'de';
+  authors: AuthorId[];
+  pubDate?: Date;
+  updatedDate?: Date;
+  minutes: number;
+}
+const { lang, authors, pubDate, updatedDate, minutes } = Astro.props;
+const t = lang === 'de' ? de : en;
+const img = { fabian: portrait, juliane: julianePortrait };
+const day = (d: Date) => d.toISOString().slice(0, 10);
+// Only the newest date is shown; an update on the publishing day is no update.
+const updated = updatedDate && (!pubDate || day(updatedDate) > day(pubDate)) ? updatedDate : undefined;
+const date = updated ?? pubDate;
+---
+<p class="post-meta post-meta-line">
+  <span class="post-meta-who">
+    <span class="post-byline-faces">{authors.map((a) => <Image src={img[a]} alt="" width={28} height={28} densities={[1, 2]} />)}</span>
+    <span class="post-meta-names">{authors.map((a) => getAuthor(lang, a).name).join(' & ')}</span>
+  </span>
+  {date && (
+    <span class="post-meta-date">
+      {updated && <span class="post-meta-label">{t.blog.updated} </span>}<time datetime={date.toISOString()}>{formatShortDate(date, lang)}</time>
+    </span>
+  )}
+  <span class="post-meta-time">{minutes} {t.blog.readingTimeShort}<span class="post-meta-long"> {t.blog.readingTimeWord}</span></span>
+</p>

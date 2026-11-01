@@ -8,10 +8,10 @@ chapter: 7
 short: "Costs and tokens"
 summary: "How token prices in development and Flex Credits at Agentforce runtime fit together, and how a manufacturer budgets for both."
 takeaways:
-  - "AI in a Salesforce programme costs in two currencies: coding agents bill by tokens, Agentforce agents at runtime bill by actions and prompts in Flex Credits. Keep them on separate budget lines."
+  - "Coding agents bill by tokens, Agentforce agents at runtime by actions and prompts in Flex Credits. Keep the two on separate budget lines."
   - "Prompt caching is the biggest lever for coding agents: an example session on Claude Opus 5.5 costs about $2.34 with caching and about $12.40 without."
-  - "Anthropic puts Claude Code at around $13 per developer per active day and $150 to $250 a month; seat prices now buy a usage budget, not unlimited use."
-  - "Core, Advanced and Max include 500,000, 1 million and 2.75 million Flex Credits per org per year; a single dealer agent can use about 3 million in its first year."
+  - "Anthropic puts Claude Code at around $13 per developer per active day. Seat prices now buy a usage budget, not unlimited use."
+  - "Core, Advanced and Max include 500,000, 1 million and 2.75 million Flex Credits per org and year. One dealer agent can use about 3 million in year one."
   - "Data 360 for spare part catalogues and the still unpriced Headless Platform Interactions meter are the items most often missing from estimates."
 articles: [flex-credits-agentforce-costs, salesforce-editions-core-advanced-max, dealer-service-agent-costs, ai-coding-costs-salesforce-project, data-360-costs-for-agents, headless-platform-interactions-budget]
 faq:
@@ -28,7 +28,7 @@ draft: false
 
 AI in a Salesforce programme costs in two currencies. Coding agents such as Claude Code, Codex, Copilot or Agentforce Vibes bill by tokens, and the context the agent re-sends at every step drives the bill harder than the prompt does. Agentforce agents at runtime bill by actions and prompts in Flex Credits, at half a cent per credit. Put both on one line and your estimate will be wrong. The biggest levers are prompt caching in development and, at runtime, Data 360 and test load, which many estimates leave out.
 
-## What are you paying for when AI enters a Salesforce programme?
+## Two currencies: tokens and Flex Credits
 
 The two cost worlds side by side:
 
@@ -129,7 +129,7 @@ Daily agentic users are better off on the flat fee, up to its cap; after that, w
 
 Assume a ten-year-old org with 2,000 Apex classes to summarise before a restart, at 8,000 input and 1,000 output tokens per class on Sonnet 5.5 through the Batch API: 16 million × $1 + 2 million × $5 = **$26** instead of $52. Thinking may push output higher; even triple would not register in a programme budget.
 
-## What does Agentforce cost at runtime?
+## Agentforce at runtime: actions and prompts in Flex Credits
 
 Agentforce bills in Flex Credits, listed on the [Agentforce pricing page](https://www.salesforce.com/agentforce/pricing/) at $500 per 100,000 credits. The multipliers are in the [Flex Credits rate card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf), updated as of 31 August 2026:
 
@@ -172,7 +172,7 @@ With 2,000 MB of spare part catalogues processed in Data 360 (300,000 credits) a
 The rate for Headless Platform Interactions is still TBA on the rate card. Get your account executive to confirm how the pool, multiple orgs and Headless Platform Interactions are billed.
 ```
 
-## A typical scenario: a machine builder's first AI year
+## Worked example: a machine builder's first AI year
 
 Assume a machine builder with 80 Service Cloud users on Core Edition, SAP S/4 and a partner whose six developers use Claude Code at API rates. Planned are the dealer agent from above, an org assessment and Hosted MCP for 25 people in the service back office. All volumes are assumptions.
 
@@ -199,5 +199,3 @@ The 80 Core seats alone cost $187,200 a year at list price, so AI consumption is
 8. **Measure monthly:** [Digital Wallet](https://www.salesforce.com/agentforce/digital-wallet/) shows Agentforce consumption by agent, action and channel and needs Data 360 turned on; for Claude use the spend report or Console.
 
 These questions are part of my [make-or-buy and licence planning](../../../services/make-or-buy-licences/). All chapters are on the [overview page](../).
-
-AI costs in Salesforce are easy to plan once you price tokens and actions separately and name the open meters openly.
