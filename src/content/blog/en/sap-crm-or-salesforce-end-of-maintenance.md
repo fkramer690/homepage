@@ -10,8 +10,8 @@ categories: [architecture]
 contactBrief: make-or-buy
 tags: [SAP CRM, SAP vs Salesforce, S/4HANA, make or buy, CRM selection, end of maintenance]
 takeaways:
-  - "Mainstream maintenance for SAP CRM 7.0 ends at the end of 2027. Optional extended maintenance runs until the end of 2030 with a premium of two percentage points on the maintenance base."
-  - "After SAP CRM there are three paths: CRM functions in S/4HANA, SAP Sales and Service Cloud, or Salesforce. Running on without a plan is the most expensive option."
+  - "Mainstream maintenance for SAP CRM 7.0 ends in 2027. Extended maintenance until the end of 2030 costs a two percentage point premium."
+  - "The three paths are CRM functions in S/4HANA, SAP Sales and Service Cloud, or Salesforce. Running on without a plan costs the most."
   - "Salesforce fits when sales, service, portals and partners are at the centre and the CRM should be more than the step before the ERP order."
   - "The SAP path fits when the CRM mainly prepares orders and service orders that are processed in S/4HANA anyway."
   - "Which path wins depends on processes, interfaces and licences over several years, not on the product name. That calculation belongs before any quote."
@@ -43,7 +43,7 @@ According to SAP, the premium of two percentage points on the maintenance base a
 
 For planning, this means: replacing a CRM, with selection, contract, implementation, data migration and training, easily takes two years in an international company. If you want to be done by 2030, you have to decide in 2027 or 2028.
 
-## What are the options after SAP CRM?
+## Three paths lead away from SAP CRM
 
 Roughly, there are three directions, plus the option of doing nothing for now:
 
@@ -77,7 +77,7 @@ contra: What you need to plan for
 
 For the integration, one simple rule helps: exactly one system leads for each type of data. Which data flows between SAP and Salesforce I describe using the example of [Manufacturing Cloud](../manufacturing-cloud-sap-integration-data-flows/), and for prices in [customer prices: SAP conditions or Salesforce pricing?](../customer-prices-sap-conditions-or-salesforce-pricing/). The architecture behind it is described under [Salesforce integration](../../services/salesforce-integration/).
 
-## Why does the calculation over several years decide?
+## The calculation over several years decides
 
 Quotes often compare licence costs in the first year. For a CRM replacement, that is not enough. The calculation should include at least:
 
@@ -95,14 +95,12 @@ How I prepare such decisions with clients is described under [make or buy and li
 
 ## What does waiting until 2030 cost?
 
-Waiting looks cheap at first, because the system runs and nobody has to ask for budget. The costs come in three places. First, the maintenance premium from 2028, every year until the system is switched off. Second, time: whoever decides only in 2029 has hardly any buffer for selection, implementation and migration, and negotiates with vendors and partners under time pressure. Third, standstill in the system itself. New requirements from sales and service land in a CRM that nobody wants to invest in any more. They move into Excel lists and extra tools that later have to be migrated as well.
+Waiting looks cheap at first, because the system runs and nobody has to ask for budget. From 2028, the maintenance premium is added every year until the system is switched off. Whoever decides only in 2029 has hardly any buffer for selection, implementation and migration, and negotiates with vendors and partners under time pressure. And the system itself stands still: new requirements from sales and service land in a CRM that nobody wants to invest in any more. They move into Excel lists and extra tools that later have to be migrated as well.
 
 On top of that, the same dates apply to SAP ERP 6.0, and many companies move to S/4HANA in the same years. Specialists for SAP, for Salesforce and for data migration are in demand then, and whoever asks late gets the teams that are still free. Keeping SAP CRM running therefore only works as a bridge with a fixed end date.
 
-## Where should you start?
+## Start with an inventory of SAP CRM
 
 Start with an inventory before you ask for quotes: which processes run in SAP CRM today, how many users work with it, which interfaces depend on it, and which data has to move? At the same time, clarify when the move from ECC to S/4HANA is planned, because both projects share interfaces, master data and often the same team.
 
 Then decide which of the two patterns applies to you: CRM as the step before the ERP, or CRM with its own processes for sales, service and partners. With that answer, you can narrow the selection to two paths and set up the calculation over several years.
-
-The end of maintenance is a fixed date, and the decision behind it needs more lead time than the year 2030 suggests.

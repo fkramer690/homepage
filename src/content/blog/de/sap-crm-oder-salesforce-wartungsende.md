@@ -10,8 +10,8 @@ categories: [architecture]
 contactBrief: make-or-buy
 tags: [SAP CRM, SAP vs Salesforce, S/4HANA, Make-or-buy, CRM-Auswahl, Wartungsende]
 takeaways:
-  - "Die reguläre Wartung für SAP CRM 7.0 endet Ende 2027. Bis Ende 2030 gibt es eine optionale verlängerte Wartung mit zwei Prozentpunkten Aufschlag auf die Wartungsbasis."
   - "Nach SAP CRM gibt es drei Wege: CRM-Funktionen in S/4HANA, SAP Sales und Service Cloud oder Salesforce. Ein Weiterbetrieb ohne Plan ist der teuerste."
+  - "Die reguläre Wartung für SAP CRM 7.0 endet Ende 2027. Die verlängerte Wartung bis Ende 2030 kostet zwei Prozentpunkte Aufschlag."
   - "Salesforce passt, wenn Vertrieb, Service, Portale und Partner im Mittelpunkt stehen und das CRM mehr sein soll als die Vorstufe zum ERP-Auftrag."
   - "Der SAP-Weg passt, wenn das CRM vor allem Aufträge und Serviceaufträge vorbereitet, die ohnehin in S/4HANA abgewickelt werden."
   - "Welcher Weg gewinnt, entscheiden Prozesse, Schnittstellen und Lizenzen über mehrere Jahre, nicht der Produktname. Diese Rechnung gehört vor jedes Angebot."
@@ -43,7 +43,7 @@ Der Aufschlag von zwei Prozentpunkten auf die Wartungsbasis gilt laut SAP für a
 
 Für die Planung heißt das: Eine CRM-Ablösung mit Auswahl, Vertrag, Umsetzung, Datenmigration und Schulung dauert in einem internationalen Unternehmen leicht zwei Jahre. Wer 2030 fertig sein will, muss 2027 oder 2028 entscheiden.
 
-## Welche Wege gibt es nach SAP CRM?
+## Nach SAP CRM gibt es drei Wege
 
 Grob gibt es drei Richtungen, dazu die Option, vorerst nichts zu tun:
 
@@ -77,7 +77,7 @@ contra: Was Sie dafür einplanen müssen
 
 Bei der Integration hilft eine einfache Regel: Für jede Art von Daten führt genau ein System. Welche Daten zwischen SAP und Salesforce fließen, beschreibe ich am Beispiel der [Manufacturing Cloud](../manufacturing-cloud-sap-integration-datenfluesse/) und für Preise in [Kundenpreise: SAP-Konditionen oder Salesforce Pricing?](../kundenpreise-sap-konditionen-oder-salesforce-pricing/). Die Architektur dahinter steht unter [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).
 
-## Warum entscheidet die Rechnung über mehrere Jahre?
+## Die Rechnung über mehrere Jahre entscheidet
 
 Angebote vergleichen oft Lizenzkosten im ersten Jahr. Für eine CRM-Ablösung reicht das nicht. In die Rechnung gehören mindestens:
 
@@ -95,14 +95,12 @@ Wie ich solche Entscheidungen mit Kunden vorbereite, steht unter [Make-or-buy un
 
 ## Was kostet es, bis 2030 abzuwarten?
 
-Abwarten wirkt zunächst günstig, weil das System läuft und niemand Budget beantragen muss. Die Kosten entstehen an drei Stellen. Erstens der Aufschlag auf die Wartung ab 2028, jedes Jahr bis zur Abschaltung. Zweitens die Zeit: Wer erst 2029 entscheidet, hat für Auswahl, Umsetzung und Migration kaum Puffer und verhandelt mit Anbietern und Partnern unter Zeitdruck. Drittens der Stillstand im System selbst. Neue Anforderungen aus Vertrieb und Service landen in einem CRM, in das niemand mehr investieren will. Sie wandern in Excel-Listen und Zusatzwerkzeuge, die später ebenfalls migriert werden müssen.
+Abwarten wirkt zunächst günstig, weil das System läuft und niemand Budget beantragen muss. Ab 2028 kommt jedes Jahr der Aufschlag auf die Wartung dazu, bis zur Abschaltung. Wer erst 2029 entscheidet, hat für Auswahl, Umsetzung und Migration kaum Puffer und verhandelt mit Anbietern und Partnern unter Zeitdruck. Und das System selbst steht still: Neue Anforderungen aus Vertrieb und Service landen in einem CRM, in das niemand mehr investieren will. Sie wandern in Excel-Listen und Zusatzwerkzeuge, die später ebenfalls migriert werden müssen.
 
 Dazu kommt, dass für SAP ERP 6.0 dieselben Fristen gelten und viele Unternehmen in denselben Jahren auf S/4HANA umsteigen. Fachleute für SAP, für Salesforce und für Datenmigration sind dann gefragt, und wer spät anfragt, bekommt die Teams, die noch frei sind. Der Weiterbetrieb taugt deshalb nur als Brücke mit festem Enddatum.
 
-## Wo sollten Sie anfangen?
+## Mit einer Bestandsaufnahme von SAP CRM beginnen
 
 Beginnen Sie mit einer Bestandsaufnahme, bevor Sie Angebote einholen: Welche Prozesse laufen heute in SAP CRM, wie viele Nutzer arbeiten damit, welche Schnittstellen hängen daran, und welche Daten müssen mit? Klären Sie parallel, wann der Umstieg von ECC auf S/4HANA geplant ist, denn beide Projekte teilen sich Schnittstellen, Stammdaten und oft dasselbe Team.
 
 Dann legen Sie fest, welches der beiden Muster bei Ihnen gilt: CRM als Vorstufe zum ERP oder CRM mit eigenen Prozessen für Vertrieb, Service und Partner. Mit dieser Antwort lässt sich die Auswahl auf zwei Wege eingrenzen und die Rechnung über mehrere Jahre aufstellen.
-
-Das Wartungsende ist ein fester Termin, die Entscheidung dafür braucht mehr Vorlauf, als die Jahreszahl 2030 vermuten lässt.
