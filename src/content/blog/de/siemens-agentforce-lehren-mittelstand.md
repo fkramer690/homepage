@@ -9,11 +9,10 @@ topic: ai
 categories: [manufacturing-cloud, ai]
 tags: [Agentforce, Siemens, Maschinenbau, KI-Agenten, Anwendungsfälle, Leadqualifizierung]
 takeaways:
-  - "In der Meldung von Siemens und Salesforce vom 15. September 2026 sind nur zwei Agenten für eingehende Leads live; Teamcenter, der Händler-SDR-Agent und das Lieferanten-Onboarding in SAP stehen im Futur."
-  - "Siemens hat dort angefangen, wo das Volumen hoch war, die Daten schon in der Sales Cloud lagen und ein Fehler wenig kostete: über 2.500 unqualifizierte Leads im Monat für 18.000 Vertriebler."
-  - "Das einzige veröffentlichte Ergebnis ist, dass Siemens 100 Prozent der eingehenden Leads anspricht; Konversionsrate, Pipeline-Wert oder eingesparte Vertriebsstunden nennt die Meldung nicht."
-  - "Ein mittelständischer Maschinenbauer sollte die Kriterien hinter der Siemens-Reihenfolge übernehmen, nicht den Lead-Fall, denn bei wenigen Hundert Leads im Monat sind eine Bewertungsregel und eine Person günstiger."
-  - "Ersatzteile per Seriennummer brauchen As-built-Daten zu jeder Maschine; diese Datenarbeit sollte am ersten Tag beginnen, auch wenn der Agent erst an zweiter oder dritter Stelle kommt."
+  - "Siemens begann mit über 2.500 unqualifizierten Leads im Monat: hohes Volumen, Daten schon in der Sales Cloud, geringe Kosten pro Fehler."
+  - "Veröffentlicht ist nur, dass Siemens 100 Prozent der eingehenden Leads anspricht. Konversion und Pipeline-Wert fehlen."
+  - "Bei wenigen Hundert Leads im Monat sind eine Bewertungsregel und eine Person günstiger als ein Agent."
+  - "Ersatzteile per Seriennummer brauchen As-built-Daten pro Maschine. Diese Datenarbeit beginnt am ersten Tag."
 faq:
   - q: "Was ist bei Siemens mit Agentforce live?"
     a: "Laut Meldung vom 15. September 2026 arbeiten ein Engagement-Agent und ein Qualifizierungsagent in der Sales Cloud an eingehenden Leads und leiten die besten an den Vertrieb weiter. Siemens spricht so alle eingehenden Leads in 132 Ländern an."
@@ -68,7 +67,7 @@ Die anderen Industriereferenzen folgen demselben Muster. In der [Ankündigung vo
 
 **Agentforce Operations.** Salesforce hat das Produkt am [29. April 2026 als allgemein verfügbar](https://www.salesforce.com/news/stories/agentforce-operations-announcement/) gemeldet, gebaut auf Technologie von Regrello; Integrationsfunktionen wie das Auslösen von Flows sollten im Mai 2026 in die Beta gehen. Diese Meldung spricht allgemein von ERP und nennt SAP nicht. Das Produkt ist also GA, die SAP-Schritte bei Siemens sind ein Plan, und wie sie SAP erreichen, ist nicht beschrieben. Was auch immer ein Agent ins ERP schreibt, die Regeln dafür gehören in deterministische Logik, wie in [Agent Script: Regeln statt LLM](../agent-script-regeln-statt-llm/) beschrieben.
 
-## Ein typisches Szenario: ein Maschinenbauer mit 1.100 Beschäftigten
+## Rechenbeispiel: ein Maschinenbauer mit 1.100 Beschäftigten
 
 Nehmen wir einen Maschinenbauer mit 1.100 Beschäftigten, SAP S/4HANA, Sales Cloud und Service Cloud, 140 Händlern in 35 Ländern und 9.000 Maschinen in der installierten Basis. Alle Zahlen sind Annahmen, um die Methode zu zeigen. Vier Ideen aus der Siemens-Meldung liegen auf dem Tisch.
 
@@ -80,7 +79,7 @@ Nehmen wir einen Maschinenbauer mit 1.100 Beschäftigten, SAP S/4HANA, Sales Clo
 
 **Lieferanten-Onboarding.** Angenommen 25 neue Lieferanten im Jahr. Das deckt ein Genehmigungsprozess mit Checkliste ab, ein Agent würde seinen Bau- und Testaufwand nie einspielen. Die Siemens-Meldung nennt kein Lieferantenvolumen, also sagt das Versprechen "from weeks to days" nichts über Ihren Fall.
 
-## Welche Reihenfolge der Anwendungsfälle folgt für ein kleineres Unternehmen?
+## Für ein kleineres Unternehmen folgt eine eigene Reihenfolge
 
 Aus dem Szenario leite ich diese Reihenfolge ab:
 
@@ -97,6 +96,4 @@ Schreibende Schritte ins ERP
 
 Bevor einer dieser Fälle live geht, vereinbaren Sie eine Ergebniskennzahl jenseits der Aktivität, etwa den Anteil der Händleranfragen, die ohne Antwort des Innendienstes abgeschlossen werden. Siemens hat eine Aktivitätszahl veröffentlicht; Ihre Geschäftsführung wird nach einem Ergebnis fragen. Die fünf Kriterien hinter dieser Reihenfolge stehen in [Agentforce für Hersteller: jetzt starten oder warten?](../agentforce-ja-oder-nein-hersteller/), das Gesamtbild dessen, was heute läuft, im Masterclass-Kapitel [KI-Agenten in der Fertigung](../../masterclass/ki-salesforce/ki-agenten-in-der-fertigung/).
 
-Wenn in Ihrem Haus jemand sagt "Siemens macht das schon", stellen Sie vier Fragen: In welcher Zeitform spricht die Quelle, ist die Zahl ein Ausgangswert oder ein Ergebnis, wessen Zahl ist es, und nennt sie eine Quelle. Das vor einer Budgetentscheidung zu klären, gehört zu meiner Arbeit in [Architektur und Partnersteuerung](../../leistungen/salesforce-architektur/).
-
-Siemens zeigt eher eine vernünftige Reihenfolge als eine fertige Lösung, und diese Reihenfolge passt auch zu einem mittelständischen Maschinenbauer.
+Wenn in Ihrem Haus jemand sagt "Siemens macht das schon", stellen Sie diese Fragen: In welcher Zeitform spricht die Quelle, ist die Zahl ein Ausgangswert oder ein Ergebnis, wessen Zahl ist es, und nennt sie eine Quelle. Das vor einer Budgetentscheidung zu klären, gehört zu meiner Arbeit in [Architektur und Partnersteuerung](../../leistungen/salesforce-architektur/).

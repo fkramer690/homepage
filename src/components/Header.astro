@@ -2,6 +2,7 @@
 import Logo from './Logo.astro';
 import type { Dict } from '../i18n/en';
 import ExternalMark from './ExternalMark.astro';
+import Icon from './Icon.astro';
 import { contactHref, contactExternal } from '../site';
 import { masterclassesIndex } from '../lib/masterclass';
 
@@ -12,6 +13,15 @@ interface Props {
 }
 const { t, home, switchHref } = Astro.props;
 const anchor = (id: string) => `${home}#${id}`;
+const links = [
+  { href: anchor('services'), label: t.nav.services },
+  { href: anchor('references'), label: t.nav.references },
+  { href: anchor('about'), label: t.nav.about },
+  { href: `${home}blog/`, label: t.nav.blog },
+  { href: masterclassesIndex(t.lang), label: t.nav.masterclass },
+  { href: anchor('contact'), label: t.nav.contact },
+];
+const ext = contactExternal ? { target: '_blank', rel: 'noopener' } : {};
 ---
 <header class="site-header">
   <div class="container header-inner">
@@ -23,19 +33,53 @@ const anchor = (id: string) => `${home}#${id}`;
       </span>
     </a>
     <nav class="main-nav" aria-label={t.lang === 'de' ? 'Hauptnavigation' : 'Main navigation'}>
-      <a href={anchor('services')}>{t.nav.services}</a>
-      <a href={anchor('references')}>{t.nav.references}</a>
-      <a href={anchor('about')}>{t.nav.about}</a>
-      <a href={`${home}blog/`}>{t.nav.blog}</a>
-      <a href={masterclassesIndex(t.lang)}>{t.nav.masterclass}</a>
-      <a href={anchor('contact')}>{t.nav.contact}</a>
+      {links.map((l) => <a href={l.href}>{l.label}</a>)}
     </nav>
     <div class="header-actions">
       <a class="lang-switch" href={switchHref} hreflang={t.lang === 'de' ? 'en' : 'de'} lang={t.lang === 'de' ? 'en' : 'de'}>
         <span class="mono">{t.lang === 'de' ? 'EN' : 'DE'}</span>
         <span class="visually-hidden">{t.nav.switchLabel}</span>
       </a>
-      <a class="btn btn-small" href={contactHref(t.hero.mailSubject)} {...(contactExternal ? { target: '_blank', rel: 'noopener' } : {})}>{t.nav.cta}{contactExternal && <ExternalMark label={t.nav.newTab} />}</a>
+      <a class="btn btn-small" href={contactHref(t.hero.mailSubject)} {...ext}>{t.nav.cta}{contactExternal && <ExternalMark label={t.nav.newTab} />}</a>
+      {/* Phones and tablets: the main nav is hidden, this button opens it as a panel. */}
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" data-open={t.nav.menuOpen} data-close={t.nav.menuClose}>
+        <Icon name="menu" class="menu-icon-open" />
+        <Icon name="cross" class="menu-icon-close" />
+        <span class="visually-hidden">{t.nav.menuOpen}</span>
+      </button>
     </div>
   </div>
+  <nav id="mobile-nav" class="mobile-nav" aria-label={t.lang === 'de' ? 'Hauptnavigation' : 'Main navigation'} hidden>
+    <div class="container">
+      <ul class="mobile-nav-list">
+        {links.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
+      </ul>
+      <a class="btn mobile-nav-cta" href={contactHref(t.hero.mailSubject)} {...ext}>{t.nav.cta}{contactExternal && <ExternalMark label={t.nav.newTab} />}</a>
+    </div>
+  </nav>
 </header>
+
+<script>
+  const toggle = document.querySelector<HTMLButtonElement>('.menu-toggle');
+  const panel = document.getElementById('mobile-nav');
+  if (toggle && panel) {
+    const label = toggle.querySelector('.visually-hidden');
+    const set = (open: boolean) => {
+      toggle.setAttribute('aria-expanded', String(open));
+      panel.hidden = !open;
+      document.documentElement.classList.toggle('menu-open', open);
+      if (label) label.textContent = open ? toggle.dataset.close ?? '' : toggle.dataset.open ?? '';
+    };
+    toggle.addEventListener('click', () => set(toggle.getAttribute('aria-expanded') !== 'true'));
+    panel.addEventListener('click', (e) => {
+      if ((e.target as HTMLElement).closest('a')) set(false);
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+        set(false);
+        toggle.focus();
+      }
+    });
+    window.matchMedia('(min-width: 881px)').addEventListener('change', (m) => m.matches && set(false));
+  }
+</script>

@@ -10,10 +10,10 @@ pubDate: 2026-10-28
 short: "Quality, tests, reviews"
 summary: "Which reviews, tests and automated checks every change must pass before it is merged, for code and for flows."
 takeaways:
-  - "A quality gate is a check that technically blocks a merge or a deployment while it is red; a report nobody has to read is not a gate."
-  - "Salesforce requires 75 percent Apex coverage for production and, in the same guide, advises not to focus on the percentage; asserts, bulk tests and runAs count for more."
-  - "Flows are automation just like Apex: flow tests, the Flow Scanner in Code Analyzer and the coverage threshold for flows deployed as active belong in the same pipeline."
-  - "Code Analyzer only fails a run when you set --severity-threshold; without a threshold the pipeline stays green, whatever the report says."
+  - "A quality gate technically blocks a merge or a deployment while it is red. A report nobody has to read is not a gate."
+  - "Salesforce requires 75 percent Apex coverage but advises not to focus on the percentage. Asserts, bulk tests and runAs count for more."
+  - "Flows are automation like Apex: flow tests, the Flow Scanner in Code Analyzer and the coverage threshold for active flows belong in the same pipeline."
+  - "Code Analyzer only fails a run when you set --severity-threshold. Without a threshold the pipeline stays green, whatever the report says."
   - "The client sets thresholds, rule sets and exceptions, and only the client's release manager changes them, the same for every partner."
 articles: [pull-request-reviews-enterprise, quality-gates-ai-code-pipeline, reviewing-ai-generated-salesforce-code, api-67-user-mode-apex]
 faq:
@@ -141,7 +141,7 @@ When your partners work with coding agents, the number of pull requests goes up 
 
 What AI code needs beyond that, from the rules file to org boundaries for agents, is covered in [chapter 8 of the AI masterclass](../../ai-salesforce/ai-code-best-practices/). The gates in detail are in [quality gates for AI code](../../../blog/quality-gates-for-ai-code-salesforce-pipeline/), and the review from the client's side in [reviewing AI-generated Salesforce code](../../../blog/reviewing-ai-generated-salesforce-code/).
 
-## A typical scenario, as an assumption
+## Walk-through: a flow with an update inside a loop
 
 A machine builder runs Service Cloud with Field Service for its field technicians, a dealer portal and an SAP integration. Two partners work on the same org, one on field service, one on the portal. All details are assumptions.
 
@@ -150,5 +150,3 @@ An admin from the first partner builds a record-triggered flow on the work order
 In the validation deployment, an Apex test from the second partner then fails: the bulk test of the SAP import class creates 200 work orders and now runs through the new flow. Without that test, the problem would have shown up during the nightly import in production. Finally, the review by the client's architect settles the business question no tool asks: whether the appointment on a cancelled order should be deleted or only cancelled.
 
 Which configuration data such flows need in sandboxes for tests to mean something is covered in [chapter 7](../data-and-configuration/). How I support programmes with this is described under [DevOps and release management](../../../services/devops-release-management/) and [partner governance](../../../services/partner-governance/).
-
-In Salesforce programmes with several partners, quality comes from gates that block and thresholds the client sets.

@@ -10,9 +10,9 @@ categories: [field-service]
 contactBrief: licences
 tags: [field service, ServiceMax, Asset 360, PTC, entitlements, asset management]
 takeaways:
-  - "ServiceMax Asset 360 is a managed package from PTC that extends Salesforce Field Service on its standard objects. PTC requires Service Cloud and at least one Field Service licence."
+  - "Asset 360 sits on Field Service's standard objects. PTC requires Service Cloud and at least one Field Service licence."
   - "Its core is an entitlement engine that picks the right warranty or service contract on cases, work orders and return orders, interactively or by rule."
-  - "Since 2024 Salesforce has sold its own add-on, Asset Service Lifecycle Management, at $75 per user and month. It overlaps with Asset 360 on coverage selection, hierarchy and campaigns."
+  - "Since 2024 Salesforce has sold Asset Service Lifecycle Management at $75 per user. It overlaps on coverage, hierarchy and campaigns."
   - "Asset 360 ships twice a year, most recently 26R2 on 9 September 2026. According to PTC, patches only ship when agreed fixes are due."
   - "PTC Asset 360 has been called PTC Orbit since June 2026 and is a different product. Check which one any quote refers to."
 faq:
@@ -47,7 +47,7 @@ For you this means: dispatchers keep planning with Salesforce's scheduling engin
 PTC had two products called Asset 360. The second one has been called [PTC Orbit](https://www.ptc.com/en/products/ptc-orbit) since June 2026 and combines asset data from PLM, ERP and field service. Check which one a quote or presentation refers to.
 ```
 
-## What does Asset 360 actually add?
+## Asset 360 adds an entitlement engine and more than 60 workflows
 
 The [product page](https://www.ptc.com/en/products/servicemax/asset-360) names four areas. I checked them against the documentation:
 
@@ -82,7 +82,7 @@ In one Field Service project, entitlements were in scope and influenced prioriti
 
 I have not implemented Asset 360 myself. From this experience I take two checks. First: if your entitlements hang directly on the asset or account without a service contract today, the engine does not fit without rework, according to the documentation. Second: return and inventory workflows in Asset 360 meet an ERP that owns stock. Where I draw that line is in [Spare parts between ERP and Salesforce](../salesforce-field-service-spare-parts-erp/).
 
-## What does a second managed package mean for operations and releases?
+## A second managed package adds two releases a year
 
 According to its [release schedule](https://support.ptc.com/help/servicemax_asset360/en/articles/servicemax-asset-360-release-notes/releases.html), Asset 360 ships twice a year: 26R1 on 5 March 2026, 26R2 on 9 September 2026. Patches only ship when agreed fixes are due. Salesforce ships three times a year. PTC publishes an [assessment of the Salesforce release updates](https://support.ptc.com/help/servicemax_asset360/en/articles/servicemax-asset-360-release-notes/assessment-for-2025-releases.html) for each round, which helps with testing. Your team still tests two packages against every Salesforce release.
 
@@ -96,13 +96,11 @@ In my view in three cases:
 2. **Your PLM and spare parts planning come from PTC.** Then the connections to Windchill and Servigistics are a real advantage.
 3. **You want ready-made workflows instead of custom builds.** More than 60 preconfigured workflows save build time if your processes fit them.
 
-If none of these applies, I would evaluate ASLM first, because one vendor means less coordination.
+If none of these applies, I would evaluate ASLM first. One vendor means less coordination, and there is no second managed package to test twice a year.
 
-## Where should you start?
+## List your own asset workflows
 
 1. **List your asset workflows**: coverage checks, maintenance, campaigns, returns, depot.
 2. **Check where your entitlements sit today**: on the service contract, the asset or the account.
 3. **Request quotes for Asset 360 and ASLM** and ask which users need a licence in each case. The role logic of Field Service is in [Salesforce Field Service licences by role](../field-service-licences-by-role/).
 4. **Calculate both options over three years** including release testing. How I set up such comparisons is described under [make-or-buy and licence forecasts](../../services/make-or-buy-licences/).
-
-Asset 360 is worth it when automatic entitlement checks or your PTC portfolio tip the balance.

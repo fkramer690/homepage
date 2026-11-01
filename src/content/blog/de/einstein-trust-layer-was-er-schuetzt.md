@@ -10,10 +10,10 @@ categories: [ai, architecture]
 tags: [Einstein Trust Layer, Agentforce, Datenmaskierung, Sicherheit, Maschinenbau]
 takeaways:
   - "In einem Agentforce-Agenten schützt der Einstein Trust Layer vor allem über Zero-Data-Retention-Verträge, Toxizitätsbewertung und einen Audit Trail in Data 360."
-  - "Salesforce hat die Datenmaskierung für Agentforce abgeschaltet, weil sie Latenz erzeugte und die Genauigkeit senkte; für Prompt Builder und eingebettete Funktionen gilt sie weiter."
-  - "Die Maskierung erkennt nur Muster wie Namen, E-Mail-Adressen, Telefon- und Kartennummern; Händlerpreise und Vertragskonditionen werden nie maskiert, sie schützen Berechtigungen und Aktionsdesign."
+  - "Salesforce hat die Datenmaskierung für Agentforce abgeschaltet, weil sie Latenz erzeugte und die Genauigkeit senkte. Für Prompt Builder gilt sie weiter."
+  - "Die Maskierung erkennt Namen, E-Mail-Adressen, Telefon- und Kartennummern. Händlerpreise und Vertragskonditionen schützen nur Berechtigungen und Aktionen."
   - "Der Audit Trail speichert den Prompt-Text in Data 360 und ist damit selbst ein sensibler Datenbestand, der Zugriffsregeln und eine Aufbewahrungsfrist braucht."
-  - "Der Trust Layer gilt für LLM-Aufrufe, die Salesforce selbst macht; liest ein externes Modell CRM-Daten über MCP, regelt Ihr Vertrag mit dem KI-Anbieter die Daten."
+  - "Der Trust Layer gilt für LLM-Aufrufe von Salesforce. Liest ein externes Modell CRM-Daten über MCP, regelt Ihr Vertrag mit dem KI-Anbieter die Daten."
 faq:
   - q: "Maskiert der Einstein Trust Layer personenbezogene Daten in Agentforce-Agenten?"
     a: "Laut Trailhead und einem Salesforce-Blogbeitrag vom Juni 2025 ist die Datenmaskierung für Agenten abgeschaltet. Für Prompt-Builder-Vorlagen und eingebettete Funktionen wie Einstein Service Replies gilt sie weiter. Prüfen Sie im Audit Trail Ihrer eigenen Org, was beim Modell ankommt."
@@ -56,7 +56,7 @@ Außerhalb von Agentforce arbeitet die Maskierung laut Blogbeitrag "the same as 
 Ein Händlernettopreis, ein Bonus von 3 Prozent oder "Zahlung 60 Tage netto" passt auf keines dieser Muster. Selbst wo die Maskierung aktiv ist, schützt sie keine kaufmännischen Daten.
 ```
 
-## Wo endet der Trust Layer?
+## Die Grenzen des Trust Layers
 
 Für eine Architekturentscheidung zählen vier Grenzen.
 
@@ -72,7 +72,7 @@ Für eine Architekturentscheidung zählen vier Grenzen.
 Der Audit Trail speichert den Prompt-Text selbst. Was ein Agent in einen Prompt schreibt, auch Preise und Personendaten, landet in Data-360-Objekten. Die Trailhead-Einheiten, die ich gelesen habe, nennen keine Aufbewahrungsfrist, die Entscheidung liegt also bei Ihnen, und sie berührt die Protokollpflichten aus [EU AI Act: Fristen für Agentforce](../eu-ai-act-fristen-agentforce/).
 ```
 
-## Ein typisches Szenario: Händleragent mit Nettopreisen
+## Rechenbeispiel: Händleragent mit Nettopreisen
 
 Nehmen wir einen Maschinenbauer mit 60 Händlern in 14 Ländern, Service Cloud, einem Händlerportal auf Experience Cloud und SAP als führendem System für Preise und Bestände. Alle Zahlen sind Annahmen. Ein Service-Agent im Portal soll die Verfügbarkeit von Ersatzteilen und den eigenen Nettopreis des Händlers nennen; ein Mitarbeiteragent soll 15 Key Account Manager bei der Vorbereitung von Händlergesprächen unterstützen.
 
@@ -88,7 +88,7 @@ Den Schutz trägt deshalb das Design:
 
 Aus Architektensicht ist das die normale Arbeitsteilung: Der Trust Layer kümmert sich um den Modellanbieter, Ihr Design darum, wer was sieht.
 
-## Was sollte ein Hersteller einstellen?
+## Maskierung, Agentenbenutzer und Aktionen einstellen
 
 1. **Maskierungsstatus je Funktion klären.** Für Agenten von "aus" ausgehen und im Audit Trail prüfen. Für Prompt Builder und eingebettete Funktionen im Einstein Trust Layer Setup festlegen, welche Datentypen maskiert werden, auch den Firmennamen.
 2. **Agentenbenutzer auf das Minimum schneiden.** Ein Permission Set pro Service-Agent, keine Preis-, Margen- oder Vertragsfelder, solange keine Aktion sie braucht.
@@ -99,6 +99,4 @@ Aus Architektensicht ist das die normale Arbeitsteilung: Der Trust Layer kümmer
 7. **Sprachen prüfen.** Salesforce fordert Entwickler auf, die Unterstützung jeder Sprache und jedes Gebietsschemas im Trust Layer zu prüfen; machen Sie das für jedes Händlerland.
 8. **Die Dashboards verfolgen.** Toxizitäts- und Maskierungs-Dashboards gehören in die wöchentliche Durchsicht eines neuen Agenten.
 
-Diese Konfiguration ist Teil meiner Arbeit an der [Salesforce-Architektur](../../leistungen/salesforce-architektur/), weil die Entscheidungen im Datenmodell und in den Berechtigungen fallen und nicht im Prompt des Agenten.
-
-Der Einstein Trust Layer hält Ihre Daten aus dem Speicher des Modellanbieters heraus, alles Weitere hängt an Berechtigungen und Aktionen, die Sie selbst steuern.
+Diese Konfiguration ist Teil meiner Arbeit an der [Salesforce-Architektur](../../leistungen/salesforce-architektur/), weil die Entscheidungen im Datenmodell und in den Berechtigungen fallen und nicht im Prompt des Agenten. Vom Trust Layer selbst bleibt für Agenten vor allem, dass der Modellanbieter Ihre Daten nicht speichert.

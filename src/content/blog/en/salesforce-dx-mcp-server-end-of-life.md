@@ -9,11 +9,11 @@ topic: devops
 categories: [devops, ai]
 tags: [mcp, salesforce dx, claude code, agentforce vibes, partner governance, devops]
 takeaways:
-  - "The official README of the local Salesforce DX MCP Server (@salesforce/mcp) states that it reaches end of life on 2 November 2026; on 27 October npm still served 0.30.15 without a deprecation flag."
-  - "Salesforce's own setup guide configures the server with @latest and says it then updates automatically, so every partner machine should pin 0.30.15 until the old entry is removed."
-  - "The server works with every org a developer has logged into through the Salesforce CLI; ALLOW_ALL_ORGS or DEFAULT_TARGET_ORG can let an AI agent reach production without anyone noticing."
-  - "Salesforce offers the open sf-skills library, a Claude Code plugin and Hosted MCP servers, but does not call them successors in the sources I could open; treating them as such is my reading."
-  - "Two of the plugin's MCP servers run on Salesforce infrastructure and must be activated in your org by a client-side admin; one of them is a beta service whose calls count against the org's API quota."
+  - "On 27 October npm still served version 0.30.15 without a deprecation flag, and no Salesforce documentation page mentions the date."
+  - "Salesforce's setup guide configures the server with @latest. Pin 0.30.15 on every partner machine until the old entry is removed."
+  - "With ALLOW_ALL_ORGS or DEFAULT_TARGET_ORG an AI agent reaches every org the developer is logged into, production included."
+  - "sf-skills, the Claude Code plugin and Hosted MCP cover the work. Calling them successors is my reading, not a Salesforce statement."
+  - "One of the plugin's MCP servers is a beta service that an admin must activate in the org, and its calls count against the API quota."
 faq:
   - q: "What happens to the Salesforce DX MCP Server on 2 November 2026?"
     a: "According to the README in both Salesforce repositories, the local server @salesforce/mcp reaches end of life on that date. The details are in GitHub issue 46, which I could not open, so what exactly happens to the repository and the npm package afterwards is unconfirmed."
@@ -26,7 +26,7 @@ faq:
 draft: false
 ---
 
-The local Salesforce DX MCP Server (`@salesforce/mcp`) reaches end of life on 2 November 2026, according to the official README. If your implementation partners use Claude Code, Cursor, Copilot or Agentforce Vibes on your orgs, some of them probably run it. Before the date, have them list every place it is configured, pin version 0.30.15 instead of `@latest`, and move the work to the Salesforce CLI with skills, the Claude Code plugin and Hosted MCP. The bigger question for you is not the tool but the org access it runs with.
+The local Salesforce DX MCP Server (`@salesforce/mcp`) reaches end of life on 2 November 2026, according to the official README. If your implementation partners use Claude Code, Cursor, Copilot or Agentforce Vibes on your orgs, some of them probably run it. Before the date, have them list every place it is configured, pin version 0.30.15 instead of `@latest`, and move the work to the Salesforce CLI with skills, the Claude Code plugin and Hosted MCP. More important than the tool is the org access it runs with.
 
 ## What exactly ends on 2 November 2026?
 
@@ -50,7 +50,7 @@ Compare that with the [retirement policy for Hosted MCP Servers](https://develop
 2026-11-02 | End of life of the local DX MCP Server, per README
 ```
 
-## Why is a developer tool an IT lead's problem?
+## A developer tool with org access is an IT lead's problem
 
 MCP (Model Context Protocol) is the open standard through which an AI tool calls functions in another system. The DX MCP Server gives a coding agent more than 60 such functions for your Salesforce orgs. It runs on the developer's laptop and uses the orgs that developer has already logged into with the Salesforce CLI. Which orgs the agent may touch is set by one flag, `--orgs`, when the server starts. The [README](https://raw.githubusercontent.com/salesforcecli/mcp/main/README.md) lists the values:
 
@@ -78,7 +78,7 @@ Salesforce published three building blocks in 2026. None of the pages I opened c
 
 **Hosted MCP Servers** have been [generally available since 29 April 2026](https://developer.salesforce.com/blogs/2026/04/salesforce-hosted-mcp-servers-are-now-generally-available) for Enterprise Edition and above. According to the [security best practices](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/security-best-practices.html) they are off by default, every call runs with the rights of the user who authorised the connection, and there are no service accounts. Who may read what through them is covered in [Hosted MCP servers and data access](../salesforce-hosted-mcp-servers-data-access/), and why the calls will become a cost line in [MCP calls as a budget risk](../mcp-api-calls-salesforce-budget-risk/).
 
-## A typical scenario: three partners, one deadline
+## Worked example: three partners, one deadline
 
 Assume a machine builder with Service Cloud, Field Service and SAP S/4. Three partners work on the same orgs: one for service and field service, one for the SAP integration, one for the dealer portal. All numbers below are assumptions to show the method.
 
@@ -97,5 +97,3 @@ The decision I would expect to take longest is who approves hosted servers in pr
 5. **Update the repository.** The shared MCP configuration and the [AI rules file](../ai-rules-file-salesforce-repository/) belong in your repository and change through a reviewed pull request, like any other code. Claude Code also supports organisation-managed MCP configuration with allowlists, if you license it centrally.
 
 This is ordinary dependency and access management applied to AI tools, and it belongs in [DevOps and release management](../../services/devops-release-management/) on the client side. The other interfaces are covered in [chapter 3 of the masterclass](../../masterclass/ai-salesforce/mcp-and-interfaces/).
-
-Use the deadline to find out which AI tools reach your orgs and with whose logins, and the server swap itself becomes a small task.

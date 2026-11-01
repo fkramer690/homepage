@@ -18,19 +18,16 @@ situations:
   - "Releases werden kleiner und häufiger, und Fachbereiche erfahren von Änderungen erst, wenn sie schon in Produktion sind."
   - "Das Management erwartet Ergebnisse aus dem Programm, ist aber selten da, wenn Entscheidungen zur Einführung anstehen."
 deliverables:
-  - "Wir legen mit Ihnen fest, woran Sie Erfolg messen, zum Beispiel an den Nutzungszahlen in Salesforce statt an der Zahl der Schulungen."
-  - "Für jedes Release entsteht ein Einführungsplan. Er zeigt, welche Gruppen betroffen sind, was sich für sie ändert und wann sie davon erfahren."
   - "Für jede betroffene Gruppe schätzen wir nach dem ADKAR-Modell ein, an welcher der fünf Stufen die Einführung hängt."
-  - "Ein Sponsor-Plan hält fest, was das Management wann sichtbar tut, damit neue Regeln verbindlich werden."
-  - "Wir richten ein festes Format ein, in dem Fachbereiche, Teams und Partner anstehende Änderungen früh sehen und mitreden können."
   - "Neue Standards führen wir in Etappen ein und beginnen mit den häufigsten Fällen."
-  - "Rückmeldungen aus dem Alltag kommen auf einem festen Weg in den Backlog. Zum Schluss übergeben wir die Verantwortung an Ihre internen Verantwortlichen."
+  - "Wir richten ein festes Format ein, in dem Fachbereiche, Teams und Partner anstehende Änderungen früh sehen und mitreden können."
+  - "Wir messen die Nutzung in Salesforce und steuern dort nach, wo sie hängt."
 results:
-  - "Ihre Prozesse und Standards werden im Alltag genutzt und stehen nicht nur auf dem Papier."
-  - "Fachbereiche wissen vor jedem Release, was sich für sie ändert."
-  - "Das Management steht sichtbar hinter der Einführung."
-  - "Teams und Partner arbeiten nach denselben Regeln."
-  - "Neben Salesforce entstehen weniger Schattenlösungen."
+  - "Festgelegte Erfolgskennzahlen aus Salesforce-Berichten, zum Beispiel zu angelegten und gepflegten Datensätzen"
+  - "Einen Einführungsplan je Release, der zeigt, welche Gruppen betroffen sind, was sich für sie ändert und wann sie davon erfahren"
+  - "Einen Sponsor-Plan, der festhält, was das Management wann sichtbar tut, damit neue Regeln verbindlich werden"
+  - "Einen festen Weg, auf dem Rückmeldungen aus dem Alltag in den Backlog kommen"
+  - "Interne Verantwortliche, die die Einführung nach der Übergabe weiterführen"
 phases:
   - title: "Vorgehen vorbereiten"
     icon: "compass"
@@ -65,7 +62,7 @@ Ein Release ist technisch in Minuten ausgerollt. Danach entscheidet sich, ob jem
 pro: Was wir dagegen tun
 - Ein Einführungsplan je Release legt fest, wer wann davon erfährt.
 - Die erste Version deckt die häufigsten Fälle ab, Randfälle kommen später.
-- Ein Sponsor-Plan hält fest, was das Management wann sichtbar tut.
+- Neue Regeln kommen vom Management, nicht nur vom Projektteam.
 - Der alte Weg wird geschlossen, sobald der neue trägt.
 contra: Woran es scheitert
 - **Betroffene erfahren zu spät davon** und suchen sich einen Weg drumherum.
@@ -76,7 +73,7 @@ contra: Woran es scheitert
 
 ## Wie sieht ADKAR in einem Salesforce-Programm aus?
 
-Das [ADKAR-Modell](https://www.prosci.com/blog/adkar-model) von Prosci beschreibt fünf Stufen, die jede Person bei einer Veränderung durchläuft. Hakt eine Einführung, fehlt meist eine davon. Häufig sehen wir Folgendes: Die Schulungen sind gelaufen, die Nutzung bleibt trotzdem niedrig. Statt eine weitere Schulung anzusetzen, fragen wir je betroffener Gruppe, an welcher Stufe es hängt. Zwei typische Fälle:
+Das [ADKAR-Modell](https://www.prosci.com/blog/adkar-model) von Prosci beschreibt fünf Stufen, die jede Person bei einer Veränderung durchläuft. Hakt eine Einführung, fehlt meist eine davon. Häufig sehen wir Folgendes: Die Schulungen sind gelaufen, die Nutzung bleibt trotzdem niedrig. Statt eine weitere Schulung anzusetzen, fragen wir je betroffener Gruppe, an welcher Stufe es hängt:
 
 ```stufen
 A | Awareness | Bewusstsein | Warum ändert sich etwas? *
@@ -88,9 +85,9 @@ fall: Es fehlt Awareness | Ein Vertriebsteam weiß nicht, wofür die gepflegten 
 fall: Es fehlt Reinforcement | Die Entwickler eines Partners kennen die Namenskonventionen, aber niemand prüft sie in der Pipeline. | Dann gehört eine automatische Prüfung in den [Release-Prozess](../devops-und-release-management/).
 ```
 
-Salesforce hilft beim Messen. Ob ein neuer Prozess genutzt wird, zeigen Berichte über angelegte und gepflegte Datensätze besser als jede Umfrage. Diese Zahlen legen wir in der ersten Phase fest und schauen in der zweiten regelmäßig darauf. Die einzelnen Themen, von Key Usern bis zur Messung der Nutzung, beschreibe ich in [Salesforce Change Management: warum Einführungen scheitern](../../blog/change-management-salesforce-einfuehrung/). Kapitel für Kapitel entlang der fünf Stufen führt die [Masterclass Change Management](../../masterclass/change-management/).
+Salesforce hilft beim Messen. Ob ein neuer Prozess genutzt wird, zeigen Berichte über angelegte und gepflegte Datensätze zuverlässiger als eine Umfrage. Diese Zahlen legen wir in der ersten Phase fest und schauen in der zweiten regelmäßig darauf. Die einzelnen Themen, von Key Usern bis zur Messung der Nutzung, beschreibe ich in [Salesforce Change Management: warum Einführungen scheitern](../../blog/change-management-salesforce-einfuehrung/). Kapitel für Kapitel entlang der fünf Stufen führt die [Masterclass Change Management](../../masterclass/change-management/).
 
-## Wie habe ich neue Standards in einem großen Programm eingeführt?
+## Gemeinsame Standards für fünf Partner in drei Monaten
 
 ```kennzahlen
 30+ | Entwickler in acht Streams
@@ -100,26 +97,15 @@ Salesforce hilft beim Messen. Ob ein neuer Prozess genutzt wird, zeigen Berichte
 quelle: mein größtes Programm als Architekt auf Kundenseite
 ```
 
-In meinem größten Programm arbeiteten über 30 Entwickler in acht Streams mit fünf Implementierungspartnern. Gemeinsame Standards für Namenskonventionen, Automatisierung je Objekt, Testabdeckung und eine [Object Ownership Matrix](../../blog/object-ownership-matrix-salesforce/) brauchten etwa drei Monate, bis sie gelebt wurden.
+Zu Beginn dieses Programms lagen die technischen Ansätze der Teams weit auseinander. Gemeinsame Standards für Namenskonventionen, Automatisierung je Objekt, Testabdeckung und eine [Object Ownership Matrix](../../blog/object-ownership-matrix-salesforce/) haben wir deshalb in Etappen eingeführt.
 
 Die erste Version deckte rund 80 Prozent der Fälle ab. Die Randfälle kamen Schritt für Schritt dazu, wenn sie im Projekt auftauchten. Später brachten wir im Programm neue Themen mit Vorlauf in regelmäßigen [Center-of-Excellence-Calls](../../blog/salesforce-center-of-excellence-format/) auf den Tisch, bevor sie zum Problem wurden. Irgendwann kamen kaum noch neue Randfälle hinzu. Wie die Regeln für mehrere Partner aussehen, beschreibe ich unter [Partnersteuerung](../partnersteuerung/).
 
-## Was ändert sich für Fachbereiche?
+## Kleinere Releases brauchen einen festen Weg in die Fachbereiche
 
 Mit einem sauberen Release-Prozess werden Releases kleiner und häufiger. Für Fachbereiche heißt das: öfter kleine Änderungen statt einmal im Quartal ein großes Paket. Damit das funktioniert, brauchen sie einen festen Weg, auf dem sie vorher erfahren, was sich ändert, und einen Rückweg, auf dem sie melden, was im Alltag nicht passt. Vor jedem Release kläre ich mit den Verantwortlichen im Fachbereich, welche Teams betroffen sind, was sich in ihren Abläufen ändert und wer sie informiert. Das steht im Release-Plan, bevor die Entwicklung fertig ist. Nach dem Release prüfe ich, ob die neuen Prozesse genutzt werden, und bringe Rückmeldungen aus dem Alltag in den Backlog.
 
-```vergleich
-ohne: Einmal im Quartal ein großes Paket
-- Fachbereiche sehen Änderungen erst in Produktion.
-- Viel Neues auf einmal, hohes Risiko je Release.
-- Probleme aus dem Alltag landen in E-Mails.
-mit: Kleine Releases mit festem Weg
-- Fachbereiche wissen vor dem Release, was sich ändert.
-- Öfter kleine Änderungen, weniger Risiko je Release.
-- Rückmeldungen kommen auf festem Weg in den Backlog.
-```
-
-## Warum Prosci?
+## Prosci stützt sich auf Forschung seit 1998
 
 Prosci ist für mich der Goldstandard im Change Management. Der Grund ist die Forschung dahinter: Prosci befragt seit 1998 Projekte nach ihren Erfahrungen mit Veränderungen.
 
@@ -132,6 +118,6 @@ quelle: Prosci, Best Practices in Change Management, 12. Ausgabe, 2.668 Teilnehm
 
 In der 12. Ausgabe der Studie [Best Practices in Change Management](https://www.prosci.com/hubfs/Website_English/2.downloads/research-executive-summaries/Best-Practices-in-Change-Management-12th-Edition-Executive-Summary.pdf) mit 2.668 Teilnehmenden erreichten Projekte mit sehr gutem Change Management ihre Ziele siebenmal so oft wie Projekte mit schlechtem, 88 gegenüber 13 Prozent. Als wichtigsten Erfolgsfaktor nennen die Teilnehmenden aktives und sichtbares Sponsoring durch das Management. Das deckt sich mit dem, was ich in Salesforce-Programmen erlebe.
 
-Zusammen mit [Juliane Winterscheid](../../partner/juliane-winterscheid/), die Prosci-zertifiziert ist, habe ich zwei Bausteine von Prosci auf Salesforce-Programme übertragen: das ADKAR-Modell von oben und den [Prosci 3-Phase Process](https://www.prosci.com/methodology/3-phase-process). Der 3-Phase Process gibt der Einführung auf Ebene der Organisation einen Rahmen: Vorgehen vorbereiten (Prepare Approach), Veränderung steuern (Manage Change) und Ergebnisse sichern (Sustain Outcomes). Die drei Schritte oben auf dieser Seite folgen diesen Phasen.
+Zusammen mit [Juliane Winterscheid](../../partner/juliane-winterscheid/), die Prosci-zertifiziert ist, habe ich zwei Bausteine von Prosci auf Salesforce-Programme übertragen: das ADKAR-Modell von oben und den [Prosci 3-Phase Process](https://www.prosci.com/methodology/3-phase-process). Der 3-Phase Process gibt der Einführung auf Ebene der Organisation einen Rahmen: Vorgehen vorbereiten (Prepare Approach), Veränderung steuern (Manage Change) und Ergebnisse sichern (Sustain Outcomes). Die Schritte unter „So läuft die Zusammenarbeit“ folgen diesen Phasen.
 
 Prosci und ADKAR sind eingetragene Marken von Prosci, Inc. Die Prosci-Zertifizierung hat Juliane Winterscheid, nicht FK Solution Design, und FK Solution Design ist kein Partner von Prosci. Diese Seite beschreibt, wie wir Elemente des Vorgehens in Salesforce-Programmen anwenden.

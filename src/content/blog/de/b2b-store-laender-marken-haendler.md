@@ -9,10 +9,10 @@ topic: commerce
 categories: [b2b-commerce, architecture]
 tags: [B2B Commerce, Store-Design, Käufergruppen, Länder, Marken]
 takeaways:
-  - "In Salesforce B2B Commerce brauchen Länder und Händlerstufen selten einen eigenen Store, Käufergruppen, Entitlement Policies und Preisbücher bilden sie in einem Store ab."
+  - "Länder und Händlerstufen brauchen selten einen eigenen Store. Käufergruppen, Entitlement Policies und Preisbücher bilden sie in einem Store ab."
   - "Ein Store unterstützt bis zu 25 Sprachen, einen Katalog und fünf Preisbücher, eine Org kann bis zu 100 B2B-Stores haben."
   - "Ein zweiter Store lohnt sich, wenn Marke, Katalogstruktur, Checkout oder das ERP dahinter wirklich anders sind."
-  - "Growth enthält 6 Storefronts, Advanced 10. Jeder weitere Store bringt Seiten, Übersetzungen, Extension-Zuordnungen und Regressionstests nach jedem Release mit."
+  - "Growth enthält 6 Storefronts, Advanced 10. Jeder weitere Store bringt Seiten, Übersetzungen, Extension-Zuordnungen und Regressionstests mit."
 faq:
   - q: "Wie viele Stores kann eine Salesforce-Org für B2B Commerce haben?"
     a: "Die Store-Limits erlauben 100 B2B-Stores pro Org als festes Limit. Kaufmännisch ist früher Schluss: Commerce Cloud B2B Growth enthält 6 Storefronts, Advanced 10."
@@ -39,7 +39,7 @@ Drei Objekte entscheiden, ob ein Store reicht:
 
 Der Store ist also die Einheit für alles, was Käufer als "den Shop" erleben: Auftritt, Domain, Katalogstruktur, Checkout und die Logik dahinter. Wer was zu welchem Preis sieht, entscheidet sich eine Ebene tiefer, in den Käufergruppen. Wie man sie schneidet, steht in [Buyer Groups und Entitlements](../buyer-groups-entitlements-sichtbarkeit/).
 
-## Welche Limits prägen die Entscheidung?
+## 25 Sprachen, ein Katalog, fünf Preisbücher pro Store
 
 Diese Limits stammen von den Salesforce-Developers-Seiten zu [Store-Limits](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-store-limits.html), [Produkt-Limits](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-product-limits.html), [Preisbuch-Limits](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-price-book-limits.html) und [Käufergruppen-Limits](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-shopper-buyer-groups-accounts-limits.html), Stand Oktober 2026:
 
@@ -80,15 +80,15 @@ Einen zweiten Store würde ich in vier Fällen einplanen:
 
 Teilen sich zwei Marken die meisten Teile, hilft der gemeinsame Katalog: zwei Storefronts, ein Satz Produktdaten.
 
-## Was kostet jeder weitere Store?
+## Jeder weitere Store kostet Pflege nach jedem Release
 
 Die Lizenzseite ist kurz. Die [B2B-Preisseite](https://www.salesforce.com/editions-pricing/commerce-cloud/b2b/) nennt 6 Storefronts in Growth und 10 in Advanced und keinen Preis für weitere. Kommt Ihre Planung in die Nähe, gehören die Zahl der Storefronts und der Preis für zusätzliche in den Vertrag. Die GMV-Gebühr fällt auf den Umsatz über die Storefronts an, ein zweiter Store ändert sie also nur, wenn er neue Bestellungen bringt, siehe [B2B Commerce Preise und das GMV-Modell](../b2b-commerce-preise-gmv-modell/).
 
 Die Aufwandsseite ist länger. Jeder Store hat eigene Seiten, Navigation, Übersetzungen, Extension-Zuordnungen und Einstellungen. Nach jedem der drei Salesforce-Releases im Jahr braucht jeder Store seinen Regressionstest, und jede eigene Komponente wird in jedem Store getestet, der sie nutzt. Wie man diesen Rhythmus plant, steht im DevOps-Kapitel zur [Release-Planung](../../masterclass/devops-release-management/release-planung-salesforce-releases/). Zwei Stores sind nicht doppelt so viel Arbeit wie einer, aber deutlich mehr als ein Store mit zwei Käufergruppen.
 
-## Ein typisches Szenario: zwei Marken in 14 Ländern
+## Rechenbeispiel: zwei Marken in 14 Ländern
 
-Ein typisches Szenario, als Annahme: Ein Maschinenbauer verkauft Ersatzteile unter zwei Marken. Marke A ist in 9 Ländern vertreten, Marke B, vor einigen Jahren zugekauft, in 5 Ländern. Marke B läuft noch auf einem eigenen ERP-Mandanten. Die Händler von Marke A haben drei Stufen, die von Marke B zwei.
+Angenommen, ein Maschinenbauer verkauft Ersatzteile unter zwei Marken. Marke A ist in 9 Ländern vertreten, Marke B, vor einigen Jahren zugekauft, in 5 Ländern. Marke B läuft noch auf einem eigenen ERP-Mandanten. Die Händler von Marke A haben drei Stufen, die von Marke B zwei.
 
 Ein Store pro Land wären 14 Stores, mehr als die 10 Storefronts in Advanced und 14 Regressionstests pro Release. Ein Store für alles würde Händler der Marke B in einen Shop mit dem Auftritt und den ERP-Aufrufen von Marke A setzen.
 
@@ -96,7 +96,7 @@ Der Schnitt im Szenario: zwei Stores, einer pro Marke. Marke A bekommt Käufergr
 
 Das folgt derselben Logik wie ein [weltweiter Rollout von Manufacturing Cloud](../manufacturing-cloud-weltweit-ausrollen/): Die Marke ist vom ersten Tag an eine Frage für das Template, auch wenn das erste Land nur eine hat.
 
-## Womit sollten Sie anfangen?
+## Erster Schritt: Marken, ERP-Mandanten und Länder auf eine Seite
 
 ```schritte
 Alles auf eine Seite
@@ -109,6 +109,4 @@ Das Kaufmännische klären
   Zahl der Storefronts und Preis für weitere schriftlich festhalten.
 ```
 
-Das Kapitel [Katalog, Suche, Sichtbarkeit](../../masterclass/b2b-commerce/katalog-suche-sichtbarkeit/) der [Masterclass B2B Commerce](../../masterclass/b2b-commerce/) ordnet diese Entscheidung in das gesamte Store-Design ein, und wie ich solche Schnitte angehe, beschreibe ich unter [Salesforce-Architektur](../../leistungen/salesforce-architektur/).
-
-Ein Store pro Marke oder ERP und Käufergruppen für Länder und Stufen ist der Standard, von dem ich nur mit konkretem Grund abweichen würde.
+Das Kapitel [Katalog, Suche, Sichtbarkeit](../../masterclass/b2b-commerce/katalog-suche-sichtbarkeit/) der [Masterclass B2B Commerce](../../masterclass/b2b-commerce/) ordnet diese Entscheidung in das gesamte Store-Design ein. Wie ich solche Schnitte angehe, beschreibe ich unter [Salesforce-Architektur](../../leistungen/salesforce-architektur/).

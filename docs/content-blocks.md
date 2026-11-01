@@ -184,7 +184,7 @@ fazit: Fragt zwei Jahre später jemand, warum ein Prozess so gebaut wurde, steht
 
 ## 13. Säulen (pillars)
 
-Three to five pillars in one row, each `icon | Name | Subtitle | Text`. The icon is a file name from `src/icons/`, numbers are added automatically. Keep the name to one word or two (it must fit one line in a quarter of the text column), the subtitle short and the text one full sentence. Optional `dach: Title` (EN `roof:`) as a dark bar above and `basis: Title` (EN `base:`) as a grey bar below. Title, subtitle and text start at the same height in every pillar and all pillars end together; on phones they stand below each other with the icon on the left. Approved by Fabian 2026-10-29 for the pipeline basics on the DevOps service page (with roof and base).
+Three to five pillars in one row, each `icon | Name | Subtitle | Text`. The icon is a file name from `src/icons/`. Keep the name to one word or two (it must fit one line in a quarter of the text column), the subtitle short and the text one full sentence. Optional `dach: Title` (EN `roof:`) as a dark bar above and `basis: Title` (EN `base:`) as a grey bar below. The pillars show icon, name and subtitle; the sentences stand below the base in two columns, each led by the pillar name (2026-10-31). Name and subtitle start at the same height in every pillar and all pillars end together; on phones they stand below each other with the icon on the left. Approved by Fabian 2026-10-29 for the pipeline basics on the DevOps service page (with roof and base).
 
 ````
 ```saeulen

@@ -10,10 +10,9 @@ categories: [architecture]
 contactBrief: partner-governance
 tags: [partner governance, object ownership matrix, governance, pull request review, automation]
 takeaways:
-  - "An object ownership matrix is a table that assigns every Salesforce object and its metadata to exactly one owning stream."
-  - "When a team wants to change another stream's object, it agrees the change with the owner first. That stops teams from overwriting each other's fields, flows and triggers."
-  - "Shared objects like Account need one owner and a rule for how automation is bundled there, because Salesforce does not guarantee the order of several triggers."
-  - "In a programme with more than 30 developers in eight streams it took about three months until the matrix and standards were stable. The first version covered around 80 percent of cases."
+  - "When a team changes another stream's object, it agrees the change with the owner first, so fields, flows and triggers do not overwrite each other."
+  - "Shared objects like Account need one owner and one automation entry point, because Salesforce does not guarantee the order of several triggers."
+  - "In my programme with more than 30 developers in eight streams, the matrix and standards were stable after about three months."
   - "The matrix is enforced in pull request reviews and regular centre of excellence calls, not by a page in the wiki."
 faq:
   - q: "What is an object ownership matrix in Salesforce?"
@@ -50,7 +49,7 @@ Without clear ownership, every team builds its own automation on Account. That g
 
 Five teams with five approaches on one object follow none of these recommendations. The results are familiar to anyone who has worked in such programmes: two automations set the same field, one deployment overwrites another team's layout, and a production bug cannot be traced to any team.
 
-## What did this look like in my programme?
+## How it went in my programme with eight streams
 
 When I joined the programme, nobody had clearly defined which team led on which processes, objects and metadata. Changes overwrote each other, and the teams' technical approaches were far apart.
 
@@ -86,7 +85,7 @@ The hard part is shared objects like Account, Contact or Product. They also get 
 
 What does not belong in the matrix: detailed rules for naming, tests or code style. Those live in the development standards. The matrix answers one question only: who decides.
 
-## How do you enforce the matrix?
+## The matrix is enforced in review, not in the wiki
 
 A table in the wiki changes nothing on its own. The matrix only works once it is checked in the daily workflow.
 
@@ -101,7 +100,7 @@ A [CODEOWNERS file](https://docs.github.com/en/repositories/managing-your-reposi
 
 The matrix belongs to the client, not to a partner. If a partner decides who owns which object, it also decides what its competitors may build. The same applies to repository and pipeline, as described in [why clients should own their DevOps tools](../why-clients-should-own-their-devops-tools/).
 
-## Where should you start?
+## List the 15 to 20 most important objects
 
 A first matrix is ready sooner than most people expect:
 
@@ -112,5 +111,3 @@ A first matrix is ready sooner than most people expect:
 5. **Settle edge cases in the centre of excellence** and update the matrix.
 
 In my experience the first version is never complete, and it does not need to be. You start with 80 percent, and the reviews deliver the rest. More on how I steer programmes with several partners is on the [partner governance](../../services/partner-governance/) page.
-
-An object ownership matrix is quick to write down and saves a programme with several partners a lot of conflict between teams.

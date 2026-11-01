@@ -9,11 +9,10 @@ topic: devops
 categories: [devops, ai]
 tags: [KI-Coding, Claude Code, GitHub Copilot, Agentforce Vibes, Partnersteuerung, Kosten]
 takeaways:
-  - "KI-Coding kostet im Salesforce-Projekt zu US-Listenpreisen etwa 19 $ bis 250 $ pro Entwickler und Monat, von Copilot Business mit Inklusiv-Credits bis Claude Code zu API-Preisen."
   - "Anthropic nennt für Claude Code rund 13 $ pro Entwickler und aktivem Arbeitstag; Caching macht wiederholten Kontext billig, teuer sind Output und Thinking."
-  - "Im Szenario kosten KI-Werkzeuge für ein Partnerteam mit acht Personen etwa 650 $ bis 1.500 $ im Monat, rund ein Prozent der Tagessätze des Teams."
-  - "Agentforce Vibes im Verbrauchsmodell zieht aus denselben Flex Credits wie Ihre Agenten in Produktion und zählt in Einheiten zu 2.000 Tokens; Opus kostet 16 Credits pro Einheit."
-  - "Bei Abrechnung nach Aufwand sollte der Kunde die Accounts besitzen und die Tokens zahlen; beim Festpreis zahlt der Partner, und der Vertrag nennt erlaubte Werkzeuge und Datenregeln."
+  - "Im Rechenbeispiel kosten KI-Werkzeuge für ein Partnerteam mit acht Personen etwa 650 $ bis 1.500 $ im Monat, rund ein Prozent der Tagessätze."
+  - "Agentforce Vibes im Verbrauchsmodell zieht aus denselben Flex Credits wie Ihre Agenten in Produktion; Opus kostet 16 Credits pro 2.000 Tokens."
+  - "Bei Abrechnung nach Aufwand besitzt der Kunde die Accounts und zahlt die Tokens; beim Festpreis zahlt der Partner, und der Vertrag nennt die Regeln."
 faq:
   - q: "Was kostet Claude Code pro Entwickler und Monat?"
     a: "Anthropic nennt für Unternehmenseinsätze zu API-Preisen im Schnitt rund 13 $ pro Entwickler und aktivem Tag und 150 $ bis 250 $ pro Monat. Ein Premium-Seat im Claude-Team-Plan kostet 125 $ im Monat, bei Jahreszahlung 100 $, mit Nutzungskontingent statt Token-Rechnung."
@@ -42,7 +41,7 @@ Die meisten Coding-Werkzeuge verkaufen inzwischen einen Seat mit Budget und rech
 
 Der Seat-Preis sagt wenig über die Rechnung. GitHub rechnet Tokens zum Preis des jeweiligen Modells in Credits um, die 19 $ Inklusivnutzung reichen also nur für eine Handvoll der Agenten-Sessions unten.
 
-## Wie wird aus Tokens eine Rechnung?
+## So wird aus Tokens eine Rechnung
 
 Ein Token ist die Einheit, in der Modelle abrechnen, grob ein Wort- oder Codestück. Ein Coding-Agent arbeitet in einer Schleife: Er liest Dateien, führt einen Befehl aus und schickt alles zurück an das Modell. In einem Salesforce-Repository besteht dieser Kontext aus Regeldatei, Apex-Klassen, Metadaten-XML und Testausgaben. Drei Regeln auf der [Preisseite von Anthropic](https://platform.claude.com/docs/en/about-claude/pricing) bestimmen den Preis:
 
@@ -69,7 +68,7 @@ Ohne Caching kosten allein die 2,16 Mio. Input-Tokens 8,62 $. Der Output macht u
 
 Zwei Effekte treiben das nach oben: Claude ab 4.7 erzeugt für denselben Text rund 30 Prozent mehr Tokens, und Agent Teams verbrauchen im Plan-Modus etwa siebenmal so viele Tokens wie eine normale Session.
 
-## Ein typisches Szenario: ein Partnerteam baut Serviceprozesse
+## Rechenbeispiel: ein Partnerteam mit acht Personen baut Serviceprozesse
 
 Nehmen wir einen Maschinenbauer mit SAP, Service Cloud, Field Service für den Außendienst und einem Händlerportal. Ein Nearshore-Partnerteam mit acht Personen baut das nächste Release: sechs Entwickler, die an 18 Tagen im Monat mit einem Coding-Agenten arbeiten, dazu ein Lead Consultant und eine Projektleiterin mit Chat-Seats. Alle Mengen sind Annahmen, die Preise die Listenpreise von oben.
 
@@ -80,7 +79,7 @@ Nehmen wir einen Maschinenbauer mit SAP, Service Cloud, Field Service für den A
 
 Bei einem in USD angenommenen Mischsatz von 800 $ pro Person und Tag kostet das Team selbst 8 × 18 × 800 $ = 115.200 $ im Monat. KI-Coding kommt mit etwa einem Prozent dazu. McKinsey [schreibt](https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/beyond-the-copilot-scaling-the-agentic-product-development-life-cycle), dass die Ausgaben für Tokens, Rechenleistung, Infrastruktur und AI Ops auf bis zu 20 Prozent der bisherigen Personalkosten steigen können, wenn Agenten mehr Arbeit übernehmen. Die größeren Risiken sind aus meiner Sicht heute ein Zähler ohne Limit und die offene Frage, wem der Produktivitätsgewinn gehört.
 
-## Warum braucht Agentforce Vibes eine eigene Rechnung?
+## Agentforce Vibes braucht eine eigene Rechnung
 
 Agentforce Vibes ist der Coding-Agent von Salesforce. Zwei Punkte sind wichtig:
 
@@ -103,7 +102,7 @@ Die Antwort folgt dem Vertragsmodell. Bei Abrechnung nach Aufwand zahlt der Kund
 
 Bei Aufwand bevorzuge ich die erste Variante: Für 650 $ bis 1.500 $ im Monat behält der Kunde Daten, Limits und Offboarding in der Hand. In deutschen Unternehmen redet der Betriebsrat mit, siehe [KI-Coding, Betriebsrat und DSGVO](../ki-coding-betriebsrat-dsgvo/). Ob Sie überhaupt Seats kaufen, gehört zu meiner Arbeit in [Make-or-buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/).
 
-## Wie behalten Sie die Kosten für KI-Coding im Griff?
+## Vor dem ersten Sprint klären, wer zahlt
 
 1. **Klären Sie vor dem ersten Sprint, wer zahlt**, und schreiben Sie es in den Vertrag.
 2. **Setzen Sie Limits.** Claude Team und Enterprise bieten Ausgabenlimits pro Organisation, Gruppe und Mitglied für Nutzung über das Seat-Kontingent hinaus, die Claude Console Limits pro Workspace, GitHub Budgets pro Nutzer und Kostenstelle.
@@ -111,5 +110,3 @@ Bei Aufwand bevorzuge ich die erste Variante: Für 650 $ bis 1.500 $ im Monat be
 4. **Halten Sie die Regeldatei kurz.** Anthropic rät, CLAUDE.md unter 200 Zeilen zu halten, siehe [die KI-Regeldatei im Repository](../ki-regeldatei-salesforce-repository/).
 5. **Pilotieren Sie zwei Wochen mit zwei Entwicklern** und lesen Sie die echten Ausgaben ab.
 6. **Budgetieren Sie das Review.** Ein menschlicher Reviewer für generiertes Apex kostet mehr als die Tokens, siehe [KI-generierten Salesforce-Code prüfen](../ki-generierten-salesforce-code-pruefen/).
-
-KI-Coding kostet im Szenario etwa ein Prozent eines Salesforce-Partnerteams, also klären Sie Accounts und Limits, bevor Sie über den Preis verhandeln.

@@ -9,11 +9,11 @@ topic: commerce
 categories: [b2b-commerce, manufacturing-cloud]
 tags: [B2B Commerce, Experience Cloud, dealer portal, Manufacturing Cloud, spare parts, licences]
 takeaways:
-  - "A portal on Experience Cloud or Manufacturing Cloud shows data and takes requests. Salesforce B2B Commerce adds a catalogue, product visibility per buyer group, buyer prices, a cart and a checkout."
-  - "Buyers in a B2B store need a Customer Community Plus licence, the same licence family as a customer portal. At list price that is $35 per member or $15 per login per month."
+  - "A portal shows data and takes requests. B2B Commerce adds a catalogue, visibility per buyer group, buyer prices, a cart and a checkout."
+  - "Store buyers need Customer Community Plus, the same licence family as a portal. At list price that is $35 per member or $15 per login per month."
   - "A store pays off when dealers reorder known part numbers in volume and a large share of those orders still arrives by phone or email."
   - "Configured machines stay with sales and quotes. A store sells what a dealer can order without a conversation."
-  - "In a typical scenario with 250 dealers and 30,000 spare parts order lines a year, each dealer orders about ten lines a month, enough to justify a catalogue with a cart."
+  - "In the worked example with 250 dealers and 30,000 order lines a year, each dealer orders about ten lines a month, enough to justify a cart."
 faq:
   - q: "What is the difference between a dealer portal and a B2B shop in Salesforce?"
     a: "A portal on Experience Cloud shows records such as orders, agreements and cases and takes requests through forms. Salesforce B2B Commerce adds a product catalogue, visibility rules per buyer group, prices per buyer, a cart, a checkout and reordering from past orders."
@@ -50,7 +50,7 @@ On top of that come the cart, the checkout and the order summary that the buyer 
 | Ordering | Form or order record | Cart and checkout |
 | Extra fee | None beyond licences | Share of the store's revenue |
 
-## Which licence do buyers need?
+## Buyers need Customer Community Plus, as in a portal
 
 Here the two options are closer than many expect. Salesforce describes the personas and permissions for a B2B store like this: buyers and buyer managers use a Customer Community Plus licence. Buyers get the permission B2B Commerce User, buyer managers B2B Commerce Super User plus Delegated External User Administration, so they can look after the buyers of their own company. Merchandisers who maintain the store internally need the "B2B and D2C Commerce" licence.
 
@@ -77,9 +77,9 @@ I look at four numbers before anyone talks about store templates:
 
 If you cannot get these numbers from the ERP within a week, I would collect them before any further step. They are also the basis for the [business case for a B2B webshop](../b2b-webshop-business-case-manufacturers/).
 
-## A typical scenario, as an assumption
+## Worked example: 250 dealers, 30,000 order lines a year
 
-A typical scenario, as an assumption: a manufacturer of compressors sells through 250 dealers in Europe. The dealers order about 30,000 spare parts order lines a year, mostly by email with a part number list, some by phone. Inside sales enters each line in SAP. Dealers already use a portal for warranty cases.
+Assume a manufacturer of compressors sells through 250 dealers in Europe. The dealers order about 30,000 spare parts order lines a year, mostly by email with a part number list, some by phone. Inside sales enters each line in SAP. Dealers already use a portal for warranty cases.
 
 That is about 120 lines per dealer and year, roughly ten a month. The dealers know their part numbers, they reorder the same wear parts, and they would order outside office hours if they could. Here I would build a store and keep the portal for cases. The [B2B Commerce section of Salesforce Help](https://help.salesforce.com/s/articleView?id=commerce.comm_intro.htm&language=en_US&type=5) has a guide for adding a B2B store to an existing Experience Cloud site, so portal and store can run on one site.
 
@@ -95,8 +95,6 @@ A portal is the better answer in these cases:
 
 And sometimes Salesforce is not the answer at all. If the company has no Salesforce CRM, the store brings the whole platform with it. If the ERP vendor's own commerce module already covers your prices and stock, check that first. With a very small catalogue and few dealers, a simple ordering form is cheaper than any shop system.
 
-## Where should you start?
+## First step: four numbers from twelve months of orders
 
 Pull the four numbers for the last twelve months: order lines, share referring to a part number, ordering dealers, share by phone and email. If they point to a store, the next questions are who owns prices and stock, which buyer groups you need and which ERP calls must be live. They are in the [masterclass chapter on whether B2B Commerce is worth it](../../masterclass/b2b-commerce/b2b-commerce-worth-it-overview/). An independent view of make or buy is part of my work on [make-or-buy and licence forecasts](../../services/make-or-buy-licences/).
-
-A store pays off when dealers reorder known parts in volume, and a portal is enough when they mainly ask questions.

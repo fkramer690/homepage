@@ -10,11 +10,11 @@ categories: [b2b-commerce, architecture]
 contactBrief: licences
 tags: [B2B Commerce, Preise, GMV, Lizenzen, Order Management, Make-or-Buy]
 takeaways:
-  - "Salesforce verkauft B2B Commerce als Growth und Advanced Edition, beide mit \"Preisangebot anfordern\". Die Gebühr ist ein Prozentsatz des Bruttowarenwerts (GMV), einen Satz veröffentlicht Salesforce nicht."
-  - "GMV ist der Umsatz über den Store abzüglich Steuern und Versandkosten. Es zählen nur Bestellungen über die Commerce-Storefront, nicht Bestellungen per EDI, Telefon oder aus anderen Kanälen."
-  - "Growth enthält 6 Storefronts, Order Management Lite und 250.000 Data-Cloud-Credits, Advanced 10 Storefronts, volles Order Management und 500.000 Credits. Beide enthalten 20 Lagerorte und Merchant Agent."
-  - "Nicht in der Gebühr: Käuferlizenzen, Revenue Cloud Advanced für erweiterte Preislogik, eigenständiges Order Management für andere Kanäle, Umsetzung und ERP-Anbindung."
-  - "Lassen Sie sich GMV-Definition, Satz, Mindestbetrag und Nachberechnung schriftlich geben. Zahlen von 1 bis 2 Prozent stammen von Integratoren und sind von Salesforce nicht bestätigt."
+  - "B2B Commerce gibt es als Growth und Advanced Edition. Die Gebühr ist ein Prozentsatz des Bruttowarenwerts (GMV), den Satz veröffentlicht Salesforce nicht."
+  - "GMV ist der Store-Umsatz abzüglich Steuern und Versand. Es zählen nur Bestellungen über die Storefront, nicht per EDI, Telefon oder aus anderen Kanälen."
+  - "Growth enthält 6 Storefronts, Order Management Lite und 250.000 Data-Cloud-Credits, Advanced 10 Storefronts, volles Order Management und 500.000 Credits."
+  - "Nicht in der Gebühr: Käuferlizenzen, Revenue Cloud Advanced für Preislogik, eigenständiges Order Management, Umsetzung und ERP-Anbindung."
+  - "Lassen Sie sich GMV-Definition, Satz, Mindestbetrag und Nachberechnung schriftlich geben. Die 1 bis 2 Prozent stammen von Integratoren, nicht von Salesforce."
 faq:
   - q: "Was kostet Salesforce B2B Commerce?"
     a: "Salesforce veröffentlicht keinen Preis. Growth und Advanced Edition stehen beide auf \"Preisangebot anfordern\", und die Preisseite sagt, Salesforce berechne einen Prozentsatz des Bruttowarenwerts je nach benötigtem Funktionsumfang. Der Satz steht in Ihrem Angebot."
@@ -43,7 +43,7 @@ Für einen Hersteller folgt daraus dreierlei:
 
 Salesforce vermarktet das Produkt inzwischen auch als "Agentforce Commerce for B2B", so steht es auf [Trailhead](https://trailhead.salesforce.com/content/learn/modules/agentforce-for-guided-shopping-for-b2b-and-d2c/increase-revenue-with-agentforce-for-guided-shopping). Auf der Preisseite heißen die Editionen weiter Commerce Cloud B2B Growth Edition und Commerce Cloud B2B Advanced Edition.
 
-## Was enthalten Growth und Advanced?
+## Growth und Advanced im Vergleich
 
 Die Preisseite nennt diese Positionen (Oktober 2026):
 
@@ -62,7 +62,7 @@ Für die meisten Hersteller ist die Zeile Order Management die entscheidende. [O
 
 Für Bestandskunden gilt eine Regel: Laut Preisseite müssen Kunden, die bereits Order Management nutzen, auf Commerce Cloud Advanced verlängern. Upgrades während der Vertragslaufzeit sind möglich.
 
-## Was ist nicht in der Gebühr enthalten?
+## Käuferlizenzen, Umsetzung und ERP-Anbindung kommen dazu
 
 Hier liegen Schätzungen am häufigsten daneben. Die GMV-Gebühr deckt den Store und die Positionen oben ab. Dazu kommen:
 
@@ -80,7 +80,7 @@ Integratoren veröffentlichen Sätze von etwa 1 Prozent des GMV für Growth und 
 Salesforce bestätigt diese Zahlen nicht: Die Preisseite zeigt für beide Editionen nur "Preisangebot anfordern". Ich behandle sie als groben Startwert für eine erste Schätzung, mehr nicht.
 ```
 
-Lieber rechne ich mit dem Satz als Variable. Ein typisches Szenario, als Annahme: Ein Hersteller erwartet im dritten Jahr 15 Millionen Euro Ersatzteilumsatz über den Store, ohne Steuern und Versand. Jeder Prozentpunkt GMV sind dann 150.000 Euro im Jahr. Der Unterschied zwischen einem Angebot mit 1 Prozent und einem mit 2 Prozent ist mehr als das Gehalt einer Person im Innendienst. Deshalb verhandeln Sie den Satz, nicht die Lizenzanzahl.
+Lieber rechne ich mit dem Satz als Variable. Rechenbeispiel: Ein Hersteller erwartet im dritten Jahr 15 Millionen Euro Ersatzteilumsatz über den Store, ohne Steuern und Versand. Jeder Prozentpunkt GMV sind dann 150.000 Euro im Jahr. Der Unterschied zwischen einem Angebot mit 1 Prozent und einem mit 2 Prozent ist mehr als das Gehalt einer Person im Innendienst. Deshalb verhandeln Sie den Satz, nicht die Lizenzanzahl.
 
 Die Käuferlizenzen sind trotzdem kein Kleingeld. Im selben Szenario mit 250 Händlern und je einem Käufer auf Mitgliedslizenz sind das 250 mal 35 € mal 12, also 105.000 € im Jahr zum Listenpreis. Bestellt ein Teil der Händler nur an wenigen Tagen im Monat, kann die Login-Lizenz zu 15 € günstiger sein, weil laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?language=en_US&id=sf.users_license_types_communities.htm&type=5) mehrere Logins am selben Tag nur einen Login verbrauchen. Diese Aufteilung lohnt sich vor dem Angebot, nicht danach.
 
@@ -96,8 +96,6 @@ Vor der Unterschrift würde ich diese Punkte schriftlich festhalten:
 
 Wie die Editionen der Kernplattform einen Lizenzplan verändern, beschreibe ich in [Salesforce-Editionen Core, Advanced, Max](../salesforce-editionen-core-advanced-max/). Welchen Lizenztyp welche Nutzergruppe braucht, steht in [Salesforce-Lizenzen: Braucht jeder eine volle Lizenz?](../salesforce-lizenzen-volle-lizenz/).
 
-## Wo starten Sie?
+## Die Gebühr mit 1, 2 und 3 Prozent rechnen
 
 Schätzen Sie das Store-GMV für drei Jahre mit steigendem digitalem Anteil und rechnen Sie die Gebühr mit 1, 2 und 3 Prozent neben Käuferlizenzen und Umsetzung. Trägt der Business Case nur beim niedrigsten Satz, kennen Sie Ihre Verhandlungsposition vor dem ersten Termin. Die vollständige Rechnung steht im [Business Case für einen B2B-Webshop](../b2b-webshop-business-case-hersteller/), und wo die Preise in der Gesamtentscheidung stehen, zeigt das [Masterclass-Kapitel zur Frage, ob sich B2B Commerce lohnt](../../masterclass/b2b-commerce/b2b-commerce-lohnt-sich-ueberblick/). Eine unabhängige Prüfung von Angeboten gehört zu meiner Arbeit bei [Make-or-Buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/).
-
-Die GMV-Gebühr ist fair, wenn der Store verkauft, aber nur, wenn Sie Satz und Definition vor der Unterschrift kennen.

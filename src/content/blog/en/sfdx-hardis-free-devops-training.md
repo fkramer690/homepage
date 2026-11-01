@@ -9,7 +9,7 @@ topic: training
 categories: [devops]
 tags: [sfdx-hardis, devops training, release management, dora metrics]
 takeaways:
-  - "The sfdx-hardis DevOps training is free and hands-on: 27 labs in three levels build a complete Salesforce CI/CD pipeline on free orgs, without any licence or credit card."
+  - "27 labs in three levels build a complete Salesforce CI/CD pipeline on free orgs, without any licence or credit card."
   - "Badges are earned by doing, not by quizzes: a job re-runs every check of a level against your own public repository."
   - "Even with about two years of sfdx-hardis experience and solid Git knowledge, all three badges took me almost a full day."
   - "It is the best Salesforce DevOps course I have taken, compared with courses from Gearset, Flosum and Copado."
@@ -66,13 +66,13 @@ done: Badge earned
 note: Each badge is verified by a job that re-runs every check against your own repository.
 ```
 
-## How are the badges earned?
+## Badges are earned only for verified work
 
 This is what sets the course apart. There is no multiple-choice quiz. At the end of each level, a job clones your public repository and runs every check of that level against it again. Only when everything passes do you receive the badge, which you can share on LinkedIn. Cloudity is explicit that it is a badge, not a certification. For me that is the more honest model: it proves that you actually did the work.
 
 My [three badges](https://sfdx-hardis-training.cloudity.com/badges/fkramer/) were awarded on 18 and 20 October 2026, with every check passed on all three levels.
 
-## What were my five takeaways?
+## My five takeaways
 
 Even with experience, several things were new or gave me a fresh perspective:
 
@@ -94,7 +94,7 @@ I would recommend it to three groups:
 
 For clients, it is also a cheap way to build internal DevOps knowledge, which is the basis for owning the release process instead of leaving it with a partner. That is a theme in most of my [architecture and governance work](../../services/partner-governance/).
 
-## What is my verdict?
+## My verdict: plan a full day
 
 Plan for a full day if you have experience and more if you don't. It is time well spent.
 

@@ -9,10 +9,10 @@ topic: release
 categories: [devops, ai]
 tags: [agentforce, release management, devops, agent script, partner governance, manufacturing]
 takeaways:
-  - "An Agentforce agent is metadata: its Agent Script file lives in an authoring bundle in Git and goes through pull request, validation and a scoped deployment like a Flow."
+  - "The Agent Script file lives in an authoring bundle in Git and goes through pull request, validation and a scoped deployment like a Flow."
   - "Publishing creates a new agent version in inactive state; activation is a separate step, and only one version per agent can be active at a time."
-  - "Committed agent versions can't be edited, and Salesforce blocks future deployments when source and target org drift apart, so a quick fix in the production Builder breaks the pipeline."
-  - "Salesforce documents no rollback procedure; as I read the docs, the fastest fallback is reactivating the previous version, while Flows and Apex behind its actions need their own revert."
+  - "Committed versions cannot be edited. A quick fix in the production Builder makes the orgs drift apart and blocks future deployments."
+  - "Salesforce documents no rollback. The fastest fallback is reactivating the previous version; Flows and Apex need their own revert."
   - "The partner builds and tests, the client's release manager deploys, publishes and activates, and the business owner approves activation in production."
 faq:
   - q: "Can an Agentforce agent be deployed like other Salesforce metadata?"
@@ -89,7 +89,7 @@ This has a limit every head of service should know. As I read the metadata model
 
 Deactivation is the emergency brake, and a hard one. The [Agentforce DX docs](https://developer.salesforce.com/docs/ai/agentforce/guide/agent-dx-manage.html) say that deactivating "ends its open interactions, and makes it unreachable for all connections". For a dealer portal I would decide in advance where dealers land then, for example a case form or the service hotline.
 
-## A typical scenario: the partner builds, the client releases
+## Worked example: the partner builds, the client releases
 
 Assume a machine builder with Service Cloud, SAP, a dealer portal and one production org. A partner built the dealer service agent; an internal team of four owns Git and the pipeline, with a release every two weeks. All numbers are assumptions.
 
@@ -97,7 +97,7 @@ Version 3 of the agent answers order status and warranty questions in production
 
 Two days later the spare parts subagent recommends the wrong successor part for one product line. The release manager reactivates version 3 within 15 minutes; order status and warranty answers keep working. Version 3 also calls the extended Flow, but the extra field does no harm, so the Flow stays and the fix returns as version 5 through the normal path. The partner never needed production rights.
 
-## Who releases the agent when client and partner share the org?
+## The client releases, even in a shared org
 
 The client, with clear lines between the roles:
 
@@ -110,7 +110,7 @@ Each agent gets exactly one owner in the [object ownership matrix](../salesforce
 
 Groups with one production org per subsidiary face a gap. The [agent command reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference_agent_commands_unified.htm) lists an agent template for second-generation managed packages, but I found no Salesforce guide for rolling one agent out to several of your own orgs. Until then I would treat each org as its own release target with its own version log.
 
-## Where should you start?
+## Put the .agent files in the client repository
 
 1. Put every agent's `.agent` file in the client repository and stop building agents directly in shared orgs.
 2. Add `sf agent validate authoring-bundle` and scoped deploys to the pipeline.
@@ -118,5 +118,3 @@ Groups with one production org per subsidiary face a gap. The [agent command ref
 4. Keep a version log per org: Git commit, version number, date, approver.
 5. Write a rollback runbook: which version to reactivate, which Flows to revert, where dealers go when the agent is off.
 6. Check that both orgs are on API v68 before deploying agents with the new metadata types.
-
-An agent is ready for an enterprise release process when every version, activation and rollback is as traceable as any other change.

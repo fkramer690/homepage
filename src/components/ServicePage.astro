@@ -4,7 +4,6 @@ import ExternalMark from './ExternalMark.astro';
 import ContactForm from './ContactForm.astro';
 import PhoneLine from './PhoneLine.astro';
 import AuthorBox from './AuthorBox.astro';
-import Blueprint from './Blueprint.astro';
 import ContactBrief from './ContactBrief.astro';
 import ReadingGrid from './ReadingGrid.astro';
 import Photo from './Photo.astro';
@@ -31,12 +30,22 @@ const { lang, title, headline, description, lead, situations, deliverables, resu
 // the change management articles instead of the related articles; "wir" there are Fabian and
 // Juliane, so the deliverables heading and the author box name both (src/data/change-management.ts).
 const isChange = section === 'change-management';
-// The page alternates like the start page: dark head with grid, then white and grey bands
-// (.section / .section.alt); running text stays in the ReadingGrid of one white band.
+// Dark head with grid, then one white band with the ReadingGrid that carries the whole page
+// (intro, situations, deliverables, body, phases, FAQ), so contents and booking box run along.
 const t = lang === 'de' ? de : en;
-const { Content, headings } = await render(service);
+// The first paragraph of the body answers "what is this service" and opens the reading
+// column (src/lib/service-intro-plugin.mjs takes it out of Content); situations,
+// deliverables and results follow it, then the rest of the body, the phases and the FAQ
+// (order chosen by Fabian 2026-10-31, docs/service-pages.md).
+const { Content, headings, remarkPluginFrontmatter } = await render(service);
+const intro: string = remarkPluginFrontmatter.serviceIntro;
 const photo = servicePhotos[service.data.translationKey];
-const toc = [...headings.filter((h) => h.depth === 2), { slug: 'faq', text: t.servicePage.faq }, ...(isChange ? [{ slug: 'articles', text: changeSection[lang].articles.title }] : [])];
+const toc = [
+  { slug: 'situations', text: t.servicePage.situations },
+  { slug: 'deliverables', text: isChange ? changeSection[lang].deliverables : t.servicePage.deliverables },
+  ...headings.filter((h) => h.depth === 2),
+  { slug: 'phases', text: t.servicePage.phases },
+  { slug: 'faq', text: t.servicePage.faq }, ...(isChange ? [{ slug: 'articles', text: changeSection[lang].articles.title }] : [])];
 const translation = await getServiceTranslation(service);
 const posts = await getServicePosts(service);
 const alternates = translation
@@ -98,7 +107,7 @@ const schema = {
   <article class="post service">
     <header class="service-hero dark grid-bg">
       <div class="container">
-        <a class="post-back mono" href={servicesIndex(lang)}>← {t.servicePage.back}</a>
+        <a class="post-back" href={servicesIndex(lang)}>← {t.servicePage.back}</a>
         {note && (
           <p class="service-note">
             <span class="service-note-label mono">{t.servicePage.note}</span>
@@ -121,50 +130,38 @@ const schema = {
     </header>
     <div class="section service-band">
       <div class="container">
-        <section class="service-block" aria-labelledby="situations">
-          <h2 id="situations">{t.servicePage.situations}</h2>
-          <div class="rc-rules sit-box"><ul class="rc-rules-list">{situations.map((item) => <li>{item}</li>)}</ul></div>
-        </section>
-      </div>
-    </div>
-    <div class="section alt service-band">
-      <div class="container">
-        <div class="service-columns">
-          <section class="service-block" aria-labelledby="deliverables">
-            <h2 id="deliverables">{isChange ? changeSection[lang].deliverables : t.servicePage.deliverables}</h2>
-            <ul class="service-list check">{deliverables.map((item) => <li>{item}</li>)}</ul>
-          </section>
-          <section class="service-block results" aria-labelledby="results">
-            <h2 id="results">{t.servicePage.results}</h2>
-            <ul class="service-list check">{results.map((item) => <li>{item}</li>)}</ul>
-          </section>
-        </div>
-      </div>
-    </div>
-    <div class="section service-band">
-      <div class="container">
-        <section class="service-block" aria-labelledby="phases">
-          <h2 id="phases">{t.servicePage.phases}</h2>
-          <ol class="phase-flow" style={`--n:${phases.length}`}>
-            {phases.map((phase, i) => (
-              <li>
-                <span class="phase-ring"><Icon name={phase.icon} /></span>
-                <span class="phase-no mono">{String(i + 1).padStart(2, '0')}</span>
-                <h3>{phase.title}</h3>
-                <p>{phase.text}</p>
-              </li>
-            ))}
-          </ol>
-        </section>
-      </div>
-    </div>
-    {isChange && <div class="section alt service-band"><div class="container"><ChangeTeam lang={lang} /></div></div>}
-    <div class="section service-band">
-      <div class="container">
         <ReadingGrid t={t} headings={toc} cta={name}>
+          <div class="prose service-intro"><p>{intro}</p></div>
+          <section class="service-block" aria-labelledby="situations">
+            <h2 id="situations">{t.servicePage.situations}</h2>
+            <div class="rc-rules sit-box"><ul class="rc-rules-list">{situations.map((item) => <li>{item}</li>)}</ul></div>
+          </section>
+          <div class="service-columns">
+            <section class="service-block" aria-labelledby="deliverables">
+              <h2 id="deliverables">{isChange ? changeSection[lang].deliverables : t.servicePage.deliverables}</h2>
+              <ul class="service-list">{deliverables.map((item) => <li>{item}</li>)}</ul>
+            </section>
+            <section class="service-block results" aria-labelledby="results">
+              <h2 id="results">{t.servicePage.results}</h2>
+              <ul class="service-list">{results.map((item) => <li>{item}</li>)}</ul>
+            </section>
+          </div>
           <div class="prose">
             <Content />
           </div>
+          <section class="service-block" aria-labelledby="phases">
+            <h2 id="phases">{t.servicePage.phases}</h2>
+            <ol class="phase-flow">
+              {phases.map((phase, i) => (
+                <li>
+                  <span class="phase-ring"><Icon name={phase.icon} /></span>
+                  <span class="phase-no mono">{String(i + 1).padStart(2, '0')}</span>
+                  <h3>{phase.title}</h3>
+                  <p>{phase.text}</p>
+                </li>
+              ))}
+            </ol>
+          </section>
 
           <section class="post-faq" aria-labelledby="faq">
             <h2 id="faq">{t.servicePage.faq}</h2>
@@ -187,10 +184,10 @@ const schema = {
         </ReadingGrid>
       </div>
     </div>
+    {isChange && <div class="section alt service-band"><div class="container"><ChangeTeam lang={lang} /></div></div>}
     {isChange && <div class="section alt service-band"><div class="container"><ChangeArticles lang={lang} /></div></div>}
   </article>
   <section class="contact dark grid-bg" id="contact">
-    <Blueprint />
     <div class="container contact-inner">
       <div class="contact-intro">
         <p class="label mono">{t.contact.label}</p>

@@ -9,11 +9,11 @@ topic: service
 categories: [ai]
 tags: [Einstein Bots, Agentforce, Service Cloud, Händlerportal, Flex Credits, Maschinenbau]
 takeaways:
-  - "Upgrade Agent, vorgestellt auf der Dreamforce 2026, baut aus einem Einstein Bot einen Agentforce Service Agent, während der Bot weiterläuft; das Werkzeug liegt in Agentforce Labs, laut Salesforce experimentell."
-  - "Ein Abschaltdatum für Einstein Bots habe ich auf den Salesforce-Seiten nicht gefunden, die Umstellung ist also eine fachliche Entscheidung; der alte Chat dagegen sollte am 14. Februar 2026 enden."
-  - "Bot-Gespräche steckten als Kontingent in der Lizenz; ein Agent rechnet nach Verbrauch ab, mit 20 Flex Credits (0,10 €) pro Aktion oder 2 € pro Gespräch, und beides zusammen in einer Org unterstützt Salesforce nicht."
-  - "Im Szenario braucht ein Agent für alle 4.000 Portalgespräche im Monat rund 2,9 Millionen Credits im Jahr allein für Aktionen, mehr als die 2,75 Millionen pro Org in Service Cloud Max."
-  - "Identifikation, Garantieregistrierung, Sicherheitsmeldungen und Abfragen per Auftragsnummer bleiben im Menü oder in fester Logik; der Agent bekommt die Freitextfragen, die der Bot nie verstanden hat."
+  - "Upgrade Agent baut aus einem Einstein Bot einen Agentforce Service Agent, während der Bot weiterläuft. Das Werkzeug ist laut Salesforce experimentell."
+  - "Ein Abschaltdatum für Einstein Bots habe ich nicht gefunden, die Umstellung ist also eine fachliche Entscheidung."
+  - "Ein Agent rechnet nach Verbrauch ab, mit 20 Flex Credits (0,10 €) pro Aktion oder 2 € pro Gespräch, aber nicht mit beidem in einer Org."
+  - "Im Rechenbeispiel brauchen 4.000 Portalgespräche im Monat rund 2,9 Mio. Credits im Jahr für Aktionen, mehr als die 2,75 Mio. in Service Cloud Max."
+  - "Identifikation, Garantieregistrierung, Sicherheitsmeldungen und Abfragen per Auftragsnummer bleiben im Menü, der Agent bekommt den Freitext."
 faq:
   - q: "Kündigt Salesforce die Einstein Bots ab?"
     a: "Auf den Salesforce-Seiten, die ich bis zum 27. Oktober 2026 geprüft habe, steht kein Abschaltdatum für Einstein Bots. Für den alten Chat hatte Salesforce das Ende zum 14. Februar 2026 angekündigt, Bots auf diesem Kanal mussten also auf Messaging for In-App and Web umziehen."
@@ -22,7 +22,7 @@ faq:
   - q: "Können Einstein Bot und Agentforce-Agent parallel laufen?"
     a: "Ja. Ein Beitrag im Salesforce Developers Blog vom Dezember 2025 beschreibt einen Bot, der Status- und Erfassungsanfragen selbst erledigt und komplexe Fragen über einen Omni-Channel-Flow mit Ausweich-Queue an einen Agentforce Service Agent übergibt."
   - q: "Ist ein Agentforce-Agent teurer als ein Einstein Bot?"
-    a: "Pro Gespräch meist ja. Bot-Gespräche waren Teil des Lizenzkontingents, ein Agent verbraucht 20 Flex Credits pro Aktion. Im Szenario kosten drei Aktionen pro Gespräch 0,30 €, und das Jahresvolumen übersteigt das Kontingent einer Max-Edition."
+    a: "Pro Gespräch meist ja. Bot-Gespräche waren Teil des Lizenzkontingents, ein Agent verbraucht 20 Flex Credits pro Aktion. Im Rechenbeispiel kosten drei Aktionen pro Gespräch 0,30 €, und das Jahresvolumen übersteigt das Kontingent einer Max-Edition."
   - q: "Wie teste ich einen umgestellten Agenten?"
     a: "Nutzen Sie die Beispielsätze, mit denen die Intents des Bots trainiert wurden, und die Protokolle gescheiterter Bot-Gespräche als Testfälle. Lassen Sie den Satz mehrmals laufen und vereinbaren Sie die Bestehensquote vor dem Go-live mit der Serviceleitung."
 draft: false
@@ -36,7 +36,7 @@ Eine Frist habe ich nicht gefunden. Auf den Salesforce-Seiten, die ich bis zum 2
 
 Das Werkzeug selbst ist Punkt 20 in Salesforces Liste der [21 Ankündigungen der Dreamforce 2026](https://www.salesforce.com/blog/dreamforce-2026-announcements/): "Click Upgrade Agent on Agentforce Labs to convert an existing Einstein Bot into an Agentforce Service Agent." Der neue Agent entstehe in Minuten, "so your current bot keeps running while you review and adjust the upgraded version". Einen Status wie GA oder Beta nennt der Beitrag nicht. Zu [Agentforce Labs](https://www.salesforce.com/agentforce/labs/) schreibt Salesforce: "Everything in Labs is experimental and pre-release." Ich würde das Werkzeug in einer Sandbox laufen lassen und das Ergebnis als ersten Entwurf behandeln. Welche Teile des Bots übernommen werden, etwa Dialoge, Variablen oder Apex-Aktionen, beschreibt keine Seite, die ich öffnen konnte. Prüfen Sie das in Ihrer Org, bevor Sie Aufwand schätzen.
 
-## Was ändert sich im Verhalten, wenn aus dem Bot ein Agent wird?
+## Aus dem Drehbuch wird ein Modell, das selbst entscheidet
 
 Ein Einstein Bot folgt einem Drehbuch. Salesforce beschrieb Dialoge als ["the basic 'unit' of conversation"](https://developer.salesforce.com/blogs/2018/06/summer18-einstein-bots-for-the-people), Intents als Beispielsätze je Dialog und Regeln als "conditional engine" für Entscheidungen zur Laufzeit; dazu kommen Menüs mit festen Optionen. Tippt ein Händler etwas, das zu keinem Intent passt, sagt der Bot, dass er nichts verstanden hat, und zeigt wieder das Menü. Lästig, aber sichtbar.
 
@@ -47,7 +47,7 @@ Zwei Folgen:
 - **Folgenreiche Entscheidungen wandern in feste Logik** hinter dem Agenten, etwa Garantieberechtigung oder Kulanzgrenzen. Wie das geht, beschreibe ich in [Agent Script: Regeln statt LLM](../agent-script-regeln-statt-llm/).
 - **Wissen wird ein Produktivsystem.** Ein Bot zeigte den einen Artikel, auf den ein Dialog verwies. Ein Agent liest und formuliert um, was er als Grundlage bekommt. Jedes Handbuch und jeder Artikel braucht deshalb eine verantwortliche Person und ein Prüfdatum.
 
-## Was ändert sich bei den Kosten?
+## Aus dem Kontingent wird Verbrauch
 
 Einstein Bots liefen als Kontingent. Salesforces [Übersicht der Einstein-Funktionen](https://www.salesforce.com/en-ca/wp-content/uploads/sites/4/documents/datasheets/einstein-features-cheat-sheet.pdf), Stand April 2024, nennt 25 Bot-Gespräche pro Nutzer und Monat für Service-Cloud-Lizenzen der Unlimited Edition; die Enterprise Edition bekommt sie nur mit dem Digital-Engagement-Add-on, und zusätzliche Kapazität kostete "100 conversations for $50 per month" (US-Listenpreis).
 
@@ -57,7 +57,7 @@ Es gibt ein drittes Modell. Die [Rate Card](https://www.salesforce.com/en-us/wp-
 
 Die Edition setzt den Rahmen. Die [Service-Cloud-Preisseite](https://www.salesforce.com/service/pricing/) nennt für Max "2.75M Flex Credits per org per year". Dieses Kontingent teilen sich alle Agenten und alle Data-360-Jobs der Org.
 
-## Ein typisches Szenario: Bot im Händlerportal mit 4.000 Gesprächen
+## Rechenbeispiel: Bot im Händlerportal mit 4.000 Gesprächen
 
 Nehmen wir einen Maschinenbauer mit 300 Händlern und Servicepartnern auf einem Experience-Cloud-Portal. Alle Zahlen sind Annahmen zur Veranschaulichung. Ein Einstein Bot führt 4.000 Gespräche im Monat:
 
@@ -77,7 +77,7 @@ Nehmen wir einen Maschinenbauer mit 300 Händlern und Servicepartnern auf einem 
 2,88 Mio. | Credits pro Jahr für Aktionen, wenn alles umgestellt wird
 1,34 Mio. | Credits pro Jahr für Aktionen in der hybriden Variante
 2,75 Mio. | Flex Credits pro Org und Jahr in Service Cloud Max
-quelle: Szenario mit angenommenen Werten; 20 Credits pro Aktion laut Salesforce-Ankündigung vom Mai 2025, Kontingent laut Service-Cloud-Preisseite
+quelle: Rechenbeispiel mit angenommenen Werten; 20 Credits pro Aktion laut Salesforce-Ankündigung vom Mai 2025, Kontingent laut Service-Cloud-Preisseite
 ```
 
 ```hinweis offen
@@ -106,7 +106,7 @@ Einen Bot testen Sie, indem Sie jeden Dialogpfad einmal durchgehen: gleiche Eing
 
 Der Bot verschafft Ihnen einen Vorsprung. Die Beispielsätze, mit denen jeder Intent trainiert wurde, und die Protokolle des Pfads "Etwas anderes" sind ein fertiger Testsatz aus echten Händlerfragen.
 
-Meine Reihenfolge:
+Diese Aufteilung ist eine [Architekturentscheidung](../../leistungen/salesforce-architektur/), die vor den ersten Klick auf Upgrade gehört. Meine Reihenfolge:
 
 ```schritte
 Pfade auswerten
@@ -122,5 +122,3 @@ Freitextpfad starten | 4 Wochen
 Nächsten Pfad wählen
   Mit diesen Zahlen über den nächsten Pfad entscheiden.
 ```
-
-Ein Einstein Bot braucht keine Eins-zu-eins-Ablösung, sondern eine Aufteilung in Pfade, die vorhersehbar bleiben müssen, und Fragen, die ein Agent besser beantwortet; diese [Architekturentscheidung](../../leistungen/salesforce-architektur/) gehört vor den ersten Klick auf Upgrade.

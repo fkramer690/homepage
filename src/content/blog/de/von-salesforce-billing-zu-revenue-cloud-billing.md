@@ -9,10 +9,10 @@ topic: revenue
 categories: [revenue-cloud]
 tags: [Salesforce Billing, Revenue Cloud Billing, Migration, Cutover, Finanzen]
 takeaways:
-  - "Salesforce Billing ist ein Managed Package mit dem Namespace blng. Revenue Cloud Billing läuft auf Standardobjekten wie Invoice, CreditMemo, BillingSchedule und AccountingPeriod."
-  - "Laut Salesforce behalten heutige Billing-Kunden vollen Zugriff einschließlich Support. Neukunden und Kunden, die modernisieren wollen, bekommen Revenue Cloud Advanced und Revenue Cloud Billing."
+  - "Revenue Cloud Billing läuft auf Standardobjekten wie Invoice, CreditMemo, BillingSchedule und AccountingPeriod, nicht im Namespace blng."
+  - "Heutige Billing-Kunden behalten laut Salesforce vollen Zugriff mit Support. Neukunden bekommen Revenue Cloud Advanced und Revenue Cloud Billing."
   - "Abrechnungspläne entstehen in Revenue Cloud aus Aufträgen. Sie kommen also aus migrierten Assets und Aufträgen, nicht aus einer Kopie der alten Pläne."
-  - "Ich stelle zum Ende einer Buchungsperiode um: offene Rechnungen im Paket abschließen, offene Salden übernehmen, abgeschlossene Historie lesbar halten oder archivieren."
+  - "Ich stelle zum Periodenende um: offene Rechnungen im Paket abschließen, offene Salden übernehmen, abgeschlossene Historie archivieren."
   - "Die Finanzabteilung gibt den Billing-Cutover frei, einschließlich Steuer-Engine, Zahlungsanbieter, Buchungen ins ERP und Rechnungsnummern."
 faq:
   - q: "Wird Salesforce Billing noch unterstützt?"
@@ -36,7 +36,7 @@ Die [CPQ-End-of-Life-Seite](https://www.salesforce.com/sales/cpq/end-of-life/) b
 
 Zu den Namen: Die Salesforce-Hilfe nennt das Produkt derzeit Revenue Management, früher Revenue Lifecycle Management, die CPQ-Seite spricht von Agentforce Revenue Management. Auf den Produktseiten von Salesforce heißt es Revenue Cloud, mit Revenue Cloud Billing als Zusatzprodukt für die Abrechnung.
 
-## Worin unterscheidet sich das Billing-Paket von Revenue Cloud Billing?
+## Paketobjekte im Namespace blng gegen Standardobjekte
 
 Das Paket hat laut seinem [Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.blng_dev.meta/blng_dev/blng_custom_objects_parent.htm) 59 eigene Objekte. Revenue Cloud Billing nutzt Standardobjekte aus dem [Revenue Management Developer Guide](https://developer.salesforce.com/docs/revenue/revenue-management/guide/billing-std-objects-parent.html). Ein offizielles Mapping veröffentlicht Salesforce nicht, die Tabelle ist meine Zuordnung nach Funktion:
 
@@ -70,7 +70,7 @@ Die Salesforce-Hilfe führt Billing-Daten im [Migrationsleitfaden](https://help.
 - **Abrechnungspläne aktiver Verträge:** aus migrierten Assets und Aufträgen neu aufbauen. Der erste Rechnungslauf in Revenue Cloud muss genau nach dem letzten abgerechneten Zeitraum im Paket beginnen, sonst bekommt ein Kunde doppelt oder gar keine Rechnung.
 - **Gespeicherte Zahlungsmittel:** mit dem Zahlungsanbieter klären, ob Tokens in der neuen Anbindung weiter nutzbar sind.
 
-## Warum sollte der Cutover am Periodenende liegen?
+## Der Cutover gehört ans Periodenende
 
 Revenue Cloud Billing arbeitet mit Buchungsperioden je Rechtseinheit. Die [Deployment-Hinweise zu Billing](https://developer.salesforce.com/docs/revenue/revenue-management/guide/deployment-billing-additional-info.html) sagen, dass Buchungsperioden nur im Status Open angelegt werden können und dass eine Rechtseinheit aktiv sein muss, wenn abhängige Datensätze entstehen. Buchungssätze fließen dann von Salesforce ins ERP. Die [Produktseite zu Revenue Cloud Billing](https://www.salesforce.com/sales/revenue-cloud-billing/) beschreibt Salesforce als Nebenbuch, das Buchungssätze synchronisiert.
 
@@ -106,7 +106,7 @@ Steuer und Zahlungen
 
 Wie diese Konfigurationsdatensätze von der Sandbox in die Produktion kommen, beschreibt [Revenue Cloud Deployments](../revenue-cloud-konfiguration-deployment/), den allgemeinen Ansatz das Kapitel der DevOps-Masterclass zu [Daten und Konfiguration](../../masterclass/devops-release-management/daten-und-konfiguration/).
 
-## Ein typisches Szenario, als Annahme
+## Rechenbeispiel: 800 Abo-Kunden mit Quartalsrechnung
 
 Ein Maschinenbauer verkauft Fernüberwachung und Wartungsabos an 800 Kunden und rechnet sie quartalsweise aus Salesforce Billing ab. Maschinenrechnungen kommen aus SAP. Das Unternehmen stellt die Angebotserstellung auf Revenue Cloud um. Alle Zahlen sind Annahmen.
 
@@ -114,8 +114,6 @@ Das Billing-Team plant den Cutover zum 31. März, dem Quartalsende. Der letzte R
 
 Vor dem Cutover prüft die Finanzabteilung noch ein Thema: Ab 2027 greift in Deutschland die Pflicht zur E-Rechnung. Ob Rechnungen überhaupt aus Revenue Cloud kommen sollten, behandeln [Revenue Cloud Billing oder SAP](../revenue-cloud-billing-oder-sap-rechnung/) und [E-Rechnung ab 2027](../e-rechnung-pflicht-2027-revenue-cloud/).
 
-## Wer gibt den Billing-Cutover frei?
+## Erster Schritt: die Finanzabteilung unterschreibt die Cutover-Checkliste
 
-Die Finanzabteilung, nicht das CRM-Team. Die Entscheidungen hier sind buchhalterische: Eröffnungssalden, Periodenabschluss, Steuerbehandlung, Buchungen ins ERP und Rechnungsnummern. Ich würde den Cutover mit einer schriftlichen Checkliste aufsetzen, die die Finanzabteilung unterschreibt, und die Lizenzkosten von Revenue Cloud Billing früh einplanen; wie sie berechnet werden, steht in [Revenue Cloud Billing Kosten](../revenue-cloud-billing-kosten/). Die Reihenfolge der gesamten Migration beschreibt [CPQ zu Revenue Cloud migrieren](../cpq-migration-revenue-cloud-phasen/) und das Masterclass-Kapitel [Von CPQ zu Revenue Cloud](../../masterclass/revenue-cloud/von-cpq-zu-revenue-cloud/). Die Schnittstellen zwischen Salesforce und SAP gehören zu meiner Arbeit bei [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).
-
-Ein Billing-Cutover gelingt, wenn er am Periodenende liegt und die Finanzabteilung die Checkliste verantwortet.
+Freigeben muss die Finanzabteilung, nicht das CRM-Team. Die Entscheidungen hier sind buchhalterische: Eröffnungssalden, Periodenabschluss, Steuerbehandlung, Buchungen ins ERP und Rechnungsnummern. Ich würde den Cutover mit einer schriftlichen Checkliste aufsetzen, die die Finanzabteilung unterschreibt, und die Lizenzkosten von Revenue Cloud Billing früh einplanen; wie sie berechnet werden, steht in [Revenue Cloud Billing Kosten](../revenue-cloud-billing-kosten/). Die Reihenfolge der gesamten Migration beschreibt [CPQ zu Revenue Cloud migrieren](../cpq-migration-revenue-cloud-phasen/) und das Masterclass-Kapitel [Von CPQ zu Revenue Cloud](../../masterclass/revenue-cloud/von-cpq-zu-revenue-cloud/). Die Schnittstellen zwischen Salesforce und SAP gehören zu meiner Arbeit bei [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).

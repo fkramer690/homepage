@@ -11,8 +11,8 @@ contactBrief: change-basics
 author: juliane
 tags: [stakeholder analysis, stakeholder matrix, change management, template]
 takeaways:
-  - "A stakeholder analysis records who is affected by a change, who has influence over it and where these people and groups stand on it."
-  - "The classic stakeholder matrix sorts by power and interest. In change management, impact matters more than interest, because the most affected groups are the ones who have to make the change work."
+  - "I sort groups by influence and impact, because the most affected groups are the ones who make the change work in daily life."
+  - "The classic power-interest grid often puts the future users into \"monitor\", although they decide whether the change succeeds."
   - "A good analysis does not end with the matrix. It ends with an action and an owner for every group."
   - "The analysis is never finished: attitudes shift with every decision, so it belongs back on the table in every project phase."
 faq:
@@ -90,7 +90,7 @@ Take a company that introduces a CRM system such as Salesforce for sales and ser
 | IT operations | medium | medium | supportive | plan the handover to operations | Head of IT |
 | Finance | low | medium | neutral | inform about new reports | Project manager |
 
-Three things stand out. First, the works council says "unknown", which is more honest than a guess. In Germany it has a right of co-determination for software that can evaluate employees' behaviour or performance, so this conversation belongs at the start. Second, field sales is the most critical group: highly affected, with enough informal influence to work around the system, and sceptical. A circular email will not help here; their own manager will, and colleagues acting as [key users](../salesforce-key-user-network/). Third, every row has an owner, and that is rarely the change manager.
+The works council says "unknown", which is more honest than a guess. In Germany it has a right of co-determination for software that can evaluate employees' behaviour or performance, so this conversation belongs at the start. Field sales is the most critical group: highly affected, with enough informal influence to work around the system, and sceptical. A circular email will not help here; their own manager will, and colleagues acting as [key users](../salesforce-key-user-network/). And every row has an owner, and that is rarely the change manager.
 
 I left out the ADKAR stage column in the example; the template contains it. It shows where a group stands right now: is awareness of why something changes missing, or the knowledge of how it works? Depending on the answer, the action is a completely different one. How the model works is explained in [Change management models compared](../change-management-models/).
 
@@ -111,7 +111,7 @@ The [template as an Excel file](../../../downloads/stakeholder-analysis-template
 If a stakeholder analysis contains names and judgements about individuals, it does not belong on a shared drive. When in doubt, work with roles instead of names and store the file where only the core team can see it.
 ```
 
-## Which mistakes happen in stakeholder analysis?
+## Typical mistakes in stakeholder analysis
 
 These are the typical ones:
 
@@ -121,10 +121,8 @@ These are the typical ones:
 - **The most affected groups are missing from the strategy.** The classic matrix overlooks them because they have little formal power.
 - **There is no link to the communication plan.** The analysis tells you who hears what, when and from whom. How to build that is in the article on the [change management communication plan](../change-management-communication-plan/).
 
-## When is outside support worth it?
+## Outside support pays off for unclear attitudes and difficult conversations
 
 For an initiative with three or four groups, the project manager can build the analysis alone with the template. Support pays off when many groups or countries are affected, when the attitude of important groups is unclear, or when nobody inside can hold the difficult conversations, for example with the works council or a sceptical manager. In Salesforce programmes I work together with Fabian Kramer; how we set this up is described in [Salesforce change management: why rollouts fail](../change-management-salesforce-rollout/) and on the page [Salesforce change management consulting](../../services/change-management-salesforce/).
 
-A stakeholder analysis is only as good as the actions that follow from it.
-
-Prosci and ADKAR are registered trademarks of Prosci, Inc.
+*Prosci and ADKAR are registered trademarks of Prosci, Inc.*

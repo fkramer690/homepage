@@ -10,8 +10,8 @@ categories: [devops, architecture]
 contactBrief: devops
 tags: [sandbox strategy, DevOps, release management, partner governance]
 takeaways:
-  - "A sandbox strategy defines for every environment what it is for, who works in it, which data it holds and when it gets refreshed."
-  - "With several partners, every developer needs an own environment, plus one shared integration sandbox, a Partial Copy for ERP tests and a Full Copy for UAT."
+  - "A refresh copies the endpoints from production. Without a post-refresh script, the Full Copy then talks to the production ERP."
+  - "Every developer gets an own environment, plus one shared integration sandbox, a Partial Copy for ERP tests and a Full Copy for UAT."
   - "A refresh overwrites everything in the sandbox. Whatever is not in Git is gone afterwards, so only the pipeline moves changes through the environments."
   - "All sandboxes belong to the client and sit in one list with purpose, owner and refresh date."
 faq:
@@ -43,7 +43,7 @@ On top of that there are scratch orgs: short-lived orgs created from a configura
 
 How many sandboxes of each type your contract includes depends on edition and contract. Full Copies are almost always scarce. That is the first reason you need a strategy: the most expensive environment must not belong to one partner who uses it for their own development.
 
-## Why do sandboxes drift apart in programmes with several partners?
+## With several partners, sandboxes drift apart
 
 In a small org with one admin, sandboxes rarely cause trouble. With several partners I keep seeing the same causes:
 
@@ -70,7 +70,7 @@ A refresh replaces the sandbox completely with a new copy of production. Anythin
 
 With a pipeline on the client's own Git platform you can always see which state sits in which environment. That is the part I set up under [DevOps and release management](../../services/devops-release-management/).
 
-## Who owns the sandboxes?
+## The sandboxes belong to the client
 
 All sandboxes hang off the production org, so technically they always belong to the client. In practice, though, a partner often decides who gets access and when a refresh happens. I think that is a mistake, for the same reason [clients should own their DevOps tools](../why-clients-should-own-their-devops-tools/): whoever controls the environments sets the pace for everyone else.
 
@@ -105,8 +105,6 @@ contra: What you give up
 - The pipeline has to exist before the chain works
 ```
 
-## Where should you start?
+## List every sandbox with its owner
 
 Start with the list. Write down every existing sandbox with its purpose and owner, and delete the ones nobody claims. Then define the chain and block direct changes in integration and UAT. The refresh calendar comes last, once the post-refresh steps exist as a script.
-
-A sandbox strategy is one page of paper that saves a lot of release weekends.

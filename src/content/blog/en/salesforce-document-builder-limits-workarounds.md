@@ -9,11 +9,11 @@ topic: field-service
 categories: [field-service]
 tags: [field service, document builder, service documents, flow, lwc]
 takeaways:
-  - "The Salesforce Document Builder covers the service report in Field Service well, but five gaps show up in every project: template choice, file name, email, default values and styling."
+  - "Five gaps show up in every project: template choice, file name, email, default values and styling. None of them needs an extra tool."
   - "The template is only a text field that points to a Lightning page, so users need a screen flow or quick action to pick the right one."
-  - "File names cannot be defined, and Salesforce sends no email with the document; an asynchronous flow renames the file, and a flow sends the email."
+  - "An asynchronous flow sets the file name and another flow sends the email, because Salesforce does neither itself."
   - "Language and template can be preset by flow on the service appointment and the work order, so the technician does not have to choose."
-  - "Custom Lightning Web Components plug into the template like building blocks and read their data through GraphQL, so they also work offline and show correctly in the preview of the mobile app."
+  - "Custom Lightning Web Components read their data through GraphQL, so they also work offline and in the preview of the mobile app."
 faq:
   - q: "Can I choose the file name of a Salesforce Service Document?"
     a: "Not in the Document Builder itself. A record-triggered flow with an asynchronous path can rename the file shortly after it was created, for example to work order number, customer and date."
@@ -27,21 +27,21 @@ faq:
 
 The Salesforce Document Builder creates the service report in Field Service with signature, photos and offline support, but in practice it has five limits: picking a template is awkward, the file name is fixed, there is no email sending, nothing presets language and template, and the styling is basic. None of them is a reason to buy another tool. Each one can be closed with a flow or a small Lightning Web Component. This article shows how I solve them in my projects.
 
-## Why do the limits of the Document Builder matter?
+## The limits only show in the first test with technicians
 
 In [my first article on Service Documents](../salesforce-service-documents-document-builder/) I described what the Document Builder is, what it costs and when you need a document generation tool instead. The short version: for the service report on site it is the right choice, because it is included in the Field Service licence and works offline.
 
 The official limits list covers technical boundaries such as 50 pages per document or three supported objects. What it does not cover are the gaps you only notice in the first test with technicians and the service office. They are small, but they decide whether users accept the report. A technician who has to search for the right template after every job, or a service office that renames every PDF by hand, will soon ask for the old paper form.
 
-The good news: the Document Builder is built on the same platform as everything else in Salesforce. Flows and Lightning Web Components (LWC, the standard way to build custom user interface components) can close every one of the five gaps without an additional licence.
+The Document Builder is, however, built on the same platform as everything else in Salesforce. Flows and Lightning Web Components (LWC, the standard way to build custom user interface components) can close every one of the five gaps without an additional licence.
 
-## Limit 1: Which template should the technician pick?
+## Limit 1: picking the template needs a screen flow
 
 The template on the work order and the service appointment is only a text field. It refers to the Lightning page (FlexiPage) that holds the template layout. For a technician, that is a technical value without meaning. If you have several templates, for example one per job type or per country, users pick the wrong one or none at all.
 
 **Workaround:** Put the choice behind a screen flow or a quick action. The flow shows a short list with readable names, such as "Annual maintenance" or "Repair with spare parts", and writes the right value into the field. Even better is to filter the list by the job, so the technician only sees templates that fit the work type of the order.
 
-## Limit 2: Why can't I choose the file name?
+## Limit 2: the file name is fixed
 
 The Document Builder names the generated file itself. You cannot define a pattern like work order number, customer and date. For the service office this is annoying, because the PDF ends up in the customer's mailbox, in the ERP or in a document archive, and nobody can tell from the file name which job it belongs to.
 

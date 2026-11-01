@@ -10,9 +10,9 @@ categories: [b2b-commerce, architecture]
 contactBrief: licences
 tags: [B2B Commerce, Lizenzen, Customer Community Plus, Experience Cloud, Händler]
 takeaways:
-  - "Laut Trailhead brauchen Käufer und Buyer Manager in einem Salesforce-B2B-Commerce-Store Customer Community Plus, Merchandiser die Lizenz B2B and D2C Commerce und Entwickler eine volle Salesforce-Lizenz."
-  - "Käuferlizenzen sind nicht Teil der Commerce-Editionen. Die B2B-Preisseite nennt Storefronts, Order Management und Data-Cloud-Credits, aber keine Käuferlizenzen."
-  - "Zum Listenpreis von Experience Cloud for Manufacturing kostet Customer Community Plus 35 € pro Mitglied oder 15 € pro Login und Monat. Ab drei Login-Tagen im Monat ist die Member-Lizenz günstiger."
+  - "Ab drei Login-Tagen im Monat ist die Member-Lizenz günstiger. Deshalb bestimmen die Login-Tage pro Käufer die Rechnung stärker als die Zahl der Händler."
+  - "Käuferlizenzen sind nicht Teil der Commerce-Editionen. Die B2B-Preisseite nennt Storefronts, Order Management und Data-Cloud-Credits."
+  - "Zum Listenpreis von Experience Cloud for Manufacturing kostet Customer Community Plus 35 € pro Mitglied oder 15 € pro Login und Monat."
   - "Customer Community Plus braucht Rollen. Standard sind 50.000 Portalrollen pro Org, Salesforce kann das für B2B erweitern."
   - "Wer für viele Accounts bestellt, nutzt den Account Switcher. Er wird ab 200 Accounts langsamer und fällt bei 2.000 aus."
 faq:
@@ -42,7 +42,7 @@ Salesforce B2B Commerce, das Salesforce inzwischen auch als "Agentforce Commerce
 
 Die [Preisseite für B2B Commerce](https://www.salesforce.com/editions-pricing/commerce-cloud/b2b/) nennt 6 oder 10 Storefronts, 20 Lagerorte, Order Management, Data-Cloud-Credits, den Merchant Agent und je 3 oder 5 Nutzer für CRM Analytics und Knowledge. Käuferlizenzen tauchen dort nicht auf. Sie kommen zur GMV-Gebühr dazu, die ich in [B2B Commerce Preise: Was das GMV-Modell kostet](../b2b-commerce-preise-gmv-modell/) beschreibe.
 
-## Welche Lizenz brauchen Käufer und Buyer Manager?
+## Käufer und Buyer Manager brauchen Customer Community Plus
 
 Beide bekommen Customer Community Plus. Laut [Salesforce-Hilfe zu externen Lizenzen](https://help.salesforce.com/s/articleView?language=en_US&id=sf.users_license_types_communities.htm&type=5) ist diese Lizenz für externe Nutzer gedacht, die Berichte, Dashboards und das normale Freigabemodell brauchen. Partner Community beschreibt die Hilfe für B2B-Sites mit Zugriff auf Vertriebsdaten, etwa Partner Relationship Management. Für den Store erwähnt Trailhead Partner Community nicht.
 
@@ -71,13 +71,13 @@ Die [Seite zu Experience Cloud for Manufacturing](https://www.salesforce.com/man
 
 Die Schwelle ist schnell gerechnet. Ein Käufer mit zwei Login-Tagen im Monat kostet per Login 30 €, als Mitglied 35 €. Ab drei Login-Tagen, also 45 €, ist die Member-Lizenz günstiger. Wer wöchentlich bestellt, bekommt deshalb eine Member-Lizenz, wer ein paar Mal im Jahr bestellt, eine Login-Lizenz.
 
-Ein typisches Szenario, als Annahme: ein Hersteller mit 250 Händlern, jeder mit einem Buyer Manager und zwei Käufern, also 750 Nutzer. 150 davon bestellen mehrmals pro Woche und bekommen Member-Lizenzen: 150 × 35 € = 5.250 € im Monat. Die übrigen 600 melden sich im Schnitt einmal im Monat an: 600 Logins × 15 € = 9.000 €. Zusammen sind das 14.250 € im Monat oder 171.000 € im Jahr zum Listenpreis. Mit Member-Lizenzen für alle 750 Nutzer wären es 26.250 € im Monat oder 315.000 € im Jahr.
+Rechenbeispiel: ein Hersteller mit 250 Händlern, jeder mit einem Buyer Manager und zwei Käufern, also 750 Nutzer. 150 davon bestellen mehrmals pro Woche und bekommen Member-Lizenzen: 150 × 35 € = 5.250 € im Monat. Die übrigen 600 melden sich im Schnitt einmal im Monat an: 600 Logins × 15 € = 9.000 €. Zusammen sind das 14.250 € im Monat oder 171.000 € im Jahr zum Listenpreis. Mit Member-Lizenzen für alle 750 Nutzer wären es 26.250 € im Monat oder 315.000 € im Jahr.
 
 ```hinweis achtung
 Ein Login-Tag ist jeder Tag, an dem sich jemand anmeldet, auch nur für einen Lieferstatus. Wird der Shop zum Ort, an dem Händler Liefertermine nachsehen, steigen die Login-Tage, auch wenn die Bestellungen gleich bleiben.
 ```
 
-## Welche Limits zählen für die Lizenzplanung?
+## Rollen und Account Switcher begrenzen die Planung
 
 Neben der Lizenz gibt es Grenzen, die spät auffallen, wenn niemand sie prüft. Der [Commerce-Entwicklerleitfaden zu Käufer-Limits](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-shopper-buyer-groups-accounts-limits.html) und die Hilfe nennen diese:
 
@@ -95,8 +95,6 @@ Interne Mitarbeiter arbeiten in Salesforce mit ihrer internen Lizenz. In der Tra
 
 Mein Rat: Schreiben Sie pro interner Gruppe auf, was sie im Store tut, etwa den Shop aus Händlersicht ansehen, im Namen eines Händlers bestellen oder den Katalog pflegen, und lassen Sie sich im Angebot bestätigen, welche Lizenz welche Tätigkeit abdeckt. Welche internen Nutzer wirklich eine volle Lizenz brauchen, steht in [Salesforce-Lizenzen: Braucht jeder eine volle Lizenz?](../salesforce-lizenzen-volle-lizenz/).
 
-## Wo starten Sie?
+## Login-Tage pro Käufer zählen
 
 Legen Sie eine Liste mit vier Spalten an: Rolle, Anzahl Personen, Login-Tage pro Monat und Lizenz. Füllen Sie sie aus Ihren Auftragsdaten der letzten zwölf Monate: Wer hat wie oft per Telefon, E-Mail oder Portal bestellt? Prüfen Sie dann die Limits oben, vor allem Rollen und den Account Switcher bei Händlergruppen. Ob ein Shop oder ein Portal überhaupt zu Ihren Händlern passt, klärt [B2B Commerce oder Händlerportal](../b2b-commerce-oder-haendlerportal/), das ganze Kostenbild steht in [Kapitel 1 der Masterclass B2B Commerce](../../masterclass/b2b-commerce/b2b-commerce-lohnt-sich-ueberblick/). Lizenzprognosen wie diese gehören zu meiner Arbeit bei [Make-or-Buy und Lizenzen](../../leistungen/make-or-buy-lizenzen/).
-
-Zählen Sie die Login-Tage pro Käufer vor der Unterschrift, denn sie bestimmen die Lizenzrechnung stärker als die Zahl der Händler.

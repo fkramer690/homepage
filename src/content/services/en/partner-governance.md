@@ -15,23 +15,21 @@ situations:
   - "Partner deliveries are accepted without a technical review, and problems show up in UAT or production."
   - "Repository, pipeline or backlog sit with one partner, which makes it hard to compare or replace partners."
 deliverables:
-  - "Governance and release framework that applies to every partner and internal team"
-  - "Development and architecture standards, from naming conventions to rules for automation and test coverage"
-  - "Object ownership matrix: which stream is responsible for which object and its metadata"
-  - "Pull request reviews on the client side, including technical review of partner deliveries"
-  - "Center of Excellence format to agree on standards and upcoming changes across streams"
-  - "Onboarding of new partners into a documented setup"
-  - "Handover of the process to an internal colleague"
+  - "I review every partner delivery in a pull request before it moves to the next environment."
+  - "I write down the standards with the teams, based on what keeps coming up in reviews."
+  - "I resolve conflicts when two streams want to change the same object."
+  - "I run the Center of Excellence calls in which upcoming changes are raised."
+  - "I onboard new partners into the documented setup."
 results:
-  - "Written standards that every partner follows and that reviews enforce"
-  - "Clear ownership for processes, objects and metadata across all streams"
-  - "Comparable partners, because they all work by the same rules"
-  - "Repository, pipeline and tools owned by the client, not by a partner"
-  - "An internal owner who runs the process after the handover"
+  - "One governance and release framework that applies to every partner and internal team"
+  - "Development and architecture standards, from naming conventions to rules for automation and test coverage"
+  - "An object ownership matrix that assigns every object and its metadata to one responsible stream"
+  - "Repository, pipeline and tools owned by your company"
+  - "A trained internal colleague who runs the process after the handover"
 phases:
   - title: "Assessment"
     icon: "analyse"
-    text: "I look at how the teams actually build today: repository, deployments, pull requests, ownership and the main conflicts between streams."
+    text: "I look at how the teams build today: repository, deployments, pull requests, ownership and the main conflicts between streams."
   - title: "Framework and standards"
     icon: "design"
     text: "Together with the teams I write down standards, the object ownership matrix and the review rules. The first version covers most cases, edge cases follow."
@@ -60,7 +58,7 @@ without: Without an owner on the client side | Every partner delivers its part, 
 with: With an architect on the client side | Every delivery runs through standards and review, one checked stream reaches the org.
 ```
 
-## What does this look like in a real programme?
+## More than 30 developers, five partners and one org
 
 ```kennzahlen
 30+ | developers in eight streams
@@ -70,12 +68,9 @@ with: With an architect on the client side | Every delivery runs through standar
 source: my largest programme as an architect on the client side
 ```
 
-The largest programme I steered had more than 30 developers in eight streams, delivered by five implementation partners plus internal teams. At the start, nobody had clearly defined who led which processes, objects and metadata. Changes overwrote each other, and the technical approaches of the teams had drifted far apart.
+At the start of this programme, nobody had defined who led which processes, objects and metadata. Changes overwrote each other, and the technical approaches of the teams had drifted far apart.
 
-The first step was simple and effective: every change went through a pull request with a review, and for a while every single one crossed my desk. From those reviews we wrote down standards. They covered the usual topics, such as naming conventions, one automation per object and context, and test coverage. Two elements made the biggest difference:
-
-- **An object ownership matrix**, which defined which stream was responsible for which object. Before a team changed an object it did not own, it had to coordinate with the owner.
-- **Rules for configuration**, for example which values belong in custom metadata types or custom labels instead of being hardcoded.
+First, every change went through a pull request with a review, and for a while every single one crossed my desk. From those reviews we wrote down standards: naming conventions, one automation per object and context, test coverage. The object ownership matrix and the rules for configuration made the biggest difference. The matrix defined which stream was responsible for which object, and before a team changed an object it did not own, it coordinated with the owner. The configuration rules set out which values belong in custom metadata types or custom labels, so they are not hardcoded.
 
 ```tabelle matrix
 title: Object ownership matrix, simplified example
@@ -88,27 +83,17 @@ Asset | coordinates | Owner * | coordinates
 Work Order | coordinates | coordinates | Owner *
 note: Before a team changes another team's object, it coordinates with the owner.
 ```
-It took about three months until the standards were stable. The first version covered roughly 80 percent of the cases. New edge cases came up over the following weeks. We addressed them in regular [Center of Excellence calls](../../blog/salesforce-center-of-excellence-cadence/), where upcoming changes were raised with enough lead time for all streams. After a while the edge cases disappeared, because topics came up before they turned into conflicts. Once the process ran smoothly, I handed it over to an internal colleague who now owns it.
+After the first version, new edge cases came up over the following weeks. We addressed them in regular [Center of Excellence calls](../../blog/salesforce-center-of-excellence-cadence/), where upcoming changes were raised with enough lead time for all streams. After a while the edge cases disappeared, because topics came up before they turned into conflicts. Once the process ran smoothly, I handed it over to an internal colleague who has owned it since.
 
-## Why does governance belong on the client side?
+## Rules and tools belong to the client
 
-A partner can write good standards. What matters is who owns the rules and the tools. I explain this in more detail in [why clients should own their DevOps tools](../../blog/why-clients-should-own-their-devops-tools/).
+A partner can write good standards too. But if it sets the rules, it decides how everyone else builds, including its competitors. If the repository, the pipeline and tools like Jira or Miro also sit with that partner, every change of partner gets expensive.
 
-```vergleich
-without: Rules and tools with a partner
-- The partner decides how every other partner builds, including its competitors.
-- The repository, the pipeline and tools like Jira or Miro belong to it.
-- Partners are hard to compare or replace.
-with: Rules and tools with the client
-- The standards, the review rights and the tools belong to the client.
-- A new partner is onboarded into a documented setup.
-- A partner who leaves hands over nothing but their user accounts.
-- Offers can be compared fairly, and conversations about quality stay honest.
-```
+When the client owns the standards, the approval rights and the tools, a new partner starts with the same rules, tools and rights as everyone else, and a partner who leaves hands over nothing but their user accounts. Offers can then be compared fairly, because everyone delivers under the same conditions. More on this in [why clients should own their DevOps tools](../../blog/why-clients-should-own-their-devops-tools/).
 
 ## How do reviews fit in without slowing the programme down?
 
-Reviews are the instrument that turns written standards into daily practice. They do not slow things down when three conditions are met:
+Reviews turn written standards into daily practice. They do not slow things down when pull requests are small, the pipeline runs every repeatable check and everyone knows when the review will come:
 
 ```stufen
 1 | Small pull requests | Partner teams | Every change is small enough for a quick review.
@@ -116,4 +101,4 @@ Reviews are the instrument that turns written standards into daily practice. The
 3 | Agreed response times | Review by the client | Everyone knows when the review will come.
 ```
 
-I describe the details in [why pull request reviews are a must in enterprise projects](../../blog/why-pull-request-reviews-are-a-must-in-enterprise-projects/). Partner governance works best together with a solid release process, which is why it usually goes hand in hand with [DevOps and release management](../devops-release-management/).
+I describe the details in [why pull request reviews are a must in enterprise projects](../../blog/why-pull-request-reviews-are-a-must-in-enterprise-projects/). The pipeline these checks run on is part of [DevOps and release management](../devops-release-management/); without one shared release process, no governance framework holds.

@@ -26,7 +26,7 @@ faq:
 draft: false
 ---
 
-Wissen und Fähigkeit, die mittleren Stufen im ADKAR-Modell, bringen in einer Salesforce-Einführung vor allem Key User ins Team. Eine Schulung erklärt, wo eine Funktion liegt. Ob jemand sie im Kundentermin, am Telefon oder vor der Maschine anwenden kann, zeigt erst der Alltag, und dort hilft die Kollegin am Nachbartisch mehr als eine Hotline. Ich wähle Key User nach Ansehen im Team aus, plane ihre Zeit vorher mit der Führungskraft und lasse sie am echten Fall schulen. Im Außendienst übernimmt eine kleine Gruppe erfahrener Techniker diese Rolle.
+Wissen und Fähigkeit, die mittleren Stufen im ADKAR-Modell, bringen in einer Salesforce-Einführung vor allem Key User ins Team. Eine Schulung erklärt, wo eine Funktion liegt. Ob jemand sie im Kundentermin, am Telefon oder vor der Maschine anwenden kann, zeigt erst der Alltag, und dort hilft die Kollegin am Nachbartisch mehr als eine Hotline. Ich wähle Key User nach Ansehen im Team aus, plane ihre Zeit vorher mit der Führungskraft und lasse sie am eigenen Fall schulen. Im Außendienst übernimmt eine kleine Gruppe erfahrener Techniker diese Rolle.
 
 ## Was leisten Key User in der Einführung?
 
@@ -36,23 +36,23 @@ Key User sind Fachanwender, die das neue System vor allen anderen kennen. Bei He
 Vor dem Bau | Workshops · Key User mit Product Owner
   Abläufe im eigenen Team beschreiben, Sonderfälle nennen, Akzeptanzkriterien für User Stories mitformulieren.
 Vor dem Go-live | Abnahmetest · Key User
-  Die eigenen Fälle durchspielen und Kollegen in kurzen Sitzungen am echten Fall zeigen, was sich ändert.
+  Die eigenen Fälle durchspielen und Kollegen in kurzen Sitzungen an eigenen Fällen zeigen, was sich ändert.
 Erste Wochen | Alltag · Key User vor Ort
   Erste Anlaufstelle für Fragen, Probleme sammeln und gebündelt ans Projekt melden.
 Betrieb | laufend · Key User und Admin
   Neue Kollegen einarbeiten, vor jedem Release erfahren, was kommt, und es im Team weitergeben.
 ```
 
-Im Abnahmetest sind Key User die besten Tester, weil sie wissen, welche Fälle in ihrem Team wirklich vorkommen. Wie ein Abnahmetest mit dem Fachbereich aufgebaut ist, steht in [Salesforce UAT: Wer testet vor dem Release?](../../../blog/salesforce-uat-abnahmetest-fachbereich/).
+Im Abnahmetest sind Key User die besten Tester, weil sie wissen, welche Fälle in ihrem Team vorkommen. Wie ein Abnahmetest mit dem Fachbereich aufgebaut ist, steht in [Salesforce UAT: Wer testet vor dem Release?](../../../blog/salesforce-uat-abnahmetest-fachbereich/).
 
-## Wie wählen Sie die richtigen Key User aus?
+## Key User nach Ansehen im Team auswählen
 
 Die häufigste Auswahl ist die schlechteste: Wer gerade Zeit hat, wird Key User. Ich achte auf andere Kriterien:
 
 | Kriterium | Woran Sie es erkennen |
 |---|---|
 | Ansehen im Team | Kollegen fragen diese Person schon heute um Rat, egal zu welchem System. |
-| Kenntnis des Prozesses | Sie weiß, wie ein Angebot, ein Auftrag oder ein Serviceeinsatz im eigenen Team wirklich läuft, inklusive der Ausnahmen. |
+| Kenntnis des Prozesses | Sie weiß, wie ein Angebot, ein Auftrag oder ein Serviceeinsatz im eigenen Team im Alltag läuft, inklusive der Ausnahmen. |
 | Neugier statt Begeisterung | Kritische Key User finden Schwächen früher, und wenn sie überzeugt sind, überzeugen sie andere. |
 | Bleibt eine Weile | Wer in drei Monaten die Stelle wechselt, nimmt das Wissen mit. |
 
@@ -68,11 +68,11 @@ Vereinbaren Sie die Zeit der Key User schriftlich mit der Führungskraft, mit Wo
 
 Sichtbare Anerkennung kostet nichts und wirkt. Wer zusätzliche Arbeit für das Projekt übernimmt, sollte das im Jahresgespräch wiederfinden. Das entscheidet darüber, ob sich beim nächsten Projekt wieder jemand meldet.
 
-## Wie schulen Sie, damit es im Alltag hält?
+## Schulung kurz vor dem Go-live, mit Fällen aus dem eigenen Alltag
 
 Eine Schulung zwei Monate vor dem Go-live ist vergessen, wenn das System kommt. Eine Schulung mit erfundenen Beispieldaten zeigt die Funktion, aber nicht den eigenen Fall. Ich plane Schulungen deshalb nach drei Regeln:
 
-1. **Kurz vor dem Go-live.** Wenige Tage bis zwei Wochen vorher, damit das Wissen bis zum ersten echten Fall hält.
+1. **Kurz vor dem Go-live.** Wenige Tage bis zwei Wochen vorher, damit das Wissen bis zum ersten Kundenfall hält.
 2. **Am echten Fall.** Der Innendienst legt ein Angebot für einen Kunden an, den er kennt, mit den Produkten, die er verkauft. Dafür braucht die Schulungsumgebung realistische Daten.
 3. **Von Key Usern mit dem Projektteam.** Key User erklären in der Sprache des Teams, das Projektteam beantwortet die Fragen, die tiefer gehen.
 
@@ -88,6 +88,6 @@ In meinen Field-Service-Projekten mit Wartung, Störungseinsätzen und Inbetrieb
 
 Ich empfehle drei bis fünf erfahrene Techniker pro Region, die vor dem Rollout mitarbeiten. Sie testen Formulare im echten Einsatz, nehmen die App dorthin mit, wo kein Netz ist, schulen ihre Kollegen und bleiben danach Ansprechpartner wie Key User im Innendienst. Wichtig ist, dass ihre Rückmeldungen sichtbare Änderungen bewirken. Was Techniker von der App abhält und wie Sie Standortdaten offen klären, steht in [Field Service App: wie Techniker sie annehmen](../../../blog/field-service-app-akzeptanz-techniker/), die Einführung in Wellen im Field-Service-Kapitel [KI-Agenten, Einführung und Kennzahlen](../../field-service/field-service-ki-agenten-einfuehrung/).
 
-## Wo fangen Sie an?
+## In jedem Team fragen, wen die Leute heute um Rat fragen
 
 Fragen Sie in jedem betroffenen Team, wen die Leute heute um Rat fragen, und sprechen Sie mit den Führungskräften dieser Personen über Zeit und Vertretung. Nehmen Sie die Key User in die ersten Workshops mit, bevor gebaut wird, und planen Sie die Schulung am echten Fall in die letzten zwei Wochen vor dem Go-live. Wie das in einem Rollout über mehrere Länder aussieht, zeigt [Kapitel 4](../change-management-rollout-laender/). Die Rolle der Führung dahinter steht in [Kapitel 2](../sponsor-und-kommunikation/).

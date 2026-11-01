@@ -10,11 +10,10 @@ pubDate: 2026-10-29
 short: "Rollout über Länder und Teams"
 summary: "Jede Welle durchläuft ADKAR neu: Sponsor im Land, Abweichungen vom Template, Kommunikation in Landessprache und die Lehren aus der ersten Welle."
 takeaways:
-  - "In einem weltweiten Rollout durchläuft jedes Land die ADKAR-Stufen neu, deshalb gehört Change Management in jede Welle und nicht nur in die erste."
   - "Jedes Land braucht einen eigenen Sponsor aus der Landesleitung; ein globaler Sponsor in der Zentrale ersetzt ihn nicht."
   - "Die Liste der Abweichungswünsche zeigt, wo Awareness fehlt: Reicht ein Land zwanzig Wünsche ein und die anderen drei, liegt das selten am Geschäft."
-  - "Die Botschaft vor dem Go-live kommt in der Landessprache von der eigenen Führung und beantwortet fünf Fragen, darunter: was bleibt, wie es ist."
-  - "Nach der ersten Welle prüfen Sponsor und Key User drei Fragen, bevor die nächste startet."
+  - "Die Botschaft vor dem Go-live kommt in der Landessprache von der eigenen Führung und sagt auch, was bleibt, wie es ist."
+  - "Nach der ersten Welle zeigt eine Auswertung mit Sponsor und Key Usern, welche Fragen am häufigsten kamen und wo weiter mit eigenen Listen gearbeitet wird."
 articles: [change-global-rollout, global-template-country-deviations, manufacturing-cloud-global-rollout, field-service-rollout, commerce-dealer-rollout]
 faq:
   - q: "Reicht Change Management in der Zentrale bei einem weltweiten Rollout?"
@@ -38,7 +37,7 @@ Im ADKAR-Modell aus [Kapitel 1](../change-management-adkar-diagnose/) fehlen in 
 Beim weltweiten Manufacturing-Cloud-Rollout stand vorher fest, dass das Ziel die Harmonisierung der Prozesse ist. Was ich heute anders machen würde: Change Management immer wieder ins Gespräch bringen, auch wenn der Kunde meint, er brauche keins. Pro Land gehörten mindestens Key User, Kommunikation vor dem Go-live und ein Blick auf die Nutzung danach dazu.
 ```
 
-## Was gehört pro Land dazu?
+## Dieselben Bausteine in jedem Land
 
 Ich plane für jedes Land dieselben Bausteine. Die Inhalte unterscheiden sich, die Liste nicht:
 
@@ -56,7 +55,7 @@ Am häufigsten unterschätzt werden der Sponsor im Land und die Mitbestimmung. E
 
 ## Was muss die Botschaft im Land erklären?
 
-Kommunikation vor dem Go-live erklärt, was sich ändert und warum, nicht nur, wo man klickt. Ich gebe dem Sponsor jedes Landes fünf Fragen mit, die seine Botschaft beantworten sollte:
+Kommunikation vor dem Go-live erklärt, was sich ändert und warum, nicht nur, wo man klickt. Ich gebe dem Sponsor jedes Landes diese Fragen mit, die seine Botschaft beantworten sollte:
 
 | Frage | Was die Botschaft sagt |
 |---|---|
@@ -66,17 +65,17 @@ Kommunikation vor dem Go-live erklärt, was sich ändert und warum, nicht nur, w
 | Was bleibt, wie es ist? | Das wird fast immer vergessen und nimmt viel Unsicherheit. |
 | Wo gibt es Hilfe? | Namen der Key User, nicht eine Adresse des Supports. |
 
-## Wie hängen Abweichungen vom Template mit Change Management zusammen?
+## Abweichungswünsche zeigen, wo Awareness fehlt
 
 Jeder Wunsch nach Abweichung vom Template ist auch eine Frage des Change Managements. Wünsche aus Gewohnheit kommen fast immer mit einer fachlichen Begründung. Wenn der Sponsor im Land versteht, warum das Template so gebaut ist, kann er diese Wünsche einordnen, bevor sie beim Architekten ankommen.
 
 Umgekehrt zeigt die Liste der Abweichungen, wo das Change Management ansetzen muss. Wenn ein Land zwanzig Wünsche einreicht und die anderen drei, fehlt dort meist Awareness. Ich nehme die Abweichungsliste deshalb in jedes Gespräch mit dem Sponsor eines Landes mit. Wie Sie gesetzliche, geschäftliche und gewohnte Abweichungen trennen, steht in [Globales Salesforce-Template: wie viel Land verträgt es?](../../../blog/salesforce-globales-template-laenderabweichungen/).
 
-## Was gilt für Wellen im Außendienst und bei Händlern?
+## Wellen im Außendienst und bei Händlern folgen derselben Logik
 
 Dieselbe Logik trägt bei Wellen, die nicht nach Land geschnitten sind. Field Service führe ich Region für Region ein. Jede Region bringt eigene Disponenten, Techniker und Stammdaten mit, und der Betriebsrat gehört in die Planung der ersten Welle, wie in [Salesforce Field Service Einführung: Warum in Wellen?](../../../blog/salesforce-field-service-einfuehrung/) beschrieben. Händler sind eine eigene Gruppe mit eigener Führung: Ein Händlerportal oder ein B2B-Shop wird angenommen, wenn der Händler einen Vorteil sieht, und die Botschaft kommt vom Vertriebsleiter, den der Händler kennt. Mehr dazu in [B2B-Shop bei Händlern einführen](../../../blog/b2b-shop-haendler-einfuehren/).
 
-## Was lernen Sie aus der ersten Welle?
+## Nach der ersten Welle: Auswertung vor dem nächsten Land
 
 Nach dem Go-live des ersten Landes oder der ersten Region prüfe ich mit dem Sponsor und den Key Usern drei Fragen:
 

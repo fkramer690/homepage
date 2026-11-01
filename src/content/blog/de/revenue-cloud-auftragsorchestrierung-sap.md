@@ -10,10 +10,9 @@ categories: [revenue-cloud, architecture]
 contactBrief: integration
 tags: [Revenue Cloud, Dynamic Revenue Orchestrator, SAP, Auftragsabwicklung, Schnittstellen]
 takeaways:
-  - "In Revenue Cloud gelangt ein aktivierter Auftrag über einen datensatzgesteuerten Flow zum Dynamic Revenue Orchestrator, zum Beispiel sobald der Status auf Activated wechselt."
-  - "Die Dekomposition zerlegt die kommerziellen Produkte, die ein Kunde kauft, in technische Produkte für nachgelagerte Systeme, gesteuert über Product Fulfillment Decomposition Rules."
-  - "Ein Orchestrierungsplan kennt fünf Schritttypen: Auto Task, Callout, Manual Task, Milestone und Pause. Die Übergabe an SAP gehört in einen Callout."
-  - "Fehlgeschlagene Schritte heißen Fallout: DRO wiederholt sie wie eingestellt und legt sie dann in eine Queue, in der jemand Daten korrigiert, neu startet oder den Schritt manuell abschließt."
+  - "Die Dekomposition zerlegt kommerzielle Produkte in technische Produkte für nachgelagerte Systeme, gesteuert über Decomposition Rules."
+  - "Ein Orchestrierungsplan kennt fünf Schritttypen: Auto Task, Callout, Manual Task, Milestone und Pause. Die Übergabe an SAP ist ein Callout."
+  - "Fehlgeschlagene Schritte heißen Fallout. DRO wiederholt sie wie eingestellt und legt sie dann in eine Queue, in der jemand sie korrigiert."
   - "Geht ein Auftrag in einem Stück an SAP und passiert danach in Salesforce nichts mehr, reicht eine einfache Schnittstelle ohne DRO und spart ein Add-on."
 faq:
   - q: "Was ist der Dynamic Revenue Orchestrator in Salesforce?"
@@ -43,7 +42,7 @@ Trailhead nennt drei Rollen, und ich würde sie vor dem ersten Sprint besetzen:
 
 Die Operator-Rolle würde ich in der Auftragsabwicklung oder im Innendienst ansiedeln, nicht in der IT. Dort weiß man, warum ein Auftrag hängt, und genau diese Leute brauchen Schulung und Lizenz.
 
-## Wie kommt ein Auftrag vom Angebot zu DRO?
+## Ein datensatzgesteuerter Flow übergibt den Auftrag an DRO
 
 Der Weg beginnt mit einem angenommenen Angebot, aus dem ein Auftrag wird. Laut [Trailhead zur Auftragsverwaltung](https://trailhead.salesforce.com/content/learn/modules/revenue-cloud-design/manage-orders) legen Sie einen datensatzgesteuerten Flow an, der den Auftrag an DRO übergibt, zum Beispiel wenn sein Status auf Activated wechselt. Zwei Kontextdefinitionen transportieren die Daten: SalesTransactionContext enthält den Auftrag und seine Fulfillment-Positionen, FulfillmentAssetContext dient der Dekomposition und ist auf die Asset-Objekte gemappt.
 
@@ -53,11 +52,11 @@ Die Aktivierung ist ein fachliches Ereignis. Legen Sie fest, wer einen Auftrag a
 
 Die Dekomposition trennt, was der Kunde sieht, von dem, was die Abwicklung braucht. Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/dynamic-revenue-orchestrator-foundations/discover-order-decomposition) ist ein kommerzielles Produkt jedes Produkt, das ein Kunde im Katalog findet. Ein technisches Produkt liegt ebenfalls im Katalog, ist für Kunden in der Regel verborgen und richtet sich nach den Anforderungen nachgelagerter Systeme wie Abrechnung, Fulfillment oder Logistik. Product Fulfillment Decomposition Rules ordnen eine Quelle, also ein Produkt oder eine Produktklassifizierung, einem technischen Produkt zu, inklusive Feldern und Attributen, und können Bedingungen enthalten.
 
-Ein typisches Szenario, als Annahme: Ein Kunde kauft "Verpackungslinie L200 mit Inbetriebnahme und Fernüberwachung". Die Dekomposition macht daraus drei technische Produkte: eine Kundenauftragsposition für SAP, einen Inbetriebnahme-Einsatz für den Service und die Freischaltung des Überwachungsdienstes. Weder der Kunde noch der Vertrieb sieht diese drei.
+Ein Rechenbeispiel: Ein Kunde kauft "Verpackungslinie L200 mit Inbetriebnahme und Fernüberwachung". Die Dekomposition macht daraus drei technische Produkte: eine Kundenauftragsposition für SAP, einen Inbetriebnahme-Einsatz für den Service und die Freischaltung des Überwachungsdienstes. Weder der Kunde noch der Vertrieb sieht diese drei.
 
 Trailhead sagt auch, dass einfache Aufträge keine Dekomposition brauchen und direkt orchestriert werden können. Weil Regeln auf Produktklassifizierungen zeigen dürfen, deckt eine Regel eine ganze Produktfamilie ab statt jeder einzelnen Maschine. Das hält die Regeln pflegbar, auch wenn der Katalog Hunderte Varianten hat.
 
-## Welche Schritte führt ein Orchestrierungsplan aus?
+## Fünf Schritttypen im Orchestrierungsplan
 
 Ein Orchestrierungsplan teilt die Abwicklung in Schritte, die in festgelegter Reihenfolge laufen. [Trailhead](https://trailhead.salesforce.com/content/learn/modules/dynamic-revenue-orchestrator-foundations/explore-order-orchestration) nennt fünf Schritttypen. Die Beispiele in der rechten Spalte sind meine Annahmen für einen Maschinenbauer:
 
@@ -71,7 +70,7 @@ Ein Orchestrierungsplan teilt die Abwicklung in Schritte, die in festgelegter Re
 
 Schritte liegen in Swimlanes, meist eine pro abwickelndem System, und können voneinander abhängen. Der Scope eines Schritts legt fest, ob er einmal pro Plan, pro Bundle oder pro Position entsteht. Jeder Schritt kann eine geschätzte Dauer als SLA tragen und eine Jeopardy-Schwelle, die warnt, bevor das SLA reißt: Im Trailhead-Beispiel wird ein 24-Stunden-Schritt nach 23 Stunden markiert.
 
-## Wo gehört die Übergabe an SAP hin?
+## Die Übergabe an SAP gehört in einen Callout
 
 In einen Callout, früh im Plan. SAP braucht den Kundenauftrag, bevor es Produktion planen, liefern und fakturieren kann, also hängen die meisten anderen Schritte davon ab.
 
@@ -118,8 +117,6 @@ Zu den Kosten: Die [Preisseite von Revenue Cloud](https://www.salesforce.com/eu/
 Was dieser Freemium-Zugang umfasst, steht auf der Preisseite nicht. Lassen Sie es sich schriftlich geben, bevor Ihr Design davon abhängt.
 ```
 
-## Wo starten Sie?
+## Die fünf häufigsten Auftragsarten skizzieren
 
 Nehmen Sie Ihre fünf häufigsten Auftragsarten und skizzieren Sie für jede, was nach der Unterschrift passiert: welches System, welches Team, in welcher Reihenfolge. Endet jede Skizze mit "den Rest macht SAP", beginnen Sie mit einer einfachen Schnittstelle. Sehen Sie mehrere Systeme und Abhängigkeiten, bilden Sie zuerst eine Auftragsart in DRO ab, samt Callout an SAP und Fallout-Queue, und testen Sie die Ablehnungen vor dem Normalfall. Das Kapitel [Angebot, Vertrag, Auftrag](../../masterclass/revenue-cloud/angebot-vertrag-auftrag/) zeigt, wo dieser Schritt im Gesamtprozess sitzt, und das Schnittstellendesign gehört zu meiner Arbeit bei [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).
-
-DRO lohnt sich, wenn ein Auftrag mehrere Systeme in Bewegung setzt, und für eine einzelne Übergabe an SAP reicht eine einfache Schnittstelle.

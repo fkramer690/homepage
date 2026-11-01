@@ -10,10 +10,9 @@ pubDate: 2026-10-28
 short: "Business case and licences"
 summary: "When Salesforce Field Service pays off for manufacturers, which role needs which licence and how a job gets from the case to the technician."
 takeaways:
-  - "Salesforce Field Service pays off mainly with many short jobs per technician and day, a high share of travel time and many skills that have to match the job."
-  - "According to the price list of October 2026, Dispatcher and Technician cost $175 per user and month each, Field Service Plus $230 and Contractor Plus $80 per user or $32 per login."
+  - "At list price, Dispatcher and Technician cost $175 per user and month each, Field Service Plus $230, Contractor Plus $80 per user or $32 per login."
   - "Dispatcher and Technician licences may not be used for contact centre or case management. Anyone who works cases and also dispatches needs Field Service Plus."
-  - "A job runs through case, work order, line items and service appointment; maintenance plans create work orders without a case, and both end up in the same dispatch queue."
+  - "A job runs through case, work order and service appointment. Maintenance plans create work orders without a case for the same dispatch queue."
   - "Agentforce 1 Field Service at $650 pays off only if you would buy Slack, Tableau Next and Data Cloud anyway; built from parts, the core costs $430."
 articles: [field-service-worth-it, field-service-licences-by-role, agentforce-1-field-service-bundle, field-service-case-to-work-order, salesforce-licence-types]
 faq:
@@ -58,7 +57,7 @@ Maintenance, repairs and inspections with several customers a day are the best c
 
 If nobody knows the four numbers, the basis for any business case is missing. The criteria in detail and the calculation for 40 technicians are in [Salesforce Field Service: when is it worth it?](../../../blog/salesforce-field-service-worth-it/).
 
-## How does a job get from the case to the technician?
+## From case to technician: the path of a job
 
 A customer request passes through four records in Salesforce before a technician sets off. The [Field Service developer guide](https://developer.salesforce.com/docs/atlas.en-us.field_service_dev.meta/field_service_dev/fsl_dev_soap_core.htm) describes the core objects like this:
 
@@ -115,7 +114,7 @@ The pricing page refers to sales for login-based contractor licences, so I would
 
 Contractor licences are meant for your service partners' staff; putting your own people on them to save money is a risk I would not take. The full role matrix with an annual bill is in [Salesforce Field Service licences: who needs which?](../../../blog/field-service-licences-by-role/).
 
-## Which add-ons exist, and when does the Agentforce 1 bundle pay off?
+## Add-ons and the Agentforce 1 bundle
 
 The pricing page lists five add-ons:
 
@@ -141,7 +140,7 @@ Not every field team needs a planning product. I check three alternatives before
 
 Two boundaries to other Salesforce products are worth knowing before the quote. If the same service organisation handles warranty claims from dealers, Manufacturing Cloud for Service comes into play; where warranty ends and Field Service begins is covered in the Manufacturing Cloud masterclass chapter [warranty and after-sales](../../manufacturing-cloud/warranty-and-after-sales/). If maintenance contracts are sold and billed as recurring revenue, that is a Revenue Cloud topic, placed in the [Revenue Cloud overview](../../revenue-cloud/revenue-cloud-overview/).
 
-## A typical scenario, as an assumption: a component maker's licence bill
+## Worked example: a component maker's licence bill
 
 A component maker has three people who run hotline and dispatch together, two pure dispatchers, 25 own technicians, one person in the back office who maintains contracts, and a service partner with four technicians. All numbers are assumptions, the prices are list prices from October 2026.
 
@@ -157,7 +156,7 @@ That is $5,930 a month and $71,160 a year at list price, without implementation 
 
 If the hotline is also to get an AI agent, the five office seats cost $625 more a month with the Agentforce add-on. The same five seats on Agentforce 1 Field Service cost $3,250 a month, against $1,665 built from parts. Without planned demand for Slack, Tableau Next and Data Cloud, nothing here speaks for the bundle.
 
-## What should you decide before a partner builds?
+## First step: collect the four numbers for one region
 
 | Decision | What it covers |
 |---|---|
@@ -169,5 +168,3 @@ If the hotline is also to get an AI agent, the five office seats cost $625 more 
 | A licence forecast for three years | By role and rollout wave, so you do not buy 45 technician licences on day one when the first wave has 15. |
 
 This list is part of my work on [make-or-buy and licence forecasts](../../../services/make-or-buy-licences/), before the negotiation and independent of vendor and partner. Once the business case stands, the next topic is planning itself: master data, scheduling policies and the new console are covered in [chapter 2: scheduling and dispatch](../field-service-scheduling-dispatch/). All chapters are on the [overview page](../).
-
-Field Service pays off with many short jobs and a licence matrix that follows the roles.

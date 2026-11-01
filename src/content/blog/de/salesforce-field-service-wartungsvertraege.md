@@ -10,10 +10,10 @@ categories: [field-service]
 series: { id: field-service, part: 5 }
 tags: [Field Service, Außendienst, Wartungsverträge, Entitlements, Fertigung]
 takeaways:
-  - "Wartungsverträge verteilen sich in Salesforce Field Service auf drei Objekte: Service Contract für das, was verkauft wurde, Maintenance Plan für die geplanten Wartungen und Entitlement für den zugesagten Service-Level."
-  - "Entitlements haben mit Wartungsverträgen nur bedingt zu tun. Sie können auch aus einer Garantie oder einem Supportpaket kommen und beschreiben, worauf ein Kunde Anspruch hat."
+  - "Ein Wartungsvertrag liegt auf drei Objekten: Service Contract (was verkauft wurde), Maintenance Plan (geplante Wartungen) und Entitlement (Service-Level)."
+  - "Entitlements können auch aus einer Garantie oder einem Supportpaket kommen. Sie beschreiben, worauf ein Kunde Anspruch hat."
   - "Maintenance Plans erzeugen Arbeitsaufträge für Wartungen im Voraus, laut Salesforce höchstens 2.600 Arbeitsaufträge und Positionen pro Lauf."
-  - "Entitlements können die Priorität im Dispatching beeinflussen. Field Service plant Termine mit hoher Priorität zuerst und kann dafür Termine mit niedriger Priorität verdrängen."
+  - "Entitlements können die Priorität im Dispatching steuern. Termine mit hoher Priorität plant Field Service zuerst und verdrängt dafür andere."
   - "Reaktionszeiten aus dem Vertrag werden über Entitlement-Prozesse mit Milestones am Arbeitsauftrag gemessen und damit nachweisbar."
 faq:
   - q: "Was ist der Unterschied zwischen Service Contract und Entitlement?"
@@ -85,18 +85,16 @@ Freigeben | Disponent
 
 Wann der Milestone als erfüllt gilt, etwa mit dem Status In Progress vor Ort, legen Sie im Entitlement-Prozess selbst fest.
 
-## Worauf sollten Sie achten?
+## Objekte trennen, Stufen klein halten, Zeiten und Garantie klären
 
-Erstens: Trennen Sie die Objekte von Anfang an sauber. Wer Reaktionszeiten als Textfeld am Service Contract pflegt, kann sie weder messen noch in die Planung bringen. Wer Wartungsintervalle in Entitlements versteckt, bekommt keine automatisch erzeugten Aufträge.
+**Trennen Sie die Objekte von Anfang an sauber.** Wer Reaktionszeiten als Textfeld am Service Contract pflegt, kann sie weder messen noch in die Planung bringen. Wer Wartungsintervalle in Entitlements versteckt, bekommt keine automatisch erzeugten Aufträge.
 
-Zweitens: Halten Sie die Zahl der Service-Level klein. Jede Stufe braucht einen eigenen Prozess, eigene Milestones und eine eigene Prioritätsregel. Drei Stufen lassen sich erklären und prüfen, zehn nicht.
+**Halten Sie die Zahl der Service-Level klein.** Jede Stufe braucht einen eigenen Prozess, eigene Milestones und eine eigene Prioritätsregel. Drei Stufen lassen sich erklären und prüfen, zehn nicht.
 
-Drittens: Prüfen Sie die Öffnungszeiten. Laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?id=fs_oh_considerations.htm&language=en_US&type=5) können Entitlements eigene Arbeitszeiten für die Terminbuchung tragen, etwa kürzere Zeitfenster für Kunden mit Premium-Vertrag. Dazu kommen die Besuchszeiten am Account aus Teil 2. Wer beides pflegt, sollte wissen, was gilt, bevor ein Kunde fragt, warum sein 24-Stunden-Termin am Samstag nicht kam.
+**Prüfen Sie die Öffnungszeiten.** Laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?id=fs_oh_considerations.htm&language=en_US&type=5) können Entitlements eigene Arbeitszeiten für die Terminbuchung tragen, etwa kürzere Zeitfenster für Kunden mit Premium-Vertrag. Dazu kommen die Besuchszeiten am Account aus Teil 2. Wer beides pflegt, sollte wissen, was gilt, bevor ein Kunde fragt, warum sein 24-Stunden-Termin am Samstag nicht kam.
 
-Viertens: Klären Sie die Grenze zur Garantie. Ob ein Einsatz unter Garantie, Vertrag oder gegen Rechnung läuft, entscheidet über die Abrechnung. Diese kaufmännische Seite gehört nicht in die Planung, muss aber am Arbeitsauftrag erkennbar sein. Sonst baut der Techniker ein Teil ein, das später niemand abrechnen kann, oder der Kunde bekommt eine Rechnung für einen Einsatz, der unter Garantie lief.
+**Klären Sie die Grenze zur Garantie.** Ob ein Einsatz unter Garantie, Vertrag oder gegen Rechnung läuft, entscheidet über die Abrechnung. Diese kaufmännische Seite gehört nicht in die Planung, muss aber am Arbeitsauftrag erkennbar sein. Sonst baut der Techniker ein Teil ein, das später niemand abrechnen kann, oder der Kunde bekommt eine Rechnung für einen Einsatz, der unter Garantie lief.
 
-## Wo sollten Sie anfangen?
+## Die drei häufigsten Vertragsarten aufschreiben
 
-Nehmen Sie Ihre drei häufigsten Vertragsarten und schreiben Sie für jede auf, was der Kunde gekauft hat, welche Wartungen geplant sind und welche Reaktionszeit zugesagt ist. Daraus ergeben sich Service Contracts, Maintenance Plans und Entitlements fast von selbst. Danach legen Sie fest, welche Priorität jede Zusage in der Planung bekommt.
-
-Im nächsten Teil der Serie geht es um Servicepartner und Subunternehmer.
+Nehmen Sie Ihre drei häufigsten Vertragsarten und schreiben Sie für jede auf, was der Kunde gekauft hat, welche Wartungen geplant sind und welche Reaktionszeit zugesagt ist. Daraus ergeben sich Service Contracts, Maintenance Plans und Entitlements fast von selbst. Danach legen Sie fest, welche Priorität jede Zusage in der Planung bekommt. Wie Servicepartner und Subunternehmer in dieselbe Planung kommen, zeigt der [nächste Teil der Serie](../salesforce-field-service-servicepartner/).

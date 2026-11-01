@@ -9,11 +9,10 @@ topic: revenue
 categories: [revenue-cloud]
 tags: [Revenue Cloud, Salesforce Pricing, Preisfindung, Pricing Procedures, Preiswasserfall, Tests]
 takeaways:
-  - "Revenue Cloud berechnet Preise mit einer Pricing Procedure: einer festen Abfolge von Preiselementen wie Listenpreis, Mengenrabatt, Attributrabatt, manuellem Rabatt und Aggregatpreis."
-  - "Pricing Procedures lesen Salesforce-Objekte nicht direkt. Dazwischen liegen Decision Tables, die nach jeder Änderung der Preisdaten aktualisiert werden müssen, sonst rechnet das Angebot mit alten Werten."
-  - "Eine Kontextdefinition, standardmäßig SalesTransactionContext, bringt Daten aus Angebot, Auftrag oder Asset in die Prozedur und das Ergebnis zurück in die Position."
-  - "Der Preiswasserfall zeigt jeden Schritt vom Listenpreis zum Nettopreis, in der Simulation und an der Angebotsposition. Er erklärt dem Vertrieb einen Preis und ist die Grundlage für Tests."
-  - "Eine Pricing Procedure ändert Preise auf jedem Angebot. Sie braucht eine verantwortliche Person, Versionen und feste Regressionsfälle, die vor jeder Änderung laufen."
+  - "Eine Pricing Procedure arbeitet Preiselemente in fester Reihenfolge ab, etwa Listenpreis, Mengenrabatt, Attributrabatt und manuellen Rabatt."
+  - "Die Prozedur liest Decision Tables, nicht die Objekte. Ohne Aktualisierung nach jeder Preisänderung rechnet das Angebot mit alten Werten."
+  - "Der Preiswasserfall zeigt jeden Schritt vom Listenpreis zum Nettopreis. Er erklärt dem Vertrieb einen Preis und ist die Grundlage für Tests."
+  - "Jede Pricing Procedure braucht eine verantwortliche Person, Versionen und feste Regressionsfälle, die vor jeder Änderung laufen."
 faq:
   - q: "Was ist eine Pricing Procedure in Revenue Cloud?"
     a: "Eine Pricing Procedure ist eine feste Abfolge von Preiselementen, die aus einem Listenpreis einen Nettopreis macht. Jedes Element nimmt seine Eingaben aus der Kontextdefinition oder dem vorherigen Element, wendet seine Logik an und gibt das Ergebnis weiter."
@@ -60,7 +59,7 @@ Die Reihenfolge ist Geschäftslogik. Ob der manuelle Rabatt vor oder nach dem Me
 
 Eine neue Prozedur beginnt als leere Version V1, jedes hinzugefügte Element wird ein Schritt. Welche Prozedur gilt, legen Sie in den Revenue Settings als Standard-Pricing-Procedure fest. Nach einer Änderung speichern und aktivieren Sie die Version.
 
-## Warum müssen Decision Tables aktualisiert werden?
+## Decision Tables nach jeder Preisänderung aktualisieren
 
 Dieser Schritt wird in den ersten Wochen am leichtesten vergessen. Ändern Sie einen Preisbucheintrag oder eine Mengenstaffel, rechnet das Angebot weiter mit dem alten Wert, bis die Decision Table aktualisiert ist. Trailhead zeigt zwei Wege: Sync Pricing Data im Salesforce Pricing Setup ausführen oder einzelne Decision Tables im Setup aktualisieren, etwa Volume Discount Entries oder für Vertragspreise Contract Pricing Entries und Contract Pricing Volume Tiers.
 
@@ -88,7 +87,7 @@ titel: Welche Ressourcen der Pricing Business APIs brauchen Sie?
 
 Das zählt, wenn derselbe Preis in einem Händlerportal, einem B2B-Shop oder in der Antwort eines Agenten erscheinen soll. Den Shop behandle ich in [Advanced Pricing im B2B-Shop](../advanced-pricing-b2b-shop-revenue-cloud/) und im Kapitel [Preise, Warenkorb und Checkout](../../masterclass/b2b-commerce/preise-warenkorb-checkout/). Ein Agent sollte die Pricing API aufrufen und nie selbst einen Preis ausrechnen, nach derselben Regel, die ich in [Agent Script: Geschäftsregeln gehören nicht ins LLM](../agent-script-regeln-statt-llm/) beschreibe.
 
-## Wer darf eine Pricing Procedure ändern?
+## Jede Pricing Procedure braucht eine verantwortliche Person
 
 Eine Pricing Procedure ändert Preise auf jedem Angebot. Ich behandle sie wie Code, auch wenn sie per Klick gebaut wird:
 
@@ -99,7 +98,7 @@ Eine Pricing Procedure ändert Preise auf jedem Angebot. Ich behandle sie wie Co
 
 Wie Tests und Reviews allgemein in den Release-Prozess gehören, behandelt das Kapitel [Qualität, Tests und Reviews](../../masterclass/devops-release-management/qualitaet-tests-reviews/) der DevOps-Masterclass.
 
-## Ein typisches Szenario, als Annahme
+## Rechenbeispiel: Pumpenhersteller mit Händlern und Vertragspreisen
 
 Ein Pumpenhersteller verkauft 60 Produktfamilien über den eigenen Vertrieb und über Händler. Die Listenpreise kommen jede Nacht aus SAP ins Standardpreisbuch. Händler bekommen einen Mengenrabatt, 20 Großkunden haben Vertragspreise für zwei Jahre, und eine Variante mit einfacher Steuerung ist 8 Prozent günstiger.
 
@@ -107,8 +106,6 @@ Die Prozedur enthielte den Listenpreis mit vertragsbasierter Preisfindung, einen
 
 Ob SAP oder Salesforce Händler- und Vertragspreise überhaupt berechnen sollte, ist eine eigene Entscheidung. Die behandle ich in [Kundenpreise: SAP-Konditionen oder Salesforce Pricing?](../kundenpreise-sap-konditionen-oder-salesforce-pricing/).
 
-## Wo fangen Sie an?
+## Die Preislogik als Schritte aufschreiben
 
 Schreiben Sie Ihre Preislogik als Schritte auf, bevor jemand den Builder öffnet: Welcher Preis ist der Ausgangspunkt, welche Rabatte folgen in welcher Reihenfolge, welche brauchen eine Freigabe? Diese Liste wird zugleich die Prozedur und die ersten Regressionsfälle. Wie die Preisfindung mit Katalog und Konfigurator zusammenspielt, erklärt das Kapitel [Katalog, Konfigurator, Preise](../../masterclass/revenue-cloud/produktkatalog-konfigurator-preise/) der Masterclass Revenue Cloud, die Freigaben behandelt [Rabattfreigaben in Revenue Cloud](../revenue-cloud-rabattfreigaben/).
-
-Pricing Procedures machen jeden Preis nachvollziehbar, solange jemand die Logik verantwortet und jede Änderung testet.

@@ -11,10 +11,10 @@ coAuthor: juliane
 contactBrief: partner-governance
 tags: [reinforcement, change management, partner governance, development standards]
 takeaways:
-  - "Reinforcement is the last ADKAR stage: making sure nobody falls back. At partners, standards erode when new developers join and deadline pressure rises."
-  - "If a partner's developers know the naming conventions but nobody checks them in the pipeline, reinforcement is missing. Then an automatic check belongs in the release process."
+  - "At partners, standards erode as soon as new developers join and deadline pressure rises."
+  - "If a partner's developers know the naming conventions but the pipeline does not check them, reinforcement is missing."
   - "What cannot be checked automatically is anchored by pull request reviews and a regular Center of Excellence call with the technical leads."
-  - "Standards are only anchored once an internal owner runs them. As long as everything depends on one external person, the anchoring ends with their contract."
+  - "Standards are only anchored once an internal owner runs them, otherwise they end with the external person's contract."
 faq:
   - q: "What does reinforcement mean in change management?"
     a: "In Prosci's ADKAR model, reinforcement is the fifth stage: measures that make sure a change stays and nobody falls back into old habits."
@@ -43,9 +43,9 @@ In the [ADKAR model](../change-management-salesforce-rollout/) what is missing t
 In my largest programme with more than 30 developers in eight streams and five implementation partners, every pull request went across my desk at the start. It took about three months until the standards were lived. After that we brought new topics to the table every two weeks in a Center of Excellence call with the technical leads of the streams. Once the process ran smoothly, I handed it over to an internal colleague who has owned it since.
 ```
 
-## Which levers anchor standards?
+## Each lever anchors a different part of the standards
 
-Each lever covers a different part of the standards. Together they leave little room for quiet erosion:
+Together the levers leave little room for quiet erosion:
 
 | Lever | What it anchors | Who |
 |---|---|---|
@@ -58,7 +58,7 @@ Each lever covers a different part of the standards. Together they leave little 
 
 The pipeline is the cheapest lever, because it never gets tired. Whatever it checks, no reviewer has to comment on any more. Which rules belong in the standards and which of them can be automated is described in [Salesforce development standards for several partners](../salesforce-development-standards-definition-of-done/).
 
-## How does the Center of Excellence call help?
+## The Center of Excellence call settles new edge cases
 
 Standards are never finished. New cases come up, such as a stream that needs a field on another stream's object. Without a fixed place these cases are decided between two developers, and every partner decides differently. A regular call with the technical leads of all streams gives them a place. Every decision there is added to the standards.
 
@@ -68,7 +68,7 @@ The call has a second effect that is almost more important for reinforcement: th
 
 Every change of people at a partner is a small restart. I recommend a short, fixed onboarding that the partner owns and the client checks: the current standards, the [object ownership matrix](../salesforce-object-ownership-matrix/), the path of a pull request through the pipeline and the most important entries in the decision log. A new developer's first pull request gets a more thorough review than usual, so misunderstandings show up early. That costs half a day and saves weeks of corrections. The more often a partner rotates people, the more it pays off, which is why onboarding belongs in the agreement with the partner as a duty.
 
-## What about exceptions under deadline pressure?
+## Exceptions under deadline pressure need a reason and a ticket
 
 There will be exceptions. What matters is that they are visible. An exception to the standards needs a reason in the pull request and a ticket that plans the correction in the next release. That way the exception stays an exception. If exceptions pile up for one rule, the rule belongs in the next Center of Excellence call: either it does not fit, or the plan leaves too little time.
 
@@ -84,8 +84,6 @@ Check whether your partner contracts refer to the standards and whether a violat
 
 Three signs show it. Reviewers comment on the same points less often, because the pipeline finds them first. New edge cases come to the Center of Excellence call before they are built, instead of afterwards as a conflict. And a partner's new developers follow the rules without anyone explaining them one by one. In my programme the edge cases eventually disappeared, because topics were discussed before they turned into conflicts.
 
-## Where do you start?
+## Count the review comments that repeat
 
-Look at the review comments of the last two months and count which remarks repeat. Every remark that can be checked automatically goes into the pipeline, with a clear error message that names the standard. For the rest, set up a fixed call with the technical leads. And plan from the start who on the client side takes over the standards when the project ends.
-
-Standards are anchored when they hold even without the person who introduced them. Read more about [partner governance](../../services/partner-governance/).
+Look at the review comments of the last two months and count which remarks repeat. Every remark that can be checked automatically goes into the pipeline, with a clear error message that names the standard. Typical candidates are naming conventions, hard-coded IDs and fields without a description; Salesforce Code Analyzer or a custom rule in the pipeline finds them before a reviewer does. For the rest, set up a fixed call with the technical leads. And plan from the start who on the client side takes over the standards when the project ends. How I set this up with several partners is described under [partner governance](../../services/partner-governance/).

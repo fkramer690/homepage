@@ -11,10 +11,10 @@ coAuthor: juliane
 contactBrief: field-service
 tags: [Field Service, Akzeptanz, Change Management, Außendienst]
 takeaways:
-  - "Die Akzeptanz der Techniker ist einer der Stolpersteine jeder Field-Service-Einführung, neben der Datenqualität der Anlagen und den ERP-Schnittstellen."
   - "Techniker nehmen die App an, wenn sie ihnen vor Ort Arbeit abnimmt: Anlagenhistorie, Ersatzteile und kurze Formulare statt Papier."
   - "Standortverfolgung und Sichtbarkeit der Zeiten sind die heikelsten Themen. Sie gehören vor der Einrichtung offen auf den Tisch, mit dem Betriebsrat."
   - "Eine App, die im Keller ohne Netz hängt, verliert das Vertrauen der Techniker in der ersten Woche. Offline-Fähigkeit wird vor dem Rollout getestet."
+  - "Kommt nach einer Rückmeldung aus der App binnen zwei Wochen eine sichtbare Änderung, spricht sich das herum. Kommt nichts, landen Punkte im Pflichtfeld."
 faq:
   - q: "Warum lehnen Techniker eine neue Field Service App ab?"
     a: "Meist aus drei Gründen: Sie fürchten mehr Kontrolle, etwa über den Standort, sie sehen mehr Dokumentation statt weniger, oder die App funktioniert vor Ort nicht zuverlässig, zum Beispiel ohne Netz."
@@ -27,13 +27,13 @@ faq:
 draft: false
 ---
 
-Servicetechniker nehmen die Salesforce Field Service App an, wenn sie ihnen vor Ort Arbeit abnimmt, und umgehen sie, wenn sie vor allem Kontrolle und mehr Dokumentation bringt. Deshalb entscheidet sich die Akzeptanz lange vor dem Rollout: an der Frage, was der Techniker von der App hat, an einer offenen Klärung von Standortverfolgung und Zeiten mit dem Betriebsrat und an einer App, die auch im Keller ohne Netz funktioniert. Eine kleine Gruppe erfahrener Techniker, die das vorher im echten Einsatz testet, ist dafür der wirksamste Hebel.
+Servicetechniker nehmen die Salesforce Field Service App an, wenn sie ihnen vor Ort Arbeit abnimmt, und umgehen sie, wenn sie vor allem Kontrolle und mehr Dokumentation bringt. Deshalb entscheidet sich die Akzeptanz lange vor dem Rollout: an der Frage, was der Techniker von der App hat, an einer offenen Klärung von Standortverfolgung und Zeiten mit dem Betriebsrat und an einer App, die auch im Keller ohne Netz funktioniert. Eine kleine Gruppe erfahrener Techniker, die das vorher im Einsatz testet, ist dafür der wirksamste Hebel.
 
-## Warum ist die Akzeptanz der Techniker ein eigenes Thema?
+## Die Akzeptanz der Techniker ist ein eigenes Thema
 
 Field Service verändert den Arbeitstag von Disponenten und Technikern. Ein Techniker, der Berichte auf Papier geschrieben hat, dokumentiert plötzlich in einer App. Er sieht seine Termine auf dem Telefon statt auf dem Zettel aus dem Büro, und er fragt sich zu Recht, wer jetzt sieht, wo er gerade ist.
 
-Techniker sind außerdem eine besondere Gruppe. Sie sind selten im Büro, kommen zu Schulungen oft nur einmal und haben wenig Geduld mit Software, die beim Kunden vor der Maschine nicht funktioniert. Wenn die App in der ersten Woche zweimal versagt, gilt sie im Team als unbrauchbar, und dieser Ruf hält länger als jeder Fehler.
+Techniker sind außerdem eine besondere Gruppe. Sie sind selten im Büro, kommen zu Schulungen oft nur einmal und haben wenig Geduld mit Software, die beim Kunden vor der Maschine nicht funktioniert. Wenn die App in der ersten Woche zweimal versagt, gilt sie im Team als unbrauchbar, und dieser Ruf hält, auch wenn der Fehler längst behoben ist.
 
 ```praxis
 In meinen Field-Service-Projekten mit Wartung, Störungseinsätzen und Inbetriebnahmen lagen die Stolpersteine an drei Stellen: Datenqualität der Anlagen, Akzeptanz bei den Technikern und Schnittstellen zum ERP. Alle drei bekommt man in einer Region leichter in den Griff als im ganzen Außendienst auf einmal. Deshalb führe ich Field Service in Wellen ein, Region für Region.
@@ -74,16 +74,14 @@ Ich empfehle eine kleine Gruppe erfahrener Techniker pro Region, die vor dem Rol
 
 Wichtig ist, dass diese Gruppe echte Änderungen bewirken kann. Wenn ihre Rückmeldungen im Backlog verschwinden, hört sie auf, Rückmeldungen zu geben.
 
-## Was passiert nach dem Rollout?
+## Nach dem Rollout braucht jede Region einen kurzen Rückweg
 
 Die ersten Wochen nach dem Start einer Region sind die Zeit, in der Techniker die meisten Fragen zur App haben. In dieser Phase sollte das Projektteam erreichbar sein und nicht schon die nächste Region starten. Danach zählt Verankerung: Jedes App-Update kann Abläufe verändern und gehört vorher getestet, wie in [Field Service App Updates testen](../field-service-app-updates-testen/) beschrieben.
 
-Genauso wichtig ist ein kurzer Rückweg. Ein Techniker, der vor Ort merkt, dass ein Pflichtfeld nicht passt, sollte das in einer Minute melden können, am besten direkt aus der App oder über seinen Ansprechpartner in der Region. Kommt nach zwei Wochen eine sichtbare Änderung, spricht sich das im Team schneller herum als jede Schulung. Kommt nichts, ist das Pflichtfeld bald mit Punkten gefüllt.
+Genauso wichtig ist ein kurzer Rückweg. Ein Techniker, der vor Ort merkt, dass ein Pflichtfeld nicht passt, sollte das in einer Minute melden können, am besten direkt aus der App oder über seinen Ansprechpartner in der Region. Kommt nach zwei Wochen eine sichtbare Änderung, spricht sich das im Team herum, und das wirkt stärker als eine Schulung. Kommt nichts, ist das Pflichtfeld bald mit Punkten gefüllt.
 
 Ob die App angekommen ist, zeigt sich in Zahlen: Arbeitsaufträge, die in der App abgeschlossen werden statt nachträglich im Büro, ausgefüllte Formulare und Serviceberichte am Tag des Einsatzes. Wie Sie solche Zahlen aufsetzen, beschreibe ich in [Salesforce-Nutzung nach dem Go-live messen](../salesforce-nutzung-messen-nach-go-live/).
 
-## Wo fangen Sie an?
+## Drei bis fünf Testtechniker in der ersten Region gewinnen
 
-Suchen Sie in der ersten Region drei bis fünf erfahrene Techniker, die bereit sind, die App vorher im echten Einsatz zu testen. Klären Sie parallel mit dem Betriebsrat Standort und Zeiten und schreiben Sie das Ergebnis in einfachen Worten auf. Danach legen Sie fest, welche Formulare und Daten der Techniker vor Ort wirklich braucht, und streichen den Rest, auch wenn ein Bereich in der Zentrale es gern hätte.
-
-Techniker nehmen die App an, wenn sie ihnen den Tag leichter macht und sie wissen, was mit ihren Daten passiert. Beides lässt sich vor dem Rollout klären, mit Testtechnikern und dem Betriebsrat.
+Suchen Sie in der ersten Region drei bis fünf erfahrene Techniker, die bereit sind, die App vorher bei laufenden Aufträgen zu testen. Planen Sie dafür Zeit in ihrem Einsatzplan ein, sonst testen sie nur in der Mittagspause. Klären Sie parallel mit dem Betriebsrat Standort und Zeiten und schreiben Sie das Ergebnis in einfachen Worten auf. Danach legen Sie fest, welche Formulare und Daten der Techniker vor Ort braucht, und streichen den Rest, auch wenn ein Bereich in der Zentrale es gern hätte.

@@ -10,10 +10,10 @@ categories: [b2b-commerce, architecture]
 contactBrief: integration
 tags: [b2b commerce, sap, erp integration, commerce extensions, mulesoft, interfaces]
 takeaways:
-  - "Between Salesforce B2B Commerce and SAP data flows four ways: master data in by batch, live calls during cart and checkout, the order out, and status, delivery and invoice back."
-  - "Accounts, products, categories, price books and entitlements are copied into Salesforce; the Commerce product import takes CSV files with product, category and price book columns as asynchronous jobs."
-  - "Price, stock, tax, shipping and the check before an order is placed run through Commerce extension points such as Commerce_Domain_Pricing_Service and Commerce_Domain_Checkout_PlaceOrder."
-  - "Salesforce recommends extensions over the older checkout integrations since Winter '24; the older framework is still supported, and payments cannot be customised with an extension."
+  - "Data flows four ways: master data in by batch, live calls during cart and checkout, the order out to SAP, and status, delivery and invoice back."
+  - "Accounts, products, categories, price books and entitlements are copied into Salesforce; the product import reads CSV files as asynchronous jobs."
+  - "Price, stock, tax, shipping and the check before an order is placed run through extension points such as Commerce_Domain_Pricing_Service."
+  - "Since Winter '24, Salesforce recommends extensions over the older checkout integrations. Payments cannot be customised with an extension."
   - "Every interface that still logs in to Salesforce with username and password has to move to another OAuth flow before 20 February 2027."
 faq:
   - q: "Which data does Salesforce B2B Commerce need from SAP?"
@@ -44,7 +44,7 @@ The table looks simple. The decisions sit in the second column of every row: whi
 
 A note on names: Salesforce now also markets the product as "Agentforce Commerce for B2B". The integration architecture is the same.
 
-## Which master data comes in by batch?
+## Master data comes in by batch as a copy
 
 Everything that changes less often than a buyer clicks belongs in a copy. That covers SAP customer masters, which become accounts and buyer accounts in Salesforce, contacts who become buyers, materials that become products, product hierarchies that become categories, and prices for the store.
 
@@ -54,7 +54,7 @@ Buyer groups and entitlement policies decide who sees which product. They are ra
 
 Who owns which object is the question my [object ownership matrix](../salesforce-object-ownership-matrix/) answers. For a store I add one column: copied or live.
 
-## What should the store ask SAP live?
+## Price, stock, tax and shipping live through extension points
 
 Salesforce B2B Commerce has named extension points where your own Apex code takes over a service. The [list of available extensions](https://developer.salesforce.com/docs/commerce/extensions/guide/available-extensions.html) shows the ones that matter for SAP:
 
@@ -107,7 +107,7 @@ Direct Apex callouts with named credentials are fine for one store with two or t
 One deadline applies to every batch interface. Salesforce retires the [OAuth username-password flow](https://help.salesforce.com/s/articleView?id=release-notes.rn_security_unpw_flow_retirement.htm&language=en_US&release=262&type=5) for connected apps on 20 February 2027. A nightly product import that logs in with a password then stops working, often without anyone noticing. How to find and move those interfaces is described in [password integrations end in 2027](../salesforce-password-integrations-end-2027/).
 ```
 
-## A typical scenario, as an assumption
+## Worked example: S/4HANA and 300 dealers in Europe
 
 A machine builder runs SAP S/4HANA and wants a store for 300 dealers in Europe with 15,000 spare parts. The interface list after the first workshop could look like this:
 
@@ -121,8 +121,6 @@ A machine builder runs SAP S/4HANA and wants a store for 300 dealers in Europe w
 
 Seven interfaces, three of them live. That is a realistic scope for a first release, and each of them needs an owner on the client side.
 
-## Where should you start?
+## First step: object ownership matrix and interface list
 
 Write the object ownership matrix and the interface list before anyone designs the store pages. For every data item, note the master system, copy or live, maximum age and what happens when SAP is down. The [ERP integration chapter of the B2B Commerce masterclass](../../masterclass/b2b-commerce/erp-integration-stock-orders/) puts these decisions in order, and an independent review of interfaces is part of my work on [Salesforce integration](../../services/salesforce-integration/).
-
-A B2B store is only as good as its data flows from SAP, so decide them first.

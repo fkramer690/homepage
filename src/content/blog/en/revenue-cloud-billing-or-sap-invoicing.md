@@ -10,7 +10,6 @@ categories: [revenue-cloud, architecture]
 tags: [revenue cloud billing, sap, invoicing, subledger, finance, manufacturing]
 takeaways:
   - "For one-off machine sales the invoice usually stays in SAP, because delivery, acceptance and down payments are handled there."
-  - "Revenue Cloud Billing pays off for subscriptions, service contracts and usage-based fees that are sold and amended in Salesforce."
   - "Billing makes Salesforce a subledger with its own legal entities, accounting periods and general ledger accounts, and it syncs journal entries to the ERP."
   - "Billing is charged by invoice amount, so routing high-value machine invoices through Salesforce raises the cost without adding much."
   - "Finance owns the decision: which revenue types Salesforce invoices, who closes periods and how receivables are reconciled with SAP."
@@ -57,7 +56,7 @@ So finance has to answer questions it has probably never discussed with the CRM 
 
 Trailhead lists an [Accounts Receivable Admin role](https://trailhead.salesforce.com/content/learn/modules/billing-basics-in-revenue-cloud/explore-billing-features-and-roles) that "manages accounting periods, journal entries, and financial reporting". In a manufacturing company that person sits in finance. If nobody in finance takes on that role, Billing should not go live.
 
-## When should the invoice stay in SAP?
+## The machine invoice stays in SAP
 
 For one-off machine sales I keep the invoice in SAP. The reasons are practical:
 
@@ -79,9 +78,9 @@ Billing pays off where the invoice follows the contract more than the delivery:
 
 The signal I look for: if sales changes contracts every week and finance corrects invoices every month because SAP did not hear about a change, Billing in Salesforce removes a hand-over. If the recurring business is a few hundred contracts with one invoice a year, invoicing from SAP is usually enough.
 
-## A typical split, as an assumption
+## Worked example: the split at a machine builder
 
-A typical scenario, as an assumption: a machine builder with SAP S/4HANA sells machines, spare parts, a remote monitoring subscription per machine and maintenance contracts. Sales quotes all of it in Revenue Cloud.
+Assume a machine builder with SAP S/4HANA sells machines, spare parts, a remote monitoring subscription per machine and maintenance contracts. Sales quotes all of it in Revenue Cloud.
 
 I would split it like this:
 
@@ -108,7 +107,7 @@ SAP invoice --> SAP general ledger
 
 The customer gets two kinds of invoices, which customer service has to be able to explain. If that is not acceptable, the alternative is to keep every invoice in SAP and send it the billing data from Revenue Cloud, which needs a reliable interface for amendments. Which system owns which object is in [Revenue Cloud and SAP: who owns what in quote to cash](../revenue-cloud-sap-quote-to-cash-ownership/).
 
-## Who should make the decision?
+## Finance draws the line
 
 Finance. The CRM team can show what Billing does, but finance carries the consequences: a second receivables ledger, a second period close and a second place auditors look at. The [object ownership matrix](../salesforce-object-ownership-matrix/) helps here as well: every billing object needs an owner, and for legal entities, accounting periods and general ledger accounts that owner sits in finance.
 
@@ -120,8 +119,6 @@ Agree three points with finance in writing: which revenue types Salesforce invoi
 
 The interfaces for journal entries and invoice status are part of my work on [Salesforce integration](../../services/salesforce-integration/).
 
-## Where should you start?
+## List revenue types with their invoice source
 
 List your revenue types and note for each who invoices today and how often the contract changes. Rows with recurring fees and frequent changes are candidates for Billing, everything else stays in SAP. The masterclass chapter [billing and usage-based pricing](../../masterclass/revenue-cloud/billing-and-usage-based-pricing/) puts this decision into the whole quote-to-cash process.
-
-Machine invoices stay in SAP, recurring revenue that sales changes often can move to Revenue Cloud Billing, and finance decides where the line runs.

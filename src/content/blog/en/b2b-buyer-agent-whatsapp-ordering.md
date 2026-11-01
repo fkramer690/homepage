@@ -9,9 +9,9 @@ topic: commerce
 categories: [b2b-commerce, ai]
 tags: [B2B Commerce, Buyer Agent, Agentforce, WhatsApp, dealers, reorder]
 takeaways:
-  - "The Buyer Agent (B2B) template comes with five preconfigured subagents: product search, orders with status and reorder, account switching, user verification and global instructions."
-  - "Salesforce names WhatsApp and SMS as channels; closing the whole order in the chat, including payment at contract price, is announced as Carter for Buyers for January 2027."
-  - "Trailhead lists Agentforce Commerce for B2B, Service Cloud or Sales and Service edition, the Agentforce and Einstein for Service add-ons and Einstein generative AI with Data 360."
+  - "The Buyer Agent (B2B) template comes with five subagents, among them product search, orders with status and reorder, and account switching."
+  - "Salesforce names WhatsApp and SMS as channels. Closing the whole order in the chat, payment included, is announced as Carter for Buyers for January 2027."
+  - "Licences: Agentforce Commerce for B2B, Service Cloud or Sales and Service edition, Agentforce, Einstein for Service and Einstein generative AI."
   - "Contract prices, discounts and credit decisions must come from the store's pricing or the ERP; the language model only phrases what those systems return."
   - "Start with order status and reorder for a pilot group on a store that already works, and treat every dealer message as untrusted input."
 faq:
@@ -44,7 +44,7 @@ The [introduction unit on Trailhead](https://trailhead.salesforce.com/content/le
 
 For a manufacturer this means: the agent covers the questions inside sales answers most often by phone, "where is my order" and "same as last time". It does not replace a store. Every answer comes from the catalogue, entitlements and orders the store already holds.
 
-## WhatsApp and SMS: what is available when?
+## WhatsApp and SMS today, Carter for Buyers from January 2027
 
 Here the sources need careful reading. The June blog post says the Buyer Agent is "available wherever your buyer is (WhatsApp, SMS, and more)". The [Trailhead unit on connecting the agent to a channel](https://trailhead.salesforce.com/content/learn/modules/agentforce-for-guided-shopping-for-b2b-and-d2c/connect-a-guided-shopping-agent-to-a-channel) describes the setup through Messaging for In-App and Web: enable Omni-Channel, create a queue, build an Omni-Channel flow that routes to the Buyer Agent with a fallback queue, then create the messaging channel. The unit states that these steps do not apply to standard or enhanced WhatsApp and SMS channels.
 
@@ -65,7 +65,7 @@ The introduction unit on Trailhead names these prerequisites:
 
 Two things stand out. First, the Buyer Agent needs Service Cloud, so a company that runs only Sales Cloud next to the store buys more than the agent. Second, I found no separate price for the Buyer Agent on the official pages. Usage runs on the Agentforce add-on, so the cost depends on your contract and your volume. How such a calculation works for a dealer service agent is shown in [Agentforce dealer service agent: cost per month](../dealer-service-agent-cost-calculation/).
 
-## Why must contract prices and credit come from systems?
+## Contract prices and credit come from the store and the ERP
 
 Carter for Buyers promises payment "at contract pricing". For a manufacturer the contract price is the most sensitive number in the whole chat. It must come from the store's pricing, which in turn reads price books or calls the ERP, never from the language model.
 
@@ -88,7 +88,7 @@ The same applies to credit limits, blocked accounts and delivery dates. The mode
 If the store shows list prices because contract prices still live only in SAP conditions, the agent will also quote list prices. Settle the price master before the agent goes live.
 ```
 
-## Why is dealer chat text untrusted input?
+## Dealer chat text is untrusted input
 
 Every message a dealer types reaches the agent as text, and text can contain instructions. In a store chat the buyer is logged in. On WhatsApp or SMS the agent first has to know who is writing, which is what the Commerce User Verification subagent is for. After that, the buyer can switch accounts through Commerce Effective Accounts, so the list of accounts per buyer must be correct.
 
@@ -100,15 +100,15 @@ I would plan as if a filter misses an injected instruction one day, and make sur
 
 The attack patterns and defences are covered in [Prompt injection in dealer portals: protect Agentforce](../prompt-injection-dealer-portals-agentforce/).
 
-## What could a first pilot look like?
+## Worked example: pilot with 15 of 150 dealers
 
-A typical scenario, as an assumption: a machine manufacturer sells spare parts and consumables to 150 dealers in Germany and Austria through a B2B store. Inside sales answers about 40 calls a day, most of them about order status or repeat orders of filters and wear parts.
+Assume a machine manufacturer sells spare parts and consumables to 150 dealers in Germany and Austria through a B2B store. Inside sales answers about 40 calls a day, most of them about order status or repeat orders of filters and wear parts.
 
 In the pilot, 15 dealers with many repeat orders get the Buyer Agent in the store's web chat. Only two subagents do real work: Commerce Order for status and reorder, and Commerce Product Search Assistant. Order status comes from order summaries that the ERP keeps up to date. Escalation goes to a named inside sales queue. After four weeks, compare calls per pilot dealer with the months before, and read every conversation the agent escalated.
 
 Only when these answers are reliable would I add a messaging channel such as WhatsApp, and only after Carter for Buyers is available would I let the agent close orders with payment. Fast reorders in the store itself are the topic of [reorders in B2B Commerce: templates, CSV, reorder](../b2b-commerce-reorder-order-templates/), and the back office side of agents in [Merchandising Agent: what it does for a parts catalog](../merchandising-agent-parts-catalog/).
 
-## Where should you start?
+## Check the store without an agent
 
 1. **Check the store first.** Buyer groups, entitlements, prices and order status must be correct without an agent. An agent makes errors in this data visible faster, it does not fix them.
 2. **Check the licences.** Service Cloud edition, Agentforce and Einstein for Service add-ons and Data 360 setup, as listed on Trailhead.
@@ -117,5 +117,3 @@ Only when these answers are reliable would I add a messaging channel such as Wha
 5. **Write down what code decides.** Price, credit, delivery date and order creation stay in the store and the ERP.
 
 The chapter [Agents, migration, rollout](../../masterclass/b2b-commerce/agentforce-migration-rollout/) of the [B2B Commerce masterclass](../../masterclass/b2b-commerce/) puts the Buyer Agent next to the store migration and the rollout to dealers. If the interfaces to your ERP are the open point, see [Salesforce integration](../../services/salesforce-integration/).
-
-The Buyer Agent pays off once your store already gives dealers correct prices and order data, and WhatsApp is the last step, not the first.

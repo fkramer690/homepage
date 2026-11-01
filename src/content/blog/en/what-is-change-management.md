@@ -11,10 +11,10 @@ contactBrief: change-basics
 author: juliane
 tags: [change management, Prosci, ADKAR, organisational change]
 takeaways:
-  - "Change management is the structured way of guiding people through a change, so that a new way of working reaches daily work and stays there."
-  - "Project management delivers the solution; change management makes sure it is used. IT change management in the ITIL sense is something else: the controlled approval of changes to systems."
+  - "Every change has a technical side, the solution itself, and a people side: whether those meant to work with it accept it."
+  - "Project management delivers the solution, change management makes sure it is used. ITIL change management means approving changes to systems."
   - "Prosci divides change management into three phases: prepare approach, manage change, sustain outcomes."
-  - "In the Prosci study with 2,668 participants, projects with excellent change management met their objectives in 88 percent of cases, projects with poor change management in 13 percent."
+  - "In Prosci's study of 2,668 participants, projects with excellent change management met their objectives in 88 percent of cases, poor ones in 13 percent."
   - "The biggest success factor is a sponsor in management who visibly backs the change."
 faq:
   - q: "What is change management in simple terms?"
@@ -64,7 +64,7 @@ Prosci's research shows how much organisational change management matters. The i
 source: Prosci, Best Practices in Change Management, 12th edition
 ```
 
-## What are the phases of change management?
+## Prosci divides change management into three phases
 
 At the level of the organisation, Prosci divides the work into three phases, the [Prosci 3-Phase Process](https://www.prosci.com/methodology/3-phase-process). They run alongside the project plan, not after it:
 
@@ -81,7 +81,7 @@ The most common mistake happens in the first phase: change management starts too
 
 At the level of the individual, the ADKAR model helps with the diagnosis. When a rollout stalls, one of the five stages is usually missing, and each needs a different measure. Another training session only helps when knowledge or ability is missing. When nobody has understood what the change is good for, the manager has to explain it. How ADKAR differs from other well known models is described in [change management models compared](../change-management-models/).
 
-## Who is responsible for change management?
+## Sponsor, managers, change team and key users share the work
 
 Change management is teamwork with clearly assigned roles:
 
@@ -99,16 +99,14 @@ Take the introduction of a CRM system such as Salesforce in a company with field
 1. **Write down groups and changes.** For each group, in writing: what changes in daily work? Field sales record visit reports in the app instead of a spreadsheet, inside sales create quotes in the system instead of in Word.
 2. **Make the sponsor visible.** The head of sales explains in their own meeting why forecasts will come from the system and asks about it in the monthly report.
 3. **Check the ADKAR stage per group.** Inside sales want to take part but do not know the new steps yet: training on real cases helps. Field sales see no benefit: a conversation with their manager helps, another training changes nothing.
-4. **Measure usage.** What counts is whether records are created and maintained; the number of training sessions says little about that. Reports in the system show it better than any survey.
+4. **Measure usage.** What counts is whether records are created and maintained; the number of training sessions says little about that. Reports in the system show it more reliably than a survey.
 
 Two projects from my work show the range: a global Salesforce Sales Cloud rollout with more than 500 users in the US, Asia and Europe, and an IT transformation at an insurer with more than 20,000 people affected in 19 countries. The phases are the same; the plan per group and country gets more demanding with size. How I set this up with Fabian Kramer for Salesforce programmes is described in [Salesforce change management: why rollouts fail](../change-management-salesforce-rollout/).
 
-## When is outside change management worth it?
+## Outside help pays off once several groups or countries are affected
 
 Not every change needs an external change manager. If a single process changes for a team of ten, a manager who uses ADKAR as a checklist and answers the five questions honestly is enough.
 
 Outside support pays off when several groups or countries are affected, when nobody inside has the time and experience to plan it, or when the sponsor is still unclear. Then an outside view helps to clarify roles, coach the managers and hand the work over to internal owners at the end. For Salesforce programmes there is [Salesforce change management consulting](../../services/change-management-salesforce/).
 
-A change is only done when daily work has changed.
-
-Prosci and ADKAR are registered trademarks of Prosci, Inc.
+*Prosci and ADKAR are registered trademarks of Prosci, Inc.*

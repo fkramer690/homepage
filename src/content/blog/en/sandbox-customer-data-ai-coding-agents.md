@@ -9,11 +9,11 @@ topic: security
 categories: [devops, ai]
 tags: [sandbox, data masking, ai coding, claude code, data protection, manufacturing]
 takeaways:
-  - "Whatever a coding agent reads from a sandbox becomes part of a prompt; Claude Code also keeps session transcripts locally in plaintext for 30 days by default."
-  - "A full copy sandbox holds all production data and files, so I treat it like production: humans for UAT, SAP tests and load tests, no logins for coding agents."
-  - "Agents work in scratch orgs and developer sandboxes with a seed data set; a partial copy masked with Salesforce Data Mask serves integration tests."
-  - "Masking costs test realism: random prices break discount logic, and rare cases such as an asset moved between dealers only exist if someone writes them into the seed data."
-  - "The Einstein Trust Layer in Agentforce Vibes can mask personal and card data, but a dealer net price is neither, and Claude Code does not pass through it at all."
+  - "Claude Code keeps session transcripts in plaintext for 30 days by default. A query result stays on the partner laptop for a month."
+  - "A full copy sandbox holds all production data. I treat it like production: humans for UAT and load tests, no logins for coding agents."
+  - "Agents work in scratch orgs and developer sandboxes with seed data, and a masked partial copy serves integration tests."
+  - "Masking costs test realism: random prices break discount logic, and rare cases only exist if someone writes them into the seed data."
+  - "The Einstein Trust Layer masks personal and card data but not dealer prices, and Claude Code does not pass through it at all."
 faq:
   - q: "Can an AI coding agent work in a full copy sandbox?"
     a: "Technically yes, but I would not allow it. A full copy contains all production data, and every record the agent queries goes into the prompt and the local session transcript. Use scratch orgs or developer sandboxes with seeded test data instead."
@@ -30,7 +30,7 @@ draft: false
 
 Sandbox customer data should be masked, or kept out of reach, before a partner's AI coding agent connects to a Salesforce sandbox, because whatever the agent reads ends up in a prompt. A full copy sandbox holds the same dealer prices, contracts and service cases as production. My rule: agents work in scratch orgs and developer sandboxes with seeded test data, a masked partial copy serves integration tests, and the full copy stays with humans. The price is test realism: masking breaks price logic and rare data constellations, so someone has to build a seed data set on purpose.
 
-## Why does a full copy sandbox leak once a coding agent is connected?
+## A full copy sandbox leaks once a coding agent is connected
 
 A coding agent such as Claude Code, Cursor or Agentforce Vibes reads code, and it can also query the org it is logged into. Asked why warranty claims from one dealer fail validation, the agent runs a SOQL query and gets back twenty claims with fault descriptions, dealer names and net prices. Those records are now part of the conversation with the model.
 
@@ -83,7 +83,7 @@ I treat a sandbox as unmasked until the mask job has run after a refresh, and al
 
 Scratch orgs are empty by default. For small sets Salesforce recommends the [data tree commands](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_test_data.htm), which suit fewer than 3,000 records. Kept in the repository, such a seed set gives every developer and agent the same start.
 
-## What does masking cost in test realism?
+## Masking costs test realism
 
 - **Price logic.** Random numbers break the relationship between list price, dealer discount and net price, so a rebate test passes or fails by chance. Pricing needs a synthetic price list: two price lists for one dealer, a zero price for goodwill parts, a second currency.
 - **Rare constellations.** The machine with 14 years of service history, the asset that moved between dealers, the SAP customer number mapped to two accounts. A seed set only contains them if someone writes them down, so I would ask service and sales for 20 to 30 such cases.
@@ -92,7 +92,7 @@ Scratch orgs are empty by default. For small sets Salesforce recommends the [dat
 - **Volume.** A partial copy is capped at 5 GB, a developer sandbox at 200 MB. Load tests belong in the full copy, run by humans, as do ApexGuru's runtime ratings, see [quality gates for AI code](../quality-gates-for-ai-code-salesforce-pipeline/).
 - **Upkeep.** A new field for a dealer surcharge stays unmasked until someone adds it to the mask, so that check belongs in the release checklist.
 
-## A typical scenario: warranty claims and a partner's agent
+## Worked example: warranty claims and a partner's agent
 
 Assume a machine builder with Service Cloud, Field Service and Manufacturing Cloud on one org, SAP as ERP, about 300 dealers and a full copy refreshed monthly. All numbers here are assumptions. The partner wants Claude Code for a warranty validation story and asks for the full copy, "because the real claims are there".
 
@@ -104,7 +104,7 @@ The client chooses three levels instead:
 
 The assumed effort is 6 to 10 person days for seed set and mask, plus half a day per release for new fields. In return no partner laptop holds a real claim, and a defect that only shows with real price tiers surfaces in UAT instead of a scratch org. I would accept that trade.
 
-## How do you enforce the rule, and where do you start?
+## First step: no full copy login on machines that run an agent
 
 The strongest control: no full copy login on any machine where an agent runs. Tool settings come second:
 
@@ -113,14 +113,10 @@ The strongest control: no full copy login on any machine where an agent runs. To
 - **Agentforce Vibes.** Salesforce describes [disabling Vibes per org](https://developer.salesforce.com/blogs/2025/12/five-pro-tips-for-using-agentforce-vibes) under Setup, Agentforce Vibes Extensions, for production. I would do the same for the full copy.
 - **Transcripts.** Shorten local retention with `cleanupPeriodDays` and have partners confirm deletion when they leave.
 
-Where I would start:
+Sandbox levels and pipelines are part of my [DevOps and release management](../../services/devops-release-management/) work. My test question for every environment: would I accept this data on a partner laptop for a month? Where I would start:
 
 1. **List every sandbox** with type, last refresh and who holds a CLI login.
 2. **Classify the fields** into personal, commercial and free text, with your data protection officer.
 3. **Build the seed set** with service and sales, including edge cases, and check it into the repository.
 4. **Configure the mask** for the partial copy and add the field check to every release.
 5. **Remove agent access** to the full copy and write the levels into the partner annex and the AI rules file; more agent rules are in [chapter 8 of the masterclass](../../masterclass/ai-salesforce/ai-code-best-practices/).
-
-Sandbox levels and pipelines are part of my [DevOps and release management](../../services/devops-release-management/) work.
-
-A full copy sandbox is production data, so a coding agent should only see data you would accept on a partner laptop for a month.

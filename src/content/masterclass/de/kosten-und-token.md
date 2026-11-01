@@ -8,11 +8,11 @@ chapter: 7
 short: "Kosten und Token"
 summary: "Wie Token-Preise in der Entwicklung und Flex Credits im Agentforce-Betrieb zusammenspielen und wie ein Hersteller beides budgetiert."
 takeaways:
-  - "KI im Salesforce-Projekt kostet in zwei Währungen: Coding-Agenten rechnen nach Tokens ab, Agentforce-Agenten im Betrieb nach Aktionen und Prompts in Flex Credits. Beides gehört in getrennte Budgetzeilen."
+  - "Coding-Agenten rechnen nach Tokens ab, Agentforce-Agenten nach Aktionen und Prompts in Flex Credits. Beides gehört in getrennte Budgetzeilen."
   - "Prompt-Caching ist der größte Hebel bei Coding-Agenten: Eine Beispielsession mit Claude Opus 5.5 kostet mit Cache rund 2,34 $, ohne Cache rund 12,40 $."
-  - "Anthropic nennt für Claude Code im Schnitt rund 13 $ pro Entwickler und aktivem Tag und 150 bis 250 $ im Monat; Seat-Preise kaufen heute ein Nutzungsbudget, keine unbegrenzte Nutzung."
-  - "Die Editionen Core, Advanced und Max enthalten 500.000, 1 Mio. und 2,75 Mio. Flex Credits pro Org und Jahr; ein einzelner Händleragent kann im ersten Jahr rund 3 Mio. verbrauchen."
-  - "Data 360 für Ersatzteilkataloge und der noch unbepreiste Zähler für Headless Platform Interactions sind die Posten, die in Schätzungen am häufigsten fehlen."
+  - "Anthropic nennt für Claude Code rund 13 $ pro Entwickler und aktivem Tag. Seat-Preise kaufen heute ein Nutzungsbudget, keine unbegrenzte Nutzung."
+  - "Core, Advanced und Max enthalten 500.000, 1 Mio. und 2,75 Mio. Flex Credits pro Org und Jahr. Ein Händleragent kann im ersten Jahr rund 3 Mio. verbrauchen."
+  - "Data 360 für Ersatzteilkataloge und der noch unbepreiste Zähler für Headless Platform Interactions fehlen in Schätzungen am häufigsten."
 articles: [flex-credits-agentforce-costs, salesforce-editions-core-advanced-max, dealer-service-agent-costs, ai-coding-costs-salesforce-project, data-360-costs-for-agents, headless-platform-interactions-budget]
 faq:
   - q: "Was kostet ein Coding-Agent wie Claude Code pro Entwickler?"
@@ -28,7 +28,7 @@ draft: false
 
 KI im Salesforce-Projekt kostet in zwei Währungen. Coding-Agenten wie Claude Code, Codex, Copilot oder Agentforce Vibes rechnen nach Tokens ab, und der Kontext, den der Agent bei jedem Schritt neu sendet, treibt die Rechnung stärker als der Prompt. Agentforce-Agenten im Betrieb rechnen nach Aktionen und Prompts in Flex Credits ab, zu einem halben Cent pro Credit. Wer beides in eine Zeile schreibt, verschätzt sich. Die größten Hebel sind Prompt-Caching in der Entwicklung und, im Betrieb, Data 360 und Testlast, die in vielen Schätzungen fehlen.
 
-## Wofür bezahlen Sie bei KI im Salesforce-Projekt?
+## Zwei Währungen: Tokens und Flex Credits
 
 Die beiden Rechenwelten im Vergleich:
 
@@ -129,7 +129,7 @@ Wer täglich agentisch arbeitet, fährt mit der Flat Fee günstiger, bis zur Gre
 
 Angenommen, eine zehn Jahre alte Org mit 2.000 Apex-Klassen soll vor dem Neustart zusammengefasst werden, mit 8.000 Tokens Input und 1.000 Tokens Output pro Klasse auf Sonnet 5.5 über die Batch API: 16 Mio. × 1 $ + 2 Mio. × 5 $ = **26 $** statt 52 $. Weil Thinking bei den 5.5-Modellen immer läuft, kann der Output höher liegen; selbst das Dreifache fällt in keinem Programmbudget auf.
 
-## Was kostet Agentforce im Betrieb?
+## Agentforce im Betrieb: Aktionen und Prompts in Flex Credits
 
 Agentforce rechnet in Flex Credits ab, laut [Agentforce-Preisseite](https://www.salesforce.com/eu/agentforce/pricing/) zu 500 € je 100.000 Credits. Die Multiplikatoren stehen in der [Flex Credits Rate Card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) mit Stand 31. August 2026:
 
@@ -172,7 +172,7 @@ Mit der Aufbereitung von 2.000 MB Ersatzteilkatalogen in Data 360 (300.000 Credi
 Der Satz für Headless Platform Interactions steht auf der Rate Card noch als TBA. Lassen Sie sich vom Account Executive bestätigen, wie Pool, mehrere Orgs und Headless Platform Interactions abgerechnet werden.
 ```
 
-## Ein typisches Szenario: das erste KI-Jahr eines Maschinenbauers
+## Rechenbeispiel: das erste KI-Jahr eines Maschinenbauers
 
 Nehmen wir einen Maschinenbauer mit 80 Nutzern in der Service Cloud auf Core Edition, SAP S/4 und einem Partner, dessen sechs Entwickler mit Claude Code zu API-Preisen arbeiten. Geplant sind der Händleragent von oben, ein Org-Assessment und Hosted MCP für 25 Mitarbeitende im Innendienst. Alle Mengen sind Annahmen.
 
@@ -199,5 +199,3 @@ Zum Vergleich: Die 80 Core-Lizenzen kosten zum Listenpreis 187.200 € im Jahr. 
 8. **Monatlich messen:** Das [Digital Wallet](https://www.salesforce.com/agentforce/digital-wallet/) zeigt den Agentforce-Verbrauch nach Agent, Aktion und Kanal und setzt ein aktiviertes Data 360 voraus; für Claude dienen Spend-Report oder Console.
 
 Diese Fragen gehören zu meiner Arbeit in [Make-or-buy und Lizenzprognosen](../../../leistungen/make-or-buy-lizenzen/). Alle Kapitel der Masterclass finden Sie auf der [Übersichtsseite](../).
-
-KI-Kosten in Salesforce lassen sich gut planen, wenn Sie Tokens und Aktionen getrennt rechnen und die offenen Zähler offen benennen.
