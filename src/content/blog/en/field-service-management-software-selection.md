@@ -10,8 +10,8 @@ categories: [field-service, architecture]
 contactBrief: make-or-buy
 tags: [field service management, FSM software, SAP Field Service Management, IFS, ServiceNow, Salesforce Field Service]
 takeaways:
-  - "Every field service management software covers the same core tasks: scheduling, a mobile app for technicians, assets and contracts, spare parts and feedback to the ERP."
-  - "Which one fits depends above all on the system that leads today: Service Cloud and portals point to Salesforce, S/4HANA as the backbone to SAP, IFS ERP to IFS and ServiceNow to ServiceNow."
+  - "All four products cover the same core tasks: scheduling, a mobile app, assets, contracts, spare parts and feedback to the ERP."
+  - "The leading system decides: Service Cloud points to Salesforce, S/4HANA to SAP, IFS ERP to IFS and ServiceNow to ServiceNow."
   - "According to SAP, SAP Field Service Management sits between SAP Service Cloud and S/4HANA. Master data, order creation and billing stay in the ERP."
   - "The biggest risks sit in the same places for every product: asset data quality, technician acceptance and interfaces to the ERP."
   - "Compare vendors on your own jobs, with real assets and real technicians, instead of on feature lists."
@@ -42,7 +42,7 @@ Whatever the vendor, field service management software covers six tasks:
 
 For manufacturers, billing almost always runs in the ERP. That is why the interface to the ERP is part of the selection for every product, including the one from the ERP vendor.
 
-## Which vendors are candidates for manufacturers?
+## Four vendors are candidates for manufacturers
 
 | Product | Basis | Obvious choice when |
 |---|---|---|
@@ -53,7 +53,7 @@ For manufacturers, billing almost always runs in the ERP. That is why the interf
 
 A fifth option for Salesforce customers is ServiceMax, which now belongs to PTC and builds on Salesforce. I compared the two in [ServiceMax vs Salesforce Field Service](../servicemax-vs-salesforce-field-service/).
 
-## When does Salesforce Field Service fit?
+## Salesforce Field Service fits when customer service runs in Salesforce
 
 Salesforce Field Service builds on Service Cloud. Case, work order, asset and customer sit in one data model together with sales, customer portal and partner portal. That is its strength: a customer reports a breakdown in the portal, inside sales turns it into a work order, and the technician sees the same history. I describe this path in [from case to work order](../field-service-case-to-work-order/).
 
@@ -69,7 +69,7 @@ For manufacturers whose service orders are created and billed in S/4HANA anyway,
 
 The question that remains: where does customer contact sit? If sales and customer service run in Salesforce but field service runs in SAP, the view of the customer is split across two worlds. That is the same trade-off as when choosing the CRM itself.
 
-## When are IFS or ServiceNow options?
+## IFS and ServiceNow fit when they are already established
 
 **IFS** presents [field service management](https://www.ifs.com/solutions/field-service-management) as part of IFS Cloud, alongside ERP and enterprise asset management. Its scheduling promotes AI-based optimisation that finds the right skilled technician for each job. IFS is the obvious choice when the company already uses IFS as its ERP or for asset management.
 
@@ -79,7 +79,7 @@ The question that remains: where does customer contact sit? If sales and custome
 In my Field Service projects with maintenance, breakdown jobs and commissioning, spare parts and installed base came from the ERP, and scheduling ran automatically. The stumbling blocks were asset data quality, technician acceptance and the interfaces to the ERP. These three points hardly depend on the product and belong in every selection.
 ```
 
-## How should you approach the selection?
+## Compare two vendors on real jobs
 
 The feature lists of the four vendors look alike. Differences only show up on your own jobs. I recommend this order:
 
@@ -97,5 +97,3 @@ Calculation | 2 weeks · client
 Three typical jobs work well as scenarios: a planned maintenance, a breakdown with a spare part and a commissioning over several days. Let technicians use the mobile app themselves instead of only watching. And check with real asset data from the ERP what the [asset hierarchy](../field-service-asset-hierarchy-machines/) looks like in the new system.
 
 The calculation includes licences by role, meaning dispatchers, technicians and service partners. For Salesforce, I broke this down in [Field Service licences by role](../field-service-licences-by-role/). How I prepare such decisions with clients is described under [make or buy and licence forecasts](../../services/make-or-buy-licences/).
-
-The best field service management software is the one that fits your leading system and that your technicians are happy to head out with in the morning.

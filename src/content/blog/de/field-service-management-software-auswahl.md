@@ -10,11 +10,11 @@ categories: [field-service, architecture]
 contactBrief: make-or-buy
 tags: [Field Service Management, FSM Software, SAP Field Service Management, IFS, ServiceNow, Salesforce Field Service]
 takeaways:
-  - "Jede Field Service Management Software deckt dieselben Kernaufgaben ab: Terminplanung, mobile App für Techniker, Anlagen und Verträge, Ersatzteile und die Rückmeldung an das ERP."
-  - "Welche passt, entscheidet vor allem das System, das heute führt: Service Cloud und Portale sprechen für Salesforce, S/4HANA als Rückgrat für SAP, IFS-ERP für IFS und ServiceNow für ServiceNow."
+  - "Alle vier Produkte decken dieselben Kernaufgaben ab: Terminplanung, mobile App, Anlagen, Verträge, Ersatzteile und Rückmeldung an das ERP."
+  - "Den Ausschlag gibt das führende System: Service Cloud spricht für Salesforce, S/4HANA für SAP, IFS-ERP für IFS, ServiceNow für ServiceNow."
   - "SAP Field Service Management sitzt laut SAP zwischen SAP Service Cloud und S/4HANA. Stammdaten, Auftragsanlage und Abrechnung bleiben im ERP."
   - "Die größten Risiken liegen bei allen Produkten an denselben Stellen: Qualität der Anlagendaten, Akzeptanz der Techniker und Schnittstellen zum ERP."
-  - "Vergleichen Sie Anbieter an Ihren eigenen Einsätzen, mit echten Anlagen und echten Technikern, statt an Funktionslisten."
+  - "Vergleichen Sie Anbieter an Ihren eigenen Einsätzen, mit Ihren Anlagen und Ihren Technikern, statt an Funktionslisten."
 faq:
   - q: "Was ist eine Field Service Management Software?"
     a: "Eine Field Service Management Software plant und steuert Einsätze von Technikern beim Kunden. Sie verteilt Aufträge nach Qualifikation und Verfügbarkeit, schickt sie an eine mobile App und dokumentiert Arbeitszeit, Material und Ergebnis für die Abrechnung im ERP."
@@ -42,7 +42,7 @@ Unabhängig vom Anbieter deckt eine Field Service Management Software sechs Aufg
 
 Die Abrechnung läuft bei Herstellern fast immer im ERP. Deshalb ist die Schnittstelle zum ERP bei jedem Produkt Teil der Auswahl, auch beim Produkt des ERP-Herstellers.
 
-## Welche Anbieter kommen für Hersteller in Frage?
+## Vier Anbieter kommen für Hersteller in Frage
 
 | Produkt | Grundlage | Naheliegend, wenn |
 |---|---|---|
@@ -53,7 +53,7 @@ Die Abrechnung läuft bei Herstellern fast immer im ERP. Deshalb ist die Schnitt
 
 Eine fünfte Option für Salesforce-Kunden ist ServiceMax, das heute zu PTC gehört und auf Salesforce aufsetzt. Den Vergleich habe ich in [ServiceMax oder Salesforce Field Service?](../servicemax-oder-salesforce-field-service/) beschrieben.
 
-## Wann passt Salesforce Field Service?
+## Salesforce Field Service passt, wenn der Kundenservice in Salesforce läuft
 
 Salesforce Field Service baut auf der Service Cloud auf. Fall, Arbeitsauftrag, Anlage und Kunde liegen in einem Datenmodell mit Vertrieb, Kundenportal und Partnerportal. Das ist die Stärke: Ein Kunde meldet eine Störung im Portal, der Innendienst macht daraus einen Arbeitsauftrag, und der Techniker sieht dieselbe Historie. Wie dieser Weg aussieht, beschreibe ich in [Vom Case zum Arbeitsauftrag](../field-service-case-zu-arbeitsauftrag/).
 
@@ -69,7 +69,7 @@ Für Hersteller, deren Serviceaufträge ohnehin in S/4HANA angelegt und abgerech
 
 Die Frage, die dabei bleibt: Wo liegt der Kundenkontakt? Wenn Vertrieb und Kundenservice in Salesforce laufen, der Außendienst aber in SAP, verteilt sich die Sicht auf den Kunden auf zwei Welten. Das ist dieselbe Abwägung wie bei der Wahl des CRM selbst.
 
-## Wann kommen IFS oder ServiceNow in Frage?
+## IFS und ServiceNow passen, wenn sie im Unternehmen gesetzt sind
 
 **IFS** stellt [Field Service Management](https://www.ifs.com/solutions/field-service-management) als Teil von IFS Cloud vor, neben ERP und Enterprise Asset Management. Die Planung wirbt mit KI-gestützter Optimierung, die für jeden Auftrag den passend qualifizierten Techniker sucht. Naheliegend ist IFS, wenn das Unternehmen IFS bereits als ERP oder für das Anlagenmanagement nutzt.
 
@@ -79,7 +79,7 @@ Die Frage, die dabei bleibt: Wo liegt der Kundenkontakt? Wenn Vertrieb und Kunde
 In meinen Field-Service-Projekten mit Wartung, Störungseinsätzen und Inbetriebnahmen kamen Ersatzteile und installierte Basis aus dem ERP, und die Terminplanung lief automatisch. Die Stolpersteine waren die Qualität der Anlagendaten, die Akzeptanz der Techniker und die Schnittstellen zum ERP. Diese drei Punkte hängen kaum vom Produkt ab und gehören in jede Auswahl.
 ```
 
-## Wie gehen Sie die Auswahl an?
+## Zwei Anbieter an eigenen Einsätzen vergleichen
 
 Funktionslisten der vier Anbieter sehen sich ähnlich. Unterschiede zeigen sich erst an Ihren eigenen Einsätzen. Ich empfehle diese Reihenfolge:
 
@@ -94,8 +94,6 @@ Rechnung | 2 Wochen · Kunde
   Lizenzen, Schnittstellen und Betrieb über mehrere Jahre vergleichen.
 ```
 
-Für die Szenarien eignen sich drei typische Einsätze: eine Wartung nach Plan, eine Störung mit Ersatzteil und eine Inbetriebnahme über mehrere Tage. Lassen Sie Techniker die mobile App selbst bedienen, nicht nur zuschauen. Und prüfen Sie mit echten Anlagendaten aus dem ERP, wie die [Anlagenhierarchie](../field-service-asset-hierarchie-maschinen/) im neuen System aussieht.
+Für die Szenarien eignen sich drei typische Einsätze: eine Wartung nach Plan, eine Störung mit Ersatzteil und eine Inbetriebnahme über mehrere Tage. Lassen Sie Techniker die mobile App selbst bedienen, nicht nur zuschauen. Und prüfen Sie mit Anlagendaten aus Ihrem ERP, wie die [Anlagenhierarchie](../field-service-asset-hierarchie-maschinen/) im neuen System aussieht.
 
 Bei der Rechnung gehören die Lizenzen nach Rolle dazu, also Disponenten, Techniker und Servicepartner. Für Salesforce habe ich das in [Field-Service-Lizenzen nach Rolle](../field-service-lizenzen-rollen-dispatcher-techniker/) aufgeschlüsselt. Wie ich solche Entscheidungen mit Kunden vorbereite, steht unter [Make-or-buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/).
-
-Die beste Field Service Management Software ist die, die zu Ihrem führenden System passt und mit der Ihre Techniker morgens gern losfahren.
