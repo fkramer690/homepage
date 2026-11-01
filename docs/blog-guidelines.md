@@ -16,7 +16,7 @@ Start every new article from [`docs/blog-template.md`](blog-template.md).
 |---|---|---|
 | Title | Names a concrete problem or question, 20–60 characters, main keyword near the start | schema |
 | Description | 120–160 characters, states what the reader gets | schema |
-| Key takeaways | 3–5 standalone sentences, each understandable without the article | schema |
+| Key takeaways | 3–5 standalone sentences, each understandable without the article, at most 160 characters, the first not a copy of the intro | schema + script |
 | Intro | First paragraph gives the answer, at most 110 words | script |
 | Body | At least 3 H2 sections, H3 if needed, no H1 and no H4+ | script |
 | Questions | At least one H2 phrased as a question people would search for | script |
@@ -82,6 +82,16 @@ Articles must read like Fabian talking to a client, not like generated content. 
 - **No reflexive lists of three.** Use as many items as there really are.
 - **No hype, no superlatives without a reason.** "Best course I have taken" is fine when the article says why; "revolutionary" is not.
 - **Fabian's voice.** First person, direct, a little dry, with his own phrasing where he gave it (e.g. from LinkedIn posts). Keep real quirks instead of smoothing them out.
+- **No template shape** (AI-slop review 2026-10-31). Every article had the same skeleton, which reads as generated even when each sentence is fine. `node scripts/check-blog.mjs --structure` lists these findings (errors in the build since 2026-10-31):
+  - No generic closing heading ("Wo fangen Sie an?", "Wo sollten Sie anfangen?", "Where should you start?"). The last section names the concrete first step in its heading.
+  - No one-sentence summary or moral as the last paragraph ("X ist nur so gut wie Y", "Saubere Stammdaten sind die Voraussetzung für …"). The article ends with the step.
+  - Key takeaways: 3 to 5, as many as there are, at most 160 characters each, and the first does not repeat the intro's first sentence. The intro, the takeaways and the first FAQ answer each add something.
+  - At most half of the H2 are questions (at least one stays for AI search); the others state the answer.
+  - Assumption examples are called "Rechenbeispiel" / "Worked example", never "Ein typisches Szenario, als Annahme".
+  - At most one counting announcement ("drei Dinge", "three questions"); no "Erstens, Zweitens, Drittens".
+  - No stock phrases: "nur so gut wie", "besser als jede …", "die gute Nachricht", "der Haken", "the honest answer", "the catch".
+  - At most 3 intensifiers per text (echt, wirklich, tatsächlich, ehrlich / really, actually, honestly, genuinely, truly) and at most 5 × "statt" / "instead of".
+  - Titles: the pattern "Topic: statement" is not the default; use it only when the colon really separates two things.
 - **Read-aloud test.** Read the article once out loud. Anything Fabian would not say to a client in a meeting gets rewritten.
 
 ## Content blocks
@@ -91,7 +101,7 @@ Every article and every masterclass chapter loosens up its text with building bl
 - At least one block or a Markdown table per text; texts over 1,300 words need at least two different ones (a table counts as one kind).
 - At most one block per 250 words, with four always allowed (Fabian 2026-10-30), at most two notes and one practice block, so the text leads and not the boxes.
 - Pick the block by content, never for decoration: dates in a sequence → timeline; a decision with arguments on both sides → pro-contra; data flows between Salesforce and the ERP → flow diagram; phases with duration and owner → steps; two or three levers that each have an effect → lever cards; figures the section explains → key figures; several partners or teams delivering into one org, with and without a central owner → partner flow; a comparison or assignment in rows and columns → light table (never as an image of a table); what a tool does well and where it stops → strengths and limits; stages a change runs through up to production → pipeline; an old structure split onto a new one → pillar shift; what is set anyway and what is added on top → base and add-ons; levels or certifications that build on each other → levels; a whole process in which people, an agent or a pipeline take turns, with decision gates → process in lanes; one item traced through several artefacts → chain; two tools or approaches that differ in where the process is controlled → control centre; a visible price with the real costs below it → iceberg; detail only specialists need → collapsible detail; a fact readers must not miss, an open point to confirm in writing → note.
-- `praxis` only with experience Fabian has confirmed (list in content-blocks.md); assumption scenarios stay in the running text, marked "as an assumption".
+- `praxis` only with experience Fabian has confirmed (list in content-blocks.md); assumption examples stay in the running text, introduced as "Rechenbeispiel" / "Worked example".
 - Key figures and timelines only with values that are sourced in the text.
 - A block repeats nothing the paragraph around it says word for word; it condenses or adds structure. Same blocks in EN and DE.
 - Flow diagrams: run `node scripts/render-diagrams.mjs` after adding or changing one; it fails if a label does not fit its box.

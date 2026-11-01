@@ -9,11 +9,10 @@ topic: service
 categories: [manufacturing-cloud, field-service]
 tags: [Manufacturing Cloud, Rückrufaktion, Servicekampagnen, Händler, After-Sales]
 takeaways:
-  - "Eine Product Service Campaign in Salesforce, verfügbar seit API 51.0, beschreibt Tätigkeiten an einer Gruppe von Assets, etwa Rückruf, Nachbesserung oder Upgrade. Jede betroffene Maschine wird ein Kampagnenposten."
-  - "Seit API 65.0 kommen Definitionen mit betroffenem Produkt, Seriennummernbereich und Fertigungschargen dazu, außerdem Verursacherteile mit Abhilfeart, Partner und unverkaufter Händlerbestand."
-  - "Ob die richtigen Maschinen getroffen werden, hängt an Seriennummern und Fertigungschargen in Salesforce. Ohne sie erfasst eine Kampagne zu viele oder zu wenige Maschinen."
-  - "Händler und Servicepartner führen die Arbeit aus. Arbeitsaufträge und Termine sind Field Service und brauchen Field-Service-Lizenzen."
-  - "Vor dem Bau ist zu klären, wer eine Kampagne auslöst, wer Teile und Arbeitszeit bezahlt und wie Händler die Erledigung pro Maschine melden."
+  - "Product Service Campaigns gibt es seit API 51.0. Jede betroffene Maschine wird ein Kampagnenposten mit eigenem Status."
+  - "Seit API 65.0 kommen Seriennummernbereiche, Fertigungschargen, Verursacherteile, Partner und unverkaufter Händlerbestand dazu."
+  - "Händler und Servicepartner führen die Arbeit aus. Arbeitsaufträge und Termine sind Field Service und brauchen dessen Lizenzen."
+  - "Welche Lizenz die Kampagnen selbst abdeckt, nennt weder die Preisseite noch die Referenz. Das gehört schriftlich ins Angebot."
 faq:
   - q: "Was ist eine Product Service Campaign in Salesforce?"
     a: "Eine Product Service Campaign beschreibt Tätigkeiten an einer Gruppe von Assets, zum Beispiel einen Rückruf wegen Sicherheitsmängeln oder Produktfehlern, eine Nachbesserung oder ein Upgrade. Jede betroffene Maschine ist ein Product Service Campaign Item mit eigenem Status. Das Objekt gibt es ab API-Version 51.0."
@@ -34,7 +33,7 @@ Die Objektreferenz beschreibt die [Product Service Campaign](https://developer.s
 
 Die Manufacturing Cloud baut darauf auf. Der [Überblick auf Trailhead](https://trailhead.salesforce.com/content/learn/modules/agentforce-manufacturing-quick-look/explore-agentforce-manufacturing-capabilities) nennt Servicekampagnen unter den Servicefunktionen: „Launch and manage proactive service campaigns for recalls, upgrades, or maintenance initiatives“. Die Kampagne ist also nicht auf Sicherheitsrückrufe beschränkt. Ein Nachrüstsatz für alle Maschinen einer Baureihe passt in dasselbe Modell.
 
-## Welche Objekte nutzt das Datenmodell?
+## Seit API 65.0 kennt das Datenmodell Chargen und Verursacherteile
 
 Das [Datenmodell für Product Service Campaigns](https://developer.salesforce.com/docs/platform/data-models/guide/product-service-campaign-management.html) zeigt das Gesamtbild. Die mit API 65.0 hinzugekommenen Objekte sind in den Developer Guides von Manufacturing Cloud und Automotive Cloud dokumentiert:
 
@@ -61,9 +60,9 @@ Hier scheitern die meisten Rückrufe, in Salesforce wie anderswo. Die Definition
 
 Fehlt eines davon, wählen Sie zwischen zwei schlechten Varianten. Zu breit ausgewählt, bezahlen Sie Arbeit an Maschinen, die in Ordnung sind. Zu eng ausgewählt, bleiben fehlerhafte Maschinen im Feld. Ich würde die Auswahllogik an einem vergangenen Qualitätsfall testen, bevor ich ihr einen echten Rückruf anvertraue.
 
-## Ein typisches Szenario, als Annahme
+## Rechenbeispiel: eine fehlerhafte Ventilcharge
 
-Ein Maschinenbauer erfährt, dass eine Ventilcharge eines Lieferanten fehlerhaft ist. Das Ventil steckt in 1.800 Maschinen zweier Baureihen, verkauft über 70 Händler. 120 dieser Maschinen stehen noch unverkauft beim Händler.
+Angenommen, ein Maschinenbauer erfährt, dass eine Ventilcharge eines Lieferanten fehlerhaft ist. Das Ventil steckt in 1.800 Maschinen zweier Baureihen, verkauft über 70 Händler. 120 dieser Maschinen stehen noch unverkauft beim Händler.
 
 Im Datenmodell wird daraus eine Kampagne und eine Group Definition. Das Causal Item ist das Ventil, Abhilfeart Replace, mit Rücksendung gegen Gutschrift, damit der Lieferant zahlt. Zwei Definitionen decken die beiden Baureihen ab, jeweils mit Produktionsbeginn, letzter betroffener Seriennummer und verknüpften Fertigungschargen. Lieferant und 70 Händler sind Group Definition Partner. Die 120 unverkauften Maschinen erscheinen als Partner Inventory, damit sie repariert werden, bevor sie beim Kunden ankommen.
 
@@ -94,9 +93,9 @@ contra: Wann eine Liste reicht
 
 Für die Auswahl der Maschinen gilt in beiden Fällen dasselbe: Ohne saubere Seriennummern und Chargen hilft auch die beste Liste nicht.
 
-## Was sollten Sie vor dem Bau entscheiden?
+## Auslöser, Kosten und Meldeweg schriftlich klären
 
-Drei Fragen würde ich schriftlich beantworten:
+Diese Fragen würde ich vor dem Bau schriftlich beantworten:
 
 1. **Wer löst eine Kampagne aus?** Meist die Qualität, bei Upgrades manchmal das Produktmanagement. Eine Rolle legt an, eine andere gibt frei.
 2. **Wer zahlt?** Teile, Arbeitszeit des Händlers, Anfahrt. Das Causal Item deckt den Lieferantenregress ab; ob Händler ihre Arbeitszeit über Garantieanträge oder pauschal vergütet bekommen, entscheiden Sie.
@@ -108,6 +107,4 @@ Dazu kommt die Lizenzfrage:
 Die [Preisseite der Manufacturing Cloud](https://www.salesforce.com/manufacturing/cloud/pricing/) erwähnt Servicekampagnen nicht, und die Referenzseiten nennen keine Lizenz. Lassen Sie sich von Salesforce schriftlich bestätigen, welche Lizenz Product Service Campaigns abdeckt.
 ```
 
-Das ganze Bild zum After-Sales steht im [Kapitel Garantie und After-Sales](../../masterclass/manufacturing-cloud/garantie-und-after-sales/) der Masterclass Manufacturing Cloud.
-
-Eine Rückrufaktion in Salesforce funktioniert, wenn sich die betroffenen Maschinen über Seriennummer und Charge finden lassen, und stockt, wenn nicht.
+Den Meldeweg aus Frage 3 spiele ich mit zwei Händlern durch, bevor die erste Kampagne startet. Das ganze Bild zum After-Sales steht im [Kapitel Garantie und After-Sales](../../masterclass/manufacturing-cloud/garantie-und-after-sales/) der Masterclass Manufacturing Cloud.

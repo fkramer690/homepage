@@ -9,11 +9,11 @@ topic: commerce
 categories: [b2b-commerce, devops]
 tags: [b2b commerce, lwr, aura, migration, lightning web components, experience cloud]
 takeaways:
-  - "Salesforce has published no retirement date for Aura B2B stores as of 27 October 2026. It recommends the LWR template for new stores and suggests that existing Aura stores consider migrating."
-  - "An LWR store supports only Lightning web components. Custom styling uses --dxp styling hooks instead of your own CSS classes, and data comes through wire adapters."
-  - "Migrating means creating a new store from the B2B Commerce (LWR) template; Salesforce documents no migration tool, only refactoring steps and a change set for the store configuration."
-  - "Aura stores build checkout with Flow Builder, LWR stores use the built-in Salesforce Commerce Checkout. Custom checkout subflows have to be rebuilt, ideally as extensions."
-  - "Replace Aura components with Lightning web components inside the running Aura store first. That work pays off either way and shrinks the actual switch."
+  - "Salesforce has published no retirement date for Aura B2B stores as of 27 October 2026, but recommends the LWR template for new stores."
+  - "An LWR store supports only Lightning web components. Styling uses --dxp styling hooks, and data comes through wire adapters."
+  - "Migrating means creating a new LWR store. There is no migration tool, only refactoring steps and a change set for the store configuration."
+  - "LWR stores use the built-in Commerce Checkout in place of Flow Builder. Custom checkout subflows are rebuilt, ideally as extensions."
+  - "Replace Aura components with Lightning web components inside the running Aura store first. That pays off either way and shrinks the switch."
 faq:
   - q: "Is Salesforce retiring Aura B2B Commerce stores?"
     a: "As of 27 October 2026 Salesforce has not published a retirement date. Aura stores are not on the list of active product and feature retirements. Salesforce recommends LWR for new stores and only orgs enabled for Commerce before Spring '23 can still create Aura stores."
@@ -36,7 +36,7 @@ According to the [migration guide](https://developer.salesforce.com/docs/commerc
 
 A retirement date does not exist. Aura stores are not on the [list of active product and feature retirements](https://help.salesforce.com/s/articleView?id=000381744&language=en_US&type=1), and the migration guide names none. The list itself says that retirements not listed there are communicated through release notes, help articles or targeted emails, so keep an eye on the release notes three times a year. Until then, decide by features and effort, not by fear of a date nobody has announced.
 
-## What is different in an LWR store?
+## An LWR store runs only Lightning web components
 
 The [key differences](https://developer.salesforce.com/docs/commerce/lwr-migration/guide/key-differences.html) are short, but each one affects custom code:
 
@@ -52,7 +52,7 @@ Two rows deserve attention. The first is checkout. For Aura stores, Salesforce s
 
 The second is the cart page. It changed from a record page to a named page, so every component that navigates to the cart or builds a link to it with `lightning/navigation` needs an update, according to the guide's [Migrate Your Store](https://developer.salesforce.com/docs/commerce/lwr-migration/guide/store-migration.html) page.
 
-## How does the migration work, step by step?
+## Prepare in the Aura store first, then switch
 
 The guide splits the work into preparation in the Aura store and the switch to a new LWR store. I follow the same split, because the preparation can run while dealers keep ordering.
 
@@ -100,10 +100,8 @@ I would plan the migration when at least one of these applies:
 
 If the store runs stably, has little custom code and no change is planned, waiting is a legitimate choice. Do the preparation steps anyway, because Lightning web components work in both stores.
 
-A typical scenario, as an assumption: a machine builder has run an Aura store since 2021 with about 30 custom components and a checkout flow with an ERP credit check. In the first quarter the team replaces the leaf components with Lightning web components inside the Aura store and releases them normally. In the second quarter it builds the LWR store in a sandbox, rebuilds the credit check as a PlaceOrder extension and moves the styling to the Theme panel. Then one pilot buyer group switches to the new store, the old one stays online as a fallback for two weeks, and the remaining groups follow, as described in [B2B shop rollout to dealers](../b2b-shop-dealer-rollout/).
+Worked example: a machine builder has run an Aura store since 2021 with about 30 custom components and a checkout flow with an ERP credit check. In the first quarter the team replaces the leaf components with Lightning web components inside the Aura store and releases them normally. In the second quarter it builds the LWR store in a sandbox, rebuilds the credit check as a PlaceOrder extension and moves the styling to the Theme panel. Then one pilot buyer group switches to the new store, the old one stays online as a fallback for two weeks, and the remaining groups follow, as described in [B2B shop rollout to dealers](../b2b-shop-dealer-rollout/).
 
-## Where should you start?
+## List Aura components and checkout subflows
 
 Start with the inventory: list all Aura components, the checkout flow with its subflows and every place that links to the cart. Then decide which components you replace inside the Aura store in the next two releases. Plan the switch itself into your [Salesforce release calendar](../../masterclass/devops-release-management/release-planning-salesforce-releases/), with regression tests for search, cart and checkout, because three Salesforce releases a year hit both the old and the new store. The other topics of this chapter, from agents to rollout, are in the B2B Commerce masterclass chapter on [agents, migration and rollout](../../masterclass/b2b-commerce/agentforce-migration-rollout/).
-
-An Aura store has no deadline, but every new Aura component makes the later switch more expensive.

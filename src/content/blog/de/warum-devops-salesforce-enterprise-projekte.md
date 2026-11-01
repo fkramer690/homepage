@@ -11,7 +11,7 @@ tags: [devops, release management, partnersteuerung, sfdx-hardis]
 takeaways:
   - "Sobald mehrere Teams oder Partner an einer Salesforce-Org arbeiten, entscheidet DevOps, ob Releases sicher und nachvollziehbar bleiben."
   - "Change Sets fehlen Versionshistorie, Rollback, Reviews und automatische Qualitätsschranken. Für Enterprise-Programme skalieren sie nicht."
-  - "Gutes Salesforce-DevOps beruht auf Git als Quelle der Wahrheit, klarer Branch-Strategie, Pull-Request-Reviews, automatischen Tests, Delta-Deployments und Monitoring."
+  - "Gutes Salesforce-DevOps beruht auf Git, klarer Branch-Strategie, Pull-Request-Reviews, automatischen Tests, Delta-Deployments und Monitoring."
   - "Repository und Pipeline sollten dem Kunden gehören, nicht dem Implementierungspartner."
   - "Open-Source-Tools wie sfdx-hardis decken die meisten Bausteine ohne kommerzielle Lizenz ab."
 faq:
@@ -77,7 +77,7 @@ fazit: Git-Repository: einzige Quelle der Wahrheit für alle Metadaten
 
 Dieser letzte Punkt ist mir als [Architekt auf Kundenseite](../../#about) besonders wichtig. Ein Repository und eine Pipeline unter Kontrolle des Kunden machen Partner vergleichbar und austauschbar. Das ist die Grundlage für [Partnersteuerung und Governance](../../leistungen/partnersteuerung/). Außerdem wird das Onboarding eines neuen Partners deutlich leichter, weil die Standards aufgeschrieben sind und automatisch durchgesetzt werden.
 
-## Wie sah das in einem echten Programm aus?
+## So sah das in einem Programm aus, in das ich eingestiegen bin
 
 In einem Programm, in das ich eingestiegen bin, betrieb ein großes Unternehmen Salesforce mit mehreren Implementierungspartnern und internen Teams. Niemand hatte klar festgelegt, wer für welche Prozesse, Objekte und Metadaten die Führung hat. Das Ergebnis war absehbar:
 
@@ -85,7 +85,7 @@ In einem Programm, in das ich eingestiegen bin, betrieb ein großes Unternehmen 
 - Die technischen Ansätze der Teams lagen weit auseinander, ähnliche Probleme wurden sehr unterschiedlich gelöst.
 - Jedes Release war ein Risiko, und Fehler fielen oft erst auf, wenn Anwender darauf stießen.
 
-Wir haben das in wenigen Schritten geändert. Erstens lief jede Änderung über einen Pull Request mit Review. Zweitens haben wir Entwicklungs- und Architekturstandards aufgeschrieben und in diesen Reviews durchgesetzt. Drittens wurde die Pipeline der einzige Weg, Änderungen von einer Org in die nächste zu bringen.
+Wir haben das in wenigen Schritten geändert. Zuerst lief jede Änderung über einen Pull Request mit Review. Dann haben wir Entwicklungs- und Architekturstandards aufgeschrieben und in diesen Reviews durchgesetzt. Am Ende wurde die Pipeline der einzige Weg, Änderungen von einer Org in die nächste zu bringen.
 
 ```praxis
 Eine Zeit lang ging jeder einzelne Pull Request über meinen Schreibtisch. Als der Prozess stabil lief, habe ich ihn an einen internen Kollegen übergeben, der ihn heute verantwortet.
@@ -115,9 +115,9 @@ DevOps klingt nach einem Thema für Entwickler. In der Praxis profitiert oft der
 - **Nachvollziehbarkeit für Audits.** Für jedes Feld, jeden Flow und jede Berechtigung lässt sich zeigen, wer es wann und warum geändert und wer es freigegeben hat.
 - **Weniger Abhängigkeit von Einzelnen.** Das Wissen liegt im Repository und in der Pipeline, nicht im Kopf eines Admins oder des Lead-Entwicklers eines Partners.
 
-Für einen Lenkungsausschuss läuft das auf eine einfache Frage hinaus: Wie sicher sind wir, dass das nächste Release Vertrieb oder Service nicht stört? Ohne DevOps ist die ehrliche Antwort oft eine Schätzung.
+Für einen Lenkungsausschuss läuft das auf eine einfache Frage hinaus: Wie sicher sind wir, dass das nächste Release Vertrieb oder Service nicht stört? Ohne DevOps ist die Antwort darauf oft eine Schätzung.
 
-## Wo fängt man an?
+## Erster Schritt: die Produktions-Metadaten in Git
 
 Wenn Ihr Salesforce-Programm noch mit Change Sets oder manuellen Deployments arbeitet, brauchen Sie keine Big-Bang-Umstellung. Eine pragmatische Reihenfolge:
 
@@ -134,4 +134,4 @@ Betrieb
   Monitoring, Backups und generierte Dokumentation ergänzen.
 ```
 
-DevOps ist keine zusätzliche Schicht für später. In Enterprise-Projekten ist es Teil der Architektur, und es sollte stehen, bevor der zweite Partner an der Org arbeitet.
+Die ersten beiden Schritte sollten stehen, bevor der zweite Partner an der Org arbeitet. Wie ich das mit Open Source aufsetze, steht in der [Einführung in sfdx-hardis](../sfdx-hardis-einfuehrung-salesforce-devops/).

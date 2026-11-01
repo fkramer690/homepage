@@ -10,11 +10,10 @@ categories: [manufacturing-cloud, architecture]
 contactBrief: licences
 tags: [Manufacturing Cloud, Lizenzen, Add-ons, Experience Cloud, Agentforce, Make-or-buy]
 takeaways:
-  - "Fast jeder Hersteller braucht zur Manufacturing Cloud mindestens Portallizenzen: 15 $ pro Login oder 35 $ pro Mitglied für Kunden, 20 $ oder 50 $ für Partner, pro Monat zum Listenpreis."
-  - "Das Agentforce for Manufacturing Cloud Add-on kostet 150 $ im Monat. Die Add-on-Seite sagt pro Nutzer, die Preisseite pro Login. Lassen Sie sich die Einheit schriftlich geben."
-  - "Channel Revenue Management for Manufacturing kostet 30.000 $ pro Org und Jahr, Connected Assets 15.000 $ pro Org und Monat. Beide lohnen sich nur für bestimmte Prozesse."
-  - "Salesforce-Seiten widersprechen sich bei Manufacturing Intelligence (220 $ pro Login oder ab 165 $) und bei Rebate Management (ab 75 $ ohne Einheit oder Teil von Channel Revenue Management)."
-  - "In einem angenommenen Szenario mit 150 Nutzern und 400 Händlern erhöhen typische Add-ons die Lizenzzeile um rund 40 Prozent; Connected Assets und zusätzliche Omnistudio-Aufrufe würden sie verdoppeln."
+  - "Portallizenzen kosten 15 $ pro Login oder 35 $ pro Mitglied für Kunden, 20 $ oder 50 $ für Partner, pro Monat zum Listenpreis."
+  - "Das Agentforce-Add-on kostet 150 $ im Monat, laut einer Seite pro Nutzer, laut der anderen pro Login. Die Einheit gehört ins Angebot."
+  - "Bei Manufacturing Intelligence und Rebate Management widersprechen sich die Salesforce-Seiten, bei Preis und bei Einheit."
+  - "Im Rechenbeispiel würden Connected Assets und zusätzliche Omnistudio-Aufrufe die Lizenzzeile verdoppeln."
 faq:
   - q: "Was kosten Portallizenzen für die Manufacturing Cloud?"
     a: "Laut Add-on-Seite (Stand Oktober 2026) kostet Experience Cloud for Manufacturing als Customer Community Plus 15 $ pro Login oder 35 $ pro Mitglied und Monat, als Partner Community 20 $ pro Login oder 50 $ pro Mitglied, jährlich abgerechnet. Die Experience-Cloud-Seite nennt dieselben Beträge in Euro."
@@ -48,7 +47,7 @@ Die [Add-on-Seite](https://www.salesforce.com/manufacturing/cloud/pricing/add-on
 
 Der Rest sind Feedback Management und Umfragepakete. Eine Merkwürdigkeit: Die Seite nennt Add-ons „verfügbar mit Advanced“, die [Preisseite](https://www.salesforce.com/manufacturing/cloud/pricing/) bepreist aber nur Core- und Max-Editionen, wie ich in [Salesforce-Editionen Core, Advanced und Max](../salesforce-editionen-core-advanced-max/) beschrieben habe. Die Editionen selbst nennt die Preisseite in Euro mit denselben Beträgen wie in Dollar, für die meisten Add-ons fand ich nur Dollarpreise.
 
-## Was kosten Händler und Kunden im Portal?
+## Portallizenzen für Händler und Kunden kosten 15 $ bis 50 $ im Monat
 
 Portallizenzen sind das Add-on, um das kaum ein Hersteller herumkommt. Eine Mitgliedslizenz gehört einem Nutzer, der sich beliebig oft anmelden kann. Eine Login-Lizenz wird als monatliches Kontingent gekauft, und laut [Salesforce-Hilfe zu Experience-Cloud-Lizenzen](https://help.salesforce.com/s/articleView?id=sf.users_license_types_communities.htm&language=en_US&type=5) zählen mehrere Anmeldungen am selben Tag als ein Daily Unique Login.
 
@@ -90,7 +89,7 @@ In beiden Fällen kostet jede Aktion eines Agenten Flex Credits; für Core nennt
 
 **Asset Service Lifecycle Management, 75 $ pro Nutzer und Monat,** gehört zu Field-Service-Editionen und betrifft nur Unternehmen, die auch Field Service lizenzieren.
 
-## Wann werden Plattformgrenzen zu Add-ons?
+## Plattformgrenzen werden zu Add-ons, sobald ein Prozess darauf läuft
 
 Jede Edition enthält Grenzen, die großzügig wirken, bis ein Prozess darauf läuft. Laut Preisseite:
 
@@ -103,7 +102,7 @@ Jede Edition enthält Grenzen, die großzügig wirken, bis ein Prozess darauf l�
 
 Der nächste Schritt nach 100.000 Omnistudio-Aufrufen in Core ist eine Einheit mit 2 Millionen Aufrufen für 10.000 $ im Monat. Eine kleinere Einheit nennt die Seite nicht. Für die Business Rules Engine, die laut Produktseite Garantieansprüche freigibt, nennt die Seite gar keinen Add-on-Preis. Wenn Garantieansprüche, Bonusregeln und Portalprozesse auf diesen Engines laufen, fragen Sie, wie Aufrufe gezählt werden und was ein zusätzlicher Block kostet, bevor die Prozesse gebaut sind.
 
-## Ein typisches Szenario, als Annahme: 150 Nutzer und 400 Händler
+## Rechenbeispiel: 150 Nutzer und 400 Händler
 
 Ein Maschinenbauer lizenziert 150 Vertriebsnutzer auf Manufacturing Cloud Sales Core und öffnet ein Portal für 400 Händler. 100 Händler melden sich wöchentlich an, 300 etwa einmal im Monat. 20 Key Account Manager bekommen Agenten, und das Unternehmen verkauft über Distributoren mit Preisschutz. Alle Zahlen sind Annahmen, alle Preise Listenpreise pro Jahr:
 
@@ -128,5 +127,3 @@ Die Add-ons erhöhen die Lizenzzeile um 40 Prozent. Will dasselbe Unternehmen au
 7. **Add-ons für Jahr zwei und drei** zum heutigen Preis, wenn sie auf der Roadmap stehen.
 
 Auch intern braucht nicht jeder die Branchenlizenz, wie in [braucht jeder eine volle Lizenz](../salesforce-lizenzen-volle-lizenz/) beschrieben. Der ganze Business Case steht in Kapitel 1 der [Masterclass Manufacturing Cloud](../../masterclass/manufacturing-cloud/einordnung-und-business-case/), die Funktionsliste dahinter in [Manufacturing Cloud Funktionen: was enthalten ist](../manufacturing-cloud-funktionen-ueberblick/). Lizenzprognosen gehören zu meiner Arbeit bei [Make-or-buy und Lizenzen](../../leistungen/make-or-buy-lizenzen/).
-
-Der Editionspreis ist nur die erste Zeile eines Angebots für die Manufacturing Cloud, über die Summe entscheiden die Add-ons.

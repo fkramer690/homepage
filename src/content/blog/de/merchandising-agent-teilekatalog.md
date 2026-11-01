@@ -9,11 +9,11 @@ topic: commerce
 categories: [b2b-commerce, ai]
 tags: [B2B Commerce, Merchandising Agent, Agentforce, Suche, Ersatzteile, Katalog]
 takeaways:
-  - "Beide B2B-Commerce-Editionen, Growth und Advanced, führen auf der Preisseite von Salesforce Merchant Agent unter Agentforce; einen eigenen Preis nennt Salesforce nicht."
-  - "Der Merchandising Agent für B2B ist auf August 2026 datiert und hebt Produkte in der Suche hervor oder stuft sie herab, legt neue Produkte an und verwaltet Käufer-Accounts im Gespräch."
-  - "Agentforce Skills for Merchandising fassen durchschnittlichen Bestellwert und Conversion Rate eines Shops zusammen und entwerfen Aktionen aus Vorlagen, die ein Mensch vor dem Einsatz prüft."
-  - "Der Agent braucht aktivierte generative KI, Agentforce und Data 360; ein Shop erlaubt höchstens 100 Boost-und-Bury-Regeln, egal ob ein Mensch oder ein Agent sie anlegt."
-  - "Materialnummer, Einheit und Vertriebsstatus bleiben im ERP oder PIM; lassen Sie den Agenten Suchreihenfolge und Aktionen ändern, nicht die Produktstammdaten."
+  - "Growth und Advanced führen auf der Preisseite Merchant Agent unter Agentforce. Einen eigenen Preis nennt Salesforce nicht."
+  - "Der Merchandising Agent für B2B ist auf August 2026 datiert. Er hebt Produkte in der Suche hervor oder stuft sie herab und legt neue Produkte an."
+  - "Die Skills fassen Bestellwert und Conversion Rate zusammen und entwerfen Aktionen aus Vorlagen, die ein Mensch vor dem Einsatz prüft."
+  - "Der Agent braucht generative KI, Agentforce und Data 360. Ein Shop erlaubt höchstens 100 Boost-und-Bury-Regeln, egal wer sie anlegt."
+  - "Materialnummer, Einheit und Vertriebsstatus bleiben im ERP oder PIM. Der Agent ändert Suchreihenfolge und Aktionen, nicht die Stammdaten."
 faq:
   - q: "Was ist der Merchandising Agent in Salesforce B2B Commerce?"
     a: "Ein Backoffice-Agent für Merchandiser. Laut Salesforce hebt er Produkte in der Suche hervor oder stuft sie herab, legt neue Produkte an und verwaltet Käufer-Accounts im Gespräch statt per Klick. Salesforce führt ihn für B2B mit Verfügbarkeit im August 2026."
@@ -52,7 +52,7 @@ Ein Ersatzteilkatalog ist ein Shop, in dem die Suche fast alles entscheidet. Hä
 
 **Käufer-Accounts.** Der Agent kann Käufer-Accounts verwalten. Bei einem Hersteller sind das Bitten wie "Lege die neue Filiale von Händler X als Käufer-Account an". In welcher Käufergruppe der Account landet, entscheidet, was er sieht und was er zahlt. Mit diesem Skill würde ich am vorsichtigsten umgehen. Wie Käufergruppen und Berechtigungen aufgebaut werden, steht im Kapitel [Katalog, Suche, Sichtbarkeit](../../masterclass/b2b-commerce/katalog-suche-sichtbarkeit/).
 
-## Was bringen Kennzahlen und Aktionen?
+## Kennzahlen zusammenfassen, Aktionen entwerfen
 
 Laut Trailhead rufen die Agentforce Skills for Merchandising den durchschnittlichen Bestellwert (AOV) und die Conversion Rate eines Shops ab, fassen sie zusammen und nennen abgeleitete Erkenntnisse wie die schwächste Kategorie. Das Beispiel auf Trailhead ist ein B2B-Shop. Außerdem schlagen die Skills Aktionen vor, indem sie vordefinierte Aktionsvorlagen in Salesforce Commerce passend auswählen, und erzeugen Text, Bedingungen und Konfiguration.
 
@@ -60,7 +60,7 @@ Trailhead nennt das "semiautonomous": Sie prüfen die Details der Aktion und än
 
 Zwei Kennzahlen zählen im Teileshop mehr als der Bestellwert: Suchen ohne Treffer und der Anteil der Auftragspositionen über den Shop. Suchen ohne Treffer zeigt die Suchanalyse über Data Cloud, die der Juli-Beitrag nennt. Ob der Agent auch diese Zahlen zusammenfassen kann, ist auf den Seiten, die ich gelesen habe, nicht dokumentiert.
 
-## Was braucht der Agent, bevor er arbeitet?
+## Generative KI, Agentforce und Data 360 als Voraussetzung
 
 Trailhead nennt die Voraussetzungen: generative KI von Salesforce, Agentforce, Bots und Data 360, aktiviert für den Shop. Die Einrichtung läuft geführt in der Commerce-App, Themen und Aktionen sind für Commerce vorkonfiguriert. Für die Lizenzierung verweist Trailhead auf den Hilfeartikel von Salesforce zur Aktivierung der Agentforce Skills for Merchandising.
 
@@ -93,13 +93,13 @@ Meine Regel für einen Teileshop:
 
 Jede Änderung des Agenten sollte nachvollziehbar sein: Wer hat gefragt, was hat sich geändert, wer hat freigegeben. Welche Protokolle Salesforce dafür bietet, steht in [Audit-Trail für KI-Agenten in Salesforce: welche Logs?](../audit-trail-ki-agenten-salesforce/).
 
-## Wie könnte das in der Praxis aussehen?
+## Rechenbeispiel: 60.000 Ersatzteile für 300 Händler
 
-Ein typisches Szenario, als Annahme: Ein Hersteller von Kompressoren betreibt einen B2B-Shop mit 60.000 Ersatzteilen für 300 Händler. Jedes Quartal ersetzt die Konstruktion einige Hundert Teilenummern. Heute pflegt eine Merchandiserin die Suchregeln von Hand und liegt zwei Monate zurück.
+Angenommen, ein Hersteller von Kompressoren betreibt einen B2B-Shop mit 60.000 Ersatzteilen für 300 Händler. Jedes Quartal ersetzt die Konstruktion einige Hundert Teilenummern. Heute pflegt eine Merchandiserin die Suchregeln von Hand und liegt zwei Monate zurück.
 
 Mit dem Agenten fragt sie nach jeder ERP-Aktualisierung: "Stufe jedes Teil mit Vertriebsstatus ersetzt herab und hebe sein Nachfolgeteil hervor." Der Agent schlägt die Regeln vor, sie prüft eine Stichprobe und gibt frei. Einmal im Monat fragt sie nach den Suchen ohne Treffer und gibt fehlende alte Nummern als Synonyme oder Attribute an das PIM-Team. Die Suchseite davon beschreibe ich in [B2B-Shop-Suche: Ersatzteile über die Teilenummer finden](../b2b-shop-suche-teilenummer/).
 
-## Wo fangen Sie an?
+## Lizenz und enthaltene Skills klären
 
 1. **Lizenz klären.** Fragen Sie, welche Skills der enthaltene Merchant Agent abdeckt und wie Nutzung gezählt wird.
 2. **Erst die Daten.** Sauberer Vertriebsstatus und Nachfolgeteil im ERP machen gute Boost-und-Bury-Bitten erst möglich.
@@ -108,5 +108,3 @@ Mit dem Agenten fragt sie nach jeder ERP-Aktualisierung: "Stufe jedes Teil mit V
 5. **Grenzen im Blick behalten.** 100 Boost-und-Bury-Regeln pro Shop, mit monatlichem Aufräumen.
 
 Das Kapitel [Agenten, Migration, Einführung](../../masterclass/b2b-commerce/agentforce-migration-einfuehrung/) der [Masterclass B2B Commerce](../../masterclass/b2b-commerce/) stellt den Merchandising Agent neben den Buyer Agent und die Einführung. Für die Frage, wem welche Daten zwischen ERP, PIM und Salesforce gehören, lesen Sie weiter bei [Salesforce-Architektur](../../leistungen/salesforce-architektur/).
-
-Der Merchandising Agent spart Klicks bei Suche und Aktionen, solange die Produktstammdaten dort bleiben, wo sie heute gepflegt werden.

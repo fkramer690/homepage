@@ -4,7 +4,6 @@ import Page from '../layouts/Page.astro';
 import ExternalMark from './ExternalMark.astro';
 import ContactForm from './ContactForm.astro';
 import PhoneLine from './PhoneLine.astro';
-import Blueprint from './Blueprint.astro';
 import Icon from './Icon.astro';
 import { Image } from 'astro:assets';
 import portrait from '../assets/portrait.png';
@@ -43,14 +42,13 @@ const schema = {
   </Fragment>
 
   <section class="hero dark grid-bg rc-hero">
-    <Blueprint />
     <div class="container hero-inner rc-hero-inner">
       <div>
-        <a class="rc-back mono" href={partnersHref(lang)}>← {c.back}</a>
+        <a class="rc-back" href={partnersHref(lang)}>← {c.back}</a>
         <p class="eyebrow mono">{c.eyebrow}</p>
         <h1>{c.title}</h1>
         <p class="hero-lead">{c.lead}</p>
-        <ul class="rc-promises mono">{c.promises.map((p) => <li>{p}</li>)}</ul>
+        <ul class="rc-promises">{c.promises.map((p) => <li>{p}</li>)}</ul>
         <div class="hero-ctas">
           <a class="btn" href="#contact">{c.ctaPrimary}</a>
           <a class="btn btn-ghost" href="#deal">{c.ctaSecondary}</a>
@@ -60,7 +58,7 @@ const schema = {
       </div>
       <figure class="rc-portrait">
         <Image src={portrait} alt={c.portraitAlt} widths={[320, 640]} sizes="(max-width: 880px) 220px, 320px" />
-        <figcaption class="mono">Fabian Kramer · Salesforce Enterprise Architect</figcaption>
+        <figcaption>Fabian Kramer · Salesforce Enterprise Architect</figcaption>
       </figure>
     </div>
   </section>
@@ -71,7 +69,7 @@ const schema = {
         {c.facts.map((f) => (
           <li>
             <span class="proof-value">{f.value}</span>
-            <span class="proof-label mono">{f.label}</span>
+            <span class="proof-label">{f.label}</span>
           </li>
         ))}
       </ul>
@@ -168,7 +166,6 @@ const schema = {
   </section>
 
   <section class="contact dark grid-bg" id="contact">
-    <Blueprint />
     <div class="container contact-inner">
       <div class="contact-intro">
         <p class="label mono">{t.contact.label}</p>

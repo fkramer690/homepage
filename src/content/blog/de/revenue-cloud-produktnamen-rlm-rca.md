@@ -9,9 +9,8 @@ topic: revenue
 categories: [revenue-cloud]
 tags: [Revenue Cloud, Revenue Lifecycle Management, CPQ, Lizenzen, Produktnamen]
 takeaways:
-  - "Im Oktober 2026 verkauft salesforce.com das Produkt als Revenue Cloud, mit den Editionen Revenue Cloud Growth und Revenue Cloud Advanced und dem Zusatzprodukt Revenue Cloud Billing."
-  - "Die Dokumentation mischt die Namen: Der Developer Guide zu Winter '27 sagt Revenue Management, Trailhead sagt Agentforce Revenue Management, ältere Guides Revenue Lifecycle Management."
-  - "Revenue Cloud von 2020 war eine Suite rund um die Pakete Salesforce CPQ und Billing. Das heutige Revenue Cloud ist ein anderes Produkt auf Standardobjekten der Plattform."
+  - "Der Developer Guide zu Winter '27 sagt Revenue Management, Trailhead Agentforce Revenue Management, ältere Guides Revenue Lifecycle Management."
+  - "Revenue Cloud von 2020 war eine Suite um die Pakete CPQ und Billing. Das heutige Revenue Cloud ist ein anderes Produkt auf Standardobjekten."
   - "Ins Bestellformular oder in die Ausschreibung gehören Edition, Zusatzprodukte und die SKUs aus dem Salesforce-Angebot, nie nur Revenue Cloud."
   - "Wer in Hilfe, Trailhead oder Partnerblogs sucht, sollte unter allen Namen suchen, weil jede Quelle einen anderen verwendet."
 faq:
@@ -76,7 +75,7 @@ Für CPQ-Bestandskunden gilt umgekehrt: Beschreibt ein Angebot "Revenue Cloud", 
 
 Der Status der alten Pakete ist ein eigenes Thema: CPQ wird an Neukunden nicht mehr verkauft, Bestandskunden können aber verlängern und bekommen Support. Was das bedeutet, behandelt das [Kapitel zum Umstieg von CPQ auf Revenue Cloud](../../masterclass/revenue-cloud/von-cpq-zu-revenue-cloud/).
 
-## Welcher Name gehört ins Bestellformular oder in die Ausschreibung?
+## Ins Bestellformular gehören Edition, Zusatzprodukte und SKUs
 
 Marketingnamen wechseln schneller, als Verträge laufen. Ein Bestellformular über drei Jahre, das heute unterschrieben wird, erlebt mindestens noch einen Namen. Meine Regeln:
 
@@ -85,7 +84,7 @@ Marketingnamen wechseln schneller, als Verträge laufen. Ein Bestellformular üb
 - **Lizenzprognose:** Revenue Cloud als eigene Zeile neben Sales Cloud führen, weil es zusätzlich zu einem Sales-Cloud-Abonnement gekauft wird. Wie ich so eine Prognose aufbaue, steht in [Salesforce-Lizenzen: Braucht jeder eine volle Lizenz?](../salesforce-lizenzen-volle-lizenz/).
 - **Projektglossar:** einen Namen für das Projekt festlegen und dabei bleiben. Ich würde Revenue Cloud nehmen, weil salesforce.com das heute zeigt.
 
-## Wie finden Sie die richtige Dokumentation?
+## Unter allen Namen suchen
 
 Jede Quelle hat ihren eigenen Namen. Wer nur unter einem sucht, findet die Hälfte nicht:
 
@@ -95,5 +94,3 @@ Jede Quelle hat ihren eigenen Namen. Wer nur unter einem sucht, findet die Hälf
 - **Andere Anbieter beachten:** Certinia, ein Anbieter auf der Salesforce-Plattform, führt einen eigenen Produktbereich namens Revenue Management mit eigenen [Release Notes](https://help.certinia.com/main/2026.1/Content/RevenueManagement/Release/WhatsNew/WhatsNew.htm). Treffer von help.certinia.com beschreiben ein anderes Produkt.
 
 Was das Produkt unter welchem Namen auch immer abdeckt, steht in [Revenue Cloud für Hersteller: Wann lohnt es sich?](../revenue-cloud-lohnt-sich-hersteller/), was es kostet in [Revenue Cloud Preise: Growth, Advanced und Add-ons](../revenue-cloud-editionen-preise/). Das [Überblickskapitel der Masterclass Revenue Cloud](../../masterclass/revenue-cloud/revenue-cloud-ueberblick/) führt diese Themen zusammen.
-
-Der Name auf der Website wird sich wahrscheinlich wieder ändern, deshalb zählen Edition und SKU in Ihrem Vertrag.

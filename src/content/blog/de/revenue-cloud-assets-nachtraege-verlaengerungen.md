@@ -9,11 +9,10 @@ topic: revenue
 categories: [revenue-cloud, field-service]
 tags: [Revenue Cloud, Assets, Nachträge, Vertragsverlängerung, installierte Basis, Field Service]
 takeaways:
-  - "In Revenue Cloud erscheinen die verkauften Produkte nach der Aktivierung des Auftrags als Assets am Kundenkonto. Jede spätere Änderung läuft über ein neues Angebot und einen neuen Auftrag."
-  - "Ein Nachtragsangebot zeigt die Startmenge, die Änderung als positives oder negatives Delta und die resultierende Endmenge, zum Beispiel 5 plus 8 ergibt 13."
-  - "Jede Änderung erzeugt eine Asset Action, und Asset State Periods halten Menge, Betrag und monatlich wiederkehrenden Umsatz je Zeitraum fest. Ihre Felder sind nicht editierbar."
-  - "Verlängerungen laufen automatisch mit der Laufzeit des Assets oder mit abweichender Laufzeit. Eine Kündigung setzt die Menge auf das Negative der Gesamtmenge, die Endmenge ist null."
-  - "Field Service nutzt dasselbe Asset-Objekt für die installierte Maschine mit Seriennummer. Entscheiden Sie früh, ob verkaufte Abos und Maschinen dieselben Datensätze teilen."
+  - "Ein Nachtragsangebot zeigt Startmenge, Änderung als positives oder negatives Delta und Endmenge, zum Beispiel 5 plus 8 ergibt 13."
+  - "Asset State Periods halten Menge, Betrag und monatlich wiederkehrenden Umsatz je Zeitraum fest. Ihre Felder sind nicht editierbar."
+  - "Eine Kündigung setzt die Menge auf das Negative der Gesamtmenge, die Endmenge ist dann null."
+  - "Field Service nutzt dasselbe Asset-Objekt für die Maschine mit Seriennummer. Entscheiden Sie früh, ob Abos und Maschinen Datensätze teilen."
 faq:
   - q: "Was ist ein lifecycle-managed Asset in Salesforce?"
     a: "Ein Asset, bei dem das Kennzeichen Lifecycle-managed asset gesetzt ist. Salesforce erfasst jede Änderung daran als Asset Action und hält Menge, Betrag und monatlich wiederkehrenden Umsatz je Zeitraum in Asset State Periods fest."
@@ -58,7 +57,7 @@ Aus dem Angebot entsteht ein Auftrag, der aktiviert wird. Das Asset erhält eine
 
 Für einen Hersteller heißt das: Ein Kunde, der die Fernüberwachung für drei weitere Maschinen bucht, bekommt ein Angebot und einen Auftrag, genau wie bei einem Neugeschäft. Das ist mehr Prozess als eine Zahl zu ändern, und genau deshalb bleibt die Historie richtig. Weil der Nachtrag ein normales Angebot ist, greifen auch Ihre Preis- und Freigaberegeln.
 
-## Wie funktionieren Verlängerungen und Kündigungen?
+## Verlängerungen laufen automatisch, Kündigungen setzen die Menge auf null
 
 [Trailhead zu Verlängerungen und Kündigungen](https://trailhead.salesforce.com/content/learn/modules/asset-lifecycle-management-with-revenue-cloud/manage-customer-asset-renewals-and-cancellations) beschreibt zwei Verlängerungsoptionen:
 
@@ -86,16 +85,14 @@ Die beiden Sichten zählen unterschiedlich. Revenue Cloud zählt Mengen: Die fü
 
 Den meisten Maschinenbauern empfehle ich das zweite Modell. Das verkaufte Asset beantwortet "wofür zahlt der Kunde", das Maschinen-Asset beantwortet "was steht wo". Verknüpfen Sie beide über ein Lookup und vereinbaren Sie, wem welcher Datensatz gehört. In einer [Object Ownership Matrix](../object-ownership-matrix-salesforce/) ist Asset ein typisches geteiltes Objekt: Ein Stream baut Revenue Cloud, ein anderer Field Service, und beide schreiben auf Asset. Ein Eigentümer und ein Einstiegspunkt für Automatisierung verhindern, dass zwei Teams gegeneinander Trigger bauen. Wie Field Service Maschinen, Wartung und Teile abbildet, behandelt das Kapitel [Assets, Wartung und Teile](../../masterclass/field-service/field-service-assets-wartung-teile/).
 
-## Ein typisches Szenario: Fernüberwachung pro Maschine
+## Rechenbeispiel: Fernüberwachung pro Maschine
 
-Ein typisches Szenario, als Annahme: Ein Maschinenbauer verkauft einem Kunden ein Abonnement zur Fernüberwachung für 12 installierte Maschinen. In Revenue Cloud ist das eine Angebotsposition mit Menge 12, also ein Asset mit Menge 12. Field Service führt 12 Maschinen-Assets mit Seriennummern aus SAP.
+Angenommen, ein Maschinenbauer verkauft einem Kunden ein Abonnement zur Fernüberwachung für 12 installierte Maschinen. In Revenue Cloud ist das eine Angebotsposition mit Menge 12, also ein Asset mit Menge 12. Field Service führt 12 Maschinen-Assets mit Seriennummern aus SAP.
 
 Ein Jahr später verkauft der Kunde zwei Maschinen weiter und kündigt die Überwachung dafür. Der Nachtrag reduziert die Menge um 2 auf 10. Revenue Cloud weiß jetzt, dass der Kunde für 10 zahlt. Welche zwei Maschinen herausgefallen sind, weiß es nicht, denn das verkaufte Asset kannte nie Seriennummern. Der Service sieht weiterhin 12 Maschinen mit aktiver Überwachung.
 
 Es gibt zwei Auswege. Entweder Sie verkaufen die Überwachung pro Maschine, eine Position pro Seriennummer. Das macht Angebote länger und jede Änderung eindeutig. Oder Sie behalten die Menge und pflegen eine eigene Liste der abgedeckten Maschinen, verantwortet vom Innendienst. Ich bevorzuge eine Position pro Maschine, solange ein Kunde höchstens einige Dutzend Maschinen hat, weil das Asset dann die Frage beantwortet, die Technik und Abrechnung gleichermaßen stellen. Wie solche Abonnements abgerechnet werden, steht in [Wartungsverträge wiederkehrend abrechnen](../wartungsvertraege-wiederkehrend-abrechnen/).
 
-## Wo starten Sie?
+## Produkte auflisten, die nach dem Auftrag weiterleben
 
 Listen Sie die Produkte auf, die nach dem Auftrag weiterleben: Abonnements, Serviceverträge, Softwarelizenzen, Überwachung. Entscheiden Sie für jedes, ob es gezählt oder an eine Seriennummer gebunden wird, wer Nachträge und Verlängerungen auslösen darf und welchen Datensatz Field Service nutzt. Halten Sie die Entscheidung in der Ownership-Matrix fest, bevor der erste Sprint in einer der beiden Clouds beginnt. Das Kapitel [Angebot, Vertrag, Auftrag](../../masterclass/revenue-cloud/angebot-vertrag-auftrag/) zeigt, wo Assets zwischen Angebot und SAP stehen.
-
-Assets in Revenue Cloud halten verlässlich fest, was verkauft wurde, solange jede Änderung über Angebot und Auftrag läuft und die Verknüpfung zur Maschine vorab entschieden ist.

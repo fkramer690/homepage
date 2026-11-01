@@ -10,10 +10,10 @@ categories: [ai]
 contactBrief: licences
 tags: [Data 360, Agentforce, Flex Credits, Grounding, Ersatzteile, Maschinenbau]
 takeaways:
-  - "Data 360 berechnet das Grounding auf Dokumenten an drei Stellen: Verarbeitung pro MB beim Indexieren, Abfragen pro Million Zeilen bei jeder Suche des Agenten und Speicher für Dateien, Chunks und Indexobjekte."
-  - "LLM-basiertes Parsing, das Ersatzteilkataloge mit Explosionszeichnungen oft brauchen, läuft als Intelligent Processing zu 600 Credits pro MB, viermal so teuer wie die 150 Credits des Standard-Parsers."
-  - "Im Szenario kosten die Suchen des Agenten rund 14.400 Credits im Monat, 400 MB geänderte Dokumente dagegen 195.000; die Rechnung treiben geänderte Dokumente, nicht Fragen."
-  - "Ändert sich ein Feld oder ein Anhang an einem Quelldatensatz, werden alle Anhänge dieses Datensatzes neu indexiert; Kataloge gehören nicht an Datensätze, die eine ERP-Schnittstelle jede Nacht aktualisiert."
+  - "Data 360 berechnet Verarbeitung pro MB beim Indexieren, Abfragen pro Million Zeilen bei jeder Suche und Speicher für Dateien, Chunks und Indexobjekte."
+  - "LLM-Parsing für Kataloge mit Explosionszeichnungen kostet als Intelligent Processing 600 Credits pro MB, viermal so viel wie der Standard-Parser."
+  - "Im Rechenbeispiel kosten die Suchen des Agenten rund 14.400 Credits im Monat, 400 MB geänderte Dokumente dagegen 195.000."
+  - "Ändert sich ein Feld an einem Quelldatensatz, werden alle seine Anhänge neu indexiert. Kataloge gehören nicht an Datensätze mit nächtlicher ERP-Schnittstelle."
   - "In der Sandbox hat Data 360 keine Mengenstaffeln: 6.000 MB Kataloge mit LLM-Parsing kosten dort 2,88 Mio. Credits, mehr als die 2,22 Mio. in Produktion."
 faq:
   - q: "Was kostet Data 360 pro MB Dokumente?"
@@ -29,7 +29,7 @@ faq:
 draft: false
 ---
 
-Die Data 360 Kosten für KI-Agenten entstehen vor allem durch Dokumente, die sich ändern, und kaum durch die Fragen an den Agenten. Liest ein Agentforce-Agent Ersatzteilkataloge, Betriebsanleitungen und Serviceinformationen, berechnet Data 360 fürs Indexieren 150 Flex Credits pro MB mit dem Standard-Parser und 600 pro MB mit LLM-basiertem Parsing. Suchen kosten 3 Credits pro Million Zeilen. Im Szenario unten kosten die Suchen rund 72 € im Monat, das Neuindexieren geänderter Dokumente fast 1.000 €. Die Hebel sind der Parser, der Dokumentenumfang und der Ort, an dem die Dateien liegen.
+Die Data 360 Kosten für KI-Agenten entstehen vor allem durch Dokumente, die sich ändern, und kaum durch die Fragen an den Agenten. Liest ein Agentforce-Agent Ersatzteilkataloge, Betriebsanleitungen und Serviceinformationen, berechnet Data 360 fürs Indexieren 150 Flex Credits pro MB mit dem Standard-Parser und 600 pro MB mit LLM-basiertem Parsing. Suchen kosten 3 Credits pro Million Zeilen. Im Rechenbeispiel unten kosten die Suchen rund 72 € im Monat, das Neuindexieren geänderter Dokumente fast 1.000 €. Die Hebel sind der Parser, der Dokumentenumfang und der Ort, an dem die Dateien liegen.
 
 ## Was berechnet Data 360, wenn ein Agent Dokumente liest?
 
@@ -60,7 +60,7 @@ Ein Ersatzteilkatalog besteht zum großen Teil aus Explosionszeichnungen mit Pos
 
 Die [Liste der Data-360-Nutzungsarten](https://help.salesforce.com/s/articleView?id=data.c360_a_data_usage_types.htm&language=en_US&type=5) zählt auch Intelligent Context, den Arbeitsbereich zum Ausprobieren von Parsing- und Chunking-Einstellungen, zu den Funktionen, die als Intelligent Processing berechnet werden. Bei Katalogen heißt „nur Dokumente mit Bildern“ fast alle Dokumente, die visuelle Vorverarbeitung spart dort wenig. Für Betriebsanleitungen, die überwiegend aus Text bestehen, reicht oft der Standard-Parser. Ich würde je Dokumenttyp entscheiden und die Trefferqualität an einer Stichprobe testen, denn 600 gegen 150 Credits pro MB ist der größte einzelne Hebel in der Schätzung.
 
-## Ein typisches Szenario: After-Sales-Dokumente bei einem Maschinenbauer
+## Rechenbeispiel: After-Sales-Dokumente bei einem Maschinenbauer
 
 Nehmen wir einen Maschinenbauer, dessen Agent Händlern und Servicemitarbeitenden Fragen zu Ersatzteilen und Wartung beantwortet. Alle Mengen sind Annahmen, die das Vorgehen zeigen sollen; die Sätze stammen aus der Rate Card zum Listenpreis.
 
@@ -83,7 +83,7 @@ Bei den Suchen nehme ich an, dass jede Abfrage den ganzen Index zählt. Laut Hil
 
 Drei Ergebnisse fallen auf. Die Suchen machen 7 Prozent der laufenden Kosten aus, geänderte Dokumente den Rest. Mit dem Standard-Parser auch für die Kataloge kostete die Erstbefüllung 1.164.000 statt 2.664.000 Credits. Und das erste Jahr kommt auf rund 5 Mio. Credits, mehr als die 2,75 Mio. Flex Credits pro Org und Jahr, die Salesforce für die Max Edition nennt, und das vor der ersten Agentenaktion. Die Agentenseite der Rechnung steht in [was ein Serviceagent für Händleranfragen kostet](../serviceagent-haendleranfragen-kosten/).
 
-## Wo stecken die versteckten Data-360-Kosten?
+## Die versteckten Data-360-Kosten
 
 ### Neuindexierung ganzer Datensätze
 
@@ -118,7 +118,7 @@ Das günstigste Megabyte ist das, das Sie nie verarbeiten.
 - **Dateien über den Grenzen der Data Library.** Trailhead nennt [100 MB pro PDF und 4 MB pro Text- oder HTML-Datei](https://trailhead.salesforce.com/content/learn/modules/agentforce-data-library-basics/build-a-file-based-data-library-for-an-agent), und die Datenquelle einer Library lässt sich später nicht ändern. Große Kataloge müssen geteilt werden, am besten nach Produktlinie.
 - **Dokumente, nach denen niemand fragt.** Beginnen Sie mit den Katalogen hinter den häufigsten Händleranfragen und ergänzen Sie den Rest, wenn die Fragen kommen.
 
-## Wie budgetieren Sie Data 360 für einen Agenten?
+## Dokumente in MB je Typ messen
 
 1. **Dokumente in MB je Typ messen**, nachdem alte Versionen und Dubletten entfernt sind.
 2. **Den Parser je Typ wählen**, anhand einer Stichprobe in Intelligent Context oder der Sandbox.
@@ -129,5 +129,3 @@ Das günstigste Megabyte ist das, das Sie nie verarbeiten.
 7. **Warnschwellen im [Digital Wallet](https://www.salesforce.com/agentforce/digital-wallet/) setzen**, das den Verbrauch bis auf Agent, Aktion und Kanal zeigt, und nach vier Wochen mit der Schätzung vergleichen.
 
 Wie Sie Credits über alle Zähler planen, beschreibe ich in [Flex Credits: Agentforce-Kosten pro Aktion](../flex-credits-agentforce-kosten-pro-aktion/). Ob dieses Budget überhaupt in Salesforce gehört, ist Teil meiner Arbeit in [Make-or-buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/).
-
-Grounding mit Data 360 ist pro Frage günstig und pro geändertem Megabyte teuer, entscheiden Sie Parser, Umfang und Ablageort deshalb vor der ersten Befüllung.

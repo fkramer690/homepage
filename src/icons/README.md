@@ -58,6 +58,7 @@ Never paste SVG markup for an icon into a component: add a file here instead.
 | `mic` | 48 | Speaking page: "Community events" in "More on stage" |
 | `book-call` | 24 | Floating contact button "Book a call" |
 | `message` | 24 | Floating contact button "Send a message" |
+| `menu` | 24 | Header menu button on phones and tablets (below 880px) |
 | `search` | 24 | Blog overview: search bar |
 | `phone` | 24 | Floating call button (phones only), phone line in contact sections and side booking box |
 | `external` | 12 | Arrow after every external link (components, Markdown, content blocks) |

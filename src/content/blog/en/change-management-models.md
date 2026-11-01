@@ -11,8 +11,7 @@ contactBrief: change-basics
 author: juliane
 tags: [change management, ADKAR, Kotter, Lewin, Prosci]
 takeaways:
-  - "The best known change management models are Lewin's three phases, Kotter's eight steps, the ADKAR model and the Prosci 3-Phase Process."
-  - "Lewin and Kotter describe change from the point of view of the organisation, ADKAR from the point of view of the individual. Good plans need both perspectives."
+  - "Lewin and Kotter look at change from the organisation, ADKAR from the individual. A good plan needs both perspectives."
   - "Kotter suits leading a large transformation from the top. ADKAR suits finding out, per group, where a rollout is stuck."
   - "No model replaces a sponsor in management. All the well known models assume that someone with decision rights visibly backs the change."
 faq:
@@ -42,7 +41,7 @@ There are many models for change. Four of them come up in companies again and ag
 
 There are also phase models that describe how people react emotionally to a change, from the first shock to integration. They are often drawn as a [change curve](../change-curve/) and help managers understand why a team that agreed at first suddenly pushes back. They do not provide a plan for the rollout.
 
-## What does Lewin's three-phase model say?
+## Lewin: unfreeze, move, refreeze
 
 Kurt Lewin, a social psychologist, described change as a sequence of three phases:
 
@@ -52,7 +51,7 @@ Kurt Lewin, a social psychologist, described change as a sequence of three phase
 
 The model is the oldest of the four and still useful, because it explains in three words why a change needs preparation and follow-up. It has drawn criticism, though. Bernard Burnes summarises it in his [re-appraisal of Lewin's approach](https://dspace.stir.ac.uk/handle/1893/21356) in the Journal of Management Studies: Lewin is said to assume a stable state, suit only small changes, ignore power and politics and be driven from the top. Burnes himself still considers the approach relevant. As a picture for managers Lewin works well; as a work plan it is not enough.
 
-## How do Kotter's eight steps work?
+## Kotter's eight steps lead a transformation from the top
 
 John Kotter, a professor at Harvard Business School, derived his [eight steps](https://www.kotterinc.com/methodology/8-steps/) from watching companies attempt a transformation:
 
@@ -83,7 +82,7 @@ The stages build on each other. Their value lies in the diagnosis: when a rollou
 
 ADKAR alone is not a plan for an organisation, though. It does not say who carries the change or in which order groups and sites come next.
 
-## How do the Prosci process and ADKAR fit together?
+## The Prosci process gives ADKAR a frame for the organisation
 
 Prosci adds a frame for the organisation to ADKAR, the [3-Phase Process](https://www.prosci.com/methodology/3-phase-process): prepare approach, manage change, sustain outcomes. The first phase defines which groups are affected, what changes for each, who the sponsor is and how success is measured. In the second, the plans per group run, aligned with the ADKAR stages. In the third, results are measured, gaps are closed and ownership is handed over.
 
@@ -101,8 +100,6 @@ A rule of thumb by kind of change:
 - **New software for several departments.** The Prosci process with ADKAR per group. In a CRM rollout, field sales, inside sales and service have different questions, and a diagnosis per group saves training sessions nobody needs.
 - **A transformation across countries and divisions.** The Prosci process as the frame, Kotter as a checklist for leadership, ADKAR per group and country. In initiatives like this the plan per country gets demanding, and without a sponsor on site the change remains an announcement from headquarters.
 
-I know both ends of this scale from my projects: a global Salesforce Sales Cloud rollout with more than 500 users and an IT transformation at an insurer with more than 20,000 people affected in 19 countries. The role the models play in a Salesforce programme is described with Fabian Kramer in the [change management masterclass](../../masterclass/change-management/); the basics are in [what is change management?](../what-is-change-management/).
+I know both ends of this scale from my projects: a global Salesforce Sales Cloud rollout with more than 500 users and an IT transformation at an insurer with more than 20,000 people affected in 19 countries. The role the models play in a Salesforce programme is described with Fabian Kramer in the [change management masterclass](../../masterclass/change-management/); the basics are in [what is change management?](../what-is-change-management/). How we apply this in programmes is described under [Salesforce change management consulting](../../services/change-management-salesforce/).
 
-A model does not replace a decision in management; it only makes visible which one is missing. Read more about [Salesforce change management consulting](../../services/change-management-salesforce/).
-
-Prosci and ADKAR are registered trademarks of Prosci, Inc.
+*Prosci and ADKAR are registered trademarks of Prosci, Inc.*

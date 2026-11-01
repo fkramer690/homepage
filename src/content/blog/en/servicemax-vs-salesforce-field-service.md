@@ -9,11 +9,11 @@ topic: field-service
 categories: [field-service]
 tags: [field service, ServiceMax, PTC, software selection]
 takeaways:
-  - "According to PTC's service description of February 2025, ServiceMax Core still runs as a managed package in the customer's Salesforce org. Buying ServiceMax always means buying Salesforce licences as well."
-  - "PTC's product page calls ServiceMax a standalone platform with its own roadmap. That is true for ownership and roadmap; technically Salesforce remains the base (as of October 2026)."
-  - "ServiceMax Core has its own data model next to the Salesforce Field Service objects. PTC runs scheduling and optimisation on AWS in Ireland and the Zinc messaging app in the US."
-  - "ServiceMax brings depot repair, returns and rule-based entitlements in its core and suits manufacturers with PTC PLM. Salesforce Field Service keeps data, licences, releases and AI with one vendor."
-  - "According to the service description, the availability commitment of the PTC agreement does not apply to the ServiceMax suites. Clarify operations, liability and release calendars before you choose."
+  - "Buying ServiceMax always means buying Salesforce licences too. ServiceMax Core runs as a managed package in the customer's Salesforce org."
+  - "PTC calls ServiceMax a standalone platform. That holds for ownership and roadmap; technically Salesforce remains the base (as of October 2026)."
+  - "ServiceMax Core has its own data model. PTC runs scheduling and optimisation on AWS in Ireland and the Zinc messaging app in the US."
+  - "ServiceMax brings depot repair, returns and rule-based entitlements. Salesforce Field Service keeps data, licences, releases and AI with one vendor."
+  - "The availability commitment of the PTC agreement does not cover the ServiceMax suites. Clarify operations, liability and release calendars first."
 faq:
   - q: "Does ServiceMax run on Salesforce?"
     a: "Yes, as of October 2026. PTC states that ServiceMax Core and Asset 360 are hosted in Salesforce data centres, and Core is installed as a managed package from AppExchange. PTC also runs Service Board and Schedule Optimization on AWS in Ireland."
@@ -57,7 +57,7 @@ ServiceMax is a product family. Two core products and several add-ons matter for
 
 The key point is in the first row. The [work order in Core](https://support.ptc.com/help/servicemaxcore/en/articles/core/work-order1.html) is a separate object with 207 fields, and the installed base is a separate object called Installed Product. Core does not use WorkOrder, ServiceAppointment and Asset from Salesforce Field Service; it builds a parallel model in the same org. Asset 360 does the opposite and extends the standard objects, see [ServiceMax Asset 360: worth adding to Field Service?](../servicemax-asset-360-salesforce-field-service/).
 
-## What does ServiceMax Core have that core Salesforce Field Service lacks?
+## ServiceMax Core brings depot repair, returns and entitlements
 
 The gap is smaller than ten years ago. Salesforce Field Service includes assets with hierarchies, maintenance plans, service contracts and entitlements in the base licence. The differences are in the workflows around the installed base.
 
@@ -69,7 +69,7 @@ The second difference is the PTC portfolio. PTC sells Windchill and Servigistics
 
 Salesforce Field Service has the platform on its side. Enhanced Scheduling and Optimization, the Field Service mobile app, Agentforce for Field Service and the new features of each release work on the standard objects. None of the sources I read says whether they work with the Core objects. I assume they do not, and I would get it in writing before any selection.
 
-## What does a second vendor mean for operations and data protection?
+## A second vendor changes operations and data protection
 
 These are the points most often missing from selection projects. All of them are in the service description of February 2025:
 
@@ -106,11 +106,9 @@ contra: What you accept in return
 
 My rule of thumb: Salesforce Field Service is the default for manufacturers who already run sales and service on Salesforce and mainly schedule maintenance and breakdown jobs. Whether Field Service pays off at all is covered in [Salesforce Field Service: when is it worth it?](../salesforce-field-service-worth-it/). ServiceMax Core belongs on the list when repairs in your own depot, returns and contractual entitlements shape your service and your PLM comes from PTC. If you want to keep Salesforce Field Service and only add asset depth, Asset 360 is the variant I would look at first.
 
-## Where should you start?
+## Mark the service processes with depot, returns and contracts
 
 1. **List your service processes** and mark the ones that involve the depot, returns and entitlement checks.
 2. **Request two quotes**: PTC including all Salesforce licences, Salesforce Field Service including add-ons. The role logic for Salesforce is in [Salesforce Field Service licences by role](../field-service-licences-by-role/).
 3. **Ask PTC four questions in writing**: data locations, availability, the language model behind ServiceMax AI and how it works with Salesforce features.
 4. **Have the comparison calculated independently.** How I compare such options is described under [make-or-buy and licence forecasts](../../services/make-or-buy-licences/).
-
-ServiceMax is a serious option for asset-heavy service, but always a second layer on Salesforce.

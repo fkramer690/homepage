@@ -9,11 +9,11 @@ topic: commerce
 categories: [b2b-commerce]
 tags: [B2B Commerce, Shopsuche, Ersatzteile, Teilenummern, Synonyme, Suchanalyse]
 takeaways:
-  - "Salesforce dokumentiert für die Shopsuche, dass alle Suchbegriffe passen müssen und Teiltreffer am Wortanfang oder in der Wortmitte nicht unterstützt werden. Teilenummern gehören so in die Daten, wie Händler sie tippen."
-  - "Ein Store erlaubt 25 durchsuchbare und 50 filterbare Merkmale, 100 Synonymregeln und 100 Boost-and-Bury-Regeln. 10 Facetten pro Suche sind Standard, 50 auf Anfrage."
-  - "Alte Nummern und Vergleichsnummern gehören in ein durchsuchbares Feld am aktuellen Produkt. Synonymregeln reichen für Nummern nicht und passen besser zu Begriffen wie O-Ring und Dichtring."
+  - "Die Shopsuche verlangt, dass alle Suchbegriffe passen, und kennt keine Teiltreffer im Wort. Teilenummern gehören so in die Daten, wie Händler sie tippen."
+  - "Ein Store erlaubt 25 durchsuchbare und 50 filterbare Merkmale, 100 Synonymregeln und 100 Boost-and-Bury-Regeln. 10 Facetten sind Standard, 50 auf Anfrage."
+  - "Alte Nummern und Vergleichsnummern gehören in ein durchsuchbares Feld am aktuellen Produkt. Synonymregeln passen besser zu Begriffen wie O-Ring."
   - "Die im Juli 2026 angekündigte Suchanalyse über Data Cloud zeigt Suchen ohne Treffer. Sie sind die beste Liste fehlender Produktdaten."
-  - "Nach Änderungen an durchsuchbaren Feldern, Produkten, Kategorien oder Entitlement Policies muss der Suchindex neu aufgebaut werden, bevor Händler das Ergebnis sehen."
+  - "Nach Änderungen an durchsuchbaren Feldern, Produkten, Kategorien oder Entitlement Policies muss der Suchindex neu aufgebaut werden."
 faq:
   - q: "Findet die Suche in B2B Commerce Teilenummern?"
     a: "Ja. Die Produkt-SKU ist standardmäßig durchsuchbar, ebenso Name und Beschreibung. Teiltreffer am Wortanfang oder in der Wortmitte unterstützt Salesforce nicht, eine Nummer ohne führende Nullen oder mit anderem Trennzeichen passt deshalb eventuell nicht, wenn diese Schreibweise nicht auch gespeichert ist."
@@ -40,7 +40,7 @@ Die Einheit nennt diese Regeln für D2C-Stores. Eine eigene Beschreibung für B2
 
 Zuerst kommt die Sichtbarkeit. Ein Händler findet nur Produkte, für die seine Buyer Groups berechtigt sind, und nur die ersten 2.000 Buyer Groups eines Produkts werden indiziert. Diese Grenze erkläre ich in [Buyer Groups und Entitlements](../buyer-groups-entitlements-sichtbarkeit/). Auch die Feldberechtigung zählt: Laut Trailhead kann ein Käufer ohne Zugriff auf ein indiziertes durchsuchbares Feld den Store gar nicht durchsuchen.
 
-## Welche Grenzen gelten für die Suche?
+## 25 durchsuchbare Merkmale und 100 Synonymregeln pro Store
 
 Salesforce führt die [Suchgrenzen](https://developer.salesforce.com/docs/commerce/salesforce-commerce/guide/b2b-b2c-comm-data-model-search-limits.html) auf einer Seite. Stand Oktober 2026:
 
@@ -77,15 +77,13 @@ contra: Synonymregel pro Nummer
 - Reicht für eine Handvoll Nummern, nicht für eine Teilehistorie
 ```
 
-Für Nummern würde ich immer das Feld nehmen. Die Daten gibt es im ERP schon, in Nachfolgeketten oder Notizen im Materialstamm, und die Schnittstelle kann das Feld bei jedem Lauf füllen. Ein typisches Szenario, als Annahme: ein Hersteller mit 30.000 aktiven Ersatzteilen, von denen 8.000 eine oder mehrere Vorgängernummern haben. Als Synonymregeln unmöglich, als Feld eine Spalte mehr im Produktimport.
+Für Nummern würde ich immer das Feld nehmen. Die Daten gibt es im ERP schon, in Nachfolgeketten oder Notizen im Materialstamm, und die Schnittstelle kann das Feld bei jedem Lauf füllen. Rechenbeispiel: ein Hersteller mit 30.000 aktiven Ersatzteilen, von denen 8.000 eine oder mehrere Vorgängernummern haben. Als Synonymregeln unmöglich, als Feld eine Spalte mehr im Produktimport.
 
 Dasselbe Feld kann Schreibweisen aufnehmen: "4711-0020" und "47110020" nebeneinander, wenn Händler beides tippen. Welche Schreibweisen zählen, zeigt die Suchanalyse nach einigen Wochen.
 
 Für Wörter bleiben Synonymregeln nützlich. "O-Ring", "Dichtring" und das englische "seal ring" für dasselbe Teil, "Filterpatrone" und "Filterelement", der interne Name einer Maschinenbaureihe und der Name im Prospekt des Händlers. Dort reichen 100 Regeln weit.
 
-## Was hat Salesforce 2026 geändert?
-
-Drei Ankündigungen aus 2026 zählen für die Teilesuche.
+## Drei Ankündigungen aus 2026 für die Teilesuche
 
 **B2B-Suche (Juni 2026).** Im [Beitrag zum Juni-Release](https://www.salesforce.com/blog/b2b-commerce-innovations-june-26/) beschreibt Salesforce eine KI-gestützte und merkmalsbasierte Suche. Käufer brauchen nicht mehr den genauen Produktnamen oder die SKU und können in Alltagssprache beschreiben, was sie brauchen. Merchandiser bekommen eine feine Steuerung von merkmalsbasierter Suche und Produktsichtbarkeit. Für Händler, die ihre Teilenummer kennen, ändert das wenig. Für Endkunden oder neue Händler, die ein Teil beschreiben, kann es helfen. Ich würde es mit Ihren eigenen Beschreibungen testen, bevor ich mich darauf verlasse.
 
@@ -97,16 +95,14 @@ Drei Ankündigungen aus 2026 zählen für die Teilesuche.
 
 Boost and Bury hilft bei Teilen in zwei Fällen. Nachfolgeteile wandern nach oben, sodass ein Händler bei einem allgemeinen Begriff das aktuelle Teil vor dem alten sieht. Auslaufteile mit Restbestand wandern nach unten, bleiben aber auffindbar. Bei 100 Regeln pro Store würde ich Regeln auf Merkmale wie den Vertriebsstatus bauen, nicht auf einzelne Produkte.
 
-Facetten helfen, wenn eine Suche viele Treffer liefert, etwa "Filter" in einem Katalog mit 400 Filtern. Dann grenzen Baureihe, Maß und Werkstoff die Liste ein. 10 Facetten pro Suche reichen, wenn sie gut gewählt sind: die Merkmale, nach denen Händler wirklich entscheiden, in der Reihenfolge, in der sie es tun. Sie setzen saubere Merkmalswerte voraus, und das ist eine Frage der [Produktdaten aus ERP und PIM](../produktdaten-b2b-commerce-pim-erp/).
+Facetten helfen, wenn eine Suche viele Treffer liefert, etwa "Filter" in einem Katalog mit 400 Filtern. Dann grenzen Baureihe, Maß und Werkstoff die Liste ein. 10 Facetten pro Suche reichen, wenn sie gut gewählt sind: die Merkmale, nach denen Händler entscheiden, in der Reihenfolge, in der sie es tun. Sie setzen saubere Merkmalswerte voraus, und das ist eine Frage der [Produktdaten aus ERP und PIM](../produktdaten-b2b-commerce-pim-erp/).
 
 Händlern nur Teile zu zeigen, die zu einer bestimmten Maschine passen, ist eine andere Anforderung. Suche und Facetten wissen nicht, welche Maschinen ein Händler hat. Die Wege dafür stehen in [nur Teile zur eigenen Maschine zeigen](../ersatzteilshop-teile-pro-maschine/), die KI-Seite in [Ersatzteile per Seriennummer](../ersatzteile-seriennummer-ki-agent/).
 
-## Wo starten Sie?
+## 200 Suchbegriffe aus dem Innendienst testen
 
-Sammeln Sie, was Händler wirklich eintippen, bevor Sie etwas einstellen. Der Innendienst hat E-Mails und Telefonnotizen voller Teilenummern, alter Nummern und Beschreibungen. Nehmen Sie 200 davon und lassen Sie sie gegen einen Test-Store mit Ihren echten Daten laufen. Jeder Fehltreffer ist entweder fehlende Daten, ein fehlendes durchsuchbares Feld oder ein Problem mit der Schreibweise.
+Sammeln Sie, was Händler eintippen, bevor Sie etwas einstellen. Der Innendienst hat E-Mails und Telefonnotizen voller Teilenummern, alter Nummern und Beschreibungen. Nehmen Sie 200 davon und lassen Sie sie gegen einen Test-Store mit Ihren echten Daten laufen. Jeder Fehltreffer ist entweder fehlende Daten, ein fehlendes durchsuchbares Feld oder ein Problem mit der Schreibweise.
 
 Nach dem Go-live ist die Liste der Suchen ohne Treffer die Arbeitsliste für die nächste Datenbereinigung. Prüfen Sie sie in den ersten Monaten jede Woche. Wie das zu anderen Kennzahlen passt, steht in [B2B-Shop-Kennzahlen nach dem Go-live](../b2b-shop-kennzahlen-nach-go-live/). Und nach jeder Änderung an durchsuchbaren Feldern, Produkten, Kategorien oder Entitlement Policies bauen Sie den Suchindex neu auf, denn Trailhead nennt all das als Auslöser.
 
 Das Thema gehört zum [Kapitel zu Katalog, Suche und Sichtbarkeit](../../masterclass/b2b-commerce/katalog-suche-sichtbarkeit/) meiner Masterclass B2B Commerce. Festzulegen, welche ERP-Felder die Suche füttern, gehört zu meiner Arbeit bei [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).
-
-Händler finden Teile, wenn die Nummern, die sie tippen, in den Daten stehen, also beginnen Sie mit ihren Suchbegriffen statt mit den Sucheinstellungen.

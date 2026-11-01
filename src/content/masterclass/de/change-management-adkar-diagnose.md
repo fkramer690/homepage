@@ -10,10 +10,10 @@ pubDate: 2026-10-29
 short: "ADKAR als Diagnose"
 summary: "Warum Einführungen im Alltag hängen bleiben, wie ADKAR die Ursache je Gruppe zeigt und was vor dem ersten Release feststehen muss."
 takeaways:
-  - "Eine Salesforce-Einführung scheitert selten an der Technik, sondern daran, dass Menschen nach dem Go-live weiter mit Excel, E-Mail und eigenen Listen arbeiten."
+  - "Laut Prosci erreichten Projekte mit sehr gutem Change Management in 88 Prozent der Fälle ihre Ziele, mit schlechtem in 13 Prozent."
   - "ADKAR zerlegt die Veränderung in fünf Stufen: Bewusstsein, Bereitschaft, Wissen, Fähigkeit und Verankerung. Eine Schulung hilft nur bei Wissen und Fähigkeit."
   - "Die Diagnose läuft je betroffener Gruppe, weil Innendienst, Außendienst und Partner an unterschiedlichen Stufen hängen."
-  - "Vor dem ersten Release stehen drei Antworten schriftlich fest: welche Gruppen betroffen sind, was sich für jede ändert und wer im Management sichtbar dahintersteht."
+  - "Vor dem ersten Release steht schriftlich fest, welche Gruppen betroffen sind, was sich für jede ändert und wer im Management dahintersteht."
 articles: [change-management-hub, salesforce-center-of-excellence, change-adoption-metrics]
 faq:
   - q: "Was ist das ADKAR-Modell?"
@@ -47,7 +47,7 @@ quelle: Prosci, Best Practices in Change Management, 12. Ausgabe, Executive Summ
 
 Betroffen sind nicht nur Fachbereiche. Wenn ein Programm neue Standards für Entwicklung und Release einführt, sind Entwicklerteams und Umsetzungspartner genauso Betroffene. Darum geht es in [Kapitel 5](../nutzung-messen-und-verankern/).
 
-## Was zeigt das ADKAR-Modell für ein Salesforce-Programm?
+## Die fünf ADKAR-Stufen im Salesforce-Programm
 
 Das [ADKAR-Modell](https://www.prosci.com/blog/adkar-model) beschreibt fünf Stufen, die jede Person bei einer Veränderung durchläuft. Die Stufen bauen aufeinander auf: Wer nicht versteht, warum sich etwas ändert, will auch nicht mitmachen, und wer nicht mitmachen will, lernt die neue Funktion nur halb. Für ein Salesforce-Programm übersetze ich sie so:
 
@@ -65,9 +65,9 @@ Der Nutzen liegt in der Diagnose. Bei niedriger Nutzung setzen viele Programme r
 
 Prosci und ADKAR sind eingetragene Marken von Prosci, Inc. Das Vorgehen habe ich gemeinsam mit [Juliane Winterscheid](../../../partner/juliane-winterscheid/) auf Salesforce-Programme übertragen, meiner Kooperationspartnerin für Change Management. Mehr dazu im Artikel [Salesforce Change Management: warum Einführungen scheitern](../../../blog/change-management-salesforce-einfuehrung/).
 
-## Wie stellen Sie die Diagnose je Gruppe?
+## Diagnose mit einer Zeile je Gruppe
 
-Eine Diagnose für „die Anwender“ ist zu grob. Innendienst, Außendienst, Disposition, Händler und Partner hängen an unterschiedlichen Stufen. Ich lege deshalb eine Tabelle mit einer Zeile je Gruppe an und beantworte drei Fragen:
+Eine Diagnose für „die Anwender“ ist zu grob. Innendienst, Außendienst, Disposition, Händler und Partner hängen an unterschiedlichen Stufen. Ich lege deshalb eine Tabelle mit einer Zeile je Gruppe an und beantworte darin diese Fragen:
 
 1. **Was ändert sich für diese Gruppe im Alltag?** Konkret, etwa: Angebote entstehen künftig in Salesforce statt in Word, mit Liefertermin als Pflichtfeld.
 2. **An welcher ADKAR-Stufe steht die Gruppe heute?** Eine ehrliche Schätzung aus Gesprächen mit Teamleitung und künftigen Key Usern reicht für den Anfang.
@@ -79,7 +79,7 @@ Vor dem Go-live ist die Einschätzung eine Annahme. Nach dem Go-live ersetzen Nu
 Viele Kunden meinen, sie bräuchten kein Change Management. Das Budget ist verteilt, die Schulungen sind geplant, und die Nutzer werden sich schon gewöhnen. Ich bringe es trotzdem immer wieder ins Gespräch, in der Planung, vor jedem Land und nach jedem Go-live.
 ```
 
-## Wie läuft Change Management neben dem Release-Plan?
+## Change Management läuft in Phasen neben dem Release-Plan
 
 Prosci gliedert die Arbeit auf Ebene der Organisation in drei Phasen, den [Prosci 3-Phase Process](https://www.prosci.com/methodology/3-phase-process). In einem Salesforce-Programm laufen sie neben dem Release-Plan:
 
@@ -106,7 +106,7 @@ Der Kunde. Ein Umsetzungspartner baut das System, die Veränderung im eigenen Un
 | Change-Managerin oder Change-Manager | Plant die Maßnahmen je Gruppe und Stufe und berät Sponsor und Führungskräfte. In großen Programmen lohnt dafür eine eigene Person mit Methodenerfahrung. |
 | Architekt | Achtet darauf, dass Entscheidungen zu Template, Pflichtfeldern und Releases die Betroffenen mitdenken. |
 
-## Was legen Sie vor dem ersten Release fest?
+## Erster Schritt: den Sponsor für das nächste Release benennen
 
 Beantworten Sie für das nächste Release drei Fragen schriftlich: Welche Gruppen sind betroffen? Was ändert sich für jede im Alltag? Wer im Management steht sichtbar dahinter? Fehlt die dritte Antwort, ist das der erste Schritt. Danach legen Sie fest, woran Sie Erfolg messen, zum Beispiel am Anteil der Angebote, die in Salesforce entstehen, statt an der Zahl der Schulungen. Wie ich diese Arbeit mit Ihnen aufsetze, steht auf der Seite [Change Management für Salesforce-Programme](../../../leistungen/change-management/).
 

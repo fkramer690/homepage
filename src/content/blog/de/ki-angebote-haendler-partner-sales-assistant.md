@@ -9,11 +9,10 @@ topic: ai
 categories: [manufacturing-cloud, ai]
 tags: [Agentforce, Manufacturing Cloud, Händlervertrieb, Angebote, Preise, KI-Agenten]
 takeaways:
-  - "Salesforce führt den AI Partner Sales Assistant unter Summer '26 und den AI Sales Concierge unter Winter '27; beide finden Produkte und bauen Angebote, der erste für Händler, der zweite für Self-Service-Besucher."
-  - "Einrichtungsanleitung, Lizenz und Preis beider Agenten standen am 27. Oktober 2026 in keiner Salesforce-Quelle, die ich öffnen konnte; fragen Sie schriftlich, bevor Sie budgetieren."
-  - "Ein KI-Angebot ist nur so gut wie Produktkatalog, Preis je Markt und Händlerstufe, Konfigurationsregeln und Rabattgrenzen dahinter."
-  - "Liegen Händlerpreise als Konditionen in SAP und in Salesforce nur Listenpreise, nennt der Agent Listenpreise; legen Sie den Preis-Master fest, bevor ein Händler ein KI-Angebot sieht."
-  - "Konfigurierte Maschinen bleiben beim Innendienst, bis der Agent die Konfigurationsregeln aufrufen kann; starten Sie mit Zubehör, Anbaugeräten und Standardmaschinen."
+  - "Einrichtung, Lizenz und Preis beider Agenten fand ich am 27. Oktober 2026 in keiner Salesforce-Quelle. Fragen Sie schriftlich, bevor Sie budgetieren."
+  - "Liegen Händlerpreise nur als Konditionen in SAP, nennt der Agent Listenpreise. Der Preis-Master gehört vorher festgelegt."
+  - "Konfigurierte Maschinen bleiben beim Innendienst, bis der Agent die Regeln aufrufen kann. Ich starte mit Zubehör und Standardmaschinen."
+  - "Reif ist ein KI-Angebot, wenn Ihr Innendienst es unverändert unterschreiben würde."
 faq:
   - q: "Was macht der AI Partner Sales Assistant?"
     a: "Laut Produktseite der Manufacturing Cloud beschleunigt er den Vertrieb über Partner, indem er Produkte findet und Angebote in Sekunden baut. Salesforce führt ihn unter dem Release Summer '26."
@@ -60,7 +59,7 @@ Ich würde danach entscheiden, wo Ihr Angebot heute entsteht. Erstellen Sie Ange
 
 Für Maschinenbauer mit Händlernetz stellt der Sales Concierge zuerst eine kaufmännische Frage. Findet ein Endkunde eine Maschine auf Ihrer Website und bekommt einen Preis: Welcher Händler erhält den Lead, und darf dieser Preis unter dem Angebot des Händlers liegen? Klären Sie Lead-Verteilung und Preissichtbarkeit mit der Vertriebsleitung vor dem Go-live.
 
-## Welche Daten müssen stimmen, bevor Händler KI-Angebote bekommen?
+## Katalog, Preise, Regeln und Rabattgrenzen müssen vorher stimmen
 
 Ein Agent, der ein Angebot baut, liest dieselben Datensätze wie Ihr Innendienst. Was ein erfahrener Innendienst aus Gewohnheit korrigiert, gibt der Agent direkt an den Händler weiter.
 
@@ -84,7 +83,7 @@ Der Stufenrabatt gehört zum Preis, alles darüber ist eine Entscheidung. Diese 
 
 Der Sales Concierge findet Händler und sucht Anlagen. Dafür brauchen Händler-Accounts Gebiete und die Produktlinien, die sie verkaufen dürfen, und Anlagen brauchen Seriennummern, damit ein Kunde Teile für seine eigene Maschine findet. Partnerbenutzer sollten nur ihr eigenes Preisbuch und ihre eigenen Kunden sehen, und jedes Feld, das ein Händler oder Kunde ausfüllt, ist für den Agenten Eingabe von außen, wie ich in [Prompt Injection im Händlerportal](../prompt-injection-haendlerportal-agentforce/) beschreibe. Welche Portallizenz Angebote abdeckt, gehört zum [Kundenportal der Manufacturing Cloud](../manufacturing-cloud-kundenportal/).
 
-## Ein typisches Szenario: 140 Händler und ein Innendienst
+## Rechenbeispiel: 140 Händler und ein Innendienst
 
 Nehmen wir einen Hersteller von Kompaktbaumaschinen mit 140 Händlern in 12 Ländern, SAP S/4HANA und Manufacturing Cloud mit Partnerportal. Alle Zahlen sind Annahmen und zeigen nur die Methode.
 
@@ -98,7 +97,7 @@ Nehmen wir einen Hersteller von Kompaktbaumaschinen mit 140 Händlern in 12 Län
 
 Der Verbrauch ist klein im Vergleich zu sechs Personen im Innendienst. Die Arbeit steckt in vier Monaten Katalog- und Preisdaten, offen bleibt die Lizenz für Partnerbenutzer.
 
-## Wo fangen Sie an?
+## Einen Kanal wählen und den Katalog messen
 
 ```schritte
 Einen Kanal zuerst wählen
@@ -116,5 +115,3 @@ Einen Testsatz bauen
 ```
 
 Wo diese Agenten zwischen den übrigen Fertigungsagenten stehen, zeigt das Masterclass-Kapitel [KI-Agenten in der Fertigung](../../masterclass/ki-salesforce/ki-agenten-in-der-fertigung/). Die Grenze zwischen ERP, Konfigurator und Agent zu ziehen, gehört zu meiner [Salesforce-Architekturarbeit](../../leistungen/salesforce-architektur/).
-
-KI-Angebote für Händler lohnen sich, sobald Katalog, Preise und Regeln so sauber sind, dass Ihr Innendienst das Angebot unverändert unterschreiben würde.

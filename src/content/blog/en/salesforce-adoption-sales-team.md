@@ -11,9 +11,8 @@ coAuthor: juliane
 contactBrief: change
 tags: [CRM adoption, sales, change management, ADKAR, Salesforce rollout]
 takeaways:
-  - "Sales works around Salesforce when data entry mainly helps management and only means work for the sales rep."
   - "The most common cause is missing desire in the ADKAR model, not missing knowledge. Another training session changes little."
-  - "Adoption grows when a sales rep finds more in Salesforce before a customer meeting than in their own list, for example orders, call-off quantities and open service cases from the ERP."
+  - "Adoption grows when a rep finds more in Salesforce before a customer meeting than in their own list, such as orders and service cases from the ERP."
   - "There must be no way back. As long as sales can keep working the old way, nothing changes, and double entry leads straight to a shadow spreadsheet."
   - "The pipeline meeting decides: when the head of sales only discusses what is in Salesforce, Salesforce gets maintained."
 faq:
@@ -58,7 +57,7 @@ In Manufacturing Cloud I introduced sales agreements with actuals from the ERP. 
 
 How this data gets into Salesforce is covered in [Manufacturing Cloud and SAP: which data flows where](../manufacturing-cloud-sap-integration-data-flows/). For adoption, the order matters most: data that helps sales should be there at go-live, not in a later phase. Otherwise sales learns in the first weeks that Salesforce only takes and never gives, and that impression sticks.
 
-## How do you get rid of double entry?
+## Double entry leads straight to a shadow spreadsheet
 
 Double entry is the fastest route to a shadow spreadsheet. Nobody should have to type in again what is already stored somewhere else. Check three places before go-live in sales:
 
@@ -78,7 +77,7 @@ Too many required fields show up quickly in the data: placeholders, always the s
 Have two sales reps and the head of sales go through the fields of an opportunity together before anything is built. Whatever none of the three needs stays optional. This also involves sales in the decision, one of the points Prosci names against resistance.
 ```
 
-## Why does the pipeline meeting decide?
+## The pipeline meeting decides whether data gets maintained
 
 In the end, leadership reinforces whether Salesforce gets maintained. When the head of sales opens the Salesforce dashboard in the weekly pipeline meeting and only discusses what is in it, the team maintains Salesforce. When they ask for an Excel list before the meeting, the team maintains the Excel list. This is the reinforcement stage, and it costs no licence and no development.
 
@@ -86,8 +85,6 @@ The same applies one level up. If the sales forecast for the management board co
 
 I draw one line here. Rankings of individual reps by data quality lead to maintained figures instead of maintained data. In Germany, a report per person needs to be agreed with the works council first anyway. For steering, figures per team or country are enough, and the conversation with individuals is held by their manager or the [key user](../salesforce-key-user-network/).
 
-## Where should you start?
+## Ask two reps how they prepare a customer meeting
 
-Sit down with two sales reps and ask: what do you look at before a customer meeting, and where is it today? Everything they name that is not in Salesforce is your list for the next releases. Then agree a date with the head of sales from which pipeline and forecast are only discussed from Salesforce.
-
-Sales uses Salesforce when it helps before the customer meeting and leadership asks for it. I developed this approach with my cooperation partner [Juliane Winterscheid](../../partners/juliane-winterscheid/), who has supported a global Sales Cloud rollout among other projects. Read more about [Salesforce change management consulting](../../services/change-management-salesforce/).
+Sit down with two sales reps and ask: what do you look at before a customer meeting, and where is it today? Everything they name that is not in Salesforce is your list for the next releases. Then agree a date with the head of sales from which pipeline and forecast are only discussed from Salesforce. I developed this approach with my cooperation partner [Juliane Winterscheid](../../partners/juliane-winterscheid/), who has supported a global Sales Cloud rollout among other projects. Read more about [Salesforce change management consulting](../../services/change-management-salesforce/).

@@ -10,10 +10,9 @@ categories: [manufacturing-cloud, field-service]
 contactBrief: licences
 tags: [Manufacturing Cloud, Service Cloud, licences, warranty, make-or-buy]
 takeaways:
-  - "Manufacturing Cloud Service Core lists at $275 per user and month and Service Cloud Core at $195, so the premium is $80. Core is the edition that replaces Service Cloud Enterprise."
-  - "The premium buys warranty lifecycle management, the Asset Service Console, the Service Console for Manufacturing, pre-work estimation and the manufacturing data model."
-  - "Case management, the help centre, entitlements and knowledge are Service Cloud features. A hotline that only handles cases does not need Manufacturing Cloud."
-  - "A mixed licence set is the normal answer: warranty adjudicators and campaign managers on Manufacturing Cloud, first-level agents on Service Cloud. Get the mix confirmed in writing."
+  - "The premium buys warranty lifecycle management, two service consoles, pre-work estimation and the manufacturing data model."
+  - "Case management, entitlements and knowledge are Service Cloud features. A pure hotline does not need Manufacturing Cloud."
+  - "A mixed licence set is the normal case: warranty and campaigns on Manufacturing Cloud, first level on Service Cloud."
   - "Field technicians need Field Service licences in either case, at $175 per Technician on Enterprise Edition."
 faq:
   - q: "What does Manufacturing Cloud for Service cost?"
@@ -44,7 +43,7 @@ The [Service Cloud pricing page](https://www.salesforce.com/service/pricing/) li
 
 The [Manufacturing Cloud pricing page](https://www.salesforce.com/manufacturing/cloud/pricing/) has two footnotes that contradict each other. One says the prices are for Enterprise Edition and Unlimited costs $425. The other says the prices are for Unlimited Edition. The same announcement says new pricing for the industry editions will follow "later this fall". Which price applies to you only shows in the quote.
 
-## What does the premium buy?
+## The premium buys warranty, two consoles and the data model
 
 The Manufacturing Cloud pricing page lists these service features: Warranty Lifecycle Management, Asset Service Console, Service Console for Mfg and Pre-Work Estimation, plus the manufacturing data models. Service Max adds Contact Center Digital, Workforce Management, Quality Management and Customer Signal Intelligence, and the Max editions include "all full suite of Agentforce for Industries". The per-edition marks did not come through on the page I read, so confirm in the quote which edition includes which feature.
 
@@ -61,9 +60,9 @@ More than many expect. The Service Cloud Core edition lists case management and 
 
 So a hotline that takes calls, opens cases, checks a service contract and answers from knowledge articles works on Service Cloud. What it lacks is the manufacturing layer: warranty terms per product and part, claims with payment details per item, asset milestones, participants and fleets, campaigns with causal parts. If you only need a warranty end date on the asset to show the agent, a custom field is enough.
 
-## Who needs which licence?
+## Worked example: 45 users in service
 
-I would decide by role, not by department. A typical scenario, as an assumption: a machine builder with 45 service users.
+I would decide by role, not by department. The example is an assumed machine builder with 45 service users.
 
 | Role | Users | Licence |
 |---|---|---|
@@ -104,8 +103,6 @@ contra: What you take on
 
 This is the same make-or-buy question as for the whole industry cloud, covered in [is Manufacturing Cloud worth it](../salesforce-manufacturing-cloud-is-it-worth-it/) and in the [scope and business case chapter](../../masterclass/manufacturing-cloud/scope-and-business-case/). I describe the approach under [make-or-buy and licence forecasts](../../services/make-or-buy-licences/).
 
-## Where should you start?
+## Count the users per role for one region
 
 Count the users per role for one region: how many handle warranty claims, how many run campaigns, how many only take calls. Then ask for a quote with exactly that mix, including the Industries Service Excellence question and read access for Service Cloud users. The after-sales features themselves are in the [warranty and after-sales chapter](../../masterclass/manufacturing-cloud/warranty-and-after-sales/) of the Manufacturing Cloud masterclass.
-
-Manufacturing Cloud for Service is worth its premium for the people who work on warranty and recalls, and rarely for the whole service team.

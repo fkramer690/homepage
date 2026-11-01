@@ -10,9 +10,9 @@ categories: [field-service]
 series: { id: field-service, part: 1 }
 tags: [Field Service, Außendienst, Lizenzen, Make-or-buy, Fertigung]
 takeaways:
-  - "Salesforce Field Service lohnt sich am meisten bei vielen kurzen Einsätzen pro Techniker und Tag, weil Termin- und Routenoptimierung dort die Kennzahlen deutlich verbessern."
-  - "Bei wenigen langen Einsätzen, etwa Inbetriebnahmen über mehrere Tage oder Wochen, ist der Nutzen der Optimierung viel kleiner, und andere Lösungen können reichen."
-  - "Dispatcher- und Technician-Lizenzen kosten laut Preisliste je 175 € pro Nutzer und Monat in der Enterprise Edition. 40 Techniker und 4 Disponenten kosten damit 92.400 € pro Jahr."
+  - "Termin- und Routenoptimierung bringen am meisten, wenn Techniker viele kurze Einsätze am Tag fahren: mehr Einsätze, weniger Fahrzeit."
+  - "Bei wenigen langen Einsätzen wie mehrtägigen Inbetriebnahmen bringt die Optimierung wenig, und andere Lösungen können reichen."
+  - "Dispatcher und Technician kosten je 175 € pro Nutzer und Monat (Enterprise Edition). 40 Techniker und 4 Disponenten kosten 92.400 € im Jahr."
   - "Technician- und Dispatcher-Lizenzen dürfen nicht für Fallbearbeitung im Contact Center genutzt werden. Wer beides tut, braucht Field Service Plus für 230 €."
   - "Die Entscheidung beginnt mit vier Zahlen aus dem eigenen Außendienst: Einsätze pro Tag, Anteil der Fahrzeit, Zahl der Qualifikationen und Erstlösungsquote."
 faq:
@@ -39,7 +39,7 @@ Salesforce Field Service ist das Produkt für den Außendienst auf Basis der Ser
 
 Der Kern ist die Planung. Laut [Trailhead](https://trailhead.salesforce.com/content/learn/modules/field-service-lightning-scheduling-basics/examine-scheduling-policies) arbeitet sie mit zwei Arten von Regeln. Work Rules filtern Techniker aus, die einen Einsatz nicht übernehmen können, etwa weil eine Qualifikation fehlt. Service Objectives bewerten die übrigen Kandidaten, zum Beispiel nach geringster Fahrzeit, frühestem Termin oder bevorzugtem Techniker. Beides zusammen ergibt eine Scheduling Policy.
 
-## Wann lohnt sich Field Service?
+## Field Service lohnt sich bei vielen kurzen Einsätzen
 
 Die Optimierung bringt dort am meisten, wo es viel zu optimieren gibt. Nach meiner Erfahrung hängt das an der Art der Arbeit, den Standorten und der Dauer der Einsätze. Den größten Nutzen sehe ich bei:
 
@@ -50,7 +50,7 @@ Die Optimierung bringt dort am meisten, wo es viel zu optimieren gibt. Nach mein
 
 Salesforce selbst stützt diese Richtung mit eigener Forschung. In einem [Beitrag zur Terminplanung](https://www.salesforce.com/blog/field-service-scheduling/) nennt Salesforce Planung den größten Effizienzblocker für Techniker und schreibt, dass 47 Prozent der Termine nicht wie geplant verlaufen. Wer täglich Dutzende Einsätze umplant, spart dort am meisten.
 
-## Wann lohnt sich Field Service nicht?
+## Bei wenigen langen Einsätzen lohnt es sich selten
 
 Bei wenigen langen Einsätzen ist der Nutzen viel kleiner. Ein Techniker, der eine Anlage über zwei Wochen in Betrieb nimmt, braucht keine Routenoptimierung. Er braucht einen Projektplan, Zugang zu Zeichnungen und eine saubere Dokumentation am Ende.
 
@@ -98,10 +98,8 @@ Ich beginne mit vier Zahlen aus dem eigenen Außendienst, noch bevor es um das P
 
 Diese Zahlen lassen sich meist aus dem ERP oder der bestehenden Einsatzplanung ziehen. Sind sie unbekannt, ist das schon ein Ergebnis: Dann fehlt die Grundlage für jeden Business Case, egal mit welchem Produkt.
 
-Danach kommt die Frage nach den Daten. Field Service plant nur so gut, wie Anlagen, Standorte, Qualifikationen und Verfügbarkeiten gepflegt sind. Ein Techniker, dessen Qualifikationen nirgends hinterlegt sind, wird von der Engine falsch eingeplant. Welche Daten das genau sind, beschreibe ich in [Teil 2 dieser Serie](../salesforce-field-service-stammdaten/).
+Danach kommt die Frage nach den Daten. Field Service plant mit den Anlagen, Standorten, Qualifikationen und Verfügbarkeiten, die gepflegt sind, und mit keinen anderen. Ein Techniker, dessen Qualifikationen nirgends hinterlegt sind, wird von der Engine falsch eingeplant. Welche Daten das genau sind, beschreibe ich in [Teil 2 dieser Serie](../salesforce-field-service-stammdaten/).
 
-## Wo sollten Sie anfangen?
+## Vier Zahlen für einen Monat und eine Region erheben
 
 Erheben Sie die vier Zahlen für einen Monat und eine Region. Zeigen sie viele kurze Einsätze mit viel Fahrzeit, rechnen Sie den Business Case für Field Service mit Lizenzen, Umsetzung und Wartung über mehrere Jahre. Wie die Einführung danach Region für Region abläuft, beschreibe ich in [Salesforce Field Service Einführung: Warum in Wellen?](../salesforce-field-service-einfuehrung/). Zeigen sie wenige lange Einsätze, prüfen Sie zuerst, ob Service Cloud, ein Portal oder das ERP die Lücke schließen. Was die mobile App heute für Techniker kann, steht in [Field Service Mobile im Außendienst](../salesforce-field-service-mobile-aussendienst/).
-
-Field Service lohnt sich, wenn Ihr Außendienst viele kurze Termine fährt, und selten, wenn er lange Projekte betreut.

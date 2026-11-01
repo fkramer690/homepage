@@ -9,11 +9,11 @@ topic: revenue
 categories: [revenue-cloud, architecture]
 tags: [Revenue Cloud, product configurator, constraint rules, CML, SAP variant configuration]
 takeaways:
-  - "The Revenue Cloud configurator offers two rule engines: configuration rules on the Business Rules Engine for validation, exclusion and requirement, and the Constraint Rules Engine for constraint-based models."
-  - "Constraint rules pay off when attributes depend on each other and option sets are large, because the engine evaluates all combinations and filters invalid ones in real time."
-  - "Constraint models are written in CML. Visual Builder generates CML without code, the CML Editor is for complex logic, and maintaining it needs someone with modelling skills."
-  - "Salesforce's CML guide targets less than 100 milliseconds and fewer than 1,000 backtracks per model run, so every constraint model needs performance and regression tests."
-  - "Where the rules live today decides the route: rules in spreadsheets move into Revenue Cloud, rules that SAP variant configuration must check anyway should have one master."
+  - "There are two rule engines: configuration rules for validation, exclusion and requirement, and the Constraint Rules Engine for constraint models."
+  - "Constraint rules pay off with interdependent attributes and large option sets. The engine filters invalid combinations in real time."
+  - "Constraint models are written in CML. Maintaining them needs someone at the manufacturer who can model."
+  - "Salesforce targets less than 100 milliseconds and fewer than 1,000 backtracks per model run, so every model needs performance tests."
+  - "Rules from spreadsheets move into Revenue Cloud. If SAP variant configuration checks them anyway, one system has to be the master."
 faq:
   - q: "What is CML in Salesforce Revenue Cloud?"
     a: "CML, the Constraint Modeling Language, is a domain-specific language for constraint models. It describes types, attributes, relationships and constraints of a product. Visual Builder generates CML, and the CML Editor lets you write it directly."
@@ -64,7 +64,7 @@ My view: CML is code, even if part of it is clicked together. A model for a mach
 
 A useful detail: table constraints can import their rows from a standard or custom Salesforce object, according to the Developer Guide. A compatibility table maintained in SAP or PLM can thus be loaded into a custom object through the integration instead of being typed into CML by hand. That keeps the master outside and the evaluation in Salesforce.
 
-## How do you test constraint models?
+## Test target: under 100 milliseconds per model run
 
 The CML guide sets clear targets per model:
 
@@ -101,13 +101,13 @@ I look at where they are today:
 
 There is a side effect for AI quoting. An agent can only respect rules it can call. If the rules live outside Salesforce, I keep configured machines with the sales desk, as described in [AI Partner Sales Assistant: dealer quotes with AI](../ai-partner-sales-assistant-dealer-quotes/).
 
-## A typical scenario, as an assumption
+## Worked example: three product lines, one stays in SAP
 
 A machine builder has three product lines. Two are maintained by application engineers in spreadsheets with around 150 compatibility rules. The third uses SAP variant configuration with dependencies that production checks for every order.
 
 My recommendation in that case: the two spreadsheet lines go into constraint models, with table constraints filled from a custom object, regression cases per line and a named owner in product management. The SAP line keeps its configurator for now. Salesforce receives the configured result through an interface, prices it and creates the quote. After a year the manufacturer can decide whether the third line follows, based on real maintenance effort instead of assumptions.
 
-## Where should you start?
+## Inventory the rules and pick a pilot family
 
 1. **Inventory the rules**: how many, where they live, who changes them and how often.
 2. **Pick one product family** as a pilot, ideally one whose rules sit in spreadsheets.
@@ -116,5 +116,3 @@ My recommendation in that case: the two spreadsheet lines go into constraint mod
 5. **Name the owner** who maintains the model after go-live.
 
 The full chapter is the masterclass part [catalog, configurator, pricing](../../masterclass/revenue-cloud/product-catalog-configurator-pricing/), and how manufacturers carry configured products into a sales agreement is in [from quote to sales agreement](../quote-to-sales-agreement-product-configurator/). Setting the rule master between SAP and Salesforce is part of my [Salesforce architecture](../../services/salesforce-architecture/) work.
-
-Constraint rules pay off when the rules have one home and one owner, whether that home is Revenue Cloud or not.

@@ -11,8 +11,8 @@ contactBrief: change-basics
 author: juliane
 tags: [change curve, Kübler-Ross, stages of change, change management]
 takeaways:
-  - "The change curve describes typical emotional reactions to a change: first shock and denial, then a low point, then experimenting and integration."
-  - "It goes back to the five stages of grief that Elisabeth Kübler-Ross described in 1969. In German-speaking countries a seven-stage version by Richard K. Streich is also common."
+  - "In the valley the old way no longer works and the new one is not yet routine. This is where people decide whether they stay on board."
+  - "It goes back to the five stages of grief by Elisabeth Kübler-Ross (1969). A seven-stage version by Richard K. Streich is also common."
   - "The curve helps managers make sense of reactions. It does not provide a plan, and not everyone goes through the stages in order."
   - "For actions I connect the curve with the ADKAR model: each stage points to the element where a person needs support right now."
 faq:
@@ -53,7 +53,7 @@ There are two common versions. The original by Kübler-Ross has five stages. In 
 
 The difference between rational and emotional acceptance that Streich works out matters. A team can agree in a meeting because the arguments are convincing and still keep working with the old list the next day. Learning only starts once people have also accepted emotionally that the old way is over.
 
-## What helps in each stage?
+## ADKAR shows what helps in each stage
 
 The curve describes reactions. It does not say what a manager can do. This is where the [ADKAR model](../change-management-models/) helps, because Prosci maps each stage of the curve to an ADKAR element. That turns an observation into an action:
 
@@ -65,7 +65,7 @@ The curve describes reactions. It does not say what a manager can do. This is wh
 | Depression | Ability | Practise on real cases, contacts within the team, time to learn; adjust productivity expectations |
 | Acceptance | Reinforcement | Make successes visible, measure usage, address relapses into the old way |
 
-Two things matter to me here. First, resistance in the anger stage is normal and a sign that the change has landed. Suppressing it only pushes it further down the line. Second, the valley gets deeper and longer when people are left alone in it. Most relapses into old habits happen in this stage.
+Resistance in the anger stage is normal and a sign that the change has landed. Suppressing it only pushes it further down the line. And the valley gets deeper and longer when people are left alone in it. Most relapses into old habits happen in this stage.
 
 ## What does the change curve look like in a software rollout?
 
@@ -77,7 +77,7 @@ This is exactly what the [hypercare phase after go-live](../salesforce-hypercare
 
 In large initiatives, groups and countries also stand at different points at different times. In a global rollout with countries in the US, Asia and Europe, like the one I supported for Salesforce Sales Cloud, a single look at "the mood in the project" does not help much. What makes sense is an assessment per group and country, ideally linked to the [stakeholder analysis](../stakeholder-analysis/).
 
-## Where are the limits of the change curve?
+## The curve is a basis for conversation, not a diagnosis
 
 The curve is popular because it is simple. But it has weaknesses, which Prosci names clearly in the article mentioned above:
 
@@ -99,10 +99,8 @@ The curve therefore works as a basis for conversation, not as a diagnosis. In a 
 Do not show the change curve to the affected team and tell them they are now in the valley. It comes across as condescending and turns legitimate objections into a stage that will pass. The curve is a tool for managers, not a message to employees.
 ```
 
-## What does this mean for your next change?
+## Plan for the valley
 
-Plan for the valley. If you know that morale and productivity drop after go-live, you can provide contacts, adjust targets for the first weeks and explain to management why the first figures look worse. Ask each group where it stands instead of choosing the same action for everyone. And connect the curve with a model that derives actions; the basics are in [What is change management?](../what-is-change-management/).
+Plan for the valley. If you know that morale and productivity drop after go-live, you can provide contacts, adjust targets for the first weeks and explain to management why the first figures look worse. Ask each group where it stands instead of choosing the same action for everyone. And connect the curve with a model that derives actions; the basics are in [What is change management?](../what-is-change-management/). In Salesforce programmes I do this together with Fabian Kramer, see [Salesforce change management consulting](../../services/change-management-salesforce/).
 
-In Salesforce programmes I do this together with Fabian Kramer, see [Salesforce change management consulting](../../services/change-management-salesforce/).
-
-Prosci and ADKAR are registered trademarks of Prosci, Inc.
+*Prosci and ADKAR are registered trademarks of Prosci, Inc.*

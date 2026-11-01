@@ -9,11 +9,10 @@ topic: data
 categories: [manufacturing-cloud]
 tags: [Manufacturing Cloud, program-based business, forecasting, suppliers, sales agreements, Data Processing Engine]
 takeaways:
-  - "Program-based business helps suppliers that deliver components into OEM programmes: it derives component forecasts from programme and variant forecasts and converts them into opportunities and sales agreements."
-  - "Programme and variant forecasts arrive as CSV files, for example from third-party market data. Component forecasts are calculated by four Data Processing Engine templates."
-  - "Each component needs a Product Related Material record with quantity per unit, minimum eligible quantity and lead time. That data usually lives in engineering or the ERP."
-  - "Program-based business needs Advanced Account Forecasting, Data Pipelines, the Program Based Business feature and two permission sets. Trailhead names no licence, so ask."
-  - "With a handful of programmes, or when a planning system already derives component demand, program-based business adds a second forecast instead of a better one."
+  - "Programme and variant forecasts arrive as CSV files. Four Data Processing Engine templates calculate the component forecasts."
+  - "Each component needs quantity per unit, minimum quantity and lead time. That data usually lives in engineering or the ERP."
+  - "It needs Advanced Account Forecasting, Data Pipelines, Program Based Business and two permission sets. Trailhead names no licence."
+  - "Approved component forecasts become an opportunity and a sales agreement in two API steps."
 faq:
   - q: "What is program-based business in Manufacturing Cloud?"
     a: "A Manufacturing Cloud feature for suppliers that deliver components into OEM programmes. It holds forecasts per programme, variant and component, calculates component demand with the Data Processing Engine and converts approved forecasts into opportunities and sales agreements."
@@ -36,7 +35,7 @@ The [product page for sales](https://salesforce.com/manufacturing/cloud/sales) l
 
 It belongs to chapter 2 of the masterclass, [agreements and forecasting](../../masterclass/manufacturing-cloud/agreements-and-forecasting/), next to account forecasting. Account forecasting plans what existing customers take of existing products. Program-based business plans the demand of programmes that may not have started production yet.
 
-## How is a programme modelled?
+## A programme has three levels, each with its own forecast
 
 The data model has three levels, each with its own forecast fact object, according to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/program-based-business-with-manufacturing-cloud/explore-forecast-facts-and-create-forecast-sets):
 
@@ -52,9 +51,9 @@ A programme template defines which forecast sets apply at which level, and every
 
 That record is the part I would clarify first. Quantity per unit and lead time are engineering and ERP data. If nobody owns them in Salesforce, the component forecast is calculated from numbers that were right at the start of the programme.
 
-## Where do the programme and variant numbers come from?
+## Programme and variant numbers come from files
 
-From files. Account managers import programme and variant forecasts as CSV files into the two fact objects, with "Add and Update Records". Records are matched by the ExternalReferenceNumber field, so the next file updates existing forecasts instead of duplicating them. Trailhead's example uses data from IHS Markit, cleaned before the import.
+Account managers import programme and variant forecasts as CSV files into the two fact objects, with "Add and Update Records". Records are matched by the ExternalReferenceNumber field, so the next file updates existing forecasts instead of duplicating them. Trailhead's example uses data from IHS Markit, cleaned before the import.
 
 Then people adjust. Forecast sets define adjustment periods: in the example, account managers may change values in the first five days of each month and engineering managers in the next five. Every change is tracked with a note. An account manager who hears from the OEM's purchasing that a variant will sell better than the market data says can raise the number, and the reason stays visible.
 
@@ -75,9 +74,9 @@ Two consequences for the architecture. Cloned DPE definitions, forecast sets and
 Account forecasting has documented limits for forecast records, described in [account forecasting for sales volume planning](../account-forecasting-sales-volume-planning/). Whether component forecasts count against the same limits I could not find documented; clarify it before the first large programme.
 ```
 
-## How does an approved forecast become a sales agreement?
+## An approved forecast becomes a sales agreement in two steps
 
-In two API steps. First, the Transformation API converts finalised component forecasts into an opportunity. The mappings are defined with the ObjectHierarchyRelationship metadata, usage type Transformation Mapping: component forecast to opportunity, to opportunity line item and to opportunity line item schedule, plus a support mapping from the programme to the opportunity, because the account is not set automatically. The result is one opportunity with a line item per component and a schedule per period.
+There are two API steps. First, the Transformation API converts finalised component forecasts into an opportunity. The mappings are defined with the ObjectHierarchyRelationship metadata, usage type Transformation Mapping: component forecast to opportunity, to opportunity line item and to opportunity line item schedule, plus a support mapping from the programme to the opportunity, because the account is not set automatically. The result is one opportunity with a line item per component and a schedule per period.
 
 Second, once the opportunity is won, the Sales Agreement Connect API converts opportunity and line items into a sales agreement with sales agreement products. From there, actuals from the ERP take over, as described in [sales agreements: spot customers behind on volume](../sales-agreements-volume-shortfall-erp/). If the agreement comes out of a configured quote instead, the path is in [from quote to sales agreement](../quote-to-sales-agreement-product-configurator/).
 
@@ -101,9 +100,9 @@ Trailhead describes no approval status for the forecast. Who declares a componen
 - **Licence:** Trailhead names none. Get it confirmed in the quote, as with every feature in [Manufacturing Cloud features: what is in the box](../manufacturing-cloud-features-overview/).
 - **Data:** a source for programme and variant forecasts, Product Related Material from engineering or the ERP, and price book entries for selling prices.
 
-## A typical scenario, as an assumption
+## Worked example: hydraulic cylinders for 12 programmes
 
-A supplier of hydraulic cylinders delivers into 12 programmes of four agricultural machinery OEMs. Each programme has about four variants, each variant uses about ten of the supplier's parts, built in two plants. Today every key account manager keeps a spreadsheet per OEM.
+Assume a supplier of hydraulic cylinders delivers into 12 programmes of four agricultural machinery OEMs. Each programme has about four variants, each variant uses about ten of the supplier's parts, built in two plants. Today every key account manager keeps a spreadsheet per OEM.
 
 With 24 monthly periods, that is about 12 x 4 x 10 x 2 x 24 = 23,040 component forecast records per run, still few enough for the team to review the large deviations. The benefit lies in three places: one calculation logic instead of twelve spreadsheets, adjustments with a reason, and opportunities created from the forecast instead of typed in again. The cost lies in data: lead times and quantities per unit have to come from engineering, and market data for agricultural machinery programmes has to be bought or collected.
 
@@ -114,6 +113,4 @@ With 24 monthly periods, that is about 12 x 4 x 10 x 2 x 24 = 23,040 component f
 - **No third-party or OEM forecast data.** Without programme numbers there is nothing to derive components from.
 - **No sales agreements afterwards.** The conversion into opportunities and agreements is half the value.
 
-If you do go ahead, the integration with planning in the ERP needs one leading number, which is part of my work on [Salesforce integration](../../services/salesforce-integration/).
-
-Program-based business pays off for suppliers with many programmes and a clear owner for component data.
+If you do go ahead, component data needs a named owner, and the integration with planning in the ERP needs one leading number. That integration is part of my work on [Salesforce integration](../../services/salesforce-integration/).

@@ -11,8 +11,8 @@ tags: [agentforce, ai agents, data quality, business case, architecture]
 takeaways:
   - "According to an Oppenheimer survey, 85 percent of Salesforce customers have tested or deployed Agentforce, but nearly half are still in pilot or testing."
   - "Agentforce projects rarely fail on the technology; they fail on a missing business case, poor data quality and unclear permissions."
-  - "Every agent needs one measurable business goal before the first prompt is written, for example handling time, first-contact resolution or hours saved per week."
-  - "An agent can only be as good as the data and knowledge it reads; cleaning up master data, knowledge articles and access rules is part of the project, not a prerequisite someone else handles."
+  - "Every agent needs one measurable goal before the first prompt, for example handling time, first-contact resolution or hours saved per week."
+  - "Cleaning up master data, knowledge articles and access rules is part of the agent project, because that is exactly the data the agent reads."
   - "Start with a narrow, high-volume use case, keep a human in the loop for decisions with consequences and measure from day one."
 faq:
   - q: "Why do so many Agentforce projects stay in the pilot phase?"
@@ -27,7 +27,7 @@ faq:
 
 Agentforce projects succeed when business value and data quality come first and the technology comes second. Most Salesforce customers have tried Agentforce by now, yet many projects never leave the pilot phase. In my experience the reason is rarely the agent itself. It is a missing business case, data the agent can't trust and access rules nobody thought through. My own first Agentforce pilot was what we call a green banana in German: a product delivered before it was ripe. Today several Agentforce projects I am involved in are being implemented, and the difference lies almost entirely in how they started.
 
-## Where does Agentforce adoption really stand?
+## 85 percent are testing, nearly half are still in pilot
 
 The numbers from October 2026 show a split picture. An Oppenheimer survey of Salesforce customers, [reported by Salesforce Ben](https://www.salesforceben.com/85-of-customers-have-tried-agentforce-but-demand-hasnt-picked-up-why/), found that 85 percent have tested or deployed Agentforce. In the same survey nearly half said they were still in the pilot or testing stage. Salesforce itself reports more than 29,000 paid deals.
 
@@ -37,7 +37,7 @@ At the same time, demand for Agentforce skills is growing fast. According to the
 
 So companies are experimenting and hiring, but production use lags behind. That matches what I see on the client side: plenty of interest, plenty of demos, and a gap between a convincing demo and an agent that works reliably every day.
 
-## What did I learn from my first pilot?
+## My first pilot came too early
 
 ```praxis
 The first Agentforce pilot I was involved in was simply too early. The platform was young and not yet mature enough for what we wanted to do. That is a normal risk with new technology, and it taught me to look harder at the conditions around an agent than at the agent itself.
@@ -101,8 +101,6 @@ Go live in a limited scope
 
 This is ordinary project discipline, applied to a new kind of system. Agents should go through the same release process as every other change, with configuration in the repository and deployment through a pipeline, as I describe in [why DevOps decides Salesforce enterprise projects](../why-devops-matters-salesforce-enterprise/).
 
-## What role does the architect play?
+## The architect asks whether the agent is worth its cost
 
 On the client side, my job in Agentforce projects is to keep the focus on value and to make sure the foundations hold: data model, integrations, permissions and the release process. Partners and vendors understandably want to show what the technology can do. Someone has to ask whether a specific agent is worth its cost and whether the data supports it. That is a core part of [architecture and partner governance](../../services/salesforce-architecture/).
-
-Agentforce can deliver real value, but only where a clear business goal meets data the agent can trust.

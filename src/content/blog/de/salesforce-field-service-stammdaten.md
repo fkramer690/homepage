@@ -1,6 +1,6 @@
 ---
 title: "Field Service: Welche Daten braucht die Planung?"
-description: "Salesforce Field Service plant nur so gut wie seine Stammdaten. Welche Daten die Planung braucht, woher sie kommen und wer sie im Außendienst pflegt."
+description: "Welche sechs Arten von Stammdaten Salesforce Field Service vor dem ersten Einsatz braucht, woher sie kommen und wer sie im Außendienst pflegt."
 pubDate: 2026-10-26
 lang: de
 slug: salesforce-field-service-stammdaten
@@ -10,11 +10,11 @@ categories: [field-service]
 series: { id: field-service, part: 2 }
 tags: [Field Service, Außendienst, Datenmodell, Stammdaten, Fertigung]
 takeaways:
-  - "Salesforce Field Service braucht vor dem ersten Einsatz sechs Arten von Stammdaten: Servicegebiete mit Arbeitszeiten, Techniker mit Qualifikationen, Arbeitstypen, Anlagen, Öffnungszeiten der Kunden und Abwesenheiten."
-  - "Die Planungsengine prüft nur, was in diesen Daten steht. Ein Techniker ohne hinterlegte Qualifikation ist für Einsätze mit Qualifikationsanforderung kein Kandidat, ein falsch hinterlegter wird falsch eingeplant."
-  - "Öffnungszeiten der Kunden zählen bei der Planung nur, wenn die Work Rule für Besuchszeiten in der Scheduling Policy aktiv ist. Ohne sie plant Field Service auch Termine, zu denen niemand beim Kunden öffnet."
-  - "Für jede Art von Stammdaten sollte vor dem Start feststehen, aus welchem System sie kommt und wer sie pflegt. Die meisten Daten liegen schon im ERP, bei der Personalabteilung oder bei den Disponenten."
-  - "Ein guter Startpunkt sind die Fehleinsätze der letzten Monate: Jeder Fehleinsatz zeigt, welche Daten gefehlt haben."
+  - "Field Service braucht sechs Datenarten: Gebiete mit Arbeitszeiten, Qualifikationen, Arbeitstypen, Anlagen, Öffnungszeiten der Kunden und Abwesenheiten."
+  - "Ein Techniker ohne hinterlegte Qualifikation ist für Einsätze, die sie verlangen, kein Kandidat. Ein falsch hinterlegter wird falsch eingeplant."
+  - "Öffnungszeiten der Kunden zählen nur, wenn die Work Rule für Besuchszeiten aktiv ist. Sonst bucht Field Service Termine, zu denen niemand öffnet."
+  - "Für jede Datenart steht vor dem Start fest, welches System führt und wer pflegt. Das meiste liegt schon im ERP, im Personalwesen oder bei Disponenten."
+  - "Die Fehleinsätze der letzten Monate zeigen, welche Daten zuerst sauber sein müssen."
 faq:
   - q: "Welche Stammdaten braucht Salesforce Field Service?"
     a: "Mindestens Servicegebiete mit Arbeitszeiten, Techniker als Service Resources mit ihren Qualifikationen, Arbeitstypen mit Dauer und benötigten Qualifikationen, die Anlagen beim Kunden, die Öffnungszeiten der Kunden und die Abwesenheiten der Techniker."
@@ -27,11 +27,11 @@ faq:
 draft: false
 ---
 
-Salesforce Field Service plant nur so gut wie die Stammdaten, die es kennt. Bevor die Planungsengine den ersten Einsatz vergibt, braucht sie sechs Arten von Daten: Servicegebiete mit Arbeitszeiten, Techniker mit ihren Qualifikationen, Arbeitstypen mit Dauer und Anforderungen, die Anlagen beim Kunden, die Öffnungszeiten der Kunden und die Abwesenheiten der Techniker. Fehlt eines davon oder ist es veraltet, schickt die Engine den falschen Techniker oder schickt ihn zur falschen Zeit. Die meisten dieser Daten gibt es im Unternehmen schon, verteilt auf ERP, Personalabteilung und die Köpfe der Disponenten.
+Salesforce Field Service plant mit den Stammdaten, die es kennt, und mit keinen anderen. Bevor die Planungsengine den ersten Einsatz vergibt, braucht sie sechs Arten von Daten: Servicegebiete mit Arbeitszeiten, Techniker mit ihren Qualifikationen, Arbeitstypen mit Dauer und Anforderungen, die Anlagen beim Kunden, die Öffnungszeiten der Kunden und die Abwesenheiten der Techniker. Fehlt eines davon oder ist es veraltet, schickt die Engine den falschen Techniker oder schickt ihn zur falschen Zeit. Die meisten dieser Daten gibt es im Unternehmen schon, verteilt auf ERP, Personalabteilung und die Köpfe der Disponenten.
 
 Ob sich Field Service für Ihren Außendienst überhaupt lohnt, beschreibe ich im ersten Teil dieser Serie: [Salesforce Field Service: Wann lohnt es sich?](../salesforce-field-service-lohnt-sich/). Hier geht es um die Frage danach: Was muss stehen, bevor die Planung startet?
 
-## Warum scheitern Einsätze an fehlenden Daten?
+## Fehlende Daten führen zu Fehleinsätzen
 
 ```praxis
 In Serviceprojekten habe ich immer wieder dasselbe Muster gesehen. Techniker waren vor Ort und konnten ihren Job nicht ausführen. Mal waren die Ersatzteile nicht da. Mal war die Maschine nicht zugänglich. Mal stand der falsche Techniker vor der Anlage, oder der richtige war nicht arbeitsfähig. Teils lag es am Kunden, teils an der Planung der Techniker.
@@ -103,7 +103,7 @@ Daraus folgen die Schnittstellen. Anlagen und Qualifikationen von Hand in Salesf
 
 Qualifikationen und Abwesenheiten sind Daten über Mitarbeitende. Klären Sie früh mit Datenschutz und, wo vorhanden, mit dem Betriebsrat, welche davon in Salesforce landen dürfen. Das gilt auch für die neuen Funktionen der App, die ich in [Field Service Mobile im Außendienst](../salesforce-field-service-mobile-aussendienst/) beschreibe.
 
-## Wo sollten Sie anfangen?
+## Die Fehleinsätze der letzten drei Monate auswerten
 
 Nehmen Sie die Fehleinsätze der letzten drei Monate in einer Region. Ordnen Sie jeden einer Ursache zu: Teile, Zugang, Qualifikation, Verfügbarkeit oder etwas anderes. Die Ursache mit den meisten Fehleinsätzen zeigt, welche Daten Sie zuerst sauber brauchen. Gibt es keine Liste der Fehleinsätze, ist auch das ein Ergebnis, denn dann fehlt die Messgröße, an der sich Field Service später messen lassen muss.
 

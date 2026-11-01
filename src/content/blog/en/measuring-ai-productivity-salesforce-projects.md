@@ -9,11 +9,10 @@ topic: governance
 categories: [architecture, ai]
 tags: [ai coding, productivity, dora metrics, programme management, salesforce devops]
 takeaways:
-  - "Measure AI productivity in a Salesforce programme with cycle time per story, defect escape rate, rework and change fail rate against your own baseline, never with developer self-reports."
-  - "In the METR study experienced developers took 19 percent longer with AI on their own large codebases, while believing afterwards that AI had made them 20 percent faster."
-  - "DORA 2025 found that AI adoption goes with higher delivery throughput but still with lower delivery stability: AI amplifies the strengths and weaknesses a team already has."
-  - "McKinsey's 2026 survey found 11.8 percent average time savings but only 6.2 percent less rework, and 30 percent of leaders reported that team productivity fell."
-  - "Faster coding only shortens a Salesforce programme if review, testing and user acceptance by the business keep up; otherwise the queue just moves."
+  - "In the METR study experienced developers took 19 percent longer with AI and believed afterwards that they had been 20 percent faster."
+  - "DORA 2025 shows higher throughput but still lower stability: AI amplifies the strengths and weaknesses a team already has."
+  - "McKinsey found 11.8 percent time savings but only 6.2 percent less rework, and 30 percent of leaders reported falling productivity."
+  - "Faster coding only shortens a Salesforce programme if review, testing and user acceptance by the business keep up."
 faq:
   - q: "How do I measure whether AI coding speeds up my Salesforce project?"
     a: "Record cycle time per story, defect escape rate, rework and change fail rate for two to three months before AI tools are introduced. Then compare the same kinds of stories afterwards. Developer impressions and tool usage figures are no evidence, because the METR study showed a gap of almost 40 points between perceived and measured speed."
@@ -26,7 +25,7 @@ faq:
 draft: false
 ---
 
-You measure AI productivity in a Salesforce project with outcome metrics on your own baseline: cycle time per story, defect escape rate, rework and change fail rate, recorded before the first coding agent arrives. Developer impressions and licence counts prove nothing. The published studies range from 55 percent faster to 19 percent slower, depending on the task and the codebase. A grown org with years of triggers, Flows and an SAP integration sits at the hard end of that range. So the honest answer to "is AI making our programme faster?" is a number you collected yourself.
+You measure AI productivity in a Salesforce project with outcome metrics on your own baseline: cycle time per story, defect escape rate, rework and change fail rate, recorded before the first coding agent arrives. Developer impressions and licence counts prove nothing. The published studies range from 55 percent faster to 19 percent slower, depending on the task and the codebase. A grown org with years of triggers, Flows and an SAP integration sits at the hard end of that range. So whether AI makes your programme faster can only be answered with a number you collected yourself.
 
 ## What do the studies say about AI coding productivity?
 
@@ -66,7 +65,7 @@ I would track five numbers, split by story type (configuration, Apex, integratio
 
 What I would leave out as a success measure: lines of code, the share of AI-generated code, licences and prompt volume. McKinsey points out that adoption metrics show whether people use the tools, not whether releases get faster or more reliable, and 86 percent of its top accelerators track outcome metrics instead. Token cost per story is useful for budgeting, which I cover in [what AI coding costs in a Salesforce project](../ai-coding-costs-salesforce-project/).
 
-## A typical scenario: two numbers that tell different stories
+## Worked example: two numbers that tell different stories
 
 Assume a machine builder with Sales Cloud, Service Cloud and Field Service, an SAP integration through middleware and two implementation partners with eight developers in total. All numbers below are assumptions to show the method. Partner A proposes coding agents and promises "about 30 percent faster".
 
@@ -76,7 +75,7 @@ After three months with agents, assume the build step drops from 4 to 2.5 days. 
 
 Both numbers are true. The coding is faster; the programme barely is. The useful conclusion is where to act: smaller pull requests with automated gates, fixed daily UAT slots with the head of service, and a reviewer on the client side with time reserved for it. Without the baseline, the steering committee would only have heard the 30 percent.
 
-## Where should you start?
+## Clean up the status workflow before the tools arrive
 
 Start before the tools arrive, because a baseline cannot be reconstructed from memory.
 
@@ -93,6 +92,4 @@ Agree a review date
   For example after three months, and decide then whether the setup, the process or the commercial model changes. If a partner really delivers faster, that should show up in the price, which is the question behind [fixed price instead of time and materials](../fixed-price-vs-time-and-materials-ai/).
 ```
 
-This is the core of how I set up [programme management for Salesforce programmes](../../services/program-management-nearshore/), and it rests on a working pipeline, as described in [why DevOps decides Salesforce enterprise projects](../why-devops-matters-salesforce-enterprise/).
-
-Measure AI benefit like any other investment: baseline first, a few outcome numbers, and a date to decide.
+For the first report, cycle time and rework are enough; the other numbers follow once the definitions are agreed. This is the core of how I set up [programme management for Salesforce programmes](../../services/program-management-nearshore/), and it rests on a working pipeline, as described in [why DevOps decides Salesforce enterprise projects](../why-devops-matters-salesforce-enterprise/).

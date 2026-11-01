@@ -8,11 +8,10 @@ chapter: 10
 short: "Agents in manufacturing"
 summary: "Where Agentforce agents work for manufacturers today, how to build, test and secure them with rules, and what is only announced."
 takeaways:
-  - "In manufacturing, agents work today where volume is high, rules are clear and data is maintained: dealer enquiries on order status, maintenance booking in field service and pre-checking warranty claims."
-  - "Salesforce Architects says anything you can express as code should be written as logic; Agent Script, Flow or the ERP decide credit limits and warranty eligibility, while the model understands and phrases."
+  - "Whether a dealer gets warranty or which credit limit applies is decided by Agent Script, Flow or the ERP. The model understands and phrases."
   - "An agent reaches production like code: as metadata in Git, with test cases, a pass rate agreed in advance and monitoring of sessions after go-live."
-  - "Every field that dealers, customers or prospects can write is untrusted input for an agent, and every connected app is an access path you protect like a password."
-  - "According to the September 2026 announcement, two Siemens agents for inbound leads are live; Teamcenter, supplier onboarding and SAP steps are written in the future tense."
+  - "Every field that dealers or customers can write is untrusted input for an agent. Protect every connected app like a password."
+  - "According to the September 2026 announcement, two Siemens agents for inbound leads are live. Teamcenter, suppliers and SAP are in the future tense."
 articles: [agent-script-deterministic-rules, warranty-adjudication-agent-winter-27, field-service-ai-agents-today, agentforce-sap-order-status, prompt-injection-dealer-portals, oauth-connected-apps-ai-lessons]
 faq:
   - q: "Which agent is the best starting point for a machine builder?"
@@ -50,7 +49,7 @@ On licensing: according to the [Manufacturing Cloud page](https://www.salesforce
 
 For a machine builder I sort this list by three questions: how many similar cases are there per month, where does the rule live, and is the data behind it maintained? That usually gives this order: dealer order status and planned maintenance first, then the job report, then warranty. Which field service features pay off is covered in [AI agents in field service](../../../blog/field-service-ai-agents-what-works-today/), what has to be in place before the warranty agent in [Warranty Claims Adjudication Agent: what to prepare](../../../blog/warranty-claims-adjudication-agent/). Whether an agent is the right next step at all, I check with the criteria in [Agentforce for manufacturers: start now or wait?](../../../blog/agentforce-yes-or-no-manufacturers/). How to introduce agents in field service step by step is in [chapter 5 of the Field Service masterclass](../../field-service/field-service-ai-agents-rollout/).
 
-## How do you build an agent that answers the same way twice?
+## Same answer twice: rules in logic, language in the model
 
 In the earlier Agentforce, the language model made every decision at runtime, from intent to action selection. Identical inputs could take different paths. For a warranty rejection a dealer disputes, that is unusable. The new Agentforce with hybrid reasoning has been generally available since February 2026, and Salesforce Architects states the rule in its [guide to Agent Script](https://architect.salesforce.com/docs/architect/fundamentals/guide/hybrid-reasoning-agentforce-builder-agent-script): "if you can express a decision as code, it should be written as logic."
 
@@ -69,7 +68,7 @@ On the API Catalog route, Salesforce creates Named Credentials and External Serv
 
 For knowledge from manuals and articles, the agent needs grounding through Data 360. According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/data-cloud-powered-agentforce/enable-trusted-agents-with-data-cloud), the Agentforce Data Library is the quick route but limited to unstructured content and one source per library. Multiple sources, structured data and zero copy need the advanced Data 360 setup. Machine builders have manuals per variant and revision, and before they are processed it should be clear which manual belongs to which serial number. Processing costs 150 Flex Credits per MB at the base tier according to the [rate card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf); the arithmetic is in [chapter 7](../costs-and-tokens/).
 
-## How does an agent get to production safely?
+## An agent goes to production like code
 
 An Agentforce agent is now a set of metadata that a coding agent can help write. The [Salesforce Developers blog of June 2026](https://developer.salesforce.com/blogs/2026/06/master-the-agentic-development-lifecycle-for-agentforce) describes the path like this:
 
@@ -124,7 +123,7 @@ source: Siemens announcement of 15 September 2026; Agentforce for Manufacturing 
 
 I found no case study from the German-speaking market with hard figures on service, warranty or field service agents. Market figures need a footnote too: Salesforce reports more than $1.5bn Agentforce ARR for the quarter to July 2026, but [from that quarter on](https://investor.salesforce.com/news/news-details/2026/Salesforce-Delivers-Record-Second-Quarter-Fiscal-2027-Results/default.aspx) counts Slackbot, AI offerings and Headless 360 as well. And Gartner [expects](https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027) more than 40 percent of agentic AI projects to be cancelled by the end of 2027, due to cost, unclear value or weak risk controls.
 
-## A typical scenario: a roadmap for a machine builder
+## Assumed: a roadmap for a machine builder
 
 Assume a machine builder with SAP S/4 and an existing MuleSoft API, Service Cloud, Field Service with 45 technicians and around 200 dealers who order through a portal. Manufacturing Cloud is being introduced. All circumstances and numbers are assumptions meant to show the approach.
 
@@ -157,5 +156,3 @@ At year end three agents run, all under the same rules: own user, rules in logic
 - **EU AI Act:** according to [White & Case](https://www.whitecase.com/insight-alert/eu-ai-omnibus-enters-force-amending-ai-act), the deadlines in the timeline follow from Regulation (EU) 2026/1744. For machine builders, Annex I concerns the machine more than the CRM agent. What this means for Agentforce projects is in [EU AI Act deadlines for Agentforce](../../../blog/eu-ai-act-deadlines-agentforce/) and [chapter 9](../teamwork-and-delivery/).
 
 Which rules belong in your agents and which stay in the ERP is something I sort out on the client side as part of [Salesforce architecture](../../../services/salesforce-architecture/), the ERP connection as part of [Salesforce integration](../../../services/salesforce-integration/). All chapters are listed on the [masterclass overview](../).
-
-Start with the agent whose rules and data are already in place, and treat it like code with tests and its own permissions from day one.

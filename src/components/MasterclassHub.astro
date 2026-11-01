@@ -7,7 +7,6 @@ import ExternalMark from './ExternalMark.astro';
 import ContactForm from './ContactForm.astro';
 import PhoneLine from './PhoneLine.astro';
 import AuthorBox from './AuthorBox.astro';
-import Blueprint from './Blueprint.astro';
 import Photo from './Photo.astro';
 import { coursePhotos } from '../data/photos';
 import PartnerBox from './PartnerBox.astro';
@@ -133,7 +132,6 @@ const schema = {
   </Fragment>
 
   <section class="hero dark grid-bg mc-hero">
-    <Blueprint />
     <div class="container hero-inner mc-hero-inner">
       <div>
         <p class="eyebrow mono">{m.eyebrow}</p>
@@ -229,9 +227,9 @@ const schema = {
   <section class="proof" aria-label={m.factsLabel}>
     <div class="container">
       <ul class="proof-list mc-facts">
-        <li><span class="proof-value">{chapterTotal(course)}</span><span class="proof-label mono">{m.facts.chapters}</span></li>
-        <li><span class="proof-value">{articleCount}</span><span class="proof-label mono">{m.facts.articles}</span></li>
-        <li><span class="proof-value">DE · EN</span><span class="proof-label mono">{m.facts.languages}</span></li>
+        <li><span class="proof-value">{chapterTotal(course)}</span><span class="proof-label">{m.facts.chapters}</span></li>
+        <li><span class="proof-value">{articleCount}</span><span class="proof-label">{m.facts.articles}</span></li>
+        <li><span class="proof-value">DE · EN</span><span class="proof-label">{m.facts.languages}</span></li>
       </ul>
     </div>
   </section>
@@ -324,7 +322,6 @@ const schema = {
   </section>
 
   <section class="contact dark grid-bg" id="contact">
-    <Blueprint />
     <div class="container contact-inner">
       <div class="contact-intro">
         <p class="label mono">{t.contact.label}</p>

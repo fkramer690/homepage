@@ -11,9 +11,9 @@ tags: [Release-Management, DevOps, Salesforce CLI, Winter 27, Apex]
 takeaways:
   - "Ab 28. Oktober 2026 gibt der CLI-Befehl org display keine Access Tokens mehr aus; Pipeline-Skripte, die das Token aus der Ausgabe lesen, brechen dann."
   - "Die Salesforce CLI braucht jetzt Node.js 22 oder neuer, also müssen CI-Runner-Images und Entwicklerrechner aktualisiert werden."
-  - "Winter '27 blendet die Developer Console im Setup aus und macht Apex in der neuen Web Console in Produktions-Orgs schreibgeschützt; das stärkt das Prinzip, nur über eine Pipeline zu deployen."
+  - "Die Developer Console verschwindet aus dem Setup, und in der Web Console ist Apex in Produktion nur lesbar. Änderungen laufen damit über die Pipeline."
   - "Die Apex-Heap-Limits steigen automatisch von 6 auf 10 MB für synchronen und von 12 auf 25 MB für asynchronen Code."
-  - "Die API-Abschaltungen haben begonnen: SOAP login() braucht ab 1. Dezember 2026 eine neue Berechtigung, und die API-Versionen 31.0 bis 40.0 bekommen ab Summer '27 keine Updates mehr."
+  - "SOAP login() braucht ab 1. Dezember 2026 eine neue Berechtigung, und die API-Versionen 31.0 bis 40.0 bekommen ab Summer '27 keine Updates mehr."
 faq:
   - q: "Was ändert sich in der Salesforce CLI mit Winter '27?"
     a: "Der Befehl org display gibt keine Secrets wie das Access Token mehr aus, und die Übergangslösung endet am 28. Oktober 2026. Außerdem braucht die CLI Node.js 22 oder neuer."
@@ -47,11 +47,11 @@ Was zu tun ist:
 
 **Die CLI braucht Node.js 22 oder neuer.** CI-Runner nutzen oft fest eingestellte Docker-Images oder vorinstallierte Node-Versionen. Hat ein Runner noch eine ältere Node-Version, schlägt die Installation oder das Update der CLI fehl. Prüfen Sie die Basis-Images Ihrer Pipeline, die Setup-Schritte gehosteter Runner und die Rechner Ihrer Entwickler. Tools, die auf der Salesforce CLI aufbauen, wie [sfdx-hardis](../sfdx-hardis-einfuehrung-salesforce-devops/), folgen derselben Anforderung.
 
-## Warum ist die Änderung an der Developer Console wichtig?
+## Die Developer Console verschwindet aus dem Setup
 
 Mit Winter '27 erscheint die Developer Console standardmäßig nicht mehr im Setup-Menü. Ihr Nachfolger ist die Web Console, die allgemein verfügbar ist. In Produktions-Orgs ist Apex in der Web Console nur lesbar.
 
-Für gut geführte Programme ist das eine gute Nachricht. Code direkt in der Produktion zu ändern oder Ad-hoc-Änderungen dort auszuführen, war schon immer ein Risiko: kein Review, keine Historie, kein Weg zurück. Die neue Voreinstellung schiebt Teams dorthin, wie es ohnehin laufen sollte: jede Änderung im Repository, geprüft in einem Pull Request und deployt über die Pipeline. Warum das wichtig ist, erkläre ich in [warum Pull-Request-Reviews in Großprojekten Pflicht sind](../warum-pull-request-reviews-pflicht-sind/).
+Für gut geführte Programme ändert sich damit wenig. Code direkt in der Produktion zu ändern oder Ad-hoc-Änderungen dort auszuführen, war schon immer ein Risiko: kein Review, keine Historie, kein Weg zurück. Die neue Voreinstellung schiebt Teams dorthin, wie es ohnehin laufen sollte: jede Änderung im Repository, geprüft in einem Pull Request und deployt über die Pipeline. Warum das wichtig ist, erkläre ich in [warum Pull-Request-Reviews in Großprojekten Pflicht sind](../warum-pull-request-reviews-pflicht-sind/).
 
 Manche Teams nutzen die Developer Console noch für schnelle Abfragen, Log-Analysen oder anonymes Apex in der Produktion. Für diese Gewohnheiten braucht es jetzt einen Ersatz. Legen Sie fest, welche Aufgaben in der Produktion erlaubt sind, wer sie ausführen darf und wie sie dokumentiert werden.
 
@@ -79,7 +79,7 @@ Summer '28 | SOAP-, REST- und Bulk-API in den Versionen 31.0 bis 40.0 fallen aus
 
 Zusammen mit dem Ende des Username-Password Flow ist das echte Arbeit für Integrationsteams. Die Bestandsaufnahme und Umstellung beschreibe ich in [Salesforce: Passwort-Integrationen enden 2027](../salesforce-passwort-integrationen-2027/).
 
-## Was sollten Release Manager außerdem wissen?
+## Was Release Manager außerdem wissen sollten
 
 Drei kleinere Punkte mit Auswirkung auf die Governance:
 
@@ -87,9 +87,9 @@ Drei kleinere Punkte mit Auswirkung auf die Governance:
 - **Umleitung von Gemini-Modellen.** Anfragen an Gemini 2.5 Pro, Flash und Flash-Lite werden seit dem 20. Oktober 2026 auf neuere Gemini-Modelle umgeleitet. Verlassen sich Prompt Templates oder Agenten auf ein bestimmtes Modell, testen Sie ihre Ergebnisse erneut.
 - **Multi-Agent-Orchestrierung ist allgemein verfügbar**, und Agent Script hat Funktionen und `else if`-Ketten bekommen. Beides macht Agentenlogik mächtiger und ist ein Grund mehr, sie wie Code zu reviewen.
 
-## Wie sieht eine praktische Checkliste für Winter '27 aus?
+## Checkliste für Winter '27, beginnend mit den Token-Skripten
 
-Für ein Release-Team decken diese Schritte das Wesentliche ab:
+Drei Releases pro Jahr bedeuten alle paar Monate eine solche Liste. Eine Pipeline, die jede Änderung durch Validierung und Tests schickt, fängt die meisten dieser Probleme früh ab, und das ist einer der Gründe, [warum DevOps über Salesforce-Großprojekte entscheidet](../warum-devops-salesforce-enterprise-projekte/). Für ein Release-Team decken diese Schritte das Wesentliche ab:
 
 1. Jede Nutzung von `org display`-Tokens in Pipelines vor dem 28. Oktober finden und beheben.
 2. Node.js auf Runnern, Docker-Images und Entwicklerrechnern auf Version 22 bringen.
@@ -98,5 +98,3 @@ Für ein Release-Team decken diese Schritte das Wesentliche ab:
 5. Prüfen, welche Integrationsuser sich per SOAP anmelden, und ihnen die nötige Berechtigung geben oder sie umstellen.
 6. Festlegen, wer Agenten bauen und aktivieren darf, und Agenten-Metadaten versionieren.
 7. Prompt Templates und Agenten erneut testen, die von bestimmten Gemini-Modellen abhingen.
-
-Drei Releases pro Jahr bedeuten alle paar Monate eine solche Liste. Eine Pipeline, die jede Änderung durch Validierung und Tests schickt, fängt die meisten dieser Probleme früh ab, und das ist einer der Gründe, [warum DevOps über Salesforce-Großprojekte entscheidet](../warum-devops-salesforce-enterprise-projekte/).

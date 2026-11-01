@@ -8,11 +8,11 @@ chapter: 3
 short: "MCP und Schnittstellen"
 summary: "Welche MCP-Server und APIs KI-Agenten mit Salesforce verbinden, wer dabei welche Daten liest und was die Zugriffe kosten werden."
 takeaways:
-  - "Der lokale Salesforce DX MCP Server (@salesforce/mcp) erreicht laut Hinweis der Maintainer am 2. November 2026 sein End of Life; Teams sollten ihre Konfigurationen jetzt inventarisieren."
-  - "Hosted MCP Servers sind seit 29. April 2026 für Enterprise Edition und höher GA, standardmäßig aus und führen jeden Aufruf mit den Rechten des angemeldeten Benutzers aus."
-  - "Hosted MCP kennt keine Service Accounts und keine Machine-to-Machine-Flows; nächtliche Hintergrundagenten brauchen die Agent API oder eine klassische Integration."
-  - "Liest ein externes Modell wie Claude Daten über Hosted MCP, finde ich in der Salesforce-Dokumentation keine Zusage, dass der Einstein Trust Layer greift; der Vertrag mit dem KI-Anbieter zählt."
-  - "Agentische MCP- und API-Aufrufe sollen als Headless Platform Interactions Flex Credits kosten; der Satz steht auf der Rate Card vom 31.08.2026 noch als TBA."
+  - "Der lokale Salesforce DX MCP Server (@salesforce/mcp) erreicht am 2. November 2026 sein End of Life. Inventarisieren Sie Ihre Konfigurationen jetzt."
+  - "Hosted MCP Servers sind seit 29. April 2026 ab Enterprise Edition GA, standardmäßig aus und arbeiten mit den Rechten des angemeldeten Benutzers."
+  - "Hosted MCP kennt keine Service Accounts und keine Machine-to-Machine-Flows. Nächtliche Agenten brauchen die Agent API oder eine klassische Integration."
+  - "Ob der Einstein Trust Layer greift, wenn Claude über Hosted MCP Daten liest, sagt die Salesforce-Dokumentation nicht. Es zählt der Vertrag mit dem KI-Anbieter."
+  - "Agentische MCP- und API-Aufrufe sollen als Headless Platform Interactions Flex Credits kosten. Der Satz steht auf der Rate Card noch als TBA."
 articles: [salesforce-dx-mcp-server-end-of-life, mcp-explained-salesforce-it-leads, hosted-mcp-servers-data-access, headless-platform-interactions-budget]
 faq:
   - q: "Was passiert am 2. November 2026 mit dem Salesforce DX MCP Server?"
@@ -24,7 +24,7 @@ faq:
 draft: false
 ---
 
-MCP (Model Context Protocol) ist 2026 der Standardweg, über den KI-Werkzeuge wie Claude, ChatGPT oder Cursor mit Salesforce arbeiten. Für Hersteller zählen drei Punkte. Der lokale Salesforce DX MCP Server erreicht am 2. November 2026 sein End of Life. Die gehosteten MCP-Server von Salesforce sind seit April 2026 GA und handeln immer im Namen eines angemeldeten Benutzers. Und agentische Zugriffe sollen künftig Flex Credits kosten, zu einem Satz, den Salesforce noch nicht veröffentlicht hat. Meine Empfehlung: lesend starten, Rechte pro Person vergeben, den Budgetposten vor dem Rollout klären.
+MCP (Model Context Protocol) ist 2026 der Standardweg, über den KI-Werkzeuge wie Claude, ChatGPT oder Cursor mit Salesforce arbeiten. Der lokale Salesforce DX MCP Server erreicht am 2. November 2026 sein End of Life. Die gehosteten MCP-Server von Salesforce sind seit April 2026 GA und handeln immer im Namen eines angemeldeten Benutzers. Und agentische Zugriffe sollen künftig Flex Credits kosten, zu einem Satz, den Salesforce noch nicht veröffentlicht hat. Meine Empfehlung: lesend starten, Rechte pro Person vergeben, den Budgetposten vor dem Rollout klären.
 
 ## Was ist MCP, und wo sitzt es in einer Salesforce-Architektur?
 
@@ -90,7 +90,7 @@ Die Details stehen in [Salesforce DX MCP Server: Ende am 2. November](../../../b
 
 Salesforce hat die Hosted MCP Servers am [29. April 2026 für jede Org ab Enterprise Edition](https://developer.salesforce.com/blogs/2026/04/salesforce-hosted-mcp-servers-are-now-generally-available) freigegeben. Sie laufen auf Salesforce-Infrastruktur, ein Admin schaltet sie im Setup unter API Catalog frei und legt eine External Client App mit den Scopes `mcp_api` und `refresh_token` an. Die [Server-Referenz](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/servers-reference.html) nennt vier sObject-Server (All, Reads, Mutations, Deletes) sowie Server für Data 360, Tableau Next und Headless 360.
 
-Das Sicherheitsmodell ist streng, und das ist für Hersteller die gute Nachricht. Laut [Security Best Practices](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/security-best-practices.html):
+Das Sicherheitsmodell ist streng, und davon profitieren Hersteller. Laut [Security Best Practices](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/security-best-practices.html):
 
 | Thema | Regel |
 |---|---|
@@ -119,7 +119,7 @@ Die [Übersicht der Hosted MCP Servers](https://developer.salesforce.com/docs/pl
 
 Für die Planung heißt das: Den Preis kennen Sie nicht, die Menge können Sie schätzen. Zählen Sie Benutzer, Fragen pro Tag und Tool-Aufrufe pro Frage, denn ein Agent ruft für eine Antwort oft mehrere Tools auf. Die Rechnung mit Annahmen steht in [MCP-Zugriffe auf Salesforce als Budgetrisiko](../../../blog/mcp-zugriffe-salesforce-budgetrisiko/), die Kostenmodelle insgesamt in [Kapitel 7](../kosten-und-token/).
 
-## Ein typisches Szenario: Servicedaten in Claude bei einem Maschinenbauer
+## Durchgespielt: Servicedaten in Claude bei einem Maschinenbauer
 
 Nehmen wir einen Maschinenbauer mit Service Cloud, SAP S/4 und einem Implementierungspartner, dessen sechs Entwickler mit Claude Code arbeiten. Alle Zahlen sind Annahmen. Die Serviceleitung möchte, dass 25 Mitarbeitende im Innendienst in Claude nach offenen Fällen, installierter Basis und Garantiestatus fragen.
 
@@ -146,5 +146,3 @@ Für die Einrichtung nennt Salesforce weniger als 30 Minuten. Die eigentliche Ar
 | Budget | Wer zahlt die Headless Platform Interactions, Fachbereich oder IT? |
 
 Diese Fragen gehören zu meiner Arbeit an [Salesforce-Schnittstellen](../../../leistungen/salesforce-schnittstellen/). Welche externen Coding-Agenten Ihr Partner dafür einsetzen kann, beschreibt [Kapitel 4](../externe-coding-agenten/), und die Übersicht aller Kapitel finden Sie auf der [Startseite der Masterclass](../).
-
-MCP macht Salesforce für jedes KI-Werkzeug erreichbar; ob das Ihrem Service hilft, entscheiden Rechte, Datenwege und Budget.

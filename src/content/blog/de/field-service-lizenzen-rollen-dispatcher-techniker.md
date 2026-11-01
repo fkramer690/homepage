@@ -10,11 +10,11 @@ categories: [field-service]
 contactBrief: licences
 tags: [Field Service, Lizenzen, Dispatcher, Techniker, Contractor Plus, Außendienst]
 takeaways:
-  - "Dispatcher und Technician kosten je 175 € pro Nutzer und Monat, Field Service Plus 230 €, Contractor Plus 80 € pro Nutzer oder 32 € pro Login (Preisliste Oktober 2026, Enterprise Edition, Jahresvertrag)."
-  - "Dispatcher- und Technician-Lizenzen dürfen nicht für Contact Center oder Case Management genutzt werden. Wer in der Hotline auch disponiert, braucht Field Service Plus."
-  - "Jede Field-Service-Org braucht mindestens eine Service-Cloud-Lizenz, und Techniker und Contractors brauchen mindestens eine Dispatcher-Lizenz, damit die Planung funktioniert."
-  - "Für Techniker von Servicepartnern ist die Nutzerlizenz ab 2,5 Logins im Monat günstiger. Pro Login lohnt sich für Partner, die nur in Spitzen aushelfen."
-  - "Eine Lizenzmatrix nach Rollen, gebaut aus dem, was Menschen wirklich im System tun, gehört vor das erste Angebot in den Business Case."
+  - "Dispatcher und Technician kosten je 175 € pro Nutzer und Monat, Field Service Plus 230 €, Contractor Plus 80 € oder 32 € pro Login (Enterprise, 10/2026)."
+  - "Dispatcher und Technician sind für Contact Center und Case Management nicht erlaubt. Wer in der Hotline auch disponiert, braucht Field Service Plus."
+  - "Jede Field-Service-Org braucht mindestens eine Service-Cloud-Lizenz und für die Planung mindestens eine Dispatcher-Lizenz."
+  - "Für Partnertechniker ist die Nutzerlizenz ab 2,5 Logins im Monat günstiger. Pro Login lohnt sich für Partner, die nur in Spitzen aushelfen."
+  - "Eine Lizenzmatrix nach Rollen, gebaut aus dem, was Menschen im System tun, gehört vor dem ersten Angebot in den Business Case."
 faq:
   - q: "Welche Lizenz braucht ein Disponent in Field Service?"
     a: "Wer nur Einsätze plant und freigibt, braucht die Dispatcher-Lizenz für 175 € pro Nutzer und Monat. Bearbeitet dieselbe Person auch Cases im Contact Center, verlangt die Preisliste Field Service Plus für 230 €."
@@ -43,7 +43,7 @@ Salesforce verkauft das Produkt heute als Field Service and Operations. Die [deu
 
 In der Unlimited Edition kosten Dispatcher und Technician laut Fußnote 330 Dollar, das Plus-Paket 380 Dollar. Ob sich das Paket für 650 € rechnet, ist eine eigene Rechnung, die ich in [Agentforce 1 Field Service: Wann rechnet sich das Paket?](../agentforce-1-field-service-paket-rechnung/) aufmache.
 
-## Welche Regeln im Kleingedruckten ändern die Rechnung?
+## Das Kleingedruckte ändert die Rechnung
 
 Drei Fußnoten der Preisliste sind wichtiger als die Preise selbst.
 
@@ -82,9 +82,9 @@ Die Preisseite schreibt, dass Contractor-Lizenzen auch auf Basis monatlicher Log
 
 Der [Architektur-Leitfaden von Salesforce zu Servicepartnern](https://architect.salesforce.com/docs/architect/fundamentals/guide/field-service-contractor-sharing-patterns.html) beschreibt eine Contractor-Firma als Drittunternehmen, das seine eigenen Leute steuert. Für sie sind diese Lizenzen gedacht, für Ihre Servicepartner, nicht für eigene Mitarbeitende zum kleineren Preis. Wie Partnertechniker eine eigene Ressource und ein eigenes Gebiet bekommen, steht in [Field Service: Servicepartner einbinden](../salesforce-field-service-servicepartner/).
 
-## Ein typisches Szenario: Wie sieht die Lizenzrechnung aus?
+## Rechenbeispiel: Hotline, Disposition, eigene Techniker und zwei Partner
 
-Ein typisches Szenario, als Annahme: Ein Maschinenbauer hat eine Hotline mit 6 Mitarbeitenden, 4 Disponenten, 45 eigene Techniker und zwei Servicepartner. Partner A schickt 5 Techniker, die etwa zehn Tage im Monat für den Maschinenbauer arbeiten. Partner B hat 3 Techniker, die nur in Spitzen aushelfen, jeder etwa zwei Tage im Monat.
+Die Zahlen sind angenommen. Ein Maschinenbauer hat eine Hotline mit 6 Mitarbeitenden, 4 Disponenten, 45 eigene Techniker und zwei Servicepartner. Partner A schickt 5 Techniker, die etwa zehn Tage im Monat für den Maschinenbauer arbeiten. Partner B hat 3 Techniker, die nur in Spitzen aushelfen, jeder etwa zwei Tage im Monat.
 
 | Rolle | Anzahl | Lizenz | Pro Monat |
 |---|---|---|---|
@@ -99,7 +99,7 @@ Das sind 124.044 € im Jahr zum Listenpreis. Mit Nutzerlizenzen würde Partner 
 
 Der Wert der Übung liegt weniger in der Summe als in den Entscheidungen, die sie erzwingt. Wer nimmt Anrufe an, wer disponiert, und wer macht beides? Steht das fest, ergibt sich die Lizenzmatrix fast von selbst.
 
-## Was sollte vor dem Angebot klar sein?
+## Vor dem Angebot klären Sie Rollen, Partner, Edition und Add-ons
 
 - **Wer Case Management macht.** Jede Person, die Cases bearbeitet und auch Techniker plant, braucht Field Service Plus. Das ist zuerst eine Prozessfrage.
 - **Wie Partner arbeiten.** Regelmäßige Partnertechniker mit Nutzerlizenz, gelegentliche pro Login. Die Zählregel vereinbaren.
@@ -109,8 +109,6 @@ Der Wert der Übung liegt weniger in der Summe als in den Entscheidungen, die si
 
 Wie das in den Business Case für Field Service passt, steht in [Teil 1 der Serie](../salesforce-field-service-lohnt-sich/) und in [Kapitel 1 der Masterclass Field Service](../../masterclass/field-service/field-service-lohnt-sich-lizenzen/). Bearbeitet die Serviceorganisation auch Garantieansprüche, lohnt vor dem Kauf ein Blick in das [Manufacturing-Cloud-Kapitel zu Garantie und After-Sales](../../masterclass/manufacturing-cloud/garantie-und-after-sales/), damit dieselben Personen nicht zweimal lizenziert werden.
 
-## Wo starten Sie?
+## Jede Person mit ihrer Arbeit im System auflisten
 
 Listen Sie jede Person der Serviceorganisation mit dem auf, was sie jede Woche im System tut, und ordnen Sie dann die Lizenz nach den Regeln oben zu. Das mache ich im Rahmen von [Make-or-Buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/), bevor die Verhandlung beginnt.
-
-Die Lizenz folgt der Rolle und die Rolle dem Prozess, klären Sie also zuerst, wer Cases bearbeitet und wer disponiert.

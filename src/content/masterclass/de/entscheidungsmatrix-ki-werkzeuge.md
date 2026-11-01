@@ -8,11 +8,10 @@ chapter: 6
 short: "Wann nutze ich was"
 summary: "Welches KI-Werkzeug zu welcher Aufgabe passt, in zwölf Szenarien für Hersteller, von Prototyp über ERP-Agent bis EU-Datenresidenz."
 takeaways:
-  - "Die Grundregel für KI im Salesforce-Projekt lautet: Agenten arbeiten in Sandbox oder Scratch-Org, Daten kommen lesend über Hosted MCP, Releases laufen nur über die Pipeline mit Review."
   - "Welcher Coding-Agent passt, entscheiden meist Verträge, Datenresidenz und vorhandene Werkzeuge, seltener die Modellqualität."
-  - "Agentforce Vibes gibt es laut Salesforce nicht in der Hyperforce EU Operating Zone; Anthropics Claude API verarbeitet direkt nur in den USA oder global, EU-Verarbeitung geht etwa über Amazon Bedrock."
-  - "Für Agenten im Betrieb gilt: Regeln wie Garantieberechtigung oder Kreditlimit gehören in deterministische Logik, das Sprachmodell übernimmt Sprache und Absicht."
-  - "Hat das ERP keine API, bleiben Dokumentenerkennung mit RPA oder der Systems Integration Agent; der RPA-Schritt und der Agent arbeiten beide über die Oberfläche und brauchen Tests und Monitoring."
+  - "Agentforce Vibes gibt es nicht in der Hyperforce EU Operating Zone. Claude mit EU-Verarbeitung bekommen Sie etwa über Amazon Bedrock."
+  - "Regeln wie Garantieberechtigung oder Kreditlimit gehören in deterministische Logik, das Sprachmodell übernimmt Sprache und Absicht."
+  - "Hat das ERP keine API, bleiben Dokumentenerkennung mit RPA oder der Systems Integration Agent. Beide arbeiten über die Oberfläche und brauchen Tests."
 articles: [agentforce-yes-or-no-manufacturers, vibes-claude-code-copilot-comparison, agentforce-sap-order-status, legacy-erp-without-api-agents]
 faq:
   - q: "Welcher Coding-Agent ist der beste für Salesforce?"
@@ -66,7 +65,7 @@ Stand 27. Oktober 2026, gestützt auf die verlinkten Seiten. Preise von Salesfor
 ```hinweis achtung
 Zeile 5 ist für deutsche Hersteller oft die entscheidende, weil sie Zeile 2 ausschließen kann. Ob eine Org in der EU Operating Zone liegt, sollte die IT vor jedem Werkzeugvergleich klären.
 
-Zeile 6 sieht harmlos aus, ist aber der Punkt, an dem ein externes Modell echte Kundendaten liest. Was dabei zu prüfen ist, steht in [Kapitel 3](../mcp-und-schnittstellen/).
+Zeile 6 sieht harmlos aus, ist aber der Punkt, an dem ein externes Modell Kundendaten aus Produktion liest. Was dabei zu prüfen ist, steht in [Kapitel 3](../mcp-und-schnittstellen/).
 ```
 
 ## Sechs Fragen in der richtigen Reihenfolge
@@ -90,7 +89,7 @@ Welche Prüfungen sind deterministisch?
 
 Für Agenten im Betrieb kommt eine siebte Frage vor alle anderen: Lohnt sich der Prozess überhaupt? Volumen, Datenqualität, ERP-Zugriff, Kostenmodell und Edition prüfe ich in [Agentforce für Hersteller: jetzt starten oder warten?](../../../blog/agentforce-ja-oder-nein-hersteller/).
 
-## Ein typisches Szenario: drei Vorhaben bei einem Maschinenbauer
+## Beispiel: drei Vorhaben bei einem Maschinenbauer
 
 Nehmen wir einen Maschinenbauer mit Sales Cloud und Service Cloud, deren Org in der Hyperforce EU Operating Zone liegt. Die Zentrale arbeitet mit SAP S/4, ein zugekauftes Werk noch mit einem älteren ERP ohne Schnittstelle. Die IT nutzt GitHub Enterprise, ein Implementierungspartner stellt sechs Entwickler. Alle Umstände und Zahlen sind Annahmen. Drei Vorhaben liegen auf dem Tisch.
 
@@ -115,5 +114,3 @@ Drei Fragen beantwortet keine Tabelle.
 | Ob Salesforce der richtige Ort ist | Entscheidungen, die SAP schon trifft, gehören nicht in einen Agenten in Salesforce. Ein Flow oder ein ERP-Job ist für Routine ohne Sprache oft günstiger als jeder Agent. |
 
 Wenn Sie diese Entscheidungen für Ihre Org und Ihre Partner sortieren möchten, gehört das zu meiner Arbeit in der [Salesforce-Architektur](../../../leistungen/salesforce-architektur/). Wo Agenten in der Fertigung heute tragen, behandelt [Kapitel 10](../ki-agenten-in-der-fertigung/); alle Kapitel finden Sie in der [Übersicht der Masterclass](../).
-
-Klären Sie zuerst Datenresidenz und Verträge, dann die Aufgabe, und halten Sie die Regeln für alle Werkzeuge gleich.

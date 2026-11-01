@@ -9,10 +9,10 @@ short: "External coding agents"
 summary: "Claude Code, Codex, Copilot and DevOps agents compared: what the tool decides and what contract, data residency and rules decide."
 takeaways:
   - "Claude Code, Codex, Copilot and Cursor can all work with Salesforce, because Salesforce opens its skills and hosted MCP servers to any compatible agent."
-  - "There is no independent benchmark for Apex, LWC or Flow; test candidate agents on 10 to 20 tasks from your own backlog."
-  - "Anthropic's first-party API only offers US or global inference; regional processing for Claude is available through Amazon Bedrock or Google Cloud."
-  - "Anthropic puts Claude Code at about $13 per developer per active day, OpenAI puts Codex at $100 to $200 a month; the seat price is rarely the real bill."
-  - "The rules file, the pipeline and the list of approved tools belong to the client, so that a change of partner or tool does not take the quality rules with it."
+  - "There is no independent benchmark for Apex, LWC or Flow. Test candidate agents on 10 to 20 tasks from your own backlog."
+  - "Anthropic's first-party API only offers US or global inference. Regional processing for Claude is available through Amazon Bedrock or Google Cloud."
+  - "Anthropic puts Claude Code at about $13 per developer per active day, OpenAI puts Codex at $100 to $200 a month. The seat price is rarely the whole bill."
+  - "The rules file, the pipeline and the list of approved tools belong to the client, so a change of partner or tool does not take the quality rules along."
 articles: [vibes-claude-code-copilot-comparison, ai-coding-works-council-gdpr, ai-coding-costs-salesforce-project]
 faq:
   - q: "Which coding agent is best for Salesforce?"
@@ -130,7 +130,7 @@ The DevOps vendors shipped their own agents in 2026. They do not replace the cod
 
 Neither Gearset nor Copado names the underlying model in these sources. For a manufacturer with data protection requirements that is a due diligence question: which model, which region, which retention.
 
-## A typical scenario: choosing tools at a machine builder
+## Walk-through: choosing tools at a machine builder
 
 Assume a machine builder with SAP S/4HANA, Service Cloud and a dealer portal on Experience Cloud. Three internal developers work with a partner who provides five nearshore developers. All numbers are assumptions. The internal developers have Copilot Business through the existing GitHub licence; the partner wants to use Claude Code with its own accounts.
 
@@ -146,5 +146,3 @@ This is how I would approach it:
 | Start with the test suite | 15 tasks from the backlog, both tools, the same gates. The result decides, not individual developers' preferences. |
 
 In my judgement, agreeing with the works council and data protection takes longer than choosing the tool in a setup like this, so plan that first. Steering several partners with different tools is part of my work in [partner governance](../../../services/partner-governance/), and the gates belong in [DevOps and release management](../../../services/devops-release-management/). How Salesforce is shifting its partner model towards agents is the topic of [chapter 5](../aiforce-and-system-integrators/).
-
-Choose the coding agent by contract, data residency and cost, and put the quality into a rules file, review and pipeline that you own.

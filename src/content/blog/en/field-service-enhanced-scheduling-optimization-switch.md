@@ -9,11 +9,11 @@ topic: field-service
 categories: [field-service]
 tags: [Field Service, Enhanced Scheduling, Optimization, Scheduling Console, Dispatching]
 takeaways:
-  - "New Salesforce orgs have Enhanced Scheduling and Optimization switched on for all service territories by default. Existing orgs can switch all territories at once or territory by territory."
-  - "The enhanced engine raises limits that matter in manufacturing: 250 skills per service resource instead of 100, and 50,000 optimized appointments per rolling 24 hours or 500 per scheduling licence, whichever is higher."
-  - "Scheduling recipes are not available with the enhanced engine; Salesforce points to the Fix Schedule Overlaps flow instead. Optimization Insights is replaced by the Optimization Hub."
-  - "Several work rules treat empty fields differently, and an appointment without a territory gets candidates from all territories. Data quality decides how smooth the switch is."
-  - "The new Scheduling Console is only available with Enhanced Scheduling and Optimization, so the engine decision also decides the dispatchers' screen."
+  - "New orgs have Enhanced Scheduling and Optimization on for all service territories. Existing orgs switch all territories at once or one by one."
+  - "The enhanced engine allows 250 instead of 100 skills per resource and 50,000 optimized appointments per 24 hours or 500 per scheduling licence."
+  - "Scheduling recipes go away; Salesforce points to the Fix Schedule Overlaps flow. Optimization Insights becomes the Optimization Hub."
+  - "Several work rules treat empty fields differently, and an appointment without a territory gets candidates from all territories."
+  - "The new Scheduling Console only works with the enhanced engine, so the engine decision also decides the dispatchers' screen."
 faq:
   - q: "What is Enhanced Scheduling and Optimization in Salesforce Field Service?"
     a: "It is the newer scheduling and optimization engine of Field Service. It assigns service appointments to technicians by scheduling policy, like the older engine, but with higher limits, different handling of some work rules and predictive point-to-point travel. New orgs have it on by default."
@@ -36,7 +36,7 @@ The [Summer '23 release notes](https://resources.docs.salesforce.com/244/latest/
 
 So the question is only open for orgs that went live with the older engine. For them nothing changes automatically. The engine keeps running as before until someone decides to switch, and without a deadline that decision tends to get postponed.
 
-## Which limits change with the switch?
+## Higher limits for skills and optimized appointments
 
 The [limits for Enhanced Scheduling and Optimization](https://help.salesforce.com/s/articleView?id=sf.pfs_enhanced_available_limits.htm&language=en_US&type=5) in Salesforce Help list the numbers. These are the ones that matter for a machine or plant builder:
 
@@ -76,13 +76,13 @@ Most of these points have one thing in common: empty fields. An appointment with
 
 One change helps manufacturers directly. Appointments that violate a rule could not be optimized on the older engine. With the enhanced engine, optimization can find an acceptable slot for them or drop them from the schedule.
 
-## Why does the switch also decide the dispatcher console?
+## The new Scheduling Console needs the enhanced engine
 
 Salesforce now has two dispatcher screens: the Classic Dispatch Console with the familiar Gantt, and the new Scheduling Console. According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/scheduling-console-quick-look/didispatch-smarter-with-the-scheduling-console), the Scheduling Console is available only with Enhanced Scheduling and Optimization.
 
 That links two decisions that look separate. An org that stays on the older engine also stays on the Classic Dispatch Console. New console features, such as AI explanations for proposed slots or multiday jobs shown as one connected job in Winter '27, then stay out of reach. Whether dispatchers should move now is covered in [the Field Service Scheduling Console: move dispatchers now?](../field-service-scheduling-console-dispatchers/).
 
-## A typical scenario, as an assumption: one pilot territory first
+## Worked example: one pilot territory first
 
 Assume a machine builder with 45 technicians in five service territories, Field Service live since 2021 on the older engine, four dispatchers and two scheduling recipes for late appointments. All numbers are assumptions to show the method.
 
@@ -99,8 +99,6 @@ Comparison
 
 The configuration for this, the territory setting, scheduling policies and work rules, consists of records rather than metadata. It belongs in the pipeline as described in the DevOps masterclass chapter on [data and configuration](../../masterclass/devops-release-management/data-and-configuration/), otherwise the tested sandbox state and production drift apart.
 
-## Where should you start?
+## List appointments without a territory, work rules and recipes
 
 Start with three lists: appointments without a territory, work rules that read fields which are often empty, and recipes in use. They show how much work the switch is. Then pick the territory with the cleanest data as the pilot. How the engine fits into dispatching as a whole is covered in the masterclass chapter on [scheduling and dispatch](../../masterclass/field-service/field-service-scheduling-dispatch/).
-
-For an org on the older engine, the switch is due as soon as the data is clean, because the new console and the higher limits only come with it.

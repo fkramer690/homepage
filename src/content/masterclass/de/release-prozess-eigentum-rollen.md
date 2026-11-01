@@ -10,8 +10,8 @@ pubDate: 2026-10-28
 short: "Eigentum und Rollen"
 summary: "Wem Repository und Pipeline gehören, welche vier Rollen ein Release braucht, wer was freigibt und wie der Prozess einen Partnerwechsel übersteht."
 takeaways:
-  - "Repository, Pipeline, DevOps-Werkzeug, Sandboxes und Zugangsdaten laufen auf den Auftraggeber; Partner arbeiten darin mit persönlichen Benutzern, deren Zugriff mit dem Auftrag endet."
-  - "Ein Release-Prozess mit mehreren Partnern braucht vier benannte Rollen: Release Manager und Architekt auf Kundenseite, je einen technischen Lead pro Partner und Product Owner im Fachbereich."
+  - "Partner arbeiten mit persönlichen Benutzern in Ihren Werkzeugen und Orgs, und ihr Zugriff endet mit dem Auftrag."
+  - "Vier Rollen werden benannt: Release Manager und Architekt beim Kunden, ein technischer Lead pro Partner und Product Owner im Fachbereich."
   - "Freigaben gehören in eine Matrix und in die Git-Plattform: Branch-Schutz, Pflicht-Reviews und Code Owners setzen durch, was sonst nur im Konzept steht."
   - "Werkzeugwahl, Pull Requests, Standards, Release-Kalender und Ausstiegspflichten stehen in einer Anlage zum Rahmenvertrag, die für jeden Partner gleich ist."
   - "Ein Partnerwechsel kostet wenig, wenn der Prozess dem Kunden gehört: Zugriffe entziehen, Zertifikate erneuern, Org und Repository abgleichen."
@@ -62,7 +62,7 @@ Die Release-Rolle ist die, an der am häufigsten gespart wird. Meine Position da
 In einem Programm, das ich begleitet habe, lief anfangs jeder Pull Request über meinen Schreibtisch. Als der Prozess stabil lief, habe ich ihn an einen internen Kollegen übergeben. Das ist der Weg, den ich empfehle: extern aufbauen, intern übergeben.
 ```
 
-## Wer gibt was frei?
+## Freigaben in einer Matrix und in der Git-Plattform
 
 Eine Freigabematrix beantwortet für jede Art von Änderung zwei Fragen: Wer prüft, und wer entscheidet? So sieht ein Ausgangspunkt aus, den ich mit Ihnen an Ihre Streams anpassen würde:
 
@@ -98,7 +98,7 @@ Für Deployments über die Metadata API braucht ein Benutzer laut [Metadata API 
 
 Prüfen Sie also in Produktion, UAT und Staging, welche Partnerbenutzer eine dieser Berechtigungen tragen. Deployen sollte dort nur der technische Benutzer der Pipeline, wie [Kapitel 5](../pipeline-aufbauen/) beschreibt. Für befristete Rechte, etwa für eine Analyse in Produktion, können Permission-Set-Zuweisungen laut [Salesforce Admins Blog](https://admin.salesforce.com/blog/2021/how-to-set-assignment-expiration-on-permission-sets-and-permission-set-groups) ein Ablaufdatum bekommen, nach dem die Rechte automatisch entfallen.
 
-## Welche Regeln gehören in jeden Partnervertrag?
+## Eine Vertragsanlage, gleich für jeden Partner
 
 Ich bin Architekt, kein Anwalt. Die folgenden Punkte beschreiben, was ich aus technischer Sicht schriftlich sehen möchte. Ihre Rechtsabteilung macht daraus Klauseln. Ich empfehle eine Anlage zum Rahmenvertrag, die für jeden Partner identisch gilt, statt Regeln in jeder Leistungsbeschreibung neu zu verhandeln.
 
@@ -113,12 +113,12 @@ Ich bin Architekt, kein Anwalt. Die folgenden Punkte beschreiben, was ich aus te
 9. **Ausstieg.** Übergabe ohne Arbeit außerhalb des Repositorys, Bestätigung, dass lokale Kopien mit Ihrem Code und Ihren Zugangsdaten gelöscht sind, aktive Mitarbeit an der Übergabe für einen vereinbarten Zeitraum.
 
 ```hinweis tipp
-Ich habe mit Nearshore-Teams in Osteuropa und Indien gearbeitet, und meine Einschätzung ist: Schriftliche Regeln sind mehr wert als jede Abstimmung im Call. Ein Team in einer anderen Zeitzone kann nicht kurz nachfragen, ob ein Setup-Klick in UAT in Ordnung ist. Es braucht die Regel vorher.
+Ich habe mit Nearshore-Teams in Osteuropa und Indien gearbeitet, und meine Einschätzung ist: Schriftliche Regeln helfen mehr als Abstimmungen im Call. Ein Team in einer anderen Zeitzone kann nicht kurz nachfragen, ob ein Setup-Klick in UAT in Ordnung ist. Es braucht die Regel vorher.
 ```
 
 ## Wie übersteht der Release-Prozess einen Partnerwechsel?
 
-Wenn Eigentum, Rollen und Vertragsregeln stehen, ist ein Partnerwechsel ein Vorgang mit Checkliste. Ein typisches Szenario, als Annahme: Ein Hersteller von Verpackungsmaschinen betreibt Service Cloud mit Field Service, ein Händlerportal und eine SAP-Schnittstelle. Drei Partner arbeiten auf der Org. Der Partner für den Service-Stream wird nach einer Ausschreibung durch einen neuen ersetzt, mit vier Wochen Überlappung.
+Wenn Eigentum, Rollen und Vertragsregeln stehen, ist ein Partnerwechsel ein Vorgang mit Checkliste. Angenommen, ein Hersteller von Verpackungsmaschinen betreibt Service Cloud mit Field Service, ein Händlerportal und eine SAP-Schnittstelle. Drei Partner arbeiten auf der Org. Der Partner für den Service-Stream wird nach einer Ausschreibung durch einen neuen ersetzt, mit vier Wochen Überlappung.
 
 ```schritte
 Bestand aufnehmen, bevor der Ausstieg verkündet wird
@@ -135,7 +135,7 @@ Geheimnisse erneuern
 
 Der Release-Kalender läuft in diesem Szenario ohne Pause weiter, denn Pipeline, Historie und Standards gehören dem Hersteller. Der neue Partner arbeitet ab Tag eins nach denselben Regeln wie die beiden anderen, und die Partner bleiben vergleichbar. Dieselbe Situation mit einer Pipeline im Account des alten Partners hätte einen Umzug mitten im Wechsel bedeutet.
 
-## Wo fangen Sie an?
+## Erster Schritt: Werkzeuge mit Vertragsinhaber und Admins auflisten
 
 1. Listen Sie jedes Werkzeug mit Vertragsinhaber, Admins und Partnerbenutzern auf.
 2. Benennen Sie Release Manager und Architekt auf Kundenseite, auch wenn eine Person beides übernimmt.
@@ -144,5 +144,3 @@ Der Release-Kalender läuft in diesem Szenario ohne Pause weiter, denn Pipeline,
 5. Entwerfen Sie mit Ihrer Rechtsabteilung die Anlage für alle Partnerverträge.
 
 Diese Steuerung über alle Partner hinweg ist der Kern meiner Arbeit in der [Partnersteuerung](../../../leistungen/partnersteuerung/). Welche Orgs und Branches die Rollen aus diesem Kapitel bespielen, folgt in [Kapitel 3 zu Umgebungen und Branches](../umgebungen-und-branching/).
-
-Ein Release-Prozess bleibt stabil, wenn er Ihnen gehört, jede Rolle benannt ist und jeder Partner dieselben Regeln unterschrieben hat.

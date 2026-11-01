@@ -15,23 +15,21 @@ situations:
   - "Partnerlieferungen werden ohne technisches Review abgenommen, und Probleme zeigen sich erst in UAT oder Produktion."
   - "Repository, Pipeline oder Backlog liegen bei einem Partner, und Partner lassen sich dadurch schwer vergleichen oder austauschen."
 deliverables:
-  - "Governance- und Release-Rahmen, der für alle Partner und internen Teams gilt"
-  - "Entwicklungs- und Architekturstandards, von Namenskonventionen bis zu Regeln für Automatisierung und Testabdeckung"
-  - "Object Ownership Matrix: welcher Stream für welches Objekt und seine Metadaten verantwortlich ist"
-  - "Pull-Request-Reviews auf Kundenseite, inklusive technischer Prüfung von Partnerlieferungen"
-  - "Center-of-Excellence-Format, um Standards und anstehende Änderungen streamübergreifend abzustimmen"
-  - "Einarbeitung neuer Partner in ein dokumentiertes Setup"
-  - "Übergabe des Prozesses an einen internen Kollegen"
+  - "Ich prüfe jede Partnerlieferung im Pull Request, bevor sie in die nächste Umgebung geht."
+  - "Ich schreibe die Standards mit den Teams auf, aus dem, was in den Reviews immer wieder auffällt."
+  - "Ich kläre Konflikte, wenn zwei Streams dasselbe Objekt ändern wollen."
+  - "Ich leite die Center-of-Excellence-Calls, in denen anstehende Änderungen auf den Tisch kommen."
+  - "Ich arbeite neue Partner in das dokumentierte Setup ein."
 results:
-  - "Schriftliche Standards, denen jeder Partner folgt und die Reviews durchsetzen"
-  - "Klare Verantwortung für Prozesse, Objekte und Metadaten über alle Streams"
-  - "Vergleichbare Partner, weil alle nach denselben Regeln arbeiten"
-  - "Repository, Pipeline und Tools im Besitz des Kunden und nicht eines Partners"
-  - "Ein interner Verantwortlicher, der den Prozess nach der Übergabe führt"
+  - "Einen Governance- und Release-Rahmen, der für alle Partner und internen Teams gilt"
+  - "Entwicklungs- und Architekturstandards, von Namenskonventionen bis zu Regeln für Automatisierung und Testabdeckung"
+  - "Eine Object Ownership Matrix, die jedem Objekt und seinen Metadaten einen verantwortlichen Stream zuordnet"
+  - "Repository, Pipeline und Tools im Besitz Ihres Unternehmens"
+  - "Einen eingearbeiteten internen Kollegen, der den Prozess nach der Übergabe führt"
 phases:
   - title: "Bestandsaufnahme"
     icon: "analyse"
-    text: "Ich schaue mir an, wie die Teams heute tatsächlich bauen: Repository, Deployments, Pull Requests, Verantwortlichkeiten und die wichtigsten Konflikte zwischen Streams."
+    text: "Ich schaue mir an, wie die Teams heute bauen: Repository, Deployments, Pull Requests, Verantwortlichkeiten und die wichtigsten Konflikte zwischen Streams."
   - title: "Rahmen und Standards"
     icon: "design"
     text: "Gemeinsam mit den Teams schreibe ich Standards, die Object Ownership Matrix und die Review-Regeln auf. Die erste Version deckt die meisten Fälle ab, Randfälle folgen."
@@ -60,7 +58,7 @@ ohne: Ohne Verantwortung beim Kunden | Jeder Partner liefert seinen Teil, Konfli
 mit: Mit Architekt auf Kundenseite | Jede Lieferung läuft über Standards und Review, in der Org kommt ein geprüfter Strom an.
 ```
 
-## Wie sieht das in einem echten Programm aus?
+## Über 30 Entwickler, fünf Partner und eine Org
 
 ```kennzahlen
 30+ | Entwickler in acht Streams
@@ -70,12 +68,9 @@ mit: Mit Architekt auf Kundenseite | Jede Lieferung läuft über Standards und R
 quelle: mein größtes Programm als Architekt auf Kundenseite
 ```
 
-Das größte Programm, das ich gesteuert habe, hatte mehr als 30 Entwickler in acht Streams, geliefert von fünf Umsetzungspartnern und internen Teams. Zu Beginn hatte niemand klar festgelegt, wer für welche Prozesse, Objekte und Metadaten im Lead war. Änderungen überschrieben sich, und die technischen Ansätze der Teams lagen weit auseinander.
+Zu Beginn dieses Programms hatte niemand festgelegt, wer für welche Prozesse, Objekte und Metadaten im Lead war. Änderungen überschrieben sich, und die technischen Ansätze der Teams lagen weit auseinander.
 
-Der erste Schritt war einfach und wirksam: Jede Änderung ging über einen Pull Request mit Review, und eine Zeit lang lief jeder einzelne über meinen Schreibtisch. Aus diesen Reviews haben wir Standards aufgeschrieben. Sie deckten die üblichen Themen ab, etwa Namenskonventionen, eine Automatisierung pro Objekt und Kontext und Testabdeckung. Zwei Elemente haben den größten Unterschied gemacht:
-
-- **Eine Object Ownership Matrix**, die festlegte, welcher Stream für welches Objekt verantwortlich war. Bevor ein Team ein fremdes Objekt änderte, musste es sich mit dem Verantwortlichen abstimmen.
-- **Regeln für Konfiguration**, zum Beispiel welche Werte in Custom Metadata Types oder Custom Labels gehören, statt fest im Code zu stehen.
+Als Erstes ging jede Änderung über einen Pull Request mit Review, und eine Zeit lang lief jeder einzelne über meinen Schreibtisch. Aus diesen Reviews haben wir Standards aufgeschrieben: Namenskonventionen, eine Automatisierung pro Objekt und Kontext, Testabdeckung. Den größten Unterschied haben die Object Ownership Matrix und die Regeln für Konfiguration gemacht. Die Matrix legte fest, welcher Stream für welches Objekt verantwortlich war, und bevor ein Team ein fremdes Objekt änderte, stimmte es sich mit dem Verantwortlichen ab. Die Konfigurationsregeln bestimmten, welche Werte in Custom Metadata Types oder Custom Labels gehören, damit sie nicht fest im Code stehen.
 
 ```tabelle matrix
 titel: Object Ownership Matrix, vereinfachtes Beispiel
@@ -88,27 +83,17 @@ Asset | stimmt sich ab | Verantwortlich * | stimmt sich ab
 Work Order | stimmt sich ab | stimmt sich ab | Verantwortlich *
 fazit: Bevor ein Team ein fremdes Objekt ändert, stimmt es sich mit dem Verantwortlichen ab.
 ```
-Bis die Standards stabil waren, hat es etwa drei Monate gedauert. Die erste Version deckte rund 80 Prozent der Fälle ab. In den Wochen danach kamen neue Randfälle hinzu. Wir haben sie in regelmäßigen [Center-of-Excellence-Calls](../../blog/salesforce-center-of-excellence-format/) besprochen, in denen anstehende Änderungen mit genug Vorlauf für alle Streams auf den Tisch kamen. Irgendwann fielen die Randfälle ganz weg, weil Themen besprochen wurden, bevor sie zu Konflikten wurden. Als der Prozess rund lief, habe ich ihn an einen internen Kollegen übergeben, der ihn seitdem verantwortet.
+Nach der ersten Version kamen in den folgenden Wochen neue Randfälle hinzu. Wir haben sie in regelmäßigen [Center-of-Excellence-Calls](../../blog/salesforce-center-of-excellence-format/) besprochen, in denen anstehende Änderungen mit genug Vorlauf für alle Streams auf den Tisch kamen. Irgendwann fielen die Randfälle weg, weil Themen besprochen wurden, bevor sie zu Konflikten wurden. Als der Prozess rund lief, habe ich ihn an einen internen Kollegen übergeben, der ihn seitdem verantwortet.
 
-## Warum gehört die Governance auf die Kundenseite?
+## Regeln und Werkzeuge gehören dem Kunden
 
-Auch ein Partner kann gute Standards schreiben. Entscheidend ist, wem die Regeln und die Werkzeuge gehören. Mehr dazu in [warum Kunden ihre DevOps-Tools selbst besitzen sollten](../../blog/warum-kunden-devops-tools-selbst-besitzen-sollten/).
+Auch ein Partner kann gute Standards schreiben. Legt er die Regeln fest, entscheidet er aber, wie alle anderen bauen, auch seine Wettbewerber. Liegen dazu Repository, Pipeline und Tools wie Jira oder Miro bei ihm, wird jeder Partnerwechsel teuer.
 
-```vergleich
-ohne: Regeln und Tools beim Partner
-- Der Partner entscheidet, wie alle anderen Partner bauen, auch seine Wettbewerber.
-- Repository, Pipeline und Tools wie Jira oder Miro gehören ihm.
-- Partner lassen sich schwer vergleichen oder austauschen.
-mit: Regeln und Tools beim Kunden
-- Standards, Freigaberechte und Tools gehören dem Kunden.
-- Ein neuer Partner wird in ein dokumentiertes Setup eingearbeitet.
-- Ein scheidender Partner gibt nichts weiter ab als seine Benutzer.
-- Angebote lassen sich fair vergleichen, und Gespräche über Qualität bleiben ehrlich.
-```
+Gehören Standards, Freigaberechte und Tools dem Kunden, startet ein neuer Partner mit denselben Regeln, Tools und Rechten wie alle anderen, und ein Partner, der geht, gibt nur seine Benutzer ab. Angebote lassen sich dann fair vergleichen, weil alle unter denselben Bedingungen liefern. Mehr dazu in [warum Kunden ihre DevOps-Tools selbst besitzen sollten](../../blog/warum-kunden-devops-tools-selbst-besitzen-sollten/).
 
 ## Wie passen Reviews hinein, ohne das Programm auszubremsen?
 
-Reviews sind das Werkzeug, das aus schriftlichen Standards tägliche Praxis macht. Sie bremsen nicht, wenn drei Bedingungen erfüllt sind:
+Reviews machen aus schriftlichen Standards tägliche Praxis. Sie bremsen nicht, wenn die Pull Requests klein sind, die Pipeline alles Wiederholbare prüft und jeder weiß, bis wann das Review kommt:
 
 ```stufen
 1 | Kleine Pull Requests | Partner-Teams | Jede Änderung ist klein genug für ein schnelles Review.
@@ -116,4 +101,4 @@ Reviews sind das Werkzeug, das aus schriftlichen Standards tägliche Praxis mach
 3 | Feste Reaktionszeiten | Review beim Kunden | Jeder weiß, bis wann das Review kommt.
 ```
 
-Die Details beschreibe ich in [warum Pull-Request-Reviews in Großprojekten Pflicht sind](../../blog/warum-pull-request-reviews-pflicht-sind/). Partnersteuerung funktioniert am besten zusammen mit einem soliden Release-Prozess, deshalb geht sie meist Hand in Hand mit [DevOps und Release-Management](../devops-und-release-management/).
+Die Details beschreibe ich in [warum Pull-Request-Reviews in Großprojekten Pflicht sind](../../blog/warum-pull-request-reviews-pflicht-sind/). Die Pipeline, auf der diese Prüfungen laufen, baue ich unter [DevOps und Release-Management](../devops-und-release-management/) auf; ohne einen gemeinsamen Release-Prozess hält kein Governance-Rahmen.

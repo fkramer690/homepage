@@ -10,11 +10,10 @@ categories: [devops, ai]
 contactBrief: partner-governance
 tags: [MCP, Community-MCP-Server, Sicherheit, Claude Code, Partnersteuerung, Maschinenbau]
 takeaways:
-  - "Ein Community-MCP-Server ist Fremdcode mit Salesforce-Login und braucht deshalb dieselbe Freigabe wie eine Schnittstelle, nicht die eines Browser-Plugins."
-  - "Vor der Freigabe prüfen Sie sechs Punkte: Identität, Zugangsdaten, Maintainer und gepinnte Version, Werkzeugliste, andere Werkzeuge im selben Client und Ziel-Org."
-  - "Die Vorfälle sind real: Ein gefälschtes postmark-mcp-Paket kopierte ab Version 1.0.16 jede E-Mail an seinen Autor, und mcp-remote hatte eine Lücke mit CVSS 9,6 bei über 437.000 Downloads."
-  - "Arbeitet eine Person mit Claude, ChatGPT oder Cursor auf einer Enterprise Edition, ist Salesforce Hosted MCP der sicherere Weg: Named User, OAuth mit PKCE, standardmäßig aus."
-  - "Nächtliche Jobs und Maschine-zu-Maschine-Zugriffe gehören in eine klassische Integration oder die Agent API, nicht in einen Community-Server mit gespeichertem Passwort."
+  - "Vor der Freigabe prüfen Sie Identität, Zugangsdaten, Maintainer und gepinnte Version, Werkzeugliste, andere Werkzeuge im Client und Ziel-Org."
+  - "Ein gefälschtes postmark-mcp-Paket kopierte ab Version 1.0.16 jede E-Mail an seinen Autor; mcp-remote hatte eine Lücke mit CVSS 9,6."
+  - "Für eine Person mit Claude, ChatGPT oder Cursor auf Enterprise Edition ist Salesforce Hosted MCP sicherer: Named User, OAuth mit PKCE."
+  - "Nächtliche Jobs und Maschine-zu-Maschine-Zugriffe gehören in eine klassische Integration oder die Agent API, nicht in einen Community-Server."
 faq:
   - q: "Sind Community-MCP-Server für Salesforce unsicher?"
     a: "Nicht grundsätzlich, aber niemand prüft sie für Sie. Anthropic schreibt, dass es keinen MCP-Server einem Security-Audit unterzieht oder verwaltet, und die Salesforce-Sicherheitsempfehlungen gelten nur für die gehosteten Server. Identität, Zugangsdaten, Maintainer, Version und Werkzeuge prüft deshalb der Kunde vor der Freigabe."
@@ -46,7 +45,7 @@ Einen veröffentlichten Vorfall mit einem Salesforce-Community-Server habe ich n
 
 Leiser ist das Risiko in den Werkzeugbeschreibungen. Simon Willison beschreibt unter Berufung auf Invariant Labs das [Tool Poisoning](https://simonwillison.net/2025/Apr/9/mcp-prompt-injection/): "malicious instructions are tucked away in the tool descriptions themselves". Er zitiert außerdem Elena Cross: "MCP tools can mutate their own definitions after installation." Ein Server, den Sie im März geprüft haben, kann sich nach einem Update im Mai anders verhalten.
 
-## Was gehört vor die Freigabe?
+## Vor der Freigabe stehen sechs schriftliche Antworten
 
 Ich würde vom Partner oder Entwickler schriftliche Antworten auf sechs Fragen verlangen, bevor jemand den Server installiert.
 
@@ -89,7 +88,7 @@ Hosted MCP hat Grenzen, und genau sie treiben Teams zu Community-Servern:
 
 Keine der beiden Grenzen macht einen Community-Server zur Lösung. Ein nächtlicher Job ist eine Integration mit eigenem Benutzer und Client Credentials oder JWT Flow. Ist Agentforce der Client, beschreibt [Trailhead](https://trailhead.salesforce.com/content/learn/modules/mcp-for-agentforce-quick-look/discover-mcp-for-agentforce), wie Sie Server von Drittanbietern in der Agentforce Registry registrieren, Werkzeuge auswählen und Aufrufe über das Agentforce Gateway begrenzen. Das regelt die Seite des Agenten. Der Server dahinter braucht trotzdem die sechs Prüfpunkte.
 
-## Ein typisches Szenario: drei Anfragen aus dem Partnerteam
+## Beispiel: drei Anfragen aus dem Partnerteam
 
 Nehmen wir einen Maschinenbauer mit Sales Cloud, Service Cloud, Händlerportal und SAP, Enterprise Edition mit Flex Credits, und einen Implementierungspartner mit sechs Entwicklern. Alle Zahlen sind Annahmen.
 
@@ -101,13 +100,11 @@ Nehmen wir einen Maschinenbauer mit Sales Cloud, Service Cloud, Händlerportal u
 
 Alle drei Anliegen werden erfüllt, und kein Community-Server erreicht die Org.
 
-## Wo sollten Sie anfangen?
+## Die MCP-Server bei allen Partnern erfassen
 
 1. **Bestandsaufnahme.** Fragen Sie jeden Partner, welche MCP-Server in seinen Clients für Ihre Orgs eingerichtet sind, mit Versionen. Das Ende des DX MCP Servers ist ein guter Anlass, siehe [das Ende des Salesforce DX MCP Servers](../salesforce-dx-mcp-server-ende/).
 2. **Die Regel aufschreiben.** Standard sind gehostete oder von Salesforce betriebene Server; Community-Server nur nach den sechs Prüfpunkten, in Sandboxes und mit gepinnter Version.
 3. **Durchsetzen, wo es geht.** Lizenzieren Sie Claude Code zentral, sperren [Managed Settings](https://code.claude.com/docs/en/managed-mcp) mit `allowedMcpServers` und `allowManagedMcpServersOnly` jeden Server, der nicht auf Ihrer Liste steht.
 4. **Bei jedem Update neu prüfen.** Eine neue Version ist eine neue Freigabe.
 
-Partner bei solchen Werkzeugen zu steuern gehört zu meiner Arbeit in der [Partnersteuerung](../../leistungen/partnersteuerung/), die Übersicht der Schnittstellen steht in [Kapitel 3 der Masterclass](../../masterclass/ki-salesforce/mcp-und-schnittstellen/).
-
-Einen Community-MCP-Server gebe ich erst frei, wenn sich sein Benutzer, sein Geheimnis, sein Maintainer und seine Version benennen lassen.
+Für die Bestandsaufnahme reicht eine Tabelle mit Partner, Server, Version, Benutzer und Ziel-Org. Partner bei solchen Werkzeugen zu steuern gehört zu meiner Arbeit in der [Partnersteuerung](../../leistungen/partnersteuerung/), die Übersicht der Schnittstellen steht in [Kapitel 3 der Masterclass](../../masterclass/ki-salesforce/mcp-und-schnittstellen/).

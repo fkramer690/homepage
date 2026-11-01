@@ -9,11 +9,10 @@ topic: revenue
 categories: [revenue-cloud]
 tags: [Revenue Cloud, Salesforce Pricing, pricing procedures, decision tables, price waterfall, testing]
 takeaways:
-  - "Revenue Cloud calculates prices with a pricing procedure: an ordered sequence of pricing elements such as list price, volume discount, attribute discount, manual discount and aggregate price."
-  - "Pricing procedures do not read Salesforce objects directly. Decision tables sit in between and must be refreshed after pricing data changes, otherwise quotes calculate with old values."
-  - "A context definition, by default SalesTransactionContext, carries quote, order or asset data into the procedure and the result back to the line."
-  - "The price waterfall shows every step from list price to net price, in the simulation and on the quote line. It explains a price to sales and is the basis for testing."
-  - "A pricing procedure changes prices on every quote. Give it one owner, versions and a fixed set of regression cases that runs before each change goes live."
+  - "A pricing procedure runs pricing elements in a fixed order, such as list price, volume discount, attribute discount and manual discount."
+  - "The procedure reads decision tables, not the objects. Without a refresh after each pricing change, quotes calculate with old values."
+  - "The price waterfall shows every step from list price to net price. It explains a price to sales and is the basis for testing."
+  - "Every pricing procedure needs one owner, versions and a fixed set of regression cases that runs before each change."
 faq:
   - q: "What is a pricing procedure in Revenue Cloud?"
     a: "A pricing procedure is an ordered sequence of pricing elements that turns a list price into a net price. Each element takes its input from the context definition or the previous element, applies its logic and passes the result on."
@@ -60,7 +59,7 @@ The order is business logic. Whether the manual discount comes before or after t
 
 A new procedure starts as an empty version V1, and each element you add becomes a step. Which procedure applies is set as the default pricing procedure in Revenue Settings. After a change you save and activate the version.
 
-## Why do decision tables need a refresh?
+## Refresh decision tables after every pricing change
 
 This step is the easiest to forget in the first weeks. Change a price book entry or a volume tier, and the quote still calculates with the old value until the decision table has been refreshed. Trailhead shows two ways: run Sync Pricing Data in Salesforce Pricing Setup, or refresh single decision tables in Setup, such as Volume Discount Entries or, for contract prices, Contract Pricing Entries and Contract Pricing Volume Tiers.
 
@@ -88,7 +87,7 @@ title: Which Pricing Business API resources do you need?
 
 This matters when the same price should appear in a dealer portal, a B2B store or an agent's answer. The store case is covered in [Advanced Pricing in B2B stores](../advanced-pricing-b2b-store-revenue-cloud/) and in the chapter [prices, cart and checkout](../../masterclass/b2b-commerce/prices-cart-checkout/). An agent should call the pricing API and never work out a price itself, the same rule I describe in [Agent Script: why business rules don't belong in the LLM](../agent-script-deterministic-rules/).
 
-## Who may change a pricing procedure?
+## Every pricing procedure needs one owner
 
 A pricing procedure changes prices on every quote. I treat it like code, even though it is built by clicks:
 
@@ -99,7 +98,7 @@ A pricing procedure changes prices on every quote. I treat it like code, even th
 
 How tests and reviews belong in the release process in general is the subject of the chapter [quality, tests and reviews](../../masterclass/devops-release-management/quality-tests-reviews/) in the DevOps masterclass.
 
-## A typical scenario, as an assumption
+## Worked example: pump manufacturer with dealers and contract prices
 
 A pump manufacturer sells 60 product families through its own sales force and through dealers. List prices come from SAP into the standard price book every night. Dealers get a volume discount, 20 key accounts have contract prices for two years, and a version with a simpler control unit is 8 percent cheaper.
 
@@ -107,8 +106,6 @@ The procedure would contain list price with contract-based pricing, an attribute
 
 Whether SAP or Salesforce should calculate dealer and contract prices at all is a separate decision, covered in [Customer prices: SAP conditions or Salesforce Pricing?](../customer-prices-sap-conditions-or-salesforce-pricing/).
 
-## Where should you start?
+## Write down your pricing logic as steps
 
 Write down your pricing logic as steps before anyone opens the builder: which price is the starting point, which discounts follow in which order, which ones need approval. That list becomes the procedure and the first regression cases at the same time. How pricing fits together with catalog and configurator is explained in the chapter [catalog, configurator, pricing](../../masterclass/revenue-cloud/product-catalog-configurator-pricing/) of the Revenue Cloud masterclass, and approvals in [discount approvals in Revenue Cloud](../revenue-cloud-discount-approvals/).
-
-Pricing procedures make every price explainable, as long as someone owns the logic and tests each change.

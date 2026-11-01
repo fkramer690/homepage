@@ -8,11 +8,10 @@ chapter: 2
 short: "Salesforce tools"
 summary: "Which AI tools Salesforce itself offers for development and administration, what they cost and where their limits are."
 takeaways:
-  - "Salesforce offers its own coding agent, Agentforce Vibes, and the same capabilities as skills, a Claude Code plugin and MCP servers for other agents. The choice of agent stays open."
   - "Agentforce Vibes is not available in the EU Operating Zone. Outside Developer Edition it has required Flex Credits or an unmetered licence since June 2026."
-  - "The unmetered licence caps the premium model at 2,500 requests or 36 million tokens per org every 30 days, not per user. Six developers with 25 requests a day each reach it after eight working days."
-  - "Since July 2026 new Agentforce agents can only be built with Agent Script. As an AiAuthoringBundle they can be versioned in Git, tested and released through the pipeline."
-  - "Code Analyzer and ApexGuru check code without a language model. Salesforce has no rules specific to AI-generated code, so these checks belong in the pipeline as a mandatory step."
+  - "The unmetered licence caps the premium model at 2,500 requests per org every 30 days. Six developers reach that limit after eight working days."
+  - "Since July 2026 new Agentforce agents are built only with Agent Script and, as an AiAuthoringBundle, can be versioned in Git, tested and released."
+  - "Code Analyzer and ApexGuru check code without a language model. Salesforce has no rules for AI code, so these checks are a mandatory pipeline step."
 articles: [vibes-claude-code-copilot-comparison, testing-agentforce-agents, ai-rules-file-salesforce-repo, agent-script-deterministic-rules]
 faq:
   - q: "Is Agentforce Vibes free?"
@@ -138,7 +137,7 @@ Admin AI changes the same org, just through the UI instead of code.
 
 Admin AI therefore draws on three currencies: Einstein Requests, Data 360 credits and Flex Credits. That belongs in licence planning. My recommendation: use the Setup agent and Einstein for Flow in sandboxes only, and move the results through the pipeline like any other metadata change. An agent that changes sharing settings in production only makes the old problem of direct changes faster.
 
-## A typical scenario: choosing tools at a machine builder
+## Example: choosing tools at a machine builder
 
 Assume a machine builder with Sales Cloud, Service Cloud, a dealer portal and SAP. An implementation partner works with six developers, and a first Agentforce agent for dealer order status enquiries is planned. All numbers are assumptions to show the method.
 
@@ -166,5 +165,3 @@ In this scenario the question of which agent is answered quickly. The time goes 
 6. **Keep admin AI in sandboxes.**
 
 On its [product page](https://www.salesforce.com/agentforce/developers/vibe-coding/) Salesforce says teams can "innovate up to 95% faster" with Vibes. The page cites no study. Measure the effect in your own programme, as described in [chapter 9](../teamwork-and-delivery/), and look next at [chapter 3](../mcp-and-interfaces/) for the interfaces these tools use to reach your org.
-
-Choose the coding agent by org location and licence, and put quality into Agent Script, tests and a pipeline that you own.

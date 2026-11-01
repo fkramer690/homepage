@@ -10,9 +10,8 @@ categories: [field-service]
 series: { id: field-service, part: 3 }
 tags: [Field Service, Außendienst, Terminplanung, Disposition, Fertigung]
 takeaways:
-  - "Wie viel Terminplanung in Salesforce Field Service automatisch laufen sollte, hängt vor allem davon ab, wie viel Vertrauen das Unternehmen in die Technik hat."
-  - "Ein guter Einstieg: Die Automatik plant Termine bis zum Status Scheduled, ein Disponent prüft den Plan und gibt jeden Termin mit dem Status Dispatched an den Techniker frei."
-  - "Die Planungsengine entscheidet nach einer Scheduling Policy aus Work Rules, die Techniker ausschließen, und gewichteten Service Objectives, die die übrigen bewerten."
+  - "Zum Einstieg plant die Automatik bis zum Status Scheduled. Ein Disponent prüft den Plan und gibt jeden Termin mit Dispatched an den Techniker frei."
+  - "Die Engine entscheidet nach einer Scheduling Policy: Work Rules schließen Techniker aus, gewichtete Service Objectives bewerten die übrigen."
   - "Der Disponent ergänzt, was nicht in den Daten steht, etwa einen Kunden, der die Maschine für die Wartung erst abschalten muss."
   - "Mehr Automatik lohnt sich, wenn Disponenten die Vorschläge der Engine kaum noch ändern. Dann kann auch der Dispatch für einfache Einsätze automatisch laufen."
 faq:
@@ -52,7 +51,7 @@ Salesforce liefert vier Policies mit. Customer First wägt Kundenwunsch und kurz
 
 Dazu kommt die Optimierung. Laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?id=pfs_optimization.htm&language=en_US&type=5) kann sie den Plan für ein oder mehrere Gebiete über mehrere Tage neu ordnen, etwa jede Nacht. Am Einsatztag fängt eine In-Day-Optimierung kurzfristige Änderungen auf, und für einzelne Techniker gibt es eine eigene Optimierung, wenn ein Termin ausfällt oder sich verspätet. Ob sich der Umstieg auf die neuere Engine lohnt, steht in [Enhanced Scheduling and Optimization: jetzt umstellen?](../field-service-enhanced-scheduling-umstellen/), das Gesamtbild aus Engine, Konsole und Regeln in [Kapitel 2 der Masterclass Field Service](../../masterclass/field-service/field-service-terminplanung-disposition/).
 
-## Warum prüft ein Disponent vor dem Dispatch?
+## Der Disponent ergänzt, was nicht in den Daten steht
 
 Die Engine kennt nur, was in den Daten steht. Ein erfahrener Disponent weiß mehr. Er weiß, dass ein Kunde die Maschine für die Wartung erst abschalten muss und das nur an bestimmten Tagen geht. Er weiß, dass ein Ersatzteil zwar im Lager gebucht, aber noch nicht im Fahrzeug ist. Er weiß, welcher Techniker bei einem Kunden schon einmal Ärger hatte, auch wenn das nirgends steht.
 
@@ -83,7 +82,7 @@ Bevorzugte, erforderliche oder ausgeschlossene Techniker lassen sich laut [Sales
 
 So wächst die Automatik mit dem Vertrauen und nicht nach einem Plan, den jemand vor dem Projekt festgelegt hat. Welche Rolle die Ersatzteile dabei spielen, also wer weiß, ob das Teil im Fahrzeug ist, ist Thema des nächsten Teils der Serie.
 
-## Wo sollten Sie anfangen?
+## Mit Freigabe durch den Disponenten starten
 
 ```schritte
 Mit Freigabe starten
@@ -95,5 +94,3 @@ Gründe in Daten übersetzen
 Dispatch automatisieren
   Ändert der Disponent die Vorschläge kaum noch, laufen einfache Arbeitstypen wie planbare Wartungen ohne ihn.
 ```
-
-Die Liste aus dem zweiten Schritt ist die Grundlage für jede weitere Automatisierung und zeigt, welche Daten noch fehlen.

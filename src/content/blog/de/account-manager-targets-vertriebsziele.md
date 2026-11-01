@@ -9,11 +9,10 @@ topic: data
 categories: [manufacturing-cloud]
 tags: [Manufacturing Cloud, Account Manager Targets, Vertriebsziele, Absatzprognose, CRM Analytics]
 takeaways:
-  - "Account Manager Targets legen Jahresziele auf Umsatz, Stückzahl oder eine eigene Kennzahl fest und verteilen sie über die Teamhierarchie auf Kunden, Produkte und Monate."
-  - "Änderungen laufen nicht von selbst nach unten. Der Manager gibt sie weiter, oder ein Flow ruft die Aktion Update Account Manager Target Values auf, die Zuordnungen aus Wert und Prozentsatz des Elternziels neu rechnet."
-  - "Verlässt jemand das Team oder ändert sich die Managerhierarchie, werden Zuordnungen ungültig und müssen neu zugewiesen, verschoben, umgehängt oder gelöscht werden."
-  - "Ziele ergeben neben Prognose und Ist nur Sinn, wenn alle drei dieselben Kunden, Produkte und Zeiträume nutzen. Sonst vergleicht das Review drei Zahlen, die nicht zusammenpassen."
-  - "Provisionsberechnung gehört nicht zur Funktion. Salesforce verkauft sie separat als Spiff, viele Hersteller rechnen sie in der Lohnabrechnung oder einem eigenen Werkzeug."
+  - "Änderungen laufen nicht von selbst nach unten. Der Manager gibt sie weiter, oder ein Flow ruft Update Account Manager Target Values auf."
+  - "Verlässt jemand das Team oder ändert sich die Managerhierarchie, werden Zuordnungen ungültig und müssen neu verteilt werden."
+  - "Ziel, Prognose und Ist passen nur zusammen, wenn alle drei dieselben Kunden, Produkte und Zeiträume nutzen."
+  - "Provisionen rechnet die Funktion nicht. Salesforce verkauft dafür Spiff, viele Hersteller nutzen die Lohnabrechnung."
 faq:
   - q: "Was sind Account Manager Targets in der Manufacturing Cloud?"
     a: "Eine Funktion der Manufacturing Cloud für Jahresziele im Vertrieb. Manager legen ein Ziel auf Umsatz, Stückzahl oder eine eigene Kennzahl an, verteilen es auf ihre direkten Mitarbeitenden, und diese verteilen es weiter auf Kunden, Produkte und Monate."
@@ -42,7 +41,7 @@ Die Bausteine laut Trailhead-Modul:
 
 Im Setup hat die Funktion einen eigenen Schalter, und Nutzer brauchen das Permission Set Manufacturing Account Manager Targets. In den Metadaten heißt der Schalter `enableIndustriesMfgTargets`, laut [Referenz zu IndustriesManufacturingSettings](https://developer.salesforce.com/docs/atlas.en-us.automotive_cloud.meta/automotive_cloud/auto_metadata_api_industriesmanufacturingsettings.htm) seit API-Version 49.0.
 
-## Wie kommt das Ziel von der Vertriebsleitung bis zum Produkt?
+## Das Ziel läuft von der Vertriebsleitung bis zum Produkt
 
 Von oben nach unten. Das Objekt [AcctMgrTarget](https://developer.salesforce.com/docs/atlas.en-us.mfg_api_devguide.meta/mfg_api_devguide/manufacturing_standard_object_account_manager_target.htm) speichert dafür Maßeinheit, Zielwert und den Prozentsatz vom übergeordneten Ziel: Die Vertriebsleitung legt ein Umsatzziel für das Jahr an und gibt den direkten Mitarbeitenden Prozentsätze, zum Beispiel 35, 35 und 30 Prozent. Wer einen Prozentsatz einträgt, bekommt den Wert berechnet, und umgekehrt. Jede Ebene kann einen Teil behalten und den Rest weitergeben.
 
@@ -72,7 +71,7 @@ Ziele werden ungültig. Trailhead nennt als typische Gründe, dass jemand das Un
 
 Bei einem Hersteller, der seinen Vertrieb jeden Januar neu schneidet, ist das echte Arbeit. Ist die Managerhierarchie die Grundlage, muss das Feld Manager an jedem Benutzer stimmen, bevor Ziele verteilt werden. Dieses Feld pflegt oft, wer Benutzer anlegt, und nicht die Vertriebsleitung. Ich würde für die Zielsaison eine verantwortliche Person benennen.
 
-## Welche Daten brauchen Ziele neben Prognose und Ist?
+## Ziel, Prognose und Ist brauchen dieselbe Struktur
 
 Dieselbe Struktur. Salesforce verspricht, die Leistung von der Zielerreichung bis zur Prognose an einem Ort zu verfolgen. Das funktioniert nur, wenn drei Zahlen zusammenpassen:
 
@@ -84,9 +83,9 @@ Liegt das Ziel auf Produkten und die Prognose auf Produktkategorien, vergleicht 
 
 Für den Vergleich beschreibt Trailhead [Dashboards der CRM-Analytics-Vorlage](https://trailhead.salesforce.com/content/learn/modules/crm-analytics-dashboards-for-account-manager-targets/explore-sales-targets) für Ziele, darunter ein Team-Performance-Dashboard für die Datensatzseite des Ziels. Es stellt Ziele den Istdaten des laufenden und des vergangenen Jahres gegenüber und zeigt den nicht verteilten Anteil. Es stammt aus der CRM-Analytics-App für die Manufacturing Cloud, und sein Inhalt hängt von den Objekten ab, die der Admin beim Anlegen der App auswählt. Eine Lizenz nennt die Unit nicht. Die aktuelle [Preisseite](https://www.salesforce.com/manufacturing/cloud/pricing/) führt Tableau Next pro Edition auf und erwähnt CRM Analytics nicht. Fragen Sie Salesforce deshalb, ob Ihre Edition das Dashboard enthält.
 
-## Szenario: 40 Account Manager und ein Datensatzlimit
+## Rechenbeispiel: 40 Account Manager und ein Datensatzlimit
 
-Ein typisches Szenario, als Annahme: Ein Hersteller von Antriebskomponenten hat eine Vertriebsleitung, sechs Regionalleiter und 40 Account Manager. Jeder Account Manager betreut 150 Kunden, und die Ziele sollen pro Kunde, Produkt und Monat für 60 Produkte laufen.
+Die Zahlen sind angenommen: Ein Hersteller von Antriebskomponenten hat eine Vertriebsleitung, sechs Regionalleiter und 40 Account Manager. Jeder Account Manager betreut 150 Kunden, und die Ziele sollen pro Kunde, Produkt und Monat für 60 Produkte laufen.
 
 Verteilte jeder Account Manager jeden Kunden auf jedes Produkt und jeden Monat, wären das 40 × 150 × 60 × 12, also 4,32 Millionen Periodendatensätze. Die Setup-Unit auf Trailhead nennt ein Limit für Datensätze vom Typ Account Manager Periodic Target Distribution, das der Account Executive von Salesforce mit dem Admin festlegt. Das Beispiel dort nutzt 10 Millionen.
 
@@ -104,11 +103,11 @@ Die saubere Trennung: Salesforce hält Ziel und Zielerreichung, das Vergütungss
 
 Auch der Sales-Planning-Agent arbeitet nicht mit Zielen. Welche Subagenten Salesforce dokumentiert, steht in [was der Vertriebsplanungs-Agent wirklich kann](../agentforce-vertriebsplanung-rahmenvertraege/). Wo Ziele neben Sales Agreements und Prognosen stehen, zeigt das Kapitel [Rahmenverträge und Prognosen](../../masterclass/manufacturing-cloud/rahmenvertraege-und-prognosen/) der Masterclass.
 
-## Wo sollten Sie anfangen?
+## Hierarchie und Ebenen mit Vertrieb und Controlling festlegen
 
 1. **Hierarchie.** Managerhierarchie oder Forecast-Hierarchie, und wer das Feld Manager pflegt.
 2. **Ebenen.** Eine Kundenebene, eine Produktebene, ein Periodentyp für Ziel, Prognose und Ist.
 3. **Datensätze.** Erwartete Periodendatensätze gegen das Limit im Angebot.
 4. **Lizenz.** Funktion und Dashboard für Ihre Edition schriftlich bestätigt.
 
-Account Manager Targets ersetzen die Excel-Zielplanung, sobald Ziel, Prognose und Ist dieselbe Struktur haben.
+Die Ebenen lege ich in einem Termin mit Vertriebsleitung und Controlling fest, weil das Controlling die Istwerte liefert. Erst danach rechne ich die Periodendatensätze aus und lasse mir das Limit im Angebot bestätigen.

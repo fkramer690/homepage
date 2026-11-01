@@ -10,10 +10,9 @@ categories: [revenue-cloud, architecture]
 contactBrief: integration
 tags: [Revenue Cloud, Dynamic Revenue Orchestrator, SAP, order management, integration]
 takeaways:
-  - "In Revenue Cloud an activated order reaches Dynamic Revenue Orchestrator through a record-triggered flow, for example when the order status changes to Activated."
-  - "Decomposition turns the commercial products a customer buys into technical products for downstream systems, controlled by product fulfillment decomposition rules."
-  - "An orchestration plan runs steps of five types: auto task, callout, manual task, milestone and pause. The hand-over to SAP belongs in a callout step."
-  - "Failed steps are fallout: DRO retries them a set number of times, then moves them to a queue where an operator fixes the data, retries or completes the step manually."
+  - "Decomposition turns commercial products into technical products for downstream systems, controlled by decomposition rules."
+  - "An orchestration plan has five step types: auto task, callout, manual task, milestone and pause. The hand-over to SAP is a callout."
+  - "Failed steps are fallout. DRO retries them a set number of times, then moves them to a queue where someone fixes them."
   - "If an order goes to SAP in one piece and nothing else happens in Salesforce, a plain integration without DRO is enough and saves an add-on."
 faq:
   - q: "What is Dynamic Revenue Orchestrator in Salesforce?"
@@ -43,7 +42,7 @@ Trailhead names three roles, and I would staff them before the first sprint:
 
 I would put the operator role in order management or inside sales, not in IT. These are the people who know why an order is stuck, and they need the training and the licence.
 
-## How does an order get from the quote to DRO?
+## A record-triggered flow hands the order to DRO
 
 The path starts with an accepted quote that becomes an order. According to [Trailhead on managing orders](https://trailhead.salesforce.com/content/learn/modules/revenue-cloud-design/manage-orders), you create a record-triggered flow that submits the order to DRO when, for example, its status changes to Activated. Two context definitions carry the data: SalesTransactionContext holds the order and its fulfilment line items, FulfillmentAssetContext is used for decomposition and mapped to the asset entities.
 
@@ -53,11 +52,11 @@ Activation is a business event, so decide who may activate an order and what mus
 
 Decomposition separates what the customer sees from what the back office needs. According to [Trailhead](https://trailhead.salesforce.com/content/learn/modules/dynamic-revenue-orchestrator-foundations/discover-order-decomposition), a commercial product is any product a customer can find in the catalog. A technical product also sits in the catalog, is generally hidden from customers and is defined around the needs of downstream systems such as billing, fulfilment or logistics. Product fulfillment decomposition rules map a source, a product or a product classification, to a technical product, including fields and attributes, and can carry conditions.
 
-A typical scenario, as an assumption: a customer buys "packaging line L200 with installation and remote monitoring". Decomposition turns that into three technical products: a sales order item for SAP, an installation job for service and the activation of the monitoring service. Neither the customer nor the sales rep sees these three.
+A worked example: a customer buys "packaging line L200 with installation and remote monitoring". Decomposition turns that into three technical products: a sales order item for SAP, an installation job for service and the activation of the monitoring service. Neither the customer nor the sales rep sees these three.
 
 Trailhead also says decomposition is not needed for simple orders, which can be orchestrated directly. Because rules can point to product classifications, one rule can cover a whole product family instead of every single machine. That keeps the rules maintainable when the catalog has hundreds of variants.
 
-## Which steps does an orchestration plan run?
+## Five step types in the orchestration plan
 
 An orchestration plan splits fulfilment into steps that run in a defined sequence. [Trailhead](https://trailhead.salesforce.com/content/learn/modules/dynamic-revenue-orchestrator-foundations/explore-order-orchestration) names five step types. The examples in the right column are my assumptions for a machine builder:
 
@@ -71,7 +70,7 @@ An orchestration plan splits fulfilment into steps that run in a defined sequenc
 
 Steps are grouped in swimlanes, usually one per fulfilment system, and can depend on each other. A step's scope sets whether it is created once per plan, once per bundle or once per line item. Each step can carry an estimated duration as its SLA and a jeopardy threshold that warns before the SLA is missed: Trailhead's example flags a 24-hour step after 23 hours.
 
-## Where does the hand-over to SAP belong?
+## The hand-over to SAP belongs in a callout
 
 In a callout step, early in the plan. SAP needs the sales order before it can plan production, deliver and invoice, so most other steps depend on it.
 
@@ -118,8 +117,6 @@ On cost, the [Revenue Cloud pricing page](https://www.salesforce.com/eu/sales/re
 What the freemium access includes is not stated on the pricing page. Get it in writing before your design depends on it.
 ```
 
-## Where should you start?
+## Sketch your five most common order types
 
 Take your five most common order types and sketch for each what happens after the signature: which system, which team, in which order. If every sketch ends in "SAP does the rest", start with a plain integration. If you see several systems and dependencies, model one order type in DRO first, including the callout to SAP and the fallout queue, and test the rejections before the happy path. The chapter [quote, contract, order](../../masterclass/revenue-cloud/quote-contract-order/) shows where this step sits in the whole process, and the integration design is part of my work in [Salesforce integration](../../services/salesforce-integration/).
-
-DRO is worth it when one order sets several systems in motion, and for a single hand-over to SAP a plain integration does the job.

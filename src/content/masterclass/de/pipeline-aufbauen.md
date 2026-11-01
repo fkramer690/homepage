@@ -10,11 +10,11 @@ pubDate: 2026-10-28
 short: "Die Pipeline bauen"
 summary: "Welche Bausteine eine Salesforce-Pipeline braucht, vom Pull Request über Testlevel und Delta-Deployments bis zum Login ohne Passwort."
 takeaways:
-  - "Jede Änderung läuft über einen Pull Request, der ein Validierungs-Deployment gegen die Zielorg auslöst; gemergt wird nur mit grüner Validierung und freigegebenem Review."
-  - "Für Produktion ist RunLocalTests der Standard; RunRelevantTests ist laut Salesforce noch Beta und gehört noch nicht in Produktions-Pipelines."
+  - "Gemergt wird ein Pull Request nur, wenn sein Validierungs-Deployment grün ist und ein Reviewer zugestimmt hat."
+  - "Für Produktion ist RunLocalTests der Standard. RunRelevantTests ist laut Salesforce noch Beta und gehört noch nicht in Produktions-Pipelines."
   - "Quick Deploy übernimmt eine erfolgreiche Validierung bis zu zehn Tage lang ohne erneuten Testlauf und verkürzt so das Release-Fenster in Produktion."
-  - "Schritte vor und nach dem Deployment gehören versioniert in die Pipeline, etwa als Deployment Actions in sfdx-hardis, statt in eine Tabelle mit manuellen Aufgaben."
-  - "Die Pipeline meldet sich per JWT Bearer Flow mit Zertifikat an; Zertifikat und Schlüssel liegen beim Kunden und werden beim Partnerwechsel erneuert."
+  - "Schritte vor und nach dem Deployment gehören versioniert in die Pipeline, etwa als Deployment Actions in sfdx-hardis, und nicht in eine Aufgabentabelle."
+  - "Die Pipeline meldet sich per JWT Bearer Flow mit Zertifikat an. Zertifikat und Schlüssel liegen beim Kunden und werden beim Partnerwechsel erneuert."
 articles: [sfdx-hardis-introduction, pull-request-reviews-enterprise, salesforce-password-integrations-2027, sfdx-hardis-training]
 faq:
   - q: "Welches Apex-Testlevel sollte eine Produktions-Pipeline nutzen?"
@@ -145,7 +145,7 @@ Eine Pipeline, deren Ergebnis niemand sieht, ist ein Log. Drei Empfänger brauch
 
 Ein Kanal, der jede erfolgreiche Validierung meldet, wird nach zwei Wochen stummgeschaltet.
 
-## Ein typisches Szenario, als Annahme
+## Durchgespielt: eine User Story mit Feld, Flow und Work Type
 
 Ein Hersteller von Industrieanlagen nutzt Field Service und eine Schnittstelle zu SAP. Alle Details sind Annahmen. Eine User Story ergänzt am Asset ein Feld für das Garantieende, passt einen Flow an und braucht einen neuen Work Type als Referenzdatensatz.
 
@@ -156,5 +156,3 @@ Ein Hersteller von Industrieanlagen nutzt Field Service und eine Schnittstelle z
 - Die Pipeline meldet sich per JWT an, das Service-Team bekommt eine Nachricht in seinem Teams-Kanal.
 
 Nichts davon braucht ein teures Werkzeug, aber jemand muss es einrichten und pflegen. Ich setze sfdx-hardis seit rund zwei Jahren in Kundenprojekten ein; wie es aufgebaut ist, steht in der [Einführung in sfdx-hardis](../../../blog/sfdx-hardis-einfuehrung-salesforce-devops/), und wer die Strecke einmal selbst bauen will, findet im [kostenlosen sfdx-hardis-Training](../../../blog/sfdx-hardis-kostenloses-devops-training/) genau diese Schritte als Labs. Bei der Einrichtung unterstütze ich im Rahmen von [DevOps und Release-Management](../../../leistungen/devops-und-release-management/), alle Kapitel finden Sie auf der [Übersichtsseite](../).
-
-Eine gute Pipeline macht jedes Release gleich langweilig, egal welcher Partner die Änderung gebaut hat.

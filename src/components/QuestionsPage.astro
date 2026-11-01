@@ -8,7 +8,6 @@ import Icon from './Icon.astro';
 import AuthorBox from './AuthorBox.astro';
 import ReadingGrid from './ReadingGrid.astro';
 import Photo from './Photo.astro';
-import Blueprint from './Blueprint.astro';
 import { en } from '../i18n/en';
 import { de } from '../i18n/de';
 import { site, contactHref, contactExternal } from '../site';
@@ -72,7 +71,7 @@ const schema = {
   </Fragment>
   <header class="service-hero dark grid-bg">
     <div class="container">
-      <a class="post-back mono" href={`${home}#approach`}>← {c.back}</a>
+      <a class="post-back" href={`${home}#approach`}>← {c.back}</a>
       <div class="service-head has-photo">
         <div>
           <p class="eyebrow mono">{c.eyebrow}</p>
@@ -84,11 +83,15 @@ const schema = {
       </div>
     </div>
   </header>
+  <section class="proof">
+    <div class="container">
+      <ul class="proof-list cols-4">
+        {stats.map((s) => <li><span class="proof-value">{s.value}</span><span class="proof-label">{s.text}</span></li>)}
+      </ul>
+    </div>
+  </section>
   <article class="section post questions">
     <div class="container">
-      <div class="sp-stats q-stats">
-        {stats.map((s) => <div class="sp-stat"><span class="sp-stat-value">{s.value}</span><span class="sp-stat-text">{s.text}</span></div>)}
-      </div>
 
       <nav class="q-topics" aria-label={c.topics}>
         {c.groups.map((group, gi) => (
@@ -126,7 +129,7 @@ const schema = {
           <Photo photo="11-partnerabstimmung-v02" lang={lang} sizes="(max-width: 760px) 100vw, 614px" />
           <div class="role-quote-text">
             <blockquote><p>{qOpen}{c.quote}{qClose}</p></blockquote>
-            <figcaption class="mono">{site.person} · {c.quoteCaption}</figcaption>
+            <figcaption>{site.person} · {c.quoteCaption}</figcaption>
           </div>
         </figure>
 
@@ -135,7 +138,6 @@ const schema = {
     </div>
   </article>
   <section class="contact dark grid-bg" id="contact">
-    <Blueprint />
     <div class="container contact-inner">
       <div class="contact-intro">
         <p class="label mono">{t.contact.label}</p>

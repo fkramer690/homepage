@@ -13,16 +13,14 @@ situations:
   - "The contact centre uses a telephony platform that is not connected to Service Cloud, so agents copy data between screens."
   - "Integrations still log in with a username and password, and nobody has planned the move to modern authentication."
 deliverables:
-  - "Integration architecture: systems, data flows, leading system per object and integration patterns"
-  - "Decision on middleware or direct integration, depending on size and number of systems"
-  - "Interface specifications that implementation partners can build from"
-  - "Concept for telephony integration with Service Cloud, for example Genesys, Mirage or Microsoft Teams"
-  - "Security review of integration users, permissions and authentication"
-  - "Selection and steering of specialised integration partners"
+  - "I map which systems exist, which data they hold and where existing interfaces cause problems."
+  - "I decide with you whether a middleware is needed or a direct integration is enough."
+  - "I bring in a specialised integration partner if you do not have one, and review its design before anything is built."
+  - "During implementation I check error handling, monitoring and end-to-end tests against the real processes."
 results:
-  - "A clear leading system for every type of data"
-  - "Interfaces that can be changed without breaking other systems"
-  - "Agents who see customer data when the phone rings"
+  - "A system map with the leading system for each type of data"
+  - "Interface specifications that implementation partners can build from"
+  - "A concept for telephony integration with Service Cloud, for example with Genesys, Mirage or Microsoft Teams"
   - "Integration users with minimal permissions and modern authentication"
 phases:
   - title: "System map"
@@ -51,12 +49,7 @@ Salesforce integration means connecting Salesforce to the systems the company al
 
 ## Which system leads for which data?
 
-Most integration problems start with an unclear answer to this question. If both Salesforce and the ERP can change a customer address or a price, the two systems will disagree sooner or later. So the first step is a system map with a leading system for each type of data:
-
-- **Customers and contacts:** often Salesforce for prospects and contacts, the ERP for customers with orders and invoices.
-- **Products and prices:** usually the ERP, with Salesforce reading what sales needs.
-- **Orders and invoices:** created or confirmed in the ERP and visible in Salesforce.
-- **Cases and service history:** Salesforce, with links to orders and installed products from the ERP.
+Most integration problems start with an unclear answer to this question. If both Salesforce and the ERP can change a customer address or a price, the two systems will disagree sooner or later. So the first step is a system map with a leading system for each type of data. A typical split looks like this:
 
 ```tabelle
 title: System map: which system leads for which data
@@ -66,7 +59,7 @@ Products and prices | Reads what sales needs | Usually the leading system *
 Orders and invoices | Visible to sales and service | Created or confirmed here *
 Cases and service history | Cases and service history * | Orders and installed products to link to
 mark: leads
-note: Typical split. The details differ in every company, so the map belongs to the architecture.
+note: Only the leading system changes the data, the other one reads it or links to it.
 ```
 The details differ in every company, which is why this map is part of the [Salesforce architecture](../salesforce-architecture/) and not a decision left to the individual interface.
 
@@ -86,7 +79,7 @@ contra: When it does not pay off
 
 For the build I work with selected partners who have integration experience from large international programmes. That gives the client a partner that fits the size of the task, while the architecture and the specifications stay on the client side.
 
-## How does telephony fit into Service Cloud?
+## When the phone rings, the agent sees the customer in Service Cloud
 
 In most service organisations, phone and email are still the main channels. A CTI integration brings calls into Service Cloud, so agents see the customer, the installed products and the open cases when the phone rings.
 
@@ -102,7 +95,7 @@ Service Cloud --> Open cases
 
 I have worked with the CTI providers Genesys and Mirage, and Microsoft Teams is becoming more relevant as a telephony platform, because many companies already use it internally.
 
-## What about security?
+## Integration users need fewer permissions and a new way to log in
 
 Every integration has a technical user, and those users often have more permissions than they need. Authentication is changing as well: integrations that log in with username and password need to move to modern methods, as described in [Salesforce password integrations end in 2027](../../blog/salesforce-password-integrations-end-2027/). I review integration users, their permissions and their authentication as part of the architecture. The dates for how integrations log in:
 

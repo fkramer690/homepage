@@ -9,11 +9,10 @@ topic: revenue
 categories: [revenue-cloud, architecture]
 tags: [e-invoicing, xrechnung, zugferd, revenue cloud billing, sap, germany]
 takeaways:
-  - "From 1 January 2027, German companies with more than €800,000 turnover in 2026 must issue domestic B2B invoices as e-invoices; from 1 January 2028 the duty applies to all."
-  - "An e-invoice is a structured electronic format under EN 16931, such as XRechnung or ZUGFeRD from version 2.0.1. A PDF sent by email no longer counts as an e-invoice."
-  - "Salesforce documents invoice PDFs for Revenue Cloud Billing; I found no native EN 16931 output in its documentation as of October 2026."
-  - "There are three routes: invoice from SAP, connect Revenue Cloud Billing to an e-invoicing service, or use a partner app."
-  - "Before invoices leave Salesforce, get a written statement from Salesforce on e-invoicing and have your tax advisor confirm the setup."
+  - "The €800,000 threshold applies per company. A group checks each German company separately for 2027 or 2028."
+  - "Accepted are formats under EN 16931, such as XRechnung or ZUGFeRD from version 2.0.1. The transmission channel is free."
+  - "For Revenue Cloud Billing, Salesforce documents invoice PDFs. I found no native EN 16931 output as of October 2026."
+  - "The options are invoicing from SAP, a connected e-invoicing service or a partner app in the org."
 faq:
   - q: "When does e-invoicing become mandatory in Germany?"
     a: "Receiving e-invoices has been mandatory for all domestic businesses since 1 January 2025. Issuing them is mandatory from 1 January 2027 for companies with more than €800,000 turnover in the previous year, and from 1 January 2028 for all domestic B2B invoices."
@@ -42,7 +41,7 @@ An e-invoice is an invoice "issued, transmitted and received in a structured ele
 
 Exceptions include invoices to consumers, small invoices up to €250, tickets and certain tax-exempt transactions. The law does not prescribe the channel: email, an interface or a portal download are all allowed. This is a summary for planning, not tax advice. Your tax advisor should confirm the details, including the letter of October 2026.
 
-## Which invoices of a manufacturer are affected?
+## Almost every domestic invoice of a manufacturer is affected
 
 Every invoice to a business customer resident in Germany: machines, spare parts, service visits, maintenance contracts and subscriptions. For a machine builder with German dealers and end customers, that is most of the domestic volume. Invoices to customers abroad fall outside the German duty, but other countries have their own rules.
 
@@ -58,7 +57,7 @@ None of these sources mentions EN 16931, XRechnung, ZUGFeRD or Peppol, and I fou
 So treat e-invoicing as a gap you have to close, and ask Salesforce for a written statement on what Billing supports for Germany and when.
 ```
 
-## What are the routes?
+## SAP, an e-invoicing service or a partner app
 
 I see three routes, and the right one depends on where your invoices come from today.
 
@@ -74,13 +73,13 @@ I see three routes, and the right one depends on where your invoices come from t
 
 **A partner app** keeps the logic inside the org, but adds another vendor to every Salesforce release. Check which formats and versions it supports, how it validates, how it handles credit memos and who fixes it when a release breaks something.
 
-## A typical scenario, as an assumption
+## Worked example: remote monitoring subscriptions from mid-2027
 
 A machine builder with €60 million turnover invoices machines and spare parts from SAP, which already issues e-invoices. From mid-2027 it plans to invoice remote monitoring subscriptions from Revenue Cloud Billing.
 
 The duty already applies when the first Billing invoice goes out, so there is no transition period for the new process. I would not start Billing invoices with PDFs and fix the format later. Either the subscription invoices run through SAP in the first year, or Billing is connected to the e-invoicing service that SAP's invoices already use. Which of the two depends on how often subscriptions change, as described in [who owns what in quote to cash](../revenue-cloud-sap-quote-to-cash-ownership/).
 
-## Which checklist should the project use?
+## Threshold and invoice source per company
 
 1. **Threshold per legal entity.** Which German companies issue invoices, and is each one subject to the duty from 2027 or 2028?
 2. **Invoice source per revenue type.** Which invoices leave Salesforce, which leave SAP.
@@ -91,6 +90,4 @@ The duty already applies when the first Billing invoice goes out, so there is no
 7. **Archiving.** Clarify where the structured file is archived.
 8. **Statement from Salesforce.** Written, with the date you received it.
 
-The cost side of invoicing from Salesforce is in [Revenue Cloud Billing costs](../revenue-cloud-billing-costs/), and the masterclass chapter [billing and usage-based pricing](../../masterclass/revenue-cloud/billing-and-usage-based-pricing/) puts e-invoicing into the whole quote-to-cash process.
-
-If invoices leave Revenue Cloud Billing from 2027, they need a structured EN 16931 route from day one, so settle it before go-live.
+Points 1 and 2 decide whether Billing has to issue e-invoices at all and from when. You need the other points before go-live, and you can start point 8 today. The cost side of invoicing from Salesforce is in [Revenue Cloud Billing costs](../revenue-cloud-billing-costs/), and the masterclass chapter [billing and usage-based pricing](../../masterclass/revenue-cloud/billing-and-usage-based-pricing/) puts e-invoicing into the whole quote-to-cash process.

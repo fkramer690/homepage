@@ -11,8 +11,8 @@ contactBrief: change-basics
 author: juliane
 tags: [Change-Kurve, Veränderungskurve, Kübler-Ross, Change Management]
 takeaways:
-  - "Die Change-Kurve, auch Veränderungskurve, beschreibt typische emotionale Reaktionen auf eine Veränderung: erst Schock und Ablehnung, dann ein Tief, danach Ausprobieren und Integration."
-  - "Sie geht auf die fünf Trauerphasen zurück, die Elisabeth Kübler-Ross 1969 beschrieben hat. Im deutschsprachigen Raum ist zusätzlich das Sieben-Phasen-Modell nach Richard K. Streich verbreitet."
+  - "Den Tiefpunkt nennt man Tal der Tränen. Dort sinken Stimmung und Produktivität, und dort entscheidet sich, ob Menschen dabeibleiben."
+  - "Die Kurve geht auf die fünf Trauerphasen von Elisabeth Kübler-Ross (1969) zurück. Verbreitet ist auch das Modell nach Richard K. Streich."
   - "Die Kurve hilft Führungskräften, Reaktionen einzuordnen. Einen Plan liefert sie nicht, und nicht jeder Mensch durchläuft die Phasen der Reihe nach."
   - "Für Maßnahmen verbinde ich die Kurve mit dem ADKAR-Modell: Jede Phase deutet auf eine Stufe, an der eine Person gerade Unterstützung braucht."
 faq:
@@ -53,7 +53,7 @@ Es gibt zwei verbreitete Fassungen. Die ursprüngliche nach Kübler-Ross hat fü
 
 Wichtig ist der Unterschied zwischen rationaler und emotionaler Akzeptanz, den Streich herausarbeitet. Ein Team kann im Meeting zustimmen, weil die Argumente überzeugen, und trotzdem am nächsten Tag weiter mit der alten Liste arbeiten. Erst wenn auch emotional akzeptiert ist, dass der alte Weg vorbei ist, beginnt das Lernen.
 
-## Was hilft in welcher Phase?
+## ADKAR zeigt, was in welcher Phase hilft
 
 Die Kurve beschreibt Reaktionen. Was eine Führungskraft tun kann, sagt sie nicht. Hier hilft das [ADKAR-Modell](../change-management-modelle/), denn Prosci ordnet jeder Phase der Kurve eine Stufe von ADKAR zu. So wird aus einer Beobachtung eine Maßnahme:
 
@@ -65,7 +65,7 @@ Die Kurve beschreibt Reaktionen. Was eine Führungskraft tun kann, sagt sie nich
 | Niedergeschlagenheit | Fähigkeit (Ability) | Üben am echten Fall, Ansprechpersonen im Team, Zeit zum Lernen; Erwartungen an die Produktivität anpassen |
 | Akzeptanz | Verankerung (Reinforcement) | Erfolge sichtbar machen, Nutzung messen, Rückfälle in die alte Arbeitsweise ansprechen |
 
-Zwei Dinge sind mir dabei wichtig. Erstens ist Widerstand in der Phase Ärger normal und ein Zeichen, dass die Veränderung angekommen ist. Wer ihn unterdrückt, schiebt ihn nur nach hinten. Zweitens wird das Tal tiefer und länger, wenn Menschen dort allein gelassen werden. Die meisten Rückfälle in alte Gewohnheiten passieren in dieser Phase.
+Widerstand in der Phase Ärger ist normal und ein Zeichen, dass die Veränderung angekommen ist. Wer ihn unterdrückt, schiebt ihn nur nach hinten. Und das Tal wird tiefer und länger, wenn Menschen dort allein gelassen werden. Die meisten Rückfälle in alte Gewohnheiten passieren in dieser Phase.
 
 ## Wie sieht die Change-Kurve bei einer Software-Einführung aus?
 
@@ -77,7 +77,7 @@ Genau für diese Wochen ist die [Hypercare-Phase nach dem Go-live](../hypercare-
 
 In großen Vorhaben kommt dazu, dass Gruppen und Länder zeitversetzt an verschiedenen Stellen stehen. Bei einem weltweiten Rollout mit Ländern in den USA, Asien und Europa, wie ich ihn für die Salesforce Sales Cloud begleitet habe, hilft ein einziger Blick auf „die Stimmung im Projekt“ wenig. Sinnvoll ist eine Einschätzung je Gruppe und Land, am besten verbunden mit der [Stakeholder-Analyse](../stakeholder-analyse/).
 
-## Wo liegen die Grenzen der Change-Kurve?
+## Die Kurve ist eine Gesprächsgrundlage, keine Diagnose
 
 Die Kurve ist beliebt, weil sie einfach ist. Sie hat aber Schwächen, die Prosci in dem oben genannten Beitrag deutlich benennt:
 
@@ -99,10 +99,8 @@ Die Kurve taugt deshalb als Gesprächsgrundlage, nicht als Diagnose. In einem Wo
 Zeigen Sie die Change-Kurve nicht dem betroffenen Team mit dem Hinweis, es sei jetzt eben im Tal. Das wirkt herablassend und erklärt berechtigte Einwände zu einer Phase, die vorbeigeht. Die Kurve ist ein Werkzeug für Führungskräfte, keine Botschaft an die Mitarbeitenden.
 ```
 
-## Was heißt das für Ihre nächste Veränderung?
+## Das Tal einplanen
 
-Planen Sie das Tal ein. Wer weiß, dass Stimmung und Produktivität nach dem Start sinken, kann Ansprechpersonen bereitstellen, Ziele für die ersten Wochen anpassen und dem Management erklären, warum die ersten Zahlen schlechter aussehen. Fragen Sie je Gruppe, wo sie steht, statt für alle dieselbe Maßnahme zu wählen. Und verbinden Sie die Kurve mit einem Modell, das Maßnahmen ableitet; die Grundlagen dazu stehen in [Was ist Change Management?](../was-ist-change-management/).
+Planen Sie das Tal ein. Wer weiß, dass Stimmung und Produktivität nach dem Start sinken, kann Ansprechpersonen bereitstellen, Ziele für die ersten Wochen anpassen und dem Management erklären, warum die ersten Zahlen schlechter aussehen. Fragen Sie je Gruppe, wo sie steht, statt für alle dieselbe Maßnahme zu wählen. Und verbinden Sie die Kurve mit einem Modell, das Maßnahmen ableitet; die Grundlagen dazu stehen in [Was ist Change Management?](../was-ist-change-management/). In Salesforce-Programmen begleite ich das gemeinsam mit Fabian Kramer, siehe [Change Management Beratung für Salesforce](../../leistungen/change-management/).
 
-In Salesforce-Programmen begleite ich das gemeinsam mit Fabian Kramer, siehe [Change Management Beratung für Salesforce](../../leistungen/change-management/).
-
-Prosci und ADKAR sind eingetragene Marken von Prosci, Inc.
+*Prosci und ADKAR sind eingetragene Marken von Prosci, Inc.*

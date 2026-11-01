@@ -10,9 +10,8 @@ pubDate: 2026-10-28
 short: "Händler und Partnerkanal"
 summary: "Händlerboni, Ship and Debit, Partnerportal und Händlerbesuche: was Manufacturing Cloud für den Vertrieb über Händler bietet."
 takeaways:
-  - "Für den Händlerkanal gibt es rund um Manufacturing Cloud Rebate Management, ein Partnerportal und Partner Visit Management; Ship and Debit und Preisschutz kommen mit Channel Revenue Management als Add-on."
-  - "Channel Revenue Management for Manufacturing steht mit 30.000 Dollar pro Org und Jahr in der Add-on-Liste; Partnerzugang wird laut Salesforce zusätzlich gekauft."
-  - "Händler, die Boni sehen, Ansprüche einreichen oder Sales Agreements nutzen, brauchen Partner Community for Manufacturing: 20 Dollar pro Login oder 50 Dollar pro Mitglied und Monat."
+  - "Channel Revenue Management for Manufacturing kostet laut Add-on-Liste 30.000 Dollar pro Org und Jahr. Partnerzugang kommt laut Salesforce dazu."
+  - "Händler, die Boni sehen oder Ansprüche einreichen, brauchen Partner Community for Manufacturing: 20 Dollar pro Login oder 50 Dollar pro Mitglied und Monat."
   - "Partner Visit Management, Partner Lead Management und Partner Performance Management haben eigene Schalter seit API-Version 56.0 und sind standardmäßig aus."
   - "Salesforce rechnet und gibt frei, das ERP zahlt aus. Bestellen mit Katalog, Warenkorb und Checkout gehört zu B2B Commerce, nicht ins Partnerportal."
 articles: [manufacturing-cloud-rebate-management, channel-revenue-ship-and-debit, manufacturing-cloud-customer-portal, manufacturing-cloud-partner-visit-management, partner-sales-assistant-dealer-quotes, distributor-replenishment-agent]
@@ -48,7 +47,7 @@ Ob sich Manufacturing Cloud insgesamt rechnet, behandelt [Kapitel 1](../einordnu
 
 Rebate Management verwaltet Bonusprogramme: Programm, Teilnehmer, Bonusarten mit Staffeln, Auszahlungszeiträume und die Freigabe der Beträge. Gerechnet wird mit der Data Processing Engine auf Basis von Transaktionen im Objekt Transaction Journal. Die Details, auch die drei Wege, auf denen Umsätze in dieses Objekt kommen, stehen in [Rebate Management: Händlerboni statt Excel](../../../blog/rebate-management-haendlerboni/).
 
-Für die Entscheidung zählen drei Punkte:
+Für die Entscheidung zählt Folgendes:
 
 - **Die Umsätze kommen fast immer aus dem ERP.** Rechnungen entstehen dort, also liefert eine Schnittstelle sie als Transaktionen. Ohne diese Schnittstelle rechnet Rebate Management mit dem, was zufällig in Salesforce liegt.
 - **Was als bonusrelevanter Umsatz zählt, entscheidet kein System.** Bestellung, Lieferung oder Rechnung, mit oder ohne Retouren, welche Produktgruppen: Das gehört schriftlich festgelegt, bevor das erste Programm angelegt wird.
@@ -142,7 +141,7 @@ Beim Warenkorb. Das Partnerportal der Manufacturing Cloud zeigt Händlern ihre S
 
 Beides läuft auf Experience Cloud und kann in einer Org zusammenleben. Die Frage ist, wer was baut und wer was bezahlt. Ich würde vor dem Portalprojekt festlegen, welche Händleraktionen ins Portal gehören und welche in den Shop, sonst baut der Portalpartner einen halben Warenkorb nach. Wann sich ein Shop lohnt, behandelt das erste Kapitel der [B2B-Commerce-Masterclass](../../b2b-commerce/b2b-commerce-lohnt-sich-ueberblick/).
 
-## Ein typisches Szenario, als Annahme
+## Rechenbeispiel: Kompaktmaschinen über 80 Händler
 
 Ein Hersteller von Kompaktmaschinen verkauft über 80 Händler in Deutschland, Österreich und der Schweiz, mit jeweils drei Portalbenutzern. Ersatzteile gehen zusätzlich über sechs Distributoren. Alle Zahlen sind Annahmen.
 
@@ -155,5 +154,3 @@ Ein Hersteller von Kompaktmaschinen verkauft über 80 Händler in Deutschland, �
 Die größte Position ist hier das Portal und nicht die Bonuslogik. Händlerbenutzer fehlen in einem ersten Angebot leicht, deshalb würde ich sie vor jeder Lizenzverhandlung zählen, ebenso wie die Rollen der Partner, die das Portal bauen; das gehört zur [Partnersteuerung](../../../leistungen/partnersteuerung/).
 
 Garantieansprüche, die Händler einreichen, und Rückrufaktionen über das Händlernetz behandelt [Kapitel 4](../garantie-und-after-sales/). Alle Kapitel finden Sie auf der [Übersichtsseite](../).
-
-Der Händlerkanal in der Manufacturing Cloud lohnt sich, wenn Sie die Funktionen nach Ihrem Kanalmodell auswählen und Portallizenzen und ERP-Daten vor dem ersten Programm einplanen.

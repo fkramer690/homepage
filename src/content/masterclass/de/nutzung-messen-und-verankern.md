@@ -13,7 +13,7 @@ takeaways:
   - "Ob ein Prozess angekommen ist, zeigen Berichte über angelegte und gepflegte Datensätze pro Gruppe und Land, nicht Logins und nicht die Zahl der Schulungen."
   - "Ich messe auf vier Ebenen: Aktivität, Nutzung des Prozesses, Datenqualität und Ergebnis, jeweils gegen einen Ausgangswert von vor dem Go-live."
   - "Gemessen wird mindestens ein halbes Jahr, monatlich; ob ein Prozess bleibt, zeigt sich erst nach drei bis sechs Monaten."
-  - "Bei Partnern verankern Pipeline, Pull-Request-Review und ein Center-of-Excellence-Call die Standards, dauerhaft halten sie erst mit einem internen Verantwortlichen."
+  - "Bei Partnern verankern Pipeline, Pull-Request-Review und Center-of-Excellence-Call die Standards. Dauerhaft halten sie mit einem internen Verantwortlichen."
 articles: [change-adoption-metrics, change-reinforcement-standards, salesforce-center-of-excellence, development-standards-definition-of-done, field-service-kpis-after-go-live]
 faq:
   - q: "Welche Zahlen zeigen, ob Salesforce genutzt wird?"
@@ -33,7 +33,7 @@ Die ersten Wochen nach dem Go-live sind verzerrt. Die Aufmerksamkeit ist hoch, K
 
 Viele Programme berichten nach dem Go-live, wie viele Personen geschult wurden. Die Zahl sagt, dass das Projekt seine Arbeit gemacht hat. Ob jemand anders arbeitet, sagt sie nicht.
 
-## Welche Zahlen zeigen, ob ein Prozess angekommen ist?
+## Vier Ebenen, gemessen gegen den Ausgangswert vor dem Go-live
 
 Salesforce hilft beim Messen, weil fast alles, was ein Nutzer tut, einen Datensatz mit Zeitstempel und Besitzer hinterlässt. Ich messe auf vier Ebenen:
 
@@ -64,7 +64,7 @@ Keines dieser Zeichen ist ein Beweis. Es ist ein Grund, mit dem Team zu sprechen
 
 Der Lenkungsausschuss braucht zwei oder drei Zahlen pro Prozess auf den Ebenen Nutzung und Ergebnis, mit dem Verlauf seit dem Go-live. Der Sponsor eines Landes oder Bereichs braucht dieselben Zahlen für seine Teams. Wenn er im Monatsbericht danach fragt, ist das selbst schon Reinforcement. Key User und Teamleitungen brauchen die Detailsicht, aber für Gespräche und nicht für Ranglisten. Wer Einzelpersonen öffentlich vergleicht, bekommt gepflegte Zahlen statt gepflegter Daten, und in Deutschland gehört eine solche Auswertung vorher mit dem Betriebsrat geklärt, wie in [Kapitel 2](../sponsor-und-kommunikation/) beschrieben. Bei einem weltweiten Rollout messen Sie pro Land, weil jedes Land einen eigenen Verlauf hat.
 
-## Wie verankern Sie Standards bei Partnern?
+## Bei Partnern verankern Pipeline, Review und Center-of-Excellence-Call die Standards
 
 Change Management betrifft auch Entwicklerteams und Umsetzungspartner. Neue Standards für Entwicklung und Release verwässern nach einigen Monaten, wenn neue Entwickler dazukommen, der Termindruck steigt und die Aufmerksamkeit nachlässt. Dann fehlt nicht das Wissen, sondern die Verankerung.
 
@@ -82,7 +82,7 @@ Jeder Hebel deckt einen anderen Teil ab:
 
 Ausnahmen unter Termindruck wird es geben. Sie brauchen im Pull Request eine Begründung und ein Ticket für die Korrektur. Alle Hebel im Detail beschreibe ich in [Reinforcement: Standards bei Partnern verankern](../../../blog/standards-partner-verankern-reinforcement/).
 
-## Woran erkennen Sie, dass die Veränderung bleibt?
+## Die Veränderung bleibt, wenn sie ohne ihre Einführer hält
 
 Bei Fachbereichen bleiben die Zahlen auf der Ebene des Prozesses nach sechs Monaten stabil, und neue Kollegen lernen den Prozess von Key Usern statt aus alten Listen. Bei Partnern merken Reviewer seltener dieselben Punkte an, neue Randfälle kommen vor dem Bau in den Call, und neue Entwickler halten die Regeln ein, ohne dass jemand sie einzeln erklärt. In beiden Fällen gilt: Die Veränderung ist verankert, wenn sie ohne die Person hält, die sie eingeführt hat. Planen Sie deshalb von Anfang an, wer auf Kundenseite übernimmt. Wie ich Sie dabei begleite, steht auf der Seite [Change Management für Salesforce-Programme](../../../leistungen/change-management/).
 

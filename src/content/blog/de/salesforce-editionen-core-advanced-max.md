@@ -10,11 +10,11 @@ categories: [architecture, ai]
 contactBrief: licences
 tags: [Lizenzen, Editionen, Flex Credits, Agentforce, Make-or-buy, Maschinenbau]
 takeaways:
-  - "Seit dem 3. September 2026 verkauft Salesforce Sales und Service Cloud als Core, Advanced und Max zu 195 €, 395 € und 550 € pro Nutzer und Monat; für Bestandskunden bleiben die Preise bisheriger Editionen unverändert."
-  - "Die Preisseiten nennen die enthaltenen Flex Credits pro Org und Jahr: 500.000 in Core, 1 Mio. in Advanced, 2,75 Mio. in Max, zum Listenpreis 2.500 €, 5.000 € und 13.750 € wert."
-  - "Ein Serviceagent für 1.500 Händleranfragen im Monat mit je drei Aktionen verbraucht 1,08 Mio. Credits im Jahr, mehr als der Advanced-Pool, noch ohne Prompts, Tests und Data 360."
-  - "Der Wechsel von 200 Nutzern von Core auf Advanced kostet zum Listenpreis 480.000 € im Jahr für 500.000 Credits im Wert von 2.500 €. Wählen Sie die Edition nach Funktionen."
-  - "Die neuen Preise für die Industries-Editionen, wichtig für die Manufacturing Cloud, waren am 27. Oktober 2026 noch nicht veröffentlicht, und Field Service hat weiter ein eigenes Lizenzmodell."
+  - "Core, Advanced und Max kosten 195 €, 395 € und 550 € pro Nutzer und Monat, für Bestandskunden bleiben die Preise der bisherigen Editionen."
+  - "Die Pools umfassen 500.000, 1 Mio. und 2,75 Mio. Flex Credits pro Org und Jahr, zum Listenpreis 2.500 €, 5.000 € und 13.750 € wert."
+  - "Ein Serviceagent für 1.500 Händleranfragen im Monat mit je drei Aktionen braucht 1,08 Mio. Credits im Jahr, mehr als der Advanced-Pool."
+  - "200 Nutzer von Core auf Advanced kosten 480.000 € im Jahr mehr für Credits im Wert von 2.500 €, wählen Sie die Edition deshalb nach Funktionen."
+  - "Die Preise der Industries-Editionen für die Manufacturing Cloud waren am 27. Oktober 2026 noch offen, Field Service hat ein eigenes Lizenzmodell."
 faq:
   - q: "Müssen Bestandskunden auf Core, Advanced oder Max wechseln?"
     a: "Nein. Laut Salesforce bleiben die Preise für Bestandskunden auf bisherigen Editionen unverändert. Ob Enterprise und Unlimited bei jeder Verlängerung weiter angeboten werden, ist nicht bestätigt; fragen Sie das vor den Verlängerungsgesprächen."
@@ -49,7 +49,7 @@ Für Bestandskunden schreibt Salesforce: „Existing customer pricing on legacy 
 
 Die Frage nach der Edition betrifft nur Nutzer, die eine volle CRM-Lizenz brauchen. Leser, Freigeber und Händler brauchen oft keine, wie in [braucht jeder eine volle Lizenz](../salesforce-lizenzen-volle-lizenz/) beschrieben. Das würde ich zuerst klären, denn jeder Nutzer auf einer Platform- oder Portallizenz ist einer, für den Sie weder Core noch Max zahlen.
 
-## Wie weit reicht ein Flex-Credit-Pool?
+## Ein Flex-Credit-Pool reicht für 25.000 bis 137.500 Aktionen im Jahr
 
 Laut [Flex Credits Rate Card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) kostet eine Standard- oder Custom-Aktion in Produktion 20 Credits. Damit werden aus den Pools Aktionen:
 
@@ -66,7 +66,7 @@ Das sind Obergrenzen, denn die Rate Card rechnet mehr als Aktionen in Flex Credi
 
 Zwei Vertragsdetails zählen. Credits müssen bis zum Ende der Bestellung verbraucht sein und werden nicht übertragen. Und die Preisseiten nennen den Pool pro Org, unabhängig von der Nutzerzahl: So wie sie dastehen, bekommt eine Org mit 30 Nutzern dieselben 500.000 Credits wie eine mit 3.000. Betreiben Sie getrennte Orgs für Vertrieb und Service oder für Regionen, fragen Sie, wie der Pool verteilt wird. Wie Sie den Verbrauch pro Aktion schätzen, steht in [Flex Credits: Agentforce-Kosten pro Aktion](../flex-credits-agentforce-kosten-pro-aktion/).
 
-## Ein typisches Szenario: 200 Nutzer und ein Händleragent
+## Rechenbeispiel: 200 Nutzer und ein Händleragent
 
 Nehmen wir einen Maschinenbauer mit SAP, 120 Nutzern in der Sales Cloud und 80 in der Service Cloud auf Enterprise Edition, Verlängerung im Frühjahr 2027. Alle Zahlen sind Annahmen, die das Vorgehen zeigen sollen. Geplant ist ein Agent, der Händleranfragen zu Auftragsstatus, Lieferterminen und Ersatzteilverfügbarkeit beantwortet.
 
@@ -116,7 +116,7 @@ contra: Was die Credits nicht aufwiegen
 
 Braucht nur eine kleine Gruppe von Power-Usern KI-Funktionen, fragen Sie, ob sich diese Gruppe getrennt lizenzieren lässt, statt alle 200 Nutzer anzuheben. Genau diese Abwägungen gehören zu meiner Arbeit in [Make-or-buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/).
 
-## Was sollten Sie vor der Verlängerung prüfen?
+## Die Nutzerbasis vor der Verlängerung bereinigen
 
 1. **Nutzerbasis bereinigen.** Klären Sie, wer überhaupt eine volle Lizenz braucht, bevor Sie Editionen vergleichen.
 2. **Funktionen pro Nutzergruppe auflisten,** die es nur in Advanced oder Max gibt, und heutige Add-ons, die eine Edition ersetzen würde.
@@ -124,5 +124,3 @@ Braucht nur eine kleine Gruppe von Power-Usern KI-Funktionen, fragen Sie, ob sic
 4. **Drei Antworten schriftlich einholen:** Pool pro Org und Jahr, Verteilung auf mehrere Orgs und was mit ungenutzten Credits zum Ende der Bestellung passiert.
 5. **Monitoring aufsetzen.** Das [Digital Wallet](https://www.salesforce.com/agentforce/digital-wallet/) zeigt den Verbrauch nach Agent, Aktion und Kanal und warnt bei Schwellenwerten; es setzt Data 360 voraus.
 6. **Bei der Manufacturing Cloud** auf die Industries-Preise warten oder sich das Recht zum Wechsel sichern.
-
-Wählen Sie die Edition nach den Funktionen, die Ihre Teams nutzen, und führen Sie Flex Credits als eigene, gemessene Budgetzeile.

@@ -9,11 +9,11 @@ topic: ai
 categories: [ai]
 tags: [Agentforce, Testing Center, KI-Agenten, Quality Gates, DevOps, Maschinenbau]
 takeaways:
-  - "Ein Agentforce-Agent ist produktionsreif, wenn er einen vereinbarten Testsatz mit einer vereinbarten Passrate über mehrere Läufe besteht; Salesforce liefert die Werkzeuge, aber keine Schwelle."
-  - "Jeder Agentforce-Testfall kann Subagent, ausgeführte Aktionen und Ergebnis prüfen; das Ergebnis bewertet ein Sprachmodell als Prüfer, harte Geschäftsregeln brauchen exakte Prüfungen."
-  - "Agententests laufen in Sandboxes, verbrauchen Credits und können Daten ändern; eine Aktion kostet dort 16 Flex Credits, drei Läufe mit 60 Fällen à drei Aktionen also rund 43 €."
-  - "Ich empfehle 100 Prozent für harte Regeln wie die Garantieberechtigung und rund 90 Prozent über drei Läufe für die Antwortqualität, vor dem Piloten mit der Fachseite vereinbart."
-  - "Session Traces, Health-Metriken und ein gestufter Rollout müssen ab dem ersten Tag aktiv sein, und jedes fehlgeschlagene Gespräch in Produktion wird ein neuer Testfall."
+  - "Salesforce liefert Testwerkzeuge, aber keine Schwelle. Testsatz und Passrate über mehrere Läufe vereinbaren Sie selbst."
+  - "Ein Testfall prüft Subagent, Aktionen und Ergebnis. Das Ergebnis bewertet ein Sprachmodell, harte Geschäftsregeln brauchen exakte Prüfungen."
+  - "Eine Aktion kostet in der Sandbox 16 Flex Credits, drei Läufe mit 60 Fällen à drei Aktionen also rund 43 €."
+  - "Ich empfehle 100 Prozent für harte Regeln wie die Garantieberechtigung und rund 90 Prozent über drei Läufe für die Antwortqualität."
+  - "Session Traces, Health-Metriken und ein gestufter Rollout laufen ab dem ersten Tag, und jedes fehlgeschlagene Gespräch wird ein neuer Testfall."
 faq:
   - q: "Was ist das Agentforce Testing Center?"
     a: "Das Testing Center ist das Salesforce-Werkzeug, um Agenten vor dem Go-live zu testen. Es erzeugt synthetische Testanfragen, führt sie parallel in einer Sandbox aus und prüft Routing, Aktionen und Antworten. Entwickler nutzen dieselbe Art von Tests über die Befehle sf agent test in der CLI."
@@ -36,7 +36,7 @@ Ein Apex-Test liefert jedes Mal dasselbe Ergebnis: gleiche Eingabe, gleiche Ausg
 
 Die Frage lautet also: Wie oft besteht er, und mit welchen Fehlern können wir leben? Eine holprige Zusammenfassung eines Liefertermins ärgert. Eine falsche Aussage, die Maschine sei noch in der Garantie, kostet eine Gutschrift. Diese Fehler brauchen unterschiedliche Schwellen.
 
-## Welche Werkzeuge bietet Salesforce zum Testen von Agenten?
+## Die Testwerkzeuge von Salesforce
 
 Salesforce hat das [Agentforce Testing Center](https://www.salesforce.com/news/?p=83400) im November 2024 vorgestellt. Es erzeugt Hunderte synthetische Anfragen aus einer Beschreibung in normaler Sprache und führt sie parallel in einer Sandbox aus. Für Teams mit Versionsverwaltung bietet [Agentforce DX](https://developer.salesforce.com/docs/ai/agentforce/guide/agent-dx.html) dasselbe über VS Code, CLI-Befehle und eine Test-API.
 
@@ -68,7 +68,7 @@ Salesforce liefert Bewertungen, aber keine Schwelle, die „bereit“ bedeutet. 
 
 Auch der Prüfer braucht eine Kontrolle. Anthropic empfiehlt, Modell-Bewerter eng an menschlichen Fachleuten zu kalibrieren. Die Serviceexpertin liest also in den ersten Läufen eine Stichprobe der bewerteten Antworten. Weichen Expertin und Prüfer oft voneinander ab, sind die Ergebnisbeschreibungen in den Testfällen zu vage.
 
-## Ein typisches Szenario: ein Ersatzteilagent für Händler
+## Rechenbeispiel: ein Ersatzteilagent für Händler
 
 Nehmen wir einen Maschinenbauer mit SAP, Service Cloud und einem Händlerportal. Der geplante Agent beantwortet Händlerfragen zu Ersatzteilverfügbarkeit und Auftragsstatus. Alle Zahlen sind Annahmen, die das Vorgehen zeigen sollen.
 
@@ -80,7 +80,7 @@ Nehmen wir einen Maschinenbauer mit SAP, Service Cloud und einem Händlerportal.
 
 Die meisten Fehler in so einem Lauf zeigen auf Daten und Schnittstellen. Deshalb stelle ich [Business Value und Datenqualität an den Anfang](../agentforce-business-value-datenqualitaet/).
 
-## Was passiert nach dem Go-live?
+## Nach dem Go-live läuft das Monitoring ab dem ersten Tag
 
 Tests decken die Fragen ab, an die Sie gedacht haben. Händler stellen andere. Deshalb läuft das Monitoring ab dem ersten Tag:
 
@@ -91,9 +91,9 @@ Tests decken die Fragen ab, an die Sie gedacht haben. Händler stellen andere. D
 
 Testen Sie neu, sobald sich etwas unter dem Agenten ändert: ein Subagent, ein Flow, Wissensartikel, ein Salesforce-Release, die SAP-API.
 
-## Wo fangen Sie an, und wem gehören die Tests?
+## Die Tests gehören dem Kunden
 
-Dem Kunden. Der Partner schreibt die Tests und führt sie aus, aber Testsatz, Schwellen und Go-live-Entscheidung gehören dem Unternehmen, das gegenüber seinen Händlern geradesteht. Das ist das Prinzip aus [DevOps in Enterprise-Projekten](../warum-devops-salesforce-enterprise-projekte/): Agententests liegen im selben Repository und laufen in derselben Pipeline, mit JUnit-Ausgabe und einer Schranke, die das Deployment unter der Schwelle stoppt. Das aufzusetzen gehört zu meiner Arbeit in [DevOps und Release-Management](../../leistungen/devops-und-release-management/).
+Der Partner schreibt die Tests und führt sie aus, aber Testsatz, Schwellen und Go-live-Entscheidung gehören dem Unternehmen, das gegenüber seinen Händlern geradesteht. Das ist das Prinzip aus [DevOps in Enterprise-Projekten](../warum-devops-salesforce-enterprise-projekte/): Agententests liegen im selben Repository und laufen in derselben Pipeline, mit JUnit-Ausgabe und einer Schranke, die das Deployment unter der Schwelle stoppt. Das aufzusetzen gehört zu meiner Arbeit in [DevOps und Release-Management](../../leistungen/devops-und-release-management/).
 
 ```schritte
 Inakzeptable Fehler benennen
@@ -109,5 +109,3 @@ Sandbox-Credits budgetieren
 Monitoring einschalten
   Und die Rollout-Gruppe festlegen, bevor Sie den Agenten aktivieren.
 ```
-
-Ein Agentforce-Agent ist bereit, wenn er vorab festgelegte Schwellen Lauf für Lauf erreicht und Sie ab dem ersten Tag sehen, was er in Produktion tut.

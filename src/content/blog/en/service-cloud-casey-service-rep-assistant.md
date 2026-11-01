@@ -9,8 +9,8 @@ topic: service
 categories: [ai]
 tags: [service cloud, agentforce, contact center, customer service, manufacturing]
 takeaways:
-  - "Casey is Salesforce's out-of-the-box Agentforce agent for customer service, formerly called Help Agent; it is set up from knowledge articles, PDFs and URLs and can be attached to channels including voice."
-  - "The Service Rep Assistant supports human reps by reading customer sentiment and case context in real time and adjusting an action plan as the conversation develops."
+  - "Casey, formerly Help Agent, is set up from knowledge articles, PDFs and URLs and can be attached to channels including voice."
+  - "The Service Rep Assistant reads customer sentiment and case context in real time and adjusts an action plan as the conversation develops."
   - "When Casey reaches a policy limit, for example for a discount or goodwill, it can route an approval request to a human rep in the console."
   - "Salesforce's native contact center became generally available in more than 30 European countries on 16 October 2026."
   - "For B2B service in manufacturing, the quality of knowledge articles and clear approval rules decide whether Casey helps or creates extra work."
@@ -27,7 +27,7 @@ faq:
 
 Salesforce is reorganising its service offering around two kinds of help: Casey, an AI agent that answers customers directly, and the Service Rep Assistant, which supports human service reps during a case. In October 2026 Salesforce also made its native contact center generally available in Europe. For manufacturers with B2B service, these launches can shorten response times and relieve service teams, but only if the knowledge behind them is reliable and the rules for handing over to people are clear. Here is an overview of the launches and an assessment from the client side.
 
-## What did Salesforce launch in Service Cloud?
+## Ten Service Cloud launches from 13 October 2026
 
 On 13 October 2026 Salesforce summarised [ten Service Cloud launches](https://www.salesforce.com/blog/?p=155993). The most relevant for enterprise service organisations:
 
@@ -59,7 +59,7 @@ Two related functions make Casey more interesting for enterprise service:
 - **Agent approvals.** When Casey reaches a policy limit, for example a discount or a goodwill gesture above a threshold, it can route an approval request to a human rep. The rep approves or rejects it in the console.
 - **Agent Optimizer.** Analyses conversations, ranks contact reasons and can turn existing flows and Apex classes into actions the agent can use.
 
-## How does the Service Rep Assistant differ from Casey?
+## The Service Rep Assistant works next to the human rep
 
 Casey talks to the customer. The Service Rep Assistant works next to the human rep. It follows the conversation, recognises sentiment, keeps track of the case context and suggests the next steps. Salesforce also showed a rebuilt service console that prioritises work by customer value and churn risk, not only by the age of a case.
 
@@ -86,7 +86,7 @@ Service in manufacturing differs from consumer service. Customers are companies,
 
 The contact center launch is relevant for German manufacturers who run their hotline on a separate telephony system today. A native contact center brings calls, cases and customer data together. Whether it fits depends on the existing telephony, the requirements for data storage and the integration with ticketing in other systems.
 
-## What has to be in place before going live?
+## Before go-live, the knowledge has to be right
 
 From an architecture point of view, four things decide whether Casey and the assistant help:
 
@@ -97,9 +97,9 @@ From an architecture point of view, four things decide whether Casey and the ass
 
 These points apply to every AI agent, which is why I argue for putting [business value and data quality first](../agentforce-business-value-data-quality-first/). They also explain why AI features belong in the target architecture and not only in a pilot.
 
-## How should a service organisation start?
+## Begin with the Service Rep Assistant in one team
 
-A pragmatic path:
+Choosing the right Service Cloud building blocks is part of [architecture and partner governance](../../services/salesforce-architecture/). My path:
 
 ```schritte
 Start with the Service Rep Assistant
@@ -113,5 +113,3 @@ Set up approvals
 Measure and expand
   Only when the numbers support it.
 ```
-
-Service Cloud is moving fast, and choosing the right building blocks is part of [architecture and partner governance](../../services/salesforce-architecture/).

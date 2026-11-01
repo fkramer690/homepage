@@ -9,11 +9,11 @@ topic: commerce
 categories: [b2b-commerce, devops]
 tags: [B2B Commerce, Extensions, Apex, SFDX, Release-Management, Partnersteuerung]
 takeaways:
-  - "Commerce Extensions sind Apex-Klassen, die sich an benannten Erweiterungspunkten von Salesforce B2B Commerce einklinken, etwa bei Preisen, Bestand, Steuer, Versand oder Auftragsanlage."
-  - "Domain Extensions können einen ganzen Dienst erweitern oder ersetzen, Endpoint Extensions ändern nur Anfrage oder Antwort eines Connect-API-Endpunkts und können ihn nicht ersetzen."
-  - "Salesforce empfiehlt ausdrücklich, in Domain Extensions super() aufzurufen, damit Ihr Code den Standard ergänzt und nicht nachbaut und spätere Releases weiter ankommen."
-  - "Extensions sind der bevorzugte Weg, Salesforce Commerce anzupassen, ältere Integrationen werden weiter unterstützt, und Zahlungen lassen sich nicht per Extension anpassen."
-  - "Extension-Klassen, ihre Registrierung und ihr Mapping auf den Store gehören in Repository und Pipeline des Kunden, damit jeder Partner sie übernehmen kann."
+  - "Commerce Extensions sind Apex-Klassen an benannten Erweiterungspunkten, etwa für Preise, Bestand, Steuer, Versand oder Auftragsanlage."
+  - "Domain Extensions erweitern oder ersetzen einen ganzen Dienst. Endpoint Extensions ändern nur Anfrage oder Antwort eines Connect-API-Endpunkts."
+  - "Salesforce empfiehlt, in Domain Extensions super() aufzurufen. Dann ergänzt Ihr Code den Standard und spätere Releases kommen weiter an."
+  - "Extensions sind der bevorzugte Weg, Commerce anzupassen. Ältere Integrationen werden weiter unterstützt, Zahlungen lassen sich per Extension nicht anpassen."
+  - "Extension-Klassen, ihre Registrierung und ihr Mapping gehören in Repository und Pipeline des Kunden, damit jeder Partner sie übernehmen kann."
 faq:
   - q: "Was sind Salesforce Commerce Extensions?"
     a: "Apex-Klassen, sogenannte Extension Provider, die Salesforce an benannten Erweiterungspunkten von B2B Commerce ausführt. Sie ändern, wie Preise, Bestand, Steuer, Versand, Checkout oder einzelne Connect-API-Endpunkte arbeiten, ohne den Store zu ersetzen."
@@ -41,7 +41,7 @@ Es gibt zwei Arten:
 - **Domain Extensions** gehören zu einem fachlichen Bereich. Ein Provider kann das Standardverhalten erweitern oder ersetzen, und eine Änderung kann mehrere Endpunkte betreffen. Beispiel: Ein Preis-Provider erweitert `commercestorepricing.PricingService` und überschreibt `processPrice` für Produktlisten und Detailseiten sowie `processTransactionalPrice` für Warenkorb und Checkout.
 - **Endpoint Extensions** gehören zu einer Connect-API-Ressource. Der Provider erweitert `ConnectApi.BaseEndpointExtension` und kann die Anfrage vor und die Antwort nach dem Aufruf ändern. Er kann das Standardverhalten nicht ersetzen und kein `super()` aufrufen.
 
-## Welche Erweiterungspunkte gibt es?
+## Erweiterungspunkte von Preis bis Auftragsanlage
 
 Die [Liste der verfügbaren Extensions](https://developer.salesforce.com/docs/commerce/extensions/guide/available-extensions.html) ist kurz genug, um sie ganz zu lesen. Für einen Hersteller mit SAP oder einem anderen ERP zählen vor allem diese:
 
@@ -90,11 +90,11 @@ Meine Regel: Neue Logik kommt in Extensions. Bestehende Integrationen bleiben, b
 
 Zahlungen sind die Ausnahme. Salesforce schreibt: Zahlungen können derzeit nicht per Extension angepasst werden. Payment Gateways behalten ihren eigenen Adapter, siehe [B2B-Checkout: Bestellnummer, Karte oder Rechnung?](../b2b-checkout-bestellnummer-rechnung/).
 
-## Wie überstehen Extensions einen Partnerwechsel?
+## Registrierung und Mapping gehören ins Repository
 
 Registrierung und Mapping sind zwei getrennte Schritte, und beide sind Konfiguration, die jemand in jeder Umgebung nachbauen muss. Salesforce empfiehlt die CLI: `sf plugins install @salesforce/commerce`, dann `sf commerce:extension:register` für die Klasse und `sf commerce:extension:map` für den Store. Dasselbe geht über die Objekte `RegisteredExternalService` und `StoreIntegratedService` oder die Connect API, und die Shop-Verantwortlichen können Domain Extensions in der Administrationsoberfläche zuordnen.
 
-Diese letzte Möglichkeit ist das Risiko. Ein Mapping, das von Hand in Produktion geändert wurde, ist in Git unsichtbar. Ein typisches Szenario, als Annahme: Ein Partner ordnet in Produktion direkt einen neuen Preis-Provider zu, um einen dringenden Preisfehler zu beheben. Die Änderung kommt nie ins Repository, und das nächste Deployment aus der Pipeline ordnet wieder den alten Provider zu. Niemand merkt es, bis Händler sich über falsche Preise beschweren.
+Diese letzte Möglichkeit ist das Risiko. Ein Mapping, das von Hand in Produktion geändert wurde, ist in Git unsichtbar. Angenommen, ein Partner ordnet in Produktion direkt einen neuen Preis-Provider zu, um einen dringenden Preisfehler zu beheben. Die Änderung kommt nie ins Repository, und das nächste Deployment aus der Pipeline ordnet wieder den alten Provider zu. Niemand merkt es, bis Händler sich über falsche Preise beschweren.
 
 Was ich in Vertrag und Pipeline festlegen würde:
 
@@ -105,8 +105,6 @@ Was ich in Vertrag und Pipeline festlegen würde:
 
 Wie Store-Konfiguration mit den Metadaten wandert, beschreibt die DevOps-Masterclass im Kapitel [Daten und Konfiguration](../../masterclass/devops-release-management/daten-und-konfiguration/), den Aufbau der Pipeline im Kapitel [Pipeline aufbauen](../../masterclass/devops-release-management/pipeline-aufbauen/).
 
-## Wo starten Sie?
+## Jede eigene Logik einem Erweiterungspunkt zuordnen
 
 Listen Sie jede eigene Logik in Ihrem Store auf und ordnen Sie sie einem Erweiterungspunkt, einer alten Integration oder einer eigenen Komponente zu. Markieren Sie jeden Domain Provider, der kein `super()` aufruft, und fragen Sie nach dem Grund. Prüfen Sie dann, ob sich Registrierung und Mapping aus dem Repository in einer frischen Sandbox wieder aufbauen lassen. Klappt das nicht, haben Sie Ihre größte Abhängigkeit vom aktuellen Partner gefunden. Die ERP-Seite derselben Entscheidungen ist Teil des Kapitels [ERP-Anbindung](../../masterclass/b2b-commerce/erp-integration-bestand-auftraege/), und dieselben Extensions bedienen auch eine [headless Storefront](../headless-b2b-commerce-eigenes-frontend/).
-
-Extensions, die den Standard aufrufen und in Ihrer Pipeline leben, sind Eigenentwicklung, die Sie auch nach dem nächsten Release und dem nächsten Partner noch pflegen können.

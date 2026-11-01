@@ -9,11 +9,11 @@ topic: data
 categories: [ai, architecture]
 tags: [Agentforce, ERP, Altsysteme, RPA, MuleSoft, Maschinenbau]
 takeaways:
-  - "Ein Agent kann über drei Umwege mit einem ERP ohne API arbeiten: eine lesende Datenbankreplik hinter einer kleinen API, Dokumentenerkennung mit RPA oder den Systems Integration Agent."
-  - "Für Auftragsstatus, Liefertermine und Bestand ist eine Replik hinter einer MuleSoft-API der stabilste Weg, und die Agenten-Aktion bleibt gleich, wenn das ERP später abgelöst wird."
-  - "MuleSoft IDP schickt Dokumente unter einer Konfidenzschwelle zur manuellen Prüfung; das Beispiel im Salesforce Admins Blog nutzt 80 Prozent, und jede erneute Verarbeitung wird voll berechnet."
-  - "RPA und der Systems Integration Agent arbeiten über die Masken; laut Salesforce lernt der Agent eine geänderte Maske in etwa 20 Minuten neu, das braucht trotzdem Monitoring und einen Verantwortlichen."
-  - "Preise, Kreditlimits und Verfügbarkeitsprüfung bleiben im ERP; ein Agent an einem alten ERP darf unter menschlicher Kontrolle Daten erfassen, aber nicht entscheiden."
+  - "Ein Agent erreicht ein ERP ohne API über eine Datenbankreplik hinter einer kleinen API, Dokumentenerkennung mit RPA oder den Systems Integration Agent."
+  - "Für Auftragsstatus, Liefertermine und Bestand ist eine Replik hinter einer MuleSoft-API der stabilste Weg, und sie zieht beim ERP-Wechsel mit um."
+  - "MuleSoft IDP schickt Dokumente unter einer Konfidenzschwelle zur manuellen Prüfung, und jede erneute Verarbeitung wird voll berechnet."
+  - "RPA und der Systems Integration Agent arbeiten über die Masken und brauchen deshalb Monitoring und einen Verantwortlichen."
+  - "Preise, Kreditlimits und Verfügbarkeitsprüfung bleiben im ERP. Ein Agent an einem alten ERP darf unter Kontrolle Daten erfassen, aber nicht entscheiden."
 faq:
   - q: "Kann Agentforce an ein ERP ohne API angebunden werden?"
     a: "Ja, über einen Umweg. Lesen geht über eine Datenbankreplik hinter einer MuleSoft-API, Belege lassen sich mit MuleSoft IDP und RPA erfassen, und der Systems Integration Agent bedient browserbasierte Anwendungen über ihre Masken."
@@ -40,7 +40,7 @@ Dasselbe gilt für MES und andere Systeme in der Fertigung, die oft nur einen De
 
 Es gibt also drei Fälle. Gibt es eine API, gilt der Standardweg, den ich in [Agentforce und SAP-Auftragsstatus](../agentforce-sap-auftragsstatus/) beschreibe. Kommt man an die Daten, aber gibt es keine API, bauen Sie eine Leseschicht. Bleibt nur die Maske, automatisieren Sie die Maske.
 
-## Welche Wege führen an ein ERP ohne API?
+## Die Wege an ein ERP ohne API
 
 ### Weg 1: Lesen aus einer Replik hinter einer eigenen API
 
@@ -74,13 +74,13 @@ Ein Detail dieses Musters gefällt mir: Der Agent entscheidet nichts. Er ist ein
 
 Zur Dreamforce 2026 hat Salesforce den Systems Integration Agent als Teil von Agentforce Operations vorgestellt, im selben Abschnitt wie den Back-Office-Agenten Marshall, gekennzeichnet als [GA](https://www.salesforce.com/blog/dreamforce-2026-announcements/). Laut [Produktblog](https://www.salesforce.com/blog/regrello/) lernt er eine browserbasierte Anwendung wie ein neuer Mitarbeiter in etwa 90 Minuten, ohne Code, APIs oder RPA, auch „customized SAP, Oracle, and homegrown systems“. Ändert sich eine Maske, lernt er diesen Teil laut Salesforce typischerweise in etwa 20 Minuten neu und protokolliert die Reparatur zur Prüfung durch einen Administrator. Die [Seite zu Agentforce Operations](https://www.salesforce.com/agentforce/operations/) nennt zusätzlich Audit Trail und erhaltene Berechtigungen und Freigaben und sagt, abgerechnet werde nach Blueprint-Paketen, vom Starter Pack mit 5 Blueprints bis Large mit mehr als 50, „not priced based on consumption“. Listenpreise habe ich keine gefunden.
 
-Der Haken für Hersteller ist das Wort „browserbasiert“. Läuft Ihr ERP oder MES als Desktop-Client, prüfen Sie, ob es einen Web-Client gibt, bevor jemand mit diesem Agenten plant. Das sind Herstellerangaben aus dem Startmonat. Ich würde sie an Ihren eigenen Masken testen, inklusive eines ERP-Updates im Testsystem, bevor ich mich darauf verlasse.
+Für Hersteller entscheidet das Wort „browserbasiert“. Läuft Ihr ERP oder MES als Desktop-Client, prüfen Sie, ob es einen Web-Client gibt, bevor jemand mit diesem Agenten plant. Das sind Herstellerangaben aus dem Startmonat. Ich würde sie an Ihren eigenen Masken testen, inklusive eines ERP-Updates im Testsystem, bevor ich mich darauf verlasse.
 
 ```hinweis offen
 Der Produktblog nennt GA ausdrücklich nur für Marshall. Klären Sie die Verfügbarkeit des Systems Integration Agent für Ihre Org mit Ihrem Account-Team.
 ```
 
-## Ein typisches Szenario: Ersatzteilaufträge bei einem Maschinenbauer mit altem ERP
+## Rechenbeispiel: Ersatzteilaufträge bei einem Maschinenbauer mit altem ERP
 
 Nehmen wir einen Maschinenbauer mit einem ERP im eigenen Rechenzentrum ohne nutzbare Schnittstelle, Service Cloud und einem Händlerportal auf Salesforce sowie 40 Händlern. Alle Zahlen sind Annahmen, die das Vorgehen zeigen sollen.
 
@@ -108,4 +108,4 @@ Die zweite Grenze ist die Zahl der schreibenden Prozesse. Jeder Bot ist Software
 
 Und wenig Volumen bleibt wenig Volumen. Dreißig Bestellungen im Monat rechtfertigen keinen RPA-Bot, egal wie alt das ERP ist.
 
-Starten Sie bei einem alten ERP mit dem Leseweg hinter einem stabilen API-Vertrag und automatisieren Sie das Schreiben nur dort, wo Belege und Masken stabil sind und ein Mensch die unsicheren Fälle prüft.
+Mein Rat für ein altes ERP: Starten Sie mit dem Leseweg hinter einem stabilen API-Vertrag. Das Schreiben automatisieren Sie nur dort, wo Belege und Masken stabil sind und ein Mensch die unsicheren Fälle prüft.

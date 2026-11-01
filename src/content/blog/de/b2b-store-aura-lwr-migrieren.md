@@ -9,11 +9,11 @@ topic: commerce
 categories: [b2b-commerce, devops]
 tags: [B2B Commerce, LWR, Aura, Migration, Lightning Web Components, Experience Cloud]
 takeaways:
-  - "Für Aura-B2B-Stores hat Salesforce bis zum 27. Oktober 2026 kein Abschaltdatum veröffentlicht. Für neue Stores empfiehlt Salesforce das LWR-Template, bestehenden Aura-Stores legt es die Migration nahe."
-  - "Ein LWR-Store unterstützt nur Lightning Web Components. Eigenes Styling läuft über --dxp-Styling-Hooks statt eigener CSS-Klassen, Daten kommen über Wire-Adapter."
-  - "Migrieren heißt, einen neuen Store aus dem Template B2B Commerce (LWR) anzulegen. Ein Migrationswerkzeug dokumentiert Salesforce nicht, nur Umbauschritte und ein Change Set für die Store-Konfiguration."
-  - "Aura-Stores bauen den Checkout mit Flow Builder, LWR-Stores nutzen den eingebauten Salesforce Commerce Checkout. Eigene Checkout-Subflows müssen neu gebaut werden, am besten als Extensions."
-  - "Ersetzen Sie Aura-Komponenten zuerst im laufenden Aura-Store durch Lightning Web Components. Diese Arbeit lohnt sich in jedem Fall und verkleinert den eigentlichen Umstieg."
+  - "Salesforce hat für Aura-B2B-Stores bis zum 27. Oktober 2026 kein Abschaltdatum veröffentlicht, empfiehlt für neue Stores aber das LWR-Template."
+  - "Ein LWR-Store unterstützt nur Lightning Web Components. Styling läuft über --dxp-Styling-Hooks, Daten kommen über Wire-Adapter."
+  - "Migrieren heißt, einen neuen LWR-Store anzulegen. Ein Migrationswerkzeug gibt es nicht, nur Umbauschritte und ein Change Set für die Konfiguration."
+  - "LWR-Stores nutzen den eingebauten Commerce Checkout statt Flow Builder. Eigene Checkout-Subflows werden neu gebaut, am besten als Extensions."
+  - "Ersetzen Sie Aura-Komponenten zuerst im laufenden Store durch Lightning Web Components. Das lohnt sich in jedem Fall und verkleinert den Umstieg."
 faq:
   - q: "Schaltet Salesforce Aura-Stores in B2B Commerce ab?"
     a: "Bis zum 27. Oktober 2026 hat Salesforce kein Abschaltdatum veröffentlicht. Aura-Stores stehen nicht auf der Liste der aktiven Produkt- und Funktionsabkündigungen. Salesforce empfiehlt LWR für neue Stores, und nur Orgs, die vor Spring '23 für Commerce aktiviert wurden, können noch Aura-Stores anlegen."
@@ -36,7 +36,7 @@ Laut [Migrationsleitfaden](https://developer.salesforce.com/docs/commerce/lwr-mi
 
 Ein Abschaltdatum gibt es nicht. Aura-Stores stehen nicht auf der [Liste der aktiven Abkündigungen](https://help.salesforce.com/s/articleView?id=000381744&language=en_US&type=1), und der Leitfaden nennt keines. Die Liste sagt selbst, dass nicht aufgeführte Abkündigungen über Release Notes, Hilfeartikel oder gezielte E-Mails kommen. Lesen Sie also die Release Notes dreimal im Jahr mit. Bis dahin entscheiden Sie nach Funktionen und Aufwand, nicht aus Angst vor einem Datum, das niemand angekündigt hat.
 
-## Was ist in einem LWR-Store anders?
+## Ein LWR-Store kennt nur Lightning Web Components
 
 Die [wichtigsten Unterschiede](https://developer.salesforce.com/docs/commerce/lwr-migration/guide/key-differences.html) sind schnell aufgezählt, aber jeder betrifft eigenen Code:
 
@@ -52,7 +52,7 @@ Zwei Zeilen verdienen Aufmerksamkeit. Die erste ist der Checkout. Für Aura-Stor
 
 Die zweite ist die Warenkorbseite. Sie ist keine Record Page mehr, sondern eine Named Page. Jede Komponente, die mit `lightning/navigation` zum Warenkorb navigiert oder einen Link dorthin baut, muss angepasst werden, so steht es auf der Seite [Migrate Your Store](https://developer.salesforce.com/docs/commerce/lwr-migration/guide/store-migration.html) des Leitfadens.
 
-## Wie läuft die Migration Schritt für Schritt?
+## Erst im Aura-Store vorbereiten, dann wechseln
 
 Der Leitfaden trennt die Vorbereitung im Aura-Store vom Wechsel auf einen neuen LWR-Store. Ich halte mich an diese Trennung, weil die Vorbereitung laufen kann, während Händler weiter bestellen.
 
@@ -100,10 +100,8 @@ Ich würde die Migration planen, wenn mindestens einer dieser Punkte zutrifft:
 
 Läuft der Store stabil, mit wenig eigenem Code und ohne geplante Änderungen, ist Abwarten eine legitime Entscheidung. Die Vorbereitungsschritte lohnen sich trotzdem, weil Lightning Web Components in beiden Stores laufen.
 
-Ein typisches Szenario, als Annahme: Ein Maschinenbauer betreibt seit 2021 einen Aura-Store mit rund 30 eigenen Komponenten und einem Checkout-Flow mit Kreditprüfung im ERP. Im ersten Quartal ersetzt das Team die inneren Komponenten im Aura-Store durch Lightning Web Components und liefert sie mit den normalen Releases aus. Im zweiten Quartal baut es den LWR-Store in einer Sandbox auf, setzt die Kreditprüfung als PlaceOrder-Extension neu um und überträgt das Styling ins Theme-Panel. Dann wechselt eine Pilot-Buyer-Group in den neuen Store, der alte bleibt zwei Wochen als Rückfallebene online, und die übrigen Gruppen folgen, wie in [B2B-Shop für Händler einführen](../b2b-shop-haendler-einfuehren/) beschrieben.
+Rechenbeispiel: Ein Maschinenbauer betreibt seit 2021 einen Aura-Store mit rund 30 eigenen Komponenten und einem Checkout-Flow mit Kreditprüfung im ERP. Im ersten Quartal ersetzt das Team die inneren Komponenten im Aura-Store durch Lightning Web Components und liefert sie mit den normalen Releases aus. Im zweiten Quartal baut es den LWR-Store in einer Sandbox auf, setzt die Kreditprüfung als PlaceOrder-Extension neu um und überträgt das Styling ins Theme-Panel. Dann wechselt eine Pilot-Buyer-Group in den neuen Store, der alte bleibt zwei Wochen als Rückfallebene online, und die übrigen Gruppen folgen, wie in [B2B-Shop für Händler einführen](../b2b-shop-haendler-einfuehren/) beschrieben.
 
-## Wo starten Sie?
+## Aura-Komponenten und Checkout-Subflows auflisten
 
 Beginnen Sie mit der Bestandsaufnahme: alle Aura-Komponenten, der Checkout-Flow mit seinen Subflows und jede Stelle, die auf den Warenkorb verlinkt. Entscheiden Sie dann, welche Komponenten Sie in den nächsten zwei Releases im Aura-Store ersetzen. Den Wechsel selbst planen Sie in Ihren [Release-Kalender](../../masterclass/devops-release-management/release-planung-salesforce-releases/) ein, mit Regressionstests für Suche, Warenkorb und Checkout, denn drei Salesforce-Releases im Jahr treffen den alten und den neuen Store. Die übrigen Themen dieses Kapitels, von Agenten bis zur Einführung, stehen im Masterclass-Kapitel [Agenten, Migration, Einführung](../../masterclass/b2b-commerce/agentforce-migration-einfuehrung/).
-
-Ein Aura-Store hat keine Frist, aber jede neue Aura-Komponente macht den späteren Umstieg teurer.

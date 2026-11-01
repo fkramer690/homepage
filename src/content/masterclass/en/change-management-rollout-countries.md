@@ -10,11 +10,10 @@ pubDate: 2026-10-29
 short: "Rollout across countries and teams"
 summary: "Every wave goes through ADKAR again: a sponsor per country, template deviations, communication in the local language and lessons from the first wave."
 takeaways:
-  - "In a global rollout every country goes through the ADKAR stages again, so change management belongs in every wave, not only the first."
   - "Every country needs its own sponsor from local management; a global sponsor at headquarters does not replace them."
   - "The list of deviation requests shows where awareness is missing: when one country submits twenty and the others three, it is rarely the business."
-  - "The message before go-live comes in the local language from the country's own leadership and answers five questions, including what stays as it is."
-  - "After the first wave, sponsor and key users review three questions before the next one starts."
+  - "The message before go-live comes in the local language from the country's own leadership and also says what stays as it is."
+  - "After the first wave, a review with sponsor and key users shows which questions came up most and where people keep working with their own lists."
 articles: [change-global-rollout, global-template-country-deviations, manufacturing-cloud-global-rollout, field-service-rollout, commerce-dealer-rollout]
 faq:
   - q: "Is change management at headquarters enough in a global rollout?"
@@ -38,7 +37,7 @@ In the ADKAR model from [chapter 1](../change-management-adkar-diagnosis/), the 
 In the worldwide Manufacturing Cloud rollout it was clear from the start that the goal was to harmonise processes. What I would do differently today: keep bringing up change management, even when the client thinks they do not need it. Per country we needed at least key users, communication before go-live and a look at usage afterwards.
 ```
 
-## What belongs to each country?
+## The same building blocks in every country
 
 I plan the same building blocks for every country. The content differs, the list does not:
 
@@ -56,7 +55,7 @@ The two most underestimated are the sponsor in the country and co-determination.
 
 ## What must the message in the country explain?
 
-Communication before go-live explains what changes and why, not just where to click. I give each country's sponsor five questions their message should answer:
+Communication before go-live explains what changes and why, not just where to click. I give each country's sponsor these questions their message should answer:
 
 | Question | What the message says |
 |---|---|
@@ -66,17 +65,17 @@ Communication before go-live explains what changes and why, not just where to cl
 | What stays as it is? | Almost always forgotten, and it removes a lot of uncertainty. |
 | Where is help? | Names of the key users, not a support address. |
 
-## How do template deviations relate to change management?
+## Deviation requests show where awareness is missing
 
 Every request to deviate from the template is also a change management question. Requests out of habit almost always come with a business justification. When the sponsor in the country understands why the template is built the way it is, they can sort these requests before they reach the architect.
 
 The other way round, the list of deviations shows where change management has to start. When one country submits twenty requests and the others three, awareness is usually missing there. So I take the deviation list into every conversation with a country's sponsor. How to separate legal, business and habitual deviations is in [Global Salesforce template: how much local variation?](../../../blog/salesforce-global-template-country-deviations/).
 
-## What applies to waves in field service and with dealers?
+## Waves in field service and with dealers follow the same logic
 
 The same logic holds for waves that are not cut by country. I roll out Field Service region by region. Each region brings its own dispatchers, technicians and master data, and the works council belongs in the planning of the first wave, as described in [Salesforce Field Service rollout: why in waves?](../../../blog/salesforce-field-service-rollout/). Dealers are a group of their own with their own leadership: a dealer portal or B2B shop is adopted when the dealer sees an advantage, and the message comes from the sales manager the dealer knows. More in [Rolling out a B2B shop to dealers](../../../blog/b2b-shop-dealer-rollout/).
 
-## What do you learn from the first wave?
+## After the first wave: a review before the next country
 
 After go-live in the first country or region, I review three questions with the sponsor and the key users:
 

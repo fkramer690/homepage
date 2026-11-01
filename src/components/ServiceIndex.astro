@@ -17,27 +17,32 @@ const services = await getServices(lang);
 const ctaAttrs = contactExternal ? { target: '_blank', rel: 'noopener' } : {};
 ---
 <Page layout="wide" lang={lang} title={t.servicePage.metaTitle} description={t.servicePage.metaDescription} alternates={{ en: servicesIndex('en'), de: servicesIndex('de') }}>
+  <header class="service-hero dark grid-bg">
+    <div class="container">
+      <p class="eyebrow mono">{t.nav.services}</p>
+      <h1>{t.servicePage.indexTitle}</h1>
+      <p class="service-lead">{t.servicePage.indexIntro}</p>
+      <p class="service-lead">{t.servicePage.indexIntro2}</p>
+    </div>
+  </header>
+  <section class="proof">
+    <div class="container">
+      <ProofBar t={t} />
+    </div>
+  </section>
   <section class="section blog">
     <div class="container">
-      <p class="eyebrow mono">FK Solution Design</p>
-      <h1>{t.servicePage.indexTitle}</h1>
-      <p class="blog-intro">{t.servicePage.indexIntro}</p>
-      <p class="blog-intro">{t.servicePage.indexIntro2}</p>
-      <div class="service-proof">
-        <ProofBar t={t} />
-        <p class="service-proof-links mono">
-          <a href={`${homeHref(lang)}#references`}>{t.hero.ctaSecondary} →</a>
-          <a href={localHref(lang, 'certifications/')}>{t.servicePage.certsLink} →</a>
-        </p>
-      </div>
+      <p class="service-proof-links">
+        <a href={`${homeHref(lang)}#references`}>{t.hero.ctaSecondary} →</a>
+        <a href={localHref(lang, 'certifications/')}>{t.servicePage.certsLink} →</a>
+      </p>
       <ul class="cards">
         {services.map((s) => (
           <li class="card card-link">
             <a href={serviceHref(s)}>
-              <span class="card-index mono">{String(s.data.order).padStart(2, '0')}</span>
               <h2 class="card-title">{t.services.items[s.data.order - 1]?.title ?? s.data.title}</h2>
               <p>{s.data.description}</p>
-              <span class="card-more mono">{t.services.more} →</span>
+              <span class="card-more">{t.services.more} →</span>
             </a>
           </li>
         ))}

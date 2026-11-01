@@ -12,7 +12,7 @@ takeaways:
   - "Salesforce erlaubt 2.000 untergeordnete Assets pro Asset, 50 Ebenen und 10.000 Assets pro Hierarchie, die Baumansicht zeigt aber nur Hierarchien bis 500 Assets."
   - "Faustregel: ein Asset für alles mit eigener Seriennummer, eigener Wartung oder eigener Garantie. Alles andere bleibt in der Stückliste im PLM."
   - "Asset-Attribute speichern Messwerte und Zustände pro Asset, ohne dass jede Baureihe neue eigene Felder braucht."
-  - "Die installierte Basis kommt bei Auslieferung aus dem ERP. Wer sie nach einem Umbau oder Baugruppentausch pflegt, muss vor dem Go-live feststehen, sonst veraltet der Baum."
+  - "Die installierte Basis kommt bei Auslieferung aus dem ERP. Wer sie nach einem Baugruppentausch pflegt, muss vor dem Go-live feststehen."
   - "Jede zusätzliche Ebene belastet Wartungspläne, Datenpflege und die mobile App. Halten Sie die Hierarchie so flach, wie der Service es erlaubt."
 faq:
   - q: "Wie viele Ebenen kann eine Asset-Hierarchie in Salesforce haben?"
@@ -65,7 +65,7 @@ Ich nutze Attribute für beschreibende Werte, die je Baureihe verschieden sind. 
 
 Die installierte Basis kommt meist bei Auslieferung aus dem ERP: Maschine, Seriennummern der Hauptbaugruppen, Kunde, Standort, Lieferdatum. Dieser Import ist der einfache Teil. Der schwierige beginnt ein Jahr später, wenn ein Techniker ein Getriebe tauscht, ein Kunde einen zweiten Roboter nachrüstet oder ein Händler die Maschine in ein anderes Werk bringt.
 
-Ohne festen Prozess zeigt die Hierarchie in Salesforce dann die Maschine im Auslieferungszustand, und niemand vertraut ihr mehr. Drei Fragen entscheiden das:
+Ohne festen Prozess zeigt die Hierarchie in Salesforce dann die Maschine im Auslieferungszustand, und niemand vertraut ihr mehr. Diese Punkte gehören vor dem Go-live geklärt:
 
 1. **Wer erfasst eine getauschte Baugruppe?** Aus meiner Sicht der Techniker in der mobilen App, mit der Seriennummer des neuen Teils, denn er hat es in der Hand.
 2. **Welches System führt danach?** Bleibt das ERP führend für die installierte Basis, muss die Änderung aus der App zurück ins ERP. Führt Salesforce nach der Auslieferung, bekommt das ERP eine Kopie. Beides funktioniert, eine Mischung nicht. Das ist dieselbe Frage nach dem führenden System wie bei den [Stammdaten für die Planung](../salesforce-field-service-stammdaten/), und sie gehört in das Schnittstellendesign, siehe [Salesforce-Schnittstellen](../../leistungen/salesforce-schnittstellen/).
@@ -73,7 +73,7 @@ Ohne festen Prozess zeigt die Hierarchie in Salesforce dann die Maschine im Ausl
 
 Garantieansprüche auf die installierte Basis gehören zu Manufacturing Cloud und stehen im Kapitel [Garantie und After-Sales](../../masterclass/manufacturing-cloud/garantie-und-after-sales/) dieser Masterclass.
 
-## Warum kostet eine tiefe Hierarchie später?
+## Eine tiefe Hierarchie kostet später
 
 Jede Ebene wirkt billig, wenn die Daten einmal geladen werden. Teuer wird sie später, an drei Stellen:
 
@@ -90,9 +90,9 @@ quelle: Salesforce Hilfe, Grenzen von Field Service
 
 Dasselbe gilt für Händlerportale: Jedes Asset, das ein Händler sehen darf, muss richtig freigegeben sein, wie beim [Ersatzteilshop pro Maschine](../ersatzteilshop-teile-pro-maschine/).
 
-## Ein typisches Szenario, als Annahme: eine Verpackungslinie
+## Rechenbeispiel: eine Verpackungslinie
 
-Ein typisches Szenario, als Annahme: Ein Hersteller von Verpackungsmaschinen liefert eine Linie mit 6 Maschinen. Darin stecken 40 Baugruppen mit Seriennummer, etwa Servoantriebe, Roboter und Etikettierer, und rund 900 weitere Teile.
+Alle Zahlen sind Annahmen. Ein Hersteller von Verpackungsmaschinen liefert eine Linie mit 6 Maschinen. Darin stecken 40 Baugruppen mit Seriennummer, etwa Servoantriebe, Roboter und Etikettierer, und rund 900 weitere Teile.
 
 **Vollständige Kopie.** Linie, Maschinen, Baugruppen und Teile als Assets: etwa 947 Datensätze pro Linie. Das liegt weit unter dem Limit von 10.000, aber über den 500, die die Baumansicht zeigt, und 900 Datensätze pro Linie müssen mit dem PLM übereinstimmen.
 
@@ -100,8 +100,6 @@ Ein typisches Szenario, als Annahme: Ein Hersteller von Verpackungsmaschinen lie
 
 Bei 50 Linien im Feld sind das 2.350 Assets statt rund 47.000, und jedes davon trägt eine Information, die der Service nutzt.
 
-## Wo fangen Sie an?
+## Einen Maschinentyp mit der Faustregel durchgehen
 
-Nehmen Sie einen Maschinentyp und gehen Sie seine Stückliste mit den drei Fragen durch: Seriennummer, eigene Wartung, eigene Garantie. Schreiben Sie die Ebenen auf, die dabei herauskommen, und zählen Sie die Assets pro Maschine. Dann entscheiden Sie, wer eine getauschte Baugruppe erfasst und welches System nach der Auslieferung führt, und zwar vor dem ersten Import aus dem ERP. Das [Masterclass-Kapitel zu Assets, Wartung und Teilen](../../masterclass/field-service/field-service-assets-wartung-teile/) zeigt, wie die Hierarchie mit Wartungsplänen, Ersatzteilen und Servicepartnern zusammenhängt.
-
-Die richtige Tiefe ist die, die der Service tatsächlich nutzt, meist drei Ebenen und weit weniger Assets als die Stückliste.
+Nehmen Sie einen Maschinentyp und gehen Sie seine Stückliste mit der Faustregel durch: Seriennummer, eigene Wartung, eigene Garantie. Schreiben Sie die Ebenen auf, die dabei herauskommen, und zählen Sie die Assets pro Maschine. Dann entscheiden Sie, wer eine getauschte Baugruppe erfasst und welches System nach der Auslieferung führt, und zwar vor dem ersten Import aus dem ERP. Das [Masterclass-Kapitel zu Assets, Wartung und Teilen](../../masterclass/field-service/field-service-assets-wartung-teile/) zeigt, wie die Hierarchie mit Wartungsplänen, Ersatzteilen und Servicepartnern zusammenhängt.

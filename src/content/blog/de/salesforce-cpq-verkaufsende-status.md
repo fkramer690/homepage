@@ -10,11 +10,10 @@ categories: [revenue-cloud]
 contactBrief: licences
 tags: [Salesforce CPQ, Salesforce Billing, Revenue Cloud, Verkaufsende, Lizenzen, Vertragsverlängerung]
 takeaways:
-  - "Salesforce CPQ ist laut Salesforce „end of sale, not end of life“: Neukunden können es nicht mehr kaufen, Bestandskunden nutzen es weiter, kaufen Nutzer nach, verlängern und erhalten Support."
-  - "Ein End-of-Life-Datum für CPQ hat Salesforce nicht angekündigt, eine erzwungene Migration gibt es nicht. CPQ bekommt Support und kritische Fehlerbehebungen, aber keine neuen Funktionen."
-  - "Für das Paket Salesforce Billing gibt es keine eigene Aussage zum Verkaufsende auf einer Salesforce-Seite. Ein Salesforce-Sprecher sagte, Billing-Bestandskunden behalten vollen Zugang."
+  - "Ein End-of-Life-Datum für CPQ hat Salesforce nicht angekündigt. CPQ bekommt Support und kritische Fehlerbehebungen, aber keine neuen Funktionen."
+  - "Für das Paket Salesforce Billing gibt es keine eigene Aussage zum Verkaufsende. Laut einem Salesforce-Sprecher behalten Bestandskunden vollen Zugang."
   - "Das oft genannte Datum März 2025 stammt aus Berichten Dritter. Die Salesforce-Seite selbst nennt kein Datum."
-  - "Die nächste CPQ-Verlängerung ist der Zeitpunkt, um Laufzeit, Preisdeckel und den Parallelbetrieb von CPQ und Revenue Cloud während einer Migration zu sichern."
+  - "Die nächste CPQ-Verlängerung ist der Zeitpunkt, um Laufzeit, Preisdeckel und den Parallelbetrieb mit Revenue Cloud zu sichern."
 faq:
   - q: "Wird Salesforce CPQ abgeschaltet?"
     a: "Ein End-of-Life-Datum ist nicht angekündigt. Salesforce nennt CPQ „end of sale, not end of life“: Neukunden können es nicht mehr kaufen, Bestandskunden nutzen es weiter, kaufen Nutzer nach, verlängern und erhalten Support und kritische Fehlerbehebungen."
@@ -44,7 +43,7 @@ Die verbindliche Quelle ist die Salesforce-Seite [Navigating the Future of Sales
 
 Die Pressemitteilung zu [Agentforce for Revenue](https://www.salesforce.com/news/stories/agentforce-for-revenue-announcement/) vom 16. Juli 2025 ergänzt, dass Salesforce "remains committed to supporting current Salesforce CPQ customers" und dass Salesforce "rebuilt its CPQ solution as the all-new Revenue Cloud". Der letzte Satz erklärt die Lage: Revenue Cloud ist der Nachfolger, und Salesforce hat ihn als neues Produkt gebaut statt als neue CPQ-Version.
 
-## Was dürfen Bestandskunden weiter, und was nicht?
+## Bestandskunden verlängern, kaufen nach und erhalten Support
 
 Praktisch bedeutet der Status:
 
@@ -87,7 +86,7 @@ Spring '24 | Der Nachfolger erscheint als Revenue Lifecycle Management, dann als
 
 Wenn ein Partner "Revenue Cloud" sagt, fragen Sie nach, ob er das neue Produkt meint oder das gleichnamige Angebot von 2020. Wie sich die beiden Produkte technisch unterscheiden, beschreibe ich in [Salesforce CPQ vs. Revenue Cloud: Die echten Unterschiede](../salesforce-cpq-revenue-cloud-unterschiede/).
 
-## Was sollten Sie bei der nächsten CPQ-Verlängerung sichern?
+## Bei der nächsten Verlängerung Laufzeit, Preisdeckel und Parallelbetrieb sichern
 
 Für mich ist die Verlängerung die eigentliche Frist, weil Sie dann noch Verhandlungsmasse haben. Klären Sie vor der Unterschrift schriftlich:
 
@@ -97,14 +96,12 @@ Für mich ist die Verlängerung die eigentliche Frist, weil Sie dann noch Verhan
 4. **Nutzerwachstum.** Wenn Sie mehr Nutzer im Angebotsprozess erwarten, vereinbaren Sie den Preis für zusätzliche CPQ-Nutzer jetzt.
 5. **Billing.** Wenn Sie auch das Billing-Paket nutzen, verlängern Sie es zusammen mit CPQ und zu gleichen Bedingungen, damit die beiden Produkte nicht mit unterschiedlichen Kündigungsfristen enden.
 
-Ein typisches Szenario, als Annahme: Ein Maschinenbauer mit 60 CPQ-Nutzern verlängert im Frühjahr 2027 und rechnet in etwa zwei Jahren mit dem Umstieg auf Revenue Cloud. Eine Laufzeit von zwei Jahren mit Preisdeckel und der schriftlichen Option, Revenue Cloud sechs Monate neben CPQ zu betreiben, passt zu diesem Plan. Drei Jahre ohne diese Option würden eine Entscheidung zum falschen Zeitpunkt erzwingen. Wie ich solche Verhandlungen vorbereite, steht unter [Make-or-Buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/). Welche Nutzer überhaupt welche Lizenz brauchen, beschreibe ich in [Salesforce-Lizenzen: Braucht jeder eine volle Lizenz?](../salesforce-lizenzen-volle-lizenz/).
+Ein Rechenbeispiel: Ein Maschinenbauer mit 60 CPQ-Nutzern verlängert im Frühjahr 2027 und rechnet in etwa zwei Jahren mit dem Umstieg auf Revenue Cloud. Eine Laufzeit von zwei Jahren mit Preisdeckel und der schriftlichen Option, Revenue Cloud sechs Monate neben CPQ zu betreiben, passt zu diesem Plan. Drei Jahre ohne diese Option würden eine Entscheidung zum falschen Zeitpunkt erzwingen. Wie ich solche Verhandlungen vorbereite, steht unter [Make-or-Buy und Lizenzprognosen](../../leistungen/make-or-buy-lizenzen/). Welche Nutzer überhaupt welche Lizenz brauchen, beschreibe ich in [Salesforce-Lizenzen: Braucht jeder eine volle Lizenz?](../salesforce-lizenzen-volle-lizenz/).
 
 ## Heißt Verkaufsende, dass Sie jetzt wechseln sollten?
 
 Nein. Der Status nimmt den Zeitdruck heraus, und diese Zeit würde ich nutzen. Ob Bleiben, Wechseln oder ein dritter Weg passt, hängt von Ihren Prozessen, Ihrem Preis-Master und Ihrem Budget ab. Die Kriterien gehe ich in [CPQ behalten oder zu Revenue Cloud wechseln?](../cpq-behalten-oder-revenue-cloud/) durch. Für Hersteller, die erst jetzt ein Angebotssystem auswählen, ist CPQ ohnehin keine Option mehr. Sie vergleichen Revenue Cloud, Partnerprodukte und einen eigenen Ansatz, wie in [vom Angebot zum Sales Agreement](../angebot-zu-sales-agreement-produktkonfigurator/) beschrieben.
 
-## Wo starten Sie?
+## Das Verlängerungsdatum Ihrer Verträge heraussuchen
 
 Suchen Sie das Verlängerungsdatum Ihrer CPQ- und Billing-Verträge heraus, notieren Sie die Zahl der Nutzer und Ihre Anpassungen, und legen Sie fest, ob Sie eine kurze oder lange Laufzeit wollen, bevor das Account-Team anruft. Den ganzen Weg vom Status bis zur Migration beschreibt das Masterclass-Kapitel [von CPQ zu Revenue Cloud](../../masterclass/revenue-cloud/von-cpq-zu-revenue-cloud/).
-
-CPQ läuft weiter, die Frage ist nur, ob Ihr nächster Vertrag zu dem Plan passt, den Sie wirklich haben.

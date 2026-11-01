@@ -10,11 +10,10 @@ categories: [architecture, ai]
 contactBrief: licences
 tags: [AELA, Flex Credits, Lizenzen, Agentforce, Vertragsverhandlung, Maschinenbau]
 takeaways:
-  - "Forrester beschreibt die Salesforce AELA als unbegrenzte Nutzung von Agentforce, Data 360 und MuleSoft zum Festpreis über zwei oder drei Jahre. Listenpreise oder Standardkonditionen hat Salesforce nicht veröffentlicht."
-  - "Salesforce hat im vierten Quartal des Geschäftsjahres 2026 mehr als 120 AELAs verkauft. Die Finanzchefin beschreibt als Ziel, AELA-Kunden später in die Verbrauchsabrechnung zu überführen."
-  - "Zum Listenpreis von 500 € je 100.000 Flex Credits rechnet sich eine angenommene Pauschale von 150.000 € im Jahr erst ab 30 Mio. Credits, also 1,5 Mio. Standardaktionen."
-  - "Eine AELA kann zu einem Hersteller passen, der mehrere Agenten für Vertrieb, Service, Außendienst und Händler plant und die enthaltenen Lizenzen ohnehin kaufen würde."
-  - "Verhandeln Sie die Verlängerung bei Unterschrift: Modell nach der Laufzeit, Deckel für den Preissprung, jährliche Ausstiegspunkte, genauer Umfang und Zugriff auf Ihre eigenen Verbrauchsdaten."
+  - "Die AELA ist eine Pauschale für Agentforce, Data 360 und MuleSoft über zwei oder drei Jahre, Listenpreise hat Salesforce nicht veröffentlicht."
+  - "Bei einer angenommenen Pauschale von 150.000 € im Jahr liegt der Break-even bei 30 Mio. Flex Credits, also 1,5 Mio. Standardaktionen."
+  - "Die AELA passt zu Herstellern, die mehrere Agenten für Vertrieb, Service, Außendienst und Händler planen und die Lizenzen ohnehin kaufen."
+  - "Salesforce will AELA-Kunden später in den Verbrauch überführen, deshalb verhandeln Sie Preisdeckel und Ausstiegspunkte schon bei Unterschrift."
 faq:
   - q: "Was ist ein Salesforce Agentic Enterprise License Agreement?"
     a: "Forrester beschreibt es als Vertrag mit unbegrenzter Nutzung verbrauchsabhängiger Produkte wie Agentforce, Data 360 und MuleSoft zum Festpreis über zwei oder drei Jahre. Standardkonditionen veröffentlicht Salesforce nicht, und die bekannten Abschlüsse unterscheiden sich in Umfang und Laufzeit."
@@ -53,7 +52,7 @@ Zwei Abschlüsse sind öffentlich:
 
 Nicht öffentlich sind der Preis, die Zugangsvoraussetzungen, die Fair-Use-Regeln, die abgedeckten Zähler und das Modell nach der Laufzeit. Die [Agentforce-Preisseite](https://www.salesforce.com/eu/agentforce/pricing/) erwähnt die AELA nicht. Gartner behandelt Salesforce-Lizenzen in kostenpflichtigen Studien, die ich nicht lesen konnte. Die Punkte zur Verlängerung weiter unten sind deshalb meine eigene Einschätzung.
 
-## Wie schneidet eine AELA gegen Flex Credits ab?
+## Bei Flex Credits tragen Sie das Mengenrisiko, bei der AELA Salesforce
 
 | Modell | Sie zahlen | Wer trägt das Mengenrisiko | Öffentliche Konditionen |
 |---|---|---|---|
@@ -67,7 +66,7 @@ Für einen Hersteller zählen zwei Zeilen besonders. Die [Preisseite](https://ww
 
 Genau das rechnet die [Flex Credits Rate Card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-08.31.2026.pdf) ab: 20 Credits pro Standardaktion in Produktion, 16 in der Sandbox, 150 Credits pro MB für unstrukturierte Data-360-Verarbeitung im Basistarif. Der Satz für Headless Platform Interactions, den Zähler für Agenten, die Salesforce über API oder MCP aufrufen, steht weiter auf „TBA“. An dieser Stelle nimmt eine AELA den Zähler weg. Wie Sie jeden dieser Zähler schätzen, steht in [Flex Credits: Agentforce-Kosten pro Aktion](../flex-credits-agentforce-kosten-pro-aktion/), wie die Pools der Editionen hineinspielen, in [Salesforce-Editionen Core, Advanced, Max](../salesforce-editionen-core-advanced-max/).
 
-## Ein typisches Szenario: drei Agenten in drei Jahren
+## Rechenbeispiel: drei Agenten in drei Jahren
 
 Nehmen wir einen Maschinenbauer mit SAP, 300 Salesforce-Nutzern in Vertrieb und Service, 120 Servicetechnikern im Außendienst und einem Händlerportal. Salesforce bietet eine AELA über drei Jahre an, der Teil oberhalb der heutigen Lizenzen liegt angenommen bei 150.000 € im Jahr. Alle Zahlen sind Annahmen, die das Vorgehen zeigen; AELA-Preise veröffentlicht Salesforce nicht.
 
@@ -118,7 +117,7 @@ Die Finanzchefin von Salesforce spricht offen über den Wechsel von AELA-Kunden 
 
 Diese Liste ist eine kaufmännische Checkliste und keine Rechtsberatung. Den Vertrag selbst sollte Ihre Rechtsabteilung oder Ihr Anwalt prüfen.
 
-## Womit sollten Sie anfangen?
+## Erster Schritt: ein Verbrauchsplan pro Agent über drei Jahre
 
 1. **Erstellen Sie einen Dreijahresplan für den Verbrauch pro Agent,** mit Prompts, Tests und Data 360. Die Methode steht im [Masterclass-Kapitel zu Kosten und Token](../../masterclass/ki-salesforce/kosten-und-token/).
 2. **Rechnen Sie den Weg über Flex Credits** mit dem Pool Ihrer Edition und den Add-ons pro Nutzer für Mitarbeiter.
@@ -126,6 +125,4 @@ Diese Liste ist eine kaufmännische Checkliste und keine Rechtsberatung. Den Ver
 4. **Vergleichen Sie ganze Verträge** und rechnen Sie den Stresstest mit dreifachem Verbrauch.
 5. **Prüfen Sie die Anreize Ihres Partners.** Salesforce belohnt Partner inzwischen für Verbrauch, siehe [Festpreis statt Aufwand](../festpreis-statt-aufwand-ki-salesforce/).
 
-Lizenzmodelle über mehrere Jahre zu vergleichen gehört zu meiner Arbeit in [Make-or-buy und Lizenzplanung](../../leistungen/make-or-buy-lizenzen/), auf Kundenseite und ohne eigenes Interesse am Abschluss.
-
-Eine AELA kauft einen bekannten Preis für zwei oder drei Jahre, und die Verlängerungsklausel entscheidet, was das Jahr danach kostet.
+Lizenzmodelle über mehrere Jahre zu vergleichen gehört zu meiner Arbeit in [Make-or-buy und Lizenzplanung](../../leistungen/make-or-buy-lizenzen/), auf Kundenseite und ohne eigenes Interesse am Abschluss. Wenn Sie zum ersten Gespräch den Verbrauchsplan und das schriftliche Angebot mitbringen, rechnen wir beide Wege für Ihre Agenten nebeneinander.

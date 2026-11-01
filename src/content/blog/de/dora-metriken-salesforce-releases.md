@@ -9,7 +9,7 @@ topic: release
 categories: [devops]
 tags: [DORA-Metriken, Release-Management, DevOps, Kennzahlen]
 takeaways:
-  - "DORA-Metriken messen, wie schnell und wie stabil Änderungen in Produktion kommen: Durchlaufzeit, Deployment-Häufigkeit, Wiederherstellungszeit, Fehlerquote und Nacharbeitsquote."
+  - "DORA-Metriken messen Durchlaufzeit, Deployment-Häufigkeit, Wiederherstellungszeit, Fehlerquote und Nacharbeitsquote von Änderungen bis in Produktion."
   - "Für die IT-Leitung zählt der Trend über mehrere Monate, nicht der einzelne Wert und nicht der Vergleich mit Softwarefirmen."
   - "In Salesforce kommen die Zahlen aus Git und der Pipeline. Änderungen direkt in Produktion fehlen darin, deshalb gehört der Setup Audit Trail mit in den Blick."
   - "Die Metriken taugen, um den Release-Prozess zu verbessern, nicht als Rangliste der Partner. Wer Partner daran misst, bekommt geschönte Zahlen."
@@ -58,7 +58,7 @@ sfdx-hardis liefert dafür einen Bericht über die Kennzahlen, und auch kommerzi
 Änderungen, die direkt in der Produktions-Org gemacht werden, tauchen in keiner Git-Statistik auf. Prüfen Sie deshalb regelmäßig den Setup Audit Trail. Stehen dort viele Änderungen von Nutzern außerhalb der Pipeline, sind die DORA-Zahlen zu gut, um wahr zu sein.
 ```
 
-## Welche Fallen gibt es bei Salesforce?
+## Salesforce hat eigene Fallen, die die Zahlen verzerren
 
 Salesforce-Programme haben ein paar Eigenheiten, die die Zahlen verzerren:
 
@@ -67,7 +67,7 @@ Salesforce-Programme haben ein paar Eigenheiten, die die Zahlen verzerren:
 - **Daten statt Metadaten.** Produktkataloge, Preisregeln oder Konfiguratorregeln liegen in manchen Clouds als Datensätze vor. Werden sie von Hand geändert, fehlen sie in den Metriken.
 - **Große Pakete.** Ein Release mit 200 Änderungen, das einen Fehler hat, zählt als ein fehlgeschlagenes Deployment. Kleinere Releases machen die Fehlerquote aussagekräftiger.
 
-## Wie nutzt die IT-Leitung die Metriken?
+## Die IT-Leitung schaut auf den Trend, nicht auf den Einzelwert
 
 Ich empfehle drei Regeln:
 
@@ -95,10 +95,8 @@ Die Metriken sind nur nützlich, wenn aus einer schlechten Zahl eine Maßnahme f
 - **Hohe Fehlerquote:** Fehler entkommen den Tests. Ein [UAT mit Testnutzern pro Rolle](../salesforce-uat-abnahmetest-fachbereich/) und Regressionstests für die wichtigsten Prozesse fangen die meisten ab.
 - **Lange Wiederherstellungszeit:** Es gibt keinen schnellen Weg für Korrekturen. Eine Hotfix-Umgebung mit dem Stand der Produktion und ein eigener Hotfix-Branch verkürzen ihn.
 
-Als Annahme: Ein Programm mit zwölf Releases im Jahr, von denen vier einen Hotfix brauchten, hat eine Fehlerquote von 33 Prozent. Diese Zahl allein sagt dem Lenkungsausschuss mehr als jede Liste offener Tickets, und sie lässt sich nach jeder Maßnahme erneut prüfen.
+Rechenbeispiel: Ein Programm mit zwölf Releases im Jahr, von denen vier einen Hotfix brauchten, hat eine Fehlerquote von 33 Prozent. Diese Zahl allein sagt dem Lenkungsausschuss mehr als eine Liste offener Tickets, und sie lässt sich nach jeder Maßnahme erneut prüfen.
 
-## Wo fangen Sie an?
+## Erster Schritt: Deployment-Häufigkeit und Fehlerquote
 
-Fangen Sie mit zwei Zahlen an: Deployment-Häufigkeit und Fehlerquote. Beide lassen sich aus der Pipeline und aus der Zahl der Hotfixes ablesen, auch wenn noch kein Tool sie automatisch berichtet. Legen Sie den heutigen Wert als Ausgangspunkt fest und berichten Sie den Trend einmal im Monat. Die Durchlaufzeit kommt dazu, sobald alle Änderungen über Pull Requests laufen.
-
-DORA-Metriken machen sichtbar, ob ein Release-Prozess besser wird, solange niemand sie als Zeugnis benutzt. Zwei Zahlen aus der Pipeline reichen für den Anfang.
+Fangen Sie mit zwei Zahlen an: Deployment-Häufigkeit und Fehlerquote. Beide lassen sich aus der Pipeline und aus der Zahl der Hotfixes ablesen, auch wenn noch kein Tool sie automatisch berichtet. Legen Sie den heutigen Wert als Ausgangspunkt fest und berichten Sie den Trend einmal im Monat. Die Durchlaufzeit kommt dazu, sobald alle Änderungen über Pull Requests laufen. Als Hotfix zählt dabei jede Änderung, die außerhalb des geplanten Releases in Produktion geht, auch eine Korrektur direkt im Setup, die Sie nur im Setup Audit Trail finden.
