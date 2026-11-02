@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-11-01T11:49:37.972Z",
+  "generatedAt": "2026-11-02T04:48:29.120Z",
   "range": {
-    "start": "2026-10-02",
-    "end": "2026-11-01"
+    "start": "2026-10-03",
+    "end": "2026-11-02"
   },
   "browsers": [
     {
-      "count": 560,
+      "count": 570,
       "dimensions": {
         "userAgentBrowser": "Chrome"
       },
@@ -21,6 +21,15 @@
       },
       "sum": {
         "visits": 20
+      }
+    },
+    {
+      "count": 20,
+      "dimensions": {
+        "userAgentBrowser": "MobileSafari"
+      },
+      "sum": {
+        "visits": 10
       }
     },
     {
@@ -44,12 +53,12 @@
   ],
   "countries": [
     {
-      "count": 500,
+      "count": 530,
       "dimensions": {
         "countryName": "DE"
       },
       "sum": {
-        "visits": 50
+        "visits": 60
       }
     },
     {
@@ -136,18 +145,18 @@
       }
     },
     {
-      "count": 30,
+      "count": 60,
       "dimensions": {
         "date": "2026-11-01"
       },
       "sum": {
-        "visits": 10
+        "visits": 20
       }
     }
   ],
   "devices": [
     {
-      "count": 590,
+      "count": 600,
       "dimensions": {
         "deviceType": "desktop"
       },
@@ -156,12 +165,12 @@
       }
     },
     {
-      "count": 10,
+      "count": 30,
       "dimensions": {
         "deviceType": "mobile"
       },
       "sum": {
-        "visits": 10
+        "visits": 20
       }
     }
   ],
@@ -176,21 +185,21 @@
       }
     },
     {
+      "count": 60,
+      "dimensions": {
+        "requestPath": "/en/"
+      },
+      "sum": {
+        "visits": 20
+      }
+    },
+    {
       "count": 50,
       "dimensions": {
         "requestPath": "/blog/"
       },
       "sum": {
         "visits": 0
-      }
-    },
-    {
-      "count": 40,
-      "dimensions": {
-        "requestPath": "/en/"
-      },
-      "sum": {
-        "visits": 10
       }
     },
     {
@@ -214,7 +223,7 @@
     {
       "count": 20,
       "dimensions": {
-        "requestPath": "/en/blog/"
+        "requestPath": "/partner/juliane-winterscheid/"
       },
       "sum": {
         "visits": 0
@@ -223,7 +232,7 @@
     {
       "count": 20,
       "dimensions": {
-        "requestPath": "/partner/juliane-winterscheid/"
+        "requestPath": "/en/blog/"
       },
       "sum": {
         "visits": 0
@@ -286,7 +295,16 @@
     {
       "count": 10,
       "dimensions": {
-        "requestPath": "/en/certifications/"
+        "requestPath": "/blog/change-management-prozess-salesforce/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "requestPath": "/fragen/"
       },
       "sum": {
         "visits": 0
@@ -313,16 +331,7 @@
     {
       "count": 10,
       "dimensions": {
-        "requestPath": "/blog/change-management-prozess-salesforce/"
-      },
-      "sum": {
-        "visits": 0
-      }
-    },
-    {
-      "count": 10,
-      "dimensions": {
-        "requestPath": "/en/services/change-management-salesforce/"
+        "requestPath": "/en/certifications/"
       },
       "sum": {
         "visits": 0
@@ -340,16 +349,16 @@
     {
       "count": 10,
       "dimensions": {
-        "requestPath": "/homepage/blog/salesforce-service-documents-document-builder/"
+        "requestPath": "/masterclass/revenue-cloud/von-cpq-zu-revenue-cloud/"
       },
       "sum": {
-        "visits": 0
+        "visits": 10
       }
     }
   ],
   "referers": [
     {
-      "count": 440,
+      "count": 460,
       "dimensions": {
         "refererHost": "www.fk-sd.de"
       },
@@ -358,12 +367,12 @@
       }
     },
     {
-      "count": 90,
+      "count": 100,
       "dimensions": {
         "refererHost": ""
       },
       "sum": {
-        "visits": 90
+        "visits": 100
       }
     },
     {

@@ -5,14 +5,14 @@
   "visits": 60
  },
  {
+  "page": "/en/",
+  "pageviews": 60,
+  "visits": 20
+ },
+ {
   "page": "/blog/",
   "pageviews": 50,
   "visits": 0
- },
- {
-  "page": "/en/",
-  "pageviews": 40,
-  "visits": 10
  },
  {
   "page": "/leistungen/change-management/",
@@ -25,12 +25,12 @@
   "visits": 10
  },
  {
-  "page": "/en/blog/",
+  "page": "/partner/juliane-winterscheid/",
   "pageviews": 20,
   "visits": 0
  },
  {
-  "page": "/partner/juliane-winterscheid/",
+  "page": "/en/blog/",
   "pageviews": 20,
   "visits": 0
  },
@@ -65,7 +65,12 @@
   "visits": 0
  },
  {
-  "page": "/en/certifications/",
+  "page": "/blog/change-management-prozess-salesforce/",
+  "pageviews": 10,
+  "visits": 0
+ },
+ {
+  "page": "/fragen/",
   "pageviews": 10,
   "visits": 0
  },
@@ -80,12 +85,7 @@
   "visits": 0
  },
  {
-  "page": "/blog/change-management-prozess-salesforce/",
-  "pageviews": 10,
-  "visits": 0
- },
- {
-  "page": "/en/services/change-management-salesforce/",
+  "page": "/en/certifications/",
   "pageviews": 10,
   "visits": 0
  },
@@ -95,8 +95,8 @@
   "visits": 0
  },
  {
-  "page": "/homepage/blog/salesforce-service-documents-document-builder/",
+  "page": "/masterclass/revenue-cloud/von-cpq-zu-revenue-cloud/",
   "pageviews": 10,
-  "visits": 0
+  "visits": 10
  }
 ]
