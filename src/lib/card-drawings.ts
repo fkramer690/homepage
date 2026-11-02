@@ -967,6 +967,17 @@ const drawings: Record<string, Drawing> = {
     ${t(164, 128, l('timesheets · location', 'Timesheets · Standort'), { size: 7 })}
     ${t(164, 142, l('rules per country', 'Regeln je Land'), { fill: C, size: 7 })}`,
 
+  'salesforce-release-schedule': (l) => `
+    ${t(18, 18, l('THREE RELEASES A YEAR', 'DREI RELEASES PRO JAHR'), { fill: D, size: 7 })}
+    ${[l('Spring · Feb', 'Spring · Feb'), l('Summer · Jun', 'Summer · Jun'), l('Winter · Oct', 'Winter · Okt')].map((s, i) => box(18 + i * 98, 26, 88, 22, i === 2 ? C : G) + t(62 + i * 98, 40, s, { fill: i === 2 ? C : G, size: 7, anchor: 'middle' })).join('')}
+    <path d="M18 60H302" stroke="${L}"/>
+    ${t(18, 76, l("WINTER '27 EXAMPLE", "BEISPIEL WINTER '27"), { fill: D, size: 7 })}
+    <path d="M30 90H290" stroke="${G}" stroke-width="1.2"/>
+    ${dot(30, 90)}${t(18, 106, l('19 Aug', '19.8.'), { fill: D, size: 7 })}${t(18, 117, 'Release Notes', { size: 6.5 })}
+    ${dot(150, 90)}${t(150, 106, l('28 Aug', '28.8.'), { fill: D, size: 7, anchor: 'middle' })}${t(150, 117, 'Sandbox Preview', { size: 6.5, anchor: 'middle' })}
+    ${dot(290, 90, C)}${t(302, 106, l('to 9 Oct', 'bis 9.10.'), { fill: C, size: 7, anchor: 'end' })}${t(302, 117, l('production', 'Produktion'), { size: 6.5, anchor: 'end' })}
+    ${tag(18, 128, 150, l('5 checks per release', '5 Prüfungen je Release'))}${t(178, 141, l('preview 4 to 5 weeks ahead', 'Preview 4 bis 5 Wochen vorher'), { size: 6.5 })}`,
+
   'salesforce-winter-27-pipeline': (l) => `
     ${['build', 'validate', 'deploy'].map((s, i) => box(20 + i * 62, 30, 50, 26) + t(45 + i * 62, 47, s, { size: 7.5, anchor: 'middle' })).join('')}
     ${arrow(70, 43, 82)}${arrow(132, 43, 144)}
