@@ -1,17 +1,17 @@
 {
-  "generatedAt": "2026-11-02T04:48:29.120Z",
+  "generatedAt": "2026-11-02T13:27:40.734Z",
   "range": {
     "start": "2026-10-03",
     "end": "2026-11-02"
   },
   "browsers": [
     {
-      "count": 570,
+      "count": 610,
       "dimensions": {
         "userAgentBrowser": "Chrome"
       },
       "sum": {
-        "visits": 60
+        "visits": 70
       }
     },
     {
@@ -53,12 +53,12 @@
   ],
   "countries": [
     {
-      "count": 530,
+      "count": 570,
       "dimensions": {
         "countryName": "DE"
       },
       "sum": {
-        "visits": 60
+        "visits": 70
       }
     },
     {
@@ -152,16 +152,25 @@
       "sum": {
         "visits": 20
       }
+    },
+    {
+      "count": 40,
+      "dimensions": {
+        "date": "2026-11-02"
+      },
+      "sum": {
+        "visits": 10
+      }
     }
   ],
   "devices": [
     {
-      "count": 600,
+      "count": 640,
       "dimensions": {
         "deviceType": "desktop"
       },
       "sum": {
-        "visits": 90
+        "visits": 100
       }
     },
     {
@@ -176,16 +185,16 @@
   ],
   "pages": [
     {
-      "count": 180,
+      "count": 190,
       "dimensions": {
         "requestPath": "/"
       },
       "sum": {
-        "visits": 60
+        "visits": 70
       }
     },
     {
-      "count": 60,
+      "count": 70,
       "dimensions": {
         "requestPath": "/en/"
       },
@@ -218,15 +227,6 @@
       },
       "sum": {
         "visits": 10
-      }
-    },
-    {
-      "count": 20,
-      "dimensions": {
-        "requestPath": "/partner/juliane-winterscheid/"
-      },
-      "sum": {
-        "visits": 0
       }
     },
     {
@@ -266,6 +266,24 @@
       }
     },
     {
+      "count": 20,
+      "dimensions": {
+        "requestPath": "/partner/juliane-winterscheid/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "requestPath": "/homepage/blog/salesforce-field-service-mobile-guided-voice/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
       "count": 10,
       "dimensions": {
         "requestPath": "/blog/sfdx-hardis-oder-devops-center-vergleich/"
@@ -278,6 +296,15 @@
       "count": 10,
       "dimensions": {
         "requestPath": "/masterclass/manufacturing-cloud/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "requestPath": "/fragen/"
       },
       "sum": {
         "visits": 0
@@ -304,7 +331,7 @@
     {
       "count": 10,
       "dimensions": {
-        "requestPath": "/fragen/"
+        "requestPath": "/blog/salesforce-architektur-entscheidungslog/"
       },
       "sum": {
         "visits": 0
@@ -313,7 +340,7 @@
     {
       "count": 10,
       "dimensions": {
-        "requestPath": "/blog/salesforce-architektur-entscheidungslog/"
+        "requestPath": "/en/services/change-management-salesforce/"
       },
       "sum": {
         "visits": 0
@@ -336,29 +363,11 @@
       "sum": {
         "visits": 0
       }
-    },
-    {
-      "count": 10,
-      "dimensions": {
-        "requestPath": "/homepage/blog/salesforce-field-service-mobile-guided-voice/"
-      },
-      "sum": {
-        "visits": 0
-      }
-    },
-    {
-      "count": 10,
-      "dimensions": {
-        "requestPath": "/masterclass/revenue-cloud/von-cpq-zu-revenue-cloud/"
-      },
-      "sum": {
-        "visits": 10
-      }
     }
   ],
   "referers": [
     {
-      "count": 460,
+      "count": 490,
       "dimensions": {
         "refererHost": "www.fk-sd.de"
       },
@@ -367,12 +376,12 @@
       }
     },
     {
-      "count": 100,
+      "count": 110,
       "dimensions": {
         "refererHost": ""
       },
       "sum": {
-        "visits": 100
+        "visits": 110
       }
     },
     {

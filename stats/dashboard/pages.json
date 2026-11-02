@@ -1,12 +1,12 @@
 [
  {
   "page": "/",
-  "pageviews": 180,
-  "visits": 60
+  "pageviews": 190,
+  "visits": 70
  },
  {
   "page": "/en/",
-  "pageviews": 60,
+  "pageviews": 70,
   "visits": 20
  },
  {
@@ -23,11 +23,6 @@
   "page": "/homepage/",
   "pageviews": 30,
   "visits": 10
- },
- {
-  "page": "/partner/juliane-winterscheid/",
-  "pageviews": 20,
-  "visits": 0
  },
  {
   "page": "/en/blog/",
@@ -50,12 +45,27 @@
   "visits": 0
  },
  {
+  "page": "/partner/juliane-winterscheid/",
+  "pageviews": 20,
+  "visits": 0
+ },
+ {
+  "page": "/homepage/blog/salesforce-field-service-mobile-guided-voice/",
+  "pageviews": 10,
+  "visits": 0
+ },
+ {
   "page": "/blog/sfdx-hardis-oder-devops-center-vergleich/",
   "pageviews": 10,
   "visits": 0
  },
  {
   "page": "/masterclass/manufacturing-cloud/",
+  "pageviews": 10,
+  "visits": 0
+ },
+ {
+  "page": "/fragen/",
   "pageviews": 10,
   "visits": 0
  },
@@ -70,12 +80,12 @@
   "visits": 0
  },
  {
-  "page": "/fragen/",
+  "page": "/blog/salesforce-architektur-entscheidungslog/",
   "pageviews": 10,
   "visits": 0
  },
  {
-  "page": "/blog/salesforce-architektur-entscheidungslog/",
+  "page": "/en/services/change-management-salesforce/",
   "pageviews": 10,
   "visits": 0
  },
@@ -88,15 +98,5 @@
   "page": "/en/certifications/",
   "pageviews": 10,
   "visits": 0
- },
- {
-  "page": "/homepage/blog/salesforce-field-service-mobile-guided-voice/",
-  "pageviews": 10,
-  "visits": 0
- },
- {
-  "page": "/masterclass/revenue-cloud/von-cpq-zu-revenue-cloud/",
-  "pageviews": 10,
-  "visits": 10
  }
 ]
