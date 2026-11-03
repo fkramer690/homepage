@@ -1,16 +1,21 @@
 [
  {
   "browser": "Chrome",
-  "pageviews": 610,
+  "pageviews": 650,
   "visits": 70
  },
  {
   "browser": "Unknown",
-  "pageviews": 20,
-  "visits": 20
+  "pageviews": 60,
+  "visits": 40
  },
  {
   "browser": "MobileSafari",
+  "pageviews": 20,
+  "visits": 10
+ },
+ {
+  "browser": "ChromeMobile",
   "pageviews": 20,
   "visits": 10
  },
@@ -21,6 +26,11 @@
  },
  {
   "browser": "Edge",
+  "pageviews": 10,
+  "visits": 10
+ },
+ {
+  "browser": "ChromeDerivative",
   "pageviews": 10,
   "visits": 10
  }

@@ -1,22 +1,22 @@
 [
  {
   "page": "/",
-  "pageviews": 190,
-  "visits": 70
+  "pageviews": 260,
+  "visits": 90
  },
  {
   "page": "/en/",
-  "pageviews": 70,
-  "visits": 20
+  "pageviews": 80,
+  "visits": 30
  },
  {
   "page": "/blog/",
-  "pageviews": 50,
-  "visits": 0
+  "pageviews": 60,
+  "visits": 10
  },
  {
   "page": "/leistungen/change-management/",
-  "pageviews": 30,
+  "pageviews": 40,
   "visits": 0
  },
  {
@@ -26,6 +26,11 @@
  },
  {
   "page": "/en/blog/",
+  "pageviews": 20,
+  "visits": 0
+ },
+ {
+  "page": "/partner/juliane-winterscheid/",
   "pageviews": 20,
   "visits": 0
  },
@@ -45,27 +50,12 @@
   "visits": 0
  },
  {
-  "page": "/partner/juliane-winterscheid/",
-  "pageviews": 20,
-  "visits": 0
- },
- {
-  "page": "/homepage/blog/salesforce-field-service-mobile-guided-voice/",
-  "pageviews": 10,
-  "visits": 0
- },
- {
   "page": "/blog/sfdx-hardis-oder-devops-center-vergleich/",
   "pageviews": 10,
   "visits": 0
  },
  {
   "page": "/masterclass/manufacturing-cloud/",
-  "pageviews": 10,
-  "visits": 0
- },
- {
-  "page": "/fragen/",
   "pageviews": 10,
   "visits": 0
  },
@@ -85,7 +75,12 @@
   "visits": 0
  },
  {
-  "page": "/en/services/change-management-salesforce/",
+  "page": "/en/certifications/",
+  "pageviews": 10,
+  "visits": 0
+ },
+ {
+  "page": "/en/masterclass/ai-salesforce/",
   "pageviews": 10,
   "visits": 0
  },
@@ -95,7 +90,12 @@
   "visits": 0
  },
  {
-  "page": "/en/certifications/",
+  "page": "/homepage/blog/salesforce-field-service-mobile-guided-voice/",
+  "pageviews": 10,
+  "visits": 0
+ },
+ {
+  "page": "/en/services/change-management-salesforce/",
   "pageviews": 10,
   "visits": 0
  }

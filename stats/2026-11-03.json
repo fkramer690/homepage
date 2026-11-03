@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-11-03T04:48:26.867Z",
+  "generatedAt": "2026-11-03T12:45:33.604Z",
   "range": {
     "start": "2026-10-04",
     "end": "2026-11-03"
   },
   "browsers": [
     {
-      "count": 610,
+      "count": 650,
       "dimensions": {
         "userAgentBrowser": "Chrome"
       },
@@ -15,18 +15,27 @@
       }
     },
     {
-      "count": 20,
+      "count": 60,
       "dimensions": {
         "userAgentBrowser": "Unknown"
       },
       "sum": {
-        "visits": 20
+        "visits": 40
       }
     },
     {
       "count": 20,
       "dimensions": {
         "userAgentBrowser": "MobileSafari"
+      },
+      "sum": {
+        "visits": 10
+      }
+    },
+    {
+      "count": 20,
+      "dimensions": {
+        "userAgentBrowser": "ChromeMobile"
       },
       "sum": {
         "visits": 10
@@ -49,25 +58,34 @@
       "sum": {
         "visits": 10
       }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "userAgentBrowser": "ChromeDerivative"
+      },
+      "sum": {
+        "visits": 10
+      }
     }
   ],
   "countries": [
     {
-      "count": 570,
+      "count": 660,
       "dimensions": {
         "countryName": "DE"
       },
       "sum": {
-        "visits": 70
+        "visits": 90
       }
     },
     {
-      "count": 70,
+      "count": 90,
       "dimensions": {
         "countryName": "US"
       },
       "sum": {
-        "visits": 50
+        "visits": 70
       }
     },
     {
@@ -161,58 +179,67 @@
       "sum": {
         "visits": 10
       }
+    },
+    {
+      "count": 110,
+      "dimensions": {
+        "date": "2026-11-03"
+      },
+      "sum": {
+        "visits": 40
+      }
     }
   ],
   "devices": [
     {
-      "count": 640,
+      "count": 690,
       "dimensions": {
         "deviceType": "desktop"
       },
       "sum": {
-        "visits": 100
+        "visits": 110
       }
     },
     {
-      "count": 30,
+      "count": 90,
       "dimensions": {
         "deviceType": "mobile"
       },
       "sum": {
-        "visits": 20
+        "visits": 50
       }
     }
   ],
   "pages": [
     {
-      "count": 190,
+      "count": 260,
       "dimensions": {
         "requestPath": "/"
       },
       "sum": {
-        "visits": 70
+        "visits": 90
       }
     },
     {
-      "count": 70,
+      "count": 80,
       "dimensions": {
         "requestPath": "/en/"
       },
       "sum": {
-        "visits": 20
+        "visits": 30
       }
     },
     {
-      "count": 50,
+      "count": 60,
       "dimensions": {
         "requestPath": "/blog/"
       },
       "sum": {
-        "visits": 0
+        "visits": 10
       }
     },
     {
-      "count": 30,
+      "count": 40,
       "dimensions": {
         "requestPath": "/leistungen/change-management/"
       },
@@ -233,6 +260,15 @@
       "count": 20,
       "dimensions": {
         "requestPath": "/en/blog/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 20,
+      "dimensions": {
+        "requestPath": "/partner/juliane-winterscheid/"
       },
       "sum": {
         "visits": 0
@@ -266,24 +302,6 @@
       }
     },
     {
-      "count": 20,
-      "dimensions": {
-        "requestPath": "/partner/juliane-winterscheid/"
-      },
-      "sum": {
-        "visits": 0
-      }
-    },
-    {
-      "count": 10,
-      "dimensions": {
-        "requestPath": "/homepage/blog/salesforce-field-service-mobile-guided-voice/"
-      },
-      "sum": {
-        "visits": 0
-      }
-    },
-    {
       "count": 10,
       "dimensions": {
         "requestPath": "/blog/sfdx-hardis-oder-devops-center-vergleich/"
@@ -296,15 +314,6 @@
       "count": 10,
       "dimensions": {
         "requestPath": "/masterclass/manufacturing-cloud/"
-      },
-      "sum": {
-        "visits": 0
-      }
-    },
-    {
-      "count": 10,
-      "dimensions": {
-        "requestPath": "/fragen/"
       },
       "sum": {
         "visits": 0
@@ -340,7 +349,16 @@
     {
       "count": 10,
       "dimensions": {
-        "requestPath": "/en/services/change-management-salesforce/"
+        "requestPath": "/en/certifications/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "requestPath": "/en/masterclass/ai-salesforce/"
       },
       "sum": {
         "visits": 0
@@ -358,7 +376,16 @@
     {
       "count": 10,
       "dimensions": {
-        "requestPath": "/en/certifications/"
+        "requestPath": "/homepage/blog/salesforce-field-service-mobile-guided-voice/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "requestPath": "/en/services/change-management-salesforce/"
       },
       "sum": {
         "visits": 0
@@ -367,7 +394,7 @@
   ],
   "referers": [
     {
-      "count": 490,
+      "count": 560,
       "dimensions": {
         "refererHost": "www.fk-sd.de"
       },
@@ -376,12 +403,12 @@
       }
     },
     {
-      "count": 110,
+      "count": 140,
       "dimensions": {
         "refererHost": ""
       },
       "sum": {
-        "visits": 110
+        "visits": 140
       }
     },
     {
@@ -397,6 +424,15 @@
       "count": 10,
       "dimensions": {
         "refererHost": "teams.public.onecdn.static.microsoft"
+      },
+      "sum": {
+        "visits": 10
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "refererHost": "www.linkedin.com"
       },
       "sum": {
         "visits": 10
