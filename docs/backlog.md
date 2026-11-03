@@ -1,4 +1,4 @@
-# Homepage – Backlog (Stand 29.10.2026)
+# Homepage – Backlog (Stand 03.11.2026)
 
 Einzige gepflegte Fassung des Backlogs. Andere Projekte (z. B. der tägliche Blog-Artikel-Lauf) lesen diese Datei. Das Repo ist öffentlich: keine Kundennamen, NDA-Details, Preise oder internen Notizen hier eintragen.
 
@@ -27,6 +27,20 @@ Stand 28.10.2026. Grundlage: Ranking-Lauf, KI-Check und OnPage-Crawl vom 28.10.2
 | D17 | sameAs-Analyse: Wirken die Profile im Schema (Person: GitHub, GULP, freelance.de, freelancermap, XING, Fratch, Trailblazer, Malt; Organization: Google-Profil)? Prüfen: Knowledge Panel bzw. Entität bei Google für „Fabian Kramer Salesforce“, Nennung von Fabian und fk-sd.de im monatlichen KI-Check, Verweise aus den Profilen in Search Console („Links“) und Cloudflare Analytics, Vergleich mit Stand 28.10.2026 (fk-sd.de in 0 von 40 KI-Antworten). Danach entscheiden, welche Profile gepflegt oder gestrichen werden | Claude | ab 01.02.2027 |
 
 Ausgangswerte 28.10.2026: „document builder limitations“ (EN) Platz 6, „field service lizenzen salesforce“ 11 (rankt mit „lohnt sich“), „salesforce field service“ 27 (170 Suchen), „field service einführung“ 29 (rankt mit „lohnt sich“), „manufacturing cloud vs sales cloud“ 30, „salesforce field service license“ 38, „salesforce document builder“ 39. KI-Übersichten bei 51 von 52 Begriffen, fk-sd.de in keiner zitiert. KI-Assistenten (ChatGPT, Claude, Perplexity, Google AI Mode): 0 Nennungen.
+
+## Lehren aus dem Google Spam Update September 2026 (Prüfung 02.11.2026)
+
+Grundlage: Video-Analyse der Gewinner und Verlierer des Spam Updates (abgeschlossen 08.10.2026) und Prüfung von fk-sd.de dagegen, Bericht: https://claude.ai/artifact/HqLpKNj5Gj4u9AgrQUEBA3. Schon erfüllt: Aussage und Termin-Button mobil auf dem ersten Bildschirm (Start, Leistungsseiten, Freiberufler-Seite, Masterclass-Hubs), Artikel starten mit den Kernaussagen, Zitat-Test ohne fremde Treffer, kaum Content Drift.
+
+| # | Maßnahme | Impact | Aufwand | Wer | Status |
+|---|---|---|---|---|---|
+| U1 | Veröffentlichungstempo drosseln: 197 DE-Artikel, davon 146 am 27. und 28.10.2026, passen zum Muster „Scaled Content Abuse“. Bis Ende Januar 2027 höchstens 1 bis 2 Artikel pro Woche, bevorzugt mit Praxis von Fabian (D8, D14, D15). In Search Console (Seiten-Bericht) prüfen, wie viele Artikel indexiert sind; nach 3 Monaten nicht indexierte Artikel in stärkere zusammenlegen | hoch | klein | Claude prüft, Fabian entscheidet | offen |
+| U2 | Themen-Hubs für das, was verkauft wird: Field Service (34 Artikel), Manufacturing Cloud (29), Revenue Cloud (27), B2B Commerce (26) haben keine indexierte Hub-Seite, die Blog-Kategorien sind nur #-Filter. Empfohlen: Masterclass-Hubs zu Themen-Hubs ausbauen (Kapitel plus alle Artikel des Themas, gruppiert nach Fragen wie Lohnt es sich, Lizenzen, Einführung, SAP); Alternative: indexierte Kategorieseiten | hoch | mittel | Claude | offen |
+| U3 | Leistungsseiten verlinken ihr Thema: statt 3 automatisch über Tags gewählter Artikel unter FAQ und Autorenbox eine kuratierte Liste (5 bis 8 Artikel plus passende Masterclass) im Lesefluss | hoch | mittel | Claude | offen |
+| U4 | Kannibalisierung Masterclass und Blog auflösen, je Paar eine Hauptseite festlegen, die andere kürzen und verlinken: Change-Rollout Länder (Kapitel) und „Change Management weltweiter Rollout“ (8 gleiche Sätze), ADKAR-Diagnose und „Change Management Salesforce-Einführung“ (6), „Releases dem Fachbereich kommunizieren“ und Kapitel „Sponsor und Kommunikation“ (5), Nearshore-Artikel und Leistungsseite (3) | mittel | mittel | Claude | offen |
+| U5 | /leistungen/ mobil: erster Bildschirm zeigt nur zwei Absätze, keine Leistung. Zweiten Absatz unter die Karten | mittel | klein | Claude | offen |
+| U6 | Content Drift beobachten: Julianes allgemeine Change-Artikel (Change-Kurve, Stakeholder-Analyse, Was ist Change Management) bleiben an Change-Leistungsseite und Blog, nicht auf der Startseite; bei D16 prüfen, ob sie passende Besucher bringen | klein | klein | Claude | ab 24.12.2026 |
+| U7 | Messung nach Video-Methode: im Montagslauf die Anzahl Begriffe auf Platz 1 bis 3 zählen und mit den drei stärksten Wettbewerbern aus den SERPs vergleichen (zusammen mit D9) | mittel | klein | Claude | ab 16.11.2026 |
 
 ## Befunde Jev-Analyse und jev-seo-Audit (29.10.2026)
 
