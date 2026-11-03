@@ -1,22 +1,22 @@
 {
-  "fetched": "2026-10-31T00:26:23.470Z",
+  "fetched": "2026-11-03T09:57:28.462Z",
   "origin": "https://www.fk-sd.de",
   "results": [
     {
       "path": "/",
       "strategy": "mobile",
       "scores": {
-        "performance": 99,
-        "accessibility": 97,
+        "performance": 98,
+        "accessibility": 100,
         "best-practices": 100,
         "seo": 100
       },
       "lab": {
-        "lcp_ms": 1694,
+        "lcp_ms": 1103,
         "cls": 0,
         "tbt_ms": 0,
-        "fcp_ms": 1694,
-        "speed_index_ms": 2812
+        "fcp_ms": 1103,
+        "speed_index_ms": 4147
       },
       "field": null,
       "origin_field": null
@@ -26,16 +26,16 @@
       "strategy": "desktop",
       "scores": {
         "performance": 100,
-        "accessibility": 97,
+        "accessibility": 100,
         "best-practices": 100,
         "seo": 100
       },
       "lab": {
-        "lcp_ms": 306,
+        "lcp_ms": 341,
         "cls": 0,
         "tbt_ms": 0,
-        "fcp_ms": 306,
-        "speed_index_ms": 393
+        "fcp_ms": 341,
+        "speed_index_ms": 427
       },
       "field": null,
       "origin_field": null
@@ -45,16 +45,16 @@
       "strategy": "mobile",
       "scores": {
         "performance": 98,
-        "accessibility": 97,
+        "accessibility": 100,
         "best-practices": 100,
         "seo": 100
       },
       "lab": {
-        "lcp_ms": 1917,
+        "lcp_ms": 1146,
         "cls": 0,
-        "tbt_ms": 3,
-        "fcp_ms": 1713,
-        "speed_index_ms": 2534
+        "tbt_ms": 0,
+        "fcp_ms": 1146,
+        "speed_index_ms": 3908
       },
       "field": null,
       "origin_field": null
@@ -64,16 +64,16 @@
       "strategy": "desktop",
       "scores": {
         "performance": 100,
-        "accessibility": 97,
+        "accessibility": 100,
         "best-practices": 100,
         "seo": 100
       },
       "lab": {
-        "lcp_ms": 281,
+        "lcp_ms": 351,
         "cls": 0,
         "tbt_ms": 0,
-        "fcp_ms": 281,
-        "speed_index_ms": 336
+        "fcp_ms": 351,
+        "speed_index_ms": 385
       },
       "field": null,
       "origin_field": null
@@ -88,11 +88,11 @@
         "seo": 100
       },
       "lab": {
-        "lcp_ms": 907,
+        "lcp_ms": 941,
         "cls": 0,
         "tbt_ms": 0,
-        "fcp_ms": 907,
-        "speed_index_ms": 1405
+        "fcp_ms": 941,
+        "speed_index_ms": 941
       },
       "field": null,
       "origin_field": null
@@ -107,11 +107,11 @@
         "seo": 100
       },
       "lab": {
-        "lcp_ms": 241,
+        "lcp_ms": 303,
         "cls": 0,
         "tbt_ms": 0,
-        "fcp_ms": 241,
-        "speed_index_ms": 256
+        "fcp_ms": 303,
+        "speed_index_ms": 303
       },
       "field": null,
       "origin_field": null
@@ -120,17 +120,17 @@
       "path": "/blog/",
       "strategy": "mobile",
       "scores": {
-        "performance": 100,
+        "performance": 96,
         "accessibility": 100,
         "best-practices": 100,
         "seo": 100
       },
       "lab": {
-        "lcp_ms": 1501,
+        "lcp_ms": 1750,
         "cls": 0,
-        "tbt_ms": 0,
-        "fcp_ms": 1501,
-        "speed_index_ms": 1991
+        "tbt_ms": 85,
+        "fcp_ms": 1750,
+        "speed_index_ms": 4138
       },
       "field": null,
       "origin_field": null
@@ -145,11 +145,11 @@
         "seo": 100
       },
       "lab": {
-        "lcp_ms": 400,
+        "lcp_ms": 427,
         "cls": 0,
-        "tbt_ms": 9,
-        "fcp_ms": 400,
-        "speed_index_ms": 444
+        "tbt_ms": 15,
+        "fcp_ms": 427,
+        "speed_index_ms": 485
       },
       "field": null,
       "origin_field": null
@@ -158,17 +158,17 @@
       "path": "/blog/salesforce-field-service-lohnt-sich/",
       "strategy": "mobile",
       "scores": {
-        "performance": 100,
+        "performance": 99,
         "accessibility": 100,
         "best-practices": 100,
         "seo": 100
       },
       "lab": {
-        "lcp_ms": 930,
+        "lcp_ms": 964,
         "cls": 0,
         "tbt_ms": 0,
-        "fcp_ms": 930,
-        "speed_index_ms": 2328
+        "fcp_ms": 964,
+        "speed_index_ms": 3710
       },
       "field": null,
       "origin_field": null
@@ -183,11 +183,11 @@
         "seo": 100
       },
       "lab": {
-        "lcp_ms": 241,
+        "lcp_ms": 292,
         "cls": 0,
         "tbt_ms": 0,
-        "fcp_ms": 241,
-        "speed_index_ms": 241
+        "fcp_ms": 292,
+        "speed_index_ms": 292
       },
       "field": null,
       "origin_field": null
@@ -196,17 +196,17 @@
       "path": "/masterclass/",
       "strategy": "mobile",
       "scores": {
-        "performance": 97,
+        "performance": 100,
         "accessibility": 100,
         "best-practices": 100,
         "seo": 100
       },
       "lab": {
-        "lcp_ms": 1952,
+        "lcp_ms": 1685,
         "cls": 0,
-        "tbt_ms": 48,
-        "fcp_ms": 1634,
-        "speed_index_ms": 4006
+        "tbt_ms": 0,
+        "fcp_ms": 936,
+        "speed_index_ms": 936
       },
       "field": null,
       "origin_field": null
@@ -221,11 +221,11 @@
         "seo": 100
       },
       "lab": {
-        "lcp_ms": 241,
+        "lcp_ms": 272,
         "cls": 0,
         "tbt_ms": 0,
-        "fcp_ms": 241,
-        "speed_index_ms": 241
+        "fcp_ms": 272,
+        "speed_index_ms": 272
       },
       "field": null,
       "origin_field": null
@@ -240,11 +240,11 @@
         "seo": 100
       },
       "lab": {
-        "lcp_ms": 902,
+        "lcp_ms": 947,
         "cls": 0,
         "tbt_ms": 0,
-        "fcp_ms": 902,
-        "speed_index_ms": 2325
+        "fcp_ms": 947,
+        "speed_index_ms": 957
       },
       "field": null,
       "origin_field": null
@@ -259,11 +259,11 @@
         "seo": 100
       },
       "lab": {
-        "lcp_ms": 241,
+        "lcp_ms": 307,
         "cls": 0,
         "tbt_ms": 0,
-        "fcp_ms": 241,
-        "speed_index_ms": 269
+        "fcp_ms": 307,
+        "speed_index_ms": 361
       },
       "field": null,
       "origin_field": null
