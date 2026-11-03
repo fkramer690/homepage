@@ -54,6 +54,17 @@ Grundlage: Prüfung aller 197 DE-Artikel (EN-Paare inhaltlich gleich) auf eigene
 | IG4 | Artikel ohne Aussicht auf eigene Erfahrung (v. a. Revenue Cloud und B2B Commerce ohne eigene Projekte) auf Kürzen, Zusammenlegen oder noindex prüfen | mittel | mittel | Claude prüft, Fabian entscheidet | offen |
 | IG5 | Eigene Daten erzeugen statt Doku zusammenfassen: Tests in einer Dev-Org (z. B. Teilenummern in der B2B-Suche), kleine Umfrage unter Kunden oder LinkedIn-Kontakten | mittel | mittel | Fabian | offen |
 
+## KI-Such-Checkliste (Prüfung 03.11.2026)
+
+Grundlage: „AI Search Checklist“ der Agentur Contact (81 Punkte: Seitenbausteine, Alleinstellung, zitierfähige Texte, Aktualität, Nebenfragen wie Kosten, Dauer, Risiken, Alternativen). Schon erfüllt: Antwort im ersten Absatz, Kernaussagen, Frage-H2, aufklappbare FAQ, Autorenbox, Inhaltsblöcke und Tabellen, eigene Grafiken, sameAs-Profile, dateModified und „aktualisiert am“, llms.txt, Monatsprüfung (J7). Eigene Erfahrung und Daten: IG1 bis IG5. Bewusst weggelassen: Aktualisierung alle 30 Tage und Jahreszahl im Titel (künstliche Aktualität, widerspricht J14), YouTube-Video in jedem Artikel, Wettbewerber namentlich nennen (passt nicht zur Rolle auf Kundenseite), Satzbau-Prüfung „Semantic Triples“.
+
+| # | Maßnahme | Impact | Aufwand | Wer | Status |
+|---|---|---|---|---|---|
+| KS1 | Leistungsseiten beantworten die Fragen vor einer Anfrage: je Seite „Passt, wenn / passt nicht, wenn“, grober Aufwand und Dauer, was nach dem ersten Gespräch passiert, Alternativen (Inhouse, Partner allein, Freelancer) und wann welche besser passt. Als 2 bis 3 FAQ oder kurzer Abschnitt, Regel in docs/service-pages.md | hoch | mittel | Fabian liefert Aufwand und Dauer, Claude baut ein | offen |
+| KS2 | Blog-Richtlinien, Abschnitt KI-Suche: jede H2 für sich verständlich (kein „wie oben beschrieben“, Build-Check auf solche Rückverweise) und Produkte, Funktionen und Releases beim Namen nennen statt „das Tool“ | mittel | klein | Claude | offen |
+| KS3 | Auswahl- und Vergleichsartikel (z. B. L1 Partnerwahl) nennen die Kriterien, nach denen die Empfehlung entsteht | mittel | klein | Claude | offen |
+| KS4 | Eigenes kleines Werkzeug als zitierfähige Ressource, z. B. Flex-Credits-Rechner oder Make-or-Buy-Check (DE + EN) | mittel | mittel | Claude schlägt vor, Fabian entscheidet | offen |
+
 ## Befunde Jev-Analyse und jev-seo-Audit (29.10.2026)
 
 Grundlage: Jev-Lauf (jev-1.14.0) über Start, EN, Leistungen, Freiberufler-Seite und 392 Blog-URLs sowie jev-seo-Audit (450 URLs), beide 29.10.2026. Bericht: https://claude.ai/artifact/4d9jFTDK2EbewV53cLymFN. Fehlalarme ohne Maßnahme: HTTPS-Weiterleitung, 110 kaputte Links und 37 Seiten mit 404 (jev-seo löst relative Links falsch auf), noindex auf Impressum und Datenschutz (gewollt). Reihenfolge nach Impact und Aufwand.
