@@ -87,7 +87,7 @@ Der tägliche Lauf schreibt einen Artikel pro Tag (EN + DE) und ergänzt hier ne
 - B3. Center of Excellence auf Kundenseite: Format und Rhythmus. *Erledigt (#125).*
 - B4. MuleSoft oder Jitterbit: welche Middleware für Salesforce und das ERP? *Braucht Beispiel von Fabian.*
 - B5. Salesforce an proALPHA anbinden: was anders ist als bei SAP. *Braucht Beispiel von Fabian.*
-- B6. Technische Benutzer mit zu vielen Rechten: Integrationen aufräumen. *Entwurf 3.11.2026 (PR folgt).*
+- B6. Technische Benutzer mit zu vielen Rechten: Integrationen aufräumen. *Entwurf 3.11.2026 (PR #273).*
 - B7. Teams Phone als Telefonie für den Service (Folgeartikel zu Open CTI). *Braucht Erfahrung aus dem CTI-Rollout.*
 - B8. Spring '27: was ändert sich für Hersteller? (News, sobald die Release Notes erscheinen, ca. Mitte Januar 2027; passt zu L7.)
 - B9. Führendes System pro Objekt: Welches System führt Kunden, Preise und Anlagen, wenn SAP und Salesforce beide Daten halten? (Begriff aus der Homepage-Suche 29.10.2026, kommt auf Schnittstellen- und Architekturseite und in ca. 20 Artikeln vor; Abgrenzung zu L2 klären.)
