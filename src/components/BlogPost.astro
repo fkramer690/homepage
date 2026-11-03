@@ -49,8 +49,10 @@ const abs = (path: string) => new URL(path, Astro.site).href;
 const brief = getContactBrief(lang, post.data.contactBrief, post.data.categories[0]);
 const ctaAttrs = contactExternal ? { target: '_blank', rel: 'noopener' } : {};
 // Keep the <title> within the ~60 characters search results show.
+// metaTitle (optional) replaces the H1 in the search title only.
 const suffix = ' | FK Solution Design';
-const pageTitle = title.length + suffix.length <= 60 ? title + suffix : title;
+const searchTitle = post.data.metaTitle ?? title;
+const pageTitle = searchTitle.length + suffix.length <= 60 ? searchTitle + suffix : searchTitle;
 const modified = (updatedDate ?? pubDate).toISOString();
 // Juliane's articles name her as author and send the contact form with her name in the subject.
 // A co-author (frontmatter coAuthor) is named in the byline, the structured data and in a shared author box.
