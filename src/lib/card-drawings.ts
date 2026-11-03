@@ -869,6 +869,15 @@ const drawings: Record<string, Drawing> = {
     <path d="M118 32H304" stroke="${L}"/>
     ${cross(30, 128)}${t(42, 131, l('no retirement date published (27.10.2026)', 'kein Abkündigungsdatum veröffentlicht (27.10.2026)'), { size: 7.5 })}`,
 
+  'salesforce-integration-users-cleanup': (l) => `
+    ${t(18, 18, l('TODAY', 'HEUTE'), { fill: D, size: 7 })}${t(172, 18, l('TARGET', 'ZIEL'), { fill: C, size: 7 })}
+    ${['ERP', 'Middleware', 'Marketing'].map((s, i) => box(18, 28 + i * 24, 56, 18) + t(46, 40 + i * 24, s, { size: 6.5, anchor: 'middle' })).join('')}
+    <path d="M74 37H86V60H96M74 61H96M74 85H86V60" fill="none" stroke="${G}" stroke-width="1.2"/>
+    ${box(96, 40, 58, 40)}${t(125, 56, l('1 user', '1 Benutzer'), { fill: D, size: 7, anchor: 'middle' })}${t(125, 70, 'Admin', { size: 7, anchor: 'middle' })}
+    ${arrow(156, 60, 170, C)}
+    ${[l('ERP user · permission set', 'ERP-Benutzer · Permission Set'), l('Middleware user · perm. set', 'Middleware · Permission Set'), l('Marketing user · perm. set', 'Marketing · Permission Set')].map((s, i) => box(172, 28 + i * 24, 130, 18, C) + t(237, 40 + i * 24, s, { size: 6.5, anchor: 'middle' })).join('')}
+    ${tag(18, 128, 150, l('5 licences included', '5 Lizenzen inklusive'))}${t(178, 141, l('API only · IP ranges', 'nur API · IP-Bereiche'), { size: 7 })}`,
+
   'salesforce-password-integrations-2027': (l) => `
     ${box(22, 56, 80, 48)}${t(62, 77, l('INTEGRATION', 'SCHNITTSTELLE'), { fill: D, anchor: 'middle' })}${t(62, 91, 'ERP · middleware', { size: 7, anchor: 'middle' })}
     ${box(218, 56, 80, 48)}${t(258, 77, 'SALESFORCE', { fill: D, anchor: 'middle' })}${t(258, 91, 'connected app', { size: 7, anchor: 'middle' })}
