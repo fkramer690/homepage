@@ -15,6 +15,7 @@ Start every new article from [`docs/blog-template.md`](blog-template.md).
 | Part | Rule | Checked |
 |---|---|---|
 | Title | Names a concrete problem or question, 20–60 characters, main keyword near the start | schema |
+| Meta title (optional) | `metaTitle`: search title (`<title>`) when it should differ from the H1, e.g. "Salesforce" first where the H1 names only the product; 20–60 characters, unique like every title. H1, preview image and links keep `title` | schema, check-titles |
 | Description | 120–160 characters, states what the reader gets | schema |
 | Key takeaways | 3–5 standalone sentences, each understandable without the article, at most 160 characters, the first not a copy of the intro | schema + script |
 | Intro | First paragraph gives the answer, at most 110 words | script |
