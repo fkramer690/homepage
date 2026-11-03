@@ -42,6 +42,18 @@ Grundlage: Video-Analyse der Gewinner und Verlierer des Spam Updates (abgeschlos
 | U6 | Content Drift beobachten: Julianes allgemeine Change-Artikel (Change-Kurve, Stakeholder-Analyse, Was ist Change Management) bleiben an Change-Leistungsseite und Blog, nicht auf der Startseite; bei D16 prüfen, ob sie passende Besucher bringen | klein | klein | Claude | ab 24.12.2026 |
 | U7 | Messung nach Video-Methode: im Montagslauf die Anzahl Begriffe auf Platz 1 bis 3 zählen und mit den drei stärksten Wettbewerbern aus den SERPs vergleichen (zusammen mit D9) | mittel | klein | Claude | ab 16.11.2026 |
 
+## Information Gain der Blogartikel (Prüfung 03.11.2026)
+
+Grundlage: Prüfung aller 197 DE-Artikel (EN-Paare inhaltlich gleich) auf eigene Erfahrung gegenüber Allgemeinwissen, Bericht: https://claude.ai/artifact/FF5s3rcdih9KbwiyT8xHJq. Googles Leitfaden zur KI-Suche (Mai 2026) gewichtet Inhalte mit eigener Erfahrung höher als „commodity content“. Befund: 101 von 197 Artikeln ohne Satz aus eigener Projekterfahrung, 144 mit angenommenen Szenarien, fast alle aus dem 27. und 28.10.2026. Stark: sfdx-hardis-Training, Manufacturing Cloud „wann lohnt sie sich“, PR-Reviews, Freelancer/CoE/Ownership Matrix, Document-Builder-Workarounds. Schwach: Agentforce-Kosten- und Agentenartikel, Revenue Cloud, B2B Commerce.
+
+| # | Maßnahme | Impact | Aufwand | Wer | Status |
+|---|---|---|---|---|---|
+| IG1 | Die 15 schwachen Artikel mit den meisten Impressionen aus der Search Console ziehen und pro Artikel 2 bis 3 Fragen an Fabian formulieren (echte Größenordnung, Entscheidung mit Grund, Fehler aus dem Test) | hoch | klein | Claude | offen |
+| IG2 | Antworten als Praxis-Kasten und klare Meinung einbauen (DE + EN), in Paketen von 5 Artikeln | hoch | mittel | Fabian liefert Fakten, Claude baut ein | offen |
+| IG3 | Dünne Kostenartikel zu Agentforce zu einem starken Artikel zusammenlegen (Flex Credits, AELA, Digital Wallet, Serviceagent-Kosten, MCP-Budgetrisiko), alte URLs weiterleiten; passt zu U1 | mittel | mittel | Claude schlägt vor, Fabian entscheidet | offen |
+| IG4 | Artikel ohne Aussicht auf eigene Erfahrung (v. a. Revenue Cloud und B2B Commerce ohne eigene Projekte) auf Kürzen, Zusammenlegen oder noindex prüfen | mittel | mittel | Claude prüft, Fabian entscheidet | offen |
+| IG5 | Eigene Daten erzeugen statt Doku zusammenfassen: Tests in einer Dev-Org (z. B. Teilenummern in der B2B-Suche), kleine Umfrage unter Kunden oder LinkedIn-Kontakten | mittel | mittel | Fabian | offen |
+
 ## Befunde Jev-Analyse und jev-seo-Audit (29.10.2026)
 
 Grundlage: Jev-Lauf (jev-1.14.0) über Start, EN, Leistungen, Freiberufler-Seite und 392 Blog-URLs sowie jev-seo-Audit (450 URLs), beide 29.10.2026. Bericht: https://claude.ai/artifact/4d9jFTDK2EbewV53cLymFN. Fehlalarme ohne Maßnahme: HTTPS-Weiterleitung, 110 kaputte Links und 37 Seiten mit 404 (jev-seo löst relative Links falsch auf), noindex auf Impressum und Datenschutz (gewollt). Reihenfolge nach Impact und Aufwand.
