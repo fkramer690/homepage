@@ -33,6 +33,7 @@ export const site = {
     'https://www.xing.com/profile/Fabian_Kramer13',
     'https://app.fratch.io/de/profile/fabian-kramer-j',
     'https://www.salesforce.com/trailblazer/fkramer',
+    'https://www.malt.com/profile/fabiankramer1',
   ],
   // Profiles of the company, only listed as sameAs in the structured data.
   companyProfiles: [
