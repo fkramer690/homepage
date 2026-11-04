@@ -42,27 +42,29 @@ export const juliane = {
     // Author box below her own blog articles (frontmatter author: juliane).
     author: {
       label: 'Über die Autorin',
-      bio: 'Juliane begleitet seit 2022 als freiberufliche Change-Managerin IT-Transformationen, darunter weltweite Salesforce-Rollouts. Davor war sie mehr als zehn Jahre in Management, Führung und Beratung tätig, unter anderem als Country Managerin DACH. An der Hochschule Fresenius lehrt sie „Managing Transformation & Change“.',
+      bio: 'Juliane begleitet seit 2022 als freiberufliche Change-Managerin IT-Transformationen, darunter weltweite Salesforce-Rollouts. Davor war sie mehr als zehn Jahre in Management, Führung und Beratung tätig, unter anderem als Country Managerin DACH. An der Hochschule Fresenius hat sie „Managing Transformation & Change“ gelehrt.',
       more: 'Profil und Referenzen',
       // Her card in the shared author box of articles she co-wrote.
       part: 'Menschen und Veränderung',
-      short: 'Begleitet als Change-Managerin weltweite Salesforce-Rollouts und lehrt an der Hochschule Fresenius.',
+      short: 'Begleitet als Change-Managerin weltweite Salesforce-Rollouts und hat an der Hochschule Fresenius Change Management gelehrt.',
     },
     facts: [
-      { value: '10+', label: 'Jahre Management, Führung, Beratung' },
-      { value: '6', label: 'IT-Transformationen als Change-Managerin' },
+      { value: '10+', label: 'Jahre Führung und Management' },
+      { value: '500+', label: 'Anwender im größten Salesforce-Rollout' },
+      { value: '20.000+', label: 'Mitarbeitende in der aktuellen Transformation' },
       { value: '4', label: 'Salesforce-Projekte' },
-      { value: '19', label: 'Länder in einer Transformation' },
     ],
     about: {
       label: 'Profil',
       title: 'Change Management mit Blick von innen',
       paragraphs: [
-        'Juliane kennt Unternehmen nicht nur aus der Beratung, sondern auch aus Führungsrollen: als HR-Managerin, als Interim-Managerin für die DACH-Region und als Country Managerin DACH. Sie weiß deshalb, wie Entscheidungen fallen, wo Widerstand entsteht und was ein Team braucht, um neue Arbeitsweisen anzunehmen.',
-        'Seit 2022 arbeitet sie freiberuflich als Change-Managerin für IT-Transformationen, darunter globale Salesforce-Rollouts. Sie ist Prosci Certified Change Practitioner und ausgebildete Business-Coachin und verbindet die strukturierte Methode mit praktischer Managementerfahrung. An der Hochschule Fresenius lehrt sie „Managing Transformation & Change“ im Masterstudiengang International Business Management.',
+        'Juliane kennt Unternehmen nicht nur aus der Beratung, sondern auch aus Führungsrollen: als HR-Managerin, als Interim-Managerin für die DACH-Region und als Country Managerin DACH mit 350 Mitarbeitenden, 13 direkten Berichten und Ergebnisverantwortung. Umstrukturierungen hat sie mit dem Betriebsrat verhandelt. Sie weiß deshalb, wie Entscheidungen fallen, wo Widerstand entsteht und was ein Team braucht, um neue Arbeitsweisen anzunehmen. Angefangen hat sie als Industriekauffrau, ihre Masterarbeit über Kulturwandel hat sie bei ThyssenKrupp Rasselstein geschrieben.',
+        'Seit 2022 arbeitet sie freiberuflich als Change-Managerin für IT-Transformationen, darunter globale Salesforce-Rollouts. Sie ist Prosci Certified Change Practitioner und ausgebildete Business-Coachin und verbindet die strukturierte Methode mit praktischer Managementerfahrung. An der Hochschule Fresenius hat sie im Sommersemester 2025 „Managing Transformation & Change“ für Masterstudierende im International Management gelehrt; der Kurs gehörte zu den bestbewerteten der Hochschule.',
       ],
       tagsLabel: 'Branchen',
-      tags: ['Industrielle Fertigung', 'Lebensmittelherstellung', 'Konsumgüter', 'Medizintechnik', 'Telekommunikation', 'Versicherung', 'IT-Beratung', 'Handel', 'Hotellerie', 'Fitness und Dienstleistungen'],
+      tags: ['Industrielle Fertigung', 'Lebensmittelherstellung', 'Konsumgüter', 'Medizintechnik', 'Telekommunikation', 'Versicherung', 'IT-Beratung', 'Handel', 'Hotellerie', 'Fitness und Dienstleistungen', 'Hochschule und Bildung'],
+      methodsLabel: 'Workshop-Formate',
+      methods: ['Change Leadership', 'Impact-Analyse', 'ADKAR', 'DISC-Profiling', 'Retrospektive', 'Train-the-Trainer'],
     },
     split: {
       label: 'Zusammenarbeit',
@@ -74,6 +76,7 @@ export const juliane = {
         { icon: 'steer', t: 'Sponsor-Plan', d: 'Was das Management wann sichtbar tut, damit Rückhalt mehr ist als eine Folie.' },
         { icon: 'interview', t: 'Kommunikation und Coaching', d: 'Botschaften je Gruppe und Land, Begleitung von Führungskräften und Sponsoren.' },
         { icon: 'team', t: 'Key User und Schulung', d: 'Auswahl, Rolle und Schulung am echten Fall, damit Wissen im Alltag ankommt.' },
+        { icon: 'feedback', t: 'Betriebsrat früh einbinden', d: 'Was Salesforce über Leistung und Verhalten auswertet, mit dem Betriebsrat klären, bevor es den Zeitplan kippt.' },
       ] as Point[],
       rightTitle: 'Fabian: Architektur und Releases',
       right: [
@@ -85,15 +88,18 @@ export const juliane = {
     },
     projects: {
       label: 'Referenzen',
-      title: 'Projekte als Change-Managerin',
-      intro: 'Eine Auswahl aus Julianes Projekten, mit Rolle und Umfang laut ihrem Profil.',
+      title: 'Projekte in Change Management und Transformation',
+      intro: 'Eine Auswahl aus Julianes Projekten, mit Rolle, Umfang und Aufgaben laut ihrem Profil.',
       items: [
-        { logo: 'aak', t: 'AAK AB: globaler Salesforce-Sales-Cloud-Rollout', d: 'Senior Human Centered Change Consultant. Mehr als 500 Anwender in mehreren Ländern in den USA, Asien und Europa.' },
-        { logo: 'deutsche-telekom', t: 'Deutsche Telekom AG: Salesforce-Prozessoptimierung', d: 'Human Centered Change Strategy Consultant in einem Transformationsumfeld auf Konzernebene.' },
-        { logo: 'septodont', t: 'Septodont GmbH: Rollout von Salesforce Maps', d: 'Organizational Change Consultant und Executive Coach.' },
+        { logo: 'aak', t: 'AAK AB: globaler Salesforce-Sales-Cloud-Rollout', d: 'Senior Human Centered Change Consultant bei einem Lebensmittelhersteller mit mehr als 4.000 Mitarbeitenden. Change-Strategie, Kommunikationsplan und Train-the-Trainer-Konzept, eng abgestimmt mit dem Salesforce-IT-Team. Mehr als 500 Anwender in mehreren Ländern in den USA, Asien und Europa.' },
+        { logo: 'deutsche-telekom', t: 'Deutsche Telekom AG: Salesforce-Prozessoptimierung', d: 'Human Centered Change Strategy Consultant. Readiness-Analyse mit Interviews und Umfragen, Ergebnisse und Maßnahmenplan im Steuerkreis vorgestellt, Change Story und Kommunikationsplan für die Harmonisierung der Vertriebs- und Service-Oberflächen überarbeitet.' },
+        { logo: 'septodont', t: 'Septodont GmbH: Rollout von Salesforce Maps', d: 'Organizational Change Consultant und Executive Coach für den Rollout im Außendienst. Kommunikationsplan und Kernbotschaften, 1:1-Coaching des Geschäftsführers im Umgang mit Widerstand.' },
         { logo: 'von-rundstedt', t: 'Von Rundstedt: Salesforce-Einführung', d: 'IT-Projektmanagerin, Begleitung vom Kick-off bis zum Rollout.' },
-        { logo: 'hdi', t: 'HDI Versicherungen AG: globale IT-Transformation (Cloudification)', d: 'Senior Organizational Change & Communication Consultant. Mehr als 20.000 betroffene Mitarbeitende in 19 Ländern.' },
-        { logo: 'karo-heiko', t: 'KaRo / Heiko Companies: Transformation auf Microsoft Dynamics 365', d: 'Organizational Change Management Consultant für digitale Transformation und Akzeptanz.' },
+        { logo: 'hdi', t: 'HDI Versicherungen AG: globale IT-Transformation (Cloudification, Rechenzentrums-Schließung)', d: 'Senior Change Manager seit 2025. Sie baut weltweite Change-Netzwerke und Key-User-Communities auf und misst die Akzeptanz mit Kennzahlen. Mehr als 20.000 betroffene Mitarbeitende in 19 Ländern.' },
+        { logo: 'karo-heiko', t: 'KaRo / Heiko Companies: Transformation auf Microsoft Dynamics 365', d: 'Organizational Change Management Consultant bei einem Maschinenbauer nach der Übernahme durch einen Finanzinvestor. Change-Strategie nach Prosci mit Widerstandsmanagement, Kommunikation und Schulung, Reporting an CIO und Director OCM des US-Eigentümers.' },
+        { logo: 'danone', t: 'Danone Deutschland GmbH: agile Transformation in der DACH-Region', d: 'Project & Change Manager für alle Marken in DACH. Verantwortlich für die Säule „Systeme, Prozesse und neue Arbeitsweisen“, Workshops zu Change-Strategie, Impact-Analyse, Stakeholdern und Widerstand, Schulungs- und Befähigungsprogramme.' },
+        { logo: 'hologic', t: 'Hologic Deutschland GmbH: Zusammenlegung von drei Standorten', d: 'Interim HR Operations Manager DACH und Organizational Change Consultant in der Medizintechnik. Verhandlungen mit dem Betriebsrat zu Sozialplan und Interessenausgleich, Coaching der Führungskräfte und Kommunikation an die Mitarbeitenden.' },
+        { logo: 'landal', t: 'Landal GreenParks GmbH: Umstrukturierung der Personalabteilung', d: 'Interim HR Manager DACH mit Berichtslinie an den Geschäftsführer und die internationale Personalleitung. Neuaufstellung des HR-Teams, neue Vereinbarung mit dem Betriebsrat, Change-Beratung im Krisenteam.' },
       ],
     },
     steps: {
@@ -109,7 +115,7 @@ export const juliane = {
     },
     credentials: {
       label: 'Zertifikate',
-      tags: ['Prosci Change Management Practitioner', 'PRINCE2', 'Professional Scrum Master I', 'Six Sigma Green Belt', 'Personal & Business Coach', 'DISC-Profiling', 'IHK-Ausbildereignung (AEVO)'],
+      tags: ['Prosci Change Management Practitioner', 'PRINCE2', 'Professional Scrum Master I', 'Six Sigma Green Belt', 'Personal & Business Coach', 'DISC-Profiling', 'IHK-Ausbildereignung (AEVO)', 'Master Business with AI (MBAI®, seit 2026)'],
       note: 'Prosci und ADKAR sind eingetragene Marken von Prosci, Inc. Die Prosci-Zertifizierung hat Juliane Winterscheid, FK Solution Design ist kein Partner von Prosci.',
     },
     more: {
@@ -147,27 +153,29 @@ export const juliane = {
     },
     author: {
       label: 'About the author',
-      bio: 'Since 2022 Juliane has supported IT transformations as a freelance change manager, including global Salesforce rollouts. Before that she spent more than ten years in management, leadership and consulting, among other roles as country manager DACH. At Hochschule Fresenius she teaches "Managing Transformation & Change".',
+      bio: 'Since 2022 Juliane has supported IT transformations as a freelance change manager, including global Salesforce rollouts. Before that she spent more than ten years in management, leadership and consulting, among other roles as country manager DACH. At Hochschule Fresenius she taught "Managing Transformation & Change".',
       more: 'Profile and references',
       // Her card in the shared author box of articles she co-wrote.
       part: 'People and change',
-      short: 'Change manager for global Salesforce rollouts, lecturer at Hochschule Fresenius.',
+      short: 'Change manager for global Salesforce rollouts, former lecturer in change management at Hochschule Fresenius.',
     },
     facts: [
-      { value: '10+', label: 'years in management, leadership, consulting' },
-      { value: '6', label: 'IT transformations as change manager' },
+      { value: '10+', label: 'years in leadership and management' },
+      { value: '500+', label: 'users in the largest Salesforce rollout' },
+      { value: '20,000+', label: 'employees in the current transformation' },
       { value: '4', label: 'Salesforce projects' },
-      { value: '19', label: 'countries in one transformation' },
     ],
     about: {
       label: 'Profile',
       title: 'Change management with an inside view',
       paragraphs: [
-        'Juliane knows companies not only from consulting but also from leadership roles: as HR manager, as interim manager for the DACH region and as country manager DACH. So she knows how decisions are made, where resistance comes from and what a team needs to adopt new ways of working.',
-        'Since 2022 she has worked as a freelance change manager for IT transformations, including global Salesforce rollouts. She is a Prosci certified change practitioner and a trained business coach, and combines the structured method with hands-on management experience. At Hochschule Fresenius she teaches "Managing Transformation & Change" in the International Business Management master programme.',
+        'Juliane knows companies not only from consulting but also from leadership roles: as HR manager, as interim manager for the DACH region and as country manager DACH with 350 employees, 13 direct reports and profit and loss responsibility. She has negotiated restructurings with works councils. So she knows how decisions are made, where resistance comes from and what a team needs to adopt new ways of working. She started out as an industrial clerk and wrote her master\'s thesis on cultural change at ThyssenKrupp Rasselstein.',
+        'Since 2022 she has worked as a freelance change manager for IT transformations, including global Salesforce rollouts. She is a Prosci certified change practitioner and a trained business coach, and combines the structured method with hands-on management experience. At Hochschule Fresenius she taught "Managing Transformation & Change" to international management master students in the 2025 summer semester; the course was among the university\'s highest rated.',
       ],
       tagsLabel: 'Industries',
-      tags: ['Industrial manufacturing', 'Food manufacturing', 'Consumer goods', 'Medical technology', 'Telecommunications', 'Insurance', 'IT consulting', 'Retail', 'Hospitality', 'Fitness and consumer services'],
+      tags: ['Industrial manufacturing', 'Food manufacturing', 'Consumer goods', 'Medical technology', 'Telecommunications', 'Insurance', 'IT consulting', 'Retail', 'Hospitality', 'Fitness and consumer services', 'Higher education'],
+      methodsLabel: 'Workshop formats',
+      methods: ['Change leadership', 'Impact analysis', 'ADKAR', 'DISC profiling', 'Retrospective', 'Train the trainer'],
     },
     split: {
       label: 'Working together',
@@ -179,6 +187,7 @@ export const juliane = {
         { icon: 'steer', t: 'Sponsor plan', d: 'What management visibly does and when, so that backing is more than a slide.' },
         { icon: 'interview', t: 'Communication and coaching', d: 'Messages per group and country, coaching for managers and sponsors.' },
         { icon: 'team', t: 'Key users and training', d: 'Selection, role and training on real cases, so knowledge reaches daily work.' },
+        { icon: 'feedback', t: 'Involve the works council early', d: 'Agree with the works council what Salesforce reports on performance and behaviour, before it derails the timeline.' },
       ] as Point[],
       rightTitle: 'Fabian: architecture and releases',
       right: [
@@ -190,15 +199,18 @@ export const juliane = {
     },
     projects: {
       label: 'References',
-      title: 'Projects as change manager',
-      intro: 'A selection of Juliane\'s projects, with role and scope as stated in her profile.',
+      title: 'Projects in change management and transformation',
+      intro: 'A selection of Juliane\'s projects, with role, scope and tasks as stated in her profile.',
       items: [
-        { logo: 'aak', t: 'AAK AB: global Salesforce Sales Cloud rollout', d: 'Senior human centered change consultant. More than 500 end users in several countries across the US, Asia and Europe.' },
-        { logo: 'deutsche-telekom', t: 'Deutsche Telekom AG: Salesforce process optimisation', d: 'Human centered change strategy consultant in an enterprise-scale transformation.' },
-        { logo: 'septodont', t: 'Septodont GmbH: Salesforce Maps rollout', d: 'Organizational change consultant and executive coach.' },
+        { logo: 'aak', t: 'AAK AB: global Salesforce Sales Cloud rollout', d: 'Senior human centered change consultant at a food manufacturer with more than 4,000 employees. Change strategy, communication plan and train-the-trainer concept, closely aligned with the Salesforce IT team. More than 500 end users in several countries across the US, Asia and Europe.' },
+        { logo: 'deutsche-telekom', t: 'Deutsche Telekom AG: Salesforce process optimisation', d: 'Human centered change strategy consultant. Readiness assessment with interviews and surveys, findings and action plan presented to the steering committee, change story and communication plan reworked for harmonising the sales and service interfaces.' },
+        { logo: 'septodont', t: 'Septodont GmbH: Salesforce Maps rollout', d: 'Organizational change consultant and executive coach for the field sales rollout. Communication plan and key messages, one-to-one coaching of the managing director on handling resistance.' },
         { logo: 'von-rundstedt', t: 'Von Rundstedt: Salesforce implementation', d: 'IT project management consultant, from kick-off to rollout.' },
-        { logo: 'hdi', t: 'HDI Versicherungen AG: global IT transformation (cloudification)', d: 'Senior organizational change and communication consultant. More than 20,000 employees affected across 19 countries.' },
-        { logo: 'karo-heiko', t: 'KaRo / Heiko Companies: Microsoft Dynamics 365 transformation', d: 'Organizational change management consultant for digital transformation and adoption.' },
+        { logo: 'hdi', t: 'HDI Versicherungen AG: global IT transformation (cloudification, data centre closure)', d: 'Senior change manager since 2025. She builds global change networks and key user communities and measures adoption with KPIs. More than 20,000 employees affected across 19 countries.' },
+        { logo: 'karo-heiko', t: 'KaRo / Heiko Companies: Microsoft Dynamics 365 transformation', d: 'Organizational change management consultant at a machinery manufacturer after its acquisition by a private equity investor. Change strategy based on Prosci with resistance management, communication and training, reporting to the CIO and director OCM of the US owner.' },
+        { logo: 'danone', t: 'Danone Deutschland GmbH: agile transformation in the DACH region', d: 'Project and change manager for all brands in DACH. Responsible for the pillar "systems, processes and new ways of working", workshops on change strategy, impact analysis, stakeholders and resistance, training and enablement programmes.' },
+        { logo: 'hologic', t: 'Hologic Deutschland GmbH: merging three sites into one', d: 'Interim HR operations manager DACH and organizational change consultant in medical technology. Negotiations with the works council on the social plan and reconciliation of interests, coaching for managers and communication to employees.' },
+        { logo: 'landal', t: 'Landal GreenParks GmbH: restructuring the HR department', d: 'Interim HR manager DACH reporting to the managing director and the international head of HR. Rebuilt the HR team, a new agreement with the works council, change advice in the crisis team.' },
       ],
     },
     steps: {
@@ -214,7 +226,7 @@ export const juliane = {
     },
     credentials: {
       label: 'Certifications',
-      tags: ['Prosci Change Management Practitioner', 'PRINCE2', 'Professional Scrum Master I', 'Six Sigma Green Belt', 'Personal & business coach', 'DISC profiling', 'IHK trainer certificate (AEVO)'],
+      tags: ['Prosci Change Management Practitioner', 'PRINCE2', 'Professional Scrum Master I', 'Six Sigma Green Belt', 'Personal & business coach', 'DISC profiling', 'IHK trainer certificate (AEVO)', 'Master Business with AI (MBAI®, since 2026)'],
       note: 'Prosci and ADKAR are registered trademarks of Prosci, Inc. The Prosci certification is held by Juliane Winterscheid; FK Solution Design is not a Prosci partner.',
     },
     more: {
