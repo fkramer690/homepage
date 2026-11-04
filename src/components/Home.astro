@@ -8,7 +8,7 @@ import ContactForm from './ContactForm.astro';
 import ProofBar from './ProofBar.astro';
 import FloatingContact from './FloatingContact.astro';
 import StructuredData from './StructuredData.astro';
-import { Image } from 'astro:assets';
+import { Image, getImage } from 'astro:assets';
 import portrait from '../assets/portrait.png';
 import speaking from '../assets/speaking.jpg';
 import { en } from '../i18n/en';
@@ -22,7 +22,7 @@ import { questions, questionPaths } from '../data/questions';
 import { clients, logoHeight, logoFile, logoRatio } from '../data/clients';
 import Icon from './Icon.astro';
 import Photo from './Photo.astro';
-import type { PhotoKey } from '../data/photos';
+import { photos, type PhotoKey } from '../data/photos';
 
 interface Props {
   lang: 'en' | 'de';
@@ -40,6 +40,14 @@ const serviceLinks = new Map(services.map((s) => [s.data.order, serviceHref(s)])
 const masterclasses = await getMasterclasses(lang);
 const mcTexts = t.masterclasses;
 const [qOpen, qClose] = lang === 'de' ? ['„', '“'] : ['“', '”'];
+// Hero portrait: the LCP element on desktop. Preloaded in the head so the browser
+// fetches it right away at high priority instead of after the layout (it was found
+// late as a lazy image). Only from 901px, because below that the photo is hidden;
+// the <img> itself stays lazy so phones never download it. Same widths, format and
+// quality as in Photo.astro, so the preload hits exactly the AVIF file the <picture> picks.
+const heroPhoto = '06-portraet-halle-v02';
+const heroSizes = '640px';
+const heroAvif = await getImage({ src: photos[heroPhoto].src, widths: [480, 768, 1024, 1280, 1536], format: 'avif', quality: 70 });
 // Icons of the four approach steps (analyse, design, steer, implement).
 // Photo per reference project (by order), with its own crop for the wide panel image.
 const refPhotos: { photo: PhotoKey; focus: string }[] = [
@@ -52,6 +60,7 @@ const refPhotos: { photo: PhotoKey; focus: string }[] = [
 // Icons of the services (by order).
 ---
 <Base lang={lang} title={t.meta.title} description={t.meta.description} alternates={{ en: enHome, de: deHome }}>
+  <link slot="head" rel="preload" as="image" type="image/avif" imagesrcset={heroAvif.srcSet.attribute} imagesizes={heroSizes} media="(min-width: 901px)" fetchpriority="high" />
   <StructuredData slot="head" t={t} url={new URL(home, Astro.site).href} />
   <a class="skip-link" href="#main">{lang === 'de' ? 'Zum Inhalt springen' : 'Skip to content'}</a>
   <Header t={t} home={home} switchHref={switchHref} />
@@ -73,7 +82,7 @@ const refPhotos: { photo: PhotoKey; focus: string }[] = [
         </div>
         </div>
         <figure class="hero-photo is-measured">
-          <Photo photo="06-portraet-halle-v02" lang={lang} sizes="640px" />
+          <Photo photo={heroPhoto} lang={lang} sizes={heroSizes} />
           <span class="hm-line hm-top" aria-hidden="true"><span class="hm-dot"></span></span>
           <span class="hm-line hm-side" aria-hidden="true"></span>
           <span class="hm-cross" aria-hidden="true"></span>
