@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-11-03T12:45:33.604Z",
+  "generatedAt": "2026-11-04T04:47:42.284Z",
   "range": {
-    "start": "2026-10-04",
-    "end": "2026-11-03"
+    "start": "2026-10-05",
+    "end": "2026-11-04"
   },
   "browsers": [
     {
-      "count": 650,
+      "count": 660,
       "dimensions": {
         "userAgentBrowser": "Chrome"
       },
@@ -15,16 +15,16 @@
       }
     },
     {
-      "count": 60,
+      "count": 80,
       "dimensions": {
         "userAgentBrowser": "Unknown"
       },
       "sum": {
-        "visits": 40
+        "visits": 50
       }
     },
     {
-      "count": 20,
+      "count": 30,
       "dimensions": {
         "userAgentBrowser": "MobileSafari"
       },
@@ -71,7 +71,7 @@
   ],
   "countries": [
     {
-      "count": 660,
+      "count": 690,
       "dimensions": {
         "countryName": "DE"
       },
@@ -95,6 +95,15 @@
       },
       "sum": {
         "visits": 0
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "countryName": "NL"
+      },
+      "sum": {
+        "visits": 10
       }
     }
   ],
@@ -181,18 +190,18 @@
       }
     },
     {
-      "count": 110,
+      "count": 150,
       "dimensions": {
         "date": "2026-11-03"
       },
       "sum": {
-        "visits": 40
+        "visits": 50
       }
     }
   ],
   "devices": [
     {
-      "count": 690,
+      "count": 700,
       "dimensions": {
         "deviceType": "desktop"
       },
@@ -201,27 +210,27 @@
       }
     },
     {
-      "count": 90,
+      "count": 120,
       "dimensions": {
         "deviceType": "mobile"
       },
       "sum": {
-        "visits": 50
+        "visits": 60
       }
     }
   ],
   "pages": [
     {
-      "count": 260,
+      "count": 270,
       "dimensions": {
         "requestPath": "/"
       },
       "sum": {
-        "visits": 90
+        "visits": 100
       }
     },
     {
-      "count": 80,
+      "count": 90,
       "dimensions": {
         "requestPath": "/en/"
       },
@@ -250,6 +259,15 @@
     {
       "count": 30,
       "dimensions": {
+        "requestPath": "/fragen/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 30,
+      "dimensions": {
         "requestPath": "/homepage/"
       },
       "sum": {
@@ -259,7 +277,7 @@
     {
       "count": 20,
       "dimensions": {
-        "requestPath": "/en/blog/"
+        "requestPath": "/partner/juliane-winterscheid/"
       },
       "sum": {
         "visits": 0
@@ -268,7 +286,7 @@
     {
       "count": 20,
       "dimensions": {
-        "requestPath": "/partner/juliane-winterscheid/"
+        "requestPath": "/en/blog/"
       },
       "sum": {
         "visits": 0
@@ -376,16 +394,7 @@
     {
       "count": 10,
       "dimensions": {
-        "requestPath": "/homepage/blog/salesforce-field-service-mobile-guided-voice/"
-      },
-      "sum": {
-        "visits": 0
-      }
-    },
-    {
-      "count": 10,
-      "dimensions": {
-        "requestPath": "/en/services/change-management-salesforce/"
+        "requestPath": "/blog/salesforce-releases-fachbereich-kommunizieren/"
       },
       "sum": {
         "visits": 0
@@ -394,7 +403,7 @@
   ],
   "referers": [
     {
-      "count": 560,
+      "count": 590,
       "dimensions": {
         "refererHost": "www.fk-sd.de"
       },
@@ -403,12 +412,12 @@
       }
     },
     {
-      "count": 140,
+      "count": 150,
       "dimensions": {
         "refererHost": ""
       },
       "sum": {
-        "visits": 140
+        "visits": 150
       }
     },
     {

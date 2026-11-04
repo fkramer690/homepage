@@ -1,12 +1,12 @@
 [
  {
   "page": "/",
-  "pageviews": 260,
-  "visits": 90
+  "pageviews": 270,
+  "visits": 100
  },
  {
   "page": "/en/",
-  "pageviews": 80,
+  "pageviews": 90,
   "visits": 30
  },
  {
@@ -20,17 +20,22 @@
   "visits": 0
  },
  {
+  "page": "/fragen/",
+  "pageviews": 30,
+  "visits": 0
+ },
+ {
   "page": "/homepage/",
   "pageviews": 30,
   "visits": 10
  },
  {
-  "page": "/en/blog/",
+  "page": "/partner/juliane-winterscheid/",
   "pageviews": 20,
   "visits": 0
  },
  {
-  "page": "/partner/juliane-winterscheid/",
+  "page": "/en/blog/",
   "pageviews": 20,
   "visits": 0
  },
@@ -90,12 +95,7 @@
   "visits": 0
  },
  {
-  "page": "/homepage/blog/salesforce-field-service-mobile-guided-voice/",
-  "pageviews": 10,
-  "visits": 0
- },
- {
-  "page": "/en/services/change-management-salesforce/",
+  "page": "/blog/salesforce-releases-fachbereich-kommunizieren/",
   "pageviews": 10,
   "visits": 0
  }
