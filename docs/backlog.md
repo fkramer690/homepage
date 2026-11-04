@@ -1,4 +1,4 @@
-# Homepage – Backlog (Stand 29.10.2026)
+# Homepage – Backlog (Stand 03.11.2026)
 
 Einzige gepflegte Fassung des Backlogs. Andere Projekte (z. B. der tägliche Blog-Artikel-Lauf) lesen diese Datei. Das Repo ist öffentlich: keine Kundennamen, NDA-Details, Preise oder internen Notizen hier eintragen.
 
@@ -27,6 +27,43 @@ Stand 28.10.2026. Grundlage: Ranking-Lauf, KI-Check und OnPage-Crawl vom 28.10.2
 | D17 | sameAs-Analyse: Wirken die Profile im Schema (Person: GitHub, GULP, freelance.de, freelancermap, XING, Fratch, Trailblazer, Malt; Organization: Google-Profil)? Prüfen: Knowledge Panel bzw. Entität bei Google für „Fabian Kramer Salesforce“, Nennung von Fabian und fk-sd.de im monatlichen KI-Check, Verweise aus den Profilen in Search Console („Links“) und Cloudflare Analytics, Vergleich mit Stand 28.10.2026 (fk-sd.de in 0 von 40 KI-Antworten). Danach entscheiden, welche Profile gepflegt oder gestrichen werden | Claude | ab 01.02.2027 |
 
 Ausgangswerte 28.10.2026: „document builder limitations“ (EN) Platz 6, „field service lizenzen salesforce“ 11 (rankt mit „lohnt sich“), „salesforce field service“ 27 (170 Suchen), „field service einführung“ 29 (rankt mit „lohnt sich“), „manufacturing cloud vs sales cloud“ 30, „salesforce field service license“ 38, „salesforce document builder“ 39. KI-Übersichten bei 51 von 52 Begriffen, fk-sd.de in keiner zitiert. KI-Assistenten (ChatGPT, Claude, Perplexity, Google AI Mode): 0 Nennungen.
+
+## Lehren aus dem Google Spam Update September 2026 (Prüfung 02.11.2026)
+
+Grundlage: Video-Analyse der Gewinner und Verlierer des Spam Updates (abgeschlossen 08.10.2026) und Prüfung von fk-sd.de dagegen, Bericht: https://claude.ai/artifact/HqLpKNj5Gj4u9AgrQUEBA3. Schon erfüllt: Aussage und Termin-Button mobil auf dem ersten Bildschirm (Start, Leistungsseiten, Freiberufler-Seite, Masterclass-Hubs), Artikel starten mit den Kernaussagen, Zitat-Test ohne fremde Treffer, kaum Content Drift.
+
+| # | Maßnahme | Impact | Aufwand | Wer | Status |
+|---|---|---|---|---|---|
+| U1 | Veröffentlichungstempo drosseln: 197 DE-Artikel, davon 146 am 27. und 28.10.2026, passen zum Muster „Scaled Content Abuse“. Bis Ende Januar 2027 höchstens 1 bis 2 Artikel pro Woche, bevorzugt mit Praxis von Fabian (D8, D14, D15). In Search Console (Seiten-Bericht) prüfen, wie viele Artikel indexiert sind; nach 3 Monaten nicht indexierte Artikel in stärkere zusammenlegen | hoch | klein | Claude prüft, Fabian entscheidet | offen |
+| U2 | Themen-Hubs für das, was verkauft wird: Field Service (34 Artikel), Manufacturing Cloud (29), Revenue Cloud (27), B2B Commerce (26) haben keine indexierte Hub-Seite, die Blog-Kategorien sind nur #-Filter. Empfohlen: Masterclass-Hubs zu Themen-Hubs ausbauen (Kapitel plus alle Artikel des Themas, gruppiert nach Fragen wie Lohnt es sich, Lizenzen, Einführung, SAP); Alternative: indexierte Kategorieseiten | hoch | mittel | Claude | offen |
+| U3 | Leistungsseiten verlinken ihr Thema: statt 3 automatisch über Tags gewählter Artikel unter FAQ und Autorenbox eine kuratierte Liste (5 bis 8 Artikel plus passende Masterclass) im Lesefluss | hoch | mittel | Claude | offen |
+| U4 | Kannibalisierung Masterclass und Blog auflösen, je Paar eine Hauptseite festlegen, die andere kürzen und verlinken: Change-Rollout Länder (Kapitel) und „Change Management weltweiter Rollout“ (8 gleiche Sätze), ADKAR-Diagnose und „Change Management Salesforce-Einführung“ (6), „Releases dem Fachbereich kommunizieren“ und Kapitel „Sponsor und Kommunikation“ (5), Nearshore-Artikel und Leistungsseite (3) | mittel | mittel | Claude | offen |
+| U5 | /leistungen/ mobil: erster Bildschirm zeigt nur zwei Absätze, keine Leistung. Zweiten Absatz unter die Karten | mittel | klein | Claude | offen |
+| U6 | Content Drift beobachten: Julianes allgemeine Change-Artikel (Change-Kurve, Stakeholder-Analyse, Was ist Change Management) bleiben an Change-Leistungsseite und Blog, nicht auf der Startseite; bei D16 prüfen, ob sie passende Besucher bringen | klein | klein | Claude | ab 24.12.2026 |
+| U7 | Messung nach Video-Methode: im Montagslauf die Anzahl Begriffe auf Platz 1 bis 3 zählen und mit den drei stärksten Wettbewerbern aus den SERPs vergleichen (zusammen mit D9) | mittel | klein | Claude | ab 16.11.2026 |
+
+## Information Gain der Blogartikel (Prüfung 03.11.2026)
+
+Grundlage: Prüfung aller 197 DE-Artikel (EN-Paare inhaltlich gleich) auf eigene Erfahrung gegenüber Allgemeinwissen, Bericht: https://claude.ai/artifact/FF5s3rcdih9KbwiyT8xHJq. Googles Leitfaden zur KI-Suche (Mai 2026) gewichtet Inhalte mit eigener Erfahrung höher als „commodity content“. Befund: 101 von 197 Artikeln ohne Satz aus eigener Projekterfahrung, 144 mit angenommenen Szenarien, fast alle aus dem 27. und 28.10.2026. Stark: sfdx-hardis-Training, Manufacturing Cloud „wann lohnt sie sich“, PR-Reviews, Freelancer/CoE/Ownership Matrix, Document-Builder-Workarounds. Schwach: Agentforce-Kosten- und Agentenartikel, Revenue Cloud, B2B Commerce.
+
+| # | Maßnahme | Impact | Aufwand | Wer | Status |
+|---|---|---|---|---|---|
+| IG1 | Die 15 schwachen Artikel mit den meisten Impressionen aus der Search Console ziehen und pro Artikel 2 bis 3 Fragen an Fabian formulieren (echte Größenordnung, Entscheidung mit Grund, Fehler aus dem Test) | hoch | klein | Claude | offen |
+| IG2 | Antworten als Praxis-Kasten und klare Meinung einbauen (DE + EN), in Paketen von 5 Artikeln | hoch | mittel | Fabian liefert Fakten, Claude baut ein | offen |
+| IG3 | Dünne Kostenartikel zu Agentforce zu einem starken Artikel zusammenlegen (Flex Credits, AELA, Digital Wallet, Serviceagent-Kosten, MCP-Budgetrisiko), alte URLs weiterleiten; passt zu U1 | mittel | mittel | Claude schlägt vor, Fabian entscheidet | offen |
+| IG4 | Artikel ohne Aussicht auf eigene Erfahrung (v. a. Revenue Cloud und B2B Commerce ohne eigene Projekte) auf Kürzen, Zusammenlegen oder noindex prüfen | mittel | mittel | Claude prüft, Fabian entscheidet | offen |
+| IG5 | Eigene Daten erzeugen statt Doku zusammenfassen: Tests in einer Dev-Org (z. B. Teilenummern in der B2B-Suche), kleine Umfrage unter Kunden oder LinkedIn-Kontakten | mittel | mittel | Fabian | offen |
+
+## KI-Such-Checkliste (Prüfung 03.11.2026)
+
+Grundlage: „AI Search Checklist“ der Agentur Contact (81 Punkte: Seitenbausteine, Alleinstellung, zitierfähige Texte, Aktualität, Nebenfragen wie Kosten, Dauer, Risiken, Alternativen). Schon erfüllt: Antwort im ersten Absatz, Kernaussagen, Frage-H2, aufklappbare FAQ, Autorenbox, Inhaltsblöcke und Tabellen, eigene Grafiken, sameAs-Profile, dateModified und „aktualisiert am“, llms.txt, Monatsprüfung (J7). Eigene Erfahrung und Daten: IG1 bis IG5. Bewusst weggelassen: Aktualisierung alle 30 Tage und Jahreszahl im Titel (künstliche Aktualität, widerspricht J14), YouTube-Video in jedem Artikel, Wettbewerber namentlich nennen (passt nicht zur Rolle auf Kundenseite), Satzbau-Prüfung „Semantic Triples“.
+
+| # | Maßnahme | Impact | Aufwand | Wer | Status |
+|---|---|---|---|---|---|
+| KS1 | Leistungsseiten beantworten die Fragen vor einer Anfrage: je Seite „Passt, wenn / passt nicht, wenn“, grober Aufwand und Dauer, was nach dem ersten Gespräch passiert, Alternativen (Inhouse, Partner allein, Freelancer) und wann welche besser passt. Als 2 bis 3 FAQ oder kurzer Abschnitt, Regel in docs/service-pages.md | hoch | mittel | Fabian liefert Aufwand und Dauer, Claude baut ein | offen |
+| KS2 | Blog-Richtlinien, Abschnitt KI-Suche: jede H2 für sich verständlich (kein „wie oben beschrieben“, Build-Check auf solche Rückverweise) und Produkte, Funktionen und Releases beim Namen nennen statt „das Tool“ | mittel | klein | Claude | offen |
+| KS3 | Auswahl- und Vergleichsartikel (z. B. L1 Partnerwahl) nennen die Kriterien, nach denen die Empfehlung entsteht | mittel | klein | Claude | offen |
+| KS4 | Eigenes kleines Werkzeug als zitierfähige Ressource, z. B. Flex-Credits-Rechner oder Make-or-Buy-Check (DE + EN) | mittel | mittel | Claude schlägt vor, Fabian entscheidet | offen |
 
 ## Befunde Jev-Analyse und jev-seo-Audit (29.10.2026)
 
@@ -94,8 +131,9 @@ Der tägliche Lauf schreibt einen Artikel pro Tag (EN + DE) und ergänzt hier ne
 - ~~B10. Key User~~ (umgesetzt 29.10.2026 als Spoke der Change-Management-Reihe B11). Key User: Was Key User leisten müssen und wie viel Zeit der Fachbereich freistellen muss. (Begriffssuche 29.10.2026; passt als Spoke in die Change-Management-Reihe B11.)
 - ~~B11. Change Management nach Prosci/ADKAR als Hub-and-Spoke-Reihe~~ (umgesetzt 29.10.2026, von Fabian freigegeben): Hub „Warum Salesforce-Einführungen scheitern“ plus sechs Spokes (Key User, weltweiter Rollout, Techniker-Akzeptanz Field Service, Release-Kommunikation, Reinforcement bei Partnern, Nutzung messen). Manufacturing-Cloud-Teil 8 und Leistungsseite verlinken den Hub.
 - ~~B12. Weitere Change-Management-Spokes (29.10.2026, Keyword-Liste `/mnt/project-files/seo/change-management-keywords.md`): Hypercare-Phase (1.000 + 720 Suchen), Schulungskonzept und Akzeptanz im Vertrieb als Spokes 7 bis 9 umgesetzt.~~ Change-Management-Prozess (320) als Spoke 10 umgesetzt, angewandt auf Salesforce-Projektphasen; Phasen und Modelle allgemein decken Julianes Grundlagenartikel ab (#136).
-- B23. External Client Apps statt Connected Apps: was sich für bestehende ERP- und Middleware-Schnittstellen ändert (Folgeartikel zu B6, aus Salesforce-Doku recherchierbar).
-- B24. Fragebogen an Schnittstellenanbieter: Objekte, IP-Adressen, Token-Speicherung und Notfallkontakt vor dem Go-live (Folgeartikel zu B6). *Braucht Beispiel von Fabian.*
+- B13. **Techniker-Einsatzplanung automatisieren: Schritt für Schritt** / „How to automate technician scheduling and dispatch“ (Idee Fabian 03.11.2026, Kategorie Field Service). Winkel: Anleitung für Head of Service und IT-Leitung, vom manuellen Disponieren zur Automatik in Stufen: Stammdaten als Voraussetzung (Skills, Gebiete, Arbeitszeiten, Anfahrt), Scheduling Policy, automatische Einplanung per Flow, Optimierung über Nacht, Ausnahmen beim Disponenten, Kennzahlen (Termintreue, Fahrzeit, Erstlösungsquote). Begriffe (Volumen vor dem Schreiben mit DataForSEO prüfen): „technician scheduling and dispatch“, „automated dispatch“, „field service scheduling software“, „Einsatzplanung Techniker“, „Disposition Außendienst automatisieren“. Abgrenzung klären (Kannibalisierung, siehe U4): „Field Service: Wie viel Planung darf automatisch laufen?“ (`field-service-scheduling-automation`) deckt die Frage nach dem Maß an Automatik schon ab; neuer Artikel nur als praktische Anleitung, die darauf verlinkt, sonst den bestehenden Artikel auf die Begriffe schärfen. Verlinken: Scheduling Console, Enhanced Scheduling (ESO), Bereitschaft und Schichten, Stammdaten, Lizenzen Dispatcher/Techniker. *Braucht Praxisbeispiel von Fabian; Tempo nach U1.*
+- B24. External Client Apps statt Connected Apps: was sich für bestehende ERP- und Middleware-Schnittstellen ändert (Folgeartikel zu B6, aus Salesforce-Doku recherchierbar).
+- B25. Fragebogen an Schnittstellenanbieter: Objekte, IP-Adressen, Token-Speicherung und Notfallkontakt vor dem Go-live (Folgeartikel zu B6). *Braucht Beispiel von Fabian.*
 
 Erledigt im täglichen Lauf: Manufacturing Cloud lohnt sich (#41), Object Ownership Matrix (#42), Salesforce-Lizenzen (#43), Field Service lohnt sich (#44), Nearshore-Teams (#55), Open CTI endet 2028 (#82, Entwurf). Aus der Begriffssuche vom 29.10.2026: Sandbox-Strategie, Berechtigungskonzept, UAT, Entwicklungsstandards und Definition of Done, Entscheidungslog, globales Template, DORA-Metriken, Dubletten und Stammdaten (ein PR, Entwurf).
 

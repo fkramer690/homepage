@@ -106,6 +106,11 @@ export default defineConfig({
   site,
   base,
   trailingSlash: 'always',
+  // The stylesheet goes into every page instead of a separate file. Real visits showed the
+  // page painted once without CSS (browser default 8px body margin) and then jumping into
+  // place, CLS 0.5-0.7 (Cloudflare Web Analytics, 2026-11-03). Inline, styles arrive with
+  // the HTML, so no unstyled first frame and no render-blocking request.
+  build: { inlineStylesheets: 'always' },
   markdown: {
     // All external links open in a new tab (checked by scripts/check-links.mjs).
     // Content blocks (```hinweis, ```zeitleiste, …) become markup (docs/blog-guidelines.md).
