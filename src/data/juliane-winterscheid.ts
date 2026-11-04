@@ -89,17 +89,22 @@ export const juliane = {
     projects: {
       label: 'Referenzen',
       title: 'Projekte in Change Management und Transformation',
+      pickLabel: 'Projekt auswählen',
+      periodLabel: 'Zeitraum',
+      scopeLabel: 'Umfang',
+      roleLabel: 'Rolle',
+      tasksLabel: 'Aufgaben',
       intro: 'Eine Auswahl aus Julianes Projekten, mit Rolle, Umfang und Aufgaben laut ihrem Profil.',
       items: [
-        { logo: 'aak', t: 'AAK AB: globaler Salesforce-Sales-Cloud-Rollout', d: 'Senior Human Centered Change Consultant bei einem Lebensmittelhersteller mit mehr als 4.000 Mitarbeitenden. Change-Strategie, Kommunikationsplan und Train-the-Trainer-Konzept, eng abgestimmt mit dem Salesforce-IT-Team. Mehr als 500 Anwender in mehreren Ländern in den USA, Asien und Europa.' },
-        { logo: 'deutsche-telekom', t: 'Deutsche Telekom AG: Salesforce-Prozessoptimierung', d: 'Human Centered Change Strategy Consultant. Readiness-Analyse mit Interviews und Umfragen, Ergebnisse und Maßnahmenplan im Steuerkreis vorgestellt, Change Story und Kommunikationsplan für die Harmonisierung der Vertriebs- und Service-Oberflächen überarbeitet.' },
-        { logo: 'septodont', t: 'Septodont GmbH: Rollout von Salesforce Maps', d: 'Organizational Change Consultant und Executive Coach für den Rollout im Außendienst. Kommunikationsplan und Kernbotschaften, 1:1-Coaching des Geschäftsführers im Umgang mit Widerstand.' },
-        { logo: 'von-rundstedt', t: 'Von Rundstedt: Salesforce-Einführung', d: 'IT-Projektmanagerin, Begleitung vom Kick-off bis zum Rollout.' },
-        { logo: 'hdi', t: 'HDI Versicherungen AG: globale IT-Transformation (Cloudification, Rechenzentrums-Schließung)', d: 'Senior Change Manager seit 2025. Sie baut weltweite Change-Netzwerke und Key-User-Communities auf und misst die Akzeptanz mit Kennzahlen. Mehr als 20.000 betroffene Mitarbeitende in 19 Ländern.' },
-        { logo: 'karo-heiko', t: 'KaRo / Heiko Companies: Transformation auf Microsoft Dynamics 365', d: 'Organizational Change Management Consultant bei einem Maschinenbauer nach der Übernahme durch einen Finanzinvestor. Change-Strategie nach Prosci mit Widerstandsmanagement, Kommunikation und Schulung, Reporting an CIO und Director OCM des US-Eigentümers.' },
-        { logo: 'danone', t: 'Danone Deutschland GmbH: agile Transformation in der DACH-Region', d: 'Project & Change Manager für alle Marken in DACH. Verantwortlich für die Säule „Systeme, Prozesse und neue Arbeitsweisen“, Workshops zu Change-Strategie, Impact-Analyse, Stakeholdern und Widerstand, Schulungs- und Befähigungsprogramme.' },
-        { logo: 'hologic', t: 'Hologic Deutschland GmbH: Zusammenlegung von drei Standorten', d: 'Interim HR Operations Manager DACH und Organizational Change Consultant in der Medizintechnik. Verhandlungen mit dem Betriebsrat zu Sozialplan und Interessenausgleich, Coaching der Führungskräfte und Kommunikation an die Mitarbeitenden.' },
-        { logo: 'landal', t: 'Landal GreenParks GmbH: Umstrukturierung der Personalabteilung', d: 'Interim HR Manager DACH mit Berichtslinie an den Geschäftsführer und die internationale Personalleitung. Neuaufstellung des HR-Teams, neue Vereinbarung mit dem Betriebsrat, Change-Beratung im Krisenteam.' },
+        { logo: 'aak', t: 'AAK AB: globaler Salesforce-Sales-Cloud-Rollout' },
+        { logo: 'deutsche-telekom', t: 'Deutsche Telekom AG: Salesforce-Prozessoptimierung' },
+        { logo: 'septodont', t: 'Septodont GmbH: Rollout von Salesforce Maps' },
+        { logo: 'von-rundstedt', t: 'Von Rundstedt: Salesforce-Einführung' },
+        { logo: 'hdi', t: 'HDI Versicherungen AG: globale IT-Transformation (Cloudification, Rechenzentrums-Schließung)' },
+        { logo: 'karo-heiko', t: 'KaRo / Heiko Companies: Transformation auf Microsoft Dynamics 365' },
+        { logo: 'danone', t: 'Danone Deutschland GmbH: agile Transformation in der DACH-Region' },
+        { logo: 'hologic', t: 'Hologic Deutschland GmbH: Zusammenlegung von drei Standorten' },
+        { logo: 'landal', t: 'Landal GreenParks GmbH: Umstrukturierung der Personalabteilung' },
       ],
     },
     steps: {
@@ -200,17 +205,22 @@ export const juliane = {
     projects: {
       label: 'References',
       title: 'Projects in change management and transformation',
+      pickLabel: 'Choose a project',
+      periodLabel: 'Period',
+      scopeLabel: 'Scope',
+      roleLabel: 'Role',
+      tasksLabel: 'Tasks',
       intro: 'A selection of Juliane\'s projects, with role, scope and tasks as stated in her profile.',
       items: [
-        { logo: 'aak', t: 'AAK AB: global Salesforce Sales Cloud rollout', d: 'Senior human centered change consultant at a food manufacturer with more than 4,000 employees. Change strategy, communication plan and train-the-trainer concept, closely aligned with the Salesforce IT team. More than 500 end users in several countries across the US, Asia and Europe.' },
-        { logo: 'deutsche-telekom', t: 'Deutsche Telekom AG: Salesforce process optimisation', d: 'Human centered change strategy consultant. Readiness assessment with interviews and surveys, findings and action plan presented to the steering committee, change story and communication plan reworked for harmonising the sales and service interfaces.' },
-        { logo: 'septodont', t: 'Septodont GmbH: Salesforce Maps rollout', d: 'Organizational change consultant and executive coach for the field sales rollout. Communication plan and key messages, one-to-one coaching of the managing director on handling resistance.' },
-        { logo: 'von-rundstedt', t: 'Von Rundstedt: Salesforce implementation', d: 'IT project management consultant, from kick-off to rollout.' },
-        { logo: 'hdi', t: 'HDI Versicherungen AG: global IT transformation (cloudification, data centre closure)', d: 'Senior change manager since 2025. She builds global change networks and key user communities and measures adoption with KPIs. More than 20,000 employees affected across 19 countries.' },
-        { logo: 'karo-heiko', t: 'KaRo / Heiko Companies: Microsoft Dynamics 365 transformation', d: 'Organizational change management consultant at a machinery manufacturer after its acquisition by a private equity investor. Change strategy based on Prosci with resistance management, communication and training, reporting to the CIO and director OCM of the US owner.' },
-        { logo: 'danone', t: 'Danone Deutschland GmbH: agile transformation in the DACH region', d: 'Project and change manager for all brands in DACH. Responsible for the pillar "systems, processes and new ways of working", workshops on change strategy, impact analysis, stakeholders and resistance, training and enablement programmes.' },
-        { logo: 'hologic', t: 'Hologic Deutschland GmbH: merging three sites into one', d: 'Interim HR operations manager DACH and organizational change consultant in medical technology. Negotiations with the works council on the social plan and reconciliation of interests, coaching for managers and communication to employees.' },
-        { logo: 'landal', t: 'Landal GreenParks GmbH: restructuring the HR department', d: 'Interim HR manager DACH reporting to the managing director and the international head of HR. Rebuilt the HR team, a new agreement with the works council, change advice in the crisis team.' },
+        { logo: 'aak', t: 'AAK AB: global Salesforce Sales Cloud rollout' },
+        { logo: 'deutsche-telekom', t: 'Deutsche Telekom AG: Salesforce process optimisation' },
+        { logo: 'septodont', t: 'Septodont GmbH: Salesforce Maps rollout' },
+        { logo: 'von-rundstedt', t: 'Von Rundstedt: Salesforce implementation' },
+        { logo: 'hdi', t: 'HDI Versicherungen AG: global IT transformation (cloudification, data centre closure)' },
+        { logo: 'karo-heiko', t: 'KaRo / Heiko Companies: Microsoft Dynamics 365 transformation' },
+        { logo: 'danone', t: 'Danone Deutschland GmbH: agile transformation in the DACH region' },
+        { logo: 'hologic', t: 'Hologic Deutschland GmbH: merging three sites into one' },
+        { logo: 'landal', t: 'Landal GreenParks GmbH: restructuring the HR department' },
       ],
     },
     steps: {
@@ -241,5 +251,117 @@ export const juliane = {
     ctaTitle: 'A Salesforce rollout is coming up?',
     ctaText: 'Tell us where it is stuck or what is planned. I will get back to you and bring Juliane to the first conversation.',
     formSubject: 'Change management with Juliane Winterscheid',
+  },
+};
+
+// Details per reference project, keyed by its `logo` id (period, sector, scope, role, tasks), from her CV 2026.
+// Shown in the "project in focus" layout of the start page (docs/layouts.md); `short` names the phone chip.
+interface ProjectDetail { short: string; period: string; sector: string; scope: string; role: string; bullets: string[] }
+export const julianeProjectDetails: Record<'de' | 'en', Record<string, ProjectDetail>> = {
+  de: {
+    aak: { short: 'AAK', period: '04/2024 – 09/2024', sector: 'Lebensmittelherstellung', scope: '4.000+ Mitarbeitende · 500+ Anwender', role: 'Senior Human Centered Change Consultant', bullets: [
+      'Change-Strategie, Kommunikationsplan und Schulungskonzept (Train-the-Trainer) für den weltweiten Rollout der Sales Cloud',
+      'Impact-Analyse und Stakeholder-Bewertung, daraus Pläne, um Führungskräfte zu gewinnen und Hürden bei der Nutzung abzubauen',
+      'Eng abgestimmt mit der globalen Programmleitung und dem Salesforce-IT-Team',
+      'Coaching der internen Projektleitung im Change Management',
+    ] },
+    'deutsche-telekom': { short: 'Telekom', period: '02/2024 – 04/2024', sector: 'Telekommunikation', scope: '120.000+ Mitarbeitende weltweit', role: 'Human Centered Change Strategy Consultant', bullets: [
+      'Beratung des Projektteams zur Rollout-Strategie für einheitliche Oberflächen in Vertrieb und Service',
+      'Change Story geschärft, Kommunikationsplan mit Meilensteinen und konkreten Schritten überarbeitet',
+      'Readiness-Analyse mit Interviews und Umfragen',
+      'Maßnahmenplan aus den Ergebnissen, vorgestellt im Steuerkreis und in die Rollout-Strategie übernommen',
+    ] },
+    septodont: { short: 'Septodont', period: '05/2024 – 06/2024', sector: 'Medizintechnik', scope: '2.400 Mitarbeitende weltweit', role: 'Organizational Change Consultant und Executive Coach', bullets: [
+      'Strategie für den Rollout von Salesforce Maps im Außendienst',
+      'Kommunikationsplan und Kernbotschaften',
+      '1:1-Coaching des Geschäftsführers im Umgang mit Widerstand und in der Führung durch die Veränderung',
+    ] },
+    'von-rundstedt': { short: 'Von Rundstedt', period: '', sector: 'Personalberatung', scope: 'Salesforce-Einführung', role: 'IT-Projektmanagerin', bullets: [
+      'Begleitung der Salesforce-Einführung vom Kick-off bis zum Rollout',
+    ] },
+    hdi: { short: 'HDI', period: 'seit 12/2025', sector: 'Versicherung', scope: '20.000+ Mitarbeitende · 19 Länder', role: 'Senior Change Manager', bullets: [
+      'Change Management und Kommunikation für die Rechenzentrums-Schließung, von der Planung bis zur Umsetzung',
+      'Weltweite Change-Netzwerke, Key-User-Communities und Multiplikatoren aufgebaut',
+      'Wirkung mit Kennzahlen gemessen und die Maßnahmen laufend nachgeschärft',
+      'Formate je Zielgruppe, digital und vor Ort',
+      'Coaching von Führungskräften und wichtigen Stakeholdern',
+    ] },
+    'karo-heiko': { short: 'KaRo', period: '09/2023 – 03/2024', sector: 'Maschinenbau', scope: 'Nach Übernahme durch einen Finanzinvestor', role: 'Organizational Change Management Consultant', bullets: [
+      'Change-Strategie nach Prosci für die Einführung von Microsoft Dynamics 365 ERP',
+      'Widerstandsmanagement, Kommunikationsplan und Schulungskonzept',
+      'Abstimmung mit den IT-Beratern, damit Einführung, Schulung und Kommunikation zusammenpassen',
+      'Reporting an CIO und Director OCM des US-Eigentümers zu Akzeptanz, Risiken und Fortschritt',
+    ] },
+    danone: { short: 'Danone', period: '10/2024 – 06/2025', sector: 'Konsumgüter', scope: 'Alle Marken in DACH · ca. 2.000 Mitarbeitende', role: 'Project & Change Manager', bullets: [
+      'Verantwortlich für die Säule „Systeme, Prozesse und neue Arbeitsweisen“ der agilen Transformation',
+      'Partnerin von PMO und Stream Leads, strategische Beratung aus Sicht des Change Managements',
+      'Workshops zu Change-Strategie, Impact-Analyse, Stakeholdern, Widerstand, Kick-offs und Retrospektiven',
+      'Schulungs- und Befähigungsprogramme gesteuert und ausgerollt',
+    ] },
+    hologic: { short: 'Hologic', period: '06/2022 – 12/2022', sector: 'Medizintechnik', scope: 'Drei Standorte an einen · 150+ Mitarbeitende', role: 'Interim HR Operations Manager DACH', bullets: [
+      'Zusammenlegung von drei Gesellschaften an einen neuen Standort, HR-seitig komplett verantwortet',
+      'Verhandlungen mit dem Betriebsrat zu Sozialplan und Interessenausgleich, gemeinsam mit Geschäftsführung und Anwälten',
+      'Coaching der Führungskräfte für Gespräche und Kommunikation in der Veränderung',
+      'Kommunikation an die Mitarbeitenden während der Umstrukturierung',
+    ] },
+    landal: { short: 'Landal', period: '10/2022 – 03/2023', sector: 'Hotellerie', scope: '500+ Mitarbeitende in DACH', role: 'Interim HR Manager DACH', bullets: [
+      'Strategische Partnerin aller Führungskräfte, Berichtslinie an Geschäftsführer und internationale Personalleitung',
+      'HR-Team neu aufgestellt und Prozesse ausgelagert',
+      'Neue Vereinbarung mit dem Betriebsrat',
+      'Change-Beratung im Krisenteam',
+    ] },
+  },
+  en: {
+    aak: { short: 'AAK', period: '04/2024 – 09/2024', sector: 'Food manufacturing', scope: '4,000+ employees · 500+ users', role: 'Senior human centered change consultant', bullets: [
+      'Change strategy, communication plan and train-the-trainer concept for the global Sales Cloud rollout',
+      'Impact analysis and stakeholder assessment, turned into plans to win over managers and remove adoption barriers',
+      'Closely aligned with global programme leadership and the Salesforce IT team',
+      'Coaching the internal project manager on change management',
+    ] },
+    'deutsche-telekom': { short: 'Telekom', period: '02/2024 – 04/2024', sector: 'Telecommunications', scope: '120,000+ employees worldwide', role: 'Human centered change strategy consultant', bullets: [
+      'Advised the project team on the rollout strategy for harmonised sales and service interfaces',
+      'Sharpened the change story, reworked the communication plan with milestones and concrete steps',
+      'Readiness assessment with interviews and surveys',
+      'Action plan from the findings, presented to the steering committee and built into the rollout strategy',
+    ] },
+    septodont: { short: 'Septodont', period: '05/2024 – 06/2024', sector: 'Medical technology', scope: '2,400 employees worldwide', role: 'Organizational change consultant and executive coach', bullets: [
+      'Strategy for rolling out Salesforce Maps to the field team',
+      'Communication plan and key messages',
+      'One-to-one coaching of the managing director on handling resistance and leading through change',
+    ] },
+    'von-rundstedt': { short: 'Von Rundstedt', period: '', sector: 'HR consulting', scope: 'Salesforce implementation', role: 'IT project manager', bullets: [
+      'Supported the Salesforce implementation from kick-off to rollout',
+    ] },
+    hdi: { short: 'HDI', period: 'since 12/2025', sector: 'Insurance', scope: '20,000+ employees · 19 countries', role: 'Senior change manager', bullets: [
+      'Change management and communication for the data centre closure, from planning to delivery',
+      'Built global change networks, key user communities and multipliers',
+      'Measures impact with KPIs and keeps sharpening the activities',
+      'Formats per target group, digital and on site',
+      'Coaching for managers and key stakeholders',
+    ] },
+    'karo-heiko': { short: 'KaRo', period: '09/2023 – 03/2024', sector: 'Machinery', scope: 'After acquisition by a private equity investor', role: 'Organizational change management consultant', bullets: [
+      'Change strategy based on Prosci for the Microsoft Dynamics 365 ERP rollout',
+      'Resistance management, communication plan and training concept',
+      'Aligned with the IT consultants so that rollout, training and communication fit together',
+      'Reporting to the CIO and director OCM of the US owner on adoption, risks and progress',
+    ] },
+    danone: { short: 'Danone', period: '10/2024 – 06/2025', sector: 'Consumer goods', scope: 'All brands in DACH · approx. 2,000 employees', role: 'Project and change manager', bullets: [
+      'Responsible for the pillar "systems, processes and new ways of working" of the agile transformation',
+      'Partner to the PMO and stream leads, strategic advice from a change management view',
+      'Workshops on change strategy, impact analysis, stakeholders, resistance, kick-offs and retrospectives',
+      'Managed and rolled out training and enablement programmes',
+    ] },
+    hologic: { short: 'Hologic', period: '06/2022 – 12/2022', sector: 'Medical technology', scope: 'Three sites into one · 150+ employees', role: 'Interim HR operations manager DACH', bullets: [
+      'Merged three entities into one new site, fully responsible for the HR side',
+      'Negotiations with the works council on social plan and reconciliation of interests, with management and lawyers',
+      'Coached managers on conversations and communication during the change',
+      'Communication to employees throughout the restructuring',
+    ] },
+    landal: { short: 'Landal', period: '10/2022 – 03/2023', sector: 'Hospitality', scope: '500+ employees in DACH', role: 'Interim HR manager DACH', bullets: [
+      'Strategic partner to all managers, reporting to the managing director and the international head of HR',
+      'Rebuilt the HR team and outsourced processes',
+      'New agreement with the works council',
+      'Change advice in the crisis team',
+    ] },
   },
 };
