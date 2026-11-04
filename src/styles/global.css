@@ -2244,6 +2244,14 @@ p.post-series-note { margin: 0.6em 0 0; font-size: var(--fs-ui); }
 .mc-partner .partner-box { margin-top: 0; }
 .post-takeaways + .partner-box { margin-top: 0; margin-bottom: 2em; }
 .jw-logo { display: block; box-sizing: content-box; height: 36px; width: auto; max-width: 160px; object-fit: contain; margin-bottom: 12px; padding: 6px 10px; background: var(--white); border-radius: var(--radius-xs); }
+/* Juliane's references in the "project in focus" layout (.rf): logo and period above the panel text, tasks with ticks */
+.jw-rf-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 6px; }
+.jw-rf-head .jw-logo { margin-bottom: 0; }
+.jw-period { flex: none; font-size: var(--fs-xs); color: var(--cyan-dark); background: var(--tint); border: 1px solid var(--tint-line); border-radius: var(--radius-pill); padding: 3px 10px; }
+.rf-body dd:last-of-type:has(.jw-tasks) { font-weight: 400; }
+.jw-tasks { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.jw-tasks li { display: grid; grid-template-columns: 16px 1fr; gap: 10px; line-height: 1.5; }
+.jw-tick { width: 16px; height: 16px; margin-top: 3px; stroke: var(--cyan); }
 
 /* Service page head with a photo; the photo column lines up with the side column below */
 .service-head.has-photo { display: grid; grid-template-columns: minmax(0, 1fr) var(--side); gap: 56px; align-items: center; }
