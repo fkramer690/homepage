@@ -1,17 +1,17 @@
 {
-  "generatedAt": "2026-11-04T04:47:42.284Z",
+  "generatedAt": "2026-11-04T12:58:05.919Z",
   "range": {
     "start": "2026-10-05",
     "end": "2026-11-04"
   },
   "browsers": [
     {
-      "count": 660,
+      "count": 670,
       "dimensions": {
         "userAgentBrowser": "Chrome"
       },
       "sum": {
-        "visits": 70
+        "visits": 80
       }
     },
     {
@@ -24,7 +24,7 @@
       }
     },
     {
-      "count": 30,
+      "count": 40,
       "dimensions": {
         "userAgentBrowser": "MobileSafari"
       },
@@ -71,12 +71,12 @@
   ],
   "countries": [
     {
-      "count": 690,
+      "count": 710,
       "dimensions": {
         "countryName": "DE"
       },
       "sum": {
-        "visits": 90
+        "visits": 100
       }
     },
     {
@@ -197,20 +197,29 @@
       "sum": {
         "visits": 50
       }
+    },
+    {
+      "count": 20,
+      "dimensions": {
+        "date": "2026-11-04"
+      },
+      "sum": {
+        "visits": 10
+      }
     }
   ],
   "devices": [
     {
-      "count": 700,
+      "count": 710,
       "dimensions": {
         "deviceType": "desktop"
       },
       "sum": {
-        "visits": 110
+        "visits": 120
       }
     },
     {
-      "count": 120,
+      "count": 130,
       "dimensions": {
         "deviceType": "mobile"
       },
@@ -250,6 +259,15 @@
     {
       "count": 40,
       "dimensions": {
+        "requestPath": "/fragen/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 40,
+      "dimensions": {
         "requestPath": "/leistungen/change-management/"
       },
       "sum": {
@@ -259,10 +277,10 @@
     {
       "count": 30,
       "dimensions": {
-        "requestPath": "/fragen/"
+        "requestPath": "/partner/juliane-winterscheid/"
       },
       "sum": {
-        "visits": 0
+        "visits": 10
       }
     },
     {
@@ -272,15 +290,6 @@
       },
       "sum": {
         "visits": 10
-      }
-    },
-    {
-      "count": 20,
-      "dimensions": {
-        "requestPath": "/partner/juliane-winterscheid/"
-      },
-      "sum": {
-        "visits": 0
       }
     },
     {
@@ -403,7 +412,7 @@
   ],
   "referers": [
     {
-      "count": 590,
+      "count": 600,
       "dimensions": {
         "refererHost": "www.fk-sd.de"
       },
@@ -412,12 +421,12 @@
       }
     },
     {
-      "count": 150,
+      "count": 160,
       "dimensions": {
         "refererHost": ""
       },
       "sum": {
-        "visits": 150
+        "visits": 160
       }
     },
     {
