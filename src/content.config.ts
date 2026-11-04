@@ -17,6 +17,9 @@ const blog = defineCollection({
   schema: z.object({
     // Shown in search results, which cut off at about 60 characters.
     title: z.string().min(20).max(60),
+    // Optional search title (<title>) when it should differ from the H1, e.g. to put
+    // "Salesforce" first where the H1 names only the product. Same limits as title.
+    metaTitle: z.string().min(20).max(60).optional(),
     description: z.string().min(120).max(160),
     pubDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),

@@ -2,6 +2,7 @@
 title: "Salesforce Winter '27: what changes for your pipeline"
 description: "Winter '27 changes the Salesforce CLI, raises Apex limits, hides the Developer Console and starts API retirements. What dev and release teams need to adjust."
 pubDate: 2026-10-23
+updatedDate: 2026-11-02
 lang: en
 slug: salesforce-winter-27-what-changes-for-your-pipeline
 translationKey: salesforce-winter-27-pipeline
@@ -9,14 +10,14 @@ topic: release
 categories: [devops]
 tags: [release management, devops, salesforce cli, winter 27, apex]
 takeaways:
-  - "From 28 October 2026 the Salesforce CLI command org display no longer prints access tokens, so pipeline scripts that read the token from its output will break."
+  - "Since 28 October 2026 the CLI command org display no longer prints access tokens, even with the workaround, so scripts that read the token from it fail."
   - "The Salesforce CLI now requires Node.js 22 or later, which means CI runner images and developer machines need an update."
   - "The Developer Console disappears from Setup, and Apex is read-only in the Web Console in production. Changes now go through the pipeline."
   - "Apex heap limits rise automatically from 6 to 10 MB for synchronous and from 12 to 25 MB for asynchronous code."
   - "API retirements have started: SOAP login() needs a new permission from 1 December 2026 and API versions 31.0 to 40.0 stop receiving updates in Summer '27."
 faq:
   - q: "What changes in the Salesforce CLI with Winter '27?"
-    a: "The org display command no longer prints secrets such as the access token, and the temporary workaround ends on 28 October 2026. The CLI also requires Node.js 22 or later."
+    a: "The org display command no longer prints secrets such as the access token, and the temporary workaround was removed on 28 October 2026. Secrets are now shown only by the sf org auth show commands. The CLI also requires Node.js 22 or later."
   - q: "Is the Developer Console removed in Winter '27?"
     a: "It no longer appears in the Setup menu by default. The new Web Console replaces it, and in production orgs Apex is read-only there."
   - q: "Do I need to do anything for the higher Apex heap limits?"
@@ -25,23 +26,23 @@ faq:
     a: "SOAP login() in API versions 31.0 to 64.0 is retired in Summer '27, and SOAP, REST and Bulk API versions 31.0 to 40.0 stop receiving updates in Summer '27 and fail in Summer '28."
 ---
 
-Winter '27 is fully rolled out since 9 October 2026, and for development and release teams it brings changes that can break a pipeline. The most urgent one: from 28 October the Salesforce CLI no longer prints access tokens with `org display`, and the CLI now needs Node.js 22. On top of that, the Developer Console disappears from the Setup menu, Apex heap limits go up and the first API retirements take effect. None of this is dramatic on its own, but each item can stop a deployment on the wrong day. This overview is based on Salesforce's [developer guide to Winter '27](https://developer.salesforce.com/blogs/2026/10/developers-guide-to-the-winter-27-release) and sorted by urgency.
+Winter '27 is fully rolled out since 9 October 2026, and for development and release teams it brings changes that can break a pipeline. The most urgent one: since 28 October the Salesforce CLI no longer prints access tokens with `org display`, and the CLI now needs Node.js 22. On top of that, the Developer Console disappears from the Setup menu, Apex heap limits go up and the first API retirements take effect. None of this is dramatic on its own, but each item can stop a deployment on the wrong day. This overview is based on Salesforce's [developer guide to Winter '27](https://developer.salesforce.com/blogs/2026/10/developers-guide-to-the-winter-27-release) and sorted by urgency.
 
 ## What breaks first in a Salesforce pipeline?
 
 Two CLI changes need attention before anything else.
 
-**The org display command no longer prints secrets.** Many pipelines and helper scripts call `sf org display` and read the access token from the output, for example to call the REST API directly or to pass the session to another tool. With Winter '27 the command no longer shows secrets. Salesforce offered a temporary workaround through the environment variable `SF_TEMP_SHOW_SECRETS`.
+**The org display command no longer prints secrets.** Many pipelines and helper scripts call `sf org display` and read the access token from the output, for example to call the REST API directly or to pass the session to another tool. With Winter '27 the command no longer shows secrets. Salesforce offered a temporary workaround through the environment variable `SF_TEMP_SHOW_SECRETS` and removed it with [CLI version 2.156.8](https://github.com/forcedotcom/cli/blob/main/releasenotes/README.md) on 28 October 2026. To read a secret on purpose, the release notes point to the `sf org auth show-*` commands.
 
 ```hinweis achtung
-The workaround ends on 28 October 2026. After that date, scripts that depend on the token in the output of `org display` fail.
+The workaround ended on 28 October 2026. Since then, scripts that depend on the token in the output of `org display` fail, even if `SF_TEMP_SHOW_SECRETS` is set.
 ```
 
 What to do:
 
 1. Search your pipeline definitions, scripts and repositories for `org display` and for parsing of `accessToken`.
 2. Let each pipeline job authenticate directly, ideally with the JWT bearer flow and a certificate stored in the client's secret store, instead of passing tokens around between steps.
-3. Test the changed jobs in a feature branch before 28 October.
+3. Test the changed jobs in a feature branch, starting with jobs that have failed since 28 October.
 
 ![Pipeline authentication from 28 October 2026: pipelines that call sf org display, read the accessToken and pass it on break, because the command no longer shows secrets and the SF_TEMP_SHOW_SECRETS workaround ends on 28 October 2026. What works is each pipeline job authenticating itself with the JWT bearer flow and a certificate stored in the client's secret store, with no tokens passed between steps, tested in a feature branch first. Also check that the Salesforce CLI runs on Node.js 22 or later.](../../../assets/blog/winter-27-org-display-en.png)
 
@@ -91,7 +92,7 @@ Three smaller points with governance impact:
 
 Three releases a year mean a checklist like this every few months. A pipeline that runs every change through validation and tests catches most of these issues early, which is one of the reasons [DevOps decides Salesforce enterprise projects](../why-devops-matters-salesforce-enterprise/). For a release team, these steps cover the essentials:
 
-1. Find and fix every use of `org display` tokens in pipelines before 28 October.
+1. Find and fix every use of `org display` tokens in pipelines; jobs that still rely on them have been failing since 28 October.
 2. Update Node.js to version 22 on runners, Docker images and developer machines.
 3. Agree on rules for production access now that the Developer Console is hidden.
 4. List classes and triggers with API versions below 20.0 and plan their update.
