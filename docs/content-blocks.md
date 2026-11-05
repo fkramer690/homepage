@@ -392,4 +392,6 @@ Only these, in Fabian's wording, without client names, industry or size:
 - Project stories that already stand in articles published before 28 October 2026 (written with Fabian), e.g. the global Manufacturing Cloud rollout with CPQ, configurator and customer portal.
 - In one manufacturing project, sales agreements (a core feature of Manufacturing Cloud) were not relevant for the business, so a custom solution on the core platform was cheaper and simpler to maintain (confirmed 23 October 2026, make-or-buy service page).
 
+- In every project so far, UAT or the acceptance of stories took longer than the client planned, because the client's people were not available, and change requests followed because the business had not looked closely enough at its own solution and the status quo beforehand (confirmed 5 November 2026).
+
 Add new items here only after Fabian confirms them.
