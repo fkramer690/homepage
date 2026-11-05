@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-11-04T12:58:05.919Z",
+  "generatedAt": "2026-11-05T04:48:00.418Z",
   "range": {
-    "start": "2026-10-05",
-    "end": "2026-11-04"
+    "start": "2026-10-06",
+    "end": "2026-11-05"
   },
   "browsers": [
     {
-      "count": 670,
+      "count": 710,
       "dimensions": {
         "userAgentBrowser": "Chrome"
       },
@@ -35,6 +35,15 @@
     {
       "count": 20,
       "dimensions": {
+        "userAgentBrowser": "Edge"
+      },
+      "sum": {
+        "visits": 20
+      }
+    },
+    {
+      "count": 20,
+      "dimensions": {
         "userAgentBrowser": "ChromeMobile"
       },
       "sum": {
@@ -53,15 +62,6 @@
     {
       "count": 10,
       "dimensions": {
-        "userAgentBrowser": "Edge"
-      },
-      "sum": {
-        "visits": 10
-      }
-    },
-    {
-      "count": 10,
-      "dimensions": {
         "userAgentBrowser": "ChromeDerivative"
       },
       "sum": {
@@ -71,7 +71,7 @@
   ],
   "countries": [
     {
-      "count": 710,
+      "count": 750,
       "dimensions": {
         "countryName": "DE"
       },
@@ -95,6 +95,15 @@
       },
       "sum": {
         "visits": 0
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "countryName": "IN"
+      },
+      "sum": {
+        "visits": 10
       }
     },
     {
@@ -199,9 +208,18 @@
       }
     },
     {
-      "count": 20,
+      "count": 60,
       "dimensions": {
         "date": "2026-11-04"
+      },
+      "sum": {
+        "visits": 10
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "date": "2026-11-05"
       },
       "sum": {
         "visits": 10
@@ -210,12 +228,12 @@
   ],
   "devices": [
     {
-      "count": 710,
+      "count": 760,
       "dimensions": {
         "deviceType": "desktop"
       },
       "sum": {
-        "visits": 120
+        "visits": 130
       }
     },
     {
@@ -239,7 +257,7 @@
       }
     },
     {
-      "count": 90,
+      "count": 100,
       "dimensions": {
         "requestPath": "/en/"
       },
@@ -277,7 +295,7 @@
     {
       "count": 30,
       "dimensions": {
-        "requestPath": "/partner/juliane-winterscheid/"
+        "requestPath": "/homepage/"
       },
       "sum": {
         "visits": 10
@@ -286,7 +304,7 @@
     {
       "count": 30,
       "dimensions": {
-        "requestPath": "/homepage/"
+        "requestPath": "/partner/juliane-winterscheid/"
       },
       "sum": {
         "visits": 10
@@ -295,7 +313,7 @@
     {
       "count": 20,
       "dimensions": {
-        "requestPath": "/en/blog/"
+        "requestPath": "/masterclass/"
       },
       "sum": {
         "visits": 0
@@ -304,7 +322,7 @@
     {
       "count": 20,
       "dimensions": {
-        "requestPath": "/masterclass/"
+        "requestPath": "/en/partners/juliane-winterscheid/"
       },
       "sum": {
         "visits": 0
@@ -329,9 +347,9 @@
       }
     },
     {
-      "count": 10,
+      "count": 20,
       "dimensions": {
-        "requestPath": "/blog/sfdx-hardis-oder-devops-center-vergleich/"
+        "requestPath": "/en/blog/"
       },
       "sum": {
         "visits": 0
@@ -341,42 +359,6 @@
       "count": 10,
       "dimensions": {
         "requestPath": "/masterclass/manufacturing-cloud/"
-      },
-      "sum": {
-        "visits": 0
-      }
-    },
-    {
-      "count": 10,
-      "dimensions": {
-        "requestPath": "/homepage/speaking/"
-      },
-      "sum": {
-        "visits": 0
-      }
-    },
-    {
-      "count": 10,
-      "dimensions": {
-        "requestPath": "/blog/change-management-prozess-salesforce/"
-      },
-      "sum": {
-        "visits": 0
-      }
-    },
-    {
-      "count": 10,
-      "dimensions": {
-        "requestPath": "/blog/salesforce-architektur-entscheidungslog/"
-      },
-      "sum": {
-        "visits": 0
-      }
-    },
-    {
-      "count": 10,
-      "dimensions": {
-        "requestPath": "/en/certifications/"
       },
       "sum": {
         "visits": 0
@@ -403,7 +385,43 @@
     {
       "count": 10,
       "dimensions": {
-        "requestPath": "/blog/salesforce-releases-fachbereich-kommunizieren/"
+        "requestPath": "/blog/sfdx-hardis-oder-devops-center-vergleich/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "requestPath": "/en/blog/salesforce-dx-mcp-server-end-of-life/"
+      },
+      "sum": {
+        "visits": 10
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "requestPath": "/homepage/speaking/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "requestPath": "/blog/salesforce-architektur-entscheidungslog/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "requestPath": "/blog/change-management-prozess-salesforce/"
       },
       "sum": {
         "visits": 0
@@ -412,7 +430,7 @@
   ],
   "referers": [
     {
-      "count": 600,
+      "count": 640,
       "dimensions": {
         "refererHost": "www.fk-sd.de"
       },
@@ -439,12 +457,12 @@
       }
     },
     {
-      "count": 10,
+      "count": 20,
       "dimensions": {
         "refererHost": "teams.public.onecdn.static.microsoft"
       },
       "sum": {
-        "visits": 10
+        "visits": 20
       }
     },
     {

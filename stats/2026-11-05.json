@@ -1,0 +1,478 @@
+{
+  "generatedAt": "2026-11-05T04:48:00.418Z",
+  "range": {
+    "start": "2026-10-06",
+    "end": "2026-11-05"
+  },
+  "browsers": [
+    {
+      "count": 710,
+      "dimensions": {
+        "userAgentBrowser": "Chrome"
+      },
+      "sum": {
+        "visits": 80
+      }
+    },
+    {
+      "count": 80,
+      "dimensions": {
+        "userAgentBrowser": "Unknown"
+      },
+      "sum": {
+        "visits": 50
+      }
+    },
+    {
+      "count": 40,
+      "dimensions": {
+        "userAgentBrowser": "MobileSafari"
+      },
+      "sum": {
+        "visits": 10
+      }
+    },
+    {
+      "count": 20,
+      "dimensions": {
+        "userAgentBrowser": "Edge"
+      },
+      "sum": {
+        "visits": 20
+      }
+    },
+    {
+      "count": 20,
+      "dimensions": {
+        "userAgentBrowser": "ChromeMobile"
+      },
+      "sum": {
+        "visits": 10
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "userAgentBrowser": "Firefox"
+      },
+      "sum": {
+        "visits": 10
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "userAgentBrowser": "ChromeDerivative"
+      },
+      "sum": {
+        "visits": 10
+      }
+    }
+  ],
+  "countries": [
+    {
+      "count": 750,
+      "dimensions": {
+        "countryName": "DE"
+      },
+      "sum": {
+        "visits": 100
+      }
+    },
+    {
+      "count": 90,
+      "dimensions": {
+        "countryName": "US"
+      },
+      "sum": {
+        "visits": 70
+      }
+    },
+    {
+      "count": 30,
+      "dimensions": {
+        "countryName": "FR"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "countryName": "IN"
+      },
+      "sum": {
+        "visits": 10
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "countryName": "NL"
+      },
+      "sum": {
+        "visits": 10
+      }
+    }
+  ],
+  "daily": [
+    {
+      "count": 70,
+      "dimensions": {
+        "date": "2026-10-23"
+      },
+      "sum": {
+        "visits": 10
+      }
+    },
+    {
+      "count": 50,
+      "dimensions": {
+        "date": "2026-10-26"
+      },
+      "sum": {
+        "visits": 30
+      }
+    },
+    {
+      "count": 60,
+      "dimensions": {
+        "date": "2026-10-27"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 50,
+      "dimensions": {
+        "date": "2026-10-28"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 220,
+      "dimensions": {
+        "date": "2026-10-29"
+      },
+      "sum": {
+        "visits": 10
+      }
+    },
+    {
+      "count": 70,
+      "dimensions": {
+        "date": "2026-10-30"
+      },
+      "sum": {
+        "visits": 20
+      }
+    },
+    {
+      "count": 50,
+      "dimensions": {
+        "date": "2026-10-31"
+      },
+      "sum": {
+        "visits": 20
+      }
+    },
+    {
+      "count": 60,
+      "dimensions": {
+        "date": "2026-11-01"
+      },
+      "sum": {
+        "visits": 20
+      }
+    },
+    {
+      "count": 40,
+      "dimensions": {
+        "date": "2026-11-02"
+      },
+      "sum": {
+        "visits": 10
+      }
+    },
+    {
+      "count": 150,
+      "dimensions": {
+        "date": "2026-11-03"
+      },
+      "sum": {
+        "visits": 50
+      }
+    },
+    {
+      "count": 60,
+      "dimensions": {
+        "date": "2026-11-04"
+      },
+      "sum": {
+        "visits": 10
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "date": "2026-11-05"
+      },
+      "sum": {
+        "visits": 10
+      }
+    }
+  ],
+  "devices": [
+    {
+      "count": 760,
+      "dimensions": {
+        "deviceType": "desktop"
+      },
+      "sum": {
+        "visits": 130
+      }
+    },
+    {
+      "count": 130,
+      "dimensions": {
+        "deviceType": "mobile"
+      },
+      "sum": {
+        "visits": 60
+      }
+    }
+  ],
+  "pages": [
+    {
+      "count": 270,
+      "dimensions": {
+        "requestPath": "/"
+      },
+      "sum": {
+        "visits": 100
+      }
+    },
+    {
+      "count": 100,
+      "dimensions": {
+        "requestPath": "/en/"
+      },
+      "sum": {
+        "visits": 30
+      }
+    },
+    {
+      "count": 60,
+      "dimensions": {
+        "requestPath": "/blog/"
+      },
+      "sum": {
+        "visits": 10
+      }
+    },
+    {
+      "count": 40,
+      "dimensions": {
+        "requestPath": "/fragen/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 40,
+      "dimensions": {
+        "requestPath": "/leistungen/change-management/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 30,
+      "dimensions": {
+        "requestPath": "/homepage/"
+      },
+      "sum": {
+        "visits": 10
+      }
+    },
+    {
+      "count": 30,
+      "dimensions": {
+        "requestPath": "/partner/juliane-winterscheid/"
+      },
+      "sum": {
+        "visits": 10
+      }
+    },
+    {
+      "count": 20,
+      "dimensions": {
+        "requestPath": "/masterclass/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 20,
+      "dimensions": {
+        "requestPath": "/en/partners/juliane-winterscheid/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 20,
+      "dimensions": {
+        "requestPath": "/masterclass-ki/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 20,
+      "dimensions": {
+        "requestPath": "/leistungen/salesforce-architektur/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 20,
+      "dimensions": {
+        "requestPath": "/en/blog/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "requestPath": "/masterclass/manufacturing-cloud/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "requestPath": "/en/masterclass/ai-salesforce/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "requestPath": "/en/blog/copado-gearset-provar-ai-agents/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "requestPath": "/blog/sfdx-hardis-oder-devops-center-vergleich/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "requestPath": "/en/blog/salesforce-dx-mcp-server-end-of-life/"
+      },
+      "sum": {
+        "visits": 10
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "requestPath": "/homepage/speaking/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "requestPath": "/blog/salesforce-architektur-entscheidungslog/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "requestPath": "/blog/change-management-prozess-salesforce/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    }
+  ],
+  "referers": [
+    {
+      "count": 640,
+      "dimensions": {
+        "refererHost": "www.fk-sd.de"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 160,
+      "dimensions": {
+        "refererHost": ""
+      },
+      "sum": {
+        "visits": 160
+      }
+    },
+    {
+      "count": 60,
+      "dimensions": {
+        "refererHost": "fkramer690.github.io"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 20,
+      "dimensions": {
+        "refererHost": "teams.public.onecdn.static.microsoft"
+      },
+      "sum": {
+        "visits": 20
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "refererHost": "www.linkedin.com"
+      },
+      "sum": {
+        "visits": 10
+      }
+    }
+  ]
+}

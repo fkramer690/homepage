@@ -6,7 +6,7 @@
  },
  {
   "page": "/en/",
-  "pageviews": 90,
+  "pageviews": 100,
   "visits": 30
  },
  {
@@ -25,22 +25,22 @@
   "visits": 0
  },
  {
-  "page": "/partner/juliane-winterscheid/",
-  "pageviews": 30,
-  "visits": 10
- },
- {
   "page": "/homepage/",
   "pageviews": 30,
   "visits": 10
  },
  {
-  "page": "/en/blog/",
+  "page": "/partner/juliane-winterscheid/",
+  "pageviews": 30,
+  "visits": 10
+ },
+ {
+  "page": "/masterclass/",
   "pageviews": 20,
   "visits": 0
  },
  {
-  "page": "/masterclass/",
+  "page": "/en/partners/juliane-winterscheid/",
   "pageviews": 20,
   "visits": 0
  },
@@ -55,32 +55,12 @@
   "visits": 0
  },
  {
-  "page": "/blog/sfdx-hardis-oder-devops-center-vergleich/",
-  "pageviews": 10,
+  "page": "/en/blog/",
+  "pageviews": 20,
   "visits": 0
  },
  {
   "page": "/masterclass/manufacturing-cloud/",
-  "pageviews": 10,
-  "visits": 0
- },
- {
-  "page": "/homepage/speaking/",
-  "pageviews": 10,
-  "visits": 0
- },
- {
-  "page": "/blog/change-management-prozess-salesforce/",
-  "pageviews": 10,
-  "visits": 0
- },
- {
-  "page": "/blog/salesforce-architektur-entscheidungslog/",
-  "pageviews": 10,
-  "visits": 0
- },
- {
-  "page": "/en/certifications/",
   "pageviews": 10,
   "visits": 0
  },
@@ -95,7 +75,27 @@
   "visits": 0
  },
  {
-  "page": "/blog/salesforce-releases-fachbereich-kommunizieren/",
+  "page": "/blog/sfdx-hardis-oder-devops-center-vergleich/",
+  "pageviews": 10,
+  "visits": 0
+ },
+ {
+  "page": "/en/blog/salesforce-dx-mcp-server-end-of-life/",
+  "pageviews": 10,
+  "visits": 10
+ },
+ {
+  "page": "/homepage/speaking/",
+  "pageviews": 10,
+  "visits": 0
+ },
+ {
+  "page": "/blog/salesforce-architektur-entscheidungslog/",
+  "pageviews": 10,
+  "visits": 0
+ },
+ {
+  "page": "/blog/change-management-prozess-salesforce/",
   "pageviews": 10,
   "visits": 0
  }
