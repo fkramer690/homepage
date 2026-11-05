@@ -34,6 +34,7 @@ export const site = {
     'https://app.fratch.io/de/profile/fabian-kramer-j',
     'https://www.salesforce.com/trailblazer/fkramer',
     'https://www.malt.com/profile/fabiankramer1',
+    'https://salesforcebreak.com/author/fabiankramerbaaa9dc933/',
   ],
   // Profiles of the company, only listed as sameAs in the structured data.
   companyProfiles: [
