@@ -1,17 +1,17 @@
 {
-  "generatedAt": "2026-11-05T04:48:00.418Z",
+  "generatedAt": "2026-11-05T13:10:15.250Z",
   "range": {
     "start": "2026-10-06",
     "end": "2026-11-05"
   },
   "browsers": [
     {
-      "count": 710,
+      "count": 770,
       "dimensions": {
         "userAgentBrowser": "Chrome"
       },
       "sum": {
-        "visits": 80
+        "visits": 110
       }
     },
     {
@@ -24,25 +24,25 @@
       }
     },
     {
-      "count": 40,
+      "count": 50,
       "dimensions": {
         "userAgentBrowser": "MobileSafari"
-      },
-      "sum": {
-        "visits": 10
-      }
-    },
-    {
-      "count": 20,
-      "dimensions": {
-        "userAgentBrowser": "Edge"
       },
       "sum": {
         "visits": 20
       }
     },
     {
-      "count": 20,
+      "count": 40,
+      "dimensions": {
+        "userAgentBrowser": "Edge"
+      },
+      "sum": {
+        "visits": 30
+      }
+    },
+    {
+      "count": 30,
       "dimensions": {
         "userAgentBrowser": "ChromeMobile"
       },
@@ -71,12 +71,12 @@
   ],
   "countries": [
     {
-      "count": 750,
+      "count": 820,
       "dimensions": {
         "countryName": "DE"
       },
       "sum": {
-        "visits": 100
+        "visits": 120
       }
     },
     {
@@ -89,12 +89,21 @@
       }
     },
     {
-      "count": 30,
+      "count": 40,
       "dimensions": {
         "countryName": "FR"
       },
       "sum": {
-        "visits": 0
+        "visits": 10
+      }
+    },
+    {
+      "count": 20,
+      "dimensions": {
+        "countryName": "SE"
+      },
+      "sum": {
+        "visits": 20
       }
     },
     {
@@ -217,38 +226,38 @@
       }
     },
     {
-      "count": 10,
+      "count": 110,
       "dimensions": {
         "date": "2026-11-05"
-      },
-      "sum": {
-        "visits": 10
-      }
-    }
-  ],
-  "devices": [
-    {
-      "count": 760,
-      "dimensions": {
-        "deviceType": "desktop"
-      },
-      "sum": {
-        "visits": 130
-      }
-    },
-    {
-      "count": 130,
-      "dimensions": {
-        "deviceType": "mobile"
       },
       "sum": {
         "visits": 60
       }
     }
   ],
+  "devices": [
+    {
+      "count": 840,
+      "dimensions": {
+        "deviceType": "desktop"
+      },
+      "sum": {
+        "visits": 170
+      }
+    },
+    {
+      "count": 150,
+      "dimensions": {
+        "deviceType": "mobile"
+      },
+      "sum": {
+        "visits": 70
+      }
+    }
+  ],
   "pages": [
     {
-      "count": 270,
+      "count": 280,
       "dimensions": {
         "requestPath": "/"
       },
@@ -277,7 +286,7 @@
     {
       "count": 40,
       "dimensions": {
-        "requestPath": "/fragen/"
+        "requestPath": "/leistungen/change-management/"
       },
       "sum": {
         "visits": 0
@@ -286,7 +295,7 @@
     {
       "count": 40,
       "dimensions": {
-        "requestPath": "/leistungen/change-management/"
+        "requestPath": "/fragen/"
       },
       "sum": {
         "visits": 0
@@ -299,6 +308,15 @@
       },
       "sum": {
         "visits": 10
+      }
+    },
+    {
+      "count": 30,
+      "dimensions": {
+        "requestPath": "/en/blog/"
+      },
+      "sum": {
+        "visits": 0
       }
     },
     {
@@ -340,7 +358,7 @@
     {
       "count": 20,
       "dimensions": {
-        "requestPath": "/leistungen/salesforce-architektur/"
+        "requestPath": "/masterclass/ki-salesforce/begriffe-und-landkarte/"
       },
       "sum": {
         "visits": 0
@@ -349,16 +367,16 @@
     {
       "count": 20,
       "dimensions": {
-        "requestPath": "/en/blog/"
+        "requestPath": "/masterclass/revenue-cloud/"
       },
       "sum": {
-        "visits": 0
+        "visits": 10
       }
     },
     {
-      "count": 10,
+      "count": 20,
       "dimensions": {
-        "requestPath": "/masterclass/manufacturing-cloud/"
+        "requestPath": "/leistungen/salesforce-architektur/"
       },
       "sum": {
         "visits": 0
@@ -394,24 +412,6 @@
     {
       "count": 10,
       "dimensions": {
-        "requestPath": "/en/blog/salesforce-dx-mcp-server-end-of-life/"
-      },
-      "sum": {
-        "visits": 10
-      }
-    },
-    {
-      "count": 10,
-      "dimensions": {
-        "requestPath": "/homepage/speaking/"
-      },
-      "sum": {
-        "visits": 0
-      }
-    },
-    {
-      "count": 10,
-      "dimensions": {
         "requestPath": "/blog/salesforce-architektur-entscheidungslog/"
       },
       "sum": {
@@ -421,7 +421,16 @@
     {
       "count": 10,
       "dimensions": {
-        "requestPath": "/blog/change-management-prozess-salesforce/"
+        "requestPath": "/masterclass/ki-salesforce/"
+      },
+      "sum": {
+        "visits": 0
+      }
+    },
+    {
+      "count": 10,
+      "dimensions": {
+        "requestPath": "/masterclass/manufacturing-cloud/"
       },
       "sum": {
         "visits": 0
@@ -430,7 +439,7 @@
   ],
   "referers": [
     {
-      "count": 640,
+      "count": 690,
       "dimensions": {
         "refererHost": "www.fk-sd.de"
       },
@@ -439,12 +448,12 @@
       }
     },
     {
-      "count": 160,
+      "count": 210,
       "dimensions": {
         "refererHost": ""
       },
       "sum": {
-        "visits": 160
+        "visits": 210
       }
     },
     {

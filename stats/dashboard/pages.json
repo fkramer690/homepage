@@ -1,7 +1,7 @@
 [
  {
   "page": "/",
-  "pageviews": 270,
+  "pageviews": 280,
   "visits": 100
  },
  {
@@ -15,12 +15,12 @@
   "visits": 10
  },
  {
-  "page": "/fragen/",
+  "page": "/leistungen/change-management/",
   "pageviews": 40,
   "visits": 0
  },
  {
-  "page": "/leistungen/change-management/",
+  "page": "/fragen/",
   "pageviews": 40,
   "visits": 0
  },
@@ -28,6 +28,11 @@
   "page": "/homepage/",
   "pageviews": 30,
   "visits": 10
+ },
+ {
+  "page": "/en/blog/",
+  "pageviews": 30,
+  "visits": 0
  },
  {
   "page": "/partner/juliane-winterscheid/",
@@ -50,18 +55,18 @@
   "visits": 0
  },
  {
+  "page": "/masterclass/ki-salesforce/begriffe-und-landkarte/",
+  "pageviews": 20,
+  "visits": 0
+ },
+ {
+  "page": "/masterclass/revenue-cloud/",
+  "pageviews": 20,
+  "visits": 10
+ },
+ {
   "page": "/leistungen/salesforce-architektur/",
   "pageviews": 20,
-  "visits": 0
- },
- {
-  "page": "/en/blog/",
-  "pageviews": 20,
-  "visits": 0
- },
- {
-  "page": "/masterclass/manufacturing-cloud/",
-  "pageviews": 10,
   "visits": 0
  },
  {
@@ -80,22 +85,17 @@
   "visits": 0
  },
  {
-  "page": "/en/blog/salesforce-dx-mcp-server-end-of-life/",
-  "pageviews": 10,
-  "visits": 10
- },
- {
-  "page": "/homepage/speaking/",
-  "pageviews": 10,
-  "visits": 0
- },
- {
   "page": "/blog/salesforce-architektur-entscheidungslog/",
   "pageviews": 10,
   "visits": 0
  },
  {
-  "page": "/blog/change-management-prozess-salesforce/",
+  "page": "/masterclass/ki-salesforce/",
+  "pageviews": 10,
+  "visits": 0
+ },
+ {
+  "page": "/masterclass/manufacturing-cloud/",
   "pageviews": 10,
   "visits": 0
  }
