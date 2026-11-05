@@ -40,6 +40,8 @@ export const site = {
   companyProfiles: [
     // Google Business Profile (knowledge graph id).
     'https://www.google.com/search?kgmid=/g/11z_04sr6b',
+    // LinkedIn company page.
+    'https://www.linkedin.com/company/fk-solution-design-gmbh',
   ],
   legal: {
     street: 'Hans-Keul-Weg 27',
