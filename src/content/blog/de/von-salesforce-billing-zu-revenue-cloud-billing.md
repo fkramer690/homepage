@@ -2,6 +2,7 @@
 title: "Von Salesforce Billing zu Revenue Cloud Billing"
 description: "Was mit offenen Rechnungen, Abrechnungsplänen und Zahlungen passiert, wenn Sie vom Paket Salesforce Billing zu Revenue Cloud Billing wechseln, und wer freigibt."
 pubDate: 2026-10-28
+updatedDate: 2026-11-05
 lang: de
 slug: von-salesforce-billing-zu-revenue-cloud-billing
 translationKey: salesforce-billing-to-revenue-cloud-billing
@@ -26,7 +27,7 @@ faq:
 draft: false
 ---
 
-Der Wechsel vom Paket Salesforce Billing (Namespace `blng`) zu Revenue Cloud Billing bedeutet ein neues Abrechnungsdatenmodell auf Standardobjekten. Eine Umwandlung an Ort und Stelle gibt es nicht. Offene Rechnungen, Abrechnungspläne und Zahlungshistorie werden entweder im alten Paket abgeschlossen oder als Salden übernommen. Meine Empfehlung: Umstellung zum Ende einer Buchungsperiode, letzter Rechnungslauf im Paket, offene Forderungen und aktive Verträge übernehmen, abgeschlossene Historie lesbar halten oder archivieren. Abrechnungspläne entstehen in Revenue Cloud aus Aufträgen und folgen damit den migrierten Assets. Freigeben muss die Finanzabteilung, nicht das CRM-Team, denn Steuer, Zahlungen und Buchungen ändern sich mit dem System.
+Der Wechsel vom Paket Salesforce Billing (Namespace blng) zu Revenue Cloud Billing bedeutet ein neues Abrechnungsdatenmodell auf Standardobjekten. Eine Umwandlung an Ort und Stelle gibt es nicht. Offene Rechnungen, Abrechnungspläne und Zahlungshistorie werden entweder im alten Paket abgeschlossen oder als Salden übernommen. Meine Empfehlung: Umstellung zum Ende einer Buchungsperiode, letzter Rechnungslauf im Paket, offene Forderungen und aktive Verträge übernehmen, abgeschlossene Historie lesbar halten oder archivieren. Abrechnungspläne entstehen in Revenue Cloud aus Aufträgen und folgen damit den migrierten Assets. Freigeben muss die Finanzabteilung, nicht das CRM-Team, denn Steuer, Zahlungen und Buchungen ändern sich mit dem System.
 
 ## Wie ist der Stand bei Salesforce Billing?
 
@@ -42,14 +43,14 @@ Das Paket hat laut seinem [Developer Guide](https://developer.salesforce.com/doc
 
 | Funktion | Salesforce Billing (Paket) | Revenue Cloud Billing (Standardobjekte) |
 |---|---|---|
-| Abrechnungslogik | `blng__BillingRule__c`, `blng__BillingTreatment__c` | BillingPolicy, BillingTreatment, BillingTreatmentItem |
-| Steuer | `blng__TaxRule__c`, `blng__TaxIntegration__c` | TaxPolicy, TaxTreatment, TaxEngine mit Provider-Adapter |
-| Rechnung | `blng__Invoice__c`, `blng__InvoiceLine__c` | Invoice, InvoiceLine, InvoiceLineTax |
-| Rechnungslauf | `blng__InvoiceRun__c` | InvoiceBatchRun |
-| Gutschrift und Belastung | `blng__CreditNote__c`, `blng__DebitNote__c` | CreditMemo, DebitMemo |
-| Buchhaltung | `blng__FinanceBook__c`, `blng__FinancePeriod__c`, `blng__GLAccount__c` | AccountingPeriod, GeneralLedgerAccount, GeneralLedgerJrnlEntryRule |
-| Rechtseinheit | `blng__LegalEntity__c` | LegalEntity |
-| Zahlungen | `blng__Payment__c`, `blng__PaymentGateway__c` | Objekte von Salesforce Payments plus PaymentLineInvoiceLine |
+| Abrechnungslogik | blng__BillingRule__c, blng__BillingTreatment__c | BillingPolicy, BillingTreatment, BillingTreatmentItem |
+| Steuer | blng__TaxRule__c, blng__TaxIntegration__c | TaxPolicy, TaxTreatment, TaxEngine mit Provider-Adapter |
+| Rechnung | blng__Invoice__c, blng__InvoiceLine__c | Invoice, InvoiceLine, InvoiceLineTax |
+| Rechnungslauf | blng__InvoiceRun__c | InvoiceBatchRun |
+| Gutschrift und Belastung | blng__CreditNote__c, blng__DebitNote__c | CreditMemo, DebitMemo |
+| Buchhaltung | blng__FinanceBook__c, blng__FinancePeriod__c, blng__GLAccount__c | AccountingPeriod, GeneralLedgerAccount, GeneralLedgerJrnlEntryRule |
+| Rechtseinheit | blng__LegalEntity__c | LegalEntity |
+| Zahlungen | blng__Payment__c, blng__PaymentGateway__c | Objekte von Salesforce Payments plus PaymentLineInvoiceLine |
 
 Zwei Unterschiede wiegen schwerer als die Namen, ein dritter Punkt ist offen:
 
@@ -57,7 +58,7 @@ Zwei Unterschiede wiegen schwerer als die Namen, ein dritter Punkt ist offen:
 - **Steuer und Zahlungen sind anders angebunden.** Steuer läuft über einen TaxEngine-Datensatz mit Provider-Adapter und Named Credential. Zahlungen nutzen Standardobjekte von Salesforce Payments mit einem externen Zahlungsanbieter. Steuer- und Zahlungsanbieter müssen die neue Anbindung bestätigen.
 
 ```hinweis offen
-**Umsatzrealisierung.** Das Paket hat Objekte wie `blng__RevenueSchedule__c`. In der Liste der Billing-Standardobjekte habe ich kein Objekt für Umsatzpläne gefunden. Wenn Sie heute im Paket Umsätze realisieren, fragen Sie Salesforce schriftlich, wo das nach dem Wechsel passiert.
+**Umsatzrealisierung.** Das Paket hat Objekte wie blng__RevenueSchedule__c. In der Liste der Billing-Standardobjekte habe ich kein Objekt für Umsatzpläne gefunden. Wenn Sie heute im Paket Umsätze realisieren, fragen Sie Salesforce schriftlich, wo das nach dem Wechsel passiert.
 ```
 
 ## Was passiert mit offenen Rechnungen, Plänen und Zahlungen?

@@ -2,6 +2,7 @@
 title: "From Salesforce Billing to Revenue Cloud Billing"
 description: "What happens to open invoices, billing schedules and payments when you move from the Salesforce Billing package to Revenue Cloud Billing, and who signs off."
 pubDate: 2026-10-28
+updatedDate: 2026-11-05
 lang: en
 slug: from-salesforce-billing-to-revenue-cloud-billing
 translationKey: salesforce-billing-to-revenue-cloud-billing
@@ -26,7 +27,7 @@ faq:
 draft: false
 ---
 
-Moving from the Salesforce Billing package (namespace `blng`) to Revenue Cloud Billing means a new billing data model on standard objects. There is no in-place conversion. Open invoices, billing schedules and payment history are either finished in the old package or moved as balances. My recommendation: cut over at the end of an accounting period, run the last invoices in the package, move open receivables and active contracts, and keep closed history readable or archived. Billing schedules in Revenue Cloud come from orders, so they follow the migrated assets. Finance signs off, not the CRM team, because tax, payments and journal entries change with the system.
+Moving from the Salesforce Billing package (namespace blng) to Revenue Cloud Billing means a new billing data model on standard objects. There is no in-place conversion. Open invoices, billing schedules and payment history are either finished in the old package or moved as balances. My recommendation: cut over at the end of an accounting period, run the last invoices in the package, move open receivables and active contracts, and keep closed history readable or archived. Billing schedules in Revenue Cloud come from orders, so they follow the migrated assets. Finance signs off, not the CRM team, because tax, payments and journal entries change with the system.
 
 ## What is the status of Salesforce Billing?
 
@@ -42,14 +43,14 @@ The package has 59 custom objects in its [developer guide](https://developer.sal
 
 | Function | Salesforce Billing (package) | Revenue Cloud Billing (standard objects) |
 |---|---|---|
-| Billing logic | `blng__BillingRule__c`, `blng__BillingTreatment__c` | BillingPolicy, BillingTreatment, BillingTreatmentItem |
-| Tax | `blng__TaxRule__c`, `blng__TaxIntegration__c` | TaxPolicy, TaxTreatment, TaxEngine with a provider adapter |
-| Invoice | `blng__Invoice__c`, `blng__InvoiceLine__c` | Invoice, InvoiceLine, InvoiceLineTax |
-| Invoice run | `blng__InvoiceRun__c` | InvoiceBatchRun |
-| Credit and debit | `blng__CreditNote__c`, `blng__DebitNote__c` | CreditMemo, DebitMemo |
-| Accounting | `blng__FinanceBook__c`, `blng__FinancePeriod__c`, `blng__GLAccount__c` | AccountingPeriod, GeneralLedgerAccount, GeneralLedgerJrnlEntryRule |
-| Legal entity | `blng__LegalEntity__c` | LegalEntity |
-| Payments | `blng__Payment__c`, `blng__PaymentGateway__c` | Salesforce Payments objects plus PaymentLineInvoiceLine |
+| Billing logic | blng__BillingRule__c, blng__BillingTreatment__c | BillingPolicy, BillingTreatment, BillingTreatmentItem |
+| Tax | blng__TaxRule__c, blng__TaxIntegration__c | TaxPolicy, TaxTreatment, TaxEngine with a provider adapter |
+| Invoice | blng__Invoice__c, blng__InvoiceLine__c | Invoice, InvoiceLine, InvoiceLineTax |
+| Invoice run | blng__InvoiceRun__c | InvoiceBatchRun |
+| Credit and debit | blng__CreditNote__c, blng__DebitNote__c | CreditMemo, DebitMemo |
+| Accounting | blng__FinanceBook__c, blng__FinancePeriod__c, blng__GLAccount__c | AccountingPeriod, GeneralLedgerAccount, GeneralLedgerJrnlEntryRule |
+| Legal entity | blng__LegalEntity__c | LegalEntity |
+| Payments | blng__Payment__c, blng__PaymentGateway__c | Salesforce Payments objects plus PaymentLineInvoiceLine |
 
 Two differences matter more than the names, and a third point is open:
 
@@ -57,7 +58,7 @@ Two differences matter more than the names, and a third point is open:
 - **Tax and payments are connected differently.** Tax runs through a TaxEngine record with a provider adapter and a named credential. Payments use standard Salesforce Payments objects with an external gateway. Your tax provider and payment provider both need to confirm the new connection.
 
 ```hinweis offen
-**Revenue recognition.** The package has objects such as `blng__RevenueSchedule__c`. In the Billing standard object list I found no revenue schedule object. If you recognise revenue in the package today, ask Salesforce in writing where that happens after the move.
+**Revenue recognition.** The package has objects such as blng__RevenueSchedule__c. In the Billing standard object list I found no revenue schedule object. If you recognise revenue in the package today, ask Salesforce in writing where that happens after the move.
 ```
 
 ## What happens to open invoices, schedules and payments?

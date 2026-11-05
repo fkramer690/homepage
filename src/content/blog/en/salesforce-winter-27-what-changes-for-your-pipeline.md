@@ -26,21 +26,21 @@ faq:
     a: "SOAP login() in API versions 31.0 to 64.0 is retired in Summer '27, and SOAP, REST and Bulk API versions 31.0 to 40.0 stop receiving updates in Summer '27 and fail in Summer '28."
 ---
 
-Winter '27 is fully rolled out since 9 October 2026, and for development and release teams it brings changes that can break a pipeline. The most urgent one: since 28 October the Salesforce CLI no longer prints access tokens with `org display`, and the CLI now needs Node.js 22. On top of that, the Developer Console disappears from the Setup menu, Apex heap limits go up and the first API retirements take effect. None of this is dramatic on its own, but each item can stop a deployment on the wrong day. This overview is based on Salesforce's [developer guide to Winter '27](https://developer.salesforce.com/blogs/2026/10/developers-guide-to-the-winter-27-release) and sorted by urgency.
+Winter '27 is fully rolled out since 9 October 2026, and for development and release teams it brings changes that can break a pipeline. The most urgent one: since 28 October the Salesforce CLI no longer prints access tokens with org display, and the CLI now needs Node.js 22. On top of that, the Developer Console disappears from the Setup menu, Apex heap limits go up and the first API retirements take effect. None of this is dramatic on its own, but each item can stop a deployment on the wrong day. This overview is based on Salesforce's [developer guide to Winter '27](https://developer.salesforce.com/blogs/2026/10/developers-guide-to-the-winter-27-release) and sorted by urgency.
 
 ## What breaks first in a Salesforce pipeline?
 
 Two CLI changes need attention before anything else.
 
-**The org display command no longer prints secrets.** Many pipelines and helper scripts call `sf org display` and read the access token from the output, for example to call the REST API directly or to pass the session to another tool. With Winter '27 the command no longer shows secrets. Salesforce offered a temporary workaround through the environment variable `SF_TEMP_SHOW_SECRETS` and removed it with [CLI version 2.156.8](https://github.com/forcedotcom/cli/blob/main/releasenotes/README.md) on 28 October 2026. To read a secret on purpose, the release notes point to the `sf org auth show-*` commands.
+**The org display command no longer prints secrets.** Many pipelines and helper scripts call sf org display and read the access token from the output, for example to call the REST API directly or to pass the session to another tool. With Winter '27 the command no longer shows secrets. Salesforce offered a temporary workaround through the environment variable SF_TEMP_SHOW_SECRETS and removed it with [CLI version 2.156.8](https://github.com/forcedotcom/cli/blob/main/releasenotes/README.md) on 28 October 2026. To read a secret on purpose, the release notes point to the sf org auth show-\* commands.
 
 ```hinweis achtung
-The workaround ended on 28 October 2026. Since then, scripts that depend on the token in the output of `org display` fail, even if `SF_TEMP_SHOW_SECRETS` is set.
+The workaround ended on 28 October 2026. Since then, scripts that depend on the token in the output of org display fail, even if SF_TEMP_SHOW_SECRETS is set.
 ```
 
 What to do:
 
-1. Search your pipeline definitions, scripts and repositories for `org display` and for parsing of `accessToken`.
+1. Search your pipeline definitions, scripts and repositories for org display and for parsing of accessToken.
 2. Let each pipeline job authenticate directly, ideally with the JWT bearer flow and a certificate stored in the client's secret store, instead of passing tokens around between steps.
 3. Test the changed jobs in a feature branch, starting with jobs that have failed since 28 October.
 
@@ -62,9 +62,9 @@ Several changes help developers, some of them automatically:
 
 - **Higher heap limits.** The Apex heap limit rises from 6 to 10 MB for synchronous and from 12 to 25 MB for asynchronous code. This applies automatically. Code that was split into batches only to stay below the old limits can be simplified later, but there is no need to rush.
 - **Warnings for very old API versions.** The compiler now warns about classes and triggers saved with API versions 9.0 to 19.0. In older enterprise orgs such classes still exist. They are good candidates for clean-up.
-- **New Apex features in preview and beta.** Integration tests are available as developer preview. `FORMULA()` in SOQL, the Apex Symbol API and cursors for Data 360 objects are in beta. Beta features should not end up in production code without a deliberate decision.
-- **LWC improvements.** Complex template expressions, `lwc:external` for third-party web components and `refresh()` on state managers are generally available.
-- **CLI templates.** The CLI has new templates for `Batchable` and `Queueable` classes and new debug options for `apex run`.
+- **New Apex features in preview and beta.** Integration tests are available as developer preview. FORMULA() in SOQL, the Apex Symbol API and cursors for Data 360 objects are in beta. Beta features should not end up in production code without a deliberate decision.
+- **LWC improvements.** Complex template expressions, lwc:external for third-party web components and refresh() on state managers are generally available.
+- **CLI templates.** The CLI has new templates for Batchable and Queueable classes and new debug options for apex run.
 
 ## Which API retirements start now?
 
@@ -86,13 +86,13 @@ Three smaller points with governance impact:
 
 - **The Agentforce platform is on by default.** Decide who may build and activate agents, and make sure agent configuration goes through the same release process as other metadata.
 - **Gemini model rerouting.** Requests to Gemini 2.5 Pro, Flash and Flash-Lite were rerouted to newer Gemini models on 20 October 2026. If prompt templates or agents rely on a specific model, test their results again.
-- **Multi-agent orchestration is generally available**, and Agent Script gained functions and `else if` chains. Both make agent logic more powerful, and more reason to review it like code.
+- **Multi-agent orchestration is generally available**, and Agent Script gained functions and else if chains. Both make agent logic more powerful, and more reason to review it like code.
 
 ## Winter '27 checklist, starting with the token scripts
 
 Three releases a year mean a checklist like this every few months. A pipeline that runs every change through validation and tests catches most of these issues early, which is one of the reasons [DevOps decides Salesforce enterprise projects](../why-devops-matters-salesforce-enterprise/). For a release team, these steps cover the essentials:
 
-1. Find and fix every use of `org display` tokens in pipelines; jobs that still rely on them have been failing since 28 October.
+1. Find and fix every use of org display tokens in pipelines; jobs that still rely on them have been failing since 28 October.
 2. Update Node.js to version 22 on runners, Docker images and developer machines.
 3. Agree on rules for production access now that the Developer Console is hidden.
 4. List classes and triggers with API versions below 20.0 and plan their update.
