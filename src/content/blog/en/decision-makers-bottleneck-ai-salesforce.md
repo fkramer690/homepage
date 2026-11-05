@@ -46,7 +46,7 @@ The figures date from before coding agents. The [analysis in the SAFe Fellow Blo
 ## Three reasons why decisions stall at the client
 
 ```praxis
-On the client side I see three patterns. Decision makers are too involved in daily business and have too little capacity for the project. Processes are not clear internally, so many questions come back to the team or changes are needed after the build. And it is hard to find one person who is close enough to daily business to understand what the end users need and can still own the scoping and strategic direction of the project.
+In every one of my projects, user acceptance testing or the acceptance of stories took longer than the client had planned. The people on the client side were not available. Then change requests came up, because the business had not looked closely enough at its own solution and the status quo beforehand. Behind it I always see the same patterns: decision makers tied up in daily business, processes not settled internally, and nobody close enough to the users' daily work who can still own the scope and direction of the project.
 ```
 
 ### Daily business wins

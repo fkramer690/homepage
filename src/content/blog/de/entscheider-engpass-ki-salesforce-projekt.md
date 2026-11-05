@@ -46,7 +46,7 @@ Die Zahlen stammen aus der Zeit vor Coding-Agenten. Die [Auswertung im SAFe Fell
 ## Drei Gründe, warum Entscheidungen beim Kunden liegen bleiben
 
 ```praxis
-Auf Kundenseite sehe ich drei Muster: Die Entscheider sind zu stark ins Tagesgeschäft eingebunden und haben zu wenig Kapazität für das Projekt. Die Prozesse sind intern nicht klar, deshalb kommen viele Rückfragen ins Team oder Änderungen nach dem Bau. Und es ist schwierig, eine Person zu finden, die nah genug am Tagesgeschäft ist, um die Bedarfe der Anwender zu verstehen, und trotzdem Scoping und strategische Ausrichtung des Projekts verantworten kann.
+In jedem meiner Projekte hat der Abnahmetest oder die Abnahme der Stories länger gedauert, als der Kunde eingeplant hatte. Die Personen auf Kundenseite waren nicht verfügbar. Und dann kamen Change Requests, weil sich der Fachbereich vorher nicht ausreichend mit der eigenen Lösung und dem Status quo auseinandergesetzt hatte. Dahinter sehe ich immer dieselben Muster: Entscheider im Tagesgeschäft, intern ungeklärte Prozesse und niemand, der nah genug am Alltag der Anwender ist und trotzdem Scope und Ausrichtung des Projekts verantworten kann.
 ```
 
 ### Das Tagesgeschäft gewinnt
