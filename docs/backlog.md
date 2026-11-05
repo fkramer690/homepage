@@ -1,4 +1,4 @@
-# Homepage – Backlog (Stand 03.11.2026)
+# Homepage – Backlog (Stand 05.11.2026)
 
 Einzige gepflegte Fassung des Backlogs. Andere Projekte (z. B. der tägliche Blog-Artikel-Lauf) lesen diese Datei. Das Repo ist öffentlich: keine Kundennamen, NDA-Details, Preise oder internen Notizen hier eintragen.
 
@@ -94,6 +94,18 @@ Grundlage: Jev-Lauf (jev-1.14.0) über Start, EN, Leistungen, Freiberufler-Seite
 | J21 | Fünf Aussagen ohne gleichwertige Quelle seit #151 gegenlesen (stehen jetzt als „laut Salesforce“): Visualforce-Store weiter unterstützt; Lizenzen und Rechte von Käufer und Buyer Manager; Store-Suche (Standardfelder, alle Begriffe, keine Teiltreffer); Flosum Salesforce-nativ; Beispiel 35/35/30 % und drei Schnitte bei Account Manager Targets | klein | klein | Fabian | Backlog |
 
 Kein Handlungsbedarf: ich/wir auf der Startseite (getrennt nach Fabian, Juliane und gemeinsamem Angebot; „wir“ im Gesprächsabschnitt meint Kunde und Fabian), doppelte Logos (zweite Kopie hat bereits aria-hidden), Antwortzeit über 0,8 s (Einzelwert).
+
+## Lehren aus dem Video „Platz 1 in 48 Stunden“ (Prüfung 05.11.2026)
+
+Grundlage: Video eines SEO-Beraters, wie er eine Suche in 48 Stunden auf Platz 1 bei Google und in der KI-Suche bringt. Schon erfüllt: Kernaussagen oben, Autorenbox mit Foto und Profilen, 2 bis 6 FAQ mit kurzen Antworten, Vergleichstabellen (Blöcke `vergleich`, `tabelle`), Termin-Box in der Seitenspalte, Information Gain (IG1 bis IG5), Tracking und Nachbessern (D1, D9, U7). Bewusst nicht übernommen: „vs“-Seiten gegen Wettbewerber (funktioniert laut Video nur mit bekannter Marke) und viele schnelle Seiten (widerspricht U1).
+
+| # | Maßnahme | Impact | Aufwand | Wer | Status |
+|---|---|---|---|---|---|
+| R1 | LinkedIn-Artikel als eigener Ranking-Kanal: für die 3 bis 5 wichtigsten Artikel (z. B. L1 Partnerwahl, Field Service lohnt sich, Document-Builder-Grenzen) je einen LinkedIn-Artikel, umgeschrieben statt kopiert (eigener Einstieg, kürzer, anderes Beispiel), mit Link auf den Artikel. Am besten auf der LinkedIn-Unternehmensseite (QB Schritt 7) und vom Profil geteilt. Unterschied zu QB Schritt 8 und Weitere Ideen 5: dort Teaser-Posts, hier vollständige Artikel, die selbst bei Google und in KI-Antworten erscheinen sollen. Wirkung im Montagslauf mittracken | hoch | mittel | Claude schreibt die Fassungen, Fabian veröffentlicht | offen |
+| R2 | YouTube als eigener Ranking-Kanal: zu denselben Kernartikeln je ein kurzes Erklärvideo auf einem eigenen YouTube-Kanal, Titel mit dem Suchbegriff, Beschreibung mit Link auf den Artikel. Auf der Website bleibt das Video selbst gehostet (Blog-Richtlinien, keine Cookies), YouTube ist zusätzliche Fundstelle; Kanal-URL kommt als sameAs ins Schema. Videos mit HyperFrames möglich | mittel | mittel | Fabian entscheidet über Kanal und Gesicht im Video, Claude bereitet Skripte vor | offen |
+| R3 | Handlungsaufforderung im Artikeltext: bisher nur Termin-Box in der Seitenspalte und Kontaktbereich am Ende. Laut Video wirken zusätzlich zwei kurze Hinweise im Text nach ca. 15 bis 20 % und 30 bis 50 % des Artikels. Umsetzung zentral in `BlogPost.astro` (nach dem n-ten H2-Abschnitt eingefügt, nie per Markdown), Text aus dem Kontakt-Brief des Artikels. Passend zur Suchabsicht: Entscheidungs- und Vergleichsartikel → „Gespräch buchen“, reine Wissensartikel → Material zum Mitnehmen (siehe R4). Vorher Mockup, Fabian wählt | hoch | mittel | Claude, Freigabe Fabian | offen |
+| R4 | Material für Wissensartikel (Lead Magnet), damit R3 dort nicht nur „Termin buchen“ anbietet: z. B. Prüfliste Partnerwahl, Field-Service-Readiness-Check oder das Werkzeug aus KS4. Ein Angebot je Kategorie reicht | mittel | mittel | Claude schlägt vor, Fabian entscheidet | offen |
+| R5 | Begriffe nach Stärke der Konkurrenz wählen: vor jedem neuen Artikel (L-Liste, B13) mit DataForSEO prüfen, ob unter den Top 10 Seiten mit ähnlicher oder geringerer Domain-Stärke als fk-sd.de stehen. Wenn nur starke Domains ranken: Begriff eher über R1/R2 angehen oder einen spezifischeren Long-Tail-Begriff mit Kaufabsicht („beste X für Y“, „Alternativen zu“, „Erfahrungen“) nehmen. Als Schritt in den `blog-article`-Skill bzw. docs/blog-guidelines.md aufnehmen | mittel | klein | Claude | offen |
 
 ## Priorität 1: Artikel aus der Long-Tail-Recherche (DataForSEO, 28.10.2026)
 
