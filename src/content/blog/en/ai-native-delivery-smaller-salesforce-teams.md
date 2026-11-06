@@ -40,7 +40,7 @@ The framework has five building blocks that matter for programme organisation:
 - **Named ownership.** "A named human owns every artifact." Agents work only in allowlisted sandboxes and scratch orgs, never in production.
 - **The same gates for everyone.** PMD, Code Analyzer and ApexGuru run in CI for human and agent code alike.
 
-I treat ApexHours as a well-argued practice framework. It gives no team sizes and no measured results, so the numbers have to come from elsewhere.
+I don't agree with every number or every step in this framework, but it points in the right direction. And no template fits every customer one to one.
 
 ## Why do Salesforce teams get smaller?
 

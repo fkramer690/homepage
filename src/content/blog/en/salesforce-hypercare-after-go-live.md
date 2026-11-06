@@ -86,6 +86,8 @@ I usually combined hypercare with implementing feedback and quick wins. At times
 
 So plan in weeks to months rather than days, depending on the number of groups and ERP interfaces. In a rollout in waves, hypercare starts again in every country, as described in [Change management in a global Salesforce rollout](../change-management-global-salesforce-rollout/).
 
+A shorter version without the Salesforce detail, which applies just as well to ERP or a service portal, is on LinkedIn: [Hypercare after go-live: what it means, how long it lasts and when it ends](https://www.linkedin.com/pulse/hypercare-after-go-live-what-means-how-long-lasts-edmee/).
+
 ## How do you hand over to operations?
 
 The handover is the moment the project team moves on. It works well when support sat at the table from the start and the handover happens step by step: first it takes over how-to questions, then data issues, and last the steering of defects with the partner.

@@ -2,6 +2,7 @@
 title: "Commerce extensions: custom code that survives updates"
 description: "How to build custom pricing, stock and checkout logic in Salesforce B2B Commerce with extensions, so it survives Salesforce releases and a change of partner."
 pubDate: 2026-10-28
+updatedDate: 2026-11-05
 lang: en
 slug: commerce-extensions-custom-code
 translationKey: commerce-extensions-custom-code
@@ -28,7 +29,7 @@ faq:
 draft: false
 ---
 
-Custom store logic in Salesforce B2B Commerce survives releases when it is built as commerce extensions that add to the standard instead of replacing it. Extensions are Apex classes that Salesforce runs at named extension points such as pricing, inventory or order creation. Domain extensions should call `super()`, as Salesforce strongly recommends, so the default service still runs and your code only adds what is specific to you. Endpoint extensions change one API's request or response. Payments cannot be extended. The second half of the answer is ownership: extension code, registration and store mapping belong in your repository and pipeline, not in a partner's.
+Custom store logic in Salesforce B2B Commerce survives releases when it is built as commerce extensions that add to the standard instead of replacing it. Extensions are Apex classes that Salesforce runs at named extension points such as pricing, inventory or order creation. Domain extensions should first let the standard service run, as Salesforce strongly recommends, so it keeps working and your code only adds what is specific to you. Endpoint extensions change one API's request or response. Payments cannot be extended. The second half of the answer is ownership: extension code, registration and store mapping belong in your repository and pipeline, not in a partner's.
 
 ## What are commerce extensions?
 
@@ -38,22 +39,24 @@ This applies to Salesforce B2B Commerce on the core platform, which Salesforce n
 
 There are two kinds:
 
-- **Domain extensions** belong to a functional area. A provider can extend or replace the default behaviour, and one change can affect several endpoints. Example: a pricing provider extends `commercestorepricing.PricingService` and overrides `processPrice` for product lists and detail pages and `processTransactionalPrice` for cart and checkout.
-- **Endpoint extensions** belong to one Connect API resource. The provider extends `ConnectApi.BaseEndpointExtension` and can change the request before and the response after the call. It cannot replace the default functionality and cannot call `super()`.
+- **Domain extensions** belong to a functional area. A provider can extend or replace the default behaviour, and one change can affect several endpoints. Example: a pricing provider adjusts the standard price on product pages and again in cart and checkout.
+- **Endpoint extensions** belong to one Connect API resource. The provider can change the request before and the response after the call, but it cannot replace the standard behaviour.
 
 ## Extension points from pricing to order creation
 
 The [list of available extensions](https://developer.salesforce.com/docs/commerce/extensions/guide/available-extensions.html) is short enough to read in full. For a manufacturer connecting SAP or another ERP, these matter most:
 
-| Need | Extension point |
-|---|---|
-| Customer price from the ERP | `Commerce_Domain_Pricing_Service`, `Commerce_Domain_Pricing_CartCalculator` |
-| Stock or availability from the ERP | `Commerce_Domain_Inventory_Service`, `Commerce_Domain_Inventory_CartCalculator` |
-| Tax and shipping | `Commerce_Domain_Tax_Service`, `Commerce_Domain_Tax_CartCalculator`, `Commerce_Domain_Shipping_CartCalculator` |
-| Check credit or blocks before ordering | `Commerce_Domain_Checkout_PlaceOrder` |
-| Shape the order record | `Commerce_Domain_Checkout_CreateOrder` |
-| Custom buyer group assignment | `Commerce_Domain_BuyerGroup_EvaluationService` |
-| Filter or enrich products and search results | `Commerce_Endpoint_Catalog_Products`, `Commerce_Endpoint_Search_ProductSearch` |
+```tabelle
+title: Extension points that matter with an ERP
+columns: Need | Extension point | Kind
+Customer price from the ERP | Pricing service and cart calculator | Domain *
+Stock or availability from the ERP | Inventory service and cart calculator | Domain *
+Tax and shipping | Tax service, tax and shipping calculators | Domain
+Check credit or blocks before ordering | Place order in checkout | Domain
+Shape the order record | Create order in checkout | Domain
+Custom buyer group assignment | Buyer group evaluation | Domain
+Filter or enrich products and search results | Product and search endpoints | Endpoint
+```
 
 The page also states the defaults you replace: inventory uses Omnichannel Inventory, pricing uses Salesforce price books, tax uses the Salesforce tax service, and shipping charges nothing until you extend it.
 
@@ -63,15 +66,15 @@ According to the same page, if the store uses Faster Add-to-Cart, every product 
 
 Which data should come live from the ERP and which should be copied into Salesforce is a design decision of its own. I cover it in [B2B Commerce and SAP: which data flows where?](../b2b-commerce-sap-data-flows/).
 
-## Why should a domain extension call super()?
+## Why should a domain extension keep the standard running?
 
-Salesforce writes that it "strongly recommend[s] calling the `super()` method as a best practice to ensure platform compatibility". In practice there are three ways to write a domain provider:
+Salesforce writes that it "strongly recommend[s] calling the super() method as a best practice to ensure platform compatibility". The super() call runs the standard service inside your own code. In practice there are three ways to write a domain provider:
 
-1. Replace the method entirely, without `super()`.
-2. Call `super()` and adjust the result, for example apply an ERP discount to the standard price.
-3. Do something before `super()`, for example read the buyer's ERP customer number, then let the standard run.
+1. Replace the standard entirely.
+2. Let the standard run and adjust the result, for example apply an ERP discount to the standard price.
+3. Do something before the standard runs, for example read the buyer's ERP customer number, then let the standard run.
 
-Variants 2 and 3 survive releases better. When Salesforce adds something to the standard service, such as a new field or a promotion feature, a provider that calls `super()` gets it automatically. A provider that replaces everything has silently frozen the standard at the state of the day it was written. In a review of partner code, a full replacement without `super()` is the first thing I would ask about. Sometimes it is justified, for example when the ERP is the only price master, but then the reason belongs in the code and in the architecture decision log.
+Variants 2 and 3 survive releases better. When Salesforce adds something to the standard service, such as a new field or a promotion feature, a provider that keeps the standard running gets it automatically. A provider that replaces everything has silently frozen the standard at the state of the day it was written. In a review of partner code, a full replacement of the standard is the first thing I would ask about. Sometimes it is justified, for example when the ERP is the only price master, but then the reason belongs in the code and in the architecture decision log.
 
 ```vertiefung For developers
 title: How do I test a provider that calls super()?
@@ -92,19 +95,27 @@ Payments are the exception. Salesforce states: "Currently, payments can't be cus
 
 ## Registration and mapping belong in the repository
 
-Registration and mapping are two separate steps, and both are configuration that someone has to reproduce in every environment. Salesforce recommends the CLI: `sf plugins install @salesforce/commerce`, then `sf commerce:extension:register` for the class and `sf commerce:extension:map` for the store. The same works through the `RegisteredExternalService` and `StoreIntegratedService` objects or the Connect API, and merchants can map domain extensions in the admin interface.
+Registration and mapping are two separate steps, and both are configuration that someone has to reproduce in every environment. Salesforce recommends doing both with the Salesforce command line, which can run in a pipeline; the Connect API and the admin interface work too, and merchants can map domain extensions there themselves.
 
 That last option is the risk. A mapping changed by hand in production is invisible in Git. Suppose a partner maps a new pricing provider directly in production to fix an urgent price error, the change never reaches the repository, and the next deployment from the pipeline maps the old provider again. Nobody notices until dealers complain about wrong prices.
+
+```vertiefung For developers
+title: Class names, extension point names and CLI commands
+- **Domain pricing provider:** extends `commercestorepricing.PricingService` and overrides `processPrice` (product lists and detail pages) and `processTransactionalPrice` (cart and checkout).
+- **Endpoint provider:** extends `ConnectApi.BaseEndpointExtension`; no `super()` call.
+- **Extension point names:** `Commerce_Domain_Pricing_Service`, `Commerce_Domain_Pricing_CartCalculator`, `Commerce_Domain_Inventory_Service`, `Commerce_Domain_Inventory_CartCalculator`, `Commerce_Domain_Tax_Service`, `Commerce_Domain_Tax_CartCalculator`, `Commerce_Domain_Shipping_CartCalculator`, `Commerce_Domain_Checkout_PlaceOrder`, `Commerce_Domain_Checkout_CreateOrder`, `Commerce_Domain_BuyerGroup_EvaluationService`, `Commerce_Endpoint_Catalog_Products`, `Commerce_Endpoint_Search_ProductSearch`.
+- **Registration and mapping:** `sf plugins install @salesforce/commerce`, then `sf commerce:extension:register` for the class and `sf commerce:extension:map` for the store; or the objects `RegisteredExternalService` and `StoreIntegratedService`.
+```
 
 What I would put into the contract and the pipeline:
 
 - Extension classes, tests and the register and map commands live in the client's repository, as I argue in [why clients should own their DevOps tools](../why-clients-should-own-their-devops-tools/).
 - The pipeline runs the CLI commands per environment, so mappings are reproducible. Salesforce notes that managing extensions needs the latest Salesforce CLI, so pin and update the CLI version deliberately.
-- Every extension change goes through a [pull request review](../why-pull-request-reviews-are-a-must-in-enterprise-projects/) that checks `super()`, timeouts of ERP callouts and test assertions.
+- Every extension change goes through a [pull request review](../why-pull-request-reviews-are-a-must-in-enterprise-projects/) that checks whether the standard still runs, timeouts of ERP callouts and test assertions.
 - Manual mapping in production is reserved for emergencies and followed by a commit the same day.
 
 The DevOps masterclass covers how store configuration travels with metadata in [data and configuration](../../masterclass/devops-release-management/data-and-configuration/) and how to set up the pipeline in [building the pipeline](../../masterclass/devops-release-management/building-the-pipeline/).
 
 ## Map every piece of custom logic to an extension point
 
-List every piece of custom logic in your store and assign it to an extension point, an old integration or a custom component. Mark each domain provider that does not call `super()` and ask for the reason. Then check whether registration and mapping can be rebuilt from the repository in a fresh sandbox. If that fails, you have found your biggest dependency on the current partner. The ERP side of the same decisions is part of the chapter [ERP integration](../../masterclass/b2b-commerce/erp-integration-stock-orders/), and the same extensions also serve a [headless storefront](../headless-b2b-commerce-own-frontend/).
+List every piece of custom logic in your store and assign it to an extension point, an old integration or a custom component. Mark each domain provider that replaces the standard and ask for the reason. Then check whether registration and mapping can be rebuilt from the repository in a fresh sandbox. If that fails, you have found your biggest dependency on the current partner. The ERP side of the same decisions is part of the chapter [ERP integration](../../masterclass/b2b-commerce/erp-integration-stock-orders/), and the same extensions also serve a [headless storefront](../headless-b2b-commerce-own-frontend/).
