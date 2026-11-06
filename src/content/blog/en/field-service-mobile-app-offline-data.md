@@ -36,7 +36,7 @@ The [Trailhead module on offline briefcases](https://trailhead.salesforce.com/co
 - **Briefcases.** In Briefcase Builder an admin chooses objects, filters and the users or groups a briefcase applies to. Custom objects can go offline like any other record.
 - **Performance priming.** It uses the briefcases to load exactly the records and metadata a worker's profile needs, holds more records than standard priming and syncs the most critical changes every five minutes.
 
-Changes made offline are saved on the device and sent to Salesforce when the connection returns. Flows that reference records from the briefcase also run offline, which matters for forms and guided steps.
+Changes made offline are saved on the device and sent to Salesforce when the connection returns. Flows that reference records from the briefcase also run offline, which matters for forms and guided steps. Offline, Data Capture creates and updates records only once the device is online again; this and other flow limits are listed in [Field Service mobile flow limitations](../field-service-mobile-flow-limitations/).
 
 What Salesforce does not publish is a fixed number of records a device can hold. I found no official limit, so I would not plan with one. Size the briefcase by role and measure how long priming takes on a real device.
 
