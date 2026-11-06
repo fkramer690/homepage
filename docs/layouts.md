@@ -433,6 +433,9 @@ photo and crop per project in `refPhotos`.
   (outcome line darker) and the stack tags. All panels stay in the HTML.
 - The About section no longer repeats the projects; it links up to them.
 - Fits: any section with a few cases that each need context, role and result.
+- Also used for Juliane's references on her partner page (`JulianePage.astro`, `.jw-rf`): no photo,
+  logo and period on top of the panel, then *Rolle / Umfang / Aufgaben* with the tasks as tick list
+  (details in `julianeProjectDetails`).
 
 ## References from the graphics review (30.10.2026)
 
