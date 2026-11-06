@@ -85,7 +85,7 @@ Laut [Salesforce-Hilfe](https://help.salesforce.com/s/articleView?id=sf.bots_ser
 
 ## Was kostet Agentforce?
 
-Salesforce verkauft Agentforce in mehreren Modellen: Flex Credits nach Verbrauch, Preise pro Gespräch, Nutzerlizenzen mit enthaltener Nutzung und Pauschalverträge. Im Modell Flex Credits nennt die [Preisseite](https://www.salesforce.com/agentforce/pricing/) 500 € oder 500 $ je 100.000 Credits. Laut [Flex-Credits-Preisliste](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-02.23.2026.pdf) verbraucht eine Standardaktion in der Produktion 20 Credits, zum Listenpreis 0,10 €, in einer Sandbox 16; Sprachaktionen verbrauchen 30. Das sind Listenpreise, keine Vertragspreise.
+Salesforce verkauft Agentforce in mehreren Modellen: Flex Credits nach Verbrauch, Preise pro Gespräch, Nutzerlizenzen mit enthaltener Nutzung und Pauschalverträge. Im Modell Flex Credits nennt die [Preisseite](https://www.salesforce.com/agentforce/pricing/) 500 € oder 500 $ je 100.000 Credits. Laut [Flex-Credits-Preisliste](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-02.23.2026.pdf) gilt je Aktion:
 
 ```kennzahlen
 20 | Flex Credits je Standardaktion in der Produktion
@@ -95,7 +95,7 @@ Salesforce verkauft Agentforce in mehreren Modellen: Flex Credits nach Verbrauch
 quelle: Agentforce-Preisseite und Flex-Credits-Preisliste von Salesforce, Listenpreise Stand November 2026
 ```
 
-Je nach Lizenz und Kontext kommen Prompts nach Modellstufe und Verarbeitung in Data 360 hinzu. Wie Sie das für einen Agenten schätzen, zeigt [Flex Credits: Agentforce-Kosten pro Aktion](../flex-credits-agentforce-kosten-pro-aktion/), Pauschalen vergleiche ich in [AELA oder Flex Credits](../aela-agentforce-pauschale-oder-credits/).
+Das sind Listenpreise, keine Vertragspreise. Je nach Lizenz und Kontext kommen Prompts nach Modellstufe und Verarbeitung in Data 360 hinzu. Wie Sie das für einen Agenten schätzen, zeigt [Flex Credits: Agentforce-Kosten pro Aktion](../flex-credits-agentforce-kosten-pro-aktion/), Pauschalen vergleiche ich in [AELA oder Flex Credits](../aela-agentforce-pauschale-oder-credits/).
 
 Früh auf den Tisch gehört auch, welches Sprachmodell antwortet und wo es läuft, beschrieben in [Agentforce-Datenresidenz](../agentforce-eu-datenresidenz-modelle/).
 

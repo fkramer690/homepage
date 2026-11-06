@@ -85,7 +85,7 @@ According to [Salesforce Help](https://help.salesforce.com/s/articleView?id=sf.b
 
 ## What does Agentforce cost?
 
-Salesforce sells Agentforce in several models: Flex Credits by consumption, conversation pricing, per-user licences with included use and flat-fee agreements. In the Flex Credits model, the [pricing page](https://www.salesforce.com/agentforce/pricing/) lists $500 or €500 per 100,000 credits. According to the [Flex Credits rate card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-02.23.2026.pdf), a standard action uses 20 credits in production, $0.10 or €0.10 at list price, and 16 in a sandbox; voice actions use 30. These are list prices, not contract prices.
+Salesforce sells Agentforce in several models: Flex Credits by consumption, conversation pricing, per-user licences with included use and flat-fee agreements. In the Flex Credits model, the [pricing page](https://www.salesforce.com/agentforce/pricing/) lists $500 or €500 per 100,000 credits. According to the [Flex Credits rate card](https://www.salesforce.com/en-us/wp-content/uploads/sites/4/assets/pdf/agentforce/Flex-Credits-Rate-Card-02.23.2026.pdf), each action uses:
 
 ```kennzahlen
 20 | Flex Credits per standard action in production
@@ -95,7 +95,7 @@ $0.10 | per standard action at $500 per 100,000 credits
 source: Salesforce Agentforce pricing page and Flex Credits rate card, list prices as of November 2026
 ```
 
-Depending on licence and context, prompts by model tier and Data 360 processing can come on top. How to estimate this for one agent is shown in [Flex Credits: Agentforce cost per action](../flex-credits-agentforce-cost-per-action/), flat fees in [AELA or Flex Credits](../aela-agentforce-flat-fee-vs-credits/).
+These are list prices, not contract prices. Depending on licence and context, prompts by model tier and Data 360 processing can come on top. How to estimate this for one agent is shown in [Flex Credits: Agentforce cost per action](../flex-credits-agentforce-cost-per-action/), flat fees in [AELA or Flex Credits](../aela-agentforce-flat-fee-vs-credits/).
 
 Also on the table early: which language model answers and where it runs, covered in [Agentforce data residency](../agentforce-eu-data-residency-models/).
 
