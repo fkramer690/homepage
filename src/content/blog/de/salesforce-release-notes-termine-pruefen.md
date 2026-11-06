@@ -1,7 +1,7 @@
 ---
-title: "Salesforce Release Notes prüfen, bevor das Release kommt"
-description: "Salesforce Release Schedule erklärt: drei Releases pro Jahr, Sandbox Preview, Termine je Instanz und was die IT-Leitung vor jedem Release prüft."
-pubDate: 2026-11-02
+title: "Salesforce-Release-Termine: Was die IT je Release prüft"
+description: "Salesforce Release Schedule erklärt: drei Releases pro Jahr, Sandbox Preview, Termine für Spring '27 je Instanz und was die IT-Leitung vor jedem Release prüft."
+pubDate: 2026-11-06
 lang: de
 slug: salesforce-release-notes-termine-pruefen
 translationKey: salesforce-release-schedule
@@ -9,29 +9,29 @@ topic: devops
 categories: [devops]
 tags: [Salesforce Release, Release Notes, Sandbox Preview, Release Schedule, Release Updates, IT-Leitung]
 takeaways:
-  - "Salesforce bringt drei Releases pro Jahr: Spring im Februar, Summer im Juni und Winter im Oktober. Den Zeitpunkt wählen Sie nicht."
-  - "Preview-Sandboxes erhalten das Release laut Salesforce vier bis fünf Wochen vor der Produktion. Welche das sind, entscheidet ein Refresh vor dem Stichtag."
-  - "Bei Winter '27 erschienen die Release Notes am 19. August, die Produktion folgte an drei Wochenenden zwischen dem 4. September und dem 9. Oktober."
-  - "Pro Release gehören fünf Prüfungen in den Plan: Release Notes nach Produkten, Release Updates, Regressionstest, Schnittstellen und Kommunikation."
+  - "Salesforce plant drei Releases pro Jahr, für Februar, Juni und Oktober. Je nach Instanz beginnen die Produktions-Upgrades schon im Monat davor."
+  - "Laut Salesforce beginnt die Sandbox Preview vier bis fünf Wochen vor dem Release. Orgs in der ersten Produktionswelle haben deutlich weniger Zeit."
+  - "Für Spring '27 beginnt die Sandbox Preview am 8. Januar 2027. Die Produktion folgt je nach Instanz am 16. Januar, 6. Februar oder 20. Februar."
+  - "Jedes Release braucht sechs Prüfungen mit Verantwortlichen: Release Notes, Release Updates, Regressionstest, Schnittstellen, Kommunikation, Nachkontrolle."
 faq:
   - q: "Wie oft gibt es ein Salesforce-Release?"
-    a: "Dreimal im Jahr. Spring kommt im Februar, Summer im Juni und Winter im Oktober."
+    a: "Dreimal im Jahr. Salesforce plant die Releases für Februar, Juni und Oktober. Je nach Instanz beginnen die Produktions-Upgrades schon im Januar, Mai oder September."
   - q: "Wann erscheinen die Salesforce Release Notes?"
-    a: "Einige Wochen vor dem ersten Produktionstermin. Bei Winter '27 waren es der 19. August 2026, die ersten Produktionsinstanzen folgten am 4. September."
+    a: "Salesforce kündigt den Termin für jedes Release einzeln an. Bei Winter '27 erschienen die Release Notes am 19. August 2026, 16 Tage vor dem ersten Produktionswochenende am 4. September."
   - q: "Was ist die Salesforce Sandbox Preview?"
-    a: "Sandboxes auf Preview-Instanzen erhalten das neue Release laut Salesforce vier bis fünf Wochen vor der Produktion. So lassen sich eigene Anpassungen vorab gegen das Release testen. Ob eine Sandbox auf Preview liegt, entscheidet ein Refresh vor dem Stichtag."
+    a: "Sandboxes auf Preview-Instanzen erhalten das neue Release vor der Produktion, laut Salesforce meist vier bis fünf Wochen vor dem Release. So können Sie prüfen, wie sich das neue Release auf Ihre Konfiguration auswirkt. Ob eine Sandbox die Preview erhält, hängt von ihrer Instanz ab. Prüfen Sie deshalb vor einem Refresh den Release Type im Setup."
   - q: "Wann kommt Salesforce Spring '27?"
-    a: "Spring-Releases kommen laut Salesforce im Februar, die Sandbox Preview im Januar. Die genauen Termine je Instanz stehen im Wartungskalender auf Salesforce Trust."
+    a: "Die Sandbox Preview beginnt laut Sandbox Preview Guide von Salesforce am 8. Januar 2027. Der Wartungskalender auf Trust nennt drei Produktionswochenenden: 16. Januar, 6. Februar und 20. Februar 2027. Welches gilt, hängt an der Instanz Ihrer Org."
 draft: false
 ---
 
-Salesforce spielt dreimal im Jahr ein großes Release ein, im Februar, Juni und Oktober, und Sie bestimmen den Zeitpunkt nicht selbst. Der Salesforce Release Schedule gibt deshalb den Takt vor, in dem die IT-Leitung prüfen muss: Release Notes lesen, Sandboxes auf die Preview legen, testen und den Fachbereich informieren. Dieser Artikel zeigt den Ablauf am Beispiel von Winter '27, welche Prüfungen in jedes Release gehören und was für Spring '27 jetzt zu planen ist.
+Salesforce spielt dreimal im Jahr ein großes Release ein, und den Zeitpunkt bestimmen Sie nicht selbst. Salesforce plant die Releases für Februar, Juni und Oktober, je nach Instanz beginnen die Produktions-Upgrades schon im Monat davor. Der Release Schedule gibt der IT-Leitung damit den Takt für sechs Prüfungen vor: Release Notes, Release Updates, Regressionstest in einer Preview-Sandbox, Schnittstellen und installierte Pakete, Kommunikation an den Fachbereich und eine Kontrolle nach dem Upgrade. Dieser Artikel zeigt den Ablauf am Beispiel von Winter '27, was jede Prüfung liefern sollte und welche Termine für Spring '27 jetzt zu planen sind.
 
 ## Wie läuft ein Salesforce-Release ab?
 
-Laut [Salesforce-FAQ zum Release-Zeitplan](https://help.salesforce.com/s/articleView?id=005224913&language=en_US&type=1) kommen neue Funktionen dreimal im Jahr: Spring im Februar, Summer im Juni und Winter im Oktober. Upgrades laufen außerhalb der Geschäftszeiten und am Wochenende. Den Wartungsplan veröffentlicht Salesforce ein Jahr im Voraus.
+Laut [Salesforce-FAQ zum Release-Zeitplan](https://help.salesforce.com/s/articleView?id=005224913&language=en_US&type=1) kommen neue Funktionen dreimal im Jahr mit den Releases Spring, Summer und Winter. Salesforce legt die Upgrades in Wartungsfenster je Instanz, in der Regel zu lastarmen Zeiten und am Wochenende. Den Wartungsplan veröffentlicht Salesforce ein Jahr im Voraus.
 
-Jedes Release hat dieselben Stationen. Beim Release Winter '27 sahen sie laut [Admin-Blog von Salesforce](https://admin.salesforce.com/blog/2026/admin-winter-27-release-countdown) so aus:
+Der Ablauf ist bei jedem Release ähnlich, Termine und Vorlaufzeiten schwanken aber. Bei Winter '27 sah er laut [Admin-Blog von Salesforce](https://admin.salesforce.com/blog/2026/admin-winter-27-release-countdown) so aus:
 
 ```zeitleiste
 2026-08-13 | Anmeldung für Pre-Release-Orgs
@@ -41,65 +41,72 @@ Jedes Release hat dieselben Stationen. Beim Release Winter '27 sahen sie laut [A
 2026-09-04 | Erste Produktionsinstanzen, weitere am 2. und 9. Oktober
 ```
 
-Zwischen den Release Notes und dem letzten Produktionstermin lagen also rund sieben Wochen, bei manchen Instanzen nur gut zwei. Wer erst nach dem Produktionstermin liest, was sich ändert, hat keinen Puffer mehr.
+Zwischen den Release Notes und dem letzten Produktionstermin lagen also rund sieben Wochen, bei den ersten Instanzen nur gut zwei. Wer erst nach dem eigenen Produktionstermin liest, was sich ändert, hat keinen Puffer mehr.
 
-## Pre-Release-Org und Preview-Sandbox haben verschiedene Aufgaben
+## Mit einer Preview-Sandbox die Konfiguration für das nächste Release testen
 
-Salesforce bietet vor jedem Release zwei Möglichkeiten, Neues früh zu sehen. Die Pre-Release-Org ist eine leere Developer Edition, für die man sich laut Admin-Blog einige Tage vor den Release Notes anmelden kann, bei Winter '27 ab dem 13. August. Sie eignet sich, um neue Funktionen kennenzulernen und zu entscheiden, ob sich ein Pilot lohnt. Ihre eigenen Anpassungen, Daten und Schnittstellen enthält sie nicht.
+Salesforce bietet mehrere Wege, ein Release früh zu sehen, und sie haben verschiedene Aufgaben. Entscheidend ist, ob Ihre eigene Konfiguration auf dem neuen Release läuft.
 
-Dafür ist die Preview-Sandbox da. Sie ist eine Kopie Ihrer Org auf dem neuen Release. Erst dort zeigt sich, ob ein eigener Flow, eine Validierungsregel oder eine Komponente eines Partners mit dem Release noch so funktioniert wie vorher. Für die IT-Leitung ist die Preview-Sandbox deshalb das wichtigere Werkzeug. Die Pre-Release-Org ist eher etwas für Architekten und Produktverantwortliche, die über neue Funktionen entscheiden.
+```tabelle
+titel: Drei Umgebungen rund um ein Salesforce-Release
+spalten: Umgebung | Was sie enthält | Wofür sie da ist
+Pre-Release-Org | Leere Developer Edition auf dem neuen Release | Neue Funktionen kennenlernen, über einen Pilot entscheiden
+Preview-Sandbox | Ihre Konfiguration auf dem neuen Release, Daten je nach Sandbox-Typ | Eigene Flows, Regeln, Schnittstellen und Partnerkomponenten testen *
+Sandbox auf aktuellem Release | Ihre Konfiguration auf dem Release der Produktion | Laufende Entwicklung und Hotfixes gegen den Stand der Produktion
+fazit: Nur die Preview-Sandbox zeigt, wie das Release auf Ihre eigene Konfiguration wirkt. Die Pre-Release-Org ist etwas für Architekten und Produktverantwortliche.
+```
 
-Wenn Partner für Sie entwickeln, gehört in die Vereinbarung, wer die Tests in der Preview-Sandbox übernimmt und bis wann Ergebnisse vorliegen. Sonst testet am Ende niemand, weil jeder annimmt, der andere habe es getan.
+Welches Release eine Sandbox erhält, hängt an ihrer Instanz. Laut [Hinweisen zur Sandbox Preview](https://help.salesforce.com/s/articleView?id=000391927&type=1&language=en_US) erhalten Sandboxes auf Preview-Instanzen das Upgrade vorab, bei Winter '27 am 28. und 29. August. Sandboxes auf anderen Instanzen bleiben zunächst auf dem bisherigen Release und werden zusammen mit der Produktion aktualisiert. Auch Ihre Produktionsorg liegt auf einer Instanz mit eigenem Termin, zu finden im Wartungskalender auf Salesforce Trust.
 
-## Der Termin hängt an der Instanz Ihrer Org
+Prüfen Sie deshalb zuerst im Setup den Release Type jeder Sandbox. Oft ist gar kein Refresh nötig. Wenn doch, muss er vor dem Stichtag abgeschlossen sein, nicht nur gestartet, und er ersetzt den bisherigen Inhalt der Sandbox. Sichern Sie Daten und Konfiguration, die nur dort liegen, also vorher. Mindestens eine Sandbox sollte auf der Preview liegen. Wenn Entwicklung oder Hotfixes gegen die Produktion weiterlaufen müssen, planen Sie eine zweite auf dem aktuellen Release.
 
-Ihre Produktionsorg liegt auf einer Instanz, und jede Instanz hat ihren eigenen Termin. Welcher es ist, steht im Wartungskalender auf Salesforce Trust. Bei Winter '27 gab es drei Produktionswochenenden.
+Wenn Partner für Sie entwickeln, gehört in die Vereinbarung, wer die Tests in der Preview-Sandbox übernimmt und bis wann Ergebnisse vorliegen. Ohne klaren Verantwortlichen und Termin bleiben Tests unvollständig oder werden von mehreren Partnern doppelt gemacht.
 
-Für Sandboxes gibt es eine zweite Unterscheidung. Laut [Hinweisen zur Sandbox Preview](https://help.salesforce.com/s/articleView?id=000391927&type=1&language=en_US) werden Sandboxes auf Preview-Instanzen vorab auf das neue Release gehoben, bei Winter '27 am 28. und 29. August. Sandboxes auf anderen Instanzen bleiben auf dem alten Release und kommen mit der Produktion. Welche Instanz eine Sandbox hat, ändern Sie nur durch einen Refresh, und der zählt nur, wenn er vor dem Stichtag liegt.
+## Welche Prüfungen sollte die IT-Leitung je Release verlangen?
 
-Für die Planung heißt das: Mindestens eine Sandbox sollte auf der Preview liegen, damit Sie das Release testen können, bevor es in die Produktion kommt. Mindestens eine sollte auf dem alten Release bleiben, damit laufende Entwicklung und Hotfixes gegen den Stand der Produktion getestet werden.
+Jede Prüfung braucht einen Verantwortlichen, einen Termin und ein Ergebnis, das die IT-Leitung einfordern kann:
 
-## Was prüft die IT-Leitung je Release?
-
-Die Release Notes sind lang. Niemand muss alles lesen, aber für jede Prüfung braucht es einen Verantwortlichen und einen Termin:
-
-```schritte
-Release Notes | Woche 1 · Architekt
-  Nach genutzten Produkten filtern und Änderungen mit Wirkung markieren.
-Release Updates | Woche 1 bis 2 · Admin
-  Im Setup prüfen, welche Updates erzwungen werden und bis wann.
-Regressionstest | Woche 2 bis 4 · Team und Key User
-  Kernprozesse in der Preview-Sandbox durchspielen.
-Schnittstellen | Woche 2 bis 4 · Integration
-  API-Versionen, Anmeldungen und abgekündigte Funktionen prüfen.
-Kommunikation | vor Produktion · Produktverantwortung
-  Den Fachbereich über sichtbare Änderungen informieren.
+```tabelle
+titel: Sechs Prüfungen je Release
+spalten: Prüfung | Wann · wer | Sichtbares Ergebnis
+Release Notes | Woche 1 · Architekt | Liste der Änderungen mit Wirkung auf die genutzten Produkte
+Release Updates | Woche 1 bis 2 · Admin | Status und Fristen geprüft, Testläufe geplant
+Regressionstest | Woche 2 bis 4 · Team und Key User | Kernprozesse in der Preview-Sandbox durchgespielt, offene Risiken bekannt *
+Schnittstellen | Woche 2 bis 4 · Integration | Beide Seiten wichtiger Schnittstellen und Pakete getestet, von den Verantwortlichen bestätigt
+Kommunikation | vor Produktion · Produktverantwortung | Plan für Fachbereich und Servicepartner freigegeben
+Nach dem Upgrade | Produktionswochenende · Betrieb | Kurztest bestanden, Überwachung läuft, Release abgenommen
+fazit: Niemand muss alle Release Notes lesen, aber jede Prüfung braucht einen Verantwortlichen und einen Termin.
 ```
 
 Bei den **Release Notes** hilft ein Filter nach den Produkten, die die Org wirklich nutzt. Markieren Sie dann drei Arten von Änderungen: was Nutzer sehen, was eigene Anpassungen brechen kann und was abgeschaltet wird. Ein Beispiel für die Pipeline zeigt [Salesforce Winter '27: Was sich für Ihre Pipeline ändert](../salesforce-winter-27-aenderungen-pipeline/).
 
-**Release Updates** im Setup sind Änderungen, die Salesforce zu einem festen Datum erzwingt. Sie lassen sich vorher in einer Sandbox aktivieren und testen. Wer sie liegen lässt, erlebt sie am Stichtag in der Produktion.
+**Release Updates** im Setup zeigen Änderungen der Plattform, bei denen Sie möglicherweise handeln müssen, bevor Salesforce sie verbindlich aktiviert. Prüfen Sie den Status und die Frist, bis zu der die Schritte erledigt sein müssen, und nutzen Sie den Testlauf in einer Sandbox, wo Salesforce einen anbietet. Termine können sich verschieben, schauen Sie also kurz vor der Produktion noch einmal nach.
 
-Beim **Regressionstest** zählen die Prozesse, mit denen das Unternehmen Geld verdient oder Kunden bedient: Angebot, Auftrag, Servicefall, Einsatz. Halten Sie die Testfälle von Release zu Release fest, damit der nächste Durchlauf schneller geht. Automatisierte Tests für die wichtigsten Abläufe lohnen sich hier besonders, weil sie dreimal im Jahr gegen ein Release laufen, das Sie nicht selbst gebaut haben. Für die mobile App im Außendienst gilt ein eigener Takt, den ich in [Field Service App Updates testen](../field-service-app-updates-testen/) beschreibe.
+Beim **Regressionstest** zählen die Prozesse, mit denen das Unternehmen Geld verdient oder Kunden bedient. Bei Herstellern sind das meist Ketten über mehrere Systeme: vom Angebot bis zum Auftrag im ERP, von der installierten Basis über den Servicefall bis zum Arbeitsauftrag, Ersatzteile mit Verfügbarkeitsprüfung und die Techniker-App, die auch offline funktionieren muss. Halten Sie die Testfälle von Release zu Release fest, damit der nächste Durchlauf schneller geht. Automatisierte Tests für die wichtigsten Abläufe lohnen sich hier besonders, weil sie dreimal im Jahr gegen ein Release laufen, das Sie nicht selbst gebaut haben. Für die mobile App im Außendienst gilt ein eigener Takt, den ich in [Field Service App Updates testen](../field-service-app-updates-testen/) beschreibe.
 
-```praxis
-In einem Programm habe ich den Release-Prozess aufgebaut. Anfangs lief jeder Pull Request über meinen Schreibtisch. Als der Prozess stabil lief, habe ich ihn an einen internen Kollegen übergeben.
+Bei den **Schnittstellen** prüfen Sie API-Versionen, Anmeldungen, Connected Apps und installierte Pakete, zusammen mit den Verantwortlichen der Systeme auf der anderen Seite und den Paketanbietern.
+
+Für die **Kommunikation** reicht selten eine weitergeleitete Mail von Salesforce. Was der Fachbereich wissen muss, beschreibe ich in [Salesforce-Releases an den Fachbereich kommunizieren](../salesforce-releases-fachbereich-kommunizieren/).
+
+## Salesforce-Releases brauchen einen eigenen Pfad in der Release-Steuerung
+
+Die Releases von Salesforce gehören in Ihre Release-Steuerung, brauchen dort aber einen eigenen Pfad: Den Termin legt Salesforce fest, und Ihr Team kann das Upgrade der Plattform weder stoppen noch zurückrollen. In einem Programm habe ich den Release-Prozess aufgebaut. Anfangs lief jeder Pull Request über meinen Schreibtisch. Als der Prozess stabil lief, habe ich ihn an einen internen Kollegen übergeben.
+
+Dasselbe Prinzip trägt auch bei den Salesforce-Releases: Verantwortliche, Termine und Entscheidungspunkte verhindern, dass alle vier Monate kurzfristig ein Sonderfall organisiert werden muss. Tragen Sie die drei Releases als feste Termine in die Release-Planung ein. Halten Sie riskante eigene Deployments aus dem Upgrade-Wochenende und dem Test danach heraus, und halten Sie vor dem Upgrade einen Ausgangsstand fest. Dann lassen sich Änderungen vergleichen und mögliche Ursachen eingrenzen, wenn etwas ausfällt. Die [DORA-Metriken für Salesforce](../dora-metriken-salesforce-releases/) helfen, Durchsatz und Instabilität der eigenen Auslieferung über die Zeit zu messen. Wie ich Release-Prozesse mit Kunden aufbaue, steht unter [DevOps und Release-Management](../../leistungen/devops-und-release-management/).
+
+## Spring '27: Preview am 8. Januar, Produktion ab 16. Januar
+
+Stand 6. November 2026 nennt der [Sandbox Preview Guide von Salesforce](https://sandbox-preview-prd-24f76e67b11e.herokuapp.com/) den 8. Januar 2027 als Start der Preview für Spring '27. Der [Wartungskalender auf Trust](https://status.salesforce.com/) nennt drei Produktionswochenenden.
+
+```zeitleiste
+2027-01-08 | Sandbox Preview beginnt
+2027-01-16 | Erste Produktionsinstanzen
+2027-02-06 | Zweites Produktionswochenende
+2027-02-20 | Drittes Produktionswochenende
 ```
 
-Die Releases von Salesforce gehören in denselben Prozess, mit denselben Tests und Freigaben wie die eigenen Releases.
-
-Für die **Kommunikation** reicht selten eine weitergeleitete Mail von Salesforce. Was der Fachbereich wissen muss, beschreibe ich in [Salesforce-Releases an den Fachbereich kommunizieren](../salesforce-releases-fachbereich-kommunizieren/). Ob die eigenen Releases stabil laufen, zeigen die [DORA-Metriken für Salesforce](../dora-metriken-salesforce-releases/).
-
-## Spring '27 kommt im Februar, die Preview im Januar
-
-Nach dem Muster aus der FAQ erhalten Preview-Sandboxes Spring '27 im Januar 2027, die Produktion folgt im Februar. Die genauen Termine je Instanz stehen im Wartungskalender auf Trust, sobald Salesforce sie freigibt. Ich aktualisiere diesen Artikel mit jedem Release.
-
-```hinweis tipp
-Tragen Sie die drei Releases pro Jahr als feste Termine in die eigene Release-Planung ein. Legen Sie in den Wochen um den Produktionstermin keine großen eigenen Deployments, damit ein Fehler eindeutig zuzuordnen ist.
-```
-
-Wie ich Release-Prozesse mit Kunden aufbaue, steht unter [DevOps und Release-Management](../../leistungen/devops-und-release-management/).
+Die erste Welle braucht die früheste Vorbereitung: Orgs mit Upgrade am 16. Januar haben zwischen dem Start der Preview und der Produktion nur acht Tage, und die liegen direkt nach den Weihnachtsferien. Den Termin der Release Notes und den Stichtag für den Sandbox-Refresh hat Salesforce noch nicht angekündigt.
 
 ## Den Sandbox-Plan für Spring '27 im Dezember festlegen
 
-Legen Sie noch im Dezember fest, welche Sandbox auf die Preview für Spring '27 geht und welche auf dem aktuellen Release bleibt. Prüfen Sie mit dem Sandbox Preview Guide von Salesforce, auf welcher Instanz jede Sandbox liegt, und planen Sie den nötigen Refresh vor dem Stichtag im Januar. Benennen Sie für jede der fünf Prüfungen einen Verantwortlichen und tragen Sie die Termine in den Kalender des Teams ein, sobald Salesforce die Release Notes ankündigt.
+Schauen Sie zuerst auf Trust nach, auf welcher Instanz Ihre Produktion liegt, damit Sie wissen, ob Sie zur Januar-Welle gehören. Legen Sie dann im Dezember fest, welche Sandbox auf die Preview für Spring '27 geht und welche auf dem aktuellen Release bleibt. Prüfen Sie den Release Type jeder Sandbox im Setup, bestätigen Sie im Sandbox Preview Guide die empfohlene Aktion für ihre Instanz und planen Sie einen Refresh nur dort, wo er nötig ist. Benennen Sie für jede der sechs Prüfungen einen Verantwortlichen und tragen Sie die Termine in den Kalender des Teams ein, sobald Salesforce die Release Notes ankündigt.
