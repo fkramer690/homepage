@@ -885,7 +885,7 @@ const drawings: Record<string, Drawing> = {
     ${box(96, 40, 58, 40)}${t(125, 56, l('1 user', '1 Benutzer'), { fill: D, size: 7, anchor: 'middle' })}${t(125, 70, 'Admin', { size: 7, anchor: 'middle' })}
     ${arrow(156, 60, 170, C)}
     ${[l('ERP user · permission set', 'ERP-Benutzer · Permission Set'), l('Middleware user · perm. set', 'Middleware · Permission Set'), l('Marketing user · perm. set', 'Marketing · Permission Set')].map((s, i) => box(172, 28 + i * 24, 130, 18, C) + t(237, 40 + i * 24, s, { size: 6.5, anchor: 'middle' })).join('')}
-    ${tag(18, 128, 150, l('5 licences included', '5 Lizenzen inklusive'))}${t(178, 141, l('API only · IP ranges', 'nur API · IP-Bereiche'), { size: 7 })}`,
+    ${tag(18, 128, 150, l('5 licences included', '5 Lizenzen inklusive'))}${t(178, 141, l('API only · OAuth', 'nur API · OAuth'), { size: 7 })}`,
 
   'salesforce-password-integrations-2027': (l) => `
     ${box(22, 56, 80, 48)}${t(62, 77, l('INTEGRATION', 'SCHNITTSTELLE'), { fill: D, anchor: 'middle' })}${t(62, 91, 'ERP · middleware', { size: 7, anchor: 'middle' })}
